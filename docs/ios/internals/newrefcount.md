@@ -6,12 +6,13 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 3a40605dd58cac0bcf14c156ecf65aa3fec52bc6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/25/2015
+ms.openlocfilehash: 8c7b1a88284156cb5d4261f18d5659ed66dfaf64
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103382"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879324"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>新引用计数在 Xamarin.iOS 中的系统
 

@@ -6,12 +6,13 @@ ms.assetid: 003F25C1-B430-4339-9C95-7DF527EBC699
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: c5ee1b833e309c78c7338298cbe5c8800afb1ba1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 11/25/2015
+ms.openlocfilehash: 28002ddbab80445757be907b5d9f1cc02fdefd9d
+ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116233"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54879350"
 ---
 # <a name="floating-point-operations-in-xamarinios"></a>在 Xamarin.iOS 中浮点运算
 
