@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c761f9f11e8053dcd0960129a28251ed6acf473c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
+ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120265"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54479766"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第二部分-实现 WalkingGame
 
@@ -398,7 +398,7 @@ public Rectangle CurrentRectangle
         AnimationFrame currentFrame = null;
 
         // See if we can find the frame
-        TimeSpan accumulatedTime;
+        TimeSpan accumulatedTime = new TimeSpan();
         foreach(var frame in frames)
         {
             if (accumulatedTime + frame.Duration >= timeIntoAnimation)
