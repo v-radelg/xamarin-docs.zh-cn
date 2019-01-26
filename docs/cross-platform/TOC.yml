@@ -74,6 +74,8 @@ items:
         href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
     - name: NuGet 包（手动）
       href: app-fundamentals/nuget-manual.md
+    - name: 在跨平台应用中使用 C/C++ 库
+      href: cpp/index.md
   - name: 语言支持
     href: platform/index.md
     items:
@@ -190,9 +192,9 @@ items:
   - name: 示例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 6de69aacc37d17086e49ae1a7571879686168a42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
+ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130213"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54841323"
