@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2018
-ms.openlocfilehash: 422311c766584cbd27d0ab0c42adee042e9aac3e
-ms.sourcegitcommit: 408b78dd6eded4696469e316af7922a5991f2211
+ms.openlocfilehash: 41530399bfc2210e7c3eda461688c12c6235ef79
+ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53246290"
+ms.lasthandoff: 01/21/2019
+ms.locfileid: "54418668"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -61,7 +61,6 @@ namespace TailwindTraders.Mobile
         {
             InitializeComponent();
 
-            Forms.SetFlags("Shell_Experimental");
             MainPage = new TheShell();
         }
     }
@@ -71,7 +70,46 @@ namespace TailwindTraders.Mobile
 `TheShell` 类是描述应用程序的视觉对象结构的 XAML 文件。
 
 > [!IMPORTANT]
-> Shell 当前处于试验阶段，只能通过以下方式使用：向 `App` 类（在创建 `Shell` 实例前）或平台项目（在调用 `Forms.Init` 方法前）添加 `Forms.SetFlags("Shell_Experimental");`。
+> Shell 当前处于试验阶段，只能通过以下方式使用：在调用 `Forms.Init` 方法前，向平台项目添加 `Forms.SetFlags("Shell_Experimental");`。
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
+
+        TabLayoutResource = Resource.Layout.Tabbar;
+        ToolbarResource = Resource.Layout.Toolbar;
+
+        base.OnCreate(savedInstanceState);
+
+        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+        LoadApplication(new App());
+    }
+}
+```
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+```csharp
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
+
+        global::Xamarin.Forms.Forms.Init();
+        LoadApplication(new App());
+
+        return base.FinishedLaunching(app, options);
+    }
+}
+```
+
+----
 
 ## <a name="shell-file-hierarchy"></a>Shell 文件层次结构
 
