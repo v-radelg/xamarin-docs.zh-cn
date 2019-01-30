@@ -76,15 +76,15 @@ Xamarin.Forms 提供了显示的数据的滚动行的列表视图控件。 控�
 
 添加映射需要额外的 NuGet 包下载和一些特定于平台的配置。 完成配置后，可以在只需几行代码中添加地图和 pin 标记。
 
-## <a name="pickerpickerindexmd"></a>[选取器](picker/index.md)
+## <a name="pickerpickerindexmd"></a>[Picker](picker/index.md)
 
 [ `Picker` ](xref:Xamarin.Forms.Picker)视图是一个用于选择文本项中的数据列表控件。
 
-## <a name="sliderslidermd"></a>[滑块](slider.md)
+## <a name="sliderslidermd"></a>[Slider](slider.md)
 
 `Slider`允许用户从连续范围选择的数字值。
 
-## <a name="steppersteppermd"></a>[步进器](stepper.md)
+## <a name="steppersteppermd"></a>[Stepper](stepper.md)
 
 `Stepper`允许用户从一系列值中选择的数字值。 它包含两个按钮带有负号和加号。 以增量方式将操作的两个按钮更改所选的值。
 
