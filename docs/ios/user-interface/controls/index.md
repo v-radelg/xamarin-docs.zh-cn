@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 25b17dbebebf7bcae92ebdc294c798101d39b987
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121615"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233271"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>在 Xamarin.iOS 中的用户界面控件
 
@@ -54,13 +54,13 @@ UIButton 类用于表示在 iOS 屏幕的按钮的各种不同的样式。 本�
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[进度和活动指示器](progress-activity-indicator.md)
 
-iOS 提供两种主要方法，以指示应用程序中的进度： 活动指示器 (包括特定_网络_活动指示器) 和进度栏。
+iOS 提供了两种主要方法，以指示应用程序中的进度：活动指示器 (包括特定_网络_活动指示器) 和进度栏。
 
 ## <a name="search-barssearchbarmd"></a>[搜索栏](searchbar.md)
 
 UISearchBar 用于搜索的值的列表。 
 
-## <a name="sliders-steppers-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[滑块、 分档器和分段的控件](slider-switch-segmented-controls.md)
+## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[滑块、开关和分段控件](slider-switch-segmented-controls.md)
 
 滑块控件允许的范围内的数字值的简单选择。 iOS 使用`UISwitch`作为一个布尔值输入的可能由其他平台上的单选按钮。 分段控件是有序的方式，以允许用户交互较少的选项。
 

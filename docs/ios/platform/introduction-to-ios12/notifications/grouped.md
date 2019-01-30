@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 278986b29e629995a202f474242670f5524c45ff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2e23bb13ad35e9a7a6386d881fe64f817ca8e216
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111483"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233258"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>在 Xamarin.iOS 中分组的通知
 
@@ -20,7 +20,7 @@ ms.locfileid: "50111483"
 
 应用还可以通过线程，使用户更轻松地查找并与他们感兴趣的特定信息交互组通知。
 
-## <a name="sample-app-groupednotifications"></a>示例应用程序： GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>应用程序示例：GroupedNotifications
 
 若要了解如何使用 Xamarin.iOS 分组的通知，看一看[GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)示例应用程序。
 
@@ -30,7 +30,7 @@ ms.locfileid: "50111483"
 
 ## <a name="request-authorization-and-allow-foreground-notifications"></a>请求授权，并允许前台通知
 
-应用可以发送本地通知之前，它必须请求执行此操作的权限。 在示例应用[ `AppDelegate` ](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)，则[ `FinishedLaunching` ](https://developer.xamarin.com/api/member/UIKit.UIApplicationDelegate.FinishedLaunching/p/UIKit.UIApplication/Foundation.NSDictionary/)方法请求此权限：
+应用可以发送本地通知之前，它必须请求执行此操作的权限。 在示例应用[ `AppDelegate` ](xref:UIKit.UIApplicationDelegate)，则[ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))方法请求此权限：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-[ `Delegate` ](https://developer.xamarin.com/api/property/UserNotifications.UNUserNotificationCenter.Delegate/) （设置上面） 用于[ `UNUserNotificationCenter` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenter/)决定前台应用程序是否应通过调用完成处理程序传递给显示传入通知[`WillPresentNotification`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification/p/UserNotifications.IUNUserNotificationCenterDelegate/UserNotifications.UNUserNotificationCenter/UserNotifications.UNNotification/System.Action%7BUserNotifications.UNNotificationPresentationOptions%7D/):
+[ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) （设置上面） 用于[ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter)决定前台应用程序是否应通过调用完成处理程序传递给显示传入通知[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,7 +56,7 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-[ `UNNotificationPresentationOptions.Alert` ](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationPresentationOptions/)参数指示应用应显示警报，但不是播放声音或更新锁屏提醒。
+[ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions)参数指示应用应显示警报，但不是播放声音或更新锁屏提醒。
 
 ## <a name="threaded-notifications"></a>线程的通知
 
@@ -80,8 +80,8 @@ void StartNewThread()
 若要发送线程的通知，示例应用程序：
 
 - 检查应用程序是否已授权发送通知。
-- 创建 [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
-对象的通知的内容和设置其 [`ThreadIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNMutableNotificationContent.ThreadIdentifier/)
+- 创建 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+对象的通知的内容和设置其 [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 为上面创建的线程标识符。
 - 创建一个请求，并计划通知：
 

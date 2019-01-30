@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 146b05cf7ca2bbd05e952ecc9064fbb9168d179a
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609930"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233947"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>适用于 Xamarin.iOS 的故障排除技巧 
 
@@ -75,7 +75,7 @@ TypeName XXXX {
 
 上面的定义由自动生成 Visual Studio for Mac 向 Visual Studio for Mac 中添加任何 XIB 文件`NAME_OF_YOUR_XIB_FILE.designer.xib.cs`文件。
 
-此外，其中包含上面的代码中的类型必须的子类[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)。  如果在命名空间中包含的类型，它还应具有[[注册]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)提供没有命名空间的类型名称 （如 Interface Builder 不支持在类型中的命名空间） 的属性：
+此外，其中包含上面的代码中的类型必须的子类[NSObject](xref:Foundation.NSObject)。  如果在命名空间中包含的类型，它还应具有[[注册]](xref:Foundation.RegisterAttribute)提供没有命名空间的类型名称 （如 Interface Builder 不支持在类型中的命名空间） 的属性：
 
 ```csharp
 namespace Samples.GLPaint {
@@ -144,7 +144,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 问题是 Mono 选取 OS X `libsqlite3.dylib`，不 iPhoneSimulator 的`libsqlite3.dylib`文件。 您的应用程序*将*设备，但只是无法在模拟器上工作。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>将部署到设备失败，并 System.Exception:返回 3892346901 AMDeviceInstallApplication
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>将部署到设备失败，并 System.Exception:AMDeviceInstallApplication returned 3892346901
 
 此错误意味着你的证书/捆绑包 id 的代码签名配置与在设备上安装了预配配置文件不匹配。  确认您有适当的证书在项目选项中选择-> iPhone 捆绑包签名，并且项目选项中指定的正确程序包 id-> iPhone 应用程序
 
@@ -283,7 +283,7 @@ Visual Studio for Mac 2.2 具有导致其无法检测包含逗号的分发证书
 
 ## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>错误"AFCFileRefWrite 返回：1"上传期间
 
-将应用上传到你的设备时可能会收到错误"AFCFileRefWrite 返回：1"。 这可能是如果您有一个零长度文件。
+将应用上传到你的设备时可能会收到错误"AFCFileRefWrite 返回：1". 这可能是如果您有一个零长度文件。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>错误"mtouch 失败且无输出"
 

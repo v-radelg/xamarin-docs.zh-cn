@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a1ddcda84d51b5a8a9220558ddaf9476a2321ee8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 09e895714cb4bbe241e4e14facaaee52079d55d9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105046"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233180"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>多点触控手指在 Xamarin.iOS 中跟踪
 
@@ -20,7 +20,7 @@ _本文档演示如何跟踪从多个手指触摸事件_
 
 有些的时候多点触控应用程序需要跟踪各手指，因为它们在屏幕上同时移动。 一个典型的应用程序是一个 finger-paint 程序。 你希望用户能够绘制的一根手指，而且还可以同时使用多个手指绘制。 在您的程序处理多个触控事件，它需要区分这些根手指。
 
-当手指首先触摸屏幕时，创建 iOS [ `UITouch` ](https://developer.xamarin.com/api/type/UIKit.UITouch/)这根手指的对象。 手指在屏幕上移动，并从屏幕上，此时释放该对象然后将此对象保持不变。 若要跟踪的手指，程序应避免将存储此`UITouch`直接对象。 相反，它可以使用[ `Handle` ](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)类型的属性`IntPtr`来唯一地标识这些`UITouch`对象。
+当手指首先触摸屏幕时，创建 iOS [ `UITouch` ](xref:UIKit.UITouch)这根手指的对象。 手指在屏幕上移动，并从屏幕上，此时释放该对象然后将此对象保持不变。 若要跟踪的手指，程序应避免将存储此`UITouch`直接对象。 相反，它可以使用[ `Handle` ](xref:Foundation.NSObject.Handle)类型的属性`IntPtr`来唯一地标识这些`UITouch`对象。
 
 几乎总是跟踪各手指的程序维护触控体验跟踪的字典。 对于 iOS 程序，字典的键是`Handle`值，该值标识特定的手指。 字典的值取决于应用程序。 在中[; FingerPaint](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)程序中，每个手指笔划 （从触摸以释放） 是与包含呈现与该手指绘制的线条所需的所有信息的对象相关联。 程序定义了一个较小`FingerPaintPolyline`类实现此目的：
 
@@ -40,7 +40,7 @@ class FingerPaintPolyline
 }
 ```
 
-每个 polyline 具有一种颜色，笔划宽度和 iOS 图形[ `CGPath` ](https://developer.xamarin.com/api/type/CoreGraphics.CGPath/)地累积并呈现在行的多个点，因为所绘制的对象。
+每个 polyline 具有一种颜色，笔划宽度和 iOS 图形[ `CGPath` ](xref:CoreGraphics.CGPath)地累积并呈现在行的多个点，因为所绘制的对象。
 
 
 中包含的代码如下所示的所有其余`UIView`派生类名为`FingerPaintCanvasView`。 类维护类型的对象的字典`FingerPaintPolyline`他们主动正在由一个或多个手指绘制期间：
@@ -61,11 +61,11 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 `FingerPaintCanvasView` 重写由定义的五种方法`View`:
 
-- [`TouchesBegan`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesBegan/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesMoved`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesMoved/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesEnded`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesEnded/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`TouchesCancelled`](https://developer.xamarin.com/api/member/UIKit.UIResponder.TouchesCancelled/p/Foundation.NSSet/UIKit.UIEvent/)
-- [`Draw`](https://developer.xamarin.com/api/member/UIKit.UIView.Draw/p/CoreGraphics.CGRect/)
+- [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesEnded`](xref:UIKit.UIResponder.TouchesEnded(Foundation.NSSet,UIKit.UIEvent))
+- [`TouchesCancelled`](xref:UIKit.UIResponder.TouchesCancelled(Foundation.NSSet,UIKit.UIEvent))
+- [`Draw`](xref:UIKit.UIView.Draw(CoreGraphics.CGRect))
 
 各种`Touches`替代累积折线所组成的点。
 

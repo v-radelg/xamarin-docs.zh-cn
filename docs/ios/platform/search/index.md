@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 799d6dd532e530f5ee9c9a974b2d93b6a3be0efb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122408"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233297"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin.iOS 中搜索 Api
 
@@ -82,7 +82,7 @@ iOS 10 展示驾驶参与到应用程序的新方法使系统能够主动有用�
 - 使用 Siri 交互
 - QuickType 建议 
 
-应用程序公开此功能对系统使用一系列技术，如[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)，web 标记中，核心聚焦、 MapKit、 Media Player 和 UIKit。
+应用程序公开此功能对系统使用一系列技术，如[NSUserActivity](xref:Foundation.NSUserActivity)，web 标记中，核心聚焦、 MapKit、 Media Player 和 UIKit。
 
 若要获取详细信息，请参阅我们[主动建议](~/ios/platform/search/proactive-suggestions.md)指南。
 

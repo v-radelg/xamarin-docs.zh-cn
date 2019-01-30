@@ -1,4 +1,4 @@
-﻿---
+---
 title: 身份验证和授权
 description: 本章介绍 eShopOnContainers 移动应用程序如何执行身份验证和授权对容器化微服务。
 ms.prod: xamarin
@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: beb9e8f351a1cecc6017a08345f7cfc5e207ba35
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 9db9902dfbf602ba21b353f3a17920dc37b03ee5
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996212"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233999"
 ---
 # <a name="authentication-and-authorization"></a>身份验证和授权
 
@@ -53,17 +53,17 @@ EShopOnContainers 移动应用与标识微服务，它使用 IdentityServer 4 �
 
 ### <a name="adding-identityserver-to-a-web-application"></a>IdentityServer 添加到 Web 应用程序
 
-为了使 ASP.NET Core web 应用程序使用 IdentityServer 4，必须将添加到 web 应用程序的 Visual Studio 解决方案。 有关详细信息，请参阅[安装程序和概述](https://identityserver4.readthedocs.io/en/release/quickstarts/0_overview.html)IdentityServer 文档中。
+为了使 ASP.NET Core web 应用程序使用 IdentityServer 4，必须将添加到 web 应用程序的 Visual Studio 解决方案。 有关详细信息，请参阅[概述](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html)IdentityServer 文档中。
 
 一旦 IdentityServer 包含在 web 应用程序的 Visual Studio 解决方案，它必须添加到 web 应用程序的 HTTP 请求处理管道，这是，以便它可以处理到 OpenID Connect 和 OAuth 2.0 终结点的请求。 这实现`Configure`中 web 应用程序的方法`Startup`类，如以下代码示例所示：
 
 ```csharp
-public void Configure(  
-    IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)  
+public void Configure(  
+    IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)  
 {  
-    ...  
-    app.UseIdentity();  
-    ...  
+    ...  
+    app.UseIdentity();  
+    ...  
 }
 ```
 
@@ -74,19 +74,19 @@ Web 应用程序的 HTTP 请求处理管道中，顺序非常重要。 因此，
 应在配置 IdentityServer`ConfigureServices`中 web 应用程序的方法`Startup`类通过调用`services.AddIdentityServer`方法，如在 eShopOnContainers 引用应用程序从下面的代码示例所示：
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)  
+public void ConfigureServices(IServiceCollection services)  
 {  
-    ...  
-    services.AddIdentityServer(x => x.IssuerUri = "null")  
-        .AddSigningCredential(Certificate.Get())                 
-        .AddAspNetIdentity<ApplicationUser>()  
-        .AddConfigurationStore(builder =>  
-            builder.UseSqlServer(connectionString, options =>  
-                options.MigrationsAssembly(migrationsAssembly)))  
-        .AddOperationalStore(builder =>  
-            builder.UseSqlServer(connectionString, options =>  
-                options.MigrationsAssembly(migrationsAssembly)))  
-        .Services.AddTransient<IProfileService, ProfileService>();  
+    ...  
+    services.AddIdentityServer(x => x.IssuerUri = "null")  
+        .AddSigningCredential(Certificate.Get())                 
+        .AddAspNetIdentity<ApplicationUser>()  
+        .AddConfigurationStore(builder =>  
+            builder.UseSqlServer(connectionString, options =>  
+                options.MigrationsAssembly(migrationsAssembly)))  
+        .AddOperationalStore(builder =>  
+            builder.UseSqlServer(connectionString, options =>  
+                options.MigrationsAssembly(migrationsAssembly)))  
+        .Services.AddTransient<IProfileService, ProfileService>();  
 }
 ```
 
@@ -97,39 +97,39 @@ public void ConfigureServices(IServiceCollection services)
 -   将连接到请求令牌的客户端。
 -   ASP.NET Core 标识。
 
->💡 **提示**： 动态加载 IdentityServer 4 配置。 IdentityServer 4 Api，可以从内存中列表的配置对象配置 IdentityServer。 在 eShopOnContainers 引用应用程序，这些内存中集合是硬编码到应用程序。 但是，在生产方案中它们可以是加载动态配置文件中或从数据库。
+>💡 **提示**:动态加载 IdentityServer 4 配置。 IdentityServer 4 Api，可以从内存中列表的配置对象配置 IdentityServer。 在 eShopOnContainers 引用应用程序，这些内存中集合是硬编码到应用程序。 但是，在生产方案中它们可以是加载动态配置文件中或从数据库。
 
-有关配置 IdentityServer 使用 ASP.NET Core 标识的信息，请参阅[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html)IdentityServer 文档中。
+有关配置 IdentityServer 使用 ASP.NET Core 标识的信息，请参阅[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html)IdentityServer 文档中。
 
 #### <a name="configuring-api-resources"></a>配置 API 资源
 
 配置 API 资源时`AddInMemoryApiResources`方法需要`IEnumerable<ApiResource>`集合。 下面的代码示例演示`GetApis`方法提供了此集合，在 eShopOnContainers 引用应用程序：
 
 ```csharp
-public static IEnumerable<ApiResource> GetApis()  
+public static IEnumerable<ApiResource> GetApis()  
 {  
-    return new List<ApiResource>  
-    {  
-        new ApiResource("orders", "Orders Service"),  
-        new ApiResource("basket", "Basket Service")  
-    };  
+    return new List<ApiResource>  
+    {  
+        new ApiResource("orders", "Orders Service"),  
+        new ApiResource("basket", "Basket Service")  
+    };  
 }
 ```
 
-此方法指定 IdentityServer 应保护订单和购物篮 Api。 因此，IdentityServer 托管访问这些 Api 调用时，将需要令牌。 有关详细信息`ApiResource`类型，请参阅[API 资源](https://identityserver4.readthedocs.io/en/release/reference/api_resource.html#refapiresource)IdentityServer 4 文档中。
+此方法指定 IdentityServer 应保护订单和购物篮 Api。 因此，IdentityServer 托管访问这些 Api 调用时，将需要令牌。 有关详细信息`ApiResource`类型，请参阅[API 资源](https://identityserver4.readthedocs.io/en/latest/reference/api_resource.html)IdentityServer 4 文档中。
 
 #### <a name="configuring-identity-resources"></a>配置标识资源
 
 配置标识资源时`AddInMemoryIdentityResources`方法需要`IEnumerable<IdentityResource>`集合。 标识资源是数据，例如用户 ID、 名称或电子邮件地址。 每个标识资源都有唯一的名称，并且任意声明类型可以分配给它，然后将包含在用户的标识令牌中。 下面的代码示例演示`GetResources`方法提供了此集合，在 eShopOnContainers 引用应用程序：
 
 ```csharp
-public static IEnumerable<IdentityResource> GetResources()  
+public static IEnumerable<IdentityResource> GetResources()  
 {  
-    return new List<IdentityResource>  
-    {  
-        new IdentityResources.OpenId(),  
-        new IdentityResources.Profile()  
-    };  
+    return new List<IdentityResource>  
+    {  
+        new IdentityResources.OpenId(),  
+        new IdentityResources.Profile()  
+    };  
 }
 ```
 
@@ -138,7 +138,7 @@ OpenID Connect 规范指定一些[标准标识资源](https://openid.net/specs/o
 > [!NOTE]
 > `IdentityResources`类支持所有 （openid、 电子邮件、 配置文件、 电话和地址） OpenID Connect 规范中定义的作用域。
 
-IdentityServer 还支持定义自定义标识资源。 有关详细信息，请参阅[定义自定义标识资源](https://identityserver4.readthedocs.io/en/release/topics/resources.html#defining-custom-identity-resources)IdentityServer 文档中。 有关详细信息`IdentityResource`类型，请参阅[标识资源](https://identityserver4.readthedocs.io/en/release/reference/identity_resource.html)IdentityServer 4 文档中。
+IdentityServer 还支持定义自定义标识资源。 有关详细信息，请参阅[定义自定义标识资源](http://docs.identityserver.io/en/latest/topics/resources.html#defining-custom-identity-resources)IdentityServer 文档中。 有关详细信息`IdentityResource`类型，请参阅[标识资源](https://identityserver4.readthedocs.io/en/latest/reference/identity_resource.html)IdentityServer 4 文档中。
 
 #### <a name="configuring-clients"></a>配置客户端
 
@@ -152,54 +152,54 @@ IdentityServer 还支持定义自定义标识资源。 有关详细信息，请�
 配置客户端时`AddInMemoryClients`方法需要`IEnumerable<Client>`集合。 以下代码示例演示用于 eShopOnContainers 中的移动应用配置`GetClients`方法提供了此集合，在 eShopOnContainers 引用应用程序：
 
 ```csharp
-public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
+public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUrl)
 {
-    return new List<Client>
-    {
-        ...
-        new Client
-        {
-            ClientId = "xamarin",
-            ClientName = "eShop Xamarin OpenId Client",
-            AllowedGrantTypes = GrantTypes.Hybrid,
-            ClientSecrets =
-            {
-                new Secret("secret".Sha256())
-            },
-            RedirectUris = { clientsUrl["Xamarin"] },
-            RequireConsent = false,
-            RequirePkce = true,
-            PostLogoutRedirectUris = { $"{clientsUrl["Xamarin"]}/Account/Redirecting" },
-            AllowedCorsOrigins = { "http://eshopxamarin" },
-            AllowedScopes = new List<string>
-            {
-                IdentityServerConstants.StandardScopes.OpenId,
-                IdentityServerConstants.StandardScopes.Profile,
-                IdentityServerConstants.StandardScopes.OfflineAccess,
-                "orders",
-                "basket"
-            },
-            AllowOfflineAccess = true,
-            AllowAccessTokensViaBrowser = true
-        },
-        ...
-    };
+    return new List<Client>
+    {
+        ...
+        new Client
+        {
+            ClientId = "xamarin",
+            ClientName = "eShop Xamarin OpenId Client",
+            AllowedGrantTypes = GrantTypes.Hybrid,
+            ClientSecrets =
+            {
+                new Secret("secret".Sha256())
+            },
+            RedirectUris = { clientsUrl["Xamarin"] },
+            RequireConsent = false,
+            RequirePkce = true,
+            PostLogoutRedirectUris = { $"{clientsUrl["Xamarin"]}/Account/Redirecting" },
+            AllowedCorsOrigins = { "http://eshopxamarin" },
+            AllowedScopes = new List<string>
+            {
+                IdentityServerConstants.StandardScopes.OpenId,
+                IdentityServerConstants.StandardScopes.Profile,
+                IdentityServerConstants.StandardScopes.OfflineAccess,
+                "orders",
+                "basket"
+            },
+            AllowOfflineAccess = true,
+            AllowAccessTokensViaBrowser = true
+        },
+        ...
+    };
 }
 ```
 
 此配置指定以下属性的数据：
 
--   `ClientId`： 客户端一个唯一 ID。
--   `ClientName`： 用于日志记录和许可屏幕客户端显示名称。
--   `AllowedGrantTypes`： 指定客户端要与 IdentityServer 进行交互的方式。 有关详细信息请参阅[配置身份验证流](#configuring_the_authentication_flow)。
--   `ClientSecrets`： 指定从令牌终结点请求令牌时使用的客户端机密凭据。
--   `RedirectUris`： 指定要返回的令牌或授权代码到允许的 Uri。
--   `RequireConsent`： 指定是否为必需的许可屏幕。
--   `RequirePkce`： 指定是否使用授权代码的客户端必须发送校验密钥。
--   `PostLogoutRedirectUris`： 指定要注销后重定向到允许的 Uri。
--   `AllowedCorsOrigins`： 指定客户端的源，这样，IdentityServer 可以允许从原点的跨域调用。
--   `AllowedScopes`： 指定客户端有权访问的资源。 默认情况下，客户端具有不能访问任何资源。
--   `AllowOfflineAccess`： 指定客户端是否可以请求刷新令牌。
+-   `ClientId`：客户端唯一 ID。
+-   `ClientName`：客户端显示名称，用于日志记录和许可屏幕。
+-   `AllowedGrantTypes`：指定客户端要与 IdentityServer 进行交互的方式。 有关详细信息请参阅[配置身份验证流](#configuring_the_authentication_flow)。
+-   `ClientSecrets`：指定从令牌终结点请求令牌时使用的客户端机密凭据。
+-   `RedirectUris`：指定要返回的令牌或授权代码到允许的 Uri。
+-   `RequireConsent`：指定是否为必需的许可屏幕。
+-   `RequirePkce`：指定是否使用授权代码的客户端必须发送校验密钥。
+-   `PostLogoutRedirectUris`：指定要注销后重定向到允许的 Uri。
+-   `AllowedCorsOrigins`：指定客户端的源，这样，IdentityServer 可以允许从原点的跨域调用。
+-   `AllowedScopes`：指定客户端有权访问的资源。 默认情况下，客户端具有不能访问任何资源。
+-   `AllowOfflineAccess`：指定是否在客户端可以请求刷新令牌。
 
 <a name="configuring_the_authentication_flow" />
 
@@ -214,7 +214,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clientsUr
 > [!TIP]
 > 使用混合身份验证流。 混合身份验证流可缓解多种攻击，适用于浏览器通道，并是想要检索访问令牌 （和可能是刷新令牌） 的本机应用程序的推荐的流程。
 
-有关身份验证流的详细信息，请参阅[授权类型](https://identityserver4.readthedocs.io/en/release/topics/grant_types.html)IdentityServer 4 文档中。
+有关身份验证流的详细信息，请参阅[授权类型](https://identityserver4.readthedocs.io/en/latest/topics/grant_types.html)IdentityServer 4 文档中。
 
 ### <a name="performing-authentication"></a>执行身份验证
 
@@ -224,7 +224,7 @@ EShopOnContainers 移动应用进行身份验证与 IdentityServer 具有混合�
 
 ![](authentication-and-authorization-images/sign-in.png "在登录过程的高级概述")
 
-**图 9-2:** 登录过程的高级概述
+**图 9-2:** 在登录过程的高级概述
 
 向发出登录请求`<base endpoint>:5105/connect/authorize`。 以下身份验证成功，IdentityServer 返回包含授权代码和一个标识令牌的身份验证响应。 授权代码然后发送到`<base endpoint>:5105/connect/token`，这会使用访问、 标识和刷新令牌进行响应。
 
@@ -238,48 +238,48 @@ EShopOnContainers 移动应用符号扩展的 IdentityServer 通过发送到请�
 
 #### <a name="signing-in"></a>登录
 
-当用户点击**登录名**按钮`LoginView`，则`SignInCommand`中`LoginViewModel`执行类时，它将依次执行`SignInAsync`方法。 下面的代码示例显示了此方法：
+当用户点击**登录名**按钮`LoginView`，则`SignInCommand`中`LoginViewModel`执行类时，它将依次执行`SignInAsync`方法。 下面的代码示例演示此方法：
 
 ```csharp
-private async Task SignInAsync()  
+private async Task SignInAsync()  
 {  
-    ...  
-    LoginUrl = _identityService.CreateAuthorizationRequest();  
-    IsLogin = true;  
-    ...  
+    ...  
+    LoginUrl = _identityService.CreateAuthorizationRequest();  
+    IsLogin = true;  
+    ...  
 }
 ```
 
 此方法将调用`CreateAuthorizationRequest`中的方法`IdentityService`类，该类在下面的代码示例所示：
 
 ```csharp
-public string CreateAuthorizationRequest()
+public string CreateAuthorizationRequest()
 {
-    // Create URI to authorization endpoint
-    var authorizeRequest = new AuthorizeRequest(GlobalSetting.Instance.IdentityEndpoint);
+    // Create URI to authorization endpoint
+    var authorizeRequest = new AuthorizeRequest(GlobalSetting.Instance.IdentityEndpoint);
 
-    // Dictionary with values for the authorize request
-    var dic = new Dictionary<string, string>();
-    dic.Add("client_id", GlobalSetting.Instance.ClientId);
-    dic.Add("client_secret", GlobalSetting.Instance.ClientSecret); 
-    dic.Add("response_type", "code id_token");
-    dic.Add("scope", "openid profile basket orders locations marketing offline_access");
-    dic.Add("redirect_uri", GlobalSetting.Instance.IdentityCallback);
-    dic.Add("nonce", Guid.NewGuid().ToString("N"));
-    dic.Add("code_challenge", CreateCodeChallenge());
-    dic.Add("code_challenge_method", "S256");
+    // Dictionary with values for the authorize request
+    var dic = new Dictionary<string, string>();
+    dic.Add("client_id", GlobalSetting.Instance.ClientId);
+    dic.Add("client_secret", GlobalSetting.Instance.ClientSecret); 
+    dic.Add("response_type", "code id_token");
+    dic.Add("scope", "openid profile basket orders locations marketing offline_access");
+    dic.Add("redirect_uri", GlobalSetting.Instance.IdentityCallback);
+    dic.Add("nonce", Guid.NewGuid().ToString("N"));
+    dic.Add("code_challenge", CreateCodeChallenge());
+    dic.Add("code_challenge_method", "S256");
 
-    // Add CSRF token to protect against cross-site request forgery attacks.
-    var currentCSRFToken = Guid.NewGuid().ToString("N");
-    dic.Add("state", currentCSRFToken);
+    // Add CSRF token to protect against cross-site request forgery attacks.
+    var currentCSRFToken = Guid.NewGuid().ToString("N");
+    dic.Add("state", currentCSRFToken);
 
-    var authorizeUri = authorizeRequest.Create(dic); 
-    return authorizeUri;
+    var authorizeUri = authorizeRequest.Create(dic); 
+    return authorizeUri;
 }
 
 ```
 
-此方法为 IdentityServer 的创建 URI[授权终结点](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html)，所需的参数。 授权终结点位于`/connect/authorize`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+此方法为 IdentityServer 的创建 URI[授权终结点](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)，所需的参数。 授权终结点位于`/connect/authorize`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
 > [!NOTE]
 > EShopOnContainers 移动应用的受攻击面减少通过实现 oauth 的 Code Exchange (PKCE) 扩展名的证明密钥。 PKCE 可防止截获如果正在使用授权代码。 这通过客户端生成机密的验证程序，在授权请求中传递的该哈希，并提供未经哈希的兑换授权代码时。 有关 PKCE 的详细信息，请参阅[代码 Exchange OAuth 公共客户端的 Proof Key](https://tools.ietf.org/html/rfc7636) Internet 工程任务组网站上。
@@ -288,36 +288,36 @@ public string CreateAuthorizationRequest()
 
 ![](authentication-and-authorization-images/login.png "Web 视图所显示的登录页")
 
-**图 9-4:** web 视图所显示的登录页
+**图 9-4:** Web 视图所显示的登录页
 
 完成登录后， [ `WebView` ](xref:Xamarin.Forms.WebView)将重定向到返回的 URI。 这`WebView`导航将导致`NavigateAsync`中的方法`LoginViewModel`类要执行下面的代码示例中所示：
 
 ```csharp
-private async Task NavigateAsync(string url)  
+private async Task NavigateAsync(string url)  
 {  
-    ...  
-    var authResponse = new AuthorizeResponse(url);  
-    if (!string.IsNullOrWhiteSpace(authResponse.Code))  
-    {  
-        var userToken = await _identityService.GetTokenAsync(authResponse.Code);  
-        string accessToken = userToken.AccessToken;  
+    ...  
+    var authResponse = new AuthorizeResponse(url);  
+    if (!string.IsNullOrWhiteSpace(authResponse.Code))  
+    {  
+        var userToken = await _identityService.GetTokenAsync(authResponse.Code);  
+        string accessToken = userToken.AccessToken;  
 
-        if (!string.IsNullOrWhiteSpace(accessToken))  
-        {  
-            Settings.AuthAccessToken = accessToken;  
-            Settings.AuthIdToken = authResponse.IdentityToken;  
+        if (!string.IsNullOrWhiteSpace(accessToken))  
+        {  
+            Settings.AuthAccessToken = accessToken;  
+            Settings.AuthIdToken = authResponse.IdentityToken;  
 
-            await NavigationService.NavigateToAsync<MainViewModel>();  
-            await NavigationService.RemoveLastFromBackStackAsync();  
-        }  
-    }  
-    ...  
+            await NavigationService.NavigateToAsync<MainViewModel>();  
+            await NavigationService.RemoveLastFromBackStackAsync();  
+        }  
+    }  
+    ...  
 }
 ```
 
-此方法分析包含在返回的 URI，该身份验证响应并到 IdentityServer 的前提是存在一个有效的授权代码，则发出请求[令牌终结点](https://identityserver4.readthedocs.io/en/release/endpoints/token.html)，传递的授权代码，PKCE 机密验证程序，以及其他必需的参数。 令牌终结点位于`/connect/token`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+此方法分析包含在返回的 URI，该身份验证响应并到 IdentityServer 的前提是存在一个有效的授权代码，则发出请求[令牌终结点](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)，传递的授权代码，PKCE 机密验证程序，以及其他必需的参数。 令牌终结点位于`/connect/token`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
->💡 **提示**： 验证返回的 Uri。 尽管 eShopOnContainers 移动应用不会验证返回的 URI，但最佳做法是验证返回的 URI 引用已知的位置，若要阻止打开重定向攻击。
+>💡 **提示**:验证返回的 Uri。 尽管 eShopOnContainers 移动应用不会验证返回的 URI，但最佳做法是验证返回的 URI 引用已知的位置，若要阻止打开重定向攻击。
 
 如果令牌终结点收到有效的授权代码和 PKCE 机密验证工具，它使用访问令牌、 标识令牌和刷新令牌的响应。 作为应用程序设置，然后存储的访问令牌 （它允许 API 资源的访问权限） 和标识令牌并执行页面导航。 因此，在 eShopOnContainers 移动应用中的总体效果是： 提供的用户都能成功进行身份验证与 IdentityServer，将用户导航到`MainView`页上，即[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)它显示`CatalogView`作为其所选的选项卡。
 
@@ -333,52 +333,52 @@ private async Task NavigateAsync(string url)
 创建了一个视图并导航到，`InitializeAsync`执行的视图关联的视图模型方法时，然后执行`Logout`方法的`LoginViewModel`类，该类在下面的代码示例所示：
 
 ```csharp
-private void Logout()  
+private void Logout()  
 {  
-    var authIdToken = Settings.AuthIdToken;  
-    var logoutRequest = _identityService.CreateLogoutRequest(authIdToken);  
+    var authIdToken = Settings.AuthIdToken;  
+    var logoutRequest = _identityService.CreateLogoutRequest(authIdToken);  
 
-    if (!string.IsNullOrEmpty(logoutRequest))  
-    {  
-        // Logout  
-        LoginUrl = logoutRequest;  
-    }  
-    ...  
+    if (!string.IsNullOrEmpty(logoutRequest))  
+    {  
+        // Logout  
+        LoginUrl = logoutRequest;  
+    }  
+    ...  
 }
 ```
 
-此方法将调用`CreateLogoutRequest`中的方法`IdentityService`类，并传入标识令牌检索应用程序设置作为参数。 有关应用程序设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。 下面的代码示例演示`CreateLogoutRequest`方法：
+此方法将调用`CreateLogoutRequest`中的方法`IdentityService`类，并传入标识令牌检索应用程序设置作为参数。 有关应用程序设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。 下面的代码示例说明 `CreateLogoutRequest` 方法：
 
 ```csharp
-public string CreateLogoutRequest(string token)  
+public string CreateLogoutRequest(string token)  
 {  
-    ...  
-    return string.Format("{0}?id_token_hint={1}&post_logout_redirect_uri={2}",   
-        GlobalSetting.Instance.LogoutEndpoint,  
-        token,  
-        GlobalSetting.Instance.LogoutCallback);  
+    ...  
+    return string.Format("{0}?id_token_hint={1}&post_logout_redirect_uri={2}",   
+        GlobalSetting.Instance.LogoutEndpoint,  
+        token,  
+        GlobalSetting.Instance.LogoutCallback);  
 }
 ```
 
-此方法创建到 IdentityServer 的 URI[结束会话终结点](https://identityserver4.readthedocs.io/en/release/endpoints/endsession.html#refendsession)，所需的参数。 结束会话终结点位于`/connect/endsession`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+此方法创建到 IdentityServer 的 URI[结束会话终结点](https://identityserver4.readthedocs.io/en/latest/endpoints/endsession.html#refendsession)，所需的参数。 结束会话终结点位于`/connect/endsession`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
 返回的 URI 存储在`LoginUrl`属性的`LoginViewModel`类。 虽然`IsLogin`属性是`true`，则[ `WebView` ](xref:Xamarin.Forms.WebView)中`LoginView`可见。 `WebView`数据绑定其[ `Source` ](xref:Xamarin.Forms.WebView.Source)属性设置为`LoginUrl`属性的`LoginViewModel`类，并因此对 IdentityServer 注销请求时`LoginUrl`属性设置为IdentityServer 的结束会话终结点。 IdentityServer 接收此请求时，前提是用户登录的是，注销时发生。 身份验证会跟踪与由从 ASP.NET Core cookie 身份验证中间件的 cookie。 因此，从 IdentityServer 注销删除身份验证 cookie 并将发送注销后重定向 URI 返回给客户。
 
 在移动应用中， [ `WebView` ](xref:Xamarin.Forms.WebView)将重定向到后注销重定向 URI。 这`WebView`导航将导致`NavigateAsync`中的方法`LoginViewModel`类要执行下面的代码示例中所示：
 
 ```csharp
-private async Task NavigateAsync(string url)  
+private async Task NavigateAsync(string url)  
 {  
-    ...  
-    Settings.AuthAccessToken = string.Empty;  
-    Settings.AuthIdToken = string.Empty;  
-    IsLogin = false;  
-    LoginUrl = _identityService.CreateAuthorizationRequest();  
-    ...  
+    ...  
+    Settings.AuthAccessToken = string.Empty;  
+    Settings.AuthIdToken = string.Empty;  
+    IsLogin = false;  
+    LoginUrl = _identityService.CreateAuthorizationRequest();  
+    ...  
 }
 ```
 
-此方法将清除标识令牌和应用程序设置中的访问令牌，并设置`IsLogin`属性设置为`false`，这将导致[ `WebView` ](xref:Xamarin.Forms.WebView)上`LoginView`页面变得不可见. 最后，`LoginUrl`属性设置为 URI 的 IdentityServer 的[授权终结点](https://identityserver4.readthedocs.io/en/release/endpoints/authorize.html)，带所需的参数，以准备在下次用户启动的登录。
+此方法将清除标识令牌和应用程序设置中的访问令牌，并设置`IsLogin`属性设置为`false`，这将导致[ `WebView` ](xref:Xamarin.Forms.WebView)上`LoginView`页面变得不可见. 最后，`LoginUrl`属性设置为 URI 的 IdentityServer 的[授权终结点](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)，带所需的参数，以准备在下次用户启动的登录。
 
 有关页面导航的信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 了解如何[ `WebView` ](xref:Xamarin.Forms.WebView)导航会导致视图模型方法执行，请参阅[调用导航使用行为](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)。 有关应用程序设置的信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
@@ -395,9 +395,9 @@ private async Task NavigateAsync(string url)
 
 ```csharp
 [Authorize]  
-public class BasketController : Controller  
+public class BasketController : Controller  
 {  
-    ...  
+    ...  
 }
 ```
 
@@ -410,7 +410,7 @@ IdentityServer 可以集成到授权工作流，它提供控制授权的访问�
 
 ![](authentication-and-authorization-images/authorization.png "通过访问令牌的授权")
 
-**图 9-5:** 授权的访问令牌
+**图 9-5:** 通过访问令牌的授权
 
 EShopOnContainers 移动应用与标识微服务进行通信和身份验证过程的一部分来请求访问令牌。 访问令牌然后转发给排序，然后将购物篮微服务作为访问请求的一部分公开的 Api。 访问令牌包含有关客户端和用户信息。 Api 然后使用该信息来授予对其数据的访问权限。 有关如何配置 IdentityServer 来保护 Api 的信息，请参阅[配置 API 资源](#configuring-api-resources)。
 
@@ -419,16 +419,16 @@ EShopOnContainers 移动应用与标识微服务进行通信和身份验证过�
 若要执行使用 IdentityServer 进行授权，必须将其授权中间件添加到 web 应用程序的 HTTP 请求管道。 中添加中间件`ConfigureAuth`中 web 应用程序的方法`Startup`类，该类从调用`Configure`方法，并从 eShopOnContainers 引用应用程序下面的代码示例所示：
 
 ```csharp
-protected virtual void ConfigureAuth(IApplicationBuilder app)  
+protected virtual void ConfigureAuth(IApplicationBuilder app)  
 {  
-    var identityUrl = Configuration.GetValue<string>("IdentityUrl");  
-    app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions  
-    {  
-        Authority = identityUrl.ToString(),  
-        ScopeName = "basket",  
-        RequireHttpsMetadata = false  
-    });  
-} 
+    var identityUrl = Configuration.GetValue<string>("IdentityUrl");  
+    app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions  
+    {  
+        Authority = identityUrl.ToString(),  
+        ScopeName = "basket",  
+        RequireHttpsMetadata = false  
+    });  
+} 
 ```
 
 此方法可确保使用有效的访问令牌可以只访问 API。 中间件验证传入令牌，确保将发送从受信任的颁发者，并验证该令牌有效用于接收它的 API。 因此，浏览到排序或购物篮控制器将返回 401 （未经授权） HTTP 状态代码，指示需要访问令牌。
@@ -441,8 +441,8 @@ protected virtual void ConfigureAuth(IApplicationBuilder app)
 下面的代码示例中所示，必须在请求中，包括向发出请求时进行排序和购物篮微服务，访问令牌，身份验证过程中，从 IdentityServer 获取：
 
 ```csharp
-var authToken = Settings.AuthAccessToken;  
-Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
+var authToken = Settings.AuthAccessToken;  
+Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), authToken);
 ```
 
 访问令牌存储为应用程序设置，和是从特定于平台的存储中检索到，包含在调用`GetOrderAsync`中的方法`OrderService`类。
@@ -450,12 +450,12 @@ Order = await _ordersService.GetOrderAsync(Convert.ToInt32(order.OrderNumber), a
 同样，访问令牌时必须包括将数据发送到 IdentityServer 受保护的 API，如下面的代码示例中所示：
 
 ```csharp
-var authToken = Settings.AuthAccessToken;  
-await _basketService.UpdateBasketAsync(new CustomerBasket  
+var authToken = Settings.AuthAccessToken;  
+await _basketService.UpdateBasketAsync(new CustomerBasket  
 {  
-    BuyerId = userInfo.UserId,   
-    Items = BasketItems.ToList()  
-}, authToken);
+    BuyerId = userInfo.UserId,   
+    Items = BasketItems.ToList()  
+}, authToken);
 ```
 
 从特定于平台的存储中检索和对调用中包含访问令牌`UpdateBasketAsync`中的方法`BasketService`类。
@@ -463,7 +463,7 @@ await _basketService.UpdateBasketAsync(new CustomerBasket
 `RequestProvider`类，在 eShopOnContainers 移动应用中，使用`HttpClient`类向 eShopOnContainers 引用应用程序公开的 RESTful Api 发出请求。 向排序，然后将购物篮 Api，这需要授权，使请求时有效的访问令牌必须包含在请求。 这通过将访问令牌添加到的标头来实现`HttpClient`实例，如下面的代码示例中所示：
 
 ```csharp
-httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 ```
 
 `DefaultRequestHeaders`的属性`HttpClient`类公开了与每个请求一起发送的标头和访问令牌添加到`Authorization`标头的字符串作为前缀`Bearer`。 当请求发送到 RESTful API 的值`Authorization`提取和验证，以确保它已从受信任的颁发者，发送和用来确定用户是否有权调用 API，它接收它的标头。
@@ -472,7 +472,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("
 
 ## <a name="summary"></a>总结
 
-有许多方法与 ASP.NET MVC web 应用程序进行通信的 Xamarin.Forms 应用中集成身份验证和授权。 EShopOnContainers 移动应用执行身份验证和授权与使用 IdentityServer 4 的容器化的标识微服务。 IdentityServer 是用于与 ASP.NET Core 标识来执行持有者令牌身份验证集成的 ASP.NET Core 的开放源代码 OpenID Connect 和 OAuth 2.0 框架。
+可以通过许多方法将身份验证和授权集成到与 ASP.NET MVC Web 应用程序进行通讯的 Xamarin.Forms 应用中， EShopOnContainers 移动应用执行身份验证和授权与使用 IdentityServer 4 的容器化的标识微服务。 IdentityServer 是用于与 ASP.NET Core 标识来执行持有者令牌身份验证集成的 ASP.NET Core 的开放源代码 OpenID Connect 和 OAuth 2.0 框架。
 
 对用户进行身份验证或用于访问资源，移动应用从 IdentityServer，请求安全令牌。 时访问资源，必须对需要授权的 Api 的请求中包含访问令牌。 IdentityServer 的中间件验证传入访问令牌，以确保它们会从受信任的颁发者，并且它们可以有效地与接收它们的 API 一起使用。
 

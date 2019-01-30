@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 8/29/2018
-ms.openlocfilehash: cdd57095b03c24472abec5646ee3a70350770d7c
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "34786169"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233583"
 ---
 # <a name="type-registrar-for-xamarinios"></a>适用于 Xamarin.iOS 的类型注册机构
 
@@ -22,10 +22,10 @@ ms.locfileid: "34786169"
 
 在启动期间，将注册 Xamarin.iOS:
 
-- 类与[[注册]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)为 Objective C 类的属性。
-- 类与[[类别]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute)为 Objective C 分类的属性。
-- 与接口[[协议]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/)作为 Objective C 协议的属性。
-- 具有成员[[导出]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)，使得 Objective C 来对其进行访问。
+- 类与[[注册]](xref:Foundation.RegisterAttribute)为 Objective C 类的属性。
+- 类与[[类别]](xref:ObjCRuntime.CategoryAttribute)为 Objective C 分类的属性。
+- 与接口[[协议]](xref:Foundation.ProtocolAttribute)作为 Objective C 协议的属性。
+- 具有成员[[导出]](xref:Foundation.ExportAttribute)，使得 Objective C 来对其进行访问。
 
 例如，考虑托管`Main`在 Xamarin.iOS 应用程序中常见的方法：
 

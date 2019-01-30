@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: a7a3bb8f720f1c6a2370a2510659693bb28ea09b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 96fce269784ad0ac41fd1685ac7ac6b957932bd8
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111481"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233167"
 ---
 # <a name="notification-management-in-xamarinios"></a>在 Xamarin.iOS 中的通知管理
 
 在 iOS 12 中，操作系统可以从通知中心的深层链接和设置应用到应用的通知管理屏幕。 此屏幕应允许用户选择加入并利用各种类型的通知的应用会发送。
 
-## <a name="sample-app-redgreennotifications"></a>示例应用程序： RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>应用程序示例：RedGreenNotifications
 
 若要查看通知管理的工作原理的示例，看一看[RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)示例应用程序。
 
@@ -28,8 +28,8 @@ ms.locfileid: "50111481"
 
 ## <a name="notification-management-screen"></a>通知管理屏幕
 
-在示例应用中，`ManageNotificationsViewController`定义允许用户独立地启用和禁用通知红色和绿色通知的用户界面。 它是一种标准 [`UIViewController`](https://developer.xamarin.com/api/type/UIKit.UIViewController/)
-包含[ `UISwitch` ](https://developer.xamarin.com/api/type/UIKit.UISwitch/)为每种通知类型。 切换为任何类型的通知开关将，保存在用户默认值，该类型的通知的用户的首选项：
+在示例应用中，`ManageNotificationsViewController`定义允许用户独立地启用和禁用通知红色和绿色通知的用户界面。 它是一种标准 [`UIViewController`](xref:UIKit.UIViewController)
+包含[ `UISwitch` ](xref:UIKit.UISwitch)为每种通知类型。 切换为任何类型的通知开关将，保存在用户默认值，该类型的通知的用户的首选项：
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -41,7 +41,7 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 > [!NOTE]
 > 通知管理屏幕还会检查用户已完全禁用应用的通知。 如果是这样，它会隐藏单个通知类型的切换。 为此，通知管理屏幕：
 >
-> - 调用[ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync()/) ，并检查[ `AuthorizationStatus` ](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationSettings.AuthorizationStatus/)属性。
+> - 调用[ `UNUserNotificationCenter.Current.GetNotificationSettingsAsync` ](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) ，并检查[ `AuthorizationStatus` ](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)属性。
 > - 隐藏单个通知类型切换，如果应用已完全禁用通知。
 > - 重新检查是否已被通知禁用应用程序移动到前台，因为用户可以启用/禁用通知 iOS 设置在任何时候每次。
 
@@ -61,7 +61,7 @@ partial void HandleTapRedNotificationButton(UIButton sender)
 iOS 的深层链接到应用的通知管理屏幕从通知中心和设置应用中的应用的通知设置。 若要实现此目的，应用必须：
 
 - 指示通知管理屏幕可通过传递`UNAuthorizationOptions.ProvidesAppNotificationSettings`到应用的通知授权请求。
-- 实现`OpenSettings`方法从[ `IUNUserNotificationCenterDelegate` ](https://developer.xamarin.com/api/type/UserNotifications.IUNUserNotificationCenterDelegate/)。
+- 实现`OpenSettings`方法从[ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate)。
 
 ### <a name="authorization-request"></a>授权请求
 

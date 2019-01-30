@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: 3f15eaf9171ac44b870239fb5ffa14edd6210360
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.openlocfilehash: c68cdc443f11ec6709a9d6fdde8ce10cd9db6733
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879298"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233674"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 绑定的概述
 
@@ -72,11 +72,11 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 ## <a name="how-binding-works"></a>绑定的工作原理
 
-可以使用[[注册]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)属性， [[导出]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)属性，并[手动 OBJECTIVE-C 的选择器调用](~/ios/internals/objective-c-selectors.md)一起以手动绑定新 （以前未绑定） 的 Objective C 类型。
+可以使用[[注册]](xref:Foundation.RegisterAttribute)属性， [[导出]](xref:Foundation.ExportAttribute)属性，并[手动 OBJECTIVE-C 的选择器调用](~/ios/internals/objective-c-selectors.md)一起以手动绑定新 （以前未绑定） 的 Objective C 类型。
 
-首先，找到你想要绑定的类型。 讨论目的 （以及简单起见），我们会将绑定[NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)类型 (其中已绑定中[Foundation.NSEnumerator](https://developer.xamarin.com/api/type/Foundation.NSEnumerator/); 下面的实现是只需例如目的)。
+首先，找到你想要绑定的类型。 讨论目的 （以及简单起见），我们会将绑定[NSEnumerator](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)类型 (其中已绑定中[Foundation.NSEnumerator](xref:Foundation.NSEnumerator); 下面的实现是只需例如目的)。
 
-其次，我们需要创建C#类型。 我们可能想要将此置于一个命名空间;Objective C 不支持命名空间，因为我们将需要使用`[Register]`属性来更改 Xamarin.iOS 将注册到 OBJECTIVE-C 运行时类型名称。 C#类型还必须继承自[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/):
+其次，我们需要创建C#类型。 我们可能想要将此置于一个命名空间;Objective C 不支持命名空间，因为我们将需要使用`[Register]`属性来更改 Xamarin.iOS 将注册到 OBJECTIVE-C 运行时类型名称。 C#类型还必须继承自[Foundation.NSObject](xref:Foundation.NSObject):
 
 ```csharp
 namespace Example.Binding {

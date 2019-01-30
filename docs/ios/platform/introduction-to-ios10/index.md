@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d1e0df95b2665f7e3b33a901271b11e1c243b1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123554"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233739"
 ---
 # <a name="introduction-to-ios-10"></a>IOS 10 简介
 
@@ -135,7 +135,7 @@ iOS 10 展示驾驶参与到应用程序的新方法使系统能够主动有用�
 - 使用 Siri 交互
 - QuickType 建议 
 
-应用程序公开此功能对系统使用一系列技术，如[NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/)，web 标记中，核心聚焦、 MapKit、 Media Player 和 UIKit。
+应用程序公开此功能对系统使用一系列技术，如[NSUserActivity](xref:Foundation.NSUserActivity)，web 标记中，核心聚焦、 MapKit、 Media Player 和 UIKit。
 
 若要获取详细信息，请参阅我们[简介主动建议](~/ios/platform/search/proactive-suggestions.md)指南。
 
@@ -198,11 +198,11 @@ iOS 10 包括一个新的语音 API，允许应用支持连续语音识别和转
 
 iOS 10 扩展的扩展范围像素格式和整个系统的核心图形、 Core 映像、 裸机和 AVFoundation 等框架的范围内所有颜色空间的支持。 对具有广泛的颜色显示设备的支持进一步减轻通过提供在整个图形堆栈整个此行为。
 
-此外， [UIKit](https://developer.xamarin.com/api/namespace/UIKit/)已修改才能在新扩展**sRGB**色彩空间，使其更轻松地混合中广泛的颜色色域显著的性能损失的颜色。
+此外， [UIKit](xref:UIKit)已修改才能在新扩展**sRGB**色彩空间，使其更轻松地混合中广泛的颜色色域显著的性能损失的颜色。
 
 使用宽颜色时，Apple 提供的以下最佳实践：
 
-- [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)现在使用 sRGB 颜色空间，将无法再将值与`0.0`到`1.0`范围。 如果应用依赖于上一次固定行为，它将需要修改适用于 iOS 10。
+- [UIColor](xref:UIKit.UIColor)现在使用 sRGB 颜色空间，将无法再将值与`0.0`到`1.0`范围。 如果应用依赖于上一次固定行为，它将需要修改适用于 iOS 10。
 - 当执行自定义绘图环境将进行配置的 sRGB 颜色空间`UIView`在 iPad Pro 上绘制。
 - 如果该应用程序执行的自定义呈现`UIImages`，使用新[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定为扩展范围或标准范围格式的使用。
 - 当使用核心图形或金属等低级别 API 提供图像处理，开发人员应使用支持 16 位浮点值的更大范围颜色空间和像素格式。 必要时，开发人员必须手动将颜色组件值。
@@ -229,7 +229,7 @@ Apple 引入了几个小组件系统，以确保小组件查看任何新的 iOS 
 - `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`类中已弃用 CloudKit 适用于 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)， [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)并[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/)类 （它们支持记录共享） 相反。
 - 多个[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription)已弃用的 Api （如基于区域和基于查询的订阅）。 使用[CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)并[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 相反。
 - [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)与通用内容相关的符号已被弃用。
-- `ADBannerView``ADInterstitialAd`和相关中的符号[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)类已被弃用。
+- `ADBannerView``ADInterstitialAd`和相关中的符号[UIViewController](xref:UIKit.UIViewController)类已被弃用。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)与浮点值的符号已被弃用。
 - `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 类已被弃用。 使用[用户通知](#User-Notifications)framework 相反。
 - `HandleActionForLocalNotification`， `HandleActionForRemoteNotification`，`DidReceiveLocalNotification`和`DidReceiveRemoteNotification`WatchKit 方法已被弃用。 使用`HandleActionForNotification`和`DidReceiveNotification`方法相反。

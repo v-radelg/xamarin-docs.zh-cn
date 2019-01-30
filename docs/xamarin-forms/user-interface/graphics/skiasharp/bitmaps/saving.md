@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 428a8cbda43736c56b748374dc6f97649036302a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057121"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233700"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>将 SkiaSharp 位图保存到文件
 
@@ -46,7 +46,7 @@ SkiaSharp 应用程序具有创建或修改位图后，应用程序可能想要�
 
 此外， [ `SKCodec` ](xref:SkiaSharp.SKCodec)类有两个方法名为`Create`，可以创建`SKCodec`从压缩源对象，并允许在解码过程中获取更多地涉及应用程序。 (`SKCodec`类在本文中所示[**进行动画处理 SkiaSharp 位图**](animating.md#gif-animation)与解码动画的 GIF 文件。)
 
-如果编码位图，则需要详细信息： 编码器必须知道应用程序要使用 （JPEG 或 PNG 或其他内容） 的特定文件格式。 如果需要有损格式，则编码还必须知道所需的质量级别。
+如果编码位图，则需要详细信息：编码器必须知道特定的文件格式应用程序想要使用 （JPEG 或 PNG 或其他内容）。 如果需要有损格式，则编码还必须知道所需的质量级别。
 
 `SKBitmap`类定义了一个[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法具有以下语法：
 
@@ -87,7 +87,7 @@ public interface IPhotoLibrary
 
 ### <a name="the-ios-implementation"></a>IOS 实现
 
-IOS 实现`SavePhotoAsync`使用[ `SaveToPhotosAlbum` ](https://developer.xamarin.com/api/member/UIKit.UIImage.SaveToPhotosAlbum/)方法`UIImage`:
+IOS 实现`SavePhotoAsync`使用[ `SaveToPhotosAlbum` ](xref:UIKit.UIImage.SaveToPhotosAlbum*)方法`UIImage`:
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary

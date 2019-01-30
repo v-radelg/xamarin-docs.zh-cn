@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 42e357c0fbb4b858866e15d638177d6823de0f09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112671"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233882"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定 OBJECTIVE-C 库
 
@@ -49,7 +49,7 @@ ms.locfileid: "50112671"
 [![](objective-c-libraries-images/00vs-sml.png "iOS 绑定库 iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
-> 注意： 有关项目的绑定**Xamarin.Mac**仅支持在 Visual Studio for mac。
+> 注意:绑定项目**Xamarin.Mac**仅支持在 Visual Studio for mac。
 
 -----
 
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 和 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 特性。
 
-当你使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)上盖 btouch 本机下的一个属性的属性实际上会绑定两个方法： getter 和 setter。 提供要导出的名称**basename** setter 计算通过预先计算的单词"set"，打开的第一个字母**basename**为大写和进行需要的选择器自变量。 这意味着，`[Export ("label")]`应用于属性实际上会绑定"标签"和"setLabel:"OBJECTIVE-C 方法。
+当你使用[ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)上盖 btouch 本机下的一个属性的属性实际上会绑定两个方法： getter 和 setter。 提供要导出的名称**basename** setter 计算通过预先计算的单词"set"，打开的第一个字母**basename**为大写和进行需要的选择器自变量。 这意味着，`[Export ("label")]`应用于属性实际上会绑定"标签"和"setLabel:"Objective C 的方法。
 
 有时 Objective C 属性不遵循上面所述的模式和名称，将手动覆盖。 在这些情况下可以控制该绑定通过使用生成的方法 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 属性 getter 或 setter，例如：
@@ -674,7 +674,7 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 ### <a name="binding-notifications"></a>绑定通知
 
-通知是发布到的消息`NSNotificationCenter.DefaultCenter`，作为一种机制，用于从一部分到另一个应用程序广播消息。 开发人员通常使用[NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)的[AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/)方法。 当应用程序将消息发送到通知中心时，它通常包含中存储的有效负载[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)字典。 此字典弱类型化，并获取它的信息是容易出错，因为用户通常需要在哪些键位于字典和可以存储在字典中的值的类型的文档中读取。 存在密钥有时可作为一个布尔值。
+通知是发布到的消息`NSNotificationCenter.DefaultCenter`，作为一种机制，用于从一部分到另一个应用程序广播消息。 开发人员通常使用[NSNotificationCenter](xref:Foundation.NSNotificationCenter)的[AddObserver](xref:Foundation.NSNotificationCenter.AddObserver(Foundation.NSString,System.Action{Foundation.NSNotification}))方法。 当应用程序将消息发送到通知中心时，它通常包含中存储的有效负载[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)字典。 此字典弱类型化，并获取它的信息是容易出错，因为用户通常需要在哪些键位于字典和可以存储在字典中的值的类型的文档中读取。 存在密钥有时可作为一个布尔值。
 
 Xamarin.iOS 绑定生成器提供了对开发人员可以将绑定通知的支持。 若要执行此操作，设置 [`[Notification]`](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute)
 属性也是属性上的使用标记 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)
@@ -703,7 +703,7 @@ public class MyClass {
 }
 ```
 
-你的代码用户然后可以轻松地订阅通知发布到[NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)通过使用如下代码：
+你的代码用户然后可以轻松地订阅通知发布到[NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)通过使用如下代码：
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -717,7 +717,7 @@ var token = MyClass.Notifications.ObserverDidStart ((notification) => {
 token.Dispose ();
 ```
 
-也可以调用[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/)并传递该令牌。 如果在通知中包含参数，则应指定一个帮助程序`EventArgs`接口，如下：
+也可以调用[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))并传递该令牌。 如果在通知中包含参数，则应指定一个帮助程序`EventArgs`接口，如下：
 
 ```csharp
 interface MyClass {
@@ -740,7 +740,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-将生成上述`MyScreenChangedEventArgs`类的`ScreenX`并`ScreenY`将提取的数据的属性[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)字典使用键"ScreenXKey"和"ScreenYKey"分别并应用正确的转换。 `[ProbePresence]`属性为生成器用来探测如果设置了密钥`UserInfo`，而不是尝试提取的值。 这用于项的状态与的值 （通常为布尔值） 的情况。
+将生成上述`MyScreenChangedEventArgs`类的`ScreenX`并`ScreenY`将提取的数据的属性[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)字典使用键"ScreenXKey"和"ScreenYKey"分别并应用正确的转换。 `[ProbePresence]`属性为生成器用来探测如果设置了密钥`UserInfo`，而不是尝试提取的值。 这用于项的状态与的值 （通常为布尔值） 的情况。
 
 这可以编写如下代码：
 
@@ -918,7 +918,7 @@ public class  XyzOptions {
 
 若要执行此操作，需要做一些事情：
 
-* 创建一个强类型化类，该子类[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)并为每个属性提供各种 getter 和 setter。
+* 创建一个强类型化类，该子类[DictionaryContainer](xref:Foundation.DictionaryContainer)并为每个属性提供各种 getter 和 setter。
 * 声明为采用的方法的重载`NSDictionary`以采用新的强类型化版本。
 
 可以手动，或者创建强类型化类，也可以使用生成器来为您完成工作。  首先我们将探讨如何手动执行此操作以便您了解正在运行的内容，然后自动的方法。
@@ -1404,5 +1404,5 @@ class Demo {
 ## <a name="related-links"></a>相关链接
 
 - [绑定示例](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

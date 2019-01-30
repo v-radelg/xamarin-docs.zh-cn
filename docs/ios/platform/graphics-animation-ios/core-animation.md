@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 3b214833de10848e69a65181cff12e3223a6b24a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111839"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233618"
 ---
 # <a name="core-animation-in-xamarinios"></a>在 Xamarin.iOS 中的核心动画
 
@@ -49,7 +49,7 @@ UIKit 提供了多种功能，可轻松地将动画添加到应用程序。 虽�
 
  `UIViewController` 通过视图控制器之间转换提供内置支持`PresentViewController`方法。 当使用`PresentViewController`，过渡到第二个控制器可以根据需要进行动画处理。
 
-例如，考虑具有两个控制器，其中涉及的第一个控制器中的按钮调用的应用程序`PresentViewController`以显示第二个控制器。 若要控制哪些转换动画用于显示第二个控制器，只需设置其[ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/)属性，如下所示：
+例如，考虑具有两个控制器，其中涉及的第一个控制器中的按钮调用的应用程序`PresentViewController`以显示第二个控制器。 若要控制哪些转换动画用于显示第二个控制器，只需设置其[ `ModalTransitionStyle` ](xref:UIKit.UIModalTransitionStyle)属性，如下所示：
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -90,7 +90,7 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` 此外采用`duration`参数，用于控制动画运行的时长，以及[ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/)指定动画等使用与缓动函数。 此外，可以指定动画完成时要调用的完成处理程序。
+`UIView.Transition` 此外采用`duration`参数，用于控制动画运行的时长，以及[ `options` ](xref:UIKit.UIViewAnimationOptions)指定动画等使用与缓动函数。 此外，可以指定动画完成时要调用的完成处理程序。
 
 以下屏幕截图显示图像之间的动画的转换视图时`TransitionFlipFromTop`使用：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: b98d1fcf0917b9e25d774a92d56bf90bdd291978
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 9d1f54fa4753ba2ef44ba9b8b48a84a3ca932c4b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998612"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233843"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>对于平板电脑和桌面应用程序的布局
 
@@ -86,7 +86,7 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 ### <a name="leveraging-masterdetailpage"></a>利用 MasterDetailPage
 
-[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)非常适合于较大的屏幕，尤其是在其中使用的 iPad 上[ `UISplitViewController` ](https://developer.xamarin.com/api/type/UIKit.UISplitViewController/)提供本机 iOS 体验。
+[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)非常适合于较大的屏幕，尤其是在其中使用的 iPad 上[ `UISplitViewController` ](xref:UIKit.UISplitViewController)提供本机 iOS 体验。
 
 审阅[此 Xamarin 博客文章](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/)若要查看如何适应您的用户界面，以便电话使用一种布局和较大的屏幕可以使用另一个 (使用`MasterDetailPage`)。
 

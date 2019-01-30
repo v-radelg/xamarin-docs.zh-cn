@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: cb56af300444020a543c16afb0dfb48015fc2153
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d39170d0109d7f81d3f02ec36381ebcd46c0143d
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102589"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233518"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>进度和活动指示器在 Xamarin.iOS
 
 很可能您的应用程序将需要执行长时间运行任务，例如加载或处理数据和这种延迟，可能会延迟导致更新 UI。 在此期间您应该始终使用进度指示器确信用户系统正忙于执行工作。 这使用户可以控制的应用程序正在处理其请求，它不会等待其输入，并可提供一种方法的详细介绍了它们需要等待的确切时间。
 
-iOS 提供两种主要方法来提供应用程序中的此进度指示： 活动指示器 (包括特定_网络_活动指示器) 和进度栏。
+iOS 提供了两种主要方法来提供此进度指示应用程序中：活动指示器 (包括特定_网络_活动指示器) 和进度栏。
 
 ## <a name="activity-indicator"></a>活动指示器
 
@@ -32,7 +32,7 @@ Apple 已使用活动指示器的以下建议：
 
 ### <a name="implementing-an-activity-indicator"></a>实现活动指示器
 
-通过实现活动指示器[ `UIActivityIndictorView` ](https://developer.xamarin.com/api/type/UIKit.UIActivityIndicatorView/)类，以指示的`UIActivity`正在进行。
+通过实现活动指示器[ `UIActivityIndictorView` ](xref:UIKit.UIActivityIndicatorView)类，以指示的`UIActivity`正在进行。
 
 ### <a name="activity-indicators-and-storyboards"></a>活动指示器和情节提要
 
@@ -68,7 +68,7 @@ Apple 已使用进度条的以下建议：
 
 ### <a name="implementing-an-progress-bar"></a>实现进度栏
 
-通过实例化来创建一个进度栏 [`UIProgressView`](https://developer.xamarin.com/api/type/UIKit.UIProgressView/)
+通过实例化来创建一个进度栏 [`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### <a name="progress-bars-and-storyboards"></a>进度条和情节提要
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 0645b326576a68c97479bc5b59aabaa104f87ae2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114257"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233817"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>在 Xamarin.iOS 应用程序传输安全
 
@@ -27,11 +27,11 @@ _应用程序传输安全 (ATS) 强制实施 internet 资源 （如应用程序�
 
 对于现有应用程序，实现`HTTPS`协议只要有可能。 为新的 Xamarin.iOS 应用程序，应使用`HTTPS`以独占方式与 internet 资源进行通信时。 此外，必须使用与正向保密的 TLS 版本 1.2 加密高级 API 通信。
 
-任何连接都使用[NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)， [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)或[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)将适用于 iOS 9 和 OS X 10.11 (El Capitan) 构建应用程序中默认情况下使用 ATS。
+任何连接都使用[NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或[NSUrlSession](xref:Foundation.NSUrlSession)将适用于 iOS 9 和 OS X 10.11 (El Capitan) 构建应用程序中默认情况下使用 ATS。
 
 ## <a name="default-ats-behavior"></a>默认 ATS 行为
 
-由于默认情况下，所有连接使用适用于 iOS 9 和 OS X 10.11 (El Capitan) 都构建应用程序中启用了 ATS [NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)， [CFUrl](https://developer.xamarin.com/api/type/CoreFoundation.CFUrl/)或[NSUrlSession](https://developer.xamarin.com/api/type/Foundation.NSUrlSession/)收费依据ATS 安全要求。 如果你的连接不能满足这些要求，它们将失败并出现异常。
+由于默认情况下，所有连接使用适用于 iOS 9 和 OS X 10.11 (El Capitan) 都构建应用程序中启用了 ATS [NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或[NSUrlSession](xref:Foundation.NSUrlSession)收费依据ATS 安全要求。 如果你的连接不能满足这些要求，它们将失败并出现异常。
 
 ### <a name="ats-connection-requirements"></a>ATS 连接要求
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 554c96cdb46041b75a48523cc2952f05d2a7b1db
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564000"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233553"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的情节提要简介
 
@@ -249,7 +249,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-在创建情节提要使用设计器时，IDE 将自动添加[[注册]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)顶部的特性`designer.cs`类，并传入的字符串标识符，这就相当于中指定的情节提要 ID上一步。 这会链接 C# 到情节提要中相关的场景。
+在创建情节提要使用设计器时，IDE 将自动添加[[注册]](xref:Foundation.RegisterAttribute)顶部的特性`designer.cs`类，并传入的字符串标识符，这就相当于中指定的情节提要 ID上一步。 这会链接 C# 到情节提要中相关的场景。
 
 你可能想要添加现有类的某个时刻**不**设计器中创建。 在这种情况下，会将此类注册为正常：
 
@@ -320,13 +320,13 @@ public partial class MainViewController : UIViewController
 1. 现在，让我们来构建我们的 UI 和添加到列出的其他视图`MainViewController`以使其看起来在下面的屏幕截图中的类似的：
 
     - UITextField
-        - 名称： PasswordTextField
-        - 输入密码占位符：
+        - 姓名:PasswordTextField
+        - 占位符：输入密码
     - UILabel
-        - 文本: 错误： 错误的密码。 不应传递 ！
-        - 颜色： 红色
-        - 对齐方式： 中心
-        - 行： 2
+        - 文本：错误：错误的密码。 不应传递 ！
+        - 颜色：红色
+        - 对齐方式：居中
+        - 代码行：2
         - 选中隐藏复选框 
         
     [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)

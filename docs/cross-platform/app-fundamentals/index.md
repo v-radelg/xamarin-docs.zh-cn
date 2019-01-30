@@ -6,12 +6,12 @@ ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 3a2c3f98e3ba83db0794a68ff1d62a9845a111c0
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: bfca620848bef174e78d9d34b6fdc497dda8f1de
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270184"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233219"
 ---
 # <a name="sharing-code-on-multiple-platforms"></a>共享多个平台上的代码
 
@@ -33,10 +33,14 @@ ms.locfileid: "39270184"
 
 可移植类库项目，可以生成和分发包含共享的代码在多个平台上运行的程序集。 若要创建可移植类库 （或"PCL"），首先选择要为目标，然后针对组定义这些平台的配置文件中提供.NET Framework 的子集编写代码的平台。 Pcl 被视为最新版本的 Visual Studio; 中不推荐使用建议改为使用.NET Standard 2.0 的开发人员。
 
-## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 项目： 用于代码共享的多平台库](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 项目：用于代码共享的多平台库](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
 可以从 PCL 或.NET standard 项目中; 自动生成 NuGet 包以及共享的项目打包到"bait 和 switch"NuGet 包以使用单独的 NuGet 项目类型。 本部分介绍如何创建每个代码共享方案的 NuGet 包。
 
 ## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[手动为 Xamarin 创建 NuGet 包](~/cross-platform/app-fundamentals/nuget-manual.md)
 
 创建使用 Xamarin 平台的 NuGet 包的技巧。
+
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[使用跨平台 Xamarin 项目中的 C/c + + 库](~/cross-platform/cpp/index.md)
+
+此技术使您可以将分离的 C/c + + 库，库演变C#NuGet 和 Xamarin 应用程序中的绑定。 功能提供的本机平台的 C/c + + 库，但所有特定于平台的代码都是独立于最终的 Xamarin 应用程序，允许使用任何代码重复的最大可能性能。 

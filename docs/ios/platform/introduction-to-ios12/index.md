@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
-ms.openlocfilehash: 81375e8c66e5504604d0d4cb3be34afd58f4269d
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615143"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233830"
 ---
 # <a name="introduction-to-ios-12"></a>IOS 12 简介
 
@@ -80,7 +80,7 @@ iOS 12 简化用户和开发人员可以使用的密码：
 与 iOS 12、 Apple 便已弃用：
 
 - OpenGL ES[鼓励开发人员](https://developer.apple.com/ios/whats-new/)采用裸机。
-- [`UIWebView`](https://developer.xamarin.com/api/type/UIKit.UIWebView/)[以便获取`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
+- [`UIWebView`](xref:UIKit.UIWebView)[以便获取`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
 
 ## <a name="related-links"></a>相关链接
 

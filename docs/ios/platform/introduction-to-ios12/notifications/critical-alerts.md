@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 4f847a86f3f92bcf7168c2e104471e1ca052969c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 699d19228d2dee92f7a730bba4186a3aa5f21b04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130927"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233232"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Xamarin.iOS 中的严重警报
 
@@ -28,8 +28,8 @@ ms.locfileid: "50130927"
 
 应用的通知授权请求会提示用户允许或禁止应用的通知。 如果通知授权请求要求提供发送严重警报的权限，应用将还使用户有机会选择启用严重警报。
 
-下面的代码请求将发送严重警报和标准通知和声音通过传递相应的权限 [`UNAuthorizationOptions`](https://developer.xamarin.com/api/type/UserNotifications.UNAuthorizationOptions/)
-值复制到[ `RequestAuthorization` ](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.RequestAuthorization/):
+下面的代码请求将发送严重警报和标准通知和声音通过传递相应的权限 [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+值复制到[ `RequestAuthorization` ](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,7 +45,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>本地严重警报
 
-若要发送本地严重警报，创建 [`UNMutableNotificationContent`](https://developer.xamarin.com/api/type/UserNotifications.UNMutableNotificationContent/)
+若要发送本地严重警报，创建 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
 并设置其`Sound`属性为：
 
 - `UNNotificationSound.DefaultCriticalSound`它使用默认的重要通知声音。

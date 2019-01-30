@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 923eebc2674abdbbd66d9db11bebf9f503928569
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3c46aa1244699671d46560b0029197981a86d005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107314"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233323"
 ---
 # <a name="search-bars-in-xamarinios"></a>在 Xamarin.iOS 中的搜索栏
 
@@ -84,7 +84,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
 
 - **文本、 占位符，提示符**– 这些属性用于提供建议，并指示用户如何使用搜索栏。 例如，如果您的应用程序显示的存储列表您可以使用提示属性来建议，用户可以"输入城市、 文章名称或邮政编码"
 - **搜索样式**– 你可以设置为在搜索栏**Prominent**或**最小**。 使用重要染色屏幕上，除了搜索栏，导致焦点要绘制到搜索栏中的其他所有内容。 最小样式搜索栏将混合使用其周围的环境。
-- **功能**– 仅启用这些属性显示的 UI 元素。 对于这些通过引发正确的事件中所述，必须实现的功能[搜索栏 API 文档](https://developer.xamarin.com/api/type/UIKit.UISearchBar/)
+- **功能**– 仅启用这些属性显示的 UI 元素。 对于这些通过引发正确的事件中所述，必须实现的功能[搜索栏 API 文档](xref:UIKit.UISearchBar)
     - 显示搜索结果 / 书签按钮 – 显示在搜索栏搜索结果或书签图标
     - 显示取消按钮-允许用户从搜索函数退出。 建议选择此。
     - 显示作用域栏 – 这样，用户可以将其搜索范围限制。 例如，音乐应用程序中搜索时，用户可以选择是他们想要搜索 Apple 音乐或其库的特定歌曲或艺术家。 若要显示的各种选项，添加一个数组的书名引入**ScopeBarTitles**属性。

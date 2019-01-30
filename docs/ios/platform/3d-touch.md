@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 08edd3166df8392a5f3e7485a6572f0c94a38f62
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 60751437b891579c97acee0e032defcca2b510f6
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563649"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233856"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS 中的三维点触控简介
 
@@ -37,13 +37,13 @@ _本文介绍如何使用新 iPhone 6s 和 iPhone 6s Plus 3D Touch 应用程序�
 
 ## <a name="pressure-sensitivity"></a>压力敏感度
 
-如上所述，通过使用新属性[UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)类可以测量的用户将应用到 iOS 设备的屏幕的压力，并在用户界面中使用此信息。 例如，画笔笔画更透明或不透明基于上进行的压力。
+如上所述，通过使用新属性[UITouch](xref:UIKit.UITouch)类可以测量的用户将应用到 iOS 设备的屏幕的压力，并在用户界面中使用此信息。 例如，画笔笔画更透明或不透明基于上进行的压力。
 
 [![](3d-touch-images/pressure01.png "呈现为更透明或不透明画笔笔画根据的压力量")](3d-touch-images/pressure01.png#lightbox)
 
 由于 3D Touch，而如果 iOS 9 （或更高版本） 上运行你的应用和 iOS 设备是否能够支持 3D Touch 压力中的更改将导致`TouchesMoved`事件被引发。
 
-例如，当监视`TouchesMoved`的事件[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)，可以使用以下代码以获取该用户将应用于屏幕的当前压力：
+例如，当监视`TouchesMoved`的事件[UIView](xref:UIKit.UIView)，可以使用以下代码以获取该用户将应用于屏幕的当前压力：
 
 ```csharp
 public override void TouchesMoved (NSSet touches, UIEvent evt)
@@ -62,7 +62,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 }
 ```
 
-`MaximumPossibleForce`属性返回的最大可能值`Force`的属性[UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/)基于 iOS 设备上运行应用。
+`MaximumPossibleForce`属性返回的最大可能值`Force`的属性[UITouch](xref:UIKit.UITouch)基于 iOS 设备上运行应用。
 
 > [!IMPORTANT]
 > 压力中的更改将导致`TouchesMoved`事件被引发，即使 X / Y 坐标未发生更改。 由于此更改的行为，应为准备 iOS 应用`TouchesMoved`事件将调用频率和 x / Y 坐标与上一相同`TouchesMoved`调用。
@@ -70,7 +70,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 
 
-有关详细信息，请参阅 Apple [TouchCanvas： 高效且有效地使用 UITouch](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)示例应用程序和[UITouch 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)。
+有关详细信息，请参阅 Apple 的[TouchCanvas:高效且有效地使用 UITouch](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)示例应用程序和[UITouch 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)。
 
 <a name="Peek-and-Pop" />
 
@@ -198,7 +198,7 @@ public override void ViewDidLoad ()
 
 此处，我们将调用`RegisterForPreviewingWithDelegate`的实例方法`PreviewingDelegate`我们在上面创建。 在支持 3D Touch 的 iOS 设备，用户可以按硬上快速地概览在它的项。 如果他们甚至很难按，该项将弹入其标准显示视图。
 
-有关详细信息，请参阅我们[iOS 9 ApplicationShortcuts 示例](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)和 Apple [ViewControllerPreviews： 使用预览 Api UIViewController](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)示例应用[UIPreviewAction 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)， [UIPreviewActionGroup 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)并[UIPreviewActionItem 协议参考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)。
+有关详细信息，请参阅我们[iOS 9 ApplicationShortcuts 示例](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)和 Apple 的[ViewControllerPreviews:使用预览 Api UIViewController](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)示例应用[UIPreviewAction 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)， [UIPreviewActionGroup 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)和[UIPreviewActionItem协议参考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)。
 
 <a name="Quick-Actions" />
 
@@ -429,7 +429,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 应注意，可以创建混合使用静态和动态快速操作项 （如我们在这里），您并不局限于一个或另一个。
 
-有关详细信息，请我们[iOS 9 ViewControllerPreview 示例](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)，并查看 Apple [ApplicationShortcuts： 使用 UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)示例应用[UIApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)， [UIMutableApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)并[UIApplicationShortcutIcon 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)。
+有关详细信息，请我们[iOS 9 ViewControllerPreview 示例](https://developer.xamarin.com/samples/monotouch/iOS9/ViewControllerPreview/)，请参阅 Apple 的[ApplicationShortcuts:使用 UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)示例应用[UIApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)， [UIMutableApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)和[UIApplicationShortcutIcon 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)。
 
 <a name="Testing-3D-Touch-in-the-Simulator" />
 

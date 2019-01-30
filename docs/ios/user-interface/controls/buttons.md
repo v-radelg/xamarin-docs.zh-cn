@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: a98ddc2622682f2c105a6aff32e94bd92a5b11f2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "38985999"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233245"
 ---
 # <a name="buttons-in-xamarinios"></a>在 Xamarin.iOS 中的按钮
 
@@ -75,7 +75,7 @@ button.TouchUpInside += (sender, e) => {
 ```
 
 > [!NOTE]
-> `TouchUpInside` 不是唯一可用的按钮事件。 `UIButton` 是的一个子类`UIControl`，用于定义[多个不同事件](https://developer.xamarin.com/api/type/UIKit.UIControlEvent/)。
+> `TouchUpInside` 不是唯一可用的按钮事件。 `UIButton` 是的一个子类`UIControl`，用于定义[多个不同事件](xref:UIKit.UIControlEvent)。
 
 ### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>使用 iOS 设计器指定按钮事件处理程序
 
@@ -90,7 +90,7 @@ button.TouchUpInside += (sender, e) => {
 `UIButton` 每个控件可以存在于多个不同的状态，指定由`UIControlState`值 – `Normal`， `Disabled`， `Focused`， `Highlighted`，等等。每种状态，可以提供以编程方式或使用 iOS 设计器指定一个唯一样式。
 
 > [!NOTE]
-> 有关完整列表的所有`UIControlState`值，请参阅 [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> 有关完整列表的所有`UIControlState`值，请参阅 [`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > 文档。
 
 例如，若要设置标题颜色和阴影颜色`UIControlState.Normal`:
@@ -123,7 +123,7 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlStat
 具体取决于是否用户接触到按钮，或不，它将呈现为以下映像之一 (`UIControlState.Normal`，`UIControlState.Highlighted`和`UIControlState.Selected`指出，分别):
 
 ![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
-![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted") 
+![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted")
 ![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
 
 有关如何使用自定义按钮的详细信息，请参阅[使用图像作为按钮](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)方案。

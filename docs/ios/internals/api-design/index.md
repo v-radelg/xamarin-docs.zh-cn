@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 56f9cbdae565f0d89463742377ec2311d8e375ac
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 75904ad91df7795c538e736eabb6c6000847b449
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235046"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233648"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 设计
 
@@ -92,9 +92,9 @@ Xamarin.iOS 包括大量的程序集构成*Xamarin.iOS 配置文件*。 [程序�
 
 #### <a name="foundation"></a>Foundation
 
-[Foundation](https://developer.xamarin.com/api/namespace/Foundation/)命名空间提供的基本数据类型旨在与属于 iOS Objective C Foundation 框架进行互操作和它是面向对象编程在 OBJECTIVE-C 中的基础
+[Foundation](xref:Foundation)命名空间提供的基本数据类型旨在与属于 iOS Objective C Foundation 框架进行互操作和它是面向对象编程在 OBJECTIVE-C 中的基础
 
-Xamarin.iOS 反映在 C# 中从 OBJECTIVE-C 类的层次结构 例如，OBJECTIVE-C 的基本类[NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以从 C# 中，通过[Foundation.NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)。
+Xamarin.iOS 反映在 C# 中从 OBJECTIVE-C 类的层次结构 例如，OBJECTIVE-C 的基本类[NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)可以从 C# 中，通过[Foundation.NSObject](xref:Foundation.NSObject)。
 
 尽管此命名空间提供了基础的 Objective C 的基础类型的绑定，但在少数情况下我们具有映射的基础类型到.NET 类型。 例如：
 
@@ -107,13 +107,13 @@ Xamarin.iOS 反映在 C# 中从 OBJECTIVE-C 类的层次结构 例如，OBJECTIV
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)类型是 Objective C 的所有绑定的基础。 Xamarin.iOS 类型镜像 iOS 产品 CocoaTouch Api 中的类型的两个类: （通常称为 CoreFoundation 类型） 的 C 类型和 Objective C 类型 （这些都派生 NSObject 类）。
+[NSObject](xref:Foundation.NSObject)类型是 Objective C 的所有绑定的基础。 Xamarin.iOS 类型镜像 iOS 产品 CocoaTouch Api 中的类型的两个类: （通常称为 CoreFoundation 类型） 的 C 类型和 Objective C 类型 （这些都派生 NSObject 类）。
 
-对于每个镜像的非托管的类型的类型，则可以获取本机对象通过[处理](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)属性。
+对于每个镜像的非托管的类型的类型，则可以获取本机对象通过[处理](xref:Foundation.NSObject.Handle)属性。
 
 虽然 Mono 将提供的所有对象，垃圾回收`Foundation.NSObject`实现[System.IDisposable](xref:System.IDisposable)接口。 这意味着可以显式释放任何给定 NSObject 的资源而无需等待垃圾回收器来启动中。 使用大量 NSObjects，例如，可能会保存到较大的数据块的指针的 UIImages 时，这很重要。
 
-如果您的类型需要执行确定性终结，重写[NSObject.Dispose(bool) 方法](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose)Dispose 的参数"bool disposing"，如果设置为 true，它表示，因为调用 Dispose 方法和用户在对象上的显式调用的 Dispose （)。 如果值为 false，这意味着，在 Dispose (bool disposing) 方法正在从终结器上调用终结器线程。 []()
+如果您的类型需要执行确定性终结，重写[NSObject.Dispose(bool) 方法](xref:Foundation.NSObject.Dispose(System.Boolean))Dispose 的参数"bool disposing"，如果设置为 true，它表示，因为调用 Dispose 方法和用户在对象上的显式调用的 Dispose （)。 如果值为 false，这意味着，在 Dispose (bool disposing) 方法正在从终结器上调用终结器线程。 []()
 
 
 ##### <a name="categories"></a>类别
@@ -198,7 +198,7 @@ PreserveAttribute 阶段处理时应用程序以减少其大小是用于告知 m
 
 #### <a name="uikit"></a>UIKit
 
-[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)命名空间包含到的所有用户界面组件组成的 C# 类形式的 CocoaTouch 的一对一映射。 已修改该 API 遵循 C# 语言中使用的约定。
+[UIKit](xref:UIKit)命名空间包含到的所有用户界面组件组成的 C# 类形式的 CocoaTouch 的一对一映射。 已修改该 API 遵循 C# 语言中使用的约定。
 
 C# 委托提供用于常见操作。 请参阅[委托](#Delegates)部分，了解详细信息。
 
@@ -283,7 +283,7 @@ Objective C 和 C# 中的每种语言具有不同的含义，对于 word 委托�
 -  若要驱动控件的行为。
 
 
-编程模式旨在最大程度减少创建派生类可以更改控件的行为。 此解决方案是在精神上类似于其他 GUI 工具包做了什么多年： Gtk 的信号，Qt 槽、 Winforms 事件、 WPF/Silverlight 事件，等等。 若要避免出现数百个接口 （一个用于每个操作），或要求开发人员实现他们不需要太多方法，Objective C 支持可选的方法定义。 这是不同于 C# 接口需要实现的所有方法。
+编程模式旨在最大程度减少创建派生类可以更改控件的行为。 此解决方案是在精神上类似于其他 GUI 工具包做了什么多年来：Gtk 的发出信号，Qt 槽、 Winforms 事件、 WPF/Silverlight 事件，等等。 若要避免出现数百个接口 （一个用于每个操作），或要求开发人员实现他们不需要太多方法，Objective C 支持可选的方法定义。 这是不同于 C# 接口需要实现的所有方法。
 
 在 OBJECTIVE-C 的类中，您将看到使用此编程模式的类公开的属性，通常称为`delegate`，这是需要实现该接口的必需部分和零个或多个可选部分。
 
@@ -301,9 +301,9 @@ Objective C 和 C# 中的每种语言具有不同的含义，对于 word 委托�
 
 对于许多类型，Xamarin.iOS 会自动创建相应委托将转发`UIWebViewDelegate`到 C# 事件上的调用。 对于 `UIWebView`：
 
--  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)方法映射到[UIWebView.LoadStarted](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadStarted/)事件。
--  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)方法映射到[UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/)事件。
--  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)方法映射到[UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/)事件。
+-  [WebViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)方法映射到[UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted)事件。
+-  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)方法映射到[UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished)事件。
+-  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)方法映射到[UIWebView.LoadError](xref:UIKit.UIWebView.LoadError)事件。
 
 例如，此简单程序记录加载 web 查看开始和结束时间：
 
@@ -339,7 +339,7 @@ void SetupTextField (UITextField tf)
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>强类型化通过委托属性
 
-如果您不想使用事件，可以提供您自己[UIWebViewDelegate](https://developer.xamarin.com/api/type/UIKit.UIWebViewDelegate/)子类并将其分配给[UIWebView.Delegate](https://developer.xamarin.com/api/property/UIKit.UIWebView.Delegate/)属性。 后分配 UIWebView.Delegate，UIWebView 事件调度机制将不再起作用，并且将发生相应事件时被调用 UIWebViewDelegate 方法。
+如果您不想使用事件，可以提供您自己[UIWebViewDelegate](xref:UIKit.UIWebViewDelegate)子类并将其分配给[UIWebView.Delegate](xref:UIKit.UIWebView.Delegate)属性。 后分配 UIWebView.Delegate，UIWebView 事件调度机制将不再起作用，并且将发生相应事件时被调用 UIWebViewDelegate 方法。
 
 例如，此简单类型记录加载 web 视图所需的时间：
 
@@ -368,9 +368,9 @@ web.Delegate = new Notifier ();
 
 上述操作将创建 UIWebViewer 和它将指示它将消息发送到通知程序，我们创建对消息作出响应的类的实例。
 
-此模式还用来控制对于某些控件，例如在 UIWebView 情况下，行为[UIWebView.ShouldStartLoad](https://developer.xamarin.com/api/property/UIKit.UIWebView.ShouldStartLoad/)属性允许`UIWebView`到控件的实例是否`UIWebView`将加载页上或不。
+此模式还用来控制对于某些控件，例如在 UIWebView 情况下，行为[UIWebView.ShouldStartLoad](xref:UIKit.UIWebView.ShouldStartLoad)属性允许`UIWebView`到控件的实例是否`UIWebView`将加载页上或不。
 
-该模式还用于根据几个控件提供的数据。 例如， [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/)控件是一个功能强大的表呈现控件 – 和外观和内容由的实例[UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
+该模式还用于根据几个控件提供的数据。 例如， [UITableView](xref:UIKit.UITableView)控件是一个功能强大的表呈现控件 – 和外观和内容由的实例[UITableViewDataSource](xref:UIKit.UITableViewDataSource)
 
 <a name="WeakDelegate"/>
 
@@ -379,7 +379,7 @@ web.Delegate = new Notifier ();
 除了强类型化的属性，还有，开发人员可根据需要以不同的方式绑定内容的弱类型化的委托。
 强类型化 everywhere`Delegate`属性将显示在 Xamarin.iOS 的绑定，相应`WeakDelegate`还公开属性。
 
-使用时`WeakDelegate`，你有责任正确修饰类使用[导出](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)属性来指定选择器。 例如：
+使用时`WeakDelegate`，你有责任正确修饰类使用[导出](xref:Foundation.ExportAttribute)属性来指定选择器。 例如：
 
 ```csharp
 class Notifier : NSObject  {
@@ -500,7 +500,7 @@ C#方法并不重要; 名称最重要的就是传递给 [Export] 特性的字符
 
 <a name="Models" />
 
-#### <a name="models"></a>模型
+#### <a name="models"></a>Models
 
 在 UIKit 存储设施或响应程序使用的帮助器类实现中，这些通常称为 Objective C 代码中的代理，以及作为协议实现它们。
 
@@ -676,7 +676,7 @@ public Foo (NSCoder coder)
 
 此构造函数提供的用例，该对象从 NSCoding 实例初始化的位置。 有关详细信息，请参阅 Apple 的[存档和序列化编程指南。](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)
 
-#### <a name="exceptions"></a>异常
+#### <a name="exceptions"></a>Exceptions
 
 Xamarin.iOS API 设计不会为 C# 异常引发 Objective C 异常。 设计强制执行，第一个位置中没有垃圾回收发送到 OBJECTIVE-C 的世界和过无效的数据之前，必须生成任何异常的错误绑定本身传递到 OBJECTIVE-C 的世界。
 

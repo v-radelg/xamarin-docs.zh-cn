@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: b51ee6b547cc53761f23379e7233bb710090a61b
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.openlocfilehash: 5d3c8b6bd8f7f788a1de74feddf7fcb378fa5818
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "39351725"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233635"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS OBJECTIVE-C 选择器
 
@@ -36,9 +36,9 @@ Objective C 中的消息有关的详细信息，看一看 Apple[使用对象](ht
 此 API 具有以下特征：
 
 - 返回类型是`CGSize`统一 api。
-- `font`参数是[UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (和类型 （间接） 派生自[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/))，并映射到[System.IntPtr](xref:System.IntPtr)。
+- `font`参数是[UIFont](xref:UIKit.UIFont) (和类型 （间接） 派生自[NSObject](xref:Foundation.NSObject)，并映射到[System.IntPtr](xref:System.IntPtr)。
 - `width`参数， `CGFloat`，映射到`nfloat`。
-- `lineBreakMode`参数， [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)，已在作为 Xamarin.iOS 绑定 [`UILineBreakMode`](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)
+- `lineBreakMode`参数， [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)，已在作为 Xamarin.iOS 绑定 [`UILineBreakMode`](xref:UIKit.UILineBreakMode)
 枚举。
 
 将它放在一起，`objc_msgSend`声明应匹配：
@@ -147,9 +147,9 @@ Apple 的文档中列出了选择器名称。 例如， [ `NSString` ](https://d
 
 选择器名称后，可以创建[ `ObjCRuntime.Selector` ](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/)为它的实例。
 
-### <a name="calling-objcmsgsend"></a>调用 objc_msgSend
+### <a name="calling-objcmsgsend"></a>Calling objc_msgSend
 
-`objc_msgSend` 将一条消息 （选择器） 发送到一个对象。 此系列函数采用至少两个必需的参数： 选择器目标 （实例或处理的类）、 本身的选择器和选择器所需的任何参数。 实例，并选择器参数必须为`System.IntPtr`，并且所有其余参数必须匹配的类型选择器要求，例如`nint`有关`int`，或`System.IntPtr`所有`NSObject`-派生类型。 使用 [`NSObject.Handle`](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)
+`objc_msgSend` 将一条消息 （选择器） 发送到一个对象。 此系列函数采用至少两个必需的参数： 选择器目标 （实例或处理的类）、 本身的选择器和选择器所需的任何参数。 实例，并选择器参数必须为`System.IntPtr`，并且所有其余参数必须匹配的类型选择器要求，例如`nint`有关`int`，或`System.IntPtr`所有`NSObject`-派生类型。 使用 [`NSObject.Handle`](xref:Foundation.NSObject.Handle)
 属性获取`IntPtr`Objective C 类型实例。
 
 没有多个`objc_msgSend`函数：

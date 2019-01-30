@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 6ae08264218c8f959b351f059d73fc0aebfea39e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118079"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233895"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 框架更改
 
@@ -156,7 +156,7 @@ iOS 10 进行核心映像框架的以下增强功能：
 
 在 iOS 10 SceneKit 框架进行了以下增强功能：
 
-- [SCNCamera](https://developer.xamarin.com/api/type/SceneKit.SCNCamera/)类可以通过使用 HDR 功能和影响提供更高版本的真实性。 使用自适应暴露创建自动效果或使用晕影、 色边和颜色评分为游戏添加 fillmatic 效果。
+- [SCNCamera](xref:SceneKit.SCNCamera)类可以通过使用 HDR 功能和影响提供更高版本的真实性。 使用自适应暴露创建自动效果或使用晕影、 色边和颜色评分为游戏添加 fillmatic 效果。
 - SceneKit 现在包括新的以物理方式基于呈现 (PBR) 系统，用于更简单资产创作更真实的结果。
 - 使用新[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)明暗度模型到产品范围广泛的实心底纹效果要求只有三个基本属性 (`Diffuse`，`Metalness`和`Roughness`)。
 - 自 PBR 最佳基于环境的照明着色的工作原理，使用`LightingEnvironment`要分配给整个场景的基于映像的照明属性。
@@ -191,7 +191,7 @@ iOS 10 进行核心映像框架的以下增强功能：
 
 在 iOS 10 UIKit 框架已得到以下增强功能：
 
-- 新[UIPasteboard](https://developer.xamarin.com/api/type/UIKit.UIPasteboard/) API 提供了新选项 （如生存期限制），并将自动声明公共类类型兼容的内容类型。
+- 新[UIPasteboard](xref:UIKit.UIPasteboard) API 提供了新选项 （如生存期限制），并将自动声明公共类类型兼容的内容类型。
 - 新的完全交互式的、 基于对象的、 可中断动画支持已添加，并且可以链接到手势。 请参阅 Apple [UIViewAnimating 协议参考](https://developer.apple.com/reference/uikit/uiviewanimating)， [UIViewPropertyAnimator 类引用](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)， [UITimingCurveProvider 协议参考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)， [UICubicTimingParameters 类引用](https://developer.apple.com/reference/uikit/uicubictimingparameters)并[UISpringTimingParameter 类引用](https://developer.apple.com/reference/uikit/uispringtimingparameters)有关详细信息。
 - 新`UIPreviewInteraction`和`UIPreviewInteractionDelegate`允许开发人员应用将提供用于查看和 pop 操作自定义接口。
 - 新`UIAccessibilityCustomRotor`类允许应用程序以提供对 Voice Over 等辅助技术的自定义的特定于上下文的功能。

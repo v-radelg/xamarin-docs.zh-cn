@@ -6,12 +6,12 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 88cbce6dbfee4e7aa1a0711d6da74f6f12abd4b7
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 3946a4ba190e1d8ba5c68a2d8ac36cf42900862f
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251011"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233973"
 ---
 # <a name="transport-layer-security-tls-12"></a>传输层安全性 (TLS) 1.2
 
@@ -71,7 +71,7 @@ ms.locfileid: "40251011"
 
 > [!WARNING]
 > 即将发布的 Xamarin.Mac 4.8 版本仅支持 macOS 10.9 或更高版本。
-> 以前版本的 Xamarin.Mac 支持 macOS 10.7 或更高版本，但这些较旧的 macOS 版本缺少足够的 TLS 基础结构才能支持 TLS 1.2。 若要面向 macOS 10.7 或 macOS 10.8，请使用 Xamarin.Mac 4.6 或更早版本。
+> 早期版本的 Xamarin.Mac 支持 macOS 10.7 或更高版本，但这些较旧的 macOS 版本缺少足够的 TLS 基础结构，无法支持 TLS 1.2。 若要面向 macOS 10.7 或 macOS 10.8，请使用 Xamarin.Mac 4.6 或更早版本。
 
 ## <a name="alternative-configuration-options"></a>备用配置选项
 
@@ -133,7 +133,7 @@ Android 项目选项还允许您选择支持的 SSL/TLS 实现：
 - [System.Net.WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
 - [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [java.net.URLConnection](http://developer.android.com/reference/java/net/URLConnection.html)
-- [Foundation.CFNetwork](https://developer.xamarin.com/api/type/CoreFoundation.CFNetwork/)
-- [Foundation.NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)
+- [Foundation.CFNetwork](xref:CoreFoundation.CFNetwork)
+- [Foundation.NSUrlConnection](xref:Foundation.NSUrlConnection)
 - [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [HTTP 客户端 （示例）](https://developer.xamarin.com/samples/monotouch/HttpClient/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 00bf7290d5f7165feb5b67cd91c15a96b7d3eaf8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c409fcc018379401c1ab40573495da12a8220c5a
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118365"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233661"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>IOS 的 Xamarin 设计器中的自定义控件
 
@@ -24,8 +24,8 @@ _用于 iOS 的 Xamarin 设计器支持在项目中创建或引用从外部源�
 
 将在设计图面上呈现控件，可满足以下要求：
 
-1.  它是直接或间接的子类[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)或[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller)。 其他[NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)子类将显示为设计图面上的图标。
-2.  它具有[RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/)以将其公开到 Objective-c。
+1.  它是直接或间接的子类[UIView](xref:UIKit.UIView)或[UIViewController](xref:UIKit.UIViewController)。 其他[NSObject](xref:Foundation.NSObject)子类将显示为设计图面上的图标。
+2.  它具有[RegisterAttribute](xref:Foundation.RegisterAttribute)以将其公开到 Objective-c。
 3.  它具有[所需的 IntPtr 构造函数](~/ios/internals/api-design/index.md)。
 4.  它可以实现[IComponent](xref:System.ComponentModel.IComponent)接口或具有[DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)设置为 True。
 
@@ -38,17 +38,17 @@ _用于 iOS 的 Xamarin 设计器支持在项目中创建或引用从外部源�
 声明由自定义控件的属性将显示在属性面板中，如果满足以下条件：
 
 1.  该属性具有公共 getter 和 setter。
-1.  该属性具有[ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/)以及一个[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)设置为 True。
-1.  属性类型是数值类型、 枚举类型、 字符串、 布尔值， [SizeF](xref:System.Drawing.SizeF)， [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/)，或[UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/)。 可能在将来扩展这一系列受支持的类型。
+1.  该属性具有[ExportAttribute](xref:Foundation.ExportAttribute)以及一个[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)设置为 True。
+1.  属性类型是数值类型、 枚举类型、 字符串、 布尔值， [SizeF](xref:System.Drawing.SizeF)， [UIColor](xref:UIKit.UIColor)，或[UIImage](xref:UIKit.UIImage)。 可能在将来扩展这一系列受支持的类型。
 
 
 该属性还可以用修饰[DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)指定为其显示在属性面板的标签。
 
 ## <a name="initialization"></a>初始化
 
-有关`UIViewController`子类，则应使用[ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/)取决于在设计器中创建的视图的代码的方法。
+有关`UIViewController`子类，则应使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)取决于在设计器中创建的视图的代码的方法。
 
-有关`UIView`和其他`NSObject`子类， [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/)方法是从布局文件加载后执行自定义控件的初始化的建议的位置。 这是因为当运行时控件的构造函数，但会将它们设置之前，在属性面板中设置任何自定义属性将不会设置`AwakeFromNib`调用：
+有关`UIView`和其他`NSObject`子类， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法是从布局文件加载后执行自定义控件的初始化的建议的位置。 这是因为当运行时控件的构造函数，但会将它们设置之前，在属性面板中设置任何自定义属性将不会设置`AwakeFromNib`调用：
 
 
 ```csharp
@@ -138,7 +138,7 @@ public class CustomView : UIView {
 
 在设计图面上，自定义控件必须遵守一些限制：
 
--  应用捆绑包资源不在设计模式下可用。 通过加载时提供了映像[UIImage 方法](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM)。
+-  应用捆绑包资源不在设计模式下可用。 通过加载时提供了映像[UIImage 方法](xref:UIKit.UIImage)。
 -  不应在设计模式下执行异步操作，例如 web 请求。 设计图面上不支持动画或控件的 UI 的任何其他异步更新。
 
 

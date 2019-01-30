@@ -6,12 +6,12 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: bdb401cd9fd3cfa1e33acec1252cfffbd8be3ebd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116636"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233908"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 框架更改
 
@@ -64,7 +64,7 @@ CloudKit 框架简化了开发应用程序的访问 iCloud。 这包括应用程
 - [CloudKit 快速启动](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple 的 CloudKit 简介。
 - [CloudKit JS 引用](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple 的 CloudKit JS 文档。
 - [CloudKit Web 服务引用](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-Apple 的引用，描述 CloudKit 简介 HTTP 接口。
-- [CloudKit 目录： An introduction to （Cocoa 和 JavaScript） CloudKit 简介](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-Apple 的示例应用程序使用 CloudKit 和 CloudKit JS。
+- [CloudKit 目录：（Cocoa 和 JavaScript） CloudKit 简介](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-Apple 的示例应用程序使用 CloudKit 和 CloudKit JS。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
@@ -75,7 +75,7 @@ Apple iOS 9 中包括对 Foundation 框架的以下更改：
 
 ### <a name="changes-to-nsbundle"></a>对 NSBundle 的更改
 
-已对以下更改[NSBundle](https://developer.xamarin.com/api/type/Foundation.NSBundle/)适用于 iOS 9 的类：
+已对以下更改[NSBundle](xref:Foundation.NSBundle)适用于 iOS 9 的类：
 
 * `GetPreservationPriorityForTag (NSString tag)` -获取具有给定标记的资源的当前保留优先级。 有效的值处于该范围内`0.0`到`1.0`，将首先清除优先级最低的资源。
 * `SetPreservationPriorityForTag (double priority, NSSet tags)` -设置具有给定标记的资源的当前保留优先级。 有效的值处于该范围内`0.0`到`1.0`，将首先清除优先级最低的资源。
@@ -84,7 +84,7 @@ Apple iOS 9 中包括对 Foundation 框架的以下更改：
 
 ### <a name="changes-to-nsprocessinfo"></a>对 NSProcessInfo 的更改
 
-IOS 设备上运行每个进程都有一个，_进程信息代理_(PIA)。 使用[NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)类以提供有关当前的 PIA 和控制电源和散热管理给定进程的信息。
+IOS 设备上运行每个进程都有一个，_进程信息代理_(PIA)。 使用[NSProcessInfo](xref:Foundation.NSProcessInfo)类以提供有关当前的 PIA 和控制电源和散热管理给定进程的信息。
 
 例如，若要控制自动终止进程可以使用以下代码：
 
@@ -103,7 +103,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>对低能耗模式作出反应
 
-使用`LowPowerModeEnabled`的属性[NSProcessInfo](https://developer.xamarin.com/api/type/Foundation.NSProcessInfo/)类来确定是否已启用低功耗模式下运行应用的 iOS 设备上。 例如：
+使用`LowPowerModeEnabled`的属性[NSProcessInfo](xref:Foundation.NSProcessInfo)类来确定是否已启用低功耗模式下运行应用的 iOS 设备上。 例如：
 
 ```csharp
 // Is the device in low power mode?
@@ -175,7 +175,7 @@ Apple 中包括下列更改到[Safari 服务](https://developer.xamarin.com/api/
 
 - 你现在可以使用新[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)类，以显示一个 Xamarin.iOS 应用程序中的 web 内容。 它提供了与 Safari 应用共享网站数据和 cookie 的功能，并包含多个 Safari 的功能 （如读取器和自动填充）。 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)功能**完成**完成查看 web 内容时将返回到您的应用程序的用户的按钮。
 
-因为[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)类定制用于显示 web 内容的单个页，则应考虑使用它来替换任何[WKWebKit](https://developer.xamarin.com/api/type/WebKit.WKWebView/)或[UIWebView](https://developer.xamarin.com/api/type/UIKit.UIWebView/)现有 Xamarin.iOS 应用程序中的控件。
+因为[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)类定制用于显示 web 内容的单个页，则应考虑使用它来替换任何[WKWebKit](xref:WebKit.WKWebView)或[UIWebView](xref:UIKit.UIWebView)现有 Xamarin.iOS 应用程序中的控件。
 
 ### <a name="displaying-a-website"></a>显示网站
 
@@ -191,7 +191,7 @@ PresentViewController(controller, true, null);
 
 ## <a name="uikit-framework-changes"></a>UIKit 框架更改
 
-Apple 已包含很多增强功能的多个元素[UIKit](https://developer.xamarin.com/api/namespace/UIKit/)适用于 iOS 9 框架。 以下各节将详细介绍这些更改。
+Apple 已包含很多增强功能的多个元素[UIKit](xref:UIKit)适用于 iOS 9 框架。 以下各节将详细介绍这些更改。
 
 ### <a name="3d-touch-events"></a>三维触控事件
 
@@ -203,7 +203,7 @@ Apple 已包含很多增强功能的多个元素[UIKit](https://developer.xamari
 
 ### <a name="document-open-in-place-functionality"></a>文档打开的就地功能
 
-通过使用`FinishedLaunching (application, launchOptions)`或`WillFinishLaunching (Application, launchOptions)`方法的[UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)类，现在可以打开文档，并修改它 （而不是工作副本上） 的位置。
+通过使用`FinishedLaunching (application, launchOptions)`或`WillFinishLaunching (Application, launchOptions)`方法的[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)类，现在可以打开文档，并修改它 （而不是工作副本上） 的位置。
 
 若要支持新打开的就地功能，将添加`LSSupportsOpeningDocumentsInPlace`到 Xamarin.iOS 应用程序的关键**Info.plist**文件中使用的值`YES`。
 
@@ -221,7 +221,7 @@ Apple 提供了多项增强功能的触摸事件在 iOS 9。 其中包括能够�
 
 ### <a name="new-layout-anchors"></a>新布局定位点
 
-新`NSLayoutAnchor`并`NSLayoutDimension`布局定位点类使用的新的定位点属性[UIView](https://developer.xamarin.com/api/type/UIKit.UIView/)类 (如`LeadingAnchor`和`WidthAnchor`) 若要在 iOS 9 简化布局。
+新`NSLayoutAnchor`并`NSLayoutDimension`布局定位点类使用的新的定位点属性[UIView](xref:UIKit.UIView)类 (如`LeadingAnchor`和`WidthAnchor`) 若要在 iOS 9 简化布局。
 
 请参阅我们[统一情节提要简介](~/ios/user-interface/storyboards/unified-storyboards.md)文档中的 Xamarin.iOS 应用程序和 Apple 的自动布局和大小类使用的详细信息[NSLayoutAnchor 引用](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)， [NSLayoutDimension 引用](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)并[UIView 引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)有关详细信息。
 
@@ -231,11 +231,11 @@ Apple 提供了多项增强功能的触摸事件在 iOS 9。 其中包括能够�
 
 ### <a name="text-input-in-notifications-modifications"></a>通知的修改的文本输入
 
-[UIUserNotificationAction](https://developer.xamarin.com/api/type/UIKit.UIUserNotificationAction/)类有一个新的`Behavior`可用于支持通知的文本输入的属性。
+[UIUserNotificationAction](xref:UIKit.UIUserNotificationAction)类有一个新的`Behavior`可用于支持通知的文本输入的属性。
 
 ### <a name="uiapplicationdelegate-changes"></a>UIApplicationDelegate 更改
 
-虽然不正式 apple 不推荐使用，这些建议将替换为对所有调用`FinishedLaunching (UIApplication application)`方法[UIApplicationDelegate](https://developer.xamarin.com/api/type/UIKit.UIApplicationDelegate/)类具有`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`或`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`方法。
+虽然不正式 apple 不推荐使用，这些建议将替换为对所有调用`FinishedLaunching (UIApplication application)`方法[UIApplicationDelegate](xref:UIKit.UIApplicationDelegate)类具有`FinishedLaunching (UIApplication application, NSDictionary launchOptions)`或`WillFinishLaunching (UIApplication application, NSDictionary launchOptions)`方法。
 
 请参阅 Apple [UIApplicationDelegate 引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intf/UIApplicationDelegate)的更多详细信息。
 
@@ -251,7 +251,7 @@ Apple iOS 9 中包括对 UIKit Dynamics 的以下更改：
 
 ### <a name="uipickerview-and-uidatepicker-changes"></a>UIPickerView 和 UIDatePicker 更改
 
-在 iOS 9 前, [UIPickerView](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)并[UIDatePicker](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)控件所无法调整大小和将自动调整大小以填充其容器 （通常宽度应用程序的 iOS 设备的宽度在上运行）。
+在 iOS 9 前, [UIPickerView](xref:UIKit.UIPickerView)并[UIDatePicker](xref:UIKit.UIDatePicker)控件所无法调整大小和将自动调整大小以填充其容器 （通常宽度应用程序的 iOS 设备的宽度在上运行）。
 
 在 iOS 9 中，这种自动调整大小不会再出现和控件将呈现在所有的 iOS 设备，而不考虑屏幕大小和方向上 320 点宽度。
 

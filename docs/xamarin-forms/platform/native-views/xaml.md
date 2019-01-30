@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4b33d1d149d3ac85d01dfcbe0d144416fd953426
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052879"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233804"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的本机视图
 
@@ -182,7 +182,7 @@ Android 小组件的构造函数通常需要 Android`Context`对象作为参数�
 </ContentPage>
 ```
 
-[ `UIFont.FromName` ](https://developer.xamarin.com/api/member/UIKit.UIFont.FromName/)工厂方法用于设置[ `UILabel.Font` ](https://developer.xamarin.com/api/property/UIKit.UILabel.Font/)属性设置为一个新[ `UIFont` ](https://developer.xamarin.com/api/type/UIKit.UIFont/)在 iOS 上。 `UIFont`子级的方法参数通过指定名称和大小`x:Arguments`属性。
+[ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*)工厂方法用于设置[ `UILabel.Font` ](xref:UIKit.UILabel.Font)属性设置为一个新[ `UIFont` ](xref:UIKit.UIFont)在 iOS 上。 `UIFont`子级的方法参数通过指定名称和大小`x:Arguments`属性。
 
 [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/)工厂方法用于设置[ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)属性设置为一个新[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/)在 Android 上。 `Typeface`子级的方法参数通过指定系列名称和样式`x:Arguments`属性。
 
@@ -331,7 +331,7 @@ IOS 和 Android 上本机选取器使用方法设置这些控件。 因此，这
 
 ### <a name="ios"></a>iOS
 
-IOS 实现子类[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)视图中，并公开属性和从 XAML 可轻松使用的事件：
+IOS 实现子类[ `UIPickerView` ](xref:UIKit.UIPickerView)视图中，并公开属性和从 XAML 可轻松使用的事件：
 
 ```csharp
 public class MyUIPickerView : UIPickerView
@@ -376,7 +376,7 @@ public class MyUIPickerView : UIPickerView
 }
 ```
 
-`MyUIPickerView`类公开`ItemsSource`并`SelectedItem`属性，和一个`SelectedItemChanged`事件。 一个[ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/)要求基础[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/)数据模型中，将访问`MyUIPickerView`属性和事件。 `UIPickerViewModel`数据模型提供的`PickerModel`类：
+`MyUIPickerView`类公开`ItemsSource`并`SelectedItem`属性，和一个`SelectedItemChanged`事件。 一个[ `UIPickerView` ](xref:UIKit.UIPickerView)要求基础[ `UIPickerViewModel` ](xref:UIKit.UIPickerViewModel)数据模型中，将访问`MyUIPickerView`属性和事件。 `UIPickerViewModel`数据模型提供的`PickerModel`类：
 
 ```csharp
 class PickerModel : UIPickerViewModel
@@ -419,7 +419,7 @@ class PickerModel : UIPickerViewModel
 }
 ```
 
-`PickerModel`类提供的基础存储`MyUIPickerView`类，通过`Items`属性。 每当中的选定的项`MyUIPickerView`更改， [ `Selected` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.Selected/)执行方法时，该更新所选的索引和激发`ItemChanged`事件。 这可确保`SelectedItem`属性将始终返回由用户选择的最后一项。 此外，`PickerModel`类重写方法用于设置`MyUIPickerView`实例。
+`PickerModel`类提供的基础存储`MyUIPickerView`类，通过`Items`属性。 每当中的选定的项`MyUIPickerView`更改， [ `Selected` ](xref:UIKit.UIPickerViewModel.Selected*)执行方法时，该更新所选的索引和激发`ItemChanged`事件。 这可确保`SelectedItem`属性将始终返回由用户选择的最后一项。 此外，`PickerModel`类重写方法用于设置`MyUIPickerView`实例。
 
 ### <a name="android"></a>Android
 

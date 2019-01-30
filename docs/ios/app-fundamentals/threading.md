@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: b90c59f09217077262c3aced9ee9e5d07849c25c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106580"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233186"
 ---
 # <a name="threading-in-xamarinios"></a>在 Xamarin.iOS 中线程处理
 
@@ -35,7 +35,7 @@ Xamarin 强烈建议你使用[任务并行库](http://msdn.microsoft.com/library
 
 ## <a name="developing-responsive-applications"></a>开发响应式应用程序
 
-对 UI 元素的访问应限制为正在运行你的应用程序的主循环的同一个线程。 如果你想要从一个线程对主用户界面进行更改，应通过使用队列的代码[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/type/Foundation.NSObject/)，如下所示：
+对 UI 元素的访问应限制为正在运行你的应用程序的主循环的同一个线程。 如果你想要从一个线程对主用户界面进行更改，应通过使用队列的代码[NSObject.InvokeOnMainThread](xref:Foundation.NSObject)，如下所示：
 
 ```csharp
 MyThreadedRoutine ()  
@@ -72,7 +72,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注意： 自 Xamarin.iOS 5.2 您无需提供自己`NSAutoReleasePool`不再将为您自动提供一个。
+注意:自 Xamarin.iOS 5.2 您无需提供自己`NSAutoReleasePool`不再将为您自动提供一个。
 
 
 ## <a name="related-links"></a>相关链接

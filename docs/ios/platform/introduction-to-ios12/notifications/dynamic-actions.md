@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 9/4/2018
-ms.openlocfilehash: 8a2755de3dc43ccff88cbdf4dc9c4f9ba2d532c0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ddd3e1e6cc3a3a9b42ddb7a597ed2db0ee495d41
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111489"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233310"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>在 Xamarin.iOS 中动态通知操作按钮
 
 在 iOS 12 中，通知还可以动态添加、 删除和更新其关联的操作按钮。 此类自定义使可能向用户提供通知的内容以及与它的用户的交互与直接相关的操作。
 
-## <a name="sample-app-redgreennotifications"></a>示例应用程序： RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>应用程序示例：RedGreenNotifications
 
 本指南中的代码段来自[RedGreenNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/RedGreenNotifications)示例应用中，该示例演示了如何使用 Xamarin.iOS 适用于 iOS 12 中的通知操作按钮。
 
@@ -35,9 +35,9 @@ ms.locfileid: "50111489"
 例如，在[示例应用](#sample-app-redgreennotifications)，则`FinishedLaunching`方法的`AppDelegate`执行以下操作：
 
 - 定义一个红色的通知的类别和另一个用于绿色通知
-- 通过调用注册这些类别 [`SetNotificationCategories`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenter.SetNotificationCategories/)
+- 通过调用注册这些类别 [`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
 方法 `UNUserNotificationCenter`
-- 将一个附加 [`UNNotificationAction`](https://developer.xamarin.com/api/type/UserNotifications.UNNotificationAction/)
+- 将一个附加 [`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 为每个类别
 
 下面的示例代码显示了这的工作原理：
@@ -74,12 +74,12 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-它的基于此代码中，任何通知 [`Content.CategoryIdentifier`](https://developer.xamarin.com/api/property/UserNotifications.UNNotificationContent.CategoryIdentifier/)
+它的基于此代码中，任何通知 [`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
 默认情况下，显示"red 类别"或"绿色类别"将**旋转 20 度**操作按钮。
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>应用程序内处理的通知操作按钮
 
-`UNUserNotificationCenter` 具有`Delegate`类型的属性[ `IUNUserNotificationCenterDelegate` ](https://developer.xamarin.com/api/type/UserNotifications.UNUserNotificationCenterDelegate_Extensions/)。
+`UNUserNotificationCenter` 具有`Delegate`类型的属性[ `IUNUserNotificationCenterDelegate` ](xref:UserNotifications.IUNUserNotificationCenterDelegate)。
 
 在示例应用`AppDelegate`将自身设置用户通知中心中的委托为`FinishedLaunching`:
 
@@ -95,7 +95,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-然后，`AppDelegate`实现 [`DidReceiveNotificationResponse`](https://developer.xamarin.com/api/member/UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse/)
+然后，`AppDelegate`实现 [`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
 若要处理的操作按钮点击：
 
 ```csharp
@@ -125,7 +125,7 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
 
 通知内容扩展包含定义通知的自定义接口的视图控制器。
 
-可以使用此视图控制器`GetNotificationActions`和`SetNotificationActions`上的方法及其 [`ExtensionContext`](https://developer.xamarin.com/api/property/UIKit.UIViewController.ExtensionContext/)
+可以使用此视图控制器`GetNotificationActions`和`SetNotificationActions`上的方法及其 [`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 若要访问和修改通知的操作按钮的属性。
 
 在示例应用中，通知内容扩展视图控制器修改操作按钮仅当现有操作按钮上点击到响应。

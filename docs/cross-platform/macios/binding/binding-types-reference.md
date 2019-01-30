@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 369e1a37cc75bb4d10cc71d8f79ed1dd473378ba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119431"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55234025"
 ---
 # <a name="binding-types-reference-guide"></a>绑定类型参考指南
 
@@ -1137,7 +1137,7 @@ public NSObject this [NSObject idx] {
 
 此特性标记的一个属性，以使用.NET 进行批注的支持字段`[ThreadStatic]`属性。 这是很有用，如果此字段为线程静态变量。
 
-### <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 工具 6.0.6)
+### <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
 
 此属性将使方法支持本机 (OBJECTIVE-C) 异常。
 而不是调用`objc_msgSend`直接调用将了解到自定义 trampoline 捕获 ObjectiveC 异常并将它们封送到托管异常。
@@ -1181,7 +1181,7 @@ public class MyClass {
 }
 ```
 
-你的代码用户然后可以轻松地订阅通知发布到[NSDefaultCenter](https://developer.xamarin.com/api/property/Foundation.NSNotificationCenter.DefaultCenter/)通过使用如下代码：
+你的代码用户然后可以轻松地订阅通知发布到[NSDefaultCenter](xref:Foundation.NSNotificationCenter.DefaultCenter)通过使用如下代码：
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -1203,7 +1203,7 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 token.Dispose ();
 ```
 
-也可以调用[NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject//)并传递该令牌。 如果在通知中包含参数，则应指定一个帮助程序`EventArgs`接口，如下：
+也可以调用[NSNotification.DefaultCenter.RemoveObserver](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))并传递该令牌。 如果在通知中包含参数，则应指定一个帮助程序`EventArgs`接口，如下：
 
 ```csharp
 interface MyClass {
@@ -1226,7 +1226,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-将生成上述`MyScreenChangedEventArgs`类的`ScreenX`并`ScreenY`将提取的数据的属性[NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/)字典使用键`ScreenXKey`和`ScreenYKey`分别并应用正确的转换。 `[ProbePresence]`属性为生成器用来探测如果设置了密钥`UserInfo`，而不是尝试提取的值。 这用于项的状态与的值 （通常为布尔值） 的情况。
+将生成上述`MyScreenChangedEventArgs`类的`ScreenX`并`ScreenY`将提取的数据的属性[NSNotification.UserInfo](xref:Foundation.NSNotification.UserInfo)字典使用键`ScreenXKey`和`ScreenYKey`分别并应用正确的转换。 `[ProbePresence]`属性为生成器用来探测如果设置了密钥`UserInfo`，而不是尝试提取的值。 这用于项的状态与的值 （通常为布尔值） 的情况。
 
 这可以编写如下代码：
 
@@ -1498,7 +1498,7 @@ interface FooExplorer {
 typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-另请参阅： [CCallback](#CCallback)。
+另请参阅：[CCallback](#CCallback)。
 
 <a name="CCallback" />
 
@@ -1512,7 +1512,7 @@ typedef returnType (^SomeTypeDefinition) (int parameter1, NSString *parameter2);
 typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
 ```
 
-另请参阅： [BlockCallback](#BlockCallback)。
+另请参阅：[BlockCallback](#BlockCallback)。
 
 ### <a name="params"></a>params
 
@@ -1942,13 +1942,13 @@ interface MyBinding {
 
 使用 Xamarin.iOS 8.0 引入了用于轻松创建强类型化类的自动换行的支持`NSDictionaries`。
 
-虽然始终是可以使用[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/)数据类型以及手动 API，现在就大大简化，若要执行此操作。  有关详细信息，请参阅[呈现强类型](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)。
+虽然始终是可以使用[DictionaryContainer](xref:Foundation.DictionaryContainer)数据类型以及手动 API，现在就大大简化，若要执行此操作。  有关详细信息，请参阅[呈现强类型](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)。
 
 <a name="StrongDictionary" />
 
 ### <a name="strongdictionary"></a>StrongDictionary
 
-当此特性应用于接口时，生成器将生成具有相同的名称派生自的接口的类[DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) ，以及如何启用到强类型在接口中定义的每个属性getter 和 setter 字典。
+当此特性应用于接口时，生成器将生成具有相同的名称派生自的接口的类[DictionaryContainer](xref:Foundation.DictionaryContainer) ，以及如何启用到强类型在接口中定义的每个属性getter 和 setter 字典。
 
 这将自动生成可以实例化的类从现有`NSDictionary`或创建的新。
 

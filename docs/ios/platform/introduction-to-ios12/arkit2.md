@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 4d5319005b28c5afa0906c44cfa59f0cad40de76
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617613"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233596"
 ---
 # <a name="arkit-2-in-xamarinios"></a>在 Xamarin.iOS ARKit 2
 
@@ -25,17 +25,17 @@ ARKit 已显著逐步演化问世 iOS 11 中的上一年后。 首先，这一�
 
 ## <a name="recognizing-reference-objects"></a>识别引用对象
 
-ARKit 2 中的一个展示功能是能够识别参考映像和对象。 参考映像可以加载从正常的图像文件 ([稍后讨论](#more-tracking-configurations))，但必须扫描的对象，使用开发人员为中心的引用[ `ARObjectScanningConfiguration` ](https://developer.xamarin.com/api/type/ARKit.ARObjectScanningConfiguration/)。
+ARKit 2 中的一个展示功能是能够识别参考映像和对象。 参考映像可以加载从正常的图像文件 ([稍后讨论](#more-tracking-configurations))，但必须扫描的对象，使用开发人员为中心的引用[ `ARObjectScanningConfiguration` ](xref:ARKit.ARObjectScanningConfiguration)。
 
-### <a name="sample-app-scanning-and-detecting-3d-objects"></a>示例应用程序： 扫描和检测三维对象
+### <a name="sample-app-scanning-and-detecting-3d-objects"></a>应用程序示例：扫描和检测三维对象
 
 [扫描和检测 3D 物体](https://developer.xamarin.com/samples/monotouch/ios12/ScanningAndDetecting3DObjects/)示例是一个端口的端口[Apple 项目](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc)演示：
 
-* 应用程序状态管理使用[ `NSNotification` ](https://developer.xamarin.com/api/type/Foundation.NSNotification/)对象
+* 应用程序状态管理使用[ `NSNotification` ](xref:Foundation.NSNotification)对象
 * 自定义可视化效果
 * 复杂手势
 * 扫描的对象
-* 存储 [`ARReferenceObject`](https://developer.xamarin.com/api/type/ARKit.ARReferenceObject/)
+* 存储 [`ARReferenceObject`](xref:ARKit.ARReferenceObject)
 
 扫描的引用对象是电池和处理器密集型和较旧的设备通常具有难以实现稳定的跟踪。
 
@@ -55,7 +55,7 @@ ARKit 2 中的一个展示功能是能够识别参考映像和对象。 参考�
 * `Scan.ScanState.Scanning`
 * `Scan.ScanState.AdjustingOrigin`
 
-该应用使用发布到的状态转换通知的被动体系结构[ `NSNotificationCenter` ](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/) ，这些通知订阅。 安装程序类似于此代码片段从`ViewController.cs`:
+该应用使用发布到的状态转换通知的被动体系结构[ `NSNotificationCenter` ](xref:Foundation.NSNotificationCenter) ，这些通知订阅。 安装程序类似于此代码片段从`ViewController.cs`:
 
 ```csharp
 // Configure notifications for application state changes
@@ -119,11 +119,11 @@ internal void EnterStateTesting()
 
 低级别"云"点对象的边界框内包含投影到检测到水平面上，应用程序所示。
 
-此点云是为开发人员提供[ `ARFrame.RawFeaturePoints` ](https://developer.xamarin.com/api/property/ARKit.ARFrame.RawFeaturePoints/)属性。 有效地可视化点云可以是一个复杂的问题。 循环访问点，然后创建并将每个点的新 SceneKit 节点放入会终止帧速率。 或者，如果以异步方式完成，则会存在延迟。 该示例会保留三部分组成的策略的性能：
+此点云是为开发人员提供[ `ARFrame.RawFeaturePoints` ](xref:ARKit.ARFrame.RawFeaturePoints)属性。 有效地可视化点云可以是一个复杂的问题。 循环访问点，然后创建并将每个点的新 SceneKit 节点放入会终止帧速率。 或者，如果以异步方式完成，则会存在延迟。 该示例会保留三部分组成的策略的性能：
 
 * 使用的 pin 中的数据将放置和解释数据作为原始字节缓冲区到不安全代码。
-* 转换到该原始缓冲区[ `SCNGeometrySource` ](https://developer.xamarin.com/api/type/SceneKit.SCNGeometrySource/)并创建一个"模板" [ `SCNGeometryElement` ](https://developer.xamarin.com/api/type/SceneKit.SCNGeometryElement/)对象。
-* 快速"拼接"原始数据和模板使用 [`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](https://developer.xamarin.com/api/member/SceneKit.SCNGeometry.Create/p/SceneKit.SCNGeometrySource[]/SceneKit.SCNGeometryElement[]/)
+* 转换到该原始缓冲区[ `SCNGeometrySource` ](xref:SceneKit.SCNGeometrySource)并创建一个"模板" [ `SCNGeometryElement` ](xref:SceneKit.SCNGeometryElement)对象。
+* 快速"拼接"原始数据和模板使用 [`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
 
 ```csharp
 internal static SCNGeometry CreateVisualization(NVector3[] points, UIColor color, float size)
@@ -251,11 +251,11 @@ internal partial class ThresholdRotationGestureRecognizer : UIRotationGestureRec
 
 现在，你可以使用以下任一作为基础的混合现实体验：
 
-* 仅设备加速计 ([`AROrientationTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.AROrientationTrackingConfiguration/)，iOS 11)
-* 人脸 ([`ARFaceTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARFaceTrackingConfiguration/)，iOS 11)
-* 引用图像 ([`ARImageTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARImageTrackingConfiguration/)，iOS 12)
-* 扫描三维对象 ([`ARObjectScanningConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARObjectScanningConfiguration/)，iOS 12)
-* Visual 惯性 odometry ([`ARWorldTrackingConfiguration`](https://developer.xamarin.com/api/type/ARKit.ARWorldTrackingConfiguration/)、 改进了 iOS 12 中)
+* 仅设备加速计 ([`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)，iOS 11)
+* 人脸 ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration)，iOS 11)
+* 引用图像 ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration)，iOS 12)
+* 扫描三维对象 ([`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)，iOS 12)
+* Visual 惯性 odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration)、 改进了 iOS 12 中)
 
 `AROrientationTrackingConfiguration`中, 所述[这篇博客文章和F#示例](https://github.com/lobrien/FSharp_Face_AR)，是最受限制为仅放置数字对象相对于设备的动作，而不尝试将该设备绑定到屏幕上提供了混合现实体验不佳现实世界中。
 
@@ -299,8 +299,8 @@ ARKit 2 支持"环境纹理"捕获的图像用于估计照明和甚至到发光�
 
 若要使用环境纹理：
 
-* 你[ `SCNMaterial` ](https://developer.xamarin.com/api/type/SceneKit.SCNMaterial/)对象必须使用[ `SCNLightingModel.PhysicallyBased` ](https://developer.xamarin.com/api/property/SceneKit.SCNLightingModel.PhysicallyBased/)并分配一个值为 0 到 1 范围内的[ `Metalness.Contents` ](https://developer.xamarin.com/api/property/SceneKit.SCNMaterial.Metalness/)和[ `Roughness.Contents`](https://developer.xamarin.com/api/property/SceneKit.SCNMaterialProperty.Contents/)和
-* 跟踪配置必须设置[ `EnvironmentTexturing` ](https://developer.xamarin.com/api/property/ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing/)  =  [AREnvironmentTexturing.Automatic](https://developer.xamarin.com/api/field/ARKit.AREnvironmentTexturing.Automatic/) :
+* 你[ `SCNMaterial` ](xref:SceneKit.SCNMaterial)对象必须使用[ `SCNLightingModel.PhysicallyBased` ](xref:SceneKit.SCNLightingModel.PhysicallyBased)并分配一个值为 0 到 1 范围内的[ `Metalness.Contents` ](xref:SceneKit.SCNMaterial.Metalness)和[ `Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents)和
+* 跟踪配置必须设置[ `EnvironmentTexturing` ](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)  =  [AREnvironmentTexturing.Automatic](xref:ARKit.AREnvironmentTexturing.Automatic) :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);
@@ -323,7 +323,7 @@ var configuration = new ARWorldTrackingConfiguration
 
 ### <a name="shared-and-persistent-ar-experiences"></a>共享和持久性 AR 体验
 
-是另一项主要 ARKit 2 新增[ `ARWorldMap` ](https://developer.xamarin.com/api/type/ARKit.ARWorldMap/)类，该类允许您以共享或存储世界跟踪数据。 获取与当前的世界地图[ `ARSession.GetCurrentWorldMapAsync` ](https://developer.xamarin.com/api/member/ARKit.ARSession.GetCurrentWorldMapAsync()/)或[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](https://developer.xamarin.com/api/member/ARKit.ARSession.GetCurrentWorldMap/p/System.Action%7BARKit.ARWorldMap,Foundation.NSError%7D/) :
+是另一项主要 ARKit 2 新增[ `ARWorldMap` ](xref:ARKit.ARWorldMap)类，该类允许您以共享或存储世界跟踪数据。 获取与当前的世界地图[ `ARSession.GetCurrentWorldMapAsync` ](xref:ARKit.ARSession.GetCurrentWorldMapAsync)或[ `GetCurrentWorldMap(Action<ARWorldMap,NSError>` ](xref:ARKit.ARSession.GetCurrentWorldMap(System.Action{ARKit.ARWorldMap,Foundation.NSError})) :
 
 ```csharp
 // Local storage
@@ -346,7 +346,7 @@ if (worldMap != null)
 
 1. 将数据从文件加载
 2. 取消存档到`ARWorldMap`对象，
-3. 将它的值用作[ `ARWorldTrackingConfiguration.InitialWorldMap` ](https://developer.xamarin.com/api/property/ARKit.ARWorldTrackingConfiguration.InitialWorldMap/)属性：
+3. 将它的值用作[ `ARWorldTrackingConfiguration.InitialWorldMap` ](xref:ARKit.ARWorldTrackingConfiguration.InitialWorldMap)属性：
 
 ```csharp
 var data = NSData.FromArray(File.ReadAllBytes(PersistentWorldController.PersistenWorldPath));
@@ -361,7 +361,7 @@ var configuration = new ARWorldTrackingConfiguration
 };
 ```
 
-`ARWorldMap`仅包含不可见的世界跟踪数据并[ `ARAnchor` ](https://developer.xamarin.com/api/type/ARKit.ARAnchor/)对象，它执行_不_包含数字资产。 若要共享 geometry 或图像，您将需要开发你自己的策略适用于具体的用例 (也许是通过存储/传输位置和方向的几何图形，并将其应用到静态`SCNGeometry`或也许是通过存储/传输序列化的对象）。 好处`ARWorldMap`是相对于共享一次放置资产， `ARAnchor`，设备或会话之间一致地出现。
+`ARWorldMap`仅包含不可见的世界跟踪数据并[ `ARAnchor` ](xref:ARKit.ARAnchor)对象，它执行_不_包含数字资产。 若要共享 geometry 或图像，您将需要开发你自己的策略适用于具体的用例 (也许是通过存储/传输位置和方向的几何图形，并将其应用到静态`SCNGeometry`或也许是通过存储/传输序列化的对象）。 好处`ARWorldMap`是相对于共享一次放置资产， `ARAnchor`，设备或会话之间一致地出现。
 
 ### <a name="universal-scene-description-file-format"></a>通用场景描述文件格式
 
@@ -371,15 +371,15 @@ ARKit 2 的最终要闻功能是 Apple 的 Pixar 的采用[通用场景描述](h
 
 ### <a name="manual-resource-management"></a>手动资源管理
 
-ARKit，在手动管理资源至关重要。 不仅这允许高的帧速率，它实际上是_必要_为了避免混淆"屏幕冻结。" ARKit 框架是延迟提供新的照相机帧 ([`ARSession.CurrentFrame`](https://developer.xamarin.com/api/property/ARKit.ARSession.CurrentFrame/))。 直到当前[ `ARFrame` ](https://developer.xamarin.com/api/type/ARKit.ARFrame/)已`Dispose()`对其进行调用，ARKit 将提供一个新框架 ！ 这会导致视频"冻结"即使其余应用程序可以响应。 解决方法是始终访问`ARSession.CurrentFrame`与`using`阻止或手动调用`Dispose()`上它。
+ARKit，在手动管理资源至关重要。 不仅这允许高的帧速率，它实际上是_必要_为了避免混淆"屏幕冻结。" ARKit 框架是延迟提供新的照相机帧 ([`ARSession.CurrentFrame`](xref:ARKit.ARSession.CurrentFrame)。 直到当前[ `ARFrame` ](xref:ARKit.ARFrame)已`Dispose()`对其进行调用，ARKit 将提供一个新框架 ！ 这会导致视频"冻结"即使其余应用程序可以响应。 解决方法是始终访问`ARSession.CurrentFrame`与`using`阻止或手动调用`Dispose()`上它。
 
 所有对象都派生自`NSObject`都`IDisposable`并`NSObject`实现[Dispose 模式](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern)，因此，通常应遵循[此模式，用于实现`Dispose`上都派生类](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose)。
 
 ### <a name="manipulating-transform-matrices"></a>操作转换矩阵
 
-在任何 3D 应用程序，你将需要处理使用简洁描述如何将移动、 旋转和扭曲的对象通过 3D 空间的 4 × 4 转换矩阵。 SceneKit，在这些事务是[ `SCNMatrix4` ](https://developer.xamarin.com/api/type/SceneKit.SCNMatrix4/)对象。  
+在任何 3D 应用程序，你将需要处理使用简洁描述如何将移动、 旋转和扭曲的对象通过 3D 空间的 4 × 4 转换矩阵。 SceneKit，在这些事务是[ `SCNMatrix4` ](xref:SceneKit.SCNMatrix4)对象。  
 
-[ `SCNNode.Transform` ](https://developer.xamarin.com/api/property/SceneKit.SCNNode.Transform/)属性将返回`SCNMatrix4`的转换矩阵[ `SCNNode` ](https://developer.xamarin.com/api/type/SceneKit.SCNNode/) _因为由支持_行优先`simdfloat4x4`类型。 因此，例如：
+[ `SCNNode.Transform` ](xref:SceneKit.SCNNode.Transform)属性将返回`SCNMatrix4`的转换矩阵[ `SCNNode` ](xref:SceneKit.SCNNode) _因为由支持_行优先`simdfloat4x4`类型。 因此，例如：
 
 ```csharp
 var node = new SCNNode { Position = new SCNVector3(2, 3, 4) };  
