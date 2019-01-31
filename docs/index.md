@@ -6,18 +6,18 @@ description: Xamarin 允许你使用 .NET 代码和特定于平台的用户界�
 ms.date: 08/08/2018
 featureFlags:
 - clicktale
-ms.openlocfilehash: 4cea75c2790096a55456018ed47d5899d94171ae
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 0a444626c86c6bb26739b1a9a94582404c729d27
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617732"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292099"
 ---
 <div id="main" class="v2">
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="~/xamarin-forms/get-started/index.md">
+                <a href="~/get-started/index.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -85,7 +85,7 @@ ms.locfileid: "51617732"
                         <a data-default="true" href="#XamarinForms">Xamarin.Forms</a>
                         <ul id="XamarinForms" class="cardsC">
                             <li>
-                                <a href="~/xamarin-forms/get-started/index.md">
+                                <a href="~/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

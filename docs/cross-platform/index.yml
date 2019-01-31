@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 091f94f66e07309ca5c6cc6ba69e0631e17eb0c0
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 430fcdc6066c677d74955670cef0979b19802835
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617275"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292100"
 documentType: LandingData
 title: 跨平台指南
 metadata:
@@ -38,7 +38,7 @@ sections:
     - image:
         src: ~/media/icons/i_desktop-phone.svg
       text: Xamarin.Forms
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
+      href: ~/get-started/quickstarts/index.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
       text: Android
@@ -101,7 +101,7 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.yml
-      html: <p><a href="~/xamarin-forms/get-started/index.md">入门</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">应用基础知识</a><br /><a href="~/xamarin-forms/user-interface/index.md">用户界面</a><br /><a href="~/xamarin-forms/platform/index.md">平台功能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">部署和测试</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">数据和云服务</a><br /><a href="~/xamarin-forms/internals/index.md">高级概念和内部机制</a></p>
+      html: <p><a href="~/get-started/quickstarts/index.md">入门</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">应用基础知识</a><br /><a href="~/xamarin-forms/user-interface/index.md">用户界面</a><br /><a href="~/xamarin-forms/platform/index.md">平台功能</a><br /><a href="~/xamarin-forms/deploy-test/index.md">部署和测试</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">数据和云服务</a><br /><a href="~/xamarin-forms/internals/index.md">高级概念和内部机制</a></p>
     - title: Android
       href: ~/android/index.yml
       html: <p><a href="~/android/get-started/index.md">入门</a><br /><a href="~/android/app-fundamentals/index.md">应用基础知识</a><br /><a href="~/android/user-interface/index.md">用户界面</a><br /><a href="~/android/platform/index.md">平台功能</a><br /><a href="~/android/deploy-test/index.md">部署和测试</a><br /><a href="~/android/data-cloud/index.md">数据和云服务</a><br /><a href="~/android/internals/index.md">高级概念和内部机制</a></p>
