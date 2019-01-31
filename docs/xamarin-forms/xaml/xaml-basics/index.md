@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 0f39eb78d46b6156231a165f950f4698e63fc073
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bd6013a0fc1d4f3dfc2d863860052310fed55e4d
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055736"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292137"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基础知识
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
-XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。 XAML 永远不会需要在 Xamarin.Forms 程序中，但通常会更简洁和更直观地一致比等效的代码，并可能会非常有用。 XAML 是非常适合于与常用的 MVVM （模型-视图-视图） 应用程序体系结构一起使用： XAML 定义通过基于 XAML 的数据绑定链接到 ViewModel 代码的视图。
+XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。 XAML 永远不会需要在 Xamarin.Forms 程序中，但通常会更简洁和更直观地一致比等效的代码，并可能会非常有用。 XAML 是非常适合于与常用的 MVVM （模型-视图-视图） 应用程序体系结构一起使用：XAML 定义通过基于 XAML 的数据绑定链接到 ViewModel 代码的视图。
 
 ## <a name="xaml-basics-contents"></a>XAML 基础知识内容
 
@@ -101,17 +101,12 @@ XAML 基本上是 XML，但 XAML 具有一些独特的语法功能。 最重要�
 
 ## <a name="requirements"></a>要求
 
-本文假定你熟悉 Xamarin.Forms 工作。 读取[Xamarin.Forms 简介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)强烈建议。
-
-本文还假定熟悉 XML，包括了解使用 XML 命名空间声明和条款*元素*，*标记*，并*特性*。
+本文假定你熟悉 Xamarin.Forms 工作。 本文还假定熟悉 XML，包括了解使用 XML 命名空间声明和条款*元素*，*标记*，并*特性*。
 
 当您熟悉使用 Xamarin.Forms 和 XML 时，开始读取[第 1 部分。开始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)。
-
-
 
 ## <a name="related-links"></a>相关链接
 
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
-- [Xamarin.Forms 简介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [创建移动应用书籍](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)

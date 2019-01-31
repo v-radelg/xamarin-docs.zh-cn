@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 05ec368fb0dd0e1adfac3eed88c5ddd50960f9ae
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056579"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291942"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的样式继承
 
@@ -154,11 +154,6 @@ public class StyleInheritancePageCS : ContentPage
 ```
 
 `baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。
-
-## <a name="summary"></a>总结
-
-样式可以继承其他样式以减少重复和使重复使用。 通过设置执行的样式继承[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)属性设置为现有[ `Style` ](xref:Xamarin.Forms.Style)。
-
 
 ## <a name="related-links"></a>相关链接
 

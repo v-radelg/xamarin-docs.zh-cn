@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 7360ee9064049bcebfd88f0cd36b5938d5337be3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b027dd23b9144a865bc16b55ebac71855bae0725
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105280"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292033"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android 生成错误 – LinkAssemblies 任务意外失败
 
-可能会看到一条错误消息`The "LinkAssemblies" task failed unexpectedly`时生成 Xamarin.Android 项目使用的窗体。 链接器处于活动状态时将发生这种情况 (通常在*版本*生成以减少应用包的大小); 以及执行因为 Android 目标不会更新到最新的 framework。 (详细信息：[适用于 Android 的要求的 Xamarin.Forms](~/xamarin-forms/get-started/installation.md#android))
+可能会看到一条错误消息`The "LinkAssemblies" task failed unexpectedly`时生成 Xamarin.Android 项目使用的窗体。 链接器处于活动状态时将发生这种情况 (通常在*版本*生成以减少应用包的大小); 以及执行因为 Android 目标不会更新到最新的 framework。 (详细信息：[适用于 Android 的要求的 Xamarin.Forms](~/get-started/installation.md#android))
 
 此问题的解决方法是确保具有支持最新 Android SDK 版本，并设置**目标框架**到**使用最新安装的平台**。 此外建议您设置**目标 Android 版本**到**使用目标框架版本**并**最低 Android 版本**为 API 15 或更高版本。 这被视为受支持的配置。
 
@@ -24,7 +24,7 @@ ms.locfileid: "50105280"
 
 1.  右键单击 Android 项目。
 2.  转到**生成 > 常规 > 目标 Framework**。
-3.  设置**目标框架： 使用最新安装的平台**。
+3.  设置**框架为目标：使用最新安装的平台**。
 4.  仍在项目选项，请转到**生成 > Android 应用程序**。
 5.  设置**最低 Android 版本**为 15 个或更高版本的 API 级别 &**目标 Android 版本**到**自动-使用目标框架版本**。
 

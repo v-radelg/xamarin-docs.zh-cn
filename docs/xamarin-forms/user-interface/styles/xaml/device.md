@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 6c1c7bd12922f127ff7f4eecdc982ede419fc515
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055931"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292228"
 ---
 # <a name="device-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的设备样式
 
@@ -122,11 +122,6 @@ public class DeviceStylesPageCS : ContentPage
 下面的屏幕截图演示了如何在每个平台上，使用最大的可访问的字体大小的设备样式：
 
 ![](device-images/maximum-size.png "每个平台上的可访问的大型设备样式")
-
-## <a name="summary"></a>总结
-
-Xamarin.Forms 具有六*动态*样式，称为*设备*样式，在[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)类。 所有六个样式仅应用于[ `Label` ](xref:Xamarin.Forms.Label)实例。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -1,18 +1,18 @@
 ---
 title: 第 2 章的摘要。 应用剖析
-description: 使用 Xamarin.Forms 创建移动应用： 第 2 章的摘要。 应用剖析
+description: 使用 Xamarin.Forms 创建移动应用：第 2 章的摘要。 应用剖析
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 948d25ce379944691053a5ff76ba3b2284385251
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2236faa67367fa2104280f42ee28056613d1901b
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052632"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292254"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 应用剖析
 
@@ -206,4 +206,4 @@ ms.locfileid: "53052632"
 - [第 2 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [第 2 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 - [第 2 章F#示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
-- [Xamarin.Forms 入门](~/xamarin-forms/get-started/index.md)
+- [Xamarin.Forms 入门](~/get-started/index.md)

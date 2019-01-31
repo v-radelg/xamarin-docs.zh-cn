@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 5b3d6f486f802fda1a384b7a8e53b104c1251fdd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fcbdeac5ebceccddee68fcca635a3935944ecac8
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058241"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291929"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的显式样式
 
@@ -20,7 +20,7 @@ ms.locfileid: "53058241"
 
 _显式样式是指通过设置其样式属性有选择地应用于控件。_
 
-## <a name="creating-an-explicit-style-in-xaml"></a>在 XAML 中创建显式样式
+## <a name="create-an-explicit-style-in-xaml"></a>在 XAML 中创建显式样式
 
 若要声明[ `Style` ](xref:Xamarin.Forms.Style)级别的页[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必须添加到页面，然后一个或多个`Style`声明可以包含在`ResourceDictionary`。 一个`Style`由*显式*其声明，从而`x:Key`属性中为其提供描述性密钥`ResourceDictionary`。 *显式*样式必须然后将应用到特定的可视元素通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。
 
@@ -70,7 +70,7 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 
 此外，最终[ `Label` ](xref:Xamarin.Forms.Label)具有[ `Style` ](xref:Xamarin.Forms.Style)应用于它，但也会覆盖[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)属性设置为不同`Color`值。
 
-### <a name="creating-an-explicit-style-at-the-control-level"></a>在控件级别创建显式样式
+### <a name="create-an-explicit-style-at-the-control-level"></a>在控件级别创建显式样式
 
 除了创建之外*显式*页面级别的样式，则可以也在创建这些控件级别，如下面的代码示例中所示：
 
@@ -97,7 +97,7 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 
 有关创建在应用程序的样式信息[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，请参阅[全局样式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="creating-an-explicit-style-in-c35"></a>在 C 中创建显式样式&#35;
+## <a name="create-an-explicit-style-in-c35"></a>在 C 中创建显式样式&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) 实例可以添加到页面的[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中通过创建一个新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，然后通过将添加`Style`实例到`ResourceDictionary`，如中所示下面的代码示例：
 
@@ -180,12 +180,6 @@ public class ExplicitStylesPageCS : ContentPage
 ```
 
 构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。 此外，最终`Label`已`Style`应用，但也会覆盖`TextColor`属性设置为不同`Color`值。
-
-## <a name="summary"></a>总结
-
-一个[ `Style` ](xref:Xamarin.Forms.Style)由*显式*其声明，从而`x:Key`属性，，然后有选择地将它应用到控件通过设置其[ `Style`](xref:Xamarin.Forms.VisualElement.Style)属性。
-
-
 
 ## <a name="related-links"></a>相关链接
 

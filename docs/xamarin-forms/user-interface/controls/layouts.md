@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 520a90030200a1371b15331868ec6e325c6d3694
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 3c525178b5ed1e62774d032c0d317d43cd3f94c1
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053326"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292202"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
 
@@ -116,7 +116,6 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms 简介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 示例](https://developer.xamarin.com/samples/FormsGallery/)
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

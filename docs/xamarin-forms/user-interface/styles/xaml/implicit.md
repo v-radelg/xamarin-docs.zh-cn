@@ -6,13 +6,13 @@ ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: c30e6c0060407720e0324a3327607100db3960d6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 01/30/2019
+ms.openlocfilehash: 67b8bac62cacb091323d084e1c7cec9accc30844
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056144"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291968"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的隐式样式
 
@@ -20,7 +20,7 @@ ms.locfileid: "53056144"
 
 _隐式样式是指可供所有控件的相同的目标类型，而无需每个控件以引用样式。_
 
-## <a name="creating-an-implicit-style-in-xaml"></a>在 XAML 中创建的隐式样式
+## <a name="create-an-implicit-style-in-xaml"></a>在 XAML 中创建的隐式样式
 
 若要声明[ `Style` ](xref:Xamarin.Forms.Style)级别的页[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必须添加到页面，然后一个或多个`Style`声明可以包含在`ResourceDictionary`。 一个`Style`由*隐式*通过不指定`x:Key`属性。 然后将对匹配的可视元素应用样式`TargetType`确实如此，但不适用于元素派生自`TargetType`值。
 
@@ -57,7 +57,7 @@ _隐式样式是指可供所有控件的相同的目标类型，而无需每个�
 
 此外，第四个[ `Entry` ](xref:Xamarin.Forms.Entry)重写[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)并[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)属性隐式样式应用到不同`Color`值。
 
-### <a name="creating-an-implicit-style-at-the-control-level"></a>在控件级别创建的隐式样式
+### <a name="create-an-implicit-style-at-the-control-level"></a>在控件级别创建的隐式样式
 
 除了创建之外*隐式*页面级别的样式，则可以也在创建这些控件级别，如下面的代码示例中所示：
 
@@ -84,7 +84,7 @@ _隐式样式是指可供所有控件的相同的目标类型，而无需每个�
 
 有关创建在应用程序的样式信息[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，请参阅[全局样式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="creating-an-implicit-style-in-c35"></a>在 C 中创建的隐式样式&#35;
+## <a name="create-an-implicit-style-in-c35"></a>在 C 中创建的隐式样式&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) 实例可以添加到页面的[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中通过创建一个新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，然后通过将添加`Style`实例到`ResourceDictionary`，如中所示下面的代码示例：
 
@@ -119,11 +119,40 @@ public class ImplicitStylesPageCS : ContentPage
 
 构造函数定义单个*隐式*应用于页面的样式[ `Entry` ](xref:Xamarin.Forms.Entry)实例。 `Style`用于显示黄色背景，蓝色文本，同时也要设置其他外观选项。 `Style`添加到页面的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)而无需指定`key`字符串。 因此，`Style`适用于所有`Entry`隐式实例，因为它们匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性`Style`完全。 但是，`Style`不应用于`CustomEntry`实例，这是子类化`Entry`。
 
-## <a name="summary"></a>总结
+## <a name="apply-a-style-to-derived-types"></a>将样式应用于派生类型
 
-*隐式*样式是指由相同的所有可视元素[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)，而无需每个控件以引用样式。 一个`Style`由*隐式*通过不指定`x:Key`属性。 相反，`x:Key`属性将自动变为的值[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性。
+[ `Style.ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性启用要应用于从所引用的基类型派生的控件的样式[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性。 因此，此属性设置为`true`使单个样式以面向多个类型，前提是类型派生自基类型中指定`TargetType`属性。
 
+下面的示例演示设置的背景色的隐式样式[ `Button` ](xref:Xamarin.Forms.Button)为红色的实例：
 
+```xaml
+<Style TargetType="Button"
+       ApplyToDerivedTypes="True">
+    <Setter Property="BackgroundColor"
+            Value="Red" />
+</Style>
+```
+
+将此样式放置在页面级[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)将导致它适用于所有[ `Button` ](xref:Xamarin.Forms.Button)实例的页上，以及从派生的任何控件`Button`。 但是，如果[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性保持取消设置，该样式将仅应用于`Button`实例。
+
+等效的 C# 代码是：
+
+```csharp
+var buttonStyle = new Style(typeof(Button))
+{
+    ApplyToDerivedTypes = true,
+    Setters =
+    {
+        new Setter
+        {
+            Property = VisualElement.BackgroundColorProperty,
+            Value = Color.Red
+        }
+    }
+};
+
+Resources = new ResourceDictionary { buttonStyle };
+```
 
 ## <a name="related-links"></a>相关链接
 

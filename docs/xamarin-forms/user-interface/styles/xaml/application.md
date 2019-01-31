@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: b663a7f2a4a67a9c3e18ed474d9935227fe34294
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059556"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292345"
 ---
 # <a name="global-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的全局样式
 
@@ -20,9 +20,9 @@ ms.locfileid: "53059556"
 
 _样式可全局添加到应用程序的资源字典。这有助于避免跨页或控件的样式的重复项。_
 
-## <a name="creating-a-global-style-in-xaml"></a>在 XAML 中创建全局样式
+## <a name="create-a-global-style-in-xaml"></a>在 XAML 中创建全局样式
 
-默认情况下，所有从模板创建的 Xamarin.Forms 应用程序使用**应用程序**类，以实现[ `Application` ](xref:Xamarin.Forms.Application)子类。 若要声明[ `Style` ](xref:Xamarin.Forms.Style)在应用程序级别，在应用程序的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用 XAML，默认值**应用**类必须替换 XAML**应用**类和关联的代码隐藏。 有关详细信息，请参阅[使用 App 类](~/xamarin-forms/app-fundamentals/application-class.md)。
+默认情况下，从模板创建的所有 Xamarin.Forms 应用程序都使用“App”类来实现 [`Application`](xref:Xamarin.Forms.Application) 子类。 若要声明[ `Style` ](xref:Xamarin.Forms.Style)在应用程序级别，在应用程序的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用 XAML，默认值**应用**类必须替换 XAML**应用**类和关联的代码隐藏。 有关详细信息，请参阅[使用 App 类](~/xamarin-forms/app-fundamentals/application-class.md)。
 
 下面的代码示例演示[ `Style` ](xref:Xamarin.Forms.Style)在应用程序级别声明：
 
@@ -66,7 +66,7 @@ _样式可全局添加到应用程序的资源字典。这有助于避免跨页�
 
 有关创建在页面的样式信息[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)并[隐式样式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
-### <a name="overriding-styles"></a>重写样式
+### <a name="override-styles"></a>重写样式
 
 样式的视图层次结构中较低级别优先于更高版本定义了。 例如，设置[ `Style` ](xref:Xamarin.Forms.Style) ，用于设置[ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor)到`Red`在应用程序级别将被重写由设置的页级别样式`Button.TextColor`到`Green`. 同样，将控件级别样式将页级别样式中重写。 此外，如果`Button.TextColor`设置直接上的控件属性，这将优先于任何样式。 在下面的代码示例演示此优先顺序：
 
@@ -102,7 +102,7 @@ _样式可全局添加到应用程序的资源字典。这有助于避免跨页�
 
 [![](application-images/application-styles-2.png "重写样式示例")](application-images/application-styles-2-large.png#lightbox "重写样式示例")
 
-## <a name="creating-a-global-style-in-c35"></a>在 C 中创建全局样式&#35;
+## <a name="create-a-global-style-in-c35"></a>在 C 中创建全局样式&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) 可以将实例添加到应用程序的[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中通过创建一个新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，然后通过将添加`Style`实例到`ResourceDictionary`，作为下面的代码示例所示：
 
@@ -149,12 +149,6 @@ public class ApplicationStylesPageCS : ContentPage
 ```
 
 `buttonStyle`应用于[ `Button` ](xref:Xamarin.Forms.Button)实例通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性和控件的外观`Button`实例。
-
-## <a name="summary"></a>总结
-
-样式可提供全局添加到应用程序的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 这有助于避免跨页或控件的样式的重复项。
-
-
 
 ## <a name="related-links"></a>相关链接
 

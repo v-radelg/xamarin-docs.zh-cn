@@ -6,13 +6,13 @@ ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: 2607298bdc0842f60a1d1a3299bed61bbea925a1
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.date: 01/30/2019
+ms.openlocfilehash: ec41955ac15ab23579a5e63b9e17eed61a74e86f
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459858"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55291981"
 ---
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>使用 XAML 样式的样式设置 Xamarin.Forms 应用
 
@@ -43,3 +43,7 @@ Xamarin.Forms 应用程序通常包含多个具有相同的外观的控件。 �
 ## <a name="device-stylesdevicemd"></a>[设备样式](device.md)
 
 Xamarin.Forms 具有六*动态*样式，称为*设备*样式，在[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)类。 所有六个样式可应用于[ `Label` ](xref:Xamarin.Forms.Label)仅限实例。
+
+## <a name="style-classesstyle-classmd"></a>[样式类](style-class.md)
+
+Xamarin.Forms 的样式类，多个样式应用到控件，而不必求助于样式继承。

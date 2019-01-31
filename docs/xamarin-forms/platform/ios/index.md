@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: e5ec152032a068c0c1e83c8df5e6f128bfa30c83
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 83946929874ae37caab459eed970c50b74154d66
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207760"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292332"
 ---
 # <a name="ios-platform-features"></a>iOS 平台功能
 
-开发适用于 iOS 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/xamarin-forms/get-started/installation.md)包含有关系统必备组件的详细信息。
+开发适用于 iOS 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/installation.md)包含有关系统必备组件的详细信息。
 
 ## <a name="platform-specifics"></a>平台特定信息
 

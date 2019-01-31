@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8f84c960f17f56fce2a1bba143a215ce930f6f4e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 6f5af5fde46676cf669e6c02fb83f4aac5d31c46
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996104"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292085"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms 样式简介
 
@@ -45,7 +45,7 @@ Xamarin.Forms 应用程序通常包含多个具有相同的外观的控件。 �
 </ContentPage>
 ```
 
-下面的代码示例显示了在 C# 中创建的等效页：
+以下代码示例演示了在 C# 中创建的等效页：
 
 ```csharp
 public class NoStylesPageCS : ContentPage
@@ -82,13 +82,13 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-每个[ `Label` ](xref:Xamarin.Forms.Label)实例具有相同的属性值，用于控制显示的文本的外观`Label`。 这会导致下面的屏幕截图中所示的外观：
+每个[ `Label` ](xref:Xamarin.Forms.Label)实例具有相同的属性值，用于控制显示的文本的外观`Label`。 这会导致如以下屏幕截图中所示的外观：
 
 [![](introduction-images/no-styles.png "标签不带样式的外观")](introduction-images/no-styles-large.png#lightbox "标签不带样式的外观")
 
 设置每个控件的外观会重复且容易出错。 相反，一种样式可以创建定义的外观，然后应用于所需的控制。
 
-## <a name="creating-a-style"></a>创建样式
+## <a name="create-a-style"></a>创建样式
 
 [ `Style` ](xref:Xamarin.Forms.Style)类进行分组到一个对象，然后可以应用于多个可视元素实例的属性值的集合。 这有助于减少重复性的标记，并允许应用程序外观以更轻松地更改。
 
@@ -97,7 +97,7 @@ public class NoStylesPageCS : ContentPage
 - [`Style`](xref:Xamarin.Forms.Style) 在 XAML 中创建的实例通常定义在[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)分配给[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)控件的集合页上，或设置为[ `Resources` ](xref:Xamarin.Forms.Application.Resources)应用程序的集合。
 - [`Style`](xref:Xamarin.Forms.Style) 在页面的类中，或者可全局访问的类通常定义在 C# 中创建的实例。
 
-选择定义的位置[ `Style` ](xref:Xamarin.Forms.Style)可以使用它的影响：
+选择在何处定义 [`Style`](xref:Xamarin.Forms.Style) 会影响其应用范围：
 
 - [`Style`](xref:Xamarin.Forms.Style) 在控件级别定义的实例只能应用到控件，及其子级。
 - [`Style`](xref:Xamarin.Forms.Style) 在页面级别定义的实例只能应用到页，及其子级。
@@ -134,11 +134,6 @@ public class NoStylesPageCS : ContentPage
 > **Styleid 等各是什么？**
 >
 > 低于 Xamarin.Forms 2.2 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)属性用于标识用于在 UI 测试中，以及主题引擎如 Pixate 中标识的应用程序中各个元素。 但是，已引入了 Xamarin.Forms 2.2 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)属性，已取代[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)属性。 有关详细信息，请参阅[自动执行 Xamarin.Forms 测试使用 Xamarin.UITest 和 Test Cloud](~/xamarin-forms/deploy-test/uitest-and-test-cloud.md)。
-
-## <a name="summary"></a>总结
-
-Xamarin.Forms 应用程序通常包含多个具有相同的外观的控件。 设置每个控件的外观会重复且容易出错。 相反，样式可以创建自定义控件外观的分组和可用的控件类型的设置属性。
-
 
 ## <a name="related-links"></a>相关链接
 

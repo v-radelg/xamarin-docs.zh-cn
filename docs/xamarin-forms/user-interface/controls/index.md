@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 9a149711b52b0ea7a6548c2070b20d708e747174
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 4cccf0660e306cb0dc466f5376d74411fa6c4ba1
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050668"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292020"
 ---
 # <a name="controls-reference"></a>控件引用
 
@@ -35,6 +35,5 @@ Xamarin.Forms 页面通常占据整个屏幕。 页通常包含一种布局，�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms 简介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Xamarin.Forms FormsGallery 示例](https://developer.xamarin.com/samples/FormsGallery/)
 - [API 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
