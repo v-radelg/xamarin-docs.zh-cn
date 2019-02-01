@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 892a6dccae7bf0ec673b19e830fc01e3f9e39833
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.openlocfilehash: 95df735c07def5b3f7a0ad2e7e3eb1e114cc5e8f
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609891"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292241"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -35,30 +35,38 @@ sections:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: 安装
-      href: ~/xamarin-forms/get-started/installation.md
+      href: ~/get-started/installation.md
     - image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
       text: 首个应用
-      href: ~/xamarin-forms/get-started/first-app.md
+      href: ~/get-started/first-app/index.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 快速入门
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
+      text: 应用快速入门
+      href: ~/get-started/quickstarts/single-page.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 多屏幕应用
-      href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
+      text: 多页快速入门
+      href: ~/get-started/quickstarts/multi-page.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: 本地数据库快速入门
+      href: ~/get-started/quickstarts/database.md
+    - image:
+        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
+      text: 样式设置快速入门
+      href: ~/get-started/quickstarts/styling.md
 - title: 参考线
   items:
   - type: list
     style: cards
     className: cardsB
     items:
-    - href: ~/xamarin-forms/get-started/index.md
+    - href: ~/get-started/quickstarts/index.md
       html: 通过 Xamarin.Forms 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 Xamarin.Forms 应用。
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/xamarin-forms/get-started/index.md
+        href: ~/get-started/quickstarts/index.md
       title: 入门
     - href: ~/xamarin-forms/xaml/
       html: 以声明方式生成用户界面并在移动平台和桌面平台之间共享。

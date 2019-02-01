@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: bdfef88e0cf5916b1eec08ddfaa09165a057765a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 08278c2bc380892706320dbd0e69642257b73005
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058573"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233778"
 ---
 # <a name="checking-battery-status"></a>检查电池状态
 
@@ -77,7 +77,7 @@ namespace DependencyServiceSample
 
 ## <a name="ios-implementation"></a>iOS 实现
 
-`IBattery` 接口必须在每个特定于平台的应用程序项目中实现。 iOS 实现将使用本机 [`UIDevice`](https://developer.xamarin.com/api/type/UIKit.UIDevice/) API 访问电池信息。 请注意，以下类有一个无参数的构造函数，以便 `DependencyService` 可以创建新的实例：
+`IBattery` 接口必须在每个特定于平台的应用程序项目中实现。 iOS 实现将使用本机 [`UIDevice`](xref:UIKit.UIDevice) API 访问电池信息。 请注意，以下类有一个无参数的构造函数，以便 `DependencyService` 可以创建新的实例：
 
 ```csharp
 using UIKit;

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/24/2017
-ms.openlocfilehash: 667c98d3140d460a6d4b3a26bd898f4c169d6d85
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.openlocfilehash: 04f92988d4d367abd5e6e864d4450aee2e6c1df2
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234877"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233791"
 ---
 # <a name="linking-xamarinios-apps"></a>链接 Xamarin.iOS 应用
 
@@ -147,7 +147,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 这种情况通常是因为用户不想将 `[Preserve]` 属性手动添加到其代码中。  缺点是不会链接到第三方库，通常情况下，这是一个很好的默认设置，因为它不可能知道第三方库是否对链接器友好。
 
-如果你在项目中有库，或者是可重用库的开发人员并且希望链接器将程序集视为可链接，则只需要添加程序集级别的属性 [`LinkerSafe`](https://developer.xamarin.com/api/type/Foundation.LinkerSafeAttribute/) 即可，如下所示：
+如果你在项目中有库，或者是可重用库的开发人员并且希望链接器将程序集视为可链接，则只需要添加程序集级别的属性 [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) 即可，如下所示：
 
 ```csharp
 [assembly:LinkerSafe]

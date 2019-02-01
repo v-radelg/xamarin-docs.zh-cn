@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2754e135bee090ce47796dfa1ae39eed2b5f27c5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059582"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233505"
 ---
 # <a name="accessing-the-devices-video-library"></a>访问设备的视频库
 
@@ -40,7 +40,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-picker"></a>iOS 视频选取器
 
-iOS `VideoPicker` 使用 iOS [`UIImagePickerController`](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) 访问图片库，并指定在 iOS `MediaType` 属性中其应限制为视频（称为“电影”）。 请注意，`VideoPicker` 显式实现 `IVideoPicker` 接口。 还要注意将此类标识为依赖项服务的 `Dependency` 属性。 这是 Xamarin.Forms 在平台项目中找到依赖项服务的两个要求：
+iOS `VideoPicker` 使用 iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController) 访问图片库，并指定在 iOS `MediaType` 属性中其应限制为视频（称为“电影”）。 请注意，`VideoPicker` 显式实现 `IVideoPicker` 接口。 还要注意将此类标识为依赖项服务的 `Dependency` 属性。 这是 Xamarin.Forms 在平台项目中找到依赖项服务的两个要求：
 
 ```csharp
 using System;

@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 3b1769dec78f65544e8996e21cb8ae003e4af198
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b98dcb175c7e28e0ae101bea172aa2a98d3502e
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111325"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292163"
 ---
 # <a name="get-started-with-xamarin"></a>Xamarin 入门
 
@@ -21,7 +21,7 @@ ms.locfileid: "50111325"
 ## <a name="build-your-first-app"></a>生成首个应用
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms 快速入门](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+> [Xamarin.Forms 快速入门](~/get-started/quickstarts/single-page.md)
 
 若要使用本机 UI 技术（如 Android XML 或 Xcode Storyboard）生成应用，请尝试参考以下平台特定指南之一：
 

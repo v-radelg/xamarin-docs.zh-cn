@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: a65946f21f8ced00e9ad64aec590df37acab1528
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 2178c9f4115c42396635e22cb0688695b590ec26
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207812"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292150"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 应用程序基础知识
 
@@ -87,8 +87,3 @@ Xamarin.Forms Shell 是应用程序容器，提供大多数应用程序需要的
 ## <a name="triggerstriggersmd"></a>[触发器](triggers.md)
 
 通过响应 XAML 中的属性更改和事件来更新控件。
-
-
-## <a name="related-links"></a>相关链接
-
-- [Xamarin.Forms 简介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
