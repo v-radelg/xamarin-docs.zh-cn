@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: f01074823f865b1717920d8364c67828453b6437
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
+ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617731"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55233752"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 性能
 
@@ -25,7 +25,7 @@ ms.locfileid: "51617731"
 
 ## <a name="avoid-strong-circular-references"></a>避免强循环引用
 
-在某些情况下，可创建强引用循环以防止垃圾回收器回收对象的内存。 例如，考虑这种情况：[`NSObject`](https://developer.xamarin.com/api/type/Foundation.NSObject/) 派生的子类（如继承自 [`UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/) 的类）添加到了 `NSObject` 派生的容器中，并从 Objective-C 进行了强引用，如以下代码示例所示：
+在某些情况下，可创建强引用循环以防止垃圾回收器回收对象的内存。 例如，考虑这种情况：[`NSObject`](xref:Foundation.NSObject) 派生的子类（如继承自 [`UIView`](xref:UIKit.UIView) 的类）添加到了 `NSObject` 派生的容器中，并从 Objective-C 进行了强引用，如以下代码示例所示：
 
 ```csharp
 class Container : UIView
@@ -56,7 +56,7 @@ container.AddSubview (new MyView (container));
 
 此代码创建 `Container` 实例时，C# 对象具有对 Objective-C 对象的强引用。 同样，`MyView` 示例也将具有对 Objective-C 对象的强引用。
 
-此外，对 `container.AddSubview` 的调用将增加未托管 `MyView` 实例上的引用数。 出现此情况时，Xamarin.iOS 运行时会创建一个 `GCHandle` 实例以使 `MyView` 对象在托管代码中处于活动状态，因为无法保证所有托管对象保留对该对象的引用。 从托管代码的角度看，如果 `MyView` 对象不适用于 `GCHandle`，则将在 [`AddSubview`](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) 调用后将该对象回收。
+此外，对 `container.AddSubview` 的调用将增加未托管 `MyView` 实例上的引用数。 出现此情况时，Xamarin.iOS 运行时会创建一个 `GCHandle` 实例以使 `MyView` 对象在托管代码中处于活动状态，因为无法保证所有托管对象保留对该对象的引用。 从托管代码的角度看，如果 `MyView` 对象不适用于 `GCHandle`，则将在 [`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView)) 调用后将该对象回收。
 
 未托管的 `MyView` 对象具有指向托管对象的 `GCHandle`，称为强链接。 托管对象包含一个对 `Container` 实例的引用。 反之，`Container` 实例则有一个对 `MyView` 对象的托管引用。
 
@@ -103,7 +103,7 @@ container.AddSubview (new MyView (container));
 
 使用委托或数据源模式的 iOS API 也采用这种做法。其中，对等类包含实现代码（例如，在 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 类中
 设置 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) 属性
-或 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 时）。
+或 [`UITableView`](xref:UIKit.UITableView) 时）。
 
 对于纯粹为了实现协议而创建的类（例如，[`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)），可以直接在类中实现接口并替代方法，再向 `this` 分配 `DataSource` 属性，而不是创建子类。
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 有关释放强引用的详细信息，请参阅[释放 IDisposable 资源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。
-另外，此博客文章也对其进行了适当探讨：[Xamarin.iOS, the garbage collector and me](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)（Xamarin.iOS、垃圾回收器和我）。
+在下面这篇博客文章中也进行了详细探讨：[Xamarin.iOS，垃圾回收器和我](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)。
 
 ### <a name="more-information"></a>详细信息
 
@@ -219,7 +219,7 @@ class MyChild : UIView
 
 ## <a name="optimize-table-views"></a>优化表视图
 
-用户期望平滑滚动并快速加载 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 实例。 但是，当单元格包含深度嵌套的视图层次结构或包含复杂布局时，滚动性能会降低。 但是，可以使用一些方法避免出现不佳的 `UITableView` 性能：
+用户期望平滑滚动并快速加载 [`UITableView`](xref:UIKit.UITableView) 实例。 但是，当单元格包含深度嵌套的视图层次结构或包含复杂布局时，滚动性能会降低。 但是，可以使用一些方法避免出现不佳的 `UITableView` 性能：
 
 - 重用单元格。 有关详细信息，请参阅[重用单元格](#reusecells)。
 - 减少子视图数。
@@ -228,11 +228,11 @@ class MyChild : UIView
 - 使单元格和任何其他视图处于不透明状态。
 - 避免图像缩放和渐变。
 
-结合使用这些方法有助于保持 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 实例的平滑滚动。
+结合使用这些方法有助于保持 [`UITableView`](xref:UIKit.UITableView) 实例的平滑滚动。
 
 ### <a name="reuse-cells"></a>重用单元格
 
-在 [`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 中显示数百个行时，若一次仅在屏幕上显示其中一小部分，创建数百个 [`UITableViewCell`](https://developer.xamarin.com/api/type/UIKit.UITableViewCell/) 对象则是在浪费内存。 相反，应仅将屏幕上显示单元格加载到内存中，同时将**内容**加载到这些重用单元格中。 这可以防止实例化数百个其他对象，从而节省时间和内存。
+在 [`UITableView`](xref:UIKit.UITableView) 中显示数百个行时，若一次仅在屏幕上显示其中一小部分，创建数百个 [`UITableViewCell`](xref:UIKit.UITableViewCell) 对象则是在浪费内存。 相反，应仅将屏幕上显示单元格加载到内存中，同时将**内容**加载到这些重用单元格中。 这可以防止实例化数百个其他对象，从而节省时间和内存。
 
 因此，当某一单元格从屏幕上消失后，可将其视图放到队列中以供重复使用，如以下代码示例所示：
 
@@ -250,13 +250,13 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-用户滚动鼠标时，[`UITableView`](https://developer.xamarin.com/api/type/UIKit.UITableView/) 会调用 `GetCell` 替代以请求显示新视图。 此替代随后调用 [`DequeueReusableCell`](https://developer.xamarin.com/api/member/UIKit.UITableView.DequeueReusableCell/p/Foundation.NSString/) 方法，如果单元格可供重复使用，则将返回该方法。
+用户滚动鼠标时，[`UITableView`](xref:UIKit.UITableView) 会调用 `GetCell` 替代以请求显示新视图。 此替代随后调用 [`DequeueReusableCell`](xref:UIKit.UITableView.DequeueReusableCell(Foundation.NSString)) 方法，如果单元格可供重复使用，则将返回该方法。
 
 有关详细信息，请参阅[用数据填充表](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)中的[单元格重用](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)。
 
 ## <a name="use-opaque-views"></a>使用不透明视图
 
-确保未定义透明度的所有视图均具有其 [`Opaque`](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/) 属性集。 这可确保视图通过绘图系统以最佳方式呈现。 当视图嵌入 [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) 中，或者视图是复杂动画的一部分时，这一点尤为重要。 否则，绘图系统会将视图和其他内容合并，这可能严重影响性能。
+确保未定义透明度的所有视图均具有其 [`Opaque`](xref:UIKit.UIView.Opaque) 属性集。 这可确保视图通过绘图系统以最佳方式呈现。 当视图嵌入 [`UIScrollView`](xref:UIKit.UIScrollView) 中，或者视图是复杂动画的一部分时，这一点尤为重要。 否则，绘图系统会将视图和其他内容合并，这可能严重影响性能。
 
 ## <a name="avoid-fat-xibs"></a>避免 fat XIB
 
@@ -264,7 +264,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="optimize-image-resources"></a>优化图像资源
 
-图像是应用程序使用的一些最昂贵的资源，通常以高分辨率捕获。 因此，在 [`UIImageView`](https://developer.xamarin.com/api/type/UIKit.UIImageView/) 中显示来自应用程序包的图像时，请确保图像和 `UIImageView` 的大小相同。 在运行时缩放图像可能是一项开销巨大的操作，将 `UIImageView` 嵌入 [`UIScrollView`](https://developer.xamarin.com/api/type/UIKit.UIScrollView/) 中时尤为明显。
+图像是应用程序使用的一些最昂贵的资源，通常以高分辨率捕获。 因此，在 [`UIImageView`](xref:UIKit.UIImageView) 中显示来自应用程序包的图像时，请确保图像和 `UIImageView` 的大小相同。 在运行时缩放图像可能是一项开销巨大的操作，将 `UIImageView` 嵌入 [`UIScrollView`](xref:UIKit.UIScrollView) 中时尤为明显。
 
 有关详细信息，请参阅[跨平台性能](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南中的[优化图像资源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 

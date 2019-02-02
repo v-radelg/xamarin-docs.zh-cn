@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: cefcc7084b2abab4af61f07ef1f33a4f4c363f69
-ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
+ms.openlocfilehash: 5470a70570a431c1adc3053d9f8f389cec31cf85
+ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "53815199"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55292072"
 ---
 # <a name="introduction-to-mobile-development"></a>移动开发简介
 
@@ -65,13 +65,9 @@ Xamarin 应用程序针对 .NET BCL（称为 Xamarin 移动配置文件）的子
 
 除了 BCL，这些 .dll 还包括几乎整个 iOS SDK 和 Android SDK 的包装器，允许直接从 C# 调用基础 SDK API。
 
-
-
 ### <a name="application-output"></a>应用程序输出
 
 编译 Xamarin 应用程序时，结果是应用程序包，要么是 iOS 中的 .app 文件，要么是 Android 中的 .apk 文件。 这些文件与使用平台的默认 IDE 生成的应用程序包不好区别，并且这些文件均可通过完全相同的方式部署。
-
-
 
 ## <a name="getting-started"></a>入门
 
@@ -83,22 +79,15 @@ Xamarin 应用程序针对 .NET BCL（称为 Xamarin 移动配置文件）的子
 
 ![](introduction-to-mobile-development-images/ios.png "了解 iOS")
 
-
 * [**了解 Android**](~/android/get-started/hello-android/index.md)
 
 ![](introduction-to-mobile-development-images/android.png "了解 Android")
 
-
-* [**Xamarin.Forms 简介**](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-
-
-
-
+* [**Xamarin.Forms 入门**](~/get-started/index.md)
 
 ## <a name="summary"></a>总结
 
-本文档只介绍了 Xamarin 平台。 完成生成并运行你第一个应用时，才是真正乐趣的开始。 请参阅[了解 iOS](~/ios/get-started/hello-ios/index.md)、[了解 Android](~/android/get-started/hello-android/index.md) 和 [Xamarin.Forms 简介](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)指南开始。
-
+本文档只介绍了 Xamarin 平台。 完成生成并运行你第一个应用时，才是真正乐趣的开始。 请参阅[了解 iOS](~/ios/get-started/hello-ios/index.md)、[了解 Android](~/android/get-started/hello-android/index.md) 和 [Xamarin.Forms 入门](~/get-started/index.md)指南开始使用。
 
 ## <a name="related-links"></a>相关链接
 
