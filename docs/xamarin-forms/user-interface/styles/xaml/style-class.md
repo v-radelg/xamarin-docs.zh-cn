@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 2de21f19e2789c94c02b5d2e9c13fc06963e1a7f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
+ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292797"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55668545"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms 样式类
 
@@ -206,7 +206,7 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews 样式的样式类")
 
 > [!IMPORTANT]
-> 多个样式类可以应用于控件，因为[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)属性属于类型`IList<string>`。
+> 多个样式类可以应用于控件，因为[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)属性属于类型`IList<string>`。 当发生这种情况时，可以按列表按升序应用样式类。 因此，当多个样式类设置相同属性，最高的列表位置的样式类中的属性将优先。
 
 等效的 C# 代码是：
 
