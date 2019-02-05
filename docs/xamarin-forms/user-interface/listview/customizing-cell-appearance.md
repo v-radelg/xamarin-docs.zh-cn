@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 7c19cc0f2d1f72706926d640bb7fad9323a9e17f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53049451"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712067"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自定义 ListView 单元格的外观
 
@@ -120,6 +120,7 @@ x:Class="demoListView.ImageCellPage">
 - 自定义单元格嵌套在`DataTemplate`，这是内部`ListView.ItemTemplate`。 这是与使用的任何其他单元相同的进程。
 - `ViewCell` 是类型的自定义单元格。 子级`DataTemplate`元素必须是或派生类型`ViewCell`。
 - 请注意，该内部`ViewCell`，由管理布局`StackLayout`。 此布局可用于自定义的背景色。 请注意，任何属性`StackLayout`，它是可绑定可以绑定自定义单元格，内部，尽管此处未显示的。
+- 内部`ViewCell`，布局可以由任何 Xamarin.Forms 布局。 
 
 ### <a name="cnum"></a>C&num;
 

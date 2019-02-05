@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 3c552d97f64b28ed47a9226047862bffcfa8c9e3
-ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
+ms.openlocfilehash: 6525cb321537a7cefb24feb1e77b532068b098ef
+ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2019
-ms.locfileid: "54418681"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "55712080"
 ---
 # <a name="using-sqlitenet-with-android"></a>与 Android 一起使用 SQLite.NET
 
@@ -207,9 +207,11 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 SQLite 支持三种不同的线程模式：*单线程*，*多线程*，和*序列化*。 如果你想要从多个线程不受任何限制地访问数据库，可以配置要使用的 SQLite**序列化**线程处理模式。 务必尽早在你的应用程序中设置此模式 (例如，在开头`OnCreate`方法)。
 
-若要更改线程的模式，请调用`SqliteConnection.SetConfig`。 例如，这行代码配置适用于 SQLite**序列化**模式： 
+若要更改线程的模式，请调用`SqliteConnection.SetConfig`。 例如，这行代码配置适用于 SQLite**序列化**模式：
 
 ```csharp
+using using Mono.Data.Sqlite;
+...
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
@@ -225,16 +227,17 @@ SQLite 的 Android 版本具有一个限制，即需要几个步骤。 如果在
     internal static extern int sqlite3_initialize();
     ```
 
-
 2.  最开头`OnCreate`方法，将此代码添加到关闭 SQLite，将其用于配置**序列化**模式，并重新初始化 SQLite:
 
     ```csharp
+    using using Mono.Data.Sqlite;
+    ...
     sqlite3_shutdown();
     SqliteConnection.SetConfig(SQLiteConfig.Serialized);
     sqlite3_initialize();
     ```
 
-此解决方法也适用于`Mono.Data.Sqlite`库。 有关 SQLite 和多线程处理的详细信息，请参阅[SQLite 和多个线程](https://www.sqlite.org/threadsafe.html)。 
+此解决方法也适用于`Mono.Data.Sqlite`库。 有关 SQLite 和多线程处理的详细信息，请参阅[SQLite 和多个线程](https://www.sqlite.org/threadsafe.html)。
 
 ## <a name="related-links"></a>相关链接
 
