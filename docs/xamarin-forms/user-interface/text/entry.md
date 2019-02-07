@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 39af3b0e28bbbf9397ceece55adc330e364dcc3d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 303cca48defdadd69449edbd6c4c3f5e4410bbbb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061780"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831958"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 条目
 
@@ -44,6 +44,18 @@ var MyEntry = new Entry { Text = "I am an Entry" };
 var text = MyEntry.Text;
 ```
 
+### <a name="setting-placeholder-text"></a>设置占位符文本
+
+[ `Entry` ](xref:Xamarin.Forms.Entry)可以设置为显示占位符文本，它不存储用户输入时。 这可以通过设置[ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)属性设置为`string`，并通常用于指示的是适用于的内容类型`Entry`。 此外，通过设置控制的占位符文本颜色[ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor)属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
+```
+
+```csharp
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
+```
+
 > [!NOTE]
 > 宽度`Entry`可以通过设置定义其`WidthRequest`属性。 不依赖于的宽度`Entry`所定义的值基于其`Text`属性。
 
@@ -60,6 +72,40 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 一个[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)属性值为 0 指示将允许任何输入，并将值`int.MaxValue`，它是默认值， [ `Entry` ](xref:Xamarin.Forms.Entry)，指示是否有任何可能输入的字符数的有效限制。
+
+### <a name="password-fields"></a>密码字段
+
+`Entry` 提供了`IsPassword`属性。 当`IsPassword`是`true`，字段的内容将显示为黑色圆圈：
+
+在 XAML:
+
+```xaml
+<Entry IsPassword="true" />
+```
+
+在 C# 中：
+
+```csharp
+var MyEntry = new Entry { IsPassword = true };
+```
+
+![](entry-images/password.png "条目 IsPassword 示例")
+
+占位符可能使用的实例，并用`Entry`的配置为密码字段：
+
+在 XAML:
+
+```xaml
+<Entry IsPassword="true" Placeholder="Password" />
+```
+
+在 C# 中：
+
+```csharp
+var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
+```
+
+![](entry-images/passwordplaceholder.png "条目 IsPassword 和占位符的示例")
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>设置光标位置和文本所选内容长度
 
@@ -207,52 +253,6 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 
 > [!NOTE]
 > 当[ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)属性设置为`false`，和自定义键盘不被使用，文本预测和自动禁用文本更正。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已设置该禁用文本预测`IsTextPredictionEnabled`属性将被忽略。 因此，该属性不能用于启用文本预测`Keyboard`的显式禁用它。
-
-### <a name="setting-placeholder-text"></a>设置占位符文本
-
-[ `Entry` ](xref:Xamarin.Forms.Entry)可以设置为显示占位符文本，它不存储用户输入时。 这可以通过设置[ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder)属性设置为`string`，并通常用于指示的是适用于的内容类型`Entry`。 此外，通过设置控制的占位符文本颜色[ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor)属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
-
-```xaml
-<Entry Placeholder="Username" PlaceholderColor="Olive" />
-```
-
-```csharp
-var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
-```
-
-### <a name="password-fields"></a>密码字段
-
-`Entry` 提供了`IsPassword`属性。 当`IsPassword`是`true`，字段的内容将显示为黑色圆圈：
-
-在 XAML:
-
-```xaml
-<Entry IsPassword="true" />
-```
-
-在 C# 中：
-
-```csharp
-var MyEntry = new Entry { IsPassword = true };
-```
-
-![](entry-images/password.png "条目 IsPassword 示例")
-
-占位符可能使用的实例，并用`Entry`的配置为密码字段：
-
-在 XAML:
-
-```xaml
-<Entry IsPassword="true" Placeholder="Password" />
-```
-
-在 C# 中：
-
-```csharp
-var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
-```
-
-![](entry-images/passwordplaceholder.png "条目 IsPassword 和占位符的示例")
 
 ### <a name="colors"></a>颜色
 
