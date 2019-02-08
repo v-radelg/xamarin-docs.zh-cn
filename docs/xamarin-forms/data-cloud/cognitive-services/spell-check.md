@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 08ac86674e4f10d6bd17d765de2bcdf7c2d3f901
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 79b973784dd978bff15c7a706083c70df83ba1c8
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061754"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831841"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用必应拼写检查 API 中的拼写检查
 
@@ -154,6 +154,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 ![](spell-check-images/before-spell-check.png "拼写检查之前")
 
 ![](spell-check-images/after-spell-check.png "拼写检查后")
+
+> [!NOTE]
+> 上面的示例使用`Replace`跨大量文本的但为简单起见，它可以替换令牌错误。 该 API 提供了`offset`值，该值应在生产应用中使用以标识要执行更新的源文本中的正确位置。
 
 ## <a name="summary"></a>总结
 

@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/19/2018
-ms.openlocfilehash: d56cf660fb5aa73b300a36c5abd8ff9338791747
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: f84a6dac64300eb17a45576ae83f9b94208f5732
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054850"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831919"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
@@ -376,8 +376,8 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`background-color`|`VisualElement`|_颜色_ \| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字符串_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_颜色_ \| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`|_双精度_ \| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`|_双精度_ \| `initial` |`border-width: .5;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_双精度_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`， `ImageButton`|_双精度_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`, `BoxView`, `Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_颜色_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_双精度_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|

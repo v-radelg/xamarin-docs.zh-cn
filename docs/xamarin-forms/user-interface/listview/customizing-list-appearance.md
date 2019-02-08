@@ -6,24 +6,19 @@ ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 8adac1711271324b70731a085088bd8805391d31
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059452"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831790"
 ---
 # <a name="customizing-listview-appearance"></a>自定义 ListView 外观
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
 
-`ListView` 具有用于控制总体列表中，除了基础的演示文稿选项`ViewCell`s。 选项包括：
-
-- [**分组**](#Grouping) &ndash;更方便的导航和改进的组织在 ListView 中的项进行分组。
-- [**页眉和页脚**](#Headers_and_Footers) &ndash;的开头和结尾的滚动与其他项的视图在显示的信息。
-- [**行分隔符**](#Row_Separators) &ndash;显示或隐藏项之间的分隔线。
-- [**变量高度行**](#Row_Heights) &ndash;默认情况下的所有行都均为相同的高度，但这可以更改为允许具有不同高度要显示的行。
+[`ListView`](xref:Xamarin.Forms.ListView) 能够控制表示法的列表中，除了[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)实例列表中的每一行。
 
 <a name="Grouping" />
 
@@ -83,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-在上述代码中我们可以调用`Add`上的元素`groups`，这是类型的实例`PageTypeGroup`。 这可能是因为`PageTypeGroup`继承`List<PageModel>`。 这是列表的上面记下列表模式的示例。
+在上述代码中，我们可以调用`Add`上的元素`groups`，这是类型的实例`PageTypeGroup`。 这可能是因为`PageTypeGroup`继承`List<PageModel>`。 这是列表的上面记下列表模式的示例。
 
 下面是用于显示分组的列表 XAML:
 
@@ -205,6 +200,14 @@ ListView HeaderList = new ListView() {
 ```
 
 ![](customizing-list-appearance-images/header-custom.png "使用自定义标头和表尾的 ListView")
+
+## <a name="scrollbar-visibility"></a>滚动条可见性
+
+[`ListView`](xref:Xamarin.Forms.ListView) 具有`HorizontalScrollBarVisibility`并`VerticalScrollBarVisibility`属性，获取或设置[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，该值表示当水平或垂直滚动条是否可见。 这两个属性可以设置为以下值：
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 表示在平台的默认滚动栏行为，它是默认值`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`属性。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条将显示，即使内容无法放入视图中。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 表示滚动条将不可见，如果内容不适合在视图中的事件。
 
 <a name="Row_Separators" />
 

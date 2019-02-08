@@ -6,13 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/31/2018
-ms.openlocfilehash: 2fe1ad168186740fd71d25814e68b1109e097597
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/13/2018
+ms.openlocfilehash: 4011863553935052c230def403f4ebc281c51d92
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052619"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831867"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 编辑器
 
@@ -45,6 +45,18 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 
 ```csharp
 var text = MyEditor.Text;
+```
+
+### <a name="setting-placeholder-text"></a>设置占位符文本
+
+[ `Editor` ](xref:Xamarin.Forms.Editor)可以设置为显示占位符文本，它不存储用户输入时。 这可以通过设置[ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)属性设置为`string`，并通常用于指示的是适用于的内容类型`Editor`。 此外，通过设置控制的占位符文本颜色[ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+```
+
+```csharp
+var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
 ### <a name="limiting-input-length"></a>输入的长度限制
@@ -159,17 +171,22 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > 当[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性设置为`false`，并自定义键盘未被使用，将禁用本机拼写检查器。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已设置，以禁用拼写检查，如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)，则`IsSpellCheckEnabled`属性将被忽略。 因此，该属性不能用于启用拼写检查`Keyboard`的显式禁用它。
 
-### <a name="setting-placeholder-text"></a>设置占位符文本
+### <a name="enabling-and-disabling-text-prediction"></a>启用和禁用文本预测
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)可以设置为显示占位符文本，它不存储用户输入时。 这可以通过设置[ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)属性设置为`string`，并通常用于指示的是适用于的内容类型`Editor`。 此外，通过设置控制的占位符文本颜色[ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+`IsTextPredictionEnabled`属性控制是否文本预测和自动启用文本校正。 默认情况下，该属性设置为`true`。 当用户输入文本时，会显示 word 预测。
+
+但是，对于某些文本项方案，例如输入用户名、 文本预测和文本自动更正提供负体验，并应通过设置禁用`IsTextPredictionEnabled`属性设置为`false`:
 
 ```xaml
-<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+<Editor ... IsTextPredictionEnabled="false" />
 ```
 
 ```csharp
-var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
+var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
+
+> [!NOTE]
+> 当`IsTextPredictionEnabled`属性设置为`false`，和自定义键盘不被使用，文本预测和自动禁用文本更正。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已设置该禁用文本预测`IsTextPredictionEnabled`属性将被忽略。 因此，该属性不能用于启用文本预测`Keyboard`的显式禁用它。
 
 ### <a name="colors"></a>颜色
 

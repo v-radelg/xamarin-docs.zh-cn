@@ -6,23 +6,19 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/13/2018
-ms.openlocfilehash: f5b5a8a2d7adf207a583d71953ead1e0e7306b3f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/14/2018
+ms.openlocfilehash: 939df6cfd17de82e28958363cfa51cd199f928cb
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052311"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831686"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
 
-ListView 支持与它将通过以下方法提供的数据进行交互：
-
-- [**选择和点击**](#selectiontaps) &ndash;响应点击和项的选择/取消选择。 启用或禁用行选择 （默认情况下启用）。
-- [**上下文操作**](#Context_Actions) &ndash;公开功能每个项，例如，--删除轻扫。
-- [**下拉刷新**](#Pull_to_Refresh) &ndash;实现下拉刷新用语，用户都希望能从本机体验。
+[`ListView`](xref:Xamarin.Forms.ListView) 它提供与数据交互的支持。
 
 <a name="selectiontaps" />
 
@@ -66,6 +62,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>上下文操作
+
 通常情况下，用户将需要执行操作中的项`ListView`。 例如，请考虑在邮件应用中的电子邮件的列表。 在 iOS 上，您可以轻扫来删除一条消息::
 
 ![](interactivity-images/context-default.png "ListView 的上下文操作")
@@ -149,30 +146,47 @@ public void OnDelete (object sender, EventArgs e) {
 <a name="Pull_to_Refresh" />
 
 ## <a name="pull-to-refresh"></a>下拉以刷新
-用户都希望能拉下在列表中的数据将刷新该列表。 `ListView` 支持此--现成的。 若要启用下拉刷新功能，请设置`IsPullToRefreshEnabled`为 true:
+
+用户都希望能拉下在列表中的数据将刷新该列表。 [`ListView`](xref:Xamarin.Forms.ListView) 支持此--现成的。 若要启用下拉刷新功能，请设置[ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)到`true`:
+
+```xaml
+<ListView ...
+          IsPullToRefreshEnabled="true" />
+```
+
+等效的 C# 代码是：
 
 ```csharp
 listView.IsPullToRefreshEnabled = true;
 ```
 
-拉取请求以刷新以用户身份：
+微调控件将显示在刷新期间，这是默认情况下黑色。 但是，旋转图标颜色可以更改 iOS 和 Android 上通过设置`RefreshControlColor`属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<ListView ...
+          IsPullToRefreshEnabled="true"
+          RefreshControlColor="Red" />
+```
+
+等效的 C# 代码是：
+
+```csharp
+listView.RefreshControlColor = Color.Red;
+```
+
+下面的屏幕截图显示下拉刷新拉取用户：
 
 ![](interactivity-images/refresh-start.png "ListView 下拉以刷新正在进行中")
 
-以用户身份的请求以刷新已发布的请求。 这是用户看到同时正在更新列表： ![](interactivity-images/refresh-in-progress.png "ListView 拉取到完成刷新")
+下面的屏幕截图显示下拉刷新后用户现已发布旋转图标显示请求，而[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新：
 
-ListView 公开了几个事件，可用于对请求刷新事件做出响应。
+![](interactivity-images/refresh-in-progress.png "ListView 拉取到刷新完成")
 
--  `RefreshCommand`将调用和`Refreshing`调用的事件。 `IsRefreshing` 将设置为`true`。
--  您应该执行刷新列表视图中，在命令或事件中的内容所需的任何代码。
--  刷新时已完成，请调用`EndRefresh`，或者设置`IsRefreshing`到`false`告诉完成列表视图。
+[`ListView`](xref:Xamarin.Forms.ListView) 激发[ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing)事件，以启动刷新，并且[ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing)属性将设置为`true`。 无论代码是必填项，若要刷新的内容`ListView`然后应通过事件处理程序执行`Refreshing`事件，或由执行的方法[ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)。 一次`ListView`被刷新，`IsRefreshing`属性应设置为`false`，则[ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh)方法应调用，以指示刷新已完成。
 
-`CanExecute`属性，则考虑，后者可提供一种方法来控制是否应启用下拉刷新命令。
-
-
+> [!NOTE]
+> 定义时[ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)，则`CanExecute`可以指定命令的方法来启用或禁用该命令。
 
 ## <a name="related-links"></a>相关链接
 
 - [ListView 交互性 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
-- [1.4 的发行说明](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 的发行说明](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

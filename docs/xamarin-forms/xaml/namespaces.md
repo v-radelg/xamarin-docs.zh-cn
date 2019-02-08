@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: 85b9297a62cfb90485be2cbd927abfdcfec2f13c
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563038"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831750"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>在 Xamarin.Forms 中 XAML 命名空间
 
@@ -96,10 +96,11 @@ XAML 使用前缀来引用命名空间中的类型时要使用的前缀与声明
 </ListView>
 ```
 
+有关定义自定义命名空间架构信息，请参阅[XAML 自定义 Namespace 架构](custom-namespace-schemas.md)。
+
 ## <a name="summary"></a>总结
 
 本文引入 XAML 命名空间语法，并说明了如何以声明要访问的类型的 XAML 命名空间。 XAML 使用`xmlns`XML 属性的命名空间声明和类型，可以引用在 XAML 中声明具有前缀的 XAML 命名空间。
-
 
 ## <a name="related-links"></a>相关链接
 

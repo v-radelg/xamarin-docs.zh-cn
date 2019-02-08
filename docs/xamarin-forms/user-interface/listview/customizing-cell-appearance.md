@@ -7,23 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 067ff4758ca78f7d706c7be96ffecd10e4e57965
-ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
+ms.openlocfilehash: 1e57764dacf7ae0599df46f13bd4f5505c4cc4a2
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712067"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831776"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自定义 ListView 单元格的外观
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 
-ListView 显示可滚动列表，可以使用自定义`ViewCell`s。 `ViewCells` 可用于显示文本和图像、 指示 true/false 状态和接收用户输入。
-
-有两种方法可以获取所需从 ListView 单元格的外观：
-
-- **[自定义内置的单元格](#Built_in_Cells)** &ndash;更容易实现，但要牺牲可自定义性更好的性能。
-- **[创建自定义单元格](#customcells)** &ndash;更多控制的最终结果，但有可能出现性能问题，如果未正确地实现。
+[`ListView`](xref:Xamarin.Forms.ListView) 显示可滚动列表，可以使用自定义`ViewCell`s。 `ViewCells` 可用于显示文本和图像、 指示 true/false 状态和接收用户输入。
 
 <a name="Built_in_Cells" />
 
