@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: de3af76b8479562ba048c5b62167df0f2b2a51f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115128"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55832023"
 ---
 # <a name="app-store-distribution"></a>App Store 分发
 
 Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是使用 iTunes App Store 将应用分发给用户。 这是分发应用程序的最常见方法。 通过在 Apple 的 App Store 中发布应用程序，可将其提供给全球的客户。
 
 > [!IMPORTANT]
-> Apple [表明](https://developer.apple.com/news/?id=05072018a)，从 2018 年 7 月开始，提交到 App Store 的所有应用和更新必须使用 iOS 11 SDK 来构建，并且必须[支持 iPhone X 显示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已表明](https://developer.apple.com/ios/submit/)，从 2019 年 3 月开始，提交到 App Store 的所有应用和更新必须是使用 iOS 12.1 SDK 或更高版本构建的，包含在 Xcode 10.1 或更高版本中。
+> 应用还应支持 iPhone XS 和 12.9 英寸 iPad Pro 屏幕大小。
 
 就像开发应用程序一样，分发应用程序需要使用相应的*配置文件*对应用程序进行设置。 配置文件是一种文件，其中包含了代码签名信息，以及应用程序标识和预期分发机制。 配置文件还包括可部署应用以实现非 App Store 分发的设备的信息。
 
@@ -63,11 +64,11 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 
 或者，可通过 Xcode 中的”首选项”对话框请求证书。 为此，请执行以下步骤：
 
-1.   选择团队，然后单击“管理证书...”：[![](images/selectteam.png "选择团队并查看详细信息")](images/selectteam.png#lightbox)
+1.   选择团队，然后单击“管理证书...”：[![](images/selectteam.png "选择团队和“查看详细信息”")](images/selectteam.png#lightbox)
 
-2.   然后，单击“iOS 分发证书”旁的“创建”按钮：[![](images/selectcert.png "创建 iOS 分发证书")](images/selectcert.png#lightbox)
+2.   然后，单击“iOS 分发证书”旁边的“创建”按钮：[![](images/selectcert.png "创建 iOS 分发证书")](images/selectcert.png#lightbox)
 
-3.   系统将根据你的团队特权生成签名标识（如下所示），或者可能需要等待团队代理或管理员批准：[![](images/generated.png "将生成签名标识并显示对话框")](images/generated.png#lightbox)
+3.   将根据你的团队特权生成签名标识（如下所示），或者可能需要等待团队代理或管理员批准：[![](images/generated.png "将生成签名标识并显示一个对话框")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />

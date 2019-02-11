@@ -6,13 +6,13 @@ ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2017
-ms.openlocfilehash: f59a528916d2cc5efd19ba7c35a7b4f041ecbe09
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 12/18/2018
+ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056157"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831984"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms 中的自动化属性
 
@@ -138,6 +138,43 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 > [!NOTE]
 > 请注意，[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法还可用于设置 `AutomationProperties.IsInAccessibleTree` 附加属性 - `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+
+## <a name="accessibility-intricacies"></a>辅助功能复杂性
+
+以下部分将介绍在某些控件上设置辅助功能值的复杂性。
+
+### <a name="navigationpage"></a>NavigationPage
+
+在 Android 上，若要设置屏幕阅读器将为 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的操作栏中的后退箭头阅读的文本，请在 [`Page`](xref:Xamarin.Forms.Page) 上设置 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 属性。 但是，请注意，这将不会对 OS 后退按钮造成影响。
+
+### <a name="masterdetailpage"></a>MasterDetailPage
+
+在 iOS 和通用 Windows 平台 (UWP) 上，若要设置屏幕阅读器将为 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上的切换按钮阅读的文本，请在 `MasterDetailPage` 上或在 `Master` 页面的 `Icon` 属性上设置 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 属性。
+
+在 Android 上，若要设置屏幕阅读器将为 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上的切换按钮阅读的文本，请将字符串资源添加到此 Android 项目：
+
+```xml
+<resources>
+        <string name="app_name">Xamarin Forms Control Gallery</string>
+        <string name="btnMDPAutomationID_open">Open Side Menu message</string>
+        <string name="btnMDPAutomationID_close">Close Side Menu message</string>
+</resources>
+```
+
+然后将 `Master` 页面的 `Icon` 属性的 `AutomationId` 属性设置为相应的字符串：
+
+```csharp
+var master = new ContentPage { ... };
+master.Icon.AutomationId = "btnMDPAutomationID";
+```
+
+### <a name="toolbaritem"></a>ToolbarItem
+
+在 iOS、Android 和 UWP 上，屏幕阅读器将阅读 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 实例的 `Text` 属性值，条件是尚未定义 `AutomationProperties.Name` 或 `AutomationProperties.HelpText` 值。
+
+在 iOS 和 UWP 上，`AutomationProperties.Name` 属性值将替换由屏幕阅读器阅读的 `Text` 属性值。
+
+在 Android 上，`AutomationProperties.Name` 和/或 `AutomationProperties.HelpText` 属性值将完全替换可见且同时由屏幕阅读器阅读的 `Text` 属性值。 请注意，这是 API 少于 26 的一个限制。
 
 ## <a name="related-links"></a>相关链接
 

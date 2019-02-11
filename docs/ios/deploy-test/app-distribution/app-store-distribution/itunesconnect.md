@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 97b3e5323329d2df024e05f1829b12b239b37299
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 52cd8a15f1b5b232deef62a8e87910b092aad94c
+ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103037"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55831945"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中配置应用
 
 > [!IMPORTANT]
-> Apple [表明](https://developer.apple.com/news/?id=05072018a)，从 2018 年 7 月开始，提交到 App Store 的所有应用和更新必须使用 iOS 11 SDK 来构建，并且必须[支持 iPhone X 显示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已表明](https://developer.apple.com/ios/submit/)，从 2019 年 3 月开始，提交到 App Store 的所有应用和更新必须是使用 iOS 12.1 SDK 或更高版本构建的，包含在 Xcode 10.1 或更高版本中。
+> 应用还应支持 iPhone XS 和 12.9 英寸 iPad Pro 屏幕大小。
 
 iTunes Connect 是一系列基于 Web 的工具，它可在 App Store 上管理 iOS 应用程序等。 Xamarin.iOS 应用程序需要在 iTunes Connect 中进行恰当安装并配置，然后才能提交到 Apple 进行审核并最终在 App Store 作为付费或免费应用发布。
 
@@ -116,7 +117,7 @@ Apple 要求提供应用程序支持的每种屏幕大小和分辨率的屏幕�
 7. 单击屏幕顶部的“保存”按钮，保存更改。
 
 > [!NOTE]
-> 注意：如果屏幕截图或应用预览视频与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
+> 注意:如果屏幕截图或应用预览视频与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
 
 <a name="metadata" />
 
@@ -135,7 +136,7 @@ Apple 建议在选择应用程序名称时遵照以下准则：
 - 确保名称符合应用程序的功能。
 - 在适当情况下，为外国市场提供本地化名称。
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明​​
 
 应用程序及其功能的说明应简洁明了且信息丰富。 前几行最重要，这关系到用户的第一印象，以及是否能吸引用户。 描述应用程序的特点和相较于类似应用的优势。
 
@@ -188,7 +189,7 @@ Apple 要求开发人员提供其网站的链接，用于支持用户可能遇�
 6. 单击屏幕顶部的“保存”按钮，保存更改。
 
 > [!IMPORTANT]
-> 注意：如果名称、说明、新增功能、关键字或 URL 与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
+> 注意:如果名称、说明、新增功能、关键字或 URL 与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
 
 <a name="general" />
 
@@ -208,7 +209,7 @@ Apple 建议在设计应用程序图标时遵照以下准则：
 - 确保图标适合应用程序。
 - 创建与应用程序的设计一致的简单图标。
 - 图标中避免使用文字。
-- 整体思考：单个应用图标用于商店的所有区域。
+- 从整体思考：单个应用图标用于所有商店区域。
 
 App Store 中显示的应用图标必须是 1024 x 1024 像素的图像。
 
@@ -233,7 +234,7 @@ App Store 中的所有应用程序都必须评级。 此评级基于应用程序
 创建适用于儿童的应用程序时，App Store 有一个针对 11 岁及以下儿童的特殊类别。 即使应用程序并非特别针对儿童，这也有助于客户根据提供的适当内容评级来做出正确选择。
 
 > [!IMPORTANT]
-> 注意：如果发现淫秽、色情、攻击或诽谤性内容，Apple 将拒绝应用程序提交。
+> 注意:如果发现淫秽、色情、攻击或诽谤性内容，Apple 将拒绝应用程序提交。
 
 ### <a name="copyright-and-company-information"></a>版权和公司信息
 
@@ -256,7 +257,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 6. 单击屏幕顶部的“保存”按钮，保存更改。
 
 > [!NOTE]
-> 注意：如果类别或评级与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
+> 注意:如果类别或评级与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
 
 <a name="game-center" />
 
