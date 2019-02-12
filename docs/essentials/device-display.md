@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：设备显示信息
+title: Xamarin.Essentials:设备显示信息
 description: 本文档介绍 Xamarin.Essentials 中的 DeviceDisplay 类，此类提供运行应用程序的设备的屏幕指标。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d3102f0a4ed5f16c77c4a4768feb4a1565f2dd1a
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 61d0a77d7a6a862ec5e06c7b693f8e23e4cdb975
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898885"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986232"
 ---
-# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：设备显示信息
+# <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:设备显示信息
 
 DeviceDisplay 类提供有关运行应用程序的设备屏幕指标的信息，并可以请求在应用程序运行时防止屏幕进入睡眠状态。
 
@@ -63,7 +63,7 @@ public class DisplayInfoTest
         DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
     }
 
-    void OnMainDisplayInfoChanged(DisplayInfoChangedEventArgs  e)
+    void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs  e)
     {
         // Process changes
         var displayInfo = e.DisplayInfo;
