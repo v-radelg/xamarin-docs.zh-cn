@@ -7,12 +7,12 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: dd38d91a808bed715c92c0fc7d98d6786fc43f67
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 192f0745874b54989ab9070014dae2a5e9e98110
+ms.sourcegitcommit: 605f7c480c3f7b5dd364fdb1bd4d983de8f7ed25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054643"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56213772"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩阵转换
 
@@ -64,11 +64,11 @@ SKMatrix matrix = SKMatrix.MakeIdentity();
 
 使用标准的矩阵乘法，已转换的点如下所示：
 
-x = x
+`x' = x`
 
-y = y
+`y' = y`
 
-z = 1
+`z' = 1`
 
 这是默认转换。
 
@@ -90,9 +90,9 @@ z = 1
 
 下面是转换公式：
 
-x = x + tx
+`x' = x + tx`
 
-y = y + ty
+`y' = y + ty`
 
 缩放比例具有默认值为 1。 当您调用`Scale`上的新方法`SKCanvas`对象，包含生成的转换矩阵`sx`和`sy`中对角线的单元格的自变量：
 
@@ -104,9 +104,9 @@ y = y + ty
 
 转换公式如下所示：
 
-x = sx 推荐配置x
+`x' = sx · x`
 
-y = sy 推荐配置y
+`y' = sy · y`
 
 转换矩阵后调用`Skew`包含为缩放比例相邻矩阵单元中的两个参数：
 
@@ -118,9 +118,9 @@ y = sy 推荐配置y
 
 转换公式是：
 
-x = x + xSkew 推荐配置y
+`x' = x + xSkew · y`
 
-y = ySkew 推荐配置x + y
+`y' = ySkew · x + y`
 
 为调用`RotateDegrees`或`RotateRadians`为 α 的角度，转换矩阵如下所示：
 
@@ -132,9 +132,9 @@ y = ySkew 推荐配置x + y
 
 下面是转换公式：
 
-x = cos(α) 推荐配置x-sin(α) 推荐配置y
+`x' = cos(α) · x - sin(α) · y`
 
-y = sin(α) 推荐配置x-cos(α) 推荐配置y
+`y' = sin(α) · x - cos(α) · y`
 
 0 度 α 时，它是恒等矩阵。 180 度 α 时，转换矩阵如下所示：
 
@@ -228,11 +228,11 @@ canvas.Translate(–px, –py);
               │ TransX  TransY  1 │
 </pre>
 
-x = ScaleX 推荐配置x + SkewX 推荐配置y + TransX
+`x' = ScaleX · x + SkewX · y + TransX`
 
-y = SkewX 推荐配置x + ScaleY 推荐配置y + TransY
+`y' = SkewX · x + ScaleY · y + TransY`
 
-z = 1
+`z' = 1`
 
 这是完整的二维仿射转换。 仿射转换可保留平行线，这意味着一个矩形将永远不会转换为的平行四边形之外的任何内容。
 
@@ -259,7 +259,7 @@ SKMatrix.Concat(ref R, ref A, ref B);
 
 它们可以执行以下乘法：
 
-R = B × A
+`R = B × A`
 
 其他方法有只有两个参数。 第一个参数是修改后，并从方法调用返回时，包含两个矩阵的乘积。 这两个`PostConcat`方法调用如下：
 
@@ -271,7 +271,7 @@ SKMatrix.PostConcat(ref A, ref B);
 
 这些调用执行以下操作：
 
-A = × B
+`A = A × B`
 
 这两个`PreConcat`方法非常相似：
 
@@ -283,7 +283,7 @@ SKMatrix.PreConcat(ref A, ref B);
 
 这些调用执行以下操作：
 
-A = B × A
+`A = B × A`
 
 所有这些方法的版本`ref`参数是在调用的基础实现效率稍有提高，但可能会令人困惑的某个人可以读取你代码中，并假设的任何内容`ref`修改参数该方法。 此外，通常很方便地将传递的参数之一的结果，`Make`方法，例如：
 
@@ -361,7 +361,7 @@ SKMatrix.PostConcat(ref A, C);
 
 这是一系列连续乘法运算，因此结果是，如下所示：
 
-× B × C
+`A × B × C`
 
 连续乘法运算可帮助了解每个转换的作用。 缩放转换路径坐标大小增加到原来的 3，因此坐标范围从 –300 为 300。 旋转转换旋转围绕原点的星号。 翻译转换然后会将它移动通过 300 像素右和向下，因此所有改为正值的坐标。
 
