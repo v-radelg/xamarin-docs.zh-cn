@@ -234,7 +234,7 @@ ms.locfileid: "55292821"
 
 11. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
 
-    上**NotesPage**按**+** 按钮导航到**NoteEntryPage**和输入的说明。 保存备注应用程序将导航回后**NotesPage**。
+    上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 保存备注应用程序将导航回后**NotesPage**。
 
     输入一个数字的可变长度，以观察应用程序行为的说明。
 
@@ -439,7 +439,7 @@ ms.locfileid: "55292821"
 
 11. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
 
-    上**NotesPage**按**+** 按钮导航到**NoteEntryPage**和输入的说明。 保存备注应用程序将导航回后**NotesPage**。
+    上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 保存备注应用程序将导航回后**NotesPage**。
 
     输入一个数字的可变长度，以观察应用程序行为的说明。
 

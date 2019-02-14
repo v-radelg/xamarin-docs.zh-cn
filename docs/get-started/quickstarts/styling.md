@@ -1,6 +1,6 @@
 ---
 title: 样式的跨平台 Xamarin.Forms 应用程序
-description: 本文介绍如何使用 XAML 样式的样式的跨平台 Xamarin.Forms 应用程序。
+description: 本文介绍如何使用 XAML 样式的3样式的跨平台 Xamarin.Forms 应用程序。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -171,7 +171,7 @@ ms.locfileid: "55292809"
 
 6. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
 
-    上**NotesPage**按**+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页上，观察如何样式已从上一个快速入门。
+    上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页上，观察如何样式已从上一个快速入门。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -312,7 +312,7 @@ ms.locfileid: "55292809"
 
 6. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
 
-    上**NotesPage**按**+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页上，观察如何样式已从上一个快速入门。
+    上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页上，观察如何样式已从上一个快速入门。
 
 ::: zone-end
 
