@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 020afef6b2eb3743fd17118b2922bac4d4c32239
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233986"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240430"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>绘制弧线的三个方法
 
@@ -107,9 +107,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 生成一段弧线，此方法是通过算法最简单的并且易于派生的参数化的等式，用于描述弧线。如果知道的大小和位置的椭圆，并开始和扫描角度，起点和终点的圆弧可以使用计算简单三角函数：
 
-x = 椭圆。MidX + （椭圆。宽度 / 2) * cos(angle)
+`x = oval.MidX + (oval.Width / 2) * cos(angle)`
 
-y = 椭圆。MidY + （椭圆。高度 / 2) * sin(angle)
+`y = oval.MidY + (oval.Height / 2) * sin(angle)`
 
 `angle`值是`startAngle`或`startAngle + sweepAngle`。
 
@@ -606,9 +606,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 然后可以使用此信息计算正切的点的坐标：
 
-x = 112·cos(41.8) = 83
+`x = 112·cos(41.8) = 83`
 
-y = 112·sin(41.8) = 75
+`y = 112·sin(41.8) = 75`
 
 四个切点所是用圆半径为 100 点 （0，0） 上绘制居中无穷大登录所需的所有内容：
 

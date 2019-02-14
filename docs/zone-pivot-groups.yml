@@ -8,10 +8,20 @@ groups:
     title: Visual Studio 2017
   - id: macos
     title: Visual Studio for Mac
+- id: platform-dev16
+  title: 平台
+  prompt: 选择你的开发环境
+  pivots:
+  - id: windows
+    title: Visual Studio 2017
+  - id: macos
+    title: Visual Studio for Mac
+  - id: win-dev16
+    title: Visual Studio 2019 （预览版）
 metadata:
-  ms.openlocfilehash: a8e0e12466eb4433f959d94cd82257a145e536f2
-  ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+  ms.openlocfilehash: c519dcceabeeb912f870127edd9c9c5538ebd2c3
+  ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/25/2018
-  ms.locfileid: "50130944"
+  ms.lasthandoff: 02/14/2019
+  ms.locfileid: "56240326"

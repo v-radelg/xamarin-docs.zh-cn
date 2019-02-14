@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: c6328135e0310c7b10b89bf2e32ce62869b15cfb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e7327deead917f55d1e7ac8af5302b6dccf6fead
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059981"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240352"
 ---
 # <a name="polylines-and-parametric-equations"></a>折线和参数等式
 
@@ -26,21 +26,21 @@ _使用 SkiaSharp 呈现可以定义与参数化的等式的任何行_
 
 通常最好是定义根据参数方程确定一对曲线。 它们是 X 和 Y 坐标表示的公式依赖于第三个变量，有时称为`t`的时间。 例如，以下参数方程确定为定义的中心点 （0，0） 的 1 半径的圆形*t*从 0 到 1:
 
-x = cos(2πt)
+`x = cos(2πt)`
 
-y = sin(2πt)
+`y = sin(2πt)`
 
  如果你想 radius 大于 1，只需正弦和余弦值乘以该 radius 并如果你需要将中心移动到另一个位置添加这些值：
 
-x = xCenter + radius·cos(2πt)
+`x = xCenter + radius·cos(2πt)`
 
-y = yCenter + radius·sin(2πt)
+`y = yCenter + radius·sin(2πt)`
 
 有关使用到的水平和垂直轴并行一个椭圆，涉及两个半径：
 
-x = xCenter + xRadius·cos(2πt)
+`x = xCenter + xRadius·cos(2πt)`
 
-y = yCenter + yRadius·sin(2πt)
+`y = yCenter + yRadius·sin(2πt)`
 
 然后可以将等效 SkiaSharp 代码放在一个循环，用于计算各个点并将添加到路径中。 下面的 SkiaSharp 代码创建`SKPath`填充显示器表面的椭圆的对象。 循环直接周期通过 360 度。 中心是一半的宽度和高度显示图面，并因此是两个半径：
 

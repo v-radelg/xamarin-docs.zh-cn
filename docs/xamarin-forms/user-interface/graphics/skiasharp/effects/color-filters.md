@@ -7,12 +7,12 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 7edb504a228612d7f1f1fee10a50a467fbb5fc6c
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057095"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240313"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp 颜色筛选器
 
@@ -68,13 +68,13 @@ ms.locfileid: "53057095"
 
 以下是适用于 R 的单独公式，G，B' 和一个:
 
-R' = M11·R + M12·G + M13·B + M14·A + M15 
+`R' = M11·R + M12·G + M13·B + M14·A + M15` 
 
-G' = M21·R + M22·G + M23·B + M24·A + M25 
+`G' = M21·R + M22·G + M23·B + M24·A + M25` 
 
-B' = M31·R + M32·G + M33·B + M34·A + M35 
+`B' = M31·R + M32·G + M33·B + M34·A + M35` 
 
-一个 = M41·R + M42·G + M43·B + M44·A + M45 
+`A' = M41·R + M42·G + M43·B + M44·A + M45` 
 
 大部分矩阵包含，通常位于 0 到 2 的范围内的乘法因素。 但是，最后一列 (通过 M45 M15) 包含在公式中添加的值。 这些值通常介于 0 到 255。 结果被限制的值为 0 到 255 之间。
 
@@ -89,13 +89,13 @@ B' = M31·R + M32·G + M33·B + M34·A + M35
 
 这会导致不改变颜色。 转换公式是：
 
-R' = R 
+`R' = R` 
 
-G' = G
+`G' = G`
 
-B' = B
+`B' = B`
 
-一个 = A
+`A' = A`
 
 M44 单元格是非常重要，因为它将保留不透明度。 它通常是 M41、 M42 和 M43 是全为零，这种情况，因为您可能不希望不透明度基于红色、 绿色和蓝色值。 但是，如果 M44 为零，则的将为零，而不显示任何内容。
 
@@ -232,13 +232,13 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-数组始终包含 256 的条目。 在`CreateTable`为红色、 绿色和蓝色组件使用与一个表，在同一个表的方法。 它是一个简单的查找表： 如果源颜色为 (R、 G、 B)，并且目标颜色 (R，B、 G)，然后通过索引获取目标组件`table`与源组件：
+数组始终包含 256 的条目。 在`CreateTable`为红色、 绿色和蓝色组件使用与一个表，在同一个表的方法。 它是一个简单的查找表：如果源颜色为 (R、 G、 B)，并且目标颜色 (R，B、 G)，然后通过索引获取目标组件`table`与源组件：
 
-R' = 表 [R]
+`R' = table[R]`
 
-G' = 表 [G]
+`G' = table[G]`
 
-B' = 表 [B]
+`B' = table[B]`
 
 在第二个方法中，每个四个颜色组件可以具有不同的颜色表，或可能在两个或多个组件之间共享相同的颜色表。
 

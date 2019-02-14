@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: 835663b2d9a9fa8557a31570f91492da95be7a9a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059186"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240391"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路径效果
 
@@ -416,13 +416,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 链或电缆的统一权重分配挂起 catenary 窗体中。 内置的倒排 catenary 窗体的体系结构利用压力从体系结构的权重相等分布。 Catenary 具有看似简单的数学说明：
 
-y = 推荐配置cosh(x / a)
+`y = a · cosh(x / a)`
 
 *Cosh*是双曲余弦值函数。 有关*x*等于 0， *cosh*为零并*y*等于。 这是 catenary 的中心。 像*余弦*函数， *cosh*称为*甚至*，这意味着， *cosh(–x)* 等于*cosh(x)*，并增加正或负参数值增加。 这些值描述窗体的 catenary 边的曲线。
 
 查找适当的值以适应到手机的页的尺寸 catenary 不是直接计算。 如果*w*并*h*宽度和高度的矩形的最佳值满足以下公式：
 
-cosh (w/2/a) = 1 + h / a
+`cosh(w / 2 / a) = 1 + h / a`
 
 中的以下方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)类包含该相等性指两个表达式左侧和右侧的等号作为`left`和`right`。 值较小，`left`大于`right`; 对于较大的值，`left`是小于`right`。 `while`用于限制中的循环上的一个最佳值:
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-如果您仔细看一下结果，您将看到红色和蓝色阴影线不局限精确于圆角矩形。 （这是很明显的特征基础 Skia 代码。）如果这是不令人满意，为绿色的对角线阴影线条显示另一种方法： 圆角的矩形用作剪切路径，并且在整个页面上绘制的阴影线条。
+如果您仔细看一下结果，您将看到红色和蓝色阴影线不局限精确于圆角矩形。 （这是很明显的特征基础 Skia 代码。）如果这是不令人满意，为绿色的对角线阴影线条显示另一种方法：圆角的矩形用作剪切路径并且在整个页面上绘制的阴影线条。
 
 `PaintSurface`处理程序结束调用来只需绘制圆角的矩形，以便您可以看到红色和蓝色阴影线条与差异：
 
 [![](effects-images/hatchfill-small.png "阴影填充页面的三个屏幕截图")](effects-images/hatchfill-large.png#lightbox "阴影填充页面的三个屏幕截图")
 
-Android 屏幕并不真正的外观： 的屏幕截图缩放已导致的细红色线和精简的空间将整合到看起来更广泛红线和更广泛的空间。
+这样，Android 屏幕并不真正所示：屏幕截图的缩放比例已导致的细红色线和精简的空格将整合到看起来更广的红线和更广泛的空格。
 
 ## <a name="filling-with-a-path"></a>填充的路径
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 只有前两个参数是必需的。 方法访问引用的路径`src`自变量，修改基于中的笔划属性的路径数据`SKPaint`对象 (包括`PathEffect`属性)，然后将结果转换为`dst`路径。 `resScale`参数允许的精度来创建较小的目标路径，减少和`cullRect`参数可以消除外部矩形轮廓。
 
-一个基本使用此方法根本不涉及路径效果： 如果`SKPaint`对象都有其`Style`属性设置为`SKPaintStyle.Stroke`，并执行*不*具有其`PathEffect`设置，则`GetFillPath`创建表示路径*大纲*的源路径就像有已描边的绘制属性。
+此方法的一个基本的用法不涉及路径效果：如果`SKPaint`对象都有其`Style`属性设置为`SKPaintStyle.Stroke`，并执行*不*具有其`PathEffect`设置，则`GetFillPath`创建表示一个路径*大纲*的源路径就像有已描边的绘制属性。
 
 例如，如果`src`路径是一个简单的圆形的半径 500，并`SKPaint`对象指定的笔划宽度为 100，则`dst`路径将成为一个半径为 550 一个半径为 450，另两个同心环。 调用的方法`GetFillPath`因为填充这`dst`路径是相同描画`src`路径。 但您还可以绘制笔画`dst`路径以查看路径轮廓。
 

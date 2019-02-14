@@ -7,12 +7,12 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: a4f69287a6f97f3181d88a2d93d308df2676476a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7ac9ec458f16357ef50e23c459a9b0e1f79bdd97
+ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052684"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56240365"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的三维旋转
 
@@ -63,25 +63,25 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
 
 类似于 2D 转换发生在三个维度，3D 转换假定采用四个维度中的位置。 第四个维度被称为 W，并假定 3D 空间存在 W 坐标是等于 1 的 4d 空间内。 转换公式如下所示：
 
-x' = M11·x + M21·y + M31·z + M41
+`x' = M11·x + M21·y + M31·z + M41`
 
-y = M12·x + M22·y + M32·z + M42
+`y' = M12·x + M22·y + M32·z + M42`
 
-z = M13·x + M23·y + M33·z + M43
+`z' = M13·x + M23·y + M33·z + M43`
 
-w = M14·x + M24·y + M34·z + M44
+`w' = M14·x + M24·y + M34·z + M44`
 
 可通过转换公式的单元格`M11`， `M22`，`M33`缩放因素中的 X、 Y 和 Z 的说明，和`M41`， `M42`，和`M43`是 X、 Y 和 Z 翻译因素方向。
 
 若要将这些坐标转换回三维空间其中 W 等于 1，则 x，y，和 z 坐标所有除以 w:
 
-x"= x / w
+`x" = x' / w'`
 
-y"= y / w
+`y" = y' / w'`
 
-z"= z / w
+`z" = z' / w'`
 
-w"= w / w = 1
+`w" = w' / w' = 1`
 
 该除数 w 提供在 3D 空间中的观点。 如果 w 等于 1，则会不出现任何透视。
 
@@ -140,7 +140,7 @@ perspectiveMatrix[3, 2] = -1 / depth;
 
 转换公式会导致以下计算的 w:
 
-w = – z / 深度 + 1
+`w' = –z / depth + 1`
 
 这不仅减少 X 和 Y 坐标，Z 值小于零时 （从概念上讲背后的 XY 平面） 时，增加正 Z 值的 X 和 Y 坐标。当 Z 坐标等于`depth`、 然后 w 为零，又无限坐标。 三维图形系统围绕照相机的隐喻，构建和`depth`此处的值表示从坐标系统的原点的照相机的距离。 图形对象是否有 Z 坐标，它是`depth`单位从原点，它从概念上讲触摸的相机镜头和变得可无限大。
 
@@ -173,9 +173,9 @@ w = M14·x + M24·y + M44
 
 此外，z 坐标也不相关此处。 2D 图形系统中将显示一个三维对象，当它处于折叠状态到二维对象通过忽略 Z 坐标值。 转换公式是实际上只是这两个：
 
-x"= x / w
+`x" = x' / w'`
 
-y"= y / w
+`y" = y' / w'`
 
 这意味着，第三个行*和*4-4 矩阵的第三列可以被忽略。
 
@@ -208,17 +208,17 @@ y"= y / w
 
 转换公式是：
 
-x' = cos(α)·x
+`x' = cos(α)·x`
 
-y = y
+`y' = y`
 
-z = (sin （α） / 深度) ·x + 1
+`z' = (sin(α)/depth)·x + 1`
 
 现在将所有内容除以 z:
 
-x"= cos （α） ·x / ((sin （α） / 深度) ·x + 1)
+`x" = cos(α)·x / ((sin(α)/depth)·x + 1)`
 
-y"= y / ((sin （α） / 深度) ·x + 1)
+`y" = y / ((sin(α)/depth)·x + 1)`
 
 X 值时使用一个正的角度绕 Y 轴，然后正旋转 2D 对象 recede 到后台，而负 X 值转到前台。 X 值看起来更接近于 Y 轴 （它所依据的余弦值） 作为最远的地方 Y 轴坐标变得更小或变复杂，因为他们远离观察者或更接近于查看器。
 
