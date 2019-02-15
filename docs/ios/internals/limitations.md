@@ -74,7 +74,6 @@ class GenericType<T> {
 
 使用值类型作为Dictionary <TKey，TValue>键是有问题的，因为默认的 Dictionary 构造函数尝试使用 EqualityComparer <TKey> .Default。 EqualityComparer <TKey> .Default 反过来尝试使用反射来实例化实现 IEqualityComparer <TKey> 接口的新类型。
 
-
 这适用于引用类型（因为跳过了反射+创建新类型的步骤），但是对于值类型，一旦您尝试在设备上使用它，它就会很快崩溃。
 
  **解决方法**：在新类型中手动实现[ IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)接口，并向[Dictionary &lt;TKey，TValue&gt; ](xref:System.Collections.Generic.Dictionary`2)构造函数提供该类型的实例。
