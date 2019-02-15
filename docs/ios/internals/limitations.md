@@ -16,27 +16,27 @@ ms.locfileid: "50113022"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
-使用 Xamarin.iOS iPhone 上的应用程序编译为静态代码，因为它不是可以使用任何设备，需要在运行时代码生成。
+由于在 iPhone 上使用 Xamarin.iOS 开发的应用程序会被编译为静态代码，因此任何需要在运行时生成代码的机制都无法使用。
 
-这些是与 Mono 桌面相比的 Xamarin.iOS 限制：
+与桌面 Mono 相比，Xamarin.iOS 有以下限制：
 
  <a name="Limited_Generics_Support" />
 
 
 ## <a name="limited-generics-support"></a>有限的泛型的支持
 
-与传统的 Mono/.NET，而不是按需由 JIT 编译器正在编译提前静态编译在 iPhone 上的代码。
+与传统的 Mono/.NET 不同，iPhone 上的代码是提前静态编译的，而不是由 JIT 编译器按需编译。
 
-Mono[完整 AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot)技术具有与泛型相关的一些限制，因为在编译时提前确定不是每个可能的泛型实例化会造成这些错误。 这不是常规的.NET 或 Mono 运行时的问题，因为始终在运行时实时编译器中使用实时编译代码。 但这会带来 Xamarin.iOS 等静态编译器所面临的难题。
+Mono的[ Full AOT ](http://www.mono-project.com/docs/advanced/aot/#full-aot)技术在泛型方面有一些限制，这是因为并非所有可能的泛型实例都可以在编译时预先确定。 这对于常规的 .NET 或 Mono 运行时来说不是问题，因为代码总是在运行时使用 Just in Time 编译器进行编译。 但这对像 Xamarin.iOS 这样的静态编译器提出了挑战。
 
 一些开发人员遇到的常见问题包括：
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
-### <a name="generic-subclasses-of-nsobjects-are-limited"></a>泛型 NSObjects 子类将受到限制
+### <a name="generic-subclasses-of-nsobjects-are-limited"></a> NSObject 的泛型子类的限制
 
-Xamarin.iOS 目前提供有限支持用于创建 NSObject 类，如为泛型方法不支持的通用子类。 截至 7.2.1，使用 NSObjects 的通用子类是可能的类似如下：
+Xamarin.iOS 目前对创建 NSObject 类的泛型子类的支持有限，例如不支持泛型方法。 从7.2.1开始，可以使用NSObjects的泛型子类，如下所示：
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,13 +45,13 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> 可能的 NSObjects 通用子类时，有一些限制。 读取[NSObject 的通用子类](~/ios/internals/api-design/nsobject-generics.md)文档的详细信息
+> 虽然NSObject 的泛型子类是可能的，但存在一些限制。 阅读[NSObject 的泛型子类](~/ios/internals/api-design/nsobject-generics.md)文档以获取更多信息
 
 
 
-### <a name="pinvokes-in-generic-types"></a>P/调用泛型类型中
+### <a name="pinvokes-in-generic-types"></a>泛型类型中的 P/Invoke 
 
-P/Invoke 泛型类中不受支持：
+不支持泛型类中的 P / Invokes：
 
 ```csharp
 class GenericType<T> {
@@ -63,20 +63,21 @@ class GenericType<T> {
  <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
 
 
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>不支持可以为 Null 的类型上 Property.SetInfo
+### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>不支持 Nullable 类型的 Property.SetInfo
 
-使用反射的 Property.SetInfo 设置一个可以为 Null 的值&lt;T&gt;目前不支持。
+目前不支持使用反射的Property.SetInfo来设置Nullable <T>上的值。
 
  <a name="Value_types_as_Dictionary_Keys" />
 
 
 ### <a name="value-types-as-dictionary-keys"></a>作为字典键的值类型
 
-使用值类型作为字典&lt;TKey，TValue&gt;项是有问题，将为默认值字典的构造函数试图使用 EqualityComparer&lt;TKey&gt;。默认值。 EqualityComparer&lt;TKey&gt;。默认情况下，反过来，尝试使用反射来实例化一个新的类型可实现 IEqualityComparer&lt;TKey&gt;接口。
+使用值类型作为Dictionary <TKey，TValue>键是有问题的，因为默认的 Dictionary 构造函数尝试使用 EqualityComparer <TKey> .Default。 EqualityComparer <TKey> .Default 反过来尝试使用反射来实例化实现 IEqualityComparer <TKey> 接口的新类型。
 
-这同样适用于引用类型 (反射 + 创建一个新跳过类型步骤)，但值类型它崩溃，并加深相当快的速度后尝试在设备上使用它。
 
- **解决方法**： 手动实施[IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)接口中的新类型，并提供到该类型的实例[字典&lt;TKey，TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1)构造函数。
+这适用于引用类型（因为跳过了反射+创建新类型的步骤），但是对于值类型，一旦您尝试在设备上使用它，它就会很快崩溃。
+
+ **解决方法**：在新类型中手动实现[ IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)接口，并向[Dictionary &lt;TKey，TValue&gt; ](xref:System.Collections.Generic.Dictionary`2)构造函数提供该类型的实例。
 
 
  <a name="No_Dynamic_Code_Generation" />
@@ -84,11 +85,11 @@ class GenericType<T> {
 
 ## <a name="no-dynamic-code-generation"></a>没有生成动态代码
 
-由于 iPhone 的内核会阻止从动态生成代码的应用程序在 iPhone 上的 Mono 不支持任何形式的动态代码生成。 这些方法包括：
+由于 iPhone 的内核阻止应用程序动态生成代码，因此 iPhone上 的 Mono 不支持任何形式的动态代码生成。 这些包括：
 
 -  System.Reflection.Emit 不可用。
 -  System.Runtime.Remoting 不支持。
--  不支持动态创建类型 (没有 Type.GetType ("MyType"1"))，尽管查找现有类型 (Type.GetType ("System.String") 例如，可以很好地工作)。 
+-  不支持动态创建类型 (没有 Type.GetType ("MyType"1"))，尽管查找现有类型，例如 (Type.GetType ("System.String") ，可以很好地工作)。 
 -  在编译时，必须向运行时注册反向回调。
 
 
@@ -98,25 +99,25 @@ class GenericType<T> {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-System.Reflection 缺乏。 **发出**取决于运行时代码生成任何代码将起作用的方式。 这包括诸如：
+缺少 System.Reflection.**Emit** 意味着依赖于运行时代码生成的代码将不会工作。 这包括以下内容：
 
 -  动态语言运行时。
 -  任何基于动态语言运行时的语言。
 -  远程处理的 TransparentProxy 或任何其他会导致运行时动态生成代码的内容。 
 
 
- **重要说明：** 不要混淆**Reflection.Emit**与**反射**。 Reflection.Emit 即将动态生成代码，并且具有该代码执行 Jit 和编译为本机代码。 由于对 iPhone （无 JIT 编译） 的限制不是支持此。
+ **重要提示：** 不要将**Reflection.Emit**与**Reflection**混淆。 Reflection.Emit 是关于动态生成代码并将代码即时编译为本机代码。 由于 iPhone 的限制（没有 JIT 编译），因此不支持此功能。
 
-但整个反射 API，包括 Type.GetType ("someClass") 列表的方法，列出属性，提取属性和值会顺利运行。
+但是整个 Reflection API，包括 Type.GetType（“someClass”）、列出方法、列出属性、获取属性和值都可以正常工作。
 
 ### <a name="using-delegates-to-call-native-functions"></a>使用委托来调用本机函数
 
-若要调用通过 C# 委托的本机函数，必须使用以下属性之一修饰委托的声明：
+要通过 C# 委托调用本机函数，必须使用以下属性之一修饰委托的声明：
 
-- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （首选，因为它是跨平台和兼容.NET Standard 1.1 +）
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （首选，因为它跨平台并且兼容.NET Standard 1.1 +）
 - [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-无法提供这些属性之一将导致运行时错误，例如：
+任何一个属性都未能提供将导致运行时错误，例如：
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -127,12 +128,12 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ### <a name="reverse-callbacks"></a>反向回调
 
-在标准 Mono 很可能将传递给非托管代码而不是函数指针的 C# 委托实例。 运行时通常会将这些函数指针转换为一个小 thunk，用于允许回调到托管代码的非托管的代码。
+在标准 Mono 中，可以将 C# 委托实例传递给非托管代码，而不是函数指针。 运行时通常会将这些函数指针转换为允许非托管代码回调到托管代码的小 thunk。
 
-在 Mono 中这些桥实现实时中由编译器。 当使用预的实时编译器所需 iPhone 现在有两个重要限制：
+在 Mono 中，这些桥由即时编译器实现。 当使用 iPhone 所需的提前编译器时，此时有两个重要的限制：
 
--  您必须标记所有回叫方法与[MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
--  方法必须是静态方法，则不支持实例方法。 
+-  您必须使用[MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute)标记所有回调方法
+-  方法必须是静态方法，不支持实例方法。 
  
 <a name="No_Remoting" />
 
@@ -161,8 +162,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="net-api-limitations"></a>.NET API 限制
 
-公开的.NET API 是完整框架的子集，因为并非所有内容都是在 iOS 中可用。 请参阅常见问题解答了解[的当前支持的程序集列表](~/cross-platform/internals/available-assemblies.md)。
+公开的.NET API 是完整框架的一个子集，因为并非所有内容都是在 iOS 中可用。 请参阅常见问题解答了解[当前支持的程序集列表](~/cross-platform/internals/available-assemblies.md)。
 
 
 
-具体而言，使用 Xamarin.iOS 的 API 配置文件不包括 System.Configuration，因此不能使用外部 XML 文件来配置运行时的行为。
+特别是，Xamarin.iOS 使用的 API 配置文件不包含 System.Configuration ，因此无法使用外部 XML 文件来配置运行时的行为。
