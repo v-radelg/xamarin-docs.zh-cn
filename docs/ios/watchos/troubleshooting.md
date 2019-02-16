@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7bfb0cad8bbc025bc5dba39abe3699ae77ee83ba
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 70ef341c066c77e214761d75c173faef00266e4c
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526476"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321150"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
-此页包含的其他信息和解决方法仍正在开发的功能。 这些解决方法的一些仅适用于我们预览版本。
+此页包含的其他信息和可能遇到的问题的解决方法。
 
 - [已知问题](#knownissues)
 
@@ -97,7 +97,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 2. 拖动新`InterfaceController`到情节提要上：
 
-    ![](troubleshooting-images/add-1.png "InterfaceController")
+    ![](troubleshooting-images/add-1.png "A InterfaceController")
 
 3. 你可现在将控件拖到接口控制器 （例如。 标签和按钮） 但不是能创建插座或操作，因为没有任何 **.h**标头文件。 以下步骤将使所需 **.h**创建标头文件。
 
@@ -155,7 +155,7 @@ with an alpha channel. Icons should not have an alpha channel.
     }
     ```
     
-    提示： 你可以 （可选） 使此文件的第一个文件的子节点拖动到其他C#用于 Mac 的 Solution Pad 在 Visual Studio 中的文件。 它然后将显示如下：
+    提示:（可选） 可以使其文件拖动到另一个子节点的第一个文件C#用于 Mac 的 Solution Pad 在 Visual Studio 中的文件。 它然后将显示如下：
     
     ![](troubleshooting-images/add-5.png "在 Solution pad")
 
@@ -227,7 +227,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 你需要更新以反映您的应用程序的参数是`launchsimwatch`:
 
-### <a name="--launchsimwatch"></a>-launchsimwatch
+### <a name="--launchsimwatch"></a>--launchsimwatch
 
 主应用程序捆绑包的完整路径*包含监视应用和扩展的 iOS 应用*。
 
@@ -260,7 +260,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必须的。 指定到 Xcode （6.2 或更高版本） 的路径。
+必需。 指定到 Xcode （6.2 或更高版本） 的路径。
 
 示例:
 
@@ -268,7 +268,7 @@ with an alpha channel. Icons should not have an alpha channel.
  --sdkroot /Applications/Xcode.app/Contents/Developer/
 ```
 
-### <a name="--device"></a>-设备
+### <a name="--device"></a>--device
 
 要执行的模拟器设备。 这可以在两种方法，使用特定设备的 udid 或使用运行时和设备类型的组合中指定。
 

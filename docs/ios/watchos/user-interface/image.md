@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a9e23f1bfa6099c64a0a60d78ecc3c6283a86a96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6a2b8c99156963ae167aecd29a618d0feeffbdc7
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108077"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321124"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS 在 Xamarin 中的图像控件
 
-提供了 watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/)控件来显示图像和简单的动画。 某些控件也可以 （例如按钮、 组和界面控制器） 的背景图像。
+提供了 watchOS [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage)控件来显示图像和简单的动画。 某些控件也可以 （例如按钮、 组和界面控制器） 的背景图像。
 
 ![](image-images/image-walkway.png "Apple Watch 显示图片") ![ ] (image-images/image-animation.png "Apple Watch 使用简单的动画")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
@@ -75,7 +75,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 ```
 
 
-## <a name="animations"></a>动画
+## <a name="animations"></a>Animations
 
 若要进行动画处理的图像集，它们应所有以相同前缀开头，并有数字后缀。
 
@@ -99,7 +99,7 @@ animatedImage.StopAnimating ();
 
 <a name="cache" />
 
-## <a name="appendix-caching-images-watchos-1"></a>附录： 缓存映像 (watchOS 1)
+## <a name="appendix-caching-images-watchos-1"></a>附录：缓存映像 (watchOS 1)
 
 > [!IMPORTANT]
 > watchOS 3 应用程序完全在设备上运行。 以下信息适用于仅限在 watchOS 1 中应用。

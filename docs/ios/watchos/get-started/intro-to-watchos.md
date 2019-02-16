@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: ba5e7a24524f9371cbd810e18c11acc9e2e2a4cb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0b320955cae23b18444732c826849002d6375fe4
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055616"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321137"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 简介
 
@@ -53,10 +53,10 @@ WatchOS 应用解决方案有 3 个项目：
 
 生命周期`WKInterfaceController`对象涉及以下调用：
 
-- [唤醒状态](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.Awake/)： 您应在这种方法来执行大部分你的初始化。
-- [WillActivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.WillActivate/) ： 调用前不久 Watch 应用显示给用户。 使用此方法以执行最后一个时刻初始化、 启动动画等。
+- [唤醒状态](xref:WatchKit.WKInterfaceController.Awake*):您应在这种方法来执行大部分你的初始化。
+- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :Watch 应用调用后显示给用户。 使用此方法以执行最后一个时刻初始化、 启动动画等。
 - 此时，Watch 应用会显示并扩展开始响应用户输入，并更新每个应用程序逻辑的监视应用程序的显示。
-- [DidDeactivate](https://developer.xamarin.com/api/member/WatchKit.WKInterfaceController.DidDeactivate/)后 Watch 应用已由用户已关闭，调用此方法。 此方法返回后，用户界面控件不能修改下一次之前`WillActivate`调用。 如果为 iPhone 连接已断开，则还将调用此方法。
+- [DidDeactivate](xref:WatchKit.WKInterfaceController.DidDeactivate)后 Watch 应用已由用户已关闭，调用此方法。 此方法返回后，用户界面控件不能修改下一次之前`WillActivate`调用。 如果为 iPhone 连接已断开，则还将调用此方法。
 - 该扩展已被停用后，都无法访问你的程序它。 挂起的异步函数**将不会**调用。 观看工具包扩展可能不会使用后台处理模式。 如果用户重新激活该程序，但未由操作系统终止应用程序，第一种方法调用将`WillActivate`。
 
 ![](intro-to-watchos-images/wkinterfacecontrollerlifecycle.png "应用程序生命周期概述")
@@ -90,10 +90,10 @@ WatchOS 应用解决方案有 3 个项目：
 
 ## <a name="screen-sizes"></a>屏幕大小
 
-Apple Watch 有两种人脸大小： 38mm 和 42 mm，5:4 显示比率，和 Retina 显示屏。 其易于使用的大小为：
+Apple Watch 具有两种人脸大小：38mm 和 42 mm，5:4 显示比率，和 Retina 显示屏。 其易于使用的大小为：
 
-- 38 mm: 136 x 170 逻辑像素为单位 （272 x 340 物理像素为单位）
-- 42 mm: 156 x 195 逻辑像素 （312 x 390 物理像素为单位）。
+- 38mm:第 136 x 170 逻辑像素为单位 （272 x 340 物理像素为单位）
+- 42 mm:156 x 195 逻辑像素 （312 x 390 物理像素为单位）。
 
 使用`WKInterfaceDevice.ScreenBounds`确定哪些显示器上监视应用程序是否正在运行。
 

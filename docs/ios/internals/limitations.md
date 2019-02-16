@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: 1ccbea1921b4e0c4189182696c8679d041eea60b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
+ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113022"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56307913"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
-使用 Xamarin.iOS iPhone 上的应用程序编译为静态代码，因为它不是可以使用任何设备，需要在运行时代码生成。
+使用 Xamarin.iOS 应用程序编译为静态代码，因为它不能使用任何设备，需要在运行时代码生成。
 
 这些是与 Mono 桌面相比的 Xamarin.iOS 限制：
 
@@ -48,43 +48,12 @@ class Foo<T> : UIView {
 > 可能的 NSObjects 通用子类时，有一些限制。 读取[NSObject 的通用子类](~/ios/internals/api-design/nsobject-generics.md)文档的详细信息
 
 
-
-### <a name="pinvokes-in-generic-types"></a>P/调用泛型类型中
-
-P/Invoke 泛型类中不受支持：
-
-```csharp
-class GenericType<T> {
-    [DllImport ("System")]
-    public static extern int getpid ();
-}
-```
-
- <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
-
-
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>不支持可以为 Null 的类型上 Property.SetInfo
-
-使用反射的 Property.SetInfo 设置一个可以为 Null 的值&lt;T&gt;目前不支持。
-
- <a name="Value_types_as_Dictionary_Keys" />
-
-
-### <a name="value-types-as-dictionary-keys"></a>作为字典键的值类型
-
-使用值类型作为字典&lt;TKey，TValue&gt;项是有问题，将为默认值字典的构造函数试图使用 EqualityComparer&lt;TKey&gt;。默认值。 EqualityComparer&lt;TKey&gt;。默认情况下，反过来，尝试使用反射来实例化一个新的类型可实现 IEqualityComparer&lt;TKey&gt;接口。
-
-这同样适用于引用类型 (反射 + 创建一个新跳过类型步骤)，但值类型它崩溃，并加深相当快的速度后尝试在设备上使用它。
-
- **解决方法**： 手动实施[IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1)接口中的新类型，并提供到该类型的实例[字典&lt;TKey，TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1)构造函数。
-
-
  <a name="No_Dynamic_Code_Generation" />
 
 
 ## <a name="no-dynamic-code-generation"></a>没有生成动态代码
 
-由于 iPhone 的内核会阻止从动态生成代码的应用程序在 iPhone 上的 Mono 不支持任何形式的动态代码生成。 这些方法包括：
+因为 iOS 内核会阻止从动态生成代码的应用程序，Xamarin.iOS 不支持任何形式的动态代码生成。 这些问题包括：
 
 -  System.Reflection.Emit 不可用。
 -  System.Runtime.Remoting 不支持。
@@ -105,7 +74,7 @@ System.Reflection 缺乏。 **发出**取决于运行时代码生成任何代码
 -  远程处理的 TransparentProxy 或任何其他会导致运行时动态生成代码的内容。 
 
 
- **重要说明：** 不要混淆**Reflection.Emit**与**反射**。 Reflection.Emit 即将动态生成代码，并且具有该代码执行 Jit 和编译为本机代码。 由于对 iPhone （无 JIT 编译） 的限制不是支持此。
+ **重要提示：** 不要混淆**Reflection.Emit**与**反射**。 Reflection.Emit 即将动态生成代码，并且具有该代码执行 Jit 和编译为本机代码。 由于对 iOS （无 JIT 编译） 的限制不是支持此。
 
 但整个反射 API，包括 Type.GetType ("someClass") 列表的方法，列出属性，提取属性和值会顺利运行。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a85d00d0b2a368e05b16b1f2f9422e9e24fccb12
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 29f7480845dc4e8e608477e1eeb7f2e35d8f5490
+ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107639"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56321085"
 ---
 # <a name="building-watchos-apps-with-xamarin"></a>生成 watchOS 应用使用 Xamarin
 
@@ -20,13 +20,13 @@ ms.locfileid: "50107639"
 
 <!-- watch images courtesy of http://infinitapps.com/bezel/ -->
 
-##  <a name="getting-startedioswatchosget-startedindexmd"></a>[入门](~/ios/watchos/get-started/index.md)
+## <a name="getting-startedioswatchosget-startedindexmd"></a>[入门](~/ios/watchos/get-started/index.md)
 
-* [WatchOS 简介](~/ios/watchos/get-started/intro-to-watchos.md)
-* [安装信息](~/ios/watchos/get-started/installation.md)– Xamarin 的监视 OS 支持都可在我们的稳定版本，但被视为"预览"。
+* [WatchOS 简介](~/ios/watchos/get-started/intro-to-watchos.md)。
+* [安装信息](~/ios/watchos/get-started/installation.md)。
 * 生成你[第一个 watchOS 应用](~/ios/watchos/get-started/hello-watch.md)使用 Xamarin。
 
-##  <a name="user-interfaceioswatchosuser-interfaceindexmd"></a>[用户界面](~/ios/watchos/user-interface/index.md)
+## <a name="user-interfaceioswatchosuser-interfaceindexmd"></a>[用户界面](~/ios/watchos/user-interface/index.md)
 
 观看工具包目录示例应用中包括的控件的简要概述包括[图像](~/ios/watchos/user-interface/image.md)，[表](~/ios/watchos/user-interface/menu.md)[菜单](~/ios/watchos/user-interface/menu.md)，以及[文本输入](~/ios/watchos/user-interface/text-input.md)控件。
 
@@ -34,18 +34,18 @@ ms.locfileid: "50107639"
 
 如何包含特定于 watchOS 的功能，如[通知](~/ios/watchos/platform/notifications.md)并[复杂性](~/ios/watchos/platform/complications.md)到 watch 应用。
 
-##  <a name="app-fundamentalsioswatchosapp-fundamentalsindexmd"></a>[应用基础知识](~/ios/watchos/app-fundamentals/index.md)
+## <a name="app-fundamentalsioswatchosapp-fundamentalsindexmd"></a>[应用基础知识](~/ios/watchos/app-fundamentals/index.md)
 
 使用不同功能的 watchOS API，包括[父应用程序](~/ios/watchos/app-fundamentals/parent-app.md)，[图标](~/ios/watchos/app-fundamentals/icons.md)，[布局](~/ios/watchos/app-fundamentals/layout.md)，[导航](~/ios/watchos/app-fundamentals/navigation.md)， [屏幕尺寸](~/ios/watchos/app-fundamentals/screen-sizes.md)，并[设置](~/ios/watchos/app-fundamentals/settings.md)。
 
-##  <a name="deployment-and-testingioswatchosdeploy-testindexmd"></a>[部署和测试](~/ios/watchos/deploy-test/index.md)
+## <a name="deployment-and-testingioswatchosdeploy-testindexmd"></a>[部署和测试](~/ios/watchos/deploy-test/index.md)
 
 清单，并将 Apple Watch 应用部署的说明测试设备，并向 App Store。
 
-##  <a name="troubleshootingioswatchostroubleshootingmd"></a>[疑难解答](~/ios/watchos/troubleshooting.md)
+## <a name="troubleshootingioswatchostroubleshootingmd"></a>[疑难解答](~/ios/watchos/troubleshooting.md)
 
 已知的问题和解决方法。
 
-##  <a name="api-documentationhttpsdeveloperxamarincomapinamespacewatchkit"></a>[API 文档](https://developer.xamarin.com/api/namespace/WatchKit/)
+## <a name="api-documentationxrefwatchkit"></a>[API 文档](xref:WatchKit)
 
 观看工具包 API 的类和方法覆盖范围。
