@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 9acd1b8f25696267578f5cc269eb1b0c738be571
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: dbee8d3f55edee9c862b4c883b63b55f98972b48
+ms.sourcegitcommit: 0c2745c1593eee3ecb40ab882e854a13ca72bc86
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675089"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56078415"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms App 类
 
@@ -149,7 +149,6 @@ public class App : Xamarin.Forms.Application
 此类随后在每个特定于平台的项目中实例化并传递到 `LoadApplication` 方法，该方法可供加载 `MainPage` 并向用户显示。
 以下各部分展示了每个平台的代码。 最新的 Xamarin.Forms 解决方案模板已包含所有这些为应用预先配置的代码。
 
-
 ### <a name="ios-project"></a>iOS 项目
 
 iOS `AppDelegate` 类继承自 `FormsApplicationDelegate`。 它应该：
@@ -196,8 +195,6 @@ public class MainActivity : FormsAppCompatActivity
 
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>适用于 Windows 10 的通用 Windows 项目 (UWP)
 
-有关 Xamarin.Forms 中的 UWP 支持的信息，请参阅[设置 Windows 项目](~/xamarin-forms/platform/windows/installation/index.md)。
-
 UWP 项目中的主页应继承自 `WindowsPage`：
 
 ```xaml
@@ -222,4 +219,6 @@ public sealed partial class MainPage
  }
 ```
 
-请注意，必须在 **App.xaml.cs** 的第 63 行调用 `Forms.Init()`。
+请注意，必须从 UWP 项目中的 App.xaml.cs 调用 `Forms.Init()`。
+
+有关详细信息，请参阅[安装 Windows 项目](~/xamarin-forms/platform/windows/installation/index.md)，其中包括将 UWP 项目添加到现有的不面向 UWP 的 Xamarin.Forms 解决方案的步骤。

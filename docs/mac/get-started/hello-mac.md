@@ -8,14 +8,14 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
-ms.openlocfilehash: f79a509e3122cbccbe6bf10040f8143432c9d66c
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 02e0484a417b5d42129fa4e7a6ab9576c1817d74
+ms.sourcegitcommit: 8e8f83da636b63d14d1305c43a99736a00b9f590
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "43780511"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55969588"
 ---
-# <a name="hello-mac--walkthrough"></a>Hello，Mac - 演练
+# <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
 
 通过 Xamarin.Mac，可使用以 Objective-C 或 Swift 进行开发时所用的 macOS API 来以 C# 和 .NET 开发完全本机 Mac 应用。 由于 Xamarin.Mac 与 Xcode 直接集成，开发人员可以使用 Xcode 的 _Interface Builder_ 创建应用的用户界面（或选择通过 C# 代码直接创建）。
 

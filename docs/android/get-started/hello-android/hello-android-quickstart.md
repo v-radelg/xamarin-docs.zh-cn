@@ -1,5 +1,5 @@
 ---
-title: Hello，Android：快速入门
+title: Hello, Android：快速入门
 description: 在由两部分构成的本指南中，你将生成第一个 Xamarin.Android 应用程序（使用 Visual Studio 或 Visual Studio for Mac），并了解使用 Xamarin 进行 Android 应用程序开发的基础知识。 在此过程中，会向你介绍生成和部署 Xamarin.Android 应用程序所需的工具、概念和步骤。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,16 +9,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: e359defee98ada74a76726673f6d3db21c0f4db3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 378861dfecb2109269677fe13ed4df629a09da67
+ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121576"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986258"
 ---
-# <a name="hello-android-quickstart"></a>Hello，Android：快速入门
+# <a name="hello-android-quickstart"></a>Hello, Android：快速入门
 
 在这个两部分的指南中，你将使用 Visual Studio 生成第一个 Xamarin.Android 应用程序，并了解使用 Xamarin 进行 Android 应用程序开发的基础知识。
+
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/monodroid/Phoneword/)
 
 你将创建一个应用程序，它将字母数字电话号码（由用户输入）转换为数字电话号码，然后向用户显示此数字电话号码。 最终应用程序如下所示：
 
@@ -75,6 +77,12 @@ ms.locfileid: "50121576"
 
 [![打开活动 axml 文件](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
 
+> [!TIP]
+> 较新版本的 Visual Studio 包含的应用模板略有不同。
+>
+> 1. 布局位于 content_main.axml 中，而不是 activity_main.axml 中。
+> 2. 默认布局是 `RelativeLayout`。 要执行本页面上的其他步骤，应将 `<RelativeLayout>` 标记更改为 `<LinearLayout>`，并将其他属性 `android:orientation="vertical"` 添加到 `LinearLayout` 开始标记。
+
 在“工具箱”（左侧区域）的搜索字段中输入 `text`，并将一个“文本(大)”小组件拖动至 Design Surface 上（中央区域）：
 
 [![添加大文本小组件](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
@@ -109,7 +117,7 @@ ms.locfileid: "50121576"
 
 通过按 **CTRL+S** 来保存工作。
 
-## <a name="write-some-code"></a>编写一些代码
+## <a name="write-some-code"></a>编写代码
 
 下一步是添加一些代码，以将电话号码从字母数字转换为数字。 通过在“解决方案资源管理器”窗格中右键单击“Phoneword”项目，然后选择“添加”>“新建项…”以向项目添加新文件，如下所示：
 
@@ -320,7 +328,7 @@ translateButton.Click += (sender, e) =>
 
 通过按 **&#8984; + S** 来保存工作。
 
-## <a name="write-some-code"></a>编写一些代码
+## <a name="write-some-code"></a>编写代码
 
 现在添加一些代码，以将电话号码从字母数字转换为数字。 通过在“解决方案”板中单击“Phoneword”项目旁的齿轮图标，然后选择“添加”>“新建文件…”，向项目添加新文件：
 
