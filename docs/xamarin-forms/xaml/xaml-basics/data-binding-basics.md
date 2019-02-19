@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 65316bde1d1c709028eae39c19e5dc318821ff70
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 4a24c8dbb9ab4e23afa03de4ae2dbc55ddfb5fa4
+ms.sourcegitcommit: e000cc0765857c1d7f49538df9e62e9d3aa60775
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746877"
+ms.lasthandoff: 02/18/2019
+ms.locfileid: "56334561"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 数据绑定基础知识
 
@@ -114,6 +114,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` -值从源传输到目标
 - `OneWayToSource` -值从目标传输到源
 - `TwoWay` -值传输源和目标之间的这两种方式
+- `OneTime` -数据源从转到目标，但仅当`BindingContext`更改
 
 下面的程序说明的一个常见用途`OneWayToSource`和`TwoWay`绑定模式。 四个`Slider`视图都为了控制`Scale`， `Rotate`， `RotateX`，并`RotateY`属性的`Label`。 首先，它看起来像的这四个属性`Label`应为数据绑定目标，因为每个所设置`Slider`。 但是，`BindingContext`的`Label`可以是只有一个对象，并且有四个不同的滑块。
 
