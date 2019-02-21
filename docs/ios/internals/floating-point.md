@@ -16,11 +16,11 @@ ms.locfileid: "54879350"
 ---
 # <a name="floating-point-operations-in-xamarinios"></a> Xamarin.iOS 中的浮点运算
 
-默认情况下，Xamarin.iOS 将在 ARM 上使用 64 位精度执行 32 位和 64 位浮点运算。
+默认情况下，Xamarin.iOS 将在 ARM 上执行使用 64 位精度的 32 位和 64 位浮点运算。
 
-虽然这种更高的精度更接近开发人员对桌面上C#中浮点运算的期望，但在移动设备上，性能影响可能会很大。
+虽然这种更高的精度更接近开发人员对桌面 C# 浮点运算的期望，但在移动设备上，对性能的影响可能会很大。
 
-可以编译 32 位浮点代码以使用 32 位浮点运算。 为此，您需要至少使用 Xamarin.iOS 8.10 以上的版本并在iOS构建选项面板中的“mtouch extra arguments”输入行设置以下值：
+可以编译 32 位浮点代码以使用 32 位浮点运算。 为此，需要至少使用 Xamarin.iOS 版本 8.10 并在 iOS 生成选项面板中的“mtouch 额外参数”输入行中设置以下值：
 
      --aot-options=-O=float32
 
