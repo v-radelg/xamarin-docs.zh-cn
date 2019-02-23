@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: fa0ad282fedecec8f5ca4e94e7119c36ef182261
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116012"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666930"
 ---
 # <a name="external-storage"></a>外部存储
 
@@ -53,14 +53,14 @@ ms.locfileid: "50116012"
 
 | `Android.OS.Environment` | 目录 |
 |-|-|
-| DirectoryAlarms | **_私有\_外部\_存储_  /警报** |
-| DirectoryDcim | **_私有\_外部\_存储_/DCIM** |
+| DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
+| DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |
 | DirectoryDownloads | **_私有\_外部\_存储_  /下载** |
-| DirectoryDocuments | **_私有\_外部\_存储_  /文档** |
-| DirectoryMovies | **_私有\_外部\_存储_/Movies** |
-| DirectoryMusic | **_私有\_外部\_存储_/Music** |
+| DirectoryDocuments | **_PRIVATE\_EXTERNAL\_STORAGE_/Documents** |
+| DirectoryMovies | **_PRIVATE\_EXTERNAL\_STORAGE_/Movies** |
+| DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
 | DirectoryNotifications | **_私有\_外部\_存储_/Notifications** |
-| DirectoryPodcasts | **_私有\_外部\_存储_/Podcasts** |
+| DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
 | DirectoryRingtones | **_私有\_外部\_存储_/Ringtones** |
 | DirectoryPictures | **_私有\_外部\_存储_  /图片** |
 

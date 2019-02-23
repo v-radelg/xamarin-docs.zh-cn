@@ -8,19 +8,18 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: 1aa21a416f4abca0440e96e25aebe5f834a717ce
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 3a488b3a9f729da5d4bee8c1262190b15c2e9240
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209352"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666891"
 ---
 # <a name="mac-platform-setup"></a>Mac 平台安装程序
 
 ![预览](~/media/shared/preview.png)
 
-在开始之前，创建 （或使用现有） Xamarin.Forms 项目。
-你只能添加使用 Visual Studio for mac 的 Mac 应用
+在开始之前，创建 （或使用现有） Xamarin.Forms 项目。 你只能添加使用 Visual Studio for mac 的 Mac 应用
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
@@ -38,13 +37,13 @@ ms.locfileid: "54209352"
 
 4. 查看配置并按**创建**。 这些步骤中所示如下：
 
-  ![动画的说明显示如何添加 Cocoa 应用](mac-images/add-macos-proj.gif)
+    ![动画的说明显示如何添加 Cocoa 应用](mac-images/add-macos-proj.gif)
 
-5. 在 Mac 项目中，右键单击**包 > 添加包...** 以添加[Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet。 您还应更新到此版本的其他项目。
+5. 在 Mac 项目中，右键单击**包 > 添加包...** 以添加[Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) NuGet。 您还应更新其他项目以使用相同版本的 Xamarin.Forms NuGet 包。
 
 6. 在 Mac 项目中，右键单击**引用**并添加到 Xamarin.Forms 项目 （共享项目或.NET Standard 库项目） 的引用。
 
-  ![添加到 Xamarin.Forms 共享的代码项目的引用](mac-images/references-sml.png)
+    ![添加到 Xamarin.Forms 共享的代码项目的引用](mac-images/references-sml.png)
 
 7. 更新**Main.cs**初始化`AppDelegate`:
 
@@ -90,16 +89,16 @@ ms.locfileid: "54209352"
         {
             Forms.Init();
             LoadApplication(new App());
-            base.DidFinishLaunching(notification); 
+            base.DidFinishLaunching(notification);
         }
     }
     ```
 
 9. 双击**Main.storyboard** Xcode 中进行编辑。 选择**窗口**并_取消选中_**是初始控制器**复选框 （这是因为上面的代码创建一个窗口）：
 
-  [![取消选中在 Xcode 中的是初始控制器复选框](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
+    [![取消选中在 Xcode 中的是初始控制器复选框](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-  您可以编辑情节提要中删除不需要的项目中的菜单系统。
+    您可以编辑情节提要中删除不需要的项目中的菜单系统。
 
 10. 最后，添加任何本地资源 （例如。 图像文件） 从现有平台项目所需的。
 
@@ -137,26 +136,11 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ### <a name="not-all-nugets-are-ready-for-macos"></a>并非所有 Nuget 都有多个适用于 macOS 准备就绪
 
-包必须面向"xamarinmac20"若要在 macOS project 中工作。 您可能会发现，一些使用的库尚不支持 macOS。
-
-在这种情况下，你将需要将请求发送到项目的维护程序以将其添加。 直到他们获得支持，您可能需要寻找替代组件。
+您可能会发现，一些使用的库尚不支持 macOS。 在这种情况下，你将需要将请求发送到项目的维护程序以将其添加。 直到他们获得支持，您可能需要寻找替代组件。
 
 ### <a name="missing-xamarinforms-features"></a>缺少的 Xamarin.Forms 功能
 
-并非所有 Xamarin.Forms 功能都都已完成在此预览版中;下面是功能的一些尚未实现的列表：
-
-* 页脚
-* 映像-方面
-* ListView – ScrollTo，UnevenRows 支持，刷新，SeparatorColor，SeparatorVisibility
-* MasterDetailPage – BackgroundColor
-* 导航 – InsertPageBefore
-* OpenGLRenderer
-* 选取器 – Bindable/可观察量实现
-* TabbedPage – BarBackgroundColor，BarTextColor
-* TableView – UnevenRows
-* ViewCell – IsEnabled，ForceUpdateSize
-* WebView – 大多数 WebNavigationEvents
-
+并非所有 Xamarin.Forms 功能都都已在此预览版中完成。 有关详细信息，请参阅[平台支持 macOS 状态](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support-macOS-Status)中[Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) GitHub 存储库。
 
 ## <a name="related-links"></a>相关链接
 
