@@ -17,31 +17,31 @@ ms.locfileid: "50107118"
 
 ![预览](~/media/shared/preview.png)
 
-.NET 嵌入允许现有.NET 代码 (C#、 F # 和其他人） 可以通过其他编程语言，且在各种不同环境中使用。
+利用 .NET 嵌入，便可在其他编程语言和各种不同环境中使用现有 .NET 代码（C＃、F＃ 和其他语言）。
 
-这意味着，如果有想要使用它从现有的 iOS 应用程序的.NET 库，您可以这样做。   或者，如果你想要将其链接与本机 c + + 库，则也可以做到。   或使用 Java 从.NET 代码。
+这意味着，如果要从现有 iOS 应用中使用 .NET 库，则可以实现。或者，如果要将其与本机 C++ 库进行链接，也可以实现。此外，还可以从 Java 使用 .NET 代码。
 
-.NET 嵌入基于[Embeddinator 4000](https://github.com/mono/Embeddinator-4000)开放源代码项目。
+.NET 嵌入基于 [Embeddinator 4000](https://github.com/mono/Embeddinator-4000) 开源项目。
 
 ## <a name="environments-and-languages"></a>环境和语言
 
-该工具是能够意识到它将使用的环境，以及使用它的语言。   例如，iOS 平台不允许在实时 (JIT) 编译，因此.NET 嵌入将以静态方式编译您的.NET 代码到本机代码可以在 iOS 中使用。  其他环境并允许 JIT 编译，并在这些环境中，我们选择 JIT 编译。
+该工具既知道其要使用的环境，也知道要使用其的语言。例如，iOS 平台不允许实时 (JIT) 编译，因此 .NET 嵌入将静态编译 .NET 代码为可在 iOS 中使用的本机代码。其他环境允许 JIT 编译，在这些环境中，我们选择 JIT 编译。
 
-它支持各种语言使用者，因此它显示为目标语言中惯用代码的.NET 代码。   这是目前支持的语言列表：
+它支持各种语言使用者，因此可将 .NET 代码表示为目标语言中的惯用代码。 以下是当前支持的语言列表：
 
-- [**Objective C** ](objective-c/index.md) – 映射到惯用的 Objective C Api 的.NET
-- [**Java** ](android/index.md) – 映射到惯用的 Java Api 的.NET
-- [**C** ](get-started/c.md) – 映射到 C Api 等面向对象的.NET
+- [**Objective C** ](objective-c/index.md) – 将 .NET 映射到惯用的 Objective-C API
+- [**Java** ](android/index.md) – 将 .NET 映射到惯用 Java API
+- [**C** ](get-started/c.md) – 将 .NET 映射到面向对象的 C API 等
 
 稍后将推出更多语言。
 
 ## <a name="getting-started"></a>入门
 
-若要开始，请我们为每个当前支持的语言的指南之一：
+若要入门，请查看有关每种当前支持语言的指南之一：
 
-- [**Objective C** ](get-started/objective-c/index.md) – 介绍了在 macOS 和 iOS
-- [**Java** ](get-started/java/index.md) – 介绍了在 macOS 和 Android
-- [**C** ](get-started/c.md) – 包含在桌面平台上的 C 语言
+- [**Objective C** ](get-started/objective-c/index.md) – 涵盖了 macOS 和 iOS
+- [**Java** ](get-started/java/index.md) – 涵盖了 macOS 和 Android
+- [**C** ](get-started/c.md) – 涵盖了桌面平台上的 C 语言
 
 ## <a name="related-links"></a>相关链接
 
