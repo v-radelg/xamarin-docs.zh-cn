@@ -16,10 +16,10 @@ ms.locfileid: "54879337"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin.iOS API 概述
 
-Xamarin.iOS 公开 C# / CIL 绑定到产品 CocoaTouch API，并且还提供对 ECMA CIL Api 和各种其他.NET Api 的访问。
+Xamarin.iOS 公开了 C#/CIL 到 CocoaTouch API 的绑定，并且还提供了对 ECMA CIL API 和各种其他 .NET API 的访问权限。
 
- **API 参考**:API 参考位于[ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/)，开始[Xamarin.iOS Framework 节点](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)本机 iPhone Api 或转到 API 绑定[基类库节点](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)有关.NET API 的文档。
+ **API 参考**：可从 [ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/) 获取 API 参考，从 [Xamarin.iOS Framework 节点](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8) 开始，获取本机 iPhone API 的 API 绑定，或者转到[基类库节点](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)，获取有关 .NET API 的文档。 
 
- **API 设计**:中介绍了 CIL/Objective C 绑定的 API 设计[Xamarin.iOS API 设计](~/ios/internals/api-design/index.md)文档并介绍如何从产品 CocoaTouch 绑定 OBJECTIVE-C 和 C Api 和公开到C#/CIL 世界。
+ **API 设计**：[Xamarin.iOS API 设计](~/ios/internals/api-design/index.md)文档中介绍了 CIL/Objective-C 绑定的 API 设计，其中描述了我们如何从 CocoaTouch 绑定 Objective-C 和 C API 并将其公开给 C＃/CIL 世界。
 
- **程序集**:检查我们[绑定的程序集的列表](~/cross-platform/internals/available-assemblies.md)有关详细参考信息的哪些 Api 从C#/CIL/ECMA 是可用于 Xamarin.iOS。
+ 程序集：请查看我们的[已绑定程序集列表](~/cross-platform/internals/available-assemblies.md)，获取有关 C＃/CIL/ECMA 中哪些 API 可用于 Xamarin.iOS 的详细参考。
