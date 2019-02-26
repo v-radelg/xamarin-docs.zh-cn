@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 1b90a3184b89ba9147525a87b52e048bbb59f5af
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9441522af53a1240707eeb21ff9f583501d2491d
+ms.sourcegitcommit: 16a42b69176a40cde71e177079b11e15d300d042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061141"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56795441"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字体
 
@@ -97,27 +97,19 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 
 ## <a name="setting-the-font-in-xaml"></a>在 XAML 中设置该字体
 
-Xamarin.Forms 控制所有具有该显示文本`Font`可以在 XAML 中设置的属性。 在 XAML 中设置该字体的最简单方法是使用命名的大小的枚举值，在此示例中所示：
+Xamarin.Forms 控制所有具有该显示文本`FontSize`可以在 XAML 中设置的属性。 在 XAML 中设置该字体的最简单方法是使用命名的大小的枚举值，在此示例中所示：
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-没有内置的转换器，用于`Font`允许所有字体设置表示为 XAML 中的字符串值的属性。 下面的示例演示如何可以在 XAML 中指定的字体属性和大小：
+没有内置的转换器，用于`FontSize`允许所有字体设置表示为 XAML 中的字符串值的属性。 此外，`FontAttributes`属性可用于指定的字体特性：
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
 <Label Text="Biggest NamedSize" FontSize="Large" />
 <Label Text="Use size 72" FontSize="72" />
-```
-
-若要指定多个`Font`设置，将合并到单个所需的设置`Font`属性字符串。 字体属性字符串的格式应为`"[font-face],[attributes],[size]"`。 参数的顺序很重要，所有参数都是可选的并且多个`attributes`可以指定，例如：
-
-```xaml
-<Label Text="Small bold text" Font="Bold, Micro" />
-<Label Text="Medium custom font" Font="MarkerFelt-Thin, 42" />
-<Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
 [`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) 此外可在 XAML 中呈现每个平台上不同的字体。 下面的示例在 iOS 上使用自定义字体 (<span style="font-family:MarkerFelt-Thin">MarkerFelt 精简</span>)，并在其他平台上指定仅大小/属性：
@@ -151,7 +143,7 @@ Xamarin.Forms 控制所有具有该显示文本`Font`可以在 XAML 中设置的
 可以通过首先确保将加载它，然后使用 Xamarin.Forms 按名称引用它来显示自定义字体`Font`方法。
 按照中的说明[这篇博客文章](http://blog.xamarin.com/custom-fonts-in-ios/):
 
-1. 添加字体文件**生成操作： BundleResource**，和
+1. 添加字体文件**生成操作：BundleResource**，和
 2. 更新**Info.plist**文件 (**提供的应用程序字体**，或`UIAppFonts`、 密钥)，然后
 3. 它按名称引用任何在 Xamarin.Forms 中定义一种字体位置 ！
 
@@ -165,7 +157,7 @@ new Label
 
 ### <a name="android"></a>Android
 
-适用于 Android 的 Xamarin.Forms 可以引用按照特定的命名标准添加到项目的自定义字体。 首先添加字体文件的**资产**文件夹中的应用程序项目并设置*生成操作： AndroidAsset*。 然后，使用的完整路径和*字体名称*，作为在 Xamarin.Forms 中，字体名称的哈希 （#） 分隔，如以下代码段演示了：
+适用于 Android 的 Xamarin.Forms 可以引用按照特定的命名标准添加到项目的自定义字体。 首先添加字体文件的**资产**文件夹中的应用程序项目并设置*生成操作：AndroidAsset*。 然后，使用的完整路径和*字体名称*，作为在 Xamarin.Forms 中，字体名称的哈希 （#） 分隔，如以下代码段演示了：
 
 ```csharp
 new Label
