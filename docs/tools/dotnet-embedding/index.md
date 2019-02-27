@@ -25,7 +25,7 @@ ms.date: 11/14/2017
 它支持各种语言使用者，因此可将 .NET 代码表示为目标语言中的惯用代码。   以下是当前支持的语言列表：
 
 - [**Objective C** ](objective-c/index.md) – 将 .NET 映射到惯用的 Objective-C API
-- [**Java** ](android/index.md) – 映射到惯用的 Java Api 的.NET
+- [**Java** ](android/index.md) – 将 .NET 映射到惯用 Java API
 - [**C** ](get-started/c.md) – 将 .NET 映射到面向对象的 C API 等
 
 稍后将推出更多语言。
