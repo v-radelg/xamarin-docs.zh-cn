@@ -16,13 +16,13 @@ ms.locfileid: "56321124"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>watchOS 在 Xamarin 中的图像控件
 
-提供了 watchOS [ `WKInterfaceImage` ](xref:WatchKit.WKInterfaceImage)控件来显示图像和简单的动画。 某些控件也可以 （例如按钮、 组和界面控制器） 的背景图像。
+提供了 watchOS [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)控件来显示图像和简单的动画。 某些控件也可以 （例如按钮、 组和界面控制器） 的背景图像。
 
-![](image-images/image-walkway.png "Apple Watch 显示图片") ![ ] (image-images/image-animation.png "Apple Watch 使用简单的动画")
+![](image-images/image-walkway.png "Apple Watch 显示图片") ![](image-images/image-animation.png "Apple Watch 使用简单的动画")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 使用资产目录映像将映像添加到监视工具包应用程序。
-仅**@2x**版本是必需的因为所有监视具有 Retina 显示的设备。
+仅**@2x** 版本是必需的因为所有监视具有 Retina 显示的设备。
 
 ![](image-images/asset-universal-sml.png "只有 2 x 版本是必需的因为所有监视具有 Retina 显示的设备")
 
