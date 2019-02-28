@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7eea0a4eba201d7332c5e3e5222729bcb5e14a07
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6f12670dd463471ba1e337802453c775adbe16a7
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054056"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666943"
 ---
 # <a name="localization"></a>本地化
 
@@ -347,13 +347,14 @@ iOS 用户将独立于日期和时间格式区域性选择首选语言。 要加
 
 namespace UsingResxLocalization.iOS
 {
-public class Localize : UsingResxLocalization.ILocalize
+    public class Localize : UsingResxLocalization.ILocalize
     {
         public void SetLocale (CultureInfo ci)
         {
             Thread.CurrentThread.CurrentCulture = ci;
             Thread.CurrentThread.CurrentUICulture = ci;
         }
+
         public CultureInfo GetCurrentCultureInfo ()
         {
             var netLanguage = "en";
@@ -385,9 +386,12 @@ public class Localize : UsingResxLocalization.ILocalize
             }
             return ci;
         }
+
         string iOSToDotnetLanguage(string iOSLanguage)
         {
-            var netLanguage = iOSLanguage;
+            // .NET cultures don't support underscores
+            string netLanguage = iOSLanguage.Replace("_", "-");
+
             //certain languages need to be converted to CultureInfo equivalent
             switch (iOSLanguage)
             {
@@ -403,6 +407,7 @@ public class Localize : UsingResxLocalization.ILocalize
             }
             return netLanguage;
         }
+
         string ToDotnetFallbackLanguage (PlatformCulture platCulture)
         {
             var netLanguage = platCulture.LanguageCode; // use the first part of the identifier (two chars, usually);
@@ -431,7 +436,6 @@ public class Localize : UsingResxLocalization.ILocalize
 > 例如，iOS 的“设置”>“通用语言”&amp;“区域”屏幕允许你将手机的“语言”设置为“英语”，但“地区”设置为“西班牙”，这将导致 `"en-ES"` 的区域设置字符串。 如果 `CultureInfo` 创建失败，代码将回退到仅使用前两个字母，以选择显示语言。
 >
 > 开发人员应修改 `iOSToDotnetLanguage` 和 `ToDotnetFallbackLanguage` 方法，以处理其所支持语言需要的特定用例。
-
 
 存在 iOS 自动翻译的系统定义用户界面元素，例如 `Picker` 控件上的“完成”按钮。 若要强制 iOS 翻译这些元素，需要在 Info.plist 文件中指示支持的语言。 可以通过 Info.plist >“源”添加这些值，如下所示：
 
