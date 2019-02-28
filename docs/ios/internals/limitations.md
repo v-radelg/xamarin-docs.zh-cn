@@ -1,4 +1,4 @@
-﻿---
+---
 title: Xamarin.iOS 的限制
 description: 本文档介绍 Xamarin.iOS，讨论泛型、 NSObjects、 P/Invoke 中的通用对象，和的详细信息的通用子类的限制。
 ms.prod: xamarin
@@ -57,7 +57,7 @@ class Foo<T> : UIView {
 
 -  System.Reflection.Emit 不可用。
 -  System.Runtime.Remoting 不支持。
--  不支持动态创建类型（没有 Type.GetType（“MyType`1”）），但查找现有类型（例如 Type.GetType（“System.String”）仍有效。 
+-  不支持动态创建类型（没有 Type.GetType（“MyType`1”）），但查找现有类型（例如 Type.GetType（“System.String”）仍有效）。 
 -  在编译时，必须向运行时注册反向回调。
 
 
@@ -67,7 +67,7 @@ class Foo<T> : UIView {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-缺少 System.Reflection.Emit 意味着依赖于运行时代码生成的代码将不起作用。这包括如下内容****：
+System.Reflection 缺乏。 **发出**取决于运行时代码生成任何代码将起作用的方式。 这包括诸如：
 
 -  动态语言运行时。
 -  任何基于动态语言运行时的语言。
@@ -100,8 +100,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 在 Mono 中，这些桥由实时编译器实现。 在使用 iPhone 所需的提前编译器时，则有两个重要限制：
 
--  必须使用 [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 标记所有回调方法
-- 方法必须是静态方法，不支持实例方法。 
+-  必须使用 [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 标记所有回调方法 
+-  方法必须是静态方法，不支持实例方法。 
  
 <a name="No_Remoting" />
 
@@ -130,8 +130,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="net-api-limitations"></a>.NET API 限制
 
-公开的 .NET API 是完整框架的一个子集，因为并非所有内容在 iOS 中都是可用的。请参阅常见问题解答，获取[当前支持的程序集列表](~/cross-platform/internals/available-assemblies.md)。
+公开的 .NET API 是完整框架的一个子集，因为并非所有内容在 iOS 中都是可用的。 请参阅常见问题解答，获取[当前支持的程序集列表](~/cross-platform/internals/available-assemblies.md)。
 
 
 
-特别是，Xamarin.iOS 使用的 API 配置文件不包含 System.Configuration ，因此无法使用外部 XML 文件来配置运行时的行为。
+具体而言，使用 Xamarin.iOS 的 API 配置文件不包括 System.Configuration，因此不能使用外部 XML 文件来配置运行时的行为。
