@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 3bfb8a10eab1a8a75a3f2048de1ce219df9bde66
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
+ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057660"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56666904"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版-详细信息页
 
@@ -48,7 +48,7 @@ _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中
 
 - 在 iOS 中，当母版页从左侧滑动时，详细信息页向右滑动，并且详细信息页的左侧部分仍然可见。
 - 在 Android 中，详细信息和母版页相互叠加。
-- 在 UWP 中，详细信息和母版页相互交换。
+- 在 UWP 上，如果 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 属性设置为 `Popover`，母版页会从左侧滑动到部分详细信息页上方。 有关更多信息，请参阅[控制详细信息页显示行为](#Controlling_the_Detail_Page_Display_Behavior)。
 
 在横向模式下将观察到类似的行为，除了 iOS 和 Android 中的母版页在纵向模式下具有与母版页类似的宽度，因此将显示更多详细信息页。
 
@@ -291,7 +291,6 @@ public class MainPageCS : MasterDetailPage
 ## <a name="summary"></a>总结
 
 本文介绍如何使用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 并在其信息页面之间导航。 Xamarin.Forms `MasterDetailPage` 页面用于管理两个相关信息页，其中一个为显示项的母版页，另一个为详细信息页，显示母版页上各项的详细信息。
-
 
 ## <a name="related-links"></a>相关链接
 
