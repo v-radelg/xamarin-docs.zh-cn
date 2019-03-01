@@ -134,4 +134,4 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 
 
-具体而言，使用 Xamarin.iOS 的 API 配置文件不包括 System.Configuration，因此不能使用外部 XML 文件来配置运行时的行为。
+特别是，Xamarin.iOS 使用的 API 配置文件不包含 System.Configuration ，因此无法使用外部 XML 文件来配置运行时的行为。
