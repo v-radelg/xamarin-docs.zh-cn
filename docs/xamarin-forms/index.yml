@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 00d8e1459501b4643dea12b1d36939534a66833f
-ms.sourcegitcommit: 5405a376fe1b1e08c834eb565aaa5b1849a0fcdc
+ms.openlocfilehash: ccd085c8b1cf824f24d4677ed2e44ebc54b690bd
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986482"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197168"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -35,7 +35,7 @@ sections:
     - image:
         src: https://docs.microsoft.com/media/common/i_setup.svg
       text: 安装
-      href: ~/get-started/installation.md
+      href: ~/get-started/requirements.md
     - image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
       text: 首个应用
@@ -62,18 +62,6 @@ sections:
     style: cards
     className: cardsB
     items:
-    - href: ~/get-started/index.md
-      html: 通过 Xamarin.Forms 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 Xamarin.Forms 应用。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/get-started/index.md
-      title: 入门
-    - href: ~/xamarin-forms/xaml/
-      html: 以声明方式生成用户界面并在移动平台和桌面平台之间共享。
-      image:
-        src: ~/media/icons/i_xaml-forms.svg
-        href: ~/xamarin-forms/xaml/
-      title: XAML
     - href: ~/xamarin-forms/app-fundamentals/
       html: 要生成 Xamarin.Forms 应用需要了解的所有内容，例如使用文件、映像、数据库等。
       image:
@@ -86,6 +74,12 @@ sections:
         src: ~/media/icons/i_user-interface.svg
         href: ~/xamarin-forms/user-interface/
       title: 用户界面
+    - href: ~/xamarin-forms/xaml/
+      html: 以声明方式生成用户界面并在移动平台和桌面平台之间共享。
+      image:
+        src: ~/media/icons/i_xaml-forms.svg
+        href: ~/xamarin-forms/xaml/
+      title: XAML
     - href: ~/xamarin-forms/platform/
       html: 使用 Xamarin.Forms 平台功能，例如自定义呈现器，以及每个版本的其他重要功能。
       image:
