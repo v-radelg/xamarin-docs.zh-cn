@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 48b1c93afa22bf069a2b47b6c9a259641e8ed70f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292808"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197363"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
 
@@ -114,7 +114,7 @@ ms.locfileid: "55292808"
       </ContentPage>
       ```
 
-      此代码以声明方式定义页面，其中包含的用户界面[ `Editor` ](xref:Xamarin.Forms.Editor)文本输入和两个[ `Button` ](xref:Xamarin.Forms.Button)指示应用程序保存或删除的实例文件。 这两个`Button`实例水平放置[ `Grid` ](xref:Xamarin.Forms.Grid)，与`Editor`并`Grid`垂直布局[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 此外，`Editor`使用数据绑定来绑定到`Text`属性的`Note`模型。 有关数据绑定的详细信息，请参阅[数据绑定](deepdive.md#data-binding)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
+      此代码以声明方式定义页面，其中包含的用户界面[ `Editor` ](xref:Xamarin.Forms.Editor)文本输入和两个[ `Button` ](xref:Xamarin.Forms.Button)指示应用程序保存或删除的实例一个文件。 这两个`Button`实例水平放置[ `Grid` ](xref:Xamarin.Forms.Grid)，与`Editor`并`Grid`垂直布局[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 此外，`Editor`使用数据绑定来绑定到`Text`属性的`Note`模型。 有关数据绑定的详细信息，请参阅[数据绑定](deepdive.md#data-binding)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
 
       保存对更改**NoteEntryPage.xaml**通过按**CTRL + S**，然后关闭文件。
 
@@ -399,7 +399,7 @@ ms.locfileid: "55292808"
       </ContentPage>
       ```
 
-      此代码以声明方式定义页面，其中包含的用户界面[ `Editor` ](xref:Xamarin.Forms.Editor)文本输入和两个[ `Button` ](xref:Xamarin.Forms.Button)指示应用程序保存或删除的实例文件。 这两个`Button`实例水平放置[ `Grid` ](xref:Xamarin.Forms.Grid)，与`Editor`并`Grid`垂直布局[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 此外，`Editor`使用数据绑定来绑定到`Text`属性的`Note`模型。 有关数据绑定的详细信息，请参阅[数据绑定](deepdive.md#data-binding)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
+      此代码以声明方式定义页面，其中包含的用户界面[ `Editor` ](xref:Xamarin.Forms.Editor)文本输入和两个[ `Button` ](xref:Xamarin.Forms.Button)指示应用程序保存或删除的实例一个文件。 这两个`Button`实例水平放置[ `Grid` ](xref:Xamarin.Forms.Grid)，与`Editor`并`Grid`垂直布局[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。 此外，`Editor`使用数据绑定来绑定到`Text`属性的`Note`模型。 有关数据绑定的详细信息，请参阅[数据绑定](deepdive.md#data-binding)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
 
       保存对更改**NoteEntryPage.xaml**通过选择**文件 > 保存**(或通过按 **&#8984; + S**)，然后关闭文件。
 

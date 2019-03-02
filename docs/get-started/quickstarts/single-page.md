@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 7696ece64da28f05bb15866214de4a7f1103d06f
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: dddd41f064be5e7840b6b86d86faec8045b476bf
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292796"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197220"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>创建单个页 Xamarin.Forms 应用程序
 
@@ -38,7 +38,7 @@ ms.locfileid: "55292796"
 - 了解C#。
 - （可选）配对的 Mac 生成在 iOS 上的应用程序。
 
-有关这些先决条件的详细信息，请参阅[安装 Xamarin](~/cross-platform/get-started/installation/index.md)。 有关将 Visual Studio 2017 连接到 Mac 生成主机的信息，请参阅[与适用于 Xamarin.iOS 开发的 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+有关这些先决条件的详细信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。 有关将 Visual Studio 2017 连接到 Mac 生成主机的信息，请参阅[与适用于 Xamarin.iOS 开发的 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 ## <a name="get-started-with-visual-studio"></a>Visual Studio 入门
 
@@ -92,7 +92,7 @@ ms.locfileid: "55292796"
     </ContentPage>
     ```
 
-    该代码以声明的方式定义页面的用户界面，它包含一个用于显示文本的 [`Label`、](xref:Xamarin.Forms.Label)一个用于文本输入的 [`Editor`](xref:Xamarin.Forms.Editor) 以及两个指示应用程序保存或删除文件的 [`Button`](xref:Xamarin.Forms.Button) 实例。 这两个 `Button` 实例水平放置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 垂直放置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 有关创建用户界面的详细信息，请参阅[用户界面](deepdive.md#user-interface)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
+    此代码以声明方式定义页面，其中包含的用户界面[ `Label` ](xref:Xamarin.Forms.Label)若要显示的文本， [ `Editor` ](xref:Xamarin.Forms.Editor)的文本输入和两个[ `Button`](xref:Xamarin.Forms.Button)指示应用程序保存或删除的文件的实例。 这两个 `Button` 实例水平放置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 垂直放置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 有关创建用户界面的详细信息，请参阅[用户界面](deepdive.md#user-interface)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
 
     按 **Ctrl+S**，保存对 **MainPage.xaml** 所做的更改，然后关闭文件。
 
@@ -188,7 +188,7 @@ ms.locfileid: "55292796"
 - Xcode （最新发行版）。
 - 了解C#。
 
-有关这些先决条件的详细信息，请参阅[安装 Xamarin](~/cross-platform/get-started/installation/index.md)。
+有关这些先决条件的详细信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Visual Studio for Mac 入门
 
@@ -246,7 +246,7 @@ ms.locfileid: "55292796"
     </ContentPage>
     ```
 
-    该代码以声明的方式定义页面的用户界面，它包含一个用于显示文本的 [`Label`、](xref:Xamarin.Forms.Label)一个用于文本输入的 [`Editor`](xref:Xamarin.Forms.Editor) 以及两个指示应用程序保存或删除文件的 [`Button`](xref:Xamarin.Forms.Button) 实例。 这两个 `Button` 实例水平放置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 垂直放置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 有关创建用户界面的详细信息，请参阅[用户界面](deepdive.md#user-interface)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
+    此代码以声明方式定义页面，其中包含的用户界面[ `Label` ](xref:Xamarin.Forms.Label)若要显示的文本， [ `Editor` ](xref:Xamarin.Forms.Editor)的文本输入和两个[ `Button`](xref:Xamarin.Forms.Button)指示应用程序保存或删除的文件的实例。 这两个 `Button` 实例水平放置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Label`、`Editor` 和 `Grid` 垂直放置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 有关创建用户界面的详细信息，请参阅[用户界面](deepdive.md#user-interface)中[Xamarin.Forms 快速入门的深入探讨](deepdive.md)。
 
     通过选择“文件”>“保存”，或按 **&#8984; + S**，保存对 **MainPage.xaml** 所做的更改，然后关闭文件。
 

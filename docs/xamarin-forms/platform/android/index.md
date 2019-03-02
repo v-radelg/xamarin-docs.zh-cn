@@ -7,16 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: a90ae27bb4e0085d1cd0c5b36cf7c00fe5ebfec6
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292215"
 ---
+
 # <a name="android-platform-features"></a>Android 平台功能
 
-开发适用于 Android 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/installation.md)包含有关系统必备组件的详细信息。
+开发适用于 Android 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/requirements.md)包含有关系统必备组件的详细信息。
 
 ## <a name="platform-specifics"></a>平台特定信息
 

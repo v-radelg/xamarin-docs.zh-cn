@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: aacc63af53d7408b61f01054d49fa2b436588fc7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292812"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197545"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门的深入探讨
 
-在中[Xamarin.Forms 快速入门](~/get-started/index.md)，说明应用程序。 本文对已生成的内容进行回顾，以深入了解有关 Xamarin.Forms 应用程序工作原理的基础知识。
+在中[Xamarin.Forms 快速入门](~/get-started/index.yml)，说明应用程序。 本文对已生成的内容进行回顾，以深入了解有关 Xamarin.Forms 应用程序工作原理的基础知识。
 
 ::: zone pivot="windows"
 
@@ -373,7 +373,7 @@ await Navigation.PopAsync();
 
 数据绑定用于简化 Xamarin.Forms 应用程序显示及其与数据的交互方式。 它将在用户界面和基础应用程序之间建立连接。 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 类包含大部分基础结构以支持数据绑定。
 
-数据绑定连接两个对象，即源和目标。 源对象提供数据。 目标对象使用（并经常显示）来自源对象的数据。 例如，[`Editor`](xref:Xamarin.Forms.Editor)（目标对象）通常会将其 [`Text`](xref:Xamarin.Forms.Editor.Text) 属性绑定到源对象中的公共 `string` 属性。 下图说明了这种绑定关系：
+数据绑定连接两个对象，即源和目标。 源对象提供数据。 目标对象使用（并经常显示）来自源对象的数据。 例如， [ `Editor` ](xref:Xamarin.Forms.Editor) (*目标*对象) 通常将绑定其[ `Text` ](xref:Xamarin.Forms.Editor.Text)属性设置为公共`string`中属性*源*对象。 下图说明了这种绑定关系：
 
 ![](deepdive-images/data-binding.png "数据绑定")
 

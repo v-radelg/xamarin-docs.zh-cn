@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: bcf68de7261e25c94f042f4479a39e449c1929fb
-ms.sourcegitcommit: 676c5a6795ab4896ccd1b288424bf2040b1208aa
-ms.translationtype: HT
+ms.openlocfilehash: 5fccbcf56037b4c4538ccfa16515ea63aa53c57c
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2018
-ms.locfileid: "52294963"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57199803"
 ---
 Xamarin 可安装为新 Visual Studio 2017 安装的一部分，具体通过以下步骤操作：
 
@@ -15,23 +15,23 @@ Xamarin 可安装为新 Visual Studio 2017 安装的一部分，具体通过以�
 
 3. 从安装屏幕中选择“使用 .NET 的移动开发”工作负载：
 
-    ![工作负载屏幕上具有 .NET 选择的移动开发](~/cross-platform/get-started/installation/windows-images/01-mobile-dev-workload.png)
+    ![工作负载屏幕上具有 .NET 选择的移动开发](~/get-started/installation/windows-images/01-mobile-dev-workload.png)
 
 4. 选择“使用 .NET 的移动开发”时，查看右侧的“安装详细信息”面板。 可在此处取消选择不希望安装的移动开发选项。
 
-    ![列出要安装的 Xamarin 选项的“安装详细信息”面板](~/cross-platform/get-started/installation/windows-images/02-summary.png)
+    ![列出要安装的 Xamarin 选项的“安装详细信息”面板](~/get-started/installation/windows-images/02-summary.png)
 
 5. Visual Studio 2017 安装准备就绪后，单击右下角的“安装”按钮：
 
-    ![“安装”按钮](~/cross-platform/get-started/installation/windows-images/03-click-install.png)
+    ![“安装”按钮](~/get-started/installation/windows-images/03-click-install.png)
 
    安装过程可能需要很长时间才能完成，具体取决于要安装的 Visual Studio 2017 版本。 可使用进度栏监视安装过程：
 
-    ![安装过程中的进度栏](~/cross-platform/get-started/installation/windows-images/04-progress-bars.png)
+    ![安装过程中的进度栏](~/get-started/installation/windows-images/04-progress-bars.png)
 
 6. Visual Studio 2017 安装完成后，单击“启动”按钮以启动 Visual Studio：
 
-    ![启动按钮的位置](~/cross-platform/get-started/installation/windows-images/05-launch.png)
+    ![启动按钮的位置](~/get-started/installation/windows-images/05-launch.png)
 
 <a name="vs2017" />
 
