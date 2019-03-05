@@ -14,7 +14,7 @@ ms.locfileid: "50123675"
 ---
 # <a name="net-embedding-on-android"></a>在 Android 上嵌入.NET
 
-在某些情况下，您可能希望将 Xamarin .NET 库添加到现有的原生 Android 项目中。 为此，您可以使用[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)工具将.NET 库转换为原生库，以便可以合并到基于 Java 的原生 Android 应用程序中。
+在某些情况下，您可能希望将 Xamarin .NET 库添加到现有的本机 Android 项目中。 为此，您可以使用[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)工具将.NET 库转换为本机库，以便可以合并到基于 Java 的本机 Android 应用程序中。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -43,20 +43,20 @@ ms.locfileid: "50123675"
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4.  运行 Embeddinator 4000 来处理程序集。 例如：
+4.  库程序集上运行 Embeddinator 4000。 例如：
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
     ```
 
-5.  在 Android Studio 的 Java 项目中使用生成的 AAR 文件。
+5.  使用 Android Studio 中的 Java 项目中生成的 AAR 文件。
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="xamarinandroid-requirements"></a>Xamarin.Android 要求
 
-要使 Xamarin.Android 可以与.NET Embedding 一起使用，您需要以下内容：
+有关 Xamarin.Android 以用于.NET 嵌入，您需要：
 
 -   **Xamarin.Android** &ndash; 必须安装[Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更高版本。
 
