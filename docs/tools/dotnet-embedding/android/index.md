@@ -38,7 +38,7 @@ ms.date: 06/15/2018
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4.  运行 Embeddinator 4000 来处理程序集。 例如：
+4.  对库程序集运行 Embeddinator 4000。 例如：
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
@@ -77,7 +77,7 @@ ms.date: 06/15/2018
     export PATH=$PATH:/Library/Frameworks/Mono.framework/Commands
     ```
 
-4.  运行 Embeddinator 4000 来处理程序集。 例如：
+4.  对库程序集运行 Embeddinator 4000。 例如：
 
     ```bash
     mono $TOOLS/Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
