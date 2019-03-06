@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 标签教程
+metadata:
+  title: Xamarin.Forms 标签教程
+  description: 了解如何使用 Xamarin.Forms 标签视图在单行和多行中显示文本。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 01/31/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 6fa07fb712669607dad404cbe093001611f98a54
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198693"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 创建标签
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 更改外观
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/appearance.md)]
+- title: 显示格式化文本
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/formatted-text.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

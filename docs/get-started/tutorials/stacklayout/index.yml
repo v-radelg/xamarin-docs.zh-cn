@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms StackLayout 教程
+metadata:
+  title: Xamarin.Forms StackLayout 教程
+  description: 了解如何使用 Xamarin.Forms StackLayout（以水平或垂直方式）在一维堆栈中组织视图。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 07/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 24ab316baf8a0be14d78d35e52698e2bff224dcc
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57197843"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 创建 stacklayout
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 指定方向
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/orientation.md)]
+- title: 控制对齐方式和扩展
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/alignment-expansion.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

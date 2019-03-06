@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 条目教程
+metadata:
+  title: Xamarin.Forms 条目教程
+  description: 了解如何使用 Xamarin.Forms 条目视图接受单行文本输入。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 02/01/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 99bc2d5f19788fdc4681c9f80fa3db8c980363ab
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198523"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 创建条目
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 响应文本更改
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/text-changes.md)]
+- title: 自定义行为
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/behavior.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

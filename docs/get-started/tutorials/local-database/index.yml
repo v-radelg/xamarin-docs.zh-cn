@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 本地数据库教程
+metadata:
+  title: Xamarin.Forms 本地数据库教程
+  description: 了解如何使用 SQLite.NET NuGet 包将本地数据库操作合并到 Xamarin.Forms 应用程序中。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 12/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: b4cd264d11df081fb190044000e73cf012092667
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198563"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 添加 SQLite.NET
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/add-sqlite.md)]
+- title: 创建数据访问类
+  durationInMinutes: 5
+  content: >
+    [!INCLUDE [](includes/create-data-access-classes.md)]
+- title: 使用数据访问类
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/consume-data-access-classes.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

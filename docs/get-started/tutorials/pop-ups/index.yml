@@ -1,0 +1,30 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 弹出窗口教程
+metadata:
+  title: Xamarin.Forms 弹出窗口教程
+  description: 了解如何使用 Xamarin.Forms 显示警报和操作工作表，向用户询问简单问题，以及指导用户完成任务。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 02/19/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 7943f6caf94328d265ba03f90821a0075d1b02fe
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198913"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 显示警报
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/display-alert.md)]
+- title: 显示操作工作表
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/display-action-sheet.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

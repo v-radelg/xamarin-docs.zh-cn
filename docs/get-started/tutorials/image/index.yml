@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 图像教程
+metadata:
+  title: Xamarin.Forms 图像教程
+  description: 了解如何使用 Xamarin.Forms 图像视图在页面显示图像。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 05/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 77ad9afcc82f27c78973c279af70ab735dd067f6
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198383"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 创建图像
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 自定义外观
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/customize-appearance.md)]
+- title: 显示本地图像
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/local-file.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

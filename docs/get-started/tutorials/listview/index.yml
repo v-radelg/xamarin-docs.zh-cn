@@ -1,0 +1,38 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms ListView 教程
+metadata:
+  title: Xamarin.Forms ListView 教程
+  description: 了解如何使用 Xamarin.Forms ListView 呈现数据列表。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 06/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 5c0621fe10b02ef29a4b426a441221b00c845830
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57198023"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 创建 listview
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 填充数据
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/populate-data.md)]
+- title: 响应项选择
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/item-selection.md)]
+- title: 自定义单元格外观
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/customize-cell-appearance.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

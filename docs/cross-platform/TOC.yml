@@ -2,29 +2,12 @@ items:
 - name: 跨平台
   href: index.yml
   items:
-  - name: 开始操作
+  - name: 构建移动应用
     href: get-started/index.md
     items:
     - name: 要求
       displayName: System requirements
       href: get-started/requirements.md
-    - name: 安装
-      href: get-started/installation/index.md
-      items:
-      - name: 在 Windows 上安装 Xamarin
-        href: get-started/installation/windows.md
-        items:
-        - name: 安装 Xamarin 预览版 (Windows)
-          href: get-started/installation/windows-preview.md
-      - name: 安装 Visual Studio for Mac
-        href: /visualstudio/mac/installation/
-        items:
-        - name: 安装 Xamarin 预览版 (Mac)
-          href: /visualstudio/mac/update/
-      - name: Xamarin 防火墙配置说明
-        href: get-started/installation/firewall.md
-      - name: 卸载 Xamarin
-        href: get-started/installation/uninstalling-xamarin.md
     - name: 移动开发简介
       href: get-started/introduction-to-mobile-development.md
     - name: 移动 SDLC 简介
@@ -192,9 +175,9 @@ items:
   - name: 示例
     href: samples/index.yml
   expanded: true
-ms.openlocfilehash: 5eb01503b809979ebbc6598cf1cde985d3431bad
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.openlocfilehash: 083bc3dc1dbd392977b0d4902e37fe0f78513c29
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841323"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197324"

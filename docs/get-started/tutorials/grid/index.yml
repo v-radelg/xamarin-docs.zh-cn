@@ -1,0 +1,34 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms 网格教程
+metadata:
+  title: Xamarin.Forms 网格教程
+  description: 了解如何使用 Xamarin.Forms 网格将视图组织成行和列，可以按比例或绝对大小显示这些行和列。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 08/02/2019
+  author: davidbritch
+  ms.author: dabritch
+  ms.openlocfilehash: 492e26b8488b615d4d50ee63f4fa4a9fa1f4c01e
+  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 03/01/2019
+  ms.locfileid: "57197833"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: 创建网格
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: 指定列和行
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/columns-rows.md)]
+- title: 跨越多列或多行
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/span-columns-rows.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'
