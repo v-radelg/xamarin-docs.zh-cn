@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 396c6a19a86c3c8f5429d5da1251d69fc8d57309
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5f2617272cfdc84fa2b835ce44919d2599a1dce6
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114075"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197194"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 简介
 
@@ -35,12 +35,12 @@ ms.locfileid: "50114075"
 可从众多配置选项中选择最适合开发需求的选项。 以下列出了这些选项：
 
 -  使用 Mac 作为主要的开发计算机，并运行安装了 Visual Studio 的 Windows 虚拟机。 建议使用 VM 软件，如 [Parallels](http://www.parallels.com/products/desktop/) 或 [VMWare](http://www.vmware.com/products/fusion/)。
--  将 Mac 当做生成主机使用。 在这种情况下，需连接到与 Windows 计算机所处的同一网络上，该计算机已安装[必备](~/cross-platform/get-started/installation/windows.md#installation)工具。
+-  将 Mac 当做生成主机使用。 在这种情况下，需连接到与 Windows 计算机所处的同一网络上，该计算机已安装[必备](~/get-started/installation/windows.md#installation)工具。
 
 对于每种情况，都应遵循以下步骤：
 
 - [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
-- [在 Windows 上安装 Xamarin 工具](~/cross-platform/get-started/installation/windows.md)
+- [在 Windows 上安装 Xamarin 工具](~/get-started/installation/windows.md)
 
 ## <a name="connecting-to-the-mac"></a>连接到 Mac
 

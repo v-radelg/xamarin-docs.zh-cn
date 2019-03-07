@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: c208bae61f425ccdb69e0543c7686891a7add358
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
+ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113178"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57197467"
 ---
 # <a name="windows-installation"></a>Windows 安装
 
@@ -36,10 +36,10 @@ _本指南介绍了在 Windows 上安装 Xamarin.Android for Visual Studio 的�
 
 ## <a name="installation"></a>安装
 
-有关安装与 Windows 上的 Visual Studio 配合使用的 Xamarin 的详细信息，请参阅 [Windows 安装](~/cross-platform/get-started/installation/windows.md)指南。
+有关安装与 Windows 上的 Visual Studio 配合使用的 Xamarin 的详细信息，请参阅 [Windows 安装](~/get-started/installation/windows.md)指南。
 
 
-## <a name="configuration"></a>配置
+## <a name="configuration"></a>Configuration
 
 Xamarin.Android 使用 Java 开发工具包 (JDK) 和 Android SDK 生成应用。 在安装过程中，Visual Studio 安装程序会将这些工具放置在其默认位置，并使用适当的路径配置来配置开发环境。 可单击“工具”>“选项”>“Xamarin”>“Android 设置”查看和更改这些位置：
 
@@ -119,7 +119,7 @@ Android 使用多个 Android API 级别设置来确定应用在各种版本的 A
 ## <a name="related-links"></a>相关链接
 
 - [下载 Visual Studio](https://visualstudio.microsoft.com/vs/)
-- [安装 Visual Studio Tools for Xamarin](~/cross-platform/get-started/installation/windows.md)
+- [安装 Visual Studio Tools for Xamarin](~/get-started/installation/windows.md)
 - [系统要求](~/cross-platform/get-started/requirements.md)
 - [Android SDK 安装](~/android/get-started/installation/android-sdk.md)
 - [Android 仿真器设置](~/android/get-started/installation/android-emulator/index.md)
