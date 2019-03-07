@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 0563921a59bc698e2360a06b482c7f4994e56f6e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060007"
 ---
+
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文本
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
@@ -66,7 +61,7 @@ Xamarin.Forms 具有用于处理文本的三个主要视图：
 
 ## <a name="fontsfontsmd"></a>[字体](fonts.md)
 
-`Label`控件支持不同的字体设置，请在每个平台或您的应用程序中包含的自定义字体使用内置的字体。 请参阅[字体](fonts.md)文章更多详细信息。
+许多控件都支持不同的字体设置，请在每个平台或您的应用程序中包含的自定义字体使用内置的字体。 请参阅[字体](fonts.md)文章更多详细信息。
 
 <a name="Styles" />
 

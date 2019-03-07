@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: c3759430ce40397418d2f47794e8ecc555ef3ed4
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292280"
 ---
+
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 用户界面视图
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/FormsGallery/)
@@ -108,9 +103,9 @@ Xamarin.Forms 主题定义特定的可视化外观，对标准控件。 一旦�
 
 `TimePicker`允许用户选择的时间。 它使用特定平台上运行应用程序的支持时间选取器实现。
 
-## <a name="visualvisualmd"></a>[视觉对象](visual.md)
+## <a name="visualvisualindexmd"></a>[视觉对象](visual/index.md)
 
-本文介绍了 Xamarin.Forms 视觉对象，在 iOS 和 Android 相同，或很大程度上相同，将视图呈现。
+Xamarin.Forms Visual 使呈现器有选择地应用于`VisualElement`对象，而不必子类 Xamarin.Forms 控件。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[可视状态管理器](visual-state-manager.md)
 

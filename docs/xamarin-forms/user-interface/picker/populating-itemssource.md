@@ -6,13 +6,13 @@ ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 8e05a5f1c52183f29f22cbcd9655c26dc934e7d8
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 02/26/2019
+ms.openlocfilehash: 2c7daca80a207d0c060fc3a867b1eda03dd65258
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207840"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557072"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>设置选取器的 ItemsSource 属性
 
@@ -27,7 +27,9 @@ _选取器视图是一个用于选择文本项中的数据列表控件。本文�
 一个[ `Picker` ](xref:Xamarin.Forms.Picker)可以通过设置使用数据填充其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)属性设置为`IList`集合。 集合中的每个项必须是的或派生自类型`object`。 项可以在 XAML 中通过初始化中添加`ItemsSource`属性从项的数组：
 
 ```xaml
-<Picker x:Name="picker" Title="Select a monkey">
+<Picker x:Name="picker"
+        Title="Select a monkey"
+        TitleColor="Red">
   <Picker.ItemsSource>
     <x:Array Type="{x:Type x:String}">
       <x:String>Baboon</x:String>
@@ -57,7 +59,7 @@ monkeyList.Add("Golden Lion Tamarin");
 monkeyList.Add("Howler Monkey");
 monkeyList.Add("Japanese Macaque");
 
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.ItemsSource = monkeyList;
 ```
 
@@ -101,18 +103,21 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 > [!NOTE]
 > 一个[ `Picker` ](xref:Xamarin.Forms.Picker)可初始化以通过设置显示特定项[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)或者[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)属性。 但是，这些属性必须设置初始化后[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)集合。
 
-## <a name="populating-a-picker-with-data-using-data-binding"></a>填充与使用数据绑定的数据选取器
+## <a name="populating-a-picker-with-data-using-data-binding"></a>使用数据绑定的数据填充选取器
 
 一个[ `Picker` ](xref:Xamarin.Forms.Picker)可以还使用填充数据通过使用数据绑定将绑定其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)属性设置为`IList`集合。 在 XAML 中此，可以使用[ `Binding` ](xref:Xamarin.Forms.Xaml.BindingExtension)标记扩展：
 
 ```xaml
-<Picker Title="Select a monkey" ItemsSource="{Binding Monkeys}" ItemDisplayBinding="{Binding Name}" />
+<Picker Title="Select a monkey"
+        TitleColor="Red"
+        ItemsSource="{Binding Monkeys}"
+        ItemDisplayBinding="{Binding Name}" />
 ```
 
 等效的 C# 代码如下所示：
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.ItemDisplayBinding = new Binding("Name");
 ```
@@ -137,6 +142,7 @@ public class Monkey
 
 ```xaml
 <Picker Title="Select a monkey"
+        TitleColor="Red"
         ItemsSource="{Binding Monkeys}"
         ItemDisplayBinding="{Binding Name}"
         SelectedItem="{Binding SelectedMonkey}" />
@@ -149,7 +155,7 @@ public class Monkey
 等效的 C# 代码如下所示：
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
 picker.SetBinding(Picker.SelectedItemProperty, "SelectedMonkey");
 picker.ItemDisplayBinding = new Binding("Name");
@@ -173,10 +179,6 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 > [!NOTE]
 > 请注意， [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)并[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)属性都默认情况下支持双向绑定。
-
-## <a name="summary"></a>总结
-
-[ `Picker` ](xref:Xamarin.Forms.Picker)视图是一个用于选择文本项中的数据列表控件。 本文介绍了如何填充`Picker`通过设置数据[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)属性，以及如何响应用户的项选择。 在 Xamarin.Forms 中 2.3.4 引入时，此方法是用来与交互的推荐的方法`Picker`。
 
 ## <a name="related-links"></a>相关链接
 

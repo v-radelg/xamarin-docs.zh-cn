@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/27/2016
-ms.openlocfilehash: 1d164c8593e358a97b21f42bf7116f64d0ac460d
-ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
+ms.date: 02/27/2018
+ms.openlocfilehash: edba18eea3ea2b7b843dba70ff0b4b67cbab1ab1
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "53815212"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557111"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 映射
 
@@ -20,13 +20,8 @@ ms.locfileid: "53815212"
 
 _Xamarin.Forms 每个平台上使用本机映射 Api。_
 
-Xamarin.Forms.Maps 每个平台上使用本机映射 Api。 这对于用户，提供快速、 熟悉地图体验，但意味着一些配置步骤所需遵守每个平台特定 API 要求。
+Xamarin.Forms.Maps 每个平台上使用本机映射 Api。 这对于用户，提供快速、 熟悉地图体验，但意味着一些配置步骤所需遵守每个平台 API 要求。
 配置完成后，`Map`控制的工作方式就像在常见的代码中的任何其他 Xamarin.Forms 元素。
-
-* [映射初始化](#Maps_Initialization)-使用`Map`需要在启动时附加的初始化代码。
-* [平台配置](#Platform_Configuration)-每个平台所需映射来处理一些配置。
-* [在 C# 中使用映射](#Using_Maps)-显示映射和固定使用 C#。
-* [在 XAML 中使用映射](#Using_Xaml)-显示具有 XAML 的映射。
 
 已在使用地图控件[MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)示例，如下所示。
 
@@ -101,7 +96,6 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 ![适用于 iOS 8 Info.plist](map-images/ios8-map-permissions.png "iOS 8 需要 Info.plist 条目")
 
-
 ### <a name="android"></a>Android
 
 若要使用[Google 地图 API v2](https://developers.google.com/maps/documentation/android/)必须在 Android 上生成 API 密钥并将其添加到你的 Android 项目。
@@ -114,7 +108,7 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 </application>
 ```
 
-如果没有有效的 API 密钥地图控件将显示为灰色框在 Android 上。
+如果没有有效的 API 密钥地图控件将显示为灰色框，在 Android 上。
 
 > [!NOTE]
 > 请注意，为了使 APK 来访问 Google 地图，您必须包括 sha-1 指纹，包使用对 APK 进行签名每个密钥存储 （调试和发布） 的名称。 例如，如果一台计算机用于调试和生成发布 APK 的另一台计算机，您应包括 sha-1 证书指纹从第一台计算机的调试密钥存储和从的发布密钥存储的 sha-1 证书指纹第二台计算机。 此外，切记要编辑的密钥凭据，如果应用程序的**包名称**更改。 请参阅[获取 Google Maps API v2 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
@@ -143,7 +137,7 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>使用 Maps
+## <a name="using-maps"></a>使用映射
 
 请参阅[MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM 示例以举例说明如何在代码中使用地图控件中。 一个简单`MapPage`类看起来像此-请注意，新`MapSpan`创建来定位地图的视图：
 
@@ -165,7 +159,7 @@ public class MapPage : ContentPage {
 }
 ```
 
-### <a name="map-type"></a>映射类型
+### <a name="map-type"></a>将类型映射
 
 此外可以通过设置更改地图内容`MapType`属性，以显示正则街道地图 （默认值）、 卫星照片或这两者的组合。
 
@@ -178,7 +172,6 @@ map.MapType == MapType.Street;
 -  混合
 -  附属
 -  街道 （默认值）
-
 
 ### <a name="map-region-and-mapspan"></a>地图区域和 MapSpan
 
@@ -201,7 +194,7 @@ slider.ValueChanged += (sender, e) => {
 
  [![与 zoom 的地图](map-images/maps-zoom-sml.png "地图控件缩放")](map-images/maps-zoom.png#lightbox "地图控件缩放")
 
-### <a name="map-pins"></a>映射的 Pin
+### <a name="map-pins"></a>映射的 pin
 
 可以在代码图上标记位置`Pin`对象。
 
@@ -223,30 +216,31 @@ map.Pins.Add(pin);
 -  SavedPin
 -  SearchResult
 
-
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>使用 Xaml
+## <a name="using-xaml"></a>使用 XAML
 
-此外可进行地图定位 Xaml 布局中，此代码片段中所示。
+此外可进行地图定位 XAML 布局中，此代码片段中所示。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-    x:Class="MapDemo.MapPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="MapDemo.MapPage">
     <StackLayout VerticalOptions="StartAndExpand" Padding="30">
         <maps:Map WidthRequest="320" HeightRequest="200"
-            x:Name="MyMap"
-            IsShowingUser="true"
-            MapType="Hybrid"
-        />
+                  x:Name="MyMap"
+                  IsShowingUser="true"
+                  MapType="Hybrid" />
     </StackLayout>
 </ContentPage>
 ```
 
-`MapRegion`并`Pins`可以在代码中使用设置`MyMap`引用 （或任何命名映射）。 请注意，额外`xmlns`命名空间定义用于 Xamarin.Forms.Maps 控件的引用。
+> [!NOTE]
+> 附加`xmlns`命名空间定义用于 Xamarin.Forms.Maps 控件的引用。
+
+`MapRegion`并`Pins`可以在代码中使用设置`MyMap`引用 （或任何命名映射）。
 
 ```csharp
 MyMap.MoveToRegion(
@@ -254,14 +248,44 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-<a name="Summary" />
+## <a name="populating-a-map-with-data-using-data-binding"></a>使用数据绑定的数据填充映射
 
-## <a name="summary"></a>总结
+[ `Map` ](xref:Xamarin.Forms.Maps.Map)类还公开以下属性：
 
-Xamarin.Forms.Maps 是必须添加到 Xamarin.Forms 解决方案中的每个项目的单独 NuGet。 附加的初始化代码是必需的为 iOS、 Android 和 UWP 和某些配置步骤。
+- `ItemsSource` – 指定的集合`IEnumerable`要显示的项。
+- `ItemTemplate` – 指定[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)要应用于每个项目中显示的项的集合。
 
-一次配置映射 API 可用于呈现使用 pin 标记，只需几行代码中的映射。 映射可以使用进一步增强[自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)。
+因此， [ `Map` ](xref:Xamarin.Forms.Maps.Map)通过使用数据绑定来绑定可以使用数据填充其`ItemsSource`属性设置为`IEnumerable`集合：
 
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WorkingWithMaps.PinItemsSourcePage">
+    <Grid>
+        ...
+        <maps:Map x:Name="map"
+                  ItemsSource="{Binding Locations}">
+            <maps:Map.ItemTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}" />
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
+        </maps:Map>
+        ...
+    </Grid>
+</ContentPage>
+```
+
+`ItemsSource`将属性数据绑定到`Locations`连接的视图模型，它将返回属性`ObservableCollection`的`Location`是自定义类型的对象。 每个`Location`对象定义`Address`并`Description`类型的属性`string`，和一个`Position`类型的属性[ `Position` ](xref:Xamarin.Forms.Maps.Position)。
+
+在每个项的外观`IEnumerable`通过设置定义集合`ItemTemplate`属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) ，其中包含[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)对象将数据绑定到相应的属性。
+
+下面的屏幕截图演示[ `Map` ](xref:Xamarin.Forms.Maps.Map)显示[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)使用数据绑定的集合：
+
+[![映射，其中数据的屏幕截图绑定 iOS 和 Android 上的 pin](map-images/pins-itemssource.png "映射具有数据绑定的插针")](map-images/pins-itemssource-large.png#lightbox "映射具有数据绑定的 pin")
 
 ## <a name="related-links"></a>相关链接
 

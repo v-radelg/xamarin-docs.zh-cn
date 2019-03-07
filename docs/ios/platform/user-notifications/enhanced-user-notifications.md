@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: bfbb8c2b189defeb6efb07388ea34425c239c061
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459884"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557316"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的增强型的用户通知
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>处理前台应用程序通知
 
-新增到 iOS 10，应用可以通知以不同方式处理时位于前台，并触发通知。 通过提供`UNUserNotificationCenterDelegate`和实现`UserNotificationCenter`方法，该应用程序可以接管通过显示通知。 例如：
+新增到 iOS 10，应用可以通知以不同方式处理时位于前台，并触发通知。 通过提供`UNUserNotificationCenterDelegate`和实现`WillPresentNotification`方法，该应用程序可以接管通过显示通知。 例如：
 
 ```csharp
 using System;

@@ -6,13 +6,13 @@ ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 6eb1e9a6f9c46fd7337003e05daa10d408fb5108
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 02/26/2019
+ms.openlocfilehash: 3bbea036efef44077ccbd28a16af06c97cd7026b
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208007"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557225"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>将数据添加到选取器的项集合
 
@@ -25,7 +25,8 @@ _选取器视图是一个用于选择文本项中的数据列表控件。本文�
 在 Xamarin.Forms 2.3.4，填充的过程之前[ `Picker` ](xref:Xamarin.Forms.Picker)的数据是添加到只读模式显示的数据[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合，其类型`IList<string>`. 集合中的每个项的类型必须为`string`。 项可以在 XAML 中通过初始化中添加`Items`具有一系列属性`x:String`项：
 
 ```xaml
-<Picker Title="Select a monkey">
+<Picker Title="Select a monkey"
+        TitleColor="Red">
   <Picker.Items>
     <x:String>Baboon</x:String>
     <x:String>Capuchin Monkey</x:String>
@@ -41,7 +42,7 @@ _选取器视图是一个用于选择文本项中的数据列表控件。本文�
 等效的 C# 代码如下所示：
 
 ```csharp
-var picker = new Picker { Title = "Select a monkey" };
+var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.Items.Add("Baboon");
 picker.Items.Add("Capuchin Monkey");
 picker.Items.Add("Blue Monkey");
@@ -79,11 +80,6 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 
 > [!NOTE]
 > 一个[ `Picker` ](xref:Xamarin.Forms.Picker)可初始化以通过设置显示特定项[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)属性。 但是，`SelectedIndex`属性必须设置初始化后[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合。
-
-## <a name="summary"></a>总结
-
-[ `Picker` ](xref:Xamarin.Forms.Picker)视图是一个用于选择文本项中的数据列表控件。 本文介绍了如何填充`Picker`通过将其添加到数据[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合，以及如何响应用户的项选择。 这是使用的过程`Picker`Xamarin.Forms 2.3.4 之前。
-
 
 ## <a name="related-links"></a>相关链接
 

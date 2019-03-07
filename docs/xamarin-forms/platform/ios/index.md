@@ -6,7 +6,7 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2018
+ms.date: 02/22/2019
 ---
 
 # <a name="ios-platform-features"></a>iOS 平台功能
@@ -25,8 +25,11 @@ Xamarin.Forms 视图、 页面和 iOS 上的布局提供了以下特定于平台
 
 以下特定于平台的功能用于在 iOS 上的 Xamarin.Forms 视图：
 
+- 设置[ `Cell` ](xref:Xamarin.Forms.Cell)背景色。 有关详细信息，请参阅[在 iOS 上的单元格背景色](cell-background-color.md)。
 - 确保输入的文本适合[ `Entry` ](xref:Xamarin.Forms.Entry)通过调整字体大小。 有关详细信息，请参阅[条目在 iOS 上的字体大小](entry-font-size.md)。
 - 在中设置的游标颜色[ `Entry` ](xref:Xamarin.Forms.Entry)。 有关详细信息，请参阅[在 iOS 上的条目游标颜色](entry-cursor-color.md)。
+- 控制是否[ `ListView` ](xref:Xamarin.Forms.ListView)标头单元格浮动在滚动过程。 有关详细信息，请参阅[在 iOS 上的 ListView 组标头样式](listview-group-header-style.md)。
+- 控制是否禁用行动画时[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新项集合。 有关详细信息，请参阅[在 iOS 上的 ListView 行动画](listview-row-animations.md)。
 - 设置分隔符样式[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[在 iOS 上的 ListView 分隔符样式](listview-separator-style.md)。
 - 控制当项选择发生在[ `Picker` ](xref:Xamarin.Forms.Picker)。 有关详细信息，请参阅[选取器在 iOS 上的项选择](picker-selection.md)。
 - 启用[ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)属性可以通过点击对一个位置上设置[ `Slider` ](xref:Xamarin.Forms.Slider)栏中，而不是按无需将`Slider`thumb。 有关详细信息，请参阅[在 iOS 上的滑块 Thumb 点击](slider-thumb.md)。

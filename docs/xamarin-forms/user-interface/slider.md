@@ -6,13 +6,13 @@ ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: ac5ad85f7bdd08b0d071e7c333c959e94dcbc53f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 02/27/2019
+ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057474"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557303"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑块
 
@@ -38,6 +38,8 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可以由用户选择操
 `Slider` 定义[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)时引发的事件`Value`更改，通过用户操作`Slider`或当程序集`Value`直接属性。 一个`ValueChanged`时，也会激发事件`Value`属性强制转换时上, 一段中所述。
 
 [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)对象，它附带`ValueChanged`事件具有两个属性，这两个类型`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)并[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 次激发事件时，值`NewValue`等同于`Value`属性的`Slider`对象。
+
+`Slider` 此外定义了`DragStarted`和`DragCompleted`开始和结束拖动操作时触发的事件。 与不同[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)事件，`DragStarted`并`DragCompleted`通过用户操作仅触发事件`Slider`。 当`DragStarted`事件将触发`DragStartedCommand`，类型的`ICommand`，执行。 同样，当`DragCompleted`事件将触发`DragCompletedCommand`，类型的`ICommand`，执行。
 
 > [!WARNING]
 > 不使用的不受约束的水平布局选项`Center`， `Start`，或`End`与`Slider`。 在 Android 和 UWP，`Slider`折叠到栏的长度为零，并在 iOS 上，在栏是非常短。 保留默认值`HorizontalOptions`设置为`Fill`，且不使用的宽度`Auto`放置时`Slider`中`Grid`布局。
@@ -203,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`属性的第一个`Label`绑定到`Value`的属性`Slider`，如是`Text`第二个属性`Label`与`StringFormat`规范。 **基本滑块绑定**页上函数有点以不同的方式从两个前面的页： 首先显示的页面时，第二个`Label`显示的文本字符串的值。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发`ValueChanged`通过从类构造函数调用的事件处理程序的事件。
+`Rotation`属性的第一个`Label`绑定到`Value`的属性`Slider`，如是`Text`第二个属性`Label`与`StringFormat`规范。 **基本滑块绑定**页函数有点以不同的方式从两个前面的页：当页面第一次出现时，第二个`Label`显示的文本字符串的值。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发`ValueChanged`通过从类构造函数调用的事件处理程序的事件。
 
 <a name="precautions" />
 

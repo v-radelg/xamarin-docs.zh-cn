@@ -6,13 +6,13 @@ ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/14/2018
-ms.openlocfilehash: 939df6cfd17de82e28958363cfa51cd199f928cb
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.date: 02/27/2019
+ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831686"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557186"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
@@ -34,8 +34,10 @@ ms.locfileid: "55831686"
 - [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 当选择了新项时激发。
 - [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 点击某个项时触发。
 
+两次点击相同项会触发两个[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，但将只触发单个[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件。
+
 > [!NOTE]
-> 两次点击相同项会触发两个[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，但将只触发单个[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件。
+> [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs)类，该类包含的事件参数[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，具有[ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group)和[ `Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)属性，并`ItemIndex`其值表示中的索引的属性[ `ListView` ](xref:Xamarin.Forms.ListView)的项目。 同样， [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs)类，该类包含的事件参数[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件，具有[ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)属性，且`SelectedItemIndex`其值表示中的索引的属性`ListView`的选定项。
 
 当[ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode)属性设置为[ `Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)中的项[ `ListView` ](xref:Xamarin.Forms.ListView)可以选择[ `ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)并[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)将不再触发事件，并且[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)属性将设置为所选的项的值。
 
