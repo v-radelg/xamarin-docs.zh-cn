@@ -36,7 +36,7 @@ ms.locfileid: "56321150"
 <a name="deploy" />
 
 - Visual Studio for Mac 的早期版本不正确显示之一**AppleCompanionSettings**为 88 x 88 像素; 这会导致图标**缺少图标错误**如果尝试将提交到 App Store。
-    此图标应为 87 x 87 像素 (29 单位**@3x** Retina 屏幕)。 无法为 Mac-编辑图像资产在 Xcode 中解决此问题在 Visual Studio 中或手动编辑**Contents.json**文件 (以匹配[此示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
+    此图标应为 87 x 87 像素 (29 单位 **@3x** Retina 屏幕)。 无法为 Mac-编辑图像资产在 Xcode 中解决此问题在 Visual Studio 中或手动编辑**Contents.json**文件 (以匹配[此示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
 
 - 如果监视扩展项目**Info.plist > WKApp 捆绑 ID**不是[正确设置](~/ios/watchos/get-started/project-references.md)以匹配 Watch 应用**捆绑 ID**，调试器将无法进行连接和 VisualStudio for Mac 将该消息以等待 *"正在等待调试程序连接"*。
 

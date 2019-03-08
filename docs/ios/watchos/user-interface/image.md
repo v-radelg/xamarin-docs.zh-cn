@@ -22,7 +22,7 @@ ms.locfileid: "56321124"
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 使用资产目录映像将映像添加到监视工具包应用程序。
-仅**@2x** 版本是必需的因为所有监视具有 Retina 显示的设备。
+仅 **@2x** 版本是必需的因为所有监视具有 Retina 显示的设备。
 
 ![](image-images/asset-universal-sml.png "只有 2 x 版本是必需的因为所有监视具有 Retina 显示的设备")
 
