@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 322bb630194f973d37d7ca27a0ca9fe1b548b240
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f8fae79af654339b54a8df0d2ea32eef38f34adb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107205"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668447"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – 故障排除
 
@@ -24,7 +24,7 @@ Xamarin iOS 设计器尚不支持 Xcode 7 功能。 将无法使用设计器中�
 
 iOS 设计器支持 Xcode 7 功能，针对即将发布周期 6 功能版本。 周期 6 的预览版本目前以 Alpha 通道，受到有限的新 Xcode 7 功能的支持。
 
-针对 Visual Studio for Mac 的部分解决方法： 右键单击情节提要，然后选择**打开** > **Xcode Interface Builder**。
+针对 Visual Studio for Mac 的部分解决方法：右键单击情节提要，然后选择**打开** > **Xcode Interface Builder**。
 
 ## <a name="where-are-the-ios-8-simulators"></a>在哪里？ iOS 8 模拟器
 
@@ -42,23 +42,23 @@ iOS 设计器支持 Xcode 7 功能，针对即将发布周期 6 功能版本。 
 
 如果在 iOS 9 中运行相同的情节提要中，则将导致以下窗体中出现异常：
 
-> 终止应用，因为未捕获异常 NSInvalidArgumentException，原因: * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: 约束不能成为之间前导/尾随属性和右/左属性。 使用前导/尾随的同时还是两者皆否。
+> 终止应用，因为未捕获异常 NSInvalidArgumentException，原因: * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]:不能前导/尾随属性和一个右/左属性之间建立一个约束。 使用前导/尾随的同时还是两者皆否。
 
 iOS 9 强制执行布局以使用两种**右** & **左侧**_或者_**前导** &  **尾随**属性，但*不*两者。 若要解决此问题，请更改所有布局限制为使用相同的情节提要文件中设置的属性。
 
-有关详细信息，请参阅[iOS 9 约束错误](http://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 讨论。
+有关详细信息，请参阅[iOS 9 约束错误](https://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 讨论。
 
-## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>错误 ITMS-90535： 意外的 CFBundleExecutable 密钥
+## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>错误 ITMS-90535:意外的 CFBundleExecutable 关键字
 
 切换到 iOS 9 后, 从应用程序使用第三方组件 （特别是我们现有 Google Maps 组件） 编译并运行 ios 8 （或更早），尝试提交到 iTunes Connect 窗体中出现错误的新的生成时的：
 
-> 错误 ITMS-90535： 意外的 CFBundleExecutable 键。 在 Payload/app-name.app/component.bundle 捆绑包不包含捆绑包可执行文件...
+> 错误 ITMS-90535:意外的 CFBundleExecutable 键。 在 Payload/app-name.app/component.bundle 捆绑包不包含捆绑包可执行文件...
 
 此问题可以通常通过在项目中查找名为捆绑包来解决，然后将-就像错误消息的建议-编辑`Info.plist`捆绑包中是通过删除`CFBundleExecutable`密钥。 `CFBundlePackageType`密钥应设置为`BNDL`也。
 
 进行这些更改之后, 执行清理和重新生成整个项目。 您应能够进行这些更改后提交到 iTunes Connect 毫无问题。
 
-有关详细信息，请参阅此[Stack Overflow](http://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)讨论。
+有关详细信息，请参阅此[Stack Overflow](https://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)讨论。
 
 ## <a name="cfnetwork-sslhandshake-failed--9824-error"></a>CFNetwork SSLHandshake 失败 (-9824) 错误
 
@@ -92,7 +92,7 @@ IOS9，在应用程序传输安全 (ATS) 强制实施 internet 资源 （如应�
 
 **原因：** 在 iOS 9`initWithFrame:`构造函数现在是必需的由于为 iOS 9 中的行为更改[UICollectionView 文档中所声明](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果注册为指定的标识符的类，并且必须创建新的单元格，单元格现在通过调用来初始化其`initWithFrame:`方法。
 
-**修复：** 添加`initWithFrame:`此类构造函数：
+**解决方法：** 添加`initWithFrame:`此类构造函数：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -102,15 +102,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-相关示例： [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+相关的示例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 <a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
 
 ## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView Init 与编码员到 Xib/Nib 从加载视图时将失败
 
-**原因：** `initWithCoder:`构造函数是另一个名为从接口生成器 Xib 文件加载视图时。 如果此构造函数不会导出非托管的代码不能调用我们托管的版本。 以前 （例如。 在 iOS 8)`IntPtr`已调用构造函数来初始化视图。
+**原因：**`initWithCoder:`构造函数是另一个名为从接口生成器 Xib 文件加载视图时。 如果此构造函数不会导出非托管的代码不能调用我们托管的版本。 以前 （例如。 在 iOS 8)`IntPtr`已调用构造函数来初始化视图。
 
-**修复：** 创建和导出`initWithCoder:`此类构造函数：
+**解决方法：** 创建和导出`initWithCoder:`此类构造函数：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -120,9 +120,9 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-相关的示例：[聊天](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+相关的示例：[Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息： 具有名称没有缓存图像...
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息：没有具有名称的缓存图像...
 
 你可能会遇到在系统崩溃时在日志中的以下信息：
 
@@ -131,9 +131,9 @@ Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：** 这是 Apple 的本机链接器，这种情况发生时它们公开专用框架中的 bug （JavaScriptCore 被公开在 iOS 7 中, 之前，它是一个专用的框架），该应用程序的部署目标是针对 iOS 版本时框架是私有的。 在这种情况下 Apple 的链接器将链接而不是公共版本 framework 的专用版本。
+**原因：** 这是 Apple 的本机链接器，这种情况发生时它们公开专用框架中的 bug （JavaScriptCore 被公开在 iOS 7 中, 之前，它是一个专用的框架），和框架为私有时，应用程序的部署目标是 iOS 版本。 在这种情况下 Apple 的链接器将链接而不是公共版本 framework 的专用版本。
 
-**修复：** 这将解决适用于 iOS 9，但可以将自己在此期间应用简单的解决方法： 只需面向更高版本 iOS 版本在项目中的 （在这种情况下，你可以尝试 iOS 7）。 其他框架可能会表现出类似的问题，例如 WebKit framework 被公开在 iOS 8 （和以便面向 iOS 7 将导致此错误; 应面向 iOS 8 应用程序中使用易于使用的功能）。
+**解决方法：** 这将解决适用于 iOS 9，但可以将自己在此期间应用简单的解决方法： 只需面向更高版本 iOS 版本在项目中的 （在这种情况下，你可以尝试 iOS 7）。 其他框架可能会表现出类似的问题，例如 WebKit framework 被公开在 iOS 8 （和以便面向 iOS 7 将导致此错误; 应面向 iOS 8 应用程序中使用易于使用的功能）。
 
 ## <a name="untrusted-enterprise-developer"></a>不受信任的企业级开发版
 
@@ -177,7 +177,7 @@ iOS 9 现在强制执行的启动屏幕要求，以便不再可以重用相同�
 
 编译和运行 ios 9 现有 Xamarin.iOS 应用程序时您可能会遇到错误，在窗体中：
 
-> Objective C 中引发异常。  名称： NSInternalInconsistencyException 原因： windows 应用程序应能够在应用程序启动末尾的根视图控制器
+> Objective C 中引发异常。  姓名:NSInternalInconsistencyException 原因：Windows 的应用程序应能够根视图控制器应用程序结束时启动
 
 这是错误因为应用 Windows 应能够在应用程序启动末尾根视图控制器和现有的应用不会被引发。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2fa554264578ec626567ef7d28377ac80bde21d3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2b3ba0a0cf31ae2c2d631da8b595390c973957d6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060169"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670667"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的代码中创建 iOS 用户界面
 
@@ -20,7 +20,7 @@ IOS 应用程序的用户界面类似于店面，首先 – 应用程序通常�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面： 
+下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面：
 
 [![](ios-code-only-images/image9.png "此图描述了窗口、 视图、 子视图和视图控制器之间的关系")](ios-code-only-images/image9.png#lightbox)
 
@@ -28,7 +28,7 @@ IOS 应用程序的用户界面类似于店面，首先 – 应用程序通常�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面： 
+下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面：
 
 [![](ios-code-only-images/image9.png "此图描述了窗口、 视图、 子视图和视图控制器之间的关系")](ios-code-only-images/image9.png#lightbox)
 
@@ -65,9 +65,9 @@ IOS 应用程序的用户界面类似于店面，首先 – 应用程序通常�
 ## <a name="ios-templates"></a>iOS 模板
 
 
-Visual Studio for Mac 不提供一个空的模板。 所有模板都都具有支持情节提要，Apple 建议将它作为创建 UI 的主要方式。 但是，就可以完全在代码中创建你的 UI。 
+Visual Studio for Mac 不提供一个空的模板。 所有模板都都具有支持情节提要，Apple 建议将它作为创建 UI 的主要方式。 但是，就可以完全在代码中创建你的 UI。
 
-执行以下步骤将引导你完成从应用程序中删除情节提要： 
+执行以下步骤将引导你完成从应用程序中删除情节提要：
 
 
 1. 使用单一视图应用模板来创建新的 iOS 项目：
@@ -291,7 +291,7 @@ Window.RootViewController = navController;
 现在应用程序加载时，`CustomViewController`内导航控制器加载：
 
  [![](ios-code-only-images/customvc.png "内部导航控制器加载 CustomViewController")](ios-code-only-images/customvc.png#lightbox)
- 
+
 单击按钮，将_推送_到导航堆栈上新的视图控制器：
 
 [![](ios-code-only-images/customvca.png "新视图控制器推送到导航堆栈上")](ios-code-only-images/customvca.png#lightbox)
@@ -306,7 +306,7 @@ iOS 用户界面由视图层次结构组成。 其他视图，例如标签、 �
 
 ### <a name="adding-the-text-fields"></a>添加文本字段
 
-首先，删除的按钮和事件处理程序中添加了[初始化视图](#Initializing_the_View)部分。 
+首先，删除的按钮和事件处理程序中添加了[初始化视图](#initializing-the-view)部分。 
 
 添加一个用于用户名的控件通过创建并初始化`UITextField`然后将它添加到视图层次结构，如下所示：
 
@@ -359,7 +359,7 @@ public class CustomViewController : UIViewController
             SecureTextEntry = true
         };
 
-      View.AddSubview(usernameField); 
+      View.AddSubview(usernameField);
       View.AddSubview(passwordField);
    }
 }
@@ -414,7 +414,7 @@ submitButton.Layer.CornerRadius = 5f;
 iOS 提供的工具，使用到的视图层次结构中添加多个视图`AddSubviews`。
 
 ```csharp
-View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
+View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 ```
 
 ## <a name="adding-button-functionality"></a>添加按钮功能
@@ -610,12 +610,12 @@ Apple 建议.xib 或情节提要文件用于应用程序面向 iOS 8 或更高�
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>创建的启动映像的预 iOS 8 的应用程序
 
-如果应用程序的所有面向 iOS 8 之前的版本不同，静态图像可以使用除.xib 或情节提要启动屏幕。 
+如果应用程序的所有面向 iOS 8 之前的版本不同，静态图像可以使用除.xib 或情节提要启动屏幕。
 
 可以将设置此静态图像，在 Info.plist 文件中，或在应用程序中 （适用于 iOS 7) 资产目录。 您需要为你的应用程序可以运行每个设备大小 （320x480、 640 x 960 640 x 1136） 提供单独的映像。 启动屏幕大小的详细信息，请查看[启动屏幕图像](~/ios/app-fundamentals/images-icons/launch-screens.md)指南。
 
 > [!IMPORTANT]
-> 如果你的应用程序没有启动屏幕，你可能会注意到，它并不完全适合屏幕的大小。 如果是这样，您应确保至少，包含名为 640 x 1136 映像`Default-568@2x.png`向你的 Info.plist。 
+> 如果你的应用程序没有启动屏幕，你可能会注意到，它并不完全适合屏幕的大小。 如果是这样，您应确保至少，包含名为 640 x 1136 映像`Default-568@2x.png`向你的 Info.plist。
 
 ## <a name="summary"></a>总结
 

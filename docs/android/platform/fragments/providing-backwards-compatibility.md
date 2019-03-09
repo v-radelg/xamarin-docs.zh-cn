@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2017
-ms.openlocfilehash: 18dac665eec1c5d3ac64065c37e73022670c1ba5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 48ef40ce8560fd9fbb842dde70622d968591ab98
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108835"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666900"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供向后兼容性与 Android 支持包
 
-片段的有效性是有限而无需向后兼容性与预 Android 3.0 (API 级别 11) 设备。 若要提供此功能，Google 引入了[支持库](http://developer.android.com/sdk/compatibility-library.html)(最初称为*Android Compatibility Library*发布时) 的 backports 的一些从较新版本的 Api与旧版本的 Android android。 它是 Android 支持包，它使运行 Android 2.3.3 Android 1.6 （API 级别 4） 的设备。 （API 级别 10）。
+片段的有效性是有限而无需向后兼容性与预 Android 3.0 (API 级别 11) 设备。 若要提供此功能，Google 引入了[支持库](https://developer.android.com/sdk/compatibility-library.html)(最初称为*Android Compatibility Library*发布时) 的 backports 的一些从较新版本的 Api与旧版本的 Android android。 它是 Android 支持包，它使运行 Android 2.3.3 Android 1.6 （API 级别 4） 的设备。 （API 级别 10）。
 
 > [!NOTE]
 > 仅`ListFragment`和`DialogFragment`通过 Android 支持包。 没有其他片段子类，如`PreferenceFragment,`所支持的 Android 支持包。 它们不会预先 Android 3.0 应用程序中。 

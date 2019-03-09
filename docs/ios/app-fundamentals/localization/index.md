@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 906489aa3947df24662cbbd0473333caccc032c7
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527256"
 ---
+
 # <a name="localization-in-xamarinios"></a>在 Xamarin.iOS 的本地化
 
 _本文档介绍 iOS SDK 的本地化功能以及如何使用 Xamarin 访问它们。_
@@ -22,11 +17,11 @@ _本文档介绍 iOS SDK 的本地化功能以及如何使用 Xamarin 访问它�
 
 ## <a name="ios-platform-features"></a>iOS 平台功能
 
-本部分介绍了一些在 iOS 中的本地化功能。 请跳到[下一节](#basics)若要查看特定的代码和示例。
+本部分介绍了一些在 iOS 中的本地化功能。 请跳到[下一节](#Localization-basics-in-iOS)若要查看特定的代码和示例。
 
 ### <a name="language"></a>语言
 
-用户选择在其语言**设置**应用。 此设置会影响语言字符串和由操作系统和应用中显示的图像。 
+用户选择在其语言**设置**应用。 此设置会影响语言字符串和由操作系统和应用中显示的图像。
 
 若要确定在应用中所用的语言，请获取的第一个元素`NSBundle.MainBundle.PreferredLocalizations`:
 
@@ -59,7 +54,7 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 > [!NOTE]
 > Mono （.NET 运行时基于 Xamarin.iOS） 和 Apple 的 iOS Api 不支持完全相同的语言/区域组合集。
 > 正因为如此，则可以在 iOS 中选择语言/区域组合**设置**不映射到有效的值在 Mono 中的应用。 例如，iPhone 的语言为英语和其区域设置为西班牙将导致以下 Api 来产生不同的值：
-> 
+>
 > - `CurrentThead.CurrentCulture`: EN-US (Mono API)
 > - `CurrentThread.CurrentUICulture`: EN-US (Mono API)
 > - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple API)
@@ -76,14 +71,14 @@ iOS 生成`NSCurrentLocaleDidChangeNotification`用户更新其区域设置时�
 
 ### <a name="specifying-default-and-supported-languages-in-infoplist"></a>在 info.plist 文件中指定默认值和支持的语言
 
-在中[技术的问与答 QA1828: iOS 如何确定语言为您的应用程序](https://developer.apple.com/library/content/qa/qa1828/_index.html)，Apple 介绍 iOS 如何选择要在应用中使用的语言。 以下因素会影响显示的语言：
+在[技术问题与解答 QA1828:IOS 如何确定语言为您的应用程序](https://developer.apple.com/library/content/qa/qa1828/_index.html)，Apple 介绍 iOS 如何选择要在应用中使用的语言。 以下因素会影响显示的语言：
 
 - 用户的首选语言 (在中找到**设置**应用)
 - 与应用程序 （.lproj 文件夹） 捆绑在一起的本地化信息
 - `CFBundleDevelopmentRegion` (**Info.plist**值，该值指定该应用程序的默认语言)
 - `CFBundleLocalizations` (**Info.plist**数组中指定所有受支持的本地化信息)
 
-如下所示技术问答，`CFBundleDevelopmentRegion`表示应用程序的默认区域和语言。 如果应用程序并不显式支持的任何用户的首选语言，它将使用此字段指定的语言。 
+如下所示技术问答，`CFBundleDevelopmentRegion`表示应用程序的默认区域和语言。 如果应用程序并不显式支持的任何用户的首选语言，它将使用此字段指定的语言。
 
 > [!IMPORTANT]
 > iOS 11 比以前版本的操作系统更严格地应用此语言选择机制。 因此，未显式声明支持的本地化 – 通过包括.lproj 文件夹或设置一个值的任何 iOS 11 应用`CFBundleLocalizations`– 不是像在 iOS 10 中可能会显示 iOS 11 中的另一种语言。
@@ -255,7 +250,7 @@ iOS 提供了许多功能可帮助构建 RTL 识别应用程序：
 
 下面的屏幕截图演示[本地化 Tasky 示例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)阿拉伯语和希伯来语中 （尽管已在字段中输入英语）：
 
-[![](images/rtl-ar-sml.png "在阿拉伯语中的本地化")](images/rtl-ar.png#lightbox "Arabic") 
+[![](images/rtl-ar-sml.png "在阿拉伯语中的本地化")](images/rtl-ar.png#lightbox "Arabic")
 
 [![](images/rtl-he-sml.png "希伯来语版本的本地化")](images/rtl-he.png#lightbox "Hebrew")
 
@@ -345,8 +340,8 @@ someControl.Text = localizedString;
 ```
 
 > [!IMPORTANT]
-> 使用情节提要的大小类使用可能会导致不会显示在应用程序中的翻译。 [Apple 的 Xcode 发行说明](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)指示，情节提要或 XIB 将本地化正确是否三件事是，则返回 true： 它使用大小类、 基本地化和 build 目标设置为世界，并生成面向 iOS 7.0。 解决方法是在情节提要字符串文件复制到两个完全相同的文件： **MainStoryboard~iphone.strings**并**MainStoryboard~ipad.strings**，如以下屏幕截图中所示：
-> 
+> 使用情节提要的大小类使用可能会导致不会显示在应用程序中的翻译。 [Apple 的 Xcode 发行说明](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)指示，情节提要或 XIB 将本地化正确是否三件事是，则返回 true： 它使用大小类、 基本地化和 build 目标设置为世界，并生成面向 iOS 7.0。 解决方法是在情节提要字符串文件复制到两个完全相同的文件：**MainStoryboard~iphone.strings**并**MainStoryboard~ipad.strings**，如以下屏幕截图中所示：
+>
 > ![](images/xs-dup-strings.png "字符串的文件")
 
 <a name="appstore" />

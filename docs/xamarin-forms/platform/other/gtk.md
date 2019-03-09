@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: dcfcf6c29b0a055c59501d6d95d4f97c16475bb3
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 6243f7d90b921207f4dd406a1f33f4d7af40ecfb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209222"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668357"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安装程序
 
@@ -27,7 +27,7 @@ Xamarin.Forms 现在具有对 GTK # 应用程序的预览支持。 GTK # 是允�
 
 ## <a name="adding-a-gtk-app"></a>添加一个 GTK # 应用程序
 
-GTK # 适用于 macOS 和 Linux 安装的一部分[Mono](http://www.mono-project.com/download/stable/)。 用于.NET 的 GTK # 可以安装在 Windows 与[GTK # 安装程序](http://www.mono-project.com/download/stable/#download-win)。
+GTK # 适用于 macOS 和 Linux 安装的一部分[Mono](https://www.mono-project.com/download/stable/)。 用于.NET 的 GTK # 可以安装在 Windows 与[GTK # 安装程序](https://www.mono-project.com/download/stable/#download-win)。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

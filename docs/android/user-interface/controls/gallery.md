@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 54c9e4fad71d74fe40fc119592a45f6c94b47056
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f9b73428531deeacc7bdea271cdc0c2872038e99
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122252"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666954"
 ---
 # <a name="gallery"></a>库
 
@@ -57,7 +57,7 @@ ms.locfileid: "50122252"
 
 [![新的 Android 项目中的新解决方案对话框的屏幕截图](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
-找到你想要使用，一些照片或[下载这些示例图像](http://developer.android.com/shareables/sample_images.zip)。
+找到你想要使用，一些照片或[下载这些示例图像](https://developer.android.com/shareables/sample_images.zip)。
 将图像文件添加到项目的**资源/Drawable**目录。 在中**属性**窗口中，将生成操作设置为**AndroidResource**。
 
 打开 **Resources/Layout/Main.axml** 并插入以下代码：

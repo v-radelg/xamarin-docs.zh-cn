@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: bb8aec5a5054c28cf7862d14148e7f2000fa3a35
-ms.sourcegitcommit: c77f84a0686d16de6ac630271fccac719fd9eec4
+ms.openlocfilehash: a6a4ef9fb36fde067fa58fec9a6206b1dbc1fbf0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56307913"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668343"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
@@ -27,7 +27,7 @@ ms.locfileid: "56307913"
 
 与传统的 Mono/.NET 不同，iPhone 上的代码是提前静态编译的，而不是由 JIT 编译器按需编译。
 
-Mono 的 [Full AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot)技术在泛型方面有一些限制，这是因为并非所有可能的泛型实例化都可以在编译时预先确定。 这对于常规的 .NET 或 Mono 运行时来说不是问题，因为代码总是在运行时使用 Just in Time 编译器进行编译。 但这对像 Xamarin.iOS 这样的静态编译器提出了挑战。
+Mono 的 [Full AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)技术在泛型方面有一些限制，这是因为并非所有可能的泛型实例化都可以在编译时预先确定。 这对于常规的 .NET 或 Mono 运行时来说不是问题，因为代码总是在运行时使用 Just in Time 编译器进行编译。 但这对像 Xamarin.iOS 这样的静态编译器提出了挑战。
 
 一些开发人员遇到的常见问题包括：
 
@@ -74,7 +74,7 @@ System.Reflection 缺乏。 **发出**取决于运行时代码生成任何代码
 -  远程处理的 TransparentProxy 或任何其他会导致运行时动态生成代码的内容。 
 
 
- **重要提示：** 不要混淆**Reflection.Emit**与**反射**。 Reflection.Emit 即将动态生成代码，并且具有该代码执行 Jit 和编译为本机代码。 由于对 iOS （无 JIT 编译） 的限制不是支持此。
+ **重要提示：** 请不要将 **Reflection.Emit** 与 **Reflection** 混淆。 Reflection.Emit 涉及动态生成代码并将代码即时编译为本机代码。 由于对 iOS （无 JIT 编译） 的限制不是支持此。
 
 但整个反射 API（包括 Type.GetType（“someClass”）、列出方法、列出属性、获取属性和值）均可以正常工作。
 

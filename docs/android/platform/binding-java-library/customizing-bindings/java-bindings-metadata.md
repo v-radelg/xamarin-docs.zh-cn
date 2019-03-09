@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 858f1e5c0bd2af85b419bb9a1cffb7d484f3f7e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113399"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669890"
 ---
 # <a name="java-bindings-metadata"></a>Java 绑定元数据
 
@@ -77,7 +77,7 @@ Xamarin.Android **Java 绑定库**尝试自动执行所需绑定有时称为的�
 ## <a name="metadataxml-transform-file"></a>Metadata.xml 转换文件
 
 正如我们已经已经获知，该文件**Metadata.xml**绑定生成器用于影响绑定程序集的创建。
-使用元数据格式[XPath](https://www.w3.org/TR/xpath/)语法并且几乎完全相同*GAPI 元数据*中所述[GAPI 元数据](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南。 此实现是几乎 XPath 1.0 的完整实现，因此支持标准 1.0 中的项。 此文件是强大的基于 XPath 机制来更改、 添加、 隐藏或移动 API 文件中的任何元素或属性。 所有元数据规范中的规则元素都包括一个路径属性来确定的规则是要应用的节点。 按以下顺序应用规则：
+使用元数据格式[XPath](https://www.w3.org/TR/xpath/)语法并且几乎完全相同*GAPI 元数据*中所述[GAPI 元数据](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南。 此实现是几乎 XPath 1.0 的完整实现，因此支持标准 1.0 中的项。 此文件是强大的基于 XPath 机制来更改、 添加、 隐藏或移动 API 文件中的任何元素或属性。 所有元数据规范中的规则元素都包括一个路径属性来确定的规则是要应用的节点。 按以下顺序应用规则：
 
 * **添加节点**&ndash;将子节点追加到指定的路径属性的节点。
 * **attr** &ndash;设置路径属性指定的元素的属性的值。
@@ -198,7 +198,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 此特性置于 setter 方法来命名`EventArg`将生成以支持 Java 侦听器的子类。 这更详细地下面部分中所述[重命名 EventArg 包装类](#Renaming_EventArg_Wrapper_Classes)稍后在本指南中。
 
-### <a name="eventname"></a>事件名称
+### <a name="eventname"></a>eventName
 
 指定事件的名称。 如果为空，它会抑制事件生成。
 这部分标题中的更多详细信息中所述[重命名 EventArg 包装类](#Renaming_EventArg_Wrapper_Classes)。
@@ -223,7 +223,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` 用于更改一种方法的返回类型。 在某些情况下绑定生成器会错误地推断返回类型的 Java 方法，这将导致编译时错误。 在此情况下一个可能的解决方案是更改该方法的返回类型。
 
-例如，绑定生成器认为的 Java 方法`de.neom.neoreadersdk.resolution.compareTo()`应返回`int`，这会导致错误消息**错误 CS0535: DE。Neom.Neoreadersdk.Resolution 不实现接口成员 Java.Lang.IComparable.CompareTo(Java.Lang.Object)**。 以下代码片段演示如何更改所生成的返回类型C#方法从`int`到`Java.Lang.Object`: 
+例如，绑定生成器认为的 Java 方法`de.neom.neoreadersdk.resolution.compareTo()`应返回`int`，这会导致错误消息**错误 CS0535:DE。Neom.Neoreadersdk.Resolution 不实现接口成员 Java.Lang.IComparable.CompareTo(Java.Lang.Object)**。 以下代码片段演示如何更改所生成的返回类型C#方法从`int`到`Java.Lang.Object`: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -347,4 +347,4 @@ realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [绑定 Java 库](~/android/platform/binding-java-library/index.md)
-- [GAPI 元数据](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI 元数据](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)

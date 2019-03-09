@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: bf2842679aded21c9677d9cef31910f273518acd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: de2b92a4007f085a14c16f0c1e8ca9e568df1aff
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119171"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668358"
 ---
 # <a name="nougat-features"></a>Nougat 功能
 
@@ -27,7 +27,7 @@ _如何开始使用 Xamarin.Android 开发适用于 Android Nougat 应用。_
 
 [![Android 平板电脑和手机运行 Android Nougat 的 Hero 映像](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
-有关 Android 7.x Api 的详细信息，请参阅[面向开发人员的 Android 7.1](http://developer.android.com/preview/api-overview.html)。
+有关 Android 7.x Api 的详细信息，请参阅[面向开发人员的 Android 7.1](https://developer.android.com/preview/api-overview.html)。
 有关 Xamarin.Android 7.0 的已知问题的列表，请参阅[发行说明](https://developer.xamarin.com/releases/android/xamarin.android_7/xamarin.android_7.0/)。
 
 Android Nougat Xamarin.Android 开发人员提供所需的许多新功能。 这些功能包括：
@@ -53,7 +53,7 @@ Android Nougat Xamarin.Android 开发人员提供所需的许多新功能。 这
 
 -   **Android SDK** -Android SDK 7.0 (API 24) 或更高版本必须安装通过 Android SDK 管理器。
 
--   **Java 开发人员工具包** &ndash; Xamarin Android 7.0 开发需要[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高，如果你正在开发的 API 级别 24 或更高版本 （JDK 8 还支持 API 级别低于 24）。 如果使用的自定义控件或窗体预览程序，则需要 JDK 8 的 64 位版本。
+-   **Java 开发人员工具包** &ndash; Xamarin Android 7.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高，如果你正在开发的 API 级别 24 或更高版本 （JDK 8 还支持 API 级别低于 24）。 如果使用的自定义控件或窗体预览程序，则需要 JDK 8 的 64 位版本。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。
@@ -123,8 +123,8 @@ Android Nougat Xamarin.Android 开发人员提供所需的许多新功能。 这
 
 如果使用仿真程序，启动 Android AVD 管理器，并创建新的设备使用以下设置：
 
--   设备： Nexus 5 X，Nexus 6，Nexus 6 P，Nexus 播放器 Nexus 9 或像素 c。
--   目标： Android 7.0-API 级别 24
+-   设备:Nexus 5 X，Nexus 6，Nexus 6 P，Nexus 播放器 Nexus 9 或像素 c。
+-   目标:Android 7.0-API 级别 24
 -   ABI: x86 或 x86\_64
 
 例如，此虚拟设备被配置为模拟 Nexus 6:

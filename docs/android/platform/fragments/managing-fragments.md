@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 107877d0e92d3a46101812b78bc0b414c0fbb320
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105462"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670540"
 ---
 # <a name="managing-fragments"></a>管理片段
 
@@ -40,7 +40,7 @@ fragmentTx.Commit();
 
 如果一个事务被提交之后`Activity.OnSaveInstanceState()`是调用，就会引发异常。 这是因为当该活动将保存其状态，Android 会保存任何托管片段的状态。 如果任何片段的事务提交此点后，这些事务的状态将丢失时还原该活动中。
 
-可以将片段事务保存到活动的[back 堆栈](http://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)由调用`FragmentTransaction.AddToBackStack()`。 这允许用户通过向后导航片段更改何时**回**按下按钮。 而无需对此方法的调用，将删除的片段将被销毁和将用户导航返回到活动的情况下不可用。
+可以将片段事务保存到活动的[back 堆栈](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)由调用`FragmentTransaction.AddToBackStack()`。 这允许用户通过向后导航片段更改何时**回**按下按钮。 而无需对此方法的调用，将删除的片段将被销毁和将用户导航返回到活动的情况下不可用。
 
 下面的示例演示如何使用`AddToBackStack`方法的`FragmentTransaction`替换一个片段中，同时保留后退堆栈上的第一个片段的状态：
 

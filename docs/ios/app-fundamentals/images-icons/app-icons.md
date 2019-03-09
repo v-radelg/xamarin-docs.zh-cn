@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: ef8e694bc3c617774035ad5cf7902ca3f5b06813
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 51ccf3faa2524035a30b26af6652959699663e24
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118508"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672529"
 ---
 # <a name="application-icons-in-xamarinios"></a>在 Xamarin.iOS 应用程序图标
 
@@ -52,7 +52,7 @@ ms.locfileid: "50118508"
 
 - **iPhone: iOS 7 和 8**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |应用程序图标|60x60<sup>1</sup>|120x120|
     |聚焦|40x40<sup>2</sup>|80x80|
@@ -60,7 +60,7 @@ ms.locfileid: "50118508"
 
 - **iPhone: iOS 5 和 6**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |应用程序图标|57x57|114x114|
     |聚焦|29x29|58x58|
@@ -78,7 +78,7 @@ ms.locfileid: "50118508"
 
 - **iPad: iOS 7 和 8**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |应用程序图标|76x76|152x152|
     |聚焦|40x40|80x80|
@@ -86,11 +86,11 @@ ms.locfileid: "50118508"
 
 - **iPad: iOS 5 和 6**
 
-    ||1 x|2x|
+    ||1x|2x|
     |---|---|---|
     |应用程序图标|72x72|144x144|
     |聚焦|50x50|100x100|
-    |设置|29 x 29<sup>3，5</sup>|58x58<sup>3，5</sup>|
+    |设置|29x29<sup>3, 5</sup>|58x58<sup>3，5</sup>|
 
  1. 这两个 Visual Studio for Mac 和 Xcode 不再支持设置适用于 iOS 7 的 1 x 图像。
  2. 使用资产目录时，不支持设置适用于 iOS 7 的 1 x 映像。
@@ -212,4 +212,4 @@ ms.locfileid: "50118508"
 
 - [使用图像 （示例）](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
-- [自定义图标和图像创建指南](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))
+- [自定义图标和图像创建指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

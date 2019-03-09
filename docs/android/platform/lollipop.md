@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d79c0563d1dc9a2cfe75b702300982bb4d38553b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d6173e1886eaf807decd960b07acc022bb17c04d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117858"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669071"
 ---
 # <a name="lollipop-features"></a>棒糖形功能
 
@@ -49,9 +49,9 @@ Android 5.0 (Lollipop) 引入了新的设计语言， *Material Design*，并与
 
 -   **Android SDK** &ndash; Android 5.0 (API 21) 或更高版本必须安装通过 Android SDK 管理器。
 
--   **Java 开发人员工具包** &ndash; Xamarin.Android 需要[JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高，如果你正在开发的 API 级别 24 或更高版本 （JDK 1.8 还支持 API 级别低于 24，包括棒糖形）。 如果使用的自定义控件或窗体预览程序，则需要 JDK 1.8 的 64 位版本。
+-   **Java 开发人员工具包** &ndash; Xamarin.Android 需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高，如果你正在开发的 API 级别 24 或更高版本 （JDK 1.8 还支持 API 级别低于 24，包括棒糖形）。 如果使用的自定义控件或窗体预览程序，则需要 JDK 1.8 的 64 位版本。
 
-你可以继续使用[JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是开发专门针对 API 级别 23 或更早版本。
+你可以继续使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是开发专门针对 API 级别 23 或更早版本。
 
 
 ## <a name="setting-up-an-android-50-project"></a>设置 Android 5.0 项目
@@ -70,7 +70,7 @@ Android 5.0 (Lollipop) 引入了新的设计语言， *Material Design*，并与
 
     [![安装 Android SDK 管理器中的 Android 5.0 SDK 包](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
-   有关使用 Android SDK 管理器的详细信息，请参阅[SDK 管理器](http://developer.android.com/tools/help/sdk-manager.html)。
+   有关使用 Android SDK 管理器的详细信息，请参阅[SDK 管理器](https://developer.android.com/tools/help/sdk-manager.html)。
 
 4. 创建新的 Xamarin.Android 项目。 如果您不熟悉如何使用 Xamarin 进行 Android 开发，请参阅[Hello，Android](~/android/get-started/hello-android/index.md) ，了解如何创建 Android 项目。 创建 Android 项目时，请确保配置的 Android 5.0 版本设置。
    在 Visual Studio for Mac 中，导航到**项目选项&gt;构建&gt;常规**并设置**目标框架**到**Android 5.0 (Lollipop)** 或更高版本：
@@ -83,7 +83,7 @@ Android 5.0 (Lollipop) 引入了新的设计语言， *Material Design*，并与
 
 5. 配置要测试你的应用的仿真程序或 Android 设备。 如果要使用模拟器，请参阅[Android 仿真程序安装程序](~/android/get-started/installation/android-emulator/index.md)若要了解如何使用 Xamarin Studio 或 Visual Studio 中配置用于 Android 模拟器。 如果使用 Android 设备，请参阅[设置预览版 SDK](https://developer.android.com/preview/setup-sdk.html)若要了解如何为 Android 5.0 更新你的设备。 若要配置用于运行和调试 Xamarin.Android 应用程序在 Android 设备，请参阅[设置设备进行开发](~/android/get-started/installation/set-up-device-for-development.md)。
 
-注意： 如果要更新现有的 Android 项目是面向 Android 的 L 预览，则必须更新**目标框架**并**Android 版本**上面所述的值。
+注意:如果要更新现有的 Android 项目是面向 Android 的 L 预览，则必须更新**目标框架**并**Android 版本**上面所述的值。
 
 ## <a name="important-changes"></a>重要的更改
 
@@ -99,7 +99,7 @@ Android 5.0 使用而不是 Dalvik 默认运行时作为新 Android 运行时 �
 
 -   **改进了应用程序调试**&ndash;画面提供了更多诊断的详细信息，以帮助分析异常和故障报告。
 
-现有应用程序应进行任何修改下画&ndash;除了利用技术到上一 Dalvik 运行时唯一的应用，这可能无法工作下画。 有关这些更改的详细信息，请参阅[验证应用行为在 Android 运行时 （艺术）](http://developer.android.com/guide/practices/verifying-apps-art.html)。
+现有应用程序应进行任何修改下画&ndash;除了利用技术到上一 Dalvik 运行时唯一的应用，这可能无法工作下画。 有关这些更改的详细信息，请参阅[验证应用行为在 Android 运行时 （艺术）](https://developer.android.com/guide/practices/verifying-apps-art.html)。
 
 
 ### <a name="notification-changes"></a>通知更改
@@ -124,7 +124,7 @@ Android 5.0 使用而不是 Dalvik 默认运行时作为新 Android 运行时 �
 
 4.  设置你的通知的类别，因此它们在新的 Android 5.0 中正确处理*请勿打扰*模式。
 
-如果您的通知显示传输控件，显示媒体播放状态，使用`RemoteControlClient`，或调用`ActivityManager.GetRecentTasks`，请参阅[重要行为更改](http://developer.android.com/preview/api-overview.html#Behaviors)有关更新适用于 Android 通知的详细信息5.0。
+如果您的通知显示传输控件，显示媒体播放状态，使用`RemoteControlClient`，或调用`ActivityManager.GetRecentTasks`，请参阅[重要行为更改](https://developer.android.com/preview/api-overview.html#Behaviors)有关更新适用于 Android 通知的详细信息5.0。
 
 在 Android 中创建通知的信息，请参阅[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)。 [兼容性](~/android/app-fundamentals/notifications/local-notifications.md#compatibility)本文的部分说明了如何创建通知来向下兼容使用早期版本的 Android。
 
@@ -144,7 +144,7 @@ Android 5.0 向您致意显示在左侧的主屏幕。 中心的屏幕截图是�
 有关在 Xamarin.Android 应用中使用材料主题功能的详细信息，请参阅[材料主题](~/android/user-interface/material-theme.md)。
 
 
-## <a name="animations"></a>动画
+## <a name="animations"></a>Animations
 
 Android 5.0 提供了触摸反馈动画、 活动过渡动画和视图状态过渡动画，以使应用界面更加直观使用。 此外，Android 5.0 应用程序可以使用*显示效果*动画来隐藏或显示视图。 可以使用*曲线运动*呈现需要如何快速配置设置或缓慢的动画。
 
@@ -157,7 +157,7 @@ Android 5.0 提供了触摸反馈动画、 活动过渡动画和视图状态过�
 
 初始触控接触与按钮出现在左侧的第一个图像中的剩余序列 （从左到右） 说明了如何波纹效果向外扩散到按钮的边缘。 在 ripple 动画结束时，视图将返回到其原始的外观。 默认波纹动画发生在第二个，一小部分，但可以自定义动画的长度的时间更长或更短长度。
 
-触摸反馈动画在 Android 5.0 中的详细信息，请参阅[自定义触摸反馈](http://developer.android.com/training/material/animations.html#Touch)。
+触摸反馈动画在 Android 5.0 中的详细信息，请参阅[自定义触摸反馈](https://developer.android.com/training/material/animations.html#Touch)。
 
 
 ### <a name="activity-transition-animations"></a>活动过渡动画
@@ -206,7 +206,7 @@ Enter 键转换为 Android 5.0 提供了三种类型的动画：
 
 -   更改视图的大小和扩展类型。
 
-有关在 Android 5.0 中的活动过渡动画的详细信息，请参阅[自定义活动转换](http://developer.android.com/training/material/animations.html#Transitions)。
+有关在 Android 5.0 中的活动过渡动画的详细信息，请参阅[自定义活动转换](https://developer.android.com/training/material/animations.html#Transitions)。
 
 
 ### <a name="view-state-transition-animations"></a>视图状态过渡动画
@@ -217,7 +217,7 @@ Android 5.0 使动画运行时的视图状态更改。 您可以使用以下方�
 
 -   定义的视图状态更改时运行的动画功能。 新`StateListAnimator`类允许您定义的视图状态更改时运行动画。
 
-有关在 Android 5.0 中的视图状态过渡动画的详细信息，请参阅[进行动画处理视图状态更改](http://developer.android.com/training/material/animations.html#ViewState)。
+有关在 Android 5.0 中的视图状态过渡动画的详细信息，请参阅[进行动画处理视图状态更改](https://developer.android.com/training/material/animations.html#ViewState)。
 
 
 ### <a name="reveal-effect"></a>显示效果
@@ -232,7 +232,7 @@ Android 5.0 使动画运行时的视图状态更改。 您可以使用以下方�
 
 显示动画，可以撤消;也就是说，剪辑圆圈可以缩小以隐藏视图而不是放大以显示该视图。
 
-中的 Android 5.0 显示效果的详细信息，请参阅[使用显示效果](http://developer.android.com/training/material/animations.html#Reveal)。
+中的 Android 5.0 显示效果的详细信息，请参阅[使用显示效果](https://developer.android.com/training/material/animations.html#Reveal)。
 
 
 ### <a name="curved-motion"></a>曲线的动作
@@ -245,7 +245,7 @@ Android 5.0 使动画运行时的视图状态更改。 您可以使用以下方�
 
 -   **线性\_出\_慢速\_中**&ndash;与峰值速度缓慢的开头为动画减速。
 
-你可以使用新`PathInterpolator`类，以指定动画内插进行。 `PathInterpolator` 是遍历动画路径根据指定的控制点和运动曲线内插器。 有关如何在 Android 5.0 中指定曲线的运动设置的详细信息，请参阅[使用曲线运动](http://developer.android.com/training/material/animations.html#CurvedMotion)。
+你可以使用新`PathInterpolator`类，以指定动画内插进行。 `PathInterpolator` 是遍历动画路径根据指定的控制点和运动曲线内插器。 有关如何在 Android 5.0 中指定曲线的运动设置的详细信息，请参阅[使用曲线运动](https://developer.android.com/training/material/animations.html#CurvedMotion)。
 
 
 ## <a name="view-shadows--elevation"></a>查看阴影和提升
@@ -258,7 +258,7 @@ Android 5.0 使动画运行时的视图状态更改。 您可以使用以下方�
 
 查看卷影设置可以是静态的 （如上所示），或它们可在动画以使视图显示视图的背景上暂时上升。 可以使用`ViewPropertyAnimator`类进行动画处理视图的提升。 视图的仰角是其布局的总和`elevation`设置加上`translationZ`属性，可通过设置`ViewPropertyAnimator`方法调用。
 
-有关 Android 5.0 中的视图阴影的详细信息，请参阅[定义阴影和剪辑视图](http://developer.android.com/training/material/shadows-clipping.html)。
+有关 Android 5.0 中的视图阴影的详细信息，请参阅[定义阴影和剪辑视图](https://developer.android.com/training/material/shadows-clipping.html)。
 
 
 ## <a name="color-features"></a>颜色功能
@@ -282,7 +282,7 @@ Android 5.0 布局识别新`tint`属性，可以用于绘图的颜色设置而�
 
 ![使用不同的色彩设置更高版本的徽标的示例](lollipop-images/drawable-tinting.png)
 
-有关可绘制、 在 Android 5.0 中的详细信息，请参阅[Drawable、](http://developer.android.com/training/material/drawables.html#DrawableTint)。
+有关可绘制、 在 Android 5.0 中的详细信息，请参阅[Drawable、](https://developer.android.com/training/material/drawables.html#DrawableTint)。
 
 
 ### <a name="prominent-color-extraction"></a>突出的颜色提取
@@ -307,7 +307,7 @@ Android 5.0 布局识别新`tint`属性，可以用于绘图的颜色设置而�
 
 在上面的屏幕中，在操作栏设置为提取"充满活力浅色"颜色和背景设置为提取"充满活力深色"颜色。 在上述每个示例中，小型彩色的平方值的行是包括在内，以说明了从图像中提取的调色板颜色。
 
-有关在 Android 5.0 中的颜色提取有关的详细信息，请参阅[从映像中提取突出显示颜色](http://developer.android.com/training/material/drawables.html#ColorExtract)。
+有关在 Android 5.0 中的颜色提取有关的详细信息，请参阅[从映像中提取突出显示颜色](https://developer.android.com/training/material/drawables.html#ColorExtract)。
 
 
 ## <a name="new-ui-widgets"></a>新的 UI 小组件
@@ -410,7 +410,7 @@ Android 5.0 为增强的照相机功能提供了几个新 Api。 新`Android.Har
 
 -   `CaptureResult` &ndash; 提供的映像捕获操作的结果。
 
-有关新相机 Android 5.0 中的 Api 的详细信息，请参阅[媒体](http://developer.android.com/about/versions/android-5.0.html#Media)。
+有关新相机 Android 5.0 中的 Api 的详细信息，请参阅[媒体](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="audio-playback"></a>音频播放
 
@@ -422,7 +422,7 @@ Android 5.0 更新`AudioTrack`更好的音频播放的类：
 
 -   `WRITE_NON_BLOCKING` &ndash; 此选项可以简化缓冲和多线程处理对于某些应用。
 
-有关详细信息`AudioTrack`改进在 Android 5.0 中，请参阅[媒体](http://developer.android.com/about/versions/android-5.0.html#Media)。
+有关详细信息`AudioTrack`改进在 Android 5.0 中，请参阅[媒体](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="media-playback-control"></a>媒体播放控件
 
@@ -434,7 +434,7 @@ Android 5.0 引入了新`Android.Media.MediaController`类，它取代了`Remote
 
 此外，你可以使用新`Android.App.Notification.MediaStyle`类能够富通知内容 （如提取和显示唱片集画面） 相关联的媒体会话。
 
-有关在 Android 5.0 中的新媒体播放控件功能的详细信息，请参阅[媒体](http://developer.android.com/about/versions/android-5.0.html#Media)。
+有关在 Android 5.0 中的新媒体播放控件功能的详细信息，请参阅[媒体](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="storage"></a>存储
 
@@ -446,7 +446,7 @@ Android 5.0 更新存储访问框架，以使其容易使应用程序使用目�
 
 -   若要获取所有共享的存储设备上的媒体目录路径，请调用新`Android.Content.Context.GetExternalMediaDirs`方法。
 
-有关新存储 Android 5.0 中的 Api 的详细信息，请参阅[存储](http://developer.android.com/preview/api-overview.html#Storage)。
+有关新存储 Android 5.0 中的 Api 的详细信息，请参阅[存储](https://developer.android.com/preview/api-overview.html#Storage)。
 
 ### <a name="wireless--connectivity"></a>无线和连接性
 
@@ -458,13 +458,13 @@ Android 5.0 将添加以下 API 用于无线和连接性的增强功能：
 
 -   NFC 增强，使其更轻松地与其他设备共享数据使用近场通信功能。
 
-有关新的无线和连接 Android 5.0 中的 Api 的详细信息，请参阅[无线和连接](http://developer.android.com/preview/api-overview.html#Wireless)。
+有关新的无线和连接 Android 5.0 中的 Api 的详细信息，请参阅[无线和连接](https://developer.android.com/preview/api-overview.html#Wireless)。
 
 ### <a name="job-scheduling"></a>作业计划
 
 Android 5.0 引入了新`JobScheduler`API，可帮助用户最小化电池耗尽，通过计划在插入设备时才运行某些任务和收费。 此作业计划程序功能还可用于计划任务运行时满足条件，更适合该任务，如通过 Wi-fi 网络，而不是按流量计费的网络连接设备时下载大型文件。
 
-有关新的作业计划 Android 5.0 中的 Api 的详细信息，请参阅[计划作业](http://developer.android.com/preview/api-overview.html#JobScheduler)。
+有关新的作业计划 Android 5.0 中的 Api 的详细信息，请参阅[计划作业](https://developer.android.com/preview/api-overview.html#JobScheduler)。
 
 ## <a name="summary"></a>总结
 
@@ -472,7 +472,7 @@ Android 5.0 引入了新`JobScheduler`API，可帮助用户最小化电池耗尽
 
 -   材料主题
 
--   动画
+-   Animations
 
 -   查看阴影和提升
 
@@ -491,7 +491,7 @@ Android 5.0 引入了新`JobScheduler`API，可帮助用户最小化电池耗尽
 
 ## <a name="related-links"></a>相关链接
 
-- [Android L 开发者预览版](http://developer.android.com/preview/index.html)
+- [Android L 开发者预览版](https://developer.android.com/preview/index.html)
 - [获取 Android SDK](https://developer.android.com/sdk/index.html#Other)
-- [材料设计](http://developer.android.com/preview/material/index.html)
+- [材料设计](https://developer.android.com/preview/material/index.html)
 - [材料设计原则](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

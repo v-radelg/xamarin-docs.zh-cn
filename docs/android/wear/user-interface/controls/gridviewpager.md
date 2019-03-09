@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 1cb71fa2c73b9ab151555559b22def4be1cf5c73
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 81bb4e302f81b58eec91ea2a2aef985adbf72e2c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112762"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670917"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
@@ -19,7 +19,7 @@ ms.locfileid: "50112762"
 
 ![GridViewPager 的方形显示屏上的示例屏幕截图](gridviewpager-images/gridviewpager.png)
 
-首先添加[Xamarin Android Wear 支持](http://www.nuget.org/packages/Xamarin.Android.Wear/)到你的项目的 NuGet 包。
+首先添加[Xamarin Android Wear 支持](https://www.nuget.org/packages/Xamarin.Android.Wear/)到你的项目的 NuGet 包。
 
 布局 XML 如下所示：
 
@@ -31,8 +31,8 @@ ms.locfileid: "50112762"
     android:keepScreenOn="true" />
 ```
 
-创建 [`GridPagerAdapter`](http://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
-（或如子类 [`FragmentGridPagerAdapter`](http://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
+创建 [`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
+（或如子类 [`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
 视图将显示为用户提供导航。
 
 [示例适配器](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)演示如何实现所需的方法，包括重写`RowCount`， `GetColumnCount`， `GetBackground`，和 `GetFragment`
@@ -49,4 +49,4 @@ pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 
 - [Google 的 2D 选取器文档](https://developer.android.com/training/wearables/ui/2d-picker.html)
 - [android.support.wearable docs](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager （示例）](https://developer.xamarin.com/samples/GridViewPager/)
+- [GridViewPager (sample)](https://developer.xamarin.com/samples/GridViewPager/)

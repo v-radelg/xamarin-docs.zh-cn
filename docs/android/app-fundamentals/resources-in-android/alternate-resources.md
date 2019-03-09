@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 16ef0d5a309281767f0fff27436dd5bec322169d
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527386"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671154"
 ---
 # <a name="alternate-resources"></a>备用资源
 
 备用资源是针对某个特定设备或如当前语言、 特定屏幕大小或像素密度的运行时配置这些资源。 如果 Android 可以匹配特定设备或配置默认的资源比更具体的资源，则将改为使用该资源。 如果找不到匹配的当前配置的备用资源，则将加载默认资源。 Android 决定如何将更详细地，在资源位置部分介绍应用程序将使用哪些资源
 
-备用资源都组织为根据资源类型，就像默认资源资源文件夹中的子目录。 替代资源子目录的名称是在窗体中： _ResourceType_-_限定符_
+备用资源都组织为根据资源类型，就像默认资源资源文件夹中的子目录。 替代资源子目录的名称是在窗体中：_ResourceType_-_Qualifier_
 
 *限定符*是用于标识特定设备配置的名称。
 在名称每个短划线分隔可能有多个限定符。 例如，下面的屏幕截图显示了一个简单的项目具有用于区域设置、 屏幕密度、 屏幕大小和方向等的各种配置的备用资源：
@@ -43,10 +43,10 @@ ms.locfileid: "51527386"
 
 有关参考下面列出了可能的限定符：
 
-- **MCC 和 mnc 是否** &ndash; [移动国家/地区代码](http://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) 和 （可选）[移动电话网络代码](http://en.wikipedia.org/wiki/Mobile_Network_Code)（mnc 是否）。 SIM 卡将提供 MCC，而设备连接到的网络将提供 mnc。 虽然可以使用移动国家/地区代码的目标区域设置，但建议方法是使用下面指定的语言限定符。 有关示例，对德国，目标资源是限定符`mcc262`。 在美国，T 移动的目标资源限定符是`mcc310-mnc026`。
+- **MCC 和 mnc 是否** &ndash; [移动国家/地区代码](https://en.wikipedia.org/wiki/List_of_mobile_country_codes)(MCC) 和 （可选）[移动电话网络代码](https://en.wikipedia.org/wiki/Mobile_Network_Code)（mnc 是否）。 SIM 卡将提供 MCC，而设备连接到的网络将提供 mnc。 虽然可以使用移动国家/地区代码的目标区域设置，但建议方法是使用下面指定的语言限定符。 有关示例，对德国，目标资源是限定符`mcc262`。 在美国，T 移动的目标资源限定符是`mcc310-mnc026`。
   有关移动国家/地区代码和移动网络代码的完整列表请参阅<http://mcc-mnc.com/>。
 
-- **语言**&ndash;两个字母[ISO 639-1 语言代码](http://en.wikipedia.org/wiki/ISO_639-1)和后面可跟两个字母[ISO 3166 alpha 2 区域代码](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)。 
+- **语言**&ndash;两个字母[ISO 639-1 语言代码](https://en.wikipedia.org/wiki/ISO_639-1)和后面可跟两个字母[ISO 3166 alpha 2 区域代码](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)。 
   如果提供了这两个限定符，则它们之间用`-r`。 例如，若目标讲法语的区域设置则的限定符`fr`使用。 若要面向加拿大法语区域设置中，`fr-rCA`会使用。 语言代码和区域代码的完整列表，请参阅[的表示形式的名称的语言代码](http://www.loc.gov/standards/iso639-2/php/English_list.php)并[国家/地区名称和代码元素](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm)。
 
 - **最小宽度**&ndash;指定应用程序旨在上执行的最小屏幕宽度。 中的更详细地介绍[对于不同的屏幕创建资源](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)。 
@@ -123,7 +123,7 @@ ms.locfileid: "51527386"
 -  **平台版本 （API 级别）** &ndash;格式 v 设备支持的 API 级别*N*，其中*N*是为目标的 API 级别。 例如，v11 将目标 API 级别 11 (Android 3.0) 设备。
 
 
-有关更多详细信息资源限定符请参阅[提供资源](http://developer.android.com/guide/topics/resources/providing-resources.html)Android 开发人员网站上。
+有关更多详细信息资源限定符请参阅[提供资源](https://developer.android.com/guide/topics/resources/providing-resources.html)Android 开发人员网站上。
 
 
 ## <a name="how-android-determines-what-resources-to-use"></a>Android 如何确定使用哪些资源
@@ -176,7 +176,7 @@ Android 通过遍历以下测试的规则确定基本的资源：
     drawable-port-ldpi
     drawable-port-notouch-12key
 
-接下来，从上的表限定符选择第一个限定符： MCC 和 mnc 是否。 不没有包含此限定符，因此忽略 MCC/mnc 代码任何资源目录。
+接下来，第一个限定符是从上述限定符表中选择：MCC 和 mnc。 不没有包含此限定符，因此忽略 MCC/mnc 代码任何资源目录。
 
 选择下一步的限定符，则这是语言。 没有匹配的语言代码的资源。 不匹配的语言代码的所有资源目录`en`被拒绝，以便资源的列表现在为：
 

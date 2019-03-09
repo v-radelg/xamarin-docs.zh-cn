@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 5369542552a41100443c5e91ceca9e110c5c7c3c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8364310d23739c05ff97ea8aa8fa4c56f89ea40c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108725"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670722"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript 简介
 
@@ -20,7 +20,7 @@ _本指南介绍 Renderscript 并说明如何使用该目标 API 级别 17 或�
 
 ## <a name="overview"></a>概述
 
-Renderscript 是一个编程框架，由 Google 创建以便改进需要大量计算资源的 Android 应用程序的性能。 它是基于 API 的较低级别、 高性能[C99](http://en.wikipedia.org/wiki/C99)。 因为它是低级别的 Cpu、 Gpu 或 Dsp 将运行的 API，Renderscript 是非常适用于 Android 应用，可能需要执行以下任一项：
+Renderscript 是一个编程框架，由 Google 创建以便改进需要大量计算资源的 Android 应用程序的性能。 它是基于 API 的较低级别、 高性能[C99](https://en.wikipedia.org/wiki/C99)。 因为它是低级别的 Cpu、 Gpu 或 Dsp 将运行的 API，Renderscript 是非常适用于 Android 应用，可能需要执行以下任一项：
 
 * 图形
 * 图像处理
@@ -161,4 +161,4 @@ blurScript.ForEach(outputAllocation);
 - [Android.Renderscripts 命名空间](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)
 - [模糊 Renderscript 的映像](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)
 - [Renderscript](https://developer.android.com/guide/topics/renderscript/compute.html)
-- [教程： 开始使用 Renderscript](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)
+- [教程：开始使用 Renderscript](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)

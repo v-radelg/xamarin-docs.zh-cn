@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: cd80154602cc22668768fe217da7371b77ded003
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fa32783617fce99514560677184f17be904cd42d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112372"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670315"
 ---
 # <a name="launching-the-maps-application"></a>启动映射应用程序
 
@@ -42,7 +42,7 @@ StartActivity (mapIntent);
 
 -   `geo:latitude,longitude` &ndash; 将打开地图应用程序以 lat/lon 中心。 
 
--   `geo:latitude,longitude?z=zoom` &ndash; 将打开的地图应用程序在 lat/lon 居中和缩放后为指定的级别。 缩放级别范围可以从 1 到 23: 1 显示整个地球和 23 是最接近的缩放级别。
+-   `geo:latitude,longitude?z=zoom` &ndash; 将打开的地图应用程序在 lat/lon 居中和缩放后为指定的级别。 缩放级别的范围可以从 1 到 23:1 显示整个地球和 23 是最接近的缩放级别。
 
 -   `geo:0,0?q=my+street+address` &ndash; 将打开到街道地址的位置的地图应用程序。 
 
@@ -55,7 +55,7 @@ StartActivity (mapIntent);
 
 
 
-有关异地 URI 方案的详细信息，请参阅[在地图上显示位置](http://developer.android.com/guide/components/intents-common.html#Maps)。
+有关异地 URI 方案的详细信息，请参阅[在地图上显示位置](https://developer.android.com/guide/components/intents-common.html#Maps)。
 
 
 ## <a name="street-view"></a>街道视图

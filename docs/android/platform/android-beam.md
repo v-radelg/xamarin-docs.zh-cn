@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 13a0a0d9c6a9d1d5f49020b1a8096f5e054d415c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9fcabc90875dda28ecdd5d94f1ca2f263ffe4886
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114920"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670836"
 ---
 # <a name="android-beam"></a>Android 无线发送
 
@@ -85,4 +85,4 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 - [Android 无线发送演示 （示例）](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
 - [引入 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](http://developer.android.com/sdk/android-4.0.html)
+- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

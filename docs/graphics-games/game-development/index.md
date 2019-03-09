@@ -6,13 +6,8 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d6e9fd03025e00da5cff5ed284bdc5f0f268a22b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122603"
 ---
+
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 进行游戏开发简介
 
 开发游戏可能会令人兴奋，尤其是考虑它是多么发布你的移动平台上工作。 本文讨论概念，并将帮助您的游戏开发的相关技术创建的游戏，无论你的目标是游戏或只是为了增添些乐趣程序创建高质量 AAA。
@@ -25,12 +20,12 @@ ms.locfileid: "50122603"
 - **游戏开发技术**– 我们此处列出的一些跨平台技术可用，这样可以提高游戏开发人员的工作效率。
 
 
-# <a name="game-vs-non-game-programming-concepts"></a>游戏 vs。非游戏编程概念
+## <a name="game-vs-non-game-programming-concepts"></a>游戏 vs。非游戏编程概念
 
 将移动到游戏开发的程序员通常面对新概念和开发模式。 本部分介绍其中一些概念的高级视图。
 
 
-## <a name="the-game-loop"></a>游戏循环
+### <a name="the-game-loop"></a>游戏循环
 
 一局游戏需要常量移动或更改以响应用户交互和自动游戏逻辑在屏幕上发生。 这通过什么通常称为*游戏循环*。 游戏循环是指将某种类型的循环语句 （如 while 循环） 频率非常高，例如 30 或 60 时运行的*每秒帧数*。
 
@@ -54,7 +49,7 @@ ms.locfileid: "50122603"
 请注意上面列出的活动的许多可以将整个应用程序的状态更改而很多非游戏应用程序往往会更改状态以引发的事件的响应。
 
 
-## <a name="content-loading-and-unloading"></a>内容加载和卸载
+### <a name="content-loading-and-unloading"></a>内容加载和卸载
 
 具体取决于哪种技术在开发过程中使用，可能需要手动加载和卸载 （或释放） 的内容。 手动加载和卸载的资产可能出于多种原因导致：
 
@@ -65,7 +60,7 @@ ms.locfileid: "50122603"
 自定义文件格式可能需要处理在加载时，需要自定义加载代码。
 
 
-## <a name="math"></a>数学
+### <a name="math"></a>数学
 
 许多游戏要求比非游戏应用程序的更高级数学计算。 当然，数学的级别取决于游戏的复杂性。 一般情况下 3D 游戏需要更多数学 2D 比。 幸运的是您始终可以开始使用简单的游戏，并了解意愿。 游戏开发可以了解数学的好办法 ！
 
@@ -82,14 +77,14 @@ ms.locfileid: "50122603"
 如果您打算使 3D 游戏然后可能将需要熟悉线性代数 （适用于旋转和 3D 空间中的移动），以及一些 （适用于实现加速） 的微积分导数的概念。
 
 
-## <a name="content-pipelines"></a>内容管道
+### <a name="content-pipelines"></a>内容管道
 
 术语*内容管道*到其最终格式在游戏中使用时是指从其格式 （例如.png 图像文件） 创作时获取文件的过程。 结束格式取决于其上的内容类型正在使用正在用于技术以及其呈现内容。
 
 一些内容管道可能非常快，并且需要任何手动操作。 例如，大多数游戏引擎和 Api 可以加载在其未处理的格式中的.png 文件格式。 另一方面，更复杂的格式 （例如三维模型） 可能需要在正在加载之前要处理为其他格式，并且此处理可能需要一些时间，具体取决于资产的大小和复杂性。
 
 
-# <a name="game-development-teams"></a>游戏开发团队
+## <a name="game-development-teams"></a>游戏开发团队
 
 游戏开发过程中涉及的个人，引入了新的角色和标题。 大多数游戏开发人员不能满足广泛的需释放一个完整的游戏，因此存在许多学科的技能。 请注意这不是开发-只是一些更常见的问题的区域的完整列表。
 
@@ -100,7 +95,7 @@ ms.locfileid: "50122603"
 - **听起来设计器**– 声音的设计器负责游戏的音频资产。 一些团队可能会区分个人负责创建声音效果和作曲者，而较小的团队可能有一个人负责所有音频。
 
 
-# <a name="creating-a-game-idea"></a>创建游戏创意
+## <a name="creating-a-game-idea"></a>创建游戏创意
 
 设计游戏可能会出现能够轻松地执行 – 别忘了唯一的要求并"使一些有趣。" 遗憾的是，许多开发人员发现自己在丢失时创建从中启动开发大致时间。
 
@@ -115,12 +110,12 @@ ms.locfileid: "50122603"
 重新塑造现有游戏也是教育的体验，虽然这可能会限制已完成的产品的商业可行性。 创建一个游戏，即使其中一个是一个精确克隆的过程提供有价值的教育体验。
 
 
-# <a name="game-development-technology"></a>游戏开发技术
+## <a name="game-development-technology"></a>游戏开发技术
 
 使用 Xamarin.Android 和 Xamarin.iOS 开发人员具有各种技术提供给他们的游戏开发帮助。 本部分将介绍一些最受欢迎的跨平台解决方案。
 
 
-## <a name="cocossharp"></a>CocosSharp
+### <a name="cocossharp"></a>CocosSharp
 
 CocosSharp 是科科斯 2D 游戏引擎的开放源代码的跨平台版本。 引擎提供对 Android、 iOS、 Mac OS X、 Windows 桌面、 Windows RT 和 Windows Phone 访问。
 
@@ -135,7 +130,7 @@ CocosSharp 重点介绍 2D 游戏开发简单编程人员 API。 在移动设备
 可以下载它并获取详细信息[AngryNinjas Github 页面](https://github.com/xamarin/AngryNinjas)。
 
 
-## <a name="monogame"></a>MonoGame
+### <a name="monogame"></a>MonoGame
 
 MonoGame 是开源的跨平台版本的 Microsoft XNA API。 可以使用 MonoGame 来制作适用于 iOS、 Android、 Mac OS X、 Linux、 Windows、 Windows RT、 PS4、 PSVita、 Xbox One 和交换机的游戏。
 
@@ -156,7 +151,7 @@ FEZ:
 若要开始使用 MonoGame，请转到我们[MonoGame 指南](~/graphics-games/monogame/index.md)。
 
 
-## <a name="urhosharp"></a>UrhoSharp
+### <a name="urhosharp"></a>UrhoSharp
 
 UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程序使用几何图形、 材料、 光源和照相机的动画 3D 和 2D 场景。
 
@@ -164,18 +159,13 @@ UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程�
 
 请查看[UrhoSharp 指南](~/graphics-games/urhosharp/index.md)若要开始。
 
-## <a name="additional-technology"></a>其他技术
+### <a name="additional-technology"></a>其他技术
 
 上面突出显示的技术只是一个样本的可用的技术。 值得注意的其他技术包括：
 
-- **Sprite Kit** – Xamarin 提供了对 Apple 的 Sprite Kit 游戏框架，它可以访问所有本机 API 的功能的支持。 由于 Sprite Kit 是由 Apple 创建技术，它提供与 iOS 生态系统的其余部分的深度集成。 当然，Sprite Kit 不是跨平台，因此不能在 Android 上使用它。 使用 Sprite Kit 的详细信息，请参阅此文章：  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Scene Kit** – Xamarin 还提供对 Apple 的 Scene Kit 框架，从而简化了到 iOS 应用程序中实现 3D 图形的支持。 Scene Kit 也是 Apple，因此它具有的集成和特定于平台的注意事项上面提到的 Sprite Kit 提供的技术。 场景工具包的详细信息，请参阅此文章： [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **Sprite Kit** – Xamarin 提供了对 Apple 的 Sprite Kit 游戏框架，它可以访问所有本机 API 的功能的支持。 由于 Sprite Kit 是由 Apple 创建技术，它提供与 iOS 生态系统的其余部分的深度集成。 当然，Sprite Kit 不是跨平台，因此不能在 Android 上使用它。 使用 Sprite Kit 的详细信息，请参阅此文章：  [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Scene Kit** – Xamarin 还提供对 Apple 的 Scene Kit 框架，从而简化了到 iOS 应用程序中实现 3D 图形的支持。 Scene Kit 也是 Apple，因此它具有的集成和特定于平台的注意事项上面提到的 Sprite Kit 提供的技术。 场景工具包的详细信息，请参阅此文章： [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
 - **OpenTK –** OpenTK （它代表打开 Tool Kit） 提供对 iOS、 Apple 和 Mac 的低级别 OpenGL 访问硬件。 OpenTK 的详细信息，请参阅在主页上：  [http://www.opentk.com/](http://www.opentk.com/)
-
-
-# <a name="summary"></a>总结
-
-本文介绍了游戏开发的主要概念，并提供有关如何开始制作您的首个游戏的信息。 完成本文后下, 一个步骤是选择你的技术，并开始通过我们的系列教程前面的相应章节中链接的工作。
 
 ## <a name="related-links"></a>相关链接
 

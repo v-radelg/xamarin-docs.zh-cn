@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/31/2017
-ms.openlocfilehash: 61aa360e91c3881c77c4bc3776e2cfdc36efb61b
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: f7fbd6f19820b8cbefe1a75c148ca1d9ba1395f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267351"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670934"
 ---
 # <a name="troubleshooting-tips-for-ios-11-and-xamarinios"></a>IOS 11 和 Xamarin.iOS 的疑难解答提示
 
@@ -26,4 +26,4 @@ ms.locfileid: "53267351"
 
 ## <a name="forums-and-stackoverflow"></a>论坛和堆栈溢出
 
-有关使用或在 Xamarin.iOS，Xamarin 中实现特定 iOS 11 功能有关的特定问题的答案[iOS 论坛](http://forums.xamarin.com/categories/ios)提供了丰富的信息。 [StackOverflow](http://stackoverflow.com/search?tab=newest&q=xamarin)是另一个很好的用户帮助用户信息来源。
+有关使用或在 Xamarin.iOS，Xamarin 中实现特定 iOS 11 功能有关的特定问题的答案[iOS 论坛](http://forums.xamarin.com/categories/ios)提供了丰富的信息。 [StackOverflow](https://stackoverflow.com/search?tab=newest&q=xamarin)是另一个很好的用户帮助用户信息来源。

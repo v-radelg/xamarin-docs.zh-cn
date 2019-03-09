@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 2dc56d9c5b63d428663d98bae4c8687c1f621a04
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 7dbb0044f09d5bc00f2393eb647efba05a061c3f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233186"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669539"
 ---
 # <a name="threading-in-xamarinios"></a>在 Xamarin.iOS 中线程处理
 
@@ -20,7 +20,7 @@ Xamarin.iOS 运行时会使开发人员访问.NET 线程 Api，同时使用线�
 
 
 
-Xamarin 强烈建议你使用[任务并行库](http://msdn.microsoft.com/library/dd460717.aspx)(TPL) 用于构建应用程序的几个原因：
+Xamarin 强烈建议你使用[任务并行库](https://msdn.microsoft.com/library/dd460717.aspx)(TPL) 用于构建应用程序的几个原因：
 -  默认 TPL 计划程序会将委托将执行任务的线程池，反过来会动态增长的需要因为发生过程，同时避免了过多的线程的结束位置会争用 CPU 时间的方案的线程数。 
 -  它是更轻松地考虑在 TPL 任务方面的操作。 轻松可以对其进行处理，将它们计划、 序列化其执行或启动很多与一组丰富的 Api 并行。 
 -  它是使用新 C# async 语言扩展进行编程的基础。 

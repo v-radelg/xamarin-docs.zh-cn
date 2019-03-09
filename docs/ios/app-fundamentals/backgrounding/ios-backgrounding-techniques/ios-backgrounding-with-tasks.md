@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 48859afe2c988c1afe67d5c4350cef734f879fdf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120991"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669825"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 后台处理及任务
 
@@ -67,7 +67,7 @@ public override void DidEnterBackground (UIApplication application) {
 我们首先重写`DidEnterBackground`中的方法`AppDelegate`，其中我们注册我们的任务通过`BeginBackgroundTask`与我们在前面的示例中。 接下来，我们生成一个新线程和执行我们长时间运行的任务。 请注意，`EndBackgroundTask`现在从进行调用，在长时间运行的任务，因为`DidEnterBackground`方法均已返回。
 
 > [!IMPORTANT]
-> iOS 使用[监视程序机制](http://developer.apple.com/library/ios/qa/qa1693/_index.html)以确保应用程序的 UI 保持响应。 花费太多时间在应用程序`DidEnterBackground`将成为在 UI 中无响应。 若要在后台运行的任务在启动允许`DidEnterBackground`及时地，来保持 UI 响应能力和终止应用程序阻止监视器返回。
+> iOS 使用[监视程序机制](https://developer.apple.com/library/ios/qa/qa1693/_index.html)以确保应用程序的 UI 保持响应。 花费太多时间在应用程序`DidEnterBackground`将成为在 UI 中无响应。 若要在后台运行的任务在启动允许`DidEnterBackground`及时地，来保持 UI 响应能力和终止应用程序阻止监视器返回。
 
 
 ## <a name="handling-background-task-time-limits"></a>处理后台任务时间限制

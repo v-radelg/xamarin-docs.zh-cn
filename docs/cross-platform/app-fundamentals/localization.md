@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 85e4e98cfbc96936c19642a200885b54cf745aa4
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617509"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670787"
 ---
 # <a name="localization"></a>本地化
 
@@ -111,7 +111,7 @@ double.Parse("1,999.99", CultureInfo.InvariantCulture);
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-请参阅[分析数字字符串](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)并[分析日期和时间字符串](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)MSDN 文章的其他信息。
+请参阅[分析数字字符串](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)并[分析日期和时间字符串](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)MSDN 文章的其他信息。
 
 <a name="rtl" />
 
@@ -131,7 +131,7 @@ IOS 和 Android 支持从右到左布局和字体呈现，具有内置功能，�
 
 不同的语言定义其字母表的排序顺序不同，即使它们使用相同的字符集。
 
-请参阅[详细信息的字符串比较](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)中[在.NET Framework 中使用字符串的最佳做法](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)有关示例的语言 (CultureInfo) 会影响排序顺序。
+请参阅[详细信息的字符串比较](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)中[在.NET Framework 中使用字符串的最佳做法](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)有关示例的语言 (CultureInfo) 会影响排序顺序。
 
 不太可能移动平台上的内置数据库功能将支持特定于语言的排序顺序这样，您可能需在您的业务逻辑中实现附加代码。
 
@@ -312,5 +312,5 @@ IOS 和 Android 支持从右到左布局和字体呈现，具有内置功能，�
 ## <a name="related-links"></a>相关链接
 
 - [Apple 的本地化概述](https://developer.apple.com/internationalization/)
-- [Android 的本地化清单](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [开发全球通用应用程序 (MSDN) 的最佳实践](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)
+- [Android 的本地化清单](https://developer.android.com/distribute/tools/localization-checklist.html)
+- [开发全球通用应用程序 (MSDN) 的最佳实践](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

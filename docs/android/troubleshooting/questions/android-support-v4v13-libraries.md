@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 43627884c2f8bc4d9e5b5faa2c3af08f74487b65
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a990d933c258812b2b3d3374fb6435af06f729ea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114634"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671788"
 ---
 # <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>更智能的 Xamarin Android 支持 v4 / v13 NuGet 包
 
 ## <a name="about-the-android-support-libraries"></a>有关 Android 支持库
 
-Google 已创建了支持库以使新功能可用于较旧版本的 Android。 一般情况下，支持库中将给出的版本号是相互兼容的最低 Android API 级别其名称 (例如： 支持 v4 只能在 API 级别 4 及更高版本。 有关详细信息这[Stack Overflow 讨论](http://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13))。 
+Google 已创建了支持库以使新功能可用于较旧版本的 Android。 一般情况下，支持库中将给出的版本号是相互兼容的最低 Android API 级别其名称 (例如：支持 v4 只能在 API 级别 4 和更高版本。 有关详细信息这[Stack Overflow 讨论](https://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13))。 
 
 两个支持库：`Support-v4`和`Support-v13`不能使用一起在相同的应用中，即，它们是互相排斥。 这是因为`Support-v13`实际包含的所有类型和实现`Support-v4`。 如果尝试在同一项目中同时引用将会遇到重复的类型错误。
 

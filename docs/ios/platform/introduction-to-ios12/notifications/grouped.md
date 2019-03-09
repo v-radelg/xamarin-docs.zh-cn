@@ -6,13 +6,13 @@ ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: 2e23bb13ad35e9a7a6386d881fe64f817ca8e216
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 09/04/2018
+ms.openlocfilehash: 6798c4c5fa7502ba5e99cb8bc209468acaa4a9ec
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233258"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670020"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>在 Xamarin.iOS 中分组的通知
 

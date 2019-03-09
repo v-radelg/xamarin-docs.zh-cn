@@ -6,15 +6,15 @@ ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2016
-ms.openlocfilehash: 7e8acc6e8aaf8b8e0e8cec7d5d0f3e28cf60073a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/08/2019
+ms.openlocfilehash: 600120b6ed8484399cf5fc48638ef4b129e9c406
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055590"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671957"
 ---
-# <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服务
+# <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服务
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
 
@@ -29,9 +29,10 @@ WCF 描述了与各种不同的约定，其中包括以下服务：
 
 ASP.NET Web 服务 (ASMX) 和 WCF 之间的差异，但务必要了解 WCF 支持的相同功能提供的 ASMX 服务 – 通过 HTTP 的 SOAP 消息。 有关使用 ASMX 服务的详细信息，请参阅[使用 ASP.NET Web 服务 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)。
 
-一般情况下，Xamarin 平台支持的 WCF 附带了 Silverlight 运行时的相同客户端的子集。 这包括最常见编码和协议的 WCF 的实现-文本编码的 SOAP 消息通过 HTTP 传输协议使用`BasicHttpBinding`类。 此外，WCF 支持需要使用工具仅在 Windows 环境以生成代理中可用。
+> [!IMPORTANT]
+> WCF 的 Xamarin 平台支持仅限于文本编码的 SOAP 消息通过 HTTP/HTTPS 使用`BasicHttpBinding`类。 此外，WCF 支持需要使用工具仅在 Windows 环境以生成代理中可用。
 
-示例应用程序附带的自述文件中，可以找到设置 WCF 服务说明。 但是，当运行示例应用程序时它将连接到 Xamarin 承载的 WCF 服务，允许只读访问的数据，如以下屏幕截图中所示：
+示例应用程序需要使用现已推出的可承载 WCF 服务**TodoWCFService**示例文件夹和以下屏幕截图所示：
 
 ![](wcf-images/portal.png "示例应用程序")
 
@@ -39,7 +40,7 @@ ASP.NET Web 服务 (ASMX) 和 WCF 之间的差异，但务必要了解 WCF 支�
 > 在 iOS 9 及更高版本中，应用传输安全 (ATS) 强制执行安全连接之间 （例如应用程序的后端服务器） 的 internet 资源和应用程序中，从而防止意外泄露敏感信息。 由于默认情况下构建适用于 iOS 9 应用程序中启用了 ATS，所有连接都将遵循 ATS 安全要求。 如果连接不能满足这些要求，它们将失败并出现异常。
 > 如果不能使用 ATS 可以选择退出的`HTTPS`协议并确保对 internet 资源的通信安全。 这可以通过更新应用程序的实现**Info.plist**文件。 有关详细信息请参阅[应用程序传输安全](~/ios/app-fundamentals/ats.md)。
 
-## <a name="consuming-the-web-service"></a>使用 Web 服务
+## <a name="consume-the-web-service"></a>使用 web 服务
 
 WCF 服务提供了以下操作：
 
@@ -51,9 +52,6 @@ WCF 服务提供了以下操作：
 |DeleteTodoItem|删除待办事项|XML 序列化 TodoItem|
 
 有关在应用程序中使用的数据模型的详细信息，请参阅[为数据建模](~/xamarin-forms/data-cloud/walkthrough.md)。
-
-> [!NOTE]
-> 示例应用程序使用 Xamarin 承载的 WCF 服务，提供对 web 服务的只读访问。 因此，创建、 更新和删除数据的操作不会更改应用程序中使用的数据。 但是，ASMX 服务的可承载版本现已推出**TodoWCFService**随附的示例应用程序中的文件夹。 此版本可承载的 WCF 服务允许完全创建、 更新、 读取和删除对数据的访问。
 
 一个*代理*必须生成以使用 WCF 服务，允许应用程序连接到服务。 代理是通过使用以定义的方法和关联的服务配置的服务元数据构造的。 此元数据中生成的 web 服务的 Web 服务描述语言 (WSDL) 文档的形式公开。 在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider，若要将 web 服务的服务引用添加到.NET Standard 库，可以生成代理。 创建的代理帐户在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 的替代方法是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 有关详细信息，请参阅[ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)。
 
@@ -67,7 +65,7 @@ WCF 服务提供了以下操作：
 
 有关 APM 的详细信息请参阅[异步编程模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)并[TPL 和传统.NET Framework 异步编程](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
-### <a name="creating-the-todoserviceclient-object"></a>创建 TodoServiceClient 对象
+### <a name="create-the-todoserviceclient-object"></a>创建 TodoServiceClient 对象
 
 生成的代理类提供了`TodoServiceClient`类，该类用于通过 HTTP 与 WCF 服务进行通信。 它提供用于调用 web 服务方法从 URI 的异步操作来标识服务实例的功能。 有关异步操作的详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
@@ -93,14 +91,15 @@ public class SoapService : ISoapService
 
 有关配置服务引用的详细信息，请参阅[配置服务引用](~/cross-platform/data-cloud/web-services/index.md#wcf)。
 
-### <a name="creating-data-transfer-objects"></a>创建数据传输对象
+### <a name="create-data-transfer-objects"></a>创建数据传输对象
 
 示例应用程序使用`TodoItem`模型数据的类。 用于存储`TodoItem`中 web 服务必须首先将转换为生成的代理项`TodoItem`类型。 这通过实现`ToWCFServiceTodoItem`方法，如下面的代码示例中所示：
 
 ```csharp
 TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 {
-  return new TodoWCFService.TodoItem {
+  return new TodoWCFService.TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -116,7 +115,8 @@ TodoWCFService.TodoItem ToWCFServiceTodoItem (TodoItem item)
 ```csharp
 static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 {
-  return new TodoItem {
+  return new TodoItem
+  {
     ID = item.ID,
     Name = item.Name,
     Notes = item.Notes,
@@ -128,7 +128,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 此方法只需从生成的代理中检索数据`TodoItem`类型并将其设置在新创建`TodoItem`实例。
 
-### <a name="retrieving-data"></a>检索数据
+### <a name="retrieve-data"></a>检索数据
 
 `TodoServiceClient.BeginGetTodoItems`并`TodoServiceClient.EndGetTodoItems`方法用于调用`GetTodoItems`web 服务所提供的操作。 这些异步方法封装在`Task`对象，如下面的代码示例中所示：
 
@@ -142,7 +142,8 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
     null,
     TaskCreationOptions.None);
 
-  foreach (var item in todoItems) {
+  foreach (var item in todoItems)
+  {
     Items.Add (FromWCFServiceTodoItem (item));
   }
   ...
@@ -153,7 +154,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 `TodoServiceClient.EndGetTodoItems`方法将返回`ObservableCollection`的`TodoWCFService.TodoItem`实例，然后将转换为`List`的`TodoItem`显示的实例。
 
-### <a name="creating-data"></a>创建数据
+### <a name="create-data"></a>创建数据
 
 `TodoServiceClient.BeginCreateTodoItem`并`TodoServiceClient.EndCreateTodoItem`方法用于调用`CreateTodoItem`web 服务所提供的操作。 这些异步方法封装在`Task`对象，如下面的代码示例中所示：
 
@@ -176,7 +177,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 Web 服务将引发`FaultException`未能创建`TodoItem`，这由应用程序处理。
 
-### <a name="updating-data"></a>更新数据
+### <a name="update-data"></a>更新数据
 
 `TodoServiceClient.BeginEditTodoItem`并`TodoServiceClient.EndEditTodoItem`方法用于调用`EditTodoItem`web 服务所提供的操作。 这些异步方法封装在`Task`对象，如下面的代码示例中所示：
 
@@ -199,7 +200,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 
 Web 服务将引发`FaultException`如果无法找到或更新`TodoItem`，这由应用程序处理。
 
-### <a name="deleting-data"></a>删除数据
+### <a name="delete-data"></a>删除数据
 
 `TodoServiceClient.BeginDeleteTodoItem`并`TodoServiceClient.EndDeleteTodoItem`方法用于调用`DeleteTodoItem`web 服务所提供的操作。 这些异步方法封装在`Task`对象，如下面的代码示例中所示：
 
@@ -220,12 +221,8 @@ public async Task DeleteTodoItemAsync (string id)
 
 Web 服务将引发`FaultException`如果无法找到或删除`TodoItem`，这由应用程序处理。
 
-## <a name="summary"></a>总结
-
-本文演示了如何使用 Xamarin.Forms 应用程序从 WCF SOAP 服务。 一般情况下，Xamarin 平台支持的 WCF 附带了 Silverlight 运行时的相同客户端的子集。 这包括最常见编码和协议的 WCF 的实现-文本编码的 SOAP 消息通过 HTTP 传输协议使用`BasicHttpBinding`类。 此外，WCF 支持需要使用工具仅在 Windows 环境以生成代理中可用。
-
-
 ## <a name="related-links"></a>相关链接
 
 - [TodoWCF （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
-- [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult(v=vs.110).aspx)
+- [如何：创建 Windows Communication Foundation 客户端](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

@@ -1,5 +1,5 @@
 ---
-title: 选项卡式的布局
+title: 选项卡式布局
 description: 在 Android 中的选项卡式布局的概述
 ms.prod: xamarin
 ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
@@ -7,14 +7,9 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 5d88ffb44d12ee142314c74ca8e749164cbfe3b9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105956"
 ---
-# <a name="tabbed-layouts"></a>选项卡式的布局
+
+# <a name="tabbed-layouts"></a>选项卡式布局
 
 
 ## <a name="overview"></a>概述
@@ -34,6 +29,6 @@ ms.locfileid: "50105956"
 
 ## <a name="related-links"></a>相关链接
 
-- [材料设计-选项卡](https://material.io/guidelines/components/tabs.html)- [ActionBar](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [材料设计-选项卡](https://material.io/guidelines/components/tabs.html)- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
 - [Android 支持库 v7 AppCompat NuGet 包](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
-- [v7 appcompat 库](http://developer.android.com/tools/support-library/features.html#v7-appcompat)
+- [v7 appcompat 库](https://developer.android.com/tools/support-library/features.html#v7-appcompat)

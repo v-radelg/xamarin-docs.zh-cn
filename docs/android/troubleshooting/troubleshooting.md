@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: ccf5d97ff553fd304c4a3af158085d490bb665b7
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: b2f11bd09e1b1b3fd7af29a026229494a081ad11
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267594"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668551"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
 
@@ -77,7 +77,7 @@ Visual Studio for Mac 始终会写入设备部署日志。 找到它们会稍有
 ## <a name="android-debug-log-output"></a>Android 调试日志输出
 
 Android 将多个消息将写入[Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)。
-Xamarin.Android 使用 Android 系统属性来控制生成的其他消息到 Android 调试日志。 可以通过设置 android 系统属性*setprop*命令内[Android Debug Bridge (adb)](http://developer.android.com/guide/developing/tools/adb.html):
+Xamarin.Android 使用 Android 系统属性来控制生成的其他消息到 Android 调试日志。 可以通过设置 android 系统属性*setprop*命令内[Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html):
 
 ```shell
 adb shell setprop PROPERTY_NAME PROPERTY_VALUE
@@ -95,9 +95,9 @@ Xamarin.Android 支持以下系统属性：
 
 -   *debug.mono.env*:竖线分隔 ('*|*) 的环境变量来导出应用程序启动期间列表*之前*mono 已初始化。 这允许将环境变量设置该控件 mono 日志记录。
 
-    - *请注意*:由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
+    - *说明*：由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
 
-    - *请注意*:Android 系统属性值不能超过 92 个字符的长度。
+    - *说明*：Android 系统属性值不能超过 92 个字符的长度。
 
     - 示例:
 

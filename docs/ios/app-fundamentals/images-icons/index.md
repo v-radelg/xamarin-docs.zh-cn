@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 09afcac8dcecd5a1d05961c2981c0940fff00a01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102355"
 ---
+
 # <a name="images-and-icons-in-xamarinios"></a>图像和图标在 Xamarin.iOS
 
 _本部分包括各种的文章将介绍如何在 Xamarin.iOS 应用中，例如将它们用作图标的图像处理、 启动屏幕或包括这些控件和自定义文档类型提供的图标。_
@@ -66,4 +61,4 @@ Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增�
 
 - [使用图像 （示例）](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
-- [自定义图标和图像创建指南](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [自定义图标和图像创建指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

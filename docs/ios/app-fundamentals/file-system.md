@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 38422682849de60a3f43e513ef48011d32b030ef
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579864"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672620"
 ---
 # <a name="file-system-access-in-xamarinios"></a>在 Xamarin.iOS 中的文件系统访问
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/FileSystemSampleCode/)
 
-可以使用 Xamarin.iOS 和`System.IO`中的类 *.NET 基类库 (BCL)* 访问 iOS 文件系统。 `File`类，可以创建、 删除和读取文件，和`Directory`类可以创建、 删除或枚举目录的内容。 此外可以使用`Stream`子类，它可以提供更高的控制文件操作 （如文件内压缩或位置搜索）。
+可以使用 Xamarin.iOS 和`System.IO`中的类 *.NET 基类库 (BCL)* 访问 iOS 文件系统。 `File` 类可以创建、删除和读取文件，`Directory` 类可以创建、删除或枚举目录的内容。 此外可以使用`Stream`子类，它可以提供更高的控制文件操作 （如文件内压缩或位置搜索）。
 
 iOS 限制某些应用程序可以使用文件系统来保持应用程序的数据的安全性和保护用户免受恶意应用执行的操作。 这些限制是一部分*应用程序沙盒*– 一组规则，用于限制对文件、 首选项、 网络资源、 硬件、 等的应用程序的访问。应用程序仅限于读取和写入 （已安装位置）; 其主目录中的文件它不能访问另一个应用程序的文件。
 
@@ -205,7 +205,7 @@ iOS 使用正斜杠 / 作为路径分隔符 (这是不同于 Windows，使用反
 |库 /|库目录是存储不直接由用户，如数据库或其他应用程序生成的文件创建的文件的好时机。 通过 iTunes 向用户永远不会公开此目录的内容。<br /><br />可以在 Library; 中创建您自己的子目录但是，已有的某些系统创建目录下面，您应该注意，包括首选项和缓存。<br /><br />通过 iTunes 备份 （除了缓存子目录中） 此目录的内容。 将备份在库中创建的自定义目录。|
 |库/首选项 /|特定于应用程序首选项文件存储在此目录中。 不要直接创建这些文件。 请改用`NSUserDefaults`类。<br /><br />通过 iTunes 备份此目录的内容。|
 |缓存库 / /|缓存目录是存储数据文件，可帮助你的应用程序的好时机运行，但是，可以轻松地重新创建。 应用程序应创建并根据需要删除这些文件并将无法重新创建这些文件，如有必要。 iOS 5 还可能会删除这些文件 （在较低的存储情况下），但它不会执行操作，应用程序运行时。<br /><br />此目录的内容不会备份通过 iTunes，这意味着它们将不会显示，如果用户将设备还原，并且它们可能不会安装您的应用程序的更新的版本后显示。<br /><br />例如，如果你的应用程序无法连接到网络，可能使用的缓存目录来存储数据或文件，以提供良好的脱机体验。 应用程序可以保存并等待网络响应时快速检索此数据，但它不需要进行备份，可轻松地恢复或还原或版本更新后重新创建。|
-|tmp /|应用程序可以存储在此目录中在短时间内，才需要的临时文件。 为了节省空间，应在不再需要时删除文件。 应用程序未运行时，操作系统也可以从该目录删除文件。<br /><br />此目录的内容不备份通过 iTunes。<br /><br />例如，可能会使用 tmp 目录来存储临时文件的下载显示给用户 （如 Twitter 头像或电子邮件附件），但他们已被查看 （并且如有必要在将来再次下载） 后，无法删除的.|
+|tmp/|应用程序可以存储在此目录中在短时间内，才需要的临时文件。 为了节省空间，应在不再需要时删除文件。 应用程序未运行时，操作系统也可以从该目录删除文件。<br /><br />此目录的内容不备份通过 iTunes。<br /><br />例如，可能会使用 tmp 目录来存储临时文件的下载显示给用户 （如 Twitter 头像或电子邮件附件），但他们已被查看 （并且如有必要在将来再次下载） 后，无法删除的.|
 
 此屏幕截图显示在查找器窗口中的目录结构：
 
@@ -357,5 +357,5 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ## <a name="related-links"></a>相关链接
 
 - [文件系统的示例代码](https://developer.xamarin.com/samples/FileSystemSampleCode/)
-- [文件系统编程指南](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
-- [注册文件类型应用支持](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)
+- [文件系统编程指南](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
+- [注册文件类型应用支持](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

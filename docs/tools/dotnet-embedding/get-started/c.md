@@ -6,12 +6,12 @@ ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 author: lobrien
 ms.author: laobri
 ms.date: 04/19/2018
-ms.openlocfilehash: a16821e83dc169d7800162e1eaf45c4be661185a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 66475b7629f01b4229539e1edc323491a7861dfe
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106801"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668395"
 ---
 # <a name="getting-started-with-c"></a>C 入门
 
@@ -23,7 +23,7 @@ ms.locfileid: "50106801"
 
 * macOS 10.12 (Sierra) 或更高版本
 * Xcode 8.3.2 或更高版本
-* [Mono](http://www.mono-project.com/download/)
+* [Mono](https://www.mono-project.com/download/)
 
 ### <a name="windows"></a>Windows
 

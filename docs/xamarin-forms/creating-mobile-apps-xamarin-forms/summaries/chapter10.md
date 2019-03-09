@@ -1,18 +1,18 @@
 ---
 title: 第 10 章的摘要。 XAML 标记扩展
-description: 使用 Xamarin.Forms 创建移动应用： 第 10 章的摘要。 XAML 标记扩展
+description: 使用 Xamarin.Forms 创建移动应用：第 10 章的摘要。 XAML 标记扩展
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: f326d0434fd2565c30890dea0838168c9d8b4287
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 076e9f5155492e5a69d906c587b24495fe39d3f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054736"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672633"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章的摘要。 XAML 标记扩展
 
@@ -40,7 +40,7 @@ XAML 标记扩展是一个类，实现[ `IMarkupExtension` ](xref:Xamarin.Forms.
 
 - `StaticResource` 支持的 [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
 - `DynamicResource` 支持的 [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
-- `Binding` 受[ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension)&mdash;中所述[第 16 章。数据绑定](#chapter16)
+- `Binding` 受[ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension)&mdash;中所述[第 16 章。数据绑定](chapter16.md)
 - `TemplateBinding` 受[ `TemplateBindingExtension` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension)&mdash;未涵盖一书中
 
 其他的 XAML 标记扩展包含在门户中的 Xamarin.Forms [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout):

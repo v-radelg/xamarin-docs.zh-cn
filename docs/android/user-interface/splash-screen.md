@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: f21eca052ef13fd0e3d6efa261e1ff70b3b14372
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1a9856a5b6257c82b2072e9eb44be481373abfcf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120705"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671853"
 ---
 # <a name="splash-screen"></a>初始屏幕
 
@@ -52,7 +52,7 @@ Android 应用程序需要一些时间才能启动，尤其是在第一个期间
 
 初始屏幕将显示 XML 可绘制背景的初始屏幕活动。 需要使用图像的位图化图像 （如 PNG 或 JPG） 来显示它。
 
-在本指南中，我们将使用[层列表](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)中心应用程序中的初始屏幕图像。 以下代码片段示范了`drawable`资源使用`layer-list`:
+在本指南中，我们将使用[层列表](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)中心应用程序中的初始屏幕图像。 以下代码片段示范了`drawable`资源使用`layer-list`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,5 +229,5 @@ public class MainActivity : AppCompatActivity
 ## <a name="related-links"></a>相关链接
 
 - [初始屏幕 （示例）](https://developer.xamarin.com/samples/monodroid/SplashScreen)
-- [层列表 Drawable](http://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
+- [layer-list Drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
 - [ 材料设计模式-启动屏幕](https://material.io/design/communication/launch-screen.html#usage)

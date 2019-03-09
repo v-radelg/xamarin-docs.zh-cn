@@ -7,12 +7,12 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: de27e151a475856f0789285dddc1526613e0b828
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 604067ac853bd53707e059b7db4abf2cfade21ce
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053139"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668954"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp 位图进行动画处理
 
@@ -508,7 +508,7 @@ SkisSharp 提取的帧的动画 GIF 文件使用似乎不记录任何位置，�
 
 `SKCodec` 定义一个名为属性[ `Info` ](xref:SkiaSharp.SKCodec.Info)类型的[ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo)，但该`SKImageInfo`值指示 (至少对于此映像) 颜色类型是`SKColorType.Index8`，这意味着，每个像素的颜色类型的索引。 若要避免麻烦，颜色表，则程序将使用[ `Width` ](xref:SkiaSharp.SKImageInfo.Width)并[ `Height` ](xref:SkiaSharp.SKImageInfo.Height)信息从该结构来构造它是拥有全彩色`ImageInfo`值。 每个`SKBitmap`从的创建。
 
-`GetPixels`方法`SKBitmap`返回`IntPtr`引用该位图的像素位。 尚未设置这些像素位。 是否`IntPtr`传递到某个[ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))方法的`SKCodec`。 该方法将框架从 GIF 文件复制到引用的内存空间`IntPtr`。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions.%23ctor(System.Int32,System.Boolean))构造函数指示的帧号码：
+`GetPixels`方法`SKBitmap`返回`IntPtr`引用该位图的像素位。 尚未设置这些像素位。 是否`IntPtr`传递到某个[ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))方法的`SKCodec`。 该方法将框架从 GIF 文件复制到引用的内存空间`IntPtr`。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions)构造函数指示的帧号码：
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage

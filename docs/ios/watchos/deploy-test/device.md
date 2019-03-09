@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f4a21e25f418cc81d5f210098ded648b3d70ae14
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9c15e9205b96a02caa182e47b71c6d36c8bff1aa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116727"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671047"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch 设备上测试
 
@@ -93,7 +93,7 @@ ms.locfileid: "50116727"
 
 如果在部署使用过程中出现错误**视图 > 面板 > 设备日志**以查看有关错误的详细信息。 下面列出了一些错误及其原因：
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>错误 MT3001： 可能不 AOT 的程序集
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>错误 MT3001:可以不 AOT 的程序集
 
 构建在调试模式下，若要部署到 Apple Watch 设备可能会发生该错误。
 
@@ -152,7 +152,7 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 waiting for debugger to connect
 ```
 
-检查是否任何项目中包含了 Nuget 具有依赖关系**Microsoft.Bcl.Build**。 这会自动添加与一些 Microsoft 发布的库，包括热门[Microsoft Http 客户端库](http://www.nuget.org/packages/Microsoft.Net.Http/)。
+检查是否任何项目中包含了 Nuget 具有依赖关系**Microsoft.Bcl.Build**。 这会自动添加与一些 Microsoft 发布的库，包括热门[Microsoft Http 客户端库](https://www.nuget.org/packages/Microsoft.Net.Http/)。
 
 **Microsoft.Bcl.Build.targets**添加到的文件 **.csproj**可能会影响在部署过程中的 iOS 扩展打包。 你可以跟踪[bug](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)。
 可能的解决方法是编辑.csproj 文件，并手动将其移**Microsoft.Bcl.Build.targets**为最后一个元素。

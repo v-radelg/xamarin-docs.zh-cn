@@ -1,5 +1,5 @@
 ---
-title: MonoTouch.Dialog Json 标记
+title: MonoTouch.Dialog Json Markup
 description: 本文档介绍可用于生成 Xamarin.iOS 用户界面使用 MonoTouch.Dialog JSON 语法。
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 775f378be383674e2bf90e2e8a72d82033ef0fbf
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 8edabfc6fa3988af0dd38dbfd9daeb1c4003c33e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675225"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670761"
 ---
-# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 标记
+# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
 
 此页介绍了接受的 MonoTouch.Dialog Json 标记[JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
 
@@ -545,6 +545,6 @@ class Foo {
 {
         "type": "html",
         "caption": "Miguel's blog",
-        "url": "http://tirania.org/blog" 
+        "url": "https://tirania.org/blog" 
 }
 ```

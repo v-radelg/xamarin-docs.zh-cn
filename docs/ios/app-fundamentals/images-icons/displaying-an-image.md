@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 325f4e99e70f88ccf642253720f4229142a169ec
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 69952b0bac884fe8b14edcbb87aa8fad47594880
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526555"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670697"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin.iOS 中显示图像
 
@@ -42,7 +42,7 @@ _本文介绍如何在 Xamarin.iOS 应用程序，并使用 C# 代码或将其�
 
     ![](displaying-an-image-images/imageset03.png "设置图像编辑器")
 4. 从此处，将在映像中的每个不同的设备和所需的解决方法。 
-5. 双击新的图像集**名称**中**Assets 列表**若要对其进行编辑： ![](displaying-an-image-images/imageset04.png "编辑新图像集的名称")
+5. 双击新的图像集**名称**中**Assets 列表**对其进行编辑：![](displaying-an-image-images/imageset04.png "编辑新图像集的名称")
 
 使用时**映像设置**在 iOS 设计器中，只需选择集的名称从下拉列表在属性编辑器中：
 
@@ -213,7 +213,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage");
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 ```
 
-有关图标和图像的详细信息，请参阅 Apple 文档上[自定义图标和图像创建指南](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)。
+有关图标和图像的详细信息，请参阅 Apple 文档上[自定义图标和图像创建指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)。
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>在情节提要中显示图像
 

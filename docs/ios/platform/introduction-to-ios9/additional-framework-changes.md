@@ -6,12 +6,13 @@ ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: da7064997b8a10d4a4604861a405e13dd23a08cf
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 03/19/2017
+ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233908"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672568"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 框架更改
 
@@ -195,9 +196,9 @@ Apple 已包含很多增强功能的多个元素[UIKit](xref:UIKit)适用于 iOS
 
 ### <a name="3d-touch-events"></a>三维触控事件
 
-新 iOS 9 iPhone 6s 和 iPhone 6s Plus，3D Touch 压力敏感手势添加到你的 iOS 应用。 因此，如果 iOS 9 （或更高版本） 上运行你的应用和 iOS 设备是否能够支持 3D Touch，压力中的更改将导致`TouchesMoved`事件被引发。 
+新 iOS 9 iPhone 6s 和 iPhone 6s Plus，3D Touch 压力敏感手势添加到你的 iOS 应用。 因此，如果 iOS 9 （或更高版本） 上运行你的应用和 iOS 设备是否能够支持 3D Touch，压力中的更改将导致`TouchesMoved`事件被引发。
 
-由于此更改的行为，应为准备 iOS 应用`TouchesMoved`事件要调用更多时候，即使 X / Y 坐标未发生更改。 
+由于此更改的行为，应为准备 iOS 应用`TouchesMoved`事件要调用更多时候，即使 X / Y 坐标未发生更改。
 
 有关详细信息，请参阅我们[简介 3D Touch](~/ios/platform/3d-touch.md)指南。
 

@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 347793934b01d26d22455189c12b0f1d5213a40b
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: c5a4247b2e10706014c9f92a487803e4a718c1a6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52170970"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671970"
 ---
 # <a name="garbage-collection"></a>垃圾回收
 
-Xamarin.Android 使用 Mono[简单分代垃圾回收器](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 这是使用这两代标记和清除垃圾回收器和一个*大型对象空间*，两种类型的集合： 
+Xamarin.Android 使用 Mono[简单分代垃圾回收器](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 这是使用这两代标记和清除垃圾回收器和一个*大型对象空间*，两种类型的集合： 
 
 -   次要集合 （收集 Gen0 堆） 
 -   （收集 Gen1 和大型对象空间堆） 的主要集合。 
@@ -37,16 +37,16 @@ Xamarin.Android 使用 Mono[简单分代垃圾回收器](http://www.mono-project
 -   **托管对象**： 执行此操作的类型*不*继承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) ，例如[System.String](xref:System.String)。 
     这些是正常情况下收集的 GC。 
 
--   **Java 对象**： 在 Android 运行时的 VM，但不会公开到 Mono VM Java 类型。 这些是令人乏味，并且不会进一步讨论。 这些是正常情况下收集的 Android 运行时的 VM。 
+-   **Java 对象**:这在 Android 运行时的 VM，但不是会公开到 Mono VM 的 Java 类型。 这些是令人乏味，并且不会进一步讨论。 这些是正常情况下收集的 Android 运行时的 VM。 
 
 -   **对等对象**： 类型实现[IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) ，例如所有[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)并[Java.Lang.Throwable](https://developer.xamarin.com/api/type/Java.Lang.Throwable/)子类。 这些类型的实例具有两个"halfs"*托管对等方*和一个*纯对等方*。 托管的对等方是实例的C#类。 本机的对等是 VM，在 Android 运行时中的 Java 类的实例和C# [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/)属性包含对本机的对等的 JNI 全局引用。 
 
 
 有两种类型的本机的对等方：
 
--   **框架对等方**： 知道 nothing Xamarin.Android，例如"Normal"Java 类型[android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)。
+-   **框架对等方**:知道 nothing Xamarin.Android，例如"normal"Java 类型[android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)。
 
--   **用户对等方**: [Android 可调用包装器](~/android/platform/java-integration/working-with-jni.md)生成在生成时针对每个应用程序中存在的 Java.Lang.Object 子类。
+-   **用户对等方**:[Android 可调用包装器](~/android/platform/java-integration/working-with-jni.md)生成在生成时针对每个应用程序中存在的 Java.Lang.Object 子类。
 
 
 因为有两个 Vm Xamarin.Android 进程内的，有两种类型的垃圾回收：
@@ -69,7 +69,7 @@ Mono 集合是有趣的发生位置。 通常情况下收集托管的对象。 �
 
 ## <a name="object-cycles"></a>对象周期
 
-在 Android 运行时和 Mono VM 内以逻辑方式存在对等对象。 例如， [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)托管的对等实例将具有相应[android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework 对等 Java 实例。 继承的所有对象[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)需要具有两个 Vm 中的表示形式。 
+在 Android 运行时和 Mono VM 内以逻辑方式存在对等对象。 例如， [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)托管的对等实例将具有相应[android.app.Activity](https://developer.android.com/reference/android/app/Activity.html) framework 对等 Java 实例。 继承的所有对象[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)需要具有两个 Vm 中的表示形式。 
 
 具有两个 Vm 中表示形式的所有对象都具有与仅在单个 VM 中存在的对象相比进行了扩展的生存期 (如[ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 调用[GC。收集](xref:System.GC.Collect)一定不会收集这些对象，因为 Xamarin.Android GC 需要确保收集它之前不引用由任一 VM 的对象。 
 
@@ -78,7 +78,7 @@ Mono 集合是有趣的发生位置。 通常情况下收集托管的对象。 �
 
 ## <a name="automatic-collections"></a>自动集合
 
-开头[版本 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)，Xamarin.Android 会自动执行完整 GC gref 阈值时。 此阈值为 90%的已知的最大 grefs 平台： 1800 grefs 在仿真程序 (2000 max) 和 46800 grefs 硬件 (最大 52000) 上的。 *注意：* Xamarin.Android 仅计数通过创建 grefs [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)，并且将无法知道有关此过程中创建的任何其他 grefs。 这是启发式方法*仅*。 
+开头[版本 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)，Xamarin.Android 会自动执行完整 GC gref 阈值时。 此阈值为 90%的已知的最大 grefs 平台：在仿真程序 (2000 最大) 上的 1800 grefs 和 46800 grefs 硬件 (最大 52000) 上。 *注意：* Xamarin.Android 仅计数通过创建 grefs [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)，并且将无法知道有关此过程中创建的任何其他 grefs。 这是启发式方法*仅*。 
 
 执行自动收集时，类似于以下的消息将被打印到调试日志：
 
@@ -102,10 +102,10 @@ GC Bridge 的工作原理在 Mono 垃圾回收和图出哪些对等对象需要�
 
 此复杂的过程是一种使类的子类`Java.Lang.Object`自由地引用任何对象; 它会删除任何限制的 Java 对象可以绑定到C#。 由于这种复杂性，桥过程可能会耗费大量资源，它可能会导致明显的暂停应用程序中。 如果应用程序很重要的暂停，值得调查以下三个 GC 桥实现之一： 
 
--   **Tarjan** -GC 桥的全新设计基于[Robert Tarjan 算法和向后引用传播](http://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)。
+-   **Tarjan** -GC 桥的全新设计基于[Robert Tarjan 算法和向后引用传播](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)。
     它有下我们模拟工作负荷的最佳性能，但它还具有更大的实验性代码共享。 
 
--   **新**-重大革新的原始代码修复的二次行为的两个实例，但保留核心算法 (基于[Kosaraju 的算法](http://en.wikipedia.org/wiki/Kosaraju's_algorithm)强查找连接组件)。 
+-   **新**-重大革新的原始代码修复的二次行为的两个实例，但保留核心算法 (基于[Kosaraju 的算法](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)强查找连接组件)。 
 
 -   **旧**的原始实现 （被视为最稳定的三个）。 这是应用程序应使用如果桥`GC_BRIDGE`暂停是可接受。 
 
@@ -166,7 +166,7 @@ using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-以上是安全因为对等方的[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) Framework 对等方，将引用返回*不*用户对等。 `Dispose()`调用的末尾`using`块将中断之间的托管关系[Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)和 framework [Drawable](http://developer.android.com/reference/android/graphics/drawable/Drawable.html)实例，从而使 Java 实例收集只要 Android 运行时需要。 这一点*不*为安全起见，如果用户对等引用对等实例; 此处我们使用"external"信息*知道*的`Drawable`用户对等方，不能引用，因此`Dispose()`调用是安全的。 
+以上是安全因为对等方的[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) Framework 对等方，将引用返回*不*用户对等。 `Dispose()`调用的末尾`using`块将中断之间的托管关系[Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)和 framework [Drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)实例，从而使 Java 实例收集只要 Android 运行时需要。 这一点*不*为安全起见，如果用户对等引用对等实例; 此处我们使用"external"信息*知道*的`Drawable`用户对等方，不能引用，因此`Dispose()`调用是安全的。 
 
 
 #### <a name="disposing-other-types"></a>释放其他类型 
@@ -351,16 +351,16 @@ class BetterActivity : Activity {
 
 `MONO_GC_PARAMS`环境变量是以逗号分隔列表的以下参数： 
 
--   `nursery-size` = *大小*： 设置小堆的大小。 大小以字节为单位指定，并且必须是 2 的幂。 后缀`k`，`m`和`g`可用于指定千、 庞大和千兆字节为单位，分别。 小堆是第一代 （两个）。 更大的小堆通常会提高程序的速度，但显然会使用更多的内存。 默认值小堆大小为 512 kb。 
+-   `nursery-size` = *大小*:设置在小的大小。 大小以字节为单位指定，并且必须是 2 的幂。 后缀`k`，`m`和`g`可用于指定千、 庞大和千兆字节为单位，分别。 小堆是第一代 （两个）。 更大的小堆通常会提高程序的速度，但显然会使用更多的内存。 默认值小堆大小为 512 kb。 
 
--   `soft-heap-limit` = *大小*： 目标最大托管应用程序的内存占用情况。 当内存使用情况低于指定的值时，GC 进行了优化的执行时间 （更少的集合）。 
+-   `soft-heap-limit` = *大小*:目标最大托管应用程序的内存占用情况。 当内存使用情况低于指定的值时，GC 进行了优化的执行时间 （更少的集合）。 
     超出此限制，GC 进行了优化的内存使用 （更多集合）。 
 
--   `evacuation-threshold` = *阈值*： 疏散阈值设置以百分比表示。 值必须是 0 到 100 范围内的整数。 默认值为 66。 如果集合的扫描阶段找到的特定堆块类型的占用小于此百分比，它将执行下一步的主要集合中的块类型，从而还原到接近 100%的空间使用量的复制集合。 值为 0 将关闭疏散。 
+-   `evacuation-threshold` = *阈值*:以百分比为单位设置疏散阈值。 值必须是 0 到 100 范围内的整数。 默认值为 66。 如果集合的扫描阶段找到的特定堆块类型的占用小于此百分比，它将执行下一步的主要集合中的块类型，从而还原到接近 100%的空间使用量的复制集合。 值为 0 将关闭疏散。 
 
--   `bridge-implementation` = *桥接实现*： 这会设置 GC 桥选项，可帮助解决 GC 性能问题。 有三个可能值：*旧*，*新*， *tarjan*。
+-   `bridge-implementation` = *桥接实现*:这会设置 GC 桥选项，可帮助解决 GC 性能问题。 有三个可能值：*旧*，*新*， *tarjan*。
 
--   `bridge-require-precise-merge`： 网桥包含一种优化这可能，在少数情况下，会使对象可 Tarjan 后首次将成为垃圾收集一个 GC。 包括此选项会禁用该优化，从而使 Gc 更可预测，但可能会较慢。
+-   `bridge-require-precise-merge`：网桥包含一种优化这可能，在少数情况下，会使对象可 Tarjan 后首次将成为垃圾收集一个 GC。 包括此选项会禁用该优化，从而使 Gc 更可预测，但可能会较慢。
 
 例如，若要配置 GC 堆大小限制为 128 MB，添加一个新的文件到你的项目**生成操作**的`AndroidEnvironment`的内容： 
 

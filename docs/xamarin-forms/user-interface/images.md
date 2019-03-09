@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1a08803930eaaa3c2c5c5f8b8aa9561a9a7b8d88
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557238"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670982"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的图像
 
@@ -44,7 +44,7 @@ _可以使用 Xamarin.Forms 跨平台共享映像、 可以专门为每个平台
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪图像，以便它同时还能保留方面填充显示区域 (即。 无扭曲)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -上下黑边映像 （如果需要），以便整个图像适合的显示区域的空白区域添加到顶部/底部或边，具体取决于图像是高或宽。
 
-可以从加载图像[本地文件](#Local_Images)，则[嵌入的资源](#embedded-images)，或[下载](#Downloading_Images)。 此外，通过显示字体图标[ `Image` ](xref:Xamarin.Forms.Image)通过指定中的字体图标数据的视图`FontImageSource`对象。 有关详细信息，请参阅[显示的图标字体](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字体](~/xamarin-forms/user-interface/text/fonts.md)指南。
+可以从加载图像[本地文件](#local-images)，则[嵌入的资源](#embedded-images)，或[下载](#downloading-images)。 此外，通过显示字体图标[ `Image` ](xref:Xamarin.Forms.Image)通过指定中的字体图标数据的视图`FontImageSource`对象。 有关详细信息，请参阅[显示的图标字体](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字体](~/xamarin-forms/user-interface/text/fonts.md)指南。
 
 ## <a name="local-images"></a>本地映像
 
@@ -92,7 +92,7 @@ iOS、 Android 和 UWP 包括针对不同的图像分辨率，其中操作系统
 
 在 iOS 9 之前, retina 版本的映像无法放置在**资源**文件夹的两个和第三次使用的分辨率 **@2x** 或 **@3x** 上的文件扩展名 （例如之前, 的文件名的后缀。 **myimage@2x.png**). 但是，apple 已弃用的 iOS 应用程序中的映像的使用此方法。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-Android 备用分辨率图像应置于[特殊命名目录](http://developer.android.com/guide/practices/screens_support.html)在 Android 项目中，如以下屏幕截图中所示：
+Android 备用分辨率图像应置于[特殊命名目录](https://developer.android.com/guide/practices/screens_support.html)在 Android 项目中，如以下屏幕截图中所示：
 
 [![Android 多分辨率图像位置](images-images/xs-highdpisolution-sml.png "Android 多分辨率图像位置")](images-images/xs-highdpisolution.png#lightbox "Android 多分辨率图像位置")
 
@@ -296,7 +296,7 @@ webImage.Source = new UriImageSource
 
 ## <a name="icons"></a>图标
 
-请参阅[iOS 处理图像](~/ios/app-fundamentals/images-icons/index.md)， [Google 插图](http://developer.android.com/design/style/iconography.html)，并[准则磁贴和图标资产](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)有关创建这些应用程序资源的详细信息。
+请参阅[iOS 处理图像](~/ios/app-fundamentals/images-icons/index.md)， [Google 插图](https://developer.android.com/design/style/iconography.html)，并[准则磁贴和图标资产](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)有关创建这些应用程序资源的详细信息。
 
 此外，通过显示字体图标[ `Image` ](xref:Xamarin.Forms.Image)通过指定中的字体图标数据的视图`FontImageSource`对象。 有关详细信息，请参阅[显示的图标字体](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字体](~/xamarin-forms/user-interface/text/fonts.md)指南。
 
@@ -316,5 +316,5 @@ Xamarin.Forms 提供多种不同方式在跨平台应用程序，允许跨平台
 
 - [WorkingWithImages （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
 - [iOS 处理图像](~/ios/app-fundamentals/images-icons/index.md)
-- [Android 插图](http://developer.android.com/design/style/iconography.html)
+- [Android 插图](https://developer.android.com/design/style/iconography.html)
 - [磁贴和图标资产的指导原则](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

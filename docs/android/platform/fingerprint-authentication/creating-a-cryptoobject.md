@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1658934bedce11a42701eb023a42fc9e617b654d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1305a8a1f39d34b5e91e478a769750911afb2b3e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113763"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669625"
 ---
 # <a name="creating-a-cryptoobject"></a>创建 CryptoObject
 
@@ -110,13 +110,13 @@ public class CryptoObjectHelper
 * 用户已禁用屏幕锁定。
 * 屏幕锁定 （screenlock 或使用的 PIN/模式的类型），用户已更改。
 
-在此情况下，`Cipher.Init`将引发[ `KeyPermanentlyInvalidatedException` ](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上面的示例代码将捕获该异常、 删除密钥，，然后创建一个新。
+在此情况下，`Cipher.Init`将引发[ `KeyPermanentlyInvalidatedException` ](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上面的示例代码将捕获该异常、 删除密钥，，然后创建一个新。
 
 下一节将讨论如何创建密钥，并将其存储在设备上。
 
 ## <a name="creating-a-secret-key"></a>创建机密密钥
 
-`CryptoObjectHelper`类使用 Android [ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)创建密钥并将其存储在设备上。 `KeyGenerator`类可以创建密钥，但需要一些有关要创建的密钥类型的元数据。 此信息由的实例提供[ `KeyGenParameterSpec` ](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)类。 
+`CryptoObjectHelper`类使用 Android [ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)创建密钥并将其存储在设备上。 `KeyGenerator`类可以创建密钥，但需要一些有关要创建的密钥类型的元数据。 此信息由的实例提供[ `KeyGenParameterSpec` ](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)类。 
 
 一个`KeyGenerator`实例化时使用`GetInstance`工厂方法。 示例代码使用[_高级加密标准_](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (_AES_) 作为加密算法。 AES 会将数据分解为固定大小的块并对每个这些块加密。
 
@@ -159,13 +159,13 @@ protected void FingerPrintAuthenticationExample()
 
 ## <a name="related-links"></a>相关链接
 
-- [密码](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
-- [FingerprintManager.CryptoObject](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
-- [FingerprintManagerCompat.CryptoObject](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
+- [Cipher](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
+- [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
+- [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
 - [KeyGenerator](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)
-- [KeyGenParameterSpec](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [KeyGenParameterSpec.Builder](http://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
-- [KeyPermanentlyInvalidatedException](http://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
-- [KeyProperties](http://developer.android.com/reference/android/security/keystore/KeyProperties.html)
+- [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
+- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
+- [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
-- [RFC 2315-PCKS #7](https://tools.ietf.org/html/rfc2315)
+- [RFC 2315 - PCKS #7](https://tools.ietf.org/html/rfc2315)

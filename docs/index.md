@@ -3,6 +3,8 @@ layout: HubPage
 hide_bc: true
 title: Xamarin 文档
 description: 'Xamarin 允许你使用 .NET 代码和特定于平台的用户界面生成适用于 Android、iOS 和 macOS 的本机应用。 Xamarin.Forms 允许你使用采用 C# 或 XAML 编写的共享 UI 代码生成本机应用。'
+author: conceptdev
+ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
   - clicktale
@@ -735,7 +737,7 @@ Mac</a>
         <h2>联系我们</h2>
         <ul class="links">
            <li>
-                <a href="http://blog.xamarin.com/">博客</a>
+                <a href="https://blog.xamarin.com/">博客</a>
             </li>
             <li>
                 <a href="https://forums.xamarin.com/"> 论坛 </a>

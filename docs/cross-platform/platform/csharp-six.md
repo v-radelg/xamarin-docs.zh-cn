@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 16ee512395b2658b26bc7a489eabecec3656fa93
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d5478a09c461ec8f1bf51efaa7b4dc2f862d69b4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115752"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668929"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 项新增功能概述
 
@@ -46,12 +46,12 @@ _最新版本的C#语言 – 版本 6 – 不断发展的语言具有更少的�
 
 ## <a name="compiler"></a>编译器
 
-Mono C# Mono 4.0 及更高版本，这是包含 6 编译器[可免费下载](http://www.mono-project.com/download/)。
+Mono C# Mono 4.0 及更高版本，这是包含 6 编译器[可免费下载](https://www.mono-project.com/download/)。
 Visual Studio for Mac 会自动更新你的系统上的 Mono 安装。
 
 Windows 用户必须具有[Visual Studio 2015 或 2017年 ^](https://visualstudio.microsoft.com/)安装编译C#6 的代码 （即使您选择 Windows 的 Xamarin Studio 作为您的 IDE）。
 
-^ 或 *[Microsoft 生成工具 2015年](http://www.microsoft.com/download/details.aspx?id=48159)* 命令行编译或生成服务器，例如。
+^ 或 *[Microsoft 生成工具 2015年](https://www.microsoft.com/download/details.aspx?id=48159)* 命令行编译或生成服务器，例如。
 
 ## <a name="using-c-6"></a>使用C#6
 
@@ -311,7 +311,7 @@ public async Task DelayInSeconds(int seconds) => await Task.Delay(seconds * 1000
 public async Task<int> LeisureHours => await Task.FromResult<char> (DateTime.Now.DayOfWeek.ToString().First()) == 'S' ? 16 : 5;
 ```
 
-## <a name="exceptions"></a>异常
+## <a name="exceptions"></a>Exceptions
 
 没有任何有关它的两种方式： 异常处理是难以正确。 中的新增功能C#6 进行异常处理更灵活、 一致。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9ec27402aefd28ded4cf53e7e9fa52eedd2b86b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63164d90419f3a49d9eb52a52d02e05fbee43dbf
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103005"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667615"
 ---
 # <a name="gridview"></a>GridView
 
@@ -22,7 +22,7 @@ ms.locfileid: "50103005"
 
 启动一个名为的新项目**HelloGridView**。
 
-找到你想要使用，一些照片或[下载这些示例图像](http://developer.android.com/shareables/sample_images.zip)。 将图像文件添加到项目的**资源/Drawable**目录。 在中**属性**窗口中，将生成操作设置为**AndroidResource**。
+找到你想要使用，一些照片或[下载这些示例图像](https://developer.android.com/shareables/sample_images.zip)。 将图像文件添加到项目的**资源/Drawable**目录。 在中**属性**窗口中，将生成操作设置为**AndroidResource**。
 
 打开**Resources/Layout/Main.axml**文件并插入以下：
 

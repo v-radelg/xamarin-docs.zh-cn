@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 49e3a0189d0887343f2636d6931a00cc819800c0
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267633"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670126"
 ---
 # <a name="android-pie-features"></a>饼图的 android 功能
 
@@ -34,7 +34,7 @@ Xamarin.Android 9.0 提供对 Android 饼图的支持。 有关 Android 饼图�
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 或更高版本必须与 Visual Studio 一起安装 (作为的一部分自动安装 Xamarin.Android**使用.NET 的移动开发**工作负荷)。
 
--   **Java 开发人员工具包** &ndash; Xamarin Android 9.0 开发需要[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或可以试用 Microsoft 的分发的预览版[OpenJDK](~/android/get-started/installation/openjdk.md))。 作为的一部分自动安装 JDK8**使用.NET 的移动开发**工作负荷。
+-   **Java 开发人员工具包** &ndash; Xamarin Android 9.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或可以试用 Microsoft 的分发的预览版[OpenJDK](~/android/get-started/installation/openjdk.md))。 作为的一部分自动安装 JDK8**使用.NET 的移动开发**工作负荷。
 
 -   **Android SDK** &ndash;必须通过 Android SDK 管理器安装 Android SDK API 28 或更高版本。
 
@@ -270,4 +270,4 @@ Android 饼图还包括一个新[SessionConfiguration](https://developer.android
 
 ## <a name="related-links"></a>相关链接
 
-- [Android 9 饼图](https://developer.android.com/about/versions/pie/)
+- [Android 9 Pie](https://developer.android.com/about/versions/pie/)

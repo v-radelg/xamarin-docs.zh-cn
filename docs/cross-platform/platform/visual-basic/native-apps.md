@@ -6,16 +6,16 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: affebab9bb6b07f204beef24cce2b57444d45e49
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 55c08c1bd0d82f8458e0c07b4202b6275600ff38
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527295"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671099"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>在 Xamarin iOS 和 Android 的 visual Basic.NET
 
-[TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/)示例应用程序演示了如何通过 Xamarin 使用 Visual Basic 代码编译到可移植类库。 下面是生成的应用在 iOS、 Android 和 Windows Phone 上运行的一些屏幕快照：
+[TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)示例应用程序演示了如何通过 Xamarin 使用 Visual Basic 代码编译到可移植类库。 下面是生成的应用在 iOS、 Android 和 Windows Phone 上运行的一些屏幕快照：
 
  [![](native-apps-images/image5.png "iOS、 Android 和 Windows 手机运行使用 Visual Basic 构建的应用")](native-apps-images/image5.png#lightbox)
 
@@ -26,7 +26,7 @@ IOS、 Android 和 Windows Phone 项目中的示例用编写C#。 使用本机�
 本指南介绍如何将 Visual Basic 实现中[TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)适用于 iOS 和 Android 的 Xamarin 示例。
 
 > [!NOTE]
-> 在查看说明[Visual Basic.NET Pcl](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/)然后再继续执行本指南。
+> 在查看说明[可移植 Visual Basic.NET](index.md)然后再继续执行本指南。
 
 ## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
 
@@ -335,4 +335,4 @@ Visual Studio for Mac 的可移植类库的支持意味着它可以引用 PCL �
 ## <a name="related-links"></a>相关链接
 
 - [TaskyPortableVB （示例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
-- [使用.NET Framework (Microsoft) 的跨平台开发](http://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)
+- [使用.NET Framework (Microsoft) 的跨平台开发](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)

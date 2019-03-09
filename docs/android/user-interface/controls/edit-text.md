@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: e708ceb4b0487cb07ae5a55fae5e96f0e41f17f6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d42cec1ee0939bead9ede83a042f5b6cbb5298cd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119496"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670865"
 ---
 # <a name="edit-text"></a>编辑文本
 
@@ -64,7 +64,7 @@ using Android.Views;
 
 [![EditText 中输入文本的示例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*此页的部分是基于创建的工作的修改并* [ *由 Android 的开放源项目共享*](http://code.google.com/policies.html) *中所述的条款，并用* [ *2.5 的 creative Commons Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/) *。本教程基于* [ *Android 窗体内容教程*](http://developer.android.com/resources/tutorials/views/hello-formstuff.html) *。*
+*此页的部分是基于创建的工作的修改并* [ *由 Android 的开放源项目共享*](http://code.google.com/policies.html) *中所述的条款，并用* [ *2.5 的 creative Commons Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/) *。本教程基于* [ *Android 窗体内容教程*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *。*
 
 
 ## <a name="related-links"></a>相关链接

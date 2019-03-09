@@ -6,12 +6,12 @@ ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 6445d595c9d8ca47e187fdcd158cd5a801a96407
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 42034261c374183346c8072eb42014f43a4fe22c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103200"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667602"
 ---
 # <a name="entities-in-cocossharp"></a>CocosSharp 中的实体
 
@@ -37,7 +37,7 @@ _实体模式是组织的游戏代码的强大方法。它提高了可读性，�
 
 游戏的实体是定义需要呈现、 冲突、 物理特性或人工智能逻辑的对象的类。 幸运的是，游戏的代码库中存在的实体通常与在游戏中的概念性对象。 在这种情况，确定需要在游戏中的实体可以更轻松地完成。 
 
-例如，主题空格[投篮机会控制在其启动游戏](http://en.wikipedia.org/wiki/Shoot_%27em_up)可能包括以下实体：
+例如，主题空格[投篮机会控制在其启动游戏](https://en.wikipedia.org/wiki/Shoot_%27em_up)可能包括以下实体：
 
  - `PlayerShip`
  - `EnemyShip`

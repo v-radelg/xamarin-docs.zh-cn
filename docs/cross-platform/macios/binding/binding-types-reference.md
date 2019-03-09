@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 9c5a3cdbc8a8d5a046db90ffa48b12709359da98
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55234025"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669474"
 ---
 # <a name="binding-types-reference-guide"></a>绑定类型参考指南
 
@@ -1851,7 +1851,7 @@ public class LinkWithAttribute : Attribute {
 
 `WeakFrameworks`属性的工作原理是相同`Frameworks`属性，不同之处在于在链接时，`-weak_framework`说明符传递给 gcc 高级版，每个列出的框架。
 
-`WeakFrameworks` 使库和平台框架针对弱链接的应用程序，以便他们可以选择可以使用它们，如果它们是可用但不是会硬依赖于它们这很有用，如果你的库旨在上添加额外的功能更高版本iOS 的版本。 弱链接的详细信息，请参阅 Apple 的文档上[弱链接](http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)。
+`WeakFrameworks` 使库和平台框架针对弱链接的应用程序，以便他们可以选择可以使用它们，如果它们是可用但不是会硬依赖于它们这很有用，如果你的库旨在上添加额外的功能更高版本iOS 的版本。 弱链接的详细信息，请参阅 Apple 的文档上[弱链接](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)。
 
 适合进行弱链接会`Frameworks`喜欢帐户`CoreBluetooth`， `CoreImage`， `GLKit`，`NewsstandKit`和`Twitter`因为它们仅在 iOS 5 中可用。
 

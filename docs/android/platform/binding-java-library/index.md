@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c41aecf5f8c65ad5bfba5361b77d7c7fc047cda4
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171607"
 ---
+
 # <a name="binding-a-java-library"></a>绑定 Java 库
 
 _Android 社区有很多您可能想在您的应用程序; 若要使用的 Java 库本指南介绍如何将 Java 库合并到 Xamarin.Android 应用程序，通过创建绑定库。_
@@ -103,7 +98,7 @@ API 文档应为从 Java8、 Java7 或 Java6 SDK （它们是所有不同的格�
 
 ## <a name="including-a-native-library-in-a-binding"></a>在绑定中包括本机库
 
-可能有必要包括 **.so**库，请在 Xamarin.Android 绑定的绑定 Java 库的一部分。 Xamarin.Android 已包装的 Java 代码执行时，将无法进行 JNI 调用和错误消息_java.lang.UnsatisfiedLinkError： 找不到的本机方法：_ 会在 logcat 出应用程序中显示。
+可能有必要包括 **.so**库，请在 Xamarin.Android 绑定的绑定 Java 库的一部分。 Xamarin.Android 已包装的 Java 代码执行时，将无法进行 JNI 调用和错误消息_java.lang.UnsatisfiedLinkError:找不到的本机方法：_ 会在 logcat 出应用程序中显示。
 
 此解决方法是手动加载 **.so**库通过调用`Java.Lang.JavaSystem.LoadLibrary`。 例如假设 Xamarin.Android 项目已共享库**libpocketsphinx_jni.so**绑定项目的生成操作中包含**EmbeddedNativeLibrary**，以下代码片段（使用共享的库之前执行） 将加载 **.so**库：
 
@@ -145,5 +140,5 @@ Xamarin.Android 绑定生成器会更改某些 Java 的惯用语言和模式，�
 ## <a name="related-links"></a>相关链接
 
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
-- [GAPI 元数据](http://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
+- [GAPI 元数据](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)
 - [使用本机库](~/android/platform/native-libraries.md)

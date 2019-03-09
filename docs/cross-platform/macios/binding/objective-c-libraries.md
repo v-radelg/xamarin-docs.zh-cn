@@ -6,18 +6,18 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 33f27d2585f4fb4d65181cbfd9211ea87b837e73
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233882"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671801"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定 OBJECTIVE-C 库
 
 当使用 Xamarin.iOS 或 Xamarin.Mac，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 的库。 在这些情况下，您可以使用 Xamarin 绑定项目来创建C#将绑定到本机 OBJECTIVE-C 的库。 该项目使用相同的工具，我们使用 iOS 和 Mac Api，用于将C#。
 
-本文档介绍如何将绑定 Objective C Api，如果要绑定只是 C Api，则应为此，使用标准.NET 机制[P/Invoke framework](http://www.mono-project.com/docs/advanced/pinvoke/)。
+本文档介绍如何将绑定 Objective C Api，如果要绑定只是 C Api，则应为此，使用标准.NET 机制[P/Invoke framework](https://www.mono-project.com/docs/advanced/pinvoke/)。
 如何以静态方式链接 C 库的详细信息位于[链接本机库](~/ios/platform/native-interop.md)页。
 
 请参阅我们的配套[绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)。
@@ -1197,7 +1197,7 @@ void SomeString (ref NSObject byref);
 
 上述标记为具有"保留"语义值。 可用的语义是：
 
--  分配
+-  Assign
 -  复制
 -  保留
 
