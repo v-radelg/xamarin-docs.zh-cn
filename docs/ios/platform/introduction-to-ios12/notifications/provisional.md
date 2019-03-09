@@ -6,13 +6,13 @@ ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: d4a90ee0b85144269d80815820fe09fa0fcd3c58
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 09/04/2018
+ms.openlocfilehash: 434dd2e2ee7a0064b706872a228070c5114078c4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233148"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667017"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>在 Xamarin.iOS 中临时通知
 

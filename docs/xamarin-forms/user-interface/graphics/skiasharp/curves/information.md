@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: 98975d51c31b8e8c52d184c631194388cd6cfa87
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b5d32f486b45005534adc8929caf6158d1c62a4b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053895"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671398"
 ---
 # <a name="path-information-and-enumeration"></a>路径信息和枚举
 
@@ -24,7 +24,7 @@ _获取有关路径的信息和枚举的内容_
 
 有时它可用于确定所有的直线和曲线构成路径的总长度。 计算此长度不是从算法上简单的任务，因此整个类名为[ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure)专用于它。
 
-还有有时很有用，若要获取所有绘制操作和构成路径的点。 首先，此工具可能看起来不必要： 如果你的程序创建了路径，该程序已经知道的内容。 但是，你已了解路径也可以创建由[路径效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)并通过转换[为路径的文本字符串](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 此外可以获取所有绘制操作和组成这些路径的点。 一种可能性是算法转换应用到所有点，例如，若要使文字环绕半球：
+还有有时很有用，若要获取所有绘制操作和构成路径的点。 首先，此工具可能看起来不必要：如果您的程序创建了路径，该程序已经知道的内容。 但是，你已了解路径也可以创建由[路径效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)并通过转换[为路径的文本字符串](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 此外可以获取所有绘制操作和组成这些路径的点。 一种可能性是算法转换应用到所有点，例如，若要使文字环绕半球：
 
 ![](information-images/pathenumerationsample.png "包装在半球上的文本")
 
@@ -140,7 +140,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 [![](information-images/unicyclehalfpipe-small.png "三重的马车半管道页屏幕截图")](information-images/unicyclehalfpipe-large.png#lightbox "带来三倍的马车半管道页屏幕截图")
 
-`SKPaint`用于描画半管道和脚踏车对象定义为中的字段[ `UnicycleHalfPipePage` ]()类。 此外定义是`SKPath`脚踏车对象：
+`SKPaint`用于描画半管道和脚踏车对象定义中的字段为`UnicycleHalfPipePage`类。 此外定义是`SKPath`脚踏车对象：
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -253,7 +253,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 大多数这些字母包含的直线，但这些直线具有显然已篡改成曲线。 这是如何实现？
 
-关键是原始的直线被拆分为一系列的较小的直线。 然后可以以不同方式形成一条曲线操作这些单独的较小直线。 
+关键是原始的直线被拆分为一系列的较小的直线。 然后可以以不同方式形成一条曲线操作这些单独的较小直线。
 
 若要使用此过程，帮助[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例包含一个静态[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)类`Interpolate`分解的方法到大量较短的行的长度只能有一个单元的直线。 此外，该类包含三种类型的贝塞尔曲线转换为一系列的近似曲线的小直线的几种方法。 (在本文中介绍了参数化公式[**三种类型的贝塞尔曲线**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)。)此过程称为_平展_曲线：
 

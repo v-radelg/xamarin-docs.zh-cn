@@ -6,13 +6,13 @@ ms.assetid: 75742257-081D-44F4-B49E-FB807DF85262
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: 699d19228d2dee92f7a730bba4186a3aa5f21b04
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 09/04/2018
+ms.openlocfilehash: 264b1935aefe6f5ddf4bfcd17c491f6858bd4ffb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233232"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672269"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Xamarin.iOS 中的严重警报
 

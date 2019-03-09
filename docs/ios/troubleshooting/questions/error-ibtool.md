@@ -1,5 +1,5 @@
 ---
-title: IBTool 错误： 无法完成该操作。
+title: IBTool 错误：无法完成该操作。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A804EBC4-2BBF-4A98-A4E8-A455DB2E8A17
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: 9458c1f8efa36199b21127123f0013b494a224b6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c2f727b55b21dc3bd976f0b41c71b794841cfca4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103733"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667888"
 ---
-# <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool 错误： 无法完成该操作。
+# <a name="ibtool-error-the-operation-couldnt-be-completed"></a>IBTool 错误：无法完成该操作。
 
 ## <a name="fixed-in-xcode-611"></a>在 Xcode 6.1.1 中修复
 
@@ -26,7 +26,7 @@ Apple[修复](https://developer.apple.com/library/content/documentation/Xcode/Co
 
 `ibtool` Xcode 6.0 中的命令在 OS X 10.10 Yosemite 上存在一个 bug。 Xamarin.iOS 使用 Xcode 的`ibtool`进行编译的情节提要和`XIB`文件。
 
-有关与 Xcode 相关 bug 的详细信息可以位于以下堆栈溢出文章： [http://stackoverflow.com/questions/25754763/cant-open-storyboard](http://stackoverflow.com/questions/25754763/cant-open-storyboard)
+有关与 Xcode 相关 bug 的详细信息可以位于以下堆栈溢出文章： [https://stackoverflow.com/questions/25754763/cant-open-storyboard](https://stackoverflow.com/questions/25754763/cant-open-storyboard)
 
 ### <a name="error-message"></a>错误消息
 
@@ -34,15 +34,15 @@ Apple[修复](https://developer.apple.com/library/content/documentation/Xcode/Co
 
 ## <a name="workarounds-for-xcode-60"></a>解决方法 （Xcode 6.0)
 
-### <a name="option-1-manage-all-uiimageviewimage-properties-in-code"></a>选项 1： 管理所有`UIImageView.Image`代码中的属性
+### <a name="option-1-manage-all-uiimageviewimage-properties-in-code"></a>选项 1：管理所有`UIImageView.Image`代码中的属性
 
 而不是设置`Image`的属性`UIImageView`情节提要中或`.xib`文件中，您可以设置属性在一个视图的视图控制器中的生命周期重写方法 (例如，在`ViewDidLoad()`)。 另请参阅[处理图像](~/ios/app-fundamentals/images-icons/index.md)有关使用提示`UIImage.FromBundle()`与`UIImage.FromFile()`。
 
-### <a name="option-2-move-all-of-the-image-resources-to-the-top-level-resources-folder"></a>选项 2： 将所有图像资源移到顶级`Resources`文件夹
+### <a name="option-2-move-all-of-the-image-resources-to-the-top-level-resources-folder"></a>选项 2：将所有图像资源移到顶级`Resources`文件夹
 
 之后将映像移动到顶层`Resources`文件夹中，你将需要更新情节提要和`.xib`文件以使用新的映像路径。
 
-### <a name="option-3-set-the-logicalname-for-any-problematic-image-assets-so-they-are-copied-to-the-top-level-of-theapp-bundle"></a>选项 3： 设置`LogicalName`的任何有问题的图像资产，以便它们复制到的最高级别`.app`捆绑包
+### <a name="option-3-set-the-logicalname-for-any-problematic-image-assets-so-they-are-copied-to-the-top-level-of-theapp-bundle"></a>选项 3:设置`LogicalName`的任何有问题的图像资产，以便它们复制到的最高级别`.app`捆绑包
 
 例如，假设原始`.csproj`文件包含以下条目：
 
@@ -56,7 +56,7 @@ Apple[修复](https://developer.apple.com/library/content/documentation/Xcode/Co
 </BundleResource>
 ```
 
-在 Visual Studio for Mac`LogicalName`也可以使用设置`Resource ID`字段下图像**视图 > 面板 > 属性**。 (另请参阅： [ http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545 ](http://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
+在 Visual Studio for Mac`LogicalName`也可以使用设置`Resource ID`字段下图像**视图 > 面板 > 属性**。 (另请参阅： [ https://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545 ](https://stackoverflow.com/questions/16938250/xamarin-studio-folder-structure-issue-in-ios-project/16951545#16951545))
 
 更改之后，你将需要更新情节提要和`.xib`文件以使用新的顶级图像路径。 Visual Studio for Mac 将自动更新为 autocompletions 列表`Image`iOS 设计器中的属性。 在 Visual Studio 中，你将需要手动编辑路径。 IOS 设计器将然后此应用显示为图像缺失，但该项目将生成并运行正确。
 

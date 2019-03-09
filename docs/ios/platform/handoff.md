@@ -6,12 +6,13 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 4b19d060bd8adf1c2b09bb18b7ff608381a35231
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.date: 03/19/2017
+ms.openlocfilehash: 899e40460371933a3e1cb694618c7d33a124e76c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116662"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672698"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中移交
 
@@ -109,24 +110,24 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
 请执行以下操作：
 
-1. 登录到[Apple 开发人员门户](http://developer.apple.com)。
+1. 登录到[Apple 开发人员门户](https://developer.apple.com)。
 2. 单击**证书、 标识符和配置文件**。
 3. 如果尚未这样做，请单击**标识符**并创建您的应用程序的 ID (例如`com.company.appname`)，否则编辑现有的 id。
-4. 絋粄**iCloud**服务具有给定 ID 的复选框： 
+4. 絋粄**iCloud**服务具有给定 ID 的复选框：
 
     [![](handoff-images/provision01.png "启用给定 ID 的 iCloud 服务")](handoff-images/provision01.png#lightbox)
 5. 保存更改。
-4. 单击**预配配置文件** > **开发**并创建为你预配配置文件的新开发应用： 
+4. 单击**预配配置文件** > **开发**并创建为你预配配置文件的新开发应用：
 
     [![](handoff-images/provision02.png "创建新的开发预配配置文件的应用")](handoff-images/provision02.png#lightbox)
 5. 请下载并安装新的预配配置文件或使用 Xcode 下载并安装该配置文件。
-6. 编辑 Xamarin.iOS 项目选项，并确保使用你刚刚创建的预配配置文件： 
+6. 编辑 Xamarin.iOS 项目选项，并确保使用你刚刚创建的预配配置文件：
 
     [![](handoff-images/provision03.png "选择刚创建的预配配置文件")](handoff-images/provision03.png#lightbox)
-7. 接下来，编辑你**Info.plist**文件，并确保将用于创建预配配置文件的应用程序 ID: 
+7. 接下来，编辑你**Info.plist**文件，并确保将用于创建预配配置文件的应用程序 ID:
 
     [![](handoff-images/provision04.png "设置应用程序 ID")](handoff-images/provision04.png#lightbox)
-8. 滚动到**后台模式**部分，并检查以下各项： 
+8. 滚动到**后台模式**部分，并检查以下各项：
 
     [![](handoff-images/provision05.png "启用所需的后台模式")](handoff-images/provision05.png#lightbox)
 9. 将所做的更改保存到的所有文件。
@@ -463,7 +464,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-JSON 文件进行签名 (以使其具有正确`Content-Type`的`application/pkcs7-mime`)，使用**终端**应用程序和一个`openssl`命令使用证书和 iOS 的受信任证书颁发机构颁发的密钥 (请参阅[http://support.apple.com/kb/ht5012 ](http://support.apple.com/kb/ht5012)列表)。 例如：
+JSON 文件进行签名 (以使其具有正确`Content-Type`的`application/pkcs7-mime`)，使用**终端**应用程序和一个`openssl`命令使用证书和 iOS 的受信任证书颁发机构颁发的密钥 (请参阅[https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012)列表)。 例如：
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -606,7 +607,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 ## <a name="example-handoff-app"></a>切换应用示例
 
-作为在 Xamarin.iOS 应用程序中使用切换的示例，我们通过一些[ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)使用本指南的示例应用程序。 应用程序具有四个选项卡，用户可以使用浏览 web，每个都具有给定的活动类型： 天气、 收藏夹、 茶歇和工作。
+作为在 Xamarin.iOS 应用程序中使用切换的示例，我们通过一些[ **MonkeyBrowser** ](https://developer.xamarin.com/samples/monotouch/ios8/MonkeyBrowser/)使用本指南的示例应用程序。 应用程序具有四个选项卡，用户可以使用浏览 web，每个都具有给定的活动类型：天气、 收藏夹、 茶歇和工作。
 
 当用户输入新的 URL 并点击任何选项卡上**转**按钮，一个新`NSUserActivity`为包含的 URL 的用户当前正在浏览该选项卡创建：
 

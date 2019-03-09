@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: aaceada84b151856506ede66907274e2457c23d4
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: fcdd712313becd1335479013f44886086dde7bff
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854793"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668057"
 ---
 # <a name="binding-troubleshooting"></a>绑定疑难解答
 
@@ -23,9 +23,9 @@ Xamarin.Mac 涵盖了许多 Apple Api，而有时您可能需要调用一些不�
 
 如果处理的 Apple API，第一步是让 Xamarin 知道，你已达到 API 的部分，我们尚未针对没有覆盖率。 [提交 bug](#reporting-bugs)注意是缺少 API。 我们使用客户的报告来确定哪些 Api 下一步我们工作的优先级。 此外，如果您具有的业务或企业版许可证，并且缺乏一个绑定阻止您的进度，还请遵循的说明[支持](http://xamarin.com/support)来提交票证。 我们不能保证一个绑定，但在某些情况下我们可以避开您工作。
 
-缺少绑定的 （如果适用） 通知 Xamarin 下, 一步是要考虑自己绑定。 我们有完整指南[这里](~/cross-platform/macios/binding/overview.md)和一些非官方文档[此处](http://brendanzagaeski.appspot.com/xamarin/0002.html)手动包装 OBJECTIVE-C 绑定。 如果你正在调用 C API，您可以使用 C# P/Invoke 机制、 文档[此处](http://www.mono-project.com/docs/advanced/pinvoke/)。
+缺少绑定的 （如果适用） 通知 Xamarin 下, 一步是要考虑自己绑定。 我们有完整指南[这里](~/cross-platform/macios/binding/overview.md)和一些非官方文档[此处](http://brendanzagaeski.appspot.com/xamarin/0002.html)手动包装 OBJECTIVE-C 绑定。 如果正在调用 C API，则可以使用C#的文档是 P/Invoke 机制[此处](https://www.mono-project.com/docs/advanced/pinvoke/)。
 
-如果你决定要在绑定上你自己，请注意在绑定中的错误，可以生成各种类型的本机运行时中的有趣崩溃。 具体而言，要非常小心您在 C# 中的签名匹配的参数数目和每个自变量的大小中的本机签名。 如果不这样做可能会损坏内存和/或堆栈并可能在将来崩溃立即或在某个任意时间点或损坏的数据。
+如果你决定要在绑定上你自己，请注意在绑定中的错误，可以生成各种类型的本机运行时中的有趣崩溃。 具体而言，要非常小心，在签名中的C#中的参数数目和每个自变量的大小的本机签名匹配。 如果不这样做可能会损坏内存和/或堆栈并可能在将来崩溃立即或在某个任意时间点或损坏的数据。
 
 ## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>将 null 传递到绑定时的自变量异常
 
@@ -36,7 +36,7 @@ Xamarin.Mac 涵盖了许多 Apple Api，而有时您可能需要调用一些不�
 1. 检查 Apple 文档和/或示例，以看看是否可以找到它接受的证明`nil`。 如果您习惯使用 Objective C，可以编写一个小测试程序，以验证它。
 2. [提交 bug](#reporting-bugs)。
 3. 可以解决该 bug？ 如果可以避免调用的 API `null`，调用周围的简单 null 检查可以轻松解决办法。
-4. 但是，有些 Api 需要传入 null 来关闭或禁用某些功能。 在这些情况下，您可以解决此问题通过将程序集浏览器 (请参阅[查找给定选择器的 C# 成员](~/mac/app-fundamentals/mac-apis.md#finding_selector))，将绑定和 null 检查中删除复制。 请确保要提交 bug （步骤 2） 如果复制的绑定不会接收更新和修补程序，我们使在 Xamarin.Mac、 执行此操作，并且应将此视为短时间内的解决办法。
+4. 但是，有些 Api 需要传入 null 来关闭或禁用某些功能。 在这些情况下，您可以解决此问题通过将程序集浏览器 (请参阅[查找C#给定选择器成员](~/mac/app-fundamentals/mac-apis.md#finding_selector))，将绑定和 null 检查中删除复制。 请确保要提交 bug （步骤 2） 如果复制的绑定不会接收更新和修补程序，我们使在 Xamarin.Mac、 执行此操作，并且应将此视为短时间内的解决办法。
 
 <a name="reporting-bugs"/>
 
@@ -59,5 +59,5 @@ GitHub 的问题是完全公开的。 不能隐藏注释或附件。
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

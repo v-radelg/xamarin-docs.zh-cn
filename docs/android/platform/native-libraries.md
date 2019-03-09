@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 0df39dc51cf17e1b9ecfd2279d047020f0237cb6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1195685db9e85e7fba006272ef300e22d47d1fa6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123086"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666338"
 ---
 # <a name="using-native-libraries"></a>使用本机库
 
@@ -40,7 +40,7 @@ Xamarin.Android 支持通过标准的 PInvoke 机制的本机库的使用。 此
 </ItemGroup>
 ```
 
-有关使用本机库的详细信息，请参阅[互操作使用本机库](http://www.mono-project.com/docs/advanced/pinvoke/)。
+有关使用本机库的详细信息，请参阅[互操作使用本机库](https://www.mono-project.com/docs/advanced/pinvoke/)。
 
 ## <a name="debugging-native-code-with-visual-studio-2017"></a>使用 Visual Studio 2017 调试本机代码
 
@@ -59,5 +59,5 @@ Visual Studio c + + 开发人员可以查看[SanAngeles_NativeDebug](https://dev
 
 ## <a name="related-links"></a>相关链接
 
-- [SanAngeles_NativeDebug （示例）](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 - [开发 Xamarin Android 本机应用程序](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

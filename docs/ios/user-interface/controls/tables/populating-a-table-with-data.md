@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 859afcf6ab9f3acfb56104fa68683ba28d913ce4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5363e3a2210bdcf1efb870ac808ecb37584de6a7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117119"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668915"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin.iOS 中的数据填充表
 
@@ -34,7 +34,7 @@ ms.locfileid: "50117119"
 
 有只有两个生成显示数据的表所需的必需方法：
 
--   **RowsInSection** – 返回[ `nint` ](http://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)表应显示的数据行的总数的计数。
+-   **RowsInSection** – 返回[ `nint` ](https://developer.xamarin.com/guides/cross-platform/macios/nativetypes/)表应显示的数据行的总数的计数。
 -   **GetCell** – 返回`UITableCellView`填充传递给方法的相应行索引的数据。
 
 

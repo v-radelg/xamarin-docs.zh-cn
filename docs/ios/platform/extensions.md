@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f892774b4899fcbac46e8cc7bc2b0dd0336cc036
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012277"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667810"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 扩展
 
@@ -30,7 +30,7 @@ ms.locfileid: "54012277"
 |类型|描述|扩展点|主机应用程序|
 |--- |--- |--- |--- |
 |操作|专用的编辑器或特定媒体类型的查看器|`com.apple.ui-services`|任意|
-|文档提供程序|允许应用程序以使用远程文档存储|`com.apple.fileprovider-ui`|使用应用[UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|文档提供程序|允许应用程序以使用远程文档存储|`com.apple.fileprovider-ui`|使用应用[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
 |键盘|备用键盘|`com.apple.keyboard-service`|任意|
 |照片编辑|照片处理和编辑|`com.apple.photo-editing`|Photos.app 编辑器|
 |共享|与社交网络，消息传送服务等共享数据。|`com.apple.share-services`|任意|
@@ -45,11 +45,11 @@ ms.locfileid: "54012277"
 通用的限制是：
 
 - [运行状况工具包](~/ios/platform/healthkit.md)并[事件工具包 UI](~/ios/platform/eventkit.md)框架将不可用
-- 扩展不能使用[扩展后台模式](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
+- 扩展不能使用[扩展后台模式](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
 - 扩展无法访问设备的摄像机或麦克风 （尽管它们可能访问现有的媒体文件）
 - 扩展不能将收到以无线方式删除数据 （但它们可以传输通过以无线方式删除数据）
-- [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/)并[UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/)不可用; 扩展必须使用[看到](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- 多个成员[UIApplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/)都不可用：[UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/)， `UIApplication.OpenURL`，`UIApplication.BeginIgnoringInteractionEvents`和 `UIApplication.EndIgnoringInteractionEvents`
+- [UIActionSheet](xref:UIKit.UIActionSheet)并[UIAlertView](xref:UIKit.UIAlertView)不可用; 扩展必须使用[看到](xref:UIKit.UIAlertController)
+- 多个成员[UIApplication](xref:UIKit.UIApplication)都不可用：[UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication)， [UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))， [UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents)和[UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS 增强今天的扩展了 16 MB 内存使用情况限制。
 - 默认情况下键盘扩展无网络访问权限。 这会影响调试在设备上 （该限制不在模拟器中强制执行），因为 Xamarin.iOS 需要网络访问权限来调试工作。 它通过设置就可以请求网络访问权限`Requests Open Access`到项目的 Info.plist 中的值`Yes`。 请参阅 Apple[自定义键盘指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)有关键盘扩展限制的详细信息。
 
@@ -65,17 +65,17 @@ ms.locfileid: "54012277"
 
 ## <a name="extension-lifecycle"></a>扩展生命周期
 
-扩展可以作为单个一样简单[UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/)或显示 UI 的多个屏幕的更复杂的扩展。 当用户遇到_扩展点_(例如共享映像)，它们将有机会从注册该扩展点的扩展中进行选择。 
+扩展可以作为单个一样简单[UIViewController](xref:UIKit.UIViewController)或显示 UI 的多个屏幕的更复杂的扩展。 当用户遇到_扩展点_(例如共享映像)，它们将有机会从注册该扩展点的扩展中进行选择。 
 
 如果他们选择您的应用程序的扩展，其`UIViewController`将实例化并开始正常视图控制器生命周期。 但是，与常规应用，后者虽然是挂起，但通常不终止用户完成与它们交互时，不同扩展加载、 执行，并重复然后终止。
 
-扩展可以与通过其主机应用程序进行通信[NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)对象。 某些扩展具有接收结果的异步回调的操作。 将在后台线程上执行这些回调和扩展必须考虑这点;例如，通过使用[NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/)如果用户想要更新的用户界面。 请参阅[与主机应用程序通信](#Communicating-with-the-Host-App)部分获取更多详细信息。
+扩展可以与通过其主机应用程序进行通信[NSExtensionContext](xref:Foundation.NSExtensionContext)对象。 某些扩展具有接收结果的异步回调的操作。 将在后台线程上执行这些回调和扩展必须考虑这点;例如，通过使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果用户想要更新的用户界面。 请参阅[与主机应用程序通信](#Communicating-with-the-Host-App)部分获取更多详细信息。
 
-默认情况下，扩展和其容器应用程序可以不进行通信，尽管一起安装。 在某些情况下，容器应用是实质上是一个空"shipping"的容器安装扩展后，就会提供其用途。 但是，如果规定的情况下，容器应用程序和扩展可能会共享公共区域中的资源。 此外，**今天扩展**可能会请求自己的容器应用程序来打开 URL。 此行为所示[发展倒计时小组件](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
+默认情况下，扩展和其容器应用程序可以不进行通信，尽管一起安装。 在某些情况下，容器应用是实质上是一个空"shipping"的容器安装扩展后，就会提供其用途。 但是，如果规定的情况下，容器应用程序和扩展可能会共享公共区域中的资源。 此外，**今天扩展**可能会请求自己的容器应用程序来打开 URL。 此行为所示[发展倒计时小组件](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
 
 ## <a name="creating-an-extension"></a>创建扩展
 
-扩展 （和其容器应用程序） 必须是 64 位二进制文件和使用 Xamarin.iOS 生成[统一 Api](http://developer.xamarin.com/guides/cross-platform/macios/unified)。 在开发时扩展，你的解决方案将包含至少两个项目： 容器应用程序，另一个项目的每个扩展容器提供。 
+扩展 （和其容器应用程序） 必须是 64 位二进制文件和使用 Xamarin.iOS 生成[统一 Api](https://developer.xamarin.com/guides/cross-platform/macios/unified)。 在开发时扩展，你的解决方案将包含至少两个项目： 容器应用程序，另一个项目的每个扩展容器提供。 
 
 ### <a name="container-app-project-requirements"></a>容器应用程序项目要求
 
@@ -264,11 +264,11 @@ public override void ViewDidLoad ()
 
 ## <a name="communicating-with-the-host-app"></a>与主机应用程序进行通信
 
-今天扩展上面创建的示例不使用其主机应用程序进行通信 (**今天**屏幕)。 如果有的话，它将使用[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)的属性`TodayViewController`或`CodeBasedViewController`类。 
+今天扩展上面创建的示例不使用其主机应用程序进行通信 (**今天**屏幕)。 如果有的话，它将使用[ExtensionContext](xref:Foundation.NSExtensionContext)的属性`TodayViewController`或`CodeBasedViewController`类。 
 
-对于将从其主机应用接收数据的扩展，数据采用的数组的形式[NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/)对象存储在[InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/)属性[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)的扩展的`UIViewController`。
+对于将从其主机应用接收数据的扩展，数据采用的数组的形式[NSExtensionItem](xref:Foundation.NSExtensionItem)对象存储在[InputItems](xref:Foundation.NSExtensionContext.InputItems)属性[ExtensionContext](xref:Foundation.NSExtensionContext)的扩展的`UIViewController`。
 
-其他扩展名，例如照片编辑扩展，可能会区分用户完成或取消使用情况。 这将返回到主机应用程序通过发出信号[CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/)并[CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/)方法[ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/)属性。
+其他扩展名，例如照片编辑扩展，可能会区分用户完成或取消使用情况。 这将返回到主机应用程序通过发出信号[CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*)并[CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*)方法[ExtensionContext](xref:Foundation.NSExtensionContext)属性。
 
 有关详细信息，请参阅 Apple[应用程序扩展编程指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1)。
 

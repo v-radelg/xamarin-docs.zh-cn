@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: 7152e37c4035ac5f9a259fa48b91d5f29752d1f7
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 0ba748823f980f65d1a341d2b2c15610440bf05e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197129"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668291"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门
 
@@ -102,6 +102,6 @@ Xamarin.Essentials 可用作 NuGet 包，可以通过使用 Visual Studio 将其
 
 建议刚开始接触 Xamarin 的开发人员访问 [Xamarin 开发入门](~/cross-platform/getting-started/index.md)。
 
-访问 [Xamarin.Essentials GitHub 存储库](http://github.com/xamarin/Essentials)查看当前源代码，接下来，运行示例，并克隆存储库。 欢迎为社区做贡献！
+访问 [Xamarin.Essentials GitHub 存储库](https://github.com/xamarin/Essentials)查看当前源代码，接下来，运行示例，并克隆存储库。 欢迎为社区做贡献！
 
 浏览 [API 文档](xref:Xamarin.Essentials)了解每个 Xamarin.Essentials 功能。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: cade72aaad60c30993f6b11e98704addd218ffae
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209312"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667485"
 ---
 # <a name="adding-appcompat-and-material-design"></a>添加 AppCompat 和材料设计
 
@@ -114,7 +114,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 ```
 
 已设置的几个属性选项卡包括到选项卡的重力`fill`和到模式`fixed`。
-如果选项卡的很多你可能想要切换这对可滚动的读取通过 Android [TabLayout 文档](http://developer.android.com/reference/android/support/design/widget/TabLayout.html)若要了解详细信息。
+如果选项卡的很多你可能想要切换这对可滚动的读取通过 Android [TabLayout 文档](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)若要了解详细信息。
 
 **Resources/layout/Toolbar.axml**
 

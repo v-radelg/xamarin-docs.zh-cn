@@ -6,13 +6,13 @@ ms.assetid: F1D90729-F85A-425B-B633-E2FA38FB4A0C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: 96fce269784ad0ac41fd1685ac7ac6b957932bd8
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 09/04/2018
+ms.openlocfilehash: 0157a685ac990c0626cd4d6001ef853c6a28b993
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233167"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668174"
 ---
 # <a name="notification-management-in-xamarinios"></a>在 Xamarin.iOS 中的通知管理
 

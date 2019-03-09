@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 655f988cc54cf54e346e68109271775dee2918a9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5e354f8271257ab21a855bdf5d576ce3062fadc7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111247"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668239"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 清单
 
@@ -84,7 +84,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-title-bar"></a>活动标题栏
 
-默认情况下，Android 提供你的应用程序标题栏将在运行时。 使用此值是[ `/manifest/application/activity/@android:label` ](http://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大多数情况下，此值将不同于您的类名。 若要指定应用的标签的标题栏上，使用[ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)属性。
+默认情况下，Android 提供你的应用程序标题栏将在运行时。 使用此值是[ `/manifest/application/activity/@android:label` ](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大多数情况下，此值将不同于您的类名。 若要指定应用的标签的标题栏上，使用[ `Label` ](https://developer.xamarin.com/api/property/Android.App.ActivityAttribute.Label/)属性。
 例如： 
 
 ```csharp
@@ -178,7 +178,7 @@ public class MyActivity : Activity
 
 ### <a name="intent-actions-and-features"></a>意向操作和功能
 
-Android 清单提供了一种方法，以便描述您的活动的功能。 这是通过[意向](http://developer.android.com/guide/topics/manifest/intent-filter-element.html)和 [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
+Android 清单提供了一种方法，以便描述您的活动的功能。 这是通过[意向](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)和 [`[IntentFilter]`](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) 
 自定义属性。 可以指定的操作是适用于您使用的活动 [`IntentFilter`](https://developer.xamarin.com/api/constructor/Android.App.IntentFilterAttribute.IntentFilterAttribute/p/System.String[]/) 
 构造函数，和使用适当的哪些类别 [`Categories`](https://developer.xamarin.com/api/property/Android.App.IntentFilterAttribute.Categories/) 
 属性。 至少一个活动必须提供 （这是在构造函数中提供的活动的原因）。 `[IntentFilter]` 可以提供多个，且每次使用会导致单独`<intent-filter/>`元素内的`<activity/>`。 例如：
@@ -240,18 +240,18 @@ Android 清单还提供了一种方法，以便声明在整个应用程序的属
 
 ## <a name="list-of-custom-attributes"></a>自定义特性列表
 
--   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) ： 生成[/manifest/application/activity](http://developer.android.com/guide/topics/manifest/activity-element.html) XML 片段 
--   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) ： 生成[/清单/应用程序](http://developer.android.com/guide/topics/manifest/application-element.html)XML 片段 
--   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) ： 生成[/清单/检测](http://developer.android.com/guide/topics/manifest/instrumentation-element.html)XML 片段 
--   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) ： 生成[//intent-filter](http://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML 片段 
--   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) ： 生成[//meta-data](http://developer.android.com/guide/topics/manifest/meta-data-element.html) XML 片段 
--   [Android.App.PermissionAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionAttribute/) ： 生成[//permission](http://developer.android.com/guide/topics/manifest/permission-element.html) XML 片段 
--   [Android.App.PermissionGroupAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionGroupAttribute/) ： 生成[//permission-group](http://developer.android.com/guide/topics/manifest/permission-group-element.html) XML 片段 
--   [Android.App.PermissionTreeAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionTreeAttribute/) ： 生成[//permission-tree](http://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML 片段 
--   [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/) ： 生成[/manifest/application/service](http://developer.android.com/guide/topics/manifest/service-element.html) XML 片段 
--   [Android.App.UsesLibraryAttribute](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/) ： 生成[/manifest/application/uses-library](http://developer.android.com/guide/topics/manifest/uses-library-element.html) XML 片段 
--   [Android.App.UsesPermissionAttribute](https://developer.xamarin.com/api/type/Android.App.UsesPermissionAttribute/) ： 生成[/manifest/uses-permission](http://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML 片段 
--   [Android.Content.BroadcastReceiverAttribute](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiverAttribute/) ： 生成[/manifest/application/receiver](http://developer.android.com/guide/topics/manifest/receiver-element.html) XML 片段 
--   [Android.Content.ContentProviderAttribute](https://developer.xamarin.com/api/type/Android.Content.ContentProviderAttribute/) ： 生成[/manifest/application/provider](http://developer.android.com/guide/topics/manifest/provider-element.html) XML 片段 
--   [Android.Content.GrantUriPermissionAttribute](https://developer.xamarin.com/api/type/Android.Content.GrantUriPermissionAttribute/) ： 生成[/manifest/application/provider/grant-uri-permission](http://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML 片段
+-   [Android.App.ActivityAttribute](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) :将生成[/manifest/application/activity](https://developer.android.com/guide/topics/manifest/activity-element.html) XML 片段 
+-   [Android.App.ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/) :将生成[/清单/应用程序](https://developer.android.com/guide/topics/manifest/application-element.html)XML 片段 
+-   [Android.App.InstrumentationAttribute](https://developer.xamarin.com/api/type/Android.App.InstrumentationAttribute/) :将生成[/清单/检测](https://developer.android.com/guide/topics/manifest/instrumentation-element.html)XML 片段 
+-   [Android.App.IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) :将生成[//intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML 片段 
+-   [Android.App.MetaDataAttribute](https://developer.xamarin.com/api/type/Android.App.MetaDataAttribute/) :将生成[//meta-data](https://developer.android.com/guide/topics/manifest/meta-data-element.html) XML 片段 
+-   [Android.App.PermissionAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionAttribute/) :将生成[//permission](https://developer.android.com/guide/topics/manifest/permission-element.html) XML 片段 
+-   [Android.App.PermissionGroupAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionGroupAttribute/) :将生成[//permission-group](https://developer.android.com/guide/topics/manifest/permission-group-element.html) XML 片段 
+-   [Android.App.PermissionTreeAttribute](https://developer.xamarin.com/api/type/Android.App.PermissionTreeAttribute/) :将生成[//permission-tree](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML 片段 
+-   [Android.App.ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute/) :将生成[/manifest/application/service](https://developer.android.com/guide/topics/manifest/service-element.html) XML 片段 
+-   [Android.App.UsesLibraryAttribute](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/) :将生成[/manifest/application/uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) XML 片段 
+-   [Android.App.UsesPermissionAttribute](https://developer.xamarin.com/api/type/Android.App.UsesPermissionAttribute/) :将生成[/manifest/uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML 片段 
+-   [Android.Content.BroadcastReceiverAttribute](https://developer.xamarin.com/api/type/Android.Content.BroadcastReceiverAttribute/) :将生成[/manifest/application/receiver](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML 片段 
+-   [Android.Content.ContentProviderAttribute](https://developer.xamarin.com/api/type/Android.Content.ContentProviderAttribute/) :将生成[/manifest/application/provider](https://developer.android.com/guide/topics/manifest/provider-element.html) XML 片段 
+-   [Android.Content.GrantUriPermissionAttribute](https://developer.xamarin.com/api/type/Android.Content.GrantUriPermissionAttribute/) :将生成[/manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML 片段
 

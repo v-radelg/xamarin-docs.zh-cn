@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 22b6fd101c0b983fe7b4a7d0891dc4674a11a02a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121186"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672815"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS HomeKit
 
@@ -39,7 +39,7 @@ HomeKit 组织到 Home 集合的给定位置中的所有自动化设备。 此�
 主页集合存储到主页配置数据库中，将自动备份和同步所有用户的 iOS 设备。 HomeKit 提供用于处理与主页配置数据库的以下类：
 
 - `HMHome` -这是在一个物理位置 （例如包含所有信息和配置适用于所有家庭自动化设备的顶级容器。 一个系列居住)。 用户可能具有多个未成年人，例如其主要的家庭和休假房子。 或者它们可能具有不同"房屋"的相同属性，如主房屋和来宾房屋通过车库。 无论哪种方式，至少一个`HMHome`对象_必须_进行安装和存储之前可以输入任何其他 HomeKit 信息。
-- `HMRoom` -可选的段`HMRoom`使用户可以定义特定房间内家庭 (`HMHome`) 如： 厨房、 洗澡、 车库或客厅。 用户可以分组到其房屋中的特定位置中的家庭自动化设备的所有`HMRoom`并对其执行操作作为一个单元。 例如，要求使用 Siri 关闭车库系统正常运行。
+- `HMRoom` -可选的段`HMRoom`使用户可以定义特定房间内家庭 (`HMHome`) 如：厨房、 洗澡、 车库或客厅。 用户可以分组到其房屋中的特定位置中的家庭自动化设备的所有`HMRoom`并对其执行操作作为一个单元。 例如，要求使用 Siri 关闭车库系统正常运行。
 - `HMAccessory` -这表示单个，物理 HomeKit 启用已在用户的居住地 （例如智能调温器） 中安装的自动化设备。 每个`HMAccessory`分配给`HMRoom`。 如果用户尚未配置任何房间，HomeKit 会为特殊默认空间分配附件。
 - `HMService` -表示由提供的服务给定`HMAccessory`，例如光或其颜色 （如果支持颜色更改） 的开/关状态。 每个`HMAccessory`可以有多个服务，例如车库门打开工具，它还包括一个指示灯。 此外，给定`HMAccessory`可能具有不受用户控制的服务，例如固件更新。
 - `HMZone` -允许用户进行分组的集合`HMRoom`逻辑区域，如楼上、 Downstairs 或地下室对象。 尽管可选的这可以像在问 Siri 交互打开所有光线 downstairs 关闭。
@@ -52,7 +52,7 @@ HomeKit 组织到 Home 集合的给定位置中的所有自动化设备。 此�
 
 请执行以下操作：
 
-1. 登录到[Apple 开发人员门户](http://developer.apple.com)。
+1. 登录到[Apple 开发人员门户](https://developer.apple.com)。
 2. 单击**证书、 标识符和配置文件**。
 3. 如果尚未这样做，请单击**标识符**并创建您的应用程序的 ID (例如`com.company.appname`)，否则编辑现有的 id。
 4. 絋粄**HomeKit**服务具有给定 ID 的复选框： 
@@ -436,7 +436,7 @@ HomeKit 附件模拟器中可以下找到此编号**安装程序代码**字段�
  - RotationDirection
  - RotationSpeed
  - 饱和度
- - 序列号
+ - SerialNumber
  - SmokeDetected
  - SoftwareVersion
  - StatusActive
@@ -667,7 +667,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 本文只讨论了用于处理与 HomeKit 附件中的 Xamarin.iOS 应用程序所需的基本功能。 但是，有几个高级的功能 HomeKit，且不在此介绍：
 
 - **聊天室**-启用 HomeKit 附件 （可选） 可以组织到由最终用户的聊天室。 这样便于用户了解和使用的方式存在附件 HomeKit。 有关创建和维护聊天室的详细信息，请参阅 Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom)文档。
-- **区域**-聊天室可以根据需要组织成区域由最终用户。 区域是指用户可能会将作为单个单元的聊天室的集合。 例如： 楼上、 Downstairs 或地下室。 同样，这允许 HomeKit 提供和使用附件对最终用户有意义的方式。 有关创建和维护区域的详细信息，请参阅 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文档。
+- **区域**-聊天室可以根据需要组织成区域由最终用户。 区域是指用户可能会将作为单个单元的聊天室的集合。 例如：楼上 Downstairs 或地下室。 同样，这允许 HomeKit 提供和使用附件对最终用户有意义的方式。 有关创建和维护区域的详细信息，请参阅 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文档。
 - **操作和操作设置**-操作修改附件服务特征和可以分组到集中。 操作集充当控件的附件的组并协调其操作的脚本。 例如，"观看电视节目"脚本可能会关闭 blinds、 dim 系统正常运行，并打开电视和其声音系统。 有关创建和维护操作和操作集的详细信息，请参阅 Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction)并[HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet)文档。
 - **触发器**-触发器可以激活一个或多个操作时，设置一组给定的条件已满足。 例如，打开 portch light 并在收到外部深色锁所有外部库门。 有关创建和维护触发器的详细信息，请参阅 Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger)文档。
 
@@ -691,14 +691,14 @@ Apple 已发布了以下更改和添加到 HomeKit 适用于 iOS 9:
 - **永久标识符**-所有相关 HomeKit 类现在包括`UniqueIdentifier`属性来唯一地标识给定的项跨 HomeKit 启用应用程序 （或同一应用程序的实例）。
 - **用户管理**-添加用户的主要用户家中有权访问 HomeKit 设备通过提供用户管理的内置视图控制器。
 - **用户功能**-HomeKit 用户现在可以控制他们就能够在 HomeKit 中使用哪些功能的权限集和 HomeKit 启用附件。 您的应用程序应仅显示与当前用户的相关功能。 例如，只有管理员应该能够维护其他用户。
-- **预定义的场景**-平均 HomeKit 用户发生的四个常见的事件的创建预定义的场景： 启动、 保留、 返回、 转到平台。 不能从主页删除这些预定义的场景。
+- **预定义的场景**-平均 HomeKit 用户发生的四个常见的事件的创建预定义的场景：启动、 保留、 返回，请转到平台。 不能从主页删除这些预定义的场景。
 - **场景和 Siri** -Siri 具有更深入的支持，对于 iOS 9，可以在场景识别 HomeKit 中定义任何场景的名称。 用户可以执行场景，只需通过说话 Siri 其名称。
 - **附件类别**-已添加到所有附件和可帮助确定要添加到 Home 的附件的类型或从处理中的应用内一组预定义的类别。 这些新类别可在附件安装过程。
-- **Apple Watch 支持**-HomeKit 现已可供 watchOS 和 Apple Watch 将能够 HomeKit 而无需 iPhone 附近监视正在启用设备管理。 适用于 watchOS HomeKit 支持以下功能： 查看家庭、 控制附件和执行的场景。
+- **Apple Watch 支持**-HomeKit 现已可供 watchOS 和 Apple Watch 将能够 HomeKit 而无需 iPhone 附近监视正在启用设备管理。 适用于 watchOS HomeKit 支持以下功能：查看家庭，控制附件和执行的场景。
 - **新的事件触发器类型**-除了在 iOS 8 中，iOS 9 现在支持事件触发器基于附件状态 （如传感器数据） 或地理位置中受支持类型触发计时器。 事件触发器使用`NSPredicates`可以设置为其执行的条件。
 - **远程访问**-与远程访问，用户现在就能够控制其 HomeKit 启用主页自动化的附件，当他们离开在远程位置的房子。 在 iOS 8 中这已才支持此用户拥有第三代 Apple TV 在家中。 在 iOS 9 中，解除了此限制，并通过 iCloud 和 HomeKit 附件协议 (HAP) 支持远程访问。
 - **新蓝牙低功耗 (BLE) 功能允许**-HomeKit 现在支持更多的附件类型可通过蓝牙低功耗 (BLE) 协议进行通信。 使用 HAP 安全隧道，HomeKit 附件可以公开其他蓝牙附件通过 Wi-fi （如果它不在蓝牙范围内）。 在 iOS 9，BLE 附件具有完全支持通知和元数据。
-- **新附件类别**-Apple 在 iOS 9 中添加以下新附件类别： 窗口 Coverings、 机动门和 Windows、 警报系统、 传感器和可编程的开关。
+- **新附件类别**-Apple 在 iOS 9 中添加以下新附件类别：窗口 Coverings、 机动的门和 Windows、 警报系统、 传感器和可编程的开关。
 
 有关 iOS 9 中 HomeKit 的新功能的详细信息，请参阅 Apple [HomeKit 索引](https://developer.apple.com/homekit/)并[What's New in HomeKit](https://developer.apple.com/videos/wwdc/2015/?id=210)视频。
 

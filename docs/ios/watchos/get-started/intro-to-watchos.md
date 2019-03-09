@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 0b320955cae23b18444732c826849002d6375fe4
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.openlocfilehash: faa52c80fdb776f2c6c7320874b0d08720b4e4ec
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321137"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670449"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 简介
 
@@ -136,7 +136,7 @@ Apple Watch 具有两种人脸大小：38mm 和 42 mm，5:4 显示比率，和 R
 - [watchOS 3 目录 （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [在 watchOS 1 中目录 （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
 - [设置和安装](~/ios/watchos/get-started/installation.md)
-- [第一个 Watch 应用视频](http://blog.xamarin.com/your-first-watch-kit-app/)
+- [第一个 Watch 应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的开发的监视包指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Apple WatchKit 提示](https://developer.apple.com/watchkit/tips/)
 - [watchOS 3 简介](~/ios/watchos/platform/introduction-to-watchos3/index.md)

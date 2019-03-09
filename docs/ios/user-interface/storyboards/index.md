@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6294d696fe309e1952124caaaace89d40ad24bc6
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233553"
 ---
+
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的情节提要简介
 
 本指南中我们将介绍哪些情节提要是和检查的一些关键组件 – 例如 segues 设计。 我们将介绍如何创建和使用，情节提要，并且开发人员必须哪些益处。
@@ -492,5 +487,5 @@ public partial class MainViewController : UIViewController
 
 - [手动情节提要 （示例）](https://developer.xamarin.com/samples/ManualStoryboard/)
 - [IOS 设计器简介](~/ios/user-interface/designer/introduction.md)
-- [转换到情节提要](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [转换到情节提要](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [UIStoryboard 类引用](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

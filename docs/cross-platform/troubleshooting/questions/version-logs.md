@@ -7,12 +7,12 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2c3ded2233810ff4e903596d65f64097aa3b0445
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ee4b39aed64d7339bd561cccc49a2959a6daba5c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118222"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668304"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>在哪里可以找到我的版本信息和日志？
 
@@ -100,7 +100,7 @@ ms.locfileid: "50118222"
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-参考：[命令行选项](http://msdn.microsoft.com/library/aa367988.aspx)
+参考：[命令行选项](https://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio 启动时，详细日志
 
@@ -108,7 +108,7 @@ msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-参考： [/Log (devenv.exe)](http://msdn.microsoft.com/library/ms241272.aspx)
+参考： [/Log (devenv.exe)](https://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Mac 日志
 
@@ -145,7 +145,7 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 3.  清除并重新生成项目。
 
 4.  复制并粘贴到文本文件从 IDE 生成输出。
-     - Visual Studio (Windows):**视图 > 输出 > 显示输出来源： 生成**
+     - Visual Studio (Windows):**视图 > 输出 > 显示输出来源：生成**
      - Visual Studio for Mac:**视图 > 面板 > 错误 > 生成输出 （选项卡）**
 
 ## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />调试 Xamarin.Android 和 Xamarin.iOS 应用的日志
@@ -158,9 +158,9 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 ### <a name="visual-studio"></a>Visual Studio
 
-**视图 > 输出 > 显示输出来源： 调试**
+**视图 > 输出 > 显示输出来源：调试**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](http://developer.android.com/tools/help/adb.html) logcat 日志
+### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [ `adb` ](https://developer.android.com/tools/help/adb.html) logcat 日志
 
 运行之后`adb`命令，附加后**android_logcat.txt**文件从您的桌面。 这些说明假定您有一个附加的设备。
 

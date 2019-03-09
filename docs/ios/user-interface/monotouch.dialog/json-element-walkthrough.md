@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 24d73bfcc28601f6a7ebbecb71d8c0e9f6864ac3
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 07bcbfe046fd689e08eed4e64495b56d083ceeb8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675336"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671515"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>使用 JSON 在 Xamarin.iOS 中创建用户界面
 
@@ -177,5 +177,5 @@ _rootElement = new RootElement ("Json Example"){
 - [反射 API 演练](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Github 上的 MonoTouch 对话框](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation 应用程序](https://github.com/migueldeicaza/TweetStation)
-- [UITableViewController 类引用](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController 类引用](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController 类引用](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController 类引用](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2017
-ms.openlocfilehash: f43147d98599d36aa136e4ddc2975205e0e69e26
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8f20666ddf5f74ff9451a22e289790eb14071f90
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122837"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672191"
 ---
 # <a name="textureview"></a>TextureView
 
@@ -77,4 +77,4 @@ public class TextureViewActivity : Activity,
 
 - [TextureViewDemo （示例）](https://developer.xamarin.com/samples/monodroid/TextureViewDemo/)
 - [引入 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](http://developer.android.com/sdk/android-4.0.html)
+- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

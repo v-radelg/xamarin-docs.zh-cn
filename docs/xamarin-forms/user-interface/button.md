@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 250b3de2ef41ce488165f3149c72ce28c39e53a3
-ms.sourcegitcommit: 9492e417f739772bf264f5944d6bae056e130480
+ms.openlocfilehash: 3b23a1a07741cd048ea034b2b39b5f9cde902dc6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53746890"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672763"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按钮
 
@@ -150,7 +150,7 @@ button.Clicked += OnButtonClicked;
 
 尤其是在实现模型-视图-视图模型 (MVVM) 体系结构时，这种方法是特别适合与数据绑定和。 在文章中讨论了这些主题[数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)，[从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，并[MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
 
-在 MVVM 应用程序，ViewModel 定义类型的属性`ICommand`，然后连接到 XAML`Button`具有数据绑定的元素。 此外定义了 Xamarin.Forms [ `Command` ]((xref:Xamarin.Forms.Command`1))并[ `Command<T>` ](xref:Xamarin.Forms.Command`1)类实现`ICommand`接口，并帮助 ViewModel 中定义的类型属性`ICommand`.
+在 MVVM 应用程序，ViewModel 定义类型的属性`ICommand`，然后连接到 XAML`Button`具有数据绑定的元素。 此外定义了 Xamarin.Forms [ `Command` ]((xref:Xamarin.Forms.Command))并[ `Command<T>` ](xref:Xamarin.Forms.Command`1)类实现`ICommand`接口，并帮助 ViewModel 中定义的类型属性`ICommand`.
 
 命令一文中的更详细地介绍[**命令界面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)但**基本按钮命令**页中[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)示例显示了基本的方法。
 

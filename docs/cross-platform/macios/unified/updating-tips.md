@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: ce5c8f7cf30407e64464c412359263b52e134675
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267386"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672451"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>将代码更新为 Unified API 的提示
 
@@ -88,7 +88,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
  * `NSAction` 已被[替换为](~/cross-platform/macios/unified/overview.md#NSAction)starndard.NET 与`Action`。 一些简单 （单个参数） 的委托也已替换`Action<T>`。
 
-最后，请参阅[经典 v 统一 API 差异](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)来查找你的代码中的 Api 更改。 搜索[本页](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)将帮助查找经典 Api 和什么它们已更新为。
+最后，请参阅[经典 v 统一 API 差异](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)来查找你的代码中的 Api 更改。 搜索[本页](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)将帮助查找经典 Api 和什么它们已更新为。
 
 **注意：** `MonoTouch.Dialog`迁移后的命名空间保持相同。 如果你的代码使用**MonoTouch.Dialog**应继续使用该命名空间-不要*不*更改`MonoTouch.Dialog`到`Dialog`！
 
@@ -136,7 +136,7 @@ grphc.SetLineDash (0, new nfloat[] { 0, 3 * (nfloat)Math.PI });
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**错误 CS0508:`WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)**
+**错误 CS0508:`WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'**
 
 解决方法：如果返回类型更改为`nint`，将返回值强制转换`nint`。
 
@@ -170,7 +170,7 @@ public override nint NumberOfSections (UITableView tableView)
 * 重写 SetCoordinate 方法并设置您的字段
 * 在与传入的坐标参数在构造函数中调用 SetCoordinate
 
-其外观应类似于下面：
+它应类似于以下内容：
 
 ```csharp
 class BasicPinAnnotation : MKAnnotation

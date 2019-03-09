@@ -21,14 +21,14 @@ ms.date: 06/15/2018
 
 -   **Android Studio** &ndash; 必须安装[Android Studio 3.x](https://developer.android.com/studio/)或更高版本。
 
--   **Java 开发人员工具包** &ndash; 必须安装[Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本。
+-   **Java 开发人员工具包** &ndash; 必须安装[Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本。
 
 
 ## <a name="using-embeddinator-4000"></a>使用 Embeddinator 4000
 
-要在本机 Android 项目中使用 .NET 库，请按以下步骤操作：
+要在本机 Android 项目中使用.NET 库，请使用以下步骤：
 
-1.  创建一个 C＃Android 库项目。
+1.  创建一个C＃Android库项目。
 
 2.  安装[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 
@@ -57,16 +57,16 @@ ms.date: 06/15/2018
 
 -   **Android Studio** &ndash; 必须安装[Android Studio 3.x](https://developer.android.com/studio/)或更高版本。
 
--   **Java 开发人员工具包** &ndash; 必须安装[Java 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本。
+-   **Java 开发人员工具包** &ndash; 必须安装[Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本。
 
--   **Mono** &ndash; 必须安装[Mono 5.0](http://www.mono-project.com/download/)或更高版本 （mono 会随 Visual Studio for Mac 一同安装）。
+-   **Mono** &ndash; 必须安装[Mono 5.0](https://www.mono-project.com/download/)或更高版本 （mono 会随 Visual Studio for Mac 一同安装）。
 
 
 ## <a name="using-embeddinator-4000"></a>使用 Embeddinator 4000
 
-要在本机 Android 项目中使用 .NET 库，请按以下步骤操作：
+要在本机 Android 项目中使用.NET 库，请使用以下步骤：
 
-1.  创建一个 C＃Android 库项目。
+1.  创建一个C＃Android库项目。
 
 2.  安装[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 

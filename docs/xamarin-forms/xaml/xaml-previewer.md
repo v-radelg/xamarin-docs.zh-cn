@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
-ms.openlocfilehash: 4258eca8e18229420ceb043a010c896137187653
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.openlocfilehash: 7834b87687db8fd1a3d51a40a4657b24e46bac17
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240378"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670397"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>适用于 Xamarin.Forms 的 XAML 预览程序
 
@@ -21,7 +21,7 @@ _请参阅的呈现将如你所键入的 Xamarin.Forms 布局 ！_
 
 ## <a name="requirements"></a>要求
 
-项目需要 XAML 预览程序若要运行的最新 Xamarin.Forms NuGet 包。 预览 Android 应用程序需要[JDK 1.8 x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
+项目需要 XAML 预览程序若要运行的最新 Xamarin.Forms NuGet 包。 预览 Android 应用程序需要[JDK 1.8 x64](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
 
 中的详细信息[发行说明](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#Xamarin_Forms_Previewer)。
 

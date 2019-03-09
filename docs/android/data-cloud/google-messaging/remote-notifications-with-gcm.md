@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
-ms.openlocfilehash: be96683a2e63ed802169543dcee55a3431e42130
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528801"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668889"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google 云消息传送与远程通知
 
@@ -617,7 +617,7 @@ GCM，反过来，这将消息转发到客户端应用程序。 让我们构建*
 
 ### <a name="try-it"></a>尝试一下！
 
-现在我们已准备好测试我们的客户端应用程序。 如果你使用仿真程序，或如果你的设备通过 Wi-fi 与 GCM 通信时，必须通过获取的 GCM 消息在防火墙上打开以下 TCP 端口： 5228、 5229 和 5230。
+现在我们已准备好测试我们的客户端应用程序。 如果使用仿真程序或你的设备与 GCM 通信通过 Wi-fi，你必须 GCM 消息才能通过防火墙上打开以下 TCP 端口：5228、 5229 和 5230。
 
 启动客户端应用，并观察输出窗口。 之后`RegistrationIntentService`成功接收一个注册从 GCM 令牌，输出窗口应显示标记使用与下面类似的日志输出：
 
@@ -657,7 +657,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 恭喜，您的应用程序已收到其第一个远程通知 ！
 
-请注意是否应用强制停止，将无法再接收 GCM 消息。 若要强制停止后恢复通知，应用程序必须手动重新启动。 有关此 Android 策略的详细信息，请参阅[启动已停止的应用程序上的控件](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)，这[堆栈溢出文章](http://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
+请注意是否应用强制停止，将无法再接收 GCM 消息。 若要强制停止后恢复通知，应用程序必须手动重新启动。 有关此 Android 策略的详细信息，请参阅[启动已停止的应用程序上的控件](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)，这[堆栈溢出文章](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
 
  
 ## <a name="summary"></a>总结

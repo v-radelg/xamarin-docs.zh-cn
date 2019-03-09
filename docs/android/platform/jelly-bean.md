@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9e83c9a8c1e2740596a981598cafbbfb65e2caf2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119236"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670098"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean 功能
 
@@ -44,7 +44,7 @@ Android 应用程序的稳定性得到改进来隔离对不稳定的内容提供
 
 
 
-### <a name="animations"></a>动画
+### <a name="animations"></a>Animations
 
 可以通过使用缩放动画或自定义动画启动活动`ActivityOptions`类。 提供以下新方法来支持这些动画：
 
@@ -79,7 +79,7 @@ animator.Start();
 
 ### <a name="application-stack-navigation"></a>应用程序堆栈导航
 
-Android 4.1 改进了 Android 3.0 中引入了应用程序堆栈导航。 通过指定`ParentName`属性`ActivityAttribute`，当用户按下时，Android 可以打开正确的父活动[向上按钮](http://developer.android.com/design/patterns/navigation.html#up-vs-back)在操作栏中的 Android 将实例化指定的活动`ParentName`属性。 这允许应用程序保留的活动，使某个给定的任务的层次结构。
+Android 4.1 改进了 Android 3.0 中引入了应用程序堆栈导航。 通过指定`ParentName`属性`ActivityAttribute`，当用户按下时，Android 可以打开正确的父活动[向上按钮](https://developer.android.com/design/patterns/navigation.html#up-vs-back)在操作栏中的 Android 将实例化指定的活动`ParentName`属性。 这允许应用程序保留的活动，使某个给定的任务的层次结构。
 
 对于大多数应用程序设置`ParentName`活动是足够的信息适用于 Android 的导航的应用程序堆栈; 提供正确的行为Android 将通过创建一系列意向为每个父活动的合成必要 back 堆栈。 但是，由于这是将自定义应用程序堆栈，综合的每个活动将不能将具有自然活动的已保存的状态。 若要提供到综合父活动的已保存的状态，活动可能会重写`OnPrepareNavigationUpTaskStack`方法。 此方法接收`TaskStackBuilder`将有一系列的意图的实例对象，将使用 Android 创建 back 堆栈。 活动可能会修改这些意图，以便创建综合的活动时，它将接收正确的状态信息。
 
@@ -145,7 +145,7 @@ mediaActionPlayer.Release();
 
 
 
-### <a name="connectivity"></a>连接
+### <a name="connectivity"></a>连接性
 
 
 
@@ -284,6 +284,6 @@ Android 4.1 允许应用程序更大的灵活性和控制能力的显示通知�
 ## <a name="related-links"></a>相关链接
 
 - [时间的动画示例 （示例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
-- [Android 4.1 Api](http://developer.android.com/about/versions/android-4.1.html)
-- [任务和后退堆栈](http://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [使用后退和向上导航](http://developer.android.com/design/patterns/navigation.html)
+- [Android 4.1 Api](https://developer.android.com/about/versions/android-4.1.html)
+- [任务和后退堆栈](https://developer.android.com/guide/components/tasks-and-back-stack.html)
+- [使用后退和向上导航](https://developer.android.com/design/patterns/navigation.html)

@@ -1,19 +1,19 @@
 ---
-title: 与 Xamarin 持续集成简介
+title: Xamarin 持续集成简介
 description: 本文档介绍了与 Xamarin 持续集成。 它讨论了版本控制和各种持续集成环境。
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 5468495885e3af2afa2692ccad9191b669fa3328
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: f2db5f4acd57cbf887d9955d9ea61fce4427c1c3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "37066502"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672399"
 ---
-# <a name="introduction-to-continuous-integration-with-xamarin"></a>与 Xamarin 持续集成简介
+# <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin 持续集成简介
 
 _持续集成是一种软件工程做法在其中自动的生成编译并 （可选） 测试应用程序代码中添加或更改项目的版本控制存储库中的开发人员时。本文将讨论持续集成的一般概念以及一些可用的选项用于持续集成与 Xamarin 项目。_
 
@@ -39,10 +39,6 @@ _持续集成是一种软件工程做法在其中自动的生成编译并 （可
 [App Center Test](https://docs.microsoft.com/appcenter/test-cloud)通过测试应用程序直接在数百个物理设备上的解决了这个特定的问题。 开发人员编写自动的接受测试，以允许进行功能强大的 UI 测试。 这些测试上传到 App Center 后, CI 服务器可以运行它们自动作为 CI 过程的一部分如以下关系图中所示：
 
 [![](intro-to-ci-images/intro02-small.png "后这些测试上传到 App Center 时，CI 服务器可以运行这些自动作为 CI 过程的一部分，在此图中所示")](intro-to-ci-images/intro02.png#lightbox)
-
-# <a name="components-of-continuous-integration"></a>持续集成的组件
-
-没有设计为支持 CI 的商业和开放源代码工具的广泛生态系统。 本部分介绍几个最常见的。
 
 ## <a name="version-control"></a>版本控制
 
@@ -92,8 +88,8 @@ Visual Studio 2015 和 Visual Studio for Mac 提供对 Git; 的本机支持对�
 
 使用 Team Foundation Server，你配置生成计算机特定的目标平台的如下所示：
 
-- **Android 和 Windows:** 安装 Visual Studio 和 Xamarin 工具 （适用于 Android 和 Windows 这两个） 和配置与你的 Xamarin 许可证。 还有必要移动到 TFS 在其中生成代理在服务器上的共享位置 Android SDK 可以找到它。 有关详细信息，请参阅[配置 TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)。
-- **iOS 和 Xamarin:** 安装 Visual Studio 和 Xamarin 工具具有适当的许可的 Windows 服务器上。 然后安装 Visual Studio for Mac 的可访问网络的 Mac OS X 计算机上，将作为生成主机，并创建最终应用包 (IPA 适用于 iOS、 OS x 应用)。
+- **Android 和 Windows:** 安装 Visual Studio 和 Xamarin 工具 （适用于 Android 和 Windows 这两个），并使用 Xamarin 许可证配置。 还有必要移动到 TFS 在其中生成代理在服务器上的共享位置 Android SDK 可以找到它。 有关详细信息，请参阅[配置 TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)。
+- **iOS 和 Xamarin:** 在具有适当的许可的 Windows 服务器上安装 Visual Studio 和 Xamarin 工具。 然后安装 Visual Studio for Mac 的可访问网络的 Mac OS X 计算机上，将作为生成主机，并创建最终应用包 (IPA 适用于 iOS、 OS x 应用)。
 
 下图说明了此拓扑：
 
@@ -115,7 +111,3 @@ OS X 基于可以完全是另一个常见的 CI 环境。 此方案涉及到使�
 
 > [!IMPORTANT]
 > **Jenkins 是[不受 Microsoft](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)。**
-
-# <a name="summary"></a>总结
-
-本文档介绍了持续集成的概念以及它对软件开发团队的优势。 介绍过的版本控制的重要性以及角色和职责的生成服务器。 该文档然后接着讨论的一些工具可用于源代码管理和生成服务器。 我们还引入了可帮助开发人员通过运行自动的测试的质量和其应用程序的功能将证明来发布优秀的应用程序的 App Center Test。 更详细的文档上提交可以找到应用程序和测试到 App Center[此处](https://docs.microsoft.com/appcenter/test-cloud)。 最后，可帮助了解如何所有这些工具和组件组合在一起，我们简单介绍了几个不同的 CI 环境的组织可能会建立用于持续集成。 与 Xamarin 项目结合使用 Visual Studio Team Services 和 Team Foundation Server 的详细信息，请参阅[配置 TFVC](https://docs.microsoft.com/azure/devops/repos/tfvc/overview/) ，这[持续集成简介](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer/)。 同样，如果您使用的 Jenkins，请参阅[使用 Xamarin 使用 Jenkins](~/tools/ci/jenkins-walkthrough.md)上设置持续集成的详细信息。

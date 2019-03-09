@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 7bef5de57b7ac709ebab4c39feedbec369e6bd14
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b1303f21225d3ae7b7d3a796e4845afbfe554a22
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122421"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667706"
 ---
 # <a name="workbooks-installation-and-requirements"></a>工作簿安装和要求
 
@@ -102,11 +102,11 @@ Visual Studio
 
 - 尝试连接到设备的名称
 - 设备 OS 版本
-- Android： 验证是否使用 x86 仿真程序
-- Android： 平台是什么仿真程序正在使用？ Google 仿真器？
+- Android:验证使用 x86 仿真程序
+- Android:您是否使用仿真程序平台是什么？ Google 仿真器？
   Visual Studio Android 仿真器？ Xamarin Android Player？
-- Windows 上的 iOS： 哪个版本的 Xamarin 远程 iOS 模拟器是否已安装 (检查**添加/删除程序**中**控制面板**)？
-- Windows 上的 iOS： 请提供平台版本信息的 Mac 生成主机
+- 在 Windows 上的 iOS:哪个版本的 Xamarin 远程 iOS 模拟器是否已安装 (检查**添加/删除程序**中**控制面板**)？
+- 在 Windows 上的 iOS:请提供平台版本信息的 Mac 生成主机
 - 设备是否具有网络连接 （通过 web 浏览器的检查）？
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
@@ -160,5 +160,5 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 若要从 1.4 或更高版本到 1.3.2 或更低版本降级：
 
-1. [手动卸载 Workbooks 与 Inspector](#macOS)
+1. [手动卸载 Workbooks 与 Inspector](#uninstall-macos)
 2. 运行 1.3.2 或更低版本`.pkg`安装程序

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: d8ee5f867c9a4d724c54c14b5afdd005f1b805d3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f3d0394f6b2388918f728bd5a25e9e809a832ca6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115765"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670962"
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -126,7 +126,7 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 [![屏幕截图的第一个 LinearLayout 水平排列的应用，第二个垂直](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-请注意，XML 属性定义每个视图的行为的方法。 尝试试验不同的值`android:layout_weight`若要查看如何分布的屏幕空间基于每个元素的权重。 请参阅[常见布局对象](http://developer.android.com/guide/topics/ui/declaring-layout.html)深入了解如何文档 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
+请注意，XML 属性定义每个视图的行为的方法。 尝试试验不同的值`android:layout_weight`若要查看如何分布的屏幕空间基于每个元素的权重。 请参阅[常见布局对象](https://developer.android.com/guide/topics/ui/declaring-layout.html)深入了解如何文档 [`LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)
 句柄`android:layout_weight`属性。
 
 

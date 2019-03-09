@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: a94c70bb7068847ed1b410dd7eddc70921fdf307
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106034"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667316"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>在 Xamarin.iOS 中引用本机库
 
@@ -115,7 +115,7 @@ lipo -info /full/path/to/libraryname.a
 -  随附于你的应用程序的静态库。
 
 
-若要访问的那些之一中定义的方法，您可以使用[Mono 的 P/Invoke 功能](http://www.mono-project.com/docs/advanced/pinvoke/)这是在.NET 中，大概是将使用的相同技术：
+若要访问的那些之一中定义的方法，您可以使用[Mono 的 P/Invoke 功能](https://www.mono-project.com/docs/advanced/pinvoke/)这是在.NET 中，大概是将使用的相同技术：
 
 -  确定你想要调用的 C 函数
 -  确定它的签名

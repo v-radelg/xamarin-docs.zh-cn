@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 54479a7ed66c83d1d97d51cc93e3df3241ec740f
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207929"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668486"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 设计原则
 
@@ -76,13 +76,13 @@ Xamarin.Android 包括大量的程序集构成*MonoMobile 配置文件*。 [程�
 
 Android Api 利用 java.util 集合广泛地提供列表、 集和地图。 我们将使用这些元素公开[System.Collections.Generic](xref:System.Collections.Generic)绑定中的接口。 基本映射是：
 
--   [java.util.Set<E> ](http://developer.android.com/reference/java/util/Set.html)映射到系统类型[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，帮助器类[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)。
+-   [java.util.Set<E> ](https://developer.android.com/reference/java/util/Set.html)映射到系统类型[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，帮助器类[Android.Runtime.JavaSet<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaSet%601/)。
 
--   [java.util.List<E> ](http://developer.android.com/reference/java/util/List.html)映射到系统类型[IList<T>](xref:System.Collections.Generic.IList`1)，帮助器类[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)。
+-   [java.util.List<E> ](https://developer.android.com/reference/java/util/List.html)映射到系统类型[IList<T>](xref:System.Collections.Generic.IList`1)，帮助器类[Android.Runtime.JavaList<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaList%601/)。
 
--   [< K，V > java.util.Map](http://developer.android.com/reference/java/util/Map.html)映射到系统类型[IDictionary < TKey，TValue >](xref:System.Collections.Generic.IDictionary`2)，帮助器类[Android.Runtime.JavaDictionary < K，V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)。
+-   [< K，V > java.util.Map](https://developer.android.com/reference/java/util/Map.html)映射到系统类型[IDictionary < TKey，TValue >](xref:System.Collections.Generic.IDictionary`2)，帮助器类[Android.Runtime.JavaDictionary < K，V >](https://developer.xamarin.com/api/type/Android.Runtime.JavaDictionary%602/)。
 
--   [java.util.Collection<E> ](http://developer.android.com/reference/java/util/Collection.html)映射到系统类型[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，帮助器类[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)。
+-   [java.util.Collection<E> ](https://developer.android.com/reference/java/util/Collection.html)映射到系统类型[ICollection<T>](xref:System.Collections.Generic.ICollection`1)，帮助器类[Android.Runtime.JavaCollection<T>](https://developer.xamarin.com/api/type/Android.Runtime.JavaCollection%601/)。
 
 我们提供了帮助程序类来帮助更快地 copyless 这些类型的封送处理。 如果可能，我们建议使用这些提供而不是提供框架实现的集合，如[ `List<T>` ](xref:System.Collections.Generic.List`1)或[ `Dictionary<TKey, TValue>` ](xref:System.Collections.Generic.Dictionary`2)。 [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/)实现利用本机 Java 集合在内部，因此不需要在复制/粘贴到本机集合传递到 Android API 成员时。
 
@@ -240,11 +240,11 @@ Java 接口将转换为两种类型：
 
 例如，考虑[android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)接口。
 *Parcelable*接口包含方法、 嵌套的类型和常量。 *Parcelable*接口方法放入[Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/)接口。
-*Parcelable*接口常量放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)类型。 嵌套[android.os.Parcelable.ClassLoaderCreator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)并[android.os.Parcelable.Creator <t> </t> ](http://developer.android.com/reference/android/os/Parcelable.Creator.html)类型目前不由于我们泛型的支持; 中的限制绑定如果它们受支持，它们将会显示作为*Android.OS.IParcelableClassLoaderCreator*并*Android.OS.IParcelableCreator*接口。 例如，嵌套[android.os.IBinder.DeathRecpient](http://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)作为绑定接口[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)接口。
+*Parcelable*接口常量放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)类型。 嵌套[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)并[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)类型目前不由于我们泛型的支持; 中的限制绑定如果它们受支持，它们将会显示作为*Android.OS.IParcelableClassLoaderCreator*并*Android.OS.IParcelableCreator*接口。 例如，嵌套[android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)作为绑定接口[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)接口。
 
 
 > [!NOTE]
-> 从 Xamarin.Android 1.9 开始，Java 接口常量是<em>重复</em>在为了简化将 Java 移植的代码中。 这有助于改善迁移依赖于的 Java 代码[android 提供程序](http://developer.android.com/reference/android/provider/package-summary.html)常量的接口。
+> 从 Xamarin.Android 1.9 开始，Java 接口常量是<em>重复</em>在为了简化将 Java 移植的代码中。 这有助于改善迁移依赖于的 Java 代码[android 提供程序](https://developer.android.com/reference/android/provider/package-summary.html)常量的接口。
 
 除了上述类型，有四个进一步的更改：
 
@@ -257,9 +257,9 @@ Java 接口将转换为两种类型：
 1. *月成本*类型现已过时。
 
 
-有关*android.os.Parcelable*接口，这意味着，现在将存在[ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)要包含的常量类型。 例如， [Parcelable.CONTENTS_FILE_DESCRIPTOR](http://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)常量将作为绑定[ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/)常量，而不是作为*ParcelableConsts.ContentsFileDescriptor*常量。
+有关*android.os.Parcelable*接口，这意味着，现在将存在[ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)要包含的常量类型。 例如， [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)常量将作为绑定[ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/)常量，而不是作为*ParcelableConsts.ContentsFileDescriptor*常量。
 
-对于包含常量的实现包含其他接口但多个常量的接口，现在会生成所有常量的并集。 例如， [android.provider.MediaStore.Video.VideoColumns](http://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)接口实现[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)接口。 1.9，不过之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)类型都有无法访问上声明的常量[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
+对于包含常量的实现包含其他接口但多个常量的接口，现在会生成所有常量的并集。 例如， [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)接口实现[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)接口。 1.9，不过之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)类型都有无法访问上声明的常量[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
 因此，Java 表达式*MediaStore.Video.VideoColumns.TITLE*需要绑定到 C# 表达式*MediaStore.Video.MediaColumnsConsts.Title*这很难发现而无需读取很多 Java 文档。 在 1.9，等效的 C# 表达式将是[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
 
 此外，考虑[android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/)类型，实现 Java *Parcelable*接口。 因为它实现了接口，例如该接口上的所有常量都是"通过"绑定类型，可访问*Bundle.CONTENTS_FILE_DESCRIPTOR*是完全有效的 Java 表达式。
@@ -270,8 +270,8 @@ Java 接口将转换为两种类型：
 
 ## <a name="resources"></a>资源
 
-可以作为应用程序中包含图像、 布局说明、 二进制 blob 和字符串字典[资源文件](http://developer.android.com/guide/topics/resources/providing-resources.html)。
-各种 Android Api 旨在[操作的资源 Id](http://developer.android.com/guide/topics/resources/accessing-resources.html)而不是图像处理，字符串或二进制 blob 直接。
+可以作为应用程序中包含图像、 布局说明、 二进制 blob 和字符串字典[资源文件](https://developer.android.com/guide/topics/resources/providing-resources.html)。
+各种 Android Api 旨在[操作的资源 Id](https://developer.android.com/guide/topics/resources/accessing-resources.html)而不是图像处理，字符串或二进制 blob 直接。
 
 例如，示例 Android 应用，其中包含用户界面布局 ( `main.axml`)，国际化表字符串 ( `strings.xml`) 和一些图标 ( `drawable-*/icon.png`) 将保持其资源的应用程序的"资源"目录中：
 
@@ -317,7 +317,7 @@ public class Resource {
 
 本机 Android Api 具有很多方法，接受或返回一个整数，它必须映射到常量字段来确定 int 的意义。 使用这些方法，用户不需要查阅文档以查看哪些常量是适当的值，这是不太理想。
 
-例如，考虑[Activity.requestWindowFeature (int featureID)](http://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))。
+例如，考虑[Activity.requestWindowFeature (int featureID)](https://developer.android.com/reference/android/app/Activity.html#requestWindowFeature(int))。
 
 在这些情况下，我们尽力一起分组相关的常量是.NET 的枚举，并将重新映射要改为采用枚举的方法。
 通过执行此操作，我们就能够提供 IntelliSense 所选内容的可能的值。

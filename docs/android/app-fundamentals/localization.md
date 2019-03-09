@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 634131025b322b64e89ece3b4c9d092e6b17a373
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579812"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670658"
 ---
 # <a name="android-localization"></a>Android 本地化
 
@@ -32,7 +32,7 @@ _本文档介绍了本地化功能的 Android SDK 以及如何使用 Xamarin 访
 var lang = Resources.Configuration.Locale; // eg. "es_ES"
 ```
 
-此值将为包含语言代码和区域设置代码，以下划线分隔的区域设置标识符。 有关参考，下面是[Java 区域设置列表](http://www.oracle.com/technetwork/java/javase/locales-137662.html)并[StackOverflow 通过 Android 支持区域设置](http://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android)。
+此值将为包含语言代码和区域设置代码，以下划线分隔的区域设置标识符。 有关参考，下面是[Java 区域设置列表](https://www.oracle.com/technetwork/java/javase/locales-137662.html)并[StackOverflow 通过 Android 支持区域设置](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android)。
 
 常见示例包括：
 
@@ -190,7 +190,7 @@ var translated = Resources.GetQuantityString (
 * many
 * 其他
 
-中的更多详细信息中所述[Android 文档](http://developer.android.com/guide/topics/resources/string-resource.html#Plurals)。如果给定的语言不需要特殊处理时，那些`quantity`字符串将被忽略 (例如，英语仅使用`one`并`other`; 指定`zero`字符串会产生任何效果，将不使用它)。
+中的更多详细信息中所述[Android 文档](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)。如果给定的语言不需要特殊处理时，那些`quantity`字符串将被忽略 (例如，英语仅使用`one`并`other`; 指定`zero`字符串会产生任何效果，将不使用它)。
 
 ### <a name="images"></a>图像
 
@@ -209,7 +209,7 @@ var translated = Resources.GetQuantityString (
 
 Android 4.2 引入了对支持[从右到左 (RTL) 语言](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)如果你设置的应用程序设置`android:supportsRtl="true"`。 资源限定符`"ldrtl"`可以包含在要包含专为从右向左显示的自定义布局目录名称。
 
-有关资源目录命名和故障回复的详细信息，请参阅 Android 文档[提供替代资源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
+有关资源目录命名和故障回复的详细信息，请参阅 Android 文档[提供替代资源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 
 ### <a name="app-name"></a>应用名称
@@ -252,7 +252,7 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>设备测试
 
 若要在设备上测试，更改所使用的语言**设置**应用。
-**提示：** 记下图标和菜单项的位置，以便可以还原到原始设置的语言。
+**提示：** 请记下的图标和菜单项的位置，以便可以还原到原始设置的语言。
 
 
 ## <a name="summary"></a>总结
@@ -264,7 +264,7 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ## <a name="related-links"></a>相关链接
 
 - [Tasky （在代码中已本地化） （示例）](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)
-- [Android 资源与本地化](http://developer.android.com/guide/topics/resources/localization.html)
+- [Android 资源与本地化](https://developer.android.com/guide/topics/resources/localization.html)
 - [跨平台本地化概述](~/cross-platform/app-fundamentals/localization.md)
 - [Xamarin.Forms 本地化](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [iOS 本地化](~/ios/app-fundamentals/localization/index.md)

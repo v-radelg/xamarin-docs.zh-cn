@@ -6,13 +6,8 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: c7bac0612679131383d3b89f24904c8083fa925b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103096"
 ---
+
 # <a name="getting-started-with-objective-c"></a>Objective C 入门
 
 这是适用于 OBJECTIVE-C 的其中介绍了所有支持平台的基础知识的入门页。
@@ -23,7 +18,7 @@ ms.locfileid: "50103096"
 
 * macOS 10.12 (Sierra) 或更高版本
 * Xcode 8.3.2 或更高版本
-* [Mono 5.0](http://www.mono-project.com/download/)
+* [Mono 5.0](https://www.mono-project.com/download/)
 
 你可以安装[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)来编辑和编译在C#代码。
 

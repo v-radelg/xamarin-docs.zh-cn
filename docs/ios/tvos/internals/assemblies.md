@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 1749de49607596fa2b8e555fec471af1d18b8ce9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3b5eae4d218fdc66f7f99f0aab8aa32af3cbabf4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116675"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667356"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>程序集支持的适用于 tvOS 的 Xamarin
 
@@ -27,21 +27,21 @@ ms.locfileid: "50116675"
 |Mono.Data.Tds.dll|1.2|TDS 协议的支持;用于[System.Data.SqlClient](xref:System.Data.SqlClient)内支持[System.Data](~/ios/data-cloud/system.data.md)。|
 |Mono.Security.dll|1.0|加密 Api。|
 |monotouch.dll|1.0|此程序集包含[C# 绑定到产品 CocoaTouch API](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)。|
-|mscorlib.dll|1.0|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|mscorlib.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |OpenTK.dll|1.0|OpenGL/OpenAL 对象面向 Api，[扩展，使其提供 iPhone 设备支持](https://developer.xamarin.com/api/namespace/OpenGLES/)。|
-|System.dll|1.0|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)，加上以下命名空间中的类型： <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
-|System.Core.dll|1.0|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Data.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)，[删除某些功能与](~/ios/data-cloud/system.data.md)。|
+|System.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，加上以下命名空间中的类型： <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
+|System.Core.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.Data.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)，[删除某些功能与](~/ios/data-cloud/system.data.md)。|
 |System.Data.Service.Client.dll|3.x|完整的 oData 客户端。|
 |System.Drawing|1.0|System.Drawing API-仅经典 API。<br />_System.Drawing 不支持统一 API 中的 Xamarin.Mac.NET 4.5 或移动框架。_|
-|System.Json.dll|1.1|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Runtime.Serialization.dll|?|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.ServiceModel.dll|1.1|[WCF](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)堆栈为存在在[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.ServiceModel.Web.dll|?|[Silverlight](http://msdn.microsoft.com/library/cc838194(VS.95).aspx)，加上以下命名空间中的类型： <ul><li>系统</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
-|System.Transactions.dll|1.2|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx); 的一部分[System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)支持。|
+|System.Json.dll|1.1|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.Runtime.Serialization.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.ServiceModel.dll|1.1|[WCF](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)堆栈为存在在[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|System.ServiceModel.Web.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，加上以下命名空间中的类型： <ul><li>系统</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
+|System.Transactions.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx); 的一部分[System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)支持。|
 |System.Web.Services|1.1|[基本 Web 服务](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)从.NET 3.5，配置文件中删除的服务器功能。|
-|System.Xml.dll|1.0|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|
-|System.Xml.Linq.dll|1.0|[.NET 3.5](http://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Xml.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Xml.Linq.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
 
 <a name="Summary" />
 

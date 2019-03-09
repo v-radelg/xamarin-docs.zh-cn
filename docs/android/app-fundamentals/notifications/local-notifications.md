@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 63f0d4d7ce5f056d8e1db6bc297258c6bc070086
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675544"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672738"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,7 @@ Android 包括对通知的元数据的支持，因此可以进行排序和以智
 
 -   **类别**&ndash;通知系统如何处理在各种情况下，例如设备时通知*请勿打扰*模式。
 
-**注意：** **可见性**并**类别**引入在 Android 5.0 和早期版本的 Android 中不可用。 从开始 Android 8.0[通知通道](#notif-chan)用于控制如何向用户显示通知。
+**注意：****可见性**并**类别**引入在 Android 5.0 和早期版本的 Android 中不可用。 从开始 Android 8.0[通知通道](#notif-chan)用于控制如何向用户显示通知。
 
 
 ### <a name="expanded-layouts"></a>扩展的布局
@@ -219,7 +219,7 @@ void CreateNotificationChannel()
 
 -   通知文本
 
-下面的代码示例演示了如何使用`NotificationCompat.Builder`生成基本的通知。 请注意，`NotificationCompat.Builder`方法支持[方法链接](http://en.wikipedia.org/wiki/Method_chaining); 也就是说，每个方法返回生成器对象，因此可以使用的最后一次方法调用结果调用下一个方法调用：
+下面的代码示例演示了如何使用`NotificationCompat.Builder`生成基本的通知。 请注意，`NotificationCompat.Builder`方法支持[方法链接](https://en.wikipedia.org/wiki/Method_chaining); 也就是说，每个方法返回生成器对象，因此可以使用的最后一次方法调用结果调用下一个方法调用：
 
 ```csharp
 // Instantiate the builder and set notification elements:
@@ -332,7 +332,7 @@ notificationManager.Notify (notificationId, notification);
 
 -   应用程序调用`NotificationManager.CancelAll`。
 
-有关更新 Android 通知的详细信息，请参阅[修改通知](http://developer.android.com/training/notify-user/managing.html#Updating)。
+有关更新 Android 通知的详细信息，请参阅[修改通知](https://developer.android.com/training/notify-user/managing.html#Updating)。
 
 
 ### <a name="starting-an-activity-from-a-notification"></a>从通知启动活动
@@ -375,7 +375,7 @@ notificationManager.Notify (notificationId, notification);
 
 点击此通知将返回到原始活动用户。
 
-在生产应用中，您的应用程序必须处理*back 堆栈*当用户按**回**通知活动中的按钮 （如果您不熟悉 Android 任务和 back 堆栈，请参阅[任务和后退堆栈](http://developer.android.com/guide/components/tasks-and-back-stack.html))。
+在生产应用中，您的应用程序必须处理*back 堆栈*当用户按**回**通知活动中的按钮 （如果您不熟悉 Android 任务和 back 堆栈，请参阅[任务和后退堆栈](https://developer.android.com/guide/components/tasks-and-back-stack.html))。
 在大多数情况下，在向后导航出通知活动应返回用户退出应用程序并返回到主屏幕。 若要管理 back 堆栈中，您的应用程序使用[TaskStackBuilder](https://developer.xamarin.com/api/type/Android.App.TaskStackBuilder/)类，以创建`PendingIntent`back 堆栈使用。
 
 现实世界的另一个注意事项是，原始活动可能需要将数据发送到通知活动。 例如，通知可能表示文本消息已到达，并通知活动 （消息查看屏幕），需要向用户显示消息的消息的 ID。 创建的活动`PendingIntent`可以使用[Intent.PutExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.PutExtra/p/System.String/System.String/)方法将数据 （例如，字符串） 添加到意向，以便此数据将传递给通知活动。
@@ -770,7 +770,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 本文介绍了如何在 Android 中创建本地通知。 所述的通知剖析，它介绍了如何使用`NotificationCompat.Builder`若要创建通知，如何在大图标样式通知*大文本*，*图像*和*收件箱*格式、 如何设置通知的元数据设置，如优先级、 可见性和类别，以及如何启动通知中的活动。 本文还介绍了这些通知设置如何使用新的危险警告，锁定屏幕和*请勿打扰*Android 5.0 中引入的功能。 最后，您学习了如何使用`NotificationCompat.Builder`以保持与早期版本的 Android 通知兼容。
 
-设计适用于 Android 的通知的指南，请参阅[通知](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
+设计适用于 Android 的通知的指南，请参阅[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
 
 
 ## <a name="related-links"></a>相关链接
@@ -778,7 +778,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 - [NotificationsLab （示例）](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications （示例）](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [在 Android 演练中的本地通知](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [通知用户](http://developer.android.com/training/notify-user/index.html)
+- [通知用户](https://developer.android.com/training/notify-user/index.html)
 - [通知](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)

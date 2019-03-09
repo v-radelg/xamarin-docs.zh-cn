@@ -1,5 +1,5 @@
 ---
-title: Android 音频
+title: Android Audio
 description: Android OS 提供了广泛支持为多媒体，其中包含音频和视频。 本指南重点介绍在 Android 中的音频，涵盖播放和录制音频，使用内置的音频播放器和记录器类，以及低级别的音频 API。 它还介绍如何使用由其他应用程序，广播音频事件，以便开发人员可以构建良好的应用程序。
 ms.prod: xamarin
 ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 9b7e9354250881074fc6f0db5d97dc83e4d3fa77
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a1a9dd06fb3cd6899dd3a564072bb63e413edf22
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114660"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667533"
 ---
-# <a name="android-audio"></a>Android 音频
+# <a name="android-audio"></a>Android Audio
 
 _Android OS 提供了广泛支持为多媒体，其中包含音频和视频。本指南重点介绍在 Android 中的音频，涵盖播放和录制音频，使用内置的音频播放器和记录器类，以及低级别的音频 API。它还介绍如何使用由其他应用程序，广播音频事件，以便开发人员可以构建良好的应用程序。_
 
@@ -124,7 +124,7 @@ player.Release();
 
 2. 指定要用于捕获通过的音频输入哪些硬件设备[SetAudioSource](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioSource/p/Android.Media.AudioSource/)方法。
 
-3. 设置输出文件的音频格式使用[SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/)方法。 有关受支持的音频类型的列表，请参阅[Android 支持媒体格式](http://developer.android.com/guide/appendix/media-formats.html)。
+3. 设置输出文件的音频格式使用[SetOutputFormat](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetOutputFormat/p/Android.Media.OutputFormat/)方法。 有关受支持的音频类型的列表，请参阅[Android 支持媒体格式](https://developer.android.com/guide/appendix/media-formats.html)。
 
 4. 调用[SetAudioEncoder](https://developer.xamarin.com/api/member/Android.Media.MediaRecorder.SetAudioEncoder/p/Android.Media.AudioEncoder/)方法以设置编码类型的音频。
 
@@ -210,7 +210,7 @@ recorder.Release();
 
 音频的焦点可能会被立即授予或最初被拒绝并授予更高版本。 例如，如果应用程序请求音频焦点在电话呼叫期间，它将被拒绝，但电话呼叫完成后，也可能会授予焦点。 在这种情况下，侦听器会注册以相应地响应，如果音频焦点移走。 请求音频焦点用于确定它正常播放或录制音频。
 
-有关音频焦点的详细信息，请参阅[管理音频焦点](http://developer.android.com/training/managing-audio/audio-focus.html)。
+有关音频焦点的详细信息，请参阅[管理音频焦点](https://developer.android.com/training/managing-audio/audio-focus.html)。
 
 
 
@@ -352,7 +352,7 @@ audioTrack.Release();
 
 #### <a name="initializing-and-recording"></a>初始化和记录
 
-第一步是构造一个新[AudioRecord](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/)对象。 参数列表传递给[构造函数](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/#memberlist)提供用于记录所需的所有信息。 不同于在`AudioTrack`，其中的参数是很大程度上枚举中的等效参数`AudioRecord`是整数。 这些方法包括：
+第一步是构造一个新[AudioRecord](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/)对象。 参数列表传递给[构造函数](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/#memberlist)提供用于记录所需的所有信息。 不同于在`AudioTrack`，其中的参数是很大程度上枚举中的等效参数`AudioRecord`是整数。 这些问题包括：
 
 1.  硬件音频输入的源如麦克风。
 
@@ -429,6 +429,6 @@ Android OS 提供了一个功能强大的框架，用于播放、 录制和管�
 - [使用与音频 （示例）](https://developer.xamarin.com/samples/Example_WorkingWithAudio/)
 - [媒体播放器](https://developer.xamarin.com/api/type/Android.Media.MediaPlayer/)
 - [媒体录制器](https://developer.xamarin.com/api/type/Android.Media.MediaRecorder/)
-- [音频管理器](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
+- [Audio Manager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/)
 - [音频曲目](https://developer.xamarin.com/api/type/Android.Media.AudioTrack/)
 - [音频录制器](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/)

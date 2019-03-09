@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 63379a9a4195bf5128c96caaf8745df8dd0addf3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050707"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669437"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 绘制一个简单的圆圈
 
@@ -108,7 +108,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 默认值为 `Fill`。 第三个选项用于绘制线条笔画和内部填充颜色相同。
 
-设置[ `Color` ](xref:SkiaSharp.SKPaint.Color)属性的值类型[ `SKColor` ](xref:SkiaSharp.SKColor)。 一种方法来获取`SKColor`值是通过将转换 Xamarin.Forms`Color`值设置为`SKColor`值使用扩展方法[ `ToSKColor` ](SkiaSharp.Views.Forms.Extensions.ToSKColor*)。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)类中`SkiaSharp.Views.Forms`命名空间包含的其他方法的 Xamarin.Forms 值和 SkiaSharp 值之间进行转换。
+设置[ `Color` ](xref:SkiaSharp.SKPaint.Color)属性的值类型[ `SKColor` ](xref:SkiaSharp.SKColor)。 一种方法来获取`SKColor`值是通过将转换 Xamarin.Forms`Color`值设置为`SKColor`值使用扩展方法[ `ToSKColor` ](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)类中`SkiaSharp.Views.Forms`命名空间包含的其他方法的 Xamarin.Forms 值和 SkiaSharp 值之间进行转换。
 
 [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)属性指示的行宽度。 此处它被设置为 25 像素。
 
@@ -153,7 +153,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 > [!NOTE]
 > `SKPaint`类定义[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)若要启用在图形的呈现抗锯齿。 抗锯齿通常导致直观地平滑边缘，因此您可能需要将此属性设置为`true`中的大多数您`SKPaint`对象。 为了简单起见，此属性是_不_设置中的大多数示例页面。
 
-尽管圆的轮廓的宽度指定为 25 像素&mdash;或四分之一圆的半径&mdash;似乎更精细，并且没有充分的理由： 在行宽度的一半的蓝色圆圈将被遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
+尽管圆的轮廓的宽度指定为 25 像素&mdash;或四分之一圆的半径&mdash;似乎更精细，并且没有充分的理由：在行宽度的一半将被遮盖的蓝色圆圈。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
 
 中的下一个示例[与 Xamarin.Forms 集成](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文章演示是以可视方式。
 

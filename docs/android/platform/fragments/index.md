@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: bc4441c7ee0c36af990297bad1b0c2f0e77123f3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113282"
 ---
+
 # <a name="fragments"></a>片段
 
 _Android 3.0 引入了片段，演示如何在手机和平板电脑上找到的许多不同的屏幕大小支持更灵活的设计。本文将介绍如何使用片段开发 Xamarin.Android 应用程序，以及如何在预 Android 3.0 (API 级别 11) 设备上支持片段。_
@@ -63,6 +58,6 @@ _Android 3.0 引入了片段，演示如何在手机和平板电脑上找到的�
 ## <a name="related-links"></a>相关链接
 
 - [Honeycomb 库 （示例）](https://developer.xamarin.com/samples/monodroid/HoneycombGallery)
-- [片段](http://developer.android.com/guide/topics/fundamentals/fragments.html)
-- [支持包](http://developer.android.com/sdk/compatibility-library.html)
-- [MOTODEV 网络研讨会： 引入片段](http://motodev.adobeconnect.com/p9h1aqk3ttn/)
+- [片段](https://developer.android.com/guide/topics/fundamentals/fragments.html)
+- [支持包](https://developer.android.com/sdk/compatibility-library.html)
+- [MOTODEV 网络研讨会：引入了片段](http://motodev.adobeconnect.com/p9h1aqk3ttn/)

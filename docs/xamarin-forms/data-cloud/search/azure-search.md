@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 81e6cbb39a522a471e739e7e9bbb8a0f451a38cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 640d50a45b4b7f61113b609fa6a5e4a04566b360
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052878"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667528"
 ---
 # <a name="searching-data-with-azure-search"></a>使用 Azure 搜索来搜索数据
 
@@ -156,7 +156,7 @@ static void UploadDataToSearchIndex()
 }
 ```
 
-要导入到索引数据打包成`IndexBatch`对象，该封装的集合对象`IndexAction`对象。 每个`IndexAction`实例包含一个文档，以及指示 Azure 搜索对文档执行的操作的属性。 在上面的代码示例`IndexAction.Upload`操作指定，如果是新的插入到索引文档中的结果或替换已存在。 `IndexBatch`对象然后通过调用发送到索引`Documents.Index`方法`SearchIndexClient`对象。 有关其他索引操作的信息，请参阅[决定要使用的索引操作](/azure/search/search-import-data-dotnet#ii-decide-which-indexing-action-to-use)。
+要导入到索引数据打包成`IndexBatch`对象，该封装的集合对象`IndexAction`对象。 每个`IndexAction`实例包含一个文档，以及指示 Azure 搜索对文档执行的操作的属性。 在上面的代码示例`IndexAction.Upload`操作指定，如果是新的插入到索引文档中的结果或替换已存在。 `IndexBatch`对象然后通过调用发送到索引`Documents.Index`方法`SearchIndexClient`对象。 有关其他索引操作的信息，请参阅[决定要使用的索引操作](/azure/search/search-import-data-dotnet#decide-which-indexing-action-to-use)。
 
 > [!NOTE]
 > 仅 1000 个文档可以包含在单个索引请求。

@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 4105200c48e41b142fc71e3a524023790b683cdb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105982"
 ---
+
 # <a name="intro-to-contentproviders"></a>简介 Contentprovider
 
 _Android 操作系统使用的内容提供商来方便地对媒体文件、 联系人和日历信息等的共享数据的访问。本文介绍 ContentProvider 类，并提供如何使用它的两个示例。_
@@ -47,7 +42,7 @@ _Android 操作系统使用的内容提供商来方便地对媒体文件、 联�
 
 - [ContactsAdapter 演示 （示例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
 - [SimpleContentProvider （示例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
-- [内容提供程序开发人员指南](http://developer.android.com/guide/topics/providers/content-providers.html)
+- [内容提供程序开发人员指南](https://developer.android.com/guide/topics/providers/content-providers.html)
 - [ContentProvider 类引用](https://developer.xamarin.com/api/type/Android.Content.ContentProvider/)
 - [ContentResolver 类引用](https://developer.xamarin.com/api/type/Android.Content.ContentResolver/)
 - [ListView 类引用](https://developer.xamarin.com/api/type/Android.Widget.ListView/)

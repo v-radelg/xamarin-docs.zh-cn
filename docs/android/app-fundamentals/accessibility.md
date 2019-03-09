@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3cce3270b9df2aad0037b1ab96f169cc4b564766
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: d004b753c89f3995e8dc511877bd115a894396fc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528125"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671619"
 ---
 # <a name="accessibility-on-android"></a>在 Android 上的辅助功能
 
@@ -174,12 +174,12 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 ## <a name="testing-accessibility"></a>测试辅助功能
 
-请按照[这些步骤](http://developer.android.com/training/accessibility/testing.html#how-to)启用 TalkBack 和资源管理器通过触摸辅助功能在 Android 设备上的进行测试。
+请按照[这些步骤](https://developer.android.com/training/accessibility/testing.html#how-to)启用 TalkBack 和资源管理器通过触摸辅助功能在 Android 设备上的进行测试。
 
 可能需要安装[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)从 Google Play，如果未出现在**设置 > 可访问性**。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [跨平台可访问性](~/cross-platform/app-fundamentals/accessibility.md)
-- [Android 可访问性 Api](http://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [跨平台辅助功能](~/cross-platform/app-fundamentals/accessibility.md)
+- [Android 可访问性 Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)

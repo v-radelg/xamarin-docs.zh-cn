@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 243408ce6e2236b75ea35dfd17633a9a24493c1b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102790"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672360"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>使用 Web 标记在 Xamarin.iOS 中搜索
 
@@ -209,7 +209,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 ```
 
-有关详细信息，请参阅 Apple[应用程序搜索开发人员网站](http://developer.apple.com/ios/search/)。
+有关详细信息，请参阅 Apple[应用程序搜索开发人员网站](https://developer.apple.com/ios/search/)。
 
 
 

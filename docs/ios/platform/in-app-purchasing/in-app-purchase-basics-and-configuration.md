@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4d79988fc2900f1fe58774657344f19fab90f3e4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105085"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671976"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>应用内购买基本知识和配置 Xamarin.iOS
 
@@ -46,7 +46,7 @@ Apple 必须审批每个产品之前就上出售 – 名称、 说明和产品�
 
 ## <a name="configuration"></a>配置
 
-在编写任何应用程序内购买代码之前必须执行一些设置工作在 iTunes Connect 中的 ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 设置门户 ( [developer.apple.com/iOS](http://developer.apple.com/iOS))。
+在编写任何应用程序内购买代码之前必须执行一些设置工作在 iTunes Connect 中的 ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 设置门户 ( [developer.apple.com/iOS](https://developer.apple.com/iOS))。
 
 在编写任何代码之前，应完成以下三个步骤：
 
@@ -109,8 +109,8 @@ Apple 必须审批每个产品之前就上出售 – 名称、 说明和产品�
 
 添加新产品的过程具有两个步骤：
 
-1.   选择的产品类型： [![](in-app-purchase-basics-and-configuration-images/image8.png "选择的产品类型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   输入产品的属性，包括产品 Id，定价层和本地化的说明： [![](in-app-purchase-basics-and-configuration-images/image9.png "输入的产品属性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   选择产品类型：[![](in-app-purchase-basics-and-configuration-images/image8.png "选择产品类型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   输入产品的属性，包括产品 Id、 定价层和本地化的说明：[![](in-app-purchase-basics-and-configuration-images/image9.png "输入的产品属性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 每个应用内购买产品所需的字段如下所述：
 

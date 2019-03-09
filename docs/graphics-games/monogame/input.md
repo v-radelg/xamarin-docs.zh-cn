@@ -6,12 +6,12 @@ ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: badd23ebb78e61e7d7650ff6d0973226359fd9d5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c1c03e0ec17ade57536b4ed121469e3ae2274e75
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117093"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668967"
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame 游戏手柄引用
 
@@ -30,7 +30,7 @@ _游戏板是用于访问 MonoGame 中的输入的设备的标准的跨平台的
 - `GetState` -返回控制器的按钮、 模拟记忆棒和方向键的当前状态。
 - `GetCapabilities` -返回有关功能的信息的硬件，如控制器是否有某些按钮或支持振动。
 
-### <a name="example-moving-a-character"></a>示例： 将移动一个字符
+### <a name="example-moving-a-character"></a>示例:移动一个字符
 
 下面的代码演示如何使用左侧的滚动块记忆棒以将人物移动通过设置其`XVelocity`和`YVelocity`属性。 此代码假定`characterInstance`是某对象包含的实例`XVelocity`和`YVelocity`属性：
 
@@ -42,9 +42,9 @@ characterInstance.XVelocity = gamePadState.ThumbSticks.Left.X * characterInstanc
 characterInstance.YVelocity = gamePadState.ThumbSticks.Left.Y * characterInstance.MaxSpeed;
 ```
 
-### <a name="example-detecting-pushes"></a>示例： 检测推送
+### <a name="example-detecting-pushes"></a>示例:检测推送
 
-`GamePadState` 提供有关控制器，例如是否按下某个按钮的当前状态信息。 某些操作，例如让人物跳转，需要检查如果按钮已推送 （不是关闭最后一个帧，但已关闭此帧） 或释放 （为下最后一帧，但不是关闭此帧）。 
+`GamePadState` 提供有关控制器，例如是否按下某个按钮的当前状态信息。 某些操作，例如让人物跳转，需要检查如果按钮已推送 （不是关闭最后一个帧，但已关闭此帧） 或释放 （为下最后一帧，但不是关闭此帧）。
 
 若要执行此类型的逻辑，存储在前一个帧的局部变量`GamePadState`和当前帧的`GamePadState`必须创建。 下面的示例演示如何将存储并使用上一帧`GamePadState`实现一个在跳转：
 
@@ -59,7 +59,7 @@ protected override void Update(GameTime gameTime)
     // store off the last state before reading the new one:
     lastFrameGamePadState = currentGamePadState;
     currentGamePadState = GamePad.GetState(PlayerIndex.One);
-    bool wasAButtonPushed = 
+    bool wasAButtonPushed =
 currentGamePadState.Buttons.A == ButtonState.Pressed
         && lastFrameGamePadState.Buttons.A == ButtonState.Released;
     if(wasAButtonPushed)
@@ -70,7 +70,7 @@ currentGamePadState.Buttons.A == ButtonState.Pressed
 }
 ```
 
-### <a name="example-checking-for-buttons"></a>示例： 检查按钮
+### <a name="example-checking-for-buttons"></a>示例:正在检查的按钮
 
 `GetCapabilities` 可用于检查控制器是否有特定硬件，如特定按钮或模拟记忆棒。 下面的代码演示如何检查这需要两个按钮提供的游戏中的控制器上的 B 和 Y 按钮：
 
@@ -89,7 +89,7 @@ if(!hasBButton || !hasXButton)
 iOS 应用支持无线游戏控制器的输入。
 
 > [!IMPORTANT]
-> MonoGame 3.5 NuGet 包中未包含无线游戏控制器支持。 在 iOS 上使用游戏板类需要生成 MonoGame 3.5 源中或使用 MonoGame 3.6 NuGet 二进制文件。 
+> MonoGame 3.5 NuGet 包中未包含无线游戏控制器支持。 在 iOS 上使用游戏板类需要生成 MonoGame 3.5 源中或使用 MonoGame 3.6 NuGet 二进制文件。
 
 ### <a name="ios-game-controller"></a>iOS 游戏控制器
 
@@ -105,7 +105,7 @@ Apple TV 游戏可以输入使用 Siri 远程或无线的游戏控制器。
 
 *Siri 远程*Apple TV 的是本机的输入的设备。 尽管可以通过事件读取 Siri 远程中的值 (如中所示[Siri 远程和蓝牙控制器指南](~/ios/tvos/platform/remote-bluetooth.md))，则`GamePad`类可以从使用 Siri 远程返回值。
 
-请注意，`GamePad`只能读取输入从播放按钮和 touch 面： 
+请注意，`GamePad`只能读取输入从播放按钮和 touch 面：
 
 ![](input-images/image2.png "请注意，游戏板只能读取输入从播放按钮和 touch 面")
 
@@ -113,7 +113,7 @@ Apple TV 游戏可以输入使用 Siri 远程或无线的游戏控制器。
 
 ### <a name="apple-tv-game-controller"></a>Apple 电视游戏控制器
 
-Apple TV 的游戏控制器到适用于 iOS 应用的游戏控制器具有相同行为。 有关详细信息，请参阅[iOS 游戏控制器部分](#iOS_Game_Controller)。 
+Apple TV 的游戏控制器到适用于 iOS 应用的游戏控制器具有相同行为。 有关详细信息，请参阅[iOS 游戏控制器部分](#iOS-game-controller)。 
 
 ## <a name="xbox-one"></a>Xbox One
 

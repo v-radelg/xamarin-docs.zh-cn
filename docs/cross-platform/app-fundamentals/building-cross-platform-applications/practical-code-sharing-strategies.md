@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b20760d3e8d7e168b0f0508222d8ae0b743a9368
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9fbbe7d33428c1274d78ed882ced3985b8459072
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058907"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671476"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 实际代码共享策略
 
@@ -201,7 +201,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 它是默认的机制用于在已实现了 Xamarin.iOS 和 Xamarin.Android 以允许公共文件访问代码编写的 Windows Phone (Silverlight) 中的文件访问。 `System.IO.IsolatedStorage`类，可以在所有三个平台中引用[共享项目](~/cross-platform/app-fundamentals/shared-projects.md)。
 
-请参阅[独立存储概述为 Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)有关详细信息。
+请参阅[独立存储概述为 Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)有关详细信息。
 
 独立存储 Api 中不可用[的可移植类库](~/cross-platform/app-fundamentals/pcl.md)。 PCL 的一个替代方法是[PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
@@ -295,7 +295,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 -  即使网络不可用，它是很好的做法启动其他请求之前验证与目标服务器的连接。 这将阻止应用的网络操作超时，重复，并且还允许信息更丰富的错误消息来向用户显示。
 
 
-没有[Xamarin.iOS 示例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (后者基于 Apple[可访问性的示例代码](http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 以帮助检测网络可用性。
+没有[Xamarin.iOS 示例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (后者基于 Apple[可访问性的示例代码](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 以帮助检测网络可用性。
 
 
 ## <a name="webservices"></a>WebServices
@@ -387,7 +387,7 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 IOS 和 Android 的语法要求的 'context' 类可用于这意味着该代码需要将此对象传递到需要在 UI 线程上的回调的任何方法。
 
-若要共享代码中进行 UI 线程调用，请按照[IDispatchOnUIThread 示例](http://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(由[ @follesoe ](http://jonas.follesoe.no/))。 声明和程序对`IDispatchOnUIThread`接口中的共享代码，然后实现特定于平台的类，如下所示：
+若要共享代码中进行 UI 线程调用，请按照[IDispatchOnUIThread 示例](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(由[ @follesoe ](http://jonas.follesoe.no/))。 声明和程序对`IDispatchOnUIThread`接口中的共享代码，然后实现特定于平台的类，如下所示：
 
 ```csharp
 // program to the interface in shared code

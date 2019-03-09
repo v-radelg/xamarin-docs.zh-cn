@@ -1,19 +1,19 @@
 ---
-title: 专用的片段类
+title: 专用片段类
 ms.prod: xamarin
 ms.assetid: 7A0AEB2C-EE77-63BF-652A-DA049B691C64
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 1011d74be971a3acba33c8f2f811e8f89e20cfc4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 75d95d630415cdaa4c0c1ed3b8ddebb32b8e3c4d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108439"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670060"
 ---
-# <a name="specialized-fragment-classes"></a>专用的片段类
+# <a name="specialized-fragment-classes"></a>专用片段类
 
 片段 API 提供了封装应用程序中的更常见功能的一些其他子类。 这些子类是：
 
@@ -191,7 +191,7 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-为了帮助管理首选项，该片段 API 提供了`PreferenceFragment`子类。 `PreferenceFragment`类似于[PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash;它会在片段中显示给用户的首选项的层次结构。 当用户首选项与交互时，它们将自动保存到[SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html)。
+为了帮助管理首选项，该片段 API 提供了`PreferenceFragment`子类。 `PreferenceFragment`类似于[PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash;它会在片段中显示给用户的首选项的层次结构。 当用户首选项与交互时，它们将自动保存到[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)。
 在 Android 3.0 或更高版本的应用程序中，使用`PreferenceFragment`处理应用程序中的首选项。 下图显示的示例`PreferenceFragment`:
 
 [![使用内联、 对话框和启动首选项的示例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)

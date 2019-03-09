@@ -6,12 +6,12 @@ ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4582b59a8a441c9e22761d498126898e66db08c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8e7ef890af264bb08827d86c635d555184f1ec00
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117923"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672503"
 ---
 # <a name="using-tiled-with-cocossharp"></a>使用平铺与 CocosSharp
 
@@ -35,7 +35,7 @@ _平铺是一个功能强大、 灵活，并用于创建正交和等角磁贴的
 
 ![](tiled-images/image2.png "将该演示中使用添加到磁贴网格设置使用磁贴集的可视化的视图")
 
-磁贴映射排列磁贴集中的各个磁贴。 我们应注意每个磁贴映射不需要存储其自身的磁贴副本设置 – 而不是，多个磁贴映射可以引用相同磁贴的集。 这意味着除了磁贴集磁贴地图需要很少的内存。 这样将创建大量磁贴映射，即使它们用于创建一个大型游戏玩法的领域，如[滚动平台动作游戏](http://en.wikipedia.org/wiki/Platform_game)环境。 下面显示了使用相同的磁贴集可能排列：
+磁贴映射排列磁贴集中的各个磁贴。 我们应注意每个磁贴映射不需要存储其自身的磁贴副本设置 – 而不是，多个磁贴映射可以引用相同磁贴的集。 这意味着除了磁贴集磁贴地图需要很少的内存。 这样将创建大量磁贴映射，即使它们用于创建一个大型游戏玩法的领域，如[滚动平台动作游戏](https://en.wikipedia.org/wiki/Platform_game)环境。 下面显示了使用相同的磁贴集可能排列：
 
 ![](tiled-images/image3.png "下图显示了使用相同的磁贴集可能排列")
 

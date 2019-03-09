@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 5dae8f1907b9a61018e335a8fe19ad319d95741d
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207864"
 ---
+
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms 书籍创建移动应用
 
 [![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples)
@@ -113,7 +108,7 @@ Xamarin.Forms 不再支持 Windows 8.1 和 Windows Phone 8.1。
 
 .NET Standard 2.0 库不支持任何版本的 Windows 10 移动版。 因此，使用.NET Standard 库的 Xamarin.Forms 应用程序将不运行 Windows 10 移动版设备上。 Xamarin.Forms 应用程序继续运行在 Windows 10 桌面版版本 10.0.16299.0 及更高版本。
 
-Xamarin.Forms 具有支持预览版[Mac](~/xamarin-forms/platform/other/mac.md)， [WPF](~/xamarin-forms/platform/other/wpf.md)， [GTK #](~/xamarin-forms/platform/other/gtk.md)，以及[Tizen](/xamarin-forms/platform/other/tizen.md)平台。
+Xamarin.Forms 具有支持预览版[Mac](~/xamarin-forms/platform/other/mac.md)， [WPF](~/xamarin-forms/platform/other/wpf.md)， [GTK #](~/xamarin-forms/platform/other/gtk.md)，以及[Tizen](~/xamarin-forms/platform/other/tizen.md)平台。
 
 ### <a name="chapter-summaries"></a>章节摘要
 

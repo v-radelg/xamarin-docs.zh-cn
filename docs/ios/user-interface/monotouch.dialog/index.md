@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: c291a440a1937d2b0f1c229e3fa969caedba9ab9
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675453"
 ---
+
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>适用于 Xamarin.iOS 的 MonoTouch.Dialog 简介
 
 MonoTouch.Dialog，称为 mt。D 简称，是一个快速的 UI 开发工具包，允许开发人员能够构建应用程序屏幕和导航使用信息，而不是创建视图控制器、 表等的内容的麻烦。在这种情况下，它提供 UI 开发代码与代码减少显著的简化。 例如，考虑下面的屏幕截图：
@@ -393,7 +388,7 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 `JsonElement`是`RootElement`，可以在两个窗体中实例化。 创建一个版本`RootElement`，将加载按需内容。 这些通过使用创建`JsonElement`在结束时，要加载的内容的 url 需要额外的参数的构造函数：
 
 ```csharp
-var je = new JsonElement ("Dynamic Data", "http://tirania.org/tmp/demo.json");
+var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
 另一种形式创建将数据从本地文件或将现有`System.Json.JsonObject`具有已对其进行分析：
@@ -591,8 +586,8 @@ public override Source CreateSizingSource (bool unevenRows)
 - [截屏视频-轻松创建 iOS 用户界面与 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [演练：使用元素 API 创建应用程序](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [演练：使用反射 API 创建应用程序](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [演练：使用 JSON 元素创建用户界面](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
+- [演练：使用 JSON 元素来创建用户界面](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
 - [MonoTouch.Dialog JSON 标记](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Github 上的 MonoTouch 对话框](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [UITableViewController 类引用](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [UINavigationController 类引用](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [UITableViewController 类引用](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [UINavigationController 类引用](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

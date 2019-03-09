@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 650ed00557a3dd819ab2920a7646f93199b98b9e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233947"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672739"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>适用于 Xamarin.iOS 的故障排除技巧 
 
@@ -396,7 +396,7 @@ Visual Studio for Mac 中的新项目作为其默认 SDK 设置，使用最早�
 这可能会在应用程序名称中包含。（句点） 在它们的名称。
 即使可以中 （如设备） 的许多其他情况下的工作原理，这不能用作 CFBundleExecutable-中的可执行文件名称。
 
- *"值不应包含任何扩展名称。"- [http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](http://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ *"值不应包含任何扩展名称。"- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>错误："不支持自定义特性类型 0x43"时双击.xib 文件
 

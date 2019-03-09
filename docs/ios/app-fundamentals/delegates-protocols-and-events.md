@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: 83f9651fa7fd20709c620258833ae4a152ffd0eb
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 5ccefdb5e527e67338714896905734c74278d00a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563655"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671868"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>事件、 协议和 Xamarin.iOS 中的委托
 
@@ -64,7 +64,7 @@ Xamarin.iOS 还支持连接到发生与控件交互的代码的目标操作样�
 
 [![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "单击按钮时，将向控制台写入一条消息")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-有关 iOS 目标操作模式的更多详细信息，请参阅目标操作一部分[适用于 iOS 的核心应用程序能力](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)Apple 的 iOS 开发人员库中。
+有关 iOS 目标操作模式的更多详细信息，请参阅目标操作一部分[适用于 iOS 的核心应用程序能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)Apple 的 iOS 开发人员库中。
 
 有关如何通过 Xamarin.iOS 使用 iOS 设计器的详细信息，请参阅[iOS 设计器概述](~/ios/user-interface/designer/index.md)文档。
 
@@ -388,6 +388,6 @@ map.DidSelectAnnotationView += (s,e) => {
 - [协议、 委托和事件 （示例）](https://developer.xamarin.com/samples/Protocols_Delegates_Events/)
 - [Hello，iOS](~/ios/get-started/hello-ios/index.md)
 - [绑定 OBJECTIVE-C 的类型](~/ios/platform/binding-objective-c/index.md)
-- [Objective C 编程语言](http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-- [设计用户界面中 Xcode 4](http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
-- [适用于 iOS 的核心应用程序能力](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)
+- [Objective C 编程语言](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [设计用户界面中 Xcode 4](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
+- [适用于 iOS 的核心应用程序能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 42ec5ddb6846ccf733f2bf18812f43e7afd45f34
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058566"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672542"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>从 Azure 移动应用发送推送通知
 
@@ -58,7 +58,7 @@ Azure 移动应用具有使用通知中心来推送通知的内置支持。 将�
 将 Azure 通知中心集成到 Azure 移动应用实例的过程如下所示：
 
 1. 创建 Azure 移动应用实例。 有关详细信息，请参阅[使用 Azure 移动应用](~/xamarin-forms/data-cloud/consuming/azure.md)。
-1. 配置通知中心。 有关详细信息，请参阅[配置通知中心](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#create-hub)。
+1. 配置通知中心。 有关详细信息，请参阅[配置通知中心](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#configure-hub)。
 1. 更新 Azure 移动应用实例，以发送推送通知。 有关详细信息，请参阅[更新服务器项目以发送推送通知](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push#update-the-server-project-to-send-push-notifications)。
 1. 向每个 PNS 注册。
 1. 配置通知中心与每个 PNS 进行通信。

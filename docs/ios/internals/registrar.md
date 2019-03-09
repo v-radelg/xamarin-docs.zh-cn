@@ -6,13 +6,13 @@ ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 8/29/2018
-ms.openlocfilehash: cd9e92e2c96d0a0696633e49869f2661e410d343
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 08/29/2018
+ms.openlocfilehash: 83340ce2d5db145c29166d90d3a5180b1767d7ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233583"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672490"
 ---
 # <a name="type-registrar-for-xamarinios"></a>适用于 Xamarin.iOS 的类型注册机构
 
@@ -144,7 +144,7 @@ class MyClass : IMyProtocol
 
     ```csharp
     [Register]
-    class MyDemo : NSObject 
+    class MyDemo : NSObject
     {
         [Export ("foo:")]
         void Foo (NSString str);
@@ -178,7 +178,7 @@ class MyClass : IMyProtocol
 
 需要有关新的注册机构的注意一些事项：
 
-- 某些第三方库必须更新为使用新的注册系统。 请参阅[所需的修改](#required_modifications)下面的更多详细信息。
+- 某些第三方库必须更新为使用新的注册系统。 请参阅[所需的修改](#required-modifications)下面的更多详细信息。
 
 - 短期缺点也是如果该帐户框架使用，必须使用 Clang (这是因为 Apple **accounts.h** Clang 可以仅编译标头)。 添加`--compiler:clang`到其他 mtouch 参数，以使用 Clang，如果使用 Xcode 4.6 或更早版本 （Xamarin.iOS 将自动选择 Clang Xcode 5.0 或更高版本。）
 
@@ -203,6 +203,8 @@ class MyClass : IMyProtocol
 - 无法导出两个具有相同的 Objective C 签名方法。 再次从 OBJECTIVE-C 调用哪一个是随机 （但此问题主要是因为实际上会遇到此 bug 的唯一方法是重写也托管的方法不是常见与上一个）。
 - 已导出的方法集是动态和静态生成之间略有不同。
 - 它不会无法正常工作时导出泛型类 （在运行时执行的确切的泛型实现是随机的有效地导致不确定的行为）。
+
+<a name="required-modifications" />
 
 ## <a name="new-registrar-required-changes-to-bindings"></a>新的注册机构： 所需绑定到的更改
 

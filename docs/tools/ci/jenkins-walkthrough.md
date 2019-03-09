@@ -1,19 +1,19 @@
 ---
-title: 使用 Jenkins 和 Xamarin
+title: 结合使用 Jenkins 和 Xamarin
 description: 本文档介绍如何使用 Jenkins 实现与 Xamarin 应用程序的持续集成。 它介绍如何安装、 配置和使用 Jenkins。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: f9d6775b5d31aa98087b8b8cb6aa1401429afd96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120679"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669422"
 ---
-# <a name="using-jenkins-with-xamarin"></a>使用 Jenkins 和 Xamarin
+# <a name="using-jenkins-with-xamarin"></a>结合使用 Jenkins 和 Xamarin
 
 _本指南说明如何设置 Jenkins 持续集成服务器，并自动执行编译使用 Xamarin 创建的移动应用程序。它介绍如何在 OS X 上安装 Jenkins，其进行配置，并将作业设置为编译 Xamarin.iOS 和 Xamarin.Android 应用程序时更改会提交到源代码管理系统。_
 
@@ -153,7 +153,7 @@ MSBuild 插件必须配置为使用 **/Library/Frameworks/Mono.framework/Command
     ```
     $ tf
     Team Explorer Everywhere Command Line Client (version 11.0.0.201306181526)
-    
+
     Available commands and their options:
     ```
 
@@ -230,7 +230,7 @@ Jenkins does 的第一个任务是从源代码管理系统中检索的源代码�
 
 #### <a name="using-git-for-source-code-control"></a>使用 Git 为源代码管理
 
-如果使用 TFS 进行源代码管理[跳过](#Using_TFS_for_Source_Code_Management)此部分并转到下一部分使用的 TFS。
+如果使用 TFS 进行源代码管理[跳过](#Using-TFS-for-Source-Code-Management)此部分并转到下一部分使用的 TFS。
 
 Jenkins 支持现成的 – 没有额外的插件所需的 Git。 若要使用 Git，请单击**Git**单选按钮和 Git 存储库中，输入的 URL，如以下屏幕截图中所示：
 

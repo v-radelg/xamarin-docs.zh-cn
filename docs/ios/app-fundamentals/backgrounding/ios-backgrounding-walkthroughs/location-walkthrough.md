@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d6dac02ac82b74c9b0e33f5fff0b82223df1f47
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b857ee97951f0abfdf8e082ca9a826d5580d24ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108673"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669188"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>演练-在 Xamarin.iOS 中的后台位置
 
@@ -103,7 +103,7 @@ ms.locfileid: "50108673"
 
     有几种重要方法，此方法中发生的情况。 首先，我们将执行检查以查看应用程序是否在设备上有权访问位置数据。 我们验证这是否通过调用`LocationServicesEnabled`上`CLLocationManager`。 此方法将返回**false**如果用户已拒绝应用程序访问位置信息。
 
-1. 接下来，告知何种频率的位置管理器来更新。 `CLLocationManager` 提供了许多选项用于筛选和配置位置数据，包括更新的频率。 在此示例中，设置`DesiredAccuracy`更新位置发生更改的一个表，用时。 有关配置位置更新频率和其他首选项的详细信息，请参阅[CLLocationManager 类引用](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)Apple 文档中。
+1. 接下来，告知何种频率的位置管理器来更新。 `CLLocationManager` 提供了许多选项用于筛选和配置位置数据，包括更新的频率。 在此示例中，设置`DesiredAccuracy`更新位置发生更改的一个表，用时。 有关配置位置更新频率和其他首选项的详细信息，请参阅[CLLocationManager 类引用](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)Apple 文档中。
 
 1. 最后，调用`StartUpdatingLocation`上`CLLocationManager`实例。 这将告知位置管理器来获取初始的修补程序上当前的位置，并开始发送更新
 

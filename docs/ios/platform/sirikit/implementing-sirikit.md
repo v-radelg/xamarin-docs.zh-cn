@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: ea037aaaac97d9f326f1a2fbcb28d97c9d8a9b45
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c8d5c1394bee2ca2419904b077522fac9d03d825
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110246"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669436"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin.iOS 中实现 SiriKit
 
@@ -43,7 +43,7 @@ MonkeyChat 保持其自己书联系人的用户的好友名单，但每个屏幕
 
 [![](implementing-sirikit-images/elements01.png "扩展应用程序与 SiriKit 关系图")](implementing-sirikit-images/elements01.png#lightbox)
 
-这些方法包括：
+这些问题包括：
 
 1. **Intents 扩展**-验证用户响应，确认应用程序可以处理的请求和实际执行的任务以满足用户的请求。
 2. **Intents UI 扩展** - *可选*、 提供响应 Siri 环境中的自定义用户界面并可以将应用 UI 和品牌到 Siri 来丰富用户体验。
@@ -209,7 +209,7 @@ namespace MonkeyChat
 
 执行以下操作在 Mac 上：
 
-1. 在 web 浏览器中，导航到[ http://developer.apple.com ](http://developer.apple.com)和登录到你的帐户。
+1. 在 web 浏览器中，导航到[ https://developer.apple.com ](https://developer.apple.com)和登录到你的帐户。
 2. 单击**证书**，**标识符**并**配置文件**。
 3. 选择**预配配置文件**，然后选择**应用 Id**，然后单击**+** 按钮。
 4. 输入**名称**新配置文件。
@@ -471,7 +471,7 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/plist04.png "将名称设置为 ParameterNames 和到数组类型")](implementing-sirikit-images/plist04.png#lightbox)
 6. 单击**+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent.workoutName 密钥")](implementing-sirikit-images/plist05.png#lightbox)
+    [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
 7. 添加`ParameterVocabulary`关键`ParameterVocabularies`键，其**类型**的`Array`:
 
     [![](implementing-sirikit-images/plist06.png "将 ParameterVocabulary 密钥添加到具有数组类型的 ParameterVocabularies 键")](implementing-sirikit-images/plist06.png#lightbox)
@@ -536,7 +536,7 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/plist04w.png "将名称设置为 ParameterNames 和到数组类型")](implementing-sirikit-images/plist04w.png#lightbox)
 6. 单击**+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent.workoutName 密钥")](implementing-sirikit-images/plist05w.png#lightbox)
+    [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 添加`ParameterVocabulary`关键`ParameterVocabularies`键，其**类型**的`Array`:
 
     [![](implementing-sirikit-images/plist06w.png "将 ParameterVocabulary 密钥添加到具有数组类型的 ParameterVocabularies 键")](implementing-sirikit-images/plist06w.png#lightbox)

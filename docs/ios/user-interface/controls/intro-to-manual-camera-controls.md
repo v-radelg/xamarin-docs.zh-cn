@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 84c4b699ba2c046eeb70963f3df71ca9a4760f3b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c61b3fee9009afb86ccd3fd0e16d7812a8e90feb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104175"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672789"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin.iOS 中手动相机控件
 
@@ -276,7 +276,7 @@ AV 捕获会话用来控制 iOS 设备的照相机中的实时视频录制，并
 
 通过允许最终用户来直接执行控件的焦点，应用程序可以提供更具艺术性控制获得的图像。
 
-例如，专业摄影师可以减轻来实现的图像的焦点[散景效果](http://en.wikipedia.org/wiki/Bokeh):
+例如，专业摄影师可以减轻来实现的图像的焦点[散景效果](https://en.wikipedia.org/wiki/Bokeh):
 
 [![](intro-to-manual-camera-controls-images/image2.png "散景效果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
@@ -517,7 +517,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 结合使用来控制曝光的三个基本元素包括：
 
 -  **快门速度**– 这是快门处于打开状态，以便到相机传感器上的光线的时间长度。 较短时间快门处于打开状态，更少 light 允许和更鲜艳的图像是 （更少的运动模糊）。 时间越长，快门处于打开状态，详细 light 让在和越动作发生的模糊。
--  **ISO 映射**– 这是从电影摄影借用的术语，指的是对象发光电影中化学品的敏感度。 在电影中的低 ISO 值具有更少的粒度和更精细度色彩重现;数字传感器上的低 ISO 值具有较少但更少亮度的传感器噪音。 ISO 值越大，则更亮图像，但有更多传感器噪音。 数字传感器上的"ISO"是度量值的[电子提升](http://en.wikipedia.org/wiki/Gain)，不是物理功能。 
+-  **ISO 映射**– 这是从电影摄影借用的术语，指的是对象发光电影中化学品的敏感度。 在电影中的低 ISO 值具有更少的粒度和更精细度色彩重现;数字传感器上的低 ISO 值具有较少但更少亮度的传感器噪音。 ISO 值越大，则更亮图像，但有更多传感器噪音。 数字传感器上的"ISO"是度量值的[电子提升](https://en.wikipedia.org/wiki/Gain)，不是物理功能。 
 -  **可重用功能区 Aperture** – 这是可重用功能区打开的大小。 所有 iOS 设备上被固定的镜头光圈，因此可用于调整曝光的只有两个值的快门速度和 ISO。
 
 
@@ -817,7 +817,7 @@ CaptureDevice.UnlockForConfiguration();
 
 然后再讨论控制 IOS 8 应用程序中的白平衡的详细信息。 让我们快速看一下如何白色平衡工作原理：
 
-中的颜色识别的研究[CIE 1931 RGB 颜色空间和 CIE 1931 XYZ 颜色空间](http://en.wikipedia.org/wiki/CIE_1931_color_space)是第一个数学上定义颜色空间。 在 1931年中创建由国际委员会照明 (CIE)。
+中的颜色识别的研究[CIE 1931 RGB 颜色空间和 CIE 1931 XYZ 颜色空间](https://en.wikipedia.org/wiki/CIE_1931_color_space)是第一个数学上定义颜色空间。 在 1931年中创建由国际委员会照明 (CIE)。
 
 [![](intro-to-manual-camera-controls-images/image17.png "CIE 1931 RGB 颜色空间和 CIE 1931 XYZ 颜色空间")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
@@ -825,7 +825,7 @@ CaptureDevice.UnlockForConfiguration();
 
 为在关系图中可见，有 X 和 Y 值可以是人视觉的范围之外的关系图上绘制的因此不能通过照相机重现这些颜色。
 
-调用上述图表中的较小曲线[Planckian 轨迹](http://en.wikipedia.org/wiki/Planckian_locus)，这表示色温 （以度为单位开氏度），数字越大，蓝色的端 （年） 和较低数字红色端 (cooler)。 这些是适用于典型的照明的情况。
+调用上述图表中的较小曲线[Planckian 轨迹](https://en.wikipedia.org/wiki/Planckian_locus)，这表示色温 （以度为单位开氏度），数字越大，蓝色的端 （年） 和较低数字红色端 (cooler)。 这些是适用于典型的照明的情况。
 
 在混合的光照条件的白平衡调整将需要偏离 Planckian 轨迹，以使所需的更改。 在这些情况下，将需要调整要移动到绿色或红色/洋红色 CIE 端缩放。
 

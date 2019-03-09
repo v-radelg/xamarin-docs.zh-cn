@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 79547277b00ae1f1d9b035d5fb08685562cefc79
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bc50f3567135d5b1dc805fa691cdd95acadf34f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052577"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667529"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文档数据库
 
@@ -41,7 +41,7 @@ Azure Cosmos DB 文档数据库可能包含零个或多个文档集合。 每个
 
 将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序的过程如下所示：
 
-1. 创建 Cosmos DB 帐户。 有关详细信息，请参阅[创建 Azure Cosmos DB 帐户](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)。
+1. 创建 Cosmos DB 帐户。 有关详细信息，请参阅[创建 Azure Cosmos DB 帐户](/azure/cosmos-db/sql-api-dotnetcore-get-started#create-an-azure-cosmos-account)。
 1. 添加[Azure Cosmos DB.NET Standard 客户端库](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)到 Xamarin.Forms 解决方案中的平台项目的 NuGet 包。
 1. 添加`using`指令`Microsoft.Azure.Documents`， `Microsoft.Azure.Documents.Client`，和`Microsoft.Azure.Documents.Linq`到将访问 Cosmos DB 帐户的类的命名空间。
 

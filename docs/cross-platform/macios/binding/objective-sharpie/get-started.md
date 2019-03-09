@@ -1,17 +1,17 @@
 ---
 title: 开始使用目标 Sharpie
-description: 本文档提供目标 Sharpie，用来自动创建到 OBJECTIVE-C 代码的 C# 绑定的工具的高级概述。
+description: 本文档提供目标 Sharpie，用来自动创建的工具的高级概述C#绑定到 OBJECTIVE-C 代码。
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: da8c51c4ba4df74afac950bbff867221e7307d6e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37854774"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670111"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>开始使用目标 Sharpie
 
@@ -27,7 +27,7 @@ ms.locfileid: "37854774"
 目标 Sharpie 可作为标准的 OS X 包安装程序下载。
 运行安装程序并按所有屏幕上从安装向导的提示：
 
-- **当前版本： 3.4**
+- **当前版本：3.4**
   - [下载最新版本](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [论坛公告](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
@@ -36,7 +36,7 @@ ms.locfileid: "37854774"
 
 ## <a name="basic-walkthrough"></a>基本演练
 
-目标 Sharpie 提供 xamarin，可协助创建定义所需绑定到 C# 的第三方 OBJECTIVE-C 的库是一个命令行工具。
+目标 Sharpie 是由 Xamarin，可协助创建绑定到第三方 Objective C 库所需的定义提供一个命令行工具C#。
 即使使用目标 Sharpie，开发人员*将*需要目标 Sharpie 完成以解决任何问题，可能不会自动处理通过该工具后修改生成的文件。
 
 在可能的情况下，目标 Sharpie 将批注与它对一些不确定如何正确地将绑定的 Api （在本机代码中的许多构造是不明确）。
@@ -48,7 +48,7 @@ ms.locfileid: "37854774"
 > 目标 Sharpie 附带了一个**主要**适当的使用情况的规则： 必须绝对传递它正确 clang 编译器命令行参数以确保能够正确分析。 这是因为分析阶段目标 Sharpie 是只是一种工具[针对 clang libtooling API 实现](http://clang.llvm.org/docs/LibTooling.html)。
 
 这意味着目标 Sharpie Clang （实际编译将绑定本机库的 C/目的-C/c + + 编译器） 和所有其内部的知识的绑定的标头文件的完整功能。
-而不是转换的已分析[AST](http://en.wikipedia.org/wiki/Abstract_syntax_tree)为对象代码目标 Sharpie 转换到 C# 绑定"基架"适用于输入到 AST`bmac`和`btouch`Xamarin 绑定工具。
+而不是转换的已分析[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)为对象代码目标 Sharpie 转换到 ASTC#绑定"搭建基架"适用于输入到`bmac`并`btouch`Xamarin 绑定工具。
 
 如果目标 Sharpie 错误出在分析过程，表示出错期间该 clang 其分析阶段尝试构造 AST，并且您需要找出原因。
 
@@ -61,5 +61,5 @@ ms.locfileid: "37854774"
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

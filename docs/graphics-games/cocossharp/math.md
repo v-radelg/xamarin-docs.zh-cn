@@ -6,12 +6,12 @@ ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 60386b3629e8ed9d2fd1ff165cd2c04d9571b51a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106229"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670151"
 ---
 # <a name="2d-math-with-cocossharp"></a>使用 CocosSharp 的 2D 数学
 
@@ -24,7 +24,7 @@ _本指南介绍了开发游戏的 2D 数学。它使用 CocosSharp 来演示如
  - 旋转 CocosSharp 对象
  - 使用速度旋转
 
-用户不具有强数学背景，或谁拥有早已被忘记从 school，这些主题的开发人员无需担心 – 本文档将分解为概念分解部分，并将伴随理论上的说明，以及实际示例。 简单地说，本文将回答老数学学生问题:"当我实际上需要使用这款产品？"
+用户不具有强数学背景，或谁拥有早已被忘记从 school，这些主题的开发人员无需担心 – 本文档将分解为概念分解部分，并将伴随理论上的说明，以及实际示例。 简单地说，本文将回答老数学学生问题："何时我实际上需要使用这款产品？"
 
 
 ## <a name="requirements"></a>要求
@@ -266,7 +266,7 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, C
 
 请注意，上面的代码将传递 Y 参数第一次，然后 X 参数调用时`Atan2`方法。 这是向后从常用的 X，Y 位置坐标的顺序。 有关详细信息[，请参阅 Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx)。
 
-还有一点值得一的返回值从`Atan2`是以弧度为单位，这是用于测量的另一个单元。 本指南不涵盖弧度的详细信息，但请记住，在所有三角函数`System.Math`命名空间使用弧度为单位，因此任何值必须用在 CocosSharp 对象上之前转换为度。 找不到弧度为单位的详细信息[弧度维基百科网页中](http://en.wikipedia.org/wiki/Radian)。
+还有一点值得一的返回值从`Atan2`是以弧度为单位，这是用于测量的另一个单元。 本指南不涵盖弧度的详细信息，但请记住，在所有三角函数`System.Math`命名空间使用弧度为单位，因此任何值必须用在 CocosSharp 对象上之前转换为度。 找不到弧度为单位的详细信息[弧度维基百科网页中](https://en.wikipedia.org/wiki/Radian)。
 
 #### <a name="forward-angle"></a>正向角度
 

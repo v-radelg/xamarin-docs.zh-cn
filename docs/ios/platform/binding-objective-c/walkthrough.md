@@ -1,5 +1,5 @@
 ---
-title: 演练： 绑定 iOS OBJECTIVE-C 库
+title: 演练：： 绑定 iOS OBJECTIVE-C 库
 description: 本文提供了实际演练如何创建现有 OBJECTIVE-C 的库，InfColorPicker 的 Xamarin.iOS 绑定。 它介绍了编译静态 Objective C 库、 绑定，以及在 Xamarin.iOS 应用程序中使用绑定等主题。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: a4cdb76ac1ecea3ee21e7b74314b6d3bfae09719
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118989"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669266"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练： 绑定 iOS OBJECTIVE-C 库
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：： 绑定 iOS OBJECTIVE-C 库
 
 _本文提供了实际演练如何创建现有 OBJECTIVE-C 的库，InfColorPicker 的 Xamarin.iOS 绑定。它介绍了编译静态 Objective C 库、 绑定，以及在 Xamarin.iOS 应用程序中使用绑定等主题。_
 
@@ -81,11 +81,11 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - 你将需要安装的命令行工具，请单击**安装**按钮： [ ![](walkthrough-images/xcode01.png "安装命令行工具")](walkthrough-images/xcode01.png#lightbox)
+    - 你将需要安装的命令行工具，请单击**安装**按钮： [![](walkthrough-images/xcode01.png "安装命令行工具")](walkthrough-images/xcode01.png#lightbox)
 
-    - 将下载的工具和从 Apple 的服务器安装： [ ![](walkthrough-images/xcode02.png "下载工具")](walkthrough-images/xcode02.png#lightbox)
+    - 将下载并安装从 Apple 的服务器工具： [![](walkthrough-images/xcode02.png "下载工具")](walkthrough-images/xcode02.png#lightbox)
 
-- **适用于 Apple 开发人员的下载**-命令行工具包形式提供[适用于 Apple 开发人员的下载]()网页。 登录你的 Apple ID，然后搜索并下载命令行工具： [ ![](walkthrough-images/xcode03.png "查找命令行工具")](walkthrough-images/xcode03.png#lightbox)
+- **适用于 Apple 开发人员的下载**-命令行工具包形式提供[适用于 Apple 开发人员的下载](https://developer.apple.com/downloads/index.action)网页。 登录你的 Apple ID，然后搜索并下载命令行工具：[![](walkthrough-images/xcode03.png "查找的命令行工具")](walkthrough-images/xcode03.png#lightbox)
 
 安装的命令行工具，我们就准备好继续演练。
 
@@ -184,7 +184,7 @@ Fat 库是`.a`文件包含所有支持的体系结构。
 
 这三个步骤是很简单，且可能有必要在将来重复这些 OBJECTIVE-C 库接收更新时，或者如果我们需要使用 bug 修补程序。 如果您决定自动执行这些步骤，它将简化未来的维护和支持的 iOS 绑定项目。
 
-有许多工具可用于自动执行此类任务的 shell 脚本[rake](http://rake.rubyforge.org/)， [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，并[使](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 我们安装 Xcode 命令行工具，我们还安装了进行，因此，它是将用于本演练的生成系统。 下面是**生成文件**可用于创建将适用于 iOS 设备和模拟器的任何库的多体系结构共享的库：
+有许多工具可用于自动执行此类任务的 shell 脚本[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，并[使](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 我们安装 Xcode 命令行工具，我们还安装了进行，因此，它是将用于本演练的生成系统。 下面是**生成文件**可用于创建将适用于 iOS 设备和模拟器的任何库的多体系结构共享的库：
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**处理 colorPickerControllerDidFinish： 消息**-当`ViewController`是完成后，iOS 将消息发送`colorPickerControllerDidFinish:`到`WeakDelegate`。 我们需要创建C#可以处理此消息的方法。 若要执行此操作，我们创建C#方法，然后将其与修饰`ExportAttribute`。 编辑`ViewController`，并将以下方法添加到类：
+**句柄 colorPickerControllerDidFinish:消息**-当`ViewController`是完成后，iOS 将消息发送`colorPickerControllerDidFinish:`到`WeakDelegate`。 我们需要创建C#可以处理此消息的方法。 若要执行此操作，我们创建C#方法，然后将其与修饰`ExportAttribute`。 编辑`ViewController`，并将以下方法添加到类：
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -733,6 +733,6 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [绑定详细信息](~/cross-platform/macios/binding/overview.md)
 - [绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [面向 Objective-C 开发人员的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [框架设计指南](http://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [框架设计指南](https://msdn.microsoft.com/library/ms229042.aspx)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

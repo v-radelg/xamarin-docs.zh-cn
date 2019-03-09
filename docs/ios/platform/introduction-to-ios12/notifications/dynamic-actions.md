@@ -6,13 +6,13 @@ ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
-ms.date: 9/4/2018
-ms.openlocfilehash: ddd3e1e6cc3a3a9b42ddb7a597ed2db0ee495d41
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.date: 09/04/2018
+ms.openlocfilehash: edaf9d90e019729f69f721c0a92826c0148db8df
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233310"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669620"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>在 Xamarin.iOS 中动态通知操作按钮
 

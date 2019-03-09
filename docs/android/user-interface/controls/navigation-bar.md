@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: ce80fab39c814204631c5cc408c3f0ee99a329e6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9455cac81a0f9ea81e08cf63397e45c1698e1c1b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110552"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670007"
 ---
 # <a name="navigation-bar"></a>导航栏
 
@@ -71,4 +71,4 @@ tv.SystemUiVisibilityChange +=
 
 - [SystemUIVisibilityDemo （示例）](https://developer.xamarin.com/samples/monodroid/SystemUIVisibilityDemo/)
 - [引入 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](http://developer.android.com/sdk/android-4.0.html)
+- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

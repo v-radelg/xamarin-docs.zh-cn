@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: be6154631b8b51ec61feb4c713d925ff30505b7d
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831750"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671567"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>在 Xamarin.Forms 中 XAML 命名空间
 
@@ -50,6 +50,9 @@ XAML 使用前缀来引用命名空间中的类型时要使用的前缀与声明
 |`x:TypeArguments`|指定的泛型类型参数的泛型类型构造函数。|
 
 有关详细信息`x:DataType`属性，请参阅[编译绑定](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。 有关详细信息`x:FieldModifier`属性，请参阅[字段修饰符](~/xamarin-forms/xaml/field-modifiers.md)。 有关详细信息`x:Arguments`， `x:FactoryMethod`，并`x:TypeArguments`特性，请参见[在 XAML 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
+
+> [!NOTE]
+> 除了上面列出的命名空间属性，Xamarin.Forms 还可以通过使用标记扩展`x`命名空间前缀。 有关详细信息，请参阅[使用 XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md)。
 
 在 XAML 中，命名空间声明从父元素继承到子元素。 因此，在 XAML 文件的根元素中定义一个命名空间，该文件中的所有元素都继承的命名空间声明。
 

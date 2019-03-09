@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 7523862f3677eb775f59af0091ed59fec8c85e31
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 8897736878d0ddee22cdad073cc16deb8ce824e1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209812"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671736"
 ---
 # <a name="webview-mixed-content-on-android"></a>Web 视图混合在 Android 上的内容
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
-此 Android 平台特定控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合内容中的应用程序面向 API 21 或更高版本。 混合的内容是的内容的最初已加载，通过 HTTPS 连接，但这会通过 HTTP 连接加载资源 （如图像、 音频、 视频、 样式表、 脚本）。 设置使用在 XAML [ `WebView.MixedContentMode` ](x:ref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty)附加属性的值为[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)枚举：
+此 Android 平台特定控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合内容中的应用程序面向 API 21 或更高版本。 混合的内容是的内容的最初已加载，通过 HTTPS 连接，但这会通过 HTTP 连接加载资源 （如图像、 音频、 视频、 样式表、 脚本）。 设置使用在 XAML [ `WebView.MixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty)附加属性的值为[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)枚举：
 
 ```xaml
 <ContentPage ...

@@ -8,12 +8,6 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: f84a6dac64300eb17a45576ae83f9b94208f5732
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831919"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
@@ -466,7 +460,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 - 四个值表示顶部，然后右，然后底部，左侧的粗细。
 
 > [!NOTE]
-> CSS`thickness`值不同于 XAML [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/)值。 例如，在两个值 XAML`Thickness`指示水平然后垂直粗细，四个值时`Thickness`指示左侧、 顶部，然后右侧，然后下粗细。 此外，XAML`Thickness`逗号分隔的有效值。
+> CSS`thickness`值不同于 XAML [ `Thickness` ](xref:Xamarin.Forms.Thickness)值。 例如，在两个值 XAML`Thickness`指示水平然后垂直粗细，四个值时`Thickness`指示左侧、 顶部，然后右侧，然后下粗细。 此外，XAML`Thickness`逗号分隔的有效值。
 
 ### <a name="namedsize"></a>NamedSize
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: bc7da76084075b03ca346949b7bb764ae1313c2a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563506"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668930"
 ---
 # <a name="location-services"></a>位置服务
 
@@ -32,7 +32,7 @@ Android 提供对单元格 tower 位置、 Wi-fi 和 GPS 等各种位置技术�
 
 在内部使用多种技术，以查明用户的位置。 使用的硬件上的类型取决于*位置提供程序*用于收集数据的作业。 Android 使用三个位置提供程序：
 
--   **GPS 提供程序** &ndash; GPS 提供最准确的位置，使用最高的能力，并室外可达效果最佳。 此提供程序使用 GPS 和辅助的 GPS 的组合 ([aGPS](http://en.wikipedia.org/wiki/Assisted_GPS))，这会返回收集的移动电话 towers GPS 数据。
+-   **GPS 提供程序** &ndash; GPS 提供最准确的位置，使用最高的能力，并室外可达效果最佳。 此提供程序使用 GPS 和辅助的 GPS 的组合 ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS))，这会返回收集的移动电话 towers GPS 数据。
 
 -   **网络提供商**&ndash;提供的 WiFi 和手机网络数据，包括收集的单元格 towers aGPS 数据组合。 它使用较少的电量比 GPS 提供程序，但返回不同的准确性的位置数据。
 
@@ -59,7 +59,7 @@ Android 提供对单元格 tower 位置、 Wi-fi 和 GPS 等各种位置技术�
 设置这些权限之一告知 Android 应用程序需要从用户的权限才能访问的位置提供程序。 设备的运行 API 级别 22 (Android 5.1) 或更低时将要求用户每次安装应用程序授予这些权限。 在设备运行 API 级别 23 (Android 6.0) 或更高版本，应用应运行时权限之前执行检查发出请求的位置提供程序。 
 
 > [!NOTE]
->注意： 设置`ACCESS_FINE_LOCATION`意味着对这两个粗糙和正常位置数据的访问。 应无需设置这两个权限，仅*最小*您的应用程序工作所需的权限。
+>注意:设置`ACCESS_FINE_LOCATION`意味着对这两个粗糙和正常位置数据的访问。 应无需设置这两个权限，仅*最小*您的应用程序工作所需的权限。
 
 此代码片段示范了如何检查应用具有的权限`ACCESS_FINE_LOCATION`权限：
 
@@ -84,7 +84,7 @@ else
  
 浮点混合的位置提供程序 API 提供了多种其他工具来使位置感知应用程序，包括地理围栏和活动监视。 在本部分中，我们将重点介绍有关设置的基础知识`LocationClient`，建立提供程序，以及获取用户的位置。
 
-浮点混合的位置提供程序的一部分[Google Play Services](http://developer.android.com/google/play-services/index.html)。
+浮点混合的位置提供程序的一部分[Google Play Services](https://developer.android.com/google/play-services/index.html)。
 Google Play Services 包必须安装并正确配置中的浮点混合的位置提供程序 API 应用程序工作，并且设备必须具有对 Google Play Services APK 安装。
 
 在之前 Xamarin.Android 应用程序可以使用浮点混合的位置提供程序，它必须添加**Xamarin.GooglePlayServices.Maps**到项目的包。 此外，以下`using`语句应添加到引用如下所述的类的任何源文件：
@@ -231,7 +231,7 @@ Android 的位置服务是用于在 Android 上使用位置信息的较旧的 AP
 
 位置服务最适合用于必须在没有 Google Play Services 安装的设备运行的应用程序。
 
-位置服务是一种特殊[服务](http://developer.android.com/guide/components/services.html)由系统管理。 系统服务与设备硬件进行交互，并始终在运行。 若要利用我们的应用程序中的位置更新，我们将订阅位置更新系统的位置服务使用从`LocationManager`和一个`RequestLocationUpdates`调用。
+位置服务是一种特殊[服务](https://developer.android.com/guide/components/services.html)由系统管理。 系统服务与设备硬件进行交互，并始终在运行。 若要利用我们的应用程序中的位置更新，我们将订阅位置更新系统的位置服务使用从`LocationManager`和一个`RequestLocationUpdates`调用。
 
 若要获取用户的位置使用 Android 位置服务涉及到几个步骤：
 
@@ -357,10 +357,10 @@ else
 
 - [位置 （示例）](https://developer.xamarin.com/samples/Location/)
 - [FusedLocationProvider （示例）](https://developer.xamarin.com/samples/FusedLocationProvider/)
-- [Google Play 服务](http://developer.android.com/google/play-services/index.html)
+- [Google Play 服务](https://developer.android.com/google/play-services/index.html)
 - [条件类](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager 类](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)
 - [LocationListener 类](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)
-- [LocationClient API](http://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
-- [LocationListener API](http://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
+- [LocationClient API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
+- [LocationListener API](https://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
 - [LocationRequest API](https://developer.android.com/reference/com/google/android/gms/location/LocationRequest.html)

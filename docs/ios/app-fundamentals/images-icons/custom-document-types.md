@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 51abd00f9a21b702811bb3897f273deff54f7d01
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 155847b4f5f6b3e6070f1afb6219db2d3789a075
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110480"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668460"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>在 Xamarin.iOS 中的自定义文档图标
 
@@ -44,11 +44,11 @@ _此文章涉及包括并管理一个 Xamarin.iOS 应用程序中的图像资产
 -----
 
 
-有关文档类型的详细信息，请参阅 Apple[统一的类型标识符引用](http://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)并[适用于 iOS 的文档交互编程主题](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)。
+有关文档类型的详细信息，请参阅 Apple[统一的类型标识符引用](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)并[适用于 iOS 的文档交互编程主题](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)。
 
 
 ## <a name="related-links"></a>相关链接
 
 - [使用图像 （示例）](https://developer.xamarin.com/samples/WorkingWithImages/)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
-- [自定义图标和图像创建指南](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [自定义图标和图像创建指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

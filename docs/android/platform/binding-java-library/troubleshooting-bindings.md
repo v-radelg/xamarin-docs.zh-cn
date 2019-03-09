@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f54da980834b44bbca7dc8619943769f8f429a7a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0bb7cbb6160865af5b1e40d40c7b999a8bd5ebc
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115284"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668512"
 ---
 # <a name="troubleshooting-bindings"></a>绑定疑难解答
 
@@ -74,12 +74,12 @@ _本文汇总了生成绑定，以及可能的原因和解决这些问题的建�
 本部分将列出的一些常见的错误消息或症状，我尝试绑定一个 Android 库时发生。
 
 
-### <a name="problem-java-version-mismatch"></a>问题： Java 版本不匹配
+### <a name="problem-java-version-mismatch"></a>问题：Java 版本不匹配
 
 有时不会生成类型或意外的故障可能是由于使用的 Java 库已与编译相比更高版本或较旧版本。 重新编译使用相同版本的 Xamarin.Android 项目使用的 JDK 的 Android 库。
 
 
-### <a name="problem-at-least-one-java-library-is-required"></a>至少一个 Java 库是必需的问题：
+### <a name="problem-at-least-one-java-library-is-required"></a>问题：至少一个 Java 库是必需的
 
 您会收到错误"至少一个 Java 库是必需的"即使。已添加 JAR。
 
@@ -88,7 +88,7 @@ _本文汇总了生成绑定，以及可能的原因和解决这些问题的建�
 请确保生成操作设置为`EmbeddedJar`。 由于没有对应的多个生成操作。JAR 文件 (如`InputJar`， `EmbeddedJar`，`ReferenceJar`和`EmbeddedReferenceJar`)，不能自动在默认情况下使用哪一个猜出绑定生成器。 有关生成操作的详细信息，请参阅[生成操作](~/android/platform/binding-java-library/index.md)。
 
 
-### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>问题： 绑定工具无法加载。JAR 库
+### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>问题：绑定工具无法加载。JAR 库
 
 绑定库生成器无法加载。JAR 库。
 
@@ -98,7 +98,7 @@ _本文汇总了生成绑定，以及可能的原因和解决这些问题的建�
 
 
 
-### <a name="problem-missing-c-types-in-generated-output"></a>问题： 缺少C#中生成的输出类型。
+### <a name="problem-missing-c-types-in-generated-output"></a>问题：缺少C#中生成的输出类型。
 
 绑定 **.dll**生成，但未命中某些 Java 数据类型，或生成C#源未生成由于一个错误，指出缺少的类型。
 
@@ -128,7 +128,7 @@ _本文汇总了生成绑定，以及可能的原因和解决这些问题的建�
         name="obfuscated">false</attr>
     ```
 
-### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>问题： 生成C#源未生成由于参数类型不匹配
+### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>问题：生成C#源未生成由于参数类型不匹配
 
 生成C#不生成源。 重写方法的参数类型不匹配。
 
@@ -136,15 +136,15 @@ _本文汇总了生成绑定，以及可能的原因和解决这些问题的建�
 
 Xamarin.Android 包含了多种映射到枚举中的 Java 字段的C#绑定。 这些会导致生成的绑定中的类型不兼容问题。 若要解决此问题，从绑定生成器创建的方法签名需要进行修改以使用枚举。 有关详细信息，请参阅[更正枚举](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)。
 
-### <a name="problem-noclassdeffounderror-in-packaging"></a>包中的问题： NoClassDefFoundError
+### <a name="problem-noclassdeffounderror-in-packaging"></a>问题：在包装 NoClassDefFoundError
 
 `java.lang.NoClassDefFoundError` 在打包步骤中，将引发。
 
 #### <a name="possible-causes"></a>可能的原因：
 
-此错误最可能的原因是必需的 Java 库需要添加到应用程序项目 (**.csproj**)。 .JAR 文件不自动解决。 针对目标设备或仿真程序中不存在的用户程序集始终不生成 Java 库绑定 (如 Google Maps **maps.jar**)。 这是与库的不用于 Android 库项目支持这种情况。在类库 dll 中嵌入 JAR。 例如： [Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+此错误最可能的原因是必需的 Java 库需要添加到应用程序项目 (**.csproj**)。 .JAR 文件不自动解决。 针对目标设备或仿真程序中不存在的用户程序集始终不生成 Java 库绑定 (如 Google Maps **maps.jar**)。 这是与库的不用于 Android 库项目支持这种情况。在类库 dll 中嵌入 JAR。 例如：[Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
-### <a name="problem-duplicate-custom-eventargs-types"></a>问题： 重复的自定义 EventArgs 类型
+### <a name="problem-duplicate-custom-eventargs-types"></a>问题：重复的自定义 EventArgs 类型
 
 由于重复的自定义 EventArgs 类型，生成失败。 发生如下错误：
 
@@ -182,7 +182,7 @@ public interface MediationInterstitialListener {
         name="argsType">DialogClickEventArgs</attr>
 ```
 
-### <a name="problem-class-does-not-implement-interface-method"></a>问题： 类不实现接口方法
+### <a name="problem-class-does-not-implement-interface-method"></a>问题：类未实现接口方法
 
 指示生成的类不实现所需的生成的类实现的接口的方法来生成一条错误消息。 但是，看一下生成的代码，您可以看到此方法实现。
 
@@ -222,7 +222,7 @@ return type of 'Java.Lang.Object'
     </attr>
     ```
 
-### <a name="problem-name-collisions-on-inner-classes--properties"></a>问题： 名称冲突上的内部类 / 属性
+### <a name="problem-name-collisions-on-inner-classes--properties"></a>问题：名称冲突上的内部类 / 属性
 
 继承的对象的冲突可见性。
 
@@ -236,9 +236,9 @@ return type of 'Java.Lang.Object'
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>问题： 一个 **.so**由绑定所需的库是未加载
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>问题：一个 **.so**由绑定所需的库是未加载
 
-某些绑定项目还取决于中的功能 **.so**库。 很可能不会自动加载 Xamarin.Android **.so**库。 Xamarin.Android 已包装的 Java 代码执行时，将无法进行 JNI 调用和错误消息_java.lang.UnsatisfiedLinkError： 找不到的本机方法：_ 会在 logcat 出应用程序中显示。
+某些绑定项目还取决于中的功能 **.so**库。 很可能不会自动加载 Xamarin.Android **.so**库。 Xamarin.Android 已包装的 Java 代码执行时，将无法进行 JNI 调用和错误消息_java.lang.UnsatisfiedLinkError:找不到的本机方法：_ 会在 logcat 出应用程序中显示。
 
 此解决方法是手动加载 **.so**库通过调用`Java.Lang.JavaSystem.LoadLibrary`。 例如假设 Xamarin.Android 项目已共享库**libpocketsphinx_jni.so**绑定项目的生成操作中包含**EmbeddedNativeLibrary**，以下代码片段（使用共享的库之前执行） 将加载 **.so**库：
 
@@ -253,7 +253,7 @@ Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 
 ## <a name="related-links"></a>相关链接
 
-- [库项目](http://developer.android.com/tools/projects/index.html#LibraryProjects)
+- [库项目](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [启用诊断输出](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
 - [适用于 Android 开发人员的 Xamarin](~/android/get-started/java-developers.md)

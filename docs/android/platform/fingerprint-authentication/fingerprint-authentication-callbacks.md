@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 17a1c94ad3b9bde67537ea7113352f0fc10d2a08
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c720a30a59eea8f1ed74033da8d1c045a1fb9109
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110109"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666861"
 ---
 # <a name="responding-to-authentication-callbacks"></a>响应身份验证回调
 
@@ -101,7 +101,7 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 
 ## <a name="help-codes-and-error-message-ids"></a>帮助代码和错误消息 Id 
 
-中可能找到的列表和说明的错误代码和帮助代码[Android SDK 文档](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)FingerprintManager 类。 Xamarin.Android 表示这些值用于`Android.Hardware.Fingerprints.FingerprintState`枚举：
+中可能找到的列表和说明的错误代码和帮助代码[Android SDK 文档](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)FingerprintManager 类。 Xamarin.Android 表示这些值用于`Android.Hardware.Fingerprints.FingerprintState`枚举：
 
 
 -   **`AcquiredGood`** &ndash; （值 0）获取图像的很好。
@@ -155,6 +155,6 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 
 ## <a name="related-links"></a>相关链接
 
-- [密码](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
-- [AuthenticationCallback](http://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)
-- [AuthenticationCallback](http://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.AuthenticationCallback.html)
+- [Cipher](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
+- [AuthenticationCallback](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)
+- [AuthenticationCallback](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.AuthenticationCallback.html)

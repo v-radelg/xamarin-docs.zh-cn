@@ -6,13 +6,8 @@ ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: 74146378d2ee534b357abd73ff7e1563a49a7e4a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121745"
 ---
+
 # <a name="getting-started-with-java"></a>开始使用 Java
 
 这是适用于 Java，介绍了所有支持平台的基础知识的入门页。
@@ -22,7 +17,7 @@ ms.locfileid: "50121745"
 若要使用 Java 将需要使用.NET 嵌入：
 
 * Java 1.8 或更高版本
-* [Mono 5.0](http://www.mono-project.com/download/)
+* [Mono 5.0](https://www.mono-project.com/download/)
 
 为 Mac:
 

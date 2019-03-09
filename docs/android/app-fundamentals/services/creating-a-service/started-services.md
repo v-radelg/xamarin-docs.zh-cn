@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 9e7dabf87314d87ab5ab335c220c0e292e56073b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: df3d1bba57c1caf23c615410a184bc5458fc848b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110879"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671346"
 ---
 # <a name="started-services-with-xamarinandroid"></a>使用 Xamarin.Android 启动的服务
 
@@ -83,7 +83,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 ## <a name="related-links"></a>相关链接
 
-- [StartedServicesDemo （示例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/StartedServicesDemo/)
+- [StartedServicesDemo (sample)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/StartedServicesDemo/)
 - [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service)
 - [Android.App.StartCommandFlags](https://developer.xamarin.com/api/type/Android.App.StartCommandFlags)
 - [Android.App.StartCommandResult](https://developer.xamarin.com/api/type/Android.App.StartCommandResult)
@@ -91,4 +91,4 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 - [Android.Content.Intent](https://developer.xamarin.com/api/type/Android.Content.Intent)
 - [Android.OS.Handler](https://developer.xamarin.com/api/type/Android.OS.Handler/)
 - [Android.Widget.Toast](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-- [状态栏图标](http://developer.android.com/guide/practices/ui_guidelines/icon_design_status_bar.html)
+- [状态栏图标](https://developer.android.com/guide/practices/ui_guidelines/icon_design_status_bar.html)

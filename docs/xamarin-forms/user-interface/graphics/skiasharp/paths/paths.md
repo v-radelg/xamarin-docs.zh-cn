@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 006e4c2b2de56fef96c561e788992649f6582d24
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 833e24e91a37b92eb5025aacdc9509f092b823cd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054929"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672081"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路径基础知识
 
@@ -28,26 +28,26 @@ _了解结合使用连接的直线和曲线的 SkiaSharp SKPath 对象_
 
 轮廓线通常从以下方法的调用开始`SKPath`:
 
-- [`MoveTo`](SkiaSharp.SKPath.MoveTo*) 若要开始新的轮廓
+- [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) 若要开始新的轮廓
 
 该方法的参数是可以表示为单个点`SKPoint`值，或将作为单独的 X 和 Y 坐标。 `MoveTo`调用建立轮廓和一个初始的点开头*当前点*。 可以调用以下方法来继续使用直线或曲线从当前的点到点方法，然后将成为新的当前点中指定的轮廓：
 
-- [`LineTo`](SkiaSharp.SKPath.LineTo*) 若要向路径添加一条直线
-- [`ArcTo`](SkiaSharp.SKPath.ArcTo*) 若要添加一段弧线，这是圆或椭圆圆周上的线条
-- [`CubicTo`](SkiaSharp.SKPath.CubicTo*) 若要添加的三次方贝塞尔样条
-- [`QuadTo`](SkiaSharp.SKPath.QuadTo*) 若要添加的二次贝塞尔样条
-- [`ConicTo`](SkiaSharp.SKPath.ConicTo*) 若要添加的合理二次贝塞尔样条，可以准确地呈现圆锥部分 （椭圆、 条抛物线合理组合和 hyperbolas） 的
+- [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) 若要向路径添加一条直线
+- [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) 若要添加一段弧线，这是圆或椭圆圆周上的线条
+- [`CubicTo`](xref:SkiaSharp.SKPath.CubicTo*) 若要添加的三次方贝塞尔样条
+- [`QuadTo`](xref:SkiaSharp.SKPath.QuadTo*) 若要添加的二次贝塞尔样条
+- [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo*) 若要添加的合理二次贝塞尔样条，可以准确地呈现圆锥部分 （椭圆、 条抛物线合理组合和 hyperbolas） 的
 
 这些五个方法均包含描述直线或曲线所需的所有信息。 每个五个方法适用于前面紧邻的方法调用来建立的当前点一起使用。 例如，`LineTo`方法将添加一条直线到轮廓取决于当前点，因此参数`LineTo`是单一点。
 
 `SKPath`类还定义了具有相同的名称作为这些六种方法，但使用的方法`R`开头：
 
-- [`RMoveTo`]((SkiaSharp.SKPath.RMoveTo*))
-- [`RLineTo`](SkiaSharp.SKPath.RLineTo*)
-- [`RArcTo`](SkiaSharp.SKPath.RArcTo*)
-- [`RCubicTo`](SkiaSharp.SKPath.RCubicTo*)
-- [`RQuadTo`](SkiaSharp.SKPath.RQuadTo*)
-- [`RConicTo`](SkiaSharp.SKPath.RConicTo*)
+- [`RMoveTo`](xref:SkiaSharp.SKPath.RMoveTo*)
+- [`RLineTo`](xref:SkiaSharp.SKPath.RLineTo*)
+- [`RArcTo`](xref:SkiaSharp.SKPath.RArcTo*)
+- [`RCubicTo`](xref:SkiaSharp.SKPath.RCubicTo*)
+- [`RQuadTo`](xref:SkiaSharp.SKPath.RQuadTo*)
+- [`RConicTo`](xref:SkiaSharp.SKPath.RConicTo*)
 
 `R`代表*相对*。 这些方法都有相应的方法，而不必与相同的语法`R`但相对于当前点。 这些可以方便地绘制类似组成部分中多次调用的方法的路径。
 

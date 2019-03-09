@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/02/2017
-ms.openlocfilehash: 209ce2b5fb2fbb357f23e6ccc9bb849fbfedc81d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: c387bbead1ac56d7f4c4c05a79c430302e50aec1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115648"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668278"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>macOS 对于 Xamarin.Mac 开发人员的 Api
 
@@ -68,7 +68,7 @@ ms.locfileid: "50115648"
 
 3. 可以使用[Xamarin.Mac API 联机文档](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0)。
 
-4. Miguel 提供了 Xamarin.Mac Api 的"Rosetta Stone"视图[此处](http://tirania.org/tmp/rosetta.html)您可以通过搜索的给定 API。 如果你的 API 不是 AppKit 或特定的 macOS，您可能会那里发现。
+4. Miguel 提供了 Xamarin.Mac Api 的"Rosetta Stone"视图[此处](https://tirania.org/tmp/rosetta.html)您可以通过搜索的给定 API。 如果你的 API 不是 AppKit 或特定的 macOS，您可能会那里发现。
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

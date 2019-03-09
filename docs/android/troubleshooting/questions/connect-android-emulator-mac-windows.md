@@ -1,5 +1,5 @@
 ---
-title: 它可能连接到 Android 仿真程序运行在 Mac 上从 Windows VM？
+title: 是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 6e66bf4edb4269aa0f3b765df4a08b78c128f763
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 35bfdb92ccfffe54f0ca10dc001d8919703a5bd8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115624"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668148"
 ---
-# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>它可能连接到 Android 仿真程序运行在 Mac 上从 Windows VM？
+# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
 
 若要连接到从 Windows 虚拟机的 Mac 上运行的 Android 仿真程序，请使用以下步骤：
 
@@ -35,9 +35,9 @@ ms.locfileid: "50115624"
     emulator6 94105 macuser   21u  IPv4 0xa8dacfb1d845a51f      0t0  TCP localhost:5554 (LISTEN)
     ```
 
-    奇数端口将用于连接到`adb`。 另请参阅[ http://developer.android.com/tools/devices/emulator.html#emulatornetworking ](http://developer.android.com/tools/devices/emulator.html#emulatornetworking)。
+    奇数端口将用于连接到`adb`。 另请参阅[ https://developer.android.com/tools/devices/emulator.html#emulatornetworking ](https://developer.android.com/tools/devices/emulator.html#emulatornetworking)。
 
-4.  _选项 1_： 使用 [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
+4.  _选项 1_:使用 [`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
     若要转发的入站 TCP 数据包收到外部在端口 5555 上 （或您喜欢的任何其他端口） 到环回接口上的奇数端口 (**127.0.0.1 5555**在此示例中)，将转发出站数据包重新另一种方法：
 
     ```bash
@@ -50,7 +50,7 @@ ms.locfileid: "50115624"
 
     (选项 1 通常要比容易选项 2，尤其是当**系统首选项 > 安全性和隐私 > 防火墙**已打开。) 
 
-    _选项 2_： 使用 [`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
+    _选项 2_:使用 [`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
     若要重定向来自端口的 TCP 数据包`5555`（或您喜欢的任何其他端口） 上[共享网络](http://kb.parallels.com/en/4948)接口的环回接口上的奇数端口 (`127.0.0.1:5555`在此示例中):
 
     ```bash
@@ -95,7 +95,7 @@ ms.locfileid: "50115624"
 
 ### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>一种替代方式使用`adb -H`尚不支持
 
-从理论上讲，另一种方法是使用`adb`的内置功能，可连接到`adb`远程计算机上运行的服务器 (请参阅示例[ http://stackoverflow.com/a/18551325 ](http://stackoverflow.com/a/18551325))。
+从理论上讲，另一种方法是使用`adb`的内置功能，可连接到`adb`远程计算机上运行的服务器 (请参阅示例[ https://stackoverflow.com/a/18551325 ](https://stackoverflow.com/a/18551325))。
 但 Xamarin.Android IDE 扩展当前不提供某种方法来配置该选项。
 
 ## <a name="contact-information"></a>联系信息

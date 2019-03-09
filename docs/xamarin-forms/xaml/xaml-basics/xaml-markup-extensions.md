@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
-ms.date: 3/27/2018
-ms.openlocfilehash: a93503762528885dfc7d3b5400bf4ec716ea9fab
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/27/2018
+ms.openlocfilehash: 86abe932e9c244e1a959042cfc995bc184f89cc9
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056209"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671281"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 标记扩展
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 请注意，在关键字`clr-namespace`后跟一个冒号，然后.NET 命名空间名称后, 接分号，关键字`assembly`，等号和程序集名称。
 
-是的加上冒号`clr-namespace`但等号后面`assembly`。 语法定义在此方式故意： 最 XML 命名空间声明引用一个 URI，如开始一个 URI 方案名称`http`，这始终后跟一个冒号。 `clr-namespace`此字符串的一部分用于模拟这种约定。
+是的加上冒号`clr-namespace`但等号后面`assembly`。 语法方式故意定义在此：大多数 XML 命名空间声明引用一个 URI，如开始一个 URI 方案名称`http`，这始终后跟一个冒号。 `clr-namespace`此字符串的一部分用于模拟这种约定。
 
 中包含以下两个命名空间声明**StaticConstantsPage**示例。 请注意，`BoxView`尺寸设置为`Math.PI`和`Math.E`，但缩放到原来的 100:
 
@@ -547,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-可能需要与此示例的最重要经验是标记扩展的语法： 没有引号必须出现在标记扩展的大括号内。 键入时标记扩展在 XAML 文件中，是自然地想要将属性的值括在引号。 忍不住 ！
+可能需要与此示例的最重要经验是标记扩展的语法：没有引号必须出现在标记扩展的大括号内。 键入时标记扩展在 XAML 文件中，是自然地想要将属性的值括在引号。 忍不住 ！
 
 下面是运行的程序：
 

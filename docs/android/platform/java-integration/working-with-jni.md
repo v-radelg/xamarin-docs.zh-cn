@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: c674112f629f2054f81d72ee2b71268836e48b7a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106710"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672841"
 ---
 # <a name="working-with-jni"></a>使用 JNI
 
@@ -156,7 +156,7 @@ public class HelloAndroid extends android.app.Activity {
 
 -   Android 支持操作名称中的布局 XML 特性，例如[android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) XML 特性。 如果指定，增加的视图实例将尝试查找 Java 方法。
 
--   [Java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html)接口要求`readObject`和`writeObject`方法。 由于它们不是此接口的成员，因此我们相应的托管的实现不公开这些方法对 Java 代码。
+-   [Java.io.Serializable](https://developer.android.com/reference/java/io/Serializable.html)接口要求`readObject`和`writeObject`方法。 由于它们不是此接口的成员，因此我们相应的托管的实现不公开这些方法对 Java 代码。
 
 -   [Android.os.Parcelable](https://developer.xamarin.com/api/type/Android.Os.Parcelable/)接口需要实现类必须具有一个静态字段`CREATOR`类型的`Parcelable.Creator`。 生成的 Java 代码需要一些显式字段。 与我们的标准方案，是用 Java 代码的输出字段无法从托管代码。
 
@@ -248,12 +248,12 @@ static IntPtr class_ref = JNIEnv.FindClass(CLASS);
 
 ### <a name="binding-fields"></a>绑定字段
 
-Java 字段公开为C#属性，例如 Java 字段[java.lang.System.in](http://developer.android.com/reference/java/lang/System.html#in)绑定为C#属性[Java.Lang.JavaSystem.In](https://developer.xamarin.com/api/property/Java.Lang.JavaSystem.In/)。
+Java 字段公开为C#属性，例如 Java 字段[java.lang.System.in](https://developer.android.com/reference/java/lang/System.html#in)绑定为C#属性[Java.Lang.JavaSystem.In](https://developer.xamarin.com/api/property/Java.Lang.JavaSystem.In/)。
 此外，由于 JNI 区分静态字段和实例字段，实现属性时使用不同的方法。
 
 字段绑定涉及到三个集的方法：
 
-1.  *获取字段 id*方法。 *获取字段 id*方法负责返回字段句柄*获取字段值*并*设置字段值*方法将使用。 获取字段 id 需要知道声明类型，该字段的名称和[JNI 类型签名](#_JNI_Type_Signatures)的字段。
+1.  *获取字段 id*方法。 *获取字段 id*方法负责返回字段句柄*获取字段值*并*设置字段值*方法将使用。 获取字段 id 需要知道声明类型，该字段的名称和[JNI 类型签名](#JNI_Type_Signatures)的字段。
 
 1.  *获取字段值*方法。 这些方法需要字段句柄，并负责从 Java 读取字段的值。
     要使用的方法取决于字段的类型。
@@ -280,7 +280,7 @@ public static System.IO.Stream In
 }
 ```
 
-注意： 我们将使用[InputStreamInvoker.FromJniHandle](https://developer.xamarin.com/api/member/Android.Runtime.InputStreamInvoker.FromJniHandle/(System.IntPtr%2cAndroid.Runtime.JniHandleOwnership))要转换到的 JNI 引用`System.IO.Stream`使用的实例，然后我们`JniHandleOwnership.TransferLocalRef`因为[JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/)返回本地引用。
+注意:我们将使用[InputStreamInvoker.FromJniHandle](https://developer.xamarin.com/api/member/Android.Runtime.InputStreamInvoker.FromJniHandle/(System.IntPtr%2cAndroid.Runtime.JniHandleOwnership))要转换到的 JNI 引用`System.IO.Stream`使用的实例，然后我们`JniHandleOwnership.TransferLocalRef`因为[JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/)返回本地引用。
 
 许多[Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/)类型具有`FromJniHandle`方法会将转换 JNI 引用到所需的类型。
 
@@ -288,11 +288,11 @@ public static System.IO.Stream In
 
 ### <a name="method-binding"></a>方法绑定
 
-Java 方法公开为C#方法以及C#属性。 例如，Java 方法[java.lang.Runtime.runFinalizersOnExit](http://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean))方法绑定为[Java.Lang.Runtime.RunFinalizersOnExit](https://developer.xamarin.com/api/member/Java.Lang.Runtime.RunFinalizersOnExit/)方法，和[java.lang.Object.getClass](http://developer.android.com/reference/java/lang/Object.html#getClass)方法绑定为[Java.Lang.Object.Class](https://developer.xamarin.com/api/property/Java.Lang.Object.Class/)属性。
+Java 方法公开为C#方法以及C#属性。 例如，Java 方法[java.lang.Runtime.runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean))方法绑定为[Java.Lang.Runtime.RunFinalizersOnExit](https://developer.xamarin.com/api/member/Java.Lang.Runtime.RunFinalizersOnExit/)方法，和[java.lang.Object.getClass](https://developer.android.com/reference/java/lang/Object.html#getClass)方法绑定为[Java.Lang.Object.Class](https://developer.xamarin.com/api/property/Java.Lang.Object.Class/)属性。
 
 方法调用是一个两步过程：
 
-1.  *获取方法 id*为要调用的方法。 *获取方法 id*方法负责返回方法调用方法将使用的方法句柄。 获取方法 id 需要知道声明类型，该方法的名称和[JNI 类型签名](#_JNI_Type_Signatures)的方法。
+1.  *获取方法 id*为要调用的方法。 *获取方法 id*方法负责返回方法调用方法将使用的方法句柄。 获取方法 id 需要知道声明类型，该方法的名称和[JNI 类型签名](#JNI_Type_Signatures)的方法。
 
 1.  调用方法。
 
@@ -308,7 +308,7 @@ Java 方法公开为C#方法以及C#属性。 例如，Java 方法[java.lang.Run
 
 #### <a name="static-methods"></a>静态方法
 
-绑定的静态方法涉及到使用`JNIEnv.GetStaticMethodID`若要获取的方法句柄，然后使用相应`JNIEnv.CallStatic*Method`方法，具体取决于方法的返回类型。 以下是有关绑定的示例[Runtime.getRuntime](http://developer.android.com/reference/java/lang/Runtime.html#getRuntime())方法：
+绑定的静态方法涉及到使用`JNIEnv.GetStaticMethodID`若要获取的方法句柄，然后使用相应`JNIEnv.CallStatic*Method`方法，具体取决于方法的返回类型。 以下是有关绑定的示例[Runtime.getRuntime](https://developer.android.com/reference/java/lang/Runtime.html#getRuntime())方法：
 
 ```csharp
 static IntPtr id_getRuntime;
@@ -388,7 +388,7 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 1.  如果当前的运行时类型声明的类型相同，然后调用 Java 构造函数，并使用[Object.SetHandle](https://developer.xamarin.com/api/member/Java.Lang.Object.SetHandle/(System.IntPtr%2cAndroid.Runtime.JniHandleOwnership))用于存储返回的句柄`JNIEnv.NewInstance`。
 
 
-例如，考虑[java.lang.Integer(int)](http://developer.android.com/reference/java/lang/Integer.html#Integer(int))构造函数。 此绑定为：
+例如，考虑[java.lang.Integer(int)](https://developer.android.com/reference/java/lang/Integer.html#Integer(int))构造函数。 此绑定为：
 
 ```csharp
 // Cache the constructor's method handle for later use
@@ -634,7 +634,7 @@ int>`委托，是指`n_Add`方法，然后调用[JNINativeWrapper.CreateDelegate
 
 最后，`n_Add`方法负责封送到相应的托管类型的 JNI 参数然后委派方法调用。
 
-注意： 请始终使用`JniHandleOwnership.DoNotTransfer`MCW 获取对使用 Java 实例时。 把它们当作本地引用 (并因此调用`JNIEnv.DeleteLocalRef`) 将中断托管-&gt; Java-&gt;托管堆栈转换。
+注意:始终使用`JniHandleOwnership.DoNotTransfer`MCW 获取对使用 Java 实例时。 把它们当作本地引用 (并因此调用`JNIEnv.DeleteLocalRef`) 将中断托管-&gt; Java-&gt;托管堆栈转换。
 
 
 
@@ -807,7 +807,7 @@ public interface IAdderProgress : IJavaObject {
 
 `Invoker`类型定义必须继承`Java.Lang.Object`、 实现相应的接口，并提供在接口定义中引用的所有连接方法。 还有一个不同于类绑定的更多建议：`class_ref`字段和方法 Id 应为实例成员，非静态成员。
 
-优先使用实例成员的原因都与`JNIEnv.GetMethodID`中 Android 运行时的行为。 （这可能是 Java 的行为; 它尚未测试）。`JNIEnv.GetMethodID`查找来自于实现的接口和未声明的接口的方法时返回 null。 请考虑[java.util.SortedMap&lt;K，V&gt; ](http://developer.android.com/reference/java/util/SortedMap.html) Java 接口，实现[java.util.Map&lt;K，V&gt; ](http://developer.android.com/reference/java/util/Map.html)接口。 映射提供[清除](http://developer.android.com/reference/java/util/Map.html#clear())方法，因此看起来合理`Invoker`SortedMap 的定义将是：
+优先使用实例成员的原因都与`JNIEnv.GetMethodID`中 Android 运行时的行为。 （这可能是 Java 的行为; 它尚未测试）。`JNIEnv.GetMethodID`查找来自于实现的接口和未声明的接口的方法时返回 null。 请考虑[java.util.SortedMap&lt;K，V&gt; ](https://developer.android.com/reference/java/util/SortedMap.html) Java 接口，实现[java.util.Map&lt;K，V&gt; ](https://developer.android.com/reference/java/util/Map.html)接口。 映射提供[清除](https://developer.android.com/reference/java/util/Map.html#clear())方法，因此看起来合理`Invoker`SortedMap 的定义将是：
 
 ```csharp
 // Fails at runtime. DO NOT FOLLOW
@@ -849,7 +849,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-注意：`Handle`属性必须使用在构造函数体内，而不`handle`参数，截止时间 Android v4.0`handle`基构造函数完成执行后参数可能无效。
+注意:`Handle`属性必须使用在构造函数体内，而不`handle`参数，截止时间 Android v4.0`handle`基构造函数完成执行后参数可能无效。
 
 
 #### <a name="dispose-method"></a>Dispose 方法
@@ -1095,7 +1095,7 @@ using (var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalR
 
 
 
-### <a name="using-javalangobjectgetobjectlttgt"></a>使用 Java.Lang.Object.GetObject&lt;T&gt;（)
+### <a name="using-javalangobjectgetobjectlttgt"></a>Using Java.Lang.Object.GetObject&lt;T&gt;()
 
 `Java.Lang.Object` 提供了[Java.Lang.Object.GetObject&lt;T&gt;（IntPtr 句柄，JniHandleOwnership 传输）](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/)方法，可以用来创建指定类型的托管可调用包装器。
 
@@ -1125,7 +1125,7 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 若要查找的字段或方法中 JNI，字段或方法的声明类型必须查找第一个。 [Android.Runtime.JNIEnv.FindClass(string)](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.FindClass/(System.String))方法用于查找 Java 类型。 字符串参数是*简化类型引用*或*完整类型引用*Java 类型。 请参阅[JNI 类型参考资料部分](#_JNI_Type_References)有关简化和完整的类型引用的详细信息。
 
-注意： 不同于其他所有`JNIEnv`方法可返回对象实例`FindClass`返回全局引用，而不是本地引用。
+注意:与其他所有不同`JNIEnv`方法可返回对象实例`FindClass`返回全局引用，而不是本地引用。
 
 <a name="_Instance_Fields" />
 
@@ -1391,7 +1391,7 @@ long f(int n, String s, int[] array);
 (ILjava/lang/String;[I)J
 ```
 
-一般情况下，它是*强*建议使用`javap`命令，以确定 JNI 签名。 例如，JNI 类型的签名[java.lang.Thread.State.valueOf(String)](http://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))方法是"（lang/Ljava/字符串;） Ljava/lang/线程$ 状态;"，而 JNI 键入的签名[java.lang.Thread.State.values](http://developer.android.com/reference/java/lang/Thread.State.html#values)方法是"（) [Ljava/lang/线程$ 状态;"。 尾随分号; 请注意这些*是*JNI 类型签名的一部分。
+一般情况下，它是*强*建议使用`javap`命令，以确定 JNI 签名。 例如，JNI 类型的签名[java.lang.Thread.State.valueOf(String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))方法是"（lang/Ljava/字符串;） Ljava/lang/线程$ 状态;"，而 JNI 键入的签名[java.lang.Thread.State.values](https://developer.android.com/reference/java/lang/Thread.State.html#values)方法是"（) [Ljava/lang/线程$ 状态;"。 尾随分号; 请注意这些*是*JNI 类型签名的一部分。
 
 <a name="_JNI_Type_References" />
 
@@ -1401,7 +1401,7 @@ long f(int n, String s, int[] array);
 有四种类型的 JNI 类型引用：
 
 -  **built-in**
--  **简化**
+-  **simplified**
 -  **type**
 -  **array**
 
@@ -1433,12 +1433,12 @@ long f(int n, String s, int[] array);
 1.  读取输出的`'unzip -l android.jar | grep JavaName'`。
 
 
-二者会导致 Java 类型[java.lang.Thread.State](http://developer.android.com/reference/java/lang/Thread.State.html)映射到的简化的类型引用`java/lang/Thread$State`。
+二者会导致 Java 类型[java.lang.Thread.State](https://developer.android.com/reference/java/lang/Thread.State.html)映射到的简化的类型引用`java/lang/Thread$State`。
 
 
 ### <a name="type-references"></a>类型引用
 
-类型引用为内置类型引用或使用简化的类型引用`'L'`前缀和一个`';'`后缀。 Java 类型[java.lang.String](http://developer.android.com/reference/java/lang/String.html)，则简化的类型引用的是`"java/lang/String"`，而类型引用为`"Ljava/lang/String;"`。
+类型引用为内置类型引用或使用简化的类型引用`'L'`前缀和一个`';'`后缀。 Java 类型[java.lang.String](https://developer.android.com/reference/java/lang/String.html)，则简化的类型引用的是`"java/lang/String"`，而类型引用为`"Ljava/lang/String;"`。
 
 与数组类型引用和使用 JNI 签名使用类型引用。
 
@@ -1491,7 +1491,7 @@ static {};
 *大多数*情况下，通过 JNI，Java 泛型所示*不存在*。
 有一些"褶皱，"，但这些褶皱正在 Java 如何与泛型，不使用 JNI 如何查找和调用泛型成员进行交互。
 
-通过 JNI 进行交互时的泛型类型或成员和非泛型类型或成员之间没有差异。 例如，泛型类型[java.lang.Class&lt;T&gt; ](http://developer.android.com/reference/java/lang/Class.html)也是"原始"的泛型类型`java.lang.Class`，这两个具有相同的简化的类型引用， `"java/lang/Class"`。
+通过 JNI 进行交互时的泛型类型或成员和非泛型类型或成员之间没有差异。 例如，泛型类型[java.lang.Class&lt;T&gt; ](https://developer.android.com/reference/java/lang/Class.html)也是"原始"的泛型类型`java.lang.Class`，这两个具有相同的简化的类型引用， `"java/lang/Class"`。
 
 
 ## <a name="java-native-interface-support"></a>Java 本机接口支持

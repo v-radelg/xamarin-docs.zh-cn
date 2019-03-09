@@ -1,5 +1,5 @@
 ---
-title: 如何更新 Java 开发工具包 (JDK) 版本？
+title: 如何更新 Java Development Kit (JDK) 版本？
 description: 本文演示了如何更新 Windows 和 mac 上的 Java 开发工具包 (JDK) 版本
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -8,14 +8,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: aa04d944f803dded0e9448de27ed7d5ced2efb54
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 290a7deef4fdc10163bdb09881382f011b0dcd32
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109180"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670838"
 ---
-# <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>如何更新 Java 开发工具包 (JDK) 版本？
+# <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>如何更新 Java Development Kit (JDK) 版本？
 
 _本文演示了如何更新 Windows 和 mac 上的 Java 开发工具包 (JDK) 版本_
 
@@ -27,7 +27,7 @@ Xamarin.Android 使用 Java 开发工具包 (JDK) 将与用于构建 Android 应
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  从下载 JDK 8 (1.8) [Oracle 网站](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
+1.  从下载 JDK 8 (1.8) [Oracle 网站](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
     ![屏幕截图的 jdk 下载 Oracle 网站上的页](update-jdk-images/image1.png)
 
@@ -47,7 +47,7 @@ Xamarin.Android 使用 Java 开发工具包 (JDK) 将与用于构建 Android 应
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  从下载 JDK 8 (1.8) [Oracle 网站](http://www.oracle.com/technetwork/java/javase/downloads/index.html):
+1.  从下载 JDK 8 (1.8) [Oracle 网站](https://www.oracle.com/technetwork/java/javase/downloads/index.html):
 
     ![屏幕截图的 jdk 下载 Oracle 网站上的页](update-jdk-images/image1.png)
 

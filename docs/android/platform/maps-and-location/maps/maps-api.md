@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: db442f45c615b680264e79262f62062eb6a6bfd5
-ms.sourcegitcommit: f5fce8308b2e7c39c5b0c904e5f38a4ce2b55c87
+ms.openlocfilehash: 12ff6f615b30e53704fee6368c9d7f171f881df0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012290"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671060"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>应用程序中使用 Google 地图 API
 
@@ -297,7 +297,7 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-地图 API 提供了[CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)其中将聚合所有照相机的位置的可能值。 此类的实例可以提供给[CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29)方法将返回`CameraUpdate`对象。 地图 API 还包括[CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) fluent API 提供用于创建类`CameraPosition`对象。
+地图 API 提供了[CameraPosition](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html)其中将聚合所有照相机的位置的可能值。 此类的实例可以提供给[CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29)方法将返回`CameraUpdate`对象。 地图 API 还包括[CameraPosition.Builder](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) fluent API 提供用于创建类`CameraPosition`对象。
 下面的代码段显示了创建的示例`CameraUpdate`从`CameraPosition`并使用该更改照相机的位置上`GoogleMap`:
 
 ```csharp
@@ -342,7 +342,7 @@ Android 地图 API 提供了 API 的用于在地图上绘制的以下项：
 
 ##### <a name="adding-a-marker"></a>添加一个标记
 
-若要向映射添加一个标记，有必要创建一个新[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)对象，然后调用[AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29)方法`GoogleMap`实例。 此方法将返回[标记](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker)对象。
+若要向映射添加一个标记，有必要创建一个新[MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions)对象，然后调用[AddMarker](https://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29)方法`GoogleMap`实例。 此方法将返回[标记](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker)对象。
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -580,5 +580,5 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 - [Google 映射 Android API v2](https://developers.google.com/maps/documentation/android-sdk/intro)
 - [Google Play 服务的 APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [使用库](https://developer.android.com/guide/topics/manifest/uses-library-element)
-- [使用功能](https://developer.android.com/guide/topics/manifest/uses-feature-element)
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element)
+- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element)

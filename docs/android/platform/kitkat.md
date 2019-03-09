@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7b7fa2ea99a58b875bc1dc579455511aa9bf72d1
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172088"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669006"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -96,7 +96,7 @@ KitKat 简化了通过聚合由用户选择一个默认应用程序中的所有 
 
 ### <a name="webview-apps"></a>WebView 应用程序
 
-[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat 而陷入功能改进。 最大的变化提高加载到内容的安全性`WebView`。 虽然大多数面向较旧的 API 版本的应用程序应按预期方式工作的测试应用程序使用的`WebView`强烈建议类。 有关受影响的 WebView Api 的详细信息，请参阅 android[迁移到 WebView 中 Android 4.4](http://developer.android.com/guide/webapps/migrating.html)文档。
+[WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) KitKat 而陷入功能改进。 最大的变化提高加载到内容的安全性`WebView`。 虽然大多数面向较旧的 API 版本的应用程序应按预期方式工作的测试应用程序使用的`WebView`强烈建议类。 有关受影响的 WebView Api 的详细信息，请参阅 android[迁移到 WebView 中 Android 4.4](https://developer.android.com/guide/webapps/migrating.html)文档。
 
 <a name="user_experience" />
 
@@ -259,7 +259,7 @@ sceneButton.Click += (o, e) => {
 
 [![Transition.xml 资源/转换目录下的文件的位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
-下面的代码示例定义一个转换的 5 秒之间进行动画处理，并使用[超过了想要内插器](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
+下面的代码示例定义一个转换的 5 秒之间进行动画处理，并使用[超过了想要内插器](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
 ```xml
 <changeBounds
@@ -396,7 +396,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 请注意， [`ContentResolver.OpenOutputStream(Android.Net.Uri)`](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.OpenOutputStream/(Android.Net.Uri))
 返回`System.IO.Stream`，因此可以用.NET 编写整个流式处理过程。
 
-有关加载的详细信息，创建和编辑内容与存储访问框架，请参阅[Android 文档存储访问框架](http://developer.android.com/guide/topics/providers/document-provider.html)。
+有关加载的详细信息，创建和编辑内容与存储访问框架，请参阅[Android 文档存储访问框架](https://developer.android.com/guide/topics/providers/document-provider.html)。
 
 ### <a name="printing"></a>打印
 
@@ -421,7 +421,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ##### <a name="print-menu-item"></a>打印菜单项
 
-打印选项通常会在中显示的活动[选项菜单](http://developer.android.com/guide/topics/ui/menus.html#options-menu)。
+打印选项通常会在中显示的活动[选项菜单](https://developer.android.com/guide/topics/ui/menus.html#options-menu)。
 选项菜单可让用户在活动上执行操作。 它是在屏幕的右上角，如下所示：
 
 [![打印菜单项显示在屏幕的右上角的屏幕截图示例](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
@@ -656,7 +656,7 @@ protected override void OnPause()
 
 ### <a name="screen-recording"></a>屏幕录制
 
-KitKat 包括新屏幕，以便开发人员可记录应用程序中操作录制功能。 屏幕录制已可通过[Android Debug Bridge (ADB)](http://developer.android.com/tools/help/adb.html)客户端，可以下载 Android SDK 的一部分。
+KitKat 包括新屏幕，以便开发人员可记录应用程序中操作录制功能。 屏幕录制已可通过[Android Debug Bridge (ADB)](https://developer.android.com/tools/help/adb.html)客户端，可以下载 Android SDK 的一部分。
 
 若要录制你的屏幕，将设备连接;然后，找到你的 Android SDK 安装中，导航到**平台工具**目录，然后运行**adb**客户端：
 
@@ -678,18 +678,18 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 除了上面所述的更改，KitKat，您可以：
 
--  *使用全屏*-KitKat 引入了一个新[沉浸式模式下](http://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))浏览内容、 玩游戏，并运行其他应用程序可受益于全屏体验。
+-  *使用全屏*-KitKat 引入了一个新[沉浸式模式下](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))浏览内容、 玩游戏，并运行其他应用程序可受益于全屏体验。
 
 -  *自定义通知*-获取有关使用系统通知的其他详细信息 [`NotificationListenerService`](https://developer.xamarin.com/api/type/Android.Service.Notification.NotificationListenerService/)
    . 这允许您在您的应用程序内的不同方式显示信息。
 
--  *镜像可绘制资源*-可绘制资源有一个新 [`autoMirrored`](http://developer.android.com/reference/android/R.attr.html#autoMirrored)
+-  *镜像可绘制资源*-可绘制资源有一个新 [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
    通知系统的属性创建需要从左到右布局翻转的图像的镜像的版本。
 
 -  *暂停动画*-暂停和恢复使用创建的动画 [`Animator`](https://developer.xamarin.com/api/type/Android.Animation.Animator/)
    类的新实例。
 
--  *读取动态更改的文本*-表示动态使用新的文本更新为与新的"实时区域"的用户界面部分 [ `accessibilityLiveRegion`](http://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+-  *读取动态更改的文本*-表示动态使用新的文本更新为与新的"实时区域"的用户界面部分 [ `accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    因此在可访问性模式下会自动读取新的文本属性。
 
 -  *增强音频体验*-请噪音跟踪与 [`LoudnessEnhancer`](https://developer.xamarin.com/api/type/Android.Media.Audiofx.LoudnessEnhancer/)
@@ -703,7 +703,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 -  *远程控制*-使用的硬件和软件端上的一些更改，KitKat 允许您打开到远程控制使用配备红外线 （ir） 发射器设备`ConsumerIrService`，并与新的外围设备与之交互 [`RemoteController`](https://developer.xamarin.com/api/type/Android.Media.RemoteController/)
    Api。
 
-有关上述 API 更改的详细信息，请参阅 Google [Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)概述。
+有关上述 API 更改的详细信息，请参阅 Google [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)概述。
 
 
 ## <a name="summary"></a>总结
@@ -714,5 +714,5 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 ## <a name="related-links"></a>相关链接
 
 - [KitKat 示例](https://developer.xamarin.com/samples/KitKat/)
-- [Android 4.4 Api](http://developer.android.com/about/versions/android-4.4.html)
-- [Android KitKat](http://developer.android.com/about/versions/kitkat.html)
+- [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)
+- [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

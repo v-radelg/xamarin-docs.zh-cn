@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 8e95e674f52cb23be769473e27dc8eb785a77820
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116038"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668746"
 ---
 # <a name="introduction-to-ios-8"></a>IOS 8 简介
 
@@ -151,7 +151,7 @@ Sprite Kit，Apple 的 2D 游戏框架，已在 iOS 8 和 OS X Yosemite 一些�
 ## <a name="other-changes"></a>其他更改
 上面所述的 iOS 8 的主要变化，以及 Apple 此外已更新，许多现有框架。 下面详细介绍这些：
 
-- **[Core 映像](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple 已通过添加对检测的矩形区域，更好地支持扩展其图像处理框架，并在映像内的 QR 代码。 Mike Bluestein 探讨了这在他的博客帖子标题为[iOS 8 中的图像检测](http://blog.xamarin.com/image-detection-in-ios-8/)
+- **[Core 映像](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple 已通过添加对检测的矩形区域，更好地支持扩展其图像处理框架，并在映像内的 QR 代码。 Mike Bluestein 探讨了这在他的博客帖子标题为[iOS 8 中的图像检测](https://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>弃用的 API
 在 iOS 8 中所做的所有改进，与多个 Api 已弃用。 下面详细介绍其中一些。

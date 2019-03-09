@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: df8ee3da8a1341cd1dd879e8e70687d9fbd9957b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 63cbe556783ffe22512ff5312817d522120bd15e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117429"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670566"
 ---
 # <a name="creating-resources-for-varying-screens"></a>为不同屏幕创建资源
 
@@ -50,7 +50,7 @@ Android 将在运行时为适当大小缩放绘图。
 
 ### <a name="declare-the-supported-screen-size"></a>声明支持的屏幕大小
 
-声明的屏幕大小可确保仅受支持的设备可以下载应用程序。 这可以通过设置[支持屏幕](http://developer.android.com/guide/topics/manifest/supports-screens-element.html)中的元素**AndroidManifest.xml**文件。 此元素用于指定应用程序支持何种屏幕大小。 如果在应用程序可以正确地放置其布局以填满屏幕支持被视为给定的屏幕。 通过使用此清单元素，该应用程序将不会显示在[ *Google Play* ](https://play.google.com/)适用于不符合屏幕规范的设备。 但是，应用程序仍将具有不受支持的屏幕，设备上运行，但两种布局可能出现的模糊和像素化。
+声明的屏幕大小可确保仅受支持的设备可以下载应用程序。 这可以通过设置[支持屏幕](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)中的元素**AndroidManifest.xml**文件。 此元素用于指定应用程序支持何种屏幕大小。 如果在应用程序可以正确地放置其布局以填满屏幕支持被视为给定的屏幕。 通过使用此清单元素，该应用程序将不会显示在[ *Google Play* ](https://play.google.com/)适用于不符合屏幕规范的设备。 但是，应用程序仍将具有不受支持的屏幕，设备上运行，但两种布局可能出现的模糊和像素化。
 
 中的声明支持的屏幕 sixes **Properites/AndroidManifest.xml**解决方案的文件：
 
@@ -64,7 +64,7 @@ Android 将在运行时为适当大小缩放绘图。
 
 -----
 
-编辑**AndroidManifest.xml**包括[支持屏幕](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+编辑**AndroidManifest.xml**包括[支持屏幕](https://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -178,7 +178,7 @@ Android 将在运行时为适当大小缩放绘图。
 
 Android 上创作多个设备上，运行，屏幕大小和屏幕密度的组合可能会感到不知所措。 以下提示可帮助最大程度减少支持各种设备所需的工作量：
 
-- **仅设计和开发为所需**&ndash;有许多不同设备，但某些极少数外观造型，可能需要花费大量精力来设计和开发的存在。 [**屏幕大小和密度**](http://developer.android.com/resources/dashboard/screens.html)仪表板是提供数据的屏幕大小/屏幕密度矩阵分解的 Google 提供的页。 此明细提供有关如何支持屏幕上的开发工作的见解。
+- **仅设计和开发为所需**&ndash;有许多不同设备，但某些极少数外观造型，可能需要花费大量精力来设计和开发的存在。 [**屏幕大小和密度**](https://developer.android.com/resources/dashboard/screens.html)仪表板是提供数据的屏幕大小/屏幕密度矩阵分解的 Google 提供的页。 此明细提供有关如何支持屏幕上的开发工作的见解。
 
 - **使用分发点而不是像素**-像素会变得麻烦作为屏幕密度的更改。 请不要对像素值。 避免以 dp （密度无关像素为单位） 支持的像素为单位。
 

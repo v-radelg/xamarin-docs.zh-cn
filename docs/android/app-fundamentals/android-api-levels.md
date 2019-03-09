@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: aa522e5226d78c1b43bb52b97991b989491d251f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120055"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672581"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 级别
 
@@ -281,5 +281,5 @@ else
 - [Android SDK 安装](~/android/get-started/installation/android-sdk.md)
 - [SDK CLI 工具更改](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [选取 compileSdkVersion、 minSdkVersion 和 targetSdkVersion](https://medium.com/google-developers/picking-your-compilesdkversion-minsdkversion-targetsdkversion-a098a0341ebd)
-- [什么是 API 级别？](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
+- [什么是 API 级别？](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels)
 - [用、 标记和内部版本号](https://source.android.com/source/build-numbers)
