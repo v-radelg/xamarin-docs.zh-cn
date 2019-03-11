@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: d40c932c560b3827cccacd4f9bafa155dcf26056
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 68375dfc5b7baa4726739d40eb77c1fcb7500fb4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113321"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668876"
 ---
 # <a name="using-icloud-with-xamarinios"></a>通过 Xamarin.iOS 使用 iCloud
 
@@ -45,7 +45,7 @@ ms.locfileid: "50113321"
 
 若要正确配置应用程序访问 iCloud:
 
--   **查找你的团队 Id** -登录到[developer.apple.com](http://developer.apple.com)并访问**Member Center > 帐户 > 开发人员帐户摘要**来获取你的团队 ID （或单个面向单个开发人员 ID). 它将是 10 个字符的字符串 ( **A93A5CM278**例如)-此窗体的"容器标识符"的一部分。
+-   **查找你的团队 Id** -登录到[developer.apple.com](https://developer.apple.com)并访问**Member Center > 帐户 > 开发人员帐户摘要**来获取你的团队 ID （或单个面向单个开发人员 ID). 它将是 10 个字符的字符串 ( **A93A5CM278**例如)-此窗体的"容器标识符"的一部分。
 
 -   **创建新的应用 ID** -若要创建的应用 ID，请按照中所述的步骤[预配存储技术部分中的设备预配指南](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)，并确保将检查**iCloud**为允许的服务：
 
@@ -144,7 +144,7 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 
 然后，你的代码可以采取列表已更改密钥，例如，更新它们的本地副本或使用新值更新 UI 的某些操作。
 
-可能的更改的原因是： ServerChange (0)、 InitialSyncChange (1) 或 QuotaViolationChange (2)。 可以访问的原因，并根据需要执行不同的处理 (例如，您可能需要删除为某些键*QuotaViolationChange*)。
+可能的更改的原因有：ServerChange (0)、 InitialSyncChange (1) 或 QuotaViolationChange (2)。 可以访问的原因，并根据需要执行不同的处理 (例如，您可能需要删除为某些键*QuotaViolationChange*)。
 
 ## <a name="document-storage"></a>文档存储
 
@@ -417,7 +417,7 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 ## <a name="icloud-backup"></a>iCloud 备份
 
 虽然备份到 iCloud 不是一项功能，开发人员直接访问，设计你的应用程序的方式可能会影响用户体验。
-Apple 提供[iOS 数据存储准则](http://developer.apple.com/icloud/documentation/data-storage/)开发人员在其 iOS 应用程序跟踪。
+Apple 提供[iOS 数据存储准则](https://developer.apple.com/icloud/documentation/data-storage/)开发人员在其 iOS 应用程序跟踪。
 
 最重要的考虑因素是内容的您的应用程序是否将不是内容的用户生成的 （例如，存储 hundred-plus 兆字节为单位的每个问题的杂志读者应用程序） 的大型文件存储。 Apple 倾向于不存储此类数据，它将为备份到 iCloud 并不必要地填充用户的 iCloud 配额。
 
@@ -437,6 +437,6 @@ Apple 提供[iOS 数据存储准则](http://developer.apple.com/icloud/documenta
 
 - [介绍到 iCloud （示例）](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
 - [iCloud 研讨会示例代码](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [iCloud 研讨会幻灯片](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud 研讨会幻灯片](https://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [iCloud 存储](http://support.apple.com/kb/HT4847)
+- [iCloud 存储](https://support.apple.com/kb/HT4847)

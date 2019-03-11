@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 4b9c39a0ced9a264f501d78142c3bdfd556593ed
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "30771315"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668317"
 ---
 # <a name="material-theme"></a>材料主题
 
@@ -45,7 +45,7 @@ Android 提供了三种材料主题风格：
 
 -  **Android SDK** &ndash; Android 5.0 (API 21) 或更高版本必须安装通过 Android SDK 管理器。
 
--  **Java JDK 1.8** &ndash;可以使用 JDK 1.7，如果您是专门针对 API 级别 23 和更早版本。 提供了 JDK 1.8 [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
+-  **Java JDK 1.8** &ndash;可以使用 JDK 1.7，如果您是专门针对 API 级别 23 和更早版本。 提供了 JDK 1.8 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
 
 若要了解如何配置 Android 5.0 应用程序项目，请参阅[设置了 Android 5.0 项目](~/android/platform/lollipop.md)。
 
@@ -278,7 +278,7 @@ Android 5.0 还使您可以设置一个单独的视图的样式。 在创建后*
 - [棒糖形简介](../platform/lollipop.md)
 - [CardView](controls/card-view.md)
 - [备用资源](../app-fundamentals/resources-in-android/alternate-resources.md)
-- [Android 棒糖形](https://developer.android.com/about/versions/lollipop)
+- [Android Lollipop](https://developer.android.com/about/versions/lollipop)
 - [Android 饼图开发人员](https://developer.android.com/about/versions/pie/)
 - [材料设计](https://developer.android.com/guide/topics/ui/look-and-feel/)
 - [材料设计原则](https://material.io/design/)

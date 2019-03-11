@@ -6,20 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/03/2018
-ms.openlocfilehash: ae005b487e13ab4d2d39b26b10c7ca08e263ef67
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 99b5798e8d3cd5723f99aa2483d5d1c0eff8d57c
+ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899169"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57305641"
 ---
 # <a name="build-process"></a>生成过程
-
 
 ## <a name="overview"></a>概述
 
 Xamarin.Android 生成过程负责将所有内容集合在一起：[生成 `Resource.designer.cs`](~/android/internals/api-design.md)，支持 `AndroidAsset`、`AndroidResource` 和其他[生成操作](#Build_Actions)，生成 [Android 可调用的包装器](~/android/platform/java-integration/android-callable-wrappers.md)，以及生成 `.apk` 以在 Android 设备上执行。
-
 
 ## <a name="application-packages"></a>应用程序包
 
@@ -43,7 +41,7 @@ Xamarin.Android 生成过程负责将所有内容集合在一起：[生成 `Reso
 
 “快速部署”与共享运行时协同工作，进一步缩小 Android 应用程序包的大小。 可以通过不在程序包内捆绑应用的程序集来完成此操作。 而是通过 `adb push` 将它们复制到目标上。 此进程加快了生成/部署/调试周期，因为如果只更改了程序集，则不会重新安装该程序包。 相反，只有更新的程序集才会重新同步到目标设备。 
 
-已知快速部署在阻止 `adb` 同步到目录 `/data/data/@PACKAGE_NAME@/files/.__override__` 的设备上会失败。 
+已知快速部署在阻止 `adb` 同步到目录 `/data/data/@PACKAGE_NAME@/files/.__override__` 的设备上会失败。
 
 快速部署在默认情况下处于启用状态，可以通过将 `$(EmbedAssembliesIntoApk)` 属性设置为 `True` 在调试版本中禁用。
 
@@ -88,9 +86,9 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   DebugType &ndash; 指定要生成的[调试符号的类型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)作为版本的一部分，它还会影响应用程序是否可调试。 可能的值包括：
 
-    - Full：生成 Full 符号。 如果 `DebugSymbols` MSBuild 属性也为 `True`，则应用程序包是可调试的。
+    - “完整”：生成完整符号。 如果 `DebugSymbols` MSBuild 属性也为 `True`，则应用程序包是可调试的。
 
-    - PdbOnly：生成 "PDB" 符号。 应用程序包将不可调试。
+    - PdbOnly：生成“PDB”符号。 应用程序包将不可调试。
 
     如果 `DebugType` 未设置或为空字符串，则 `DebugSymbols` 属性控制应用程序是否可调试。
 
@@ -176,7 +174,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   AndroidFastDeploymentType &ndash; `:`（冒号）分隔的值列表，`$(EmbedAssembliesIntoApk)` MSBuild 属性为 `False` 时可用于控制部署到目标设备上的[快速部署目录](#Fast_Deployment)的类型。 如果资源是快速部署的，则不会嵌入到生成的 `.apk` 中，这样做可以加快部署时间。 （部署的速度越快，`.apk` 需要重建的频率越低，安装过程可能会更快。）有效值包括：
 
-    - `Assemblies`：部署应用程序程序集。
+    - `Assemblies`：部署应用程序集。
 
     - `Dexes`：部署 `.dex` 文件、Android 资源和 Android 资产。 **此值仅可以在运行 Android 4.4 或更高版本 (API-19) 的设备上使用。**
 
@@ -197,25 +195,25 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
     这可能会被重写为包含 `Xamarin.Android.Net.AndroidClientHandler`，后者使用 Android Java API 执行网络请求。 这样，如果基础 Android 版本支持 TLS 1.2，就可以访问 TLS 1.2 URL。  
     只有 Android 5.0 及更高版本通过 Java 可靠提供 TLS 1.2 支持。
 
-    注意：如果低于 5.0 的 Android 版本必须提供 TLS 1.2 支持，或必须对 `System.Net.WebClient` 和相关 API 提供 TLS 1.2 支持，应使用 `$(AndroidTlsProvider)`。
+    *说明*：如果需要在低于 Android 5.0 的版本上具备 TLS 1.2 支持，或者 TLS 1.2 支持需要与 `System.Net.WebClient` 及相关 API 一起使用，则应使用 `$(AndroidTlsProvider)`。
 
-    注意：通过设置 [`XA_HTTP_CLIENT_HANDLER_TYPE` 环境变量](~/android/deploy-test/environment.md)，可以支持此属性。
+    *说明*：通过设置 [`XA_HTTP_CLIENT_HANDLER_TYPE` 环境变量](~/android/deploy-test/environment.md)可使用对此属性的支持。
     在生成操作为 `@(AndroidEnvironment)` 的文件中，发现的 `$XA_HTTP_CLIENT_HANDLER_TYPE` 值的优先级更高。
 
     已在 Xamarin.Android 6.1 中添加。
 
 -   AndroidTlsProvider &ndash; 一个字符串值，指定应用程序中应使用哪个 TLS 提供程序。 可能的值有：
 
-    - `btls`：使用 [Boring SSL](https://boringssl.googlesource.com/boringssl) 与 [HttpWebRequest](xref:System.Net.HttpWebRequest) 进行 TLS 通信。
+    - `btls`：针对与 [HttpWebRequest](xref:System.Net.HttpWebRequest) 的通信，使用 [Boring SSL](https://boringssl.googlesource.com/boringssl)。
       这样，可以对所有 Android 版本使用 TLS 1.2。
 
-    - `legacy`：使用历史托管 SSL 实施进行网络交互。 这不支持 TLS 1.2。
+    - `legacy`：对于网络交互使用之前托管的 SSL 实现。 这不支持 TLS 1.2。
 
     - `default`：允许 Mono 选择默认 TLS 提供程序。
       这相当于 `legacy`，即使在 Xamarin.Android 7.3 中，也不例外。  
-      注意：此值不太可能会出现在 `.csproj` 值中，因为 IDE“Default”值会导致 `$(AndroidTlsProvider)` 属性遭删除。
+      *说明*：此值不可能出现在 `.csproj` 值中，因为 IDE 的“默认”值会导致删除 `$(AndroidTlsProvider)` 属性。
 
-    - 取消设置/空字符串：在 Xamarin.Android 7.1 中，这相当于 `legacy`。  
+    - 取消设置/空字符串：在 Xamarin.Android 7.1 中，这等效于 `legacy`。  
       在 Xamarin.Android 7.3 中，这相当于 `btls`。
 
     默认值为空字符串。
@@ -224,11 +222,11 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   AndroidLinkMode &ndash; 指定应在 Android 包中包含的程序集上执行[链接](~/android/deploy-test/linker.md)的类型。 仅在 Android 应用程序项目中使用。 默认值是 SdkOnly。 有效值为：
 
-    - None：不会尝试链接。
+    - “无”：将不尝试任何链接。
 
-    - SdkOnly：仅在基类库上执行链接，而不是用户程序集。
+    - SdkOnly：将仅在基类库上（不在用户的程序集上）执行链接。
 
-    - Full：将在基类库和用户程序集上执行链接。 注意：使用 Full 的 `AndroidLinkMode` 值通常会导致应用程序损坏，尤其是在使用 Reflection 时。 除非你真正知道在做什么，否则请避免。
+    - “完整”：将在基类库和用户程序集上执行链接。 **注意：** 使用“完整”这一 `AndroidLinkMode` 值常会导致应用损坏，尤其是使用放射时。 除非你真正知道在做什么，否则请避免。
 
     ```xml
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
@@ -244,7 +242,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
     [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
--   **LinkerDumpDependencies** &ndash; 布尔属性，能够生成链接器依赖项文件。 可将此文件用作 [illinkanalyzer](https://github.com/mono/linker/tree/master/analyzer) 工具的输入。
+-   **LinkerDumpDependencies** &ndash; 布尔属性，能够生成链接器依赖项文件。 可将此文件用作 [illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) 工具的输入。
 
     默认值为 False。
 
@@ -317,19 +315,19 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   MandroidI18n &ndash; 指定应用程序附带的国际化支持，例如排序规则和排序表。 该值是以下一个或多个不区分大小写值的以逗号或分号分隔的列表：
 
-    -   无：不包含其他编码。
+    -   “无”：不包括任何额外的编码。
 
-    -   全部：包含所有可用的编码。
+    -   “所有”：包括所有可用编码。
 
-    -   CJK：包括中文、日语和朝鲜语编码，例如*日语(EUC)* \[enc-jp, CP51932\]、*日语(Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日语(JIS)* \[CP50220\]、*简体中文(GB2312)* \[gb2312, CP936\]、*朝鲜语(UHC)* \[ks\_c\_5601-1987, CP949\]、*朝鲜语(EUC)* \[euc-kr, CP51949\]、*繁体中文(Big5)* \[big5, CP950\] 以及*简体中文 (GB18030)* \[GB18030, CP54936\]。
+    -   CJK：包括中文、日语和韩语编码，例如日语 (EUC) \[enc-jp, CP51932\]、日语 (Shift-JIS) \[iso-2022-jp, shift\_jis, CP932\]、日语 (JIS) \[CP50220\]、简体中文 (GB2312) \[gb2312, CP936\]、韩语 (UHC) \[ks\_c\_5601-1987, CP949\]、韩语 (EUC) \[euc-kr, CP51949\]、繁体中文 (Big5) \[big5, CP950\] 和简体中文 (GB18030) \[GB18030, CP54936\]。
 
-    -   中东：包括中东编码，例如*土耳其语(Windows)* \[iso-8859-9, CP1254\]、*希伯来语(Windows)* \[windows-1255, CP1255\]、*阿拉伯语(Windows)* \[windows-1256, CP1256\]、*阿拉伯语(ISO)* \[iso-8859-6, CP28596\]、*希伯来语(ISO)* \[iso-8859-8, CP28598\]、*拉丁语 5 (ISO)* \[iso-8859-9, CP28599\] 以及*希伯来语(Iso 备用)* \[iso-8859-8, CP38598\]。
+    -   “中东”：包括中东编码，例如土耳其 (Windows) \[iso-8859-9, CP1254\]、希伯来语 (Windows) \[windows-1255, CP1255\]、阿拉伯语(Windows) \[windows-1256, CP1256\]、阿拉伯语 (ISO) \[iso-8859-6, CP28596\]、希伯来语 (ISO) \[iso-8859-8, CP28598\]、拉丁语Latin 5 (ISO) \[iso-8859-9, CP28599\] 和希伯来语 (Iso Alternative) \[iso-8859-8, CP38598\]。
 
-    -   其他：包括其他编码，例如*西里尔文(Windows)* \[CP1251\]、*波罗的语(Windows)* \[iso-8859-4, CP1257\]、*越南语(Windows)* \[CP1258\]、*西里尔文(KOI8-R)* \[koi8-r, CP1251\]、*乌克兰语(KOI8-U)* \[koi8-u, CP1251\]、*波罗的语(ISO)* \[iso-8859-4, CP1257\]、*西里尔文(ISO)* \[iso-8859-5, CP1251\]、*ISCII Davenagari* \[x-iscii-de, CP57002\]、*ISCII 孟加拉语* \[x-iscii-be, CP57003\]、*ISCII 泰米尔语* \[x-iscii-ta, CP57004\]、*ISCII 泰卢固语* \[x-iscii-te, CP57005\]、*ISCII 阿萨姆语* \[x-iscii-as, CP57006\]、*ISCII 奥里亚语* \[x-iscii-or, CP57007\]、*ISCII 卡纳达语* \[x-iscii-ka, CP57008\]、*ISCII 马拉雅拉姆语* \[x-iscii-ma, CP57009\]、*ISCII 古吉拉特语* \[x-iscii-gu, CP57010\]、*ISCII 旁遮普文* \[x-iscii-pa, CP57011\] 以及*泰语(Windows)* \[CP874\]。
+    -   “其他”：包括其他编码，例如西里尔字母 (Windows) \[CP1251\]、波罗的海文 (Windows) \[iso-8859-4, CP1257\]、越南语 (Windows) \[CP1258\]、西里尔字母 (KOI8-R) \[koi8-r, CP1251\]、乌克兰语 (KOI8-U) \[koi8-u, CP1251\]、波罗的海文 (ISO) \[iso-8859-4, CP1257\]、西里尔字母 (ISO) \[iso-8859-5, CP1251\]、ISCII 天城体梵文字母 \[x-iscii-de, CP57002\]、ISCII 孟加拉语 \[x-iscii-be, CP57003\]、ISCII 泰米尔语 \[x-iscii-ta, CP57004\]、ISCII 泰卢固语 \[x-iscii-te, CP57005\]、ISCII 阿萨姆语 \[x-iscii-as, CP57006\]、ISCII 奥里雅语 \[x-iscii-or, CP57007\]、ISCII 坎那达语 \[x-iscii-ka, CP57008\]、ISCII 马拉雅拉姆语 \[x-iscii-ma, CP57009\]、ISCII 古吉拉特语 \[x-iscii-gu, CP57010\]、ISCII 旁遮普语 \[x-iscii-pa, CP57011\] 和泰语 (Windows) \[CP874\]。
 
-    -   少数：包括少数编码，例如 *IBM EBCDIC(土耳其语)* \[CP1026\]、*IBM EBCDIC(开放系统拉丁语 1)* \[CP1047\]、*IBM EBCDIC(美国-加拿大与欧洲)* \[CP1140\]、*IBM EBCDIC(德国与欧洲)* \[CP1141\]、*IBM EBCDIC(丹麦/挪威与欧洲)* \[CP1142\]、*IBM EBCDIC(芬兰/瑞典与欧洲)* \[CP1143\]、*IBM EBCDIC(意大利与欧洲)* \[CP1144\]、*IBM EBCDIC(拉丁美洲/西班牙与欧洲)* \[CP1145\]、*IBM EBCDIC(英国与欧洲)* \[CP1146\]、*IBM EBCDIC(法国与欧洲)* \[CP1147\]、*IBM EBCDIC(国际与欧洲)* \[CP1148\]、*IBM EBCDIC(冰岛与欧洲)* \[CP1149\]、*IBM EBCDIC(德国)* \[CP20273\]、*IBM EBCDIC(丹麦/挪威)* \[CP20277\]、*IBM EBCDIC(芬兰/瑞典)* \[CP20278\]、*IBM EBCDIC(意大利)* \[CP20280\]、*IBM EBCDIC(拉丁美洲/西班牙)* \[CP20284\]、*IBM EBCDIC(英国)* \[CP20285\]、*IBM EBCDIC(扩展式日语片假名)* \[CP20290\]、*IBM EBCDIC(法国)* \[CP20297\]、*IBM EBCDIC(阿拉伯语)* \[CP20420\]、*IBM EBCDIC(希伯来语)* \[CP20424\]、*IBM EBCDIC(冰岛语)* \[CP20871\]、*IBM EBCDIC (西里尔文 - 塞尔维亚文，保加利亚语)* \[CP21025\]、*IBM EBCDIC(美国-加拿大)* \[CP37\]、*IBM EBCDIC(国际)* \[CP500\]、*阿拉伯语(ASMO 708)* \[CP708\]、*中欧语言(DOS)* \[CP852\]*、西里尔文(DOS)* \[CP855\]、*土耳其语(DOS)* \[CP857\]、*西欧(DOS 与欧洲)* \[CP858\]、*希伯来语(DOS)* \[CP862\]、*阿拉伯语(DOS)* \[CP864\]、*俄语(DOS)* \[CP866\]、*希腊语(DOS)* \[CP869\]、*IBM EBCDIC(拉丁语 2)* \[CP870\] 以及 *IBM EBCDIC(希腊语)* \[CP875\]。
+    -   “稀有”：包括稀有编码，例如 IBM EBCDIC (土耳其语) \[CP1026\]、IBM EBCDIC (开放系统拉丁语 1) \[CP1047\]、IBM EBCDIC (美国-加拿大-欧洲) \[CP1140\]、IBM EBCDIC (德国-欧洲) \[CP1141\]、IBM EBCDIC (丹麦/挪威-欧洲) \[CP1142\]、IBM EBCDIC (芬兰/瑞典-欧洲) \[CP1143\]、IBM EBCDIC (意大利-欧洲) \[CP1144\]、IBM EBCDIC (拉丁美洲/西班牙-欧洲) \[CP1145\]、IBM EBCDIC (英国-欧洲) \[CP1146\]、IBM EBCDIC (法国-欧洲) \[CP1147\]、IBM EBCDIC (国际-欧洲) \[CP1148\]、IBM EBCDIC (冰岛语-欧洲) \[CP1149\]、IBM EBCDIC (德语) \[CP20273\]、IBM EBCDIC (丹麦/挪威) \[CP20277\]IBM EBCDIC (芬兰/瑞典) \[CP20278\]、IBM EBCDIC (意大利) \[CP20280\]、IBM EBCDIC (拉丁美洲/西班牙) \[CP20284\]、IBM EBCDIC (英国) \[CP20285\]、IBM EBCDIC (扩展式日文片假名) \[CP20290\]、IBM EBCDIC (法国) \[CP20297\]、IBM EBCDIC (阿拉伯语) \[CP20420\]、IBM EBCDIC (希伯来语) \[CP20424\]、IBM EBCDIC (冰岛语) \[CP20871\]、IBM EBCDIC (西里尔字母 - 塞尔维亚语, 保加利亚语) \[CP21025\]、IBM EBCDIC (美国-加拿大) \[CP37\]IBM EBCDIC (国际) \[CP500\]、阿拉伯语 (ASMO 708) \[CP708\]、欧洲中部 (DOS) \[CP852\]、西里尔字母 (DOS) \[CP855\]、土耳其语 (DOS) \[CP857\]、欧洲西部 (DOS-欧洲) \[CP858\]、希伯来语 (DOS) \[CP862\]、阿拉伯语 (DOS) \[CP864\]俄语 (DOS) \[CP866\]、希腊语 (DOS) \[CP869\]、IBM EBCDIC (拉丁语 2) \[CP870\] 和 BM EBCDIC (希腊语) \[CP875\]。
 
-    -   西部：包括西部编码，例如*西欧(Mac)* \[macintosh, CP10000\]、*冰岛语(Mac)* \[x-mac-icelandic, CP10079\]、*中欧(Windows)* \[iso-8859-2, CP1250\]、*西欧(Windows)* \[iso-8859-1, CP1252\]、*希腊语(Windows)* \[iso-8859-7, CP1253\]、*中欧(ISO)* \[iso-8859-2, CP28592\]、*拉丁语 3 (ISO)* \[iso-8859-3, CP28593\]、*希腊语(ISO)* \[iso-8859-7, CP28597\]、*拉丁语 9 (ISO)* \[iso-8859-15, CP28605\]、*OEM 美国* \[CP437\]、*西欧(DOS)* \[CP850\]、*葡萄牙语(DOS)* \[CP860\]、*冰岛语(DOS)* \[CP861\]、*加拿大法语(DOS)* \[CP863\] 以及*北欧文(DOS)* \[CP865\]。
+    -   “西部”：包括西部编码，例如欧洲西部 (Mac) \[macintosh, CP10000\]、冰岛语 (Mac) \[x-mac-icelandic, CP10079\]、欧洲中部 (Windows) \[iso-8859-2, CP1250\]、欧洲西部 (Windows) \[iso-8859-1, CP1252\]、希腊语 (Windows) \[iso-8859-7, CP1253\]、欧洲中部 (ISO) \[iso-8859-2, CP28592\]、拉丁语 3 (ISO) \[iso-8859-3, CP28593\]、拉丁语 (ISO) \[iso-8859-7, CP28597\]、拉丁语 9 (ISO) \[iso-8859-15, CP28605\]OEM 美国 \[CP437\]、欧洲西部 (DOS) \[CP850\]、葡萄牙语 (DOS) \[CP860\]、冰岛语 (DOS) \[CP861\]、法国加拿大语 (DOS) \[CP863\] 和日耳曼语 (DOS) \[CP865\]。
 
 
     ```xml
@@ -456,10 +454,10 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   AndroidClassParser &ndash; 一个字符串属性，用于控制如何分析 `.jar` 文件。 可能的值包括：
 
-    - class-parse：使用 `class-parse.exe` 直接解析 Java 字节码，无需 JVM 的帮助。 此值处于试验阶段。 
+    - class-parse：使用 `class-parse.exe` 直接分析 Java 字节码，而不使用 JVM。 此值处于试验阶段。 
 
 
-    - jar2xml：使用 `jar2xml.jar` 以使用 Java 反射从 `.jar` 文件中提取类型和成员。
+    - jar2xml：通过 `jar2xml.jar` 使用 use Java 反射以提取 `.jar` 文件中的类型和成员。
 
     `class-parse` 优于 `jar2xml` 的优势是：
 
@@ -475,9 +473,9 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   AndroidCodegenTarget &ndash; 控制代码生成目标 ABI 的字符串属性。 可能的值包括：
 
-    - XamarinAndroid：使用自 Mono for Android 1.0 以来的 JNI 绑定 API。 使用 Xamarin.Android 5.0 或更高版本生成的绑定程序集只能在 Xamarin.Android 5.0 或更高版本（API/ABI 附加程序）上运行，但源与先前的产品版本兼容。
+    - XamarinAndroid：使用 Mono for Android 1.0 中存在的 JNI 绑定 API。 使用 Xamarin.Android 5.0 或更高版本生成的绑定程序集只能在 Xamarin.Android 5.0 或更高版本（API/ABI 附加程序）上运行，但源与先前的产品版本兼容。
 
-    - XAJavaInterop1：使用 Java.Interop 进行 JNI 调用。 只能通过 Xamarin.Android 6.1 或更高版本构建和执行使用 `XAJavaInterop1` 的绑定程序集。 Xamarin.Android 6.1 和更高版本会将 `Mono.Android.dll` 与此值绑定。
+    - XAJavaInterop1：对JNI 调用使用 Java.Interop。 只能通过 Xamarin.Android 6.1 或更高版本构建和执行使用 `XAJavaInterop1` 的绑定程序集。 Xamarin.Android 6.1 和更高版本会将 `Mono.Android.dll` 与此值绑定。
 
       `XAJavaInterop1` 的好处包括：
 
@@ -504,7 +502,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   AndroidExplicitCrunch &ndash; 如果你正在生成具有大量本地绘图的应用，则需要花费数分钟才能完成初始生成（或重新生成）。 要加快生成过程，请尝试包含该属性并将其设置为 `True`。 设置该属性时，生成过程会预处理 .png 文件。
 
-    请注意：该选项与 `$(AndroidUseAapt2)` 选项不兼容。 如果启用了 `$(AndroidUseAapt2)`，将禁用此功能。 如果希望继续使用此功能，请将 `$(AndroidUseAapt2)` 设置为 `False`。
+    注意:此选项与 `$(AndroidUseAapt2)` 选项不兼容。 如果启用了 `$(AndroidUseAapt2)`，将禁用此功能。 如果希望继续使用此功能，请将 `$(AndroidUseAapt2)` 设置为 `False`。
 
     “实验”。 已在 Xamarin.Android 7.0 中添加。
 

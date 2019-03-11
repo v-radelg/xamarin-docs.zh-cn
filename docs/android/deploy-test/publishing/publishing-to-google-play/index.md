@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e8b1fdd933d026875ae10e76894120c8c4504769
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123331"
 ---
+
 # <a name="publishing-to-google-play"></a>发布到 Google Play
 
 尽管有许多应用市场可以分发应用程序，但 Google Play 无疑是世界上最大和访问次数最多的 Android 应用商店。 Google Play 提供单一平台，可用于 Android 应用程序的分发、宣传推广、销售和销售分析。
@@ -143,7 +138,7 @@ Xamarin Android 7.0 采用集成工作流，将应用从 Visual Studio 发布到
 5. 使用证书对应用进行签名。
 6. 将已签名应用发布到 Google Play。
 
-在[用于发布的存档](~/android/deploy-test/release-prep/index.md#archive)中，“分发渠道”对话框提供了两种发布选择：**Ad Hoc** 和 **Google Play**。 如果显示的是“签名标识”对话框，请单击“返回”，返回到“分发渠道”对话框。 选择“Google Play”，然后单击“下一步”：
+在 [归档以发布](~/android/deploy-test/release-prep/index.md#archive)中，“分发渠道”对话框显示两个分发选项：“临时”和“Google Play”。 如果显示的是“签名标识”对话框，请单击“返回”，返回到“分发渠道”对话框。 选择“Google Play”，然后单击“下一步”：
 
 [![“分发通道”对话框](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -163,7 +158,7 @@ Xamarin Android 7.0 采用集成工作流，将应用从 Visual Studio 发布到
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac 采用集成工作流，将应用发布到 Google Play。 如果使用早于 5.9 版本的 Xamarin Studio，则必须通过 Google Play 开发者控制台手动上传 APK，然后使用“发布到 Google Play”对话框进行后续 APK 更新。 此外，必须已至少上传 1 个 APK，才能使用“发布到 Google Play”。 如果尚未上传第一个 APK，则必须手动进行上传。 有关如何手动上传 APK 的信息，请参阅[手动上传 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。
+Visual Studio for Mac 采用集成工作流，将应用发布到 Google Play。
 
 [创建新的证书](~/android/deploy-test/signing/index.md#newcert)讨论了如何创建新的证书以对 Android 应用进行签名。 以下步骤概述了如何将 Xamarin.Android 应用发布到 Google Play：
 
@@ -240,7 +235,7 @@ OAuth 客户端的默认名称是 Google Play Android 开发者。 可将其更�
 
 #### <a name="publish"></a>发布
 
-单击“允许”后，浏览器会报告已接收验证码。即将关闭..._，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”对话框中，单击“继续”：
+单击“允许”后，浏览器会报告已接收验证码。即将关闭...，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”对话框中，单击“继续”：
 
 [![已添加到 Google Play 帐户的帐户](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
@@ -322,7 +317,7 @@ Google Play 提供 4 个可用于上传应用的轨道：
 
 > _Google Play 要求手动上传此应用的第一个 APK。可以对此使用 ad-hoc APK。_
 
-或
+or
 
 > 未找到给定包名称的应用程序。[404]
 

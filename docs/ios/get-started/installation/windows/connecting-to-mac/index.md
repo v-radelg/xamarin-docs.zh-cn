@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
-ms.openlocfilehash: 8e87a284e684dff14a2ea0fcfbf34158ed8adefa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899130"
 ---
+
 # <a name="pair-to-mac-for-xamarinios-development"></a>通过“与 Mac 配对”进行 Xamarin.iOS 开发
 
 本指南介绍如何使用与“与 Mac 配对”功能将 Visual Studio 2017 连接到 Mac 生成主机。
@@ -42,7 +37,7 @@ Visual Studio 2017 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 > 
 > 按照本指南中的说明进行操作之前，请完成以下步骤：
 > 
-> - 在 Windows 计算机上，[安装 Visual Studio 2017](~/cross-platform/get-started/installation/windows.md)
+> - 在 Windows 计算机上，[安装 Visual Studio 2017](~/get-started/installation/windows.md)
 > - 在 Mac 上，[安装 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 和 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 >    - _安装后必须手动打开 Xcode_，以便它可以添加任何其他的组件。
 >
@@ -160,7 +155,7 @@ Visual Studio 2017 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
 ## <a name="automatic-mac-provisioning"></a>自动预配 Mac
 
-从 [Visual Studio 2017 版本 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 开始，“与 Mac 配对”会自动使用生成 Xamarin.iOS 应用程序所需的软件 Mono、Xamarin.iOS（软件框架，而不是 Visual Studio for Mac IDE）以及各种与 Xcode 相关的工具（而不是 Xcode 自身）来预配 Mac。
+自 [Visual Studio 2017 版本 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 起，与 Mac 配对后会使用构建 Xamarin.iOS 应用程序所必需的软件来自动预配 Mac：Mono、Xamarin.iOS（软件框架，而不是 Visual Studio for Mac IDE），以及与 Xcode 相关的工具（但不是 Xcode 本身）。
 
 > [!IMPORTANT]
 > - “与 Mac 配对”不能安装 Xcode；必须手动将其安装在 Mac 生成主机上。 它是 Xamarin.iOS 开发所必需的。
@@ -234,7 +229,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - `ServerPassword` – 登录到 Mac 生成主机时要使用的密码。
 
 > [!NOTE]
-> Visual Studio 2017 将 `msbuild` 存储在以下目录：C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin
+> Visual Studio 2017 将 `msbuild` 存储到以下目录中：C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin
 
 “与 Mac 配对”第一次从 Visual Studio 2017 或命令行登录到特定的 Mac 生成主机时，会设置 SSH 密钥。 借助这些密钥，之后登录时无需使用用户名或密码。 新创建的密钥存储在 %LOCALAPPDATA%\Xamarin\MonoTouch。
 

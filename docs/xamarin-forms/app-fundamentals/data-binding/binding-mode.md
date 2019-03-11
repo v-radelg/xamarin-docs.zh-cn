@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 0e8b727fb520b6901bf397c9cfb67947897cbc8b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056953"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557277"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
 
@@ -101,10 +101,7 @@ ms.locfileid: "53056953"
 
 ### <a name="one-time-bindings"></a>一次性绑定
 
-有些属性的默认绑定模式为 `OneTime`。 这些是：
-
-- `Entry` 的 `IsTextPredictionEnabled` 属性
-- `Span` 的 `Text`、`BackgroundColor` 和 `Style` 属性。
+许多属性（包括 `Entry` 的 `IsTextPredictionEnabled` 属性）都具有 `OneTime` 的默认绑定模式。
 
 只有在绑定上下文更改时，才会更新绑定模式为 `OneTime` 的目标属性。 对于这些目标属性的绑定，该模式简化了绑定基础结构，因为不必监视源属性中的更改。
 
