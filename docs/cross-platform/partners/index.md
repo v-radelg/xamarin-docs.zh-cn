@@ -383,7 +383,7 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[InfoMantis GmbH](http://www.infomantis.de)|Osnabruck，德国|跨平台应用软件开发公司|
 |[Intelligentgraphics GmbH](http://www.intelligentgraphics.biz)|Thuringia，德国|我们专注于交互式 3D 的销售应用程序。|
 |[ISEO 联机市场营销 GmbH](http://www.iseo.de)|Lübeck, Germany|我们不提供关闭销子但掌握客户价值、 出色的设计和为每个用于 10 多年经验证的技术的三层架构|
-|[消息系统 ag](http://www.msg.group/)|柏林，德国;科隆，德国;汉堡，德国;德国法兰克福;Nuremberg，德国;Jersey 市/县，新泽西州，美国;Basel 瑞士;维也纳，奥地利|消息是独立的国际 6000 多名员工提供全面的服务范围的创新、 战略咨询和范围广泛的智能性、 可承受和增值 IT 解决方案在世界各地的公司的组行业。|
+|[消息系统 ag](https://www.msg.group/travel-logistics/xamarin)|柏林，德国;伦瑞克，德国;Bretten，德国;Chemnitz，德国;科隆 (Köln) 德国;Essen，德国;法兰克福/M.，德国;Görlitz，德国;汉堡，德国;德国，德国;Ingolstadt，德国;Lingen (Ems) 德国;Münster，德国;Nuremberg (Nürnberg) 德国;Passau，德国;Schortens / Wilhelmshaven，德国;St.Georgen，德国;斯图加特，德国;Walldorf，德国;Basel 瑞士;奥地利的维也纳 (Wien)|消息是独立的国际 7,000 多个员工提供全面的服务范围的创新、 战略咨询和范围广泛的智能性、 可承受和增值 IT 解决方案在世界各地的公司的组行业。|
 |[下一步慕尼黑工厂 GmbH](http://www.next-munich.com)|慕尼黑工厂，德国|是否 B2C、 B2B、 工作效率或其他移动策略的移动解决方案的未来，从现在开始。 下一步慕尼黑工厂中深度，并处理系统地参与到成功应用程序-企业的所有组成部分。 定位和市场营销活动使用 10 年的经验的移动设备下, 一步慕尼黑工厂中的所有区域的设计和开发，收集。|
 |[prodot GmbH](https://prodot.de)|Duisburg，德国|Prodot 理解其客户; 的愿景这些工作手中手动与你标出所需的结果。 直观的用户界面、 完善的设计、 技术专长和前瞻性地保护其解决方案的必备要素。 简单地说，他们开发的有效周期，为你的需求的稳定、 成熟且持久的软件基于 Microsoft 技术和标准产品，例如 SAP。|
 |[SDX AG](http://www.sdx-ag.de)|法兰克福 am Main，Hesse，德国;慕尼黑工厂，德国;Bavaria 德国|Wir freuen uns，Sie unserem neuen Hauptsitz im Frankfurter Westhafen begrüßen zu können。 Unsere Büroräume befinden sich im 2。 OG im Westhafenhaus，Speicherstraße 1 unmittelbar neben dem Westhafentower。|
