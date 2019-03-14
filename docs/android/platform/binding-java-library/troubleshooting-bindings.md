@@ -51,7 +51,7 @@ _本文汇总了生成绑定，以及可能的原因和解决这些问题的建�
 
 - **具有模糊处理的特征的类**&ndash;经过模糊处理类的特征包括：
 
-    - Class 名称中包含**$**，即 **$.class**
+    - Class 名称中包含 **$** ，即 **$.class** 
     - 类名完全破坏的小写字符，即**a.class**      
 
 - **`import` 语句未引用的库**&ndash;标识未引用的库并将这些依赖项添加到 Xamarin.Android 绑定项目与**生成操作**的**ReferenceJar**或**EmbedddedReferenceJar**。

@@ -174,7 +174,7 @@ protected override void AddedToScene ()
 
 ![](tiled-images/image10.png "如果未出现极具价值衣柜属性，极具价值衣柜右键单击并选择磁贴属性")
 
-平铺的属性实现使用一个名称和值。 若要添加的属性，请单击**+** 按钮，输入名称**IsTreasure**，单击**确定**，然后输入值**true**: 
+平铺的属性实现使用一个名称和值。 若要添加的属性，请单击 **+** 按钮，输入名称 **IsTreasure** ，单击 **确定** ，然后输入值 **true** : 
 
 ![](tiled-images/image11.png "若要添加一个属性，单击按钮，输入名称 IsTreasure，单击确定，然后输入值 true")
 
