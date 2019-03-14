@@ -94,7 +94,7 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
 在本演练中，我们将介绍以下步骤：
 
 - **[创建静态库](#Creating_A_Static_Library)** -此步骤涉及到创建的静态库**InfColorPicker** Objective C 代码。 将具有静态库`.a`文件扩展名，并且将嵌入到类库项目的.NET 程序集。
-- **[创建 Xamarin.iOS 绑定项目](#Create_a_Xamarin.iOS_Binding_Project)** -静态库后，我们将使用它来创建 Xamarin.iOS 绑定项目。 绑定项目包含我们刚刚创建的静态库和元数据的窗体中的C#介绍了如何使用 Objective C API 的代码。 此元数据通常称为 API 定义。 我们将使用**[目标 Sharpie](#Using_Objective_Sharpie)** 来帮助我们与创建 API 定义。
+- **[创建 Xamarin.iOS 绑定项目](#Create_a_Xamarin.iOS_Binding_Project)** -静态库后，我们将使用它来创建 Xamarin.iOS 绑定项目。 绑定项目包含我们刚刚创建的静态库和元数据的窗体中的C#介绍了如何使用 Objective C API 的代码。 此元数据通常称为 API 定义。 我们将使用 **[目标 Sharpie](#Using_Objective_Sharpie)** 来帮助我们与创建 API 定义。
 - **[规范化的 API 定义](#Normalize_the_API_Definitions)** -目标 Sharpie 能够很好地帮助我们，但它不能执行的所有内容。 我们将讨论一些更改，我们需要创建到 API 定义，然后可以使用它们。
 - **[使用绑定库](#Using_the_Binding)** -最后，我们将创建一个 Xamarin.iOS 应用程序来演示如何使用我们新创建的绑定的项目。
 
@@ -160,7 +160,7 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
 
     [![](walkthrough-images/image16b.png "展开二进制与库链接部分")](walkthrough-images/image16b.png#lightbox)
 
-13. 使用**+** 按钮以打开对话框让你可以添加上面列出的所需的帧框架：
+13. 使用 **+** 按钮以打开对话框让你可以添加上面列出的所需的帧框架：
 
     [![](walkthrough-images/image16c.png "添加上面列出的所需的帧框架")](walkthrough-images/image16c.png#lightbox)
 
