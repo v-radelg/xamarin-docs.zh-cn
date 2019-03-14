@@ -211,14 +211,14 @@ namespace MonkeyChat
 
 1. 在 web 浏览器中，导航到[ https://developer.apple.com ](https://developer.apple.com)和登录到你的帐户。
 2. 单击**证书**，**标识符**并**配置文件**。
-3. 选择**预配配置文件**，然后选择**应用 Id**，然后单击**+** 按钮。
+3. 选择**预配配置文件**，然后选择**应用 Id**，然后单击 **+** 按钮。
 4. 输入**名称**新配置文件。
 5. 输入**捆绑 ID**按照 Apple 的命名建议。
 6. 向下滚动到**应用服务**部分中，选择**SiriKit**然后单击**继续**按钮： 
 
     [![](implementing-sirikit-images/setup03.png "选择 SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. 验证所有设置，然后**提交**应用 id。
-8. 选择**预配配置文件** > **开发**，单击**+** 按钮，选择**Apple ID**，然后单击**继续**。
+8. 选择**预配配置文件** > **开发**，单击 **+** 按钮，选择**Apple ID**，然后单击**继续**。
 9. 单击选择**所有**，然后单击**继续**。
 10. 单击**全**，然后单击**继续**。
 11. 输入**配置文件名称**使用 Apple 的命名建议，然后单击**继续**。
@@ -460,16 +460,16 @@ namespace MonkeyChat
 
     [![](implementing-sirikit-images/plist01.png "添加的属性列表")](implementing-sirikit-images/plist01.png#lightbox)
 2. 双击`AppIntentVocabulary.plist`文件中**解决方案资源管理器**打开进行编辑。
-3. 单击**+** 若要添加的键，设置**名称**到`ParameterVocabularies`并**类型**到`Array`:
+3. 单击 **+** 若要添加的键，设置**名称**到`ParameterVocabularies`并**类型**到`Array`:
 
     [![](implementing-sirikit-images/plist02.png "将名称设置为 ParameterVocabularies 和到数组类型")](implementing-sirikit-images/plist02.png#lightbox)
-4. 展开`ParameterVocabularies`然后单击**+** 按钮，然后设置**类型**到`Dictionary`:
+4. 展开`ParameterVocabularies`然后单击 **+** 按钮，然后设置**类型**到`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "将类型设置为字典")](implementing-sirikit-images/plist03.png#lightbox)
-5. 单击**+** 若要添加新的密钥，请设置**名称**到`ParameterNames`并**类型**到`Array`:
+5. 单击 **+** 若要添加新的密钥，请设置**名称**到`ParameterNames`并**类型**到`Array`:
 
     [![](implementing-sirikit-images/plist04.png "将名称设置为 ParameterNames 和到数组类型")](implementing-sirikit-images/plist04.png#lightbox)
-6. 单击**+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
+6. 单击 **+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
 7. 添加`ParameterVocabulary`关键`ParameterVocabularies`键，其**类型**的`Array`:
@@ -525,16 +525,16 @@ namespace MonkeyChat
     [![](implementing-sirikit-images/plist01.w157-sml.png "添加新 Info.plist")](implementing-sirikit-images/plist01.w157.png#lightbox)
 
 2. 双击`AppIntentVocabulary.plist`文件中**解决方案资源管理器**打开进行编辑。
-3. 单击**+** 若要添加的键，设置**名称**到`ParameterVocabularies`并**类型**到`Array`:
+3. 单击 **+** 若要添加的键，设置**名称**到`ParameterVocabularies`并**类型**到`Array`:
 
     [![](implementing-sirikit-images/plist02w.png "将名称设置为 ParameterVocabularies 和到数组类型")](implementing-sirikit-images/plist02w.png#lightbox)
-4. 展开`ParameterVocabularies`然后单击**+** 按钮，然后设置**类型**到`Dictionary`:
+4. 展开`ParameterVocabularies`然后单击 **+** 按钮，然后设置**类型**到`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "将类型设置为字典")](implementing-sirikit-images/plist03w.png#lightbox)
-5. 单击**+** 若要添加新的密钥，请设置**名称**到`ParameterNames`并**类型**到`Array`:
+5. 单击 **+** 若要添加新的密钥，请设置**名称**到`ParameterNames`并**类型**到`Array`:
 
     [![](implementing-sirikit-images/plist04w.png "将名称设置为 ParameterNames 和到数组类型")](implementing-sirikit-images/plist04w.png#lightbox)
-6. 单击**+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
+6. 单击 **+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
 7. 添加`ParameterVocabulary`关键`ParameterVocabularies`键，其**类型**的`Array`:
