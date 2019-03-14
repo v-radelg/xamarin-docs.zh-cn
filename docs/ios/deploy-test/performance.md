@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 01c743b4b0eff81bbf4c41e1c2f387e0dc40c067
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233752"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671113"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 性能
 
-应用程序性能差表现在许多方面。 这会造成应用程序看起来无响应，导致滚动缓慢，还可降低电池寿命。 但是，优化性能不止需要实现高效的代码。 还必须考虑用户对应用程序性能的体验。 例如，确保操作执行不会妨碍用户执行其他活动，这有助于改进用户的体验。 
+应用程序性能差表现在许多方面。 这会造成应用程序看起来无响应，导致滚动缓慢，还可降低电池寿命。 但是，优化性能不止需要实现高效的代码。 还必须考虑用户对应用程序性能的体验。 例如，确保操作执行不会妨碍用户执行其他活动，这有助于改进用户的体验。
 
 本文档介绍的技术可用于提升 Xamarin.iOS 应用程序的性能和内存使用情况。
 
@@ -140,7 +140,7 @@ public class MyFooDelegate : FooDelegate {
 以下是在[委托](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html)模式上下文中使用 `[Weak]` 的另一个示例：
 
 ```csharp
-public class MyViewController : UIViewController 
+public class MyViewController : UIViewController
 {
     WKWebView webView;
 
@@ -155,7 +155,7 @@ public class MyViewController : UIViewController
     }
 }
 
-public class UIDelegate : WKUIDelegate 
+public class UIDelegate : WKUIDelegate
 {
     [Weak] MyViewController controller;
 
@@ -196,7 +196,7 @@ class MyContainer : UIView
 对于保留对其父级的强引用的子对象，请在 `Dispose` 实现中清除对父级的引用：
 
 ```csharp
-class MyChild : UIView 
+class MyChild : UIView
 {
     MyContainer container;
     public MyChild (MyContainer container)
@@ -215,13 +215,13 @@ class MyChild : UIView
 
 ### <a name="more-information"></a>详细信息
 
-有关详细信息，请参阅 Cocoa With Love 上的 [Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)（避免保留周期的规则）、StackOverflow 上的 [Is this a bug in MonoTouch GC](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)（这是不是 MonoTouch GC 中的一个 bug）以及 StackOverflow 上的 [Why can't MonoTouch GC kill managed objects with refcount > 1?](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)（MonoTouch GC 为何不能将托管对象的引用计数缩减到大于 1？）。
+有关详细信息，请参阅 Cocoa With Love 上的 [Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html)（避免保留周期的规则）、StackOverflow 上的 [Is this a bug in MonoTouch GC](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc)（这是不是 MonoTouch GC 中的一个 bug）以及 StackOverflow 上的 [Why can't MonoTouch GC kill managed objects with refcount > 1?](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1)（MonoTouch GC 为何不能将托管对象的引用计数缩减到大于 1？）。
 
 ## <a name="optimize-table-views"></a>优化表视图
 
 用户期望平滑滚动并快速加载 [`UITableView`](xref:UIKit.UITableView) 实例。 但是，当单元格包含深度嵌套的视图层次结构或包含复杂布局时，滚动性能会降低。 但是，可以使用一些方法避免出现不佳的 `UITableView` 性能：
 
-- 重用单元格。 有关详细信息，请参阅[重用单元格](#reusecells)。
+- 重用单元格。 有关详细信息，请参阅[重用单元格](#reuse-cells)。
 - 减少子视图数。
 - 缓存检索自 Web 服务的单元格内容。
 - 如果这些行不尽相同，则缓存任何行的高度。

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 38568fa9258c7e3de2c3333cdca5dc7d5867319c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 56c5aa7f0f8db746fbc6d7f8b5409f7d6c0f5d0d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117092"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666887"
 ---
 # <a name="apk-expansion-files"></a>APK 扩展文件
 
@@ -73,7 +73,7 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 
 [![APK 扩展流程图](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-应用程序启动时，应检查当前设备上是否存在合适的扩展文件。 如果不存在，则应用程序必须在 Google Play 的[应用程序授权](http://developer.android.com/google/play/licensing/index.html)中作出请求。 使用许可验证库 (LVL) 执行该检查，并且免费或许可应用程序都必须执行该检查。 LVL 主要由付费应用程序用于实施许可证限制。 但是，Google 已扩展 LVL，使其也可用于扩展库。 免费应用程序必须执行 LVL 检查，但可以忽略许可证限制。 LVL 请求负责提供以下有关应用程序所需扩展文件的信息： 
+应用程序启动时，应检查当前设备上是否存在合适的扩展文件。 如果不存在，则应用程序必须在 Google Play 的[应用程序授权](https://developer.android.com/google/play/licensing/index.html)中作出请求。 使用许可验证库 (LVL) 执行该检查，并且免费或许可应用程序都必须执行该检查。 LVL 主要由付费应用程序用于实施许可证限制。 但是，Google 已扩展 LVL，使其也可用于扩展库。 免费应用程序必须执行 LVL 检查，但可以忽略许可证限制。 LVL 请求负责提供以下有关应用程序所需扩展文件的信息： 
 
 -   文件大小 &ndash; 扩展文件的文件大小作为检查的一部分，可用于确定是否已经下载正确的扩展文件。
 -   文件名 &ndash; 这是扩展包必须保存到其下的文件名（当前设备上）。

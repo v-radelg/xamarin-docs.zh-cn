@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/03/2018
-ms.openlocfilehash: 99b5798e8d3cd5723f99aa2483d5d1c0eff8d57c
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.openlocfilehash: 86e2380a2931517b021162a6cecadc7d6d5b4c43
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305641"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669384"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -98,7 +98,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 安装属性控制 `Install` 和 `Uninstall` 目标的行为。
 
--   AdbTarget &ndash; 指定 Android 包可能要安装到或从中删除的 Android 目标设备。 此属性的值与[`adb`目标设备选项](http://developer.android.com/tools/help/adb.html#issuingcommands)相同：
+-   AdbTarget &ndash; 指定 Android 包可能要安装到或从中删除的 Android 目标设备。 此属性的值与[`adb`目标设备选项](https://developer.android.com/tools/help/adb.html#issuingcommands)相同：
 
     ```bash
     # Install package onto emulator via -e
@@ -145,7 +145,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
     该属性默认为 `False`。
 
--   AndroidEnableSGenConcurrent &ndash; 一个布尔属性，用于确定是否使用 Mono 的[并发垃圾收集器](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)。
+-   AndroidEnableSGenConcurrent &ndash; 一个布尔属性，用于确定是否使用 Mono 的[并发垃圾收集器](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)。
 
     在 Xamarin.Android 7.2 中增加了对该属性的支持。
 
@@ -293,7 +293,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
     除非 `$(AotAssemblies)` MSBuild 属性为 `True`，否则该属性将被忽略。
 
--   EnableProguard &ndash; 一个布尔属性，用于确定是否将 [proguard](http://developer.android.com/tools/help/proguard.html) 作为打包过程的一部分运行以链接 Java 代码。
+-   EnableProguard &ndash; 一个布尔属性，用于确定是否将 [proguard](https://developer.android.com/tools/help/proguard.html) 作为打包过程的一部分运行以链接 Java 代码。
 
     Xamarin.Android 5.1 中增加了对该属性的支持。
 

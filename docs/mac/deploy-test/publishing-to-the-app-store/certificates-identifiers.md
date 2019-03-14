@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 2f60c15ba4b57ed61405b7081ed1cc3cee99c372
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5ba09afc477ddaadc07aa415376860eea3c8c28d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115544"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671463"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac 中的证书和标识符
 
@@ -20,7 +20,7 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 
 ## <a name="certificates-and-identifiers"></a>证书和标识符
 
-请访问 [Apple 开发人员成员中心](http://developer.apple.com)，配置用于开发的 Mac。 主菜单如下所示：
+请访问 [Apple 开发人员成员中心](https://developer.apple.com)，配置用于开发的 Mac。 主菜单如下所示：
 
 [![Apple 开发人员成员中心](certificates-identifiers-images/devcenter01.png "Apple 开发人员成员中心")](certificates-identifiers-images/devcenter01-large.png#lightbox)
 

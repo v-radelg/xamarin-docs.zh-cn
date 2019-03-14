@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d202ff7743361207795d342b29243130f4f056
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e687a724c8455d954969f83b8ee48c87ca9dbb09
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058725"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669773"
 ---
 # <a name="custom-video-transport-controls"></a>自定义视频传输控件
 
@@ -451,7 +451,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-status-setting"></a>UWP 状态设置
 
-UWP `VideoPlayerRenderer` 使用 `UpdateStatus` 事件，但不需要它即可设置 `Status` 属性。 `MediaElement` 定义了一个 [`CurrentStateChanged`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) 事件，该事件允许在 [`CurrentState`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) 属性更改时通知呈现器。 属性在 `Dispose` 重写中拆离：
+UWP `VideoPlayerRenderer` 使用 `UpdateStatus` 事件，但不需要它即可设置 `Status` 属性。 `MediaElement` 定义了一个 [`CurrentStateChanged`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentStateChanged) 事件，该事件允许在 [`CurrentState`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentState*) 属性更改时通知呈现器。 属性在 `Dispose` 重写中拆离：
 
 ```csharp
 namespace FormsVideoLibrary.UWP

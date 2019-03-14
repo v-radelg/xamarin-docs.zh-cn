@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 09db1075ef787041e806ef3afb569e4830f51575
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.openlocfilehash: 2c05e46309fb2a38b6b3c1542051e7115a58d13c
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563818"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668825"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello，iOS 多屏显示 – 快速入门
 
@@ -518,5 +518,5 @@ ms.locfileid: "51563818"
 ## <a name="related-links"></a>相关链接
 
 - [Hello，iOS（示例）](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS 人机界面指南](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS 人机界面指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS 预配门户](https://developer.apple.com/ios/manage/overview/index.action)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 26865fdbfc1cc6f11a978a70bd768e63771bcd4b
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 0053bf97dbcc98c5ffbd6fbddb1e40f884810e60
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197467"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670748"
 ---
 # <a name="windows-installation"></a>Windows 安装
 
@@ -47,7 +47,7 @@ Xamarin.Android 使用 Java 开发工具包 (JDK) 和 Android SDK 生成应用�
 
 对于大多数用户，默认位置会起作用，无需进行进一步更改。 但是，你可能希望将 Visual Studio 配置为这些工具的自定义位置（例如，如果你已在其他位置安装了 Java JDK、Android SDK 或 NDK）。 单击要更改的路径旁边的“更改”，然后导航到新位置。
 
-Xamarin.Android 使用[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。 如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+Xamarin.Android 使用[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。 如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。

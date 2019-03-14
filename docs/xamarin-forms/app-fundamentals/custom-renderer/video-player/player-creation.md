@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 69e5d74bf9beea02ca8accf6e1f8eb1ccaa5c9fa
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 2679756cd9a9a60c2d7ab637678ff1d8262b2403
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061954"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669981"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器
 
@@ -220,7 +220,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-media-element"></a>UWP 媒体元素
 
-在通用 Windows 平台 (UWP) 中，最常见的视频播放器是 [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)。 `MediaElement` 的相关文档指出，如果只需支持从版本 1607 开始的 Windows 10 版本，则应使用 [`MediaPlayerElement`](/uwp/api/windows.ui.xaml.controls.mediaplayerelement/)。
+在通用 Windows 平台 (UWP) 中，最常见的视频播放器是 [`MediaElement`](xref:Windows.UI.Xaml.Controls.MediaElement)。 `MediaElement` 的相关文档指出，如果只需支持从版本 1607 开始的 Windows 10 版本，则应使用 [`MediaPlayerElement`](xref:Windows.UI.Xaml.Controls.MediaPlayerElement)。
 
 `OnElementChanged` 替代需要创建 `MediaElement`、设置两个事件处理程序并将 `MediaElement` 对象传递给 `SetNativeControl`：
 
@@ -424,7 +424,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-transport-controls-property"></a>UWP 传输控件属性
 
-UWP `MediaElement` 定义名为 [`AreTransportControlsEnabled`](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_AreTransportControlsEnabled) 的属性，因此，该属性是根据同名的 `VideoPlayer` 属性设置的：
+UWP `MediaElement` 定义名为 [`AreTransportControlsEnabled`](xref:Windows.UI.Xaml.Controls.MediaElement.AreTransportControlsEnabled*) 的属性，因此，该属性是根据同名的 `VideoPlayer` 属性设置的：
 
 ```csharp
 namespace FormsVideoLibrary.UWP

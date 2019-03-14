@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1719b69c9a194df6749fdcb5c130fccf94a2ed9d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3299f9944eb95ddf93761e42db0622e2a9f09998
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113984"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669279"
 ---
 # <a name="installing-and-configuring-xamarinios-on-a-mac"></a>在 Mac 上安装和配置 Xamarin.iOS
 
@@ -23,6 +23,6 @@ ms.locfileid: "50113984"
 
 - [移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
-- [创建开发预配配置文件](http://developer.apple.com/library/ios/#documentation/ToolsLanguages/Conceptual/DevPortalGuide/CreatingandDownloadingDevelopmentProvisioningProfiles/CreatingandDownloadingDevelopmentProvisioningProfiles.html)
-- [使用管理器进行预配](http://developer.apple.com/library/ios/#recipes/xcode_help-devices_organizer/articles/provision_device_for_development-generic.html)
-- [使用门户进行预配](http://developer.apple.com/library/ios/#recipes/ProvisioningPortal_Recipes/DownloadingaProvisioningProfile/DownloadingaProvisioningProfile.html)
+- [创建开发预配配置文件](https://developer.apple.com/library/ios/#documentation/ToolsLanguages/Conceptual/DevPortalGuide/CreatingandDownloadingDevelopmentProvisioningProfiles/CreatingandDownloadingDevelopmentProvisioningProfiles.html)
+- [使用管理器进行预配](https://developer.apple.com/library/ios/#recipes/xcode_help-devices_organizer/articles/provision_device_for_development-generic.html)
+- [使用门户进行预配](https://developer.apple.com/library/ios/#recipes/ProvisioningPortal_Recipes/DownloadingaProvisioningProfile/DownloadingaProvisioningProfile.html)

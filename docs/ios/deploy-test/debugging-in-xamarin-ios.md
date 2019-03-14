@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d1a3090318649e6f04a5b8f44dc4a9b2689a870
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a6cc7ffe52711f4e65f0191f8dc556760e8817ea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119626"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668772"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -26,7 +26,7 @@ _可以使用 Visual Studio for Mac 或 Visual Studio 中的内置调试程序�
 
 Xamarin.iOS 调试器集成到了 IDE 中，它允许开发人员在模拟器或设备上调试使用 Xamarin.iOS 支持的任何托管语言生成的 Xamarin.iOS 应用程序。
 
-Xamarin.iOS 调试器使用 [Mono 软调试器](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/)，这意味着生成的代码和 Mono 运行时将与 IDE 配合提供调试体验。 这与 LLDB 或 MDB 等硬调试器不同，硬调试器不需要调试程序方面的知识或配合，即可控制程序。
+Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/)，这意味着生成的代码和 Mono 运行时将与 IDE 配合提供调试体验。 这与 LLDB 或 MDB 等硬调试器不同，硬调试器不需要调试程序方面的知识或配合，即可控制程序。
 
 ## <a name="setting-breakpoints"></a>设置断点
 

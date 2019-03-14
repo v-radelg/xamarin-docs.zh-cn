@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 6f12670dd463471ba1e337802453c775adbe16a7
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666943"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672711"
 ---
 # <a name="localization"></a>本地化
 
@@ -22,7 +22,7 @@ ms.locfileid: "56666943"
 
 ## <a name="overview"></a>概述
 
-内置的 .NET 应用程序本地化机制使用 [RESX 文件](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)以及 `System.Resources` 和 `System.Globalization` 命名空间中的类。 包含已翻译字符串的 RESX 文件嵌入在 Xamarin.Forms 程序集中，该程序集中还包括编译器生成的类（可提供对翻译的强类型访问）。 然后可在代码中检索翻译文本。
+内置的 .NET 应用程序本地化机制使用 [RESX 文件](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)以及 `System.Resources` 和 `System.Globalization` 命名空间中的类。 包含已翻译字符串的 RESX 文件嵌入在 Xamarin.Forms 程序集中，该程序集中还包括编译器生成的类（可提供对翻译的强类型访问）。 然后可在代码中检索翻译文本。
 
 ### <a name="sample-code"></a>代码示例
 
@@ -761,7 +761,7 @@ Android 遵循不同的方案用于存储本地化图像，使用具有语言代
 
 请注意，Android 不使用 Zh-Hans 和 Zh-Hant 代码表示简体中文和繁体中文；相反，它仅支持特定于国家/地区的代码 zh-CN 和 zh-TW。
 
-若要支持适用于高密度屏幕的不同分辨率图像，请创建具有 `-*dpi` 后缀的其他语言文件夹，例如，drawables-es-mdpi、drawables-es-xdpi、drawables-es-xxdpi 等。有关详细信息，请参阅[提供替代的 Android 资源](http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
+若要支持适用于高密度屏幕的不同分辨率图像，请创建具有 `-*dpi` 后缀的其他语言文件夹，例如，drawables-es-mdpi、drawables-es-xdpi、drawables-es-xxdpi 等。有关详细信息，请参阅[提供替代的 Android 资源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 #### <a name="app-name"></a>应用程序名称
 
@@ -811,5 +811,5 @@ strings.xml 的内容只是一个键值，用于配置应用名称：
 - [iOS 本地化](~/ios/app-fundamentals/localization/index.md)
 - [Android 本地化](~/android/app-fundamentals/localization.md)
 - [UWP 本地化](/windows/uwp/design/globalizing/globalizing-portal/)
-- [使用 CultureInfo 类 (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
-- [使用特定区域性的资源 (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [使用 CultureInfo 类 (MSDN)](https://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
+- [使用特定区域性的资源 (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)

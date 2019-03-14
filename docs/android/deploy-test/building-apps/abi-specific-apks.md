@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: bb9be2140c69578de85128cf7c3a013ad12aa511
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: d5d4274adad64e8555659645533a8e58b845bfa7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617561"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667901"
 ---
 # <a name="building-abi-specific-apks"></a>构建特定于 ABI 的 APK
 
@@ -29,7 +29,7 @@ _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的
 -  支持不同的 CPU 体系结构 - 如果你的应用程序具有特定 CPU 的共享库，则只能分发该 CPU 的共享库。
 
 
-多个 APK 可能会使分发变得复杂 - 这是 Google Play 解决的问题。 Google Play 将确保根据应用程序的版本代码和 AndroidManifest.XML 中包含的其他元数据将正确的 APK 传递到设备。 有关 Google Play 如何支持应用程序多个 APK 的具体详细信息和限制，请查阅[关于多个 APK 支持的 Google 文档](http://developer.android.com/google/play/publishing/multiple-apks.html)。
+多个 APK 可能会使分发变得复杂 - 这是 Google Play 解决的问题。 Google Play 将确保根据应用程序的版本代码和 AndroidManifest.XML 中包含的其他元数据将正确的 APK 传递到设备。 有关 Google Play 如何支持应用程序多个 APK 的具体详细信息和限制，请查阅[关于多个 APK 支持的 Google 文档](https://developer.android.com/google/play/publishing/multiple-apks.html)。
 
 本指南介绍如何为 Xamarin.Android 应用程序构建多个 APK 的脚本，每个 APK 都针对一个特定的 ABI。 它包含以下主题：
 
@@ -45,7 +45,7 @@ _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的
 
 ### <a name="creating-the-version-code-for-the-apk"></a>为 APK 创建版本代码
 
-Google 为使用七位数版本代码的版本代码推荐了一种特定算法（请参阅[多 APK 支持文档](http://developer.android.com/google/play/publishing/multiple-apks.html)中的“使用版本代码方案”一节）。
+Google 为使用七位数版本代码的版本代码推荐了一种特定算法（请参阅[多 APK 支持文档](https://developer.android.com/google/play/publishing/multiple-apks.html)中的“使用版本代码方案”一节）。
 通过将此版本代码方案扩展为八位数字，可以将一些 ABI 信息包含在版本代码中，以确保 Google Play 将正确的 APK 分发到设备。 以下列表解释了这个八位数版本代码格式（从左到右编制索引）：
 
 -   **索引 0**（下图中的红色）&ndash; ABI 的整数：
@@ -187,4 +187,4 @@ rake 任务完成后，将有三个包含文件 `xamarin.helloworld.apk` 的 `bi
 
 - [OneABIPerAPK（示例）](https://developer.xamarin.com/samples/OneABIPerAPK/)
 - [发布应用程序](~/android/deploy-test/publishing/index.md)
-- [面向 Google Play 的多 APK 支持](http://developer.android.com/google/play/publishing/multiple-apks.html)
+- [面向 Google Play 的多 APK 支持](https://developer.android.com/google/play/publishing/multiple-apks.html)

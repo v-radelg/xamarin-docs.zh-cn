@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 284e10af41429d320ce08b8d45ccd5bbcec851d1
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831984"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672555"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms 中的自动化属性
 
@@ -36,7 +36,7 @@ Xamarin.Forms 允许通过以下附加属性在用户界面元素上设置自动
 
 - iOS 具有 VoiceOver。 有关详细信息，请参阅 developer.apple.com 上的[使用 VoiceOver 测试设备的可访问性](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)。
 - Android 具有 TalkBack。 有关详细信息，请参阅 developer.android.com 上的[测试应用的可访问性](https://developer.android.com/training/accessibility/testing.html#talkback)。
-- Windows 具有讲述人。 有关详细信息，请参阅[使用讲述人验证主要应用方案](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/)。
+- Windows 具有讲述人。 有关详细信息，请参阅[使用讲述人验证主要应用方案](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator)。
 
 但是，屏幕阅读器的具体行为取决于软件和用户的配置。 例如，大多数屏幕阅读器在接收到焦点时读取与控件关联的文本，使用户在页面上的控件之间移动时能够自行定位。 某些屏幕阅读器在页面显示时也会读取整个应用程序的用户界面，使用户在尝试导航它之前能够收到所有页面上的可用信息内容。
 

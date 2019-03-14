@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 15c3f83601c4eeb8365422b6d8d9bad73ed37666
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 12fcf6ff1b289c773e0dce03be4ac62105f6acd4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118443"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669461"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -464,4 +464,4 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 
 - [Hello，iOS（示例）](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
 - [iOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
-- [iOS 预配门户](http://developer.apple.com/account/#/overview)
+- [iOS 预配门户](https://developer.apple.com/account/#/overview)

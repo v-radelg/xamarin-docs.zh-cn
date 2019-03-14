@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 4ea9690812675c48524393576e5509ab37e26981
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 486c5c57961e897eae59df66b216a9078d5df517
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197142"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667985"
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -70,7 +70,7 @@ Visual Studio 2017 安装程序支持自动安装 Xamarin（使用 .NET 的移�
 
 可从 [xamarin.com/download](http://xamarin.com/download) 下载适用于 macOS 的最新版 Xamarin。 对于 Windows，请按照 [Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) 安装说明进行安装。
 
-[当前发布页](http://developer.xamarin.com/releases/current/)上提供了当前产品版本的完整列表。 此页还概述了 beta 和 alpha 通道的个人产品版本（和发行说明的链接）。
+[当前发布页](https://developer.xamarin.com/releases/current/)上提供了当前产品版本的完整列表。 此页还概述了 beta 和 alpha 通道的个人产品版本（和发行说明的链接）。
 
 有关每个平台的特定[安装](~/get-started/installation/index.md)说明，请访问：
 

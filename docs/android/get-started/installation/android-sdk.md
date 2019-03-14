@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 6023bb4ebcc9d4adcd3408ca09bf9118d14351d4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: d0eb5d1c2c45ce347a7ddf9ed0e72bddc57e4188
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120809"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668785"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>设置用于 Xamarin.Android 的 Android SDK
 
@@ -42,9 +42,9 @@ Xamarin Android SDK 管理器与 Visual Studio 2015 不兼容。 Visual Studio 2
 
 Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动安装在 Xamarin.Android 中）。 有多种 JDK 可选方案供选择：
 
--   Xamarin.Android 默认使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
+-   Xamarin.Android 默认使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
 
--   如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+-   如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
 -   如果使用 Visual Studio 15.8 Preview 5 或更高版本，可尝试使用 [Microsoft Mobile OpenJDK 分发](openjdk.md)（目前处于预览阶段）而不使用 JDK 8。
 
@@ -139,9 +139,9 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动安装在 Xamarin.Android 中）。 有多种 JDK 可选方案供选择：
 
--   Xamarin.Android 默认使用 [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
+-   Xamarin.Android 默认使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
 
--   如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+-   如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
 -   如果使用 Visual Studio for Mac 7.7 或更高版本，可尝试使用 [Microsoft Mobile OpenJDK 分发](openjdk.md)（目前处于预览阶段）而不使用 JDK 8。
 

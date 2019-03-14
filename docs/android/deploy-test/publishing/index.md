@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ef504e4bef22ac5b2bec5b6a57eb46e8b2f1baff
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102537"
 ---
+
 # <a name="publishing-an-application"></a>发布应用程序
 
 创建优秀的应用程序后，用户自然希望进行使用。 本部分介绍公开分发使用 Xamarin.Android 创建的应用程序所涉及的步骤，其中销售渠道包括电子邮件、专用 Web 服务器、Google Play 或 Android 版 Amazon 应用商店。
@@ -60,8 +55,8 @@ Google Play 无疑是最全面和最受欢迎的 Android 应用程序应用市�
 - [链接](~/android/deploy-test/linker.md)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
 - [应用程序签名](https://source.android.com/security/apksigning/)
-- [发布到 Google Play](http://developer.android.com/distribute/googleplay/publish/index.html)
-- [Google 应用程序授权](http://developer.android.com/guide/google/play/licensing/index.html)
+- [发布到 Google Play](https://developer.android.com/distribute/googleplay/publish/index.html)
+- [Google 应用程序授权](https://developer.android.com/guide/google/play/licensing/index.html)
 - [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary)
 - [移动应用分发门户](https://developer.amazon.com/welcome.html)
 - [Amazon 移动应用分发常见问题解答](https://developer.amazon.com/help/faq.html)
