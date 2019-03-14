@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 998232119159c5dc3a284dd51d55dc381271a4e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f6f3377c4fdeedefa3277d05012ec868f6626c41
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117390"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669994"
 ---
 # <a name="proguard"></a>ProGuard
 
-Xamarin.Android ProGuard 是一个 Java 类文件压缩器、优化器和预验证器。它会检测和删除未使用的代码，分析和优化字节码。本指南阐释了 ProGuard 的工作原理、如何在项目中启用它，以及如何进行配置。同时提供了几个 ProGuard 配置示例。_
+_Xamarin.Android ProGuard 是一个 Java 类文件压缩器、优化器和预验证器。它会检测和删除未使用的代码，分析和优化字节码。本指南阐释了 ProGuard 的工作原理、如何在项目中启用它，以及如何进行配置。同时提供了几个 ProGuard 配置示例。_
 
 
 ## <a name="overview"></a>概述
@@ -192,7 +192,7 @@ Xamarin.Android *忽略*以下选项：
 
 如果尝试在 Android 7.0 或更高版本上使用 ProGuard，必须下载较新版本的 ProGuard，因为 Android SDK 未提供与 JDK 1.8 兼容的新版本。
 
-可使用此 [NuGet 包](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)安装 `proguard.jar` 的较新版本。 有关更新默认 Android SDK `proguard.jar` 的详细信息，请参阅此[堆栈溢出](http://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706)讨论。
+可使用此 [NuGet 包](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)安装 `proguard.jar` 的较新版本。 有关更新默认 Android SDK `proguard.jar` 的详细信息，请参阅此[堆栈溢出](https://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706)讨论。
 
 可在 [SourceForge 页面](https://sourceforge.net/projects/proguard/files/)找到所有版本的 ProGuard。 
 
@@ -341,7 +341,7 @@ ProGuard [疑难解答](https://stuff.mit.edu/afs/sipb/project/android/sdk/andro
 
 ## <a name="summary"></a>总结
 
-本指南阐释了 ProGuard 在 Xamarin.Android 中的工作原理、如何在应用项目中启用它，以及如何进行配置。 提供了示例 ProGuard 配置，并描述了常见问题的解决方案。 有关 ProGuard 工具和 Android 的详细信息，请参阅[压缩代码和资源](http://developer.android.com/tools/help/proguard.html)。 
+本指南阐释了 ProGuard 在 Xamarin.Android 中的工作原理、如何在应用项目中启用它，以及如何进行配置。 提供了示例 ProGuard 配置，并描述了常见问题的解决方案。 有关 ProGuard 工具和 Android 的详细信息，请参阅[压缩代码和资源](https://developer.android.com/tools/help/proguard.html)。 
 
 
 ## <a name="related-links"></a>相关链接

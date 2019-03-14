@@ -185,7 +185,7 @@ Visual Studio for Mac 采用集成工作流，将应用发布到 Google Play。
 #### <a name="create-a-google-api-project"></a>创建 Google API 项目
 
 首先，登录 [Google Play 开发者帐户](https://play.google.com/apps/publish)。
-如果尚没有 Google Play 开发者帐户，请参阅[发布入门](http://developer.android.com/distribute/googleplay/start.html)。
+如果尚没有 Google Play 开发者帐户，请参阅[发布入门](https://developer.android.com/distribute/googleplay/start.html)。
 此外，Google Play 开发者 API [入门](https://developers.google.com/android-publisher/getting_started)还介绍了如何使用 Google Play 开发者 API。 登录 Google Play 开发者控制台后，请单击“设置”：
 
 [![“设置”图标](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
@@ -235,7 +235,7 @@ OAuth 客户端的默认名称是 Google Play Android 开发者。 可将其更�
 
 #### <a name="publish"></a>发布
 
-单击“允许”后，浏览器会报告已接收验证码。即将关闭...，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”对话框中，单击“继续”：
+单击“允许”后，浏览器会报告已接收验证码。即将关闭..._，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”对话框中，单击“继续”：
 
 [![已添加到 Google Play 帐户的帐户](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
