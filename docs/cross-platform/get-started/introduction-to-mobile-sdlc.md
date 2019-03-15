@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782328"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672659"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>移动软件开发生命周期简介
 
@@ -19,7 +19,7 @@ ms.locfileid: "34782328"
 
 在本文档中，我们将全面介绍如何生成移动应用程序，包括：
 
-1.   **过程** – 软件开发的过程称为软件开发生命周期 (SDLC)。 我们将介绍与移动应用程序开发相关的所有 SDLC 阶段，包括：灵感、设计、开发、稳定、部署和维护。
+1.   **过程** – 软件开发的过程称为软件开发生命周期 (SDLC)。 我们将介绍与移动应用程序开发有关的 SDLC 的所有阶段，包括：灵感、设计、开发、稳定、部署和维护。
 1.   **注意事项** – 生成移动应用程序时有一些注意事项，尤其是与传统 Web 或桌面应用程序相比。 我们将介绍这些注意事项以及它们会如何影响移动开发。
 
 本文档旨在面向初学者和有经验的应用程序开发人员这类人员，回答有关移动应用开发的基本问题。 它采用相当全面的方法来介绍在整个软件开发生命周期 (SDLC) 过程中会遇到的大多数概念。 但是，本文档可能并不适合每个人，如果你渴望立刻开始生成应用程序，建议向前跳转到[移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)指南，然后在以后返回到本文档。
@@ -58,9 +58,9 @@ ms.locfileid: "34782328"
 -   **价值** – 此应用为用户带来了什么价值？ 他们会如何使用它？
 -   **形式/移动性** – 此应用如何采用移动外形规格进行工作？ 如何使用移动技术（如位置感知、摄像头等）增加价值？
 
-为了帮助设计应用的功能，定义参与者和[用例](http://en.wikipedia.org/wiki/Use_case)可能会十分有用。 参与者是应用程序中的角色，通常是用户。 用例通常是操作或意向。
+为了帮助设计应用的功能，定义参与者和[用例](https://en.wikipedia.org/wiki/Use_case)可能会十分有用。 参与者是应用程序中的角色，通常是用户。 用例通常是操作或意向。
 
-例如，跟踪应用程序的任务可能具有两个参与者：用户和好友。 用户可以创建任务，以及与好友共享任务。 在这种情况下，创建任务和共享任务是两个不同的用例，它们与参与者相结合，可告知你需要构建的屏幕，以及需要开发的业务实体和逻辑。
+例如，跟踪应用程序的任务可能具有两个参与者：用户和朋友。 用户可以创建任务，以及与好友共享任务。 在这种情况下，创建任务和共享任务是两个不同的用例，它们与参与者相结合，可告知你需要构建的屏幕，以及需要开发的业务实体和逻辑。
 
 捕获了适当数量的用例和参与者之后，开始设计应用程序便会容易得多。 开发随后可以侧重于如何创建应用，而不是应用是什么或是应该做什么。
 
@@ -77,7 +77,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 创建 UX 原型时，需要考虑应用所面向的各种平台的界面指南，这一点十分重要。 应用应在每种平台上都“轻松自如”。 每种平台的正式设计指南有：
 
 1.   **Apple** -  [人体学接口指南](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
-1.   **Android** –  [设计指南](http://developer.android.com/design/index.html)
+1.   **Android** –  [设计指南](https://developer.android.com/design/index.html)
 1.   **UWP** - [UWP 设计基础知识](https://docs.microsoft.com/windows/uwp/design/basics/)
 
 例如，每个应用都提供一种工具以用于在应用程序中的各部分之间进行切换。 iOS 使用屏幕底部的选项卡栏，Android 使用屏幕顶部的选项卡栏，而 UWP 则使用[透视或选项卡](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot)视图。
@@ -108,7 +108,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 ### <a name="stabilization"></a>稳定
 
-稳定是解决应用中的 bug 的过程。 不仅仅是从功能角度（例如：“它在我单击此按钮时崩溃”），还涉及可用性和性能。 最好在开发过程中非常早的时候开始进行稳定，以便可以在成本高昂之前进行修正。 通常，应用程序会进入原型、Alpha、Beta 和候选发布阶段。 不同人员会以不同方式定义这些阶段，但是它们通常遵循以下模式：
+稳定是解决应用中的 bug 的过程。 不只是从功能角度，例如：“它在我单击此按钮时崩溃”，还涉及可用性和性能。 最好在开发过程中非常早的时候开始进行稳定，以便可以在成本高昂之前进行修正。 通常，应用程序会进入原型、Alpha、Beta 和候选发布阶段。 不同人员会以不同方式定义这些阶段，但是它们通常遵循以下模式：
 
 1.   **原型** – 应用仍处于概念证明阶段，只有核心功能（或应用程序的特定部分）在工作。 存在主要 bug。
 1.   **Alpha** – 核心功能通常已代码完成（已生成，但未进行完整测试）。 仍存在主要 bug，可能仍然不存在外围功能。
@@ -227,7 +227,7 @@ Google 不会可以运行 Android OS 的设备强制实施任何限制。 这种
 #### <a name="security-considerations"></a>安全注意事项
 
 Android OS 中的应用程序全都采用具有有限权限的不同独立标识来运行。 默认情况下，应用程序可以执行的操作非常少。 例如，如果没有特殊权限，则应用程序不能发送短信、确定收集状态甚至是访问 Internet！ 若要访问这些功能，应用程序必须在其应用程序清单文件中指定它们需要的权限，在安装它们时，OS 会读取这些权限，向用户通知应用程序正在请求这些权限，然后允许用户继续或取消安装。
-由于开放的应用程序商店模型（例如由于应用程序的管理方式与 iOS 不同），因此这在 Android 分发模型中是不可或缺的步骤。 有关应用程序权限的列表，请参阅 Android 文档中的[清单权限](http://developer.android.com/reference/android/Manifest.permission.html)参考文章。
+由于开放的应用程序商店模型（例如由于应用程序的管理方式与 iOS 不同），因此这在 Android 分发模型中是不可或缺的步骤。 有关应用程序权限的列表，请参阅 Android 文档中的[清单权限](https://developer.android.com/reference/android/Manifest.permission.html)参考文章。
 
 ### <a name="windows-considerations"></a>Windows 注意事项
 
@@ -253,5 +253,5 @@ UWP 中的多任务具有两个部分：页面和应用程序的生命周期以�
 
 - [移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Hello，iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello，Android](http://developer.xamarin.com/get-started-droid/)
+- [Hello，Android](https://developer.xamarin.com/get-started-droid/)
 - [应用程序基础知识](~/cross-platform/app-fundamentals/index.md)

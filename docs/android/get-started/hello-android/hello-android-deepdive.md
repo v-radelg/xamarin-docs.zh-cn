@@ -1,5 +1,5 @@
 ---
-title: 了解 Android：深度分析
+title: Hello, Android：深入了解
 description: 本指南由两部分构成，在本指南中，用户将生成第一个 Xamarin.Android 应用程序，并了解使用 Xamarin 进行 Android 应用程序开发的基础知识。 在此过程中，会向你介绍生成和部署 Xamarin.Android 应用程序所需的工具、概念和步骤。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,14 +9,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: cdd0a792a76fa411fdc010c3d662a3d1acc2f373
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108804"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670176"
 ---
-# <a name="hello-android-deep-dive"></a>了解 Android：深度分析
+# <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
 _本指南由两部分构成，在本指南中，用户将生成第一个 Xamarin.Android 应用程序，并了解使用 Xamarin 进行 Android 应用程序开发的基础知识。在此过程中，会向你介绍生成和部署 Xamarin.Android 应用程序所需的工具、概念和步骤。_
 
@@ -113,7 +113,7 @@ Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual St
 
 下表总结了这些项：
 
-- **drawable** &ndash; 可绘制目录包含[可绘制资源](http://developer.android.com/guide/topics/resources/drawable-resource.html)，如图像和位图。
+- **drawable** &ndash; 可绘制目录包含[可绘制资源](https://developer.android.com/guide/topics/resources/drawable-resource.html)，如图像和位图。
 
 - **mipmap** &ndash; mipmap 目录包含适用于不同启动器图标密度的可绘制文件。 在默认模板中，drawable 目录包含应用程序图标文件“Icon.png”。
 

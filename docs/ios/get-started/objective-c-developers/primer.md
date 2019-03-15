@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: bfb20e8eddb4969f3418d0a0dddfcd19f2eeba02
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: df477dc0e4708a1d309810b5b8d4f755f3c49afb
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117546"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669812"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>面向 Objective-C 开发人员的 C# 入门
 
@@ -143,7 +143,7 @@ Objective-C 使用块创建闭包，可以在其中创建函数内联，以便�
 };
 ```
 
-有关 lambda 表达式的详细信息，请参阅 Microsoft 的 [C# 编程指南](http://msdn.microsoft.com/library/vstudio/bb397687.aspx)。
+有关 lambda 表达式的详细信息，请参阅 Microsoft 的 [C# 编程指南](https://msdn.microsoft.com/library/vstudio/bb397687.aspx)。
 
 ## <a name="summary"></a>总结
 

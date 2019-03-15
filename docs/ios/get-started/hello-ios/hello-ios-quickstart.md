@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 0ec24e49e03237829474515a9abe9b014d10014f
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 336f1ec4e4406d2ab40c5e8aea247bd3be9ed765
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527113"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672724"
 ---
 # <a name="hello-ios--quickstart"></a>Hello，iOS - 快速入门
 
@@ -274,7 +274,7 @@ Xamarin.iOS 适用于以下设置：
 
 本演练介绍如何创建一个名为 Phoneword 的应用程序，它将字母数字电话号码转换为数字电话号码。
 
-**请注意**：本演练在 Windows 10 虚拟机上使用 Visual Studio Enterprise 2017。 你的设置可以与此不同，只要满足以上要求即可，但是请注意，一些屏幕截图可能因你的设置而异。
+**说明**：本演练在 Windows 10 虚拟机上使用 Visual Studio Enterprise 2017。 你的设置可以与此不同，只要满足以上要求即可，但是请注意，一些屏幕截图可能因你的设置而异。
 
 > [!NOTE]
 > 继续此演练前，必须已从 Visual Studio 连接到 Mac。 这是因为 Xamarin.iOS 依赖于 Apple 的工具生成并启动 iOS 设计器和应用程序。 若要获取设置，请执行[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南中的步骤。
@@ -496,5 +496,5 @@ Xamarin.iOS 适用于以下设置：
 
 - [Xamarin 应用图标和启动图像（示例）](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
 - [Hello，iOS（示例）](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
-- [iOS 人机界面指南](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS 人机界面指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS 预配门户](https://developer.apple.com/ios/manage/overview/index.action)

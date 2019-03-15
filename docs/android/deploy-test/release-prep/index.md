@@ -6,13 +6,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: dff57b142745729d5d38db4cce892bb1d55796a6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059725"
 ---
+
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
 应用程序经编码和测试后，必须准备一个包进行分发。 准备此包的第一个任务是生成供发布的应用程序，其中主要涉及到设置应用程序的一些属性。
@@ -222,7 +217,7 @@ Dotfuscator CE 随附在 Visual Studio 中，但是仅 Visual Studio 2015 Update
 
 [打包属性](#Set_Packaging_Properties)页上的**AOT 编译**选项支持预先编译程序集。 启用此选项后，通过在运行时之前预编译程序集可将实时 (JIT) 启动开销降到最低。 生成的本机代码包括在 APK 以及未编译程序集中。 这可缩短应用程序启动时间，但代价是 APK 大小会变得稍大。
 
-“AOT 编译”选项要求使用 Enterprise 或更高版本的许可证。 仅在项目配置为发布模式时，才可使用“AOT 编译”，并且该选项默认处于禁用状态。 有关 AOT 编译的详细信息，请参阅 [AOT](http://www.mono-project.com/docs/advanced/aot/)。
+“AOT 编译”选项要求使用 Enterprise 或更高版本的许可证。 仅在项目配置为发布模式时，才可使用“AOT 编译”，并且该选项默认处于禁用状态。 有关 AOT 编译的详细信息，请参阅 [AOT](https://www.mono-project.com/docs/advanced/aot/)。
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 优化编译器
 
@@ -266,7 +261,7 @@ LLVM 优化编译器会创建更小更快速的编译代码，并将 AOT 编译�
 
 应用可能未使用每个引用库中的每个方法；因此，ProGuard（见上文）等工具可能会将未使用的方法从代码中删除。 最佳做法是仅在绝对必要时启用“启用 Multi-Dex”，也就是说，即使使用 ProGuard，应用引用的 Java 方法仍然超过 65K。
 
-若要深入了解 Multi-Dex，请参阅[配置超出 64K 方法的应用](http://developer.android.com/tools/building/multidex.html)。
+若要深入了解 Multi-Dex，请参阅[配置超出 64K 方法的应用](https://developer.android.com/tools/building/multidex.html)。
 
 <a name="Compile" />
 
@@ -374,6 +369,6 @@ LLVM 优化编译器会创建更小更快速的编译代码，并将 AOT 编译�
 
 - [多核设备和 Xamarin.Android](~/android/deploy-test/multicore-devices.md)
 - [CPU 体系结构](~/android/app-fundamentals/cpu-architectures.md)
-- [AOT](http://www.mono-project.com/docs/advanced/aot/)
-- [收缩代码和资源](http://developer.android.com/tools/help/proguard.html)
-- [配置方法数超过 64K 的应用](http://developer.android.com/tools/building/multidex.html)
+- [AOT](https://www.mono-project.com/docs/advanced/aot/)
+- [收缩代码和资源](https://developer.android.com/tools/help/proguard.html)
+- [配置方法数超过 64K 的应用](https://developer.android.com/tools/building/multidex.html)

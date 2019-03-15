@@ -6,20 +6,31 @@ ms.assetid: 705c9fa4-12ef-4ee0-ab3e-8319ee9944c5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/31/2016
-ms.openlocfilehash: 74a80183c29b4f1681fdce85ed9debd9ee9fbce2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243217"
+ms.date: 03/04/2019
 ---
+
 # <a name="xamarinforms-deployment-and-testing"></a>Xamarin.Forms 部署和测试
+
+## <a name="publishing-ios-appsiosdeploy-testapp-distributionindexmd"></a>[发布 iOS 应用](~/ios/deploy-test/app-distribution/index.md)
+
+iOS 应用可以通过 Apple 的 App Store 内部分发，也可以通过临时通道分发。
+
+## <a name="publishing-android-appsandroiddeploy-testpublishingindexmd"></a>[发布 Android 应用](~/android/deploy-test/publishing/index.md)
+
+Android 应用可以通过电子邮件、专用 Web 服务器、Google Play 或适用于 Android 的 Amazon 应用商店等通道分发。
+
+## <a name="publishing-universal-windows-platform-appswindowsuwppackaging"></a>[发布通用 Windows 平台应用](/windows/uwp/packaging/)
+
+UWP 应用可以通过 Microsoft Store 分发（将应用包直接端加载到设备）或通过 Web Install 分发。
+
+## <a name="publishing-mac-appsmacdeploy-testpublishing-to-the-app-storeindexmd"></a>[发布 Mac 应用](~/mac/deploy-test/publishing-to-the-app-store/index.md)
+
+Mac 应用可以通过 Mac App Store 分发或直接分发。
 
 ## <a name="performanceperformancemd"></a>[性能](performance.md)
 
 可以通过许多方法来提高使用 Xamarin.Forms 应用的性能。 这些方法共同可以极大地降低由 CPU 执行的工作量和应用程序占用的内存量。
 
-## <a name="automated-testing-with-xamarinuitest-and-app-centeruitest-and-test-cloudmd"></a>[使用 Xamarin.UITest 和 App Center 自动测试](uitest-and-test-cloud.md)
+## <a name="automated-testing-with-visual-studio-app-centerappcentertest-cloud"></a>[使用 Visual Studio App Center 自动测试](/appcenter/test-cloud/)
 
-Xamarin 测试云的 **UITest** 组件可以与 Xamarin.Forms 一起使用，以编写可在数百个设备上的云中运行的 UI 测试。
+App Center 测试是针对本机和混合移动应用的测试自动服务，也称为 Test Cloud。

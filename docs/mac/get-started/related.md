@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Mac - 相关文档
-description: 本文档为 Xamarin.Mac 开发人员提供相关文档的链接：Xamarin.iOS 文档、Apple Mac 开发人员中心以及介绍如何使用 Xamarin.Mac 生成用户界面的各种指南。
+description: 本文档提供与 Xamarin.Mac 开发人员相关的文档链接：Xamarin.iOS 文档、Apple Mac 开发人员中心以及介绍如何使用 Xamarin.Mac 生成用户界面的各种指南。
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 745328aeb884031863d8d85caca1e4a6563fc916
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 87987e79fce2bd5277f8092d09752fe715e2f2ce
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526944"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667647"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac - 相关文档
 
@@ -22,7 +22,7 @@ ms.locfileid: "51526944"
 
 - **Apple 的 [Mac 开发人员中心](https://developer.apple.com/devcenter/mac/)** - 其中一个示例：在 Objective-C 中调用的 API 可直接转换成 C#。 请参阅[了解 Mac API](~/mac/app-fundamentals/mac-apis.md)了解有关如何实现此操作的详细信息。
 
-- [**Stack Overflow**](http://stackoverflow.com/)（堆栈溢出） - 一个很有用的资源源，用于解答简单的一次性问题，例如[如何在 NSOutlineView 中自动展开所有节点](http://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)。 这些示例通常是 Objective-C 的，并且需要转换成 C#，但 C# 中存在答案的子集。
+- [**Stack Overflow**](https://stackoverflow.com/)（堆栈溢出） - 一个很有用的资源源，用于解答简单的一次性问题，例如[如何在 NSOutlineView 中自动展开所有节点](https://stackoverflow.com/questions/519751/nsoutlineview-auto-expand-all-nodes)。 这些示例通常是 Objective-C 的，并且需要转换成 C#，但 C# 中存在答案的子集。
 
 ## <a name="user-interface"></a>用户界面
 

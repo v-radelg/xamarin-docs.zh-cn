@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 7f03df796c338380a776f9af26563af2e60e59a1
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242402"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672646"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
@@ -257,7 +257,7 @@ public class FaceDetection
 
 C# 等托管语言使用垃圾回收功能来回收分配给不再使用的对象的内存。 Xamarin 平台使用以下 2 种垃圾回收器：
 
-- [**SGen**](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) - 这是一种分代垃圾回收器，也是 Xamarin 平台上的默认垃圾回收器。
+- [**SGen**](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) - 这是一种分代垃圾回收器，也是 Xamarin 平台上的默认垃圾回收器。
 - [**Boehm**](http://www.hboehm.info/gc/) – 这是一种传统的非分代垃圾回收器。 它是用于 Xamarin.iOS 应用程序（使用 Classic API）的默认垃圾回收器。
 
 SGen 利用以下三个堆中的一个来为对象分配空间：
@@ -334,7 +334,7 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 - 缩小应用程序的托管代码。 通过对每个程序集启用链接器可实现此目的（对于 iOS 项目，选择“链接所有”；对于 Android 项目，选择“链接所有程序集”）。
 
 对于每个 ABI，Android 应用也能拆分为单独的 APK（“体系结构”）。
-阅读此博客文章了解详细信息：[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)（如何缩小 Android 应用）。
+通过此博客文章详细了解：[如何减小 Android 应用大小](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)。
 
 <a name="optimizeimages" />
 

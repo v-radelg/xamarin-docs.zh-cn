@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 1a2739d1a3848303b3086c23c0a28a889250ee2e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: b89f5329430fed0387443bf923c45cd40181b22e
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675505"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668382"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核设备和 Xamarin.Android
 
@@ -53,7 +53,7 @@ Android 支持的每个 ABI 均由唯一名称标识。
 
 这是基于 ARM 的至少支持 ARMv5TE 指令集的 CPU 的 EABI 名称。 Android 遵循小字节序 ARM GNU/Linux ABI。 此 ABI 不支持硬件辅助的浮点计算。 所有 FP 操作都由来自编译器的 `libgcc.a` 静态库的软件帮助程序函数执行。 `armeabi` 不支持 SMP 设备。
 
-**注意**：Xamarin.Android 的 `armeabi` 代码不具线程安全性，不应在多 CPU `armeabi-v7a` 设备上使用（如下所述）。 在单核 `armeabi-v7a` 设备上使用 `aremabi` 代码是安全的。
+**说明**：Xamarin.Android 的 `armeabi` 代码不具线程安全性，不应在多 CPU `armeabi-v7a` 设备上使用（如下所述）。 在单核 `armeabi-v7a` 设备上使用 `aremabi` 代码是安全的。
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -74,7 +74,7 @@ Xamarin.Android 5.1 为此体系结构提供实验性支持（有关详细信息
 - 补充 SSE3 扩展 (SSSE3)。
 - SSE4 的任何变体。
 
-注意：虽然 Google TV 在 x86 上运行，但不受 Android 的 NDK 支持。
+**注意：** 虽然 Google TV 在 x86 上运行，但不受 Android 的 NDK 支持。
 
 #### <a name="x8664"></a>x86_64
 
@@ -84,7 +84,7 @@ Xamarin.Android 5.1 为此体系结构提供实验性支持（有关详细信息
 
 这是基于 MIPS 的至少支持 `MIPS32r1` 指令集的 CPU 的 ABI 名称。 Android 不支持 MIPS 16 和 `micromips`。
 
-注意：Xamarin.Android 目前不支持 MIPS 设备，但在未来的版本中将支持。
+**注意：** Xamarin.Android 目前不支持 MIPS 设备，但在未来的版本中将支持。
 
 #### <a name="apk-file-format"></a>APK 文件格式
 
@@ -177,7 +177,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-遗憾的是，此行为依赖于顺序，如以下文档中所述 - [问题 24321：当 armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](http://code.google.com/p/android/issues/detail?id=25321)。
+遗憾的是，此行为依赖于顺序，如以下文档所述 - [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](http://code.google.com/p/android/issues/detail?id=25321)。
 
 本机库“按顺序”（例如，通过解压缩列出的顺序）进行处理，并提取*第一个匹配项*。 由于 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，并且首先列出 `armeabi`，它是提取的 `armeabi` 版本，*不是*  `armeabi-v7a` 版本：
 
@@ -257,6 +257,6 @@ Xamarin.Android 当前不支持 `mips`。
 
 - [MIPS 体系结构](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ARM 体系结构的 ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
-- [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+- [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [问题 9089：Nexus One - 如果 armeabi-v7a 中至少有一个库，则不会加载来自 armeabi 的任何本机库](http://code.google.com/p/android/issues/detail?id=9089)
 - [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](http://code.google.com/p/android/issues/detail?id=25321)

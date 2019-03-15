@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: ce102f189321cbd49b37e7718c1f3d478c322f55
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: e009ec60abc5afd06e43122424c325bbb1bf42ac
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526684"
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668863"
 ---
 # <a name="set-up-device-for-development"></a>设置设备进行开发
 
@@ -77,7 +77,7 @@ _本文介绍如何设置 Android 设备并将其连接到计算机，使设备�
 ### <a name="download-the-usb-drivers"></a>下载 USB 驱动程序
 
 Google Nexus 设备（Galaxy Nexus 除外）需要 Google USB 驱动程序。 Galaxy Nexus 的驱动程序[由 Samsung 分发](http://www.samsung.com/us/support/downloads/)。
-所有其他 Android 设备应使用[来自其各自制造商的 USB 驱动程序](http://developer.android.com/tools/extras/oem-usb.html#Drivers)。
+所有其他 Android 设备应使用[来自其各自制造商的 USB 驱动程序](https://developer.android.com/tools/extras/oem-usb.html#Drivers)。
 
 通过启动 Android SDK 管理器并展开“附加程序”文件夹，安装 **Google USB 驱动程序**包，如下面的屏幕截图所示：
 
@@ -144,7 +144,7 @@ USB 驱动程序下载完成后，请将其安装。
 
 ### <a name="connecting-over-wifi"></a>通过 WiFi 连接
 
-默认情况下，[Android Debug Bridge](http://developer.android.com/tools/help/adb.html) (*ADB*) 配置为通过 USB 与 Android 设备进行通信。 可将其重新配置为使用 TCP/IP，而不是使用 USB。 为此，设备和计算机必须处于同一 WiFi 网络上。 若要通过 WiFi 设置调试环境，请从命令行执行以下步骤：
+默认情况下，[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 配置为通过 USB 与 Android 设备进行通信。 可将其重新配置为使用 TCP/IP，而不是使用 USB。 为此，设备和计算机必须处于同一 WiFi 网络上。 若要通过 WiFi 设置调试环境，请从命令行执行以下步骤：
 
 1.  确定 Android 设备的 IP 地址。 查找 IP 地址的一种方法是在“设置”>“Wi-Fi”下查看，然后点击设备所连接的 WiFi 网络。 此时会弹出设置屏幕，显示网络连接的相关信息，类似下面的屏幕截图中所示：
 
@@ -184,9 +184,9 @@ USB 驱动程序下载完成后，请将其安装。
 
 ## <a name="related-links"></a>相关链接
 
-- [Android Debug Bridge](http://developer.android.com/tools/help/adb.html)
-- [使用硬件设备](http://developer.android.com/tools/device.html)
+- [Android Debug Bridge](https://developer.android.com/tools/help/adb.html)
+- [使用硬件设备](https://developer.android.com/tools/device.html)
 - [Samsung 驱动程序下载](http://www.samsung.com/us/support/downloads/)
-- [OEM USB 驱动程序](http://developer.android.com/tools/extras/oem-usb.html#Drivers)
-- [Google USB 驱动程序](http://developer.android.com/sdk/win-usb.html)
+- [OEM USB 驱动程序](https://developer.android.com/tools/extras/oem-usb.html#Drivers)
+- [Google USB 驱动程序](https://developer.android.com/sdk/win-usb.html)
 - [XDA 开发人员：已解决 Windows 8 - ADB/快速启动驱动程序问题](http://forum.xda-developers.com/showthread.php?t=1583801)
