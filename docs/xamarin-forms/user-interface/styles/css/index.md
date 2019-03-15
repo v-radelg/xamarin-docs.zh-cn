@@ -181,7 +181,7 @@ stacklayout {
 此选择器标识任何[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)的使用样式表，并将它们的边距设置为统一粗细，即 20 页上的元素。
 
 > [!NOTE]
-> `element`选择器不会确定指定类型的类。
+> `element`选择器不会确定指定类型的子类。
 
 ### <a name="selecting-elements-by-base-class"></a>由基类选择元素
 
@@ -336,7 +336,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`.class`|`.header`|选择所有元素与`StyleClass`包含 header 属性。 请注意，此选择器区分大小写。|
 |`#id`|`#email`|选择所有元素具有`StyleId`设置为`email`。 如果`StyleId`未设置，则回退到`x:Name`。 使用 XAML 时,`x:Name`最好通过`StyleId`。 请注意，此选择器区分大小写。|
 |`*`|`*`|选择所有元素。|
-|`element`|`label`|选择所有元素类型的`Label`，但不是嵌套类。 请注意，此选择器不区分大小写。|
+|`element`|`label`|选择所有元素类型的`Label`，但不是子类。 请注意，此选择器不区分大小写。|
 |`^base`|`^contentpage`|选择所有元素具有`ContentPage`作为基类，包括`ContentPage`本身。 请注意，此选择器是不区分大小写，不是 CSS 规范的一部分。|
 |`element,element`|`label,button`|选择所有`Button`元素和所有`Label`元素。 请注意，此选择器不区分大小写。|
 |`element element`|`stacklayout label`|选择所有`Label`内的元素`StackLayout`。 请注意，此选择器不区分大小写。|

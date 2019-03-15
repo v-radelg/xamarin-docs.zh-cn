@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e57135c5a9a90ec75ae610ad92cecaa2a9b1e482
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: e220abc575270f483c0a822ae01f979966691432
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557033"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972671"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 标签
 
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>创建可重用的超链接类
 
-创建超链接的上一方法需要编写重复代码，每次你需要在应用程序中的超链接。 但是，这两个[ `Label` ](xref:Xamarin.Forms.Label)并[ `Span` ](xref:Xamarin.Forms.Span)可以子类来创建类`HyperlinkLabel`和`HyperlinkSpan`类中使用的笔势识别器和文本格式设置添加到此处的代码。
+创建超链接的上一方法需要编写重复代码，每次你需要在应用程序中的超链接。 但是，这两个[ `Label` ](xref:Xamarin.Forms.Label)并[ `Span` ](xref:Xamarin.Forms.Span)可以子类化的类来创建`HyperlinkLabel`和`HyperlinkSpan`类中使用的笔势识别器和文本格式设置代码添加到此处。
 
 下面的代码示例摘自[超链接演示](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos)的示例，演示`HyperlinkSpan`类：
 

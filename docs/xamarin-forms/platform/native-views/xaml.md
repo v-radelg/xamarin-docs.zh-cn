@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4f5f32871c273fc7ac3bab8fd9bcbcac03fc47fa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233804"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972658"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的本机视图
 
@@ -325,7 +325,7 @@ IOS 和 Android 的本机按钮共用同一个`OnButtonTap`事件处理程序，
 
 该页还包含每个平台的本机选取器视图。 每个本机视图显示水果的集合的绑定及其`ItemSource`属性设置为`SubclassedNativeControlsPageViewModel.Fruits`集合。 这允许用户选取水果，如以下屏幕截图中所示：
 
-![](xaml-images/sub-classed.png "子类的本机视图")
+![](xaml-images/sub-classed.png "子类化的本机视图")
 
 IOS 和 Android 上本机选取器使用方法设置这些控件。 因此，这些选取器必须子类化来公开属性，以使它们适合于 XAML 应用。 在通用 Windows 平台 (UWP)，`ComboBox`已 XAML 友好，因此，不需要子类化。
 

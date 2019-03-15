@@ -105,7 +105,7 @@ Xamarin.Forms 主题定义特定的可视化外观，对标准控件。 一旦�
 
 ## <a name="visualvisualindexmd"></a>[视觉对象](visual/index.md)
 
-Xamarin.Forms Visual 使呈现器有选择地应用于`VisualElement`对象，而不必子类 Xamarin.Forms 控件。
+Xamarin.Forms 材料视觉对象可以用于创建 iOS 和 Android 上 Xamarin.Forms 应用程序看起来完全相同，或大致相同。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[可视状态管理器](visual-state-manager.md)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 71962c5e7d2f4c360e14b2040779498d4be95282
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831790"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972645"
 ---
 # <a name="customizing-listview-appearance"></a>自定义 ListView 外观
 
@@ -206,8 +206,8 @@ ListView HeaderList = new ListView() {
 [`ListView`](xref:Xamarin.Forms.ListView) 具有`HorizontalScrollBarVisibility`并`VerticalScrollBarVisibility`属性，获取或设置[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，该值表示当水平或垂直滚动条是否可见。 这两个属性可以设置为以下值：
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 表示在平台的默认滚动栏行为，它是默认值`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`属性。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条将显示，即使内容无法放入视图中。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 表示滚动条将不可见，如果内容不适合在视图中的事件。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条将显示，即使内容适合在视图中。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条将不可见，即使内容无法放入视图中。
 
 <a name="Row_Separators" />
 
