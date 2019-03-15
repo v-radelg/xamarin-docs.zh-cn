@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 76d791436252056450f5bbdb9f15b670570f095e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: be2edacff260af1e57ca1f54972bd85bef2dd62c
+ms.sourcegitcommit: 809a2656f9f0d0b890432fd592f8b819b1ed82eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671698"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57972567"
 documentType: LandingData
 title: Xamarin 入门
 metadata:
@@ -111,7 +111,7 @@ sections:
       image:
         src: https://docs.microsoft.com/media/common/i_account-management.svg
       title: 图像
-    - href: /tutorials/grid/
+    - href: tutorials/grid/
       html: <p></p>
       image:
         src: https://docs.microsoft.com/media/common/i_table.svg
