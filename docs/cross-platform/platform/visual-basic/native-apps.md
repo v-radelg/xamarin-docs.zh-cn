@@ -6,12 +6,12 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 55c08c1bd0d82f8458e0c07b4202b6275600ff38
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671099"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070964"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>在 Xamarin iOS 和 Android 的 visual Basic.NET
 
@@ -284,18 +284,6 @@ Visual Studio for Mac 的可移植类库的支持意味着它可以引用 PCL �
 2. 添加_后期生成_脚本，用于将输出 DLL 从此项目复制到项目根目录 (即外部 **/bin/**)。 根据版本控制配置，该 DLL 现在应能够添加到源代码管理。
 
   [![](native-apps-images/image6-vs-sml.png "生成事件后生成脚本，以便复制 VB DLL")](native-apps-images/image6-vs.png#lightbox)
-
-#### <a name="visual-studio-2015"></a>Visual Studio 2015
-
-1.  右键单击项目并选择**属性 > 编译**，然后确保在左上方含有组合框中选择了所有配置。 单击**生成事件...** 右下角的按钮。
-
-    [![](native-apps-images/image6.png "项目属性编译部分")](native-apps-images/image6.png#lightbox)
-
-1.  添加生成后脚本，用于将输出 DLL 从此项目复制到项目根目录 (即之外 **/bin/** )。 根据版本控制配置，该 DLL 现在应能够添加到源代码管理。
-
-    [![](native-apps-images/image7.png "生成事件窗口")](native-apps-images/image7.png#lightbox)
-
-#### <a name="all-versions"></a>所有版本
 
 下一次生成项目，可移植类库程序集将复制到项目根目录，并检查在/提交/推送所做的更改 DLL 可以存储 （以便可以下载到 Mac 使用 Visual Studio for Mac）。
 

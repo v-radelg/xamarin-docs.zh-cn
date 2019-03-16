@@ -1,5 +1,5 @@
 ---
-title: 常见问题
+title: Xamarin.iOS 方面的常见问题
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 65E04188-185D-493D-BA3C-A89711CB6CAF
@@ -7,14 +7,9 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d2d0af5a69920f392eba1cd655f1d8ab74971be6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107503"
 ---
-# <a name="frequently-asked-questions"></a>常见问题
+
+# <a name="ios-frequently-asked-questions"></a>iOS Frequently Asked Questions
 
 ## <a name="general-questions"></a>一般问题
 
@@ -42,7 +37,7 @@ IOS bug 可能会导致开发人员选项消失更新 iOS 版本后，会出现�
 
 ## <a name="publishing-questions"></a>发布问题
 
-### <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submissioninvalid-bundle-bitcodemd"></a>[提交到 App Store 时的错误:"捆绑无效-不允许在 bitcode 中嵌入的选项中检测到的提交"](invalid-bundle-bitcode.md)
+### <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submissioninvalid-bundle-bitcodemd"></a>[提交到 App Store 时的错误："捆绑无效-不允许在 bitcode 中嵌入的选项中检测到的提交"](invalid-bundle-bitcode.md)
 
 提交应用程序的_需要_bitcode，例如 watchOS 和 tvOS 应用程序，必须通过 Xcode 9。
 
@@ -58,7 +53,7 @@ IOS bug 可能会导致开发人员选项消失更新 iOS 版本后，会出现�
 ### <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studiocreate-xcarchivemd"></a>[是否可以从 Visual Studio 创建.xcarchive 存档？](create-xcarchive.md)
 截至 Xamarin 4，则现在可以创建`.xcarchive`从 Windows 通过设置`ArchiveOnBuild`属性设置为`true`。
 
-### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[为什么我的应用提交会失败，并显示“在...找到不允许的路径 (iTunesMetadata.plist)”？](itunesmetadata-disallowed-paths.md)
+### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[为何应用提交失败，且随附：“不允许的路径 ( "iTunesMetadata.plist" ) 位于...”？](itunesmetadata-disallowed-paths.md)
 此错误是 Apple 的 App Store 验证过程中更改的结果。 此特定错误_不_相关的特定版本的已安装的 Xamarin，因此降级将_不_帮助。 此指南链接到有关如何解决此问题的详细信息。
 
 
@@ -70,7 +65,7 @@ IOS bug 可能会导致开发人员选项消失更新 iOS 版本后，会出现�
 ### <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychainno-codesigning-keysmd"></a>[为什么我的 iOS 生成会失败，并显示“在 keychain 中未找到有效的 iPhone 代码签名密钥”？](no-codesigning-keys.md)
 此错误消息相关的项目正在寻找代码签名的有效凭据时，会发生，但找不到它们。 代码签名才可进行测试和部署在物理 iOS 设备;以及 Ad hoc 和应用存储的生成。
 
-### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[为什么我的 iOS 9 应用会失败，并显示“System.Exception：无法封送 Objective-C 对象”？](exception-marshal-obj-c.md)
+### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[为何 iOS 9 应用失败，且随附：“System.Exception:无法封送 Objective-C 对象”？](exception-marshal-obj-c.md)
 IOS 9 中的 API 更改需要作为基础 API 调用非托管的代码，需要它时，使用回调构造函数。
 
 ### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[运行时错误：找不到或无法加载程序集 mscorlib.dll](error-mscorlib-not-found.md)
@@ -89,7 +84,7 @@ IOS 9 中的 API 更改需要作为基础 API 调用非托管的代码，需要�
 ### <a name="ibtool-error-the-operation-couldnt-be-completederror-ibtoolmd"></a>[IBTool 错误：无法完成该操作。](error-ibtool.md)
 Apple[修复](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html)这`ibtool`Xcode 6.1.1，因此升级到 Xcode 6.1.1 或更高版本中的 bug 是最简单的修复程序。
 
-### <a name="error-mt1009-could-not-copy-the-assemblyerror-mt1009md"></a>[错误 MT1009：无法复制程序集](error-mt1009.md)
+### <a name="error-mt1009-could-not-copy-the-assemblyerror-mt1009md"></a>[MT1009 错误：无法复制程序集](error-mt1009.md)
 这会影响运行 Xamarin.iOS 7.2.6 的用户。 此问题的原因需要更高的权限时使用不同的用户帐户安装 Xamarin.iOS 的文件权限然后开发人员的主帐户。
 
 ### <a name="systemexception-amdevicenotificationsubscribe-returned-exception-amddevicenotificationsubscribemd"></a>[System.Exception AMDeviceNotificationSubscribe 已返回...](exception-amddevicenotificationsubscribe.md)

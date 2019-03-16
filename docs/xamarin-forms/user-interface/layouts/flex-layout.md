@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: b37070ca627e535f9470916e9f84cdf55bb2aed3
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7626c49b2267cbd087a16c310f1b85aea7139823
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056131"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981726"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -393,7 +393,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 程序启动时，五`Picker`视图中显示五个默认值`FlexLayout`属性。 `FlexLayout`屏幕的底部包含三个子级：
 
-[![在实验页中： 默认](flex-layout-images/ExperimentDefault.png "实验页中的默认值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![在实验页中：默认值](flex-layout-images/ExperimentDefault.png "实验页中的默认值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 每个`Label`视图具有灰色背景显示的分配的空间`Label`内`FlexLayout`。 背景`FlexLayout`本身是艾莉斯蓝。 它在左侧和右侧的小边距除外占据了整个底部区域中的页。
 
@@ -412,7 +412,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 下面是**实验**（从左到右），显示页面`Row`方向`Column`方向，和`ColumnReverse`方向：
 
-[![在实验页中： 方向](flex-layout-images/ExperimentDirection.png "实验页的方向")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![在实验页中：方向](flex-layout-images/ExperimentDirection.png "实验页的方向")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
 请注意，对于`Reverse`项启动选项，在右侧或底部。
 
@@ -428,7 +428,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 从左到右，这些屏幕显示`NoWrap`，`Wrap`和`Reverse`12 子级的选项：
 
-[![在实验页中： 包装](flex-layout-images/ExperimentWrap.png "实验页中的自动换行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![在实验页中：包装](flex-layout-images/ExperimentWrap.png "实验页中的自动换行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 当`Wrap`属性设置为`NoWrap`和主轴受到约束 （如在此程序），以及主轴不高或足够宽，以适应所有子级`FlexLayout`尝试使项目变小，如 iOS 屏幕截图演示。 您可以控制的项 shrinkness [ `Shrink` ](#shrink)附加可绑定属性。
 
@@ -447,7 +447,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 此属性指定项在此示例中为水平轴的主要轴上的分布方式：
 
-[![在实验页中： 对齐内容](flex-layout-images/ExperimentJustifyContent.png "实验页中的对齐内容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![在实验页中：调整内容](flex-layout-images/ExperimentJustifyContent.png "实验页中的对齐内容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 在所有三个屏幕截图`Wrap`属性设置为`Wrap`。 `Start`默认上面的 Android 屏幕截图中所示。 此处的 iOS 屏幕快照显示`Center`选项： 所有项都移动到中心。 其他三个选项从单词`Space`分配项未占用的额外空间。 `SpaceBetween` 分配的项; 同样之间的空间`SpaceAround` put 等于每个项周围的空间时`SpaceEvenly`put 等于每个项之间和第一项之前和之后的行的最后一项的空间。
 
@@ -464,7 +464,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 这是两个属性之一 (另一个执行[ `AlignContent` ](#align-content))，该值指示子交叉轴上的对齐方式。 在每个行中，子级是拉伸 （如上面的屏幕截图中所示），或对齐上开始、 居中或结束的每个项，如下面的三个屏幕截图中所示：
 
-[![在实验页中： 对齐项](flex-layout-images/ExperimentAlignItems.png "实验页中的对齐项")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![在实验页中：对齐项](flex-layout-images/ExperimentAlignItems.png "实验页中的对齐项")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 在 iOS 屏幕截图中，所有子级的顶部对齐。 中的 Android 屏幕截图，项是垂直方向上居中基于在最高的子活动。 在 UWP 屏幕截图中，所有项的底部对齐。
 
@@ -486,11 +486,11 @@ public partial class PhotoWrappingPage : ContentPage
 
 像`AlignItems`，则`AlignContent`属性还将对齐交叉轴上的子级，但会影响整个行或列：
 
-[![在实验页中： 对齐内容](flex-layout-images/ExperimentAlignContent.png "实验页中的对齐内容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![在实验页中：对齐内容](flex-layout-images/ExperimentAlignContent.png "实验页中的对齐内容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 在 iOS 屏幕截图中，这两个行位于顶部;在 Android 屏幕截图，它们在中心;并且 UWP 的屏幕截图中它们是在底部。 此外可以以各种方式分布行：
 
-[![在实验页中： 对齐内容 2](flex-layout-images/ExperimentAlignContent2.png "实验页中的对齐内容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![在实验页中：对齐内容 2](flex-layout-images/ExperimentAlignContent2.png "实验页中的对齐内容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 `AlignContent`不起作用时只有一个行或列。
 
@@ -517,13 +517,13 @@ public partial class PhotoWrappingPage : ContentPage
 有关`Label`名为元素`label`（或示例），可以设置`AlignSelf`类似下面的代码中的属性：
 
 ```csharp
-FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
+FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
 请注意，没有不引用`FlexLayout`的父级`Label`。 在 XAML，您设置此类属性：
 
 ```xaml
-<Label ... FlexAlign.AlignSelf="Center" ... />
+<Label ... FlexLayout.AlignSelf="Center" ... />
 ```
 
 ### <a name="the-order-property"></a>Order 属性
@@ -580,7 +580,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 [![基础试验页](flex-layout-images/BasisExperiment.png "基础试验页")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-在左侧的 iOS 屏幕截图显示了这两个`Label`元素获得高度以与设备无关单位。 Android 屏幕显示它们被授予的总高度的一小部分的高度`FlexLayout`。 如果`Basis`设置为 100%，则的高度，该子级则`FlexLayout`，和将换行到下一列，并占用整个图柱的高度的如 UWP 的屏幕截图中所示： 似乎像排列在行中的五个子级但实际上在五个列中排列。
+在左侧的 iOS 屏幕截图显示了这两个`Label`元素获得高度以与设备无关单位。 Android 屏幕显示它们被授予的总高度的一小部分的高度`FlexLayout`。 如果`Basis`设置为 100%，则的高度，该子级则`FlexLayout`，和将换行到下一列，并占用整个图柱的高度的如 UWP 的屏幕截图中所示：它会显示像五个子级排列在行，但实际上在五个列中排列。
 
 ### <a name="the-grow-property"></a>扩展属性
 

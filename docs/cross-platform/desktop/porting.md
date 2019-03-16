@@ -5,12 +5,12 @@ description: 如何分离现有 Windows 窗体或 WPF 应用程序创建跨平�
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 3d3af9c78b7486e7ebfb063a3cb00fabdbd0f5b7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617535"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071094"
 ---
 # <a name="desktop-app-porting-guidance"></a>桌面应用程序的移植指南
 
@@ -26,7 +26,7 @@ Windows 窗体和 WPF 编写的应用程序与C#（或 Visual Basic.NET） 极�
 
 ## <a name="net-portability-analyzer"></a>.NET 可移植性分析器
 
-Visual Studio 2015 和 2017年的支持[.NET 可移植性分析器](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer)([下载适用于 Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) 的可以检查现有应用程序，并告知你多少代码可移植"按原样"到其他平台. 您可以了解有关它的详细信息从此[第 9 频道视频](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)。
+Visual Studio 2017 和更高版本支持[.NET 可移植性分析器](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer)([下载适用于 Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) 的可以检查现有应用程序，并告知你可移植代码量，"按原样"对其他平台。 您可以了解有关它的详细信息从此[第 9 频道视频](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer)。
 
 此外，还有一个命令行工具可以从下载[GitHub 上的可移植性分析器](https://github.com/Microsoft/dotnet-apiport)，用于提供相同的报告。
 

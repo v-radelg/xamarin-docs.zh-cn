@@ -1,5 +1,5 @@
 ---
-title: iOS 平台功能
+title: 在 Xamarin.Forms 中的 iOS 平台功能
 description: 将特定于 iOS 的功能添加到 Xamarin.Forms 应用程序。
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
@@ -9,7 +9,7 @@ ms.author: dabritch
 ms.date: 02/22/2019
 ---
 
-# <a name="ios-platform-features"></a>iOS 平台功能
+# <a name="ios-platform-features-in-xamarinforms"></a>在 Xamarin.Forms 中的 iOS 平台功能
 
 开发适用于 iOS 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/requirements.md)包含有关系统必备组件的详细信息。
 

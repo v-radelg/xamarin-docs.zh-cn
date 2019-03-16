@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: d5478a09c461ec8f1bf51efaa7b4dc2f862d69b4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b69fe417bb521781453042269b9b52609d8e00a0
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668929"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070951"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 项新增功能概述
 
@@ -20,38 +20,9 @@ _最新版本的C#语言 – 版本 6 – 不断发展的语言具有更少的�
 
 本文档介绍了新功能的C#6。 Mono 编译器完全支持，开发人员可以开始使用所有 Xamarin 目标平台的新功能。
 
-这篇文章包含简短代码段的C#6 演示了基本用法的代码。
-示例应用程序是在所有 Xamarin 目标平台上运行并使用各种功能的命令行程序。
-
-
 > [!VIDEO https://youtube.com/embed/7UdV7zGPfMU]
 
 **新增功能C#6，也可由[Xamarin University](https://university.xamarin.com/)**
-
-
-## <a name="development-environment"></a>开发环境
-
-### <a name="mac"></a>Mac
-
-* **Visual Studio for Mac**支持C#6： 生成和编译 Xamarin 应用程序使用C#6 功能。
-  详细了解[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/)。
-
-### <a name="windows"></a>Windows
-
-* **Visual Studio 2015 和 2017年**及更高版本均完全支持C#6。 Visual Studio 的早期版本将不支持C#6。
-
-* **Xamarin Studio for Windows**不支持C#6 在编辑器中的功能。
-
-
-
-## <a name="compiler"></a>编译器
-
-Mono C# Mono 4.0 及更高版本，这是包含 6 编译器[可免费下载](https://www.mono-project.com/download/)。
-Visual Studio for Mac 会自动更新你的系统上的 Mono 安装。
-
-Windows 用户必须具有[Visual Studio 2015 或 2017年 ^](https://visualstudio.microsoft.com/)安装编译C#6 的代码 （即使您选择 Windows 的 Xamarin Studio 作为您的 IDE）。
-
-^ 或 *[Microsoft 生成工具 2015年](https://www.microsoft.com/download/details.aspx?id=48159)* 命令行编译或生成服务器，例如。
 
 ## <a name="using-c-6"></a>使用C#6
 

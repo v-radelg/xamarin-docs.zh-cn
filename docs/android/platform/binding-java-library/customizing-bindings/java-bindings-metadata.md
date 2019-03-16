@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: ce9bf0293b846299cc7cd06773ce936f725715fa
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669890"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070899"
 ---
 # <a name="java-bindings-metadata"></a>Java 绑定元数据
 
@@ -246,7 +246,10 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="obfuscated"></a>经过模糊处理
 
-模糊处理 Java 库的工具可能会影响 Xamarin.Android 绑定生成器，并生成其功能与C#包装器类。 经过模糊处理类的特征包括: * 类名称中包含 **$**，即 **$.class**  * 类名完全破坏的小写字符，即 **a.class**
+模糊处理 Java 库的工具可能会影响 Xamarin.Android 绑定生成器，并生成其功能与C#包装器类。 经过模糊处理类的特征包括： 
+
+* Class 名称中包含 **$** ，即 **$.class** 
+* 类名完全破坏的小写字符，即**a.class**
 
 此代码片段示范了如何生成一个"未经过模糊处理"C#类型：
 

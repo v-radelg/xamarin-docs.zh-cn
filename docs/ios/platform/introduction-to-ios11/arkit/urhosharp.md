@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/01/2017
-ms.openlocfilehash: 435ca560eee4f8f44443816c2a4ccec195ba5395
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b02ecc8a40f6ff8a1862d50202439d369003a53d
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103889"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981596"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>ARKit 使用 Xamarin.iOS 中 UrhoSharp
 
@@ -118,7 +118,7 @@ ARKit API 很简单，创建和配置[ARSession](https://developer.apple.com/doc
 但是，我们都面临着两个问题要混合在一起这两个领域：
 
 
-1. 在 iOS 上，GPU 的纹理必须具有分辨率的 2 的幂，但我们将从照相机中获取的帧不具有是 2 的幂，例如分辨率： 1280 x 720。
+1. 在 iOS 上，GPU 的纹理必须具有分辨率的 2 的幂，但我们将从照相机中获取的帧不具有解析是 2 的幂，例如：1280 x 720。
 2. 帧中进行编码[YUV](https://en.wikipedia.org/wiki/YUV)格式，表示由两个图像的亮度和色度。
 
 YUV 帧有两个不同的分辨率。  表示亮度 （基本上灰度图像） 和多小 640 x 360 色度组件 1280 x 720 图像：
@@ -207,11 +207,11 @@ void OnTouchEnd(TouchEndEventArgs e)
 
 现实世界照明条件，根据虚拟场景应该较浅或者较深，若要更好地符合其环境。 ARFrame 包含 LightEstimate 属性，我们可以使用调整 Urho 环境光线，这是如下所示：
 
-
-    var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
-    var zone = Scene.GetComponent<Zone>();
-    zone.AmbientColor = Color.White * ambientIntensity;
-
+```csharp
+var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
+var zone = Scene.GetComponent<Zone>();
+zone.AmbientColor = Color.White * ambientIntensity;
+```
 
 ### <a name="beyond-ios---hololens"></a>IOS-HoloLens 超出
 

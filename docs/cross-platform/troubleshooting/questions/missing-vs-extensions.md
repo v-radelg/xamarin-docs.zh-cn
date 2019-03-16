@@ -6,25 +6,22 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
-ms.openlocfilehash: 7b1f96807d77d9db0a892c5e78124eb3a9890edc
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: 3e3d426e7b00725eafeba139de5bc46d416c368a
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251077"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070886"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>安装后缺少 Visual Studio 扩展
 
-## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>出现错误消息： 此项目是与当前版本的 Visual Studio 不兼容
+## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>错误消息：此项目与 Visual Studio 的当前版本不兼容
 
-确保安装 Visual Studio 的兼容版本：
-
--   Visual Studio 2017 （Community、 Professional 或 Enterprise）
--   Visual Studio 2015 （Community、 Professional 或 Enterprise）
+请确保 Visual Studio 2017 （Community、 Professional 或 Enterprise） 或更高版本安装。
 
 另请参阅[Windows 要求](~/cross-platform/get-started/requirements.md#windows-requirements)。
 
-## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>可能的修复 1： 更改安装以确保安装了 Visual Studio 扩展
+## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>可能的修复 1:更改安装以确保安装了 Visual Studio 扩展
 
 在某些情况下，Xamarin 安装程序可能会自动取消选中 Visual Studio 扩展的安装选项。 如果这是问题的原因，则使用安装程序的“更改”命令安装缺少的 Visual Studio 扩展。 例如，安装 Visual Studio 2013 的扩展：
 
@@ -40,7 +37,7 @@ ms.locfileid: "40251077"
 
 5. 继续执行安装程序向导的其余部分。
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修复 2：要求 Visual Studio 重新安装扩展
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修复 2:要求 Visual Studio 重新设置扩展
 
 1. 检查 Xamarin 扩展是否已复制到 Visual Studio 扩展文件夹中：
 
@@ -55,7 +52,7 @@ ms.locfileid: "40251077"
 
     `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /setup`
 
-## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能的修复 3：尝试完全重新安装 Xamarin
+## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能的修复 3:请尝试完全重新安装 Xamarin
 
 1.  在 Windows 控制面板中，卸载存在的所有以下项目：
 
@@ -99,7 +96,7 @@ ms.locfileid: "40251077"
 
 10.  重新安装当前稳定版本从 Xamarin [visualstudio.com](https://visualstudio.com/xamarin)。
 
-## <a name="possible-fix-4-repair-visual-studio-installation"></a>可能的修复 4：修复 Visual Studio 安装
+## <a name="possible-fix-4-repair-visual-studio-installation"></a>可能的修复 4:修复 Visual Studio 安装
 
 1.  打开 Windows 的“程序和功能”控制面板。
 

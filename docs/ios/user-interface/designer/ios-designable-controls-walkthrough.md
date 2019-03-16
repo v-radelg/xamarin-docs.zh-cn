@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 0401c2c05677c719bbe4914cc7e008b650fdd198
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526235"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070821"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>IOS 设计器中使用自定义控件
 
 ## <a name="requirements"></a>要求
 
-用于 iOS 的 Xamarin 设计器是在 Visual Studio for Mac 和 Visual Studio 2015 和 2017年在 Windows 上可用。
+用于 iOS 的 Xamarin 设计器是 Visual Studio for Mac 和 Visual Studio 2017 和更高版本在 Windows 中可用。
 
 本指南假定你熟悉中介绍的内容[入门指导](~/ios/get-started/index.md)。
 

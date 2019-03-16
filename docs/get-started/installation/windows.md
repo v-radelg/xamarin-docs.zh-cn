@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: d9f4717a4dd76e2fb3767c7baf9aaa868cfc21ff
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 62a10ca57b867255766c02616ee41e57ac166af3
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57199813"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071042"
 ---
 # <a name="installing-xamarin-in-visual-studio-2017"></a>在 Visual Studio 2017 中安装 Xamarin
 
@@ -29,7 +29,7 @@ ms.locfileid: "57199813"
 
 也可单击“帮助”>“关于 Microsoft Visual Studio”，滚动浏览已安装的产品列表，查看是否已安装 Xamarin：
 
-![Visual Studio 2015 已安装产品屏幕](windows-images/13-xamarin-is-installed.png "Visual Studio 2015 已安装产品屏幕")
+![安装 visual Studio 2017 产品屏幕](windows-images/13-xamarin-is-installed.png "安装 Visual Studio 2017 产品屏幕")
 
 有关查找版本信息的详细信息，请参阅 [Where can I find my version information and logs?](~/cross-platform/troubleshooting/questions/version-logs.md)（在何处可找到我的版本信息和日志？）
 

@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 765494b5d9a55aedd9c9b3f0ea29ea389346ae3c
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.openlocfilehash: c34d81feee48caca94989973a67ba783a0139a90
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267620"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071057"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -65,8 +65,6 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
     1. 更新到 Visual Studio 2017 版本 15.7 或更高版本 (请参阅[Visual Studio 2017 更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
 
     2. 使用[SDK 管理器](~/android/get-started/installation/android-sdk.md)安装 26.0 或更高版本的 API 级别。
-
--   如果使用 Visual Studio 2015，建议降级 SDK Tools 为 25，然后使用旧 Google 仿真器管理器 GUI。 仍可以与 API 26，27 日，和更高版本，结合使用的 SDK 工具 25 和不会影响开发新的平台。 这将提供一个接口用于管理较旧版本的 VS Android SDK。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

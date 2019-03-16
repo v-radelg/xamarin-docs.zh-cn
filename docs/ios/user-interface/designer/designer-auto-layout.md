@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cfb684df89bf800a0d32607b119d1bd3fc297c58
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123734"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070861"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>适用于 iOS 的 Xamarin 设计器的自动布局
 
@@ -22,7 +22,7 @@ ms.locfileid: "50123734"
 
 ## <a name="requirements"></a>要求
 
-用于 iOS 的 Xamarin 设计器是在 Visual Studio for Mac 在 Visual Studio 2015 和 2017年在 Windows 上可用。
+用于 iOS 的 Xamarin 设计器是在 Visual Studio for Mac 在 Visual Studio 2017 和更高版本在 Windows 中可用。
 
 本指南假定你了解从设计器的组件[iOS 设计器简介](~/ios/user-interface/designer/introduction.md)指南。
 
@@ -56,11 +56,11 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 约束工具栏已更新，并且现在包含两个主要部分：
 
-- **约束模式按钮切换**： 以前，通过再次单击设计图面上的所选视图进入约束模式。 现在，您将在约束栏中使用此切换按钮：
+- **约束模式按钮切换**:以前，通过再次单击设计图面上的所选视图进入约束模式。 现在，您将在约束栏中使用此切换按钮：
 
   ![约束模式切换](designer-auto-layout-images/constraints.png)
 
-- **"更新约束"按钮：** 务必要注意，具体取决于更改要在编辑模式的约束。
+- **"更新约束"按钮：** 请务必注意，具体取决于更改要在编辑模式的约束。
   - 约束编辑模式下此按钮调整要匹配的元素帧的约束。
   - 帧编辑模式中此按钮调整元素帧以匹配定义约束的位置。
 

@@ -20,7 +20,7 @@ ms.date: 03/22/2017
 
 ## <a name="requirements"></a>要求
 
-情节提要可以用于 iOS 设计器在 Visual Studio for Mac 或 Visual Studio 2015 和 2017年安装的 Xamarin 工作负荷。
+情节提要可与 iOS 设计器在 Visual Studio for Mac 或 Visual Studio 2017 与安装的 Xamarin 工作负荷。
 
 ## <a name="what-is-a-storyboard"></a>什么是情节提要？
 

@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: b8eafc3c9c85ba8067b5da7b568ed7c91c9e170c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 9f39580d282defed354f3b9e5cbe4eb1cdec4796
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666420"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070925"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>创建 MonoGame UWP 项目
 
@@ -26,10 +26,10 @@ _MonoGame 可以用于创建通用 Windows 平台、 面向多个设备使用一
 开发 MonoGame UWP 应用需要：
 
 - Windows 10 操作系统
-- Visual Studio 2015 任何版本
+- 任何版本的 Visual Studio 2017
 - Windows 10 开发人员工具
 - 设置设备到开发人员模式
-- [Visual Studio 的 MonoGame 3.5](http://www.monogame.net/2016/03/17/monogame-3-5/)或更高版本
+- [用于 Visual Studio MonoGame 3.7.1](http://community.monogame.net/t/monogame-3-7-1-release/11173)或更高版本
 
 有关详细信息，请参阅此[页上设置 Windows 10 UWP 开发](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)。
 

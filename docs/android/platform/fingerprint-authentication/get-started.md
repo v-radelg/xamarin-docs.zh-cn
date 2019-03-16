@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
-ms.openlocfilehash: 731aeaf0ad89a44211072962bf9891851a44ffcc
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 3082dfcd6d0ffbc6404a89a10819e60b57b9c61c
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667719"
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58070704"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>开始使用指纹身份验证
 
@@ -25,7 +25,7 @@ ms.locfileid: "57667719"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Android 应用程序必须请求`USE_FINGERPRINT`清单中的权限。 下面的屏幕截图显示了如何将此权限添加到 Visual Studio 2015 中的应用程序：
+Android 应用程序必须请求`USE_FINGERPRINT`清单中的权限。 下面的屏幕截图显示了如何将此权限添加到 Visual Studio 中的应用程序：
 
 [![启用使用\_指纹在 Android 清单屏幕](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 
