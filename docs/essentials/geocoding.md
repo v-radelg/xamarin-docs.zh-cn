@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：Geocoding
+title: Xamarin.Essentials:地理编码
 description: Xamarin.Essentials 中的 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 0f44f179588c564ac9fa46d42ec18de6d303e239
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: bc08554f0060ca5de8d7ffc90ea5c65463b93f3b
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898974"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972593"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：Geocoding
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:地理编码
 
 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。
 
@@ -76,7 +76,9 @@ catch (Exception ex)
 
 高度并非总是可用的。 如果不可用，`Altitude` 属性可能为 `null` 或值可能为零。 如果高度可用，此值为海拔高度（以米为单位）。
 
-为现有的一组坐标获取[地标](xref:Xamarin.Essentials.Placemark)：
+## <a name="using-reverse-geocoding"></a>使用反向地理编码
+
+反向地理编码是获取现有一组坐标对应的[地标](xref:Xamarin.Essentials.Placemark)的过程：
 
 ```csharp
 try
@@ -116,7 +118,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>两个位置之间的距离
 
-[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了可用于计算两个位置之间的距离的方法。 有关示例，请参阅文章 [**Xamarin.Essentials：Geolocation**](geolocation.md#calculate-distance)。
+[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了可用于计算两个位置之间的距离的方法。 有关示例，请参阅文章 [**Xamarin.Essentials：地理位置**](geolocation.md#calculate-distance)。
 
 ## <a name="api"></a>API
 
