@@ -5,12 +5,12 @@ description: 本文档会比较的相似之处和 Xamarin.Forms 和 WPF 应用�
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 653e2f849a74948d3636f594eae91cdeabfae138
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526788"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175221"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 与。Xamarin.Forms 应用程序生命周期
 
@@ -51,7 +51,7 @@ WPF 使用`Window`作为任何顶层可视元素的根元素。 这将在 Window
 
 从技术上讲可以呈现到两个单独平台视图 (例如定义两个`UIWindow`对象它们具有第二个呈现到外部显示器或 AirPlay)，它需要特定于平台的代码来执行此操作并不直接支持的功能Xamarin.Forms 本身。
 
-### <a name="views"></a>视图
+### <a name="views"></a>Views
 
 这两个框架的可视化层次结构是类似的。 WPF 是有点深入由于它对所见即所得的文档的支持。
 
@@ -137,7 +137,7 @@ WPF 与 Xamarin.Forms 使用布局控件来定位子元素。 在大多数情况
 
 ### <a name="rendering"></a>“呈现”
 
-WPF 和 Xamarin.Forms 的呈现机制是全然不同。 在 WPF 中，直接创建的控件内容呈现到屏幕上的像素。 WPF 维护两个对象图 (_树_) 来表示此-_逻辑树_表示控件中的代码或 XAML，定义并_可视化树_表示这是在屏幕发生的实际呈现执行直接通过可视元素 （通过虚拟 draw 方法），或通过 XAML 定义`ControlTemplate`它们可以替换或自定义。 通常情况下，可视化树是更复杂，因为它包含此如控件、 隐式内容等标签周围的边框。WPF 还包括一组 Api (`LogicalTreeHelper`和`VisualTreeHelper`) 若要检查这些两个对象图形。
+WPF 和 Xamarin.Forms 的呈现机制是全然不同。 在 WPF 中，直接创建的控件内容呈现到屏幕上的像素。 WPF 维护两个对象图 (_树_) 来表示此-_逻辑树_表示控件中的代码或 XAML，定义并_可视化树_表示这是在屏幕发生的实际呈现执行直接通过可视元素 （通过虚拟 draw 方法），或通过 XAML 定义`ControlTemplate`它们可以替换或自定义。 通常情况下，可视化树是更复杂，因为它包含控件、 隐式内容等标签周围的边框等。WPF 还包括一组 Api (`LogicalTreeHelper`和`VisualTreeHelper`) 若要检查这些两个对象图形。
 
 在 Xamarin.Forms 中，控件中定义`Page`是实际上只是简单的数据对象。 它们类似于逻辑树表示形式，但永远不会呈现在其自己的内容。 相反，它们是_数据模型_这会影响元素的呈现。 实际呈现通过[单独的一套_visual 呈现器_该列映射到每个控件类型](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。 这些呈现器均由特定于平台的 Xamarin.Forms 程序集注册每个特定于平台的项目中。 可以看到列表[此处](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。 Xamarin.Forms 还具有对支持替换或扩展呈现，除了[效果](~/xamarin-forms/app-fundamentals/effects/index.md)这可用于影响基于每个平台的本机呈现。
 
@@ -151,7 +151,7 @@ Xamarin.Forms 不包括对一个简单的矩形之外的基元的图形系统 (`
 
 ## <a name="resources"></a>资源
 
-WPF 和 Xamarin.Forms 都具有资源和资源字典的概念。 可以将放置到任何对象类型`ResourceDictionary`键然后查找它与`{StaticResource}`的内容，不会更改，或`{DynamicResource}`的内容可以在运行时字典中进行更改。 使用情况和机制是相同的一个差别在于： Xamarin.Forms 要求您定义`ResourceDictionary`要分配给`Resources`属性而 WPF 预先创建一个并将其分配为您。
+WPF 和 Xamarin.Forms 都具有资源和资源字典的概念。 可以将放置到任何对象类型`ResourceDictionary`键然后查找它与`{StaticResource}`的内容，不会更改，或`{DynamicResource}`的内容可以在运行时字典中进行更改。 使用情况和机制是相同，但有一个不同之处：Xamarin.Forms 要求您定义`ResourceDictionary`要分配给`Resources`属性而 WPF 预先创建一个并将其分配为您。
 
 有关示例，请参阅以下定义：
 

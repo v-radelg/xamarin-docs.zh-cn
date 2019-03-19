@@ -1,18 +1,18 @@
 ---
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
-title: WPF 与。Xamarin.Forms： 相似之处和差异
+title: WPF 与。Xamarin.Forms:相似性和差异
 description: 本文档进行比较和对比 WPF 到 Xamarin.Forms。 它讨论控件模板、 XAML、 绑定基础结构、 数据模板、 ItemsControl、 用户控件、 导航和 URL 导航。
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: d3e772c270f6003d01e3e7b487f69f682fec2d61
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 990253cbd31ad79bc47f086dc5bd2b99233f2032
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617587"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175234"
 ---
-# <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与。Xamarin.Forms： 相似之处和差异
+# <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与。Xamarin.Forms:相似性和差异
 
 ## <a name="control-templates"></a>控件模板
 
@@ -127,7 +127,7 @@ Text={Binding Source={x:Reference otherControl}, Path=Text}
 
 Xamarin.Forms-就像 WPF 一样完全支持值转换器。 使用相同的接口形状，但 Xamarin.Forms 中定义的接口`Xamarin.Forms`命名空间。
 
-### <a name="model-view-viewmodel"></a>模型-视图-视图模型
+### <a name="model-view-viewmodel"></a>Model-View-ViewModel
 
 MVVM 是完全受支持 WPF 与 Xamarin.Forms。
 
@@ -154,7 +154,7 @@ Xamarin.Forms 绑定中完全支持这两个接口。 与许多基于 XAML 的�
 
 ## <a name="itemscontrol"></a>ItemsControl
 
-没有到没有内置 equivelent`ItemsControl`在 Xamarin.Forms 中; 但没有[自定义一个用于 Xamarin.Forms 可从以下站点](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)。
+没有任何内置等效于`ItemsControl`在 Xamarin.Forms 中; 但没有[自定义一个用于 Xamarin.Forms 可从以下站点](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)。
 
 ## <a name="user-controls"></a>用户控件
 
@@ -173,7 +173,7 @@ WPF 还包括很少使用`NavigationService`这可用来提供一种"类似于�
 |制表符|TabbedPage|
 |向左/右轻扫|CarouselView|
 
-`NavigationPage`是最常用的方法，并且每一页具有`Navigation`属性可以用于推送或弹出页和导航堆栈中弹出。 这是到最接近的 equivelent`NavigationService`在 WPF 中找到。
+`NavigationPage`是最常用的方法，并且每一页具有`Navigation`属性可以用于推送或弹出页和导航堆栈中弹出。 这是最接近等效于`NavigationService`在 WPF 中找到。
 
 ### <a name="url-navigation"></a>URL 导航
 

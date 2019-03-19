@@ -6,18 +6,18 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: a1e7152ca0f24d1ac660742e97907ea9300df9a7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 221ee49e282b3b038d03f659d238336710283a66
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666874"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175403"
 ---
 # <a name="portable-class-libraries-pcl"></a>可移植类库 (PCL)
 
-> [!WARNING]
+> [!TIP]
 > 可移植类库 (Pcl) 被视为最新版本的 Visual Studio 中不推荐使用。
-> 虽然仍可以打开、 编辑和编译 Pcl，为新项目建议使用[.NET Standard 库](~/cross-platform/app-fundamentals/net-standard.md)。
+> 虽然仍可以打开、 编辑和编译 Pcl，为新项目建议使用[.NET Standard 库](~/cross-platform/app-fundamentals/net-standard.md)访问较大的 API 外围应用。
 
 构建跨平台应用程序的关键组件能够在各种特定于平台的项目间共享代码。 但是，这被复杂，因为不同的平台通常使用另一子组的.NET 基类库 (BCL)，并因此实际上只会生成到不同的.NET Core 库配置文件。 这意味着，每个平台只能使用类库，因此它们将出现需要单独的类库项目的每个平台以相同的配置文件为目标。
 
