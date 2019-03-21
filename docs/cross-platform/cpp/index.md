@@ -4,7 +4,7 @@ title: 通过 Xamarin 使用 C/c + + 库
 description: 'Visual Studio for Mac 可用于生成和适用于 Android 和 iOS，将跨平台 C/c + + 代码集成到移动应用使用 Xamarin 和C#。 此文章介绍了如何设置和调试 Xamarin 应用程序中的 c + + 项目。'
 author: mikeparker104
 ms.author: miparker
-ms.date: 12/17/20178
+ms.date: 12/17/2018
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>通过 Xamarin 使用 C/c + + 库
 
