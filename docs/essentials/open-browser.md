@@ -4,15 +4,15 @@ description: Xamarin.Essentials 中的 Browser 类允许应用程序在优化的
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: ea2a10c11a77fcb2b3ce142d176522ebf0310725
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 03/13/2019
+ms.openlocfilehash: 4a822b4b6738e261b9ddaee02334ad629e1d4879
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898865"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175312"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials：Browser
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials:浏览者
 
 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
 
@@ -42,6 +42,24 @@ public class BrowserTest
 ```
 
 此方法在用户启动并关闭（不一定）浏览器后返回。  `bool` 结果表明启动是否是成功。
+
+## <a name="customization"></a>自定义
+
+使用系统首选浏览器时，iOS 和 Android 有多种自定义选项。 这包括 `TitleMode`（仅限 Android ），以及出现的 `Toolbar`（iOS 和 Android）和 `Controls`（仅限 iOS）的首选颜色选项。 
+
+调用 `OpenAsync` 时，使用 `BrowserLaunchOptions` 指定这些选项。
+
+```csharp
+await Browser.OpenAsync(uri, new BrowserLaunchOptions
+                {
+                    LaunchMode = BrowserLaunchMode.SystemPreferred,
+                    TitleMode = BrowserTitleMode.Show,
+                    PreferredToolbarColor = Color.AliceBlue,
+                    PreferredControlColor = Color.Violet
+                });
+```
+
+![浏览器选项](images/browser-options.png)
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 

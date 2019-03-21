@@ -4,13 +4,13 @@ description: 本文档介绍 Xamarin.Essentials 中的 Geolocation 类，此类�
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 84e0a5d37b757d14750f6bd3119d8695b35d7544
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.date: 03/13/2019
+ms.openlocfilehash: 93abf62e5d0b1df48606e4515fca6747146c7777
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841362"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58175351"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:地理位置
 
@@ -187,6 +187,22 @@ catch (Exception ex)
 | UWP | <= 10 |
 
 <a name="calculate-distance" />
+
+## <a name="detecting-mock-locations"></a>检测模拟位置
+一些设备可能会从提供程序或通过提供模拟位置的应用程序返回模拟位置。 可以通过使用位于任何 [`Location`](xref:Xamarin.Essentials.Location) 的 `IsFromMockProvider` 进行检测。
+
+```csharp
+var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+var location = await Geolocation.GetLocationAsync(request);
+
+if (location != null)
+{
+    if(location.IsFromMockProvider)
+    {
+        // location is from a mock provider
+    }
+}
+```
 
 ## <a name="distance-between-two-locations"></a>两个位置之间的距离
 

@@ -5,13 +5,8 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 0f4271e5c0c9de53a83a840f7fe0a83b594a06fa
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898636"
 ---
+
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
 Xamarin.Essentials 可为开发人员提供其移动应用程序的跨平台 API。
@@ -31,8 +26,10 @@ Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员
 * [气压计](barometer.md?context=xamarin/xamarin-forms) – 监视气压计是否发生压力变化。
 * [电池](battery.md?context=xamarin/xamarin-forms) – 轻松检测电池电量、源和状态。
 * [剪贴板](clipboard.md?context=xamarin/xamarin-forms) – 快速方便地设置或读取剪贴板上的文本。
+* [颜色转换器](color-converters.md?context=xamarin/xamarin-forms) - 用于 System.Drawing.Color 的帮助程序方法。
 * [指南针](compass.md?context=xamarin/xamarin-forms) – 监视指南针是否发生变化。
 * [连接性](connectivity.md?context=xamarin/xamarin-forms) – 检查连接状态并检测变化。
+* [检测抖动](detect-shake.md?context=xamarin/xamarin-forms) - 检测设备的抖动移动。
 * [设备显示信息](device-display.md?context=xamarin/xamarin-forms) – 获取设备的屏幕指标和方向。
 * [设备信息](device-information.md?context=xamarin/xamarin-forms) – 轻松查找有关设备的信息。
 * [电子邮件](email.md?context=xamarin/xamarin-forms) – 轻松发送电子邮件。
@@ -48,11 +45,13 @@ Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员
 * [打开浏览器](open-browser.md?context=xamarin/xamarin-forms) – 快速方便地将浏览器打开到特定网站。
 * [方向传感器](orientation-sensor.md?context=xamarin/xamarin-forms) – 检索设备在三个维空间中的方向。
 * [电话拨号程序](phone-dialer.md?context=xamarin/xamarin-forms) – 打开电话拨号程序。
+* [平台扩展](platform-extensions.md?context=xamarin/xamarin-forms) - 用于转换矩形、大小和点的帮助程序方法。
 * [首选项](preferences.md?context=xamarin/xamarin-forms) – 快速方便地添加永久首选项。
 * [安全存储](secure-storage.md?context=xamarin/xamarin-forms) – 安全地存储数据。
 * [Share](share.md?context=xamarin/xamarin-forms) – 将文本和网站 URI 发送到其他应用。
 * [SMS](sms.md?context=xamarin/xamarin-forms) – 创建要发送的短信。
 * [文本到语音转换](text-to-speech.md?context=xamarin/xamarin-forms) – 在设备上读出文本。
+* [单位转换器](unit-converters.md?context=xamarin/xamarin-forms) - 转换单位的帮助程序方法。
 * [版本跟踪](version-tracking.md?context=xamarin/xamarin-forms) – 跟踪应用程序版本和内部版本号。
 * [振动](vibrate.md?context=xamarin/xamarin-forms) – 使振动设备。
 
