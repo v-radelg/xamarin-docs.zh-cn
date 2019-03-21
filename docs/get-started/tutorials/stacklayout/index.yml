@@ -6,15 +6,15 @@ metadata:
   audience: Developer
   level: Beginner
   ms.topic: interactive-tutorial
-  ms.date: 07/02/2019
+  ms.date: 02/07/2019
   author: davidbritch
   ms.author: dabritch
-  ms.openlocfilehash: 24ab316baf8a0be14d78d35e52698e2bff224dcc
-  ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+  ms.openlocfilehash: ed57e56ed25176d71696521c20cdc8ef57bda282
+  ms.sourcegitcommit: 0bc79a4a19e24408482cfa801374a726103f5f8d
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/01/2019
-  ms.locfileid: "57197843"
+  ms.lasthandoff: 03/20/2019
+  ms.locfileid: "58269300"
 items:
 - durationInMinutes: 1
   content: >
