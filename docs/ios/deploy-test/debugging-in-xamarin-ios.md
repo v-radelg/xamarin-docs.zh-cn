@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: a6cc7ffe52711f4e65f0191f8dc556760e8817ea
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: f11e727edd5101d332f8452a26056f15e3587d8b
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668772"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58070990"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -121,7 +121,7 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要在 Visual Studio 2015 中设置条件断点，请先[设置常规断点](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 右键单击断点，以显示其上下文菜单：
+若要在 Visual Studio 中设置条件断点，请先[设置常规断点](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 右键单击断点，以显示其上下文菜单：
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "断点上下文菜单")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 

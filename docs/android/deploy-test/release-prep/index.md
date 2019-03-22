@@ -38,7 +38,7 @@ ms.date: 03/21/2018
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 2015 及更高版本中，可通过项目“属性”的“Android 清单”部分指定应用程序图标，如以下屏幕截图所示：
+在 Visual Studio 2017 及更高版本中，可通过项目“属性”的“Android 清单”部分指定应用程序图标，如以下屏幕截图所示：
 
 [![设置应用程序图标](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
@@ -186,7 +186,8 @@ Android 清单包含 `android:debuggable` 属性，该属性控制是否可以�
 即使[已禁用调试](#Disable_Debugging)，攻击者仍可能重新打包应用程序，从而添加或删除配置选项或权限。 这可使他们对应用程序进行反向工程、调试或篡改。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 可用于混淆托管代码，并在生成时向 Xamarin.Android 应用插入运行时安全状态检测代码，对应用是否在根设备上运行进行检测和响应。
 
-Dotfuscator CE 随附在 Visual Studio 中，但是仅 Visual Studio 2015 Update 3（及更高版本）具有用于 Xamarin.Android 的正确版本。 若要使用 Dotfuscator，请单击“工具”>“PreEmptive Protection - Dotfuscator”。
+Visual Studio 2017 附带了 Dotfuscator CE。
+若要使用 Dotfuscator，请单击“工具”>“PreEmptive Protection - Dotfuscator”。
 
 若要配置 Dotfuscator CE，请参阅 [Using Dotfuscator Community Edition with Xamarin](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)（结合使用 Dotfuscator Community Edition 和 Xamarin）。
 完成配置后，Dotfuscator CE 将自动保护创建的每个生成。
