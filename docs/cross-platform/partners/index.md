@@ -223,6 +223,7 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[CommerceLab](http://www.commercelab.com.au)|悉尼，澳大利亚|我们基于悉尼的应用程序开发带来了小型企业，联机还是脱机，能够进行现代的市场竞争|
 |[Datacom](http://www.datacom.co.nz/)|惠灵顿，新西兰;新西兰奥克兰;悉尼，澳大利亚|Datacom 设计、 生成和运行 IT 系统和业务流程。|
 |[高级技术的 envoy](http://www.envoyat.com/)|Chatswood，澳大利亚|Envoy 专门构建的 web、 移动、 企业应用程序。|
+|[XAM 咨询](http://www.xam-consulting.com/)|澳大利亚宽|XAM 构建企业级应用程序。 20 多个专家在 Xamarin 中和无服务器组。|
 |[Kloud 解决方案](http://www.kloud.com.au)|澳大利亚墨尔本，|我们已经帮助许多澳大利亚的最大品牌转换其业务、 降低成本、 简化流程并引入了革命性的新服务与云计算|
 |[标记 Metro](http://www.markermetro.com/)|新西兰奥克兰;悉尼，澳大利亚|密钥的客户端体验包括迪斯尼移动，Sony，NZTE，Carters Holt Harvey，自由联邦银行和空气新西兰。 标记 Metro 非常荣幸能 Xamarin 合作伙伴。|
 |[Millipede](http://millipede.com.au)|澳大利亚墨尔本，|Millipede 是 WPP，一家全球性公司使用超过 8000 人的一部分。 我们是一组最具创造性的软件工程师、 设计和 UX 专家专注于开发更好、 更有效地移动解决方案从银行的安全使用者和企业实用程序应用到移动游戏。|

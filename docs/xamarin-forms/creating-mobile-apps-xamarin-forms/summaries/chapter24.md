@@ -1,18 +1,18 @@
 ---
 title: 第 24 章的摘要。 页导航
-description: 使用 Xamarin.Forms 创建移动应用： 第 24 章的摘要。 页导航
+description: 使用 Xamarin.Forms 创建移动应用：第 24 章的摘要。 页导航
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 764a148ffffc2c69dbab5aeca872e2d10ce9f159
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7210cffb3cd348a6bdbf6cee80c4b6cd55553c58
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052736"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329372"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 页导航
 
@@ -22,7 +22,7 @@ ms.locfileid: "53052736"
 
 ## <a name="modal-pages-and-modeless-pages"></a>模式页面和无模式页
 
-`VisualElement` 定义[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation)类型的属性[ `INavigation` ](xref:Xamarin.Forms.INavigation)，其中包括以下两种方法，以导航到新页面：
+`VisualElement` 定义[ `Navigation` ](xref:Xamarin.Forms.NavigableElement.Navigation)类型的属性[ `INavigation` ](xref:Xamarin.Forms.INavigation)，其中包括以下两种方法，以导航到新页面：
 
 - [`PushAsync`](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page))
 - [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page))

@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 8e466c80468551f8262cfe49556d9527a147de4c
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 8674ef47867acf3bca4d05fd6628a58e2f9ad90e
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197545"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329359"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门的深入探讨
 
@@ -353,7 +353,7 @@ public App ()
 }
 ```
 
-所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例都具有 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性，可提供修改页面堆栈的方法。 应仅当应用程序包括 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 时，才调用这些方法。 若要导航到 `NoteEntryPage`，则必须调用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) 方法，如下面的代码示例中所示：
+所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例都具有 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性，可提供修改页面堆栈的方法。 应仅当应用程序包括 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 时，才调用这些方法。 若要导航到 `NoteEntryPage`，则必须调用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) 方法，如下面的代码示例中所示：
 
 ```csharp
 await Navigation.PushAsync(new NoteEntryPage());
@@ -424,7 +424,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 
 在 [`Editor.Text`](xref:Xamarin.Forms.Editor.Text) 属性和源 对象的 `Text` 属性之间建立绑定。 中所做的更改`Editor`会自动传播到`Note`对象。 同样，如果对更改`Note.Text`属性，Xamarin.Forms 绑定引擎还将更新的内容`Editor`。 这称为双向绑定。
 
-有关数据绑定的详细信息，请参阅[Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+有关数据绑定的详细信息，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 ## <a name="styling"></a>“样式”
 
@@ -509,14 +509,14 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 
 此深入了解已检查使用 Xamarin.Forms 开发应用程序的基础知识。 建议的后续步骤包括了解以下功能：
 
-- 可使用 4 个主要控件组创建 Xamarin.Forms 应用程序的用户界面。 有关详细信息，请参阅[控件参考](~/xamarin-forms/user-interface/controls/index.md)。
-- 数据绑定是一种链接的两个对象的属性，使一个属性中的更改会自动反映在另一个属性的方法。 有关详细信息，请参阅[数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
-- Xamarin.Forms 提供了多种不同的页导航体验，取决于所使用的页类型。 有关详细信息，请参阅[导航](~/xamarin-forms/app-fundamentals/navigation/index.md)。
-- 样式有助于减少重复性的标记，并允许应用程序外观以更轻松地更改。 有关详细信息，请参阅[样式设置 Xamarin.Forms 应用](~/xamarin-forms/user-interface/styles/index.md)。
-- XAML 标记扩展元素特性，若要从文本字符串以外的源设置，从而扩展的功能和灵活性的 XAML。 有关详细信息，请参阅[XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)。
-- 数据模板提供的功能支持的视图上定义数据的表示形式。 有关详细信息，请参阅[数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
-- 每个页面、 布局和视图以不同的方式上呈现每个平台使用`Renderer`类，该类又创建本机控件，排列在屏幕上，并将添加共享代码中指定的行为。 开发人员可以实现自定义 `Renderer` 类，以自定义控件的外观和/或行为。 有关详细信息，请参阅[自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
-- 还可以自定义每个平台上的本机控件的效果。 特定于平台的项目中创建通过子类化效果[ `PlatformEffect` ](xref:Xamarin.Forms.PlatformEffect`2)类，并将其附加到相应的 Xamarin.Forms 控件使用。 有关详细信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+- 可使用 4 个主要控件组创建 Xamarin.Forms 应用程序的用户界面。 有关详细信息，请参阅[控件引用](~/xamarin-forms/user-interface/controls/index.md)。
+- 数据绑定将两个对象的属性链接起来，对某一属性的更改就会自动反映在另一个属性中。 有关详细信息，请参阅[数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+- Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。 有关详细信息，请参阅[导航](~/xamarin-forms/app-fundamentals/navigation/index.md)。
+- 样式有助于减少重复的标记，并且使用样式可以更轻松地更改应用程序的外观。 有关详细信息，请参阅[设计 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/index.md)。
+- XAML 标记扩展通过支持从文本字符串以外的源设置元素属性，扩展 XAML 的功能和灵活性。 有关详细信息，请参阅 [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)。
+- 数据模板让你可以在支持的视图上定义数据表示形式。 有关详细信息，请参阅[数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+- 通过 `Renderer` 类可以在每个平台上以不同方式呈现每个页面、布局和视图，反过来又可以创建本机控件，在屏幕上排列该控件，并添加共享代码中指定的行为。 开发人员可以实现自定义 `Renderer` 类，以自定义控件的外观和/或行为。 有关详细信息，请参阅[自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
+- 还可以自定义每个平台上的本机控件的效果。 通过子类化 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) 类在特定于平台的项目中创建效果，并将其附加到相应的 Xamarin.Forms 控件中使用。 有关详细信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 - 共享代码可通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 类访问本机功能。 有关详细信息，请参阅[通过 DependencyService 访问本机功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
 此外，也可以阅读 Charles Petzold 撰写的[使用 Xamarin.Forms 创建移动应用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)一书，了解有关 Xamarin.Forms 的详细信息。 可获取此书的 PDF 版本或多种电子书格式的版本。

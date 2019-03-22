@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 967d4ae65bdb47adf824f20f47c7b32e24211f9a
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831805"
 ---
+
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/WorkingWithListview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) 是用于呈现数据，尤其是需要滚动的长列表的列表视图。
+
+> [!IMPORTANT]
+> `CollectionView` 用于呈现数据的列表视图使用不同的布局规范。 它旨在提供更灵活和高性能替代方法[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>用例
 

@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/13/2018
-ms.openlocfilehash: da7d63f43a431d2a31428d28e81e8b6abfed838e
-ms.sourcegitcommit: 4c97f5d73be7eb2da153a85183be4258b6b11ca6
+ms.date: 03/21/2019
+ms.openlocfilehash: e165e6c713028517d69fee92916c94bbf0e46f33
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58288584"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329230"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 视图
 
@@ -170,11 +170,11 @@ _Xamarin.Forms 视图是跨平台移动用户界面的构建基块。_
 
 ## <a name="views-that-display-collections"></a>显示集合的视图
 
-### <a name="picker"></a>选取器
+### <a name="collectionview"></a>CollectionView
 
 |     |     |
 | --- | --- |
-| [`Picker`](xref:Xamarin.Forms.Picker) 显示选定的项，从列表中的文本字符串，并允许您选择该项，点击该视图时。 设置[ `Items` ](xref:Xamarin.Forms.Picker.Items)属性设置为一组字符串，则[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)属性设置为对象的集合。 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)当选中某个项时触发事件。<br /><br />`Picker`仅选择此项时显示的项的列表。 使用[ `ListView` ](#listView)或[ `TableView` ](#tableView)有关页保留的可滚动列表。<br /><br />[API 文档](xref:Xamarin.Forms.Picker) / [指南](~/xamarin-forms/user-interface/picker/index.md) / [示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![选取器示例](views-images/Picker.png "选取器示例")](views-images/Picker-Large.png#lightbox "选取器示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML 页面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml)与[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
+| `CollectionView` 显示可选择数据项，使用不同的布局规范的可滚动列表。 它旨在提供更灵活和高性能替代方法[ `ListView` ](xref:Xamarin.Forms.ListView)。 设置`ItemsSource`属性设置为一系列对象，并设置`ItemTemplate`属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)描述如何将项目要设置格式的对象。 `SelectionChanged`事件通知，已经为可进行选择`SelectedItem`属性。<br /><br />[指南](~/xamarin-forms/user-interface/collectionview/index.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/) | [![CollectionView 示例](views-images/CollectionView.png "CollectionView 示例")](views-images/CollectionView-Large.png#lightbox "CollectionView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/forms40/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) |
 |     |     |
 
 <a name="listView" />
@@ -184,6 +184,13 @@ _Xamarin.Forms 视图是跨平台移动用户界面的构建基块。_
 |     |     |
 | --- | --- |
 | [`ListView`](xref:Xamarin.Forms.ListView) 派生自[ `ItemsView[Cell]` ](xref:Xamarin.Forms.ItemsView`1) ，并显示可选择数据项的可滚动列表。 设置[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)属性设置为一系列对象，并设置[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)描述如何将项目对象要设置格式。 [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件发出信号，已做出选择，这是可用作[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)属性。<br /><br />[API 文档](xref:Xamarin.Forms.ListView) / [指南](~/xamarin-forms/user-interface/listview/index.md) / [示例](https://developer.xamarin.com/samples/WorkingWithListview) | [![ListView 示例](views-images/ListView.png "ListView 示例")](views-images/ListView-Large.png#lightbox "ListView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ListViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ListViewDemoPage.xaml) |
+|     |     |
+
+### <a name="picker"></a>选取器
+
+|     |     |
+| --- | --- |
+| [`Picker`](xref:Xamarin.Forms.Picker) 显示选定的项，从列表中的文本字符串，并允许您选择该项，点击该视图时。 设置[ `Items` ](xref:Xamarin.Forms.Picker.Items)属性设置为一组字符串，则[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)属性设置为对象的集合。 [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)当选中某个项时触发事件。<br /><br />`Picker`仅选择此项时显示的项的列表。 使用[ `ListView` ](#listView)或[ `TableView` ](#tableView)有关页保留的可滚动列表。<br /><br />[API 文档](xref:Xamarin.Forms.Picker) / [指南](~/xamarin-forms/user-interface/picker/index.md) / [示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/) | [![选取器示例](views-images/Picker.png "选取器示例")](views-images/Picker-Large.png#lightbox "选取器示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PickerDemoPage.cs) / [XAML 页面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml)与[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PickerDemoPage.xaml.cs) |
 |     |     |
 
 <a name="tableView" />

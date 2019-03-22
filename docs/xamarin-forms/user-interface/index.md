@@ -27,7 +27,7 @@ Xamarin.Forms 具有自己的动画基础结构直接用于创建简单动画，
 
 `Button`响应点击或单击，将定向的应用程序来执行特定任务。
 
-## <a name="collectionviewcollectionviewmd"></a>[CollectionView](collectionview.md)
+## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
 `CollectionView`是灵活且高性能的视图来显示数据使用不同的布局规范的列表。
 
