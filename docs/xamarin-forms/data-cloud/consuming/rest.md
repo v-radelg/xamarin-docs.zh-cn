@@ -6,13 +6,13 @@ ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 840dee3213bc117cff82fe52b094dc71f343dcd1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.date: 01/22/2018
+ms.openlocfilehash: 1b25a4a1b65a1473bd122ae9cf7c1a6a72ff9ccc
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668187"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477377"
 ---
 # <a name="consuming-a-restful-web-service"></a>使用 RESTful Web 服务
 
@@ -38,7 +38,7 @@ RESTful web 服务通常使用 JSON 消息来将数据返回到客户端。 JSON
 
 REST 的简单性已帮助使其用于访问移动应用程序中的 web 服务的主要方法。
 
-设置 REST 服务的说明可以找到示例应用程序附带的自述文件中。 但是，当运行示例应用程序时，它将连接到一个 Xamarin 托管 REST 服务，允许只读访问的数据，如以下屏幕截图中所示：
+运行示例应用程序时，它将连接到的本地托管的 REST 服务中，如以下屏幕截图中所示：
 
 ![](rest-images/portal.png "示例应用程序")
 
@@ -78,10 +78,6 @@ config.Routes.MapHttpRoute(
 
 REST 服务使用基本身份验证。 有关详细信息请参阅[RESTful web 服务进行身份验证](~/xamarin-forms/data-cloud/authentication/rest.md)。 有关 ASP.NET Web API 路由的详细信息，请参阅[ASP.NET Web API 中的路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)ASP.NET 网站上。 有关生成使用 ASP.NET Core 的 REST 服务的详细信息，请参阅[创建本机移动应用程序的后端服务](/aspnet/core/mobile/native-mobile-backend/)。
 
-> [!NOTE]
-> 示例应用程序使用 Xamarin 托管 REST 服务，提供对 web 服务的只读访问。 因此，创建、 更新和删除数据的操作不会更改应用程序中使用的数据。 但是，REST 服务的可承载版本现已推出**TodoRESTService**文件夹中附带[示例代码](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)。
-> 如果您自己托管 REST 服务，它允许完全创建、 更新、 读取和删除对数据的访问。
-
 `HttpClient`类用于发送和接收通过 HTTP 请求。 它提供的功能用于发送 HTTP 请求和接收 HTTP 响应从 URI 标识的资源。 每个请求将作为异步操作发送。 有关异步操作的详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
 `HttpResponseMessage`类表示 HTTP 响应消息进行 HTTP 请求之后收到来自 web 服务。 它包含有关响应，包括状态代码、 标头和任何主体的信息。 `HttpContent`类表示的 HTTP 正文和内容标头，如`Content-Type`和`Content-Encoding`。 可以读取内容，使用任一`ReadAs`方法，如`ReadAsStringAsync`和`ReadAsByteArrayAsync`根据数据的格式。
@@ -93,19 +89,16 @@ REST 服务使用基本身份验证。 有关详细信息请参阅[RESTful web �
 ```csharp
 public class RestService : IRestService
 {
-  HttpClient client;
+  HttpClient _client;
   ...
 
   public RestService ()
   {
-    client = new HttpClient ();
-    client.MaxResponseContentBufferSize = 256000;
+    _client = new HttpClient ();
   }
   ...
 }
 ```
-
-`HttpClient.MaxResponseContentBufferSize`属性用于指定最大读取的 HTTP 响应消息中的内容时要缓冲的字节数。 此属性的默认大小是一个整数的最大大小。 因此，该属性设置为较小的值，作为安全措施，以限制的应用程序将接受作为 web 服务的响应的数据量。
 
 ### <a name="retrieving-data"></a>检索数据
 
@@ -115,11 +108,11 @@ public class RestService : IRestService
 public async Task<List<TodoItem>> RefreshDataAsync ()
 {
   ...
-  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/
-  var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
+  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
   ...
-  var response = await client.GetAsync (uri);
-  if (response.IsSuccessStatusCode) {
+  var response = await _client.GetAsync (uri);
+  if (response.IsSuccessStatusCode)
+  {
       var content = await response.Content.ReadAsStringAsync ();
       Items = JsonConvert.DeserializeObject <List<TodoItem>> (content);
   }
@@ -138,21 +131,22 @@ REST 服务中发送的 HTTP 状态代码`HttpResponseMessage.IsSuccessStatusCod
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
-  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/
-  var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
+  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
 
   ...
   var json = JsonConvert.SerializeObject (item);
   var content = new StringContent (json, Encoding.UTF8, "application/json");
 
   HttpResponseMessage response = null;
-  if (isNewItem) {
-    response = await client.PostAsync (uri, content);
+  if (isNewItem)
+  {
+    response = await _client.PostAsync (uri, content);
   }
   ...
 
-  if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"                TodoItem successfully saved.");
+  if (response.IsSuccessStatusCode)
+  {
+    Debug.WriteLine (@"\tTodoItem successfully saved.");
 
   }
   ...
@@ -175,7 +169,7 @@ REST 服务中发送的 HTTP 状态代码`HttpResponseMessage.IsSuccessStatusCod
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
   ...
-  response = await client.PutAsync (uri, content);
+  response = await _client.PutAsync (uri, content);
   ...
 }
 ```
@@ -194,12 +188,12 @@ REST 服务中发送的 HTTP 状态代码`HttpResponseMessage.IsSuccessStatusCod
 ```csharp
 public async Task DeleteTodoItemAsync (string id)
 {
-  // RestUrl = https://developer.xamarin.com:8081/api/todoitems/{0}
-  var uri = new Uri (string.Format (Constants.RestUrl, id));
+  var uri = new Uri (string.Format (Constants.TodoItemsUrl, id));
   ...
-  var response = await client.DeleteAsync (uri);
-  if (response.IsSuccessStatusCode) {
-    Debug.WriteLine (@"                TodoItem successfully deleted.");
+  var response = await _client.DeleteAsync (uri);
+  if (response.IsSuccessStatusCode)
+  {
+    Debug.WriteLine (@"\tTodoItem successfully deleted.");
   }
   ...
 }
@@ -210,11 +204,6 @@ REST 服务中发送的 HTTP 状态代码`HttpResponseMessage.IsSuccessStatusCod
 - **204 （无内容）** – 成功处理该请求，响应是有意留为空白。
 - **400 （错误请求）** – 请求不理解的服务器。
 - **404 （找不到）** – 服务器上不存在请求的资源。
-
-## <a name="summary"></a>总结
-
-本文介绍了如何使用 Xamarin.Forms 应用程序中的 RESTful web 服务使用`HttpClient`类。 REST 的简单性已帮助使其用于访问移动应用程序中的 web 服务的主要方法。
-
 
 ## <a name="related-links"></a>相关链接
 

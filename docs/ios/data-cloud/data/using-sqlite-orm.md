@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/18/2018
-ms.openlocfilehash: e78c224bae3a0e2c2dfcfded30a4bf2c4794e255
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 370867b52ec09d0c3ad0f801b6a75c356d806734
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112008"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477390"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>通过 Xamarin.iOS 使用 SQLite.NET
 
@@ -26,8 +26,8 @@ ORM 代表对象关系映射 – 一个 API，还可以保存和检索数据库�
 若要在 Xamarin 应用中包含 SQLite.NET 库，请向项目添加以下 NuGet 包：
 
 - **包名称：** sqlite net pcl
-- **作者：** Frank A.Krueger
-- **Id:** sqlite net pcl
+- **创建者：** Frank A. Krueger
+- **ID：** sqlite net pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 包](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 包")](using-sqlite-orm-images/image1a.png#lightbox)
@@ -196,11 +196,13 @@ var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>通过多个线程使用 SQLite.NET
 
-SQLite 支持三种不同的线程模式：*单线程*，*多线程*，并*已序列化*。 如果你想要从多个线程不受任何限制地访问数据库，可以配置要使用的 SQLite**序列化**线程处理模式。 务必尽早在你的应用程序中设置此模式 (例如，在开头`OnCreate`方法)。
+SQLite 支持三种不同的线程模式：*单线程*，*多线程*，和*序列化*。 如果你想要从多个线程不受任何限制地访问数据库，可以配置要使用的 SQLite**序列化**线程处理模式。 务必尽早在你的应用程序中设置此模式 (例如，在开头`OnCreate`方法)。
 
-若要更改线程的模式，请调用`SqliteConnection.SetConfig`。 例如，这行代码配置适用于 SQLite**序列化**模式：
+若要更改线程的模式，请调用`SqliteConnection.SetConfig`后者位于`Mono.Data.Sqlite`命名空间。 例如，这行代码配置适用于 SQLite**序列化**模式：
 
 ```csharp
+using Mono.Data.Sqlite;
+...
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
