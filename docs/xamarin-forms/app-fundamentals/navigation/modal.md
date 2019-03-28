@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 32d0775baa75b70ebc118457945efc0f6c0acec2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c84995e210d61e735d12a089f40bf9afa720acb5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057056"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329281"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
@@ -39,9 +39,9 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 ## <a name="performing-navigation"></a>执行导航
 
-可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性公开模式导航方法。 可通过这些方法将[模式页面推送](#Pushing_Pages_to_the_Modal_Stack)到模式堆栈中，还可从模式堆栈中[弹出模式页面](#Popping_Pages_from_the_Modal_Stack)。
+可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性公开模式导航方法。 可通过这些方法将[模式页面推送](#Pushing_Pages_to_the_Modal_Stack)到模式堆栈中，还可从模式堆栈中[弹出模式页面](#Popping_Pages_from_the_Modal_Stack)。
 
-[`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性也可公开 [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 属性，并从中获得模式堆栈中的模式页面。 但是，在模式导航中没有执行模式堆栈操作或弹出到根页的概念。 这是因为基础平台普遍都不支持这些操作。
+[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性也可公开 [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 属性，并从中获得模式堆栈中的模式页面。 但是，在模式导航中没有执行模式堆栈操作或弹出到根页的概念。 这是因为基础平台普遍都不支持这些操作。
 
 > [!NOTE]
 > 执行模式页面导航无需具有 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例。
@@ -50,7 +50,7 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>将页面推送到模式堆栈
 
-若要导航到 `ModalPage`，必须调用当前页的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性上的 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) 方法，如以下代码示例所示：
+若要导航到 `ModalPage`，必须调用当前页的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性上的 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) 方法，如以下代码示例所示：
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -107,7 +107,7 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 
 ### <a name="animating-page-transitions"></a>对页面过渡效果进行动画处理
 
-每个页面的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性还提供已替代的 push 和 pop 方法，这些方法包含一个 `boolean` 参数，用于控制是否在导航期间显示页面动画，如以下代码示例所示：
+每个页面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性还提供已替代的 push 和 pop 方法，这些方法包含一个 `boolean` 参数，用于控制是否在导航期间显示页面动画，如以下代码示例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)

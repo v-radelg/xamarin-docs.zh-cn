@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: f69acd60d7a80607528e4a39ee6a8bfbc19711f5
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: c5eeb00d4dc5992666a7ba5f9fef2685d5056447
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207968"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329268"
 ---
 # <a name="hierarchical-navigation"></a>分层导航
 
@@ -28,7 +28,7 @@ NavigationPage 类提供分层导航体验，用户可以随心所欲地向前�
 
 ![](hierarchical-images/popping.png "从导航堆栈中弹出页面")
 
-可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性公开导航方法。 这些方法能够将页面推送到导航堆栈、从导航堆栈中弹出页面以及执行堆栈操作。
+可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性公开导航方法。 这些方法能够将页面推送到导航堆栈、从导航堆栈中弹出页面以及执行堆栈操作。
 
 <a name="Performing_Navigation" />
 
@@ -69,7 +69,7 @@ public App ()
 
 ### <a name="pushing-pages-to-the-navigation-stack"></a>将页面推送到导航堆栈
 
-若要导航到 `Page2Xaml`，需要对当前页的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性调用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法，如以下代码示例所示：
+若要导航到 `Page2Xaml`，需要对当前页的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性调用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法，如以下代码示例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -114,7 +114,7 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 
 但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
-除了 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 和 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法之外，每个页面的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性还提供了 [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) 方法，如下面的代码示例所示：
+除了 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 和 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法之外，每个页面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性还提供了 [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) 方法，如下面的代码示例所示：
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -127,7 +127,7 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 ### <a name="animating-page-transitions"></a>对页面过渡效果进行动画处理
 
-每个页面的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性还提供已替代的 push 和 pop 方法，这些方法包含一个 `boolean` 参数，用于控制是否在导航期间显示页面动画，如以下代码示例所示：
+每个页面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性还提供已替代的 push 和 pop 方法，这些方法包含一个 `boolean` 参数，用于控制是否在导航期间显示页面动画，如以下代码示例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -276,7 +276,7 @@ public class SecondPageCS : ContentPage
 
 ## <a name="manipulating-the-navigation-stack"></a>操作导航堆栈
 
-可使用 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性公开 [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) 属性，并从中获得导航堆栈中的页面。 当 Xamarin.Forms 维护对导航堆栈的访问时，`Navigation` 属性提供 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 和 [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) 方法，用于通过插入页面或将其删除来操作堆栈。
+可使用 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性公开 [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) 属性，并从中获得导航堆栈中的页面。 当 Xamarin.Forms 维护对导航堆栈的访问时，`Navigation` 属性提供 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 和 [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) 方法，用于通过插入页面或将其删除来操作堆栈。
 
 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 方法将导航堆栈中的指定页插入到现有指定页之前，如下图所示：
 

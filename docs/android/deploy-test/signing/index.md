@@ -7,13 +7,8 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: f05de5185f224f8606f38011d8f307ed62d64541
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112866"
 ---
+
 # <a name="signing-the-android-application-package"></a>对 Android 应用程序包进行签名
 
 在[做好应用程序发布准备](~/android/deploy-test/release-prep/index.md)中，使用了“存档管理器”以生成应用并将它放置在存档中以进行签名和发布。 此部分说明如何创建 Android 签名标识、为 Android 应用程序创建新签名证书以及将存档应用即席发布到磁盘。 生成的 APK 可以旁加载到 Android 设备中，而无需经过应用商店。
@@ -42,7 +37,7 @@ ms.locfileid: "50112866"
 
 选择“即席”之后，Visual Studio 会打开对话框的“签名标识”页，如下一个屏幕截图所示。 若要发布 .APK，必须首先使用签名密钥（也称为证书）对它进行签名。
 
-可以通过单击“导入”按钮，然后前进到[对 APK 进行签名](#signapkvs)，来使用现有证书。 否则，单击“+”按钮创建新证书：
+可以通过单击“导入”按钮，然后前进到[对 APK 进行签名](#sign-the-apk)，来使用现有证书。 否则，单击“+”按钮创建新证书：
 
 [![临时签名标识](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
@@ -69,7 +64,7 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-单击“即席”之后，Visual Studio for Mac 会打开“Android 签名标识”对话框，如下一个屏幕截图所示。 若要发布 .APK，必须首先使用签名密钥（也称为证书）对它进行签名。 如果证书已存在，则单击“导入现有密钥”按钮以导入它，然后前进到[对 APK 进行签名](#signapkxs)。否则，单击“创建新密钥”按钮以创建新证书： 
+单击“即席”之后，Visual Studio for Mac 会打开“Android 签名标识”对话框，如下一个屏幕截图所示。 若要发布 .APK，必须首先使用签名密钥（也称为证书）对它进行签名。 如果证书已存在，则单击“导入现有密钥”按钮以导入它，然后前进到[对 APK 进行签名](#sign-the-apk)。否则，单击“创建新密钥”按钮以创建新证书：
 
 [![“Android 签名标识”对话框](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
@@ -92,8 +87,6 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 有关密钥存储的详细信息，请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)。
 
 -----
-
-<a name="signapkvs" />
 
 ## <a name="sign-the-apk"></a>对 APK 进行签名
 
@@ -137,7 +130,7 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 
 ![“输出 APK 文件”对话框](images/xs/06-output-apk-file.png)
 
-接下来，为证书输入密码（在“创建新证书”对话框中使用的密码），然后单击“确定”： 
+接下来，为证书输入密码（在“创建新证书”对话框中使用的密码），然后单击“确定”：
 
 ![输入证书密码](images/xs/07-signing-certificate.png)
 

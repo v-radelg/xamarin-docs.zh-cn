@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: b88226dda14e2ae5cd21bb066e107fb4bcad78f6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0b91aae1456827625526d7568176a07e7e61f225
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672516"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507118"
 ---
 # <a name="implementing-a-hybridwebview"></a>实现 HybridWebView
 
@@ -30,7 +30,7 @@ _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于�
 
 1. [创建](#Creating_the_HybridWebView) `HybridWebView`自定义控件。
 1. [使用](#Consuming_the_HybridWebView) Xamarin.Forms 中的 `HybridWebView`。
-1. 在每个平台上为 `HybridWebView` [创建](#Creating_the_Custom_Renderer_on_each_Platform)自定义呈现器。
+1. 在每个平台上为 `HybridWebView` [创建](#creating-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在将依次讨论每个项目以实现 `HybridWebView` 呈现器，该呈现器增强特定于平台的 Web 控件以允许从 JavaScript 调用 C# 代码。 `HybridWebView` 实例将用于显示要求用户输入其名称的 HTML 页。 然后，当用户单击 HTML 按钮，JavaScript 函数将调用 C# `Action` 显示一个包含用户名称的弹出项。
 
@@ -141,8 +141,6 @@ public partial class HybridWebViewPage : ContentPage
 此操作调用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 方法以显示模式弹出项，该弹出项显示在 `HybridWebView` 实例显示的 HTML 页面中输入的名称。
 
 现在可以将自定义呈现器添加到每个应用程序项目，以通过允许从 JavaScript 调用 C# 代码来增强特定于平台的 Web 控件。
-
-<a nane="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每个平台上创建自定义呈现器
 

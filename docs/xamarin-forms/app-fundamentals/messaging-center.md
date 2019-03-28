@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 2e87142594da8f028323b5dc81afb0e9f8021028
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 6af392988b8ffa5f01ef07f81be53ea8f82e8fb5
+ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667050"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477325"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -35,7 +35,7 @@ _Xamarin.Forms 具有简单的消息传送服务，用于发送和接收消息�
 -  **订阅** - 侦听具有特定签名的消息，并在接收这些消息时执行某些操作。 多个订阅者可以侦听同一条消息。
 -  **发送** - 发布供侦听器执行操作的消息。 如果没有侦听器订阅该消息，则忽略该消息。
 
-`MessagingService` 是一个静态类，在整个解决方案中使用 `Subscribe` 和 `Send` 方法。
+`MessagingCenter` 是一个静态类，在整个解决方案中使用 `Subscribe` 和 `Send` 方法。
 
 消息具有字符串 `message` 参数，用作定位消息的方式。 `Subscribe` 和 `Send` 方法使用泛型参数进一步控制消息的接收方式 - 具有相同 `message` 文本但泛型类型参数不同的两则消息不会发送给同一个订阅者。
 

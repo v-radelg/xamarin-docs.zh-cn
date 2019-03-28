@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4e2d33276c865695d70abb2d8e00b3b80d446839
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207981"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329294"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 选项卡式页面
 
@@ -115,7 +115,7 @@ public class MainPageCS : TabbedPage
 
 #### <a name="navigation-inside-a-tab"></a>选项卡内的导航
 
-如下面的代码示例所示，可以通过调用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例的 [`Navigation`](xref:Xamarin.Forms.VisualElement.Navigation) 属性上的 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法来从第二个选项卡执行导航：
+如下面的代码示例所示，可以通过调用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性上的 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法来从第二个选项卡执行导航：
 
 ```csharp
 async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
