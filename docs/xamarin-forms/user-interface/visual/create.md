@@ -1,18 +1,18 @@
 ---
 title: 创建 Xamarin.Forms 视觉对象呈现器
-description: Xamarin.Forms Visual 使呈现器将有选择地应用于 VisualElement 对象，而不必子类 Xamarin.Forms 视图。
+description: 创建 Xamarin.Forms 视觉对象将有选择地应用于 VisualElement 对象，而不必子类 Xamarin.Forms 视图。
 ms.prod: xamarin
 ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 1bd56d09932c97508dd0a05fbc0eb2bad3af3f0e
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.openlocfilehash: a11c2045fa6119d0689834c35794bc8913c80bd6
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972580"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506962"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>创建 Xamarin.Forms 视觉对象呈现器
 
@@ -25,7 +25,7 @@ Xamarin.Forms Visual 使呈现器中创建并有选择地应用于[ `VisualEleme
 
 用于创建和使用 Xamarin.Forms 视觉对象呈现器的过程是：
 
-1. 创建平台呈现器为所需的视图。 有关详细信息，请参阅[创建呈现器](#create-platfomr-renderers)。
+1. 创建平台呈现器为所需的视图。 有关详细信息，请参阅[创建呈现器](#create-platform-renderers)。
 1. 创建派生的类型`IVisual`。 有关详细信息，请参阅[创建 IVisual 类型](#create-an-ivisual-type)。
 1. 注册`IVisual`类型作为的一部分`ExportRendererAttribute`修饰的呈现器。 有关详细信息，请参阅[注册 IVisual 类型](#register-the-ivisual-type)。
 1. 通过设置使用 Visual 呈现器[ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)到视图上的属性`IVisual`名称。 有关详细信息，请参阅[使用 Visual 呈现器](#consume-the-visual-renderer)。

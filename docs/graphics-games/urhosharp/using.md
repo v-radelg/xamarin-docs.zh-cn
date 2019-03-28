@@ -6,12 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7d07733ebf62e6e12ccee05f9b72eaf1a74afad2
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.openlocfilehash: 5e5c4f1545d39befde6574338ec4c1ca4037ad8b
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34784034"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507157"
 ---
 # <a name="using-urhosharp-to-build-a-3d-game"></a>使用 UrhoSharp 生成 3D 游戏
 
@@ -23,7 +23,7 @@ ms.locfileid: "34784034"
 
 场景模型可以描述为基于组件的场景图。 场景包含节点的层次结构场景，从根节点，还表示整个场景开始。 每个[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)具有三维转换 （位置、 旋转和缩放）、 名称、 ID 以及任意数量的组件。  组件将节点变为现实，它们会使添加可视表示形式 ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel))，它们可以发出声音 ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource))，它们可以提供冲突边界，依此类推。
 
-您可以创建您的场景和安装程序节点上使用[Urho 编辑器](#UrhoEditor)，或可以在 C# 代码中执行操作。  本文档中我们将探讨设置各项使用的代码，因为它们说明了使内容显示在屏幕上所需的元素
+您可以创建您的场景和安装程序节点上使用[Urho 编辑器](#urhoeditor)，或可以在 C# 代码中执行操作。  本文档中我们将探讨设置各项使用的代码，因为它们说明了使内容显示在屏幕上所需的元素
 
 除了设置您的场景，你需要设置[ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/)，这是向用户将获取显示的内容由什么决定。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 5e6d7b4bdfdf7ea48d26537cb41c763656b050e0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 59c61cc637a435f8107256ddcd6bfacfb0466867
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669640"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507014"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android 设计器材料设计功能
 
@@ -145,9 +145,9 @@ Material Design 的调色板的详细信息，请参阅 Material Design[颜色�
 
 **背景**颜色在设计器中的已更改为新的颜色选择，但尚未保存此更改。 此时，可以执行以下操作：
 
--   单击**放弃更改**放弃新的颜色选择 （或选择） 并恢复到其原始状态的主题。 
+-   单击**放弃更改**放弃新的颜色选择 （或选择） 并恢复到其原始状态的主题。
 
--   按<kbd>CTRL + S</kbd>保存到所做的更改当前主题。 
+-   按<kbd>CTRL + S</kbd>保存到所做的更改当前主题。
 
 在以下示例中， <kbd>CTRL + S</kbd> ，以便所做的更改保存到按下**AppTheme**:
 
@@ -300,7 +300,7 @@ Material Design 的调色板的详细信息，请参阅 Material Design[颜色�
 
 ### <a name="material-palette"></a>材质调色板
 
-**材料调色板**选项卡随即打开**材料设计调色板**所述[早期](#material_palette)。 从调色板选择颜色值约束颜色选择，以便与材料设计指南一致。
+**材料调色板**选项卡随即打开**材料设计调色板**所述[早期](#material-design-color-palette)。 从调色板选择颜色值约束颜色选择，以便与材料设计指南一致。
 
 [![材质调色板](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
@@ -316,9 +316,9 @@ Material Design 的调色板的详细信息，请参阅 Material Design[颜色�
 
 已在设计器中的颜色更改，但尚未保存此更改。 此时，可以执行以下操作：
 
--   单击**放弃更改**放弃新的颜色选择 （或选择） 并恢复到其原始状态的主题。 
+-   单击**放弃更改**放弃新的颜色选择 （或选择） 并恢复到其原始状态的主题。
 
--   按 **&#8984; + S**若要将所做的更改保存到新的主题名为**自定义**。 
+-   按 **&#8984; + S**若要将所做的更改保存到新的主题名为**自定义**。
 
 
 ## <a name="summary"></a>总结

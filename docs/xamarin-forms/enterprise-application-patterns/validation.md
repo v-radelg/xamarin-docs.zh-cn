@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 30c507a1b78600ef1b9a96e37f88904daaf82987
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 22b5fe703486f0ded3a5b91241e3fe5ce41bbc98
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528567"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507092"
 ---
 # <a name="validation-in-enterprise-apps"></a>企业应用程序中的验证
 
-接受用户输入的任何应用程序应确保输入有效。 输入包含在特定范围内的唯一字符，具有特定长度，或与特定的格式，例如，检查应用。 而不进行验证，用户可以提供会导致应用失败的数据。 验证强制实施业务规则，可防止攻击者将恶意数据注入。
+任何接受用户输入的应用都应确保输入是有效的。 输入包含在特定范围内的唯一字符，具有特定长度，或与特定的格式，例如，检查应用。 如果未进行验证，用户提供的数据可能导致应用故障。 验证可强制实施业务规则，并防止攻击者注入恶意数据。
 
 在上下文的模型-视图-视图模型 (MVVM) 模式，视图模型或模型通常需要执行数据验证和信号到视图的任何验证错误，以便用户可以更正它们。 EShopOnContainers 移动应用执行的视图模型属性的同步客户端验证，并通过突出显示该控件包含无效数据，以及显示错误消息，告知用户通知任何验证错误的用户数据无效的原因。 图 6-1 显示 eShopOnContainers 移动应用中执行验证所涉及的类。
 
 [![](validation-images/validation.png "在 eShopOnContainers 的移动应用中的验证类")](validation-images/validation-large.png#lightbox "eShopOnContainers 移动应用中的验证类")
 
-**图 6-1**: eShopOnContainers 移动应用中的验证类
+**图 6-1**:在 eShopOnContainers 的移动应用中的验证类
 
 要求进行验证的视图模型属性属于类型`ValidatableObject<T>`，和每个`ValidatableObject<T>`实例具有的验证规则添加到其`Validations`属性。 通过调用从视图模型调用验证`Validate`方法`ValidatableObject<T>`实例，检索验证规则并执行针对这些`ValidatableObject<T>``Value`属性。 任何验证错误放入`Errors`的属性`ValidatableObject<T>`实例，并`IsValid`属性的`ValidatableObject<T>`实例将更新以指示验证是成功还是失败。
 
@@ -216,7 +216,7 @@ EShopOnContainers 移动应用通知的任何验证错误的用户通过突出�
 
 ![](validation-images/validation-login.png "在登录期间显示验证错误")
 
-**图 6-2:** 登录期间显示验证错误
+**图 6-2:** 在登录期间显示验证错误
 
 ### <a name="highlighting-a-control-that-contains-invalid-data"></a>突出显示控件包含无效数据
 
@@ -296,7 +296,7 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)类表示一种独立于平台的效果，包装是特定于平台的内部效果。 这简化了效果删除过程，因为没有编译时访问类型信息特定于平台的效果。 `EntryLineColorEffect`调用基类构造函数，传入参数包含解析组名称，并在每个特定于平台的效果类指定的唯一 ID 的串联。
+[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)类表示一种独立于平台的效果，包装是特定于平台的内部效果。 这简化了效果删除过程，因为对于特定于平台的效果，没有对类型信息的编译时访问。 `EntryLineColorEffect`调用基类构造函数，传入参数包含解析组名称，并在每个特定于平台的效果类指定的唯一 ID 的串联。
 
 下面的代码示例演示`eShopOnContainers.EntryLineColorEffect`适用于 iOS 的实现：
 
@@ -374,13 +374,13 @@ namespace eShopOnContainers.iOS.Effects
 }
 ```
 
-`OnAttached`方法检索的本机控件适用于 Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry)控件，并通过调用来更新的线条颜色`UpdateLineColor`方法。 `OnElementPropertyChanged`重写上可绑定属性更改响应`Entry`通过如果更新的线条颜色的控件附加`LineColor`属性更改或[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)属性`Entry`更改。 有关效果的详细信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+`OnAttached`方法检索的本机控件适用于 Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry)控件，并通过调用来更新的线条颜色`UpdateLineColor`方法。 `OnElementPropertyChanged`重写上可绑定属性更改响应`Entry`通过如果更新的线条颜色的控件附加`LineColor`属性更改或[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)属性`Entry`更改。 有关效果的更多信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 当在输入有效的数据时[ `Entry` ](xref:Xamarin.Forms.Entry)控件，将其应用一条黑线控件，以指示不不存在任何验证错误的底部。 图 6-3 显示了此示例。
 
 ![](validation-images/validation-blackline.png "黑色线条，该值指示任何验证错误")
 
-**图 6-3**： 黑色线条，该值指示任何验证错误
+**图 6-3**:黑色线条，该值指示任何验证错误
 
 [ `Entry` ](xref:Xamarin.Forms.Entry)控件还具有[ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger)添加到其[ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers)集合。 下面的代码示例演示`DataTrigger`:
 
@@ -403,7 +403,7 @@ namespace eShopOnContainers.iOS.Effects
 
 ![](validation-images/validation-redline.png "红线表示验证错误的错误")
 
-**图 6-4**： 红线表示验证错误的错误
+**图 6-4**:红线表示验证错误的错误
 
 中的行[ `Entry` ](xref:Xamarin.Forms.Entry)控件将保持红色，而是无效的输入的数据，否则它将更改为黑色以指示输入的数据是否有效。
 
@@ -414,7 +414,7 @@ namespace eShopOnContainers.iOS.Effects
 UI 在其数据未能通过验证每个控件的下方的标签控件中显示验证错误消息。 下面的代码示例演示[ `Label` ](xref:Xamarin.Forms.Label)如果用户未输入有效的用户名显示一条验证错误消息：
 
 ```xaml
-<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
+<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 

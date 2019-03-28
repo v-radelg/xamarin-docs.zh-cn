@@ -7,13 +7,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 44d0cf3a257c00b448a6c70064af2f8e3ba63f69
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207786"
 ---
+
 # <a name="platform-specifics"></a>平台特定信息
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
@@ -43,10 +38,10 @@ Xamarin.Forms 提供的平台特定信息的详细信息，请参阅[iOS 平台�
 创建平台特定的过程如下所示：
 
 1. 实现的特定功能的影响方式。 有关详细信息，请参阅[创建一种效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
-1. 创建一个特定于平台的类将公开效果。 有关详细信息，请参阅[创建特定于平台的类](#creating)。
-1. 特定于平台的类中实现以允许特定于平台的使用通过 XAML 附加的属性。 有关详细信息，请参阅[将附加属性添加](#attached_property)。
-1. 在特定于平台的类中，实现了扩展方法，以允许特定于平台的使用通过 fluent 代码 API。 有关详细信息，请参阅[添加扩展方法](#extension_methods)。
-1. 修改效果实现，以便当在已为的效果，在同一平台上调用特定于平台的效果才适用。 有关详细信息，请参阅[创建效果](#creating_the_effect)。
+1. 创建一个特定于平台的类将公开效果。 有关详细信息，请参阅[创建特定于平台的类](#creating-a-platform-specific-class)。
+1. 特定于平台的类中实现以允许特定于平台的使用通过 XAML 附加的属性。 有关详细信息，请参阅[将附加属性添加](#adding-an-attached-property)。
+1. 在特定于平台的类中，实现了扩展方法，以允许特定于平台的使用通过 fluent 代码 API。 有关详细信息，请参阅[添加扩展方法](#adding-extension-methods)。
+1. 修改效果实现，以便当在已为的效果，在同一平台上调用特定于平台的效果才适用。 有关详细信息，请参阅[创建效果](#creating-the-effect)。
 
 公开平台特定的效果的结果是，效果可以更轻松地使用通过 XAML 和 fluent 代码 API。
 

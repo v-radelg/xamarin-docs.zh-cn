@@ -21,21 +21,21 @@ ms.date: 01/08/2018
 
 Xamarin.Forms 视图、 页面和布局通用 Windows 平台 (UWP) 上提供以下特定于平台的功能：
 
-- 设置的访问密钥[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 有关详细信息，请参阅[VisualElement 在 Windows 上的访问密钥](#visualelement-accesskeys)。
-- 禁用上受支持的旧颜色模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 有关详细信息，请参阅[VisualElement 旧版 Windows 上的颜色模式](#legacy-color-mode)。
+- 设置的访问密钥[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 有关详细信息，请参阅[VisualElement 在 Windows 上的访问密钥](visualelement-access-keys.md)。
+- 禁用上受支持的旧颜色模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 有关详细信息，请参阅[VisualElement 旧版 Windows 上的颜色模式](legacy-color-mode.md)。
 
 在 UWP 的 Xamarin.Forms 视图提供以下特定于平台的功能：
 
-- 检测文本中的内容从读取顺序[ `Entry` ](xref:Xamarin.Forms.Entry)， [ `Editor` ](xref:Xamarin.Forms.Editor)，以及[ `Label` ](xref:Xamarin.Forms.Label)实例。 有关详细信息，请参阅[InputView 在 Windows 上的读取顺序](#inputview-readingorder)。
-- 启用中的点击手势支持[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[在 Windows 上的 ListView SelectionMode](#listview-selectionmode)。
-- 启用[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)与拼写检查引擎进行交互。 有关详细信息，请参阅[SearchBar 拼写检查 Windows 上](#searchbar-spellcheck)。
-- 启用[ `WebView` ](xref:Xamarin.Forms.WebView) UWP 消息对话框中显示 JavaScript 警报。 有关详细信息，请参阅[在 Windows 上的 web 视图 JavaScript 警报](#webview-javascript-alert)。
+- 检测文本中的内容从读取顺序[ `Entry` ](xref:Xamarin.Forms.Entry)， [ `Editor` ](xref:Xamarin.Forms.Editor)，以及[ `Label` ](xref:Xamarin.Forms.Label)实例。 有关详细信息，请参阅[InputView 在 Windows 上的读取顺序](inputview-reading-order.md)。
+- 启用中的点击手势支持[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[在 Windows 上的 ListView SelectionMode](listview-selectionmode.md)。
+- 启用[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)与拼写检查引擎进行交互。 有关详细信息，请参阅[SearchBar 拼写检查 Windows 上](searchbar-spell-check.md)。
+- 启用[ `WebView` ](xref:Xamarin.Forms.WebView) UWP 消息对话框中显示 JavaScript 警报。 有关详细信息，请参阅[在 Windows 上的 web 视图 JavaScript 警报](webview-javascript-alert.md)。
 
 上 UWP 的 Xamarin.Forms 页面提供了以下特定于平台的功能：
 
-- 折叠[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)导航栏。 有关详细信息，请参阅[MasterDetailPage 导航栏上 Windows](#collapsable_navigation_bar)。
-- 设置工具栏的放置选项。 有关详细信息，请参阅[页面上 Windows 工具栏放置](#toolbar_placement)。
-- 启用页面图标上显示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具栏。 有关详细信息，请参阅[TabbedPage 图标在 Windows 上](#tabbedpage-icons)。
+- 折叠[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)导航栏。 有关详细信息，请参阅[MasterDetailPage 导航栏上 Windows](masterdetailpage-navigation-bar.md)。
+- 设置工具栏的放置选项。 有关详细信息，请参阅[页面上 Windows 工具栏放置](page-toolbar-placement.md)。
+- 启用页面图标上显示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具栏。 有关详细信息，请参阅[TabbedPage 图标在 Windows 上](tabbedpage-icons.md)。
 
 ## <a name="platform-support"></a>平台支持
 

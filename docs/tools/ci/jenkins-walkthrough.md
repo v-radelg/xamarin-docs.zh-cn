@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: 7f66c97ce4b7880d32dfd87aec0691a26a08cfd2
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669422"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507196"
 ---
 # <a name="using-jenkins-with-xamarin"></a>结合使用 Jenkins 和 Xamarin
 
@@ -230,7 +230,7 @@ Jenkins does 的第一个任务是从源代码管理系统中检索的源代码�
 
 #### <a name="using-git-for-source-code-control"></a>使用 Git 为源代码管理
 
-如果使用 TFS 进行源代码管理[跳过](#Using-TFS-for-Source-Code-Management)此部分并转到下一部分使用的 TFS。
+如果使用 TFS 进行源代码管理[跳过](#using-tfs-for-source-code-management)此部分并转到下一部分使用的 TFS。
 
 Jenkins 支持现成的 – 没有额外的插件所需的 Git。 若要使用 Git，请单击**Git**单选按钮和 Git 存储库中，输入的 URL，如以下屏幕截图中所示：
 
