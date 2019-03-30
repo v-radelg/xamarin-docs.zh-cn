@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 6d3355b1ebac5001984677eb8cc527fe619b8349
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.date: 03/29/2019
+ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052246"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641447"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -331,11 +331,25 @@ public partial class InAppBrowserXaml : ContentPage
 
 Web 视图会引发以下事件以帮助您响应状态的变化：
 
-- **导航**– web 视图开始加载新页面时引发的事件。
-- **导航**– 加载页面和导航已停止时引发事件。
-- **ReloadRequested** – 发出请求来重新加载当前内容时引发事件。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) – web 视图开始加载新页面时引发的事件。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) – 当页面加载和导航已停止时引发事件。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) – 当发出请求来重新加载当前内容时引发事件。
 
-如果你希望使用需要很长时间加载的网页，请考虑使用`Navigating`和`Navigated`事件来实现状态指示器。 例如 XAML 如下所示：
+[ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs)对象，它附带[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)事件具有四个属性：
+
+- `Cancel` – 指示是否取消导航。
+- `NavigationEvent` – 导航事件与被引发。
+- `Source` – 执行导航的元素。
+- `Url` – 导航目标。
+
+[ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs)对象，它附带[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件具有四个属性：
+
+- `NavigationEvent` – 导航事件与被引发。
+- `Result` – 说明结果的导航窗格中，使用[ `WebNavigationResult` ](xref:Xamarin.Forms.WebNavigationResult)枚举成员。 有效值为 `Cancel`、`Failure`、`Success` 和 `Timeout`。
+- `Source` – 执行导航的元素。
+- `Url` – 导航目标。
+
+如果你希望使用需要很长时间加载的网页，请考虑使用[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)并[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件来实现状态指示器。 例如：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

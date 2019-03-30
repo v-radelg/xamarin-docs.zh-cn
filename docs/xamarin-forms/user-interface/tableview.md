@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fda8c08cdbdab01f5d68b7f349d5f28f31316290
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
+ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831997"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58641434"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -115,7 +115,7 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 尽管[ 
 [`EntryCell`](xref:Xamarin.Forms.EntryCell) 如果需要显示的用户可以编辑的文本数据时非常有用。 它定义以下属性：
 
 - `Keyboard` – 若要编辑时显示键盘。 有数字值、 电子邮件、 电话号码等之类的内容的选项。[请参阅 API 文档](xref:Xamarin.Forms.Keyboard)。
-- `Label` – 要在文本输入字段右侧显示的标签文本。
+- `Label` – 要显示的文本输入字段左侧的标签文本。
 - `LabelColor` – 标签文本的颜色。
 - `Placeholder` – 它为 null 或空时在输入字段中显示的文本。 文本输入开始时，此文本将消失。
 - `Text` – 文本输入字段中。
