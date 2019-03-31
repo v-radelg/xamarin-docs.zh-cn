@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 40d4a6cbd3bb8e3bd4c55c50c69f85f91d94feac
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.openlocfilehash: 6db9ff0085c17f07d07a7591f5d735793bfbc5f9
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459923"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678036"
 ---
 # <a name="callkit-in-xamarinios"></a>在 Xamarin.iOS CallKit
 
@@ -278,7 +278,7 @@ namespace MonkeyCall
 }
 ```
 
-`CallHandleFromURL`和`CallHandleFromActivity`类用于在 AppDelegate 中获取被调用的传出调用中的人员的联系句柄。 有关详细信息，请参阅[处理传出调用](#Handling-Outgoing-Calls)下面一节。
+`CallHandleFromURL`和`CallHandleFromActivity`类用于在 AppDelegate 中获取被调用的传出调用中的人员的联系句柄。 有关详细信息，请参阅[处理传出调用](#handling-outgoing-calls)下面一节。
 
 ### <a name="the-activecallmanager-class"></a>ActiveCallManager 类
 
@@ -392,7 +392,7 @@ namespace MonkeyCall
 }
 ```
 
-再次，因为这是一种模拟仅`ActiveCallManager`只维护一系列`ActiveCall`对象，并具有用于查找由给定的调用的例程其`UUID`属性。 它还包括开始、 结束和更改的传出呼叫暂挂状态的方法。 有关详细信息，请参阅[处理传出调用](#Handling-Outgoing-Calls)下面一节。
+再次，因为这是一种模拟仅`ActiveCallManager`只维护一系列`ActiveCall`对象，并具有用于查找由给定的调用的例程其`UUID`属性。 它还包括开始、 结束和更改的传出呼叫暂挂状态的方法。 有关详细信息，请参阅[处理传出调用](#handling-outgoing-calls)下面一节。
 
 ### <a name="the-providerdelegate-class"></a>ProviderDelegate 类
 
@@ -728,7 +728,7 @@ namespace MonkeyCall
 }
 ```
 
-`OpenUrl`和`ContinueUserActivity`重写应用程序处理传出呼叫时所使用的方法。 有关详细信息，请参阅[处理传出调用](#Handling-Outgoing-Calls)下面一节。
+`OpenUrl`和`ContinueUserActivity`重写应用程序处理传出呼叫时所使用的方法。 有关详细信息，请参阅[处理传出调用](#handling-outgoing-calls)下面一节。
 
 ## <a name="handling-incoming-calls"></a>处理传入的调用
 
@@ -945,9 +945,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-此处`CallHandleFromActivity`帮助器类方法`StartCallRequest`用于正在调用的人员获取的句柄 (请参阅[StartCallRequest 类](#The-StartCallRequest-Class)上面)。 
+此处`CallHandleFromActivity`帮助器类方法`StartCallRequest`用于正在调用的人员获取的句柄 (请参阅[StartCallRequest 类](#the-startcallrequest-class)上面)。
 
-`PerformStartCallAction`方法[ProviderDelegate 类](#The-ProviderDelegate-Class)用于最后启动实际传出呼叫和通知生命周期中的系统：
+`PerformStartCallAction`方法[ProviderDelegate 类](#the-providerdelegate-class)用于最后启动实际传出呼叫和通知生命周期中的系统：
 
 ```csharp
 public override void PerformStartCallAction (CXProvider provider, CXStartCallAction action)

@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7b2f9ab4cf9bad71153d5bdae9ae44ddf091deed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106359"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677789"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS 应用部署到应用商店
 
 > [!IMPORTANT]
-> 请确保查看[Apple Watch 工具包提交指南](https://developer.apple.com/app-store/watch/)，并查看[故障排除](#Troubleshooting)部分，了解可能会遇到任何问题。
+> 请确保查看[Apple Watch 工具包提交指南](https://developer.apple.com/app-store/watch/)，并查看[故障排除](#troubleshooting)部分，了解可能会遇到任何问题。
 
 - 请确保您有：
   - [**分发预配配置文件**](#provisioning)创建为你的项目。
@@ -41,7 +41,7 @@ ms.locfileid: "50106359"
   - （可选）**验证...** 存档。
   - **提交...** 存档并遵循的步骤将上载到 iTunes 连接用于审查和批准。
 
-阅读下面这些项与相关的特定使用技巧。 请参阅[故障排除](#Troubleshooting)部分中如果遇到问题。
+阅读下面这些项与相关的特定使用技巧。 请参阅[故障排除](#troubleshooting)部分中如果遇到问题。
 
 <a name="provisioning" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: f9308d3a746a5a0a43cf47cc5ea809c0f82bbe7b
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: a901e16b3d5befc25864af39cb255d1833400e7f
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233817"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677880"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>在 Xamarin.iOS 应用程序传输安全
 
@@ -73,13 +73,13 @@ ATS 将强制所有 internet 连接的以下要求：
 
 对于新的 Xamarin.iOS 应用，应使用`HTTPS`以独占方式与 internet 资源进行通信时。 同样，可能有情形 （如使用第三方 web 服务） 其中不可行，你将需要选择退出的 ATS。
 
-此外，ATS 强制实施高级别 API 通信进行加密与正向保密使用 TLS 1.2 版。 请参阅[ATS 连接要求](#ATS-Connection-Requirements)并[ATS 兼容加密法](#ATS-Compatible-Ciphers)上面部分的更多详细信息。
+此外，ATS 强制实施高级别 API 通信进行加密与正向保密使用 TLS 1.2 版。 请参阅[ATS 连接要求](#ats-connection-requirements)并[ATS 兼容加密法](#ats-compatible-ciphers)上面部分的更多详细信息。
 
 尽管您可能不熟悉 TLS ([传输层安全性](https://en.wikipedia.org/wiki/Transport_Layer_Security)) 是 SSL 的后继 ([安全套接字层](https://en.wikipedia.org/wiki/Transport_Layer_Security)) 并提供了一系列上实施安全的加密协议网络连接。
 
 TLS 级别控制您正在使用的 web 服务，因此受应用程序的控制。 同时`HttpClient`和`ModernHttpClient`应会自动使用 TLS 加密服务器支持的最高级别。
 
-具体情况取决于在服务器 （尤其是如果它是第三方服务） 正在与谈话，可能需要禁用向前保密或选择较低的 TLS 级别。 请参阅[配置 ATS 选项](#Configuring-ATS-Options)部分获取更多详细信息。
+具体情况取决于在服务器 （尤其是如果它是第三方服务） 正在与谈话，可能需要禁用向前保密或选择较低的 TLS 级别。 请参阅[配置 ATS 选项](#configuring-ats-options)部分获取更多详细信息。
 
 > [!IMPORTANT]
 > 应用程序传输安全不适用于使用 Xamarin 应用**托管的 HTTPClient 实现**。 它适用于连接使用 CFNetwork **HTTPClient 实现**或**NSURLSession HTTPClient 实现**仅。
