@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a8b31d9f2e9c8921420b1fd50c4092273962f54b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3e7fc3d627b5d7a1dc73caa395a9181efb0b5f08
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105891"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677997"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>使用 tvOS 在 Xamarin 中的表视图
 
@@ -101,7 +101,7 @@ Apple 已使用表视图单元格的以下建议：
 1. 每个**原型单元格**，选择它并分配唯一**标识符**中**小组件**选项卡**属性资源管理器**。 此步骤是_非常重要_因为您稍后将需要此标识符时您填充表。 例如`AttrCell`: 
 
     [![](table-views-images/table12.png "小组件选项卡")](table-views-images/table12.png#lightbox)
-1. 您还可以选择提供作为一个单元格[默认表视图单元格类型](#Table-View-Cell-Types)通过**样式**下拉列表中或将其设置为**自定义**，并使用设计图面上向布局单元格从其他 UI 小组件中通过拖动**工具箱**: 
+1. 您还可以选择提供作为一个单元格[默认表视图单元格类型](#table-view-cell-types)通过**样式**下拉列表中或将其设置为**自定义**，并使用设计图面上向布局单元格从其他 UI 小组件中通过拖动**工具箱**: 
 
     [![](table-views-images/table13.png "单元格的布局")](table-views-images/table13.png#lightbox)
 1. 分配唯一**名称**中的所有 UI 元素中的单元格原型设计**小组件**选项卡**属性资源管理器**以便您可以访问它们更高版本在C#代码： 
@@ -142,7 +142,7 @@ Apple 已使用表视图单元格的以下建议：
 1. 每个**原型单元格**，选择它并分配唯一**标识符**中**小组件**选项卡**属性资源管理器**。 此步骤是_非常重要_因为您稍后将需要此标识符时您填充表。 例如`AttrCell`: 
 
     [![](table-views-images/table12-vs.png "分配一个标识符")](table-views-images/table12-vs.png#lightbox)
-1. 您还可以选择提供作为一个单元格[默认表视图单元格类型](#Table-View-Cell-Types)通过**样式**下拉列表中或将其设置为**自定义**，并使用设计图面上向布局单元格从其他 UI 小组件中通过拖动**工具箱**: 
+1. 您还可以选择提供作为一个单元格[默认表视图单元格类型](#table-view-cell-types)通过**样式**下拉列表中或将其设置为**自定义**，并使用设计图面上向布局单元格从其他 UI 小组件中通过拖动**工具箱**: 
 
     [![](table-views-images/table13-vs.png "样式下拉列表")](table-views-images/table13-vs.png#lightbox)
 1. 分配唯一**名称**中的所有 UI 元素中的单元格原型设计**小组件**选项卡**属性资源管理器**以便您可以访问它们更高版本在C#代码： 

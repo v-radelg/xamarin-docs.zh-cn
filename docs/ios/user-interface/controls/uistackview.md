@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: d04ce6827f6695163c7d9a8d34acc3891d854c8d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122668"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677841"
 ---
 # <a name="stack-views-in-xamarinios"></a>在 Xamarin.iOS 堆栈视图
 
@@ -233,7 +233,7 @@ icon.RemoveFromSuperview();
 - **基线相对**– 如果`true`，每个子视图的垂直间距将派生自它的基线。
 - **布局边距相对**– 相对于标准布局边距中放置了子视图。
 
-通常将使用堆栈视图来排列子视图的一小部分。 可以通过嵌套在每个其他的一个或多个堆栈视图来创建更复杂的用户界面 (正如我们做[UIStackView 快速入门](#UIStackView-Quickstart)上面)。
+通常将使用堆栈视图来排列子视图的一小部分。 可以通过嵌套在每个其他的一个或多个堆栈视图来创建更复杂的用户界面 (正如我们做[UIStackView 快速入门](#uistackview-quickstart)上面)。
 
 通过将其他约束添加到了子视图 （例如到控件的高度或宽度），可以进一步微调 Ui 外观。 但是，应格外小心，不以包括对这些引入的堆栈视图本身的冲突约束。
 

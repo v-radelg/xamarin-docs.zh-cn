@@ -17,7 +17,7 @@ _本文档介绍 iOS SDK 的本地化功能以及如何使用 Xamarin 访问它�
 
 ## <a name="ios-platform-features"></a>iOS 平台功能
 
-本部分介绍了一些在 iOS 中的本地化功能。 请跳到[下一节](#Localization-basics-in-iOS)若要查看特定的代码和示例。
+本部分介绍了一些在 iOS 中的本地化功能。 请跳到[下一节](#localization-basics-in-ios)若要查看特定的代码和示例。
 
 ### <a name="language"></a>语言
 

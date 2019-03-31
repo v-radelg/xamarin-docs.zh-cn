@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6a8e74860efd606ae6dd565ea7e3f67884eefc11
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5086724b565fb95274c4988ca1b6e4bb11064575
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103213"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677932"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>用于 watchOS 3 在 Xamarin 中的快速交互技术
 
@@ -299,7 +299,7 @@ Apple Watch 上的通知提供一种很好可自定义的方式来快速通知�
 
 ## <a name="simple-navigation"></a>简单的导航
 
-watchOS 3 介绍了几种方法，开发人员可以简化如新 watchOS 应用中的导航[垂直分页](#Vertical-Paging)，[手势识别器支持](#Gesture-Recognizer-Support)和[数字 Crown旋转](#Digital-Crown-Rotation)上面介绍的功能。
+watchOS 3 介绍了几种方法，开发人员可以简化如新 watchOS 应用中的导航[垂直分页](#vertical-paging)，[手势识别器支持](#gesture-recognizer-support)和[数字 Crown旋转](#digital-crown-rotation)上面介绍的功能。
 
 数字 Crown 是唯一的 Apple Watch，可在许多不同的方式来简化导航。 例如，计时器应用程序可以使用数字 Crown 要通过可用计时器长度清理。
 

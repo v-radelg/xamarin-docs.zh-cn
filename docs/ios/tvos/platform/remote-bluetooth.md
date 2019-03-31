@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 14c62051afd7489389f154c21b3a76b9aad3f32e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 79022f7a454ea423fa3112a4c4ade2bcd471fbb8
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115531"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677945"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Siri 远程和蓝牙控制器对 tvOS 在 Xamarin 中
 
@@ -38,7 +38,7 @@ Siri 远程具有以下功能和 tvOS 应用程序中的预期的用法：
 
 |功能|常规应用程序使用情况|游戏应用使用情况|
 |---|---|---|
-|**Touch 面**<br />轻扫，若要导航，请按键以选择并按住上下文菜单。|**点击/轻扫**<br />UI 可获得焦点的项之间导航。<br /><br />**单击**<br />激活所选 （焦点） 项。|**点击/轻扫**<br />取决于游戏设计和可用作 D-pad 通过边缘上点击。<br /><br />**单击**<br />执行的主要按钮功能。|
+|**Touch 面**<br />轻扫，若要导航，请按键以选择并按住上下文菜单。|**Tap/Swipe**<br />UI 可获得焦点的项之间导航。<br /><br />**Click**<br />激活所选 （焦点） 项。|**Tap/Swipe**<br />取决于游戏设计和可用作 D-pad 通过边缘上点击。<br /><br />**Click**<br />执行的主要按钮功能。|
 |**菜单**<br />按以返回到上一屏幕或菜单。|返回到上一屏幕并从主应用程序屏幕退出到 Apple 电视主页屏幕。|暂停和继续游戏玩法，返回到上一屏幕并退出到 Apple 电视主页屏幕从主应用程序屏幕。|
 |**使用 Siri/搜索**<br />使用 Siri 国家/地区，请在按住语音控件，在所有其他国家/地区，显示搜索屏幕。|n/a|n/a|
 |**播放/暂停**<br />播放和暂停媒体或提供应用中的辅助函数。|启动媒体的播放和暂停/恢复播放。|执行次要按钮的功能或跳过简介视频 (如果存在)。|
@@ -310,7 +310,7 @@ Apple 提供了以下建议以获得使用游戏控制器：
 如果您的应用程序所需的低级控制器输入，可以使用 Apple[游戏控制器框架](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276)具有适用于 tvOS 的以下修改：
 
 - 微型游戏控制器配置文件 (`GCMicroGamepad`) 已添加为面向 Siri 远程。
-- 新`GCEventViewController`类可用于将游戏控制器通过您的应用程序的事件路由。 请参阅[确定游戏控制器输入](#Determining-Game-Controller-Input)部分获取更多详细信息。
+- 新`GCEventViewController`类可用于将游戏控制器通过您的应用程序的事件路由。 请参阅[确定游戏控制器输入](#determining-game-controller-input)部分获取更多详细信息。
 
 <a name="Game-Controller-Support-Requirements" />
 

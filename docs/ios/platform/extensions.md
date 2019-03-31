@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e02d7a13a1fd5b554943f9facd6c9f120096a6a5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667810"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677919"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 扩展
 
@@ -69,7 +69,7 @@ ms.locfileid: "57667810"
 
 如果他们选择您的应用程序的扩展，其`UIViewController`将实例化并开始正常视图控制器生命周期。 但是，与常规应用，后者虽然是挂起，但通常不终止用户完成与它们交互时，不同扩展加载、 执行，并重复然后终止。
 
-扩展可以与通过其主机应用程序进行通信[NSExtensionContext](xref:Foundation.NSExtensionContext)对象。 某些扩展具有接收结果的异步回调的操作。 将在后台线程上执行这些回调和扩展必须考虑这点;例如，通过使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果用户想要更新的用户界面。 请参阅[与主机应用程序通信](#Communicating-with-the-Host-App)部分获取更多详细信息。
+扩展可以与通过其主机应用程序进行通信[NSExtensionContext](xref:Foundation.NSExtensionContext)对象。 某些扩展具有接收结果的异步回调的操作。 将在后台线程上执行这些回调和扩展必须考虑这点;例如，通过使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果用户想要更新的用户界面。 请参阅[与主机应用程序通信](#communicating-with-the-host-app)部分获取更多详细信息。
 
 默认情况下，扩展和其容器应用程序可以不进行通信，尽管一起安装。 在某些情况下，容器应用是实质上是一个空"shipping"的容器安装扩展后，就会提供其用途。 但是，如果规定的情况下，容器应用程序和扩展可能会共享公共区域中的资源。 此外，**今天扩展**可能会请求自己的容器应用程序来打开 URL。 此行为所示[发展倒计时小组件](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cfa51b8e5434480d7d15fbf23d78f8b8735f16a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112580"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677867"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 tvOS 导航和焦点在 Xamarin 中
 
@@ -25,7 +25,7 @@ _本文介绍如何焦点和如何它用来显示和处理在 Xamarin.tvOS 应�
 
 接下来，我们来看看如何配合使用焦点[视差](#Focus-and-Parallax)并*分层映像*当前导航状态向最终用户提供可视线索。
 
-最后，我们将介绍使用[焦点](#Working-with-Focus)，[焦点更新](#Working-with-Focus-Updates)，[焦点指南](#Working-with-Focus-Guides)，[集合中的焦点](#Working-with-Focus-in-Collections)和[启用视差](#Enabling-Parallax)Xamarin.tvOS 应用程序中的图像视图。
+最后，我们将介绍使用[焦点](#Working-with-Focus)，[焦点更新](#Working-with-Focus-Updates)，[焦点指南](#Working-with-Focus-Guides)，[集合中的焦点](#Working-with-Focus-in-Collections)和[启用视差](#enabling-parallax)Xamarin.tvOS 应用程序中的图像视图。
 
 <a name="Navigation" />
 

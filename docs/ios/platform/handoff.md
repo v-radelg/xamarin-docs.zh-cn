@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 899e40460371933a3e1cb694618c7d33a124e76c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672698"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677958"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中移交
 
@@ -52,9 +52,9 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
 接收应用程序使用中的信息`NSUserActivity`的`UserInfo`字典配置其用户界面并还原给定活动的状态，以便显示给最终用户无缝转换。
 
-如果该延续需要详细信息不是可以有效地通过发送`NSUserActivity`、 恢复应用程序可以发送到发起应用程序的调用并建立一个或多个流传输所需的数据。 例如，如果活动已编辑大文本文档包含多个映像，流式处理所需传输接收的设备上继续活动所需的信息。 有关详细信息，请参阅[支持延续流](#Supporting-Continuation-Streams)下面一节。
+如果该延续需要详细信息不是可以有效地通过发送`NSUserActivity`、 恢复应用程序可以发送到发起应用程序的调用并建立一个或多个流传输所需的数据。 例如，如果活动已编辑大文本文档包含多个映像，流式处理所需传输接收的设备上继续活动所需的信息。 有关详细信息，请参阅[支持延续流](#supporting-continuation-streams)下面一节。
 
-如上面所述`NSDocument`或`UIDocument`基于的应用自动具有支持内置的切换。 有关详细信息，请参阅[基于文档的应用程序中支持的移交](#Supporting-Handoff-in-Document-Based-Apps)下面一节。
+如上面所述`NSDocument`或`UIDocument`基于的应用自动具有支持内置的切换。 有关详细信息，请参阅[基于文档的应用程序中支持的移交](#supporting-handoff-in-document-based-apps)下面一节。
 
 ### <a name="the-nsuseractivity-class"></a>NSUserActivity 类
 
@@ -68,7 +68,7 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
 您将需要实现`UserActivityWillSave`方法，并对进行任何更改`NSUserActivity`(如`UserInfo`，`Title`等) 以确保它仍反映当前活动的状态。 当系统调用`UserActivityWillSave`方法，`NeedsSave`标志将被清除。 如果您修改任何活动的数据属性，您将需要设置`NeedsSave`到`true`试。
 
-而不是使用`UserActivityWillSave`上面介绍的方法，可以选择让`UIKit`或`AppKit`自动管理的用户活动。 若要执行此操作，设置响应方对象的`UserActivity`属性并实现`UpdateUserActivityState`方法。 请参阅[响应程序中支持的移交](#Supporting-Handoff-in-Responders)部分获取详细信息。
+而不是使用`UserActivityWillSave`上面介绍的方法，可以选择让`UIKit`或`AppKit`自动管理的用户活动。 若要执行此操作，设置响应方对象的`UserActivity`属性并实现`UpdateUserActivityState`方法。 请参阅[响应程序中支持的移交](#supporting-handoff-in-responders)部分获取详细信息。
 
 ### <a name="app-framework-support"></a>应用程序框架支持
 
@@ -84,7 +84,7 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
 `AppKit` 将自动还原任何`UserActivity`以这种方式在 OS X 上创建属性。如果发生这种情况`ContinueUserActivity`方法将返回`false`或如果未实现。 在此情况下，打开该文档与`OpenDocument`方法`NSDocumentController`随后会收到和`RestoreUserActivityState`方法调用。
 
-请参阅[基于文档的应用程序中支持的移交](#Supporting-Handoff-in-Document-Based-Apps)部分获取详细信息。
+请参阅[基于文档的应用程序中支持的移交](#supporting-handoff-in-document-based-apps)部分获取详细信息。
 
 #### <a name="user-activities-and-responders"></a>用户活动和响应程序
 
@@ -94,7 +94,7 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
 若要解除本身与活动关联，响应方可以设置其`UserActivity`属性设置为`null`。 管理应用程序框架时`NSUserActivity`实例都有没有更多相关联响应程序或文档，它是自动失效。
 
-请参阅[响应程序中支持的移交](#Supporting-Handoff-in-Responders)部分获取详细信息。
+请参阅[响应程序中支持的移交](#supporting-handoff-in-responders)部分获取详细信息。
 
 #### <a name="user-activities-and-the-appdelegate"></a>用户活动和 AppDelegate
 
@@ -102,7 +102,7 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
 `NSUserActivity`实例传递时`AppDelegate`的`ContinueUserActivity`调用方法。 此时，应配置应用程序的用户界面，并继续给定的活动。
 
-请参阅[实现切换](#Implementing-Handoff)部分获取详细信息。
+请参阅[实现切换](#implementing-handoff)部分获取详细信息。
 
 ## <a name="enabling-handoff-in-a-xamarin-app"></a>在 Xamarin 应用中启用切换
 
@@ -201,7 +201,7 @@ namespace MonkeyBrowse
 }
 ```
 
-`UserActivityReceivedData`时延续 Stream 从发送设备收到数据后调用方法。 有关详细信息，请参阅[支持延续流](#Supporting-Continuation-Streams)下面一节。
+`UserActivityReceivedData`时延续 Stream 从发送设备收到数据后调用方法。 有关详细信息，请参阅[支持延续流](#supporting-continuation-streams)下面一节。
 
 `UserActivityWasContinued`时另一台设备具有对当前的设备中的活动所调用方法。 根据类型的活动，如将新项添加到 ToDo 列表中，应用可能需要中止发送设备上的活动。
 
@@ -246,7 +246,7 @@ userInfo.Add (new NSString ("Url"), new NSString (url));
 UserActivity.AddUserInfoEntries (userInfo);
 ```
 
-Apple 建议保持发送给只具备最小值，以确保活动发送到接收设备及时的信息。 如果像编辑映像附加到文档，更大的信息是必需的需要发送，则应使用继续符流。 请参阅[支持延续流](#Supporting-Continuation-Streams)部分获取更多详细信息。
+Apple 建议保持发送给只具备最小值，以确保活动发送到接收设备及时的信息。 如果像编辑映像附加到文档，更大的信息是必需的需要发送，则应使用继续符流。 请参阅[支持延续流](#supporting-continuation-streams)部分获取更多详细信息。
 
 ### <a name="continuing-an-activity"></a>继续活动
 
@@ -421,7 +421,7 @@ public override void RestoreUserActivityState (NSUserActivity activity)
 }
 ```
 
-对于基于文档的应用程序，如果不实现`ContinueUserActivity`方法或其返回`false`，`UIKit`或`AppKit`自动恢复活动。 请参阅[基于文档的应用程序中支持的移交](#Supporting-Handoff-in-Document-Based-Apps)部分获取详细信息。
+对于基于文档的应用程序，如果不实现`ContinueUserActivity`方法或其返回`false`，`UIKit`或`AppKit`自动恢复活动。 请参阅[基于文档的应用程序中支持的移交](#supporting-handoff-in-document-based-apps)部分获取详细信息。
 
 ### <a name="failing-handoff-gracefully"></a>正常故障切换
 

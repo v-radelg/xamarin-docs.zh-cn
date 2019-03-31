@@ -7,13 +7,8 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: f2a612eea39a3447cae03e2d7b675a46c47aad52
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233739"
 ---
+
 # <a name="introduction-to-ios-10"></a>IOS 10 简介
 
 _本文介绍适用于 Xamarin.iOS 开发人员的所有新的和修改 Api 和 iOS 10 中提供的功能。_
@@ -231,7 +226,7 @@ Apple 引入了几个小组件系统，以确保小组件查看任何新的 iOS 
 - [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)与通用内容相关的符号已被弃用。
 - `ADBannerView``ADInterstitialAd`和相关中的符号[UIViewController](xref:UIKit.UIViewController)类已被弃用。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)与浮点值的符号已被弃用。
-- `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 类已被弃用。 使用[用户通知](#User-Notifications)framework 相反。
+- `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 类已被弃用。 使用[用户通知](#user-notifications)framework 相反。
 - `HandleActionForLocalNotification`， `HandleActionForRemoteNotification`，`DidReceiveLocalNotification`和`DidReceiveRemoteNotification`WatchKit 方法已被弃用。 使用`HandleActionForNotification`和`DidReceiveNotification`方法相反。
 - `DidReceiveLocalNotification`并`DidReceiveRemoteNotification`方法的[WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)已弃用。 创建的实例[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate)的实现适当的方法，并将其分配给`Delegate`的属性[UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)对象。
 - **游戏中心应用**已弃用，从 iOS 中删除。 如果应用使用 GameKit，其_必须_提供其自己的界面以显示 GameKit 功能，例如排行榜，等等。

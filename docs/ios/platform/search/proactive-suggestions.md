@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b7564e3b94062c2294919121f32c4f830346bda
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105332"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677893"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>主动建议在 Xamarin.iOS 简介
 
@@ -397,7 +397,7 @@ namespace MonkeyNotification
 }
 ```
 
-查看详细信息中的此代码时，它会创建并填充的实例`NSUserActivity`(如中所示[创建活动](#Creating-an-Activity)上面部分)。 接下来，它创建的实例`INSendMessageIntent`(它是从`INIntent`) 并使用要发送的消息的详细信息填充它：
+查看详细信息中的此代码时，它会创建并填充的实例`NSUserActivity`(如中所示[创建活动](#creating-an-activity)上面部分)。 接下来，它创建的实例`INSendMessageIntent`(它是从`INIntent`) 并使用要发送的消息的详细信息填充它：
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
@@ -480,8 +480,8 @@ Schema.org 一些背景信息：
 
 Safari 将提取符合以下架构属性的任何 web 页面上的所有内容：
 
-- **邮政地址**
-- **地理坐标**
+- **PostalAddress**
+- **GeoCoordinates**
 - 电话属性中。
 
 有关详细信息，请参阅我们[搜索与 Web 标记](~/ios/platform/search/web-markup.md)指南。

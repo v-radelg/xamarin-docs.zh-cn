@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e114f39a01c2243889c53c855acd7fa8061ed09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f57f2a2bc17690b7a1e0a72c583b0e94519ca4db
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114725"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677984"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合视图
 
@@ -32,7 +32,7 @@ iOS 提供了一个名为的布局类`UICollectionViewFlowLayout`允许基于行
 -  **补充视图**– 与节关联的数据驱动的视图。
 -  **修饰视图**– 非数据驱动的布局由创建视图
 
-## <a name="cells"></a>单元格
+## <a name="cells"></a>单元
 
 单元格是表示单个项的集合视图提供在数据集中的对象。 每个单元格是的一个实例`UICollectionViewCell`类，它由三个不同的视图，如下图中所示：
 
@@ -443,7 +443,7 @@ namespace SimpleCollectionView
     - [简单的重新排序示例](#Simple-Reordering-Example)
     - [使用自定义笔势识别器](#Using-a-Custom-Gesture-Recognizer)
     - [自定义布局和重新排序](#Custom-Layouts-and-Reording)
-- [集合视图更改](#Collection-View-Changes)
+- [集合视图更改](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
@@ -472,11 +472,11 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 选择 （它可能是最简单的方法执行此操作从文档大纲） 的集合视图。 在属性面板的布局选项卡中，设置以下大小，如下面的屏幕截图中所示：
 
-- **单元格大小**： 宽度-60 |高度-60
-- **标头大小**： 宽度-0 |高度-0
-- **页脚大小**： 宽度-0 |高度-0
-- **最小间距**： 单元格 – 8 |行 – 8
-- **部分内边距**： 顶部 – 16 |底部 – 16 |左-16 |右 – 16
+- **单元格大小**:宽度-60 |高度-60
+- **标头大小**:宽度-0 |高度-0
+- **页脚大小**:宽度-0 |高度-0
+- **最小间距**:单元格 – 8 |行 – 8
+- **部分内边距**:上-16 |底部 – 16 |左-16 |右 – 16
 
 [![](uicollectionview-images/quick04.png "设置集合视图大小步骤")](uicollectionview-images/quick04.png#lightbox)
 

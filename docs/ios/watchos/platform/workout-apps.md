@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fd677aa802adf32ac81396f81c67264d88639967
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 02db7dce6ba38b6c1e943ff189ff69efb7cc1c08
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528775"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677828"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>watchOS 健身在 Xamarin 中的应用程序
 
@@ -636,7 +636,7 @@ private void SaveWorkoutSamples (HKWorkout workout)
 
 ## <a name="workouts-and-ios-10"></a>锻炼和 iOS 10
 
-每个 watchOS 3 锻炼应用具有父 iOS 10 基于的锻炼应用和，新到 iOS 10，此 iOS 应用程序可以用于启动测验，将 Apple Watch 置于锻炼模式 （无需用户干预） 并在后台运行模式下运行 watchOS 应用 (请参阅[有关后台运行](#About-Background-Running)上面有关详细信息)。
+每个 watchOS 3 锻炼应用具有父 iOS 10 基于的锻炼应用和，新到 iOS 10，此 iOS 应用程序可以用于启动测验，将 Apple Watch 置于锻炼模式 （无需用户干预） 并在后台运行模式下运行 watchOS 应用 (请参阅[有关后台运行](#about-background-running)上面有关详细信息)。
 
 在 watchOS 应用运行时，它可以用于消息传送和与父 iOS 应用之间的通信使用 WatchConnectivity。
 
@@ -649,7 +649,7 @@ private void SaveWorkoutSamples (HKWorkout workout)
 3. 使用已传递的健身配置中，watchOS 3 应用程序启动新的健身会话 (`HKWorkoutSession`)。
 
 > [!IMPORTANT]
-> 为了使父 iPhone 应用在 Apple Watch 上启动测验，watchOS 3 应用程序必须具有后台运行已启用。 请参阅[启用后台运行](#Enabling-Background-Running)上面的更多详细信息。
+> 为了使父 iPhone 应用在 Apple Watch 上启动测验，watchOS 3 应用程序必须具有后台运行已启用。 请参阅[启用后台运行](#enabling-background-running)上面的更多详细信息。
 
 此过程是直接在 watchOS 3 应用中启动健身会话的过程非常相似。 在 iPhone 上使用以下代码：
 

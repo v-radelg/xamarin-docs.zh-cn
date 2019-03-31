@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 625564eebf83b3075f61b1a25bde1a78abe1ca2e
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.openlocfilehash: 0897afeacffc89e30b28474e4530a83d05d33cd2
+ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50674903"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751249"
 ---
 # <a name="creating-a-custom-xamarinforms-theme"></a>创建 Xamarin.Forms 自定义主题
 
@@ -243,11 +243,11 @@ namespace ThemesDemo.Droid
 
             public override void GetOutline(Android.Views.View view, Outline outline)
             {
-                var pixles =
+                var pixels =
                     (float)ThemeEffects.GetCornerRadius(_element) *
                     view.Resources.DisplayMetrics.Density;
 
-                outline.SetRoundRect(new Rect(0, 0, view.Width, view.Height), (int)pixles);
+                outline.SetRoundRect(new Rect(0, 0, view.Width, view.Height), (int)pixels);
             }
         }
     }

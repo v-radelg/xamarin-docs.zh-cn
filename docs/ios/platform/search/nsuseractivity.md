@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: acfff90b4b983f92718bb9af1f587a73ec0f8da7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104253"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677854"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>使用 Xamarin.iOS 中 NSUserActivity 搜索
 
@@ -29,7 +29,7 @@ ms.locfileid: "50104253"
 
  - `EligibleForHandoff` -如果`true`，可以切换操作中使用此活动。
  - `EligibleForSearch` -如果`true`，此活动将添加到设备上的索引，并在搜索结果中显示。
- - `EligibleForPublicIndexing` -如果`true`，此活动将添加到 Apple 的基于云的索引，并提供给具有在其 iOS 设备尚未安装您的应用程序的用户 （通过搜索）。 请参阅[公共搜索索引](#Public-Search-Indexing)部分获取更多详细信息。
+ - `EligibleForPublicIndexing` -如果`true`，此活动将添加到 Apple 的基于云的索引，并提供给具有在其 iOS 设备尚未安装您的应用程序的用户 （通过搜索）。 请参阅[公共搜索索引](#public-search-indexing)部分获取更多详细信息。
  - `Title` -为您的活动提供标题，并在搜索结果中显示。 用户还可以搜索标题本身的文本。
  - `Keywords` – 是一个用来描述您的活动将建立索引并进行最终用户可搜索的字符串数组。
  - `ContentAttributeSet` – 是`CSSearchableItemAttributeSet`用来进一步描述您的活动详细信息和提供丰富搜索结果中的内容。

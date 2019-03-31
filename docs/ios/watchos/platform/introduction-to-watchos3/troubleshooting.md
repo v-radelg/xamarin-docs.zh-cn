@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ce4f0ecbd5e4d49d2ff88855ff68dd9a63e43
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6d2aaf12bd6c45f6268cf87a77d2ee03a9d7a888
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123207"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58677724"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 故障排除
 
@@ -53,7 +53,7 @@ _本文提供使用 watchOS 3 Xamarin Apple Watch 应用中的多个故障排除
 
 从新安装的 Apple Watch 应用复杂情况可能显示为空白。 重新启动 Apple Watch，若要解决此问题。
 
-## <a name="connectivity"></a>连接
+## <a name="connectivity"></a>连接性
 
 已知问题：
 
@@ -84,7 +84,7 @@ WatchOS 3，截至`HTTPBodyStream`的属性`NSMutableURLRequest`类必须设置�
 - **-1200 [3:-9824]** -http 加载失败。
 - **-1200**  -  `NSURLConnection`已完成，但错误。
 
-截至 watchOS 3，SSL/TLS 连接安全性是严格强制实施由 Apple。 受影响的服务和应用程序应更新 web 服务器以使用最新的 TLS 协议版本。 请参阅[NSURLConnection](#NSURLConnection)上面有关详细信息。
+截至 watchOS 3，SSL/TLS 连接安全性是严格强制实施由 Apple。 受影响的服务和应用程序应更新 web 服务器以使用最新的 TLS 协议版本。 请参阅[NSURLConnection](#nsurlconnection)上面有关详细信息。
 
 ## <a name="snapshots"></a>快照
 
