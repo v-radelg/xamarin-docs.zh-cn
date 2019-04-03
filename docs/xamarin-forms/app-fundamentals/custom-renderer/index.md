@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
+ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666334"
 ---
-
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自定义呈现器
 
 Xamarin.Forms 使用目标平台的本机控件呈现用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留了相应的界面外观。自定义呈现器允许开发人员重写此过程，自定义每个平台上 Xamarin.Forms 控件的外观和行为。
