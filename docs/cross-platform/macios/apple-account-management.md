@@ -1,17 +1,17 @@
 ---
 title: Apple 帐户管理
-description: 本文档介绍如何在 Visual Studio 中适用于 Mac 和 Visual Studio 2017 使用 Apple 帐户管理功能。
+description: 本文档介绍如何在 Visual Studio 中使用的 Apple 帐户管理功能，适用于 Mac 和 Visual Studio 2019。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 1e353aceaf0e2c0525b82c0ccb7e7bcb73df3075
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106060"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855050"
 ---
 # <a name="apple-account-management"></a>Apple 帐户管理
 
@@ -33,7 +33,7 @@ Apple 帐户对话框允许你执行以下操作：
 
 ## <a name="requirements"></a>要求
 
-Apple 帐户管理位于 Visual Studio for Mac 和 Visual Studio 2017 （版本 15.7 及更高版本）
+Visual Studio for Mac，Visual Studio 2019 和 Visual Studio 2017 （版本 15.7 及更高版本） 上提供了 Apple 帐户管理。
 
 必须具有 Apple 开发人员帐户才能使用此功能。 Apple 开发人员帐户的详细信息现已推出[设备预配](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
@@ -44,7 +44,7 @@ Apple 帐户管理位于 Visual Studio for Mac 和 Visual Studio 2017 （版本 
 
 ## <a name="adding-an-apple-developer-account"></a>添加 Apple 开发人员帐户
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. 若要打开帐户管理对话框，请转到**Visual Studio > 首选项 > Apple 开发人员帐户**:
 
@@ -68,9 +68,9 @@ Apple 帐户管理位于 Visual Studio for Mac 和 Visual Studio 2017 （版本 
 
     ![视图的详细信息屏幕显示签名标识和预配配置文件在计算机上](apple-account-management-images/image6.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. 开始将你的 Apple ID 添加到 Visual Studio 2017 之前，请确保您的开发环境是否[到 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. 开始将你的 Apple ID 添加到 Visual Studio 2019 之前，请确保您的开发环境是否[到 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 1. 若要打开帐户管理窗口，请转到**工具 > 选项 > Xamarin > Apple 帐户**:
 
@@ -109,11 +109,11 @@ Apple 帐户管理位于 Visual Studio for Mac 和 Visual Studio 2017 （版本 
 
 如果下拉列表中的一个选项为灰显未选定的这意味着没有正确的团队的权限创建此类型的证书。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ![创建证书选项](apple-account-management-images/image8.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![创建证书选项](apple-account-management-images/prov3.png)
 
@@ -123,11 +123,11 @@ Apple 帐户管理位于 Visual Studio for Mac 和 Visual Studio 2017 （版本 
 
 团队详细信息对话框中还显示连接到你的开发人员帐户的所有预配配置文件的列表。 您可以通过按所有预配配置文件下载到本地计算机**下载所有配置文件**按钮
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 ![下载预配配置文件部分](apple-account-management-images/image9.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 ![下载预配配置文件部分](apple-account-management-images/prov4.png)
 

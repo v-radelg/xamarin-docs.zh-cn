@@ -1,5 +1,5 @@
 ---
-title: 时间和方式应该我提交 bug 报告？
+title: 应何时以及如何提交 bug 报告？
 description: 本文档介绍，其中，以及如何以提交 bug 报告。 它还提供了最佳实践，使工程师以便最好地诊断问题的 bug 报告。
 ms.topic: troubleshooting
 ms.prod: xamarin
@@ -7,19 +7,19 @@ ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2018
-ms.openlocfilehash: f20740ff1e16187be3d3703b3da07329f6f52daf
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.openlocfilehash: 1224d38a2230fa2f5c7ca08f6e33c5468886c206
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514333"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855206"
 ---
-# <a name="when-and-how-should-i-file-a-bug-report"></a>时间和方式应该我提交 bug 报告？
+# <a name="when-and-how-should-i-file-a-bug-report"></a>应何时以及如何提交 bug 报告？
 
 > [!TIP]
 > 使用**报告的问题**Visual Studio 中的菜单项&ndash;这会将发送诊断信息，以及 bug 报告以帮助解决此问题。
 >
-> 有详细介绍了如何[Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)并[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)。
+> 有详细介绍了如何[Visual Studio 2019 或 Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)并[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)。
 >
 > 可以上搜索的现有报表[Visual Studio 开发者社区](https://developercommunity.visualstudio.com/)网站。
 
@@ -47,7 +47,7 @@ ms.locfileid: "39514333"
 
 ## <a name="additional-details"></a>更多详细信息
 
-1. <a name="note-1" />[*^*](#ref-1) 理想情况下的"可见症状"说明应包含足够的详细信息，以便其他客户，可以确定它们是否看到相同的问题 (相同的错误消息，相同的性能下降，同一个堆栈跟踪从崩溃，_等。_). 一个很好示例是如果您可以指定类似于"精确的情况下":"我通常按问题 75%的时间，但如果更改此项然后我可以避免此问题完全"。 "精确情况"的另一个类似示例是如果降级到以前版本的 Xamarin 停止问题。
+1. <a name="note-1" />[*^*](#ref-1) 理想情况下的"可见症状"说明应包含足够的详细信息，以便其他客户，可以确定它们是否看到相同的问题 (相同的错误消息，相同的性能下降，同一个堆栈跟踪从崩溃，_等。_). 为"精确情况下"，一个很好的示例将是如果您可以指定类似于："我通常按问题 75%的时间，但如果更改此项然后我可以避免此问题完全"。 "精确情况"的另一个类似示例是如果降级到以前版本的 Xamarin 停止问题。
 
 1. <a name="note-2" />[*^*](#ref-2) 如您所料，错误文本 （或任何其他唯一的描述性文本） 的代码段是通常是最佳的搜索词。 如果现有的 bug 报告为不完整，则你也可以添加详细信息或文件的新，更好地 bug 报表。
 

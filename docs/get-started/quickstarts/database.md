@@ -1,5 +1,5 @@
 ---
-title: 在本地 SQLite.NET 数据库中存储数据
+title: 将数据存储在本地 SQLite.NET 数据库中
 description: 本文介绍如何在本地 SQLite.NET 数据库中存储数据。
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -8,17 +8,17 @@ ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: 3cea41aa3c021dbb03f851a4deb443ee86fcad25
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.date: 04/01/2019
+ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292821"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854985"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>在本地 SQLite.NET 数据库中存储数据
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 
 在此快速入门中，你将了解如何：
 
@@ -44,17 +44,17 @@ ms.locfileid: "55292821"
 
     ![](database-images/vs/add-nuget-packages.png "添加 NuGet 程序包")    
 
-3. 在中**NuGet 包管理器**，选择**浏览**选项卡上，搜索**sqlite net pcl** NuGet 包中，选择它，并单击**安装**按钮将其添加到项目：
+3. 在“NuGet 包管理器”中，选择“浏览”选项卡，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“安装”按钮将其添加到项目：
 
     ![](database-images/vs/add-package.png "添加包")
 
     > [!NOTE]
-    > 有多个具有类似名称的 NuGet 包。 正确的包具有以下特性：
-    > - **作者：** Frank A. Krueger
+    > 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
+    > - **创建者：** Frank A. Krueger
     > - **ID：** sqlite net pcl
     > - **NuGet 链接：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
-    > 尽管包名称，可以在.NET Standard 项目中使用此 NuGet 包。
+    > 尽管包的名称如此，此 NuGet 包也可以用于 .NET Standard 项目。
 
     此包将用于将数据库操作合并到应用程序。
 
@@ -139,7 +139,7 @@ ms.locfileid: "55292821"
     }
     ```
 
-    此类包含代码以创建数据库、 从中读取数据、 将数据写入到它，并从其中删除数据。 该代码使用异步 SQLite.NET Api，将数据库操作移到后台线程。 此外，`NoteDatabase`构造函数使用作为参数的数据库文件的路径。 此路径将由提供`App`下一步中的类。
+    此类包含代码以创建数据库、 从中读取数据、 将数据写入到它，并从其中删除数据。 代码使用将数据库操作移动到后台线程的异步 SQLite.NET API。 此外，`NoteDatabase` 构造函数将数据库文件的路径作为参数。 此路径将由提供`App`下一步中的类。
 
     保存对更改**NoteDatabase.cs**通过按**CTRL + S**，然后关闭文件。
 
@@ -152,10 +152,8 @@ ms.locfileid: "55292821"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Notes.Data;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -249,17 +247,17 @@ ms.locfileid: "55292821"
 
     ![](database-images/vsmac/add-nuget-packages.png "添加 NuGet 程序包")    
 
-3. 在中**添加包**窗口中，搜索**sqlite net pcl** NuGet 包中，选择它，然后单击**添加包**按钮以将其添加到项目：
+3. 在“添加包”窗口中，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“添加包”按钮将其添加到项目：
 
     ![](database-images/vsmac/add-package.png "添加包")
 
     > [!NOTE]
-    > 有多个具有类似名称的 NuGet 包。 正确的包具有以下特性：
-    > - **作者：** Frank A. Krueger
+    > 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
+    > - **创建者：** Frank A. Krueger
     > - **ID：** sqlite net pcl
     > - **NuGet 链接：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
-    > 尽管包名称，可以在.NET Standard 项目中使用此 NuGet 包。
+    > 尽管包的名称如此，此 NuGet 包也可以用于 .NET Standard 项目。
 
     此包将用于将数据库操作合并到应用程序。
 
@@ -344,7 +342,7 @@ ms.locfileid: "55292821"
     }
     ```
 
-    此类包含代码以创建数据库、 从中读取数据、 将数据写入到它，并从其中删除数据。 该代码使用异步 SQLite.NET Api，将数据库操作移到后台线程。 此外，`NoteDatabase`构造函数使用作为参数的数据库文件的路径。 此路径将由提供`App`下一步中的类。
+    此类包含代码以创建数据库、 从中读取数据、 将数据写入到它，并从其中删除数据。 代码使用将数据库操作移动到后台线程的异步 SQLite.NET API。 此外，`NoteDatabase` 构造函数将数据库文件的路径作为参数。 此路径将由提供`App`下一步中的类。
 
     保存对更改**NoteDatabase.cs**通过选择**文件 > 保存**(或通过按 **&#8984; + S**)，然后关闭文件。
 
@@ -357,10 +355,8 @@ ms.locfileid: "55292821"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Notes.Data;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -455,9 +451,9 @@ ms.locfileid: "55292821"
 应用程序使用 XAML 样式的样式，继续学习下一步的快速入门教程。
 
 > [!div class="nextstepaction"]
-> [下一页](styling.md)
+> [下一步](styling.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [便笺（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+- [说明 （示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 - [Xamarin.Forms 快速入门的深入探讨](deepdive.md)

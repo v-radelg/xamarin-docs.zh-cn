@@ -8,17 +8,17 @@ ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/02/2019
-ms.openlocfilehash: f3c5ec1c6d37c74fd9b4fb4980c68a59c9864c05
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.date: 04/01/2019
+ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197363"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854972"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 在此快速入门中，你将了解如何：
 
@@ -39,7 +39,7 @@ ms.locfileid: "57197363"
 
 ## <a name="update-the-app-with-visual-studio"></a>使用 Visual Studio 更新应用
 
-1. 启动 Visual Studio。 在开始页上单击**打开项目 / 解决方案**，然后在**打开项目**对话框中选择说明项目的解决方案文件：
+1. 启动 Visual Studio。 在开始窗口中，单击**说明**解决方案最近项目/解决方案列表或单击**打开项目或解决方案**，然后在**打开项目/解决方案**对话框选择说明项目的解决方案文件：
 
     ![](multi-page-images/vs/open-solution.png "打开项目")
 
@@ -285,9 +285,7 @@ ms.locfileid: "57197363"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -324,7 +322,7 @@ ms.locfileid: "57197363"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 更新应用
 
-1. 启动 Visual Studio for Mac。 在开始页上单击**打开...**，并在对话框中选择说明项目的解决方案文件：
+1. 启动 Visual Studio for Mac。 在启动窗口中单击**打开**，并在对话框中选择说明项目的解决方案文件：
 
     ![](multi-page-images/vsmac/open-solution.png "打开解决方案")
 
@@ -570,9 +568,7 @@ ms.locfileid: "57197363"
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace Notes
     {
         public partial class App : Application
@@ -617,9 +613,9 @@ ms.locfileid: "57197363"
 若要修改应用程序，以便将其数据存储在本地数据库中 SQLite.NET，继续学习下一步的快速入门教程。
 
 > [!div class="nextstepaction"]
-> [下一页](database.md)
+> [下一步](database.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [便笺（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+- [说明 （示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 - [Xamarin.Forms 快速入门的深入探讨](deepdive.md)

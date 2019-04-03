@@ -1,17 +1,17 @@
 ---
 title: 传输层安全性 (TLS) 1.2
-description: 本文档介绍了如何启用 TLS 1.2 的 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 项目。 它演示了如何执行此操作在 Visual Studio 2017 和 Visual Studio for mac。
+description: 本文档介绍了如何启用 TLS 1.2 的 Xamarin.iOS、 Xamarin.Android 和 Xamarin.Mac 项目。 它演示了如何执行此操作在 Visual Studio 2019 和 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 889eaf2b2f87b22010315f5e92dcfd1cd4c7c446
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 26870ae0e84a84a7b78f7766a8e134ecfc7b223e
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668265"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854998"
 ---
 # <a name="transport-layer-security-tls-12"></a>传输层安全性 (TLS) 1.2
 
@@ -31,17 +31,17 @@ ms.locfileid: "57668265"
 > [!NOTE]
 > 需要 Android 5.0 或更高版本。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 这些设置可在**项目属性 > Android 选项**，然后单击**高级**按钮：
 
-[![在 Visual Studio 中配置 HttpClient 和 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![C配置 HttpClient 和 Visual Studio 中的 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 这些设置可在**项目选项 > 生成 > Android 生成**选项卡：
 
-[![为 Mac 在 Visual Studio 中配置 HttpClient 和 TLS](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
+[![C配置 HttpClient 和 Visual Studio for Mac 中的 TLS](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
@@ -49,17 +49,17 @@ ms.locfileid: "57668265"
 
 更新**HttpClient 实现**启用 TSL 1.2 安全选项。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 此设置可在**项目属性 > iOS 生成**:
 
-[![在 Visual Studio 中配置 HttpClient 和 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![C配置 HttpClient 和 Visual Studio 中的 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 此设置可在**项目选项 > 生成 > iOS 生成**选项卡：
 
-[![在 Visual Studio for Mac 中配置 HttpClient](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![C配置 Visual Studio for Mac 中的 HttpClient](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -67,7 +67,7 @@ ms.locfileid: "57668265"
 
 在 Visual Studio for Mac，若要在 Xamarin.Mac 应用中启用 TLS 1.2，更新**HttpClient 实现**选项**项目选项 > 生成 > Mac 生成**:
 
-[![在 Visual Studio for Mac 中配置 HttpClient](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
+[![C配置 Visual Studio for Mac 中的 HttpClient](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
 > [!WARNING]
 > 即将发布的 Xamarin.Mac 4.8 版本仅支持 macOS 10.9 或更高版本。
@@ -119,7 +119,7 @@ Android 项目选项还允许您选择支持的 SSL/TLS 实现：
 
 ## <a name="related-links"></a>相关链接
 
-- [应用传输安全性](~/ios/app-fundamentals/ats.md)
+- [应用程序传输安全](~/ios/app-fundamentals/ats.md)
 - [Xamarin.Android 环境](~/android/deploy-test/environment.md)
 - [Xamarin Cycle 9 (2017 年 2 月)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)

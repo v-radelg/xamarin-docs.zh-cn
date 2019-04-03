@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 846a8fd45b8e39fb11270374af47a5b6cb83fa01
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666930"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854894"
 ---
 # <a name="external-storage"></a>外部存储
 
@@ -61,7 +61,7 @@ ms.locfileid: "56666930"
 | DirectoryMusic | **_PRIVATE\_EXTERNAL\_STORAGE_/Music** |
 | DirectoryNotifications | **_私有\_外部\_存储_/Notifications** |
 | DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
-| DirectoryRingtones | **_私有\_外部\_存储_/Ringtones** |
+| DirectoryRingtones | **_PRIVATE\_EXTERNAL\_STORAGE_/Ringtones** |
 | DirectoryPictures | **_私有\_外部\_存储_  /图片** |
 
 对于具有多个外部存储分区的设备，每个分区都适用于专用文件的目录。 该方法`Android.Content.Context.GetExternalFilesDirs(string type)`将返回一个数组`Java.IO.Files`。 每个对象将表示专用的特定于应用程序目录在所有应用程序可以在其中放置文件的共享/外部存储设备上它所拥有。
@@ -140,17 +140,17 @@ Android 会考虑访问外部存储要_非常危险的权限_，这通常要求�
 > [!NOTE]
 > 如果用户授予`WRITE_EXTERNAL_STORAGE`，然后`READ_EXTERNAL_STORAGE`也是隐式授予。 不需要请求中的这两个权限**AndroidManifest.xml**。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 此外可以使用添加的权限**Android 清单**选项卡**解决方案属性**:
 
-![解决方案资源管理器-Visual Studio 2017 所需的权限](./images/required-permissions.w157.png)
+![解决方案资源管理器-Visual Studio 所需的权限](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 此外可以使用添加的权限**Android 清单**选项卡**解决方案属性板**:
 
-[![Solution Pad 适用于 Mac 的 Visual Studio 所需权限](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![S解决方案板-Visual Studio for Mac 的所需的权限](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 
@@ -181,4 +181,4 @@ System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/file
 ## <a name="related-links"></a>相关链接
 
 * [Xamarin.Android 本地文件示例上**monodroid 示例**](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
-* [在 Xamarin.Android 中的权限](~/android/app-fundamentals/permissions.md)
+* [Permissions In Xamarin.Android](~/android/app-fundamentals/permissions.md)

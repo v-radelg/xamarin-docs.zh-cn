@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: cfb387f452939bf72ca3606f9f88f482f6622202
+ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
 ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/02/2019
-ms.locfileid: "58855338"
+ms.locfileid: "58855337"
 ---
 Xamarin 可安装的一部分_新_Visual Studio 2019 安装中的，通过执行以下步骤：
 
@@ -15,25 +15,21 @@ Xamarin 可安装的一部分_新_Visual Studio 2019 安装中的，通过执行
 
 3. 从安装屏幕中选择“使用 .NET 的移动开发”工作负载：
 
-    ![工作负载屏幕上具有 .NET 选择的移动开发](~/get-started/installation/windows-images/01-mobile-dev-workload.png)
+    [![M具有.NET 选择 obile 开发](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
 
-4. 选择“使用 .NET 的移动开发”时，查看右侧的“安装详细信息”面板。 可在此处取消选择不希望安装的移动开发选项。
+4. Visual Studio 2019 安装准备就绪后，单击**安装**右下角中的按钮：
 
-    ![列出要安装的 Xamarin 选项的“安装详细信息”面板](~/get-started/installation/windows-images/02-summary.png)
-
-5. Visual Studio 2019 安装准备就绪后，单击**安装**右下角中的按钮：
-
-    ![“安装”按钮](~/get-started/installation/windows-images/03-click-install.png)
+    ![“安装”按钮](~/get-started/installation/windows-images/vs2019-click-install.png)
 
    根据你安装哪个版本的 Visual Studio 2019，安装过程可能需要很长时间才能完成。 可使用进度栏监视安装过程：
 
-    ![安装过程中的进度栏](~/get-started/installation/windows-images/04-progress-bars.png)
+    ![安装过程中的进度栏](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 
-6. Visual Studio 2019 安装完成后，单击**启动**按钮以启动 Visual Studio:
+5. Visual Studio 2019 安装完成后，单击**启动**按钮以启动 Visual Studio:
 
-    ![启动按钮的位置](~/get-started/installation/windows-images/05-launch.png)
+    ![启动按钮的位置](~/get-started/installation/windows-images/vs2019-launch.png)
 
-<a name="vs2017" />
+<a name="vs2019" />
 
 ### <a name="adding-xamarin-to-visual-studio-2019"></a>将 Xamarin 添加到 Visual Studio 2019
 

@@ -1,27 +1,35 @@
 ### YamlMime:ZonePivotGroups
 groups:
 - id: platform
-  title: 平台
+  title: Platform
   prompt: 选择你的开发环境
   pivots:
   - id: windows
-    title: Visual Studio 2017
+    title: Visual Studio 2019
   - id: macos
     title: Visual Studio for Mac
 - id: platform-dev16
-  title: 平台
+  title: Platform
   prompt: 选择你的开发环境
   pivots:
   - id: windows
+    title: Visual Studio 2019
+  - id: win-vs2017
     title: Visual Studio 2017
   - id: macos
     title: Visual Studio for Mac
-  - id: win-dev16
-    title: Visual Studio 2019 （预览版）
+- id: platform-win
+  title: Platform
+  prompt: 选择你的开发环境
+  pivots:
+  - id: windows
+    title: Visual Studio 2019
+  - id: win-vs2017
+    title: Visual Studio 2017
 metadata:
-  ms.openlocfilehash: c519dcceabeeb912f870127edd9c9c5538ebd2c3
-  ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+  ms.openlocfilehash: d17a2413aee54a0b3d009f3b4cb63c3b25cd6b33
+  ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
   ms.translationtype: MT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 02/14/2019
-  ms.locfileid: "56240326"
+  ms.lasthandoff: 04/02/2019
+  ms.locfileid: "58854543"

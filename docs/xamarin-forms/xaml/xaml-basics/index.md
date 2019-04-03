@@ -7,27 +7,27 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: bd6013a0fc1d4f3dfc2d863860052310fed55e4d
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: e85eb64099ba60a2b3663730a6fb058efdac6c60
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292137"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854699"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 
 XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。 XAML 永远不会需要在 Xamarin.Forms 程序中，但通常会更简洁和更直观地一致比等效的代码，并可能会非常有用。 XAML 是非常适合于与常用的 MVVM （模型-视图-视图） 应用程序体系结构一起使用：XAML 定义通过基于 XAML 的数据绑定链接到 ViewModel 代码的视图。
 
 ## <a name="xaml-basics-contents"></a>XAML 基础知识内容
 
 * [概述](#Overview)
-* [第 1 部分：XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [第 2 部分：基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [第 3 部分：XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [第 4 部分：数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-* [第 5 部分：从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+* [第 1 部分。 XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+* [第 2 部分。 基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+* [第 3 部分。 XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+* [第 4 部分。 数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+* [第 5 部分。 从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 除了这些 XAML 基础知识文章中，您可以下载一书的章节[使用 Xamarin.Forms 创建移动应用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
 
@@ -41,28 +41,28 @@ XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Form
     <h4>第 7 章。 XAML vs。代码</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf">下载 PDF</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md">摘要</a></td>
+  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md">总结</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
     <h4>第 8 章。 代码和 XAML 协调工作</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf">下载 PDF</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md">摘要</a></td>
+  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter08.md">总结</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
     <h4>第 10 章。 XAML 标记扩展</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf">下载 PDF</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md">摘要</a></td>
+  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md">总结</a></td>
 </tr>
 <tr style="background:#f8f9fa">
   <td style="border:0px;">
     <h4>第 18 章。 MVVM</h4>
   </td>
   <td style="border:0px;" align="right"><a href="https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf">下载 PDF</a> </td>
-  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md">摘要</a></td></tr>
+  <td style="border:0px;" align="right"><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md">总结</a></td></tr>
 </table>
 
 可以是这些章节[免费下载的](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)。
@@ -89,7 +89,7 @@ XAML 具有几大优势，等效的代码：
 -  XAML 通常无法实例化类未定义无参数构造函数。 （但是，没有有时会解决此限制问题的方法。）
 -  XAML 通常不能调用方法。 （同样，此限制可以有时克服。）
 
-还没有可视化设计器生成 XAML 在 Xamarin.Forms 应用程序。 所有 XAML 都必须手动编写的但没有[XAML 预览程序](~/xamarin-forms/xaml/xaml-previewer.md)。 新增到 XAML 的程序员可能想要频繁生成并运行其应用程序，尤其是之后可能不正确很明显的任何内容。 凭借大量经验在 XAML 中甚至开发人员知道试验有价值。
+还没有可视化设计器生成 XAML 在 Xamarin.Forms 应用程序。 所有 XAML 都必须手动编写的但没有[XAML 预览程序](~/xamarin-forms/xaml/xaml-previewer/index.md)。 新增到 XAML 的程序员可能想要频繁生成并运行其应用程序，尤其是之后可能不正确很明显的任何内容。 凭借大量经验在 XAML 中甚至开发人员知道试验有价值。
 
 XAML 基本上是 XML，但 XAML 具有一些独特的语法功能。 最重要的是：
 

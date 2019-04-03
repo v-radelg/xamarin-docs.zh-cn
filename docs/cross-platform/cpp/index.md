@@ -1,10 +1,16 @@
 ---
 ms.assetid: EA2D979E-9151-4CE9-9289-13B6A979838B
 title: 通过 Xamarin 使用 C/c + + 库
-description: 'Visual Studio for Mac 可用于生成和适用于 Android 和 iOS，将跨平台 C/c + + 代码集成到移动应用使用 Xamarin 和C#。 此文章介绍了如何设置和调试 Xamarin 应用程序中的 c + + 项目。'
+description: Visual Studio for Mac 可用于生成和适用于 Android 和 iOS，将跨平台 C/c + + 代码集成到移动应用使用 Xamarin 和C#。 此文章介绍了如何设置和调试 Xamarin 应用程序中的 c + + 项目。
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
+ms.openlocfilehash: a235a24d544e938d4bf29e6569564aface2f6972
+ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58866379"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>通过 Xamarin 使用 C/c + + 库
 
@@ -12,7 +18,7 @@ ms.date: 12/17/2018
 
 Xamarin 开发人员可以使用 Visual Studio 创建跨平台本机移动应用。 通常情况下，C#使用绑定来公开给开发人员的现有平台组件。 但是，有些的时候当 Xamarin 应用程序需要使用现有代码库。 有时团队只是没有到基本代码的时间、 预算或一个大型的、 经过全面测试，并且高度优化的端口的资源C#。
 
-[用于跨平台移动开发的 visual c + +](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development) 启用 C/c + + 和C#作为同一个解决方案，提供很多优点，包括获得统一调试体验的一部分生成代码。 Microsoft 已在这种方式，如交付应用中使用 C/c + + 和 Xamarin [Hyperlapse 移动版](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw) 并 [Pix 照相机](https://www.microsoft.com/microsoftpix)。
+[用于跨平台移动开发的 visual c + +](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development)启用 C/c + + 和C#相同的解决方案，提供很多优点，包括获得统一调试体验的一部分生成代码。 Microsoft 已在这种方式，如交付应用中使用 C/c + + 和 Xamarin [Hyperlapse 移动版](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw)并[Pix 照相机](https://www.microsoft.com/microsoftpix)。
 
 但是，在某些情况下没有愿望 （或要求） 保留现有的 C/c + + 工具和流程中的位置和保持分离的应用程序，将库作为它类似于第三方组件的库代码。 在这些情况下，面临的挑战不只公开到相关的成员C#，但管理作为依赖项的库。 和，当然，作为此过程的大部分尽可能自动执行。  
 
@@ -42,7 +48,7 @@ C/c + + 被视为一种跨平台语言，但必须格外谨慎以确保源代码
 
 此阶段的目标是创建可由调用的本机库C#包装器。 这可能会也可能不是相关具体取决于你的情况。 许多工具和可以用来解决这种常见方案中的进程已超出本文的讨论范围。 重要注意事项是的保持 C/c + + 代码库的任何本机打包程序代码，足够单元测试、 与同步和生成自动化。 
 
-在预排中的库创建 Visual Studio Code 中使用随附的 shell 脚本。 本演练中的扩展的版本可在 [移动 CAT GitHub 存储库](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)，其中介绍了此部分中更深入地示例。 本机库都被视为第三方依赖项在此情况下但是针对上下文进行了说明此阶段。
+在预排中的库创建 Visual Studio Code 中使用随附的 shell 脚本。 本演练中的扩展的版本可在[移动 CAT GitHub 存储库](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)，其中介绍了此部分中更深入地示例。 本机库都被视为第三方依赖项在此情况下但是针对上下文进行了说明此阶段。
 
 
 为简单起见，本演练面向体系结构的一个子集。 对于 iOS，它使用 lipo 实用程序来创建单个 fat 二进制从单个特定于体系结构的二进制文件。 Android 将.so 扩展名为使用动态二进制文件，iOS 将.a 扩展名为使用静态 fat 二进制。 
@@ -71,7 +77,7 @@ C/c + + 被视为一种跨平台语言，但必须格外谨慎以确保源代码
 
 ## <a name="walk-through"></a>演练
 
-提供的步骤是特定于 **Visual Studio for Mac**，但结构适用于 **Visual Studio 2017** 也。
+提供的步骤是特定于**Visual Studio for Mac**，但结构适用于**Visual Studio 2017**也。
 
 ### <a name="prerequisites"></a>系统必备
 
@@ -82,17 +88,17 @@ C/c + + 被视为一种跨平台语言，但必须格外谨慎以确保源代码
 -   [*Visual Studio* *for Mac*](https://visualstudio.microsoft.com/downloads)
 
 > [!NOTE]
-> 一个有效 [**Apple 开发人员帐户**](https://developer.apple.com/) 才能将应用部署到 iPhone。
+> 一个有效[ **Apple 开发人员帐户**](https://developer.apple.com/)才能将应用部署到 iPhone。
 
 ## <a name="creating-the-native-libraries-stage-1"></a>创建本机库 (阶段 1)
 
-本机库功能基于从示例 [演练：创建和使用静态库 （c + +）](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)。
+本机库功能基于从示例[演练：创建和使用静态库 （c + +）](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)。
 
-本演练将跳过第一阶段，因为库提供为在此方案中的第三方依赖项生成本机库。 预编译的本机库随附 [示例代码](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)也可以是[下载](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) 直接。
+本演练将跳过第一阶段，因为库提供为在此方案中的第三方依赖项生成本机库。 预编译的本机库随附[示例代码](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)也可以是[下载](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)直接。
 
 ### <a name="working-with-the-native-library"></a>使用本机库
 
-原始 *MathFuncsLib* 示例包含以下定义名为 MyMathFuncs 的单个类： 
+原始*MathFuncsLib*示例包含以下定义名为 MyMathFuncs 的单个类： 
 
 ```cpp
 namespace MathFuncs
@@ -124,11 +130,11 @@ extern "C" {
 }
 ```
 
-它将是在使用这些包装器函数 [Xamarin](https://visualstudio.microsoft.com/xamarin/) 端。
+它将是在使用这些包装器函数[Xamarin](https://visualstudio.microsoft.com/xamarin/) 端。
 
 ## <a name="wrapping-the-native-library-stage-2"></a>包装本机库 (阶段 2)
 
-此阶段需要[预编译库](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)中所述 [上一节](https://docs.microsoft.com/xamarin/cross-platform/cpp/index)。
+此阶段需要[预编译库](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)中所述[上一节](https://docs.microsoft.com/xamarin/cross-platform/cpp/index)。
 
 ### <a name="creating-the-visual-studio-solution"></a>创建 Visual Studio 解决方案
 
@@ -160,7 +166,7 @@ extern "C" {
 17. 选择**MathFuncs.Shared**从**项目**选项卡，然后单击**确定**。
 18. 重复步骤 7-17 （忽略步骤 9 中） 使用以下配置：
 
-    | **项目名称**  | **TEMPLATE NAME**   | **新建项目菜单**   |
+    | **项目名称**  | **模板名称**   | **新建项目菜单**   |
     |-------------------| --------------------| -----------------------|
     | MathFuncs.Android | 类库       | Android > 库      |
     | MathFuncs.iOS     | 绑定库     | iOS > 库          |
@@ -185,7 +191,7 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
 
 1. **控件的同时单击**上**MathFuncs.Android**项目，然后选择**新文件夹**从**添加**菜单其命名为**libs**.
 
-2. 每个 **ABI** （应用程序二进制接口）， **控件的同时单击** 上 **libs** 文件夹，然后选择 **新的文件夹** 从 **添加** 菜单中，在此之后将其命名各自 **ABI**。 这种情况下：
+2. 每个**ABI** （应用程序二进制接口），**控件的同时单击**上**libs**文件夹，然后选择**新文件夹**从**添加**菜单上，在此之后将其命名各自**ABI**。 这种情况下：
 
     - arm64-v8a
     - armeabi-v7a
@@ -193,7 +199,7 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
     - x86_64  
 
     > [!NOTE]
-    > 有关更详细的概述，请参阅 [体系结构和 Cpu](https://developer.android.com/ndk/guides/arch) 从主题 [NDK 开发人员指南](https://developer.android.com/ndk/guides/)，特别是对寻址的部分 [应用程序包中的本机代码](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
+    > 有关更详细的概述，请参阅[体系结构和 Cpu](https://developer.android.com/ndk/guides/arch)从主题[NDK 开发人员指南](https://developer.android.com/ndk/guides/)，特别是对寻址的部分[应用程序包中的本机代码](https://developer.android.com/ndk/guides/abis#native-code-in-app-packages).
 
 3. 验证文件夹结构：  
 
@@ -220,7 +226,7 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
 
 5. 为每个 **.so**文件，**控件的同时单击**然后选择**EmbeddedNativeLibrary**选项**生成操作**菜单。
 
-现在 **libs** 文件夹应出现，如下所示：
+现在**libs**文件夹应出现，如下所示：
 
 ```bash
 - lib
@@ -468,12 +474,12 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
 
 #### <a name="creating-the-nuspec"></a>创建 nuspec
 
-若要将库一起打包并通过 NuGet 分发，需求的解决方案 **nuspec**文件。 这将确定哪些生成的程序集将包含有关每个受支持的平台。
+若要将库一起打包并通过 NuGet 分发，需求的解决方案**nuspec**文件。 这将确定哪些生成的程序集将包含有关每个受支持的平台。
 
-1.  **控件的同时单击** 解决方案 **MathFuncs**，然后选择 **添加解决方案文件夹**从 **添加** 菜单其命名为 **SolutionItems**。
-2.  **控件的同时单击** 上 **SolutionItems** 文件夹，然后选择 **新文件...** 从 **添加** 菜单。
-3.  选择 **空 XML 文件** 从 **新文件** 窗口中，其命名为 **MathFuncs.nuspec** ，然后单击 **新**。
-4.  更新 **MathFuncs.nuspec** 基本包元数据显示给**NuGet**使用者。 例如：
+1.  **控件的同时单击**解决方案**MathFuncs**，然后选择**添加解决方案文件夹**从**添加**菜单其命名为**SolutionItems**.
+2.  **控件的同时单击**上**SolutionItems**文件夹，然后选择**新文件...** 从**添加**菜单。
+3.  选择**空 XML 文件**从**新的文件**窗口中，其命名为**MathFuncs.nuspec** ，然后单击**新建**。
+4.  更新**MathFuncs.nuspec**与要向显示的基本包元数据**NuGet**使用者。 例如：
 
 
     ```xml
@@ -563,9 +569,9 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
     ```
 
     > [!NOTE]
-    > 此文件指定的程序集输出路径从 **发行** 构建，因此请确保使用该配置生成解决方案。
+    > 此文件指定的程序集输出路径从**版本**构建，因此请确保使用该配置生成解决方案。
 
-此时，该解决方案包含 3 个.NET 程序集和支持 **nuspec** 清单。
+此时，该解决方案包含 3 个.NET 程序集和支持**nuspec**清单。
 
 ## <a name="distributing-the-net-wrapper-with-nuget"></a>分发具有 NuGet 的.NET 包装
 
@@ -575,33 +581,33 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
 
 NuGet 源的最简单形式是本地目录：
 
-1.  在中 **Finder**，导航到一个方便访问的目录。 例如， **/用户**。
-2.  选择 **新文件夹** 从 **文件** 菜单上，提供有意义的名称，如 **本地 nuget 源**。
+1.  在中**Finder**，导航到一个方便访问的目录。 例如， **/用户**。
+2.  选择**新文件夹**从**文件**菜单上，提供有意义的名称，如**本地 nuget 源**。
 
 ### <a name="creating-the-package"></a>创建包
 
-1.  设置 **生成配置** 到 **发行**，并执行生成中使用 **COMMAND + B**。
-2.  打开 **终端**并将目录更改到此文件夹包含 **nuspec** 文件。
-3.  在中 **终端**，执行 **nuget 包** 命令指定 **nuspec** 文件， **版本**  (例如，1.0.0)，并 **OutputDirectory** 使用中创建的文件夹 [上一步](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)，即， **本地 nuget 源**。 例如：
+1.  设置**生成配置**到**发行**，并执行生成中使用**COMMAND + B**。
+2.  打开**终端**并将目录更改到此文件夹包含**nuspec**文件。
+3.  在中**终端**，执行**nuget 包**命令指定**nuspec**文件中，**版本**(例如，1.0.0) 和**OutputDirectory**使用的文件夹中创建[上一步](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)，即，**本地 nuget 源**。 例如：
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
     ```
 
-4. **确认**该 **MathFuncs.1.0.0.nupkg** 中创建了 **本地 nuget 源**目录。
+4. **确认**该**MathFuncs.1.0.0.nupkg**中创建了**本地 nuget 源**目录。
 
 ### <a name="optional-using-a-private-nuget-feed-with-azure-devops"></a>[可选]使用 Azure DevOps 私有 NuGet 源
 
-一种更可靠的技术是中所述 [开始使用 Azure DevOps 中的 NuGet 包](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)，其中说明了如何创建私有源和推送包 （在上一步中生成） 到该数据源。
+一种更可靠的技术是中所述[开始使用 Azure DevOps 中的 NuGet 包](https://docs.microsoft.com/azure/devops/artifacts/get-started-nuget?view=vsts&tabs=new-nav#publish-a-package)，其中说明了如何创建私有源和推送包 （在上一步中生成） 到该数据源。
 
-它是具有完全自动化，例如使用此工作流的理想之选 [Azure 管道](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)。 有关详细信息，请参阅[开始使用 Azure 管道](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)。
+它是具有完全自动化，例如使用此工作流的理想之选[Azure 管道](https://docs.microsoft.com/azure/devops/pipelines/index?view=vsts)。 有关详细信息，请参阅[开始使用 Azure 管道](https://docs.microsoft.com/azure/devops/pipelines/get-started/index?view=vsts)。
 
 ## <a name="consuming-the-net-wrapper-from-a-xamarinforms-app"></a>使用 Xamarin.Forms 应用从.NET 包装
-若要完成本演练，创建 **Xamarin.Forms** 应用程序只需使用包发布到本地 **NuGet** 源。
+若要完成本演练，创建**Xamarin.Forms**应用程序只需使用包发布到本地**NuGet**源。
 
 ### <a name="creating-the-xamarinforms-project"></a>创建**Xamarin.Forms**项目
 
-1. 打开新的实例 **Visual Studio for Mac**。 这可以从 **终端**:
+1. 打开新的实例**Visual Studio for Mac**。 这可以从**终端**:
 
     ```bash
     open -n -a "Visual Studio"
@@ -639,7 +645,7 @@ NuGet 源的最简单形式是本地目录：
     - **位置：** 指定**本地 nuget 源**文件夹中创建[上一步](#preparing-a-local-packages-directory)。
 
     > [!NOTE]
-    > 在这种情况下没有无需指定 **用户名** 并 **密码**。 
+    > 在这种情况下没有无需指定**用户名**并**密码**。 
 
 4. 单击 **“确定”**。
 
@@ -654,10 +660,10 @@ NuGet 源的最简单形式是本地目录：
 
 ### <a name="using-the-library-functions"></a>使用库函数
 
-现在，借助对的引用 **MathFuncs** 包中每个项目，这些函数可供C#代码。
+现在，借助对的引用**MathFuncs**包中每个项目，这些函数可供C#代码。
 
-1.  打开 **MainPage.xaml.cs** 内 **MathFuncsApp** 常见 **Xamarin.Forms**项目 (引用这两个 **MathFuncsApp.Android** 并 **MathFuncsApp.iOS**)。
-2.  添加 **使用** 语句 **System.Diagnostics** 并 **MathFuncs** 在文件顶部：
+1.  打开**MainPage.xaml.cs**内**MathFuncsApp**常见**Xamarin.Forms**项目 (由已引用**MathFuncsApp.Android**并**MathFuncsApp.iOS**)。
+2.  添加**使用**语句**System.Diagnostics**并**MathFuncs**在文件顶部：
 
     ```csharp
     using System.Diagnostics;

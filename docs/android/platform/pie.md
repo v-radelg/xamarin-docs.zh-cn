@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: fa41affc57714254a12623f79da3dc1396ecd009
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: e08324d5a905639e7ecd59bc4c7a5c0f02d0adfe
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670126"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854712"
 ---
 # <a name="android-pie-features"></a>饼图的 android 功能
 
@@ -30,19 +30,20 @@ Xamarin.Android 9.0 提供对 Android 饼图的支持。 有关 Android 饼图�
 
 以下列表是所需的基于 Xamarin 的应用中使用 Android 饼图功能：
 
--   **Visual Studio** &ndash;如果使用的 Windows，更新到 Visual Studio 2017 15.8 或更高版本。 如果使用的是 Mac，更新到 Visual Studio 2017 for Mac 7.6 或更高版本。
+- **Visual Studio** &ndash;建议使用 Visual Studio 2019。
+    如果使用 Visual Studio 2017 中，在 Visual Studio 2017 15.8 或更高版本的 Windows 更新。 在 macOS 上，更新到 Visual Studio 2017 for Mac 7.6 或更高版本。
 
--   **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 或更高版本必须与 Visual Studio 一起安装 (作为的一部分自动安装 Xamarin.Android**使用.NET 的移动开发**工作负荷)。
+- **Xamarin.Android** &ndash; Xamarin.Android 9.0.0.17 或更高版本必须与 Visual Studio 一起安装 (作为的一部分自动安装 Xamarin.Android**使用.NET 的移动开发**工作负荷)。
 
--   **Java 开发人员工具包** &ndash; Xamarin Android 9.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或可以试用 Microsoft 的分发的预览版[OpenJDK](~/android/get-started/installation/openjdk.md))。 作为的一部分自动安装 JDK8**使用.NET 的移动开发**工作负荷。
+- **Java 开发人员工具包** &ndash; Xamarin Android 9.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或可以试用 Microsoft 的分发的预览版[OpenJDK](~/android/get-started/installation/openjdk.md))。 作为的一部分自动安装 JDK8**使用.NET 的移动开发**工作负荷。
 
--   **Android SDK** &ndash;必须通过 Android SDK 管理器安装 Android SDK API 28 或更高版本。
+- **Android SDK** &ndash;必须通过 Android SDK 管理器安装 Android SDK API 28 或更高版本。
 
 ## <a name="getting-started"></a>入门
 
 若要开始开发使用 Xamarin.Android 的 Android 饼图应用，必须下载并安装最新工具和 SDK 包，然后才能创建第一个 Android 饼图项目：
 
-1. 更新到[Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更高版本。 如果你使用 Visual Studio for Mac，更新至[Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更高版本。
+1. 建议使用 visual Studio 2019。 如果使用 Visual Studio 2017，更新至[Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更高版本。 如果你使用 Visual Studio for Mac，更新至[Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)或更高版本。
 
 2. 安装**Android 饼图 (API 28)** 包和工具通过 SDK 管理器。
 
@@ -52,13 +53,11 @@ Xamarin.Android 9.0 提供对 Android 饼图的支持。 有关 Android 饼图�
 
 以下部分解释了每个步骤：
 
-
 ### <a name="update-visual-studio"></a>更新 Visual Studio
 
-若要添加到 Visual Studio Android 饼图的支持，请更新到 Visual Studio 2017 15.8 或更高版本 (有关说明，请参阅[到最新版本更新 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。
+Visual Studio 2019 用于构建使用 Xamarin Android 饼图应用建议。
 
-若要添加到 Visual Studio for Mac Android 饼图支持，请更新到 Mac 7.6 或更高版本的 Visual Studio 2017 (有关说明，请参阅[安装程序并安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
-
+如果使用 Visual Studio 2017，更新到 Visual Studio 2017 15.8 或更高版本 (有关说明，请参阅[到最新版本更新 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。 在 macOS 上，更新到 Mac 7.6 或更高版本的 Visual Studio 2017 (有关说明，请参阅[安装程序并安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation))。
 
 ### <a name="install-the-android-sdk"></a>安装 Android SDK
 
@@ -68,15 +67,13 @@ Xamarin.Android 9.0 提供对 Android 饼图的支持。 有关 Android 饼图�
 
 2. 在右下角，单击齿轮图标并选择**存储库 > Google （不受支持）**:
 
-    [![向 Google 设置存储库](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [![Setting 向 Google 存储库](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. 安装**Android 饼图**SDK 包，被列为**Android SDK 平台 28**中**平台**选项卡 （有关使用 SDK 管理器的详细信息，请参阅[Android SDK 安装程序](~/android/get-started/installation/android-sdk.md)):
 
-    [![安装 Android 饼图包](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [![I本章 Android 饼图包](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. 如果使用仿真程序，创建一个虚拟设备，支持**API 级别 28**。 有关创建虚拟设备的详细信息，请参阅[管理虚拟设备使用 Android 设备管理器](~/android/get-started/installation/android-emulator/device-manager.md)。
-
-
 
 ### <a name="start-a-xamarinandroid-project"></a>启动 Xamarin.Android 项目
 
@@ -133,7 +130,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 以下示例提供这些切除模式的示例。 在左侧的第一个屏幕截图是在非全屏模式下的应用。 在中心屏幕截图中，使用应用程序的全屏与`LayoutInDisplayCutoutMode`设置为`LayoutInDisplayCutoutModeShortEdges`。 请注意，应用程序的白色背景扩展到显示切除区域：
 
-[![在仿真程序中的示例显示切除模式](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![E在仿真程序中的示例显示切除模式](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
 中的最终屏幕快照 (上面在右侧)，`LayoutInDisplayCutoutMode`设置为`LayoutInDisplayCutoutModeShortNever`之后变为全屏幕。
 请注意，不允许使用应用程序的白色背景将扩展到显示切除区域。
@@ -158,7 +155,7 @@ Android 饼图引入了以下增强功能以提高消息传递体验：
 
 下面的示例演示如何使用新的 Api 来生成包含图像的通知。 在下面的屏幕截图，一个文本通知发布并后跟包含嵌入图像的通知。 通知进行扩展 （如右侧所示），会显示第一次通知的文本和图像中嵌入时扩大，第二个通知：
 
-[![使用映像的示例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[![E使用映像的示例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
 下面的示例演示如何在 Android 饼图通知中包含图像和它演示如何使用新`Person`类：
 
@@ -214,7 +211,7 @@ Android 饼图引入了以下增强功能以提高消息传递体验：
 
 Android 饼图支持 IEEE 802.11mc (也称为_WiFi Round 往返时间_或_WiFi RTT_)，这使得应用程序检测到一个距离或更多的 Wi-fi 访问点。 使用此信息，很可能你的应用以充分利用*室内定位*一到两个计量的精度。 Android 设备上提供的 IEEE 801.11mc 硬件支持，您的应用程序可以提供导航功能，例如基于位置的控件的智能设备或通过应用商店启用通过打开说明：
 
-[![使用 WiFi RTT 的室内导航的示例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[![E使用 WiFi RTT 的室内导航 xample](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)类和几个帮助程序类提供进行测量到的 Wi-fi 设备距离的手段。 有关 Android P 中引入的室内定位 Api 的详细信息，请参阅[Android.Net.Wifi.Rtt](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)。
 

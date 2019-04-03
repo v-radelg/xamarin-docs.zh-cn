@@ -6,16 +6,19 @@ ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
-ms.openlocfilehash: fdd602da932e0c36cadade50476babba51d67398
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113150"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855193"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 应用
 
 ![预览功能](~/media/shared/preview.png)
+
+> [!NOTE]
+> 播放机的实时预览仅是在 Visual Studio 2017 中提供的。
 
 以后在手机上安装的应用，请按照[安装说明进行操作](~/tools/live-player/install.md)连接到您的计算机。 请尝试之一[示例应用](~/tools/live-player/samples.md)以使其正常工作。
 
@@ -35,7 +38,7 @@ ms.locfileid: "50113150"
 
 按信息按钮 **(i)** 上的应用程序以显示底部**选项**菜单：
 
-[![选项菜单的屏幕截图](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![S选项菜单 creenshot](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>日志
 
@@ -47,13 +50,13 @@ ms.locfileid: "50113150"
 - 版本信息。
 - 发送反馈。
 
-[![设置的屏幕截图](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![S设置 creenshot](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理设备
 
 若要首次连接设备，请按照中的说明[要求和安装程序](~/tools/live-player/install.md)。 可以对多个设备，并通过 IDE 管理它们。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
 在 Visual Studio 中，选择**工具 > Xamarin Live Player > 管理设备...**
 
@@ -67,7 +70,7 @@ ms.locfileid: "50113150"
 
 此外可以从设备列表来访问此窗口。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，选择**工具 > (Xamarin Live Player) 管理设备...**
 
@@ -91,6 +94,5 @@ ms.locfileid: "50113150"
 
 ## <a name="related-links"></a>相关链接
 
-- [限制](~/tools/live-player/limitations.md)
 - [疑难解答](~/tools/live-player/troubleshooting.md)
-- [Xamarin Live Player 示例](samples.md)
+- [示例，以便使用与 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

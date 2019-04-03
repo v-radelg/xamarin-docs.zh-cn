@@ -1,19 +1,19 @@
 ---
-title: 在 Visual Studio 2017 中安装 Xamarin
-description: 本文档介绍了如何在 Visual Studio 2017 中安装 Xamarin。 其中讨论了相关要求、安装过程以及如何验证安装。
+title: 在 Visual Studio 2019 中安装 Xamarin
+description: 本文档介绍如何在 Visual Studio 2019 中安装 Xamarin。 其中讨论了相关要求、安装过程以及如何验证安装。
 ms.prod: xamarin
 ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 62a10ca57b867255766c02616ee41e57ac166af3
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 5d9f91300194eb45c5f5f3c52403660cf4898a19
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071042"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58853971"
 ---
-# <a name="installing-xamarin-in-visual-studio-2017"></a>在 Visual Studio 2017 中安装 Xamarin
+# <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安装 Xamarin
 
 <a name="requirements" />
 
@@ -23,19 +23,19 @@ ms.locfileid: "58071042"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows.md)]
 
-在 Visual Studio 2017 中，通过单击“帮助”菜单来验证是否安装了 Xamarin。 如果安装了 Xamarin，应该看到 Xamarin 菜单项，如此屏幕截图所示：
+在 Visual Studio 2019，验证是否通过单击是否安装了 Xamarin**帮助**菜单。 如果安装了 Xamarin，应该看到 Xamarin 菜单项，如此屏幕截图所示：
 
 ![“帮助”菜单上的 Xamarin 菜单项](windows-images/12-xamarin-menu-item.png "“帮助”菜单上的 Xamarin 菜单项")
 
 也可单击“帮助”>“关于 Microsoft Visual Studio”，滚动浏览已安装的产品列表，查看是否已安装 Xamarin：
 
-![安装 visual Studio 2017 产品屏幕](windows-images/13-xamarin-is-installed.png "安装 Visual Studio 2017 产品屏幕")
+![Visual Studio 2019 已安装产品屏幕](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 已安装产品屏幕")
 
 有关查找版本信息的详细信息，请参阅 [Where can I find my version information and logs?](~/cross-platform/troubleshooting/questions/version-logs.md)（在何处可找到我的版本信息和日志？）
 
 ## <a name="next-steps"></a>后续步骤
 
-通过在 Visual Studio 2017 上安装 Xamarin，可开始编写应用代码，但若要构建应用并将其部署到模拟器、仿真器和设备，则需要其他设置。 请访问以下指南，完成安装并开始跨平台应用构建。
+在 Visual Studio 2019 中安装 Xamarin，可开始为你的应用，编写代码，但用于构建和您的应用程序部署到模拟器、 仿真器和设备，则需要其他设置。 请访问以下指南，完成安装并开始跨平台应用构建。
 
 ### <a name="ios"></a>iOS
 

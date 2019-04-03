@@ -1,17 +1,17 @@
 ---
 title: 开始使用F#
-description: 本文档介绍如何了解F#并使用它来生成 Xamarin 应用程序使用 Visual Studio 2017 和 Visual Studio for mac。
+description: 本文档介绍如何了解F#并使用它来生成 Xamarin 应用程序使用 Visual Studio 2019 和 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 044767d52588e48e563a40cb70ef0bfe910f9a3e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112827"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58854308"
 ---
 # <a name="getting-started-with-f35"></a>F # 入门&#35;
 
@@ -50,8 +50,8 @@ F#教程，也可以创建从**新的解决方案**对话框在 Visual Studio fo
 
 有很多种联机信息用于获取快速了解F#语言，涵盖所有熟练程度。 下面列出了几个我们的建议：
 
--  [F# 软件基金会](http://fsharp.org)
--  [VisualF#开发门户](http://go.microsoft.com/fwlink/?LinkID=234174)
+-  [F#软件基金会](http://fsharp.org)
+-  [Visual F# 开发门户](http://go.microsoft.com/fwlink/?LinkID=234174)
 -  [VisualF#代码库](http://go.microsoft.com/fwlink/?LinkID=124614)
 -  [VisualF#编程数学/统计信息](http://go.microsoft.com/fwlink/?LinkId=235173)
 -  [VisualF#图表](http://go.microsoft.com/fwlink/?LinkId=235176)
