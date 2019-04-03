@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f7106c9b23fa71b32043ef8190691d798c36370d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5156259f8178da69595464f75a10cd8f41965519
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672568"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870321"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 框架更改
 
@@ -24,7 +24,7 @@ _本文介绍如何附加的次要更改或增强现有框架，可用于 iOS 9 
 
 ## <a name="avfoundation-framework-additions"></a>AVFoundation Framework 新增功能
 
-在 AVFoundation framework 中， [AVSpeechSynthesisVoice](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechSynthesisVoice/)类现在允许你通过除了语言标识符来指定一种声音。
+在 AVFoundation framework 中， [AVSpeechSynthesisVoice](xref:AVFoundation.AVSpeechSynthesisVoice)类现在允许你通过除了语言标识符来指定一种声音。
 
 例如，以下代码将获取所有可用的声音的列表：
 
@@ -32,15 +32,15 @@ _本文介绍如何附加的次要更改或增强现有框架，可用于 iOS 9 
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
 ```
 
-然后可以通过设置为使用一个从列表中的语音`Voice`的实例的属性[AVSpeachUtterance](https://developer.xamarin.com/api/type/AVFoundation.AVSpeechUtterance/)类。
+然后可以通过设置为使用一个从列表中的语音`Voice`的实例的属性[AVSpeachUtterance](xref:AVFoundation.AVSpeechUtterance)类。
 
-[AVQueuePlayer](https://developer.xamarin.com/api/type/AVFoundation.AVQueuePlayer/)类现在支持混合使用 internet 流式处理和基于文件的介质的队列中。 以前的版本可能相同类型的队列介质。
+[AVQueuePlayer](xref:AVFoundation.AVQueuePlayer)类现在支持混合使用 internet 流式处理和基于文件的介质的队列中。 以前的版本可能相同类型的队列介质。
 
 有关详细信息，请参阅 Apple [AVSpeechSynthesisVoice 引用](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/cl/AVSpeechSynthesisVoice)。
 
 ## <a name="avkit-framework-additions"></a>AVKit Framework 新增功能
 
-若要使用新的画中画 (PIP) 功能，AVKit framework 包含新的`AVPictureInPictureController`并[AVPlayerViewController](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/)类：
+若要使用新的画中画 (PIP) 功能，AVKit framework 包含新的`AVPictureInPictureController`并[AVPlayerViewController](xref:AVKit.AVPlayerViewController)类：
 
 - **AVPictureInPictureController** -此类允许 iOS 9 应用程序以响应用户启动在 iPad 上的 PIP 窗口浮动、 可调整大小中视频播放。
 - **AVPlayerViewController** -管理`AVPlayer`控制器用于呈现在 iPad 上的 PIP 窗口浮动、 可调整大小的视频。
@@ -117,7 +117,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 
 ## <a name="healthkit-framework-changes"></a>HealthKit Framework 更改
 
-Apple 中包括下列更改到[HealthKit](https://developer.xamarin.com/api/namespace/HealthKit/)中 iOS 9 框架：
+Apple 中包括下列更改到[HealthKit](xref:HealthKit)中 iOS 9 框架：
 
 - 支持大容量删除和删除跟踪 HealthKit 数据库中的条目。 请参阅 Apple [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)， [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery)并[HKHealthStore 类引用](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)有关详细信息。
 - 已添加到新的跟踪类别和特征`HKQuantityTypeIdentifier`类 (如`UVExposure`) 和`HKCategoryTypeIdentifier`类 (如`OvulationTestResult`)。 请参阅 Apple [HealthKit 常量引用](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)有关详细信息。
@@ -126,9 +126,9 @@ Apple 中包括下列更改到[HealthKit](https://developer.xamarin.com/api/name
 
 ## <a name="local-authentication-framework-changes"></a>本地身份验证框架更改
 
-Apple 中包括下列更改到[本地身份验证](https://developer.xamarin.com/api/namespace/LocalAuthentication/)中 iOS 9 框架：
+Apple 中包括下列更改到[本地身份验证](xref:LocalAuthentication)中 iOS 9 框架：
 
-- 使用`EvaluateAccessControl`并`EvaluatePolicy`方法的[LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/)类，现在，你可以尝试重复使用 Touch ID 的匹配上一个成功解锁。
+- 使用`EvaluateAccessControl`并`EvaluatePolicy`方法的[LAContext](xref:LocalAuthentication.LAContext)类，现在，你可以尝试重复使用 Touch ID 的匹配上一个成功解锁。
 - 获取当前已注册的手指的列表的功能。
 - 用于跟踪为指添加或删除从身份验证时的支持。
 - 若要使用的功能_身份验证上下文_在密钥链的调用以及对评估密钥链访问控制的支持列表中。
@@ -138,7 +138,7 @@ Apple 中包括下列更改到[本地身份验证](https://developer.xamarin.com
 
 ### <a name="lacontext-changes"></a>LAContext 更改
 
-已对以下更改[LAContext](https://developer.xamarin.com/api/type/LocalAuthentication.LAContext/)适用于 iOS 9 的类：
+已对以下更改[LAContext](xref:LocalAuthentication.LAContext)适用于 iOS 9 的类：
 
 - **TouchIdAuthenticationMaximumAllowableReuseDuration** -返回的最大可重复使用 touch ID 身份验证的时间量。
 - **EvaluatedPolicyDomainState** -获取或设置计算策略的状态。
@@ -153,17 +153,17 @@ Apple 中包括下列更改到[本地身份验证](https://developer.xamarin.com
 
 ## <a name="mapkit-framework-changes"></a>MapKit Framework 更改
 
-Apple 中包括下列更改到[MapKit](https://developer.xamarin.com/api/namespace/MapKit/)中 iOS 9 框架：
+Apple 中包括下列更改到[MapKit](xref:MapKit)中 iOS 9 框架：
 
-- MapKit 现在提供支持，用于直接在传输方向启动地图应用程序和用于查询传输到达 (ETA) 使用的估计时间[MKLaunchOptions](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/)并[MKDirections](https://developer.xamarin.com/api/type/MapKit.MKLaunchOptions/)类。
-- MapKit 返回的搜索结果并[CLGeocoder](https://developer.xamarin.com/api/type/CoreLocation.CLGeocoder/)类还可以提供结果的时区。
-- 你现在可以完全自定义提供的 iOS 应用程序使用的映射批注`DetailCalloutAccessoryView`的属性[MKAnnotationView](https://developer.xamarin.com/api/type/MapKit.MKAnnotationView/)类。
+- MapKit 现在提供支持，用于直接在传输方向启动地图应用程序和用于查询传输到达 (ETA) 使用的估计时间[MKLaunchOptions](xref:MapKit.MKLaunchOptions)并[MKDirections](xref:MapKit.MKLaunchOptions)类。
+- MapKit 返回的搜索结果并[CLGeocoder](xref:CoreLocation.CLGeocoder)类还可以提供结果的时区。
+- 你现在可以完全自定义提供的 iOS 应用程序使用的映射批注`DetailCalloutAccessoryView`的属性[MKAnnotationView](xref:MapKit.MKAnnotationView)类。
 
 请参阅我们[iOS 地图](~/ios/user-interface/controls/ios-maps/index.md)并[演练-探索批注和 MapKit 中的覆盖](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md)文档使用 Maps 和 Xamarin.iOS 和 Apple中的批注的详细信息[CLGeocoder 引用](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder)有关详细信息。
 
 ## <a name="passkit-framework-additions"></a>PassKit 框架新增功能
 
-Apple 中包括下列更改到[PassKit](https://developer.xamarin.com/api/namespace/PassKit/)中 iOS 9 框架：
+Apple 中包括下列更改到[PassKit](xref:PassKit)中 iOS 9 框架：
 
 - Apple Pay 现在支持存储借和信用卡以及发现卡。 请参阅**付款网络**Apple 的一部分[PKPaymentRequest 类引用](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/doc/uid/TP40014832)有关详细信息。
 - 从直接在 Xamarin.iOS 应用程序，您现在可以添加付款网络和卡颁发者到 Apple Pay。 请参阅 Apple [PKAddPaymentPassViewController 类引用](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/doc/uid/TP40016116)的更多详细信息。
@@ -172,15 +172,15 @@ Apple 中包括下列更改到[PassKit](https://developer.xamarin.com/api/namesp
 
 ## <a name="safari-services-framework-additions"></a>Safari Services Framework 新增功能
 
-Apple 中包括下列更改到[Safari 服务](https://developer.xamarin.com/api/namespace/SafariServices/)中 iOS 9 框架：
+Apple 中包括下列更改到[Safari 服务](xref:SafariServices)中 iOS 9 框架：
 
-- 你现在可以使用新[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)类，以显示一个 Xamarin.iOS 应用程序中的 web 内容。 它提供了与 Safari 应用共享网站数据和 cookie 的功能，并包含多个 Safari 的功能 （如读取器和自动填充）。 [SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)功能**完成**完成查看 web 内容时将返回到您的应用程序的用户的按钮。
+- 你现在可以使用新[SFSafariViewController](xref:SafariServices.SFSafariViewController)类，以显示一个 Xamarin.iOS 应用程序中的 web 内容。 它提供了与 Safari 应用共享网站数据和 cookie 的功能，并包含多个 Safari 的功能 （如读取器和自动填充）。 [SFSafariViewController](xref:SafariServices.SFSafariViewController)功能**完成**完成查看 web 内容时将返回到您的应用程序的用户的按钮。
 
-因为[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)类定制用于显示 web 内容的单个页，则应考虑使用它来替换任何[WKWebKit](xref:WebKit.WKWebView)或[UIWebView](xref:UIKit.UIWebView)现有 Xamarin.iOS 应用程序中的控件。
+因为[SFSafariViewController](xref:SafariServices.SFSafariViewController)类定制用于显示 web 内容的单个页，则应考虑使用它来替换任何[WKWebKit](xref:WebKit.WKWebView)或[UIWebView](xref:UIKit.UIWebView)现有 Xamarin.iOS 应用程序中的控件。
 
 ### <a name="displaying-a-website"></a>显示网站
 
-下面的代码是调用的示例[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/)从内另一个视图控制器：
+下面的代码是调用的示例[SFSafariViewController](xref:SafariServices.SFSafariViewController)从内另一个视图控制器：
 
 ```csharp
 // Create an instance of the Safari Services View Controller
@@ -267,6 +267,6 @@ Apple iOS 9 中包括对 UIKit Dynamics 的以下更改：
 ## <a name="related-links"></a>相关链接
 
 - [iOS 9 示例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
+- [IOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
 - [面向开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [What's New iOS 9.0 中](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

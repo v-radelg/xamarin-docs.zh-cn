@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: a6a4ef9fb36fde067fa58fec9a6206b1dbc1fbf0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668343"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870167"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
@@ -83,7 +83,7 @@ System.Reflection 缺乏。 **发出**取决于运行时代码生成任何代码
 若要通过 C# 委托调用本机函数，必须使用以下属性之一修饰委托的声明：
 
 - [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （首选，因为该属性跨平台并与 .NET Standard 1.1+ 兼容）
-- [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
+- [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 如果这些属性中有任何一个未能提供，将导致运行时错误，例如：
 
@@ -100,8 +100,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 在 Mono 中，这些桥由实时编译器实现。 在使用 iPhone 所需的提前编译器时，则有两个重要限制：
 
--  必须使用 [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 标记所有回调方法 
--  方法必须是静态方法，不支持实例方法。 
+-  必须使用 [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute) 标记所有回调方法
+-  方法必须是静态方法，不支持实例方法。
  
 <a name="No_Remoting" />
 

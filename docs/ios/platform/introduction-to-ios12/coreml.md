@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 2d62e42e755a0d3088283adb863dfd684ddeae28
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: 50d59f0b6ff2133c5870d84a1d740547768116e0
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617574"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869723"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Core ML 2 在 Xamarin.iOS
 
@@ -20,7 +20,7 @@ Core 机器学习是机器学习技术可在 iOS、 macOS、 tvOS 和 watchOS �
 
 在 iOS 12 中，核心机器学习包括批处理 API。 此 API 使 Core ML 更高效，并提供模型用于生成一系列预测的方案中的性能改进。
 
-## <a name="sample-app-marshabitatcoremltimer"></a>示例应用程序： MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>应用程序示例：MarsHabitatCoreMLTimer
 
 为了演示使用 Core ML 批预测，看一看[MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)示例应用程序。 此示例使用基于 Core ML 训练模型来预测上 Mars，生成 habitat 的成本基于各种输入： solar 面板、 greenhouses，数和占地英亩数的数字。
 
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for 循环
 
-`for`测试循环版本天真循环访问指定数目的输入，调用[ `GetPrediction` ](https://developer.xamarin.com/api/member/CoreML.MLModel.GetPrediction/)为每个和放弃结果。 该方法时间进行预测所需的时间长度：
+`for`测试循环版本天真循环访问指定数目的输入，调用[ `GetPrediction` ](xref:CoreML.MLModel.GetPrediction*)为每个和放弃结果。 该方法时间进行预测所需的时间长度：
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,7 +94,7 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>GetPredictions （新批处理 API）
 
-创建测试批次版本`MLArrayBatchProvider`输入数组中的对象 (由于这是所需的输入的参数`GetPredictions`方法)，创建 [`MLPredictionOptions`](https://developer.xamarin.com/api/type/CoreML.MLPredictionOptions/)
+创建测试批次版本`MLArrayBatchProvider`输入数组中的对象 (由于这是所需的输入的参数`GetPredictions`方法)，创建 [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
 对象，可防止预测计算从受限于 CPU，并使用`GetPredictions`API 来提取再次放弃结果的预测：
 
 ```csharp
@@ -122,7 +122,7 @@ async Task FetchBatchResults(int num)
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用程序 – MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)
+- [Sample app – MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)
 - [什么是核心机器学习，第 1 部分 (WWDC 2018) 中的新增功能](https://developer.apple.com/videos/play/wwdc2018/708/)
 - [什么是核心机器学习，第 2 部分 (WWDC 2018) 中的新增功能](https://developer.apple.com/videos/play/wwdc2018/709/)
 - [在 Xamarin.iOS Core ML 简介](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)

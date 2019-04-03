@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: b21bf4da7cf862bd32e71708f9e3657f577682c2
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677919"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870269"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 扩展
 
@@ -99,7 +99,7 @@ ms.locfileid: "58677919"
 
     ![](extensions-images/registerandprincipalclass.png)
 
-特定类型的扩展可能具有其他要求。 例如，**今天**或**通知中心**扩展的主体类必须实现[INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/)。
+特定类型的扩展可能具有其他要求。 例如，**今天**或**通知中心**扩展的主体类必须实现[INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding)。
 
 > [!IMPORTANT]
 > 如果启动一个使用 Visual Studio for Mac 提供的扩展模板的项目，将提供并为您自动由模板满足大多数 （如果并非所有） 这些要求。

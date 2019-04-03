@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: becba36655a5247a11decb7dc54334f9397ecdfc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233530"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870191"
 ---
 # <a name="introduction-to-ios-9"></a>IOS 9 简介
 
@@ -58,7 +58,7 @@ Apple 在 iOS 9 中以及对现有功能的许多增强功能已添加多个新 
 
 ## <a name="new-contacts-and-contacts-ui-frameworks"></a>新的联系人和联系人 UI 框架
 
-IOS 9 的引入，Apple 已发布了两个新框架[联系人](https://developer.xamarin.com/api/namespace/Contacts/)并[ContactsUI](https://developer.xamarin.com/api/namespace/ContactsUI/)、 替换现有的通讯簿和地址簿 UI 框架由 iOS 8 和之前的版本。
+IOS 9 的引入，Apple 已发布了两个新框架[联系人](xref:Contacts)并[ContactsUI](xref:ContactsUI)、 替换现有的通讯簿和地址簿 UI 框架由 iOS 8 和之前的版本。
 
 这些新的、 面向对象的框架提供以下信息：
 
@@ -103,7 +103,7 @@ IOS 9 的引入，Apple 已发布了两个新框架[联系人](https://developer
 
 ## <a name="homekit-framework-changes"></a>HomeKit 框架更改
 
-[HomeKit](https://developer.xamarin.com/api/namespace/HomeKit/) iOS 8 中引入框架提供的功能来设置和控制 （如自动的光源、 门锁和车库开门器供电） 从 Xamarin.iOS 应用程序的各种启用 HomeKit 附件。 除了易于安装和配置外，可以通过语音 Siri 命令控制 HomeKit 附件。
+[HomeKit](xref:HomeKit) iOS 8 中引入框架提供的功能来设置和控制 （如自动的光源、 门锁和车库开门器供电） 从 Xamarin.iOS 应用程序的各种启用 HomeKit 附件。 除了易于安装和配置外，可以通过语音 Siri 命令控制 HomeKit 附件。
 
 在 iOS 9 中，Apple 已变得更加容易安装，则展开附件支持和提供多个附件交互 （例如，控制远程通过 iCloud 附件） 的类型。
 
@@ -212,7 +212,7 @@ Apple 已弃用的以下 Api 和 iOS 9 中的函数：
 
 - [iOS 9 示例](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3D Touch 简介](~/ios/platform/3d-touch.md)
-- [应用传输安全性](~/ios/app-fundamentals/ats.md)
+- [应用程序传输安全](~/ios/app-fundamentals/ats.md)
 - [适用于 iPad 的多任务](~/ios/platform/multitasking.md)
 - [联系人和联系人 UI](~/ios/platform/contacts.md)
 - [新的搜索 Api](~/ios/platform/search/index.md)

@@ -6,12 +6,12 @@ ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: 7d67b924253dfea66781f16b5f83007811de5909
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f1aa805b9b7a16ad1e8af573cf4170f885eb0197
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119028"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870347"
 ---
 # <a name="build-optimizations"></a>生成优化
 
@@ -46,9 +46,9 @@ public virtual void AddChildViewController (UIViewController childController)
 
 可以通过传递重写默认行为`--optimize=[+|-]remove-uithread-checks`mtouch/mmp 到。
 
-[1]: https://developer.xamarin.com/api/member/UIKit.UIApplication.EnsureUIThread/
+[1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
-## <a name="inline-intptrsize"></a>内联 IntPtr.Size
+## <a name="inline-intptrsize"></a>Inline IntPtr.Size
 
 内嵌元素的常量值的`IntPtr.Size`根据目标平台。
 

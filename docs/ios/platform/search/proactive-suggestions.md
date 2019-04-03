@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb6b47f7936745b00e2b7e6095662a7e8273e1bd
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677893"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870399"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>主动建议在 Xamarin.iOS 简介
 
@@ -51,7 +51,7 @@ iOS 9 添加到功能丰富了用户在聚焦和 Safari 搜索结果中看到的
 
 ## <a name="media-based-suggestions"></a>基于介质的建议
 
-如果应用程序可以播放媒体使用[MPPlayableContentManager](https://developer.xamarin.com/api/type/MediaPlayer.MPPlayableContentManager/) API，iOS 10 允许用户查看唱片集画面和锁定屏幕上播放通过应用的媒体。
+如果应用程序可以播放媒体使用[MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) API，iOS 10 允许用户查看唱片集画面和锁定屏幕上播放通过应用的媒体。
 
 ## <a name="contextual-siri-reminders"></a>上下文 Siri 提醒
 
@@ -63,12 +63,12 @@ iOS 9 添加到功能丰富了用户在聚焦和 Safari 搜索结果中看到的
 
 ## <a name="ride-sharing-based-suggestions"></a>共享的骑行基于建议
 
-如果持续一段时间共享应用程序使用[MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) API，iOS 10 会将其显示为应用程序切换器中的一个选项有时如果用户可能会想滑水感觉的时间。 应用程序还必须注册为拼车应用通过指定`MKDirectionsModeRideShare`有关[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)键中其`Info.plist`文件。
+如果持续一段时间共享应用程序使用[MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) API，iOS 10 会将其显示为应用程序切换器中的一个选项有时如果用户可能会想滑水感觉的时间。 应用程序还必须注册为拼车应用通过指定`MKDirectionsModeRideShare`有关[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)键中其`Info.plist`文件。
 
 如果应用仅支持共享持续一段时间，将以系统建议 *"获取滑水感觉的时间到..."*，如果支持其他类型的路由方向 （如 Walking 或自行车），则系统将使用 *"获取方向到..."*
 
 > [!IMPORTANT]
-> [MKMapItem](https://developer.xamarin.com/api/type/MapKit.MKMapItem/)对象，该应用程序将收到对象可能不包括经度和纬度的信息，并且将需要地理编码。
+> [MKMapItem](xref:MapKit.MKMapItem)对象，该应用程序将收到对象可能不包括经度和纬度的信息，并且将需要地理编码。
 
 ## <a name="implementing-proactive-suggestions"></a>实现主动建议
 
@@ -189,7 +189,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 使用上面介绍的代码的最少工作量，应用程序现能够利用三个新的 iOS 10 功能：
 
-- **Handoff**
+- **切换**
 - **Spotlight 搜索**
 - **上下文 Siri 提醒**
 

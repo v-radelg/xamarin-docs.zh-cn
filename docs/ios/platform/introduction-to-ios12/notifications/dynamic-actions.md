@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: edaf9d90e019729f69f721c0a92826c0148db8df
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 5611d673ecc7af896fd3a9e566e184e408b6b367
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669620"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870087"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>在 Xamarin.iOS 中动态通知操作按钮
 
@@ -131,15 +131,15 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
 在示例应用中，通知内容扩展视图控制器修改操作按钮仅当现有操作按钮上点击到响应。
 
 > [!NOTE]
-> 通知内容扩展可以响应在其视图控制器的点击操作按钮[ `DidReceiveNotificationResponse` ](https://developer.xamarin.com/api/member/UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse/)声明的一部分的方法[IUNNotificationContentExtension](https://developer.xamarin.com/api/type/UserNotificationsUI.IUNNotificationContentExtension/)。
+> 通知内容扩展可以响应在其视图控制器的点击操作按钮[ `DidReceiveNotificationResponse` ](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)声明的一部分的方法[IUNNotificationContentExtension](xref:UserNotificationsUI.IUNNotificationContentExtension)。
 >
 > 尽管它共享同一个名称与`DidReceiveNotificationResponse`方法[上面所述](#in-app-handling-of-notification-action-buttons)，这是另一种方法。
 >
-> 通知内容扩展完成处理点击按钮后，它可以选择告知主应用程序来处理该相同点击的按钮。 若要执行此操作，它必须传递一个合适的值[UNNotificationContentExtensionResponseOption](https://developer.xamarin.com/api/type/UserNotificationsUI.UNNotificationContentExtensionResponseOption/)到其完成处理程序：
+> 通知内容扩展完成处理点击按钮后，它可以选择告知主应用程序来处理该相同点击的按钮。 若要执行此操作，它必须传递一个合适的值[UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption)到其完成处理程序：
 >
-> - [`Dismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.Dismiss/) 指示应取消的通知接口，并且主应用程序不需要处理点击按钮即可。
-> - [`DismissAndForwardAction`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DismissAndForwardAction/) 指示应取消的通知接口，并且主应用程序还应处理点击按钮即可。
-> - [`DoNotDismiss`](https://developer.xamarin.com/api/field/UserNotificationsUI.UNNotificationContentExtensionResponseOption.DoNotDismiss/) 指示，应该不消除通知接口，并且主应用程序不需要处理点击按钮即可。
+> - `Dismiss` 指示应取消的通知接口，并且主应用程序不需要处理点击按钮即可。
+> - `DismissAndForwardAction` 指示应取消的通知接口，并且主应用程序还应处理点击按钮即可。
+> - `DoNotDismiss` 指示，应该不消除通知接口，并且主应用程序不需要处理点击按钮即可。
 
 内容扩展`DidReceiveNotificationResponse`方法确定点击了哪个操作按钮时，将在通知的接口和显示或隐藏图像旋转**重置**操作按钮：
 

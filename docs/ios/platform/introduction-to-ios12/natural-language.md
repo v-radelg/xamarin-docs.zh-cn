@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
-ms.openlocfilehash: 0b3fb7d467ae64e2cbfdb61644b1537bc5ae1161
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 41f629739b06431a9b20548f61111bc31e911abb
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233063"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870035"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>使用自然语言框架和 Xamarin.iOS
 
@@ -33,7 +33,7 @@ ms.locfileid: "55233063"
 
 ## <a name="recognizing-languages"></a>识别语言
 
-**识别器**选项卡的示例应用演示了如何使用 [`NLLanguageRecognizer`](https://developer.xamarin.com/api/type/NaturalLanguage.NLLanguageRecognizer/)
+**识别器**选项卡的示例应用演示了如何使用 [`NLLanguageRecognizer`](xref:NaturalLanguage.NLLanguageRecognizer)
 若要确定文本块的语言。
 
 > [!NOTE]
@@ -43,8 +43,8 @@ ms.locfileid: "55233063"
 
 点击**语言**按钮来标识用户输入中的主要语言。
 
-`HandleDetermineLanguageButtonTap`方法的`LanguageRecognizerViewController`使用 [`GetDominantLanguage`](https://developer.xamarin.com/api/member/NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage/)
-方法的`NLLanguageRecognizer`提取到 [`NLLanguage`](https://developer.xamarin.com/api/type/NaturalLanguage.NLLanguage/)
+`HandleDetermineLanguageButtonTap`方法的`LanguageRecognizerViewController`使用 [`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)
+方法的`NLLanguageRecognizer`提取到 [`NLLanguage`](xref:NaturalLanguage.NLLanguage)
 主要语言的文本中找到：
 
 ```csharp
@@ -63,8 +63,8 @@ partial void HandleDetermineLanguageButtonTap(UIButton sender)
 
 点击**语言概率**按钮以获取语言的假定供用户输入的列表。
 
-`HandleLanguageProbabilitiesButtonTap`方法`LanguageRecognizerViewController`类实例化`NLLanguageRecognizer`并要求它为 [`Process`](https://developer.xamarin.com/api/member/NaturalLanguage.NLLanguageRecognizer.Process/)
-用户的文本。 然后，它调用语言识别器的 [`GetNativeLanguageHypotheses`](https://developer.xamarin.com/api/member/NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses)
+`HandleLanguageProbabilitiesButtonTap`方法`LanguageRecognizerViewController`类实例化`NLLanguageRecognizer`并要求它为 [`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
+用户的文本。 然后，它调用语言识别器的 [`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)
 方法会提取语言和关联的概率的字典。 `LanguageRecognizerTableViewController`类然后呈现这些语言和概率。
 
 ```csharp
@@ -141,16 +141,16 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 - `Urdu`
 - `Vietnamese`
 
-为提供了支持的语言的完整列表的一部分 [`NLLanguage`](https://developer.xamarin.com/api/type/NaturalLanguage.NLLanguage/)
+为提供了支持的语言的完整列表的一部分 [`NLLanguage`](xref:NaturalLanguage.NLLanguage)
 枚举 API 文档。
 
 ## <a name="tokenizing-text-into-words-sentences-and-paragraphs"></a>到字、 句子和段落标记化文本
 
-**Tokenizer**选项卡的示例应用演示了如何隔离成其组件的单词的文本块或与句子[ `NLTokenizer` ](https://developer.xamarin.com/api/type/NaturalLanguage.NLTokenizer/)。
+**Tokenizer**选项卡的示例应用演示了如何隔离成其组件的单词的文本块或与句子[ `NLTokenizer` ](xref:NaturalLanguage.NLTokenizer)。
 
 点击**单词**或**句子**按钮以获取令牌的列表。 每个标记都与 word 或句子中的原始文本相关联。
 
-`ShowTokens` 通过调用用户输入到令牌的拆分 [`GetTokens`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTokenizer.GetTokens/)
+`ShowTokens` 通过调用用户输入到令牌的拆分 [`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*)
 方法的`NLTokenizer`。 此方法返回的数组 [`NSValue`](xref:Foundation.NSValue)
 对象，每个包装`NSRange`与中的原始文本标记相对应的值。
 
@@ -182,7 +182,7 @@ public override UITableViewCell GetCell(UITableView tableView, NSIndexPath index
 
 ## <a name="tagging-named-entities-and-parts-of-speech"></a>标记命名的实体和词类
 
-**标记器**XamarinNL 示例应用程序的选项卡将演示如何使用 [`NLTagger`](https://developer.xamarin.com/api/type/NaturalLanguage.NLTagger/)
+**标记器**XamarinNL 示例应用程序的选项卡将演示如何使用 [`NLTagger`](xref:NaturalLanguage.NLTagger)
 若要将类别与输入字符串的令牌相关联的类。
 自然语言框架包括对识别人物、 地点、 组织和词类的内置支持。
 
@@ -192,11 +192,11 @@ public override UITableViewCell GetCell(UITableView tableView, NSIndexPath index
 点击**名为实体**或**词类**按钮以提取：
 
 - 一个数组`NSValue`对象，每个包装`NSRange`原始文本中的令牌。
-- 一个数组[ `NLTag` ](https://developer.xamarin.com/api/type/NaturalLanguage.NLTag/)值 – 类别`NSValue`相同的数组索引处的令牌。
+- 一个数组[ `NLTag` ](xref:NaturalLanguage.NLTag)值 – 类别`NSValue`相同的数组索引处的令牌。
 
-中`LanguageTaggerViewController`，`HandlePartsOfSpeechButtonTap`并`HandleNamedEntitiesButtonTap`每次调用`ShowTags`，并传递沿[ `NLTagScheme` ](https://developer.xamarin.com/api/type/NaturalLanguage.NLTagScheme/) – 任一`NLTagScheme.LexicalClass`（对于词类） 或`NLTagScheme.NameType`（对于名为实体）。
+中`LanguageTaggerViewController`，`HandlePartsOfSpeechButtonTap`并`HandleNamedEntitiesButtonTap`每次调用`ShowTags`，并传递沿[ `NLTagScheme` ](xref:NaturalLanguage.NLTagScheme) – 任一`NLTagScheme.LexicalClass`（对于词类） 或`NLTagScheme.NameType`（对于名为实体）。
 
-`ShowTags` 创建`NLTagger`，其实例化的数组`NLTagScheme`其中它将查询类型 (在此情况下，仅传入的`NLTagScheme`值)。 然后，它使用 [`GetTags`](https://developer.xamarin.com/api/member/NaturalLanguage.NLTagger.GetTags/)
+`ShowTags` 创建`NLTagger`，其实例化的数组`NLTagScheme`其中它将查询类型 (在此情况下，仅传入的`NLTagScheme`值)。 然后，它使用 [`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)
 方法`NLTagger`来确定与用户输入中的文本相关的标记。
 
 ```csharp
@@ -253,7 +253,7 @@ void ShowTags(NLTagScheme tagScheme)
 - `Word`
 - `WordJoiner`
 
-为提供了支持的标记的完整列表的一部分 [`NLTag`](https://developer.xamarin.com/api/type/NaturalLanguage.NLTag/)
+为提供了支持的标记的完整列表的一部分 [`NLTag`](xref:NaturalLanguage.NLTag)
 枚举 API 文档。
 
 ## <a name="related-links"></a>相关链接

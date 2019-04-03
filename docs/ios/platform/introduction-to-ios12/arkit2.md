@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 7f3c196eafd71e8571ea49a17784e5290e7ef44e
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 559ef9cc9a3e5ace7a4023e81363825c6861f6d4
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233596"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870308"
 ---
 # <a name="arkit-2-in-xamarinios"></a>在 Xamarin.iOS ARKit 2
 
@@ -394,7 +394,7 @@ Console.WriteLine(xform);
 
 ![行优先 vs 列优先](images/arkit_row_vs_column.png)
 
-确保一致的矩阵解释选择正确的行为对至关重要。 由于 3D 转换矩阵是 4 × 4，一致性错误将不会产生任何类型的编译时或甚至运行时异常 — 它只是操作将出现意外操作。 如果你 SceneKit / ARKit 对象似乎会卡滞，飞出，或抖动，不正确的转换矩阵是非常不错。 解决方法很简单： [ `NMatrix4.Transpose` ](https://developer.xamarin.com/api/member/OpenTK.NMatrix4.Transpose)将执行的元素的就地转置。
+确保一致的矩阵解释选择正确的行为对至关重要。 由于 3D 转换矩阵是 4 × 4，一致性错误将不会产生任何类型的编译时或甚至运行时异常 — 它只是操作将出现意外操作。 如果你 SceneKit / ARKit 对象似乎会卡滞，飞出，或抖动，不正确的转换矩阵是非常不错。 解决方法很简单： [ `NMatrix4.Transpose` ](xref:OpenTK.NMatrix4.Transpose*)将执行的元素的就地转置。
 
 ## <a name="related-links"></a>相关链接
 

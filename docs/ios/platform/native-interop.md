@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
-ms.openlocfilehash: 42cf10e592a37f9a979d05d7784553059923646c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667316"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870256"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>在 Xamarin.iOS 中引用本机库
 
@@ -122,8 +122,7 @@ lipo -info /full/path/to/libraryname.a
 -  确定它所在的库
 -  编写相应的 P/Invoke 声明
 
-
-使用 P/Invoke 时需要指定了要链接的库路径。 使用 iOS 共享库，可以硬编码路径，也可以使用我们已在中定义的方便常量时我们[常量类](https://developer.xamarin.com/api/type/Constants/)，这些常量应涵盖的 iOS 共享库。
+使用 P/Invoke 时需要指定了要链接的库路径。 使用 iOS 共享库，可以硬编码路径，也可以使用我们已在中定义的方便常量时我们`Constants`，这些常量应涵盖的 iOS 共享库。
 
 例如，如果你想要调用从 c： 驱动器中具有此签名的 Apple 的 UIKit 库 UIRectFrameUsingBlendMode 方法
 

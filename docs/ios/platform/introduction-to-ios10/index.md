@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
+ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870243"
 ---
-
 # <a name="introduction-to-ios-10"></a>IOS 10 简介
 
 _本文介绍适用于 Xamarin.iOS 开发人员的所有新的和修改 Api 和 iOS 10 中提供的功能。_
@@ -221,9 +226,9 @@ Apple 引入了几个小组件系统，以确保小组件查看任何新的 iOS 
 
 在 iOS 10 中不推荐使用以下 Api:
 
-- `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`类中已弃用 CloudKit 适用于 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](https://developer.xamarin.com/api/type/CloudKit.CKDiscoverUserIdentitiesOperation/)， [CKUserIdentity](https://developer.xamarin.com/api/type/CloudKit.CKUserIdentity/)并[CKFetchRecordZoneChangesOperation](https://developer.xamarin.com/api/type/CloudKit.CKFetchRecordZoneChangesOperation/)类 （它们支持记录共享） 相反。
-- 多个[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription)已弃用的 Api （如基于区域和基于查询的订阅）。 使用[CKRecordZoneSubscription](https://developer.xamarin.com/api/type/CloudKit.CKRecordZoneSubscription/)并[CKQuerySubscription](https://developer.xamarin.com/api/type/CloudKit.CKQuerySubscription/) Api 相反。
-- [NSPersistentStoreCoordnator](https://developer.xamarin.com/api/type/CoreData.NSPersistentStoreCoordinator/)与通用内容相关的符号已被弃用。
+- `CKDiscoverAllContactsOperation`， `CKDiscoveredUserInfo`，`CKDiscoverUserInfosOperation`和`CKFetchRecordChangesOperation`类中已弃用 CloudKit 适用于 iOS 10。 使用[CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)， [CKUserIdentity](xref:CloudKit.CKUserIdentity)并[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation)类 （它们支持记录共享） 相反。
+- 多个[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription)已弃用的 Api （如基于区域和基于查询的订阅）。 使用[CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)并[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) Api 相反。
+- [NSPersistentStoreCoordnator](xref:CoreData.NSPersistentStoreCoordinator)与通用内容相关的符号已被弃用。
 - `ADBannerView``ADInterstitialAd`和相关中的符号[UIViewController](xref:UIKit.UIViewController)类已被弃用。
 - [SKUniform](https://developer.apple.com/reference/spritekit/skuniform)与浮点值的符号已被弃用。
 - `UILocalNotification`， `UIMutableUserNotificationAction`， `UIMutableUserNotificationCategory`， `UIUserNotificationAction`，`UIUserNotificationCategory`和`UIUserNotificationSettings`UIKit 类已被弃用。 使用[用户通知](#user-notifications)framework 相反。

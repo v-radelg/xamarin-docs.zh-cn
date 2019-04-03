@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 3b5eae4d218fdc66f7f99f0aab8aa32af3cbabf4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: df50b4280335001f2d27ff23a91e4098eed3ba99
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667356"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870204"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>程序集支持的适用于 tvOS 的 Xamarin
 
@@ -28,7 +28,7 @@ ms.locfileid: "57667356"
 |Mono.Security.dll|1.0|加密 Api。|
 |monotouch.dll|1.0|此程序集包含[C# 绑定到产品 CocoaTouch API](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)。|
 |mscorlib.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|OpenTK.dll|1.0|OpenGL/OpenAL 对象面向 Api，[扩展，使其提供 iPhone 设备支持](https://developer.xamarin.com/api/namespace/OpenGLES/)。|
+|OpenTK.dll|1.0|OpenGL/OpenAL 对象面向 Api，[扩展，使其提供 iPhone 设备支持](xref:OpenGLES)。|
 |System.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，加上以下命名空间中的类型： <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.ComponentModel.Design</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>System.Net.Cache</li> <li>System.Net.Mail</li> <li>System.Net.Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>System.Timers</li></ul>|
 |System.Core.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |System.Data.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)，[删除某些功能与](~/ios/data-cloud/system.data.md)。|
@@ -40,8 +40,8 @@ ms.locfileid: "57667356"
 |System.ServiceModel.Web.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，加上以下命名空间中的类型： <ul><li>系统</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
 |System.Transactions.dll|1.2|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx); 的一部分[System.Data](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)支持。|
 |System.Web.Services|1.1|[基本 Web 服务](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/introduction_to_web_services)从.NET 3.5，配置文件中删除的服务器功能。|
-|System.Xml.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
-|System.Xml.Linq.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Xml.dll|1.0|[3.5.NET](https://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Xml.Linq.dll|1.0|[3.5.NET](https://msdn.microsoft.com/library/ms229335.aspx)|
 
 <a name="Summary" />
 

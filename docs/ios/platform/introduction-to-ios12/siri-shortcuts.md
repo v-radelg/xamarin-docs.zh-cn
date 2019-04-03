@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 8b3b9a5b110432f33e06edf7ab51c582681e4ea3
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233726"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869819"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS Siri 快捷方式
 
@@ -149,7 +149,7 @@ public static NSUserActivity ViewMenuActivity {
 尤其注意以下问题：
 
 - 设置`EligibleForPrediction`到`true`指示 Siri 可以预测此活动，它会呈现为一种快捷方式。
-- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)数组是一种标准[ `CSSearchableItemAttributeSet` ](https://developer.xamarin.com/api/type/CoreSpotlight.CSSearchableItemAttributeSet/)用于包括`NSUserActivity`iOS 搜索结果中。
+- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)数组是一种标准[ `CSSearchableItemAttributeSet` ](xref:CoreSpotlight.CSSearchableItemAttributeSet)用于包括`NSUserActivity`iOS 搜索结果中。
 - [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) 是使用 Siri 向用户作为一个潜在的选择将建议分配给某个快捷方式短语时的短语。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>处理 NSUserActivity 快捷方式
@@ -227,7 +227,8 @@ void HandleUserActivity()
 若要查看此生成的代码：
 
 - 打开**AppDelegate.m**。
-- 将导入添加到自定义意向的标头文件： `#import "OrderSoupIntent.h"`
+- 将导入添加到自定义意向的标头文件：
+`#import "OrderSoupIntent.h"`
 - 在类中的任何方法，添加对引用`OrderSoupIntent`。
 - 右键单击`OrderSoupIntent`，然后选择**跳转到定义**。
 - 在新打开文件中，右键单击**OrderSoupIntent.h**，然后选择**在查找器中显示**。
@@ -318,7 +319,7 @@ void HandleUserActivity()
 若要使此理解，Soup Chef Siri_无偿提供_意向 siri 每次用户将放入 soup 顺序。 基于此捐赠 – 时它已捐赠，其中已捐赠，它包含的参数 – Siri 了解何时在将来建议快捷方式。
 
 **SoupChef**使用`SoupOrderDataManager`类将捐赠。
-若要订购 soup 用户，在调用时`PlaceOrder`方法又调用[ `DonateInteraction` ](https://developer.xamarin.com/api/member/Intents.INInteraction.DonateInteraction/):
+若要订购 soup 用户，在调用时`PlaceOrder`方法又调用[ `DonateInteraction` ](xref:Intents.INInteraction.DonateInteraction*):
 
 ```csharp
 void DonateInteraction(Order order)
@@ -332,8 +333,8 @@ void DonateInteraction(Order order)
 }
 ```
 
-正在提取意向之后, 它将包装在[ `INInteraction` ](https://developer.xamarin.com/api/type/Intents.INInteraction/)。
-`INInteraction`给定 [`Identifier`](https://developer.xamarin.com/api/property/Intents.INInteraction.Identifier/)
+正在提取意向之后, 它将包装在[ `INInteraction` ](xref:Intents.INInteraction)。
+`INInteraction`给定 [`Identifier`](xref:Intents.INInteraction.Identifier*)
 （这会有助于稍后删除不再有效的意向捐赠时） 的顺序的唯一 ID 与相匹配。 然后，交互将捐赠给使用 Siri。
 
 在调用`order.Intent`getter 提取`OrderSoupIntent`，通过设置表示顺序其`Quantity`， `Soup`， `Options`，和图像，并调用短语作为一项建议，用户记录 Siri 将相关联的短语时其目的：
@@ -469,7 +470,7 @@ Soup Chef 仍然存在数据与`NSUserDefaults`。 为了在共享应用程序�
 
 Intents 扩展执行基于自定义意向的快捷方式的必要的后台任务。
 
-Siri 调用[ `GetHandler` ](https://developer.xamarin.com/api/member/Intents.INExtension.GetHandler/)方法`IntentHandler`类 (中定义**Info.plist**作为`NSExtensionPrincipalClass`) 来获取扩展的类的实例`OrderSoupIntentHandling`，可以使用若要处理`OrderSoupIntent`:
+Siri 调用[ `GetHandler` ](xref:Intents.INExtension.GetHandler*)方法`IntentHandler`类 (中定义**Info.plist**作为`NSExtensionPrincipalClass`) 来获取扩展的类的实例`OrderSoupIntentHandling`，可以使用若要处理`OrderSoupIntent`:
 
 ```csharp
 [Register("IntentHandler")]
@@ -563,9 +564,9 @@ Intents UI 扩展提供自定义用户界面的 Intents 扩展。 在中**SoupCh
 > [!NOTE]
 > 有关接口**invoiceView**并**confirmationView**中定义**Main.storyboard**作为辅助视图。 IOS 设计器在 Visual Studio for Mac 和 Visual Studio 2017 中不提供用于查看或编辑辅助视图; 支持若要执行此操作，打开**Main.storyboard** Xcode 的 Interface Builder 中。
 
-`IntentViewController` 实现 [`IINUIHostedViewControlling`](https://developer.xamarin.com/api/type/IntentsUI.IINUIHostedViewControlling/)
-接口，用于提供自定义接口时使用 Siri 意向。 的 [`ConfigureView`](https://developer.xamarin.com/api/member/IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView/)
-调用方法以自定义界面，显示确认消息或发票，具体取决于是否正在确认交互 ([`INIntentHandlingStatus.Ready`](https://developer.xamarin.com/api/type/Intents.INIntentHandlingStatus/)) 或已成功执行了 ([ `INIntentHandlingStatus.Success`](https://developer.xamarin.com/api/type/Intents.INIntentHandlingStatus/)):
+`IntentViewController` 实现 [`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
+接口，用于提供自定义接口时使用 Siri 意向。 的 [`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
+调用方法以自定义界面，显示确认消息或发票，具体取决于是否正在确认交互 ([`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)) 或已成功执行了 ([ `INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)):
 
 ```csharp
 [Export("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")]
@@ -631,9 +632,9 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-基于现有语音快捷方式是否存在当前显示顺序`RowSelected`提供类型的视图控制器[ `INUIEditVoiceShortcutViewController` ](https://developer.xamarin.com/api/type/IntentsUI.INUIEditVoiceShortcutViewController/)或[ `INUIAddVoiceShortcutViewController` ](https://developer.xamarin.com/api/type/IntentsUI.INUIAddVoiceShortcutViewController/)。
-每种情况下，`OrderDetailViewController`将自身设置为视图控制器的`Delegate`，正因如此，它还实现 [`IINUIAddVoiceShortcutViewControllerDelegate`](https://developer.xamarin.com/api/type/IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate/)
-并[ `IINUIEditVoiceShortcutViewControllerDelegate` ](https://developer.xamarin.com/api/type/IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate/)。
+基于现有语音快捷方式是否存在当前显示顺序`RowSelected`提供类型的视图控制器[ `INUIEditVoiceShortcutViewController` ](xref:IntentsUI.INUIEditVoiceShortcutViewController)或[ `INUIAddVoiceShortcutViewController` ](xref:IntentsUI.INUIAddVoiceShortcutViewController)。
+每种情况下，`OrderDetailViewController`将自身设置为视图控制器的`Delegate`，正因如此，它还实现 [`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
+并[ `IINUIEditVoiceShortcutViewControllerDelegate` ](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate)。
 
 ## <a name="testing-on-device"></a>在设备上进行测试
 
