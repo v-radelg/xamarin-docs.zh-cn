@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 1f7f2af19c6faad32f94d82dbc58f140f45dea5d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671113"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870386"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 性能
 
@@ -101,11 +101,11 @@ container.AddSubview (new MyView (container));
 
 在这里，包含的对象不会使父级处于活动状态。 但是，父级通过对 `container.AddSubView` 的调用使子级处于活动状态。
 
-使用委托或数据源模式的 iOS API 也采用这种做法。其中，对等类包含实现代码（例如，在 [`Delegate`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) 类中
-设置 [`DataSource`](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) 属性
+使用委托或数据源模式的 iOS API 也采用这种做法。其中，对等类包含实现代码（例如，在 [`Delegate`](xref:UIKit.UITableView.Delegate*) 类中
+设置 [`DataSource`](xref:UIKit.UITableView.DataSource*) 属性
 或 [`UITableView`](xref:UIKit.UITableView) 时）。
 
-对于纯粹为了实现协议而创建的类（例如，[`IUITableViewDataSource`](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)），可以直接在类中实现接口并替代方法，再向 `this` 分配 `DataSource` 属性，而不是创建子类。
+对于纯粹为了实现协议而创建的类（例如，[`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource)），可以直接在类中实现接口并替代方法，再向 `this` 分配 `DataSource` 属性，而不是创建子类。
 
 #### <a name="weak-attribute"></a>弱特性
 
@@ -278,7 +278,7 @@ class MyTableSource : UITableViewSource
 
 游戏往往会紧凑循环地运行游戏逻辑和更新屏幕。 典型的帧速率介于每秒 30 到 60 帧之间。 一些开发人员认为每秒应尽可能多次更新屏幕，以便组合游戏模拟和屏幕更新，并且可能倾向于每秒超出 60 帧。
 
-但是，显示服务器每秒最多执行 60 次屏幕更新。 因此，尝试以超出此限制的速度更新屏幕可能出现屏幕断层和轻微抖动现象。 最好的办法是结构化代码，以使屏幕更新与显示更新同步进行。 为此，可使用 [`CoreAnimation.CADisplayLink`](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/) 类，该类是一个适用于可视化效果和以每秒 60 帧速率运行的游戏的计时器。
+但是，显示服务器每秒最多执行 60 次屏幕更新。 因此，尝试以超出此限制的速度更新屏幕可能出现屏幕断层和轻微抖动现象。 最好的办法是结构化代码，以使屏幕更新与显示更新同步进行。 为此，可使用 [`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink) 类，该类是一个适用于可视化效果和以每秒 60 帧速率运行的游戏的计时器。
 
 ## <a name="avoid-core-animation-transparency"></a>避免核心动画透明度
 
