@@ -2,12 +2,18 @@
 layout: HubPage
 hide_bc: true
 title: Xamarin 文档
-description: 'Xamarin 允许你使用 .NET 代码和特定于平台的用户界面生成适用于 Android、iOS 和 macOS 的本机应用。 Xamarin.Forms 允许你使用采用 C# 或 XAML 编写的共享 UI 代码生成本机应用。'
+description: Xamarin 允许你使用 .NET 代码和特定于平台的用户界面生成适用于 Android、iOS 和 macOS 的本机应用。 Xamarin.Forms 允许你使用采用 C# 或 XAML 编写的共享 UI 代码生成本机应用。
 author: conceptdev
 ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
-  - clicktale
+- clicktale
+ms.openlocfilehash: ee92a3430fcce5bcd389d2bfa78762b71d1d5be9
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58853997"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -76,7 +82,7 @@ featureFlags:
         <ul class="pivots">
             <li>
                 <li>
-                <a href="#get-started">入门</a>
+                <a href="#get-started">开始操作</a>
                 <ul id="get-started">
                     <li>
                         <a href="#get-started1"></a>
@@ -114,22 +120,22 @@ featureFlags:
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/single-page.md">
                                                                         <img src="~/media/icons/i_xaml-forms.svg" alt="">
-文件 > 新建移动应用 </a>
+文件 > 新建移动应用  </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/multi-page.md">
                                                                         <img src="https://docs.microsoft.com/media/common/i_class.svg" alt="">
-添加导航 </a>
+添加导航  </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/database.md">
                                                                         <img src="https://docs.microsoft.com/media/common/i_generic-database.svg" alt="">
-添加数据库 </a>
+添加数据库  </a>
                                                                 </li>
                                                                  <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/styling.md">
                                                                         <img src="https://docs.microsoft.com/xamarin/media/icons/i_user-interface.svg" alt="">
-设计应用的样式 </a>
+设计应用的样式  </a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -170,7 +176,7 @@ Xamarin 开发指南</a>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/label/index.yml">
                                                                         <img src="~/media/icons/i_form-label.svg" alt="">
-标签 </a>
+Label </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/button/index.yml">
@@ -544,12 +550,12 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="iOS Simulator for Windows" />
+                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Visual Studio 2017</h3>
-                                                    <p>详细了解如何使用 Visual Studio 2017 进行开发。</p>
+                                                    <h3>Visual Studio 2019</h3>
+                                                    <p>详细了解如何使用 Visual Studio 2019 进行开发。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -563,7 +569,7 @@ Mac</a>
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="iOS Simulator for Windows" />
+                                                        <img src="~/media/index/xamarin-tools-live-player.svg?branch=master" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -737,19 +743,24 @@ Mac</a>
         <h2>联系我们</h2>
         <ul class="links">
            <li>
-                <a href="https://blog.xamarin.com/">博客</a>
+                <a href="https://blog.xamarin.com/">
+博客 </a>
             </li>
             <li>
-                <a href="https://forums.xamarin.com/"> 论坛 </a>
+                <a href="https://forums.xamarin.com/">
+论坛 </a>
             </li>
             <li>
-                <a href="https://twitter.com/xamarinhq">Twitter</a>
+                <a href="https://twitter.com/xamarinhq">
+Twitter </a>
             </li>
             <li>
-                <a href="https://stackoverflow.com/questions/tagged/xamarin"> Stack Overflow </a>
+                <a href="https://stackoverflow.com/questions/tagged/xamarin">
+堆栈溢出 </a>
             </li>
             <li>
-                <a href="https://dotnet.microsoft.com/platform/community"> 开发人员社区 </a>
+                <a href="https://dotnet.microsoft.com/platform/community">
+开发人员社区 </a>
             </li>
         </ul>
     </div>

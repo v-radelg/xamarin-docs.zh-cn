@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: dea9d128efd777a84e166ccd066a7a2357b5c9e3
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267476"
 documentType: LandingData
 title: Xamarin.iOS
 metadata:
@@ -15,116 +9,116 @@ metadata:
   ms.topic: landing-page
   ms.technology: xamarin-ios
 abstract:
-  description: Xamarin.iOS 为 .NET 开发人员提供了完整的 iOS SDK。 在 Visual Studio 中使用 C# 或 F# 生成完全本机的 iOS 应用。
+  description: 'Xamarin.iOS 为 .NET 开发人员提供了完整的 iOS SDK。 在 Visual Studio 中使用 C# 或 F# 生成完全本机的 iOS 应用。'
   menu:
     items:
-    - href: ~/ios/samples/index.yml
-      text: iOS 示例
-    - href: https://docs.microsoft.com/xamarin/ios/release-notes/
-      text: 发行说明
-    - href: https://developer.apple.com/documentation/
-      text: Apple 开发人员文档
-    - href: /visualstudio/
-      text: Visual Studio
+      - href: ~/ios/samples/index.yml
+        text: iOS 示例
+      - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+        text: 发行说明
+      - href: 'https://developer.apple.com/documentation/'
+        text: Apple 开发人员文档
+      - href: /visualstudio/
+        text: Visual Studio
 sections:
-- title: 开始操作
-  items:
-  - type: paragraph
-    text: 了解如何使用 Xamarin 和 C# 生成首个 iOS 应用。
-  - type: list
-    style: icon48
+  - title: 开始操作
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: 安装
-      href: ~/ios/get-started/installation/index.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Hello，iOS
-      href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 多屏幕应用
-      href: ~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobile-app-developement.svg
-      text: iOS 12
-      href: ~/ios/platform/introduction-to-ios12/index.md
-- title: 参考线
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: paragraph
+        text: '了解如何使用 Xamarin 和 C# 生成首个 iOS 应用。'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            text: 安装
+            href: ~/ios/get-started/installation/index.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: Hello，iOS
+            href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: 多屏幕应用
+            href: ~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+            text: iOS 12
+            href: ~/ios/platform/introduction-to-ios12/index.md
+  - title: 参考线
     items:
-    - href: ~/ios/get-started/index.md
-      html: 通过 Xamarin.iOS 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 iOS 应用。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/ios/get-started/index.md
-      title: 入门
-    - href: ~/ios/app-fundamentals/
-      html: 生成 iOS 应用需要了解的所有内容，例如使用文件、映像、数据库等。
-      image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/ios/app-fundamentals/
-      title: 应用程序基础知识
-    - href: ~/ios/user-interface
-      html: 了解可在 UIKit 中用于 iOS 的用户界面控件的完整集合。
-      image:
-        src: ~/media/icons/i_user-interface.svg
-        href: ~/ios/user-interface/
-      title: 用户界面
-    - href: ~/ios/platform/
-      html: 使用 iOS 平台功能，如 ARKit 和 CoreML 以及 iOS 11 中的其他新功能。
-      image:
-        src: ~/media/icons/i_platform.svg
-        href: ~/ios/platform/
-      title: 平台功能
-    - href: ~/essentials/index.md?context=xamarin/ios
-      html: 用于移动应用程序的跨平台 API。
-      image:
-        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
-        href: ~/essentials/index.md?context=xamarin/ios
-      title: Xamarin.Essentials
-    - href: ~/ios/data-cloud/
-      html: 本地和远程数据存储和检索，以及其他基于云的服务。
-      image:
-        src: ~/media/icons/i_data-cloud.svg
-        href: ~/ios/data-cloud/
-      title: 数据和云服务
-    - href: ~/ios/deploy-test/
-      html: 有关生成应用并将其部署到 App Store 的说明，和事先对其进行测试的提示！
-      image:
-        src: ~/media/icons/i_deploy-test.svg
-        href: ~/ios/deploy-test/
-      title: 部署和测试
-    - href: ~/ios/internals/
-      html: 有关 Xamarin.iOS 工作原理的详细信息。
-      image:
-        src: https://docs.microsoft.com/media/common/i_config-tools.svg
-        href: ~/ios/internals/
-      title: 高级概念和内部机制
-    - href: ~/ios/watchos/
-      html: 生成 Apple Watch 应用！
-      image:
-        src: ~/media/icons/i_watchos.svg
-        href: ~/ios/watchos/
-      title: watchOS
-    - href: ~/ios/tvos/
-      html: 生成 Apple TV 应用！
-      image:
-        src: ~/media/icons/i_tvos.svg
-        href: ~/ios/tvos/
-      title: tvOS
-- title: 参考
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: ~/ios/get-started/index.md
+            html: 通过 Xamarin.iOS 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 iOS 应用。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              href: ~/ios/get-started/index.md
+            title: 入门
+          - href: ~/ios/app-fundamentals/
+            html: 生成 iOS 应用需要了解的所有内容，例如使用文件、映像、数据库等。
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: ~/ios/app-fundamentals/
+            title: 应用程序基础知识
+          - href: ~/ios/user-interface
+            html: 了解可在 UIKit 中用于 iOS 的用户界面控件的完整集合。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: ~/ios/user-interface/
+            title: 用户界面
+          - href: ~/ios/platform/
+            html: 使用 iOS 平台功能，如 ARKit 和 CoreML 以及 iOS 11 中的其他新功能。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: ~/ios/platform/
+            title: 平台功能
+          - href: ~/essentials/index.md?context=xamarin/ios
+            html: 用于移动应用程序的跨平台 API。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
+              href: ~/essentials/index.md?context=xamarin/ios
+            title: Xamarin.Essentials
+          - href: ~/ios/data-cloud/
+            html: 本地和远程数据存储和检索，以及其他基于云的服务。
+            image:
+              src: ~/media/icons/i_data-cloud.svg
+              href: ~/ios/data-cloud/
+            title: 数据和云服务
+          - href: ~/ios/deploy-test/
+            html: 有关生成应用并将其部署到 App Store 的说明，和事先对其进行测试的提示！
+            image:
+              src: ~/media/icons/i_deploy-test.svg
+              href: ~/ios/deploy-test/
+            title: 部署和测试
+          - href: ~/ios/internals/
+            html: 有关 Xamarin.iOS 工作原理的详细信息。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
+              href: ~/ios/internals/
+            title: 高级概念和内部机制
+          - href: ~/ios/watchos/
+            html: 生成 Apple Watch 应用！
+            image:
+              src: ~/media/icons/i_watchos.svg
+              href: ~/ios/watchos/
+            title: watchOS
+          - href: ~/ios/tvos/
+            html: 生成 Apple TV 应用！
+            image:
+              src: ~/media/icons/i_tvos.svg
+              href: ~/ios/tvos/
+            title: tvOS
+  - title: 参考
     items:
-    - title: API
-      href: https://developer.xamarin.com/api/root/ios-unified/
-      html: <p><a href="https://developer.xamarin.com/api/root/ios-unified/">iOS API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">基类库</a></p>
-    - title: 示例
-      href: https://developer.xamarin.com/samples
-      html: <p><a href="https://developer.xamarin.com/samples/ios/all/">iOS 示例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">watchOS 示例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">tvOS 示例</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: API
+            href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12">iOS API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">基类库</a></p>'
+          - title: 示例
+            href: 'https://developer.xamarin.com/samples'
+            html: '<p><a href="https://developer.xamarin.com/samples/ios/all/">iOS 示例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">watchOS 示例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">tvOS 示例</a></p>'

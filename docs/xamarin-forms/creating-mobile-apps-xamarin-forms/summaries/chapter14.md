@@ -1,22 +1,22 @@
 ---
 title: 第 14 章的摘要。 绝对布局
-description: 使用 Xamarin.Forms 创建移动应用： 第 14 章的摘要。 绝对布局
+description: 使用 Xamarin.Forms 创建移动应用：第 14 章的摘要。 绝对布局
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: a67a2e12a12039755970a78739ea2ca3d2ffae08
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053485"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870230"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章的摘要。 绝对布局
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 
 像`StackLayout`， [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)派生自`Layout<View>`，并继承`Children`属性。 `AbsoluteLayout` 实现指定的位置及其子级和它们的大小，（可选），程序员需要布局系统。 位置由相对于左上角的子窗口左上角指定`AbsoluteLayout`以与设备无关单位。 `AbsoluteLayout` 此外实现按比例定位和调整大小功能。
 
@@ -26,7 +26,7 @@ ms.locfileid: "53053485"
 
 ## <a name="absolutelayout-in-code"></a>在代码中的 AbsoluteLayout
 
-您可以添加到子`Children`的集合`AbsoluteLayout`使用标准[ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*)方法，但`AbsoluteLayout`还提供了扩展[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/)允许您指定的方法[ `Rectangle` ](xref:Xamarin.Forms.Rectangle)。 另一个[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/)方法仅需要[ `Point` ](xref:Xamarin.Forms.Point)，孩子在这种情况下是不受约束和调整自身大小。
+您可以添加到子`Children`的集合`AbsoluteLayout`使用标准[ `Add` ](xref:System.Collections.Generic.ICollection`1.Add*)方法，但`AbsoluteLayout`还提供了扩展[ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)允许您指定的方法[ `Rectangle` ](xref:Xamarin.Forms.Rectangle)。 另一个[ `Add` ](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*)方法仅需要[ `Point` ](xref:Xamarin.Forms.Point)，孩子在这种情况下是不受约束和调整自身大小。
 
 您可以创建`Rectangle`具有值[构造函数](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double))需要四个值&mdash;指示相对于其父级的子级的左上角的位置的前两个和第二个两个，该值指示孩子的大小。 也可以使用[构造函数](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size))需要`Point`和一个[ `Size` ](xref:Xamarin.Forms.Size)值。
 

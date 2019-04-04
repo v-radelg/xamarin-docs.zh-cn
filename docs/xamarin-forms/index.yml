@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ccd085c8b1cf824f24d4677ed2e44ebc54b690bd
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197168"
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
@@ -15,110 +9,110 @@ metadata:
   ms.topic: landing-page
   ms.technology: xamarin-forms
 abstract:
-  description: Xamarin.Forms 为 .NET 开发人员提供一个完整的跨平台 UI 工具包。 在 Visual Studio 中使用 C# 生成完全本机的 Android、iOS 和通用 Windows 平台应用。
+  description: 'Xamarin.Forms 为 .NET 开发人员提供一个完整的跨平台 UI 工具包。 在 Visual Studio 中使用 C# 生成完全本机的 Android、iOS 和通用 Windows 平台应用。'
   menu:
     items:
-    - href: ~/xamarin-forms/samples/
-      text: Xamarin.Forms 示例
-    - href: https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/
-      text: 发行说明
-    - href: /visualstudio/
-      text: Visual Studio
+      - href: ~/xamarin-forms/samples/
+        text: Xamarin.Forms 示例
+      - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+        text: 发行说明
+      - href: /visualstudio/
+        text: Visual Studio
 sections:
-- title: 开始操作
-  items:
-  - type: paragraph
-    text: 了解如何使用 Xamarin 和 C#，针对 Android、iOS 和通用 Windows 平台生成首个 Xamarin.Forms 应用。
-  - type: list
-    style: icon48
+  - title: 开始操作
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: 安装
-      href: ~/get-started/requirements.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-      text: 首个应用
-      href: ~/get-started/first-app/index.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 应用快速入门
-      href: ~/get-started/quickstarts/single-page.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 多页快速入门
-      href: ~/get-started/quickstarts/multi-page.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 本地数据库快速入门
-      href: ~/get-started/quickstarts/database.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: 样式设置快速入门
-      href: ~/get-started/quickstarts/styling.md
-- title: 参考线
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: paragraph
+        text: '了解如何使用 Xamarin 和 C#，针对 Android、iOS 和通用 Windows 平台生成首个 Xamarin.Forms 应用。'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            text: 安装
+            href: ~/get-started/requirements.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+            text: 首个应用
+            href: ~/get-started/first-app/index.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: 应用快速入门
+            href: ~/get-started/quickstarts/single-page.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: 多页快速入门
+            href: ~/get-started/quickstarts/multi-page.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: 本地数据库快速入门
+            href: ~/get-started/quickstarts/database.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
+            text: 样式设置快速入门
+            href: ~/get-started/quickstarts/styling.md
+  - title: 参考线
     items:
-    - href: ~/xamarin-forms/app-fundamentals/
-      html: 要生成 Xamarin.Forms 应用需要了解的所有内容，例如使用文件、映像、数据库等。
-      image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/xamarin-forms/app-fundamentals/
-      title: 应用程序基础知识
-    - href: ~/xamarin-forms/user-interface
-      html: 了解在 Xamarin.Forms XAML 中可用 的用户界面控件的完整集合。
-      image:
-        src: ~/media/icons/i_user-interface.svg
-        href: ~/xamarin-forms/user-interface/
-      title: 用户界面
-    - href: ~/xamarin-forms/xaml/
-      html: 以声明方式生成用户界面并在移动平台和桌面平台之间共享。
-      image:
-        src: ~/media/icons/i_xaml-forms.svg
-        href: ~/xamarin-forms/xaml/
-      title: XAML
-    - href: ~/xamarin-forms/platform/
-      html: 使用 Xamarin.Forms 平台功能，例如自定义呈现器，以及每个版本的其他重要功能。
-      image:
-        src: ~/media/icons/i_platform.svg
-        href: ~/xamarin-forms/platform/
-      title: 平台功能
-    - href: ~/essentials/index.md?context=xamarin/xamarin-forms
-      html: 用于文件访问、设备信息，硬件功能等常见任务的跨平台 API。
-      image:
-        src: https://docs.microsoft.com/media/common/i_multi-connect.svg
-        href: ~/essentials/index.md?context=xamarin/xamarin-forms
-      title: Xamarin.Essentials
-    - href: ~/xamarin-forms/data-cloud/
-      html: 本地和远程数据存储和检索，以及其他基于云的服务。
-      image:
-        src: ~/media/icons/i_data-cloud.svg
-        href: ~/xamarin-forms/data-cloud/
-      title: 数据和云服务
-    - href: ~/xamarin-forms/deploy-test/
-      html: 有关生成和部署应用的说明，和事先对其进行测试的提示！
-      image:
-        src: ~/media/icons/i_deploy-test.svg
-        href: ~/xamarin-forms/deploy-test/
-      title: 部署和测试
-    - href: ~/xamarin-forms/internals/
-      html: 有关 Xamarin.Forms 内部机制的其他信息，以及有关本地化和辅助功能等功能的帮助。
-      image:
-        src: https://docs.microsoft.com/media/common/i_config-tools.svg
-        href: ~/xamarin-forms/internals/
-      title: 高级概念和内部机制
-- title: 参考
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: ~/xamarin-forms/app-fundamentals/
+            html: 要生成 Xamarin.Forms 应用需要了解的所有内容，例如使用文件、映像、数据库等。
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: ~/xamarin-forms/app-fundamentals/
+            title: 应用程序基础知识
+          - href: ~/xamarin-forms/user-interface
+            html: 了解在 Xamarin.Forms XAML 中可用 的用户界面控件的完整集合。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: ~/xamarin-forms/user-interface/
+            title: 用户界面
+          - href: ~/xamarin-forms/xaml/
+            html: 以声明方式生成用户界面并在移动平台和桌面平台之间共享。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: ~/xamarin-forms/xaml/
+            title: XAML
+          - href: ~/xamarin-forms/platform/
+            html: 使用 Xamarin.Forms 平台功能，例如自定义呈现器，以及每个版本的其他重要功能。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: ~/xamarin-forms/platform/
+            title: 平台功能
+          - href: ~/essentials/index.md?context=xamarin/xamarin-forms
+            html: 用于文件访问、设备信息，硬件功能等常见任务的跨平台 API。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
+              href: ~/essentials/index.md?context=xamarin/xamarin-forms
+            title: Xamarin.Essentials
+          - href: ~/xamarin-forms/data-cloud/
+            html: 本地和远程数据存储和检索，以及其他基于云的服务。
+            image:
+              src: ~/media/icons/i_data-cloud.svg
+              href: ~/xamarin-forms/data-cloud/
+            title: 数据和云服务
+          - href: ~/xamarin-forms/deploy-test/
+            html: 有关生成和部署应用的说明，和事先对其进行测试的提示！
+            image:
+              src: ~/media/icons/i_deploy-test.svg
+              href: ~/xamarin-forms/deploy-test/
+            title: 部署和测试
+          - href: ~/xamarin-forms/internals/
+            html: 有关 Xamarin.Forms 内部机制的其他信息，以及有关本地化和辅助功能等功能的帮助。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
+              href: ~/xamarin-forms/internals/
+            title: 高级概念和内部机制
+  - title: 参考
     items:
-    - title: API
-      html: <p><a href="https://developer.xamarin.com/api/root/Xamarin.Forms/">Xamarin.Forms API 文档</a></p>
-    - title: 示例
-      html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms 示例</a></p>
-    - title: 图书
-      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">创建移动应用电子图书</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">企业应用程序模式电子图书</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">电子图书：Xamarin.Forms 中的 SkiaSharp Graphics</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: API
+            html: '<p><a href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarin-forms">Xamarin.Forms API 文档</a></p>'
+          - title: 示例
+            html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms 示例</a></p>'
+          - title: 图书
+            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">创建移动应用电子图书</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">企业应用程序模式电子书</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">电子图书：Xamarin.Forms 中的 SkiaSharp Graphics</a></p>

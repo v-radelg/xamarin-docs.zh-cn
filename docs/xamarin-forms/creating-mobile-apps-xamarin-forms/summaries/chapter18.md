@@ -1,22 +1,22 @@
 ---
 title: 第 18 章的摘要。 MVVM
-description: 使用 Xamarin.Forms 创建移动应用： 摘要的第 18 章。 MVVM
+description: 使用 Xamarin.Forms 创建移动应用：第 18 章的摘要。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db837ac8bfa1b7a946ee606e9481f9feb2a8a31f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050110"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870217"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 构建应用程序的最佳方法之一是通过将用户界面与基础代码，这有时称为分离*业务逻辑*。 存在几种方法，但为基于 XAML 的环境量身定制的那个被称为模型-视图-视图模型或 MVVM。
 
@@ -87,7 +87,7 @@ MVVM 适用于数据绑定和数据绑定处理的属性，因此 MVVM 似乎谈
 
 ### <a name="a-calculator-almost"></a>一个计算器，几乎
 
-[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)示例使同时使用`Execute`并`CanExecute`方法的`ICommand`。 它使用[ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)类[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)库。 ViewModel 包含 6 个属性类型的`ICommand`。 这些从初始化[`Command`构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action))并[`Command`构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的`Command`并[`Command<T>`构造函数](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command%3CT%3E.Command%3CT%3E/p/System.Action%7BT%7D/System.Func%7BT,System.Boolean%7D/)`Command<T>`。 加法机数字键绑定到的属性初始化`Command<T>`，和一个`string`自变量`Execute`和`CanExecute`标识特定密钥。
+[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)示例使同时使用`Execute`并`CanExecute`方法的`ICommand`。 它使用[ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)类[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)库。 ViewModel 包含 6 个属性类型的`ICommand`。 这些从初始化[`Command`构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action))并[`Command`构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))的`Command`并[`Command<T>`构造函数](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)`Command<T>`。 加法机数字键绑定到的属性初始化`Command<T>`，和一个`string`自变量`Execute`和`CanExecute`标识特定密钥。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>Viewmodel 和应用程序生命周期
 
@@ -99,4 +99,4 @@ MVVM 适用于数据绑定和数据绑定处理的属性，因此 MVVM 似乎谈
 
 - [第 18 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)
 - [第 18 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
-- [使用 Xamarin.Forms 电子书的企业应用程序模式](~/xamarin-forms/enterprise-application-patterns/index.md)
+- [《使用 Xamarin.Forms 的企业应用程序模式》电子书](~/xamarin-forms/enterprise-application-patterns/index.md)

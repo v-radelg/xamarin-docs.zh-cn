@@ -1,22 +1,22 @@
 ---
 title: 第 28 章的摘要。 位置和地图
-description: 使用 Xamarin.Forms 创建移动应用： 摘要的第 28 章。 位置和地图
+description: 使用 Xamarin.Forms 创建移动应用：第 28 章的摘要。 位置和地图
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bcca7bc7ac56b745945b6d7daef3c4ddd634b486
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059400"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870412"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章的摘要。 位置和地图
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
+[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > 此页上的说明表明其中 Xamarin.Forms 已脱离一书中介绍的内容的区域。
@@ -62,7 +62,7 @@ Xamarin.Forms`Map`类不包括一个工具用于获取用户的地理位置，�
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理器
 
-IOS 实现`ILocationTracker`是[ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs)类，从而利用 iOS [ `CLLocationManager` ](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/)。
+IOS 实现`ILocationTracker`是[ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/LocationTracker.cs)类，从而利用 iOS [ `CLLocationManager` ](xref:CoreLocation.CLLocationManager)。
 
 #### <a name="the-android-location-manager"></a>Android 位置管理器
 
@@ -146,7 +146,7 @@ IOS 应用程序中使用`Map`需要在 info.plist 文件中的两个行。
 
 `VisibleRegion` 类型[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)，具有四个只读属性的类：
 
-- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 类型 [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`Position`](xref:Xamarin.Forms.Maps.Position) 类型的 [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)
 - [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) 类型的`double`，指示该映射显示区域的高度
 - [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) 类型的`double`，指示地图的显示区域宽度
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) 类型的[ `Distance` ](xref:Xamarin.Forms.Maps.Distance)，指示在地图上可见的最大圆形区域的大小

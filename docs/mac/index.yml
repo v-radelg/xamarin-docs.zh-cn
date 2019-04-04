@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 892c6d4903724eaa4cd2f482b550841bfa6f63ae
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267321"
 documentType: LandingData
 title: Xamarin.Mac
 metadata:
@@ -18,79 +12,79 @@ abstract:
   description: Xamarin.Mac 为 .NET 开发人员提供了完整的 macOS SDK。 在 Visual Studio for Mac 中生成完全的本机应用。
   menu:
     items:
-    - href: ~/mac/samples/index.yml
-      text: Mac 示例
-    - href: https://docs.microsoft.com/xamarin/mac/release-notes/
-      text: 发行说明
-    - href: https://developer.apple.com/documentation/
-      text: Apple 开发人员文档
-    - href: /visualstudio/mac/
-      text: Visual Studio for Mac
+      - href: ~/mac/samples/index.yml
+        text: Mac 示例
+      - href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+        text: 发行说明
+      - href: 'https://developer.apple.com/documentation/'
+        text: Apple 开发人员文档
+      - href: /visualstudio/mac/
+        text: Visual Studio for Mac
 sections:
-- title: 开始操作
-  items:
-  - type: paragraph
-    text: 了解如何使用 Xamarin 和 C# 生成首个 Mac 应用。
-  - type: list
-    style: icon48
+  - title: 开始操作
     items:
-    - image:
-        src: https://docs.microsoft.com/media/common/i_setup.svg
-      text: 安装
-      href: ~/mac/get-started/installation.md
-    - image:
-        src: https://docs.microsoft.com/media/common/i_xplat-code.svg
-      text: 了解 Mac
-      href: ~/mac/get-started/hello-mac.md
-- title: 参考线
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+      - type: paragraph
+        text: '了解如何使用 Xamarin 和 C# 生成首个 Mac 应用。'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            text: 安装
+            href: ~/mac/get-started/installation.md
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
+            text: 了解 Mac
+            href: ~/mac/get-started/hello-mac.md
+  - title: 参考线
     items:
-    - href: ~/mac/get-started/index.md
-      html: 通过 Xamarin.Mac 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 Mac 应用。
-      image:
-        src: https://docs.microsoft.com/media/common/i_get-started.svg
-        href: ~/mac/get-started/index.md
-      title: 入门
-    - href: ~/mac/app-fundamentals/
-      html: 要生成 Mac 应用需要了解的所有内容，例如使用文件、映像、数据库等。
-      image:
-        src: ~/media/icons/i_app-build.svg
-        href: ~/mac/app-fundamentals/
-      title: 应用程序基础知识
-    - href: ~/mac/user-interface
-      html: 了解可在 AppKit 中用于 macOS 的用户界面控件的完整集合。
-      image:
-        src: ~/media/icons/i_user-interface.svg
-        href: ~/mac/user-interface/
-      title: 用户界面
-    - href: ~/mac/platform/
-      html: 使用 Mac 平台功能，例如情节提要、OpenTK 以及 macOS 中的最新功能。
-      image:
-        src: ~/media/icons/i_platform.svg
-        href: ~/mac/platform/
-      title: 平台功能
-    - href: ~/mac/deploy-test/
-      html: 有关生成应用并将其部署到 App Store 的说明，和事先对其进行测试的提示！
-      image:
-        src: ~/media/icons/i_deploy-test.svg
-        href: ~/mac/deploy-test/
-      title: 部署和测试
-    - href: ~/mac/internals/
-      html: 有关 Xamarin.Mac 内部机制的其他信息，以及有关辅助功能等功能的帮助。
-      image:
-        src: https://docs.microsoft.com/media/common/i_config-tools.svg
-        href: ~/mac/internals/
-      title: 高级概念和内部机制
-- title: 参考
-  items:
-  - type: list
-    style: cards
-    className: cardsD
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: ~/mac/get-started/index.md
+            html: 通过 Xamarin.Mac 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 Mac 应用。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              href: ~/mac/get-started/index.md
+            title: 入门
+          - href: ~/mac/app-fundamentals/
+            html: 要生成 Mac 应用需要了解的所有内容，例如使用文件、映像、数据库等。
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: ~/mac/app-fundamentals/
+            title: 应用程序基础知识
+          - href: ~/mac/user-interface
+            html: 了解可在 AppKit 中用于 macOS 的用户界面控件的完整集合。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: ~/mac/user-interface/
+            title: 用户界面
+          - href: ~/mac/platform/
+            html: 使用 Mac 平台功能，例如情节提要、OpenTK 以及 macOS 中的最新功能。
+            image:
+              src: ~/media/icons/i_platform.svg
+              href: ~/mac/platform/
+            title: 平台功能
+          - href: ~/mac/deploy-test/
+            html: 有关生成应用并将其部署到 App Store 的说明，和事先对其进行测试的提示！
+            image:
+              src: ~/media/icons/i_deploy-test.svg
+              href: ~/mac/deploy-test/
+            title: 部署和测试
+          - href: ~/mac/internals/
+            html: 有关 Xamarin.Mac 内部机制的其他信息，以及有关辅助功能等功能的帮助。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
+              href: ~/mac/internals/
+            title: 高级概念和内部机制
+  - title: 参考
     items:
-    - title: API
-      html: <p><a href="https://developer.xamarin.com/api/root/monomac-lib/">Mac API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0">基类库</a></p>
-    - title: 示例
-      html: <p><a href="https://developer.xamarin.com/samples/mac/all/">Mac 示例</a></p>
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: API
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/AppKit">Mac API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0">基类库</a></p>'
+          - title: 示例
+            html: '<p><a href="https://developer.xamarin.com/samples/mac/all/">Mac 示例</a></p>'

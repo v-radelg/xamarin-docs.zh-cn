@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
+ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870360"
 ---
-
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 设计
 
 除了核心是 Mono 的一部分的基类库[Xamarin.iOS](http://www.xamarin.com/iOS)附带了适用于各种 iOS Api 允许开发人员使用 Mono 创建本机 iOS 应用程序的绑定。
@@ -57,7 +62,7 @@ Xamarin.iOS 的核心，有是一种互操作的引擎，用于桥接与 OBJECTI
 
 - 本机 C# 类型：
 
-  - [`NSString` 将成为 `string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` 将变为 `string`](~/ios/internals/api-design/nsstring.md)
   - 打开`int`并`uint`参数应保持到 C# 枚举和 C# 枚举与枚举`[Flags]`属性
   - 而不是以非特定于类型的`NSArray`对象，将公开为强类型化数组的数组。
   - 有关事件和通知，让用户之间进行选择：
@@ -80,7 +85,7 @@ Xamarin.iOS 包括大量的程序集构成*Xamarin.iOS 配置文件*。 [程序�
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-[ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/)命名空间使开发人员可以桥接是世界上之间 C# 和 Objective-c。
+[ObjCRuntime](xref:ObjCRuntime)命名空间使开发人员可以桥接是世界上之间 C# 和 Objective-c。
 这是专门针对 iOS、 基于从 Cocoa # 和 Gtk # 体验而设计的新绑定。
 
 <a name="MonoTouch.Foundation" />
@@ -201,13 +206,13 @@ C# 委托提供用于常见操作。 请参阅[委托](#Delegates)部分，了�
 
 #### <a name="opengles"></a>OpenGLES
 
-OpenGLES，对于我们分发[修改后版本](https://developer.xamarin.com/api/namespace/OpenTK/)的[OpenTK](http://www.opentk.com/) API，为已修改为使用 CoreGraphics 数据类型和结构，OpenGL 的面向对象的绑定，以及仅将公开可在 iOS 的功能。
+OpenGLES，对于我们分发[修改后版本](xref:OpenTK)的[OpenTK](http://www.opentk.com/) API，为已修改为使用 CoreGraphics 数据类型和结构，OpenGL 的面向对象的绑定，以及仅将公开可在 iOS 的功能。
 
-OpenGLES 1.1 功能可通过 ES11.GL 类型，所述[此处](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES11.GL/)类型。
+OpenGLES 1.1 功能可通过 ES11.GL 类型，所述[此处](xref:OpenTK.Graphics.ES11.GL)类型。
 
-OpenGLES 2.0 功能可通过 ES20.GL 类型，所述[此处](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES20.GL/)类型。
+OpenGLES 2.0 功能可通过 ES20.GL 类型，所述[此处](xref:OpenTK.Graphics.ES20.GL)类型。
 
-OpenGLES 3.0 功能可通过 ES30.GL 类型，所述[此处](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/)类型。
+OpenGLES 3.0 功能可通过 ES30.GL 类型，所述[此处](xref:OpenTK.Graphics.ES30.GL)类型。
 
 
 ### <a name="binding-design"></a>绑定设计
