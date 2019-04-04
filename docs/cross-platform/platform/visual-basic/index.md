@@ -6,8 +6,13 @@ ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: e4c8c43b4df1a7bfc5436f14564c6d0164216c46
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669240"
 ---
-
 # <a name="portable-visual-basicnet"></a>可移植 Visual Basic.NET
 
 Xamarin iOS 和 Android 项目本身并不支持 Visual Basic;但是开发人员可以使用可移植类库，将现有 Visual Basic 代码迁移到 iOS 和 Android，或在 Visual Basic 中编写其应用程序逻辑的重要部分。 可以完全在 Visual Basic （不包括自定义呈现器、 依赖关系服务和 XAML 代码隐藏文件） 中创建 Xamarin.Forms 应用程序。

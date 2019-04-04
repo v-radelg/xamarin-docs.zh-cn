@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
+ms.openlocfilehash: 2ff4729e68497391d41521da26917571c146b541
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667257"
 ---
-
 # <a name="implementing-fragments---walkthrough"></a>实现片段的演练
 
 _片段是自包含的模块化组件，可帮助您解决有多种不同的屏幕大小的目标设备的 Android 应用的复杂性。本文介绍如何创建和开发 Xamarin.Android 应用程序时使用片段。_

@@ -6,8 +6,13 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
+ms.openlocfilehash: 92b11db2ee566bcd9f3f8a3ee3771e163a47589b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670215"
 ---
-
 # <a name="getting-started-with-objective-c"></a>Objective C 入门
 
 这是适用于 OBJECTIVE-C 的其中介绍了所有支持平台的基础知识的入门页。

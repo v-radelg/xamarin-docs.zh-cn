@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
+ms.openlocfilehash: 9620362b48e9cf1db4c25e4470851fb518a8e0f3
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671153"
 ---
-
 # <a name="android-wear-controls"></a>Android 穿戴设备控件
 
 Android Wear 应用可以使用的正则 Android 应用，包括已使用许多相同的控件`Button`， `TextView`，边距和图像绘图。 布局控件包括`ScrollView`， `LinearLayout`，和`RelativateLayout`也可用。

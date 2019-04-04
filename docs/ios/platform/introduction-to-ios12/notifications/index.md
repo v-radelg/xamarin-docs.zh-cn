@@ -7,6 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
+ms.openlocfilehash: 8ee42c04c5d79bfd39c34550b5f77427af8f835d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668902"
 ---
 # <a name="notifications-in-ios-12"></a>IOS 12 中的通知
 

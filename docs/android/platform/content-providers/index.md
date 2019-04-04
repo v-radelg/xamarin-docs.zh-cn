@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
+ms.openlocfilehash: 60f9420fc630bcfc44a6b19356b2315ac8bcd523
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670306"
 ---
-
 # <a name="intro-to-contentproviders"></a>简介 Contentprovider
 
 _Android 操作系统使用的内容提供商来方便地对媒体文件、 联系人和日历信息等的共享数据的访问。本文介绍 ContentProvider 类，并提供如何使用它的两个示例。_

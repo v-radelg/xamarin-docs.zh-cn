@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
+ms.openlocfilehash: f359da6b8744e03cfcbd77d48f5f77f216e828f8
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670932"
 ---
-
 # <a name="images-and-icons-in-xamarinios"></a>图像和图标在 Xamarin.iOS
 
 _本部分包括各种的文章将介绍如何在 Xamarin.iOS 应用中，例如将它们用作图标的图像处理、 启动屏幕或包括这些控件和自定义文档类型提供的图标。_

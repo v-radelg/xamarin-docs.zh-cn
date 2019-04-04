@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
+ms.openlocfilehash: dc39fd9c129fb63fa4a3a73b15aea4204a38cdbd
+ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57557264"
 ---
-
 # <a name="xamarinforms-picker"></a>Xamarin.Forms Picker
 
 _选取器视图是一个用于选择文本项中的数据列表控件。_

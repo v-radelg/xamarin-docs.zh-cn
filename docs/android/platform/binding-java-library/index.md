@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
+ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670527"
 ---
-
 # <a name="binding-a-java-library"></a>绑定 Java 库
 
 _Android 社区有很多您可能想在您的应用程序; 若要使用的 Java 库本指南介绍如何将 Java 库合并到 Xamarin.Android 应用程序，通过创建绑定库。_

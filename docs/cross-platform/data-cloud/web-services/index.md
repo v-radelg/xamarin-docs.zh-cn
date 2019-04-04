@@ -6,8 +6,13 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57672386"
 ---
-
 # <a name="introduction-to-web-services"></a>介绍了 Web 服务
 
 _本指南演示如何使用另一个 web 服务技术。涵盖的主题包括与 REST 服务、 SOAP 服务和 Windows Communication Foundation 服务进行通信。_

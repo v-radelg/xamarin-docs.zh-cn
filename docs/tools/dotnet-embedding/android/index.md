@@ -5,8 +5,13 @@ ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
 author: lobrien
 ms.author: laobri
 ms.date: 06/15/2018
+ms.openlocfilehash: 6917267896cff796af4e5cff095720eaeccc7652
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57671155"
 ---
-
 # <a name="net-embedding-on-android"></a>在 Android 上嵌入.NET
 
 在某些情况下，您可能希望将 Xamarin .NET 库添加到现有的本机 Android 项目中。 为此，您可以使用[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)工具将.NET 库转换为本机库，以便可以合并到基于 Java 的本机 Android 应用程序中。

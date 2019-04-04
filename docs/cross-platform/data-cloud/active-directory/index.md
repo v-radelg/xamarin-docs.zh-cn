@@ -6,8 +6,13 @@ ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
+ms.openlocfilehash: b9a136c3c5e0e9edff063de5a7eab8e54f52ef92
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57666333"
 ---
-
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
 
 

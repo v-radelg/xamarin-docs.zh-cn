@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
+ms.openlocfilehash: ca8b554e03c4e8339922ca99619245a45bd08e1d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669084"
 ---
-
 # <a name="android-wear"></a>Android 穿戴设备
 
 Android 穿戴设备是 android 的专为智能手表等可穿戴设备版本。 本部分包括有关如何安装和配置穿戴设备开发，创建第一个穿戴设备设备，并可以引用以创建你自己 Wear 应用的示例的列表的分步演练所需的工具的说明。

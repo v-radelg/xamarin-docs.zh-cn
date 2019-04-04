@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
+ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670127"
 ---
-
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>适用于 Xamarin.iOS 的 MonoTouch.Dialog 简介
 
 MonoTouch.Dialog，称为 mt。D 简称，是一个快速的 UI 开发工具包，允许开发人员能够构建应用程序屏幕和导航使用信息，而不是创建视图控制器、 表等的内容的麻烦。在这种情况下，它提供 UI 开发代码与代码减少显著的简化。 例如，考虑下面的屏幕截图：

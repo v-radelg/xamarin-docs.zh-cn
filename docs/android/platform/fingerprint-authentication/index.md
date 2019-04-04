@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 70e12abdf61a6a0bfb36d281bcaa6214199e567d
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57667329"
 ---
-
 # <a name="fingerprint-authentication"></a>指纹身份验证
 
 _本指南介绍如何将添加到 Xamarin.Android 应用程序在 Android 6.0 中引入的指纹身份验证。_

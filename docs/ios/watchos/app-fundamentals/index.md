@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
+ms.openlocfilehash: d47c4d705b18a7bf295f2f88aed5a591d21b6ebd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668161"
 ---
-
 # <a name="watchos-application-fundamentals"></a>watchOS 应用程序基础知识
 
 ##  <a name="parent-applicationioswatchosapp-fundamentalsparent-appmd"></a>[父应用程序](~/ios/watchos/app-fundamentals/parent-app.md)
