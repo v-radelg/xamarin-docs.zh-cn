@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
+ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "58071107"
 ---
-
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的情节提要简介
 
 本指南中我们将介绍哪些情节提要是和检查的一些关键组件 – 例如 segues 设计。 我们将介绍如何创建和使用，情节提要，并且开发人员必须哪些益处。

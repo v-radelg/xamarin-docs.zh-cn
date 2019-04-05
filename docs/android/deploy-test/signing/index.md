@@ -7,8 +7,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
+ms.openlocfilehash: 5bdd95409e71955b4f1549eece42b15cee38131a
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58506988"
 ---
-
 # <a name="signing-the-android-application-package"></a>对 Android 应用程序包进行签名
 
 在[做好应用程序发布准备](~/android/deploy-test/release-prep/index.md)中，使用了“存档管理器”以生成应用并将它放置在存档中以进行签名和发布。 此部分说明如何创建 Android 签名标识、为 Android 应用程序创建新签名证书以及将存档应用即席发布到磁盘。 生成的 APK 可以旁加载到 Android 设备中，而无需经过应用商店。

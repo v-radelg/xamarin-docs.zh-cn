@@ -6,13 +6,13 @@ ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/28/2019
-ms.openlocfilehash: fa93cb86867cb8539fb7ce4db45ad4751bfe6e04
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.date: 04/03/2019
+ms.openlocfilehash: 1f6bdfb1aed87f8a2dabdc0efcea3a1b8bf2ecf2
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58854219"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019342"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可扩展应用程序标记语言 (XAML)
 
@@ -24,6 +24,10 @@ _XAML 是一种声明性标记语言，可用于定义用户界面。 使用 XAM
 
 > [!NOTE]
 > 试用[XAML 标准预览版](standard/index.md)
+
+## [<a name="xaml-controls"></a>XAML 控件](xaml-controls.md)
+
+在 Xamarin.Forms 中定义的视图的所有可从 XAML 文件引用。
 
 <a name="xaml" />
 
@@ -43,11 +47,11 @@ XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言
 
 XAML 使用`xmlns`XML 属性的命名空间声明。 本文介绍 XAML 命名空间语法，并演示如何声明 XAML 命名空间以访问的类型。
 
-## [<a name="xaml-custom-namespace-schemas"></a>XAML Namespace 自定义架构](custom-namespace-schemas.md)
+## [<a name="xaml-custom-namespace-schemas"></a>XAML 自定义命名空间架构](custom-namespace-schemas.md)
 
 可以使用定义 XAML 自定义命名空间架构`XmlnsDefinitionAttribute`类，该类指定自定义 URL 和一个或多个 CLR 命名空间之间的映射。 然后可以在 XAML 命名空间声明中使用自定义命名空间架构。
 
-## [<a name="xaml-namespace-recommended-prefixes"></a>建议的前缀的 XAML Namespace](custom-prefix.md)
+## [<a name="xaml-namespace-recommended-prefixes"></a>建议的 XAML 命名空间前缀](custom-prefix.md)
 
 `XmlnsPrefixAttribute`类可由控件创作者指定要关联的 XAML 命名空间，XAML 用法的建议的前缀。
 
@@ -75,6 +79,6 @@ XAML 可用于将参数传递到非默认构造函数或工厂方法。 本文�
 
 XAML 资源是可以多次使用的对象的定义。 一个[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)允许在单个位置中，定义和重新整个 Xamarin.Forms 应用程序中使用的资源。 本文演示了如何创建和使用`ResourceDictionary`，以及如何合并一个`ResourceDictionary`到另一个。
 
-## [<a name="loading-xaml-at-runtime"></a>加载 XAML 在运行时](runtime-load.md)
+## [<a name="loading-xaml-at-runtime"></a>在运行时加载 XAML](runtime-load.md)
 
 可以加载和分析在运行时可使用 XAML [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)扩展方法。

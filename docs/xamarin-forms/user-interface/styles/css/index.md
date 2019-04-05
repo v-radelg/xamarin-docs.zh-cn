@@ -8,6 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
+ms.openlocfilehash: ca87e5997fa05e014be56f85087ce3e7ffe1ab12
+ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57972684"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 

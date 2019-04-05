@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
+ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668850"
 ---
-
 # <a name="publishing-to-google-play"></a>发布到 Google Play
 
 尽管有许多应用市场可以分发应用程序，但 Google Play 无疑是世界上最大和访问次数最多的 Android 应用商店。 Google Play 提供单一平台，可用于 Android 应用程序的分发、宣传推广、销售和销售分析。

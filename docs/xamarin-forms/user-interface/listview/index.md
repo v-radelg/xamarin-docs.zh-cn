@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
+ms.openlocfilehash: 540e787b476fc2b249bfbe487e45ac61f2e7405a
+ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329346"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/WorkingWithListview)

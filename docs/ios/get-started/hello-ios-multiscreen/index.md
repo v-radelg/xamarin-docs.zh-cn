@@ -8,6 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
+ms.openlocfilehash: 8545afc9957f263104afa69359847d2b187e2558
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669357"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello，iOS 多屏显示
 

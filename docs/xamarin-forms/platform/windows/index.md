@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
+ms.openlocfilehash: 9367e22ede733ee2d93feccc001836fb4dc02564
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507105"
 ---
-
 # <a name="windows-platform-features"></a>Windows 平台功能
 
 开发 Windows 平台的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/requirements.md)包含有关系统必备组件的详细信息。

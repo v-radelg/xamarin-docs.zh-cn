@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
+ms.openlocfilehash: 471e09f236be505190ad2c08169bd445dcfca0a3
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981739"
 ---
-
 # <a name="ios-platform-features-in-xamarinforms"></a>在 Xamarin.Forms 中的 iOS 平台功能
 
 开发适用于 iOS 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/requirements.md)包含有关系统必备组件的详细信息。

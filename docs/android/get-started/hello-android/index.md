@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
+ms.openlocfilehash: fbe62f08a096a5a48fe96a3445e09eac9c0485fd
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57668252"
 ---
-
 # <a name="hello-android"></a>了解 Android
 
 _在此由两部分构成的指南中，你将使用 Visual Studio for Mac 或 Visual Studio 生成第一个 Xamarin.Android 应用程序，并进一步了解使用 Xamarin 进行 Android 应用程序开发的基础知识。在此过程中，会介绍生成和部署 Xamarin.Android 应用程序所需的工具、概念和步骤。_

@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
+ms.openlocfilehash: 69c730462d6b277f8ec5a4eb7390aaeb50575a39
+ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58507131"
 ---
-
 # <a name="platform-specifics"></a>平台特定信息
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)

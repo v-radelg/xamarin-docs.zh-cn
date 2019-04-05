@@ -7,8 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
+ms.openlocfilehash: e290c52b2f6ed6a7fc194dea6a9155b57bea3d4b
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57669578"
 ---
-
 # <a name="xamarinforms-deployment-and-testing"></a>Xamarin.Forms 部署和测试
 
 ## <a name="publishing-ios-appsiosdeploy-testapp-distributionindexmd"></a>[发布 iOS 应用](~/ios/deploy-test/app-distribution/index.md)

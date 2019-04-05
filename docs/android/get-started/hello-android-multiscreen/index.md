@@ -8,8 +8,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
+ms.openlocfilehash: c67d2be3d0bb1a159d234e815b16a988b93087d4
+ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/08/2019
+ms.locfileid: "57670880"
 ---
-
 # <a name="hello-android-multiscreen"></a>了解 Android 多屏幕
 
 _本指南由两部分构成，在本指南中，用户将扩展在《了解 Android》指南中创建的 Phoneword 应用程序，以处理第二个屏幕。在此过程中，本指南将介绍基本 Android 应用程序构建基块，并随着更好地了解 Android 应用程序结构和功能来使用户深入了解 Android 体系结构。_

@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
+ms.openlocfilehash: 11926d3cf0c3954c97cdd1e92283626067c9623f
+ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58678010"
 ---
-
 # <a name="localization-in-xamarinios"></a>在 Xamarin.iOS 的本地化
 
 _本文档介绍 iOS SDK 的本地化功能以及如何使用 Xamarin 访问它们。_

@@ -7,8 +7,13 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
+ms.openlocfilehash: 8b90b76cad5277fe76fc476a0bcd6f600e91b256
+ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/15/2019
+ms.locfileid: "57981687"
 ---
-
 # <a name="ios-frequently-asked-questions"></a>iOS Frequently Asked Questions
 
 ## <a name="general-questions"></a>一般问题

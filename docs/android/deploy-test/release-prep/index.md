@@ -6,8 +6,13 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
+ms.openlocfilehash: 605db1c2e0dc0cf41288f9d6c9252582ce91d525
+ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58071056"
 ---
-
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
 应用程序经编码和测试后，必须准备一个包进行分发。 准备此包的第一个任务是生成供发布的应用程序，其中主要涉及到设置应用程序的一些属性。
