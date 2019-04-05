@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 8bf88c1a6cecc3d1f8ccc00d15f500607dadaea9
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.openlocfilehash: 0d9f3c9e0608e87258b7f53af3c567155da824d1
+ms.sourcegitcommit: 771e65583e978ff2b9c652b953a21b0bbb10a5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305654"
+ms.lasthandoff: 04/01/2019
+ms.locfileid: "58782482"
 ---
 # <a name="creating-an-effect"></a>创建效果
 
@@ -55,7 +55,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly:ResolutionGroupName ("MyCompany")]
-[assembly:ExportEffect (typeof(FocusEffect), nameof(FocusEffect)]
+[assembly:ExportEffect (typeof(FocusEffect), nameof(FocusEffect))]
 namespace EffectsDemo.iOS
 {
     public class FocusEffect : PlatformEffect
@@ -108,7 +108,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly:ResolutionGroupName ("MyCompany")]
-[assembly:ExportEffect (typeof(FocusEffect), nameof(FocusEffect)]
+[assembly:ExportEffect(typeof(FocusEffect), nameof(FocusEffect))]
 namespace EffectsDemo.Droid
 {
     public class FocusEffect : PlatformEffect
@@ -162,7 +162,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
-[assembly: ExportEffect(typeof(FocusEffect), nameof(FocusEffect)]
+[assembly: ExportEffect(typeof(FocusEffect), nameof(FocusEffect))]
 namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
