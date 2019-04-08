@@ -9,6 +9,7 @@
 ### [样式设置快速入门](~/get-started/quickstarts/styling.md)
 ### [深入探索](~/get-started/quickstarts/deepdive.md)
 ## [XAML](xaml/index.md)
+### [XAML 控件](xaml/xaml-controls.md)
 ### [XAML 基础](xaml/xaml-basics/index.md)
 #### [第 1 部分。 XAML 入门](xaml/xaml-basics/get-started-with-xaml.md)
 #### [第 2 部分。 基本 XAML 语法](xaml/xaml-basics/essential-xaml-syntax.md)
