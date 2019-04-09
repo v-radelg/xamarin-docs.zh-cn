@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 8674ef47867acf3bca4d05fd6628a58e2f9ad90e
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329359"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855011"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门的深入探讨
 
@@ -80,6 +80,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 - **Models\Note.cs** – 此类定义`Note`其实例的应用程序中存储有关每个说明数据模型。
 - **App.xaml** - `App` 类的 XAML 标记，该类定义应用程序的资源字典。
 - **App.xaml.cs** - `App` 类的代码隐藏，该类负责实例化应用程序在每个平台上将显示的首页，并处理应用程序生命周期事件。
+- **AssemblyInfo.cs** – 此文件包含有关程序集级别应用的项目的应用程序属性。
 - **NotesPage.xaml** – 用于 XAML 标记`NotesPage`类，该类定义应用程序启动时显示的页面的 UI。
 - **NotesPage.xaml.cs** – 用于代码隐藏`NotesPage`类，该类包含在用户与页面交互时执行的业务逻辑。
 - **NoteEntryPage.xaml** – 用于 XAML 标记`NoteEntryPage`类，该类定义当用户输入下所示的页面的 UI。
@@ -106,9 +107,7 @@ Xamarin.Forms 应用程序采用与传统跨平台应用程序相同的构建方
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Notes
 {
     public partial class App : Application
@@ -123,7 +122,17 @@ namespace Notes
 }
 ```
 
-此代码将设置`MainPage`的属性`App`类来[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)实例，其内容是`NotesPage`实例。 此外，[`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 属性可打开 XAML 编译器，以使 XAML 直接编译为中间语言。 有关详细信息，请参阅 [XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
+此代码将设置`MainPage`的属性`App`类来[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)实例，其内容是`NotesPage`实例。
+
+此外， **AssemblyInfo.cs**文件包含单个应用程序属性，即在程序集级别应用：
+
+```csharp
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+```
+
+[ `XamlCompilation` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)属性可打开 XAML 编译器，以使 XAML 直接编译为中间语言。 有关详细信息，请参阅 [XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
 
 ## <a name="launching-the-application-on-each-platform"></a>启动每个平台上的应用程序
 
@@ -412,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 在中`OnNoteAddedClicked`方法，执行时，新便笺添加到应用程序时， [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的`NoteEntryPage`设置为一个新`Note`实例。 在`OnListViewItemSelected`方法中选择现有便笺时执行[ `ListView` ](xref:Xamarin.Forms.ListView)，则`BindingContext`的`NoteEntryPage`设置为所选`Note`实例，通过访问[ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)属性。
 
 > [!IMPORTANT]
-> 虽然可以分别设置每个目标对象的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性，但没有必要。 `BindingContext` 是特殊属性，其所有子级都会继承该属性。 因此，当`BindingContext`上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)设置为`Note`实例，所有的子级`ContentPage`具有相同`BindingContext`，可以将绑定到公共属性的`Note`对象。
+> 虽然可以分别设置每个目标对象的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性，但没有必要。 `BindingContext` 是一个特殊属性，继承的所有子项。 因此，当`BindingContext`上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)设置为`Note`实例，所有的子级`ContentPage`具有相同`BindingContext`，可以将绑定到公共属性的`Note`对象。
 
 [ `Editor` ](xref:Xamarin.Forms.Editor)中`NoteEntryPage`然后将绑定到`Text`属性`Note`对象：
 
@@ -530,4 +539,4 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [入门示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms API 参考](xref:Xamarin.Forms)
-- [免费自学教程（视频）](https://university.xamarin.com/self-guided/)
+- [免费自学教程 （视频）](https://university.xamarin.com/self-guided/)
