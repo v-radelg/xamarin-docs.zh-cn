@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 0062c5da4db206a9fe4dc0030a104ec034ab97f1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: 296284b7f9a8eac26817e76a97bf35b03d591532
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197155"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855323"
 ---
 # <a name="introduction-to-mobile-development"></a>移动开发简介
 
@@ -38,14 +38,10 @@ Xamarin 是唯一结合了本机平台的所有功能，并自身增加了大量
 1.   新式集成开发环境 (IDE) - Xamarin 在 Mac OS X 上使用 Visual Studio for Mac，在 Windows 上使用 Visual Studio。 两者都属于新式 IDE，其中包括诸如代码自动完成、复杂项目和解决方案管理系统、综合项目模板库、集成源代码管理等功能。
 1.   **移动跨平台支持** - Xamarin 对 iOS、Android 和 Windows Phone 这三个主移动平台提供复杂的跨平台支持。 可编写应用程序共享其多达 90% 的代码，并且 Xamarin.Mobile 库提供了 Unified API 跨这三个平台来访问公共资源。 这可明显减少移动开发人员针对这三种最热门移动平台的开发成本和进行市场推广所需的时间。
 
-
 借助 Xamarin 强大全面的功能集，它填补了应用程序开发人员想要使用新式语言和平台开发跨平台移动应用程序的空白。
-
 
 > [!NOTE]
 > 此入门系列重点介绍如何开始生成 iOS 和 Android 应用程序。 Microsoft 提供面向平板电脑和台式电脑的[通用 Windows 平台 (UWP) 开发](https://docs.microsoft.com/windows/uwp/develop/)的相关信息。 若要了解有关使用 Xamarin（包括适用于 Windows 的 UWP 应用）进行跨平台开发的详细信息，请参阅[生成跨平台应用程序指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)。
-
-
 
 ## <a name="how-does-xamarin-work"></a>Xamarin 的工作原理？
 
@@ -54,8 +50,6 @@ Xamarin 提供两种商业产品：Xamarin.iOS 和 Xamarin.Android。 两者都�
 在 iOS 上，Xamarin 的预先 (AOT) 编译器将 Xamarin.iOS 应用程序直接编译到本机 ARM 程序集代码。 在 Android 上，Xamarin 编译器则将应用编译为中间语言 (IL)，随后启用应用程序时，再实时 (JIT) 编译为本机程序集。
 
 两种情况中，Xamarin 应用程序均使用自动处理事务（比如内存分配、垃圾回收和基础平台互操作等）的运行时。
-
-
 
 ### <a name="xamariniosdll-and-monoandroiddll"></a>Xamarin.iOS.dll 和 Mono.Android.dll
 
@@ -69,27 +63,10 @@ Xamarin 应用程序针对 .NET BCL（称为 Xamarin 移动配置文件）的子
 
 编译 Xamarin 应用程序时，结果是应用程序包，要么是 iOS 中的 .app 文件，要么是 Android 中的 .apk 文件。 这些文件与使用平台的默认 IDE 生成的应用程序包不好区别，并且这些文件均可通过完全相同的方式部署。
 
-## <a name="getting-started"></a>入门
+## <a name="next-steps"></a>后续步骤
 
-现已了解了一些 Xamarin 工作方式的内容，可以开始进一步研究了！
+现在你已经对 Xamarin 的工作原理有了一些了解，那么下一步骤就是使用以下指南之一开始构建应用：
 
-下一步是使用以下其中一个指南开始生成应用：
-
-* [**了解 iOS**](~/ios/get-started/hello-ios/index.md)
-
-![](introduction-to-mobile-development-images/ios.png "了解 iOS")
-
-* [**了解 Android**](~/android/get-started/hello-android/index.md)
-
-![](introduction-to-mobile-development-images/android.png "了解 Android")
-
-* [**Xamarin.Forms 入门**](~/get-started/index.yml)
-
-## <a name="summary"></a>总结
-
-本文档只介绍了 Xamarin 平台。 完成生成并运行你第一个应用时，才是真正乐趣的开始。 请参阅[了解 iOS](~/ios/get-started/hello-ios/index.md)、[了解 Android](~/android/get-started/hello-android/index.md) 和 [Xamarin.Forms 入门](~/get-started/index.yml)指南开始使用。
-
-## <a name="related-links"></a>相关链接
-
-- [Hello，iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello，Android](~/android/get-started/hello-android/index.md)
+- [**Xamarin.Forms 入门**](~/get-started/index.yml)
+- [**Xamarin.iOS 入门**](~/ios/get-started/hello-ios/index.md)
+- [**Xamarin.Android 入门**](~/android/get-started/hello-android/index.md)

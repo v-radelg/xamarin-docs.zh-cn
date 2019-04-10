@@ -4,14 +4,14 @@ description: Xamarin.Essentials 中的 Share 类使应用程序能够将数据�
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 02/12/2019
+ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: ad56a626133e03c1ca75b1db26b0904d5df7fea3
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175325"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869372"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共享
 
@@ -61,21 +61,47 @@ public class ShareTest
 
 ## <a name="platform-differences"></a>平台差异
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 * `Subject` 属性用于所需的消息主题。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 * `Subject` 未使用。
 * `Title` 未使用。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
-* 如果未设置，`Title` 将默认为应用程序名称。
+* `Title` 如果未设置，将默认为应用程序名称。
 * `Subject` 未使用。
 
 -----
+
+## <a name="files"></a>文件
+
+![预览版功能](~/media/shared/preview.png)
+
+共享文件在 Xamarin.Essentials 1.1.0 版本中作为实验性预览版提供。 借助此功能，应用可以在设备上与其他应用程序共享文件。 若要启用此功能，请在应用的启动代码中设置以下属性：
+
+```csharp
+ExperimentalFeatures.Enable(ExperimentalFeatures.ShareFileRequest);
+```
+
+启用此功能后，可以共享任何文件。 Xamarin.Essentials 将自动检测文件类型 (MIME) 并请求进行共享。 每个平台可能只支持特定文件扩展名。
+
+以下是将文本写入磁盘并将其与其他应用共享的示例：
+
+```csharp
+var fn =  "Attachment.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+await Share.RequestAsync(new ShareFileRequest
+{
+    Title = Title,
+    File = new ShareFile(file)
+});
+```
 
 ## <a name="api"></a>API
 
