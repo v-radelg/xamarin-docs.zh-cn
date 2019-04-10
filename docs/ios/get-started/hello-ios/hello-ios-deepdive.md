@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 12fcf6ff1b289c773e0dce03be4ac62105f6acd4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
+ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669461"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58751266"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -310,7 +310,7 @@ public partial class ViewController : UIViewController
 
 视图控制器最重要的作用是响应用户交互（如按下按钮、导航等）。 处理用户交互的最简单方法是关联控件以侦听用户输入并附加事件处理程序以响应输入。 例如，按钮可以进行关联，以响应触控事件，如 Phoneword 应用所示。
 
-对视图和视图控制器有了更深入的了解后，我们来探讨一下其工作原理。
+接下来探讨其工作原理。
 在 `Phoneword_iOS` 项目中，向内容视图层次结构添加一个名为 `TranslateButton` 的按钮：
 
 [![](hello-ios-deepdive-images/image1.png "名为 TranslateButton 的按钮添加到内容视图层次结构")](hello-ios-deepdive-images/image1.png#lightbox)

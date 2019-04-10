@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 15cba21eed510ec13bfa3dc3f176fce30fb4ed68
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 54509d0a1133d86727317366b0d229bc218cb263
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059374"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870295"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
+[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)
 
-本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。
+_本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。_
 
 每个 Xamarin.Forms 视图都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序在 iOS 中呈现 [`Map`](xref:Xamarin.Forms.Maps.Map) 时，会实例化 `MapRenderer` 类，该类又会实例化本机 `MKMapView` 控件。 在 Android 平台上，`MapRenderer` 类实例化本机 `MapView` 控件。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 类实例化本机 `MapControl`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
@@ -225,9 +225,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法执行 [`MKMapView`](https://developer.xamarin.com/api/type/MapKit.MKMapView/) 实例的以下配置：
+如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法执行 [`MKMapView`](xref:MapKit.MKMapView) 实例的以下配置：
 
-- [`GetViewForAnnotation`](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) 属性设置为 `GetViewForAnnotation` 方法. 此方法在[地图上显示注释位置](#Displaying_the_Annotation)时调用，用于在显示前自定义注释。
+- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) 属性设置为 `GetViewForAnnotation` 方法. 此方法在[地图上显示注释位置](#Displaying_the_Annotation)时调用，用于在显示前自定义注释。
 - 已注册用于 `CalloutAccessoryControlTapped`、`DidSelectAnnotationView` 和 `DidDeselectAnnotationView` 事件的事件处理程序。 这些事件在以下情况下触发：用户[点击标注中的右附件](#Tapping_on_the_Right_Callout_Accessory_View)、用户[选择](#Selecting_the_Annotation)和[取消选择](#Deselecting_the_Annotation)注释。 仅当呈现器附加到的元素更改时，才取消订阅事件。
 
 <a name="Displaying_the_Annotation" />
@@ -273,7 +273,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 此方法确保注释显示为自定义图像，而不是系统定义的图钉，并确保点击注释时将显示标注，该标注包含注释标题和地址左侧和右侧的其他内容。 这通过以下操作实现：
 
 1. 调用 `GetCustomPin` 方法以返回注释的自定义图钉数据。
-1. 为了节省内存，将集中注释视图，以重用对 [`DequeueReusableAnnotation`](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/) 的调用。
+1. 为了节省内存，将集中注释视图，以重用对 [`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) 的调用。
 1. `CustomMKAnnotationView` 类使用 `Id` 和 `Url` 属性扩展 `MKAnnotationView` 类，这些属性对应 `CustomPin` 实例中相同的属性。 如果注释为 `null`，则创建 `CustomMKAnnotationView` 的新实例：
     - `CustomMKAnnotationView.Image` 属性设置为将表示地图上的注释的图像。
     - `CustomMKAnnotationView.CalloutOffset` 属性设置为 `CGPoint`，它指定在注释上方将标注居中。
@@ -281,7 +281,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.RightCalloutAccessoryView` 属性设置为“信息”按钮，其将出现在注释标题和地址的右侧。
     - `CustomMKAnnotationView.Id` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Id` 属性。 这使得注释能被识别，以便需要时其[标注可以进一步自定义](#Selecting_the_Annotation)。
     - `CustomMKAnnotationView.Url` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Url` 属性。 用户[点击右标注附件视图中显示的按钮](#Tapping_on_the_Right_Callout_Accessory_View)时，将导航到该 URL。
-1. [`MKAnnotationView.CanShowCallout`](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) 属性设置为 `true`，以便点击注释时显示标注。
+1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) 属性设置为 `true`，以便点击注释时显示标注。
 1. 返回注释以在地图上显示。
 
 <a name="Selecting_the_Annotation" />

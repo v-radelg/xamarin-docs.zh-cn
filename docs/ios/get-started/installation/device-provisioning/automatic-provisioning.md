@@ -8,31 +8,32 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 9f198336d3fc9cca3bc79c377749a1211ebbac55
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479675"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855167"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
-Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本指南介绍如何使用自动签名请求开发证书和配置文件。_
+_Xamarin.iOS 成功安装后，iOS 开发的下一步是 iOS 设备预配。 本指南介绍如何使用自动签名请求开发证书和配置文件。_
 
 ## <a name="requirements"></a>要求
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 - Visual Studio for Mac 7.3 或更高版本
 - Xcode 9 或更高版本
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-- Visual Studio 2017 版本 15.7（或更高版本）
+- Visual Studio 2019
+- 或者 Visual Studio 2017 版本 15.7（或更高版本）
 
 必须与具备以下条件的 Mac 生成主机配对：
 
-- Xcode 9 或更高版本
+- Xcode 10 或更高版本
 
 -----
 
@@ -47,14 +48,14 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 > "authType" : "sa"
 > }
 > ```
-> 或
+> or
 > ```
 > Authentication Service Is Unavailable
 > ```
 
 若要自动签名应用以在 iOS 设备上开发，请执行以下操作：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中打开 iOS 项目。
 
@@ -72,9 +73,9 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
     如果自动签名失败，则“自动签名板”将显示错误的原因。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-1. 按照[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述，将 Visual Studio 2017 与 Mac 配对。
+1. 按照[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述，将 Visual Studio 2019 与 Mac 配对。
 
 2. 在解决方案资源管理器中，右键单击项目名称，然后选择“属性”。 然后，导航至“iOS 捆绑签名”选项卡。
 
@@ -131,7 +132,7 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 ## <a name="related-links"></a>相关链接
 
-- [可用设置](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [免费预配](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [应用分发](~/ios/deploy-test/app-distribution/index.md)
 - [疑难解答](~/ios/deploy-test/troubleshooting.md)
 - [Apple - 应用分发指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

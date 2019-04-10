@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
-ms.openlocfilehash: 02e0484a417b5d42129fa4e7a6ab9576c1817d74
-ms.sourcegitcommit: 8e8f83da636b63d14d1305c43a99736a00b9f590
+ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55969588"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855310"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
 
@@ -77,7 +77,7 @@ Visual Studio for Mac 会创建新的 Xamarin.Mac 应用，并显示添加到此
 
 [![](hello-mac-images/project01-sml.png "新解决方案的默认视图")](hello-mac-images/project01.png#lightbox)
 
-Visual Studio for Mac 使用与Visual Studio 2017 相同的解决方案和项目结构。 解决方案是可包含一个或多个项目的容器；项目可包含应用程序、支持库和测试应用程序等。“文件 > 新建项目”模板会自动创建一个解决方案和应用程序项目。
+Visual Studio for Mac 使用与Visual Studio 2019 相同的解决方案和项目结构。 解决方案是可包含一个或多个项目的容器；项目可包含应用程序、支持库和测试应用程序等。“文件 > 新建项目”模板会自动创建一个解决方案和应用程序项目。
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac 应用程序剖析
 
@@ -591,5 +591,5 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，Mac（示例）](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [Hello，Mac 示例](https://developer.xamarin.com/samples/mac/Hello_Mac/)
 - [macOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

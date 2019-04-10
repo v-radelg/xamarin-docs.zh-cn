@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 06b95c40b12aa93b79f25c3adf12b74bda232267
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bb58866a0fc0ddb542c0a40eb7a0bd9b37562776
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056621"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869660"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 视频
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 `VideoPlayer` 类定义用于指定视频文件源的 `Source` 属性，以及 `AutoPlay` 属性。 `AutoPlay` 默认设置为 `true`，这意味着视频应在设置 `Source` 后自动开始播放：
 
@@ -225,7 +225,7 @@ namespace FormsVideoLibrary.iOS
 
 稍后，当 `Source` 属性更改时，将使用“Source”的 `PropertyName` 属性调用 `OnElementPropertyChanged` 方法，并再次调用 `SetSource`。
 
-若要在 iOS 中播放视频文件，首先需要创建类型为 [`AVAsset`](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) 的对象来封装视频文件，该对象会用于创建 [`AVPlayerItem`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/)，后者之后会传递到 `AVPlayer` 对象。 以下代码展示 `SetSource` 方法在 `Source` 属性为 `UriVideoSource` 类型时如何对其进行处理：
+若要在 iOS 中播放视频文件，首先需要创建类型为 [`AVAsset`](xref:AVFoundation.AVAsset) 的对象来封装视频文件，该对象会用于创建 [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem)，后者之后会传递到 `AVPlayer` 对象。 以下代码展示 `SetSource` 方法在 `Source` 属性为 `UriVideoSource` 类型时如何对其进行处理：
 
 ```csharp
 namespace FormsVideoLibrary.iOS

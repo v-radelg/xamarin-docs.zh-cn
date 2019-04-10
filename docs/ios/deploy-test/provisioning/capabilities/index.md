@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f051becad7b6ef329d57417214eb976589386970
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120939"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855024"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
-_向应用程序添加功能通常需要其他预配设置。本指南将介绍所有功能所需的设置。_
+_向应用程序添加功能通常需要其他预配设置。 本指南将介绍所有功能所需的设置。_
 
 Apple 向开发人员提供了一些功能，这些功能通常称为应用服务，是扩展功能和拓宽 iOS 应用作用范围的一种方式。 通过这些功能，开发人员可向其应用添加更深入的平台功能集成，例如：从应用、其他设备服务（例如 Siri）等启动货币交易。
 这些功能可用于 Xamarin.iOS 项目。 服务的完整列表如下所述：
@@ -44,14 +44,13 @@ Apple 向开发人员提供了一些功能，这些功能通常称为应用服�
 * 多路径
 * NFC 标记读取
 
-
-可通过 Visual Studio for Mac 和 Visual Studio 2017 或在 Apple 开发人员门户中手动启动这些功能。 Wallet、Apple Pay 和 iCloud 等某些功能需要应用 ID 的其他配置。
+可通过 Visual Studio for Mac 和 Visual Studio 2019 或在 Apple 开发人员门户中手动启动这些功能。 Wallet、Apple Pay 和 iCloud 等某些功能需要应用 ID 的其他配置。
 
 本指南介绍如何通过 Visual Studio 自动启用和手动使用开发人员中心在应用程序中启用每个应用服务，包括可能需要的任何其他设置。 
 
 ## <a name="adding-app-services"></a>添加应用服务
 
-若要使用这些功能，应用必须具有一个有效的预配配置文件，其中包含启用了正确服务的应用 ID。 可在 Visual Studio for Mac 和 Visual Studio 2017 中自动或在 Apple 开发人员中心手动创建此预配配置文件。
+若要使用这些功能，应用必须具有一个有效的预配配置文件，其中包含启用了正确服务的应用 ID。 可在 Visual Studio for Mac 和 Visual Studio 2019 中自动或在 Apple 开发人员中心手动创建此预配配置文件。
 
 本节介绍如何使用 Visual Studio 的自动预配或开发人员中心来启用大多数功能。 Wallet、iCloud、Apple Pay 和应用组等功能需要其他设置。 在接下来的指南中将详细介绍这些内容。
 
@@ -73,7 +72,7 @@ Apple 向开发人员提供了一些功能，这些功能通常称为应用服�
 
 ## <a name="using-the-ide"></a>使用 IDE
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
 
 功能添加到 Visual Studio for Mac 中的“Entitlements.plist”。 若要添加功能，请使用以下步骤：
 
@@ -93,11 +92,11 @@ Apple 向开发人员提供了一些功能，这些功能通常称为应用服�
 
     ![将功能添加到 entitlements.plist 文件](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
 
-功能随即添加到“Entitlements.plist”。 若要在 Visual Studio 2017 中添加功能，请使用以下步骤：
+功能随即添加到“Entitlements.plist”。 若要在 Visual Studio 2019 中添加功能，请使用以下步骤：
 
-1. 按照[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述，将 Visual Studio 2017 与 Mac 配对。
+1. 按照[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述，将 Visual Studio 2019 与 Mac 配对。
 
 2. 通过选择“项目”>“预配属性...”打开“预配选项”
 
@@ -142,7 +141,7 @@ Apple 向开发人员提供了一些功能，这些功能通常称为应用服�
     ![应用服务选择页面](images/image8.png)
 
 7.  按“继续”。
-8.  输入应用 ID。 每个服务将处于以下一种状态：“已启用”、“已禁用”或“可配置”，如下所示。 如果为“已启用”，则可在预配配置文件中使用。 如果为“可配置”，则此功能需要其他设置。 其他步骤见于后续部分中的详细说明。
+8.  输入应用 ID。 每个服务将处于以下状态之一：“已启用”、“已禁用”或“可配置”，如下所示。 如果为“已启用”，则可在预配配置文件中使用。 如果为“可配置”，则此功能需要其他设置。 其他步骤见于后续部分中的详细说明。
 
     ![应用 ID 确认](images/image9.png)
 
@@ -211,7 +210,7 @@ Apple 向开发人员提供了一些功能，这些功能通常称为应用服�
 -   确保已安装配置文件和应用 ID，且应用的“Info.plist”（在 Xamarin 项目中）正在使用上述配置的某个应用 ID **** 。
 -   确保应用的 Entitlements.plist 文件（在 Xamarin 项目中）启用了正确的服务 **** 。
 -   确保 info.plist 中设置了正确的隐私密钥
--   在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist” **** ****。 对“调试”和“iOS 模拟器”生成来说，这不是默认设置 __ 。
+-   在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。 **** **** 对“调试”和“iOS 模拟器”生成来说，这不是默认设置。 __ 
 
 <a name="summary" />
 

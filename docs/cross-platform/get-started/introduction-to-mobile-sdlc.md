@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: b8f36ef407c3acc9b3472539735816649e13b7db
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
+ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672659"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58855232"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>移动软件开发生命周期简介
 
@@ -151,7 +151,7 @@ Android 使用此信息来帮助在 Android OS 内运行的应用程序和组件
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="uwp"></a>UWP 
+#### <a name="uwp"></a>UWP
 
 UWP 应用程序通过 Microsoft Store 分发给用户。 开发人员提交其应用进行审批，此后它们会出现在应用商店中。 有关发布 Windows 应用的详细信息，请参阅 UWP 的[发布](https://docs.microsoft.com/windows/uwp/publish/)文档。
 
@@ -233,7 +233,7 @@ Android OS 中的应用程序全都采用具有有限权限的不同独立标识
 
 #### <a name="multitasking"></a>多任务
 
-UWP 中的多任务具有两个部分：页面和应用程序的生命周期以及后台进程。 应用程序中的每个屏幕都是 Page 类的实例，它具有与设为活动或非活动状态关联的事件（具有用于处理非活动状态或“逻辑删除”的特殊规则）。 
+UWP 中的多任务具有两个部分：页面和应用程序的生命周期以及后台进程。 应用程序中的每个屏幕都是 Page 类的实例，它具有与设为活动或非活动状态关联的事件（具有用于处理非活动状态或“逻辑删除”的特殊规则）。
 
 第二个部分是为处理任务提供后台代理，即使在应用程序不在前台运行时。 
 
@@ -249,9 +249,8 @@ UWP 中的多任务具有两个部分：页面和应用程序的生命周期以�
 
 本指南提供了 SDLC 简介，因为它与移动开发相关。 它介绍了有关构建移动应用程序的一般注意事项，并讨论了一些特定于平台的注意事项（包括设计、测试和部署）。
 
-## <a name="related-links"></a>相关链接
+## <a name="next-steps"></a>后续步骤
 
 - [移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Hello，iOS](~/ios/get-started/hello-ios/index.md)
-- [Hello，Android](https://developer.xamarin.com/get-started-droid/)
-- [应用程序基础知识](~/cross-platform/app-fundamentals/index.md)
+- [Xamarin 入门](~/get-started/index.yml)
+- [跨平台共享代码](~/cross-platform/app-fundamentals/index.md)

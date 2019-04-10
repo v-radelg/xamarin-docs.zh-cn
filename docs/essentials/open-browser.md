@@ -4,13 +4,14 @@ description: Xamarin.Essentials 中的 Browser 类允许应用程序在优化的
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 4a822b4b6738e261b9ddaee02334ad629e1d4879
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.date: 04/02/2019
+ms.custom: video
+ms.openlocfilehash: 3f9e5a7a1e20b8e7d708ff80712e6262bae4baa7
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175312"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58869582"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:浏览者
 
@@ -63,7 +64,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# [<a name="android"></a>Android](#tab/android)
 
 启动模式确定浏览器的启动方式：
 
@@ -75,17 +76,17 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 `Intent` 将用于请求通过系统常规浏览器打开的 URI。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# [<a name="ios"></a>iOS](#tab/ios)
 
 ## <a name="system-preferred"></a>系统首选
 
-[SFSafariViewController](https://developer.xamarin.com/api/type/SafariServices.SFSafariViewController/) 用于加载 URI 并保持导航识别。
+[SFSafariViewController](xref:SafariServices.SFSafariViewController) 用于加载 URI 并保持导航识别。
 
 ## <a name="external"></a>外部
 
 主应用程序上的标准 `OpenUrl` 用于启动应用程序之外的默认浏览器。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# [<a name="uwp"></a>UWP](#tab/uwp)
 
 无论 `BrowserLaunchMode` 如何，将始终启动用户的默认浏览器。
 
@@ -95,3 +96,10 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 - [Browser 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
 - [Browser API 文档](xref:Xamarin.Essentials.Browser)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Open-Browser-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
+

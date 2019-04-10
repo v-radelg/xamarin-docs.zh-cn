@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 2679756cd9a9a60c2d7ab637678ff1d8262b2403
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 4bfbd065c9b17ce402c5a15289c7ff608eb58b23
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669981"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870009"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 [VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解决方案包含为 Xamarin.Forms 实现视频播放器的所有代码。 它还包括一系列页面，演示如何在应用程序中使用视频播放器。 所有 `VideoPlayer` 代码及其平台呈现器都存于名为 `FormsVideoLibrary` 的项目文件夹中，并且也使用命名空间 `FormsVideoLibrary`。 这样应可以很容易地将文件复制到自己的应用程序中并引用这些类。
 
@@ -43,7 +43,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-player-view-controller"></a>IOS 播放器视图控制器
 
-在 iOS 中实现视频播放器时，涉及到几个类。 应用程序首先创建 [`AVPlayerViewController`](https://developer.xamarin.com/api/type/AVKit.AVPlayerViewController/)，然后将 [`Player`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.Player/) 属性设置为类型 [`AVPlayer`](https://developer.xamarin.com/api/type/AVFoundation.AVPlayer/) 的对象。 给播放器分配视频源时，需要额外的类。
+在 iOS 中实现视频播放器时，涉及到几个类。 应用程序首先创建 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController)，然后将 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 属性设置为类型 [`AVPlayer`](xref:AVFoundation.AVPlayer) 的对象。 给播放器分配视频源时，需要额外的类。
 
 像所有呈现器一样，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) 也包含 `ExportRenderer` 属性，该属性使用呈现器标识 `VideoPlayer` 视图：
 
@@ -318,7 +318,7 @@ namespace FormsVideoLibrary
 
 ### <a name="ios-playback-controls"></a>iOS 播放控件
 
-管理传输控件显示的 iOS `AVPlayerViewController` 属性是 [`ShowsPlaybackControls`](https://developer.xamarin.com/api/property/AVKit.AVPlayerViewController.ShowsPlaybackControls/)。 下面介绍如何在 iOS `VideoViewRenderer` 中设置该属性：
+管理传输控件显示的 iOS `AVPlayerViewController` 属性是 [`ShowsPlaybackControls`](xref:AVKit.AVPlayerViewController.ShowsPlaybackControls*)。 下面介绍如何在 iOS `VideoViewRenderer` 中设置该属性：
 
 ```csharp
 namespace FormsVideoLibrary.iOS

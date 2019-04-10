@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e687a724c8455d954969f83b8ee48c87ca9dbb09
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c6aa4aed134667f25b3822c7604b85e27a404a3a
+ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669773"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58870152"
 ---
 # <a name="custom-video-transport-controls"></a>自定义视频传输控件
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
 
 视频播放器的传输控件包括执行“播放”、“暂停”和“停止”功能的按钮。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮。
 
@@ -360,7 +360,7 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-必须访问 `AVPlayer` 的两个属性：类型 `AVPlayerStatus` 的 [`Status`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) 属性和类型 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) 属性。 注意，`Element` 属性（即 `VideoPlayer`）必须转换为 `IVideoPlayerController` 才能设置 `Status` 属性。
+必须访问 `AVPlayer` 的两个属性：类型 `AVPlayerStatus` 的 [`Status`](xref:AVFoundation.AVPlayer.Status*) 属性和类型 `AVPlayerTimeControlStatus` 的 [`TimeControlStatus`](xref:AVFoundation.AVPlayer.TimeControlStatus*) 属性。 注意，`Element` 属性（即 `VideoPlayer`）必须转换为 `IVideoPlayerController` 才能设置 `Status` 属性。
 
 ### <a name="the-android-status-setting"></a>Android 状态设置
 
