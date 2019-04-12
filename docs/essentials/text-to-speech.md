@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：Text-to-Speech
+title: Xamarin.Essentials:文本到语音转换
 description: Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: a7f40fc652c6f02d68a9f01dcdd0f4132893a6ca
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 35ef922553cb91aa915c08df03414d1e5f3034cb
+ms.sourcegitcommit: cc750b0d8086ed14f84cd8eb9a06f45c719b3cf4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898532"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59239922"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：Text-to-Speech
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:文本到语音转换
 
 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
 
@@ -102,8 +102,8 @@ public async Task SpeakNow()
 {
     var settings = new SpeechOptions()
         {
-            Volume = .75,
-            Pitch = 1.0
+            Volume = .75f,
+            Pitch = 1.0f
         };
 
     await TextToSpeech.SpeakAsync("Hello World", settings);
@@ -131,8 +131,8 @@ public async Task SpeakNow()
 
     var settings = new SpeechOptions()
         {
-            Volume = .75,
-            Pitch = 1.0,
+            Volume = .75f,
+            Pitch = 1.0f,
             Locale = locale
         };
 

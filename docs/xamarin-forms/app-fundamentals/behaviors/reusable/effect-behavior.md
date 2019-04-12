@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 5e47799e704dfbe2c4088016d7055fc616215ea2
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8c831dfa45c5028e4f1422467bf3be9210452335
+ms.sourcegitcommit: be51b459a0a148ae3adca31d7599f53f7b2c3a68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056459"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59019368"
 ---
 # <a name="reusable-effectbehavior"></a>可重用 EffectBehavior
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
 
-行为是一种非常有用的方法，用于向控件添加效果、从代码隐藏文件中删除冗余重复的效果处理代码。_本文演示如何创建 Xamarin.Forms 行为并将其用于向控件添加效果。_
+_行为是一种非常有用的方法，用于向控件添加效果、从代码隐藏文件中删除冗余重复的效果处理代码。 本文演示如何创建 Xamarin.Forms 行为并将其用于向控件添加效果。_
 
 ## <a name="overview"></a>概述
 
@@ -169,6 +169,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="related-links"></a>相关链接
 
 - [效果](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [影响行为（示例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
+- [EffectBehavior（示例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/effectbehavior/)
 - [行为](xref:Xamarin.Forms.Behavior)
-- [行为<T>](xref:Xamarin.Forms.Behavior`1)
+- [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)
