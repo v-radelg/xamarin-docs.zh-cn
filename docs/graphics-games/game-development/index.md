@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 2fa40925b67e60c5e03e3059c7c369f2a53ce540
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 314bedcb6bb2d7ebf9d8f98428b6a7cad059f73b
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672425"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509948"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 进行游戏开发简介
 
@@ -24,11 +24,9 @@ ms.locfileid: "57672425"
 - **创建游戏创意**– 这一部分可以帮助您创建新的游戏创意 – 使新游戏的第一步。
 - **游戏开发技术**– 我们此处列出的一些跨平台技术可用，这样可以提高游戏开发人员的工作效率。
 
-
 ## <a name="game-vs-non-game-programming-concepts"></a>游戏 vs。非游戏编程概念
 
 将移动到游戏开发的程序员通常面对新概念和开发模式。 本部分介绍其中一些概念的高级视图。
-
 
 ### <a name="the-game-loop"></a>游戏循环
 
@@ -53,7 +51,6 @@ ms.locfileid: "57672425"
 
 请注意上面列出的活动的许多可以将整个应用程序的状态更改而很多非游戏应用程序往往会更改状态以引发的事件的响应。
 
-
 ### <a name="content-loading-and-unloading"></a>内容加载和卸载
 
 具体取决于哪种技术在开发过程中使用，可能需要手动加载和卸载 （或释放） 的内容。 手动加载和卸载的资产可能出于多种原因导致：
@@ -63,7 +60,6 @@ ms.locfileid: "57672425"
  - 游戏可能需要显示更多多，无法在 RAM 中的资产。 "打开世界"比赛通常包括大型环境中的播放机可以无缝导航-这是没有加载屏幕。 在这种情况下可能需要创建自定义系统中的流式处理内容和管理内存使用情况。
 
 自定义文件格式可能需要处理在加载时，需要自定义加载代码。
-
 
 ### <a name="math"></a>数学
 
@@ -77,17 +73,13 @@ ms.locfileid: "57672425"
 > 某些引擎/Api 使用其中增加对象的 Y 值将其向下移动，而其他系统使用正 Y 由一个坐标系统的坐标系统。 如果您是系统之间移动，请记住这一点。
 三角函数函数 （如正弦和余弦） 常用于 2D 游戏实现任何形式的旋转。
 
-
-
 如果您打算使 3D 游戏然后可能将需要熟悉线性代数 （适用于旋转和 3D 空间中的移动），以及一些 （适用于实现加速） 的微积分导数的概念。
-
 
 ### <a name="content-pipelines"></a>内容管道
 
 术语*内容管道*到其最终格式在游戏中使用时是指从其格式 （例如.png 图像文件） 创作时获取文件的过程。 结束格式取决于其上的内容类型正在使用正在用于技术以及其呈现内容。
 
 一些内容管道可能非常快，并且需要任何手动操作。 例如，大多数游戏引擎和 Api 可以加载在其未处理的格式中的.png 文件格式。 另一方面，更复杂的格式 （例如三维模型） 可能需要在正在加载之前要处理为其他格式，并且此处理可能需要一些时间，具体取决于资产的大小和复杂性。
-
 
 ## <a name="game-development-teams"></a>游戏开发团队
 
@@ -98,7 +90,6 @@ ms.locfileid: "57672425"
 - **3D 艺术家**– 3D 艺术家负责创建*三维资产*。 其中包括有关环境、 字符和属性 （家具、 系统和其他非动画的对象） 的三维模型。 一些团队区分 3D 艺术家和 3D 动画制作人员具体取决于团队的大小。 您可以找到免费为您的游戏在 3D 艺术[ http://opengameart.org/ ](http://opengameart.org/) 。
 - **游戏设计器**– 游戏设计人员负责定义播放游戏的方式。 这可能包括高级的决策，例如的设置的游戏、 游戏和播放机如何逐步完成该游戏逐步进展的总体目标。 游戏设计人员也可以是非常详细的决策将输入映射到操作，如中所涉及定义对于移动或级别会、 系数和设计级别的布局。 请记住，术语*设计器*可能指游戏设计器，具体取决于上下文的可视化设计器。
 - **听起来设计器**– 声音的设计器负责游戏的音频资产。 一些团队可能会区分个人负责创建声音效果和作曲者，而较小的团队可能有一个人负责所有音频。
-
 
 ## <a name="creating-a-game-idea"></a>创建游戏创意
 
@@ -114,11 +105,9 @@ ms.locfileid: "57672425"
 
 重新塑造现有游戏也是教育的体验，虽然这可能会限制已完成的产品的商业可行性。 创建一个游戏，即使其中一个是一个精确克隆的过程提供有价值的教育体验。
 
-
 ## <a name="game-development-technology"></a>游戏开发技术
 
 使用 Xamarin.Android 和 Xamarin.iOS 开发人员具有各种技术提供给他们的游戏开发帮助。 本部分将介绍一些最受欢迎的跨平台解决方案。
-
 
 ### <a name="cocossharp"></a>CocosSharp
 
@@ -133,7 +122,6 @@ CocosSharp 重点介绍 2D 游戏开发简单编程人员 API。 在移动设备
 ![](images/image3.png "游戏因为什么而怒气冲冲 Ninjas 创建与 cocossharp 结合使用")
 
 可以下载它并获取详细信息[AngryNinjas Github 页面](https://github.com/xamarin/AngryNinjas)。
-
 
 ### <a name="monogame"></a>MonoGame
 
@@ -154,7 +142,6 @@ FEZ:
 ![](images/image8.jpg "堡垒")
 
 若要开始使用 MonoGame，请转到我们[MonoGame 指南](~/graphics-games/monogame/index.md)。
-
 
 ### <a name="urhosharp"></a>UrhoSharp
 

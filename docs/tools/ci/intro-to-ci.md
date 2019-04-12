@@ -6,16 +6,16 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
-ms.openlocfilehash: 35c5811d57ade1d320e56e292c1eeed094963a0d
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
+ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070912"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509883"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin 持续集成简介
 
-_持续集成是一种软件工程做法在其中自动的生成编译并 （可选） 测试应用程序代码中添加或更改项目的版本控制存储库中的开发人员时。本文将讨论持续集成的一般概念以及一些可用的选项用于持续集成与 Xamarin 项目。_
+_持续集成是一种软件工程做法在其中自动的生成编译并 （可选） 测试应用程序代码中添加或更改项目的版本控制存储库中的开发人员时。 本文将讨论持续集成的一般概念以及一些可用的选项用于持续集成与 Xamarin 项目。_
 
 很常见的开发人员可以并行工作的软件项目。 在某些时候，就必须将所有这些集成到一个工作的并行流 o d e b 最终产品构成。 在软件开发的早期阶段，项目中，这是一个困难，而且有风险的过程结束时执行此集成。
 
@@ -40,9 +40,13 @@ _持续集成是一种软件工程做法在其中自动的生成编译并 （可
 
 [![](intro-to-ci-images/intro02-small.png "后这些测试上传到 App Center 时，CI 服务器可以运行这些自动作为 CI 过程的一部分，在此图中所示")](intro-to-ci-images/intro02.png#lightbox)
 
-## <a name="version-control"></a>版本控制
+## <a name="components-of-continuous-integration"></a>持续集成的组件
 
-### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps 和 Team Foundation Server
+没有设计为支持 CI 的商业和开放源代码工具的广泛生态系统。 本部分介绍几个最常见的。
+
+### <a name="version-control"></a>版本控制
+
+#### <a name="azure-devops-and-team-foundation-server"></a>Azure DevOps 和 Team Foundation Server
 
 [Azure DevOps](https://azure.microsoft.com/services/devops/)并[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) 是 Microsoft 的协作工具，用于持续集成生成服务、 跟踪任务、 敏捷规划和报告工具和版本控制。 使用版本控制，Azure DevOps 和 TFS 可以处理与自己的系统 （Team Foundation 版本控制或 TFVC） 或托管在 GitHub 上的项目。
 
@@ -55,11 +59,11 @@ TFS 和 Azure DevOps 与 Visual Studio 紧密集成，并允许开发人员可�
 
 Visual Studio、 Azure DevOps 和 Team Foundation Server，请参阅的所有应用程序生命周期管理 (ALM) 功能的详尽总结[适用于 Xamarin 应用的 DevOps](https://docs.microsoft.com/visualstudio/cross-platform/application-lifecycle-management-alm-with-xamarin-apps)。
 
-### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
+#### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
 [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) Team Foundation Server 和 Visual Studio Team Services 的强大功能引入到 Visual Studio 外部开发团队。 它允许开发人员能够适用于 OS X 和 Linux 从 Eclipse 或跨平台命令行客户端连接到在本地或云中的团队项目。 提供完整的 Team Explorer Everywhere 到版本控制 （包括 Git），访问工作项和生成的非 Windows 平台的功能。
 
-### <a name="git"></a>Git
+#### <a name="git"></a>Git
 
 [Git](http://git-scm.com)是一种受欢迎的开源版本控制解决方案，最初开发用于管理 Linux 内核的源代码。 它是一个非常快速、 灵活的系统，常用的各种规模的软件项目。 它可轻松扩展不佳的 Internet 访问的单个开发人员到遍布全球的大型团队。 Git 还使分支变得非常简单，这反过来可以鼓励开发风险降到最低的并行流。
 
@@ -67,11 +71,11 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，请参阅的所有应
 
 当前版本的 Visual Studio 的 Windows 和 Mac 提供对 Git 的本机支持。 Microsoft 提供了[适用于 Git 的可下载扩展](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)较旧版本的 Visual Studio。 如上文所述，Visual Studio Team Services 和 TFS 可以使用 Git 进行版本控制而不是 TFVC。
 
-### <a name="subversion"></a>Subversion
+#### <a name="subversion"></a>Subversion
 
 [Subversion](http://subversion.apache.org) (SVN) 是一直在使用 2000年以来一个受欢迎的开源版本控制系统。 SVN 在 OS X、 Windows、 FreeBSD、 Linux 和 Unix 的所有最新版本上运行。 Visual Studio for Mac 具有对 SVN 的本机支持。 有 SVN 支持引入 Visual Studio 的第三方扩展。
 
-## <a name="continuous-integration-environments"></a>持续集成环境
+### <a name="continuous-integration-environments"></a>持续集成环境
 
 设置持续集成环境意味着将与生成服务结合使用版本控制系统。  对于后者，两个最常见的是：
 
@@ -80,7 +84,7 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，请参阅的所有应
 
 可以使用 TFS/Azure DevOps 本身，或可以与 TFS/Azure DevOps 或 Git 结合使用 Jenkins，如以下各节中所述。
 
-### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services 和 Team Foundation Server
+#### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services 和 Team Foundation Server
 
 如前所述，Visual Studio Team Services 和 Team Foundation Server 提供了这两个版本控制和生成服务。 生成服务始终需要 Xamarin 业务或企业版的许可证，每个目标平台。
 
@@ -97,13 +101,13 @@ Visual Studio、 Azure DevOps 和 Team Foundation Server，请参阅的所有应
 
 还有可能要链接到 Visual Studio Team Services 项目，以便 Azure DevOps 构建都委托给本地服务器的本地 TFS 服务器。 有关详细信息，请参阅[生成和发布代理](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)。
 
-### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services 和 Jenkins
+#### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services 和 Jenkins
 
 如果您使用 Jenkins 生成您的应用程序，可以在 Visual Studio Team Services 或 Team Foundation Server 中存储你的代码并继续使用 Jenkins CI 生成的。 将代码推送到团队项目的 Git 存储库或在签入代码到 TFVC 时，可以触发 Jenkins 生成。 有关详细信息，请参阅[Jenkins 与 Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)。
 
 [![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 生成您的应用程序，可以在 Visual Studio Team Services 或 Team Foundation Server 中存储你的代码并继续使用 Jenkins CI 生成的")](intro-to-ci-images/intro04.png#lightbox)
 
-### <a name="git-and-jenkins"></a>Git 和 Jenkins
+#### <a name="git-and-jenkins"></a>Git 和 Jenkins
 
 OS X 基于可以完全是另一个常见的 CI 环境。 此方案涉及到使用 Git 进行源代码管理和 Jenkins 生成服务器。 这两种运行使用 Visual Studio 一台 Mac OS X 计算机上安装的 Mac。 这是非常类似于 Visual Studio Team Services + Jenkins 环境上一节所述：
 
