@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: dfc0e1cb7239381ef2f495b0f9774d390b0dc82e
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 4ae86ca5fa47169bb5d78eb9d1116e419c23ed6d
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527191"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574801"
 ---
 # <a name="creating-android-services"></a>创建 Android 服务
 
@@ -22,7 +22,7 @@ _本指南介绍 Xamarin.Android 服务，是 Android 组件，允许以不包�
 
 移动应用不像桌面应用程序。 桌面有喝许多屏幕空间、 内存、 存储空间和已连接的电源等资源，移动设备不这样做。 这些约束强制执行移动应用不同的行为。 例如，在小屏幕上移动设备通常意味着一次只有一个应用 （即活动） 可见。 其他活动都移到后台，推送到挂起状态，它们不能执行任何工作。 但是，只是因为 Android 应用程序在后台并不意味着就无法应用以继续工作。 
 
-Android 应用程序由至少一个以下四个主要组件组成：_活动_，_广播接收器_，_内容提供商_，以及_Services_。 活动是许多出色的 Android 应用程序的基础，因为它们提供 UI，它允许用户与应用程序进行交互。 但是，当涉及到执行并发或后台工作时，活动并不总是最佳选择。
+Android 应用程序由至少一个以下四个主要组件组成：_活动_，_广播接收器_，_内容提供商_，并且_服务_。 活动是许多出色的 Android 应用程序的基础，因为它们提供 UI，它允许用户与应用程序进行交互。 但是，当涉及到执行并发或后台工作时，活动并不总是最佳选择。
  
 在 Android 中的后台工作的主要机制是_服务_。 Android 服务是用于执行某项操作而无需用户界面的组件。 服务可能会下载文件、 播放音乐，或将筛选器应用于映像。 服务还可用于进程间通信 (_IPC_) 之间的 Android 应用程序。 例如，一个 Android 应用程序可能会使用从另一个应用的音乐播放器服务或应用程序可能会公开到通过服务的其他应用数据 （例如个人的联系信息）。 
 
@@ -68,7 +68,7 @@ Android 应用程序由至少一个以下四个主要组件组成：_活动_，_
 有某些情况下，其中，即使应用是在后台，Android 将唤醒应用和放宽这些限制等几分钟，可通过应用程序来执行某些工作：
 * 高优先级应用接收 Firebase 云消息。
 * 应用程序将收到一个广播。 
-* 应用程序收到执行`PendingIntent`以响应一条通知。
+* 应用程序接收并执行`PendingIntent`以响应一条通知。
 
 现有 Xamarin.Android 应用程序可能需要更改其执行后台工作以避免可能出现在 Android 8.0 上的任何问题的方式。 下面是一些实用的替代方案到 Android 服务：
 
