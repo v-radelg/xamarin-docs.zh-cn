@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
 ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
+ms.lasthandoff: 04/16/2019
 ms.locfileid: "55832023"
 ---
 # <a name="app-store-distribution"></a>App Store 分发

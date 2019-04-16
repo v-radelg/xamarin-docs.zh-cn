@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: 2673021fae2f0a0b45761bf4ed619c92fb826b13
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110129"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59587759"
 ---
 # <a name="android-resource-basics"></a>Android 资源基础知识
 
@@ -96,8 +96,8 @@ public partial class Resource
 
 引用时以编程方式 （在代码中） 的资源，它们可以访问通过使用以下语法的资源类层次结构：
 
-```xml
-@[<PackageName>.]Resource.<ResourceType>.<ResourceName>
+```csharp
+[<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
 -  **PackageName** &ndash;了提供资源和仅的包时需要其他包中的资源的使用。
@@ -112,7 +112,7 @@ public partial class Resource
 XML 文件中的资源访问的以下特殊语法：
 
 ```xml
-@[<PackageName>:]<ResourceType>/<ResourceName>.
+@[<PackageName>:]<ResourceType>/<ResourceName>
 ```
 
 -  **PackageName** &ndash;了提供资源和仅的包时需要其他包中的资源的使用。
@@ -136,8 +136,7 @@ XML 文件中的资源访问的以下特殊语法：
 </LinearLayout>
 ```
 
-此示例中有[ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)需要一个名为的可绘制资源**标志**。 `ImageView`具有其`src`属性设置为**@drawable/flag**。 Android 活动启动时，将在目录中查找**资源/Drawable**为名为的文件**flag.png** (文件扩展名可能是另一种图像格式，如**flag.jpg**)加载此文件，并将其显示在`ImageView`。
+此示例中有[ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview)需要一个名为的可绘制资源**标志**。 `ImageView`具有其`src`属性设置为`@drawable/flag`。 Android 活动启动时，将在目录中查找**资源/Drawable**为名为的文件**flag.png** (文件扩展名可能是另一种图像格式，如**flag.jpg**)加载此文件，并将其显示在`ImageView`。
 运行此应用程序时，它看起来与以下图像：
 
 ![本地化的 ImageView](android-resource-basics-images/03-localized-screenshot.png)
-
