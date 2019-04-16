@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/16/2019
 ms.locfileid: "58854985"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>在本地 SQLite.NET 数据库中存储数据
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 
 在此快速入门中，你将了解如何：
 
@@ -451,9 +451,9 @@ ms.locfileid: "58854985"
 应用程序使用 XAML 样式的样式，继续学习下一步的快速入门教程。
 
 > [!div class="nextstepaction"]
-> [下一步](styling.md)
+> [下一页](styling.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [说明 （示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
+- [便笺（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)
 - [Xamarin.Forms 快速入门的深入探讨](deepdive.md)

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
 ms.openlocfilehash: 5b2e58901d4a850863f68b26ce41e1aa4e8daee4
-ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
+ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/16/2019
 ms.locfileid: "59509897"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 视图
 
-[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/FormsGallery/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Xamarin.Forms 视图是跨平台移动用户界面的构建基块。_
 
