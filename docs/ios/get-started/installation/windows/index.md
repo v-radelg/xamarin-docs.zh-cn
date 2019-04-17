@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 12066b25ff3e5f02cf4ad17e7c8cbfdb31395405
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.openlocfilehash: 7c7a3e311a6c5f19242b51dd14f59bcdc9a75c64
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58854881"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574710"
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安装 Xamarin.iOS
 
-_本文介绍如何设置适用于 Xamarin.iOS 开发的 Windows 计算机和 Mac 生成主机。_
+本文介绍如何设置适用于 Xamarin.iOS 开发的 Windows 计算机和 Mac 生成主机。
 
 ::: zone pivot="windows"
 
@@ -32,6 +32,11 @@ _本文介绍如何设置适用于 Xamarin.iOS 开发的 Windows 计算机和 Ma
 - 使用 Apple 生成工具和 Xamarin.iOS 设置可访问网络的 Mac。 Visual Studio 2019 通过网络连接访问此计算机，以使用 Apple 的生成工具，这些工具是编译本机 iOS 应用程序所必需的。
 
   - [Mac 系统要求](~/cross-platform/get-started/requirements.md#macos-requirements)
+
+  > [!TIP]
+  > 没有访问 Mac 的权限？
+  >
+  > 如果没有访问 Mac 的权限，则可以使用 [MacinCloud](https://www.macincloud.com/pages/visual-studio-mac.html) 或 [MacStadium](https://www.macstadium.com/)；这两个服务会提供基于云的 Mac 硬件，你可以使用该硬件生成 Xamarin.iOS 项目。
 
 ## <a name="setup"></a>安装
 

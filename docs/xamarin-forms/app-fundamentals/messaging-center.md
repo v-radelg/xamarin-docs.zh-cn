@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 6af392988b8ffa5f01ef07f81be53ea8f82e8fb5
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
+ms.openlocfilehash: 6b1df62aec12c1c34d49bd6dfa16368a6b0092f9
+ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477325"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59574723"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -24,7 +24,7 @@ _Xamarin.Forms 具有简单的消息传送服务，用于发送和接收消息�
 
 ## <a name="overview"></a>概述
 
-借助 Xamarin.Forms `MessagingCenter` 只需一个简单的消息协定，而不必知道任何关于彼此的信息，便能实现视图模型和其他组件的相互通信。
+借助 Xamarin.Forms `MessagingCenter`只需一个简单的消息协定，而不必知道任何关于彼此的信息，便能实现视图模型和其他组件的相互通信。
 
 <a name="How_the_MessagingCenter_Works" />
 
