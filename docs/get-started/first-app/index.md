@@ -9,16 +9,16 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2019
-ms.openlocfilehash: 0031cb7fb46cf5ad35872963fd3c3def0a2ae9a6
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
+ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58855297"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59675811"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>生成第一个 Xamarin.Forms 应用
 
-_观看此视频，跟着介绍一起操作以使用 Xamarin.Forms 创建第一个移动应用。_
+观看此视频，然后按照视频中的步骤使用 Xamarin.Forms 创建第一个移动应用。
 
 ::: zone pivot="windows"
 
@@ -26,25 +26,25 @@ _观看此视频，跟着介绍一起操作以使用 Xamarin.Forms 创建第一�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows 分步说明
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 请按照以下步骤以及上面的视频操作：
 
 1. 选择**文件 > 新建 > 项目...** 或按**创建新项目...** 按钮：
 
-    [![C创建一个新的项目](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![创建新项目](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
 2. 搜索"Xamarin"或选择**Mobile**从**项目类型**菜单。 选择**移动应用 (Xamarin.Forms)** 项目类型：
 
-    [![F对于 Xamarin 项目 ilter](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [![Xamarin 项目的筛选器](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
 3. 选择项目名称&ndash;该示例使用"AwesomeApp":
 
-    [![C选择项目名称](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
+    [![选择项目名称](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 单击**黑色**项目类型，并确保**Android**并**iOS**选择：
+4. 单击**空白**项目类型，并确保**Android**并**iOS**选择：
 
-    [![Android 和 iOS，通过使用.NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
+    [![Android 和 iOS 以及 .NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等到 NuGet 包还原（状态栏中将出现“还原已完成”消息）。
 
@@ -81,17 +81,17 @@ _观看此视频，跟着介绍一起操作以使用 Xamarin.Forms 创建第一�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows 分步说明
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 请按照以下步骤以及上面的视频操作：
 
 1. 选择“文件”>“新建”>“项目...”或按“创建新项目...”按钮，然后选择“Visual C#”>“跨平台”>“移动应用(Xamarin.Forms)”：
 
-    [![Mobile 应用 (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![移动应用(Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
 2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略：
 
-    [![Android 和 iOS，通过使用.NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
+    [![Android 和 iOS 以及 .NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等到 NuGet 包还原（状态栏中将出现“还原已完成”消息）。
 
@@ -128,17 +128,17 @@ _观看此视频，跟着介绍一起操作以使用 Xamarin.Forms 创建第一�
 
 ## <a name="step-by-step-instructions-for-mac"></a>Mac 分步说明
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/FirstApp/)
 
 请按照以下步骤以及上面的视频操作：
 
 1. 选择“文件”>“新建解决方案...”或按“新建项目...”按钮，然后选择“多平台”>“应用”>“空白窗体应用”：
 
-    [![Blank 窗体应用程序](images/01-sml.png)](images/01.png#lightbox)
+    [![空白窗体应用](images/01-sml.png)](images/01.png#lightbox)
 
 2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略：
 
-    [![Android 和 iOS，通过使用.NET Standard](images/02-sml.png)](images/02.png#lightbox)
+    [![Android 和 iOS 以及 .NET Standard](images/02-sml.png)](images/02.png#lightbox)
 
 3. 右键单击解决方案，还原 NuGet 包：
 
@@ -169,7 +169,7 @@ _观看此视频，跟着介绍一起操作以使用 Xamarin.Forms 创建第一�
 
 8. 右键单击，将 iOS 设置为“启动项目”：
 
-    [![S设置启动项目到 iOS](images/08-sml.png)](images/08.png#lightbox)
+    [![将启动项目设置为 IOS](images/08-sml.png)](images/08.png#lightbox)
 
 9. 调试 iOS 上的应用：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: ef3ec5f8d1a2ded8fc7cae34663f10ab6eb7c86f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
+ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052966"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59675863"
 ---
 # <a name="getting-started-with-datapages"></a>开始使用 DataPages
 
@@ -34,7 +34,7 @@ ms.locfileid: "53052966"
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* 主题实现 （例如 Nuget。 Xamarin.Forms.Themes.Light)
+* 主题实现 （例如 Nuget。 Xamarin.Forms.Theme.Light)
 
 ## <a name="2-add-theme-reference"></a>2.添加主题引用
 
@@ -51,7 +51,7 @@ ms.locfileid: "53052966"
 </Application>
 ```
 
-**重要说明：** 还应遵循的步骤[加载程序集 （下面） 为主题](#loadtheme)通过将一些样本代码添加到 iOS`AppDelegate`和 Android `MainActivity`。 这将在将来的预览版的版本中得到改进。
+**重要：** 您还应遵循的步骤[加载程序集 （下面） 为主题](#loadtheme)通过将一些样本代码添加到 iOS`AppDelegate`和 Android `MainActivity`。 这将在将来的预览版的版本中得到改进。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.添加 XAML 页面
