@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/16/2018
 ms.openlocfilehash: f1aa805b9b7a16ad1e8af573cf4170f885eb0197
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870347"
 ---
 # <a name="build-optimizations"></a>生成优化

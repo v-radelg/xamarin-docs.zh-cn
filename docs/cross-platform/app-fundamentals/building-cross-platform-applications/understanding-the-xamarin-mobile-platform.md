@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: f5008d4986baa0575030e077b66b69ec0a4fad00
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854413"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第一部分-了解 Xamarin 移动平台
@@ -172,6 +172,6 @@ public static extern Result Open (string filename, out IntPtr db);
 这会将绑定到本机 iOS 和 Android 中的 C 语言 SQLite 实现。
 熟悉现有的 C API 的开发人员可以构建一组C#类将映射到本机 API，并利用现有的平台代码。 没有文档[链接本机库](~/ios/platform/native-interop.md)在 Xamarin.iOS 中类似做法准则也适用于 Xamarin.Android。
 
-### <a name="c-via-cppsharp"></a>C + + 通过 CppSharp
+### <a name="c-via-cppsharp"></a>C++通过 CppSharp
 
-Miguel 介绍 CXXI (现在称为[CppSharp](https://github.com/mono/CppSharp)) 上，他[博客](https://tirania.org/blog/archive/2011/Dec-19.html)。 直接绑定到 c + + 库的替代方法是创建一个 C 包装和通过 P/Invoke 绑定到的。
+Miguel 介绍 CXXI (现在称为[CppSharp](https://github.com/mono/CppSharp)) 上，他[博客](https://tirania.org/blog/archive/2011/Dec-19.html)。 绑定到的替代方法C++库直接将创建一个 C 包装并通过 P/Invoke 绑定到的。

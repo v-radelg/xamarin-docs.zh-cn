@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
 ms.openlocfilehash: f4ff43ea51dc690daa716e69021f690511cdcc97
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854049"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>设置用于 Xamarin.Android 的 Android SDK
@@ -27,7 +27,7 @@ _Visual Studio 包含 Android SDK 管理器，用于下载 Android SDK 工具、
 
 Xamarin Android SDK 管理器（作为 .NET 移动开发的一部分安装）可帮助你下载开发 Xamarin.Android 应用所需的最新 Android 组件。 它取代了已被弃用的 Google 的独立 SDK 管理器。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>要求
 
@@ -55,11 +55,11 @@ Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动
 
 若要在 Visual Studio 中启动 SDK 管理器，请单击“工具”>“Android”>“Android SDK 管理器”：
 
-[![L“Android SDK 管理器”菜单项的位置](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
+[![“Android SDK 管理器”菜单项的位置](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
 
 Android SDK 管理器会在“Android SDK 和工具”屏幕中打开。 此屏幕上有两个选项卡 &ndash;“平台”和“工具”：
 
-[![S“平台”选项卡中打开的 Android SDK 管理器的屏幕截图](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
+[![“平台”选项卡中打开的 Android SDK 管理器的屏幕截图](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 下面的部分将对“Android SDK 和工具”屏幕进行更详细的介绍。
 
@@ -87,7 +87,7 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 例如，若要下载 Google Android Emulator 包，请单击“Android Emulator”旁的复选标记，然后单击“应用更改”按钮：
 
-[![I从“工具”选项卡中安装 Android Emulator](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
+[![从“工具”选项卡中安装 Android Emulator](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
 可能显示包含“以下包需要你在安装前接受其许可条款:”消息的对话框
 
@@ -99,7 +99,7 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 “平台”选项卡显示平台 SDK 版本以及适用于每个平台的其他资源（例如系统映像）的列表:
 
-[![S“平台”窗格的屏幕截图](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
+[![“平台”窗格的屏幕截图](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
 
 此屏幕列出了 Android 版本（例如“Android 8.0”）、代码名称（“Oreo”）、API 级别（例如“26”）以及平台对应组件的大小（例如“1 GB”）。 使用“平台”选项卡安装要面向的 Android API 级别的组件。 （有关 Android 版本和 Android API 级别的详细信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)）。
 
@@ -108,11 +108,11 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 若要将另一个平台添加到 SDK，请单击此平台旁边的框 - 直到显示复选标记 - 以安装其所有组件，然后单击“应用更改”：
 
-[![E将 Android 7.1 Nougat 组件添加到 Android SDK 的示例](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
+[![将 Android 7.1 Nougat 组件添加到 Android SDK 的示例](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
 
 若要仅安装特定组件，请单击一次此平台旁边的框。 然后可以选择所需的任何单个组件：
 
-[![E添加某些 Android 7.1 组件的示例](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
+[![添加某些 Android 7.1 组件的示例](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
 
 请注意，要安装的组件数量显示在“应用更改”按钮旁边。 单击“应用更改”按钮后，将看到上示“许可证接受”屏幕。
 如果接受这些条款和条件，请单击“接受”。 如果有多个组件要安装，则可能会多次看到此对话框。 在窗口底部，有一个进度栏会指示下载和安装进度。 下载和安装过程完成后（可能需要好几分钟的时间，具体取决于需要下载的组件数量），已添加的组件会被复选标记标记出来并被列为“已安装”。
@@ -121,14 +121,14 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 默认情况下，Android SDK 管理器从由 Microsoft 托管的存储库下载平台组件和工具。 如果需要访问实验性 Alpha/Beta 平台和 Microsoft 存储库中尚不可用的工具，可以将 SDK 管理器切换为使用 Google 的存储库。 若要进行这种切换，请单击右下角的齿轮图标，然后选择“存储库”>“Google (不受支持)”：
 
-[![S选择 Google 的存储库](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
+[![选择 Google 的存储库](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
 选择 Google 存储库后，以前不可用的“平台”选项卡中可能显示其他包。 （在上面的屏幕截图中，切换到 Google 存储库后添加了“Android SDK 平台 28”。）请注意，使用 Google 存储库不受支持，因此不建议将其用于日常开发。
 
 若要切换回平台和工具支持的存储库，请单击“Microsoft (推荐)”。 这会将包和工具的列表还原到默认选择。
 
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="requirements"></a>要求
 
@@ -151,11 +151,11 @@ Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动
 
 若要在 Visual Studio for Mac 中启动 SDK 管理器，请单击“工具”>“SDK 管理器”：
  
-[![L“Android SDK 管理器”菜单项的位置](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
+[![“Android SDK 管理器”菜单项的位置](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 “Android SDK 管理器”会在“首选项窗口”中打开，此窗口中包含“平台”、“工具”和“位置”这三个选项卡：
 
-[![S“平台”选项卡中打开的 Android SDK 管理器的屏幕截图](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
+[![“平台”选项卡中打开的 Android SDK 管理器的屏幕截图](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
 下面的部分将对 Android SDK 管理器的各个选项卡进行介绍。
 
@@ -166,7 +166,7 @@ Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动
 
 SDK 管理器启动后，它会自动确定每个已安装包的路径，并通过在此路径旁放置一个绿色的复选标记图标以指示“已找到”路径：
 
-[![S“位置”选项卡的屏幕截图](android-sdk-images/mac/03-locations-tab-m75-sml.png)](android-sdk-images/mac/03-locations-tab-m75.png#lightbox)
+[![“位置”选项卡的屏幕截图](android-sdk-images/mac/03-locations-tab-m75-sml.png)](android-sdk-images/mac/03-locations-tab-m75.png#lightbox)
 
 单击“重置为默认值”按钮，使 SDK 管理器在 SDK、NDK 和 JDK 的默认位置查找它们。 
 
@@ -179,11 +179,11 @@ SDK 管理器启动后，它会自动确定每个已安装包的路径，并通�
 
 例如，若要下载 Google Android Emulator 包，请单击“Android Emulator”旁的复选标记，然后单击“应用更改”按钮：
 
-[![I从“工具”选项卡中安装 Android Emulator](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
+[![从“工具”选项卡中安装 Android Emulator](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
 
 可能显示包含“以下包需要你在安装前接受其许可条款:”消息的对话框
 
-[![L“许可证接受”屏幕](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
+[![“许可证接受”屏幕](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 如果接受这些条款和条件，请单击“接受”。 在窗口底部，有一个进度栏会指示下载和安装进度。 安装完成后，“工具”选项卡将显示已安装所选的工具和附加程序。
 
@@ -192,7 +192,7 @@ SDK 管理器启动后，它会自动确定每个已安装包的路径，并通�
 
 “平台”选项卡显示平台 SDK 版本以及适用于每个平台的其他资源（例如系统映像）的列表:
 
-[![S“平台”窗格的屏幕截图](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
+[![“平台”窗格的屏幕截图](android-sdk-images/mac/06-platforms-tab-m75-sml.png)](android-sdk-images/mac/06-platforms-tab-m75.png#lightbox)
 
 此屏幕列出了 Android 版本（例如“Android 8.1”）、代码名称（“Oreo”）、API 级别（例如“27”）以及平台对应组件的大小（例如“1 GB”）。 使用“平台”选项卡安装要面向的 Android API 级别的组件。 （有关 Android 版本和 Android API 级别的详细信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)）。
 
@@ -201,11 +201,11 @@ SDK 管理器启动后，它会自动确定每个已安装包的路径，并通�
 
 若要将另一个平台添加到 SDK，请单击此平台旁边的框 - 直到显示复选标记 - 以安装其所有组件，然后单击“应用更改”：
 
-[![E添加某个平台的所有组件的示例](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
+[![添加某个平台的所有组件的示例](android-sdk-images/mac/07-install-all-m75-sml.png)](android-sdk-images/mac/07-install-all-m75.png#lightbox)
 
 若要仅安装某些组件，请单击一次此平台旁边的框。 然后可以选择所需的任何单个组件：
 
-[![E添加某些组件的示例](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
+[![添加某些组件的示例](android-sdk-images/mac/08-individual-components-m75-sml.png)](android-sdk-images/mac/08-individual-components-m75.png#lightbox)
 
 请注意，要安装的组件数量显示在“应用更改”按钮旁边。 单击“应用更改”按钮后，将看到上示“许可证接受”屏幕。
 如果接受这些条款和条件，请单击“接受”。 如果有多个组件要安装，则可能会多次看到此对话框。 在窗口底部，有一个进度栏会指示下载和安装进度。 下载和安装过程完成后（可能需要好几分钟的时间，具体取决于需要下载的组件数量），已添加的组件会被复选标记标记出来并被列为“已安装”。
@@ -214,7 +214,7 @@ SDK 管理器启动后，它会自动确定每个已安装包的路径，并通�
 
 默认情况下，Android SDK 管理器从由 Microsoft 托管的存储库下载平台组件和工具。 如果需要访问实验性 Alpha/Beta 平台和 Microsoft 存储库中尚不可用的工具，可以将 SDK 管理器切换为使用 Google 的存储库。 若要进行这种切换，请单击右下角的齿轮图标，然后选择“存储库”>“Google (不受支持)”：
 
-[![S选择 Google 的存储库](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
+[![选择 Google 的存储库](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
 选择 Google 存储库后，以前不可用的“平台”选项卡中可能显示其他包。 （在上面的屏幕截图中，切换到 Google 存储库后添加了“Android SDK 平台 28”。）请注意，使用 Google 存储库不受支持，因此不建议将其用于日常开发。
 

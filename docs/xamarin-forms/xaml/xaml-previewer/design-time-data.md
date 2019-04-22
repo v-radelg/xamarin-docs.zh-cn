@@ -8,15 +8,15 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58866353"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML 预览程序中使用设计时数据
 
-_某些布局很难直观显示不包含数据。 使用这些提示可以充分利用预览 XAML 预览程序中大量数据的页面。_
+_某些布局很难直观显示不包含数据。使用这些提示可以充分利用预览 XAML 预览程序中大量数据的页面。_
 
 ## <a name="design-time-data-basics"></a>设计时间数据基础知识
 
@@ -36,7 +36,7 @@ mc:Ignorable="d"
 <Label Text={Binding Name} d:Text="Name" />
 ```
 
-[![D在标签中的文本的 esign 时间数据](xaml-previewer-images/designtimedata-label-sm.png "设计时间数据使用文本标签")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![设计时数据与在标签中的文本](xaml-previewer-images/designtimedata-label-sm.png "设计时间数据使用文本标签")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
  在此示例中，而无需`d:Text`，XAML 预览程序不会显示任何标签。 相反，它将显示"名称"标签将包含实际数据的情况在运行时。
 
@@ -46,7 +46,7 @@ mc:Ignorable="d"
 <d:Button Text="Design Time Button" />
 ```
 
-[![D与按钮控件 esign 时间数据](xaml-previewer-images/designtimedata-controls-sm.png "设计时数据与按钮控件")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![设计时数据与按钮控件](xaml-previewer-images/designtimedata-controls-sm.png "设计时数据与按钮控件")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 在此示例中，才会显示按钮在设计时。 使用此方法将在占位符[XAML 预览程序不支持的自定义控件](render-custom-controls.md)。
 
@@ -57,7 +57,7 @@ mc:Ignorable="d"
 ```csharp
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![Design 时数据与图像](xaml-previewer-images/designtimedata-image-sm.png "设计时数据与配置映像")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![设计时数据与图像](xaml-previewer-images/designtimedata-image-sm.png "设计时数据与配置映像")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview 的设计时数据
 
@@ -83,7 +83,7 @@ Listview 是一种流行方式移动应用中显示数据。 但是，也很难�
 </StackLayout>
 ```
 
-[![Design 时数据与 ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "设计时数据与 ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![设计时数据与 ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "设计时数据与 ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
 此示例将 XAML 预览程序中显示三个 TextCells 的 ListView。 您可以更改`x:String`到你的项目中的现有数据模型。
 

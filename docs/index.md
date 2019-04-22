@@ -9,10 +9,10 @@ ms.date: 02/12/2019
 featureFlags:
 - clicktale
 ms.openlocfilehash: ee92a3430fcce5bcd389d2bfa78762b71d1d5be9
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58853997"
 ---
 <div id="main" class="v2">
@@ -82,7 +82,7 @@ ms.locfileid: "58853997"
         <ul class="pivots">
             <li>
                 <li>
-                <a href="#get-started">开始操作</a>
+                <a href="#get-started">入门</a>
                 <ul id="get-started">
                     <li>
                         <a href="#get-started1"></a>
@@ -120,22 +120,22 @@ ms.locfileid: "58853997"
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/single-page.md">
                                                                         <img src="~/media/icons/i_xaml-forms.svg" alt="">
-文件 > 新建移动应用  </a>
+文件 > 新建移动应用 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/multi-page.md">
                                                                         <img src="https://docs.microsoft.com/media/common/i_class.svg" alt="">
-添加导航  </a>
+添加导航 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/database.md">
                                                                         <img src="https://docs.microsoft.com/media/common/i_generic-database.svg" alt="">
-添加数据库  </a>
+添加数据库 </a>
                                                                 </li>
                                                                  <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/styling.md">
                                                                         <img src="https://docs.microsoft.com/xamarin/media/icons/i_user-interface.svg" alt="">
-设计应用的样式  </a>
+设计应用的样式 </a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -176,7 +176,7 @@ Xamarin 开发指南</a>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/label/index.yml">
                                                                         <img src="~/media/icons/i_form-label.svg" alt="">
-Label </a>
+标签 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/button/index.yml">
@@ -743,24 +743,19 @@ Mac</a>
         <h2>联系我们</h2>
         <ul class="links">
            <li>
-                <a href="https://blog.xamarin.com/">
-博客 </a>
+                <a href="https://blog.xamarin.com/">博客</a>
             </li>
             <li>
-                <a href="https://forums.xamarin.com/">
-论坛 </a>
+                <a href="https://forums.xamarin.com/"> 论坛 </a>
             </li>
             <li>
-                <a href="https://twitter.com/xamarinhq">
-Twitter </a>
+                <a href="https://twitter.com/xamarinhq">Twitter</a>
             </li>
             <li>
-                <a href="https://stackoverflow.com/questions/tagged/xamarin">
-堆栈溢出 </a>
+                <a href="https://stackoverflow.com/questions/tagged/xamarin"> Stack Overflow </a>
             </li>
             <li>
-                <a href="https://dotnet.microsoft.com/platform/community">
-开发人员社区 </a>
+                <a href="https://dotnet.microsoft.com/platform/community"> 开发人员社区 </a>
             </li>
         </ul>
     </div>

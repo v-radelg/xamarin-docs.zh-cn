@@ -1,5 +1,5 @@
 ---
-title: IOS 10 简介
+title: iOS 10 简介
 description: 本文介绍适用于 Xamarin.iOS 开发人员的所有新的和修改 Api 和 iOS 10 中提供的功能。
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
 ms.openlocfilehash: b018fe343a7d46f1323119b03a22cc3831a02d9f
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870243"
 ---
-# <a name="introduction-to-ios-10"></a>IOS 10 简介
+# <a name="introduction-to-ios-10"></a>iOS 10 简介
 
 _本文介绍适用于 Xamarin.iOS 开发人员的所有新的和修改 Api 和 iOS 10 中提供的功能。_
 
@@ -83,7 +83,7 @@ IOS 10，几个新 Api 添加了采用了 iOS 和 watchOS 以支持动态付款�
 
 若要获取详细信息，请参阅我们[Apple 支付增强功能](~/ios/platform/apple-pay.md)指南。
 
-## <a name="alternate-app-icons"></a>备用的应用图标
+## <a name="alternate-app-icons"></a>备用应用图标
 
 Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增强功能：
 
@@ -194,7 +194,7 @@ iOS 10 包括一个新的语音 API，允许应用支持连续语音识别和转
 
 新建适用于 iOS 10，视频订户帐户框架允许应用该身份验证支持的流式处理或点播视频来向其有线或卫星电视提供商为最终用户使用单一登录体验。
 
-## <a name="wide-color"></a>广泛的颜色
+## <a name="wide-color"></a>宽域颜色
 
 iOS 10 扩展的扩展范围像素格式和整个系统的核心图形、 Core 映像、 裸机和 AVFoundation 等框架的范围内所有颜色空间的支持。 对具有广泛的颜色显示设备的支持进一步减轻通过提供在整个图形堆栈整个此行为。
 

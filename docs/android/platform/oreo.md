@@ -9,10 +9,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
 ms.openlocfilehash: 24a9fa0e954ddba1451ba8bf98216550d7d70b51
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854777"
 ---
 # <a name="oreo-features"></a>Oreo 功能
@@ -56,7 +56,7 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
 若要添加到 Visual Studio Android Oreo 支持，请执行以下操作：
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 - 对于 Visual Studio 2019，使用[SDK 管理器](~/android/get-started/installation/android-sdk.md)安装 26.0 或更高版本的 API 级别。
 
@@ -66,7 +66,7 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
     2. 使用[SDK 管理器](~/android/get-started/installation/android-sdk.md)安装 26.0 或更高版本的 API 级别。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 - 更新到最新稳定版本的 Visual Studio for Mac，如中所述[更新 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/update)。
 
@@ -80,29 +80,29 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
 若要创建项目时使用 Xamarin.Android 8.0，您必须首先使用 Xamarin Android SDK 管理器安装的 SDK 平台**Android 8.0-Oreo**或更高版本。 此外必须安装 Android SDK Tools 26.0 或更高版本。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 启动 SDK 管理器 (在 Visual Studio 中，单击**工具 > Android > Android SDK 管理器**)。
 
 2. 安装**Android 8.0-Oreo**包。 如果使用 Android SDK 仿真器，请务必包括**x86**将需要的系统映像：
 
-    [![S选择 Android 8.0 包在 Android SDK 管理器](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
+    [![选择 Android SDK 管理器中的 Android 8.0 包](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
 3. 安装**Android SDK Tools 26.0.2**或更高版本， **Android 的 SDK 平台工具 26.0.0**或更高版本，并且**Android 的 SDK 生成工具 26.0.0** （或更高版本）：
 
-    [![S选择 Android SDK Tools 26 中 Android SDK 管理器](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
+    [![在 Android SDK 管理器中选择 Android SDK Tools 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 启动 SDK 管理器 (在 Visual Studio for Mac 中，单击**工具 > SDK 管理器**)。
 
 2. 安装**Android 8.0-Oreo** SDK 包。 如果使用 Android SDK 仿真器，请务必包括**x86**将需要的系统映像：
 
-    [![S选择 Android 8.0 包在 SDK 管理器](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
+    [![选择 Android 8.0 包在 SDK 管理器](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
 3. 安装**Android SDK Tools 26.0.2**或更高版本， **Android 的 SDK 平台工具 26.0.0**或更高版本，并且**Android 的 SDK 生成工具 26.0.0** （或更高版本）：
 
-    [![S选择 Android SDK Tools 26 在 SDK 管理器](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
+    [![在 SDK 管理器中选择 Android SDK Tools 26](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
@@ -119,11 +119,11 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
 如果您尝试启动默认基于 Google GUI 的 AVD 管理器安装 Android SDK Tools 26.0 后或更高版本，可能会收到以下错误对话框，这会指示你可以使用命令行 AVD 管理器工具**avdmanager**改为:
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![Android 仿真器管理器警告对话框](oreo-images/win/03-avd-warning.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ![Android 仿真器管理器警告对话框](oreo-images/mac/03-avd-warning.png)
 
@@ -139,7 +139,7 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
 若要使用**avdmanager**若要创建新的虚拟设备，请执行以下步骤：
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1.  打开命令提示符窗口，并设置`JAVA_HOME`到您的计算机上的 Java SDK 的位置。 对于典型的 Xamarin 安装，可以使用以下命令：
 
@@ -164,9 +164,9 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
 检查完**avdmanager**若要创建虚拟设备，它将包含在设备下拉菜单中：
 
-[![NAVD 添加到设备下拉菜单中的新增功能](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
+[![添加到设备下拉菜单的新 AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1.  打开**终端**窗口并更改到在 mac 上的 Android SDK 工具目录的位置 对于典型的 Xamarin 安装，可以使用以下命令：
 
@@ -184,7 +184,7 @@ _如何开始使用 Xamarin.Android 开发适用于 Android 的最新版本的�
 
 在使用后**avdmanager**若要创建虚拟设备，它将包含在设备下拉菜单中：
 
-[![NAVD 添加到设备下拉菜单中的新增功能](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
+[![添加到设备下拉菜单的新 AVD](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -213,7 +213,7 @@ Android Oreo 引入了各种新功能和功能，例如通知通道、 通知徽
 
 通知徽章是显示在应用图标上，如以下屏幕截图中所示的小圆点：
 
-[![E应用图标上的示例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[![应用图标上的示例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 这些点表示有一个或多个通知通道，与该应用程序图标关联的应用中的新通知&ndash;这些是用户尚未取消或操作的通知。 用户可以长时间的按键的图标可关闭或作用于从长时间按菜单的通知该 appeaars 观察一下通知徽章，与关联的通知。
 

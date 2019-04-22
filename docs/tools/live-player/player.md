@@ -7,15 +7,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2017
 ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855193"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 应用
 
-![预览功能](~/media/shared/preview.png)
+![预览版功能](~/media/shared/preview.png)
 
 > [!NOTE]
 > 播放机的实时预览仅是在 Visual Studio 2017 中提供的。
@@ -38,7 +38,7 @@ ms.locfileid: "58855193"
 
 按信息按钮 **(i)** 上的应用程序以显示底部**选项**菜单：
 
-[![S选项菜单 creenshot](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![选项菜单的屏幕截图](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>日志
 
@@ -50,13 +50,13 @@ ms.locfileid: "58855193"
 - 版本信息。
 - 发送反馈。
 
-[![S设置 creenshot](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![设置的屏幕截图](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理设备
 
 若要首次连接设备，请按照中的说明[要求和安装程序](~/tools/live-player/install.md)。 可以对多个设备，并通过 IDE 管理它们。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，选择**工具 > Xamarin Live Player > 管理设备...**
 
@@ -70,7 +70,7 @@ ms.locfileid: "58855193"
 
 此外可以从设备列表来访问此窗口。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，选择**工具 > (Xamarin Live Player) 管理设备...**
 

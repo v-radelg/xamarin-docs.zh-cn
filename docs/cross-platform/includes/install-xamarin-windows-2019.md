@@ -1,10 +1,10 @@
 ---
 ms.topic: include
 ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855337"
 ---
 Xamarin 可安装的一部分_新_Visual Studio 2019 安装中的，通过执行以下步骤：
@@ -15,7 +15,7 @@ Xamarin 可安装的一部分_新_Visual Studio 2019 安装中的，通过执行
 
 3. 从安装屏幕中选择“使用 .NET 的移动开发”工作负载：
 
-    [![M具有.NET 选择 obile 开发](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
+    [![具有.NET 选择的移动开发](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
 
 4. Visual Studio 2019 安装准备就绪后，单击**安装**右下角中的按钮：
 

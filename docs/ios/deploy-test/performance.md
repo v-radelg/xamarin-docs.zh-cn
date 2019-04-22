@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
 ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870386"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 性能

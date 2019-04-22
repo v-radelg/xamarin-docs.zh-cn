@@ -324,7 +324,7 @@ Mtouch 为不指定的任何操作。
 
 ### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054:无法规范化路径 *: *
 
-这是一个内部错误。 如果看到此错误，请提交 bug [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+这是一个内部错误。 如果看到此错误，请提交 bug [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT0055" />
 
@@ -374,7 +374,7 @@ Mtouch 为不指定的任何操作。
 
 每个 Info.plist 必须具有可执行文件 （使用 CFBundleExecutable 条目），但应在生成期间自动生成一个条目。
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0064" />
 
@@ -394,13 +394,13 @@ Xamarin.iOS 使用统一 API; 时仅支持嵌入式的框架请更新项目以�
 
 ### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066:无效的生成注册器程序集: *
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0067" />
 
 ### <a name="mt0067-invalid-registrar-"></a>MT0067:无效的注册机构: *
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0068" />
 
@@ -422,13 +422,13 @@ Xamarin.iOS 使用统一 API; 时仅支持嵌入式的框架请更新项目以�
 
 ### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071:未知的平台: *。 这通常表示 Xamarin.iOS; 中的 bug在一个 bug 报告，请记录 http://bugzilla.xamarin.com 与测试用例。
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0072" />
 
 ### <a name="mt0072-extensions-are-not-supported-for-the-platform-"></a>MT0072:平台不支持扩展 *。
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0073" />
 
@@ -456,13 +456,13 @@ Xamarin.iOS 不支持将最小的部署目标设置为更高版本高于此特�
 
 ### <a name="mt0075-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0075:没有指定 （使用-abi 参数） 的体系结构。 一种体系结构是所必需的 * 项目。
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0077" />
 
 ### <a name="mt0076-watchos-projects-must-be-extensions"></a>MT0076:WatchOS 项目必须是扩展。
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0078" />
 
@@ -512,7 +512,7 @@ Xamarin.iOS 不支持将最小的部署目标设置为更高版本高于此特�
 
 ### <a name="mt0086-a-target-framework---target-framework-must-be-specified-when-building-for-tvos-or-watchos"></a>MT0086:目标框架 (-目标框架) 构建的 TVOS 或 WatchOS 时必须指定。
 
-这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这通常表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0087" />
 
@@ -557,19 +557,19 @@ Xamarin.iOS 需要标头文件，然后在要生成应用程序的错误消息�
 
 <a name="MT0099" />
 
-### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:内部错误 *。 请提交 bug 报告与测试用例 (http://bugzilla.xamarin.com)。
+### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:内部错误 *。 请提交 bug 报告与测试用例 ( http://bugzilla.xamarin.com)。
 
 在 Xamarin.iOS 内部一致性检查失败时报告此错误消息。
 
-这表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这表示 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:无效的程序集生成目标: *。 请提交 bug 报告与测试用例 (http://bugzilla.xamarin.com)。
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:无效的程序集生成目标: *。 请提交 bug 报告与测试用例 ( http://bugzilla.xamarin.com)。
 
 在 Xamarin.iOS 内部一致性检查失败时报告此错误消息。
 
-这始终是 Xamarin.iOS; 中的 bug请提交在 bug 报告[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
+这始终是 Xamarin.iOS; 中的 bug请提交在 bug 报告[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)与测试用例。
 
 <a name="MT0101" />
 
@@ -901,7 +901,7 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
 ```
 
-但是，由于 Xamarin.iOS 的最新版本中已解决此问题，请提交新 bug 在[ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)使用完整版本信息和生成日志输出。
+但是，由于 Xamarin.iOS 的最新版本中已解决此问题，请提交新 bug 在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)使用完整版本信息和生成日志输出。
 
 <a name="MT1010" />
 

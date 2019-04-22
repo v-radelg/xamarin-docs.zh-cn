@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2018
 ms.openlocfilehash: 66785fcd4b38f29ca0358e1e8885e6b7da59f5a7
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854737"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 要求
@@ -52,19 +52,19 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 此外，Android 项目的目标/编译版本必须设置为“使用最新安装的平台”。 但是，最低版本可设置为 API 19，因此可继续支持使用 Android 4.4（以及更高版本）的设备。 在“项目选项”中可设置这些值：
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-**项目选项 > 应用程序 > 应用程序属性**
+“项目选项”>“应用程序”>“应用程序属性”
 
 ![Visual Studio 中的 android 生成选项](requirements-images/options-android-vs-sml.png)
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**生成 > 常规**
+“生成”>“常规”
 
 ![选择最新的目标框架](requirements-images/options-general-sml.png)
 
-**生成 > Android 应用程序**
+“生成”>“Android 应用程序”
 
 ![选择最小值和目标为你的应用的 Android 版本](requirements-images/options-android-sml.png)
 

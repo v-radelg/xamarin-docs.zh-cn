@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
 ms.openlocfilehash: d29239d986ebfe153381915dbe0f4bfbbe738007
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870334"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 绑定的概述

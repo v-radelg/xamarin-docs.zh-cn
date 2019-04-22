@@ -10,21 +10,21 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
 ms.openlocfilehash: 71343aa69cc7fa34fb716ea39454e6437a64169f
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855076"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入门
 
-_在这个两部分的指南中，你将使用 Visual Studio 生成第一个 Xamarin.Android 应用程序，并了解使用 Xamarin 进行 Android 应用程序开发的基础知识。_
+在这个两部分的指南中，你将使用 Visual Studio 生成第一个 Xamarin.Android 应用程序，并了解使用 Xamarin 进行 Android 应用程序开发的基础知识。
 
-[![D下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/monodroid/Phoneword/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/monodroid/Phoneword/)
 
 你将创建一个应用程序，它将字母数字电话号码（由用户输入）转换为数字电话号码，然后向用户显示此数字电话号码。 最终应用程序如下所示：
 
-[![S完成时应用的屏幕截图](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
+[![完成时应用的屏幕截图](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
 
 ::: zone pivot="windows"
 
@@ -64,18 +64,18 @@ _在这个两部分的指南中，你将使用 Visual Studio 生成第一个 Xam
 在“新建项目”对话框中，单击“Android 应用”模板。
 将新项目命名为 `Phoneword`，然后单击“确定”：
 
-[![N新项目为 Phoneword](hello-android-quickstart-images/vs/01-new-project-name-w158-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w158.png#lightbox)
+[![新项目为 Phoneword](hello-android-quickstart-images/vs/01-new-project-name-w158-sml.png)](hello-android-quickstart-images/vs/01-new-project-name-w158.png#lightbox)
 
 在“新 Android 应用”对话框中，依次单击“空白应用”和“确定”，以新建项目：
 
-[![S选择“空白应用”模板](hello-android-quickstart-images/vs/02-blank-app-w158-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w158.png#lightbox)
+[![选择“空白应用”模板](hello-android-quickstart-images/vs/02-blank-app-w158-sml.png)](hello-android-quickstart-images/vs/02-blank-app-w158.png#lightbox)
 
 ## <a name="create-a-layout"></a>创建布局
 
 创建新项目之后，在“解决方案资源管理器”中展开 **Resources** 文件夹，然后展开 **layout** 文件夹。
 双击“activity_main.axml”，以在 Android Designer 中打开它。 这是应用屏幕的布局文件：
 
-[![O打开活动 axml 文件](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
+[![打开活动 axml 文件](hello-android-quickstart-images/vs/03-open-layout-w158-sml.png)](hello-android-quickstart-images/vs/03-open-layout-w158.png#lightbox)
 
 > [!TIP]
 > 较新版本的 Visual Studio 包含的应用模板略有不同。
@@ -85,35 +85,35 @@ _在这个两部分的指南中，你将使用 Visual Studio 生成第一个 Xam
 
 在“工具箱”（左侧区域）的搜索字段中输入 `text`，并将一个“文本(大)”小组件拖动至 Design Surface 上（中央区域）：
 
-[![A添加大文本小组件](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
+[![添加大文本小组件](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
 
 在 Design Surface 上选中“文本(大)”控件的情况下，可使用“属性”窗格将“文本(大)”小组件的 `Text` 属性更改为 `Enter a Phoneword:`：
 
-[![S设置大文本属性](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
+[![设置大文本属性](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
 
 将一个“纯文本”小组件从“工具箱”拖动到设计图面上，并将它放置在“文本(大)”小组件下。 直到将鼠标指针移动到布局中可接受小组件的位置，才会放置小组件。 在下面的屏幕截图中，直到鼠标指针移动到前一个 `TextView` 的下方（如右图所示），才能放置小组件（如左图所示）：
 
-[![M鼠标指示可放置小组件的位置](hello-android-quickstart-images/vs/06a-cant-drop-w158-sml.png)](hello-android-quickstart-images/vs/06a-cant-drop-w158.png#lightbox)
+[![鼠标指示可放置小组件的位置](hello-android-quickstart-images/vs/06a-cant-drop-w158-sml.png)](hello-android-quickstart-images/vs/06a-cant-drop-w158.png#lightbox)
 
 正确放置“纯文本”（`EditText` 小组件）后，它将如以下屏幕截图所示：
 
-[![A添加纯文本小组件](hello-android-quickstart-images/vs/06b-plain-text-w158-sml.png)](hello-android-quickstart-images/vs/06b-plain-text-w158.png#lightbox)
+[![添加纯文本小组件](hello-android-quickstart-images/vs/06b-plain-text-w158-sml.png)](hello-android-quickstart-images/vs/06b-plain-text-w158.png#lightbox)
 
 在 Design Surface 上选中“纯文本”小组件的情况下，可使用“属性”窗格将“纯文本”小部件的 `Id` 属性更改为 `@+id/PhoneNumberText`，并将 `Text` 属性更改为 `1-855-XAMARIN`：
 
-[![S设置纯文本属性](hello-android-quickstart-images/vs/07-add-properties-w158-sml.png)](hello-android-quickstart-images/vs/07-add-properties-w158.png#lightbox)
+[![设置纯文本属性](hello-android-quickstart-images/vs/07-add-properties-w158-sml.png)](hello-android-quickstart-images/vs/07-add-properties-w158.png#lightbox)
 
 将一个“按钮”从“工具箱”拖动到设计图面上，并将它放置在“纯文本”小组件下方：
 
-[![D将“Translate”按钮拖至 Design Surface](hello-android-quickstart-images/vs/08-drag-button-w158-sml.png)](hello-android-quickstart-images/vs/08-drag-button-w158.png#lightbox)
+[![将“Translate”按钮拖至 Design Surface](hello-android-quickstart-images/vs/08-drag-button-w158-sml.png)](hello-android-quickstart-images/vs/08-drag-button-w158.png#lightbox)
 
 在 Design Surface 上选中“按钮”后，使用“属性”窗格将其 `Text` 属性更改为 `Translate`，将其 `Id` 属性更改为 `@+id/TranslateButton`：
 
-[![S设置“Translate”按钮属性](hello-android-quickstart-images/vs/09-translate-button-w158-sml.png)](hello-android-quickstart-images/vs/09-translate-button-w158.png#lightbox)
+[![设置“Translate”按钮属性](hello-android-quickstart-images/vs/09-translate-button-w158-sml.png)](hello-android-quickstart-images/vs/09-translate-button-w158.png#lightbox)
 
 将一个“TextView”从“工具箱”拖动到 Design Surface 上，并将其置于“按钮”小组件下方。 将“TextView”的 `Text` 属性更改为空字符串，并将其 `Id` 属性设置为 `@+id/TranslatedPhoneword`：
 
-[![S在文本视图上设置属性。](hello-android-quickstart-images/vs/10-textview-properties-w158-sml.png)](hello-android-quickstart-images/vs/10-textview-properties-w158.png#lightbox)
+[![在文本视图上设置属性。](hello-android-quickstart-images/vs/10-textview-properties-w158-sml.png)](hello-android-quickstart-images/vs/10-textview-properties-w158.png#lightbox)
 
 通过按 **CTRL+S** 来保存工作。
 
@@ -121,11 +121,11 @@ _在这个两部分的指南中，你将使用 Visual Studio 生成第一个 Xam
 
 下一步是添加一些代码，以将电话号码从字母数字转换为数字。 通过在“解决方案资源管理器”窗格中右键单击“Phoneword”项目，然后选择“添加”>“新建项…”以向项目添加新文件，如下所示：
 
-[![A添加新项](hello-android-quickstart-images/vs/12-add-new-item-w158-sml.png)](hello-android-quickstart-images/vs/12-add-new-item-w158.png#lightbox)
+[![添加新项](hello-android-quickstart-images/vs/12-add-new-item-w158-sml.png)](hello-android-quickstart-images/vs/12-add-new-item-w158.png#lightbox)
 
 在“添加新项”对话框中，选择“Visual C#”>“代码”>“代码文件”，然后将新代码文件命名为“PhoneTranslator.cs”：
 
-[![A添加 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-w158-sml.png)](hello-android-quickstart-images/vs/14-add-class-w158.png#lightbox)
+[![添加 PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-w158-sml.png)](hello-android-quickstart-images/vs/14-add-class-w158.png#lightbox)
 
 这将创建新的空 C# 类。 在此文件中插入以下代码：
 
@@ -268,7 +268,7 @@ translateButton.Click += (sender, e) =>
 通过在 Android 设备或仿真器上运行应用程序来测试该应用程序。
 点击“转换”按钮，将“1-855-XAMARIN”转换为电话号码：
 
-[![S正在运行的应用的屏幕截图](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
+[![正在运行的应用的屏幕截图](hello-android-quickstart-images/vs/15-running-app-sml.png)](hello-android-quickstart-images/vs/15-running-app.png#lightbox)
 
 若要在 Android 设备上运行应用，请参阅如何[设置设备以进行开发](~/android/get-started/installation/set-up-device-for-development.md)。
 
@@ -279,13 +279,13 @@ translateButton.Click += (sender, e) =>
 
 单击“新建项目...”以创建新项目。
 
-在“为新项目选择模板”对话框中，单击“Android”>“应用”，然后选择“Android 应用”模板。 单击 **“下一步”**。
+在“为新项目选择模板”对话框中，单击“Android”>“应用”，然后选择“Android 应用”模板。 单击“下一步” 。
 
-[![C选择“Android 应用”模板](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
+[![选择“Android 应用”模板](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
 在“配置 Android 应用”对话框中，将新应用命名为 `Phoneword`，然后单击“下一步”。
 
-[![C配置 Android 应用](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png#lightbox)
+[![配置 Android 应用](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png#lightbox)
 
 在“配置新的 Android 应用”对话框中，将“解决方案”和“项目”名称保留设置为 `Phoneword`，然后单击“创建”以创建项目。
 
@@ -294,37 +294,37 @@ translateButton.Click += (sender, e) =>
 创建新项目之后，在“解决方案”板中展开 **Resources** 文件夹，然后展开 **layout** 文件夹。
 双击 **Main.axml** 以在 Android 设计器中打开它。 这是在 Android Designer 中进行查看时屏幕的布局文件：
 
-[![O打开 Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
+[![打开 Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
 
 选择设计图面上的“Hello World, Click Me!” **按钮**，然后按 **Delete** 键以删除它。 
 
 在“工具箱”（右侧区域）中，向搜索字段中输入 `text` 并将一个“文本(大)”小部件拖动到设计图面上（中央区域）：
 
-[![A添加大文本小组件](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
+[![添加大文本小组件](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
 
 在设计图面上选择了“文本(大)”小部件的情况下，可以使用“属性”板将“文本(大)”小部件的 `Text` 属性更改为 `Enter a Phoneword:`，如下所示：
 
-[![S设置大文本小组件属性](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
+[![设置大文本小组件属性](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
 接下来，将一个“纯文本”小组件从“工具箱”拖动到设计图面上，并将它放置在“文本(大)”小组件下。 请注意，可以使用搜索字段帮助按名称查找小组件：
 
-[![A添加纯文本小组件](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
+[![添加纯文本小组件](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
 在设计图面上选择了“纯文本”小部件的情况下，可以使用“属性”板将“纯文本”小部件的 `Id` 属性更改为 `@+id/PhoneNumberText`，并将 `Text` 属性更改为 `1-855-XAMARIN`：
 
-[![S设置纯文本小组件属性](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
+[![设置纯文本小组件属性](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
 
 将一个“按钮”从“工具箱”拖动到设计图面上，并将它放置在“纯文本”小组件下方：
 
-[![A添加按钮](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png#lightbox)
+[![添加一个按钮](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png#lightbox)
 
 在设计图面上选择了“按钮”的情况下，可以使用“属性”板将“按钮”的 `Id` 属性更改为 `@+id/TranslateButton`，并将 `Text` 属性更改为 `Translate`：
 
-[![C配置为“Translate”按钮](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
+[![配置为“Translate”按钮](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
 
 将一个“TextView”从“工具箱”拖动到 Design Surface 上，并将其置于“按钮”小组件下方。 选中“TextView”后，将“TextView”的 `id` 属性设置为 `@+id/TranslatedPhoneWord`，并将 `text` 更改为一个空字符串：
 
-[![S在文本视图上设置属性。](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
+[![在文本视图上设置属性。](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
 
 通过按 **&#8984; + S** 来保存工作。
 
@@ -332,7 +332,7 @@ translateButton.Click += (sender, e) =>
 
 现在添加一些代码，以将电话号码从字母数字转换为数字。 通过在“解决方案”板中单击“Phoneword”项目旁的齿轮图标，然后选择“添加”>“新建文件…”，向项目添加新文件：
 
-[![A向项目添加一个新文件](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
+[![向项目添加一个新文件](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
 
 在“新建文件”对话框中，选择“常规”>“空类”，将新文件命名为 PhoneTranslator，然后单击“新建”。 这会为我们创建新的空 C# 类。
 
@@ -485,35 +485,35 @@ namespace Phoneword
 
 现在可以设置应用程序图标了。 默认情况下，Visual Studio for Mac 将为项目提供默认图标。 从解决方案中删除这些文件，然后使用不同的图标替换它们。 在“Solution Pad”中展开“Resources”文件夹。 请注意，有 5 个前缀为“mipmap-”的文件夹，每个文件夹都包含一个“Icon.png”文件：
 
-[![mmipmap- 文件夹和 Icon.png 文件](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
+[![mipmap- 文件夹和 Icon.png 文件](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
 
 需要从项目中删除每个图标文件。 右键单击每个“Icon.png”文件，然后从上下文菜单中选择“删除”：
 
-[![D删除默认的 Icon.png](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png#lightbox)
+[![删除默认的 Icon.png](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png#lightbox)
 
 单击对话框中的“删除”按钮。
 
 接着，下载并解压缩 [Xamarin 应用图标集](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)。 此 zip 文件包含应用程序的图标。 尽管每个图标看上去都相同，但它们具有不同的分辨率，使它们能在具有不同屏幕密度的不同设备上正确呈现。  必须将此文件集复制到 Xamarin.Android 项目中。 在 Visual Studio for Mac 的“Solution Pad”中，右键单击 mipmap-hdpi 文件夹，然后选择“添加”>“添加文件”：
 
-[![A添加文件](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png#lightbox)
+[![添加文件](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png#lightbox)
 
 从选择对话框中，导航到已解压缩的 Xamarin AdApp 图标目录并打开 mipmap-hdpi 文件夹。 选择“Icon.png”，然后单击“打开”。
 
 在“将文件添加到文件夹”对话框中，选择“将文件复制到目录中”，然后单击“确定”：
 
-[![C将文件复制到目录对话框](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
+[![将文件复制到目录对话框](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
 
 为每个 mipmap- 文件夹重复执行这些步骤，直到 mipmap- Xamarin 应用图标文件夹的内容复制到其在 Phoneword 项目中对应的 mipmap- 文件夹为止。
 
 在所有图标都复制到 Xamarin.Android 项目中后，在“Solution Pad”中右键单击项目，打开“项目选项”对话框。 选择“生成”>“Android 应用程序”，然后从“应用程序图标”组合框中选择 `@mipmap/icon`：
 
-[![S设置项目图标](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
+[![设置项目图标](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 
 ## <a name="run-the-app"></a>运行应用
 
 最后，通过在 Android 设备或仿真器上运行应用程序并转换 Phoneword 以测试此应用程序：
 
-[![S完成时应用的屏幕截图](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
+[![完成时应用的屏幕截图](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 若要在 Android 设备上运行应用，请参阅如何[设置设备以进行开发](~/android/get-started/installation/set-up-device-for-development.md)。
 

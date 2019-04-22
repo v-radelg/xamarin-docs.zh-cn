@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855128"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 简介
@@ -149,9 +149,9 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 Visual Studio 新的“设备日志”工具窗口允许显示 Android 和 iOS 设备的日志。 执行以下任一命令均可显示此窗口：
 
-- **“视图”>“其他窗口”>“设备日志”**
-- **“工具”>“iOS”>“设备日志”**
-- **“iOS 工具栏”>“设备日志”**
+- “视图”>“其他窗口”>“设备日志”
+- “工具”>“iOS”>“设备日志”
+- “iOS 工具栏”>“设备日志”
 
 在工具窗口显示后，用户便可以从“设备”下拉列表中选择物理设备。 选定设备后，日志将自动添加到表中。 在设备之间切换可停止和启动设备日志记录。
 

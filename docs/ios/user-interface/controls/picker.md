@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
 ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869996"
 ---
 # <a name="picker-control-in-xamarinios"></a>在 Xamarin.iOS 中选取器控件
@@ -290,10 +290,10 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 
 各种`NSDateFormatterStyle`值显示时间，如下所示：
 
-- `NSDateFormatterStyle.Full`:7:46:00 PM 东部夏时制时间
-- `NSDateFormatterStyle.Long`:7:47:00 PM EDT
-- `NSDateFormatterStyle.Medium`:7:47:00 PM
-- `NSDateFormatterSytle.Short`:7:47 PM
+- `NSDateFormatterStyle.Full`：7:46:00 PM 东部夏时制时间
+- `NSDateFormatterStyle.Long`：7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium`：7:47:00 PM
+- `NSDateFormatterSytle.Short`：7:47 PM
 
 ##### <a name="datestyle"></a>DateStyle
 
@@ -306,10 +306,10 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 
 各种`NSDateFormatterStyle`值显示日期，如下所示：
 
-- `NSDateFormatterStyle.Full`:星期三，2017 年 8 月 2 日下午 7:48
-- `NSDateFormatterStyle.Long`:2017 年 8 月 2日日下午 7:49
-- `NSDateFormatterStyle.Medium`:2017 年 8 月 2日日，7:49 PM
-- `NSDateFormatterStyle.Short`:2017 年 8 月 2 日，7:50 PM
+- `NSDateFormatterStyle.Full`：星期三，2017 年 8 月 2 日下午 7:48
+- `NSDateFormatterStyle.Long`：2017 年 8 月 2日日下午 7:49
+- `NSDateFormatterStyle.Medium`：2017 年 8 月 2日日，7:49 PM
+- `NSDateFormatterStyle.Short`：2017 年 8 月 2 日，7:50 PM
 
 > [!NOTE]
 > `DateFormat` 并`DateStyle` / `TimeStyle`提供不同的方式指定日期和时间格式设置。 最新设置的属性确定日期格式化程序的输出。

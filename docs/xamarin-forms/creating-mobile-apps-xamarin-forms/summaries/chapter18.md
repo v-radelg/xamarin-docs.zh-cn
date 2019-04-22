@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870217"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
 构建应用程序的最佳方法之一是通过将用户界面与基础代码，这有时称为分离*业务逻辑*。 存在几种方法，但为基于 XAML 的环境量身定制的那个被称为模型-视图-视图模型或 MVVM。
 
@@ -99,4 +99,4 @@ MVVM 适用于数据绑定和数据绑定处理的属性，因此 MVVM 似乎谈
 
 - [第 18 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)
 - [第 18 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
-- [《使用 Xamarin.Forms 的企业应用程序模式》电子书](~/xamarin-forms/enterprise-application-patterns/index.md)
+- [使用 Xamarin.Forms 电子书的企业应用程序模式](~/xamarin-forms/enterprise-application-patterns/index.md)

@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854608"
 ---
 # <a name="using-native-libraries"></a>使用本机库
@@ -45,19 +45,19 @@ Xamarin.Android 支持通过标准的 PInvoke 机制的本机库的使用。 此
 ## <a name="debugging-native-code-with-visual-studio"></a>使用 Visual Studio 调试本机代码
 
 如果您使用的*Visual Studio 2019*或*Visual Studio 2017*，无需修改你的项目文件，如上文所述。
-您可以生成和调试 Xamarin.Android 解决方案内的 c + +，通过添加对 c + + 的项目引用**动态共享库 (Android)** 项目。
+可以生成和调试C++添加到项目引用在 Xamarin.Android 解决方案内C++**动态共享库 (Android)** 项目。
 
-若要调试你的项目中的本机 c + + 代码，请按照下列步骤：
+若要调试本机C++在项目中的代码，执行以下步骤：
 
 1. 双击项目**属性**，然后选择**Android 选项**页。
 2. 向下滚动到**调试选项**。
-3. 在中**调试器**下拉列表菜单中，选择**c + +** (而不是默认 **/.net (Xamarin)**)。
+3. 在中**调试器**下拉列表菜单中，选择**C++** (而不是默认值 **/.net (Xamarin)**)。
 
-Visual Studio c + + 开发人员可以查看[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)尝试调试 Visual Studio 2019 或使用 Xamarin; Visual Studio 2017 中的 c + + 的示例，请参考我们[博客文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)有关详细信息。
+Visual StudioC++开发人员可以查看[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)示例尝试来调试C++从 Visual Studio 2019 或使用 Xamarin; Visual Studio 2017 和是指我们[博客文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)的详细信息信息。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [SanAngeles_NativeDebug （示例）](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 - [开发 Xamarin Android 本机应用程序](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

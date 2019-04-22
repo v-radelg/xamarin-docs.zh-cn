@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869983"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 控制网格
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
 [ `Grid` ](xref:Xamarin.Forms.Grid)是一个强大的布局机制，排列为行和列的单元格的子项。 与类似 HTML 不同`table`元素，`Grid`是仅用于布局而不是演示文稿的目的。
 
@@ -108,4 +108,4 @@ ms.locfileid: "58869983"
 
 - [第 17 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
 - [第 17 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
-- [Grid](~/xamarin-forms/user-interface/layouts/grid.md)
+- [网格](~/xamarin-forms/user-interface/layouts/grid.md)

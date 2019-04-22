@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854868"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安装程序
@@ -29,7 +29,7 @@ Xamarin.Forms 现在具有对 GTK # 应用程序的预览支持。 GTK # 是允�
 
 GTK # 适用于 macOS 和 Linux 安装的一部分[Mono](https://www.mono-project.com/download/stable/)。 用于.NET 的 GTK # 可以安装在 Windows 与[GTK # 安装程序](https://www.mono-project.com/download/stable/#download-win)。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 按照这些说明添加将在 Windows 桌面上运行的 GTK # 应用：
 
@@ -110,7 +110,7 @@ GTK # 适用于 macOS 和 Linux 安装的一部分[Mono](https://www.mono-projec
 
     ![GTK # 游戏生命](gtk-images/win/gtk-gameoflife.png "GTK # 游戏的生命周期")
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 按照这些说明添加将在 Mac 桌面运行的 GTK # 应用：
 

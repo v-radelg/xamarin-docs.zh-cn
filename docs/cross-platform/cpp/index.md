@@ -1,52 +1,52 @@
 ---
 ms.assetid: EA2D979E-9151-4CE9-9289-13B6A979838B
-title: 通过 Xamarin 使用 C/c + + 库
-description: Visual Studio for Mac 可用于生成和适用于 Android 和 iOS，将跨平台 C/c + + 代码集成到移动应用使用 Xamarin 和C#。 此文章介绍了如何设置和调试 Xamarin 应用程序中的 c + + 项目。
+title: 使用 C /C++使用 Xamarin 的库
+description: Visual Studio for Mac 可用于生成和集成跨平台 C /C++适用于 Android 和 iOS，使用 Xamarin 移动应用代码和C#。 此文章介绍了如何设置和调试C++Xamarin 应用中的项目。
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
 ms.openlocfilehash: a235a24d544e938d4bf29e6569564aface2f6972
-ms.sourcegitcommit: 1c2565c372207bfa257cadac2a2d23d4f90b0cea
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58866379"
 ---
-# <a name="use-cc-libraries-with-xamarin"></a>通过 Xamarin 使用 C/c + + 库
+# <a name="use-cc-libraries-with-xamarin"></a>使用 C /C++使用 Xamarin 的库
 
 ## <a name="overview"></a>概述
 
 Xamarin 开发人员可以使用 Visual Studio 创建跨平台本机移动应用。 通常情况下，C#使用绑定来公开给开发人员的现有平台组件。 但是，有些的时候当 Xamarin 应用程序需要使用现有代码库。 有时团队只是没有到基本代码的时间、 预算或一个大型的、 经过全面测试，并且高度优化的端口的资源C#。
 
-[用于跨平台移动开发的 visual c + +](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development)启用 C/c + + 和C#相同的解决方案，提供很多优点，包括获得统一调试体验的一部分生成代码。 Microsoft 已在这种方式，如交付应用中使用 C/c + + 和 Xamarin [Hyperlapse 移动版](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw)并[Pix 照相机](https://www.microsoft.com/microsoftpix)。
+[VisualC++适用于跨平台移动开发](https://docs.microsoft.com/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development)启用 C /C++和C#作为同一个解决方案，提供很多优点，包括获得统一调试体验的一部分生成代码。 Microsoft 使用 C /C++和以这种方式，如交付应用的 Xamarin [Hyperlapse 移动版](https://www.microsoft.com/p/hyperlapse-mobile/9wzdncrd1prw)并[Pix 照相机](https://www.microsoft.com/microsoftpix)。
 
-但是，在某些情况下没有愿望 （或要求） 保留现有的 C/c + + 工具和流程中的位置和保持分离的应用程序，将库作为它类似于第三方组件的库代码。 在这些情况下，面临的挑战不只公开到相关的成员C#，但管理作为依赖项的库。 和，当然，作为此过程的大部分尽可能自动执行。  
+但是，在某些情况下没有一个愿望 （或要求） 以保留现有 C /C++的工具和过程中的位置和保持分离的应用程序，将库作为它类似于第三方组件的库代码。 在这些情况下，面临的挑战不只公开到相关的成员C#，但管理作为依赖项的库。 和，当然，作为此过程的大部分尽可能自动执行。  
 
 本文概述了此方案的高级方法，并指导完成一个简单的示例。
 
 ## <a name="background"></a>背景
 
-C/c + + 被视为一种跨平台语言，但必须格外谨慎以确保源代码是确实跨平台的使用仅 C/c + + 支持的所有目标编译器和包含很少或没有有条件地包括平台或特定于编译器的代码。
+C /C++被视为一种跨平台语言，但必须格外谨慎以确保源代码是确实跨平台的使用仅 C /C++支持的所有目标编译器和包含很少或没有有条件地包括平台或特定于编译器的代码。
 
 最终代码必须编译并在所有目标平台，因此这归结为通用性跨目标平台 （和编译器） 上成功运行。 问题可能仍起源于编译器的细微差别，因此全面测试 （最好是自动进行） 上的每个目标平台变得日益重要。  
 
 ## <a name="high-level-approach"></a>高级方法
 
-以下图例显示了用于将 C/c + + 源代码转换为一个跨平台 Xamarin 库通过 NuGet 共享，然后使用 Xamarin.Forms 应用中的四个阶段方法。
+下图表示四阶段方法，用于转换 C /C++到通过 NuGet 共享，然后使用 Xamarin.Forms 应用中的跨平台 Xamarin 库源代码。
  
 
-![通过 Xamarin 使用 C/c + + 的高级方法](images/cpp-steps.jpg)
+![使用 C 的高级方法 /C++使用 Xamarin](images/cpp-steps.jpg)
 
 4 阶段包括：
 
-1.  将 C/c + + 源代码编译为特定于平台的本机库。
+1.  编译 C /C++到特定于平台的本机库的源代码。
 2.  包装本机库与 Visual Studio 解决方案。
 3.  打包和推送.NET 包装的 NuGet 包。
 4.  使用 Xamarin 应用程序中的 NuGet 包。
 
-### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>第 1 阶段：将 C/c + + 源代码编译为特定于平台的本机库
+### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>第 1 阶段：编译 C /C++到特定于平台的本机库源代码
 
-此阶段的目标是创建可由调用的本机库C#包装器。 这可能会也可能不是相关具体取决于你的情况。 许多工具和可以用来解决这种常见方案中的进程已超出本文的讨论范围。 重要注意事项是的保持 C/c + + 代码库的任何本机打包程序代码，足够单元测试、 与同步和生成自动化。 
+此阶段的目标是创建可由调用的本机库C#包装器。 这可能会也可能不是相关具体取决于你的情况。 许多工具和可以用来解决这种常见方案中的进程已超出本文的讨论范围。 重要注意事项： 保持 C /C++基本代码的任何本机打包程序代码，足够单元测试、 与同步和生成自动化。 
 
 在预排中的库创建 Visual Studio Code 中使用随附的 shell 脚本。 本演练中的扩展的版本可在[移动 CAT GitHub 存储库](https://github.com/xamarin/mobcat/blob/dev/samples/cppwithxamarin/README.md)，其中介绍了此部分中更深入地示例。 本机库都被视为第三方依赖项在此情况下但是针对上下文进行了说明此阶段。
 
@@ -92,7 +92,7 @@ C/c + + 被视为一种跨平台语言，但必须格外谨慎以确保源代码
 
 ## <a name="creating-the-native-libraries-stage-1"></a>创建本机库 (阶段 1)
 
-本机库功能基于从示例[演练：创建和使用静态库 （c + +）](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)。
+本机库功能基于从示例[演练：创建和使用静态库 (C++)](https://docs.microsoft.com/cpp/windows/walkthrough-creating-and-using-a-static-library-cpp?view=vs-2017)。
 
 本演练将跳过第一阶段，因为库提供为在此方案中的第三方依赖项生成本机库。 预编译的本机库随附[示例代码](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin)也可以是[下载](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)直接。
 
@@ -166,7 +166,7 @@ extern "C" {
 17. 选择**MathFuncs.Shared**从**项目**选项卡，然后单击**确定**。
 18. 重复步骤 7-17 （忽略步骤 9 中） 使用以下配置：
 
-    | **项目名称**  | **模板名称**   | **新建项目菜单**   |
+    | **项目名称**  | **TEMPLATE NAME**   | **新建项目菜单**   |
     |-------------------| --------------------| -----------------------|
     | MathFuncs.Android | 类库       | Android > 库      |
     | MathFuncs.iOS     | 绑定库     | iOS > 库          |
@@ -248,7 +248,7 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
 4. 配置**本机引用**属性，让他们检查 （显示勾图标） 中**属性**板：
         
     - 强制加载
-    - 是 c + +
+    - 是C++
     - 智能链接 
 
     > [!NOTE]
@@ -406,7 +406,7 @@ Android 和 iOS 之间，将本机库添加到包装器解决方案的过程稍�
 
 #### <a name="writing-the-mymathfuncs-class"></a>编写 MyMathFuncs 类
 
-包装过程完成之后，创建将管理对非托管 c + + MyMathFuncs 对象的引用的 MyMathFuncs 类。  
+包装过程完成之后，创建将管理对非托管引用一个 MyMathFuncs 类C++MyMathFuncs 对象。  
 
 1. **控件的同时单击**上**MathFuncs.Shared**项目，然后选择**添加文件...** 从**添加**菜单。 
 2. 选择**的空类**从**新的文件**窗口中，其命名为**MyMathFuncs** ，然后单击**新建**
@@ -655,7 +655,7 @@ NuGet 源的最简单形式是本地目录：
 
 1. **控件的同时单击**项目，然后选择**添加 NuGet 包...** 从**添加**菜单。
 2. 搜索**MathFuncs**。 
-3. 验证是否**版本**包的是**1.0.0**和其他详细信息将显示按预期方式如**标题**并**说明**，即*MathFuncs*并*示例 c + + 包装器库*。 
+3. 验证是否**版本**包的是**1.0.0**和其他详细信息将显示按预期方式如**标题**并**说明**，即*MathFuncs*并*示例C++包装器库*。 
 4. 选择**MathFuncs**包，然后单击**添加包**。
 
 ### <a name="using-the-library-functions"></a>使用库函数
@@ -758,7 +758,7 @@ NuGet 源的最简单形式是本地目录：
 
 ## <a name="summary"></a>总结
 
-本文介绍了如何创建使用通过常见.NET 包装器通过 NuGet 包分发的本机库的 Xamarin.Forms 应用。 本演练中提供的示例是有意来更轻松地演示了的方法非常简单。 实际的应用程序必须处理的异常处理等的复杂性、 回调、 封送处理的更复杂的类型，以及与其他依赖库链接。 关键的考虑因素是依据协调和同步的包装器和客户端应用程序与 c + + 代码的演变过程。 根据一个或两个这些关注点是单一团队的职责，此过程可能会有所不同。 无论哪种方式，自动化是一个实际优点。 下面是一些资源，提供围绕的一些关键概念以及相关下载的其他参考资料。 
+本文介绍了如何创建使用通过常见.NET 包装器通过 NuGet 包分发的本机库的 Xamarin.Forms 应用。 本演练中提供的示例是有意来更轻松地演示了的方法非常简单。 实际的应用程序必须处理的异常处理等的复杂性、 回调、 封送处理的更复杂的类型，以及与其他依赖库链接。 关键的考虑因素是依据过程的演变C++协调和同步使用的包装器和客户端应用程序代码。 根据一个或两个这些关注点是单一团队的职责，此过程可能会有所不同。 无论哪种方式，自动化是一个实际优点。 下面是一些资源，提供围绕的一些关键概念以及相关下载的其他参考资料。 
 
 ### <a name="downloads"></a>下载
 
@@ -767,8 +767,8 @@ NuGet 源的最简单形式是本地目录：
 
 ### <a name="examples"></a>示例
 
-- [使用 c + + 的 Hyperlapse 跨平台移动开发](https://blogs.msdn.microsoft.com/vcblog/2015/06/26/hyperlapse-cross-platform-mobile-development-with-visual-c-and-xamarin/)
-- [Microsoft Pix （c + + 和 Xamarin）](https://blog.xamarin.com/microsoft-research-ships-intelligent-apps-with-the-power-of-c-and-ai/)
+- [使用 Hyperlapse 跨平台移动开发C++](https://blogs.msdn.microsoft.com/vcblog/2015/06/26/hyperlapse-cross-platform-mobile-development-with-visual-c-and-xamarin/)
+- [Microsoft Pix (C++和 Xamarin)](https://blog.xamarin.com/microsoft-research-ships-intelligent-apps-with-the-power-of-c-and-ai/)
 - [Mono San Angeles 示例端口](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
 
 ### <a name="further-reading"></a>其他阅读材料

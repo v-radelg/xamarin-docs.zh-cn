@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855115"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>创建单个页 Xamarin.Forms 应用程序
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 
 在此快速入门中，你将了解如何：
 
@@ -160,7 +160,7 @@ ms.locfileid: "58855115"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android 工具栏")
 
-    [![](single-page-images/vs/notes-android.png "Android Emulator 中的便笺")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "在 Android 模拟器中的说明")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -310,7 +310,7 @@ ms.locfileid: "58855115"
 
     ![](single-page-images/vs/android-start.png "Visual Studio Android 工具栏")
 
-    [![](single-page-images/vs/notes-android.png "Android Emulator 中的便笺")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "在 Android 模拟器中的说明")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -480,7 +480,7 @@ ms.locfileid: "58855115"
 
 5. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 Android Emulator 内的应用程序：
 
-      [![](single-page-images/vsmac/notes-android.png "Android Emulator 中的便笺")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![](single-page-images/vsmac/notes-android.png "在 Android 模拟器中的说明")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -499,9 +499,9 @@ ms.locfileid: "58855115"
 若要打开此单页面应用程序到多页应用程序，请继续学习下一步的快速入门教程。
 
 > [!div class="nextstepaction"]
-> [下一步](multi-page.md)
+> [下一页](multi-page.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [说明 （示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
+- [便笺（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/)
 - [Xamarin.Forms 快速入门的深入探讨](deepdive.md)

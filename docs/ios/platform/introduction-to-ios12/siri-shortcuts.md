@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869819"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS Siri 快捷方式
@@ -227,8 +227,7 @@ void HandleUserActivity()
 若要查看此生成的代码：
 
 - 打开**AppDelegate.m**。
-- 将导入添加到自定义意向的标头文件：
-`#import "OrderSoupIntent.h"`
+- 将导入添加到自定义意向的标头文件： `#import "OrderSoupIntent.h"`
 - 在类中的任何方法，添加对引用`OrderSoupIntent`。
 - 右键单击`OrderSoupIntent`，然后选择**跳转到定义**。
 - 在新打开文件中，右键单击**OrderSoupIntent.h**，然后选择**在查找器中显示**。

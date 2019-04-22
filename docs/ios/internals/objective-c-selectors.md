@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/12/2017
 ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870166"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS OBJECTIVE-C 选择器
 
 Objective C 语言基于*选择器*。 选择器是一条消息，可以发送到一个对象或*类*。 [Xamarin.iOS](~/ios/internals/api-design/index.md)映射实例为实例方法的选择器和类选择器对静态方法。
 
-与普通 C 函数 （和类似 c + + 成员函数），您不能直接调用选择器使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)选择器而是发送到 OBJECTIVE-C 类或使用实例的步骤 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+与普通 C 函数 (等C++成员函数)，不能直接调用选择器使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)选择器而是发送到 OBJECTIVE-C 类或使用实例的步骤 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 函数。
 
 Objective C 中的消息有关的详细信息，看一看 Apple[使用对象](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。

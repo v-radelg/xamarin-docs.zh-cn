@@ -9,10 +9,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/02/2018
 ms.openlocfilehash: 9175c60c436f2e808f3658bae717a747e0401c28
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855310"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
@@ -591,5 +591,5 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，Mac 示例](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [Hello，Mac（示例）](https://developer.xamarin.com/samples/mac/Hello_Mac/)
 - [macOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

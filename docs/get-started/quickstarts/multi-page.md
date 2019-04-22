@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 855962560897789dadba535f69c4a7da42bb4742
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854972"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 
 在此快速入门中，你将了解如何：
 
@@ -613,9 +613,9 @@ ms.locfileid: "58854972"
 若要修改应用程序，以便将其数据存储在本地数据库中 SQLite.NET，继续学习下一步的快速入门教程。
 
 > [!div class="nextstepaction"]
-> [下一步](database.md)
+> [下一页](database.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [说明 （示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+- [便笺（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
 - [Xamarin.Forms 快速入门的深入探讨](deepdive.md)

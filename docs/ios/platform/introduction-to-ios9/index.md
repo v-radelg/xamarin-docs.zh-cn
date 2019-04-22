@@ -1,5 +1,5 @@
 ---
-title: IOS 9 简介
+title: iOS 9 简介
 description: 本文介绍适用于 Xamarin.iOS 开发人员的所有新的和修改 Api 和 iOS 9 中的可用功能。
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: d0ad25a1ecff7262b9b4b41a5f9d73a5931bbd1c
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870191"
 ---
-# <a name="introduction-to-ios-9"></a>IOS 9 简介
+# <a name="introduction-to-ios-9"></a>iOS 9 简介
 
 _本文介绍适用于 Xamarin.iOS 开发人员的所有新的和修改 Api 和 iOS 9 中的可用功能。_
 
@@ -34,7 +34,7 @@ Apple 在 iOS 9 中以及对现有功能的许多增强功能已添加多个新 
 
 若要获取详细信息，请参阅我们[简介 3D Touch](~/ios/platform/3d-touch.md)指南。
 
-## <a name="app-transport-security"></a>应用程序传输安全
+## <a name="app-transport-security"></a>应用传输安全性
 
 新 ios 9、 应用传输安全 (ATS) 实施 internet 资源 （如应用程序的后端服务器） 和您的应用程序之间的安全连接。 ATS 可确保所有 internet 通信都符合以确保连接安全最佳实践，从而防止意外泄露敏感信息直接通过您的应用程序或正在使用的库。
 
@@ -212,7 +212,7 @@ Apple 已弃用的以下 Api 和 iOS 9 中的函数：
 
 - [iOS 9 示例](https://developer.xamarin.com/samples/ios/iOS9/)
 - [3D Touch 简介](~/ios/platform/3d-touch.md)
-- [应用程序传输安全](~/ios/app-fundamentals/ats.md)
+- [应用传输安全性](~/ios/app-fundamentals/ats.md)
 - [适用于 iPad 的多任务](~/ios/platform/multitasking.md)
 - [联系人和联系人 UI](~/ios/platform/contacts.md)
 - [新的搜索 Api](~/ios/platform/search/index.md)

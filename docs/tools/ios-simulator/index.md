@@ -7,17 +7,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/02/2019
 ms.openlocfilehash: b962390d5a5a365ada93d1778e3efb65839f41c5
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854946"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>适用于 Windows 的远程 iOS 模拟器
 
 远程 iOS 模拟器为 Windows，可在 Visual Studio 2019 和 Visual Studio 2017 的 Windows 中显示 iOS 模拟器上测试应用。
 
-[![i在 Windows 上运行的 OS 模拟器](images/hero-sml.png "在 Windows 上运行的 iOS 模拟器")](images/hero.png#lightbox)
+[![在 Windows 上运行的 iOS 模拟器](images/hero-sml.png "在 Windows 上运行的 iOS 模拟器")](images/hero.png#lightbox)
 
 ## <a name="getting-started"></a>入门
 
@@ -52,7 +52,7 @@ ms.locfileid: "58854946"
 
 工具栏上的省略号按钮可显示其他选项，例如旋转、 抖动手势和重新启动。 可以通过在模拟器窗口中的任意位置右键单击作为列表查看这些相同的选项：
 
-[![iOS 模拟器其他设置](images/more-sml.png "iOS 模拟器的其他设置")](images/more.png#lightbox)
+[![iOS 模拟器的其他设置](images/more-sml.png "iOS 模拟器的其他设置")](images/more.png#lightbox)
 
 ## <a name="touchscreen-support"></a>触摸屏支持
 
@@ -64,6 +64,6 @@ ms.locfileid: "58854946"
 
 若要禁用远程 iOS 模拟器为 Windows，请导航到**工具 > 选项 > Xamarin > iOS 设置**并取消选中**远程 Simulator 到 Windows**。
 
-[![c若要使用模拟器的 heckbox](images/options-sml.png "复选框以使用模拟器")](images/options.png#lightbox)
+[![复选框以使用模拟器](images/options-sml.png "复选框以使用模拟器")](images/options.png#lightbox)
 
 使用此选项时禁用，调试将打开连接的 Mac 上的 iOS 模拟器生成主机。

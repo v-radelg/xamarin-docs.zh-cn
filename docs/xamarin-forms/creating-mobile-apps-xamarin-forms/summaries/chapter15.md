@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870113"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章的摘要。 交互式接口
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 
 本章探讨了八个`View`允许与用户交互的派生类。
 
@@ -24,12 +24,12 @@ ms.locfileid: "58870113"
 
 Xamarin.Forms 包含 20 可实例化类派生自`View`但不是`Layout`。 已在上一章节中讨论的这些六个：
 
-- `Label`:[**第 2 章。应用剖析**](chapter02.md)
-- `BoxView`:[**第 3 章。滚动堆栈**](chapter03.md)
-- `Button`:[**第 6 章。按钮单击事件**](chapter06.md)
-- `Image`:[**第 13 章。位图**](chapter13.md)
-- `ActivityIndicator`:[**第 13 章。位图**](chapter13.md)
-- `ProgressBar`:[**第 14 章。AbsoluteLayout**](chapter14.md)
+- `Label`：[**第 2 章。应用剖析**](chapter02.md)
+- `BoxView`：[**第 3 章。滚动堆栈**](chapter03.md)
+- `Button`：[**第 6 章。按钮单击事件**](chapter06.md)
+- `Image`：[**第 13 章。位图**](chapter13.md)
+- `ActivityIndicator`：[**第 13 章。位图**](chapter13.md)
+- `ProgressBar`：[**第 14 章。AbsoluteLayout**](chapter14.md)
 
 这一章中的八个视图有效地允许用户与基本.NET 数据类型进行交互：
 
@@ -44,12 +44,12 @@ Xamarin.Forms 包含 20 可实例化类派生自`View`但不是`Layout`。 已�
 
 以下章节中介绍的剩余的六个视图：
 
-- `WebView`:[**第 16 章。数据绑定**](chapter16.md)
-- `Picker`:[**第 19 章。集合视图**](chapter19.md)
-- `ListView`:[**第 19 章。集合视图**](chapter19.md)
-- `TableView`:[**第 19 章。集合视图**](chapter19.md)
-- `Map`:[**第 28 章。位置和地图**](chapter28.md)
-- `OpenGLView`:不涵盖这本书 （和 Windows 平台不支持） 中
+- `WebView`：[**第 16 章。数据绑定**](chapter16.md)
+- `Picker`：[**第 19 章。集合视图**](chapter19.md)
+- `ListView`：[**第 19 章。集合视图**](chapter19.md)
+- `TableView`：[**第 19 章。集合视图**](chapter19.md)
+- `Map`：[**第 28 章。位置和地图**](chapter28.md)
+- `OpenGLView`：不涵盖这本书 （和 Windows 平台不支持） 中
 
 ## <a name="slider-and-stepper"></a>滑块和分档器
 
@@ -245,7 +245,7 @@ Xamarin.Forms 定义了三个视图，让用户输入和编辑文本：
 
 - [第 15 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [第 15 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
-- [Slider](~/xamarin-forms/user-interface/slider.md)
-- [条目](~/xamarin-forms/user-interface/text/entry.md)
+- [滑块](~/xamarin-forms/user-interface/slider.md)
+- [项](~/xamarin-forms/user-interface/text/entry.md)
 - [编辑器](~/xamarin-forms/user-interface/text/editor.md)
 - [DatePicker](~/xamarin-forms/user-interface/datepicker.md)

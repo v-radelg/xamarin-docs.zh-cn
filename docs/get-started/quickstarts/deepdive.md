@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
 ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855011"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门的深入探讨
@@ -421,7 +421,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 在中`OnNoteAddedClicked`方法，执行时，新便笺添加到应用程序时， [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的`NoteEntryPage`设置为一个新`Note`实例。 在`OnListViewItemSelected`方法中选择现有便笺时执行[ `ListView` ](xref:Xamarin.Forms.ListView)，则`BindingContext`的`NoteEntryPage`设置为所选`Note`实例，通过访问[ `e.SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)属性。
 
 > [!IMPORTANT]
-> 虽然可以分别设置每个目标对象的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性，但没有必要。 `BindingContext` 是一个特殊属性，继承的所有子项。 因此，当`BindingContext`上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)设置为`Note`实例，所有的子级`ContentPage`具有相同`BindingContext`，可以将绑定到公共属性的`Note`对象。
+> 虽然可以分别设置每个目标对象的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性，但没有必要。 `BindingContext` 是特殊属性，其所有子级都会继承该属性。 因此，当`BindingContext`上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)设置为`Note`实例，所有的子级`ContentPage`具有相同`BindingContext`，可以将绑定到公共属性的`Note`对象。
 
 [ `Editor` ](xref:Xamarin.Forms.Editor)中`NoteEntryPage`然后将绑定到`Text`属性`Note`对象：
 
@@ -539,4 +539,4 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [入门示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/)
 - [Xamarin.Forms API 参考](xref:Xamarin.Forms)
-- [免费自学教程 （视频）](https://university.xamarin.com/self-guided/)
+- [免费自学教程（视频）](https://university.xamarin.com/self-guided/)

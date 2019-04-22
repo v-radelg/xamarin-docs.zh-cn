@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: 3f9e5a7a1e20b8e7d708ff80712e6262bae4baa7
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869582"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:浏览者
@@ -64,7 +64,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 启动模式确定浏览器的启动方式：
 
@@ -76,7 +76,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 `Intent` 将用于请求通过系统常规浏览器打开的 URI。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 ## <a name="system-preferred"></a>系统首选
 
@@ -86,7 +86,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 主应用程序上的标准 `OpenUrl` 用于启动应用程序之外的默认浏览器。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 无论 `BrowserLaunchMode` 如何，将始终启动用户的默认浏览器。
 

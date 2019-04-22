@@ -7,15 +7,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/19/2017
 ms.openlocfilehash: 44e45d38ecd98be6f75c619125f9c14ce707b251
-ms.sourcegitcommit: 9e9340999d569a3db01b4b59a0fcf24b8caa869c
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59509883"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin 持续集成简介
 
-_持续集成是一种软件工程做法在其中自动的生成编译并 （可选） 测试应用程序代码中添加或更改项目的版本控制存储库中的开发人员时。 本文将讨论持续集成的一般概念以及一些可用的选项用于持续集成与 Xamarin 项目。_
+_持续集成是一种软件工程做法在其中自动的生成编译并 （可选） 测试应用程序代码中添加或更改项目的版本控制存储库中的开发人员时。本文将讨论持续集成的一般概念以及一些可用的选项用于持续集成与 Xamarin 项目。_
 
 很常见的开发人员可以并行工作的软件项目。 在某些时候，就必须将所有这些集成到一个工作的并行流 o d e b 最终产品构成。 在软件开发的早期阶段，项目中，这是一个困难，而且有风险的过程结束时执行此集成。
 

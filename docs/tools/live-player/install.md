@@ -7,17 +7,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854751"
 ---
 # <a name="xamarin-live-player-setup"></a>Xamarin Live Player 安装程序
 
 Xamarin Live Player，可以对您的应用程序进行实时编辑，并具有这些更改反映实时设备上。 Xamarin Live Player 应用-无需设置仿真程序或使用电缆将部署中运行你的代码 ！ 本文介绍如何设置 Xamarin Live Player。
 
-![预览功能](~/media/shared/preview.png)
+![预览版功能](~/media/shared/preview.png)
 
 > [!NOTE]
 > 播放机的实时预览仅是在 Visual Studio 2017 中提供的。
@@ -26,7 +26,7 @@ Xamarin Live Player，可以对您的应用程序进行实时编辑，并具有�
 
 Xamarin Live Player 是按提供的适用于 Android 安装直接从[HockeyApp](https://aka.ms/xlp-hockeyapp)。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="2-get-visual-studio-2017"></a>2.获取 Visual Studio 2017
 
@@ -66,7 +66,7 @@ Xamarin Live Player 需要：
 
     如果设备不能连接的配对，则可能会出现错误。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="2-get-visual-studio-for-mac"></a>2.使 Visual Studio for Mac
 
@@ -82,7 +82,7 @@ Xamarin Live Player 需要：
 2. 转到**Visual Studio > 首选项...** ，然后选择**项目 > Xamarin Live Player （预览）** 选项卡。
 3. 刻度线**启用 Xamarin Live Player**:
 
-    [![C为了增加点乐趣选项窗口中的启用 Xamarin Live Player 框](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
+    [![选中选项窗口中的启用 Xamarin Live Player 框](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
 4. 创建或打开 Xamarin 项目 (或[示例](~/tools/live-player/samples.md))。
 5. 选择**Live Player**设备列表中。

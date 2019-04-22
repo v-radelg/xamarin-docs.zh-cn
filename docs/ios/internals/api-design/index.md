@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870360"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 设计
@@ -62,7 +62,7 @@ Xamarin.iOS 的核心，有是一种互操作的引擎，用于桥接与 OBJECTI
 
 - 本机 C# 类型：
 
-  - [`NSString` 将变为 `string`](~/ios/internals/api-design/nsstring.md)
+  - [`NSString` 将成为 `string`](~/ios/internals/api-design/nsstring.md)
   - 打开`int`并`uint`参数应保持到 C# 枚举和 C# 枚举与枚举`[Flags]`属性
   - 而不是以非特定于类型的`NSArray`对象，将公开为强类型化数组的数组。
   - 有关事件和通知，让用户之间进行选择：

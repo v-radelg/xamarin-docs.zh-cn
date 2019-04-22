@@ -8,10 +8,10 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
 ms.openlocfilehash: a00b157940cfde8021b92004fe27a4d52bac5e0c
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855154"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>将 Xamarin.iOS 应用发布到 App Store
@@ -90,7 +90,7 @@ iOS 使用预配配置文件来控制特定应用程序生成的部署方式。 
 
 新的 Xamarin.iOS 项目会自动设置“调试”和“发布”_生成配置_。 若要正确地配置“发布”生成，请执行以下步骤：
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 从 Solution Pad 打开 Info.plist。 选择“手动预配”。 保存并关闭文件。
 2. 在 Solution Pad 中右键单击“项目名称”，选择“选项”并导航至“iOS 生成”选项卡。
@@ -120,7 +120,7 @@ iOS 使用预配配置文件来控制特定应用程序生成的部署方式。 
 
 15. 单击“确定”，保存对项目属性所做的更改。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 请确保 Visual Studio 2019 或 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 在“解决方案资源管理器”中，右键单击“项目名称”，选择“属性”。
@@ -172,7 +172,7 @@ iOS 使用预配配置文件来控制特定应用程序生成的部署方式。 
 
 如果已正确配置生成设置，且 iTunes Connect 正在等待提交，则可生成应用并将其提交至 Apple。
 
-# [<a name="visual-studio-for-mac"></a>Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中，选择“发布”生成配置和一个作为生成目标的设备（不是模拟器）。
 
@@ -231,7 +231,7 @@ iOS 使用预配配置文件来控制特定应用程序生成的部署方式。 
     >
     > 若要了解如何处理此错误，请参阅 [Xamarin 论坛中的这篇帖子](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)。
 
-# [<a name="visual-studio"></a>Visual Studio](#tab/windows)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2017 当前不支持 Visual Studio for Mac 中的“存档以供发布”工作流。

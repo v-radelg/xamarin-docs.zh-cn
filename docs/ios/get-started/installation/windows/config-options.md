@@ -8,15 +8,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
 ms.openlocfilehash: eb6be5cd77dddad553376d18808092c6566021bc
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854673"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>配置 Visual Studio 以进行 iOS 开发
 
-_本文介绍适用于 Visual Studio 的各种 Xamarin.iOS 配置选项。_
+本文介绍适用于 Visual Studio 的各种 Xamarin.iOS 配置选项。
 
 ## <a name="using-matching-xamarinios-versions"></a>使用匹配的 Xamarin.iOS 版本
 

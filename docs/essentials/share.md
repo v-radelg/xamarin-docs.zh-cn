@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58869372"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共享
@@ -61,18 +61,18 @@ public class ShareTest
 
 ## <a name="platform-differences"></a>平台差异
 
-# [<a name="android"></a>Android](#tab/android)
+# <a name="androidtabandroid"></a>[Android](#tab/android)
 
 * `Subject` 属性用于所需的消息主题。
 
-# [<a name="ios"></a>iOS](#tab/ios)
+# <a name="iostabios"></a>[iOS](#tab/ios)
 
 * `Subject` 未使用。
 * `Title` 未使用。
 
-# [<a name="uwp"></a>UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* `Title` 如果未设置，将默认为应用程序名称。
+* 如果未设置，`Title` 将默认为应用程序名称。
 * `Subject` 未使用。
 
 -----

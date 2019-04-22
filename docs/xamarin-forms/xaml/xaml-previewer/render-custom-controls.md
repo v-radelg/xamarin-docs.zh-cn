@@ -8,15 +8,15 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 977c29312e0be8b92f216c224414f9bd03f8562d
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58858967"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>呈现 XAML 预览程序中的自定义控件
 
-_自定义控件有时不起作用的 XAML 预览程序中的预期。 使用本文中的指南以了解预览你的自定义控件的限制。_
+_自定义控件有时不起作用的 XAML 预览程序中的预期。使用本文中的指南以了解预览你的自定义控件的限制。_
 
 ## <a name="basic-preview-mode"></a>基本预览模式
 

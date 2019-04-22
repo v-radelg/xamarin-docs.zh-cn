@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58870412"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章的摘要。 位置和地图
 
-[![Download 示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
 > 此页上的说明表明其中 Xamarin.Forms 已脱离一书中介绍的内容的区域。
@@ -146,7 +146,7 @@ IOS 应用程序中使用`Map`需要在 info.plist 文件中的两个行。
 
 `VisibleRegion` 类型[ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan)，具有四个只读属性的类：
 
-- [`Position`](xref:Xamarin.Forms.Maps.Position) 类型的 [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 类型 [`Position`](xref:Xamarin.Forms.Maps.Position)
 - [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) 类型的`double`，指示该映射显示区域的高度
 - [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) 类型的`double`，指示地图的显示区域宽度
 - [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) 类型的[ `Distance` ](xref:Xamarin.Forms.Maps.Distance)，指示在地图上可见的最大圆形区域的大小

@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
 ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58854308"
 ---
 # <a name="getting-started-with-f35"></a>F # 入门&#35;
@@ -50,8 +50,8 @@ F#教程，也可以创建从**新的解决方案**对话框在 Visual Studio fo
 
 有很多种联机信息用于获取快速了解F#语言，涵盖所有熟练程度。 下面列出了几个我们的建议：
 
--  [F#软件基金会](http://fsharp.org)
--  [Visual F# 开发门户](http://go.microsoft.com/fwlink/?LinkID=234174)
+-  [F# 软件基金会](http://fsharp.org)
+-  [VisualF#开发门户](http://go.microsoft.com/fwlink/?LinkID=234174)
 -  [VisualF#代码库](http://go.microsoft.com/fwlink/?LinkID=124614)
 -  [VisualF#编程数学/统计信息](http://go.microsoft.com/fwlink/?LinkId=235173)
 -  [VisualF#图表](http://go.microsoft.com/fwlink/?LinkId=235176)
