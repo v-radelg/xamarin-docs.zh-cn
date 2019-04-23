@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037431"
+---
 以前，使用数据绑定为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 但是，尽管数据绑定到每个对象都定义了多个数据项的集合，但每个对象只显示一个数据项（`Monkey` 对象的 `Name` 属性）。
 
 在本练习中，你将修改 ListViewTutorial 项目，以便 [`ListView`](xref:Xamarin.Forms.ListView) 在每行中显示多个数据项。

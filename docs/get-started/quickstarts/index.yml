@@ -1,10 +1,4 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: fddfe37d306273f10d8f46531f403719119e325a
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57198283"
 documentType: LandingData
 title: Xamarin.Forms 快速入门
 metadata:
@@ -20,39 +14,39 @@ metadata:
 abstract:
   description: 此页面链接到快速入门，了解如何使用 Xamarin.Forms 创建移动应用程序。 有关完整的 Xamarin.Forms 文档，请参阅 <a href="/xamarin/xamarin-forms/">Xamarin.Forms 文档</a>。
 sections:
-- title: 快速入门
-  items:
-  - type: list
-    style: cards
-    className: cardsB
+  - title: 快速入门
     items:
-    - href: single-page.md
-      html: 了解如何创建单页跨平台 Xamarin.Forms 应用程序，通过该应用程序可输入注释并将其保存到设备存储。
-      image:
-        src: ~/media/icons/i_xaml-forms.svg
-        href: single-page.md
-      title: 创建单页 Xamarin.Forms 应用程序
-    - href: multi-page.md
-      html: 了解如何将存储单条注释的单页应用程序转换为能够存储多条注释的多页应用程序。
-      image:
-        src: https://docs.microsoft.com/media/common/i_class.svg
-        href: multi-page.md
-      title: 在多页 Xamarin.Forms 应用程序中执行导航
-    - href: database.md
-      html: 了解如何将数据存储在本地 SQLite.NET 数据库中。
-      image:
-        src: https://docs.microsoft.com/media/common/i_generic-database.svg
-        href: database.md
-      title: 将数据存储在本地 SQLite.NET 数据库中
-    - href: styling.md
-      html: 了解如何使用 XAML 样式设计跨平台的 Xamarin.Forms 应用程序。
-      image:
-        src: ~/media/icons/i_user-interface.svg
-        href: styling.md
-      title: 设计跨平台的 Xamarin.Forms 应用程序
-    - href: deepdive.md
-      html: 阅读使用 Xamarin.Forms 开发应用程序的基础知识，重点关注快速入门中开发的应用程序。
-      image:
-        src: https://docs.microsoft.com/media/common/i_overview.svg
-        href: deepdive.md
-      title: 快速入门的深入探讨
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: single-page.md
+            html: 了解如何创建单页跨平台 Xamarin.Forms 应用程序，通过该应用程序可输入注释并将其保存到设备存储。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: single-page.md
+            title: 创建单页 Xamarin.Forms 应用程序
+          - href: multi-page.md
+            html: 了解如何将存储单条注释的单页应用程序转换为能够存储多条注释的多页应用程序。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_class.svg'
+              href: multi-page.md
+            title: 在多页 Xamarin.Forms 应用程序中执行导航
+          - href: database.md
+            html: 了解如何将数据存储在本地 SQLite.NET 数据库中。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
+              href: database.md
+            title: 将数据存储在本地 SQLite.NET 数据库中
+          - href: styling.md
+            html: 了解如何使用 XAML 样式设计跨平台的 Xamarin.Forms 应用程序。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: styling.md
+            title: 设计跨平台的 Xamarin.Forms 应用程序
+          - href: deepdive.md
+            html: 阅读使用 Xamarin.Forms 开发应用程序的基础知识，重点关注快速入门中开发的应用程序。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+              href: deepdive.md
+            title: 快速入门的深入探讨

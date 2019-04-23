@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f0c07199a8f839d8dc9d334ae06c96a9b363c36e
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388774"
+---
 REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览器用于检索页面和将数据发送到服务器所使用的谓词相同。 在本练习中，你将创建一个使用 GET 谓词的类，以从 [OpenWeatherMap](https://openweathermap.org/) Web API 检索数据。 此 Web API 可用于检索指定位置的天气预报数据。 使用此 Web API 需要注册 API 密钥。
 
 > [!div class="nextstepaction"]

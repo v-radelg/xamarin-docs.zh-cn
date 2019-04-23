@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a7c2aa15521b89e4930746dc5421ce67fa26b2b9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382488"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 MainPage.xaml 中，修改 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 声明，以便将子元素水平对齐，而不是垂直对齐：

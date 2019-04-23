@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384656"
+---
 Xamarin.Forms 有一个称作警报的模态弹出项，用于警告用户或向用户询问简单的问题。 本练习使用 [`Page`](xref:Xamarin.Forms.Page) 类的 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法，向用户展示警报和询问简单的问题。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384654"
+---
 
 Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指导用户完成任务。 在本练习中，你将使用 [`Page`](xref:Xamarin.Forms.Page) 类中的 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法来显示指导用户完成任务的操作工作表。
 

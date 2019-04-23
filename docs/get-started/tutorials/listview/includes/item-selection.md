@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c33db7de63a585cb6fb47aa1145aa724c9eb790f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037401"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在“MainPage.xaml”中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，以便为 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 和 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件设置处理程序：

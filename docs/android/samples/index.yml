@@ -7,76 +7,70 @@ metadata:
   ms.author: crdun
   ms.date: 02/20/2018
   ms.topic: sample
-  ms.openlocfilehash: 58c8cf15dc196071268172980279cb19f269cc4a
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
-  ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/04/2018
-  ms.locfileid: "30762679"
 abstract:
-  description: 帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin Android 示例应用和代码演示。
+  description: '帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin Android 示例应用和代码演示。'
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/android/all/
-      text: 所有 Xamarin.Android 示例
+      - href: 'https://developer.xamarin.com/samples/android/all/'
+        text: 所有 Xamarin.Android 示例
 sections:
-- title: 
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: null
     items:
-    - href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      html: 此示例演示在 Android Lollipop 中引入的新材料设计 API。
-      image:
-        src: images/material-design.png
-        href: https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/
-      title: 材料设计
-    - href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      html: 此解决方案使用 Xamarin Google Play Services NuGet 演示地图 API 的一些用途。
-      image:
-        src: images/gps.png
-        href: https://developer.xamarin.com/samples/monodroid/GooglePlayServices/
-      title: Google Play Services
-    - href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      html: 此示例演示如何同时使用 ViewPager 和 PagerTabStrip 实现在闪存卡上呈现一系列数学问题的应用。
-      image:
-        src: images/flash.png
-        href: https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/
-      title: 闪存卡页导航
-    - href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      html: 片段是自包含的模块化组件，用于帮助解决可能在不同大小的屏幕上运行的写入应用程序的复杂性。
-      image:
-        src: images/fragments.png
-        href: https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/
-      title: 片段
-    - href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      html: 在 Android 上使用多点触控跟踪的彩色手指绘制应用。
-      image:
-        src: images/fingerpaint.png
-        href: https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/
-      title: 手指绘制
-    - href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      html: 使用此示例可了解如何使用 Android 5.0 Lollipop 引入的新 CardView 和 RecyclerView 小组件。
-      image:
-        src: images/recycler.png
-        href: https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/
-      title: RecyclerViewer
-    - href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      html: 将 ActionBar 替换为 Android 5.0 Lollipop 中的新工具栏的 Android 示例。
-      image:
-        src: images/toolbar.png
-        href: https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/
-      title: Toolbar
-    - href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      html: 如何实现自定义的 Android 穿戴设备表盘。
-      image:
-        src: images/watchface.png
-        href: https://developer.xamarin.com/samples/monodroid/wear/WatchFace/
-      title: WatchFace
-    - href: https://developer.xamarin.com/samples/android/all/
-      html: 一组完整的 Xamarin.Android 示例应用和代码演示。
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/android/all/
-      title: 所有 Xamarin.Android 示例
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/'
+            html: 此示例演示在 Android Lollipop 中引入的新材料设计 API。
+            image:
+              src: images/material-design.png
+              href: 'https://developer.xamarin.com/samples/monodroid/android5.0/GoogleIO2014Master/'
+            title: 材料设计
+          - href: 'https://developer.xamarin.com/samples/monodroid/GooglePlayServices/'
+            html: 此解决方案使用 Xamarin Google Play Services NuGet 演示地图 API 的一些用途。
+            image:
+              src: images/gps.png
+              href: 'https://developer.xamarin.com/samples/monodroid/GooglePlayServices/'
+            title: Google Play Services
+          - href: 'https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/'
+            html: 此示例演示如何同时使用 ViewPager 和 PagerTabStrip 实现在闪存卡上呈现一系列数学问题的应用。
+            image:
+              src: images/flash.png
+              href: 'https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager/'
+            title: 闪存卡页导航
+          - href: 'https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/'
+            html: 片段是自包含的模块化组件，用于帮助解决可能在不同大小的屏幕上运行的写入应用程序的复杂性。
+            image:
+              src: images/fragments.png
+              href: 'https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/'
+            title: 片段
+          - href: 'https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/'
+            html: 在 Android 上使用多点触控跟踪的彩色手指绘制应用。
+            image:
+              src: images/fingerpaint.png
+              href: 'https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/'
+            title: 手指绘制
+          - href: 'https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/'
+            html: 使用此示例可了解如何使用 Android 5.0 Lollipop 引入的新 CardView 和 RecyclerView 小组件。
+            image:
+              src: images/recycler.png
+              href: 'https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/'
+            title: RecyclerViewer
+          - href: 'https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/'
+            html: 将 ActionBar 替换为 Android 5.0 Lollipop 中的新工具栏的 Android 示例。
+            image:
+              src: images/toolbar.png
+              href: 'https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/'
+            title: Toolbar
+          - href: 'https://developer.xamarin.com/samples/monodroid/wear/WatchFace/'
+            html: 如何实现自定义的 Android 穿戴设备表盘。
+            image:
+              src: images/watchface.png
+              href: 'https://developer.xamarin.com/samples/monodroid/wear/WatchFace/'
+            title: WatchFace
+          - href: 'https://developer.xamarin.com/samples/android/all/'
+            html: 一组完整的 Xamarin.Android 示例应用和代码演示。
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/android/all/'
+            title: 所有 Xamarin.Android 示例

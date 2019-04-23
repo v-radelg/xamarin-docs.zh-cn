@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2c6c71f5ed46cc1cae66c5d1f412898825805cc6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187441"
+---
 [`Application`](xref:Xamarin.Forms.Application) 子类具有静态 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典，可用于跨生命周期状态更改存储数据。 该字典使用 `string` 密钥并存储 `object` 值。 字典会自动保存到设备中，并在应用程序重启时重新填充。
 
 > [!IMPORTANT]

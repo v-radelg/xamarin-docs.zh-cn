@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a13426f4213d7c306c0de6922d336d4bb7723d72
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037421"
+---
 使用 `IEnumerable` 类型的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 上一步骤使用 XAML 为 `ListView` 填充了一个字符串数组。 然而，我们通常从在代码隐藏中定义的实现 `IEnumerable` 的集合为 `ListView` 填充数据。
 
 本练习为：修改 ListViewTutorial 项目，以便使用存储在 `List` 中的对象集合中的数据填充 [`ListView`](xref:Xamarin.Forms.ListView)。

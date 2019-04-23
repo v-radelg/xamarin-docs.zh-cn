@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 84c4ed5c2e019750db80a6dd930c818dcc9e401c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896637"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 启动 Visual Studio，新建一个名为 LabelTutorial 的 Xamarin.Forms 空白应用。 确保该应用使用 .NET Standard 作为共享代码机制。

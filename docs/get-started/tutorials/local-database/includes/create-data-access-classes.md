@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 83e28796a2c387927dddd708da3ee6623f800a35
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61192872"
+---
 在本练习中，你将向 LocalDatabaseTutorial 项目添加数据访问类，用于将人员相关数据保存到数据库中。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

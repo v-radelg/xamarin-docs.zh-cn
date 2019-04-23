@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 841dac9486097e27923ccfe582803b4ec50371cf
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896651"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 MainPage.xaml 中，修改 [`Label`](xref:Xamarin.Forms.Label) 声明，显示在一个 `Label` 中使用多种格式的文本。

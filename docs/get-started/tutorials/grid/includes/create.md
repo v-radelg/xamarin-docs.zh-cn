@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 28e10d1a2404d70d5329936e9bfeeea032a6fe99
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61375340"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 启动 Visual Studio，新建空白的名为 GridTutorial 的 Xamarin.Forms 应用。 确保该应用使用 .NET Standard 作为共享代码机制。

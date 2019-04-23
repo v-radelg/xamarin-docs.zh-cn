@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61192876"
+---
 在本练习中，你将创建一个用户界面来使用以前创建的数据访问类。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

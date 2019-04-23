@@ -1,234 +1,227 @@
-items:
 - name: Xamarin.Mac
   href: index.yml
-  items:
-  - name: 开始操作
-    href: get-started/index.md
-    items:
-    - name: 安装
-      href: /visualstudio/mac/installation/
-    - name: 了解 Mac
-      href: get-started/hello-mac.md
-    - name: 相关文档
-      href: get-started/related.md
-    expanded: true
-  - name: 应用程序基础知识
-    href: app-fundamentals/index.md
-    items:
-    - name: 可访问性
-      href: app-fundamentals/accessibility.md
-    - name: 常用模式和惯例
-      href: app-fundamentals/patterns.md
-    - name: Console 应用程序
-      href: app-fundamentals/console.md
-    - name: macOS API
-      href: app-fundamentals/mac-apis.md
-    - name: .xib 文件
-      href: app-fundamentals/xib.md
-    - name: 没有 .storyboard/.xib 的用户界面设计
-      href: app-fundamentals/xibless-ui.md
-    - name: 图像
-      href: app-fundamentals/image.md
-    - name: 数据绑定和键值编码
-      href: app-fundamentals/databinding.md
-    - name: 数据库
-      href: app-fundamentals/databases.md
-    - name: 复制和粘贴
-      href: app-fundamentals/copy-paste.md
-    - name: 沙盒处理 Xamarin.Mac 应用
-      href: app-fundamentals/sandboxing.md
-    - name: 使用 AVAudioPlayer 播放声音
-      href: app-fundamentals/sounds.md
-  - name: 用户界面
-    href: user-interface/index.md
-    items:
-    - name: Windows
-      href: user-interface/window.md
-    - name: 对话框
-      href: user-interface/dialog.md
-    - name: 警报
-      href: user-interface/alert.md
-    - name: 菜单
-      href: user-interface/menu.md
-    - name: 标准控件
-      href: user-interface/standard-controls.md
-    - name: 工具栏
-      href: user-interface/toolbar.md
-    - name: 表视图
-      href: user-interface/table-view.md
-    - name: 大纲视图
-      href: user-interface/outline-view.md
-    - name: 源列表
-      href: user-interface/source-list.md
-    - name: 集合视图
-      href: user-interface/collection-view.md
-    - name: 创建自定义控件
-      href: user-interface/custom-controls.md
-  - name: 平台功能
-    href: platform/index.md
-    items:
-    - name: macOS Mojave 简介
-      href: platform/introduction-to-macos-mojave/index.md
-      items:
-      - name: 入门
-        href: platform/introduction-to-macos-mojave/get-started.md
-    - name: macOS High Sierra 简介
-      href: platform/introduction-to-macos-high-sierra/index.md
-    - name: macOS Sierra 简介
-      href: platform/introduction-to-macos-sierra/index.md
-      items:
-      - name: 生成新式 macOS 应用
-        href: platform/introduction-to-macos-sierra/modern-cocoa-apps.md
-      - name: 其他 macOS Sierra Framework 更改
-        href: platform/introduction-to-macos-sierra/additional-framework-changes.md
-      - name: 疑难解答
-        href: platform/introduction-to-macos-sierra/troubleshooting.md
-    - name: 绑定 Mac 库
-      href: platform/binding.md
-    - name: OpenTK 简介
-      href: platform/opentk.md
-    - name: 情节提要简介
-      href: platform/storyboards/index.md
-      items:
-      - name: 情节提要快速入门
-        href: platform/storyboards/quickstart.md
-      - name: 使用情节提要
-        href: platform/storyboards/indepth.md
-    - name: Xamarin.Mac 扩展支持
-      href: platform/extensions.md
-    - name: 目标 Framework
-      href: platform/target-framework.md
-  - name: 部署和测试
-    href: deploy-test/index.md
-    items:
-    - name: 应用程序图标
-      href: deploy-test/app-icon.md
-    - name: 调试本机故障
-      href: deploy-test/debugging-native-crash.md
-    - name: 链接器
-      href: deploy-test/linker.md
-    - name: 性能
-      href: deploy-test/performance.md
-    - name: 发布到 App Store
-      href: deploy-test/publishing-to-the-app-store/index.md
-      items:
-      - name: 证书和标识符
-        href: deploy-test/publishing-to-the-app-store/certificates-identifiers.md
-      - name: 预配配置文件
-        href: deploy-test/publishing-to-the-app-store/profiles.md
-      - name: Mac 应用配置
-        href: deploy-test/publishing-to-the-app-store/app-configuration.md
-      - name: 使用开发人员 ID 签名
-        href: deploy-test/publishing-to-the-app-store/signing.md
-      - name: Mac App Store 程序包
-        href: deploy-test/publishing-to-the-app-store/bundling.md
-      - name: 上传到 Mac App Store
-        href: deploy-test/publishing-to-the-app-store/uploading.md
-  - name: Apple 平台
-    href: ~/cross-platform/macios/index.md?context=xamarin/mac
-    items:
-    - name: Apple 帐户管理
-      href: ~/cross-platform/macios/apple-account-management.md?context=xamarin/mac
-    - name: Unified API
-      href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
-      items:
-      - name: 概述
-        href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
-      - name: 更新现有应用
-        href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
-      - name: 更新现有 iOS 应用
-        href: ~/cross-platform/macios/unified/updating-ios-apps.md?context=xamarin/mac
-      - name: 更新现有 Mac 应用
-        href: ~/cross-platform/macios/unified/updating-mac-apps.md?context=xamarin/mac
-      - name: 更新现有 Xamarin.Forms 应用
-        href: ~/cross-platform/macios/unified/updating-xamarin-forms-apps.md?context=xamarin/mac
-      - name: 将绑定迁移到 Unified API
-        href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/mac
-      - name: 将代码更新为 Unified API 的提示
-        href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/mac
-    - name: 绑定 Objective-C
-      href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
-      items:
-      - name: 概述
-        href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
-      - name: 绑定 Objective-C 库
-        href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
-      - name: 绑定类型参考
-        href: ~/cross-platform/macios/binding/binding-types-reference.md?context=xamarin/mac
-      - name: 目标 Sharpie
-        href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
-        items:
-        - name: 入门
-          href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
-        - name: 工具和命令
-          href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
-        - name: 功能
-          href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
-          items:
-          - name: ApiDefinitions 和 StructsAndEnums
-            href: ~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md?context=xamarin/mac
-          - name: 绑定本机框架
-            href: ~/cross-platform/macios/binding/objective-sharpie/platform/native-frameworks.md?context=xamarin/mac
-          - name: 验证属性
-            href: ~/cross-platform/macios/binding/objective-sharpie/platform/verify.md?context=xamarin/mac
-        - name: 示例
-          href: ~/cross-platform/macios/binding/objective-sharpie/examples/index.md?context=xamarin/mac
-          items:
-          - name: Xcode
-            href: ~/cross-platform/macios/binding/objective-sharpie/examples/xcode.md?context=xamarin/mac
-          - name: CocoaPod
-            href: ~/cross-platform/macios/binding/objective-sharpie/examples/cocoapod.md?context=xamarin/mac
-          - name: 高级（手动）
-            href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/mac
-        - name: 发布历史记录
-          href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/mac
-      - name: 疑难解答
-        href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/mac
-    - name: 本机引用
-      href: ~/cross-platform/macios/native-references.md?context=xamarin/mac
-    - name: 本机类型
-      href: ~/cross-platform/macios/nativetypes.md?context=xamarin/mac
-    - name: 32 位和 64 位平台注意事项
-      href: ~/cross-platform/macios/32-and-64/index.md?context=xamarin/mac
-      items:
-      - name: 将 Xamarin.Mac 统一应用更新为 64 位
-        href: ~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac
-    - name: 使用跨平台应用中的本机类型
-      href: ~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac
-    - name: HttpClient 和 SSL/TLS 实现选择器
-      href: ~/cross-platform/macios/http-stack.md?context=xamarin/mac
-    - name: 生成优化
-      href: ~/cross-platform/macios/optimizations.md?context=xamarin/mac
-  - name: 高级概念和内部机制
-    href: internals/index.md
-    items:
-    - name: AOT
-      href: internals/aot.md
-    - name: 可用程序集
-      href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/mac
-    - name: Mac 体系结构
-      href: internals/architecture.md
-    - name: Xamarin.Mac 的工作原理
-      href: internals/how-it-works.md
-    - name: 框架
-      href: internals/frameworks.md
-    - name: 注册器
-      href: internals/registrar.md
-  - name: 疑难解答
-    href: troubleshooting/index.md
-    items:
-    - name: 疑难解答指南
-      href: troubleshooting/troubleshooting.md
-    - name: 错误消息 (mmp)
-      href: troubleshooting/mmp-errors.md
-  - name: 发行说明
-    href: https://docs.microsoft.com/xamarin/mac/release-notes/
-  - name: 示例
-    href: samples/index.yml
   expanded: true
-ms.openlocfilehash: eccff6d2397c1b85bf5b17d71d13dbfa27f94277
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267490"
+  items:
+    - name: 开始操作
+      href: get-started/index.md
+      expanded: true
+      items:
+        - name: 安装
+          href: /visualstudio/mac/installation/
+        - name: 了解 Mac
+          href: get-started/hello-mac.md
+        - name: 相关文档
+          href: get-started/related.md
+    - name: 应用程序基础知识
+      href: app-fundamentals/index.md
+      items:
+        - name: 可访问性
+          href: app-fundamentals/accessibility.md
+        - name: 常用模式和惯例
+          href: app-fundamentals/patterns.md
+        - name: Console 应用程序
+          href: app-fundamentals/console.md
+        - name: macOS API
+          href: app-fundamentals/mac-apis.md
+        - name: .xib 文件
+          href: app-fundamentals/xib.md
+        - name: 没有 .storyboard/.xib 的用户界面设计
+          href: app-fundamentals/xibless-ui.md
+        - name: 图像
+          href: app-fundamentals/image.md
+        - name: 数据绑定和键值编码
+          href: app-fundamentals/databinding.md
+        - name: 数据库
+          href: app-fundamentals/databases.md
+        - name: 复制和粘贴
+          href: app-fundamentals/copy-paste.md
+        - name: 沙盒处理 Xamarin.Mac 应用
+          href: app-fundamentals/sandboxing.md
+        - name: 使用 AVAudioPlayer 播放声音
+          href: app-fundamentals/sounds.md
+    - name: 用户界面
+      href: user-interface/index.md
+      items:
+        - name: Windows
+          href: user-interface/window.md
+        - name: 对话框
+          href: user-interface/dialog.md
+        - name: 警报
+          href: user-interface/alert.md
+        - name: 菜单
+          href: user-interface/menu.md
+        - name: 标准控件
+          href: user-interface/standard-controls.md
+        - name: 工具栏
+          href: user-interface/toolbar.md
+        - name: 表视图
+          href: user-interface/table-view.md
+        - name: 大纲视图
+          href: user-interface/outline-view.md
+        - name: 源列表
+          href: user-interface/source-list.md
+        - name: 集合视图
+          href: user-interface/collection-view.md
+        - name: 创建自定义控件
+          href: user-interface/custom-controls.md
+    - name: 平台功能
+      href: platform/index.md
+      items:
+        - name: macOS Mojave 简介
+          href: platform/introduction-to-macos-mojave/index.md
+          items:
+            - name: 入门
+              href: platform/introduction-to-macos-mojave/get-started.md
+        - name: macOS High Sierra 简介
+          href: platform/introduction-to-macos-high-sierra/index.md
+        - name: macOS Sierra 简介
+          href: platform/introduction-to-macos-sierra/index.md
+          items:
+            - name: 生成新式 macOS 应用
+              href: platform/introduction-to-macos-sierra/modern-cocoa-apps.md
+            - name: 其他 macOS Sierra Framework 更改
+              href: platform/introduction-to-macos-sierra/additional-framework-changes.md
+            - name: 疑难解答
+              href: platform/introduction-to-macos-sierra/troubleshooting.md
+        - name: 绑定 Mac 库
+          href: platform/binding.md
+        - name: OpenTK 简介
+          href: platform/opentk.md
+        - name: 情节提要简介
+          href: platform/storyboards/index.md
+          items:
+            - name: 情节提要快速入门
+              href: platform/storyboards/quickstart.md
+            - name: 使用情节提要
+              href: platform/storyboards/indepth.md
+        - name: Xamarin.Mac 扩展支持
+          href: platform/extensions.md
+        - name: 目标 Framework
+          href: platform/target-framework.md
+    - name: 部署和测试
+      href: deploy-test/index.md
+      items:
+        - name: 应用程序图标
+          href: deploy-test/app-icon.md
+        - name: 调试本机故障
+          href: deploy-test/debugging-native-crash.md
+        - name: 链接器
+          href: deploy-test/linker.md
+        - name: 性能
+          href: deploy-test/performance.md
+        - name: 发布到 App Store
+          href: deploy-test/publishing-to-the-app-store/index.md
+          items:
+            - name: 证书和标识符
+              href: deploy-test/publishing-to-the-app-store/certificates-identifiers.md
+            - name: 预配配置文件
+              href: deploy-test/publishing-to-the-app-store/profiles.md
+            - name: Mac 应用配置
+              href: deploy-test/publishing-to-the-app-store/app-configuration.md
+            - name: 使用开发人员 ID 签名
+              href: deploy-test/publishing-to-the-app-store/signing.md
+            - name: Mac App Store 程序包
+              href: deploy-test/publishing-to-the-app-store/bundling.md
+            - name: 上传到 Mac App Store
+              href: deploy-test/publishing-to-the-app-store/uploading.md
+    - name: Apple 平台
+      href: ~/cross-platform/macios/index.md?context=xamarin/mac
+      items:
+        - name: Apple 帐户管理
+          href: ~/cross-platform/macios/apple-account-management.md?context=xamarin/mac
+        - name: Unified API
+          href: ~/cross-platform/macios/unified/index.md?context=xamarin/mac
+          items:
+            - name: 概述
+              href: ~/cross-platform/macios/unified/overview.md?context=xamarin/mac
+            - name: 更新现有应用
+              href: ~/cross-platform/macios/unified/updating-apps.md?context=xamarin/mac
+            - name: 更新现有 iOS 应用
+              href: ~/cross-platform/macios/unified/updating-ios-apps.md?context=xamarin/mac
+            - name: 更新现有 Mac 应用
+              href: ~/cross-platform/macios/unified/updating-mac-apps.md?context=xamarin/mac
+            - name: 更新现有 Xamarin.Forms 应用
+              href: ~/cross-platform/macios/unified/updating-xamarin-forms-apps.md?context=xamarin/mac
+            - name: 将绑定迁移到 Unified API
+              href: ~/cross-platform/macios/unified/update-binding.md?context=xamarin/mac
+            - name: 将代码更新为 Unified API 的提示
+              href: ~/cross-platform/macios/unified/updating-tips.md?context=xamarin/mac
+        - name: 绑定 Objective-C
+          href: ~/cross-platform/macios/binding/index.md?context=xamarin/mac
+          items:
+            - name: 概述
+              href: ~/cross-platform/macios/binding/overview.md?context=xamarin/mac
+            - name: 绑定 Objective-C 库
+              href: ~/cross-platform/macios/binding/objective-c-libraries.md?context=xamarin/mac
+            - name: 绑定类型参考
+              href: ~/cross-platform/macios/binding/binding-types-reference.md?context=xamarin/mac
+            - name: 目标 Sharpie
+              href: ~/cross-platform/macios/binding/objective-sharpie/index.md?context=xamarin/mac
+              items:
+                - name: 入门
+                  href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
+                - name: 工具和命令
+                  href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
+                - name: 功能
+                  href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
+                  items:
+                    - name: ApiDefinitions 和 StructsAndEnums
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md?context=xamarin/mac
+                    - name: 绑定本机框架
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/native-frameworks.md?context=xamarin/mac
+                    - name: 验证属性
+                      href: ~/cross-platform/macios/binding/objective-sharpie/platform/verify.md?context=xamarin/mac
+                - name: 示例
+                  href: ~/cross-platform/macios/binding/objective-sharpie/examples/index.md?context=xamarin/mac
+                  items:
+                    - name: Xcode
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/xcode.md?context=xamarin/mac
+                    - name: CocoaPod
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/cocoapod.md?context=xamarin/mac
+                    - name: 高级（手动）
+                      href: ~/cross-platform/macios/binding/objective-sharpie/examples/advanced.md?context=xamarin/mac
+                - name: 发布历史记录
+                  href: ~/cross-platform/macios/binding/objective-sharpie/releases.md?context=xamarin/mac
+            - name: 疑难解答
+              href: ~/cross-platform/macios/binding/troubleshooting.md?context=xamarin/mac
+        - name: 本机引用
+          href: ~/cross-platform/macios/native-references.md?context=xamarin/mac
+        - name: 本机类型
+          href: ~/cross-platform/macios/nativetypes.md?context=xamarin/mac
+        - name: 32 位和 64 位平台注意事项
+          href: ~/cross-platform/macios/32-and-64/index.md?context=xamarin/mac
+          items:
+            - name: 将 Xamarin.Mac 统一应用更新为 64 位
+              href: ~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac
+        - name: 使用跨平台应用中的本机类型
+          href: ~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac
+        - name: HttpClient 和 SSL/TLS 实现选择器
+          href: ~/cross-platform/macios/http-stack.md?context=xamarin/mac
+        - name: 生成优化
+          href: ~/cross-platform/macios/optimizations.md?context=xamarin/mac
+    - name: 高级概念和内部机制
+      href: internals/index.md
+      items:
+        - name: AOT
+          href: internals/aot.md
+        - name: 可用程序集
+          href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/mac
+        - name: Mac 体系结构
+          href: internals/architecture.md
+        - name: Xamarin.Mac 的工作原理
+          href: internals/how-it-works.md
+        - name: 框架
+          href: internals/frameworks.md
+        - name: 注册器
+          href: internals/registrar.md
+    - name: 疑难解答
+      href: troubleshooting/index.md
+      items:
+        - name: 疑难解答指南
+          href: troubleshooting/troubleshooting.md
+        - name: 错误消息 (mmp)
+          href: troubleshooting/mmp-errors.md
+    - name: 发行说明
+      href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+    - name: 示例
+      href: samples/index.yml

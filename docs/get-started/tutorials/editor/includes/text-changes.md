@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61373341"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在“MainPage.xaml”中，修改 [`Editor`](xref:Xamarin.Forms.Editor) 声明，以便为 [`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件设置处理程序：

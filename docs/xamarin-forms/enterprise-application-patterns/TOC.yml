@@ -1,37 +1,30 @@
-items:
 - name: 企业应用程序模式电子书
   href: index.md
-  items:
-  - name: 前言
-    href: preface.md
-  - name: 简介
-    href: introduction.md
-  - name: MVVM
-    displayName: Model, View, ViewModel
-    href: mvvm.md
-  - name: 依赖关系注入
-    displayName: DI
-    href: dependency-injection.md
-  - name: 松散耦合组件之间的通信
-    href: communicating-between-loosely-coupled-components.md
-  - name: 导航
-    href: navigation.md
-  - name: 验证
-    href: validation.md
-  - name: 配置管理
-    href: configuration-management.md
-  - name: 容器化微服务
-    href: containerized-microservices.md
-  - name: 身份验证和授权
-    href: authentication-and-authorization.md
-  - name: 访问远程数据
-    href: accessing-remote-data.md
-  - name: 单元测试
-    href: unit-testing.md
   expanded: true
-ms.openlocfilehash: bbe9a87553babb954e37138458d1f07b95c1f443
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110425"
+  items:
+    - name: 前言
+      href: preface.md
+    - name: 介绍
+      href: introduction.md
+    - name: MVVM
+      displayName: 'Model, View, ViewModel'
+      href: mvvm.md
+    - name: 依赖关系注入
+      displayName: DI
+      href: dependency-injection.md
+    - name: 松散耦合组件之间的通信
+      href: communicating-between-loosely-coupled-components.md
+    - name: 导航
+      href: navigation.md
+    - name: 验证
+      href: validation.md
+    - name: 配置管理
+      href: configuration-management.md
+    - name: 容器化微服务
+      href: containerized-microservices.md
+    - name: 身份验证和授权
+      href: authentication-and-authorization.md
+    - name: 访问远程数据
+      href: accessing-remote-data.md
+    - name: 单元测试
+      href: unit-testing.md

@@ -1,26 +1,19 @@
-items:
 - name: Docs
   tocHref: /
   topicHref: /
   items:
-  - name: Xamarin
-    tocHref: /xamarin/
-    topicHref: /xamarin/
-    items:
-    - name: Xamarin.Forms
-      tocHref: /xamarin/xamarin-forms/
-      topicHref: /xamarin/xamarin-forms/
+    - name: Xamarin
+      tocHref: /xamarin/
+      topicHref: /xamarin/
       items:
-      - name: 开始操作
-        tocHref: /xamarin/get-started/
-        topicHref: /xamarin/get-started/
-        items:
-        - name: 教程
-          tocHref: /xamarin/get-started/tutorials/
-          topicHref: /xamarin/get-started/tutorials/
-ms.openlocfilehash: a13c7c6c8013338c29fac6ecfeb6ec201c975c1b
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57198603"
+        - name: Xamarin.Forms
+          tocHref: /xamarin/xamarin-forms/
+          topicHref: /xamarin/xamarin-forms/
+          items:
+            - name: 开始操作
+              tocHref: /xamarin/get-started/
+              topicHref: /xamarin/get-started/
+              items:
+                - name: 教程
+                  tocHref: /xamarin/get-started/tutorials/
+                  topicHref: /xamarin/get-started/tutorials/

@@ -7,82 +7,76 @@ metadata:
   ms.author: crdun
   ms.date: 02/26/2018
   ms.topic: sample
-  ms.openlocfilehash: e60722dbd99ab845c63eee2c585905f8d06e5279
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
-  ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/04/2018
-  ms.locfileid: "30768423"
 abstract:
-  description: 帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin 跨平台示例应用和代码演示。
+  description: '帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin 跨平台示例应用和代码演示。'
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/
-      text: 所有 Xamarin 示例
+      - href: 'https://developer.xamarin.com/samples/'
+        text: 所有 Xamarin 示例
 sections:
-- title: 开始操作
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: 开始操作
     items:
-    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      html: 此示例演示了一个待办事项列表应用程序，该应用程序在本地 SQLite 数据库中存储和访问数据，用 Xamarin.Forms 生成。
-      image:
-        src: images/todo.png
-        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      title: 代办事项
-    - href: https://github.com/xamarinhq/app-myshoppe
-      html: 演示销售人员可用于跟踪其销售绩效、管理潜在客户、查看联系人、管理订单和浏览产品目录的应用。
-      image:
-        src: images/myshoppe.png
-        href: https://github.com/xamarinhq/app-myshoppe
-      title: 我的 Shoppe
-    - href: https://github.com/xamarin/app-crm
-      html: 演示销售人员可用于跟踪其销售绩效、管理潜在客户、查看联系人、管理订单和浏览产品目录的应用。
-      image:
-        src: images/crm.png
-        href: https://github.com/xamarin/app-crm
-      title: Xamarin CRM
-- title: Azure 与企业
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+            html: 此示例演示了一个待办事项列表应用程序，该应用程序在本地 SQLite 数据库中存储和访问数据，用 Xamarin.Forms 生成。
+            image:
+              src: images/todo.png
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+            title: 代办事项
+          - href: 'https://github.com/xamarinhq/app-myshoppe'
+            html: 演示销售人员可用于跟踪其销售绩效、管理潜在客户、查看联系人、管理订单和浏览产品目录的应用。
+            image:
+              src: images/myshoppe.png
+              href: 'https://github.com/xamarinhq/app-myshoppe'
+            title: 我的 Shoppe
+          - href: 'https://github.com/xamarin/app-crm'
+            html: 演示销售人员可用于跟踪其销售绩效、管理潜在客户、查看联系人、管理订单和浏览产品目录的应用。
+            image:
+              src: images/crm.png
+              href: 'https://github.com/xamarin/app-crm'
+            title: Xamarin CRM
+  - title: Azure 与企业
     items:
-    - href: https://github.com/xamarinhq/app-acquaint/
-      html: 包含详细信息和编辑屏幕的联系人列表应用。 源代码在 Xamarin.Forms 和 Xamarin 本机实现中都可用。
-      image:
-        src: images/acquaint.jpg
-        href: https://github.com/xamarinhq/app-acquaint
-      title: 熟悉
-    - href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
-      html: 连接 2017 演示，它生成包括 Xamarin 和 Azure 的应用套件。
-      image:
-        src: images/smarthotel360.png
-        href: https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
-      title: SmartHotel360
-    - href: https://github.com/Microsoft/BikeSharing360_MobileApps
-      html: 连接 2016 演示，它生成包括 Xamarin 和 Azure 的应用套件。
-      image:
-        src: images/bikesharing360.png
-        href: https://github.com/Microsoft/BikeSharing360_MobileApps
-      title: BikeSharing360
-    - href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
-      html: 有关在 Azure 上生成使用容器的应用的企业体系结构指南。
-      image:
-        src: images/eshop.png
-        href: https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile
-      title: 电子商店
-- title: 所有示例
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://github.com/xamarinhq/app-acquaint/'
+            html: 包含详细信息和编辑屏幕的联系人列表应用。 源代码在 Xamarin.Forms 和 Xamarin 本机实现中都可用。
+            image:
+              src: images/acquaint.jpg
+              href: 'https://github.com/xamarinhq/app-acquaint'
+            title: 熟悉
+          - href: 'https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps'
+            html: 连接 2017 演示，它生成包括 Xamarin 和 Azure 的应用套件。
+            image:
+              src: images/smarthotel360.png
+              href: 'https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps'
+            title: SmartHotel360
+          - href: 'https://github.com/Microsoft/BikeSharing360_MobileApps'
+            html: 连接 2016 演示，它生成包括 Xamarin 和 Azure 的应用套件。
+            image:
+              src: images/bikesharing360.png
+              href: 'https://github.com/Microsoft/BikeSharing360_MobileApps'
+            title: BikeSharing360
+          - href: 'https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile'
+            html: 有关在 Azure 上生成使用容器的应用的企业体系结构指南。
+            image:
+              src: images/eshop.png
+              href: 'https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile'
+            title: 电子商店
+  - title: 所有示例
     items:
-    - href: https://developer.xamarin.com/samples/
-      html: 一组完整的 Xamarin 跨平台示例应用和代码演示。
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/
-      title: 所有 Xamarin 示例
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/'
+            html: 一组完整的 Xamarin 跨平台示例应用和代码演示。
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/'
+            title: 所有 Xamarin 示例

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8a4fbed10fa52c08a63f3aed306fe5cde21804b4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384404"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 MainPage.xaml 中，修改 [`Image`](xref:Xamarin.Forms.Image) 声明以自定义其外观：

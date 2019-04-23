@@ -1,130 +1,123 @@
-items:
 - name: 工具
   href: index.yml
-  items:
-  - name: iOS 模拟器
-    href: ios-simulator/index.md
-    items:
-    - name: 部署到 iOS 模拟器
-      href: ios-simulator/deploy.md
-    - name: 发行说明
-      href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
-  - name: 检查器
-    href: inspector/index.md
-    items:
-    - name: 安装和要求
-      href: inspector/install.md
-    - name: 检查实时应用程序
-      href: inspector/inspect.md
-    - name: 发行说明
-      href: /xamarin/tools/inspector/release-notes/
-  - name: Live Player
-    href: live-player/index.md
-    items:
-    - name: 安装
-      href: live-player/install.md
-    - name: Xamarin Live Player 应用
-      href: live-player/player.md
-    - name: 疑难解答
-      href: live-player/troubleshooting.md
-  - name: 探查器
-    href: profiler/index.md
-    items:
-    - name: 疑难解答
-      href: profiler/troubleshooting.md
-    - name: 发行说明
-      href: /xamarin/tools/profiler/release-notes/
-  - name: 工作簿
-    href: workbooks/index.md
-    items:
-    - name: 安装和要求
-      href: workbooks/install.md
-    - name: 交互式工作簿
-      href: workbooks/workbook.md
-    - name: 编辑器键盘快捷方式
-      href: workbooks/keybindings.md
-    - name: 示例工作簿
-      href: workbooks/samples/index.md
-      items:
-      - name: TinyRenderer
-        href: workbooks/samples/tinyrenderer.md
-    - name: 疑难解答
-      href: workbooks/troubleshooting/index.md
-      items:
-      - name: 一般已知问题和解决方法
-        href: workbooks/troubleshooting/general.md
-      - name: Android 工作簿的问题
-        href: workbooks/troubleshooting/android.md
-    - name: 集成 SDK
-      href: workbooks/sdk/index.md
-      items:
-      - name: 体系结构概述
-        href: workbooks/sdk/architecture.md
-      - name: 高级集成主题
-        href: workbooks/sdk/integrations.md
-      - name: Xamarin 工作簿中的表示形式
-        href: workbooks/sdk/representations.md
-      - name: 调试集成
-        href: workbooks/sdk/debugging.md
-      - name: 示例集成
-        href: workbooks/sdk/samples.md
-    - name: 发行说明
-      href: /xamarin/tools/inspector/release-notes/
-  - name: .NET 嵌入
-    href: dotnet-embedding/index.md
-    items:
-    - name: 入门
-      href: dotnet-embedding/get-started/index.md
-      items:
-      - name: 安装
-        href: dotnet-embedding/get-started/install/install.md
-      - name: C
-        href: dotnet-embedding/get-started/c.md
-      - name: Java
-        href: dotnet-embedding/get-started/java/index.md
-        items:
-        - name: Android
-          href: dotnet-embedding/get-started/java/android.md
-      - name: Objective-C
-        href: dotnet-embedding/get-started/objective-c/index.md
-        items:
-        - name: iOS
-          href: dotnet-embedding/get-started/objective-c/ios.md
-        - name: macOS
-          href: dotnet-embedding/get-started/objective-c/macos.md
-    - name: Android
-      href: dotnet-embedding/android/index.md
-      items:
-      - name: Android 回调
-        href: dotnet-embedding/android/callbacks.md
-    - name: Objective-C
-      href: dotnet-embedding/objective-c/index.md
-      items:
-      - name: 最佳做法
-        href: dotnet-embedding/objective-c/best-practices.md
-      - name: 平台
-        href: dotnet-embedding/objective-c/platforms.md
-    - name: 限制
-      href: dotnet-embedding/limitations.md
-    - name: 发行说明
-      href: /xamarin/tools/dotnet-embedding/release-notes/
-  - name: 持续集成
-    href: ci/index.md
-    items:
-    - name: 连续集成简介
-      href: ci/intro-to-ci.md
-    - name: 带 Xamarin 的 DevOps
-      href: ci/devops.md
-    - name: 结合使用 App Center 版本和 Xamarin
-      href: /appcenter/build/xamarin/
-    - name: 结合使用 TeamCity 和 Xamarin
-      href: ci/teamcity.md
-    - name: 结合使用 Jenkins 和 Xamarin
-      href: ci/jenkins-walkthrough.md
   expanded: true
-ms.openlocfilehash: d5645302045dd5b7552f79bcddbcb60b43c74d7a
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893044"
+  items:
+    - name: iOS 模拟器
+      href: ios-simulator/index.md
+      items:
+        - name: 部署到 iOS 模拟器
+          href: ios-simulator/deploy.md
+        - name: 发行说明
+          href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
+    - name: 检查器
+      href: inspector/index.md
+      items:
+        - name: 安装和要求
+          href: inspector/install.md
+        - name: 检查实时应用程序
+          href: inspector/inspect.md
+        - name: 发行说明
+          href: /xamarin/tools/inspector/release-notes/
+    - name: Live Player
+      href: live-player/index.md
+      items:
+        - name: 安装
+          href: live-player/install.md
+        - name: Xamarin Live Player 应用
+          href: live-player/player.md
+        - name: 疑难解答
+          href: live-player/troubleshooting.md
+    - name: 探查器
+      href: profiler/index.md
+      items:
+        - name: 疑难解答
+          href: profiler/troubleshooting.md
+        - name: 发行说明
+          href: /xamarin/tools/profiler/release-notes/
+    - name: 工作簿
+      href: workbooks/index.md
+      items:
+        - name: 安装和要求
+          href: workbooks/install.md
+        - name: 交互式工作簿
+          href: workbooks/workbook.md
+        - name: 编辑器键盘快捷方式
+          href: workbooks/keybindings.md
+        - name: 示例工作簿
+          href: workbooks/samples/index.md
+          items:
+            - name: TinyRenderer
+              href: workbooks/samples/tinyrenderer.md
+        - name: 疑难解答
+          href: workbooks/troubleshooting/index.md
+          items:
+            - name: 一般已知问题和解决方法
+              href: workbooks/troubleshooting/general.md
+            - name: Android 工作簿的问题
+              href: workbooks/troubleshooting/android.md
+        - name: 集成 SDK
+          href: workbooks/sdk/index.md
+          items:
+            - name: 体系结构概述
+              href: workbooks/sdk/architecture.md
+            - name: 高级集成主题
+              href: workbooks/sdk/integrations.md
+            - name: Xamarin 工作簿中的表示形式
+              href: workbooks/sdk/representations.md
+            - name: 调试集成
+              href: workbooks/sdk/debugging.md
+            - name: 示例集成
+              href: workbooks/sdk/samples.md
+        - name: 发行说明
+          href: /xamarin/tools/inspector/release-notes/
+    - name: .NET 嵌入
+      href: dotnet-embedding/index.md
+      items:
+        - name: 入门
+          href: dotnet-embedding/get-started/index.md
+          items:
+            - name: 安装
+              href: dotnet-embedding/get-started/install/install.md
+            - name: C
+              href: dotnet-embedding/get-started/c.md
+            - name: Java
+              href: dotnet-embedding/get-started/java/index.md
+              items:
+                - name: Android
+                  href: dotnet-embedding/get-started/java/android.md
+            - name: Objective-C
+              href: dotnet-embedding/get-started/objective-c/index.md
+              items:
+                - name: iOS
+                  href: dotnet-embedding/get-started/objective-c/ios.md
+                - name: macOS
+                  href: dotnet-embedding/get-started/objective-c/macos.md
+        - name: Android
+          href: dotnet-embedding/android/index.md
+          items:
+            - name: Android 回调
+              href: dotnet-embedding/android/callbacks.md
+        - name: Objective-C
+          href: dotnet-embedding/objective-c/index.md
+          items:
+            - name: 最佳做法
+              href: dotnet-embedding/objective-c/best-practices.md
+            - name: 平台
+              href: dotnet-embedding/objective-c/platforms.md
+        - name: 限制
+          href: dotnet-embedding/limitations.md
+        - name: 发行说明
+          href: /xamarin/tools/dotnet-embedding/release-notes/
+    - name: 持续集成
+      href: ci/index.md
+      items:
+        - name: 连续集成简介
+          href: ci/intro-to-ci.md
+        - name: 带 Xamarin 的 DevOps
+          href: ci/devops.md
+        - name: 结合使用 App Center 版本和 Xamarin
+          href: /appcenter/build/xamarin/
+        - name: 结合使用 TeamCity 和 Xamarin
+          href: ci/teamcity.md
+        - name: 结合使用 Jenkins 和 Xamarin
+          href: ci/jenkins-walkthrough.md

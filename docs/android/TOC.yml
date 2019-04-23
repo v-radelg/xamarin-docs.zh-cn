@@ -1,664 +1,657 @@
-items:
 - name: Xamarin.Android
   href: index.yml
-  items:
-  - name: 开始操作
-    href: get-started/index.md
-    items:
-    - name: 设置和安装
-      href: get-started/installation/index.md
-      items:
-      - name: Windows 安装
-        href: get-started/installation/windows.md
-      - name: Android SDK 安装
-        href: get-started/installation/android-sdk.md
-      - name: Android 仿真器设置
-        href: get-started/installation/android-emulator/index.md
-        items:
-        - name: 硬件加速（Hyper-V 和 HAXM）
-          href: get-started/installation/android-emulator/hardware-acceleration.md
-        - name: Device Manager
-          href: get-started/installation/android-emulator/device-manager.md
-        - name: 设备属性
-          href: get-started/installation/android-emulator/device-properties.md
-        - name: 疑难解答
-          href: get-started/installation/android-emulator/troubleshooting.md
-      - name: Android 设备设置
-        href: get-started/installation/set-up-device-for-development.md
-      - name: Microsoft Mobile OpenJDK 预览版
-        href: get-started/installation/openjdk.md
-    - name: 了解 Android
-      href: get-started/hello-android/index.md
-      items:
-      - name: 第 1 部分：快速入门
-        href: get-started/hello-android/hello-android-quickstart.md
-      - name: 第 2 部分：深入了解
-        href: get-started/hello-android/hello-android-deepdive.md
-    - name: 了解 Android 多屏幕
-      href: get-started/hello-android-multiscreen/index.md
-      items:
-      - name: 第 1 部分：快速入门
-        href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-      - name: 第 2 部分：深入了解
-        href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
-    - name: 面向 Java 开发人员的 Xamarin
-      href: get-started/java-developers.md
-    expanded: true
-  - name: 应用程序基础知识
-    href: app-fundamentals/index.md
-    items:
-    - name: 可访问性
-      href: app-fundamentals/accessibility.md
-    - name: Android API 级别
-      href: app-fundamentals/android-api-levels.md
-    - name: Android 资源
-      href: app-fundamentals/resources-in-android/index.md
-      items:
-      - name: Android 资源基础知识
-        href: app-fundamentals/resources-in-android/android-resource-basics.md
-      - name: 默认资源
-        href: app-fundamentals/resources-in-android/default-resources.md
-      - name: 备用资源
-        href: app-fundamentals/resources-in-android/alternate-resources.md
-      - name: 为不同屏幕创建资源
-        href: app-fundamentals/resources-in-android/resources-for-varying-screens.md
-      - name: 应用程序本地化和字符串资源
-        href: app-fundamentals/resources-in-android/application-localization.md
-      - name: 使用 Android 资产
-        href: app-fundamentals/resources-in-android/android-assets.md
-      - name: 字体
-        href: app-fundamentals/resources-in-android/fonts.md
-    - name: 活动生命周期
-      href: app-fundamentals/activity-lifecycle/index.md
-      items:
-      - name: 演练 - 保存活动状态
-        href: app-fundamentals/activity-lifecycle/saving-state.md
-    - name: Android 服务
-      href: app-fundamentals/services/index.md
-      items:
-      - name: 创建服务
-        href: app-fundamentals/services/creating-a-service/index.md
-        items:
-        - name: 绑定服务
-          href: app-fundamentals/services/creating-a-service/bound-services.md
-        - name: 意向服务
-          href: app-fundamentals/services/creating-a-service/intent-services.md
-        - name: 启动的服务
-          href: app-fundamentals/services/creating-a-service/started-services.md
-      - name: 前景服务
-        href: app-fundamentals/services/foreground-services.md
-      - name: 进程外服务
-        href: app-fundamentals/services/out-of-process-services.md
-      - name: 服务通知
-        href: app-fundamentals/services/service-notifications.md
-    - name: 广播接收器
-      href: app-fundamentals/broadcast-receivers.md
-    - name: 本地化
-      href: app-fundamentals/localization.md
-    - name: 权限
-      href: app-fundamentals/permissions.md
-    - name: 图形和动画
-      href: app-fundamentals/graphics-and-animation.md
-    - name: CPU 体系结构
-      href: app-fundamentals/cpu-architectures.md
-    - name: 处理旋转
-      href: app-fundamentals/handling-rotation.md
-    - name: 音频
-      href: app-fundamentals/android-audio.md
-    - name: 通知
-      href: app-fundamentals/notifications/index.md
-      items:
-      - name: 本地通知
-        href: app-fundamentals/notifications/local-notifications.md
-      - name: 本地通知演练
-        href: app-fundamentals/notifications/local-notifications-walkthrough.md
-    - name: 触控
-      href: app-fundamentals/touch/index.md
-      items:
-      - name: Android 中的触控
-        href: app-fundamentals/touch/touch-in-android.md
-      - name: 演练 - 在 Android 中使用触控
-        href: app-fundamentals/touch/android-touch-walkthrough.md
-      - name: 多点触控跟踪
-        href: app-fundamentals/touch/touch-tracking.md
-    - name: HttpClient 堆栈和 SSL/TLS
-      href: app-fundamentals/http-stack.md
-    - name: 编写响应性应用
-      href: app-fundamentals/writing-responsive-apps.md
-  - name: 用户界面
-    href: user-interface/index.md
-    items:
-    - name: Android 设计器
-      href: user-interface/android-designer/index.md
-      items:
-      - name: 使用 Android Designer
-        href: user-interface/android-designer/designer-walkthrough.md
-      - name: 设计器基础知识
-        href: user-interface/android-designer/designer-basics.md
-      - name: 资源限定符和可视化效果选项
-        href: user-interface/android-designer/resource-qualifiers.md
-      - name: 备选布局视图
-        href: user-interface/android-designer/alternative-layout-views.md
-      - name: 材料设计功能
-        href: user-interface/android-designer/material-design-features.md
-    - name: 材料主题
-      href: user-interface/material-theme.md
-    - name: 用户配置文件
-      href: user-interface/user-profile.md
-    - name: 初始屏幕
-      href: user-interface/splash-screen.md
-    - name: 布局
-      href: user-interface/layouts/index.md
-      items:
-      - name: LinearLayout
-        href: user-interface/layouts/linear-layout.md
-      - name: RelativeLayout
-        href: user-interface/layouts/relative-layout.md
-      - name: TableLayout
-        href: user-interface/layouts/table-layout.md
-      - name: RecyclerView
-        href: user-interface/layouts/recycler-view/index.md
-        items:
-        - name: 部件和功能
-          href: user-interface/layouts/recycler-view/parts-and-functionality.md
-        - name: RecyclerView 示例
-          href: user-interface/layouts/recycler-view/recyclerview-example.md
-        - name: 扩展示例
-          href: user-interface/layouts/recycler-view/extending-the-example.md
-      - name: ListView
-        href: user-interface/layouts/list-view/index.md
-        items:
-        - name: ListView 部件和功能
-          href: user-interface/layouts/list-view/parts-and-functionality.md
-        - name: 使用数据填充 ListView
-          href: user-interface/layouts/list-view/populating.md
-        - name: 自定义 ListView 的外观
-          href: user-interface/layouts/list-view/customizing-appearance.md
-        - name: 使用 CursorAdapters
-          href: user-interface/layouts/list-view/cursor-adapters.md
-        - name: 使用 ContentProvider
-          href: user-interface/layouts/list-view/content-provider.md
-        - name: ListView 和活动生命周期
-          href: user-interface/layouts/list-view/activity-lifecycle.md
-      - name: GridView
-        href: user-interface/layouts/grid-view.md
-      - name: GridLayout
-        href: user-interface/layouts/grid-layout.md
-      - name: 选项卡式布局
-        href: user-interface/layouts/tab-layout/index.md
-        items:
-        - name: 使用 ActionBar 的导航选项卡
-          href: user-interface/layouts/tab-layout/with-action-bar.md
-    - name: 控件
-      href: user-interface/controls/index.md
-      items:
-      - name: ActionBar
-        href: user-interface/controls/action-bar.md
-      - name: 自动完成
-        href: user-interface/controls/auto-complete.md
-      - name: 按钮
-        href: user-interface/controls/buttons/index.md
-        items:
-        - name: 单选按钮
-          href: user-interface/controls/buttons/radio-button.md
-        - name: 切换按钮
-          href: user-interface/controls/buttons/toggle-button.md
-        - name: CheckBox
-          href: user-interface/controls/buttons/check-box.md
-        - name: 自定义按钮
-          href: user-interface/controls/buttons/custom-button.md
-      - name: Calendar
-        href: user-interface/controls/calendar.md
-      - name: CardView
-        href: user-interface/controls/card-view.md
-      - name: EditText
-        href: user-interface/controls/edit-text.md
-      - name: 库
-        href: user-interface/controls/gallery.md
-      - name: 导航栏
-        href: user-interface/controls/navigation-bar.md
-      - name: 选取器
-        href: user-interface/controls/pickers/index.md
-        items:
-        - name: 日期选取器
-          href: user-interface/controls/pickers/date-picker.md
-        - name: 时间选取器
-          href: user-interface/controls/pickers/time-picker.md
-      - name: 弹出菜单
-        href: user-interface/controls/popup-menu.md
-      - name: RatingBar
-        href: user-interface/controls/ratingbar.md
-      - name: Spinner
-        href: user-interface/controls/spinner.md
-      - name: 开关
-        href: user-interface/controls/switch.md
-      - name: TextureView
-        href: user-interface/controls/texture-view.md
-      - name: Toolbar
-        href: user-interface/controls/tool-bar/index.md
-        items:
-        - name: 替换操作栏
-          href: user-interface/controls/tool-bar/replacing-the-action-bar.md
-        - name: 添加第二个工具栏
-          href: user-interface/controls/tool-bar/adding-a-second-toolbar.md
-        - name: 工具栏兼容性
-          href: user-interface/controls/tool-bar/toolbar-compatibility.md
-      - name: ViewPager
-        href: user-interface/controls/view-pager/index.md
-        items:
-        - name: 带视图的 ViewPager
-          href: user-interface/controls/view-pager/viewpager-and-views.md
-        - name: 带片段的 ViewPager
-          href: user-interface/controls/view-pager/viewpager-and-fragments.md
-      - name: WebView
-        href: user-interface/controls/web-view.md
-  - name: 平台功能
-    href: platform/index.md
-    items:
-    - name: Android 无线发送
-      href: platform/android-beam.md
-    - name: Android 清单
-      href: platform/android-manifest.md
-    - name: 使用 Xamarin.Android 的文件访问
-      href: platform/files/index.md
-      items:
-      - name: 外部存储
-        href: platform/files/external-storage.md
-    - name: 指纹身份验证
-      href: platform/fingerprint-authentication/index.md
-      items:
-      - name: 入门
-        href: platform/fingerprint-authentication/get-started.md
-      - name: 扫描指纹
-        href: platform/fingerprint-authentication/scanning.md
-      - name: 创建 CryptoObject
-        href: platform/fingerprint-authentication/creating-a-cryptoobject.md
-      - name: 响应身份验证回调
-        href: platform/fingerprint-authentication/fingerprint-authentication-callbacks.md
-      - name: 指南和摘要
-        href: platform/fingerprint-authentication/summary.md
-      - name: 注册指纹
-        href: platform/fingerprint-authentication/enrolling-fingerprint.md
-    - name: Android 作业计划程序
-      href: platform/android-job-scheduler.md
-    - name: Firebase 作业调度程序
-      href: platform/firebase-job-dispatcher.md
-    - name: 片段
-      href: platform/fragments/index.md
-      items:
-      - name: 实现片段
-        href: platform/fragments/implementing-with-fragments/index.md
-        items:
-        - name: 片段演练 - 第 1部分
-          href: platform/fragments/implementing-with-fragments/walkthrough.md
-        - name: 片段演练 - 第 2 部分
-          href: platform/fragments/implementing-with-fragments/walkthrough-landscape.md
-      - name: 创建片段
-        href: platform/fragments/creating-a-fragment.md
-      - name: 管理片段
-        href: platform/fragments/managing-fragments.md
-      - name: 专用片段类
-        href: platform/fragments/specialized-fragment-classes.md
-      - name: 提供向后兼容性
-        href: platform/fragments/providing-backwards-compatibility.md
-    - name: 应用链接
-      href: platform/app-linking.md
-    - name: Android 9 Pie
-      href: platform/pie.md
-    - name: Android 8 Oreo
-      href: platform/oreo.md
-    - name: Android 7 Nougat
-      href: platform/nougat.md
-    - name: Android 6 Marshmallow
-      href: platform/marshmallow.md
-    - name: Android 5 Lollipop
-      href: platform/lollipop.md
-    - name: Android 4.4 KitKat
-      href: platform/kitkat.md
-    - name: Android 4.1 Jelly Bean
-      href: platform/jelly-bean.md
-    - name: Android 4.0 Ice Cream Sandwich
-      href: platform/ice-cream-sandwich.md
-    - name: 内容提供商
-      href: platform/content-providers/index.md
-      items:
-      - name: 工作原理
-        href: platform/content-providers/how-it-works.md
-      - name: 使用联系人 ContentProvider
-        href: platform/content-providers/contacts-contentprovider.md
-      - name: 创建自定义 ContentProvider
-        href: platform/content-providers/custom-contentprovider.md
-    - name: 地图和位置
-      href: platform/maps-and-location/index.md
-      items:
-      - name: 位置
-        href: platform/maps-and-location/location.md
-      - name: 映射
-        href: platform/maps-and-location/maps/index.md
-        items:
-        - name: 地图应用程序
-          href: platform/maps-and-location/maps/maps-application.md
-        - name: 地图 API
-          href: platform/maps-and-location/maps/maps-api.md
-        - name: 获取 Google Maps API 密钥
-          href: platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md
-    - name: 使用 Android.Speech
-      href: platform/speech.md
-    - name: Java 集成
-      href: platform/java-integration/index.md
-      items:
-      - name: Android 可调用包装器
-        href: platform/java-integration/android-callable-wrappers.md
-      - name: 使用 JNI
-        href: platform/java-integration/working-with-jni.md
-      - name: 将 Java 移植到 C#
-        href: platform/java-integration/porting-java-to-csharp.md
-    - name: 绑定 Java 库
-      href: platform/binding-java-library/index.md
-      items:
-      - name: 绑定 .JAR
-        href: platform/binding-java-library/binding-a-jar.md
-      - name: 绑定 .AAR
-        href: platform/binding-java-library/binding-an-aar.md
-      - name: 绑定 Eclipse 库项目
-        href: platform/binding-java-library/binding-a-library-project.md
-      - name: 自定义绑定
-        href: platform/binding-java-library/customizing-bindings/index.md
-        items:
-        - name: Java 绑定元数据
-          href: platform/binding-java-library/customizing-bindings/java-bindings-metadata.md
-        - name: 使用 Javadoc 命名参数
-          href: platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md
-      - name: 绑定疑难解答
-        href: platform/binding-java-library/troubleshooting-bindings.md
-    - name: 使用本机库
-      href: platform/native-libraries.md
-    - name: Renderscript
-      href: platform/renderscript.md
-  - name: Xamarin.Essentials
-    href: ~/essentials/index.md?context=xamarin/android
-    items:
-    - name: 入门
-      href: ~/essentials/get-started.md?context=xamarin/android
-    - name: 加速计
-      href: ~/essentials/accelerometer.md?context=xamarin/android
-    - name: 应用信息
-      href: ~/essentials/app-information.md?context=xamarin/android
-    - name: 气压计
-      href: ~/essentials/barometer.md?context=xamarin/android
-    - name: 电池
-      href: ~/essentials/battery.md?context=xamarin/android
-    - name: 剪贴板
-      href: ~/essentials/clipboard.md?context=xamarin/android
-    - name: 颜色转换器
-      href: ~/essentials/color-converters.md?context=xamarin/android
-    - name: 指南针
-      href: ~/essentials/compass.md?context=xamarin/android
-    - name: 连接性
-      href: ~/essentials/connectivity.md?context=xamarin/android
-    - name: 检测抖动
-      href: ~/essentials/detect-shake.md?context=xamarin/android
-    - name: 设备显示信息
-      href: ~/essentials/device-display.md?context=xamarin/android
-    - name: 设备信息
-      href: ~/essentials/device-information.md?context=xamarin/android
-    - name: 电子邮件
-      href: ~/essentials/email.md?context=xamarin/android
-    - name: 文件系统帮助程序
-      href: ~/essentials/file-system-helpers.md?context=xamarin/android
-    - name: 手电筒
-      href: ~/essentials/flashlight.md?context=xamarin/android
-    - name: 地理编码
-      href: ~/essentials/geocoding.md?context=xamarin/android
-    - name: 地理位置
-      href: ~/essentials/geolocation.md?context=xamarin/android
-    - name: 陀螺仪
-      href: ~/essentials/gyroscope.md?context=xamarin/android
-    - name: 启动器
-      href: ~/essentials/launcher.md?context=xamarin/android
-    - name: 磁力计
-      href: ~/essentials/magnetometer.md?context=xamarin/android
-    - name: 主线程
-      href: ~/essentials/main-thread.md?context=xamarin/android
-    - name: 映射
-      href: ~/essentials/maps.md?context=xamarin/android
-    - name: 打开浏览器
-      href: ~/essentials/open-browser.md?context=xamarin/android
-    - name: 方向传感器
-      href: ~/essentials/orientation-sensor.md?context=xamarin/android
-    - name: 电话拨号程序
-      href: ~/essentials/phone-dialer.md?context=xamarin/android
-    - name: 平台扩展（Size、Rect、Point）
-      href: ~/essentials/platform-extensions.md?context=xamarin/android
-    - name: 首选项
-      href: ~/essentials/preferences.md?context=xamarin/android
-    - name: 安全存储
-      href: ~/essentials/secure-storage.md?context=xamarin/android
-    - name: 共享
-      href: ~/essentials/share.md?context=xamarin/android
-    - name: SMS
-      href: ~/essentials/sms.md?context=xamarin/android
-    - name: 文本到语音转换
-      href: ~/essentials/text-to-speech.md?context=xamarin/android
-    - name: 单位转换器
-      href: ~/essentials/unit-converters.md?context=xamarin/android
-    - name: 版本跟踪
-      href: ~/essentials/version-tracking.md?context=xamarin/android
-    - name: 振动
-      href: ~/essentials/vibrate.md?context=xamarin/android
-    - name: 疑难解答
-      href: ~/essentials/troubleshooting.md?context=xamarin/android
-  - name: 数据和云服务
-    href: data-cloud/index.md
-    items:
-    - name: Azure Active Directory
-      href: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android
-      items:
-      - name: 入门
-        href: ~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android
-        items:
-        - name: 步骤 1。 寄存器
-          href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android
-        - name: 步骤 2。 配置
-          href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/android
-      - name: 访问图形 API
-        href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/android
-    - name: Azure 移动应用
-      href: ~/cross-platform/data-cloud/mobile-apps.md?context=xamarin/android
-    - name: 数据访问
-      href: data-cloud/data-access/index.md
-      items:
-      - name: 介绍
-        href: data-cloud/data-access/introduction.md
-      - name: Configuration
-        href: data-cloud/data-access/configuration.md
-      - name: 使用 SQLite.NET ORM
-        href: data-cloud/data-access/using-sqlite-orm.md
-      - name: 使用 ADO.NET
-        href: data-cloud/data-access/using-adonet.md
-      - name: 在应用中使用数据
-        href: data-cloud/data-access/using-data-in-an-app.md
-    - name: Google 消息传送
-      href: data-cloud/google-messaging/index.md
-      items:
-      - name: Firebase 云消息传送
-        href: data-cloud/google-messaging/firebase-cloud-messaging.md
-      - name: FCM 通知演练
-        href: data-cloud/google-messaging/remote-notifications-with-fcm.md
-      - name: Google Cloud Messaging
-        href: data-cloud/google-messaging/google-cloud-messaging.md
-      - name: GCM 通知演练
-        href: data-cloud/google-messaging/remote-notifications-with-gcm.md
-    - name: Web 服务
-      href: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/android
-  - name: 部署和测试
-    href: deploy-test/index.md
-    items:
-    - name: 应用包大小
-      href: deploy-test/app-package-size.md
-    - name: 构建应用
-      href: deploy-test/building-apps/index.md
-      items:
-      - name: 生成过程
-        href: deploy-test/building-apps/build-process.md
-      - name: 构建特定于 ABI 的 APK
-        href: deploy-test/building-apps/abi-specific-apks.md
-    - name: 命令行仿真器
-      href: deploy-test/command-line-emulator.md
-    - name: 调试
-      href: deploy-test/debugging/index.md
-      items:
-      - name: 在仿真器上调试
-        href: deploy-test/debugging/debug-on-emulator.md
-      - name: 在设备上调试
-        href: deploy-test/debugging/debug-on-device.md
-      - name: Android 调试日志
-        href: deploy-test/debugging/android-debug-log.md
-    - name: 可调试属性
-      href: deploy-test/debuggable-attribute.md
-    - name: 环境
-      href: deploy-test/environment.md
-    - name: GDB
-      href: deploy-test/gdb.md
-    - name: 自定义链接器设置
-      href: deploy-test/linker.md
-    - name: 多核设备
-      href: deploy-test/multicore-devices.md
-    - name: 性能
-      href: deploy-test/performance.md
-    - name: 分析
-      href: deploy-test/profiling.md
-    - name: 准备发布
-      href: deploy-test/release-prep/index.md
-      items:
-      - name: ProGuard
-        href: deploy-test/release-prep/proguard.md
-    - name: 对 APK 进行签名
-      href: deploy-test/signing/index.md
-      items:
-      - name: 对 APK 进行手动签名
-        href: deploy-test/signing/manually-signing-the-apk.md
-      - name: 查找 Keystore 签名
-        href: deploy-test/signing/keystore-signature.md
-    - name: 发布应用
-      href: deploy-test/publishing/index.md
-      items:
-      - name: 发布到 Google Play
-        href: deploy-test/publishing/publishing-to-google-play/index.md
-        items:
-        - name: Google 授权服务
-          href: deploy-test/publishing/publishing-to-google-play/google-licensing-services.md
-        - name: APK 扩展文件
-          href: deploy-test/publishing/publishing-to-google-play/apk-expansion-files.md
-        - name: 手动上传 APK
-          href: deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md
-      - name: 发布到 Amazon
-        href: deploy-test/publishing/publishing-to-amazon.md
-      - name: 独立发布
-        href: deploy-test/publishing/publishing-independently.md
-    - name: 安装为系统应用
-      href: deploy-test/install-system-app.md
-  - name: 高级概念和内部机制
-    href: internals/index.md
-    items:
-    - name: 体系结构
-      href: internals/architecture.md
-    - name: 可用程序集
-      href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
-    - name: API 设计
-      href: internals/api-design.md
-    - name: 垃圾回收
-      href: internals/garbage-collection.md
-    - name: 限制
-      href: internals/limitations.md
-  - name: 疑难解答
-    href: troubleshooting/index.md
-    items:
-    - name: 疑难解答指南
-      href: troubleshooting/troubleshooting.md
-    - name: 常见问题
-      href: troubleshooting/questions/index.md
-      items:
-      - name: 应安装哪些 Android SDK 包？
-        href: troubleshooting/questions/install-android-sdk-packages.md
-      - name: 可以在哪里设置 Android SDK 位置？
-        href: troubleshooting/questions/android-sdk-location.md
-      - name: 如何更新 Java Development Kit (JDK) 版本？
-        href: troubleshooting/questions/update-jdk.md
-      - name: 可否使用 Java Development Kit (JDK) 版本 9？
-        href: troubleshooting/questions/jdk9-errors.md
-      - name: 如何手动安装 Xamarin.Android.Support 包所需的 Android 支持库？
-        href: troubleshooting/questions/install-android-support-library.md
-      - name: 在 Windows 上调试 Android 需要哪些 USB 驱动程序？
-        href: troubleshooting/questions/android-drivers-debug-windows.md
-      - name: 是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
-        href: troubleshooting/questions/connect-android-emulator-mac-windows.md
-      - name: 如何自动化 Android NUnit 测试项目？
-        href: troubleshooting/questions/automate-android-nunit-test.md
-      - name: 为何我的 Android 发布版本无法连接到 Internet？
-        href: troubleshooting/questions/android-internet.md
-      - name: 更智能的 Xamarin Android 支持 v4 / v13 NuGet 包
-        href: troubleshooting/questions/android-support-v4v13-libraries.md
-      - name: 如何解决 PathTooLongException？
-        href: troubleshooting/questions/path-too-long-exception.md
-      - name: 哪个版本的 Xamarin.Android 添加了 Lollipop 支持？
-        href: troubleshooting/questions/xa-lollipop.md
-      - name: Android.Support.v7.AppCompat - 未找到与给定名称匹配的资源：属性“android:actionModeShareDrawable”
-        href: troubleshooting/questions/missing-action-mode-share-drawable.md
-      - name: 调整 Android Designer 的 Java 内存参数
-        href: troubleshooting/questions/android-designer-java-memory.md
-      - name: Android Resource.designer.cs 文件不更新
-        href: troubleshooting/questions/resource-designer-wont-update.md
-    - name: 解决库安装错误
-      href: troubleshooting/resolving-library-installation-errors.md
-    - name: 对 Android SDK 工具的更改
-      href: troubleshooting/sdk-cli-tooling-changes.md
-    - name: Xamarin.Android 错误参考
-      href: troubleshooting/errors.md
-  - name: Wear
-    href: wear/index.md
-    items:
-    - name: 开始操作
-      href: wear/get-started/index.md
-      items:
-      - name: Android 穿戴设备简介
-        href: wear/get-started/intro-to-wear.md
-      - name: 设置和安装
-        href: wear/get-started/installation.md
-      - name: 你好，穿戴设备
-        href: wear/get-started/hello-wear.md
-    - name: 用户界面
-      href: wear/user-interface/index.md
-      items:
-      - name: 控件
-        href: wear/user-interface/controls/index.md
-        items:
-        - name: GridViewPager
-          href: wear/user-interface/controls/gridviewpager.md
-    - name: 平台功能
-      href: wear/platform/index.md
-      items:
-      - name: 创建表盘
-        href: wear/platform/creating-a-watchface.md
-    - name: 屏幕大小
-      href: wear/screen-sizes.md
-    - name: 部署和测试
-      href: wear/deploy-test/index.md
-      items:
-      - name: 在仿真器上进行调试
-        href: wear/deploy-test/debug-on-emulator.md
-      - name: 在穿戴设备上调试
-        href: wear/deploy-test/debug-on-device.md
-      - name: 打包
-        href: wear/deploy-test/packaging.md
-  - name: 发行说明
-    href: https://docs.microsoft.com/xamarin/android/release-notes/
-  - name: 示例
-    href: samples/index.yml
   expanded: true
-ms.openlocfilehash: cf107832a9de0e26af34cda5da52907d6aab4a9c
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893200"
+  items:
+    - name: 开始操作
+      href: get-started/index.md
+      expanded: true
+      items:
+        - name: 设置和安装
+          href: get-started/installation/index.md
+          items:
+            - name: Windows 安装
+              href: get-started/installation/windows.md
+            - name: Android SDK 安装
+              href: get-started/installation/android-sdk.md
+            - name: Android 仿真器设置
+              href: get-started/installation/android-emulator/index.md
+              items:
+                - name: 硬件加速（Hyper-V 和 HAXM）
+                  href: get-started/installation/android-emulator/hardware-acceleration.md
+                - name: Device Manager
+                  href: get-started/installation/android-emulator/device-manager.md
+                - name: 设备属性
+                  href: get-started/installation/android-emulator/device-properties.md
+                - name: 疑难解答
+                  href: get-started/installation/android-emulator/troubleshooting.md
+            - name: Android 设备设置
+              href: get-started/installation/set-up-device-for-development.md
+            - name: Microsoft Mobile OpenJDK 预览版
+              href: get-started/installation/openjdk.md
+        - name: 了解 Android
+          href: get-started/hello-android/index.md
+          items:
+            - name: 第 1 部分：快速入门
+              href: get-started/hello-android/hello-android-quickstart.md
+            - name: 第 2 部分：深入了解
+              href: get-started/hello-android/hello-android-deepdive.md
+        - name: 了解 Android 多屏幕
+          href: get-started/hello-android-multiscreen/index.md
+          items:
+            - name: 第 1 部分：快速入门
+              href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
+            - name: 第 2 部分：深入了解
+              href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
+        - name: 面向 Java 开发人员的 Xamarin
+          href: get-started/java-developers.md
+    - name: 应用程序基础知识
+      href: app-fundamentals/index.md
+      items:
+        - name: 可访问性
+          href: app-fundamentals/accessibility.md
+        - name: Android API 级别
+          href: app-fundamentals/android-api-levels.md
+        - name: Android 资源
+          href: app-fundamentals/resources-in-android/index.md
+          items:
+            - name: Android 资源基础知识
+              href: app-fundamentals/resources-in-android/android-resource-basics.md
+            - name: 默认资源
+              href: app-fundamentals/resources-in-android/default-resources.md
+            - name: 备用资源
+              href: app-fundamentals/resources-in-android/alternate-resources.md
+            - name: 为不同屏幕创建资源
+              href: app-fundamentals/resources-in-android/resources-for-varying-screens.md
+            - name: 应用程序本地化和字符串资源
+              href: app-fundamentals/resources-in-android/application-localization.md
+            - name: 使用 Android 资产
+              href: app-fundamentals/resources-in-android/android-assets.md
+            - name: 字体
+              href: app-fundamentals/resources-in-android/fonts.md
+        - name: 活动生命周期
+          href: app-fundamentals/activity-lifecycle/index.md
+          items:
+            - name: 演练 - 保存活动状态
+              href: app-fundamentals/activity-lifecycle/saving-state.md
+        - name: Android 服务
+          href: app-fundamentals/services/index.md
+          items:
+            - name: 创建服务
+              href: app-fundamentals/services/creating-a-service/index.md
+              items:
+                - name: 绑定服务
+                  href: app-fundamentals/services/creating-a-service/bound-services.md
+                - name: 意向服务
+                  href: app-fundamentals/services/creating-a-service/intent-services.md
+                - name: 启动的服务
+                  href: app-fundamentals/services/creating-a-service/started-services.md
+            - name: 前景服务
+              href: app-fundamentals/services/foreground-services.md
+            - name: 进程外服务
+              href: app-fundamentals/services/out-of-process-services.md
+            - name: 服务通知
+              href: app-fundamentals/services/service-notifications.md
+        - name: 广播接收器
+          href: app-fundamentals/broadcast-receivers.md
+        - name: 本地化
+          href: app-fundamentals/localization.md
+        - name: 权限
+          href: app-fundamentals/permissions.md
+        - name: 图形和动画
+          href: app-fundamentals/graphics-and-animation.md
+        - name: CPU 体系结构
+          href: app-fundamentals/cpu-architectures.md
+        - name: 处理旋转
+          href: app-fundamentals/handling-rotation.md
+        - name: 音频
+          href: app-fundamentals/android-audio.md
+        - name: 通知
+          href: app-fundamentals/notifications/index.md
+          items:
+            - name: 本地通知
+              href: app-fundamentals/notifications/local-notifications.md
+            - name: 本地通知演练
+              href: app-fundamentals/notifications/local-notifications-walkthrough.md
+        - name: 触控
+          href: app-fundamentals/touch/index.md
+          items:
+            - name: Android 中的触控
+              href: app-fundamentals/touch/touch-in-android.md
+            - name: 演练 - 在 Android 中使用触控
+              href: app-fundamentals/touch/android-touch-walkthrough.md
+            - name: 多点触控跟踪
+              href: app-fundamentals/touch/touch-tracking.md
+        - name: HttpClient 堆栈和 SSL/TLS
+          href: app-fundamentals/http-stack.md
+        - name: 编写响应性应用
+          href: app-fundamentals/writing-responsive-apps.md
+    - name: 用户界面
+      href: user-interface/index.md
+      items:
+        - name: Android 设计器
+          href: user-interface/android-designer/index.md
+          items:
+            - name: 使用 Android Designer
+              href: user-interface/android-designer/designer-walkthrough.md
+            - name: 设计器基础知识
+              href: user-interface/android-designer/designer-basics.md
+            - name: 资源限定符和可视化效果选项
+              href: user-interface/android-designer/resource-qualifiers.md
+            - name: 备选布局视图
+              href: user-interface/android-designer/alternative-layout-views.md
+            - name: 材料设计功能
+              href: user-interface/android-designer/material-design-features.md
+        - name: 材料主题
+          href: user-interface/material-theme.md
+        - name: 用户配置文件
+          href: user-interface/user-profile.md
+        - name: 初始屏幕
+          href: user-interface/splash-screen.md
+        - name: 布局
+          href: user-interface/layouts/index.md
+          items:
+            - name: LinearLayout
+              href: user-interface/layouts/linear-layout.md
+            - name: RelativeLayout
+              href: user-interface/layouts/relative-layout.md
+            - name: TableLayout
+              href: user-interface/layouts/table-layout.md
+            - name: RecyclerView
+              href: user-interface/layouts/recycler-view/index.md
+              items:
+                - name: 部件和功能
+                  href: user-interface/layouts/recycler-view/parts-and-functionality.md
+                - name: RecyclerView 示例
+                  href: user-interface/layouts/recycler-view/recyclerview-example.md
+                - name: 扩展示例
+                  href: user-interface/layouts/recycler-view/extending-the-example.md
+            - name: ListView
+              href: user-interface/layouts/list-view/index.md
+              items:
+                - name: ListView 部件和功能
+                  href: user-interface/layouts/list-view/parts-and-functionality.md
+                - name: 使用数据填充 ListView
+                  href: user-interface/layouts/list-view/populating.md
+                - name: 自定义 ListView 的外观
+                  href: user-interface/layouts/list-view/customizing-appearance.md
+                - name: 使用 CursorAdapters
+                  href: user-interface/layouts/list-view/cursor-adapters.md
+                - name: 使用 ContentProvider
+                  href: user-interface/layouts/list-view/content-provider.md
+                - name: ListView 和活动生命周期
+                  href: user-interface/layouts/list-view/activity-lifecycle.md
+            - name: GridView
+              href: user-interface/layouts/grid-view.md
+            - name: GridLayout
+              href: user-interface/layouts/grid-layout.md
+            - name: 选项卡式布局
+              href: user-interface/layouts/tab-layout/index.md
+              items:
+                - name: 使用 ActionBar 的导航选项卡
+                  href: user-interface/layouts/tab-layout/with-action-bar.md
+        - name: 控件
+          href: user-interface/controls/index.md
+          items:
+            - name: ActionBar
+              href: user-interface/controls/action-bar.md
+            - name: 自动完成
+              href: user-interface/controls/auto-complete.md
+            - name: 按钮
+              href: user-interface/controls/buttons/index.md
+              items:
+                - name: 单选按钮
+                  href: user-interface/controls/buttons/radio-button.md
+                - name: 切换按钮
+                  href: user-interface/controls/buttons/toggle-button.md
+                - name: CheckBox
+                  href: user-interface/controls/buttons/check-box.md
+                - name: 自定义按钮
+                  href: user-interface/controls/buttons/custom-button.md
+            - name: Calendar
+              href: user-interface/controls/calendar.md
+            - name: CardView
+              href: user-interface/controls/card-view.md
+            - name: EditText
+              href: user-interface/controls/edit-text.md
+            - name: 库
+              href: user-interface/controls/gallery.md
+            - name: 导航栏
+              href: user-interface/controls/navigation-bar.md
+            - name: 选取器
+              href: user-interface/controls/pickers/index.md
+              items:
+                - name: 日期选取器
+                  href: user-interface/controls/pickers/date-picker.md
+                - name: 时间选取器
+                  href: user-interface/controls/pickers/time-picker.md
+            - name: 弹出菜单
+              href: user-interface/controls/popup-menu.md
+            - name: RatingBar
+              href: user-interface/controls/ratingbar.md
+            - name: Spinner
+              href: user-interface/controls/spinner.md
+            - name: 开关
+              href: user-interface/controls/switch.md
+            - name: TextureView
+              href: user-interface/controls/texture-view.md
+            - name: Toolbar
+              href: user-interface/controls/tool-bar/index.md
+              items:
+                - name: 替换操作栏
+                  href: user-interface/controls/tool-bar/replacing-the-action-bar.md
+                - name: 添加第二个工具栏
+                  href: user-interface/controls/tool-bar/adding-a-second-toolbar.md
+                - name: 工具栏兼容性
+                  href: user-interface/controls/tool-bar/toolbar-compatibility.md
+            - name: ViewPager
+              href: user-interface/controls/view-pager/index.md
+              items:
+                - name: 带视图的 ViewPager
+                  href: user-interface/controls/view-pager/viewpager-and-views.md
+                - name: 带片段的 ViewPager
+                  href: user-interface/controls/view-pager/viewpager-and-fragments.md
+            - name: WebView
+              href: user-interface/controls/web-view.md
+    - name: 平台功能
+      href: platform/index.md
+      items:
+        - name: Android 无线发送
+          href: platform/android-beam.md
+        - name: Android 清单
+          href: platform/android-manifest.md
+        - name: 使用 Xamarin.Android 的文件访问
+          href: platform/files/index.md
+          items:
+            - name: 外部存储
+              href: platform/files/external-storage.md
+        - name: 指纹身份验证
+          href: platform/fingerprint-authentication/index.md
+          items:
+            - name: 入门
+              href: platform/fingerprint-authentication/get-started.md
+            - name: 扫描指纹
+              href: platform/fingerprint-authentication/scanning.md
+            - name: 创建 CryptoObject
+              href: platform/fingerprint-authentication/creating-a-cryptoobject.md
+            - name: 响应身份验证回调
+              href: platform/fingerprint-authentication/fingerprint-authentication-callbacks.md
+            - name: 指南和摘要
+              href: platform/fingerprint-authentication/summary.md
+            - name: 注册指纹
+              href: platform/fingerprint-authentication/enrolling-fingerprint.md
+        - name: Android 作业计划程序
+          href: platform/android-job-scheduler.md
+        - name: Firebase 作业调度程序
+          href: platform/firebase-job-dispatcher.md
+        - name: 片段
+          href: platform/fragments/index.md
+          items:
+            - name: 实现片段
+              href: platform/fragments/implementing-with-fragments/index.md
+              items:
+                - name: 片段演练 - 第 1部分
+                  href: platform/fragments/implementing-with-fragments/walkthrough.md
+                - name: 片段演练 - 第 2 部分
+                  href: platform/fragments/implementing-with-fragments/walkthrough-landscape.md
+            - name: 创建片段
+              href: platform/fragments/creating-a-fragment.md
+            - name: 管理片段
+              href: platform/fragments/managing-fragments.md
+            - name: 专用片段类
+              href: platform/fragments/specialized-fragment-classes.md
+            - name: 提供向后兼容性
+              href: platform/fragments/providing-backwards-compatibility.md
+        - name: 应用链接
+          href: platform/app-linking.md
+        - name: Android 9 Pie
+          href: platform/pie.md
+        - name: Android 8 Oreo
+          href: platform/oreo.md
+        - name: Android 7 Nougat
+          href: platform/nougat.md
+        - name: Android 6 Marshmallow
+          href: platform/marshmallow.md
+        - name: Android 5 Lollipop
+          href: platform/lollipop.md
+        - name: Android 4.4 KitKat
+          href: platform/kitkat.md
+        - name: Android 4.1 Jelly Bean
+          href: platform/jelly-bean.md
+        - name: Android 4.0 Ice Cream Sandwich
+          href: platform/ice-cream-sandwich.md
+        - name: 内容提供商
+          href: platform/content-providers/index.md
+          items:
+            - name: 工作原理
+              href: platform/content-providers/how-it-works.md
+            - name: 使用联系人 ContentProvider
+              href: platform/content-providers/contacts-contentprovider.md
+            - name: 创建自定义 ContentProvider
+              href: platform/content-providers/custom-contentprovider.md
+        - name: 地图和位置
+          href: platform/maps-and-location/index.md
+          items:
+            - name: 位置
+              href: platform/maps-and-location/location.md
+            - name: 映射
+              href: platform/maps-and-location/maps/index.md
+              items:
+                - name: 地图应用程序
+                  href: platform/maps-and-location/maps/maps-application.md
+                - name: 地图 API
+                  href: platform/maps-and-location/maps/maps-api.md
+                - name: 获取 Google Maps API 密钥
+                  href: platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md
+        - name: 使用 Android.Speech
+          href: platform/speech.md
+        - name: Java 集成
+          href: platform/java-integration/index.md
+          items:
+            - name: Android 可调用包装器
+              href: platform/java-integration/android-callable-wrappers.md
+            - name: 使用 JNI
+              href: platform/java-integration/working-with-jni.md
+            - name: '将 Java 移植到 C#'
+              href: platform/java-integration/porting-java-to-csharp.md
+        - name: 绑定 Java 库
+          href: platform/binding-java-library/index.md
+          items:
+            - name: 绑定 .JAR
+              href: platform/binding-java-library/binding-a-jar.md
+            - name: 绑定 .AAR
+              href: platform/binding-java-library/binding-an-aar.md
+            - name: 绑定 Eclipse 库项目
+              href: platform/binding-java-library/binding-a-library-project.md
+            - name: 自定义绑定
+              href: platform/binding-java-library/customizing-bindings/index.md
+              items:
+                - name: Java 绑定元数据
+                  href: platform/binding-java-library/customizing-bindings/java-bindings-metadata.md
+                - name: 使用 Javadoc 命名参数
+                  href: platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md
+            - name: 绑定疑难解答
+              href: platform/binding-java-library/troubleshooting-bindings.md
+        - name: 使用本机库
+          href: platform/native-libraries.md
+        - name: Renderscript
+          href: platform/renderscript.md
+    - name: Xamarin.Essentials
+      href: ~/essentials/index.md?context=xamarin/android
+      items:
+        - name: 入门
+          href: ~/essentials/get-started.md?context=xamarin/android
+        - name: 加速计
+          href: ~/essentials/accelerometer.md?context=xamarin/android
+        - name: 应用信息
+          href: ~/essentials/app-information.md?context=xamarin/android
+        - name: 气压计
+          href: ~/essentials/barometer.md?context=xamarin/android
+        - name: 电池
+          href: ~/essentials/battery.md?context=xamarin/android
+        - name: 剪贴板
+          href: ~/essentials/clipboard.md?context=xamarin/android
+        - name: 颜色转换器
+          href: ~/essentials/color-converters.md?context=xamarin/android
+        - name: 指南针
+          href: ~/essentials/compass.md?context=xamarin/android
+        - name: 连接性
+          href: ~/essentials/connectivity.md?context=xamarin/android
+        - name: 检测抖动
+          href: ~/essentials/detect-shake.md?context=xamarin/android
+        - name: 设备显示信息
+          href: ~/essentials/device-display.md?context=xamarin/android
+        - name: 设备信息
+          href: ~/essentials/device-information.md?context=xamarin/android
+        - name: 电子邮件
+          href: ~/essentials/email.md?context=xamarin/android
+        - name: 文件系统帮助程序
+          href: ~/essentials/file-system-helpers.md?context=xamarin/android
+        - name: 手电筒
+          href: ~/essentials/flashlight.md?context=xamarin/android
+        - name: 地理编码
+          href: ~/essentials/geocoding.md?context=xamarin/android
+        - name: 地理位置
+          href: ~/essentials/geolocation.md?context=xamarin/android
+        - name: 陀螺仪
+          href: ~/essentials/gyroscope.md?context=xamarin/android
+        - name: 启动器
+          href: ~/essentials/launcher.md?context=xamarin/android
+        - name: 磁力计
+          href: ~/essentials/magnetometer.md?context=xamarin/android
+        - name: 主线程
+          href: ~/essentials/main-thread.md?context=xamarin/android
+        - name: 映射
+          href: ~/essentials/maps.md?context=xamarin/android
+        - name: 打开浏览器
+          href: ~/essentials/open-browser.md?context=xamarin/android
+        - name: 方向传感器
+          href: ~/essentials/orientation-sensor.md?context=xamarin/android
+        - name: 电话拨号程序
+          href: ~/essentials/phone-dialer.md?context=xamarin/android
+        - name: 平台扩展（Size、Rect、Point）
+          href: ~/essentials/platform-extensions.md?context=xamarin/android
+        - name: 首选项
+          href: ~/essentials/preferences.md?context=xamarin/android
+        - name: 安全存储
+          href: ~/essentials/secure-storage.md?context=xamarin/android
+        - name: 共享
+          href: ~/essentials/share.md?context=xamarin/android
+        - name: SMS
+          href: ~/essentials/sms.md?context=xamarin/android
+        - name: 文本到语音转换
+          href: ~/essentials/text-to-speech.md?context=xamarin/android
+        - name: 单位转换器
+          href: ~/essentials/unit-converters.md?context=xamarin/android
+        - name: 版本跟踪
+          href: ~/essentials/version-tracking.md?context=xamarin/android
+        - name: 振动
+          href: ~/essentials/vibrate.md?context=xamarin/android
+        - name: 疑难解答
+          href: ~/essentials/troubleshooting.md?context=xamarin/android
+    - name: 数据和云服务
+      href: data-cloud/index.md
+      items:
+        - name: Azure Active Directory
+          href: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android
+          items:
+            - name: 入门
+              href: ~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android
+              items:
+                - name: 步骤 1。 寄存器
+                  href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android
+                - name: 步骤 2。 配置
+                  href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/android
+            - name: 访问图形 API
+              href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/android
+        - name: Azure 移动应用
+          href: ~/cross-platform/data-cloud/mobile-apps.md?context=xamarin/android
+        - name: 数据访问
+          href: data-cloud/data-access/index.md
+          items:
+            - name: 介绍
+              href: data-cloud/data-access/introduction.md
+            - name: Configuration
+              href: data-cloud/data-access/configuration.md
+            - name: 使用 SQLite.NET ORM
+              href: data-cloud/data-access/using-sqlite-orm.md
+            - name: 使用 ADO.NET
+              href: data-cloud/data-access/using-adonet.md
+            - name: 在应用中使用数据
+              href: data-cloud/data-access/using-data-in-an-app.md
+        - name: Google 消息传送
+          href: data-cloud/google-messaging/index.md
+          items:
+            - name: Firebase 云消息传送
+              href: data-cloud/google-messaging/firebase-cloud-messaging.md
+            - name: FCM 通知演练
+              href: data-cloud/google-messaging/remote-notifications-with-fcm.md
+            - name: Google Cloud Messaging
+              href: data-cloud/google-messaging/google-cloud-messaging.md
+            - name: GCM 通知演练
+              href: data-cloud/google-messaging/remote-notifications-with-gcm.md
+        - name: Web 服务
+          href: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/android
+    - name: 部署和测试
+      href: deploy-test/index.md
+      items:
+        - name: 应用包大小
+          href: deploy-test/app-package-size.md
+        - name: 构建应用
+          href: deploy-test/building-apps/index.md
+          items:
+            - name: 生成过程
+              href: deploy-test/building-apps/build-process.md
+            - name: 构建特定于 ABI 的 APK
+              href: deploy-test/building-apps/abi-specific-apks.md
+        - name: 命令行仿真器
+          href: deploy-test/command-line-emulator.md
+        - name: 调试
+          href: deploy-test/debugging/index.md
+          items:
+            - name: 在仿真器上调试
+              href: deploy-test/debugging/debug-on-emulator.md
+            - name: 在设备上调试
+              href: deploy-test/debugging/debug-on-device.md
+            - name: Android 调试日志
+              href: deploy-test/debugging/android-debug-log.md
+        - name: 可调试属性
+          href: deploy-test/debuggable-attribute.md
+        - name: 环境
+          href: deploy-test/environment.md
+        - name: GDB
+          href: deploy-test/gdb.md
+        - name: 自定义链接器设置
+          href: deploy-test/linker.md
+        - name: 多核设备
+          href: deploy-test/multicore-devices.md
+        - name: 性能
+          href: deploy-test/performance.md
+        - name: 分析
+          href: deploy-test/profiling.md
+        - name: 准备发布
+          href: deploy-test/release-prep/index.md
+          items:
+            - name: ProGuard
+              href: deploy-test/release-prep/proguard.md
+        - name: 对 APK 进行签名
+          href: deploy-test/signing/index.md
+          items:
+            - name: 对 APK 进行手动签名
+              href: deploy-test/signing/manually-signing-the-apk.md
+            - name: 查找 Keystore 签名
+              href: deploy-test/signing/keystore-signature.md
+        - name: 发布应用
+          href: deploy-test/publishing/index.md
+          items:
+            - name: 发布到 Google Play
+              href: deploy-test/publishing/publishing-to-google-play/index.md
+              items:
+                - name: Google 授权服务
+                  href: deploy-test/publishing/publishing-to-google-play/google-licensing-services.md
+                - name: APK 扩展文件
+                  href: deploy-test/publishing/publishing-to-google-play/apk-expansion-files.md
+                - name: 手动上传 APK
+                  href: deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md
+            - name: 发布到 Amazon
+              href: deploy-test/publishing/publishing-to-amazon.md
+            - name: 独立发布
+              href: deploy-test/publishing/publishing-independently.md
+        - name: 安装为系统应用
+          href: deploy-test/install-system-app.md
+    - name: 高级概念和内部机制
+      href: internals/index.md
+      items:
+        - name: 体系结构
+          href: internals/architecture.md
+        - name: 可用程序集
+          href: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
+        - name: API 设计
+          href: internals/api-design.md
+        - name: 垃圾回收
+          href: internals/garbage-collection.md
+        - name: 限制
+          href: internals/limitations.md
+    - name: 疑难解答
+      href: troubleshooting/index.md
+      items:
+        - name: 疑难解答指南
+          href: troubleshooting/troubleshooting.md
+        - name: 常见问题
+          href: troubleshooting/questions/index.md
+          items:
+            - name: 应安装哪些 Android SDK 包？
+              href: troubleshooting/questions/install-android-sdk-packages.md
+            - name: 可以在哪里设置 Android SDK 位置？
+              href: troubleshooting/questions/android-sdk-location.md
+            - name: 如何更新 Java Development Kit (JDK) 版本？
+              href: troubleshooting/questions/update-jdk.md
+            - name: 可否使用 Java Development Kit (JDK) 版本 9？
+              href: troubleshooting/questions/jdk9-errors.md
+            - name: 如何手动安装 Xamarin.Android.Support 包所需的 Android 支持库？
+              href: troubleshooting/questions/install-android-support-library.md
+            - name: 在 Windows 上调试 Android 需要哪些 USB 驱动程序？
+              href: troubleshooting/questions/android-drivers-debug-windows.md
+            - name: 是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
+              href: troubleshooting/questions/connect-android-emulator-mac-windows.md
+            - name: 如何自动化 Android NUnit 测试项目？
+              href: troubleshooting/questions/automate-android-nunit-test.md
+            - name: 为何我的 Android 发布版本无法连接到 Internet？
+              href: troubleshooting/questions/android-internet.md
+            - name: 更智能的 Xamarin Android 支持 v4 / v13 NuGet 包
+              href: troubleshooting/questions/android-support-v4v13-libraries.md
+            - name: 如何解决 PathTooLongException？
+              href: troubleshooting/questions/path-too-long-exception.md
+            - name: 哪个版本的 Xamarin.Android 添加了 Lollipop 支持？
+              href: troubleshooting/questions/xa-lollipop.md
+            - name: 'Android.Support.v7.AppCompat - 未找到与给定名称匹配的资源：属性“android:actionModeShareDrawable”'
+              href: troubleshooting/questions/missing-action-mode-share-drawable.md
+            - name: 调整 Android Designer 的 Java 内存参数
+              href: troubleshooting/questions/android-designer-java-memory.md
+            - name: Android Resource.designer.cs 文件不更新
+              href: troubleshooting/questions/resource-designer-wont-update.md
+        - name: 解决库安装错误
+          href: troubleshooting/resolving-library-installation-errors.md
+        - name: 对 Android SDK 工具的更改
+          href: troubleshooting/sdk-cli-tooling-changes.md
+        - name: Xamarin.Android 错误参考
+          href: troubleshooting/errors.md
+    - name: Wear
+      href: wear/index.md
+      items:
+        - name: 开始操作
+          href: wear/get-started/index.md
+          items:
+            - name: Android 穿戴设备简介
+              href: wear/get-started/intro-to-wear.md
+            - name: 设置和安装
+              href: wear/get-started/installation.md
+            - name: 你好，穿戴设备
+              href: wear/get-started/hello-wear.md
+        - name: 用户界面
+          href: wear/user-interface/index.md
+          items:
+            - name: 控件
+              href: wear/user-interface/controls/index.md
+              items:
+                - name: GridViewPager
+                  href: wear/user-interface/controls/gridviewpager.md
+        - name: 平台功能
+          href: wear/platform/index.md
+          items:
+            - name: 创建表盘
+              href: wear/platform/creating-a-watchface.md
+        - name: 屏幕大小
+          href: wear/screen-sizes.md
+        - name: 部署和测试
+          href: wear/deploy-test/index.md
+          items:
+            - name: 在仿真器上进行调试
+              href: wear/deploy-test/debug-on-emulator.md
+            - name: 在穿戴设备上调试
+              href: wear/deploy-test/debug-on-device.md
+            - name: 打包
+              href: wear/deploy-test/packaging.md
+    - name: 发行说明
+      href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
+    - name: 示例
+      href: samples/index.yml

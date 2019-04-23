@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61375338"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在“MainPage.xaml”中，修改 [`Grid`](xref:Xamarin.Forms.Grid) 声明以定义列和行，并放置跨越列和行的内容：

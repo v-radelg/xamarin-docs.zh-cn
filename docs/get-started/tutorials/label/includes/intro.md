@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fac79ed98868c6c6c500ac60d71b89ee64090c72
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896652"
+---
 在本教程中，你将了解：
 
 > [!div class="checklist"]

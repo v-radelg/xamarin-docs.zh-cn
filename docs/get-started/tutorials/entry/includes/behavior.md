@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61343383"
+---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. 在 MainPage.xaml 中，修改 [`Entry`](xref:Xamarin.Forms.Entry) 声明以自定义其行为：

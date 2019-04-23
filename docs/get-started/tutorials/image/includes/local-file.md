@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384408"
+---
 图像文件可以添加到平台项目中，并从 Xamarin.Forms 共享代码中引用。 当图像特定于平台时，例如在不同平台上使用不同分辨率或稍微不同的设计时，需要这种分发图像的方法。
 
 在本练习中，你将修改 ImageTutorial 解决方案以显示本地图像，而不是从 URI 下载的图像。 本地图像是 Xamarin 徽标，应通过单击下面的按钮下载。

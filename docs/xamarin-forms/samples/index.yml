@@ -7,64 +7,58 @@ metadata:
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: sample
-  ms.openlocfilehash: 8da516babffc33706b6f81e3826d9a432a72cd16
-  ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-  ms.translationtype: HT
-  ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/08/2018
-  ms.locfileid: "35243309"
 abstract:
   description: 帮助你开始和了解 Xamarin.Forms 中的概念的 Xamarin.Forms 示例应用和代码演示。
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      text: 所有 Xamarin.Forms 示例
+      - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+        text: 所有 Xamarin.Forms 示例
 sections:
-- title: 
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: null
     items:
-    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      html: 此示例演示了一个待办事项列表应用程序，该应用程序在本地 SQLite 数据库中存储和访问数据。
-      image:
-        src: images/todo.png
-        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
-      title: 代办事项
-    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
-      html: 这是一个焕然一新的熟悉游戏。 10 个 bug 隐藏在磁贴的一个 9 x 9 网格中。 若要获胜，必须找到并标记所有 10 个 bug。
-      image:
-        src: images/bugsweeper.png
-        href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
-      title: BugSweeper
-    - href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
-      html: RPN（反向波兰语表示法）计算器允许输入数字和操作，而无需括号或等号键。
-      image:
-        src: images/rpncalc.png
-        href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
-      title: RPN 计算器
-    - href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
-      html: 该程序模拟一个旋转磁盘，你可以通过触摸和移动手指进行绘制。 SpinPaint 通过在手指下绘制一条线来响应触摸，但它还可以在该磁盘的其他三个象限的三个镜像中复制这条线。
-      image:
-        src: images/spinpaint.png
-        href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
-      title: SpinPaint
-    - href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
-      html: XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。
-      image:
-        src: images/xaml.png
-        href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
-      title: XAML 示例
-    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
-      html: XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。
-      image:
-        src: images/xuzzle.png
-        href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
-      title: Xuzzle
-    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      html: 一组完整的 Xamarin.Forms 示例应用和代码演示。
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/xamarin-forms/all/
-      title: 所有 Xamarin.Forms 示例
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+            html: 此示例演示了一个待办事项列表应用程序，该应用程序在本地 SQLite 数据库中存储和访问数据。
+            image:
+              src: images/todo.png
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/Todo/'
+            title: 代办事项
+          - href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/'
+            html: 这是一个焕然一新的熟悉游戏。 10 个 bug 隐藏在磁贴的一个 9 x 9 网格中。 若要获胜，必须找到并标记所有 10 个 bug。
+            image:
+              src: images/bugsweeper.png
+              href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/'
+            title: BugSweeper
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/'
+            html: RPN（反向波兰语表示法）计算器允许输入数字和操作，而无需括号或等号键。
+            image:
+              src: images/rpncalc.png
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/'
+            title: RPN 计算器
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/'
+            html: 该程序模拟一个旋转磁盘，你可以通过触摸和移动手指进行绘制。 SpinPaint 通过在手指下绘制一条线来响应触摸，但它还可以在该磁盘的其他三个象限的三个镜像中复制这条线。
+            image:
+              src: images/spinpaint.png
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/'
+            title: SpinPaint
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/'
+            html: XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。
+            image:
+              src: images/xaml.png
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/'
+            title: XAML 示例
+          - href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/'
+            html: XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。
+            image:
+              src: images/xuzzle.png
+              href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/'
+            title: Xuzzle
+          - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+            html: 一组完整的 Xamarin.Forms 示例应用和代码演示。
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+            title: 所有 Xamarin.Forms 示例

@@ -1,134 +1,127 @@
-items:
 - name: Xamarin.Forms 中的 SkiaSharp Graphics
   href: index.md
-  items:
-  - name: 绘图知识
-    href: basics/index.md
-    items:
-    - name: 绘制一个简单的圆圈
-      href: basics/circle.md
-    - name: 与 Xamarin.Forms 集成
-      href: basics/integration.md
-    - name: 像素和与设备无关的单位
-      href: basics/pixels.md
-    - name: 基本动画
-      href: basics/animation.md
-    - name: 将文本和图形集成
-      href: basics/text.md
-    - name: 位图基础知识
-      href: basics/bitmaps.md
-    - name: 透明度
-      href: basics/transparency.md
-    expanded: true
-  - name: 线和路径
-    href: paths/index.md
-    items:
-    - name: 线和笔划大写字母
-      href: paths/lines.md
-    - name: 路径基础知识
-      href: paths/paths.md
-    - name: 路径填充类型
-      href: paths/fill-types.md
-    - name: 折线和参数等式
-      href: paths/polylines.md
-    - name: 点和短划线
-      href: paths/dots.md
-    - name: 手指绘图
-      href: paths/finger-paint.md
-  - name: 转换
-    href: transforms/index.md
-    items:
-    - name: 翻译转换
-      href: transforms/translate.md
-    - name: 缩放转换
-      href: transforms/scale.md
-    - name: 旋转转换
-      href: transforms/rotate.md
-    - name: 倾斜转换
-      href: transforms/skew.md
-    - name: 矩阵转换
-      href: transforms/matrix.md
-    - name: 触摸操作
-      href: transforms/touch.md
-    - name: 非仿射转换
-      href: transforms/non-affine.md
-    - name: 3D 旋转
-      displayName: Three-D Rotation
-      href: transforms/3d-rotation.md
-  - name: 曲线和路径
-    href: curves/index.md
-    items:
-    - name: 绘制弧线的三个方法
-      href: curves/arcs.md
-    - name: 贝塞尔曲线的三种类型
-      href: curves/beziers.md
-    - name: SVG 路径数据
-      href: curves/path-data.md
-    - name: 按路径和区域进行剪裁
-      href: curves/clipping.md
-    - name: 路径效果
-      href: curves/effects.md
-    - name: 路径和文本
-      href: curves/text-paths.md
-    - name: 路径信息和枚举
-      href: curves/information.md
-  - name: 位图
-    href: bitmaps/index.md
-    items:
-    - name: 显示位图
-      href: bitmaps/displaying.md
-    - name: 位图创建和绘制
-      href: bitmaps/drawing.md
-    - name: 裁剪位图
-      href: bitmaps/cropping.md
-    - name: 位图分段显示
-      href: bitmaps/segmented.md
-    - name: 将位图保存为文件
-      href: bitmaps/saving.md
-    - name: 访问位图像素位
-      href: bitmaps/pixel-bits.md
-    - name: 对位图进行动画处理
-      href: bitmaps/animating.md
-  - name: 效果
-    href: effects/index.md
-    items:
-    - name: 着色器
-      href: effects/shaders/index.md
-      items:
-      - name: 线性渐变
-        href: effects/shaders/linear-gradient.md
-      - name: 圆形渐变
-        href: effects/shaders/circular-gradients.md
-      - name: 位图平铺
-        href: effects/shaders/bitmap-tiling.md
-      - name: 噪音
-        href: effects/shaders/noise.md
-    - name: 混合模式
-      href: effects/blend-modes/index.md
-      items:
-      - name: Porter-Duff 混合模式
-        href: effects/blend-modes/porter-duff.md
-      - name: 可分离的混合模式
-        href: effects/blend-modes/separable.md
-      - name: 不可分离的混合模式
-        href: effects/blend-modes/non-separable.md
-    - name: 掩码筛选器
-      href: effects/mask-filters.md
-    - name: 图像筛选器
-      href: effects/image-filters.md
-    - name: 颜色筛选器
-      href: effects/color-filters.md
-  - name: 与平台无关的示例
-    href: ~/graphics-games/skiasharp/introduction.md
-    items:
-    - name: 平台特定的备注
-      href: ~/graphics-games/skiasharp/platform.md
-  - name: API 参考
-    href: /dotnet/api/skiasharp/
   expanded: true
-ms.openlocfilehash: 59cc8bbb28a912ae32ef189c83c5d2e4f3209f31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50130194"
+  items:
+    - name: 绘图知识
+      href: basics/index.md
+      expanded: true
+      items:
+        - name: 绘制一个简单的圆圈
+          href: basics/circle.md
+        - name: 与 Xamarin.Forms 集成
+          href: basics/integration.md
+        - name: 像素和与设备无关的单位
+          href: basics/pixels.md
+        - name: 基本动画
+          href: basics/animation.md
+        - name: 将文本和图形集成
+          href: basics/text.md
+        - name: 位图基础知识
+          href: basics/bitmaps.md
+        - name: 透明度
+          href: basics/transparency.md
+    - name: 线和路径
+      href: paths/index.md
+      items:
+        - name: 线和笔划大写字母
+          href: paths/lines.md
+        - name: 路径基础知识
+          href: paths/paths.md
+        - name: 路径填充类型
+          href: paths/fill-types.md
+        - name: 折线和参数等式
+          href: paths/polylines.md
+        - name: 点和短划线
+          href: paths/dots.md
+        - name: 手指绘图
+          href: paths/finger-paint.md
+    - name: 转换
+      href: transforms/index.md
+      items:
+        - name: 翻译转换
+          href: transforms/translate.md
+        - name: 缩放转换
+          href: transforms/scale.md
+        - name: 旋转转换
+          href: transforms/rotate.md
+        - name: 倾斜转换
+          href: transforms/skew.md
+        - name: 矩阵转换
+          href: transforms/matrix.md
+        - name: 触摸操作
+          href: transforms/touch.md
+        - name: 非仿射转换
+          href: transforms/non-affine.md
+        - name: 3D 旋转
+          displayName: Three-D Rotation
+          href: transforms/3d-rotation.md
+    - name: 曲线和路径
+      href: curves/index.md
+      items:
+        - name: 绘制弧线的三个方法
+          href: curves/arcs.md
+        - name: 贝塞尔曲线的三种类型
+          href: curves/beziers.md
+        - name: SVG 路径数据
+          href: curves/path-data.md
+        - name: 按路径和区域进行剪裁
+          href: curves/clipping.md
+        - name: 路径效果
+          href: curves/effects.md
+        - name: 路径和文本
+          href: curves/text-paths.md
+        - name: 路径信息和枚举
+          href: curves/information.md
+    - name: 位图
+      href: bitmaps/index.md
+      items:
+        - name: 显示位图
+          href: bitmaps/displaying.md
+        - name: 位图创建和绘制
+          href: bitmaps/drawing.md
+        - name: 裁剪位图
+          href: bitmaps/cropping.md
+        - name: 位图分段显示
+          href: bitmaps/segmented.md
+        - name: 将位图保存为文件
+          href: bitmaps/saving.md
+        - name: 访问位图像素位
+          href: bitmaps/pixel-bits.md
+        - name: 对位图进行动画处理
+          href: bitmaps/animating.md
+    - name: 效果
+      href: effects/index.md
+      items:
+        - name: 着色器
+          href: effects/shaders/index.md
+          items:
+            - name: 线性渐变
+              href: effects/shaders/linear-gradient.md
+            - name: 圆形渐变
+              href: effects/shaders/circular-gradients.md
+            - name: 位图平铺
+              href: effects/shaders/bitmap-tiling.md
+            - name: 噪音
+              href: effects/shaders/noise.md
+        - name: 混合模式
+          href: effects/blend-modes/index.md
+          items:
+            - name: Porter-Duff 混合模式
+              href: effects/blend-modes/porter-duff.md
+            - name: 可分离的混合模式
+              href: effects/blend-modes/separable.md
+            - name: 不可分离的混合模式
+              href: effects/blend-modes/non-separable.md
+        - name: 掩码筛选器
+          href: effects/mask-filters.md
+        - name: 图像筛选器
+          href: effects/image-filters.md
+        - name: 颜色筛选器
+          href: effects/color-filters.md
+    - name: 与平台无关的示例
+      href: ~/graphics-games/skiasharp/introduction.md
+      items:
+        - name: 平台特定的备注
+          href: ~/graphics-games/skiasharp/platform.md
+    - name: API 参考
+      href: /dotnet/api/skiasharp/

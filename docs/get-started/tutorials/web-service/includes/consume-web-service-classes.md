@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fe38e13ff4b6c89905769d5ef0e5163a538e1e86
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61388775"
+---
 在本练习中，你将创建使用 `RestService` 类的用户界面，而该类将检索 [OpenWeatherMap](https://openweathermap.org/) Web API 的数据。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

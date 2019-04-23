@@ -7,52 +7,46 @@ metadata:
   ms.author: crdun
   ms.date: 02/27/2018
   ms.topic: sample
-  ms.openlocfilehash: f29128999930e7120a84ab61c6e3bb1154084410
-  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-  ms.translationtype: HT
-  ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/04/2018
-  ms.locfileid: "30782749"
 abstract:
-  description: 帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin.Mac 示例应用和代码演示。
+  description: '帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin.Mac 示例应用和代码演示。'
   menu:
     items:
-    - href: https://developer.xamarin.com/samples/mac/all/
-      text: 所有 Xamarin.Mac 示例
+      - href: 'https://developer.xamarin.com/samples/mac/all/'
+        text: 所有 Xamarin.Mac 示例
 sections:
-- title: 
-  items:
-  - type: list
-    style: cards
-    className: cardsW
+  - title: null
     items:
-    - href: https://developer.xamarin.com/samples/mac/Hello_Mac/
-      html: Mac 开发入门所用的 Hello World 应用。
-      image:
-        src: images/hellomac.png
-        href: https://developer.xamarin.com/samples/mac/Hello_Mac/
-      title: 了解 Mac
-    - href: https://developer.xamarin.com/samples/mac/MacControls/
-      html: Mac 应用的 UI 控件示例。
-      image:
-        src: images/controls.png
-        href: https://developer.xamarin.com/samples/mac/MacControls/
-      title: MacControls
-    - href: https://developer.xamarin.com/samples/mac/MacImages/
-      html: Mac 应用的 UI 控件示例。
-      image:
-        src: images/images.png
-        href: https://developer.xamarin.com/samples/mac/MacImages/
-      title: MacImages
-    - href: https://developer.xamarin.com/samples/mac/SourceWriter/
-      html: 提供代码补全和语法突出显示支持的简单编辑器。
-      image:
-        src: images/sourcewriter.png
-        href: https://developer.xamarin.com/samples/mac/SourceWriter/
-      title: SourceWriter
-    - href: https://developer.xamarin.com/samples/mac/all/
-      html: 一组完整的 Xamarin.Mac 示例应用和代码演示。
-      image:
-        src: ~/media/shared/sample-download.svg
-        href: https://developer.xamarin.com/samples/mac/all/
-      title: 所有 Xamarin.Mac 示例
+      - type: list
+        style: cards
+        className: cardsW
+        items:
+          - href: 'https://developer.xamarin.com/samples/mac/Hello_Mac/'
+            html: Mac 开发入门所用的 Hello World 应用。
+            image:
+              src: images/hellomac.png
+              href: 'https://developer.xamarin.com/samples/mac/Hello_Mac/'
+            title: 了解 Mac
+          - href: 'https://developer.xamarin.com/samples/mac/MacControls/'
+            html: Mac 应用的 UI 控件示例。
+            image:
+              src: images/controls.png
+              href: 'https://developer.xamarin.com/samples/mac/MacControls/'
+            title: MacControls
+          - href: 'https://developer.xamarin.com/samples/mac/MacImages/'
+            html: Mac 应用的 UI 控件示例。
+            image:
+              src: images/images.png
+              href: 'https://developer.xamarin.com/samples/mac/MacImages/'
+            title: MacImages
+          - href: 'https://developer.xamarin.com/samples/mac/SourceWriter/'
+            html: 提供代码补全和语法突出显示支持的简单编辑器。
+            image:
+              src: images/sourcewriter.png
+              href: 'https://developer.xamarin.com/samples/mac/SourceWriter/'
+            title: SourceWriter
+          - href: 'https://developer.xamarin.com/samples/mac/all/'
+            html: 一组完整的 Xamarin.Mac 示例应用和代码演示。
+            image:
+              src: ~/media/shared/sample-download.svg
+              href: 'https://developer.xamarin.com/samples/mac/all/'
+            title: 所有 Xamarin.Mac 示例
