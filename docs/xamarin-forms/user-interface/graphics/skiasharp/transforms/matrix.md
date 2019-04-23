@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
 ms.openlocfilehash: 192f0745874b54989ab9070014dae2a5e9e98110
-ms.sourcegitcommit: 605f7c480c3f7b5dd364fdb1bd4d983de8f7ed25
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56213772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61354646"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩阵转换
 
