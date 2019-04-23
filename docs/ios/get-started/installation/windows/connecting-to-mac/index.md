@@ -8,15 +8,15 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/29/2018
 ms.openlocfilehash: 9456686157f10d81e36b908cb0a2441e64d47663
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855141"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>通过“与 Mac 配对”进行 Xamarin.iOS 开发
 
-_本指南介绍如何使用“与 Mac 配对”将 Visual Studio 2019 连接到 Mac 生成主机。 这些说明也适用于 Visual Studio 2017。_
+本指南介绍如何使用“与 Mac 配对”将 Visual Studio 2019 连接到 Mac 生成主机。这些说明也适用于 Visual Studio 2017。
 
 ## <a name="overview"></a>概述
 
@@ -130,7 +130,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
     - 在 Mac 上打开“系统首选项”>“共享”>“远程登录”：
 
-        [![T“系统首选项”>“共享”中的 Mac 的 IP 地址(images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
+        [![“系统首选项”>“共享”中的 Mac 的 IP 地址](images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
 
     - 或者，使用命令行。 在终端，发出此命令： 
 
@@ -143,7 +143,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
 2. 在 Visual Studio 2019 的“与 Mac 配对”对话框中，选择“添加 Mac...”：
 
-    [![T“与 Mac 配对”对话框中的“添加 Mac”按钮(images/addtomac.png "The Add Mac button in the Pair to Mac dialog")](images/addtomac-large.png#lightbox)
+    [![“与 Mac 配对”对话框中的“添加 Mac”按钮](images/addtomac.png "The Add Mac button in the Pair to Mac dialog")](images/addtomac-large.png#lightbox)
 
 3. 输入 Mac 的 IP 地址并单击“添加”：
 
@@ -177,7 +177,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ||安装检查|下载|安装
 |---|---|---|---|
-|Mono|[![M缺少 Mono 安装](images/mono-missing.png "Missing Mono installation")](images/mono-missing-large.png#lightbox)|[![D下载 Mono](images/mono-downloading.png "Downloading Mono")](images/mono-downloading-large.png#lightbox)|[![I安装 Mono](images/mono-installing.png "Installing Mono")](images/mono-installing-large.png#lightbox)|
+|Mono|[![缺少 Mono 安装](images/mono-missing.png "Missing Mono installation")](images/mono-missing-large.png#lightbox)|[![下载 Mono](images/mono-downloading.png "Downloading Mono")](images/mono-downloading-large.png#lightbox)|[![安装 Mono](images/mono-installing.png "Installing Mono")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -192,7 +192,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ||安装检查|下载|安装
 |---|---|---|---|
-|Xamarin.iOS|[![M缺少 Xamarin.iOS 安装(images/xamios-missing.png "Missing Xamarin.iOS installation")](images/xamios-missing-large.png#lightbox)|[![D下载 Xamarin.iOS](images/xamios-downloading.png "Downloading Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![I安装 Xamarin.iOS](images/xamios-installing.png "Installing Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+|Xamarin.iOS|[![缺少 Xamarin.iOS 安装](images/xamios-missing.png "Missing Xamarin.iOS installation")](images/xamios-missing-large.png#lightbox)|[![下载 Xamarin.iOS](images/xamios-downloading.png "Downloading Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安装 Xamarin.iOS](images/xamios-installing.png "Installing Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode 工具和许可证
 
@@ -200,7 +200,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ||安装检查|许可证接受|
 |---|---|---|
-|Xcode|[![M缺少 Xcode 安装(images/xcode-missing.png "Missing Xcode installation")](images/xcode-missing-large.png#lightbox)|[![Xcode 许可证](images/xcode-license.png "Xcode license")](images/xcode-license-large.png#lightbox)|
+|Xcode|[![缺少 Xcode 安装](images/xcode-missing.png "Missing Xcode installation")](images/xcode-missing-large.png#lightbox)|[![Xcode 许可证](images/xcode-license.png "Xcode license")](images/xcode-license-large.png#lightbox)|
 
 此外，“与 Mac 配对”会安装或更新使用 Xcode 分发的各种包。 例如:
 

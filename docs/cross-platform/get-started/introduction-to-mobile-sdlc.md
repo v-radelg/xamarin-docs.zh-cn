@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
 ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855232"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>移动软件开发生命周期简介

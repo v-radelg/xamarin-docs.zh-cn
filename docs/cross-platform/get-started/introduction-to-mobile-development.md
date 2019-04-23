@@ -7,10 +7,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
 ms.openlocfilehash: 296284b7f9a8eac26817e76a97bf35b03d591532
-ms.sourcegitcommit: c4be32ef914465e808d89767c4d5ee72afe93cc6
+ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58855323"
 ---
 # <a name="introduction-to-mobile-development"></a>移动开发简介
