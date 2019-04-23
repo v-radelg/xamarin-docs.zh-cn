@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 63ddc7d34d0bcca4e86cb03b08a6040d20f8f037
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60857630"
 ---
 # <a name="contributing"></a>参与
 
