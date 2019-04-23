@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/25/2017
-ms.openlocfilehash: cd5371cde1dfcbe3cb1aea5dbdf8439816d66d95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111312"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893226"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的工作原理
 
 大多数情况下，开发人员也无需担心如何内部"神奇"的 Xamarin.Mac，但是，有一个大致的内容实质上的工作原理与这两种解释现有文档中将如何帮助了解C#可重用功能区和调试时出现的问题。
 
-在 Xamarin.Mac 应用程序桥接两个领域： 包含本机类的实例基于 Objective C 运行时 (`NSString`，`NSApplication`等)，并且没有C#包含的实例的运行时托管类 (`System.String``HttpClient`，等等)。 在这两个领域之间 Xamarin.Mac 创建双向桥，以便应用可以调用 Objective C 中的方法 （选择器） (如`NSApplication.Init`) 和 Objective C 可以调用应用程序的C#方法后 （如应用程序委托的方法）。 一般情况下，到 OBJECTIVE-C 的调用通过以透明方式处理**P/Invoke**和 Xamarin 提供了一些运行时代码。
+在 Xamarin.Mac 应用程序桥接两个领域：包含本机类的实例基于 Objective C 运行时 (`NSString`，`NSApplication`等)，并且没有C#包含的实例的运行时托管类 (`System.String`，`HttpClient`等)。 在这两个领域之间 Xamarin.Mac 创建双向桥，以便应用可以调用 Objective C 中的方法 （选择器） (如`NSApplication.Init`) 和 Objective C 可以调用应用程序的C#方法后 （如应用程序委托的方法）。 一般情况下，到 OBJECTIVE-C 的调用通过以透明方式处理**P/Invoke**和 Xamarin 提供了一些运行时代码。
 
 <a name="exposing-classes" />
 
@@ -120,7 +120,7 @@ Xamarin.Mac 新增 AOT 的能力的 IL 代码在应用生成周期中，就像 X
 - `core` -AOT 编译`Xamarin.Mac`，`System`和`mscorlib`程序集。
 - `sdk` -AOT 编译`Xamarin.Mac`和基类库 (BCL) 程序集。
 - `|hybrid` -添加到上述选项之一启用混合 AOT，它允许 IL 去除，但将导致编译时间更长。
-- `+` -包括到 AOT 编译为一个。
+- `+` -包括 AOT 编译单个文件。
 - `-` -从 AOT 编译删除单个文件。
 
 例如，`--aot:all,-MyAssembly.dll`会启用所有 MonoBundle 中的程序集上的 AOT 编译_除_`MyAssembly.dll`并`--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll`会启用混合，包括代码 AOT`MyOtherAssembly.dll`和不包括`mscorlib.dll`.

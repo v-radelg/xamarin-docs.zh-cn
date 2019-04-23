@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
-ms.openlocfilehash: 20b09ab44eaaaa21535d50b947449e253652cc62
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
+ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672477"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59893239"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 映射
 
@@ -128,6 +128,15 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 ![针对 Android 所需权限](map-images/android-map-permissions.png "适用于 Android 的所需的权限")
 
 需要最后两个，因为应用程序需要网络连接才能下载地图数据。 了解 Android[权限](https://developer.android.com/reference/android/Manifest.permission.html)若要了解详细信息。
+
+此外，Android 9 从 bootclasspath，消除了 Apache HTTP 客户端库，因此它不是可用于应用程序面向 API 28 或更高版本。 必须将以下行添加到`application`节点的你**AndroidManifest.xml**文件以继续在面向 API 28 或更高版本的应用程序中使用 Apache HTTP 客户端：
+
+```xml
+<application ...>
+    ...
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />    
+</application>
+```
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
