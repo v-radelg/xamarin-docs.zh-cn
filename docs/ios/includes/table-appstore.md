@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: ef7e0e0e0874857786196452de83d7532b80c347
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61079125"
+---
 |类型 ID|类型名称|
 |---|---|
 |6000|业务|
