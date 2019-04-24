@@ -1,4 +1,12 @@
-|属性|描述|选项|
+---
+ms.openlocfilehash: b39fb6157c247416c85846d4d8e63e6e1b7c6028
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60956833"
+---
+|Property|说明|选项|
 |--- |--- |--- |
 |`abi.type`|ABI 类型 &ndash; 指定仿真设备的 ABI（应用程序二进制接口）类型。 x86 选项适用于通常被称为“x86”或“IA-32”的指令集。 x86_64 选项适用于 64 位 x86 指令集。 armeabi-v7a 选项适用于具有 v7-a ARM 扩展的 ARM 指令集。 arm64-v8a 选项适用于支持 AArch64 的 ARM 指令集。|x86、x86_64、armeabi-v7a、arm64-v8a|
 |`disk.cachePartition`|缓存分区 &ndash; 确定仿真设备是否将在设备上使用 /cache 分区。 /cache 分区（最初为空）是 Android 存储经常访问的数据和应用组件的位置。 如果设置为“否”，仿真器将不使用 /cache 分区，且其他的 `disk.cache` 设置将被忽略。|yes、no|
@@ -30,7 +38,7 @@
 |`hw.gsmModem`|GSM 调制解调器支持 &ndash; 确定仿真设备是否包含支持 GSM（全球移动通信系统）电话无线电系统的调制解调器。|yes、no|
 |`hw.initialOrientation`|初始屏幕方向 &ndash; 配置仿真设备上屏幕的初始方向（纵向或横向模式）。 在纵向模式下，屏幕的高度大于宽度。 在横向模式下，屏幕的宽度大于高度。 如果设备配置文件中都支持纵向和横向模式，则可以在运行仿真设备时更改方向。|portrait、landscape|
 |`hw.keyboard`|键盘支持 &ndash; 确定仿真设备是否支持全键盘。|yes、no|
-|`hw.keyboard.charmap`|键盘字符映射名称 &ndash; 此设备的硬件字符映射的名称。 注意：此应始终为默认值 qwerty2，除非相应地修改了系统映像。 此名称会在启动时发送到内核。 使用不正确的名称将导致虚拟设备不可用。||
+|`hw.keyboard.charmap`|键盘字符映射名称 &ndash; 此设备的硬件字符映射的名称。 注意：此应始终为默认值 **qwerty2**，除非相应地修改了系统映像。 此名称会在启动时发送到内核。 使用不正确的名称将导致虚拟设备不可用。||
 |`hw.keyboard.lid`|键盘盖支持 &ndash; 在启用键盘支持的情况下，此设置确定是否可以关闭/隐藏或打开/显示全键盘。 如果“hw.keyboard”设置为“false”，则将忽略此设置。 注意：如果仿真设备面向 API 级别 12 或更高版本，默认值则为“false”。|yes、no|
 |`hw.lcd.backlight`|LCD 背光 &ndash; 确定 LCD 背光是否由仿真设备模拟。|yes、no|
 |`hw.lcd.density`|LCD 密度 &ndash; 仿真 LCD 显示的密度，以与密度无关的像素或 dp（dp 是一个虚拟像素单位）为单位测量。 当设置为 160 dp 时，每个 dp 将对应一个物理像素。 在运行时，Android 使用此值选择和缩放适当的资源/资产以进行正确的显示呈现。|120、160、240、213、320|
