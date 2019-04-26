@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
 ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61047485"
 ---
 # <a name="using-jenkins-with-xamarin"></a>结合使用 Jenkins 和 Xamarin
 

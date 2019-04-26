@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671976"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61406810"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>应用内购买基本知识和配置 Xamarin.iOS
 

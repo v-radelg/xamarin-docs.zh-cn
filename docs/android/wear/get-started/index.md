@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 12/18/2017
 ms.openlocfilehash: 88259afe72715a0c369472b1a5c0609b56db8143
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276316"
 ---
 # <a name="get-started-with-android-wear"></a>开始使用 Android 穿戴设备
 

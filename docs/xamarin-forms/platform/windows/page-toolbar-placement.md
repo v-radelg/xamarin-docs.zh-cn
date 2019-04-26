@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: e0121a9f40135e24663b93bb1db6b6456f2abb3a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60854996"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>在 Windows 上的页工具栏位置
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 使用此通用 Windows 平台的特定于平台上更改工具栏的放置[ `Page` ](xref:Xamarin.Forms.Page)，并设置在 XAML 中由[ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty)附加到的属性值[ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)枚举：
 

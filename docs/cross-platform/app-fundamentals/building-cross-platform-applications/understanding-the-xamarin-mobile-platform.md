@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: f5008d4986baa0575030e077b66b69ec0a4fad00
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61275592"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第一部分-了解 Xamarin 移动平台
 

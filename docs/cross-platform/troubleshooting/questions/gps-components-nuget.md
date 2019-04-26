@@ -1,5 +1,5 @@
 ---
-title: 统一 Google Play Services 组件和 NuGet
+title: 统一 Google Play 服务组件和 NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
@@ -7,13 +7,13 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 3f5c5f75ae1c7a44537afa59ff4a15d54b1df50b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39351478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357431"
 ---
-# <a name="unifying-google-play-services-components-and-nuget"></a>统一 Google Play Services 组件和 NuGet
+# <a name="unifying-google-play-services-components-and-nuget"></a>统一 Google Play 服务组件和 NuGet
 
 ## <a name="history"></a>历史记录
 

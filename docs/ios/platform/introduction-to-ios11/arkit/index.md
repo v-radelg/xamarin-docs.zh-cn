@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
 ms.openlocfilehash: 348d2f2090105ed693da7be5a44c82ef18bd2a89
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61176690"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>在 Xamarin.iOS ARKit 简介
 

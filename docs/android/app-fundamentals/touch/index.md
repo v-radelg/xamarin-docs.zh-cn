@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013110"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>触控和手势在 Xamarin.Android 中
 
@@ -33,7 +33,7 @@ Android 使用`MotionEvent`对象封装触控数据和要侦听的收尾工作�
 ## <a name="sections"></a>部分
 
 -  [Android 中的触控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
--  [演练： 在 Android 中使用触控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+-  [演练：在 Android 中使用触控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 -  [多点触控跟踪](touch-tracking.md)
 
 ## <a name="summary"></a>总结

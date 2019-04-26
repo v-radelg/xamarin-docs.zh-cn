@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/05/2017
 ms.openlocfilehash: aa93e015a399e733a2bb52f087a1e482bc23a00a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169618"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>在 Xamarin.iOS 中拖放
 

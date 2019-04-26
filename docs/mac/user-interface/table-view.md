@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: c6d7971c8418c8038f5fcbfcf0e8f2acd928edcb
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61042364"
 ---
 # <a name="table-views-in-xamarinmac"></a>在 Xamarin.Mac 中的表视图
 

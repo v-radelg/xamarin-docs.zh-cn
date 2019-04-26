@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 09e895714cb4bbe241e4e14facaaee52079d55d9
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082764"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>多点触控手指在 Xamarin.iOS 中跟踪
 

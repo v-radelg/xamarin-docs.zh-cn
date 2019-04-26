@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424265"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的增强型的用户通知
 

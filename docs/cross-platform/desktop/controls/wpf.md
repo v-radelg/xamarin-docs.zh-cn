@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 990253cbd31ad79bc47f086dc5bd2b99233f2032
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61272657"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与。Xamarin.Forms:相似性和差异
 

@@ -8,11 +8,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
 ms.openlocfilehash: 70ca9a73c83bed5233b77a6f7be80a13f04f2bcb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61360745"
 ---
 # <a name="updating-component-references-to-nuget"></a>更新对 NuGet 的组件引用
 

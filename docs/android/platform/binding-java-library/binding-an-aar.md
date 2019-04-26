@@ -1,5 +1,5 @@
 ---
-title: 绑定。获取 AAR
+title: 绑定 .AAR
 description: 本演练提供了从 Android 创建 Xamarin.Android Java 绑定库的分步说明。AAR 文件。
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
 ms.openlocfilehash: 7f71ccf4ff61c176e73be6d3855136697a5c2130
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60958012"
 ---
-# <a name="binding-an-aar"></a>绑定。获取 AAR
+# <a name="binding-an-aar"></a>绑定 .AAR
 
 _本演练提供了从 Android 创建 Xamarin.Android Java 绑定库的分步说明。AAR 文件。_
 
@@ -109,7 +109,7 @@ public class TextCounter
 
     [![将目标级别设置为 API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
-7.  生成绑定库。 绑定库项目应能成功生成，并生成输出。在以下位置的 DLL: **AarBinding/bin/Debug/AarBinding.dll**
+7.  生成绑定库。 绑定库项目应能成功生成，并生成输出。在以下位置的 DLL:**AarBinding/bin/Debug/AarBinding.dll**
 
 
 

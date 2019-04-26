@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
 ms.openlocfilehash: ec69cd7d176ca4047ffa37fcc2ed8554bd9f9353
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169525"
 ---
 # <a name="getting-started-with-ios-11"></a>IOS 11 入门
 

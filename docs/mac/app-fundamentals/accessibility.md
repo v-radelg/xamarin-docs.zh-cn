@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: fdda52309ffdb0d32cc42a4dff052cd9050b1e4f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378430"
 ---
 # <a name="accessibility-on-macos"></a>在 macOS 上的辅助功能
 

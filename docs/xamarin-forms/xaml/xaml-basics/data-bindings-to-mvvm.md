@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61174533"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 从数据绑定到 MVVM
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 是一个非常特殊属性： 当设置`BindingContext`某个元素上，它由继承该元素的所有子级。 这意味着所有子级`StackLayout`具有此相同`BindingContext`，并且它们可以包含简单绑定到该对象的属性。
+`BindingContext` 是一个非常特殊属性：当您将设置`BindingContext`某个元素上，它由继承该元素的所有子级。 这意味着所有子级`StackLayout`具有此相同`BindingContext`，并且它们可以包含简单绑定到该对象的属性。
 
 在中**One-Shot DateTime**程序，两个子级包含到这些属性的绑定`DateTime`值，但两个其他的子级包含似乎缺少绑定路径的绑定。 这意味着`DateTime`本身的值用于`StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>与 Viewmodel 命令
 
-在许多情况下，MVVM 模式被限制为数据项的操作： 在视图中的用户界面对象的并行 ViewModel 中的数据对象。
+在许多情况下，MVVM 模式被限制为数据项的操作：在 ViewModel 中的查看并行数据对象中的用户界面对象。
 
 但是，有时视图需要包含触发 ViewModel 中的各种操作的按钮。 但不能包含 ViewModel`Clicked`按钮处理程序，可能会阻塞到特定的用户界面范例 ViewModel 因为。
 
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**可以轻松地 Xamarin.Forms 和 Prism Xamarin Evolve 2016: MVVM**
+**Xamarin Evolve 2016:可以轻松地 Xamarin.Forms 和 Prism MVVM**
 
 ## <a name="summary"></a>总结
 

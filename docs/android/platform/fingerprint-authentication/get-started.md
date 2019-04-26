@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/17/2018
 ms.openlocfilehash: 3082dfcd6d0ffbc6404a89a10819e60b57b9c61c
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023785"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>开始使用指纹身份验证
 

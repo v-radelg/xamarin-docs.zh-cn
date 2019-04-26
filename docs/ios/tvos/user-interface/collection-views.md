@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: f815afa6b1abb15348019b0c53333b4acb054008
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60933636"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>使用 tvOS 在 Xamarin 中的集合视图
 

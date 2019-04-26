@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55832200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61321545"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的可绑定布局
 
@@ -85,7 +85,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 ![使用 DataTemplate 可绑定布局](bindable-layouts-images/top-followers.png "使用数据模板的可绑定布局")
 
-有关数据模板的详细信息，请参阅[Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="choosing-item-appearance-at-runtime"></a>选择项在运行时的外观
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
 ms.openlocfilehash: 3bd606ae87c524202fd5ea7c141223042e90ec1a
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61362985"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 

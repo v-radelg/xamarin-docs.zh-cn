@@ -1,5 +1,5 @@
 ---
-title: System.Exception amdevicenotificationsubscribe 已返回...
+title: System.Exception AMDeviceNotificationSubscribe 已返回...
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
@@ -8,19 +8,19 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421939"
 ---
-# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception amdevicenotificationsubscribe 已返回...
+# <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe 已返回...
 
 > [!IMPORTANT]
 > 最新版本的 Xamarin 中已解决此问题。 但是，如果最新版本的软件会出现此问题，请提出[新 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)与完整的版本控制信息和完整生成日志输出。
 
 
-## <a name="fix"></a>修复
+## <a name="fix"></a>修补程序
 
 1.  终止`usbmuxd`处理，以便系统将重新启动它：
 
@@ -63,4 +63,4 @@ AMDeviceNotificationSubscribe returned: 3892314211
 
 ## <a name="references"></a>参考资料
 
-*   [Bug 11789-MonoTouch.MobileDevice.MobileDeviceException: amdevicenotificationsubscribe 已返回： 0xe8000063 [解析 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+*   [Bug 11789-MonoTouch.MobileDevice.MobileDeviceException:Amdevicenotificationsubscribe 已返回：0XE8000063 [解析 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

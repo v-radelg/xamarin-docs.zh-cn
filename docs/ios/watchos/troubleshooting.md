@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 70ef341c066c77e214761d75c173faef00266e4c
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60892664"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032094"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave 简介
 
@@ -47,5 +47,5 @@ Macos Mojave，OpenGL ES 和 OpenCL，Apple 已弃用[鼓励开发人员](https:
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin.Mac 示例](https://developer.xamarin.com/samples/mac/)
-- [macOS-Apple 开发人员](https://developer.apple.com/macos/)
+- [macOS – Apple Developer](https://developer.apple.com/macos/)
 - [Xamarin.Mac 5.0 发行说明](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

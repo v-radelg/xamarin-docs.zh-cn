@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 0c09063b55a14f9f22feb91d2a6f9d3f9417ecee
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330840"
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>通过认知服务添加智能
 

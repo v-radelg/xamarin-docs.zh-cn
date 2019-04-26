@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40251164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261258"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>适用于 iOS/macOS 的 HttpClient 和 SSL/TLS 实现选择器
 
@@ -30,7 +30,7 @@ ms.locfileid: "40251164"
 
 1. 双击**项目名称**中**解决方案资源管理器**以打开项目选项。
 2. 切换到**构建**设置为你的项目 (例如， **iOS 生成**的 Xamarin.iOS 应用程序)。
-3. 从**HttpClient 实现**下拉列表中，选择`HttpClient`键入作为以下项之一： **NSUrlSession** （推荐）， **CFNetwork**，或**托管**。
+3. 从**HttpClient 实现**下拉列表中，选择`HttpClient`键入作为以下项之一：**NSUrlSession** （推荐）， **CFNetwork**，或**托管**。
 
 [![从托管、 CFNetwork 或 NSUrlSession 选择 HttpClient 实现](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
@@ -105,9 +105,9 @@ SSL （安全套接字层） 和其后续版本 TLS （传输层安全性） 支
 
 > [!WARNING]
 > 即将发布的 Xamarin.Mac 4.8 版本仅支持 macOS 10.9 或更高版本。
-> 以前版本的 Xamarin.Mac 支持 macOS 10.7 或更高版本，但这些较旧的 macOS 版本缺少足够的 TLS 基础结构才能支持 TLS 1.2。 若要面向 macOS 10.7 或 macOS 10.8，请使用 Xamarin.Mac 4.6 或更早版本。
+> 早期版本的 Xamarin.Mac 支持 macOS 10.7 或更高版本，但这些较旧的 macOS 版本缺少足够的 TLS 基础结构，无法支持 TLS 1.2。 若要面向 macOS 10.7 或 macOS 10.8，请使用 Xamarin.Mac 4.6 或更早版本。
 
-## <a name="app-transport-security"></a>应用程序传输安全
+## <a name="app-transport-security"></a>应用传输安全性
 
 Apple_应用程序传输安全_(ATS) 实施 internet 资源 （如应用程序的后端服务器） 和您的应用程序之间的安全连接。 ATS 可确保所有 internet 通信都符合以确保连接安全最佳实践，从而防止意外泄露敏感信息直接通过您的应用程序或正在使用的库。
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
 ms.openlocfilehash: a411d4d85877c9868ec49f92b53ca8d7a81f9959
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61018639"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>在 Xamarin.Android 中的广播的接收器
 
@@ -185,6 +185,6 @@ Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast
 - [Context.UnregisterReceiver API](https://developer.xamarin.com/api/member/Android.Content.Context.UnregisterReceiver/p/Android.Content.BroadcastReceiver/)
 - [意向 API](https://developer.xamarin.com/api/type/Android.Content.Intent/)
 - [IntentFilter API](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)
-- [LocalBroadcastManager （Android 文档）](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
+- [LocalBroadcastManager (Android docs)](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))
 - [在 Android 中的本地通知](~/android/app-fundamentals/notifications/local-notifications.md)指南
 - [Android 支持库 v4 (NuGet)](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)

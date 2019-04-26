@@ -1,40 +1,40 @@
 ---
-title: '使用 F # 编程 UrhoSharp'
-description: '本文档介绍如何创建使用 F # Visual Studio for mac 中的简单你好 world UrhoSharp 应用程序'
+title: 与编程 UrhoSharpF#
+description: 本文档介绍如何创建简单你好世界 UrhoSharp 应用程序使用F#在 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 99e8f8bf04465d0d61086139ba9889eae141207e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160574"
 ---
-# <a name="programming-urhosharp-with-f"></a>使用 F # 编程 UrhoSharp
+# <a name="programming-urhosharp-with-f"></a>与编程 UrhoSharpF#
 
-可以使用 F # 使用相同的库和 C# 程序员使用的概念进行编程 UrhoSharp。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章概述了 UrhoSharp 引擎和在这篇文章之前应阅读。
+可以用编程 UrhoSharpF#使用相同的库和使用的概念C#程序员。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章概述了 UrhoSharp 引擎和在这篇文章之前应阅读。
 
-C + + 领域，源自的很多库，如许多 UrhoSharp 函数会返回布尔值或整数，指示成功或失败。 应使用`|> ignore`忽略这些值。
+像很多库中发起的C++世界中，许多 UrhoSharp 函数会返回布尔值或整数，指示成功或失败。 应使用`|> ignore`忽略这些值。
 
-[示例程序](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 从 F # 中为"Hello World"。
+[示例程序](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)是从 UrhoSharp"Hello World" F#。
 
 ## <a name="creating-an-empty-project"></a>创建一个空项目
 
-UrhoSharp 没有 F # 模板还可以使用任一启动的可用，因此，若要创建 UrhoSharp 项目[示例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或请执行以下步骤：
+有没有F#模板用于 UrhoSharp 又可用，因此，若要创建既可以使用启动自己 UrhoSharp 项目[示例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或执行以下步骤：
 
-1. 从 Visual Studio for Mac 中，创建一个新**解决方案**。 选择**iOS > 应用程序 > 单一视图应用**，然后选择**F #** 作为实现语言。 
+1. 从 Visual Studio for Mac 中，创建一个新**解决方案**。 选择**iOS > 应用程序 > 单一视图应用**，然后选择**F#** 作为实现语言。 
 1. 删除**Main.storyboard**文件。 打开**Info.plist**文件并在**iPhone / iPod 部署信息**窗格中，删除`Main`中的字符串**主界面**下拉列表。
 1. 删除**ViewController.fs**文件。
 
 ## <a name="building-hello-world-in-urho"></a>构建中 Urho 的 Hello World
 
-现在您就可以开始定义您的游戏的类。 至少，您将需要定义的子类`Urho.Application`并重写其`Start`方法。 若要创建此文件，右键单击你的 F # 项目中，选择**添加新文件...** 并将一个空的 F # 类添加到你的项目。 新文件将添加到你的项目中的文件列表的末尾，但以使其显示必须将其拖*之前*中使用**AppDelegate.fs**。
+现在您就可以开始定义您的游戏的类。 至少，您将需要定义的子类`Urho.Application`并重写其`Start`方法。 若要创建此文件，请右键单击在F#项目中，选择**添加新文件...** 并添加一个空F#到你的项目的类。 新文件将添加到你的项目中的文件列表的末尾，但以使其显示必须将其拖*之前*中使用**AppDelegate.fs**。
 
 1. 添加对 Urho NuGet 包的引用。
-1. 从现有 Urho 项目中，复制 （大型） 目录**CoreData /** 并**数据 /** 到你的项目**资源 /** 目录。 在 F # 项目中，右键单击**资源**文件夹，然后使用**添加 / 添加现有文件夹**将所有这些文件添加到你的项目。
+1. 从现有 Urho 项目中，复制 （大型） 目录**CoreData /** 并**数据 /** 到你的项目**资源 /** 目录。 在你F#项目中，右键单击**资源**文件夹，然后使用**添加 / 添加现有文件夹**将所有这些文件添加到你的项目。
 
 项目结构现在应如下所示：
 

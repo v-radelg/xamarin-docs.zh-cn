@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 84767975eece4f8f0efae1fe53463cbc053bd836
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52171467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012831"
 ---
 # <a name="touch-in-android"></a>Android 中的触控
 

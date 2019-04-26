@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 9a18c97ba227615ae42529424b5c22b5e144f5e5
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357857"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>调试器需要哪些项目设置？
 

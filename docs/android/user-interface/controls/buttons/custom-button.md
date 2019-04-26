@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: b5ccefa1eb7e659584c1c82481bbd4473a3a8abc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076230"
 ---
 # <a name="custom-button"></a>自定义按钮
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
 ms.openlocfilehash: 78051fce44239eea86948988a4d19ac37c5ea0d5
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953207"
 ---
 # <a name="external-storage"></a>外部存储
 

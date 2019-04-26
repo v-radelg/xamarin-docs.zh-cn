@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019189"
 ---
 # <a name="android-localization"></a>Android 本地化
 

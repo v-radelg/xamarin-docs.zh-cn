@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 9adf514e4fc510617e3f4d801569935ee4a03f25
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093750"
 ---
 # <a name="web-views-in-xamarinios"></a>在 Xamarin.iOS 中的 web 视图
 
@@ -119,7 +119,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 iOS 9 改进允许用户轻松地返回到 Safari 页左上角中提供了一个后退按钮通过对应用程序。
 
-## <a name="app-transport-security"></a>应用程序传输安全
+## <a name="app-transport-security"></a>应用传输安全性
 
 应用程序传输安全模式，或*ATS*引入 apple 在 iOS 9 以确保所有 internet 通信都符合以确保连接安全最佳实践。
 

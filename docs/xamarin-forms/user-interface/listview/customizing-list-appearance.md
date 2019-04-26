@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
 ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169815"
 ---
 # <a name="customizing-listview-appearance"></a>自定义 ListView 外观
 

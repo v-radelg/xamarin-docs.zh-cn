@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
 ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61165114"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin.iOS CloudKit
 
@@ -151,9 +151,9 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 ||公共数据库|专用数据库|
 |---|--- |--- |
 |**数据类型**|共享的数据|当前用户的数据|
-|**配额**|在开发人员的配额|在用户的配额|
+|**Quota**|在开发人员的配额|在用户的配额|
 |**默认权限**|可读的世界|用户可读|
-|**编辑权限**|通过记录类级别的 iCloud 仪表板角色|不可用|
+|**编辑权限**|通过记录类级别的 iCloud 仪表板角色|不适用|
 
 ### <a name="records"></a>记录
 
@@ -278,7 +278,7 @@ newRecord ["name"] = asset;
 
 现在，我们已介绍的所有内 CloudKit 基本对象。 容器是关联到应用程序，包含数据库。 数据库包含分组到记录区域和记录标识符所指向的记录。 使用引用的记录之间定义父-子关系。 最后，可以上传大型文件并将其关联到使用资产的记录。
 
-## <a name="cloudkit-convenience-api"></a>CloudKit 方便 API
+## <a name="cloudkit-convenience-api"></a>CloudKit Convenience API
 
 Apple 提供两个不同的 API 集，用于处理 CloudKit:
 
@@ -883,6 +883,6 @@ CloudKit 有关应用程序的记录类型和数据提供单独的开发和生�
 
 ## <a name="related-links"></a>相关链接
 
-- [CloudKitAtlas （示例）](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
+- [CloudKitAtlas (sample)](https://developer.xamarin.com/samples/monotouch/ios8/CloudKitAtlas/)
 - [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)
 - [创建预配配置文件](~/ios/get-started/installation/device-provisioning/index.md)

@@ -1,5 +1,5 @@
 ---
-title: 高级的概念和内部机制
+title: 高级概念和内部机制
 description: Xamarin.Android 和它的 API 设计背后的基础体系结构。
 ms.prod: xamarin
 ms.assetid: CC6A0D52-E9FA-4270-B3FA-84660621D6D5
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/21/2018
 ms.openlocfilehash: f5844dd4340afa0596219a33ed1e479a0dbcfa76
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114166"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953378"
 ---
-# <a name="advanced-concepts-and-internals"></a>高级的概念和内部机制
+# <a name="advanced-concepts-and-internals"></a>高级概念和内部机制
 
 _本部分包含这些主题介绍体系结构、 API 设计和 Xamarin.Android 的限制。此外，它包含的主题说明其垃圾回收实现以及可在 Xamarin.Android 中的程序集。因为 Xamarin.Android[开放源代码](https://github.com/xamarin/xamarin-android)，则还可以通过检查其源代码了解 Xamarin.Android 的内部工作机制。_
 

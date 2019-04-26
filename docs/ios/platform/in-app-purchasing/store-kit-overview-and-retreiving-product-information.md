@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 0dcda2e4fd1ca7773668a0a6fdf46e01f2f0841d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118521"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61366910"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概述和在 Xamarin.iOS 中的检索产品信息
 
@@ -52,11 +52,11 @@ ms.locfileid: "50118521"
 
 大多数 StoreKit 操作需要真实的设备进行测试。 检索产品信息 （例如。 价格&amp;说明) 会在模拟器而购买和还原操作将返回一个错误 (如 FailedTransaction 代码 = 5002 出现未知错误)。
 
-注意： StoreKit iOS 模拟器中无法运行。 当 iOS 模拟器中运行应用程序，StoreKit 将记录一个警告，如果你的应用程序尝试检索付款队列。 必须在实际设备上完成测试在存储区。   
+注意:在 iOS 模拟器不运行 StoreKit。 当 iOS 模拟器中运行应用程序，StoreKit 将记录一个警告，如果你的应用程序尝试检索付款队列。 必须在实际设备上完成测试在存储区。   
    
    
    
- 重要说明： 不使用测试帐户登录设置应用程序中。 可以使用登录到设置应用程序无法使用任何现有的 Apple ID 帐户，则系统会提示你必须等到*在您的应用内购买序列*登录使用测试 Apple id。   
+ 重要提示：不使用你在设置应用程序中的测试帐户登录。 可以使用登录到设置应用程序无法使用任何现有的 Apple ID 帐户，则系统会提示你必须等到*在您的应用内购买序列*登录使用测试 Apple id。   
    
    
    

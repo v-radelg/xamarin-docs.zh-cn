@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
 ms.openlocfilehash: c5a4247b2e10706014c9f92a487803e4a718c1a6
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953719"
 ---
 # <a name="garbage-collection"></a>垃圾回收
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 132265c27e1d1ba3b8f3fc8db10d7b3cfa746197
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038941"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 用户界面概述
 
@@ -70,7 +70,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 
  ![](ios7-ui-images/alert.png "示例 UIAlertView")
  
- 注意： UIAlertView iOS 8 中已弃用。 视图[警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)方案使用警报视图，在 iOS 8 及更高版本。
+ 注意:在 iOS 8 中已弃用 UIAlertView。 视图[警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)方案使用警报视图，在 iOS 8 及更高版本。
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 

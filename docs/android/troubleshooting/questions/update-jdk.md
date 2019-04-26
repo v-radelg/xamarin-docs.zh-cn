@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
 ms.openlocfilehash: 290a7deef4fdc10163bdb09881382f011b0dcd32
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61154094"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>如何更新 Java Development Kit (JDK) 版本？
 

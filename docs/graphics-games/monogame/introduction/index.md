@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 4ab98d59bc74672f9531f4dbd3c33a6270582612
-ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "33920801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386256"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>使用 MonoGame 的游戏开发简介
 

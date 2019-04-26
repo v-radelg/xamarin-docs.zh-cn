@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 8b90b76cad5277fe76fc476a0bcd6f600e91b256
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "57981687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61421817"
 ---
 # <a name="ios-frequently-asked-questions"></a>iOS Frequently Asked Questions
 

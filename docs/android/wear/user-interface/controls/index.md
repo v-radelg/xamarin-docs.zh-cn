@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
 ms.openlocfilehash: 9620362b48e9cf1db4c25e4470851fb518a8e0f3
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61285529"
 ---
 # <a name="android-wear-controls"></a>Android 穿戴设备控件
 

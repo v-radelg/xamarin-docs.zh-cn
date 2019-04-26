@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 465b4a34d54dbee92461669b16c3b8a13188bbde
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378296"
 ---
 # <a name="databases-in-xamarinmac"></a>在 Xamarin.Mac 中的数据库
 
@@ -2235,4 +2235,4 @@ public override void AwakeFromNib ()
 - [Cocoa 绑定编程主题简介](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
 - [Cocoa 绑定引用简介](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
-- [macOS 人机接口指南 》](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS 人机界面指南](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

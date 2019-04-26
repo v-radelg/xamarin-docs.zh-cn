@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: 7e9bfa841db9f0a76f762bab22050377830d85de
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854868"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61171189"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台安装程序
 

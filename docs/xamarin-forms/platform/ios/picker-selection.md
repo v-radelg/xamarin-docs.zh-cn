@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 21c4c289a3fd30db890be6811875412ce4913cf5
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250462"
 ---
 # <a name="picker-item-selection-on-ios"></a>在 iOS 上选取器项选择
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此平台特定于 iOS 的控件项选择中的发生时[ `Picker` ](xref:Xamarin.Forms.Picker)，这样就允许用户指定的项选择发生时浏览项在控件中，还是仅后**完成**按下按钮。 设置使用在 XAML`Picker.UpdateMode`附加属性的值为`UpdateMode`枚举：
 

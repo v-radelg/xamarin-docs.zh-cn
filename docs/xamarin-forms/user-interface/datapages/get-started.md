@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
-ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59675863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250658"
 ---
 # <a name="getting-started-with-datapages"></a>开始使用 DataPages
 

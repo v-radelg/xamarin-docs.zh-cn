@@ -1,5 +1,5 @@
 ---
-title: IOS 7 简介
+title: iOS 7 简介
 description: 本文介绍如何在 iOS 7，包括视图控制器转换，UIView 动画，UIKit Dynamics 和文本工具包的增强功能中引入的主要新 Api。 它还介绍了一些对用户界面和新的增强多任务处理功能的更改。
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: db2ce779962947e2121ff03280544a080e193e2e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037254"
 ---
-# <a name="introduction-to-ios-7"></a>IOS 7 简介
+# <a name="introduction-to-ios-7"></a>iOS 7 简介
 
 _本文介绍如何在 iOS 7，包括视图控制器转换，UIView 动画，UIKit Dynamics 和文本工具包的增强功能中引入的主要新 Api。它还介绍了一些对用户界面和新的增强多任务处理功能的更改。_
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/01/2017
 ms.openlocfilehash: b02ecc8a40f6ff8a1862d50202439d369003a53d
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "57981596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61262381"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>ARKit 使用 Xamarin.iOS 中 UrhoSharp
 

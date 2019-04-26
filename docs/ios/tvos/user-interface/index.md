@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: 0d5bfa83bee74a799398912f77f21cba10c7be45
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60895605"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>构建 tvOS Xamarin 具有用户界面
 

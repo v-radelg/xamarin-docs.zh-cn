@@ -1,5 +1,5 @@
 ---
-title: 演练：： 绑定 iOS OBJECTIVE-C 库
+title: 演练：绑定 iOS Objective-C 库
 description: 本文提供了实际演练如何创建现有 OBJECTIVE-C 的库，InfColorPicker 的 Xamarin.iOS 绑定。 它介绍了编译静态 Objective C 库、 绑定，以及在 Xamarin.iOS 应用程序中使用绑定等主题。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61391680"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：： 绑定 iOS OBJECTIVE-C 库
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
 _本文提供了实际演练如何创建现有 OBJECTIVE-C 的库，InfColorPicker 的 Xamarin.iOS 绑定。它介绍了编译静态 Objective C 库、 绑定，以及在 Xamarin.iOS 应用程序中使用绑定等主题。_
 

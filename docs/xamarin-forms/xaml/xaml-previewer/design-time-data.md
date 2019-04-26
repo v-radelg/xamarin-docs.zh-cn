@@ -8,11 +8,11 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58866353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876312"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML 预览程序中使用设计时数据
 

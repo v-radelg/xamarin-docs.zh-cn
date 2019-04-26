@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38866517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61161462"
 ---
 # <a name="datapages-controls-reference"></a>DataPages 控件参考
 
@@ -39,7 +39,7 @@ Xamarin.Forms DataPages Nuget 包括了一些可以充分利用数据源绑定�
 ## <a name="built-in-controls"></a>内置控件
 
 * [HeroImage](#heroimage)
-* [列表项](#listitem)
+* [ListItem](#listitem)
 
 <a name="heroimage" />
 
@@ -97,11 +97,11 @@ Xamarin.Forms DataPages Nuget 包括了一些可以充分利用数据源绑定�
 
 **Android**
 
-![](controls-images/listitem-light-android.png "在 Android 上的 ListItem 控件") ![ ](controls-images/listitem-dark-android.png "在 Android 上的 ListItem 控件")
+![](controls-images/listitem-light-android.png "在 Android 上的 ListItem 控件") ![](controls-images/listitem-dark-android.png "在 Android 上的 ListItem 控件")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "在 iOS 上的 ListItem 控件") ![ ](controls-images/listitem-dark-ios.png "在 iOS 上的 ListItem 控件")
+![](controls-images/listitem-light-ios.png "在 iOS 上的 ListItem 控件") ![](controls-images/listitem-dark-ios.png "在 iOS 上的 ListItem 控件")
 
 
 ## <a name="custom-control-example"></a>自定义控件示例
@@ -128,7 +128,7 @@ Xamarin.Forms DataPages Nuget 包括了一些可以充分利用数据源绑定�
 
 **Android**
 
-![](controls-images/cardview-light-android.png "在 Android 上的卡片视图-自定义控件") ![ ](controls-images/cardview-dark-android.png "在 Android 上的卡片视图-自定义控件")
+![](controls-images/cardview-light-android.png "在 Android 上的卡片视图-自定义控件") ![](controls-images/cardview-dark-android.png "在 Android 上的卡片视图-自定义控件")
 
 **iOS**
 

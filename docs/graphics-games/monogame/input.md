@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 235166b78dfbd4998086a2925a54137f1922f5d1
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61385639"
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame 游戏手柄引用
 

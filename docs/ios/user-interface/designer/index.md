@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/31/2018
 ms.openlocfilehash: 7c6529c539ab502fb6c13226acd18a57f8f6d58e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378660"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>使用 iOS 设计器构建用户界面
 

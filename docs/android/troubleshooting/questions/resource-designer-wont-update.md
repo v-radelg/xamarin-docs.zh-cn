@@ -1,5 +1,5 @@
 ---
-title: Android Resource.designer.cs 文件不会更新
+title: Android Resource.designer.cs 文件不更新
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 3F7376E3-59CC-4722-AEED-BB50E4D952AA
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
 ms.openlocfilehash: ba3c2b07e7f35bf9fd84d10b74d034a02ca6a73d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153278"
 ---
-# <a name="my-android-resourcedesignercs-file-will-not-update"></a>Android Resource.designer.cs 文件不会更新
+# <a name="my-android-resourcedesignercs-file-will-not-update"></a>Android Resource.designer.cs 文件不更新
 
 > [!NOTE]
 > 在 Xamarin Studio 5.1.4 和更高版本中解决此问题。 但是，如果 Visual Studio for Mac 发生问题，请提出[新 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)与完整的版本控制信息和完整生成日志输出。

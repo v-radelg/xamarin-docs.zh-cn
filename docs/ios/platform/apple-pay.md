@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
 ms.openlocfilehash: b971029ff3b2b1e8f5e63233d1d754c44b0e3309
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61346967"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay Xamarin.iOS
 

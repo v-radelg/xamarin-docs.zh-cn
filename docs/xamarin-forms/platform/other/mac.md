@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
 ms.openlocfilehash: 3a488b3a9f729da5d4bee8c1262190b15c2e9240
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60902672"
 ---
 # <a name="mac-platform-setup"></a>Mac 平台安装程序
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: fa8a48e165764a449af4bc5414d2e66aecea8269
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392246"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>演练-在 Xamarin.iOS 中的后台位置
 

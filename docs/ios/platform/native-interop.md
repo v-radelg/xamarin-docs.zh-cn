@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/28/2016
 ms.openlocfilehash: 7ed8fc18624f46abd4a9fc293d8c33a1722da7dd
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61424616"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>在 Xamarin.iOS 中引用本机库
 

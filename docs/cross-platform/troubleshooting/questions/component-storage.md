@@ -1,5 +1,5 @@
 ---
-title: 存储我的计算机上的组件？
+title: 组件保存在计算机的什么位置？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5EBB49EE-39E5-428B-866F-9FC1BB215B31
@@ -7,13 +7,13 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 4152c8ef7eeba3748d9244e27e48f3f9a2c0019b
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359090"
 ---
-# <a name="where-are-the-components-stored-on-my-machine"></a>存储我的计算机上的组件？
+# <a name="where-are-the-components-stored-on-my-machine"></a>组件保存在计算机的什么位置？
 
 每当你的 Xamarin 组件安装到应用程序项目时，它将被放置两个位置：
 

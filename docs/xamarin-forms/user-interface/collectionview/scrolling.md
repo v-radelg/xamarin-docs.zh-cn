@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/19/2019
 ms.openlocfilehash: da7f379076b8e193deddc99e9004f051ba006cbb
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61367522"
 ---
 # <a name="scroll-an-item-into-view"></a>向项滚动到视图
 

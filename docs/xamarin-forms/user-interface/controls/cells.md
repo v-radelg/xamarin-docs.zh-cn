@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: 5ef1aba847954ccdeb230acd82ebbc5015ebd6b7
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61030575"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 单元格
 

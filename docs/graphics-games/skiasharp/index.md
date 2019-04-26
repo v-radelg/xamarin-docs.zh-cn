@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 2aebc28f322bbd7b77a2dbee78e496ec628e5c74
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160627"
 ---
 # <a name="2d-drawing-with-skiasharp"></a>2D 绘图使用 SkiaSharp
 

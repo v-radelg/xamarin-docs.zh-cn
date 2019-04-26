@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170754"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>在 Xamarin.iOS 中编程布局约束
 

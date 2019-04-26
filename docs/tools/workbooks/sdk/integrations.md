@@ -1,5 +1,5 @@
 ---
-title: 高级的集成主题
+title: 高级集成主题
 description: 本文档介绍适用于 Xamarin Workbooks 集成相关的高级的主题。 它讨论 Xamarin.Workbook.Integrations NuGet 包和 Xamarin 工作簿中的 API 公开。
 ms.prod: xamarin
 ms.assetid: 002CE0B1-96CC-4AD7-97B7-43B233EF57A6
@@ -7,13 +7,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
 ms.openlocfilehash: 56ee709b78b8587c2717dc9d25a6357041812d23
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382240"
 ---
-# <a name="advanced-integration-topics"></a>高级的集成主题
+# <a name="advanced-integration-topics"></a>高级集成主题
 
 集成程序集应引用[ `Xamarin.Workbooks.Integrations` NuGet][nuget]。 请查看我们[快速入门文档](~/tools/workbooks/sdk/index.md)有关如何开始使用 NuGet 包的详细信息。
 

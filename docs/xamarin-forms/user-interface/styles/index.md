@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/28/2018
 ms.openlocfilehash: 75de62017c01c14ef4d2bab6d458336484d5cd69
-ms.sourcegitcommit: 4c97f5d73be7eb2da153a85183be4258b6b11ca6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58288610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170097"
 ---
 # <a name="styling-xamarinforms-apps"></a>样式设置 Xamarin.Forms 应用
 

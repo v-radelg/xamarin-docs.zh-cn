@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
 ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61083068"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路径效果
 

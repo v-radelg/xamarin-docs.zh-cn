@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2018
 ms.openlocfilehash: 38b06c26208613baed45f40a8f0933f10496c467
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51562986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61399226"
 ---
 # <a name="graphics-in-xamarinforms"></a>在 Xamarin.Forms 中的图形
 

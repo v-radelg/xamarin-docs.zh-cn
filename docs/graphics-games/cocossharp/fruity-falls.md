@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 959f5eb149ad375d686b17a85eb3d3b8fbdf3659
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61159979"
 ---
 # <a name="fruity-falls-game-details"></a>Fruity Falls 游戏详细信息
 

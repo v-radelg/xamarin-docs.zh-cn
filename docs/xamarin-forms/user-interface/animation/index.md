@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
 ms.openlocfilehash: bebb3e32f298a2079069787dba3453e1817cf64f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158584"
 ---
 # <a name="animation-in-xamarinforms"></a>在 Xamarin.Forms 中的动画
 

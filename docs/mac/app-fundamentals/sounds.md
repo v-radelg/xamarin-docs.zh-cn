@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
 ms.openlocfilehash: 9aeb7bbfc2fddef1f690b5299ec060c475ea1ce7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61234838"
 ---
 # <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>在 Xamarin.Mac 中播放声音使用 AVAudioPlayer
 

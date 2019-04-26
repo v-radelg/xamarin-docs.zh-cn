@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
 ms.openlocfilehash: 91bafbbdaee805ad128766bf0a770cb711597a85
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023345"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作业调度程序
 

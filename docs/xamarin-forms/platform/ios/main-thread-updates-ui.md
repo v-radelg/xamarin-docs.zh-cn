@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 56109cc9064de4b995e75ceb967abe4995504660
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953391"
 ---
 # <a name="main-thread-control-updates-on-ios"></a>在 iOS 上的主线程控制更新
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此平台特定于 iOS 的使控件的布局和呈现更新而不是在后台线程上执行，在主线程上执行。 它应很少需要但在某些情况下可能会阻止崩溃。 通过设置其已在使用的 XAML`Application.HandleControlUpdatesOnMainThread`可绑定属性设置为`true`:
 

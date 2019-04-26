@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
 ms.openlocfilehash: e71e79b58d912ecb697576e92ae921a848f24f4c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013205"
 ---
 # <a name="alternate-resources"></a>备用资源
 

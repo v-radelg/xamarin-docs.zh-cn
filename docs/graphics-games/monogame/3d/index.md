@@ -1,4 +1,4 @@
-﻿---
+---
 title: 使用 MonoGame 的 3D 图形简介
 description: MonoGame 提供灵活、高效的 API，用于显示实时 3D 图形。 它包括用于渲染的较高级构造，同时可以访问较低级的图形资源。
 ms.prod: xamarin
@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: dc0f8b34bbd85d5687431d8a20db4a31c72f5298
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381392"
 ---
 # <a name="introduction-to-3d-graphics-with-monogame"></a>使用 MonoGame 的 3D 图形简介
 

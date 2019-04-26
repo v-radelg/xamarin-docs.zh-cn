@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: b2f4cc71c1993e51ed55b51edd7c50d393e60873
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412798"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>使用 watchOS 在 Xamarin 中的屏幕大小
 
@@ -32,7 +32,7 @@ Apple Watch 现已推出两种屏幕大小：
 
 ![](screen-sizes-images/screen-any-sml.png "设计器显示观看 Any Apple Watch 在界面控制器")
 
-使用大小菜单来编辑和预览你的情节提要，在这两个可用的屏幕大小： **38mm**或**42 mm**:
+使用大小菜单来编辑和预览你在这两个可用的屏幕大小的情节提要：**38mm**或**42 mm**:
 
 ![](screen-sizes-images/screen-menu-sml.png "选择 38mm 或 42 mm 的大小")
 

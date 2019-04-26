@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
 ms.openlocfilehash: 872f26febf3abbe4d659773d2bf2d27348c64513
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61033238"
 ---
 # <a name="under-the-hood-in-xamarinmac"></a>实质上在 Xamarin.Mac 中
 
@@ -24,6 +24,6 @@ ms.locfileid: "50118768"
 
 Objective C，包括概念，如编译、 选择器、 注册机构、 应用程序启动和生成器到 Xamarin.Mac 的关系。
 
-## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac 注册机构](registrar.md)
+## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
 
 Xamarin.Mac 之间的差距托管的领域和 Cocoa 的运行时，允许托管的类来调用非托管的 Objective C 类，并返回发生事件时调用。 若要执行此"奇妙"所需的工作由注册机构，但有时可以帮助你了解这怎么回事"暗中"。

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ce10a2e6ac91f67f8b4f664c232de2a3c97a5ba6
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55291994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61176405"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms 页面
 

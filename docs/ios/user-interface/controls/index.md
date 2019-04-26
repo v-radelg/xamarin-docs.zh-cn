@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157411"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>在 Xamarin.iOS 中的用户界面控件
 

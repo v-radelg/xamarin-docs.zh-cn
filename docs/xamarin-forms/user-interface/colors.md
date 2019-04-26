@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
 ms.openlocfilehash: 43854929cfc232b24cad18e276b3ba51d1e5dece
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153441"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的颜色
 

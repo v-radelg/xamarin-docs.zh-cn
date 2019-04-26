@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
 ms.openlocfilehash: 5e354f8271257ab21a855bdf5d576ce3062fadc7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957384"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 清单
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 6f32d8f328232bdfc644da57bdb3201c60010063
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381891"
 ---
 # <a name="configuration-management"></a>配置管理
 
-设置允许的数据的配置，请将代码中应用程序的行为的分离允许要进行更改而无需重新生成应用程序的行为。 有两种类型的设置： 应用程序设置和用户设置。
+设置可用于将配置应用行为的数据与代码相互分离，这允许在不重新构建应用的情况下更改行为。 有两种类型的设置： 应用程序设置和用户设置。
 
 应用设置是应用程序创建和管理的数据。 它可以包括固定的 web 服务终结点、 API 密钥和运行时状态等数据。 应用程序设置绑定到该应用程序存在并且仅对该应用程序有意义。
 
@@ -34,16 +34,16 @@ Xamarin.Forms 具有可以用于存储设置数据的持久性字典。 可以�
 使用 Xam.Plugins.Settings 库时，单个静态类应创建的将包含所需的应用程序的应用程序和用户设置。 下面的代码示例演示在 eShopOnContainers 的移动应用中设置类：
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    private static ISettings AppSettings  
-    {  
-        get  
-        {  
-            return CrossSettings.Current;  
-        }  
-    }  
-    ...  
+    private static ISettings AppSettings  
+    {  
+        get  
+        {  
+            return CrossSettings.Current;  
+        }  
+    }  
+    ...  
 }
 ```
 
@@ -57,24 +57,24 @@ public static class Settings
 每个设置组成的键，默认值和属性。 下面的代码示例显示了表示 eShopOnContainers 移动应用连接到联机服务的基 URL 为用户设置的所有三个项：
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    ...  
-    private const string IdUrlBase = "url_base";  
-    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
-    ...  
+    ...  
+    private const string IdUrlBase = "url_base";  
+    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
+    ...  
 
-    public static string UrlBase  
-    {  
-        get  
-        {  
-            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
-        }  
-        set  
-        {  
-            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
-        }  
-    }  
+    public static string UrlBase  
+    {  
+        get  
+        {  
+            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
+        }  
+        set  
+        {  
+            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
+        }  
+    }  
 }
 ```
 
@@ -85,33 +85,33 @@ public static class Settings
 而是用于定义内的默认值`Settings`类，`UrlBaseDefault`字符串获取其值从`GlobalSetting`类。 下面的代码示例演示`BaseEndpoint`属性和`UpdateEndpoint`中此类的方法：
 
 ```csharp
-public class GlobalSetting  
+public class GlobalSetting  
 {  
-    ...  
-    public string BaseEndpoint  
-    {  
-        get { return _baseEndpoint; }  
-        set  
-        {  
-            _baseEndpoint = value;  
-            UpdateEndpoint(_baseEndpoint);  
-        }  
-    }  
-    ...  
+    ...  
+    public string BaseEndpoint  
+    {  
+        get { return _baseEndpoint; }  
+        set  
+        {  
+            _baseEndpoint = value;  
+            UpdateEndpoint(_baseEndpoint);  
+        }  
+    }  
+    ...  
 
-    private void UpdateEndpoint(string baseEndpoint)  
-    {  
-        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
-        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
-        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
-        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
-        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
-        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
-        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
-        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
-        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
-        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
-    }  
+    private void UpdateEndpoint(string baseEndpoint)  
+    {  
+        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
+        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
+        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
+        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
+        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
+        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
+        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
+        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
+        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
+        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
+    }  
 }
 ```
 
@@ -123,55 +123,55 @@ public class GlobalSetting
 
 ![](configuration-management-images/settings-endpoint.png "公开的 eShopOnContainers 移动应用的用户设置")
 
-**图 7-1**： 公开的 eShopOnContainers 移动应用的用户设置
+**图 7-1**:公开的 eShopOnContainers 移动应用的用户设置
 
 数据绑定可用于检索和设置通过公开的设置`Settings`类。 这由视图绑定到反过来访问中的属性的视图模型属性上的控件来实现`Settings`类，并引发属性更改通知，如果设置值已更改。 有关如何在 eShopOnContainers 的移动应用构造视图的信息进行建模，并将它们关联到视图，请参阅[会自动使用视图模型定位符创建视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
 
 下面的代码示例演示[ `Entry` ](xref:Xamarin.Forms.Entry)控件从`SettingsView`，允许用户输入容器化微服务的终结点基 URL:
 
 ```xaml
-<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
+<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
 ```
 
 这[ `Entry` ](xref:Xamarin.Forms.Entry)控件绑定到`Endpoint`属性`SettingsViewModel`类，使用双向绑定。 下面的代码示例显示了终结点属性：
 
 ```csharp
-public string Endpoint  
+public string Endpoint  
 {  
-    get { return _endpoint; }  
-    set  
-    {  
-        _endpoint = value;  
+    get { return _endpoint; }  
+    set  
+    {  
+        _endpoint = value;  
 
-        if(!string.IsNullOrEmpty(_endpoint))  
-        {  
-            UpdateEndpoint(_endpoint);  
-        }  
+        if(!string.IsNullOrEmpty(_endpoint))  
+        {  
+            UpdateEndpoint(_endpoint);  
+        }  
 
-        RaisePropertyChanged(() => Endpoint);  
-    }  
+        RaisePropertyChanged(() => Endpoint);  
+    }  
 }
 ```
 
-当`Endpoint`属性设置`UpdateEndpoint`方法调用，前提是所提供的值是有效的且属性更改引发通知。 下面的代码示例演示`UpdateEndpoint`方法：
+当`Endpoint`属性设置`UpdateEndpoint`方法调用，前提是所提供的值是有效的且属性更改引发通知。 下面的代码示例说明 `UpdateEndpoint` 方法：
 
 ```csharp
-private void UpdateEndpoint(string endpoint)  
+private void UpdateEndpoint(string endpoint)  
 {  
-    Settings.UrlBase = endpoint;  
+    Settings.UrlBase = endpoint;  
 }
 ```
 
 此方法会更新`UrlBase`中的属性`Settings`类与终结点基 URL 值输入该用户后，即可保存到特定于平台的存储器。
 
-当`SettingsView`导航到，`InitializeAsync`中的方法`SettingsViewModel`类执行。 下面的代码示例显示了此方法：
+当`SettingsView`导航到，`InitializeAsync`中的方法`SettingsViewModel`类执行。 下面的代码示例演示此方法：
 
 ```csharp
-public override Task InitializeAsync(object navigationData)  
+public override Task InitializeAsync(object navigationData)  
 {  
-    ...  
-    Endpoint = Settings.UrlBase;  
-    ...  
+    ...  
+    Endpoint = Settings.UrlBase;  
+    ...  
 }
 ```
 
@@ -181,7 +181,7 @@ public override Task InitializeAsync(object navigationData)
 
 ## <a name="summary"></a>总结
 
-设置允许的数据的配置，请将代码中应用程序的行为的分离允许要进行更改而无需重新生成应用程序的行为。 应用程序设置数据应用程序创建和管理，并且用户设置是可自定义应用的设置，会影响应用的行为，并且不需要频繁重新调整。
+设置可用于将配置应用行为的数据与代码相互分离，这允许在不重新构建应用的情况下更改行为。 应用设置是应用创建和管理的数据；用户设置是应用的可自定义设置，可影响应用的行为，但不需要频繁进行重新调整。
 
 Xam.Plugins.Settings 库提供了一致，类型安全、 用于保存和检索应用程序和用户设置和数据绑定的跨平台方法可用于访问与库创建的设置。
 

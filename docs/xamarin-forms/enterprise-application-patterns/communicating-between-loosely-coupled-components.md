@@ -1,5 +1,5 @@
 ---
-title: 通信之间松散耦合组件
+title: 松散耦合组件之间的通信
 description: '这一章介绍了如何在 eShopOnContainers 的移动应用实现发布-订阅模式，允许基于消息的不太方便链接对象和类型引用的组件之间的通信 '
 ms.prod: xamarin
 ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61381865"
 ---
-# <a name="communicating-between-loosely-coupled-components"></a>通信之间松散耦合组件
+# <a name="communicating-between-loosely-coupled-components"></a>松散耦合组件之间的通信
 
 发布-订阅模式是发布服务器将消息发送而无需了解任何接收方，名为订阅服务器的消息传递模式。 同样，订阅服务器侦听的特定消息，而无需任何发布服务器的知识。
 
@@ -22,7 +22,7 @@ ms.locfileid: "38998539"
 
 ## <a name="introduction-to-messagingcenter"></a>MessagingCenter 简介
 
-Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)类实现发布-订阅模式，允许基于消息的不太方便链接对象和类型引用的组件之间的通信。 此机制允许发布服务器和订阅服务器进行通信而无需到对方，帮助减少组件，同时还允许要进行单独开发和测试的组件之间的依赖关系的引用。
+Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许在对象和类型引用不便于链接的组件之间进行基于消息的通信。 此机制允许发布者和订阅者在无需相互引用的情况下进行通信，帮助减少组件之间的依赖性，同时还允许这些组件接受独立开发和测试。
 
 [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)类提供了多播的发布-订阅功能。 这意味着可以有多个发布服务器的发布一条消息，并且可以有多个订阅服务器侦听的同一消息。 图 4 1 说明了此关系：
 
@@ -55,16 +55,16 @@ EShopOnContainers 移动应用使用[ `MessagingCenter` ](xref:Xamarin.Forms.Mes
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 消息是用于标识消息的字符串。 以下代码示例演示在 eShopOnContainers 的移动应用中定义的消息：
 
 ```csharp
-public class MessengerKeys  
+public class MessengerKeys  
 {  
-    // Add product to basket  
-    public const string AddProduct = "AddProduct";  
+    // Add product to basket  
+    public const string AddProduct = "AddProduct";  
 
-    // Filter  
-    public const string Filter = "Filter";  
+    // Filter  
+    public const string Filter = "Filter";  
 
-    // Change selected Tab programmatically  
-    public const string ChangeTab = "ChangeTab";  
+    // Change selected Tab programmatically  
+    public const string ChangeTab = "ChangeTab";  
 }
 ```
 
@@ -75,7 +75,7 @@ public class MessengerKeys
 发布者通知之一的消息的订户[ `MessagingCenter.Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)重载。 下面的代码示例演示如何发布`AddProduct`消息：
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 ```
 
 在此示例中， [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)方法指定三个参数：
@@ -94,12 +94,12 @@ MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 订户可以注册以使用之一接收消息[ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*)重载。 下面的代码示例演示如何在 eShopOnContainers 的移动应用订阅，并处理时，`AddProduct`消息：
 
 ```csharp
-MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-    this, MessageKeys.AddProduct, async (sender, arg) =>  
+MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+    this, MessageKeys.AddProduct, async (sender, arg) =>  
 {  
-    BadgeCount++;  
+    BadgeCount++;  
 
-    await AddCatalogItemAsync(arg);  
+    await AddCatalogItemAsync(arg);  
 });
 ```
 
@@ -115,14 +115,14 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 订阅服务器可以随时取消订阅他们不再想要接收的消息。 这其中一个来实现[ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)重载，如下面的代码示例中所示：
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
 ```
 
 在此示例中， [ `Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)方法语法反映指定订阅以接收时的类型参数`AddProduct`消息。
 
 ## <a name="summary"></a>总结
 
-Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)类实现发布-订阅模式，允许基于消息的不太方便链接对象和类型引用的组件之间的通信。 此机制允许发布服务器和订阅服务器进行通信而无需到对方，帮助减少组件，同时还允许要进行单独开发和测试的组件之间的依赖关系的引用。
+Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许在对象和类型引用不便于链接的组件之间进行基于消息的通信。 此机制允许发布者和订阅者在无需相互引用的情况下进行通信，帮助减少组件之间的依赖性，同时还允许这些组件接受独立开发和测试。
 
 
 ## <a name="related-links"></a>相关链接

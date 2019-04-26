@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 95227689303a8367785202956a6aaef921c1c593
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526437"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085171"
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>性能和使用 CCRenderTexture 视觉效果
 
@@ -67,7 +67,7 @@ protected override void AddedToScene ()
 
 ### <a name="card-draw-calls"></a>卡绘图调用
 
-我们的代码是完全可能找到的信息的简化*可收集的纸牌游戏*(CCG)"Magic:: 正在收集"或"Hearthstone"等。 我们的游戏中仅在一次显示三张数据卡，并具有较少的可能单元 （蓝色、 绿色和橙色）。 与此相反，完整的游戏可能有超过 20 种卡屏幕在给定时间，并且播放机可能会有数百个可供创建其卡片组时选择的卡。 即使我们的游戏中不会不当前会遇到性能问题，可能会使用类似的实现完全游戏。
+我们的代码是完全可能找到的信息的简化*可收集的纸牌游戏*(CCG) 如"Magic:正在收集"或"Hearthstone"。 我们的游戏中仅在一次显示三张数据卡，并具有较少的可能单元 （蓝色、 绿色和橙色）。 与此相反，完整的游戏可能有超过 20 种卡屏幕在给定时间，并且播放机可能会有数百个可供创建其卡片组时选择的卡。 即使我们的游戏中不会不当前会遇到性能问题，可能会使用类似的实现完全游戏。
 
 CocosSharp 提供了一些见解通过公开的绘图调用的呈现性能执行每个帧。 我们`GameLayer.AddedToScene`方法设置`GameView.Stats.Enabled`到`true`，从而导致性能信息的屏幕的左下角所示：
 

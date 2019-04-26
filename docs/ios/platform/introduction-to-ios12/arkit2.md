@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
 ms.openlocfilehash: 559ef9cc9a3e5ace7a4023e81363825c6861f6d4
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61399174"
 ---
 # <a name="arkit-2-in-xamarinios"></a>在 Xamarin.iOS ARKit 2
 

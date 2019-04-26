@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
 ms.openlocfilehash: db24c8677b0a3099193132575e92bc43a4c31dea
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61251006"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>在 Xamarin.iOS 中的国际化编码
 
@@ -29,10 +29,10 @@ ms.locfileid: "50675557"
 您可以选择其中之一：
 
 -  cjk： 中文、 日语和朝鲜语
--  mideast： 阿拉伯语、 希伯来语、 土耳其语和 Latin5。
--  其他： 西里尔语、 波罗的语、 越南语、 乌克兰语和泰语
--  极少数： EBCDIC 编码以及其他极少数的代码页
--  西部： 拉丁语言，复活节和西欧语言
+-  mideast:阿拉伯语、 希伯来语、 土耳其语和 Latin5。
+-  其他：西里尔语、 波罗的语、 越南语、 乌克兰语和泰语
+-  极少数：EBCDIC 编码以及其他极少数的代码页
+-  西部：拉丁语言，复活节和西欧语言
 -  全部
 
 

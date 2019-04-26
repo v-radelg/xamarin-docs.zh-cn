@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
 ms.openlocfilehash: 06a7a3b00934b7a2f3eeb4fcfa6fc90071901ba0
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60955654"
 ---
 # <a name="java-bindings-metadata"></a>Java 绑定元数据
 

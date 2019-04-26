@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
 ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61420865"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>可以将文件添加到或 IPA 文件在 Visual Studio 生成后删除文件？
 
@@ -40,13 +40,13 @@ ms.locfileid: "50117403"
 
 7.  解压缩`.ipa`到一个临时文件`old/`文件夹使用以下命令。 调整`Ad-Hoc`和`iPhoneApp1`所需的特定项目的名称。
 
-    > 同上-xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa 旧 /
+    > ditto -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa old/
 
 8.  保留`Terminal.app`窗口处于打开状态。
 
 9.  删除从所需的文件`.ipa`。 您可以将它们移动到回收站使用查找程序，或使用命令行上将其删除`Terminal.app`。 若要查看的内容`Payload/iPhone`文件在查找程序中，单击该文件，然后选择**显示包内容**。
 
-10.  使用相同的常规方法如下所示步骤 3 中，找到日志文件下的`~/Library/Logs/Xamarin/MonoTouchVS/`具有项目名称和`generated session id`名称中： ![](modify-ipa-images/build-log.png "在查找器中找到项目生成日志")
+10.  使用相同的常规方法如下所示步骤 3 中，找到日志文件下的`~/Library/Logs/Xamarin/MonoTouchVS/`具有项目名称和`generated session id`名称中：![](modify-ipa-images/build-log.png "在查找器中找到项目生成日志")
 
 11.  生成日志从步骤 10 中，例如双击打开它。
 
@@ -88,4 +88,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 和 App Store 验证过程将报告类似的错误消息：
 
-> 错误 ITMS-90035:"无效签名。 密封的资源已丢失或无效。 路径 [iPhoneApp1.app/iPhoneApp1] 处的二进制文件包含无效的签名。 请确保您已签名应用程序的分发证书、 不是临时证书或开发证书。 验证在目标级别 （它们将替代在项目级别的任何值） 在 Xcode 中的代码签名设置正确。 此外，请确保在 Xcode 中，而不是模拟器目标使用发布目标生成要上载的绑定。 如果确定你的代码签名设置正确，选择"全部清除"在 Xcode 中，删除的"生成"目录中查找工具中，并重新生成发布目标。 有关详细信息，请查阅[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> 错误 ITMS-90035:"签名无效。 密封的资源已丢失或无效。 路径 [iPhoneApp1.app/iPhoneApp1] 处的二进制文件包含无效的签名。 请确保您已签名应用程序的分发证书、 不是临时证书或开发证书。 验证在目标级别 （它们将替代在项目级别的任何值） 在 Xcode 中的代码签名设置正确。 此外，请确保在 Xcode 中，而不是模拟器目标使用发布目标生成要上载的绑定。 如果确定你的代码签名设置正确，选择"全部清除"在 Xcode 中，删除的"生成"目录中查找工具中，并重新生成发布目标。 有关详细信息，请查阅[ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

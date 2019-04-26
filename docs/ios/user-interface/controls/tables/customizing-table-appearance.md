@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: e1e86918d29e12d2f34dd3008b8c1d8e47471c24
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61225757"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>自定义在 Xamarin.iOS 中的表的外观
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
 ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085913"
 ---
 # <a name="clipping-with-paths-and-regions"></a>按路径和区域进行剪裁
 
@@ -24,7 +24,7 @@ _使用剪辑图形路径指向的特定区域，并创建区域_
 
 ![](clipping-images/clippingsample.png "通过锁眼 monkey")
 
-*剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是，不能从一个区域，创建路径和它们在内部有很大不同： 路径包含一系列直线和曲线，而由一系列水平扫描行定义一个区域。
+*剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是，不能从一个区域，创建路径和它们在内部有很大差异：路径包含一系列直线和曲线，而由一系列水平扫描行定义一个区域。
 
 上面的图像已通过**Monkey 通过锁眼**页。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)类定义使用 SVG 数据的路径，并使用构造函数从程序资源加载位图：
 
@@ -366,7 +366,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 如果每个路径缩短为水平扫描行，如老式清空 tube 电视中的一系列显著简化此作业。 每个扫描行是只需一条水平线起始点和终结点。 例如，10 个像素的半径的圆形可分解为 20 水平扫描行，其中每个圆的左侧部分开始，在右侧的部分结束。 结合使用的任何区域操作的两个圆成为非常简单，因为它是只需检查每个对相应扫描行的开始和结束坐标。
 
-这是什么区域是： 一系列定义一个区域的水平扫描行。
+这是什么区域是：一系列定义一个区域的水平扫描行。
 
 但是，当区域被简化为一系列的扫描行，这些扫描线基于特定的像素尺寸。 严格地说，区域不是向量图形对象。 它是在更接近本质上比为路径的压缩单色位图。 因此，区域不能缩放或旋转不失真，并因此它们不转换时使用的剪辑区域。
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: f139bcceda12752e43a3a8330fa0a0e038e539f9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61423516"
 ---
 # <a name="wide-color-in-xamarinios"></a>在 Xamarin.iOS 中广泛的颜色
 
@@ -133,7 +133,7 @@ SRGB 颜色空间很大程度上已被标准化上使用 8 位像素格式，因
 - 核心图形
 - ImageIO
 - Core 映像
-- 易于使用的功能
+- WebKit
 - SpriteKit
 - 核心动画
 - AppKit （适用于仅 macOS)

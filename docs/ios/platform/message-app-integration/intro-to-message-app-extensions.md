@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153799"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>在 Xamarin.iOS 中的消息应用扩展基本知识
 

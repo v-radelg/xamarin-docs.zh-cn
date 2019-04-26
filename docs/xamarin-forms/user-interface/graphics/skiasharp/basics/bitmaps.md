@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: e1e21fe121fba30755efbabe302ed0f22149e7e0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157375"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>位图中 SkiaSharp 的基础知识
 
@@ -104,7 +104,7 @@ Android 操作系统使用时引发异常`Stream`从返回`GetStreamAsync`中`SK
 
 在代码中，方面加载位图的最简单方法直接在您的应用程序中包括的位图资源。 **SkiaSharpFormsDemos**程序包括一个名为文件夹**媒体**包含几个位图文件，其中一个名为**monkey.png**。 对于存储为程序资源的位图，必须使用**属性**对话框，可以为该文件提供**生成操作**的**嵌入的资源**！
 
-每个嵌入的资源具有*资源 ID* ，它包含项目名称、 文件夹和文件名，所有连接通过句点： **SkiaSharpFormsDemos.Media.monkey.png**。 可以通过指定该资源获取访问此资源 ID 作为参数到[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)类：
+每个嵌入的资源具有*资源 ID*项目名称、 文件夹和文件名，所有连接通过句点组成：**SkiaSharpFormsDemos.Media.monkey.png**. 可以通过指定该资源获取访问此资源 ID 作为参数到[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)类：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61371376"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS HomeKit
 
@@ -426,7 +426,7 @@ HomeKit 附件模拟器中可以下找到此编号**安装程序代码**字段�
  - 制造商
  - 模型
  - MotionDetected
- - name
+ - 名称
  - ObstructionDetected
  - OccupancyDetected
  - OutletInUse
@@ -454,7 +454,7 @@ HomeKit 附件模拟器中可以下找到此编号**安装程序代码**字段�
  - TargetTemperature
  - TargetVerticalTilt
  - TemperatureUnits
- - 版本
+ - Version
 
 ### <a name="working-with-a-characteristics-value"></a>使用特性的值
 

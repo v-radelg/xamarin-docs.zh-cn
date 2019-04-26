@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: a5887748eda8af89b9215e3e121db592dfa73935
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957613"
 ---
 # <a name="binding-an-eclipse-library-project"></a>绑定 Eclipse 库项目
 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
 ms.openlocfilehash: 314bedcb6bb2d7ebf9d8f98428b6a7cad059f73b
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59509948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382012"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>使用 Xamarin 进行游戏开发简介
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: df50b4280335001f2d27ff23a91e4098eed3ba99
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269311"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>程序集支持的适用于 tvOS 的 Xamarin
 

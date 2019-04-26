@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61382791"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin.iOS 中的语音识别
 
@@ -66,7 +66,7 @@ Apple 已发布 （收集自 2011 年起） 的以下键盘听写统计信息：
 
 语音识别 API 提供的结果以透明方式自定义向单个用户，而无需应用程序无需收集或访问任何私有用户数据。
 
-语音识别 API 提供了返回到调用应用中的结果近乎实时地说到用户以及它提供了有关转换的结果比只包含文本的详细信息。 这些方法包括：
+语音识别 API 提供了返回到调用应用中的结果近乎实时地说到用户以及它提供了有关转换的结果比只包含文本的详细信息。 这些问题包括：
 
 - 用户所说的内容的多个解释。
 - 各翻译的置信度级别。

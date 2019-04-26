@@ -1,5 +1,5 @@
 ---
-title: 使用 iOS 设计器中的表
+title: 在 iOS 设计器中使用表
 description: 前面的部分中我们探讨了如何使用表进行开发。 在中，第五个和最后一个部分，我们将聚合到目前为止我们已了解并创建使用情节提要的一个基本的任务列表应用程序。
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
@@ -8,17 +8,17 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 303c96ae6cdbc9f5b327c971f962d6eac75a6fa1
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227363"
 ---
-# <a name="working-with-tables-in-the-ios-designer"></a>使用 iOS 设计器中的表
+# <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 设计器中使用表
 
 情节提要是一种创建 iOS 应用程序所见即所得方式和支持在 Mac 和 Windows 上的 Visual Studio。 有关情节提要的详细信息，请参阅[到情节提要简介](~/ios/user-interface/storyboards/index.md)文档。 情节提要还允许您编辑的单元格布局*在*表，这简化了使用表和单元格进行开发
 
-在 iOS 设计器中配置的表视图的属性时, 有两种类型的单元格内容可以从选择：**动态**或**静态**原型内容。
+在 iOS 设计器中配置的表视图的属性，有两种类型的单元格内容，可以选择从：**动态**或**静态**原型内容。
 
 <a name="Prototype_Content" />
 
@@ -69,7 +69,7 @@ Visual Studio 中使用创建新的解决方案 **（创建） 新项目...> 单
 
 ### <a name="layout-the-view-controllers"></a>布局视图控制器
 
-到情节提要的第一个更改是删除现有的详细信息视图，并将它替换为 UITableViewController。 请执行这些步骤：
+到情节提要的第一个更改是删除现有的详细信息视图，并将它替换为 UITableViewController。 请执行以下步骤：
 
 1.  选择视图控制器底部栏并将其删除。
 2.  拖动**导航控制器**和一个**表格视图控制器**到从工具箱情节提要上。 
@@ -79,11 +79,11 @@ Visual Studio 中使用创建新的解决方案 **（创建） 新项目...> 单
 
 5. 接下来，通过选择它们并使用属性面板中配置两个表视图。 请务必选择视图，而不是视图控制器 – 你可以使用文档大纲以帮助进行选择。
 
-6.  更改将根视图控制器**内容： 动态原型**(在设计图面上的视图将标有**原型内容**):
+6.  要将根视图控制器更改**内容：动态原型**(在设计图面上的视图将标有**原型内容**):
 
     [![将内容属性设置为动态原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  更改新**UITableViewController**要**内容： 静态单元格**。 
+7.  更改新**UITableViewController**为**内容：静态单元格**。 
 
 
 8. 新 UITableViewController 必须具有其类名称和标识符设置。 选择视图控制器，然后键入_TaskDetailViewController_有关**类**中**Properties Pad** – 这将创建一个新`TaskDetailViewController.cs`解决方案中的文件板。 输入**StoryboardID**作为_详细信息_，在下面的示例所示。 这将在稍后用于加载此视图中的C#代码：  
@@ -115,7 +115,7 @@ Visual Studio 中使用创建新的解决方案 **（创建） 新项目...> 单
 请执行以下操作： 
 
 -  拖动**栏按钮项**从工具箱拖到_导航栏的右侧_。
--  在中**Properties Pad**下**栏按钮项**选择**标识符： 添加**(以使其 *+* 加号按钮)。 
+-  在中**Properties Pad**下**栏按钮项**选择**标识符：添加**(以使其*+* 加号按钮)。 
 -  请为其提供一个名称，以便它可以标识代码中在后面的阶段。 请注意，你将需要提供根视图控制器类名称 (例如**ItemViewController**) 以允许您设置栏按钮项的名称。
 
 
@@ -129,10 +129,10 @@ Visual Studio 中使用创建新的解决方案 **（创建） 新项目...> 单
 
 选择表视图，然后打开**属性板**。 更新以下属性：
 
--  **部分**: _2_ 
+-  **部分**:_2_ 
 -  **样式**:_分组_
--  **分隔符**: _None_
--  **所选内容**:_没有选定内容_
+-  **分隔符**:_无_
+-  **选择**:_没有选定内容_
 
 选择的上半部分和下**属性 > 表视图部分**更改**行**到_3_，如下所示：
 
@@ -142,7 +142,7 @@ Visual Studio 中使用创建新的解决方案 **（创建） 新项目...> 单
 打开每个单元格**Properties Pad**和设置：
 
 -  **样式**:_自定义_
--  **标识符**： 选择 （例如每个单元的唯一标识符。 "_标题_"，"_说明_"、"_完成_")。
+-  **标识符**:选择 （例如每个单元的唯一标识符。 "_标题_"，"_说明_"、"_完成_")。
 -  将所需的控件，以生成屏幕截图所示的布局 (放置**UILabel**， **UITextField**并**UISwitch**上正确的单元格，并设置标签相应地，ie。标题、 说明和完成)。
 
 
@@ -160,11 +160,11 @@ Visual Studio 中使用创建新的解决方案 **（创建） 新项目...> 单
 
 创建自己的情节提要有几个最后一个步骤。 首先我们必须为每个控件提供一个名称下的**标识 > 名称**以便它们可以更高版本上使用在代码中。 这些名称，如下所示：
 
--  **标题 UITextField** : _TitleText_
--  **说明 UITextField** : _NotesText_
--  **UISwitch** : _DoneSwitch_
--  **删除 UIButton** : _DeleteButton_
--  **保存 UIButton** : _SaveButton_
+-  **标题 UITextField** :_TitleText_
+-  **说明 UITextField** :_NotesText_
+-  **UISwitch** :_DoneSwitch_
+-  **删除 UIButton** :_DeleteButton_
+-  **保存 UIButton** :_SaveButton_
 
 
 <a name="Adding_Code" />

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: 3193f27c30080a4335abfe969acb3c8b33516469
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61386335"
 ---
 # <a name="updating-your-app-to-ios-11"></a>将应用更新到 iOS 11
 

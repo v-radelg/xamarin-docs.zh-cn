@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
 ms.openlocfilehash: f31490a683adfb46c609f14adf08b68de0abc375
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61082969"
 ---
 # <a name="notifications-in-xamarinios"></a>在 Xamarin.iOS 中的通知
 

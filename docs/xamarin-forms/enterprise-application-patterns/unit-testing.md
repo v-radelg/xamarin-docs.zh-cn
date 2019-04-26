@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61298965"
 ---
 # <a name="unit-testing-enterprise-apps"></a>单元测试的企业应用
 
@@ -38,15 +38,15 @@ ms.locfileid: "38998678"
 采用松散耦合的体系结构的动机之一是它方便了单元测试。 使用 Autofac 注册的类型之一是`OrderService`类。 下面的代码示例显示了此类的大纲：
 
 ```csharp
-public class OrderDetailViewModel : ViewModelBase  
+public class OrderDetailViewModel : ViewModelBase  
 {  
-    private IOrderService _ordersService;  
+    private IOrderService _ordersService;  
 
-    public OrderDetailViewModel(IOrderService ordersService)  
-    {  
-        _ordersService = ordersService;  
-    }  
-    ...  
+    public OrderDetailViewModel(IOrderService ordersService)  
+    {  
+        _ordersService = ordersService;  
+    }  
+    ...  
 }
 ```
 
@@ -60,7 +60,7 @@ public class OrderDetailViewModel : ViewModelBase
 
 ## <a name="testing-mvvm-applications"></a>测试 MVVM 应用程序
 
-测试模型和视图模型的 MVVM 应用程序从等同于测试任何其他类，并可以使用相同的工具和技术 – 例如单元测试和模拟。 但是，有一些是模型的典型的模式和视图模型类，可受益于特定的单元测试技术的。
+测试模型和视图模型的 MVVM 应用程序从等同于测试任何其他类，并可以使用相同的工具和技术 – 例如单元测试和模拟。 但是，模型和视图模型类具有一些典型模式，特定的单元测试技术可能对这些模式有益。
 
 > [!TIP]
 > 测试与每个单元测试的一件事。 不要冒险行事，以使单元测试的单元的行为的多个方面的练习。 这样做会导致很难读取和更新的测试。 它还会导致混乱，解释失败时。
@@ -81,15 +81,15 @@ EShopOnContainers 移动应用中包含的单元测试是事实的测试，并�
 
 ```csharp
 [Fact]  
-public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()  
+public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()  
 {  
-    var orderService = new OrderMockService();  
-    var orderViewModel = new OrderDetailViewModel(orderService);  
+    var orderService = new OrderMockService();  
+    var orderViewModel = new OrderDetailViewModel(orderService);  
 
-    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
-    await orderViewModel.InitializeAsync(order);  
+    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
+    await orderViewModel.InitializeAsync(order);  
 
-    Assert.NotNull(orderViewModel.Order);  
+    Assert.NotNull(orderViewModel.Order);  
 }
 ```
 
@@ -105,21 +105,21 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 
 ```csharp
 [Fact]  
-public async Task SettingOrderPropertyShouldRaisePropertyChanged()  
+public async Task SettingOrderPropertyShouldRaisePropertyChanged()  
 {  
-    bool invoked = false;  
-    var orderService = new OrderMockService();  
-    var orderViewModel = new OrderDetailViewModel(orderService);  
+    bool invoked = false;  
+    var orderService = new OrderMockService();  
+    var orderViewModel = new OrderDetailViewModel(orderService);  
 
-    orderViewModel.PropertyChanged += (sender, e) =>  
-    {  
-        if (e.PropertyName.Equals("Order"))  
-            invoked = true;  
-    };  
-    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
-    await orderViewModel.InitializeAsync(order);  
+    orderViewModel.PropertyChanged += (sender, e) =>  
+    {  
+        if (e.PropertyName.Equals("Order"))  
+            invoked = true;  
+    };  
+    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
+    await orderViewModel.InitializeAsync(order);  
 
-    Assert.True(invoked);  
+    Assert.True(invoked);  
 }
 ```
 
@@ -131,20 +131,20 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 
 ```csharp
 [Fact]  
-public void AddCatalogItemCommandSendsAddProductMessageTest()  
+public void AddCatalogItemCommandSendsAddProductMessageTest()  
 {  
-    bool messageReceived = false;  
-    var catalogService = new CatalogMockService();  
-    var catalogViewModel = new CatalogViewModel(catalogService);  
+    bool messageReceived = false;  
+    var catalogService = new CatalogMockService();  
+    var catalogViewModel = new CatalogViewModel(catalogService);  
 
-    Xamarin.Forms.MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-        this, MessageKeys.AddProduct, (sender, arg) =>  
-    {  
-        messageReceived = true;  
-    });  
-    catalogViewModel.AddCatalogItemCommand.Execute(null);  
+    Xamarin.Forms.MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+        this, MessageKeys.AddProduct, (sender, arg) =>  
+    {  
+        messageReceived = true;  
+    });  
+    catalogViewModel.AddCatalogItemCommand.Execute(null);  
 
-    Assert.True(messageReceived);  
+    Assert.True(messageReceived);  
 }
 ```
 
@@ -156,21 +156,21 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 
 ```csharp
 [Fact]  
-public void InvalidEventNameShouldThrowArgumentExceptionText()  
+public void InvalidEventNameShouldThrowArgumentExceptionText()  
 {  
-    var behavior = new MockEventToCommandBehavior  
-    {  
-        EventName = "OnItemTapped"  
-    };  
-    var listView = new ListView();  
+    var behavior = new MockEventToCommandBehavior  
+    {  
+        EventName = "OnItemTapped"  
+    };  
+    var listView = new ListView();  
 
-    Assert.Throws<ArgumentException>(() => listView.Behaviors.Add(behavior));  
+    Assert.Throws<ArgumentException>(() => listView.Behaviors.Add(behavior));  
 }
 ```
 
 此单元测试将引发异常，因为[ `ListView` ](xref:Xamarin.Forms.ListView)控件不具有名为的事件`OnItemTapped`。 `Assert.Throws<T>`方法是泛型方法其中`T`是预期异常的类型。 将参数传递给`Assert.Throws<T>`方法是一个 lambda 表达式，将引发的异常。 因此，单元测试将传递，提供 lambda 表达式引发`ArgumentException`。
 
->💡 **提示**： 避免编写检查异常消息字符串的单元测试。 随着时间推移，可能会更改异常消息字符串，因此依赖于它们的存在的单元测试它们被认为是做。
+>💡 **提示**:避免编写检查异常消息字符串的单元测试。 随着时间推移，可能会更改异常消息字符串，因此依赖于它们的存在的单元测试它们被认为是做。
 
 ### <a name="testing-validation"></a>测试验证
 
@@ -180,15 +180,15 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 
 ```csharp
 [Fact]  
-public void CheckValidationPassesWhenBothPropertiesHaveDataTest()  
+public void CheckValidationPassesWhenBothPropertiesHaveDataTest()  
 {  
-    var mockViewModel = new MockViewModel();  
-    mockViewModel.Forename.Value = "John";  
-    mockViewModel.Surname.Value = "Smith";  
+    var mockViewModel = new MockViewModel();  
+    mockViewModel.Forename.Value = "John";  
+    mockViewModel.Surname.Value = "Smith";  
 
-    bool isValid = mockViewModel.Validate();  
+    bool isValid = mockViewModel.Validate();  
 
-    Assert.True(isValid);  
+    Assert.True(isValid);  
 }
 ```
 
@@ -198,20 +198,20 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 
 ```csharp
 [Fact]  
-public void CheckValidationFailsWhenOnlyForenameHasDataTest()  
+public void CheckValidationFailsWhenOnlyForenameHasDataTest()  
 {  
-    var mockViewModel = new MockViewModel();  
-    mockViewModel.Forename.Value = "John";  
+    var mockViewModel = new MockViewModel();  
+    mockViewModel.Forename.Value = "John";  
 
-    bool isValid = mockViewModel.Validate();  
+    bool isValid = mockViewModel.Validate();  
 
-    Assert.False(isValid);  
-    Assert.NotNull(mockViewModel.Forename.Value);  
-    Assert.Null(mockViewModel.Surname.Value);  
-    Assert.True(mockViewModel.Forename.IsValid);  
-    Assert.False(mockViewModel.Surname.IsValid);  
-    Assert.Empty(mockViewModel.Forename.Errors);  
-    Assert.NotEmpty(mockViewModel.Surname.Errors);  
+    Assert.False(isValid);  
+    Assert.NotNull(mockViewModel.Forename.Value);  
+    Assert.Null(mockViewModel.Surname.Value);  
+    Assert.True(mockViewModel.Forename.IsValid);  
+    Assert.False(mockViewModel.Surname.IsValid);  
+    Assert.Empty(mockViewModel.Forename.Errors);  
+    Assert.NotEmpty(mockViewModel.Surname.Errors);  
 }
 ```
 
@@ -223,7 +223,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 
 待测试的对象的行为可以隔离的模拟依赖对象的行为的 mock 对象替换依赖对象。 这使单元测试，而无需难以处理资源，例如 web 服务或数据库执行。
 
-测试模型和视图模型的 MVVM 应用程序从等同于测试任何其他类，并可以使用相同的工具和技术。
+测试 MVVM 应用程序的模型和视图模型与测试任何其他类的方式相同，可以使用相同的工具和方法。
 
 
 ## <a name="related-links"></a>相关链接

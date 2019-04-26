@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: eca0f58a470228ce8e6331defe88c1ef727cef57
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035977"
 ---
 # <a name="extending-the-recyclerview-example"></a>扩展 RecyclerView 示例
 

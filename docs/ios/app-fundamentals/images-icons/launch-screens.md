@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
 ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087408"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>适用于 Xamarin.iOS 应用启动屏幕
 
@@ -231,4 +231,4 @@ _本文介绍如何在任何分辨率和方向，使用单个统一情节提要�
 - [iOS 设计器基本知识](~/ios/user-interface/designer/index.md)
 - [添加图像到资产目录映像设置](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [适用于 iOS 的 Xamarin 设计器的自动布局](~/ios/user-interface/designer/designer-auto-layout.md)
-- [人机接口指南： 启动屏幕](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [人机接口准则：启动屏幕](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

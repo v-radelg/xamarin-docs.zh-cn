@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 7589784563906d60fc8026feac9ea16362463bfa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085090"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>演练-在 Xamarin.iOS 中使用本地通知
 

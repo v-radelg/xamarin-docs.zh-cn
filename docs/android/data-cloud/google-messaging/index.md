@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
 ms.openlocfilehash: 8c2e3705f0f867b6993d0bdcb22f6672c853498e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61016734"
 ---
 # <a name="google-messaging"></a>Google 消息传送
 

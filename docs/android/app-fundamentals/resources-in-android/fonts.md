@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/09/2018
 ms.openlocfilehash: c7953748e79bd43bc14601c1f0ea05d1a36adf08
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013395"
 ---
 # <a name="fonts"></a>字体
 

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 23deddae61452d532a87c51cc1ec3bc53eb91c9f
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61278914"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究：Tasky
 

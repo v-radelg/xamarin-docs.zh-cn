@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 8091fb4e8328f61f1471d061b51b4735de3c089c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61230719"
 ---
 # <a name="objective-c-platforms"></a>Objective C 的平台
 

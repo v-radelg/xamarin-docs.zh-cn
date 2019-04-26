@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
 ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
-ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58641447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61389035"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 

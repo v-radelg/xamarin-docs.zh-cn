@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
 ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153310"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>如何解决 PathTooLongException 错误？
 
@@ -26,7 +26,7 @@ ms.locfileid: "50108699"
 
 在 Windows 上 (其中的路径的最大长度是[260 个字符](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx))、 一个**PathTooLongException**无法生成时生成的项目，如果生成的路径超过了最大长度。 
 
-## <a name="fix"></a>修复
+## <a name="fix"></a>修补程序
 
 从 Xamarin.Android 8.0 开始`UseShortFileNames`MSBuild 属性可以设置为绕过此错误。 当此属性设置为`True`(默认值是`False`)，生成过程将使用较短的路径名称以减少生成的可能性**PathTooLongException**。
 例如，当`UseShortFileNames`设置为`True`，在以上路径缩短为类似于以下路径：

@@ -1,5 +1,5 @@
 ---
-title: IOS 11 简介
+title: iOS 11 简介
 description: 本文档所链接到各种指南描述的 iOS 11 中，包括 ARKit 和 CoreML，MapKit、 PDFKit、 SiriKit，影像框架中，等功能。
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
 ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61170983"
 ---
-# <a name="introduction-to-ios-11"></a>IOS 11 简介
+# <a name="introduction-to-ios-11"></a>iOS 11 简介
 
 _请尝试新的 iOS 11 Api 与 Xamarin。_
 

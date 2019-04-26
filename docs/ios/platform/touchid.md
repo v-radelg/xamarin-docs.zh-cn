@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61087763"
 ---
 # <a name="touch-id-in-xamarinios"></a>在 Xamarin.iOS touch ID
 
@@ -52,8 +52,8 @@ ms.locfileid: "50114335"
 
 |设备配置|策略评估|备份机制|
 |--- |--- |--- |
-|而无需密码的设备|无访问权限|无|
-|使用密码的设备|需要密码|无|
+|而无需密码的设备|无访问权限|None|
+|使用密码的设备|需要密码|None|
 |使用 Touch ID 的设备|首选 Touch ID|允许密码|
 
 安全 Enclave 内的所有操作可以相互都信任。 这意味着我们可以使用 Touch ID 身份验证结果授权密钥链项解密。 安全 Enclave 还会保留失败的 Touch ID 匹配，在其中种情况下用户将需要恢复为使用密码的计数器。
@@ -63,7 +63,7 @@ IOS 8 中，名为的新框架_本地身份验证_，支持此过程中设备的
 
 随着我们建立在上一部分中，应用程序可以使用本地身份验证对用户进行身份验证中与已在设备设置安全策略的遵从性。
 
-目前，该 API 提供了只有两个功能： 首先，它有助于通过使用新密钥链访问控制列表 (Acl) 的现有密钥链服务。 密钥链数据可以是与成功的身份验证的用户指纹解锁。
+目前，该 API 提供了只有两个功能：首先，它有助于通过使用新密钥链访问控制列表 (Acl) 的现有密钥链服务。 密钥链数据可以是与成功的身份验证的用户指纹解锁。
 
 其次，LocalAuthentication 提供两种方法进行身份验证本地应用程序。 开发人员应使用`CanEvaluatePolicy`来确定设备是否处于可接受 Touch ID，然后`EvaluatePolicy`启动身份验证操作。
 

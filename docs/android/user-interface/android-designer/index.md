@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Android 设计器
+title: Xamarin.Android Designer
 description: 本文介绍 Xamarin.Android 设计器的功能。 它还说明了设计器基础知识，演示如何使用设计器以可视方式布置小组件和编辑属性。 它还阐释了如何使用设计器使用跨各种配置，如主题、 语言和设备配置的用户界面和资源，以及如何设计的横向和纵向等的替代视图。
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 1923d11829cf96941c8775f5f6b013116e0f2893
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114506"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200369"
 ---
-# <a name="xamarinandroid-designer"></a>Xamarin.Android 设计器
+# <a name="xamarinandroid-designer"></a>Xamarin.Android Designer
 
 _本文介绍 Xamarin.Android 设计器的功能。它还说明了设计器基础知识，演示如何使用设计器以可视方式布置小组件和编辑属性。它还阐释了如何使用设计器使用跨各种配置，如主题、 语言和设备配置的用户界面和资源，以及如何替代如横向和纵向视图的设计。_
 

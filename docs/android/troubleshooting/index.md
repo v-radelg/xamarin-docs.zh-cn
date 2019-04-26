@@ -9,11 +9,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 3df45cc0e3092c5c94c492864182d04cac392ff7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945527"
 ---
 # <a name="troubleshooting"></a>疑难解答
 

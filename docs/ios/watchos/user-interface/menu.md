@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60880665"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS 在 Xamarin 中的菜单控件 (Force Touch)
 
@@ -40,7 +40,7 @@ ms.locfileid: "50109752"
 
 - 标题、 和
 - 自定义映像，或
-- 系统图像： 接受条款，请添加、 块、 拒绝、 信息，也许，更，设为静音、 暂停、 播放和重复，恢复、 共享、 无序播放、 演讲者、 回收站。
+- 系统映像：接受、 添加块、 拒绝、 信息，也许，更，设为静音、 暂停、 播放和重复，恢复、 共享、 无序播放、 演讲者、 回收站。
 
 创建`Action`通过选择**事件**一部分**属性**板和键入操作方法的名称。 将在代码中，它可以实现在界面控制器类中，此类创建的分部方法：
 

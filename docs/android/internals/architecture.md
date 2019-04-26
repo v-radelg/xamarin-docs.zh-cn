@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: ea66cda0e2a1935a430c064c9cebd4134d295729
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60954245"
 ---
 # <a name="architecture"></a>体系结构
 

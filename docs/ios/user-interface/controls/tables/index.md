@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
 ms.openlocfilehash: 275c7553e465da67ca0780ea6aa9e986ca33b1f8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61379120"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>使用表和 Xamarin.iOS 中的单元格
 

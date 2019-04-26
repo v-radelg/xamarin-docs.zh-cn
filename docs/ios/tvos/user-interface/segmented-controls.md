@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 98a770d05014e0498b805ed9ffa0c84314efc765
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374953"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>使用 tvOS 在 Xamarin 中的分段控件
 
@@ -42,7 +42,7 @@ Apple 建议段图标，如搜索一个放大镜中使用简单、 可识别的�
 
 Apple 可以处理段文本的以下建议：
 
-- **使用短，有意义的名词**-段标题应明确声明的用户在选择给定的段时应期待的内容类型。 例如： 音乐或视频。
+- **使用短，有意义的名词**-段标题应明确声明的用户在选择给定的段时应期待的内容类型。 例如：音乐或视频。
 - **使用词首字母大写的大小写作**-段标题的每个词应采用大写形式除文章、 连词和介词少于四 （4） 个字符。
 - **使用短，已设定焦点的标题**-保留标题，简短并专注于的内容时选择段的预期行为的类型。
 

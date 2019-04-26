@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/15/2019
 ms.openlocfilehash: 8ed365ed41ac31c66d41f1a32a7a16929cdc6770
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61367536"
 ---
 # <a name="specify-xamarinforms-collectionview-layout"></a>指定 Xamarin.Forms 之间导航布局
 

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
 ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153279"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何自动化 Android NUnit 测试项目？
 

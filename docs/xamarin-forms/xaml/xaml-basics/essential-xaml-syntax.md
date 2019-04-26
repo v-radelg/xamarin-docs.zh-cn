@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407627"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
@@ -143,7 +143,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 </Label>
 ```
 
-另一个示例：`Grid`具有两个属性名为`RowDefinitions`和`ColumnDefinitions`。 这两个属性属于类型`RowDefinitionCollection`并`ColumnDefinitionCollection`，这是集合的`RowDefinition`和`ColumnDefinition`对象。 需要使用属性元素语法来设置这些集合。
+再例如：`Grid`具有两个属性名为`RowDefinitions`和`ColumnDefinitions`。 这两个属性属于类型`RowDefinitionCollection`并`ColumnDefinitionCollection`，这是集合的`RowDefinition`和`ColumnDefinition`对象。 需要使用属性元素语法来设置这些集合。
 
 下面是为 XAML 文件的开头`GridDemoPage`类，其中显示的属性元素标记`RowDefinitions`和`ColumnDefinitions`集合：
 
@@ -351,7 +351,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 </ContentPage>
 ```
 
-真正的问题是： 为什么是这些属性的元素*不*所需的 XAML 文件中？
+真正的问题是：为什么是这些属性的元素*不*所需的 XAML 文件中？
 
 允许在 XAML 中使用 Xamarin.Forms 中定义的元素中被标记了一个属性`ContentProperty`类中的属性。 如果您查找`ContentPage`类在联机的 Xamarin.Forms 文档，您将看到此属性：
 

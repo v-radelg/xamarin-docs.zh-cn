@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: b3dd300d28e0cf27cc1b5ebea59a68d57145fd61
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359905"
 ---
 # <a name="visualelement-elevation-on-android"></a>在 Android 上 VisualElement 提升
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 特定于平台的是用于控制提升或 Z 顺序，对应用程序的可视元素的面向 API 21 或更高版本。 一个可视元素提升确定其绘制顺序，使用具有更高版本的 Z 值 occluding 具有较低的 Z 值的可视元素的可视元素。 设置使用在 XAML`VisualElement.Elevation`附加属性设置为`boolean`值：
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
 ms.openlocfilehash: a57775776b32f34d2c9b976a22cc92cc22f3c879
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58782495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61374101"
 ---
 # <a name="device-orientation"></a>设备方向
 

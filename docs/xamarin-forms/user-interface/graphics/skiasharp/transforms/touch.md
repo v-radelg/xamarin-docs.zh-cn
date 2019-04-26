@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
 ms.openlocfilehash: d525725b58a961afb9c4c5d80962d05f8d08b83e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60876833"
 ---
 # <a name="touch-manipulations"></a>触摸操作
 
@@ -273,7 +273,7 @@ public partial class BitmapScalingPage : ContentPage
 
 在此程序中的第一个最大区别是的命中测试的逻辑。 使用的上一个程序`Contains`方法的`SKRect`确定接触点是否已转换对应于位图的矩形中。 但由于用户操作位图，位图可能会旋转，和`SKRect`不能正确表示的旋转的矩形。 你可能会担心的命中测试的逻辑需要这种情况下实现相当复杂的分析几何。
 
-但是的快捷方式位于： 确定一个点所在的已转换的矩形边界内是否等同于确定是否反转已转换的点位于未转换的矩形的边界内。 这就是一个多更轻松的计算，和逻辑可以继续使用便利`Contains`方法：
+但是的快捷方式位于：确定一个点所在的已转换的矩形边界内是否等同于确定是否反转已转换的点位于未转换的矩形的边界内。 这就是一个多更轻松的计算，和逻辑可以继续使用便利`Contains`方法：
 
 ```csharp
 public partial class BitmapRotationPage : ContentPage
@@ -703,7 +703,7 @@ class TouchManipulationBitmap
 
 在中`Moved`并`Released`事件、 方法调用`Manipulate`。 在这些时间`touchDictionary`包含一个或多个`TouchManipulationInfo`对象。 如果`touchDictionary`包含一个项，很可能该`PreviousPoint`和`NewPoint`值是否不相等，并表示一个手指的移动。 如果多个手指触摸位图，字典包含多个项，但只有其中一项具有不同`PreviousPoint`和`NewPoint`值。 所有其余部分具有相等`PreviousPoint`和`NewPoint`值。
 
-这一点很重要：`Manipulate`方法可以假设它正在处理的只用一个手指移动。 在此调用时没有其他手指正在移动，和如果他们真的在迁移 （如有可能），将在未来调用处理这些动作`Manipulate`。
+这非常重要：`Manipulate`方法可以假设它正在处理的只用一个手指移动。 在此调用时没有其他手指正在移动，和如果他们真的在迁移 （如有可能），将在未来调用处理这些动作`Manipulate`。
 
 `Manipulate`方法首先将字典复制到数组为方便起见。 它会忽略前两个条目之外的任何内容。 如果两个以上手指尝试以操作位图，其他人将被忽略。 `Manipulate` 是的最后一个成员`TouchManipulationBitmap`:
 

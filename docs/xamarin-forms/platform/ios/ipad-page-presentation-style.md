@@ -1,5 +1,5 @@
 ---
-title: iPad 模式页面演示文稿样式
+title: iPad 模式页面演示样式
 description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的设置模式在 iPad 上页面的呈现样式。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: b99898301ed6469b6e0d62ae0077b96aa9c4f3eb
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896909"
 ---
-# <a name="ipad-modal-page-presentation-style"></a>iPad 模式页面演示文稿样式
+# <a name="ipad-modal-page-presentation-style"></a>iPad 模式页面演示样式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此平台特定于 iOS 的用于在 iPad 上设置的模式页面演示文稿样式。 设置使用在 XAML`Page.ModalPresentationStyle`可绑定属性设置为`UIModalPresentationStyle`枚举值：
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 80142f5eef4b6fdca15709b61c85f09038ddb696
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952167"
 ---
 # <a name="entry-font-size-on-ios"></a>在 iOS 上的条目字体大小
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此平台特定于 iOS 的用于缩放的字体大小[ `Entry` ](xref:Xamarin.Forms.Entry)以确保适合所的文本的控件。 设置使用在 XAML [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty)附加到属性`boolean`值：
 

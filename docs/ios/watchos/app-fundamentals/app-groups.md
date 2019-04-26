@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 78f6c03f73f0e4d8a74f826dd7bc25bbe325d545
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61411673"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>WatchOS 应用组在 Xamarin 中使用
 

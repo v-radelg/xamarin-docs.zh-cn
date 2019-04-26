@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
 ms.openlocfilehash: 8587cade1c5b4a6882f21603ee869f94f38fd04a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085962"
 ---
 # <a name="native-views-in-c"></a>在 C# 中的本机视图
 

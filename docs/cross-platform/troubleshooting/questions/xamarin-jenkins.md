@@ -8,11 +8,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 06/05/2018
 ms.openlocfilehash: c2e409b796d5ef2525079e02aafdd0c6e8db5d81
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158931"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>为什么不是由 Microsoft 支持 Jenkins？
 
@@ -32,7 +32,7 @@ Jenkins 是一组开放源代码 CI;由于这么多问题直接引发由 Jenkins
 
 此问题的错误消息是类似如下：
 
-> 错误 XA5205： 找不到 Android SDK 目录。 请通过 /p:AndroidSdkDirectory 设置
+> 错误 XA5205:找不到 Android SDK 目录。 Please set via /p:AndroidSdkDirectory
 
 设置 SDK 位置的选项可能会有所不同，具体取决于您使用; 的确切 Jenkins Android 插件查找有关如何将此项设置的好时机是插件指南中。 例如，[Android 仿真程序插件](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration)自动寻找的 SDK，但如果它找不到它; 也可以通过该插件的 Jenkins 系统配置页设置位置。 
 
@@ -47,10 +47,10 @@ Jenkins 是一组开放源代码 CI;由于这么多问题直接引发由 Jenkins
 ### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins 报告 Xamarin 许可证无效
 此问题的错误消息通常是类似于
 
-> XA9008 错误： 从命令行生成需要业务许可证
+> XA9008 错误：从命令行生成需要业务许可证
 
 或
 
-> 错误： Starter Edition 的 Xamarin.iOS 不支持构建 Xamarin Studio 外部 
+> 错误：Starter Edition 的 Xamarin.iOS 不支持构建 Xamarin Studio 外部 
 
 此方案中的最常见原因是通过使用不与 Xamarin 许可证关联的用户帐户登录使用 Jenkins。 此操作，请解决的最简单方法是作为直接通过用户帐户的应用安装 Jenkins。 此处介绍的过程和一些其他注意事项： [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)

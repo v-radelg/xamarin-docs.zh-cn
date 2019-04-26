@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61163224"
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>在 Xamarin iOS 和 Android 的 visual Basic.NET
 

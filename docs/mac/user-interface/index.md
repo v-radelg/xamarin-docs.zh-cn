@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
 ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61281592"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>在 Xamarin.Mac 中的 macOS 用户界面控件
 
@@ -38,7 +38,7 @@ _此文章链接到指南描述各种 macOS UI 控件。_
 
 ## <a name="menusmacuser-interfacemenumd"></a>[菜单](~/mac/user-interface/menu.md)
 
-中的 Mac 应用程序的用户界面的各个部分都会使用到菜单从应用程序的主菜单顶部的弹出菜单和可以出现在窗口中的任何位置的上下文菜单的屏幕。 菜单是 Mac 应用程序的用户体验的重要组成部分。 本文介绍如何使用 Cocoa 菜单在 Xamarin.Mac 应用程序中。
+中的 Mac 应用程序的用户界面的各个部分都会使用到菜单从应用程序的主菜单顶部的弹出菜单和可以出现在窗口中的任何位置的上下文菜单的屏幕。 菜单是构成 Mac 应用程序用户体验的一个组成部分。 本文介绍如何使用 Cocoa 菜单在 Xamarin.Mac 应用程序中。
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[标准控件](~/mac/user-interface/standard-controls.md)
 
@@ -74,4 +74,4 @@ _此文章链接到指南描述各种 macOS UI 控件。_
 
 ## <a name="related-links"></a>相关链接
 
-- [macOS 人机接口指南 》](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS 人机界面指南](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

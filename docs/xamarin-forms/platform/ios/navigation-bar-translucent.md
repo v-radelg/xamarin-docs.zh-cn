@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 394a305abfd81db7a54316048181892a0ce56d19
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54208992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952876"
 ---
 # <a name="navigationpage-bar-translucency-on-ios"></a>在 iOS 上的 NavigationPage 栏半透明度
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此平台特定于 iOS 的用于上更改导航栏的透明度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)，并设置在 XAML 中由[ `NavigationPage.IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty)附加属性设置为`boolean`值：
 

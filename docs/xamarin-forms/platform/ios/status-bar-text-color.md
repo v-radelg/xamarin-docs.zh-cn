@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 39db74f8df8d8d3f62ff53b91e17f93f38c44bf0
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61081138"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>在 iOS 上的 NavigationPage 栏文本颜色模式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此特定于平台的控件是否状态栏文本的颜色上[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)调整以匹配导航栏的亮度。 设置使用在 XAML [ `NavigationPage.StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty)附加属性的值为[ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)枚举：
 

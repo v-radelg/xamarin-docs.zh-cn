@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2018
 ms.openlocfilehash: ddc9d18b57eac099331f0814b5963fb207840380
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893239"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169548"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 映射
 

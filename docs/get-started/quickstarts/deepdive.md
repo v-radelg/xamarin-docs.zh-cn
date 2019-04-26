@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
 ms.openlocfilehash: 67b189254cc08fac0323b7df5fcbab5abd994c05
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61078201"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门的深入探讨
 

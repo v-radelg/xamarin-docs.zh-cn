@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
 ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076650"
 ---
 # <a name="resource-dictionaries"></a>资源字典
 
@@ -149,7 +149,7 @@ Xamarin.Forms 从 3.0 开始，显式`ResourceDictionary`标记不是必需的�
 
 但请注意，背景栏[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)仍为黄色，因为[ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)属性设置的值为`PageBackgroundColor`应用程序中定义的资源级别`ResourceDictionary`。
 
-下面是另一种方法来考虑一下`ResourceDictionary`优先级： 时 XAML 分析程序遇到`StaticResource`，它会通过体验在可视化树向上搜索匹配的键，它找到使用第一个匹配项。 如果此搜索结束的页上且仍未找到键，XAML 分析器将搜索`ResourceDictionary`附加到`App`对象。 如果仍未找到该键，则引发异常。
+下面是另一种方法来考虑一下`ResourceDictionary`优先顺序：当 XAML 分析器遇到`StaticResource`，它会通过体验在可视化树向上搜索匹配的键，它找到使用第一个匹配项。 如果此搜索结束的页上且仍未找到键，XAML 分析器将搜索`ResourceDictionary`附加到`App`对象。 如果仍未找到该键，则引发异常。
 
 ## <a name="stand-alone-resource-dictionaries"></a>独立的资源字典
 

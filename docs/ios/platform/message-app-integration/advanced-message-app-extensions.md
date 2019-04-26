@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155506"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的高级的消息应用扩展
 
@@ -171,7 +171,7 @@ public void SendMessage (MSMessage message)
 
 此外，扩展可以将不同类型的数据发送到如会话：
 
-- **文本** - `ActiveConversation.InsertText ("Message", (error) => {...});`
+- **Text** - `ActiveConversation.InsertText ("Message", (error) => {...});`
 - **附件** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
 - **贴纸** -  `ActiveConversation.InsertSticker (sticker, (obj) => {...});`其中`sticker`是`MSSticker`。
 
@@ -181,7 +181,7 @@ public void SendMessage (MSMessage message)
 
 消息应用扩展可以在两种不同的视图模式之一显示：
 
-[![](advanced-message-app-extensions-images/interactive08.png "在两个不同的视图模式下显示一个消息应用扩展： Compact 和扩展")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "在两个不同的视图模式下显示一个消息应用扩展：Compact 和扩展")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -这是默认模式消息应用扩展，将消息视图中的底部 25%占用。 以简洁模式，应用不具有访问键盘、 水平滚动或轻扫手势识别器。 应用程序有权访问输入字段以及对调用`InsertMessage`将立即显示给用户存在。
 - **展开**-消息应用扩展会填充整个消息视图。 它不能访问到输入字段，但确实有权访问键盘、 水平滚动和轻扫手势识别器。

@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 13678d3b1bca102e6f608ad1c11838db1f14cd08
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104994"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61309156"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 部件和功能
 

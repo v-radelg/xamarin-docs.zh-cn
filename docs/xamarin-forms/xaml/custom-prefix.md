@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2019
 ms.openlocfilehash: 33f18b3f9c9ddb6ab31ca92e2f192ffad783ec0c
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075085"
 ---
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>建议在 Xamarin.Forms 中的前缀的 XAML Namespace
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 22e03038c28f1f202fbb713d472e2da9955404d5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103772"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61399908"
 ---
 # <a name="skiasharp-bitmaps"></a>SkiaSharp 位图
 

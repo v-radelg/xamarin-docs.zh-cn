@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
 ms.openlocfilehash: e3127f85841c13422d9674bcf12373af9222afba
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153717"
 ---
 # <a name="using-data-in-an-ios-app"></a>使用 iOS 应用程序中的数据
 
@@ -107,7 +107,7 @@ public int DeleteStock(Stock stock)
 
 时使用您的应用程序创建分发数据库文件，请注意使用命名的表和列，确保它们与您的代码的预期，尤其是如果您使用 SQLite.NET 这将要求要与 C# 类和属性匹配的名称 （或关联的自定义属性）。
 
-对于 iOS，应用程序中包含 sqlite 文件并确保将标有**生成操作： 内容**。 中的代码放`FinishedLaunching`若要将文件复制到可写目录*之前*调用任何数据的方法。 下面的代码将名为将现有数据库复制**data.sqlite**，仅当它尚不存在。
+对于 iOS，应用程序中包含 sqlite 文件并确保将标有**生成操作：内容**。 中的代码放`FinishedLaunching`若要将文件复制到可写目录*之前*调用任何数据的方法。 下面的代码将名为将现有数据库复制**data.sqlite**，仅当它尚不存在。
 
 ```csharp
 // Copy the database across (if it doesn't exist)

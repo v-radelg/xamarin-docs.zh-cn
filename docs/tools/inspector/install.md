@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
 ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
-ms.sourcegitcommit: fabd3b51dca6d904009d0670137c5fb5ee6c32ef
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61373464"
 ---
 # <a name="inspector-installation-and-requirements"></a>检查器安装和要求
 

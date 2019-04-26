@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
 ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946733"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>调整 Android Designer 的 Java 内存参数
 
@@ -73,7 +73,7 @@ ms.locfileid: "51617236"
 
 4.  编辑`.userprefs`文本编辑器中的文件。
 
-5.  找到具有以下格式的现有 XML 元素。 此元素名称的最后一个部分将匹配项目的名称:"AndroidApplication1"在此示例中：
+5.  找到具有以下格式的现有 XML 元素。 此元素名称的最后一部分将与你的项目的名称匹配："AndroidApplication1"在此示例中：
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >

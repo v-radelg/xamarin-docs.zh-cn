@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
 ms.openlocfilehash: a901e16b3d5befc25864af39cb255d1833400e7f
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60955808"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>在 Xamarin.iOS 应用程序传输安全
 

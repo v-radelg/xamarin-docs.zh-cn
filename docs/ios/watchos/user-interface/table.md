@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: cd5e7299874bbfb1b652315a549b9d067d58e9a0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60881255"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>watchOS 在 Xamarin 中的表控件
 
@@ -160,7 +160,7 @@ watchOS 3 引入了表的新功能： 滚动浏览的详细信息页的功能与
 
 <a name="add_row_controller" />
 
-## <a name="appendix-row-controller-code-example"></a>附录： 行控制器的代码示例
+## <a name="appendix-row-controller-code-example"></a>附录：行控制器的代码示例
 
 在设计器中创建行控制器时，IDE 将自动创建两个代码文件。 有关参考，这些生成的文件中的代码所示。
 

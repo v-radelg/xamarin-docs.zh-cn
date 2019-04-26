@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
 ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
-ms.sourcegitcommit: 03dfb4a2c20ad68515875b415e7d84ee9b0a8cb8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51563337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160530"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler 故障排除
 
@@ -56,7 +56,7 @@ Xamarin 团队可帮助跟踪问题，如果你向我们提供的信息，包括
 以下列表显示常见难题、 解决方法，以及提示和技巧使用 Profiler。
 
 > [!NOTE]
-> **请注意**： 您需要 Visual Studio**企业**订阅服务器才能解锁此功能在 Windows 上的任一 Visual Studio Enterprise 或 Visual Studio for mac。
+> **注意**：您需要 Visual Studio**企业**订阅服务器才能解锁此功能在 Windows 上的任一 Visual Studio Enterprise 或 Visual Studio for mac。
 
 #### <a name="i-cant-see-the-ios-profiler-option-or-it-is-greyed-out-visual-studio-and-visual-studio-for-mac"></a>看不到 iOS 探查器选项，或灰显 [Visual Studio 和 Visual Studio for Mac]
 

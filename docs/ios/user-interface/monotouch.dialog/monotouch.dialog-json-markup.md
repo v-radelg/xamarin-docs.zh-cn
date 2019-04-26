@@ -8,11 +8,11 @@ ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
 ms.openlocfilehash: 2bd45c5482a8f0367bffa21f301bb631c3429a21
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61395140"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 标记
 

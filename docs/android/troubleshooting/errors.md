@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
 ms.openlocfilehash: f3721ad661f4b817375b0d625c9b5cc293e6d44c
-ms.sourcegitcommit: 4859da8772dbe920fdd653180450e5ddfb436718
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945300"
 ---
 # <a name="xamarinandroid-errors-matrix"></a>Xamarin.Android 错误矩阵
 
@@ -78,7 +78,7 @@ ms.locfileid: "50235072"
 |XA1103|无法分离。|
 |XA1104|发送数据包失败： {0}。|
 |XA1105|意外的响应类型。|
-|XA1106|无法在设备上获取应用程序的列表： 请求已超时。|
+|XA1106|无法在设备上获取应用程序的列表：请求超时。|
 |XA1107|应用程序启动失败。|
 |XA1201|无法加载模拟器： {0}。|
 |XA1301|本机库 '{0}({1}) 已被忽略，因为它不匹配当前生成 architecture(s) ({2})。|
@@ -101,7 +101,7 @@ ms.locfileid: "50235072"
 |错误代码|描述|
 |--- |--- |
 |XA3001|可以不 AOT 的程序集{0}。|
-|XA3002|AOT 限制： 方法{0}必须是静态的因为它用 [MonoPInvokeCallback] 修饰。|
+|XA3002|AOT 限制：方法{0}必须是静态的因为它用 [MonoPInvokeCallback] 修饰。|
 |XA3003|冲突-调试和-llvm 选项。 软调试被禁用。|
 
 
@@ -114,7 +114,7 @@ ms.locfileid: "50235072"
 |XA4001|主模板中找不到 expansed{0}。|
 |XA4101|在注册机构无法生成类型的签名{0}。|
 |XA4102|在注册机构找到无效的类型{0}中方法的签名{2}。 使用{1}相反。|
-|XA4103|在注册机构找到无效的类型{0}中方法的签名{2}： 类型实现 INativeObject，但没有采用两个构造函数 (IntPtr，bool) 参数。|
+|XA4103|在注册机构找到无效的类型{0}中方法的签名{2}:该类型实现 INativeObject，但没有采用两个构造函数 (IntPtr，bool) 参数。|
 |XA4104|在注册机构不能封送类型的返回值{0}中方法的签名{1}。|
 |XA4105|在注册机构不能封送的类型参数{0}中方法的签名{1}。|
 |XA4106|在注册机构不能封送结构的返回值{0}中方法的签名{1}。|
@@ -175,7 +175,7 @@ ms.locfileid: "50235072"
 
  **原因：** 许可证已过期
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -186,7 +186,7 @@ ms.locfileid: "50235072"
 
  **原因：** 试用版已过期
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -198,7 +198,7 @@ ms.locfileid: "50235072"
 
  **原因：** AndroidJavaSource
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -206,7 +206,7 @@ ms.locfileid: "50235072"
 
  **原因：** AndroidJavaLibrary
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -216,7 +216,7 @@ ms.locfileid: "50235072"
 
  **原因：** AndroidNativeLibrary
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -227,7 +227,7 @@ ms.locfileid: "50235072"
 
  **原因：** System.Runtime.Serialization
 
- **检查期间：** 包
+ **检查期间：** package
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -235,7 +235,7 @@ ms.locfileid: "50235072"
 
  **原因：** System.ServiceModel.Web
 
- **检查期间：** 包
+ **检查期间：** package
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -243,7 +243,7 @@ ms.locfileid: "50235072"
 
  **原因：** Mono.Data.Tds
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -253,7 +253,7 @@ ms.locfileid: "50235072"
 
  **原因：** Mono.Android.Export
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -265,7 +265,7 @@ ms.locfileid: "50235072"
 
  **原因：** -分析
 
- **检查期间：** 包
+ **检查期间：** package
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -277,7 +277,7 @@ ms.locfileid: "50235072"
 
  **原因：** 大小限制 (32 kb)。
 
- **检查期间：** 包
+ **检查期间：** package
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -289,7 +289,7 @@ ms.locfileid: "50235072"
 
  **原因：** System.Data.SqlClient 命名空间。
 
- **检查期间：** 包
+ **检查期间：** package
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -300,7 +300,7 @@ ms.locfileid: "50235072"
 
  **原因：** 从命令行生成。
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -309,9 +309,9 @@ ms.locfileid: "50235072"
 
 #### <a name="xa9009"></a>XA9009
 
- **原因：** 缺少序列号。
+ **原因：** 缺少的序列号。
 
- **检查期间：** 纠结
+ **检查期间：** 分钟
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -320,9 +320,9 @@ ms.locfileid: "50235072"
 
 #### <a name="xa9010"></a>XA9010
 
- **原因：** 无效 ProductId。
+ **原因：** 无效的 ProductId。
 
- **检查期间：** 生成
+ **检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |
@@ -355,7 +355,7 @@ ms.locfileid: "50235072"
 
 #### <a name="xa9013"></a>XA9013
 
- **原因：** 未知的错误
+ **原因：** 未知错误
 
  **检查期间：** 激活
 
@@ -366,7 +366,7 @@ ms.locfileid: "50235072"
 
 #### <a name="xa9014"></a>XA9014
 
- **原因：** 无效激活代码
+ **原因：** 无效的激活代码
 
  **检查期间：** 激活
 
@@ -390,7 +390,7 @@ ms.locfileid: "50235072"
 
 **原因：** 许可证无效
 
-**检查期间：** 生成
+**检查期间：** Build
 
 |Starter|独立|Business(Trial)|业务|企业|
 |--- |--- |--- |--- |--- |

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 1c5b2635dca6aa74fd0dfb92d7e62e6da3140538
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60902791"
 ---
 # <a name="xamarinforms-themes"></a>Xamarin.Forms 主题
 
@@ -26,7 +26,7 @@ Xamarin.Forms 主题曾宣布在 Evolve 2016，并可作为客户试用并提供
 
 请参阅[浅色主题](light.md)并[深色主题](dark.md)如何将它们添加到应用程序，或查看说明页[示例自定义主题](custom.md)。
 
-**重要说明：** 还应遵循的步骤[加载程序集 （下面） 为主题](#loadtheme)通过将一些样本代码添加到 iOS`AppDelegate`和 Android `MainActivity`。 这将在将来的预览版的版本中得到改进。
+**重要：** 您还应遵循的步骤[加载程序集 （下面） 为主题](#loadtheme)通过将一些样本代码添加到 iOS`AppDelegate`和 Android `MainActivity`。 这将在将来的预览版的版本中得到改进。
 
 
 ## <a name="control-appearance"></a>控件外观

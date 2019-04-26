@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2018
 ms.openlocfilehash: 1224d38a2230fa2f5c7ca08f6e33c5468886c206
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61356982"
 ---
 # <a name="when-and-how-should-i-file-a-bug-report"></a>应何时以及如何提交 bug 报告？
 

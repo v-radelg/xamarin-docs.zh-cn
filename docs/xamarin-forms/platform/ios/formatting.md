@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
 ms.openlocfilehash: 3b8a440617dedfbe23f869e865b3cedae21d6c5b
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60946358"
 ---
 # <a name="adding-ios-specific-formatting"></a>添加特定于 iOS 的格式设置
 

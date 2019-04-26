@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
 ms.openlocfilehash: 130f4e3efdd7b3792f6458ad28fc85654e6e38c8
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60857427"
 ---
 # <a name="attached-properties"></a>附加属性
 

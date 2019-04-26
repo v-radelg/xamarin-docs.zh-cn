@@ -1,13 +1,18 @@
 ---
 title: .NET 嵌入
-description: '.NET 嵌入允许现有.NET 代码 (C#、 F # 和其他人） 可供其他编程语言编写的代码。'
+description: .NET 嵌入，现有的.NET 代码 (C#， F#，和其他人) 可供其他编程语言编写的代码。
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
+ms.openlocfilehash: 23233ea8b06e0db580ba99edf2705e3dae5b931f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61363397"
 ---
-
 # <a name="net-embedding"></a>.NET 嵌入
 
 ![预览](~/media/shared/preview.png)

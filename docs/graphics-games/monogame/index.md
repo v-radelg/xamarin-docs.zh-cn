@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 9b51bba3491af593b4378cbd5aaf42043927ab68
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157346"
 ---
 # <a name="monogame-framework"></a>Monogame Framework
 

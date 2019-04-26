@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 5a4be4ff5f8c5322db2e50ba11dd81a188fbae61
-ms.sourcegitcommit: 729035af392dc60edb9d99d3dc13d1ef69d5e46c
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50675349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61391450"
 ---
 # <a name="ios-backgrounding-walkthroughs"></a>iOS 后台处理演练
 

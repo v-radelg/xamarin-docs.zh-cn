@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: 29f7480845dc4e8e608477e1eeb7f2e35d8f5490
-ms.sourcegitcommit: 2713f2c1d74e3582704c3d0ca65b6651119ed489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56321085"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61361763"
 ---
 # <a name="building-watchos-apps-with-xamarin"></a>生成 watchOS 应用使用 Xamarin
 

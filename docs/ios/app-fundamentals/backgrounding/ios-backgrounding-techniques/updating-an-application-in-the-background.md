@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: 835dccaea79467582f56fd4b8b6b3b8f42acd632
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61392326"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>更新在后台中的 Xamarin.iOS 应用
 
@@ -162,4 +162,4 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 在本部分中，我们介绍了用于刷新在后台中的内容的各种选项，若要运行的任务不适合于背景需要类别。 现在，让我们看一些操作中的这些 Api。
 
- [下一步： 第 4 部分-iOS 后台处理演练](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+ [下一篇：第 4-iOS 后台处理演练](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
 ms.openlocfilehash: 585c276b327a9092bdd13fa633307477017558c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276783"
 ---
 # <a name="packaging-wear-apps"></a>打包 Wear 应用
 

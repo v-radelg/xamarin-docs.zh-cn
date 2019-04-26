@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61347809"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位平台注意事项
 
@@ -79,7 +79,7 @@ ARMv7s 仅受 iPhone 5 （或更高版本） 中包含的 A6 处理器。 ARMv7 
 面向 32 位和 64 位体系结构会显著增加应用程序的大小。 但是，因此这样做将允许较新的设备运行优化的代码，同时仍可支持较旧的设备。
 
 > [!IMPORTANT]
-> 如果提交到 iTunes 应用商店的 iOS 应用程序时收到以下消息 _"警告 ITMS 9000： 缺少 64 位支持。从 2015 年 2 月 1 日，新的 iOS 上传到应用商店的应用必须包含 64 位支持和 8 包含 Xcode 6 或更高版本的 SDK 通过 iOS 构建。若要启用 64 在项目中，我们建议使用 Xcode 生成的"标准体系结构"设置默认值生成单个二进制文件使用 32 位和 64 位代码。"_ 您需要切换到一个支持的体系结构**ARM64**组合 （如上所示）、 重新编译和重新提交。
+> 如果提交到 iTunes 应用商店的 iOS 应用程序时收到以下消息 _"警告 ITMS 9000:缺少的 64 位支持。从 2015 年 2 月 1 日，新的 iOS 上传到应用商店的应用必须包含 64 位支持和 8 包含 Xcode 6 或更高版本的 SDK 通过 iOS 构建。若要启用 64 在项目中，我们建议使用 Xcode 生成的"标准体系结构"设置默认值生成单个二进制文件使用 32 位和 64 位代码。"_ 您需要切换到一个支持的体系结构**ARM64**组合 （如上所示）、 重新编译和重新提交。
 
 ## <a name="mac"></a>Mac
 
@@ -90,7 +90,7 @@ ARMv7s 仅受 iPhone 5 （或更高版本） 中包含的 A6 处理器。 ARMv7 
 
 与 iOS 不同，许多最新版本的 macOS 中引入的新框架仅支持在 64 位模式下 （CloudKit、 EventKit、 GameController、 LocalAuthentication、 MediaLibrary、 MultipeerConnectivity、 NotificationCenter、 GLKit、 SpriteKit、 社会、和 MapKit，等等）。
 
-Unified API 允许开发人员选择他们想要生成哪种应用程序： 32 位或 64 位。
+Unified API 允许开发人员能够选择他们想要生成哪种应用程序：32 位或 64 位。
 
 **32 位应用程序**将在 32 位和 64 位 Mac 计算机上运行的地址空间限制为 32 位，并要求所有库都是 32 位。
 

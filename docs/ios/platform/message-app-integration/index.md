@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/29/2016
 ms.openlocfilehash: 8343c186082303988154fd3e6ee9781c93f5d601
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153407"
 ---
 # <a name="message-app-integration-in-xamarinios"></a>消息在 Xamarin.iOS 应用程序集成
 

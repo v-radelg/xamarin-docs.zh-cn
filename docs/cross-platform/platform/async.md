@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
 ms.openlocfilehash: 0a72dead1b6c001f1514f1a089df9b407eb90644
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037259"
 ---
 # <a name="async-support-overview"></a>异步支持概述
 

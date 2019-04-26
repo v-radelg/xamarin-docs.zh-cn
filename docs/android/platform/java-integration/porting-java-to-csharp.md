@@ -1,5 +1,5 @@
 ---
-title: 将 Java 移植到C#
+title: 将 Java 移植到 C#
 description: 第三个选项为 Xamarin.Android 应用程序中使用 Java Java 源代码移植到C#。
 ms.prod: xamarin
 ms.assetid: 39E528BD-010F-47FC-BE48-8E7848E30454
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/05/2016
 ms.openlocfilehash: 9beb6d59c9376a404c06af7f0cd1efd985929843
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075136"
 ---
-# <a name="porting-java-to-c"></a>将 Java 移植到C#
+# <a name="porting-java-to-c"></a>将 Java 移植到 C#
 
 _第三个选项为 Xamarin.Android 应用程序中使用 Java Java 源代码移植到C#。_
 

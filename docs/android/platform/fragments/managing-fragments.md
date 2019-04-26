@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
 ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61022189"
 ---
 # <a name="managing-fragments"></a>管理片段
 
