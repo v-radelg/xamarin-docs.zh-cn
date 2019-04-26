@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
 ms.openlocfilehash: af2972ecc92435836a75013e6203ba47c2c04627
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303613"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 

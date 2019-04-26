@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
 ms.openlocfilehash: 8c2086025ccb5fe41b3ffddc9cd650c1e0c81fbc
-ms.sourcegitcommit: f890b5ec9b7c2702875070859e1a8cbf6e870e46
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53813980"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013464"
 ---
 # <a name="creating-a-service"></a>创建服务
 

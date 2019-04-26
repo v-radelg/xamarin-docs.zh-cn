@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61078379"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean 功能
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
 ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61359155"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms 平台功能
 

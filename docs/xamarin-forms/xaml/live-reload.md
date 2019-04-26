@@ -9,11 +9,11 @@ ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
 ms.openlocfilehash: 21ff09f2af93ee46578b959111bf744ba05a74d7
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61384906"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin 实时重新加载 （预览版）
 
@@ -119,7 +119,7 @@ public partial class App : Application
 * 重新加载应用程序范围内的资源 (即**App.xaml**或共享资源字典)，重置应用导航。 
 * 当前的 ContentView 重新加载需要重新加载包含页。
 * 包含 AutomationId 元素可能会导致重新加载失败。
-* 调试 UWP 可能会导致运行时故障发生时，请编辑 XAML。 解决方法： 使用**启动但不调试 （Ctrl + F5）** 而不是**开始调试 (F5)**。
+* 调试 UWP 可能会导致运行时故障发生时，请编辑 XAML。 解决方法：使用**启动但不调试 （Ctrl + F5）** 而不是**开始调试 (F5)**。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -129,15 +129,15 @@ public partial class App : Application
 
   若要允许快速迭代和实时重新加载功能的演变，nuget 包与 Visual Studio 扩展必须完全匹配。 在 nuget 包更新到相同版本的已安装的扩展。
 
-* **XLR002**:*实时重新加载至少需要 MqttHostname 属性时从命令行生成。或者，将 EnableLiveReload 设置为 false 以禁用该功能。*
+* **XLR002**:*从命令行生成时，实时重新加载至少需要 MqttHostname 属性。或者，将 EnableLiveReload 设置为 false 以禁用该功能。*
 
   通过实时重新加载所需的属性时将不可用生成从命令行中 （或在持续集成），并因此必须显式提供。 
 
-* **XLR003**:*实时重新加载 nuget 包需要安装 Xamarin Live 重新加载 Visual Studio 扩展。*
+* **XLR003**:*实时重新加载 nuget 包，需要安装 Xamarin Live 重新加载 Visual Studio 扩展。*
 
   尝试生成项目的引用实时重新加载 nuget 包，但未安装 Visual 扩展。  
 
-* *加载程序集时发生异常： System.IO.FileNotFoundException： 无法加载程序集 Xamarin.Live.Reload，版本 = 0.3.27.0，区域性 = 中性，PublicKeyToken =。*
+* *加载程序集时发生异常：System.IO.FileNotFoundException:无法加载程序集 Xamarin.Live.Reload，版本 = 0.3.27.0，区域性 = 中性，PublicKeyToken =。*
 
   应使用主机项目`PackageReference`而不是 `packages.config`
 

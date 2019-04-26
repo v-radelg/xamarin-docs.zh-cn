@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: d306b0c1c0d08129671e27b96911ec771acb658e
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61298925"
 ---
 # <a name="enterprise-app-navigation"></a>企业应用程序导航
 
@@ -32,27 +32,27 @@ Xamarin.Forms 包括对页面导航、 从用户的交互与 UI 或从应用本�
 
 ## <a name="navigating-between-pages"></a>页面之间导航
 
-导航逻辑可以驻留在视图的代码隐藏中，或在数据绑定的视图模型。 将导航逻辑放在视图中可能是最简单的方法，虽然并不通过单元测试轻松测试。 将导航逻辑放在视图模型类意味着通过单元测试可在逻辑。 此外，视图模型然后可以实现对控件导航，以确保实施某些业务规则的逻辑。 例如，应用可能不允许用户导航离开页面而不必首先确保输入的数据有效。
+导航逻辑可以驻留在视图的代码隐藏中，或在数据绑定的视图模型。 将导航逻辑放在视图中可能是最简单的方法，虽然并不通过单元测试轻松测试。 将导航逻辑放在视图模型类意味着通过单元测试可在逻辑。 此外，视图模型接下来即可实现用于控制导航的逻辑，以确保强制实施特定业务规则。 例如，应用可能不允许用户导航离开页面而不必首先确保输入的数据有效。
 
 一个`NavigationService`类通常从视图模型，以提升可测试性调用。 但是，从视图模型导航到视图，将需要引用视图，和尤其是活动视图模型与不相关联，这不推荐的视图的视图模型。 因此，`NavigationService`显示此处指定为要导航到的目标的视图模型类型。
 
 EShopOnContainers 移动应用使用`NavigationService`类以提供视图模型第一个导航。 此类实现`INavigationService`接口，在下面的代码示例所示：
 
 ```csharp
-public interface INavigationService  
+public interface INavigationService  
 {  
-    ViewModelBase PreviousPageViewModel { get; }  
-    Task InitializeAsync();  
-    Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase;  
-    Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase;  
-    Task RemoveLastFromBackStackAsync();  
-    Task RemoveBackStackAsync();  
+    ViewModelBase PreviousPageViewModel { get; }  
+    Task InitializeAsync();  
+    Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase;  
+    Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase;  
+    Task RemoveLastFromBackStackAsync();  
+    Task RemoveBackStackAsync();  
 }
 ```
 
 此接口指定实现类必须提供以下方法：
 
-|方法|目标|
+|方法|用途|
 |--- |--- |
 |`InitializeAsync`|在应用启动时执行导航到两个页面之一。|
 |`NavigateToAsync`|执行分层导航到指定页。|
@@ -76,7 +76,7 @@ builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstanc
 `INavigationService`接口中已解决`ViewModelBase`类构造函数，如下面的代码示例中所示：
 
 ```csharp
-NavigationService = ViewModelLocator.Resolve<INavigationService>();
+NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
 这将返回的引用`NavigationService`创建的 Autofac 依赖关系注入容器中存储的对象`InitNavigation`中的方法`App`类。 有关详细信息，请参阅[启动导航时应用](#navigating_when_the_app_is_launched)。
@@ -90,17 +90,17 @@ Xamarin.Forms 提供了[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)�
 而不是使用[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)类直接，eShopOnContainers 应用程序包装`NavigationPage`类`CustomNavigationView`类，如下面的代码示例中所示：
 
 ```csharp
-public partial class CustomNavigationView : NavigationPage  
+public partial class CustomNavigationView : NavigationPage  
 {  
-    public CustomNavigationView() : base()  
-    {  
-        InitializeComponent();  
-    }  
+    public CustomNavigationView() : base()  
+    {  
+        InitializeComponent();  
+    }  
 
-    public CustomNavigationView(Page root) : base(root)  
-    {  
-        InitializeComponent();  
-    }  
+    public CustomNavigationView(Page root) : base(root)  
+    {  
+        InitializeComponent();  
+    }  
 }
 ```
 
@@ -109,20 +109,20 @@ public partial class CustomNavigationView : NavigationPage
 调用其中一个视图模型类中执行导航`NavigateToAsync`方法，指定正在导航到，如下面的代码示例中所示的页面的视图模型类型：
 
 ```csharp
-await NavigationService.NavigateToAsync<MainViewModel>();
+await NavigationService.NavigateToAsync<MainViewModel>();
 ```
 
 下面的代码示例演示`NavigateToAsync`提供的方法`NavigationService`类：
 
 ```csharp
-public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase  
+public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase  
 {  
-    return InternalNavigateToAsync(typeof(TViewModel), null);  
+    return InternalNavigateToAsync(typeof(TViewModel), null);  
 }  
 
-public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase  
+public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : ViewModelBase  
 {  
-    return InternalNavigateToAsync(typeof(TViewModel), parameter);  
+    return InternalNavigateToAsync(typeof(TViewModel), parameter);  
 }
 ```
 
@@ -131,50 +131,50 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : Vie
 `InternalNavigateToAsync`方法执行导航请求，并在下面的代码示例所示：
 
 ```csharp
-private async Task InternalNavigateToAsync(Type viewModelType, object parameter)  
+private async Task InternalNavigateToAsync(Type viewModelType, object parameter)  
 {  
-    Page page = CreatePage(viewModelType, parameter);  
+    Page page = CreatePage(viewModelType, parameter);  
 
-    if (page is LoginView)  
-    {  
-        Application.Current.MainPage = new CustomNavigationView(page);  
-    }  
-    else  
-    {  
-        var navigationPage = Application.Current.MainPage as CustomNavigationView;  
-        if (navigationPage != null)  
-        {  
-            await navigationPage.PushAsync(page);  
-        }  
-        else  
-        {  
-            Application.Current.MainPage = new CustomNavigationView(page);  
-        }  
-    }  
+    if (page is LoginView)  
+    {  
+        Application.Current.MainPage = new CustomNavigationView(page);  
+    }  
+    else  
+    {  
+        var navigationPage = Application.Current.MainPage as CustomNavigationView;  
+        if (navigationPage != null)  
+        {  
+            await navigationPage.PushAsync(page);  
+        }  
+        else  
+        {  
+            Application.Current.MainPage = new CustomNavigationView(page);  
+        }  
+    }  
 
-    await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);  
+    await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);  
 }  
 
-private Type GetPageTypeForViewModel(Type viewModelType)  
+private Type GetPageTypeForViewModel(Type viewModelType)  
 {  
-    var viewName = viewModelType.FullName.Replace("Model", string.Empty);  
-    var viewModelAssemblyName = viewModelType.GetTypeInfo().Assembly.FullName;  
-    var viewAssemblyName = string.Format(  
-                CultureInfo.InvariantCulture, "{0}, {1}", viewName, viewModelAssemblyName);  
-    var viewType = Type.GetType(viewAssemblyName);  
-    return viewType;  
+    var viewName = viewModelType.FullName.Replace("Model", string.Empty);  
+    var viewModelAssemblyName = viewModelType.GetTypeInfo().Assembly.FullName;  
+    var viewAssemblyName = string.Format(  
+                CultureInfo.InvariantCulture, "{0}, {1}", viewName, viewModelAssemblyName);  
+    var viewType = Type.GetType(viewAssemblyName);  
+    return viewType;  
 }  
 
-private Page CreatePage(Type viewModelType, object parameter)  
+private Page CreatePage(Type viewModelType, object parameter)  
 {  
-    Type pageType = GetPageTypeForViewModel(viewModelType);  
-    if (pageType == null)  
-    {  
-        throw new Exception($"Cannot locate page type for {viewModelType}");  
-    }  
+    Type pageType = GetPageTypeForViewModel(viewModelType);  
+    if (pageType == null)  
+    {  
+        throw new Exception($"Cannot locate page type for {viewModelType}");  
+    }  
 
-    Page page = Activator.CreateInstance(pageType) as Page;  
-    return page;  
+    Page page = Activator.CreateInstance(pageType) as Page;  
+    return page;  
 }
 ```
 
@@ -198,13 +198,13 @@ private Page CreatePage(Type viewModelType, object parameter)
 
 ### <a name="navigating-when-the-app-is-launched"></a>导航时该应用启动
 
-当启动应用时，`InitNavigation`中的方法`App`类调用。 下面的代码示例显示了此方法：
+当启动应用时，`InitNavigation`中的方法`App`类调用。 下面的代码示例演示此方法：
 
 ```csharp
-private Task InitNavigation()  
+private Task InitNavigation()  
 {  
-    var navigationService = ViewModelLocator.Resolve<INavigationService>();  
-    return navigationService.InitializeAsync();  
+    var navigationService = ViewModelLocator.Resolve<INavigationService>();  
+    return navigationService.InitializeAsync();  
 }
 ```
 
@@ -216,12 +216,12 @@ private Task InitNavigation()
 下面的代码示例演示`NavigationService``InitializeAsync`方法：
 
 ```csharp
-public Task InitializeAsync()  
+public Task InitializeAsync()  
 {  
-    if (string.IsNullOrEmpty(Settings.AuthAccessToken))  
-        return NavigateToAsync<LoginViewModel>();  
-    else  
-        return NavigateToAsync<MainViewModel>();  
+    if (string.IsNullOrEmpty(Settings.AuthAccessToken))  
+        return NavigateToAsync<LoginViewModel>();  
+    else  
+        return NavigateToAsync<MainViewModel>();  
 }
 ```
 
@@ -238,9 +238,9 @@ public Task InitializeAsync()
 例如，`ProfileViewModel`类包含`OrderDetailCommand`时用户选择订单上执行的`ProfileView`页。 反过来，此时将执行`OrderDetailAsync`方法，在下面的代码示例所示：
 
 ```csharp
-private async Task OrderDetailAsync(Order order)  
+private async Task OrderDetailAsync(Order order)  
 {  
-    await NavigationService.NavigateToAsync<OrderDetailViewModel>(order);  
+    await NavigationService.NavigateToAsync<OrderDetailViewModel>(order);  
 }
 ```
 
@@ -249,15 +249,15 @@ private async Task OrderDetailAsync(Order order)
 `InitializeAsync`方法中定义`ViewModelBase`为可重写的方法的类。 此方法指定`object`表示要在导航操作期间传递到视图模型的数据的参数。 因此，想要从导航操作接收数据的视图模型类提供其自己的实现`InitializeAsync`方法来执行所需的初始化。 下面的代码示例演示`InitializeAsync`方法从`OrderDetailViewModel`类：
 
 ```csharp
-public override async Task InitializeAsync(object navigationData)  
+public override async Task InitializeAsync(object navigationData)  
 {  
-    if (navigationData is Order)  
-    {  
-        ...  
-        Order = await _ordersService.GetOrderAsync(  
-                        Convert.ToInt32(order.OrderNumber), authToken);  
-        ...  
-    }  
+    if (navigationData is Order)  
+    {  
+        ...  
+        Order = await _ordersService.GetOrderAsync(  
+                        Convert.ToInt32(order.OrderNumber), authToken);  
+        ...  
+    }  
 }
 ```
 
@@ -270,13 +270,13 @@ public override async Task InitializeAsync(object navigationData)
 导航通常由用户交互触发从视图。 例如，`LoginView`执行导航后成功进行身份验证。 下面的代码示例演示如何导航调用行为：
 
 ```xaml
-<WebView ...>  
-    <WebView.Behaviors>  
-        <behaviors:EventToCommandBehavior  
-            EventName="Navigating"  
-            EventArgsConverter="{StaticResource WebNavigatingEventArgsConverter}"  
-            Command="{Binding NavigateCommand}" />  
-    </WebView.Behaviors>  
+<WebView ...>  
+    <WebView.Behaviors>  
+        <behaviors:EventToCommandBehavior  
+            EventName="Navigating"  
+            EventArgsConverter="{StaticResource WebNavigatingEventArgsConverter}"  
+            Command="{Binding NavigateCommand}" />  
+    </WebView.Behaviors>  
 </WebView>
 ```
 
@@ -285,12 +285,12 @@ public override async Task InitializeAsync(object navigationData)
 依次`NavigationCommand`执行`NavigateAsync`方法，在下面的代码示例所示：
 
 ```csharp
-private async Task NavigateAsync(string url)  
+private async Task NavigateAsync(string url)  
 {  
-    ...          
-    await NavigationService.NavigateToAsync<MainViewModel>();  
-    await NavigationService.RemoveLastFromBackStackAsync();  
-    ...  
+    ...          
+    await NavigationService.NavigateToAsync<MainViewModel>();  
+    await NavigationService.RemoveLastFromBackStackAsync();  
+    ...  
 }
 ```
 
@@ -302,9 +302,9 @@ private async Task NavigateAsync(string url)
 
 ## <a name="summary"></a>总结
 
-Xamarin.Forms 包括对页面导航、 从用户的交互用户界面时，或从应用本身，由于内部逻辑驱动的状态更改时，通常会支持。 但是，导航可能很复杂，若要在应用中使用 MVVM 模式的实现。
+Xamarin.Forms 包含对页面导航的支持，通常在逻辑驱动的状态更改时，因用户与 UI 交互或通过应用本身而引起页面导航。 但是，在使用 MVVM 模式的应用中实现导航可能较为复杂。
 
-本章介绍`NavigationService`类，用于执行从视图模型的视图模型第一个导航。 将导航逻辑放在视图模型类意味着通过自动测试可在逻辑。 此外，视图模型然后可以实现对控件导航，以确保实施某些业务规则的逻辑。
+本章介绍`NavigationService`类，用于执行从视图模型的视图模型第一个导航。 将导航逻辑放置在视图模型类中意味着可通过自动测试来运用该逻辑。 此外，视图模型接下来即可实现用于控制导航的逻辑，以确保强制实施特定业务规则。
 
 
 ## <a name="related-links"></a>相关链接

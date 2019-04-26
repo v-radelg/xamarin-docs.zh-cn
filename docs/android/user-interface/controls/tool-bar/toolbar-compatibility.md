@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
 ms.openlocfilehash: 12c19cf1024b78e8be30b7c9f2652019e9854375
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61300330"
 ---
 # <a name="toolbar-compatibility"></a>工具栏兼容性
 
@@ -49,7 +49,7 @@ ms.locfileid: "50110324"
 
 [![选择管理 NuGet 包中的屏幕截图的 V7 Appcompat 包](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
-安装此 NuGet 时，多个其他 NuGet 包还会安装如果尚不存在 (如**Xamarin.Android.Support.Animated.Vector.Drawable**， **Xamarin.Android.Support.v4**，并**Xamarin.Android.Support.Vector.Drawable**)。 有关安装 NuGet 包的详细信息，请参阅[演练： 在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
+安装此 NuGet 时，多个其他 NuGet 包还会安装如果尚不存在 (如**Xamarin.Android.Support.Animated.Vector.Drawable**， **Xamarin.Android.Support.v4**，并**Xamarin.Android.Support.Vector.Drawable**)。 有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
 
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>使用 AppCompat 主题和工具栏

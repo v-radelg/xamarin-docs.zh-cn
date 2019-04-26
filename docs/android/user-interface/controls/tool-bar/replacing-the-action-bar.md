@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
 ms.openlocfilehash: 9e9fa1e2651661670f89baac7fcd438b3d14bfb3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200744"
 ---
 # <a name="replacing-the-action-bar"></a>替换操作栏
 
@@ -283,7 +283,7 @@ public override bool OnOptionsItemSelected(IMenuItem item)
 
 ![不使用自定义主题时，可以发生的错误](replacing-the-action-bar-images/03-theme-not-defined.png)
 
-此外，错误消息，因为这样以下可生成： _Java.Lang.IllegalStateException： 此活动已由窗口装潢提供操作栏。_ 
+此外，可能会生成一条错误消息如下所示：_Java.Lang.IllegalStateException:此活动已由窗口装潢提供操作栏。_ 
 
 若要更正此错误，请确认`android:theme`属性 (attribute) 的自定义主题添加到`<application>`(在**properties/Androidmanifest.xml**) 中所述[应用自定义主题](#apply-the-custom-theme). 如果此外，可能会导致此错误`Toolbar`布局或自定义主题未正确配置。
 

@@ -1,17 +1,17 @@
 ---
 title: ApiDefinitions 和 StructsAndEnums 文件
-description: 本文档介绍了生成目标 Sharpie ApiDefinitions.cs 和 StructsAndEnums.cs 文件。 然后使用这些文件从 C# 访问 Objective C 代码。
+description: 本文档介绍了生成目标 Sharpie ApiDefinitions.cs 和 StructsAndEnums.cs 文件。 然后使用这些文件以访问 Objective C 代码从C#。
 ms.prod: xamarin
 ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: df8d4508db14116a5b36e893f161ac891d58dc46
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266352"
 ---
 # <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions 和 StructsAndEnums 文件
 
@@ -22,11 +22,11 @@ ms.locfileid: "37855177"
 
 接下来的步骤包括：
 
-- **调整名称**： 有时要调整的方法和类以匹配.NET Framework 设计准则的名称。
-- **方法或属性**： 有时使用目标 Sharpie 的试探法将选择要转换为一个属性的方法。 此时，无法确定这是否是预期的行为。
-- **挂接事件**： 无法链接您的类与委托类和自动生成的事件。
-- **通知挂钩**： 不能从纯标头文件中提取 API 约定的通知，这将需要的 API 文档行程。 如果你想强类型化的通知，你需要更新结果。
-- **API 策展**： 在此点，您可以选择提供额外的构造函数中，添加 （以便留出的 C# 初始化上构造语法） 的方法、 运算符重载和实现自己的接口上的额外定义文件。
+- **调整名称**:有时想要调整的方法和类以匹配.NET Framework 设计准则的名称。
+- **方法或属性**:有时使用目标 Sharpie 的试探法将选择要转换为一个属性的方法。 此时，无法确定这是否是预期的行为。
+- **挂接事件**:无法链接您的类与委托类，并自动生成的事件。
+- **通知挂钩**:不能从纯标头文件中提取 API 约定的通知，这将需要的 API 文档行程。 如果你想强类型化的通知，你需要更新结果。
+- **API 策展**:此时，可以选择以提供额外的构造函数中，添加方法 (以允许C#初始化上构造语法)，运算符重载和额外定义文件中实现自己的接口。
 
 请参阅[绑定 API](~/cross-platform/macios/binding/objective-c-libraries.md)描述以查看这些文件如何适应绑定过程中，如下面的关系图中所示：
 
@@ -36,5 +36,5 @@ ms.locfileid: "37855177"
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
 ms.openlocfilehash: 9a40644df6abcbbcc327b1b0c2dcb26c2dbc4db5
-ms.sourcegitcommit: 247a6d00a95fd7f4cf918d923e5f357c8db56761
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293577"
 ---
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速呈现器
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 45eeee745b133646aef0f775bc879fa6a5d867c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61062515"
 ---
 # <a name="xib-files-in-xamarinmac"></a>在 Xamarin.Mac 中.xib 文件
 
@@ -595,4 +595,4 @@ DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 - [菜单](~/mac/user-interface/menu.md)
 - [对话框](~/mac/user-interface/dialog.md)
 - [使用图像](~/mac/app-fundamentals/image.md)
-- [macOS 人机接口指南 》](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
+- [macOS 人机界面指南](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

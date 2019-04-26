@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/22/2018
 ms.openlocfilehash: 9bd70fec5d6d3bbbc4855980e1542bd4e486acaa
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266705"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>更新到 64 位 Xamarin.Mac 统一应用程序
 

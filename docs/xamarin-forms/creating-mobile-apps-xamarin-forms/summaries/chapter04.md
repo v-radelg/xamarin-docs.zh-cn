@@ -1,6 +1,6 @@
 ---
 title: 第 4 章的摘要。 滚动堆栈
-description: 使用 Xamarin.Forms 创建移动应用： 摘要的第 4 章。 滚动堆栈
+description: 使用 Xamarin.Forms 创建移动应用：第 4 章的摘要。 滚动堆栈
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334507"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 滚动堆栈
 

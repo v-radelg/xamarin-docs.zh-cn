@@ -1,5 +1,5 @@
 ---
-title: TvOS 9 简介
+title: tvOS 9 简介
 description: 本文介绍适用于 Xamarin.tvOS 开发人员的所有新的和修改 Api 和 tvOS 9 中的可用功能。
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270317"
 ---
-# <a name="introduction-to-tvos-9"></a>TvOS 9 简介
+# <a name="introduction-to-tvos-9"></a>tvOS 9 简介
 
 _本文介绍适用于 Xamarin.tvOS 开发人员的所有新的和修改 Api 和 tvOS 9 中的可用功能。_
 
@@ -66,7 +66,7 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
  - 64 位 A8 处理器
  - 32 GB 或 64 GB 的存储空间
  - 2 GB 的 RAM
- - 10/100Mbps 以太网
+ - 10/100Mbps Ethernet
  - WiFi 802.11a/b/g/n/ac
  - 分辨率为 1080p
  - HDMI
@@ -75,7 +75,7 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
 
 ### <a name="siri-remote"></a>Siri 远程
 
-根据区域，提供 Apple TV 远程将都具有任一一个配置： Siri 远程或 Apple TV 远程。
+根据区域，提供 Apple TV 远程将有两个配置：Siri 远程或 Apple TV 远程。
 
 Siri 远程目前已在以下国家/地区：
 

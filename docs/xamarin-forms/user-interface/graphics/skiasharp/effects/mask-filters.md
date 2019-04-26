@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53060402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61289088"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp 掩码筛选器
 
@@ -180,9 +180,9 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 
 [![屏蔽模糊实验](mask-filters-images/MaskBlurExperiment.png "屏蔽模糊实验")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS 屏幕截图显示了`Solid`样式： 文本字符都仍显示为纯黑色的笔画，并变得模糊添加到这些文本字符的外部。 
+IOS 屏幕截图显示了`Solid`样式：文本字符都是作为纯黑色的笔画，仍然存在，模糊添加到这些文本字符的外部。 
 
-Android 屏幕截图中所示中间`Outer`样式： 字符笔画本身消除 （如位图） 并将其模糊环绕的文本字符一次出现的空白区域。 
+Android 屏幕截图中所示中间`Outer`样式：字符笔画本身将消除 （如位图） 和模糊环绕的文本字符一次出现的空白区域。 
 
 UWP 上正确显示的屏幕截图`Inner`样式。 模糊被限制为文本字符通常占用的区域。
 

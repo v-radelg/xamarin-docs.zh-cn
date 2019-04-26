@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: 8ce50ab9a1bcd029a0db97e6dd66518d646d82ef
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61085006"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,12 +41,12 @@ Android 3.0 引入了片段，演示如何在手机和平板电脑上找到的�
 
 
 
-## <a name="app-linkingandroidplatformapp-linkingmd"></a>[将应用链接](~/android/platform/app-linking.md)
+## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
 
 本指南介绍了如何支持 Android 6.0_将应用链接_，该技术允许移动应用来响应在网站上的 Url。 它将讨论如何实现应用程序将 Android 6.0 应用程序中的链接以及如何配置网站以授予对移动应用的权限来处理应用程序链接的域。
 
 
-##  <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 饼图](~/android/platform/pie.md)
+##  <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 Pie](~/android/platform/pie.md)
 
 本文提供 Android 饼图中的新增功能的概述，介绍如何进行准备 Xamarin.Android 进行 Android 饼图开发，并提供了一个应用示例，演示了如何使用新 Android 饼图显示切除和通知中的功能Xamarin.Android 应用。
 

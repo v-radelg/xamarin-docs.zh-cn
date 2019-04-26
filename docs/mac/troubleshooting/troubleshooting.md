@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: f498aab5bfaffc08a22f62a318f8f9f73ab0afca
-ms.sourcegitcommit: d294c967a18e6d91f3909c052eeff98ede1a21f6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53609904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61237416"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin.Mac 故障排除提示
 

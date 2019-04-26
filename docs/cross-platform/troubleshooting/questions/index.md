@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
 ms.openlocfilehash: 06aa6569301d1bfdbf9f6fd1e7397a38a9beb6f6
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39350815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61157188"
 ---
 # <a name="general-frequently-asked-questions"></a>常规方面的常见问题
 
@@ -23,7 +23,7 @@ ms.locfileid: "39350815"
 ### <a name="pcl-reflection-apipcl-reflectionmd"></a>[PCL 反射 API](pcl-reflection.md)
 Microsoft 开发了一个新的反射 API 可移植类库中使用。 如果你有想要移动到一个 PCL 一些现有反射代码，可能无法工作。
 
-### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL 案例研究：如何解决与 Microsoft TPL 数据流 NuGet 包的 System.Diagnostics.Tracing 相关的问题？](pcl-case-study.md)
+### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL 案例研究：如何解决 Microsoft TPL 数据流 NuGet 包的 system.diagnostics.tracing 相关的问题？](pcl-case-study.md)
 Xamarin.iOS 和 Xamarin.Android 不会实现它们以引用方式允许每个 PCL 配置文件的 100%。 为 Visual Studio for Mac，Visual Studio 和 NuGet 包管理器中的实际方便起见，Xamarin 项目允许使用仅具有不完整的实现的多个配置文件。 例如，Xamarin.iOS 和 Xamarin.Android 都不当前包括中的类型的完整实现`System.Diagnostics.Tracing`PCL 命名空间。 您可以解决此问题通过切换应用程序项目以引用 portable-net45 + win8 + wp8 + wpa81 TPL 数据流库版本。
 
 ## <a name="nuget-packages--xamarin-components"></a>NuGet 包和 Xamarin 组件

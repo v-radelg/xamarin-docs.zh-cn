@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/20/2017
 ms.openlocfilehash: 3e3d426e7b00725eafeba139de5bc46d416c368a
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344209"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>安装后缺少 Visual Studio 扩展
 

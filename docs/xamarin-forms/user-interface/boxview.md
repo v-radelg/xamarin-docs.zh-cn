@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
 ms.openlocfilehash: 85edbf657382b7c85ab2c5af543431fb51fb0d4e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019513"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms 字数
 
@@ -52,7 +52,7 @@ ms.locfileid: "53053861"
 
 `WidthRequest`并`HeightRequest`属性将被忽略，如果`BoxView`是*约束*在布局中，用例的布局容器对其自身的大小施加`BoxView`。
 
-一个`BoxView`可以被限制在一个维度和其他不受约束。 例如，如果`BoxView`是垂直的子级`StackLayout`，垂直维度的`BoxView`是不受约束，且其水平维度通常被约束。 但有该水平维度的例外情况： 如果`BoxView`具有其`HorizontalOptions`属性设置为内容而不`LayoutOptions.Fill`，也不受约束的水平维度则。 也可能是`StackLayout`本身可以具有不受约束的水平维度，在这种情况下`BoxView`也将水平方向不受约束。
+一个`BoxView`可以被限制在一个维度和其他不受约束。 例如，如果`BoxView`是垂直的子级`StackLayout`，垂直维度的`BoxView`是不受约束，且其水平维度通常被约束。 但有该水平维度的例外情况：如果`BoxView`具有其`HorizontalOptions`属性设置为内容而不`LayoutOptions.Fill`，也不受约束的水平维度则。 也可能是`StackLayout`本身可以具有不受约束的水平维度，在这种情况下`BoxView`也将水平方向不受约束。
 
 [ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)示例将显示一英寸的正方形不受约束`BoxView`在其页面的中心：
 
@@ -776,7 +776,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-第二个指针的处理方式稍有不同： 缓动函数的动画应用以使移动看上去机械，而不是平滑。 在每个时钟周期，第二个指针有点拉取，然后超过其目标。 此小段代码很向移动的真实性。
+第二个指针是略有不同处理：缓动函数的动画应用以使移动看上去机械，而不是平滑。 在每个时钟周期，第二个指针有点拉取，然后超过其目标。 此小段代码很向移动的真实性。
 
 ## <a name="conclusion"></a>结束语
 

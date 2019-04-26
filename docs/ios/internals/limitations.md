@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
 ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035875"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 

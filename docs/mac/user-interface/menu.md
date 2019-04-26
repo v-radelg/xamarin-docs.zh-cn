@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 0a14e3e3eb58b264d1909b6576bbbc4f7e8f4068
-ms.sourcegitcommit: 650fd5813e243d67eea13c4bc76683c0f8134123
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61166339"
 ---
 # <a name="menus-in-xamarinmac"></a>在 Xamarin.Mac 中的菜单
 
@@ -1011,7 +1011,7 @@ public override void DidFinishLaunching (NSNotification notification)
 1. 在 Visual Studio for Mac 中，右键单击应用程序的项目并选择**外** > **新文件...** 从新的文件对话框中，选择**Xamarin.Mac** > **空接口定义**，将"DockMenu"用于**名称**单击**新建**按钮以创建新**DockMenu.xib**文件：
 
     ![添加一个空接口定义](menu-images/dock02.png "添加一个空接口定义")
-2. 在中**Solution Pad**，双击**DockMenu.xib**文件以进行编辑在 Xcode 中打开。 创建一个新**菜单**具有以下项：**地址**，**日期**，**问候**，和**签名** 
+2. 在中**Solution Pad**，双击**DockMenu.xib**文件以进行编辑在 Xcode 中打开。 创建一个新**菜单**具有以下项：**地址**，**日期**，**问候**，并**签名** 
 
     [![对 UI 进行布局](menu-images/dock03.png "布置 UI")](menu-images/dock03-large.png#lightbox)
 3. 接下来，让我们将我们新的菜单项连接到我们现有的操作，我们创建了我们自定义菜单[添加、 编辑和删除菜单](#Adding,_Editing_and_Deleting_Menus)上面一节。 切换到**连接检查器**，然后选择**第一个响应方**中**界面层次结构**。 向下滚动并找到`phraseAddress:`操作。 将行从圆形拖到该操作**地址**菜单项：
@@ -1051,7 +1051,7 @@ public override void DidFinishLaunching (NSNotification notification)
 1. 编辑**Main.storyboard**文件在 Xcode 和拖动**弹出按钮**从**库检查器**拖到**面板**中创建的窗口[上下文菜单](#Contextual_Menus)部分： 
 
     [![添加弹出按钮](menu-images/popup01.png "添加弹出项按钮")](menu-images/popup01-large.png#lightbox)
-2. 添加新菜单项并将项的标题设置为弹出窗口中：**地址**，**日期**，**问候**，和**签名** 
+2. 添加新菜单项并为弹出窗口中设置项的标题：**地址**，**日期**，**问候**，并**签名** 
 
     [![配置菜单项](menu-images/popup02.png "配置菜单项")](menu-images/popup02-large.png#lightbox)
 3. 接下来，让我们将我们新的菜单项连接到我们创建了我们自定义菜单的现有操作[添加、 编辑和删除菜单](#Adding,_Editing_and_Deleting_Menus)上面一节。 切换到**连接检查器**，然后选择**第一个响应方**中**界面层次结构**。 向下滚动并找到`phraseAddress:`操作。 将行从圆形拖到该操作**地址**菜单项： 

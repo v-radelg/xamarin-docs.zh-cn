@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 7e31f9ad46a04b648a6a1f24c075426f7d98a663
-ms.sourcegitcommit: 6655cccf9d3be755773c2f774b5918e0b141bf84
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228250"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪个版本的 Xamarin.Android 添加了 Lollipop 支持？
 

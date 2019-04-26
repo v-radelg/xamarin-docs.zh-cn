@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 577eb19106ffa0ebd19c54aeeb155a9c6c85feac
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53062038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61091500"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
 

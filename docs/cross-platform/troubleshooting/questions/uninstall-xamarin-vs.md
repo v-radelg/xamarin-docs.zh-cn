@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
 ms.openlocfilehash: 99fde9330498ee62d3cf6b5910c2cbfae39cfdeb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33917663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61159618"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>如何彻底卸载 Xamarin for Visual Studio？
 
@@ -77,7 +77,7 @@ ms.locfileid: "33917663"
 
 11. 重新启动。
 
-12. 重新安装 Xamarin 使用从当前稳定版本[visualstudio.com](https://visualstudio.com/xamarin/)。
+12. 重新安装当前稳定版本的 Xamarin 使用从[visualstudio.com](https://visualstudio.com/xamarin/)。
 
 ## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>关于“未正确加载包”的其他故障排除步骤
 

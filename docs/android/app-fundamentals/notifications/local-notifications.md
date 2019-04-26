@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
 ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021627"
 ---
 <a name="compatibility"></a>
 

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 6d695df9c59a5f95441092d6d7b44d5feda941bd
-ms.sourcegitcommit: 5fc171a45697f7c610d65f74d1f3cebbac445de6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52172049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61267671"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>为 NuGet 创建新的多平台库
 

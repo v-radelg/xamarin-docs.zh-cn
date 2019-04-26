@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/04/2019
 ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669552"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61093685"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字体
 

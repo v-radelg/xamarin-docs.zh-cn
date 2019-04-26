@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 3ea05563ecbca95d26d692d5424c30e961229ac5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021175"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp 的混合模式
 
@@ -46,13 +46,13 @@ SkiaSharp 的混合模式密切对应于所述 W3C [**合成和混合级别 1** 
 
 这三个类别的名称将采用在下文中的多个含义。 此处列出的成员的顺序是相同的定义`SKBlendMode`枚举。 第一列中的 13 枚举成员具有整数值 0 到 12。 第二列是对应于整数 13 到 24 的枚举成员和第三列中的成员具有 25 到 28 的值。
 
-模式中讨论了这些 blend_大约_W3C 中的相同顺序**组合的情况下和混合级别 1**文档，但存在一些差异：`Src`模式称为_副本_在 W3C 文档中，并`Plus`称为_较浅_。 W3C 文档定义了_正常_不包括在混合模式`SKBlendModes`因为它是与相同`SrcOver`。 `Modulate`混合模式 （在第一列顶部） 不包括在 W3C 文档和讨论`Multiply`模式之前`Screen`。
+模式中讨论了这些 blend_大约_W3C 中的相同顺序**组合的情况下和混合级别 1**文档，但存在一些差异：`Src`模式称为_副本_W3C 文档中并`Plus`称为_较浅_。 W3C 文档定义了_正常_不包括在混合模式`SKBlendModes`因为它是与相同`SrcOver`。 `Modulate`混合模式 （在第一列顶部） 不包括在 W3C 文档和讨论`Multiply`模式之前`Screen`。
 
 因为`Modulate`混合模式是唯一的 Skia，作为额外的 Porter Duff 模式以及可分离模式下将进行讨论。
 
 ## <a name="the-importance-of-transparency"></a>透明度的重要性
 
-从历史上看，组合的情况下开发的概念与结合_alpha 通道_。 在显示图面如`SKCanvas`对象和全彩色位图，每个像素的红色、 绿色和蓝色的组件，每个 4 字节数： 1 字节和包含透明度额外的字节。 此 alpha 组件是透明度的完全透明度为 0 和 0xFF 完全不透明，具有不同级别的那些值之间。
+从历史上看，组合的情况下开发的概念与结合_alpha 通道_。 在显示图面如`SKCanvas`对象和全彩色位图，每个像素由 4 个字节组成：1 个字节每个红色、 绿色和蓝色组件和透明度额外的字节。 此 alpha 组件是透明度的完全透明度为 0 和 0xFF 完全不透明，具有不同级别的那些值之间。
 
 许多的混合模式依赖于透明度。 通常，当`SKCanvas`中第一次获得`PaintSurface`处理程序，或当`SKCanvas`创建位图上进行绘制，第一步是此调用：
 

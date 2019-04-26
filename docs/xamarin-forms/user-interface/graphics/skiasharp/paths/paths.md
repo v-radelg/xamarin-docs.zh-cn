@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: 833e24e91a37b92eb5025aacdc9509f092b823cd
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290705"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路径基础知识
 

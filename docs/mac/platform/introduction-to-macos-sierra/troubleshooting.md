@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
 ms.openlocfilehash: 1b379bef98e498df4c58ba7209aa46b0b2542fe1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031416"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac-macOS Sierra 故障排除
 
@@ -32,7 +32,7 @@ _本文提供使用 macOS Sierra Xamarin.Mac 应用中的多个故障排除提�
 
 <a name="App-Store" />
 
-## <a name="app-store"></a>应用商店
+## <a name="app-store"></a>App Store
 
 已知问题：
 

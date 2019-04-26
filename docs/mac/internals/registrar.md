@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Mac 注册机构
+title: Xamarin.Mac registrar
 description: 本文档介绍了 Xamarin.Mac 注册机构和它动态、 静态的且部分的静态 （混合） 的目的使用情况的配置。
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
 ms.openlocfilehash: 21e1a2c6ae5a9ad8b6acf520851ea92a340da887
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032492"
 ---
-# <a name="xamarinmac-registrar"></a>Xamarin.Mac 注册机构
+# <a name="xamarinmac-registrar"></a>Xamarin.Mac registrar
 
 _本文档介绍 Xamarin.Mac 注册机构和其不同的使用配置的用途。_
 

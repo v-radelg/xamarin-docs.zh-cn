@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 6803dc2668b89ee2d037da8b34e202191dd5465d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61307688"
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>处理 CocosSharp 中的多个解决方法
 
@@ -25,8 +25,8 @@ CocosSharp 的默认解决行为是以物理像素符合游戏中的坐标。 �
 | **设备** | **显示分辨率** | **示例屏幕截图** |
 |--- | --- |--- |
 |所需的显示|368 x 240 （与纵横比为黑色长条）| ![368 x 240 （与纵横比为黑色长条）](resolutions-images/image1.png) |
-|iPhone 4 秒|960x640| ![iPhone 4 秒 960 x 640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920 x 1080](resolutions-images/image3.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
 
 本文档介绍如何使用 CocosSharp 来解决该问题上表中所示。 也就是说，我们将介绍如何使呈现的第一行 – 而不考虑屏幕分辨率中所示的任何设备。
 

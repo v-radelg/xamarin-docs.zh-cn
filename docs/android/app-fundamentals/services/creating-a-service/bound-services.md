@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
 ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61013213"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>在 Xamarin.Android 中绑定服务
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
 ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61393561"
 ---
 # <a name="file-system-access-in-xamarinios"></a>在 Xamarin.iOS 中的文件系统访问
 

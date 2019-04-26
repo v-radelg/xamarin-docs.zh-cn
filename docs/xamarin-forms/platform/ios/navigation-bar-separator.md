@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: a0483a87270a1ca7a2b00f907d5561c865d03541
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60952874"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>在 iOS 上的 NavigationPage 栏分隔符
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此平台特定于 iOS 的隐藏的分隔线和位于底部的导航栏的卷影[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 设置使用在 XAML [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)可绑定属性设置为`false`:
 

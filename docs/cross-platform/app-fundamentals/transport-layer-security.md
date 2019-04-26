@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
 ms.openlocfilehash: 26870ae0e84a84a7b78f7766a8e134ecfc7b223e
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61304726"
 ---
 # <a name="transport-layer-security-tls-12"></a>传输层安全性 (TLS) 1.2
 

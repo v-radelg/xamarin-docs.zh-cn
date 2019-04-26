@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61401499"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>创建并在 SkiaSharp 位图上绘制
 
@@ -121,7 +121,7 @@ public partial class HelloBitmapPage : ContentPage
 
 显示**Hello 位图**页演示位图创建的应用程序是透明的黑色文本除外。 这就是为什么显示图面水绿色显露出来。
 
-文档`Clear`方法的`SKCanvas`介绍使用语句:"将替换在画布上的当前播放中的所有像素。" 使用字"替换"会显示这些方法的重要特征： 的所有绘图方法`SKCanvas`将内容添加到现有的显示图面。 `Clear`方法_替换为_已有。
+文档`Clear`方法的`SKCanvas`介绍使用语句："将替换在画布上的当前播放中的所有像素。" 使用字"替换"会显示这些方法的重要特征：所有绘图方法`SKCanvas`将内容添加到现有的显示图面。 `Clear`方法_替换为_已有。
 
 `Clear` 存在两个不同的版本： 
 
@@ -131,7 +131,7 @@ public partial class HelloBitmapPage : ContentPage
 
 调用`Clear`新位图上没有自变量初始化整个位图是完全透明。 随后在位图上绘制的任何内容通常是不透明或半透明。
 
-下面是要尝试的内容： 中**Hello 位图**页上，替换`Clear`方法应用于`bitmapCanvas`用这个：
+下面是要尝试的内容：在中**Hello 位图**页上，替换`Clear`方法应用于`bitmapCanvas`用这个：
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));

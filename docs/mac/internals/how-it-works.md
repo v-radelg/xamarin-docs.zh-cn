@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/25/2017
 ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61033824"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的工作原理
 

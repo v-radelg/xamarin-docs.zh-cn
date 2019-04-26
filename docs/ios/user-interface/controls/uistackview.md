@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 6d5be72a9329675a65b0d6873d13894b314b50e7
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61088003"
 ---
 # <a name="stack-views-in-xamarinios"></a>在 Xamarin.iOS 堆栈视图
 

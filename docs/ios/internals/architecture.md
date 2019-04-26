@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036095"
 ---
 # <a name="ios-app-architecture"></a>iOS 应用程序体系结构
 
@@ -22,7 +22,7 @@ Xamarin.iOS 应用程序运行在 Mono 的执行环境，并使用完整继续�
 
 [ ![](architecture-images/ios-arch-small.png "下图显示了继续操作的时间 (AOT) 编译体系结构的基本概述")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>本机代码和托管代码： 说明
+## <a name="native-and-managed-code-an-explanation"></a>本机代码和托管代码：说明
 
 为 Xamarin 开发时条款*本机和托管*通常使用代码。 [托管代码](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是具有由其执行的代码[.NET Framework 公共语言运行时](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)，或在 Xamarin 的情况下： Mono 运行时。 这是我们所说的一种中间语言。
 

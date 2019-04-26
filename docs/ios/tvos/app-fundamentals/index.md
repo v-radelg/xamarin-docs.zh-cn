@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: 8fe5b508bb92d11bc1a76c96ece0b89fd06dd402
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61415736"
 ---
 # <a name="tvos-application-fundamentals"></a>tvOS 应用程序基础知识
 

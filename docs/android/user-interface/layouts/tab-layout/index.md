@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
 ms.openlocfilehash: 32d1ce4e440a962e02fda052375171bea7676053
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303244"
 ---
 # <a name="tabbed-layouts"></a>选项卡式布局
 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 535eabe07cb4f4d36e6a6f918b5717efcc99185d
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023529"
 ---
 # <a name="fingerprint-authentication-guidance"></a>指纹身份验证指南
 

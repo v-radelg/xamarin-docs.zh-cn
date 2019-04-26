@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61277946"
 ---
 # <a name="accessing-remote-data"></a>访问远程数据
 
-许多现代的基于 web 的解决方案进行 web 服务，由 web 服务器，以便为远程客户端应用程序提供功能的使用。 Web 服务公开的操作构成 web API。
+许多基于 Web 的现代化解决方案使用 Web 服务器托管的 Web 服务来为远程客户端应用程序提供功能。 Web 服务公开的操作构成 web API。
 
 客户端应用程序应该能够使用 web API，而不知道如何实现的数据或 API 公开的操作。 这要求该 API 遵守通用标准，使客户端应用程序和 web 服务来达成一致的客户端应用程序和 web 服务之间交换的数据结构和使用，哪些数据格式。
 
@@ -55,7 +55,7 @@ EShopOnContainers 移动应用使用`HttpClient`类，以通过 HTTP 使用正�
 
 [![](accessing-remote-data-images/catalogdata.png "从目录微服务中检索数据")](accessing-remote-data-images/catalogdata-large.png#lightbox "从目录微服务中检索数据")
 
-**图 10-1**： 从目录微服务中检索数据
+**图 10-1**:从目录微服务中检索数据
 
 当`CatalogView`导航到，`OnInitialize`中的方法`CatalogViewModel`调用类。 此方法从目录微服务，检索目录数据，如以下代码示例所示：
 
@@ -68,7 +68,7 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-此方法调用`GetCatalogAsync`方法`CatalogService`注入到的实例`CatalogViewModel`Autofac 通过。 下面的代码示例演示`GetCatalogAsync`方法：
+此方法调用`GetCatalogAsync`方法`CatalogService`注入到的实例`CatalogViewModel`Autofac 通过。 下面的代码示例说明 `GetCatalogAsync` 方法：
 
 ```csharp
 public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
@@ -160,7 +160,7 @@ public async Task<IActionResult> Items(
 
 [![](accessing-remote-data-images/basketdata.png "将数据发送到购物篮微服务")](accessing-remote-data-images/basketdata-large.png#lightbox "将数据发送到购物篮微服务")
 
-**图 10-2**： 将数据发送到购物篮微服务
+**图 10-2**:将数据发送到购物篮微服务
 
 当的项添加到购物篮`ReCalculateTotalAsync`中的方法`BasketViewModel`调用类。 此方法更新购物篮中的项的总计值，并将篮数据发送到购物篮微服务，如下面的代码示例中所示：
 
@@ -233,7 +233,7 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 
 ![](accessing-remote-data-images/checkoutdata.png "正在删除数据从购物篮微服务")
 
-**图 10-3**： 从购物篮微服务中删除数据
+**图 10-3**:从购物篮微服务中删除数据
 
 签出过程调用时，`CheckoutAsync`中的方法`CheckoutViewModel`调用类。 此方法创建新订单之前清除购物篮，如下面的代码示例中所示：
 
@@ -298,7 +298,7 @@ public void Delete(string id)
 -   共享的缓存，可由多个进程或计算机访问。
 -   专用缓存，其中数据保存在本地运行该应用程序在设备。
 
-EShopOnContainers 移动应用使用专用缓存，其中数据保存在本地运行应用程序实例中的设备。 有关使用 eShopOnContainers 引用应用程序的缓存的信息，请参阅[.NET 微服务： 适用于容器化.NET 应用程序体系结构](https://aka.ms/microservicesebook)。
+EShopOnContainers 移动应用使用专用缓存，其中数据保存在本地运行应用程序实例中的设备。 有关使用 eShopOnContainers 引用应用程序的缓存的信息，请参阅[.NET 微服务：适用于容器化 .NET 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
 > [!TIP]
 > 将缓存视为可能随时消失的暂时性数据存储。 请确保数据都保留在原始数据存储，以及缓存。 如果缓存变得不可用，丢失数据的风险然后最小化。
@@ -380,7 +380,7 @@ FFImageLoading 的`CachedImage`控件是适用于 Xamarin.Forms 的替代[ `Imag
 
 EShopOnContainers 移动应用程序目前不实现重试模式，发出 rest 样式 web 请求时。 但是，`CachedImage`由提供控制[FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)库支持通过映像加载重试的暂时性故障处理。 如果图像加载失败，将进行更多尝试。 指定的尝试次数`RetryCount`属性，然后重试将由指定的延迟之后发生`RetryDelay`属性。 如果这些属性值不显式设置，其默认值应用 – 3`RetryCount`属性，并为 250 毫秒`RetryDelay`属性。 有关详细信息`CachedImage`控件，请参阅[缓存映像](#caching_images)。
 
-EShopOnContainers 引用应用程序实现重试模式。 有关详细信息，其中讨论了如何结合使用的重试模式`HttpClient`类，请参阅[.NET 微服务： 适用于容器化.NET 应用程序体系结构](https://aka.ms/microservicesebook)。
+EShopOnContainers 引用应用程序实现重试模式。 有关详细信息，其中讨论了如何结合使用的重试模式`HttpClient`类，请参阅[.NET 微服务：适用于容器化 .NET 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
 有关重试模式的详细信息，请参阅[重试](/azure/architecture/patterns/retry/)模式。
 
@@ -397,7 +397,7 @@ EShopOnContainers 引用应用程序实现重试模式。 有关详细信息，�
 
 断路器充当可能失败的操作的代理。 该代理应监视最近发生了的故障数并使用此信息来决定是否允许操作继续进行，或立即返回异常。
 
-EShopOnContainers 移动应用程序目前不实现断路器模式。 但是，eShopOnContainers 将执行。 有关详细信息，请参阅[.NET 微服务： 适用于容器化.NET 应用程序体系结构](https://aka.ms/microservicesebook)。
+EShopOnContainers 移动应用程序目前不实现断路器模式。 但是，eShopOnContainers 将执行。 有关详细信息，请参阅[.NET 微服务：适用于容器化 .NET 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
 > [!TIP]
 > 组合的重试和断路器模式。 应用程序可以通过使用重试模式来调用通过断路器操作组合的重试和断路器模式。 但是，重试逻辑应能敏锐觉察断路器返回的任何异常并在断路器指示故障不是暂时性的情况下放弃重试尝试。
@@ -406,7 +406,7 @@ EShopOnContainers 移动应用程序目前不实现断路器模式。 但是，e
 
 ## <a name="summary"></a>总结
 
-许多现代的基于 web 的解决方案进行 web 服务，由 web 服务器，以便为远程客户端应用程序提供功能的使用。 Web 服务公开的操作构成 web API，并且客户端应用程序应该能够使用 web API，而不知道如何实现的数据或 API 公开的操作。
+许多基于 Web 的现代化解决方案使用 Web 服务器托管的 Web 服务来为远程客户端应用程序提供功能。 Web 服务公开的操作可构成 Web API，并且客户端应用应能够利用 Web API，但不需要了解该 API 公开的数据或操作的实现方式。
 
 通过缓存到位置靠近的快速存储经常访问的数据可以提高应用性能的应用程序。 应用程序可以实现缓存端模式使用直读缓存。 此模式确定该项当前是否已在缓存中。 如果项目不在缓存中，它从数据存储中读取并添加到缓存。
 

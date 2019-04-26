@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/21/2018
 ms.openlocfilehash: 2e09e89fe17956efaef910638e827b69a5795bc0
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60857472"
 ---
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>在 Xamarin.Forms 中 XAML Namespace 自定义架构
 
@@ -144,5 +144,5 @@ namespace CustomNamespaceSchemaDemo
 ## <a name="related-links"></a>相关链接
 
 - [自定义 Namespace 架构 （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/CustomNamespaceSchemas/)
-- [建议的前缀的 XAML Namespace](custom-prefix.md)
+- [建议的 XAML 命名空间前缀](custom-prefix.md)
 - [在 Xamarin.Forms 中 XAML 命名空间](namespaces.md)

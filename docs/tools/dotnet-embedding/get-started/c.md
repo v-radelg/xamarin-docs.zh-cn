@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/19/2018
 ms.openlocfilehash: 342ba2a6b51483983df7bd04034a4cef62fd57ff
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61213587"
 ---
 # <a name="getting-started-with-c"></a>C 入门
 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/09/2018
 ms.openlocfilehash: c4192f22ebd0ad1cde27745f5439c2d18a268ed3
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012430"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>演练-在 Android 中使用触控
 

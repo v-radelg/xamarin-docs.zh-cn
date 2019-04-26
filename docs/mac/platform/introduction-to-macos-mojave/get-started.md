@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: 6acf79d158869a09f93ff9cd129650304c209a35
-ms.sourcegitcommit: 2868c968f418cd7cc110f9664f3c3ffb6df1f9af
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53267334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031669"
 ---
 # <a name="get-started-with-macos-mojave"></a>开始使用 macOS Mojave
 

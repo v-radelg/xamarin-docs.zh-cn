@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
 ms.openlocfilehash: 55e5627a492636efaa6eeb6b8c302d143b08e2cc
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400534"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -22,7 +22,7 @@ _CocosSharp 可用于将精确形状、 图像和文本呈现添加到用于高�
 
 > [!VIDEO https://youtube.com/embed/eYCx63FeqVU]
 
-**Evolve 2016： 科科斯 # 在 Xamarin.Forms 中**
+**Evolve 2016：科科斯 # 在 Xamarin.Forms 中**
 
 ## <a name="overview"></a>概述
 
@@ -30,7 +30,7 @@ CocosSharp 是一种灵活且功能强大的技术，用于显示图形、 读�
 
 * [CocosSharp 是什么？](#what)
 * [添加 CocosSharp Nuget 包](#nuget)
-* [演练： 向 Xamarin.Forms 应用添加 CocosSharp](#add)
+* [演练：向 Xamarin.Forms 应用添加 CocosSharp](#add)
 
 <a name="what" />
 
@@ -74,7 +74,7 @@ CocosSharp.Forms nuget 包包含`CocosSharpView`类，该类用于托管 CocosSh
 
 <a name="add" />
 
-## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>演练： 向 Xamarin.Forms 应用添加 CocosSharp
+## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>演练：向 Xamarin.Forms 应用添加 CocosSharp
 
 请按照下列步骤将简单 CocosSharp 视图添加到 Xamarin.Forms 应用：
 

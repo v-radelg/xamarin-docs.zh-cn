@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
 ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61088455"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>绘制弧线的三个方法
 

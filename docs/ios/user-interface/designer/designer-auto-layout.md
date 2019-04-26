@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 41a9ec90b4b734dde7a982ac3d4b2e7b2082321c
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61412972"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>适用于 iOS 的 Xamarin 设计器的自动布局
 

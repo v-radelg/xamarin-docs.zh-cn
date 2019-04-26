@@ -1,5 +1,5 @@
 ---
-title: Google 云消息传送
+title: Google Cloud Messaging
 description: Google Cloud Messaging (GCM) 是一种便于移动应用和服务器应用程序之间的消息传送的服务。 此文章概述的 GCM 的工作原理，并介绍如何配置 Google 服务，使您的应用程序可以使用 GCM。
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2018
 ms.openlocfilehash: c2ca567ffcb247622d1b3e8f3e0136c453723b96
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61017588"
 ---
-# <a name="google-cloud-messaging"></a>Google 云消息传送
+# <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
 _Google Cloud Messaging (GCM) 是一种便于移动应用和服务器应用程序之间的消息传送的服务。此文章概述的 GCM 的工作原理，并介绍如何配置 Google 服务，使您的应用程序可以使用 GCM。_
 

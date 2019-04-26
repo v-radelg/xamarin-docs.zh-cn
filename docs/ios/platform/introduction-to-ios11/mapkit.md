@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
 ms.openlocfilehash: 3c1b29a4aba03ffe8a3131625ef29cf64766bb6c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61342325"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 中的新增功能
 

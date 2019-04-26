@@ -1,5 +1,5 @@
 ---
-title: IOS 12 简介
+title: iOS 12 简介
 description: 本文档提供的 Xamarin 预览版版本提供了 C# 绑定某些 iOS 12 Api 的高级说明。
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/08/2018
 ms.openlocfilehash: 99f2b98614c2b8d558dd8744b31a62b787fc955c
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035944"
 ---
-# <a name="introduction-to-ios-12"></a>IOS 12 简介
+# <a name="introduction-to-ios-12"></a>iOS 12 简介
 
 本文档提供的 Xamarin 预览版版本提供了 C# 绑定某些 iOS 12 Api 的高级说明。
 

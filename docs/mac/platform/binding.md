@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 01/13/2017
 ms.openlocfilehash: fde21b2056d56cbf1c4768b287e29f559390f500
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032468"
 ---
 # <a name="binding-mac-libraries-for-xamarinmac"></a>适用于 Xamarin.Mac 的绑定 Mac 库
 

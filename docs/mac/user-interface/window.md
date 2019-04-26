@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61240350"
 ---
 # <a name="windows-in-xamarinmac"></a>在 Xamarin.Mac 中的 Windows
 
@@ -744,7 +744,7 @@ void OpenDialog (NSObject sender)
 
 [![](window-images/panel03.png "属性检查器")](window-images/panel03.png#lightbox)
 
-- **样式**-，可以调整从面板的样式： 常规面板 （如下所示的标准窗口）、 实用工具面板 （具有较小的标题栏），面板中的 HUD (是半透明和标题栏是在后台的一部分)。
+- **样式**-，可以调整从面板的样式：正则面板 （如下所示的标准窗口）、 实用工具面板 （具有较小的标题栏），面板中的 HUD (是半透明和标题栏是在后台的一部分)。
 - **非激活**-中确定面板成为关键的窗口。
 - **记录模式**-如果文档模式，面板将仅上浮动在应用程序的 windows，否则将浮动最重要的是。
 

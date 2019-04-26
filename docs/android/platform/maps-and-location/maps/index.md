@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
 ms.openlocfilehash: 78908e1b1ad6d3f572ce45c8189d8f4ee48ad6ee
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61176540"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何使用 Xamarin.Android 使用 Google 地图和位置
 

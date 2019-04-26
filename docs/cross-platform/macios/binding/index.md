@@ -1,21 +1,21 @@
 ---
 title: 绑定 Objective-C
-description: 本文档提供介绍如何创建 C# 绑定到 OBJECTIVE-C 代码，使开发人员能够使用现成的库，在 Xamarin 应用程序中的各种指南的链接。
+description: 本文档提供介绍如何创建的各种指南的链接C#绑定到 OBJECTIVE-C 代码，使开发人员能够使用现成的 Xamarin 应用程序中的库。
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
 ms.openlocfilehash: 3f1e1ce324e849c0c939d936eb6ee1470cf24a3b
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266603"
 ---
 # <a name="binding-objective-c"></a>绑定 Objective-C
 
-本部分包含多种文档，其中包括创建绑定到 OBJECTIVE-C 的库，因此它们可以从 C# 使用 Xamarin.iOS 或 Xamarin.Mac 创建的应用程序调用。
+本部分包含了多种文档，其中包括创建绑定到 OBJECTIVE-C 的库，因此它们可以从调用的C#使用 Xamarin.iOS 或 Xamarin.Mac 创建的应用程序。
 
 ##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概述](~/cross-platform/macios/binding/overview.md)
 
@@ -23,7 +23,7 @@ ms.locfileid: "37855151"
 
 ##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 
-本文档介绍用于创建 C# 绑定的 Objective C Api 和 Objective C 中的惯例如何映射到在.NET 中使用的惯例的过程。
+本文档介绍了用于创建C#绑定的 Objective C Api 和 Objective C 中的惯例如何映射到在.NET 中使用的惯例。
 如果要绑定只是 C Api，你应为此，P/Invoke framework 使用标准.NET 机制。
 
 ##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[绑定定义参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
@@ -39,7 +39,7 @@ ms.locfileid: "37855151"
 
 [IOS 绑定页](~/ios/platform/binding-objective-c/index.md)链接回这些常用的绑定资源此外到下面的示例。
 
-### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[演练： 绑定 OBJECTIVE-C 库](~/ios/platform/binding-objective-c/walkthrough.md)
+### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[演练：绑定 OBJECTIVE-C 库](~/ios/platform/binding-objective-c/walkthrough.md)
 
 本文提供了创建使用开放源代码的绑定项目的分步演练[InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective C 项目作为示例。 InfColorPicker 库提供了允许用户选择一种颜色根据其 HSB 表示形式，使用户更加友好的颜色选择的可重用视图控制器。 目标 Sharpie 将用于绑定过程中提供帮助。
 
@@ -57,5 +57,5 @@ ms.locfileid: "37855151"
 
 - [iOS 绑定](~/ios/platform/binding-objective-c/index.md)
 - [Mac 绑定](~/mac/platform/binding.md)
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

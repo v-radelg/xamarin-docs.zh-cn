@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 03b80d3fb1ed7c8db108f86b3b3923c20e1d908f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61089690"
 ---
 # <a name="alternative-layout-views"></a>备选布局视图
 

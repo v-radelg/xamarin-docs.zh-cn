@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/05/2019
 ms.openlocfilehash: d440c6e95788fc876d6b0aa094f5bc2fce84bfb0
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023440"
 ---
 # <a name="xamarinforms-visual"></a>Xamarin.Forms 视觉对象
 

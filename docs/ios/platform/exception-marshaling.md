@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/05/2017
 ms.openlocfilehash: 167d6ac421bdd2652e7f8474e1ea21bd9040723f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61075084"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>在 Xamarin.iOS 中封送处理的异常
 
@@ -261,18 +261,18 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 
 可用的模式如下：
 
-- `Default`： 默认值因平台而异。 它是`ThrowObjectiveCException`如果 GC 在协作模式 (watchOS) 和`UnwindNativeCode`否则为 (iOS / watchOS / macOS)。 默认值将来可能会更改。
-- `UnwindNativeCode`： 这是以前的 （未定义的） 行为。 这不可用时在协作模式下使用 GC （即 watchOS 上的唯一选项; 因此，这不是有效选项 watchos），但它是所有其他平台的默认选项。
-- `ThrowObjectiveCException`： 将托管的异常转换为 Objective C 异常并引发 Objective C 异常。 这是 watchOS 上的默认值。
-- `Abort`： 中止的进程。
-- `Disable`： 禁用异常拦截，因此它不适合将此值设置的事件处理程序，但后引发该事件时已晚以禁用它。 在任何情况下，如果设置，它都将表现为`UnwindNativeCode`。
+- `Default`：默认值因平台而异。 它是`ThrowObjectiveCException`如果 GC 在协作模式 (watchOS) 和`UnwindNativeCode`否则为 (iOS / watchOS / macOS)。 默认值将来可能会更改。
+- `UnwindNativeCode`：这是以前的 （未定义的） 行为。 这不可用时在协作模式下使用 GC （即 watchOS 上的唯一选项; 因此，这不是有效选项 watchos），但它是所有其他平台的默认选项。
+- `ThrowObjectiveCException`：将托管的异常转换为 Objective C 异常并引发 Objective C 异常。 这是 watchOS 上的默认值。
+- `Abort`：中止的进程。
+- `Disable`：禁用异常拦截，因此它不适合将此值设置的事件处理程序，但后引发该事件时已晚以禁用它。 在任何情况下，如果设置，它都将表现为`UnwindNativeCode`。
 
 封送到托管代码的 Objective C 异常，可用的模式如下：
 
-- `Default`： 默认值因平台而异。 它是`ThrowManagedException`如果 GC 在协作模式 (watchOS) 和`UnwindManagedCode`否则为 (iOS / tvOS / macOS)。 默认值将来可能会更改。
-- `UnwindManagedCode`： 这是以前的 （未定义的） 行为。 这不可用时在协作模式下使用 GC （即 watchOS 上唯一有效的 GC 模式，因此这不是有效选项 watchos），但它是所有其他平台的默认值。
-- `ThrowManagedException`： 将 Objective C 异常转换为托管异常并引发托管的异常。 这是 watchOS 上的默认值。
-- `Abort`： 中止的进程。
+- `Default`：默认值因平台而异。 它是`ThrowManagedException`如果 GC 在协作模式 (watchOS) 和`UnwindManagedCode`否则为 (iOS / tvOS / macOS)。 默认值将来可能会更改。
+- `UnwindManagedCode`：这是以前的 （未定义的） 行为。 这不可用时在协作模式下使用 GC （即 watchOS 上唯一有效的 GC 模式，因此这不是有效选项 watchos），但它是所有其他平台的默认值。
+- `ThrowManagedException`：Objective C 异常转换为托管异常并引发托管的异常。 这是 watchOS 上的默认值。
+- `Abort`：中止的进程。
 - `Disable`： 禁用异常拦截，因此它不适合设置此值在事件处理程序，但一次该事件将引发，已经太迟以禁用它。 在任何情况下如果设置，它将中止的进程。
 
 因此，若要查看每次异常封送时，可以执行此操作：

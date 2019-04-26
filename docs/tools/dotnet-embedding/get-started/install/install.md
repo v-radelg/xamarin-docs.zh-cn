@@ -7,11 +7,11 @@ author: chamons
 ms.author: chhamo
 ms.date: 04/18/2018
 ms.openlocfilehash: 2a572748c21d2a640add3346d1162f4b6bdc8e99
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61076584"
 ---
 # <a name="installing-net-embedding"></a>安装.NET 嵌入
 

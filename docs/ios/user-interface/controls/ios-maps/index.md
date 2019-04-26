@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: c61b5a8bd99afda5e8fbeea44e3362574fa7feea
-ms.sourcegitcommit: b18ceed35aa94999d13faf4a3e3177c0b9fc33b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61226599"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin.iOS 中的映射
 

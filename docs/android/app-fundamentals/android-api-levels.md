@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
 ms.openlocfilehash: 8690be7551046a26339f58029da5f3f58e18cd15
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023967"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 级别
 

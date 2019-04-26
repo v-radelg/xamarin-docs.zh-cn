@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
 ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227789"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin.iOS 中的标签
 

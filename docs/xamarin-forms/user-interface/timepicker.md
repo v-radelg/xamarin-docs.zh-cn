@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
 ms.openlocfilehash: 1b929b507d738cb4000bab20cfab5480b2222ed2
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024009"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 

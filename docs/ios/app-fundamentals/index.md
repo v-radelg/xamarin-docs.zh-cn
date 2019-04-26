@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
 ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61248512"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS 应用程序基础知识
 

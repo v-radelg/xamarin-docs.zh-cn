@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61346899"
 ---
 # <a name="binding-ios-libraries"></a>绑定 iOS 库
 
@@ -42,11 +42,11 @@ ms.locfileid: "50122993"
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS C/c + + 中绑定由[Xamarin University](https://university.xamarin.com/)**
+**iOS 在 C 中的绑定 /C++，也可由[Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>相关链接
 
 - [绑定 Objective-C](~/cross-platform/macios/binding/index.md)
 - [Mac 绑定](~/mac/platform/binding.md)
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

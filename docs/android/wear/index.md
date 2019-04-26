@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
 ms.openlocfilehash: ca8b554e03c4e8339922ca99619245a45bd08e1d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61286566"
 ---
 # <a name="android-wear"></a>Android 穿戴设备
 

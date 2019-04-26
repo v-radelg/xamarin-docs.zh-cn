@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
 ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61408797"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet 包将添加到项目：
 
 对于特定于平台的项目 （如 iOS 和 Android） 重复上述步骤。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>演练： 向 Xamarin.Forms 应用添加 UrhoSharp
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>演练：向 Xamarin.Forms 应用添加 UrhoSharp
 
 以下步骤介绍了 Xamarin.Forms UrhoSharp 示例中的代码：
 

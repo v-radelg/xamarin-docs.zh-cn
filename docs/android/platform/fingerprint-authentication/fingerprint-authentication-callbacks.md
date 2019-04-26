@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
 ms.openlocfilehash: c720a30a59eea8f1ed74033da8d1c045a1fb9109
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61023478"
 ---
 # <a name="responding-to-authentication-callbacks"></a>响应身份验证回调
 

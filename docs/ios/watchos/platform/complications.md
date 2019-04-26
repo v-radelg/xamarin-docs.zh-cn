@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/03/2017
 ms.openlocfilehash: 85b0c9b0688e9fb310a8f427018a02fe629404bb
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61225518"
 ---
 # <a name="watchos-complications-in-xamarin"></a>watchOS 在 Xamarin 中的并发数据
 
@@ -24,7 +24,7 @@ _watchOS 允许开发人员能够编写自定义复杂情况用于监视的人�
 
 首先阅读[Apple 的 docs](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)以确定您的应用程序是否适用于一个问题。 有 5`CLKComplicationFamily`类型的显示可供选择：
 
-[![](complications-images/all-complications-sml.png "可用的 5 个 CLKComplicationFamily 类型： 循环小型、 小型模块化、 模块化大型、 实用小、 实用大型")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "5 CLKComplicationFamily 可用的类型：小圆形，模块化，小、 大、 最有效小模块、 实用的大型")](complications-images/all-complications.png#lightbox)
 
 应用程序可以实现只是一种样式，或者所有五个，具体取决于要显示的数据。
 您还可以支持按时间顺序查看，提供在用户打开数字 Crown 过去和/或将来的某个时间值。

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 6ed827c018931e5b79887dc355f136e2a84623d6
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031622"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra Framework 更改
 

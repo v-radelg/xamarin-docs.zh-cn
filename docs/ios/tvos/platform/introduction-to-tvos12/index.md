@@ -1,5 +1,5 @@
 ---
-title: TvOS 12 简介
+title: tvOS 12 简介
 description: 本文档提供了当前提供的 C# 绑定高级别中的哪些 Xamarin 的预览版本的 tvOS 12 的新增和更新功能的概述。
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
 ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "39615193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60932532"
 ---
-# <a name="introduction-to-tvos-12"></a>TvOS 12 简介
+# <a name="introduction-to-tvos-12"></a>tvOS 12 简介
 
 本文档提供了新的和更新 tvOS 12 的高级概述。
 

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
 ms.openlocfilehash: fcdd712313becd1335479013f44886086dde7bff
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261234"
 ---
 # <a name="binding-troubleshooting"></a>绑定疑难解答
 

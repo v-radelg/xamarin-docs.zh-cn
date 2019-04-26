@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 04/12/2017
 ms.openlocfilehash: 1ea38b527acaa89b9f25690de4e55664a7afd9e8
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61034117"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin.Mac 体系结构
 

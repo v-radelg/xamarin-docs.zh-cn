@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
 ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61160721"
 ---
 # <a name="global-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的全局样式
 

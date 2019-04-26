@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 076e9f5155492e5a69d906c587b24495fe39d3f1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334269"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章的摘要。 XAML 标记扩展
 
