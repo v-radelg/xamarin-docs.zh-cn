@@ -6,11 +6,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: c6eaf4dd90b172053b4b87e3427cfe35213c6727
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61215873"
 ---
 # <a name="callbacks-on-android"></a>在 Android 上的回调
 
@@ -157,7 +157,7 @@ class AbstractClassInvoker : AbstractClass
 
 ## <a name="interfaces"></a>接口
 
-接口是类似于抽象类，除了一个详细信息： Xamarin.Android 不会为其生成 Java。 这是因为.NET 嵌入之前, 情况不是很多 Java 将在其中实施C#接口。
+接口是类似于抽象类，除了一个详细信息：Xamarin.Android 不会为其生成 Java。 这是因为.NET 嵌入之前, 情况不是很多 Java 将在其中实施C#接口。
 
 让我们假设我们有以下C#接口：
 
@@ -264,7 +264,7 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-如果您遵循`abstract`类上面示例中，效果会除了一个详细信息： _Xamarin.Android 不会查找`Invoker`_ 。
+如果您遵循`abstract`类上面示例中，效果会除了一个详细信息：_不会查找 Xamarin.Android `Invoker`_ 。
 
 若要解决此问题，请修改C#类就`abstract`:
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/01/2017
 ms.openlocfilehash: 366a6e9585817c5a47ba5bec14fb2f238ab23a6b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61021985"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>路径和 SkiaSharp 中的文本
 
@@ -30,7 +30,7 @@ _了解之处的路径和文本_
 
 在上一篇文章中上[**路径效果**](effects.md)，你看到了如何[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single))方法的`SKPaint`可以获得一个描边路径的概述。 此外可以与派生自字符轮廓路径使用此方法。
 
-最后，本文演示的路径和文本的另一个交集： [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法的`SKCanvas`，可显示的文本字符串，以便文本的基线遵循曲线的路径。
+最后，本文演示路径和文本的另一个的交集：[ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法的`SKCanvas`，可显示的文本字符串，以便文本的基线遵循曲线的路径。
 
 ## <a name="text-to-path-conversion"></a>路径转换为文本
 
@@ -128,7 +128,7 @@ public class ClippingTextPage : ContentPage
 
 [![](text-paths-images/textpatheffect-small.png "三重的文本路径效果页屏幕截图")](text-paths-images/textpatheffect-large.png#lightbox "带来三倍的文本路径效果页屏幕截图")
 
-中的工作的大部分[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)类的字段和构造函数中发生。 这两个`SKPaint`对象定义为字段用于两个不同的用途： 第一个 (名为`textPathPaint`) 用于将转换与号`TextSize`的 50%到 1d 路径效果的路径。 第二个 (`textPaint`) 用于显示具有该路径效果 & 符的更大版本。 因此，`Style`的此第二个画图对象设置为`Stroke`，但`StrokeWidth`因为使用 1d 路径效果时，不需要该属性未设置属性：
+中的工作的大部分[ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs)类的字段和构造函数中发生。 这两个`SKPaint`对象定义为字段用于两个不同的用途：第一个 (名为`textPathPaint`) 用于将转换与号`TextSize`的 50%到 1d 路径效果的路径。 第二个 (`textPaint`) 用于显示具有该路径效果 & 符的更大版本。 因此，`Style`的此第二个画图对象设置为`Stroke`，但`StrokeWidth`因为使用 1d 路径效果时，不需要该属性未设置属性：
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -285,7 +285,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-所做的第一个参数中指定的文本沿路径指定为第二个参数运行。 您可以开始从与路径开头的偏移量处的文本`hOffset`参数。 正常路径窗体的文本的基线： 文本升部是一侧的路径和文本下行字母位于其他。 但您可以偏移量中的路径与文本基线`vOffset`参数。
+所做的第一个参数中指定的文本沿路径指定为第二个参数运行。 您可以开始从与路径开头的偏移量处的文本`hOffset`参数。 正常路径窗体的文本的基线：文本升部是一侧的路径和文本下行字母位于其他。 但您可以偏移量中的路径与文本基线`vOffset`参数。
 
 此方法具有任何工具可以提供有关设置的指导`TextSize`属性的`SKPaint`进行大小调整，完全以运行从路径的开头到末尾的文本。 有时您可以找出您自己的文本大小。 其他情况下将需要使用路径测量函数上的下一步的文章中进行描述[**路径信息和枚举**](information.md)。
 
@@ -326,7 +326,7 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "循环的文本页的三个屏幕截图")](text-paths-images/circulartext-large.png#lightbox "带来三倍的循环的文本页屏幕截图")
 
-选择文本本身也是某种程度上循环的目的是:"circle"一词是两个句子的使用者和介词短语的对象。
+选择文本本身也是某种程度上循环的目的是：单词"circle"是两个句子的使用者和介词短语的对象。
 
 ## <a name="related-links"></a>相关链接
 

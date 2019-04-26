@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/14/2018
 ms.openlocfilehash: 946cba08e1e504962c093f67e336d72b654a3a41
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229080"
 ---
 # <a name="picker-control-in-xamarinios"></a>在 Xamarin.iOS 中选取器控件
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
 ms.openlocfilehash: 82dd175222289676c3dacd80522c55e71ba12180
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61235935"
 ---
 # <a name="collection-views-in-xamarinmac"></a>在 Xamarin.Mac 中的集合视图
 

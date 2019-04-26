@@ -1,5 +1,5 @@
 ---
-title: 在穿戴设备上进行调试
+title: 在穿戴设备上调试
 description: 本文介绍如何调试在穿戴设备上的 Xamarin.Android 穿戴设备应用程序。
 ms.prod: xamarin
 ms.assetid: 01668E4B-BB83-4C26-B23A-F788173FB823
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 232fcd1d369eba1daad170986f2e2c4c913a3649
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61307858"
 ---
-# <a name="debug-on-a-wear-device"></a>在穿戴设备上进行调试
+# <a name="debug-on-a-wear-device"></a>在穿戴设备上调试
 
 _本文介绍如何调试在穿戴设备上的 Xamarin.Android 穿戴设备应用程序。_
 
@@ -77,7 +77,7 @@ _本文介绍如何调试在穿戴设备上的 Xamarin.Android 穿戴设备应�
 
     如果端口 4444 不可用，可以使用有权访问的任何其他可用端口。 
 
-    **请注意**： 如果你重启 Visual Studio 或 Visual Studio for Mac，则必须运行这些命令以建立与在穿戴设备。
+    **说明**：如果你重启 Visual Studio 或 Visual Studio for Mac，您必须运行以下命令以建立与在穿戴设备。
 
 5.  当在穿戴设备提示您时，请确认你允许**ADB 调试**。 在 Android Wear 应用中，您应看到状态更改为：
 

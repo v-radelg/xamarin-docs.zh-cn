@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 07/11/2018
 ms.openlocfilehash: a98ddc2622682f2c105a6aff32e94bd92a5b11f2
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60896444"
 ---
 # <a name="buttons-in-xamarinios"></a>在 Xamarin.iOS 中的按钮
 

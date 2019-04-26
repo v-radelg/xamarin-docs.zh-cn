@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
 ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61240206"
 ---
 # <a name="systemdata-in-xamarinios"></a>在 Xamarin.iOS System.Data
 

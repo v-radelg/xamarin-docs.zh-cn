@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: c4d788cce12a9aabdd1170cd1a52915f3b30285f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61200490"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>表部件和功能在 Xamarin.iOS
 
@@ -38,7 +38,7 @@ UITableView 可以使用分组或普通的方式，并包含以下部分：
 
 <a name="Cells" />
 
-## <a name="cells"></a>单元格
+## <a name="cells"></a>单元
 
 单元格是一个表的主用户界面元素。 正确实现，当单元格为重复使用的内存效率。 有四个内置的单元格样式，而且您可以创建您自己自定义单元格-在代码中，或在设计器中使用情节提要时。
 

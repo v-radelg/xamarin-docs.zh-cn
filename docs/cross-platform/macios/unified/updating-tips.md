@@ -7,11 +7,11 @@ ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
 ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61211815"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>将代码更新为 Unified API 的提示
 

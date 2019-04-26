@@ -8,10 +8,10 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
 ms.openlocfilehash: 3f83bd394ff631ebe3991a0c3e72240c979454ca
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341273"
 ---
 请注意到编辑器：此内容已有意删除，并且重定向。 此重定向应集中处理使用其他重定向，应删除此文件。

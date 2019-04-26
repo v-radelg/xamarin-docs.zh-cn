@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 01/31/2018
 ms.openlocfilehash: 2c6409410ecba7df8559c07c3231f5e493c98897
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61079785"
 ---
 # <a name="ios-designer-basics"></a>iOS 设计器基础知识
 

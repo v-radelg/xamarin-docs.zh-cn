@@ -1,5 +1,5 @@
 ---
-title: IOS 8 简介
+title: iOS 8 简介
 description: IOS 8，Apple 提供了大量的新框架和 Api，用于激发且能够取悦开发人员。 本指南中我们将介绍这些新的 Api，并了解开发人员和用户 iOS 8 可如何获益。
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: 9299322eb20561444262c2b2ba87191d2bddcde4
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61317611"
 ---
-# <a name="introduction-to-ios-8"></a>IOS 8 简介
+# <a name="introduction-to-ios-8"></a>iOS 8 简介
 
 _IOS 8，Apple 提供了大量的新框架和 Api，用于激发且能够取悦开发人员。本指南中我们将介绍这些新的 Api，并了解开发人员和用户 iOS 8 可如何获益。_
 
@@ -101,7 +101,7 @@ Touch ID 的引入了 iOS 7 中作为一种对用户进行身份验证-类似于
 
 若要了解更多的深度中的文档选取器并了解如何将其集成到 Xamarin.iOS 应用程序，请参见[简介文档选取器](~/ios/platform/document-picker.md)指南。
 
-### <a name="handoff"></a>切换
+### <a name="handoff"></a>Handoff
 
 切换，这是更大的连续性功能的一部分，采用更进一步好地集成 OS X 和 iOS。 这包括跨平台使用 AirDrop，取得的调用 iPhone、 iPad 和 Mac 中的和改进 tethering 从 iPhone 上的 SMS 的功能。
 

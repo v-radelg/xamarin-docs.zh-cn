@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
 ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
-ms.sourcegitcommit: 236a346838c421c7d8951f50abbf4f5365559372
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58641434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61194535"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 

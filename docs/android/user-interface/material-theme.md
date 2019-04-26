@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: ff94211086956e36da377445d90359789b62fc60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 512775864f5ad55ddfedd53b83dd02d7b0e1d1f8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61309066"
 ---
 # <a name="material-theme"></a>材料主题
 
@@ -52,7 +52,7 @@ Android 提供了三种材料主题风格：
 
 ## <a name="using-the-built-in-themes"></a>使用内置的主题
 
-使用材料主题的最简单方法是将应用配置为使用而无需自定义内置主题。 如果不想要显式配置了一个主题，您的应用程序将默认为`Theme.Material`（深色主题）。 如果你的应用程序只有一个活动，您可以在应用程序级别配置主题。 如果应用具有多个活动，可以以便它使用相同的主题可跨所有活动，或可以将不同的主题分配给不同的活动应用程序级别的配置主题。 以下部分介绍如何在应用级别和活动级别配置主题。
+使用材料主题的最简单方法是将应用配置为使用而无需自定义内置主题。 如果不想要显式配置了一个主题，您的应用程序将默认为`Theme.Material`（深色主题）。 如果你的应用程序只有一个活动，您可以在活动级别配置主题。 如果应用具有多个活动，可以以便它使用相同的主题可跨所有活动，或可以将不同的主题分配给不同的活动应用程序级别的配置主题。 以下部分介绍如何在应用级别和活动级别配置主题。
 
 
 ### <a name="theming-an-application"></a>主题设置应用程序

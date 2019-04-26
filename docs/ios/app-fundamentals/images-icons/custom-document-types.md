@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
 ms.openlocfilehash: 155847b4f5f6b3e6070f1afb6219db2d3789a075
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61258129"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>在 Xamarin.iOS 中的自定义文档图标
 

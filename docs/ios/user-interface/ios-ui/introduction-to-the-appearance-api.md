@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/15/2018
 ms.openlocfilehash: bfbc902b0912527fea6aaa58c6706ef5a0ccbf8e
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61178245"
 ---
 # <a name="appearance-api-in-xamarinios"></a>外观 API Xamarin.iOS 中
 

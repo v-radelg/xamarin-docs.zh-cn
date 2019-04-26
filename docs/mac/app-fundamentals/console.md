@@ -8,11 +8,11 @@ author: migueldeicaza
 ms.author: miguel
 ms.date: 07/27/2018
 ms.openlocfilehash: 135ef06cd044235023c3acc970c8e7a33f144b47
-ms.sourcegitcommit: d0da5ce4158239abd2b36f67550e9b475055766a
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61378271"
 ---
 # <a name="xamarinmac-bindings-in-console-apps"></a>在控制台应用程序中的 Xamarin.Mac 绑定
 

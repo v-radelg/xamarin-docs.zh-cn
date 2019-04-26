@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
 ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61410919"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>访问 SkiaSharp 位图像素位
 
@@ -20,7 +20,7 @@ ms.locfileid: "53059199"
 
 本文中所示[**到文件的保存 SkiaSharp 位图**](saving.md)，位图通常存储在文件中的压缩格式，如 JPEG 或 PNG。 在与此相反，不压缩 SkiaSharp 位图存储在内存中。 已存储为一系列连续的像素为单位。 此压缩的格式便于将位图转移到显示图面。
 
-SkiaSharp 位图占用的内存块的组织结构非常简单的方式： 它以像素为单位，从左到右，第一行开始，然后继续第二行。 对于全彩色位图，每个像素由四个字节，这意味着位图所需的总内存空间是四次其宽度和高度的产品。
+SkiaSharp 位图占用的内存块的结构非常简单的方式：它以像素为单位，从左到右，第一行开始，然后继续使用第二行。 对于全彩色位图，每个像素由四个字节，这意味着位图所需的总内存空间是四次其宽度和高度的产品。
 
 本指南介绍了如何应用程序有权访问这些像素，通过访问位图的像素的内存块，直接或间接。 在某些情况下，程序可能想要分析的图像的像素为单位，并构造某种类型的直方图。 更常见的是，应用程序可以通过从算法上创建构成位图像素构造唯一映像：
 
@@ -280,7 +280,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 }
 ```
 
-唯一的问题是： 是的整数格式`SKColor`值的顺序`SKColorType.Rgba8888`颜色类型，或`SKColorType.Bgra8888`颜色类型，或者它是其他内容完全？ 应很快显示该问题的答案。
+唯一的问题是：是整数格式`SKColor`值的顺序`SKColorType.Rgba8888`颜色类型，或`SKColorType.Bgra8888`颜色类型，或者它是其他内容完全？ 应很快显示该问题的答案。
 
 ### <a name="the-setpixels-method"></a>SetPixels 方法
 
@@ -294,7 +294,7 @@ bitmap.SetPixels(intPtr);
 
 首先，它看起来像`SetPixels`没有更多电源和性能而不为您提供了`GetPixels`而且太方便。 使用`GetPixels`获取位图的内存块并对其进行访问。 使用`SetPixels`分配和访问一些内存，然后将其设为位图的内存块。
 
-不过，使用`SetPixels`提供独特的语法优势： 它可以访问使用数组的位图像素位。 下面是该方法中`GradientBitmapPage`演示此技术。 该方法首先定义对应的位图的像素的字节的多维度的字节数组。 第一个维度是行，第二个维度列和第三个维度对应于每个像素的四个组件：
+不过，使用`SetPixels`提供独特的语法优势：它可以访问使用数组的位图像素位。 下面是该方法中`GradientBitmapPage`演示此技术。 该方法首先定义对应的位图的像素的字节的多维度的字节数组。 第一个维度是行，第二个维度列和第三个维度对应于每个像素的四个组件：
 
 ```csharp
 SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
@@ -499,7 +499,7 @@ public class GradientBitmapPage : ContentPage
 
 按预期方式调用`SetPixel`65,536 情况下是设置位图的像素为单位的最少 effeicient 方法。 填充`SKColor`数组和设置`Pixels`属性是好得多，甚至更具优势的某些`GetPixels`和`SetPixels`技术。 使用`uint`像素值是通常比单独设置更快`byte`组件，并将转换`SKColor`为无符号整数值到进程会增加一些开销。
 
-它也是值得关注要比较各种渐变： 每个平台的前行是相同的并按预期显示渐变。 这意味着`SetPixel`方法和`Pixels`属性正确创建颜色而不考虑基础的像素格式中的像素为单位。
+有趣的是还比较各种渐变：每个平台的顶行是相同的并按预期显示渐变。 这意味着`SetPixel`方法和`Pixels`属性正确创建颜色而不考虑基础的像素格式中的像素为单位。
 
 IOS 和 Android 的屏幕截图的接下来两行也是相同的这可确认的一小`MakePixel`方法已正确定义默认值为`Rgba8888`这些平台的像素格式。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 79b973784dd978bff15c7a706083c70df83ba1c8
-ms.sourcegitcommit: 93c9fe61eb2cdfa530960b4253eb85161894c882
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55831841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61330026"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用必应拼写检查 API 中的拼写检查
 

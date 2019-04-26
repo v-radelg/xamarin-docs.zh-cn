@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: db312c4c102feb98791109af19185762bb25856e
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012886"
 ---
 # <a name="running-android-services-in-remote-processes"></a>远程进程中的运行 Android 服务
 
@@ -479,7 +479,7 @@ if (clientMessenger!= null)
 
 ## <a name="related-links"></a>相关链接
 
-- [处理程序](https://developer.xamarin.com/api/type/Android.OS.Handler/)
+- [Handler](https://developer.xamarin.com/api/type/Android.OS.Handler/)
 - [消息](https://developer.xamarin.com/api/type/Android.OS.Message/)
 - [Messenger](https://developer.xamarin.com/api/type/Android.OS.Messenger/)
 - [ServiceAttribute](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute)

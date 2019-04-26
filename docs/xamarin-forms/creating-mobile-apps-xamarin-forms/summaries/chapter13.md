@@ -1,6 +1,6 @@
 ---
 title: 第 13 章的摘要。 位图
-description: 使用 Xamarin.Forms 创建移动应用： 摘要的第 13 章。 位图
+description: 使用 Xamarin.Forms 创建移动应用：第 13 章的摘要。 位图
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 737e242e14778f38405845541b2ca30d27c3cf5a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334454"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章的摘要。 位图
 
@@ -173,9 +173,9 @@ UWP 项目支持包含以像素为单位，每个与设备无关单位的缩放�
 
 将位图添加到平台项目中，当**生成操作**应为：
 
-- iOS: **BundleResource**
-- Android: **AndroidResource**
-- UWP:**内容**
+- iOS:**BundleResource**
+- Android:**AndroidResource**
+- UWP:**Content**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)示例创建两个按钮类似对象组成`Image`元素与`TapGestureRecognizer`安装。 适用对象是一个英寸正方形。 `Source`的属性`Image`使用设置`OnPlatform`和`On`对象引用的平台上的文件名可能不同。 位图图像包括数字，指示其像素大小，因此大家可以检索和呈现的大小的位图。
 

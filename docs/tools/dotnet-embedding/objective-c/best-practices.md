@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61364072"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>.NET 嵌入 Objective c 的最佳实践
 
@@ -105,7 +105,7 @@ Objective C 开发人员的角度来看，方法与从`Get`前缀表示您已经
 
 此命名规则具有.NET GC 世界中; 中没有匹配项具有的.NET 方法`Create`前缀将具有相同行为在.NET 中。 但是，对于 Objective C 开发人员，这通常意味着你拥有返回的实例，即[创建规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
 
-## <a name="exceptions"></a>异常
+## <a name="exceptions"></a>Exceptions
 
 它是在.NET 中使用广泛错误报告的例外情况很常见。 但是，它们是速度慢且不在 OBJECTIVE-C 完全相同 只要有可能则应从 OBJECTIVE-C 开发人员隐藏它们。
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
 ms.openlocfilehash: d1c640bef41e875b3bb427d657c9c239e4c3e16d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61192152"
 ---
 # <a name="passkit-in-xamarinios"></a>在 Xamarin.iOS PassKit
 
@@ -45,7 +45,7 @@ PassKit 为每种方案提供一种替代方法：
 
 就其核心而言，PassKit 提供简单且方便的方式来存储和显示在 iOS 设备上的条形码。 更多时间和位置锁屏界面集成后，推送通知和配套应用程序将其集成提供了一个非常复杂销售 foundation 票证和计费服务。
 
-## <a name="passkit-ecosystem"></a>PassKit 生态系统
+## <a name="passkit-ecosystem"></a>PassKit Ecosystem
 
 PassKit 不是只在产品 CocoaTouch 的 API，而是一个更大的生态系统的应用、 数据和服务，以方便安全共享和管理的条形码和其他数据的一部分。 此高级别关系图显示可以涉及的不同实体中创建和使用传递：
 
@@ -169,7 +169,7 @@ JSON 是格式，因为通常在服务器上创建传递 – 这意味着生成�
 
 ### <a name="barcodes"></a>条形码
 
-支持仅 2D 格式： PDF417、 Aztec、 QR。 Apple 声明式 1d 条码是背光手机屏幕上扫描到不适合。
+仅支持二维格式：PDF417、 Aztec、 QR。 Apple 声明式 1d 条码是背光手机屏幕上扫描到不适合。
 
 条形码下面显示的替换文字是可选的-有些店主想要能够手动读取/类型。
 
@@ -225,9 +225,9 @@ ISO-8859-1 编码是最常见的检查将读取你的货币额度的扫描系统
 
 第一步是设置凭证类型 ID 为每个不同_类型_的过程，以支持。 传递 ID （或传递类型标识符） 的阶段创建的唯一标识符。 我们将使用此 ID 与开发人员帐户使用的证书链接在一起传递。
 
-1. 在中[iOS 设置门户的证书、 标识符和配置文件部分](https://developer.apple.com/account/overview.action)，导航到**标识符**，然后选择**传递的类型 Id** 。 然后选择 **+** 按钮以创建新的轮次的类型： [ ![](passkit-images/passid.png "创建新的传递类型")](passkit-images/passid.png#lightbox)
+1. 在中[iOS 设置门户的证书、 标识符和配置文件部分](https://developer.apple.com/account/overview.action)，导航到**标识符**，然后选择**传递的类型 Id** 。 然后选择**+** 按钮以创建新的轮次的类型：[![](passkit-images/passid.png "创建新的传递类型")](passkit-images/passid.png#lightbox)
 
-2.   提供**描述**（名称） 和**标识符**（唯一字符串） 传递。 请注意，所有传递类型 Id 必须以字符串开头`pass.`在此示例中，我们使用`pass.com.xamarin.coupon.banana`: [ ![](passkit-images/register.png "提供的说明和标识符")](passkit-images/register.png#lightbox)
+2.   提供**描述**（名称） 和**标识符**（唯一字符串） 传递。 请注意，所有传递类型 Id 必须以字符串开头`pass.`在此示例中，我们使用`pass.com.xamarin.coupon.banana`:[![](passkit-images/register.png "提供的说明和标识符")](passkit-images/register.png#lightbox)
 
 
 3.   通过按确认传递 ID**注册**按钮。
@@ -236,7 +236,7 @@ ISO-8859-1 编码是最常见的检查将读取你的货币额度的扫描系统
 
 若要创建此凭证类型 ID 的新证书，请执行以下操作：
 
-1.  从列表中，选择新创建的凭证 ID，然后单击**编辑**: [ ![](passkit-images/pass-done.png "从列表中选择新的凭证 ID")](passkit-images/pass-done.png#lightbox)
+1.  从列表中，选择新创建的凭证 ID，然后单击**编辑**:[![](passkit-images/pass-done.png "从列表中选择新的凭证 ID")](passkit-images/pass-done.png#lightbox)
 
     然后，选择**创建证书...** :
 
@@ -566,7 +566,7 @@ noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidCh
 ## <a name="related-links"></a>相关链接
 
 - [面向开发人员的电子钱包](https://developer.apple.com/wallet/)
-- [PassKit 示例](https://developer.xamarin.com/samples/monotouch/PassKit/)
+- [PassKit Sample](https://developer.xamarin.com/samples/monotouch/PassKit/)
 - [电子钱包开发人员指南](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/index.html#//apple_ref/doc/uid/TP40012195-CH1-SW1)
 - [框架 – Apple Pay 和钱包 （WWDC 视频）](https://developer.apple.com/videos/frameworks/apple-pay-and-wallet)
 - [PassKit 框架引用](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Framework/_index.html)

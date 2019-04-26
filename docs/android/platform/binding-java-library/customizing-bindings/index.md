@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
 ms.openlocfilehash: 44bff372225ee1bf555eb3eeb34da918830980b4
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60957559"
 ---
 # <a name="customizing-bindings"></a>自定义绑定
 

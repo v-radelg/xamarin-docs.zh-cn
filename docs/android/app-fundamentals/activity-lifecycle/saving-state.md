@@ -1,5 +1,5 @@
 ---
-title: 演练-保存活动状态
+title: 演练 - 保存活动状态
 description: 我们已介绍其理论依据活动生命周期指南; 中保存状态现在，让我们看一下示例。
 ms.prod: xamarin
 ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: c8f92e55648dff469227cc3bad981ad5f6e6d0ac
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019111"
 ---
-# <a name="walkthrough---saving-the-activity-state"></a>演练-保存活动状态
+# <a name="walkthrough---saving-the-activity-state"></a>演练 - 保存活动状态
 
 _我们已介绍其理论依据活动生命周期指南; 中保存状态现在，让我们看一下示例。_
 

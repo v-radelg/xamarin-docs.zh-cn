@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: a3e14ebca961e828fc578035adaca5ba2a809438
-ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "34783550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61288505"
 ---
 # <a name="an-introduction-to-urhosharp"></a>大致了解 UrhoSharp
 
@@ -38,7 +38,7 @@ UrhoSharp 是包含大量的现成功能的游戏引擎：
 
 ## <a name="getting-started"></a>入门
 
-作为方便地分发 UrhoSharp [NuGet 包](https://www.nuget.org/)，它可以被添加到 C# 或 F # 项目面向 Windows、 Mac、 Android 或 iOS。  NuGet 附带了运行应用程序所需的库以及由引擎使用的基本资产 (CoreData)。
+作为方便地分发 UrhoSharp [NuGet 包](https://www.nuget.org/)，它可以被添加到在C#或F#面向 Windows、 Mac、 Android 或 iOS 的项目。  NuGet 附带了运行应用程序所需的库以及由引擎使用的基本资产 (CoreData)。
 
 ### <a name="urho-as-a-portable-class-library"></a>作为可移植类库 Urho
 

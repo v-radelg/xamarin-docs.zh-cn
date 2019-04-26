@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 3cb8d1c1d92146e70056c6cf562f2fa1cb028e7c
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61416401"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 tvOS 导航和焦点在 Xamarin 中
 

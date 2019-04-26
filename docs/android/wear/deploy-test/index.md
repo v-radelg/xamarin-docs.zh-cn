@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: db3f9b1c8eaed89046dd10621d5c942b21fae159
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276329"
 ---
 # <a name="deployment-and-testing"></a>部署和测试
 

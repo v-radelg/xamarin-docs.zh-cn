@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
 ms.openlocfilehash: e3eb4e3454aeab08d1333c5dbc3d4808fa4d676c
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224508"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 框架更改
 
@@ -76,7 +76,7 @@ _本文介绍如何附加的次要更改或增强功能到现有框架，可用�
 具有对监视 OS 3 PassKit 框架进行了以下增强功能：
 
 - 扩展框架，以支持安全的应用程序内的支付实体商品和服务的 Apple Watch 上。
-- 目前有以下类： [PKPayment](https://developer.apple.com/reference/passkit/pkpayment)， [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)， [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
+- 目前有以下类：[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)， [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)， [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 
 ## <a name="uikit"></a>UIKit

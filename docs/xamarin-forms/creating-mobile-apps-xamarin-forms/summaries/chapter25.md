@@ -1,6 +1,6 @@
 ---
 title: 第 25 章的摘要。 页类型
-description: 使用 Xamarin.Forms 创建移动应用： 第 25 章的摘要。 页类型
+description: 使用 Xamarin.Forms 创建移动应用：第 25 章的摘要。 页类型
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331796"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章的摘要。 页类型
 

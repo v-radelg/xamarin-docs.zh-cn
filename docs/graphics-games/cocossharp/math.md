@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: ac84d5b28b0f211dccb1697a4b3dbbc9cedf81e9
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61030154"
 ---
 # <a name="2d-math-with-cocossharp"></a>使用 CocosSharp 的 2D 数学
 

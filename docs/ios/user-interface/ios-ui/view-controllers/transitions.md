@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
 ms.openlocfilehash: 6711d3af06619aa54a2d735cb83862ed64abacec
-ms.sourcegitcommit: 06f88979db160fb8dd1c9ee0d5000d8749107489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53806894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199301"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin.iOS 中的视图控制器转换
 

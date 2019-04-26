@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 0f4d6bb042f8bc8d48b45d7148984a53e3ce3437
-ms.sourcegitcommit: e3e851080e6ea0b77e355487a61348d8e0419b09
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54060065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61032509"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
 

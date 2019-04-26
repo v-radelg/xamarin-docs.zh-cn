@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
 ms.openlocfilehash: 3c525178b5ed1e62774d032c0d317d43cd3f94c1
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61377319"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61299965"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企业应用开发简介
 
-不考虑平台，企业应用的开发人员面临一些挑战：
+而不考虑平台的企业应用程序的开发人员面临着多种挑战：
 
 -   应用的需求可随时间而变化。
 -   新的业务机会和挑战。
@@ -32,7 +32,7 @@ ms.locfileid: "35242955"
 
 -   允许由不同个人或团队来开发、测试、扩展和维护单个功能。
 -   有助于加强应用横向功能（如身份验证和数据访问）与纵向功能（如应用特定的业务功能）间的重用，并明确分离关注点。 这样便可更轻松地管理应用组件间的依赖关系和交互。
--   允许不同个人或团队根据其专业知识关注特定任务或功能，明确角色分工，尤其是它更加清晰地分离了用户界面和应用业务逻辑。 具体而言，它提供的用户界面和应用程序的业务逻辑之间分离开来。
+-   允许不同个人或团队根据其专业知识关注特定任务或功能，明确角色分工，尤其是它更加清晰地分离了用户界面和应用业务逻辑。 具体而言，它提供了清晰地分隔用户界面和应用程序的业务逻辑。
 
 然而，在把应用划分为离散、松散耦合的组件时，有许多必须解决的问题。 这些问题包括：
 
@@ -43,7 +43,7 @@ ms.locfileid: "35242955"
 -   确定如何验证用户输入正确与否。 制定决策时必须确定如何验证用户输入，以及如何通知用户验证错误。 有关详细信息，请参阅[验证](~/xamarin-forms/enterprise-application-patterns/validation.md)。
 -   决定如何执行身份验证，以及如何保护带有授权的资源。 有关详细信息，请参阅[身份验证和授权](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md)。
 -   确定如何从 Web 服务访问远程数据，包括如何可靠地检索数据，以及如何缓存数据。 有关详细信息，请参阅[访问远程数据](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
--   决定如何测试应用程序。 有关详细信息，请参阅[单元测试](~/xamarin-forms/enterprise-application-patterns/unit-testing.md)。
+-   在决定如何测试应用程序。 有关详细信息，请参阅[Unit Testing](~/xamarin-forms/enterprise-application-patterns/unit-testing.md)。
 
 本指南针对这些问题提供指导，着重关注使用 Xamarin.Forms 构建跨平台企业应用的核心模式和架构。 本指给出了常见 Xamarin.Forms 企业应用开发方案，并借助模型-视图-视图模型 (MVVM) 模式支持呈现、呈现逻辑和实体间的关注点分离，以此帮助生产出适应性良好、可维护和可测试的代码。
 
@@ -53,10 +53,10 @@ ms.locfileid: "35242955"
 
 -   针对后端服务进行身份验证和授权。
 -   浏览衣服、咖啡杯和其他商品目录。
--   筛选该目录。
+-   筛选目录。
 -   对目录中的项进行排序。
 -   查看用户的订单历史记录。
--   配置设置。
+-   设置的配置。
 
 ### <a name="sample-application-architecture"></a>示例应用程序的架构
 
@@ -66,7 +66,7 @@ ms.locfileid: "35242955"
 
 **图 1-1**: eShopOnContainers 高级架构
 
-示例应用程序附带有三个客户端应用程序：
+示例应用程序附带了三个客户端应用：
 
 -   使用 ASP.NET Core 开发的 MVC 应用程序。
 -   使用 Angular 2 和 Typescript 开发的单页应用程序 (SPA)。 采用此方法开发 Web 应用程序时，避免了每执行一次操作都要往返于服务器一次。
@@ -81,17 +81,17 @@ ms.locfileid: "35242955"
 -   订单微服务，这是使用域驱动设计模式的域驱动服务。
 -   购物车微服务，这是使用 Redis 缓存的数据驱动 CRUD 服务。
 
-这些后端服务作为使用 ASP.NET Core MVC 的微服务实现，并在单个 Docker 主机中部署为唯一容器。 这些后端服务被统称为 eShopOnContainers 参考应用程序。 客户端应用通过具象状态传输 (REST) Web 接口与后端服务进行通信。 有关微服务和 Docker 的详细信息，请参阅[容器化微服务](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md)。
+这些后端服务作为使用 ASP.NET Core MVC 的微服务实现，并在单个 Docker 主机中部署为唯一容器。 这些后端服务被统称为 eShopOnContainers 参考应用程序。 客户端应用通过具象状态传输 (REST) Web 接口与后端服务进行通信。 有关微服务和 Docker 的详细信息，请参阅[适用于容器化微服务](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md)。
 
-有关后端服务的实现的信息，请参阅[《.NET 微服务： 容器化 .NET 应用程序架构》](https://aka.ms/microservicesebook)电子书。
+有关后端服务的实现的信息，请参阅[.NET 微服务：适用于容器化 .NET 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
-### <a name="mobile-app"></a>移动应用程序
+### <a name="mobile-app"></a>移动应用
 
 本指南重点介绍使用 Xamarin.Forms 构建跨平台企业应用，并以 eShopOnContainers 移动应用为例。 图 1-2 显示了含上述功能的 eShopOnContainers 移动应用页面。
 
 [![](introduction-images/screenshots.png "eShopOnContainers 移动应用")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers 移动应用程序")
 
-**图 1-2**: eShopOnContainers 移动应用程序
+**图 1-2**:EShopOnContainers 移动应用
 
 该移动应用使用了 eShopOnContainers 参考应用程序提供的后端服务。 但若想避免部署后端服务，则可将此移动应用配置为使用模拟服务中的数据。
 
@@ -121,7 +121,7 @@ eShopOnContainers 移动应用解决方案将源代码和其他资源整合到�
 
 |项目|描述|
 |--- |--- |
-|eShopOnContainers.Core|此项目是可移植类库 (PCL) 项目包含共享的代码和共享的 UI。|
+|eShopOnContainers.Core|此项目是可移植类库 (PCL) 项目，其中包含共享的代码和共享的 UI。|
 |eShopOnContainers.Droid|此项目包含特定于 Android 的代码并且是 Android 应用的入口点。|
 |eShopOnContainers.iOS|此项目包含特定于 iOS 的代码并且是 iOS 应用的入口点。|
 |eShopOnContainers.UWP|此项目包含通用 Windows 平台 (UWP) 的特定代码，并且是 Windows 应用程序的入口点。|
@@ -141,7 +141,7 @@ eShopOnContainers.Core PCL 项目中包含以下文件夹：
 |Animations|包含可在 XAML 中使用动画的类。|
 |Behaviors|包含公开给视图类的行为。|
 |Controls|包含应用使用的自定义控件。|
-|Converters|包含将自定义逻辑应用于绑定的值转换器。|
+|Converters|包含自定义逻辑应用于绑定的值转换器。|
 |Effects|包含`EntryLineColorEffect`类，该类用于更改特定`Entry`控件的边框颜色。|
 |Exceptions|包含自定义的`ServiceAuthenticationException`类。|
 |Extensions|包含用于`VisualElement`和`IEnumerable`类的扩展方法。|

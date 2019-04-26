@@ -8,11 +8,11 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: 977c29312e0be8b92f216c224414f9bd03f8562d
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58858967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60875972"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>呈现 XAML 预览程序中的自定义控件
 

@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 7a162d632c98b4e412fa1b7b0c0c40ac945ff09f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60945777"
 ---
 # <a name="net-embedding-limitations"></a>.NET 嵌入限制
 
@@ -23,7 +23,7 @@ ms.locfileid: "50114348"
 
 不能有两个相同的应用程序中共存的 Mono 运行时。 这意味着不能使用两个不同.NET 嵌入生成的库在同一应用程序。
 
-**解决方法：** 使用生成器创建的单个库中包含多个程序集 （从不同的项目）。
+**临时解决方法：** 可以使用生成器创建的单个库中包含多个程序集 （从不同的项目）。
 
 ### <a name="subclassing"></a>子类化
 

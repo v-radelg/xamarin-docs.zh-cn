@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 84f825c19aa1ac08fbcf3e732077304218768bcc
-ms.sourcegitcommit: f541a92b4f896474f6a5467ccff2028dafa6fee7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50983596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61371168"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>使用 MonoGame 管道工具
 
@@ -89,7 +89,7 @@ MonoGame 管道工具创建项目后，将显示有关项目的信息时根**Con
 ![](walkthrough-images/image10.png "")
 
 
-### <a name="platform"></a>平台
+### <a name="platform"></a>Platform
 
 这会定义内容的目标平台。 请注意，这是**Windows**默认情况下，因此我们需要将其更改为我们的目标平台即**Android** （或如果以下 iOS 项目以及 iOS）。
 

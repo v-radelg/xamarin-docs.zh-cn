@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
 ms.openlocfilehash: 6525cb321537a7cefb24feb1e77b532068b098ef
-ms.sourcegitcommit: d8edb1b9e7fd61979014d5f5f091ee135ab70e34
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55712080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019647"
 ---
 # <a name="using-sqlitenet-with-android"></a>与 Android 一起使用 SQLite.NET
 
@@ -21,7 +21,7 @@ Xamarin 建议 SQLite.NET 库是非常基本的 ORM，你可以轻松地存储�
 若要在 Xamarin 应用中包含 SQLite.NET 库，请向项目添加以下 NuGet 包：
 
 - **包名称：** sqlite net pcl
-- **作者：** Frank A. Krueger
+- **创建者：** Frank A. Krueger
 - **ID：** sqlite net pcl
 - **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 

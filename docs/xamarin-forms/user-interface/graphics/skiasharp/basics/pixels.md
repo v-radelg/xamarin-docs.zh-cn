@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
 ms.openlocfilehash: c1e4a76a70dcac3414d384469f25bad7908ae77f
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019933"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素和与设备无关的单位
 
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-指定文本字符串，X 和 Y 坐标开始，文本的位置和一个`SKPaint`对象。 X 坐标指定左侧和右侧的文本的位置，但当心： 的 Y 坐标指定的位置*基线*的文本。 如果您曾经编写过手动加下划线的纸张上，在基线是在哪个字符 sit，及更低的下行字母 （例如与字母 g、 p、 q 和 y） 降的行。
+指定文本字符串，X 和 Y 坐标开始，文本的位置和一个`SKPaint`对象。 X 坐标指定左侧和右侧的文本的位置，但扩展的监视：Y 坐标指定的位置*基线*的文本。 如果您曾经编写过手动加下划线的纸张上，在基线是在哪个字符 sit，及更低的下行字母 （例如与字母 g、 p、 q 和 y） 降的行。
 
 `SKPaint`对象允许你指定的文本、 字体系列和文本大小的颜色。 默认情况下[ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize)属性具有值为 12，这会导致在手机等高分辨率设备上的小文本。 在除最简单的应用程序，您还需要在大小上都显示的文本的一些信息。 `SKPaint`类定义[ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics)属性和一些[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))方法，但对于较少花哨的需求， [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing)属性提供间距连续文本行的建议的值。
 

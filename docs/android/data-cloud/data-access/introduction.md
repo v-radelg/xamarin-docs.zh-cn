@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: 8c90e1c3013ec61cbb4641f19af3424f55b1a465
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61012236"
 ---
 # <a name="introduction"></a>介绍
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: d4b4a72d2bfe77c433c17fa9f427a95121855e01
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61216420"
 ---
 # <a name="listview-fast-scrolling-on-android"></a>在 Android 上滚动 ListView 快速
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 特定于平台的用于启用通过中的数据快速滚动[ `ListView` ](xref:Xamarin.Forms.ListView)。 设置使用在 XAML`ListView.IsFastScrollEnabled`附加属性设置为`boolean`值：
 

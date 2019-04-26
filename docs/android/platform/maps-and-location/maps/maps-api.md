@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
 ms.openlocfilehash: 1889154a12a701fb4ce57ef8644699dd978f768e
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61186203"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>应用程序中使用 Google 地图 API
 

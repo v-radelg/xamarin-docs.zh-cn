@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/07/2017
 ms.openlocfilehash: 6d8fc1daaced24dccead78c4f9d0e5d0959b3755
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61198977"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 tvOS 在 Xamarin 中的按钮
 

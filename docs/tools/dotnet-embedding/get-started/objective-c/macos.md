@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
 ms.openlocfilehash: 3de47aa57df29f52f71508977ae017dff009c282
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61181504"
 ---
 # <a name="getting-started-with-macos"></a>开始使用 macOS
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 8f8ecc115738fb97f71b4ea6b2cdcc5c2714372d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61208518"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvOS 资源和 Xamarin 中的数据存储
 

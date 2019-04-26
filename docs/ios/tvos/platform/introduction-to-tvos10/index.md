@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
 ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269304"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 简介
 
@@ -48,7 +48,7 @@ tvOS 10 现在支持深色和浅色用户界面主题，所有内置的 UIKit �
 
 <!--To find out more, please see our [Video Subscriber Account](~/ios/platform-features/introduction-to-ios10/video-subscriber-account/) guide.-->
 
-## <a name="wide-color"></a>广泛的颜色
+## <a name="wide-color"></a>宽域颜色
 
 tvOS 10 扩展的扩展范围像素格式和整个系统的核心图形、 Core 映像、 裸机和 AVFoundation 等框架的范围内所有颜色空间的支持。 对具有广泛的颜色显示设备的支持进一步减轻通过提供在整个图形堆栈整个此行为。
 

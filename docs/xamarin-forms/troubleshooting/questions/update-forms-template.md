@@ -1,5 +1,5 @@
 ---
-title: 可以将 Xamarin.Forms 默认模板更新到较新的 NuGet 包？
+title: 可否将 Xamarin.Forms 默认模板更新到较新的 NuGet 包？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
 ms.openlocfilehash: e439d39dd8591cad14485e64aabab2d6016a8e27
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61345904"
 ---
-# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>可以将 Xamarin.Forms 默认模板更新到较新的 NuGet 包？
+# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>可否将 Xamarin.Forms 默认模板更新到较新的 NuGet 包？
 
 本指南使用 Xamarin.Forms.NET 标准库模板作为示例，但相同的常规方法也适用于 Xamarin.Forms 共享项目模板。 使用 Xamarin.Forms 1.5.1.6471 到 2.1.0.6529 从更新的示例编写本指南，但相同的步骤可以将其他版本设置为默认值。
 

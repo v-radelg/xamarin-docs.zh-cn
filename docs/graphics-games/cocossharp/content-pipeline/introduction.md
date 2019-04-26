@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 712c430fb6309ba0f5c3e573267c59e422de8ad2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61029515"
 ---
 # <a name="introduction-to-content-pipelines"></a>内容管道简介
 

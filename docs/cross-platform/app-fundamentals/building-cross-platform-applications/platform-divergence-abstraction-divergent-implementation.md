@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: 8fb373aa5081c8937da5110bad47c3f0decf0126
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61275534"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>第 4 部分 - 处理多个平台
 

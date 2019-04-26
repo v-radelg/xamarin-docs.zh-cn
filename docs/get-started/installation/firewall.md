@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/05/2018
 ms.openlocfilehash: 68689ce7d92a038d0724e1441f68fddcb1d0bba8
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57199653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61346808"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火墙配置说明
 

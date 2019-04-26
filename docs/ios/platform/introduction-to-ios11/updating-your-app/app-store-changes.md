@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: 022d6b5c3f85863352dd1343752e934240b357aa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61229602"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的 app Store 更改
 

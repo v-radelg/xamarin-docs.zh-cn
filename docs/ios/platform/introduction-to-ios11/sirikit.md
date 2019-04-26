@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/07/2017
 ms.openlocfilehash: 7e895dc2865880ec2789a40f8cdf047a20f8693b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61400277"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 中 SiriKit 更新
 
@@ -118,7 +118,7 @@ SiriKit，iOS 11 中的添加这些新的和更新的意向域：
 
 1. 在解决方案上右键单击并选择**添加 > 添加新项目...**.
 2. 选择**iOS > 扩展 > Intents 扩展**模板。
-3. 将添加两个新项目： 意向和 IntentUI。 自定义 UI 是可选的因此该示例仅包含中的代码**意向**项目。
+3. 将添加两个新项目：意向和 IntentUI。 自定义 UI 是可选的因此该示例仅包含中的代码**意向**项目。
 
 扩展项目是在其中将处理所有 SiriKit 请求。 为单独的扩展，它自动没有任何方式与主应用程序 – 通信通常解决此问题通过实现共享的文件存储中使用应用组。
 
@@ -217,7 +217,7 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 
 ### <a name="nsinternalinconsistencyexception"></a>NSInternalInconsistencyException
 
-_Objective C 中引发异常。名称： NSInternalInconsistencyException 原因： 使用类 < INPreferences: 0x60400082ff00 > 从应用程序需要授权 com.apple.developer.siri。您是否在 Xcode 项目中启用 Siri 功能？_
+_Objective C 中引发异常。姓名:NSInternalInconsistencyException 原因：使用类 < INPreferences:0x60400082ff00 > 从应用程序需要授权 com.apple.developer.siri。您是否在 Xcode 项目中启用 Siri 功能？_
 
 - 在中勾选了 SiriKit **Entitlements.plist**。
 - **Entitlements.plist**中配置**项目选项 > 生成 > iOS 捆绑签名**。

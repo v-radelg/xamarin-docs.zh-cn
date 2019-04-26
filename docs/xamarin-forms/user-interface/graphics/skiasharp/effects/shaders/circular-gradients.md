@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61218113"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循环渐变
 
@@ -140,7 +140,7 @@ public partial class RadialGradientPage : ContentPage
 
 [![径向渐变](circular-gradients-images/RadialGradient.png "径向渐变")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-在所有三种情况下，渐变填充画布。 在左侧的 iOS 屏幕上超出半径渐变继续执行上一种颜色为白色。 这就是结果的`SKShaderTileMode.Clamp`。 Android 屏幕显示的效果`SKShaderTileMode.Repeat`： 从中心在 100 像素，渐变重新开始第一种颜色为黑色。 渐变重复 radius 每 100 个像素。 
+在所有三种情况下，渐变填充画布。 在左侧的 iOS 屏幕上超出半径渐变继续执行上一种颜色为白色。 这就是结果的`SKShaderTileMode.Clamp`。 Android 屏幕显示的效果`SKShaderTileMode.Repeat`:在从中心的 100 像素，渐变重新开始第一种颜色为黑色。 渐变重复 radius 每 100 个像素。 
 
 在右侧显示的通用 Windows 平台屏幕如何`SKShaderTileMode.Mirror`导致到备用 directions 渐变。 第一个渐变是从中心的黑色到在一个半径为 100 像素的白色。 下一步是从 100 像素 radius 在 200 像素 radius 黑色到白色，再次反转的下一步的渐变。
 

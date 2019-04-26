@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
 ms.openlocfilehash: 683400e24844308769f0562552641216d45e7d11
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61276327"
 ---
 # <a name="building-cross-platform-applications"></a>生成跨平台应用程序
 

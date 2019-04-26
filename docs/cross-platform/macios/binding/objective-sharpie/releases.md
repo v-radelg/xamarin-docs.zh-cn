@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
 ms.openlocfilehash: 03e4a5ac8906d2593cbdf3c15f6b2d1f4a2c6d19
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199642"
 ---
 # <a name="objective-sharpie-release-history"></a>目标 Sharpie 发行历史记录
 
@@ -68,13 +68,13 @@ ms.locfileid: "57667252"
 
 [下载 v2.1.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.0.pkg)
 
-* [bxc#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849):请确保`using ObjCRuntime;`时，将生成`ArgumentSemantic`使用。
-* [bxc#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850):请确保`using System.Runtime.InteropServices;`时，将生成`DllImport`使用。
-* [bxc#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852):默认值`DllImport`加载已从符号`__Internal`。
-* [bxc#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848):跳过前向声明 Objective C 容器声明。
-* [bxc#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846):绑定协议与作为具体接口的单一限定的类型 (`id<Foo>`作为`Foo`而不是`Foundation.NSObject<Foo>`)。
-* [bxc#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037):将绑定`UInt32`， `UInt64`，并`Int64`文字作为`Int32`若要删除`u`和/或`uL`后缀时这些值可以安全地适合于`Int32`。
-* [bxc#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038):修复枚举的名称映射，在原始的本机名称开头`k`前缀。
+* [bxC#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849):请确保`using ObjCRuntime;`时，将生成`ArgumentSemantic`使用。
+* [bxC#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850):请确保`using System.Runtime.InteropServices;`时，将生成`DllImport`使用。
+* [bxC#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852):默认值`DllImport`加载已从符号`__Internal`。
+* [bxC#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848):跳过前向声明 Objective C 容器声明。
+* [bxC#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846):绑定协议与作为具体接口的单一限定的类型 (`id<Foo>`作为`Foo`而不是`Foundation.NSObject<Foo>`)。
+* [bxC#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037):将绑定`UInt32`， `UInt64`，并`Int64`文字作为`Int32`若要删除`u`和/或`uL`后缀时这些值可以安全地适合于`Int32`。
+* [bxC#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038):修复枚举的名称映射，在原始的本机名称开头`k`前缀。
 * `sizeof` 其参数类型不映射到 C 表达式C#将计算在 Clang 中基元类型，并将其绑定为整数文字，以避免产生无效C#。
 * 修复的属性的类型是一个块的 Objective C 语法 （Objective C 代码绑定声明上方的注释中会显示）。
 * 绑定发生衰变类型为其原始类型 (`int[]`到衰减`int*`期间在 Clang 中的语义分析，但将其绑定与作为写入原始`int[]`相反)。

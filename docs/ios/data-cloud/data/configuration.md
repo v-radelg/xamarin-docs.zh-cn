@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
 ms.openlocfilehash: ce9822b9c6c6a360f8c289f46d4d777d80b898e1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61217419"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>在 Xamarin.iOS 中配置 SQLite
 

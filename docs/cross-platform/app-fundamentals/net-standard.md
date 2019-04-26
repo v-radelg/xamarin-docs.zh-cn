@@ -8,11 +8,11 @@ ms.author: crdun
 ms.custom: video
 ms.date: 07/18/2018
 ms.openlocfilehash: d07b248b36feee909db9c863eb17f1a900f58e60
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61191279"
 ---
 # <a name="net-standard-library-code-sharing"></a>.NET 标准库代码共享
 
@@ -52,7 +52,7 @@ ms.locfileid: "50105826"
 
 内可以更改你的版本`netstandard`通过更改`Target Framework`下拉列表值。
 
-**此外：** 可以编辑`.csproj`直接以更改此值。
+**此外：** 您可以编辑`.csproj`直接以更改此值。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -78,7 +78,7 @@ ms.locfileid: "50105826"
 
 ![编辑项目属性中的.NET 标准的目标框架](net-standard-images/vs03-w157.png "引用方式与其他项目相同的.NET Standard 库")
 
-**此外：** 可以编辑`.csproj`直接以编辑`TargetFramework`元素，然后更改的是哪个版本作为目标 （例如。 `<TargetFramework>netstandard2.0</TargetFramework>`）格式模式中出现的位置生成。
+**此外：** 您可以编辑`.csproj`直接以编辑`TargetFramework`元素，然后更改的是哪个版本作为目标 （例如。 `<TargetFramework>netstandard2.0</TargetFramework>`）格式模式中出现的位置生成。
 
 ### <a name="using-a-net-standard-library-project"></a>使用.NET Standard 库项目
 

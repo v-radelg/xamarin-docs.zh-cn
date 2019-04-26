@@ -9,11 +9,11 @@ ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
 ms.openlocfilehash: ddf80fb650127b91bef89792fc622267ad1ed0d4
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61211595"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>认证提供移动解决方案的咨询合作伙伴
 
@@ -407,11 +407,11 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[Entersoft SA](https://www.entersoft.eu)|Kallithea，希腊|Entersoft 是领先商业企业软件和服务提供商提供创新和完整范围高质量的服务和支持来以确保为其客户优化的效率|
 
 
-## <a name="hong-kong"></a>中国香港特别行政区
+## <a name="hong-kong"></a>香港特别行政区
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Unissoft 技术有限公司](http://www.inas.online/en/Index.php)|中国香港特别行政区|我们背后的核心技术，青中国北京存档管理软件 （或简而言之 TH-AMS™） 已状态存档中国网络空间管理局建议的产品的较长时间，因此，还广泛应用于由政府，包括多个行业石油和化工;在如灌溉的工作原理的各种企业，metallurgy、 telecom、 房地产---通过传统的本地和授权模型。 |
+|[Unissoft 技术有限公司](http://www.inas.online/en/Index.php)|香港特别行政区|我们背后的核心技术，青中国北京存档管理软件 （或简而言之 TH-AMS™） 已状态存档中国网络空间管理局建议的产品的较长时间，因此，还广泛应用于由政府，包括多个行业石油和化工;在如灌溉的工作原理的各种企业，metallurgy、 telecom、 房地产---通过传统的本地和授权模型。 |
 
 
 ## <a name="hungary"></a>匈牙利

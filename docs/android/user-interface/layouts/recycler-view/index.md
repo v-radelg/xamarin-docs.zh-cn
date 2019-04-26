@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/03/2018
 ms.openlocfilehash: 1332a7ef5b8e5bb2f1178582bcf058123f1e177c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61308750"
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -40,7 +40,7 @@ _RecyclerView 用于显示集合; 是一组视图它旨在更灵活替代较旧�
 
 -  **Xamarin.Android** &ndash; Xamarin.Android 4.20 或更高版本必须安装并配置与 Visual Studio 或 Visual Studio for mac。
 
--  应用程序项目必须包括**Xamarin.Android.Support.v7.RecyclerView**包。 有关安装 NuGet 包的详细信息，请参阅[演练： 在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+-  应用程序项目必须包括**Xamarin.Android.Support.v7.RecyclerView**包。 有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
 
 ### <a name="overview"></a>概述

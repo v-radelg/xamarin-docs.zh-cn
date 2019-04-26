@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
 ms.openlocfilehash: b2a9e757e8a3407bbb19ae0580e5788eabe84cf0
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61188889"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -65,33 +65,33 @@ MonkeyChat 保持其自己书联系人的用户的好友名单，但每个屏幕
 
 例如，如果用户想要将消息发送到 Bobo 其朋友，他们可以使用 Siri 在以下对话：
 
-_用户： 您好 Siri，发送 MonkeyChat 消息。_<br />
-_使用 Siri： 向其？_<br />
-_用户： Bobo。_<br />
-_使用 Siri： 什么是否要向 Bobo 说出？_<br />
-_用户： 请发送多个香蕉。_<br />
+_用户：您好 Siri MonkeyChat 消息发送。_<br />
+_使用 Siri:向其？_<br />
+_用户：Bobo._<br />
+_使用 Siri:你想要向 Bobo 说出？_<br />
+_用户：请发送多个香蕉。_<br />
 
 另一个人可能会使不同的会话使用相同的请求：
 
-_用户： 将消息发送到 Bobo MonkeyChat 上。_<br />
-_使用 Siri： 什么是否要向 Bobo 说出？_<br />
-_用户： 请发送多个香蕉。_<br />
+_用户：将消息发送到 Bobo MonkeyChat 上。_<br />
+_使用 Siri:你想要向 Bobo 说出？_<br />
+_用户：请发送多个香蕉。_<br />
 
 和另一个用户可能会进行更短的请求：
 
-_用户： MonkeyChat Bobo，请发送多个香蕉。_<br />
-_使用 Siri： 好了，发送消息请发送更多香蕉到 Bobo Monkeychat 上。_<br />
+_用户：MonkeyChat Bobo 请发送多个香蕉。_<br />
+_使用 Siri:好了，发送消息请发送多个香蕉到 Bobo Monkeychat 上。_<br />
 
 或者，甚至在不同的语言进行相同的请求：
 
-_用户： MonkeyChat Bobo s'il vous plaît envoyer plus de bananes。_<br />
-_使用 Siri: Oui、 envoi 消息 s'il vous plaît envoyer 以及 de bananes-> Bobo sur Monkeychat。_<br />
+_用户：MonkeyChat Bobo s'il vous plaît envoyer plus de bananes。_<br />
+_使用 Siri:Oui、 envoi 消息 s'il vous plaît envoyer 以及 de bananes-> Bobo sur Monkeychat。_<br />
 
 尚未另一个用户可能会变得非常冗长其会话中：
 
-_用户： 您好 Siri，可以你请帮个忙呗并启动 MonkeyChat 应用以发送具有该消息的文本，请发送详细香蕉。_<br />
-_使用 Siri： 向其？_<br />
-_用户： 我最佳 pal Bobo。_<br />
+_用户：您好 Siri 能够请帮个忙呗并启动 MonkeyChat 应用发送的消息文本请发送多个香蕉。_<br />
+_使用 Siri:向其？_<br />
+_用户：我最佳 pal Bobo。_<br />
 
 此外，还有许多 Siri 可能响应请求，一些基于如何发出请求的方式：
 
@@ -123,9 +123,9 @@ _用户： 我最佳 pal Bobo。_<br />
 
 给定上述信息后，检查以下会话将如何与 MonkeyChat 应用进行交互：
 
-_用户： 您好 Siri，发送一条消息到 Bobo MonkeyChat 上。_<br />
-_使用 Siri： 什么是否要向 Bobo 说出？_<br />
-_用户： 请发送多个香蕉。_<br />
+_用户：您好 Siri 向 Bobo MonkeyChat 上发送消息。_<br />
+_使用 Siri:你想要向 Bobo 说出？_<br />
+_用户：请发送多个香蕉。_<br />
 
 应用程序需要在会话中的第一个角色是帮助了解用户的语音的 Siri:
 
@@ -133,7 +133,7 @@ _用户： 请发送多个香蕉。_<br />
 
 Siri 不具有名称"Bobo"在其数据库中，但该应用程序并不具有与通过其词汇 Siri 共享此信息。 应用还可帮助使用 Siri 认识 Bobo 是接收方，因为它指定其作为 siri*联系人*。
 
-使用 Siri 知道的详细信息，则需要发送比只是接收方，一条消息，因此它将快速检查应用程序扩展名来确定消息是否需要内容。 原因是 MonkeyChat，提出了用户将响应 Siri: *"要说到 Bobo？"*
+使用 Siri 知道的详细信息，则需要发送比只是接收方，一条消息，因此它将快速检查应用程序扩展名来确定消息是否需要内容。 原因是 MonkeyChat，Siri 将会询问用户响应：*"要说到 Bobo？"*
 
 在上面的示例中，用户已做出响应， *"请发送多个 bananas"*，其中使用 Siri 将绑定到一种结构化**意向**:
 
@@ -290,7 +290,7 @@ Intents UI 扩展将始终显示以及其他使用 Siri 内容，例如应用图
 
 有几个部分词汇`AppIntentVocabulary.plist`文件：
 
-- **示例应用使用**-这些用户可以进行的应用程序的请求提供一组常见用例。 例如： *"开始测验 MonkeyFit。"*
+- **示例应用使用**-这些用户可以进行的应用程序的请求提供一组常见用例。 例如：*"开始测验 MonkeyFit。"*
 - **参数**-这些提供一组特定于应用程序的非标准的参数类型。 例如，为 MonkeyFit 应用的健身名称。 这些包括：
     - **短语**-允许定义应用程序的唯一字词应用。 例如： MonkeyFit 应用的"Bananarific"健身类型。 
     - **发音**-发音提示给予 Siri 作为给定短语简单注音拼写。 例如，"ba nana ri 特定"。

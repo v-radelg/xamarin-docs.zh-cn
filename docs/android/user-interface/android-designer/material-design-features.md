@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
 ms.openlocfilehash: 59c61cc637a435f8107256ddcd6bfacfb0466867
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61210922"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin.Android 设计器材料设计功能
 

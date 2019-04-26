@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
 ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61199775"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>开始使用目标 Sharpie
 
@@ -47,7 +47,7 @@ ms.locfileid: "57670111"
 > [!IMPORTANT]
 > 目标 Sharpie 附带了一个**主要**适当的使用情况的规则： 必须绝对传递它正确 clang 编译器命令行参数以确保能够正确分析。 这是因为分析阶段目标 Sharpie 是只是一种工具[针对 clang libtooling API 实现](http://clang.llvm.org/docs/LibTooling.html)。
 
-这意味着目标 Sharpie Clang （实际编译将绑定本机库的 C/目的-C/c + + 编译器） 和所有其内部的知识的绑定的标头文件的完整功能。
+这意味着目标 Sharpie Clang 的全部功能 (C/OBJECTIVE-C /C++实际编译的本机库的编译器会将绑定) 和所有绑定的标头文件及其内部知识。
 而不是转换的已分析[AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)为对象代码目标 Sharpie 转换到 ASTC#绑定"搭建基架"适用于输入到`bmac`并`btouch`Xamarin 绑定工具。
 
 如果目标 Sharpie 错误出在分析过程，表示出错期间该 clang 其分析阶段尝试构造 AST，并且您需要找出原因。

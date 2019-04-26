@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/15/2019
 ms.openlocfilehash: b22449659d2d4b7791328d53ed2d2b29d405ffc8
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61019991"
 ---
 # <a name="xamarinforms-collectionview"></a>Xamarin.Forms 之间导航
 

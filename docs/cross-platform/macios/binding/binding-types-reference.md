@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
 ms.openlocfilehash: d460bf867ce09e614be76d0a4a7ffef01420cf82
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266500"
 ---
 # <a name="binding-types-reference-guide"></a>绑定类型参考指南
 
@@ -1821,7 +1821,7 @@ public class LinkWithAttribute : Attribute {
 
 #### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
 
-设置此属性设置为 true，如果需要进行编译而不默认情况下，这是一个 C 编译器使用 c + + 编译器生成可执行文件。 如果要绑定的库用 c + + 编写的请使用此选项。
+设置此属性设置为 true，如果生成可执行文件需要进行编译使用C++而不是默认情况下，这是一个 C 编译器的编译器。 如果要绑定的库用编写使用此C++。
 
 #### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
 

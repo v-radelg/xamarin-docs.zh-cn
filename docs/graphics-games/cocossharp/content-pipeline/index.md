@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
 ms.openlocfilehash: 32dc98143bc45482dc863d412d678d452b634890
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153338"
 ---
 # <a name="cocossharp-content-pipeline"></a>CocosSharp 内容管道
 
@@ -21,6 +21,6 @@ ms.locfileid: "51526957"
 
 本文提供了对内容的管道，主要专注于 MonoGame 内容管道，这是与 CocosSharp 和 MonoGame 一起使用的内容管道实现概念的理解。
 
-##  <a name="walkthrough--using-the-content-pipeline-with-cocossharpgraphics-gamescocossharpcontent-pipelinewalkthroughmd"></a>[演练：将内容管道与 CocosSharp 结合使用](~/graphics-games/cocossharp/content-pipeline/walkthrough.md)
+##  <a name="walkthrough--using-the-content-pipeline-with-cocossharpgraphics-gamescocossharpcontent-pipelinewalkthroughmd"></a>[演练：使用内容管道与 cocossharp 结合使用](~/graphics-games/cocossharp/content-pipeline/walkthrough.md)
 
 本演练将 useuses CocosSharp 项目，用于演示如何加载和应用程序中使用.xnb 文件。  MonoGame 的用户还可以引用本演练中，如 CocosSharp 和 MonoGame 都使用相同的.xnb 内容文件。  

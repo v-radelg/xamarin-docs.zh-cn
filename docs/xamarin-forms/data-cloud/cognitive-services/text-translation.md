@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 18e5b430d9a56b22a0b4cc72d6aff1c4e3049362
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61329697"
 ---
 # <a name="text-translation-using-the-translator-api"></a>使用 Translator API 的文本翻译
 

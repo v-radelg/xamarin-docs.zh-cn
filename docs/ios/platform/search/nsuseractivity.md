@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 946ce514fd6575aa6b93ff24181e02a60b24b106
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58677854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357016"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>使用 Xamarin.iOS 中 NSUserActivity 搜索
 

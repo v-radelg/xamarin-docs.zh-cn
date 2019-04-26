@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
 ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61290178"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像筛选器
 
@@ -28,7 +28,7 @@ ms.locfileid: "53050369"
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>模糊矢量图形和位图
 
-创建的模糊效果[ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法具有中的模糊方法通过一个明显的优势[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)类： 映像筛选器可使整个位图变得模糊。 该方法具有以下语法：
+创建的模糊效果[ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法具有中的模糊方法通过一个明显的优势[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)类：映像筛选器可使整个位图变得模糊。 该方法具有以下语法：
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许你选择负 Z 值，但这是仅使您可以看到会发生什么情况： 负 Z 坐标从概念上讲，导致指示灯点移出屏幕。 用于任何其他然后小负值，光照效果将停止工作。
+第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许你选择负 Z 值，但这也仅以便您可以看到会发生什么情况：从概念上讲，负 Z 坐标导致光线的点移出屏幕。 用于任何其他然后小负值，光照效果将停止工作。
 
 `surfaceScale`自变量的范围可以介于-1 到 1。 （高或较低的值不会进一步影响。）这些是在 Z 轴相对指示画布图面中的图形对象 （在此情况下，文本字符串） 的偏移量的值。 使用负值引发在画布的图面上面的文本字符串和正值按其下进画布。
 
@@ -439,7 +439,7 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android 屏幕快照具有 Z 值为 0，这意味着向下和向右仅指向光线。 在后台不点亮，照亮的文本字符串的图面并不是。 光只影响非常细微效果的文本的边缘。
 
-本文中演示文和阳文文本的备用方法[转换转换](../transforms/translate.md)： 两次以不同彼此略有偏移的不同颜色显示的文本字符串。
+本文中演示文和阳文文本的备用方法[转换转换](../transforms/translate.md):两次彼此略有偏移的不同颜色将显示的文本字符串。
 
 ## <a name="related-links"></a>相关链接
 

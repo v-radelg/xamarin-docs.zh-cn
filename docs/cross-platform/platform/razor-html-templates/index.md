@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
 ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270127"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61167914"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 模板构建 HTML 视图
 
@@ -86,7 +86,7 @@ webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 
 所有静态内容文件的生成操作应**BundleResource**:
 
- ![iOS 项目生成操作： BundleResource](images/image2_250x131.png)
+ ![iOS 项目的生成操作：BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
@@ -102,7 +102,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
 所有静态内容文件的生成操作应**AndroidAsset**。
 
- ![Android 项目生成操作： AndroidAsset](images/image4_250x71.png)
+ ![Android 项目生成操作：AndroidAsset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>从 HTML 和 Javascript 中调用 C#
 
@@ -487,7 +487,7 @@ HTML 可以是适合用于原型制作，显示了几种 web 最适合在多格�
 
 在模板中的 web 视图可以轻松地扩充与特定于平台的控制 – 只需编辑**mainstoryboard.storyboard** iOS 设计器中或**Resources/layout/Main.axml**在 Android 上。
 
-### <a name="razortodo-sample"></a>RazorTodo 示例
+### <a name="razortodo-sample"></a>RazorTodo Sample
 
 [RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存储库包含两个不同的解决方案，若要显示的完全 HTML 驱动的应用并将 HTML 与本机控件相结合的应用之间的差异：
 
@@ -523,6 +523,6 @@ Twitter 共享和演示，Xamarin 混合应用程序仍具有的访问权限的�
 
 ### <a name="related-links"></a>相关链接
 
-- [RazorTodo 示例](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3-Razor 视图引擎 (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
 - [使用 Razor 语法 (Microsoft) 的 ASP.NET Web 编程简介](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

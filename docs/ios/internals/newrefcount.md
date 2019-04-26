@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
 ms.openlocfilehash: 8c7b1a88284156cb5d4261f18d5659ed66dfaf64
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61037158"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>新引用计数在 Xamarin.iOS 中的系统
 

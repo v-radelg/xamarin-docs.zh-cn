@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
 ms.openlocfilehash: 995291c438bdb510536294d4c3bb0e4e37ac737d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61228905"
 ---
 # <a name="integrating-text-and-graphics"></a>将文本和图形集成
 

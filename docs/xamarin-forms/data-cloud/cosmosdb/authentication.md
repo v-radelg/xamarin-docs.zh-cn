@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
 ms.openlocfilehash: 1efd0fdfdc3302afaf35aacffdf30d3a84f59351
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53055668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61328483"
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文档数据库的用户进行身份验证
 

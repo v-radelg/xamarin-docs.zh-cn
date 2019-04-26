@@ -1,5 +1,5 @@
 ---
-title: WatchOS 3 简介
+title: watchOS 3 简介
 description: 本文介绍适用于 Xamarin 开发人员的所有新的和修改 Api 和 watchOS 3 中提供的功能。
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
 ms.openlocfilehash: 0428a0df157e359ab34a6a71dbba31bdeb6962fa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61224057"
 ---
-# <a name="introduction-to-watchos-3"></a>WatchOS 3 简介
+# <a name="introduction-to-watchos-3"></a>watchOS 3 简介
 
 _本文介绍适用于 Xamarin 开发人员的所有新的和修改 Api 和 watchOS 3 中提供的功能。_
 
@@ -151,7 +151,7 @@ watchOS 3 包括 WatchKit 框架包括以下几项增强功能：
 - 应用程序可以获取数字 Crown 状态使用新[WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer)类，并在用户旋转 crown 使用时接收更新[WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate)类。
 - [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)类现在包括`ApplicationState`方法并[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)应用可用于跟踪应用程序的运行时状态的常量。 `WKExtension` 此外提供了可用于计划的后台任务的两个新方法。
 - [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)现在包含新的`ApplicationWillEnterForeground`，`ApplicationDidEnterBackground`和`HandleBackgroundTasks`监视应用程序的状态中的更改和处理后台任务更新的方法。
-- 一个新[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)添加类以提供以下类型的手势识别到 watch 应用： [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)， [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)， [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)并[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
+- 一个新[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)添加类以提供以下类型的手势识别到 watch 应用：[WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)， [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)， [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)并[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
 - 新[WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera)任何 HomeKit 附加 IP 相机类提供了的接口。
 - 新[WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie)类允许应用程序以显示"海报"将在用户点击它时被替换为正在运行的电影的电影。
 - 新[WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton)类允许应用将启动一个付款请求点击时其 UI 中显示的 Apple Pay 按钮。

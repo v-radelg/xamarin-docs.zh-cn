@@ -1,5 +1,5 @@
 ---
-title: 片段演练-第 2 部分
+title: 片段演练 - 第 2 部分
 ms.prod: xamarin
 ms.topic: tutorial
 ms.assetid: 444A894D-5197-4726-934F-79BA80A71CB0
@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
 ms.openlocfilehash: 7ec8ad6ce428107d2255dd07c7e69c9e77780c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61026234"
 ---
 # <a name="fragments-walkthrough-ndash-landscape"></a>片段演练&ndash;横向
 

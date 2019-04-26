@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
 ms.openlocfilehash: 1d7f6f3939d79c9ad28701bb89eb75256503a977
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61398695"
 ---
 # <a name="getting-started-with-tvos-in-xamarin"></a>在 Xamarin 中的 tvOS 入门
 

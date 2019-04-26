@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 115d715214d7af3174c41d9d82e894ce429dab42
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60953339"
 ---
 # <a name="limitations"></a>限制
 
@@ -159,5 +159,5 @@ Java 绑定的泛型支持是有限的。 具体来说，是派生自另一个 �
 - [Android 可调用包装器](~/android/platform/java-integration/android-callable-wrappers.md)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
-- [超级字符串](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
+- [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
 - [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)

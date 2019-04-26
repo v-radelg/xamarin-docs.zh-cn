@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
 ms.openlocfilehash: 511b80013c13ae0d34f803255d0ed7fd6c09a988
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51526399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61342053"
 ---
 # <a name="how-can-i-update-nuget"></a>如何更新 NuGet？
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
 ms.openlocfilehash: bfd7330fa1eee5f80a9043341d9760058d99d48b
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61321728"
 ---
 # <a name="understanding-the-sample"></a>了解示例
 

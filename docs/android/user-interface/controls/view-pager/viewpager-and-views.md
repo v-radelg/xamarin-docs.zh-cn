@@ -1,5 +1,5 @@
 ---
-title: 视图的 ViewPager
+title: 带视图的 ViewPager
 description: ViewPager 是使您可以实现动作导航的布局管理器。 动作导航允许用户轻扫，左侧和右侧到单步执行的数据页。 本指南介绍如何实现使用 ViewPager 和 PagerTabStrip，为数据页使用视图可轻扫 UI （后续指南介绍如何使用页片段）。
 ms.prod: xamarin
 ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
@@ -8,13 +8,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: a8b7fa53d3384821d028e4a88ba22071a17e5bd9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61311540"
 ---
-# <a name="viewpager-with-views"></a>视图的 ViewPager
+# <a name="viewpager-with-views"></a>带视图的 ViewPager
 
 _ViewPager 是使您可以实现动作导航的布局管理器。动作导航允许用户轻扫，左侧和右侧到单步执行的数据页。本指南介绍如何实现使用 ViewPager 和 PagerTabStrip，为数据页使用视图可轻扫 UI （后续指南介绍如何使用页片段）。_
 
@@ -29,7 +29,7 @@ _ViewPager 是使您可以实现动作导航的布局管理器。动作导航允
 
 ## <a name="start-an-app-project"></a>启动应用程序项目
 
-创建一个名为的新的 Android 项目**TreePager** (请参阅[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)有关创建新的 Android 项目的详细信息)。 接下来，启动 NuGet 包管理器。 (有关安装 NuGet 包的详细信息，请参阅[演练： 在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 查找和安装**Android 支持库 v4**: 
+创建一个名为的新的 Android 项目**TreePager** (请参阅[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)有关创建新的 Android 项目的详细信息)。 接下来，启动 NuGet 包管理器。 (有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 查找和安装**Android 支持库 v4**: 
 
 [![在 NuGet 包管理器选择屏幕截图的支持 v4 Nuget](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
@@ -341,7 +341,7 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 
 
-### <a name="pagertitlestrip-variation"></a>PagerTitleStrip 变体
+### <a name="pagertitlestrip-variation"></a>PagerTitleStrip Variation
 
 `PagerTitleStrip` 非常类似于`PagerTabStrip`只不过`PagerTabStrip`添加当前所选的选项卡的下划线。您可以替换`PagerTabStrip`与`PagerTitleStrip`在上面的布局和运行应用以查看其外观与`PagerTitleStrip`: 
 

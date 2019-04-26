@@ -1,6 +1,6 @@
 ---
 title: 第 19 章的摘要。 集合视图
-description: 使用 Xamarin.Forms 创建移动应用： 第 19 章的摘要。 集合视图
+description: 使用 Xamarin.Forms 创建移动应用：第 19 章的摘要。 集合视图
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 795478805b582b956ee491bdfecd84485c1bc30e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61334293"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章的摘要。 集合视图
 
@@ -113,7 +113,7 @@ Xamarin.Forms 定义了三个视图的保留集合并显示其元素：
 
 ### <a name="grouping-the-listview-items"></a>对 ListView 项进行分组
 
-`ListView` 支持对项进行分组和在这些组之间导航。 `ItemsSource`属性必须设置为集合的集合： 该对象的`ItemsSource`设置为必须实现`IEnumerable`，并在集合中的每个项还必须实现`IEnumerable`。 每个组应包括两个属性： 组和三个字母缩写形式的文本说明。
+`ListView` 支持对项进行分组和在这些组之间导航。 `ItemsSource`属性必须设置为集合的集合：该对象的`ItemsSource`设置为必须实现`IEnumerable`，并在集合中的每个项还必须实现`IEnumerable`。 每个组应包括两个属性： 组和三个字母缩写形式的文本说明。
 
 [ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs)类[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)库创建的七个组`NamedColor`对象。 [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList)示例演示如何使用与这些组[ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled)属性`ListView`设置为`true`，和[ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding)并[ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding)属性绑定到每个组中的属性。
 

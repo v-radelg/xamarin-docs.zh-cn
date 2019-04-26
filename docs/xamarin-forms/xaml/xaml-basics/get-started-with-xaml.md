@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61344737"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -203,9 +203,9 @@ namespace XamlSamples
 
 另请注意，`Title`特性已设置的根标记。
 
-在此期间，类、 属性和 XML 之间的关系应该很明显： Xamarin.Forms 类 (如`ContentPage`或`Label`) 出现在 XML 元素 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
+在此时间应明显类、 属性和 XML 之间的关系：Xamarin.Forms 类 (如`ContentPage`或`Label`) 出现在 XML 元素 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
 
-多个快捷方式存在以便为设置这些属性的值。 有些属性是基本数据类型： 例如，`Title`和`Text`属性属于类型`String`，`Rotation`的类型`Double`，和`IsVisible`(这是`true`默认情况下，仅为此处设置图） 的类型是`Boolean`。
+多个快捷方式存在以便为设置这些属性的值。 某些属性是基本数据类型：例如，`Title`和`Text`属性属于类型`String`，`Rotation`的类型`Double`，和`IsVisible`(这是`true`默认情况下，仅用于说明此处设置) 的类型`Boolean`.
 
 `HorizontalTextAlignment`属性属于类型`TextAlignment`，这是一个枚举。 对于任何枚举类型的属性，只需提供有成员名称。
 

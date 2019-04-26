@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: d09391c315336d36496880ef465a72b8974f2ac7
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61283032"
 ---
 # <a name="dialogs-in-xamarinmac"></a>在 Xamarin.Mac 中的对话框
 
@@ -754,7 +754,7 @@ namespace SourceWriter
 }
 ```
 
-请注意，此类已完成两件事情： 首先是一个帮助程序`App`属性以使访问**AppDelegate**更容易。 第二个，`Preferences`属性公开的全局**AppPreferences**类的数据绑定与任何 UI 控件放置在此视图上。
+请注意，此类已完成两件事情：首先，没有一个帮助程序`App`属性以使访问**AppDelegate**更容易。 第二个，`Preferences`属性公开的全局**AppPreferences**类的数据绑定与任何 UI 控件放置在此视图上。
 
 接下来，双击该情节提要文件以在 Interface Builder 中重新打开 （请参阅只是上面所做的更改）。 将拖到视图生成的首选项接口所需的任何 UI 控件。 每个控件，切换到**绑定检查器**并将绑定到的各个属性**AppPreference**类：
 

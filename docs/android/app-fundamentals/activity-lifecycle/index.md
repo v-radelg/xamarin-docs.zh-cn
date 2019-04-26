@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61024238"
 ---
 # <a name="activity-lifecycle"></a>活动生命周期
 
@@ -187,7 +187,7 @@ public void OnPause()
 
 `OnStop` 可能不会始终会调用在内存不足的情况下，例如 Android 时可用的资源以及不能正确后台活动。 出于此原因，最好是不依赖于`OnStop`获取准备销毁活动时调用。 下一步后将在可能调用的生命周期方法`OnDestroy`如果该活动将消失，或`OnRestart`如果返回传入活动与用户进行交互。
 
-#### <a name="ondestroy"></a>onDestroy
+#### <a name="ondestroy"></a>OnDestroy
 
 [OnDestroy](https://developer.xamarin.com/api/member/Android.App.Activity.OnDestroy/)是之前它已被销毁并从内存中完全删除活动实例调用的最后一个方法。 在极端情况下 Android 会严重影响应用程序过程在承载活动，这将导致`OnDestroy`不调用。 大多数活动将不会实现此方法，因为大多数清理并完成了关机`OnPause`和`OnStop`方法。 `OnDestroy`方法通常被重写清理长时间运行的资源可能会泄漏资源。 出现这种可能是后台线程中启动`OnCreate`。
 

@@ -10,11 +10,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2019
 ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
-ms.sourcegitcommit: 34819671c7910d29f018bdb394ddd4a4b0cd3a31
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59675811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61351890"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>生成第一个 Xamarin.Forms 应用
 

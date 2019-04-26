@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
 ms.openlocfilehash: 41f629739b06431a9b20548f61111bc31e911abb
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035018"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>使用自然语言框架和 Xamarin.iOS
 

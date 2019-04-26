@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
 ms.openlocfilehash: a3cb79f33b64d933aa8ab4d3555479cc16238992
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61218888"
 ---
 # <a name="using-team-city-with-xamarin"></a>通过 Xamarin 使用团队城市
 

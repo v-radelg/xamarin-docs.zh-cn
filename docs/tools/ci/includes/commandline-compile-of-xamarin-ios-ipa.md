@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 05f1017f8c4b306996d3e8e165511ff9062a1026
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61047484"
+---
 
 下面的命令行，以指定解决方案的发布版本**SOLUTION_FILE.sln**适用于 iPhone。 可以通过指定设置的 IPA 位置`IpaPackageDir`命令行上的属性：
 

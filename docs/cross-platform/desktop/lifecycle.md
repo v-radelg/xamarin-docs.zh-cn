@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61269314"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 与。Xamarin.Forms 应用程序生命周期
 
@@ -79,7 +79,7 @@ BindableObject - base class for all bindable things
 
 Xamarin.Forms 主要面向围绕移动的方案。 在这种情况下，应用程序都_激活_，_挂起_，并_重新激活_当用户与之交互。 这是类似于离开单击`Window`在 WPF 应用程序并且有一组方法和对应的事件可以重写，也可以挂接到要监视此行为。
 
-| 目标 | WPF 方法 | Xamarin.Forms 方法 |
+| 用途 | WPF 方法 | Xamarin.Forms 方法 |
 |--- |--- |--- |
 |初始激活|ctor + Window.OnLoaded|ctor + Page.OnStart|
 |所示|Window.IsVisibleChanged|Page.Appearing|
@@ -95,7 +95,7 @@ Xamarin.Forms 主要面向围绕移动的方案。 在这种情况下，应用�
 
 页面布局发生同一 2-在阶段中 （度量值/排列） 发生在 WPF 中。 您可以通过重写在 Xamarin.Forms 中的以下方法挂钩到的页面布局`Page`类：
 
-| 方法 | 目标 |
+| 方法 | 用途 |
 |--- |--- |
 |OnChildMeasureInvalidated|子项的首选的大小已更改。|
 |OnSizeAllocated|分配页的宽度/高度。|
@@ -109,7 +109,7 @@ WPF 和都支持的 Xamarin.Forms`Margin`到控件元素，周围的间距和`Pa
 
 此外，大多数元素具有属性影响如何在父容器中放置：
 
-| WPF | Xamarin.Forms | 目标 |
+| WPF | Xamarin.Forms | 用途 |
 |--- |--- |--- |
 |HorizontalAlignment|HorizontalOptions|左/Center/Right/Stretch 选项|
 |VerticalAlignment|VerticalOptions|顶部/Center/底部/Stretch 选项|

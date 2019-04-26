@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 1b6e1c8ce91eaad46e779527c5ba12e2187cad24
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61038361"
 ---
 # <a name="viewpager-with-fragments"></a>带片段的 ViewPager
 
@@ -29,7 +29,7 @@ _ViewPager 是使您可以实现动作导航的布局管理器。动作导航允
 
 ## <a name="start-an-app-project"></a>启动应用程序项目
 
-创建一个名为的新的 Android 项目**FlashCardPager**。 接下来，启动 NuGet 包管理器 (有关安装 NuGet 包的详细信息，请参阅[演练： 在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 查找和安装**Xamarin.Android.Support.v4**包中所述[Viewpager 和视图](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 
+创建一个名为的新的 Android 项目**FlashCardPager**。 接下来，启动 NuGet 包管理器 (有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough))。 查找和安装**Xamarin.Android.Support.v4**包中所述[Viewpager 和视图](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 
 
 
 
@@ -445,4 +445,4 @@ questionBox.Click += delegate
 
 ## <a name="related-links"></a>相关链接
 
-- [FlashCardPager （示例）](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)
+- [FlashCardPager (sample)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)

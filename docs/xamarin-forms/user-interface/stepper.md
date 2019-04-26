@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
 ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61250434"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms 分档器
 
@@ -182,7 +182,7 @@ double value = stepper.Value;
 </ContentPage>
 ```
 
-[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一个属性[ `Label` ](xref:Xamarin.Forms.Label)绑定到[ `Value` ](xref:Xamarin.Forms.Stepper.Value)属性[ `Stepper` ](xref:Xamarin.Forms.Stepper)、 原样[ `Text` ](xref:Xamarin.Forms.Label.Text)属性的第二个`Label`与`StringFormat`规范。 **基本分档器绑定**页上函数有点以不同的方式从两个前面的页： 首先显示的页面时，第二个`Label`显示的文本字符串的值。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)通过从类构造函数调用的事件处理程序的事件.
+[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一个属性[ `Label` ](xref:Xamarin.Forms.Label)绑定到[ `Value` ](xref:Xamarin.Forms.Stepper.Value)属性[ `Stepper` ](xref:Xamarin.Forms.Stepper)、 原样[ `Text` ](xref:Xamarin.Forms.Label.Text)属性的第二个`Label`与`StringFormat`规范。 **基本分档器绑定**页函数有点以不同的方式从两个前面的页：当页面第一次出现时，第二个`Label`显示的文本字符串的值。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)通过从类构造函数调用的事件处理程序的事件.
 
 ## <a name="precautions"></a>预防措施
 

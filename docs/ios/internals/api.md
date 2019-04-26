@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
 ms.openlocfilehash: a4637099907dd75a3ab58222dbb4ef42b42e19c3
-ms.sourcegitcommit: 6f728aa0c1775224e16c0f3e583cf843d34270f9
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59893057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61036492"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin.iOS API 概述
 

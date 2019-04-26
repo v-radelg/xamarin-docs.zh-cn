@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 05/18/2016
 ms.openlocfilehash: aa3e15797ae1dac621ea8a78345044be1387ebaa
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61179518"
 ---
 # <a name="accessibility-on-ios"></a>在 iOS 上的辅助功能
 
@@ -140,6 +140,6 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 ## <a name="related-links"></a>相关链接
 
-- [跨平台可访问性](~/cross-platform/app-fundamentals/accessibility.md)
+- [跨平台辅助功能](~/cross-platform/app-fundamentals/accessibility.md)
 - [iOS (Apple) 的辅助功能](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
-- [iOS 语音朗读](http://www.apple.com/accessibility/ios/voiceover/)
+- [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)

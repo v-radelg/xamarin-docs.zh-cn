@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
 ms.openlocfilehash: 009e061726f655999c08192b5839a5c962d35e24
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61091406"
 ---
 # <a name="using-icloud-with-xamarinios"></a>通过 Xamarin.iOS 使用 iCloud
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 7c12136a0dad0165c46f1559e7a2d61abaf7af1e
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61331472"
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 的用户进行身份验证
 
@@ -35,8 +35,8 @@ Azure Active Directory B2C 是标识管理服务的面向消费者的应用程�
 将 Azure Active Directory B2C 标识管理服务集成到移动应用程序的过程如下所示：
 
 1. 创建 Azure Active Directory B2C 租户。 有关详细信息，请参阅[Azure 门户中创建一个 Azure Active Directory B2C 租户](/azure/active-directory-b2c/active-directory-b2c-get-started/)。
-1. 移动应用程序注册到 Azure Active Directory B2C 租户。 注册过程将分配**应用程序 ID** ，用于唯一标识应用程序和一个**重定向 URL**可用于将响应定向回你的应用程序。 有关详细信息，请参阅[Azure Active Directory B2C： 注册应用程序](/azure/active-directory-b2c/active-directory-b2c-app-registration/)。
-1. 创建注册和登录策略。 此策略将定义使用者注册和登录，期间将经历的体验，并且还指定的应用程序将接收的令牌内容在成功注册或登录。 有关详细信息，请参阅[Azure Active Directory B2C： 内置策略](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
+1. 移动应用程序注册到 Azure Active Directory B2C 租户。 注册过程将分配**应用程序 ID** ，用于唯一标识应用程序和一个**重定向 URL**可用于将响应定向回你的应用程序。 有关详细信息，请参阅[Azure Active Directory B2C:注册应用程序](/azure/active-directory-b2c/active-directory-b2c-app-registration/)。
+1. 创建注册和登录策略。 此策略将定义使用者注册和登录，期间将经历的体验，并且还指定的应用程序将接收的令牌内容在成功注册或登录。 有关详细信息，请参阅[Azure Active Directory B2C:内置策略](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
 1. 使用[Microsoft 身份验证库](https://www.nuget.org/packages/Microsoft.Identity.Client)(MSAL) 在移动应用程序与 Azure Active Directory B2C 租户启动的身份验证的工作流中。
 
 > [!NOTE]
@@ -55,7 +55,7 @@ MSAL 使用设备的 web 浏览器来执行身份验证。 这可提高应用程
 - 注册页面内容。
 - 移动应用程序时执行的策略已接收的令牌声明。
 
-Azure Active Directory 租户可以包含不同类型，然后根据需要在应用程序中使用该类型的多个策略。 此外，可以跨应用程序，允许您定义和修改使用者标识体验，而无需更改你的代码重用策略。 有关策略的详细信息，请参阅[Azure Active Directory B2C： 内置策略](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
+Azure Active Directory 租户可以包含不同类型，然后根据需要在应用程序中使用该类型的多个策略。 此外，可以跨应用程序，允许您定义和修改使用者标识体验，而无需更改你的代码重用策略。 有关策略的详细信息，请参阅[Azure Active Directory B2C:内置策略](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
 
 ## <a name="setup"></a>安装
 

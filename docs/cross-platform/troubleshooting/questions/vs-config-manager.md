@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
 ms.openlocfilehash: d7aeac2f433e8fdf231f5887f1537f15e2bd1976
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61341303"
 ---
 # <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>为什么 Visual Studio 未将引用的库项目包含在生成中？
 
@@ -26,6 +26,6 @@ Visual Studio 使用 **Configuration Manager** 确定解决方案中自动包含
 3. 选择要包括的项目的复选框。
 
 > [!NOTE]
-> 灰色框进行自动处理，并且不应需要的任何更改。
+> 灰色框自动处理和无需任何更改。
 
-这些步骤的视频演示： [http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)
+这些步骤的截屏视频： [http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
 ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670787"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61226511"
 ---
 # <a name="localization"></a>本地化
 

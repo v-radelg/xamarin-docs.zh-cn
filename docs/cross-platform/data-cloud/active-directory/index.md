@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
 ms.openlocfilehash: b9a136c3c5e0e9edff063de5a7eab8e54f52ef92
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61187194"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
 
