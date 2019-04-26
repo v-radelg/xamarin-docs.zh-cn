@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2018
 ms.openlocfilehash: 77b32d823e1fd89f6b45dca73e89322e57ddc199
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293516"
 ---
 # <a name="advanced-concepts--internals"></a>高级概念和内部机制
 

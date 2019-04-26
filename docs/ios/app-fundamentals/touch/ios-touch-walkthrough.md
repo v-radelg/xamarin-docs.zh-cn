@@ -1,5 +1,5 @@
 ---
-title: 演练： 在 Xamarin.iOS 中使用触控
+title: 演练：在 Xamarin.iOS 中使用触控
 description: 本文档介绍如何处理 Xamarin.iOS 应用程序，讨论示例触摸交互、 手势识别器和自定义笔势识别器中的触控。
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
 ms.openlocfilehash: bff4d46ac9d5fe893cbb0a2dfa032e1b9f6daa0e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61407721"
 ---
-# <a name="walkthrough-using-touch-in-xamarinios"></a>演练： 在 Xamarin.iOS 中使用触控
+# <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin.iOS 中使用触控
 
 本演练演示如何编写对不同种类的触摸事件做出响应代码。 每个示例包含在单独的屏幕：
 

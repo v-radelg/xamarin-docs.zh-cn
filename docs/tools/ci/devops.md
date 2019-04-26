@@ -1,5 +1,5 @@
 ---
-title: 使用 Xamarin 进行开发运营
+title: 带 Xamarin 的 DevOps
 ms.assetid: ff978cc2-5a25-46d6-921b-e51adaa65992
 author: conceptdev
 ms.author: crdun
@@ -8,13 +8,13 @@ ms.workload:
 - xamarin
 ms.date: 10/23/2018
 ms.openlocfilehash: de7cb0d3cce97f251fe6d9625fb1373e6aac7a67
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50131233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293682"
 ---
-# <a name="devops-with-xamarin"></a>使用 Xamarin 进行开发运营
+# <a name="devops-with-xamarin"></a>带 Xamarin 的 DevOps
 
 借助 Xamarin，你可以使用 C#、.NET 和 Visual Studio 生成面向 Android、iOS 和 Windows 的跨平台移动应用。 Xamarin 允许在平台间共享大部分代码，只有一小部分需要特定于平台。
 
@@ -26,7 +26,7 @@ Visual Studio、Azure DevOps Services 和 Team Foundation Server 提供了各种
 
 ## <a name="agile-tools"></a>敏捷工具
 
-参考链接：[有关敏捷工具和敏捷项目管理](/azure/devops/boards/backlogs/overview?view=vsts)
+参考链接：**[有关敏捷工具和敏捷项目管理](/azure/devops/boards/backlogs/overview?view=vsts)**
 
 常规注释：所有的计划和跟踪功能均独立于项目类型和编码语言。
 
@@ -40,7 +40,7 @@ Visual Studio、Azure DevOps Services 和 Team Foundation Server 提供了各种
 
 ## <a name="modeling"></a>建模
 
-参考链接：[对体系结构进行分析和建模](/visualstudio/modeling/analyze-and-model-your-architecture)
+参考链接：**[对体系结构进行分析和建模](/visualstudio/modeling/analyze-and-model-your-architecture)**
 
 设计功能独立于编程语言，或与 C# 之类的.NET 语言配合使用。 有关与代码相关的方面，请参阅[体系结构关系图和建模图在软件开发中的角色](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools)。
 
@@ -65,9 +65,9 @@ Visual Studio、Azure DevOps Services 和 Team Foundation Server 提供了各种
 |[查找代码更改和其他历史记录](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|是|排除跨特定于平台的边界，在这些地方直到运行时才会对实现进行解析。|
 |[使用代码图调试应用程序](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|是||
 
-## <a name="build"></a>生成
+## <a name="build"></a>Build
 
-参考链接：[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)
+参考链接：**[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
 |功能|通过 Xamarin 提供支持|其他注释|
 |-------------|----------------------------|-------------------------|
@@ -100,9 +100,9 @@ Visual Studio、Azure DevOps Services 和 Team Foundation Server 提供了各种
 |[性能资源管理器](/visualstudio/profiling/performance-explorer)|否|使用[Xamarin Profiler](/xamarin/tools/profiler/) Visual Studio for Mac 通过改为。 请注意 Xamarin 探查器当前处于预览状态，并且尚不适用于 Windows 目标。|
 |[分析 .NET Framework 内存问题](https://msdn.microsoft.com/library/dn342825.aspx)|否|Visual Studio 工具没有深入 Mono 框架进行探查的挂钩。|
 
-## <a name="release-management"></a>版本管理
+## <a name="release-management"></a>发布管理
 
-参考链接：[Azure Pipelines 和 TFS 中的生成和发布](/azure/devops/pipelines/overview?view=vsts)
+参考链接：**[生成和发布 Azure 管道和 TFS 中](/azure/devops/pipelines/overview?view=vsts)**
 
 |功能|通过 Xamarin 提供支持|其他注释|
 |-------------|----------------------------|-------------------------|

@@ -7,17 +7,17 @@ author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
 ms.openlocfilehash: 718b5104ddc4593d080b88b062c42d371d9e8e2e
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61261163"
 ---
 # <a name="objective-sharpie-tools--commands"></a>目标 Sharpie 工具和命令
 
 _包含目标 Sharpie 和命令行参数来使用它们的工具的概述。_
 
-<style type="text/css"> .terminal 蓝色 {颜色： rgb(10,96,254);}.terminal 绿色 {color: rgb(12,156,26);}.terminal 洋红色 {颜色： rgb(152,12,103);} </style>
+<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
 
 
 目标 Sharpie 成功后[安装](~/cross-platform/macios/binding/objective-sharpie/get-started.md)，打开终端并自己应熟悉<em>命令</em>目标 Sharpie 必须提供：
@@ -52,7 +52,7 @@ Available Tools:
 
 目标 Sharpie 提供以下工具：
 
-|工具|描述|
+|Tool|描述|
 |--- |--- |
 |**xcode**|提供有关当前 Xcode 安装以及 iOS 和 Mac Sdk 提供的版本信息。 我们将使用此信息更高版本生成我们的绑定时。|
 |**pod**|搜索、 配置、 将安装 （在本地目录中），并将绑定 OBJECTIVE-C [CocoaPod](https://cocoapods.org/)规范的主存储库中可用的库。 此工具将评估已安装的 CocoaPod 自动推导出正确的输入要传递给`bind`下列工具。 3.0 中的新增功能 ！|
@@ -88,5 +88,5 @@ Xcode Options:
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin 大学课程： 构建 OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程： 构建使用目标 Sharpie OBJECTIVE-C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

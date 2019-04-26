@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/31/2017
 ms.openlocfilehash: 291cbdb93cfb6ac123d740e98065ba877bb44da5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61159643"
 ---
 # <a name="vision-framework-in-xamarinios"></a>在 Xamarin.iOS 影像框架
 

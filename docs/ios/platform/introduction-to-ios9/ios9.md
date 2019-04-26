@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 6ade1c05c8e1cc64a4d24df1284d86175083ab80
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293639"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 兼容性
 
@@ -62,7 +62,7 @@ _即使你不打算立即使用 iOS 9 功能更新您的应用程序，我们建
 
 **原因：** 在 iOS 9`initWithFrame:`构造函数现在是必需的由于为 iOS 9 中的行为更改[UICollectionView 文档中所声明](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果注册为指定的标识符的类，并且必须创建新的单元格，单元格现在通过调用来初始化其`initWithFrame:`方法。
 
-**修复：** 添加`initWithFrame:`此类构造函数：
+**解决方法：** 添加`initWithFrame:`此类构造函数：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -72,15 +72,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-相关示例： [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+相关的示例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 
 
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView init 与编码员到 Xib/Nib 从加载视图时将失败
 
-**原因：** `initWithCoder:`构造函数是另一个名为从接口生成器 Xib 文件加载视图时。 如果此构造函数不会导出非托管的代码不能调用我们托管的版本。 以前 （例如。 在 iOS 8)`IntPtr`已调用构造函数来初始化视图。
+**原因：**`initWithCoder:`构造函数是另一个名为从接口生成器 Xib 文件加载视图时。 如果此构造函数不会导出非托管的代码不能调用我们托管的版本。 以前 （例如。 在 iOS 8)`IntPtr`已调用构造函数来初始化视图。
 
-**修复：** 创建和导出`initWithCoder:`此类构造函数：
+**解决方法：** 创建和导出`initWithCoder:`此类构造函数：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -90,7 +90,7 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-相关的示例：[聊天](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+相关的示例：[Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
 
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息： 具有名称没有缓存图像...
@@ -102,9 +102,9 @@ Dyld Error Message:
 Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：** 这是 Apple 的本机链接器，这种情况发生时它们公开专用框架中的 bug （JavaScriptCore 被公开在 iOS 7 中, 之前，它是一个专用的框架），该应用程序的部署目标是针对 iOS 版本时框架是私有的。 在这种情况下 Apple 的链接器将链接而不是公共版本 framework 的专用版本。
+**原因：** 这是 Apple 的本机链接器，这种情况发生时它们公开专用框架中的 bug （JavaScriptCore 被公开在 iOS 7 中, 之前，它是一个专用的框架），和框架为私有时，应用程序的部署目标是 iOS 版本。 在这种情况下 Apple 的链接器将链接而不是公共版本 framework 的专用版本。
 
-**修复：** 这将解决适用于 iOS 9，但可以将自己在此期间应用简单的解决方法： 只需面向更高版本 iOS 版本在项目中的 （在这种情况下，你可以尝试 iOS 7）。 其他框架可能会表现出类似的问题，例如 WebKit framework 被公开在 iOS 8 （和以便面向 iOS 7 将导致此错误; 应面向 iOS 8 应用程序中使用易于使用的功能）。
+**解决方法：** 这将解决适用于 iOS 9，但可以将自己在此期间应用简单的解决方法： 只需面向更高版本 iOS 版本在项目中的 （在这种情况下，你可以尝试 iOS 7）。 其他框架可能会表现出类似的问题，例如 WebKit framework 被公开在 iOS 8 （和以便面向 iOS 7 将导致此错误; 应面向 iOS 8 应用程序中使用易于使用的功能）。
 
 
 

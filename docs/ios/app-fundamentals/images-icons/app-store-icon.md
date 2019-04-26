@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/26/2017
 ms.openlocfilehash: 53e25ae9f4650254f2aaaa03dc8727fae674c9f0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61258075"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>在 Xamarin.iOS 应用商店图标
 
@@ -25,7 +25,7 @@ Apple 建议在设计应用程序图标时遵照以下准则：
 - 确保图标适合应用程序。
 - 创建与应用程序的设计一致的简单图标。
 - 图标中避免使用文字。
-- 整体思考：单个应用图标用于商店的所有区域。
+- 从整体思考：单个应用图标用于所有商店区域。
 
 App Store 中显示的应用图标必须是 1024 x 1024 像素的图像。  Apple 已声明，资产目录中的应用存储图标不能是透明的，也不能包含 alpha 通道。
 

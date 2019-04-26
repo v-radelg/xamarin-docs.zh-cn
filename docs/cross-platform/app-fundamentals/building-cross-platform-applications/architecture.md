@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
 ms.openlocfilehash: cfb2bddceea7717ac87bd7a78fd9cd45e8b93144
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61285137"
 ---
 # <a name="part-2---architecture"></a>第 2 部分 - 体系结构
 

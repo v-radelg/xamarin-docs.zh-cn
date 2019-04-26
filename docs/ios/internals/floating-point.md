@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
 ms.openlocfilehash: 28002ddbab80445757be907b5d9f1cc02fdefd9d
-ms.sourcegitcommit: ee626f215de02707b7a94ba1d0fa1d75b22ab84f
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54879350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035442"
 ---
 # <a name="floating-point-operations-in-xamarinios"></a>Xamarin.iOS 中的浮点运算
 

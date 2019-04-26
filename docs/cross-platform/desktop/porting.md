@@ -6,11 +6,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
 ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58071094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61270019"
 ---
 # <a name="desktop-app-porting-guidance"></a>桌面应用程序的移植指南
 

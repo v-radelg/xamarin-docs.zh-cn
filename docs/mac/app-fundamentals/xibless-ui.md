@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 076c6464359a58c2b36d157d9620673b0644cd4a
-ms.sourcegitcommit: 2f6a5c1abf90fbdb0475fd8a3ce6de3cd7c7d575
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52459832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61042239"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>在 Xamarin.Mac 中.storyboard/.xib-less 用户界面设计
 

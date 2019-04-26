@@ -1,5 +1,5 @@
 ---
-title: 填充 ListView 的数据
+title: 使用数据填充 ListView
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
@@ -7,13 +7,13 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
 ms.openlocfilehash: 57c69223a01074ed15714026b7e9ec4e995808e0
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61171083"
 ---
-# <a name="populating-a-listview-with-data"></a>填充 ListView 的数据
+# <a name="populating-a-listview-with-data"></a>使用数据填充 ListView
 
 
 ## <a name="overview"></a>概述
@@ -222,6 +222,6 @@ public int GetSectionForPosition(int position)
 
 ## <a name="related-links"></a>相关链接
 
-- [BasicTableAndroid （示例）](https://developer.xamarin.com/samples/BasicTableAndroid/)
+- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/BasicTableAndroid/)
 - [BasicTableAdapter （示例）](https://developer.xamarin.com/samples/BasicTableAdapter/)
 - [FastScroll （示例）](https://developer.xamarin.com/samples/FastScroll/)

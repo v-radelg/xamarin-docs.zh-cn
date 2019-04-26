@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 7626c49b2267cbd087a16c310f1b85aea7139823
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "57981726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61303399"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
@@ -143,17 +143,12 @@ public partial class PhotoWrappingPage : ContentPage
 
     async void LoadBitmapCollection()
     {
-        int imageDimension = Device.RuntimePlatform == Device.iOS ||
-                             Device.RuntimePlatform == Device.Android ? 240 : 120;
-
-        string urlSuffix = String.Format("?width={0}&height={0}&mode=max", imageDimension);
-
         using (WebClient webClient = new WebClient())
         {
             try
             {
                 // Download the list of stock photos
-                Uri uri = new Uri("http://docs.xamarin.com/demo/stock.json");
+                Uri uri = new Uri("https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json");
                 byte[] data = await webClient.DownloadDataTaskAsync(uri);
 
                 // Convert to a Stream object
@@ -168,7 +163,7 @@ public partial class PhotoWrappingPage : ContentPage
                     {
                         Image image = new Image
                         {
-                            Source = ImageSource.FromUri(new Uri(filepath + urlSuffix))
+                            Source = ImageSource.FromUri(new Uri(filepath))
                         };
                         flexLayout.Children.Add(image);
                     }

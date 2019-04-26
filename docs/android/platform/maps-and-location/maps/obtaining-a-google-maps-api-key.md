@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
 ms.openlocfilehash: bfeb9d8fa2a0b5a9b18ab8266500586e2e3b6c68
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61155264"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>获取 Google Maps API 密钥
 

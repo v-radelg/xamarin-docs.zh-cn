@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
 ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61430048"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中统一的情节提要
 
@@ -81,7 +81,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 新增到 iOS 8、 开发人员可以创建单个原子`.xib`文件中使用自动布局和大小类创建的 Xcode*动态启动屏幕*，将适用于每个设备、 分辨率和方向。 这不仅会减少开发人员可以创建和维护所有所需的图像资产的所需的工作量，但会减少应用程序的已安装捆绑包的大小。
 
-## <a name="traits"></a>特征
+## <a name="traits"></a>Traits
 
 特征是可用于确定如何布局更改为其环境的变化的属性。 它们包含的一组属性 (`HorizontalSizeClass`并`VerticalSizeClass`基于`UIUserInterfaceSizeClass`)，以及接口惯用语法 ( `UIUserInterfaceIdiom`) 显示比例和。
 
@@ -625,7 +625,7 @@ IOS 设计器将确认开发人员想要转换的情节提要，若要使用大�
 
 ### <a name="adaptive-segue-types"></a>自适应 Segue 类型
 
-如果开发人员已使用了情节提要之前，则它们将与现有的 segue 类型的熟悉**推送**，**模式**并**弹出框**。 以下自适应 Segue 类型 （对应于新的视图控制器 API 上文所述） 上的统一情节提要文件启用大小类后，都可用：**显示**并**显示明细数据**.
+如果开发人员已使用了情节提要之前，则它们将与现有的 segue 类型的熟悉**推送**，**模式**并**弹出框**。 统一情节提要文件上启用大小类后，可进行以下自适应 Segue 类型 （对应于新的视图控制器 API 上文所述）：**显示**并**显示详细信息**。
 
 > [!IMPORTANT]
 > 启用大小类后，任何现有 segue 将转换为新类型。

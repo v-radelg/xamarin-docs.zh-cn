@@ -1,5 +1,5 @@
 ---
-title: 错误 MT1009： 无法将复制程序集
+title: MT1009 错误：无法复制程序集
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F9FEDFF5-C84C-42B4-8F25-E34846E7315A
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 4a67537cc53aeecf1b86d11dbf041cea79587dd2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61422004"
 ---
-# <a name="error-mt1009-could-not-copy-the-assembly"></a>错误 MT1009： 无法将复制程序集
+# <a name="error-mt1009-could-not-copy-the-assembly"></a>MT1009 错误：无法复制程序集
 
 > [!IMPORTANT]
 > 最新版本的 Xamarin.iOS 中已解决此问题。 但是，如果最新版本的软件会出现此问题，请提出[新 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)与完整的版本控制信息和完整生成日志输出。

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
 ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61227239"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS 在 Xamarin 中的后台任务
 
@@ -543,7 +543,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 - 它只提供几秒钟来完成任何给定的任务。 不只传递的时间量，但也多少 CPU 处理能力的应用程序使用派生此限制，系统将考虑。
 - 任何超出其限制的应用程序将终止与以下的错误代码：
-    - **CPU** -0xc51bad01
+    - **CPU** - 0xc51bad01
     - **时间**-0xc51bad02
 - 系统将根据它要求应用程序以执行后台任务类型的不同限制类限制。 例如，`WKApplicationRefreshBackgroundTask`和`WKURLSessionRefreshBackgroundTask`任务提供较长的运行时于其他类型的后台任务。
 
@@ -615,7 +615,7 @@ private void UpdateComplication ()
 
 在 watchOS 3，Apple 已添加了用户可以将固定其最喜欢的应用并快速访问它们的停靠。 当用户在 Apple Watch 上按端按钮时，将显示一系列固定的应用快照。 左或向右查找所需的应用，然后点击以启动该快照替换为正在运行的应用界面的应用，用户可以往下轻扫。
 
-[![](background-tasks-images/dock01.png "停靠")](background-tasks-images/dock01.png#lightbox)
+[![](background-tasks-images/dock01.png "The Dock")](background-tasks-images/dock01.png#lightbox)
 
 系统定期将快照应用程序的 UI，并使用这些快照来填充文档。watchOS 使应用能够更新其内容和 UI 之前拍摄此快照。
 

@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
 ms.openlocfilehash: 7ca7f2d88e2330ffc55f7b2629f1ea6c35733fbd
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61035905"
 ---
 # <a name="f-samples-for-xamarin"></a>F#适用于 Xamarin 示例
 

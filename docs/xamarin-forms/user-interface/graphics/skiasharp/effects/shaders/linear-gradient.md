@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053570"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61158354"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 线性渐变
 
@@ -27,7 +27,7 @@ ms.locfileid: "53053570"
 这些方法返回类型的对象[ `SKShader` ](xref:SkiaSharp.SKShader)设置为[ `Shader` ](xref:SkiaSharp.SKPaint.Shader)属性`SKPaint`。 如果`Shader`属性为非 null，它将替代`Color`属性。 为描边的任何行或任何所填充区域的使用此`SKPaint`对象所基于的渐变而不是纯的颜色。
 
 > [!NOTE]
-> `Shader`当包括时，将忽略属性`SKPaint`对象中`DrawBitmap`调用。 可以使用`Color`的属性`SKPaint`若要设置显示位图的透明度级别 (如本文所述[显示 SkiaSharp 位图](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但不能使用`Shader`用于显示属性具有渐变透明度位图。 其他技术都可用于显示具有渐变透明胶片的位图： 这些文章中所述[SkiaSharp 循环渐变](circular-gradients.md#radial-gradients-for-masking)和[SkiaSharp 组合的情况下和混合模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
+> `Shader`当包括时，将忽略属性`SKPaint`对象中`DrawBitmap`调用。 可以使用`Color`的属性`SKPaint`若要设置显示位图的透明度级别 (如本文所述[显示 SkiaSharp 位图](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但不能使用`Shader`用于显示属性具有渐变透明度位图。 其他技术都可用于显示具有渐变透明胶片的位图：这些文章中介绍[SkiaSharp 循环渐变](circular-gradients.md#radial-gradients-for-masking)并[SkiaSharp 组合的情况下和混合模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
 
 ## <a name="corner-to-corner-gradients"></a>角角渐变
 
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 `OnTimerTick`方法计算`angle`以动画形式从 0 到 2 π 每隔 3 秒的值。 
 
-下面是一种方法来计算两个渐变点。 `SKPoint`名为值`vector`计算从画布的中心扩展到圆角半径上的点。 此向量的方向取决于表示的角度的正弦和余弦值。 然后计算两个相反渐变点： 一个点是通过减去从中心点，该矢量和其他点计算通过将向量添加到中心点：
+下面是一种方法来计算两个渐变点。 `SKPoint`名为值`vector`计算从画布的中心扩展到圆角半径上的点。 此向量的方向取决于表示的角度的正弦和余弦值。 然后计算两个相反渐变点：一个点是通过减去从中心点，该矢量和其他点计算通过将向量添加到中心点：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,7 +617,7 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-中的两个渐变点`CreateLinearGradient`方法基于对两个定义此路径的点： 在是靠近左上角的这两个点。 第一种是在画布上边缘和第二个是画布的左边缘。 下面是结果：
+中的两个渐变点`CreateLinearGradient`方法基于对两个定义此路径的点：这两个点是靠近左上角。 第一种是在画布上边缘和第二个是画布的左边缘。 下面是结果：
 
 [![有故障的彩虹渐变](linear-gradient-images/RainbowGradientFaulty.png "出喷薄彩虹渐变故障")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 

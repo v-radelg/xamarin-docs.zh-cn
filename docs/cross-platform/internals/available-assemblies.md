@@ -7,11 +7,11 @@ author: asb3993
 ms.author: amburns
 ms.date: 03/13/2018
 ms.openlocfilehash: 8882a7cd36eab5e7905585f5de4d6585dfb53439
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61266543"
 ---
 # <a name="available-assemblies"></a>可用程序集
 

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 ms.openlocfilehash: 56415aff251149aee01c2e2eb7e335e157180962
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54209952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61293766"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>在 Android 上的 ImageButton 投影
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 
 此 Android 特定于平台的用于上启用投影`ImageButton`。 设置使用在 XAML`ImageButton.IsShadowEnabled`可绑定属性设置为`true`，以及数量的其他控制投影的可选可绑定属性：
 

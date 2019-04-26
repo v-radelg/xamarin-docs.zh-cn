@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
 ms.openlocfilehash: 9c0e6d014f27651710bf3b8e713b2bf80322d628
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58796516"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61153394"
 ---
 # <a name="android-frequently-asked-questions"></a>Android 方面的常见问题
 

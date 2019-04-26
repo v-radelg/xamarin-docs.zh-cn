@@ -1,5 +1,5 @@
 ---
-title: MacOS Sierra 简介
+title: macOS Sierra 简介
 description: 本文介绍适用于 Xamarin.Mac 开发人员的所有新的和修改 Api 和 macOS Sierra 中提供的功能。
 ms.prod: xamarin
 ms.assetid: 71A8A737-F310-4320-BD23-743AA1E9033C
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
 ms.openlocfilehash: 5a944fd8f7dcfdcbb3f025c92b4afac35673416f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50111007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61031498"
 ---
-# <a name="introduction-to-macos-sierra"></a>MacOS Sierra 简介
+# <a name="introduction-to-macos-sierra"></a>macOS Sierra 简介
 
 新 macos Sierra，开发人员可以充分利用新的 Api，使最终用户能够使用其应用和网站以前不可用方式进行交互。 例如，Apple 现在允许网站将为客户提供付费安全地通过 Apple Pay 和增强功能的金属框架提升应用程序的图形和执行计算的选项可能。 
 
@@ -119,7 +119,7 @@ macOS Sierra 包括新的控制台应用 （在应用程序/实用程序），�
 
 <a name="Wide-Color" />
 
-### <a name="wide-color"></a>广泛的颜色
+### <a name="wide-color"></a>宽域颜色
 
 macOS Sierra 扩展的扩展范围像素格式和整个系统的核心图形、 Core 映像、 裸机和 AVFoundation 等框架的范围内所有颜色空间的支持。 对具有广泛的颜色显示设备的支持进一步减轻通过提供在整个图形堆栈整个此行为。
 

@@ -7,11 +7,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
 ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61175391"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>故障排除 Xamarin Live Player
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
 ms.openlocfilehash: 0d5df986caa01bba69b03d6502682889e78ecbc7
-ms.sourcegitcommit: ee464f165eee7b4485266c11f167be557a0bacb2
-ms.translationtype: MT
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58222310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61300796"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 网格
 
@@ -54,7 +54,7 @@ ms.locfileid: "58222310"
 - **绝对**&ndash;调整列和具有特定的固定高度和宽度值的行的大小。 指定为值和`GridUnitType.Absolute`用 C# 或作为`#`XAML，在使用`#`正在所需的值。
 
 > [!NOTE]
-> 列的宽度值设置为`*`默认情况下，在 Xamarin.Forms 中，可确保该列将填充可用空间。 行的高度值也设置为`*`默认情况下。 
+> 列的宽度值设置为`*`默认情况下，在 Xamarin.Forms 中，可确保该列将填充可用空间。 行的高度值也设置为`*`默认情况下。
 
 请考虑的应用程序需要三个行和两个列。 底部行必须是完全 200px、 高和最上面一行必须是两次高度都是中间的一行。 左侧的列需要是足够宽，以适应内容，右侧列需要填充剩余的空间。
 
@@ -164,8 +164,8 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 ```xaml
 <Grid ColumnSpacing="5">
   <Grid.ColumnDefinitions>
-    <ColumnDefinitions Width="*" />
-    <ColumnDefinitions Width="*" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
   </Grid.ColumnDefinitions>
 </Grid>
 ```

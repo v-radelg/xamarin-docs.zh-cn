@@ -8,11 +8,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/03/2016
 ms.openlocfilehash: 4ddf884f9980de61a27bc636be7c848881a13139
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61176966"
 ---
 # <a name="maps-and-location"></a>地图和位置
 

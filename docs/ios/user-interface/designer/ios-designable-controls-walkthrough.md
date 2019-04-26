@@ -1,5 +1,5 @@
 ---
-title: IOS 设计器中使用自定义控件
+title: 结合使用自定义控件和 iOS 设计器
 description: 本文档介绍如何创建自定义控件和使用 Xamarin 设计器使用适用于 iOS。 它显示了如何使控件可在 iOS 设计器的工具箱中，实现该控件，以便能够正确呈现和设计时间和的详细信息。
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
 ms.openlocfilehash: 98504c9d5f210d55a2be4c85c52d4bc1418fc223
-ms.sourcegitcommit: 650458de1d362cd7de174cacef7838f0e74426f3
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58070821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61154332"
 ---
-# <a name="using-custom-controls-with-the-ios-designer"></a>IOS 设计器中使用自定义控件
+# <a name="using-custom-controls-with-the-ios-designer"></a>结合使用自定义控件和 iOS 设计器
 
 ## <a name="requirements"></a>要求
 

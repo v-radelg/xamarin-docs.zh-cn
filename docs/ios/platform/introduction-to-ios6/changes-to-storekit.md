@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 5d1bb5ab636cd7527a560332a9890e9907fac454
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61295650"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>IOS 6 中对 StoreKit 的更改
 
@@ -530,4 +530,4 @@ Apple 的 iCloud 备份指南建议非用户轻松地从服务器中还原的内
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)
-- [WWDC 视频： 销售与应用商店套件的产品](https://developer.apple.com/videos/wwdc/2012/?include=302#302)
+- [WWDC 视频：销售产品与应用商店套件](https://developer.apple.com/videos/wwdc/2012/?include=302#302)

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 22b5fe703486f0ded3a5b91241e3fe5ce41bbc98
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61298910"
 ---
 # <a name="validation-in-enterprise-apps"></a>企业应用程序中的验证
 

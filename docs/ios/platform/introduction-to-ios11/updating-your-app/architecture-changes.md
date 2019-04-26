@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
 ms.openlocfilehash: b7d1df6ed2a8bd480025681ebcbe48acd7592564
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61169329"
 ---
 # <a name="architecture-changes-in-ios-11"></a>IOS 11 中的体系结构更改
 
