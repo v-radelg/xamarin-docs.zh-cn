@@ -9,11 +9,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
 ms.openlocfilehash: e6e3a989db922dc2941cca4c888c862ffe159241
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61422047"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 错误
 
@@ -1828,7 +1828,7 @@ Bitcode 支持需要使用 LLVM AOT 后端 (-llvm)。
 
 <a name="MT4113" />
 
-### <a name="mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a>MT4113:注册器找到一个泛型方法: '\*.\*。 导出泛型方法不受支持，并将导致随机行为和/或崩溃。
+### <a name="mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a>MT4113:注册器找到一个泛型方法: '\*。\*。 导出泛型方法不受支持，并将导致随机行为和/或崩溃。
 
 <a name="MT4114" />
 
@@ -2221,7 +2221,7 @@ Xamarin.iOS 生成提到的 P/Invoke 包装器函数失败。
 * 托管的绑定是指在本机库中不存在的本机符号。
     这通常发生在一个绑定已经存在的某个时间，并在该时间段，以便为特定的本机类已删除或重命名，而尚未更新绑定已修改的本机代码。
 * P/Invoke 是指不存在的本机符号。 从 Xamarin.iOS 7.4 <a href="#MT5214">MT5214</a>这种情况下将报告错误 （有关详细信息，请参阅 MT5214）。
-* 第三方绑定 / 库生成使用 c + +，但绑定未指定此项在其`[LinkWith]`属性。 这通常是相当容易识别，因为符号已是重整的 c + + 符号 (一个常见示例是`__ZNKSt9exception4whatEv`)。
+* 第三方绑定 / 库生成使用C++，但绑定未指定此项在其`[LinkWith]`属性。 这通常是相当容易识别，因为符号时难以分辨C++符号 (一个常见示例是`__ZNKSt9exception4whatEv`)。
   - 如果你是第三方绑定的作者，或有权访问其源，修改该绑定`[LinkWith]`属性设置`IsCxx`标志：
 
             [LinkWith ("mylib.a", IsCxx = true)]
@@ -2931,7 +2931,7 @@ Xamarin.iOS 通常会询问本机链接器以保留使用此类符号`-u symbol`
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到到块转换属性 ([DelegateProxy]) 的委托方法的返回值 *.*。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到到块转换属性 ([DelegateProxy]) 的委托方法的返回值 *。*。 请提交 bug 在 http://bugzilla.xamarin.com。
 
 Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所需的方法。
 

@@ -8,11 +8,11 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
 ms.openlocfilehash: 2ed14752cc5906b68d277b4f492875f7e281b053
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61029894"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>滑块、 开关和分段的控件中 Xamarin.iOS
 
@@ -50,7 +50,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![](slider-switch-segmented-controls-images/image27a.png "自定义滑块")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 目前尚[bug](https://stackoverflow.com/a/19496179)导致`ThumbTint`按预期方式，在运行时不呈现。 可以添加以下代码行**之前**上面的代码作为一种解决方法。 [Source](https://stackoverflow.com/a/21396794)]:
+> 目前尚[bug](https://stackoverflow.com/a/19496179)导致`ThumbTint`按预期方式，在运行时不呈现。 可以添加以下代码行**之前**上面的代码作为一种解决方法。 [[Source](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
@@ -77,7 +77,7 @@ switch1.On = true;
  <a name="Segmented_Controls" />
 
 
-## <a name="segmented-controls"></a>分段的控件
+## <a name="segmented-controls"></a>分段控件
 
 分段控件是有序的方式，以允许用户交互较少的选项。 它为水平布局和每个段函数作为一个单独的按钮。 当使用设计器，可在分段控件下**工具箱 > 控件**，并应如图所示：
 

@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
 ms.openlocfilehash: c486bb2e78579360e0f935219cd82958fedee34b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357604"
 ---
 # <a name="animating-with-ccaction"></a>进行动画处理与 ccaction 进行动画处理
 
@@ -46,7 +46,7 @@ _Ccaction 进行动画处理类简化了对 CocosSharp 游戏添加动画。若�
  - `CCScaleTo` – 更改`CCNode`实例的`Scale`属性
  - `CCRotateTo` – 更改`CCNode`实例的`Rotation`属性
 
-本指南参考了这些操作，如*变量更改*，这意味着它们直接影响的变量`CCNode`添加到。 其他类型的操作嘿 *缓动*本指南中稍后介绍的操作。
+本指南参考了这些操作，如*变量更改*，这意味着它们直接影响的变量`CCNode`添加到。 其他类型的操作*缓动*本指南中稍后介绍的操作。
 
 **ActionProject**演示这些操作的目的是随着时间的推移修改变量。 具体而言，这些`CCActions`构造函数采用两个参数： 现在可以和要分配的值的长度。 以下代码段显示了如何创建三种类型的操作：
 

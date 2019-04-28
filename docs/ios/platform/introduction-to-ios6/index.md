@@ -1,5 +1,5 @@
 ---
-title: IOS 6 简介
+title: iOS 6 简介
 description: 本文档所链接到指南描述在 iOS 6 中引入的功能。 集合视图、 PassKit 社交框架，并将所有讨论对 StoreKit 的更改。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
@@ -8,13 +8,13 @@ author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
 ms.openlocfilehash: 25926d82e060b91b007da9c2295b328cb049e8df
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61302236"
 ---
-# <a name="introduction-to-ios-6"></a>IOS 6 简介
+# <a name="introduction-to-ios-6"></a>iOS 6 简介
 
 _iOS 6 包含新技术，用于开发应用程序，它为 Xamarin.iOS 6 带来了多种C#开发人员。_
 

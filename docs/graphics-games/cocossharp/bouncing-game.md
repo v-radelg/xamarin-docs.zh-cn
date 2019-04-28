@@ -7,11 +7,11 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
 ms.openlocfilehash: 9fd6c9108695f58bd69a1c4aa307ca2e4be6dede
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61357462"
 ---
 # <a name="bouncinggame-details"></a>BouncingGame 详细信息
 
@@ -120,7 +120,7 @@ namespace BouncingGame
 
 请注意，文件名称和我们使用在代码中访问该文件的字符串都是小写。 这是因为某些平台 （如 Windows 桌面和 iOS 模拟器） 是不区分大小写，而其他平台 （如 Android 和 iOS 设备） 是区分大小写。 我们将本教程的其余部分使用小写的所有文件，以便为跨平台会保留文件和代码尽可能。
 
-#### <a name="extensions"></a>扩展
+#### <a name="extensions"></a>Extensions
 
 引用球拍文件时，创建 Sprite 的构造函数不包括".png"扩展。 文件的扩展名通常省略时相同的资产类型的文件扩展名为 CocosSharp 项目平台之间可能有所不同。 例如，音频文件可能取决于平台的.aiff、.mp3 或.wma 文件格式。 保留禁用该扩展可确保相同的代码而不考虑文件扩展名的所有平台上工作。
 
@@ -249,7 +249,7 @@ public class GameLayer : CCLayer
 
 ## <a name="implementing-every-frame-logic"></a>实现每个帧逻辑
 
-到目前为止，游戏提供静态场景。 我们将添加逻辑以通过添加代码，这会更新以高频率的对象的位置来控制的对象在场景中移动。 在这种情况下，代码将运行每秒-60 60 次*帧*每秒 （除非硬件不能处理频繁地更新此）。 具体而言，我们将添加逻辑以使球从处于并且针对球拍，来移动球拍根据输入，并更新玩家的分数，每次球发生球拍反弹。
+到目前为止，游戏提供静态场景。 我们将添加逻辑以通过添加代码，这会更新以高频率的对象的位置来控制的对象在场景中移动。 在这种情况下，代码将运行每秒- 60 次*帧*每秒 （除非硬件不能处理频繁地更新此）。 具体而言，我们将添加逻辑以使球从处于并且针对球拍，来移动球拍根据输入，并更新玩家的分数，每次球发生球拍反弹。
 
 `Schedule`方法，它提供的`CCNode`类中，可以让我们将每个帧逻辑添加到游戏。 我们将添加代码后的`// New code`GameLayer 构造函数：
 
