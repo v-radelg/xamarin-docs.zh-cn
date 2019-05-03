@@ -50,7 +50,7 @@ Visual Studio for Mac，Visual Studio 2019 和 Visual Studio 2017 （版本 15.7
 
     ![Apple 开发人员帐户选项](apple-account-management-images/image1.png)
 
-2. 按**+** 按钮以显示登录对话框中，如下所示： 
+2. 按 **+** 按钮以显示登录对话框中，如下所示： 
 
     ![fastlane 对话框。](apple-account-management-images/image2.png)
 
