@@ -67,7 +67,7 @@ Xamarin iOS 8 应用程序可以使用 HealthKit API 之前，它必须正确配
 
 您的当前**应用 Id**中列出[证书、 标识符和配置文件](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)部分开发人员中心。 通常情况下，此列表将显示**ID**的值`*`，以指示的**应用程序 ID** - **名称**可以在任意数量的后缀。 此类*通配符应用 Id*不能用于运行状况工具包。
  
-若要创建显式**应用程序 ID**，单击**+** 在右上角以使你转到按钮**注册 iOS 应用程序 ID**页：
+若要创建显式 **应用程序 ID**，单击 **+** 在右上角以使你转到按钮 **注册 iOS 应用程序 ID** 页：
 
 
 [![](healthkit-images/image02.png "注册 Apple 开发人员门户上的应用程序")](healthkit-images/image02.png#lightbox)
