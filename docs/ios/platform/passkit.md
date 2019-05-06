@@ -225,7 +225,7 @@ ISO-8859-1 编码是最常见的检查将读取你的货币额度的扫描系统
 
 第一步是设置凭证类型 ID 为每个不同_类型_的过程，以支持。 传递 ID （或传递类型标识符） 的阶段创建的唯一标识符。 我们将使用此 ID 与开发人员帐户使用的证书链接在一起传递。
 
-1. 在中[iOS 设置门户的证书、 标识符和配置文件部分](https://developer.apple.com/account/overview.action)，导航到**标识符**，然后选择**传递的类型 Id** 。 然后选择**+** 按钮以创建新的轮次的类型：[![](passkit-images/passid.png "创建新的传递类型")](passkit-images/passid.png#lightbox)
+1. 在中[iOS 设置门户的证书、 标识符和配置文件部分](https://developer.apple.com/account/overview.action)，导航到**标识符**，然后选择**传递的类型 Id** 。 然后选择 **+** 按钮以创建新的轮次的类型：[![](passkit-images/passid.png "创建新的传递类型")](passkit-images/passid.png#lightbox)
 
 2.   提供**描述**（名称） 和**标识符**（唯一字符串） 传递。 请注意，所有传递类型 Id 必须以字符串开头`pass.`在此示例中，我们使用`pass.com.xamarin.coupon.banana`:[![](passkit-images/register.png "提供的说明和标识符")](passkit-images/register.png#lightbox)
 
