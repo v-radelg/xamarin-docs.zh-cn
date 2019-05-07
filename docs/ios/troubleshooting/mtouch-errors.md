@@ -2913,13 +2913,13 @@ Xamarin.iOS 通常会询问本机链接器以保留使用此类符号`-u symbol`
 
 <a name="MT8008" />
 
-### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008:使用 Xamarin.iOS.dll 的加载的版本编译的 * 位，尽管该过程 * 位。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008:使用 Xamarin.iOS.dll 的加载的版本编译的 * 位，尽管该过程 * 位。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 这表示在生成过程中出错了。 请提交在 bug [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委托的方法的转换方法的块 *。* s 参数 # *。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委托的方法的转换方法的块 *。* s 参数 # *。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 这表示未正确绑定 API。 如果这是由 Xamarin 公开的 API，请在我们 bugzilla 中提交 bug ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS))，如果它是一个第三方的绑定，请与供应商联系。
 
@@ -2931,7 +2931,7 @@ Xamarin.iOS 通常会询问本机链接器以保留使用此类符号`-u symbol`
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到到块转换属性 ([DelegateProxy]) 的委托方法的返回值 *。*。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到到块转换属性 ([DelegateProxy]) 的委托方法的返回值 *。*。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所需的方法。
 
@@ -2939,7 +2939,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:该方法的返回值的无效 DelegateProxyAttribute *。*:委托为 null。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:该方法的返回值的无效 DelegateProxyAttribute *。*:委托为 null。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2947,7 +2947,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) 指定没有 Handler 字段的类型。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) 指定没有 Handler 字段的类型。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2955,7 +2955,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) Handler 字段为 null。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) Handler 字段为 null。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2963,7 +2963,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) Handler 字段不是一个委托，它是 *。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) Handler 字段不是一个委托，它是 *。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2971,7 +2971,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:无法转换进行阻止方法的返回值的委托 *。*，因为输入不是一个委托，它是 *。 请提交 bug 在 http://bugzilla.xamarin.com。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:无法转换进行阻止方法的返回值的委托 *。*，因为输入不是一个委托，它是 *。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -3017,6 +3017,6 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:将智能枚举 {smart_type} 中找不到有效的扩展类型。 请提交 bug 在 https://bugzilla.xamarin.com。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:将智能枚举 {smart_type} 中找不到有效的扩展类型。 请提交 bug 在  https://bugzilla.xamarin.com 。
 
 这表示在 Xamarin.iOS 中的存在 bug。 请提交在 bug [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
