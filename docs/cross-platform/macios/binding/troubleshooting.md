@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: fcdd712313becd1335479013f44886086dde7bff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 686ce3b46f268b650c63cace2a29b9d501a4063c
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261234"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977599"
 ---
 # <a name="binding-troubleshooting"></a>绑定疑难解答
 
@@ -55,9 +55,4 @@ GitHub 的问题是完全公开的。 不能隐藏注释或附件。
 
 - 一个重现此问题的简单示例。 在可能的情况下，这非常有用。 
 - 故障的完整堆栈跟踪。
-- 故障周围的 C# 代码。 
-
-## <a name="related-links"></a>相关链接
-
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+- 故障周围的 C# 代码。

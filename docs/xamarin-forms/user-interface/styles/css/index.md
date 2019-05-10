@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2018
-ms.openlocfilehash: ca87e5997fa05e014be56f85087ce3e7ffe1ab12
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 04/11/2019
+ms.openlocfilehash: 7dc9a0c0d7330588dc4a6d3f3dedd4b72211f019
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250742"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048027"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
@@ -417,6 +417,19 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial `|`visibility: hidden;`|
 |`width`|`VisualElement`|_双精度_ \| `initial`|`min-width: 320;`|
 
+> [!NOTE]
+> `initial` 是为所有属性的有效值。 它会清除从另一个样式设置的值 （重置为默认值）。
+
+是当前不支持以下属性：
+
+- `all: initial`。
+- 布局属性 （框中，或网格）。
+- 速记属性，如`font`，和`border`。
+
+此外，还有没有`inherit`值，因此继承不受支持。 因此不能例如，设置`font-size`布局的属性和预期所有[ `Label` ](xref:Xamarin.Forms.Label)要继承的值的布局中的实例。 是一个例外`direction`属性，它具有默认值的`inherit`。
+
+### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms 的特定属性
+
 此外支持以下 Xamarin.Forms 特定 CSS 属性 (在**值**列中，类型为_斜体_，而字符串文本是`gray`):
 
 |属性|适用对象|值|示例|
@@ -434,16 +447,23 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`-xf-thumb-color`|`Slider`|_颜色_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_双精度_ \| `initial` |`-xf-spacing: 8;`|
 
-> [!NOTE]
-> `initial` 是为所有属性的有效值。 它会清除从另一个样式设置的值 （重置为默认值）。
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms Shell 特定属性
 
-是当前不支持以下属性：
+此外支持以下 Xamarin.Forms Shell 特定 CSS 属性 (在**值**列中，类型为_斜体_，而字符串文本是`gray`):
 
-- `all: initial`。
-- 布局属性 （框中，或网格）。
-- 速记属性，如`font`，和`border`。
-
-此外，还有没有`inherit`值，因此继承不受支持。 因此不能例如，设置`font-size`布局的属性和预期所有[ `Label` ](xref:Xamarin.Forms.Label)要继承的值的布局中的实例。 是一个例外`direction`属性，它具有默认值的`inherit`。
+|属性|适用对象|值|示例|
+|---|---|---|---|
+|`-xf-flyout-background`|`Shell`|_颜色_ \| `initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_颜色_ \| `initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_颜色_ \| `initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_颜色_ \| `initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_颜色_ \| `initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_颜色_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_颜色_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_颜色_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_颜色_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_颜色_ \| `initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_颜色_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>颜色
 
@@ -484,7 +504,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS，也可由[Xamarin 学院课程](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 CSS 视频**
 
 ## <a name="related-links"></a>相关链接
 

@@ -6,12 +6,12 @@ ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 718b5104ddc4593d080b88b062c42d371d9e8e2e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 51a0b81204b743824e24cfed83bd73308fa8d506
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261163"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977667"
 ---
 # <a name="objective-sharpie-tools--commands"></a>目标 Sharpie 工具和命令
 
@@ -85,8 +85,3 @@ Xcode Options:
 <span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
 
 综上所述，我们可以看到，我们有`iphoneos9.1`SDK 安装在我们的机器上并且具有`arm64`体系结构支持。 我们将在本部分中的所有示例使用此值。 使用此信息后，我们已准备好将 Objective C 库标头文件分析到初始`ApiDefinition.cs`和`StructsAndEnums.cs`绑定项目。
-
-## <a name="related-links"></a>相关链接
-
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

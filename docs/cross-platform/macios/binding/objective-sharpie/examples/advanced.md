@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c4f7f1e9702fb2ee0f5525343a52e3aacd85d68c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e820a0c208907a95dda4a50427bb4dac27b88964
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200274"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977893"
 ---
 # <a name="advanced-manual-real-world-example"></a>高级 （手动） 的真实示例
 
@@ -137,8 +137,3 @@ Done.
 更新完成后，现在可以添加用于 Mac 的 Visual Studio 中的绑定项目到这两个文件，或直接传递`btouch`或`bmac`工具以生成最终的绑定。
 
 在绑定过程的详尽描述，请参阅我们[完整操作实例说明](~/ios/platform/binding-objective-c/walkthrough.md)。
-
-## <a name="related-links"></a>相关链接
-
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

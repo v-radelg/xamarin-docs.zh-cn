@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3a59cbb8385fe201d7eef086092c9b393a21cc71
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57666334"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978125"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自定义呈现器
 
@@ -58,8 +58,6 @@ Xamarin.Forms 自定义用户界面控件应派生自 [`View`](xref:Xamarin.Form
 
 本文介绍如何编写呈现器以实现自定义 `VideoPlayer` 控件，该控件可播放 Web 视频、作为应用程序资源嵌入的视频或用户设备的视频库中存储的视频。 本文演示了多种技巧，包括实现方法和只读可绑定属性。
 
-
 ## <a name="related-links"></a>相关链接
 
 - [效果](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [自定义呈现器（Xamarin University 视频）](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)

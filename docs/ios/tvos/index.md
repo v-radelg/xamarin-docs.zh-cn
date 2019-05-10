@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: ada563fee78e579906e7f765a0120d8bfff67402
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: acbf000d0700e29fcd6155a35c26fee08f12b7e5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61395412"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978017"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>在 Xamarin 中的 tvOS 简介
 
@@ -27,7 +27,7 @@ TvOS 的详细信息，请参阅[Getting Started](~/ios/tvos/get-started/index.m
 
 > [!VIDEO https://youtube.com/embed/Q04oIYymfGM]
 
-**借助 Xamarin，tvOS 通过[Xamarin University](https://university.xamarin.com/)**
+**使用 Xamarin 的视频的 tvOS**
 
 ## <a name="documentation"></a>文档
 

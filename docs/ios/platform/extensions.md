@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 25b27765a35310c5cdbaf5ae19902b1d19eff6ea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 971effc34716596ec6be3708ac9da4e68d7bdfee
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61321823"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978589"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 扩展
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 
-**在 iOS 中，通过创建扩展[Xamarin University](https://university.xamarin.com/)**
+**在 iOS 中创建扩展视频**
 
 专用扩展，如在 iOS 8 中引入`UIViewControllers`，按呈现 iOS 标准上下文内此类为内**通知中心**，如用户请求执行的自定义键盘类型专用化输入或其他上下文如编辑的照片，扩展可以提供特殊效果筛选器。
 

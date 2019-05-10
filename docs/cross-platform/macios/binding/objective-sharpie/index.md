@@ -6,12 +6,12 @@ ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 53fcbbc408ae147405a3285d9391457051d6e16e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cbe0be19e38892d06a79831d7974fbddcb71a9ac
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261190"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978476"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>使用目标 Sharpie 创建绑定
 
@@ -49,5 +49,4 @@ _本部分提供目标 Sharpie，Xamarin 的命令行工具来自动执行创建
 - [绑定详细信息](~/cross-platform/macios/binding/overview.md)
 - [绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [面向 Objective-C 开发人员的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
+

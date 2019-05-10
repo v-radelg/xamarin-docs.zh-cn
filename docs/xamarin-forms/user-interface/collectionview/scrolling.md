@@ -1,27 +1,24 @@
 ---
-title: 向项滚动到视图
+title: Xamarin.Forms CollectionView 滚动
 description: 时启动一个滚动用户扫，以便完全显示的项可以控制滚动的结束位置。 此外，CollectionView 定义两个 ScrollTo 方法，以编程方式滚动到视图的项。
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/19/2019
-ms.openlocfilehash: da7f379076b8e193deddc99e9004f051ba006cbb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 888b4f369f67a7d8566640927ba2ae3a395d68d8
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367522"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048167"
 ---
-# <a name="scroll-an-item-into-view"></a>向项滚动到视图
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滚动
 
-![预览](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是当前预发布版本")
 
 [![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`当前为预览版，并且缺少一些其计划的功能。 此外，API 可能会更改为实现已完成。
 
 `CollectionView` 定义了两个`ScrollTo`项滚动到视图的方法。 而其他滚动到视图中指定的项的指定索引处的项的重载之一滚动到视图中中。 这两个重载有可以指定以完成滚动后, 指示项的准确位置的其他参数，以及是否要进行动画处理滚动。
 

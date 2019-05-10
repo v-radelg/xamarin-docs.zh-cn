@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: e97b211fe6a92ee0df3beed2301cf00c3d42c8f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b81ba51a0fbdf4c684ca602cb083f8da08c7d6a
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200705"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977989"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定 OBJECTIVE-C 库
 
@@ -1404,5 +1404,3 @@ class Demo {
 ## <a name="related-links"></a>相关链接
 
 - [绑定示例](https://developer.xamarin.com/samples/BindingSample/)
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

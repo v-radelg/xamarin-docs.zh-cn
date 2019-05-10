@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 965f56f7996cc7cf8a06e4201cc4bcf2ea35fb71
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 04/10/2019
+ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343218"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048318"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
 
@@ -27,6 +27,7 @@ XAML 标记扩展帮助元素特性，若要设置从各种源，从而增强的
 - [`x:Null`](#null) – 将属性设置为`null`值。
 - [`OnPlatform`](#onplatform) -自定义根据每个平台的 UI 外观。
 - [`OnIdiom`](#onidiom) -自定义 UI 外观基于的设备运行应用程序的惯用语法。
+- [`DataTemplate`](#datatemplate-markup-extension) -将转换到类型[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。
 
 其他 XAML 标记扩展从历史上看其他 XAML 实现中，通过受支持和 Xamarin.Forms 还支持。 这些更全面介绍了其他文章：
 
@@ -503,7 +504,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom 标记扩展
 
-`OnIdiom`标记扩展，可自定义 UI 外观基于的设备运行应用程序的惯用语法。 它受[ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)类，该类定义以下属性：
+`OnIdiom`标记扩展允许您自定义 UI 外观基于的设备运行应用程序的惯用语法。 它受[ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)类，该类定义以下属性：
 
 - `Default` 类型的`object`，设置为默认值应用于设备的惯用语言表示的属性。
 - `Phone` 类型的`object`，设置为值用于在手机上应用。
@@ -537,6 +538,25 @@ public partial class TypeDemoPage : ContentPage
 
 [![OnIdiom 演示](consuming-images/onidiomdemo-small.png "OnIdiom 演示")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom 演示")
 
+## <a name="datatemplate-markup-extension"></a>DataTemplate 标记扩展
+
+`DataTemplate`标记扩展可将转换到类型[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 它受`DataTemplateExtension`类，该类定义`TypeName`类型的属性`string`，即设置为的类型名称，以将转换为`DataTemplate`。 `TypeName`属性是 content 属性`DataTemplateExtension`。 因此，对于使用大括号表示 XAML 标记表达式，则可以消除`TypeName=`表达式的一部分。
+
+> [!NOTE]
+> 此 XAML 分析器允许`DataTemplateExtension`类，以缩写为`DataTemplate`。
+
+此标记扩展的典型用法是在 Shell 应用程序，如下面的示例中所示：
+
+```xaml
+<ShellContent Title="Monkeys"
+              Icon="monkey.png"
+              ContentTemplate="{DataTemplate views:MonkeysPage}" />
+```
+
+在此示例中，`MonkeysPage`转换从[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)到[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，将其设置的值为`ShellContent.ContentTemplate`属性。 这可确保`MonkeysPage`是仅创建导航到页时，而不是在应用程序启动。
+
+外壳应用程序的详细信息，请参阅[Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+
 ## <a name="define-your-own-markup-extensions"></a>定义你自己的标记扩展
 
 如果遇到过需要在 Xamarin.Forms 中不可用的 XAML 标记扩展，则可以[创建您自己](creating.md)。
@@ -548,3 +568,4 @@ public partial class TypeDemoPage : ContentPage
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [动态样式](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。

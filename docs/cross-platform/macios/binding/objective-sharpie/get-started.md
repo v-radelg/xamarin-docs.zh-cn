@@ -6,12 +6,12 @@ ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: c1831467ca0cbb4329a1e77fb355698f2d16cd6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5e503a82a2b666bf6f8d7d7166475e94546e7
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199775"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978405"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>开始使用目标 Sharpie
 
@@ -58,8 +58,3 @@ ms.locfileid: "61199775"
 
 **新增功能！** 版本 3.0 还引入了一个工具，用于轻松地绑定[CocoaPods](https://cocoapods.org)通过`sharpie pod`命令。
 如果您感兴趣的库作为 CocoaPod 不可用，我们建议首先尝试将与目标 Sharpie CocoaPod 绑定 （而不是试图直接绑定对源）。
-
-## <a name="related-links"></a>相关链接
-
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

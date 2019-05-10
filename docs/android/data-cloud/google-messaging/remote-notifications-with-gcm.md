@@ -6,27 +6,26 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 04/12/2018
-ms.openlocfilehash: e5a5e44a61d352b5de05564ebb7192d21ed83dfa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/02/2019
+ms.openlocfilehash: 7f7afacaf8154cd425fcd1c1638a512d5bc32ffd
+ms.sourcegitcommit: 53480ed32a126f88eec82e8c8ee5ed8d30616c44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012720"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65017697"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google 云消息传送与远程通知
 
-_本演练介绍如何使用 Google Cloud Messaging 实现远程通知 （也称为推送通知） 的分步说明，Xamarin.Android 应用程序中。它描述了为通信使用 Google Cloud Messaging (GCM) 而必须实现的各种类，它还说明了如何访问 GCM、 在 Android 清单中设置权限和它演示了端到端消息传送和示例测试程序。_
+> [!WARNING]
+> Google 已弃用自 2018 年 4 月 10 日起的 GCM。 以下文档和示例项目可能不再受维护。 将尽快 2019 年 5 月 29 日，删除 Google 的 GCM 服务器和客户端 Api。 Google 将 GCM 应用迁移到 Firebase Cloud Messaging (FCM) 建议。 有关 GCM 弃用和迁移的详细信息，请参阅[Google Cloud Messaging-不推荐使用](https://developers.google.com/cloud-messaging/)。
+>
+> 若要开始使用通过 Xamarin 使用 Firebase Cloud Messaging 的远程通知，请参阅[远程通知使用 FCM](remote-notifications-with-fcm.md)。
 
-> [!NOTE]
-> 已被取代 GCM [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM)。
-> GCM 服务器和客户端 Api[已弃用](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html)将不再提供为 2019 年 4 月 11 日推出。
+_本演练介绍如何使用 Google Cloud Messaging 实现远程通知 （也称为推送通知） 的分步说明，Xamarin.Android 应用程序中。它描述了为通信使用 Google Cloud Messaging (GCM) 而必须实现的各种类，它还说明了如何访问 GCM、 在 Android 清单中设置权限和它演示了端到端消息传送和示例测试程序。_
 
 ## <a name="gcm-notifications-overview"></a>GCM 通知概述
 
 在本演练中，我们将创建一个使用 Google Cloud Messaging (GCM) 来实现远程通知的 Xamarin.Android 应用程序 (也称为*推送通知*)。 我们将实现将 GCM 用于远程消息的各种意向和侦听器服务，我们将测试我们的实现与命令行程序，用于模拟的应用程序服务器。 
-
-请注意，Firebase Cloud Messaging (FCM) 是新版本的 GCM &ndash; Google 强烈建议使用 FCM，而不是 GCM。 如果你当前使用 GCM，建议升级到 FCM。 有关 FCM 的详细信息，请参阅[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)。 
 
 您可以继续执行本演练之前，必须获取所需的凭据以使用 Google 的 GCM 服务器;此过程所述[Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)。 具体而言，将需要*API 密钥*和一个*发件人 ID*要插入到在本演练中提供的示例代码。 
 

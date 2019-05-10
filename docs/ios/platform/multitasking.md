@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 68c2ae6eace2669d2ea6c77d72f4476d767c0a7d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6a9c66720aeb97c5b894cbea42c6cc0c5285c67d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61426232"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978629"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>IPad Xamarin.iOS 的多任务
 
@@ -39,7 +39,7 @@ iOS 9 增加了对特定 iPad 硬件上同时运行两个应用的多任务处�
 
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
-**适用于 iPad，多任务处理通过[Xamarin University](https://university.xamarin.com)**
+**适用于 iPad 的视频的多任务**
 
 
 <a name="Multitasking-QuickStart" />

@@ -1,27 +1,24 @@
 ---
-title: 指定 Xamarin.Forms 之间导航布局
+title: Xamarin.Forms 之间导航布局
 description: 默认情况下，CollectionView 将各个项显示垂直列表中。 但是，可以指定垂直和水平列表和网格。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/15/2019
-ms.openlocfilehash: 8ed365ed41ac31c66d41f1a32a7a16929cdc6770
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 5543bcc93f3c38b56a4a6caa0ea23b8ccf434e1c
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367536"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048250"
 ---
-# <a name="specify-xamarinforms-collectionview-layout"></a>指定 Xamarin.Forms 之间导航布局
+# <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms 之间导航布局
 
-![预览](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是当前预发布版本")
 
 [![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`当前为预览版，并且缺少一些其计划的功能。 此外，API 可能会更改为实现已完成。
 
 `CollectionView` 定义用于控制布局的以下属性：
 
@@ -43,7 +40,7 @@ ms.locfileid: "61367536"
 - `SnapPointsAlignment`类型的`SnapPointsAlignment`，指定管理单元点包含项的对齐方式。
 - `SnapPointsType`类型的`SnapPointsType`，滚动时显示指定的管理点的行为。
 
-这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。 有关管理点的详细信息，请参阅[对齐点](scrolling.md#snap-points)中[向项滚动到视图](scrolling.md)指南。
+这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。 有关管理点的详细信息，请参阅[对齐点](scrolling.md#snap-points)中[Xamarin.Forms CollectionView 滚动](scrolling.md)指南。
 
 `ItemsLayoutOrientation`枚举定义以下成员：
 
@@ -344,7 +341,7 @@ CollectionView collectionView = new CollectionView
 - `MeasureFirstItem` – 仅第一项度量单位，与所提供的第一项的大小相同的所有后续项。
 
 > [!IMPORTANT]
-> `MeasureFirstItem`大小调整策略应在项大小用于统一跨所有项，并且将导致更高的性能情况下使用。
+> `MeasureFirstItem`大小调整策略将导致更高的性能时在其中的项大小应在所有项之间是一致的情况下使用。
 
 下面的代码示例显示了设置`ItemSizingStrategy`属性：
 
@@ -365,8 +362,11 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
+> [!NOTE]
+> 项大小调整策略目前仅实现上的 iOS。
+
 ## <a name="related-links"></a>相关链接
 
 - [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 - [从右到左本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [向项滚动到视图](scrolling.md)
+- [Xamarin.Forms CollectionView 滚动](scrolling.md)

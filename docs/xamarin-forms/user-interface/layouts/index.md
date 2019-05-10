@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 5bd232293c979566faed2856de7287903da94054
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 661f27b90882234ddc629ac280690d534aca499d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300384"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977798"
 ---
 # <a name="layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的布局
 
@@ -23,7 +23,7 @@ Xamarin.Forms 具有多个布局和功能的组织在屏幕上的内容。
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Xamarin.Forms 布局，也可由[Xamarin 学院课程](https://university.xamarin.com/)**
+**Xamarin.Forms 布局视频**
 
 每个布局控件被下述，以及如何处理屏幕方向更改的详细信息：
 

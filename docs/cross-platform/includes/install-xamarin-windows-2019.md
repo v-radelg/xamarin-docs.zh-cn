@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 0270f4a5ddab593372eb6687650e24d627f97c62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2ab71fa96be44168a52e5dde24967136e9a06fb
+ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61264111"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64992183"
 ---
 Xamarin 可安装的一部分_新_Visual Studio 2019 安装中的，通过执行以下步骤：
 
@@ -21,7 +21,7 @@ Xamarin 可安装的一部分_新_Visual Studio 2019 安装中的，通过执行
 
     ![“安装”按钮](~/get-started/installation/windows-images/vs2019-click-install.png)
 
-   根据你安装哪个版本的 Visual Studio 2019，安装过程可能需要很长时间才能完成。 可使用进度栏监视安装过程：
+   使用进度栏监视安装：
 
     ![安装过程中的进度栏](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 

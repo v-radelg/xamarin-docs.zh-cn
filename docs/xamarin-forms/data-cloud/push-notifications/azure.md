@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: 92c068ceb3d382ed4612318dc987d950ec7e7ef2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2cfb15222c33309101366273d5bc9c42db68b436
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327449"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978119"
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>从 Azure 移动应用发送推送通知
 
@@ -23,7 +23,7 @@ _Azure 通知中心提供可伸缩的推送基础结构用于发送移动推送�
 
 > [!VIDEO https://youtube.com/embed/le2lDY22xwM]
 
-**Azure 通过推送通知中心和 Xamarin.Forms， [Xamarin 学院课程](https://university.xamarin.com/)**
+**Azure 的推送通知中心和 Xamarin.Forms 视频**
 
 推送通知用于从移动设备上的应用程序来提高应用程序参与度与使用量的后端系统提供的信息，如一条消息。 通知可以发送在任何时间，即使用户没有频繁使用目标应用程序。
 

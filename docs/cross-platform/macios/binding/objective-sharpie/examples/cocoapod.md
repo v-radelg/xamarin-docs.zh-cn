@@ -6,12 +6,12 @@ ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2018
-ms.openlocfilehash: bac34f662e24c6b08a67cd8da1f41b37b43b3faf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 266f2bca1f4a96242b17080e60c9f43cb956a5fd
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200310"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977871"
 ---
 # <a name="real-world-example-using-cocoapods"></a>使用 CocoaPods 的真实示例
 
@@ -94,5 +94,3 @@ Done.
 - [绑定 OBJECTIVE-C 的概述](~/cross-platform/macios/binding/overview.md)
 - [绑定 OBJECTIVE-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [演练：绑定 iOS OBJECTIVE-C 库](~/ios/platform/binding-objective-c/walkthrough.md)
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

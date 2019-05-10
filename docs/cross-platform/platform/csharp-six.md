@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: b69fe417bb521781453042269b9b52609d8e00a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1a261c009f105994ac0b9c84f3d0ac037c4a3517
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035803"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978491"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 项新增功能概述
 
@@ -22,7 +22,7 @@ _最新版本的C#语言 – 版本 6 – 不断发展的语言具有更少的�
 
 > [!VIDEO https://youtube.com/embed/7UdV7zGPfMU]
 
-**新增功能C#6，也可由[Xamarin University](https://university.xamarin.com/)**
+**新增功能C#6 视频**
 
 ## <a name="using-c-6"></a>使用C#6
 

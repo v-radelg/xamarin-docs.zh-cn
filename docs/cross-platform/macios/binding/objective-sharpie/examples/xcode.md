@@ -6,12 +6,12 @@ ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 05c55dc7cd20de2d216d1f267ea5a73631748a0a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ccfc2f1760d8971e2d824cf65344fa2a5e158c12
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61265252"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978365"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>使用 Xcode 项目的实际示例
 
@@ -28,7 +28,3 @@ Cloning into 'pop'...
 $ <b>cd pop</b>
 $ <b>sharpie bind pop.xcodeproj -sdk iphoneos9.0</b></pre>
 
-## <a name="related-links"></a>相关链接
-
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

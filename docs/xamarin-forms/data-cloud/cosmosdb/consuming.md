@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: bc50f3567135d5b1dc805fa691cdd95acadf34f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b1453164533e2905e78407f33d79a178c7f1ae8
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327918"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978273"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>使用 Azure Cosmos DB 文档数据库
 
@@ -23,7 +23,7 @@ _Azure Cosmos DB 文档数据库是提供低延迟访问产品/服务面向需�
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
-**Microsoft Azure Cosmos DB，也可由[Xamarin 学院课程](https://university.xamarin.com/)**
+**Microsoft Azure Cosmos DB 视频**
 
 可以使用 Azure 订阅预配 Azure Cosmos DB 文档数据库帐户。 每个数据库帐户可以有零个或多个数据库。 Azure Cosmos DB 中的文档数据库是适用于文档集合和用户的逻辑容器。
 

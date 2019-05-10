@@ -1,32 +1,30 @@
 ---
-title: 设置 Xamarin.Forms CollectionView 选择模式
+title: Xamarin.Forms CollectionView 选定内容
 description: 默认情况下，禁用 CollectionView 选择。 但是，可以启用单个和多个选择。
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/18/2019
-ms.openlocfilehash: 441afb9348a85de61d35574bb9121c7de713a897
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/06/2019
+ms.openlocfilehash: 1ffed60253889491636fa105dd444ced9c2bedf5
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367576"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048202"
 ---
-# <a name="set-collectionview-selection-mode"></a>设置之间导航选择模式
+# <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 选定内容
 
-![预览](~/media/shared/preview.png)
+![](~/media/shared/preview.png "此 API 是当前预发布版本")
 
 [![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
-
-> [!IMPORTANT]
-> `CollectionView`当前为预览版，并且缺少一些其计划的功能。 此外，API 可能会更改为实现已完成。
 
 `CollectionView` 定义用于控制项选择的以下属性：
 
 - `SelectionMode`类型的`SelectionMode`，选择模式。
 - `SelectedItem`类型的`object`，列表中的选定的项。 此属性具有`null`时未不选择任何项的值。
+- `SelectedItems`类型的`IList<object>`，则在列表中选择项。 此属性为只读，并且具有`null`时没有选定的项的值。
 - `SelectionChangedCommand`类型的`ICommand`，其中的选定的项发生更改时执行。
 - `SelectionChangedCommandParameter`类型的`object`，这是传递给参数`SelectionChangedCommand`。
 
@@ -38,7 +36,7 @@ ms.locfileid: "61367576"
 - `Single` – 指示，选择单个项，而被突出显示的选定项。
 - `Multiple` – 指示，选择多个项，而被突出显示所选的项。
 
-`CollectionView` 定义`SelectionChanged`时引发的事件`SelectedItem`属性更改，或者由于用户选择某个项，从列表中，或当应用程序设置属性。 `SelectionChangedEventArgs`对象，它附带`SelectionChanged`事件具有两个属性，这两个类型`IReadOnlyList<object>`:
+`CollectionView` 定义`SelectionChanged`时引发的事件`SelectedItem`属性更改，或者由于用户选择某个项，从列表中，或当应用程序设置属性。 此外，此事件，也会激发时`SelectedItems`属性更改。 `SelectionChangedEventArgs`对象，它附带`SelectionChanged`事件具有两个属性，这两个类型`IReadOnlyList<object>`:
 
 - `PreviousSelection` – 所选内容发生更改之前已选择的项的列表。
 - `CurrentSelection` – 选定，所选内容更改后的项的列表。
@@ -73,8 +71,8 @@ collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
 ```csharp
 void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
 {
-    string previous = (previousSelectedItems.FirstOrDefault() as Monkey)?.Name;
-    string current = (currentSelectedItems.FirstOrDefault() as Monkey)?.Name;
+    string previous = (e.PreviousSelection.FirstOrDefault() as Monkey)?.Name;
+    string current = (e.CurrentSelection.FirstOrDefault() as Monkey)?.Name;
     ...
 }
 ```
@@ -86,7 +84,50 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 [![单项选择，在 iOS 和 Android 的 CollectionView 垂直列表的屏幕截图](selection-images/single-selection.png "CollectionView 垂直列表与单选")](selection-images/single-selection-large.png#lightbox "一个 CollectionView 垂直列表所选内容")
 
-## <a name="pre-selection"></a>预选择
+## <a name="multiple-selection"></a>多个所选内容
+
+当`SelectionMode`属性设置为`Multiple`中的多项`CollectionView`可以选择。 选择项后，`SelectedItems`属性将设置为所选项目。 此属性更改时，`SelectionChangedCommand`执行 (值为`SelectionChangedCommandParameter`传递给`ICommand`)，和`SelectionChanged`事件触发。
+
+下面的 XAML 示例演示`CollectionView`，可以响应多个项选择：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                SelectionMode="Multiple"
+                SelectionChanged="OnCollectionViewSelectionChanged">
+    ...
+</CollectionView>
+```
+
+等效的 C# 代码是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    SelectionMode = SelectionMode.Multiple
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+collectionView.SelectionChanged += OnCollectionViewSelectionChanged;
+```
+
+在此代码示例中，`OnCollectionViewSelectionChanged`事件处理程序执行时`SelectionChanged`事件触发时，与检索以前选定的项和当前选定的项的事件处理程序：
+
+```csharp
+void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var previous = e.PreviousSelection;
+    var current = e.CurrentSelection;
+    ...
+}
+```
+
+> [!IMPORTANT]
+> `SelectionChanged`由于更改而发生的更改可以引发事件`SelectionMode`属性。
+
+以下屏幕截图显示中的多个项选择`CollectionView`:
+
+[![使用多个选择，在 iOS 和 Android 上 CollectionView 垂直列表的屏幕截图](selection-images/multiple-selection.png "CollectionView 与多个所选内容的垂直列表")](selection-images/multiple-selection-large.png#lightbox "CollectionView 垂直列表多个所选内容")
+
+## <a name="single-pre-selection"></a>单个预选择
 
 当`SelectionMode`属性设置为`Single`中的单个项`CollectionView`可以通过设置预先选择`SelectedItem`到项的属性。 下面的 XAML 示例演示`CollectionView`，它预先选择单个项：
 
@@ -145,6 +186,43 @@ public class MonkeysViewModel : INotifyPropertyChanged
 因此，当`CollectionView`出现，列表中的第四个项已预先选择：
 
 [![IOS 和 Android 上的单个预选择的 CollectionView 垂直列表的屏幕截图](selection-images/single-pre-selection.png "CollectionView 与单个预选择的垂直列表")](selection-images/single-pre-selection-large.png#lightbox "CollectionView 垂直列表使用单个预选择")
+
+## <a name="multiple-pre-selection"></a>多个预选择
+
+当`SelectionMode`属性设置为`Multiple`中的多项`CollectionView`可以预先选择。 下面的 XAML 示例演示`CollectionView`，使预选择多个项：
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}"
+                SelectionMode="Multiple">
+    ...
+</CollectionView>
+```
+
+等效的 C# 代码是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    SelectionMode = SelectionMode.Multiple
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+中的多项`CollectionView`可以通过将它们添加到预先选择`SelectedItems`属性：
+
+```csharp
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(3).FirstOrDefault());
+collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
+```
+
+> [!NOTE]
+> `SelectedItems`属性只读的因此不能使用双向数据绑定来预先选择的项。
+
+因此，当`CollectionView`出现，第二个，第四，预先选择列表中的第五个项并且：
+
+[![IOS 和 Android 上的多个预选择的 CollectionView 垂直列表的屏幕截图](selection-images/multiple-pre-selection.png "CollectionView 具有多个预选择的垂直列表")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView 垂直使用多个预选择的列表")
 
 ## <a name="change-selected-item-color"></a>更改选定的项颜色
 

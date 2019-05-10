@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: fcf4e6d9b281eaac4be888c499e537f7397528a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8adc7ec7f717cf0004f79e3b71123d6daeaee86
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61391680"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978442"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
@@ -734,5 +734,3 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 - [绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [面向 Objective-C 开发人员的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
 - [框架设计指南](https://msdn.microsoft.com/library/ms229042.aspx)
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

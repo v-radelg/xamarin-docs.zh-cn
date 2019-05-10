@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: e599d4f99877e24e06de2c26ed2cafe48526f6f5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8c4dcbe0baf74479e94f8663280e7654b4d58a9d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61346899"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978158"
 ---
 # <a name="binding-ios-libraries"></a>绑定 iOS 库
 
@@ -38,15 +38,13 @@ ms.locfileid: "61346899"
 此页提供了创建使用开放源代码 iOS 绑定项目的分步演练[ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) Objective C 项目作为示例。 **InfColorPicker**库提供了允许用户选择一种颜色根据其 HSB 表示形式，使用户更加友好的颜色选择的可重用视图控制器。
 目标 Sharpie 将用于绑定过程中提供帮助。
 
-## <a name="xamarin-university-lightning-lecture"></a>Xamarin University 闪电讲座
+## <a name="video"></a>视频
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS 在 C 中的绑定 /C++，也可由[Xamarin University](https://university.xamarin.com/)**
+**iOS 在 C 中的绑定 /C++视频**
 
 ## <a name="related-links"></a>相关链接
 
 - [绑定 Objective-C](~/cross-platform/macios/binding/index.md)
 - [Mac 绑定](~/mac/platform/binding.md)
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

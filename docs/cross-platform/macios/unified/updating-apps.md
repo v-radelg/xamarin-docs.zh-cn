@@ -6,25 +6,21 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62b8e82a1191f3213453e9a213ea615e476662d5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61195583"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978228"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>更新现有应用到统一的 API
 
 > [!IMPORTANT]
-> Xamarin 经典 API 进行，前面有统一 API，已弃用。 
+> Xamarin 经典 API 进行，前面有统一 API，已弃用。
 > - Xamarin.iOS 支持经典 API (monotouch.dll) 的最后一个版本是 Xamarin.iOS 9.10。
 > - Xamarin.Mac 仍支持传统的 API，但将不再更新。 因为它已被弃用，开发人员应移动到 Unified API 其应用程序。
 
 ## <a name="how-to-update-your-apps"></a>如何更新您的应用程序
-
-Xamarin University 免费提供的视频对**升级到 iOS 统一 API**。 请访问[Xamarin University 闪电讲座](http://university.xamarin.com/lightninglectures)观看 ！
-
-[ ![](updating-apps-images/xamu-video-sml.png "Xamarin 学院课程")](http://university.xamarin.com/lightninglectures)
 
 有三个步骤来更新您的应用程序：
 

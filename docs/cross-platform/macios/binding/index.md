@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 3f1e1ce324e849c0c939d936eb6ee1470cf24a3b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266603"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978461"
 ---
 # <a name="binding-objective-c"></a>绑定 Objective-C
 
@@ -45,17 +45,13 @@ ms.locfileid: "61266603"
 
 ### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[绑定示例](https://github.com/mono/monotouch-bindings)
 
-创建新绑定项目时，可以是第三方绑定的集合使用引用。
+创建新绑定项目时可以用作引用的第三方绑定的集合。
 
 ## <a name="mac"></a>Mac
 
 从历史上看[Mac 绑定](~/mac/platform/binding.md)已被大量的手动过程。 目前尚[可下载预览](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)Mac 绑定项目对的支持未来版本的 Visual Studio for mac。
 
-
-
 ## <a name="related-links"></a>相关链接
 
 - [iOS 绑定](~/ios/platform/binding-objective-c/index.md)
 - [Mac 绑定](~/mac/platform/binding.md)
-- [Xamarin 大学课程：生成一个 Objective C 绑定库](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
-- [Xamarin 大学课程：生成与目标 Sharpie Objective C 绑定库](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
