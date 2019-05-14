@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 971effc34716596ec6be3708ac9da4e68d7bdfee
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: fb5cea018180966e914a5bce5e85cb83fbdf901d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978589"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557250"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的 iOS 扩展
 
@@ -71,7 +71,7 @@ ms.locfileid: "64978589"
 
 扩展可以与通过其主机应用程序进行通信[NSExtensionContext](xref:Foundation.NSExtensionContext)对象。 某些扩展具有接收结果的异步回调的操作。 将在后台线程上执行这些回调和扩展必须考虑这点;例如，通过使用[NSObject.InvokeOnMainThread](xref:Foundation.NSObject.InvokeOnMainThread*)如果用户想要更新的用户界面。 请参阅[与主机应用程序通信](#communicating-with-the-host-app)部分获取更多详细信息。
 
-默认情况下，扩展和其容器应用程序可以不进行通信，尽管一起安装。 在某些情况下，容器应用是实质上是一个空"shipping"的容器安装扩展后，就会提供其用途。 但是，如果规定的情况下，容器应用程序和扩展可能会共享公共区域中的资源。 此外，**今天扩展**可能会请求自己的容器应用程序来打开 URL。 此行为所示[发展倒计时小组件](https://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo)。
+默认情况下，扩展和其容器应用程序可以不进行通信，尽管一起安装。 在某些情况下，容器应用是实质上是一个空"shipping"的容器安装扩展后，就会提供其用途。 但是，如果规定的情况下，容器应用程序和扩展可能会共享公共区域中的资源。 此外，**今天扩展**可能会请求自己的容器应用程序来打开 URL。 此行为所示[事件倒计时小组件](https://github.com/xamarin/ios-samples/tree/master/intro-to-extensions)。
 
 ## <a name="creating-an-extension"></a>创建扩展
 

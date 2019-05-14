@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: e220abc575270f483c0a822ae01f979966691432
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 31303114ddd829b596569981b5812b91c4e95b30
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186432"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557446"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 标签
 
@@ -157,7 +157,7 @@ var label =
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) – 范围中文本的字体的大小。
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) – 范围中文本的颜色。 此属性已过时，已由`TextColor`属性。
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -若要将应用于跨度的默认行高度的乘数。 有关详细信息，请参阅[行高](#line-height)。
-- [`Text`](xref:Xamarin.Forms.Span.Text)  – 要将应用于跨度的样式。
+- [`Style`](xref:Xamarin.Forms.Span.Style)  – 要将应用于跨度的样式。
 - [`Text`](xref:Xamarin.Forms.Span.Text) – 跨度的文本。
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – 范围中文本的颜色。
 - `TextDecorations` -若要应用于范围中的文本的修饰。 有关详细信息，请参阅[文本修饰](#text-decorations)。

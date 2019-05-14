@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 0ff9f8b5ee6f9468650b6535745706bee8f96536
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876312"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557434"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML 预览程序中使用设计时数据
 
@@ -22,7 +22,7 @@ _某些布局很难直观显示不包含数据。使用这些提示可以充分�
 
 设计时数据是假设置以使您的控件更容易可视化 XAML 预览程序中的数据。 若要开始，到 XAML 页面的标头中添加以下代码行：
 
-```csharp
+```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
@@ -32,17 +32,17 @@ mc:Ignorable="d"
 
 例如，可以将文本添加到通常具有数据绑定到它的标签。
 
-```csharp
-<Label Text={Binding Name} d:Text="Name" />
+```xaml
+<Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
 [![设计时数据与在标签中的文本](xaml-previewer-images/designtimedata-label-sm.png "设计时间数据使用文本标签")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
- 在此示例中，而无需`d:Text`，XAML 预览程序不会显示任何标签。 相反，它将显示"名称"标签将包含实际数据的情况在运行时。
+在此示例中，而无需`d:Text`，XAML 预览程序不会显示任何标签。 相反，它显示了"Name ！" 标签将包含实际数据的情况在运行时。
 
 可以使用`d:`使用 Xamarin.Forms 控件，如颜色、 字体大小和间距的任何属性。 您甚至可以将其添加到控件本身：
 
-```csharp
+```xaml
 <d:Button Text="Design Time Button" />
 ```
 
@@ -54,7 +54,7 @@ mc:Ignorable="d"
 
 可以设置与页面绑定或动态加载中的图像的设计时间源。 在 Android 项目中，添加你想要为 XAML 预览程序中显示的图像**资源 > Drawable**文件夹。 在 iOS 项目中，将映像添加到**资源**文件夹。 然后可以在设计时在 XAML 预览程序中显示该图像：
 
-```csharp
+```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 [![设计时数据与图像](xaml-previewer-images/designtimedata-image-sm.png "设计时数据与配置映像")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
@@ -63,7 +63,7 @@ mc:Ignorable="d"
 
 Listview 是一种流行方式移动应用中显示数据。 但是，也很难直观显示不包含实际数据。 若要使用与它们的设计时数据，您必须创建要用作 ItemsSource 的设计时间数组。 XAML 预览程序显示什么是在设计时在 ListView 中该数组中。
 
-```csharp
+```xaml
 <StackLayout>
     <ListView ItemsSource="{Binding Items}">
         <d:ListView.ItemsSource>
@@ -87,8 +87,7 @@ Listview 是一种流行方式移动应用中显示数据。 但是，也很难�
 
 此示例将 XAML 预览程序中显示三个 TextCells 的 ListView。 您可以更改`x:String`到你的项目中的现有数据模型。
 
-请参阅[James Montemagno 的 Hanselman.Forms 应用](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L36-L57)有关更复杂的示例。
-
+请参阅[James Montemagno 的 Hanselman.Forms 应用](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)有关更复杂的示例。
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>备选过程：进行硬编码静态 ViewModel
 

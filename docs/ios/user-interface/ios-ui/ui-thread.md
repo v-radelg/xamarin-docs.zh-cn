@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6dd55f5c4316ed8f1d4f16d9e282cc2647350518
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9bde539286b69569b4928bc28b20faecee0f5209
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245318"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65557390"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin.iOS 中的 UI 线程
 
@@ -61,7 +61,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-您不需要的使用这在本文档中，但示例的其余部分是在您的应用程序发出网络请求时要记住的重要概念使用通知中心或需要完成的处理程序将在另一台运行的其他方法线程。
+无需将其用于此文档中的示例的其余部分，但很重要概念记住您的应用程序时发出网络请求，使用通知中心或需要完成的处理程序将在另一台运行的其他方法线程。
 
  <a name="Async_Await_Example" />
 
