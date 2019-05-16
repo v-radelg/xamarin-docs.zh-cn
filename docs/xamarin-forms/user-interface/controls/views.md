@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
 ms.openlocfilehash: 5b2e58901d4a850863f68b26ce41e1aa4e8daee4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 05/15/2019
 ms.locfileid: "61358733"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 视图
