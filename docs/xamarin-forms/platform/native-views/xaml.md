@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: cf04c3e89e3effdd317fa98beb46f9075a1defcd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
+ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61301915"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65731526"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的本机视图
 
@@ -37,8 +37,8 @@ _从 iOS、 Android 和通用 Windows 平台的本机视图可以直接引用 Xa
 1. 添加`xmlns`包含本机视图的命名空间的 XAML 文件中的命名空间声明。
 1. 在 XAML 文件中创建本机视图的实例。
 
-> [!NOTE]
-> XAMLC 必须关闭状态的所有 XAML 页，使用本机视图。
+> [!IMPORTANT]
+> 必须为使用本机视图任何 XAML 页禁用已编译的 XAML。 这可以通过修饰与 XAML 页面的代码隐藏类来实现`[XamlCompilation(XamlCompilationOptions.Skip)]`属性。 有关 XAML 编译的详细信息，请参阅[Xamarin.Forms 中 XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
 
 若要从代码隐藏文件引用本机视图，必须使用共享资产项目 (SAP)，并使用条件编译指令将特定于平台的代码包装。 有关详细信息请参阅[从代码中引用的本机视图](#native_view_code)。
 

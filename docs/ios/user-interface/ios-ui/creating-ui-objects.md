@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: a4cf63b84d0686bc28b02b18a6266908251bdf6f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c24b2c2f0742ee2c6814d9821f3c0603c6e48a96
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153971"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804920"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin.iOS 中创建用户界面对象
 
@@ -80,7 +80,7 @@ using UIKit;
 
  [![](creating-ui-objects-images/image6a.png "助手编辑器按钮")](creating-ui-objects-images/image6a.png#lightbox)
 
-单击用户界面对象;然后**控件拖动**到.h 文件。 到 * * 控件拖动 * *，按下控件键然后单击并按住通过用户界面对象，您要为创建插座 （或操作）。 在拖动到标头文件时，保留按下控件键。 完成下面拖动`@interface`定义。 下面的屏幕截图中所示，标题插入电源插座或电源插座集合应显示一条蓝线。
+单击用户界面对象;然后**控件拖动**到.h 文件。 向**控件拖动**、 按下控件键，然后单击和保存您要为创建插座 （或操作） 的用户界面对象。 在拖动到标头文件时，保留按下控件键。 完成下面拖动`@interface`定义。 下面的屏幕截图中所示，标题插入电源插座或电源插座集合应显示一条蓝线。
 
 当你释放系统会提示提供电源插座，用于创建一个名称单击C#可以在代码中引用的属性：
 

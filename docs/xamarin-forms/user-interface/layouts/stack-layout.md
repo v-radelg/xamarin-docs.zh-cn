@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: bdc03721569682cd5b4f72908fcab1e4a567b83c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
+ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370609"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65804898"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 
-`StackLayout` 水平或垂直方向组织是一维直线 （"堆栈"） 中的视图。 视图中`StackLayout`可以基于使用布局选项布局中的空间大小。 定位取决于视图已添加到的布局和视图的布局选项的顺序。
+[StackLayout](xref:Xamarin.Forms.StackLayout)水平或垂直方向组织是一维直线 （"堆栈"） 中的视图。 视图中`StackLayout`可以基于使用布局选项布局中的空间大小。 定位取决于视图已添加到的布局和视图的布局选项的顺序。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms 布局")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 布局")
 
