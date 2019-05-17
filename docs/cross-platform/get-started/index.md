@@ -1,18 +1,18 @@
 ---
 title: Xamarin 入门
-description: 本文档链接到介绍如何开始使用 Xamarin 开发的各种指南。 链接内容讨论了如何生成第一个应用，对移动开发进行了总体介绍，并介绍了 Xamarin University 培训。
+description: 本文档链接到介绍如何开始使用 Xamarin 开发的各种指南。 链接内容讨论了如何生成第一个应用，并对移动开发进行了总体介绍。
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: b9b48d83199f83c69a42785d4d0c4008a5c6a5e1
-ms.sourcegitcommit: d62732ce6f3f9d8dc929d72d4acac3e592cba073
+ms.openlocfilehash: da2c927bc7d6943066b6b2541d9af98a560c40b5
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57197389"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978436"
 ---
 # <a name="building-mobile-apps"></a>构建移动应用
 
@@ -48,11 +48,11 @@ ms.locfileid: "57197389"
 
 详细了解适用于 macOS 的集成开发环境 (IDE) Visual Studio for Mac。
 
-## <a name="get-started-with-xamarin-university"></a>Xamarin University 入门
+## <a name="get-started-video"></a>入门视频
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-通过 [Xamarin University](https://university.xamarin.com) 使用 Xamarin for Visual Studio 生成第一个 Xamarin.Forms 应用
+**使用 Xamarin for Visual Studio 生成第一个 Xamarin.Forms 应用**
 
 ## <a name="related-links"></a>相关链接
 

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: ed59f32711bae56672d1d7f114fbb80a906d67ce
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 0b063619387d9984e24f6987234605b626289e2d
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855284"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978304"
 ---
 # <a name="hello-ios--quickstart"></a>Hello，iOS - 快速入门
 
@@ -26,7 +26,7 @@ ms.locfileid: "58855284"
 
 使用 Xamarin 进行 iOS 开发需要：
 
-- 运行 macOS HIgh Sierra (10.13) 或更高版本的 Mac。
+- 运行 macOS High Sierra (10.13) 或更高版本的 Mac。
 - 从 [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 安装的最新版本 Xcode 和 iOS SDK。
 
 ::: zone pivot="macos"

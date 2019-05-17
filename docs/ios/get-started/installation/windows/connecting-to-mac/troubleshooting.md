@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: cfc4ecc5bf7ebc5e4c4dae8094fe3eb4ece34068
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f56f2c58195e51e9294948dad85a475e181f99b2
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112491"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978540"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -142,19 +142,19 @@ ms.locfileid: "50112491"
 
 报告的原因：
 
-- **Bug** - 一些用户在尝试使用 Active Directory 或其他目录服务域用户帐户登录到生成主机时，遇到了此错误消息，并且在日志文件中有更详细的错误”为用户配置 SSH 时发生意外错误...会话操作已超时”。 **解决方法：** 改为使用本地用户帐户登录到生成主机。
+- **Bug** - 一些用户在尝试使用 Active Directory 或其他目录服务域用户帐户登录到生成主机时，遇到了此错误消息，并且在日志文件中有更详细的错误”为用户配置 SSH 时发生意外错误...会话操作已超时”。 **临时解决方法：** 改为使用本地用户帐户登录到生成主机。
 
-- **Bug** – 一些用户在尝试通过双击连接对话框中的 Mac 名称来连接到生成主机时遇到了此错误。 **可能的解决办法**：使用 IP 地址[手动添加 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
+- **Bug** – 一些用户在尝试通过双击连接对话框中的 Mac 名称来连接到生成主机时遇到了此错误。 **可能的解决方法**：使用 IP 地址[手动添加 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
-- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些用户在 Mac 生成主机与 Windows 之间使用无线网络连接时遇到了此错误。 **可能的解决办法**：将两台计算机移动到有线网络连接。
+- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些用户在 Mac 生成主机与 Windows 之间使用无线网络连接时遇到了此错误。 **可能的解决方法**：将两台计算机移动到有线网络连接。
 
-- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 中，只要 Mac 上的 **$HOME/.bashrc** 文件包含错误，此消息便会出现。 （从 Xamarin 4.1 开始，**.bashrc** 文件中的错误将不再影响连接过程。）**解决方法**：将 **.bashrc** 文件移动到备份位置（或是在知道不再需要它时删除它）。
+- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 中，只要 Mac 上的 **$HOME/.bashrc** 文件包含错误，此消息便会出现。 （从 Xamarin 4.1 开始，**.bashrc** 文件中的错误将不再影响连接过程。）**解决办法**：将 .bashrc 文件移动到备份位置（或是在知道不再需要它时删除它）。
 
 - Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264) - 如果在“系统偏好设置”>“用户和组”中，Mac 用户的“高级选项”上下文菜单中的“登录 shell”设置为除“/bin/bash”以外的值，可能会出现此错误。 **解决方法**：将“登录 shell”更改回原始默认值 **/bin/bash**。
 
 - **限制** – 如果 Mac 生成主机连接到无法访问 Internet 的路由器（或如果 Mac 使用的 DNS 服务器在系统要求进行 Windows 计算机的反向 DNS 查找时超时），则可能会出现此错误。 Visual Studio 需要大约 30 秒来检索 SSH 指纹，最终未能连接。
 
-    **可能的解决办法**：将“UseDNS no”添加到 **sshd\_config** 文件。 请务必在进行更改之前查看此 SSH 设置。 请参阅示例 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)。
+    **可能的解决方法**：将“UseDNS no”添加到 sshd\_config 文件。 请务必在进行更改之前查看此 SSH 设置。 请参阅示例 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)。
 
     以下步骤描述更改该设置的一种方法。 你需要在 Mac 上登录到管理员帐户以完成这些步骤。
 
@@ -210,7 +210,7 @@ ms.locfileid: "50112491"
 
 只要已确认 Mac 和 Windows 都更新到相同 Xamarin 分发通道，便可以忽略此警告。
 
-#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>“未能执行 'ls /usr/bin/mono': ExitStatus=1”
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>“未能执行 'ls /usr/bin/mono': ExitStatus=1"
 
 只要 Mac 在运行 OS X 10.11 (El Capitan) 或更高版本，便可以忽略此消息。 此消息在 OS X 10.11 上不是什么问题，因为 Xamarin 还会检查 **/usr/local/bin/mono**，这是 `mono` 在 OS X 10.11 上的正确预期位置。
 
@@ -303,7 +303,7 @@ ms.locfileid: "50112491"
 
 已知原因：
 
-- **Xamarin 4.1 安全功能** – 如果在使用 Xamarin 4.1 或更高版本之后降级到 Xamarin 4.0，则_会_ 发生此错误。 在这种情况下，会伴随错误出现附加警告“私钥已加密，但密码为空”。 这是由于 Xamarin 4.1 中的新安全功能而_有意_ 进行的更改。 **推荐修复方法**：从 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中删除 **id\_rsa** 和 **id\_rsa.pub**，然后重新连接到 Mac 生成主机。
+- **Xamarin 4.1 安全功能** – 如果在使用 Xamarin 4.1 或更高版本之后降级到 Xamarin 4.0，则_会_ 发生此错误。 在这种情况下，会伴随错误出现附加警告“私钥已加密，但密码为空”。 这是由于 Xamarin 4.1 中的新安全功能而_有意_ 进行的更改。 **推荐的修复方法**：从 %LOCALAPPDATA%\Xamarin\MonoTouch 中删除 id\_rsa 和 id\_rsa.pub，然后重新连接到 Mac 生成主机。
 
 - **SSH 安全限制** – 当伴随此消息出现附加警告“无法使用现有 ssh 密钥对用户进行身份验证”时，它通常表示 Mac 上 **$HOME/.ssh/authorized\_keys** 完全限定路径中的文件或目录之一对_其他_ 或_组_ 成员启用了写入权限。 **常用修复方法**：在 Mac 上的终端命令提示中运行 `chmod og-w "$HOME"`。 有关导致该问题的特定文件或目录的详细信息，请在终端中运行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然后从桌面打开 **sshd.log** 文件并查找“拒绝身份验证: 所有权或模式错误”。
 
@@ -377,4 +377,4 @@ killall mono
 ## <a name="related-links"></a>相关链接
 
 - [与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Xamarin Mac 生成代理 - Xamarin University 闪电讲座](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
+- [Xamarin Mac 生成代理视频](https://www.youtube.com/watch?v=MBAPBtxkjFQ)

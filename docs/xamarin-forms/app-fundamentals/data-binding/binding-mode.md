@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1a8611e5dd0be77eeef065d546f6a0642f384b00
-ms.sourcegitcommit: 00744f754527e5b55154365f89691caaf1c9d929
+ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57557277"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64977777"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
 
@@ -109,7 +109,7 @@ ms.locfileid: "57557277"
 
 “简易颜色选择器”页面演示了如何使用简单的 ViewModel。 数据绑定允许用户使用三个 `Slider` 元素为 Hue、Saturation 和 Luminosity 选择颜色。
 
-ViewModel 是数据绑定源。 ViewModel 没有定义可绑定属性，但它实现了一种通知机制，允许在属性值更改时通知绑定基础结构。 此通知机制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 接口，该接口定义名为 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的单个属性。 实现此接口的类通常在其某个公共属性更改值时触发该事件。 如果属性永远不会更改，则不需要触发该事件。 （`INotifyPropertyChanged` 接口也由 `BindableObject` 实现，并且只要可绑定属性更改值，就会触发 `PropertyChanged` 事件。）
+ViewModel 是数据绑定源。 ViewModel 没有定义可绑定属性，但它实现了一种通知机制，允许在属性值更改时通知绑定基础结构。 此通知机制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 接口，该接口定义名为 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的单个事件。 实现此接口的类通常在其某个公共属性更改值时触发该事件。 如果属性永远不会更改，则不需要触发该事件。 （`INotifyPropertyChanged` 接口也由 `BindableObject` 实现，并且只要可绑定属性更改值，就会触发 `PropertyChanged` 事件。）
 
 `HslColorViewModel` 类定义五个属性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 属性是相互关联的。 当这三个颜色组件中的任何一个更改值时，都将重新计算 `Color` 属性，并为所有四个属性触发 `PropertyChanged` 事件：
 
@@ -677,7 +677,7 @@ public partial class SampleSettingsPage : ContentPage
 
 [![示例设置](binding-mode-images/samplesettings-small.png "Sample Settings")](binding-mode-images/samplesettings-large.png#lightbox "Sample Settings")
 
-其他两个屏幕截图显示更改后的设置。 尝试使用此页面时，请记住将程序置于休眠状态，或在程序运行的设备或模拟器上终止程序。 从 Visual Studio 调试器终止程序不会导致调用 `App` 类中的 `OnSleep` 替代。
+其他屏幕截图显示已更改的设置。 尝试使用此页面时，请记住将程序置于休眠状态，或在程序运行的设备或模拟器上终止程序。 从 Visual Studio 调试器终止程序不会导致调用 `App` 类中的 `OnSleep` 替代。
 
 在下一篇文章中，可了解如何指定对 `Label` 的 `Text` 属性设置的数据绑定的[字符串格式](string-formatting.md)。
 

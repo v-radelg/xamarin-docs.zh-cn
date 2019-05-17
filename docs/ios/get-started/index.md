@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: c085b515bf6618d110d95dc5a6456df182fa803f
-ms.sourcegitcommit: 9dcb7377dc92ad921285fbb857b0be13030bbea3
+ms.openlocfilehash: b5c11b5db75da22d48b7db265ea013cb600ef02c
+ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55668571"
+ms.lasthandoff: 05/01/2019
+ms.locfileid: "64978240"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS 入门
 
@@ -49,8 +49,8 @@ Xcode 的最新版可通过 [iOS 开发人员中心](https://developer.apple.com
 
 为 Objective-C 开发人员提供过渡到 Xamarin 平台的信息。
 
-## <a name="xamarin-university-video"></a>Xamarin University 视频
+## <a name="video"></a>视频
 
 > [!VIDEO https://youtube.com/embed/1ilsDnYC-B8]
 
-通过 [Xamarin University](https://university.xamarin.com) 使用 Xamarin for Visual Studio 生成第一个 iOS 应用
+**使用 Xamarin for Visual Studio 生成第一个 iOS 应用**

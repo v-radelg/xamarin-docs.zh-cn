@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 2178c9f4115c42396635e22cb0688695b590ec26
-ms.sourcegitcommit: 817d26585093cd180a36b28179eb354b0eb900b3
+ms.openlocfilehash: 1e40b0a71317d8c9cb3de391a0b941a5bb081956
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55292150"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65048159"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 应用程序基础知识
 
@@ -76,9 +76,9 @@ Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程�
 
 Xamarin.Forms 提供多种不同的页面导航体验，具体取决于使用的 `Page` 类型。
 
-## <a name="shellshellmd"></a>[shell](shell.md)
+## <a name="shellshellindexmd"></a>[shell](shell/index.md)
 
-Xamarin.Forms Shell 是应用程序容器，提供大多数应用程序需要的基本 UI 功能，让你能够专注于处理应用程序的核心工作负载。
+Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数移动应用程序所需的基本功能。 包括常见的导航用户体验、基于 URI 的导航方案，以及集成的搜索处理程序。
 
 ## <a name="templatestemplatesindexmd"></a>[模板](templates/index.md)
 

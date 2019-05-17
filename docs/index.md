@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ee92a3430fcce5bcd389d2bfa78762b71d1d5be9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 799cccf65a0dce1210fb841df578104fa7ad50bc
+ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61030826"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65047980"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -57,18 +57,18 @@ ms.locfileid: "61030826"
                 </a>
             </li>
              <li>
-                <a href="https://university.xamarin.com">
+                <a href="~/xamarin-forms/app-fundamentals/shell/index.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
                                 <div class="cardImageOuter">
-                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_virtual-training.svg"); background-size: cover;'>
-                                        <img style="display: none;" alt="Xamarin University" src="https://docs.microsoft.com/media/common/i_virtual-training.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_virtual-training.svg">
+                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_preview.svg"); background-size: cover;'>
+                                        <img style="display: none;" alt="" src="https://docs.microsoft.com/media/common/i_preview.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_preview.svg">
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3 class="x-hidden-focus">Xamarin University</h3>
-                                    <p>通过自主学习，在线免费自学。</p>
+                                    <h3 class="x-hidden-focus">Xamarin.Forms 4.0</h3>
+                                    <p>新的 Shell 功能预览。</p>
                                 </div>
                             </div>
                         </div>
