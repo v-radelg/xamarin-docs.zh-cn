@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: fa339d9fd404cf74aa603d853abde5f9128e57b5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6e65124df4b20a50091ad93e18621f8e6707ebbe
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250692"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970555"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑块
 
@@ -49,10 +49,10 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可以由用户选择操
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) 是在栏上左侧和右侧的滚动块的颜色。
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) 是条 thumb 右侧的颜色。
 - [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) 为缩略图颜色。
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) 是要用于滚动块的类型的图像[ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource)。
+- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty) 是要用于滚动块的类型的图像[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)。
 
 > [!NOTE]
-> `ThumbColor`和`ThumbImage`属性是互相排斥。 如果设置了这两个属性，`ThumbImage`属性将优先。
+> `ThumbColor`和`ThumbImageSource`属性是互相排斥。 如果设置了这两个属性，`ThumbImageSource`属性将优先。
 
 ## <a name="basic-slider-code-and-markup"></a>滑块的基本代码和标记
 

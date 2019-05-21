@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a57775776b32f34d2c9b976a22cc92cc22f3c879
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61374101"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970991"
 ---
 # <a name="device-orientation"></a>设备方向
 
@@ -243,7 +243,7 @@ protected override void OnSizeAllocated (double width, double height){
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="ResponsiveLayout.AbsoluteLayoutPageXaml"
-Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
+Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
     <ContentPage.Content>
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -297,7 +297,7 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="ResponsiveLayout.RelativeLayoutPageXaml"
 Title="RelativeLayout - XAML"
-BackgroundImage="deer.jpg">
+BackgroundImageSource="deer.jpg">
     <ContentPage.Content>
         <RelativeLayout x:Name="outerLayout">
             <BoxView BackgroundColor="#AA1A7019"

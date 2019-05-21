@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: b0e2d5e3c7923e5c3cf2adcc1dd104a97b78e727
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28846e6e9590d2adf56114fce8bc6056c0112ac1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61321545"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970968"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的可绑定布局
 
@@ -31,8 +31,10 @@ ms.locfileid: "61321545"
 
 `Layout<T>`类公开[ `Children` ](xref:Xamarin.Forms.Layout`1.Children)布局的子元素都添加到集合。 当`BinableLayout.ItemsSource`属性是否设置为一系列项以及连接到[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)-派生的类中，集合中每个项添加到`Layout<T>.Children`通过布局显示的集合。 `Layout<T>`-基础集合发生更改时，派生的类然后将更新其子视图。 有关 Xamarin.Forms 布局循环的详细信息，请参阅[创建自定义布局](~/xamarin-forms/user-interface/layouts/custom.md)。
 
+要显示的项集合很小，并滚动和选择不需要时，应仅使用可绑定的布局。 虽然可以由包装的可绑定布局提供滚动[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)，建议不要因为可绑定布局缺少 UI 虚拟化。 滚动是必需的如包含 UI 虚拟化的可滚动视图[ `ListView` ](xref:Xamarin.Forms.ListView)或[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)，应使用。 不遵守此建议可能会导致性能问题。
+
 > [!IMPORTANT]
-> 要显示的项集合很小，并滚动和选择不需要时，应仅使用可绑定的布局。 虽然可以由包装的可绑定布局提供滚动[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)，建议不要因为可绑定布局缺少 UI 虚拟化。 滚动是必需的如包含 UI 虚拟化的可滚动视图[ `ListView` ](xref:Xamarin.Forms.ListView)或`CollectionView`，应使用。 不遵守此建议可能会导致性能问题。
+>虽然从技术上讲可能附加到任何布局类派生的可绑定的布局，但[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)类，它并不总是可行若要执行此操作，特别是对于[ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout)[ `Grid` ](xref:Xamarin.Forms.Grid)，和[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)类。 例如，考虑以下场景： 想要显示的数据集合的[ `Grid` ](xref:Xamarin.Forms.Grid)使用可绑定的布局，其中集合中的每个项一个对象包含多个属性。 中的每一行`Grid`应显示从集合中的每列的对象`Grid`显示对象的属性之一。 因为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)可绑定的布局可以仅包含单个对象，它是该对象可包含每个特定于中显示对象的属性之一的多个视图的布局类的必要条件`Grid`列。 虽然可以使用可绑定布局 realised 这种情况下，这会导致父`Grid`包含子级`Grid`绑定集合中每个项，这是高效率低且有问题的`Grid`布局。
 
 ## <a name="populating-a-bindable-layout-with-data"></a>填充数据的可绑定布局
 
@@ -42,7 +44,7 @@ ms.locfileid: "61321545"
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 IEnumerable<string> items = ...;
@@ -72,7 +74,7 @@ BindableLayout.SetItemsSource(grid, items);
 </StackLayout>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 DataTemplate circleImageTemplate = ...;
@@ -97,7 +99,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
             ... />
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 DataTemplateSelector dataTemplateSelector = new TechItemTemplateSelector { ... };

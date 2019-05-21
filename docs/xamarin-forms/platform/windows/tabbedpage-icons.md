@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 18e27cfc8ebf0a3d9e94ebbbf3b0da06dd30ed48
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: a2a0aa5c7d204a4dc135451a771c81b9739456fb
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926855"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971050"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>在 Windows 上的 TabbedPage 图标
 
@@ -32,13 +32,13 @@ ms.locfileid: "65926855"
             </x:Arguments>
         </Size>
     </windows:TabbedPage.HeaderIconsSize>
-    <ContentPage Title="Todo" Icon="todo.png">
+    <ContentPage Title="Todo" IconImageSource="todo.png">
         ...
     </ContentPage>
-    <ContentPage Title="Reminders" Icon="reminders.png">
+    <ContentPage Title="Reminders" IconImageSource="reminders.png">
         ...
     </ContentPage>
-    <ContentPage Title="Contacts" Icon="contacts.png">
+    <ContentPage Title="Contacts" IconImageSource="contacts.png">
         ...
     </ContentPage>
 </TabbedPage>
@@ -58,9 +58,9 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
     On<Windows>().SetHeaderIconsEnabled(true);
     On<Windows>().SetHeaderIconsSize(new Size(24, 24));
 
-    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
-    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
-    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+    Children.Add(new ContentPage { Title = "Todo", IconImageSource = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", IconImageSource = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", IconImageSource = "contacts.png" });
   }
 }
 ```

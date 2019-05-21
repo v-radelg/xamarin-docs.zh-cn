@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2018
-ms.openlocfilehash: 3bd606ae87c524202fd5ea7c141223042e90ec1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc02fdc8754db4ae97c29ba2a496804b2263abdc
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61362985"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970732"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
@@ -34,6 +34,7 @@ Xamarin.Forms 视图、 页面和 Android 上的布局提供了以下特定于�
 - 在启用投影`ImageButton`。 有关详细信息，请参阅[ImageButton 删除阴影的 Android](imagebutton-drop-shadow.md)。
 - 启用快速滚动[ `ListView` ](xref:Xamarin.Forms.ListView)的详细信息，请参阅[ListView 快速滚动在 Android 上](listview-fast-scrolling.md)。
 - 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合的内容。 有关详细信息，请参阅[WebView 混合内容在 Android 上](webview-mixed-content.md)。
+- 启用缩放[ `WebView` ](xref:Xamarin.Forms.WebView)。 有关详细信息，请参阅[在 Android 上的 WebView 缩放](webview-zoom-controls.md)。
 
 在 Android 上 Xamarin.Forms 页面提供以下特定于平台的功能：
 

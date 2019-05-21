@@ -7,29 +7,27 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 1350d5a5a0845029b7ef6a06647ad4c56f0f8135
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 68e28fcbe6a64834d3b594f7f639a1cdd990370d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048263"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970573"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms 之间导航数据
 
-![](~/media/shared/preview.png "此 API 是当前预发布版本")
-
 [![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
-`CollectionView` 定义以下属性，定义要显示的数据，其外观：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义以下属性，定义要显示的数据，其外观：
 
-- `ItemsSource`类型的`IEnumerable`，指定要显示项目的集合，默认值为`null`。
-- `ItemTemplate`类型的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，指定要应用于要显示的项集合中的每个项目的模板。
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)类型的`IEnumerable`，指定要显示项目的集合，默认值为`null`。
+- [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)类型的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，指定要应用于要显示的项集合中的每个项目的模板。
 
 这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。
 
 ## <a name="populate-a-collectionview-with-data"></a>填充数据 CollectionView
 
-一个`CollectionView`通过设置使用数据填充其`ItemsSource`属性设置为任何实现的集合`IEnumerable`。 项可以在 XAML 中通过初始化中添加`ItemsSource`属性从一个字符串数组：
+一个[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)通过设置使用数据填充其[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性设置为任何实现的集合`IEnumerable`。 项可以在 XAML 中通过初始化中添加`ItemsSource`属性从一个字符串数组：
 
 ```xaml
 <CollectionView>
@@ -50,7 +48,7 @@ ms.locfileid: "65048263"
 > [!NOTE]
 > 请注意，`x:Array` 元素需要用于指示数组中项目类型的 `Type` 属性。
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -67,30 +65,30 @@ collectionView.ItemsSource = new string[]
 ```
 
 > [!IMPORTANT]
-> 如果`CollectionView`是所需刷新，如添加、 移除或更改基础集合中的项，应为基础集合`IEnumerable`集合，其中将发送属性更改通知，例如`ObservableCollection`。
+> 如果[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是所需刷新，如添加、 移除或更改基础集合中的项，应为基础集合`IEnumerable`发送属性的集合更改通知，例如`ObservableCollection`.
 
-默认情况下，`CollectionView`垂直列表中显示项，如以下屏幕截图中所示：
+默认情况下[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)垂直列表中显示项，如以下屏幕截图中所示：
 
 [![包含文本项，在 iOS 和 Android 上的 CollectionView 的屏幕截图](populate-data-images/text.png "文本项中 CollectionView")](populate-data-images/text-large.png#lightbox "之间导航中的文本项")
 
-有关如何更改的信息`CollectionView`布局，请参阅[指定布局](layout.md)。 了解如何定义在每个项的外观`CollectionView`，请参阅[定义项外观](#define-item-appearance)。
+有关如何更改的信息[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)布局，请参阅[指定布局](layout.md)。 了解如何定义在每个项的外观`CollectionView`，请参阅[定义项外观](#define-item-appearance)。
 
 ### <a name="data-binding"></a>数据绑定
 
-`CollectionView` 通过使用数据绑定来绑定可以使用数据填充其`ItemsSource`属性设置为`IEnumerable`集合。 在 XAML，这实现与`Binding`标记扩展：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 通过使用数据绑定来绑定可以使用数据填充其[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性设置为`IEnumerable`集合。 在 XAML，这实现与`Binding`标记扩展：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}" />
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-在此示例中，`ItemsSource`将属性数据绑定到`Monkeys`连接的视图模型属性。
+在此示例中， [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性数据绑定到`Monkeys`连接的视图模型属性。
 
 > [!NOTE]
 > 可以启用已编译的绑定，以提高 Xamarin.Forms 应用程序中的数据绑定性能。 有关详细信息，请参阅[编译绑定](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
@@ -99,7 +97,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ## <a name="define-item-appearance"></a>定义项外观
 
-在每个项的外观`CollectionView`可以通过设置定义`CollectionView.ItemTemplate`属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+在每个项的外观[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以定义通过设置[ `CollectionView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -134,7 +132,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -187,7 +185,7 @@ public class Monkey
 
 ## <a name="choose-item-appearance-at-runtime"></a>选择项在运行时的外观
 
-在每个项的外观`CollectionView`可以在运行时，通过设置基于项值中，选择`CollectionView.ItemTemplate`属性设置为[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)对象：
+在每个项的外观[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以在运行时，通过设置基于项值中，选择[ `CollectionView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)对象：
 
 ```xaml
 <ContentPage ...
@@ -211,7 +209,7 @@ public class Monkey
 </ContentPage>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -221,7 +219,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-`ItemTemplate`属性设置为`MonkeyDataTemplateSelector`对象。 下面的示例演示`MonkeyDataTemplateSelector`类：
+[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为`MonkeyDataTemplateSelector`对象。 下面的示例演示`MonkeyDataTemplateSelector`类：
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector

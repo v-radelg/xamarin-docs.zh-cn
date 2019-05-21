@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 5c1d73acfef7a4384db7220daf7319251eb61f85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 996e6469347a50523964a5b855804b0041ff8d21
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61040956"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970986"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的图像
 
@@ -102,13 +102,13 @@ UWP 图像文件名称[可以使用作为后缀`.scale-xxx`文件扩展名之前
 
 某些控件具有显示图像，如的属性：
 
-- [`Page`](xref:Xamarin.Forms.Page) -任何页上，键入派生`Page`已[ `Icon` ](xref:Xamarin.Forms.Page.Icon)并[ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage)属性，可以分配的本地文件引用。 在某些情况下，例如何时[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)显示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，将显示该图标，如果受平台支持。
+- [`Page`](xref:Xamarin.Forms.Page) -任何页上，键入派生`Page`已[ `IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)并[ `BackgroundImageSource` ](xref:Xamarin.Forms.Page.BackgroundImageSource)属性，可以为其指定文件、 嵌入的资源、 URI 或流。 在某些情况下，例如何时[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)显示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，将显示该图标，如果受平台支持。
 
   > [!IMPORTANT]
-  > 在 iOS 上， [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon)属性不能填充从资产目录映像组中的映像。 相反，加载图标的映像`Page.Icon`属性从**资源**iOS 项目文件夹中的。
+  > 在 iOS 上， [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)属性不能填充从资产目录映像组中的映像。 相反，加载图标图像的`Page.IconImageSource`属性从文件、 嵌入的资源、 URI 或流。
 
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -具有[ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon)可以设置为本地文件引用的属性。
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -具有[ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)从本地文件、 嵌入的资源或一个 URI 检索可以设置为图像的属性。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -具有[ `IconImageSource` ](xref:Xamarin.Forms.MenuItem.IconImageSource)可以设置从文件、 嵌入的资源、 URI 或流加载的图像的属性。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -具有[ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)从文件、 嵌入的资源、 URI 或流检索可以设置为图像的属性。
 
 ## <a name="embedded-images"></a>嵌入图像
 

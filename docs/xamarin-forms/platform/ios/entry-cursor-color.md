@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 41390a36eb303b7e06bcb31f89c23120cede0271
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 6d075f782778313fafff3f26760152a1efbd84c8
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926754"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971032"
 ---
 # <a name="entry-cursor-color-on-ios"></a>在 iOS 上的条目光标颜色
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
-此特定于平台的设置的游标颜色[ `Entry` ](xref:Xamarin.Forms.Entry)为指定的颜色。 设置使用在 XAML [ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty)可绑定属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+此 iOS 平台特定设置的游标颜色[ `Entry` ](xref:Xamarin.Forms.Entry)为指定的颜色。 设置使用在 XAML [ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty)可绑定属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
 <ContentPage ...

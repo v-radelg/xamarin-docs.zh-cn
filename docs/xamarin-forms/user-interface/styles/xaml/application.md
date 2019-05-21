@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 665f5d1653b74997519149cef68e0882f476179d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7b13a192f883ea667977f4d9ae3eea41d8c65e24
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924615"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971175"
 ---
 # <a name="global-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的全局样式
 
@@ -49,7 +49,7 @@ _样式可全局添加到应用程序的资源字典。这有助于避免跨页�
 下面的代码示例显示了 XAML 页应用`buttonStyle`向该页面的[ `Button` ](xref:Xamarin.Forms.Button)实例：
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <Button Text="These buttons" Style="{StaticResource buttonStyle}" />
@@ -71,7 +71,7 @@ _样式可全局添加到应用程序的资源字典。这有助于避免跨页�
 样式的视图层次结构中较低级别优先于更高版本定义了。 例如，设置[ `Style` ](xref:Xamarin.Forms.Style) ，用于设置[ `Button.TextColor` ](xref:Xamarin.Forms.Button.TextColor)到`Red`在应用程序级别将被重写由设置的页级别样式`Button.TextColor`到`Green`. 同样，将控件级别样式将页级别样式中重写。 此外，如果`Button.TextColor`设置直接上的控件属性，这将优先于任何样式。 在下面的代码示例演示此优先顺序：
 
 ```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" Icon="xaml.png">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ApplicationStylesPage" Title="Application" IconImageSource="xaml.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="buttonStyle" TargetType="Button">

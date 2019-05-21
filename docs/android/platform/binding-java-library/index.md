@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 0f4ec3cfd7c154e43db9f8e123259317c0d17e21
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 016ac7269f334f6df7fba9635897b9608f459284
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60957434"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970207"
 ---
 # <a name="binding-a-java-library"></a>绑定 Java 库
 
@@ -70,7 +70,7 @@ using Com.Company.Package;
 
 * **是否有任何库的外部依赖关系？** &ndash; 必须为 Xamarin.Android 项目中包含所需的 Android 库的任何 Java 依赖项**ReferenceJar**或是**EmbeddedReferenceJar**。 必须将任何本机程序集添加到作为绑定项目**EmbeddedNativeLibrary**。  
 
-* **哪个版本的 Android API 是执行 Android 库目标？** &ndash; 不能以"降级"的 Android API 级别;确保，Xamarin.Android 绑定项目面向的相同的 API 级别 （或更高） 为 Android 库。
+* **哪个版本的 Android API does Android 库目标？** &ndash; 不能以"降级"的 Android API 级别;确保，Xamarin.Android 绑定项目面向的相同的 API 级别 （或更高） 为 Android 库。
 
 * **哪些版本的 JDK 用于编译库？** &ndash; 如果使用不同版本的 JDK 比在使用 xamarin.android 生成 Android 库，可能会发生绑定错误。 如果可能，请重新编译使用相同的 Xamarin.Android 安装使用的 jdk 版本的 Android 库。
 

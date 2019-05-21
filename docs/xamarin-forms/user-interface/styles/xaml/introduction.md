@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: bc0173df1d4318af7db945d1c5ed6654282e31f5
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9e5fb0196b67e23a034856ee0dd7b9c7d4846b31
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926996"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971114"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms 样式简介
 
@@ -25,7 +25,7 @@ Xamarin.Forms 应用程序通常包含多个具有相同的外观的控件。 �
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Styles.NoStylesPage"
     Title="No Styles"
-    Icon="xaml.png">
+    IconImageSource="xaml.png">
     <ContentPage.Content>
         <StackLayout Padding="0,20,0,0">
             <Label Text="These labels"
@@ -53,7 +53,7 @@ public class NoStylesPageCS : ContentPage
     public NoStylesPageCS ()
     {
         Title = "No Styles";
-        Icon = "csharp.png";
+        IconImageSource = "csharp.png";
         Padding = new Thickness (0, 20, 0, 0);
 
         Content = new StackLayout {

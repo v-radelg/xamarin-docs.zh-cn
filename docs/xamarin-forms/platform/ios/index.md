@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: 471e09f236be505190ad2c08169bd445dcfca0a3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365657"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971022"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>在 Xamarin.Forms 中的 iOS 平台功能
 
@@ -45,6 +45,7 @@ Xamarin.Forms 视图、 页面和 iOS 上的布局提供了以下特定于平台
 - 控制是否半透明的导航栏。 有关详细信息，请参阅[在 iOS 上的导航栏半透明度](navigation-bar-translucent.md)。
 - 控制是否状态栏文本的颜色上[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)调整以匹配导航栏的亮度。 有关详细信息，请参阅[NavigationPage 栏文本颜色模式在 iOS 上](status-bar-text-color.md)。
 - 控制是否将页标题显示为页导航栏中的大型标题。 有关详细信息，请参阅[在 iOS 上的大型页标题](page-large-title.md)。
+- 设置家庭指示器的可见性[ `Page` ](xref:Xamarin.Forms.Page)。 有关详细信息，请参阅[主页在 iOS 上的指示符可视性](page-home-indicator.md)。
 - 设置状态条可见性[ `Page` ](xref:Xamarin.Forms.Page)。 有关详细信息，请参阅[在 iOS 上的页状态条可见性](page-status-bar-visibility.md)。
 - 确保该页面内容位于上是安全的所有 iOS 设备的屏幕区域。 有关详细信息，请参阅[在 iOS 上的安全区域布局指南](page-safe-area-layout.md)。
 - 在 iPad 上设置模式页面演示文稿的样式。 有关详细信息，请参阅[iPad 模式页面演示文稿样式](ipad-page-presentation-style.md)。

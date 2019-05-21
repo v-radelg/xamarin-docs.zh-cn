@@ -7,28 +7,26 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 888b4f369f67a7d8566640927ba2ae3a395d68d8
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: b2f32f6695fffa27068fce9d8c12f4ecd9157bc2
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048167"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970542"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滚动
 
-![](~/media/shared/preview.png "此 API 是当前预发布版本")
-
 [![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
 
-`CollectionView` 定义了两个`ScrollTo`项滚动到视图的方法。 而其他滚动到视图中指定的项的指定索引处的项的重载之一滚动到视图中中。 这两个重载有可以指定以完成滚动后, 指示项的准确位置的其他参数，以及是否要进行动画处理滚动。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义了两个[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)项滚动到视图的方法。 而其他滚动到视图中指定的项的指定索引处的项的重载之一滚动到视图中中。 这两个重载有可以指定以完成滚动后, 指示项的准确位置的其他参数，以及是否要进行动画处理滚动。
 
-`CollectionView` 定义`ScrollToRequested`时引发的事件之一`ScrollTo`调用的方法。 `ScrollToRequestedEventArgs`对象，它附带`ScrollToRequested`事件都有很多属性，包括`IsAnimated`， `Index`， `Item`，并`ScrollToPosition`。 从参数中指定设置这些属性`ScrollTo`方法调用。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义[ `ScrollToRequested` ](xref:Xamarin.Forms.ItemsView.ScrollToRequested)时引发的事件之一[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)调用的方法。 [ `ScrollToRequestedEventArgs` ](xref:Xamarin.Forms.ScrollToRequestedEventArgs)对象，它附带`ScrollToRequested`事件都有很多属性，包括`IsAnimated`， `Index`， `Item`，和`ScrollToPosition`。 从参数中指定设置这些属性`ScrollTo`方法调用。
 
 时启动一个滚动用户扫，以便完全显示的项可以控制滚动的结束位置。 此功能称为对齐，因为项对齐来定位时滚动停止。 有关详细信息，请参阅[对齐点](#snap-points)。
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>滚动到视图的索引处的项
 
-第一个`ScrollTo`方法重载滚动到视图中位于指定索引处的项。 给定`CollectionView`名为对象`collectionView`，下面的示例演示如何向下滚动到视图的索引 12 处的项：
+第一个[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法重载滚动到视图中位于指定索引处的项。 给定[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)对象名为`collectionView`，下面的示例演示如何向下滚动到视图的索引 12 处的项：
 
 ```csharp
 collectionView.ScrollTo(12);
@@ -36,7 +34,7 @@ collectionView.ScrollTo(12);
 
 ## <a name="scroll-an-item-into-view"></a>滚动到视图的项
 
-第二个`ScrollTo`方法重载滚动到视图中指定的项。 给定`CollectionView`名为对象`collectionView`，下面的示例演示如何将指定的项滚动到视图：
+第二个[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法重载滚动到视图中指定的项。 给定[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)对象名为`collectionView`，下面的示例演示如何将指定的项滚动到视图：
 
 ```csharp
 MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
@@ -46,7 +44,7 @@ collectionView.ScrollTo(monkey);
 
 ## <a name="control-scroll-position"></a>控制滚动位置
 
-完成滚动后的项的准确位置时滚动到视图的项，可以指定与`position`自变量的`ScrollTo`方法。 此参数接受[ `ScrollToPosition` ](xref:Xamarin.Forms.ScrollToPosition)枚举成员。
+完成滚动后的项的准确位置时滚动到视图的项，可以指定与`position`的参数[ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法。 此参数接受[ `ScrollToPosition` ](xref:Xamarin.Forms.ScrollToPosition)枚举成员。
 
 ### <a name="makevisible"></a>MakeVisible
 
@@ -109,10 +107,10 @@ collectionView.ScrollTo(monkey, animate: false);
 
 ## <a name="snap-points"></a>对齐点
 
-时启动一个滚动用户扫，以便完全显示的项可以控制滚动的结束位置。 此功能称为对齐，因为项对齐来定位时滚动停止，并由以下属性控制`ItemsLayout`类：
+时启动一个滚动用户扫，以便完全显示的项可以控制滚动的结束位置。 此功能称为对齐，因为项对齐来定位时滚动停止，并受以下属性从[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)类：
 
-- `SnapPointsType`类型的`SnapPointsType`，滚动时显示指定的管理点的行为。
-- `SnapPointsAlignment`类型的`SnapPointsAlignment`，指定管理单元点包含项的对齐方式。
+- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)类型的[ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType)，滚动时显示指定的管理点的行为。
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)类型的[ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment)，指定管理单元点包含项的对齐方式。
 
 这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。
 
@@ -121,28 +119,28 @@ collectionView.ScrollTo(monkey, animate: false);
 
 ### <a name="snap-points-type"></a>对齐点类型
 
-`SnapPointsType`枚举定义以下成员：
+[ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType)枚举定义以下成员：
 
 - `None` 指示，滚动不会进行捕捉到的项。
 - `Mandatory` 指示该内容始终与最接近的管理单元对齐指向其中滚动可以自然地终止，延时的方向。
 - `MandatorySingle` 指示与相同的行为`Mandatory`，但仅一次滚动一个项。
 
-默认情况下`SnapPointsType`属性设置为`SnapPointsType.None`，这可确保该滚动不会按项，如以下屏幕截图中所示：
+默认情况下[ `SnapPointsType` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)属性设置为`SnapPointsType.None`，这可确保该滚动不会按项，如以下屏幕截图中所示：
 
 [![没有管理点，请在 iOS 和 Android 的 CollectionView 垂直列表的屏幕截图](scrolling-images/snappoints-none.png "之间导航而无需管理点的垂直列表")](scrolling-images/snappoints-none-large.png#lightbox "CollectionView 垂直列表，而无需管理单元点")
 
 ### <a name="snap-points-alignment"></a>对齐点对齐方式
 
-`SnapPointsAlignment`枚举定义`Start`， `Center`，和`End`成员。
+[ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment)枚举定义`Start`， `Center`，并`End`成员。
 
 > [!IMPORTANT]
-> 值`SnapPointsAlignment`属性才是考虑何时`SnapPointsType`属性设置为`Mandatory`，或`MandatorySingle`。
+> 值[ `SnapPointsAlignment` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)属性才是考虑何时[ `SnapPointsType` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)属性设置为`Mandatory`，或`MandatorySingle`。
 
 #### <a name="start"></a>Start
 
 `SnapPointsAlignment.Start`成员指示吸附点与项的前边缘对齐。
 
-默认情况下，`SnapPointsAlignment` 属性设置为 `SnapPointsAlignment.Start`。 但是，为了保持完整性，下面的 XAML 示例演示如何设置此枚举成员：
+默认情况下[ `SnapPointsAlignment` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)属性设置为`SnapPointsAlignment.Start`。 但是，为了保持完整性，下面的 XAML 示例演示如何设置此枚举成员：
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -163,7 +161,7 @@ collectionView.ScrollTo(monkey, animate: false);
 </CollectionView>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -207,7 +205,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -251,7 +249,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 CollectionView collectionView = new CollectionView
