@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2019
-ms.openlocfilehash: 7dc9a0c0d7330588dc4a6d3f3dedd4b72211f019
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: bb13113a947fe6ff25f5e96e299828d1d93e20ac
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048027"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65927042"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
@@ -246,7 +246,7 @@ stacklayout {
 }
 ```
 
-CSS 类可以通过设置分配给 XAML 元素[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)的元素的 CSS 类名称的属性。 因此，在下面的 XAML 示例中，定义了样式通过`.detailPageTitle`分配给第一个类[ `Label` ](xref:Xamarin.Forms.Label)，而定义的样式`.detailPageSubtitle`类都被分配给第二个`Label`。
+CSS 类可以通过设置分配给 XAML 元素[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)的元素的 CSS 类名称的属性。 因此，在下面的 XAML 示例中，定义了样式通过`.detailPageTitle`分配给第一个类[ `Label` ](xref:Xamarin.Forms.Label)，而定义的样式`.detailPageSubtitle`类都被分配给第二个`Label`。
 
 ```xaml
 <ContentPage ...>

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: d69a96ee55b09ef9fcf1485ec34d986dd40e7662
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: f1a83eab0783baf8e96057fbdc4f70dc2864db47
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977975"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924889"
 ---
 # <a name="android-job-scheduler"></a>Android 作业计划程序
 
@@ -197,11 +197,13 @@ var scheduleResult = jobScheduler.Schedule(jobInfo);
 
 if (JobScheduler.ResultSuccess == scheduleResult)
 {
-    Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_success, Snackbar.LengthShort);
+    var snackBar = Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_success, Snackbar.LengthShort);
+    snackBar.Show();
 }
 else
 {
-    Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_failure, Snackbar.LengthShort);
+    var snackBar = Snackbar.Make(FindViewById(Android.Resource.Id.Content), Resource.String.jobscheduled_failure, Snackbar.LengthShort);
+    snackBar.Show();
 }
 ```
  

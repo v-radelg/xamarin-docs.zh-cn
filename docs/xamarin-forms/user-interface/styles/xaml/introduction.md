@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 4048ec78d48b810b39d46fbcb7708860c478cce3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc0173df1d4318af7db945d1c5ed6654282e31f5
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023417"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926996"
 ---
 # <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms 样式简介
 
@@ -107,7 +107,7 @@ public class NoStylesPageCS : ContentPage
 
 每个[ `Style` ](xref:Xamarin.Forms.Style)实例可以是*显式*，或*隐式*:
 
-- *显式* [ `Style` ](xref:Xamarin.Forms.Style)通过指定定义实例[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)和`x:Key`值，并通过设置目标元素[`Style` ](xref:Xamarin.Forms.VisualElement.Style)属性设置为`x:Key`引用。 有关详细信息*显式*样式，请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)。
+- *显式* [ `Style` ](xref:Xamarin.Forms.Style)通过指定定义实例[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)和`x:Key`值，并通过设置目标元素[`Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性设置为`x:Key`引用。 有关详细信息*显式*样式，请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)。
 - *隐式* [ `Style` ](xref:Xamarin.Forms.Style)仅指定定义实例[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)。 `Style`实例将然后会自动应用于该类型的所有元素。 请注意该子类`TargetType`不会自动具有`Style`应用。 有关详细信息*隐式*样式，请参阅[隐式样式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
 创建时[ `Style` ](xref:Xamarin.Forms.Style)，则[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)并总是必需的属性。 下面的代码示例演示*显式*样式 (请注意`x:Key`) 在 XAML 中创建：

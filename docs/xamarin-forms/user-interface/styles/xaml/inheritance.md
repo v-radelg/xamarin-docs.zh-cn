@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: bef48db93ae76346802b6569080bb1e54e3e51b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c0b38453c5e573a13a51b6c001d3324936a8b7fb
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393995"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926877"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的样式继承
 
@@ -62,7 +62,7 @@ _样式可以继承其他样式以减少重复和使重复使用。_
 </ContentPage>
 ```
 
-`baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。 这会导致下面的屏幕截图中所示的外观：
+`baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。 这会导致下面的屏幕截图中所示的外观：
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
@@ -110,7 +110,7 @@ _样式可以继承其他样式以减少重复和使重复使用。_
 
 ## <a name="style-inheritance-in-c35"></a>在 C 中的样式继承&#35;
 
-等效的 C# 页上，其中[ `Style` ](xref:Xamarin.Forms.Style)实例直接分配给[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)必选控件的属性下面的代码示例中所示：
+等效的 C# 页上，其中[ `Style` ](xref:Xamarin.Forms.Style)实例直接分配给[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)必选控件的属性下面的代码示例中所示：
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -153,7 +153,7 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。
+`baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。
 
 ## <a name="related-links"></a>相关链接
 

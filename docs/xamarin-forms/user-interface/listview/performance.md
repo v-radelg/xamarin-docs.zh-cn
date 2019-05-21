@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 98212483481b2ce60c73a40c014816ee3c3f110c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37b14b60f3cd9aa6a3fb182583bde902cc677b89
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386551"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925073"
 ---
 # <a name="listview-performance"></a>ListView 性能
 
@@ -186,5 +186,5 @@ public class CustomListView : ListView
 ## <a name="related-links"></a>相关链接
 
 - [自定义呈现器视图 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [自定义呈现器 ViewCell （示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+- [自定义呈现器 ViewCell （示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)
 - [ListViewCachingStrategy](xref:Xamarin.Forms.ListViewCachingStrategy)

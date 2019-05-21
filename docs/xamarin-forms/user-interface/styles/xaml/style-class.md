@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: dd749a4a78adbab5317f1ae5ca6334caa009b9b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277757"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925286"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms 样式类
 
@@ -78,7 +78,7 @@ _Xamarin.Forms 的样式类，多个样式应用到控件，而不必求助于�
 
 `Rotated`样式类具有[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)，这意味着它只能应用到`VisualElement`实例。 但是，其[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性设置为`true`，这可确保它可以应用于派生自任何控件`VisualElement`，如[ `BoxView` ](xref:Xamarin.Forms.BoxView)。 有关将样式应用于派生类型的详细信息，请参阅[将样式应用于派生类型](implicit.md#apply-a-style-to-derived-types)。
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 var separatorBoxViewStyle = new Style(typeof(BoxView))
@@ -180,7 +180,7 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>使用样式类
 
-可以通过设置使用样式类[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)控件，其类型的属性`IList<string>`，到样式类名的列表。 将应用的样式类，前提是控件的类型匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的样式类。
+可以通过设置使用样式类[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)控件，其类型的属性`IList<string>`，到样式类名的列表。 将应用的样式类，前提是控件的类型匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的样式类。
 
 以下示例显示三个[ `BoxView` ](xref:Xamarin.Forms.BoxView)情况下，每个设置为不同的样式类：
 
@@ -206,9 +206,9 @@ Resources = new ResourceDictionary
 ![](style-class-images/boxviews.png "BoxViews 样式的样式类")
 
 > [!IMPORTANT]
-> 多个样式类可以应用于控件，因为[ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass)属性属于类型`IList<string>`。 当发生这种情况时，可以按列表按升序应用样式类。 因此，当多个样式类设置相同属性，最高的列表位置的样式类中的属性将优先。
+> 多个样式类可以应用于控件，因为[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)属性属于类型`IList<string>`。 当发生这种情况时，可以按列表按升序应用样式类。 因此，当多个样式类设置相同属性，最高的列表位置的样式类中的属性将优先。
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 ...

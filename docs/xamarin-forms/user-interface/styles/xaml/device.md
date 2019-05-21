@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd5181040c1805d3fdabdae4803bbe32c6bb6652
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 252f3271c7247f7070df66712035938be651e7f4
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345500"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924789"
 ---
 # <a name="device-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的设备样式
 
@@ -29,7 +29,7 @@ _Xamarin.Forms 具有六个动态样式，称为设备样式，Device.Styles 类
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-所有六个样式仅应用于[ `Label` ](xref:Xamarin.Forms.Label)实例。 例如， `Label` ，显示一个段落的主体可能会设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性设置为[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
+所有六个样式仅应用于[ `Label` ](xref:Xamarin.Forms.Label)实例。 例如， `Label` ，显示一个段落的主体可能会设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性设置为[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
 
 下面的代码示例演示了如何使用*设备*XAML 页面中的样式：
 
@@ -109,7 +109,7 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)每个属性[ `Label` ](xref:Xamarin.Forms.Label)设置为从适当的属性实例[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)类。
+[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)每个属性[ `Label` ](xref:Xamarin.Forms.Label)设置为从适当的属性实例[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)类。
 
 ## <a name="accessibility"></a>可访问性
 

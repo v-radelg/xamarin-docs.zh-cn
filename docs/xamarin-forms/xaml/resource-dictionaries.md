@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 5b1c9ff709022d6bcae51597a03fe2a71097cd2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8b5a610cbd87ca9e80272b6be8e726e4fd323dd0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076650"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925608"
 ---
 # <a name="resource-dictionaries"></a>资源字典
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 
 _XAML 资源是可以共享和重复使用 Xamarin.Forms 应用程序在整个对象的定义。_
 
@@ -305,6 +305,6 @@ Xamarin.Forms 3.0，合并在一起的过程开头[ `ResourceDictionary` ](xref:
 
 ## <a name="related-links"></a>相关链接
 
-- [资源字典 （示例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
+- [资源字典 （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 - [样式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)

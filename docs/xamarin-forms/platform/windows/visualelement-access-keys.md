@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f14014b257ee5061b6dd074719c3ca27577c6013
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c480f398c37ce43b634e0ec1c955b965466757f1
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60854931"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926850"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>在 Windows 上的 VisualElement 访问密钥
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 访问键都是通过为用户可以快速导航并进行交互以直观的方式提供通过触摸键盘而不是通过应用程序的可见 UI 改进的可用性和可访问性的应用通用 Windows 平台 (UWP) 的键盘快捷方式或鼠标。 它们是 Alt 键和一个或多个字母数字，通常按下键按顺序的组合。 使用单个字母数字字符的访问密钥会自动支持键盘快捷方式。
 
@@ -104,6 +104,6 @@ button4.On<Windows>()
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

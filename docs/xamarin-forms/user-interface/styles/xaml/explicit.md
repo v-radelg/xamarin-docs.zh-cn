@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fcbdeac5ebceccddee68fcca635a3935944ecac8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 12420f0559d27becb839307d6a1ed4489c895e7d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61394952"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926887"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的显式样式
 
@@ -22,7 +22,7 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 
 ## <a name="create-an-explicit-style-in-xaml"></a>在 XAML 中创建显式样式
 
-若要声明[ `Style` ](xref:Xamarin.Forms.Style)级别的页[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必须添加到页面，然后一个或多个`Style`声明可以包含在`ResourceDictionary`。 一个`Style`由*显式*其声明，从而`x:Key`属性中为其提供描述性密钥`ResourceDictionary`。 *显式*样式必须然后将应用到特定的可视元素通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。
+若要声明[ `Style` ](xref:Xamarin.Forms.Style)级别的页[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必须添加到页面，然后一个或多个`Style`声明可以包含在`ResourceDictionary`。 一个`Style`由*显式*其声明，从而`x:Key`属性中为其提供描述性密钥`ResourceDictionary`。 *显式*样式必须然后将应用到特定的可视元素通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。
 
 下面的代码示例演示*显式*中页面的 XAML 中声明样式`ResourceDictionary`并应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例：
 
@@ -64,7 +64,7 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义三个*显式*样式应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性使用`StaticResource`标记扩展。 这会导致下面的屏幕截图中所示的外观：
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义三个*显式*样式应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性使用`StaticResource`标记扩展。 这会导致下面的屏幕截图中所示的外观：
 
 [![](explicit-images/explicit-styles.png "显式样式示例")](explicit-images/explicit-styles-large.png#lightbox "显式样式示例")
 
@@ -147,9 +147,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个*显式* [ `Style` ](xref:Xamarin.Forms.Style)添加到[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用[ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))方法中，指定`key`字符串来指代`Style`实例。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。
+构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个*显式* [ `Style` ](xref:Xamarin.Forms.Style)添加到[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用[ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))方法中，指定`key`字符串来指代`Style`实例。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。
 
-但是，没有使用没有优势[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)此处。 相反， [ `Style` ](xref:Xamarin.Forms.Style)实例可以直接分配给[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)所需的可视元素的属性和`ResourceDictionary`可删除，在下面的示例所示代码示例：
+但是，没有使用没有优势[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)此处。 相反， [ `Style` ](xref:Xamarin.Forms.Style)实例可以直接分配给[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)所需的可视元素的属性和`ResourceDictionary`可删除，在下面的示例所示代码示例：
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -179,7 +179,7 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性。 此外，最终`Label`已`Style`应用，但也会覆盖`TextColor`属性设置为不同`Color`值。
+构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。 此外，最终`Label`已`Style`应用，但也会覆盖`TextColor`属性设置为不同`Color`值。
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bb2cd1c97cc588923e0da1a8793f16445c111f0e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 408f171a3c7c690b700f7be21a3dcaff503467d9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334277"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926908"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 章的摘要。 样式
 
@@ -20,7 +20,7 @@ ms.locfileid: "61334277"
 
 在 Xamarin.Forms 中，样式允许多个视图来共享的属性设置的集合。 这减少了标记，并使维护一致的视觉主题。
 
-样式几乎总是定义，并在标记中使用。 类型的对象[ `Style` ](xref:Xamarin.Forms.Style)是在资源字典中实例化，然后设置为[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)的可视元素使用属性`StaticResource`或`DynamicResource`标记扩展插件。
+样式几乎总是定义，并在标记中使用。 类型的对象[ `Style` ](xref:Xamarin.Forms.Style)是在资源字典中实例化，然后设置为[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)的可视元素使用属性`StaticResource`或`DynamicResource`标记扩展插件。
 
 ## <a name="the-basic-style"></a>基本样式
 

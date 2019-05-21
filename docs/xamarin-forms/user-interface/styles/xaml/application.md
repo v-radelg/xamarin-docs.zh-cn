@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 749e9bca87b2c9547b9733248d75718a4443ab88
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 665f5d1653b74997519149cef68e0882f476179d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160721"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65924615"
 ---
 # <a name="global-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的全局样式
 
@@ -148,7 +148,7 @@ public class ApplicationStylesPageCS : ContentPage
 }
 ```
 
-`buttonStyle`应用于[ `Button` ](xref:Xamarin.Forms.Button)实例通过设置其[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性和控件的外观`Button`实例。
+`buttonStyle`应用于[ `Button` ](xref:Xamarin.Forms.Button)实例通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性和控件的外观`Button`实例。
 
 ## <a name="related-links"></a>相关链接
 

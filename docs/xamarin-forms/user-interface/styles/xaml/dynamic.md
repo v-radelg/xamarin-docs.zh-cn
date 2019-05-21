@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 260c215df52eb31139998438cc0eda10a887be65
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 574f4cb5541a12525fb0d160599d4d2f13653cf0
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61395183"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926932"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的动态样式
 
@@ -53,7 +53,7 @@ _样式，不要响应属性更改和应用程序的持续时间内保持不变�
 </ContentPage>
 ```
 
-[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)实例使用`DynamicResource`标记扩展引用[ `Style` ](xref:Xamarin.Forms.Style)名为`searchBarStyle`，未在 XAML 中定义。 但是，由于[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)的属性`SearchBar`集使用的实例`DynamicResource`，缺失的字典键不会产生引发了异常。
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)实例使用`DynamicResource`标记扩展引用[ `Style` ](xref:Xamarin.Forms.Style)名为`searchBarStyle`，未在 XAML 中定义。 但是，由于[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)的属性`SearchBar`集使用的实例`DynamicResource`，缺失的字典键不会产生引发了异常。
 
 相反，在代码隐藏文件中，该构造函数创建[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有键的项`searchBarStyle`，下面的代码示例中所示：
 
@@ -205,7 +205,7 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle`直接分配给[ `Style` ](xref:Xamarin.Forms.VisualElement.Style)属性[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)实例。 这`Style`设置其他一些属性，并使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)属性来引用`searchBarStyle`。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法不需要，此处因为`tealSearchBarStyle`不会更改，除`Style`它派生。 因此，`tealSearchBarStyle`维护一个指向`searchBarStyle`和基准的样式更改时更改。
+`tealSearchBarStyle`直接分配给[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)实例。 这`Style`设置其他一些属性，并使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)属性来引用`searchBarStyle`。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法不需要，此处因为`tealSearchBarStyle`不会更改，除`Style`它派生。 因此，`tealSearchBarStyle`维护一个指向`searchBarStyle`和基准的样式更改时更改。
 
 ## <a name="related-links"></a>相关链接
 
