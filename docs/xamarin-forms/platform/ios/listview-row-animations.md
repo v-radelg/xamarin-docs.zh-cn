@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2019
-ms.openlocfilehash: 50480f5b21c6f0c855ff6f9aa22b6126c6a6787c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ac71be25492866b1cf2b12d3343c2f4095fc738d
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945681"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925799"
 ---
 # <a name="listview-row-animations-on-ios"></a>在 iOS 上的 ListView 行动画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 
 此 iOS 特定于平台的控件是否行动画时禁用[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新项集合。 设置使用在 XAML`ListView.RowAnimationsEnabled`可绑定属性设置为`false`:
 
@@ -48,6 +48,6 @@ listView.On<iOS>().SetRowAnimationsEnabled(false);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
