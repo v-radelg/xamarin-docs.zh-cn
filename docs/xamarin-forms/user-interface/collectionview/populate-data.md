@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 68e28fcbe6a64834d3b594f7f639a1cdd990370d
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: d2729250c0f991564ae70ddf6a15b40425ed6c46
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970573"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005267"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms 之间导航数据
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "此 API 当前为预发布版本")
+
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义以下属性，定义要显示的数据，其外观：
 
@@ -242,7 +244,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

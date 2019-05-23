@@ -7,14 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 73e68f29c61661019cfc56f8caa26c6a0b1ce4ba
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 79af2bb2ecda8d3d8df9ee9ec40276b0c59b6864
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971000"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005318"
 ---
 # <a name="xamarinforms-collectionview"></a>Xamarin.Forms 之间导航
+
+![](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 ## <a name="introductionintroductionmd"></a>[介绍](introduction.md)
 

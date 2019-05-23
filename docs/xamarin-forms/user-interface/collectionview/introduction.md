@@ -7,20 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 2ee7b2c203251e519af088a550e7e26f30aa62c8
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 889c78ea6849cdd094d34ed0cf74ceebd33ce51d
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971103"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005143"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView 简介
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "此 API 当前为预发布版本")
+
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 用于呈现数据的列表视图使用不同的布局规范。 它旨在提供更灵活和高性能替代方法[ `ListView` ](xref:Xamarin.Forms.ListView)。 例如，下面的屏幕截图显示`CollectionView`，它使用两个列的垂直网格，并且允许多个选择：
 
 [![CollectionView 垂直网格布局，在 iOS 和 Android 上的屏幕截图](introduction-images/verticalgrid-multipleselection.png "CollectionView 与多个所选内容的垂直网格布局")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "具有 CollectionView 垂直网格布局多个所选内容")
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 现已推出 Xamarin.Forms 4.0。 但是，它是当前处于实验阶段并仅可以通过添加以下代码行来使用你`AppDelegate`类在 iOS 上，或为你`MainActivity`类在 Android 上，然后才能调用`Forms.Init`:
+
+```csharp
+Forms.SetFlags("CollectionView_Experimental");
+```
 
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) 仅在 iOS 和 Android 上提供。
@@ -57,4 +65,4 @@ ms.locfileid: "65971103"
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)

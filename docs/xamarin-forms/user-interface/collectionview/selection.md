@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: febd48f2ffad86ab8b00bafca8c296377f74a07b
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: b026bd181571d689d3e19f2a815a52406f6f9da4
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970698"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005304"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 选定内容
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+![](~/media/shared/preview.png "此 API 当前为预发布版本")
+
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义用于控制项选择的以下属性：
 
@@ -295,5 +297,5 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/CollectionViewDemos/)
+- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
