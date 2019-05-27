@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: effebf02a7fb84ef955f4dcfda75d5273ef96b29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384654"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193784"
 ---
 
 Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指导用户完成任务。 在本练习中，你将使用 [`Page`](xref:Xamarin.Forms.Page) 类中的 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法来显示指导用户完成任务的操作工作表。
@@ -41,7 +41,7 @@ Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指
 
     注意，在操作表对话框中选择替代方案后，选择将输出到 Visual Studio“输出”窗口。
 
-    有关显示操作工作表的详细信息，请参阅[显示弹出窗口](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[引导用户完成任务](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks)。
+    若要详细了解如何显示操作工作表，请参阅[显示弹出窗口](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引导用户完成任务](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -75,4 +75,4 @@ Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指
 
     注意，在操作表对话框中选择替代方案后，选择将输出到 Visual Studio for Mac“应用程序输出”窗口。
 
-    有关显示操作工作表的详细信息，请参阅[显示弹出窗口](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[引导用户完成任务](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#guiding-users-through-tasks)。
+    若要详细了解如何显示操作工作表，请参阅[显示弹出窗口](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引导用户完成任务](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。

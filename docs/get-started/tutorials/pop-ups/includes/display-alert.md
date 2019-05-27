@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cff466025306ee5d23b5245e625eba23c5448c15
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e7b4b2ce4b7592c2350af20cf516436e244d95f
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384656"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66193786"
 ---
 Xamarin.Forms 有一个称作警报的模态弹出项，用于警告用户或向用户询问简单的问题。 本练习使用 [`Page`](xref:Xamarin.Forms.Page) 类的 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法，向用户展示警报和询问简单的问题。
 
@@ -67,7 +67,7 @@ Xamarin.Forms 有一个称作警报的模态弹出项，用于警告用户或向
 
     注意，为问题选择一个回答之后，该回答输出到 Visual Studio 的“输出”窗口。
 
-    有关显示警报的详细信息，请参阅[显示弹出窗口](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[显示警报](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert)。
+    若要详细了解如何显示警报，请参阅[显示弹出窗口](~/xamarin-forms/user-interface/pop-ups.md)指南中的[显示警报](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -128,4 +128,4 @@ Xamarin.Forms 有一个称作警报的模态弹出项，用于警告用户或向
 
     注意，为问题选择一个回答之后，该回答输出到 Visual Studio for Mac 的“输出”窗口。
 
-    有关显示警报的详细信息，请参阅[显示弹出窗口](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md)指南中的[显示警报](~/xamarin-forms/app-fundamentals/navigation/pop-ups.md#displaying-an-alert)。
+    若要详细了解如何显示警报，请参阅[显示弹出窗口](~/xamarin-forms/user-interface/pop-ups.md)指南中的[显示警报](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。
