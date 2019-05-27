@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: b9838ddb9771cb6ce757a4080520a5edd720531a
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: e0bc4b988905f03edbc66a252cc47a05c441f2c9
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574736"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925832"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存储
 
@@ -51,7 +51,7 @@ SecureStorage 类有助于安全地存储简单的键/值对。
     </application>
     ```
 
-2. 在 Resources/xml 目录中创建名为 auto_backup_rules.xml 的新 XML 文件。 然后设置以下内容，包括除 `SecureStorage` 以外的所有共享首选项：
+2. 使用 AndroidResource 的生成操作在 Resources/xml 目录中创建名为 auto_backup_rules.xml 的新 XML 文件。 然后设置以下内容，包括除 `SecureStorage` 以外的所有共享首选项：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -132,7 +132,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android 密钥存储](https://developer.android.com/training/articles/keystore.html)用来存储用于在将值保存到文件名为 **[你的应用包 ID].xamarinessentials** 的[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中之前加密值的加密密钥。  共享首选项文件中所使用的密钥是传递到 `SecureStorage` API 的密钥的 MD5 哈希。
+[Android 密钥存储](https://developer.android.com/training/articles/keystore.html)用来存储用于在将值保存到文件名为 **[你的应用包 ID].xamarinessentials** 的[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中之前加密值的加密密钥。  共享首选项文件中所使用的键（非加密密钥，指值的密钥）是传递到 `SecureStorage` API 的密钥的 MD5 哈希。
 
 ## <a name="api-level-23-and-higher"></a>API 级别 23 及更高版本
 

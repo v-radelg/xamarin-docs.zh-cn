@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 22392603e337205dcdd4909dc61b6c22ca2f00b9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 88be56cae52e881792ec7a187ef7e158790e8a1b
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057965"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926596"
 ---
 # <a name="implementing-a-view"></a>实现视图
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)
 
 _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于在屏幕上放置布局和控件。本文演示如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。_
 
@@ -56,13 +56,13 @@ public class CameraPreview : View
 }
 ```
 
-`CameraPreview` 自定义控件在可移植类库 (PCL) 项目中创建，并定义控件的 API。 自定义控件公开 `Camera` 属性，该属性用于控制应该从设备的前置摄像头还是后置摄像头显示视频流。 如果在创建控件时没有为 `Camera` 属性指定值，则默认为指定后置摄像头。
+`CameraPreview` 自定义控件在 .NET Standard 库项目中创建，该控件定义控件的 API。 自定义控件公开 `Camera` 属性，该属性用于控制应该从设备的前置摄像头还是后置摄像头显示视频流。 如果在创建控件时没有为 `Camera` 属性指定值，则默认为指定后置摄像头。
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自定义控件
 
-通过在自定义控件元素上声明 `CameraPreview` 自定义控件位置的命名空间并使用命名空间前缀，可以在 PCL 项目的 XAML 中引用该控件。 以下代码示例展示了 XAML 页可以如何使用 `CameraPreview` 自定义控件：
+通过在自定义控件元素上声明 `CameraPreview` 自定义控件位置的命名空间并使用命名空间前缀，可以在 .NET Standard 库项目的 XAML 中引用该自定义控件。 以下代码示例展示了 XAML 页可以如何使用 `CameraPreview` 自定义控件：
 
 ```xaml
 <ContentPage ...
@@ -334,4 +334,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererView（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/view/)
+- [CustomRendererView（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)

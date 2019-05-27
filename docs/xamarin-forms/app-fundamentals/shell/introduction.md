@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 20d9fb79d03990824dd884b62138a3e29b3ee04f
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: f6662f20485c6671edcb5a1654569cdd8498607e
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054477"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005206"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
-![](~/media/shared/preview.png "此 API 当前为预发布版本")
-
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数移动应用程序所需的基本功能，包括：
 
@@ -30,48 +28,7 @@ Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数
 此外，Shell 应用程序还因提高了呈现速度和减少了内存消耗而受益。
 
 > [!IMPORTANT]
-> 现有的 iOS 和 Android 应用程序可以采用 Shell，立即获益于导航、性能和扩展性方面的改进。
-
-Shell 当前处于试验阶段，只能通过以下方式使用：在调用 `Forms.Init` 方法前，向平台项目添加 `Forms.SetFlags("Shell_Experimental");`。
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-{
-    protected override void OnCreate(Bundle savedInstanceState)
-    {
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
-
-        TabLayoutResource = Resource.Layout.Tabbar;
-        ToolbarResource = Resource.Layout.Toolbar;
-
-        base.OnCreate(savedInstanceState);
-
-        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-        LoadApplication(new App());
-    }
-}
-```
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-```csharp
-public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-{
-    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-    {
-        global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental");
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new App());
-
-        return base.FinishedLaunching(app, options);
-    }
-}
-```
-
-----
+> Xamarin.Forms Shell 仅适用于 iOS 和 Android。 现有的 iOS 和 Android 应用程序可以采用 Shell，立即获益于导航、性能和扩展性方面的改进。
 
 ## <a name="shell-navigation-experience"></a>Shell 导航体验
 
@@ -181,11 +138,11 @@ namespace Xaminals
 
 `Shell` 类定义以下控制 Shell 应用程序外观的属性：
 
-- `ShellBackgroundColor` 是 `Color` 类型的附加属性，用于定义 Shell chrome 的背景色。 不会在 Shell 内容后面填充颜色。
-- `ShellDisabledColor` 是 `Color` 类型的附加属性，用于定义要对处于禁用状态的文本和图标进行阴影处理的颜色。
-- `ShellForegroundColor` 是 `Color` 类型的附加属性，用于定义要对文本和图标进行阴影处理的颜色。
-- `ShellTitleColor` 是 `Color` 类型的附加属性，用于定义当前页面标题的颜色。
-- `ShellUnselectedColor` 是 `Color` 类型的附加属性，用于定义 Shell chrome 中未选文本和图标的颜色。
+- `BackgroundColor` 是 `Color` 类型的附加属性，用于定义 Shell chrome 的背景色。 不会在 Shell 内容后面填充颜色。
+- `DisabledColor` 是 `Color` 类型的附加属性，用于定义要对处于禁用状态的文本和图标进行阴影处理的颜色。
+- `ForegroundColor` 是 `Color` 类型的附加属性，用于定义要对文本和图标进行阴影处理的颜色。
+- `TitleColor` 是 `Color` 类型的附加属性，用于定义当前页面标题的颜色。
+- `UnselectedColor` 是 `Color` 类型的附加属性，用于定义 Shell chrome 中未选文本和图标的颜色。
 
 所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着这些属性可以作为数据绑定的目标。
 
@@ -196,7 +153,6 @@ namespace Xaminals
 `Shell` 类定义以下影响 Shell 应用程序内容布局的属性：
 
 - `NavBarIsVisible` 是 `boolean` 类型的附加属性，用于定义导航栏在显示页面时是否应可见。 应在页面上设置此属性，并且其默认值为 `true`。
-- `SetPaddingInsets` 是 `bool` 类型的附加属性，用于控制页面内容是否在任何 Shell chrome 下方显示。 应在页面上设置此属性，并且其默认值为 `false`。
 - `TabBarIsVisible` 是 `bool` 类型的附加属性，用于定义选项卡栏在显示页面时是否应可见。 应在页面上设置此属性，并且其默认值为 `true`。
 - `TitleView` 是 `View` 类型的附加属性，用于定义页面的 `TitleView`。 应在页面上设置此属性。
 
@@ -204,5 +160,5 @@ namespace Xaminals
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms Shell 特定属性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

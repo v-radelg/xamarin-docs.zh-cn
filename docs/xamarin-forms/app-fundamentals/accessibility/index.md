@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/15/2018
-ms.openlocfilehash: ac0ffbdce6b0c55e8ad9d774d80e3d9b8bf84089
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 20ea72e588e2e3b1d575bd593446bf6724d73d8c
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50116441"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971052"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms 辅助功能
 
@@ -24,7 +24,7 @@ ms.locfileid: "50116441"
 
 针对各个基础平台上可用的所有辅助功能 API，Xamarin.Forms 目前尚不提供内置支持。 但是，它支持在用户界面元素上设置自动化属性，以支持屏幕阅读器和导航辅助工具，这是构建可访问应用程序的一个重要部分。 有关详细信息，请参见[自动化属性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
 
-Xamarin.Forms 应用程序还可以指定控件的 Tab 键顺序。 有关详细信息，请参阅[键盘导航](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)。
+Xamarin.Forms 应用程序还可以指定控件的 Tab 键顺序，以改进可用性和可辅助功能。 有关详细信息，请参阅[键盘辅助功能](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)。
 
 其他辅助功能 API（例如 [iOS 上的 PostNotification](~/ios/app-fundamentals/accessibility.md)）可能更适用于 [`DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md) 或[自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)实现。 本指南不涉及此内容。
 

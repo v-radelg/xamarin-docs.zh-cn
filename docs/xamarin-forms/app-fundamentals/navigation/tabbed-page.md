@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 0f0c2e9f3e0a2309db1ad96ff286d6ac17f78bc5
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: 8926813e8efae72efa9af2221318d6f1ff1e344f
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329294"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970929"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 选项卡式页面
 
@@ -44,9 +44,18 @@ _Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域
 
 - 考虑到 Windows 平板电脑外形尺寸，选项卡并不总是可见的，用户需要向下滑动（或如果连接了鼠标用右键点击）以查看 `TabbedPage` 中的选项卡（如下所示）。
 
-![](tabbed-page-images/windows-tabs.png "Windows 上的 TabbedPage 选项卡")
+    ![](tabbed-page-images/windows-tabs.png "Windows 上的 TabbedPage 选项卡")
 
 ## <a name="creating-a-tabbedpage"></a>创建 TabbedPage
+
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 定义以下属性:
+
+- [`Color`](xref:Xamarin.Forms.Color) 类型的 [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor)，设置选项卡栏的背景色。
+- [`Color`](xref:Xamarin.Forms.Color) 类型的 [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor)，设置选项卡栏上的文本的颜色。
+- [`Color`](xref:Xamarin.Forms.Color) 类型的 [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor)，选定选项卡后选项卡的颜色。
+- [`Color`](xref:Xamarin.Forms.Color) 类型的 [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor)，未选定选项卡时选项卡的颜色。
+
+所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着可设置他们的样式，并且这些属性可以作为数据绑定的目标。
 
 可以使用两种方法创建 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)：
 
@@ -56,7 +65,7 @@ _Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域
 使用这两种方法，[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 将在用户选择每个标签时显示每个页面。
 
 > [!NOTE]
-> 建议只使用 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例填充 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)。 这将有助于确保在所有平台上都有一致的用户体验。
+> 建议仅使用 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例填充 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)。 这将有助于确保在所有平台上都有一致的用户体验。
 
 <a name="Populating_a_TabbedPage_with_a_Page_Collection" />
 
@@ -70,7 +79,7 @@ _Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域
             xmlns:local="clr-namespace:TabbedPageWithNavigationPage;assembly=TabbedPageWithNavigationPage"
             x:Class="TabbedPageWithNavigationPage.MainPage">
     <local:TodayPage />
-    <NavigationPage Title="Schedule" Icon="schedule.png">
+    <NavigationPage Title="Schedule" IconImageSource="schedule.png">
         <x:Arguments>
             <local:SchedulePage />
         </x:Arguments>
@@ -86,7 +95,7 @@ public class MainPageCS : TabbedPage
   public MainPageCS ()
   {
     var navigationPage = new NavigationPage (new SchedulePageCS ());
-    navigationPage.Icon = "schedule.png";
+    navigationPage.IconImageSource = "schedule.png";
     navigationPage.Title = "Schedule";
 
     Children.Add (new TodayPageCS ());
@@ -148,7 +157,7 @@ async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
   </TabbedPage.Resources>
   <TabbedPage.ItemTemplate>
     <DataTemplate>
-      <ContentPage Title="{Binding Name}" Icon="monkeyicon.png">
+      <ContentPage Title="{Binding Name}" IconImageSource="monkeyicon.png">
         <StackLayout Padding="5, 25">
           <Label Text="{Binding Name}" Font="Bold,Large" HorizontalOptions="Center" />
           <Image Source="{Binding PhotoUrl}" WidthRequest="200" HeightRequest="200" />
@@ -204,7 +213,7 @@ public class TabbedPageDemoPageCS : TabbedPage
       ...
 
       var contentPage = new ContentPage {
-        Icon = "monkeyicon.png",
+        IconImageSource = "monkeyicon.png",
         Content = new StackLayout {
           Padding = new Thickness (5, 25),
           Children = {

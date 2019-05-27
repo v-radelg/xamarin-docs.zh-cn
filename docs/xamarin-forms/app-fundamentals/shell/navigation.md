@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b1709330678a201521fd226d473cd334bcd86f94
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 747fabd68187dbe48b5e68b40916cef45269c4ae
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054267"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005170"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
 
-![](~/media/shared/preview.png "此 API 当前为预发布版本")
-
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 Xamarin.Forms Shell 包括基于 URI 的导航体验：使用路由导航到应用程序中的任何页面，而无需遵循设置的导航层次结构。 此外，它还能够向后导航，不必访问导航堆栈上的所有页面。
 
@@ -274,7 +272,7 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-此代码示例检索 `CollectionView` 中当前选中的大象，并导航到 `elephantdetails` 路由，将 `elephantName` 作为查询参数传递。 注意，查询参数将是针对导航编码的 URL，因此“Indian Elephant”将变为“Indian%20Elephant”。
+此代码示例在 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 中检索当前选中的大象，并导航到 `elephantdetails` 路由，将 `elephantName` 作为查询参数传递。 注意，查询参数将是针对导航编码的 URL，因此“Indian Elephant”将变为“Indian%20Elephant”。
 
 要接收数据，必须为每个查询参数对表示导航到的页面的类或页面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 的类修饰一个 `QueryPropertyAttribute`：
 
@@ -341,4 +339,4 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)

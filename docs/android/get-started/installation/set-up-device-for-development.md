@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: d1e43d211f639c422bbed3a6afad9f2136551071
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: a2b69152ab616e74761d9acf6a74d30144fe43b3
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59690285"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925052"
 ---
 # <a name="set-up-device-for-development"></a>设置设备进行开发
 

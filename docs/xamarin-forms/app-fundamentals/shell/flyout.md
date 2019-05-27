@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 05ce2536c04306c2881ccc5dfa5e2016c9025b11
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: a64e96e1ee3804cd7aefd9834486613ba8d09d5f
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054487"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005217"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
-![](~/media/shared/preview.png "此 API 当前为预发布版本")
-
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 浮出控件是 Shell 应用程序的根菜单，可通过图标或从屏幕一侧轻扫进行访问。 浮出控件由可选标头、浮出控件项和可选菜单项组成：
 
@@ -183,8 +181,8 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-    <views:CatsPage Icon="cat.png" />
-    <views:DogsPage Icon="dog.png" />
+    <views:CatsPage IconImageSource="cat.png" />
+    <views:DogsPage IconImageSource="dog.png" />
 </Shell>
 ```
 
@@ -360,23 +358,18 @@ Shell.Current.CurrentItem = aboutItem;
 > [!NOTE]
 > `MenuItem` 类具有 [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) 事件和 [`Command`](xref:Xamarin.Forms.MenuItem.Command) 属性。 因此，`MenuItem` 对象支持以下场景：执行一个操作以响应被点击的 `MenuItem`。 这些场景包括执行导航，以及在特定网页上打开浏览器。
 
-`Shell.MenuItems` 集合定义将显示在浮出控件上的 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 对象的列表。 可以使用 `MenuItem` 对象填充此集合，如以下示例所示：
+可将 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 对象添加到浮出控件，如下面的示例所示：
 
 ```xaml
-<Shell ...
-       x:Name="self">
+<Shell ...>
     ...            
-    <Shell.MenuItems>
-        <MenuItem Text="Random"
-                  Icon="random.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding RandomPageCommand}" />
-        <MenuItem Text="Help"
-                  Icon="help.png"
-                  BindingContext="{x:Reference self}"
-                  Command="{Binding HelpCommand}"
-                  CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />
-    </Shell.MenuItems>    
+    <MenuItem Text="Random"
+              IconImageSource="random.png"
+              Command="{Binding RandomPageCommand}" />
+    <MenuItem Text="Help"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell" />    
 </Shell>
 ```
 
@@ -384,7 +377,10 @@ Shell.Current.CurrentItem = aboutItem;
 
 [![iOS 和 Android 上包含 MenuItem 对象的浮出控件的屏幕截图](flyout-images/flyout.png "包含 MenuItem 对象的 Shell 浮出控件")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 对象的 Shell 浮出控件")
 
-第一个 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 对象执行名为 `RandomPageCommand` 的 `ICommand`，这将导航到应用程序中的随机页面。 第二个 `MenuItem` 对象执行名为 `HelpCommand` 的 `ICommand`，这将在 Web 浏览器中打开由 `CommandParameter` 属性指定的 URL。 每个 `MenuItem` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 都将设置为子类 `Shell` 对象。
+第一个 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 对象执行名为 `RandomPageCommand` 的 `ICommand`，这将导航到应用程序中的随机页面。 第二个 `MenuItem` 对象执行名为 `HelpCommand` 的 `ICommand`，这将在 Web 浏览器中打开由 `CommandParameter` 属性指定的 URL。
+
+> [!NOTE]
+> 每个 `MenuItem` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 都继承自子类 `Shell` 对象。
 
 ## <a name="define-menuitem-appearance"></a>定义 MenuItem 外观
 
@@ -415,8 +411,8 @@ Shell.Current.CurrentItem = aboutItem;
 [![iOS 和 Android 上的模板化 MenuItem 对象的屏幕截图](flyout-images/menuitem-templated.png "Shell 模板化 MenuItem 对象")](flyout-images/menuitem-templated-large.png#lightbox "Shell 模板化 MenuItem 对象")
 
 > [!NOTE]
-> Shell 向 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 提供 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) 属性。
+> Shell 向 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 提供 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 属性。
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)

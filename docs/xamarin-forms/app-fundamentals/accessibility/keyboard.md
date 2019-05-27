@@ -1,26 +1,26 @@
 ---
-title: 键盘导航
-description: 与使用默认的选项卡序列不同，有时需要通过结合 TabIndex 和 IsTapStop 属性的指定选项卡序列来优化 UI。
+title: 键盘辅助功能
+description: 与使用默认的选项卡序列不同，有时需要通过结合 TabIndex 和 IsTapStop 属性指定选项卡序列来优化 UI 的辅助功能。
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 3e3331489c3b437366f4bdcc6990fe282d213a6a
-ms.sourcegitcommit: 395774577f7524b57035c5cca3c9034a4b636489
+ms.date: 05/09/2019
+ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54207877"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971267"
 ---
-# <a name="keyboard-navigation-in-xamarinforms"></a>Xamarin.Forms 中的键盘导航
+# <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的键盘辅助功能
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
 
-有些用户在使用不提供相应键盘访问的应用程序时可能会遇到困难。 为控件指定 Tab 键顺序可启用键盘导航，并准备应用程序页以特定顺序接收输入。
+如果用户使用屏幕阅读器或有行动障碍，他们在使用不提供相应键盘访问的应用程序时可能会遇到困难。 Xamarin.Forms 应用程序可以根据需要指定 Tab 键顺序，以改进可用性和辅助功能。 为控件指定 Tab 键顺序可启用键盘导航，准备应用程序页以特定顺序接收输入，并允许屏幕阅读器为用户读取可聚焦的元素。
 
-默认情况下，控件的 Tab 键顺序与在 XAML 中列出或以编程方式添加到子集合中的顺序相同。 此顺序是使用键盘导航控件的顺序，通常这种默认顺序是最佳顺序。 但是，默认顺序并不总是与预期顺序相同，如以下 XAML 代码示例所示：
+默认情况下，控件的 Tab 键顺序与在 XAML 中列出或以编程方式添加到子集合中的顺序相同。 此顺序是使用键盘导航控件或使用屏幕阅读器读取控件的顺序，通常这种默认顺序是最佳顺序。 但是，默认顺序并不总是与预期顺序相同，如以下 XAML 代码示例所示：
 
 ```xaml
 <Grid>
@@ -113,6 +113,9 @@ ms.locfileid: "54207877"
 ![](keyboard-images/correct-tab-order.png "基于列的 Tab 键顺序")
 
 此处的 Tab 键顺序是基于列的。 因此，按 Tab 键可以通过姓-名 [`Entry`](xref:Xamarin.Forms.Entry) 对导航。
+
+> [!IMPORTANT]
+> 在读取屏幕上的可访问元素时，iOS 和 Android 上的屏幕阅读器将遵从 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 的 `TabIndex`。
 
 ## <a name="excluding-controls-from-the-tab-order"></a>从 Tab 键顺序中排除控件
 
