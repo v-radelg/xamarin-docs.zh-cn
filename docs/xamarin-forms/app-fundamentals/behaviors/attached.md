@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 98c15f3e3503ccae164c2bb14b6de13c227893d6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8553eb57ca33efd23b2fedf78413eb1df00bb63e
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051551"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925980"
 ---
 # <a name="attached-behaviors"></a>附加行为
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/AttachedNumericValidationBehavior/)
 
 “附加行为是具有一个或多个附加属性的静态类。本文演示如何创建和使用附加行为。”_
 
@@ -132,4 +132,4 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 ## <a name="related-links"></a>相关链接
 
-- [附加行为（示例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)
+- [附加行为（示例）](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/AttachedNumericValidationBehavior/)

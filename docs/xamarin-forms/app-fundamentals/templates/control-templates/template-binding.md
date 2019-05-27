@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 49f66164c707f91f298b2e5cb09b35f1767186cf
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: e4e67ba63d2040bff264498bc9c00124dfd22164
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051576"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926338"
 ---
 # <a name="binding-from-a-xamarinforms-controltemplate"></a>从 Xamarin.Forms ControlTemplate 绑定
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
 
 模板绑定允许控件模板中的控件将数据绑定到公共属性，从而可以轻松更改控件模板中控件的属性值。本文演示如何使用模板绑定从控件模板执行数据绑定_。
 
@@ -181,7 +181,7 @@ public class HomePageCS : ContentPage
 
 - [数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 - [从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
-- [带有模板绑定的简单主题（示例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebinding/)
+- [带有模板绑定的简单主题（示例）](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleThemeWithTemplateBinding/)
 - [带有模板绑定和 ViewModel 的简单主题（示例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simplethemewithtemplatebindingandviewmodel/)
 - [TemplateBinding](xref:Xamarin.Forms.TemplateBinding)
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)

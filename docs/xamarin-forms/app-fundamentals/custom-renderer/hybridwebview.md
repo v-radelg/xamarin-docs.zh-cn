@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 0b91aae1456827625526d7568176a07e7e61f225
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
+ms.openlocfilehash: 625a860469c82da6e6986b03b8c3e55503433e67
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58507118"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926672"
 ---
 # <a name="implementing-a-hybridwebview"></a>实现 HybridWebView
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
 
 _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于在屏幕上放置布局和控件。本文演示如何为 HybridWebView 自定义控件创建自定义呈现器，演示如何增强特定于平台的 Web 控件以允许从 JavaScript 调用 C# 代码。_
 
@@ -509,5 +509,5 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererHybridWebView（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/hybridwebview/)
+- [CustomRendererHybridWebView（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
 - [从 JavaScript 调用 C#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

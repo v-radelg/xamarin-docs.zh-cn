@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: dc26084b94956ea9bc87384e5fdb79695bc8c2b5
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 86e10f068af14e65b55885488252af756a90652e
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051777"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926958"
 ---
 # <a name="creating-a-controltemplate"></a>创建 ControlTemplate
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 
 “可在应用程序级别或页面级别定义控件模板。本文演示如何创建和使用控件模板。”_
 
@@ -216,7 +216,7 @@ public class HomePageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [样式](~/xamarin-forms/user-interface/styles/index.md)
-- [简单主题（示例）](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
+- [简单主题（示例）](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
 - [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)
 - [ContentView](xref:Xamarin.Forms.ContentView)

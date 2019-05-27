@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 142c22cd239d6b66e5139346b45994ef2f20bdc8
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672555"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65971247"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms 中的自动化属性
 
@@ -149,7 +149,7 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
 
-在 iOS 和通用 Windows 平台 (UWP) 上，若要设置屏幕阅读器将为 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上的切换按钮阅读的文本，请在 `MasterDetailPage` 上或在 `Master` 页面的 `Icon` 属性上设置 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 属性。
+在 iOS 和通用 Windows 平台 (UWP) 上，若要设置屏幕阅读器将为 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上的切换按钮阅读的文本，请在 `MasterDetailPage` 上或在 `Master` 页面的 `IconImageSource` 属性上设置 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 属性。
 
 在 Android 上，若要设置屏幕阅读器将为 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 上的切换按钮阅读的文本，请将字符串资源添加到此 Android 项目：
 
@@ -161,11 +161,11 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 </resources>
 ```
 
-然后将 `Master` 页面的 `Icon` 属性的 `AutomationId` 属性设置为相应的字符串：
+然后将 `Master` 页面的 `IconImageSource` 属性的 `AutomationId` 属性设置为相应的字符串：
 
 ```csharp
 var master = new ContentPage { ... };
-master.Icon.AutomationId = "btnMDPAutomationID";
+master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

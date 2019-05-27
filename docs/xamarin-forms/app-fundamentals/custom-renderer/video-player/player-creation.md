@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 4bfbd065c9b17ce402c5a15289c7ff608eb58b23
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870009"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926638"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
-[VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解决方案包含为 Xamarin.Forms 实现视频播放器的所有代码。 它还包括一系列页面，演示如何在应用程序中使用视频播放器。 所有 `VideoPlayer` 代码及其平台呈现器都存于名为 `FormsVideoLibrary` 的项目文件夹中，并且也使用命名空间 `FormsVideoLibrary`。 这样应可以很容易地将文件复制到自己的应用程序中并引用这些类。
+[VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 解决方案包含为 Xamarin.Forms 实现视频播放器的所有代码。 它还包括一系列页面，演示如何在应用程序中使用视频播放器。 所有 `VideoPlayer` 代码及其平台呈现器都存于名为 `FormsVideoLibrary` 的项目文件夹中，并且也使用命名空间 `FormsVideoLibrary`。 这样应可以很容易地将文件复制到自己的应用程序中并引用这些类。
 
 ## <a name="the-video-player"></a>视频播放器
 
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)

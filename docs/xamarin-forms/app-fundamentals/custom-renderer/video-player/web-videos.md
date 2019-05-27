@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: bb58866a0fc0ddb542c0a40eb7a0bd9b37562776
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 784c4d22a112de1adc98d6b7f183f9fa2081a897
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869660"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926275"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 视频
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 `VideoPlayer` 类定义用于指定视频文件源的 `Source` 属性，以及 `AutoPlay` 属性。 `AutoPlay` 默认设置为 `true`，这意味着视频应在设置 `Source` 后自动开始播放：
 
@@ -449,7 +449,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>设置 URL 源
 
-通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md) 程序中的“播放 Web 视频”页由以下 XAML 文件定义：
+通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**]( https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 程序中的“播放 Web 视频”页由以下 XAML 文件定义：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -525,4 +525,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)

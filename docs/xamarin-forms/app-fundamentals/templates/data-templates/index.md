@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 8d39015b77396a87eb2f8c993a0e0ec42c563658
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ab48d6d3a463a287af8de7d3926287b799ae43a6
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53057465"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926263"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms 数据模板
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 
 数据模板用于指定受支持控件上的数据外观，并且通常会绑定到要显示的数据。
 
@@ -35,4 +35,4 @@ ms.locfileid: "53057465"
 
 ## <a name="related-links"></a>相关链接
 
-- [数据模板（示例）](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [数据模板（示例）](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)

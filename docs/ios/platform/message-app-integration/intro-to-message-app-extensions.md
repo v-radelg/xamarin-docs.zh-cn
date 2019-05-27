@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7bd4a87843852e940da96f688371ddbecbf7e0b4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cdeaae6cb83062f0d84a3605582b9779c9f36145
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153799"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178044"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>在 Xamarin.iOS 中的消息应用扩展基本知识
 
@@ -133,7 +133,7 @@ Apple 设计为一种新方法进行通信，从而不干胶标签的 iMessage �
 
 1. 启动 Visual Studio。
 2. 打开解决方案，以添加消息应用扩展。
-3. 选择 * * iOS 扩展 > iMessage 扩展 (iOS) * * 单击**下一步**按钮：
+3. 选择**iOS 扩展 > iMessage 扩展 (iOS)** 然后单击**下一步**按钮：
 
     [![选择 iMessage 扩展 (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 

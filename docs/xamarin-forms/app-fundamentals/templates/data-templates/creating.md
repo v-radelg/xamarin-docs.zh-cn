@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 0374d37027546c41305c8cd5f27de593c226fcaa
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: dee45f9788360326ddb393305e9a52627264a671
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233765"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926288"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>创建 Xamarin.Forms DataTemplate
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 
 _可通过内联方式创建数据模板，也可在 ResourceDictionary 中或根据自定义类型或适当的 Xamarin.Forms 单元类型进行创建。本文对每种技术进行了探讨。_
 
@@ -293,5 +293,5 @@ public class WithDataTemplatePageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [数据模板（示例）](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [数据模板（示例）](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

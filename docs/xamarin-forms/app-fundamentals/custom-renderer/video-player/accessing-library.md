@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: dedd2768bfa843e529e2eddcaed3b102c0a2efbd
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 6845a08a531305468b861a3205e978b379f242bf
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233505"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926163"
 ---
 # <a name="accessing-the-devices-video-library"></a>访问设备的视频库
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 
 大多数现代移动设备和台式电脑都能够使用其设备的摄像头录制视频。 用户创建的视频之后将以文件形式存储在设备上。 可从图片库中检索这些文件，并通过 `VideoPlayer` 类像任何其他视频一样播放它们。
 
@@ -188,7 +188,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-添加到 `MainActivity` 对象的部分是 [VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 解决方案中惟一的代码，在该方案中需更改常规应用程序代码以支持 `FormsVideoLibrary` 类。
+添加到 `MainActivity` 对象的部分是 [VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 解决方案中惟一的代码，在该方案中需更改常规应用程序代码以支持 `FormsVideoLibrary` 类。
 
 ### <a name="the-uwp-video-picker"></a>UWP 视频选取器
 
@@ -229,7 +229,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>调用依赖项服务
 
-[VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button`：
+[VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -390,5 +390,5 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

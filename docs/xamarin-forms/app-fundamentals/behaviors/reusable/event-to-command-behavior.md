@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 1c2aea9a5dead1962cfd4bb71d1a1211e8b98ee9
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 1bb3f319eb104a7425c3be820f5c91efe300737f
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056702"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925167"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重用 EventToCommandBehavior
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 
 行为可用于将命令与非旨在与命令交互的控件相关联。本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。_
 
@@ -35,7 +35,7 @@ ms.locfileid: "53056702"
 - **Converter** - 一种 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现，当绑定引擎在源和目标之间传递事件参数数据时，该实现将改变该数据的格式。
 
 > [!NOTE]
-> `EventToCommandBehavior` 是一个自定义类，它可以位于 [EventToCommand Behavior 示例](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)中，但并不属于 Xamarin.Forms。
+> `EventToCommandBehavior` 是一个自定义类，它可以位于 [EventToCommand Behavior 示例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)中，但并不属于 Xamarin.Forms。
 
 ## <a name="creating-the-behavior"></a>创建行为
 
@@ -208,6 +208,6 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 ## <a name="related-links"></a>相关链接
 
-- [EventToCommand 行为（示例）](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [EventToCommand 行为（示例）](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
 - [行为](xref:Xamarin.Forms.Behavior)
 - [行为&lt;&gt;](xref:Xamarin.Forms.Behavior`1)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 184aa18ac8c0f27ce92a23b06b9dd0364f977abc
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 5c67684f7d8cb763d4698de86c904e2887185361
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050879"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925187"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>突出显示地图上的路线
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
 
 本文介绍如何向地图添加折线叠加层。折线叠加层是一系列连接线段，通常用与在地图上显示路线，或形成所需的任何形状。_
 
@@ -304,6 +304,6 @@ namespace MapOverlay.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [折线地图叠加层（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+- [折线地图叠加层（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
 - [自定义图钉](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

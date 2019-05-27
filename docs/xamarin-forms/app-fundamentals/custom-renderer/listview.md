@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 39ba281f036b9c57f85629390f5ba76377c99dd8
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: bf2ba7d0cfe5b5b35eda423654e929e53fff451c
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054206"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926670"
 ---
 # <a name="customizing-a-listview"></a>自定义 ListView
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/listview/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ListView/)
 
 _Xamarin.Forms ListView 是以垂直列表的形式显示数据集合的视图。本文演示如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。_
 
@@ -567,4 +567,4 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererListView（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/listview/)
+- [CustomRendererListView（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ListView/)

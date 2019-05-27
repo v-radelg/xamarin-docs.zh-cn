@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 854b3fdbd34444cfb052d36287cf5cd47a36a2e0
-ms.sourcegitcommit: 0044d04990faa0b144b8626a4fceea0fdff95cfe
+ms.openlocfilehash: c60eecd5ebd0f518514cd77d8dd963568d1a1d43
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56666904"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970918"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版-详细信息页
 
@@ -111,7 +111,7 @@ public class MainPageCS : MasterDetailPage
              xmlns:local="using:MasterDetailPageNavigation"
              x:Class="MasterDetailPageNavigation.MasterPage"
              Padding="0,40,0,0"
-             Icon="hamburger.png"
+             IconImageSource="hamburger.png"
              Title="Personal Organiser">
     <StackLayout>
         <ListView x:Name="listView" x:FieldModifier="public">
@@ -145,7 +145,7 @@ public class MainPageCS : MasterDetailPage
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指定为 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 属性以显示每个 `MasterPageItem`。 `DataTemplate` 包含由 [`Image`](xref:Xamarin.Forms.Image) 和 [`Label`](xref:Xamarin.Forms.Label) 组成的 [`ViewCell`](xref:Xamarin.Forms.ViewCell)。 [`Image`](xref:Xamarin.Forms.Image) 显示 `IconSource` 属性值，[`Label`](xref:Xamarin.Forms.Label) 显示每个 `MasterPageItem` 的 `Title` 属性值。
 
-该页面有 [`Title`](xref:Xamarin.Forms.Page.Title) 和 [`Icon`](xref:Xamarin.Forms.Page.Icon) 属性集。 如果详细信息页有标题栏，则图标将显示在详细信息页上。 必须在 iOS 上通过将详细信息页面实例包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例中来启用此功能。
+该页面有 [`Title`](xref:Xamarin.Forms.Page.Title) 和 [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 属性集。 如果详细信息页有标题栏，则图标将显示在详细信息页上。 必须在 iOS 上通过将详细信息页面实例包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例中来启用此功能。
 
 > [!NOTE]
 > [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 页必须要有其 [`Title`](xref:Xamarin.Forms.Page.Title) 属性集，否则会出现异常。
@@ -198,7 +198,7 @@ public class MasterPageCS : ContentPage
       SeparatorVisibility = SeparatorVisibility.None
     };
 
-    Icon = "hamburger.png";
+    IconImageSource = "hamburger.png";
     Title = "Personal Organiser";
     Content = new StackLayout
     {
@@ -239,7 +239,7 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` 方法执行以下操作：
 
-- 它检索来自 [`ListView`](xref:Xamarin.Forms.ListView) 实例的 [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)，并假设其不是 `null`，则将详细信息页设置为存储在 `MasterPageItem` 的 `TargetType` 属性中的页面类型的新实例。 页面类型包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例中以确保通过 `MasterPage` 上的 [`Icon`](xref:Xamarin.Forms.Page.Icon) 属性引用的图标能够显示在 iOS 中的详细信息页上。
+- 它检索来自 [`ListView`](xref:Xamarin.Forms.ListView) 实例的 [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)，并假设其不是 `null`，则将详细信息页设置为存储在 `MasterPageItem` 的 `TargetType` 属性中的页面类型的新实例。 页面类型包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例中以确保通过 `MasterPage` 上的 [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 属性引用的图标能够显示在 iOS 中的详细信息页上。
 - [`ListView`](xref:Xamarin.Forms.ListView) 中所选的项设置为 `null`，以确保下次显示 `MasterPage` 时不会选择任何 `ListView` 中的项。
 - 通过将 [`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) 属性设置为 `false` 以将详细信息页显示给用户。 此属性控制是显示母版页还是详细信息页。 应将其设置为 `true` 以显示母版页，设置为 `false` 以显示详细信息页。
 

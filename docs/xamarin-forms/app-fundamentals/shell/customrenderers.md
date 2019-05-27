@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c1418e581e2896a77d0b83a46ecc8d3a0ce8c510
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 59dba2fed0422db72b0617d9a831e3a9364320bd
+ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054207"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65970788"
 ---
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自定义呈现器
-
-![](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 Xamarin.Forms Shell 应用程序的优势之一是可通过各种 Shell 类公开的属性和方法对其外观和行为进行高度自定义。 不过，在需要更为复杂的平台特定的自定义时，也可创建 Shell 自定义呈现器。 与其他自定义呈现器一样，可以将 Shell 自定义呈现器添加到一个平台项目以自定义外观和行为，同时允许其他平台上的默认行为；或者可将其他 Shell 自定义呈现器添加到各个平台项目以自定义 iOS 和 Android 上的外观和行为。
 

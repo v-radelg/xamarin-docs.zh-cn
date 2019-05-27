@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 71d38cf0408af9f52a675aa381c8187ebfe9cc85
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9f3d95b3901295c29c2276bfdd85579b321f9795
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051898"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925435"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>将效果参数作为公共语言运行时属性传递
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
 
 公共语言运行时 (CLR) 属性可用于定义不响应运行时属性更改的效果参数。本文演示如何使用 CLR 属性将参数传递给效果。_
 
@@ -245,4 +245,4 @@ namespace EffectsDemo.UWP
 - [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [阴影效果（示例）](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+- [阴影效果（示例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)

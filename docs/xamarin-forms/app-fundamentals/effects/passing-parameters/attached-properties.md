@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 642a4a63ca2c451c6a085f0e99cebd93babe078d
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058751"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65925438"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>将效果参数作为附加属性传递
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
 
 _附加属性可用于定义响应运行时属性更改的效果参数。本文演示如何使用附加属性将参数传递给效果，以及如何在运行时更改参数。_
 
@@ -174,7 +174,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 </Style>
 ```
 
-[`Style`](xref:Xamarin.Forms.Style) 可通过使用 `StaticResource` 标记扩展将 [`Style`](xref:Xamarin.Forms.VisualElement.Style) 属性设置为 `Style` 实例来应用于 [`Label`](xref:Xamarin.Forms.Label)，如以下代码示例所示：
+[`Style`](xref:Xamarin.Forms.Style) 可通过使用 `StaticResource` 标记扩展将 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 属性设置为 `Style` 实例来应用于 [`Label`](xref:Xamarin.Forms.Label)，如以下代码示例所示：
 
 ```xaml
 <Label Text="Label Shadow Effect" ... Style="{StaticResource ShadowEffectStyle}" />
@@ -440,4 +440,4 @@ public class LabelShadowEffect : PlatformEffect
 - [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [阴影效果（示例）](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+- [阴影效果（示例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)

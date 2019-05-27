@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 775ef2a38cf423536072358299ac4f30db974d9a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: cc7bdcfff3916f7d7ae04e4ef63cb02f17315c2a
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056991"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926708"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/entry/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Entry/)
 
-Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
+Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。_
 
 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 Xamarin.Forms 应用程序呈现 [`Entry`](xref:Xamarin.Forms.Entry) 控件时，在 iOS 中实例化 `EntryRenderer` 类，进而实例化本机 `UITextField` 控件。 在 Android 平台上，`EntryRenderer` 类实例化 `EditText` 控件。 在通用 Windows 平台 (UWP) 上，`EntryRenderer` 类实例化 `TextBox` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
@@ -216,4 +216,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererEntry（示例）](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/entry/)
+- [CustomRendererEntry（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Entry/)

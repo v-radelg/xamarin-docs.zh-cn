@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: bc1ca01f4bf5cb8f7ef51c705319fb2cc1a0bd99
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: a8da1e96bbdf51899b1780265933402da791a03e
+ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65054307"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66005157"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
-![](~/media/shared/preview.png "此 API 当前为预发布版本")
-
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
 浮出控件后，Shell 应用程序中的下一级别导航为底部选项卡栏。 或者，浮出控件关闭时，系统将底部选项卡栏视作顶级导航。
 
@@ -112,8 +110,8 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
        x:Class="Xaminals.AppShell"
        FlyoutBehavior="Disabled">
     <FlyoutItem>
-        <views:CatsPage Icon="cat.png" />
-        <views:DogsPage Icon="dog.png" />
+        <views:CatsPage IconImageSource="cat.png" />
+        <views:DogsPage IconImageSource="dog.png" />
     </FlyoutItem>
 </Shell>
 ```
@@ -228,7 +226,7 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
             <views:CatsPage />
             <views:DogsPage />
         </Tab>
-        <views:MonkeysPage Icon="monkey.png" />
+        <views:MonkeysPage IconImageSource="monkey.png" />
     </FlyoutItem>
 </Shell>
 ```
@@ -268,11 +266,11 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 `Shell` 类定义以下控制选项卡外观的属性：
 
-- `ShellTabBarBackgroundColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的背景色。 如果未设置属性，则使用 `ShellBackgroundColor` 属性值。
-- `ShellTabBarDisabledColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的禁用颜色。 如果未设置属性，则使用 `ShellDisabledColor` 属性值。
-- `ShellTabBarForegroundColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的前景色。 如果未设置属性，则使用 `ShellForegroundColor` 属性值。
-- `ShellTabBarTitleColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的标题颜色。 如果未设置属性，将使用 `ShellTitleColor` 属性值。
-- `ShellTabBarUnselectedColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的未选定颜色。 如果未设置属性，则使用 `ShellUnselectedColor` 属性值。
+- `TabBarBackgroundColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的背景色。 如果未设置属性，则使用 `BackgroundColor` 属性值。
+- `TabBarDisabledColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的禁用颜色。 如果未设置属性，则使用 `DisabledColor` 属性值。
+- `TabBarForegroundColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的前景色。 如果未设置属性，则使用 `ForegroundColor` 属性值。
+- `TabBarTitleColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的标题颜色。 如果未设置属性，将使用 `TitleColor` 属性值。
+- `TabBarUnselectedColor` 是 `Color` 类型的附加属性，用于定义选项卡栏的未选定颜色。 如果未设置属性，则使用 `UnselectedColor` 属性值。
 
 所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着这些属性可以作为数据绑定的目标。
 
@@ -281,11 +279,11 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 ```xaml
 <Style x:Key="BaseStyle"
        TargetType="Element">
-    <Setter Property="Shell.ShellTabBarBackgroundColor"
+    <Setter Property="Shell.TabBarBackgroundColor"
             Value="#3498DB" />
-    <Setter Property="Shell.ShellTabBarTitleColor"
+    <Setter Property="Shell.TabBarTitleColor"
             Value="White" />
-    <Setter Property="Shell.ShellTabBarUnselectedColor"
+    <Setter Property="Shell.TabBarUnselectedColor"
             Value="#B4FFFFFF" />
 </Style>
 ```
@@ -294,6 +292,6 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/forms40/UserInterface/Xaminals/)
+- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Xamarin.Forms Shell 导航](navigation.md)
 - [Xamarin.Forms Shell 特定属性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

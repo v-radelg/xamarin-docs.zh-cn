@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: bcea44688a64e741868e7ad2adf6c4dc65a5071a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: c547a851d9e042f0289ac5c3a2d20ff97f681551
+ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052272"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65926951"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 数据模板简介
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 
 _借助 Xamarin.Forms 数据模板，可定义受支持控件上的数据表示形式。本文介绍了数据模板，并且分析了它们必不可少的原因。_
 
@@ -138,5 +138,5 @@ public class Person
 ## <a name="related-links"></a>相关链接
 
 - [单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [数据模板（示例）](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [数据模板（示例）](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

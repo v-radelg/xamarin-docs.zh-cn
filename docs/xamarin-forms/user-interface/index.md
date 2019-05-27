@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/14/2018
-ms.openlocfilehash: b54dce66e234807a3f03251461f8f8c868ce95e9
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970949"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178069"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 用户界面视图
 
@@ -51,6 +51,10 @@ DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预�
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
 `DatePicker`使用户可以选择指定范围内的一个日期。 实现使用日期选取器受特定平台上运行应用程序。
+
+## <a name="display-pop-upspop-upsmd"></a>[显示弹出窗口](pop-ups.md)
+
+Xamarin.Forms 提供了两个弹出式用户界面元素：警报和操作工作表。 这些界面元素可以用于显示对话框，询问用户简单的问题并指导用户完成任务。
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 SkiaSharp 处理图形](graphics/skiasharp/index.md)
 
