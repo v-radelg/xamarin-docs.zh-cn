@@ -112,6 +112,7 @@
 #### [模式页](app-fundamentals/navigation/modal.md)
 ### [shell](app-fundamentals/shell/index.md)
 #### [介绍](app-fundamentals/shell/introduction.md)
+#### [创建 Shell 应用程序](app-fundamentals/shell/create.md)
 #### [浮出控件](app-fundamentals/shell/flyout.md)
 #### [选项卡](app-fundamentals/shell/tabs.md)
 #### [导航](app-fundamentals/shell/navigation.md)
