@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: cfb2bddceea7717ac87bd7a78fd9cd45e8b93144
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4f70690df46b71db75e48eca0fd901a854be0b21
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285137"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66353997"
 ---
 # <a name="part-2---architecture"></a>第 2 部分 - 体系结构
 

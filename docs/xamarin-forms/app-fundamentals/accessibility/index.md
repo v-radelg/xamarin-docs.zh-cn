@@ -6,23 +6,24 @@ ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/15/2018
-ms.openlocfilehash: 20ea72e588e2e3b1d575bd593446bf6724d73d8c
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 2aaa61400d3775c4d622b805d24ff0b338017de5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971052"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354045"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms 辅助功能
 
-用户希望能在用户界面完成一系列的需求和体验，生成可访问的应用程序才能确保该应用程序可供用户使用。
+用户希望能在用户界面完成一系列的需求和体验，生成可访问的应用程序才能确保该应用程序可供用户使用。 
 
 确保 Xamarin.Forms 应用程序可访问意味着需要考虑多个用户界面元素的布局和设计。 有关需考虑的问题的指南，请参阅[辅助功能清单](~/cross-platform/app-fundamentals/accessibility.md)。 Xamarin.Forms API 已解决了许多辅助功能问题（例如较大字体、合适的颜色和对比度设置）。
 
 [Android 辅助功能](~/android/app-fundamentals/accessibility.md)和 [iOS 辅助功能](~/ios/app-fundamentals/accessibility.md)指南包含 Xamarin 公开的本机 API 详细信息，此外 [MSDN 上的 UWP 辅助功能指南](https://msdn.microsoft.com/windows/uwp/accessibility/basic-accessibility-information)介绍了该平台上的本机方法。 这些 API 用于在各个平台上完全实现可访问的应用程序。
 
-针对各个基础平台上可用的所有辅助功能 API，Xamarin.Forms 目前尚不提供内置支持。 但是，它支持在用户界面元素上设置自动化属性，以支持屏幕阅读器和导航辅助工具，这是构建可访问应用程序的一个重要部分。 有关详细信息，请参见[自动化属性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
+针对各个基础平台上可用的所有辅助功能 API，Xamarin.Forms 目前尚不提供内置支持  。 但是，它支持在用户界面元素上设置自动化属性，以支持屏幕阅读器和导航辅助工具，这是构建可访问应用程序的一个重要部分。 有关详细信息，请参见[自动化属性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
 
 Xamarin.Forms 应用程序还可以指定控件的 Tab 键顺序，以改进可用性和可辅助功能。 有关详细信息，请参阅[键盘辅助功能](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)。
 
@@ -32,12 +33,18 @@ Xamarin.Forms 应用程序还可以指定控件的 Tab 键顺序，以改进可�
 
 通常情况下，Xamarin.Forms 应用程序将面向多个平台，这意味着需要根据平台测试辅助功能。 请按照以下链接，了解如何在每个平台上测试辅助功能：
 
-- [iOS 测试](~/ios/app-fundamentals/accessibility.md)
-- [Android 测试](~/android/app-fundamentals/accessibility.md)
-- [Windows AccScope (MSDN)](https://msdn.microsoft.com/library/windows/desktop/dn433239)
+- [iOS 测试](~/ios/app-fundamentals/accessibility.md) 
+- [Android 测试](~/android/app-fundamentals/accessibility.md) 
+- [Windows AccScope (MSDN)](https://msdn.microsoft.com/library/windows/desktop/dn433239) 
 
 ## <a name="related-links"></a>相关链接
 
 - [跨平台辅助功能](~/cross-platform/app-fundamentals/accessibility.md)
 - [自动化属性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)
 - [键盘辅助功能](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Making-Mobile-Apps-Accessible/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

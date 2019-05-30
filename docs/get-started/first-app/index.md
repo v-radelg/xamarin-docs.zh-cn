@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 04/02/2019
-ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/23/2019
+ms.openlocfilehash: 3b25be2c929e0f072af2ff563d49ceaf07cae058
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61351890"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252346"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>生成第一个 Xamarin.Forms 应用
 
@@ -22,7 +22,7 @@ ms.locfileid: "61351890"
 
 ::: zone pivot="windows"
 
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-Android-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows 分步说明
 
@@ -73,6 +73,12 @@ ms.locfileid: "61351890"
 
     > [!TIP]
     > 可使用联网的 Mac 计算机从 Visual Studio 生成和调试 iOS 应用。 有关详细信息，请参阅[安装说明](~/ios/get-started/installation/windows/index.md)。
+
+## <a name="build-an-ios-app-in-visual-studio-2019"></a>生成 iOS 应用在 Visual Studio 2019
+
+此视频介绍了构建和测试在 Windows 上使用 Visual Studio 2019 的 iOS 应用程序的过程：
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-iOS-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ::: zone-end
 ::: zone pivot="win-vs2017"

@@ -5,16 +5,16 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 35ef922553cb91aa915c08df03414d1e5f3034cb
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 731abcdc263ba1f41595e8a27a5a7aa509f34912
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59239922"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354097"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:文本到语音转换
 
-TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
+ TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
 
 ## <a name="get-started"></a>入门
 
@@ -63,9 +63,7 @@ public async Task SpeakNowDefaultSettings()
 public void CancelSpeech()
 {
     if (cts?.IsCancellationRequested ?? false)
-        return;
-
-    cts.Cancel();
+        cts.Cancel();
 }
 ```
 

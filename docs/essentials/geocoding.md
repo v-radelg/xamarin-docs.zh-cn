@@ -4,23 +4,24 @@ description: Xamarin.Essentials 中的 Geocoding 类提供了 API，既可以将
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: bc08554f0060ca5de8d7ffc90ea5c65463b93f3b
-ms.sourcegitcommit: 97dca3face7c4ad5555dfaca88f5b45a70ca556d
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57972593"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354111"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:地理编码
 
-Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。
+Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标  。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Geocoding 功能，需要以下特定于平台的设置。
+若要访问 Geocoding 功能，需要以下特定于平台的设置  。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -32,9 +33,9 @@ Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-需要必应地图 API 密钥才能使用地理编码功能。 注册免费的[必应地图](https://www.bingmapsportal.com/)帐户。 在“我的帐户”>“我的密钥”下创建一个新密钥，并根据你的应用程序类型（对于 UWP 应用，应该是公共 Windows 应用（UWP、8.x 及更早版本））填写信息。
+需要必应地图 API 密钥才能使用地理编码功能。 注册免费的[必应地图](https://www.bingmapsportal.com/)帐户。 在“我的帐户”>“我的密钥”下创建一个新密钥，并根据你的应用程序类型（对于 UWP 应用，应该是公共 Windows 应用（UWP、8.x 及更早版本））填写信息   。
 
-在应用程序生命周期的早期调用任何 Geocoding 方法之前，应设置 API 密钥（仅在 UWP 上可用）：
+在应用程序生命周期的早期调用任何 Geocoding 方法之前，应设置 API 密钥（仅在 UWP 上可用）  ：
 
 ```csharp
 Platform.MapServiceToken = "YOUR-KEY-HERE";
@@ -124,3 +125,9 @@ catch (Exception ex)
 
 - [Geocoding 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
 - [Geocoding API 文档](xref:Xamarin.Essentials.Geocoding)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Geocoding-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

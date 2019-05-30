@@ -6,13 +6,14 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/21/2018
-ms.openlocfilehash: 8b5a610cbd87ca9e80272b6be8e726e4fd323dd0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: ba0a76b44f5942db5528e9f5d11a1d2c3f027c40
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925608"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354027"
 ---
 # <a name="resource-dictionaries"></a>资源字典
 
@@ -308,3 +309,10 @@ Xamarin.Forms 3.0，合并在一起的过程开头[ `ResourceDictionary` ](xref:
 - [资源字典 （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
 - [样式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/XamarinForms-101-Application-Resources/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
+

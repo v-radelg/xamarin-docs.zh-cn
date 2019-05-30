@@ -115,6 +115,7 @@
 #### [创建 Shell 应用程序](app-fundamentals/shell/create.md)
 #### [浮出控件](app-fundamentals/shell/flyout.md)
 #### [选项卡](app-fundamentals/shell/tabs.md)
+#### [页面配置](app-fundamentals/shell/configuration.md)
 #### [导航](app-fundamentals/shell/navigation.md)
 #### [搜索](app-fundamentals/shell/search.md)
 #### [自定义呈现器](app-fundamentals/shell/customrenderers.md)

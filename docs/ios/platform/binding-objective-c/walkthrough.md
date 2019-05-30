@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: c8adc7ec7f717cf0004f79e3b71123d6daeaee86
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 2897129779b698eae60338d44f9af19b6a2761bc
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978442"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252359"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
@@ -123,7 +123,7 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
 第一步是我们要添加到静态库 InfoColorPicker 源代码。 若要实现此目的让我们执行以下操作：
 
 1. 启动 Xcode。
-2. 从**文件**菜单中选择**新建** > **项目...**:
+2. 从**文件**菜单中选择**新建** > **项目...** :
 
     [![](walkthrough-images/image04.png "开始一个新项目")](walkthrough-images/image04.png#lightbox)
 3. 选择**框架和库**，则**Cocoa Touch 静态库**模板，然后单击**下一步**按钮：
@@ -138,7 +138,7 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
 
     [![](walkthrough-images/image12.png "将所有 InfColorPicker 文件复制")](walkthrough-images/image12.png#lightbox)
 
-7. 返回到 Xcode 中，右键单击**InfColorPicker**文件夹，然后选择**将文件添加到"InfColorPicker..."**:
+7. 返回到 Xcode 中，右键单击**InfColorPicker**文件夹，然后选择**将文件添加到"InfColorPicker..."** :
 
     [![](walkthrough-images/image08.png "添加文件")](walkthrough-images/image08.png#lightbox)
 
@@ -172,7 +172,7 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
 
 ### <a name="creating-a-fat-binary"></a>创建 Fat 二进制文件
 
-所有 iOS 设备都已由 ARM 体系结构提供支持都了随着时间的推移而开发的处理器。 每个新的体系结构仍保持向后兼容性的同时添加了新指令和其他改进。 在 iOS 设备上，我们 armv6、 armv7、 armv7s、 arm64 指令集 – 尽管[我们不能再使用 armv6](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS 模拟器不支持通过 ARM 并且 istead x86 和提供支持的 x86_64 模拟器。 我们对我们的意义是，我们必须在每个指令上提供库设置。
+所有 iOS 设备都已由 ARM 体系结构提供支持都了随着时间的推移而开发的处理器。 每个新的体系结构仍保持向后兼容性的同时添加了新指令和其他改进。 iOS 设备具有 armv6、 armv7、 armv7s、 arm64 指令集 – 尽管[armv6 不使用任何更](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS 模拟器不支持通过 ARM 并且改为 x86 和提供支持的 x86_64 模拟器。 这意味着必须为每个指令集提供库。
 
 Fat 库是`.a`文件包含所有支持的体系结构。
 
@@ -182,9 +182,9 @@ Fat 库是`.a`文件包含所有支持的体系结构。
 - 编译静态库的 x86 和 x84_64 版本。
 - 使用`lipo`命令行工具，可将两个静态库合并为一个。
 
-这三个步骤是很简单，且可能有必要在将来重复这些 OBJECTIVE-C 库接收更新时，或者如果我们需要使用 bug 修补程序。 如果您决定自动执行这些步骤，它将简化未来的维护和支持的 iOS 绑定项目。
+虽然这三个步骤是很简单，可能需要重复这些步骤，在将来时 OBJECTIVE-C 库接收更新，或如果我们需要使用 bug 修补程序。 如果您决定自动执行这些步骤，它将简化未来的维护和支持的 iOS 绑定项目。
 
-有许多工具可用于自动执行此类任务的 shell 脚本[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，并[使](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 我们安装 Xcode 命令行工具，我们还安装了进行，因此，它是将用于本演练的生成系统。 下面是**生成文件**可用于创建将适用于 iOS 设备和模拟器的任何库的多体系结构共享的库：
+有许多工具可用于自动执行此类任务的 shell 脚本[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，并[使](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 安装 Xcode 命令行工具时,`make`也会安装，这就是将用于本演练的生成系统。 下面是**生成文件**可用于创建将适用于 iOS 设备和模拟器的任何库的多体系结构共享的库：
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,7 +213,7 @@ clean:
     -rm -f *.a *.dll
 ```
 
-输入**生成文件**您选择的纯文本编辑器中的命令和更新各部分之间用**YOUR 项目名称**与项目的名称。 也很重要，确保我们粘贴中说明的选项卡都已被保留，上面的说明。
+输入**生成文件**您选择的纯文本编辑器中的命令和更新各部分之间用**YOUR 项目名称**与项目的名称。 它还是必须确保，您粘贴到上面的说明，请准确中保留的说明进行操作的选项卡。
 
 使用名称保存文件**生成文件**到与我们在上面创建 InfColorPicker Xcode 静态库相同的位置：
 
@@ -252,7 +252,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 启动 Visual Studio for mac。
-1. 从**文件**菜单中，选择**新建** > **解决方案...**:
+1. 从**文件**菜单中，选择**新建** > **解决方案...** :
 
     ![](walkthrough-images/bind01.png "启动新的解决方案")
 
@@ -276,11 +276,11 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 启动 Visual Studio。
 
-1. 从**文件**菜单中，选择**新建** > **项目...**:
+1. 从**文件**菜单中，选择**新建** > **项目...** :
 
     ![开始一个新项目](walkthrough-images/bind01vs.png "开始一个新项目")
 
-1. 从新建项目对话框中，选择**可视化C#> iPhone 和 iPad > iOS 绑定库 (Xamarin)**:
+1. 从新建项目对话框中，选择**可视化C#> iPhone 和 iPad > iOS 绑定库 (Xamarin)** :
 
     [![选择 iOS 绑定库](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
@@ -320,7 +320,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 复制`libInfColorPickerSDK.a`从你**Mac 生成主机**并将其粘贴到你绑定的项目。
 
-1. 右键单击项目并选择**添加 > 现有项...**:
+1. 右键单击项目并选择**添加 > 现有项...** :
 
     ![](walkthrough-images/bind04vs.png "添加现有文件")
 
@@ -558,7 +558,7 @@ Europa:Resources kmullins$
 
     ![](walkthrough-images/use03vs.png "创建 iPhone 用户界面")
 
-1. **添加 InfColorPickerView.xib** -InfColorPicker OBJECTIVE-C 库包括 **.xib**文件。 Xamarin.iOS 不包括此 **.xib**在绑定项目中，这将导致在我们的示例应用程序的运行时错误。 对此解决方法是将添加 **.xib**对 Xamarin.iOS 项目从文件我们**Mac 生成主机**。 选择在 Xamarin.iOS 项目，右键单击并选择**外** > **现有项...**，并添加 **.xib**文件。
+1. **添加 InfColorPickerView.xib** -InfColorPicker OBJECTIVE-C 库包括 **.xib**文件。 Xamarin.iOS 不包括此 **.xib**在绑定项目中，这将导致在我们的示例应用程序的运行时错误。 对此解决方法是将添加 **.xib**对 Xamarin.iOS 项目从文件我们**Mac 生成主机**。 选择在 Xamarin.iOS 项目，右键单击并选择**外** > **现有项...** ，并添加 **.xib**文件。
 
 -----
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 202f044ebd7dd5b110b94d2aa60eeb7151150607
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f67ab15466da118d12c280d597972d2d11f8e600
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994723"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178110"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms 导航
 
-Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。
+Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。 
 
 ![](images/page-types.png "Xamarin.Forms 页面类型")
 
@@ -26,7 +26,7 @@ Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用
 
 ## <a name="tabbedpagetabbed-pagemd"></a>[TabbedPage](tabbed-page.md)
 
-Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 包含一系列选项卡和较大的详细信息区域，其中每个选项卡将内容加载到详细信息区域。
+Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都将内容加载到详细信息区域。
 
 ## <a name="carouselpagecarousel-pagemd"></a>[CarouselPage](carousel-page.md)
 
@@ -39,7 +39,3 @@ Xamarin.Forms [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 页面�
 ## <a name="modal-pagesmodalmd"></a>[模式页](modal.md)
 
 Xamarin.Forms 还支持模式页。 模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。
-
-## <a name="displaying-pop-upspop-upsmd"></a>[显示弹出窗口](pop-ups.md)
-
-Xamarin.Forms 提供了两个弹出式用户界面元素：警报和操作工作表。 这些界面元素可用于向用户询问简单问题并指导用户完成任务。

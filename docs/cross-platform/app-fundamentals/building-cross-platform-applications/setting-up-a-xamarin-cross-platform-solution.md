@@ -1,25 +1,25 @@
 ---
-title: 第 3 部分 - 建立 Xamarin 跨平台解决方案
-description: 本文档介绍如何设置在 Xamarin 中的跨平台解决方案。 它 discuses 各种代码共享策略，如共享项目和.NET Standard。
+title: 第 3 部分-建立 Xamarin 跨平台解决方案
+description: 本文档介绍如何设置在 Xamarin 中的跨平台解决方案。 它讨论了各种代码共享策略如共享的项目和.NET Standard。
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: f802e31d851915d33cb6dbf5866f8cba3ab90303
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276550"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354071"
 ---
-# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3 部分 - 建立 Xamarin 跨平台解决方案
+# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3 部分-建立 Xamarin 跨平台解决方案
 
 所有 Xamarin 项目而不考虑要使用什么平台，都使用相同的解决方案文件格式 (在 Visual Studio **.sln**文件格式)。 即使在单独的项目不能加载 （如 Visual Studio for Mac 中的 Windows 项目） 时，可以在开发环境之间共享解决方案。
 
 
 
-在创建新的跨平台应用程序时，第一步是创建一个空白解决方案。 这部分会发生什么情况下一步： 设置有关构建跨平台移动应用项目。
+当创建新的跨平台应用程序，第一步是创建一个空白解决方案。 本部分介绍会发生什么情况下一步： 设置有关构建跨平台移动应用项目。
 
  <a name="Sharing_Code" />
 
@@ -33,7 +33,7 @@ ms.locfileid: "61276550"
 
 ### <a name="shared-projects"></a>共享项目
 
-共享代码文件的最简单方法是使用[共享项目](~/cross-platform/app-fundamentals/shared-projects.md)。
+共享代码文件的最简单方法使用[共享项目](~/cross-platform/app-fundamentals/shared-projects.md)。
 
 此方法，可跨不同平台项目中，共享相同的代码并使用编译器指令将包含不同的、 特定于平台的代码路径。
 
