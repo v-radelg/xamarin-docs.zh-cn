@@ -6,13 +6,13 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/01/2018
-ms.openlocfilehash: f2865858552d4445dff95c85767c41849c19cc29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/30/2019
+ms.openlocfilehash: 46e628700771864c6a4b99edea550af694bf3a62
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018245"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394685"
 ---
 # <a name="cpu-architectures"></a>CPU 体系结构
 
@@ -49,6 +49,9 @@ Xamarin.Android 支持以下体系结构：
 
 -   **armeabi** &ndash;至少支持 ARMv5TE 指令集的基于 ARM 的 Cpu。 请注意，`armeabi`不是线程安全的不应在多 CPU 的设备上使用。
 
+> [!NOTE]
+> 起始日期[Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture)，`armeabi`不再受支持。
+
 -   **armeabi-v7a** &ndash;基于 ARM 的 Cpu 使用硬件浮点操作和多个 CPU (SMP) 设备。 请注意，`armeabi-v7a`计算机代码不会在 ARMv5 设备上运行。
 
 -   **arm64-v8a** &ndash;基于 64 位 ARMv8 体系结构的 Cpu。
@@ -66,7 +69,7 @@ Xamarin.Android 将默认为`armeabi-v7a`有关**发行**生成。 此设置可�
 无需选择**arm64-v8a**或**x86_64**面向 64 位设备; 64 位支持不需要 64 位硬件上运行你的应用。 例如，64 位 ARM 设备 (如[Nexus 9](http://www.google.com/nexus/9/)) 可以运行应用程序配置为`armeabi-v7a`。 启用 64 位支持的主要优点是使你的应用以解决更多的内存。
 
 > [!NOTE]
-> 64 位运行时支持目前试验性功能。 请记住，64 位运行时*不*64 位设备上运行您的应用程序所必需。 
+> 自 2018 年 8 月起新应用需要面向 API 级别 26，自 2019 年 8 月起，除 32 位版本之外，应用还[需要提供 64 位版本](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
 
 ## <a name="additional-information"></a>其他信息
 
