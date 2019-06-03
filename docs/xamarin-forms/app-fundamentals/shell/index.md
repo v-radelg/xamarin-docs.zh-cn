@@ -6,13 +6,13 @@ ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 40f955d39799598093060f3230629a099885e4a2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 05/28/2019
+ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970766"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252274"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -20,13 +20,21 @@ ms.locfileid: "65970766"
 
 Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数移动应用程序所需的基本功能。 包括常见的导航用户体验、基于 URI 的导航方案，以及集成的搜索处理程序。
 
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[创建 Xamarin.Forms Shell 应用程序](create.md)
+
+创建 Xamarin.Forms Shell 应用程序的过程包括创建可对 `Shell` 类进行子类化的 XAML 文件，将应用程序的 `App` 类的 `MainPage` 属性设置为子类化的 `Shell` 对象，然后描述子类化的 `Shell` 类中的应用程序的视觉对象层次结构。
+
 ## <a name="flyoutflyoutmd"></a>[浮出控件](flyout.md)
 
 浮出控件是 Shell 应用程序的根菜单，可通过图标或从屏幕一侧轻扫进行访问。 浮出控件由可选标头、浮出控件项和可选菜单项组成。
 
 ## <a name="tabstabsmd"></a>[选项卡](tabs.md)
 
-浮出控件后，Shell 应用程序中的下一级别导航为底部选项卡栏。 当一个选项卡包含多个页面时，页面将可通过顶部选项卡导航。
+浮出控件后，Shell 应用程序中的下一级别导航为底部选项卡栏。 或者，应用程序的导航模式可以以底部选项卡开头且不使用浮出控件。 在两种情况下，当底部选项卡包含多个页面时，页面将可通过顶部选项卡导航。
+
+## <a name="page-configurationconfigurationmd"></a>[页面配置](configuration.md)
+
+`Shell` 类定义了可用于在 Xamarin.Forms Shell 应用程序中配置页面外观的附加属性。 这包括设置页面颜色、禁用导航栏、禁用选项卡栏以及在导航栏中显示视图。
 
 ## <a name="navigationnavigationmd"></a>[导航](navigation.md)
 

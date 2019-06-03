@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 59dba2fed0422db72b0617d9a831e3a9364320bd
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: ecb68d662c64b65346ffd04f0d3d3cd525533151
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970788"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178032"
 ---
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自定义呈现器
 
@@ -42,6 +42,8 @@ Xamarin.Forms Shell 应用程序的优势之一是可通过各种 Shell 类公�
 | iOS | Android |
 | --- | --- |
 | `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` |
+
+`FlyoutItem` 和 `TabBar` 类是 `ShellItem` 类的别名，而 `Tab` 类是 `ShellSection` 类的别名。 因此，在为 `FlyoutItem` 对象创建自定义呈现器时应重写 `CreateShellItemRenderer` 方法，在为 `Tab` 对象创建自定义呈现器时应重写 `CreateShellSectionRenderer` 方法。
 
 > [!IMPORTANT]
 > iOS 和 Android 上都包含其他 Shell 呈现器类，如 `ShellSectionRenderer` 和 `ShellItemRenderer`。 但这些其他呈现器类由 `ShellRenderer` 类的重写创建而成。 因此，可以创建这些其他呈现器类的子类，并在子类 `ShellRenderer` 类的相应重写中创建该子类的实例，以此方式来自定义这些呈现器类的行为。

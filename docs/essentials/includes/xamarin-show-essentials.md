@@ -2,12 +2,12 @@
 ms.topic: include
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 01/08/2019
-ms.openlocfilehash: 68bbf0d6e55b64e91934c671bbb1872f41b07b76
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.date: 05/28/2019
+ms.openlocfilehash: d53e4e2e0d76e9c24ef8d79d6eed1b74bdb27d4d
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "54115348"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354024"
 ---
-可以在[第 9 频道](https://channel9.msdn.com/Shows/XamarinShow)和 [YouTube](https://www.youtube.com/playlist?list=PLlrxD0HtieHjcWsAFoFnPy6I0dn9fDOjS) 上找到更多的 Xamarin 演示。
+在[第 9 频道](https://channel9.msdn.com/Shows/XamarinShow)和 [YouTube](https://www.youtube.com/c/XamarinDevelopers) 上查找更多 Xamarin 视频。

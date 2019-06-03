@@ -6,15 +6,15 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: e97dbb993cb108245636ae459a572e18b13d6817
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 05/24/2019
+ms.openlocfilehash: df8ecba2527015dd6a7e2fd324b34306295b94d3
+ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005201"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66213314"
 ---
-# <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
+# <a name="xamarinforms-shell-search"></a>Xamarin.Forms Shell 搜索
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
@@ -22,50 +22,11 @@ Xamarin.Forms Shell 包含 `SearchHandler` 类提供的集成搜索功能。 将
 
 [![iOS 和 Android 上的 Shell SearchHandler 的屏幕截图](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
 
-将查询输入到搜索框后，可使用数据填充搜索建议：
+将查询输入到搜索框时，`Query` 属性将更新，每次更新时均将执行 `OnQueryChanged` 方法。 可以重写此方法来使用数据填充搜索建议区：
 
 [![iOS 和 Android 上的 Shell SearchHandler 搜索结果的屏幕截图](search-images/search-suggestions.png "Shell SearchHandler 搜索结果")](search-images/search-suggestions-large.png#lightbox "Shell SearchHandler 搜索结果")
 
-然后，在选择某个搜索结果后，应用程序可以作出适当的响应，例如导航到其他页面。
-
-## <a name="searchhandler-class"></a>SearchHandler 类
-
-`SearchHandler` 类定义以下控制其外观和行为的属性：
-
-- `ClearIcon`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是 用于清除搜索框内容的显示图标。
-- `ClearIconHelpText`，属于 `string` 类型，是清除图标的可访问帮助文本。
-- `ClearIconName`，属于 `string` 类型，是与屏幕阅读器配合使用的清除图标的名称。
-- `ClearPlaceholderCommand`，属于 `ICommand` 类型，点击 `ClearPlaceholderIcon` 时就会执行它。
-- `ClearPlaceholderCommandParameter`，属于 `object` 类型，是传递给 `ClearPlaceholderCommand` 的参数。
-- `ClearPlaceholderEnabled`，属于 `bool` 类型，用于确定是否能执行 `ClearPlaceholderCommand`。 默认值为 `true`。
-- `ClearPlaceholderHelpText`，属于 `string` 类型，是清除占位符图标的可访问帮助文本。
-- `ClearPlaceholderIcon`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是搜索框为空时所显示的清除占位符图标。
-- `ClearPlaceholderName`，属于 `string` 类型，是与屏幕阅读器配合使用的清除占位符图标的名称。
-- `Command`，属于 `ICommand` 类型，确认搜索查询时就会执行它。
-- `CommandParameter`，属于 `object` 类型，是传递给 `Command` 的参数。
-- `string`，属于 `ItemsSource` 类型，表示所显示的 `DisplayMemberName` 集合各个数据项的属性的名称或路径。
-- `IsSearchEnabled`，属于 `bool` 类型，表示搜索框的已启用状态。 默认值为 `true`。
-- `ItemsSource`，属于 `IEnumerable` 类型，用于指定建议区要显示的项目集，其默认值为 `null`。
-- `ItemTemplate`，属于 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 类型，用于指定模板，以应用到建议区要显示的项目集中的各个项。
-- `Placeholder`，属于 `string` 类型，是搜索框为空时要显示的文本。
-- `Query`，属于 `string` 类型，是用户输入到搜索框的文本。
-- `QueryIcon`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是用于指示用户搜索可用的图标。
-- `QueryIconHelpText`，属于 `string` 类型，是查询图标的可访问帮助文本。
-- `QueryIconName`，属于 `string` 类型，是与屏幕阅读器配合使用的查询图标的名称。
-- `SearchBoxVisibility`，属于 `SearchBoxVisibility` 类型，是搜索框的可见性。 默认情况下，搜索框可见，并且完全展开。
-- `SelectedItem`，属于 `object` 类型，是从搜索结果选定的项。 此属性为只读属性，其默认值为 `null`。
-- `ShowsResults`，属于 `bool` 类型，用于指示输入文本后建议区是否应显示搜索结果。 默认值为 `false`。
-
-所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着这些属性可以作为数据绑定的目标。
-
-此外，`SearchHandler` 类提供下列可重写的方法：
-
-- `OnClearPlaceholderClicked`，只要点击 `ClearPlaceholderIcon` 就会调用它。
-- `OnItemSelected`，只要用户选择一个搜索结果就会调用它。
-- `OnQueryChanged`，当 `Query` 属性更改时将调用它。
-- `OnQueryConfirmed`，只要用户按 Enter 键或确认搜索框中的查询，就会调用它。
-
-用户将查询输入到搜索框时，`Query` 属性将更新，每次更新时均将执行 `OnQueryChanged` 方法。 此方法可用于更新显示在搜索框下方的建议区。 用户从建议区选择一个结果后，将执行 `OnItemSelected` 方法。
+然后，从搜索建议区选择一个结果后，将执行 `OnItemSelected` 方法。 可以重写此方法来相应地进行响应，例如通过导航到详细信息页。
 
 ## <a name="create-a-searchhandler"></a>创建 SearchHandler
 
@@ -215,9 +176,9 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-## <a name="searchbox-visibility"></a>SearchBox 可见性
+## <a name="search-box-visibility"></a>搜索框可见性
 
-将搜索框添加到页面顶部后，默认情况下将显示并完全展开该搜索框。 但，将 `SearchHandler.SearchBoxVisibility` 属性设置为 `SearchBoxVisibility` 枚举成员之一可以更改此行为：
+将 `SearchHandler` 添加到页面顶部后，默认情况下将显示并完全展开该搜索框。 但，将 `SearchHandler.SearchBoxVisibility` 属性设置为 `SearchBoxVisibility` 枚举成员之一可以更改此行为：
 
 - `Hidden` – 搜索框不可见或不可访问。
 - `Collapsible` – 隐藏搜索框，直到用户执行操作来显示搜索框。
@@ -235,6 +196,133 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
     ...
 </ContentPage>
 ```
+
+## <a name="search-box-focus"></a>搜索框焦点
+
+点击搜索框可调用屏幕键盘，使搜索框获得输入焦点。 也可以通过调用 `Focus` 方法（尝试在搜索框上设置输入焦点，并在成功时返回 `true`）来以编程方式实现。 当搜索框获得焦点时，会触发 `Focus` 事件并调用可重写的 `OnFocused` 方法。
+
+当搜索框具有输入焦点时，点击屏幕上的其他位置可关闭屏幕键盘，并且搜索框失去输入焦点。 也可以通过调用 `Unfocus` 方法来以编程方式实现。 当搜索框失去焦点时，会触发 `Unfocused` 事件并调用可重写的 `OnUnfocus` 方法。
+
+可以通过 `IsFocused` 属性检索搜索框的焦点状态，如果 `SearchHandler` 当前具有输入焦点，则会返回 `true`。
+
+## <a name="searchhandler-appearance"></a>SearchHandler 外观
+
+`SearchHandler` 类定义以下影响其外观的属性：
+
+- `BackgroundColor`，属于 `Color` 类型，是搜索框文本的背景颜色。
+- `CancelButtonColor`，属于 `Color` 类型，是取消按钮的颜色。
+- `FontAttributes`，属于 `FontAttributes` 类型，用于指示搜索框文本是斜体还是粗体。
+- `FontFamily`，属于 `string` 类型，是用于搜索框文本的字体系列。
+- `FontSize`，属于 `double` 类型，是搜索框文本的大小。
+- `HorizontalTextAlignment`，属于 `TextAlignment` 类型，是搜索框文本的水平对齐方式。
+- `PlaceholderColor`，属于 `Color` 类型，是搜索框文本的占位符颜色。
+- `TextColor`，属于 `Color` 类型，是搜索框文本的颜色。
+
+## <a name="searchhandler-keyboard"></a>SearchHandler 键盘
+
+用户与 `SearchHandler` 交互时显示的键盘可以通过 `Keyboard` 属性以编程方式设置为 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 类中的以下属性之一：
+
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – 用于短信和表情符号有用的地方。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 默认键盘。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 输入电子邮件地址时使用。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 输入数字时使用。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – 输入文本时使用，而无需指定任何 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 输入电话号码时使用。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – 输入文本时使用。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – 用于输入文件路径和 Web 地址。
+
+这可以通过以下操作在 XAML 中实现：
+
+```xaml
+<SearchHandler Keyboard="Email" />
+```
+
+等效 C# 代码如下：
+
+```csharp
+SearchHandler searchHandler = new SearchHandler { Keyboard = Keyboard.Email };
+```
+
+[`Keyboard`](xref:Xamarin.Forms.Keyboard) 类还具有 [`Create`](xref:Xamarin.Forms.Keyboard.Create*) 工厂方法，可用于通过指定大小写、拼写检查和建议行为来自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法的参数，并返回自定义的 `Keyboard`。 `KeyboardFlags` 枚举包含以下值：
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – 没有功能添加到键盘。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指示输入的每句话的第一个词的首字母将自动大写。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 指示将对输入的文本执行拼写检查。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 指示将对输入的文本执行单词自动完成。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 指示每个词的首字母将自动大写。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – 指示每个字符将自动大写。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 指示不会发生自动大写。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – 指示将对输入的文本执行拼写检查、单词自动完成和句子首字母大写。
+
+以下 XAML 代码示例演示如何自定义默认 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 来执行单词自动完成并将输入的每个字符的首字母大写：
+
+```xaml
+<SearchHandler Placeholder="Enter search terms">
+    <SearchHandler.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </SearchHandler.Keyboard>
+</SearchHandler>
+```
+
+等效 C# 代码如下：
+
+```csharp
+SearchHandler searchHandler = new SearchHandler { Placeholder = "Enter search terms" };
+searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
+
+## <a name="searchhandler-reference"></a>SearchHandler 引用
+
+`SearchHandler` 类定义以下控制其外观和行为的属性：
+
+- `BackgroundColor`，属于 `Color` 类型，是搜索框文本的背景颜色。
+- `CancelButtonColor`，属于 `Color` 类型，是取消按钮的颜色。
+- `ClearIcon`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是 用于清除搜索框内容的显示图标。
+- `ClearIconHelpText`，属于 `string` 类型，是清除图标的可访问帮助文本。
+- `ClearIconName`，属于 `string` 类型，是与屏幕阅读器配合使用的清除图标的名称。
+- `ClearPlaceholderCommand`，属于 `ICommand` 类型，点击 `ClearPlaceholderIcon` 时就会执行它。
+- `ClearPlaceholderCommandParameter`，属于 `object` 类型，是传递给 `ClearPlaceholderCommand` 的参数。
+- `ClearPlaceholderEnabled`，属于 `bool` 类型，用于确定是否能执行 `ClearPlaceholderCommand`。 默认值为 `true`。
+- `ClearPlaceholderHelpText`，属于 `string` 类型，是清除占位符图标的可访问帮助文本。
+- `ClearPlaceholderIcon`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是搜索框为空时所显示的清除占位符图标。
+- `ClearPlaceholderName`，属于 `string` 类型，是与屏幕阅读器配合使用的清除占位符图标的名称。
+- `Command`，属于 `ICommand` 类型，确认搜索查询时就会执行它。
+- `CommandParameter`，属于 `object` 类型，是传递给 `Command` 的参数。
+- `string`，属于 `ItemsSource` 类型，表示所显示的 `DisplayMemberName` 集合各个数据项的属性的名称或路径。
+- `FontAttributes`，属于 `FontAttributes` 类型，用于指示搜索框文本是斜体还是粗体。
+- `FontFamily`，属于 `string` 类型，是用于搜索框文本的字体系列。
+- `FontSize`，属于 `double` 类型，是搜索框文本的大小。
+- `HorizontalTextAlignment`，属于 `TextAlignment` 类型，是搜索框文本的水平对齐方式。
+- `IsFocused`，属于 `bool`类型，表示 `SearchHandler` 当前是否具有输入焦点。
+- `IsSearchEnabled`，属于 `bool` 类型，表示搜索框的已启用状态。 默认值为 `true`。
+- `ItemsSource`，属于 `IEnumerable` 类型，用于指定建议区要显示的项目集，其默认值为 `null`。
+- `ItemTemplate`，属于 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 类型，用于指定模板，以应用到建议区要显示的项目集中的各个项。
+- `Keyboard`，属于 `Keyboard` 类型，是 `SearchHandler` 的键盘。
+- `Placeholder`，属于 `string` 类型，是搜索框为空时要显示的文本。
+- `PlaceholderColor`，属于 `Color` 类型，是搜索框文本的占位符颜色。
+- `Query`，属于 `string` 类型，是用户输入到搜索框的文本。
+- `QueryIcon`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是用于指示用户搜索可用的图标。
+- `QueryIconHelpText`，属于 `string` 类型，是查询图标的可访问帮助文本。
+- `QueryIconName`，属于 `string` 类型，是与屏幕阅读器配合使用的查询图标的名称。
+- `SearchBoxVisibility`，属于 `SearchBoxVisibility` 类型，是搜索框的可见性。 默认情况下，搜索框可见，并且完全展开。
+- `SelectedItem`，属于 `object` 类型，是从搜索结果选定的项。 此属性为只读属性，其默认值为 `null`。
+- `ShowsResults`，属于 `bool` 类型，用于指示输入文本后建议区是否应显示搜索结果。 默认值为 `false`。
+- `TextColor`，属于 `Color` 类型，是搜索框文本的颜色。
+
+所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着这些属性可以作为数据绑定的目标。
+
+此外，`SearchHandler` 类提供下列可重写的方法：
+
+- `OnClearPlaceholderClicked`，只要点击 `ClearPlaceholderIcon` 就会调用它。
+- `OnItemSelected`，只要用户选择一个搜索结果就会调用它。
+- `OnFocused`，当 `SearchHandler` 获得输入焦点时将调用它。
+- `OnQueryChanged`，当 `Query` 属性更改时将调用它。
+- `OnQueryConfirmed`，只要用户按 Enter 键或确认搜索框中的查询，就会调用它。
+- `OnUnfocus`，当 `SearchHandler` 失去输入焦点时将调用它。
 
 ## <a name="related-links"></a>相关链接
 
