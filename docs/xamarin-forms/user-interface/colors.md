@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 43854929cfc232b24cad18e276b3ba51d1e5dece
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b07bfd9f9ecbde66dbac3854bdbb611ad89e0ee2
+ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153441"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66469524"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的颜色
 
@@ -25,7 +25,7 @@ _Xamarin.Forms 提供了灵活的跨平台颜色类。_
 `Color`类提供了多种方法来生成颜色实例
 
 -  **已命名的颜色**-一系列常见已命名的颜色，包括`Red`， `Green`，和`Blue`。
--  **FromHex**的字符串值类似于在 HTML 中，例如"00FF00"所使用的语法。 Alpha 是可根据需要指定为第一对字符 ("CC00FF00")。
+-  **FromHex**的字符串值类似于在 HTML 中，例如"00FF00"所使用的语法。 Alpha 可根据需要指定为第一对字符 ("CC00FF00")。
 -  **FromHsla** -色调、 饱和度和亮度`double`值，其中可选 alpha 值 (介于 0.0 到 1.0)。
 -  **FromRgb** -红色、 绿色和蓝色`int`值 (0-255)。
 -  **FromRgba** -红色、 绿色、 蓝色和 alpha`int`值 (0-255)。
