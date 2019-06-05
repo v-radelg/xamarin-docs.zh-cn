@@ -6,19 +6,17 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/09/2018
-ms.openlocfilehash: e02c04afe656b0eca3b7ae12b8b30f35836b9368
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/03/2019
+ms.openlocfilehash: f0ad4e3271ac8c1f8d30a0440b38d8a46c57783e
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954861"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687106"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin 本机项目中的 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
-
-_本机窗体允许 Xamarin.Forms ContentPage 派生页可供本机 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 项目。本机项目都可以使用直接添加到项目中，或从.NET Standard 库、.NET Standard 库或共享项目的 ContentPage 派生页。本文介绍如何使用直接添加到本机项目的 ContentPage 派生页以及如何在它们之间导航。_
 
 通常情况下，Xamarin.Forms 应用程序包括一个或多个页派生自[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，，这些页面在所有平台共享.NET Standard 库项目或共享项目中。 但是，本机窗体允许`ContentPage`-派生页来直接添加到 Xamarin.iOS、 Xamarin.Android 和 UWP 的本机应用程序。 相比于使用的本机项目`ContentPage`-派生的页面从.NET Standard 库项目或共享项目中，直接向本机项目中添加页面的优点是，可以使用本机视图扩展页。 然后可以使用 XAML 中名为本机视图`x:Name`和代码隐藏中被引用。 有关本机视图的详细信息，请参阅[本机视图](~/xamarin-forms/platform/native-views/index.md)。
 
@@ -45,6 +43,8 @@ _本机窗体允许 Xamarin.Forms ContentPage 派生页可供本机 Xamarin.iOS�
 [Register("AppDelegate")]
 public class AppDelegate : UIApplicationDelegate
 {
+    public static string FolderPath { get; private set; }
+
     public static AppDelegate Instance;
 
     UIWindow _window;
@@ -62,8 +62,9 @@ public class AppDelegate : UIApplicationDelegate
             TextColor = UIColor.Black
         });
 
-        var mainPage = new PhonewordPage().CreateViewController();
-        mainPage.Title = "Phoneword";
+        FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
+        UIViewController mainPage = new NotesPage().CreateViewController();
+        mainPage.Title = "Notes";
 
         _navigation = new UINavigationController(mainPage);
         _window.RootViewController = _navigation;
@@ -80,40 +81,44 @@ public class AppDelegate : UIApplicationDelegate
 - 通过调用初始化 Xamarin.Forms`Forms.Init`方法。
 - 对引用`AppDelegate`类存储在`static``Instance`字段。 这是为了提供其他类来调用方法中定义的一种机制`AppDelegate`类。
 - `UIWindow`，这本机 iOS 应用程序中的视图的主容器创建。
-- `PhonewordPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`UIViewController`使用`CreateViewController`扩展方法。
+- `FolderPath`属性初始化为注意数据将存储位置的设备上的路径。
+- `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`UIViewController`使用`CreateViewController`扩展方法。
 - `Title`的属性`UIViewController`设置，这将显示在`UINavigationBar`。
 - 一个`UINavigationController`创建用于管理分层导航。 `UINavigationController`类管理一摞视图控制器，并`UIViewController`传递到构造函数将显示最初时`UINavigationController`加载。
 - `UINavigationController`实例设置为顶级`UIViewController`有关`UIWindow`，和`UIWindow`被设置为密钥窗口中的应用程序，变为可见。
 
-一次`FinishedLaunching`方法执行，在 Xamarin.Forms 中定义 UI`PhonewordPage`将显示类，如以下屏幕截图中所示：
+一次`FinishedLaunching`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
+[![在 XAML 中定义的 Xamarin.iOS 应用程序使用一个用户界面的屏幕截图](native-forms-images/ios-notespage.png "Xamarin.iOS 应用程序使用 XAML UI")](native-forms-images/ios-notespage-large.png#lightbox "XAML 的 ui 的 Xamarin.iOS 应用程序")
 
-交互用户界面，例如通过点击[ `Button` ](xref:Xamarin.Forms.Button)，将导致在事件处理程序`PhonewordPage`隐藏代码执行。 例如，当用户点击**呼叫历史记录**执行按钮时，以下事件处理程序：
+交互用户界面，例如通过点击 **+** [ `Button` ](xref:Xamarin.Forms.Button)，将导致以下事件处理程序中`NotesPage`隐藏代码执行：
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    AppDelegate.Instance.NavigateToCallHistoryPage();
+    AppDelegate.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-`static` `AppDelegate.Instance`字段允许`AppDelegate.NavigateToCallHistoryPage`方法被调用，下面的代码示例中所示：
+`static` `AppDelegate.Instance`字段允许`AppDelegate.NavigateToNoteEntryPage`方法被调用，下面的代码示例中所示：
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    var callHistoryPage = new CallHistoryPage().CreateViewController();
-    callHistoryPage.Title = "Call History";
-    _navigation.PushViewController(callHistoryPage, true);
+    UIViewController noteEntryPage = new NoteEntryPage
+    {
+        BindingContext = note
+    }.CreateViewController();
+    noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(noteEntryPage, true);
 }
 ```
 
-`NavigateToCallHistoryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`UIViewController`与`CreateViewController`扩展方法，并设置`Title`属性`UIViewController`。 `UIViewController`然后推送到`UINavigationController`通过`PushViewController`方法。 因此，在 Xamarin.Forms 中定义 UI`CallHistoryPage`将显示类，如以下屏幕截图中所示：
+`NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`UIViewController`与`CreateViewController`扩展方法，并设置`Title`属性`UIViewController`。 `UIViewController`然后推送到`UINavigationController`通过`PushViewController`方法。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示类，如以下屏幕截图中所示：
 
-[![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
+[![在 XAML 中定义的 Xamarin.iOS 应用程序使用一个用户界面的屏幕截图](native-forms-images/ios-noteentrypage.png "Xamarin.iOS 应用程序使用 XAML UI")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML 的 ui 的 Xamarin.iOS 应用程序")
 
-时`CallHistoryPage`点击后的显示箭头会弹出`UIViewController`有关`CallHistoryPage`类派生`UINavigationController`，返回到用户`UIViewController`为`PhonewordPage`类。
+时`NoteEntryPage`点击后的显示箭头会弹出`UIViewController`有关`NoteEntryPage`类派生`UINavigationController`，返回到用户`UIViewController`为`NotesPage`类。
 
 ## <a name="android"></a>Android
 
@@ -122,6 +127,8 @@ public void NavigateToCallHistoryPage()
 ```csharp
 public class MainActivity : AppCompatActivity
 {
+    public static string FolderPath { get; private set; }
+
     public static MainActivity Instance;
 
     protected override void OnCreate(Bundle bundle)
@@ -134,9 +141,10 @@ public class MainActivity : AppCompatActivity
         SetContentView(Resource.Layout.Main);
         var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
         SetSupportActionBar(toolbar);
-        SupportActionBar.Title = "Phoneword";
+        SupportActionBar.Title = "Notes";
 
-        var mainPage = new PhonewordPage().CreateSupportFragment(this);
+        FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
+        Android.Support.V4.App.Fragment mainPage = new NotesPage().CreateSupportFragment(this);
         SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
@@ -153,45 +161,49 @@ public class MainActivity : AppCompatActivity
 - 对引用`MainActivity`类存储在`static``Instance`字段。 这是为了提供其他类来调用方法中定义的一种机制`MainActivity`类。
 - `Activity`内容设置从布局资源。 在示例应用程序，布局组成`LinearLayout`，其中包含`Toolbar`，和一个`FrameLayout`充当片段容器。
 - `Toolbar`检索并设置为在操作栏`Activity`，并设置操作栏标题。
-- `PhonewordPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`Fragment`使用`CreateSupportFragment`扩展方法。
-- `SupportFragmentManager`类创建并提交事务，用于替换`FrameLayout`实例与`Fragment`为`PhonewordPage`类。
+- `FolderPath`属性初始化为注意数据将存储位置的设备上的路径。
+- `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`Fragment`使用`CreateSupportFragment`扩展方法。
+- `SupportFragmentManager`类创建并提交事务，用于替换`FrameLayout`实例与`Fragment`为`NotesPage`类。
 
 片段有关的详细信息，请参阅[片段](~/android/platform/fragments/index.md)。
 
-一次`OnCreate`方法执行，在 Xamarin.Forms 中定义 UI`PhonewordPage`将显示类，如以下屏幕截图中所示：
+一次`OnCreate`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "Android PhonewordPage")
+[![在 XAML 中定义的 Xamarin.Android 应用程序使用一个用户界面的屏幕截图](native-forms-images/android-notespage.png "Xamarin.Android 应用程序使用 XAML UI")](native-forms-images/android-notespage-large.png#lightbox "XAML 的 ui 的 Xamarin.Android 应用程序")
 
-交互用户界面，例如通过点击[ `Button` ](xref:Xamarin.Forms.Button)，将导致在事件处理程序`PhonewordPage`隐藏代码执行。 例如，当用户点击**呼叫历史记录**执行按钮时，以下事件处理程序：
+交互用户界面，例如通过点击 **+** [ `Button` ](xref:Xamarin.Forms.Button)，将导致以下事件处理程序中`NotesPage`隐藏代码执行：
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    MainActivity.Instance.NavigateToCallHistoryPage();
+    MainActivity.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-`static` `MainActivity.Instance`字段允许`MainActivity.NavigateToCallHistoryPage`方法被调用，下面的代码示例中所示：
+`static` `MainActivity.Instance`字段允许`MainActivity.NavigateToNoteEntryyPage`方法被调用，下面的代码示例中所示：
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    var callHistoryPage = new CallHistoryPage().CreateSupportFragment(this);
+    Android.Support.V4.App.Fragment noteEntryPage = new NoteEntryPage
+    {
+        BindingContext = note
+    }.CreateSupportFragment(this);
     SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
-        .Replace(Resource.Id.fragment_frame_layout, callHistoryPage)
+        .Replace(Resource.Id.fragment_frame_layout, noteEntryPage)
         .Commit();
 }
 ```
 
-`NavigateToCallHistoryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`Fragment`与`CreateSupportFragment`扩展方法，并将添加`Fragment`片段到后退堆栈。 因此，在 Xamarin.Forms 中定义 UI`CallHistoryPage`将显示，如以下屏幕截图中所示：
+`NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`Fragment`与`CreateSupportFragment`扩展方法，并将添加`Fragment`片段到后退堆栈。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示，如以下屏幕截图中所示：
 
-[![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
+[![在 XAML 中定义的 Xamarin.Android 应用程序使用一个用户界面的屏幕截图](native-forms-images/android-noteentrypage.png "Xamarin.Android 应用程序使用 XAML UI")](native-forms-images/android-noteentrypage-large.png#lightbox "XAML 的 ui 的 Xamarin.Android 应用程序")
 
-时`CallHistoryPage`点击后的显示箭头会弹出`Fragment`有关`CallHistoryPage`片段 back 堆栈中，从已注册到用户`Fragment`为`PhonewordPage`类。
+时`NoteEntryPage`点击后的显示箭头会弹出`Fragment`有关`NoteEntryPage`片段 back 堆栈中，从已注册到用户`Fragment`为`NotesPage`类。
 
-### <a name="enabling-back-navigation-support"></a>启用后退导航的支持
+### <a name="enable-back-navigation-support"></a>启用后退导航的支持
 
 `SupportFragmentManager`类具有`BackStackChanged`片段 back 堆栈的内容发生更改时激发的事件。 `OnCreate`中的方法`MainActivity`类包含此事件的匿名事件处理程序：
 
@@ -201,7 +213,7 @@ SupportFragmentManager.BackStackChanged += (sender, e) =>
     bool hasBack = SupportFragmentManager.BackStackEntryCount > 0;
     SupportActionBar.SetHomeButtonEnabled(hasBack);
     SupportActionBar.SetDisplayHomeAsUpEnabled(hasBack);
-    SupportActionBar.Title = hasBack ? "Call History" : "Phoneword";
+    SupportActionBar.Title = hasBack ? "Note Entry" : "Notes";
 };
 ```
 
@@ -228,7 +240,7 @@ public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 - 值`Xamarin.Forms.Color.Accent`来自`Activity`调用`Forms.Init`方法。
 - 值`Xamarin.Forms.Application.Current`将与相关联`Activity`调用`Forms.Init`方法。
 
-### <a name="choosing-a-file"></a>选择一个文件
+### <a name="choose-a-file"></a>选择文件
 
 嵌入内容时[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生使用页面[ `WebView` ](xref:Xamarin.Forms.WebView) ，需要支持的 HTML"选择文件"按钮，则`Activity`将需要重写`OnActivityResult`方法：
 
@@ -251,12 +263,15 @@ public sealed partial class MainPage : Page
 {
     public static MainPage Instance;
 
+    public static string FolderPath { get; private set; }
+
     public MainPage()
     {
         this.InitializeComponent();
         this.NavigationCacheMode = NavigationCacheMode.Enabled;
         Instance = this;
-        this.Content = new Phoneword.UWP.Views.PhonewordPage().CreateFrameworkElement();
+        FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
+        this.Content = new Notes.UWP.Views.NotesPage().CreateFrameworkElement();
     }
     ...
 }
@@ -266,37 +281,41 @@ public sealed partial class MainPage : Page
 
 - 为页上，启用缓存，以便新`MainPage`当用户导航回页不构造。
 - 对引用`MainPage`类存储在`static``Instance`字段。 这是为了提供其他类来调用方法中定义的一种机制`MainPage`类。
-- `PhonewordPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`FrameworkElement`使用`CreateFrameworkElement`扩展方法，然后将设置为的内容`MainPage`类。
+- `FolderPath`属性初始化为注意数据将存储位置的设备上的路径。
+- `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`FrameworkElement`使用`CreateFrameworkElement`扩展方法，然后将设置为的内容`MainPage`类。
 
-一次`MainPage`构造函数已执行，在 Xamarin.Forms 中定义 UI`PhonewordPage`将显示类，如以下屏幕截图中所示：
+一次`MainPage`构造函数已执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "UWP PhonewordPage")
+[![使用 Xamarin.Forms XAML 定义使用 UI 的 UWP 应用程序的屏幕截图](native-forms-images/uwp-notespage.png "UWP 应用使用 Xamarin.Forms XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "使用 Xamarin.Forms XAML UI 的 UWP 应用")
 
-交互用户界面，例如通过点击[ `Button` ](xref:Xamarin.Forms.Button)，将导致在事件处理程序`PhonewordPage`隐藏代码执行。 例如，当用户点击**呼叫历史记录**执行按钮时，以下事件处理程序：
+交互用户界面，例如通过点击 **+** [ `Button` ](xref:Xamarin.Forms.Button)，将导致以下事件处理程序中`NotesPage`隐藏代码执行：
 
 ```csharp
-void OnCallHistory(object sender, EventArgs e)
+void OnNoteAddedClicked(object sender, EventArgs e)
 {
-    Phoneword.UWP.MainPage.Instance.NavigateToCallHistoryPage();
+    MainPage.Instance.NavigateToNoteEntryPage(new Note());
 }
 ```
 
-`static` `MainPage.Instance`字段允许`MainPage.NavigateToCallHistoryPage`方法被调用，下面的代码示例中所示：
+`static` `MainPage.Instance`字段允许`MainPage.NavigateToNoteEntryPage`方法被调用，下面的代码示例中所示：
 
 ```csharp
-public void NavigateToCallHistoryPage()
+public void NavigateToNoteEntryPage(Note note)
 {
-    this.Frame.Navigate(new CallHistoryPage());
+    this.Frame.Navigate(new NoteEntryPage
+    {
+        BindingContext = note
+    });
 }
 ```
 
-通常使用执行 UWP 中的导航`Frame.Navigate`方法，它使用`Page`参数。 Xamarin.Forms 定义了`Frame.Navigate`扩展方法采用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页实例。 因此，当`NavigateToCallHistoryPage`执行方法时，在 Xamarin.Forms 中定义的 UI`CallHistoryPage`将显示，如以下屏幕截图中所示：
+通常使用执行 UWP 中的导航`Frame.Navigate`方法，它使用`Page`参数。 Xamarin.Forms 定义了`Frame.Navigate`扩展方法采用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页实例。 因此，当`NavigateToNoteEntryPage`执行方法时，在 Xamarin.Forms 中定义的 UI`NoteEntryPage`将显示，如以下屏幕截图中所示：
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
+[![使用 Xamarin.Forms XAML 定义使用 UI 的 UWP 应用程序的屏幕截图](native-forms-images/uwp-noteentrypage.png "UWP 应用使用 Xamarin.Forms XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "使用 Xamarin.Forms XAML UI 的 UWP 应用")
 
-时`CallHistoryPage`点击后的显示箭头会弹出`FrameworkElement`有关`CallHistoryPage`从应用程序内 back 堆栈中，返回到用户`FrameworkElement`为`PhonewordPage`类。
+时`NoteEntryPage`点击后的显示箭头会弹出`FrameworkElement`有关`NoteEntryPage`从应用程序内 back 堆栈中，返回到用户`FrameworkElement`为`NotesPage`类。
 
-### <a name="enabling-back-navigation-support"></a>启用后退导航的支持
+### <a name="enable-back-navigation-support"></a>启用后退导航的支持
 
 在 UWP 中，应用程序必须启用后退导航的所有硬件和软件后退按钮，在不同设备外观造型上。 这可以通过注册的事件处理程序来实现`BackRequested`事件，可以在中执行`OnLaunched`方法在本机`App`类：
 
@@ -331,9 +350,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-`OnBackRequested`事件处理程序调用`GoBack`方法的应用程序和设置在根框架`BackRequestedEventArgs.Handled`属性设置为`true`将该事件标记为已处理。 若要将事件标记为已处理的失败可能导致系统离开 （上的移动设备系列） 的应用程序或忽略 （上的桌面设备系列） 的事件。
+`OnBackRequested`事件处理程序调用`GoBack`方法的应用程序和设置在根框架`BackRequestedEventArgs.Handled`属性设置为`true`将该事件标记为已处理。 若要将事件标记为已处理的失败可能会导致在事件被忽略。
 
-应用程序依赖于在手机上，一个提供系统后退按钮，但可以选择是否要在桌面设备上的标题栏上显示后退按钮。 这通过设置来实现`AppViewBackButtonVisibility`属性设置为其中一个`AppViewBackButtonVisibility`枚举值：
+应用程序可以选择是否要显示的标题栏上的后退按钮。 这通过设置来实现`AppViewBackButtonVisibility`属性设置为其中一个`AppViewBackButtonVisibility`枚举值：
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)
@@ -346,11 +365,6 @@ void OnNavigated(object sender, NavigationEventArgs e)
 `OnNavigated`事件处理程序，响应执行`Navigated`页面导航发生时，事件的激发，更新的标题栏中后退按钮的可见性。 这可确保，标题栏后退按钮是可见的如果应用程序内 back 堆栈不为空，或从中删除的标题栏中应用程序的 back 堆栈是否为空。
 
 UWP 上后退导航的支持的详细信息，请参阅[导航历史记录和向后导航适用于 UWP 应用](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)。
-
-## <a name="summary"></a>总结
-
-本机窗体允许 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页可供本机 Xamarin.iOS、 Xamarin.Android 和通用 Windows 平台 (UWP) 项目。 可以使用本机项目`ContentPage`-派生直接添加到项目中，或从.NET Standard 库项目或共享项目的页面。 本文介绍了如何使用`ContentPage`-派生直接添加到本机项目，以及如何在它们之间导航的页面。
-
 
 ## <a name="related-links"></a>相关链接
 
