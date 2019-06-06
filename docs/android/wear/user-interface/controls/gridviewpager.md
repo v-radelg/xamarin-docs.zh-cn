@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 81bb4e302f81b58eec91ea2a2aef985adbf72e2c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 12e7e31cda9818a3cb2e2efc331a0be5d0c334e5
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285274"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740845"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
-[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)示例演示如何实现 Android wear 2D 选取器导航模式。
+[GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)示例演示如何实现 Android wear 2D 选取器导航模式。
 
 ![GridViewPager 的方形显示屏上的示例屏幕截图](gridviewpager-images/gridviewpager.png)
 
@@ -49,4 +49,4 @@ pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 
 - [Google 的 2D 选取器文档](https://developer.android.com/training/wearables/ui/2d-picker.html)
 - [android.support.wearable docs](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager (sample)](https://developer.xamarin.com/samples/GridViewPager/)
+- [GridViewPager (sample)](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)

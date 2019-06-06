@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 74b9243b1b985cba6d815a673d1abed054eda234
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61409860"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740951"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>使用 watchOS 在 Xamarin 中的父应用程序
 
@@ -35,7 +35,7 @@ ms.locfileid: "61409860"
 
 ## <a name="run-code"></a>运行代码
 
-监视扩展和父 iPhone 应用之间进行通信进行了演示[GpsWatch 示例](https://developer.xamarin.com/samples/GpsWatch)。
+监视扩展和父 iPhone 应用之间进行通信进行了演示[GpsWatch 示例](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/)。
 监视扩展可以请求父 iOS 应用程序执行一些处理其代表使用`OpenParentApplication`方法。
 
 对于长时间运行的任务 （包括网络请求）-仅父 iOS 应用程序可以充分利用后台处理，以完成这些任务并将检索到的数据保存在可以访问的监视扩展的位置，这是特别有用。

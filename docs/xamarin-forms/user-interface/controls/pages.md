@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: ce10a2e6ac91f67f8b4f664c232de2a3c97a5ba6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 42cbc6f50da34cbbc594dfef1dec49619202c191
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61176405"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741073"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms 页面
 
@@ -74,6 +74,6 @@ Xamarin.Forms 支持以下的页类型：
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms FormsGallery 示例](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery 示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

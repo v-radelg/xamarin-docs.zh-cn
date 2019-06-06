@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: e88f6e24cbf4c8b2f0c0486c6408e234e87066cc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3d4c29a7d206b826046fd1f79e0513e85ea57898
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228567"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740668"
 ---
 # <a name="android-speech"></a>Android 语音
 
@@ -39,7 +39,7 @@ Google 提供使用 Android.Speech 命名空间中更丰富的 Api 开发人员�
 
 了解简单定义是您将能够通过的语调和上下文确定的讲述进行的真正意义。 只需解释意味着需要单词和输出它们在另一个窗体中。
 
-请考虑使用日常对话中的以下简单示例： 
+请考虑使用日常对话中的以下简单示例：
 
 <kbd>喂，你好吗？</kbd>
 
@@ -161,7 +161,8 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
-此代码将调用[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)要测试是否已在设备上存在给定区域设置的语言包。 此方法返回[LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)，指示是否可传递的区域设置的语言。 如果`LanguageAvailableResult`指示的语言是`NotSupported`，没有任何语音包可用 （即使对于下载），然后针对该语言。 如果`LanguageAvailableResult`设置为`MissingData`，则可能如下所述步骤 4 中下载新的语言包。
+此代码将调用[TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/)要测试是否已在设备上存在给定区域设置的语言包。
+此方法返回[LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/)，指示是否可传递的区域设置的语言。 如果`LanguageAvailableResult`指示的语言是`NotSupported`，没有任何语音包可用 （即使对于下载），然后针对该语言。 如果`LanguageAvailableResult`设置为`MissingData`，则可能如下所述步骤 4 中下载新的语言包。
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>步骤 3-设置速度和间距
 
@@ -233,7 +234,7 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [文本到语音转换 （示例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TextToSpeech)
 - [语音转文本 （示例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SpeechToText)
 - [Android.Speech 命名空间](https://developer.xamarin.com/api/namespace/Android.Speech/)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: b07bfd9f9ecbde66dbac3854bdbb611ad89e0ee2
-ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
+ms.openlocfilehash: a1d49639d28e677ebbe2d7cf870a6e91dfff8575
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469524"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740917"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的颜色
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/WorkingWithColors)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
 
 _Xamarin.Forms 提供了灵活的跨平台颜色类。_
 
@@ -124,5 +124,5 @@ Xamarin.Forms`Color`类用于创建识别平台的颜色的引用。 可在共�
 
 ## <a name="related-links"></a>相关链接
 
-- [ColorsSample](https://developer.xamarin.com/samples/WorkingWithColors)
+- [ColorsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
 - [可绑定选取器 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)

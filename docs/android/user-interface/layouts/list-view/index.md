@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: a30256722647bbea482970d0c4a751954810d99e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2560a451f3a6e7dd09b687f9db8c0c070598def6
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170779"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740651"
 ---
 # <a name="listview"></a>ListView
 
@@ -227,15 +227,15 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="related-links"></a>相关链接
 
-- [AccessoryViews （示例）](https://developer.xamarin.com/samples/AccessoryViews/)
-- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/BasicTableAndroid/)
-- [BasicTableAdapter （示例）](https://developer.xamarin.com/samples/BasicTableAdapter/)
-- [BuiltInViews （示例）](https://developer.xamarin.com/samples/BuiltInViews/)
-- [CustomRowView （示例）](https://developer.xamarin.com/samples/CustomRowView/)
-- [FastScroll （示例）](https://developer.xamarin.com/samples/FastScroll/)
-- [SectionIndex （示例）](https://developer.xamarin.com/samples/SectionIndex/)
-- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/SimpleCursorTableAdapter/)
-- [CursorTableAdapter （示例）](https://developer.xamarin.com/samples/CursorTableAdapter/)
+- [AccessoryViews （示例）](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
+- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [BasicTableAdapter （示例）](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [BuiltInViews （示例）](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
+- [CustomRowView （示例）](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [FastScroll （示例）](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [SectionIndex （示例）](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
+- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
+- [CursorTableAdapter （示例）](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
 - [活动生命周期教程](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [使用表和单元格 （在 Xamarin.iOS)](~/ios/user-interface/controls/tables/index.md)
 - [ListView 类引用](https://developer.xamarin.com/api/type/Android.Widget.ListView/)

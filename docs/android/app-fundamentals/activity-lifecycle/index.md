@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024238"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740768"
 ---
 # <a name="activity-lifecycle"></a>活动生命周期
 
@@ -62,12 +62,12 @@ Android OS 进行仲裁基于其状态的活动。 这有助于确定不再使�
 
 更复杂得多，Android 将一个详细扳手引发调用配置更改的组合中。 配置更改会快速活动析构/重新 creation 周期发生活动的配置更改时，例如，当设备是[旋转](~/android/app-fundamentals/handling-rotation.md)（和该活动需要重新生成在横向或纵向模式下），当显示键盘 （和活动提供的机会来调整自身大小），或当设备处于停靠，等等。
 
-配置更改仍会导致相同的活动状态更改会停止并重新启动活动过程中发生的。 但是，为了确保应用程序感觉响应，并且还在配置更改过程中执行，十分重要，它们会尽可能快地处理。 正因为如此，Android 有一个特定的 API，可用于在配置更改过程中保留状态。
+配置更改仍会导致相同的活动状态更改会停止并重新启动活动过程中发生的。 但是，为了确保应用程序感觉响应，并且还在配置更改过程中执行，十分重要尽可能快地处理这些。 正因为如此，Android 有一个特定的 API，可用于在配置更改过程中保留状态。
 我们将介绍这更高版本中[Lifecycle 整个管理状态](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle)部分。
 
 ### <a name="activity-lifecycle-methods"></a>活动生命周期方法
 
-Android SDK 和扩展插件，Xamarin.Android framework 所提供的用于管理应用程序中的活动的状态的功能强大的模型。 当更改活动的状态时，活动将通知由操作系统，对该活动调用特定的方法。 下图说明了这些方法中与活动生命周期的关系：
+Android SDK 和扩展插件，Xamarin.Android framework 所提供的用于管理应用程序中的活动的状态的功能强大的模型。 当更改活动的状态时，活动将通知由操作系统，对该活动调用特定的方法。 下图说明了这些方法与活动生命周期相关：
 
 [![活动生命周期流程图](images/image2-sml.png)](images/image2.png#lightbox)
 
@@ -117,7 +117,7 @@ protected override void OnCreate(Bundle bundle)
 系统调用[OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/)时该活动已准备好开始与用户进行交互。
 活动应重写此方法以执行以下任务：
 
--  帧速率 （游戏生成中的常见任务） 的提升效应
+-  帧速率 （游戏开发中的常见任务） 的提升效应
 -  启动动画
 -  侦听 GPS 更新
 -  显示任何相关的警报或对话框

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/21/2019
-ms.openlocfilehash: b70a842a2f677bf0343ea7db1e9627fa2087bf71
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: 258468b836a4c1243b9123022ebbf1d55430321e
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005338"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740973"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms 视图
 
@@ -204,6 +204,6 @@ _Xamarin.Forms 视图是跨平台移动用户界面的构建基块。_
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms FormsGallery 示例](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms FormsGallery 示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Xamarin.Forms API 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
