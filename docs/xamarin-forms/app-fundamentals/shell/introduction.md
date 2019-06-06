@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
-ms.openlocfilehash: 38553b3b30388bc64fd97a7ac96a671279d20bc5
-ms.sourcegitcommit: b986460787677cf8c2fc7cc8c03f4bc60c592120
+ms.openlocfilehash: 266dc91e80ced89410046a83cc79e45371e8c0a4
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66213333"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66686998"
 ---
-# <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
+# <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms Shell 简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
