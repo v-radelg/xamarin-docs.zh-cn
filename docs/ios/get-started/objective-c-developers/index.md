@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 415a888a61b4c4ca9164166aadb1983df2d828dd
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 949958387ab710cb671cd9874bb9062227f3e3b8
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107334"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394675"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>面向 Objective-C 开发人员的 Xamarin
 
@@ -38,4 +38,4 @@ Xamarin 针对 iOS 为开发人员提供了一个途径，用于将他们的非�
 
 ## <a name="cross-platform-development"></a>跨平台开发
 
-最后，在移到 Xamarin.iOS 之后，你需要查看我们提供的跨平台指导，包括我们已经开发的参考应用程序的案例研究，以及创建可重用的跨平台代码（包含在[生成跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)部分中）的最佳做法。
+最后，在移到 Xamarin.iOS 之后，你需要查看我们提供的跨平台指导，包括我们已经开发的参考应用程序的案例研究，以及创建可重用的跨平台代码的最佳做法（包含在[生成跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)部分中）。
