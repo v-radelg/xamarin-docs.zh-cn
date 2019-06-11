@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9bde539286b69569b4928bc28b20faecee0f5209
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: e4485c485b708bdec06f7f1dc22f0bf33e07e982
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557390"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827746"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin.iOS 中的 UI 线程
 
@@ -96,5 +96,5 @@ async partial void button2_TouchUpInside (UIButton sender)
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 （示例）](https://developer.xamarin.com/samples/Controls/)
+- [控件 （示例）](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [线程处理](~/ios/app-fundamentals/threading.md)

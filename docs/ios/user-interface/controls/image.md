@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: bb57dbdb87555fb0b3ab8941024e5a84e4723099
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25c5595fac2ea2aa7a87d6640cc6b5c399ab5e5e
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425049"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827816"
 ---
 # <a name="displaying-images-with-xamarinios"></a>显示使用 Xamarin.iOS 的图像
 
@@ -84,4 +84,4 @@ imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 （示例）](https://developer.xamarin.com/samples/Controls/)
+- [控件 （示例）](https://developer.xamarin.com/samples/monotouch/Controls/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 155847b4f5f6b3e6070f1afb6219db2d3789a075
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7520d3984a204dbceb67ef5310a10b1571f03127
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61258129"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827382"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>在 Xamarin.iOS 中的自定义文档图标
 
@@ -49,6 +49,6 @@ _此文章涉及包括并管理一个 Xamarin.iOS 应用程序中的图像资产
 
 ## <a name="related-links"></a>相关链接
 
-- [使用图像 （示例）](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [使用图像 （示例）](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
 - [自定义图标和图像创建指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

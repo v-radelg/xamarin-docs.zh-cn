@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 982f19eef7b98a05535298430bdfdbe6e54bac10
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61415303"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827443"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>适用于 Xamarin.iOS 的 MonoTouch.Dialog 简介
 
@@ -587,8 +587,6 @@ public override Source CreateSizingSource (bool unevenRows)
 
 ## <a name="related-links"></a>相关链接
 
-- [截屏视频-Miguel de Icaza 使用 MonoTouch.Dialog 创建 iOS 登录屏幕](http://youtu.be/3butqB1EG0c)
-- [截屏视频-轻松创建 iOS 用户界面与 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [演练：使用元素 API 创建应用程序](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [演练：使用反射 API 创建应用程序](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [演练：使用 JSON 元素来创建用户界面](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

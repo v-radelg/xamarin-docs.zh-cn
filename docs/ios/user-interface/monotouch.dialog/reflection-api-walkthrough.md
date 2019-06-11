@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ecbda48ac7b175503701aa64f001c0138cfb423a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2ac828c8efca3a1a5c54d4dcdaf175ebfc63fdc2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61217373"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827303"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>创建使用反射 API 的 Xamarin.iOS 应用程序
 
@@ -148,9 +148,7 @@ public class Expense
 
 ## <a name="related-links"></a>相关链接
 
-- [MTDReflectionWalkthrough （示例）](https://developer.xamarin.com/samples/MTDReflectionWalkthrough/)
-- [截屏视频-Miguel de Icaza 使用 MonoTouch.Dialog 创建 iOS 登录屏幕](http://youtu.be/3butqB1EG0c)
-- [截屏视频-轻松创建 iOS 用户界面与 MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
+- [MTDReflectionWalkthrough （示例）](https://developer.xamarin.com/samples/monotouch/MTDReflectionWalkthrough/)
 - [简介 MonoTouch 对话框](~/ios/user-interface/monotouch.dialog/index.md)
 - [元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [JSON 元素演练](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

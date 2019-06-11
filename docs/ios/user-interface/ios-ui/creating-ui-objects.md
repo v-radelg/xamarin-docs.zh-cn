@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c24b2c2f0742ee2c6814d9821f3c0603c6e48a96
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: 65ebbddfa1a315a478ceb43162b3c80eba2d8cc1
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804920"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827798"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin.iOS 中创建用户界面对象
 
@@ -32,7 +32,7 @@ using UIKit;
 -  **Xcode Interface Builder** – 将控件拖到屏幕的布局与 Interface Builder。 在 Xcode 中打开的情节提要或 XIB 文件，通过右键单击该文件中的**Solution Pad** ，然后选择**打开方式 > Xcode Interface Builder**。
 -  **使用C#**  – 控件还可以是以编程方式使用代码构造并添加到的视图层次结构。
 
-可以通过右键单击 iOS 项目，然后选择添加新的情节提要和 XIB 文件**添加 > 新建文件...**.
+可以通过右键单击 iOS 项目，然后选择添加新的情节提要和 XIB 文件**添加 > 新建文件...** .
 
 无论您使用哪种方法控制属性和事件操作与C#应用程序逻辑中。
 
@@ -173,4 +173,4 @@ public override void ViewDidLoad () {
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 （示例）](https://developer.xamarin.com/samples/Controls/)
+- [控件 （示例）](https://developer.xamarin.com/samples/monotouch/Controls/)

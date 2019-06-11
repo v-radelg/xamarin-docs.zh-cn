@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5d1bb5ab636cd7527a560332a9890e9907fac454
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 35bac91e54181753bd1f3fd8b4cf0b851bfa1882
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61295650"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827505"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>IOS 6 中对 StoreKit 的更改
 
@@ -522,7 +522,7 @@ Apple 的 iCloud 备份指南建议非用户轻松地从服务器中还原的内
 
 ## <a name="related-links"></a>相关链接
 
-- [StoreKit （示例）](https://developer.xamarin.com/samples/StoreKit/)
+- [StoreKit （示例）](https://developer.xamarin.com/samples/monotouch/StoreKit/)
 - [应用内购买](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit 框架引用](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController 类引用](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)

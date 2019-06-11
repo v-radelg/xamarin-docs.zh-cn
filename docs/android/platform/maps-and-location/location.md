@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 76f98f1e660f22ec25c48407f2e87cec60ff12ef
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61181256"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827681"
 ---
 # <a name="location-services"></a>位置服务
 
@@ -355,8 +355,8 @@ else
 
 ## <a name="related-links"></a>相关链接
 
-- [位置 （示例）](https://developer.xamarin.com/samples/Location/)
-- [FusedLocationProvider （示例）](https://developer.xamarin.com/samples/FusedLocationProvider/)
+- [位置 （示例）](https://developer.xamarin.com/samples/monodroid/Location/)
+- [FusedLocationProvider （示例）](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
 - [Google Play 服务](https://developer.android.com/google/play-services/index.html)
 - [条件类](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [LocationManager 类](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)

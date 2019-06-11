@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d5b7d4a372704079343a357c1d341a5260fcf583
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fab653eb24b504fa17e6f2eac32915fd88580817
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61157411"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827827"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>在 Xamarin.iOS 中的用户界面控件
 
@@ -86,4 +86,4 @@ UISearchBar 用于搜索的值的列表。
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 （示例）](https://developer.xamarin.com/samples/Controls/)
+- [控件 （示例）](https://developer.xamarin.com/samples/monotouch/Controls/)

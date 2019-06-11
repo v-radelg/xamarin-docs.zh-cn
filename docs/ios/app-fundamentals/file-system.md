@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 10f4f53e71a47521076538bf9eb12b86c1e478a6
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393561"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827517"
 ---
 # <a name="file-system-access-in-xamarinios"></a>在 Xamarin.iOS 中的文件系统访问
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 
 可以使用 Xamarin.iOS 和`System.IO`中的类 *.NET 基类库 (BCL)* 访问 iOS 文件系统。 `File` 类可以创建、删除和读取文件，`Directory` 类可以创建、删除或枚举目录的内容。 此外可以使用`Stream`子类，它可以提供更高的控制文件操作 （如文件内压缩或位置搜索）。
 
@@ -319,7 +319,7 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 ### <a name="configure-an-app-group"></a>配置应用组
 
-通过[应用组](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)配置共享位置，这是在 [iOS 开发中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符和描述文件**部分配置的。 还必须在每个项目的“Entitlements.plist”中引用此值。
+通过[应用组](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)配置共享位置，这是在 [iOS 开发中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符和描述文件**部分配置的。 还必须在每个项目的“Entitlements.plist”  中引用此值。
 
 有关创建和配置应用程序组的信息，请参阅[应用程序组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)指南。
 
@@ -356,6 +356,6 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 
 ## <a name="related-links"></a>相关链接
 
-- [文件系统的示例代码](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+- [文件系统的示例代码](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 - [文件系统编程指南](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
 - [注册文件类型应用支持](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

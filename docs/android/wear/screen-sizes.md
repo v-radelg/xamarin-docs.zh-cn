@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 9fc22a3c08b60a8474b006f1c9225155b9705507
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9b71fb069a428d9bec03481c986f4deb4c904ea
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285696"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827731"
 ---
 # <a name="working-with-screen-sizes"></a>使用屏幕大小
 
@@ -27,7 +27,7 @@ Wear 支持库提供了一些控件可帮助您检测和适应不同的屏幕的
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-请参阅[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)示例，了解有关如何检测屏幕上，键入并显示每个类型不同的布局。
+请参阅[WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)示例，了解有关如何检测屏幕上，键入并显示每个类型不同的布局。
 
 主要的布局文件包含`android.support.wearable.view.WatchViewStub`引用不同的布局矩形的圆角屏幕，即使用`app:rectLayout`和`app:roundLayout`属性：
 

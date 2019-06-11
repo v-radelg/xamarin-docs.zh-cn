@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f957bd5b361d7287353542186916c7f934ee0490
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60950002"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827781"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -564,7 +564,7 @@ class HceService : HostApduService
 }
 ```
 
-上述服务，可以为要与该应用程序进行交互的 NFC 读取器但 NFC 读取器仍有没有办法知道如果此服务模拟它需要扫描的 NFC 卡。 为了帮助标识该服务的 NFC 读取器，我们可以将分配该服务的唯一*应用程序 ID (AID)*。 我们指定的辅助手段，以及有关 HCE 服务的其他元数据的 xml 资源文件中注册`MetaData`属性 （请参阅上面的代码示例）。 此资源文件指定一个或多个辅助设备筛选器-以十六进制格式的唯一标识符字符串对应于一个或多个 NFC 读取器设备的辅助工具：
+上述服务，可以为要与该应用程序进行交互的 NFC 读取器但 NFC 读取器仍有没有办法知道如果此服务模拟它需要扫描的 NFC 卡。 为了帮助标识该服务的 NFC 读取器，我们可以将分配该服务的唯一*应用程序 ID (AID)* 。 我们指定的辅助手段，以及有关 HCE 服务的其他元数据的 xml 资源文件中注册`MetaData`属性 （请参阅上面的代码示例）。 此资源文件指定一个或多个辅助设备筛选器-以十六进制格式的唯一标识符字符串对应于一个或多个 NFC 读取器设备的辅助工具：
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -713,6 +713,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 ## <a name="related-links"></a>相关链接
 
-- [KitKat 示例](https://developer.xamarin.com/samples/KitKat/)
+- [KitKat 示例](https://developer.xamarin.com/samples/monodroid/KitKat/)
 - [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)
 - [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

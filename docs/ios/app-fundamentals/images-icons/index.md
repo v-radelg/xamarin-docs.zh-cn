@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f359da6b8744e03cfcbd77d48f5f77f216e828f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a837d680a21b9cdbc39e42f5fa3520622e0b49aa
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250643"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827183"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>图像和图标在 Xamarin.iOS
 
@@ -64,6 +64,6 @@ Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增�
 
 ## <a name="related-links"></a>相关链接
 
-- [使用图像 （示例）](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [使用图像 （示例）](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
 - [自定义图标和图像创建指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

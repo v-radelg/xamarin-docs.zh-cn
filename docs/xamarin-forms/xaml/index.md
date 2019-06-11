@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/03/2019
-ms.openlocfilehash: 073bfc27b45a802fd5d6062d4750cc3e20a065e6
-ms.sourcegitcommit: 0d2f708f6d581e94302f26d4670458837dfaa31c
+ms.openlocfilehash: b032785bd18e785831122edf17bede6648e985d2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64992358"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827859"
 ---
 # <a name="extensible-application-markup-language-xaml"></a>可扩展应用程序标记语言 (XAML)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: d71f14c26865b71eca991910df4a68f2540f9715
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b58cf2244d16e154cf0a979bc509e7356a75bdb2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085540"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827834"
 ---
 # <a name="core-image-in-xamarinios"></a>在 Xamarin.iOS core 映像
 
@@ -224,7 +224,7 @@ foreach (var filter in filters){
 
 ## <a name="related-links"></a>相关链接
 
-- [Core 映像 （示例）](https://developer.xamarin.com/samples/CoreImage/)
+- [Core 映像 （示例）](https://developer.xamarin.com/samples/monotouch/CoreImage/)
 - [调整协定和亮度映像组脚本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
 - [使用核心映像筛选器](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter 类引用](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

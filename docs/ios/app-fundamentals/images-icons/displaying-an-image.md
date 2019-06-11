@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 69952b0bac884fe8b14edcbb87aa8fad47594880
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d584c45288d7e7341a4423c32a6966c6c7f21f3
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251926"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827902"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin.iOS 中显示图像
 
@@ -289,6 +289,6 @@ View.AddSubview (imageView);
 
 ## <a name="related-links"></a>相关链接
 
-- [使用图像 （示例）](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [使用图像 （示例）](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
 - [图像大小和分辨率 (Apple)](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/)

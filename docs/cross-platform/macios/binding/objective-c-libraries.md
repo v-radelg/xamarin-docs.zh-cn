@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 3b81ba51a0fbdf4c684ca602cb083f8da08c7d6a
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977989"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827483"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定 OBJECTIVE-C 库
 
@@ -44,7 +44,7 @@ ms.locfileid: "64977989"
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 创建绑定的最简单方法是创建 Xamarin.iOS 绑定项目。
-您可以选择执行此 Windows 上从 Visual Studio 项目类型，**可视化C#> iOS > 绑定库 (iOS)**:
+您可以选择执行此 Windows 上从 Visual Studio 项目类型，**可视化C#> iOS > 绑定库 (iOS)** :
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS 绑定库 iOS")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -1403,4 +1403,4 @@ class Demo {
 
 ## <a name="related-links"></a>相关链接
 
-- [绑定示例](https://developer.xamarin.com/samples/BindingSample/)
+- [绑定示例](https://developer.xamarin.com/samples/monotouch/BindingSample/)
