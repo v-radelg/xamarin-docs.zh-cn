@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036465"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039635"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin.iOS NSObject 的通用子类
 
@@ -107,7 +107,7 @@ class Generic<T, U> : NSObject where T: NSObject
 
 请考虑此类定义中，它提供了一个构造函数采用`IntPtr`(Xamarin.iOS 方式构造的C#从本机 OBJECTIVE-C 的实例对象):
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
@@ -121,7 +121,7 @@ class Generic<T> : NSObject where T : NSObject
 
 通过创建一个专门的泛型类型的子类，此问题可得到解决。   例如：
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
