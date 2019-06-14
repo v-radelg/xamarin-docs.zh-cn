@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 7a273d43ce43ca2946e1ff3177fc4575cd92a534
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 901bf683f59574d71c035b9635abaa3441152252
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050603"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741065"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/WorkingWithTriggers)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
 
 触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。
 
@@ -266,8 +266,8 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
 </Button>
 ```
 
-这些屏幕截图显示了上述两个多触发器示例之间的差异。 在屏幕的顶部，仅一个 `Entry` 中的文本输入便足以启用“保存”按钮。
-在屏幕的底部，“登录”按钮在两个字段均包含数据迁保持非活动状态。
+这些屏幕截图显示了上述两个多触发器示例之间的差异。 在屏幕的顶部，仅一个 `Entry` 中的文本输入便足以启用“保存”按钮  。
+在屏幕的底部，“登录”按钮在两个字段均包含数据迁保持非活动状态  。
 
 ![](triggers-images/multi-requireall.png "MultiTrigger 示例")
 
@@ -277,7 +277,7 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
 
 发生触发器时实现更改的另一方式是通过添加 `EnterActions` 和 `ExitActions` 集合，并指定 `TriggerAction<T>` 实现。
 
-可以在触发器中同时提供 `EnterActions` 和 `ExitActions`，以及 `Setter`，但注意，将立即调用 `Setter`（它们不等待 `EnterAction` 或 `ExitAction` 完成）。 或者，可以在代码中执行所有内容，根本无需使用 `Setter`。
+可以在触发器中同时提供 `EnterActions` 和 `ExitActions`，以及 `Setter`，但注意，将立即调用 `Setter`（它们不等待 `EnterAction` 或 `ExitAction` 完成）  。 或者，可以在代码中执行所有内容，根本无需使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -327,11 +327,11 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-注意：事件触发器上已忽略 `EnterActions` 和 `ExitActions`。
+注意：事件触发器上已忽略 `EnterActions` 和 `ExitActions`  。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [触发器示例](https://developer.xamarin.com/samples/WorkingWithTriggers)
+- [触发器示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
 - [Xamarin.Forms API 文档](xref:Xamarin.Forms.TriggerAction`1)

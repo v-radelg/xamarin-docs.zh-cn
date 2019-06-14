@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 08278c2bc380892706320dbd0e69642257b73005
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 2c9fae211e6a88944c94ca265409865b3252a10a
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233778"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740934"
 ---
 # <a name="checking-battery-status"></a>检查电池状态
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/DependencyService)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
 
 本文介绍如何创建检查电池状态的应用程序。 本文基于 James Montemagno 所著的《电池插件》。 有关详细信息，请参阅 [GitHub 存储库](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery)。
 
@@ -478,6 +478,6 @@ public MainPage ()
 
 ## <a name="related-links"></a>相关链接
 
-- [DependencyService（示例）](https://developer.xamarin.com/samples/DependencyService)
-- [使用 DependencyService（示例）](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [DependencyService（示例）](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
+- [使用 DependencyService（示例）](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)

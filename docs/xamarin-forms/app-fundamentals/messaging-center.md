@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 6b1df62aec12c1c34d49bd6dfa16368a6b0092f9
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: b6e68f6b99803edd8d50a172d598a3410aa1bbf4
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574723"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740762"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/UsingMessagingCenter)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
 
 _Xamarin.Forms 具有简单的消息传送服务，用于发送和接收消息。_
 
@@ -37,7 +37,7 @@ _Xamarin.Forms 具有简单的消息传送服务，用于发送和接收消息�
 
 `MessagingCenter` 是一个静态类，在整个解决方案中使用 `Subscribe` 和 `Send` 方法。
 
-消息具有字符串 `message` 参数，用作定位消息的方式。 `Subscribe` 和 `Send` 方法使用泛型参数进一步控制消息的接收方式 - 具有相同 `message` 文本但泛型类型参数不同的两则消息不会发送给同一个订阅者。
+消息具有字符串 `message` 参数，用作定位消息的方式  。 `Subscribe` 和 `Send` 方法使用泛型参数进一步控制消息的接收方式 - 具有相同 `message` 文本但泛型类型参数不同的两则消息不会发送给同一个订阅者。
 
 `MessagingCenter` 的 API 很简单：
 
@@ -60,7 +60,7 @@ _Xamarin.Forms 具有简单的消息传送服务，用于发送和接收消息�
 
 ### <a name="simple-string-message"></a>简单字符串消息
 
-最简单的消息只包含 `message` 参数中的一个字符串。 侦听简单字符串消息的 `Subscribe` 方法如下所示 - 请注意指定发送方应为 `MainPage` 类型的泛型类型。 解决方案中的任何类都可以使用以下语法订阅消息：
+最简单的消息只包含 `message` 参数中的一个字符串。 侦听简单字符串消息的 `Subscribe` 方法如下所示 - 请注意指定发送方应为 `MainPage` 类型的泛型类型  。 解决方案中的任何类都可以使用以下语法订阅消息：
 
 ```csharp
 MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
@@ -68,13 +68,13 @@ MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
 });
 ```
 
-在 `MainPage` 类中，以下代码发送消息。 `this` 参数是 `MainPage` 的一个实例。
+在 `MainPage` 类中，以下代码发送消息  。 `this` 参数是 `MainPage` 的一个实例。
 
 ```csharp
 MessagingCenter.Send<MainPage> (this, "Hi");
 ```
 
-字符串不会更改 - 它指示消息类型并用于确定通知哪些订阅者。 此类消息用于指示发生了某些事件，例如“上传已完成”这类不需要更多消息的事件。
+字符串不会更改 - 它指示消息类型并用于确定通知哪些订阅者  。 此类消息用于指示发生了某些事件，例如“上传已完成”这类不需要更多消息的事件。
 
 ### <a name="passing-an-argument"></a>传递参数
 
@@ -113,6 +113,6 @@ MessagingCenter 是减少耦合度的简单方法，尤其是视图模型之间�
 
 ## <a name="related-links"></a>相关链接
 
-- [MessagingCenterSample](https://developer.xamarin.com/samples/UsingMessagingCenter)
+- [MessagingCenterSample](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
 - [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)
 - [松散耦合组件之间的通信](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)
