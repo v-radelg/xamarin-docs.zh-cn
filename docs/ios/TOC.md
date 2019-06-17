@@ -240,7 +240,8 @@
 ### [振动](~/essentials/vibrate.md?context=xamarin/ios)
 ### [疑难解答](~/essentials/troubleshooting.md?context=xamarin/ios)
 
-## [数据和云服务](data-cloud/index.md)
+## 数据和云服务
+### [概述](data-cloud/index.md)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios)
 #### [入门](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios)
 ##### [步骤 1.注册](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios)
@@ -258,7 +259,8 @@
 ### [CloudKit](data-cloud/intro-to-cloudkit.md)
 
 ### [Web 服务简介](~/cross-platform/data-cloud/web-services/index.md?context=xamarin/ios)
-## [部署和测试](deploy-test/index.md)
+## 部署和测试
+### [概述](deploy-test/index.md)
 ### [应用分发](deploy-test/app-distribution/index.md)
 #### [App Store 分发](deploy-test/app-distribution/app-store-distribution/index.md)
 ##### [在 iTunes Connect 中配置应用](deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
@@ -292,7 +294,8 @@
 ### [演练：使用 Apple 的 Instruments 工具](deploy-test/walkthrough-apples-instrument.md)
 ### [性能](deploy-test/performance.md)
 ### [疑难解答](deploy-test/troubleshooting.md)
-## [Apple 平台](~/cross-platform/macios/index.md?context=xamarin/ios)
+## Apple 平台
+### [iOS 和 macOS 概述](~/cross-platform/macios/index.md?context=xamarin/ios)
 ### [Apple 帐户管理](~/cross-platform/macios/apple-account-management.md?context=xamarin/ios)
 ### [Unified API](~/cross-platform/macios/unified/index.md?context=xamarin/ios)
 #### [概述](~/cross-platform/macios/unified/overview.md?context=xamarin/ios)
@@ -326,7 +329,8 @@
 ### [使用跨平台应用中的本机类型](~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/ios)
 ### [HttpClient 和 SSL/TLS 实现选择器](~/cross-platform/macios/http-stack.md?context=xamarin/ios)
 ### [生成优化](~/cross-platform/macios/optimizations.md?context=xamarin/ios)
-## [高级概念和内部机制](internals/index.md)
+## 高级概念和内部机制
+### [概述](internals/index.md)
 ### [API](internals/api.md)
 ### [API 设计](internals/api-design/index.md)
 #### [NSString](internals/api-design/nsstring.md)
@@ -339,8 +343,10 @@
 ### [新的引用计数](internals/newrefcount.md)
 ### [Objective-C 选择器](internals/objective-c-selectors.md)
 ### [注册器](internals/registrar.md)
-## [疑难解答](troubleshooting/index.md)
+## 疑难解答
+### [概述](troubleshooting/index.md)
 ### [疑难解答提示](troubleshooting/troubleshooting.md)
+### [Xcode 11 预览版](~/ios/platform/ios13/troubleshooting/index.md)
 ### [Xamarin.iOS 分析规则](troubleshooting/xamarin-ios-analysis.md)
 ### [错误消息 (mtouch)](troubleshooting/mtouch-errors.md)
 ### [常见问题](troubleshooting/questions/index.md)
@@ -368,7 +374,8 @@
 #### [System.Exception AMDeviceNotificationSubscribe 已返回...](troubleshooting/questions/exception-amddevicenotificationsubscribe.md)
 #### [MDocArchiveToMsxDocConverter.exe 未找到 rver.BaseCommand.OnRequest](troubleshooting/questions/mdocarchivetomsxdocconverter-not-found.md)
 #### [如何在 Xamarin Studio 中为 iOS 项目设置 Mono 运行时环境变量？](troubleshooting/questions/xs-mono-runtime.md)
-## [watchOS](watchos/index.md)
+## watchOS
+### [概述](watchos/index.md)
 ### [入门](watchos/get-started/index.md)
 #### [WatchOS 简介](watchos/get-started/intro-to-watchos.md)
 #### [设置和安装](watchos/get-started/installation.md)
@@ -405,7 +412,8 @@
 #### [Apple Watch](watchos/deploy-test/device.md)
 #### [App Store](watchos/deploy-test/appstore.md)
 ### [疑难解答](watchos/troubleshooting.md)
-## [tvOS](tvos/index.md)
+## tvOS
+### [概述](tvos/index.md)
 ### [入门](tvos/get-started/index.md)
 #### [安装 tvOS 支持](tvos/get-started/installation.md)
 #### [你好，tvOS 快速入门指南](tvos/get-started/hello-tvos.md)
