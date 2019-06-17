@@ -7,18 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f67ab15466da118d12c280d597972d2d11f8e600
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 682e3bd0ac4cdd651203496dd28586db2cef3165
+ms.sourcegitcommit: c2bba24233624c2ec0e9ee9827310ca022212a2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178110"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835268"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms 导航
 
 Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。 
 
 ![](images/page-types.png "Xamarin.Forms 页面类型")
+
+或者，Xamarin.Forms Shell 应用程序使用基于 URI 的导航体验（不强制使用设置的导航层次结构）。 有关详细信息，请参阅 [Xamarin.Forms Shell 导航](~/xamarin-forms/app-fundamentals/shell/navigation.md)。
 
 ## <a name="hierarchical-navigationhierarchicalmd"></a>[分层导航](hierarchical.md)
 
