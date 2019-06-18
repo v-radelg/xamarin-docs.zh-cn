@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 4d2ab7a546925e92bb59f626279dcbf9c3c4ab4f
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039635"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157705"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin.iOS NSObject 的通用子类
 
 ## <a name="using-generics-with-nsobjects"></a>将泛型与 NSObjects
 
-从开始使用 Xamarin.iOS 7.2.1，可以使用泛型中的子类`NSObject`(例如[UIView](xref:UIKit.UIView)。
-
-现在可以创建泛型类，如下：
+可以在类的子类中使用的泛型`NSObject`，例如[UIView](xref:UIKit.UIView):
 
 ```csharp
 class Foo<T> : UIView {
@@ -36,7 +34,7 @@ class Foo<T> : UIView {
     
 ## <a name="considerations-for-generic-subclasses-of-nsobject"></a>NSObject 的通用子类的注意事项
 
-本文档详细介绍中的通用子类的有限支持的限制`NSObjects`使用 Xamarin.iOS 7.2.1 引入。
+本文档详细介绍中的通用子类的有限支持的限制`NSObjects`。
     
 ### <a name="generic-type-arguments-in-member-signatures"></a>在成员签名中的泛型类型参数
 
@@ -103,7 +101,7 @@ class Generic<T, U> : NSObject where T: NSObject
     
 ### <a name="instantiations-of-generic-types-from-objective-c"></a>从 OBJECTIVE-C 的泛型类型的实例化
 
-不允许从 OBJECTIVE-C 的泛型类型的实例化。 这通常发生在 xib 中使用托管的类型时。
+不允许从 OBJECTIVE-C 的泛型类型的实例化。 这通常发生在 xib 或情节提要中使用的托管的类型时。
 
 请考虑此类定义中，它提供了一个构造函数采用`IntPtr`(Xamarin.iOS 方式构造的C#从本机 OBJECTIVE-C 的实例对象):
     
@@ -119,7 +117,7 @@ class Generic<T> : NSObject where T : NSObject
 
 这是因为 Objective C 的泛型类型，没有概念，它不能指定要创建的确切的泛型类型，会发生情况。
 
-通过创建一个专门的泛型类型的子类，此问题可得到解决。   例如：
+通过创建一个专门的泛型类型的子类，此问题可得到解决。 例如：
     
 ```csharp
 class Generic<T> : NSObject where T : NSObject
@@ -133,7 +131,7 @@ class GenericUIView : Generic<UIView>
 }
 ```
 
-现在没有歧义，类`GenericUIView`可以 xib 中使用。
+现在没有歧义，类`GenericUIView`可以 xib 或情节提要中使用。
 
 ## <a name="no-support-for-generic-methods"></a>不支持泛型方法
 
@@ -188,11 +186,11 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**原因：** 就像泛型方法，Xamarin.iOS 运行时需要了解什么键入要用于泛型类型参数 t。
+**原因：** 就像泛型方法，Xamarin.iOS 运行时需要能够知道使用什么类型的泛型类型参数使用`T`。
 
-对实例使用的实例本身的成员 (因为永远不会将实例泛型<T>，它将始终为泛型<SomeSpecificClass>)，但对于静态成员不存在此信息。
+对实例使用的实例本身的成员 (因为永远不会有一个实例`Generic<T>`，它将始终为`Generic<SomeSpecificClass>`)，但对于静态成员不存在此信息。
 
-请注意，这适用即使有问题的成员不以任何方式使用类型参数 T。
+请注意，这适用即使有问题的成员不使用类型参数`T`以任何方式。
 
 在这种情况下替代方法是创建一个专用的子类：
 
@@ -206,7 +204,7 @@ class GenericUIView : Generic<UIView>
     }
 
     [Export ("myProperty")]
-    public static UIView MyUIVIewProperty {
+    public static UIView MyUIViewProperty {
         get { return MyProperty; }
         set { MyProperty = value; }
     }
@@ -219,12 +217,6 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-### <a name="requires-new-static-registrar"></a>需要新的静态注册机构
-
-泛型支持需要新[注册系统](~/ios/internals/registrar.md)。
-
-如果尝试使用旧遇到 （中除了不会生成正确的代码，从而导致未定义的行为） 的泛型类型时，旧的注册系统会显示警告。
-    
 ## <a name="performance"></a>性能
 
 静态注册机构不能在生成时解决在泛型类型中导出的成员，像通常一样，它必须在运行时查找。 这意味着，调用此方法从 OBJECTIVE-C 是有些慢调用从非泛型类的成员。

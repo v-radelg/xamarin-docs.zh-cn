@@ -5,22 +5,23 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2017
-ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: fce0eeae4ef5776842ea1b45c36163118042dc49
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279243"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157731"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 应用
 
 ![预览版功能](~/media/shared/preview.png)
 
-> [!NOTE]
-> 播放机的实时预览仅是在 Visual Studio 2017 中提供的。
+> [!WARNING]
+> Xamarin Live Player 预览已结束。 应用程序不再可用。 为客户继续使用 Visual Studio 2017，可以使用预览提供了下面的说明。
 
-以后在手机上安装的应用，请按照[安装说明进行操作](~/tools/live-player/install.md)连接到您的计算机。 请尝试之一[示例应用](~/tools/live-player/samples.md)以使其正常工作。
+> [!TIP]
+> 可以使用[XAML 预览程序](~/xamarin-forms/xaml/xaml-previewer/index.md)在 Visual Studio 2019 或 Visual Studio for Mac 以查看您的屏幕设计，如编辑它们。
 
 在启动时，Xamarin Live Player 应用如下所示：
 
@@ -56,7 +57,7 @@ ms.locfileid: "61279243"
 
 若要首次连接设备，请按照中的说明[要求和安装程序](~/tools/live-player/install.md)。 可以对多个设备，并通过 IDE 管理它们。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
 在 Visual Studio 中，选择**工具 > Xamarin Live Player > 管理设备...**
 
@@ -95,4 +96,4 @@ ms.locfileid: "61279243"
 ## <a name="related-links"></a>相关链接
 
 - [疑难解答](~/tools/live-player/troubleshooting.md)
-- [示例，以便使用与 Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+
