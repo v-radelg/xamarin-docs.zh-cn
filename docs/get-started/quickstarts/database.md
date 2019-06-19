@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ebf0f21ed57b7d436721018abb2dca329b56baa4
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262840"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194962"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>在本地 SQLite.NET 数据库中存储数据
 
@@ -40,11 +40,11 @@ ms.locfileid: "61262840"
 
 1. 启动 Visual Studio 并打开说明解决方案。
 
-2. 在中**解决方案资源管理器**，选择**说明**项目，右键单击并选择**管理 NuGet 包...**:
+2. 在中**解决方案资源管理器**，选择**说明**项目，右键单击并选择**管理 NuGet 包...** :
 
     ![](database-images/vs/add-nuget-packages.png "添加 NuGet 程序包")    
 
-3. 在“NuGet 包管理器”中，选择“浏览”选项卡，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“安装”按钮将其添加到项目：
+3. 在“NuGet 包管理器”中，选择“浏览”选项卡，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“安装”按钮将其添加到项目     ：
 
     ![](database-images/vs/add-package.png "添加包")
 
@@ -52,7 +52,7 @@ ms.locfileid: "61262840"
     > 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
     > - **创建者：** Frank A. Krueger
     > - **ID：** sqlite net pcl
-    > - **NuGet 链接：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > 尽管包的名称如此，此 NuGet 包也可以用于 .NET Standard 项目。
 
@@ -177,7 +177,7 @@ ms.locfileid: "61262840"
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            //...
         }
     }
     ```
@@ -243,11 +243,11 @@ ms.locfileid: "61262840"
 
 1. 启动 Visual Studio for Mac，并打开说明项目。
 
-2. 在中**Solution Pad**，选择**说明**项目，右键单击并选择**添加 > 添加 NuGet 包...**:
+2. 在中**Solution Pad**，选择**说明**项目，右键单击并选择**添加 > 添加 NuGet 包...** :
 
     ![](database-images/vsmac/add-nuget-packages.png "添加 NuGet 程序包")    
 
-3. 在“添加包”窗口中，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“添加包”按钮将其添加到项目：
+3. 在“添加包”窗口中，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“添加包”按钮将其添加到项目    ：
 
     ![](database-images/vsmac/add-package.png "添加包")
 
@@ -255,7 +255,7 @@ ms.locfileid: "61262840"
     > 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
     > - **创建者：** Frank A. Krueger
     > - **ID：** sqlite net pcl
-    > - **NuGet 链接：**[sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > 尽管包的名称如此，此 NuGet 包也可以用于 .NET Standard 项目。
 
@@ -387,7 +387,7 @@ ms.locfileid: "61262840"
 
     此代码定义`Database`创建一个新的属性`NoteDatabase`实例作为单一实例，将中的数据库的文件名作为参数传递`NoteDatabase`构造函数。 以单一实例的形式公开数据库的优势是，所创建的单一数据库连接在应用程序运行时保持打开状态，因此避免了每次执行数据库操作时打开和关闭数据库文件所产生的费用。
 
-    通过选择“文件”>“保存”，或按 **&#8984; + S**，保存对 **App.xaml.cs** 所做的更改，然后关闭文件。
+    通过选择“文件”>“保存”  ，或按 **&#8984; + S**，保存对 **App.xaml.cs** 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试生成应用程序现在将导致将在后续步骤中修复的错误。
