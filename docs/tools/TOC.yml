@@ -19,9 +19,10 @@
         - name: 发行说明
           href: /xamarin/tools/inspector/release-notes/
     - name: Live Player
-      href: live-player/index.md
       items:
-        - name: 安装
+        - name: 有关 Xamarin Live Player（预览）
+          href: live-player/index.md
+        - name: Visual Studio 配置
           href: live-player/install.md
         - name: Xamarin Live Player 应用
           href: live-player/player.md
