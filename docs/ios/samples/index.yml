@@ -42,8 +42,8 @@ sections:
             html: 如何使用 ContactsUI 查看控制器和属性。
             image:
               src: images/contacts.png
-              href: 'https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/'
-            title: QuickContacts
+              href: 'https://developer.xamarin.com/samples/monotouch/Contacts/'
+            title: 联系人
           - href: 'https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/'
             html: watchOS 中可用的 UI 控件套件。
             image:

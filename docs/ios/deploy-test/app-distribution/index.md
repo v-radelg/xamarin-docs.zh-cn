@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 6141b84af56d7680e2b294317ba97fb6943e17c5
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106047"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194945"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 应用分发概述
 
@@ -37,7 +37,8 @@ Apple 提供以下方式分发 iOS 应用程序，它们均受 Xamarin.iOS 支�
 ## <a name="app-store-distribution"></a>App Store 分发
 
 > [!IMPORTANT]
-> Apple [表明](https://developer.apple.com/news/?id=05072018a)，从 2018 年 7 月开始，提交到 App Store 的所有应用和更新必须使用 iOS 11 SDK 来构建，并且必须[支持 iPhone X 显示器](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md)。
+> Apple [已表明](https://developer.apple.com/ios/submit/)，从 2019 年 3 月开始，提交到 App Store 的所有应用和更新必须是使用 iOS 12.1 SDK 或更高版本构建的，包含在 Xcode 10.1 或更高版本中。
+> 应用还应支持 iPhone XS 和 12.9 英寸 iPad Pro 屏幕大小。
 
 这是将 iOS 应用程序分发给 iOS 设备上的使用者的主要方式。 提交到 App Store 的所有应用都需要 Apple 审批。
 

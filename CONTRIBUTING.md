@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557208"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194939"
 ---
 # <a name="contributing"></a>参与
 
@@ -70,13 +70,13 @@ Xamarin 团队将审核 PR，并告知（通过 PR 反馈）更改是否看似�
 下面是一个简短的指导规则列表，当你参与 .NET 文档时应牢记其中内容。
 
 - 请勿发出大型拉取请求。 可以提出问题并发起讨论，以便我们在你花费大量时间前确定方向。
-- 请务必阅读[风格指南](../contributing-guidelines/template.md)以及[语气和语调](../contributing-guidelines/voice-tone.md)指南。
-- 请务必使用[模板](../contributing-guidelines/template.md)文件作为工作的起点。
+- 请务必阅读[风格指南](contributing-guidelines/template.md)以及[语气和语调](contributing-guidelines/voice-tone.md)指南。
+- 请务必使用[模板](contributing-guidelines/template.md)文件作为工作的起点。
 - 请务必在处理文章前，在分叉上创建一个单独的分支。
 - 请务必遵循 [GitHub 流工作流](https://guides.github.com/introduction/flow/)。
 - 请务必在博客和推文（或任何社交软件上）频繁地发布你的参与内容！
 
 > [!NOTE]
-> 你或许会注意到某些主题目前并没有遵循此处指定的所有准则和[风格指南](./contributing-guidelines/template.md)。 我们正努力实现整个站点的一致性。 
+> 你或许会注意到某些主题目前并没有遵循此处指定的所有准则和[风格指南](contributing-guidelines/template.md)。 我们正努力实现整个站点的一致性。 
 
 
