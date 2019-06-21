@@ -7,19 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 5e75a7872081d82c289db0312bbc7d84bce77b4e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1542ae5d7dbdf008dd5b300dfb5820c3f04ae682
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170983"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268890"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 简介
-
-_请尝试新的 iOS 11 Api 与 Xamarin。_
-
-> [!NOTE]
-> 在开始之前，请查看[入门](get-started.md)页说明如何安装 Xcode 9。
 
 ![ARKit 示例](images/arkit.png) ![AR 放置对象](images/arkit2.png) ![CoreML 示例](images/coreml.png) ![MapKit 示例](images/mapkit.png) ![影像矩形示例](images/vision1.png) ![影像的人脸示例](images/vision2.png) ![拖放到示例](images/drag-drop.png) ![拖放到示例](images/drag-drop2.png) ![SiriKit 示例](images/sirikit.png)
 
@@ -86,12 +81,6 @@ PDFKit 是现在适用于 iOS 11 中，将带 PDF 创建和编辑您的应用程
 * [PDKFit 小组件示例](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
 * [PDFKit 水印示例](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
 
-## <a name="more-information"></a>详细信息
-
-IOS 11 的详细信息，请访问 Apple [What's New iOS 11 中](https://developer.apple.com/ios/)文档。
-
-
 ## <a name="related-links"></a>相关链接
 
-- [What's New iOS 11 (Apple) 中](https://developer.apple.com/ios/)
 - [Xamarin iOS 11 示例](https://developer.xamarin.com/samples/ios/iOS11/)

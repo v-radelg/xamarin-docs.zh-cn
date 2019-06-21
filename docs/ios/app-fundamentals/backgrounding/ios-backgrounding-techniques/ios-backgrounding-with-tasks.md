@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: c8d1abebf6dec2b7b5fe76d57ff851fad457f2a8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ec5439e11b0edd2b6ad5391254e40e01271879a7
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170647"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268829"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 后台处理及任务
 
@@ -98,7 +98,7 @@ Task.Factory.StartNew( () => {
     });
     while(myFlag == true)
     {
-        Console.WriteLine(UIApplication.SharedApplication.TimeRemaining);
+        Console.WriteLine(UIApplication.SharedApplication.BackgroundTimeRemaining);
         myFlag = SomeCalculationNeedsMoreTime();
     }
     //Only called if loop terminated due to myFlag and not expiration of time

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2018
-ms.openlocfilehash: 77589d0d644c366fc0feacd874929c7456b4ae30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 71799e4299f01a881c6bc265baa7ad721ec5fc79
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61398793"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268879"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>开始使用 iOS 12、 12、 tvOS 和 watchOS 5
 
@@ -40,4 +40,4 @@ ms.locfileid: "61398793"
 
 ## <a name="related-links"></a>相关链接
 
-- [下载 Xcode 10](https://developer.apple.com/download/)
+- [下载 Xcode](https://developer.apple.com/download/)

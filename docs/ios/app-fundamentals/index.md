@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 120bbfe0d5fa91e632fc56ee05431f5555653360
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61248512"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268593"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS 应用程序基础知识
 
@@ -33,6 +33,10 @@ ms.locfileid: "61248512"
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[在代码中创建 iOS 应用程序](~/ios/app-fundamentals/ios-code-only.md)
 
 本文介绍如何完全在代码使用 Visual Studio 和 Visual Studio for mac 中创建 iOS 应用程序 本文介绍了如何从空项目模板开始，通过从 UIKit 创建视图层次结构，在控制器中生成应用程序屏幕。 然后介绍了如何创建可在控制器中加载的自定义视图。
+
+## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[异常封送处理](~/ios/platform/exception-marshaling.md)
+
+介绍如何通过 Objective C 和托管的异常封送处理本机和托管帧之间。
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[事件、 协议和委托](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 

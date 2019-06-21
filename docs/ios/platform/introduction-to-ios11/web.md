@@ -1,5 +1,5 @@
 ---
-title: iOS 11 中的 Web 更改
+title: IOS 11 中的易于使用的功能和 Safari 更改
 description: 本文档讨论了易于使用的功能和 iOS 11 中的 Safari 服务框架所做的更改。 它介绍了如何使用 SFSafariViewController 中的更新和 WKWebView 中的新增功能设置样式。
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/12/2017
-ms.openlocfilehash: ba691a6605dcf7e86a76ed13d4c8ef5f0984ff6e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5ced73b1f3f5b8207ae1258dcb01a78c94df217d
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399654"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268915"
 ---
-# <a name="web-changes-in-ios-11"></a>iOS 11 中的 Web 更改
+# <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的易于使用的功能和 Safari 更改
 
 iOS 11 引入了新版本的 Safari web 浏览器 – Safari 11.0 – 其中包括易于使用的功能与 SafariServices 的变化。 本指南探讨了这些更改。
 

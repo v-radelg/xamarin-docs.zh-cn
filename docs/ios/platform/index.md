@@ -1,5 +1,5 @@
 ---
-title: iOS 平台功能
+title: iOS 平台功能概述
 description: 本文档所链接到各种指南描述的 Io，各种版本中引入的功能和其他 iOS 平台功能。
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
@@ -7,50 +7,32 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: fff6620732ffcaccd13dde7ae31ab03a5106da16
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9628821be5a979777614eb4f7ad8605087093ed3
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364388"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268839"
 ---
-# <a name="ios-platform-features"></a>iOS 平台功能
+# <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
-## <a name="introduction-to-ios-12iosplatformintroduction-to-ios12indexmd"></a>[iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md)
+最新的 iOS 版本以及突出显示的 Apple 框架的一些本页面列出了可以使用 Xamarin.iOS 访问。
 
-生成 Xamarin.iOS 应用程序时，本文档介绍 iOS 12 功能可供使用。
+## <a name="ios-releases"></a>iOS 版本
 
-## <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md)
-
-本文档介绍 iOS 11 和 Xcode 9，如 ARKit、 Core ML、 Core NFC、 拖动和拖放、 MapKit、 PDFKit、 SiriKit 和愿景中的新的和更新功能。 它链接到介绍如何通过 Xamarin.iOS 中使用这些功能的指南。
-
-## <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[iOS 10 简介](~/ios/platform/introduction-to-ios10/index.md)
-
-iOS 10 包括几个新 Api 和服务，可用于开发的新特性和功能的应用程序。 与 iOS 10、 应用具有如地图、 消息、 电话和 Siri 将扩展的新功能。 本部分介绍方式来利用 Xamarin.iOS 应用程序中的这些功能。
-
-## <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
-
-本部分将定义从 iOS 8 和如何在 Xamarin.iOS 应用程序中使用这些功能进行升级时，在 iOS 9 中所做的更改。
-
-## <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[iOS 8 简介](~/ios/platform/introduction-to-ios8.md)
-
-iOS 8 通过 iOS 7 对操作系统进行大量更改。 在这里，我们显示以及如何使用它们。
-
-## <a name="introduction-to-ios-7iosplatformintroduction-to-ios7indexmd"></a>[iOS 7 简介](~/ios/platform/introduction-to-ios7/index.md)
-
-有关在 iOS 7 中引入的主要新 Api，包括视图控制器转换，UIView 动画、 UIKit Dynamics 和文本工具包的增强功能。
-
-## <a name="introduction-to-ios-6iosplatformintroduction-to-ios6indexmd"></a>[iOS 6 简介](~/ios/platform/introduction-to-ios6/index.md)
-
-IOS 6，包括集合视图、 通过工具包、 活动工具包和社交框架中引入的功能的说明。
+|  |  |
+|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md) | 本文档介绍了 iOS 12 功能可供使用时 buildingXamarin.iOS 应用程序。|
+| [iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md) | 本文档介绍 iOS 11 和 Xcode 9，如 ARKit、 Core ML、 Core NFC、 拖动和拖放、 MapKit、 PDFKit、 SiriKit 和愿景中的新的和更新功能。 它链接到介绍如何使用这些 featureswith Xamarin.iOS 的指南。 |
+| [iOS 10 简介](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 包括几个新 Api 和服务，可用于开发的新特性和功能的应用程序。 与 iOS 10、 应用具有如地图、 消息、 电话和 Siri 将扩展的新功能。 本部分介绍方式来利用 Xamarin.iOS 应用程序中的这些功能。 |
+| [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)   | 本部分将定义从 iOS 8 和如何在 Xamarin.iOS 应用程序中使用这些功能进行升级时，在 iOS 9 中所做的更改。 |
+| [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)         | iOS 8 通过 iOS 7 对操作系统进行大量更改。 在这里，我们显示以及如何使用它们。 |
+| [iOS 7 简介](~/ios/platform/introduction-to-ios7/index.md)   | 有关在 iOS 7 中引入的主要新 Api，包括视图控制器转换，UIView 动画、 UIKit Dynamics 和文本工具包的增强功能。 |
+| [iOS 6 简介](~/ios/platform/introduction-to-ios6/index.md)   | IOS 6，包括集合视图、 通过工具包、 活动工具包和社交框架中引入的功能的说明。 |
 
 ## <a name="apple-payiosplatformapple-paymd"></a>[Apple Pay](~/ios/platform/apple-pay.md)
 
 Apple Pay 引入了 iOS 8，以及使用户能够支付实体商品，如食物、 娱乐和通过其 iOS 设备的成员身份。 适用于 iPhone 6 和 iPhone 6 的加号，且还可以与在应用商店购买内容 Apple Watch 配对。 在 iPhone 上使用，它将使用 Touch ID，作为一种方法，以确认并授权用户的信用卡或借记卡的事务。
-
-## <a name="3d-touchiosplatform3d-touchmd"></a>[3D Touch](~/ios/platform/3d-touch.md)
-
-本文将提供并介绍如何使用新的 3D Touch Api 将压力敏感手势添加到 Xamarin.iOS 应用运行在新 iPhone 6s 和 iPhone 6s Plus 设备。
 
 ## <a name="callkitiosplatformcallkitmd"></a>[CallKit](~/ios/platform/callkit.md)
 
@@ -138,6 +120,10 @@ iOS 10 包括一个新的语音 API，允许应用支持连续语音识别和转
 
 文本工具包是一个新 API，提供了强大的文本布局和呈现功能。 它基于核心文本框架的低级别，但可以更轻松地使用比核心文本。
 
+## <a name="3d-touchiosplatform3d-touchmd"></a>[3D Touch](~/ios/platform/3d-touch.md)
+
+本文将提供并介绍如何使用新的 3D Touch Api 将压力敏感手势添加到 Xamarin.iOS 应用运行在新 iPhone 6s 和 iPhone 6s Plus 设备。
+
 ## <a name="touch-idiosplatformtouchidmd"></a>[Touch ID](~/ios/platform/touchid.md)
 
 作为一种方式进行身份验证的用户-类似于密码的 iOS 7 中引入了触摸屏输入 ID。 但是，它被限制为解锁设备、 应用商店、 使用 iTunes 和 iCloud 密钥链仅进行身份验证。
@@ -152,16 +138,12 @@ iOS 10 和 macOS Sierra 增强了对扩展范围像素格式和整个系统的�
 
 ## <a name="binding-objective-cbinding-objective-cindexmd"></a>[绑定 Objective-C](binding-objective-c/index.md)
 
-IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 的库。 在这些情况下，可以使用 MonoTouch 的绑定项目创建 C# 绑定到本机 OBJECTIVE-C 的库。 该项目使用相同的工具，我们使用 iOS Api 引入 C#。&nbsp;本文档介绍如何将绑定 Objective C Api。
+IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 的库。 在这些情况下，可以使用 MonoTouch 的绑定项目创建 C# 绑定到本机 OBJECTIVE-C 的库。 该项目使用相同的工具，我们使用将 iOS Api 为C#。 本文档介绍如何将绑定 Objective C Api。
 
 ## <a name="referencing-native-librariesnative-interopmd"></a>[引用本机库](native-interop.md)
 
-Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与 Xamarin.iOS 项目的链接。 
+Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与 Xamarin.iOS 项目的链接。
 
 ## <a name="embedded-frameworksembedded-frameworksmd"></a>[嵌入式框架](embedded-frameworks.md)
 
 介绍如何在 Xamarin.iOS 应用中嵌入 Objective C 用户框架。
-
-## <a name="exception-marshalingexception-marshalingmd"></a>[异常封送处理](exception-marshaling.md)
-
-介绍如何通过 Objective C 和托管的异常封送处理本机和托管帧之间。
