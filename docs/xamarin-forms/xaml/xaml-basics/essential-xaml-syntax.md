@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407627"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309514"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-你还可以执行在 XAML 中使用类似的内容`OnPlatform`和`On`类。 首先添加为属性元素`Padding`属性页的顶部附近：
+你还可以执行在 XAML 中使用类似的内容[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)并[ `On` ](xref:Xamarin.Forms.On)类。 首先添加为属性元素`Padding`属性页的顶部附近：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,11 +523,12 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
+> [!NOTE]
+> `OnPlatform`标记扩展还可在 XAML 中自定义根据每个平台的 UI 外观。 它提供了相同的功能`OnPlatform`和`On`类，但具有更简洁表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+
 ## <a name="summary"></a>总结
 
 使用属性元素和附加的属性，很多基本 XAML 语法已建立。 但是，有时您需要将属性设置为对象以间接方式，例如，从资源字典。 在下一部分中，一部分介绍了此方法[3。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
-
-
 
 ## <a name="related-links"></a>相关链接
 

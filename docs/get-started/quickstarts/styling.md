@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 56f8632c9cc7d170b4c6594fd51e6aa3e92ad02b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61191216"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309503"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>样式的跨平台 Xamarin.Forms 应用程序
 
@@ -120,7 +120,7 @@ ms.locfileid: "61191216"
 
     保存对更改**NotesPage.xaml**通过按**CTRL + S**，然后关闭文件。
 
-5. 在中**Solution Pad**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
+5. 在中**解决方案资源管理器**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -222,7 +222,7 @@ ms.locfileid: "61191216"
 
     保存对更改**App.xaml**通过选择**文件 > 保存**(或通过按 **&#8984; + S**)，然后关闭文件。
 
-3. 在中**解决方案资源管理器**，在**说明**项目中，双击**NotesPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
+3. 在中**Solution Pad**，在**说明**项目中，双击**NotesPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ ms.locfileid: "61191216"
 
     保存对更改**NotesPage.xaml**通过选择**文件 > 保存**(或通过按 **&#8984; + S**)，然后关闭文件。
 
-5. 在中**解决方案资源管理器**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
+5. 在中**Solution Pad**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
