@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2019
-ms.openlocfilehash: 4c3cc489f7c65636ad9f2b5541e552665b10980e
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: 2f9cfceee4765dea946dfdac974ac2d56595ef94
+ms.sourcegitcommit: 9aaae4f0af096cd136b3dcfbb9af591ba307dc25
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557295"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398693"
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>将 Azure Active Directory B2C 集成与 Azure 移动应用程序
 
@@ -115,9 +115,9 @@ public async Task<bool> LoginAsync(bool useSilent = false)
     ...
 
     var payload = new JObject();
-    if (authenticationResult != null && !string.IsNullOrWhiteSpace(authenticationResult.IdToken))
+    if (authenticationResult != null && !string.IsNullOrWhiteSpace(authenticationResult.AccessToken))
     {
-        payload["access_token"] = authenticationResult.IdToken;
+        payload["access_token"] = authenticationResult.AccessToken;
     }
 
     User = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(
@@ -131,9 +131,9 @@ public async Task<bool> LoginAsync(bool useSilent = false)
 
 Microsoft 身份验证库 (MSAL) 用于与 Azure Active Directory B2C 租户启动的身份验证的工作流。 `AcquireTokenAsync`方法会启动设备的 web 浏览器并显示在通过引用的策略指定的 Azure Active Directory B2C 策略中定义的身份验证选项`Constants.AuthoritySignin`常量。 此策略将定义用户的登录和注册体验和应用程序身份验证成功后收到的声明。
 
-结果`AcquireTokenAsync`方法调用是`AuthenticationResult`实例。 如果身份验证成功，`AuthenticationResult`实例将包含一个标识令牌，将本地缓存。 如果身份验证不成功，`AuthenticationResult`实例将包含数据，该值指示身份验证失败的原因。 有关如何使用 MSAL 来与 Azure Active Directory B2C 租户通信的信息，请参阅[与 Azure Active Directory B2C 进行身份验证用户](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md)。
+结果`AcquireTokenAsync`方法调用是`AuthenticationResult`实例。 如果身份验证成功，`AuthenticationResult`实例将包含访问令牌，将本地缓存。 如果身份验证不成功，`AuthenticationResult`实例将包含数据，该值指示身份验证失败的原因。 有关如何使用 MSAL 来与 Azure Active Directory B2C 租户通信的信息，请参阅[与 Azure Active Directory B2C 进行身份验证用户](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md)。
 
-当`CurrentClient.LoginAsync`调用方法，Azure 移动应用实例收到的标识令牌包装在`JObject`。 为有效的标记表示 Azure 移动应用实例并不需要启动其自己的 OAuth 2.0 身份验证流存在。 相反，`CurrentClient.LoginAsync`方法将返回`MobileServiceUser`实例，它将存储在`MobileServiceClient.CurrentUser`属性。 此属性提供`UserId`和`MobileServiceAuthenticationToken`属性。 这些表示已经过身份验证的用户和令牌在过期之前可以使用。 身份验证令牌将包含在对 Azure 移动应用实例，允许 Xamarin.Forms 应用程序执行需要身份验证的用户权限的操作所做的所有请求。
+当`CurrentClient.LoginAsync`调用方法，Azure 移动应用实例收到访问令牌中包装`JObject`。 为有效的标记表示 Azure 移动应用实例并不需要启动其自己的 OAuth 2.0 身份验证流存在。 相反，`CurrentClient.LoginAsync`方法将返回`MobileServiceUser`实例，它将存储在`MobileServiceClient.CurrentUser`属性。 此属性提供`UserId`和`MobileServiceAuthenticationToken`属性。 这些表示已经过身份验证的用户和令牌在过期之前可以使用。 身份验证令牌将包含在对 Azure 移动应用实例，允许 Xamarin.Forms 应用程序执行需要身份验证的用户权限的操作所做的所有请求。
 
 ### <a name="signing-out"></a>正在注销
 
