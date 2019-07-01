@@ -336,6 +336,7 @@
 #### [Azure 搜索](data-cloud/search/azure-search.md)
 ### [无服务器应用程序](data-cloud/serverless/index.md)
 #### [Azure Functions](data-cloud/serverless/azure-functions.md)
+#### [将 Azure SignalR 服务与 Xamarin.Forms 配合使用](data-cloud/serverless/azure-signalr.md)
 ### [在文档数据库中存储数据](data-cloud/cosmosdb/index.md)
 #### [使用 Azure Cosmos DB 文档数据库](data-cloud/cosmosdb/consuming.md)
 #### [使用 Azure Cosmos DB 文档数据库对用户进行身份验证](data-cloud/cosmosdb/authentication.md)

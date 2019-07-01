@@ -6,16 +6,16 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/12/2019
 ms.custom: video
-ms.openlocfilehash: 3511850391b2be809daf2b70e81fa5b591db8dfa
-ms.sourcegitcommit: c6ff24b524d025d7e87b7b9c25f04c740dd93497
+ms.openlocfilehash: c186f5c61bd2fa3df305be92a03135e57e302d02
+ms.sourcegitcommit: 6e04246207aa743820029e8c217a43cfdd24f991
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240339"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67352128"
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials:剪贴板
 
-Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。
+Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板  。
 
 ## <a name="get-started"></a>入门
 
@@ -29,23 +29,26 @@ Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统�
 using Xamarin.Essentials;
 ```
 
-检查 Clipboard 是否有当前已准备好要粘贴的文本：
+检查 Clipboard 是否有当前已准备好要粘贴的文本  ：
 
 ```csharp
 var hasText = Clipboard.HasText;
 ```
 
-将文本设置到 Clipboard：
+将文本设置到 Clipboard  ：
 
 ```csharp
 await Clipboard.SetTextAsync("Hello World");
 ```
 
-从 Clipboard 读取文本：
+从 Clipboard 读取文本  ：
 
 ```csharp
 var text = await Clipboard.GetTextAsync();
 ```
+
+> [!TIP]
+> 必须在主用户界面线程上完成对 Clipboard 的访问。 若要了解如何在主用户界面线程上调用方法，请参阅 [MainThread](~/essentials/main-thread.md) API。
 
 ## <a name="api"></a>API
 
