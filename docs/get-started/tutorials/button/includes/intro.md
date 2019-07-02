@@ -1,11 +1,16 @@
 ---
-ms.openlocfilehash: ef559ed48a448679a9fd86fdf95054a9fa6368e5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d4be81bac872177cb15bad004b581702b17b9ac
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61372906"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277104"
 ---
+开始演练本教程的前提条件为已成功完成以下教程：
+
+- [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
+- [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
+
 在本教程中，你将了解：
 
 > [!div class="checklist"]
@@ -13,24 +18,6 @@ ms.locfileid: "61372906"
 > - 响应被点击的 `Button`。
 > - 更改 `Button` 的外观。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+你将使用 Visual Studio 2019 或 Visual Studio for Mac 创建一个简单的应用程序，演示如何自定义 [`Button`](xref:Xamarin.Forms.Button)。 以下屏幕截图显示了最终的应用程序：
 
-### <a name="prerequisites"></a>系统必备
-
-若要完成本教程，应使用 Visual Studio 2017（最新版本），且安装了“使用 .NET 的移动开发”工作负荷。 此外，还需要一个匹配的 Mac，用于在 iOS 上生成教程应用程序。 有关安装 Xamarin 平台的信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。 有关将 Visual Studio 2017 连接到 Mac 生成主机的信息，请参阅[通过“与 Mac 配对”进行 Xamarin.iOS 开发](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
-
-开始演练本教程的前提条件为已成功完成以下教程：
-
-- [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>系统必备
-
-若要完成本教程，应使用 Visual Studio for Mac（最新版），且安装了 iOS 和 Android 平台支持。 此外，还需要 Xcode（最新版）。 有关安装 Xamarin 平台的详细信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。
-
-开始演练本教程的前提条件为已成功完成以下教程：
-
-- [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
+[![iOS 和 Android 上视觉外观已更改的按钮的屏幕截图](../images/change-button-appearance.png "外观已更改的按钮")](../images/change-button-appearance-large.png#lightbox "Button with changed appearance")

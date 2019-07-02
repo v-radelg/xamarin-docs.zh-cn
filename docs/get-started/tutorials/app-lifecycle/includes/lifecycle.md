@@ -1,21 +1,23 @@
 ---
-ms.openlocfilehash: 8bee6d7145cdc9bf22c01c12a4fb34cfb31cd9f4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 247e75435f42a49d5d1ea01a4d0ec3da67866156
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187440"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277117"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 启动 Visual Studio，新建名为 AppLifecycleTutorial 的 Xamarin.Forms 空白应用。 确保该应用使用 .NET Standard 作为共享代码机制。
+若要完成本教程，应使用 Visual Studio 2019（最新版本），且安装了“使用 .NET 的移动开发”工作负载  。 此外，还需要一个匹配的 Mac，用于在 iOS 上生成教程应用程序。 有关安装 Xamarin 平台的信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。 有关将 Visual Studio 2019 连接到 Mac 生成主机的信息，请参阅[通过“与 Mac 配对”进行 Xamarin.iOS 开发](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+
+1. 启动 Visual Studio，新建名为 AppLifecycleTutorial 的 Xamarin.Forms 空白应用  。 确保该应用使用 .NET Standard 作为共享代码机制。
 
     > [!IMPORTANT]
-    > 本教程中的 C# 和 XAML 片段要求将解决方案命名为 AppLifecycleTutorial。 使用不同的名称会导致：将本教程中的代码复制到解决方案中时出现生成错误。
+    > 本教程中的 C# 和 XAML 片段要求将解决方案命名为 AppLifecycleTutorial  。 使用不同的名称会导致：将本教程中的代码复制到解决方案中时出现生成错误。
 
     有关创建的 .NET Standard 库的详细信息，请参阅 [Xamarin.Forms 快速入门的深入探讨](~/get-started/first-app/index.md)中的 [Xamarin.Forms 应用程序剖析](~/get-started/first-app/index.md)。
 
-1. 在“解决方案资源管理器”的 AppLifecycleTutorial 项目中，展开 App.xaml，然后双击 App.xaml.cs 将其打开。 然后在 App.xaml.cs 中，更新 `OnStart`、`OnSleep` 和 `OnResume` 重写，如下所示：
+1. 在“解决方案资源管理器”的 AppLifecycleTutorial 项目中，展开 App.xaml，然后双击 App.xaml.cs 将其打开     。 然后在 App.xaml.cs 中，更新 `OnStart`、`OnSleep` 和 `OnResume` 重写，如下所示  ：
 
     ```csharp
     protected override void OnStart()
@@ -43,7 +45,7 @@ ms.locfileid: "61187440"
     > [!NOTE]
     > 没有终止应用程序的方法。 正常情况下，应用程序由 `OnSleep` 方法终止。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 应用程序启动时，会调用 `OnStart` 方法，并且 OnStart 会输出到 Visual Studio“输出”窗口：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。 应用程序启动时，会调用 `OnStart` 方法，并且 OnStart 会输出到 Visual Studio“输出”窗口   ：
 
     ```
     [Mono] Found as 'java_interop_jnienv_get_object_array_element'.
@@ -74,14 +76,16 @@ ms.locfileid: "61187440"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 启动 Visual Studio for Mac，新建名为 AppLifecycleTutorial 的 Xamarin.Forms 空白应用。 确保该应用使用 .NET Standard 作为共享代码机制。
+若要完成本教程，应使用 Visual Studio for Mac（最新版），且安装了 iOS 和 Android 平台支持。 此外，还需要 Xcode（最新版）。 有关安装 Xamarin 平台的详细信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。
+
+1. 启动 Visual Studio for Mac，新建名为 AppLifecycleTutorial 的 Xamarin.Forms 空白应用  。 确保该应用使用 .NET Standard 作为共享代码机制。
 
     > [!IMPORTANT]
-    > 本教程中的 C# 和 XAML 片段要求将解决方案命名为 AppLifecycleTutorial。 使用不同的名称会导致：将本教程中的代码复制到解决方案中时出现生成错误。
+    > 本教程中的 C# 和 XAML 片段要求将解决方案命名为 AppLifecycleTutorial  。 使用不同的名称会导致：将本教程中的代码复制到解决方案中时出现生成错误。
 
     有关创建的 .NET Standard 库的详细信息，请参阅 [Xamarin.Forms 快速入门的深入探讨](~/get-started/first-app/index.md)中的 [Xamarin.Forms 应用程序剖析](~/get-started/first-app/index.md)。
 
-1. 在“Solution Pad”中的 AppLifecycleTutorial 项目中，展开 App.xaml 并双击 App.xaml.cs 以将其打开。 然后在 App.xaml.cs 中，更新 `OnStart`、`OnSleep` 和 `OnResume` 重写，如下所示：
+1. 在“Solution Pad”中的 AppLifecycleTutorial 项目中，展开 App.xaml 并双击 App.xaml.cs 以将其打开     。 然后在 App.xaml.cs 中，更新 `OnStart`、`OnSleep` 和 `OnResume` 重写，如下所示  ：
 
     ```csharp
     protected override void OnStart()
@@ -109,7 +113,7 @@ ms.locfileid: "61187440"
     > [!NOTE]
     > 没有终止应用程序的方法。 正常情况下，应用程序由 `OnSleep` 方法终止。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 应用程序启动时，会调用 `OnStart` 方法，并且 OnStart 会输出到 Visual Studio for Mac“应用程序输出”窗口：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。 应用程序启动时，会调用 `OnStart` 方法，并且 OnStart 会输出到 Visual Studio for Mac“应用程序输出”窗口   ：
 
     ```
     2019-02-11 12:05:23.164761+0000 AppLifecycleTutorial.iOS[4089:361037] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=4089

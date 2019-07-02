@@ -1,11 +1,19 @@
 ---
-ms.openlocfilehash: 32b9941aa700d5834616a04f8b3e15054c6137d9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 164befeb08d7cb6691cb037b1f6b7f31c390afea
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037410"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277113"
 ---
+开始演练本教程的前提条件为已成功完成以下教程：
+
+- [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
+- [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
+- [网格](~/get-started/tutorials/grid/index.yml)教程。
+- [标签](~/get-started/tutorials/label/index.yml)教程。
+- [图像](~/get-started/tutorials/image/index.yml)教程。
+
 在本教程中，你将了解：
 
 > [!div class="checklist"]
@@ -14,30 +22,6 @@ ms.locfileid: "61037410"
 > - 回应被选中的 `ListView` 项。
 > - 自定义 `ListView` 单元格外观。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+你将使用 Visual Studio 2019 或 Visual Studio for Mac 创建一个简单的应用程序，演示如何自定义 [`ListView`](xref:Xamarin.Forms.ListView) 的外观。 以下屏幕截图显示了最终的应用程序：
 
-### <a name="prerequisites"></a>系统必备
-
-若要完成本教程，应使用 Visual Studio 2017（最新版本），且安装了“使用 .NET 的移动开发”工作负荷。 此外，还需要一个匹配的 Mac，用于在 iOS 上生成教程应用程序。 有关安装 Xamarin 平台的信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。 有关将 Visual Studio 2017 连接到 Mac 生成主机的信息，请参阅[通过“与 Mac 配对”进行 Xamarin.iOS 开发](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
-
-开始演练本教程的前提条件为已成功完成以下教程：
-
-- [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
-- [网格](~/get-started/tutorials/grid/index.yml)教程。
-- [标签](~/get-started/tutorials/label/index.yml)教程。
-- [图像](~/get-started/tutorials/image/index.yml)教程。
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>系统必备
-
-若要完成本教程，应使用 Visual Studio for Mac（最新版），且安装了 iOS 和 Android 平台支持。 此外，还需要 Xcode（最新版）。 有关安装 Xamarin 平台的详细信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。
-
-开始演练本教程的前提条件为已成功完成以下教程：
-
-- [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
-- [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
-- [网格](~/get-started/tutorials/grid/index.yml)教程。
-- [标签](~/get-started/tutorials/label/index.yml)教程。
-- [图像](~/get-started/tutorials/image/index.yml)教程。
+[![ListView 的屏幕截图，其项目使用数据模板进行模板化](../images/customize-cell-appearance-reduced.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "ListView displaying templated data")
