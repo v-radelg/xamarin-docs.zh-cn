@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 086ed765781d9297f07574519d2cbc9cf93ac4dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
+ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344737"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67493360"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -102,7 +102,7 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 </ContentPage>
 ```
 
-两个 XML 命名空间 ( `xmlns`) 声明将引用的 Uri，看起来在 Xamarin 的网站上的第一个和第二个在 Microsoft 的。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
+两个 XML 命名空间 (`xmlns`) 声明将引用的 Uri，看起来在 Xamarin 的网站上的第一个和第二个在 Microsoft 的。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
 
 第一个 XML 命名空间声明意味着在没有任何前缀的 XAML 文件中定义的标记如指在 Xamarin.Forms 中，类`ContentPage`。 第二个命名空间声明定义前缀为`x`。 这使用多个元素和属性的 XAML 中的内部本身和它们支持 XAML 的其他实现。 但是，这些元素和属性是略有不同，具体取决于嵌入在 URI 中的年份。 Xamarin.Forms 支持 2009 XAML 规范，但它不是所有。
 
@@ -149,7 +149,7 @@ namespace XamlSamples
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要添加其他基于 XAML 的`ContentPage`类到你的项目，选择**XamlSamples** .NET Standard 库项目，然后调用**项目 > 添加新项**菜单项。 在左侧**添加新项**对话框中，选择**Visual C#** 并**Xamarin.Forms**。 从列表中选择**内容页**(不**内容页 (C#)**，这将创建一个仅限代码的页面，或**内容视图**，这不是一个页面)。 例如，为页面提供一个名称， **HelloXamlPage.xaml**:
+若要添加其他基于 XAML 的`ContentPage`类到你的项目，选择**XamlSamples** .NET Standard 库项目，然后调用**项目 > 添加新项**菜单项。 在左侧**添加新项**对话框中，选择**Visual C#** 并**Xamarin.Forms**。 从列表中选择**内容页**(不**内容页 (C#)** ，这将创建一个仅限代码的页面，或**内容视图**，这不是一个页面)。 例如，为页面提供一个名称， **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "添加新项对话框")
 
