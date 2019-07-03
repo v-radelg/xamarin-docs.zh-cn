@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: cf6ab8266b0798ccbf29078313bbc7454125a1af
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a626532ac507185b6c01abb5327efa7015c787f5
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61026753"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512896"
 ---
 # <a name="xamarinforms-material-visual"></a>Xamarin.Forms 材料视觉对象
 
@@ -35,6 +35,7 @@ Xamarin.Forms 材料视觉对象可用来将材料设计规则应用于 Xamarin.
 材料呈现器目前纳入[Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet 包的以下视图：
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- `CheckBox`
 - [`Entry`](xref:Xamarin.Forms.Entry)
 - [`Frame`](xref:Xamarin.Forms.Frame)
 - [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
@@ -77,7 +78,7 @@ FormsMaterial.Init(this, savedInstanceState);
 </ContentPage>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 ContentPage contentPage = new ContentPage();
@@ -111,6 +112,7 @@ contentPage.Visual = VisualMarker.Material;
 就像默认呈现器，通过以下基类一样，材料呈现器可以根据需要进行自定义：
 
 - `MaterialButtonRenderer`
+- `MaterialCheckBoxRenderer`
 - `MaterialEntryRenderer`
 - `MaterialFrameRenderer`
 - `MaterialProgressBarRenderer`

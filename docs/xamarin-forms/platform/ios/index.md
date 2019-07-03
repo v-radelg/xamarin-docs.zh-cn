@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7aa9d298c2219dff60ca8ca1f917c72194ad21ca
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971022"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512684"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>在 Xamarin.Forms 中的 iOS 平台功能
 
@@ -56,6 +56,7 @@ Xamarin.Forms 视图、 页面和 iOS 上的布局提供了以下特定于平台
 
 以下特定于平台的功能提供适用于 Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application)在 iOS 上的类：
 
+- 正在禁用针对命名的字体大小进行扩展的可访问性。 有关详细信息，请参阅[辅助功能针对在 iOS 上名为字体大小进行扩展](named-font-size-scaling.md)。
 - 启用控件的布局和呈现要在主线程上执行更新。 有关详细信息，请参阅[在 iOS 上的主线程控制更新](main-thread-updates-ui.md)。
 - 启用[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)中滚动视图来捕获和共享平移手势与滚动视图。 有关详细信息，请参阅[在 iOS 上的同时进行平移手势识别](application-pan-gesture.md)。
 

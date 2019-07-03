@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/27/2018
-ms.openlocfilehash: 166927f2168015cb4786502d841e01b2faeb0c51
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 06/13/2019
+ms.openlocfilehash: 60d78797406f2e69c435fb597e36775d906852f9
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741003"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513105"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 映射
 
@@ -31,7 +31,7 @@ Xamarin.Forms.Maps 每个平台上使用本机映射 Api。 这对于用户，�
 
 <a name="Maps_Initialization" />
 
-## <a name="maps-initialization"></a>映射初始化
+## <a name="map-initialization"></a>站点地图初始化
 
 将地图添加到 Xamarin.Forms 应用程序时**Xamarin.Forms.Maps**是一个单独的 NuGet 包，应添加到解决方案中的每个项目。
 在 Android 上，这也存在依赖关系添加 Xamarin.Forms.Maps 时，会自动下载的 GooglePlayServices (另一个 NuGet)。
@@ -146,7 +146,7 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>使用映射
+## <a name="map-configuration"></a>配置映射
 
 请参阅[MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM 示例以举例说明如何在代码中使用地图控件中。 一个简单`MapPage`类看起来像此-请注意，新`MapSpan`创建来定位地图的视图：
 
@@ -218,18 +218,35 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
- `PinType` 可以设置为以下值，可能会影响固定呈现 （具体取决于平台） 的方法之一：
+`PinType` 可以设置为以下值，可能会影响固定呈现 （具体取决于平台） 的方法之一：
 
 -  泛型
 -  位置
 -  SavedPin
 -  SearchResult
 
+### <a name="map-clicks"></a>单击地图
+
+`Map` 定义`MapClicked`点击映射时激发的事件。 `MapClickedEventArgs`对象，它附带`MapClicked`事件都有一个名为的单个属性`Position`，类型的`Position`。 激发事件时，值`Position`属性设置为点击的映射位置。
+
+下面的代码示例显示了事件处理程序`MapClicked`事件：
+
+```csharp
+map.MapClicked += OnMapClicked;
+
+void OnMapClicked(object sender, MapClickedEventArgs e)
+{
+    System.Diagnostics.Debug.WriteLine($"MapClick: {e.Position.Latitude}, {e.Position.Longitude}");
+}
+```
+
+在此示例中，`OnMapClicked`事件处理程序输出的纬度和经度表示分流的映射位置。
+
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>使用 XAML
+### <a name="create-a-map-in-xaml"></a>在 XAML 中创建映射
 
-此外可进行地图定位 XAML 布局中，此代码片段中所示。
+在此示例中所示，还可以在 XAML 中，创建映射：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -238,8 +255,10 @@ map.Pins.Add(pin);
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="MapDemo.MapPage">
     <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <maps:Map WidthRequest="320" HeightRequest="200"
-                  x:Name="MyMap"
+        <maps:Map x:Name="MyMap"
+                  Clicked="OnMapClicked"
+                  WidthRequest="320"
+                  HeightRequest="200"                  
                   IsShowingUser="true"
                   MapType="Hybrid" />
     </StackLayout>
@@ -249,7 +268,7 @@ map.Pins.Add(pin);
 > [!NOTE]
 > 附加`xmlns`命名空间定义用于 Xamarin.Forms.Maps 控件的引用。
 
-`MapRegion`并`Pins`可以在代码中使用设置`MyMap`引用 （或任何命名映射）。
+`MapRegion`并`Pins`可以在代码中使用的命名的引用设置`Map`:
 
 ```csharp
 MyMap.MoveToRegion(
@@ -257,14 +276,18 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-## <a name="populating-a-map-with-data-using-data-binding"></a>使用数据绑定的数据填充映射
+## <a name="populate-a-map-with-data-using-data-binding"></a>地图填充数据使用数据绑定
 
 [ `Map` ](xref:Xamarin.Forms.Maps.Map)类还公开以下属性：
 
 - `ItemsSource` – 指定的集合`IEnumerable`要显示的项。
 - `ItemTemplate` – 指定[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)要应用于每个项目中显示的项的集合。
+- `ItemTemplateSelector` – 指定[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)将用于选择[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)在运行时的项。
 
-因此， [ `Map` ](xref:Xamarin.Forms.Maps.Map)通过使用数据绑定来绑定可以使用数据填充其`ItemsSource`属性设置为`IEnumerable`集合：
+> [!NOTE]
+> `ItemTemplate`属性将优先于时同时`ItemTemplate`和`ItemTemplateSelector`设置属性。
+
+一个[ `Map` ](xref:Xamarin.Forms.Maps.Map)通过使用数据绑定来绑定可以使用数据填充其`ItemsSource`属性设置为`IEnumerable`集合：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -296,8 +319,65 @@ MyMap.MoveToRegion(
 
 [![映射，其中数据的屏幕截图绑定 iOS 和 Android 上的 pin](map-images/pins-itemssource.png "映射具有数据绑定的插针")](map-images/pins-itemssource-large.png#lightbox "映射具有数据绑定的 pin")
 
+### <a name="choose-item-appearance-at-runtime"></a>选择项在运行时的外观
+
+在每个项的外观`IEnumerable`可以在运行时，通过设置基于项值中，选择集合`ItemTemplateSelector`属性设置为[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector):
+
+```xaml
+<ContentPage ...
+             xmlns:local="clr-namespace:WorkingWithMaps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Resources>
+        <local:MapItemTemplateSelector x:Key="MapItemTemplateSelector">
+            <local:MapItemTemplateSelector.DefaultTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="{Binding Description}" />
+                </DataTemplate>
+            </local:MapItemTemplateSelector.DefaultTemplate>
+            <local:MapItemTemplateSelector.XamarinTemplate>
+                <DataTemplate>
+                    <maps:Pin Position="{Binding Position}"
+                              Address="{Binding Address}"
+                              Label="Xamarin!" />
+                </DataTemplate>
+            </local:MapItemTemplateSelector.XamarinTemplate>    
+        </local:MapItemTemplateSelector>
+    </ContentPage.Resources>
+
+    <Grid>
+        ...
+        <maps:Map x:Name="map"
+                  ItemsSource="{Binding Locations}"
+                  ItemTemplateSelector="{StaticResource MapItemTemplateSelector}" />
+        ...
+    </Grid>
+</ContentPage>
+```
+
+下面的示例演示`MapItemTemplateSelector`类：
+
+```csharp
+public class MapItemTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate DefaultTemplate { get; set; }
+    public DataTemplate XamarinTemplate { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        return ((Location)item).Address.Contains("San Francisco") ? XamarinTemplate : DefaultTemplate;
+    }
+}
+```
+
+`MapItemTemplateSelector`类定义`DefaultTemplate`并`XamarinTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)设置为不同的数据模板的属性。 `OnSelectTemplate`方法将返回`XamarinTemplate`，它作为标签中时显示"Xamarin"`Pin`点击，项具有包含"旧金山"的地址时。 当项没有包含"旧金山"的地址时`OnSelectTemplate`方法将返回`DefaultTemplate`。
+
+有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+
 ## <a name="related-links"></a>相关链接
 
 - [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
 - [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

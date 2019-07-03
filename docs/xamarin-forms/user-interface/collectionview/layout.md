@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: a64a54d763edc4f02383af686fc8e9386daad572
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 07/01/2019
+ms.openlocfilehash: 786cea04718022847bba2ecffed8f377dd49bd8b
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005245"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512797"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms 之间导航布局
 
@@ -47,9 +47,15 @@ ms.locfileid: "66005245"
 - `Vertical` 指示[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)添加项目时，将垂直展开。
 - `Horizontal` 指示[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)添加项目时，将水平展开。
 
-[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)类继承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)类，并定义静态`VerticalList`和`HorizontalList`成员。 这些成员可用于分别创建垂直或水平列表。 或者，`ListItemsLayout`可以创建对象，指定[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)作为自变量的枚举成员。
+[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)类继承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)类，并定义`ItemSpacing`类型的属性， `double`，表示每个项周围的空白区域。 此属性的默认值为 0，并且其值始终必须大于或等于 0。 `ListItemsLayout`类还定义了静态`Vertical`和`Horizontal`成员。 这些成员可用于分别创建垂直或水平列表。 或者，`ListItemsLayout`可以创建对象，指定[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)作为自变量的枚举成员。
 
-[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)类继承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)类，并定义`Span`类型的属性， `int`，它表示要显示的行或列数在网格中。 默认值`Span`属性为 1，且其值必须始终为大于或等于 1。
+[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)类继承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)类，并定义以下属性：
+
+- `VerticalItemSpacing`类型的`double`，表示每个项周围的垂直空白区域。 此属性的默认值为 0，并且其值始终必须大于或等于 0。
+- `HorizontalItemSpacing`类型的`double`，表示每个项周围的水平空白区域。 此属性的默认值为 0，并且其值始终必须大于或等于 0。
+- `Span`类型的`int`，它表示要在网格中显示的行或列数。 此属性的默认值为 1，且其值必须始终为大于或等于 1。
+
+这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) 使用本机布局引擎执行布局。
@@ -90,11 +96,11 @@ ms.locfileid: "66005245"
 </CollectionView>
 ```
 
-但是，出于完整性的考虑， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以设置为各个项显示垂直列表中，通过设置其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为静态`ListItemsLayout.VerticalList`成员：
+但是，出于完整性的考虑， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以设置为各个项显示垂直列表中，通过设置其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为`VerticalList`:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
-                ItemsLayout="{x:Static ListItemsLayout.VerticalList}">
+                ItemsLayout="VerticalList">
     ...
 </CollectionView>
 ```
@@ -120,7 +126,7 @@ ms.locfileid: "66005245"
 CollectionView collectionView = new CollectionView
 {
     ...
-    ItemsLayout = ListItemsLayout.VerticalList
+    ItemsLayout = ListItemsLayout.Vertical
 };
 ```
 
@@ -130,11 +136,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-list"></a>水平列表
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过设置水平列表中显示其项及其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为静态`ListItemsLayout.HorizontalList`成员：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过设置水平列表中显示其项及其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为`HorizontalList`:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
-                ItemsLayout="{x:Static ListItemsLayout.HorizontalList}">
+                ItemsLayout="HorizontalList">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -188,7 +194,7 @@ CollectionView collectionView = new CollectionView
 CollectionView collectionView = new CollectionView
 {
     ...
-    ItemsLayout = ListItemsLayout.HorizontalList
+    ItemsLayout = ListItemsLayout.Horizontal
 };
 ```
 
@@ -308,6 +314,80 @@ CollectionView collectionView = new CollectionView
 
 [![CollectionView 水平网格布局，在 iOS 和 Android 上的屏幕截图](layout-images/horizontal-grid.png "CollectionView 水平网格布局")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平网格布局")
 
+## <a name="item-spacing"></a>项间距
+
+默认情况下，每个项目中[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)不具有在其周围的任意空白区域。 可以通过设置属性上使用的项布局更改此行为`CollectionView`。
+
+当[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)设置其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)对象，`ListItemsLayout.ItemSpacing`属性设置为`double`表示每个项周围的空白区域的值：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+        <ListItemsLayout ItemSpacing="20">
+            <x:Arguments>
+                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
+            </x:Arguments>
+        </ListItemsLayout>
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
+> [!NOTE]
+> `ListItemsLayout.ItemSpacing`属性验证回调集有，这可确保该属性的值始终是大于或等于 0。
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ...
+    ItemsLayout = new ListItemsLayout(ItemsLayoutOrientation.Vertical)
+    {
+        ItemSpacing = 20
+    }
+};
+```
+
+此代码会导致，具有 20 每个项周围的间距的垂直单列列表：
+
+[![项间距，iOS 和 Android 上使用 CollectionView 的屏幕截图](layout-images/vertical-list-spacing.png "CollectionView 项间距")](layout-images/vertical-list-spacing-large.png#lightbox "之间导航项间距")
+
+当[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)设置其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)对象，`GridItemsLayout.VerticalItemSpacing`和`GridItemsLayout.HorizontalItemSpacing`属性可以是设置为`double`表示每个项周围的空白垂直和水平方向的值：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        Span="2"
+                        VerticalItemSpacing="20"
+                        HorizontalItemSpacing="30" />
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
+> [!NOTE]
+> `GridItemsLayout.VerticalItemSpacing`和`GridItemsLayout.HorizontalItemSpacing`属性已设置，它们可确保的属性的值始终是大于或等于 0 的验证回叫。
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ...
+    ItemsLayout = new GridItemsLayout(2, ItemsLayoutOrientation.Vertical)
+    {
+        VerticalItemSpacing = 20,
+        HorizontalItemSpacing = 30
+    }
+};
+```
+
+此代码会导致垂直的两列式网格，具有垂直间距的每个项周围的 20 和 30，每个项周围的水平间距：
+
+[![项间距，iOS 和 Android 上使用 CollectionView 的屏幕截图](layout-images/vertical-grid-spacing.png "CollectionView 项间距")](layout-images/vertical-grid-spacing-large.png#lightbox "之间导航项间距")
+
 ## <a name="item-sizing"></a>项大小调整
 
 默认情况下，每个项目中[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)分别是测量和调整大小、 提供程序中的 UI 元素[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)未指定固定的大小。 指定此行为，可以更改[ `CollectionView.ItemSizingStrategy` ](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)属性值。 此属性的值可以设置为之一[ `ItemSizingStrategy` ](xref:Xamarin.Forms.ItemSizingStrategy)枚举成员：
@@ -336,9 +416,6 @@ CollectionView collectionView = new CollectionView
     ItemSizingStrategy = ItemSizingStrategy.MeasureFirstItem
 };
 ```
-
-> [!NOTE]
-> 项大小调整策略目前仅实现上的 iOS。
 
 ## <a name="dynamic-resizing-of-items"></a>动态调整大小的项
 

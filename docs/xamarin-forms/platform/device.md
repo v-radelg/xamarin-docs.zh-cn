@@ -6,13 +6,13 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2018
-ms.openlocfilehash: 4ba4bd7528b635d099868f093268d2d83e44dae0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/12/2019
+ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359877"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512877"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 设备类
 
@@ -20,9 +20,7 @@ ms.locfileid: "61359877"
 
 [ `Device` ](xref:Xamarin.Forms.Device)类包含大量属性和方法，以帮助开发人员自定义布局和根据每个平台的功能。
 
-除了方法和属性在特定硬件类型和大小，让代码面向`Device`类包括[BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread)方法从与 UI 交互控件时应使用该方法后台线程。
-
-<a name="providing-platform-values" />
+除了方法和属性在特定硬件类型和大小，让代码面向`Device`类包含可用于与从后台线程的 UI 控件进行交互的方法。 有关详细信息，请参阅[与从后台线程 UI 交互](#interact-with-the-ui-from-background-threads)。
 
 ## <a name="providing-platform-specific-values"></a>提供特定于平台的值
 
@@ -68,8 +66,6 @@ layout.Margin = new Thickness(5, top, 5, 0);
 > 提供不正确`Platform`属性中的值`On`类不会导致错误。 相反，该代码将执行且不应用任何特定于平台的值。
 
 或者，`OnPlatform`标记扩展可用于在 XAML 中自定义根据每个平台的 UI 外观。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
-
-<a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
@@ -135,8 +131,6 @@ this.FlowDirection = Device.FlowDirection;
 
 有关流方向的详细信息，请参阅[从右到左本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
-<a name="Device_Styles" />
-
 ## <a name="devicestyles"></a>Device.Styles
 
 [ `Styles`属性](~/xamarin-forms/user-interface/styles/index.md)包含可应用于某些控件的内置样式定义 (如`Label`)`Style`属性。 可用的样式包括：
@@ -147,8 +141,6 @@ this.FlowDirection = Device.FlowDirection;
 * ListItemTextStyle
 * SubtitleStyle
 * TitleStyle
-
-<a name="Device_GetNamedSize" />
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
@@ -163,8 +155,6 @@ someLabel.FontSize = Device.OnPlatform (
 );
 ```
 
-<a name="Device_OpenUri" />
-
 ## <a name="deviceopenuri"></a>Device.OpenUri
 
 `OpenUri`方法可用于触发对基础平台，如本机 web 浏览器中打开一个 URL 的操作 (**Safari**在 iOS 上或**Internet**在 Android 上)。
@@ -176,8 +166,6 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 [WebView 示例](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs)包括的示例使用`OpenUri`若要打开的 Url 和也会触发电话呼叫。
 
 [地图示例](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs)还使用`Device.OpenUri`以显示地图和方向使用本机**映射**iOS 和 Android 上的应用。
-
-<a name="Device_StartTimer" />
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
@@ -192,26 +180,31 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 如果内部计时器的代码与用户界面进行交互 (例如，设置的文本`Label`，或显示的警报) 应在内部完成`BeginInvokeOnMainThread`表达式 （见下文）。
 
-<a name="Device_BeginInvokeOnMainThread" />
+## <a name="interact-with-the-ui-from-background-threads"></a>与从后台线程 UI 交互
 
-## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
+大多数操作系统，包括 iOS、 Android 和通用 Windows 平台，为涉及用户界面的代码使用单线程模型。 此线程通常称为*主线程*或*UI 线程*。 此模型的结果是访问用户界面元素的所有代码必须在应用程序的主线程上都运行。
 
-后台线程，如在计时器或异步操作，例如 web 请求完成处理程序中运行的代码应永远不会访问用户界面元素。 任何需要更新用户界面的后台代码都应纳入[ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))。 此命令的等效`InvokeOnMainThread`在 iOS 上，`RunOnUiThread`在 Android 上，和`Dispatcher.RunAsync`通用 Windows 平台上。
+有时，应用程序使用后台线程来执行可能长时间运行操作，如从 web 服务检索数据。 如果在后台线程上运行的代码需要访问用户界面元素，则必须在主线程上运行该代码。
 
-Xamarin.Forms 代码是：
+`Device`类包括以下`static`方法可用于与用户交互界面背景线程的元素：
+
+| 方法 | 自变量 | 返回 | 用途 |
+|---|---|---|---|
+| `BeginInvokeOnMainThread` | `Action` | `void` | 调用`Action`主线程上并不会等待其完成。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 调用`Func<T>`上主线程，并等待它完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 调用`Action`上主线程，并等待它完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 调用`Func<Task<T>>`上主线程，并等待它完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 调用`Func<Task>`上主线程，并等待它完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回`SynchronizationContext`主线程。 |
+
+下面的代码演示使用的示例`BeginInvokeOnMainThread`方法：
 
 ```csharp
-Device.BeginInvokeOnMainThread ( () => {
-  // interact with UI elements
+Device.BeginInvokeOnMainThread (() =>
+{
+    // interact with UI elements
 });
 ```
-
-请注意该方法使用`async/await`不需要使用`BeginInvokeOnMainThread`如果运行从主 UI 线程。
-
-## <a name="summary"></a>总结
-
-Xamarin.Forms`Device`类允许根据每个平台的功能和布局精细地控制-甚至共同代码 （.NET Standard 库项目或共享的项目）。
-
 
 ## <a name="related-links"></a>相关链接
 

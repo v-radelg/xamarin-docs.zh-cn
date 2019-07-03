@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.date: 06/11/2019
+ms.openlocfilehash: c98e1cd9f4095e8310150ceeebd994af2c9b7f87
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178069"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512932"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 用户界面视图
 
@@ -31,6 +31,10 @@ Xamarin.Forms 具有自己的动画基础结构直接用于创建简单动画，
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 `Button`响应点击或单击，将定向的应用程序来执行特定任务。
+
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+`CheckBox`的一种可能的按钮为选中或为空。 选中一个复选框后，它已被视为不上。 如果一个复选框为空，它被视为处于关闭状态。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 

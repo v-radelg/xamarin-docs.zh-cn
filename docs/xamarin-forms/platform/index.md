@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cc19e2a4ea85391f585120f85b222b95ef63543f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359155"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512851"
 ---
 # <a name="xamarinforms-platform-features"></a>Xamarin.Forms 平台功能
 
@@ -24,7 +24,7 @@ Xamarin.Forms 是可扩展的并允许您使用的合并特定于平台的功能
 
 ## <a name="device-classdevicemd"></a>[设备类](device.md)
 
-如何使用`Device`类，以在共享的代码和用户界面 （包括使用 XAML） 创建特定于平台的行为。 此外介绍了`BeginInvokeOnMainThread`时修改 UI 控件从后台线程，这非常重要。
+本指南介绍如何使用`Device`类来创建特定于平台的行为中共享的代码和用户界面 （包括使用 XAML），以及如何与后台线程中的用户界面控件进行交互。
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 

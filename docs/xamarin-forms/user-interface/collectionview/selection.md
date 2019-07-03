@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: b026bd181571d689d3e19f2a815a52406f6f9da4
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: dc01cf6bea9fe614cbfb53dcc4417ffb0e602c6f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005304"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512753"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 选定内容
 
@@ -23,8 +23,8 @@ ms.locfileid: "66005304"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义用于控制项选择的以下属性：
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)类型的[ `SelectionMode` ](xref:Xamarin.Forms.SelectionMode)，选择模式。
-- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)类型的`object`，列表中的选定的项。 此属性具有`null`时未不选择任何项的值。
-- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)类型的`IList<object>`，则在列表中选择项。 此属性为只读，并且具有`null`时没有选定的项的值。
+- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)类型的`object`，列表中的选定的项。 此属性设置了默认绑定模式`TwoWay`，并且具有`null`时未不选择任何项的值。
+- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)类型的`IList<object>`，则在列表中选择项。 此属性设置了默认绑定模式`OneWay`，并且具有`null`时没有选定的项的值。
 - [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)类型的`ICommand`，其中的选定的项发生更改时执行。
 - [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)类型的`object`，这是传递给参数`SelectionChangedCommand`。
 
@@ -134,7 +134,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
                 SelectionMode="Single"
-                SelectedItem="{Binding SelectedMonkey, Mode=TwoWay}">
+                SelectedItem="{Binding SelectedMonkey}">
     ...
 </CollectionView>
 ```
@@ -147,10 +147,13 @@ CollectionView collectionView = new CollectionView
     SelectionMode = SelectionMode.Single
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
-collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey", BindingMode.TwoWay);
+collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMonkey");
 ```
 
-[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)属性数据绑定到`SelectedMonkey`已连接的视图模型，这是类型的属性`Monkey`。 一个`TwoWay`因此，如果用户更改选定的项的值使用绑定`SelectedMonkey`属性将设置与所选`Monkey`对象。 `SelectedMonkey`属性中定义`MonkeysViewModel`类和设置到的第四个项`Monkeys`集合：
+> [!NOTE]
+> [ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)属性设置了默认绑定模式`TwoWay`。
+
+[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)属性数据绑定到`SelectedMonkey`已连接的视图模型，这是类型的属性`Monkey`。 默认情况下`TwoWay`因此，如果用户更改选定的项的值使用绑定`SelectedMonkey`属性将设置与所选`Monkey`对象。 `SelectedMonkey`属性中定义`MonkeysViewModel`类和设置到的第四个项`Monkeys`集合：
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -194,7 +197,8 @@ public class MonkeysViewModel : INotifyPropertyChanged
 ```xaml
 <CollectionView x:Name="collectionView"
                 ItemsSource="{Binding Monkeys}"
-                SelectionMode="Multiple">
+                SelectionMode="Multiple"
+                SelectedItems="{Binding SelectedMonkeys}">
     ...
 </CollectionView>
 ```
@@ -207,22 +211,56 @@ CollectionView collectionView = new CollectionView
     SelectionMode = SelectionMode.Multiple
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
-```
-
-中的多项[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以预先选择的将它们添加到[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)属性：
-
-```csharp
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(1).FirstOrDefault());
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(3).FirstOrDefault());
-collectionView.SelectedItems.Add(viewModel.Monkeys.Skip(4).FirstOrDefault());
+collectionView.SetBinding(SelectableItemsView.SelectedItemsProperty, "SelectedMonkeys");
 ```
 
 > [!NOTE]
-> [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)属性只读的因此不能使用双向数据绑定来预先选择的项。
+> [ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)属性设置了默认绑定模式`OneWay`。
+
+[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)属性数据绑定到`SelectedMonkeys`已连接的视图模型，这是类型的属性`ObservableCollection<object>`。 `SelectedMonkeys`属性中定义`MonkeysViewModel`类，并设置为第二个、 第四个和第五个中的项`Monkeys`集合：
+
+```csharp
+namespace CollectionViewDemos.ViewModels
+{
+    public class MonkeysViewModel : INotifyPropertyChanged
+    {
+        ...
+        ObservableCollection<object> selectedMonkeys;
+        public ObservableCollection<object> SelectedMonkeys
+        {
+            get
+            {
+                return selectedMonkeys;
+            }
+            set
+            {
+                if (selectedMonkeys != value)
+                {
+                    selectedMonkeys = value;
+                }
+            }
+        }
+
+        public MonkeysViewModel()
+        {
+            ...
+            SelectedMonkeys = new ObservableCollection<object>()
+            {
+                Monkeys[1], Monkeys[3], Monkeys[4]
+            };
+        }
+        ...
+    }
+}
+```
 
 因此，当[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)出现，第二个，第四，预先选择列表中的第五个项并且：
 
 [![IOS 和 Android 上的多个预选择的 CollectionView 垂直列表的屏幕截图](selection-images/multiple-pre-selection.png "CollectionView 具有多个预选择的垂直列表")](selection-images/multiple-pre-selection-large.png#lightbox "CollectionView 垂直使用多个预选择的列表")
+
+## <a name="clearing-selections"></a>清除选择
+
+[ `SelectedItem` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)并[ `SelectedItems` ](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)属性可以通过设置它们，或它们为绑定到的对象来清除`null`。
 
 ## <a name="change-selected-item-color"></a>更改选定的项颜色
 

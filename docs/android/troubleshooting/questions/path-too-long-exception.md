@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 443c3cc742ceb919e64a781e18c5a97c342abb44
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153310"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522921"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>如何解决 PathTooLongException 错误？
 
@@ -28,12 +28,12 @@ ms.locfileid: "61153310"
 
 ## <a name="fix"></a>修补程序
 
-从 Xamarin.Android 8.0 开始`UseShortFileNames`MSBuild 属性可以设置为绕过此错误。 当此属性设置为`True`(默认值是`False`)，生成过程将使用较短的路径名称以减少生成的可能性**PathTooLongException**。
+`UseShortFileNames` MSBuild 属性设置为`True`默认情况下绕过此错误。 当此属性设置为`True`，生成过程将使用较短的路径名称以减少生成的可能性**PathTooLongException**。
 例如，当`UseShortFileNames`设置为`True`，在以上路径缩短为类似于以下路径：
 
 **C:\\某些\\目录\\解决方案\\项目\\obj\\调试\\lp\\1\\jl\\资产**
 
-若要设置此属性，请将以下 MSBuild 属性添加到项目 **.csproj**文件：
+若要手动设置此属性，请将以下 MSBuild 属性添加到项目 **.csproj**文件：
 
 ```xml
 <PropertyGroup>

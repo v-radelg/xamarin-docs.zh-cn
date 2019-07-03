@@ -6,13 +6,13 @@ ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/04/2019
-ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/28/2019
+ms.openlocfilehash: de77be818abbe1250946ee2ce1599235b79d8c01
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093685"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512974"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字体
 
@@ -50,18 +50,7 @@ var about = new Label {
 label.FontSize = 24;
 ```
 
-此外可以使用`NamedSize`枚举具有四个内置选项;Xamarin.Forms 选择每个平台的最佳大小。
-
--  **Micro**
--  **小**
--  **中等**
--  **大型**
-
-`NamedSize`枚举可以是任何位置使用`FontSize`可以使用指定`Device.GetNamedSize`方法将值转换为`double`:
-
-```csharp
-label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
-```
+Xamarin.Forms 还定义中的字段[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)枚举，用于表示特定字体大小。 有关命名的字体大小的详细信息，请参阅[名为字体大小](#named-font-sizes)。
 
 <a name="FontAttributes" />
 
@@ -111,7 +100,7 @@ Xamarin.Forms 控制所有具有该显示文本`FontSize`可以在 XAML 中设�
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) 此外可在 XAML 中呈现每个平台上不同的字体。 下面的示例在 iOS 上使用自定义字体 (<span style="font-family:MarkerFelt-Thin">MarkerFelt 精简</span>)，并在其他平台上指定仅大小/属性：
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) 此外可在 XAML 中呈现每个平台上不同的字体。 下面的示例在 iOS 上使用自定义字体 (<span style="font-family:MarkerFelt-Thin">MarkerFelt 精简</span>)，并在其他平台上指定仅大小/属性：
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -126,6 +115,32 @@ Xamarin.Forms 控制所有具有该显示文本`FontSize`可以在 XAML 中设�
 ```
 
 指定自定义字体，它是始终使用一个好办法`OnPlatform`，因为很难找到可在所有平台的字体。
+
+## <a name="named-font-sizes"></a>命名的字体大小
+
+Xamarin.Forms 定义中的字段[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)枚举，用于表示特定字体大小。 下表显示`NamedSize`成员，并在 iOS、 Android 和通用 Windows 平台 (UWP) 上的其默认大小：
+
+| 成员 | iOS | Android | UWP |
+| --- | --- | --- | --- |
+| `Default` | 16 | 14 | 14 |
+| `Micro` | 11 | 10 | 15.667 |
+| `Small` | 13 | 14 | 18.667 |
+| `Medium` | 16 | 17 | 22.667 |
+| `Large` | 20 | 22 | 32 |
+| `Body` | 17 | 16 | 14 |
+| `Header` | 17 | 96 | 46 |
+| `Title` | 28 | 24 | 24 |
+| `Subtitle` | 22 | 16 | 20 |
+| `Caption` | 12 | 12 | 12 |
+
+可通过 XAML 和代码设置命名的字体大小。 此外，`Device.GetNamedSize`可以调用方法以返回`double`表示命名的字体大小：
+
+```csharp
+label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+```
+
+> [!NOTE]
+> 在 iOS 和 Android 上，命名的字体大小将根据操作系统可访问性选项进行自动缩放。 可以使用平台特定的 iOS 上禁用此行为。 有关详细信息，请参阅[辅助功能针对在 iOS 上名为字体大小进行扩展](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
 
 <a name="Using_a_Custom_Font" />
 
@@ -185,7 +200,7 @@ new Label
 
 ### <a name="xaml"></a>XAML
 
-此外可以使用[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values)中 XAML 呈现自定义字体：
+此外可以使用[ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)中 XAML 呈现自定义字体：
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -225,7 +240,7 @@ new Label
 </Image>
 ```
 
-此代码中显示一个 XBox 图标，Ionicons 字体系列，从[ `Image` ](xref:Xamarin.Forms.Image)视图。 请注意，尽管 unicode 字符是此图标`\uf30c`，它必须在 XAML 中进行转义，因此将变为`&#xf30c;`。 等效的 C# 代码是：
+此代码中显示一个 XBox 图标，Ionicons 字体系列，从[ `Image` ](xref:Xamarin.Forms.Image)视图。 请注意，尽管 unicode 字符是此图标`\uf30c`，它必须在 XAML 中进行转义，因此将变为`&#xf30c;`。 等效 C# 代码如下：
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };
