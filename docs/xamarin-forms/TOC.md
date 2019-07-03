@@ -136,6 +136,7 @@
 #### [自定义动画](user-interface/animation/custom.md)
 ### [BoxView](user-interface/boxview.md)
 ### [Button](user-interface/button.md)
+### [CheckBox](user-interface/checkbox.md)
 ### [CollectionView](user-interface/collectionview/index.md)
 #### [介绍](user-interface/collectionview/introduction.md)
 #### [Data](user-interface/collectionview/populate-data.md)

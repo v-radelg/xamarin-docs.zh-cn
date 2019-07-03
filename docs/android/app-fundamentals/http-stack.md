@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e6d8ccea7331f53d2e7262630689075a8b9a1ff1
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019300"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522965"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>HttpClient 堆栈和适用于 Android 的 SSL/TLS 实现选择器
 
@@ -112,7 +112,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> 基础 Android 设备必须支持 TLS 1.2 (ie。Android 4.1 及更高版本)
+> 基础 Android 设备必须支持 TLS 1.2 (ie。Android 4.1 及更高版本)。 请注意在 Android 5.0 + 是 TLS 1.2 的官方支持。 但是某些设备 Android 4.1 + 中支持 TLS 1.2。
 
 
 ## <a name="ssltls-implementation-build-option"></a>SSL/TLS 实现生成选项
@@ -135,7 +135,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 var client = new HttpClient();
 ```
 
-如果 HttpClient 实现已设置为**托管**TLS 实现设置为**本机 TLS 1.2 +**，然后`client`对象将自动使用托管`HttpClientHandler`和TLS 1.2 （由 BoringSSL 库提供） 用于其 HTTP 请求。
+如果 HttpClient 实现已设置为**托管**TLS 实现设置为**本机 TLS 1.2 +** ，然后`client`对象将自动使用托管`HttpClientHandler`和TLS 1.2 （由 BoringSSL 库提供） 用于其 HTTP 请求。
 
 但是，如果**HttpClient 实现**设置为`AndroidHttpClient`，然后所有`HttpClient`对象将使用基础 Java 类`java.net.URLConnection`并将不会影响**实现TLS/SSL**值。 `WebRequest` 对象将使用 BoringSSL 库。
 
