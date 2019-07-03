@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 9db9902dfbf602ba21b353f3a17920dc37b03ee5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: edab6b7edd5ca95cb5abe5fc2caccb5714efda56
+ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382263"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540399"
 ---
 # <a name="authentication-and-authorization"></a>身份验证和授权
 

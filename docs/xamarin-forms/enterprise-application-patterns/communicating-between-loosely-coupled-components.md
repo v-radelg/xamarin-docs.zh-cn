@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9848d2b832990032bc7eb7f2e3a93c896457134c
+ms.sourcegitcommit: e95296f9e516975f5f32d822c323a71fd84007b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381865"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538699"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>松散耦合组件之间的通信
 
@@ -43,7 +43,7 @@ EShopOnContainers 移动应用使用[ `MessagingCenter` ](xref:Xamarin.Forms.Mes
 > [!NOTE]
 > 虽然[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)类允许松散耦合类之间的通信，它不提供此问题仅体系结构的解决方案。 例如，仅由绑定引擎和通过属性更改通知时，也可以实现视图模型和视图之间的通信。 此外，还可以通过导航期间传递的数据实现两个视图模型之间的通信。
 
-在 eShopOnContainers 移动应用中，[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)用于更新到另一个类中发生的操作的响应中的用户界面中。 因此，消息是，在 UI 线程上发布与订阅服务器接收消息的同一线程上。
+在 eShopOnContainers 移动应用中， [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)用于更新到另一个类中发生的操作的响应中的用户界面中。 因此，消息是，在 UI 线程上发布与订阅服务器接收消息的同一线程上。
 
 > [!TIP]
 > 将封送到 UI 线程在执行 UI 更新的时间。 如果需要更新 UI 从后台线程发送一条消息，则处理该消息在订阅服务器在 UI 线程上的调用[ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))方法。

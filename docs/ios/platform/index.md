@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: 9628821be5a979777614eb4f7ad8605087093ed3
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 6703e922a628504e0afdcf56533d74741131581a
+ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268839"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540157"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
@@ -22,8 +22,9 @@ ms.locfileid: "67268839"
 
 |  |  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md) | 本文档介绍了 iOS 12 功能可供使用时 buildingXamarin.iOS 应用程序。|
-| [iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md) | 本文档介绍 iOS 11 和 Xcode 9，如 ARKit、 Core ML、 Core NFC、 拖动和拖放、 MapKit、 PDFKit、 SiriKit 和愿景中的新的和更新功能。 它链接到介绍如何使用这些 featureswith Xamarin.iOS 的指南。 |
+| [IOS 13 简介预览](~/ios/platform/ios13/index.md) | 本文档介绍了 Xamarin.iOS 13 预览版。|
+| [iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md) | 生成 Xamarin.iOS 应用程序时，本文档介绍 iOS 12 功能可供使用。|
+| [iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md) | 本文档介绍 iOS 11 和 Xcode 9，如 ARKit、 Core ML、 Core NFC、 拖动和拖放、 MapKit、 PDFKit、 SiriKit 和愿景中的新的和更新功能。 它链接到介绍如何通过 Xamarin.iOS 中使用这些功能的指南。 |
 | [iOS 10 简介](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 包括几个新 Api 和服务，可用于开发的新特性和功能的应用程序。 与 iOS 10、 应用具有如地图、 消息、 电话和 Siri 将扩展的新功能。 本部分介绍方式来利用 Xamarin.iOS 应用程序中的这些功能。 |
 | [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)   | 本部分将定义从 iOS 8 和如何在 Xamarin.iOS 应用程序中使用这些功能进行升级时，在 iOS 9 中所做的更改。 |
 | [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)         | iOS 8 通过 iOS 7 对操作系统进行大量更改。 在这里，我们显示以及如何使用它们。 |
