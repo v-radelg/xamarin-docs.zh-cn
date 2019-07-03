@@ -5,28 +5,28 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 93abf62e5d0b1df48606e4515fca6747146c7777
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: 4ac6344165730bc8c348c16fe8f3a932d4ac3548
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175351"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268616"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:地理位置
 
-Geolocation 提供 API 以检索设备的当前地理位置坐标。
+Geolocation 提供 API 以检索设备的当前地理位置坐标  。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Geolocation 功能，需要以下特定于平台的设置：
+若要访问 Geolocation 功能，需要以下特定于平台的设置  ：
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 需要具有 Coarse 和 Fine Location 权限，并且必须在 Android 项目中进行配置。 此外，如果应用面向 Android 5.0（API 级别 21）或更高版本，则必须声明应用使用清单文件中的硬件功能。 可以通过以下方法添加此声明：
 
-打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加：
+打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加   ：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
@@ -38,7 +38,7 @@ Geolocation 提供 API 以检索设备的当前地理位置坐标。
 
 或更新 Android 清单：
 
-打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码：
+打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码    ：
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -48,24 +48,24 @@ Geolocation 提供 API 以检索设备的当前地理位置坐标。
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“ACCESS_COARSE_LOCATION”和“ACCESS_FINE_LOCATION”权限。 这样会自动更新 AndroidManifest.xml 文件。
+或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“ACCESS_COARSE_LOCATION”和“ACCESS_FINE_LOCATION”权限     。 这样会自动更新 AndroidManifest.xml 文件  。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-应用的 Info.plist 必须包含 `NSLocationWhenInUseUsageDescription` 密钥才能访问设备的位置。
+应用的 Info.plist 必须包含 `NSLocationWhenInUseUsageDescription` 密钥才能访问设备的位置  。
 
-打开 plist 编辑器并添加“隐私 - 使用时的位置使用说明”属性并填写一个值以显示用户。
+打开 plist 编辑器并添加“隐私 - 使用时的位置使用说明”属性并填写一个值以显示给用户  。
 
-或手动编辑文本文件并添加：
+或手动编辑文件并添加以下内容，然后更新基本原理：
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>This app needs access location when open.</string>
+<string>Fill in a reason why your app needs access to location.</string>
 ```
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-必须设置应用程序的 `Location` 权限。 可以通过打开 Package.appxmanifest 并选择“功能”选项卡，然后选中“位置”来完成此设置。
+必须设置应用程序的 `Location` 权限。 可以通过打开 Package.appxmanifest 并选择“功能”选项卡，然后选中“位置”来完成此设置    。
 
 -----
 
@@ -206,7 +206,7 @@ if (location != null)
 
 ## <a name="distance-between-two-locations"></a>两个位置之间的距离
 
-[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了 `CalculateDistance` 方法，可用于计算两个地理位置之间的距离。 此计算得出的距离不考虑道路或其他路径，仅仅是沿着地球表面的两点之间的最短距离，也称为大圆距离或通俗地称为“直线距离”。
+[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了 `CalculateDistance` 方法，可用于计算两个地理位置之间的距离。 此计算得出的距离不考虑道路或其他路径，仅仅是沿着地球表面的两点之间的最短距离，也称为大圆距离或通俗地称为“直线距离”  。
 
 以下是一个示例：
 
