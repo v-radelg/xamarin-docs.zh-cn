@@ -1,18 +1,18 @@
 ---
 title: 开始使用 iOS 13、 iPadOS 13、 13、 tvOS 和 watchOS 6
-description: 本文档介绍如何获取最多生成 iOS 13、 iPadOS 13、 13、 tvOS 和 watchOS 6 使用 Xamarin 的应用设置。 它讨论了如何下载 Xcode 11 和适用于 Mac 和 Visual Studio 2019 更新 Visual Studio。
+description: 本文档介绍如何获取最多生成 iOS 13、 iPadOS 13、 13、 tvOS 和 watchOS 6 使用 Xamarin 的应用设置。 它讨论了如何下载 Xcode 11 和更新 Visual Studio for mac。
 ms.prod: xamarin
 ms.assetid: 97414545-85D2-433C-9246-63B6763F488A
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: d2bb69394d8e9bfeb949a734291179a3e6f5a495
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: 554cddf5717401f912cab38c78a6af17659a0cf7
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540433"
+ms.locfileid: "67558686"
 ---
 # <a name="get-started-with-ios-13"></a>IOS 13 入门
 
@@ -44,3 +44,4 @@ ms.locfileid: "67540433"
 ## <a name="related-links"></a>相关链接
 
 - [下载 Xcode](https://developer.apple.com/download/)
+- [Xamarin.iOS 预览版发行说明](/xamarin/ios/release-notes/12/12.99)
