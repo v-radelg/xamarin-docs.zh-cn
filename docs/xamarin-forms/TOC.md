@@ -231,6 +231,7 @@
 #### [WebView 缩放](platform/android/webview-zoom-controls.md)
 ### [设备分类](platform/device.md)
 ### [iOS](platform/ios/index.md)
+#### [针对命名字号的辅助功能“缩放”](platform/ios/named-font-size-scaling.md)
 #### [单元格背景色](platform/ios/cell-background-color.md)
 #### [条目游标颜色](platform/ios/entry-cursor-color.md)
 #### [条目字体大小](platform/ios/entry-font-size.md)

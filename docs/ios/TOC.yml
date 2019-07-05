@@ -244,6 +244,14 @@
       items:
         - name: 概述
           href: platform/index.md
+        - name: iOS 13 预览版
+          items:
+            - name: iOS 13 简介
+              href: platform/ios13/index.md
+            - name: 入门
+              href: platform/ios13/get-started.md
+            - name: 疑难解答
+              href: platform/ios13/troubleshooting/index.md
         - name: iOS 12
           items:
             - name: iOS 12 简介
@@ -776,8 +784,6 @@
           href: troubleshooting/index.md
         - name: 疑难解答指南
           href: troubleshooting/troubleshooting.md
-        - name: Xcode 11 预览版
-          href: ~/ios/platform/ios13/troubleshooting/index.md
         - name: Xamarin.iOS 分析规则
           href: troubleshooting/xamarin-ios-analysis.md
         - name: 错误消息 (mtouch)

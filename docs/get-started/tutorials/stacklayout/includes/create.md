@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8957a75ac693874bfbea738d17fbdd7e013c3199
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277125"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67559979"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -79,3 +79,8 @@ ms.locfileid: "67277125"
     [![iOS 和 Android 上 StackLayout 中子元素视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "StackLayout containing Label instances")
 
     有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+
+-----
+
+> [!div class="nextstepaction"]
+> [我遇到了问题](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+1+Feedback&template=tutorial_template.md)
