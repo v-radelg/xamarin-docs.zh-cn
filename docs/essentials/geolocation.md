@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 4ac6344165730bc8c348c16fe8f3a932d4ac3548
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268616"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67558666"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:地理位置
 
@@ -79,7 +79,7 @@ using Xamarin.Essentials;
 
 Geolocation API 还将在必要时提醒用户所需的权限。
 
-通过调用 `GetLastKnownLocationAsync` 方法获取设备上次的已知[位置](xref:Xamarin.Essentials.Location)。 这通常比执行完整的查询更快，但可能不太准确。
+通过调用 `GetLastKnownLocationAsync` 方法获取设备上次的已知[位置](xref:Xamarin.Essentials.Location)。 这通常比执行完整的查询更快，但可能不太准确，如果不存在缓存位置，还可能会返回 `null`。
 
 ```csharp
 try

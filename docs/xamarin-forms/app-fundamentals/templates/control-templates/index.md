@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a667f952eead5bed8305f4c9f4201fd6235b883a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee8d6966b9eac2dad6a36c215bf7aa5bdf79a867
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239966"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512991"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控件模板
 
-使用控件模板可清晰地将页面外观及其内容分离，从而能够创建主题明确的页面。
+使用控件模板可清晰地将页面外观及其内容分离，从而能够创建主题明确的页面。 
 
 ## <a name="introductionintroductionmd"></a>[介绍](introduction.md)
 
 借助 Xamarin.Forms 控件模板，可在运行时轻松设计或重新设计应用程序页面的主题。 本文介绍控件模板。
 
-## <a name="creating-a-controltemplatecreatingmd"></a>[创建 ControlTemplate](creating.md)
+## <a name="create-a-controltemplatecreatingmd"></a>[创建 ControlTemplate](creating.md)
 
 可在应用程序级别或页面级别定义控件模板。 本文演示如何创建和使用控件模板。
 

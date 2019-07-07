@@ -6,23 +6,23 @@ ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 86e10f068af14e65b55885488252af756a90652e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.date: 06/14/2019
+ms.openlocfilehash: 0642f304589d30284bc8d3577c0383099e349033
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926958"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513046"
 ---
-# <a name="creating-a-controltemplate"></a>创建 ControlTemplate
+# <a name="create-a-controltemplate"></a>创建 ControlTemplate
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 
-“可在应用程序级别或页面级别定义控件模板。本文演示如何创建和使用控件模板。”_
+“可在应用程序级别或页面级别定义控件模板。本文演示如何创建和使用控件模板。” 
 
-## <a name="creating-a-controltemplate-in-xaml"></a>在 XAML 中创建 ControlTemplate
+## <a name="create-a-controltemplate-in-xaml"></a>使用 XAML 创建 ControlTemplate
 
-要在应用程序级别定义 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，必须将 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 添加到 `App` 类。 默认情况下，从模板创建的所有 Xamarin.Forms 应用程序都使用“App”类来实现 [`Application`](xref:Xamarin.Forms.Application) 子类。 要在应用程序的 `ResourceDictionary` 中，在应用程序级别使用 XAML 声明 `ControlTemplate`，则默认 App 类必须替换为 XAML App 类和相关的代码隐藏，如下面的代码示例所示：
+要在应用程序级别定义 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，必须将 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 添加到 `App` 类。 默认情况下，从模板创建的所有 Xamarin.Forms 应用程序都使用“App”类来实现 [`Application`](xref:Xamarin.Forms.Application) 子类  。 要在应用程序的 `ResourceDictionary` 中，在应用程序级别使用 XAML 声明 `ControlTemplate`，则默认 App 类必须替换为 XAML App 类和相关的代码隐藏，如下面的代码示例所示   ：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.App">
@@ -87,7 +87,7 @@ public partial class App : Application
 
 ### <a name="re-theming-an-application-at-runtime"></a>运行时重新设置应用程序的主题
 
-点击“更改主题”按钮，执行 `OnButtonClicked` 方法，如下代码示例所示：
+点击“更改主题”按钮，执行 `OnButtonClicked` 方法，如下代码示例所示  ：
 
 ```csharp
 void OnButtonClicked (object sender, EventArgs e)
@@ -104,9 +104,9 @@ void OnButtonClicked (object sender, EventArgs e)
 > [!NOTE]
 > 在 `ContentPage` 上，可以分配 `Content` 属性，也可以设置 `ControlTemplate` 属性。 发生这种情况时，如果 `ControlTemplate` 包含 `ContentPresenter` 实例，分配给 `Content` 属性的内容将由 `ContentPresenter` 在 `ControlTemplate` 中提供。
 
-### <a name="setting-a-controltemplate-with-a-style"></a>使用样式设置控件模板
+### <a name="set-a-controltemplate-with-a-style"></a>使用样式设置 ControlTemplate
 
-也可以通过 [`Style`](xref:Xamarin.Forms.Style) 应用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 来进一步扩展主题功能。 这可以通过在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中为目标视图创建隐式或显式样式，以及在 [`Style`](xref:Xamarin.Forms.Style) 实例中设置目标视图的 `ControlTemplate` 属性来实现。 下面的代码示例展示已添加到应用程序级别 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 的隐式样式：
+也可以通过 [`Style`](xref:Xamarin.Forms.Style) 应用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 来进一步扩展主题功能。 这可以通过在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中为目标视图创建隐式或显式样式，以及在 [`Style`](xref:Xamarin.Forms.Style) 实例中设置目标视图的 `ControlTemplate` 属性来实现   。 下面的代码示例展示已添加到应用程序级别 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 的隐式样式  ：
 
 ```xaml
 <Style TargetType="ContentView">
@@ -114,7 +114,7 @@ void OnButtonClicked (object sender, EventArgs e)
 </Style>
 ```
 
-因为 [`Style`](xref:Xamarin.Forms.Style) 实例为隐式，所以它将应用于应用程序中的所有 `ContentView` 实例。 因此，不再需要设置 [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 属性，如下面的代码示例所示：
+因为 [`Style`](xref:Xamarin.Forms.Style) 实例为隐式，所以它将应用于应用程序中的所有 `ContentView` 实例  。 因此，不再需要设置 [`ContentView.ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 属性，如下面的代码示例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -126,7 +126,7 @@ void OnButtonClicked (object sender, EventArgs e)
 
 有关样式的详细信息，请参阅[样式](~/xamarin-forms/user-interface/styles/index.md)。
 
-### <a name="creating-a-controltemplate-at-page-level"></a>在页面级别创建控件模板
+### <a name="create-a-controltemplate-at-page-level"></a>在页面级别创建 ControlTemplate
 
 除了在应用程序级别上创建 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 实例外，还可以在页面级别上创建它们，如下面的代码示例所示：
 
@@ -150,7 +150,7 @@ void OnButtonClicked (object sender, EventArgs e)
 
 在页面级别添加 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 时，将 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 添加到 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，然后在 `ResourceDictionary` 中包含 `ControlTemplate` 实例。
 
-## <a name="creating-a-controltemplate-in-c35"></a>在 C&#35 中创建控件模板；
+## <a name="create-a-controltemplate-in-c35"></a>使用 C&#35; 创建 ControlTemplate
 
 要在应用程序级别定义[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，必须创建表示 `ControlTemplate` 的 `class`。 该类应该派生自用于模板的[布局](~/xamarin-forms/user-interface/layouts/index.md)，如下面的代码示例所示：
 
@@ -208,10 +208,43 @@ public class HomePageCS : ContentPage
 
 [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) 属性设置为 [`StackLayout`](xref:Xamarin.Forms.StackLayout)，它定义要显示在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 上的内容。 该内容将由包含在 `TealTemplate` 中的 [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 显示。 前面概述的相同机制用于运行时将主题更改为 `AquaTheme`。
 
-## <a name="summary"></a>总结
+## <a name="get-a-named-element-from-a-template"></a>从模板中获取命名元素
 
-本文演示如何创建和使用控件模板。 可在应用程序级别或页面级别定义控件模板。
+在实例化模板之后，可以检索控件模板中的命名元素。 这可以通过 `GetTemplateChild` 方法来实现，该方法在实例化的 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 可视化树中返回命名元素。
 
+在实例化控件模板后，调用模板的 `OnApplyTemplate` 方法。 因此，应该从 [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage) 派生页（如 [`ContentPage`](xref:Xamarin.Forms.ContentPage)）或 [`TemplatedView`](xref:Xamarin.Forms.TemplatedView) 派生视图（如 [`ContentView`](xref:Xamarin.Forms.ContentView)）中的 `OnApplyTemplate` 替代调用 `GetTemplateChild` 方法。
+
+> [!IMPORTANT]
+> 只有在调用 `OnApplyTemplate` 方法后，才能调用 `GetTemplateChild` 方法。
+
+以下示例显示自定义控件的控件模板：
+
+```xaml
+<controls:MyCustomControl ...>
+    <controls:MyCustomControl.ControlTemplate>
+         <ControlTemplate>
+              <Label x:Name="myLabel" />
+         </ControlTemplate>
+    <controls:MyCustomControl.ControlTemplate>
+</controls:MyCustomControl>
+```
+
+[`Label`](xref:Xamarin.Forms.Label) 元素已命名，因此可以在自定义控件的代码隐藏中检索到。 这是通过从自定义控件的 `OnApplyTemplate` 替代调用 `GetTemplateChild` 方法来实现的：
+
+```csharp
+class MyCustomControl : ContentView
+{
+    Label myLabel;
+
+    protected override OnApplyTemplate()
+    {  
+        myLabel = GetTemplateChild("myLabel");
+    }
+    //...
+}
+```
+
+本示例检索名为 `myLabel` 的 [`Label`](xref:Xamarin.Forms.Label) 对象。 然后，`MyCustomControl` 类可以访问并操控 `myLabel`。
 
 ## <a name="related-links"></a>相关链接
 
