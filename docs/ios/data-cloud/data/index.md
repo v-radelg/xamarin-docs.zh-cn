@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 8d2513ba1c2ae2769e81659c98f3897f33d83fbf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 420f52a055dc1c03a017723ab34c2fc3b5363656
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218033"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650231"
 ---
 # <a name="xamarinios-data-access"></a>Xamarin.iOS 数据访问
 
@@ -30,7 +30,7 @@ Xamarin.iOS 支持数据库访问 Api，如：
 
 这两个示例解决方案包含 iOS 和 Android 示例应用程序项目。
 
-有关 Xamarin.Forms 应用程序，请阅读[使用数据库](~/xamarin-forms/app-fundamentals/databases.md)其中解释了如何使用 SQLite PCL 库中使用 Xamarin.Forms。
+有关 Xamarin.Forms 应用程序，请阅读[使用数据库](~/xamarin-forms/data-cloud/data/databases.md)其中解释了如何使用 SQLite PCL 库中使用 Xamarin.Forms。
 
 ## <a name="sections"></a>部分
 
@@ -53,4 +53,4 @@ Xamarin.iOS 支持数据库访问 Api，如：
 - [DataAccess Basic （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess 高级 （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS 数据方案](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms 数据访问](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms 数据访问](~/xamarin-forms/data-cloud/data/databases.md)

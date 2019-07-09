@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61389035"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649634"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -109,6 +109,9 @@ browser.Source = htmlSource;
 
 在上面的代码，`@`用于将 HTML 标记作为字符串文本，这意味着，将忽略所有常见的转义字符。
 
+> [!NOTE]
+> 可能有必要设置`WidthRequest`并`HeightRequest`的属性[ `WebView` ](xref:Xamarin.Forms.WebView)若要查看的 HTML 内容，具体布局取决于`WebView`的子级。 例如，这必须执行[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
+
 ### <a name="local-html-content"></a>本地 HTML 内容
 
 Web 视图可以显示内容从 HTML、 CSS 和 Javascript 嵌入在应用中。 例如：
@@ -140,7 +143,7 @@ body,p,h1 {
 
 请注意，在上面的 CSS 中指定的字体将需要为每个平台自定义为不是每个平台都有相同的字体。
 
-显示本地内容使用`WebView`，将需要打开任何其他 HTML 文件，然后将内容加载到字符串形式`Html`属性的`HtmlWebViewSource`。 打开文件的详细信息，请参阅[使用文件](~/xamarin-forms/app-fundamentals/files.md)。
+显示本地内容使用`WebView`，将需要打开任何其他 HTML 文件，然后将内容加载到字符串形式`Html`属性的`HtmlWebViewSource`。 打开文件的详细信息，请参阅[使用文件](~/xamarin-forms/data-cloud/data/files.md)。
 
 以下屏幕截图显示在每个平台上显示本地内容的结果：
 

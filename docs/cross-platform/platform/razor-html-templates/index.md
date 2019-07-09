@@ -1,27 +1,27 @@
 ---
 title: 使用 Razor 模板构建 HTML 视图
-description: " 使用全屏网页以呈现 HTML 可以是简单而有效的方式来呈现复杂的格式以跨平台方式，尤其是如果网站项目中已有的 HTML、 Javascript 和 CSS。"
+description: " 使用全屏网页以呈现 HTML 可以是简单而有效的方式来呈现复杂的格式以跨平台方式，尤其是如果网站项目中已有的 HTML、 JavaScript 和 CSS。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 7e569aaddef912d9534e98f2f987ad5dfca8a5a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 539f59b9835cab6281327bcd1a37482ef82b62cc
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61167914"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650179"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 模板构建 HTML 视图
 
 在移动开发领域中术语"混合应用"通常是指显示部分 （或全部） 其屏幕内托管的 web 查看器控件的 HTML 页面，并且应用程序。
 
-有某些开发环境中，可生成也限制了在平台中移动应用完全在 HTML 和 Javascript，但这些应用程序可能会降低了性能问题时想要实现复杂的处理或用户界面效果，而是它们可以访问的功能。
+有某些开发环境中，可生成也限制了在平台中移动应用完全在 HTML 和 JavaScript，但这些应用程序可能会降低了性能问题时想要实现复杂的处理或用户界面效果，而是它们可以访问的功能。
 
-Xamarin 提供的这两个优势，尤其是在利用 Razor HTML 模板化引擎。 使用 Xamarin 可以灵活地构建跨平台模板化 HTML 视图，使用 Javascript 和 CSS，但也具有完全访问基础平台 Api 和使用 C# 快速处理。
+Xamarin 提供的这两个优势，尤其是在利用 Razor HTML 模板化引擎。 使用 Xamarin 可以灵活地构建跨平台模板化 HTML 视图，使用 JavaScript 和 CSS，但还具有完全访问基础平台 Api 和快速处理使用C#。
 
-本文档介绍如何使用的 Razor 模板化引擎构建可跨移动平台使用 Xamarin 的 HTML + Javascript + CSS 视图。
+本文档介绍如何使用 Razor 模板化引擎来构建可跨移动平台使用 Xamarin 的 HTML + JavaScript + CSS 视图。
 
 ## <a name="using-web-views-programmatically"></a>以编程方式使用 Web 视图
 
@@ -51,7 +51,7 @@ webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
 
-// enable Javascript execution in your html view so you can provide "alerts" and other js
+// enable JavaScript execution in your html view so you can provide "alerts" and other js
 webView.SetWebChromeClient(new WebChromeClient());
 
 var html = "<html><h1>Hello</h1><p>World</p></html>";
@@ -104,7 +104,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
  ![Android 项目生成操作：AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>从 HTML 和 Javascript 中调用 C#
+### <a name="calling-c-from-html-and-javascript"></a>调用C#从 HTML 和 JavaScript
 
 当 html 页加载到 web 视图时，它将处理的链接和窗体就像从服务器加载了页面。 这意味着，如果用户单击链接或提交窗体的 web 视图将尝试导航到指定的目标。
 
@@ -127,7 +127,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 <form method="get" action="somepage.html"></form>
 ```
 
-您不打算承载客户端; 上的 web 服务器但是，可以使用当今的响应式设计模式中采用相同的服务器的通信技术通过 HTTP GET 时，调用服务并以异步方式处理响应，通过发出 Javascript （或调用 Javascript 已托管在 web 视图中）。 这使您轻松地将数据从 HTML 传递回处理然后将结果返回 HTML 页显示的 C# 代码。
+您不打算承载客户端; 上的 web 服务器但是，可以使用当今的响应式设计模式中采用相同的服务器的通信技术通过 HTTP GET 时，调用服务并以异步方式处理响应，通过发出 JavaScript （或调用 JavaScript 已托管在 web 视图中）。 这使您轻松地将数据从 HTML 传递回处理然后将结果返回 HTML 页显示的 C# 代码。
 
 IOS 和 Android 提供用于应用程序代码以截获这些导航事件，以便应用程序代码可以响应 （如果需要） 的机制。 此功能对构建混合应用程序，因为它允许与 web 视图进行交互的本机代码至关重要。
 
@@ -167,13 +167,13 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>从 C# 中调用 Javascript
+### <a name="calling-javascript-from-c"></a>从调用 JavaScriptC#
 
-除了告诉 web 视图，以加载新的 HTML 页面，C# 代码还可以运行 Javascript 中当前显示页。 可以创建使用 C# 字符串整个 Javascript 代码块，并将其执行，也可以编写对 Javascript 通过本页中已提供的方法调用`script`标记。
+除了告诉 web 视图，以加载新的 HTML 页面，C#代码还可以在当前显示页内运行 JavaScript。 可以使用创建整个 JavaScript 代码块C#字符串，并执行，或您就可以完成对 JavaScript 通过本页中已提供的方法调用`script`标记。
 
 #### <a name="android"></a>Android
 
-创建 Javascript 代码来执行，然后将其与前缀"javascript:"，并指示要加载该字符串的 web 视图：
+创建 JavaScript 代码来执行，然后将其与前缀"javascript:"，并指示要加载该字符串的 web 视图：
 
 ```csharp
 var js = "alert('test');";
@@ -182,7 +182,7 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-iOS web 视图提供了专门用于 Javascript 调用的方法：
+iOS web 视图提供了专门用于 JavaScript 调用的方法：
 
 ```csharp
 var js = "alert('test');";
@@ -194,9 +194,9 @@ webView.EvaluateJavascript (js);
 本部分中引入了 Android 和 iOS，让我们构建使用 Xamarin，混合应用程序上的 web 视图控件的功能包括：
 
 -  从字符串生成在代码中，加载 HTML 的功能
--  能够引用本地文件 （CSS、 Javascript、 图像或其他 HTML 文件）
+-  能够引用本地文件 （CSS、 JavaScript、 图像或其他 HTML 文件）
 -  拦截在 C# 代码中，导航请求
--  从 C# 代码调用 Javascript 的功能。
+-  从 JavaScript 调用的能力C#代码。
 
 
 下一部分将介绍 Razor，轻松地创建混合应用中使用的 HTML。
@@ -205,7 +205,7 @@ webView.EvaluateJavascript (js);
 
 Razor 是一个模板化引擎，引入了 ASP.NET MVC 中，最初以在服务器上运行，并生成要提供给 web 浏览器的 HTML。
 
-Razor 模板化引擎，以便可以表达布局并轻松地合并 CSS 样式表和 Javascript 扩展使用 C# 的标准 HTML 语法。 该模板可以引用 Model 类，可以是任何自定义类型和可以直接从该模板访问其属性。 其主要优势之一是能够轻松地混合使用 HTML 和 C# 语法。
+Razor 模板化引擎扩展了标准 HTML 语法与C#，以便可以表达布局并轻松地将 CSS 样式表和 JavaScript 的合并。 该模板可以引用 Model 类，可以是任何自定义类型和可以直接从该模板访问其属性。 其主要优势之一是能够轻松地混合使用 HTML 和 C# 语法。
 
 Razor 模板不限于服务器端使用，也可以在 Xamarin 应用中包含它们。 使用 Razor 模板能够以编程方式使用 web 视图，若要使用 Xamarin 生成的复杂的跨平台混合应用程序。
 
@@ -369,7 +369,7 @@ var page = template.GenerateString ();
 
  ![Rupert X Monkey](images/image9_520x277.png)
 
-本部分已介绍了使用 Razor 模板来呈现简单的只读视图的基础知识。 下一部分将介绍如何构建使用 Razor 可以接受用户输入和 HTML 视图和 C# 中的 Javascript 之间进行互操作的更完整应用。
+本部分已介绍了使用 Razor 模板来呈现简单的只读视图的基础知识。 下一部分将介绍如何构建使用 Razor 可以接受用户输入和 HTML 视图中的 JavaScript 之间进行互操作的更完整应用和C#。
 
 ## <a name="using-razor-templates-with-xamarin"></a>通过 Xamarin 使用 Razor 模板
 
@@ -391,7 +391,7 @@ var page = template.GenerateString ();
 
  ![iPhone 和 Android 模板](images/image10_428x310.png)
 
-模板会为你提供已准备就绪应用程序基础结构来加载具有数据模型对象的 Razor 模板，处理用户输入并追溯到通过 Javascript 用户进行通信。
+模板会为你提供已准备就绪应用程序基础结构来加载具有数据模型对象的 Razor 模板，处理用户输入并追溯到通过 JavaScript 用户进行通信。
 
 该解决方案的重要部分是：
 
@@ -405,7 +405,7 @@ var page = template.GenerateString ();
 
 ### <a name="static-content"></a>静态内容
 
-静态内容包括 CSS 样式表、 图像、 Javascript 文件或其他内容，可以从链接或 web 视图中显示的 HTML 文件的引用。
+静态内容包括 CSS 样式表、 图像、 JavaScript 文件或其他内容，可以从链接或 web 视图中显示的 HTML 文件的引用。
 
 模板项目包括演示如何在混合应用中包含静态内容的最小的样式表。 CSS 样式表中与此类似模板引用：
 
@@ -413,11 +413,11 @@ var page = template.GenerateString ();
 <link rel="stylesheet" href="style.css" />
 ```
 
-您可以添加任何样式表和 Javascript 所需的文件，包括 JQuery 等框架。
+您可以添加任何样式表和 JavaScript 所需的文件，包括 JQuery 等框架。
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml 模板
 
-该模板包含 Razor **.cshtml**具有预编写的代码，可帮助 HTML/Javascript 和 C# 之间传输数据的文件。 这样就可以的生成复杂的混合应用不只是显示只读数据模型，但还接受用户输入以 html 格式并将其传递回 C# 代码进行处理或存储。
+该模板包含 Razor **.cshtml**具有预编写的代码，可帮助 HTML/JavaScript 之间传输数据的文件和C#。 这样就可以的生成复杂的混合应用不只是显示只读数据模型，但还接受用户输入以 html 格式并将其传递回 C# 代码进行处理或存储。
 
 #### <a name="rendering-the-template"></a>呈现模板
 
@@ -435,7 +435,7 @@ var page = template.GenerateString ();
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-`InvokeCSharpWithFormValues` Javascript 函数中读取的所有值的 HTML 窗体和集从`location.href`web 视图：
+`InvokeCSharpWithFormValues` JavaScript 函数中读取的所有值的 HTML 窗体和集从`location.href`web 视图：
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
@@ -467,13 +467,13 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 #### <a name="manipulating-the-template-from-c"></a>操作从 C# 模板
 
-从 C# 到呈现的 HTML web 视图通信可通过 Javascript 调用 web 视图中。 在 iOS 上，这是通过调用`EvaluateJavascript`UIWebView 上：
+与中呈现的 HTML web 视图的通信C#通过 JavaScript 调用 web 视图中。 在 iOS 上，这是通过调用`EvaluateJavascript`UIWebView 上：
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-在 Android 上，Javascript 可以调用 web 视图中通过加载为 URL 使用 Javascript `"javascript:"` URL 方案：
+在 Android 上，JavaScript 可以调用 web 视图中通过加载为 URL 使用 JavaScript `"javascript:"` URL 方案：
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
@@ -483,7 +483,7 @@ webView.LoadUrl ("javascript:" + js);
 
 这些模板禁止使用的每个平台上的本机控件 – 使用单个 web 视图填充整个屏幕。
 
-HTML 可以是适合用于原型制作，显示了几种 web 最适合在多格式文本和响应式布局等。 例如，但是并非所有的任务适用于 HTML 和 Javascript – 滚动的数据，较长的列表执行更好地在 Android 上使用本机 UI 控件，如 (UITableView 在 iOS 上的) 或 ListView。
+HTML 可以是适合用于原型制作，显示了几种 web 最适合在多格式文本和响应式布局等。 例如，但是并非所有的任务适用于 HTML 和 JavaScript – 滚动的数据，较长的列表执行更好地在 Android 上使用本机 UI 控件，如 (UITableView 在 iOS 上的) 或 ListView。
 
 在模板中的 web 视图可以轻松地扩充与特定于平台的控制 – 只需编辑**mainstoryboard.storyboard** iOS 设计器中或**Resources/layout/Main.axml**在 Android 上。
 

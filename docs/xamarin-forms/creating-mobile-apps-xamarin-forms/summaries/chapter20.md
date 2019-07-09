@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 7d9630840983b36204214927136e0c9efe07d840
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333700"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650468"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 异步和文件 I/O
 
@@ -83,7 +83,7 @@ Xamarin.iOS 和 Xamarin.Android 库包括 Xamarin 明确针对这两个平台的
 这意味着，您将需要使用[ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (中首先讨论[**第 9 章。特定于平台的 API 调用**](chapter09.md)实现文件 I/O。
 
 > [!NOTE]
-> 使用.NET Standard 2.0 库，已替换为可移植类库和.NET Standard 2.0 支持[ `System.IO` ](xref:System.IO)所有 Xamarin.Forms 平台的类型。 不再需要使用`DependencyService`对于大部分文件 I/O 任务。 请参阅[Xamarin.Forms 中的文件处理](~/xamarin-forms/app-fundamentals/files.md)文件 I/O 使用更现代方法。
+> 使用.NET Standard 2.0 库，已替换为可移植类库和.NET Standard 2.0 支持[ `System.IO` ](xref:System.IO)所有 Xamarin.Forms 平台的类型。 不再需要使用`DependencyService`对于大部分文件 I/O 任务。 请参阅[Xamarin.Forms 中的文件处理](~/xamarin-forms/data-cloud/data/files.md)文件 I/O 使用更现代方法。
 
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>第一个尝试跨平台文件 I/O
 
@@ -173,4 +173,4 @@ Xamarin.iOS 和 Xamarin.Android 库包括 Xamarin 明确针对这两个平台的
 
 - [第 20 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)
 - [第 20 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
-- [使用文件](~/xamarin-forms/app-fundamentals/files.md)
+- [使用文件](~/xamarin-forms/data-cloud/data/files.md)

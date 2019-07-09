@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 0d5df986caa01bba69b03d6502682889e78ecbc7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300796"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649597"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 网格
 
@@ -77,11 +77,12 @@ ms.locfileid: "61300796"
 在 C# 中：
 
 ```csharp
-var grid = new Grid();
+Grid grid = new Grid();
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
 grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
 grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
+grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
 ```
 
 ### <a name="placing-views-in-a-grid"></a>将视图放置在网格中

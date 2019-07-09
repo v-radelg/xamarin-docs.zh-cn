@@ -1,5 +1,5 @@
 ---
-title: 对 RESTful Web 服务进行身份验证
+title: RESTful Web 服务进行身份验证
 description: 基本身份验证提供给具有正确的凭据这些客户端对资源的访问。 本文介绍如何使用基本身份验证保护 RESTful web 服务资源的访问权限。
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: d3f07a72ee26d6be4fafa72137dc9b6c3a724e00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bf334c7fde8433b7bbe45c8caaf962705c39320d
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61330630"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650399"
 ---
-# <a name="authenticating-a-restful-web-service"></a>对 RESTful Web 服务进行身份验证
+# <a name="authenticate-a-restful-web-service"></a>RESTful Web 服务进行身份验证
 
 _HTTP 支持使用多个身份验证机制来控制对资源的访问。基本身份验证提供给具有正确的凭据这些客户端对资源的访问。本文演示如何使用基本身份验证保护 RESTful web 服务资源的访问权限。_
 
@@ -86,5 +86,5 @@ REST 服务应修饰每个操作具有`[BasicAuthentication]`属性。 此属性
 
 ## <a name="related-links"></a>相关链接
 
-- [使用 RESTful web 服务](~/xamarin-forms/data-cloud/consuming/rest.md)
+- [使用 RESTful web 服务](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

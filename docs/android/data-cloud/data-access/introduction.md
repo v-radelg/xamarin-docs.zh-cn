@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8c90e1c3013ec61cbb4641f19af3424f55b1a465
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6fb6235f35408cd1263f21da1f802ff0cf5a5cc6
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012236"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649522"
 ---
 # <a name="introduction"></a>介绍
 
@@ -70,4 +70,4 @@ SQLite 旨在作为小巧快捷，因为它的使用有一些需要注意的问�
 - [DataAccess Basic （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess 高级 （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android 数据方案](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms 数据访问](~/xamarin-forms/app-fundamentals/databases.md)
+- [Xamarin.Forms 数据访问](~/xamarin-forms/data-cloud/data/databases.md)

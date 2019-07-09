@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: c9be74bcc6e5d149856e06c98d3bef9a841d4bab
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 238ba1853df523ee275de628ebdbd138a6d1d1bf
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61230208"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649603"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 条目
 
@@ -157,10 +157,10 @@ var entry = new Entry { Text = "Cursor position and selection length set", Curso
 - [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 默认键盘。
 - [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 输入电子邮件地址时使用。
 - [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 输入数字时使用。
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – 使用输入文本，而无需任何时[ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags)指定。
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 使用输入电话号码时。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – 输入文本时使用，而无需指定任何 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – 输入电话号码时使用。
 - [`Text`](xref:Xamarin.Forms.Keyboard.Text) – 输入文本时使用。
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – 用于输入文件路径 （& a） 的 web 地址。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – 用于输入文件路径和 Web 地址。
 
 这可以实现在 XAML 中，如下所示：
 
@@ -176,18 +176,18 @@ var entry = new Entry { Keyboard = Keyboard.Chat };
 
 可以在中找到的每个键盘示例我们[配方](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存储库。
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)类还具有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)工厂方法，可以用来通过指定的大小写、 拼写检查，并建议行为自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法，为自定义的自变量`Keyboard`返回。 `KeyboardFlags`枚举包含的以下值：
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)类还具有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)工厂方法，可以用来通过指定的大小写、 拼写检查，并建议行为自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法的参数，并返回自定义的 `Keyboard`。 `KeyboardFlags` 枚举包含以下值：
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – 没有功能添加到键盘。
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指示每个输入的句子的第一个单词的第一个字母将自动大写。
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 指示该拼写检查功能将在输入的文本上执行。
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 指示该单词上输入的文本，则将提供完成。
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 指示每个单词的第一个字母将自动大写。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指示输入的每句话的第一个词的首字母将自动大写。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – 指示将对输入的文本执行拼写检查。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – 指示将对输入的文本执行单词自动完成。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – 指示每个词的首字母将自动大写。
 - [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – 指示每个字符将自动大写。
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) -指示没有自动大写会发生。
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – 指示拼写检查、 第完成单词和句子大小写会在输入的文本上发生。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – 指示不会发生自动大写。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – 指示将对输入的文本执行拼写检查、单词自动完成和句子首字母大写。
 
-以下 XAML 代码示例演示如何自定义默认值[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)提供完成单词和每个输入的字符大写：
+以下 XAML 代码示例演示如何自定义默认 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 来执行单词自动完成并将输入的每个字符的首字母大写：
 
 ```xaml
 <Entry Placeholder="Enter text here">
@@ -327,7 +327,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ### <a name="completed"></a>已完成
 
-`Completed`使用事件做出反应的条目的交互完成。 `Completed` 当用户通过键盘上按 return 键结束与某个字段的输入时引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
+`Completed`使用事件做出反应的条目的交互完成。 `Completed` 当用户通过键盘上按 return 键 （或通过按 Tab 键在 UWP 上） 结束与某个字段的输入时引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)

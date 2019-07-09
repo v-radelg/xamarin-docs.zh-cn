@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 23deddae61452d532a87c51cc1ec3bc53eb91c9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 15b4154ad6e95aabb5e88784660a93bb53c0b252
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61278914"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650196"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究：Tasky
 
@@ -123,7 +123,7 @@ Tasky 依赖于 Sqlite net nuget 包 （由 Frank Kreuger 发布） 将提供的
 
 #### <a name="sqlite-on-windows-phone"></a>在 Windows Phone 上的 SQLite
 
-IOS 和 Android 都提供 SQLite 作为操作系统的一部分，而 Windows Phone 不包含兼容的数据库引擎。 若要在所有三个平台间共享代码的 SQLite 的 Windows phone 本机版本是必需的。 请参阅[使用本地数据库](~/xamarin-forms/app-fundamentals/databases.md)有关设置 Sqlite Windows Phone 项目的详细信息。
+IOS 和 Android 都提供 SQLite 作为操作系统的一部分，而 Windows Phone 不包含兼容的数据库引擎。 若要在所有三个平台间共享代码的 SQLite 的 Windows phone 本机版本是必需的。 请参阅[使用本地数据库](~/xamarin-forms/data-cloud/data/databases.md)有关设置 Sqlite Windows Phone 项目的详细信息。
 
  <a name="Using_an_Interface_to_Generalize_Data_Access" />
 

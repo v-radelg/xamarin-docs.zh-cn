@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b8edc0141807ead60170ec78b3f6348723ab8e18
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61183870"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650142"
 ---
 # <a name="introduction-to-web-services"></a>Web 服务简介
 
@@ -19,7 +19,7 @@ _本指南演示如何使用另一个 web 服务技术。涵盖的主题包括�
 
 若要正常工作，许多移动应用程序都依赖于在云中，并因此将 web 服务集成到移动应用程序是一种常见方案。 Xamarin 平台支持使用另一个 web 服务技术，并提供对使用基于 Rest、 ASMX 和 Windows Communication Foundation (WCF) 服务的内置和第三方支持。
 
-对于使用 Xamarin.Forms 的客户，有使用每种技术中的完整示例[Xamarin.Forms Web 服务](~/xamarin-forms/data-cloud/index.md)文档。
+对于使用 Xamarin.Forms 的客户，有使用每种技术中的完整示例[Xamarin.Forms Web 服务](~/xamarin-forms/data-cloud/index.yml)文档。
 
 > [!IMPORTANT]
 > 在 iOS 9 中，应用传输安全 (ATS) 强制执行安全连接之间 （例如应用程序的后端服务器） 的 internet 资源和应用程序中，从而防止意外泄露敏感信息。
@@ -47,7 +47,7 @@ REST 的简单性已帮助使其用于访问移动应用程序中的 web 服务�
 
 ## <a name="consuming-rest-services"></a>使用 REST 服务
 
-有许多库和可用于使用 REST 服务的类和以下各小节将讨论它们。 有关使用 REST 服务的详细信息，请参阅[使用 RESTful Web 服务](~/xamarin-forms/data-cloud/consuming/rest.md)。
+有许多库和可用于使用 REST 服务的类和以下各小节将讨论它们。 有关使用 REST 服务的详细信息，请参阅[使用 RESTful Web 服务](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
 ### <a name="httpclient"></a>HttpClient
 
@@ -55,7 +55,7 @@ REST 的简单性已帮助使其用于访问移动应用程序中的 web 服务�
 
 `HttpResponseMessage`类表示 HTTP 响应消息进行 HTTP 请求之后收到来自 web 服务。 它包含关于该响应包括状态代码、 标头和正文信息。 `HttpContent`类表示的 HTTP 正文和内容标头，如`Content-Type`和`Content-Encoding`。 可以读取内容，使用任一`ReadAs`方法，如`ReadAsStringAsync`和`ReadAsByteArrayAsync`根据数据的格式。
 
-有关详细信息`HttpClient`类，请参阅[创建 HTTPClient 对象](~/xamarin-forms/data-cloud/consuming/rest.md)。
+有关详细信息`HttpClient`类，请参阅[创建 HTTPClient 对象](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
 <a name="Using_HTTPWebRequest" />
 
@@ -329,7 +329,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 APM 的详细信息，请参阅[异步编程模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)并[TPL 和传统.NET Framework 异步编程](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
-有关使用 ASMX 服务的详细信息，请参阅[使用 ASP.NET Web 服务 (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)。
+有关使用 ASMX 服务的详细信息，请参阅[使用 ASP.NET Web 服务 (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md)。
 
 <a name="wcf" />
 
@@ -407,7 +407,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 APM 的详细信息，请参阅[异步编程模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)并[TPL 和传统.NET Framework 异步编程](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)MSDN 上。
 
-有关使用 WCF 服务的详细信息，请参阅[使用 Windows Communication Foundation (WCF) Web 服务](~/xamarin-forms/data-cloud/consuming/wcf.md)。
+有关使用 WCF 服务的详细信息，请参阅[使用 Windows Communication Foundation (WCF) Web 服务](~/xamarin-forms/data-cloud/web-services/wcf.md)。
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
@@ -445,6 +445,6 @@ client.ClientCredentials.UserName.Password = @"mrsnuggles";
 
 ## <a name="related-links"></a>相关链接
 
-- [在 Xamarin.Forms 中的 web 服务](~/xamarin-forms/data-cloud/index.md)
+- [在 Xamarin.Forms 中的 web 服务](~/xamarin-forms/data-cloud/index.yml)
 - [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)
