@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f5008d4986baa0575030e077b66b69ec0a4fad00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c7c0f582ac4a7dc8571fbc607dba9b0ad97d49e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61275592"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674845"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第一部分-了解 Xamarin 移动平台
 
@@ -116,7 +116,7 @@ Xamarin 提供了一个统一的安装程序，将配置您的系统必备的 Ja
 
 这些屏幕截图显示每个平台上可用的可视化屏幕设计器：
 
- [ ![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "这些屏幕截图显示每个平台上可用的可视化屏幕设计器")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "这些屏幕截图显示每个平台上可用的可视化屏幕设计器")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 在所有情况下，可以在代码中引用的元素的直观地创建。
 

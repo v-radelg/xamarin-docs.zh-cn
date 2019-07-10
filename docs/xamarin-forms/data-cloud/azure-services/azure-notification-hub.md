@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
-ms.openlocfilehash: 474398922bf00e3a430166d8b2e073d200e6ed6e
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: fb2f108ba115690ca181738486fd8310f26bb909
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659324"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674517"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>发送和接收使用 Azure 通知中心和 Xamarin.Forms 的推送通知
 
@@ -538,7 +538,7 @@ public static class DispatcherConstants
 }
 ```
 
-必须配置**DispatcherConstants.cs**以匹配 Azure 通知中心的配置相匹配。 值`SubscriptionTags`属性应与客户端应用程序中使用的值匹配。 `NotificationHubName`属性是 Azure 通知中心实例的名称。 `FullAccessConnectionString`属性是在你的通知中心中找到的访问密钥**访问策略**。 以下屏幕截图显示的位置`NotificationHubName`和`FullAccessConnectionString`在 Azure 门户中的属性：
+必须配置**DispatcherConstants.cs**以匹配你的 Azure 通知中心配置。 值`SubscriptionTags`属性应与客户端应用程序中使用的值匹配。 `NotificationHubName`属性是 Azure 通知中心实例的名称。 `FullAccessConnectionString`属性是在你的通知中心中找到的访问密钥**访问策略**。 以下屏幕截图显示的位置`NotificationHubName`和`FullAccessConnectionString`在 Azure 门户中的属性：
 
 ![Azure 通知中心名称和 FullAccessConnectionString 的屏幕截图](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中心名称和 FullAccessConnectionString")
 

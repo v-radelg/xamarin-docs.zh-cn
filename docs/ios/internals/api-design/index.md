@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5417050daa84197dd7dc2a270ae054a3a73fd3bc
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037437"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675081"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 设计
 
@@ -113,7 +113,7 @@ Xamarin.iOS 反映在 C# 中从 OBJECTIVE-C 类的层次结构 例如，OBJECTIV
 
 虽然 Mono 将提供的所有对象，垃圾回收`Foundation.NSObject`实现[System.IDisposable](xref:System.IDisposable)接口。 这意味着可以显式释放任何给定 NSObject 的资源而无需等待垃圾回收器来启动中。 使用大量 NSObjects，例如，可能会保存到较大的数据块的指针的 UIImages 时，这很重要。
 
-如果您的类型需要执行确定性终结，重写[NSObject.Dispose(bool) 方法](xref:Foundation.NSObject.Dispose(System.Boolean))Dispose 的参数"bool disposing"，如果设置为 true，它表示，因为调用 Dispose 方法和用户在对象上的显式调用的 Dispose （)。 如果值为 false，这意味着，在 Dispose (bool disposing) 方法正在从终结器上调用终结器线程。 []()
+如果您的类型需要执行确定性终结，重写[NSObject.Dispose(bool) 方法](xref:Foundation.NSObject.Dispose(System.Boolean))Dispose 的参数"bool disposing"，如果设置为 true，它表示，因为调用 Dispose 方法和用户在对象上的显式调用的 Dispose （)。 如果值为 false，这意味着，在 Dispose (bool disposing) 方法正在从终结器上调用终结器线程。
 
 
 ##### <a name="categories"></a>类别

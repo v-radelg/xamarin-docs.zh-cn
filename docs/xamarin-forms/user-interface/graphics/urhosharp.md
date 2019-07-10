@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: b251fa13c4b436a837f71b5362ae85dffd245092
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408797"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675275"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -33,7 +33,7 @@ ms.locfileid: "61408797"
 然后再使用 UrhoSharp，开发人员需要将 UrhoSharp Nuget 包添加到他们的解决方案。 本指南假定一个 Xamarin.Forms 项目，与 iOS、 Android 和.NET Standard 类库项目。 .NET Standard 库项目中; 将写入的所有代码但 UrhoSharp Nuget 必须也添加到 iOS 和 Android 项目。
 
 UrhoSharp.Forms Nuget 程序包中包含的所有创建 UrhoSharp 对象所需对象。 UrhoSharp.Forms nuget 包包含`UrhoSurface`类，该类用于托管 UrhoSharp 在 Xamarin.Forms 中。
-若要开始，请右键单击**包**在.NET Standard 库项目中，选择文件夹**添加包...**.输入搜索词**UrhoSharp.Forms**，选择**适用于 Xamarin.Forms 的 UrhoSharp**，然后单击**添加包**。
+若要开始，请右键单击**包**在.NET Standard 库项目中，选择文件夹**添加包...** .输入搜索词**UrhoSharp.Forms**，选择**适用于 Xamarin.Forms 的 UrhoSharp**，然后单击**添加包**。
 
 [![](urhosharp-images/add-package-sml.png "添加包对话框")](urhosharp-images/add-package.png#lightbox "添加包对话框")
 
@@ -218,7 +218,7 @@ selectedBarSlider = new Slider(0, 5, 2.5);
 selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ```
 
-在动画[页面顶部](#)显示运行的示例。
+在动画[页面顶部](#what-is-urhosharp)显示运行的示例。
 
 ## <a name="summary"></a>总结
 

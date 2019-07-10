@@ -6,12 +6,12 @@ ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: baa687bfb3b2e8306e70e83b6a6ee54595110860
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1a0b078659441f0f45af66728a5f37d578d6274
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186845"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675088"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure Mobile Apps
 
@@ -19,7 +19,7 @@ _示例和代码下载的 Azure 门户文档。_
 
 <!--
 NOTE TO AUTHORS: this page is referenced from
-http://azure.microsoft.com/develop/mobile/xamarin/
+https://azure.microsoft.com/develop/mobile/xamarin/
 as https://developer.xamarin.com/guides/cross-platform/data-cloud/mobile-services/
 A redirect has been put in place to /mobile-apps/ HOWEVER the /Resources/ .ZIP files are still located in /mobile-services/ so that the following permalinks don't break
 

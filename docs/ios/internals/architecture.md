@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d08f7e3a35cd82f4262ef1f145d4b4648f7baef8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 426c5ef5cc32877546ebb88cb485a81723816e6e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036095"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675069"
 ---
 # <a name="ios-app-architecture"></a>iOS 应用程序体系结构
 
@@ -20,7 +20,7 @@ Xamarin.iOS 应用程序运行在 Mono 的执行环境，并使用完整继续�
 
 下图显示了此体系结构的基本概述：
 
-[ ![](architecture-images/ios-arch-small.png "下图显示了继续操作的时间 (AOT) 编译体系结构的基本概述")](architecture-images/ios-arch.png#lightbox)
+[![](architecture-images/ios-arch-small.png "下图显示了继续操作的时间 (AOT) 编译体系结构的基本概述")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>本机代码和托管代码：说明
 

@@ -6,16 +6,16 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 25eec247a0cb664897541a0e6e818a77018fda43
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dd211fecad0bff58cb9ff6c6a99ae6a15c60eb7b
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187766"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674989"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 和 Xamarin
 
-[ ![](images/evolve-mikej-azure-sml.png "Azure 应用服务功能可轻松地将添加到 Xamarin 应用，包括云数据存储和跨平台推送通知")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure 应用服务功能可轻松地将添加到 Xamarin 应用，包括云数据存储和跨平台推送通知")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 [Evolve 2016：开发使用 Azure 和 Xamarin 的已连接的应用](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
@@ -28,7 +28,7 @@ ms.locfileid: "61187766"
 有了一系列[Azure 移动应用文档](~/cross-platform/data-cloud/mobile-apps.md)的指导您完成的实现过程[Azure 移动客户端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)。
 Xamarin 还提供了有关 Azure 消息传送 NuGet 包[iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)并[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)来帮助实现跨平台推送通知。
 
-在配置您的应用程序[Azure 应用服务门户](https://portal.azure.com/)访问移动应用、 Web Api、 存储和更多。 了解如何[应用服务有何不同](http://azure.microsoft.com/updates/whats-new-with-azure-app-service/)并在观看[Microsoft 从这些视频](http://azure.microsoft.com/campaigns/azure-march-announcement/)。
+在配置您的应用程序[Azure 应用服务门户](https://portal.azure.com/)访问移动应用、 Web Api、 存储和更多。 了解如何[应用服务有何不同](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/)并在观看[Microsoft 从这些视频](https://azure.microsoft.com/campaigns/azure-march-announcement/)。
 
 ## <a name="active-directory-authentication"></a>Active Directory 身份验证
 
@@ -61,5 +61,5 @@ Microsoft 的 Web API 公开 Xamarin 应用程序可以轻松地使用一个类�
 ## <a name="related-links"></a>相关链接
 
 - [Azure PCL 示例 (通过@paulbatum) （示例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
-- [Azure 门户](http://azure.microsoft.com/)
+- [Azure 门户](https://azure.microsoft.com/)
 - [Xamarin (NuGet) 的移动客户端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

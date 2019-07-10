@@ -6,12 +6,12 @@ ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 71f46535ffd0a99ad78acb8f0e3bbc5870abf33e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a900d427ad6ac2a0e211ef4f00d2f014b13e5d1c
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61197922"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674407"
 ---
 # <a name="interactive-workbooks"></a>交互式工作簿
 
@@ -27,7 +27,7 @@ ms.locfileid: "61197922"
 
 代码编辑窗口中提供代码补全、 语法颜色设置、 内联实时诊断和多行语句的支持。
 
-[ ![](workbook-images/inspector-0.6.0-repl-small.png "代码编辑窗口中提供代码补全、 语法颜色设置、 内联实时诊断和多行语句支持")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "代码编辑窗口中提供代码补全、 语法颜色设置、 内联实时诊断和多行语句支持")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Xamarin 工作簿都保存在`.workbook`文件，它是具有一些在顶部的元数据的 CommonMark 文件 (请参阅[工作簿文件类型](#workbooks-files-types)有关可以如何保存工作簿的详细信息)。
 
@@ -120,7 +120,7 @@ Xamarin 工作簿都保存在`.workbook`文件，它是具有一些在顶部的�
 
 默认情况下，工作簿将保存为纯文本`.workbook`文件包含 CommonMark 格式的文本。
 
-### <a name="packages"></a>包
+### <a name="packages"></a>package
 
 工作簿包是一个目录，其中具有名为`.workbook`扩展。
 在 Mac 的查找器和 Xamarin 工作簿打开对话框和最新的文件菜单中，就像一个文件将识别此目录。

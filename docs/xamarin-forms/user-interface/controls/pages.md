@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 42cbc6f50da34cbbc594dfef1dec49619202c191
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 7b99e876c666160bdfd4392915901ea6535e68e1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741073"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674826"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms 页面
 
@@ -22,7 +22,7 @@ _Xamarin.Forms 页呈现跨平台移动应用程序屏幕。_
 
 如下所述的所有页类型都派生自 Xamarin.Forms [ `Page` ](xref:Xamarin.Forms.Page)类。 这些可视元素占用全部或大部分屏幕。 一个`Page`对象表示`ViewController`在 iOS 和`Page`通用 Windows 平台中。 在 Android 上，每个页面将占用所示的屏幕`Activity`，但按 Xamarin.Forms 页*不*`Activity`对象。
 
-[ ![](pages-images/pages-sml.png "Xamarin.Forms 页面类型")](pages-images/pages.png#lightbox "Xamarin.Forms 页面类型")
+[![](pages-images/pages-sml.png "Xamarin.Forms 页面类型")](pages-images/pages.png#lightbox "Xamarin.Forms 页面类型")
 
 ## <a name="pages"></a>Pages
 

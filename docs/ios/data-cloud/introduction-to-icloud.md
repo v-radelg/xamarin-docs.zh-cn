@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: 009e061726f655999c08192b5839a5c962d35e24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30b5d0b3a02223a8808e57f5d0cdc5e7000e156
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091406"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674886"
 ---
 # <a name="using-icloud-with-xamarinios"></a>通过 Xamarin.iOS 使用 iCloud
 
@@ -55,7 +55,7 @@ ms.locfileid: "61091406"
 
 - **将该容器标识符添加到 Entitlements.plist**的容器标识符格式是`TeamID.BundleID`。 有关详细信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-- **配置项目属性**-在 Info.plist 文件确保**捆绑包标识符**匹配**捆绑 ID**时，设置[创建应用 ID ](~/ios/deploy-test/provisioning/capabilities/index.md);使用 iOS 捆绑签名**预配配置文件**包含具有 iCloud 应用服务的应用 ID 并**自定义权利**文件处于选定状态。 这所有可以在 Visual Studio 中的项目属性窗格下。
+- **配置项目属性**-在 Info.plist 文件确保**捆绑包标识符**匹配**捆绑 ID**时，设置[创建应用 ID](~/ios/deploy-test/provisioning/capabilities/index.md);使用 iOS 捆绑签名**预配配置文件**包含具有 iCloud 应用服务的应用 ID 并**自定义权利**文件处于选定状态。 这所有可以在 Visual Studio 中的项目属性窗格下。
 
 - **启用你的设备上的 iCloud** -转到**设置 > iCloud** ，并确保设备已登录。
 选择并开启**文档和数据**选项。

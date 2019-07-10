@@ -7,16 +7,16 @@ ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 5d6cf6b36d4f454d3124a33ab9cb289e40e0e1ed
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed80a423506f96972ddf80075379ed6e6dccd0a1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160601"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675131"
 ---
 # <a name="skiasharp-platform-specific-notes"></a>SkiaSharp 特定于平台的说明
 
-下面的示例手动分配图像缓冲区，这样做是为了演示常见的平台模式，这是在由平台提供的现有 RBGA 缓冲区上进行绘制。
+下面的示例手动分配图像缓冲区，这样做是为了演示常见的平台模式，这是在由平台提供的现有 RGBA 缓冲区上进行绘制。
 
 不需要使用此惯例，如果您不希望。  没有重载时，将创建并管理你的映像的后备存储。
 

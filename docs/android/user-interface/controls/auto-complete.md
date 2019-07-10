@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcbab6deddf5e1a4782cd382623f22281a0823e6
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036523"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674857"
 ---
 # <a name="auto-complete"></a>AutoCompleteTextView
 
@@ -204,6 +204,6 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 -   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 
 *此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
- [ *Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/) *.本教程基于*
- [ *Android 自动完成教程*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/) *.本教程基于*
+[*Android 自动完成教程*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
  *。*

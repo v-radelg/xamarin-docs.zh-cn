@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 1a9856a5b6257c82b2072e9eb44be481373abfcf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b28dba9031840b312868e2ebc45e348a390d3b12
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61308197"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675050"
 ---
 # <a name="splash-screen"></a>初始屏幕
 
@@ -230,4 +230,4 @@ public class MainActivity : AppCompatActivity
 
 - [初始屏幕 （示例）](https://developer.xamarin.com/samples/monodroid/SplashScreen)
 - [layer-list Drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)
-- [ 材料设计模式-启动屏幕](https://material.io/design/communication/launch-screen.html#usage)
+- [材料设计模式-启动屏幕](https://material.io/design/communication/launch-screen.html#usage)

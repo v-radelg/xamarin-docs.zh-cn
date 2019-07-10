@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: ddf80fb650127b91bef89792fc622267ad1ed0d4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b990d1f44780fd95c0f538550f06989ef41ccd84
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211595"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675161"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>认证提供移动解决方案的咨询合作伙伴
 
@@ -50,7 +50,7 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[最终目标系统](http://www.aspiresys.com/)| Oak Brook，IL|系统使用的一些世界上最具创新性企业和独立软件供应商，帮助他们利用技术和外包的专业知识，我们特定的区域中为最终目标。 |
 |[刀创新](https://aurainnovates.com/)|Indianapolis、 IN|通过我们生成 + 服务的方法，我们开发云和移动版的创新型自定义应用的程序|
 |[Avanade](http://www.avanade.com/en/home)|佐治亚州亚特兰大;马萨诸塞州;北卡罗来纳州夏洛特;伊利诺伊州;德克萨斯州达拉斯市;科罗拉多州丹佛;加利福尼亚州 el Segundo;德克萨斯州休斯顿;明尼苏达州明尼阿波利斯;纽约，纽约州;Phoenix，AZ;旧金山，加利福尼亚州;圣何塞，加利福尼亚州;华盛顿州西雅图;英国伦敦;新加坡|通过将用户置于 Avanade 方法企业应用程序开发体验前端和中心。|
-|[Azuris CloudSystem](http://www.azuris.us)|Curitiba，Parana，巴西;佛罗里达州的奥兰多|Azuris 是 softrware 开发公司，具有强经验的应用程序开发|
+|[Azuris CloudSystem](http://www.azuris.us)|Curitiba，Parana，巴西;佛罗里达州的奥兰多|Azuris 是具有强经验的应用程序开发的软件开发公司|
 |[Bernstein-Rein](http://www.b-r.com)|密苏里州堪萨斯城|Bernstein 方面提供范围广泛的 web 开发和市场营销服务|
 |[位向导](http://bitwizards.com)|亚特兰大，GA，USA;Fort Walton 海滩美国佛罗里达州;孟斐斯，TN，USA;美国德克萨斯州奥斯汀市|之前移动很出色，并跨 iOS、 Android 和 Windows 的整个移动环境中获得的体验，我们已构建移动应用程序平台。|
 |[蓝色芯片 Consulting Group](https://www.bluechip-llc.com)|俄亥俄州克利夫兰，|蓝色芯片 Consulting Group 是高效地将自定义的技术解决方案有策略地进行调整传递到客户端的业务目标的信息技术服务公司|
@@ -70,7 +70,7 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[Cognizant 技术解决方案](http://www.cognizant.com)|布宜诺斯艾利斯，阿根廷;新西兰奥克兰;墨尔本，澳大利亚;悉尼，澳大利亚;布里斯班，澳大利亚;布鲁塞尔，比利时;San 公开发行，巴西;加拿大多伦多;中国上海;Heredia，哥斯达黎加;Jersey 市/县，新泽西州，美国;San Francisco，CA，USA;Teaneck，新泽西州，美国|Cognizant 结合了热衷于客户满意度、 技术创新、 深入的行业和业务流程专业知识和包含工作的未来的全局、 协作的员工|
 |[Coherent Solutions, Inc.](http://www.coherentsolutions.com)|纽约，纽约州;马萨诸塞州;明斯克，白俄罗斯|一致的解决方案是软件开发的咨询和外包解决客户业务问题，通过将全局的专业知识、 创新和创造力相结合的公司|
 |[Cruxlab](https://cruxlab.com/)|洛杉矶市|我们创建自定义数字产品初创企业和企业中，为最终用户和企业|
-|[CTI 咨询 ](http://cticonsulting.net/)|Fort Lauderdale 佛罗里达州的奥兰多|CTI 提供大大超出了边缘移动开发以及人员配备的解决方案，适合您的区域性|
+|[CTI 咨询](http://cticonsulting.net/)|Fort Lauderdale 佛罗里达州的奥兰多|CTI 提供大大超出了边缘移动开发以及人员配备的解决方案，适合您的区域性|
 |[Cygnet Infotech LLC](http://www.cygnet-infotech.com)|Princeton, NJ |Cygnet 实现作为游戏更换器的科技创新适用于企业的交付的关键任务关键解决方案和直接从构思到执行的解决复杂的业务挑战。 |
 |[DEG](http://www.degdigital.com)|Overland Park，USA|度创建智能数字市场营销、 商务和协作策略让组织可以扩大其竞争优势并实现其目标|
 |[DevRabbit](http://www.devrabbit.com)|San Ramon，USA|DevRabbit 是基于美国咨询公司的技术为企业移动性、 开发 Web 应用程序和云咨询提供最先进的解决方案。|
@@ -114,7 +114,7 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[iTexico](http://www.itexico.com)|美国德克萨斯州奥斯汀市|iTexico 是一种全球软件技术公司，致力于帮助企业在整个项目的生命周期，通过 nearshore 外包的移动开发。|
 |[JBS](https://www.jbssolutions.com)|宾夕法尼亚州 USA|JBS 是自定义软件解决方案提供商。|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto，CA，USA;芝加哥，IL，USA;极了，俄亥俄州，USA;Seongnam si，韩国 Gyeonggi 执行操作，|Kaonsoft 是创新的软件公司，提供了完整的端到端解决方案，若要创建适用于跨平台的移动应用程序的企业。|
-|[Katalyst Technologies Inc. ](http://www.katalysttech.com )|Evanston，IL，USA;亚特兰大，GA，USA;孟买，Maharashtra，印度;海得拉巴，Telangana，印度;浦那，Maharashtra 印度|Katalyst，认为，技术可以真正是促成因素。 具有领先公司不只是相信到我们的原因提供产品和服务，但还更改其核心业务操作通过跨企业的自定义的有影响解决方案的方式。|
+|[Katalyst Technologies Inc.](http://www.katalysttech.com )|Evanston，IL，USA;亚特兰大，GA，USA;孟买，Maharashtra，印度;海得拉巴，Telangana，印度;浦那，Maharashtra 印度|Katalyst，认为，技术可以真正是促成因素。 具有领先公司不只是相信到我们的原因提供产品和服务，但还更改其核心业务操作通过跨企业的自定义的有影响解决方案的方式。|
 |[Kleio 技术 LLC](http://kleiotechnology.com)|皇家 Palm 海滩，佛罗里达州|传统上，我们已经处理了教育、 品牌和标识。 我们研究客户端的业务问题解决在设计、 用户体验和内容的策略。 我们帮助达到客户端需求并使其更具盈利水平的业务|
 |[LEAP](http://www.leapagency.com/our-work)|Louisville, KY|极富感染力的沉浸式体验旨在激发化学人和不同品牌之间。 激发，体验吸引并进行娱乐。 建立关系的体验。 产生的影响的体验。|
 |[Leaware](http://www.leaware.com)|Elmhurst，IL;Monheim 是 Rhein，德国;波兰华沙|Leaware 是软件房屋，公司和开发公司-专门研究本机、 多平台的移动应用程序和 web 应用程序的设计。 我们唯一的技能、 能力、 blend 和体验可帮助我们的最先进、 最可靠的解决方案在市场上立即创建。|
@@ -128,12 +128,12 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 |[Merit Solutions Inc.](http://meritsolutions.com)|Wheaton，IL |荣誉奖解决方案的便是其中几个全球范围内的 Microsoft 合作伙伴能够从 Azure 托管服务、 物联网 (IoT) 到移动应用程序 – 和所有内容的 Microsoft Dynamics 365 之间提供端到端数字化转型-。|
 |[网格系统 LLC](http://www.mesh-systems.com )|Carmel、 IN |网格系统知道如何解锁计算机数据的值并使用它来转换的人员、 进程和计算机之间的关系。 |
 |[MetroStar 系统](http://www.metrostarsystems.com/)|Reston, VA|数字将转换，从而帮助增强您的投资，并在明天的世界中成功。|
-|[MiC Software ](http://mic-software.net/)|弗雷期诺，CA，USA|我们要在产品/服务的定制的服务，完全量身订作以便满足我们的客户的个人的要求|
+|[MiC Software](http://mic-software.net/)|弗雷期诺，CA，USA|我们要在产品/服务的定制的服务，完全量身订作以便满足我们的客户的个人的要求|
 |[Mindtree](http://www.mindtree.com)|Warren, NJ|Mindtree 可提供数字转换和技术服务从构思到执行，让全球上市公司 2000年客户端的性能优于竞争对手的产品|
 |[移动编辑器](http://www.mcomposer.com/)|明尼苏达州明尼阿波利斯，|AMobile 编辑器侧重于创建企业移动解决方案，以解决实际业务问题。 作为 SaaS 公司，移动编辑器平台提供了一套模块快速组装为企业本机移动应用程序的最佳做法。|
 |[Mooseworks Software](http://mooseworkssoftware.com/)|Dublin, NH |Mooseworks 软件已在 2003年中启动。 我们专门从事于移动电话之前移动市场很酷。 在那时，我们已使用成千上万的最终用户创建应用程序开发人员到销售控件。 W|
 |[Motis 咨询](http://www.motisconsulting.com/)|Dubuque，州政府|可以帮助 Motis 咨询。 阅读我们有关你的产品战略、 体系结构或开发需求的帮助与移动或桌面软件应用程序相关的 Motis 解决方案和联系人详细信息。|
-|[Nebbia 技术 ](http://www.nebbiatech.com/)|美国佛罗里达州的|我们是首个基于云的软件公司，主要从事 Microsoft 技术。 我们构建令人惊叹应用 DevOps 中的最佳做法的同时利用 Azure 的产品。 我们具有云优先焦点并帮助他们迁移到云并充分利用其云投资的客户端与我们合作。|
+|[Nebbia 技术](http://www.nebbiatech.com/)|美国佛罗里达州的|我们是首个基于云的软件公司，主要从事 Microsoft 技术。 我们构建令人惊叹应用 DevOps 中的最佳做法的同时利用 Azure 的产品。 我们具有云优先焦点并帮助他们迁移到云并充分利用其云投资的客户端与我们合作。|
 |[状态](http://www.ness.com/)|San Jose，CA，USA|数字化转型和自定义软件产品工程服务以帮助组织设想、 生成和不断发展以进入新市场，其数字平台捕获新收入和提高操作性数字工程提供效率。 |
 |[Neudesic](http://www.neudesic.com)|加州大学;佐治亚州亚特兰大;德克萨斯州奥斯汀;伊利诺伊州;德克萨斯州达拉斯市;科罗拉多州丹佛;德克萨斯州休斯顿;加利福尼亚州洛杉矶;纽约，纽约州;费城;Phoenix，AZ;俄勒冈州波特兰市;美国华盛顿州西雅图|Neudesic 是前导国家/地区的系统集成商和受信任的 Microsoft 合作伙伴，识别的独立调查机构合作以我们的功能和 Microsoft 技术专业知识。 我们还维护与 Theobald、 AWS、 Dell、 Xamarin、 Metalogix、 Nintex 和其他人等其他行业领先的战略联盟。 通过使用与我们联盟的密切合作来处理&ndash;值混合处理其工具和技术的专业技能&ndash;Neudesic 是能够为每个业务挑战交付最可行的解决方案。|
 |[NIIT 技术](http://www.niit-tech.com)|亚特兰大，GA，USA;诺，Uttar Pradesh，印度;英国伦敦;西班牙马德里;新加坡|NIIT 技术是一个全局的 IT 解决方案组织在美国、 欧洲、 亚洲和澳大利亚寻址的客户端的要求。 NIIT 技术服务提供一系列服务旅行和运输、 银行和金融服务、 保险、 制造和媒体行业中的客户端。 专注于数字服务，该公司可帮助企业设计灵活、 可缩放的数字的操作模型。  我们提供广泛的同类最佳的解决方案和有效的服务包括体验、 分析和集成数字服务价值链之间分散的。|
@@ -515,7 +515,7 @@ _列出的主位置，很多合作伙伴提供服务，涵盖边框。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[敏捷技术 ](http://www.agiletz.com)|迪拜，阿拉伯联合酋长国;科威特;阿曼;巴林;卡塔尔;开罗，埃及|敏捷技术是企业 IT 解决方案提供商提供咨询、 培训和服务 DevOps、 开发和测试服务。|
+|[敏捷技术](http://www.agiletz.com)|迪拜，阿拉伯联合酋长国;科威特;阿曼;巴林;卡塔尔;开罗，埃及|敏捷技术是企业 IT 解决方案提供商提供咨询、 培训和服务 DevOps、 开发和测试服务。|
 |[CodeValue](http://www.codevalue.net)|Herzliya 以色列;Yokne'am Illit 以色列|CodeValue 是一家领先的软件公司，提供全面的软件服务，可让客户能够专注于其核心业务活动|
 |[DCube](http://www.dcube.me/)|利雅得，沙特阿拉伯|多维专门从事开发电子媒体和广告的使命是叙利亚互联网世界提供最佳体验的生产和使用电子内容|
 |[DigiPresence](http://www.digipresence.net)|迪拜，阿拉伯联合酋长国|Digi 存在提供、 安装，并提供常规局居住外部事务迪拜和及其外中心的技术支持和维护服务。|

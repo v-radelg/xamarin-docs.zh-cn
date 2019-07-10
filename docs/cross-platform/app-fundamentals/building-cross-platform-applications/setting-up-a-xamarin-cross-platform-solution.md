@@ -6,12 +6,12 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: 2117eb91f25f2fb890b419fa7c4235b8f646729d
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354071"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675029"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第 3 部分-建立 Xamarin 跨平台解决方案
 
@@ -104,7 +104,7 @@ Xamarin 方法是组代码分离到两个项目类型：
 
 应用程序体系结构是在此图中所示：
 
- [ ![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此图说明了应用程序体系结构")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此图说明了应用程序体系结构")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 此屏幕截图显示了具有共享的核心项目、 iOS 和 Android 应用程序项目的解决方案设置。 对共享项目包含与每个体系结构层 （业务、 服务、 数据和数据访问代码） 相关的代码：
 

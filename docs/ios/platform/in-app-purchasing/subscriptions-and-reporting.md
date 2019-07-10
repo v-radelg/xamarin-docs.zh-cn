@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e63894cb862db3b5b5a1e7a2bebd79160c311a9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 44dd2b2eea31f47ed53d8ef25ff7b0667286179d
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61367311"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674562"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>订阅和 Xamarin.iOS 中的报表
 

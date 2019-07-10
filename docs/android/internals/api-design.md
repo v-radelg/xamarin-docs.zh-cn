@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c10935f4623fd4455ec5cf8a80c6473c0f69d9b9
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954280"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674687"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin.Android API 设计原则
 
@@ -240,7 +240,7 @@ Java 接口将转换为两种类型：
 
 例如，考虑[android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)接口。
 *Parcelable*接口包含方法、 嵌套的类型和常量。 *Parcelable*接口方法放入[Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/)接口。
-*Parcelable*接口常量放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)类型。 嵌套[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)并[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)类型目前不由于我们泛型的支持; 中的限制绑定如果它们受支持，它们将会显示作为*Android.OS.IParcelableClassLoaderCreator*并*Android.OS.IParcelableCreator*接口。 例如，嵌套[android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)作为绑定接口[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)接口。
+*Parcelable*接口常量放入[Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/)类型。 嵌套[android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html)并[android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html)类型目前不由于我们泛型的支持; 中的限制绑定如果它们受支持，它们将会显示作为*Android.OS.IParcelableClassLoaderCreator*并*Android.OS.IParcelableCreator*接口。 例如，嵌套[android.os.IBinder.DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)作为绑定接口[Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/)接口。
 
 
 > [!NOTE]
@@ -259,8 +259,8 @@ Java 接口将转换为两种类型：
 
 有关*android.os.Parcelable*接口，这意味着，现在将存在[ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/)要包含的常量类型。 例如， [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR)常量将作为绑定[ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/)常量，而不是作为*ParcelableConsts.ContentsFileDescriptor*常量。
 
-对于包含常量的实现包含其他接口但多个常量的接口，现在会生成所有常量的并集。 例如， [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)接口实现[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)接口。 1.9，不过之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)类型都有无法访问上声明的常量[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
-因此，Java 表达式*MediaStore.Video.VideoColumns.TITLE*需要绑定到 C# 表达式*MediaStore.Video.MediaColumnsConsts.Title*这很难发现而无需读取很多 Java 文档。 在 1.9，等效的 C# 表达式将是[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
+对于包含常量的实现包含其他接口但多个常量的接口，现在会生成所有常量的并集。 例如， [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html)接口实现[android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/)接口。 1\.9，不过之前, [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/)类型都有无法访问上声明的常量[Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/)。
+因此，Java 表达式*MediaStore.Video.VideoColumns.TITLE*需要绑定到 C# 表达式*MediaStore.Video.MediaColumnsConsts.Title*这很难发现而无需读取很多 Java 文档。 在 1.9，等效于C#表达式将是[ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/)。
 
 此外，考虑[android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/)类型，实现 Java *Parcelable*接口。 因为它实现了接口，例如该接口上的所有常量都是"通过"绑定类型，可访问*Bundle.CONTENTS_FILE_DESCRIPTOR*是完全有效的 Java 表达式。
 以前，要移植到此表达式C#将需要查看所有接口都实现从哪种类型中看到*CONTENTS_FILE_DESCRIPTOR*原来的位置。 从 Xamarin.Android 1.9 开始，实现包含常量的 Java 接口的类将具有嵌套*InterfaceConsts*类型，它将包含继承的接口的所有常量。 这将允许翻译*Bundle.CONTENTS_FILE_DESCRIPTOR*到[ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/)。

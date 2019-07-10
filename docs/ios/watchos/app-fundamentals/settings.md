@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 36164e1e9f92b5a5520d10f769f3953cfa2ceb85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61412786"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675233"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>使用 watchOS 中 Xamarin 的设置
 
@@ -36,7 +36,7 @@ Apple Watch 应用可以使用相同的设置功能作为 iOS 应用-设置用�
 
 3. 添加新的密钥`ApplicationGroupContainerIdentifier`到**Root.plist**值设置为配置后，（例如应用组。 `group.com.xamarin.WatchSettings` 在此示例中）：
 
-   [ ![](settings-images/settings-appgroup-sml.png "将 ApplicationGroupContainerIdentifier 密钥添加到 Root.plist")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "将 ApplicationGroupContainerIdentifier 密钥添加到 Root.plist")](settings-images/settings-appgroup.png#lightbox)
 
 4. 编辑**Settings-Watch.bundle/Root.plist**以包含你想要使用的选项的模板文件包含一组。
   文本字段、 切换开关和滑块的默认值 （它可以删除并替换为你自己的设置）：

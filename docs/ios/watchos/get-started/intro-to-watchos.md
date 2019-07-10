@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: faa52c80fdb776f2c6c7320874b0d08720b4e4ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8da40e5500e5669027f658ec95930e3b3a37530e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218718"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675243"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 简介
 
@@ -29,7 +29,7 @@ WatchOS 应用解决方案有 3 个项目：
 
 在 watchOS 1 应用中，在 iPhone 上运行的扩展中的代码-Apple Watch 实际上是外部显示器。 完全在 Apple Watch 上运行 2 和 3 的 watchOS 应用。 这种差异如下图所示：
 
-[ ![](intro-to-watchos-images/arch-sml.png "在 watchOS 1 和 watchOS 2 （和更高版本） 之间的区别是此图中所示")](intro-to-watchos-images/arch.png#lightbox)
+[![](intro-to-watchos-images/arch-sml.png "在 watchOS 1 和 watchOS 2 （和更高版本） 之间的区别是此图中所示")](intro-to-watchos-images/arch.png#lightbox)
 
 无论哪个版本的 watchOS 为目标，在 Visual Studio for Mac 的 Solution Pad 中完整的解决方案将如下所示：
 
