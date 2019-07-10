@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: fe38e13ff4b6c89905769d5ef0e5163a538e1e86
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61388775"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659753"
 ---
 在本练习中，你将创建使用 `RestService` 类的用户界面，而该类将检索 [OpenWeatherMap](https://openweathermap.org/) Web API 的数据。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在“解决方案资源管理器”的 WebServiceTutorial 项目中，双击 MainPage.xaml 将其打开。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码：
+1. 在“解决方案资源管理器”的 WebServiceTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ ms.locfileid: "61388775"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 具有使用 `x:Name` 属性指定的名称。 该操作使代码隐藏文件能够使用分配给它的名称访问对象。
 
-1. 在“解决方案资源管理器”的 WebServiceTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码：
+1. 在“解决方案资源管理器”的 WebServiceTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码  ：
 
     ```csharp
     using System;
@@ -121,7 +121,7 @@ ms.locfileid: "61388775"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性通过可视化树继承。 已在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上设置了该属性，所以 `ContentPage` 的子对象继承它的值，包括 [`Label`](xref:Xamarin.Forms.Label) 实例。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 点击 [`Button`](xref:Xamarin.Forms.Button) 检索西雅图的当前天气数据：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。 点击 [`Button`](xref:Xamarin.Forms.Button) 检索西雅图的当前天气数据：
 
     [![IOS 和 Android 上西雅图天气数据的屏幕截图](../images/consume-web-service.png "西雅图天气数据")](../images/consume-web-service-large.png#lightbox "Seattle weather data")
 
@@ -130,7 +130,7 @@ ms.locfileid: "61388775"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 Solution Pad 的 WebServiceTutorial 项目中，双击 MainPage.xaml 将其打开。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码：
+1. 在 Solution Pad 的 WebServiceTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -191,9 +191,9 @@ ms.locfileid: "61388775"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 具有使用 `x:Name` 属性指定的名称。 该操作使代码隐藏文件能够使用分配给它的名称访问对象。
 
-    关于使用 Xamarin.Forms 中基于 REST 的 Web 服务的详细信息，请参阅[使用 RESTful Web 服务（指南）](~/xamarin-forms/data-cloud/consuming/rest.md)。
+    要详细了解如何在 Xamarin.Forms 中使用基于 REST 的 Web 服务，请参阅[使用 RESTful Web 服务（指南）](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
-1. 在 Solution Pad 的 WebServiceTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码：
+1. 在 Solution Pad 的 WebServiceTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码  ：
 
     ```csharp
     using System;
@@ -243,11 +243,11 @@ ms.locfileid: "61388775"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性通过可视化树继承。 已在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上设置了该属性，所以 `ContentPage` 的子对象继承它的值，包括 [`Label`](xref:Xamarin.Forms.Label) 实例。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 点击 [`Button`](xref:Xamarin.Forms.Button) 检索西雅图的当前天气数据：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。 点击 [`Button`](xref:Xamarin.Forms.Button) 检索西雅图的当前天气数据：
 
     [![IOS 和 Android 上西雅图天气数据的屏幕截图](../images/consume-web-service.png "西雅图天气数据")](../images/consume-web-service-large.png#lightbox "Seattle weather data")
 
     > [!IMPORTANT]
     > 必须将个人 OpenWeatherMap API 密钥设置为 `Constants` 类中 `OpenWeatherMapAPIKey` 常数值。
 
-    关于使用 Xamarin.Forms 中基于 REST 的 Web 服务的详细信息，请参阅[使用 RESTful Web 服务（指南）](~/xamarin-forms/data-cloud/consuming/rest.md)。
+    要详细了解如何在 Xamarin.Forms 中使用基于 REST 的 Web 服务，请参阅[使用 RESTful Web 服务（指南）](~/xamarin-forms/data-cloud/web-services/rest.md)。

@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 5a2df045ae0d7cb433060cee27d2546ad5b6e86e
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: d88807a47b141f69d4e4eea6ec55a97fc61e80a1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493369"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675205"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -100,7 +100,7 @@ ms.locfileid: "67493369"
                                                     <li><a class="barLink" href="~/android/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="" />Xamarin.Android</a></li>
                                                     <li><a class="barLink" href="~/ios/index.yml"><img  src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt=" icon" />Xamarin.iOS</a></li>
                                                     <li><a class="barLink" href="~/mac/index.yml"><img  src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt=" icon" />Xamarin.Mac</a></li>
-                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin 中的 Azure</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Xamarin 中的 Azure</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -409,7 +409,7 @@ Xamarin.Forms 是一种跨平台的工具包，它使用 C# 和 .NET，适用于
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                <a href="~/xamarin-forms/data-cloud/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -419,8 +419,8 @@ Xamarin.Forms 是一种跨平台的工具包，它使用 C# 和 .NET，适用于
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>数据和云服务</h3>
-                                                    <p>数据存储和访问云服务。</p>
+                                                    <h3>数据和 Azure 云服务</h3>
+                                                    <p>数据存储和访问 Azure 云服务。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -472,7 +472,7 @@ Xamarin.Forms 是一种跨平台的工具包，它使用 C# 和 .NET，适用于
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -672,7 +672,7 @@ Xamarin.Forms 是一种跨平台的工具包，它使用 C# 和 .NET，适用于
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
