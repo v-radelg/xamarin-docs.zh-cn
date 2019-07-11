@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 1e40b0a71317d8c9cb3de391a0b941a5bb081956
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 61d9c5b1c7b81bfc8a20932ce1d188cd0cb0f980
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048159"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650432"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Xamarin.Forms 应用程序基础知识
 
@@ -52,10 +52,6 @@ ms.locfileid: "65048159"
 
 借助效果可对每个平台上的本机控件进行自定义，通常用于细微的样式更改。
 
-## <a name="filesfilesmd"></a>[文件](files.md)
-
-使用 .NET Standard 库中的代码或使用嵌入式资源，即可实现使用 Xamarin.Forms 处理文件。
-
 ## <a name="gesturesgesturesindexmd"></a>[手势](gestures/index.md)
 
 Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) 类支持用户界面控件上的点击、收缩和平移手势。
@@ -63,10 +59,6 @@ Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) 类支
 ## <a name="localizationlocalizationindexmd"></a>[本地化](localization/index.md)
 
 内置的 .NET 本地化框架可与 Xamarin.Forms 结合使用，从而生成跨平台的多语言应用程序。
-
-## <a name="local-databasesdatabasesmd"></a>[本地数据库](databases.md)
-
-Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程序，如此即可在共享代码中加载和保存对象。
 
 ## <a name="messaging-centermessaging-centermd"></a>[消息中心](messaging-center.md)
 

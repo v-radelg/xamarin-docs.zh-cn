@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ca9c71d5bdac1900c4f0e5d07898e65b06cdcf90
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e7b8ae57f127b4c9397ab4e5f7e097fa330e827a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925573"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650662"
 ---
 # <a name="application-indexing-and-deep-linking"></a>应用程序索引和深层链接
 
@@ -34,7 +34,7 @@ Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏�
 
 用户创建的每个 `TodoItem` 实例都进行了索引。 然后可使用特定于平台的搜索来查找来自应用程序的索引数据。 当用户点击应用程序的搜索结果项时，将启动该应用程序，并导航到 `TodoItemPage`，还将显示引用自深层链接的 `TodoItem`。
 
-有关使用 SQLite 数据库的详细信息，请参阅 [Xamarin.Forms 本地数据库](~/xamarin-forms/app-fundamentals/databases.md)。
+有关使用 SQLite 数据库的详细信息，请参阅 [Xamarin.Forms 本地数据库](~/xamarin-forms/data-cloud/data/databases.md)。
 
 > [!NOTE]
 > Xamarin.Forms 应用程序索引和深度链接功能仅适用于 iOS 和 Android 平台，并且分别至少需要 iOS 9 和 API 23。
@@ -45,7 +45,7 @@ Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏�
 
 ### <a name="ios"></a>iOS
 
-在 iOS 平台上，确保 iOS 平台项目将 Entitlements.plist 文件设置为自定义的授权文件以对捆绑内容进行签名。
+在 iOS 平台上，确保 iOS 平台项目将 Entitlements.plist 文件设置为自定义的授权文件以对捆绑内容进行签名  。
 
 使用 iOS 通用链接：
 
@@ -66,12 +66,12 @@ Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏�
 满足这些先决条件后，需要进行以下其他设置才能在 Android 平台上使用 Xamarin.Forms 应用程序索引和深层链接：
 
 1. 将 [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) NuGet 包安装到 Android 应用程序项目。
-1. 在 MainActivity.cs 文件中，添加声明以使用 `Xamarin.Forms.Platform.Android.AppLinks` 命名空间。
-1. 在 MainActivity.cs 文件中，添加声明以使用 `Firebase` 命名空间。
+1. 在 MainActivity.cs  文件中，添加声明以使用 `Xamarin.Forms.Platform.Android.AppLinks` 命名空间。
+1. 在 MainActivity.cs  文件中，添加声明以使用 `Firebase` 命名空间。
 1. 在 Web 浏览器中，通过 [Firebase 控制台](https://console.firebase.google.com/)创建新项目。
 1. 在 Firebase 控制台中，将 Firebase 添加到 Android 应用，并输入所需的数据。
-1. 下载产生的 google-services.json 文件。
-1. 将 google-services.json 文件添加到 Android 项目的根目录，然后将其生成操作设置为 GoogleServicesJson。
+1. 下载产生的 google-services.json  文件。
+1. 将 google-services.json 文件添加到 Android 项目的根目录，然后将其生成操作设置为 GoogleServicesJson    。
 1. 在 `MainActivity.OnCreate` 重写中，在 `Forms.Init(this, bundle)` 下添加以下代码行：
 
 ```csharp
@@ -79,7 +79,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-将 google-services.json 添加到项目（并且设置了 GoogleServicesJson* 生成操作）时，生成过程将提取客户端 ID 和 API 密钥，然后将这些凭据添加到生成的清单文件。
+将 google-services.json 添加到项目（并且设置了 GoogleServicesJson* 生成操作）时，生成过程将提取客户端 ID 和 API 密钥，然后将这些凭据添加到生成的清单文件   。
 
 有关详细信息，请参阅 Xamarin 博客上的[深层链接内容与 Xamarin.Forms URL 导航](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)。
 
