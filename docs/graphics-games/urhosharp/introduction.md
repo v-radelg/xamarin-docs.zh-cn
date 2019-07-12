@@ -1,19 +1,19 @@
 ---
-title: 大致了解 UrhoSharp
+title: 简介 UrhoSharp
 description: 本文档介绍 UrhoSharp 应用程序和指向各种指南和演示如何使用 UrhoSharp 示例应用程序的基本结构。
 ms.prod: xamarin
 ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: a3e14ebca961e828fc578035adaca5ba2a809438
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288505"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832548"
 ---
-# <a name="an-introduction-to-urhosharp"></a>大致了解 UrhoSharp
+# <a name="introduction-to-urhosharp"></a>简介 UrhoSharp
 
 ![UrhoSharp 徽标](introduction-images/urhosharp-icon.png)
 
@@ -24,19 +24,19 @@ UrhoSharp 是 Xamarin 和.NET 开发人员的强大 3D 游戏引擎。  它与 A
 UrhoSharp 是包含大量的现成功能的游戏引擎：
 
 - 功能强大的 3D 图形绘制
-- [物理模拟](https://developer.xamarin.com/api/namespace/Urho.Physics/)（使用项目符号库）
-- [场景处理](https://developer.xamarin.com/api/type/Urho.Scene/)
+- 物理模拟 （使用项目符号库）
+- 场景处理
 - 等待异步支持
-- [友好操作 API](https://developer.xamarin.com/api/namespace/Urho.Actions/)
-- [与 3D 场景的 2D 集成](https://developer.xamarin.com/api/namespace/Urho.Urho2D/)
-- [使用 FreeType 字体呈现](https://developer.xamarin.com/api/type/Urho.Gui.FontFaceFreeType/)
-- [客户端和服务器网络功能](https://developer.xamarin.com/api/namespace/Urho.Network/)
-- [导入范围广泛的资产](https://developer.xamarin.com/api/namespace/Urho.Resources/)（与打开资产库）
-- [导航网格和 pathfinding](https://developer.xamarin.com/api/namespace/Urho.Navigation/) （使用重新强制转换/Detour）
-- [碰撞检测的凸包生成](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/)（使用 StanHull）
-- [音频播放](https://developer.xamarin.com/api/namespace/Urho.Audio/)(使用**libvorbis**)
+- 友好操作 API
+- 与 3D 场景的 2D 集成
+- 使用 FreeType 字体呈现
+- 客户端和服务器网络功能
+- 导入范围广泛的资产 （与打开资产库）
+- 导航网格和 pathfinding （使用重新强制转换/Detour）
+- （使用 StanHull） 的碰撞检测的凸包生成
+- 音频播放 (与**libvorbis**)
 
-## <a name="getting-started"></a>入门
+## <a name="get-started"></a>入门
 
 作为方便地分发 UrhoSharp [NuGet 包](https://www.nuget.org/)，它可以被添加到在C#或F#面向 Windows、 Mac、 Android 或 iOS 的项目。  NuGet 附带了运行应用程序所需的库以及由引擎使用的基本资产 (CoreData)。
 
@@ -68,8 +68,7 @@ UrhoSharp 是包含大量的现成功能的游戏引擎：
 
 ## <a name="basic-structure"></a>基本结构
 
-您的游戏应子类 [`Application`](https://developer.xamarin.com/api/type/Urho.Application/)
-类，这是将在此安装程序您的游戏 (在[ `Setup` ](https://developer.xamarin.com/api/member/Urho.Application.Setup/)方法) 并启动您的游戏 (在[ `Start` ](https://developer.xamarin.com/api/member/Urho.Application.Start)方法)。  然后构建您的主用户界面。  我们将引导完成小示例展示了如何设置三维场景中，一些 UI 元素和将简单行为附加到它的 Api。
+您的游戏应子类`Application`类，这是将在此安装程序您的游戏 (在`Setup`方法) 并启动您的游戏 (在`Start`方法)。  然后构建您的主用户界面。  我们将引导完成小示例展示了如何设置三维场景中，一些 UI 元素和将简单行为附加到它的 Api。
 
 ```csharp
 class MySample : Application {
@@ -157,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-UI 框架，提供了非常简单的游戏用户界面，和它的工作方式添加到新节点[ `UI.Root` ](https://developer.xamarin.com/api/property/Urho.Gui.UI.Root/)节点。
+UI 框架，提供了非常简单的游戏用户界面，和它的工作方式添加到新节点`UI.Root`节点。
 
 我们的示例安装的第二部分主要场景。  这涉及到多个步骤，创建一个的三维场景，在屏幕中，创建一个三维框添加光、 照相机和视区。  部分中的更详细地探讨了这些[场景、 节点、 组件和相机](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)。
 
-在本例中的第三个部分将触发执行的一些操作。  操作是配方，描述特定的效果，并创建后，它们可以通过调用执行按需节点[ `RunActionAsync` ](https://developer.xamarin.com/api/member/Urho.Node.RunActionsAsync)方法`Node`。
+在本例中的第三个部分将触发执行的一些操作。  操作是配方，描述特定的效果，并创建后，它们可以通过调用执行按需节点`RunActionAsync`方法`Node`。
 
 第一个操作缩放弹跳效果包装盒和第二个旋转框不限次数：
 
@@ -170,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-上图显示的我们创建的第一个操作是如何[ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo/)操作，这将是仅仅是食谱，指示你想要缩放为 1 的值针对第二个节点的位数属性。  此操作反过来包装在一个缓动操作[ `EaseBounceOut` ](https://developer.xamarin.com/api/type/Urho.Actions.EaseBounceInOut/)操作。  缓动操作扭曲线性模式执行的操作和应用效果，在这种情况下，它提供了向外弹跳效果。
+上图显示的方式，我们创建的第一个操作是`ScaleTo`操作，这将是仅仅是食谱，指示你想要缩放为 1 的值针对第二个节点的位数属性。  此操作反过来包装在一个缓动操作`EaseBounceOut`操作。  缓动操作扭曲线性模式执行的操作和应用效果，在这种情况下，它提供了向外弹跳效果。
 因此，我们的方案也编写为：
 
 ```csharp
@@ -190,4 +189,3 @@ await boxNode.RunActionsAsync (recipe)
 ## <a name="copyrights"></a>版权
 
 本文档包含从 Xamarin Inc 的原始内容，但从 Urho3D 项目的开放源代码文档广泛地绘制，包含 Cocos2D 项目中的屏幕快照。
-
