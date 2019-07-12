@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: e6e3a989db922dc2941cca4c888c862ffe159241
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d7684df771f24ecf9126f472e7d799eea4a5431
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422047"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832704"
 ---
 # <a name="xamarinios-errors"></a>Xamarin.iOS 错误
 
@@ -557,7 +557,7 @@ Xamarin.iOS 需要标头文件，然后在要生成应用程序的错误消息�
 
 <a name="MT0099" />
 
-### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:内部错误 *。 请提交 bug 报告与测试用例 ( http://bugzilla.xamarin.com)。
+### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099:内部错误 *。 请提交 bug 报告与测试用例 ( http://bugzilla.xamarin.com) 。
 
 在 Xamarin.iOS 内部一致性检查失败时报告此错误消息。
 
@@ -565,7 +565,7 @@ Xamarin.iOS 需要标头文件，然后在要生成应用程序的错误消息�
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:无效的程序集生成目标: *。 请提交 bug 报告与测试用例 ( http://bugzilla.xamarin.com)。
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100:无效的程序集生成目标: *。 请提交 bug 报告与测试用例 ( http://bugzilla.xamarin.com) 。
 
 在 Xamarin.iOS 内部一致性检查失败时报告此错误消息。
 
@@ -595,7 +595,7 @@ Xamarin.iOS 需要标头文件，然后在要生成应用程序的错误消息�
 
 错误消息中提及的程序集都可以编译到单个的静态对象。 这不允许，每个程序集必须编译到不同的静态对象。
 
-例如：
+例如:
 
     --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
 
@@ -838,7 +838,7 @@ class Program {
 
 触摸 （这样做是为了确保正确完成部分生成） 的文件时出错。
 
-很可能可以忽略此警告;如果遇到任何问题提交 bug (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ，它将进行调查。
+很可能可以忽略此警告;如果遇到任何问题提交 bug (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ，它将进行调查。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:项目相关的错误消息
 
@@ -1828,7 +1828,7 @@ Bitcode 支持需要使用 LLVM AOT 后端 (-llvm)。
 
 <a name="MT4113" />
 
-### <a name="mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a>MT4113:注册器找到一个泛型方法: '\*。\*。 导出泛型方法不受支持，并将导致随机行为和/或崩溃。
+### <a name="mt4113-the-registrar-found-a-generic-method--exporting-generic-methods-is-not-supported-and-will-lead-to-random-behavior-andor-crashes"></a>MT4113:注册器找到一个泛型方法: '\*.\*。 导出泛型方法不受支持，并将导致随机行为和/或崩溃。
 
 <a name="MT4114" />
 
@@ -1840,7 +1840,7 @@ Bitcode 支持需要使用 LLVM AOT 后端 (-llvm)。
 
 <a name="MT4117" />
 
-### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117:在注册机构方法中找到签名不匹配 *。*-选择器指示该方法采用 * 参数，而托管的方法具有 * 参数。
+### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117:在注册机构方法中找到签名不匹配 *。* -选择器指示该方法采用 * 参数，而托管的方法具有 * 参数。
 
 <a name="MT4118" />
 
@@ -1934,7 +1934,7 @@ Bitcode 支持需要使用 LLVM AOT 后端 (-llvm)。
 
 <a name="MT4140" />
 
-### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140:在注册机构方法中找到签名不匹配 *。*-选择器指示可变参数方法采用 * 参数，而托管的方法具有 * 参数。
+### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140:在注册机构方法中找到签名不匹配 *。* -选择器指示可变参数方法采用 * 参数，而托管的方法具有 * 参数。
 
 <a name="MT4141" />
 
@@ -2141,7 +2141,7 @@ Xamarin.iOS 生成提到的 P/Invoke 包装器函数失败。
 
 在注册机构不支持对上述类型之间进行转换。
 
-这是在 Xamarin.iOS 一个 bug，如果问题 API 提供的 Xamarin.iOS;请提交在 bug [http://bugzilla.xamarin.com][1]。
+如果出现问题 API 提供的 Xamarin.iOS; 这是 Xamarin.iOS 中的 bug请提交在 bug [ http://bugzilla.xamarin.com ][1]。
 
 如果遇到此类开发本机库的绑定项目时，我们会打开到添加对类型的新组合的支持。 如果这种情况，请提出的增强功能请求 ([http://bugzilla.xamarin.com][2]) 与测试用例，我们将评估它。
 
@@ -2310,7 +2310,7 @@ Xamarin.iOS 生成提到的 P/Invoke 包装器函数失败。
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214:本机链接失败，未定义符号: *。 此符号引用托管的成员 *。 请验证所有必需的框架已链接的引用和本机库。
 
-当托管的代码包含对不存在的本机方法 P/Invoke 时，会报告此错误。 例如：
+当托管的代码包含对不存在的本机方法 P/Invoke 时，会报告此错误。 例如:
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2322,9 +2322,9 @@ class MyImports {
 
 有几个可能的解决方案：
 
-  -  从源代码中删除 P/Invoke 有问题。
-  -  启用托管的 （这是在项目的 iOS 生成选项，通过将"链接器行为"设置为"所有程序集"） 的所有程序集链接器。 这有效地将从应用中删除所有 P/Invoke 不使用 （自动，而不是手动类似于以前的点）。 缺点是，这将使模拟器生成稍慢一些，它可能会中断您的应用程序，如果它正在使用反射-可以找到有关链接器的详细信息[此处](~/ios/deploy-test/linker.md))
-  -  创建第二个本机库，其中包含缺少本机符号。 请注意，这只是一种解决方法 （如果你尝试调用这些函数，将崩溃您的应用程序）。
+- 从源代码中删除 P/Invoke 有问题。
+- 启用托管的 （这是在项目的 iOS 生成选项，通过将"链接器行为"设置为"所有程序集"） 的所有程序集链接器。 这有效地将从应用中删除所有 P/Invoke 不使用 （自动，而不是手动类似于以前的点）。 缺点是，这将使模拟器生成稍慢一些，它可能会中断您的应用程序，如果它正在使用反射-可以找到有关链接器的详细信息[此处](~/ios/deploy-test/linker.md))
+- 创建第二个本机库，其中包含缺少本机符号。 请注意，这只是一种解决方法 （如果你尝试调用这些函数，将崩溃您的应用程序）。
 
 <a name="MT5215" />
 
@@ -2931,7 +2931,7 @@ Xamarin.iOS 通常会询问本机链接器以保留使用此类符号`-u symbol`
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到到块转换属性 ([DelegateProxy]) 的委托方法的返回值 *。*。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:找不到到块转换属性 ([DelegateProxy]) 的委托方法的返回值 *。* 。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所需的方法。
 
@@ -2939,7 +2939,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:该方法的返回值的无效 DelegateProxyAttribute *。*:委托为 null。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012:该方法的返回值的无效 DelegateProxyAttribute *。* :委托为 null。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2947,7 +2947,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) 指定没有 Handler 字段的类型。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:该方法的返回值的无效 DelegateProxyAttribute *。* :委托 ({2}) 指定没有 Handler 字段的类型。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2955,7 +2955,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) Handler 字段为 null。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:该方法的返回值的无效 DelegateProxyAttribute *。* :委托 ({2}) Handler 字段为 null。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2963,7 +2963,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:该方法的返回值的无效 DelegateProxyAttribute *。*:委托 ({2}) Handler 字段不是一个委托，它是 *。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015:该方法的返回值的无效 DelegateProxyAttribute *。* :委托 ({2}) Handler 字段不是一个委托，它是 *。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
@@ -2971,7 +2971,7 @@ Xamarin.iOS 找不到在运行时 （若要将委托转换为一个块） 的所
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:无法转换进行阻止方法的返回值的委托 *。*，因为输入不是一个委托，它是 *。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:无法转换进行阻止方法的返回值的委托 *。* ，因为输入不是一个委托，它是 *。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 上述方法 DelegateProxy 属性无效。
 
