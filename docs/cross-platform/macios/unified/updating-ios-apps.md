@@ -6,12 +6,12 @@ ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4d506232903d4a94ac20a1fb9f93a39884d9099c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e471aaca2a7a5f247b21dd1c1863a01b062a716
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61213645"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855744"
 ---
 # <a name="updating-existing-ios-apps"></a>更新现有 iOS 应用
 
@@ -31,7 +31,7 @@ Xamarin 提供了用于 Visual Studio for Mac 和 Visual Studio 自动执行迁�
 
 ## <a name="automated-updating"></a>自动更新
 
-后已经修复了警告，选择现有的 iOS 项目在 Visual Studio for Mac 或 Visual Studio，并选择**迁移到 Xamarin.iOS Unified API**从**项目**菜单。 例如：
+后已经修复了警告，选择现有的 iOS 项目在 Visual Studio for Mac 或 Visual Studio，并选择**迁移到 Xamarin.iOS Unified API**从**项目**菜单。 例如:
 
 ![](updating-ios-apps-images/beta-tool1.png "从项目菜单中选择迁移到 Xamarin.iOS Unified API")
 
@@ -89,7 +89,7 @@ Xamarin 提供了用于 Visual Studio for Mac 和 Visual Studio 自动执行迁�
 
 将现有的 Xamarin.iOS 项目从经典 API 转换为新的统一 API，如果该应用程序依赖于一个或多个组件或 NuGet 包时，应考虑以下注意事项。
 
-### <a name="components"></a>组件数
+### <a name="components"></a>组件
 
 你的应用程序中包含的任何组件还需要更新为 Unified API 或尝试进行编译时，您将看到冲突。 对于任何包含的组件，使用支持统一 API 的 Xamarin 组件存储区中的新版本替换当前版本和生成已清理。 任何组件都尚未转换由作者，将显示在组件存储中的唯一警告 32 位。
 
@@ -115,4 +115,3 @@ Xamarin 提供了用于 Visual Studio for Mac 和 Visual Studio 自动执行迁�
 - [将代码更新为 Unified API 的提示](~/cross-platform/macios/unified/updating-tips.md)
 - [使用跨平台应用中的本机类型](~/cross-platform/macios/native-types-cross-platform.md)
 - [经典 vs 统一的 API 差异](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
-- [迁移到 Unified API （视频）](http://university.xamarin.com/lightninglectures/migrating-to-the-unified-api)

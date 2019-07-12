@@ -1,22 +1,25 @@
 ---
 title: C#6 项新增功能概述
-description: 最新版本的C#语言 – 版本 6 – 不断发展的语言具有更少的样本，提高的清晰度和更多的一致性。 更简洁的初始化语法，能够使用 await 中 catch/finally 块和 null 条件？ 运算符时特别有用。
+description: 版本 6 的C#语言的不断发展的语言具有更少的样板代码，提高的清晰度和更多的一致性。 更简洁的初始化语法，能够使用 await 中 catch/finally 块和 null 条件？ 运算符时特别有用。
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a261c009f105994ac0b9c84f3d0ac037c4a3517
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 0fd7f4e9972f7bf762a44c9edf30fa13f9d989bc
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978491"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850952"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 项新增功能概述
 
-_最新版本的C#语言 – 版本 6 – 不断发展的语言具有更少的样本，提高的清晰度和更多的一致性。更简洁的初始化语法，能够使用 await 中 catch/finally 块和 null 条件？运算符时特别有用。_
+_版本 6 的C#语言的不断发展的语言具有更少的样板代码，提高的清晰度和更多的一致性。更简洁的初始化语法，能够使用 await 中 catch/finally 块和 null 条件？运算符时特别有用。_
+
+> [!NOTE]
+> 有关最新版本的信息C#语言 – 版本 7 – 请参阅文章[What's New C# 7.0](/dotnet/csharp/whats-new/csharp-7)
 
 本文档介绍了新功能的C#6。 Mono 编译器完全支持，开发人员可以开始使用所有 Xamarin 目标平台的新功能。
 
