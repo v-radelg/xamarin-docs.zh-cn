@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 15b4154ad6e95aabb5e88784660a93bb53c0b252
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 7bea80c22f6931858d0629382f6882203dfd374f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650196"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829941"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究：Tasky
 
@@ -29,9 +29,9 @@ ms.locfileid: "67650196"
 
 设计应用程序的第一步是确定所需的功能。 这些可以是高级目标或详细的用例。 Tasky 具有简单的功能要求：
 
- -  查看任务列表
- -  添加、 编辑和删除任务
- -  设置任务的状态设置为完成
+-  查看任务列表
+-  添加、 编辑和删除任务
+-  设置任务的状态设置为完成
 
 应考虑特定于平台的功能的使用。  Tasky 可以充分利用 iOS 地理围栏或 Windows Phone 动态磁贴？ 即使在第一个版本，不使用特定于平台的功能，您应计划继续请确保你的业务和数据层可以容纳它们。
 
@@ -52,9 +52,9 @@ ms.locfileid: "67650196"
 
 Tasky 需要为每个 TaskItem 存储三个属性：
 
- -  **名称**– 字符串
- -  **说明**– 字符串
- -  **完成**– 布尔值
+- **名称**– 字符串
+- **说明**– 字符串
+- **完成**– 布尔值
 
  <a name="Core_Functionality" />
 
@@ -62,11 +62,11 @@ Tasky 需要为每个 TaskItem 存储三个属性：
 
 请考虑在用户界面将需要使用以满足要求的 API。 待办事项列表需要以下函数：
 
- -   **列出的所有任务**-显示所有可用任务的主屏幕都列表
- -  **获取一个任务**– 当任务行数
- -  **将一个任务保存**– 时编辑任务
- -  **删除一个任务**– 当任务被删除
- -  **创建空任务**– 时创建一个新任务
+- **列出的所有任务**-显示所有可用任务的主屏幕都列表
+- **获取一个任务**– 当任务行数
+- **将一个任务保存**– 时编辑任务
+- **删除一个任务**– 当任务被删除
+- **创建空任务**– 时创建一个新任务
 
 若要实现代码重用，此 API 应一次在中实现*可移植类库*。
 
@@ -76,10 +76,10 @@ Tasky 需要为每个 TaskItem 存储三个属性：
 
 一旦应用程序设计已协商好，请考虑如何它可能会作为一个跨平台应用程序实现。 这将成为应用程序的体系结构。 中的指南[构建跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文档中，应用程序代码应被破坏向下插入以下几个部分：
 
- -   **公共代码**– 公共项目包含用于存储任务数据的可重用代码; 公开 Model 类和一个 API，用于管理保存和加载的数据。
- -   **特定于平台的代码**– 实现利用作为后端则公共代码对于每个操作系统，本机 UI 的特定于平台的项目。
+- **公共代码**– 公共项目包含用于存储任务数据的可重用代码; 公开 Model 类和一个 API，用于管理保存和加载的数据。
+- **特定于平台的代码**– 实现利用作为后端则公共代码对于每个操作系统，本机 UI 的特定于平台的项目。
 
- [![](case-study-tasky-images/taskypro-architecture.png "特定于平台的项目实现利用作为后端的常见代码为每个操作系统的本机 UI")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![](case-study-tasky-images/taskypro-architecture.png "特定于平台的项目实现利用作为后端的常见代码为每个操作系统的本机 UI")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 以下各节所述这两部分。
 
@@ -280,8 +280,8 @@ IOS 应用程序引用特定于平台的 SDK 库 – 例如。 Xamarin.iOS 和 M
 
 应用程序层包含绑定到 UI PCL 所公开的对象所需的特定于平台的类。 特定于 iOS 的应用程序具有两个类可帮助将显示任务：
 
- -   **EditingSource** – 此类用于将任务的列表绑定到用户界面。 因为`MonoTouch.Dialog`使用了对于任务列表中，我们需要实施此帮助器，若要启用中的轻扫删除功能`UITableView`。 轻扫删除是在 iOS 中，但不是 Android 或 Windows Phone 上常见的因此 iOS 特定项目是实现该接口只有一个。
- -   **TaskDialog** – 此类用于将单个任务绑定到 UI。 它使用`MonoTouch.Dialog`反射 API 来包装`TaskItem`具有包含要允许具有正确的格式输入的屏幕的正确特性的类的对象。
+- **EditingSource** – 此类用于将任务的列表绑定到用户界面。 因为`MonoTouch.Dialog`使用了对于任务列表中，我们需要实施此帮助器，若要启用中的轻扫删除功能`UITableView`。 轻扫删除是在 iOS 中，但不是 Android 或 Windows Phone 上常见的因此 iOS 特定项目是实现该接口只有一个。
+- **TaskDialog** – 此类用于将单个任务绑定到 UI。 它使用`MonoTouch.Dialog`反射 API 来包装`TaskItem`具有包含要允许具有正确的格式输入的屏幕的正确特性的类的对象。
 
 `TaskDialog`类使用`MonoTouch.Dialog`属性来创建屏幕基于类的属性。 该类如下所示：
 
@@ -389,9 +389,9 @@ Android 应用程序项目必须引用特定于平台的 Xamarin.Android 程序�
 
 Android 应用的用户界面层是代码和 XML 标记的组合。
 
- -   **资源/布局**– 屏幕布局和行单元格作为 AXML 文件实现的设计。 AXML 可以手工编写或布局的直观地使用适用于 Android 的 Xamarin UI 设计器。
- -   **资源/Drawable** – 图像 （图标） 和自定义按钮。
- -   **屏幕**-定义每个屏幕和其行为的活动子类。 将联系在一起，与应用程序层类 UI 和常见 API (`TaskItemManager`)。
+- **资源/布局**– 屏幕布局和行单元格作为 AXML 文件实现的设计。 AXML 可以手工编写或布局的直观地使用适用于 Android 的 Xamarin UI 设计器。
+- **资源/Drawable** – 图像 （图标） 和自定义按钮。
+- **屏幕**-定义每个屏幕和其行为的活动子类。 将联系在一起，与应用程序层类 UI 和常见 API (`TaskItemManager`)。
 
  <a name="Home_Screen" />
 

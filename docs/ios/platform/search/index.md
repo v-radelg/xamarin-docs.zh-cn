@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87f7689a082c891bc199f4221e68ed7ab19adf85
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075647"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832710"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin.iOS 中搜索 Api
 
@@ -55,9 +55,9 @@ _本文介绍如何使用提供的 iOS 9 应用搜索 Api 以允许用户搜索�
 
 Apple 提供了有关哪些内容和操作下面建议，以提供有关应用程序中的搜索索引：
 
- - 任何内容查看、 创建或策划的由应用程序中的用户。
- - 导航点和应用程序中的功能。
- - 比如，新消息、 内容或其他类型的最近下载到设备的项显示你的应用。
+- 任何内容查看、 创建或策划的由应用程序中的用户。
+- 导航点和应用程序中的功能。
+- 比如，新消息、 内容或其他类型的最近下载到设备的项显示你的应用。
 
 ## <a name="app-search-enhancements"></a>应用搜索增强功能
 

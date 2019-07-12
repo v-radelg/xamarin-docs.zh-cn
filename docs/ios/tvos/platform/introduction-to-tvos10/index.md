@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6bad05f62fa9168818aa9a2e73cc1e2830af03b3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269304"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830039"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 简介
 
@@ -56,10 +56,10 @@ tvOS 10 扩展的扩展范围像素格式和整个系统的核心图形、 Core 
 
 使用宽颜色时，Apple 提供的以下最佳实践：
 
- - `UIColor` 现在使用 sRGB 颜色空间，将无法再将值与`0.0`到`1.0`范围。 如果应用依赖于上一次固定行为，它将需要针对 tvOS 10 进行修改。
- - 如果该应用程序执行的自定义呈现`UIImages`，使用新[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定为扩展范围或标准范围格式的使用。
- - 当使用核心图形或金属等低级别 API 提供图像处理，应用应使用支持 16 位浮点值的更大范围颜色空间和像素格式。 必要时，应用将需要手动将颜色组件值。
- - 核心图形、 Core 映像和金属性能着色器所有提供两个颜色空间之间进行转换的新方法。
+- `UIColor` 现在使用 sRGB 颜色空间，将无法再将值与`0.0`到`1.0`范围。 如果应用依赖于上一次固定行为，它将需要针对 tvOS 10 进行修改。
+- 如果该应用程序执行的自定义呈现`UIImages`，使用新[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定为扩展范围或标准范围格式的使用。
+- 当使用核心图形或金属等低级别 API 提供图像处理，应用应使用支持 16 位浮点值的更大范围颜色空间和像素格式。 必要时，应用将需要手动将颜色组件值。
+- 核心图形、 Core 映像和金属性能着色器所有提供两个颜色空间之间进行转换的新方法。
 
 若要获取详细信息，请参阅我们[简介广泛的颜色](~/ios/platform/wide-color.md)指南。
 
@@ -67,12 +67,12 @@ tvOS 10 扩展的扩展范围像素格式和整个系统的核心图形、 Core 
 
 在 iOS （和不 tvOS） 可用的多个框架进行提供对 tvOS 10 如：
 
- - ExternalAccessory
- - HomeKit
- - MultipeerConnectivity
- - 照片
- - ReplayKit
- - UserNotification
+- ExternalAccessory
+- HomeKit
+- MultipeerConnectivity
+- 照片
+- ReplayKit
+- UserNotification
 
 ## <a name="additional-framework-changes"></a>其他 Framework 更改
 

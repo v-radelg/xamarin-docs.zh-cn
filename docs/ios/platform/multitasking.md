@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 6a9c66720aeb97c5b894cbea42c6cc0c5285c67d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 888e00fbdbf30b5b2842bc30822a55f57372eb34
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978629"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831813"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>IPad Xamarin.iOS 的多任务
 
@@ -48,10 +48,10 @@ iOS 9 增加了对特定 iPad 硬件上同时运行两个应用的多任务处�
 
 若要支持**幻灯片转移**或**拆分视图**您的应用程序必须执行以下操作：
 
- - 生成针对 iOS 9 （或更高版本）。
- - 用于启动屏幕情节提要 （和不图像资产）。
- - 为其 UI 使用自动布局和大小类使用情节提要。
- - 支持所有 4 个的 iOS 设备方向 （纵向、 散乱的纵向、 横向左侧和横向右侧）。
+- 生成针对 iOS 9 （或更高版本）。
+- 用于启动屏幕情节提要 （和不图像资产）。
+- 为其 UI 使用自动布局和大小类使用情节提要。
+- 支持所有 4 个的 iOS 设备方向 （纵向、 散乱的纵向、 横向左侧和横向右侧）。
 
 <a name="Multitasking" />
 
@@ -242,9 +242,9 @@ Xamarin.iOS 应用程序可以选择不使用任一滑块滑出在面板中或�
 
 若要选择退出 PIP 视频播放，请执行以下操作应用程序中：
 
- - 如果使用的`AVPlayerViewController`若要显示视频，请设置`AllowsPictureInPicturePlayback`属性设置为`false`。
- - 如果使用的`AVPlayerLayer`若要显示视频，不实例化`AVPictureInPictureController`。
- - 如果使用的`WKWebView`若要显示视频，请设置`AllowsPictureInPictureMediaPlayback`属性设置为`false`。
+- 如果使用的`AVPlayerViewController`若要显示视频，请设置`AllowsPictureInPicturePlayback`属性设置为`false`。
+- 如果使用的`AVPlayerLayer`若要显示视频，不实例化`AVPictureInPictureController`。
+- 如果使用的`WKWebView`若要显示视频，请设置`AllowsPictureInPictureMediaPlayback`属性设置为`false`。
 
 <a name="Summary" />
 

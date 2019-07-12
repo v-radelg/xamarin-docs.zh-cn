@@ -6,12 +6,12 @@ ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 46330fb16be4f3b7be60e1bf72eb6a36fafefe77
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e52afe94e7890ca995107e2bfa50471cb9102b57
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364393"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830625"
 ---
 # <a name="urhosharp-platform-support"></a>UrhoSharp 平台支持
 
@@ -36,4 +36,3 @@ Windows 安装程序说明和功能。
 ## <a name="xamarinformsgraphics-gamesurhosharpplatformxamarin-formsmd"></a>[Xamarin.Forms](~/graphics-games/urhosharp/platform/xamarin-forms.md)
 
 Xamarin.Forms 设置说明和示例。
-

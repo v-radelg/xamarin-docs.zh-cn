@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: e9c18920386cb58f152d7631c52240b4b5b72ff9
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 88496452595f308c97d26d0f27fae305baef894f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977848"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830830"
 ---
 # <a name="stack-views-in-xamarinios"></a>在 Xamarin.iOS 堆栈视图
 
@@ -197,16 +197,16 @@ icon.RemoveFromSuperview();
 
 通常情况下，这意味着固定堆栈视图进行扩展和收缩，从而定义它的位置的至少两个边缘。 而无需任何附加约束，在 Stack 视图将自动调整大小以适合所有其子视图，如下所示：
 
- - 此过程的大小及其`Axis`将为所有子视图大小加上任何已定义每个子视图之间的空间之和。
- - 如果`LayoutMarginsRelativeArrangement`属性是`true`，堆栈视图大小还将包括边距的空间。
- - 与垂直大小`Axis`将设置为集合中最大的子视图。
+- 此过程的大小及其`Axis`将为所有子视图大小加上任何已定义每个子视图之间的空间之和。
+- 如果`LayoutMarginsRelativeArrangement`属性是`true`，堆栈视图大小还将包括边距的空间。
+- 与垂直大小`Axis`将设置为集合中最大的子视图。
 
 此外，可以指定约束的堆栈视图**高度**并**宽度**。 在这种情况下，子视图将布局 （大小） 来填充指定的堆栈视图由空间`Distribution`和`Alignment`属性。
 
 如果`BaselineRelativeArrangement`属性是`true`，了子视图将布局基于第一个或最后一个子视图的基线，而不是使用**顶部**，**底部**或**Center**-  **Y**位置。 这些计算堆栈视图的内容，如下所示：
 
- - 垂直堆栈视图将返回第一个基线的第一个子视图和最后一个的最后一个。 如果任一这些子视图本身堆栈视图，则将使用其第一个或最后一个基线。
- - 第一个和最后一个基线，水平堆栈视图将使用其最高的子视图。 如果最高视图也是堆栈视图，它将使用最高子视图作为基线。
+- 垂直堆栈视图将返回第一个基线的第一个子视图和最后一个的最后一个。 如果任一这些子视图本身堆栈视图，则将使用其第一个或最后一个基线。
+- 第一个和最后一个基线，水平堆栈视图将使用其最高的子视图。 如果最高视图也是堆栈视图，它将使用最高子视图作为基线。
 
 > [!IMPORTANT]
 > 基线对齐方式不会无法拉伸或压缩子视图大小按基线将计算到错误的位置。 对于基线对齐方式，请确保子视图的**高度**内部内容视图匹配**高度**。
@@ -216,9 +216,9 @@ icon.RemoveFromSuperview();
 有几种很好地配合堆栈视图控件的布局类型。 根据 Apple，下面是几个更常见的用途：
 
 - **定义轴大小沿**– 通过固定堆栈视图沿两个边缘`Axis`和一条相邻边设置其位置，视图将沿轴以适合其子视图定义的空间增长的堆栈。
- -  **定义子视图的位置，** – 这两个维度，以适合包含子视图固定到的父视图到在 Stack 视图相邻边缘，堆栈视图会增长。
+- **定义子视图的位置，** – 这两个维度，以适合包含子视图固定到的父视图到在 Stack 视图相邻边缘，堆栈视图会增长。
 - **定义的大小和位置堆栈的**– 堆栈视图固定到父视图堆栈视图的所有四个边，排列了子视图基于堆栈视图中定义的空间。
- -  **定义大小垂直轴**– 通过固定为堆栈视图这两个边缘垂直`Axis`，另一个轴设置其位置，视图将增长以适应空间由定义的轴与垂直堆栈边缘其子视图。
+- **定义大小垂直轴**– 通过固定为堆栈视图这两个边缘垂直`Axis`，另一个轴设置其位置，视图将增长以适应空间由定义的轴与垂直堆栈边缘其子视图。
 
 ### <a name="managing-the-appearance"></a>管理外观
 
@@ -241,14 +241,14 @@ icon.RemoveFromSuperview();
 
 堆栈视图将确保其`ArrangedSubviews`属性始终是的子集其`Subviews`属性使用以下规则：
 
- - 如果子视图添加到`ArrangedSubviews`集合，它将自动添加到`Subviews`集合 （除非它已是该集合的一部分）。
- - 如果从删除子视图`Subviews`（从显示中删除） 的集合，它也会从删除`ArrangedSubviews`集合。
- - 删除从子视图`ArrangedSubviews`集合不会删除从`Subviews`集合。 因此，它将无法再进行布局由堆栈视图，但仍会在屏幕上可见。
+- 如果子视图添加到`ArrangedSubviews`集合，它将自动添加到`Subviews`集合 （除非它已是该集合的一部分）。
+- 如果从删除子视图`Subviews`（从显示中删除） 的集合，它也会从删除`ArrangedSubviews`集合。
+- 删除从子视图`ArrangedSubviews`集合不会删除从`Subviews`集合。 因此，它将无法再进行布局由堆栈视图，但仍会在屏幕上可见。
 
 `ArrangedSubviews`集合始终是的子集`Subview`集合，但是每个集合中单个子视图的顺序是单独且可控制通过以下方法：
 
- - 中子视图的顺序`ArrangedSubviews`集合确定堆栈内的其显示顺序。
- - 中子视图的顺序`Subview`集合后至前视图中确定其 Z 顺序 （或分层）。
+- 中子视图的顺序`ArrangedSubviews`集合确定堆栈内的其显示顺序。
+- 中子视图的顺序`Subview`集合后至前视图中确定其 Z 顺序 （或分层）。
 
 ### <a name="dynamically-changing-content"></a>动态地更改内容
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 890c11908b11b18d6ca626820f1a835d817870da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827342"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829864"
 ---
 # <a name="collection-views-in-xamarinios"></a>在 Xamarin.iOS 中的集合视图
 
@@ -453,7 +453,7 @@ namespace SimpleCollectionView
 
 在 iOS 9，添加到集合视图重新排序的最快方法是使用`UICollectionViewController`。
 集合视图控制器现在具有`InstallsStandardGestureForInteractiveMovement`属性，它将添加一个标准*笔势识别器*支持拖动以重新排列集合中的项。
-因为默认值为`true`，只需实现`MoveItem`方法的`UICollectionViewDataSource`类，以支持拖放重新排序。 例如：
+因为默认值为`true`，只需实现`MoveItem`方法的`UICollectionViewDataSource`类，以支持拖放重新排序。 例如:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -693,7 +693,7 @@ namespace CollectionView
 
 保存对 UI 所做的更改并运行应用程序。
 如果用户从列表中选择项并将其拖动到新位置时，其他项将设置动画效果自动随着开的项。
-当用户将项放置在新位置时，它将只讨论该位置。 例如：
+当用户将项放置在新位置时，它将只讨论该位置。 例如:
 
 [![](uicollectionview-images/intro01.png "举例说明如何将项拖动到新位置")](uicollectionview-images/intro01.png#lightbox)
 
@@ -739,10 +739,10 @@ public override void ViewDidLoad ()
 
 此处我们将使用几个新方法添加到集合视图来实现，可以控制拖动操作：
 
- - `BeginInteractiveMovementForItem` -将标记移动操作的开始。
- - `UpdateInteractiveMovementTargetPosition` -，则发送更新项的位置。
- - `EndInteractiveMovement` -将项移动结束标记。
- - `CancelInteractiveMovement` -将标记用户取消移动操作。
+- `BeginInteractiveMovementForItem` -将标记移动操作的开始。
+- `UpdateInteractiveMovementTargetPosition` -，则发送更新项的位置。
+- `EndInteractiveMovement` -将项移动结束标记。
+- `CancelInteractiveMovement` -将标记用户取消移动操作。
 
 运行应用程序时，拖放操作将默认拖动手势识别器附带集合视图时一样工作。
 
@@ -1217,78 +1217,78 @@ public override void AwakeFromNib ()
 
 对进行以下更改或添加`UICollectionView`适用于 iOS 9 的类：
 
- - `BeginInteractiveMovementForItem` – 标记的拖动操作开始位置。
- - `CancelInteractiveMovement` – 告知集合视图用户已取消拖动操作。
- - `EndInteractiveMovement` – 告知集合视图在用户完成拖动操作。
- - `GetIndexPathsForVisibleSupplementaryElements` -返回`indexPath`的页眉或页脚中集合视图部分。
- - `GetSupplementaryView` -返回给定的页眉或页脚。
- - `GetVisibleSupplementaryViews` -返回所有可见的标头和表尾的列表。
- - `UpdateInteractiveMovementTargetPosition` – 告知集合视图用户已移动，或在移动，在拖动操作期间的项。
+- `BeginInteractiveMovementForItem` – 标记的拖动操作开始位置。
+- `CancelInteractiveMovement` – 告知集合视图用户已取消拖动操作。
+- `EndInteractiveMovement` – 告知集合视图在用户完成拖动操作。
+- `GetIndexPathsForVisibleSupplementaryElements` -返回`indexPath`的页眉或页脚中集合视图部分。
+- `GetSupplementaryView` -返回给定的页眉或页脚。
+- `GetVisibleSupplementaryViews` -返回所有可见的标头和表尾的列表。
+- `UpdateInteractiveMovementTargetPosition` – 告知集合视图用户已移动，或在移动，在拖动操作期间的项。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
 对进行以下更改或添加`UICollectionViewController`iOS 9 中的类：
 
- - `InstallsStandardGestureForInteractiveMovement` -如果`true`将使用新笔势识别器的自动支持拖放重新排序。
- - `CanMoveItem` – 如果给定的项目可以拖放重新排序，则通知集合视图。
- - `GetTargetContentOffset` – 用于获取给定的集合视图项的偏移量。
- - `GetTargetIndexPathForMove` – 获取`indexPath`的拖动操作的给定项。
- - `MoveItem` – 在列表中移动给定项的顺序。
+- `InstallsStandardGestureForInteractiveMovement` -如果`true`将使用新笔势识别器的自动支持拖放重新排序。
+- `CanMoveItem` – 如果给定的项目可以拖放重新排序，则通知集合视图。
+- `GetTargetContentOffset` – 用于获取给定的集合视图项的偏移量。
+- `GetTargetIndexPathForMove` – 获取`indexPath`的拖动操作的给定项。
+- `MoveItem` – 在列表中移动给定项的顺序。
 
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
 对进行以下更改或添加`UICollectionViewDataSource`iOS 9 中的类：
 
- - `CanMoveItem` – 如果给定的项目可以拖放重新排序，则通知集合视图。
- - `MoveItem` – 在列表中移动给定项的顺序。
+- `CanMoveItem` – 如果给定的项目可以拖放重新排序，则通知集合视图。
+- `MoveItem` – 在列表中移动给定项的顺序。
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
 对进行以下更改或添加`UICollectionViewDelegate`iOS 9 中的类：
 
- - `GetTargetContentOffset` – 用于获取给定的集合视图项的偏移量。
- - `GetTargetIndexPathForMove` – 获取`indexPath`的拖动操作的给定项。
+- `GetTargetContentOffset` – 用于获取给定的集合视图项的偏移量。
+- `GetTargetIndexPathForMove` – 获取`indexPath`的拖动操作的给定项。
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
 对进行以下更改或添加`UICollectionViewFlowLayout`iOS 9 中的类：
 
- - `SectionFootersPinToVisibleBounds` – 始终处于可见集合视图边界部分页脚。
- - `SectionHeadersPinToVisibleBounds` – 始终处于可见集合视图边界部分标头。
+- `SectionFootersPinToVisibleBounds` – 始终处于可见集合视图边界部分页脚。
+- `SectionHeadersPinToVisibleBounds` – 始终处于可见集合视图边界部分标头。
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
 对进行以下更改或添加`UICollectionViewLayout`iOS 9 中的类：
 
- - `GetInvalidationContextForEndingInteractiveMovementOfItems` – 当用户完成拖动或取消它，则返回在拖动操作结束时失效上下文。
- - `GetInvalidationContextForInteractivelyMovingItems` -返回拖动操作开始处的无效化上下文。
- - `GetLayoutAttributesForInteractivelyMovingItem` – 获取布局特性给定项目的同时拖动项。
- - `GetTargetIndexPathForInteractivelyMovingItem` -返回`indexPath`拖动项时在给定时间点的项。
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` – 当用户完成拖动或取消它，则返回在拖动操作结束时失效上下文。
+- `GetInvalidationContextForInteractivelyMovingItems` -返回拖动操作开始处的无效化上下文。
+- `GetLayoutAttributesForInteractivelyMovingItem` – 获取布局特性给定项目的同时拖动项。
+- `GetTargetIndexPathForInteractivelyMovingItem` -返回`indexPath`拖动项时在给定时间点的项。
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
 对进行以下更改或添加`UICollectionViewLayoutAttributes`iOS 9 中的类：
 
- - `CollisionBoundingPath` – 在拖动操作过程中返回两个项目的冲突的路径。
- - `CollisionBoundsType` -返回的冲突类型 (作为`UIDynamicItemCollisionBoundsType`) 已在拖动操作过程中发生。
+- `CollisionBoundingPath` – 在拖动操作过程中返回两个项目的冲突的路径。
+- `CollisionBoundsType` -返回的冲突类型 (作为`UIDynamicItemCollisionBoundsType`) 已在拖动操作过程中发生。
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
 对进行以下更改或添加`UICollectionViewLayoutInvalidationContext`iOS 9 中的类：
 
- - `InteractiveMovementTarget` -返回拖动操作的目标的项。
- - `PreviousIndexPathsForInteractivelyMovingItems` -返回`indexPaths`的其他项参与拖放进行重新排序操作。
- - `TargetIndexPathsForInteractivelyMovingItems` -返回`indexPaths`的项将作为拖放重新排序操作结果重新排序。
+- `InteractiveMovementTarget` -返回拖动操作的目标的项。
+- `PreviousIndexPathsForInteractivelyMovingItems` -返回`indexPaths`的其他项参与拖放进行重新排序操作。
+- `TargetIndexPathsForInteractivelyMovingItems` -返回`indexPaths`的项将作为拖放重新排序操作结果重新排序。
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
 对进行以下更改或添加`UICollectionViewSource`iOS 9 中的类：
 
- - `CanMoveItem` – 如果给定的项目可以拖放重新排序，则通知集合视图。
- - `GetTargetContentOffset` -返回通过拖动重新排序操作将被移动的项的偏移量。
- - `GetTargetIndexPathForMove` -返回`indexPath`将拖放重新排序操作期间移动的项。
- - `MoveItem` – 在列表中移动给定项的顺序。
+- `CanMoveItem` – 如果给定的项目可以拖放重新排序，则通知集合视图。
+- `GetTargetContentOffset` -返回通过拖动重新排序操作将被移动的项的偏移量。
+- `GetTargetIndexPathForMove` -返回`indexPath`将拖放重新排序操作期间移动的项。
+- `MoveItem` – 在列表中移动给定项的顺序。
 
 ## <a name="summary"></a>总结
 

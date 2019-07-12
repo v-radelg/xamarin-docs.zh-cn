@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236712"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830675"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙盒处理 Xamarin.Mac 应用
 
@@ -226,7 +226,7 @@ public override void AwakeFromNib ()
 
 ### <a name="debugging-a-sandboxed-app"></a>调试沙盒应用程序
 
-调试器连接到 Xamarin.Mac 应用的整个 TCP，这意味着，默认情况下启用沙盒机制，时，无法连接到该应用程序，因此如果尝试运行该应用程序而无需启用适当的权限，你将收到一个错误 *"无法连接到调试器"*。 
+调试器连接到 Xamarin.Mac 应用的整个 TCP，这意味着，默认情况下启用沙盒机制，时，无法连接到该应用程序，因此如果尝试运行该应用程序而无需启用适当的权限，你将收到一个错误 *"无法连接到调试器"* 。 
 
 [![设置所需的选项](sandboxing-images/debug01.png "设置所需的选项")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -460,7 +460,7 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 
 1. 打开终端应用 (在`/Applications/Utilities`)。
 2. 打开 Finder 窗口到 Xamarin.Mac 应用的 Apple 签名版本。
-3. 类型`asctl container acl add -file `在终端窗口中。
+3. 类型`asctl container acl add -file`在终端窗口中。
 4. 从 Finder 窗口 Xamarin.Mac 应用的图标拖放在终端窗口。
 5. 该文件的完整路径将添加到终端中的命令。
 6. 按**Enter**以执行该命令。

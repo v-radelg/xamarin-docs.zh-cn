@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 1f3e6dcc81c75d12a1dbba8fefc62a85178c8c24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f6a7f8859340dcc8e48b6a4e6f56847168f4b71e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019189"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829763"
 ---
 # <a name="android-localization"></a>Android 本地化
 
@@ -192,7 +192,7 @@ var translated = Resources.GetQuantityString (
 
 中的更多详细信息中所述[Android 文档](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)。如果给定的语言不需要特殊处理时，那些`quantity`字符串将被忽略 (例如，英语仅使用`one`并`other`; 指定`zero`字符串会产生任何效果，将不使用它)。
 
-### <a name="images"></a>图像
+### <a name="images"></a>映像
 
 本地化的映像遵循相同的规则作为字符串文件： 应用程序中引用的所有图像应都置于**drawable**目录，因此没有回退。
 
@@ -252,7 +252,9 @@ adb shell setprop persist.sys.locale fr-CA;stop;sleep 5;start
 ### <a name="device-testing"></a>设备测试
 
 若要在设备上测试，更改所使用的语言**设置**应用。
-**提示：** 请记下的图标和菜单项的位置，以便可以还原到原始设置的语言。
+
+> [!TIP]
+> 请记下的图标和菜单项的位置，以便可以还原到原始设置的语言。
 
 
 ## <a name="summary"></a>总结

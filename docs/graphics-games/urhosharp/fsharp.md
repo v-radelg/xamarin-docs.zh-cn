@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 99e8f8bf04465d0d61086139ba9889eae141207e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6269a7f2fa097136f492657d0ba7c6a1f056c38c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160574"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832320"
 ---
 # <a name="programming-urhosharp-with-f"></a>与编程 UrhoSharpF#
 
@@ -97,20 +97,13 @@ type AppDelegate () =
         true
 ```
 
-`ApplicationOptions.Default`提供横向模式下应用程序的默认选项。 将这些信息传递`ApplicationOptions`的默认构造函数为你`Application`子类 (请注意，当您定义`HelloWorld`类，在行`inherit Application(o)`调用基类构造函数)。 
+`ApplicationOptions.Default`提供横向模式下应用程序的默认选项。 将这些信息传递`ApplicationOptions`的默认构造函数为你`Application`子类 (请注意，当您定义`HelloWorld`类，在行`inherit Application(o)`调用基类构造函数)。
 
-`Run`方法在`Application`启动程序。 它被定义为返回`int`，这可以输送到`ignore`。 
+`Run`方法在`Application`启动程序。 它被定义为返回`int`，这可以输送到`ignore`。
 
-生成的程序应如下所示：
+生成的程序应如以下屏幕截图所示：
 
-![](fsharp-images/helloworldfsharp.png "生成的程序应如下所示")
-
-
-
-
-
-
-
+![生成的程序的屏幕截图](fsharp-images/helloworldfsharp.png)
 
 ## <a name="related-links"></a>相关链接
 

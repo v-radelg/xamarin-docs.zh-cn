@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 8ad742607e506df436a5526d31621ac7636ac29b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 22ac6a3776e5fa5de2fc238efe90c435190e8005
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086954"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832071"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推送通知
 
@@ -21,7 +21,7 @@ ms.locfileid: "61086954"
 
 推送通知应保持简短，并且只能包含足够的数据来通知它应与服务器应用程序以获取更新的移动应用程序。 例如，当新的电子邮件到达时，服务器应用程序仅会通知新的电子邮件到达的移动应用程序。 通知不会包含新的电子邮件本身。 移动应用程序便可检索新的电子邮件服务器时适当
 
-是在 iOS 中的通知中心的推送*Apple 推送通知网关服务 (APNS)*。 这是由负责将通知从应用程序服务器路由到 iOS 设备的 Apple 提供的服务。
+是在 iOS 中的通知中心的推送*Apple 推送通知网关服务 (APNS)* 。 这是由负责将通知从应用程序服务器路由到 iOS 设备的 Apple 提供的服务。
 下图演示了适用于 iOS 推送通知拓扑：![](remote-notifications-in-ios-images/image4.png "此映像演示了适用于 iOS 推送通知拓扑")
 
 远程通知本身是 JSON 格式遵循格式的字符串，协议中指定[的通知负载](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)一部分[本地和推送通知编程指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)中[iOS 开发人员文档](https://developer.apple.com/devcenter/ios/index.action)。
@@ -67,7 +67,7 @@ Apple 维护两个环境的 APNS:*沙盒*和一个*生产*环境。 沙盒环境
 
     [![](remote-notifications-in-ios-images/image10new.png "为应用程序 ID 创建证书")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4.  选择是否想要使用的开发或生产证书：
+4. 选择是否想要使用的开发或生产证书：
 
     [![](remote-notifications-in-ios-images/image11new.png "选择开发或生产证书")](remote-notifications-in-ios-images/image11new.png#lightbox)
 

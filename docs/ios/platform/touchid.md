@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087763"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832309"
 ---
 # <a name="touch-id-in-xamarinios"></a>在 Xamarin.iOS touch ID
 
@@ -52,8 +52,8 @@ ms.locfileid: "61087763"
 
 |设备配置|策略评估|备份机制|
 |--- |--- |--- |
-|而无需密码的设备|无访问权限|None|
-|使用密码的设备|需要密码|None|
+|而无需密码的设备|无访问权限|无|
+|使用密码的设备|需要密码|无|
 |使用 Touch ID 的设备|首选 Touch ID|允许密码|
 
 安全 Enclave 内的所有操作可以相互都信任。 这意味着我们可以使用 Touch ID 身份验证结果授权密钥链项解密。 安全 Enclave 还会保留失败的 Touch ID 匹配，在其中种情况下用户将需要恢复为使用密码的计数器。
@@ -81,10 +81,10 @@ IOS 8 中，名为的新框架_本地身份验证_，支持此过程中设备的
 
 有许多事情我们应使用密钥链的 ACL 时请记住，下面列出了其中一些：
 
--   只能使用前台应用程序 – 如果您调用任何密钥链操作在后台线程的调用将失败。
--   添加和更新密钥链项可能需要身份验证。
--   如果请求在 keychain 中返回多个匹配项，可能需要身份验证。
--   ACL 受保护的项仅设备，并因此不同步或备份。
+- 只能使用前台应用程序 – 如果您调用任何密钥链操作在后台线程的调用将失败。
+- 添加和更新密钥链项可能需要身份验证。
+- 如果请求在 keychain 中返回多个匹配项，可能需要身份验证。
+- ACL 受保护的项仅设备，并因此不同步或备份。
 
 ### <a name="using-local-authentication-without-keychain-services"></a>使用本地身份验证不使用密钥链服务
 

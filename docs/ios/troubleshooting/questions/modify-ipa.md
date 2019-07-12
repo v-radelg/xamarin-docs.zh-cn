@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bf135755f64e4d17db2c187d58572c525dfee559
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bc9396a8cb667b8170c4b3511b9fe8423741e6b1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420865"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829930"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>可以将文件添加到或 IPA 文件在 Visual Studio 生成后删除文件？
 
@@ -32,7 +32,7 @@ ms.locfileid: "61420865"
 
 4.  打开一个新`Terminal.app`窗口。
 
-5.  类型`cd `Terminal.app 窗口，然后拖放到`generated session id`文件夹复制到`Terminal.app`窗口：
+5.  类型`cd`Terminal.app 窗口，然后拖放到`generated session id`文件夹复制到`Terminal.app`窗口：
 
     ![](modify-ipa-images/session-id-folder.png "在查找器中查找生成的会话 id 文件夹")
 
@@ -52,7 +52,7 @@ ms.locfileid: "61420865"
 
 12.  找到的行，包括`tool /usr/bin/codesign execution started with arguments: -v --force --sign`。
 
-13.  类型`/usr/bin/codesign `到步骤 8 中 Terminal.app 窗口。
+13.  类型`/usr/bin/codesign`到步骤 8 中 Terminal.app 窗口。
 
 14.  复制的所有参数开头`-v`中的行从步骤 12 中，并将其粘贴到 Terminal.app 窗口。
 

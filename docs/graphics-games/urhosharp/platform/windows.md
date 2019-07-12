@@ -6,12 +6,12 @@ ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 471029375d8a61a6c48d94a66d7836807e0da22f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 46a028da577a4c49e18cccb681351d7614bb196b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386306"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832646"
 ---
 # <a name="urhosharp-windows-support"></a>UrhoSharp Windows 支持
 
@@ -97,33 +97,33 @@ new MyGame().Run();
 创建一个子类`Window`和配置你的资产如下：
 
 ```csharp
-{
-            InitializeComponent();
-            GameTypes = typeof(Sample).GetTypeInfo().Assembly.GetTypes()
-                .Where(t => t.GetTypeInfo().IsSubclassOf(typeof(Application)) && t != typeof(Sample))
-                .Select((t, i) => new TypeInfo(t, $"{i + 1}. {t.Name}", ""))
-                .ToArray();
-            DataContext = this;
-            Loaded += (s, e) => RunGame (new MyGame ());
-        }
-
-        public void RunGame(TypeInfo value)
-        {
-            //at this moment, UWP supports assets only in pak files (see PackageTool)
-            currentApplication = UrhoSurface.Run(value.Type, "Data.pak");
-        }
+    {
+        InitializeComponent();
+        GameTypes = typeof(Sample).GetTypeInfo().Assembly.GetTypes()
+            .Where(t => t.GetTypeInfo().IsSubclassOf(typeof(Application)) && t != typeof(Sample))
+            .Select((t, i) => new TypeInfo(t, $"{i + 1}. {t.Name}", ""))
+            .ToArray();
+        DataContext = this;
+        Loaded += (s, e) => RunGame (new MyGame ());
     }
+
+    public void RunGame(TypeInfo value)
+    {
+        //at this moment, UWP supports assets only in pak files (see PackageTool)
+        currentApplication = UrhoSurface.Run(value.Type, "Data.pak");
+    }
+}
 ```
 
 ### <a name="example"></a>示例
 
 [完整示例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/UWP)
 
-## <a name="integrated-with-windowsforms"></a>与 Windows.Forms 集成
+## <a name="integrated-with-windows-forms"></a>与 Windows 窗体集成
 
 ### <a name="creating-a-project"></a>创建项目
 
-创建 Windows.Forms 项目、 引用 Urho NuGet 和确保找到资产 （包含的数据目录的目录）。
+创建一个 Windows 窗体项目、 引用 Urho NuGet 和确保找到资产 （包含的数据目录的目录）。
 
 ### <a name="configuring-and-launching-urho-from-windowsforms"></a>配置和启动从 Windows.Forms Urho
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3a8872ae54d7b1efb55ee71286ca5ea479616e0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357016"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830157"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>使用 Xamarin.iOS 中 NSUserActivity 搜索
 
@@ -27,14 +27,14 @@ ms.locfileid: "61357016"
 
 下列属性`NSUserActivity`用于支持应用搜索：
 
- - `EligibleForHandoff` -如果`true`，可以切换操作中使用此活动。
- - `EligibleForSearch` -如果`true`，此活动将添加到设备上的索引，并在搜索结果中显示。
- - `EligibleForPublicIndexing` -如果`true`，此活动将添加到 Apple 的基于云的索引，并提供给具有在其 iOS 设备尚未安装您的应用程序的用户 （通过搜索）。 请参阅[公共搜索索引](#public-search-indexing)部分获取更多详细信息。
- - `Title` -为您的活动提供标题，并在搜索结果中显示。 用户还可以搜索标题本身的文本。
- - `Keywords` – 是一个用来描述您的活动将建立索引并进行最终用户可搜索的字符串数组。
- - `ContentAttributeSet` – 是`CSSearchableItemAttributeSet`用来进一步描述您的活动详细信息和提供丰富搜索结果中的内容。
- - `ExpirationDate` – 如果你想用于才会显示到给定日期的活动，可以提供此处该日期。
- - `WebpageURL` – 如果可以在 web 上查看该活动，或者如果您的应用程序支持 Safari 的深层链接，可以设置以访问此处的链接。
+- `EligibleForHandoff` -如果`true`，可以切换操作中使用此活动。
+- `EligibleForSearch` -如果`true`，此活动将添加到设备上的索引，并在搜索结果中显示。
+- `EligibleForPublicIndexing` -如果`true`，此活动将添加到 Apple 的基于云的索引，并提供给具有在其 iOS 设备尚未安装您的应用程序的用户 （通过搜索）。 请参阅[公共搜索索引](#public-search-indexing)部分获取更多详细信息。
+- `Title` -为您的活动提供标题，并在搜索结果中显示。 用户还可以搜索标题本身的文本。
+- `Keywords` – 是一个用来描述您的活动将建立索引并进行最终用户可搜索的字符串数组。
+- `ContentAttributeSet` – 是`CSSearchableItemAttributeSet`用来进一步描述您的活动详细信息和提供丰富搜索结果中的内容。
+- `ExpirationDate` – 如果你想用于才会显示到给定日期的活动，可以提供此处该日期。
+- `WebpageURL` – 如果可以在 web 上查看该活动，或者如果您的应用程序支持 Safari 的深层链接，可以设置以访问此处的链接。
 
 ## <a name="nsuseractivity-quickstart"></a>NSUserActivity 快速入门
 
@@ -96,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>响应的活动
 
-以响应用户点击搜索结果 (`NSUserActivity`) 对于我们的应用程序，编辑**AppDelegate.cs**文件，然后重写`ContinueUserActivity`方法。 例如：
+以响应用户点击搜索结果 (`NSUserActivity`) 对于我们的应用程序，编辑**AppDelegate.cs**文件，然后重写`ContinueUserActivity`方法。 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

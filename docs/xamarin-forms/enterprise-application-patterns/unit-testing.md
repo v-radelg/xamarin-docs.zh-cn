@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d83cdce7076eac5a022863b583ecb01346ae440a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298965"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831083"
 ---
 # <a name="unit-testing-enterprise-apps"></a>单元测试的企业应用
 
@@ -170,7 +170,8 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 
 此单元测试将引发异常，因为[ `ListView` ](xref:Xamarin.Forms.ListView)控件不具有名为的事件`OnItemTapped`。 `Assert.Throws<T>`方法是泛型方法其中`T`是预期异常的类型。 将参数传递给`Assert.Throws<T>`方法是一个 lambda 表达式，将引发的异常。 因此，单元测试将传递，提供 lambda 表达式引发`ArgumentException`。
 
->💡 **提示**:避免编写检查异常消息字符串的单元测试。 随着时间推移，可能会更改异常消息字符串，因此依赖于它们的存在的单元测试它们被认为是做。
+> [!TIP]
+> 避免编写检查异常消息字符串的单元测试。 随着时间推移，可能会更改异常消息字符串，因此依赖于它们的存在的单元测试它们被认为是做。
 
 ### <a name="testing-validation"></a>测试验证
 

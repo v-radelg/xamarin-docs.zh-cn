@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 38c0ece3e8f0361f3c891713e53b033351512f94
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61417369"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829911"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>适用于 Xamarin.iOS 的故障排除技巧 
 
@@ -109,7 +109,7 @@ public partial class MyImageView : UIView {
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>{Foo} 类型不包含用于定义`GetNativeField' and no extension method `GetNativeField 的类型找不到 {Foo}
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>{Foo} 类型不包含用于定义`GetNativeField`扩展方法和`GetNativeField`的类型找不到 {Foo}
 
 如果你收到此错误在设计器生成的文件 (*。 xib.designer.cs)，这意味着两个条件之一：
 
@@ -389,7 +389,8 @@ Visual Studio for Mac 中的新项目作为其默认 SDK 设置，使用最早�
 ```
 ...则可能在模拟器应用程序目录中有一个 （或多个） 过时的程序集。 由于 Apple iOS 模拟器中添加并更新文件，但永远不会将其删除，则可能存在这样的程序集。 如果发生这种情况则最简单的解决方案是从模拟器菜单中选择"重置和内容和设置..."。   
 
-**警告：** 这将从模拟器删除所有文件、 应用程序和数据。   下一次执行应用程序时，Visual Studio for Mac 会将其部署到模拟器，并且将会导致故障发生任何旧的、 陈旧程序集。
+> [!WARNING]
+> 这将从模拟器中删除所有文件、 应用程序和数据。   下一次执行应用程序时，Visual Studio for Mac 会将其部署到模拟器，并且将会导致故障发生任何旧的、 陈旧程序集。
 
 ## <a name="simulator-hangs-during-application-installation"></a>在应用程序安装过程中的模拟器挂起
 

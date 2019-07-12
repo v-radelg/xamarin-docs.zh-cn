@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62b577393a498587ee2e2e899d20bfeec7988c4e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034773"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832373"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS Siri 快捷方式
 
@@ -39,7 +39,7 @@ iOS 12 添加 Siri 快捷方式，从而允许所有类型的应用程序以向 
 若要使用示例应用程序：
 
 - 安装和运行 Soup Chef 示例应用 iOS 12 模拟器上或[设备](#testing-on-device)。
-- 单击 **+** 右上方以创建新订单中的按钮。 
+- 单击 **+** 右上方以创建新订单中的按钮。
 - 选择一种类型的 soup，指定一个数量和选项，然后点击**下订单**。
 - 上**订单历史记录**屏幕上，点击新创建的顺序，以便查看其详细信息。
 - 在订单详细信息屏幕的底部，点击**将添加到 Siri**。
@@ -218,7 +218,7 @@ void HandleUserActivity()
 - 响应**属性**可用于自定义消息发送回用户。 **OrderSoup**意向响应具有**soup**并**waitTime**属性。
 - **响应模板**指定各种可用于指示状态意向的任务完成后的成功和失败消息。
 - **成功**指示成功的响应，应选择复选框。
- - **OrderSoupIntent**成功响应使用**soup**并**waitTime**属性来提供友好且有用的消息描述当 soup 顺序将为准备就绪。
+- **OrderSoupIntent**成功响应使用**soup**并**waitTime**属性来提供友好且有用的消息描述当 soup 顺序将为准备就绪。
 
 ### <a name="generating-code-for-the-custom-intent"></a>生成自定义意向的代码
 

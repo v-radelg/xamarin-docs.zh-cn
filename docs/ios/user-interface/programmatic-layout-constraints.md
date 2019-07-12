@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170754"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832053"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>在 Xamarin.iOS 中编程布局约束
 
@@ -51,7 +51,7 @@ _本指南介绍了使用 iOS 中的自动布局约束C#而不是创建在 iOS �
 - **ConstraintGreaterThanOrEqualTo** -定义的关系其中`first attribute >= second attribute + [constant]`可能提供与`constant`偏移值。
 - **ConstraintLessThanOrEqualTo** -定义的关系其中`first attribute <= second attribute + [constant]`可能提供与`constant`偏移值。
 
-例如：
+例如:
 
 ```csharp
 // Get the parent view's layout
@@ -95,7 +95,7 @@ PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Activ
 
 ### <a name="layout-constraints"></a>布局约束
 
-您可以通过直接构造来手动添加自动布局约束`NSLayoutConstraint`在C#代码。 与使用布局的定位点，则必须指定每个参数的值，即使它不会影响上所定义的约束。 因此，您最终会生成大量难以阅读，样板代码。 例如：
+您可以通过直接构造来手动添加自动布局约束`NSLayoutConstraint`在C#代码。 与使用布局的定位点，则必须指定每个参数的值，即使它不会影响上所定义的约束。 因此，您最终会生成大量难以阅读，样板代码。 例如:
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -119,10 +119,10 @@ NSLayoutConstraint.Create (OrangeView, NSLayoutAttribute.Height, NSLayoutRelatio
 可视格式语言，可使用类似于提供约束创建的可视表示形式的字符串的 ASCII 图文定义约束。 这有以下优点和缺点：
 
 - 可视格式语言强制实施仅有效约束创建。
- - 自动布局输出到控制台使用可视格式语言，因此调试消息将类似于代码用于创建该约束的约束。
- - 可视格式语言，可在同一时间使用非常简洁的表达式创建多个约束。
- - 由于没有可视格式语言字符串没有编译端验证，可以仅在运行时发现问题。
- - 由于 Visual 格式语言强调通过完整性某些约束类型不能使用它 （例如比率） 中创建可视化效果。
+- 自动布局输出到控制台使用可视格式语言，因此调试消息将类似于代码用于创建该约束的约束。
+- 可视格式语言，可在同一时间使用非常简洁的表达式创建多个约束。
+- 由于没有可视格式语言字符串没有编译端验证，可以仅在运行时发现问题。
+- 由于 Visual 格式语言强调通过完整性某些约束类型不能使用它 （例如比率） 中创建可视化效果。
 
 使用可视格式语言创建约束时，请执行以下步骤：
 

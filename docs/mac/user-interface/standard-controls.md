@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4e236f2517482665406008d0b86af487e2d799dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61212164"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831906"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>在 Xamarin.Mac 中标准控件
 
@@ -93,7 +93,7 @@ Apple 建议时使用的 AppKit 控件的以下准则：
 
 [![](standard-controls-images/edit04.png "设置约束")](standard-controls-images/edit04.png#lightbox)
 
-使用**红色 I 型光标**的外部**Autoresizing**框_记忆棒_将控件与给定 (x，y) 的位置。 例如： 
+使用**红色 I 型光标**的外部**Autoresizing**框_记忆棒_将控件与给定 (x，y) 的位置。 例如: 
 
 [![](standard-controls-images/edit05.png "编辑约束")](standard-controls-images/edit05.png#lightbox)
 
@@ -257,7 +257,7 @@ AppKit.NSSplitView SplitView { get; set; }
 @property (nonatomic, retain) IBOutlet NSSplitView *SplitView;
 ```
 
-正如您所看到的 Visual Studio for Mac 会侦听对更改`.h`文件，然后再自动同步这些更改中相应`.designer.cs`文件以将它们公开给您的应用程序。 你可能注意`SplitViewController.designer.cs`是一个分部类，以便 Visual Studio for Mac 不必修改`SplitViewController.cs `它会覆盖我们已对类进行任何更改。
+正如您所看到的 Visual Studio for Mac 会侦听对更改`.h`文件，然后再自动同步这些更改中相应`.designer.cs`文件以将它们公开给您的应用程序。 你可能注意`SplitViewController.designer.cs`是一个分部类，以便 Visual Studio for Mac 不必修改`SplitViewController.cs`它会覆盖我们已对类进行任何更改。
 
 通常情况下将永远不需要打开`SplitViewController.designer.cs`自己，此处提供仅为了。
 
@@ -280,7 +280,7 @@ ButtonOutlet.Activated += (sender, e) => {
 };
 ```
 
-已通过公开的按钮**操作**、`public partial`与在 Xcode 中选择的名称会自动为您创建方法。 若要响应**操作**，完成类中的分部方法的**操作**上定义。 例如：
+已通过公开的按钮**操作**、`public partial`与在 Xcode 中选择的名称会自动为您创建方法。 若要响应**操作**，完成类中的分部方法的**操作**上定义。 例如:
 
 ```csharp
 partial void ButtonAction (Foundation.NSObject sender) {
@@ -483,7 +483,7 @@ AppKit 提供了几种类型的选择控件可以在你的用户界面设计中�
 
 [![](standard-controls-images/select01.png "示例选择控件")](standard-controls-images/select01.png#lightbox)
 
-有两种方法来跟踪在所选内容控件时的用户交互，通过将其作为公开**操作**。 例如：
+有两种方法来跟踪在所选内容控件时的用户交互，通过将其作为公开**操作**。 例如:
 
 ```csharp
 partial void SegmentButtonPressed (Foundation.NSObject sender) {
@@ -491,7 +491,7 @@ partial void SegmentButtonPressed (Foundation.NSObject sender) {
 }
 ```
 
-或通过将附加**委托**到`Activated`事件。 例如：
+或通过将附加**委托**到`Activated`事件。 例如:
 
 ```csharp
 TickedSlider.Activated += (sender, e) => {
@@ -499,7 +499,7 @@ TickedSlider.Activated += (sender, e) => {
 };
 ```
 
-若要设置或读取所选内容控件的值，请使用`IntValue`属性。 例如：
+若要设置或读取所选内容控件的值，请使用`IntValue`属性。 例如:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.IntValue);
@@ -536,13 +536,13 @@ LevelIndicator.Activated += (sender, e) => {
 };
 ```
 
-若要读取或设置指示器控件的值，请使用`DoubleValue`属性。 例如：
+若要读取或设置指示器控件的值，请使用`DoubleValue`属性。 例如:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
 ```
 
-显示时，不确定和异步进度指示器等应进行动画处理。 使用`StartAnimation`方法以显示时启动动画。 例如：
+显示时，不确定和异步进度指示器等应进行动画处理。 使用`StartAnimation`方法以显示时启动动画。 例如:
 
 ```csharp
 Indeterminate.StartAnimation (this);
@@ -571,7 +571,7 @@ AppKit 提供了几种类型的文本控件可以在你的用户界面设计中�
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-对于显示或编辑数字值的字段，可以使用`IntValue`属性。 例如：
+对于显示或编辑数字值的字段，可以使用`IntValue`属性。 例如:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);

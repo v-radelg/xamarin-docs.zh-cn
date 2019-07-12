@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 9deb685c92092ceb0e1c775a1e53ac1bce5a4a57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fbb4047b95fd70f829cd79e4ea26b2958273297
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299965"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831179"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企业应用开发简介
 
@@ -26,7 +26,7 @@ ms.locfileid: "61299965"
 
 许多企业应用非常复杂，需多名开发人员。 决定应用的设计方式是一项重大挑战，因为要允许多名开发人员独立且有效地开发应用的不同部分，同时确保将各部分集成到应用中时，各部分能无缝结合。
 
-采用传统的设计和构建方法会得到所谓的单一应用，其中各组件紧密耦合，不存在明确的界限。 通常情况下，使用这种单一方法会增加应用的维护难度，降低维护效率，因为要在不破坏应用中其他组件的情况下解决 bug 十分困难，并且可能难以添加新功能或替换现有功能。
+采用传统的设计和构建方法会得到所谓的单一  应用，其中各组件紧密耦合，不存在明确的界限。 通常情况下，使用这种单一方法会增加应用的维护难度，降低维护效率，因为要在不破坏应用中其他组件的情况下解决 bug 十分困难，并且可能难以添加新功能或替换现有功能。
 
 应对这些挑战的一种有效补救措施是将应用划分为离散、松散耦合的组件，这些组件可轻松集成到应用中。 这样的方法有多个优点：
 
@@ -72,7 +72,7 @@ ms.locfileid: "61299965"
 -   使用 Angular 2 和 Typescript 开发的单页应用程序 (SPA)。 采用此方法开发 Web 应用程序时，避免了每执行一次操作都要往返于服务器一次。
 -   使用 Xamarin.Forms 开发的移动应用，支持 iOS、Android 和通用 Windows 平台 (UWP)。
 
-有关 web 应用程序的信息，请参阅[《使用 ASP.NET Core 和 Microsoft Azure 构建并开发现代化 Web 应用程序》](http://aka.ms/WebAppEbook)电子书。
+有关 web 应用程序的信息，请参阅[《使用 ASP.NET Core 和 Microsoft Azure 构建并开发现代化 Web 应用程序》](https://aka.ms/WebAppEbook)电子书。
 
 示例应用程序包括以下后端服务：
 

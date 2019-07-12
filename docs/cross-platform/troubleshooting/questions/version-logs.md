@@ -7,12 +7,12 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: ee4b39aed64d7339bd561cccc49a2959a6daba5c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e389bc33538ec3c3d36eb749c746f5a4723aab3c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61341316"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830357"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>在哪里可以找到我的版本信息和日志？
 
@@ -66,11 +66,11 @@ ms.locfileid: "61341316"
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-“工具”>“打开 Android SDK 管理器”
+“工具”>“打开 Android SDK 管理器” 
 
 #### <a name="visual-studio"></a>Visual Studio
 
-“工具”>“Android”>“打开 Android SDK 管理器...”
+“工具”>“Android”>“打开 Android SDK 管理器...” 
 
 ## <a name="a-idide-and-installer-logs-nameide-and-installer-logs-ide-and-installer-logs"></a><a id="ide-and-installer-logs" name="ide-and-installer-logs" />IDE 和安装程序日志
 

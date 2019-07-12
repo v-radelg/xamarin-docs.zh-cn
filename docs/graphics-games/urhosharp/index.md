@@ -6,12 +6,12 @@ ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c008711a12729779312ae41388495e2058b4f27b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 06f1372d712f23078d120be824a01627d657d0a1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288476"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832567"
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp-3D/2D 引擎
 
@@ -21,7 +21,7 @@ _UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程�
 
 作为一个 NuGet 包，可以在 Visual Studio 或 Visual Studio for Mac 安装，可用于面向以下平台的任何分发 UrhoSharp:Android、 MacOS、 iOS、 tvOS 和 Windows。
 
-## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[大致了解 UrhoSharp](~/graphics-games/urhosharp/introduction.md)
+## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[简介 UrhoSharp](~/graphics-games/urhosharp/introduction.md)
 
 本文提供了 UrhoSharp 和三维可视化效果和简单的 3D 游戏中使用其功能的高级概述。
 
@@ -33,13 +33,9 @@ _UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程�
 
 这些指南介绍 Urho 的安装程序说明了每个目标平台上，并说明方法将 Urho 集成到现有的 Android 和 iOS 应用程序。
 
-## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[与编程 UrhoSharpF#](~/graphics-games/urhosharp/fsharp.md)
+## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[使用 F# 编程 UrhoSharp](~/graphics-games/urhosharp/fsharp.md)
 
 本指南介绍如何通过创建简单"Hello，World ！" UrhoSharp 解决方案使用F#和 Visual Studio for mac。
-
-## <a name="api-documentationhttpsdeveloperxamarincomapirooturho"></a>[API 文档](https://developer.xamarin.com/api/root/Urho/)
-
-您可以浏览[UrhoSharp 的 API 文档](https://developer.xamarin.com/api/root/Urho/)上我们的网站。
 
 ## <a name="samples"></a>示例
 
@@ -60,4 +56,3 @@ _UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程�
 ## <a name="license"></a>许可证
 
 有可用在 UrhoSharp 许可证 [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
-

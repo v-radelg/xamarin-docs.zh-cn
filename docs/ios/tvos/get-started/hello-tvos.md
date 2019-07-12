@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951460"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832482"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>你好，tvOS 快速入门指南
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-我们需要使用`ViewDidLoad `，而不是等其他方法`Initialize`，因为`ViewDidLoad `称为*后*OS 已加载并实例化从用户界面`.storyboard`文件。 如果我们尝试访问标签控件前的`.storyboard`、 文件已完全加载和实例化，则会得到`NullReferenceException`错误由于会尚未创建标签控件。
+我们需要使用`ViewDidLoad`，而不是等其他方法`Initialize`，因为`ViewDidLoad`称为*后*OS 已加载并实例化从用户界面`.storyboard`文件。 如果我们尝试访问标签控件前的`.storyboard`、 文件已完全加载和实例化，则会得到`NullReferenceException`错误由于会尚未创建标签控件。
 
 接下来，我们需要添加代码以响应用户单击按钮。 将以下代码添加到分部类为我们创建：
 
@@ -453,8 +453,8 @@ partial void Clicked (UIButton sender)
 若要运行该应用程序，我们有三个选项：
 
 -  按 **⌘+Enter**。
--  在“运行”菜单中，选择“调试”。
--  单击 Visual Studio for Mac 工具栏中的“播放”按钮（位于“解决方案资源管理器”上方）。
+-  在“运行”  菜单中，选择“调试”  。
+-  单击 Visual Studio for Mac 工具栏中的“播放”  按钮（位于“解决方案资源管理器”  上方）。
 
 （如果它尚未生成），将生成应用程序、 将启动在调试模式下，tvOS 模拟器中的启动和应用程序将启动并显示主界面窗口：
 

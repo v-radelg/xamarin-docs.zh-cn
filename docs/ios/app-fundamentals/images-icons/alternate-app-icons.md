@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc4ef6eb16893cc1df0d980d27af8589a280e933
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170873"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832425"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>在 Xamarin.iOS 中的备用的应用图标
 
@@ -20,10 +20,10 @@ _本文介绍如何在 Xamarin.iOS 中使用备用的应用图标。_
 
 Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增强功能：
 
- - `ApplicationIconBadgeNumber` -获取或设置应用图标徽章中 Springboard。
- - `SupportsAlternateIcons` -如果`true`应用具有一组替代的图标。
- - `AlternateIconName` -返回当前选定的备用图标的名称或`null`如果使用的主图标。
- - `SetAlternameIconName` -使用此方法以切换到给定替换图标的应用程序的图标。
+- `ApplicationIconBadgeNumber` -获取或设置应用图标徽章中 Springboard。
+- `SupportsAlternateIcons` -如果`true`应用具有一组替代的图标。
+- `AlternateIconName` -返回当前选定的备用图标的名称或`null`如果使用的主图标。
+- `SetAlternameIconName` -使用此方法以切换到给定替换图标的应用程序的图标。
 
 ![](alternate-app-icons-images/icons04.png "示例警报，如果应用程序改变它的图标")
 
@@ -55,7 +55,7 @@ Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增�
 
 请执行以下操作：
 
-1. 在“解决方案资源管理器”中，双击“Info.plist”文件，将其打开进行编辑。
+1. 在“解决方案资源管理器”  中，双击“Info.plist”  文件，将其打开进行编辑。
 2. 切换到**源**视图。
 3. 添加**捆绑包图标**键，将保留**类型**设置为**字典**。
 4. 添加`CFBundleAlternateIcons`项并将设置**类型**到**字典**。
@@ -111,7 +111,7 @@ Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增�
 
 在使用包含在 Xamarin.iOS 项目中的图标图像并**Info.plist**正确配置的文件，开发人员可以使用添加到 iOS 10.3 的许多新功能之一来控制应用的图标。
 
-`SupportsAlternateIcons`属性的`UIApplication`类允许开发人员，确定应用是否支持备用的图标。 例如：
+`SupportsAlternateIcons`属性的`UIApplication`类允许开发人员，确定应用是否支持备用的图标。 例如:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-`ApplicationIconBadgeNumber`属性的`UIApplication`类允许开发人员在获取或设置当前的应用图标的徽章数 Springboard。 默认值为零 (0)。 例如：
+`ApplicationIconBadgeNumber`属性的`UIApplication`类允许开发人员在获取或设置当前的应用图标的徽章数 Springboard。 默认值为零 (0)。 例如:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-`AlternateIconName`的属性`UIApplication`类，开发人员可获取当前所选的备用应用图标的名称或它将返回`null`如果应用正在使用主图标。 例如：
+`AlternateIconName`的属性`UIApplication`类，开发人员可获取当前所选的备用应用图标的名称或它将返回`null`如果应用正在使用主图标。 例如:
 
 ```csharp
 // Get the name of the currently selected alternate

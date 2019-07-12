@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61371376"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831547"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS HomeKit
 
@@ -104,7 +104,7 @@ Apple 提供 HomeKit 附件模拟器作为单独的下载从 Xcode，因此将�
 1. 从应用程序文件夹中，启动 HomeKit 附件模拟器： 
 
     [![](homekit-images/simulator02.png "HomeKit 附件模拟器")](homekit-images/simulator02.png#lightbox)
-2. 单击 **+** 按钮，然后选择**新附件...**: 
+2. 单击 **+** 按钮，然后选择**新附件...** : 
 
     [![](homekit-images/simulator03.png "添加新附件")](homekit-images/simulator03.png#lightbox)
 3. 填写有关新附件的信息并单击**完成**按钮： 
@@ -384,77 +384,77 @@ HomeKit 附件模拟器中可以下找到此编号**安装程序代码**字段�
 
 `HMCharacteristicType`枚举提供了一组特征元数据值可以定义或修改，如下所示：
 
- - AdminOnlyAccess
- - AirParticulateDensity
- - AirParticulateSize
- - AirQuality
- - AudioFeedback
- - BatteryLevel
- - 亮度
- - CarbonDioxideDetected
- - CarbonDioxideLevel
- - CarbonDioxidePeakLevel
- - CarbonMonoxideDetected
- - CarbonMonoxideLevel
- - CarbonMonoxidePeakLevel
- - ChargingState
- - ContactState
- - CoolingThreshold
- - CurrentDoorState
- - CurrentHeatingCooling
- - CurrentHorizontalTilt
- - CurrentLightLevel
- - CurrentLockMechanismState
- - CurrentPosition
- - CurrentRelativeHumidity
- - CurrentSecuritySystemState
- - CurrentTemperature
- - CurrentVerticalTilt
- - FirmwareVersion
- - HardwareVersion
- - HeatingCoolingStatus
- - HeatingThreshold
- - HoldPosition
- - 色调
- - Identify
- - InputEvent
- - LeakDetected
- - LockManagementAutoSecureTimeout
- - LockManagementControlPoint
- - LockMechanismLastKnownAction
- - 日志
- - 制造商
- - 模型
- - MotionDetected
- - 名称
- - ObstructionDetected
- - OccupancyDetected
- - OutletInUse
- - OutputState
- - PositionState
- - PowerState
- - RotationDirection
- - RotationSpeed
- - 饱和度
- - SerialNumber
- - SmokeDetected
- - SoftwareVersion
- - StatusActive
- - StatusFault
- - StatusJammed
- - StatusLowBattery
- - StatusTampered
- - TargetDoorState
- - TargetHeatingCooling
- - TargetHorizontalTilt
- - TargetLockMechanismState
- - TargetPosition
- - TargetRelativeHumidity
- - TargetSecuritySystemState
- - TargetTemperature
- - TargetVerticalTilt
- - TemperatureUnits
- - Version
+- AdminOnlyAccess
+- AirParticulateDensity
+- AirParticulateSize
+- AirQuality
+- AudioFeedback
+- BatteryLevel
+- 亮度
+- CarbonDioxideDetected
+- CarbonDioxideLevel
+- CarbonDioxidePeakLevel
+- CarbonMonoxideDetected
+- CarbonMonoxideLevel
+- CarbonMonoxidePeakLevel
+- ChargingState
+- ContactState
+- CoolingThreshold
+- CurrentDoorState
+- CurrentHeatingCooling
+- CurrentHorizontalTilt
+- CurrentLightLevel
+- CurrentLockMechanismState
+- CurrentPosition
+- CurrentRelativeHumidity
+- CurrentSecuritySystemState
+- CurrentTemperature
+- CurrentVerticalTilt
+- FirmwareVersion
+- HardwareVersion
+- HeatingCoolingStatus
+- HeatingThreshold
+- HoldPosition
+- 色调
+- Identify
+- InputEvent
+- LeakDetected
+- LockManagementAutoSecureTimeout
+- LockManagementControlPoint
+- LockMechanismLastKnownAction
+- 日志
+- 制造商
+- 模型
+- MotionDetected
+- 名称
+- ObstructionDetected
+- OccupancyDetected
+- OutletInUse
+- OutputState
+- PositionState
+- PowerState
+- RotationDirection
+- RotationSpeed
+- 饱和度
+- SerialNumber
+- SmokeDetected
+- SoftwareVersion
+- StatusActive
+- StatusFault
+- StatusJammed
+- StatusLowBattery
+- StatusTampered
+- TargetDoorState
+- TargetHeatingCooling
+- TargetHorizontalTilt
+- TargetLockMechanismState
+- TargetPosition
+- TargetRelativeHumidity
+- TargetSecuritySystemState
+- TargetTemperature
+- TargetVerticalTilt
+- TemperatureUnits
+- Version
 
 ### <a name="working-with-a-characteristics-value"></a>使用特性的值
 
@@ -667,7 +667,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 本文只讨论了用于处理与 HomeKit 附件中的 Xamarin.iOS 应用程序所需的基本功能。 但是，有几个高级的功能 HomeKit，且不在此介绍：
 
 - **聊天室**-启用 HomeKit 附件 （可选） 可以组织到由最终用户的聊天室。 这样便于用户了解和使用的方式存在附件 HomeKit。 有关创建和维护聊天室的详细信息，请参阅 Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom)文档。
-- **区域**-聊天室可以根据需要组织成区域由最终用户。 区域是指用户可能会将作为单个单元的聊天室的集合。 例如：楼上 Downstairs 或地下室。 同样，这允许 HomeKit 提供和使用附件对最终用户有意义的方式。 有关创建和维护区域的详细信息，请参阅 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文档。
+- **区域**-聊天室可以根据需要组织成区域由最终用户。 区域是指用户可能会将作为单个单元的聊天室的集合。 例如:楼上 Downstairs 或地下室。 同样，这允许 HomeKit 提供和使用附件对最终用户有意义的方式。 有关创建和维护区域的详细信息，请参阅 Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone)文档。
 - **操作和操作设置**-操作修改附件服务特征和可以分组到集中。 操作集充当控件的附件的组并协调其操作的脚本。 例如，"观看电视节目"脚本可能会关闭 blinds、 dim 系统正常运行，并打开电视和其声音系统。 有关创建和维护操作和操作集的详细信息，请参阅 Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction)并[HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet)文档。
 - **触发器**-触发器可以激活一个或多个操作时，设置一组给定的条件已满足。 例如，打开 portch light 并在收到外部深色锁所有外部库门。 有关创建和维护触发器的详细信息，请参阅 Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger)文档。
 
@@ -677,9 +677,9 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 提交 HomeKit 之前到 iTunes Connect 的 iTunes 应用商店中发布的已启用的 Xamarin.iOS 应用程序确保遵循适用于启用 HomeKit 应用 Apple 准则：
 
- - 应用程序的主要目的_必须_如果使用 HomeKit 框架是家庭自动化。
- - 应用程序的市场营销文本必须通知用户正在使用 HomeKit，他们必须提供隐私策略。
- - 收集用户信息或用于广告目的使用 HomeKit 是严格禁止的。
+- 应用程序的主要目的_必须_如果使用 HomeKit 框架是家庭自动化。
+- 应用程序的市场营销文本必须通知用户正在使用 HomeKit，他们必须提供隐私策略。
+- 收集用户信息或用于广告目的使用 HomeKit 是严格禁止的。
 
 对于完整查看准则，请参阅 Apple[应用商店查看准则](https://developer.apple.com/app-store/review/guidelines/)。
 

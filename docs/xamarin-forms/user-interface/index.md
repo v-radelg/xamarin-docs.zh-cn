@@ -7,18 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: fa53d7253862e696d23289fe3c57f215b29da6c5
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649569"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831102"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 用户界面视图
 
 [![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/FormsGallery/)
 
 _如何使用 Xamarin.Forms 提供的视图_
+
+## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
+
+`ActivityIndicator`是动画的控件，向用户指示应用程序所从事的耗时较长的活动，而无需授予任何可能的进度。
 
 ## <a name="animationanimationindexmd"></a>[动画](animation/index.md)
 
@@ -84,15 +88,19 @@ Xamarin.Forms 提供了显示的数据的滚动行的列表视图控件。 控�
 
 添加映射需要额外的 NuGet 包下载和一些特定于平台的配置。 完成配置后，可以在只需几行代码中添加地图和 pin 标记。
 
-## <a name="pickerpickerindexmd"></a>[Picker](picker/index.md)
+## <a name="pickerpickerindexmd"></a>[选取器](picker/index.md)
 
 [ `Picker` ](xref:Xamarin.Forms.Picker)视图是一个用于选择文本项中的数据列表控件。
 
-## <a name="sliderslidermd"></a>[Slider](slider.md)
+## <a name="progressbarprogressbarmd"></a>[进度栏](progressbar.md)
+
+[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)是一个控件，以可视方式表示为水平条填充的浮点型属性所基于的进度。
+
+## <a name="sliderslidermd"></a>[滑块](slider.md)
 
 `Slider`允许用户从连续范围选择的数字值。
 
-## <a name="steppersteppermd"></a>[Stepper](stepper.md)
+## <a name="steppersteppermd"></a>[步进器](stepper.md)
 
 `Stepper`允许用户从一系列值中选择的数字值。 它包含两个按钮带有负号和加号。 以增量方式将操作的两个按钮更改所选的值。
 
@@ -100,7 +108,7 @@ Xamarin.Forms 提供了显示的数据的滚动行的列表视图控件。 控�
 
 字体、 颜色和其他属性可以分组为样式，它们可以在控件、 布局或使用 ResourceDictionaries 的整个应用程序之间共享。
 
-## <a name="switchswitchmd"></a>[Switch](switch.md)
+## <a name="switchswitchmd"></a>[切换](switch.md)
 
 `Switch`是一种按钮可以打开和关闭状态之间切换。
 

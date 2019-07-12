@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 0c84f530f759285c2cfc71f60d7b6f80fba6a03d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a50a2014e28becacb2c9f4965b7f3377be57ab16
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018752"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830322"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>远程通知使用 Firebase Cloud Messaging
 
@@ -88,7 +88,7 @@ Firebase Cloud Messaging 取决于 Google Play 服务，因为[Xamarin Google Pl
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中，右键单击**引用 > 管理 NuGet 包...**.
+1.  在 Visual Studio 中，右键单击**引用 > 管理 NuGet 包...** .
 
 2.  单击**浏览**选项卡并搜索**Xamarin.GooglePlayServices.Base**。
 
@@ -98,7 +98,7 @@ Firebase Cloud Messaging 取决于 Google Play 服务，因为[Xamarin Google Pl
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac 中，右键单击**包 > 添加包...**.
+1.  在 Visual Studio for Mac 中，右键单击**包 > 添加包...** .
 
 2.  搜索**Xamarin.GooglePlayServices.Base**。
 
@@ -125,7 +125,7 @@ using Android.Gms.Common;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中，右键单击**引用 > 管理 NuGet 包...**.
+1.  在 Visual Studio 中，右键单击**引用 > 管理 NuGet 包...** .
 
 2. 搜索**Xamarin.Firebase.Messaging**。
 
@@ -135,7 +135,7 @@ using Android.Gms.Common;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac 中，右键单击**包 > 添加包...**.
+1.  在 Visual Studio for Mac 中，右键单击**包 > 添加包...** .
 
 2.  搜索**Xamarin.Firebase.Messaging**。
 
@@ -682,6 +682,7 @@ using System.Collections.Generic;
 添加以下方法`MyFirebaseMessagingService`:
 
 <a name="sendnotification-method"></a>
+
 ```csharp
 void SendNotification(string messageBody, IDictionary<string, string> data)
 {
@@ -711,7 +712,7 @@ void SendNotification(string messageBody, IDictionary<string, string> data)
 
 为了区分从后台通知此通知，此代码将标记通知图标不同于应用程序图标。 将文件添加[ic\_stat\_ic\_notification.png](remote-notifications-with-fcm-images/ic-stat-ic-notification.png)到**资源/drawable**并将其包含在**FCMClient**项目.
 
-`SendNotification`方法使用` NotificationCompat.Builder`若要创建通知，和`NotificationManagerCompat`用于启动该通知。 通知持有`PendingIntent`，将允许用户打开应用并查看传入的字符串的内容`messageBody`。 有关详细信息`NotificationCompat.Builder`，请参阅[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)。
+`SendNotification`方法使用`NotificationCompat.Builder`若要创建通知，和`NotificationManagerCompat`用于启动该通知。 通知持有`PendingIntent`，将允许用户打开应用并查看传入的字符串的内容`messageBody`。 有关详细信息`NotificationCompat.Builder`，请参阅[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
 调用`SendNotification`方法末尾处`OnMessageReceived`方法：
 
@@ -771,7 +772,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-若要取消注册从 FCM 完全设备，删除的实例 ID，通过调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类。 例如：
+若要取消注册从 FCM 完全设备，删除的实例 ID，通过调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类。 例如:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

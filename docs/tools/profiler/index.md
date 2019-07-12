@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 327070f723aabf8d5d07f4f86580b69ffb5917a7
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: d80363cd339d5d3177ae063df2a20d7938f59169
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675288"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832404"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -67,7 +67,7 @@ Xamarin Profiler 为开发人员提供了一种方式配置文件中的应用程
 
 Xamarin Profiler 的支持均可在以下平台上：
 
- - Visual Studio for Mac (macOS，使用企业许可证)
+- Visual Studio for Mac (macOS，使用企业许可证)
     - Android
         - 设备和仿真程序
     - iOS
@@ -76,7 +76,7 @@ Xamarin Profiler 的支持均可在以下平台上：
         - 设备和模拟器
     - Mac
 
- - Visual Studio (仅**企业**版本)
+- Visual Studio (仅**企业**版本)
     - Android
         - 设备和仿真程序
     - iOS [实验性]
@@ -94,7 +94,7 @@ Xamarin Profiler 的支持均可在以下平台上：
 
 您可以成功进行分析您的应用程序之前，需要允许在应用程序的项目选项中使用性能分析。
 
- - iOS:
+- iOS:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -110,7 +110,7 @@ Xamarin Profiler 的支持均可在以下平台上：
 
 -----
 
- - Android:
+- Android:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -216,7 +216,7 @@ Xamarin Profiler 是如下图所示的五个部分组成：
 
 有不同的数据视图中的分配工具，允许开发人员能够分析其应用程序是如何使用并释放内存。 这些视图如下所述：
 
- -   **分配**– 这将显示所有分配的列表和类名按其进行分组。 这提供了精彩概述类和方法正在使用、 使用频率和使用的类的总体大小。 双击一个类，将显示分配的内存： 
+- **分配**– 这将显示所有分配的列表和类名按其进行分组。 这提供了精彩概述类和方法正在使用、 使用频率和使用的类的总体大小。 双击一个类，将显示分配的内存： 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -230,7 +230,7 @@ Xamarin Profiler 是如下图所示的五个部分组成：
 
 分配的检查器视图的堆栈跟踪和路径提供筛选和分组对象、 内存分配，提供统计信息和选项顶部分配，以及视图到根。
 
- -   **调用关系树**– 这在应用程序中显示所有线程的整个调用树，并包括有关每个节点上分配的内存的信息。 所有的同级节点时在列表中选择元素时，将显示灰色。 可以展开树，或双击要向下钻取到它的元素。在显示此数据视图时，可以使用显示设置检查器视图更改显示的方式。 目前有两个选项：
+- **调用关系树**– 这在应用程序中显示所有线程的整个调用树，并包括有关每个节点上分配的内存的信息。 所有的同级节点时在列表中选择元素时，将显示灰色。 可以展开树，或双击要向下钻取到它的元素。在显示此数据视图时，可以使用显示设置检查器视图更改显示的方式。 目前有两个选项：
     1.  **反转调用树**– 这会考虑从上到下的堆栈跟踪。 这是一个方便访问的视图选项指示最深的方法上 CPU 具有已花费其时间。
     2.  **单独的线程**– 此选项按线程组织的调用关系树。
 
@@ -244,7 +244,7 @@ Xamarin Profiler 是如下图所示的五个部分组成：
 
 -----
 
- -   **快照**– 此窗格显示有关内存快照的信息。 若要生成这些分析实时应用程序时，请单击_照相机_中你想要查看哪些内存是保留和释放每个点上的工具栏按钮。 然后可以单击每个快照，若要浏览实质上发生了什么情况。 请注意在实时分析应用程序时，可以仅拍摄快照。 
+- **快照**– 此窗格显示有关内存快照的信息。 若要生成这些分析实时应用程序时，请单击_照相机_中你想要查看哪些内存是保留和释放每个点上的工具栏按钮。 然后可以单击每个快照，若要浏览实质上发生了什么情况。 请注意在实时分析应用程序时，可以仅拍摄快照。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

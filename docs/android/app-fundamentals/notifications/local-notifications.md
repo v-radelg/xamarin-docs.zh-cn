@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 362041efc5a19dfb70430054f3e4636d4fdfbd7e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c36b31e28011bea287903ee0681a316209abd22d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021627"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829996"
 ---
 <a name="compatibility"></a>
 
@@ -84,7 +84,8 @@ Android 包括对通知的元数据的支持，因此可以进行排序和以智
 
 -   **类别**&ndash;通知系统如何处理在各种情况下，例如设备时通知*请勿打扰*模式。
 
-**注意：** **可见性** 并 **类别** 引入在 Android 5.0 和早期版本的 Android 中不可用。 从开始 Android 8.0[通知通道](#notif-chan)用于控制如何向用户显示通知。
+> [!NOTE]
+> **可见性** 并 **类别** 引入在 Android 5.0 和早期版本的 Android 中不可用。 从开始 Android 8.0[通知通道](#notif-chan)用于控制如何向用户显示通知。
 
 
 ### <a name="expanded-layouts"></a>扩展的布局
@@ -462,7 +463,7 @@ Android 通知通常显示发起应用程序的图标 （在左侧和右侧的�
 
 请注意，如果以大图标格式显示一条通知，小型应用程序图标将显示大图标右下角上的徽章。
 
-若要为大图标在通知中使用的映像，请调用通知生成器[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)方法并传入的图像的位图。 与不同`SetSmallIcon`，`SetLargeIcon`只接受一个位图。 若要将转换位图的图像文件，请使用[BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)类。 例如：
+若要为大图标在通知中使用的映像，请调用通知生成器[SetLargeIcon](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetLargeIcon/)方法并传入的图像的位图。 与不同`SetSmallIcon`，`SetLargeIcon`只接受一个位图。 若要将转换位图的图像文件，请使用[BitmapFactory](https://developer.xamarin.com/api/type/Android.Graphics.BitmapFactory/)类。 例如:
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
@@ -632,7 +633,7 @@ Xamarin.Android 定义以下枚举来设置通知优先级：
 
 -   `NotificationPriority.Min` &ndash; 用户通知时，才的背景信息查看通知 （例如，位置或天气信息）。
 
-若要设置通知的优先级，请调用[SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)方法的`NotificationCompat.Builder`对象，传入的优先级别。 例如：
+若要设置通知的优先级，请调用[SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/)方法的`NotificationCompat.Builder`对象，传入的优先级别。 例如:
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -752,7 +753,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 }
 ```
 
-在此示例中，应用程序的**目标框架**设置为 Android 5.0 和**最低 Android 版本**设置为**Android 4.1 (API 级别为 16)**。 因为`SetCategory`是在 API 级别 21 和更高版本中可用，此示例代码将调用`SetCategory`仅当有可用&ndash;不会调用`SetCategory`API 级别时是小于 21。
+在此示例中，应用程序的**目标框架**设置为 Android 5.0 和**最低 Android 版本**设置为**Android 4.1 (API 级别为 16)** 。 因为`SetCategory`是在 API 级别 21 和更高版本中可用，此示例代码将调用`SetCategory`仅当有可用&ndash;不会调用`SetCategory`API 级别时是小于 21。
 
 
 ### <a name="lock-screen-visibility"></a>锁定屏幕可见性

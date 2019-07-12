@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: ec173c0ed7881439ecbe2b5cf83c8f5484c7e5aa
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 93f90d2dad140f021c7e575afed44da1c5351eda
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977624"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830519"
 ---
 # <a name="overview-of-objective-c-bindings"></a>OBJECTIVE-C 绑定的概述
 
@@ -24,9 +24,10 @@ _在绑定过程的工作原理的详细信息_
 2. 一旦您编写"API 定义" C#，其生成"绑定"程序集进行编译。 这可以在[**命令行**](#commandline)也可以使用[**绑定项目**](#bindingproject) Visual Studio for Mac 或 Visual Studio 中。
 
 3. 该"绑定"程序集然后添加到 Xamarin 应用程序项目中，以便可以访问使用你定义的 API 的本机功能。
-  绑定项目是完全独立于应用程序项目。
+   绑定项目是完全独立于应用程序项目。
 
-**注意：** 可以使用的帮助自动执行步骤 1 [**目标 Sharpie**](#objectivesharpie)。 它会检查 Objective C API 并生成建议C#"API 定义"。 您可以自定义目标 Sharpie 创建的文件并将其绑定项目 （或在命令行上） 来创建绑定程序集。 目标 Sharpie 不会创建单独的绑定，而是只是较大过程的一个可选部分。
+   > [!NOTE]
+   > 可以使用的帮助自动执行步骤 1 [**目标 Sharpie**](#objectivesharpie)。 它会检查 Objective C API 并生成建议C#"API 定义"。 您可以自定义目标 Sharpie 创建的文件并将其绑定项目 （或在命令行上） 来创建绑定程序集。 目标 Sharpie 不会创建单独的绑定，而是只是较大过程的一个可选部分。
 
 您还可以阅读更多技术细节[其工作原理](#howitworks)，这将帮助你编写您的绑定。
 

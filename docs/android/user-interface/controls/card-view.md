@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d145a8a3cd8bc321f0fce76a8831fca681ad29a0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077735"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830578"
 ---
 # <a name="cardview"></a>CardView
 
@@ -49,7 +49,7 @@ _Cardview 小组件是在类似于卡的视图中显示的文本和图像内容�
 
 若要添加`Xamarin.Android.Support.v7.CardView`Visual Studio 中的包：
 
-1. 打开你的项目，右键单击**引用**节点 (在**解决方案资源管理器**窗格中)，然后选择**管理 NuGet 包...**.
+1. 打开你的项目，右键单击**引用**节点 (在**解决方案资源管理器**窗格中)，然后选择**管理 NuGet 包...** .
 
 2. 当**管理 NuGet 包**显示对话框中，输入**CardView**在搜索框中。
 
@@ -174,8 +174,8 @@ _Cardview 小组件是在类似于卡的视图中显示的文本和图像内容�
 
 
 #### <a name="padding"></a>填充
-`
-CardView` 提供了五个填充属性来定位数据卡中的内容。 可以将它们设置在布局 XML 中也可以在代码中调用类似方法：
+
+`CardView` 提供了五个填充属性来定位数据卡中的内容。 可以将它们设置在布局 XML 中也可以在代码中调用类似方法：
 
 [![CardView 填充属性的关系图](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 

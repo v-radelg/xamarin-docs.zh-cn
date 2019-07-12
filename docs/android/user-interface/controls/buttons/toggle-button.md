@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 841a11f9cb48786a046802288ce05e7ae186688a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a22d274feb5539164663ac0c48e5a84bdf5d2c66
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61042162"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830231"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
@@ -42,17 +42,18 @@ togglebutton.Click += (o, e) => {
 
 这会将捕获[ `ToggleButton` ](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/)元素在布局，然后处理单击事件，用于定义要在单击按钮时执行的操作。 在此示例中，该方法将检查新状态的按钮，然后显示[ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)条消息，指示当前状态。
 
-注意， [ `ToggleButton` ](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/)在选中和未选中之间处理自己的状态更改，因此你只需要获取当前是哪一种状态。
+注意， [`ToggleButton`](https://developer.xamarin.com/api/type/Android.Widget.ToggleButton/)在选中和未选中之间处理自己的状态更改，因此你只需要获取当前是哪一种状态。
 
 运行该应用程序。
 
 
-**提示：** 如果你需要自行更改的状态 (例如，当加载一个已保存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-属性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
-方法。
+> [!TIP]
+> 如果你需要自行更改的状态 (例如，当加载一个已保存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+> 属性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> 方法。
 
 
 ## <a name="related-links"></a>相关链接
 
 - [ToggleButton](https://developer.android.com/reference/android/widget/ToggleButton.html)
-- [Switch](https://developer.android.com/reference/android/widget/Switch.html)
+- [切换](https://developer.android.com/reference/android/widget/Switch.html)

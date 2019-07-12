@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
-ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e28ba19fdc972b962f0dcd2757f1ba9087ac5c27
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227239"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831780"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS 在 Xamarin 中的后台任务
 
@@ -54,7 +54,7 @@ Watchos 3 中，有三种主要方式，watch 应用可以保留其信息保持�
 
 Apple 建议此任务的最有效地利用 （因为它是这种有限的资源应用程序） 通过保留到它上面，直到应用完更新本身的过程。
 
-系统会传送这些任务通过调用新`HandleBackgroundTasks`方法的`WKExtensionDelegate`委托。 例如：
+系统会传送这些任务通过调用新`HandleBackgroundTasks`方法的`WKExtensionDelegate`委托。 例如:
 
 ```csharp
 using System;
@@ -141,7 +141,7 @@ watchOS 3 引入了多个应用程序可用于更新确保它具有内容的用�
 当应用程序将标记`WKSnapshotRefreshBackgroundTask`完成后，系统将自动拍摄快照的应用程序的 UI。
 
 > [!IMPORTANT]
-> 务必要始终先安排` WKSnapshotRefreshBackgroundTask`后收到新数据并更新其用户界面应用程序或用户将无法看到已修改的信息。
+> 务必要始终先安排`WKSnapshotRefreshBackgroundTask`后收到新数据并更新其用户界面应用程序或用户将无法看到已修改的信息。
 
 
 

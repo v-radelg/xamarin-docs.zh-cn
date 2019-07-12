@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: d59cac9403a244ce553d84e0590b8a9c3d4d2f30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 78646a0a420820218a8c61ea34ecc5db4438a91d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365843"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832739"
 ---
 # <a name="photokit-in-xamarinios"></a>在 Xamarin.iOS PhotoKit
 
@@ -71,9 +71,9 @@ PhotoKit 轻松查询模型数据通过各种 fetch 方法。 例如，若要检
     
 若要实际将更改写回从你的应用程序，您创建更改请求。 每个模型类有一个关联的更改请求类。 例如，若要更改 PHAsset，则创建 PHAssetChangeRequest。 若要执行的写回的照片库和发送给观察程序与上述更改的步骤如下：
 
--   执行编辑操作。
--   将筛选出的图像数据保存到 PHContentEditingOutput 实例。
--   请更改请求将更改窗体发布编辑输出。
+- 执行编辑操作。
+- 将筛选出的图像数据保存到 PHContentEditingOutput 实例。
+- 请更改请求将更改窗体发布编辑输出。
 
 下面是将更改写回适用 Core 映像树上筛选器的图像的示例：
 

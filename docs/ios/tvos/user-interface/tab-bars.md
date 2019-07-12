@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a0efc30fd9814e4da858c4e3e4e99990eccf102e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7ac4d0effc1067b065bad114160dc8648e998dad
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61164201"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830782"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>使用 tvOS 在 Xamarin 中的选项卡栏控制器
 
@@ -111,7 +111,7 @@ Apple 具有以下建议以获得使用选项卡栏：
 -----
 
 > [!IMPORTANT]
-> 虽然可以分配事件，如`TouchUpInside`到用户界面元素 (如`UIButton`) 在 iOS 设计器中，它将永远不会调用，因为 Apple TV 没有触摸屏输入屏幕上或支持触控事件。 应始终使用`Primary Action `事件时创建用户界面元素的适用于 tvOS 的事件处理程序。
+> 虽然可以分配事件，如`TouchUpInside`到用户界面元素 (如`UIButton`) 在 iOS 设计器中，它将永远不会调用，因为 Apple TV 没有触摸屏输入屏幕上或支持触控事件。 应始终使用`Primary Action`事件时创建用户界面元素的适用于 tvOS 的事件处理程序。
 
 使用情节提要的详细信息，请参阅我们[你好，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 
 

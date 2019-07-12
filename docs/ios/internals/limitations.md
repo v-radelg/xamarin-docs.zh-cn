@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035875"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830391"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
 
@@ -74,7 +74,8 @@ System.Reflection 缺乏。 **发出**取决于运行时代码生成任何代码
 -  远程处理的 TransparentProxy 或任何其他会导致运行时动态生成代码的内容。 
 
 
- **重要提示：** 请不要将 **Reflection.Emit** 与 **Reflection** 混淆。 Reflection.Emit 涉及动态生成代码并将代码即时编译为本机代码。 由于对 iOS （无 JIT 编译） 的限制不是支持此。
+  > [!IMPORTANT]
+  > 请不要将 **Reflection.Emit** 与 **Reflection** 混淆。 Reflection.Emit 涉及动态生成代码并将代码即时编译为本机代码。 由于对 iOS （无 JIT 编译） 的限制不是支持此。
 
 但整个反射 API（包括 Type.GetType（“someClass”）、列出方法、列出属性、获取属性和值）均可以正常工作。
 

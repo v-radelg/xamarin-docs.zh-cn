@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d57f27bf0d3aaa2a7ba14f23481a8f2bb2d87f2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f081ccda507fe3fe65af0e2fb50841aecd7b3c23
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261139"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830468"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>将绑定迁移到 Unified API
 
@@ -27,8 +27,8 @@ _本文介绍如何更新现有 Xamarin 绑定项目，以支持 Unified Api Xam
 
 以下被所要完成本文中介绍的步骤：
 
- -  **Visual Studio for Mac** -最新版本的 Visual Studio for Mac 安装和配置开发计算机上。
- -  **Apple Mac** -的 Apple mac 需生成绑定项目适用于 iOS 和 mac。
+- **Visual Studio for Mac** -最新版本的 Visual Studio for Mac 安装和配置开发计算机上。
+- **Apple Mac** -的 Apple mac 需生成绑定项目适用于 iOS 和 mac。
 
 在 Windows 计算机上的 Visual studio 中不支持绑定项目。
 

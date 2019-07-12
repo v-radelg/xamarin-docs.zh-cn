@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: 55e5627a492636efaa6eeb6b8c302d143b08e2cc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c493b43edbfa04aafba56c4b47d7c89b455de423
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61400534"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830470"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -36,20 +36,20 @@ CocosSharp 是一种灵活且功能强大的技术，用于显示图形、 读�
 
 ## <a name="what-is-cocossharp"></a>CocosSharp 是什么？
 
-[CocosSharp](~/graphics-games/cocossharp/index.md)是一个开放源代码游戏引擎，可在 Xamarin 平台上。
+[CocosSharp](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)是一个开放源代码游戏引擎，可在 Xamarin 平台上。
 CocosSharp 是一个高效运行时库，其中包括以下功能：
 
-* 图像呈现使用[CCSprite 类](https://developer.xamarin.com/api/type/CocosSharp.CCSprite/)
-* 形状呈现使用[CCDrawNode 类](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
-* 每个帧逻辑使用[CCNode.Schedule 方法](https://developer.xamarin.com/api/member/CocosSharp.CCNode.Schedule/p/System.Action%7BSystem.Single%7D/)
-* 内容管理 （加载和卸载的资源，例如.png 文件） 使用[CCTextureCache 类](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)
-* 使用动画[ccaction 进行动画处理类](https://developer.xamarin.com/api/type/CocosSharp.CCAction/)
+* 图像呈现使用`CCSprite`类
+* 形状呈现使用`CCDrawNode`类
+* 每个帧逻辑使用`CCNode.Schedule`类
+* 使用内容管理 （加载和卸载的资源，例如.png 文件） `CCTextureCache`
+* 使用动画`CCAction`类
 
 CocosSharp 的主要重点是简化的跨平台 2D 游戏; 创建但是，它也可以是到 Xamarin 窗体应用程序的极好补充。 由于游戏通常需要的高效绘制和视觉对象的精确控制，可以使用 CocosSharp 向非游戏应用程序添加功能强大的可视化和效果。
 
 Xamarin.Forms 是本机、 特定于平台的 UI 系统根据生成的。 例如， [ `Button`s](xref:Xamarin.Forms.Button)以不同的方式出现在 iOS 和 Android，并甚至可能因操作系统版本。 与此相反，CocosSharp 不使用任何特定于平台的视觉对象，因此所有视觉对象会显示在所有平台上完全相同。 当然，解决方法和纵横比不同设备之间，这可能会影响 CocosSharp 如何呈现其视觉对象。 本指南后面将讨论这些详细信息。
 
-更多详细的信息可在[CocosSharp 部分](~/graphics-games/cocossharp/index.md)。
+更多详细的信息可在[CocosSharp 部分](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)。
 
 <a name="nuget" />
 
@@ -84,7 +84,7 @@ CocosSharp.Forms nuget 包包含`CocosSharpView`类，该类用于托管 CocosSh
 1. [添加一个圆圈](#4)
 1. [使用 CocosSharp 交互](#5)
 
-一旦你已成功向 Xamarin.Forms 应用添加 CocosSharp 视图，请访问[CocosSharp 文档](~/graphics-games/cocossharp/index.md)若要了解有关创建与 cocossharp 结合使用的内容的详细信息。
+一旦你已成功向 Xamarin.Forms 应用添加 CocosSharp 视图，请访问[CocosSharp 文档](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)若要了解有关创建与 cocossharp 结合使用的内容的详细信息。
 
 <a name="1" />
 
@@ -199,7 +199,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 ![](cocossharp-images/image4.png "典型 CocosSharp 层次结构")
 
-只有一个`CCScene`一次可处于活动状态。 大多数游戏使用多个`CCLayer`到排序内容，但我们的应用程序实例仅使用一个。 同样，大多数游戏程序使用多个视觉对象，但我们将仅有一个在我们的应用程序中。 更详细讨论的可视化层次结构可在 CocosSharp [BouncingGame 演练](~/graphics-games/cocossharp/bouncing-game.md)。
+只有一个`CCScene`一次可处于活动状态。 大多数游戏使用多个`CCLayer`到排序内容，但我们的应用程序实例仅使用一个。 同样，大多数游戏程序使用多个视觉对象，但我们将仅有一个在我们的应用程序中。 更详细讨论的可视化层次结构可在 CocosSharp [BouncingGame 演练](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/bouncing-game.md)。
 
 最初`GameScene`类将是几乎是空-我们只需将创建它来满足中的引用`HomePage`。 将新类添加到名为.NET Standard 库项目`GameScene`。 它应继承自`CCScene`类，如下所示：
 
@@ -231,7 +231,7 @@ GameScene gameScene;
 
 ### <a name="4-adding-a-circle"></a>4.添加一个圆圈
 
-应用当前具有正在运行的 CocosSharp 引擎，显示一个空实例`CCScene`。 接下来，我们将添加视觉对象： 一个圆圈。 `CCDrawNode`类可用于绘制各种几何形状，如中所述[CCDrawNode 指南绘制几何图形](~/graphics-games/cocossharp/ccdrawnode.md)。
+应用当前具有正在运行的 CocosSharp 引擎，显示一个空实例`CCScene`。 接下来，我们将添加视觉对象： 一个圆圈。 `CCDrawNode`类可用于绘制各种几何形状，如中所述[CCDrawNode 指南绘制几何图形](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/ccdrawnode.md)。
 
 添加到一个圆形我们`GameScene`类并将其实例的构造函数中，在下面的代码所示：
 
@@ -274,13 +274,12 @@ public class GameScene : CCScene
 上面的关系图上以黑色文本屏幕的外部显示像素尺寸。 单位显示白色文本中的关系图的内侧。 下面是一些重要的详细信息，如上所示：
 
 * CocosSharp 显示原点位于左下角。 向右移动可增加的 X 值，并向上移动可增加的 Y 值。 请注意反转的 Y 值与某些其他 2D 布局引擎相比，(0，0) 是在画布左上方。
-* CocosSharp 的默认行为是保持其视图的纵横比。 由于在网格中的第一行是宽度大于高度，CocosSharp 未填充其单元格的整个宽度以点分隔的白色矩形所示。 可以更改此行为，如中所述[处理 CocosSharp 中的多个解决方法指导](~/graphics-games/cocossharp/resolutions.md)。
+* CocosSharp 的默认行为是保持其视图的纵横比。 由于在网格中的第一行是宽度大于高度，CocosSharp 未填充其单元格的整个宽度以点分隔的白色矩形所示。 可以更改此行为，如中所述[处理 CocosSharp 中的多个解决方法指导](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/resolutions.md)。
 * 在此示例中，CocosSharp 将保留 100 个单位的宽度和高度而不考虑大小的显示区域或其设备的纵横比。 这意味着，代码可以假定，X = 100 表示最右侧绑定 CocosSharp 的显示，请保留布局在所有设备上保持一致。
-
 
 #### <a name="ccdrawnode-details"></a>CCDrawNode 的详细信息
 
-我们简单的应用程序使用`CCDrawNode`类来绘制一个圆。 此类可以是对业务应用程序非常有用，因为它提供基于矢量的几何图形渲染-Xamarin.Forms 中缺少的功能。 除了圆圈，`CCDrawNode`类可用于绘制矩形、 自由绘制曲线、 线条和自定义的多边形。 `CCDrawNode` 也是易于使用由于不需要使用图像文件 （例如.png)。 可在 CCDrawNode 的更多详细的讨论[CCDrawNode 指南绘制几何图形](~/graphics-games/cocossharp/ccdrawnode.md)。
+我们简单的应用程序使用`CCDrawNode`类来绘制一个圆。 此类可以是对业务应用程序非常有用，因为它提供基于矢量的几何图形渲染-Xamarin.Forms 中缺少的功能。 除了圆圈，`CCDrawNode`类可用于绘制矩形、 自由绘制曲线、 线条和自定义的多边形。 `CCDrawNode` 也是易于使用由于不需要使用图像文件 （例如.png)。 可在 CCDrawNode 的更多详细的讨论[CCDrawNode 指南绘制几何图形](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/ccdrawnode.md)。
 
 <a name="5" />
 
@@ -347,11 +346,8 @@ void CreateBottomHalf(Grid grid)
 
 本指南演示如何将 CocosSharp 添加到现有 Xamarin.Forms 项目，如何创建 Xamarin.Forms 与 CocosSharp，之间的交互，并讨论了各种注意事项，在 CocosSharp 中创建布局时。
 
-CocosSharp 游戏引擎提供了大量功能和深度，因此，本指南仅讲述了 CocosSharp 可以执行的操作。 开发人员感兴趣阅读有关 CocosSharp 的详细信息可以发现中的许多文章[CocosSharp 部分](~/graphics-games/cocossharp/index.md)。
-
-
+CocosSharp 游戏引擎提供了大量功能和深度，因此，本指南仅讲述了 CocosSharp 可以执行的操作。 开发人员感兴趣阅读有关 CocosSharp 的详细信息可以发现中的许多文章[CocosSharp 存档](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CocosSharp Api](https://developer.xamarin.com/api/root/CocosSharp/)
 - [CocosSharpForms （示例）](https://developer.xamarin.com/samples/xamarin-forms/CocosSharpForms/)

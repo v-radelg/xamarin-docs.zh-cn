@@ -6,12 +6,12 @@ ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 82b1408cafedf98a8619e8e039ba00b332f74516
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8ef426c742f875e26fc0fcf88a9468e1618e30f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381795"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832529"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>第 1 部分 – 创建跨平台 MonoGame
 
@@ -25,12 +25,12 @@ MonoGame 支持开发大部分代码都可以重用的跨平台游戏。 本演�
 
 ## <a name="adding-monogame-to-visual-studio-for-mac"></a>将 MonoGame 添加到 Visual Studio for Mac 中
 
-可以将 MonoGame 作为 Visual Studio for Mac 的加载项添加。 在 Mac 上，选择**Visual Studio for Mac** > **加载项管理器...**。 在 Windows 上，选择“工具”>“加载项管理器...”。 选择“库”选项卡，展开“游戏开发”类别并选择“MonoGame 加载项”，然后单击“安装”：
+可以将 MonoGame 作为 Visual Studio for Mac 的加载项添加。 在 Mac 上，选择**Visual Studio for Mac** > **加载项管理器...** 。 在 Windows 上，选择“工具”  >“加载项管理器...”。 选择“库”选项卡，展开“游戏开发”类别并选择“MonoGame 加载项”，然后单击“安装”：    
 
 ![Visual Studio 选择 MonoGame Mac 扩展库](part1-images/image2.png)
 
 > [!IMPORTANT]
-> **说明**：如果**游戏开发**部分中没有显示在外接程序管理器中，您可以手动下载并从此处安装最新版本： http://www.monogame.net/downloads/。 您可能需要重启 Visual Studio for Mac 模板出现。
+> 如果**游戏开发**部分中没有显示在外接程序管理器中，您可以手动下载并从此处安装最新版本： http://www.monogame.net/downloads/ 。 您可能需要重启 Visual Studio for Mac 模板出现。
 
 安装完成后，MonoGame 模板会出现在 Visual Studio for Mac 中，如下一部分所示。
 

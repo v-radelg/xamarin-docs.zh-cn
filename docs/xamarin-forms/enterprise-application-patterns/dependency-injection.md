@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fb225349b9ffb1c950486a817897b3c26c6ffbe4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b95ccb3e756f02c945adc63b9e173a9f9e0226
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300247"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832688"
 ---
 # <a name="dependency-injection"></a>依赖关系注入
 
@@ -139,7 +139,8 @@ _container = builder.Build();
 
 调用`Build`方法`ContainerBuilder`实例生成新的依赖关系注入容器，其中包含所做的注册。
 
->💡 **提示**:请考虑`IContainer`作为不可变。 虽然 Autofac 提供了`Update`应尽可能避免使用方法来更新现有的容器，调用此方法中的注册。 有一个容器后修改已生成，特别是当使用该容器的风险。 有关详细信息，请参阅[作为不可变的容器，请考虑](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)readthedocs.io。
+> [!TIP]
+> 请考虑`IContainer`作为不可变。 虽然 Autofac 提供了`Update`应尽可能避免使用方法来更新现有的容器，调用此方法中的注册。 有一个容器后修改已生成，特别是当使用该容器的风险。 有关详细信息，请参阅[作为不可变的容器，请考虑](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)readthedocs.io。
 
 <a name="resolution" />
 

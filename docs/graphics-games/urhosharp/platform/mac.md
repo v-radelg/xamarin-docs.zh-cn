@@ -6,12 +6,12 @@ ms.assetid: 95FFBD36-14E9-4C17-B1E8-9A04E81E824D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 6d0a048020284319682c1bee0f9a1d7f9af00977
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ee0a03d168b6e628893b18a27d73b46d3fa2fbc2
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386359"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832660"
 ---
 # <a name="urhosharp-mac-support"></a>UrhoSharp Mac 的支持
 
@@ -37,5 +37,3 @@ new MyGame().Run();
 ## <a name="example"></a>示例
 
 [完整示例](https://github.com/xamarin/urho-samples/tree/master/FeatureSamples/Cocoa)
-
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a5a2f87c16a5dd040cefb2fbc615b01431ebcf5
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031441"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832290"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>在 Xamarin.Mac 中的情节提要简介
 
@@ -56,9 +56,9 @@ _本文介绍 Xamarin.Mac 应用中使用情节提要。它介绍如何创建和
 
 可以在一个给定的场景中执行的所有内容将正常情况下已处理的单个`.xib`文件： 
 
- - Subviews 和控制 （如按钮和文本框）。
- - 定义元素的位置和自动布局限制。
- - 绑定操作和输出口公开到代码的 UI 元素。
+- Subviews 和控制 （如按钮和文本框）。
+- 定义元素的位置和自动布局限制。
+- 绑定操作和输出口公开到代码的 UI 元素。
 
 <a name="Working-with-Segues" />
 

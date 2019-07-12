@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abd9fe85be412539fd51d0e6164c79ce346377a7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279105"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832096"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin.iOS 中的三维点触控简介
 
@@ -105,7 +105,7 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
 
 ### <a name="handling-peek-and-pop"></a>处理扫视和 Pop
 
-在可以处理 3D Touch 的 iOS 设备，我们可以使用的实例`UIViewControllerPreviewingDelegate`类来处理的显示**扫视**和**弹出**项详细信息。 例如，如果我们的表格视图控制器称为`MasterViewController `我们可以使用以下代码以支持**扫视**并**弹出**:
+在可以处理 3D Touch 的 iOS 设备，我们可以使用的实例`UIViewControllerPreviewingDelegate`类来处理的显示**扫视**和**弹出**项详细信息。 例如，如果我们的表格视图控制器称为`MasterViewController`我们可以使用以下代码以支持**扫视**并**弹出**:
 
 ```csharp
 using System;

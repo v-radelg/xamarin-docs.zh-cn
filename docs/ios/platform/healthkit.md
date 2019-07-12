@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8dcb478b303c4c73f7e73dc018ad56b1301389c8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61163163"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830045"
 ---
 # <a name="healthkit-in-xamarinios"></a>在 Xamarin.iOS HealthKit
 
@@ -101,7 +101,7 @@ Xamarin iOS 8 应用程序可以使用 HealthKit API 之前，它必须正确配
 
 [![](healthkit-images/image07.png "选择预配配置文件")](healthkit-images/image07.png#lightbox)
 
-如果**预配配置文件**不可用，请仔细检查**捆绑包标识符**中**iOS 应用程序**面板中指定的与**iOS开发人员中心**并且**预配配置文件**安装 (**Xcode > 首选项 > 帐户 > 查看详细信息...**).
+如果**预配配置文件**不可用，请仔细检查**捆绑包标识符**中**iOS 应用程序**面板中指定的与**iOS开发人员中心**并且**预配配置文件**安装 (**Xcode > 首选项 > 帐户 > 查看详细信息...** ).
 
 当启用运行状况工具包的**预配配置文件**为选中状态，单击**确定**以关闭项目选项对话框。
 
@@ -142,7 +142,7 @@ Xamarin iOS 8 应用程序可以使用 HealthKit API 之前，它必须正确配
 
 运行状况工具包数据存储是在应用之间共享的专用、 特定于用户的数据存储。 由于运行状况信息是非常敏感的用户必须采取积极的措施，以允许数据访问。 此访问权限可能不完整 (写不读，对于某些类型的数据而不是其他，访问等) 并可能会随时吊销。 运行状况工具包应用程序应使用多个用户将会犹豫不决存储其运行状况相关的信息了解采用防御方式进行，编写。
 
-运行状况工具包数据仅限于 Apple 指定类型。 严格地定义这些类型： 一些，例如血液类型仅限于 Apple 提供枚举的特定值，而其他人结合将量值 （例如元语法、 卡路里和升为单位） 的度量单位。 甚至共享兼容度量单位的数据进行区分通过其`HKObjectType`; 例如，类型系统将捕获错误的尝试存储`HKQuantityTypeIdentifier.NumberOfTimesFallen`到字段需要值`HKQuantityTypeIdentifier.FlightsClimbed`即使都使用` HKUnit.Count`度量单位。
+运行状况工具包数据仅限于 Apple 指定类型。 严格地定义这些类型： 一些，例如血液类型仅限于 Apple 提供枚举的特定值，而其他人结合将量值 （例如元语法、 卡路里和升为单位） 的度量单位。 甚至共享兼容度量单位的数据进行区分通过其`HKObjectType`; 例如，类型系统将捕获错误的尝试存储`HKQuantityTypeIdentifier.NumberOfTimesFallen`到字段需要值`HKQuantityTypeIdentifier.FlightsClimbed`即使都使用`HKUnit.Count`度量单位。
 
 可在运行状况工具包数据存储中存储的类型是所有子类的`HKObjectType`。 `HKCharacteristicType` 对象存储生物性别、 血液类型和出生日期。 不过，不是更常见`HKSampleType`，这些对象表示在特定时间或时间段内进行采样的数据。 
 

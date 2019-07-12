@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 490331663d94a1e3130fc794a11a52acdacca014
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013213"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829746"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>在 Xamarin.Android 中绑定服务
 
@@ -230,7 +230,7 @@ namespace BoundServiceDemo
 
 ## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>启动并绑定到具有目的在于明确指示服务
 
-若要使用的绑定的服务，客户端 （例如活动） 必须实例化实现的对象`Android.Content.IServiceConnection`并调用`BindService`方法。` BindService` 将返回`true`如果该服务所绑定到`false`如果不是。 `BindService` 方法采用三个参数：
+若要使用的绑定的服务，客户端 （例如活动） 必须实例化实现的对象`Android.Content.IServiceConnection`并调用`BindService`方法。 `BindService` 将返回`true`如果该服务所绑定到`false`如果不是。 `BindService` 方法采用三个参数：
 
 * **`Intent`**  &ndash;意图应显式标识要连接到的服务。
 * **`IServiceConnection`对象**&ndash;此对象是提供回调方法以在绑定的服务启动和停止时通知客户端的中介。

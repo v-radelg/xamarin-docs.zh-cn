@@ -6,12 +6,12 @@ ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d5c16b034b07d3e9875412f041c16b293557438a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 36a4c6b66f7f724bfccc3c2a3b81c17f1d34a9c5
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211849"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829737"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>更新现有 Xamarin.Forms 应用
 
@@ -52,10 +52,10 @@ _请按照下列步骤来更新现有的 Xamarin.Forms 应用程序以使用统�
 
 这将自动：
 
- - 更改项目类型以支持统一的 64 位 API。
- - 更改对 framework 引用**Xamarin.iOS** (替换旧**monotouch**引用)。
- - 若要删除的代码中的命名空间引用更改`MonoTouch`前缀。
- - 更新**csproj**要统一 API 的使用正确的生成目标文件。
+- 更改项目类型以支持统一的 64 位 API。
+- 更改对 framework 引用**Xamarin.iOS** (替换旧**monotouch**引用)。
+- 若要删除的代码中的命名空间引用更改`MonoTouch`前缀。
+- 更新**csproj**要统一 API 的使用正确的生成目标文件。
 
 **干净**并**生成**项目以确保没有任何其他错误修复。 应不需要任何进一步的操作。 中更详细地说明了这些步骤[统一的 API 文档](~/cross-platform/macios/unified/updating-ios-apps.md)。
 
@@ -67,8 +67,8 @@ _请按照下列步骤来更新现有的 Xamarin.Forms 应用程序以使用统�
 
 IOS 应用程序已更新为 Unified API 之后, 该解决方案的其余需要对其更新到 Xamarin.Forms 1.3.1 版。 这包括：
 
- - 正在更新每个项目中的 Xamarin.Forms NuGet 包。
- - 将代码更改为使用新的 Xamarin.Forms `Application`， `FormsApplicationDelegate` (iOS) `FormsApplicationActivity` (Android) 和`FormsApplicationPage`(Windows Phone) 类。
+- 正在更新每个项目中的 Xamarin.Forms NuGet 包。
+- 将代码更改为使用新的 Xamarin.Forms `Application`， `FormsApplicationDelegate` (iOS) `FormsApplicationActivity` (Android) 和`FormsApplicationPage`(Windows Phone) 类。
 
 下面介绍了这些步骤：
 
@@ -76,7 +76,8 @@ IOS 应用程序已更新为 Unified API 之后, 该解决方案的其余需要�
 
 更新为 1.3.1 的 Xamarin.Forms NuGet 包管理器使用的解决方案中的所有项目的预发行：PCL （如果存在）、 iOS、 Android 和 Windows Phone。 建议你**删除并重新添加**的 Xamarin.Forms NuGet 包更新到版本 1.3。
 
-**注意：** Xamarin.Forms 版本 1.3.1 当前处于*预发行版*。 这意味着您必须选择**预发行版**选项在 NuGet 中通过 （一个刻度线框在 Visual Studio for Mac） 或 Visual Studio 中的下拉列表列表以查看最新的预发布版本。
+> [!NOTE]
+> Xamarin.Forms 版本 1.3.1 当前处于*预发行版*。 这意味着您必须选择**预发行版**选项在 NuGet 中通过 （一个刻度线框在 Visual Studio for Mac） 或 Visual Studio 中的下拉列表列表以查看最新的预发布版本。
 
 > [!IMPORTANT]
 > 如果使用的 Visual Studio，请确保安装最新版本的 NuGet 包管理器。 较旧版本的 Visual Studio 中的 NuGet 将正确安装 Xamarin.Forms 1.3.1 的统一版本。 转到**工具 > 扩展和更新...** ，然后单击**已安装**列表来检查是否**Visual Studio 的 NuGet 包管理器**至少为版本 2.8.5。 如果是较旧，单击**更新**下载最新版本的列表。
@@ -87,8 +88,8 @@ IOS 应用程序已更新为 Unified API 之后, 该解决方案的其余需要�
 
 更改**App.cs**文件，以便：
 
- - `App`类现在继承自`Application`。
- - `MainPage`属性设置为你想要显示的第一个内容页。
+- `App`类现在继承自`Application`。
+- `MainPage`属性设置为你想要显示的第一个内容页。
 
 ```csharp
 public class App : Application // superclass new in 1.3
@@ -110,8 +111,8 @@ public class App : Application // superclass new in 1.3
 
 更改**AppDelegate.cs**文件，以便：
 
- - 类继承自`FormsApplicationDelegate`(而不是`UIApplicationDelegate`之前)。
- - `LoadApplication` 使用的新实例调用`App`。
+- 类继承自`FormsApplicationDelegate`(而不是`UIApplicationDelegate`之前)。
+- `LoadApplication` 使用的新实例调用`App`。
 
 ```csharp
 [Register ("AppDelegate")]
@@ -133,8 +134,8 @@ public partial class AppDelegate :
 
 更改**MainActivity.cs**文件，以便：
 
- - 类继承自`FormsApplicationActivity`(而不是`FormsActivity`之前)。
- - `LoadApplication` 使用的新实例的调用 `App`
+- 类继承自`FormsApplicationActivity`(而不是`FormsActivity`之前)。
+- `LoadApplication` 使用的新实例的调用 `App`
 
 ```csharp
 [Activity (Label = "YOURAPPNAM", Icon = "@drawable/icon", MainLauncher = true,
@@ -159,8 +160,8 @@ public class MainActivity :
 
 更改**MainPage.xaml**文件，以便：
 
- - 根 XAML 元素应为`winPhone:FormsApplicationPage`。
- - `xmlns:phone`属性应为*更改*到 `xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"`
+- 根 XAML 元素应为`winPhone:FormsApplicationPage`。
+- `xmlns:phone`属性应为*更改*到 `xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"`
 
 更新的示例，如下所示-只需编辑的事物 （其他属性应保持不变）：
 
@@ -174,8 +175,8 @@ public class MainActivity :
 
 更改**MainPage.xaml.cs**文件，以便：
 
- - 类继承自`FormsApplicationPage`(而不是`PhoneApplicationPage`之前)。
- - `LoadApplication` 使用 Xamarin.Forms 的新实例调用`App`类。 可能需要完全限定此引用，因为 Windows Phone 有其自己的`App`已定义的类。
+- 类继承自`FormsApplicationPage`(而不是`PhoneApplicationPage`之前)。
+- `LoadApplication` 使用 Xamarin.Forms 的新实例调用`App`类。 可能需要完全限定此引用，因为 Windows Phone 有其自己的`App`已定义的类。
 
 ```csharp
 public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
@@ -214,7 +215,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 将现有的 Xamarin.Forms 项目从经典 API 转换为新的统一 API，如果该应用程序依赖于一个或多个组件或 NuGet 包时，应考虑以下注意事项。
 
-### <a name="components"></a>组件数
+### <a name="components"></a>组件
 
 你的应用程序中包含的任何组件还需要更新为 Unified API 或尝试进行编译时，您将看到冲突。 对于任何包含的组件，使用支持统一 API 的 Xamarin 组件存储区中的新版本替换当前版本和生成已清理。 任何组件都尚未转换由作者，将显示在组件存储中的唯一警告 32 位。
 

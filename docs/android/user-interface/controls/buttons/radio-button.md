@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: be473580b24dba6b4f08384771e2097d368f8dc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ea8af3c84bb53434489d230d159a27b6b9d500d8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276586"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830255"
 ---
 # <a name="radiobutton"></a>RadioButton
 
@@ -70,9 +70,10 @@ radio_blue.Click += RadioButtonClick;
 
 运行该应用程序。
 
-**提示：** 如果你需要自行更改的状态 (例如，当加载一个已保存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-属性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
-方法。
+> [!TIP]
+> 如果你需要自行更改的状态 (例如，当加载一个已保存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
+> 属性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> 方法。
 
 *此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
 [*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/). 

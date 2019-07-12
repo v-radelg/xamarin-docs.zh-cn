@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076556"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830138"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>使用 Web 标记在 Xamarin.iOS 中搜索
 
@@ -63,7 +63,7 @@ Apple 将呈现在 Spotlight 搜索和 Safari 搜索结果中的这些结果。
 
 ## <a name="using-twitter-cards"></a>使用 Twitter 卡
 
-您可以使用 Twitter 的卡的应用程序的内容的深层链接。 例如：
+您可以使用 Twitter 的卡的应用程序的内容的深层链接。 例如:
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +75,7 @@ Apple 将呈现在 Spotlight 搜索和 Safari 搜索结果中的这些结果。
 
 ## <a name="using-facebook-app-links"></a>使用 Facebook 应用链接
 
-您可以使用 Facebook 应用程序链接的应用程序的内容的深层链接。 例如：
+您可以使用 Facebook 应用程序链接的应用程序的内容的深层链接。 例如:
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +87,7 @@ Apple 将呈现在 Spotlight 搜索和 Safari 搜索结果中的这些结果。
 
 ## <a name="opening-deep-links"></a>打开的深层链接
 
-您需要添加支持打开和 Xamarin.iOS 应用程序中显示的深层链接。 编辑**AppDelegate.cs**文件，然后重写`OpenURL`方法来处理自定义的 URL 格式。 例如：
+您需要添加支持打开和 Xamarin.iOS 应用程序中显示的深层链接。 编辑**AppDelegate.cs**文件，然后重写`OpenURL`方法来处理自定义的 URL 格式。 例如:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -131,7 +131,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 有关详细信息，请参阅[开放图谱](http://ogp.me)网站。
 
-为结构化数据标记的另一种常见格式是 schema.org 的微数据格式。 例如：
+为结构化数据标记的另一种常见格式是 schema.org 的微数据格式。 例如:
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -158,14 +158,14 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 目前，Apple 支持 schema.org 中的以下架构类型：
 
- - AggregateRating
- - ImageObject
- - InteractionCount
- - 产品/服务
- - 组织
- - PriceRange
- - 方案
- - SearchAction
+- AggregateRating
+- ImageObject
+- InteractionCount
+- 产品/服务
+- 组织
+- PriceRange
+- 方案
+- SearchAction
 
 有关这些方案类型的详细信息，请参阅[schema.org](http://schema.org)。
 
@@ -173,9 +173,9 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 特定类型的结构化数据将允许搜索结果是由最终用户可执行。 目前支持以下操作：
 
- - 拨打电话号码。
- - 获取给定地址的映射方向。
- - 播放音频或视频文件。
+- 拨打电话号码。
+- 获取给定地址的映射方向。
+- 播放音频或视频文件。
 
 例如，定义要拨打的电话号码的操作可能看起来如下所示：
 

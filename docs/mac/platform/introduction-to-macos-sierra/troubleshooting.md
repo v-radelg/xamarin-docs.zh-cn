@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 1b379bef98e498df4c58ba7209aa46b0b2542fe1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 322acff3279d0513266c7d9883726cac726334f7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031416"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830556"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac-macOS Sierra 故障排除
 
@@ -52,7 +52,7 @@ _本文提供使用 macOS Sierra Xamarin.Mac 应用中的多个故障排除提�
 已知问题：
 
 - 调用`NSObject.ValueForKey`将`null`密钥将导致异常。
-- 这两`NSURLSession`和 NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http:// Url。
+- 这两`NSURLSession`并`NSURLConnection`不再为在 TLS 握手期间的 RC4 密码套件`http://`Url。
 - 如果他们要更改超级视图的几何图形中的应用可以挂起`ViewWillLayoutSubviews`或`LayoutSubviews`方法。
 - 对于所有 SSL/TLS 连接，RC4 对称密码现在默认处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，建议应用程序停止使用 sha-1 和 3DES 加密方法越早越好。
 

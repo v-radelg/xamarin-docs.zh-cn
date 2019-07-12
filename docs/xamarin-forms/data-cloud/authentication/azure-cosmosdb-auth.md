@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 52f4e33e051c99b7002120c055c79036828d60dd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658864"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832366"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库和 Xamarin.Forms 的用户进行身份验证
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 
 _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服务器和分区，同时支持无限的存储和吞吐量。本文介绍如何将访问控制与已分区集合相结合，以便用户只能访问自己的 Xamarin.Forms 应用程序中的文档。_
 
@@ -96,9 +96,9 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 1. 创建 Facebook 应用程序。 有关详细信息，请参阅[注册和配置应用](https://developers.facebook.com/docs/apps/register)在 Facebook 开发人员中心。
 1. 向应用添加 Facebook 登录产品。 有关详细信息，请参阅[到您的应用程序或网站中添加 Facebook 登录](https://developers.facebook.com/docs/facebook-login)在 Facebook 开发人员中心。
 1. 配置 Facebook 登录名，如下所示：
-  - 启用客户端 OAuth 登录。
-  - 启用 Web OAuth 登录。
-  - 设置有效的 OAuth 重定向到的应用服务 web 应用，URI 的 URI 与`/.auth/login/facebook/callback`追加。
+   - 启用客户端 OAuth 登录。
+   - 启用 Web OAuth 登录。
+   - 设置有效的 OAuth 重定向到的应用服务 web 应用，URI 的 URI 与`/.auth/login/facebook/callback`追加。
 
   下面的屏幕截图演示了此配置：
 
@@ -114,12 +114,12 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 
 1. 在 Azure 门户中，导航到应用服务 web 应用。
 1. 在 Azure 门户中，打开身份验证 / 授权边栏选项卡并执行以下配置：
-  - 应启用应用服务身份验证。
-  - 当请求未经过身份验证时要执行的操作应设置为**使用 Facebook 登录**。
+    - 应启用应用服务身份验证。
+    - 当请求未经过身份验证时要执行的操作应设置为**使用 Facebook 登录**。
 
-  下面的屏幕截图演示了此配置：
+    下面的屏幕截图演示了此配置：
 
-  [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "应用服务 Web 应用身份验证设置")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "应用服务 Web 应用身份验证设置")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "应用服务 Web 应用身份验证设置")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "应用服务 Web 应用身份验证设置")
 
 应用服务 web 应用还应配置为与 Facebook 应用启用身份验证流进行通信。 这可以通过选择 Facebook 标识提供程序，并输入**应用程序 ID**和**应用程序密码**Facebook 开发人员中心上的 Facebook 应用程序设置中的值。 有关详细信息，请参阅[到你的应用程序添加 Facebook 信息](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
 
@@ -131,10 +131,10 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 
 1. 打开 Xamarin.Forms 解决方案。
 1. 打开`Constants.cs`和更新的以下常量：
-  - `EndpointUri` -此值应从 Cosmos DB 帐户的密钥边栏选项卡的 Cosmos DB 帐户 URL。
-  - `DatabaseName` – 值应为文档数据库的名称。
-  - `CollectionName` – 值应为文档数据库集合的名称 (在这种情况下， `UserItems`)。
-  - `ResourceTokenBrokerUrl` -此值应从应用服务帐户的概述边栏选项卡的资源令牌代理 web 应用的 URL。
+    - `EndpointUri` -此值应从 Cosmos DB 帐户的密钥边栏选项卡的 Cosmos DB 帐户 URL。
+    - `DatabaseName` – 值应为文档数据库的名称。
+    - `CollectionName` – 值应为文档数据库集合的名称 (在这种情况下， `UserItems`)。
+    - `ResourceTokenBrokerUrl` -此值应从应用服务帐户的概述边栏选项卡的资源令牌代理 web 应用的 URL。
 
 ## <a name="initiating-login"></a>发起的登录名
 

@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: a5083e1d31377caece1b8fb4faf33b6e3ff88202
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62ef02d276e9c98e07f5e0d1b9ddec1b0874a99a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211815"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829617"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>将代码更新为 Unified API 的提示
 
@@ -74,23 +74,24 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
- * Unified API 不提供 NSDate 和.NET 日期时间之间的隐式转换，因为它不是无损转换。 若要防止与相关的错误`DateTimeKind.Unspecified`转换.NET`DateTime`为本地或之前强制转换为 UTC `NSDate`。
+* Unified API 不提供 NSDate 和.NET 日期时间之间的隐式转换，因为它不是无损转换。 若要防止与相关的错误`DateTimeKind.Unspecified`转换.NET`DateTime`为本地或之前强制转换为 UTC `NSDate`。
 
- * Objective C 类别方法现在生成的统一 API 中的扩展方法。 例如，代码之前使用`UIView.DrawString`现在会引用`NSString.DrawString`统一 API 中。
+* Objective C 类别方法现在生成的统一 API 中的扩展方法。 例如，代码之前使用`UIView.DrawString`现在会引用`NSString.DrawString`统一 API 中。
 
- * 使用具有 AVFoundation 类代码`VideoSettings`应改为使用`WeakVideoSettings`属性。 这要求`Dictionary`，这是可作为属性上设置类，例如：
+* 使用具有 AVFoundation 类代码`VideoSettings`应改为使用`WeakVideoSettings`属性。 这要求`Dictionary`，这是可作为属性上设置类，例如：
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * NSObject`.ctor(IntPtr)`构造函数已从公共到受保护 ([以防止不正当使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
+* NSObject`.ctor(IntPtr)`构造函数已从公共到受保护 ([以防止不正当使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
- * `NSAction` 已被[替换为](~/cross-platform/macios/unified/overview.md#NSAction)starndard.NET 与`Action`。 一些简单 （单个参数） 的委托也已替换`Action<T>`。
+* `NSAction` 已被[替换为](~/cross-platform/macios/unified/overview.md#NSAction)使用标准.NET `Action`。 一些简单 （单个参数） 的委托也已替换`Action<T>`。
 
 最后，请参阅[经典 v 统一 API 差异](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)来查找你的代码中的 Api 更改。 搜索[本页](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)将帮助查找经典 Api 和什么它们已更新为。
 
-**注意：** `MonoTouch.Dialog`迁移后的命名空间保持相同。 如果你的代码使用**MonoTouch.Dialog**应继续使用该命名空间-不要*不*更改`MonoTouch.Dialog`到`Dialog`！
+> [!NOTE]
+> `MonoTouch.Dialog`迁移后的命名空间保持相同。 如果你的代码使用**MonoTouch.Dialog**应继续使用该命名空间-不要*不*更改`MonoTouch.Dialog`到`Dialog`！
 
 ## <a name="common-compiler-errors"></a>常见编译器错误
 
@@ -136,7 +137,7 @@ grphc.SetLineDash (0, new nfloat[] { 0, 3 * (nfloat)Math.PI });
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**错误 CS0508:`WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be 'System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'**
+**错误 CS0508: `WordsTableSource.NumberOfSections(UIKit.UITableView)`： 返回类型必须是 System.nint 才能匹配重写的成员 `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
 
 解决方法：如果返回类型更改为`nint`，将返回值强制转换`nint`。
 

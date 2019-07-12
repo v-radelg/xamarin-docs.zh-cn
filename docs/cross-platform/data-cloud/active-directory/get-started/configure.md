@@ -6,12 +6,12 @@ ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 2a9baab9215ae2d30e4daf6800a116c95165da42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6135740095395d5cd7bde9abc1cbbab1e1072161
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188228"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832242"
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>步骤 2。 为移动应用程序配置服务访问权限
 
@@ -21,7 +21,7 @@ ms.locfileid: "61188228"
 
   ![](configure-images/2.1-configure.png "在配置选项卡上找到其他应用程序的部分的权限")
 
-2.  单击**添加应用程序**按钮。 在下一个屏幕弹出窗口会看到这样的使用由 Azure Active Directory 保护的所有应用程序的列表。 选择需要从移动应用程序访问的应用程序。
+2. 单击**添加应用程序**按钮。 在下一个屏幕弹出窗口会看到这样的使用由 Azure Active Directory 保护的所有应用程序的列表。 选择需要从移动应用程序访问的应用程序。
 
   ![](configure-images/2.2-add-application.png "选择需要从移动应用程序访问的应用程序")
 

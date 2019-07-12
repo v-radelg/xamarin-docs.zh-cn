@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ac255baf44951518b29112d2903950039a80ee53
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364273"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831213"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 框架更改
 
@@ -132,10 +132,10 @@ iOS 10 进行核心映像框架的以下增强功能：
 
 在 iOS 10 ModelIO 框架进行了以下增强功能：
 
- - 现在支持美元文件格式。
- - 签名距离字段支持添加到[MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)类。
- - 使用新`MDLLightProbeIrradianceDataSource`类，以帮助在 Light 探测位置。
- - 使用新`MDLMaterialPropertyGraph`类，以轻松地支持运行时更改为模型。
+- 现在支持美元文件格式。
+- 签名距离字段支持添加到[MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)类。
+- 使用新`MDLLightProbeIrradianceDataSource`类，以帮助在 Light 探测位置。
+- 使用新`MDLMaterialPropertyGraph`类，以轻松地支持运行时更改为模型。
 
 ## <a name="photos-enhancements"></a>照片增强功能
 

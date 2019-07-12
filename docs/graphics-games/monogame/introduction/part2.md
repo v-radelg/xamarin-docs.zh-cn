@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9e0cf2f29d304f042bc56ee91029adadcaba570
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162090"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832506"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第二部分-实现 WalkingGame
 
@@ -53,7 +53,7 @@ _本演练演示如何添加游戏逻辑和到空 MonoGame 项目创建与移动
 
 ### <a name="creating-a-texture2d"></a>创建 Texture2D
 
-我们需要创建`Texture2D`以呈现我们 sprite 时所使用的实例。 所有游戏内容最终包含在名为的文件夹**内容，** 位于特定于平台的项目。 共享的 MonoGame 项目不能包含的内容，因为内容必须使用特定于平台的生成操作。 CocosSharp 开发人员会发现的 Content 文件夹的熟悉的概念 – 位于 CocosSharp 和 MonoGame 项目中的同一位置。 在 iOS 项目，并在 Android 项目中的资产文件夹内，可以找到的 Content 文件夹。
+我们需要创建`Texture2D`以呈现我们 sprite 时所使用的实例。 所有游戏内容最终包含在名为的文件夹**内容，** 位于特定于平台的项目。 共享的 MonoGame 项目不能包含的内容，因为内容必须使用特定于平台的生成操作。 在 iOS 项目，并在 Android 项目中的资产文件夹内，可以找到的 Content 文件夹。
 
 若要添加我们的游戏中的内容，请右键单击**内容**文件夹，然后选择**添加 > 添加文件...** 导航到已解压缩 content.zip 文件的位置并选择**charactersheet.png**文件。 如果系统询问有关如何将文件添加到文件夹，我们应选择**复制**选项：
 
@@ -143,7 +143,7 @@ protected override void Draw(GameTime gameTime)
 - `X` 和 Y 属性来控制字符的位置。
 - 若要更新本身-具体而言，若要读取值从触摸屏幕上，并相应地调整位置功能。
 
-若要添加`CharacterEntity`我们的游戏中，右键单击或单击上**WalkingGame**项目，然后选择**添加 > 新建文件...**.选择**的空类**选项，然后将新文件命名**CharacterEntity**，然后单击**新建**。
+若要添加`CharacterEntity`我们的游戏中，右键单击或单击上**WalkingGame**项目，然后选择**添加 > 新建文件...** .选择**的空类**选项，然后将新文件命名**CharacterEntity**，然后单击**新建**。
 
 首先，我们将添加的功能`CharacterEntity`加载`Texture2D`并绘制自身。 我们将修改新添加`CharacterEntity.cs`文件，如下所示：
 
@@ -315,7 +315,7 @@ namespace WalkingGame
 
 `Animation`类将包含`List<AnimationFrame>`以及切换经过多少时间根据当前显示的帧的逻辑。
 
-若要添加`Animation`类中，右键单击或单击上**WalkingGame**共享项目，然后选择**添加 > 新建文件...**.输入的名称**动画**然后单击**新建**按钮。 我们将修改`Animation.cs`文件使其包含以下代码：
+若要添加`Animation`类中，右键单击或单击上**WalkingGame**共享项目，然后选择**添加 > 新建文件...** .输入的名称**动画**然后单击**新建**按钮。 我们将修改`Animation.cs`文件使其包含以下代码：
 
 
 ```csharp
@@ -376,7 +376,7 @@ namespace WalkingGame
 
 `frames`成员是将我们的动画数据的存储。 它会实例化动画的代码将添加`AnimationFrame`到实例`frames`列出通过`AddFrame`方法。 可能会提供的更完整实现`public`方法或属性用于修改`frames`，但我们将仅添加在本演练中的帧的功能。
 
-### <a name="duration"></a>持续时间
+### <a name="duration"></a>Duration
 
 持续时间返回的总持续时间`Animation,`从中获取通过添加包含所有的持续时间`AnimationFrame`实例。 无法缓存此值，如果`AnimationFrame`不可变对象，但由于我们 AnimationFrame 作为类实现可添加到动画后更改，因此我们需要计算此值，只要访问的属性。
 
@@ -548,7 +548,7 @@ Vector2 GetDesiredVelocityFromInput()
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-后面是数学这可以使移动的字符保持相同速度的位。 为了帮助说明为什么这很重要，让我们考虑用户触摸屏幕 500 像素离开该字符所在的位置的其中一种情况。 第一个行`desiredVelocity.X`是组会分配值为 500。 但是，如果用户已触摸屏幕的字符，从 100 个单位距离则`desiredVelocity.X `将设置为 100。 结果将为您的人物的移动速度会响应如何距离遥远的触摸点是从字符。 由于我们想要始终以相同的速度移动的字符，我们需要修改 desiredVelocity。
+后面是数学这可以使移动的字符保持相同速度的位。 为了帮助说明为什么这很重要，让我们考虑用户触摸屏幕 500 像素离开该字符所在的位置的其中一种情况。 第一个行`desiredVelocity.X`是组会分配值为 500。 但是，如果用户已触摸屏幕的字符，从 100 个单位距离则`desiredVelocity.X`将设置为 100。 结果将为您的人物的移动速度会响应如何距离遥远的触摸点是从字符。 由于我们想要始终以相同的速度移动的字符，我们需要修改 desiredVelocity。
 
 `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`语句的作用检查方向的速度是非-零 – 换句话说，是否它检查以确保用户不接触字符的当前位置为相同的位置。 如果不是，然后我们需要设置人物的速度远为常量而不考虑如何触摸屏输入。 我们完成此操作通过规范化速度向量，这将使其在长度为 1。 1 表示字符将在每秒 1 像素移动速度向量。 我们将加快此速度，通过将值乘以所需的速度为 200。
 

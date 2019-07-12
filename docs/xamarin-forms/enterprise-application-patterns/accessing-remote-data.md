@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a4c58139b0ddbaaedf5769eeac6585bac4c013e4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277946"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832112"
 ---
 # <a name="accessing-remote-data"></a>访问远程数据
 
@@ -154,7 +154,7 @@ public async Task<IActionResult> Items(
 
 #### <a name="making-a-post-request"></a>发出 POST 请求
 
-`BasketService`类用于管理数据检索和更新与购物篮微服务的过程。 在中`RegisterDependencies`中的方法`ViewModelLocator`类，`BasketService`类注册针对的类型映射为`IBasketService`Autofac 依赖关系注入容器使用的类型。 然后的实例时`BasketViewModel`创建类，其构造函数接受`IBasketService`类型，其中 Autofac 解析，返回的实例`BasketService `类。 有关依赖关系注入的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+`BasketService`类用于管理数据检索和更新与购物篮微服务的过程。 在中`RegisterDependencies`中的方法`ViewModelLocator`类，`BasketService`类注册针对的类型映射为`IBasketService`Autofac 依赖关系注入容器使用的类型。 然后的实例时`BasketViewModel`创建类，其构造函数接受`IBasketService`类型，其中 Autofac 解析，返回的实例`BasketService`类。 有关依赖关系注入的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
 
 图 10-2 显示了发送所显示的购物篮数据的类的交互`BasketView`，向购物车微服务。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61428904"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831702"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的情节提要简介
 
@@ -68,7 +68,7 @@ ms.locfileid: "61428904"
 
 -  **显示 / 推送**– 推送 segue 将视图控制器添加到导航堆栈。 它假定发起请求的视图控制器是同一导航控制器将被添加到堆栈的视图控制器的一部分。 这执行同样的操作为`pushViewController`，而通常用于在屏幕上的数据之间存在某种关系时。 使用推送 segue 为您提供了使导航工具栏中的后退按钮和标题添加到允许向下钻取导航的视图层次结构通过在堆栈上的每个视图。
 -  **模式**– 模式 segue 创建项目，显示未经过动画处理的转换的选项中的任何两个视图控制器之间的关系。 子视图控制器会十分晦涩父视图控制器时放入视图。 与不同的推送 segue，这为我们; 添加后退按钮当使用在安装结束时 segue`DismissViewController`必须用于返回到上一个视图控制器。
--  **自定义**-任何自定义的子类可创建 segue ` UIStoryboardSegue`。
+-  **自定义**-任何自定义的子类可创建 segue `UIStoryboardSegue`。
 -  **展开**-展开的 segue 可用于在向后导航推送或模式 segue – 例如，通过消除有模式地显示视图控制器。 除此之外，您可以通过不只一个展开但推送和模式的一系列 segue 并返回具有单个导航层次结构中的多个步骤展开操作。 若要了解如何使用展开代码 segue 在 iOS 中，读取[创建展开 Segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)方案。
 -  **无源**– sourceless segue 指示包含初始视图控制器场景，因此其查看用户首先看到。 为由 segue 如下所示：  
 

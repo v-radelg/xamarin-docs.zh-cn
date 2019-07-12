@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: edab6b7edd5ca95cb5abe5fc2caccb5714efda56
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: efaea24e559aa2f3bdfd87c1c083ce1d777dbb3f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540399"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832169"
 ---
 # <a name="authentication-and-authorization"></a>身份验证和授权
 
@@ -97,7 +97,8 @@ public void ConfigureServices(IServiceCollection services)
 -   将连接到请求令牌的客户端。
 -   ASP.NET Core 标识。
 
->💡 **提示**:动态加载 IdentityServer 4 配置。 IdentityServer 4 Api，可以从内存中列表的配置对象配置 IdentityServer。 在 eShopOnContainers 引用应用程序，这些内存中集合是硬编码到应用程序。 但是，在生产方案中它们可以是加载动态配置文件中或从数据库。
+> [!TIP]
+> 动态加载 IdentityServer 4 配置。 IdentityServer 4 Api，可以从内存中列表的配置对象配置 IdentityServer。 在 eShopOnContainers 引用应用程序，这些内存中集合是硬编码到应用程序。 但是，在生产方案中它们可以是加载动态配置文件中或从数据库。
 
 有关配置 IdentityServer 使用 ASP.NET Core 标识的信息，请参阅[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html)IdentityServer 文档中。
 
@@ -317,7 +318,8 @@ private async Task NavigateAsync(string url)
 
 此方法分析包含在返回的 URI，该身份验证响应并到 IdentityServer 的前提是存在一个有效的授权代码，则发出请求[令牌终结点](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html)，传递的授权代码，PKCE 机密验证程序，以及其他必需的参数。 令牌终结点位于`/connect/token`5105 公开为用户设置的基本终结点的端口上。 有关用户设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
->💡 **提示**:验证返回的 Uri。 尽管 eShopOnContainers 移动应用不会验证返回的 URI，但最佳做法是验证返回的 URI 引用已知的位置，若要阻止打开重定向攻击。
+> [!TIP]
+> 验证返回的 Uri。 尽管 eShopOnContainers 移动应用不会验证返回的 URI，但最佳做法是验证返回的 URI 引用已知的位置，若要阻止打开重定向攻击。
 
 如果令牌终结点收到有效的授权代码和 PKCE 机密验证工具，它使用访问令牌、 标识令牌和刷新令牌的响应。 作为应用程序设置，然后存储的访问令牌 （它允许 API 资源的访问权限） 和标识令牌并执行页面导航。 因此，在 eShopOnContainers 移动应用中的总体效果是： 提供的用户都能成功进行身份验证与 IdentityServer，将用户导航到`MainView`页上，即[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)它显示`CatalogView`作为其所选的选项卡。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60eaad98e2d5469e9c43e6b4ad889080e1aa63ba
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408302"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832063"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchOS 中 Xamarin 的项目引用
 
@@ -26,16 +26,16 @@ WatchOS 解决方案中的三个项目是*自动配置*来互相引用 watchOS 3
 
 - **iPhone 应用**引用**Watch 应用**
 
-![](project-references-images/catalog-reference1.png "iPhone 应用引用 Watch 应用")
+  ![](project-references-images/catalog-reference1.png "iPhone 应用引用 Watch 应用")
 
 - **监视应用**引用**监视应用程序扩展**
 
-![](project-references-images/catalog-reference2.png "iPhone 应用引用 Watch 应用")
+  ![](project-references-images/catalog-reference2.png "iPhone 应用引用 Watch 应用")
 
 
- - **监视应用程序扩展**不引用其他项目之一
+- **监视应用程序扩展**不引用其他项目之一
 
-![](project-references-images/catalog-reference3.png "监视应用程序扩展不能引用其他项目")
+  ![](project-references-images/catalog-reference3.png "监视应用程序扩展不能引用其他项目")
 
 
 
@@ -44,17 +44,17 @@ WatchOS 解决方案中的三个项目是*自动配置*来互相引用 watchOS 3
 此外需要确保你**捆绑包标识符**正确无误。
 所有三个项目应有*同一*标识符前缀，使用预先定义的扩展的两个监视项目`watchkitextension`和`watchkitapp`，按如下所示 (有关**WatchKitCatalog**示例）：
 
- - Xamarin.iOS 统一项目- `com.xamarin.WatchKitCatalog`
+- Xamarin.iOS 统一项目- `com.xamarin.WatchKitCatalog`
 
- - WatchKit 扩展项目- `com.xamarin.WatchKitCatalog.watchkitextension`
+- WatchKit 扩展项目- `com.xamarin.WatchKitCatalog.watchkitextension`
 
- - 监视应用程序项目- `com.xamarin.WatchKitCatalog.watchkitapp`
+- 监视应用程序项目- `com.xamarin.WatchKitCatalog.watchkitapp`
 
 此外，请确保这些**Info.plist**设置正确无误：
 
- - 监视应用程序项目的`WKCompanionAppBundleIdentifier`与父/容器应用的捆绑 ID 匹配 (ie。 在 iPhone 上运行);
+- 监视应用程序项目的`WKCompanionAppBundleIdentifier`与父/容器应用的捆绑 ID 匹配 (ie。 在 iPhone 上运行);
 
- - 监视工具包扩展项目**WKApp 捆绑 ID**与监视应用程序项目的捆绑 ID 匹配。
+- 监视工具包扩展项目**WKApp 捆绑 ID**与监视应用程序项目的捆绑 ID 匹配。
 
 可以通过双击编辑标识符**Info.plist**每个项目中的文件。
 

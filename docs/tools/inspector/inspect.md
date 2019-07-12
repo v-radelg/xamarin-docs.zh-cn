@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2def0a01bdd28af5eefb76afc19a0e49fd1df355
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60948134"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831555"
 ---
 # <a name="inspecting-live-applications"></a>检查实时应用程序
 
@@ -46,8 +46,8 @@ ms.locfileid: "60948134"
 
 ## <a name="known-limitations"></a>已知的限制
 
- - 视图选择仅支持在主显示器上。
- - 属性网格编辑不可用于 Mac 和 Windows 上仅限于几种数据类型。 用于 REPL 更功能强大的编辑。
- - 只要检查器外接程序/扩展已安装并启用在 IDE 中，我们将代码注入到您的应用程序每次在调试模式下启动。 如果应用程序中发现任何异常行为，请尝试禁用或卸载检查器外接程序/扩展、 重新启动 IDE，并重新检查。 并请[错误进行归档](~/tools/inspector/install.md#reporting-bugs)，让我们了解 ！
- - 如果检查 UI 元素后，即可更改中是否仍要请[告诉我们](~/tools/inspector/install.md#reporting-bugs)，因为这可能表示一个 bug。
+- 视图选择仅支持在主显示器上。
+- 属性网格编辑不可用于 Mac 和 Windows 上仅限于几种数据类型。 用于 REPL 更功能强大的编辑。
+- 只要检查器外接程序/扩展已安装并启用在 IDE 中，我们将代码注入到您的应用程序每次在调试模式下启动。 如果应用程序中发现任何异常行为，请尝试禁用或卸载检查器外接程序/扩展、 重新启动 IDE，并重新检查。 并请[错误进行归档](~/tools/inspector/install.md#reporting-bugs)，让我们了解 ！
+- 如果检查 UI 元素后，即可更改中是否仍要请[告诉我们](~/tools/inspector/install.md#reporting-bugs)，因为这可能表示一个 bug。
 

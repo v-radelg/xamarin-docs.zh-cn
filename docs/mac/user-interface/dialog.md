@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283032"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832519"
 ---
 # <a name="dialogs-in-xamarinmac"></a>在 Xamarin.Mac 中的对话框
 
@@ -413,7 +413,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 ## <a name="creating-a-preferences-dialog"></a>创建首选项对话框
 
-我们设置 Interface Builder 中的首选项视图布局之前，我们需要添加自定义的 segue 类型来处理切出首选项。 向项目添加一个新类，调用它`ReplaceViewSeque `。 编辑类，并使其看起来如下所示：
+我们设置 Interface Builder 中的首选项视图布局之前，我们需要添加自定义的 segue 类型来处理切出首选项。 向项目添加一个新类，调用它`ReplaceViewSeque`。 编辑类，并使其看起来如下所示：
 
 ```csharp
 using System;
@@ -503,7 +503,7 @@ namespace MacWindows
 9. 选择新的 Segue 并设置**类**到`ReplaceViewSegue`:
 
     [![](dialog-images/pref08.png "设置 segue 类")](dialog-images/pref08.png#lightbox)
-10. 在中**设计器菜单栏**设计图面上，从应用程序菜单中选择**首选项...**、 单击和拖动到首选项窗口来创建**显示**segue:
+10. 在中**设计器菜单栏**设计图面上，从应用程序菜单中选择**首选项...** 、 单击和拖动到首选项窗口来创建**显示**segue:
 
     [![](dialog-images/pref09.png "设置 segue 类型")](dialog-images/pref09.png#lightbox)
 11. 保存所做的更改并返回到 Visual Studio for Mac 进行同步。

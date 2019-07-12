@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ef12c8b0822f3d0486f584878f572a266b0d44e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61165114"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831866"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin.iOS CloudKit
 
@@ -153,7 +153,7 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 |**数据类型**|共享的数据|当前用户的数据|
 |**Quota**|在开发人员的配额|在用户的配额|
 |**默认权限**|可读的世界|用户可读|
-|**编辑权限**|通过记录类级别的 iCloud 仪表板角色|不适用|
+|**编辑权限**|通过记录类级别的 iCloud 仪表板角色|不可用|
 
 ### <a name="records"></a>记录
 
@@ -501,7 +501,7 @@ CloudKit 支持以下类型的`NSPredicates`处理查询时：
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
     
- 6. CloudKit 支持复合使用联接谓词`AND`运算符。
+6. CloudKit 支持复合使用联接谓词`AND`运算符。
     
     ```
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))

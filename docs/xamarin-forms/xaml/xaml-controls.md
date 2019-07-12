@@ -7,17 +7,17 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/03/2019
-ms.openlocfilehash: 8217c6436cc8cfe8f4b9c6cc3445157319e8c0bf
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.date: 07/10/2019
+ms.openlocfilehash: dc903cf4ff8eaced18df3271e5e4dbdde6845b6a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741105"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832617"
 ---
 # <a name="xaml-controls"></a>XAML 控件
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
 
 视图是用户界面对象，如标签、 按钮和滑块，通常称为分别*控件*或*小组件*其他图形的编程环境中。 支持所有派生自 Xamarin.Forms 的视图[ `View` ](xref:Xamarin.Forms.View)类。
 
@@ -47,9 +47,10 @@ ms.locfileid: "66741105"
 
 |     |     |
 | --- | --- |
+| <h3>CheckBox</h3>允许选择`boolean`值。<p align="center">![一个复选框的屏幕截图](xaml-controls-images/CheckBox.png "复选框")</p> [指南](~/xamarin-forms/user-interface/checkbox.md) | <p valign="center"><pre>&lt;CheckBox IsChecked="true"<br />          HorizontalOptions="Center"<br />          VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>Slider</h3>允许选择`double`从连续范围的值。<p align="center">![滑块的屏幕截图](xaml-controls-images/Slider.png "滑块")</p>[API](xref:Xamarin.Forms.Slider) / [指南](~/xamarin-forms/user-interface/slider.md) | <p valign="center"><pre>&lt;Slider Minimum="0"<br />        Maximum="100"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>步进器</h3>允许选择`double`将增量在范围中的值。<p align="center">![分档器的屏幕截图](xaml-controls-images/Stepper.png "分档器")</p>[API](xref:Xamarin.Forms.Stepper) / [指南](~/xamarin-forms/user-interface/stepper.md) | <p valign="center"><pre>&lt;Stepper Minimum="0"<br />         Maximum="10"<br />         Increment="0.1"<br />         HorizontalOptions="Center"<br />         VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>开关</h3>允许选择`boolean`值。<p align="center">![交换机的屏幕截图](xaml-controls-images/Switch.png "开关")</p>[API](xref:Xamarin.Forms.Switch) | <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>开关</h3>允许选择`boolean`值。<p align="center">![交换机的屏幕截图](xaml-controls-images/Switch.png "开关")</p>[API](xref:Xamarin.Forms.Switch) / [指南](~/xamarin-forms/user-interface/switch.md)| <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>DatePicker</h3>允许选择一个日期。<p align="center">![DatePicker 的屏幕截图](xaml-controls-images/DatePicker.png "DatePicker")</p>[API](xref:Xamarin.Forms.DatePicker) / [指南](~/xamarin-forms/user-interface/datepicker.md) | <p valign="center"><pre>&lt;DatePicker Format="D"<br/>            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>TimePicker</h3>允许时间的选择。<p align="center">![TimePicker 的屏幕截图](xaml-controls-images/TimePicker.png "TimePicker")</p>[API](xref:Xamarin.Forms.TimePicker) / [指南](~/xamarin-forms/user-interface/timepicker.md) | <p valign="center"><pre>&lt;TimePicker Format="T"<br />            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |

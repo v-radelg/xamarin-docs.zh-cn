@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: dda197f71b2a2ab3e0d61a838ab85d79b7a078c7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c4aea5a35fd5db46c9e7ca245b852c988e82f53e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270317"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830496"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 简介
 
@@ -32,28 +32,28 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
 
 运行在 Apple TV 的 tvOS 应用具有支持以下功能和特性：
 
- - 应用组
- - 后台模式
- - 数据保护
- - Game Center
- - 游戏控制器
- - iCloud
- - 应用内购买
- - Keychain 共享
+- 应用组
+- 后台模式
+- 数据保护
+- Game Center
+- 游戏控制器
+- iCloud
+- 应用内购买
+- Keychain 共享
 
 不支持以下功能和性能：
 
- - Apple Pay
- - 应用沙盒
- - 关联的域
- - HealthKit
- - HomeKit
- - 应用间音频
- - 映射
- - 个人 VPN
- - 推送通知
- - Wallet
- - 无线附件配置
+- Apple Pay
+- 应用沙盒
+- 关联的域
+- HealthKit
+- HomeKit
+- 应用间音频
+- 映射
+- 个人 VPN
+- 推送通知
+- Wallet
+- 无线附件配置
 
 请参阅我们[支持程序集](~/ios/tvos/internals/assemblies.md)并[支持框架](~/ios/tvos/internals/frameworks.md)文档了解详细信息。
 
@@ -63,15 +63,15 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
 
 新建 Apple TV 具有以下硬件规范：
 
- - 64 位 A8 处理器
- - 32 GB 或 64 GB 的存储空间
- - 2 GB 的 RAM
- - 10/100Mbps Ethernet
- - WiFi 802.11a/b/g/n/ac
- - 分辨率为 1080p
- - HDMI
- - USB C 端口 （适用于开发人员和仅供诊断使用）
- - 新 Siri 远程或 Apple TV 远程 （基于区域）
+- 64 位 A8 处理器
+- 32 GB 或 64 GB 的存储空间
+- 2 GB 的 RAM
+- 10/100Mbps Ethernet
+- WiFi 802.11a/b/g/n/ac
+- 分辨率为 1080p
+- HDMI
+- USB C 端口 （适用于开发人员和仅供诊断使用）
+- 新 Siri 远程或 Apple TV 远程 （基于区域）
 
 ### <a name="siri-remote"></a>Siri 远程
 
@@ -79,14 +79,14 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
 
 Siri 远程目前已在以下国家/地区：
 
- - 澳大利亚
- - 加拿大
- - 法国
- - 德国
- - 日本
- - 西班牙
- - 英国
- - 美国
+- 澳大利亚
+- 加拿大
+- 法国
+- 德国
+- 日本
+- 西班牙
+- 英国
+- 美国
 
 所有其他国家/地区，将收到的 Apple TV Remote 替换 Siri 按钮将显示与搜索文本输入的默认搜索屏幕的搜索按钮：
 

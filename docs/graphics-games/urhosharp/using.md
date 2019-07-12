@@ -6,12 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 5e5c4f1545d39befde6574338ec4c1ca4037ad8b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7307f7dcfcc6b5e2576ce4b425879ae05c5a6056
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61352092"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832675"
 ---
 # <a name="using-urhosharp-to-build-a-3d-game"></a>使用 UrhoSharp 生成 3D 游戏
 
@@ -19,13 +19,13 @@ ms.locfileid: "61352092"
 
 <a name="scenenodescomponentsandcameras"/>
 
-## <a name="scenes-nodes-components-and-cameras"></a>场景、 节点、 组件和相机
+## <a name="scenes-nodes-components-and-cameras"></a>场景、 节点、 组件和照相机
 
-场景模型可以描述为基于组件的场景图。 场景包含节点的层次结构场景，从根节点，还表示整个场景开始。 每个[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/)具有三维转换 （位置、 旋转和缩放）、 名称、 ID 以及任意数量的组件。  组件将节点变为现实，它们会使添加可视表示形式 ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel))，它们可以发出声音 ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource))，它们可以提供冲突边界，依此类推。
+场景模型可以描述为基于组件的场景图。 场景包含节点的层次结构场景，从根节点，还表示整个场景开始。 每个`Node`具有三维转换 （位置、 旋转和缩放）、 名称、 ID 以及任意数量的组件。  组件将节点变为现实，它们会使添加可视表示形式 (`StaticModel`)，它们可以发出声音 (`SoundSource`)，它们可以提供冲突边界，依此类推。
 
 您可以创建您的场景和安装程序节点上使用[Urho 编辑器](#urhoeditor)，或可以在 C# 代码中执行操作。  本文档中我们将探讨设置各项使用的代码，因为它们说明了使内容显示在屏幕上所需的元素
 
-除了设置您的场景，你需要设置[ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/)，这是向用户将获取显示的内容由什么决定。
+除了设置您的场景，你需要设置`Camera`，这是向用户将获取显示的内容由什么决定。
 
 ### <a name="setting-up-your-scene"></a>设置您的场景
 
@@ -51,9 +51,9 @@ planeObject.Model = ResourceCache.GetModel ("Models/Plane.mdl");
 planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 ```
 
-### <a name="components"></a>组件数
+### <a name="components"></a>组件
 
-呈现三维对象，声音播放、 物理和脚本化的逻辑更新情况下全都启用为节点创建不同的组件，通过调用[ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/)。  例如，安装程序节点和浅组件如下：
+呈现三维对象，声音播放、 物理和脚本化的逻辑更新情况下全都启用为节点创建不同的组件，通过调用`CreateComponent<T>()`。  例如，安装程序节点和浅组件如下：
 
 ```csharp
 // Create a directional light to the world so that we can see something. The
@@ -65,7 +65,7 @@ var lightNode = scene.CreateChild("DirectionalLight");
 lightNode.SetDirection (new Vector3(0.6f, -1.0f, 0.8f));
 ```
 
-我们已创建了具有该名称节点上方"`DirectionalLight`"并为它，但仅限于设置方向。  现在，我们可以将上面的节点转换 light 发出的节点，通过将附加[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/)组件，使用`CreateComponent`:
+我们已创建了具有该名称节点上方"`DirectionalLight`"并为它，但仅限于设置方向。  现在，我们可以将上面的节点转换 light 发出的节点，通过将附加`Light`组件，使用`CreateComponent`:
 
 ```csharp
 var light = lightNode.CreateComponent<Light>();
@@ -73,12 +73,12 @@ var light = lightNode.CreateComponent<Light>();
 
 创建到组件`Scene`本身具有特殊的角色： 若要实现场景级功能。 它们应在所有其他组件之前创建，并且包括以下各项：
 
-* [`Octree`](https://developer.xamarin.com/api/type/Urho.Octree/)： 实现空间分区，并加速可见性查询。 而无需此 3D 不可以呈现的对象。
-* [`PhysicsWorld`](https://developer.xamarin.com/api/type/Urho.Physics.PhysicsWorld/)： 实现物理模拟。 如物理组件[ `RigidBody` ](https://developer.xamarin.com/api/type/Urho.Physics.RigidBody/)或[ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/)可以不正常而无需这的工作。
-* [`DebugRenderer`](https://developer.xamarin.com/api/type/Urho.DebugRenderer/)： 实现调试 geometry 呈现。
+ `Octree`： 实现空间分区，并加速可见性查询。 而无需此 3D 不可以呈现的对象。
+ `PhysicsWorld`： 实现物理模拟。 如物理组件`RigidBody`或`CollisionShape`可以不正常而无需这的工作。
+ `DebugRenderer`： 实现调试 geometry 呈现。
 
-等普通组件[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light)， [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera)或 [`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)
-不应直接创建[ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene)，但而不是为子节点。
+等普通组件`Light`，`Camera`或 `StaticModel`
+不应直接创建`Scene`，但而不是为子节点。
 
 库附带了各种可以附加到节点将转换为现实的组件： 用户可见的元素 （模型）、 声音、 刚体、 冲突形状、 照相机、 光源、 粒子发射器和其他更多。
 
@@ -88,7 +88,7 @@ var light = lightNode.CreateComponent<Light>();
 
 ### <a name="camera-and-viewport"></a>照相机和视区
 
-就像光，相机是组件，因此需要将该组件附加到一个节点，这是如下所示：
+就像光，相机是组件，因此将需要将该组件附加到一个节点，如下：
 
 ```csharp
 var CameraNode = scene.CreateChild ("camera");
@@ -106,33 +106,33 @@ Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 
 ### <a name="identification-and-scene-hierarchy"></a>标识和场景的层次结构
 
-与节点不同组件没有名称;在同一节点内的组件仅由其类型和在该节点的组件列表中，按创建顺序填充该索引，例如，可以检索[ `Light` ](https://developer.xamarin.com/api/type/Urho.Light)组件共`lightNode`对象更高版本如下：
+与节点不同组件没有名称;在同一节点内的组件仅由其类型和在该节点的组件列表中，按创建顺序填充该索引，例如，可以检索`Light`组件共`lightNode`上面对象如下：
 
 ```csharp
 var myLight = lightNode.GetComponent<Light>();
 ```
 
-此外可以通过检索来获取所有组件的列表[ `Components` ](https://developer.xamarin.com/api/property/Urho.Node.Components/)属性返回`IList<Component>`，可以使用。
+此外可以通过检索来获取所有组件的列表`Components`属性返回`IList<Component>`，可以使用。
 
-在创建时，节点和组件将获取场景全局整数 Id。 它们可以从场景查询，通过使用函数[ `GetNode(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetNode/p/System.UInt32/)并[ `GetComponent(uint id)` ](https://developer.xamarin.com/api/member/Urho.Scene.GetComponent/p/System.UInt32/)。 这是比例如执行递归名称基于场景的节点查询快得多。
+在创建时，节点和组件将获取场景全局整数 Id。 它们可以从场景查询，通过使用函数`GetNode(uint id)`和`GetComponent(uint id)`。 这是比例如执行递归名称基于场景的节点查询快得多。
 
-不存在的实体或游戏对象; 内置概念而是由编程人员决定节点层次结构，并在哪些节点将任何已编写脚本的逻辑。 通常情况下，作为根节点的子级创建免费移动三维世界中的对象。 可以使用或不使用的名称，可以创建节点[ `CreateChild()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateChild/p/System.String/Urho.CreateMode/System.UInt32/)。 不强制执行节点名称的唯一性。
+不存在的实体或游戏对象; 内置概念而是由编程人员决定节点层次结构，并在哪些节点将任何已编写脚本的逻辑。 通常情况下，作为根节点的子级创建免费移动三维世界中的对象。 可以使用或不使用的名称，可以创建节点`CreateChild`。 不强制执行节点名称的唯一性。
 
 只要某些层次结构的组合，它是建议 （并且确实有必要，因为组件不具有其自己的 3D 转换） 来创建一个子节点。
 
-例如如果字符已持有手中的一个对象，该对象应具有其自己的节点，将父级设置为该字符的手的骨骼 (还[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/))。  例外情况是物理学[ `CollisionShape` ](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape)，可以是 offsetted 和旋转单独与节点相关。
+例如如果字符已持有手中的一个对象，该对象应具有其自己的节点，将父级设置为该字符的手的骨骼 (还`Node`)。  例外情况是物理`CollisionShape`，可以是 offsetted 和旋转单独与节点相关。
 
-请注意， [ `Scene`](https://developer.xamarin.com/api/type/Urho.Node/)的拥有转换有意忽略作为一种优化，计算派生的世界转换的子节点时，因此更改都无效，它应保留原样 （原点，没有旋转位置无需进行扩展。)
+请注意，`Scene`的拥有转换有意忽略作为一种优化，计算派生的世界转换的子节点时，因此更改都无效，它应保留原样 （在 origin，没有旋转，无需进行扩展的位置。）
 
-[`Scene`](https://developer.xamarin.com/api/type/Urho.Node/) 可以自由地重新设定节点。 与此相反组件始终属于它们附加到，并不能移动的节点之间的节点。 节点和组件提供[ `Remove()` ](https://developer.xamarin.com/api/member/Urho.Node.Remove()/)函数来实现此目的而无需经历父级。 删除节点后，在调用该函数后不是安全组件有问题的节点上的任何操作。
+`Scene` 可以自由地重新设定节点。 与此相反组件始终属于它们附加到，并不能移动的节点之间的节点。 节点和组件提供`Remove`函数来实现此目的而无需经历父级。 删除节点后，在调用该函数后不是安全组件有问题的节点上的任何操作。
 
 还有可能创建`Node`，不属于一个场景。 这是有用例如带相机的场景可能加载或保存，因为移动然后照相机将不会实际场景，以及保存和加载场景时不会被破坏。 但请注意，创建到未连接的节点，geometry、 物理或脚本组件，然后将其移到一个场景更高版本将导致这些组件无法正常工作。
 
 ### <a name="scene-updates"></a>场景更新
 
-启用其更新场景 （默认值） 将自动更新每个主循环迭代上。  应用程序的[ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/)在其上调用事件处理程序。
+启用其更新场景 （默认值） 将自动更新每个主循环迭代上。  应用程序的`SceneUpdate`在其上调用事件处理程序。
 
-节点和组件可以通过禁用从场景更新中排除，请参阅[ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled)。  行为取决于特定的组件，但如禁用可绘制组件也将使其不可见的而禁用声音源组件使静音。 如果禁用了节点，其所有组件将被视为为禁用，而不考虑其自己的启用/禁用状态。
+节点和组件可以通过禁用从场景更新中排除，请参阅`Enabled`。  行为取决于特定的组件，但如禁用可绘制组件也将使其不可见的而禁用声音源组件使静音。 如果禁用了节点，其所有组件将被视为为禁用，而不考虑其自己的启用/禁用状态。
 
 ## <a name="adding-behavior-to-your-components"></a>将行为添加到你的组件
 
@@ -180,25 +180,25 @@ await cloud.RunActionsAsync (
 
 在上面的示例在云中将移动，并同时淡出。
 
-你会注意到，将使用这些 C# await，该编辑器可以以线性方式考虑你想要实现的行为。
+你会注意到使用这些C# `await`，该编辑器可以以线性方式考虑你想要实现的行为。
 
 ### <a name="basic-actions"></a>基本操作
 
 以下是在 UrhoSharp 中受支持的操作：
 
-* 移动节点： [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo)， [ `MoveBy` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveBy)， [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place)， [ `BezierTo` ](https://developer.xamarin.com/api/type/Urho.Actions.BezierTo)， [ `BezierBy` ](https://developer.xamarin.com/api/type/Urho.Actions.BezierBy), [`JumpTo`](https://developer.xamarin.com/api/type/Urho.Actions.JumpTo), [`JumpBy`](https://developer.xamarin.com/api/type/Urho.Actions.JumpBy)
-* 旋转节点： [ `RotateTo` ](https://developer.xamarin.com/api/type/Urho.Actions.RotateTo)， [`RotateBy`](https://developer.xamarin.com/api/type/Urho.Actions.RotateBy)
-* 缩放节点： [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo)， [`ScaleBy`](https://developer.xamarin.com/api/type/Urho.Actions.ScaleBy)
-* 淡出节点： [ `FadeIn` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeIn)， [ `FadeTo` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeTo)， [ `FadeOut` ](https://developer.xamarin.com/api/type/Urho.Actions.FadeOut)， [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide)， [`Blink`](https://developer.xamarin.com/api/type/Urho.Actions.Blink)
-* 色调： [ `TintTo` ](https://developer.xamarin.com/api/type/Urho.Actions.TintTo)， [`TintBy`](https://developer.xamarin.com/api/type/Urho.Actions.TintBy)
-* Instants: [ `Hide` ](https://developer.xamarin.com/api/type/Urho.Actions.Hide)， [ `Show` ](https://developer.xamarin.com/api/type/Urho.Actions.Show)， [ `Place` ](https://developer.xamarin.com/api/type/Urho.Actions.Place)， [ `RemoveSelf` ](https://developer.xamarin.com/api/type/Urho.Actions.RemoveSelf)， [`ToggleVisibility`](https://developer.xamarin.com/api/type/Urho.Actions.ToggleVisibility)
-* 循环： [ `Repeat` ](https://developer.xamarin.com/api/type/Urho.Actions.Repeat)， [ `RepeatForever` ](https://developer.xamarin.com/api/type/Urho.Actions.RepeatForever)， [`ReverseTime`](https://developer.xamarin.com/api/type/Urho.Actions.ReverseTime)
+- 移动节点： `MoveTo`， `MoveBy`， `Place`， `BezierTo`， `BezierBy`， `JumpTo`， `JumpBy`
+- 旋转节点： `RotateTo`， `RotateBy`
+- 缩放节点： `ScaleTo`， `ScaleBy`
+- 淡出节点： `FadeIn`， `FadeTo`， `FadeOut`， `Hide`， `Blink`
+- 色调： `TintTo`， `TintBy`
+- Instants: `Hide`， `Show`， `Place`， `RemoveSelf`， `ToggleVisibility`
+- 循环： `Repeat`， `RepeatForever`， `ReverseTime`
 
-其他高级的功能包括的组合[ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn)并[ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence)操作。
+其他高级的功能包括的组合`Spawn`和`Sequence`操作。
 
 ### <a name="easing---controlling-the-speed-of-your-actions"></a>缓动-控制你的操作的速度
 
-缓动是一种方法，将定向的方式，动画将展开，并且它可使动画起来更加得心应手。  默认情况下你的操作会有线性的行为，例如[ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo)操作者必须非常机器人的移动。  可以包装你的操作转换为一个缓动操作来改变此行为，例如，一个用于将缓慢启动移动、 加速并缓慢到达末尾 ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut))。
+缓动是一种方法，将定向的方式，动画将展开，并且它可使动画起来更加得心应手。  默认情况下你的操作会有线性的行为，例如`MoveTo`操作者必须非常机器人的移动。  可以包装你的操作转换为一个缓动操作来改变此行为，例如，一个用于将缓慢启动移动、 加速并缓慢到达末尾 (`EasyInOut`)。
 
 执行此操作通过包装现有的操作转换为一个缓动操作，例如：
 
@@ -214,7 +214,7 @@ await cloud.RunActionAsync (
 
 ### <a name="using-actions-and-async-code"></a>使用操作和异步代码
 
-在你[ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/)子类，应引入的异步方法，准备组件行为并为其驱动器的功能。
+在你`Component`子类，应引入的异步方法，准备组件行为并为其驱动器的功能。
 然后将调用此方法使用 C#`await`关键字的程序，另一部分中任一你`Application.Start`方法或为了响应你的应用程序中的用户或情景点。
 
 例如：
@@ -269,7 +269,7 @@ class Robot : Component {
 
 ### <a name="frame-based-behavior-programming"></a>基于框架的行为编程
 
-如果你想要控制而不是使用操作按逐个框架组件的行为，就像是重写[ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate)方法的你[ `Component` ](https://developer.xamarin.com/api/type/Urho.Component)子类。  此方法会调用一次每帧，并仅当 ReceiveSceneUpdates 属性设置为 true，则调用。
+如果你想要控制而不是使用操作按逐个框架组件的行为，就像是重写`OnUpdate`方法在`Component`子类。  此方法会调用一次每帧，并仅当 ReceiveSceneUpdates 属性设置为 true，则调用。
 
 以下示例演示如何创建`Rotator`组件，然后附加到一个节点，这会导致要旋转的节点：
 
@@ -283,9 +283,9 @@ class Rotator : Component {
     protected override void OnUpdate(float timeStep)
     {
         Node.Rotate(new Quaternion(
-            RotationSpeed.X * timeStep,
-            RotationSpeed.Y * timeStep,
-            RotationSpeed.Z * timeStep),
+            RotationSpeed.X  timeStep,
+            RotationSpeed.Y  timeStep,
+            RotationSpeed.Z  timeStep),
             TransformSpace.Local);
     }
 }
@@ -318,11 +318,11 @@ boxNode.AddComponent (rotator);
 
 ## <a name="loading-and-saving-scenes"></a>加载和保存场景
 
-可以加载和保存为 XML 格式; 场景请参阅函数[ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml)并[ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml)。 加载一个场景时，先删除它 （子节点和组件） 中的所有现有内容。 节点和标记为临时使用的组件`Temporary`属性将不会保存。 序列化程序处理的所有内置组件和属性，但它不是智能，它能够处理自定义属性和组件子类中定义的字段。 但是它提供用于这两个虚拟方法：
+可以加载和保存为 XML 格式; 场景请参阅函数`LoadXml`和`SaveXML`。 加载一个场景时，先删除它 （子节点和组件） 中的所有现有内容。 节点和标记为临时使用的组件`Temporary`属性将不会保存。 序列化程序处理的所有内置组件和属性，但它不是智能，它能够处理自定义属性和组件子类中定义的字段。 但是它提供用于这两个虚拟方法：
 
-* [`OnSerialize`](https://developer.xamarin.com/api/member/Urho.Component.OnSerialize) 可以在其中您注册您自定义序列化状态
+ `OnSerialize` 可以在其中您注册您自定义序列化状态
 
-* [`OnDeserialized`](https://developer.xamarin.com/api/member/Urho.Component.OnDeserialize) 您可从中获取已保存的自定义状态。
+ `OnDeserialized` 您可从中获取已保存的自定义状态。
 
 通常情况下，自定义组件将如下所示：
 
@@ -359,11 +359,11 @@ class MyComponent : Component {
 
 只需加载或保存整个场景不具有足够的灵活性游戏的新对象需要动态创建。 但是，创建复杂的对象和在代码中设置其属性也将单调乏味。 出于此原因，还有可能要保存的场景节点及其子节点、 组件和属性包括。 作为一个组可以更高版本可以方便地加载这些功能。  此类已保存的对象通常称为预设。 有三种方法可以实现此操作：
 
-- 在代码中通过调用[ `Node.SaveXml` ](https://developer.xamarin.com/api/member/Urho.Node.SaveXml)在节点上
+- 在代码中通过调用`Node.SaveXml`在节点上
 - 在编辑器中，通过在层次结构窗口中选择节点，然后选择"另存为节点"从"文件"菜单。
 - 使用中的"节点"命令`AssetImporter`，这将保存场景节点层次结构和所有模型中的输入资产 （例如都包含。 Collada 文件）
 
-若要实例化到场景的已保存的节点，请调用[ `InstantiateXml()` ](https://developer.xamarin.com/api/member/Urho.Scene.InstantiateXml)。 节点将创建为场景的子级，但此后可以自由地父级。 位置和旋转放置节点需要指定。 下面的代码演示如何实例化预设`Ninja.xm`到场景中使用所需的位置和旋转：
+若要实例化到场景的已保存的节点，请调用`InstantiateXml`。 节点将创建为场景的子级，但此后可以自由地父级。 位置和旋转放置节点需要指定。 下面的代码演示如何实例化预设`Ninja.xm`到场景中使用所需的位置和旋转：
 
 ```csharp
 var prefabPath = Path.Combine (FileSystem.ProgramDir,"Data/Objects/Ninja.xml");
@@ -449,13 +449,13 @@ protected override void OnUpdate(float timeStep)
     // Read WASD keys and move the camera scene node to the
     // corresponding direction if they are pressed
     if (input.GetKeyDown(Key.W))
-        CameraNode.Translate(Vector3.UnitY * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(Vector3.UnitY  moveSpeed  timeStep, TransformSpace.Local);
     if (input.GetKeyDown(Key.S))
-        CameraNode.Translate(new Vector3(0.0f, -1.0f, 0.0f) * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(new Vector3(0.0f, -1.0f, 0.0f)  moveSpeed  timeStep, TransformSpace.Local);
     if (input.GetKeyDown(Key.A))
-        CameraNode.Translate(new Vector3(-1.0f, 0.0f, 0.0f) * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(new Vector3(-1.0f, 0.0f, 0.0f)  moveSpeed  timeStep, TransformSpace.Local);
     if (input.GetKeyDown(Key.D))
-        CameraNode.Translate(Vector3.UnitX * moveSpeed * timeStep, TransformSpace.Local);
+        CameraNode.Translate(Vector3.UnitX  moveSpeed  timeStep, TransformSpace.Local);
 }
 ```
 
@@ -463,20 +463,20 @@ protected override void OnUpdate(float timeStep)
 
 资源包括 UrhoSharp 过程初始化或运行时从大容量存储中加载的大多数问题：
 
-- [`Animation`](https://developer.xamarin.com/api/type/Urho.Animation/) -用于主干动画
-- [`Image`](https://developer.xamarin.com/api/type/Urho.Resources.Image) -表示不同的图形格式存储的图像
-- [`Model`](https://developer.xamarin.com/api/type/Urho.Model/) -三维模型
-- [`Material`](https://developer.xamarin.com/api/type/Urho.Material) -用于呈现模型的材料。
-- [`ParticleEffect`](https://developer.xamarin.com/api/type/Urho.ParticleEffect)- [介绍](http://urho3d.github.io/documentation/1.4/_particles.html)粒子发射器的工作原理，请参阅"[粒子](#particles)"下面。
-- [`Shader`](https://developer.xamarin.com/api/type/Urho.Shader) -自定义着色器
-- [`Sound`](https://developer.xamarin.com/api/type/Urho.Audio.Sound) -声音播放，请参阅"[声音](#sound)"下面。
-- [`Technique`](https://developer.xamarin.com/api/type/Urho.Technique/) -材料呈现技术
-- [`Texture2D`](https://developer.xamarin.com/api/type/Urho.Urho2D.Texture2D/) -2D 纹理
-- [`Texture3D`](https://developer.xamarin.com/api/type/Urho.Texture3D/) -3D 纹理
-- [`TextureCube`](https://developer.xamarin.com/api/type/Urho.TextureCube/) -多维数据集纹理
+- `Animation` -用于主干动画
+- `Image` -表示不同的图形格式存储的图像
+- `Model` -三维模型
+- `Material` -用于呈现模型的材料。
+- `ParticleEffect`- [介绍](http://urho3d.github.io/documentation/1.4/_particles.html)粒子发射器的工作原理，请参阅"[粒子](#particles)"下面。
+- `Shader` -自定义着色器
+- `Sound` -声音播放，请参阅"[声音](#sound)"下面。
+- `Technique` -材料呈现技术
+- `Texture2D` -2D 纹理
+- `Texture3D` -3D 纹理
+- `TextureCube` -多维数据集纹理
 - `XmlFile`
 
-托管和加载[ `ResourceCache` ](https://developer.xamarin.com/api/type/Urho.Resources.ResourceCache/)子系统 (可用作[ `Application.ResourceCache` ](https://developer.xamarin.com/api/property/Urho.Application.ResourceCache/))。
+托管和加载`ResourceCache`子系统 (可用作`Application.ResourceCache`)。
 
 资源本身进行标识其文件路径，相对于已注册的资源目录或包文件。 默认情况下，该引擎注册的资源目录`Data`并`CoreData`，或包`Data.pak`和`CoreData.pak`如果它们存在。
 
@@ -494,7 +494,7 @@ healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"))
 
 ### <a name="bringing-3d-models-and-images"></a>将三维模型和映像
 
-Urho3D 尝试使用现有的文件格式，只要有可能，并定义自定义文件格式，如模型绝对必要时仅 (*.mdl) 和动画 (*.ani)。 对于这些类型的资产，Urho 提供了一个转换器- [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html)这可以使用许多流行的 3D 格式，例如 fbx、 dae、 3ds，和 obj，等等。
+Urho3D 尝试使用现有的文件格式，只要有可能，并定义自定义文件格式仅在绝对必要时如模型 (.mdl) 和动画 (.ani)。 对于这些类型的资产，Urho 提供了一个转换器- [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html)这可以使用许多流行的 3D 格式，例如 fbx、 dae、 3ds，和 obj，等等。
 
 此外，还有一个便捷外接程序的 Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) ，可以导出格式适用于 Urho3D Blender 资产。
 
@@ -502,9 +502,9 @@ Urho3D 尝试使用现有的文件格式，只要有可能，并定义自定义�
 
 通常情况下，请求使用的一个资源时`ResourceCache`的`Get`方法，它们是在主线程，这可能会花几秒钟时间进行所有必要的步骤中立即加载 （从磁盘加载文件、 分析数据，如有必要将上载到 GPU) 并因此可能会导致帧速率下降。
 
-如果您知道提前所需的资源，可以将它们加载在后台线程通过调用请求`BackgroundLoadResource()`。 您可以通过使用订阅资源后台加载事件`SubscribeToResourceBackgroundLoaded`方法。 它将告诉加载实际是否成功或失败。 根据资源，仅加载过程的一部分可能会移到后台线程，例如分页装订的 GPU 上传步骤始终需要在主线程中发生。 请注意，是否调用资源加载的资源将排队，等待后台加载的方法之一时，主线程将挂起之前其加载已完成。
+如果您知道提前所需的资源，可以将它们加载在后台线程通过调用请求`BackgroundLoadResource`。 您可以通过使用订阅资源后台加载事件`SubscribeToResourceBackgroundLoaded`方法。 它将告诉加载实际是否成功或失败。 根据资源，仅加载过程的一部分可能会移到后台线程，例如分页装订的 GPU 上传步骤始终需要在主线程中发生。 请注意，是否调用资源加载的资源将排队，等待后台加载的方法之一时，主线程将挂起之前其加载已完成。
 
-异步加载功能的场景`LoadAsync()`和`LoadAsyncXML()`还首先继续场景内容加载的资源提供了背景负载选项。 此外可用于仅加载的资源而无需修改场景中，通过指定`LoadMode.ResourcesOnly`。 这样就可以准备快速实例化的场景或对象的预设文件。
+异步加载功能的场景`LoadAsync`和`LoadAsyncXML`还首先继续场景内容加载的资源提供了背景负载选项。 此外可用于仅加载的资源而无需修改场景中，通过指定`LoadMode.ResourcesOnly`。 这样就可以准备快速实例化的场景或对象的预设文件。
 
 最后上花费的最大时间 （以毫秒为单位） 每个帧完成加载的资源可以通过设置配置的背景`FinishBackgroundResourcesMs`属性上的`ResourceCache`。
 
@@ -512,8 +512,8 @@ Urho3D 尝试使用现有的文件格式，只要有可能，并定义自定义�
 
 ## <a name="sound"></a>声音
 
-声音是玩游戏的一个重要部分和 UrhoSharp framework 提供了一种方法在游戏中播放声音。  通过将附加播放声音 [`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/)
-组件[ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) ，然后播放从你的资源的命名的文件。
+声音是玩游戏的一个重要部分和 UrhoSharp framework 提供了一种方法在游戏中播放声音。  通过将附加播放声音 `SoundSource`
+组件`Node`，然后播放从你的资源的命名的文件。
 
 这是如何执行操作：
 
@@ -562,11 +562,11 @@ public async void Explode (Component target)
 
 ![与框纹理粒子](using-images/image-2.png "，这是它看起来如果使用块状纹理")
 
-## <a name="multithreading-support"></a>多线程支持
+## <a name="multi-threading-support"></a>多线程处理支持
 
 UrhoSharp 是一个线程的库。  这意味着您不应尝试调用方法中 UrhoSharp 从后台线程，或风险会损坏应用程序状态，并使你的应用程序可能崩溃。
 
-如果你想要在后台运行一些代码，然后更新 Urho 组件上的主要用户界面，则可以使用 [`Application.InvokeOnMain(Action)`](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain)
+如果你想要在后台运行一些代码，然后更新 Urho 组件上的主要用户界面，则可以使用 `Application.InvokeOnMain(Action)`
 方法。  此外，你可以的使用 C# await 和.NET 任务 Api，以确保在适当的线程上执行的代码。
 
 ## <a name="urhoeditor"></a>UrhoEditor

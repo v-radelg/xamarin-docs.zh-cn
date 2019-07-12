@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 206379b162c7778663ee2baf64dfeb1d33666ab4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827483"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831467"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定 OBJECTIVE-C 库
 
@@ -267,7 +267,7 @@ string Text { get; [NullAllowed] set; }
 设置自定义控件的绑定时，应考虑以下注意事项：
 
 1. **绑定属性必须是静态**-当定义的属性，绑定[ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)必须使用属性。
- 2. **属性名称必须完全匹配**-用于将属性绑定的名称必须完全匹配的自定义控件中的属性名称。
+2. **属性名称必须完全匹配**-用于将属性绑定的名称必须完全匹配的自定义控件中的属性名称。
 3. **属性类型必须完全匹配**-用于将属性绑定的变量类型必须完全匹配的自定义控件中的属性的类型。
 4. **断点和 getter/setter** -断点放置在 getter 或 setter 方法的属性将永远不会被命中。
 5. **观察回调**-你将需要使用观察回调的自定义控件的属性值中的更改通知。
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>绑定 OBJECTIVE-C 的自变量列表
 
-Objective C 支持可变参数参数。 例如：
+Objective C 支持可变参数参数。 例如:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常这些字段包含必须在引用的字符串或整数值。 它们通常用于为字符串，其中表示特定的通知和作为字典中的键。
 
-若要将字段绑定，将属性添加到接口定义文件，并修饰此属性与[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性。 此属性接受一个参数： 要查找的符号的 C 名称。 例如：
+若要将字段绑定，将属性添加到接口定义文件，并修饰此属性与[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性。 此属性接受一个参数： 要查找的符号的 C 名称。 例如:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 （上返回值） 的方法、 参数和属性可修饰[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)。 唯一限制是，您的成员**不得**位于内部 [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 或[ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)接口。
 
-例如：
+例如:
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) 此外支持数组`NSNumber``NSValue`和`NSString`（枚举）。
 
-例如：
+例如:
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ Xamarin.iOS 绑定生成器提供了对开发人员可以将绑定通知的支�
 
 此属性可以使用不带参数不执行任何负载的通知，也可以指定`System.Type`引用在 API 定义中，另一个接口通常与名称以"EventArgs"结尾。 生成器会将接口转换类子类`EventArgs`，将包括所有列出的属性。 [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性应使用 EventArgs 类中，若要列出用于查找要提取的值的 Objective C 字典的键的名称。
 
-例如：
+例如:
 
 ```csharp
 interface MyClass {
