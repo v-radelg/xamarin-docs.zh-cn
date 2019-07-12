@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f1bd48378faa9ae6a4853083c93377268c38f01
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 775fe01122440378f68973549d46e3010400614e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61374415"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830853"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 tvOS 在 Xamarin 中的拆分视图控制器
 
@@ -100,7 +100,7 @@ Apple 已使用拆分视图控制器的以下建议：
 
 ### <a name="accessing-master-and-detail"></a>访问母版和详细信息
 
-如果你需要以编程方式访问的母版和详细信息视图控制器，使用`ViewControllers `拆分视图控制器的属性。 例如：
+如果你需要以编程方式访问的母版和详细信息视图控制器，使用`ViewControllers`拆分视图控制器的属性。 例如:
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-在拆分视图控制器，重写`ViewDidLoad`方法和关联的两个视图在一起。 例如：
+在拆分视图控制器，重写`ViewDidLoad`方法和关联的两个视图在一起。 例如:
 
 ```csharp
 public override void ViewDidLoad ()

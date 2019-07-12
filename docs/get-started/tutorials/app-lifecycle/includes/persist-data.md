@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2c6c71f5ed46cc1cae66c5d1f412898825805cc6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16ceaba572ca932777bb366d9f7c58f6dcb24f70
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187441"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841521"
 ---
 [`Application`](xref:Xamarin.Forms.Application) 子类具有静态 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典，可用于跨生命周期状态更改存储数据。 该字典使用 `string` 密钥并存储 `object` 值。 字典会自动保存到设备中，并在应用程序重启时重新填充。
 
@@ -15,14 +15,12 @@ ms.locfileid: "61187441"
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在“解决方案资源管理器”的 AppLifecycleTutorial 项目中，展开 App.xaml，然后双击 App.xaml.cs 将其打开。 然后在“App.xaml.cs”中，删除所有模板代码并替换为以下代码：
+1. 在“解决方案资源管理器”的 AppLifecycleTutorial 项目中，展开 App.xaml，然后双击 App.xaml.cs 将其打开     。 然后在“App.xaml.cs”中，删除所有模板代码并替换为以下代码  ：
 
     ```csharp
     using System;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace AppLifecycleTutorial
     {
         public partial class App : Application
@@ -69,7 +67,7 @@ ms.locfileid: "61187441"
 
     没有必要从 `OnResume` 方法重载中的 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典还原数据。 这是因为当应用程序在后台运行时，该数据及其状态仍然在内存中。
 
-1. 在“解决方案资源管理器”的“AppLifecycleTutorial”项目中，双击“MainPage.xaml”将其打开。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码：
+1. 在“解决方案资源管理器”的“AppLifecycleTutorial”项目中，双击“MainPage.xaml”将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -86,7 +84,7 @@ ms.locfileid: "61187441"
 
     此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Entry`](xref:Xamarin.Forms.Entry) 组成。 [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) 属性指定首次显示 `Entry` 时显示的占位符文本，并在 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件中注册名为 `OnEntryCompleted` 的事件处理程序。 此外，`Entry` 具有使用 `x:Name` 属性指定的名称。 该操作使代码隐藏文件能够使用分配给它的名称访问 `Entry` 对象。
 
-1. 在“解决方案资源管理器”的“AppLifecycleTutorial”项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后，在“MainPage.xaml.cs”中，为 `OnAppearing` 方法添加覆盖，并为该类添加 `OnEntryCompleted` 事件处理程序：
+1. 在“解决方案资源管理器”的“AppLifecycleTutorial”项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后，在“MainPage.xaml.cs”中，为 `OnAppearing` 方法添加覆盖，并为该类添加 `OnEntryCompleted` 事件处理程序  ：
 
     ```csharp
     protected override void OnAppearing()
@@ -109,7 +107,7 @@ ms.locfileid: "61187441"
 
     当文本在 [`Entry`](xref:Xamarin.Forms.Entry) 中最终确定时，使用返回键执行 `OnEntryCompleted` 方法，`Entry` 文本存储在 `App.DisplayText` 属性中。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。
 
     在 [`Entry`](xref:Xamarin.Forms.Entry) 中输入一些文本，并按返回键。 然后，通过点击“开始”按钮以调用 `OnSleep` 方法，在后台运行应用程序。
 
@@ -121,14 +119,12 @@ ms.locfileid: "61187441"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在“Solution Pad”中的 AppLifecycleTutorial 项目中，展开 App.xaml 并双击 App.xaml.cs 以将其打开。 然后在“App.xaml.cs”中，删除所有模板代码并替换为以下代码：
+1. 在“Solution Pad”中的 AppLifecycleTutorial 项目中，展开 App.xaml 并双击 App.xaml.cs 以将其打开     。 然后在“App.xaml.cs”中，删除所有模板代码并替换为以下代码  ：
 
     ```csharp
     using System;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace AppLifecycleTutorial
     {
         public partial class App : Application
@@ -175,7 +171,7 @@ ms.locfileid: "61187441"
 
     没有必要从 `OnResume` 方法重载中的 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典还原数据。 这是因为当应用程序在后台运行时，该数据及其状态仍然在内存中。
 
-1. 在“Solution Pad”的“AppLifecycleTutorial”项目中，双击“MainPage.xaml”将其打开。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码：
+1. 在“Solution Pad”的“AppLifecycleTutorial”项目中，双击“MainPage.xaml”将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -192,7 +188,7 @@ ms.locfileid: "61187441"
 
     此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Entry`](xref:Xamarin.Forms.Entry) 组成。 [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) 属性指定首次显示 `Entry` 时显示的占位符文本，并在 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件中注册名为 `OnEntryCompleted` 的事件处理程序。 此外，`Entry` 具有使用 `x:Name` 属性指定的名称。 该操作使代码隐藏文件能够使用分配给它的名称访问 `Entry` 对象。
 
-1. 在“Solution Pad”中的“AppLifecycleTutorial”项目中，展开“MainPage.xaml”并双击“MainPage.xaml.cs”以将其打开。 然后，在“MainPage.xaml.cs”中，为 `OnAppearing` 方法添加覆盖，并为该类添加 `OnEntryCompleted` 事件处理程序：
+1. 在“Solution Pad”中的“AppLifecycleTutorial”项目中，展开“MainPage.xaml”并双击“MainPage.xaml.cs”以将其打开     。 然后，在“MainPage.xaml.cs”中，为 `OnAppearing` 方法添加覆盖，并为该类添加 `OnEntryCompleted` 事件处理程序  ：
 
     ```csharp
     protected override void OnAppearing()
@@ -215,7 +211,7 @@ ms.locfileid: "61187441"
 
     当文本在 [`Entry`](xref:Xamarin.Forms.Entry) 中最终确定时，使用返回键执行 `OnEntryCompleted` 方法，`Entry` 文本存储在 `App.DisplayText` 属性中。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。
 
     在 [`Entry`](xref:Xamarin.Forms.Entry) 中输入一些文本，并按返回键。 然后，通过点击“开始”按钮以调用 `OnSleep` 方法，在后台运行应用程序。
 
