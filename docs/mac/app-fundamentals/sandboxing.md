@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e38ca07aeef1cbd8e121421ebcbad2207a1bb823
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830675"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865984"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙盒处理 Xamarin.Mac 应用
 
@@ -87,13 +87,13 @@ _本文介绍如何在 App Store 上发布的 Xamarin.Mac 应用程序沙盒处�
 8. 添加以下 using 语句： `using WebKit;`
 9. 使`ViewDidLoad`方法看起来像以下： 
 
-```csharp
-public override void AwakeFromNib ()
-{
-    base.AwakeFromNib ();
-    webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
-}
-```
+    ```csharp
+    public override void AwakeFromNib ()
+    {
+        base.AwakeFromNib ();
+        webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
+    }
+    ```
 
 10. 保存更改。
 
@@ -164,14 +164,14 @@ public override void AwakeFromNib ()
 3. 接下来，双击**Entitlements.plist**文件，并确保我们**iCloud 键值存储**并**iCloud 容器**所有与我们上面创建的应用 ID 匹配 (示例：`com.appracatappra.MacSandbox`): 
 
     [![编辑 Entitlements.plist 文件](sandboxing-images/sign17.png "编辑 Entitlements.plist 文件")](sandboxing-images/sign17-large.png#lightbox)
-3. 保存更改。
-4. 在中**Solution Pad**，双击要打开其选项来编辑的项目文件：  
+4. 保存更改。
+5. 在中**Solution Pad**，双击要打开其选项来编辑的项目文件：  
 
     ![Editign 解决方案的选项](sandboxing-images/sign14.png "Editign 解决方案的选项")
-5. 选择**Mac 签名**，然后检查**登录应用程序捆绑包**并**安装程序包签名**。 下**预配配置文件**，选择我们在上面创建的一个： 
+6. 选择**Mac 签名**，然后检查**登录应用程序捆绑包**并**安装程序包签名**。 下**预配配置文件**，选择我们在上面创建的一个： 
 
     ![设置预配配置文件](sandboxing-images/sign15.png "设置预配配置文件")
-6. 单击**完成**按钮。
+7. 单击**完成**按钮。
 
 > [!IMPORTANT]
 > 您可能需要退出并重新启动 Visual Studio for Mac，即可使用它，以识别新的应用程序 ID 和预配配置文件安装的 Xcode。

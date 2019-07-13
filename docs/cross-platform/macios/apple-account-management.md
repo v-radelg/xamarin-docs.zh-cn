@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28a7d299e78a7fa6837ba9285795d380760f13b7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61206010"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864647"
 ---
 # <a name="apple-account-management"></a>Apple 帐户管理
 
@@ -54,17 +54,17 @@ Visual Studio for Mac，Visual Studio 2019 和 Visual Studio 2017 （版本 15.7
 
     ![fastlane 对话框。](apple-account-management-images/image2.png)
 
-4. 输入你的 Apple ID 和密码，然后单击**Sign In**按钮。 这将在此计算机上将你的凭据保存在安全密钥链中。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)用于安全地处理你的凭据，并将其传递给 Apple 的开发人员门户。
+3. 输入你的 Apple ID 和密码，然后单击**Sign In**按钮。 这将在此计算机上将你的凭据保存在安全密钥链中。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)用于安全地处理你的凭据，并将其传递给 Apple 的开发人员门户。
  
-5. 选择**始终允许**在警报对话框以允许 Visual Studio 以使用你的凭据：
+4. 选择**始终允许**在警报对话框以允许 Visual Studio 以使用你的凭据：
 
     ![始终允许警报对话框](apple-account-management-images/image4.png)
 
-6. 已成功添加你的帐户，可以看到你的 Apple ID 和你的 Apple ID 是一部分的任何团队。
+5. 已成功添加你的帐户，可以看到你的 Apple ID 和你的 Apple ID 是一部分的任何团队。
 
     ![包含添加的帐户的 Apple 开发人员帐户对话框](apple-account-management-images/image5.png)
 
-7. 选择任何团队，然后按**查看详细信息...** 按钮。 这将显示的所有签名标识和预配配置文件安装在你的计算机上的列表：
+6. 选择任何团队，然后按**查看详细信息...** 按钮。 这将显示的所有签名标识和预配配置文件安装在你的计算机上的列表：
 
     ![视图的详细信息屏幕显示签名标识和预配配置文件在计算机上](apple-account-management-images/image6.png)
 

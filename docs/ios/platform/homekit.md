@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 9daedbe9bba5a2923a247104c4e69ae2e1b635aa
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831547"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865773"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin.iOS HomeKit
 
@@ -59,20 +59,20 @@ HomeKit 组织到 Home 集合的给定位置中的所有自动化设备。 此�
 
     [![](homekit-images/provision01.png "启用 HomeKit 服务为给定的 ID")](homekit-images/provision01.png#lightbox)
 5. 保存更改。
-4. 单击**预配配置文件** > **开发**并创建新的开发预配配置文件为你的应用： 
+6. 单击**预配配置文件** > **开发**并创建新的开发预配配置文件为你的应用： 
 
     [![](homekit-images/provision02.png "创建新的开发预配配置文件的应用")](homekit-images/provision02.png#lightbox)
-5. 请下载并安装新的预配配置文件或使用 Xcode 下载并安装该配置文件。
-6. 编辑 Xamarin.iOS 项目选项，并确保使用你刚刚创建的预配配置文件： 
+7. 请下载并安装新的预配配置文件或使用 Xcode 下载并安装该配置文件。
+8. 编辑 Xamarin.iOS 项目选项，并确保使用你刚刚创建的预配配置文件： 
 
     [![](homekit-images/provision03.png "选择刚创建的预配配置文件")](homekit-images/provision03.png#lightbox)
-7. 接下来，编辑你**Info.plist**文件，并确保将用于创建预配配置文件的应用程序 ID: 
+9. 接下来，编辑你**Info.plist**文件，并确保将用于创建预配配置文件的应用程序 ID: 
 
     [![](homekit-images/provision04.png "设置应用程序 ID ")](homekit-images/provision04.png#lightbox)
-8. 最后，编辑你**Entitlements.plist**文件，并确保**HomeKit**选择了权利： 
+10. 最后，编辑你**Entitlements.plist**文件，并确保**HomeKit**选择了权利： 
 
     [![](homekit-images/provision05.png "启用 HomeKit 权利")](homekit-images/provision05.png#lightbox)
-9. 将所做的更改保存到的所有文件。
+11. 将所做的更改保存到的所有文件。
 
 在准备好这些设置，该应用程序现在已准备好访问 HomeKit 框架 Api。 有关预配的详细信息，请参阅我们[设备预配](~/ios/get-started/installation/device-provisioning/index.md)并[预配您的应用程序](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
@@ -285,7 +285,7 @@ Xamarin.iOS 应用程序后已定义主主页或从主管理器中加载，可�
 
 [![](homekit-images/accessory01.png "查找新附件")](homekit-images/accessory01.png#lightbox)
 
-调用`AddAccessory`方法将所选的附件添加到主页的集合。 例如：
+调用`AddAccessory`方法将所选的附件添加到主页的集合。 例如:
 
 ```csharp
 // Add the requested accessory to the home
@@ -318,7 +318,7 @@ HomeKit 附件模拟器中可以下找到此编号**安装程序代码**字段�
 
 我们将会作为此示例中，保持操作，简单且适用于直接，主页的附件而不是将它们组织到聊天室或区域。
 
-`HMHome`对象包含一系列可以提供给用户的分配附件其`Accessories`属性。 例如：
+`HMHome`对象包含一系列可以提供给用户的分配附件其`Accessories`属性。 例如:
 
 [![](homekit-images/accessory04.png "示例附件")](homekit-images/accessory04.png#lightbox)
 

@@ -6,27 +6,27 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978461"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864416"
 ---
 # <a name="binding-objective-c"></a>绑定 Objective-C
 
 本部分包含了多种文档，其中包括创建绑定到 OBJECTIVE-C 的库，因此它们可以从调用的C#使用 Xamarin.iOS 或 Xamarin.Mac 创建的应用程序。
 
-##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概述](~/cross-platform/macios/binding/overview.md)
+## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概述](~/cross-platform/macios/binding/overview.md)
 
 本文档包含一些的绑定发生内部结构。 它是一个高级的文档使用一些技术的信息。
 
-##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
+## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 
 本文档介绍了用于创建C#绑定的 Objective C Api 和 Objective C 中的惯例如何映射到在.NET 中使用的惯例。
 如果要绑定只是 C Api，你应为此，P/Invoke framework 使用标准.NET 机制。
 
-##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[绑定定义参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
+## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[绑定定义参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 
 这是介绍了所有可用来驱动绑定生成进程的绑定作者的属性的参考指南。
 

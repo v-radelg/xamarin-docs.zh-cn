@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 22ac6a3776e5fa5de2fc238efe90c435190e8005
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f6d059e5a30e7e3dac92a2c4e0e6079222e66b22
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832071"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865203"
 ---
 # <a name="push-notifications-in-ios"></a>在 iOS 中的推送通知
 
@@ -55,36 +55,36 @@ Apple 维护两个环境的 APNS:*沙盒*和一个*生产*环境。 沙盒环境
 
 4. 请务必选择**显式应用 ID**并且捆绑包标识符并不止于`*`。 这将创建适合用于多个应用程序的标识符和推送通知证书必须是单个应用程序。
 
-1. 在应用服务下选择**推送通知**:
+5. 在应用服务下选择**推送通知**:
 
     [![](remote-notifications-in-ios-images/image8new.png "选择推送通知")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
-2. 然后按**提交**以确认新的应用 ID 的注册：
+6. 然后按**提交**以确认新的应用 ID 的注册：
 
     [![](remote-notifications-in-ios-images/image9new.png "确认注册新的应用 ID")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-3.  接下来，您必须为应用程序 id。 创建证书 在左侧导航栏中，浏览到**证书 > 所有**，然后选择`+`按钮，如以下屏幕截图中所示：
+7.  接下来，您必须为应用程序 id。 创建证书 在左侧导航栏中，浏览到**证书 > 所有**，然后选择`+`按钮，如以下屏幕截图中所示：
 
     [![](remote-notifications-in-ios-images/image10new.png "为应用程序 ID 创建证书")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-4. 选择是否想要使用的开发或生产证书：
+8. 选择是否想要使用的开发或生产证书：
 
     [![](remote-notifications-in-ios-images/image11new.png "选择开发或生产证书")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
-5. 然后选择新我们刚刚创建的应用 ID:
+9. 然后选择新我们刚刚创建的应用 ID:
 
     [![](remote-notifications-in-ios-images/image12new.png "选择刚创建的新应用 ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-6.  这将显示将引导您完成创建的过程的说明*证书签名请求*使用**Keychain Access**在 mac 上应用程序
+10.  这将显示将引导您完成创建的过程的说明*证书签名请求*使用**Keychain Access**在 mac 上应用程序
 
-7.  现在，已创建的证书，它必须使用作为生成过程的一部分应用程序进行签名，以便它可以向 APNs 注册。 这需要创建和安装使用该证书的预配配置文件。
+11.  现在，已创建的证书，它必须使用作为生成过程的一部分应用程序进行签名，以便它可以向 APNs 注册。 这需要创建和安装使用该证书的预配配置文件。
 
-8.  若要创建开发预配配置文件，导航到**预配配置文件**部分，并按照步骤来创建它，使用我们刚刚创建的应用程序 Id。
+12.  若要创建开发预配配置文件，导航到**预配配置文件**部分，并按照步骤来创建它，使用我们刚刚创建的应用程序 Id。
 
-9.  一旦你创建预配配置文件，打开**Xcode 管理器**并刷新它。 如果你创建预配配置文件不会出现可能有必要从 iOS 设置门户下载配置文件并手动将其导入。 下面的屏幕截图与添加的预配配置文件显示组织者的示例：  
+13.  一旦你创建预配配置文件，打开**Xcode 管理器**并刷新它。 如果你创建预配配置文件不会出现可能有必要从 iOS 设置门户下载配置文件并手动将其导入。 下面的屏幕截图与添加的预配配置文件显示组织者的示例：  
     [![](remote-notifications-in-ios-images/image13new.png "此屏幕截图显示组织者的示例与添加的预配配置文件")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  此时，我们需要配置 Xamarin.iOS 项目以使用这个新创建的预配配置文件。 这是从**项目选项**对话框下**iOS 捆绑签名**选项卡，如以下屏幕截图中显示：  
+14.  此时，我们需要配置 Xamarin.iOS 项目以使用这个新创建的预配配置文件。 这是从**项目选项**对话框下**iOS 捆绑签名**选项卡，如以下屏幕截图中显示：  
     [![](remote-notifications-in-ios-images/image11.png "配置 Xamarin.iOS 项目以使用这个新创建的预配配置文件")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 此时应用程序配置为使用推送通知。 但是，仍有几个步骤所需的证书。 此证书是 DER PushSharp，需要的个人信息交换 (PKCS12) 证书与不兼容的格式。 若要将证书转换，这样就可供 PushSharp，执行这些最后的步骤：

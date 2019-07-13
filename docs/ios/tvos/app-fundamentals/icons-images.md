@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418112"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865170"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>使用 tvOS 图标和在 Xamarin 中的图像
 
@@ -120,7 +120,7 @@ tvOS 分层映像采用以下格式：
 
 [![](icons-images-images/layered03.png "视差预览程序")](icons-images-images/layered03.png#lightbox)
 
-在预览分层映像，可以使用鼠标来旋转图像，并预览视差效果。 使用 **+** （加） 和**-** （减号） 按钮来添加和删除层。
+在预览分层映像，可以使用鼠标来旋转图像，并预览视差效果。 使用 **+** （加） 和 **-** （减号） 按钮来添加和删除层。
 
 创建新的分层映像时，它可以采用 LSR 格式导出并包含在应用的捆绑包。
 
@@ -181,7 +181,7 @@ Apple 提供了用于创建应用图标的以下建议：
 5. 单击**1x Apple TV 条目**和选择的图像文件。
 6. 重复上述步骤对于`Front`和`Middle`资产。
 7. 然后，重复相同的步骤来定义`App Icon - Large`资产。
-4. 保存更改。
+8. 保存更改。
 
 <a name="Top-Shelf-Image" />
 
@@ -218,8 +218,8 @@ Apple 提供了以下建议以获得创建 Top Shelf 图像：
 3. 单击`Top Shelf Image`资产： 
 
     [![](icons-images-images/asset07.png "Top Shelf 图像资产")](icons-images-images/asset07.png#lightbox)
-5. 单击**1x Apple TV 条目**和选择的图像文件。
-6. 保存更改。
+4. 单击**1x Apple TV 条目**和选择的图像文件。
+5. 保存更改。
 
 <a name="Dynamic-Top-Shelf-Content" />
 

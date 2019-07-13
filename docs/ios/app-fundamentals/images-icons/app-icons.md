@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 1eb3ec77dd478744906625dcfcd9fb843e74577c
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: cf2da9f7fe8d90c52517118cc3b4aa0e046d1f69
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827471"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864547"
 ---
 # <a name="application-icons-in-xamarinios"></a>在 Xamarin.iOS 应用程序图标
 
@@ -134,16 +134,16 @@ ms.locfileid: "66827471"
 2. 单击**视觉对象资产**选项卡，然后单击**使用资产目录**按钮下**应用图标**: 
 
     ![](app-icons-images/icon02w.png "选择视觉对象资产选项卡")
-4. 从**解决方案资源管理器**，展开**资产目录**文件夹： 
+3. 从**解决方案资源管理器**，展开**资产目录**文件夹： 
 
     ![](app-icons-images/image009.png "展开资产目录文件夹")
-5. 双击**媒体**文件以在编辑器中打开它： 
+4. 双击**媒体**文件以在编辑器中打开它： 
 
     ![](app-icons-images/image010.png "在编辑器中打开媒体文件")
-6. 下**属性资源管理器**开发人员可以选择不同的类型和所需的图标大小。
-7. 给定的图标类型单击并选择所需的类型/大小的图像文件。
-8. 单击**打开**按钮以在项目中包含图像，并将它设为 xcasset。
-9. 重复上述步骤的所需的所有图像。
+5. 下**属性资源管理器**开发人员可以选择不同的类型和所需的图标大小。
+6. 给定的图标类型单击并选择所需的类型/大小的图像文件。
+7. 单击**打开**按钮以在项目中包含图像，并将它设为 xcasset。
+8. 重复上述步骤的所需的所有图像。
 
 -----
 
@@ -203,8 +203,8 @@ ms.locfileid: "66827471"
 2. 单击**视觉对象资产**选项卡，展开**iTunes 图稿**: 
 
     ![](app-icons-images/itunes01w.png "编辑 iTunes 图稿 Visual Studio 中")
-4. 任何缺少的图像，请单击编辑器中的缩略图，从打开的文件对话框中选择所需的 iTunes 图稿的图像文件，单击**打开**按钮。
-5. 重复此步骤直至所有所需映像已为指定应用程序。
+3. 任何缺少的图像，请单击编辑器中的缩略图，从打开的文件对话框中选择所需的 iTunes 图稿的图像文件，单击**打开**按钮。
+4. 重复此步骤直至所有所需映像已为指定应用程序。
 
 -----
 

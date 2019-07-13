@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f53c1afd7c3f835bff2aae507b9937067bde4bec
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832519"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865737"
 ---
 # <a name="dialogs-in-xamarinmac"></a>在 Xamarin.Mac 中的对话框
 
@@ -127,10 +127,10 @@ macOS 提供标准打印和页面设置对话框，你的应用程序可以显�
 6. 创建**模式 Segue**从新的视图控制器，通过将控件拖到将应用程序，将打开到对话框的窗口的对话框的 UI 元素从主窗口。 将分配**标识符** `ModalSegue`: 
 
     [![](dialog-images/new06.png "模式的 segue")](dialog-images/new06.png#lightbox)
-6. 布置任何**操作**并**输出口**: 
+7. 布置任何**操作**并**输出口**: 
 
     [![](dialog-images/new04.png "配置操作")](dialog-images/new04.png#lightbox)
-6. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
+8. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
 
 使`CustomDialogController.cs`文件外观如下所示：
 
@@ -265,19 +265,19 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 2. 将一个新**视图控制器**到设计图面：
 
     [![](dialog-images/new01.png "从库中选择视图控制器")](dialog-images/new01.png#lightbox)
-2. 设计用户界面：
+3. 设计用户界面：
 
     [![](dialog-images/sheet01.png "UI 设计")](dialog-images/sheet01.png#lightbox)
-3. 创建**表 Segue**从主窗口到新的视图控制器： 
+4. 创建**表 Segue**从主窗口到新的视图控制器： 
 
     [![](dialog-images/sheet02.png "选择表 segue 类型")](dialog-images/sheet02.png#lightbox)
-4. 在中**标识检查器**，命名为视图控制器**类** `SheetViewController`: 
+5. 在中**标识检查器**，命名为视图控制器**类** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "设置类名称")](dialog-images/sheet03.png#lightbox)
-5. 定义任何所需**输出口**并**操作**: 
+6. 定义任何所需**输出口**并**操作**: 
 
     [![](dialog-images/sheet04.png "定义所需的输出口和操作")](dialog-images/sheet04.png#lightbox)
-6. 保存所做的更改并返回到 Visual Studio for Mac 进行同步。
+7. 保存所做的更改并返回到 Visual Studio for Mac 进行同步。
 
 接下来，编辑`SheetViewController.cs`文件，并使其看起来如下所示：
 

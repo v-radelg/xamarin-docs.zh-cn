@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385511"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865310"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin.iOS 中移交
 
@@ -117,20 +117,20 @@ Apple 引入切换 iOS 8 和 OS X Yosemite (10.10) 提供常见的机制，用�
 
     [![](handoff-images/provision01.png "启用给定 ID 的 iCloud 服务")](handoff-images/provision01.png#lightbox)
 5. 保存更改。
-4. 单击**预配配置文件** > **开发**并创建为你预配配置文件的新开发应用：
+6. 单击**预配配置文件** > **开发**并创建为你预配配置文件的新开发应用：
 
     [![](handoff-images/provision02.png "创建新的开发预配配置文件的应用")](handoff-images/provision02.png#lightbox)
-5. 请下载并安装新的预配配置文件或使用 Xcode 下载并安装该配置文件。
-6. 编辑 Xamarin.iOS 项目选项，并确保使用你刚刚创建的预配配置文件：
+7. 请下载并安装新的预配配置文件或使用 Xcode 下载并安装该配置文件。
+8. 编辑 Xamarin.iOS 项目选项，并确保使用你刚刚创建的预配配置文件：
 
     [![](handoff-images/provision03.png "选择刚创建的预配配置文件")](handoff-images/provision03.png#lightbox)
-7. 接下来，编辑你**Info.plist**文件，并确保将用于创建预配配置文件的应用程序 ID:
+9. 接下来，编辑你**Info.plist**文件，并确保将用于创建预配配置文件的应用程序 ID:
 
     [![](handoff-images/provision04.png "设置应用程序 ID")](handoff-images/provision04.png#lightbox)
-8. 滚动到**后台模式**部分，并检查以下各项：
+10. 滚动到**后台模式**部分，并检查以下各项：
 
     [![](handoff-images/provision05.png "启用所需的后台模式")](handoff-images/provision05.png#lightbox)
-9. 将所做的更改保存到的所有文件。
+11. 将所做的更改保存到的所有文件。
 
 在准备好这些设置，该应用程序现在已准备好访问切换 Framework Api。 有关预配的详细信息，请参阅我们[设备预配](~/ios/get-started/installation/device-provisioning/index.md)并[预配您的应用程序](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
@@ -453,7 +453,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 
 如果指定的域匹配`WebpageURL`属性的值，切换从位于该域的网站下载的已批准的应用 Id 列表。 该网站必须提供的名为已签名的 JSON 文件中的已批准 Id 的列表**apple 应用站点关联**(例如， `https://company.com/apple-app-site-association`)。
 
-此 JSON 文件包含一个字典，其中在窗体中指定的应用程序 Id 列表`<team identifier>.<bundle identifier>`。 例如：
+此 JSON 文件包含一个字典，其中在窗体中指定的应用程序 Id 列表`<team identifier>.<bundle identifier>`。 例如:
 
 ```csharp
 {
@@ -477,7 +477,7 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-`openssl`命令将输出放在网站的已签名的 JSON 文件**apple 应用站点关联**URL。 例如：
+`openssl`命令将输出放在网站的已签名的 JSON 文件**apple 应用站点关联**URL。 例如:
 
 ```csharp
 https://example.com/apple-app-site-association.
@@ -523,7 +523,7 @@ https://example.com/apple-app-site-association.
 
 可能在某些情况下，其中继续活动所需信息的量不能进行有效地传输初始提交有效负载。 在这些情况下，接收应用程序可以建立在本身与发起的应用程序将数据传输之间的一个或多个流。
 
-发起应用程序将设置`SupportsContinuationStreams`的属性`NSUserActivity`实例向`true`。 例如：
+发起应用程序将设置`SupportsContinuationStreams`的属性`NSUserActivity`实例向`true`。 例如:
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-然后，接收应用程序可以调用`GetContinuationStreams`方法`NSUserActivity`在其`AppDelegate`建立流。 例如：
+然后，接收应用程序可以调用`GetContinuationStreams`方法`NSUserActivity`在其`AppDelegate`建立流。 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f23a506acda385b53942661244bcd7a8510c8c7f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240350"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866001"
 ---
 # <a name="windows-in-xamarinmac"></a>在 Xamarin.Mac 中的 Windows
 
@@ -221,13 +221,13 @@ Apple 建议遵照以下准则：
 用于任何窗口的创建和使用 Xamarin.Mac 应用程序中，该过程基本上是与我们做了什么只需上面相同：
 
 1. 对于不自动添加到你的项目是默认值的新窗口，向项目添加新的窗口中定义。 这将在下面详细讨论。
-2. 双击`Main.storyboard`文件以打开该窗口设计在 Xcode 的 Interface Builder 中进行编辑。
-3. 将一个新的窗口拖动到用户界面设计并挂接到主窗口中使用的窗口_segues 设计_(有关详细信息请参阅[segues 设计](~/mac/platform/storyboards/indepth.md#Segues)一部分我们[使用情节提要](~/mac/platform/storyboards/indepth.md)文档)。
-3. 在中设置任何所需的窗口的属性**属性检查器**并**大小检查器**。
-4. 在构建您的接口和配置中对其所需的控件中拖动**属性检查器**。
-5. 使用**大小检查器**来处理 UI 元素的大小调整。
-6. 公开给 C# 代码通过窗口的 UI 元素**输出口**并**操作**。
-7. 保存所做的更改并切换回 Visual Studio for Mac 与 Xcode 同步。
+1. 双击`Main.storyboard`文件以打开该窗口设计在 Xcode 的 Interface Builder 中进行编辑。
+1. 将一个新的窗口拖动到用户界面设计并挂接到主窗口中使用的窗口_segues 设计_(有关详细信息请参阅[segues 设计](~/mac/platform/storyboards/indepth.md#Segues)一部分我们[使用情节提要](~/mac/platform/storyboards/indepth.md)文档)。
+1. 在中设置任何所需的窗口的属性**属性检查器**并**大小检查器**。
+1. 在构建您的接口和配置中对其所需的控件中拖动**属性检查器**。
+1. 使用**大小检查器**来处理 UI 元素的大小调整。
+1. 公开给 C# 代码通过窗口的 UI 元素**输出口**并**操作**。
+1. 保存所做的更改并切换回 Visual Studio for Mac 与 Xcode 同步。
 
 现在，我们已创建的基本窗口，我们将介绍典型的进程在 Xamarin.Mac 应用程序执行时使用的 windows。 
 
@@ -259,7 +259,7 @@ public override void ViewWillAppear ()
     // Set Window Title
     this.View.Window.Title = "untitled";
 }
-``` 
+```    
 
 > [!NOTE]
 > 我们将设置窗口的值`Title`中的属性`ViewWillAppear`方法而不是`ViewDidLoad`方法因为该视图可能会加载到内存，而它不尚未完全实例化。 如果我们尝试访问`Title`中的属性`ViewDidLoad`方法，则会得到`null`由于窗口尚未被构造和有线向上取到的属性尚未的异常。
@@ -278,7 +278,7 @@ public override void ViewWillAppear ()
 
 如果应用程序实现`NSWindow`的`WillClose`事件，将会引发之前关闭的窗口。 如果该事件返回`false`，则将不会关闭窗口。 如果窗口不具有**关闭**按钮，或无法关闭出于任何原因，操作系统将发出警告声。
 
-例如：
+例如:
 
 ```csharp
 MyWindow.PerformClose(this);
@@ -511,7 +511,7 @@ var window = NSApplication.SharedApplication.KeyWindow;
 
 有时可能需要访问所有的 Xamarin.Mac 应用当前已经打开的窗口。 例如，若要查看用户想要打开的文件是否为已在现有窗口中打开。
 
-`NSApplication.SharedApplication`维护`Windows`属性，其中包含应用程序中所有打开的窗口的数组。 您可以循环访问所有应用程序的当前 windows 此数组。 例如：
+`NSApplication.SharedApplication`维护`Windows`属性，其中包含应用程序中所有打开的窗口的数组。 您可以循环访问所有应用程序的当前 windows 此数组。 例如:
 
 ```csharp
 // Is the file already open?
@@ -561,7 +561,7 @@ SetFrame (frame, true);
 
 [![](window-images/resize01.png "标识检查器")](window-images/resize01.png#lightbox)
 
-接下来，编辑自定义窗口控制器类和监视器`DidResize`控制器的窗口为接到实时大小更改上的事件。 例如：
+接下来，编辑自定义窗口控制器类和监视器`DidResize`控制器的窗口为接到实时大小更改上的事件。 例如:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -711,14 +711,14 @@ void OpenDialog (NSObject sender)
 3. 在中**标识检查器**，输入`PreferencesWindow`有关**情节提要 ID**: 
 
     [![](window-images/new02.png "设置情节提要 ID")](window-images/new02.png#lightbox)
-5. 设计你的接口： 
+4. 设计你的接口： 
 
     [![](window-images/new03.png "设计 UI")](window-images/new03.png#lightbox)
-6. 打开应用菜单 (`MacWindows`)，选择**首选项...**，单击并拖动到新的窗口： 
+5. 打开应用菜单 (`MacWindows`)，选择**首选项...** ，单击并拖动到新的窗口： 
 
     [![](window-images/new05.png "创建 segue")](window-images/new05.png#lightbox)
-7. 选择**显示**弹出菜单中。
-6. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
+6. 选择**显示**弹出菜单中。
+7. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
 
 如果我们运行代码，并选择**首选项...** 从**应用程序菜单**，此时将显示窗口：
 
@@ -734,7 +734,7 @@ void OpenDialog (NSObject sender)
 
 1. 向项目添加新的窗口中定义。
 2. 双击`.xib`文件以打开该窗口设计在 Xcode 的 Interface Builder 中进行编辑。
-2. 在中设置任何所需的窗口的属性**属性检查器**并**大小检查器**。
+3. 在中设置任何所需的窗口的属性**属性检查器**并**大小检查器**。
 4. 在构建您的接口和配置中对其所需的控件中拖动**属性检查器**。
 5. 使用**大小检查器**来处理 UI 元素的大小调整。
 6. 公开给 C# 代码通过窗口的 UI 元素**输出口**并**操作**。
@@ -751,11 +751,11 @@ void OpenDialog (NSObject sender)
 
 若要添加一个新的面板，请执行以下操作：
 
-1. 在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新文件...**.
+1. 在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新文件...** .
 2. 在新文件对话框中，选择**Xamarin.Mac** > **与控制器的 Cocoa 窗口**:
 
     [![](window-images/panels00.png "添加新的窗口控制器")](window-images/panels00.png#lightbox)
-3. 对“名称”输入 `DocumentPanel`，然后单击“新建”按钮。
+3. 对“名称”  输入 `DocumentPanel`，然后单击“新建”  按钮。
 4. 双击`DocumentPanel.xib`文件以打开 Interface Builder 中为进行编辑： 
 
     [![](window-images/new02.png "编辑面板")](window-images/new02.png#lightbox)
@@ -768,11 +768,11 @@ void OpenDialog (NSObject sender)
 7. 切换到**标识检查器**和设置的面板类为`DocumentPanel`: 
 
     [![](window-images/panels03.png "设置面板的类")](window-images/panels03.png#lightbox)
-6. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
-7. 编辑`DocumentPanel.cs`文件，并更改为以下类定义： 
+8. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
+9. 编辑`DocumentPanel.cs`文件，并更改为以下类定义： 
 
     `public partial class DocumentPanel : NSPanel`
-8. 保存对文件所做的更改。
+10. 保存对文件所做的更改。
 
 编辑`AppDelegate.cs`文件，然后进行`DidFinishLaunching`方法看起来像以下：
 

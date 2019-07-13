@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0f77f9014cf7bfad510927f0f12a3e70b387036f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: afa20a264e2509a5658cd0d8f90da3148315e803
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61424265"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865726"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的增强型的用户通知
 
@@ -150,7 +150,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 // Get current notification settings
 UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
     var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
-}); 
+});    
 ``` 
 
 ### <a name="configuring-the-remote-notifications-environment"></a>配置远程通知环境
@@ -176,11 +176,11 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 双击`Entitlements.plist`文件中**解决方案资源管理器**打开进行编辑。
-3. 单击 **+** 按钮以添加新的密钥。
-4. 输入`aps-environment`有关**属性**，将保留**类型**作为`String`并输入`development`或`production`为**值**: 
+2. 单击 **+** 按钮以添加新的密钥。
+3. 输入`aps-environment`有关**属性**，将保留**类型**作为`String`并输入`development`或`production`为**值**: 
 
     [![](enhanced-user-notifications-images/setup02w.png "Aps 环境属性")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. 保存对文件所做的更改。
+4. 保存对文件所做的更改。
 
 -----
 
@@ -442,7 +442,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-对于本地通知设置`CategoryIdentifier`属性的`UNMutableNotificationContent`对象。 例如：
+对于本地通知设置`CategoryIdentifier`属性的`UNMutableNotificationContent`对象。 例如:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -458,7 +458,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>处理取消操作
 
-如上面所述，关闭操作在用户关闭通知可以发送到应用。 由于这不是标准操作，需要创建类别时，设置选项。 例如：
+如上面所述，关闭操作在用户关闭通知可以发送到应用。 由于这不是标准操作，需要创建类别时，设置选项。 例如:
 
 ```csharp
 var categoryID = "message";
@@ -550,7 +550,7 @@ namespace MonkeyNotification
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio 中打开应用的解决方案。
-2. 右键单击解决方案名称在**解决方案资源管理器**，然后选择**添加 > 新建项目...**.
+2. 右键单击解决方案名称在**解决方案资源管理器**，然后选择**添加 > 新建项目...** .
 3. 选择**可视化C#> iOS 扩展 > 通知服务扩展**:
 
     [![](enhanced-user-notifications-images/extension01.w157-sml.png "选择通知服务扩展")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
@@ -561,7 +561,7 @@ namespace MonkeyNotification
 > [!IMPORTANT]
 > 服务扩展的捆绑标识符应与使用主应用程序的捆绑包标识符匹配`.appnameserviceextension`追加到末尾。 例如，如果主应用程序必须由捆绑包标识符`com.xamarin.monkeynotify`，服务扩展应具有的捆绑标识符`com.xamarin.monkeynotify.monkeynotifyserviceextension`。 这应会自动设置时将扩展添加到解决方案。 
 
-将需要进行修改，以提供所需的功能的通知服务扩展中没有一个主类。 例如：
+将需要进行修改，以提供所需的功能的通知服务扩展中没有一个主类。 例如:
 
 ```csharp
 using System;
@@ -616,7 +616,7 @@ namespace MonkeyChatServiceExtension
 
 ### <a name="triggering-a-service-extension"></a>触发服务扩展
 
-与服务扩展创建和传递与该应用程序，可以通过修改远程通知有效负载发送到设备触发它。 例如：
+与服务扩展创建和传递与该应用程序，可以通过修改远程通知有效负载发送到设备触发它。 例如:
 
 ```csharp
 {

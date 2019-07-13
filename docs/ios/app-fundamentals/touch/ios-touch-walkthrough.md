@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: bff4d46ac9d5fe893cbb0a2dfa032e1b9f6daa0e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abcd89a6c4547680df0b96d235531312d3b21c52
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407721"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864329"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin.iOS 中使用触控
 
@@ -176,7 +176,7 @@ ms.locfileid: "61407721"
 
 <a name="Gesture_Recognizer_Samples" />
 
-##  <a name="gesture-recognizer-samples"></a>笔势识别器示例
+## <a name="gesture-recognizer-samples"></a>笔势识别器示例
 
 [上一节](#Touch_Samples)演示了如何通过使用触摸事件将在屏幕上四处一个对象。
 在本部分中我们将去掉的触控事件，并演示如何使用以下手势识别器：

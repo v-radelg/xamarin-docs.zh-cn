@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bc9396a8cb667b8170c4b3511b9fe8423741e6b1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 047ee06522d4b2c07937e0e1bd9985248a164f01
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829930"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865022"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>可以将文件添加到或 IPA 文件在 Visual Studio 生成后删除文件？
 
@@ -24,55 +24,55 @@ ms.locfileid: "67829930"
 
 对于此示例假定，Xamarin.iOS 项目的名称是`iPhoneApp1`和`generated session id`是 `cc530d20d6b19da63f6f1c6f67a0a254`
 
-1.  生成`.ipa`文件作为普通从 Visual Studio。
+1. 生成`.ipa`文件作为普通从 Visual Studio。
 
-2.  切换到 Mac 生成主机。
+2. 切换到 Mac 生成主机。
 
-3.  查找中的生成`~/Library/Caches/Xamarin/mtbs/builds`文件夹。 你可以粘贴到此路径**Finder > 转 > 转到文件夹**浏览在查找器中的文件夹。 查找与项目名称相匹配的文件夹。 在该文件夹中，查找匹配的文件夹`generated session id`生成。 这将很可能是具有最新的修改时间的子文件夹。
+3. 查找中的生成`~/Library/Caches/Xamarin/mtbs/builds`文件夹。 你可以粘贴到此路径**Finder > 转 > 转到文件夹**浏览在查找器中的文件夹。 查找与项目名称相匹配的文件夹。 在该文件夹中，查找匹配的文件夹`generated session id`生成。 这将很可能是具有最新的修改时间的子文件夹。
 
-4.  打开一个新`Terminal.app`窗口。
+4. 打开一个新`Terminal.app`窗口。
 
-5.  类型`cd`Terminal.app 窗口，然后拖放到`generated session id`文件夹复制到`Terminal.app`窗口：
+5. 类型`cd`Terminal.app 窗口，然后拖放到`generated session id`文件夹复制到`Terminal.app`窗口：
 
     ![](modify-ipa-images/session-id-folder.png "在查找器中查找生成的会话 id 文件夹")
 
-6.  键入 return 键，若要更改目录更改为`generated session id`文件夹。
+6. 键入 return 键，若要更改目录更改为`generated session id`文件夹。
 
-7.  解压缩`.ipa`到一个临时文件`old/`文件夹使用以下命令。 调整`Ad-Hoc`和`iPhoneApp1`所需的特定项目的名称。
+7. 解压缩`.ipa`到一个临时文件`old/`文件夹使用以下命令。 调整`Ad-Hoc`和`iPhoneApp1`所需的特定项目的名称。
 
     > ditto -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa old/
 
-8.  保留`Terminal.app`窗口处于打开状态。
+8. 保留`Terminal.app`窗口处于打开状态。
 
-9.  删除从所需的文件`.ipa`。 您可以将它们移动到回收站使用查找程序，或使用命令行上将其删除`Terminal.app`。 若要查看的内容`Payload/iPhone`文件在查找程序中，单击该文件，然后选择**显示包内容**。
+9. 删除从所需的文件`.ipa`。 您可以将它们移动到回收站使用查找程序，或使用命令行上将其删除`Terminal.app`。 若要查看的内容`Payload/iPhone`文件在查找程序中，单击该文件，然后选择**显示包内容**。
 
-10.  使用相同的常规方法如下所示步骤 3 中，找到日志文件下的`~/Library/Logs/Xamarin/MonoTouchVS/`具有项目名称和`generated session id`名称中：![](modify-ipa-images/build-log.png "在查找器中找到项目生成日志")
+10. 使用相同的常规方法如下所示步骤 3 中，找到日志文件下的`~/Library/Logs/Xamarin/MonoTouchVS/`具有项目名称和`generated session id`名称中：![](modify-ipa-images/build-log.png "在查找器中找到项目生成日志")
 
-11.  生成日志从步骤 10 中，例如双击打开它。
+11. 生成日志从步骤 10 中，例如双击打开它。
 
-12.  找到的行，包括`tool /usr/bin/codesign execution started with arguments: -v --force --sign`。
+12. 找到的行，包括`tool /usr/bin/codesign execution started with arguments: -v --force --sign`。
 
-13.  类型`/usr/bin/codesign`到步骤 8 中 Terminal.app 窗口。
+13. 类型`/usr/bin/codesign`到步骤 8 中 Terminal.app 窗口。
 
-14.  复制的所有参数开头`-v`中的行从步骤 12 中，并将其粘贴到 Terminal.app 窗口。
+14. 复制的所有参数开头`-v`中的行从步骤 12 中，并将其粘贴到 Terminal.app 窗口。
 
-15.  更改最后一个参数是`.app`捆绑包位于`old/Payload/`文件夹，然后运行命令。
+15. 更改最后一个参数是`.app`捆绑包位于`old/Payload/`文件夹，然后运行命令。
 
-```bash
-/usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
-```
+    ```bash
+    /usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
+    ```
 
-16.  将更改为`old/`目录在终端中：
+16. 将更改为`old/`目录在终端中：
 
-```bash
-cd old
-```
+    ```bash
+    cd old
+    ```
 
-17.  压缩到一个新目录的内容`.ipa`文件中使用`zip`命令。 您可以更改`"$HOME/Desktop/iPhoneApp1-1.0.ipa"`自变量输出`.ipa`文件位置：
+17. 压缩到一个新目录的内容`.ipa`文件中使用`zip`命令。 您可以更改`"$HOME/Desktop/iPhoneApp1-1.0.ipa"`自变量输出`.ipa`文件位置：
 
-```bash
-zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
-```
+    ```bash
+    zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
+    ```
 
 ## <a name="common-error-messages"></a>常见的错误消息
 

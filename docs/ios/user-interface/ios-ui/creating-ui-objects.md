@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 65ebbddfa1a315a478ceb43162b3c80eba2d8cc1
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: a80bf876e239e1788a371a1f09d36d73247d4611
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827798"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865003"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin.iOS 中创建用户界面对象
 
@@ -88,7 +88,7 @@ using UIKit;
 
 有关如何 Xcode 的 Interface Builder 集成与 Visual Studio for Mac 的详细信息，请参阅[Xib 代码生成](~/ios/internals/xib-code-generation.md#generated)文档。
 
-##  <a name="using-c"></a>使用C#
+## <a name="using-c"></a>使用C#
 
 如果您决定以编程方式创建一个用户界面对象使用C#（在视图或视图控制器），请执行以下步骤：
 

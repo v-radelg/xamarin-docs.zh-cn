@@ -7,38 +7,38 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: dda00760399572d714300f1487391212c6fa0998
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: fca72291dd726d4f2a6635d26390baa103ee0d2d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740867"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864905"
 ---
 # <a name="android-wear"></a>Android 穿戴设备
 
 Android 穿戴设备是 android 的专为智能手表等可穿戴设备版本。 本部分包括有关如何安装和配置穿戴设备开发，创建第一个穿戴设备设备，并可以引用以创建你自己 Wear 应用的示例的列表的分步演练所需的工具的说明。
 
-##  <a name="getting-startedandroidwearget-startedindexmd"></a>[入门](~/android/wear/get-started/index.md)
+## <a name="getting-startedandroidwearget-startedindexmd"></a>[入门](~/android/wear/get-started/index.md)
 
 引入了 Android Wear、 介绍如何安装和配置计算机进行穿戴设备开发和提供了有助于创建和运行仿真程序或在穿戴设备上的第一个 Android Wear 应用的步骤。
 
-##  <a name="user-interfaceandroidwearuser-interfaceindexmd"></a>[用户界面](~/android/wear/user-interface/index.md)
+## <a name="user-interfaceandroidwearuser-interfaceindexmd"></a>[用户界面](~/android/wear/user-interface/index.md)
 
 介绍了 Android Wear 特定控件，并提供指向演示如何使用这些控件的示例。
 
-##  <a name="platform-featuresandroidwearplatformindexmd"></a>[平台功能](~/android/wear/platform/index.md)
+## <a name="platform-featuresandroidwearplatformindexmd"></a>[平台功能](~/android/wear/platform/index.md)
 
 在本部分中的文档介绍特定于 Android Wear 的功能。 此处，您会发现本主题介绍如何创建 WatchFace。
 
-##  <a name="screen-sizesandroidwearscreen-sizesmd"></a>[屏幕大小](~/android/wear/screen-sizes.md)
+## <a name="screen-sizesandroidwearscreen-sizesmd"></a>[屏幕大小](~/android/wear/screen-sizes.md)
 
 预览并优化您的用户界面为可用的屏幕尺寸。
 
-##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[部署和测试](~/android/wear/deploy-test/index.md)
+## <a name="deployment--testingandroidweardeploy-testindexmd"></a>[部署和测试](~/android/wear/deploy-test/index.md)
 
 介绍如何将 Android Wear 应用部署到 Android Wear 设备或 Android 仿真程序配置的损耗。 它还包括调试提示和有关如何设置开发计算机和 Android 设备之间的蓝牙连接的信息。
 
-##  <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[Wear Api](https://developer.android.com/reference/android/support/wearable)
+## <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[Wear Api](https://developer.android.com/reference/android/support/wearable)
 
 Android 开发人员站点提供有关关键 Wear Api 详细的信息，如[可穿戴活动](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html)，[意向](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html)，[身份验证](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html)， [复杂性](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html)，[呈现的复杂情况](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html)，[通知](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html)，[视图](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)，并且[WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html)。
 
@@ -58,7 +58,7 @@ Android 开发人员站点提供有关关键 Wear Api 详细的信息，如[可�
 |[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace 是自定义的观察人脸与模拟样式小时、 分钟和第二个指针。 此示例演示如何创建监视人脸服务用于绘制当前时间和句柄的环境模式和可见性更改事件。 它包括一个广播的接收器，侦听的时区更改并自动将相应地更新时间。|![WatchFace 的屏幕截图](images/gridviewpager.png)|
 
 
-##  <a name="videos"></a>视频
+## <a name="videos"></a>视频
 
 请查看这些视频链接讨论 Xamarin.Android 使用穿戴设备的支持：
 

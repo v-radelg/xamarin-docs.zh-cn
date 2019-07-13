@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 70ca9a73c83bed5233b77a6f7be80a13f04f2bcb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fbef8f60a31511be926ee2adf5e239ad8955b208
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61360745"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864526"
 ---
 # <a name="updating-component-references-to-nuget"></a>更新对 NuGet 的组件引用
 
@@ -177,10 +177,10 @@ _它可能包含 NuGet 依赖项，但是可以忽略这些警告。_
 
 #### <a name="add-the-nuget-package"></a>添加 NuGet 包
 
-1. 右键单击**包**节点，然后选择**添加包...**.
+1. 右键单击**包**节点，然后选择**添加包...** .
 2. 搜索按名称或作者 NuGet 替换：
 
-  ![](component-nuget-images/nuget-search-sml.png)
+    ![](component-nuget-images/nuget-search-sml.png)
 
 3. 按**将包添加**。
 

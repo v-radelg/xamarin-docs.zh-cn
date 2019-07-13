@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: a1001163d89a9a9cda16a7ee5e644307fcc9875c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb79323c416c107c35c465bc2a8815ab267cc451
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218575"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865939"
 ---
 # <a name="workbooks-installation-and-requirements"></a>工作簿安装和要求
 
@@ -149,8 +149,8 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 1. 在 `"/Applications/Xamarin Workbooks.app"` 删除 Workbooks 应用
 2. 在 `"Applications/Xamarin Inspector.app"` 删除 Inspector 应用
-2. 删除加载项：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. 在 `/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework` 删除 Inspector 和支持文件
+3. 删除加载项：`"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` 和 `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. 在 `/Library/Frameworks/Xamarin.Interactive.framework` 和 `/Library/Frameworks/Xamarin.Inspector.framework` 删除 Inspector 和支持文件
 
 ## <a name="downgrading"></a>降级
 

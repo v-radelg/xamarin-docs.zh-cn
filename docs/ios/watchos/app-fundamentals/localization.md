@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 1362767bf9a80af1eac37d316bd99a6ab364063f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61413954"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865951"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>使用 watchOS 在 Xamarin 中的本地化
 
@@ -87,7 +87,7 @@ Watch 应用包含描述应用程序的用户界面的情节提要。 任何控�
 
 #### <a name="storyboard-images"></a>情节提要图像
 
-该示例解决方案还包括**gradient@2x.png**每个语言文件夹中的映像。 此映像可以是不同的每种语言 （例如。 它可能会有嵌入的文本需要转换，或使用本地化插图）。
+该示例解决方案还包括 **gradient@2x.png** 每个语言文件夹中的映像。 此映像可以是不同的每种语言 （例如。 它可能会有嵌入的文本需要转换，或使用本地化插图）。
 
 只需设置的映像**图像**情节提要和正确的映像中的属性将根据用户选择的语言手表上呈现。
 
@@ -127,19 +127,19 @@ displayText.SetText (localizedDisplay);
 
 1. 您可以更改`Image`控制通过其值设置为图像的字符串名称的已存在，在监视应用中，例如
 
-  ```csharp
-  displayImage.SetImage("gradient"); // image in Watch App (as shown above)
-  ```
+    ```csharp
+    displayImage.SetImage("gradient"); // image in Watch App (as shown above)
+    ```
 
-2. 您可以将图像从扩展中移动到监视使用`FromBundle`，应用会自动选择适合用户的语言选择的图像。 示例解决方案中没有图像**language@2x.png**在每个语言文件夹，并显示在`DetailController`使用以下代码：
+2. 您可以将图像从扩展中移动到监视使用`FromBundle`，应用会自动选择适合用户的语言选择的图像。 示例解决方案中没有图像 **language@2x.png** 在每个语言文件夹，并显示在`DetailController`使用以下代码：
 
-  ```csharp
-  using (var image = UIImage.FromBundle ("language")) {
-    displayImage.SetImage (image);
-  }
-  ```
+    ```csharp
+    using (var image = UIImage.FromBundle ("language")) {
+        displayImage.SetImage (image);
+    }
+    ```
 
-  请注意，不需要指定 **@2x** 引用图像的文件名时。
+    请注意，不需要指定 **@2x** 引用图像的文件名时。
 
 第二个方法也是适用于从远程服务器上监视; 呈现下载映像但是在这种情况下您应该确保你下载的映像已正确本地化根据用户的首选项。
 

@@ -6,12 +6,12 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: dd211fecad0bff58cb9ff6c6a99ae6a15c60eb7b
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 723970a4ad7e2ced85147dbcc6c22f9a45519121
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674989"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864604"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 和 Xamarin
 
@@ -41,7 +41,7 @@ Microsoft 的 Web API 公开 Xamarin 应用程序可以轻松地使用一个类�
 您可以轻松地启动[Azure 网站](https://trywebsites.azurewebsites.net/)并生成用于连接到 Xamarin 应用的基于 WebAPI 的应用。
 
 
-###  <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[介绍了 Web 服务](~/cross-platform/data-cloud/web-services/index.md)
+### <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[介绍了 Web 服务](~/cross-platform/data-cloud/web-services/index.md)
 
 本教程介绍了如何将集成的其余部分中，WCF 和 SOAP web 服务技术与 Xamarin 移动应用程序。 它检查各种服务实现，计算可用的工具和库集成，并提供示例模式使用服务的数据。 最后，它提供了创建供使用的 RESTful web 服务与 Xamarin 移动应用程序的基本概述。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382791"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865709"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin.iOS 中的语音识别
 
@@ -108,18 +108,18 @@ Apple 已包含一个可用性 API，用于确定给定的语言是否可用于�
 3. 单击**添加新条目**，输入`NSSpeechRecognitionUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如： 
 
     [![](speech-images/speech03.png "添加 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. 如果应用程序将处理实时音频转录，它还需要麦克风使用说明。 单击**添加新条目**，输入`NSMicrophoneUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如： 
+4. 如果应用程序将处理实时音频转录，它还需要麦克风使用说明。 单击**添加新条目**，输入`NSMicrophoneUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如: 
 
     [![](speech-images/speech04.png "添加 NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
-4. 保存对文件所做的更改。
+5. 保存对文件所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 双击`Info.plist`文件将其打开进行编辑。
-3. 单击**添加新条目**，输入`NSSpeechRecognitionUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如： 
+2. 单击**添加新条目**，输入`NSSpeechRecognitionUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如： 
 
     [![](speech-images/speech03w.png "添加 NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-4. 如果应用程序将处理实时音频转录，它还需要麦克风使用说明。 单击**添加新条目**，输入`NSMicrophoneUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如： 
+3. 如果应用程序将处理实时音频转录，它还需要麦克风使用说明。 单击**添加新条目**，输入`NSMicrophoneUsageDescription`有关**属性**，`String`有关**类型**和一个**使用说明**作为**值**。 例如: 
 
     [![](speech-images/speech04w.png "添加 NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. 保存对文件所做的更改。
@@ -243,7 +243,7 @@ public void RecognizeFile (NSUrl url)
 
 ### <a name="recognizing-live-speech"></a>实时语音识别
 
-如果应用程序想要识别实时语音，过程是非常类似于预先录制的语音识别。 例如：
+如果应用程序想要识别实时语音，过程是非常类似于预先录制的语音识别。 例如:
 
 ```csharp
 using System;

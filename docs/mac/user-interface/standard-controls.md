@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 696432fb51060a236780eedee0b60661e3a86712
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831906"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865195"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>在 Xamarin.Mac 中标准控件
 
@@ -289,7 +289,7 @@ partial void ButtonAction (Foundation.NSObject sender) {
 }
 ```
 
-对于具有一种状态的按钮 (如**上**和**关闭**)，可以检查的状态，或者将其设置与`State`属性与`NSCellStateValue`枚举。 例如：
+对于具有一种状态的按钮 (如**上**和**关闭**)，可以检查的状态，或者将其设置与`State`属性与`NSCellStateValue`枚举。 例如:
 
 ```csharp
 DisclosureButton.Activated += (sender, e) => {
@@ -326,7 +326,7 @@ AppKit 提供了几种类型的复选框和单选按钮组可以在你的用户�
 [![](standard-controls-images/buttons02.png "举例说明了可用的复选框类型")](standard-controls-images/buttons02.png#lightbox)
 
 
-复选框和单选按钮 (通过公开**输出口**) 具有一种状态 (如**上**并**关闭**)，可以检查的状态，或者将其设置与`State`属性与`NSCellStateValue`枚举。 例如：
+复选框和单选按钮 (通过公开**输出口**) 具有一种状态 (如**上**并**关闭**)，可以检查的状态，或者将其设置与`State`属性与`NSCellStateValue`枚举。 例如:
 
 ```csharp
 AdjustTime.Activated += (sender, e) => {
@@ -499,7 +499,7 @@ TickedSlider.Activated += (sender, e) => {
 };
 ```
 
-若要设置或读取所选内容控件的值，请使用`IntValue`属性。 例如:
+若要设置或读取所选内容控件的值，请使用`IntValue`属性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.IntValue);
@@ -536,7 +536,7 @@ LevelIndicator.Activated += (sender, e) => {
 };
 ```
 
-若要读取或设置指示器控件的值，请使用`DoubleValue`属性。 例如:
+若要读取或设置指示器控件的值，请使用`DoubleValue`属性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
@@ -565,13 +565,13 @@ AppKit 提供了几种类型的文本控件可以在你的用户界面设计中�
 - **EditingBegan** -当用户选择该字段进行编辑时触发。
 - **EditingEnded** -当用户按 Enter 键在字段中的，或离开该字段。
 
-使用`StringValue`属性来读取或设置字段的值。 例如：
+使用`StringValue`属性来读取或设置字段的值。 例如:
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-对于显示或编辑数字值的字段，可以使用`IntValue`属性。 例如:
+对于显示或编辑数字值的字段，可以使用`IntValue`属性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);
@@ -603,16 +603,16 @@ AppKit 提供了几种类型的内容可在你的用户界面设计的视图。 
 2. 拖动**查看控制器**从**库检查器**拖到**界面编辑器**: 
 
     [![](standard-controls-images/content02.png "从库中选择视图控制器")](standard-controls-images/content02.png#lightbox)
-4. 定义的大小和布局**的自定义视图**: 
+3. 定义的大小和布局**的自定义视图**: 
 
     [![](standard-controls-images/content04.png "编辑布局")](standard-controls-images/content04.png#lightbox)
-5. 单击并拖动弹出框拖到从源**视图控制器**: 
+4. 单击并拖动弹出框拖到从源**视图控制器**: 
 
     [![](standard-controls-images/content05.png "拖动以创建 segue")](standard-controls-images/content05.png#lightbox)
-6. 选择**弹出框**弹出菜单中： 
+5. 选择**弹出框**弹出菜单中： 
 
     [![](standard-controls-images/content06.png "设置 segue 类型")](standard-controls-images/content06.png#lightbox)
-7. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
+6. 保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
 
 <a name="Tab_Views" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
-ms.openlocfilehash: ba3c2b07e7f35bf9fd84d10b74d034a02ca6a73d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 65f7c6d8a573501ffec4aa1b8eaf28ff1e6479e8
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153278"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864223"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>Android Resource.designer.cs 文件不更新
 
@@ -24,13 +24,13 @@ ms.locfileid: "61153278"
 
 ## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>正在修复项目文件的两种可能方法
 
-### <a name="either"></a>二者之一：
+**任一：**
 
-1) 创建一个全新的 Xamarin.Android 应用程序项目，将设置所有项目属性以匹配旧的项目，并添加到项目的所有资源、 源文件、 等。
+1. 创建一个全新的 Xamarin.Android 应用程序项目，将设置所有项目属性以匹配旧的项目，并添加到项目的所有资源、 源文件、 等。
 
-### <a name="or"></a>或
+   **或**
 
-2) 创建原始项目的.csproj 文件的备份副本，然后在文本编辑器中，将其打开，并从完全生成的.csproj 文件中添加缺少的元素中返回。
+2. 创建原始项目的.csproj 文件的备份副本，然后在文本编辑器中，将其打开，并从完全生成的.csproj 文件中添加缺少的元素中返回。
 
 ### <a name="if-this-does-not-solve-the-problem"></a>如果这没有解决问题
 

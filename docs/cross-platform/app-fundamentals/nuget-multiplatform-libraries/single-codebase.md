@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6d695df9c59a5f95441092d6d7b44d5feda941bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6371c2af15eab9c5124212eefd9cf70d07b945d4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267671"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864722"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>为 NuGet 创建新的多平台库
 
@@ -30,25 +30,25 @@ ms.locfileid: "61267671"
 
 2. 选择**多平台库**从**多平台 > 库**部分：
 
-  [![](single-codebase-images/mulitplatform-library-sml.png "配置适用于单个代码库的多平台库")](single-codebase-images/mulitplatform-library.png#lightbox)
+   [![](single-codebase-images/mulitplatform-library-sml.png "配置适用于单个代码库的多平台库")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. 输入**名称**并**说明**，然后选择**所有平台的单一**:
 
-  [![](single-codebase-images/single-configure-sml.png "配置适用于单个代码库的多平台库")](single-codebase-images/single-configure.png#lightbox)
+   [![](single-codebase-images/single-configure-sml.png "配置适用于单个代码库的多平台库")](single-codebase-images/single-configure.png#lightbox)
 
 4. 完成向导。 在解决方案中创建一个库项目。
 
 5. 右键单击新的库项目，然后选择**选项**。 **生成 > 常规**部分允许**目标框架**设置 – 选择.NET 可移植 PCL 配置文件或.NET Standard 版本：
 
-  [![](single-codebase-images/single-choose-type-sml.png "选择 PCL 或.NET 标准库类型")](single-codebase-images/single-choose-type.png#lightbox)
+   [![](single-codebase-images/single-choose-type-sml.png "选择 PCL 或.NET 标准库类型")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. 另外，请在**项目选项**窗口中，打开**NuGet 包 > 元数据**部分，然后输入[必需的元数据](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（以及任何可选的元数据）：
 
-  [![](single-codebase-images/single-metadata-sml.png "输入所需的元数据")](single-codebase-images/single-metadata.png#lightbox)
+   [![](single-codebase-images/single-metadata-sml.png "输入所需的元数据")](single-codebase-images/single-metadata.png#lightbox)
 
-7. 右键单击类库项目并选择**创建 NuGet 包**（或生成或部署解决方案） 和 **.nupkg** NuGet 包文件将保存在 **/bin/**（调试或发行版中的，具体取决于配置） 的文件夹：
+7. 右键单击类库项目并选择**创建 NuGet 包**（或生成或部署解决方案） 和 **.nupkg** NuGet 包文件将保存在 **/bin/** （调试或发行版中的，具体取决于配置） 的文件夹：
 
-  ![](single-codebase-images/create-nuget-package.png "NuGet 包文件将保存在 bin 文件夹中调试或发布，具体取决于配置")
+   ![](single-codebase-images/create-nuget-package.png "NuGet 包文件将保存在 bin 文件夹中调试或发布，具体取决于配置")
 
 
 ## <a name="verifying-the-output"></a>验证输出
@@ -65,7 +65,7 @@ NuGet 包还可以 ZIP 文件，因此可以检查生成的包的内部结构。
 
 基于 PCL 的项目和基于.NET Standard 的项目不能包含特定于平台的引用 （如 iOS 或 Android 功能）。
 
-如果现有 PCL 项目或.NET Standard 项目需要进行扩展以包含特定于平台的代码，这可以通过右键单击项目并选择**添加 > 添加平台实现...**:
+如果现有 PCL 项目或.NET Standard 项目需要进行扩展以包含特定于平台的代码，这可以通过右键单击项目并选择**添加 > 添加平台实现...** :
 
 [![](single-codebase-images/add-later-sml.png "添加平台实现菜单")](single-codebase-images/add-later.png#lightbox)
 

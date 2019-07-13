@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153279"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864119"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何自动化 Android NUnit 测试项目？
 
@@ -58,7 +58,7 @@ adb shell am instrument
 
 2.  实现[TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/)构造函数和[AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29)方法。 `AddTests`方法控制实际执行哪些测试。
 
-3.  修改`.csproj`文件以添加**TestInstrumentation.cs**。 例如：
+3.  修改`.csproj`文件以添加**TestInstrumentation.cs**。 例如:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +74,13 @@ adb shell am instrument
     </Project>
     ```
 
-3.  使用以下命令以运行单元测试。 替换`PACKAGE_NAME`与应用程序的包名称 (可以在应用中找到包名称`/manifest/@package`属性位于**AndroidManifest.xml**):
+4.  使用以下命令以运行单元测试。 替换`PACKAGE_NAME`与应用程序的包名称 (可以在应用中找到包名称`/manifest/@package`属性位于**AndroidManifest.xml**):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-4.  或者，您可以修改`.csproj`文件以添加`RunTests`MSBuild 目标。 这样就可以调用的命令如下所示的单元测试：
+5.  或者，您可以修改`.csproj`文件以添加`RunTests`MSBuild 目标。 这样就可以调用的命令如下所示的单元测试：
 
     ```shell
     msbuild /t:RunTests Project.csproj

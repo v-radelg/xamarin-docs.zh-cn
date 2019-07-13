@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/26/2018
-ms.openlocfilehash: 435af10484827826d53b767c2738e3945e0bae42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 75b5d1f941921a84d96579a4b0d0666ae0c2522d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61345028"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864984"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>使用 watchOS 在 Xamarin 中的图标
 
@@ -55,28 +55,28 @@ Apple Watch 解决方案需要图标的两个的集：
 
 1. 右键单击监视应用程序项目，然后选择**文件 > 添加 > 新建文件...> iOS > 资产目录**将资产目录添加到项目。
 
- ![](icons-images/newasset.png "向项目添加资产目录")
+    ![](icons-images/newasset.png "向项目添加资产目录")
 
 2. 双击**AppIcon.appiconset/Contents.json**文件
 
-  ![](icons-images/xcassets-iconset-sml.png "AppIcon 内容")
+    ![](icons-images/xcassets-iconset-sml.png "AppIcon 内容")
 
 3. 添加所有 watchOS 映像，在此屏幕截图所示：
 
-  [![](icons-images/appicons-sml.png "添加所有 watchOS 映像，如以下屏幕截图中所示")](icons-images/appicons.png#lightbox)
+    [![](icons-images/appicons-sml.png "添加所有 watchOS 映像，如以下屏幕截图中所示")](icons-images/appicons.png#lightbox)
 
-  请参阅[Apple 的图标准则](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（维度也会显示在屏幕上） 的所需大小。 请记住，这些图标将自动剪辑元素以在一个圆周中呈现。
+    请参阅[Apple 的图标准则](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（维度也会显示在屏幕上） 的所需大小。 请记住，这些图标将自动剪辑元素以在一个圆周中呈现。
 
-  图标列表如下所示：
+    图标列表如下所示：
 
-  ![](icons-images/xcassets-complete-sml.png "在解决方案资源管理器中的图标列表")
+    ![](icons-images/xcassets-complete-sml.png "在解决方案资源管理器中的图标列表")
 
 4. 若要确保将资产目录包括在应用中，添加以下键和值添加到**监视应用的 info.plist 文件**:
 
-```xml
-<key>XSAppIconAssets</key>
-<string>Images.xcassets/AppIcon.appiconset</string>
-```
+    ```xml
+    <key>XSAppIconAssets</key>
+    <string>Images.xcassets/AppIcon.appiconset</string>
+    ```
 
 你可以验证图标通过检查配置正确[Apple Watch 设置应用](~/ios/watchos/app-fundamentals/settings.md)在 iPhone 模拟器中，或生成[通知](~/ios/watchos/platform/notifications.md)并确认该图标显示在通知屏幕。
 

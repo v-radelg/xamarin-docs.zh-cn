@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 53d2a0aae3398ea31676fbc3dab95d500dfe2104
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: 1b68afc1f3d3c57a5c336e9d30c97ce2375acb9f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309503"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864348"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>样式的跨平台 Xamarin.Forms 应用程序
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Styled/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Styled/)
 
 在此快速入门中，你将了解如何：
 
@@ -120,7 +120,7 @@ ms.locfileid: "67309503"
 
     保存对更改**NotesPage.xaml**通过按**CTRL + S**，然后关闭文件。
 
-5. 在中**解决方案资源管理器**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
+4. 在中**解决方案资源管理器**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ ms.locfileid: "67309503"
 
     保存对更改**NoteEntryPage.xaml**通过按**CTRL + S**，然后关闭文件。
 
-6. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
+5. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
 
     上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页上，观察如何样式已从上一个快速入门。
 
@@ -261,7 +261,7 @@ ms.locfileid: "67309503"
 
     保存对更改**NotesPage.xaml**通过选择**文件 > 保存**(或通过按 **&#8984; + S**)，然后关闭文件。
 
-5. 在中**Solution Pad**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
+4. 在中**Solution Pad**，在**说明**项目中，双击**NoteEntryPage.xaml**以将其打开。 然后使用以下代码替换现有代码：
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -310,7 +310,7 @@ ms.locfileid: "67309503"
 
     保存对更改**NoteEntryPage.xaml**通过选择**文件 > 保存**(或通过按 **&#8984; + S**)，然后关闭文件。
 
-6. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
+5. 生成并运行每个平台上的项目。 有关详细信息，请参阅[构建快速入门](single-page.md#building-the-quickstart)。
 
     上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页上，观察如何样式已从上一个快速入门。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 0a40d50d02008439e81d5db19bcda0647203e2da
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d2f4031eeddbaa206f38b7b1c2bb49d21482c175
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61414400"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864948"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 应用分发概述
 
@@ -28,10 +28,10 @@ _本文档概述了可用于 Xamarin.tvOS 应用的分发技巧，并充当有�
 Apple 提供了以下的方式来分发 tvOS 应用支持的 Xamarin.tvOS:
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
-2. [**In-House（企业）**](#In-House-Distribution) 
-2. [**Ad Hoc**](#Ad_Hoc_Distribution) 
+2. [**In-House（企业）** ](#In-House-Distribution) 
+3. [**Ad Hoc**](#Ad_Hoc_Distribution) 
 
-所有这些情况都要求使用相应的配置文件预配应用程序。 配置文件是一种文件，其中包含了代码签名信息，以及应用程序标识和预期分发机制。 对于非 App Store 分发，该文件还包含可部署应用的设备的相关信息。
+所有这些情况都要求使用相应的配置文件  预配应用程序。 配置文件是一种文件，其中包含了代码签名信息，以及应用程序标识和预期分发机制。 对于非 App Store 分发，该文件还包含可部署应用的设备的相关信息。
 
 <a name="Apple-TV-App-Store-Distribution" />
 
@@ -39,7 +39,7 @@ Apple 提供了以下的方式来分发 tvOS 应用支持的 Xamarin.tvOS:
 
 这是 tvOS 应用程序将分发给使用者在 Apple TV 设备上的主要方式。 所有提交到 Apple TV App Store 的应用需要 Apple 审批。
 
-应用通过名为 iTunes Connect 的门户提交到 App Store。 请参阅我们[iTunes Connect 中配置你的应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南以获取有关以下主题的信息：
+应用通过名为 iTunes Connect  的门户提交到 App Store。 请参阅我们[iTunes Connect 中配置你的应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南以获取有关以下主题的信息：
 
 - 管理协议、 税款和银行。
 - 创建 iTunes Connect 记录。
@@ -66,7 +66,7 @@ Apple 提供了以下的方式来分发 tvOS 应用支持的 Xamarin.tvOS:
 
 ## <a name="in-house-distribution"></a>In-House 分发
 
-In-House 分发（有时称为企业分发）允许 **Apple 开发人员企业计划**成员在内部向同一组织内的其他成员分发应用。 In-House 分发的优势在于无需 App Store 审核，且没有可安装应用程序的设备数量限制。 但是，值得注意的是，**Apple 开发人员企业计划**成员**没有**权限访问 iTunes Connect，因此许可证持有人负责分发应用。
+In-House 分发（有时称为企业分发  ）允许 **Apple 开发人员企业计划**成员在内部向同一组织内的其他成员分发应用。 In-House 分发的优势在于无需 App Store 审核，且没有可安装应用程序的设备数量限制。 但是，值得注意的是，**Apple 开发人员企业计划**成员**没有**权限访问 iTunes Connect，因此许可证持有人负责分发应用。
 
 有关设置以及如何 In-House 分发你的应用程序的详细信息，请参阅[In-House 分发指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。 本文档是特定于 iOS 的但同样的技术用于 tvOS 应用。
 

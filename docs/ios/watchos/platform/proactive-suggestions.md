@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 979b103db478e3888d3a3c20df6afbd91d0c37d8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c0bf6058b2ec7a8e3ef606bef9f725a476abffe
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386512"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865921"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS 在 Xamarin 中的主动建议
 
@@ -132,7 +132,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>还原活动
 
-以响应用户点击搜索结果 (`NSUserActivity`) 的应用程序中，编辑**AppDelegate.cs**文件，然后重写`ContinueUserActivity`方法。 例如：
+以响应用户点击搜索结果 (`NSUserActivity`) 的应用程序中，编辑**AppDelegate.cs**文件，然后重写`ContinueUserActivity`方法。 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,9 +169,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 需要更高版本的餐馆搜索应用程序示例。 如果已实现`NSUserActivity`和正确填充所有的元数据和属性，用户将能够执行以下操作：
 
 1. 他们想要满足的朋友联系，在应用中找到一家餐厅。
-4. 如果用户切换到地图应用程序，餐馆的地址自动建议作为目标。
-5. 这甚至适用于第三方应用 (支持`NSUserActivity`)，因此用户可以切换到持续一段时间共享应用和餐馆的地址自动都还建议为存在的目标。
-6. 它还提供了上下文到 Siri，这样用户可以调用 Siri 餐馆应用程序中并要求 *"获取方向..."* Siri 将提供给用户查看的餐馆的方向。
+2. 如果用户切换到地图应用程序，餐馆的地址自动建议作为目标。
+3. 这甚至适用于第三方应用 (支持`NSUserActivity`)，因此用户可以切换到持续一段时间共享应用和餐馆的地址自动都还建议为存在的目标。
+4. 它还提供了上下文到 Siri，这样用户可以调用 Siri 餐馆应用程序中并要求 *"获取方向..."* Siri 将提供给用户查看的餐馆的方向。
 
 所有上述功能共同具有一件事，它们都指示建议的最初来源。 在上面的示例中，它是虚构的餐馆查看应用程序。
 
@@ -297,7 +297,7 @@ Apple 提供建议处理活动的以下最佳实践：
 - 若要处理启动应用程序与 MapKit`MKDirectionsRequest`对象。
 - 使 watchOS 能够了解建议应用程序中基于用户参与度。
 
-应用程序入门 MapKit`MKDirectionsRequest`对象，它应会自动开始为提供的用户说明进行操作的请求的位置，或显示 UI，方便用户开始查询路线。 例如：
+应用程序入门 MapKit`MKDirectionsRequest`对象，它应会自动开始为提供的用户说明进行操作的请求的位置，或显示 UI，方便用户开始查询路线。 例如:
 
 
 ```csharp

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 859bbd22640ba3d09324fcd3853cda26e563a1cd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832482"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865279"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>你好，tvOS 快速入门指南
 
@@ -298,20 +298,20 @@ namespace HellotvOS
 9. 完成后，你的约束应查找类似于属性面板的布局选项卡中：
 
     [![](hello-tvos-images/designer11.png "示例约束")](hello-tvos-images/designer11.png#lightbox)
-8. 拖动**按钮**从**工具箱**并将其放在标签下。
-9. 单击**标题**属性中的**属性填充**并将该按钮的标题改为`Click Me`:
+10. 拖动**按钮**从**工具箱**并将其放在标签下。
+11. 单击**标题**属性中的**属性填充**并将该按钮的标题改为`Click Me`:
 
     [![](hello-tvos-images/designer12.png "将对我来说单击按钮标题更改")](hello-tvos-images/designer12.png#lightbox)
-10. 重复步骤 5 到 8 上述约束 tvOS 窗口中的按钮。 但是，而不是将 T 句柄拖到 （如步骤 #7 中） 窗口的顶部，将其拖到标签的底部：
+12. 重复步骤 5 到 8 上述约束 tvOS 窗口中的按钮。 但是，而不是将 T 句柄拖到 （如步骤 #7 中） 窗口的顶部，将其拖到标签的底部：
 
     [![](hello-tvos-images/designer14.png "约束按钮")](hello-tvos-images/designer14.png#lightbox)
-11. 拖动的按钮下的另一个标签，将其作为第一个标签并将设置相同的宽度大小及其**对齐**到**Center**:
+13. 拖动的按钮下的另一个标签，将其作为第一个标签并将设置相同的宽度大小及其**对齐**到**Center**:
 
     [![](hello-tvos-images/designer15.png "拖动的按钮下的另一个标签，它是第一个标签的宽度相同，并将其对齐方式设置为中心的大小")](hello-tvos-images/designer15.png#lightbox)
-12. 如第一个标签和按钮，设置此标签居中，并将其固定到的位置和大小：
+14. 如第一个标签和按钮，设置此标签居中，并将其固定到的位置和大小：
 
     [![](hello-tvos-images/designer16.png "固定到的位置和大小的标签")](hello-tvos-images/designer16.png#lightbox)
-13. 将所做的更改保存到用户界面。
+15. 将所做的更改保存到用户界面。
 
 已调整大小和移动控件时，您应该已经注意到，在设计器为您提供了有用的快捷提示基于[Apple TV 人机接口指南 》](https://developer.apple.com/tvos/human-interface-guidelines/)。 这些指南将帮助您创建高质量应用程序将拥有 Apple TV 用户熟悉的外观和感觉。
 

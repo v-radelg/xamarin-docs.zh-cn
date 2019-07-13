@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e24b448bedc60a537bfcd4a5bfbdbe9562163818
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032923"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865932"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>使用在 Xamarin.Mac 中的情节提要
 
@@ -273,17 +273,17 @@ MacOS 中提供了以下手势识别器：
 
     [![](indepth-images/ref01.png "添加新的情节提要")](indepth-images/ref01.png#lightbox)
 2. 在中**解决方案资源管理器**，双击要打开在 Xcode 的 Interface Builder 中进行编辑的新情节提要名称。
-2. 设计新情节提要的场景的布局，因为通常类似于并保存所做的更改： 
+3. 设计新情节提要的场景的布局，因为通常类似于并保存所做的更改： 
 
     [![](indepth-images/ref02.png "设计界面")](indepth-images/ref02.png#lightbox)
-3. 切换到要在 Interface Builder 中添加对引用的情节提要。
-4. 拖动**引用的情节提要**从**对象库**拖到设计图面： 
+4. 切换到要在 Interface Builder 中添加对引用的情节提要。
+5. 拖动**引用的情节提要**从**对象库**拖到设计图面： 
 
     [![](indepth-images/ref03.png "在库中选择的情节提要引用")](indepth-images/ref03.png#lightbox)
-5. 在中**属性检查器**，选择的名称**情节提要**上面创建的： 
+6. 在中**属性检查器**，选择的名称**情节提要**上面创建的： 
 
     [![](indepth-images/ref04.png "配置引用")](indepth-images/ref04.png#lightbox)
-6. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的。  从弹出菜单中选择**显示**完成 Segue: 
+7. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的。  从弹出菜单中选择**显示**完成 Segue: 
 
     [![](indepth-images/ref06.png "设置 Segue 类型")](indepth-images/ref06.png#lightbox) 
 8. 将所做的更改保存到情节提要。
@@ -304,14 +304,14 @@ MacOS 中提供了以下手势识别器：
 3. 在中**标识检查器**，输入**情节提要 ID**新场景的窗口控制器： 
 
     [![](indepth-images/ref08.png "设置情节提要 ID")](indepth-images/ref08.png#lightbox)
-3. 打开要在 Interface Builder 中添加对引用的情节提要。
-4. 拖动**引用的情节提要**从**对象库**拖到设计图面： 
+4. 打开要在 Interface Builder 中添加对引用的情节提要。
+5. 拖动**引用的情节提要**从**对象库**拖到设计图面： 
 
     [![](indepth-images/ref03.png "从库中选择的情节提要引用")](indepth-images/ref03.png#lightbox)
-5. 在中**标识检查器**，选择的名称**情节提要**并**引用 ID** (情节提要 ID) 的场景的上述步骤中创建的： 
+6. 在中**标识检查器**，选择的名称**情节提要**并**引用 ID** (情节提要 ID) 的场景的上述步骤中创建的： 
 
     [![](indepth-images/ref09.png "设置引用 ID")](indepth-images/ref09.png#lightbox)
-6. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的。 从弹出菜单中选择**显示**完成 Segue: 
+7. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的。 从弹出菜单中选择**显示**完成 Segue: 
 
     [![](indepth-images/ref06.png "设置 Segue 类型")](indepth-images/ref06.png#lightbox) 
 8. 将所做的更改保存到情节提要。
@@ -332,7 +332,7 @@ MacOS 中提供了以下手势识别器：
 3. 在中**标识检查器**，输入**情节提要 ID**新场景的窗口控制器： 
 
     [![](indepth-images/ref12.png "设置情节提要 ID")](indepth-images/ref12.png#lightbox)
-3. 拖动**引用的情节提要**从**工具箱**拖到设计图面： 
+4. 拖动**引用的情节提要**从**工具箱**拖到设计图面： 
 
     [![](indepth-images/ref03.png "从库中选择的情节提要引用")](indepth-images/ref03.png#lightbox)
 5. 在中**属性检查器**，选择**引用 ID** (情节提要 ID) 的场景的上述步骤中创建的： 
@@ -341,8 +341,8 @@ MacOS 中提供了以下手势识别器：
 6. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的。 从弹出菜单中选择**显示**完成 Segue: 
 
     [![](indepth-images/ref06.png "选择 Segue 类型")](indepth-images/ref06.png#lightbox) 
-8. 将所做的更改保存到情节提要。
-9. 返回到 Visual Studio for Mac 进行同步所做的更改。
+7. 将所做的更改保存到情节提要。
+8. 返回到 Visual Studio for Mac 进行同步所做的更改。
 
 从场景创建 Segue 的 UI 元素时在应用正在运行且用户单击给定**情节提要 ID**将显示在相同的情节提要的情节提要引用中指定。
 

@@ -6,12 +6,12 @@ ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2017
-ms.openlocfilehash: 7f407b22d1793d585ae40aeae8c2d9b7616784e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6e043334d3ca45a573423ebdfdf1ec9149167b55
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267791"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864693"
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>从现有库项目创建 NuGet
 
@@ -21,13 +21,13 @@ ms.locfileid: "61267791"
 
 2. 转到**NuGet 包 > 元数据**部分，并输入所有[所需的信息](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**常规**选项卡：
 
-  [![](existing-library-images/existing-metadata-sml.png "输入所需的元数据")](existing-library-images/existing-metadata.png#lightbox)
+   [![](existing-library-images/existing-metadata-sml.png "输入所需的元数据")](existing-library-images/existing-metadata.png#lightbox)
 
 3. （可选）[添加的其他元数据](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**详细信息**选项卡。
 
-4. 元数据配置后，可以右键单击该项目并选择**创建 NuGet 包**并 **.nupkg** NuGet 包文件将保存在 **/bin/**（调试或发行版中，根据配置） 的文件夹。
+4. 元数据配置后，可以右键单击该项目并选择**创建 NuGet 包**并 **.nupkg** NuGet 包文件将保存在 **/bin/** （调试或发行版中，根据配置） 的文件夹。
 
-  ![](existing-library-images/create-nuget-package.png "右键单击菜单中选择创建 NuGet 包")
+   ![](existing-library-images/create-nuget-package.png "右键单击菜单中选择创建 NuGet 包")
 
 5. 若要创建 NuGet 包在_每个_生成或部署，请转到**NuGet 包 > 构建**部分和刻度线**生成项目时创建 NuGet 包**:
 

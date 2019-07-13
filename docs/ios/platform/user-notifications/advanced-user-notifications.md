@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 4472654064812142e3281374754ace0042b542bf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 255603eefb4d7cfd3b906e1744aa19da6a77259a
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61089152"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865291"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中的高级的用户通知
 
@@ -180,7 +180,7 @@ namespace MonkeyNotification
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 打开应用的解决方案在 Visual Studio for mac。
-2. 右键单击解决方案名称在**解决方案资源管理器**，然后选择**添加 > 新建项目...**.
+2. 右键单击解决方案名称在**解决方案资源管理器**，然后选择**添加 > 新建项目...** .
 3. 选择**可视化C#> iOS 扩展 > 通知内容扩展**:
 
     [![](advanced-user-notifications-images/notify01.w157-sml.png "选择通知内容扩展")](advanced-user-notifications-images/notify01.w157.png#lightbox)
@@ -258,15 +258,15 @@ namespace MonkeyChatNotifyExtension
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 双击该扩展`Info.plist`文件中**解决方案资源管理器**打开进行编辑。
-3. 展开`NSExtension`密钥。
-4. 添加`UNNotificationExtensionCategory`作为类型键**字符串**扩展所属的类别的值 (在此示例中活动邀请): 
+2. 展开`NSExtension`密钥。
+3. 添加`UNNotificationExtensionCategory`作为类型键**字符串**扩展所属的类别的值 (在此示例中活动邀请): 
 
     [![](advanced-user-notifications-images/customui02w.png "添加 UNNotificationExtensionCategory 密钥")](advanced-user-notifications-images/customui02w.png#lightbox)
-5. 保存更改。
+4. 保存更改。
 
 -----
 
-通知内容扩展类别 (`UNNotificationExtensionCategory`) 使用相同的类别值用来注册通知操作。 在其中应用将使用相同的 UI，多个类别的情况下，切换`UNNotificationExtensionCategory`为类型**数组**并提供所有所需的类别。 例如：
+通知内容扩展类别 (`UNNotificationExtensionCategory`) 使用相同的类别值用来注册通知操作。 在其中应用将使用相同的 UI，多个类别的情况下，切换`UNNotificationExtensionCategory`为类型**数组**并提供所有所需的类别。 例如:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -299,7 +299,7 @@ namespace MonkeyChatNotifyExtension
 > [!NOTE]
 > 截至 iOS 12，通知内容扩展可以包括交互式控件，如按钮和文本字段。 有关详细信息，请参阅[iOS 12 中的交互式通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md)文档。
 
-UI 布局并向公开所需的控件后C#代码中，打开`NotificationViewController.cs`以进行编辑和修改`DidReceiveNotification`方法在用户展开通知时填充 UI。 例如：
+UI 布局并向公开所需的控件后C#代码中，打开`NotificationViewController.cs`以进行编辑和修改`DidReceiveNotification`方法在用户展开通知时填充 UI。 例如:
 
 ```csharp
 using System;
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 根据应用程序和通知的设计，可能要求用户将文本输入 （例如回复输入一条消息） 通知的时间。 通知内容扩展具有内置的文本输入操作的访问权限，就像标准通知一样。
 
-例如：
+例如:
 
 ```csharp
 using System;

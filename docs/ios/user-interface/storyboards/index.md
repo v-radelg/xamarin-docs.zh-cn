@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831702"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865217"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>在 Xamarin.iOS 中的情节提要简介
 
@@ -327,7 +327,7 @@ public partial class MainViewController : UIViewController
         - 颜色：红色
         - 对齐方式：居中
         - 代码行：2
-        - 选中隐藏复选框 
+        - 选中隐藏复选框    
         
     [![](images/passwordvc.png "Center 行")](images/passwordvc.png#lightbox)
     
@@ -424,25 +424,25 @@ public partial class MainViewController : UIViewController
 
     [![](images/ref08.png "输入新的场景视图控制器情节提要 ID")](images/ref08.png#lightbox)
     
-3. 打开要在 iOS 设计器中添加对引用的情节提要。
+4. 打开要在 iOS 设计器中添加对引用的情节提要。
 
-4. 拖动**引用的情节提要**从**工具箱**拖到设计图面： 
+5. 拖动**引用的情节提要**从**工具箱**拖到设计图面： 
 
     [![](images/ref03.png "情节提要引用")](images/ref03.png#lightbox)
     
-5. 在中**小组件**选项卡**属性资源管理器**，选择的名称**情节提要**并**引用 ID** (情节提要 ID) 的上面创建的场景： 
+6. 在中**小组件**选项卡**属性资源管理器**，选择的名称**情节提要**并**引用 ID** (情节提要 ID) 的上面创建的场景： 
 
     [![](images/ref09.png "小组件选项卡 ")](images/ref09.png#lightbox)
     
-6. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的： 
+7. 单击在 UI 上的小组件 （如按钮） 现有场景并创建到新 Segue**情节提要引用**刚创建的： 
 
     [![](images/ref10.png "创建 segue")](images/ref10.png#lightbox) 
     
-7. 从弹出菜单中选择**显示**完成 Segue: 
+8. 从弹出菜单中选择**显示**完成 Segue: 
 
     [![](images/ref06.png "选择显示完成 Segue")](images/ref06.png#lightbox) 
     
-8. 将所做的更改保存到情节提要。
+9. 将所做的更改保存到情节提要。
 
 从场景创建 Segue 的 UI 元素时在应用正在运行且用户单击给定**情节提要 ID**将显示从情节提要引用中指定外部情节提要。
 
@@ -462,9 +462,9 @@ public partial class MainViewController : UIViewController
 
     [![](images/ref12.png "小组件选项卡")](images/ref12.png#lightbox)
     
-3. 拖动**引用的情节提要**从**工具箱**拖到设计图面： 
+4. 拖动**引用的情节提要**从**工具箱**拖到设计图面： 
 
-    [![](images/ref03.png "情节提要引用")](images/ref03.png#lightbox)
+   [![](images/ref03.png "情节提要引用")](images/ref03.png#lightbox)
     
 5. 在中**小组件**选项卡**属性资源管理器**，选择**引用 ID** (情节提要 ID) 的场景的上述步骤中创建的： 
 
