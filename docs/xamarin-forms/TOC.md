@@ -278,6 +278,7 @@
 
 ## [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms)
 ### [入门](~/essentials/get-started.md?context=xamarin/xamarin-forms)
+### [平台与功能支持](~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms)
 ### [加速计](~/essentials/accelerometer.md?context=xamarin/xamarin-forms)
 ### [应用信息](~/essentials/app-information.md?context=xamarin/xamarin-forms)
 ### [气压计](~/essentials/barometer.md?context=xamarin/xamarin-forms)
