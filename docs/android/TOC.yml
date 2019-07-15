@@ -380,6 +380,8 @@
       items:
         - name: 入门
           href: ~/essentials/get-started.md?context=xamarin/android
+        - name: 平台与功能支持
+          href: ~/essentials/platform-feature-support.md?context=xamarin/android
         - name: 加速计
           href: ~/essentials/accelerometer.md?context=xamarin/android
         - name: 应用信息

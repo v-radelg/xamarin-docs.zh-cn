@@ -5,7 +5,7 @@ metadata:
   description: 适用于移动和桌面平台的跨平台图形、2D 和 3D 游戏。
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/17/2018
+  ms.date: 07/10/2018
   ms.topic: landing-page
 abstract:
   description: 适用于移动和桌面平台的跨平台图形、2D 和 3D 游戏。
@@ -13,8 +13,6 @@ abstract:
     items:
       - href: 'https://developer.xamarin.com/samples/'
         text: 示例
-      - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
-        text: 发行说明
 sections:
   - title: null
     items:
@@ -34,19 +32,13 @@ sections:
               href: ~/graphics-games/urhosharp/index.md
             title: UrhoSharp
             html: 跨平台 3D 图形和游戏。
-          - href: ~/graphics-games/cocossharp/index.md
-            image:
-              src: ~/media/index/xamarin-graphics-cocos.svg
-              href: ~/graphics-games/cocossharp/index.md
-            title: CocosSharp
-            html: 为移动设备构建跨平台 2D 游戏。
           - href: ~/graphics-games/monogame/index.md
             image:
               src: ~/media/index/xamarin-graphics-monogame.svg
               href: ~/graphics-games/monogame/index.md
             title: MonoGame
             html: '使用 C# 构建桌面、移动和控制台游戏。'
-  - title: 平台
+  - title: 使用 .NET 开发 Xamarin 移动应用程序
     items:
       - type: list
         style: cards

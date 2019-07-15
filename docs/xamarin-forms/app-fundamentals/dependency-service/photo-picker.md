@@ -7,26 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 5c4d43723bc23d8a16be8fec0a895a31ab8bcfdc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 36601b02bb2984d9350166dedac0d650d9642f91
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233960"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650643"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
 
-本文介绍如何创建一种应用程序，使用户可通过该应用程序从手机的图片库中选取照片。 由于 Xamarin.Forms 不包含此功能，因此有必要使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 来访问每个平台上的本机 API。  本文将介绍在此任务中使用 `DependencyService` 的以下步骤：
-
-- **[创建接口](#Creating_the_Interface)** &ndash; 了解如何在共享代码中创建接口。
-- **[iOS 实现](#iOS_Implementation)** &ndash; 了解如何在 iOS 本机代码中实现接口。
-- **[Android 实现](#Android_Implementation)** &ndash; 了解如何在 Android 本机代码中实现接口。
-- **[通用 Windows 平台实现](#UWP_Implementation)** &ndash; 了解如何在通用 Windows 平台 (UWP) 的本机代码中实现接口。
-- **[在共享代码中实现](#Implementing_in_Shared_Code)** &ndash; 了解如何使用 `DependencyService` 从共享代码调用本机实现。
-
-<a name="Creating_the_Interface" />
+本文介绍如何创建一种应用程序，使用户可通过该应用程序从手机的图片库中选取照片。 由于 Xamarin.Forms 不包含此功能，因此有必要使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 来访问每个平台上的本机 API。
 
 ## <a name="creating-the-interface"></a>创建界面
 
@@ -46,11 +38,9 @@ namespace DependencyServiceSample
 
 该接口使用特定于平台的代码在所有平台上实现。
 
-<a name="iOS_Implementation" />
-
 ## <a name="ios-implementation"></a>iOS 实现
 
-`IPicturePicker` 接口的 iOS 实现使用 [`UIImagePickerController`](xref:UIKit.UIImagePickerController)，正如[“从库中选择照片”](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中描述那样。
+`IPicturePicker` 接口的 iOS 实现使用 [`UIImagePickerController`](xref:UIKit.UIImagePickerController)，正如[“从库中选择照片”](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中描述那样  。
 
 iOS 实现包含在示例代码的 iOS 项目中的 [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) 类中。 为了使该类对 `DependencyService` 管理器可见，此类必须被标识为 `Dependency` 类型的 [`assembly`] 属性，且该类必须是公共的，并显式地实现 `IPicturePicker` 接口：
 
@@ -153,12 +143,9 @@ iOS 应用程序需要用户的许可才能访问手机的照片库。 将以下
 <string>Picture Picker uses photo library</string>
 ```
 
-
-<a name="Android_Implementation" />
-
 ## <a name="android-implementation"></a>Android 实现
 
-Android 实现使用[选择图像](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中描述的技术。 但是，如果用户已选择图片库中的图像，则调用的方法是派生自 `Activity` 的类中的 `OnActivityResult` 替代。 因此，Android 项目中的常规 [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) 类补充了一个字段、一个属性和 `OnActivityResult` 方法的一个替代：
+Android 实现使用[选择图像](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中描述的技术  。 但是，如果用户已选择图片库中的图像，则调用的方法是派生自 `Activity` 的类中的 `OnActivityResult` 替代。 因此，Android 项目中的常规 [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) 类补充了一个字段、一个属性和 `OnActivityResult` 方法的一个替代：
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -228,8 +215,6 @@ namespace DependencyServiceSample.Droid
 
 该方法访问 `MainActivity` 类有几个目的：实现 `Instance` 属性、`PickImageId` 字段、`TaskCompletionSource` 属性，以及调用 `StartActivityForResult`。 该方法是由 `FormsAppCompatActivity` 类定义的，此类是 `MainActivity` 的基类。
 
-<a name="UWP_Implementation" />
-
 ## <a name="uwp-implementation"></a>UWP 实现
 
 与 iOS 和 Android 实现不同，用于通用 Windows 平台的照片选取器的实现不需要 `TaskCompletionSource` 类。 [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) 类使用 [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) 类访问照片库。 由于 `FileOpenPicker` 的 `PickSingleFileAsync` 方法本身是异步的，`GetImageStreamAsync` 方法可以简单地将 `await` 与该方法（以及其他异步方法）一起使用，并返回 `Stream` 对象：
@@ -269,8 +254,6 @@ namespace DependencyServiceSample.UWP
     }
 }
 ```
-
-<a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>在共享代码中实现
 
@@ -322,7 +305,6 @@ pickPictureButton.Clicked += async (sender, e) =>
 ```
 
 点击 `Image` 元素使页面恢复正常。
-
 
 ## <a name="related-links"></a>相关链接
 

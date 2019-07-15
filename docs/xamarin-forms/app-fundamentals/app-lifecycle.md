@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: b298ee24633e4098a6db8cf47d8e5355d72d7c34
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 41e8d073982bf7963b3a77a939bf28e52e86feaa
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970906"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675178"
 ---
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms 应用程序生命周期
 
@@ -33,7 +33,7 @@ ms.locfileid: "65970906"
 - `OnResume` - 应用程序发送到后台后恢复时调用。
 
 > [!NOTE]
-> 没有终止应用程序的方法。 在正常情况下（即不崩溃），应用程序终止将从 OnSleep 状态发生，并且没有对代码的其他任何通知。
+>  没有终止应用程序的方法。 在正常情况下（即不崩溃），应用程序终止将从 OnSleep 状态发生，并且没有对代码的其他任何通知  。
 
 若要观察何时调用这些方法，请在每个平台上实现 `WriteLine` 调用（如下所示）并进行测试。
 

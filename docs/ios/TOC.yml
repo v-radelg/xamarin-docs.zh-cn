@@ -491,6 +491,8 @@
           href: ~/essentials/index.md?context=xamarin/ios
         - name: 开始操作
           href: ~/essentials/get-started.md?context=xamarin/ios
+        - name: 平台与功能支持
+          href: ~/essentials/platform-feature-support.md?context=xamarin/ios
         - name: 加速计
           href: ~/essentials/accelerometer.md?context=xamarin/ios
         - name: 应用信息
@@ -912,6 +914,58 @@
               href: watchos/platform/quick-interaction-techniques.md
             - name: 测验应用增强功能
               href: watchos/platform/workout-apps.md
+        - name: 适用于 watchOS 的 Xamarin.Essentials
+          items:
+            - name: 关于 Xamarin.Essentials
+              href: ~/essentials/index.md?context=xamarin/watchos
+            - name: 开始操作
+              href: ~/essentials/get-started.md?context=xamarin/watchos
+            - name: 平台与功能支持
+              href: ~/essentials/platform-feature-support.md?context=xamarin/watchos
+            - name: 加速计
+              href: ~/essentials/accelerometer.md?context=xamarin/watchos
+            - name: 应用信息
+              href: ~/essentials/app-information.md?context=xamarin/watchos
+            - name: 气压计
+              href: ~/essentials/barometer.md?context=xamarin/watchos
+            - name: 电池
+              href: ~/essentials/battery.md?context=xamarin/watchos
+            - name: 颜色转换器
+              href: ~/essentials/color-converters.md?context=xamarin/watchos
+            - name: 连接性
+              href: ~/essentials/connectivity.md?context=xamarin/watchos
+            - name: 检测抖动
+              href: ~/essentials/detect-shake.md?context=xamarin/watchos
+            - name: 设备信息
+              href: ~/essentials/device-information.md?context=xamarin/watchos
+            - name: 文件系统帮助程序
+              href: ~/essentials/file-system-helpers.md?context=xamarin/watchos
+            - name: 地理编码
+              href: ~/essentials/geocoding.md?context=xamarin/watchos
+            - name: 陀螺仪
+              href: ~/essentials/gyroscope.md?context=xamarin/watchos
+            - name: 磁力计
+              href: ~/essentials/magnetometer.md?context=xamarin/watchos
+            - name: 主线程
+              href: ~/essentials/main-thread.md?context=xamarin/watchos
+            - name: 映射
+              href: ~/essentials/maps.md?context=xamarin/watchos
+            - name: 方向传感器
+              href: ~/essentials/orientation-sensor.md?context=xamarin/watchos
+            - name: 平台扩展（Size、Rect、Point）
+              href: ~/essentials/platform-extensions.md?context=xamarin/watchos
+            - name: 首选项
+              href: ~/essentials/preferences.md?context=xamarin/watchos
+            - name: 安全存储
+              href: ~/essentials/secure-storage.md?context=xamarin/watchos
+            - name: 文本到语音转换
+              href: ~/essentials/text-to-speech.md?context=xamarin/watchos
+            - name: 单位转换器
+              href: ~/essentials/unit-converters.md?context=xamarin/watchos
+            - name: 版本跟踪
+              href: ~/essentials/version-tracking.md?context=xamarin/watchos
+            - name: 疑难解答
+              href: ~/essentials/troubleshooting.md?context=xamarin/watchos
         - name: 部署和测试
           href: watchos/deploy-test/index.md
           items:
@@ -963,6 +1017,42 @@
               href: tvos/platform/remote-bluetooth.md
             - name: 用户界面样式
               href: tvos/platform/user-interface-styles.md
+        - name: 适用于 tvOS 的 Xamarin.Essentials
+          items:
+            - name: 关于 Xamarin.Essentials
+              href: ~/essentials/index.md?context=xamarin/tvos
+            - name: 开始操作
+              href: ~/essentials/get-started.md?context=xamarin/tvos
+            - name: 平台与功能支持
+              href: ~/essentials/platform-feature-support.md?context=xamarin/tvos
+            - name: 应用信息
+              href: ~/essentials/app-information.md?context=xamarin/tvos
+            - name: 颜色转换器
+              href: ~/essentials/color-converters.md?context=xamarin/tvos
+            - name: 连接性
+              href: ~/essentials/connectivity.md?context=xamarin/tvos
+            - name: 设备信息
+              href: ~/essentials/device-information.md?context=xamarin/tvos
+            - name: 文件系统帮助程序
+              href: ~/essentials/file-system-helpers.md?context=xamarin/tvos
+            - name: 地理编码
+              href: ~/essentials/geocoding.md?context=xamarin/tvos
+            - name: 主线程
+              href: ~/essentials/main-thread.md?context=xamarin/tvos
+            - name: 平台扩展（Size、Rect、Point）
+              href: ~/essentials/platform-extensions.md?context=xamarin/tvos
+            - name: 首选项
+              href: ~/essentials/preferences.md?context=xamarin/tvos
+            - name: 安全存储
+              href: ~/essentials/secure-storage.md?context=xamarin/tvos
+            - name: 文本到语音转换
+              href: ~/essentials/text-to-speech.md?context=xamarin/tvos
+            - name: 单位转换器
+              href: ~/essentials/unit-converters.md?context=xamarin/tvos
+            - name: 版本跟踪
+              href: ~/essentials/version-tracking.md?context=xamarin/tvos
+            - name: 疑难解答
+              href: ~/essentials/troubleshooting.md?context=xamarin/tvos
         - name: 用户界面
           href: tvos/user-interface/index.md
           items:

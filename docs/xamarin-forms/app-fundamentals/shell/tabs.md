@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: cd3bfd9186c87594fc42702e2d62b33e68973db6
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 365e580d7d1182cca55a53a714ebb2b9be45ce35
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252292"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650731"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
