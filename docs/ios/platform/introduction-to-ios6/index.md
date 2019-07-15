@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: be017103c5a3a2c890f49e4a510d20fcd0c03094
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: f0cfeaa049355c2b524ead748696eafd884a1c54
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675104"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865691"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 简介
 
@@ -34,17 +34,17 @@ IOS 6 和 Xamarin.iOS 6，开发人员就具有丰富的功能来创建该目标
 PassKit 框架允许应用程序与托管 Passbook 应用中的数字传递进行交互。 有关详细信息请参阅，则[传递工具包指南简介](~/ios/platform/passkit.md)。
 
 
-##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit 简介](~/ios/platform/eventkit.md)
+## <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit 简介](~/ios/platform/eventkit.md)
 
 EventKit 框架提供了一种日历、 日历事件和提醒日历数据库存储的数据访问方法。 访问对日历和日历事件以来提供 iOS 4，但 iOS 6 现在公开对提醒数据的访问。 有关详细信息，请参阅[我](~/ios/platform/eventkit.md) [ntroduction 到 EventKit](~/ios/platform/eventkit.md)指南。
 
 
-##  <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[社交框架简介](~/ios/platform/social-framework.md)
+## <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[社交框架简介](~/ios/platform/social-framework.md)
 
 社交框架将为与社交网络在中国用户包括 Twitter 和 Facebook，以及 SinaWeibo 交互提供一个统一的 API。 有关详细信息请参阅，则[社交 Framework 简介](~/ios/platform/social-framework.md)指南。
 
 
-##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[对 StoreKit 的更改](changes-to-storekit.md)
+## <a name="changes-to-storekitchanges-to-storekitmd"></a>[对 StoreKit 的更改](changes-to-storekit.md)
 
 Apple 引入了存储工具包中的两个新功能： 购买和下载 iTunes 或在应用中，从应用商店内容和托管应用内购买内容文件 ！。 有关详细信息请参阅，则[更改为应用商店套件](changes-to-storekit.md)指南。
 
