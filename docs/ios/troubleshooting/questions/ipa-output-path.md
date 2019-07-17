@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3c3a63de40a63f040870505b086d67fe160773
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8b0686a91f18b41aa8e2e7db071123c0d96723a0
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421190"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290107"
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>可以更改 IPA 文件的输出路径？
 
@@ -45,7 +45,7 @@ ms.locfileid: "61421190"
 2. 设置为所需的输出文件夹 DestinationFolder。 像往常一样，您可以使用 MSBuild 属性 （如 $(OutputPath)) 中根据需要此参数。
 
 ## <a name="notes"></a>说明
-- `CreateIpaDependsOn`属性中定义`Xamarin.iOS.Common.targets`文件，它是 Xamarin.iOS 的一部分。 它的行为所述*重写 DependsOn 属性*上[ https://msdn.microsoft.com/library/ms366724.aspx ](https://msdn.microsoft.com/library/ms366724.aspx)。
+- `CreateIpaDependsOn`属性中定义`Xamarin.iOS.Common.targets`文件，它是 Xamarin.iOS 的一部分。 它的行为如中所述[重写预定义的目标](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)本文的相关部分[如何：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
 
 - 可以使用**移动**任务而非**副本**如果首选的任务。 如果选择选项，并且构建在 Windows 上，您需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>`以避免含糊歧义 XamarinVS 生成任务。
 
@@ -79,6 +79,6 @@ ms.locfileid: "61421190"
 2. 设置`DestinationFolder`到所需的输出文件夹。 像往常一样，您可以使用 MSBuild 属性 (如`$(OutputPath)`) 内根据需要此参数。
 
 ## <a name="notes"></a>说明
-- `CreateIpaDependsOn`属性中定义`Xamarin.iOS.Common.targets`文件，它是 Xamarin.iOS 的一部分。 它的行为所述*重写"DependsOn"属性*上[ https://msdn.microsoft.com/library/ms366724.aspx ](https://msdn.microsoft.com/library/ms366724.aspx)。
+- `CreateIpaDependsOn`属性中定义`Xamarin.iOS.Common.targets`文件，它是 Xamarin.iOS 的一部分。 t 的行为如中所述[重写预定义的目标](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)本文的相关部分[如何：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
 
 - 可以使用**移动**任务而非**副本**如果首选的任务。 如果选择选项，并且构建在 Windows 上，您需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>`以避免含糊歧义 XamarinVS 生成任务。

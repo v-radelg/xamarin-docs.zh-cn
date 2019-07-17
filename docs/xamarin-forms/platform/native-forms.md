@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: f0ad4e3271ac8c1f8d30a0440b38d8a46c57783e
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 9c427dc48f6fe19098c312bad16d9630bb480264
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687106"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290164"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin 本机项目中的 Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Native2Forms/)
 
 通常情况下，Xamarin.Forms 应用程序包括一个或多个页派生自[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，，这些页面在所有平台共享.NET Standard 库项目或共享项目中。 但是，本机窗体允许`ContentPage`-派生页来直接添加到 Xamarin.iOS、 Xamarin.Android 和 UWP 的本机应用程序。 相比于使用的本机项目`ContentPage`-派生的页面从.NET Standard 库项目或共享项目中，直接向本机项目中添加页面的优点是，可以使用本机视图扩展页。 然后可以使用 XAML 中名为本机视图`x:Name`和代码隐藏中被引用。 有关本机视图的详细信息，请参阅[本机视图](~/xamarin-forms/platform/native-views/index.md)。
 
@@ -119,6 +119,9 @@ public void NavigateToNoteEntryPage(Note note)
 [![在 XAML 中定义的 Xamarin.iOS 应用程序使用一个用户界面的屏幕截图](native-forms-images/ios-noteentrypage.png "Xamarin.iOS 应用程序使用 XAML UI")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML 的 ui 的 Xamarin.iOS 应用程序")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`UIViewController`有关`NoteEntryPage`类派生`UINavigationController`，返回到用户`UIViewController`为`NotesPage`类。
+
+> [!WARNING]
+> Popping`UIViewController`从 iOS 本机导航堆栈并不会不会自动释放的`UIViewController`s。 它是以确保任何开发人员的责任`UIViewController`不再需要具有其`Dispose()`方法调用，否则`UIViewController`和附加`Page`将孤立和垃圾回收器将不会收集导致内存泄漏。
 
 ## <a name="android"></a>Android
 
