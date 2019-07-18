@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 2536e123cb4bdfd194c573802a91cba7a8c1208d
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178122"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832184"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
@@ -122,30 +122,30 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
 ### <a name="creating-an-app-id-with-an-app-service"></a>创建具有应用服务的应用 ID
 
-1.  在 Mac 上（如果使用 Windows 计算机，则为生成主机 Mac）浏览到 [Apple 开发人员中心](https://developer.apple.com/account)并登录。
-2.  选择“证书、标识符和配置文件”  ：
+1. 在 Mac 上（如果使用 Windows 计算机，则为生成主机 Mac）浏览到 [Apple 开发人员中心](https://developer.apple.com/account)并登录。
+2. 选择“证书、标识符和配置文件”  ：
 
     ![Apple 开发人员中心](images/image5.png)
 
-3.  在“标识符”  下，选择“应用 ID”  ：
+3. 在“标识符”  下，选择“应用 ID”  ：
 
     ![开发人员中心中的应用 ID 选择](images/image6.png)
 
-4.  按右上角的“+”  按钮来创建新的应用 ID。
-5.  输入应用 ID 描述，选择显式应用 ID，然后按 `com.domain.appname` 格式输入捆绑 ID。 此捆绑 ID 应与项目中的捆绑 ID 匹配：
+4. 按右上角的“+”  按钮来创建新的应用 ID。
+5. 输入应用 ID 描述，选择显式应用 ID，然后按 `com.domain.appname` 格式输入捆绑 ID。 此捆绑 ID 应与项目中的捆绑 ID 匹配：
 
     ![添加应用 ID 详细信息](images/image7.png)
 
-6.  在“应用服务”  下，选择应用中所需的服务：
+6. 在“应用服务”  下，选择应用中所需的服务：
 
     ![应用服务选择页面](images/image8.png)
 
-7.  按“继续”  。
-8.  输入应用 ID。 每个服务将处于以下状态之一：“已启用”、“已禁用”或“可配置”，如下所示    。 如果为“已启用”  ，则可在预配配置文件中使用。 如果为“可配置”  ，则此功能需要其他设置。 其他步骤见于后续部分中的详细说明。
+7. 按“继续”  。
+8. 输入应用 ID。 每个服务将处于以下状态之一：“已启用”、“已禁用”或“可配置”，如下所示    。 如果为“已启用”  ，则可在预配配置文件中使用。 如果为“可配置”  ，则此功能需要其他设置。 其他步骤见于后续部分中的详细说明。
 
     ![应用 ID 确认](images/image9.png)
 
-9.  单击“注册”  ，然后单击“完成”  。 新创建的应用 ID 应显示在 iOS 应用 ID 列表中。
+9. 单击“注册”  ，然后单击“完成”  。 新创建的应用 ID 应显示在 iOS 应用 ID 列表中。
 
 
 <a name="provisioningprofile" />
@@ -154,32 +154,32 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
 现在创建一个含有此应用 ID 的配置文件。 请执行以下步骤：
 
-1.  在 Apple 开发人员中心中，浏览到“预配配置文件”>“所有”  ：
+1. 在 Apple 开发人员中心中，浏览到“预配配置文件”>“所有”  ：
 
     ![预配配置文件部分](images/image10.png)
 
-2.  按右上角的“+”  按钮来创建一个新的预配配置文件。
-3.  选择所需的预配配置文件类型，然后单击“继续”  ：
+2. 按右上角的“+”  按钮来创建一个新的预配配置文件。
+3. 选择所需的预配配置文件类型，然后单击“继续”  ：
 
     ![预配配置文件选择](images/image11.png)
 
-4.  在下拉列表下，选择上述步骤中创建的应用 ID，然后按“继续”  ：
+4. 在下拉列表下，选择上述步骤中创建的应用 ID，然后按“继续”  ：
 
     ![应用 ID 选择](images/image12.png)
 
-5.  选择用于签名应用的证书，然后按“继续”  ：
+5. 选择用于签名应用的证书，然后按“继续”  ：
 
     ![证书选择](images/image13.png)
 
-6.  选择要包含在此配置文件中的设备，然后按“继续”  ：
+6. 选择要包含在此配置文件中的设备，然后按“继续”  ：
 
     ![选择预配配置文件的设备](images/image14.png)
 
-7.  命名此配置文件，以便于识别，然后按“继续”  生成配置文件：
+7. 命名此配置文件，以便于识别，然后按“继续”  生成配置文件：
 
     ![命名预配配置文件](images/image15.png)
 
-8.  按“下载”  按钮进行下载，然后在“查找器”中双击此文件以安装此预配配置文件。
+8. 按“下载”  按钮进行下载，然后在“查找器”中双击此文件以安装此预配配置文件。
 
 9. 如果使用 Visual Studio，请确保选中“手动预配”选项  。
 
@@ -205,12 +205,12 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
 下表详细列出了一些可能会阻碍使用已启用的应用服务开发应用的常见问题。
 
--   确保创建了正确的 ID 并在 Apple 开发人员门户的“证书、ID 和配置文件”部分注册了 ID。 
--   确保“服务”已添加到应用 ID（或扩展 ID），并且该服务已配置为使用 Apple 开发人员门户的“证书、ID 和配置文件”中所创建的上述应用组/商户 ID/容器。 
--   确保已安装配置文件和应用 ID，且应用的“Info.plist”（在 Xamarin 项目中）正在使用上述配置的某个应用 ID。 
--   确保应用的 **Entitlements.plist** 文件（在 Xamarin 项目中）启用了正确的服务。
--   确保 info.plist 中设置了正确的隐私密钥
--   在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。    对“调试”和“iOS 模拟器”生成来说，这不是默认设置  。
+- 确保创建了正确的 ID 并在 Apple 开发人员门户的“证书、ID 和配置文件”部分注册了 ID。 
+- 确保“服务”已添加到应用 ID（或扩展 ID），并且该服务已配置为使用 Apple 开发人员门户的“证书、ID 和配置文件”中所创建的上述应用组/商户 ID/容器。 
+- 确保已安装配置文件和应用 ID，且应用的“Info.plist”（在 Xamarin 项目中）正在使用上述配置的某个应用 ID。 
+- 确保应用的 **Entitlements.plist** 文件（在 Xamarin 项目中）启用了正确的服务。
+- 确保 info.plist 中设置了正确的隐私密钥
+- 在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。    对“调试”和“iOS 模拟器”生成来说，这不是默认设置  。
 
 <a name="summary" />
 

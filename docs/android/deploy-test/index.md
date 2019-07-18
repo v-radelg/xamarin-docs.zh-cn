@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 4c9ab8c14db131427329cef51e7b74e982a1c7b8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103681"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864215"
 ---
 # <a name="deployment-and-testing"></a>部署和测试
 
 本部分包含的指南介绍如何测试应用程序、优化应用程序的性能、做好发布准备、使用证书对应用程序进行签名以及将它发布到应用商店。
 
 
-##  <a name="application-package-sizesapp-package-sizemd"></a>[应用程序包大小](app-package-size.md)
+## <a name="application-package-sizesapp-package-sizemd"></a>[应用程序包大小](app-package-size.md)
 
 本文将讨论 Xamarin.Android 应用程序包的组成部分，以及可用于在开发的调试和发布阶段进行高效包部署的相关策略。
 
-##  <a name="building-appsbuilding-appsindexmd"></a>[构建应用](building-apps/index.md)
+## <a name="building-appsbuilding-appsindexmd"></a>[构建应用](building-apps/index.md)
 
 本部分介绍生成过程的工作原理，并说明如何生成特定于 ABI 的 APK。
 
-##  <a name="command-line-emulatorcommand-line-emulatormd"></a>[命令行仿真器](command-line-emulator.md)
+## <a name="command-line-emulatorcommand-line-emulatormd"></a>[命令行仿真器](command-line-emulator.md)
 
 本文简要介绍如何通过命令行启动仿真器。
 
@@ -35,23 +35,23 @@ ms.locfileid: "50103681"
 
 这部分中的指南帮助你使用 Android 仿真器、实际 Android 设备和调试日志调试应用。
 
-##  <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[设置可调式属性](~/android/deploy-test/debuggable-attribute.md)
+## <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[设置可调式属性](~/android/deploy-test/debuggable-attribute.md)
 
 本文介绍如何设置可调式属性，以便 `adb` 等工具能够与 JVM 进行通信。
 
-##  <a name="environmentenvironmentmd"></a>[环境](environment.md)
+## <a name="environmentenvironmentmd"></a>[环境](environment.md)
 
 本文介绍 Xamarin.Android 执行环境以及影响程序执行的 Android 系统属性。
 
-##  <a name="gdbgdbmd"></a>[GDB](gdb.md)
+## <a name="gdbgdbmd"></a>[GDB](gdb.md)
 
 本文介绍如何使用 `gdb` 调试 Xamarin.Android 应用程序。
 
-##  <a name="installing-a-system-appinstall-system-appmd"></a>[安装系统应用](install-system-app.md)
+## <a name="installing-a-system-appinstall-system-appmd"></a>[安装系统应用](install-system-app.md)
 
 本指南介绍如何将 Xamarin.Android 应用作为 Android 设备上的系统应用程序或作为自定义 ROM 的一部分安装。
 
-##  <a name="linking-on-androidlinkermd"></a>[在 Android 上链接](linker.md)
+## <a name="linking-on-androidlinkermd"></a>[在 Android 上链接](linker.md)
 
 本文讨论 Xamarin.Android 用于缩减应用程序最终大小的链接过程。 其中描述了可以执行的各种级别的链接，并就缓解使用链接器可能导致的错误提供了一些指导和故障排除建议。
 
@@ -70,7 +70,7 @@ ms.locfileid: "50103681"
 
 ## <a name="signing-the-android-application-packageandroiddeploy-testsigningindexmd"></a>[对 Android 应用程序包进行签名](~/android/deploy-test/signing/index.md)
 
-了解如何创建 Android 签名标识、为 Android 应用程序创建新签名证书以及使用签名证书对应用程序进行签名。 此外，本主题还介绍了如何将应用导出到磁盘以进行临时发布。 生成的 APK 可以旁加载到 Android 设备中，而无需经过应用商店。
+了解如何创建 Android 签名标识、为 Android 应用程序创建新签名证书以及使用签名证书对应用程序进行签名。 此外，本主题还介绍了如何将应用导出到磁盘以进行临时发布  。 生成的 APK 可以旁加载到 Android 设备中，而无需经过应用商店。
 
 ## <a name="publishing-an-applicationandroiddeploy-testpublishingindexmd"></a>[发布应用程序](~/android/deploy-test/publishing/index.md)
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 3dc68d0879d3ce4d5dd9b658a3bce7a00c348c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0ae5dd86341912354938a8509668c843d412367b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121238"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832582"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 中的钱包功能
 
 _向应用程序添加功能通常需要其他预配设置。本指南将介绍钱包功能所需的设置。_
 
-Wallet 是一款用于存储和显示条形码和其他内容的应用，允许用户直接从设备显示票证、登机牌和优惠券。 此信息存储在“凭证”中。 例如，登机牌或单个票证将是单一凭证。 
+Wallet 是一款用于存储和显示条形码和其他内容的应用，允许用户直接从设备显示票证、登机牌和优惠券。 此信息存储在“凭证”  中。 例如，登机牌或单个票证将是单一凭证。 
 
 开发人员可以多种方式使用 Wallet：
 
@@ -32,21 +32,21 @@ Wallet 是一款用于存储和显示条形码和其他内容的应用，允许�
 
 若要创建用于 Wallet 的新预配配置文件，请执行以下操作：
 
-1.  浏览到 Apple 开发人员门户的[“证书、标识符和配置文件”](https://developer.apple.com/account/ios/certificate/)部分。
-2.  在“标识符”下，浏览到“应用 ID”： 
+1. 浏览到 Apple 开发人员门户的[“证书、标识符和配置文件”](https://developer.apple.com/account/ios/certificate/)部分。
+2. 在“标识符”下，浏览到“应用 ID”   ： 
     
-    ![应用 ID 选择 ](wallet-capabilities-images/image17.png)
+    ![应用 ID 选择](wallet-capabilities-images/image17.png)
 
-3.  单击页面右上角的“+”图标。
-4.  通过向新应用 ID 提供“名称”和捆绑标识符来注册新的应用 ID。 （请注意，此捆绑标识符必须与项目中的捆绑 ID 匹配）：
+3. 单击页面右上角的“+”  图标。
+4. 通过向新应用 ID 提供“名称  ”和捆绑标识符来注册新的应用 ID。 （请注意，此捆绑标识符必须与项目中的捆绑 ID 匹配）：
    
     ![添加应用 ID 详细信息](wallet-capabilities-images/image18.png)
 
-5.  从服务列表中选择“Wallet”应用服务：
+5. 从服务列表中选择“Wallet”  应用服务：
     
     ![选择服务屏幕](wallet-capabilities-images/image19.png)
 
-6.  按“继续”，然后按“注册”来创建应用 ID。
+6. 按“继续”  ，然后按“注册”  来创建应用 ID。
 
 如有必要，可编辑现有应用 ID 以添加 Wallet 功能。
 
@@ -65,6 +65,6 @@ Wallet 是一款用于存储和显示条形码和其他内容的应用，允许�
 
 * 在应用中使用框架命名空间。
 * 将所需权利添加到应用。 有关所需权利以及添加方法的详细信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。 **** **** 对“调试”和“iOS 模拟器”生成来说，这不是默认设置。 __ 
+* 在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。 ****  ****  对“调试”和“iOS 模拟器”生成来说，这不是默认设置。 __  
 
 如果遇到与应用服务有关的问题，请参考主要指南的[故障排除](~/ios/deploy-test/provisioning/capabilities/index.md)部分。

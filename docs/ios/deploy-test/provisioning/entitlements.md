@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672594"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865841"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>在 Xamarin.iOS 中使用权利
 
@@ -35,43 +35,43 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ## <a name="set-entitlements-in-a-xamarinios-project"></a>在 Xamarin.iOS 项目中设置权利
 
-定义应用 ID 时，除了选择和配置所需的应用程序服务，还必须通过编辑“Info.plist”和“Entitlements.plist”文件在 Xamarin.iOS 项目中配置权利。
+定义应用 ID 时，除了选择和配置所需的应用程序服务，还必须通过编辑“Info.plist”  和“Entitlements.plist”  文件在 Xamarin.iOS 项目中配置权利。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 中配置权利，请执行以下操作：
 
-1. 在“解决方案资源管理器”中，双击“Info.plist”文件，将其打开进行编辑。
-2. 在“iOS 应用程序目标”部分，填写应用程序的名称并输入定义应用 ID 时创建的“捆绑标识符”：
+1. 在“解决方案资源管理器”  中，双击“Info.plist”  文件，将其打开进行编辑。
+2. 在“iOS 应用程序目标”  部分，填写应用程序的名称并输入定义应用 ID 时创建的“捆绑标识符”  ：
 
-  ![](entitlements-images/servicexs01.png "输入捆绑标识符")
+    ![](entitlements-images/servicexs01.png "输入捆绑标识符")
 
-3. 保存对“Info.plist”文件的更改。
-4. 在“解决方案资源管理器”中，双击“Entitlements.plist”文件，将其打开进行编辑：
+3. 保存对“Info.plist”  文件的更改。
+4. 在“解决方案资源管理器”  中，双击“Entitlements.plist”  文件，将其打开进行编辑：
 
     ![](entitlements-images/servicexs02.png "编辑权利")
 
 5. 选择并配置 Xamarin.iOS 应用程序所需的任何权利，使其匹配创建应用 ID 时定义的设置。
-6. 保存对“Entitlements.plist”文件的更改。
+6. 保存对“Entitlements.plist”  文件的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中配置权利，请执行以下操作：
 
-1. 在“解决方案资源管理器”中，右键单击“Info.plist”，选择“打开方式…” 和“属性列表编辑器”文件将其打开以进行编辑。
-2. 在“iOS 应用程序目标”部分，填写应用程序的名称并输入定义应用 ID 时创建的“捆绑标识符”：
+1. 在“解决方案资源管理器”  中，右键单击“Info.plist”  ，选择“打开方式…”  和“属性列表编辑器”  文件将其打开以进行编辑。
+2. 在“iOS 应用程序目标”  部分，填写应用程序的名称并输入定义应用 ID 时创建的“捆绑标识符”  ：
 
-  ![](entitlements-images/servicevs01.png "设置捆绑标识符")
+    ![](entitlements-images/servicevs01.png "设置捆绑标识符")
 
-3. 保存对“Info.plist”文件的更改。
-4. 在**解决方案资源管理器**中，右键单击“Entitlements.plist”文件，选择“打开方式…” 和“属性列表编辑器”将其打开以进行编辑：
+3. 保存对“Info.plist”  文件的更改。
+4. 在**解决方案资源管理器**中，右键单击“Entitlements.plist”  文件，选择“打开方式…”  和“属性列表编辑器”  将其打开以进行编辑：
 
     ![](entitlements-images/servicevs02.png "编辑权利")
 
-    或者，双击“Entitlements.plist”文件，打开 XML 源编辑器，从而可以设置权利属性和键值，详细信息如下方的[权利键引用](#entitlement-key-reference)部分所述。
+    或者，双击“Entitlements.plist”  文件，打开 XML 源编辑器，从而可以设置权利属性和键值，详细信息如下方的[权利键引用](#entitlement-key-reference)部分所述。
 
 5. 选择并配置 Xamarin.iOS 应用程序所需的任何权利，使其匹配创建应用 ID 时定义的设置。
-6. 保存对“Entitlements.plist”文件的更改。
+6. 保存对“Entitlements.plist”  文件的更改。
 
 -----
 
@@ -81,10 +81,10 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 若要将 Entitlements.plist 文件添加到 Xamarin.iOS，请执行以下操作：
 
-1.  右键单击项目文件，再依次转到“添加”>“新文件…”：
+1. 右键单击项目文件，再依次转到“添加”>“新文件…”  ：
 
     ![“添加文件”上下文菜单](entitlements-images/image1.png)
-2.  在“新文件”对话框中，依次选择“iOS”>“属性列表”，再将它命名为“Entitlements”：
+2. 在“新文件”对话框中，依次选择  “iOS”>“属性列表”，再将它命名为“Entitlements”：
 
     ![“新文件”对话框](entitlements-images/image2.png)
 
@@ -94,7 +94,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="wallet"></a>Wallet
 
-*   说明：以前称为 Passbook，是一款用于存储和管理凭证的应用。 这些凭证可以是信用卡、购物卡、登机牌或票证。
+*   说明  ：以前称为 Passbook，是一款用于存储和管理凭证的应用。 这些凭证可以是信用卡、购物卡、登机牌或票证。
 
     - **类型标识符**
         * **键**：com.apple.developer.pass-type-identifiers
@@ -119,7 +119,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
         - **字符串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 * **注意**：
-    - 通过登录到 developer.apple.com 可找到 `$(TeamIdentifierPrefix)` 字符串，访问“会员中心”>“帐户”>“开发人员帐户摘要”可获取团队 ID（若是单个开发人员则为个人 ID）。 该字符串是一个含有 10 个字符的字符串（例如 A93A5CM278）。
+    - 通过登录到 developer.apple.com 可找到 `$(TeamIdentifierPrefix)` 字符串，访问“会员中心”>“帐户”>“开发人员帐户摘要”  可获取团队 ID（若是单个开发人员则为个人 ID）。 该字符串是一个含有 10 个字符的字符串（例如 A93A5CM278）。
     - `$(CFBundleIdentifier)` 字符串以 `iCloud` 开头，在根据[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步骤创建 iCloud 容器时，设置了该字符串。
     - 为在生成时获得正确的值，可使用和替换 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 占位符。
 
@@ -128,7 +128,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="app-groups"></a>应用组
 
-- 说明：应用组允许不同的应用程序（或一个应用程序及其扩展）访问共享文件存储位置。
+- 说明  ：应用组允许不同的应用程序（或一个应用程序及其扩展）访问共享文件存储位置。
 
     - **键**：com.apple.security.application-groups
     - **字符串**：group.$(CFBundleIdentifier)
@@ -137,7 +137,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="apple-pay"></a>Apple Pay
 
-- 说明：通过 Apple Pay，用户可以使用 iOS 设备支付实体商品。
+- 说明  ：通过 Apple Pay，用户可以使用 iOS 设备支付实体商品。
     - **键**：com.apple.developer.in-app-payments
     - **字符串**：merchant.your.mechantid
 
@@ -148,7 +148,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="siri"></a>Siri
 
-- 说明：通过 SiriKit，iOS 应用可使用应用扩展、新的 Intents 和 Intents UI 框架来提供可访问 iOS 设备上的 Siri 和 Maps 应用的服务。 有关详细信息，请参阅 SiriKit 指南简介。
+- 说明  ：通过 SiriKit，iOS 应用可使用应用扩展、新的 Intents 和 Intents UI 框架来提供可访问 iOS 设备上的 Siri 和 Maps 应用的服务。 有关详细信息，请参阅 SiriKit 指南简介。
     - **键**：com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>个人 VPN
@@ -158,49 +158,49 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="keychain-sharing"></a>Keychain 共享
 
-- 说明：通过 Keychain 共享，应用开发人员可将存储在设备密钥链中的密码与同一团队开发的其他应用共享。 通过在字符串中传递密钥链访问组标识符可限制访问权限。
+- 说明  ：通过 Keychain 共享，应用开发人员可将存储在设备密钥链中的密码与同一团队开发的其他应用共享。 通过在字符串中传递密钥链访问组标识符可限制访问权限。
     - **键**：keychain-access-groups
     - **字符串**：$(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>应用间音频
 
-- 说明：通过应用间音频，开发人员可对应用间的音频进行流式处理。
+- 说明  ：通过应用间音频，开发人员可对应用间的音频进行流式处理。
     - **键**：inter-app-audio
-    - 布尔：是
+    - 布尔  ：是
 
 ### <a name="associated-domains"></a>关联的域
 
-- 说明：应使用此权利传递应作为通用链接处理的关联域。 可实现通用链接以允许在应用和网站间进行深层链接。 应对应用支持的每个域提供一个条目，每个条目应以 `applinks:` 开头
+- 说明  ：应使用此权利传递应作为通用链接处理的关联域。 可实现通用链接以允许在应用和网站间进行深层链接。 应对应用支持的每个域提供一个条目，每个条目应以 `applinks:` 开头
     - **键**：com.apple.developer.associated-domains
     - **字符串**：webcredentials:example.com
 
 ### <a name="data-protection"></a>数据保护
 
-- 说明：启用数据保护将使用内置加密硬件，以加密格式存储应用中所使用的敏感数据。 默认情况下，保护级别设置为完全保护（文件仅在设备未锁定时可访问）。
+- 说明  ：启用数据保护将使用内置加密硬件，以加密格式存储应用中所使用的敏感数据。 默认情况下，保护级别设置为完全保护（文件仅在设备未锁定时可访问）。
     - **键**：com.apple.developer.default-data-protection
-    - 字符串：NSFileProtectionComplete
+    - 字符串  ：NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
-- 说明：HomeKit 框架提供了一个平台，用于从一台 iOS 设备上设置、配置和管理所有支持的家庭自动化设备。 有关使用 HomeKit 的详细信息，请参阅 HomeKit 指南简介。
+- 说明  ：HomeKit 框架提供了一个平台，用于从一台 iOS 设备上设置、配置和管理所有支持的家庭自动化设备。 有关使用 HomeKit 的详细信息，请参阅 HomeKit 指南简介。
     - **键**：com.apple.developer.homekit
-    - 布尔：是
+    - 布尔  ：是
 
 ### <a name="healthkit"></a>HealthKit
 
-- 说明：HealthKit 是 iOS 8 中引入的一个框架，可为相关健康信息提供集中、协调和安全的数据存储。 有关使用 HealthKit 的详细信息，请参阅 HealthKit 指南简介。
+- 说明  ：HealthKit 是 iOS 8 中引入的一个框架，可为相关健康信息提供集中、协调和安全的数据存储。 有关使用 HealthKit 的详细信息，请参阅 HealthKit 指南简介。
     - **键**：com.apple.developer.healthkit
-    - 布尔：是
+    - 布尔  ：是
 
 ### <a name="wireless-accessory-configuration"></a>无线附件配置
 
-- 说明：使用无线附件配置可允许应用配置 MFi Wi-Fi 附件
+- 说明  ：使用无线附件配置可允许应用配置 MFi Wi-Fi 附件
     - **键**：com.apple.external-accessory.wireless-configuration
-    - 布尔：是
+    - 布尔  ：是
 
 ### <a name="classkit"></a>ClassKit
 
-- 说明：通过 ClassKit，教师可在应用中查看学生在布置的活动中的进度。
+- 说明  ：通过 ClassKit，教师可在应用中查看学生在布置的活动中的进度。
     - **密钥**：com.apple.developer.ClassKit-environment
     - **字符串**：`development` 或 `production`
 

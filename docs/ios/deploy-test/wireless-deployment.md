@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854829"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865502"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>适用于 Xamarin.iOS 和 tvOS 应用的无线部署
 
@@ -57,21 +57,21 @@ Visual Studio for Mac 和 Visual Studio 提供无线部署功能。
 
 ### <a name="pairing-an-ios-device-with-xcode"></a>将 iOS 设备与 Xcode 配对
 
-1. 打开 Xcode 并转到“窗口 > 设备和模拟器”。
-2. 使用闪电电缆将 iOS 设备插入 Mac 中。 你可能需要在设备上选择“信任此计算机”。
-3. 选择设备，再选中“通过网络连接”复选框来配对设备：![显示“通过网络连接”选项的“设备和模拟器”窗口](wireless-deployment-images/image2.png)
+1. 打开 Xcode 并转到“窗口 > 设备和模拟器”  。
+2. 使用闪电电缆将 iOS 设备插入 Mac 中。 你可能需要在设备上选择“信任此计算机”  。
+3. 选择设备，再选中“通过网络连接”  复选框来配对设备：![显示“通过网络连接”选项的“设备和模拟器”窗口](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>将 Apple TV 与 Xcode 配对
 
 1. 确保 Mac 和 Apple TV 连接到同一网络。
 
-2. 打开 Xcode 并转到“窗口 > 设备和模拟器”。
+2. 打开 Xcode 并转到“窗口 > 设备和模拟器”  。
 
-3. 在 Apple TV 中，转到“设置 > 远程和设备 > 远程应用和设备”。
+3. 在 Apple TV 中，转到“设置 > 远程和设备 > 远程应用和设备”  。
 
-4. 在 Xcode 的“已发现”区域选择 Apple TV，然后输入 Apple TV 上显示的验证码。
+4. 在 Xcode 的“已发现”  区域选择 Apple TV，然后输入 Apple TV 上显示的验证码。
 
-5. 单击“连接”按钮。 成功配对后，Apple TV 旁会出现一个网络连接图标。
+5. 单击“连接”  按钮。 成功配对后，Apple TV 旁会出现一个网络连接图标。
 
 ## <a name="deploy-to-a-device"></a>部署到设备
 
@@ -85,7 +85,7 @@ Visual Studio for Mac 和 Visual Studio 提供无线部署功能。
 
 2. 从目标设备列表中选择设备并运行应用程序。
 
-2. 如果设备被锁定，系统将提示你解锁设备。 设备解锁后，应用会部署到设备。
+3. 如果设备被锁定，系统将提示你解锁设备。 设备解锁后，应用会部署到设备。
 
 无线调试在无线部署后会自动启用，因此，你可以像以往一样使用以前设置的断点并继续调试工作流。
 
@@ -93,7 +93,7 @@ Visual Studio for Mac 和 Visual Studio 提供无线部署功能。
 
 1. 始终确保 iOS 设备或 Apple TV 连接到与 Mac 相同的网络。
 
-2. 如果设备未显示在 Visual Studio 中，请检查 Xcode 的“设备和模拟器”窗口。 
+2. 如果设备未显示在 Visual Studio 中，请检查 Xcode 的“设备和模拟器”  窗口。 
 
     * 如果 Xcode **未**将设备显示为已连接，请尝试再次[配对](#pair)设备。
 

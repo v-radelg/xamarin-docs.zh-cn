@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971267"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830350"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的键盘辅助功能
 
@@ -66,10 +66,10 @@ ms.locfileid: "65971267"
 
 使用默认 Tab 键顺序或设置 `TabIndex` 属性时，以下规则适用：
 
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement) 实例（`TabIndex` 等于 0）将根据 XAML 或子集合中的声明顺序添加到 Tab 键顺序中。
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement) 实例（`TabIndex` 大于 0）将根据其 `TabIndex` 值添加到 Tab 键顺序中。
- - [`VisualElement`](xref:Xamarin.Forms.VisualElement) 实例（`TabIndex` 小于 0）将添加到 Tab 键顺序中，并显示在任何零值之前。
- - `TabIndex` 中的冲突可通过声明顺序解决。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement) 实例（`TabIndex` 等于 0）将根据 XAML 或子集合中的声明顺序添加到 Tab 键顺序中。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement) 实例（`TabIndex` 大于 0）将根据其 `TabIndex` 值添加到 Tab 键顺序中。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement) 实例（`TabIndex` 小于 0）将添加到 Tab 键顺序中，并显示在任何零值之前。
+- `TabIndex` 中的冲突可通过声明顺序解决。
 
 定义 Tab 键顺序后，按 Tab 键焦点将按升序 `TabIndex` 顺序循环通过控件，并在到达最后一个控件后绕到开头。
 

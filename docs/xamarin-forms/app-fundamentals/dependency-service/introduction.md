@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 4fc3f0d98d1ead29b450763b7c260af7c40af7b5
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: dfff2c22c17fddb4bbd1feb79e08949e62d8f9bc
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650484"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832211"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 介绍
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DependencyServiceDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 类是允许 Xamarin.Forms 应用程序从共享代码调用本机平台功能的服务定位器。
 
@@ -156,5 +156,5 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 
 ## <a name="related-links"></a>相关链接
 
-- [DependencyService 演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/DependencyServiceDemos)
+- [DependencyService 演示（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
 - [Xamarin.Forms DependencyService 注册和解析](registration-and-resolution.md)

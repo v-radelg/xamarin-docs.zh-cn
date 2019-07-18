@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 73f652be32c72ef51170f44c28ce1590e6a0e92b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dd42de4dda4b5d5b09156898fd7a8bab331adf88
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106840"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865910"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac 链接器选项
 
-链接是一个功能强大的优化工具，可通过删除未使用的代码来缩减应用程序的大小。
+ 链接是一个功能强大的优化工具，可通过删除未使用的代码来缩减应用程序的大小。
 
 ## <a name="overview"></a>概述
 
@@ -24,10 +24,10 @@ ms.locfileid: "50106840"
 
 有四个选项可用：
 
-- 无 – 禁用所有链接。 现代版中的调试配置以及完整版中的全部配置中的默认值。
-- SDK – 链接所有 SDK 程序集，不包括用户程序集。 现代版中发布配置中的默认值。 在完整版中不可用。
-- 完整 – 链接所有程序集。 这要求用户代码具有链接器安全性，请参阅[说明](~/ios/deploy-test/linker.md)了解详细信息。 在完整版中不可用。
-- 平台 – 仅链接 Xamarin.Mac.dll。 有关详细信息，请参见以下内容。
+-  无 – 禁用所有链接。 现代版中的调试配置以及完整版中的全部配置中的默认值。
+-  SDK – 链接所有 SDK 程序集，不包括用户程序集。 现代版中发布配置中的默认值。 在完整版中不可用。
+-  完整 – 链接所有程序集。 这要求用户代码具有链接器安全性，请参阅[说明](~/ios/deploy-test/linker.md)了解详细信息。 在完整版中不可用。
+-  平台 – 仅链接 Xamarin.Mac.dll。 有关详细信息，请参见以下内容。
 
 ## <a name="platform-linking"></a>平台链接
 
@@ -46,13 +46,13 @@ ms.locfileid: "50106840"
 若要更改为 Xamarin.Mac 项目的链接器配置，请执行以下操作：
 
 1. 在 Visual Studio for Mac 中打开 Xamarin.Mac 项目。
-2. 在“解决方案资源管理器”中，双击项目文件打开“项目选项”对话框。
-3. 从“Mac 生成”选项卡中，选择适合应用程序需求的“链接器行为”：
+2. 在“解决方案资源管理器”   中，双击项目文件打开“项目选项”对话框。
+3. 从“Mac 生成”  选项卡中，选择适合应用程序需求的“链接器行为”  ：
 
-  ![选择要使用的链接器行为](linker-images/link-behavior.png "选择要使用的链接器行为")
+    ![选择要使用的链接器行为](linker-images/link-behavior.png "选择要使用的链接器行为")
 
-4. 在未来更新之后，完整目标框架的平台链接才会出现在 IDE 中。 在此之前，请将 `--linkplatform` 添加到“其他 mmp 参数”。
-5. 单击“确定”按钮保存更改。
+4. 在未来更新之后，完整目标框架的平台链接才会出现在 IDE 中。 在此之前，请将 `--linkplatform` 添加到“其他 mmp 参数”  。
+5. 单击“确定”  按钮保存更改。
 
 
 ## <a name="related-links"></a>相关链接

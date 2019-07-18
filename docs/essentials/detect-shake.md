@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 8aa1062c7948a57a21d59a785d6359056351245d
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354061"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832596"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:检测抖动
 
@@ -29,7 +29,7 @@ ms.locfileid: "66354061"
 using Xamarin.Essentials;
 ```
 
-若要检测设备的抖动，必须通过调用 `Start` 和 `Stop` 方法来使用 Accelerometer 功能，以侦听加速度的变化并检测抖动。 每次检测到抖动时，都会触发 `ShakeDetected ` 事件。 建议对 `SensorSpeed` 使用 `Game` 或更快的速度。 示例用法如下：
+若要检测设备的抖动，必须通过调用 `Start` 和 `Stop` 方法来使用 Accelerometer 功能，以侦听加速度的变化并检测抖动。 每次检测到抖动时，都会触发 `ShakeDetected` 事件。 建议对 `SensorSpeed` 使用 `Game` 或更快的速度。 示例用法如下：
 
 ```csharp
 

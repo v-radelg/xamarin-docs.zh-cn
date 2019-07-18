@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194945"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865823"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 应用分发概述
 
@@ -27,10 +27,10 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 Apple 提供以下方式分发 iOS 应用程序，它们均受 Xamarin.iOS 支持：
 
 1. [**App Store**](#App_Store_Distribution)
-2. [**In-House（企业）**](#In-House_Distribution)
-2. [**Ad Hoc**](#Ad_Hoc_Distribution)
+2. [**In-House（企业）** ](#In-House_Distribution)
+3. [**Ad Hoc**](#Ad_Hoc_Distribution)
 
-所有这些情况都要求使用相应的配置文件预配应用程序。 配置文件是一种文件，其中包含了代码签名信息，以及应用程序标识和预期分发机制。 对于非 App Store 分发，该文件还包含可部署应用的设备的相关信息。
+所有这些情况都要求使用相应的配置文件  预配应用程序。 配置文件是一种文件，其中包含了代码签名信息，以及应用程序标识和预期分发机制。 对于非 App Store 分发，该文件还包含可部署应用的设备的相关信息。
 
 <a name="App_Store_Distribution"/>
 
@@ -42,7 +42,7 @@ Apple 提供以下方式分发 iOS 应用程序，它们均受 Xamarin.iOS 支�
 
 这是将 iOS 应用程序分发给 iOS 设备上的使用者的主要方式。 提交到 App Store 的所有应用都需要 Apple 审批。
 
-应用通过名为 iTunes Connect 的门户提交到 App Store。 [在 iTunes Connect 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南提供有关如何设置并使用此门户准备 Xamarin.iOS 应用，以在 App Store 中发布的详细信息。
+应用通过名为 iTunes Connect  的门户提交到 App Store。 [在 iTunes Connect 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南提供有关如何设置并使用此门户准备 Xamarin.iOS 应用，以在 App Store 中发布的详细信息。
 
 务必注意，只有属于 **Apple 开发人员计划**的开发人员有权访问 iTunes Connect。 **Apple 开发人员企业计划**成员没有访问权限。
 
@@ -52,7 +52,7 @@ Apple 提供以下方式分发 iOS 应用程序，它们均受 Xamarin.iOS 支�
 
 ## <a name="in-house-distribution"></a>In-House 分发
 
-In-House 分发（有时称为企业分发）允许 **Apple 开发人员企业计划**成员在内部向同一组织内的其他成员分发应用。 In-House 分发的优势在于无需 App Store 审核，且没有可安装应用程序的设备数量限制。 但是，值得注意的是，**Apple 开发人员企业计划**成员**没有**权限访问 iTunes Connect，因此许可证持有人负责分发应用。
+In-House 分发（有时称为企业分发  ）允许 **Apple 开发人员企业计划**成员在内部向同一组织内的其他成员分发应用。 In-House 分发的优势在于无需 App Store 审核，且没有可安装应用程序的设备数量限制。 但是，值得注意的是，**Apple 开发人员企业计划**成员**没有**权限访问 iTunes Connect，因此许可证持有人负责分发应用。
 
 有关设置以及如何 In-House 分发应用程序的详细信息，请参阅[In-House 分发指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。
 
