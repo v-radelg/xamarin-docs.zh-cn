@@ -9,11 +9,11 @@
         - name: 要求
           displayName: System requirements
           href: get-started/requirements.md
-        - name: 移动开发简介
+        - name: 什么是 Xamarin？
           href: get-started/introduction-to-mobile-development.md
-        - name: 移动 SDLC 简介
+        - name: 移动软件开发生命周期
           href: get-started/introduction-to-mobile-sdlc.md
-        - name: 生成跨平台应用程序
+        - name: 构建跨平台应用的演练
           href: app-fundamentals/building-cross-platform-applications/index.md
           items:
             - name: 概述
@@ -75,10 +75,10 @@
               href: platform/fsharp/overview.md
             - name: 'F# 示例'
               href: platform/fsharp/samples.md
-        - name: Visual Basic.NET
+        - name: Visual Basic
           href: platform/visual-basic/index.md
           items:
-            - name: Xamarin iOS 和 Android
+            - name: Xamarin Android 和 iOS
               href: platform/visual-basic/native-apps.md
             - name: Xamarin.Forms
               href: platform/visual-basic/xamarin-forms.md
