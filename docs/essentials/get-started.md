@@ -5,35 +5,28 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 11/04/2018
-ms.openlocfilehash: 7aa918a1aa70910cd05b17916e060e65ca5404bd
-ms.sourcegitcommit: 17376f0e54467d826b8928a11965fd0c879704f2
+ms.date: 07/10/2019
+ms.openlocfilehash: fd4c51714cea370f1d62457931a5820d5f1a5b97
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131982"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850939"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门
 
-Xamarin.Essentials 提供了适用于任何 iOS、Android 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
-
-## <a name="platform-support"></a>平台支持
-
-Xamarin.Essentials 支持以下平台和操作系统：
-
-| Platform | Version |
-| --- | --- |
-| Android | 4.4 (API 19) 或更高版本 |
-| iOS |10.0 或更高版本 |
-| UWP | 10.0.16299.0 或更高版本 |
+Xamarin.Essentials 提供了适用于任何 iOS、Android 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。 有关支持的操作系统的详细信息，请参阅[平台和功能支持指南](platform-feature-support.md)。
 
 ## <a name="installation"></a>安装
 
 Xamarin.Essentials 可用作 NuGet 包，可以通过使用 Visual Studio 将其添加到任何现有或新的项目。
 
-1. 使用 [Visual Studio tools for Xamarin](~/get-started/installation/index.md) 下载并安装 [Visual Studio](http://visualstudio.com)。
+1. 使用 [Visual Studio tools for Xamarin](~/get-started/installation/index.md) 下载并安装 [Visual Studio](https://visualstudio.microsoft.com/)。
 
-2. 使用  Visual Studio C#（Android、iPhone 和 iPad 或跨平台）下的空白应用模板打开现有项目，或创建新项目。 **重要说明**：若要添加到 UWP 项目，请务必在项目属性中设置内部版本 16299 或更高版本。
+2. 使用  Visual Studio C#（Android、iPhone 和 iPad 或跨平台）下的空白应用模板打开现有项目，或创建新项目。
+
+    > [!IMPORTANT]
+    > 若要添加到 UWP 项目，请务必在项目属性中设置内部版本 16299 或更高版本。
 
 3. 将 [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet 包添加到每个项目：
 

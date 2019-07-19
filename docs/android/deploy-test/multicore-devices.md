@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: bb1b615bc922b19c50435218dfee51f9e19d1259
-ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.openlocfilehash: 49370813f50e3b5f1a9193c542b9f5f13d65a8e1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394715"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829955"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核设备和 Xamarin.Android
 
@@ -53,13 +53,15 @@ Android 支持的每个 ABI 均由唯一名称标识。
 
 这是基于 ARM 的至少支持 ARMv5TE 指令集的 CPU 的 EABI 名称。 Android 遵循小字节序 ARM GNU/Linux ABI。 此 ABI 不支持硬件辅助的浮点计算。 所有 FP 操作都由来自编译器的 `libgcc.a` 静态库的软件帮助程序函数执行。 `armeabi` 不支持 SMP 设备。
 
-**说明**：Xamarin.Android 的 `armeabi` 代码不具线程安全性，不应在多 CPU `armeabi-v7a` 设备上使用（如下所述）。 在单核 `armeabi-v7a` 设备上使用 `armeabi` 代码是安全的。
+> [!IMPORTANT]
+> Xamarin.Android 的 `armeabi` 代码不具线程安全性，不应在多 CPU `armeabi-v7a` 设备上使用（如下所述）。 在单核 `armeabi-v7a` 设备上使用 `armeabi` 代码是安全的。
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
 这是另一种基于 ARM 的 CPU 指令集，可扩展上述 `armeabi` EABI。 `armeabi-v7a` EABI 支持硬件浮点操作和多个 CPU (SMP) 设备。 使用 `armeabi-v7a` EABI 的应用程序与使用 `armeabi` 的应用程序相比，可以获得极大的性能改进。
 
-**注意：** `armeabi-v7a` 计算机代码将不会在 ARMv5 设备上运行。
+> [!NOTE]
+> `armeabi-v7a` 计算机代码将不会在 ARMv5 设备上运行。
 
 #### <a name="arm64-v8a"></a>arm64-v8a
 
@@ -74,7 +76,8 @@ Xamarin.Android 5.1 引入了对此体系结构的支持（有关详细信息，
 - 补充 SSE3 扩展 (SSSE3)。
 - SSE4 的任何变体。
 
-**注意：** 虽然 Google TV 在 x86 上运行，但不受 Android 的 NDK 支持。
+> [!NOTE]
+> 虽然 Google TV 在 x86 上运行，但不受 Android 的 NDK 支持。
 
 #### <a name="x8664"></a>x86_64
 
@@ -121,7 +124,7 @@ Android 的本机库安装行为在 Android 版本之间会发生显著变化。
 
 #### <a name="installing-native-libraries-pre-android-40"></a>安装本机库：Android 4.0 之前
 
-4.0 Ice Cream Sandwich 之前的 Android 将仅从 `.apk` 内的单个 ABI  中提取本机库。 此年份的 Android 应用将首先尝试为主 ABI 提取所有本机库，如果不存在此类库，则 Android 将为辅助 ABI 提取所有本机库。 没有执行任何“合并”。
+4\.0 Ice Cream Sandwich 之前的 Android 将仅从 `.apk` 内的单个 ABI  中提取本机库。 此年份的 Android 应用将首先尝试为主 ABI 提取所有本机库，如果不存在此类库，则 Android 将为辅助 ABI 提取所有本机库。 没有执行任何“合并”。
 
 例如，请考虑在 `armeabi-v7a` 设备上安装应用程序的情况。 同时支持 `armeabi` 和 `armeabi-v7a` 的 `.apk,` 具有以下 ABI `lib` 目录以及其中的文件：
 

@@ -1,19 +1,19 @@
 ---
-title: 移动开发简介
+title: 什么是 Xamarin？
 description: 本文档介绍了移动开发，讨论了 Xamarin 及其工作原理和输出的应用程序。
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
-author: asb3993
-ms.author: amburns
-ms.date: 03/28/2017
-ms.openlocfilehash: 3b75ef6b0937248a43aa2e2ff3fc13a578d25d3c
-ms.sourcegitcommit: 5f48dbd99a33acbb376a1703485c7b659df2111b
+author: conceptdev
+ms.author: crdun
+ms.date: 07/16/2019
+ms.openlocfilehash: f958e53a2468263898ffedf0ca2ab6afc42d2923
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467846"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290121"
 ---
-# <a name="introduction-to-mobile-development"></a>移动开发简介
+# <a name="what-is-xamarin"></a>什么是 Xamarin？
 
 生成移动应用可以像打开 IDE、编写和测试应用，并提交到 App Store 一样简单，一个下午即可完成所有操作。 也可以是特别复杂的过程，包括严苛的预先设计，可用性测试，在数以千计的设备上进行 QA 测试，完整的 beta 生命周期，然后通过很多不同的方式进行部署。
 
@@ -23,20 +23,18 @@ ms.locfileid: "67467846"
 
 ## <a name="introduction-to-xamarin"></a>Xamarin 简介
 
-考虑如何生成 iOS 和 Android 应用程序时，许多用户都认为本机语言、Objective-C、Swift 和 Java 是唯一的选择。 但是，在过去几年中，一个全新的生成移动应用程序平台的生态系统已经出现了。
+考虑如何生成 Android 和 iOS 应用程序时，许多用户都认为本机语言、Objective-C、Swift、Java 和 Kotlin 是唯一的选择。
 
-Xamarin 是唯一能通过提供跨 iOS、Android 和 Windows Phone（Windows Phone 的本机语言已经是 C#）这三种平台可正常工作的单一语言 - C#、类库和运行时，却仍能编译性能甚至足以满足高要求游戏的本机（非解释型）应用程序的平台。
+Xamarin 允许用户使用 C# 进行开发，具有一个可以在所有许多平台（包括 iOS、Android 和 Windows）上运行类库和运行时，同时还可以编译本机（非解释的）应用程序，即使对于要求很高的游戏，这些应用程序的性能表现也足够好。
 
-其中的每个平台都有不同的功能组合，不同点在于编写本机应用程序的能力 - 即可编译为本机代码，并可与基础 Java 子系统进行流畅互操作的应用程序。 例如，某些平台只允许使用 HTML 和 JavaScript 生成应用，而某些平台级别较低，且只允许使用 C/C++ 代码生成。 某些平台甚至不能使用本机控件工具包。
-
-Xamarin 是唯一结合了本机平台的所有功能，并自身增加了大量的强大功能的平台，包括：
+Xamarin 结合了本机平台的所有功能，并自身增加了大量的强大功能，包括：
 
 1.   **基础 SDK 完全绑定** - Xamarin 包含 iOS 和 Android 中几乎整个基础平台 SDK 的绑定。 此外，这些绑定属于强类型，意味着可以轻松导航和使用，并提供可靠的编译时类型检查和开发过程。 这可使运行时错误更少，应用质量更好。
 1.   **Objective-C、Java、C 和 C++ 互操作** - Xamarin 提供直接调用 Objective-C、Java、C 和 C++ 库的功能，使用户能够使用已创建的各种第三方代码。 这样可以充分利用使用 Objective-C、Java 或 C/C++ 编写的现有 iOS 和 Android 库。 另外，Xamarin 还提供绑定项目功能，使用户可使用声明性语法轻松绑定本机 Objective-C 和 Java 库。
 1.   **新式语言构造** - XaTmarin 应用程序采用 C# 编写，C# 是一种新式语言，包含针对 Objective-C 和 Java 的重大改进，比如*动态语言功能、功能性构造  （比如 *Lambdas）、*LINQ、并行编程  功能和复杂*泛型等。
 1.   **出色的基类库 (BCL)** - Xamarin 应用程序使用 .NET BCL，后者是类的大量集合，具有全面而简化的功能，比如强大的 XML、数据库、序列化、IO、字符串和网络支持等。 可以编译现有 C# 代码用于应用程序，这可提供对成千上万的库的访问权限，允许用户在其中执行 BCL 中尚无法执行的操作。
 1.   **新式集成开发环境 (IDE)** - Xamarin 在 macOS 上使用 Visual Studio for Mac，在 Windows 上使用 Visual Studio。 两者都属于新式 IDE，其中包括诸如代码自动完成、复杂项目和解决方案管理系统、综合项目模板库、集成源代码管理等功能。
-1.   **移动跨平台支持** - Xamarin 对 iOS、Android 和 Windows Phone 这三个主移动平台提供复杂的跨平台支持。 可编写应用程序共享其多达 90% 的代码，并且 Xamarin.Mobile 库提供了 Unified API 跨这三个平台来访问公共资源。 这可明显减少移动开发人员针对这三种最热门移动平台的开发成本和进行市场推广所需的时间。
+1.   **移动跨平台支持** - Xamarin 对 iOS、Android 和 Windows 这三个主移动平台提供复杂的跨平台支持。 可编写应用程序共享其多达 90% 的代码，并且 Xamarin.Mobile 库提供了 Unified API 跨这三个平台来访问公共资源。 这可明显减少移动开发人员针对这三种最热门移动平台的开发成本和进行市场推广所需的时间。
 
 借助 Xamarin 强大全面的功能集，它填补了应用程序开发人员想要使用新式语言和平台开发跨平台移动应用程序的空白。
 
@@ -53,7 +51,7 @@ Xamarin 提供两种商业产品：Xamarin.iOS 和 Xamarin.Android。 两者都�
 
 ### <a name="xamariniosdll-and-monoandroiddll"></a>Xamarin.iOS.dll 和 Mono.Android.dll
 
-Xamarin 应用程序针对 .NET BCL（称为 Xamarin 移动配置文件）的子集生成。 此配置文件专门为移动应用程序创建，并打包在 MonoTouch.dll 和 Mono.Android.dll（分别针对 iOS 和 Android）中。 这与 Silverlight（和 Moonlight）应用程序针对 Silverlight/Moonlight .NET 配置文件生成的方式很类似。 事实上，Xamarin 移动配置文件相当于 Silverlight 4.0 配置文件以及加回其中的一系列 BCL 类。
+Xamarin 应用程序针对 .NET BCL（称为 Xamarin 移动配置文件）的子集生成。 此配置文件专门为移动应用程序创建，并打包在 Xamarin.iOS.dll 和 Mono.Android.dll（分别针对 iOS 和 Android）中。 这与 Silverlight（和 Moonlight）应用程序针对 Silverlight/Moonlight .NET 配置文件生成的方式很类似。 事实上，Xamarin 移动配置文件相当于 Silverlight 4.0 配置文件以及加回其中的一系列 BCL 类。
 
 有关可用程序集和类的完整列表，请参阅 [Xamarin.iOS 程序集列表](~/cross-platform/internals/available-assemblies.md?context=xamarin/ios)和 [Xamarin.Android 程序集列表](~/cross-platform/internals/available-assemblies.md?context=xamarin/android)
 
@@ -71,4 +69,3 @@ Xamarin 应用程序针对 .NET BCL（称为 Xamarin 移动配置文件）的子
 - [**Xamarin.iOS 入门**](~/ios/get-started/hello-ios/index.md)
 - [**Xamarin.Android 入门**](~/android/get-started/hello-android/index.md)
 - [**Xamarin.Mac 入门**](~/mac/get-started/hello-mac.md)
-

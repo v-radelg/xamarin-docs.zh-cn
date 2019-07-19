@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5950143532b2d1d026f73bb254507d7d3022cbf1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: efa3c8cf4d2e64c6d8bccdfe6e6fec9602d17c73
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112294"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865856"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的临时分发
 
@@ -20,13 +20,13 @@ _本文档概述了 Ad-Hoc 分发技术，此技术主要用于通过大范围�
 
 Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是将应用分发给用户以供测试。
 
-iTunes Connect 是一个可用于管理应用测试的选项，[TestFlight](~/ios/deploy-test/testflight.md) 指南中对其进行了详细介绍。 但是，由于 Apple Developer Enterprise Program 的成员无法访问 iTunes Connect，因此 Ad Hoc 分发是测试这些应用的最好方法。
+iTunes Connect 是一个可用于管理应用测试的选项，[TestFlight](~/ios/deploy-test/testflight.md) 指南中对其进行了详细介绍。 但是，由于 Apple Developer Enterprise Program 的成员无法访问 iTunes Connect，因此 Ad Hoc  分发是测试这些应用的最好方法。
 
-Xamarin.iOS 应用程序可通过 Ad Hoc 分发进行用户测试，Ad Hoc 分发可在 Apple Developer Program 和 Apple Developer Enterprise Program 中获取，它允许测试最多 100 台 iOS 设备。
+Xamarin.iOS 应用程序可通过 Ad Hoc 分发  进行用户测试，Ad Hoc 分发可在 Apple Developer Program 和 Apple Developer Enterprise Program 中获取，它允许测试最多 100 台 iOS 设备。
 
 Ad Hoc 分发的优点在于，无需 App Store 批准，可通过 Web 服务器或 iTunes 进行无线安装。 但是，每成员资格年只能开发和分发最多 **100** 台设备，并且必须通过它们的 UDID 手动将其添加到 Member Center。 若要深入了解如何添加设备，请访问[设备预配](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#adddevice)指南。
 
-Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置文件以及应用程序的标识和可安装应用程序的设备进行设置。
+Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置文件  以及应用程序的标识和可安装应用程序的设备进行设置。
 
 本指南介绍如何对 Ad Hoc 分发进行设置，以及如何分发 Xamarin.iOS 应用。
 
@@ -46,20 +46,20 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 ## <a name="create-a-distribution-certificate"></a>创建分发证书
 
 
-1. 浏览到 Apple Developer Member Center 的“证书、标识符和描述文件”部分。
-2. 在“证书”下选择“生产”。
-3. 单击“+”按钮创建新证书。
-4. 根据你的计划成员身份，在“生产”标题下，选择“In-House 和 Ad Hoc”或“App Store 和 Ad Hoc”：
+1. 浏览到 Apple Developer Member Center 的“证书、标识符和描述文件”  部分。
+2. 在“证书”  下选择“生产”  。
+3. 单击“+”  按钮创建新证书。
+4. 根据你的计划成员身份，在“生产”  标题下，选择“In-House 和 Ad Hoc”  或“App Store 和 Ad Hoc”  ：
 
-  [![](ad-hoc-distribution-images/cert-first-small.png "选择“内部”和“临时”，或“App Store”和“临时”")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
+   [![](ad-hoc-distribution-images/cert-first-small.png "选择“内部”和“临时”，或“App Store”和“临时”")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. 单击“继续”，并按说明通过密钥链访问创建证书签名请求：
 
-  [![](ad-hoc-distribution-images/createcertmanually02.png "通过 Keychain Access 创建证书签名请求")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+   [![](ad-hoc-distribution-images/createcertmanually02.png "通过 Keychain Access 创建证书签名请求")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. 在按照指示创建 CSR 后，单击“继续”，并将 CSR 上传到 Member Center：
 
-  [![](ad-hoc-distribution-images/createcertmanually03.png "将 CSR 上传到 Member Center")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+   [![](ad-hoc-distribution-images/createcertmanually03.png "将 CSR 上传到 Member Center")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. 单击“生成”创建证书。
 8. 最后，下载完成的证书，双击该文件进行安装。
@@ -67,9 +67,9 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 或者，可通过 Xcode 中的”首选项”对话框请求证书。 为此，请执行以下步骤：
 
-1.   选择团队，然后单击“管理证书...”：[![](ad-hoc-distribution-images/selectteam.png "选择团队")](ad-hoc-distribution-images/selectteam.png#lightbox)
+1. 选择团队，然后单击“管理证书...”  ：[![](ad-hoc-distribution-images/selectteam.png "选择团队")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   接下来，单击加号“(+)”按钮，然后选择“iOS App Store”：[![](ad-hoc-distribution-images/selectcert.png "选择 iOS App Store")](ad-hoc-distribution-images/selectcert.png#lightbox)
+2. 接下来，单击加号 (+) 按钮，然后选择“iOS App Store”   ：[![](ad-hoc-distribution-images/selectcert.png "选择“iOS App Store”")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -81,35 +81,35 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 与创建的任何其他设置配置文件一样，需使用应用程序 ID 来确认分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
 
 
-1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”部分。 在“标识符”下选择“应用 ID”。
-2. 单击“+”按钮并提供“名称”，该名称将在门户中标识它。
+1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”  部分。 在“标识符”  下选择“应用 ID”  。
+2. 单击“+”  按钮并提供“名称”  ，该名称将在门户中标识它。
 3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：
     - **显式**：`com.[DomainName].[AppName]`
     - **通配符**：`com.[DomainName].*`
 4. 选择应用要求的任意[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
-5. 单击“继续”按钮，并按照屏幕上的说明创建新的应用 ID。
+5. 单击“继续”  按钮，并按照屏幕上的说明创建新的应用 ID。
 
 拥有创建分发配置文件所需的必要组件后，请按照下面的步骤进行创建：
 
-1. 返回 Apple 预配门户，选择“预配”>“分发”：[![](ad-hoc-distribution-images/distribute01.png "选择“预配”>“分发”")](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. 返回 Apple 预配门户，选择“预配”>“分发”  ：[![](ad-hoc-distribution-images/distribute01.png "选择“预配”>“分发”")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
-2. 单击“+”按钮，选择要创建为“临时”的分发配置文件的类型：
+2. 单击“+”  按钮，选择要创建为“临时”  的分发配置文件的类型：
 
     [![](ad-hoc-distribution-images/distribute02.png "创建临时分发类型")](ad-hoc-distribution-images/distribute02.png#lightbox)
 
-3. 单击“继续”按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
+3. 单击“继续”  按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
 
     [![](ad-hoc-distribution-images/distribute03.png "从下拉列表选择“App ID”")](ad-hoc-distribution-images/distribute03.png#lightbox)
 
-4. 单击“继续”按钮，然后选择签名应用程序时所需的分发证书：
+4. 单击“继续”  按钮，然后选择签名应用程序时所需的分发证书：
 
     [![](ad-hoc-distribution-images/distribute04.png "选择签名应用程序时所需的分发证书")](ad-hoc-distribution-images/distribute04.png#lightbox)
 
-6. 单击“继续”按钮，为新的分发配置文件输入“名称”：
+5. 单击“继续”  按钮，为新的分发配置文件输入“名称”  ：
 
     [![](ad-hoc-distribution-images/distribute06.png "输入新的分发配置文件的名称")](ad-hoc-distribution-images/distribute06.png#lightbox)
 
-7. 单击“生成”按钮，创建新的配置文件并完成该过程。
+6. 单击“生成”  按钮，创建新的配置文件并完成该过程。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -131,26 +131,26 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
  在 Visual Studio for Mac 中，执行以下操作：
 
-1. 在“解决方案资源管理器”中，双击项目名称，将其打开进行编辑。
-2. 在“配置”下拉列表中，选择“iOS 应用程序包签名”和生成类型：
+1. 在“解决方案资源管理器”  中，双击项目名称，将其打开进行编辑。
+2. 在“配置”  下拉列表中，选择“iOS 应用程序包签名”  和生成类型：
 
     ![](ad-hoc-distribution-images/releasexs01.png "从“配置”下拉列表选择生成类型")
-3. 在大多数情况下，可以保留“签名标识”和“预配配置文件”的默认值（即“自动”），Visual Studio for Mac 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件：
+3. 在大多数情况下，可以保留“签名标识”  和“预配配置文件”  的默认值（即“自动”  ），Visual Studio for Mac 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件：
 
     ![](ad-hoc-distribution-images/releasexs02.png "“签名标识”和“预配配置文件”设为默认值“自动”")
 4. 如果需要，在下拉列表中，选择上面创建的签名标识和分发配置文件：
 
     ![](ad-hoc-distribution-images/releasexs03.png "选择“签名标识”和“分发配置文件”")
-5. 单击“确定”按钮保存更改。
+5. 单击“确定”  按钮保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
  在 Visual Studio 中，执行以下操作：
 
-1. 在“解决方案资源管理器”中，右键单击项目名称，然后选择“属性”，将其打开并进行编辑。
-2. 在“配置”下拉列表中，选择“iOS 应用程序包签名”和生成类型：
+1. 在“解决方案资源管理器  ”中，右键单击项目名称，然后选择“属性”  ，将其打开并进行编辑。
+2. 在“配置”  下拉列表中，选择“iOS 应用程序包签名”  和生成类型：
 
     ![](ad-hoc-distribution-images/releasevs01.png "从“配置”下拉列表选择生成类型")
-3. 在大多数情况下，可以保留“签名标识”和“预配配置文件”的默认值（即“自动”），Visual Studio 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件：
+3. 在大多数情况下，可以保留“签名标识”  和“预配配置文件”  的默认值（即“自动”  ），Visual Studio 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件：
 
     ![](ad-hoc-distribution-images/releasevs02.png "“签名标识”和“预配配置文件”设为默认值“自动”")
 4. 如果需要，在下拉列表中，选择上面创建的签名标识和分发配置文件：
@@ -172,7 +172,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 ### <a name="ipa-support-for-ad-hoc-deployment"></a>Ad Hoc 部署的 IPA 支持
 
-完成预配后，可将应用程序打包到名为 IPA 的文件中。 这是一个 zip 文件，内含应用程序以及其他元数据和图标。 IPA 用于将应用程序本地添加到 iTunes，使其可直接同步到配置文件中的设备。
+完成预配后，可将应用程序打包到名为 IPA  的文件中。 这是一个 zip 文件，内含应用程序以及其他元数据和图标。 IPA 用于将应用程序本地添加到 iTunes，使其可直接同步到配置文件中的设备。
 
 若要深入了解如何创建 IPA，请参阅 [IPA 支持指南](~/ios/deploy-test/app-distribution/ipa-support.md)。
 

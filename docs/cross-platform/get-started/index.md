@@ -4,17 +4,17 @@ description: 本文档链接到介绍如何开始使用 Xamarin 开发的各种�
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/10/2017
-ms.openlocfilehash: da2c927bc7d6943066b6b2541d9af98a560c40b5
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: ae4704c2b1ab97b3e0f396b2402005366e97fe92
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978436"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290132"
 ---
-# <a name="building-mobile-apps"></a>构建移动应用
+# <a name="building-mobile-apps"></a>生成移动应用
 
 开始前，请检查[系统要求](requirements.md)和[安装说明](~/get-started/installation/index.md)，确保一切就绪。
 
@@ -28,21 +28,21 @@ ms.locfileid: "64978436"
 - [Android 快速入门](~/android/get-started/hello-android/hello-android-quickstart.md)
 - [iOS 快速入门](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
 
-## <a name="getting-started-with-mobile-development"></a>移动开发入门
+## <a name="get-started-with-mobile-development"></a>移动开发入门
 
 若要深入了解 Xamarin 的工作原理，以及如何着手进行移动应用开发项目，请阅读以下指南：
 
-### <a name="introduction-to-mobile-developmentcross-platformget-startedintroduction-to-mobile-developmentmd"></a>[移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)
+### <a name="what-is-xamarincross-platformget-startedintroduction-to-mobile-developmentmd"></a>[什么是 Xamarin？](~/cross-platform/get-started/introduction-to-mobile-development.md)
 
-本文档介绍高级别 Xamarin 工作原理，并可链接到 iOS、Android 和 Xamarin.Forms 入门指南。
+本文档介绍高级别 Xamarin 工作原理  ，并可链接到 Xamarin.Forms、Android 和 iOS 入门指南。
 
-### <a name="introduction-to-the-mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[移动软件开发生命周期简介](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
+### <a name="mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[移动软件开发生命周期](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
 本文讨论了有关移动应用程序的软件开发生命周期以及生成移动项目时的一些注意事项。 对于希望直接开始生成应用的开发人员，可先跳过此指南，稍后再进行阅读，以更完整地理解移动开发。
 
 ## <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[生成跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 
-通过在设计和开发移动应用程序时选择 Xamarin 并了解一些注意事项，可以实现跨移动平台的代码共享，缩短上市时间，利用现有技术，满足用户对移动访问的需求并降低跨平台复杂性。&nbsp;此文档概括了实用和生产力应用程序如何实现这些优势的关键指南。
+通过在设计和开发移动应用程序时选择 Xamarin 并了解一些注意事项，可以实现跨移动平台的代码共享，缩短上市时间，利用现有技术，满足用户对移动访问的需求并降低跨平台复杂性。 此文档概括了实用工具和生产力应用程序如何实现这些优势的关键指南。
 
 ### <a name="introducing-visual-studio-for-machttpsdocsmicrosoftcomvisualstudiomac"></a>[Visual Studio for Mac 介绍](https://docs.microsoft.com/visualstudio/mac/)
 

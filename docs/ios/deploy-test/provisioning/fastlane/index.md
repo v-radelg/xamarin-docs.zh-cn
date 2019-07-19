@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e89b8585371ab2560ae510fdb49f284e358818c1
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 23bf62688da4e2e82cb3e0fadc9a3b7c13ab1a7d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108907"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865518"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Fastlane for iOS 介绍
 
@@ -28,7 +28,7 @@ Fastlane 是一个开源项目，旨在简化 iOS 和 Android 应用混乱冗长
 
 可以按以下不同的方式使用 Fastlane：通过终端命令、通过基于文件的方式，或通过将环境变量用于持续集成生成。 
 
-本指南专用于处理针对 iOS 应用开发的设备设置，重点介绍了 cert、sigh 和 match 实用工具。 
+本指南专用于处理针对 iOS 应用开发的设备设置，重点介绍了 cert  、sigh  和 match  实用工具。 
 
 提供的内容可用作帮助应用分发的 springboard，包括完全自动化持续集成服务器上的过程。 但是，有必要记住 Fastlane 是生成 Xcode 项目支持工具的第三方，因此某些工具或命令（如 `fastlane init`）可能不会如期处理 csproj 文件。 有关使用 Fastlane 和其他工具或者有关使用 Fastlane 发布 Android 的详细信息，请参阅 [https://fastlane.tools/](https://fastlane.tools/)
 
@@ -50,35 +50,35 @@ Fastlane 是一个开源项目，旨在简化 iOS 和 Android 应用混乱冗长
 3. 通过解压缩文件安装 fastlane，然后双击 `install` 可执行文件。 如果收到错误通知“无法打开文件，因为它来自无法识别的开发人员”，请按“确定”，然后执行以下操作：
     - 按住 Ctrl 并单击 `install` 可执行文件。 此时，将显示以下对话框：
 
-      ![](images/fastlane-image12.png "“安装”对话框")
-    
+     ![](images/fastlane-image12.png "“安装”对话框")
+
     - 按“确定”开始安装 fastlane 工具
 
 4. 终端将通过下面所示的对话框显示提示。 按 `y`：
 
-  ![](images/fastlane-image13.png "终端提示")
- 
-4. 首次使用 fastlane 之前，请运行 `which fastlane`。 路径应类似于： 
+   ![](images/fastlane-image13.png "终端提示")
+
+5. 首次使用 fastlane 之前，请运行 `which fastlane`。 路径应类似于： 
 
     ```bash
     /Users/[user]/.fastlane/bin
     ```
 
-5. 如果路径与上述路径匹配，表明你已准备就绪。
+6. 如果路径与上述路径匹配，表明你已准备就绪。
 
-     如果不匹配，请执行以下操作：在 macOS 上，使用以下命令打开 `.bash_profile`，这是一个主目录中隐藏的纯文本文件：
+     否则，请执行以下操作：在 macOS 上，使用以下命令打开 `.bash_profile`，这是一个主目录中隐藏的纯文本文件：
 
     ```bash
     open ~/.bash_profile
     ```
 
-6. 添加下面的 PATH 环境变量并保存： 
+7. 添加下面的 PATH 环境变量并保存： 
 
     ```bash
     export PATH="$HOME/.fastlane/bin:$PATH"
     ```
 
-7.  再次运行 `which fastlane`，以确认路径类似 `/Users/[user]/.fastlane/bin`
+8.  再次运行 `which fastlane`，以确认路径类似 `/Users/[user]/.fastlane/bin`
 
 
 ## <a name="updating-fastlane"></a>更新 Fastlane
@@ -107,7 +107,7 @@ Cert 和 Sigh 负责在本地计算机上创建和管理签名证书和预配配
 
 利用 Fastlane 创建签名标识和预配配置文件之后，应可直接在 Visual Studio for Mac 中设置绑定签名选项，前提是证书和私钥都位于 macOS 密钥链中且预配配置文件位于文件夹 `~/Library/MobileDevice/Provisioning Profiles` 中。
 
-若要设置 Xamarin.iOS 应用程序的代码签名选项，请右键单击项目名称，选择“项目选项”>“生成”>“iOS 捆绑签名”显式设置签名标识和设预配配置文件，如下所示：
+若要设置 Xamarin.iOS 应用程序的代码签名选项，请右键单击项目名称，选择“项目选项”>“生成”>“iOS 捆绑签名”  显式设置签名标识和设预配配置文件，如下所示：
 
 [![](images/fastlane-image11.png "显式设置签名标识和预配配置文件")](images/fastlane-image11.png#lightbox)
 

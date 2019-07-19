@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "55832023"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831511"
 ---
 # <a name="app-store-distribution"></a>App Store 分发
 
@@ -25,7 +25,7 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 就像开发应用程序一样，分发应用程序需要使用相应的*配置文件*对应用程序进行设置。 配置文件是一种文件，其中包含了代码签名信息，以及应用程序标识和预期分发机制。 配置文件还包括可部署应用以实现非 App Store 分发的设备的信息。
 
 > [!IMPORTANT]
-> 请务必注意，必须加入个人或组织的 Apple 开发人员计划，才可使用 iTunes Connect 并将应用发布到 App Store。 如果是 Apple Developer **Enterprise** Program 的成员，则不能按照此页上的步骤执行操作。
+> 必须加入个人或组织的 Apple 开发人员计划，才可使用 iTunes Connect 并将应用发布到 App Store  。 如果是 Apple Developer **Enterprise** Program 的成员，则不能按照此页上的步骤执行操作。
 
 <a name="provisioning" />
 
@@ -45,28 +45,28 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 
 ## <a name="creating-a-distribution-certificate"></a>创建分发证书
 
-1. 浏览到 Apple Developer Member Center 的“证书、标识符和描述文件”部分。
-2. 在“证书”下选择“生产”。
-3. 单击“+”按钮创建新证书。
-4. 在“生产”标题下，选择“App Store 和临时”：
+1. 浏览到 Apple Developer Member Center 的“证书、标识符和描述文件”  部分。
+2. 在“证书”  下选择“生产”  。
+3. 单击“+”  按钮创建新证书。
+4. 在“生产”  标题下，选择“App Store 和临时”  ：
 
     [![](images/createcertmanually01.png "选择“App Store”和“临时”")](images/createcertmanually01.png#lightbox)
-5. 单击“继续”，再按照说明操作，通过密钥链访问创建证书签名请求：
+5. 单击“继续”  ，再按照说明操作，通过密钥链访问创建证书签名请求：
 
     [![](images/createcertmanually02.png "通过 Keychain Access 创建证书签名请求")](images/createcertmanually02.png#lightbox)
-6. 在按照指示创建 CSR 后，单击“继续”，再将 CSR 上传到 Member Center：
+6. 在按照指示创建 CSR 后，单击“继续”  ，再将 CSR 上传到 Member Center：
 
     [![](images/createcertmanually03.png "将 CSR 上传到 Member Center")](images/createcertmanually03.png#lightbox)
 
-7. 单击“生成”创建证书。
+7. 单击“生成”  创建证书。
 8. 最后，**下载**完成的证书，双击该文件进行安装。
 9. 此时，证书应已在计算机上安装，但可能需要[刷新配置文件](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)，确保其在 Xcode 中可见。
 
 或者，可通过 Xcode 中的”首选项”对话框请求证书。 为此，请执行以下步骤：
 
-1.   选择团队，然后单击“管理证书...”：[![](images/selectteam.png "选择团队和“查看详细信息”")](images/selectteam.png#lightbox)
+1.   选择团队，然后单击“管理证书...”  ：[![](images/selectteam.png "选择团队和“查看详细信息”")](images/selectteam.png#lightbox)
 
-2.   然后，单击“iOS 分发证书”旁边的“创建”按钮：[![](images/selectcert.png "创建 iOS 分发证书")](images/selectcert.png#lightbox)
+2.   然后，单击“iOS 分发证书”  旁边的“创建”  按钮：[![](images/selectcert.png "创建 iOS 分发证书")](images/selectcert.png#lightbox)
 
 3.   将根据你的团队特权生成签名标识（如下所示），或者可能需要等待团队代理或管理员批准：[![](images/generated.png "将生成签名标识并显示一个对话框")](images/generated.png#lightbox)
 
@@ -82,44 +82,44 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 与创建的其他任何配置文件一样，需要应用程序 ID 来标识将分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
 
 
-1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”部分。 在“标识符”下选择“应用 ID”。
-2. 单击“+”按钮并提供“名称”，该名称将在门户中标识它。
+1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”  部分。 在“标识符”  下选择“应用 ID”  。
+2. 单击“+”  按钮并提供“名称”  ，该名称将在门户中标识它。
 3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：
     - **Explicit**: com.[DomainName].[AppName]
     - **Wildcard**:com.[DomainName].*
 4. 选择应用要求的任何[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
-5. 单击“继续”按钮，按照屏幕上的说明创建新的应用程序 ID。
+5. 单击“继续”  按钮，按照屏幕上的说明创建新的应用程序 ID。
 
 
 ### <a name="creating-a-provisioning-profile"></a>创建预配配置文件
 
 拥有创建分发配置文件所需的必要组件后，请按照下面的步骤进行创建：
 
-1. 返回 Apple 预配门户，选择“预配” > “分发”：
+1. 返回 Apple 预配门户，选择“预配”   > “分发”  ：
 
     [![](images/distribute01.png "选择“预配”>“分发”")](images/distribute01.png#lightbox)
 
-2. 单击“+”按钮，选择要创建为“App Store”的分发配置文件的类型：
+2. 单击“+”  按钮，选择要创建为“App Store”  的分发配置文件的类型：
 
     [![](images/distribute02.png "创建“App Store”分发配置文件")](images/distribute02.png#lightbox)
 
-3. 单击“继续”按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
+3. 单击“继续”  按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
 
     [![](images/distribute03.png "从下拉列表选择“App ID”")](images/distribute03.png#lightbox)
 
-4. 单击“继续”按钮，再选择对应用进行签名所需的证书：
+4. 单击“继续”  按钮，再选择对应用进行签名所需的证书：
 
     [![](images/distribute04.png "选择签名应用程序所需的证书")](images/distribute04.png#lightbox)
 
-5. 单击“继续”按钮，选择允许运行 Xamarin.iOS 应用的 .iOS 设备：
+5. 单击“继续”  按钮，选择允许运行 Xamarin.iOS 应用的 .iOS 设备：
 
     [![](images/distribute05.png "选择允许运行应用的 iOS 设备")](images/distribute05.png#lightbox)
 
-6. 单击“继续”按钮，为新的分发配置文件输入“名称”：
+6. 单击“继续”  按钮，为新的分发配置文件输入“名称”  ：
 
     [![](images/distribute06.png "输入新的分发配置文件的名称")](images/distribute06.png#lightbox)
 
-7. 单击“生成”按钮，创建新的配置文件并完成该过程。
+7. 单击“生成”  按钮，创建新的配置文件并完成该过程。
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
@@ -142,27 +142,27 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 
  在 Visual Studio for Mac 中，执行以下操作：
 
-1. 在“解决方案资源管理器”中，双击项目名称，将其打开进行编辑。
-2. 在“配置”下拉列表中，选择“iOS 应用程序包签名”和“发布 | iPhone”：
+1. 在“解决方案资源管理器”  中，双击项目名称，将其打开进行编辑。
+2. 在“配置”  下拉列表中，选择“iOS 应用程序包签名”  和“发布 | iPhone”  ：
 
     ![](images/releasexs01.png "从“配置”下拉列表中选择“发布 | iPhone”")
-3. 在大多数情况下，可以保留“签名标识”和“预配配置文件”的默认值（即“自动”），Visual Studio for Mac 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件：
+3. 在大多数情况下，可以保留“签名标识”  和“预配配置文件”  的默认值（即“自动”  ），Visual Studio for Mac 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件：
 
     ![](images/releasexs02.png "“签名标识”和“预配配置文件”设为默认值“自动”")
 4. 如果需要，在下拉列表中，选择上面创建的签名标识和分发配置文件：
 
     ![](images/releasexs03.png "选择“签名标识”和“分发配置文件”")
-5. 单击“确定”按钮保存更改。
+5. 单击“确定”  按钮保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  在 Visual Studio 中，执行以下操作：
 
-1. 在“解决方案资源管理器”中，右键单击项目名称，然后选择“属性”，将其打开并进行编辑。
-2. 在“配置”下拉列表中，选择“iOS 应用程序包签名”和“发布 | iPhone”：
+1. 在“解决方案资源管理器  ”中，右键单击项目名称，然后选择“属性”  ，将其打开并进行编辑。
+2. 在“配置”  下拉列表中，选择“iOS 应用程序包签名”  和“发布 | iPhone”  ：
 
     ![](images/releasevs01.png "从“配置”下拉列表中选择“发布 | iPhone”")
-3. 在大多数情况下，可以保留“签名标识”和“预配配置文件”的默认值（即“自动”），Visual Studio 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件
+3. 在大多数情况下，可以保留“签名标识”  和“预配配置文件”  的默认值（即“自动”  ），Visual Studio 会根据 Info.plist 中的应用程序包标识符选择正确的配置文件
 
     ![](images/releasevs02.png "“签名标识”和“预配配置文件”设为默认值“自动”")
 4. 如果需要，在下拉列表中，选择上面创建的签名标识和分发配置文件：

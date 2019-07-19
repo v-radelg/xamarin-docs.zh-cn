@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3f74144f85cc045b4ea9807d3d818677e33539f2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123461"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865892"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手动预配
 
@@ -37,19 +37,19 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 若要生成签名标识，请执行以下操作：
 
-1. 登录[开发人员门户中的证书、标识符和描述文件部分](https://developer.apple.com/account/overview.action)，从“iOS 应用”列选择“证书”部分。 然后，按“+”以创建新证书：
+1. 登录[开发人员门户中的证书、标识符和描述文件部分](https://developer.apple.com/account/overview.action)，从“iOS 应用”  列选择“证书”  部分。 然后，按“+”  以创建新证书：
 
     [![](manual-provisioning-images/cert-plus.png "单击“+”创建新证书")](manual-provisioning-images/cert-plus.png#lightbox)
 
-2. 对于证书类型，选择“iOS 应用开发”选项，然后单击“继续”。 此屏幕可能会根据帐户特权有所不同：
+2. 对于证书类型，选择“iOS 应用开发”  选项，然后单击“继续”  。 此屏幕可能会根据帐户特权有所不同：
 
     [![](manual-provisioning-images/cert-first.png "对于证书类型，选择“iOS 应用开发”选项")](manual-provisioning-images/cert-first.png#lightbox)
 
-3. 请求“证书签名请求”，上传该请求以手动生成证书。 若要执行此操作，在 Mac 上启动 **Keychain Access**。 导航到主菜单，选择“证书助手”和“向证书颁发机构申请证书...”，如下所示：
+3. 请求“证书签名请求”，上传该请求以手动生成证书。 若要执行此操作，在 Mac 上启动 **Keychain Access**。 导航到主菜单，选择“证书助手”  和“向证书颁发机构申请证书...”  ，如下所示：
 
       [![](manual-provisioning-images/key-first.png "请求“证书签名请求”")](manual-provisioning-images/key-first.png#lightbox)
 
-4. 填写你的信息，并选择“保存到磁盘”选项：
+4. 填写你的信息，并选择“保存到磁盘”  选项：
 
     [![](manual-provisioning-images/key-second.png "填写信息")](manual-provisioning-images/key-second.png#lightbox)
 
@@ -67,7 +67,7 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
     [![](manual-provisioning-images/status-dev.png "从预配门户下载证书")](manual-provisioning-images/status-dev.png#lightbox)
 
-8. 双击下载的证书，启动 Keychain Access 并打开“我的证书”面板，显示新证书和关联私钥：
+8. 双击下载的证书，启动 Keychain Access 并打开“我的证书”  面板，显示新证书和关联私钥：
 
     [![](manual-provisioning-images/keychain.png "Keychain Access 中的证书")](manual-provisioning-images/keychain.png#lightbox)
 
@@ -100,36 +100,36 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 1. 启动 Xcode。
 2. 使用提供的 USB 电缆连接要设置到 Mac 的设备。
-2. 从“Windows”菜单中选择“设备”：
+3. 从“Windows”  菜单中选择“设备”  ：
 
-  [![](manual-provisioning-images/add01.png "从 Windows 菜单选择“设备”")](manual-provisioning-images/add01.png#lightbox)
+   [![](manual-provisioning-images/add01.png "从 Windows 菜单选择“设备”")](manual-provisioning-images/add01.png#lightbox)
 
-3. 从“设备”窗口左侧的“设备”列表选择所需的 iOS 设备。
-4. 突出显示“标识符”字符串并将其复制到剪贴板：
+4. 从“设备”窗口左侧的“设备”  列表选择所需的 iOS 设备。
+5. 突出显示“标识符”  字符串并将其复制到剪贴板：
 
-  [![](manual-provisioning-images/add02.png "突出显示“标识符”字符串")](manual-provisioning-images/add02.png#lightbox)
+   [![](manual-provisioning-images/add02.png "突出显示“标识符”字符串")](manual-provisioning-images/add02.png#lightbox)
 
-5. 在 Safari 中，导航到 [Apple 开发者中心](https://developer.apple.com/membercenter/index.action)并登录。
-6. 单击“证书、标识符和描述文件”链接：
+6. 在 Safari 中，导航到 [Apple 开发者中心](https://developer.apple.com/membercenter/index.action)并登录。
+7. 单击“证书、标识符和描述文件”  链接：
 
-  [![](manual-provisioning-images/add03.png "单击“证书、标识符和配置文件”链接")](manual-provisioning-images/add03.png#lightbox)
+   [![](manual-provisioning-images/add03.png "单击“证书、标识符和配置文件”链接")](manual-provisioning-images/add03.png#lightbox)
 
-7. 单击“设备”链接：
+8. 单击“设备”  链接：
 
-  [![](manual-provisioning-images/add04.png "单击“设备”链接")](manual-provisioning-images/add04.png#lightbox)
+   [![](manual-provisioning-images/add04.png "单击“设备”链接")](manual-provisioning-images/add04.png#lightbox)
 
-8. 单击“+”按钮：
+9. 单击“+”  按钮：
 
-  [![](manual-provisioning-images/add05.png "单击“+”按钮")](manual-provisioning-images/add05.png#lightbox)
+   [![](manual-provisioning-images/add05.png "单击“+”按钮")](manual-provisioning-images/add05.png#lightbox)
 
-9. 为新设备提供名称并将前面复制的设备“标识符”粘贴到“UUID”字段：
+10. 为新设备提供名称并将前面复制的设备“标识符”  粘贴到“UUID”  字段：
 
-  [![](manual-provisioning-images/add06.png "为新设备和设备标识符提供名称")](manual-provisioning-images/add06.png#lightbox)
+    [![](manual-provisioning-images/add06.png "为新设备和设备标识符提供名称")](manual-provisioning-images/add06.png#lightbox)
 
-10. 单击“继续”按钮。
-11. 最后，检查信息并单击“注册”按钮：
+11. 单击“继续”  按钮。
+12. 最后，检查信息并单击“注册”  按钮：
 
-  [![](manual-provisioning-images/add07.png "查看信息")](manual-provisioning-images/add07.png#lightbox)
+    [![](manual-provisioning-images/add07.png "查看信息")](manual-provisioning-images/add07.png#lightbox)
 
 对将用于测试或调试 Xamarin.iOS 应用程序的任何 iOS 设备重复上述步骤。
 
@@ -141,47 +141,47 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 与开发证书一样，预配配置文件可以通过 Apple Members Center 的[证书、标识符和配置文件](https://developer.apple.com/account/overview.action)部分手动创建。
 
-创建预配配置文件以前，应先创建应用 ID。 应用 ID 是反向 DNS 样式字符串，用于唯一标识应用程序。 以下步骤演示如何创建通配符应用 ID，以用于生成和安装大多数应用程序。 “显式应用 ID”只允许安装一个应用程序（具有匹配的捆绑 ID），且通常用于某些 iOS 功能，如 Apple Pay 和 HealthKit。 有关创建“显式应用 ID”的信息，请参阅[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
+创建预配配置文件以前，应先创建应用 ID  。 应用 ID 是反向 DNS 样式字符串，用于唯一标识应用程序。 以下步骤演示如何创建通配符应用 ID  ，以用于生成和安装大多数应用程序。 “显式应用 ID”  只允许安装一个应用程序（具有匹配的捆绑 ID），且通常用于某些 iOS 功能，如 Apple Pay 和 HealthKit。 有关创建“显式应用 ID”的信息，请参阅[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
 
 ### <a name="app-id"></a>应用 ID
 
-1. 在[开发者门户](https://developer.apple.com/account/overview.action)中找到Apple 开发者中心的*证书、标识符和描述文件*部分。 在“标识符”下选择“应用 ID”。
-2. 单击“+”按钮，并提供“名称”：
+1. 在[开发者门户](https://developer.apple.com/account/overview.action)中找到Apple 开发者中心的*证书、标识符和描述文件*部分。 在“标识符”  下选择“应用 ID”  。
+2. 单击“+”  按钮，并提供“名称”  ：
 
     [![](manual-provisioning-images/appid05a.png "提供名称")](manual-provisioning-images/appid05a.png#lightbox)
-3. 应预设应用前缀。 为应用后缀选择“通配符应用 ID”。 以 `com.[DomainName].*` 格式输入捆绑 ID：
+3. 应预设应用前缀。 为应用后缀选择“通配符应用 ID”  。 以 `com.[DomainName].*` 格式输入捆绑 ID：
 
-  [![](manual-provisioning-images/appid05b.png "输入捆绑 ID")](manual-provisioning-images/appid05b.png#lightbox)
+   [![](manual-provisioning-images/appid05b.png "输入捆绑 ID")](manual-provisioning-images/appid05b.png#lightbox)
 
-3. 单击“继续”按钮，按照屏幕上的说明创建新的应用程序 ID。
+4. 单击“继续”  按钮，按照屏幕上的说明创建新的应用程序 ID。
 
 ### <a name="provisioning-profile"></a>预配配置文件
 
-创建好应用 ID 后，即可生成配置文件。 此配置文件包含以下信息：与此配置文件相关的应用有哪个（些）（如果是通配符应用 ID，则为多个应用），谁可以使用配置文件（具体取决于添加了哪些开发人员证书），以及哪些设备可以安装应用。
+创建好应用 ID 后，即可生成配置文件。 此配置文件包含以下信息：与此配置文件相关的应用有哪个（些）（如果是通配符应用 ID，则为多个应用）  ，谁  可以使用配置文件（具体取决于添加了哪些开发人员证书），以及哪些  设备可以安装应用。
 
 若要手动创建用于开发的配置文件，请执行以下操作：
 
-1. 使用 Safari 浏览到 [Apple 开发者成员中心](https://developer.apple.com/membercenter/index.action)，然后在“证书、标识符和描述文件”部分下选择配置文件。
-2. 在右上角单击“+”按钮，以创建新的配置文件。
-3. 在“开发”部分中，选中“iOS 应用开发”旁边的单选按钮，再按“继续”：
+1. 使用 Safari 浏览到 [Apple 开发者成员中心](https://developer.apple.com/membercenter/index.action)，然后在“证书、标识符和描述文件”  部分下选择配置文件。
+2. 在右上角单击“+”  按钮，以创建新的配置文件。
+3. 在“开发”  部分中，选中“iOS 应用开发”  旁边的单选按钮，再按“继续”  ：
 
     [![](manual-provisioning-images/provisioning-profile01.png "选择要创建的配置文件类型")](manual-provisioning-images/provisioning-profile01.png#lightbox)
 4. 在下拉菜单中，选择要使用的应用 ID：
 
     [![](manual-provisioning-images/provisioning-profile02.png "选择要使用的应用 ID")](manual-provisioning-images/provisioning-profile02.png#lightbox)
-5. 选择要在预配配置文件中添加的一个或多个证书，再按“继续”：
+5. 选择要在预配配置文件中添加的一个或多个证书，再按“继续”  ：
 
     [![](manual-provisioning-images/provisioning-profile03.png "选择要包含在预配配置文件中的证书")](manual-provisioning-images/provisioning-profile03.png#lightbox)
 6. 选择将安装应用的所有设备。
 
     [![](manual-provisioning-images/provisioning-profile04.png "选择将安装应用的所有设备")](manual-provisioning-images/provisioning-profile04.png#lightbox)
-7. 为预配配置文件提供可识别名称，再按“继续”创建配置文件：
+7. 为预配配置文件提供可识别名称，再按“继续”  创建配置文件：
 
     [![](manual-provisioning-images/provisioning-profile05.png "提供有可识别名称的预配配置文件")](manual-provisioning-images/provisioning-profile05.png#lightbox)
-8. 按“下载”，将预配配置文件下载到 Mac 中：
+8. 按“下载”  ，将预配配置文件下载到 Mac 中：
 
     [![](manual-provisioning-images/provisioning-profile06.png "下载预配配置文件")](manual-provisioning-images/provisioning-profile06.png#lightbox)
-9. 双击文件，在 Xcode 中安装配置文件。 请注意，除非打开，否则 Xcode 可能不会显示任何可见提示来说明它已安装配置文件。 可访问“Xcode”>“偏好设置”>“帐户”进行验证。 选择你的 Apple ID，然后单击“查看详细信息...”。此时，应列出新的预配配置文件，如下所示：
+9. 双击文件，在 Xcode 中安装配置文件。 请注意，除非打开，否则 Xcode 可能不会显示任何可见提示来说明它已安装配置文件。 可访问“Xcode”>“偏好设置”>“帐户”  进行验证。 选择你的 Apple ID，然后单击“查看详细信息...”  。此时，应列出新的预配配置文件，如下所示：
 
       [![](manual-provisioning-images/provisioning-profile07.png "在 Xcode 中查看配置文件")](manual-provisioning-images/provisioning-profile07.png#lightbox)
 
@@ -195,9 +195,9 @@ Apple Developer 门户中已创建的证书和配置文件可能不会自动显�
 
 1.   退出 Visual Studio for Mac 或 Visual Studio。
 2.   启动 Xcode。
-3.   选择“Xcode 菜单”>“偏好设置...”
-4.   单击“帐户”选项卡。
-5.   选择一个团队，然后单击“下载手动配置文件”按钮：[![](manual-provisioning-images/selectteam1.png "下载手动配置文件")](manual-provisioning-images/selectteam1.png#lightbox)
+3.   选择“Xcode 菜单”>“偏好设置...” 
+4.   单击“帐户”  选项卡。
+5.   选择团队，然后单击“下载手动配置文件”按钮  ：[![](manual-provisioning-images/selectteam1.png "下载手动配置文件")](manual-provisioning-images/selectteam1.png#lightbox)
 
 6.   退出 Xcode。
 7.  启动 Visual Studio for Mac 或 Visual Studio。
@@ -220,7 +220,7 @@ Visual Studio for Mac 或 Visual Studio 将有新的证书或预配配置文件�
 
 ## <a name="provisioning-for-application-services"></a>对应用程序服务进行预配
 
-Apple 提供一系列精选的特殊应用服务（亦称为“功能”），可以为 Xamarin.iOS 应用激活这些服务。 必须同时在 iOS 设置门户（创建“应用 ID”时）和“Entitlements.plist”文件（它是 Xamarin.iOS 应用程序项目的一部分）上配置这些应用程序服务。 若要了解如何将应用程序服务添加到应用，请参阅[功能简介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用授权](~/ios/deploy-test/provisioning/entitlements.md)指南。
+Apple 提供一系列精选的特殊应用服务（亦称为“功能”），可以为 Xamarin.iOS 应用激活这些服务。 必须同时在 iOS 设置门户（创建“应用 ID”  时）和“Entitlements.plist”  文件（它是 Xamarin.iOS 应用程序项目的一部分）上配置这些应用程序服务。 若要了解如何将应用程序服务添加到应用，请参阅[功能简介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用授权](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 * 创建具备所需应用服务的应用 ID。
 * 创建含有此应用 ID 的新[配置文件](#provisioningprofile)。
@@ -233,38 +233,38 @@ Apple 提供一系列精选的特殊应用服务（亦称为“功能”），�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 > [!IMPORTANT]
-> 开始之前，请务必先选择 Info.plist 中的“手动设置”。
+> 开始之前，请务必先选择 Info.plist  中的“手动设置”  。
 
 1. 在 Mac 上插入设备。
-2. 在项目的“Info.plist”中，确保捆绑标识符与应用 ID 匹配（除非应用 ID 是通配符）：
+2. 在项目的“Info.plist”  中，确保捆绑标识符与应用 ID 匹配（除非应用 ID 是通配符）：
 
-  ![](manual-provisioning-images/deploydevice01xs.png "输入标识符")
+   ![](manual-provisioning-images/deploydevice01xs.png "输入标识符")
 
-3. 右键单击项目，查看“项目选项”对话框，并浏览到“生成”>“iOS 捆绑签名”。 从“签名标识”和“预配配置文件”旁边的下拉列表中，验证 Visual Studio for Mac 是否可以显示正确的配置文件，然后选择特定的标识和配置文件：
+3. 右键单击项目，查看“项目选项”对话框，并浏览到“生成”>“iOS 捆绑签名”  。 从“签名标识”  和“预配配置文件”  旁边的下拉列表中，验证 Visual Studio for Mac 是否可以显示正确的配置文件，然后选择特定的标识和配置文件：
 
-  ![](manual-provisioning-images/deploydevice02xs.png "选择特定的标识和配置文件")
+   ![](manual-provisioning-images/deploydevice02xs.png "选择特定的标识和配置文件")
 
-如果设置为“自动”，Visual Studio for Mac 将基于步骤 2 中设置的捆绑 ID 选择标识和配置文件。
+   如果设置为“自动”  ，Visual Studio for Mac 将基于步骤 2 中设置的捆绑 ID 选择标识和配置文件。
 
 4. 请确保将生成配置设置为 **iPhone** / **iPad**，而不是模拟器。
-5. 在 Visual Studio for Mac 中，单击“运行”并查看在设备上运行的应用。
+5. 在 Visual Studio for Mac 中，单击“运行”  并查看在设备上运行的应用。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
-> 开始之前，请务必先选择“项目”>“预配属性...”中的“手动预配”。
+> 开始之前，请务必先选择“项目”>“预配属性...”中的“手动预配”   。
 
 1. 将设备插入 Mac 生成主机。
-2. 在项目的“Info.plist”中，确保捆绑标识符与应用 ID 匹配：
+2. 在项目的“Info.plist”  中，确保捆绑标识符与应用 ID 匹配：
 
-  ![](manual-provisioning-images/servicevs01.png "输入标识符")
+   ![](manual-provisioning-images/servicevs01.png "输入标识符")
 
-3. 右键单击项目，查看“项目选项”对话框，并浏览到“生成”>“iOS 捆绑签名”。 从“签名标识”和“预配配置文件”旁边的下拉列表中，验证 Visual Studio 是否可以显示正确的配置文件，然后选择特定的标识和配置文件。
+3. 右键单击项目，查看“项目选项”对话框，并浏览到“生成”>“iOS 捆绑签名”  。 从“签名标识”  和“预配配置文件”  旁边的下拉列表中，验证 Visual Studio 是否可以显示正确的配置文件，然后选择特定的标识和配置文件。
 
-    如果设置为“自动”，Visual Studio 将基于步骤 2 中设置的捆绑 ID 选择标识和配置文件。
+    如果设置为“自动”  ，Visual Studio 将基于步骤 2 中设置的捆绑 ID 选择标识和配置文件。
 
 4. 请确保将生成配置设置为 **iPhone** 或 **iPad**，而不是模拟器。
-5. 在 Visual Studio 中单击“运行”并查看在设备上运行的应用。
+5. 在 Visual Studio 中单击“运行”  并查看在设备上运行的应用。
 
 
 -----

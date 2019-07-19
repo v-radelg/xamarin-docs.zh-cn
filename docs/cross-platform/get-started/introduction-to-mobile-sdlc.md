@@ -1,30 +1,30 @@
 ---
-title: 移动软件开发生命周期简介
+title: 移动软件开发生命周期
 description: 本文介绍了移动软件开发生命周期，以及 UX 设计、UI 设计、开发、稳定、分发等。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 11/22/2016
-ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 99be69abb11640418917d4d2cb9738a0a843d6d0
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855232"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290142"
 ---
-# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>移动软件开发生命周期简介
+# <a name="mobile-software-development-lifecycle"></a>移动软件开发生命周期
 
-构建移动应用程序可以像打开 IDE、拖放一些内容在一起、快速做些测试，并提交到 App Store 一样简单 - 一个下午即可完成所有操作。 也可以是特别复杂的过程，包括严苛的预先设计，可用性测试，在数以千计的设备上进行 QA 测试，完整的 beta 生命周期，然后通过很多不同的方式进行部署。
+生成移动应用程序可以像打开 Visual Studio、将一些内容拖放在一起、快速做些测试，并提交到 App Store 一样简单 - 一个下午即可完成所有操作。 也可以是特别复杂的过程，包括严苛的预先设计，可用性测试，在数以千计的设备上进行 QA 测试，完整的 beta 生命周期，然后通过很多不同的方式进行部署。
 
 在本文档中，我们将全面介绍如何生成移动应用程序，包括：
 
-1.   **过程** – 软件开发的过程称为软件开发生命周期 (SDLC)。 我们将介绍与移动应用程序开发有关的 SDLC 的所有阶段，包括：灵感、设计、开发、稳定、部署和维护。
+1.   **过程** – 软件开发的过程称为软件开发生命周期 (SDLC)。 我们将介绍与移动应用程序开发有关的 SDLC 的所有阶段，包括：开始、设计、开发、稳定、部署和维护。
 1.   **注意事项** – 生成移动应用程序时有一些注意事项，尤其是与传统 Web 或桌面应用程序相比。 我们将介绍这些注意事项以及它们会如何影响移动开发。
 
 本文档旨在面向初学者和有经验的应用程序开发人员这类人员，回答有关移动应用开发的基本问题。 它采用相当全面的方法来介绍在整个软件开发生命周期 (SDLC) 过程中会遇到的大多数概念。 但是，本文档可能并不适合每个人，如果你渴望立刻开始生成应用程序，建议向前跳转到[移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)指南，然后在以后返回到本文档。
 
-## <a name="mobile-development-sdlc"></a>移动开发 SDLC
+## <a name="mobile-development-software-lifecycle"></a>移动软件开发生命周期
 
 移动开发的生命周期在很大程度上与 Web 或桌面应用程序的 SDLC 没有什么不同。 与这些应用程序一样，该过程通常有 5 个主要部分：
 
@@ -60,7 +60,7 @@ ms.locfileid: "58855232"
 
 为了帮助设计应用的功能，定义参与者和[用例](https://en.wikipedia.org/wiki/Use_case)可能会十分有用。 参与者是应用程序中的角色，通常是用户。 用例通常是操作或意向。
 
-例如，跟踪应用程序的任务可能具有两个参与者：用户和朋友。 用户可以创建任务，以及与好友共享任务。 在这种情况下，创建任务和共享任务是两个不同的用例，它们与参与者相结合，可告知你需要构建的屏幕，以及需要开发的业务实体和逻辑。
+例如，跟踪应用程序的任务可能具有两个参与者：用户和朋友   。 用户可以创建任务  ，以及与好友共享任务  。 在这种情况下，创建任务和共享任务是两个不同的用例，它们与参与者相结合，可告知你需要构建的屏幕，以及需要开发的业务实体和逻辑。
 
 捕获了适当数量的用例和参与者之后，开始设计应用程序便会容易得多。 开发随后可以侧重于如何创建应用，而不是应用是什么或是应该做什么。
 
@@ -82,7 +82,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 例如，每个应用都提供一种工具以用于在应用程序中的各部分之间进行切换。 iOS 使用屏幕底部的选项卡栏，Android 使用屏幕顶部的选项卡栏，而 UWP 则使用[透视或选项卡](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot)视图。
 
-此外，硬件本身也会决定 UX 决策。 例如，iOS 设备没有物理返回按钮，因此引入了导航控制器工具：
+此外，硬件本身也会决定 UX 决策。 例如，iOS 设备没有物理返回  按钮，因此引入了导航控制器工具：
 
  ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS 设备没有物理返回按钮，因此引入了导航控制器工具")
 
@@ -108,7 +108,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 ### <a name="stabilization"></a>稳定
 
-稳定是解决应用中的 bug 的过程。 不只是从功能角度，例如：“它在我单击此按钮时崩溃”，还涉及可用性和性能。 最好在开发过程中非常早的时候开始进行稳定，以便可以在成本高昂之前进行修正。 通常，应用程序会进入原型、Alpha、Beta 和候选发布阶段。 不同人员会以不同方式定义这些阶段，但是它们通常遵循以下模式：
+稳定是解决应用中的 bug 的过程。 不只是从功能角度，例如：“它在我单击此按钮时崩溃”，还涉及可用性和性能。 最好在开发过程中非常早的时候开始进行稳定，以便可以在成本高昂之前进行修正。 通常，应用程序会进入原型  、Alpha  、Beta  和候选发布  阶段。 不同人员会以不同方式定义这些阶段，但是它们通常遵循以下模式：
 
 1.   **原型** – 应用仍处于概念证明阶段，只有核心功能（或应用程序的特定部分）在工作。 存在主要 bug。
 1.   **Alpha** – 核心功能通常已代码完成（已生成，但未进行完整测试）。 仍存在主要 bug，可能仍然不存在外围功能。
@@ -172,7 +172,7 @@ UWP 应用程序通过 Microsoft Store 分发给用户。 开发人员提交其�
 移动设备通常可分为两种类别，即手机和平板电脑，在两者之间有一些交叉设备。 针对这些外形规格进行开发通常非常类似，但是，为它们设计应用程序可能会非常不同。
 手机的屏幕空间非常有限，而平板电脑，虽然更大，不过仍然是屏幕空间甚至小于大多数笔记本电脑的移动设备。 因此，移动平台 UI 控件经过专门设计，以便在较小外形规格上有效。
 
-#### <a name="device-and-os-fragmentation"></a>设备和 OS 碎片
+#### <a name="device-and-operating-system-fragmentation"></a>设备和操作系统碎片
 
 请务必在整个软件开发生命周期中考虑不同设备：
 
@@ -235,7 +235,7 @@ Android OS 中的应用程序全都采用具有有限权限的不同独立标识
 
 UWP 中的多任务具有两个部分：页面和应用程序的生命周期以及后台进程。 应用程序中的每个屏幕都是 Page 类的实例，它具有与设为活动或非活动状态关联的事件（具有用于处理非活动状态或“逻辑删除”的特殊规则）。
 
-第二个部分是为处理任务提供后台代理，即使在应用程序不在前台运行时。 
+第二个部分是为处理任务提供后台代理，即使在应用程序不在前台运行时。
 
 #### <a name="device-capabilities"></a>设备功能
 
@@ -251,6 +251,6 @@ UWP 中的多任务具有两个部分：页面和应用程序的生命周期以�
 
 ## <a name="next-steps"></a>后续步骤
 
-- [移动开发简介](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [什么是 Xamarin？](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Xamarin 入门](~/get-started/index.yml)
 - [跨平台共享代码](~/cross-platform/app-fundamentals/index.md)
