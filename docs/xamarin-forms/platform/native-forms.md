@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/03/2019
-ms.openlocfilehash: 9c427dc48f6fe19098c312bad16d9630bb480264
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
+ms.openlocfilehash: dad68f5daaf3a4c85f130ee219472b867163fd71
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290164"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329997"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin 本机项目中的 Xamarin.Forms
 
@@ -49,6 +49,7 @@ public class AppDelegate : UIApplicationDelegate
 
     UIWindow _window;
     UINavigationController _navigation;
+    UIViewController _noteEntryPage;
 
     public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
     {
@@ -81,7 +82,7 @@ public class AppDelegate : UIApplicationDelegate
 - 通过调用初始化 Xamarin.Forms`Forms.Init`方法。
 - 对引用`AppDelegate`类存储在`static``Instance`字段。 这是为了提供其他类来调用方法中定义的一种机制`AppDelegate`类。
 - `UIWindow`，这本机 iOS 应用程序中的视图的主容器创建。
-- `FolderPath`属性初始化为注意数据将存储位置的设备上的路径。
+- 将`FolderPath`属性初始化为设备上存储注释数据的路径。
 - `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`UIViewController`使用`CreateViewController`扩展方法。
 - `Title`的属性`UIViewController`设置，这将显示在`UINavigationBar`。
 - 一个`UINavigationController`创建用于管理分层导航。 `UINavigationController`类管理一摞视图控制器，并`UIViewController`传递到构造函数将显示最初时`UINavigationController`加载。
@@ -89,9 +90,9 @@ public class AppDelegate : UIApplicationDelegate
 
 一次`FinishedLaunching`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![在 XAML 中定义的 Xamarin.iOS 应用程序使用一个用户界面的屏幕截图](native-forms-images/ios-notespage.png "Xamarin.iOS 应用程序使用 XAML UI")](native-forms-images/ios-notespage-large.png#lightbox "XAML 的 ui 的 Xamarin.iOS 应用程序")
+[使用 xaml Xamarin ios 应用中使用(native-forms-images/ios-notespage.png "xaml ui") ![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图]](native-forms-images/ios-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
 
-交互用户界面，例如通过点击 **+** [ `Button` ](xref:Xamarin.Forms.Button)，将导致以下事件处理程序中`NotesPage`隐藏代码执行：
+与 UI 交互 (例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button)), 将导致`NotesPage`代码隐藏执行中的以下事件处理程序:
 
 ```csharp
 void OnNoteAddedClicked(object sender, EventArgs e)
@@ -105,23 +106,23 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    UIViewController noteEntryPage = new NoteEntryPage
+    _noteEntryPage = new NoteEntryPage
     {
         BindingContext = note
     }.CreateViewController();
-    noteEntryPage.Title = "Note Entry";
-    _navigation.PushViewController(noteEntryPage, true);
+    _noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(_noteEntryPage, true);
 }
 ```
 
 `NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`UIViewController`与`CreateViewController`扩展方法，并设置`Title`属性`UIViewController`。 `UIViewController`然后推送到`UINavigationController`通过`PushViewController`方法。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示类，如以下屏幕截图中所示：
 
-[![在 XAML 中定义的 Xamarin.iOS 应用程序使用一个用户界面的屏幕截图](native-forms-images/ios-noteentrypage.png "Xamarin.iOS 应用程序使用 XAML UI")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML 的 ui 的 Xamarin.iOS 应用程序")
+[使用 xaml Xamarin ios 应用中使用(native-forms-images/ios-noteentrypage.png "xaml ui") ![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图]](native-forms-images/ios-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`UIViewController`有关`NoteEntryPage`类派生`UINavigationController`，返回到用户`UIViewController`为`NotesPage`类。
 
-> [!WARNING]
-> Popping`UIViewController`从 iOS 本机导航堆栈并不会不会自动释放的`UIViewController`s。 它是以确保任何开发人员的责任`UIViewController`不再需要具有其`Dispose()`方法调用，否则`UIViewController`和附加`Page`将孤立和垃圾回收器将不会收集导致内存泄漏。
+> [!IMPORTANT]
+> 从 iOS 本机导航堆栈中弹出时, 不会自动`UIViewController`释放。 `UIViewController` 开发人员负责确保`UIViewController`不再需要的任何`Dispose`方法都调用了方法, 否则, 附加`Page`的将是孤立的`UIViewController` , 并且不会被垃圾回收器收集。导致内存泄露。
 
 ## <a name="android"></a>Android
 
@@ -164,7 +165,7 @@ public class MainActivity : AppCompatActivity
 - 对引用`MainActivity`类存储在`static``Instance`字段。 这是为了提供其他类来调用方法中定义的一种机制`MainActivity`类。
 - `Activity`内容设置从布局资源。 在示例应用程序，布局组成`LinearLayout`，其中包含`Toolbar`，和一个`FrameLayout`充当片段容器。
 - `Toolbar`检索并设置为在操作栏`Activity`，并设置操作栏标题。
-- `FolderPath`属性初始化为注意数据将存储位置的设备上的路径。
+- 将`FolderPath`属性初始化为设备上存储注释数据的路径。
 - `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`Fragment`使用`CreateSupportFragment`扩展方法。
 - `SupportFragmentManager`类创建并提交事务，用于替换`FrameLayout`实例与`Fragment`为`NotesPage`类。
 
@@ -172,9 +173,9 @@ public class MainActivity : AppCompatActivity
 
 一次`OnCreate`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![在 XAML 中定义的 Xamarin.Android 应用程序使用一个用户界面的屏幕截图](native-forms-images/android-notespage.png "Xamarin.Android 应用程序使用 XAML UI")](native-forms-images/android-notespage-large.png#lightbox "XAML 的 ui 的 Xamarin.Android 应用程序")
+[![使用 xaml xamarin 应用程序中定义的 Ui 的 Xamarin android 应用程序的屏幕截图](native-forms-images/android-notespage.png "") ](native-forms-images/android-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin Android 应用")
 
-交互用户界面，例如通过点击 **+** [ `Button` ](xref:Xamarin.Forms.Button)，将导致以下事件处理程序中`NotesPage`隐藏代码执行：
+与 UI 交互 (例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button)), 将导致`NotesPage`代码隐藏执行中的以下事件处理程序:
 
 ```csharp
 void OnNoteAddedClicked(object sender, EventArgs e)
@@ -202,11 +203,11 @@ public void NavigateToNoteEntryPage(Note note)
 
 `NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`Fragment`与`CreateSupportFragment`扩展方法，并将添加`Fragment`片段到后退堆栈。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示，如以下屏幕截图中所示：
 
-[![在 XAML 中定义的 Xamarin.Android 应用程序使用一个用户界面的屏幕截图](native-forms-images/android-noteentrypage.png "Xamarin.Android 应用程序使用 XAML UI")](native-forms-images/android-noteentrypage-large.png#lightbox "XAML 的 ui 的 Xamarin.Android 应用程序")
+[![使用 xaml xamarin 应用程序中定义的 Ui 的 Xamarin android 应用程序的屏幕截图](native-forms-images/android-noteentrypage.png "") ](native-forms-images/android-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin Android 应用")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`Fragment`有关`NoteEntryPage`片段 back 堆栈中，从已注册到用户`Fragment`为`NotesPage`类。
 
-### <a name="enable-back-navigation-support"></a>启用后退导航的支持
+### <a name="enable-back-navigation-support"></a>启用后退导航支持
 
 `SupportFragmentManager`类具有`BackStackChanged`片段 back 堆栈的内容发生更改时激发的事件。 `OnCreate`中的方法`MainActivity`类包含此事件的匿名事件处理程序：
 
@@ -284,14 +285,14 @@ public sealed partial class MainPage : Page
 
 - 为页上，启用缓存，以便新`MainPage`当用户导航回页不构造。
 - 对引用`MainPage`类存储在`static``Instance`字段。 这是为了提供其他类来调用方法中定义的一种机制`MainPage`类。
-- `FolderPath`属性初始化为注意数据将存储位置的设备上的路径。
+- 将`FolderPath`属性初始化为设备上存储注释数据的路径。
 - `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`FrameworkElement`使用`CreateFrameworkElement`扩展方法，然后将设置为的内容`MainPage`类。
 
 一次`MainPage`构造函数已执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![使用 Xamarin.Forms XAML 定义使用 UI 的 UWP 应用程序的屏幕截图](native-forms-images/uwp-notespage.png "UWP 应用使用 Xamarin.Forms XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "使用 Xamarin.Forms XAML UI 的 UWP 应用")
+[ ![UWP 应用程序的屏幕截图, 此应用程序使用由 xamarin]. forms xaml UWP 应用定义的 UI(native-forms-images/uwp-notespage.png "。窗体 xaml UI") ](native-forms-images/uwp-notespage-large.png#lightbox "具有 Xamarin. FORMS XAML UI 的 UWP 应用")
 
-交互用户界面，例如通过点击 **+** [ `Button` ](xref:Xamarin.Forms.Button)，将导致以下事件处理程序中`NotesPage`隐藏代码执行：
+与 UI 交互 (例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button)), 将导致`NotesPage`代码隐藏执行中的以下事件处理程序:
 
 ```csharp
 void OnNoteAddedClicked(object sender, EventArgs e)
@@ -314,11 +315,11 @@ public void NavigateToNoteEntryPage(Note note)
 
 通常使用执行 UWP 中的导航`Frame.Navigate`方法，它使用`Page`参数。 Xamarin.Forms 定义了`Frame.Navigate`扩展方法采用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页实例。 因此，当`NavigateToNoteEntryPage`执行方法时，在 Xamarin.Forms 中定义的 UI`NoteEntryPage`将显示，如以下屏幕截图中所示：
 
-[![使用 Xamarin.Forms XAML 定义使用 UI 的 UWP 应用程序的屏幕截图](native-forms-images/uwp-noteentrypage.png "UWP 应用使用 Xamarin.Forms XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "使用 Xamarin.Forms XAML UI 的 UWP 应用")
+[ ![UWP 应用程序的屏幕截图, 此应用程序使用由 xamarin]. forms xaml UWP 应用定义的 UI(native-forms-images/uwp-noteentrypage.png "。窗体 xaml UI") ](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有 Xamarin. FORMS XAML UI 的 UWP 应用")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`FrameworkElement`有关`NoteEntryPage`从应用程序内 back 堆栈中，返回到用户`FrameworkElement`为`NotesPage`类。
 
-### <a name="enable-back-navigation-support"></a>启用后退导航的支持
+### <a name="enable-back-navigation-support"></a>启用后退导航支持
 
 在 UWP 中，应用程序必须启用后退导航的所有硬件和软件后退按钮，在不同设备外观造型上。 这可以通过注册的事件处理程序来实现`BackRequested`事件，可以在中执行`OnLaunched`方法在本机`App`类：
 
@@ -353,9 +354,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-`OnBackRequested`事件处理程序调用`GoBack`方法的应用程序和设置在根框架`BackRequestedEventArgs.Handled`属性设置为`true`将该事件标记为已处理。 若要将事件标记为已处理的失败可能会导致在事件被忽略。
+`OnBackRequested`事件处理程序调用`GoBack`方法的应用程序和设置在根框架`BackRequestedEventArgs.Handled`属性设置为`true`将该事件标记为已处理。 如果无法将事件标记为 "已处理", 则可能导致事件被忽略。
 
-应用程序可以选择是否要显示的标题栏上的后退按钮。 这通过设置来实现`AppViewBackButtonVisibility`属性设置为其中一个`AppViewBackButtonVisibility`枚举值：
+该应用程序选择是否在标题栏上显示 "后退" 按钮。 这通过设置来实现`AppViewBackButtonVisibility`属性设置为其中一个`AppViewBackButtonVisibility`枚举值：
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)

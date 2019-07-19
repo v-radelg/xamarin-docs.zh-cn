@@ -44,11 +44,6 @@
           href: workbooks/workbook.md
         - name: 编辑器键盘快捷方式
           href: workbooks/keybindings.md
-        - name: 示例工作簿
-          href: workbooks/samples/index.md
-          items:
-            - name: TinyRenderer
-              href: workbooks/samples/tinyrenderer.md
         - name: 疑难解答
           href: workbooks/troubleshooting/index.md
           items:
