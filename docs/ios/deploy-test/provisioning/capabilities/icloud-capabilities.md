@@ -107,6 +107,6 @@ iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在�
 
 * 在应用中使用框架命名空间。
 * 将所需权利添加到应用。 有关所需权利以及添加方法的详细信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。 ****  ****  对“调试”和“iOS 模拟器”生成来说，这不是默认设置。 __  
+* 在应用的“ **iOS 捆绑包签名**”中，确保“ **自定义权利**”设置为“**Entitlements.plist**”。 对“调试”和“iOS 模拟器”生成来说，这不是默认设置。 __  
 
 如果遇到与应用服务有关的问题，请参考主要指南的[故障排除](~/ios/deploy-test/provisioning/capabilities/index.md)部分。
