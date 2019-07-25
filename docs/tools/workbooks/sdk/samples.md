@@ -24,7 +24,7 @@ ms.locfileid: "61424592"
 * 表示部分演示如何使用`RepresentationManager`来增强通过使用内置的表示形式呈现。
 * `Person`对象和其关联的 JavaScript 呈现器演示如何使用`ISerializableObject`而无需通过表示形式提供程序。
 
-另请参阅[SkiaSharp] [ skiasharp]的示例使用的现有集成[表示形式](~/tools/workbooks/sdk/representations.md)提供的 Xamarin Workbooks 来呈现它的类型。
+另请参阅[SkiaSharp][skiasharp]的示例使用的现有集成[表示形式](~/tools/workbooks/sdk/representations.md)提供的 Xamarin Workbooks 来呈现它的类型。
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks
