@@ -90,7 +90,7 @@ public class AppDelegate : UIApplicationDelegate
 
 一次`FinishedLaunching`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[使用 xaml Xamarin ios 应用中使用(native-forms-images/ios-notespage.png "xaml ui") ![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图]](native-forms-images/ios-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
+[![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图](native-forms-images/ios-notespage.png " 使用 xaml Xamarin ios 应用中使用 xaml ui")](native-forms-images/ios-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
 
 与 UI 交互 (例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button)), 将导致`NotesPage`代码隐藏执行中的以下事件处理程序:
 
@@ -117,7 +117,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 `NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`UIViewController`与`CreateViewController`扩展方法，并设置`Title`属性`UIViewController`。 `UIViewController`然后推送到`UINavigationController`通过`PushViewController`方法。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示类，如以下屏幕截图中所示：
 
-[使用 xaml Xamarin ios 应用中使用(native-forms-images/ios-noteentrypage.png "xaml ui") ![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图]](native-forms-images/ios-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
+[![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图](native-forms-images/ios-noteentrypage.png " 使用 xaml Xamarin ios 应用中使用 xaml ui")](native-forms-images/ios-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`UIViewController`有关`NoteEntryPage`类派生`UINavigationController`，返回到用户`UIViewController`为`NotesPage`类。
 
@@ -173,7 +173,7 @@ public class MainActivity : AppCompatActivity
 
 一次`OnCreate`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[![使用 xaml xamarin 应用程序中定义的 Ui 的 Xamarin android 应用程序的屏幕截图](native-forms-images/android-notespage.png "") ](native-forms-images/android-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin Android 应用")
+[![使用 xaml xamarin 应用程序中定义的 Ui 的 Xamarin android 应用程序的屏幕截图](native-forms-images/android-notespage.png "")](native-forms-images/android-notespage-large.png#lightbox "使用 XAML UI 的 Xamarin Android 应用")
 
 与 UI 交互 (例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button)), 将导致`NotesPage`代码隐藏执行中的以下事件处理程序:
 
@@ -203,7 +203,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 `NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`Fragment`与`CreateSupportFragment`扩展方法，并将添加`Fragment`片段到后退堆栈。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示，如以下屏幕截图中所示：
 
-[![使用 xaml xamarin 应用程序中定义的 Ui 的 Xamarin android 应用程序的屏幕截图](native-forms-images/android-noteentrypage.png "") ](native-forms-images/android-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin Android 应用")
+[![使用 xaml xamarin 应用程序中定义的 Ui 的 Xamarin android 应用程序的屏幕截图](native-forms-images/android-noteentrypage.png "")](native-forms-images/android-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin Android 应用")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`Fragment`有关`NoteEntryPage`片段 back 堆栈中，从已注册到用户`Fragment`为`NotesPage`类。
 
@@ -290,7 +290,7 @@ public sealed partial class MainPage : Page
 
 一次`MainPage`构造函数已执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
-[ ![UWP 应用程序的屏幕截图, 此应用程序使用由 xamarin]. forms xaml UWP 应用定义的 UI(native-forms-images/uwp-notespage.png "。窗体 xaml UI") ](native-forms-images/uwp-notespage-large.png#lightbox "具有 Xamarin. FORMS XAML UI 的 UWP 应用")
+[![UWP 应用程序的屏幕截图, 此应用程序使用由 xamarin](native-forms-images/uwp-notespage.png "forms xaml UWP 应用定义的 UI 窗体 xaml UI")](native-forms-images/uwp-notespage-large.png#lightbox "具有 Xamarin. FORMS XAML UI 的 UWP 应用")
 
 与 UI 交互 (例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button)), 将导致`NotesPage`代码隐藏执行中的以下事件处理程序:
 
@@ -315,7 +315,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 通常使用执行 UWP 中的导航`Frame.Navigate`方法，它使用`Page`参数。 Xamarin.Forms 定义了`Frame.Navigate`扩展方法采用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页实例。 因此，当`NavigateToNoteEntryPage`执行方法时，在 Xamarin.Forms 中定义的 UI`NoteEntryPage`将显示，如以下屏幕截图中所示：
 
-[ ![UWP 应用程序的屏幕截图, 此应用程序使用由 xamarin]. forms xaml UWP 应用定义的 UI(native-forms-images/uwp-noteentrypage.png "。窗体 xaml UI") ](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有 Xamarin. FORMS XAML UI 的 UWP 应用")
+[![UWP 应用程序的屏幕截图, 此应用程序使用由 xamarin](native-forms-images/uwp-noteentrypage.png "forms xaml UWP 应用定义的 UI 窗体 xaml UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有 Xamarin. FORMS XAML UI 的 UWP 应用")
 
 时`NoteEntryPage`点击后的显示箭头会弹出`FrameworkElement`有关`NoteEntryPage`从应用程序内 back 堆栈中，返回到用户`FrameworkElement`为`NotesPage`类。
 
