@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 0ed4d86054ada0918feccb123ac3a0de8ccf899b
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e80016e33e8bebba715be4f02060e76086884fc
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926715"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386194"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Pin/)
 
-本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。
+本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。 
 
 每个 Xamarin.Forms 视图都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序在 iOS 中呈现 [`Map`](xref:Xamarin.Forms.Maps.Map) 时，会实例化 `MapRenderer` 类，该类又会实例化本机 `MKMapView` 控件。 在 Android 平台上，`MapRenderer` 类实例化本机 `MapView` 控件。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 类实例化本机 `MapControl`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
@@ -112,7 +112,7 @@ public MapPage ()
     Position = new Position (37.79752, -122.40183),
     Label = "Xamarin San Francisco Office",
     Address = "394 Pacific Ave, San Francisco CA",
-    Id = "Xamarin",
+    MarkerId = "Xamarin",
     Url = "http://xamarin.com/about/"
   };
 
@@ -148,14 +148,14 @@ public MapPage ()
 
 ![](customized-pin-images/screenshots.png "每个平台上的 CustomMap")
 
-`MapRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义地图时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CustomMap` 实例的引用。
+`MapRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义地图时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CustomMap` 实例的引用。
 
 在每个特定于平台的呈现器类中，`OnElementChanged` 方法的替代版本可执行本机控件自定义。 可以通过 `Control` 属性访问平台上使用的对本机控件的类型化引用。 此外，可以通过 `Element` 属性获取正在呈现的 Xamarin.Forms 控件的引用。
 
 订阅 `OnElementChanged` 方法中的事件处理程序时必须小心，如以下代码示例所示：
 
 ```csharp
-protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
+protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.View> e)
 {
   base.OnElementChanged (e);
 
@@ -181,7 +181,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 ![](customized-pin-images/map-layout-ios.png "自定义前后的地图控件")
 
-在 iOS 上，图钉称为“注释”，可以是自定义映像，也可以是不同颜色的系统定义的图钉。 注释可以选择性地显示标注，以在用户选择注释时作出响应。 标注显示 `Pin` 实例的 `Label` 和 `Address` 属性，以及可选的左和右附件视图。 上面的屏幕截图中，左附件视图是猴子图像，而右附件视图是“信息”按钮。
+在 iOS 上，图钉称为“注释”，可以是自定义映像，也可以是不同颜色的系统定义的图钉  。 注释可以选择性地显示标注，以在用户选择注释时作出响应  。 标注显示 `Pin` 实例的 `Label` 和 `Address` 属性，以及可选的左和右附件视图。 上面的屏幕截图中，左附件视图是猴子图像，而右附件视图是“信息”按钮  。
 
 以下代码示例展示了适用于 iOS 平台的自定义呈现器：
 
@@ -254,14 +254,14 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
         throw new Exception("Custom pin not found");
     }
 
-    annotationView = mapView.DequeueReusableAnnotation(customPin.Id.ToString());
+    annotationView = mapView.DequeueReusableAnnotation(customPin.MarkerId.ToString());
     if (annotationView == null) {
-        annotationView = new CustomMKAnnotationView(annotation, customPin.Id.ToString());
+        annotationView = new CustomMKAnnotationView(annotation, customPin.MarkerId.ToString());
         annotationView.Image = UIImage.FromFile("pin.png");
         annotationView.CalloutOffset = new CGPoint(0, 0);
         annotationView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile("monkey.png"));
         annotationView.RightCalloutAccessoryView = UIButton.FromType(UIButtonType.DetailDisclosure);
-        ((CustomMKAnnotationView)annotationView).Id = customPin.Id.ToString();
+        ((CustomMKAnnotationView)annotationView).MarkerId = customPin.MarkerId.ToString();
         ((CustomMKAnnotationView)annotationView).Url = customPin.Url;
     }
     annotationView.CanShowCallout = true;
@@ -274,12 +274,12 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 
 1. 调用 `GetCustomPin` 方法以返回注释的自定义图钉数据。
 1. 为了节省内存，将集中注释视图，以重用对 [`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) 的调用。
-1. `CustomMKAnnotationView` 类使用 `Id` 和 `Url` 属性扩展 `MKAnnotationView` 类，这些属性对应 `CustomPin` 实例中相同的属性。 如果注释为 `null`，则创建 `CustomMKAnnotationView` 的新实例：
+1. `CustomMKAnnotationView` 类使用 `MarkerId` 和 `Url` 属性扩展 `MKAnnotationView` 类，这些属性对应 `CustomPin` 实例中相同的属性。 如果注释为 `null`，则创建 `CustomMKAnnotationView` 的新实例：
     - `CustomMKAnnotationView.Image` 属性设置为将表示地图上的注释的图像。
     - `CustomMKAnnotationView.CalloutOffset` 属性设置为 `CGPoint`，它指定在注释上方将标注居中。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` 属性设置为猴子图像，该图像将出现在注释标题和地址的左侧。
-    - `CustomMKAnnotationView.RightCalloutAccessoryView` 属性设置为“信息”按钮，其将出现在注释标题和地址的右侧。
-    - `CustomMKAnnotationView.Id` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Id` 属性。 这使得注释能被识别，以便需要时其[标注可以进一步自定义](#Selecting_the_Annotation)。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` 属性设置为“信息”按钮，其将出现在注释标题和地址的右侧  。
+    - `CustomMKAnnotationView.MarkerId` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.MarkerId` 属性。 这使得注释能被识别，以便需要时其[标注可以进一步自定义](#Selecting_the_Annotation)。
     - `CustomMKAnnotationView.Url` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Url` 属性。 用户[点击右标注附件视图中显示的按钮](#Tapping_on_the_Right_Callout_Accessory_View)时，将导航到该 URL。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) 属性设置为 `true`，以便点击注释时显示标注。
 1. 返回注释以在地图上显示。
@@ -296,7 +296,7 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
   var customView = e.View as CustomMKAnnotationView;
   customPinView = new UIView ();
 
-  if (customView.Id == "Xamarin") {
+  if (customView.MarkerId == "Xamarin") {
     customPinView.Frame = new CGRect (0, 0, 200, 84);
     var image = new UIImageView (new CGRect (0, 0, 200, 84));
     image.Image = UIImage.FromFile ("xamarin.png");
@@ -307,13 +307,13 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-如果所选注释将其 `Id` 属性设置为 `Xamarin`，则此方法通过将 `UIView` 实例添加到包含 Xamarin 徽标图像的现有标注，以扩展现有标注（其中包含左和右附件视图）。 这支持为不同的注释显示不同的标注。 `UIView` 实例会在现有标注上居中显示。
+如果所选注释将其 `MarkerId` 属性设置为 `Xamarin`，则此方法通过将 `UIView` 实例添加到包含 Xamarin 徽标图像的现有标注，以扩展现有标注（其中包含左和右附件视图）。 这支持为不同的注释显示不同的标注。 `UIView` 实例会在现有标注上居中显示。
 
 <a name="Tapping_on_the_Right_Callout_Accessory_View" />
 
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>点击右标注附件视图
 
-用户点击右标注附件视图中的“信息”按钮时，触发 `CalloutAccessoryControlTapped` 事件，该事件进而执行 `OnCalloutAccessoryControlTapped` 方法：
+用户点击右标注附件视图中的“信息”按钮时，触发 `CalloutAccessoryControlTapped` 事件，该事件进而执行 `OnCalloutAccessoryControlTapped` 方法  ：
 
 ```csharp
 void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -354,7 +354,7 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 
 ![](customized-pin-images/map-layout-android.png "自定义前后的地图控件")
 
-在 Android 上，图钉称为“标记”，可以是自定义图像，也可以是不同颜色的系统定义的标记。 标记可以显示信息窗口，在用户点击标记时作出响应。 信息窗口显示 `Pin` 实例的 `Label` 和 `Address` 属性，并可以通过自定义包含其他内容。 但是，一次只可以显示一个信息窗口。
+在 Android 上，图钉称为“标记”，可以是自定义图像，也可以是不同颜色的系统定义的标记  。 标记可以显示信息窗口，在用户点击标记时作出响应  。 信息窗口显示 `Pin` 实例的 `Label` 和 `Address` 属性，并可以通过自定义包含其他内容。 但是，一次只可以显示一个信息窗口。
 
 以下代码示例展示了适用于 Android 平台的自定义呈现器：
 
@@ -447,7 +447,7 @@ public Android.Views.View GetInfoContents (Marker marker)
       throw new Exception ("Custom pin not found");
     }
 
-    if (customPin.Id.ToString() == "Xamarin") {
+    if (customPin.MarkerId.ToString() == "Xamarin") {
       view = inflater.Inflate (Resource.Layout.XamarinMapInfoWindow, null);
     } else {
       view = inflater.Inflate (Resource.Layout.MapInfoWindow, null);
@@ -473,7 +473,7 @@ public Android.Views.View GetInfoContents (Marker marker)
 
 - 检索 `LayoutInflater` 实例。 这用于将布局 XML 文件实例化到其对应的 `View`。
 - 调用 `GetCustomPin` 方法以返回信息窗口的自定义图钉数据。
-- 如果 `CustomPin.Id` 属性等于 `Xamarin`，则放大 `XamarinMapInfoWindow` 布局。 否则，放大 `MapInfoWindow` 布局。 这支持为不同的标记显示不同的信息窗口布局。
+- 如果 `CustomPin.MarkerId` 属性等于 `Xamarin`，则放大 `XamarinMapInfoWindow` 布局。 否则，放大 `MapInfoWindow` 布局。 这支持为不同的标记显示不同的信息窗口布局。
 - 从放大的布局检索 `InfoWindowTitle` 和 `InfoWindowSubtitle` 资源，如果资源不是 `null`，则 `Text` 属性设置为 `Marker` 实例中的相应数据。
 - 返回 `View` 实例以便在地图上显示。
 
@@ -513,7 +513,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 ![](customized-pin-images/map-layout-uwp.png "自定义前后的地图控件")
 
-在 UWP 上，图钉称为“地图图标”，可以是自定义图像，也可以是系统定义的默认图像。 地图图标可以显示 `UserControl`，在用户点击地图图标时显示。 `UserControl` 可以显示任何内容，包括 `Pin` 实例的 `Label` 和 `Address` 属性。
+在 UWP 上，图钉称为“地图图标”，可以是自定义图像，也可以是系统定义的默认图像  。 地图图标可以显示 `UserControl`，在用户点击地图图标时显示。 `UserControl` 可以显示任何内容，包括 `Pin` 实例的 `Label` 和 `Address` 属性。
 
 以下代码示例显示 UWP 自定义呈现器：
 
@@ -601,7 +601,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
                 throw new Exception("Custom pin not found");
             }
 
-            if (customPin.Id.ToString() == "Xamarin")
+            if (customPin.MarkerId.ToString() == "Xamarin")
             {
                 if (mapOverlay == null)
                 {
@@ -640,7 +640,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 
 #### <a name="tapping-on-the-information-button"></a>点击“信息”按钮
 
-用户点击 `XamarinMapOverlay` 用户控件中的“信息”按钮时，触发 `Tapped` 事件，然后该事件执行 `OnInfoButtonTapped` 方法：
+用户点击 `XamarinMapOverlay` 用户控件中的“信息”按钮时，触发 `Tapped` 事件，然后该事件执行 `OnInfoButtonTapped` 方法  ：
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
@@ -652,11 +652,6 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 此方法打开 Web 浏览器并导航到 `CustomPin` 实例的 `Url` 属性中存储的地址。 请注意，地址是在 .NET Standard 库项目中创建 `CustomPin` 集合时定义的。
 
 有关自定义 `MapControl` 实例的详细信息，请参阅 MSDN 上的[地图和位置概述](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx)。
-
-## <a name="summary"></a>总结
-
-本文演示了如何为 `Map` 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。 Xamarin.Forms.Maps 提供跨平台抽象，用于显示在每个平台上使用本机地图 API 的地图，为用户提供快速且熟悉的地图体验。
-
 
 ## <a name="related-links"></a>相关链接
 
