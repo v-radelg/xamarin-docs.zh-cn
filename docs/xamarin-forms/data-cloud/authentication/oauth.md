@@ -1,5 +1,5 @@
 ---
-title: AuthenticateUsers 与标识提供程序
+title: 使用标识提供程序的 AuthenticateUsers
 description: 本文介绍如何使用 Xamarin.Auth 管理 Xamarin.Forms 应用程序中的身份验证过程。
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 294483e8b831aa085fc338eb05147ced1098c1c5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650404"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508251"
 ---
-# <a name="authenticate-users-with-an-identity-provider"></a>与标识提供程序的用户进行身份验证
+# <a name="authenticate-users-with-an-identity-provider"></a>使用标识提供者对用户进行身份验证
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
 
 _Xamarin.Auth 是用于对用户进行身份验证和存储其帐户的跨平台 SDK。它包括对使用 Google、 Microsoft、 Facebook 和 Twitter 等标识提供程序提供支持的 OAuth 身份验证器。本文介绍如何使用 Xamarin.Auth 管理 Xamarin.Forms 应用程序中的身份验证过程。_
 
@@ -171,7 +171,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 
 #### <a name="android"></a>Android
 
-在 Android 上，自定义的 URL 方案注册通过指定[ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)特性，可以在`Activity`，用于处理方案。 标识提供程序完成授权请求，它将重定向到应用程序的重定向 URL。 为 URL 使用自定义方案，这样可以在 Android 中启动应用程序，同时将 URL 传递作为启动参数，它由处理`OnCreate`方法的`Activity`注册用于处理自定义 URL 方案。 下面的代码示例显示了处理自定义 URL 方案的示例应用程序中的类：
+在 Android 上，自定义的 URL 方案注册通过指定[ `IntentFilter` ](xref:Android.App.IntentFilterAttribute)特性，可以在`Activity`，用于处理方案。 标识提供程序完成授权请求，它将重定向到应用程序的重定向 URL。 为 URL 使用自定义方案，这样可以在 Android 中启动应用程序，同时将 URL 传递作为启动参数，它由处理`OnCreate`方法的`Activity`注册用于处理自定义 URL 方案。 下面的代码示例显示了处理自定义 URL 方案的示例应用程序中的类：
 
 ```csharp
 [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop )]
@@ -197,7 +197,7 @@ public class CustomUrlSchemeInterceptorActivity : Activity
 }
 ```
 
-`DataSchemes`的属性[ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/)必须设置为在获取项目的 Android 客户端 id 的反向客户端标识符[Google API 控制台](http://console.developers.google.com)。
+`DataSchemes`的属性[ `IntentFilter` ](xref:Android.App.IntentFilterAttribute)必须设置为在获取项目的 Android 客户端 id 的反向客户端标识符[Google API 控制台](http://console.developers.google.com)。
 
 `OnCreate`方法将从接收到的 URL 转换`Android.Net.Url`到.NET `Uri`，然后再处理与重定向 URL`OnPageLoading`公共方法`OAuth2Authenticator`对象。 这将导致 Xamarin.Auth 关闭 web 浏览器选项卡上，并将收到的 OAuth 数据分析。
 

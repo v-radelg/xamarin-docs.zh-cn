@@ -1,31 +1,31 @@
 ---
-title: Spinner
+title: Xamarin Android 微调框
 ms.prod: xamarin
 ms.assetid: 004089E9-7C1D-2285-765A-B69143091F2A
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 90b4755cdb4b8248c2b731d070d720076d4dda40
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2c7f0de2347e614b8c24de32bf3f88362a212a94
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946005"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510411"
 ---
-# <a name="spinner"></a>Spinner
+# <a name="xamarinandroid-spinner"></a>Xamarin Android 微调框
 
-[`Spinner`](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 是一个小组件，提供了用于选择项的下拉列表。 本指南介绍如何创建简单的应用程序中微调控件，显示与所选的选择相关联的其他值的修改后跟显示选项列表。
+[`Spinner`](xref:Android.Widget.Spinner)是一个小组件, 用于显示用于选择项目的下拉列表。 本指南说明如何创建一个简单的应用程序, 该应用程序在微调框中显示选项列表, 然后是用于显示与所选选择关联的其他值的修改。
 
-## <a name="basic-spinner"></a>基本的微调框
+## <a name="basic-spinner"></a>基本微调框
 
-在本教程的第一部分，你将创建一个简单的微调控件小组件，显示行星的列表。 选中一颗后的 toast 消息显示所选的项：
+在本教程的第一部分中, 你将创建一个简单的微调小组件, 用于显示行星列表。 选择了地球后, toast 消息会显示所选项目:
 
-[![HelloSpinner 应用的示例屏幕快照](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[![HelloSpinner 应用的示例屏幕截图](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
-启动一个名为的新项目**HelloSpinner**。
+启动名为**HelloSpinner**的新项目。
 
-打开**Resources/Layout/Main.axml**并插入以下 XML:
+打开**Resources/Layout/main.axml**并插入以下 XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,9 +49,9 @@ ms.locfileid: "60946005"
 </LinearLayout>
 ```
 
-请注意， [ `TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/)的`android:text`属性并[ `Spinner`](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)的`android:prompt`属性这两个引用相同的字符串资源。 此文本表现为小组件的标题。 当应用于[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)，会在选择小组件后，会显示的选择对话框中显示的标题文本。
+请注意, [`TextView`](xref:Android.Widget.TextView) `android:text`的属性[`Spinner`](xref:Android.Widget.Spinner)和`android:prompt`的属性都引用相同的字符串资源。 此文本将表现为小组件的标题。 当应用于[`Spinner`](xref:Android.Widget.Spinner)时, 标题文本将显示在选择小组件时显示的选择对话框中。
 
-编辑**Resources/Values/Strings.xml**和修改该文件应如下所示：
+编辑**资源/值/字符串 .xml** , 并修改该文件, 如下所示:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,17 +71,16 @@ ms.locfileid: "60946005"
 </resources>
 ```
 
-第二个`<string>`元素定义引用的标题字符串[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)并[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)上述布局中。
-`<string-array>`元素定义将显示为列表中的字符串的列表[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)小组件。
+第二`<string>`个元素定义[`TextView`](xref:Android.Widget.TextView)和[`Spinner`](xref:Android.Widget.Spinner)在上面的布局中引用的标题字符串。
+元素定义将显示为[`Spinner`](xref:Android.Widget.Spinner)小组件中的列表的字符串列表。 `<string-array>`
 
-现在，打开**MainActivity.cs**并添加以下`using`语句：
+现在, 打开**MainActivity.cs**并添加以下`using`语句:
 
 ```csharp
 using System;
 ```
 
-接下来，插入以下代码 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
-方法：
+接下来, 为的[`OnCreate()`](xref:Android.App.Activity.OnCreate*)方法插入以下代码:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -102,13 +101,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-之后`Main.axml`布局设置为内容视图中， [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)小组件捕获从与布局[ `FindViewById<>(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/)。
-的 [`CreateFromResource()`](https://developer.xamarin.com/api/member/Android.Widget.ArrayAdapter.CreateFromResource/p/Android.Content.Context/System.Int32/System.Int32/)
-方法然后创建一个新[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)，其中将每个项的字符串数组中绑定到的初始外观[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) （这是每个项中选择时旋转图标的显示方式）. `Resource.Array.planets_array` ID 引用`string-array`上面定义和`Android.Resource.Layout.SimpleSpinnerItem`ID 引用由平台定义的标准的微调控件外观的布局。
-[`SetDropDownViewResource`](https://developer.xamarin.com/api/member/Android.Widget.ArrayAdapter.SetDropDownViewResource/p/System.Int32/)
-调用以打开小组件时定义的每个项的外观。 最后， [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)设置，使关联的所有与项[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)通过设置[ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter)属性。
+布局设置为内容视图后[`Spinner`](xref:Android.Widget.Spinner) , 将从布局中[`FindViewById<>(int)`](xref:Android.App.Activity.FindViewById*)捕获小组件。 `Main.axml`
+此[`CreateFromResource()`](xref:Android.Widget.ArrayAdapter.CreateFromResource*)
+然后, 方法会创建[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)一个新的, 它将字符串数组中的每一项绑定到[`Spinner`](xref:Android.Widget.Spinner)的初始外观 (这是每个项在选择时在微调框中的显示方式)。 Id 引用上面定义`string-array`的, 并且`Android.Resource.Layout.SimpleSpinnerItem` id 引用了平台定义的标准微调框的布局。 `Resource.Array.planets_array`
+[`SetDropDownViewResource`](xref:Android.Widget.ArrayAdapter.SetDropDownViewResource*)
+调用以定义打开小组件时每个项的外观。 最后, [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) [`Spinner`](xref:Android.Widget.Spinner)通过设置[`Adapter`](xref:Android.Widget.ArrayAdapter)属性, 将设置为将其所有项与相关联。
 
-现在提供 notifys 应用程序中选择了某个项时的回调方法[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)。 下面是此方法应如下所示：
+现在提供一个回调方法, 该方法在从中[`Spinner`](xref:Android.Widget.Spinner)选择某项时 notifys 该应用程序。 此方法应如下所示:
 
 ```csharp
 private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
@@ -119,32 +118,32 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 }
 ```
 
-当选中某个项时，发件人被强制转换为[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) ，以便可以访问项。 使用`Position`上的属性`ItemEventArgs`，可以找出所选对象的文本并使用它来显示[ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)。
+选择项后, 会将发送方强制转换为[`Spinner`](xref:Android.Widget.Spinner) , 以便可以访问项。 使用上的`Position`属性[`Toast`](xref:Android.Widget.Toast), 可以找出所选对象的文本, 并使用它来显示。 `ItemEventArgs`
 
-运行该应用程序;它应如下所示：
+运行应用程序;其外观应如下所示:
 
-[![使用 Mars 选定为地球旋转图标的屏幕截图示例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
+[![将 Mars 选为地球的微调框示例](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
-## <a name="spinner-using-keyvalue-pairs"></a>使用键/值对的微调框
+## <a name="spinner-using-keyvalue-pairs"></a>使用键/值对进行微调
 
-通常很有必要将使用`Spinner`以显示与某种类型的应用使用的数据相关联的密钥值。 因为`Spinner`不起作用，你必须直接与键/值对单独存储键/值对，填充`Spinner`与密钥值，然后使用在旋转图标中的所选密钥位置中查找关联的数据值。 
+通常, 必须使用`Spinner`来显示与应用使用的某种数据相关联的键值。 由于`Spinner`不能直接使用键/值对, 因此必须单独存储键/值对, `Spinner`用键值填充, 然后使用微调框中所选键的位置查找关联的数据值。 
 
-在以下步骤中， **HelloSpinner**应用修改为显示所选的地球平均温度：
+在以下步骤中, 将修改**HelloSpinner**应用以显示所选行星的平均温度:
 
-添加以下`using`语句**MainActivity.cs**:
+将以下`using`语句添加到**MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
 ```
 
-添加以下实例变量`MainActivity`类。
-此列表将包含键/值对的行星和其平均温度：
+将以下实例变量添加到`MainActivity`类。
+此列表将保存行星的键/值对及其平均温度:
 
 ```csharp
 private List<KeyValuePair<string, string>> planets;
 ```
 
-在中`OnCreate`方法中，添加以下代码之前`adapter`声明：
+在方法中, 在声明之前`adapter`添加以下代码: `OnCreate`
 
 ```csharp
 planets = new List<KeyValuePair<string, string>>
@@ -160,9 +159,9 @@ planets = new List<KeyValuePair<string, string>>
 };
 ```
 
-此代码创建简单的存储的行星和其关联的平均温度。 （在实际应用中，数据库通常用于存储密钥和其关联的数据。）
+此代码会创建一个简单的行星商店, 并为其关联的平均温度。 (在实际应用中, 数据库通常用于存储密钥及其关联的数据。)
 
-上述代码中后立即, 添加以下行，以提取密钥，并将它们放入列表 （按顺序）：
+紧跟在上述代码后面, 添加以下行以提取关键字并将其放入列表中 (按顺序):
 
 ```csharp
 List<string> planetNames = new List<string>();
@@ -170,14 +169,14 @@ foreach (var item in planets)
     planetNames.Add (item.Key);
 ```
 
-传递到此列表`ArrayAdapter`构造函数 (而不是`planets_array`资源):
+将此列表传递到`ArrayAdapter`构造函数 (而不`planets_array`是资源):
 
 ```csharp
 var adapter = new ArrayAdapter<string>(this,
     Android.Resource.Layout.SimpleSpinnerItem, planetNames);
 ```
 
-修改`spinner_ItemSelected`，以便使用所选的位置以查找与所选的全球关联的值 （温度）：
+修改`spinner_ItemSelected` , 以便使用所选位置查找与所选行星关联的值 (温度):
 
 ```csharp
 private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -189,17 +188,15 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 }
 ```
 
-运行该应用程序;toast 应如下所示：
+运行应用程序;toast 应如下所示:
 
-[![全球选择显示温度的示例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
-   
-  
+[![显示温度的行星选择的示例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
 
 ## <a name="resources"></a>资源
 
--   [`Resource.Layout`](https://developer.xamarin.com/api/type/Android.Resource+Layout/) 
--   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) 
--   [`Spinner`](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 
+- [`Resource.Layout`](xref:Android.Resource.Layout)
+- [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+- [`Spinner`](xref:Android.Widget.Spinner)
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/).
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。

@@ -1,31 +1,27 @@
 ---
-title: 使用数据填充 ListView
+title: 使用数据填充 Xamarin ListView ListView
 ms.prod: xamarin
 ms.assetid: AC4F95C8-EC3F-D960-7D44-8D55D0E4F1B6
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: f3162c4da092048cd409f7b32438bc85dcedff19
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: dff2efe687fde16903df19fefad2e2589c888086
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740815"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510105"
 ---
-# <a name="populating-a-listview-with-data"></a>使用数据填充 ListView
+# <a name="populating-a-xamarinandroid-listview-with-data"></a>使用数据填充 Xamarin ListView ListView
 
+若要向中添加`ListView`行, 需要将行添加到布局, 并`IListAdapter`使用`ListView`调用来填充自己的方法来实现。 Android 包含无需定义`ListActivity`任何`ArrayAdapter`自定义布局 XML 或代码即可使用的内置和类。 类会自动`ListView`创建, 并公开一个`ListAdapter`属性, 以便通过适配器提供要显示的行视图。 `ListActivity`
 
-## <a name="overview"></a>概述
-
-若要将行添加到`ListView`你需要将其添加到你的布局和实现`IListAdapter`方法的`ListView`调用来填充本身。 Android 包括内置`ListActivity`和`ArrayAdapter`可以不定义任何自定义布局 XML 或代码的情况下使用的类。 `ListActivity`类会自动创建`ListView`，并公开`ListAdapter`提供行视图以显示通过适配器的属性。
-
-内置适配器采用视图资源 ID 作为参数，获取用于每个行。 你可以使用内置的资源，如中`Android.Resource.Layout`以便您无需编写您自己。
-
+内置适配器采用视图资源 ID 作为参数, 用于每行。 你可以使用中的内置资源 (如中`Android.Resource.Layout`的资源), 而无需编写你自己的资源。
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>使用 ListActivity 和 ArrayAdapter&lt;字符串&gt;
 
-该示例**BasicTable/HomeScreen.cs**演示了如何使用这些类以显示`ListView`中只有少量的代码行：
+示例**BasicTable/HomeScreen**演示如何使用这些类只`ListView`在几行代码中显示:
 
 ```csharp
 [Activity(Label = "BasicTable", MainLauncher = true, Icon = "@drawable/icon")]
@@ -44,7 +40,7 @@ public class HomeScreen : ListActivity {
 
 ### <a name="handling-row-clicks"></a>处理行单击
 
-通常`ListView`还使用户有机会接触的行执行某些操作 （如播放一首歌曲，或调用一个联系人，或显示另一个屏幕）。 以响应用户收尾工作了需要有一个更多方法中实现`ListActivity` &ndash; `OnListItemClick` &ndash;如下所示：
+通常情况下, 还会允许用户触摸一行来执行某些操作(例如播放歌曲,或调用联系人或显示其他屏幕)。`ListView` 若要对用户进行响应, 需要在中实现另一个方法, `ListActivity`如下所&ndash; `OnListItemClick` &ndash;示:
 
 [![SimpleListItem 的屏幕截图](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
@@ -56,26 +52,26 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 }
 ```
 
-现在，用户可以触摸行和`Toast`将会出现警告：
+现在用户可以触摸一行, 此时将显示`Toast`一个警报:
 
-[![屏幕截图的 toast 通知时访问某行时显示](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
+[![触摸行时显示的 Toast 的屏幕截图](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
 
 ## <a name="implementing-a-listadapter"></a>实现 ListAdapter
 
-`ArrayAdapter<string>` 非常适合它很简单，但由于严格限制。 但是，通常情况下，有一系列业务实体，而不是只是想要绑定的字符串。
-例如，如果你的数据包含的员工类的集合，您可能想要只显示每个雇员的名称的列表。 若要自定义的行为`ListView`来控制显示的数据必须实现的子类`BaseAdapter`重写的以下四个项目：
+`ArrayAdapter<string>`非常简单, 因为它很简单, 但非常有限。 不过, 通常会有一系列业务实体, 而不只是要绑定的字符串。
+例如, 如果您的数据包含 Employee 类的集合, 则您可能希望该列表只显示每个雇员的姓名。 若要自定义的行为`ListView`来控制要显示的数据, 您必须实现一个`BaseAdapter`子类来重写以下四项:
 
--   **计数**&ndash;告诉该控件的数据中有多少行。
+-   **计数**&ndash;通知控件数据中的行数。
 
--   **GetView** &ndash;返回每个行，一个视图填充数据。
-    此方法具有一个参数为`ListView`以便重复使用现有的未使用的行中传递。
+-   **GetView**&ndash;为每行返回一个视图, 并用数据填充。
+    此方法有一个参数, 该`ListView`参数用于传入未使用的现有行以供重用。
 
--   **GetItemId** &ndash;返回的行标识符 （通常行数字，但也可以是任何您喜欢的长整型值）。
+-   **GetItemId**&ndash;返回行标识符 (通常为行号, 尽管它可以是你喜欢的任意 long 值)。
 
--   **此 [int]** 索引器&ndash;以返回与特定行号关联的数据。
+-   **此 [int]** 索引&ndash;器返回与特定行号关联的数据。
 
-中的示例代码**BasicTableAdapter/HomeScreenAdapter.cs**演示了如何创建子类`BaseAdapter`:
+**BasicTableAdapter/HomeScreenAdapter**中的示例代码演示如何为子类`BaseAdapter`:
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<string> {
@@ -109,20 +105,20 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 
 ### <a name="using-a-custom-adapter"></a>使用自定义适配器
 
-使用自定义适配器是类似于内置`ArrayAdapter`，并传入`context`和`string[]`要显示的值：
+使用自定义适配器与内置`ArrayAdapter`类似, `context`并传入和`string[]`值以显示:
 
 ```csharp
 ListAdapter = new HomeScreenAdapter(this, items);
 ```
 
-因为此示例使用相同的行布局 (`SimpleListItem1`) 生成的应用程序看起来与前面的示例相同。
+因为此示例使用相同的行布局 (`SimpleListItem1`), 所以, 生成的应用程序将与前面的示例类似。
 
 
-### <a name="row-view-re-use"></a>重复使用行视图
+### <a name="row-view-re-use"></a>行视图重复使用
 
-在此示例中有仅六个项。 由于屏幕可容纳八个，因此没有行重复使用必需。 在显示时数百或数千个行，但是，它是在浪费的内存来创建数百或数千个`View`对象时仅包括八种每次都适合在屏幕上。 若要避免这种情况下，行从其视图放到队列中以重复使用的屏幕上消失时。 当用户滚动时，`ListView`调用`GetView`若要请求显示新视图&ndash;如果可用它将传递中的未使用的视图`convertView`参数。 如果此值为 null，则你的代码应创建新的视图实例，否则为可以重新设置该对象的属性并重新使用它。
+在此示例中, 只有六个项。 由于屏幕可以容纳8个, 因此不需要任何行重复使用。 但是, 在显示几百行或数千行时, 如果一次只在屏幕上显示八个或数千`View`个对象, 则可能会浪费内存。 若要避免这种情况, 当行从屏幕上消失时, 其视图将放置在队列中供重复使用。 当用户滚动时, 将`ListView`调用`GetView`以请求显示&ndash;新视图 (如果`convertView`可用) 通过参数传递未使用的视图。 如果此值为 null, 你的代码应创建新的视图实例, 否则你可以重新设置该对象的属性并重新使用它。
 
-`GetView`方法应遵循此模式重复使用行视图：
+`GetView`方法应遵循此模式以重复使用行视图:
 
 ```csharp
 public override View GetView(int position, View convertView, ViewGroup parent)
@@ -137,40 +133,40 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-自定义适配器实现应该*始终*重复使用`convertView`对象之前创建新视图，以确保它们不会运行内存不足时显示较长的列表。
+自定义适配器实现应*始终*在创建新`convertView`视图之前重复使用对象, 以确保它们在显示长列表时不会用尽内存。
 
-某些适配器实现 (如`CursorAdapter`) 没有`GetView`方法，而不是它们需要两种不同方法`NewView`并`BindView`其中强制执行重复使用行分隔的职责`GetView`为两个方法。 没有`CursorAdapter`文档后面的示例。
+某些`CursorAdapter`适配器实现 (如) 没有`GetView`方法, 而是`BindView`需要使用两种不同的方法`NewView` , 从而强制执行行重用, 方法是将的`GetView`责任划分为两个方法. 文档的后面`CursorAdapter`有一个示例。
 
 
 ## <a name="enabling-fast-scrolling"></a>启用快速滚动
 
-快速滚动可帮助用户通过提供的其他句柄，它就像直接访问列表的一部分的滚动条来滚动查看较长的列表。 此屏幕截图显示了快速滚动句柄：
+快速滚动可提供一个额外的 "句柄" 来帮助用户滚动长列表, 以直接访问列表的一部分。 此屏幕截图显示快速滚动手柄:
 
-[![与滚动句柄快速滚动的屏幕截图](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
+[![使用滚动图柄快速滚动的屏幕截图](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
-导致要显示的快速滚动句柄就像设置一样简单`FastScrollEnabled`属性设置为`true`:
+使快速滚动图柄显示起来非常简单, 只需要将`FastScrollEnabled`属性设置`true`为:
 
 ```csharp
 ListView.FastScrollEnabled = true;
 ```
 
 
-### <a name="adding-a-section-index"></a>添加部分索引
+### <a name="adding-a-section-index"></a>添加节索引
 
-部分索引为用户提供其他反馈，当它们是快速滚动浏览一长串&ndash;显示他们已滚动到哪些 section。 若要使其显示适配器子类必须实现的部分索引`ISectionIndexer`接口提供具体取决于所显示的行索引文本：
+节索引在用户通过长列表&ndash;快速滚动时为用户提供其他反馈, 其中显示了他们滚动到的 "部分"。 若要使节索引显示, 适配器子类必须实现`ISectionIndexer`接口, 以便根据要显示的行来提供索引文本:
 
-[![屏幕截图的 H H 开头的部分上方显示](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
+[![以 H 开头的第一节中显示的 H 的屏幕截图](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
-若要实现`ISectionIndexer`需要三个方法添加到适配器：
+若要`ISectionIndexer`实现, 需要将三个方法添加到适配器:
 
--   **GetSections** &ndash;提供索引可能会显示的标题部分的完整列表。 此方法需要 Java 对象的数组，因此该代码需要创建`Java.Lang.Object[]`从.NET 集合。 在本示例中它将返回一组在列表中的初始字符`Java.Lang.String`。
+-   **GetSections**&ndash;提供可以显示的节索引标题的完整列表。 此方法需要 Java 对象的数组, 因此代码需要`Java.Lang.Object[]`从 .net 集合创建。 在本示例中, 它将列表中的初始字符列表返回为`Java.Lang.String` 。
 
--   **GetPositionForSection** &ndash;返回给定的部分索引的第一个行位置。
+-   **GetPositionForSection**&ndash;返回给定节索引的第一个行位置。
 
--   **GetSectionForPosition** &ndash;返回部分索引，要为某一给定行显示。
+-   **GetSectionForPosition**&ndash;返回要为给定行显示的节索引。
 
 
-该示例`SectionIndex/HomeScreenAdapter.cs`文件的构造函数中实现这些方法和一些附加代码。 构造函数生成的节索引循环通过每个行并提取的标题 （项必须已进行排序为实现此目的） 的第一个字符。
+示例`SectionIndex/HomeScreenAdapter.cs`文件实现了这些方法, 并在构造函数中实现了一些其他代码。 构造函数通过循环遍历每一行并提取标题的第一个字符来生成节索引 (必须已对项进行排序才能使其正常工作)。
 
 ```csharp
 alphaIndex = new Dictionary<string, int>();
@@ -189,7 +185,7 @@ for (int i = 0; i < sections.Length; i++) {
 }
 ```
 
-使用创建的数据结构`ISectionIndexer`方法都是非常简单：
+创建数据结构后, `ISectionIndexer`方法非常简单:
 
 ```csharp
 public Java.Lang.Object[] GetSections()
@@ -215,13 +211,13 @@ public int GetSectionForPosition(int position)
 }
 ```
 
-在部分索引标题不需要将 1 对 1 映射到实际部分。 这就是为什么`GetPositionForSection`方法存在。
-`GetPositionForSection` 使你有机会将映射到任何部分都是在列表视图中的索引列表中的任何索引。 例如，您可能必须在索引中的"z"，但你可能不具有用于每个字母的表节，因此可能会映射到而不是"z"映射到 26，25 或 24，或其他任何部分索引"z"应映射到。
+部分索引标题不需要将1:1 映射到实际部分。 这就是此`GetPositionForSection`方法的原因。
+`GetPositionForSection`使您有机会将索引列表中的任何索引映射到列表视图中的任何部分。 例如, 在索引中可能有一个 "z", 但对于每个字母, 可能没有表节, 因此, 它可能会映射到25或 24, 或者应映射到的任何节索引 "z"。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [BasicTableAdapter （示例）](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [FastScroll （示例）](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [BasicTableAndroid (示例)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
+- [BasicTableAdapter (示例)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
+- [FastScroll (示例)](https://developer.xamarin.com/samples/monodroid/FastScroll/)

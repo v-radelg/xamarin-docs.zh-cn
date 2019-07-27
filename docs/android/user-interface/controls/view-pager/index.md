@@ -1,89 +1,89 @@
 ---
 title: ViewPager
-description: ViewPager 是使您可以实现动作导航的布局管理器。 动作导航允许用户轻扫，左侧和右侧到单步执行的数据页。 本指南介绍如何实现动作导航使用 ViewPager，使用和不使用片段。 它还介绍了如何添加使用 PagerTitleStrip 和 PagerTabStrip 页指示符。
+description: ViewPager 是一个布局管理器, 可用于实现 gestural 导航。 Gestural 导航允许用户向左和向右轻扫以逐步浏览数据页。 本指南说明如何通过 ViewPager 实现 gestural 导航, 其中和不包含片段。 还介绍了如何使用 PagerTitleStrip 和 PagerTabStrip 添加页指示器。
 ms.prod: xamarin
 ms.assetid: D42896C0-DE7C-4818-B171-CB2D5E5DD46A
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: bb9795eb1e77a48b01556c553ae19613d6ab6de6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0535dc5d2abcfa1587b8101d7a4e382782efb8ca
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267575"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510195"
 ---
 # <a name="viewpager"></a>ViewPager
 
-_ViewPager 是使您可以实现动作导航的布局管理器。动作导航允许用户轻扫，左侧和右侧到单步执行的数据页。本指南介绍如何实现动作导航使用 ViewPager，使用和不使用片段。它还介绍了如何添加使用 PagerTitleStrip 和 PagerTabStrip 页指示符。_
+_ViewPager 是一个布局管理器, 可用于实现 gestural 导航。Gestural 导航允许用户向左和向右轻扫以逐步浏览数据页。本指南说明如何通过 ViewPager 实现 gestural 导航, 其中和不包含片段。还介绍了如何使用 PagerTitleStrip 和 PagerTabStrip 添加页指示器。_
 
  
 ## <a name="overview"></a>概述
 
-应用程序开发中的常见方案是需要向用户提供动作同级视图之间导航。 在此方法中，在用户轻扫左或向右访问页的内容 （例如，在安装向导或幻灯片放映）。 可以使用来创建这些轻扫视图`ViewPager`小组件中可用[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)。 `ViewPager`是布局小组件的多个子视图组成，其中每个子视图构成布局中的页： 
+应用开发中的一种常见情况是, 需要在同级视图之间向用户提供 gestural 导航。 在此方法中, 用户 swipes 向左或向右访问内容页 (例如, 在安装向导或幻灯片放映中)。 可以通过使用`ViewPager` [Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)中提供的小组件来创建这些轻扫视图。 `ViewPager`是由多个子视图组成的布局小组件, 其中的每个子视图都在布局中构成页面: 
 
-[![使用水平轻扫示例的屏幕截图的 TreePager 应用程序](images/01-intro-sml.png)](images/01-intro.png#lightbox)
+[![带有横向刷卡器的 TreePager 应用程序的屏幕截图示例](images/01-intro-sml.png)](images/01-intro.png#lightbox)
 
-通常情况下，`ViewPager`结合使用[片段](https://developer.xamarin.com/guides/android/platform_features/fragments/); 但是，某些情况下，可能想要使用`ViewPager`而无需增加的复杂性`Fragment`s。
+通常, `ViewPager`与[片段](~/android/platform/fragments/index.md)结合使用; 但是, 在某些情况下, 你可能希望在不增加的`ViewPager`复杂性的`Fragment`情况下使用。
 
-`ViewPager` 使用适配器模式为其提供要显示的视图。 此处使用的适配器不从概念上讲类似于由[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) &ndash;提供的实现`PagerAdapter`生成页面的`ViewPager`向用户显示。 通过显示的页`ViewPager`可以是`View`s 或`Fragment`s。 当`View`显示，适配器子类 Android 的`PagerAdapter`基类。 如果`Fragment`显示，适配器子类 Android 的`FragmentPagerAdapter`。 Android 支持库还包括`FragmentPagerAdapter`(的子类`PagerAdapter`) 来帮助进行连接的详细信息`Fragment`的数据。 
+`ViewPager`使用适配器模式向其提供要显示的视图。 此处使用的适配器在概念上类似于[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) &ndash; `PagerAdapter`使用的适配器, 用于生成向用户`ViewPager`显示的页面。 显示的`ViewPager`页可以是`View`或`Fragment`。 显示`View`时, 适配器会将 Android 的`PagerAdapter`基类作为子类。 如果`Fragment`显示了, 则适配器会将`FragmentPagerAdapter`Android 作为子类。 Android 支持库还包括`FragmentPagerAdapter` (的`PagerAdapter`子类), 有助于详细了解如何将与数据连接`Fragment`。 
 
-本指南演示了这两种方法： 
+本指南演示了这两种方法: 
 
--   在[视图的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-views.md)即[TreePager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)开发出应用程序来演示如何使用`ViewPager`显示树目录 （落叶和长期有效树的图像库） 的视图。 
-    `PagerTabStrip`  和`PagerTitleStrip`用于显示帮助页面导航的标题。
+-   在[Viewpager 的视图](~/android/user-interface/controls/view-pager/viewpager-and-views.md)中, 开发了[TreePager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)应用, 以演示如何使用`ViewPager`来显示树目录 (落叶和长时间树的图像库) 的视图。 
+    `PagerTabStrip`和`PagerTitleStrip`用于显示可帮助进行页面导航的标题。
 
--   在中[片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)，稍微复杂[FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)开发出应用程序来演示如何使用`ViewPager`与`Fragment`s 构建的应用程序带来了作为数学问题闪存卡，并响应用户输入。 
+-   在[包含片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 开发稍微复杂的[FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)应用程序, 以演示如何`ViewPager`使用`Fragment`来构建一个应用程序, 该应用程序将数学问题呈现为闪存卡并响应用户输入。 
 
 
 ## <a name="requirements"></a>要求
 
-若要使用`ViewPager`在应用程序项目中，必须安装[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)包。 有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
+若要`ViewPager`在你的应用项目中使用, 你必须安装[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)包。 有关安装 NuGet 包的详细信息, 请[参阅演练:在项目](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)中包括 NuGet。 
 
  
 ## <a name="architecture"></a>体系结构
 
-用于三个组件实现使用动作导航`ViewPager`:
+使用以下三个组件实现 gestural 导航`ViewPager`:
 
 -   ViewPager
 -   适配器
--   页导航指示器
+-   寻呼指示器
 
-下面概述了每个组件。
+下面总结了其中的每个组件。
 
 
 
 ### <a name="viewpager"></a>ViewPager
 
-`ViewPager` 是显示的集合的布局管理器`View`s 一次。 其工作是检测用户的轻扫手势，并导航到相应的下一步或上一个视图。 例如，下面的屏幕截图演示了`ViewPager`以响应用户手势进行到下一个图像中的转换： 
+`ViewPager`是一个布局管理器, 每次显示`View`一个集合。 其工作是检测用户的轻扫手势, 并根据需要导航到下一个或上一个视图。 例如, 下面的屏幕截图演示了`ViewPager`如何在响应用户笔势时从一个图像过渡到下一个图像: 
 
-[![显示视图之间的转换 TreePager 特写应用](images/02-transition-sml.png)](images/02-transition.png#lightbox)
+[![显示视图之间过渡的 TreePager 应用的特写](images/02-transition-sml.png)](images/02-transition.png#lightbox)
 
 
 ### <a name="adapter"></a>适配器
 
-`ViewPager` 从其数据中提取*适配器*。 适配器的作业将创建`View`情况下显示的 s `ViewPager`，根据需要提供它们。 下图阐释了这一概念&ndash;适配器创建并填充`View`s，并提供到`ViewPager`。 作为`ViewPager`检测到用户的轻扫手势，它会要求提供相应的适配器`View`显示： 
+`ViewPager`从*适配器*提取其数据。 适配器的作业是创建`View`显示`ViewPager`的, 并根据需要提供它们。 下图说明了适配器创建&ndash;和填充`View`的这一概念`ViewPager`, 并将其提供给。 当检测到用户的轻扫手势时, 它会要求适配器提供相应`View`的来显示: `ViewPager` 
 
-[![说明如何在适配器连接图像和名称到 ViewPager 的关系图](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
+[![说明适配器如何将图像和名称连接到 ViewPager 的关系图](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
 
-在此特定示例中，每个`View`之前将它传递到构造从树图像和树名称`ViewPager`。 
+在此特定示例中, `View`每个都是从树映像和树名称构造的, 然后将其`ViewPager`传递到。 
 
 
 
-### <a name="pager-indicator"></a>页导航指示器
+### <a name="pager-indicator"></a>寻呼指示器
 
-`ViewPager` 用于显示大型数据集 （例如，图像库可能包含数百个图像）。 若要帮助用户导航大型数据集，`ViewPager`通常伴随*寻呼指示器*显示的字符串。 字符串可能是图像标题、 标题或只是当前视图的数据集内的位置。 
+`ViewPager`可用于显示大型数据集 (例如, 图像库可能包含数百个图像)。 为了帮助用户导航大型数据集, `ViewPager`通常会附带一个显示字符串的*页导航指示器*。 字符串可能是图像标题、标题或只是当前视图在数据集中的位置。 
 
-有两个视图可能会产生此导航信息：`PagerTabStrip`和`PagerTitleStrip.`每个顶部显示的字符串`ViewPager`，和每个拉取从其数据`ViewPager`的适配器，使其始终保持与同步当前显示`View`。 它们之间的区别在于`PagerTabStrip`包括"当前"字符串时的可视指示器`PagerTitleStrip`不 （根据这些屏幕截图所示） 执行： 
+有两个视图可为你生成`PagerTabStrip`此导航信息: `PagerTitleStrip.`每个视图都`ViewPager`在顶部显示一个字符串`ViewPager`, 每个视图从的适配器提取其数据, 以使其始终保持与当前显示`View`的。 它们之间的区别在于, `PagerTabStrip`其中包括 "当前" 字符串的可视指示器, 而`PagerTitleStrip`不包括 (如以下屏幕截图中所示): 
 
-[![使用 PagerTitleStrip 和 PagerTabStrip TreePager 应用程序的屏幕截图](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
+[![具有 PagerTitleStrip 和 PagerTabStrip 的 TreePager 应用程序的屏幕截图](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
 
-本指南演示如何 immplement `ViewPager`，适配器和指示器应用程序组件并将它们以支持动作导航集成。 
+本指南演示了如何 immplement `ViewPager`、适配器和指标应用组件, 并将它们集成以支持 gestural 导航。 
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [TreePager （示例）](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager)
-- [FlashCardPager (sample)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)
+- [TreePager (示例)](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager)
+- [FlashCardPager (示例)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)

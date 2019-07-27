@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 63164d90419f3a49d9eb52a52d02e05fbee43dbf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1bcb83d6057cb7d4a43c510d7b5805b574812e6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61310244"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510053"
 ---
-# <a name="gridview"></a>GridView
+# <a name="xamarinandroid-gridview"></a>Xamarin Android GridView
 
-[`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) 是 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
-二维、 可滚动的网格中显示项。 网格项自动插入布局使用[ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)。
+[`GridView`](xref:Android.Widget.GridView)是[`ViewGroup`](xref:Android.Views.ViewGroup)
+显示二维、可滚动网格中的项的。 网格项使用[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)自动插入到布局中。
 
-在本教程中，将创建的图像缩略图的网格。 选择某个项后的 toast 消息将显示的图像的位置。
+在本教程中, 你将创建一个图像缩略图网格。 选择某项后, toast 消息会显示该图像的位置。
 
-启动一个名为的新项目**HelloGridView**。
+启动名为**HelloGridView**的新项目。
 
-找到你想要使用，一些照片或[下载这些示例图像](https://developer.android.com/shareables/sample_images.zip)。 将图像文件添加到项目的**资源/Drawable**目录。 在中**属性**窗口中，将生成操作设置为**AndroidResource**。
+查找要使用的一些照片, 或[下载这些示例图像](https://developer.android.com/shareables/sample_images.zip)。 将图像文件添加到项目的**资源/可绘制**目录。 在 "**属性**" 窗口中, 将 "生成操作" 设置为 " **AndroidResource**"。
 
-打开**Resources/Layout/Main.axml**文件并插入以下：
+打开**Resources/Layout/main.axml**文件, 并插入以下内容:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -41,10 +41,10 @@ ms.locfileid: "61310244"
 />
 ```
 
-这[ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)将填充整个屏幕。 而是可以自我说明包含以下属性。 有关有效的特性的详细信息，请参阅[ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)引用。
+这[`GridView`](xref:Android.Widget.GridView)会填充整个屏幕。 特性是非常容易的。 有关有效属性的详细信息, 请参阅[`GridView`](xref:Android.Widget.GridView)参考。
 
-打开`HelloGridView.cs`并插入以下代码 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法：
+打开`HelloGridView.cs`并插入以下代码:[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+付款方式
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -62,13 +62,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-之后**Main.axml**的内容视图中，设置布局[ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)与布局从捕获[ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/)。 的 [`Adapter`](https://developer.xamarin.com/api/property/Android.Widget.AdapterView.RawAdapter/)
-然后使用属性来设置自定义适配器 (`ImageAdapter`) 作为要在网格中显示的所有项的源。 `ImageAdapter`在下一步中创建。
+为内容视图设置**main.axml**布局后, [`GridView`](xref:Android.Widget.GridView)将[`FindViewById`](xref:Android.App.Activity.FindViewById*)从布局中捕获。 此[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+然后, 使用属性将自定义适配器 (`ImageAdapter`) 设置为要在网格中显示的所有项的源。 `ImageAdapter`在下一步中创建。
 
-若要在网格中的某个项单击时执行某些操作，一个匿名委托，它订阅[ `ItemClick` ](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)事件。
-它显示[ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) ，它显示选定项的索引位置 （从零开始） （在实际方案中，位置可用来获取另一项任务的实际尺寸的图像）。 请注意 Java 样式侦听器类，可以使用而不是.NET 事件。
+若要在单击网格中的某一项时执行操作, 请将该[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)事件订阅为匿名委托。
+它显示了[`Toast`](xref:Android.Widget.Toast)一个, 它显示选定项的索引位置 (从零开始) (在实际情况下, 该位置可用于获取其他某个任务的完整大小的图像)。 请注意, 可以使用 Java 样式侦听器类, 而不是 .NET 事件。
 
-创建一个名为的新类`ImageAdapter`子类[ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/):
+创建名`ImageAdapter`为子类[`BaseAdapter`](xref:Android.Widget.BaseAdapter)的新类:
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -129,43 +129,42 @@ public class ImageAdapter : BaseAdapter
 }
 ```
 
-首先，这会实现继承自某些所需的方法[ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)。 构造函数和[ `Count` ](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/)属性都很容易理解。 通常情况下， [`GetItem(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/)
-应返回在适配器中，指定的位置的实际对象，但它对于此示例中，将忽略。 同样， [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/)
-应返回的行 id 的项，但此处不需要它。
+首先, 此方法实现从继承的[`BaseAdapter`](xref:Android.Widget.BaseAdapter)一些必需方法。 构造函数和[`Count`](xref:Android.Widget.BaseAdapter.Count)属性一目了然。 往常[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+应返回适配器中指定位置的实际对象, 但对于此示例, 它将被忽略。 同样[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+应返回项的行 id, 但此处不需要。
 
-第一种方法需要[ `GetView()` ](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/)。
-此方法创建一个新 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
-每个映像添加到`ImageAdapter`。 此调用时， [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
-传递中，这通常是回收的对象 (至少一次已被调用后)，因此可以进行检查以查看该对象是否为 null。 如果它*是*为 null， [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-实例化并使用映像演示文稿的所需属性配置：
+需要的第一个方法[`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)是。
+此方法创建一个新的[`View`](xref:Android.Views.View)
+对于添加到的`ImageAdapter`每个图像。 如果调用此,[`View`](xref:Android.Views.View)
+传入, 这通常是回收的对象 (至少在调用了一次之后), 因此可以通过检查来查看对象是否为 null。 如果*为*null, 则为[`ImageView`](xref:Android.Widget.ImageView)
+实例化并配置图像演示所需的属性:
 
-- [`LayoutParams`](https://developer.xamarin.com/api/property/Android.Views.View.LayoutParameters/) 设置视图的高度和宽度&mdash;这可确保，无论可绘制的大小，每个图像进行大小调整和裁剪这些维度，根据需要中容纳不下。
+- [`LayoutParams`](xref:Android.Views.View.LayoutParameters)设置视图&mdash;的高度和宽度, 这可确保无论可绘制的大小如何, 都会根据需要调整和裁剪每个图像, 使其适合这些尺寸。
 
-- [`SetScaleType()`](https://developer.xamarin.com/api/member/Android.Widget.ImageView.SetScaleType/) 声明应向中心裁剪图像，就 （如有必要）。
+- [`SetScaleType()`](xref:Android.Widget.ImageView.SetScaleType*)声明应向中心裁剪图像 (如有必要)。
 
-- [`SetPadding(int, int, int, int)`](https://developer.xamarin.com/api/member/Android.Views.View.SetPadding/) 定义所有边的填充。 （请注意，是否映像具有不同的纵横比，则更少填充将导致为多个裁剪图像的如果提供给 imageview 各自的维数不匹配。）
+- [`SetPadding(int, int, int, int)`](xref:Android.Views.View.SetPadding*)定义所有边的边距。 (请注意, 如果图像具有不同的纵横比, 则更少的填充将导致更大的图像裁剪, 因为它与给定给 ImageView 的尺寸不匹配。)
 
-如果[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)传递给[ `GetView()` ](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/)是*不*为 null，则本地 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-初始化与回收[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)对象。
+如果传递[`View`](xref:Android.Views.View)给[`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)的*不*是 null, 则本地[`ImageView`](xref:Android.Widget.ImageView)
+用回收[`View`](xref:Android.Views.View)的对象进行初始化。
 
-在末尾 [`GetView()`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetView/)
-方法中，`position`整数传递给该方法用于选择中的映像`thumbIds`数组，它被设置为映像资源[ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)。
+在[`GetView()`](xref:Android.Widget.BaseAdapter.GetView*)
+方法时, `position`传递给方法的整数用于`thumbIds`从数组中选择一个图像, 并将其设置为的[`ImageView`](xref:Android.Widget.ImageView)图像资源。
 
 剩下的就是定义`thumbIds`可绘制资源的数组。
 
-运行该应用程序。 网格布局应如下所示：
+运行该应用程序。 网格布局应如下所示:
 
-[![GridView 显示 15 图像的屏幕截图示例](grid-view-images/helloviews4.png)](grid-view-images/helloviews4.png#lightbox)
+[![显示15个图像的 GridView 的示例屏幕截图](grid-view-images/helloviews4.png)](grid-view-images/helloviews4.png#lightbox)
 
-尝试试验的行为[ `GridView` ](https://developer.xamarin.com/api/type/Android.Widget.GridView/)和 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-通过调整它们的属性的元素。 例如，而不是使用[ `LayoutParams` ](https://developer.xamarin.com/api/property/Android.Views.View.LayoutParameters/)尝试使用[ `SetAdjustViewBounds()` ](https://developer.xamarin.com/api/member/Android.Widget.ImageView.SetAdjustViewBounds/)。
-
+尝试体验[`GridView`](xref:Android.Widget.GridView)和的行为[`ImageView`](xref:Android.Widget.ImageView)
+元素的属性。 例如, 而不是使用[`LayoutParams`](xref:Android.Views.View.LayoutParameters) [`SetAdjustViewBounds()`](xref:Android.Widget.ImageView.SetAdjustViewBounds*)try。
 
 ## <a name="references"></a>参考资料
 
--   [`GridView`](https://developer.xamarin.com/api/type/Android.Widget.GridView/) 
--   [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
--   [`BaseAdapter`](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)。
+- [`GridView`](xref:Android.Widget.GridView)
+- [`ImageView`](xref:Android.Widget.ImageView)
+- [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/).
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。

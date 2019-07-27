@@ -1,43 +1,41 @@
 ---
-title: 开关
-description: 如何在 Xamarin.Android 应用程序中使用交换机小组件
+title: Xamarin Android 开关
+description: 如何在 Xamarin Android 应用程序中使用切换小组件
 ms.prod: xamarin
 ms.assetid: 6E1F3324-EC41-454A-AEC0-0208813C7E50
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: ef400aaa31992b577762ad695418b865882e2e2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7ff10433ffe11965ccfb8c9a46a785b8cb0304e6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075745"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510176"
 ---
-# <a name="switch"></a>开关
+# <a name="xamarinandroid-switch"></a>Xamarin Android 开关
 
-`Switch`小组件 （如下所示） 允许用户以两个状态，例如在之间切换或禁用。 `Switch`默认值为 OFF。 小组件是在其 ON 和 OFF 状态如下所示：
+`Switch`小组件 (如下所示) 允许用户在两个状态之间切换, 例如打开或关闭。 `Switch`默认值为 OFF。 此小组件的 "开" 和 "关" 状态如下所示:
 
-[![关闭和打开状态中的开关小组件的屏幕快照](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
+[![开关小组件在关闭和打开状态的屏幕截图](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
+## <a name="creating-a-switch"></a>创建开关
 
-## <a name="creating-a-switch"></a>创建交换机
-
-若要创建一个开关，只需声明`Switch`XML 中的元素，如下所示：
+若要创建开关, 只需在`Switch` XML 中声明元素, 如下所示:
 
 ```xml
 <Switch android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 ```
 
-这会创建一个基本的开关，如下所示：
+这将创建一个基本交换机, 如下所示:
 
-[![显示一个开关处于 OFF 状态的演示应用的屏幕截图](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
-
+[![显示处于关闭状态的开关的演示应用屏幕截图](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
 ## <a name="changing-default-values"></a>更改默认值
 
-可配置该控件将显示为 ON 和 OFF 状态的文本和默认值。 例如，若要使开关默认为 ON 和读取而不是 OFF/ON 否 / 是，我们可以设置`checked`， `textOn`，和`textOff`以下 XML 中的属性。
+控件为开启和关闭状态显示的文本和默认值都是可配置的。 例如, 若要使开关默认为 ON, 并读取 NO/YES 而不是 OFF/ON, 可以在下面`checked`的`textOn`XML 中`textOff`设置、和属性。
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -49,9 +47,9 @@ ms.locfileid: "61075745"
 
 
 
-## <a name="providing-a-title"></a>提供一个标题
+## <a name="providing-a-title"></a>提供标题
 
-`Switch`小组件还支持通过设置包括的文本标签`text`属性，如下所示：
+小组件还支持通过`text`设置属性来包含文本标签, 如下所示: `Switch`
 
 ```xml
 <Switch android:text="Is Xamarin.Android great?"
@@ -62,12 +60,12 @@ ms.locfileid: "61075745"
         android:textOff="NO" />
 ```
 
-此标记将生成下面的屏幕截图在运行时：
+此标记会在运行时生成以下屏幕截图:
 
-[![使用文本水平前面交换机小组件的演示应用程序的屏幕截图](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
+[![在切换小组件之前水平文本的演示应用屏幕截图](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
-当`Switch`的值发生更改，它会发出`CheckedChange`事件。
-例如，下面的代码中我们捕获此事件并提供`Toast`使用一条消息的小组件基于`isChecked`的值`Switch`，它作为的一部分传递给事件处理程序`CompoundButton.CheckedChangeEventArg`参数。
+当的值发生更改时, 它会`CheckedChange`引发事件。 `Switch`
+例如, 在下面的代码中, 我们将捕获此事件, `Toast`并显示一个小组件`Switch`, 其中`isChecked`包含基于的值的消息, 该消息作为`CompoundButton.CheckedChangeEventArg`参数的一部分传递给事件处理程序。
 
 ```csharp
 Switch s = FindViewById<Switch> (Resource.Id.monitored_switch);
@@ -82,5 +80,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>相关链接
 
-- [SwitchDemo （示例）](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
+- [SwitchDemo (示例)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
 - [选项卡布局教程](~/android/user-interface/layouts/tab-layout/index.md)

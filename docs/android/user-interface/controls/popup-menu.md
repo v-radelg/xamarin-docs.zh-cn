@@ -1,29 +1,29 @@
 ---
 title: 弹出菜单
-description: 如何将锚定的弹出菜单添加到特定视图。
+description: 如何添加锚定到特定视图的弹出菜单。
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 1e74c8b7745936f6e9a8890fd26acafe2f2fb6d5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e7665ee1d3506fb4b6a237a7c6906d9bfb3e9cb1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61288634"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510213"
 ---
-# <a name="popup-menu"></a>弹出菜单
+# <a name="xamarinandroid-popup-menu"></a>Xamarin Android 弹出式菜单
 
-[PopupMenu](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (也称为_快捷菜单_) 是一个菜单，定位到特定视图。 在以下示例中，单个活动包含一个按钮。 当用户点击按钮时，将显示三个项弹出菜单：
+[PopupMenu](xref:Android.Widget.PopupMenu) (也称为_快捷菜单_) 是锚定到特定视图的菜单。 在下面的示例中, 一个活动包含一个按钮。 用户点击按钮时, 将显示三个项目的弹出菜单:
 
-[![使用按钮和三个项弹出菜单的应用示例](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
+[![带有按钮和三项弹出菜单的应用示例](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
 ## <a name="creating-a-popup-menu"></a>创建弹出菜单
 
-第一步是创建菜单的菜单资源文件并将其置于**资源/菜单**。 例如，以下 XML 是在上面的屏幕截图中显示的三个项菜单的代码**Resources/menu/popup_menu.xml**:
+第一步是为菜单创建菜单资源文件并将其放在 "**资源/菜单**" 中。 例如, 下面的 XML 是在上一个屏幕截图中显示的三项菜单的代码: **Resources/menu/popup_menu**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -37,9 +37,9 @@ ms.locfileid: "61288634"
 </menu>
 ```
 
-接下来，创建的实例`PopupMenu`和锚定到其视图。 创建的实例时`PopupMenu`，将其构造函数传递的引用`Context`以及菜单将附加到的视图。 因此，弹出菜单锚定到此视图在其构造过程。
+接下来, 创建一个实例`PopupMenu` , 并将其定位到其视图。 当你创建的`PopupMenu`实例时, 将向其构造函数传递对的`Context`引用以及该菜单要附加到的视图。 因此, 在构造过程中, 弹出菜单将锚定到此视图。
 
-在以下示例中，`PopupMenu`在按钮的单击事件处理程序中创建 (其名为`showPopupMenu`)。 此按钮也是到视图`PopupMenu`定位，如下面的代码示例中所示：
+在下面的示例中, `PopupMenu`在按钮的 click 事件处理程序中创建 (名`showPopupMenu`为)。 此按钮也是要定位到`PopupMenu`的视图, 如下面的代码示例所示:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -47,7 +47,7 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-最后，必须在弹出菜单*夸大*与先前创建的菜单资源。 在下面的示例中，调用的菜单[充气](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/)方法将添加并将其[显示](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/)调用方法来显示它：
+最后, 必须将弹出菜单与之前创建的菜单资源一起*放大*。 在下面的示例中, 将添加对菜单的[陀螺](xref:Android.Views.LayoutInflater.Inflate*)形方法的调用, 并调用其[Show](xref:Android.Widget.PopupMenu.Show)方法来显示它:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -60,7 +60,7 @@ showPopupMenu.Click += (s, arg) => {
 
 ## <a name="handling-menu-events"></a>处理菜单事件
 
-当用户选择菜单项， [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/)单击将引发事件并将已解除的菜单。 点击菜单外的任意位置将只需关闭它。 在任一情况下，当消除菜单上，其[DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/)将会引发。 下面的代码将事件处理程序添加两个`MenuItemClick`和`DismissEvent`事件：
+当用户选择菜单项时, 将引发[MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) click 事件并且将解除菜单。 点击菜单之外的任何位置即可直接将其关闭。 在这两种情况下, 当菜单关闭时, 将会引发其[DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) 。 下面的代码为`MenuItemClick`和`DismissEvent`事件添加事件处理程序:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -82,4 +82,4 @@ showPopupMenu.Click += (s, arg) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [PopupMenuDemo （示例）](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
+- [PopupMenuDemo (示例)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)

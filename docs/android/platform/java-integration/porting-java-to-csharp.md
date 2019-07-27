@@ -1,44 +1,37 @@
 ---
-title: 将 Java 移植到 C#
-description: 第三个选项为 Xamarin.Android 应用程序中使用 Java Java 源代码移植到C#。
+title: 将 Java 移植C#到 for Xamarin
+description: 在 Xamarin Android 应用程序中使用 Java 的第三个选项是将 Java 源代码移植到C#。
 ms.prod: xamarin
 ms.assetid: 39E528BD-010F-47FC-BE48-8E7848E30454
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/05/2016
-ms.openlocfilehash: 9beb6d59c9376a404c06af7f0cd1efd985929843
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c6627f585326848c5221729ca94071b00651c59e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075136"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511172"
 ---
-# <a name="porting-java-to-c"></a>将 Java 移植到 C#
+# <a name="porting-java-to-c-for-xamarinandroid"></a>将 Java 移植C#到 for Xamarin
 
-_第三个选项为 Xamarin.Android 应用程序中使用 Java Java 源代码移植到C#。_
+此方法对于以下组织可能很感兴趣:
 
-## <a name="overview"></a>概述
+- **正在将技术堆栈从 Java 切换C#到。**
+- **必须维护同C#一个产品的和 Java 版本。**
+- **希望使用 .NET 版本的常用 Java 库。**
 
-此方法可能感兴趣的组织的：
+可以通过两种方式将 Java 代码移植C#到。 第一种方法是手动移植代码。 这涉及了解 .NET 和 Java, 并熟悉适用于每种语言的适当惯例的技能专家。 此方法最适用于少量代码或希望完全从 Java 移出到C#的组织。
 
--  **从 Java 到切换技术堆栈C#。**
--  **必须维护C#和相同的产品的 Java 版本。**
--  **想要有常用的 Java 库的.NET 版本。**
+第二种移植方法是使用代码转换器 (如[锐化](https://github.com/mono/sharpen)) 来尝试和自动执行此过程。 [锐化](https://github.com/mono/sharpen)是 Versant 中的开源转换器, 最初用于将*db4o*从 Java 移植到C#的代码。 db4o 是一个面向对象的数据库, 该数据库 Versant 以 Java 开发, 然后移植到 .NET。 对于必须同时存在于这两种语言中并且需要在两者之间进行某种奇偶校验的项目, 使用代码转换器可能非常有用。
 
+可以在[ngit](https://github.com/mono/ngit)项目中查看自动代码转换工具的含义。
+Ngit 是 Java 项目[jgit](http://eclipse.org/)的端口。
+Jgit 本身是[Git](http://git-scm.com/)源代码管理系统的 Java 实现。 若要C#从 Java 生成代码, ngit 程序员使用自定义自动系统从 jgit 中提取 Java 代码, 应用一些修补程序来容纳转换过程, 然后运行锐化以生成C#代码。 这使 ngit 项目可以从在 jgit 上完成的连续、正在进行的工作中获益。
 
-有两种方法以 Java 代码移植到C#。 第一种方法是手动将代码移植。 这涉及到熟练的开发人员了解.NET 和 Java 和熟悉每种语言的正确惯例。 这种方法有意义的最少量的代码，或希望完全摆脱 Java 到组织C#。
-
-第二个迁移方法是尝试并自动完成该过程使用的代码转换器，如[锐化](https://github.com/mono/sharpen)。 [锐化](https://github.com/mono/sharpen)是从 Versant 最初用于端口的代码已开放源代码转换器*db4o*从 Java 到C#。 db4o 是一种面向对象的数据库 Versant 开发在 Java 中，并在然后移植到.NET。 使用代码转换器可能会有意义的项目，必须存在于这两种语言，并且需要一些两者之间的奇偶校验。
-
-当自动化的代码转换工具有意义的示例所示[ngit](https://github.com/mono/ngit)项目。
-Ngit 是 Java 项目的端口[jgit](http://eclipse.org/)。
-Jgit 本身是 Java 实现[Git](http://git-scm.com/)源代码管理系统。 若要生成C#通过 Java，ngit 程序员使用自定义自动系统来从 jgit 提取 Java 代码，应用一些修补程序，以容纳转换过程中，然后运行锐化，生成的代码C#代码。 这允许 ngit 项目能够受益于 jgit 完成的持续、 正在进行工作。
-
-通常非完成大量工作所涉及的引导的自动化的代码转换工具，并且这可能会证明是要使用的障碍。 在许多情况下，它可能是更简单、 更轻松地为端口 JavaC#手动。
-
-
+在引导自动代码转换工具时, 经常会遇到不太简单的工作量, 这可能是使用的障碍。 在许多情况下, 可以更简单、更轻松地将 Java C#移植到。
 
 ## <a name="related-links"></a>相关链接
 
-- [通过转换工具](https://github.com/mono/sharpen)
+- [锐化转换工具](https://github.com/mono/sharpen)

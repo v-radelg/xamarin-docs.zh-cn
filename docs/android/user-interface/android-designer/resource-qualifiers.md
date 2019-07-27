@@ -1,103 +1,103 @@
 ---
 title: 资源限定符和可视化效果选项
-description: 本主题说明如何定义仅某些限定符值匹配时，将使用的资源。 一个简单的示例是一个语言限定字符串资源。 与其他定义要用于其他语言的替代资源，可以为默认值，定义字符串资源。 可限定所有资源类型，包括自身的布局。
+description: 本主题说明如何定义将仅在某些限定符值匹配时使用的资源。 一个简单的示例是语言限定的字符串资源。 可以将字符串资源定义为默认值, 并将其他替代资源定义为用于其他语言。 所有资源类型都可以进行限定, 包括布局本身。
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9d99e6a59b57b59d585b32befdadc0890d41448c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d9f624084c83b318487f1162a9a2350f9e2cc409
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60950608"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510506"
 ---
-# <a name="resource-qualifiers-and-visualization-options"></a>资源限定符和可视化效果选项
+# <a name="resource-qualifiers-and-visualization-options"></a>资源限定符和可视化选项
 
-_本主题说明如何定义仅某些限定符值匹配时，将使用的资源。一个简单的示例是一个语言限定字符串资源。与其他定义要用于其他语言的替代资源，可以为默认值，定义字符串资源。可限定所有资源类型，包括自身的布局。_
+_本主题说明如何定义将仅在某些限定符值匹配时使用的资源。一个简单的示例是语言限定的字符串资源。可以将字符串资源定义为默认值, 并将其他替代资源定义为用于其他语言。所有资源类型都可以进行限定, 包括布局本身。_
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="resource-qualifier-options"></a>资源限定符选项
 
-**资源限定符选项**可以通过单击右侧的省略号图标可访问**横向**模式按钮：
+可以通过单击 "**横向**模式" 按钮右侧的省略号图标来访问**资源限定符选项**:
 
 [![资源限定符选项](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
-此对话框将显示下面的资源限定符的下拉式菜单：
+此对话框显示以下资源限定符的下拉菜单:
 
--   **语言**&ndash;显示可用的语言资源，并提供了一个选项以添加新语言/区域资源。
+-   **语言**&ndash;显示可用的语言资源, 并提供添加新语言/区域资源的选项。
 
--   **用户界面模式**&ndash;列表显示模式 (如**汽车底座**并**桌面底座**) 以及布局方向。
+-   **UI 模式**列出显示模式 (如**汽车 dock**和**书桌 dock**) 以及布局方向。 &ndash;
 
-每个这些下拉列表菜单将打开新对话框可以在其中选择并配置的资源限定符 （如下所述）。
+其中每个下拉菜单都将打开新对话框, 您可以在其中选择和配置资源限定符 (如下所述)。
 
 ### <a name="language"></a>语言
 
-**语言**下拉菜单列出了只有那些具有定义的资源的语言 (或**所有语言**，这是默认设置)。 但是，还有**添加语言/区域...** 选项，可用于将一种新语言添加到列表：
+"**语言**" 下拉菜单仅列出了定义了资源 (或**所有语言**, 这是默认值) 的语言。 不过, 还可以使用 "**添加语言/区域 ...** " 选项向列表中添加新语言:
 
 [![添加语言/区域](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
-当您单击**添加语言/区域...**，则**选择语言**对话框会打开，显示的可用语言和区域的下拉列表：
+单击 "**添加语言/区域 ...** " 时, 将打开 "**选择语言**" 对话框以显示可用语言和区域的下拉列表:
 
-![语言的列表](resource-qualifiers-images/vs/10-languages.png "语言的列表")
+![语言列表](resource-qualifiers-images/vs/10-languages.png "语言列表")
 
-在此示例中，我们已选择**fr （法语）** 的语言和**BE** （比利时） 为法语的区域语言。 请注意，**区域**字段是可选的因为许多语言可以指定而不考虑特定的区域。 当**语言**再次打开的下拉菜单，则会显示新添加的语言/区域资源：
+在此示例中，我们已选择**fr （法语）** 的语言和**BE** （比利时） 为法语的区域语言。 请注意, "**区域**" 字段是可选的, 因为可以在不考虑特定区域的情况下指定多种语言。 当**语言**下拉菜单再次打开时, 它会显示新添加的语言/区域资源:
 
-![语言和区域选择](resource-qualifiers-images/vs/11-language-region-added.png "所选择的语言和区域")
+![选择的语言和区域](resource-qualifiers-images/vs/11-language-region-added.png "选择的语言和区域")
 
-请注意，是否添加新语言，但在不创建新资源，为它添加的语言将不再显示在下一次您打开该项目。
+请注意, 如果添加新的语言, 但没有为其创建新资源, 则在下次打开该项目时, 将不再显示添加的语言。
 
-### <a name="ui-mode"></a>用户界面模式
+### <a name="ui-mode"></a>UI 模式
 
-当您单击**用户界面模式**显示的下拉菜单，模式的列表，如**正常**，**汽车底座**，**桌面底座**， **电视**，**装置**，并**监视**:
+单击 " **UI 模式**" 下拉菜单时, 将显示一系列模式, 如**正常**、**汽车 dock**、**书桌 Dock**、**电视**、**设备**, 以及**观看**:
 
 
-[![用户界面模式菜单](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
+[![UI 模式菜单](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-此列表下方是晚上模式**不晚上**和**晚上**后, 跟布局方向**从左到右**并**从右到左**（适用于有关的信息**从左到右**并**从右到左**选项，请参见[LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/))。
-中的最后一个项**资源限定符选项**对话框均**舍入屏幕**（适用于与 Android Wear 一起使用） 或**非圆角屏幕**。
-Round 和非轮屏幕有关的信息，请参阅[布局](https://developer.android.com/training/wearables/ui/layouts.html)。
-有关 Android UI 模式的详细信息，请参阅[UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)。
+此列表的下面是夜景**模式,** **不晚**于晚间, 后跟从**左**到右和从**右到左**的布局方向 (有关**从左到右**和从**右到左**的选项的信息, 请参阅[Layoutdirection.](xref:Android.Util.LayoutDirection))。
+"**资源限定符选项**" 对话框中的最后一项是**圆形屏幕**(用于 Android 磨损) 或**不是圆形**屏幕。
+有关圆形和非圆角屏幕的信息, 请参阅[布局](https://developer.android.com/training/wearables/ui/layouts.html)。
+有关 Android UI 模式的详细信息, 请参阅[UiModeManager](xref:Android.App.UiModeManager)。
 
 ## <a name="action-bar-settings"></a>操作栏设置
 
-**操作栏设置**图标位于左侧的画笔 （主题编辑器） 图标：
+"**操作栏设置**" 图标在 "画笔 (主题编辑器)" 图标的左侧可用:
 
 ![操作栏设置](resource-qualifiers-images/vs/14-action-bar.png "操作栏设置")
 
-此图标将打开对话框弹出框，使您能够选择三种操作栏模式之一：
+此图标将打开一个对话框 segue, 该对话框提供一种方法来选择三个操作栏模式之一:
 
--   **标准**&ndash;组成一个徽标或使用可选副标题一个图标和标题的文本。
+-   **标准**&ndash;包含带有可选副标题的徽标、图标和标题文本。
 
--   **列表**&ndash;列表导航模式。 此模式而不是静态的标题文本显示在活动中的导航列表菜单 （即，它可以向用户显示与下拉列表）。
+-   **列表**&ndash;列表导航模式。 此模式为在活动中导航提供一个列表菜单 (即, 可以作为下拉列表显示给用户), 而不是静态标题文本。
 
--   **选项卡** &ndash; tab 键导航模式。 而不是静态的标题文本，此模式下提供了一系列活动中的导航选项卡。
+-   **选项卡**&ndash;选项卡导航模式。 此模式为在活动中导航提供一系列选项卡, 而不是静态标题文本。
 
 ## <a name="themes"></a>主题
 
-**主题**下拉列表菜单将显示所有项目中定义的主题。 选择**更多主题**打开一个对话框，可以从已安装的 Android SDK 的所有主题的列表，如下所示：
+"**主题**" 下拉菜单显示在项目中定义的所有主题。 选择 "**更多主题**" 会打开一个对话框, 其中包含已安装的 Android SDK 中可用的所有主题的列表, 如下所示:
 
-[![更多的主题列表](resource-qualifiers-images/vs/15-theme-menu-sml.png "更主题列表")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
+[![更多主题列表](resource-qualifiers-images/vs/15-theme-menu-sml.png "更多主题列表")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
-选择一个主题后，设计图面上将更新以显示新的主题的效果。 请注意此更改是永久才**确定**中单击按钮**主题**对话框。 一旦选择了一个主题，它将会包含在**主题**下拉列表菜单操作，如图所示如下：
+选择主题后, 会更新 Design Surface, 以显示新主题的效果。 请注意, 仅当在 "**主题**" 对话框中单击 **"确定"** 按钮时, 此更改才为永久更改。 选择主题后, 它将包含在**主题**下拉菜单中, 如下所示:
 
-![浅色主题现已推出](resource-qualifiers-images/vs/16-light-theme.png "浅色主题现已推出")
+![现在可以使用浅色主题](resource-qualifiers-images/vs/16-light-theme.png "现在可以使用浅色主题")
 
 ## <a name="android-version"></a>Android 版本
 
-Android**版本**选择器设置用于呈现设计器中的布局的 Android 版本。 选择器将显示所有与该项目的目标框架版本兼容的版本：
+Android**版本**选择器设置用于在设计器中呈现布局的 android 版本。 选择器将显示与项目的目标 framework 版本兼容的所有版本:
 
-![Android 版本的列表](resource-qualifiers-images/vs/17-android-version.png "列表的 Android 版本")
+![Android 版本列表](resource-qualifiers-images/vs/17-android-version.png "Android 版本列表")
 
-可以在项目的设置中设置目标框架版本**属性 > 应用程序 > 使用 Android 版本编译**。 有关目标框架版本的详细信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)。
+目标 framework 版本可在项目设置中的 "属性" 下设置 **> 应用程序 > 使用 Android 版本编译**"。 有关 target framework 版本的详细信息, 请参阅[了解 ANDROID API 级别](~/android/app-fundamentals/android-api-levels.md)。
 
-通过项目的目标框架版本确定的可用工具箱中的小组件集。 这也适用于中的可用属性**属性窗口**。 可用列表的小组件是*不*中选择的值由决定**版本**工具栏的选择器。 例如，如果您设置项目的目标版本为 Android 4.4，仍可以选择 Android 6.0 中工具栏版本选择器来查看该项目在 Android 6.0 中的显示效果，但无法将特定于 Android 6.0 的小组件添加&ndash; 仍将限制为可在 Android 4.4 的小组件。
+"工具箱" 中提供的小组件集由项目的目标框架版本确定。 对于 "**属性" 窗口**中提供的属性也是如此。 可用小组件列表*不*是由工具栏的**版本**选择器中选择的值决定的。 例如, 如果将项目的目标版本设置为 Android 4.4, 则仍可在工具栏版本选择器中选择 "Android 6.0", 以查看 Android 6.0 中项目的外观, 但无法添加特定于 Android 6.0 &ndash;的小组件 你仍将仅限于 Android 4.4 中提供的小组件。
 
-有关资源类型的详细信息，请参阅[Android 资源](~/android/app-fundamentals/resources-in-android/index.md)。
+有关资源类型的详细信息, 请参阅[Android 资源](~/android/app-fundamentals/resources-in-android/index.md)。
 
 
 
@@ -105,80 +105,80 @@ Android**版本**选择器设置用于呈现设计器中的布局的 Android 版
 
 ## <a name="resource-qualifier-options"></a>资源限定符选项
 
-**资源限定符选项**可以通过单击右侧的省略号图标可访问**横向**模式按钮：
+可以通过单击 "**横向**模式" 按钮右侧的省略号图标来访问**资源限定符选项**:
 
 [![资源限定符选项](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
 
-此对话框将显示下面的资源限定符的下拉式菜单：
+此对话框显示以下资源限定符的下拉菜单:
 
--   **语言**&ndash;显示可用的语言资源，并提供了一个选项以添加新语言/区域资源。
+-   **语言**&ndash;显示可用的语言资源, 并提供添加新语言/区域资源的选项。
 
--   **用户界面模式**&ndash;列表显示模式 (如**汽车底座**并**桌面底座**) 以及布局方向。
+-   **UI 模式**列出显示模式 (如**汽车 dock**和**书桌 dock**) 以及布局方向。 &ndash;
 
-每个这些下拉列表菜单将打开新对话框可以在其中选择并配置的资源限定符 （如下所述）。
+其中每个下拉菜单都将打开新对话框, 您可以在其中选择和配置资源限定符 (如下所述)。
 
 ### <a name="language"></a>语言
 
-**语言**下拉菜单列出了只有那些具有定义的资源的语言 (或**所有语言**，这是默认设置)。 但是，还有**添加语言/区域...** 选项，可用于将一种新语言添加到列表：
+"**语言**" 下拉菜单仅列出了定义了资源 (或**所有语言**, 这是默认值) 的语言。 不过, 还可以使用 "**添加语言/区域 ...** " 选项向列表中添加新语言:
 
 [![添加语言/区域](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
 
-当您单击**添加语言/区域...**，则**选择语言**对话框会打开，显示的可用语言和区域的下拉列表：
+单击 "**添加语言/区域 ...** " 时, 将打开 "**选择语言**" 对话框以显示可用语言和区域的下拉列表:
 
-[![语言的列表](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
+[![语言列表](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
-在此示例中，我们已选择**fr （法语）** 的语言和**BE** （比利时） 为法语的区域语言。 请注意，**区域**字段是可选的因为许多语言可以指定而不考虑特定的区域。 当**语言**再次打开的下拉菜单，则会显示新添加的语言/区域资源：
+在此示例中，我们已选择**fr （法语）** 的语言和**BE** （比利时） 为法语的区域语言。 请注意, "**区域**" 字段是可选的, 因为可以在不考虑特定区域的情况下指定多种语言。 当**语言**下拉菜单再次打开时, 它会显示新添加的语言/区域资源:
 
-[![语言和区域选择](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
+[![选择的语言和区域](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
-请注意，是否添加新语言，但在不创建新资源，为它添加的语言将不再显示在下一次您打开该项目。
+请注意, 如果添加新的语言, 但没有为其创建新资源, 则在下次打开该项目时, 将不再显示添加的语言。
 
-### <a name="ui-mode"></a>用户界面模式
+### <a name="ui-mode"></a>UI 模式
 
-当您单击**用户界面模式**显示的下拉菜单，模式的列表，如**正常**，**汽车底座**，**桌面底座**， **电视**，**装置**，并**监视**:
+单击 " **UI 模式**" 下拉菜单时, 将显示一系列模式, 如**正常**、**汽车 dock**、**书桌 Dock**、**电视**、**设备**, 以及**观看**:
 
-[![用户界面模式菜单](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
+[![UI 模式菜单](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
 
-此列表下方是晚上模式**不晚上**和**晚上**后, 跟布局方向**从左到右**并**从右到左**。 选项的最后一个对，可选择**舍入屏幕**或**矩形屏幕**（适用于 Android Wear 设备）。
+此列表下面是夜景模式,**不晚**于晚间, 后跟布局方向**从左到**右、从**右到左**。 最后一对选项可让你选择**圆形屏幕**或**矩形屏幕**(适用于 Android 磨损设备)。
 
-有关 Android UI 模式的详细信息，请参阅[UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/)。
-璝惠**从左到右**并**从右到左**选项，请参见[LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/)。
+有关 Android UI 模式的详细信息, 请参阅[UiModeManager](xref:Android.App.UiModeManager)。
+有关**从左到右**和向**左**的选项的信息, 请参阅[layoutdirection.](xref:Android.Util.LayoutDirection)。
 
 
 ## <a name="action-bar-settings"></a>操作栏设置
 
-**操作栏设置**图标位于左侧的画笔 （主题编辑器） 图标：
+"**操作栏设置**" 图标在 "画笔 (主题编辑器)" 图标的左侧可用:
 
 [![操作栏设置](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
 
-此图标将打开对话框弹出框，使您能够选择三种操作栏模式之一：
+此图标将打开一个对话框 segue, 该对话框提供一种方法来选择三个操作栏模式之一:
 
--   **标准**&ndash;包含是徽标或图标和标题文本以及可选副标题。
+-   **标准**&ndash;包含带有可选副标题的徽标、图标和标题文本。
 
--   **列表**&ndash;列表导航模式。 此模式而不是静态的标题文本显示在活动中的导航列表菜单 （即，它可以向用户显示与下拉列表）。
+-   **列表**&ndash;列表导航模式。 此模式为在活动中导航提供一个列表菜单 (即, 可以作为下拉列表显示给用户), 而不是静态标题文本。
 
--   **选项卡** &ndash; tab 键导航模式。 而不是静态的标题文本，此模式下提供了一系列活动中的导航选项卡。
+-   **选项卡**&ndash;选项卡导航模式。 此模式为在活动中导航提供一系列选项卡, 而不是静态标题文本。
 
 ## <a name="themes"></a>主题
 
-**主题**下拉列表菜单将显示所有项目中定义的主题。 选择**更多主题**打开一个对话框，可以从已安装的 Android SDK 的所有主题的列表，如下所示：
+"**主题**" 下拉菜单显示在项目中定义的所有主题。 选择 "**更多主题**" 会打开一个对话框, 其中包含已安装的 Android SDK 中可用的所有主题的列表, 如下所示:
 
-[![更多的主题列表](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
+[![更多主题列表](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
-选择一个主题后，设计图面上将更新以显示新的主题的效果。 请注意此更改是永久才**确定**中单击按钮**主题**对话框。 一旦选择了一个主题，它将会包含在**主题**下拉列表菜单操作，如图所示如下：
+选择主题后, 会更新 Design Surface, 以显示新主题的效果。 请注意, 仅当在 "**主题**" 对话框中单击 **"确定"** 按钮时, 此更改才为永久更改。 选择主题后, 它将包含在**主题**下拉菜单中, 如下所示:
 
-[![浅色主题现已推出](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
+[![现在可以使用浅色主题](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
 ## <a name="android-version"></a>Android 版本
 
-Android**版本**选择器设置用于呈现设计器中的布局的 Android 版本。 选择器将显示所有与该项目的目标框架版本兼容的版本：
+Android**版本**选择器设置用于在设计器中呈现布局的 android 版本。 选择器将显示与项目的目标 framework 版本兼容的所有版本:
 
-[![Android 版本的列表](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
+[![Android 版本列表](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
-可以在项目的设置中设置目标框架版本**项目选项 > 生成 > 常规**部分。 有关目标框架版本的详细信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)。
+可以在项目的设置中设置目标 framework 版本, **> 生成 > 常规**"部分的" 项目选项 "。 有关 target framework 版本的详细信息, 请参阅[了解 ANDROID API 级别](~/android/app-fundamentals/android-api-levels.md)。
 
-通过项目的目标框架版本确定的可用工具箱中的小组件集。 这也适用于中的可用属性**属性板**。 可用列表的小组件是*不*中选择的值由决定**版本**工具栏的选择器。 例如，如果您设置项目的目标版本为 Android 4.4，仍可以选择 Android 6.0 中工具栏版本选择器来查看该项目在 Android 6.0 中的显示效果，但无法将特定于 Android 6.0 的小组件添加&ndash; 仍将限制为可在 Android 4.4 的小组件。
+"工具箱" 中提供的小组件集由项目的目标框架版本确定。 对于**属性板**中提供的属性也是如此。 可用小组件列表*不*是由工具栏的**版本**选择器中选择的值决定的。 例如, 如果将项目的目标版本设置为 Android 4.4, 则仍可在工具栏版本选择器中选择 "Android 6.0", 以查看 Android 6.0 中项目的外观, 但无法添加特定于 Android 6.0 &ndash;的小组件 你仍将仅限于 Android 4.4 中提供的小组件。
 
-有关资源类型的详细信息，请参阅[Android 资源](~/android/app-fundamentals/resources-in-android/index.md)。
+有关资源类型的详细信息, 请参阅[Android 资源](~/android/app-fundamentals/resources-in-android/index.md)。
 
 -----

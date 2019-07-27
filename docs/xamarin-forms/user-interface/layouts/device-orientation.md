@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 2c218b030739dee8d3e49fab4e5c2a70ff5e71e0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970991"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511827"
 ---
 # <a name="device-orientation"></a>设备方向
 
@@ -71,7 +71,7 @@ Xamarin.Android 支持多个选项用于指定方向：
 - **横向**&ndash;强制应用程序方向为横向，而不考虑传感器数据。
 - **纵向**&ndash;强制应用程序方向为纵向，而不考虑传感器数据。
 - **用户**&ndash;导致应用程序使用用户的首选的方向显示。
-- **后面**&ndash;会导致应用程序的方向是相同的方向[活动](https://developer.xamarin.com/api/type/Android.App.Activity/)它后面。
+- **后面**&ndash;会导致应用程序的方向是相同的方向[活动](xref:Android.App.Activity)它后面。
 - **传感器**&ndash;导致应用程序的方向传感器，确定，即使用户已禁用自动旋转。
 - **SensorLandscape** &ndash;会导致应用程序以使用横向方向，同时使用传感器数据来更改 （以便在屏幕不为正面向下所示） 面向在屏幕的方向。
 - **SensorPortrait** &ndash;使应用程序使用纵向方向时使用的传感器数据更改 （以便在屏幕不为正面向下所示） 面向屏幕方向。

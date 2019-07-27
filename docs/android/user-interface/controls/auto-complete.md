@@ -1,31 +1,31 @@
 ---
-title: AutoCompleteTextView
+title: Xamarin Android 自动完成
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: bcbab6deddf5e1a4782cd382623f22281a0823e6
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 810c6ddead66d191870ce97a50653f29737492b0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674857"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510657"
 ---
-# <a name="auto-complete"></a>AutoCompleteTextView
+# <a name="auto-complete-for-xamarinandroid"></a>Xamarin Android 自动完成
 
-`AutoCompleteTextView` 是一个可编辑的文本视图元素，当用户输入时自动显示完成建议。 下拉列表菜单，用户可以从中选择要替换的编辑框的内容的项中显示的建议列表。
+`AutoCompleteTextView` 是一个可编辑的文本视图元素，当用户输入时自动显示完成建议。 建议列表显示在下拉菜单中, 用户可以从中选择要替换编辑框内容的项。
 
 ![AutoCompleteTextView 示例](images/auto-complete.png)
 
 ## <a name="overview"></a>概述
 
-若要创建一个文本项小组件，提供自动完成的建议，请使用 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小组件。 建议从与通过小组件相关联的字符串的集合中接收[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)。
+若要创建提供自动完成建议的文本输入小组件, 请使用[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件. 通过与小组件关联的字符串集合接收建议[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)。
 
-在本教程中，您将创建 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-提供有关国家/地区名称的建议的小组件。
+在本教程中, 你将创建一个[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+提供国家/地区名称建议的小组件。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,13 +45,13 @@ ms.locfileid: "67674857"
 </LinearLayout>
 ```
 
-[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)是引入了一个标签 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小组件。
+[`TextView`](xref:Android.Widget.TextView)是一个标签, 用于引入[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件.
 
 
 ## <a name="tutorial"></a>教程
 
-启动一个名为的新项目*HelloAutoComplete*。
+启动名为*HelloAutoComplete*的新项目。
 
 创建一个名为 `list_item.xml` 的 XML 文件，然后将其保存在 **Resources/Layout** 文件夹中。 将此文件的“生成操作”设置为 `AndroidResource`。 编辑文件，完成后应如下所示：
 
@@ -64,10 +64,10 @@ ms.locfileid: "67674857"
     android:padding="10dp"
     android:textSize="16sp"
     android:textColor="#000">
-</TextView>
+</TextView> 
 ```
 
-此文件定义了一个简单[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/)将用于在建议列表中显示的每个项。
+此文件定义了一个[`TextView`](xref:Android.Widget.TextView)简单的, 将用于建议列表中显示的每一项。
 
 打开 **Resources/Layout/Main.axml** 并插入以下代码：
 
@@ -89,8 +89,8 @@ ms.locfileid: "67674857"
 </LinearLayout>
 ```
 
-打开**MainActivity.cs**并插入以下代码 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
-方法：
+打开**MainActivity.cs**并插入以下代码:[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+付款方式
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -107,11 +107,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-内容视图设置为之后`main.xml`布局， [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-从与布局捕获小组件[ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/)。 一个新[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)然后初始化绑定`list_item.xml`中每个列表项的布局`COUNTRIES`（在下一步中定义） 的字符串数组。 最后，`SetAdapter()`调用以将相关联[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)与 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小组件，以便字符串数组将填充建议列表。
+内容视图设置为`main.xml`布局后,[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+从布局[`FindViewById`](xref:Android.App.Activity.FindViewById*)捕获小组件。 然后初始化[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)一个新的, 以将`list_item.xml`布局绑定到`COUNTRIES`字符串数组中的每个列表项 (在下一步中定义)。 最后, `SetAdapter()`调用以[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)将与[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件, 以便字符串数组将填充建议列表。
 
-内部`MainActivity`类中，添加的字符串数组：
+`MainActivity`在类中, 添加字符串数组:
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -159,19 +159,19 @@ static string[] COUNTRIES = new string[] {
 };
 ```
 
-这是当用户键入到将在下拉列表中提供的建议的列表 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小组件。
+这是当用户键入到中时将在下拉列表中提供的建议列表。[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件.
 
-运行该应用程序。 键入时，应看到类似如下：
+运行该应用程序。 键入内容时, 应会看到如下所示的内容:
 
-[![示例自动补全屏幕截图列出包含"ca"的名称](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
+[![自动完成的屏幕截图示例: 列出包含 "ca" 的名称](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 
 
 ## <a name="more-information"></a>详细信息
 
-请注意，使用硬编码的字符串数组并不是建议的设计做法，因为应用程序代码应侧重于行为，不的内容。 应用程序内容，如字符串应从代码以简化对内容进行修改并简化本地化内容的外部化。 硬编码的字符串在本教程中仅用于进行简单并重点介绍 [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
-小组件。 相反，你的应用程序应声明一个 XML 文件中的此类字符串数组。 这可以通过`<string-array>`在项目中的资源`res/values/strings.xml`文件。 例如：
+请注意, 不建议使用硬编码字符串数组, 因为应用程序代码应侧重于行为, 而不是内容。 应该从代码中外部化应用程序内容 (例如字符串), 以便更轻松地对内容进行修改, 并促进内容的本地化。 在本教程中使用硬编码字符串只是为了简化并专注于[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件. 相反, 应用程序应在 XML 文件中声明此类字符串数组。 可以使用项目`res/values/strings.xml`文件中的`<string-array>`资源完成此操作。 例如：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,8 +188,8 @@ static string[] COUNTRIES = new string[] {
 </resources>
 ```
 
-若要使用这些资源字符串[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)，替换原始 [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
-构造函数使用以下行：
+若要将这些资源字符串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)用于, 请替换原始[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+具有以下内容的构造函数行:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
@@ -199,11 +199,11 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 ### <a name="references"></a>参考资料
 
--   [AutoCompleteTextView 食谱](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) &ndash; Xamarin.Android 示例项目，以便`AutoCompleteTextView`。
--   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
--   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+-   [AutoCompleteTextView 食谱](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input)的 Xamarin Android 示例项目`AutoCompleteTextView`。 &ndash;
+-   [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+-   [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/) *.本教程基于*
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/) *中所述的条款使用。* 本教程基于
 [*Android 自动完成教程*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
  *。*

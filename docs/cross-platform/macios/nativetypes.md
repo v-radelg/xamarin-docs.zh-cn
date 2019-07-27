@@ -1,73 +1,73 @@
 ---
-title: 适用于 iOS 和 macOS 的本机类型
-description: 本文档介绍了 Xamarin 的统一 API 如何将.NET 类型映射到 32 位和 64 位本机类型，根据需要基于编译目标体系结构。
+title: IOS 和 macOS 的本机类型
+description: 本文档介绍了 Xamarin 的 Unified API 根据编译目标体系结构的需要, 如何将 .NET 类型映射到32位和64位本机类型。
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199620"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509592"
 ---
-# <a name="native-types-for-ios-and-macos"></a>适用于 iOS 和 macOS 的本机类型
+# <a name="native-types-for-ios-and-macos"></a>IOS 和 macOS 的本机类型
 
-Mac 和 iOS Api 使用特定于体系结构的数据类型是始终在 32 位平台上和 64 位平台上的 64 位的 32 位的。
+Mac 和 iOS Api 使用32位平台上始终为32位的特定于体系结构的数据类型, 在64位平台上使用64位。
 
-例如，映射 Objective C`NSInteger`数据类型设置为`int32_t`32 位系统上和`int64_t`64 位系统上。
+例如, 在32位系统上, `NSInteger`目标 C 将`int32_t`数据类型映射到, 在 64 `int64_t`位系统上映射到。
 
-若要匹配此行为，请在我们统一的 API，我们要替换的上一次使用`int`(在.NET 中被定义为始终`System.Int32`) 到新的数据类型： `System.nint`。 您可以将"n"是有意义"本机"，因此平台的本机整数类型。
+若要匹配此行为, 请在我们的统一 API 上, 将上一个`int` (在 .net 中定义为`System.Int32`always) 的使用替换为新的数据类型`System.nint`:。 可以将 "n" 视为 "本机", 因此可以将平台的本机整数类型视为。
 
-使用这些新的数据类型相同的源代码编译为 32 位和 64 位体系结构，具体取决于编译标记。
+对于这两种新数据类型, 将根据编译标志为32位和64位体系结构编译相同的源代码。
 
 ## <a name="new-data-types"></a>新数据类型
 
-下表显示我们的数据类型，以匹配这个新的 32/64 位世界中所做的更改：
+下表显示了我们的数据类型更改, 以匹配这一新的 32/64 位环境:
 
-|本机类型|32 位后备类型|64 位后备类型|
+|本机类型|32位后备类型|64位后备类型|
 |--- |--- |--- |
 |`System.nint`|`System.Int32` (`int`)|`System.Int64` (`long`)|
 |`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
 |`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
-我们选择允许这些名称在C#代码以查找更多或更少看起来是今天的相同方法。
+我们选择了这些名称, 以C#允许你的代码以与今天相同的方式来查找。
 
 ### <a name="implicit-and-explicit-conversions"></a>隐式转换和显式转换
 
-新的数据类型的设计为了让单个C#源文件自然地使用 32 或 64 位存储，具体取决于主机平台和编译设置。
+新数据类型的设计旨在允许单个C#源文件自然使用32或64位存储, 具体取决于主机平台和编译设置。
 
-这需要我们可以设计一组的隐式和显式转换与特定于平台的数据类型为.NET 整型和浮点数据类型。
+这就需要我们设计一组对特定于平台的数据类型的隐式和显式转换, 并将其转换为 .NET 整型和浮点数据类型。
 
-不可能有数据丢失 （存储在 64 位空间上的 32 位值） 时，提供隐式转换运算符。
+当不可能丢失数据 (32 位值存储在64位空间上) 时, 将提供隐式转换运算符。
 
-可能发生了数据丢失时提供显式转换运算符 （64 位值存储在 32 或 32 个可能的存储位置上）。
+当有可能存在数据丢失时, 将提供显式转换运算符 (64 位值存储在32或可能32存储位置)。
 
- `int``uint`并`float`都隐式转换为`nint`，`nuint`和`nfloat`32 位将始终能放入 32 或 64 位。
+ `int``nint` `nuint`和均可隐式转换为, 并且`nfloat` 32 位将始终适合32或64位。 `float` `uint`
 
- `nint``nuint`并`nfloat`都隐式转换为`long`，`ulong`和`double`32 或 64 位值将始终能放在 64 位存储中。
+ `nint``long` `ulong`和均可隐式转换为, 并且`double` 32 或64位值将始终适合64位存储。 `nfloat` `nuint`
 
-必须使用从的显式转换`nint`，`nuint`并`nfloat`到`int`，`uint`和`float`由于本机类型可能占用的存储空间的 64 位。
+`nint`必须使用从、 `nuint`和`nfloat`到`int`和`float`的显式转换, 因为本机类型可能包含64位的存储。 `uint`
 
-必须使用从的显式转换`long`，`ulong`并`double`到`nint`，`nuint`和`nfloat`由于本机类型可能仅能容纳 32 位的存储。
+`long`必须使用从、 `ulong`和`double`到`nint`中`nuint` 的显式转换,因为本机类型可能只能保存32`nfloat`位的存储。
 
 ## <a name="coregraphics-types"></a>CoreGraphics 类型
 
-与 CoreGraphics 一起使用的点、 大小和矩形数据类型使用 32 或 64 位，具体取决于设备运行。  当我们最初绑定 iOS 和 Mac Api 时我们使用现有相匹配的主机平台大小的数据结构 (中的数据类型`System.Drawing`)。
+与 CoreGraphics 一起使用的 "点"、"大小" 和 "矩形" 数据类型使用32或64位, 具体取决于它们运行所在的设备。  最初绑定 iOS 和 Mac Api 时, 我们使用了现有的数据结构, 这些结构与主机平台的大小 (中`System.Drawing`的数据类型) 相匹配。
 
-移到时**统一**，将需要的实例替换为`System.Drawing`使用其`CoreGraphics`对应的以下表中所示：
+移动到**统一**时, 需要将的`System.Drawing`实例替换为其`CoreGraphics`对应项, 如下表所示:
 
-|System.Drawing 中的旧类型|新的数据类型 CoreGraphics|描述|
+|系统中的旧类型|新数据类型 CoreGraphics|描述|
 |--- |--- |--- |
-|`RectangleF`|`CGRect`|浮动的保存点的矩形的信息。|
-|`SizeF`|`CGSize`|浮动的保存点 （宽度、 高度） 的大小信息|
-|`PointF`|`CGPoint`|保存浮点型、 点信息 (X，Y)|
+|`RectangleF`|`CGRect`|保留浮点矩形信息。|
+|`SizeF`|`CGSize`|保留浮点大小信息 (宽度、高度)|
+|`PointF`|`CGPoint`|保存浮点, 点信息 (X, Y)|
 
-旧数据类型使用浮点数来存储的元素的数据结构，而新的其中一个使用`System.nfloat`。
+旧数据类型使用浮动来存储数据结构的元素, 而新的数据类型使用`System.nfloat`。
 
 ## <a name="related-links"></a>相关链接
 
 - [使用跨平台应用中的本机类型](~/cross-platform/macios/native-types-cross-platform.md)
-- [经典 vs 统一的 API 差异](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [经典与 Unified API 差异](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

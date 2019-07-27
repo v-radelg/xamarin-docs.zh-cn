@@ -6,72 +6,69 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: 248baa5daceff6db01098a155600ea204547e845
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3ab7a923dabd6b98c509870abaa51b12fb63c8d2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61319708"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510126"
 ---
-# <a name="listview-parts-and-functionality"></a>ListView 部件和功能
+# <a name="xamarinandroid-listview-parts-and-functionality"></a>Xamarin Android ListView 部件和功能
 
+`ListView`由以下部分组成:
 
-## <a name="overview"></a>概述
+- **行**&ndash;列表中数据的可见表示形式。
 
-一个`ListView`以下几个部分组成：
+- **适配器**&ndash;将数据源绑定到列表视图的非视觉对象。
 
-- **行**&ndash;列表中的数据的可视表示形式。
+- **快速滚动**&ndash;允许用户滚动列表长度的句柄。
 
-- **适配器**&ndash;将数据源绑定到列表视图的非可视类。
+- **节索引**&ndash;一个用户界面元素, 该元素在滚动行上浮动以指示当前行在列表中的位置。
 
-- **快速滚动**&ndash;使用户可以滚动列表的长度的句柄。
+这些屏幕截图使用基本`ListView`控件来显示滚动和节索引的呈现速度:
 
-- **部分索引**&ndash;通过滚动浮动的用户界面元素以指示列表中的当前行的位置的行。
+[![使用纯旧行、快速滚动和节索引的应用屏幕截图](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
-这些屏幕截图使用基本`ListView`控件以显示快速滚动和部分索引的呈现方式：
-
-[![使用普通的旧行，应用的屏幕快照快速滚动和部分索引](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
-
-构成元素`ListView`下面更详细地介绍：
+下面更详细地介绍了`ListView`组成的元素:
 
 
 ## <a name="rows"></a>行
 
-每一行都具有其自己`View`。 该视图可以是内置在中定义的视图之一`Android.Resources`，或自定义视图。 每个行可以使用相同的视图布局或它们可以各不相同。 使用内置的布局和其他解释了如何定义自定义布局的本文档中有示例。
+每行都有自己`View`的。 视图可以是在中`Android.Resources`定义的内置视图之一, 也可以是自定义视图。 每一行都可以使用相同的视图布局, 也可以是不同的。 此文档中有一些示例, 介绍了如何使用内置布局以及如何定义自定义布局。
 
 
 ## <a name="adapter"></a>适配器
 
-`ListView`控件需要`Adapter`提供带格式`View`每个行。 Android 具有内置适配器和视图，可以使用，也可以创建自定义类。
+控件需要为每行提供格式设置`View`。 `ListView` `Adapter` Android 具有内置的适配器和可使用的视图, 或者可以创建自定义类。
 
 
 ## <a name="fast-scrolling"></a>快速滚动
 
-当`ListView`包含许多行的数据快速滚动可以启用，以帮助用户导航到列表的任何部分。 快速滚动滚动条可以根据需要启用 （和自定义在 API 级别 11 和更高版本）。
+`ListView`当包含多行数据时, 可以启用快速滚动, 以帮助用户导航到列表的任何部分。 可以选择启用快速滚动的 "滚动条" (在 API 级别11和更高版本中自定义)。
 
 
-## <a name="section-index"></a>部分索引
+## <a name="section-index"></a>节索引
 
-在滚动较长的列表时，可选部分索引提供反馈的用户列表的哪一部分它们当前正在查看。 它只是适用于长列表，通常在与快速滚动一起使用。
+当滚动到长列表时, 可选节索引向用户提供当前正在查看的列表部分的反馈。 它仅适用于长列表, 通常与快速滚动一起提供。
 
 
 ## <a name="classes-overview"></a>类概述
 
-用于显示的主要类`ListViews`如下所示：
+用于显示`ListViews`的主要类如下所示:
 
-[![说明 ListView 和关联的类之间的关系的 UML 关系图](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
+[![阐释 ListView 和关联类之间的关系的 UML 关系图](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
-每个类的用途如下所述：
+每个类的用途如下所述:
 
-- **ListView** &ndash;显示可滚动的行集合的用户界面元素。 在手机它通常将占用整个屏幕 (在这种情况下，`ListActivity`类可用于) 也可能是在手机或平板电脑设备上可查看大布局的一部分。
+- **ListView**&ndash;显示可滚动行集合的用户界面元素。 在手机上, 它通常使用整个屏幕 (在这种情况下`ListActivity` , 可以使用类), 或者它可能是手机或平板电脑设备上的更大布局的一部分。
 
-- **视图**&ndash;在 Android 中的视图可以是任何用户界面元素，但上下文中的`ListView`它需要`View`提供每个行。
+- **视图**Android 中的视图可以是任何用户界面元素, 但在的上下文`ListView`中, 它需要为每行提供一个。 `View` &ndash;
 
-- **BaseAdapter** &ndash;基类的适配器实现绑定`ListView`到数据源。
+- **BaseAdapter**&ndash;用于将`ListView`绑定到数据源的适配器实现的基类。
 
-- **ArrayAdapter** &ndash;内置适配器类，将绑定到字符串数组`ListView`进行显示。 泛型`ArrayAdapter<T>`对于其他类型执行相同的操作。
+- **ArrayAdapter**将字符串数组绑定`ListView`到的内置适配器类, 用于显示。 &ndash; 泛型`ArrayAdapter<T>`对其他类型执行相同的工作。
 
-- **CursorAdapter** &ndash;使用`CursorAdapter`或`SimpleCursorAdapter`显示基于 SQLite 的查询的数据。
+- **CursorAdapter**&ndash;使用或可`SimpleCursorAdapter`基于 SQLite 查询显示数据。 `CursorAdapter`
 
-本文档包含使用的简单示例`ArrayAdapter`以及更复杂的示例需要的自定义实现`BaseAdapter`或`CursorAdapter`。
+本文档包含一些简单的示例, `ArrayAdapter`这些示例使用和更复杂的示例, 这些示例`BaseAdapter`需要`CursorAdapter`或的自定义实现。
 

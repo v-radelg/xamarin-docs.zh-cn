@@ -1,111 +1,111 @@
 ---
 title: 32/64 位平台注意事项
-description: 本文档介绍面向 Xamarin.iOS 或 Xamarin.Mac 应用程序的 32 位和 64 位体系结构时，需要注意的各种注意事项。
+description: 本文档介绍面向 Xamarin 或 Xamarin 应用程序的32位和64位体系结构时需要注意的各种注意事项。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 31eb0bfae58ecdca40548e46d1d9d95828be67b4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7f41d65c8981d4ef6ffcf1b812fbbbb7e72e7719
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61347809"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509749"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位平台注意事项
 
-虽然从历史上看，iOS 和 macOS 具有支持 32 位和 64 位应用程序，Apple 已逐渐弃用 32 位支持。
+尽管 iOS 和 macOS 一直支持32和64位应用, 但 Apple 已逐渐弃用32位支持。
 
-截至 iOS 11 中，将无法再启动 32 位应用程序，并[所有提交到 App Store 必须都支持 64 位](https://developer.apple.com/news/?id=06282017b)。
+从 iOS 11 开始, 32 位应用将不再启动,[应用商店的所有提交都必须支持64位](https://developer.apple.com/news/?id=06282017b)。
 
-从 2018 年 1 月开始[到 Mac App Store 提交新应用程序必须支持 64 位](https://developer.apple.com/news/?id=06282017a)，并且必须按 2018 年 6 月更新现有应用程序。
+从2018年1月开始,[提交到 Mac App Store 的新应用必须支持64位](https://developer.apple.com/news/?id=06282017a), 并且现有应用必须由6月2018更新。
 
-Xamarin 的经典 API (`XamMac.dll`和`monotouch.dll`) 支持仅 32 位应用程序。 但是，使用新的 Xamarin.iOS 和 Xamarin.Mac 应用程序[统一 API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS`和`Xamarin.Mac`) 默认情况下，因此可以 32 位和 64 位，根据需要的目标。
+Xamarin 的 Classic API (`XamMac.dll`和`monotouch.dll`) 仅支持32位应用程序。 但是, 新的 xamarin 和 xamarin 应用程序默认使用[Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS`和`Xamarin.Mac`), 因此, 在必要时可以同时针对32和64位。
 
 ## <a name="ios"></a>iOS
 
 <a name="enable-64" />
 
-### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>启用 64 位版本的 xamarin ios 应用
+### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>启用 Xamarin iOS 应用的64位版本
 
 > [!WARNING]
-> 出于历史原因，并帮助将较旧的 Xamarin.iOS 项目移至统一 API 和支持 64 位本部分包含。 所有新的 Xamarin.iOS 项目将默认使用统一 API 和面向 64 位。
+> 出于历史原因, 此部分包括在内, 有助于将较旧的 Xamarin iOS 项目移到 Unified API 并支持64位。 默认情况下, 所有新的 Xamarin iOS 项目都将使用 Unified API 和目标64位。
 
-对于 Xamarin.iOS 移动应用程序已转换为 Unified API，开发人员必须手动更新到面向 64 位的生成设置：
+对于已转换为 Unified API 的 Xamarin iOS 移动应用程序, 开发人员必须手动将生成设置更新为面向64位:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在中**Solution Pad**，双击应用程序的项目以打开**项目选项**窗口。
-2. 选择**iOS 生成**。
-3. 适用于 iPhone 模拟器中，在**支持的体系结构**下拉列表中，选择**x86\_64**或**i386 + x86\_64**:
+1. 在**Solution Pad**中, 双击应用程序的项目, 打开 "**项目选项**" 窗口。
+2. 选择 " **IOS 生成**"。
+3. 对于 iPhone 模拟器, 在 "**支持的体系结构**" 下拉列表中, 选择 " **\_x86 64** " 或 " **i386 +\_x86 64**":
 
-   [![将受支持的体系结构设置为 x86\_64 或 i386 + x86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![将支持的体系结构\_设置为 x86 64 或\_i386 + x86 64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
-4. 对于物理设备，选择一个可用**ARM64**组合：
+4. 对于物理设备, 请选择可用的**ARM64**组合之一:
 
-   [![将受支持的体系结构设置为一个 ARM64 组合](Images/Image02.png "设置支持 ARM64 组合之一的体系结构")](Images/Image02-large.png#lightbox)
+   [将![支持的体系结构设置为 ARM64 组合之一]将(Images/Image02.png "支持的体系结构设置为 ARM64 组合之一")](Images/Image02-large.png#lightbox)
 
-5. 单击 **“确定”**。
+5. 单击 **“确定”** 。
 6. 执行干净的生成。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在中**解决方案资源管理器**，右键单击应用的项目，然后选择**属性**。
-2. 选择**iOS 生成**。
-3. 对于 iPhone 模拟器中，设置**支持的体系结构**至任一**x86\_64**或**i386 + x86\_64**: 
+1. 在**解决方案资源管理器**中, 右键单击应用的项目, 然后选择 "**属性**"。
+2. 选择 " **IOS 生成**"。
+3. 对于 iPhone 模拟器, 请将**支持的体系结构**设置为 **\_x86 64**或**i386\_+ x86 64**: 
 
-   [![将受支持的体系结构设置为 x86_64 或 i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![将支持的体系结构设置为 x86_64 或\_i386 + x86 64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
-4. 对于物理设备，选择一个可用**ARM64**组合：
+4. 对于物理设备, 请选择可用的**ARM64**组合之一:
     
-   [![将受支持的体系结构设置为一个 ARM64 组合](Images/VS01.png "设置支持 ARM64 组合之一的体系结构")](Images/VS01-large.png#lightbox)
+   [将![支持的体系结构设置为 ARM64 组合之一]将(Images/VS01.png "支持的体系结构设置为 ARM64 组合之一")](Images/VS01-large.png#lightbox)
 
 5. 保存更改。
 6. 执行干净的生成。
 
 -----
 
-ARMv7s 仅受 iPhone 5 （或更高版本） 中包含的 A6 处理器。 ARMv7 代码更快且小于 ARMv6、 仅适用于 iPhone 3GS 和更高版本，和时所需的 Apple iPad 或 5.0 的最低 iOS 版本作为目标。 ARMv6 适用于所有设备，但不再支持由编译器提供 Xcode 4.5 和更高版本。 
+ARMv7s 仅支持 iPhone 5 (或更高版本) 中包含的 A6 处理器。 ARMv7 代码比 ARMv6 更快且更小, 仅适用于 iPhone 3GS 和更高版本, 并且在面向 iPad 或最低 iOS 版本5.0 时, Apple 需要此代码。 ARMv6 适用于所有设备, 但在 Xcode 4.5 和更高版本随附的编译器中不再支持该功能。 
 
-支持 iOS 8 iPhone 6 或其他 64 位设备上所需支持 ARM64 和提交新的或更新现有 iTunes 应用商店中的应用程序时所需的 Apple。
+需要 ARM64 来支持 iPhone 6 或其他64位设备上的 iOS 8, 并将在 iTunes 应用商店中提交新的或更新现有应用程序时 Apple 要求使用。
 
-有关各种 iOS 设备的功能的全面信息，请参阅 Apple[设备兼容性](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html)文档。
+若要全面了解各种 iOS 设备的功能, 请查看 Apple 的[设备兼容性](https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html)文档。
 
-### <a name="64-bit-and-binary-size-increases"></a>64 位和二进制大小增长
+### <a name="64-bit-and-binary-size-increases"></a>64位和二进制大小增加
 
-从 32 位到 64 位 iOS Apple 的转换期间应用将需要在 32 位和 64 位硬件上运行。 正因为如此，Xamarin 的统一 API 允许开发人员可以同时为目标。
+在 Apple 从32位转换到64时, iOS 应用需要在32位和64位硬件上运行。 因此, Xamarin 的 Unified API 允许开发人员以这两种方法为目标。
 
-面向 32 位和 64 位体系结构会显著增加应用程序的大小。 但是，因此这样做将允许较新的设备运行优化的代码，同时仍可支持较旧的设备。
+面向32位和64位体系结构的目标会显著增加应用程序的大小。 不过, 这样做会允许较新的设备运行优化的代码, 同时仍支持较旧的设备。
 
 > [!IMPORTANT]
-> 如果提交到 iTunes 应用商店的 iOS 应用程序时收到以下消息 _"警告 ITMS 9000:缺少的 64 位支持。从 2015 年 2 月 1 日，新的 iOS 上传到应用商店的应用必须包含 64 位支持和 8 包含 Xcode 6 或更高版本的 SDK 通过 iOS 构建。若要启用 64 在项目中，我们建议使用 Xcode 生成的"标准体系结构"设置默认值生成单个二进制文件使用 32 位和 64 位代码。"_ 您需要切换到一个支持的体系结构**ARM64**组合 （如上所示）、 重新编译和重新提交。
+> 如果在向 iTunes 应用商店提交 iOS 应用程序时收到以下消息, _则为 "警告 ITMS-9000:缺少64位支持。从2015年2月1日开始, 已上传到应用商店的新 iOS 应用必须包括64位支持, 并通过 iOS 8 SDK (包括在 Xcode 6 或更高版本中) 构建。若要在项目中启用64位, 建议使用默认的 Xcode 生成设置 "标准体系结构" 以使用32位和64位代码生成单个二进制文件。 "_ 需要将支持的体系结构切换为可用的**ARM64**组合之一 (如上所示), 重新编译并重新提交。
 
 ## <a name="mac"></a>Mac
 
 > [!IMPORTANT]
-> 从 2018 年 1 月开始，到 Mac App Store 提交的所有新 Mac 应用程序必须支持 64 位。 现有 Mac 应用商店应用和他们的更新必须支持 64 位从 2018 年 6 月开始。 请参阅[Apple 的公告](https://developer.apple.com/news/?id=06282017a)并[介绍了如何更新到 64 位的 Xamarin.Mac 应用的指南](~/cross-platform/macios/32-and-64/mac-64-bit.md)。
+> 从2018年1月开始, 提交到 Mac App Store 的所有新 Mac 应用都必须支持64位。 现有的 Mac 应用商店应用及其更新必须支持64位 (从6月 6 2018 日开始)。 请参阅[Apple 的公告](https://developer.apple.com/news/?id=06282017a)和[指南, 其中介绍了如何将你的 Xamarin 应用程序更新到64位](~/cross-platform/macios/32-and-64/mac-64-bit.md)。
 
-大多数现代的 Mac 计算机支持 32 位和 64 位应用程序。   MacOS 10.6 (Snow Leopard) 是要在 32 位系统上运行的最后一个操作系统。   发布后 2010年支持这两个系统的大多数 Mac。
+大多数新式 Mac 计算机都支持32位和64位的应用程序。   MacOS 10.6 (雪 Leopard) 是在32位系统上运行的最后一个操作系统。   自2010以来发布的大多数 Mac 都支持这两个系统。
 
-与 iOS 不同，许多最新版本的 macOS 中引入的新框架仅支持在 64 位模式下 （CloudKit、 EventKit、 GameController、 LocalAuthentication、 MediaLibrary、 MultipeerConnectivity、 NotificationCenter、 GLKit、 SpriteKit、 社会、和 MapKit，等等）。
+与 iOS 不同, 在最新版本的 macOS 中引入的许多新框架仅在64位模式下受支持 (CloudKit、EventKit、GameController、Localauthentication.framework、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、社交、以及其他 MapKit)。
 
-Unified API 允许开发人员能够选择他们想要生成哪种应用程序：32 位或 64 位。
+Unified API 允许开发人员选择他们想要生成的应用程序类型:32位或64位。
 
-**32 位应用程序**将在 32 位和 64 位 Mac 计算机上运行的地址空间限制为 32 位，并要求所有库都是 32 位。
+**32 位应用程序**将在32位和64位 Mac 计算机上运行, 其地址空间限制为32位, 并要求所有库都为32位。
 
-通常将使用此模式下，如果您有不在 64 位模式下运行的 32 位依赖项，如果你想要具有更小的下载，或者如果在将迁移到 64 位不有任何性能优势。
+如果你有32位依赖64项 (如果你想要下载较小的下载, 或者如果迁移到64位, 则没有性能优势), 则通常会使用此模式。
 
-因为您将不能够使用 macOS Mavericks 和 macOS Yosemite 中提供的许多框架限制了此模式。
+此模式受到限制, 因为你将无法使用 macOS Mavericks 和 macOS Yosemite 中提供的多个框架。
 
-**64 位应用程序**将仅在 64 位 Mac 设备上运行。
+**64 位应用程序**将仅在64位 Mac 设备上运行。
 
-对于 Mac，这是操作的首选的模式中使用的大多数 Mac 现在支持 64 位模式下，并拥有 Apple 提供的框架的完整集访问权限。
+对于 Mac, 这是首选的操作模式, 因为目前使用的大多数 Mac 支持64位模式, 并且你有权访问 Apple 提供的完整框架集。
 
-### <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>启用 64 位版本的 Xamarin.Mac 应用
+### <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>启用 Xamarin Mac 应用的64位版本
 
-有关生成使用 Xamarin.Mac 的 64 位应用程序的信息，请参阅[更新 Xamarin.Mac 统一应用程序迁移至 64 位](~/cross-platform/macios/32-and-64/mac-64-bit.md)指南。
+有关使用 Xamarin 生成64位应用的信息, 请参阅将[Xamarin 统一应用程序更新到64位](~/cross-platform/macios/32-and-64/mac-64-bit.md)指南。
 
 ## <a name="related-links"></a>相关链接
 
-- [经典 vs 统一的 API 差异](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [经典与 Unified API 差异](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

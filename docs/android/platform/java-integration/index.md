@@ -1,49 +1,48 @@
 ---
-title: Java 集成概述
-description: Java 生态系统包括组件的不同和巨大的集合。 许多这些组件可用于减少开发 Android 应用程序所需的时间。 本文档将介绍并提供一些开发人员可以使用这些现有的 Java 组件以提高其 Xamarin.Android 应用程序的开发体验的方式的高级概述。
+title: Java 与 Xamarin 的集成
+description: Java 生态系统包含各种不同的组件集合。 其中的许多组件可用于减少开发 Android 应用程序所需的时间。 本文档将介绍并提供一些开发人员可以使用这些现有 Java 组件来改善其 Xamarin 应用程序开发体验的一些方式的高级概述。
 ms.prod: xamarin
 ms.assetid: 7B5B8695-1C49-19BF-AE99-948CDCBD2A20
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 3ab31fb7cac97fbae3315f51daf3dd4b1edbcc1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085280"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510569"
 ---
-# <a name="java-integration-overview"></a>Java 集成概述
+# <a name="java-integration-with-xamarinandroid"></a>Java 与 Xamarin 的集成
 
-_Java 生态系统包括组件的不同和巨大的集合。许多这些组件可用于减少开发 Android 应用程序所需的时间。本文档将介绍并提供一些开发人员可以使用这些现有的 Java 组件以提高其 Xamarin.Android 应用程序的开发体验的方式的高级概述。_
-
+_Java 生态系统包含各种不同的组件集合。其中的许多组件可用于减少开发 Android 应用程序所需的时间。本文档将介绍并提供一些开发人员可以使用这些现有 Java 组件来改善其 Xamarin 应用程序开发体验的一些方式的高级概述。_
 
 ## <a name="overview"></a>概述
 
-给定的 Java 生态系统的程度，它是很有可能在 Java 中已编码为 Xamarin.Android 应用程序所需的任何给定的功能。 因此，很吸引人尝试并创建 Xamarin.Android 应用程序时重复使用这些现有的库。 
+考虑到 Java 生态系统的范围, 很可能是 Xamarin Android 应用程序所需的任何给定功能都已在 Java 中进行编码。 因此, 创建 Xamarin Android 应用程序时, 最好尝试并重用这些现有库。
 
-有三个可能的方法可重复使用 Xamarin.Android 应用程序中的 Java 库： 
+可以通过三种方法在 Xamarin Android 应用程序中重复使用 Java 库: 
 
--   **创建 Java 绑定库**&ndash;使用此技术，Xamarin.Android 项目用于创建C#Java 类型的包装。 然后，Xamarin.Android 应用程序可以引用C#包装器创建此项目，然后使用`.jar`文件。 
+-   **创建 Java 绑定库**使用此方法, Xamarin Android 项目用于创建C#围绕 Java 类型的包装。 &ndash; 然后, Xamarin 应用程序可以引用此项目C#创建的包装, 并使用`.jar`该文件。 
 
 -   **Java 本机接口** &ndash; *Java 本机* *接口*(JNI) 是一个框架，允许非 Java 代码 (如 c + + 或C#) 调用或调用通过运行的 Java 代码JVM 内部。 
 
--   **将代码移植**&ndash;此方法包括获取 Java 源代码，并再将其转换为C#。 这可以手动或通过使用如锐化的自动化的工具。 
+-   **端口代码**此方法涉及获取 Java 源代码, 然后将其转换为C# &ndash; 这可以手动完成, 也可以通过使用自动化工具 (如锐化) 来完成。 
 
-前两个技术的核心是*Java 本机接口*(JNI)。 JNI 是一个框架，允许不以 Java 编写的应用程序的 Java 虚拟机中运行的 Java 代码进行交互。 Xamarin.Android 使用 JNI 来创建*绑定*为C#代码。 
+前两种技术的核心是*Java 本机接口*(JNI)。 JNI 是一个框架, 它允许不以 Java 编写的应用程序与 Java 虚拟机中运行的 Java 代码进行交互。 Xamarin 使用 JNI 创建C#代码*绑定*。 
 
-第一种方法是绑定 Java 库的自动化程度更高、 声明性方法。 它涉及到使用 Visual Studio for Mac 或 Visual Studio 项目类型提供的 Xamarin.Android &ndash; Java 绑定库。 若要成功创建这些绑定，Java 绑定库可能仍需要一些手动修改，但没有那么多一样将纯 JNI 方法。 请参阅[绑定 Java 库](~/android/platform/binding-java-library/index.md)有关 Java 绑定库的详细信息。 
+第一种方法是绑定 Java 库的一种自动化、声明性更高的方法。 它涉及到使用 Visual Studio for Mac 或 Xamarin 提供的 Visual Studio 项目类型。 &ndash; 若要成功创建这些绑定, Java 绑定库可能仍需要进行一些手动修改, 但并不像纯粹的 JNI 方法那么多。 有关 Java 绑定库的详细信息, 请参阅[绑定 Java 库](~/android/platform/binding-java-library/index.md)。 
 
-第二种方法，使用 JNI，在更低级别工作，但可以提供更精细的控制和访问通常不能通过 Java 绑定库可访问的 Java 方法。 
+第二种方法是使用 JNI, 它的运行速度较低, 但可以提供更好的控制和访问 Java 方法, 而这些方法通常不能通过 Java 绑定库进行访问。 
 
-第三种方法是从以前的两个全然不同： 移植到 Java 中的代码C#。 移植到另一种语言中的代码是一个非常费力的过程，但可以减少工作量的一种工具帮助调用*锐化*。 提升是开放源代码工具，它是 Java-到-C#转换器。 
+第三种方法与前两种不同: 将代码从 Java 移植到C#。 将代码从一种语言移植到另一种语言可能是一个非常费力的过程, 但是可以通过称为 "*锐化*" 的工具来减少这项工作。 锐化是一种开源工具, 它是一个 Java 到C#转换器。 
 
 
 
 ## <a name="summary"></a>总结
 
-本文档提供的一些不同的方式通过 Java 库，可以在 Xamarin.Android 应用程序中重复使用的高级概述。 它引入了绑定的概念和管理可调用包装器，并探讨了用于 Java 将代码移植到选项C#。 
+本文档提供了一些在 Xamarin Android 应用程序中可重用 Java 的不同方法的高级概述。 它介绍了绑定和托管可调用包装的概念, 并讨论了用于将 Java 代码C#移植到的选项。 
 
 
 ## <a name="related-links"></a>相关链接

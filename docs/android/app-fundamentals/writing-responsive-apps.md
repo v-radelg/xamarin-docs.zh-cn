@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: a1642c4cbb790cf09d2a31e629408afc61d5b7ab
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e3f7d788e71718f4ca1336b7906cf3d63bf07f32
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61011363"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509195"
 ---
 # <a name="writing-responsive-applications"></a>编写响应式应用程序
 
-维护响应式 GUI 的关键之一是为 GUI 不会阻止此后台线程上的长时间运行任务。 假设我们想要计算的值以显示给用户，但此值需要 5 秒钟来计算：
+维护响应式 GUI 的关键之一是在后台线程上执行长时间运行的任务, 使 GUI 不会被阻止。 假设要计算一个值以显示给用户, 但该值需要5秒来计算:
 
 ```csharp
 public class ThreadDemo : Activity
@@ -43,7 +43,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-这将起作用，但应用程序将"挂起"5 秒时计算的值。 在此期间，应用程序将不响应任何用户交互。 若要解决此问题，我们要做我们在后台线程上的计算：
+这将起作用, 但计算该值时, 应用程序将 "挂起" 5 秒。 在这段时间内, 应用程序将不会响应任何用户交互。 为此, 我们想要在后台线程上进行计算:
 
 ```csharp
 public class ThreadDemo : Activity
@@ -71,7 +71,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-现在我们计算在后台线程上的值，因此我们 GUI 在计算期间保持响应状态。 但是，完成计算后，我们的应用程序崩溃时，请在日志中保留此：
+现在, 我们在后台线程上计算该值, 以便 GUI 在计算过程中保持响应状态。 但是, 在完成计算后, 应用会崩溃, 并将其保留在日志中:
 
 ```shell
 E/mono    (11207): EXCEPTION handling: Android.Util.AndroidRuntimeException: Exception of type 'Android.Util.AndroidRuntimeException' was thrown.
@@ -82,7 +82,7 @@ E/mono    (11207):   at Android.Widget.TextView.set_Text (IEnumerable`1 value)
 E/mono    (11207):   at MonoDroidDebugging.Activity1.SlowMethod ()
 ```
 
-这是因为必须更新从 GUI 线程 GUI。 我们的代码将更新从线程池线程，导致应用崩溃的 GUI。 我们需要计算我们，在后台线程上的值，但然后完成我们的更新，与处理在 GUI 线程上[Activity.RunOnUIThread](https://developer.xamarin.com/api/member/Android.App.Activity.RunOnUiThread/(System.Action)):
+这是因为必须从 GUI 线程更新 GUI。 我们的代码从 ThreadPool 线程更新 GUI, 导致应用崩溃。 需要在后台线程上计算我们的值, 然后在 GUI 线程上进行更新, 该线程通过[RunOnUIThread](xref:Android.App.Activity.RunOnUiThread*)进行处理:
 
 ```csharp
 public class ThreadDemo : Activity
@@ -110,6 +110,6 @@ public class ThreadDemo : Activity
 }
 ```
 
-此代码按预期运行。 此 GUI 仍然能够做出响应，并完成计算后获取正确更新。
+此代码按预期方式工作。 此 GUI 保持响应状态, 并在计算复杂性后正确更新。
 
-请注意这种技术不只是用于计算成本高的值。 它可以用于任何长时间运行的任务可以在后台，如 web 服务调用或 internet 数据下载完成的。
+请注意, 此方法不仅仅用于计算开销较高的值。 它可用于任何可以在后台完成的长时间运行的任务, 例如 web 服务调用或下载 internet 数据。

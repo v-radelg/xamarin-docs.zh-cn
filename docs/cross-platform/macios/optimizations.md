@@ -1,27 +1,27 @@
 ---
 title: 生成优化
-description: 本文档介绍在 Xamarin.iOS 和 Xamarin.Mac 应用的生成时应用的各种优化。
+description: 本文档说明了在生成时为 Xamarin 和 Xamarin 应用程序应用的各种优化。
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: f1aa805b9b7a16ad1e8af573cf4170f885eb0197
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a14845646fb400285adac8579af4b15db61e047b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261194"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511166"
 ---
 # <a name="build-optimizations"></a>生成优化
 
-本文档介绍在 Xamarin.iOS 和 Xamarin.Mac 应用的生成时应用的各种优化。
+本文档说明了在生成时为 Xamarin 和 Xamarin 应用程序应用的各种优化。
 
-## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>删除 UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
+## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>删除 UIApplication/EnsureUIThread/NSApplication。 EnsureUIThread
 
-删除对[UIApplication.EnsureUIThread] [ 1] （适用于 Xamarin.iOS) 或`NSApplication.EnsureUIThread`（适用于 Xamarin.Mac)。
+删除对[UIApplication][1]的调用 (适用于 xamarin) 或`NSApplication.EnsureUIThread` (适用于 xamarin)。
 
-这种优化会更改以下类型的代码：
+此优化将更改以下类型的代码:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -31,7 +31,7 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-为以下：
+以下内容:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -40,19 +40,19 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-默认情况下启用为发布生成。
+默认情况下, 它对发布版本启用。
 
-可以通过传递重写默认行为`--optimize=[+|-]remove-uithread-checks`mtouch/mmp 到。
+通过传递`--optimize=[+|-]remove-uithread-checks`到 mtouch/mmp, 可以重写默认行为。
 
 [1]: https://docs.microsoft.com/dotnet/api/UIKit.UIApplication.EnsureUIThread
 
-## <a name="inline-intptrsize"></a>Inline IntPtr.Size
+## <a name="inline-intptrsize"></a>内联 IntPtr. Size
 
-内嵌元素的常量值的`IntPtr.Size`根据目标平台。
+`IntPtr.Size`根据目标平台 Inlines 的常量值。
 
-这种优化会更改以下类型的代码：
+此优化将更改以下类型的代码:
 
 ```csharp
 if (IntPtr.Size == 8) {
@@ -62,7 +62,7 @@ if (IntPtr.Size == 8) {
 }
 ```
 
-为以下 （为生成项目时在 64 位平台）：
+到以下内容 (为64位平台生成时):
 
 ```csharp
 if (8 == 8) {
@@ -72,21 +72,21 @@ if (8 == 8) {
 }
 ```
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-默认情况下，如果针对同一个体系结构，或平台程序集 (**Xamarin.iOS.dll**， **Xamarin.TVOS.dll**， **Xamarin.WatchOS.dll**或**Xamarin.Mac.dll**)。
+默认情况下, 它在面向单个体系结构或平台程序集 (Xamarin. **.dll**、 **TVOS**、 **WatchOS**或**xamarin**) 中处于启用状态。
 
-如果面向多个体系结构，此优化将创建为 32 位版本和 64 位版本的应用程序中，不同的程序集，这两个版本将需要包含在应用中，有效地增加而不是减小最终应用程序大小它。
+如果面向多个体系结构, 此优化将为32位版本和应用程序的64位版本创建不同的程序集, 并且这两个版本都必须包含在应用程序中, 从而提高最终应用程序的大小, 而不是减少以便.
 
-可以通过传递重写默认行为`--optimize=[+|-]inline-intptr-size`mtouch/mmp 到。
+通过传递`--optimize=[+|-]inline-intptr-size`到 mtouch/mmp, 可以重写默认行为。
 
-## <a name="inline-nsobjectisdirectbinding"></a>内联 NSObject.IsDirectBinding
+## <a name="inline-nsobjectisdirectbinding"></a>Inline NSObject. IsDirectBinding
 
-`NSObject.IsDirectBinding` 是实例属性，用于确定指示特定实例的包装器类型是否为 (包装器类型是映射到本机类型的托管的类型; 对于实例托管`UIKit.UIView`类型映射到本机`UIView`类型-相反是用户类型在这种情况下`class MyUIView : UIKit.UIView`是用户类型)。
+`NSObject.IsDirectBinding`是一个实例属性, 该属性确定特定实例是否为包装类型 (包装类型为映射到本机类型的托管类型); 例如, 托管`UIKit.UIView`类型映射到本机`UIView`类型-相反, 是用户类型, 在本例中`class MyUIView : UIKit.UIView`为用户类型)。
 
-需要知道的值`IsDirectBinding`时调用 Objective C，因为值可确定哪个版本的`objc_msgSend`使用。
+`IsDirectBinding`在调用目标-C 时, 必须知道的值, 因为值确定要使用哪个版本的`objc_msgSend` 。
 
-对于下面的代码：
+仅给定以下代码:
 
 ```csharp
 class UIView : NSObject {
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-我们可以确定这`UIView.SomeProperty`的值`IsDirectBinding`不是常量并且不能为内联：
+我们可以确定中`UIView.SomeProperty`的`IsDirectBinding`值不是常量, 并且不能内联:
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-但是，就可以查看在应用中的所有类型，并确定没有类型继承自`NSUrl`，并因此是安全的内联`IsDirectBinding`为常量值`true`:
+但是, 可以查看应用中的所有类型, 并确定没有从`NSUrl`继承的类型, 这样就可以安全地将`IsDirectBinding`值内联到常量`true`中:
 
 ```csharp
 void myURL = new NSUrl ();
@@ -134,7 +134,7 @@ Console.WriteLine (myURL.SomeOtherProperty); // prints 'true'
 // There's no way to make SomeOtherProperty print anything but 'true', since there are no NSUrl subclasses.
 ```
 
-具体而言，此优化将更改以下类型的代码 (这是绑定代码`NSUrl.AbsoluteUrl`):
+特别是, 此优化将更改以下类型的代码 (这是的绑定代码`NSUrl.AbsoluteUrl`):
 
 ```csharp
 if (IsDirectBinding) {
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-为以下 (当它可确定不是否存在的任何子类`NSUrl`应用中):
+到以下 (如果可以确定应用中没有的`NSUrl`子类):
 
 ```csharp
 if (true) {
@@ -154,15 +154,15 @@ if (true) {
 }
 ```
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它是默认情况下始终启用适用于 Xamarin.iOS，并始终默认情况下禁用适用于 Xamarin.Mac （因为它是可以动态加载程序集在 Xamarin.Mac 中的，不能以确定特定类永远不会创建子类）。
+默认情况下, 对于 Xamarin 始终处于启用状态, 并且在默认情况下, Xamarin 将始终禁用 (因为可以在 Xamarin 中动态加载程序集, 因此无法确定特定类绝不会出现子类)。
 
-可以通过传递重写默认行为`--optimize=[+|-]inline-isdirectbinding`mtouch/mmp 到。
+通过传递`--optimize=[+|-]inline-isdirectbinding`到 mtouch/mmp, 可以重写默认行为。
 
-## <a name="inline-runtimearch"></a>内联 Runtime.Arch
+## <a name="inline-runtimearch"></a>内联运行时
 
-这种优化会更改以下类型的代码：
+此优化将更改以下类型的代码:
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE) {
@@ -172,7 +172,7 @@ if (Runtime.Arch == Arch.DEVICE) {
 }
 ```
 
-为以下 （时生成的设备）：
+到以下内容 (为设备生成时):
 
 ```csharp
 if (Arch.DEVICE == Arch.DEVICE) {
@@ -182,15 +182,15 @@ if (Arch.DEVICE == Arch.DEVICE) {
 }
 ```
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-始终启用默认情况下适用于 Xamarin.iOS （它不是适用于 Xamarin.Mac 可用）。
+默认情况下, 它对于 Xamarin iOS 始终处于启用状态 (不适用于 Xamarin)。
 
-可以通过传递重写默认行为`--optimize=[+|-]inline-runtime-arch`mtouch 到。
+通过传递`--optimize=[+|-]inline-runtime-arch`到 mtouch, 可以重写默认行为。
 
-## <a name="dead-code-elimination"></a>死码消除
+## <a name="dead-code-elimination"></a>死代码消除
 
-这种优化会更改以下类型的代码：
+此优化将更改以下类型的代码:
 
 ```csharp
 if (true) {
@@ -200,13 +200,13 @@ if (true) {
 }
 ```
 
-到：
+为
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-它还将评估常量比较，如下：
+它还将评估常数比较, 如下所示:
 
 ```csharp
 if (8 == 8) {
@@ -216,13 +216,13 @@ if (8 == 8) {
 }
 ```
 
-并确定该表达式`8 == 8`是始终 true，并减少到：
+并确定表达式`8 == 8`始终为 true, 并将其减少为:
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-这是功能强大的优化与内联的优化，一起使用时，因为它可以转换以下类型的代码 (这是绑定代码`NFCIso15693ReadMultipleBlocksConfiguration.Range`):
+这是一种功能强大的优化, 与内联优化一起使用, 因为它可以转换以下类型的代码 (这是的`NFCIso15693ReadMultipleBlocksConfiguration.Range`绑定代码):
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-到此 (对于 64 位设备，在生成时和时还可以确保有没有`NFCIso15693ReadMultipleBlocksConfiguration`子类的应用中):
+到此 (当为64位设备生成时, 以及在应用中还可以确保`NFCIso15693ReadMultipleBlocksConfiguration`没有子类):
 
 ```csharp
 NSRange ret;
@@ -262,23 +262,23 @@ ret = global::ObjCRuntime.Messaging.NSRange_objc_msgSend (this.Handle, Selector.
 return ret;
 ```
 
-AOT 编译器已能够执行消除死代码类似，但在链接器，这意味着，可以看到有多个方法，不使用，并因此可能会删除 （除非使用其他位置） 链接器内部完成这种优化:
+AOT 编译器已经能够消除与此类似的死代码, 但这种优化是在链接器中完成的, 这意味着, 链接器可以看到有多个方法不再使用, 因此可能会被删除 (除非在其他位置使用):
 
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSend_stret`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper_stret`
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它始终启用默认情况下 （如果启用链接器）。
+默认情况下, 它始终处于启用状态 (启用链接器时)。
 
-可以通过传递重写默认行为`--optimize=[+|-]dead-code-elimination`mtouch/mmp 到。
+通过传递`--optimize=[+|-]dead-code-elimination`到 mtouch/mmp, 可以重写默认行为。
 
-## <a name="optimize-calls-to-blockliteralsetupblock"></a>优化对 BlockLiteral.SetupBlock 的调用
+## <a name="optimize-calls-to-blockliteralsetupblock"></a>优化对 BlockLiteral 的调用。 SetupBlock
 
-Xamarin.iOS/Mac 运行时需要知道委托的块签名创建托管的 Objective C 块时。 这可能是一个相当高昂的操作。 此优化将在生成时，计算块签名并修改 IL 调用`SetupBlock`改为将作为参数的签名的方法。 执行此操作不需要使用计算在运行时的签名。
+在为托管委托创建目标为 C 的块时, Xamarin/Mac 运行时需要知道块签名。 这可能是相当昂贵的操作。 此优化将在生成时计算块签名, 并修改 IL 以调用`SetupBlock`采用签名作为参数的方法。 这样做可以避免需要在运行时计算签名。
 
-基准显示，这加快了原来的 10 到 15 调用一个块。
+基准测试表明, 这会加快调用块的速度, 使其系数为10到15。
 
 它将转换以下[代码](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
 
@@ -291,7 +291,7 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-到：
+为
 
 ```csharp
 public static void RequestGuidedAccessSession (bool enable, Action<bool> completionHandler)
@@ -302,51 +302,51 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-使用静态注册机构 （在 Xamarin.iOS 中静态注册机构的设备生成的默认情况下启用，并在默认情况下，对于版本启用静态注册机构的 Xamarin.Mac 中生成） 时，它是默认情况下启用。
+默认情况下, 它在使用静态注册器时处于启用状态 (在 Xamarin 中, 默认情况下为设备生成启用静态注册注册器, 在 Xamarin 中, 默认情况下为发布版本启用静态注册器)。
 
-可以通过传递重写默认行为`--optimize=[+|-]blockliteral-setupblock`mtouch/mmp 到。
+通过传递`--optimize=[+|-]blockliteral-setupblock`到 mtouch/mmp, 可以重写默认行为。
 
 ## <a name="optimize-support-for-protocols"></a>优化对协议的支持
 
-Xamarin.iOS/Mac 运行时需要有关如何将托管类型实现 Objective C 协议的信息。 此信息存储在接口 （和这些接口的属性），这不是非常有效的格式，也不是链接器友好。
+Xamarin/Mac 运行时需要有关托管类型如何实现目标 C 协议的信息。 此信息存储在接口 (以及这些接口的属性) 中, 这种格式不是一种非常有效的格式, 也不能识别链接器。
 
-例如，这些接口存储中的所有协议成员有关的信息`[ProtocolMember]`属性，它首先包含对这些成员的参数类型的引用。 这意味着只需实现此类接口将使链接器保留在该接口中使用的所有类型，即使对于的可选成员应用永远不会调用或实现。
+其中一个示例是, 这些接口将有关`[ProtocolMember]`属性中所有协议成员的信息存储在一起, 其中其他内容包含对这些成员的参数类型的引用。 这意味着, 只需实现此类接口, 链接器就会保留在该接口中使用的所有类型, 甚至应用程序永远不会调用或实现的可选成员。
 
-这种优化会使将任何所需的信息存储在使用既轻松又快捷在运行时查找内存少的有效格式的静态注册机构。
+此优化会使静态注册机构以有效的格式存储任何所需的信息, 这种格式使用的内存非常简单, 并且在运行时可快速查找。
 
-它还将介绍链接器，它不一定需要保留这些接口和任何相关的属性。
+它还会告诉链接器, 不一定需要保留这些接口, 也不需要保留任何相关的属性。
 
-此优化需要链接器和静态注册机构才可用。
+此优化需要同时启用链接器和静态注册器。
 
-在 Xamarin.iOS 上这种优化启用链接器和静态注册机构时默认启用。
+在 Xamarin 上, 默认情况下, 当同时启用链接器和静态注册器时, 将启用此优化。
 
-在 Xamarin.Mac 这种优化是永远不会启用默认情况下，由于 Xamarin.Mac 支持动态加载程序集和这些程序集可能不具有已生成时已知的 （并因此没有进行优化）。
+在 Xamarin 上, 默认情况下不启用此优化, 因为 Xamarin 支持动态加载程序集, 并且这些程序集在生成时可能没有已知 (因而未经过优化)。
 
-可以通过传递重写默认行为`--optimize=-register-protocols`mtouch/mmp 到。
+通过传递`--optimize=-register-protocols`到 mtouch/mmp, 可以重写默认行为。
 
-## <a name="remove-the-dynamic-registrar"></a>删除动态注册机构
+## <a name="remove-the-dynamic-registrar"></a>删除动态注册器
 
-Xamarin.iOS 和 Xamarin.Mac 运行时包括对支持[注册托管的类型](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/)Objective C 运行时使用。 它可以在生成时或在运行时 （或部分在生成时和在运行时的其余部分），但如果它完全执行此操作在生成时，这意味着可以删除在运行时执行的支持代码。 这会导致应用程序大小显著缩短特别适用于较小的应用，例如扩展或 watchOS 应用。
+Xamarin 和 Xamarin 运行时都支持向目标 C 运行时[注册托管类型](~/ios/internals/registrar.md)。 它可以在生成时或运行时执行 (或在生成时部分运行, 或者在运行时部分运行), 但如果在生成时完全完成, 则可以删除运行时用于执行此操作的支持代码。 这会显著降低应用程序的大小, 尤其是适用于扩展或 watchOS 应用程序的小型应用程序。
 
-此优化需要静态注册机构和链接器才可用。
+此优化需要同时启用静态注册注册器和链接器。
 
-链接器将尝试确定它是否可以安全地删除动态注册机构，以及如果是这样会尝试将其删除。
+链接器将尝试确定是否可以安全地删除动态注册程序, 如果是, 则将尝试删除它。
 
-由于 Xamarin.Mac 支持动态加载程序集在运行时 （这不知道在生成时），就无法确定在生成时，这是否是安全优化。 这意味着永远不会为 Xamarin.Mac 应用的默认情况下启用此优化。
+由于 Xamarin 支持在运行时动态加载程序集 (在生成时未知), 因此无论是否为安全优化, 都无法确定生成时。 这意味着, 默认情况下不会为 Xamarin Mac 应用启用此优化。
 
-可以通过传递重写默认行为`--optimize=[+|-]remove-dynamic-registrar`mtouch/mmp 到。
+通过传递`--optimize=[+|-]remove-dynamic-registrar`到 mtouch/mmp, 可以重写默认行为。
 
-如果重写默认值来删除动态注册机构，链接器将发出警告，如果它检测到的是不安全的 （但仍会删除动态注册机构）。
+如果重写默认值以删除动态注册器, 则链接器将在检测到这是不安全 (但仍将删除动态注册器) 时发出警告。
 
-## <a name="inline-runtimedynamicregistrationsupported"></a>内联 Runtime.DynamicRegistrationSupported
+## <a name="inline-runtimedynamicregistrationsupported"></a>内联运行时。 DynamicRegistrationSupported
 
-内嵌元素值的`Runtime.DynamicRegistrationSupported`确定在生成时。
+Inlines 的值`Runtime.DynamicRegistrationSupported`在生成时确定。
 
-如果删除动态注册机构 (请参阅[删除动态注册机构](#remove-the-dynamic-registrar)优化)，这是一个常量`false`值，否则它是一个常量`true`值。
+如果删除动态注册器 (请参阅[删除动态注册](#remove-the-dynamic-registrar)器优化), 则这是一个常`false`数值, 否则它是一个常`true`数值。
 
-这种优化会更改以下类型的代码：
+此优化将更改以下类型的代码:
 
 ```csharp
 if (Runtime.DynamicRegistrationSupported) {
@@ -356,31 +356,31 @@ if (Runtime.DynamicRegistrationSupported) {
 }
 ```
 
-为以下时删除动态注册机构：
+删除动态注册机构时的以下内容:
 
 ```csharp
 throw new Exception ("dynamic registration is not supported");
 ```
 
-为以下时动态注册机构不会删除：
+在未删除动态注册器的情况下, 转换为以下内容:
 
 ```csharp
 Console.WriteLine ("do something");
 ```
 
-此优化需要链接器启用，并且仅应用于具有方法`[BindingImpl (BindingImplOptions.Optimizable)]`属性。
+此优化需要启用链接器, 且仅应用于具有属性的`[BindingImpl (BindingImplOptions.Optimizable)]`方法。
 
-它始终启用默认情况下 （如果启用链接器）。
+默认情况下, 它始终处于启用状态 (启用链接器时)。
 
-可以通过传递重写默认行为`--optimize=[+|-]inline-dynamic-registration-supported`mtouch/mmp 到。
+通过传递`--optimize=[+|-]inline-dynamic-registration-supported`到 mtouch/mmp, 可以重写默认行为。
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>预计算的方法来创建托管的委托的 Objective C 块
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>用于为目标-C 块创建托管委托的预计算方法
 
-当 Objective C 调用选择器，采用一个块作为参数，并托管的代码然后已经重写该方法中，Xamarin.iOS / Xamarin.Mac 运行时需要为该块创建委托。
+当目标 C 调用选择器以块作为参数, 然后托管代码重写该方法时, Xamarin/Xamarin 运行时需要为该块创建委托。
 
-将包含由绑定生成器生成的绑定代码`[BlockProxy]`特性，指定具有类型`Create`可以执行此操作的方法。
+绑定生成器生成的绑定代码将包含一个`[BlockProxy]`属性, 该属性`Create`使用可执行此操作的方法指定类型。
 
-给定以下 Objective C 代码：
+给定以下目标-C 代码:
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -404,7 +404,7 @@ Console.WriteLine ("do something");
 @end
 ```
 
-以及以下绑定代码：
+以下绑定代码:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -415,7 +415,7 @@ interface ObjCBlockTester
 }
 ```
 
-生成器将生成：
+生成器将生成:
 
 ```csharp
 [Register("ObjCBlockTester", true)]
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-当调用 Objective C `[ObjCBlockTester callClassCallback]`，Xamarin.iOS / Xamarin.Mac 运行时将查看`[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`参数上的属性。 它将查找`Create`方法对该类型，并调用该方法，以创建委托。
+当目标-C 调用`[ObjCBlockTester callClassCallback]`时, Xamarin/xamarin 运行时将查看参数上的`[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]`属性。 然后, 它将在该`Create`类型上查找方法, 并调用该方法来创建委托。
 
-此优化将查找`Create`方法在生成时和静态注册机构将生成用于查找的方法在运行时使用的元数据令牌，而不使用属性和反射 （这是快得多，还允许链接器代码若要删除相应的运行时代码，从而使应用更小）。
+此优化将在生成`Create`时找到方法, 而静态注册器会生成代码, 该代码使用元数据标记在运行时查找方法, 而不是使用属性和反射 (这要快得多, 并且还允许链接器删除相应的运行时代码, 使应用程序更小。
 
-如果找不到 m m p/mtouch`Create`方法，然后将会显示 MT4174/MM4174 警告，并查找将在运行时执行。
-最可能的原因手动编写且没有所需的绑定代码`[BlockProxy]`属性。
+如果 mmp/mtouch 找`Create`不到方法, 则将显示 MT4174/MM4174 警告, 并改为在运行时执行查找。
+最可能的原因是, 手动编写了绑定代码, `[BlockProxy]`但没有所需的属性。
 
-此优化需要静态注册机构以进行启用。
+此优化要求启用静态注册器。
 
-它始终启用默认情况下 （只要启用了静态注册机构）。
+默认情况下, 它始终处于启用状态 (只要启用了静态注册器)。
 
-可以通过传递重写默认行为`--optimize=[+|-]static-delegate-to-block-lookup`mtouch/mmp 到。
+通过传递`--optimize=[+|-]static-delegate-to-block-lookup`到 mtouch/mmp, 可以重写默认行为。

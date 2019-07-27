@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ea8af3c84bb53434489d230d159a27b6b9d500d8
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2279282b08c9d97b239de424cf38aa6f1463dc4d
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830255"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510357"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-在本部分中，您将创建两个互斥的单选按钮 （启用一个禁用的其他），使用 [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
-和 [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-小组件。 按下任意单选按钮时，将显示的 toast 消息。
+在本部分中, 你将创建两个互相排斥的单选按钮 (启用一个禁用另一个), 并使用[`RadioGroup`](xref:Android.Widget.RadioGroup)
+与[`RadioButton`](xref:Android.Widget.RadioButton)
+小组件. 按任意单选按钮时, 将显示 toast 消息。
 
 
-打开**Resources/layout/Main.axml**文件，并添加两个[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s，嵌套在[ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (内[ `LinearLayout`](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+打开**Resources/layout/main.axml**文件并添加两个[`RadioButton`](xref:Android.Widget.RadioButton) [`RadioGroup`](xref:Android.Widget.RadioGroup) , 其中嵌套在内 (在中[`LinearLayout`](xref:Android.Widget.LinearLayout)):
 
 ```xml
 <RadioGroup
@@ -38,10 +38,10 @@ ms.locfileid: "67830255"
 </RadioGroup>
 ```
 
-非常重要的[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s 组合在一起由[ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)元素，以便一次可以选择不超过一个。 由 Android 系统自动处理此逻辑。 当一个 [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-在选择了一个组，所有其他用户已取消自动选择。
+重要的是, [`RadioButton`](xref:Android.Widget.RadioButton)将[`RadioGroup`](xref:Android.Widget.RadioGroup)由元素组合在一起, 以便一次只能选择一个。 此逻辑由 Android 系统自动处理。 如果一个[`RadioButton`](xref:Android.Widget.RadioButton)
+选定组后, 将自动取消选择所有其他组。
 
-若要执行某些操作时每个[ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)是选择，我们需要编写一个事件处理程序：
+若要在每个[`RadioButton`](xref:Android.Widget.RadioButton)选定时执行操作, 需要编写一个事件处理程序:
 
 ```csharp
 private void RadioButtonClick (object sender, EventArgs e)
@@ -51,12 +51,12 @@ private void RadioButtonClick (object sender, EventArgs e)
 }
 ```
 
-首先，传递在发件人是转换为单选按钮。
-然后 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-选定的单选按钮的文本将显示消息。
+首先, 将传入的发送方转换为单选按钮。
+然后是[`Toast`](xref:Android.Widget.Toast)
+"消息" 显示选定的单选按钮的文本。
 
-现在，在底部 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-方法中，添加以下：
+现在, 在[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+方法, 添加以下内容:
 
 ```csharp
 RadioButton radio_red = FindViewById<RadioButton>(Resource.Id.radio_red);
@@ -66,14 +66,14 @@ radio_red.Click += RadioButtonClick;
 radio_blue.Click += RadioButtonClick;
 ```
 
-这会将每个捕获[ `RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)布局中，并将添加每个新创建的事件 handlerto。
+这会从布局捕获[`RadioButton`](xref:Android.Widget.RadioButton)每个, 并添加新创建的事件 handlerto。
 
 运行该应用程序。
 
 > [!TIP]
-> 如果你需要自行更改的状态 (例如，当加载一个已保存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/))，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-> 属性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> 如果需要自行更改状态 (例如加载保存[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)的时), 请使用[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> 属性 setter 或[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > 方法。
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/). 
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。 

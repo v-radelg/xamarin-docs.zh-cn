@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9f2fd10e5cfe28206d323b2769517c2584919232
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f6f594d86cab8b1173ee9f67402862e1ec2890b2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829726"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510375"
 ---
 # <a name="checkbox"></a>CheckBox
 
-在本部分中，您将创建一个复选框，用于选择项，使用 [`CheckBox`](https://developer.xamarin.com/api/type/Android.Widget.CheckBox)
-小组件。 按下复选框时的 toast 消息将指示复选框的当前状态。
+在本部分中, 你将创建一个用于选择项目的复选框, 并使用[`CheckBox`](xref:Android.Widget.CheckBox)
+小组件. 按下该复选框时, toast 消息将指示复选框的当前状态。
 
-打开**Resources/layout/Main.axml**文件，并添加[ `CheckBox` ](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/)元素 (内[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout)):
+打开**Resources/layout/main.axml**文件并添加[`CheckBox`](xref:Android.Widget.CheckBox) [`LinearLayout`](xref:Android.Widget.LinearLayout)元素 (在中):
 
 ```xml
 <CheckBox android:id="@+id/checkbox"
@@ -27,8 +27,8 @@ ms.locfileid: "67829726"
         android:text="check it out" />
 ```
 
-若要更改状态时执行某些操作，请将以下代码添加到末尾 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-方法：
+若要在状态更改时执行操作, 请将以下代码添加到[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+付款方式
 
 ```csharp
 CheckBox checkbox = FindViewById<CheckBox>(Resource.Id.checkbox);
@@ -41,18 +41,18 @@ checkbox.Click += (o, e) => {
 };
 ```
 
-这会将捕获 [`CheckBox`](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/)
-元素在布局，然后处理单击事件，用于定义要单击相应的复选框时进行的操作。 单击时， [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-属性被调用以检查新状态的复选框。 如果选中，则 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-显示消息"已选"，否则为它将显示"未选择"。 的 [`CheckBox`](https://developer.xamarin.com/api/type/Android.Widget.CheckBox/)
-处理它自己的状态更改，因此只需查询的当前状态。
+这将捕获[`CheckBox`](xref:Android.Widget.CheckBox)
+元素, 然后处理单击事件, 该事件定义单击复选框时要执行的操作。 单击时,[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+调用属性以检查复选框的新状态。 如果已选中, 则[`Toast`](xref:Android.Widget.Toast)
+显示 "选定" 消息, 否则显示 "未选择"。 此[`CheckBox`](xref:Android.Widget.CheckBox)
+处理其自己的状态更改, 因此您只需要查询当前状态。
 
-运行它。
+运行该示例。
 
 > [!TIP]
-> 如果你需要自行更改的状态 (例如，当加载一个已保存[ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference)，使用 [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked)
-> 属性 setter 或 [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle)
+> 如果需要自行更改状态 (例如加载保存[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)的时), 请使用[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> 属性 setter 或[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > 方法。
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/).
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。

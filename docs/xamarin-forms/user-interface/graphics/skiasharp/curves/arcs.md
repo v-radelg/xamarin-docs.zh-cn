@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c93441bff02322fb938a67806ba7f5163c8c969e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61088455"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511908"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>绘制弧线的三个方法
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-这些方法是相同的 android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/)并[ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/)方法。 IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean))方法类似，但仅限于弧线上圆的周长，而通用化到一个椭圆。
+这些方法与 Android [`AddArc`](xref:Android.Graphics.Path.AddArc*)和 [`ArcTo`] x: ArcTo *) 方法相同。 IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean))方法类似，但仅限于弧线上圆的周长，而通用化到一个椭圆。
 
 这两种方法开头`SKRect`值，该值定义的位置和大小的椭圆的：
 
@@ -58,7 +58,7 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 ![](arcs-images/anglearc.png "本身角度弧线")
 
-`startAngle`或`sweepAngle`参数可以是负数：圆弧是对于正值的顺时针`sweepAngle`和逆时针旋转为负值。
+`startAngle` 或`sweepAngle`参数可以为负数:圆弧对于正值`sweepAngle`为顺时针, 对于负值为逆时针。
 
 但是， `AddArc` does*不*定义封闭的轮廓线。 如果您调用`LineTo`后`AddArc`，行从弧线末尾到中的点绘制`LineTo`方法，以及相同为 true 的`ArcTo`。
 
@@ -521,7 +521,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 ![](arcs-images/ellipticalarcellipse1.png "第一组椭圆弧形")
 
-可以通过两种方式来区分这些两个弧：顶弧大于底部圆弧，并且按从左到右绘制弧线，而底部弧的绘制方向逆时针旋转时，顺时针方向绘制顶弧。
+可以通过两种方式区分这两个弧线:顶部弧大于下弧形, 而当圆弧从左向右绘制时, 沿顺时针方向绘制顶部弧线, 而底部弧线以逆时针方向绘制。
 
 还有可能以适合另一种方法的两个点之间的椭圆：
 
@@ -535,10 +535,10 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 通过四种组合来区分这些四个弧[ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)并[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)枚举的类型参数`ArcTo`方法：
 
-- 红色：SKPathArcSize.Large 和 SKPathDirection.Clockwise
-- 绿色：SKPathArcSize.Small 和 SKPathDirection.Clockwise
-- 蓝色：SKPathArcSize.Small 和 SKPathDirection.CounterClockwise
-- 洋红色：SKPathArcSize.Large 和 SKPathDirection.CounterClockwise
+- 红色SKPathArcSize 和 SKPathDirection
+- 钩SKPathArcSize 和 SKPathDirection
+- 蓝色SKPathArcSize 和 SKPathDirection
+- 洋红色SKPathArcSize 和 SKPathDirection
 
 如果倾斜的椭圆不足够大，以使其适合的两个点，然后与统一缩放直到有足够空间。 只有两个唯一弧线这种情况下连接两个点。 可以使用来区分这些`SKPathDirection`参数。
 

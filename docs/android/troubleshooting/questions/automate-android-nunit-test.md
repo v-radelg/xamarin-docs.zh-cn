@@ -7,28 +7,28 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 94a0bddcb3a9a1e7236bed4b4c95fc38e1f9f0dd
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864119"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510436"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何自动化 Android NUnit 测试项目？
 
 > [!NOTE]
-> 本指南介绍如何自动化 Android NUnit 测试项目，不是 Xamarin.UITest 项目。 找不到 Xamarin.UITest 参考线[此处](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)。
+> 本指南介绍了如何自动执行 Android NUnit 测试项目, 而不是 UITest 项目。 可在[此处](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)找到 UITest 指南。
 
-当您创建**单元测试应用 (Android)** Visual Studio 项目中的 (或**Android 单元测试**Visual Studio for Mac 中的项目)，则此项目将不会自动默认情况下运行测试。
-若要在目标设备上运行 NUnit 测试，可以创建[Android.App.Instrumentation](https://developer.xamarin.com/api/type/Android.App.Instrumentation/)通过使用以下命令启动的子类： 
+在 Visual Studio 中创建**单元测试应用 (android)** 项目 (或 Visual Studio for Mac 中的**Android 单元测试**项目) 时, 默认情况下, 此项目不会自动运行测试。
+若要在目标设备上运行 NUnit 测试, 你可以创建[一个使用](xref:Android.App.Instrumentation)以下命令启动的子类: 
 
 ```shell
 adb shell am instrument 
 ```
 
-以下步骤介绍了此过程：
+以下步骤说明了此过程:
 
-1.  创建名为的新文件**TestInstrumentation.cs**: 
+1.  创建名为**TestInstrumentation.cs**的新文件: 
 
     ```cs 
     using System;
@@ -54,11 +54,11 @@ adb shell am instrument
         }
     }
     ```
-    在此文件中， [Xamarin.Android.NUnitLite.TestSuiteInstrumentation](https://developer.xamarin.com/api/type/Xamarin.Android.NUnitLite.TestSuiteInstrumentation/) (从**Xamarin.Android.NUnitLite.dll**) 来创建子类化`TestInstrumentation`。
+    在此文件中`Xamarin.Android.NUnitLite.TestSuiteInstrumentation` , 将创建`TestInstrumentation`一个子类 (来自**NUnitLite**)。
 
-2.  实现[TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/)构造函数和[AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29)方法。 `AddTests`方法控制实际执行哪些测试。
+2.  实现构造函数和`AddTests`方法。 `TestInstrumentation` `AddTests`方法控制实际执行的测试。
 
-3.  修改`.csproj`文件以添加**TestInstrumentation.cs**。 例如:
+3.  修改文件以添加**TestInstrumentation.cs。** `.csproj` 例如:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,25 +74,25 @@ adb shell am instrument
     </Project>
     ```
 
-4.  使用以下命令以运行单元测试。 替换`PACKAGE_NAME`与应用程序的包名称 (可以在应用中找到包名称`/manifest/@package`属性位于**AndroidManifest.xml**):
+4.  使用以下命令来运行单元测试。 将`PACKAGE_NAME`替换为应用的包名称 (在**androidmanifest.xml**中, 可以在应用的`/manifest/@package`属性中找到包名称):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5.  或者，您可以修改`.csproj`文件以添加`RunTests`MSBuild 目标。 这样就可以调用的命令如下所示的单元测试：
+5.  或者, 您可以修改`.csproj`文件以`RunTests`添加 MSBuild 目标。 这样, 就可以使用如下所示的命令调用单元测试:
 
     ```shell
     msbuild /t:RunTests Project.csproj
     ```
-    (请注意，使用此新的目标不是必需的; 早期版本`adb`而不是可以使用命令`msbuild`。)
+    (请注意, 不需要使用此新目标; 可以使用`adb`前面的命令`msbuild`而不是。)
 
-有关使用详细信息`adb shell am instrument`命令以运行单元测试，请参阅 Android 开发人员[使用 ADB 运行测试](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)主题。
+有关使用`adb shell am instrument`命令运行单元测试的详细信息, 请参阅使用[ADB 运行测试](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)主题的 Android 开发人员。
 
 
 > [!NOTE]
-> 与[Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) release，默认包名称 Android 可调用包装器将基于要导出的类型的程序集限定名称的 MD5SUM。 这样，相同的完全限定名称，以提供从两个不同的程序集，并且不使打包错误。 因此，请确保你使用`Name`属性上的`Instrumentation`属性生成可读的 ACW/类名称。
+> 在[Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)版本中, Android 可调用包装的默认包名称将基于正在导出的类型的程序集限定名称的 MD5SUM。 这允许从两个不同的程序集提供相同的完全限定名称, 而不会出现打包错误。 因此, 请确保使用属性`Name` `Instrumentation`上的属性生成可读的 ACW/类名称。
 
-_必须在使用 ACW 名称`adb`上述命令_。
-重命名重构C#类将因此需要修改`RunTests`命令，以使用正确的 ACW 名称。
+_ACW 名称必须在上面的`adb`命令中使用_。
+重命名/重构C#类将需要修改`RunTests`命令才能使用正确的 ACW 名称。
 

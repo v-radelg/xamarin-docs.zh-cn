@@ -1,70 +1,70 @@
 ---
 title: 创建自定义 ContentProvider
-description: 上一节演示了如何使用内置的 ContentProvider 实现中的数据。 本部分将介绍如何生成自定义 ContentProvider，然后使用其数据。
+description: 上一节演示了如何使用内置 ContentProvider 实现中的数据。 本部分将介绍如何生成自定义 ContentProvider 并使用其数据。
 ms.prod: xamarin
 ms.assetid: 36742B59-607E-070E-5D0E-B9C18917D3F4
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: da8aacac1f282fefb6b8d0e84cae168cf3a7148b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 61f74e54d4760bb3a85084371fa8e2a62dc06dfd
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953356"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510673"
 ---
 # <a name="creating-a-custom-contentprovider"></a>创建自定义 ContentProvider
 
-_上一节演示了如何使用内置的 ContentProvider 实现中的数据。本部分将介绍如何生成自定义 ContentProvider，然后使用其数据。_
+_上一节演示了如何使用内置 ContentProvider 实现中的数据。本部分将介绍如何生成自定义 ContentProvider 并使用其数据。_
 
-## <a name="about-contentproviders"></a>有关 Contentprovider
+## <a name="about-contentproviders"></a>关于 Contentprovider
 
-内容提供程序类必须继承`ContentProvider`。 它应包含用于对查询进行响应的内部数据存储和常量以帮助使用代码进行的数据的有效请求，它应公开的 Uri 和 MIME 类型。
+内容提供程序类必须继承自`ContentProvider`。 它应包含用于响应查询的内部数据存储区, 它应将 Uri 和 MIME 类型作为常量公开, 以帮助使用代码对数据进行有效的请求。
 
-### <a name="uri-authority"></a>URI （颁发机构）
+### <a name="uri-authority"></a>URI (颁发机构)
 
-`ContentProviders` 使用 Uri 在 Android 中访问的。 公开的应用程序`ContentProvider`设置它将对在做出响应的 Uri 及其**AndroidManifest.xml**文件。 安装应用程序时，这些 Uri 注册，以便其他应用程序可以访问它们。
+`ContentProviders`在 Android 中使用 Uri 进行访问。 公开的`ContentProvider`应用程序将在其**androidmanifest.xml**文件中将响应的 uri 设置为。 安装应用程序时, 将注册这些 Uri, 以便其他应用程序可以访问它们。
 
-适用于 Android 的 Mono 中的内容提供程序类应有`[ContentProvider]`属性指定的 Uri （或 Uri），应将其添加到**AndroidManifest.xml**。
+在 Mono for Android 中, 内容提供程序类应有一个`[ContentProvider]`特性来指定应添加到**androidmanifest.xml**中的 uri。
 
 
 ### <a name="mime-type"></a>Mime 类型
 
-MIME 类型的典型格式由两部分组成。 Android`ContentProviders`通常使用这两个字符串的 MIME 类型的第一部分：
+MIME 类型的典型格式由两部分组成。 Android `ContentProviders`通常将以下两个字符串用于 MIME 类型的第一部分:
 
-1. `vnd.android.cursor.item` &ndash; 若要表示的单个行，使用`ContentResolver.CursorItemBaseType`常量在代码中。
+1. `vnd.android.cursor.item`若要表示单个行, 请在`ContentResolver.CursorItemBaseType`代码中使用常量。 &ndash;
 
-1. `vnd.android.cursor.dir` &ndash; 对于多个行，使用`ContentResolver.CursorDirBaseType`常量在代码中。
+1. `vnd.android.cursor.dir`对于多行, 请在`ContentResolver.CursorDirBaseType`代码中使用常量。 &ndash;
 
-MIME 类型的第二部分是特定于应用程序，并应使用反向 DNS 标准的与`vnd.`前缀。 示例代码使用`vnd.com.xamarin.sample.Vegetables`。
+MIME 类型的第二部分是特定于你的应用程序的, 并且应使用带有`vnd.`前缀的反向 DNS 标准。 示例代码使用`vnd.com.xamarin.sample.Vegetables`。
 
 
 ### <a name="data-model-metadata"></a>数据模型元数据
 
-使用应用程序需要构造 Uri 查询访问不同类型的数据。 基本 Uri 可以扩展来引用特定表的数据，并且还包括参数以筛选结果。 此外必须声明的列和子句与生成的游标用于显示数据。
+使用应用程序需要构造 Uri 查询才能访问不同类型的数据。 可以扩展基 Uri 以引用特定的数据表, 还可以包含用于筛选结果的参数。 还必须声明用于显示数据的结果游标所使用的列和子句。
 
-若要确保仅有效的 Uri 查询构造，它是惯用提供作为常数值的有效字符串。 这使得能够更轻松地访问`ContentProvider`因为它会使值可通过代码完成功能发现并防止在字符串中的拼写错误。
+为了确保仅构造有效的 Uri 查询, 可以将有效的字符串作为常量值提供。 这样就可以更轻松地访问`ContentProvider` , 因为它使值可以通过代码完成来发现, 并防止字符串中出现键入错误。
 
-在前面的示例`android.provider.ContactsContract`类公开的元数据的联系人数据。 对于我们自定义`ContentProvider`我们只需将公开为类本身的常量。
+在上面的示例中`android.provider.ContactsContract` , 类公开了联系人数据的元数据。 对于我们的`ContentProvider`自定义, 我们将只公开类本身的常量。
 
 
 ## <a name="implementation"></a>实现
 
-有三个步骤创建和使用自定义到`ContentProvider`:
+创建和使用自定义`ContentProvider`的步骤有三个:
 
-1. **创建一个数据库类**&ndash;实现`SQLiteOpenHelper`。
+1. **创建数据库类**&ndash;实现。`SQLiteOpenHelper`
 
-2. **创建`ContentProvider`类**&ndash;实现`ContentProvider`与数据库的实例，元数据公开为常量值和方法来访问数据。
+2. **使用数据库实例、公开为常量值的元数据和用于访问数据的方法创建类实现。`ContentProvider`**  &ndash; `ContentProvider`
 
-3. **访问`ContentProvider`通过其 Uri** &ndash;填充`CursorAdapter`使用`ContentProvider`，可通过其 Uri。
+3. **通过`ContentProvider`其 uri** &ndash;使用来`CursorAdapter` 填充,通过其`ContentProvider`uri 进行访问。
 
-前面所述，`ContentProviders`可以从应用程序而非定义位置使用。 在此示例中使用的数据在同一应用程序，但请记住，其他应用程序还可以访问它，只要他们知道的 Uri 和架构 （这通常会公开为常量值） 的信息。
+如前文所述, `ContentProviders`除了定义外, 还可以从应用程序使用。 在此示例中, 数据在同一应用程序中使用, 但请记住, 其他应用程序也可以访问它, 只要它们知道有关架构的 Uri 和信息 (通常作为常量值公开)。
 
 
 ## <a name="create-a-database"></a>创建数据库
 
-大多数`ContentProvider`实现将基于`SQLite`数据库。 数据库中的代码示例**SimpleContentProvider/VegetableDatabase.cs**创建一个非常简单的两个列数据库，如所示：
+大多数`ContentProvider`实现将基于`SQLite`数据库。 **SimpleContentProvider/VegetableDatabase**中的示例数据库代码创建一个非常简单的两列数据库, 如下所示:
 
 ```csharp
 class VegetableDatabase  : SQLiteOpenHelper {
@@ -92,17 +92,17 @@ class VegetableDatabase  : SQLiteOpenHelper {
 }
 ```
 
-数据库实现本身不需要任何特殊的注意事项，以通过公开`ContentProvider`，但是如果你想要将绑定`ContentProvider's`数据到`ListView`然后控件名为的唯一整数列`_id`必须属于结果集。 请参阅[Listview 和适配器](~/android/user-interface/layouts/list-view/index.md)使用的更多详细信息的文档`ListView`控件。
+数据库实现`ContentProvider`本身不需要使用公开任何特殊注意事项, 但是, 如果你想要将`ContentProvider's`数据绑定到`ListView`控件, 则名为`_id`的唯一整数列必须属于结果集。 有关使用`ListView`控件的详细信息, 请参阅[listview 和适配器](~/android/user-interface/layouts/list-view/index.md)文档。
 
 
 ## <a name="create-the-contentprovider"></a>创建 ContentProvider
 
-本部分的其余部分介绍有关如何分步说明**SimpleContentProvider/VegetableProvider.cs**生成的示例类。
+本部分的其余部分提供了有关如何生成**SimpleContentProvider/VegetableProvider**示例类的分步说明。
 
 
 ### <a name="initialize-the-database"></a>初始化数据库
 
-第一步是为子类`ContentProvider`并添加它将使用的数据库。
+第一步是为子类`ContentProvider`添加并添加它将使用的数据库。
 
 ```csharp
 public class VegetableProvider : ContentProvider 
@@ -116,23 +116,23 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-代码的其余部分将窗体可用于发现和查询数据的实际内容的提供程序实现。
+其余代码将形成实际的内容提供程序实现, 该实现允许发现和查询数据。
 
 
 
-## <a name="add-metadata-for-consumers"></a>添加元数据的使用者
+## <a name="add-metadata-for-consumers"></a>添加使用者的元数据
 
-有四种不同类型的元数据，我们将在公开`ContentProvider`类。 颁发机构是必需的仅由约定完成其余部分。
+有四种不同类型的元数据将在`ContentProvider`类上公开。 只有权限是必需的, 其余部分则按约定完成。
 
-- **颁发机构** &ndash; `ContentProvider`特性*必须*添加到类，以便它是否已注册的 Android 安装应用程序。
+- **颁发机构**必须将属性添加到类, 以便在安装应用程序时将其注册到 Android。 `ContentProvider` &ndash;
 
-- **Uri** &ndash; `CONTENT_URI` ，这样就可以方便使用在代码中公开为常量。 它应匹配颁发机构，但包含的方案和基路径。
+- **Uri**&ndash; 作为常数公开,以便在`CONTENT_URI`代码中轻松使用。 它应与颁发机构匹配, 但包含方案和基路径。
 
-- **MIME 类型**&ndash;结果和单个结果的列表被视为不同的内容类型，因此我们定义两个 MIME 类型来表示它们。
+- **MIME 类型**&ndash;结果列表和单个结果被视为不同的内容类型, 因此我们定义了两种 MIME 类型来表示它们。
 
-- **InterfaceConsts** &ndash;为每个数据列名称，提供常量值，以便使用代码可以轻松地发现并不会有键入错误的风险的情况下引用它们。
+- **InterfaceConsts**&ndash;为每个数据列名称提供一个常量值, 以便使用代码可以轻松发现和引用这些值, 而不会导致录入错误。
 
-此代码显示了其中每一项的实现方式，将从上一步添加到数据库定义：
+此代码演示如何实现上述每个项, 并从上一步添加到数据库定义:
 
 ```csharp
 [ContentProvider(new string[] { CursorTableAdapter.VegetableProvider.AUTHORITY })]
@@ -159,17 +159,17 @@ public class VegetableProvider : ContentProvider
 ```
 
 
-## <a name="implement-the-uri-parsing-helper"></a>实现 URI 分析帮助程序
+## <a name="implement-the-uri-parsing-helper"></a>实现 URI 分析帮助器
 
-因为使用的代码使用 Uri 发出请求的`ContentProvider`，我们需要能够分析这些请求以确定要返回的数据。 `UriMatcher`类可帮助分析 Uri 后已初始化，, Uri 模式的`ContentProvider`支持。
+由于使用的代码使用 uri 来发出的请求`ContentProvider`, 因此我们需要能够分析这些请求, 以确定要返回的数据。 类可以在用`ContentProvider`支持的 uri 模式初始化后, 帮助分析 uri。 `UriMatcher`
 
-`UriMatcher`在示例中用于初始化两个 Uri:
+示例`UriMatcher`中的将用两个 uri 初始化:
 
-1. *"com.xamarin.sample.VegetableProvider/vegetables"* &ndash;请求，以便返回蔬菜的完整列表。
+1. *"VegetableProvider/蔬菜"* &ndash;请求返回最完整的蔬菜列表。
 
-2. *"com.xamarin.sample.VegetableProvider/vegetables/\#"* &ndash;其中\#是数值参数的占位符 (`_id`的数据库中的行)。 星号占位符 ("\*") 也可用于匹配一个文本参数。
+2. *"VegetableProvider\#/蔬菜/"* &ndash; , 其中\# `_id`是数字参数 (数据库中的行的) 的占位符。 星号占位符 ("\*") 也可用于匹配文本参数。
 
-在代码中我们使用常量来指代的元数据值，如颁发机构和基本\_路径。 将执行分析，以确定要返回的数据的 Uri 的方法中使用返回代码。
+在代码中, 我们使用常量来引用元数据值, 如颁发机构和\_基路径。 返回代码将在进行 Uri 分析的方法中使用, 以确定要返回的数据。
 
 ```csharp
 const int GET_ALL = 0; // return code when list of Vegetables requested
@@ -185,12 +185,12 @@ static UriMatcher BuildUriMatcher()
 }
 ```
 
-此代码是所有私有的`ContentProvider`类。 请参阅[Google UriMatcher 文档](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/)有关进一步信息。
+此代码全都是类的`ContentProvider`私有代码。 有关详细信息, 请参阅[Google 的 UriMatcher 文档](xref:Android.Content.UriMatcher)。
 
 
 ## <a name="implement-the-querymethod"></a>实现 QueryMethod
 
-最简单`ContentProvider`实现的方法是`Query`方法。 使用下面的实现`UriMatcher`分析`uri`参数并调用正确的数据库的方法。 如果`uri`包含一个 ID 参数，则将整数解析出 (使用`LastPathSegment`) 和数据库查询中使用。
+最简单`ContentProvider`的实现方法`Query`是方法。 以下实现使用`UriMatcher` `uri`分析参数并调用正确的数据库方法。 如果包含 ID 参数, 则该整数将在数据库查询中进行`LastPathSegment`分析 (使用) 并使用。 `uri`
 
 ```csharp
 public override Android.Database.ICursor Query(Android.Net.Uri uri, string[] projection, string selection, string[] selectionArgs, string sortOrder)
@@ -215,8 +215,8 @@ Android.Database.ICursor GetFromDatabase(string id)
 }
 ```
 
-`GetType`必须也重写方法。 可能会调用此方法，以确定将为给定的 Uri 返回的内容类型。
-这可能会告知使用方应用程序如何处理该数据。
+还必须重写方法。`GetType` 可以调用此方法来确定将为给定 Uri 返回的内容类型。
+这可能会告诉使用方应用程序如何处理该数据。
 
 ```csharp
 public override String GetType(Android.Net.Uri uri)
@@ -235,7 +235,7 @@ public override String GetType(Android.Net.Uri uri)
 
 ## <a name="implement-the-other-overrides"></a>实现其他替代
 
-我们的简单示例不允许进行编辑或删除数据，但必须实现的 Insert、 Update 和 Delete 方法因此将它们添加不包含实现：
+简单示例不允许对数据进行编辑或删除操作, 但必须实现插入、更新和删除方法, 以便在不使用实现的情况下添加它们:
 
 ```csharp
 public override int Delete(Android.Net.Uri uri, string selection, string[] selectionArgs)
@@ -252,19 +252,19 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 }
 ```
 
-完成基本`ContentProvider`实现。 一旦已安装应用程序，它公开的数据可同时在应用程序内，而且还知道要对其进行引用的 Uri 的任何其他应用程序。
+这就完成了`ContentProvider`基本实现。 安装应用程序后, 该应用程序公开的数据将可用于应用程序, 但也可用于知道 Uri 引用该应用程序的任何其他应用程序。
 
 
 ## <a name="access-the-contentprovider"></a>访问 ContentProvider
 
-一次`VegetableProvider`已实现，对其进行访问可以通过相同方法在本文档开头的联系人提供程序为： 获取使用指定的 Uri 游标，然后使用适配器访问的数据。
+`VegetableProvider`实现后, 对其进行访问的方式与本文档开始时的联系人提供程序相同: 使用指定的 Uri 获取游标, 然后使用适配器访问数据。
 
 
 ## <a name="bind-a-listview-to-a-contentprovider"></a>将 ListView 绑定到 ContentProvider
 
-若要填充`ListView`数据中，我们将使用未筛选的蔬菜列表相对应的 Uri。 我们在代码中使用的常量值`VegetableProvider.CONTENT_URI`，我们知道它解析为`com.xamarin.sample.vegetableprovider/vegetables`。 我们`VegetableProvider.Query`实现将返回一个游标，然后绑定到`ListView`。
+若要`ListView`用数据填充, 我们使用与不筛选的蔬菜列表相对应的 Uri。 在代码中, 我们使用我们知道`VegetableProvider.CONTENT_URI`解析为`com.xamarin.sample.vegetableprovider/vegetables`的常量值。 我们`VegetableProvider.Query`的实现将返回一个可以绑定到的`ListView`游标。
 
-中的代码`SimpleContentProvider/HomeScreen.cs`显示了以显示来自数据是简单`ContentProvider`:
+中`SimpleContentProvider/HomeScreen.cs`的代码演示了如何轻松地`ContentProvider`从中显示数据:
 
 ```csharp
 listView = FindViewById<ListView>(Resource.Id.List);
@@ -282,23 +282,23 @@ adapter = new SimpleCursorAdapter(this, Android.Resource.Layout.SimpleListItem1,
 listView.Adapter = adapter;
 ```
 
-生成的应用程序如下所示：
+产生的应用程序如下所示:
 
-[![列出蔬菜、 水果、 花卉 Buds、 Legumes、 Bulbs、 Tubers 应用的屏幕截图](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
+[![列出蔬菜、水果、花卉 Buds、Legumes、电灯泡、Tubers 的应用屏幕截图](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
 
 
 
-## <a name="retrieve-a-single-item-from-a-contentprovider"></a>检索一个项从 ContentProvider
+## <a name="retrieve-a-single-item-from-a-contentprovider"></a>从 ContentProvider 检索单个项
 
-使用方应用程序可能还想要访问的数据，这可以通过构造一个不同的 Uri （例如） 是指特定行的单个行。
+使用的应用程序可能还需要访问单个数据行, 这可以通过构造引用特定行的不同 Uri 来完成 (例如)。
 
-使用`ContentResolver`直接以访问单个项，通过使用所需的 Uri 构建`Id`。
+通过`ContentResolver`构建具有所需`Id`的 Uri, 直接使用来访问单个项。
 
 ```csharp
 Uri.WithAppendedPath(VegetableProvider.CONTENT_URI, id.ToString());
 ```
 
-完整的方法如下所示：
+完整的方法如下所示:
 
 ```csharp
 protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -319,4 +319,4 @@ protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [SimpleContentProvider （示例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [SimpleContentProvider (示例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)

@@ -1,51 +1,51 @@
 ---
 title: macOS Mojave 简介
-description: 本文档提供高级的 macOS Mojave 中新的和更新功能的概述。
+description: 本文档提供了 macOS Mojave 中新增和更新功能的概述。
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: a9975eeec445ac59dc71a44a1156804835795982
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9c88d0a90cf5f1cae0e27a05aeaa71f726ddb4de
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032094"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511681"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave 简介
 
-本文档提供高级的 macOS Mojave 中新的和更新功能的概述。
+本文档提供了 macOS Mojave 中新增和更新功能的概述。
 
-若要开始 macOS Mojave 借助 Xamarin 构建应用，看一看[入门指南](~/mac/platform/introduction-to-macos-mojave/get-started.md)有关[Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)。
+若要开始使用 Xamarin 生成 macOS Mojave 应用, 请查看[Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)的入门[指南](~/mac/platform/introduction-to-macos-mojave/get-started.md)。
 
 ## <a name="dark-mode"></a>深色模式
 
-深色模式是使用一种动态的暗灰色配色方案来显示用户界面元素的 macOS Mojave 中系统级深色主题。 它还引入了新的强调文字颜色、 颜色效果和内容的色调颜色，以帮助美观无论用户的颜色设置的第三方应用程序。
+深色模式是在 macOS Mojave 中使用一种动态、深灰色的彩色方案来显示用户界面元素的系统范围深色主题。 它还引入了新的强调文字颜色、颜色效果和内容色调颜色, 以帮助第三方应用在用户的颜色设置的情况下正常工作。
 
 ## <a name="user-notifications-framework"></a>用户通知框架
 
-用户通知框架包含在 macOS Mojave，更改 Mac 应用程序用于处理用户通知的 Api。
+用户通知框架包含在 macOS Mojave 中, 更改 Mac 应用用于处理用户通知的 Api。
 
 ## <a name="natural-language-framework"></a>自然语言框架
 
-自然语言框架使应用程序可以执行各种类型的语言分析。 例如，它可用来识别词类并确定所表示的文本块的语言。
+自然语言框架使应用程序可以执行各种类型的语言分析。 例如, 它可用于标识词性的各个部分, 并确定文本块所代表的语言。
 
-## <a name="vision-framework"></a>影像框架
+## <a name="vision-framework"></a>远景框架
 
-影像框架包括改进的面部检测器可以检测人脸的不同的方向。 此外，请求修订，现在可以使用以选择特定的视觉 framework 算法修订版本。
+远景框架包含可检测各种方向的人脸的改进面部检测器。 而且, 现在可以使用请求修订来选择特定的远景框架算法修订版本。
 
 ## <a name="network-framework"></a>网络框架
 
-基础网络框架网络堆栈`URLSession`iOS 应用程序中常用的 Api 现可作为独立框架，使其更轻松地使用 TCP、 UDP、 TLS、 IPv4/IPv6，和的详细信息。
+网络框架是 iOS 应用程序中常用`URLSession`的 api 基础的网络堆栈, 现作为独立框架提供, 使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
 
 ## <a name="deprecations"></a>弃用功能
 
-Macos Mojave，OpenGL ES 和 OpenCL，Apple 已弃用[鼓励开发人员](https://developer.apple.com/macos/whats-new/)采用金属和金属性能着色器。
+对于 macOS Mojave, Apple 已弃用 OpenGL ES 和 OpenCL,[鼓励开发人员](https://developer.apple.com/macos/whats-new/)采用金属和金属绩效着色。
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Mac 示例](https://developer.xamarin.com/samples/mac/)
-- [macOS – Apple Developer](https://developer.apple.com/macos/)
-- [Xamarin.Mac 5.0 发行说明](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Xamarin. Mac 示例](https://developer.xamarin.com/samples/mac/)
+- [macOS-Apple 开发人员](https://developer.apple.com/macos/)
+- [Xamarin 5.0 发行说明](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)

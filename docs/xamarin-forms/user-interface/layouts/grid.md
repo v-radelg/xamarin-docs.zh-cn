@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649597"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511881"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 网格
 
@@ -54,7 +54,7 @@ ms.locfileid: "67649597"
 - **绝对**&ndash;调整列和具有特定的固定高度和宽度值的行的大小。 指定为值和`GridUnitType.Absolute`用 C# 或作为`#`XAML，在使用`#`正在所需的值。
 
 > [!NOTE]
-> 列的宽度值设置为`*`默认情况下，在 Xamarin.Forms 中，可确保该列将填充可用空间。 行的高度值也设置为`*`默认情况下。
+> 默认情况下, 列的宽度值`*`设置为 Xamarin 中的默认值, 这将确保该列填充可用空间。 默认情况下, 行的高度值也`*`设置为。
 
 请考虑的应用程序需要三个行和两个列。 底部行必须是完全 200px、 高和最上面一行必须是两次高度都是中间的一行。 左侧的列需要是足够宽，以适应内容，右侧列需要填充剩余的空间。
 
@@ -137,7 +137,7 @@ grid.Children.Add(bottomRight, 1, 1);
 
 上面的代码中创建包含四个标签、 两个列和两行的网格。 请注意，每个标签将具有相同的大小和行将扩展以使用所有可用空间。
 
-在上面的示例中，视图将添加到[ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)集合使用[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)指定左侧和顶部参数的重载。 使用时[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)重载，指定左、 右、 上边框和底部参数，而左侧和顶部参数将始终引用单元格内[ `Grid` ](xref:Xamarin.Forms.Grid)，右侧和底部参数可能看起来引用的单元格之外`Grid`。 这是因为右边的参数必须始终为大于左侧参数和底部参数必须始终为大于顶部的参数。 以下示例显示同时使用这二者的等效代码`Add`重载：
+在上面的示例中，视图将添加到[ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)集合使用[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)指定左侧和顶部参数的重载。 使用时[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)重载，指定左、 右、 上边框和底部参数，而左侧和顶部参数将始终引用单元格内[ `Grid` ](xref:Xamarin.Forms.Grid)，右侧和底部参数可能看起来引用的单元格之外`Grid`。 这是因为右边的参数必须始终为大于左侧参数和底部参数必须始终为大于顶部的参数。 以下示例显示同时使用这二者的等效代码`Add`重载：
 
 ```csharp
 // left, top

@@ -1,28 +1,25 @@
 ---
-title: 地图和位置
-description: 使用 Xamarin.Android 使用映射
+title: Android 上的地图和位置
+description: 将 Maps 与 Xamarin 配合使用
 ms.prod: xamarin
 ms.assetid: B45211C5-D377-4A55-8C8E-95D4BF470AE3
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/03/2016
-ms.openlocfilehash: f3c058d898bca17264374cf253345babd3a65072
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 57a1e4ecab83d86752a362dd4e2c427665ec1c64
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864243"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510526"
 ---
-# <a name="maps-and-location"></a>地图和位置
-
+# <a name="maps-and-location-on-android"></a>Android 上的地图和位置
 
 ## <a name="location-servicesandroidplatformmaps-and-locationlocationmd"></a>[位置服务](~/android/platform/maps-and-location/location.md)
 
-本指南介绍 Android 应用程序中的位置感知，并说明了如何获取 Google 位置服务 API 中使用 Android 位置服务 API，以及在打印位置可用的提供程序的用户的位置。
-
+本指南介绍了如何在 Android 应用程序中识别位置, 并说明了如何使用 Android 位置服务 API 获取用户的位置, 并说明了 Google 位置服务 API 提供的随附位置提供商。
 
 ## <a name="mapsandroidplatformmaps-and-locationmapsindexmd"></a>[地图](~/android/platform/maps-and-location/maps/index.md)
 
-本文介绍如何使用 Xamarin.Android 使用地图和位置。 它涵盖了从利用内置地图应用程序直接使用 Google 映射 Android API V2 的所有内容。 此外，它说明了如何使用单个 API 来使用位置服务，它允许应用程序以获取通过单元格 tower 位置、 Wi-fi 或 GPS 位置修补程序。
-
+本文介绍如何将 maps 和 location 与 Xamarin 一起使用。 其中包括利用内置地图应用程序直接使用 Google Maps Android API V2 的所有内容。 此外, 它还说明了如何使用单个 API 来处理位置服务, 这允许应用程序通过单元塔位置、Wi-fi 或 GPS 获取位置修复。

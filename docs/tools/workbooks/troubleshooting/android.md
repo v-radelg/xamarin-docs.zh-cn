@@ -1,55 +1,54 @@
 ---
-title: 在 Android 上的故障排除 Xamarin 工作簿
-description: 本文档提供有关使用 Xamarin 在 Android 上的工作簿的故障排除提示。 它讨论了仿真程序支持、 不会加载的工作簿和其他主题。
+title: Android 上的 Xamarin Workbooks 疑难解答
+description: 本文档提供有关在 Android 上使用 Xamarin Workbooks 的疑难解答技巧。 它讨论了模拟器支持、无法加载的工作簿以及其他主题。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 08fa7f57f3fe44721bc00f0d59ed5df93300cf1e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 0d04b42a8d9f230c48bb09059296eb3740336dc6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864036"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511834"
 ---
-# <a name="troubleshooting-xamarin-workbooks-on-android"></a>在 Android 上的故障排除 Xamarin 工作簿
+# <a name="troubleshooting-xamarin-workbooks-on-android"></a>Android 上的 Xamarin Workbooks 疑难解答
 
-## <a name="emulator-support"></a>仿真程序支持
+## <a name="emulator-support"></a>模拟器支持
 
-若要运行的 Android 工作簿，Android 模拟器必须可供使用。 不支持物理 Android 设备。
+若要运行 Android 工作簿, 必须可以使用 Android 仿真程序。 不支持物理 Android 设备。
 
-如果您的计算机支持，我们建议以及 HAXM Google 仿真器。
-如果你必须拥有你的系统上启用 HYPER-V，转而使用 Visual Studio Android 仿真程序。
+如果你的计算机支持, 则建议将 Google 的模拟器连同 HAXM 一起提供。
+如果你必须在系统上启用 Hyper-v, 请转到 Visual Studio Android Emulator。
 
-您必须具有一个运行 Android 5.0 或更高版本的仿真程序。 不支持 ARM 仿真程序。 使用`x86`或`x86_64`仅设备。
+你必须具有运行 Android 5.0 或更高版本的模拟器。 不支持 ARM 模拟器。 仅`x86`使用`x86_64`或设备。
 
-请阅读[我们的文档上设置 Android 仿真程序][android-emu]如果不熟悉此过程。
+如果你不熟悉此过程, 请参阅[有关设置 Android 仿真][android-emu]程序的文档。
 
 > [!NOTE]
-> 1\.1 及更早版本的工作簿将尝试 （以及失败 ！） 如果可用，使用 ARM 仿真程序。 若要解决此问题，启动 x86 仿真程序打开或创建一个 Android 工作簿之前所选。 工作簿将始终优先使用连接到运行的仿真程序，只要它是兼容。
+> 工作簿1.1 及更早版本将尝试 (并失败!) 使用 ARM 模拟器 (如果可用)。 若要解决此情况, 请在打开或创建 Android 工作簿之前启动所选的 x86 模拟器。 只要工作簿兼容, 工作簿将始终更喜欢连接到正在运行的模拟器。
 
-## <a name="workbooks-wont-load"></a>不会加载工作簿
+## <a name="workbooks-wont-load"></a>工作簿无法加载
 
-### <a name="workbook-window-spins-forever-never-loads-windows"></a>工作簿窗口下去，旋转永远不会加载 (Windows)
+### <a name="workbook-window-spins-forever-never-loads-windows"></a>工作簿窗口永远旋转, 从不加载 (Windows)
 
-首先，检查在仿真程序通过仿真程序的 web 浏览器中测试任何网站具有完全工作网络访问权限。
+首先, 通过在模拟器的 web 浏览器中测试任何网站, 检查模拟器是否具有完全工作的网络访问权限。
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Android 仿真程序无法连接到 internet
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Visual Studio Android Emulator 无法连接到 internet
 
-如果在仿真程序不具有网络访问权限，您可能需要执行这些步骤可以解决您的 HYPER-V 网络交换机。 如果频繁的 Wi-fi 网络之间切换，则可能需要定期重复此过程：
+如果模拟器没有网络访问权限, 可能需要执行以下步骤来修复 Hyper-v 网络交换机。 如果经常在 Wi-fi 网络之间切换, 可能需要定期重复此操作:
 
-1. **请确保任何关键的网络操作都已完成，因为这可能会暂时断开与 internet 连接 Windows。**
-1. 关闭仿真程序。
+1. **请确保所有关键网络操作都已完成, 因为这可能会暂时断开 Windows 与 internet 的连接。**
+1. 关闭模拟器。
 1. 打开 `Hyper-V Manager`。
-1. 下`Actions`，打开`Virtual Switch Manager...`。
+1. 在`Actions`下打开`Virtual Switch Manager...`。
 1. 删除所有虚拟交换机。
 1. 单击 `OK`。
-1. 启动 VS Android 仿真程序。 系统可能会提示重新创建虚拟网络交换机。
-1. 测试与 Android 仿真程序的浏览器可以访问 internet。
+1. 启动 VS Android Emulator。 系统可能会提示你重新创建虚拟网络交换机。
+1. 与 Android Emulator 的浏览器相比, 测试是否可以访问 internet。
 
-[android-emu]: https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debug-on-emulator/
-
+[android-emu]: ~/android/deploy-test/debugging/debug-on-emulator.md
 
 ## <a name="related-links"></a>相关链接
 

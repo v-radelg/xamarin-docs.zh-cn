@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
-ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
+ms.openlocfilehash: b2e441a8e1443d1d32d553e9bbf1126fe5e380e7
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65731526"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508848"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的本机视图
 
@@ -38,7 +38,7 @@ _从 iOS、 Android 和通用 Windows 平台的本机视图可以直接引用 Xa
 1. 在 XAML 文件中创建本机视图的实例。
 
 > [!IMPORTANT]
-> 必须为使用本机视图任何 XAML 页禁用已编译的 XAML。 这可以通过修饰与 XAML 页面的代码隐藏类来实现`[XamlCompilation(XamlCompilationOptions.Skip)]`属性。 有关 XAML 编译的详细信息，请参阅[Xamarin.Forms 中 XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
+> 对于任何使用本机视图的 XAML 页, 必须禁用已编译的 XAML。 这可以通过使用`[XamlCompilation(XamlCompilationOptions.Skip)]`特性修饰 XAML 页的代码隐藏类来实现。 有关 XAML 编译的详细信息, 请参阅[Xamarin 中的 XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
 
 若要从代码隐藏文件引用本机视图，必须使用共享资产项目 (SAP)，并使用条件编译指令将特定于平台的代码包装。 有关详细信息请参阅[从代码中引用的本机视图](#native_view_code)。
 
@@ -184,7 +184,7 @@ Android 小组件的构造函数通常需要 Android`Context`对象作为参数�
 
 [ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*)工厂方法用于设置[ `UILabel.Font` ](xref:UIKit.UILabel.Font)属性设置为一个新[ `UIFont` ](xref:UIKit.UIFont)在 iOS 上。 `UIFont`子级的方法参数通过指定名称和大小`x:Arguments`属性。
 
-[ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/)工厂方法用于设置[ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)属性设置为一个新[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/)在 Android 上。 `Typeface`子级的方法参数通过指定系列名称和样式`x:Arguments`属性。
+[ `Typeface.Create` ](xref:Android.Graphics.Typeface.Create*)工厂方法用于设置[ `TextView.Typeface` ](xref:Android.Widget.TextView.Typeface)属性设置为一个新[ `Typeface` ](xref:Android.Graphics.Typeface)在 Android 上。 `Typeface`子级的方法参数通过指定系列名称和样式`x:Arguments`属性。
 
 [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)构造函数用于设置[ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)属性设置为一个新`FontFamily`通用 Windows 平台 (UWP)。 `FontFamily`的子级的方法参数通过指定名称`x:Arguments`属性。
 
@@ -325,7 +325,7 @@ IOS 和 Android 的本机按钮共用同一个`OnButtonTap`事件处理程序，
 
 该页还包含每个平台的本机选取器视图。 每个本机视图显示水果的集合的绑定及其`ItemSource`属性设置为`SubclassedNativeControlsPageViewModel.Fruits`集合。 这允许用户选取水果，如以下屏幕截图中所示：
 
-![](xaml-images/sub-classed.png "子类化的本机视图")
+![](xaml-images/sub-classed.png "子类本机视图")
 
 IOS 和 Android 上本机选取器使用方法设置这些控件。 因此，这些选取器必须子类化来公开属性，以使它们适合于 XAML 应用。 在通用 Windows 平台 (UWP)，`ComboBox`已 XAML 友好，因此，不需要子类化。
 
@@ -423,7 +423,7 @@ class PickerModel : UIPickerViewModel
 
 ### <a name="android"></a>Android
 
-Android 实现子类[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/)视图中，并公开属性和从 XAML 可轻松使用的事件：
+Android 实现子类[ `Spinner` ](xref:Android.Widget.Spinner)视图中，并公开属性和从 XAML 可轻松使用的事件：
 
 ```csharp
 class MySpinner : Spinner
@@ -481,7 +481,7 @@ class MySpinner : Spinner
 }
 ```
 
-`MySpinner`类公开`ItemsSource`并`SelectedObject`属性，和一个`ItemSelected`事件。 显示的项目`MySpinner`类提供的[ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.Adapter/)与视图关联和项填充到`Adapter`时`ItemsSource`首次设置属性。 每当中的选定的项`MySpinner`类的更改，`OnBindableSpinnerItemSelected`事件处理程序更新`SelectedObject`属性。
+`MySpinner`类公开`ItemsSource`并`SelectedObject`属性，和一个`ItemSelected`事件。 显示的项目`MySpinner`类提供的[ `Adapter` ](xref:Android.Widget.Adapter)与视图关联和项填充到`Adapter`时`ItemsSource`首次设置属性。 每当中的选定的项`MySpinner`类的更改，`OnBindableSpinnerItemSelected`事件处理程序更新`SelectedObject`属性。
 
 ## <a name="summary"></a>总结
 

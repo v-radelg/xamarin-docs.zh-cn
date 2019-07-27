@@ -1,64 +1,64 @@
 ---
-title: 库
+title: Android 库控件
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: f9b73428531deeacc7bdea271cdc0c2872038e99
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6fe6b5a11473827eb716b0adf0fb0f3ae28a3538
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218519"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510283"
 ---
-# <a name="gallery"></a>库
+# <a name="xamarinandroid-gallery-control"></a>Xamarin Android 库控件
 
-[`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/) 是用于在水平滚动的列表中显示项的布局小组件并将当前所选内容放置在视图的中心。
+[`Gallery`](xref:Android.Widget.Gallery)是一个布局小组件, 用于显示水平滚动列表中的项, 并将当前所选内容置于视图的中心。
 
 > [!IMPORTANT]
-> 在 Android 4.1 （API 级别 16） 中已弃用此小组件。 
+> Android 4.1 (API 级别 16) 已弃用此小组件。 
 
-在本教程中，将创建的照片库，然后选择库项每次显示的 toast 消息。
+在本教程中, 你将创建一个照片库, 并在每次选择库项时显示 toast 消息。
 
-之后`Main.axml`为内容视图中，设置布局`Gallery`与布局从捕获[ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/p/System.Int32/)。
-的 [`Adapter`](https://developer.xamarin.com/api/property/Android.Widget.AdapterView.RawAdapter/)
-然后使用属性来设置自定义适配器 ( `ImageAdapter`) 作为显示在 dallery 中所有项目的源。 `ImageAdapter`在下一步中创建。
+为内容视图设置`Gallery` [`FindViewById`](xref:Android.App.Activity.FindViewById*)布局后, 将从布局中捕获。 `Main.axml`
+此[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+然后, 使用属性将自定义适配器 ( `ImageAdapter`) 设置为要在 dallery 中显示的所有项的源。 `ImageAdapter`在下一步中创建。
 
-若要单击库中的项时执行某些操作，一个匿名委托，它订阅 [`ItemClick`](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)
-事件的参数。 它显示了 [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-显示选项的索引位置 （从零开始） （在实际方案中，位置可用来获取另一项任务的实际尺寸的图像）。
+若要在单击库中的项时执行操作, 请将匿名委托订阅到[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+事件的参数。 它显示了[`Toast`](xref:Android.Widget.Toast)
+这会显示 theselected 项的索引位置 (从零开始) (在实际情况下, 该位置可用于获取其他某个任务的完整大小的图像)。
 
-首先，有几个成员变量，包括的引用保存在可绘制资源目录中的映像的 Id 的数组 (**可绘制资源/**)。
+首先, 有几个成员变量, 其中包括引用可绘制资源目录中保存的图像的 Id 的数组 (**资源/可绘制**)。
 
-接下来是类构造函数，其中 [`Context`](https://developer.xamarin.com/api/type/Android.Content.Context/)
-有关`ImageAdapter`定义实例并将其保存到本地字段。
-接下来，这会实现继承自某些所需的方法[ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)。
-构造函数和 [`Count`](https://developer.xamarin.com/api/property/Android.Widget.BaseAdapter.Count/)
-属性都很容易理解。 通常情况下， [`GetItem(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItem/p/System.Int32/)
-应返回在适配器中，指定的位置的实际对象，但它对于此示例中，将忽略。 同样， [`GetItemId(int)`](https://developer.xamarin.com/api/member/Android.Widget.BaseAdapter.GetItemId/p/System.Int32/)
-应返回的行 id 的项，但此处不需要它。
+接下来是类构造函数, 其中[`Context`](xref:Android.Content.Context)
+`ImageAdapter`为实例定义并保存到本地字段。
+接下来, 实现从继承的[`BaseAdapter`](xref:Android.Widget.BaseAdapter)一些必需方法。
+构造函数和[`Count`](xref:Android.Widget.BaseAdapter.Count)
+属性一目了然。 往常[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+应返回适配器中指定位置的实际对象, 但对于此示例, 它将被忽略。 同样[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+应返回项的行 id, 但此处不需要。
 
-方法执行的工作要应用到图像 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-将嵌入的 [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/)
-在此方法中，成员 [`Context`](https://developer.xamarin.com/api/type/Android.Content.Context/)
-用于创建一个新[ `ImageView` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)。
-的 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-通过应用的可绘制资源，设置本地数组中的映像准备 [`Gallery.LayoutParams`](https://developer.xamarin.com/api/type/Android.Widget.Gallery+LayoutParams/)
-高度和宽度设置缩放以适合的图像 [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
-维度，然后再最后设置使用促升属性构造函数中获取的背景。
+方法执行工作以将映像应用到[`ImageView`](xref:Android.Widget.ImageView)
+将嵌入到[`Gallery`](xref:Android.Widget.Gallery)
+在此方法中, 成员[`Context`](xref:Android.Content.Context)
+用于创建新[`ImageView`](xref:Android.Widget.ImageView)的。
+此[`ImageView`](xref:Android.Widget.ImageView)
+通过从可绘制资源的本地数组应用映像来准备, 并将[`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
+图像的高度和宽度, 将刻度设置为适合[`ImageView`](xref:Android.Widget.ImageView)
+维度, 最后将背景设置为使用构造函数中获取的 styleable 属性。
 
-请参阅[ `ImageView.ScaleType` ](https://developer.xamarin.com/api/type/Android.Widget.ImageView+ScaleType/)其他图像缩放选项的。
+有关[`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType)其他图像缩放选项, 请参阅。
 
 ## <a name="walkthrough"></a>演练
 
-启动一个名为的新项目*HelloGallery*。
+启动名为*HelloGallery*的新项目。
 
-[![新的 Android 项目中的新解决方案对话框的屏幕截图](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
+[![新建解决方案对话框中的新 Android 项目的屏幕截图](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
-找到你想要使用，一些照片或[下载这些示例图像](https://developer.android.com/shareables/sample_images.zip)。
-将图像文件添加到项目的**资源/Drawable**目录。 在中**属性**窗口中，将生成操作设置为**AndroidResource**。
+查找要使用的一些照片, 或[下载这些示例图像](https://developer.android.com/shareables/sample_images.zip)。
+将图像文件添加到项目的**资源/可绘制**目录。 在 "**属性**" 窗口中, 将 "生成操作" 设置为 " **AndroidResource**"。
 
 打开 **Resources/Layout/Main.axml** 并插入以下代码：
 
@@ -71,8 +71,8 @@ ms.locfileid: "61218519"
 />
 ```
 
-打开`MainActivity.cs`并插入以下代码 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法：
+打开`MainActivity.cs`并插入以下代码:[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+付款方式
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -92,7 +92,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-创建一个名为的新类`ImageAdapter`子类[ `BaseAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/):
+创建名`ImageAdapter`为子类[`BaseAdapter`](xref:Android.Widget.BaseAdapter)的新类:
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -142,19 +142,15 @@ public class ImageAdapter : BaseAdapter
 
 ```
 
-运行该应用程序。 它应如以下屏幕截图所示：
+运行该应用程序。 它应类似于以下屏幕截图:
 
-![显示示例图像 HelloGallery 的屏幕截图](gallery-images/hellogallery3.png)
-
-
+![显示示例图像的 HelloGallery 屏幕截图](gallery-images/hellogallery3.png)
 
 ## <a name="references"></a>参考资料
 
--   [`BaseAdapter`](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)
--   [`Gallery`](https://developer.xamarin.com/api/type/Android.Widget.Gallery/)
--   [`ImageView`](https://developer.xamarin.com/api/type/Android.Widget.ImageView/)
+- [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
+- [`Gallery`](xref:Android.Widget.Gallery)
+- [`ImageView`](xref:Android.Widget.ImageView)
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/).
-
-
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。
