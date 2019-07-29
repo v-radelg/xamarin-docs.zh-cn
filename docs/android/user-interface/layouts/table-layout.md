@@ -1,27 +1,27 @@
 ---
-title: TableLayout
+title: Xamarin TableLayout
 ms.prod: xamarin
 ms.assetid: 0C7B9C95-5E5F-A069-BA37-984E49F7DCAD
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 25b2393d2133c0a1f3f8354584c276fcd7ddaa4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9a5186fe49edc81f5d6ec8ca297146a27a0274fa
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61305137"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509675"
 ---
-# <a name="tablelayout"></a>TableLayout
+# <a name="xamarinandroid-tablelayout"></a>Xamarin TableLayout
 
-[`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/) 是 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
-显示子 [`View`](https://developer.xamarin.com/api/type/Android.Views.View/)
+[`TableLayout`](xref:Android.Widget.TableLayout)是[`ViewGroup`](xref:Android.Views.ViewGroup)
+显示子元素的[`View`](xref:Android.Views.View)
 行和列中的元素。
 
-启动一个名为的新项目**HelloTableLayout**。
+启动名为**HelloTableLayout**的新项目。
 
-打开**Resources/Layout/Main.axml**文件并插入以下：
+打开**Resources/Layout/main.axml**文件, 并插入以下内容:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -102,13 +102,13 @@ ms.locfileid: "61305137"
 </TableLayout>
 ```
 
-请注意，这与 HTML 表的结构的相似。 的 [`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/)
-元素是类似于 HTML`<table>`元素; [`TableRow`](https://developer.xamarin.com/api/type/Android.Widget.TableRow/)
-就像`<tr>`元素; 但的单元格，你可以使用任何类型的[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)元素。 在此示例中， [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/)
-用于每个单元格。 在某些行之间还有一个基本[ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/)，用于绘制水平线。
+请注意, 这与 HTML 表的结构类似。 此[`TableLayout`](xref:Android.Widget.TableLayout)
+元素类似于 HTML `<table>`元素;[`TableRow`](xref:Android.Widget.TableRow)
+与`<tr>`元素类似, 但对于单元, 可以使用任何类型的[`View`](xref:Android.Views.View)元素。 在此示例中,[`TextView`](xref:Android.Widget.TextView)
+用于每个单元格。 在某些行之间, 还有一个用于绘制水平线的 " [`View`](xref:Android.Views.View)基本"。
 
-请确保你**HelloTableLayout**活动加载在此布局 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)
-方法：
+请确保**HelloTableLayout**活动在[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+付款方式
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -118,21 +118,21 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32))方法加载的布局文件[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)，按资源 ID 指定&mdash;`Resource.Layout.Main`指**资源/布局 /Main.axml**布局文件。
+[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main`  ) 方法加载的布局文件, 该文件由资源 ID 指定, 表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
-运行该应用程序。 你应看到以下信息：
+运行该应用程序。 应该会看到以下内容:
 
-[![显示多个表行的 TableLayout 应用的示例屏幕截图](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
+[![显示多个表行的 TableLayout 应用程序的示例屏幕截图](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
 
 
 ## <a name="references"></a>参考资料
 
--   [`TableLayout`](https://developer.xamarin.com/api/type/Android.Widget.TableLayout/) 
+-   [`TableLayout`](xref:Android.Widget.TableLayout) 
 
--   [`TableRow`](https://developer.xamarin.com/api/type/Android.Widget.TableRow/) 
+-   [`TableRow`](xref:Android.Widget.TableRow) 
 
--   [`TextView`](https://developer.xamarin.com/api/type/Android.Widget.TextView/) 
+-   [`TextView`](xref:Android.Widget.TextView) 
 
-*此页的部分是基于工作创建和共享通过 Android 的开放源项目和使用中所述的条款的修改*
-[*Creative Commons 2.5 Attribution 许可证*](http://creativecommons.org/licenses/by/2.5/).
+*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
+[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。
