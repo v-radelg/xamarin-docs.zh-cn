@@ -51,7 +51,7 @@ sections:
         className: cardsB
         items:
           - href: ~/android/get-started/index.md
-            html: 通过 Xamarin.Android 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 Mac 应用。
+            html: 通过 Xamarin.Android 启动和运行的相关教程。 请确保正确安装所有项目，并生成首个 Android 应用。
             image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/android/get-started/index.md
@@ -111,8 +111,8 @@ sections:
         className: cardsD
         items:
           - title: API
-            href: 'https://developer.xamarin.com/api/root/MonoAndroid-lib/'
-            html: '<p><a href="https://developer.xamarin.com/api/root/MonoAndroid-lib/">Android API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基类库</a></p>'
+            href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9">Android API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基类库</a></p>'
           - title: 示例
             href: 'https://developer.xamarin.com/samples/android/all/'
             html: '<p><a href="https://developer.xamarin.com/samples/android/all/">Android 示例</a></p>'

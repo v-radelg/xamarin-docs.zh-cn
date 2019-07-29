@@ -1,0 +1,69 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms 平台功能
+metadata:
+  title: Xamarin.Forms 平台功能
+  description: 了解如何通过使用各种技术来利用 Xamarin.Forms 中的平台特定功能。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/23/2019
+abstract:
+  description: 了解如何通过使用各种技术来利用 Xamarin.Forms 中的平台特定功能。
+sections:
+  - title: 平台特定内容
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: android/index.md
+            html: 了解如何使用 Xamarin.Forms 提供的 Android 平台特定内容，以及如何更新现有的 Xamarin.Forms Android 应用以使用 Material Design。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
+              href: android/index.md
+            title: Android
+          - href: ios/index.md
+            html: 了解如何使用 Xamarin.Forms 提供的 iOS 平台特定内容，以及如何执行其他 iOS 样式设置。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
+              href: ios/index.md
+            title: iOS
+          - href: windows/index.md
+            html: 了解如何使用 Xamarin.Forms 提供的 UWP 平台特定内容，以及如何将 UWP 项目添加到现有的 Xamarin.Forms 解决方案。
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
+              href: windows/index.md
+            title: Windows
+          - href: platform-specifics/index.md
+            html: 了解平台特定内容以及供应商如何使用 Effects 创建平台特定内容。
+            image:
+              src: ~/media/icons/i_app-build.svg
+              href: platform-specifics/index.md
+            title: 创建平台特定内容
+  - title: 平台功能
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: device.md
+            html: 了解如何使用 Device 类在每个平台的基础上提供对功能和布局的精细控制。
+            image:
+              src: ~/media/icons/i_desktop-phone.svg
+              href: device.md
+            title: 设备分类
+          - href: native-forms.md
+            html: 了解本机 Xamarin.iOS、Xamarin.Android 和 UWP 项目如何使用 Xamarin.Forms ContentPage 派生的页面。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: native-forms.md
+            title: 本机窗体
+          - href: native-views/index.md
+            html: 了解如何从 Xamarin.Forms 应用程序直接引用 Android、iOS 和通用 Windows 平台的本机视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_form.svg'
+              href: native-views/index.md
+            title: 本机视图
