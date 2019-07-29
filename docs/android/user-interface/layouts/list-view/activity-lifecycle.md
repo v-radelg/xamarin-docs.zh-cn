@@ -1,39 +1,39 @@
 ---
-title: ListView 和活动生命周期
+title: Xamarin ListView ListView 和活动生命周期
 ms.prod: xamarin
 ms.assetid: 40840D03-6074-30A2-74DA-3664703E3367
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: b2328759b3158920bc8683ec14c2aebefd7a04ae
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7c6e395a353dcfd737ad244df9d169edc5b08f1c
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187068"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510310"
 ---
-# <a name="listview-and-the-activity-lifecycle"></a>ListView 和活动生命周期
+# <a name="xamarinandroid-listview-and-the-activity-lifecycle"></a>Xamarin ListView ListView 和活动生命周期
 
-活动通过某些状态转在应用程序运行，如启动、 运行、 暂停和停止。 有关详细信息，以及有关处理状态转换的特定指导原则，请参阅[活动生命周期教程](~/android/app-fundamentals/activity-lifecycle/index.md)。
-务必要了解活动生命周期和位置在`ListView`正确的位置中的代码。
+当应用程序运行时, 活动会经历某些状态, 例如启动、运行、暂停和停止。 有关详细信息以及有关如何处理状态转换的特定准则, 请参阅[活动生命周期教程](~/android/app-fundamentals/activity-lifecycle/index.md)。
+务必了解活动生命周期, 并将`ListView`代码置于正确的位置。
 
-在活动的此文档中的示例的所有执行安装任务`OnCreate`方法和 （如果需要） 中执行清除`OnDestroy`。 这些示例通常使用小型数据集不会更改，因此是不必要的更频繁地重新加载数据。
+本文档中的所有示例都在活动的`OnCreate`方法中执行 "设置任务", 并在中`OnDestroy`执行 "拆卸" (如果需要)。 这些示例通常使用不会更改的小型数据集, 因此不需要更频繁地重新加载数据。
 
-但是，如果数据频繁更改，或者使用大量的内存可能适合使用不同的生命周期方法来填充和刷新你`ListView`。 例如，如果基础数据不断更改 （或可能会受到其他活动上的更新） 然后创建中的适配器`OnStart`或`OnResume`将确保最新的数据显示了每次显示活动。
+但是, 如果数据频繁更改或使用大量内存, 则可能适合使用不同的生命周期方法来填充和刷新`ListView`。 例如, 如果基础数据不断变化 (或可能会受到其他活动的更新的影响), 则在或`OnStart` `OnResume`中创建适配器将确保每次显示活动时都显示最新的数据。
 
-如果适配器使用资源，如内存、 或托管的游标，请记住需要释放这些资源中其中实例化时所 （例如在补充方法。 中创建的对象`OnStart`可以中释放`OnStop`)。
+如果适配器使用内存等资源或托管游标, 请记得在互补方法中释放这些资源, 以将其实例化到何处 (例如 在中`OnStart`创建的对象可在中`OnStop`被释放。
 
 
 ## <a name="configuration-changes"></a>配置更改
 
-务必记住该配置更改&ndash;尤其是屏幕上旋转和键盘的可见性&ndash;可能会导致销毁并重新创建当前活动 (除非指定其他方式使用`ConfigurationChanges`属性）。 这意味着，正常情况下，旋转设备将导致`ListView`并`Adapter`重新创建和 (除非您编写代码`OnPause`和`OnResume`) 滚动位置和行选择状态都将丢失。
+务必记住, 配置更改&ndash;特别是屏幕旋转和键盘可见性&ndash;会导致当前活动被销毁并重新创建 (除非`ConfigurationChanges`你使用特性)。 这意味着, 在正常情况下, 旋转设备将`ListView`导致和`Adapter`重新创建, 并且 (除非你已在和`OnResume`中`OnPause`编写代码) 滚动位置和行选择状态将会丢失。
 
-以下属性会阻止将活动从会销毁并重新创建由于配置更改：
+以下属性将阻止由于配置更改而导致活动被销毁并重新创建:
 
 ```csharp
 [Activity(ConfigurationChanges="keyboardHidden|orientation")]
 ```
 
-活动应然后替代`OnConfigurationChanged`适当地响应这些更改。 有关如何处理配置更改的更多详细信息请参阅文档。
+然后, 该活动应`OnConfigurationChanged`重写以相应地响应这些更改。 有关如何处理配置更改的更多详细信息, 请参阅文档。
 
