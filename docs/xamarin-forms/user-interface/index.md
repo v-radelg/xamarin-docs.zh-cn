@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f9c7ada224cefc9bb80e0bcba370d0dee4a664c9
+ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831102"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68603837"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 用户界面视图
 
@@ -22,7 +22,7 @@ _如何使用 Xamarin.Forms 提供的视图_
 
 ## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
 
-`ActivityIndicator`是动画的控件，向用户指示应用程序所从事的耗时较长的活动，而无需授予任何可能的进度。
+`ActivityIndicator`是一个动画控制, 它向用户指示应用程序参与了长时间的活动, 而不提供任何进度指示。
 
 ## <a name="animationanimationindexmd"></a>[动画](animation/index.md)
 
@@ -38,11 +38,11 @@ Xamarin.Forms 具有自己的动画基础结构直接用于创建简单动画，
 
 ## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
 
-`CheckBox`的一种可能的按钮为选中或为空。 选中一个复选框后，它已被视为不上。 如果一个复选框为空，它被视为处于关闭状态。
+`CheckBox`是可以选中或空的按钮类型。 选中复选框后, 它将被视为已启用。 如果复选框为空, 则将其视为关闭。
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
-[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是灵活且高性能的视图来显示数据使用不同的布局规范的列表。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个灵活且高性能的视图, 可使用不同的布局规范呈现数据列表。
 
 ## <a name="colorscolorsmd"></a>[颜色](colors.md)
 
@@ -62,7 +62,7 @@ DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预�
 
 ## <a name="display-pop-upspop-upsmd"></a>[显示弹出窗口](pop-ups.md)
 
-Xamarin.Forms 提供了两个弹出式用户界面元素：警报和操作工作表。 这些界面元素可以用于显示对话框，询问用户简单的问题并指导用户完成任务。
+Xamarin.Forms 提供了两个弹出式用户界面元素：警报和操作工作表。 这些界面元素可用于显示询问用户简单问题的对话框, 并指导用户完成任务。
 
 ## <a name="graphics-with-skiasharpgraphicsskiasharpindexmd"></a>[使用 SkiaSharp 处理图形](graphics/skiasharp/index.md)
 
@@ -94,7 +94,11 @@ Xamarin.Forms 提供了显示的数据的滚动行的列表视图控件。 控�
 
 ## <a name="progressbarprogressbarmd"></a>[进度栏](progressbar.md)
 
-[ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)是一个控件，以可视方式表示为水平条填充的浮点型属性所基于的进度。
+[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)是一个控件, 它以直观的方式将进度表示为根据 float 属性填充的水平栏。
+
+## <a name="searchbarsearchbarmd"></a>[搜索栏](searchbar.md)
+
+[`SearchBar`](xref:Xamarin.Forms.SearchBar)是用于启动搜索的用户输入控件。 SearchBar 控件支持占位符文本、查询输入、搜索执行和取消。
 
 ## <a name="sliderslidermd"></a>[滑块](slider.md)
 
@@ -110,7 +114,7 @@ Xamarin.Forms 提供了显示的数据的滚动行的列表视图控件。 控�
 
 ## <a name="switchswitchmd"></a>[切换](switch.md)
 
-`Switch`是一种按钮可以打开和关闭状态之间切换。
+`Switch`是可以在开启和关闭状态之间切换的按钮类型。
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 
@@ -130,7 +134,7 @@ Xamarin.Forms 主题定义特定的可视化外观，对标准控件。 一旦�
 
 ## <a name="visualvisualindexmd"></a>[视觉对象](visual/index.md)
 
-Xamarin.Forms 材料视觉对象可以用于创建 iOS 和 Android 上 Xamarin.Forms 应用程序看起来完全相同，或大致相同。
+Xamarin。窗体材料视觉对象可用于创建在 iOS 和 Android 上看起来完全相同或大致相同的 Xamarin 应用程序。
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[可视状态管理器](visual-state-manager.md)
 
