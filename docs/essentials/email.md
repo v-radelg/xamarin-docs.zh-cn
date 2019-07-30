@@ -5,16 +5,16 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
-ms.openlocfilehash: 5ddbb6f3d1c1ebf16ca5534b7effd1993c3d8b26
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: 73c398a7dbc2b8b7b22b9b8e38177efe2ff48735
+ms.sourcegitcommit: 8fe8d163cb9927917f6a83204b4c387fc50181c2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804914"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68388496"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:电子邮件
 
-Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序。
+Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序  。
 
 ## <a name="get-started"></a>入门
 
@@ -63,22 +63,6 @@ public class EmailTest
 ```
 
 
-## <a name="platform-differences"></a>平台差异
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-并非所有适用于 Android 的电子邮件客户端都支持 `Html`，因为无法检测此差异，因此我们建议使用 `PlainText` 发送电子邮件。
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-无平台差异。
-
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
-
-仅支持 `PlainText`，因为尝试发送 `Html` 的 `BodyFormat` 将引发 `FeatureNotSupportedException`。
-
------
-
 ## <a name="file-attachments"></a>文件附件
 
 ![预览版功能](~/media/shared/preview.png)
@@ -108,6 +92,24 @@ message.Attachments.Add(new EmailAttachment(file));
 
 await Email.ComposeAsync(message);
 ```
+
+## <a name="platform-differences"></a>平台差异
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+并非所有适用于 Android 的电子邮件客户端都支持 `Html`，因为无法检测此差异，因此我们建议使用 `PlainText` 发送电子邮件。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+无平台差异。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+仅支持 `PlainText`，因为尝试发送 `Html` 的 `BodyFormat` 将引发 `FeatureNotSupportedException`。
+
+并非所有电子邮件客户端都支持发送附件。 有关详细信息，请参阅[文档](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
+
+-----
 
 ## <a name="api"></a>API
 
