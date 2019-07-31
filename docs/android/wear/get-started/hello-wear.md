@@ -1,68 +1,68 @@
 ---
 title: 你好，穿戴设备
-description: 创建第一个 Android Wear 应用并在穿戴设备仿真程序或设备上运行。 本演练提供了创建，用于处理按钮单击事件并单击计数器显示在穿戴设备上的小 Android Wear 项目的分步说明。 其中介绍了如何调试使用穿戴设备仿真程序或在穿戴设备通过蓝牙连接到 Android 手机的应用。 它还提供有关 Android Wear 的一组调试提示。
+description: 创建第一个 Android 应用并在磨损模拟器或设备上运行它。 本演练提供了有关创建小型 Android 损耗项目的分步说明, 该项目用于处理按钮单击并在磨损设备上显示单击计数器。 它介绍了如何使用通过蓝牙连接到 Android 手机的磨损模拟器或磨损设备来调试应用程序。 它还提供了一组适用于 Android 的调试提示。
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: a8e27063040ff91f72a1cbf932b1b277a5dee63d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 056ab7a9fe4bcb7f07a9a7cd7c841a3d9f7574b6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277319"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648025"
 ---
 # <a name="hello-wear"></a>你好，穿戴设备
 
-_创建第一个 Android Wear 应用并在穿戴设备仿真程序或设备上运行。本演练提供了创建，用于处理按钮单击事件并单击计数器显示在穿戴设备上的小 Android Wear 项目的分步说明。其中介绍了如何调试使用穿戴设备仿真程序或在穿戴设备通过蓝牙连接到 Android 手机的应用。它还提供有关 Android Wear 的一组调试提示。_
+_创建第一个 Android 应用并在磨损模拟器或设备上运行它。本演练提供了有关创建小型 Android 损耗项目的分步说明, 该项目用于处理按钮单击并在磨损设备上显示单击计数器。它介绍了如何使用通过蓝牙连接到 Android 手机的磨损模拟器或磨损设备来调试应用程序。它还提供了一组适用于 Android 的调试提示。_
 
-![在本教程中完成的 Wear 应用的屏幕截图](hello-wear-images/example.png)
+![要在本教程中完成的应用程序的屏幕截图](hello-wear-images/example.png)
 
-## <a name="your-first-wear-app"></a>第一个 Wear 应用
+## <a name="your-first-wear-app"></a>你的第一个应用程序
 
-请按照以下步骤创建第一个 Xamarin.Android Wear 应用操作：
+按照以下步骤创建你的第一个 Xamarin 应用:
 
 ### <a name="1-create-a-new-android-project"></a>1.创建新的 Android 项目
 
-创建一个新**Android Wear 应用程序**:
+创建新的**Android 应用程序**:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![在新项目对话框中创建新的 Android Wear 应用程序](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
+[![在 "新建项目" 对话框中创建新的 Android 应用程序](hello-wear-images/vs/new-solution-sml.w157.png)](hello-wear-images/vs/new-solution.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![在新解决方案对话框创建新的 Android Wear 应用程序](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
+[![在 "新建解决方案" 对话框中创建新的 Android 应用程序](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
 
-此模板会自动包括**Xamarin Android 可穿戴库**NuGet （及其依赖项） 以便将有权访问特定于穿戴设备的小组件。 如果看不到穿戴设备模板，请查看[安装和设置](~/android/wear/get-started/installation.md)指南，请仔细检查已安装受支持的 Android SDK。 
+此模板自动包括**Xamarin Android 可穿戴库**NuGet (和依赖项), 以便你可以访问特定于特定的小组件。 如果看不到磨损模板, 请查看[安装和设置](~/android/wear/get-started/installation.md)指南, 确认是否已安装受支持的 Android SDK。 
 
-### <a name="2-choose-the-correct-target-framework"></a>2.选择正确**目标框架**
+### <a name="2-choose-the-correct-target-framework"></a>2.选择正确的**目标框架**
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-絋粄**的最低 Android 目标**设置为**Android 5.0 (Lollipop)** 或更高版本： 
+确保 "**最小 android 目标**" 设置为 " **Android 5.0 (棒糖)** 或更高版本": 
 
-[![将目标框架设置为在 Visual Studio 中的 Android 5.0](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
+[![在 Visual Studio 中将目标框架设置为 Android 5。0](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-请确保目标框架设置为**Android 5.0 (Lollipop)** 或更高版本：
+确保将目标框架设置为**Android 5.0**或更高版本:
 
-[![在 Visual Studio 中的 Android 5.0 for Mac 设置目标框架](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
+[![将目标框架设置为 Visual Studio for Mac 中的 Android 5。0](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
-设置目标框架的详细信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)。
+有关设置目标框架的详细信息, 请参阅[了解 ANDROID API 级别](~/android/app-fundamentals/android-api-levels.md)。
 
 
-### <a name="3-edit-the-mainaxml-layout"></a>3.编辑**Main.axml**布局
+### <a name="3-edit-the-mainaxml-layout"></a>3.编辑**main.axml**布局
 
-配置要包含的布局`TextView`和一个`Button`示例： 
+配置布局以包含`TextView`示例的`Button`和: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -105,7 +105,7 @@ android:layout_height="match_parent">
 
 ### <a name="4-edit-the-mainactivitycs-source"></a>4.编辑**MainActivity.cs**源
 
-添加代码以递增计数器并将其显示每次单击按钮时： 
+添加代码以递增计数器, 并在每次单击按钮时显示它: 
 
 ```csharp
 [Activity (Label = "WearTest", MainLauncher = true, Icon = "@drawable/icon")]
@@ -129,51 +129,51 @@ public class MainActivity : Activity
 }
 ```
 
-### <a name="5-setup-an-emulator-or-device"></a>5.仿真器或设备安装程序
+### <a name="5-setup-an-emulator-or-device"></a>5.设置模拟器或设备
 
-下一步是设置要部署并运行应用的仿真程序或设备。 如果你尚不熟悉的部署和运行过程 Xamarin.Android 应用一般情况下，请参阅[Hello，Android 快速入门](~/android/get-started/hello-android/hello-android-quickstart.md)。
+下一步是设置模拟器或设备以部署和运行应用。 如果你尚不熟悉部署和运行 Xamarin Android 应用程序的一般过程, 请参阅[Android 快速入门](~/android/get-started/hello-android/hello-android-quickstart.md)。
 
-如果没有如 Android Wear Smartwatch 的 Android Wear 设备，你可以在仿真器上运行应用。 有关调试的仿真程序上 Wear 应用的信息，请参阅[仿真器上调试 Android Wear](~/android/wear/deploy-test/debug-on-emulator.md)。
+如果你没有 Android 磨损设备, 如 Android 磨损 Smartwatch, 则可以在模拟器上运行该应用程序。 有关在模拟器上调试应用的详细信息, 请参阅[在模拟器上调试 Android 损耗](~/android/wear/deploy-test/debug-on-emulator.md)。
 
-如果具有 Android Wear Smartwatch 如 Android Wear 设备，你可以而不是使用仿真程序在设备上运行应用。 有关在穿戴设备上进行调试的详细信息，请参阅[穿戴设备的设备上进行调试](~/android/wear/deploy-test/debug-on-device.md)。
+如果有 Android 磨损设备, 如 Android 磨损 Smartwatch, 则可以在设备上运行应用, 而不是使用模拟器。 有关在磨损设备上进行调试的详细信息, 请参阅[在磨损设备上调试](~/android/wear/deploy-test/debug-on-device.md)。
 
 
-### <a name="6-run-the-android-wear-app"></a>6.运行 Android Wear 应用
+### <a name="6-run-the-android-wear-app"></a>6.运行 Android 应用程序
 
-Android Wear 设备应出现在设备下拉菜单中。 请确保选择正确的 Android Wear 设备或 AVD 开始调试之前。 选择设备之后, 单击播放按钮以将应用部署到仿真器或设备。
+Android 磨损设备应该出现在设备下拉菜单中。 在开始调试之前, 请务必选择正确的 Android 磨损设备或 AVD。 选择设备后, 单击 "播放" 按钮, 将应用部署到模拟器或设备。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![在 Visual Studio 设备菜单中选择 Wear AVD](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
+[![在 Visual Studio 设备菜单中选择磨损 AVD](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![在 Visual Studio 中为 Mac 设备菜单选择 Wear AVD](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
+[![在 Visual Studio for Mac 设备菜单中选择磨损 AVD](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
-你可能会看到**只需一分钟的时间...** 在第一个消息 （或某些其他插播式屏幕）： 
+首先, 您可能会看到一**条消息 (** 或其他一些插播式屏幕): 
 
-![观看仿真程序将显示只需一分钟的时间...](hello-wear-images/please-wait.png)
+![监视模拟器只显示一分钟 。](hello-wear-images/please-wait.png)
 
-如果使用的监视仿真程序，可能需要一段时间才能启动该应用程序。 当使用蓝牙时，花费更多时间来部署应用，通过 USB 相比。 （例如，它需要 5 分钟内将此应用部署到蓝牙连接到 Nexus 5 电话 LG G Watch。）
+如果使用的是监视模拟器, 则可能需要一段时间来启动应用。 使用蓝牙时, 部署应用所需的时间比通过 USB 更多。 (例如, 将此应用程序部署到 LG G 手表需要5分钟的时间, 该手表会与第5部手机连接。)
 
-应用可以成功部署后，在穿戴设备的屏幕应显示如下所示的屏幕：
+应用成功部署后, 磨损设备的屏幕应显示如下所示的屏幕:
 
-[![Wear 应用初始屏幕](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
+[![磨损应用的初始屏幕](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
-点击**单击我 ！** 在穿戴设备并查看每个点击计数增量的表面上的按钮：
+点击 "**单击我!** " 按钮, 查看每次点击的计数增量:
 
-[![Wear 屏幕快照 3 次单击后的应用程序](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
+[![单击3次后磨损应用的屏幕截图](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>后续步骤
 
-请查看[Wear 示例](https://developer.xamarin.com/samples/android/Android%20Wear/)包括辅助电话应用程序使用 Android Wear 应用。
+查看包含带手机应用程序的 Android 应用程序的[磨损示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear)。
 
-当准备好分发应用，请参阅[使用打包](~/android/wear/deploy-test/packaging.md)。
+准备好分发应用时, 请参阅[使用打包](~/android/wear/deploy-test/packaging.md)。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [单击我的应用程序 （示例）](https://developer.xamarin.com/samples/monodroid/wear/WearTest/)
+- [单击 "我的应用" (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-weartest)

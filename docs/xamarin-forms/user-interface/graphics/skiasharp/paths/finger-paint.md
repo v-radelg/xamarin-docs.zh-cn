@@ -7,16 +7,16 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: eb7622fb2cebc13abd5e49e42b21511e45c72a45
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 571ddae0757691cd7fee301076f0b1310749531d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61302012"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657459"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中手指绘画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用手指在画布上绘制。_
 
@@ -24,9 +24,9 @@ _使用手指在画布上绘制。_
 
 ![](finger-paint-images/fingerpaintsample.png "在手指绘画练习")
 
-在 Xamarin.Forms 中的触摸支持不允许跟踪各手指在屏幕上，因此已开发 Xamarin.Forms 触控跟踪效果以提供更多点触控支持。 这种效果本文所述[**效果从调用事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。 示例程序[**触控跟踪效果演示**](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)包括使用 SkiaSharp，包括一个手指绘制程序的两个页面。
+在 Xamarin.Forms 中的触摸支持不允许跟踪各手指在屏幕上，因此已开发 Xamarin.Forms 触控跟踪效果以提供更多点触控支持。 这种效果本文所述[**效果从调用事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。 示例程序[**触控跟踪效果演示**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)包括使用 SkiaSharp，包括一个手指绘制程序的两个页面。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)解决方案包括此点触控跟踪事件。 .NET Standard 库项目中包括`TouchEffect`类，`TouchActionType`枚举`TouchActionEventHandler`委托，和`TouchActionEventArgs`类。 每个平台项目都包括`TouchEffect`类用于该平台; iOS 项目还包含`TouchRecognizer`类。
+[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解决方案包括此点触控跟踪事件。 .NET Standard 库项目中包括`TouchEffect`类，`TouchActionType`枚举`TouchActionEventHandler`委托，和`TouchActionEventArgs`类。 每个平台项目都包括`TouchEffect`类用于该平台; iOS 项目还包含`TouchRecognizer`类。
 
 **手指绘制**页面**SkiaSharpFormsDemos**是手指绘画的简化的实现。 它不允许选择颜色或宽度进行描边，则具有无法清除画布上，而且当然不能保存您的作品。
 
@@ -172,6 +172,6 @@ public partial class FingerPaintPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [触控跟踪效果演示 （示例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [触控跟踪效果演示 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 - [调用效果中的事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

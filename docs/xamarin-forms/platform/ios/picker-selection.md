@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上选取器项选择
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的用于控制项选择时选取器中。
+title: IOS 上的选取器项选择
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制选取器中发生项目选择的时间。
 ms.prod: xamarin
 ms.assetid: 26B0604A-BD30-49FD-83A6-F0EDFBB0524B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: aeefa22c8a17611579c56b3105be860c12a8711c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 57420921100c99db1e2c3a5259ece30cfda719f2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925383"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651843"
 ---
-# <a name="picker-item-selection-on-ios"></a>在 iOS 上选取器项选择
+# <a name="picker-item-selection-on-ios"></a>IOS 上的选取器项选择
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的控件项选择中的发生时[ `Picker` ](xref:Xamarin.Forms.Picker)，这样就允许用户指定的项选择发生时浏览项在控件中，还是仅后**完成**按下按钮。 设置使用在 XAML`Picker.UpdateMode`附加属性的值为`UpdateMode`枚举：
+此 iOS 平台特定的控件[`Picker`](xref:Xamarin.Forms.Picker): 当项在中发生选择时, 允许用户指定在浏览控件中的项时或在按 "**完成**" 按钮后所做的选择。 设置使用在 XAML`Picker.UpdateMode`附加属性的值为`UpdateMode`枚举：
 
 ```xaml
 <ContentPage ...
@@ -67,6 +67,6 @@ switch (picker.On<iOS>().UpdateMode())
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

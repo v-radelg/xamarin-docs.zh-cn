@@ -1,42 +1,42 @@
 ---
-title: 事件、 协议和 Xamarin.iOS 中的委托
-description: 本文档介绍如何使用事件，协议，并在 Xamarin.iOS 中委托。 这些基本概念都普遍 Xamarin.iOS 开发中。
+title: Xamarin 中的事件、协议和委托
+description: 本文档介绍如何在 Xamarin 中使用事件、协议和委托。 这些基本概念在 Xamarin iOS 开发中无处不在。
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/17/2017
-ms.openlocfilehash: a82d96cf3f290dd28d163dd6f147a9dc28dfaa81
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: d42263733c7fa793713738be4b389eaa4850f38b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827598"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649362"
 ---
-# <a name="events-protocols-and-delegates-in-xamarinios"></a>事件、 协议和 Xamarin.iOS 中的委托
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin 中的事件、协议和委托
 
-Xamarin.iOS 使用控件公开大多数用户交互的事件。
-Xamarin.iOS 应用程序中大致相同的方式使用这些事件，因为执行传统.NET 应用程序。 例如，Xamarin.iOS UIButton 类具有名为 TouchUpInside 的事件，并使用此事件，就好像此类和事件是在.NET 应用中。
+Xamarin 使用控件来公开大多数用户交互事件。
+Xamarin iOS 应用程序使用这些事件的方式与使用传统 .NET 应用程序的方式几乎相同。 例如, Xamarin UIButton 类有一个名为 TouchUpInside 的事件, 并使用此事件, 就像此类和事件位于 .NET 应用中一样。
 
-除了此.NET 方法时，Xamarin.iOS 公开可用于更复杂的交互和数据绑定的另一个模型。 此方法将使用 Apple 调用委托和协议。 委托是在概念上类似于中的委托C#，但无需定义和调用单个方法，Objective C 中的委托是一种协议符合为整个类。 协议是类似于一个接口在C#，但其方法可以是可选。 因此，例如，若要填充数据 UITableView，会创建实现 UITableView 将调用来填充自己的 UITableViewDataSource 协议中定义的方法的委托类。
+除了 .NET 方法之外, Xamarin 还公开了另一个可用于更复杂的交互和数据绑定的模型。 此方法使用 Apple 调用委托和协议。 委托在概念上类似于中C#的委托, 但并不是定义和调用单个方法, 而是在目标-C 中的委托是符合协议的整个类。 协议类似于中C#的接口, 只不过其方法可以是可选的。 例如, 若要在 UITableView 中填充数据, 则需要创建一个委托类, 该类实现在 UITableViewDataSource 协议中定义的方法, UITableView 将调用该方法来填充自身。
 
-在本文中你将了解有关这些主题，为你提供了坚实的基础来处理在 Xamarin.iOS 中，回叫方案包括：
+在本文中, 你将了解所有这些主题, 为你提供在 Xamarin 中处理回调方案的坚实基础, 其中包括:
 
-- **事件**– UIKit 控件与使用.NET 事件。
-- **协议**– 学习什么协议是否以及如何使用它们，并创建一个示例为地图批注提供数据。
-- **委托**– 学习有关通过扩展以 map 为例来处理用户交互，包括批注，然后学习强和弱委托以及何时使用每种之间的差异的 OBJECTIVE-C 的委托。
+- **事件**–使用带有 UIKit 控件的 .net 事件。
+- **协议**–了解哪些协议是什么以及如何使用它们, 以及如何创建一个为地图批注提供数据的示例。
+- **委托**-通过扩展映射示例来了解目标-C 委托, 以处理包含批注的用户交互, 然后了解强和弱委托之间的差异, 以及何时使用这些委托。
 
-为了说明协议和委托，我们要生成一个简单的地图应用程序，将批注添加到地图，如下所示：
+为了阐明协议和委托, 我们将构建一个简单的地图应用程序, 用于将批注添加到地图中, 如下所示:
 
-[![](delegates-protocols-and-events-images/01-map-sml.png "将批注添加到映射的简单的地图应用程序的示例")](delegates-protocols-and-events-images/01-map.png#lightbox)
-[![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "示例批注添加到图")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+[![](delegates-protocols-and-events-images/01-map-sml.png "将")](delegates-protocols-and-events-images/01-map.png#lightbox)批注
+添加到地图的简单地图应用程序的示例添加到地图的[(delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "示例批注")![]](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-之前解决此应用，让我们开始吧通过查看下 UIKit.NET 事件。
+在处理此应用之前, 让我们先了解一下 UIKit 下的 .NET 事件。
 
-## <a name="net-events-with-uikit"></a>使用 UIKit.NET 事件
+## <a name="net-events-with-uikit"></a>具有 UIKit 的 .NET 事件
 
-Xamarin.iOS 公开 UIKit 控件的.NET 事件。 例如，UIButton 具有 TouchUpInside 事件，它使用的以下代码中所示处理像通常那样在.NET 中， C# lambda 表达式：
+Xamarin 在 UIKit 控件上公开 .NET 事件。 例如, UIButton 有一个 TouchUpInside 事件, 该事件在 .NET 中照常处理, 如以下使用C# lambda 表达式的代码所示:
 
 ```csharp
 aButton.TouchUpInside += (o,s) => {
@@ -44,7 +44,7 @@ aButton.TouchUpInside += (o,s) => {
 };
 ```
 
-您还可以执行此操作与C#2.0 样式匿名方法如下：
+你还可以使用如下所示C#的2.0 样式匿名方法实现此操作:
 
 ```csharp
 aButton.TouchUpInside += delegate {
@@ -52,31 +52,31 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-前面的代码已建立连接`ViewDidLoad`UIViewController 方法。 `aButton`变量引用一个按钮，可以添加 iOS 设计器中或使用代码。 下图显示了已在 iOS 设计器中添加一个按钮：
+前面的代码在 UIViewController 的`ViewDidLoad`方法中进行了连接。 `aButton`变量引用一个按钮, 你可以在 iOS 设计器中或使用代码添加该按钮。 下图显示了已在 iOS 设计器中添加的按钮:
 
-[![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "IOS 设计器中添加了一个按钮")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
+[![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "在 iOS 设计器中添加的按钮")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
-Xamarin.iOS 还支持连接到发生与控件交互的代码的目标操作样式。 若要创建的目标操作**Hello**按钮，请双击 iOS 设计器中单击它。 将显示 UIViewController 的代码隐藏文件和开发人员将需要选择一个位置来插入连接的方法：
+Xamarin 还支持将代码连接到与控件发生的交互的目标操作样式。 若要为 " **Hello** " 按钮创建目标操作, 请在 IOS 设计器中双击它。 将显示 UIViewController 的代码隐藏文件, 并要求开发人员选择要插入连接方法的位置:
 
 [![](delegates-protocols-and-events-images/03-interface-builder-action-sml.png "UIViewControllers 代码隐藏文件")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
-选择位置后，新的方法是创建和有线向上取到控件。 在以下示例中，将是一条消息写入到控制台时单击该按钮：
+选择某个位置后, 将创建一个新方法, 并将其连接到该控件。 在下面的示例中, 单击按钮时, 会将一条消息写入控制台:
 
-[![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "单击按钮时，将向控制台写入一条消息")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
+[![](delegates-protocols-and-events-images/05-interface-builder-action-sml.png "单击按钮时, 会将一条消息写入控制台")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
-有关 iOS 目标操作模式的更多详细信息，请参阅目标操作一部分[适用于 iOS 的核心应用程序能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)Apple 的 iOS 开发人员库中。
+有关 iOS 目标-操作模式的详细信息, 请参阅 Apple 的 iOS 开发人员库中的[适用于 ios 的核心应用程序能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)的目标操作部分。
 
-有关如何通过 Xamarin.iOS 使用 iOS 设计器的详细信息，请参阅[iOS 设计器概述](~/ios/user-interface/designer/index.md)文档。
+有关如何将 iOS 设计器与 Xamarin 一起使用的详细信息, 请参阅[Ios 设计器概述](~/ios/user-interface/designer/index.md)文档。
 
 ## <a name="events"></a>事件
 
-如果你想要截获从 UIControl 事件，有一系列选项： 从使用C#lambda 表达式和委托到使用低级别的 Objective C Api 函数。
+如果要从 UIControl 截获事件, 可以使用一系列选项: 从使用C# lambda 和委托函数到使用低级别目标-C api。
 
-以下部分介绍如何将捕获上一个按钮，具体取决于所需的控制程度的 TouchDown 事件。
+以下部分说明如何捕获按钮上的 System.windows.uielement.touchdown> 事件, 具体取决于所需的控制程度。
 
-## <a name="c-style"></a>C#样式
+## <a name="c-style"></a>C#方式
 
-使用委托语法：
+使用委托语法:
 
 ```csharp
 UIButton button = MakeTheButton ();
@@ -85,7 +85,7 @@ button.TouchDown += delegate {
 };
 ```
 
-如果您喜欢的是 lambda:
+如果你想要改用 lambda:
 
 ```csharp
 button.TouchDown += () => {
@@ -93,7 +93,7 @@ button.TouchDown += () => {
 };
 ```
 
-如果你想要具有多个按钮使用相同的处理程序共享相同的代码：
+如果希望有多个按钮, 请使用同一处理程序来共享同一代码:
 
 ```csharp
 void handler (object sender, EventArgs args)
@@ -108,21 +108,21 @@ button1.TouchDown += handler;
 button2.TouchDown += handler;
 ```
 
-## <a name="monitoring-more-than-one-kind-of-event"></a>监视多个类型的事件
+## <a name="monitoring-more-than-one-kind-of-event"></a>监视多种类型的事件
 
-C# UIControlEvent 标志事件具有一对一映射到各个标志。 如果想要具有相同的代码片段处理两个或多个事件，请使用`UIControl.AddTarget`方法：
+UIControlEvent C#标志的事件对于单个标志具有一对一的映射。 如果要让相同的代码段处理两个或更多事件, 请使用`UIControl.AddTarget`方法:
 
 ```csharp
 button.AddTarget (handler, UIControlEvent.TouchDown | UIControlEvent.TouchCancel);
 ```
 
-使用 lambda 语法：
+使用 lambda 语法:
 
 ```csharp
 button.AddTarget ((sender, event)=> Console.WriteLine ("An event happened"), UIControlEvent.TouchDown | UIControlEvent.TouchCancel);
 ```
 
-如果您需要使用 OBJECTIVE-C、 挂接到特定对象实例和调用特定的选择器等的低级功能：
+如果需要使用目标 C 的低级别功能, 如挂钩到特定对象实例和调用特定的选择器:
 
 ```csharp
 [Export ("MySelector")]
@@ -136,23 +136,23 @@ void MyObjectiveCHandler ()
 button.AddTarget (this, new Selector ("MySelector"), UIControlEvent.TouchDown);
 ```
 
-请注意，如果在继承的基类中实现的实例方法，它必须是公共方法。
+请注意, 如果在继承的基类中实现实例方法, 则该方法必须是公共方法。
 
 ## <a name="protocols"></a>协议
 
-协议是一项 Objective C 语言功能，提供了一系列方法声明。 它有相似的目标中的接口C#中，主要区别就是协议可以有可选的方法。 如果采用一种协议的类不实现它们，不会调用可选方法。 此外，Objective C 中的单个类可以实现多个协议，就像C#类可以实现多个接口。
+协议是一种提供方法声明列表的目标 C 语言功能。 它的作用类似于中C#的接口, 主要区别在于协议可以具有可选方法。 如果采用协议的类未实现可选方法, 则不会调用这些方法。 此外, 目标中的单个类可以实现多个协议, 就像C#类可以实现多个接口一样。
 
-Apple 使用整个 iOS 协议来定义约定的类采用时抽象化从调用方，因此操作就像在实现类C#接口。 使用协议中非委托方案 (如与`MKAnnotation`示例如下所示)，并使用委托 （如稍后在本文档中，在委托部分中显示）。
+Apple 在 iOS 中使用协议来定义类要采用的协定, 同时从调用方抽象出实现类, 从而像C#接口一样操作。 协议既可用于非委托方案 (如下面所示的`MKAnnotation`示例), 也可用于委托 (如本文档后面的 "委托" 一节中所述)。
 
-### <a name="protocols-with-xamarinios"></a>使用 Xamarin.ios 的协议
+### <a name="protocols-with-xamarinios"></a>采用 Xamarin 的协议
 
-让我们看看使用 Xamarin.iOS 中的 Objective C 协议的一个示例。 对于此示例中，我们将使用`MKAnnotation`协议，它是一部分的`MapKit`框架。 `MKAnnotation` 是一种协议，允许采用它来提供有关可以添加到映射的批注信息的任何对象。 例如，一个对象，实现`MKAnnotation`提供批注和与之相关联的标题的位置。
+我们来看一个示例, 其中使用了 Xamarin 中的目标-C 协议。 在`MKAnnotation`此示例中, 我们将使用协议, 该协议是`MapKit`框架的一部分。 `MKAnnotation`是一种协议, 该协议允许使用它来提供有关可添加到地图的批注的信息。 例如, 实现`MKAnnotation`的对象提供批注的位置以及与其关联的标题。
 
-这样一来，`MKAnnotation`协议用于提供随附批注的相关数据。 从采用对象中的数据生成自身的批注的实际视图`MKAnnotation`协议。 例如，在用户点击批注 （如下面的屏幕截图中所示） 时，将显示标注文本来自`Title`实现协议的类中的属性：
+通过这种方式, `MKAnnotation`协议用于提供批注附带的相关数据。 批注本身的实际视图是从采用`MKAnnotation`协议的对象中的数据生成的。 例如, 当用户点击批注时显示的标注文本 (如以下屏幕截图所示) 来自实现协议的类中的`Title`属性:
 
- [![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "当用户点击批注的标注的示例文本")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "用户点击批注时标注的示例文本")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-下一节中所述[协议的深入探讨](#protocols-deep-dive)，Xamarin.iOS 将协议绑定到抽象类。 有关`MKAnnotation`协议、 绑定C#类命名为`MKAnnotation`若要模拟的名称以及该协议，它是一个的子类`NSObject`，产品 CocoaTouch 根基类。 协议需要 getter 和 setter 来实现的坐标;但是，标题和副标题是可选的。 因此，在`MKAnnotation`类，`Coordinate`属性是*抽象*，这样就必须实现和`Title`并`Subtitle`属性标记*虚拟*使其成为可选的如下所示：
+如以下部分中所述,[协议深入探讨](#protocols-deep-dive), Xamarin 将协议绑定到抽象类。 对于协议, 绑定C#类命名`MKAnnotation`为模拟协议名称`NSObject`, 并且它是 CocoaTouch 的根基类的子类。 `MKAnnotation` 协议需要为该坐标实现 getter 和 setter;但标题和副标题是可选的。 `MKAnnotation`因此, 在类中, 属性`Coordinate`是*抽象*的, 需要实现它, 并且和`Title` `Subtitle`属性被标记为*虚拟*的, 如下所示:
 
 ```csharp
 [Register ("MKAnnotation"), Model ]
@@ -187,7 +187,7 @@ public abstract class MKAnnotation : NSObject
 }
 ```
 
-任何类可提供批注数据通过只派生自`MKAnnotation`只要至少`Coordinate`实现属性。 例如，下面是在构造函数采用坐标，并返回标题字符串的示例类：
+只要至少实现了`MKAnnotation` `Coordinate`属性, 任何类都可以通过仅从派生来提供批注数据。 例如, 下面是一个在构造函数中采用坐标并返回标题字符串的示例类:
 
 ```csharp
 /// <summary>
@@ -214,7 +214,7 @@ public class SampleMapAnnotation : MKAnnotation
 }
 ```
 
-通过绑定到协议，任何类的子类`MKAnnotation`可以提供创建批注的视图时，映射将使用的相关数据。 若要向地图添加批注，只需调用`AddAnnotation`方法的`MKMapView`实例，如以下代码所示：
+通过它绑定到的协议, 子类`MKAnnotation`可提供相关数据的所有类, 这些数据将在创建批注视图时由映射使用。 若要将批注添加到地图, 只需调用`AddAnnotation` `MKMapView`实例的方法, 如以下代码所示:
 
 ```csharp
 //an arbitrary coordinate used for demonstration here
@@ -225,15 +225,15 @@ var sampleCoordinate =
 map.AddAnnotation (new SampleMapAnnotation (sampleCoordinate));
 ```
 
-下面的映射变量是实例`MKMapView`，这是表示映射本身的类。 `MKMapView`将使用`Coordinate`数据派生自`SampleMapAnnotation`实例来定位在地图上的批注视图。
+此处的映射变量是的实例`MKMapView`, 它是表示映射本身的类。 将使用派生自`SampleMapAnnotation`实例的数据将批注视图定位到地图上。`Coordinate` `MKMapView`
 
-`MKAnnotation`协议提供了一组已知的功能实现它的任何对象，而无需使用者 （在此情况下图） 无需了解有关实现的详细信息。 这简化了向地图添加各种可能的批注。
+`MKAnnotation`协议跨实现该协议的任何对象提供一组已知功能, 无需使用者 (在本例中为 map) 需要了解实现细节。 这简化了将各种可能的批注添加到地图中的工作。
 
-### <a name="protocols-deep-dive"></a>协议的深入探讨
+### <a name="protocols-deep-dive"></a>深层协议
 
-由于C#接口不支持可选方法，Xamarin.iOS 将协议映射到抽象类。 因此，采用 Objective C 中的协议被通过在 Xamarin.iOS 中从绑定到协议的抽象类派生并实现所需的方法。 这些方法将公开为类中的抽象方法。 从协议的可选方法将绑定到的虚拟方法C#类。
+由于C#接口不支持可选方法, 因此, Xamarin 会将协议映射到抽象类。 因此, 在 Ansi-c 中采用的协议是在 Xamarin 中通过从绑定到协议和实现所需方法的抽象类派生而来的。 这些方法将公开为类中的抽象方法。 协议中的可选方法将绑定到C#类的虚方法。
 
-例如，下面是部分`UITableViewDataSource`协议绑定中的 Xamarin.iOS 作为：
+例如, 下面是在 Xamarin 中绑定的`UITableViewDataSource`协议的一部分:
 
 ```csharp
 public abstract class UITableViewDataSource : NSObject
@@ -246,44 +246,44 @@ public abstract class UITableViewDataSource : NSObject
 }
 ```
 
-请注意，此类为抽象。 Xamarin.iOS 使类抽象以支持协议中的可选/所需的方法。
-但是，与 OBJECTIVE-C 的协议不同 (或C#接口)，C#类不支持多重继承。 这会影响设计的C#代码，它使用的协议，并通常会导致嵌套类。 更多有关此问题中介绍了更高版本中的委派部分此文档。
+请注意, 类是抽象类。 Xamarin 使类成为抽象类, 以便支持协议中的可选方法/所需的方法。
+但是, 与目标 C 协议 (或C#接口) 不同, C#类不支持多重继承。 这会影响使用协议C#的代码设计, 并且通常会导致嵌套类。 有关此问题的详细信息将在本文档后面的 "委托" 部分中介绍。
 
- `GetCell(…)` 是一个抽象方法，绑定到 OBJECTIVE-C*选择器*， `tableView:cellForRowAtIndexPath:`，这是所需的方法的`UITableViewDataSource`协议。 选择器是方法名称的 OBJECTIVE-C 的术语。 若要强制实施所需的方法，Xamarin.iOS 将它声明为抽象。 另一种方法， `NumberOfSections(…)`，绑定到`numberOfSectionsInTableview:`。 此方法是在协议中，可选的因此 Xamarin.iOS 声明为虚拟的它成为可选中重写C#。
+ `GetCell(…)`是绑定到目标 C*选择器* `tableView:cellForRowAtIndexPath:`的抽象方法, 它是`UITableViewDataSource`协议的必需方法。 选择器是方法名称的目标-C 术语。 若要根据需要强制执行方法, Xamarin 会将它声明为 abstract。 另一种方法`NumberOfSections(…)`绑定到。 `numberOfSectionsInTableview:` 此方法在协议中是可选的, 因此, Xamarin 会将它声明为虚拟的, 使其在C#中是可选的。
 
-Xamarin.iOS 负责为您的所有 iOS 绑定。 但是，如果需要手动将一种协议绑定 Objective C 中，就可以做到修饰类与`ExportAttribute`。 这是 Xamarin.iOS 本身使用的相同方法。
+Xamarin 会为你处理所有 iOS 绑定。 但是, 如果您需要从目标 C 手动绑定协议, 则可以通过使用`ExportAttribute`修饰类来实现。 此方法与 Xamarin 本身使用的方法相同。
 
-有关如何在 Xamarin.iOS 中绑定 Objective C 类型的详细信息，请参阅文章[绑定 Objective C 类型](~/ios/platform/binding-objective-c/index.md)。
+有关如何在 Xamarin 中绑定目标 C 类型的详细信息, 请参阅[绑定目标 c 类型一](~/ios/platform/binding-objective-c/index.md)文。
 
-我们还不是通过使用协议，不过。 它们是还用于在 iOS 中的基础 Objective C 的代理，这是下一节的主题。
+不过, 我们还不会使用协议。 它们还在 iOS 中用作目标-C 委托的基础, 这是下一节的主题。
 
 ## <a name="delegates"></a>委托
 
-iOS 使用 OBJECTIVE-C 的委托来实现委派模式，在其中一个对象将传递工作到另一个。 执行工作的对象是第一个对象的委托。 对象告知其委托通过发送该消息后发生某些事件中开展工作。 Objective C 中发送类似这样的消息是功能上等效于调用方法C#。 委托实现这些调用的响应中的方法，并因此提供给应用程序的功能。
+iOS 使用目标-C 委托实现委托模式, 在该模式中, 一个对象将工作传递到另一个对象。 执行工作的对象是第一个对象的委托。 对象通过在发生某些事情后发送消息来通知其委托执行工作。 在 Ansi-c 中发送类似于此的消息在功能上等同于调用中C#的方法。 委托实现方法以响应这些调用, 因此提供应用程序的功能。
 
-委托使您能够扩展类的行为，而无需创建子类。 在 iOS 中的应用程序通常使用委托，当一项重要操作发生后，一个类回调到另一个。 例如，`MKMapView`类返回到其委托的调用，当用户点击在地图上的批注让委托类的作者有机会响应应用程序中。 您可以通过这种类型的委托在本文中，示例中已使用更高版本的使用情况的一个示例处理一个委托，其 Xamarin.iOS。
+委托使你可以扩展类的行为, 而无需创建子类。 如果某个类在发生重要操作后返回到另一个类, 则 iOS 中的应用程序通常会使用委托。 例如, `MKMapView`当用户在地图上点击批注时, 该类将回调其委托, 使委托类的作者有机会在应用程序中做出响应。 可以在本文后面的部分中完成此类委托用法的示例, 例如, 将委托与 Xamarin 配合使用。
 
-此时，你可能想知道类如何确定何种方法对其委托调用。 这是使用协议的另一个位置。 通常情况下，可用于委托的方法来自它们采用的协议。
+此时, 你可能想知道类如何确定在其委托上调用的方法。 这是使用协议的另一个位置。 通常, 适用于委托的方法来自它们采用的协议。
 
-### <a name="how-protocols-are-used-with-delegates"></a>如何与委托一起使用的协议
+### <a name="how-protocols-are-used-with-delegates"></a>如何将协议与委托一起使用
 
-我们可以看到之前如何使用协议来支持在向地图添加批注。
-协议还用于提供一组已知的类来调用某些事件发生时，此类用户两次点击在地图上的批注之后或在表中选择一个单元格后的方法。 实现这些方法的类称为对其进行调用的类的委托。
+我们先前看到了如何使用协议来支持将批注添加到地图中。
+协议还用于为类提供一组已知的方法, 以便在发生特定事件之后调用, 如用户在地图上点击批注或选择表中的单元格之后。 实现这些方法的类称为调用它们的类的委托。
 
-类支持委派此公开委托属性，向其分配的类实现的委托。 为委托实现的方法将取决于特定的委托采用的协议。 有关`UITableView`方法，实现`UITableViewDelegate`协议，为`UIAccelerometer`方法，你会实施`UIAccelerometerDelegate`，依次类推对于整个 iOS 为其，可能需要的任何其他类公开的委托。
+支持委托的类通过公开委托属性来实现此目的, 实现委托的类将分配给该属性。 为委托实现的方法将取决于特定委托采用的协议。 对于方法, 你`UIAccelerometer`为方法`UITableViewDelegate`实现协议, 你将为你要公开委托`UIAccelerometerDelegate`的所有 iOS 中的其他类实现, 等等。 `UITableView`
 
-`MKMapView`我们在前面的示例中看到的类还具有一个名为委托，它将调用属性的各种事件发生之后。 委托`MKMapView`属于类型`MKMapViewDelegate`。
-你将使用此示例后选择它，则对注释做出响应，但第一个中很快就让我们来讨论强和弱委托之间的差异。
+我们`MKMapView`在前面的示例中看到的类还具有一个名为 "委托" 的属性, 该属性将在各种事件发生后调用。 的委托`MKMapView`的类型`MKMapViewDelegate`为。
+你将在示例中稍后使用此方法来响应选中的批注, 但首先我们讨论强委托和弱委托之间的区别。
 
-### <a name="strong-delegates-vs-weak-delegates"></a>强委托 vs。弱委托
+### <a name="strong-delegates-vs-weak-delegates"></a>强委托与弱委托
 
-到目前为止我们已经在委托非常强的委托，这意味着它们都强类型。 Xamarin.iOS 绑定会随附在 iOS 中每个委托协议的强类型类。 但是，iOS 还具有弱委派的概念。 而不是设置为特定的委托绑定到 OBJECTIVE-C 的协议的类的子类，iOS 您还可以选择如何在您喜欢从 NSObject，修饰方法使用与 ExportAttribute，派生的任何类中自行绑定协议方法，然后提供相应的选择器。
-时采用此方法，您将您的类的实例分配给 WeakDelegate 属性而不是委托属性。 弱委派提供了灵活地采用委托类按不同的继承层次结构。 让我们看一下使用强和弱委托的 Xamarin.iOS 示例。
+到目前为止, 我们查看的委托是强委托, 这意味着它们是强类型的。 对于 iOS 中的每个委托协议, Xamarin 绑定都附带一个强类型类。 但是, iOS 还具有弱委托的概念。 IOS 还可让你选择在任何从 NSObject 派生的类中自行绑定协议方法, 并使用 ExportAttribute 修饰方法, 然后, 而不是将绑定到特定委托的目标为 C 协议的类。提供适当的选择器。
+采用此方法时, 请将类的实例分配给 WeakDelegate 属性, 而不是委托属性。 弱委托使你可以灵活地将委托类向下移动到不同的继承层次结构。 让我们看看使用强委托和弱委托的 Xamarin iOS 示例。
 
-### <a name="example-using-a-delegate-with-xamarinios"></a>委托使用 Xamarin.iOS 示例
+### <a name="example-using-a-delegate-with-xamarinios"></a>将委托与 Xamarin 一起使用的示例
 
-若要执行代码以响应用户点击批注在本示例中，我们可以子类`MKMapViewDelegate`，并将分配到实例`MKMapView`的`Delegate`属性。 `MKMapViewDelegate`协议只包含可选方法。
-因此，所有方法都是虚拟的绑定到此协议在 Xamarin.iOS`MKMapViewDelegate`类。 当用户选择批注，`MKMapView`实例将发送`mapView:didSelectAnnotationView:`其委托到的消息。 若要在 Xamarin.iOS 中处理此问题，我们需要重写`DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)`如下 MKMapViewDelegate 子类中的方法：
+若要在我们的示例中执行代码以响应用户点击批注, 可以对`MKMapViewDelegate` `MKMapView`的属性进行子类化并将其`Delegate`分配给的属性。 `MKMapViewDelegate`协议仅包含可选方法。
+因此, 所有方法都是在 Xamarin `MKMapViewDelegate`类中绑定到此协议的虚拟方法。 当用户选择某一批注时, `MKMapView`实例会将该`mapView:didSelectAnnotationView:`消息发送给其委托。 若要在 Xamarin 中处理此情况, 需要重写 MKMapViewDelegate `DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)`子类中的方法, 如下所示:
 
 ```csharp
 public class SampleMapDelegate : MKMapViewDelegate
@@ -308,9 +308,9 @@ public class SampleMapDelegate : MKMapViewDelegate
 }
 ```
 
-作为包含的控制器中的嵌套类实现上面所示的 SampleMapDelegate 类`MKMapView`实例。 Objective C 中，你通常将看到采用直接在类中的多个协议的控制器。 但是，由于协议绑定到在 Xamarin.iOS 中的类，实现强类型的委托的类是作为嵌套的类通常包含在内。
+上面所示的 SampleMapDelegate 类在包含`MKMapView`实例的控制器中作为嵌套类实现。 在目标-C 中, 通常会看到控制器直接采用类中的多个协议。 不过, 由于协议绑定到 Xamarin 中的类, 实现强类型委托的类通常作为嵌套类包括在内。
 
-使用委托类实施完成后，您只需实例化控制器中的委托的实例，并将其分配给`MKMapView`的`Delegate`属性如下所示：
+委托类实现就绪后, 只需在控制器中实例化委托的实例, 并将其分配给`MKMapView`的`Delegate`属性, 如下所示:
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -333,7 +333,7 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-若要使用弱委派来完成相同的操作，需要自行 bind 方法从派生的任何类中`NSObject`并将其分配给`WeakDelegate`属性的`MKMapView`。 由于`UIViewController`类最终都派生`NSObject`（如每个 Objective C 中的类产品 CocoaTouch），我们只是可以实现绑定到的方法`mapView:didSelectAnnotationView:`控制器中直接分配到的控制器和`MKMapView`的`WeakDelegate`，避免所需的额外嵌套类。 下面的代码演示了这种方法：
+若要使用弱委托来完成相同的操作, 需要在派生自`NSObject`的任何类中自行绑定方法, 并将其分配`WeakDelegate`给的属性`MKMapView`。 由于类最终派生自`NSObject` (类似于 CocoaTouch 中的每个目标-C 类), 因此, 只需实现直接`mapView:didSelectAnnotationView:`在控制器中绑定到的`MKMapView`方法, 并将控制器分配给`UIViewController` `WeakDelegate`, 从而避免了额外嵌套类的需要。 下面的代码演示了这种方法:
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -355,13 +355,13 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-运行此代码时，应用程序的行为时运行的强类型的委托版本完全相同。 此代码的好处是类的弱委派不需要的额外时我们使用强类型的委托创建创建。 但是，这会降低类型安全。 如果你打算在传递给的选择器`ExportAttribute`，直到运行时不会找出。
+运行此代码时, 应用程序的行为与运行强类型委托版本时完全相同。 此代码的优点在于弱委托不需要创建在使用强类型委托时创建的额外类。 但是, 这种情况下会产生安全类型。 如果在传递给的`ExportAttribute`选择器中犯了错误, 则在运行时之前将不会发现。
 
 ### <a name="events-and-delegates"></a>事件和委托
 
-委托用于在 iOS 中类似于.NET 使用事件的方法的回调。 使 iOS Api 和它们使用 OBJECTIVE-C 的委托的方法看起来更像.NET，Xamarin.iOS 公开在 iOS 中使用委托的位置的多个位置中的.NET 事件。
+委托用于 iOS 中的回调, 与 .NET 使用事件的方式类似。 为了使 iOS Api 和它们使用目标-C 委托看起来更像 .NET, Xamarin, 在 iOS 中使用委托的许多地方都公开了 .NET 事件。
 
-例如，早期实现其中`MKMapViewDelegate`响应所选的批注也可以实现在 Xamarin.iOS 中使用.NET 事件。 在这种情况下，会在定义事件`MKMapView`并调用`DidSelectAnnotationView`。 它必须`EventArgs`类型的子类`MKMapViewAnnotationEventsArgs`。 `View`属性的`MKMapViewAnnotationEventsArgs`将为您提供对批注视图的引用，无法继续进行相同的实现其从您必须更早版本，如所示此处：
+例如, 在早期的实现中, `MKMapViewDelegate`可能还会使用 .net 事件在 Xamarin 中实现对选定批注的响应。 在这种情况下, 将在中`MKMapView`定义并调用`DidSelectAnnotationView`事件。 它将具有`EventArgs`类型`MKMapViewAnnotationEventsArgs`的子类。 `View` 的`MKMapViewAnnotationEventsArgs`属性会为你提供对批注视图的引用, 你可以在该视图中继续使用之前的相同实现, 如下所示:
 
 ```csharp
 map.DidSelectAnnotationView += (s,e) => {
@@ -380,14 +380,14 @@ map.DidSelectAnnotationView += (s,e) => {
 
 ## <a name="summary"></a>总结
 
-本文介绍如何在 Xamarin.iOS 中使用的事件、 协议和委托。 我们已了解如何 Xamarin.iOS 公开控件的正常.NET 样式事件。
-接下来我们将了解 OBJECTIVE-C 的协议，包括如何，它们不同于C#接口和 Xamarin.iOS 如何使用它们。 最后，我们探讨了从 Xamarin.iOS 角度来看的 OBJECTIVE-C 的委托。 我们已了解如何 Xamarin.iOS 同时支持强和弱类型化的委托，以及如何绑定.NET 事件委托的方法。
+本文介绍了如何在 Xamarin 中使用事件、协议和委托。 我们了解到, iOS 如何公开控件的普通 .NET 样式事件。
+接下来, 我们了解了客观-C 协议, 其中包括它们与C#接口以及 Xamarin 如何使用它们的不同之处。 最后, 我们从 Xamarin 的一个角度检查了目标-C 委托。 我们了解了 Xamarin iOS 如何支持强类型和弱类型委托, 以及如何将 .NET 事件绑定到委托方法。
 
 ## <a name="related-links"></a>相关链接
 
-- [协议、 委托和事件 （示例）](https://developer.xamarin.com/samples/monotouch/Protocols_Delegates_Events/)
+- [协议、委托和事件 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/protocols-delegates-events)
 - [Hello，iOS](~/ios/get-started/hello-ios/index.md)
-- [绑定 OBJECTIVE-C 的类型](~/ios/platform/binding-objective-c/index.md)
-- [Objective C 编程语言](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
-- [设计用户界面中 Xcode 4](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
+- [绑定目标-C 类型](~/ios/platform/binding-objective-c/index.md)
+- [目标 C 编程语言](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)
+- [在 Xcode 4 中设计用户界面](https://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/Xcode4TransitionGuide/InterfaceBuilder/InterfaceBuilder.html)
 - [适用于 iOS 的核心应用程序能力](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)

@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的滑块 Thumb 点击
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的 Slider.Value 属性将能够通过点击滑动条设置。
+title: 滚动条点击 iOS
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的, 该平台允许通过点击滑块上的 "值" 属性进行设置。
 ms.prod: xamarin
 ms.assetid: D0915D37-9A59-4728-BB6A-FE094A661275
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: b195a277defa04bac88ad65b928957c6efff4601
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 573b68097724c976ce73b51e3b7ba21b52f7a776
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925335"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651780"
 ---
-# <a name="slider-thumb-tap-on-ios"></a>在 iOS 上的滑块 Thumb 点击
+# <a name="slider-thumb-tap-on-ios"></a>滚动条点击 iOS
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的使[ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)属性可以通过点击对一个位置上设置[ `Slider` ](xref:Xamarin.Forms.Slider)栏中，而不是按无需将`Slider`thumb。 设置使用在 XAML [ `Slider.UpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty)可绑定属性设置为`true`:
+此 iOS 平台特定[`Slider.Value`](xref:Xamarin.Forms.Slider.Value)用于通过点击[`Slider`](xref:Xamarin.Forms.Slider)栏上的位置而不是`Slider`通过拖动滚动块来设置属性。 设置使用在 XAML [ `Slider.UpdateOnTap` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider.UpdateOnTapProperty)可绑定属性设置为`true`:
 
 ```xaml
 <ContentPage ...
@@ -49,6 +49,6 @@ slider.On<iOS>().SetUpdateOnTap(true);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

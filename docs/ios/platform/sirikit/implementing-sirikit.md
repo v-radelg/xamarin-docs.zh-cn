@@ -1,110 +1,110 @@
 ---
-title: 在 Xamarin.iOS 中实现 SiriKit
-description: 本文档介绍在 xamarin ios 应用中实现 SiriKit 支持所需的步骤。 它讨论了 Intents 扩展和 Intents UI 扩展。
+title: 在 Xamarin 中实现 SiriKit
+description: 本文档介绍在 Xamarin iOS 应用程序中实现 SiriKit 支持所需的步骤。 它讨论了方法扩展和意向 UI 扩展。
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 7fc675b69132ac41ffa9d87f4b3264de431b11bd
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 78d39b080a136f66c81b48d6cceb5fbdd9d24c11
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865667"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654942"
 ---
-# <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin.iOS 中实现 SiriKit
+# <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin 中实现 SiriKit
 
-_本文介绍如何在 Xamarin.iOS 应用程序中实现 SiriKit 支持所需的步骤。_
+_本文介绍了在 Xamarin iOS 应用程序中实现 SiriKit 支持所需的步骤。_
 
-新 ios 10、 通过 SiriKit，Xamarin.iOS 应用程序提供的 iOS 设备上使用 Siri 和 Maps 应用的用户可以访问的服务。 本文介绍如何通过添加所需的 Intents 扩展、 Intents UI 扩展和词汇 Xamarin.iOS 应用程序中实现 SiriKit 支持所需的步骤。
+SiriKit 的新功能允许 Xamarin iOS 应用提供用户可使用 Siri 和 iOS 设备上的地图应用程序访问的服务。 本文介绍通过添加所需的意图扩展、意向 UI 扩展和词汇, 在 Xamarin iOS 应用程序中实现 SiriKit 支持所需的步骤。
 
-使用 Siri 适用于这一概念**域**，组知道相关的任务的操作。 该应用程序可以使用 Siri 与每个交互必须按如下所示划分为其已知的服务域之一：
+Siri 适用于**域**的概念、相关任务的一组已知操作。 应用程序与 Siri 之间的每个交互都必须属于其已知的一个服务域, 如下所示:
 
 - 音频或视频呼叫。
-- 预订滑水感觉的时间。
-- 管理锻炼。
-- 消息传递。
-- 正在搜索照片。
+- 预订一本。
+- 管理 workouts。
+- 彩信.
+- 搜索照片。
 - 发送或接收付款。
 
-当用户发出的 Siri 请求涉及应用扩展的服务之一时，SiriKit 发送该扩展**意向**对象，描述用户的请求和任何支持的数据。 然后，应用扩展生成的相应**响应**对象的给定**意向**，详细介绍如何扩展可以处理该请求。
+当用户发出涉及某个应用扩展服务的 Siri 请求时, SiriKit 将向该扩展发送**意向**对象, 该对象描述用户的请求以及所有支持数据。 然后, 应用扩展会针对给定**意向**生成相应的**响应**对象, 并详细说明扩展如何处理请求。
 
-本指南将介绍快速示例包括 SiriKit 支持现有应用程序。 对于此示例中，我们将使用假 MonkeyChat 应用：
+本指南将演示如何在现有应用中包括 SiriKit 支持。 出于本示例的目的, 我们将使用虚设的 MonkeyChat 应用:
 
 [![](implementing-sirikit-images/monkeychat01.png "MonkeyChat 图标")](implementing-sirikit-images/monkeychat01.png#lightbox)
 
-MonkeyChat 保持其自己书联系人的用户的好友名单，但每个屏幕名称 （如 Bobo 示例)，与相关联，并允许用户通过其屏幕名称发送到每个朋友的文本聊天。
+MonkeyChat 保留自己的用户朋友的联系人手册, 每个与屏幕名称关联 (例如 Bobo), 并允许用户通过屏幕名称向每个朋友发送文本聊天。
 
-## <a name="extending-the-app-with-sirikit"></a>扩展应用程序与 SiriKit
+## <a name="extending-the-app-with-sirikit"></a>用 SiriKit 扩展应用
 
-如中所示[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)指南中，扩展带有 SiriKit 的应用程序中包含有三个主要部分：
+如[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)指南中所示, 使用 SiriKit 扩展应用程序涉及三个主要部分:
 
-[![](implementing-sirikit-images/elements01.png "扩展应用程序与 SiriKit 关系图")](implementing-sirikit-images/elements01.png#lightbox)
+[![](implementing-sirikit-images/elements01.png "用 SiriKit 关系图扩展应用程序")](implementing-sirikit-images/elements01.png#lightbox)
 
 这些问题包括：
 
-1. **Intents 扩展**-验证用户响应，确认应用程序可以处理的请求和实际执行的任务以满足用户的请求。
-2. **Intents UI 扩展** - *可选*、 提供响应 Siri 环境中的自定义用户界面并可以将应用 UI 和品牌到 Siri 来丰富用户体验。
-3. **应用**-提供用户特定词汇，以便帮助 Siri 使用它的应用程序。 
+1. **意向扩展**-验证用户的响应, 确认应用程序可以处理请求, 并实际执行任务以满足用户的请求。
+2. **意向 UI 扩展** - *可选*, 为 Siri 环境中的响应提供自定义 ui, 并可将应用 ui 和品牌加入 Siri, 以丰富用户的体验。
+3. **应用**-为应用提供特定于用户的词汇, 以帮助 Siri 使用它。 
 
-将以下各节中详细介绍所有这些元素，并将其包含在应用中的步骤。
+以下各部分详细介绍了所有这些元素以及将它们包含在应用中的步骤。
 
 
 ## <a name="preparing-the-app"></a>准备应用
 
-SiriKit 构建扩展，但是，在将任何扩展添加到应用之前, 有开发人员需要执行的操作帮助 SiriKit 采用的一些事项。
+SiriKit 是基于扩展构建的, 但是, 在将任何扩展添加到应用之前, 开发人员需要执行几项操作来帮助采用 SiriKit。
 
-### <a name="moving-common-shared-code"></a>移动公共共享的代码 
+### <a name="moving-common-shared-code"></a>移动公共共享代码 
 
-首先，开发人员可以将共享公共代码的一些之间移动应用和扩展到_共享项目_，_可移植类库 (Pcl)_ 或_本机库_。
+首先, 开发人员可以将应用和扩展之间共享的一些常见代码移到_共享项目_、_可移植类库 (Pcl)_ 或_本机库_中。
 
-扩展将需要能够执行所有的应用执行的操作。 中的示例 MonkeyChat 应用中，诸如查找联系人，添加新的联系人和条款将消息发送和检索消息历史记录。
+扩展需要能够完成应用程序所执行的所有操作。 在示例 MonkeyChat 应用程序中, 查找联系人、添加新联系人、发送消息和检索消息历史记录等。
 
-通过将此公共代码移动到共享项目、 PCL 或本机库它轻松地维护该代码放在一个公用位置，并确保扩展与父应用程序提供统一的体验和功能的用户。
+通过将此通用代码移到共享项目、PCL 或本机库中, 可以轻松地在一个常见位置维护代码, 并确保扩展和父应用程序为用户提供统一的体验和功能。
 
-对于示例应用程序 MonkeyChat 数据模型和处理代码，例如网络和数据库访问将被移动到本机库。
+在示例应用 MonkeyChat 的情况下, 数据模型和处理代码 (如网络和数据库访问) 将移到本机库。
 
 请执行以下操作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 启动 Visual Studio for Mac 并打开 MonkeyChat 应用。
-2. 右键单击解决方案名称在**Solution Pad** ，然后选择**添加** > **新建项目...** : 
+2. 在**Solution Pad**中右键单击解决方案名称, 然后选择 "**添加** > " "**新建项目 ...** ": 
 
     [![](implementing-sirikit-images/prep01.png "添加新项目")](implementing-sirikit-images/prep01.png#lightbox)
-3. 选择**iOS** > **库** > **类库**然后单击**下一步**按钮： 
+3. 选择 " **iOS** >   库 > " "类库" **, 然后单击**"**下一步**" 按钮: 
 
     [![](implementing-sirikit-images/prep02.png "选择类库")](implementing-sirikit-images/prep02.png#lightbox)
-4. 输入`MonkeyChatCommon`有关**名称**然后单击**创建**按钮： 
+4. 输入`MonkeyChatCommon`作为**名称**, 然后单击 "**创建**" 按钮: 
 
     [![](implementing-sirikit-images/prep03.png "为名称输入 MonkeyChatCommon")](implementing-sirikit-images/prep03.png#lightbox)
-5. 右键单击**引用**文件夹中的主应用程序**解决方案资源管理器**，然后选择**编辑引用...** .检查**MonkeyChatCommon**项目，然后单击**确定**按钮： 
+5. 右键单击**解决方案资源管理器**中主应用的 "**引用**" 文件夹, 然后选择 "**编辑引用 ...** "。选中 " **MonkeyChatCommon** " 项目, 并单击 **"确定"** 按钮: 
 
     [![](implementing-sirikit-images/prep05.png "检查 MonkeyChatCommon 项目")](implementing-sirikit-images/prep05.png#lightbox)
-6. 在中**解决方案资源管理器**，将主应用中的公共共享的代码拖动到本机库。
-7. 对于 MonkeyChat，拖动**DataModels**并**处理器**主应用到本机库中的文件夹： 
+6. 在**解决方案资源管理器**中, 将公共共享代码从主应用拖到本机库。
+7. 对于 MonkeyChat, 将主应用中的 " **DataModels** " 和 "**处理器**" 文件夹拖到本机库中: 
 
-    [![](implementing-sirikit-images/prep06.png "在解决方案资源管理器中的 DataModels 和处理器文件夹")](implementing-sirikit-images/prep06.png#lightbox)
+    [![](implementing-sirikit-images/prep06.png "解决方案资源管理器中的 DataModels 和处理器文件夹")](implementing-sirikit-images/prep06.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 启动 Visual Studio 并打开 MonkeyChat 应用。
-2. 右键单击解决方案名称在**解决方案资源管理器**，然后选择**添加** > **新建项目...** .
-3. 选择**可视化C#**   > **共享项目**然后单击**下一步**按钮： 
+2. 在**解决方案资源管理器**中右键单击解决方案名称, 然后选择 "**添加** > " "**新建项目 ...** "。
+3. 选择 **" C#视觉对象**  > **共享项目**", 然后单击 "**下一步**" 按钮: 
 
     [![](implementing-sirikit-images/prep02.w157-sml.png "选择类库")](implementing-sirikit-images/prep02.w157.png#lightbox)
-4. 输入`MonkeyChatCommon`有关**名称**然后单击**创建**按钮。
-5. 右键单击**引用**文件夹中的主应用程序**解决方案资源管理器**，然后选择**编辑引用...** .检查**MonkeyChatCommon**项目，然后单击**确定**按钮： 
+4. 输入`MonkeyChatCommon`作为**名称**, 然后单击 "**创建**" 按钮。
+5. 右键单击**解决方案资源管理器**中主应用的 "**引用**" 文件夹, 然后选择 "**编辑引用 ...** "。选中 " **MonkeyChatCommon** " 项目, 并单击 **"确定"** 按钮: 
 
     [![](implementing-sirikit-images/prep05w.png "检查 MonkeyChatCommon 项目")](implementing-sirikit-images/prep05w.png#lightbox)
-6. 在中**解决方案资源管理器**，将主应用中的公共共享的代码拖动到共享的项目。
-7. 对于 MonkeyChat，拖动**DataModels**并**处理器**主应用到本机库中的文件夹。
+6. 在**解决方案资源管理器**中, 将公共共享代码从主应用拖到共享项目。
+7. 对于 MonkeyChat, 将主应用中的 " **DataModels** " 和 "**处理器**" 文件夹拖到本机库。
 
 -----
 
-编辑的任何文件已移动到本机库，将命名空间以匹配的库。 例如，更改`MonkeyChat`到`MonkeyChatCommon`:
+编辑已移动到本机库的任何文件, 并更改命名空间以与库的命名空间相匹配。 例如, 将更改`MonkeyChat`为`MonkeyChatCommon`:
 
 ```csharp
 using System;
@@ -123,7 +123,7 @@ namespace MonkeyChatCommon
 }
 ```
 
-接下来，请返回到主应用程序并添加`using`语句本机库的命名空间的任意位置应用程序使用已移动的类之一：
+接下来, 返回主应用并在应用使用已`using`移动的其中一个类的任何位置为本机库的命名空间添加语句:
 
 ```csharp
 using System;
@@ -145,52 +145,52 @@ namespace MonkeyChat
 }
 ```
 
-### <a name="architecting-the-app-for-extensions"></a>扩展的构建应用程序
+### <a name="architecting-the-app-for-extensions"></a>为扩展构建应用程序
 
-通常情况下，应用将注册多个意向和开发人员需要确保应用程序的体系结构的适当数量的意向扩展。
+通常情况下, 应用程序将注册多个意向, 开发人员需要确保应用程序的设计可用于适当数量的意图扩展。
 
-在其中应用需要多个目的的情况下，开发人员可以将所有其意向处理放入一个意向扩展或创建适用于每个意向单独的意向扩展的选项。
+在应用需要多个意向的情况下, 开发人员可以选择将其所有意向处理置于一个意向扩展中, 或为每个意向创建一个单独的意图扩展。
 
-如果选择为每个意向创建单独的意向扩展时，开发人员可能最终会复制大量的样板代码中每个扩展，并创建大量的处理器和内存开销。
+如果为每个意向选择创建一个单独的意图扩展, 则开发人员最终可能会在每个扩展中复制大量样板代码, 并产生大量的处理器和内存开销。
 
-若要帮助的两个选项之间进行选择，请参阅是否任何意向自然同属于。 例如，进行音频和视频呼叫应用可能想要在单个的意向扩展中包含这两个这些意向，因为它们类似的任务的处理，并可以提供大多数代码重用。
+若要帮助在这两个选项之间进行选择, 请查看是否有任何方法自然属于一起。 例如, 进行音频和视频调用的应用可能希望在单个意向扩展中包括这两种方法, 因为它们处理类似的任务, 可能会提供最多的代码重用。
 
-对于任何目的或意图不适合到现有组的组，在应用程序的解决方案来包含它们创建一个新的意向扩展。
+对于不适合现有组的任何意向或意向组, 请在应用的解决方案中创建一个新的意图扩展来包含它们。
 
 
 ### <a name="setting-the-required-entitlements"></a>设置所需的权利
 
-包括 SiriKit 集成任何 Xamarin.iOS 应用程序，必须具有正确的授权设置。 如果开发人员不会正确设置这些所需的权利，它们将不能安装或测试真正的 iOS 10 （或更高版本） 在硬件上，这也是由于 iOS 10 的要求应用程序模拟器不支持 SiriKit。
+任何包含 SiriKit 集成的 Xamarin iOS 应用都必须具有正确的权利集。 如果开发人员没有正确设置这些所需的权利, 则他们将无法在实际的 iOS 10 (或更高版本) 硬件上安装或测试应用, 因为 iOS 10 模拟器不支持 SiriKit。
 
 请执行以下操作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击`Entitlements.plist`文件中**解决方案资源管理器**打开进行编辑。
-2. 切换到**源**选项卡。
-3. 添加`com.apple.developer.siri`**属性**，将**类型**到`Boolean`并**值**到`Yes`: 
+1. 双击 "**解决方案资源管理器**中`Entitlements.plist`的文件以将其打开以进行编辑。
+2. 切换到 "**源**" 选项卡。
+3. `Boolean` `Yes`添加属性, 将 "类型" 设置为, 将 "值" 设置为: `com.apple.developer.siri` 
 
-    [![](implementing-sirikit-images/setup01.png "添加 com.apple.developer.siri 属性")](implementing-sirikit-images/setup01.png#lightbox)
+    [![](implementing-sirikit-images/setup01.png "添加 siri 属性。")](implementing-sirikit-images/setup01.png#lightbox)
 4. 保存对文件所做的更改。
-5. 双击**项目文件**中**解决方案资源管理器**打开进行编辑。
-6. 选择**iOS 捆绑签名**并确保`Entitlements.plist`中选择文件**自定义权利**字段： 
+5. 双击 "**解决方案资源管理器**中的**项目文件**, 将其打开以进行编辑。
+6. 选择 " **iOS 捆绑签名**", 并`Entitlements.plist`确保在 "**自定义权利**" 字段中选择了该文件: 
 
-    [![](implementing-sirikit-images/setup02.png "在自定义权利字段选择 Entitlements.plist 文件")](implementing-sirikit-images/setup02.png#lightbox)
+    [![](implementing-sirikit-images/setup02.png "选择 \"自定义权利\" 字段中的 info.plist 文件")](implementing-sirikit-images/setup02.png#lightbox)
 7. 单击“确定”  按钮保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 双击`Entitlements.plist`文件中**解决方案资源管理器**打开进行编辑。
-2. 添加`com.apple.developer.siri`**属性**，将**类型**到`Boolean`并**值**到`Yes`: 
+1. 双击 "**解决方案资源管理器**中`Entitlements.plist`的文件以将其打开以进行编辑。
+2. `Boolean` `Yes`添加属性, 将 "类型" 设置为, 将 "值" 设置为: `com.apple.developer.siri` 
 
-    [![](implementing-sirikit-images/setup01w.png "添加 com.apple.developer.siri 属性")](implementing-sirikit-images/setup01w.png#lightbox)
+    [![](implementing-sirikit-images/setup01w.png "添加 siri 属性。")](implementing-sirikit-images/setup01w.png#lightbox)
 3. 保存对文件所做的更改。
-4. 双击**项目文件**中**解决方案资源管理器**打开进行编辑。
-5. 选择**iOS 捆绑签名**并确保`Entitlements.plist`中选择文件**自定义权利**字段。
+4. 双击 "**解决方案资源管理器**中的**项目文件**, 将其打开以进行编辑。
+5. 选择 " **iOS 捆绑签名**", 并`Entitlements.plist`确保在 "**自定义权利**" 字段中选择了该文件。
 
 -----
 
-完成后，应用程序的`Entitlements.plist`文件应如下所示 （在编辑器中打开外部）：
+完成后, 应用的`Entitlements.plist`文件应如下所示 (在外部编辑器中打开):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,68 +203,68 @@ namespace MonkeyChat
 </plist>
 ```
 
-### <a name="correctly-provisioning-the-app"></a>正确预配应用程序
+### <a name="correctly-provisioning-the-app"></a>正确预配应用
 
-由于严格的安全，Apple 已周围将 SiriKit framework，任何 Xamarin.iOS 应用，用于实现 SiriKit_必须_具有正确的应用程序 ID 和权利 （请参阅上面部分），并且必须使用适当签名预配配置文件。
+由于 Apple 在 SiriKit 框架中放置了严格的安全性, 因此实现 SiriKit 的任何 Xamarin iOS 应用程序都_必须_具有正确的应用程序 ID 和权利 (请参阅上面的部分), 并且必须使用正确的预配配置文件进行签名。
 
-执行以下操作在 Mac 上：
+在 Mac 上执行以下操作:
 
-1. 在 web 浏览器中，导航到[ https://developer.apple.com ](https://developer.apple.com)和登录到你的帐户。
-2. 单击**证书**，**标识符**并**配置文件**。
+1. 在 web 浏览器中, 导航[https://developer.apple.com](https://developer.apple.com)到并登录到你的帐户。
+2. 单击 "**证书**、**标识符**和**配置文件**"。
 3. 选择**预配配置文件**，然后选择**应用 Id**，然后单击 **+** 按钮。
-4. 输入**名称**新配置文件。
-5. 输入**捆绑 ID**按照 Apple 的命名建议。
-6. 向下滚动到**应用服务**部分中，选择**SiriKit**然后单击**继续**按钮： 
+4. 输入新配置文件的**名称**。
+5. 输入 Apple 命名建议后的**捆绑 ID** 。
+6. 向下滚动到 "**应用服务**" 部分, 选择 " **SiriKit** ", 然后单击 "**继续**" 按钮: 
 
     [![](implementing-sirikit-images/setup03.png "选择 SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
-7. 验证所有设置，然后**提交**应用 id。
+7. 验证所有设置, 然后**提交**应用 ID。
 8. 选择**预配配置文件** > **开发**，单击 **+** 按钮，选择**Apple ID**，然后单击**继续**。
-9. 单击选择**所有**，然后单击**继续**。
-10. 单击**全**，然后单击**继续**。
-11. 输入**配置文件名称**使用 Apple 的命名建议，然后单击**继续**。
+9. 单击 "全**选",** 然后单击 "**继续**"。
+10. 再次单击 "**全选**", 然后单击 "**继续**"。
+11. 使用 Apple 命名建议输入**配置文件名称**, 然后单击 "**继续**"。
 12. 启动 Xcode。
-13. 从 Xcode 菜单上选择**首选项...**
-14. 选择**帐户**，然后单击**查看详细信息...** 按钮： 
+13. 从 "Xcode" 菜单中选择 "**首选项 ...** "
+14. 选择 "**帐户**", 然后单击 "**查看详细信息 ...** " 鼠标 
 
     [![](implementing-sirikit-images/setup04.png "选择帐户")](implementing-sirikit-images/setup04.png#lightbox)
-15. 单击**下载所有配置文件**中较低的左下角的按钮： 
+15. 单击左下角的 "**下载所有配置文件**" 按钮: 
 
     [![](implementing-sirikit-images/setup05.png "下载所有配置文件")](implementing-sirikit-images/setup05.png#lightbox)
-16. 絋粄**预配配置文件**创建更高版本中安装了 Xcode。
-17. 打开该项目添加到 SiriKit 支持在 Visual Studio for mac。
-18. 双击`Info.plist`文件中**解决方案资源管理器**。
-19. 絋粄**捆绑包标识符**匹配更高版本的 Apple 的开发人员门户中创建的一个： 
+16. 请确保在 Xcode 中安装了上面创建的**预配配置文件**。
+17. 打开要将 SiriKit 支持添加到 Visual Studio for Mac 中的项目。
+18. 双击 "**解决方案资源管理器**中`Info.plist`的文件。
+19. 确保**捆绑标识符**与上面 Apple 开发人员门户中创建的标识符匹配: 
 
-    [![](implementing-sirikit-images/setup06.png "捆绑包标识符")](implementing-sirikit-images/setup06.png#lightbox)
-20. 在中**解决方案资源管理器**，选择**项目**。
-21. 右键单击项目并选择**选项**。
-22. 选择**iOS 捆绑签名**，选择**签名标识**并**预配配置文件**上面创建： 
+    [![](implementing-sirikit-images/setup06.png "捆绑标识符")](implementing-sirikit-images/setup06.png#lightbox)
+20. 在**解决方案资源管理器**中, 选择**项目**。
+21. 右键单击该项目, 然后选择 "**选项**"。
+22. 选择 " **IOS 捆绑签名**", 选择上面创建的**签名标识**和**预配配置文件**: 
 
     [![](implementing-sirikit-images/setup07.png "选择签名标识和预配配置文件")](implementing-sirikit-images/setup07.png#lightbox)
 23. 单击“确定”  按钮保存更改。
 
 > [!IMPORTANT]
-> 测试 SiriKit 仅适用于真实 iOS 10 个硬件设备而不是在 iOS 10 模拟器。 如果遇到问题安装 SiriKit 启用 Xamarin.iOS 应用程序的真实硬件上，确保所需的权利、 应用程序 ID、 签名标识符和预配配置文件具有已正确配置，在 Apple 的开发人员门户和 Visual Studio for mac。
+> 测试 SiriKit 仅适用于实际的 iOS 10 硬件设备, 而不适用于 iOS 10 模拟器。 如果在实际硬件上安装 SiriKit 启用的 Xamarin iOS 应用时遇到问题, 请确保在 Apple 开发人员门户和 Visual Studio for Mac 中正确配置了所需的权利、应用 ID、签名标识符和预配配置文件。
 
 ### <a name="requesting-siri-authorization"></a>请求 Siri 授权
 
-该应用将添加任何用户特定词汇或 Intents 扩展连接到使用 Siri 之前，必须从用户访问使用 Siri 请求授权。
+在应用添加任何用户特定词汇或意向扩展连接到 Siri 之前, 它必须请求用户授权才能访问 Siri。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-编辑应用程序的`Info.plist`文件中，切换到**源**查看和添加`NSSiriUsageDescription`键，其描述应用程序使用 Siri 和内容的方式的字符串值将发送的数据类型。 例如，MonkeyChat 应用可能会说"MonkeyChat 联系人将发送至 Siri":
+编辑应用`Info.plist`文件, 切换到 "**源**" `NSSiriUsageDescription`视图, 然后使用描述应用使用 Siri 的方式和将发送的数据类型的字符串值添加密钥。 例如, MonkeyChat 应用可能会说 "MonkeyChat 联系人将发送到 Siri":
 
-[![](implementing-sirikit-images/request01.png "Info.plist 编辑器中 NSSiriUsageDescription")](implementing-sirikit-images/request01.png#lightbox)
+[![](implementing-sirikit-images/request01.png "Info.plist 编辑器中的 NSSiriUsageDescription")](implementing-sirikit-images/request01.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-编辑应用程序的`Info.plist`文件，并添加`NSSiriUsageDescription`键，其描述应用程序使用 Siri 和内容的方式的字符串值将发送的数据类型。 例如，MonkeyChat 应用可能会说"MonkeyChat 联系人将发送至 Siri":
+编辑应用程序的`Info.plist`文件, 并`NSSiriUsageDescription`添加一个字符串值, 其中描述应用程序将如何使用 Siri 以及将发送何种类型的数据。 例如, MonkeyChat 应用可能会说 "MonkeyChat 联系人将发送到 Siri":
 
-[![](implementing-sirikit-images/request01w.png "Info.plist 编辑器中 NSSiriUsageDescription")](implementing-sirikit-images/request01w.png#lightbox)
+[![](implementing-sirikit-images/request01w.png "Info.plist 编辑器中的 NSSiriUsageDescription")](implementing-sirikit-images/request01w.png#lightbox)
 
 -----
 
-调用`RequestSiriAuthorization`方法的`INPreferences`类应用程序首次启动时。 编辑`AppDelegate.cs`类，并使`FinishedLaunching`方法看起来像以下：
+当应用程序首次`INPreferences`启动时, 调用类的方法。`RequestSiriAuthorization` 编辑类, `FinishedLaunching`使方法如下所示: `AppDelegate.cs`
 
 
 ```csharp
@@ -294,13 +294,13 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-第一次调用此方法时，警报则会显示提示用户允许应用程序访问使用 Siri。 开发人员添加到消息`NSSiriUsageDescription`更高版本将显示在此警报。 如果用户最初拒绝访问，他们可以使用**设置**应用授予应用的访问权限。
+第一次调用此方法时, 会显示一条警报, 提示用户允许应用访问 Siri。 此警报中将显示开发人员添加`NSSiriUsageDescription`到上述的消息。 如果用户最初拒绝访问, 则他们可以使用 "**设置**" 应用来授予对应用的访问权限。
 
-在任何时候，应用程序可以检查应用程序可以通过调用访问 Siri`SiriAuthorizationStatus`方法的`INPreferences`类。
+无论何时, 应用都可以通过调用`SiriAuthorizationStatus` `INPreferences`类的方法来检查应用访问 Siri 的能力。
 
 ### <a name="localization-and-siri"></a>本地化和 Siri
 
-在 iOS 设备，用户就能够为不同的 Siri 然后系统默认选择语言。 应用程序时使用本地化的数据时，将需要使用`SiriLanguageCode`方法的`INPreferences`类，以获取从 Siri 语言代码。 例如：
+在 iOS 设备上, 用户可以选择与系统默认值不同的 Siri 语言。 使用本地化数据时, 应用程序将需要使用`SiriLanguageCode` `INPreferences`类的方法从 Siri 获取语言代码。 例如：
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -313,18 +313,18 @@ if (language == "en-US") {
 
 ### <a name="adding-user-specific-vocabulary"></a>添加用户特定词汇
 
-用户特定词汇打算提供单词或短语是唯一的应用程序的单个用户。 作为一组有序术语中，在具有列表的开头的最重要条款的用户的最高有效使用优先级排序，将在运行时从主应用程序 （不应用扩展） 提供这些。
+用户特定词汇将提供应用的各个用户独有的词或短语。 这些设置将在运行时从主应用 (而不是应用扩展) 作为一组有序项提供, 按用户最重要的使用优先级排序, 并在列表的开头提供最重要的术语。
 
-用户特定词汇必须属于以下类别之一：
+用户特定词汇必须属于以下类别之一:
 
-- 联系人姓名 （即未受联系人 framework）。
+- 联系人姓名 (不受 contact 框架管理)。
 - 照片标记。
-- 照片唱片集名称。
+- 相册名称。
 - 健身名称。
 
-若要将注册为自定义词汇的术语，在选择时仅选择条款可能被误解的某个不熟悉应用程序。 永远不会注册常用术语如"My 健身"或"我的唱片集"。 例如，MonkeyChat 应用程序将注册与用户的通讯簿中的每个联系人的昵称。
+选择要注册为自定义词汇的术语时, 仅选择不熟悉该应用的人员可能会误解的字词。 切勿注册常见条款, 如 "我的健身" 或 "我的唱片集"。 例如, MonkeyChat 应用将注册与用户的通讯簿中的每个联系人关联的昵称。
 
-应用程序通过调用提供用户特定词汇`SetVocabularyStrings`方法`INVocabulary`类，并传入`NSOrderedSet`主应用中的集合。 应用应始终调用`RemoveAllVocabularyStrings`方法首先，需要删除任何现有的条款，然后再添加新的。 例如：
+此应用通过调用`SetVocabularyStrings` `INVocabulary`类的方法并从主应用传入集合来提供用户特定词汇。`NSOrderedSet` 应用应始终首先调用`RemoveAllVocabularyStrings`方法, 以在添加新字词之前删除任何现有术语。 例如:
 
 ```csharp
 using System;
@@ -378,7 +378,7 @@ namespace MonkeyChatCommon
 }
 ```
 
-利用此代码，它可能会调用，如下所示：
+此代码准备就绪后, 可以按如下所示调用:
 
 ```csharp
 using System;
@@ -430,266 +430,266 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> Siri 为提示将自定义词汇，并将合并作为很多尽可能的术语。 但是，空间是有限使重要注册自定义词汇_仅_可能令人困惑，因此保持在最低限度的已注册的词的总数目的术语。
+> Siri 将自定义词汇视为提示, 并将尽可能多地合并术语。 但是, 自定义词汇的空间有限,_只_注册可能会造成混淆的术语, 从而使注册术语的总数保持最小值非常重要。
 
-有关详细信息，请参阅我们[用户特定词汇参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[指定自定义词汇参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)。
+有关详细信息, 请参阅我们的[用户特定词汇参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[指定自定义词汇引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)。
 
-### <a name="adding-app-specific-vocabulary"></a>添加特定于应用词汇
+### <a name="adding-app-specific-vocabulary"></a>添加特定于应用的词汇
 
-应用特定词汇定义的特定字词和短语将已知的所有应用程序的用户，例如车辆类型或健身名称。 由于这些是应用程序的一部分，它们在定义`AppIntentVocabulary.plist`文件作为主应用程序捆绑包的一部分。 此外，还应本地化这些单词和短语。
+特定于应用程序的词汇定义应用程序的所有用户都知道的特定词和短语, 如车辆类型或健身名称。 由于这些是应用程序的一部分, 因此在应用程序捆绑`AppIntentVocabulary.plist`包中将它们定义为文件。 此外, 应本地化这些字词和短语。
 
-特定于应用汇术语必须属于以下类别之一：
+应用特定词汇条款必须属于以下类别之一:
 
-- 写选项。
+- 向选项。
 - 健身名称。
 
-应用特定词汇文件包含两个根级别键：
+应用特定词汇文件包含两个根级别的密钥:
 
-- `ParameterVocabularies` **所需**-定义应用的自定义的条款和它们适用于意向参数。
-- `IntentPhrases` **可选**-包含使用自定义的术语中定义的示例短语`ParameterVocabularies`。
+- `ParameterVocabularies`**必需**-定义应用的自定义术语和意向参数。
+- `IntentPhrases`**可选**-包含使用中`ParameterVocabularies`定义的自定义术语的示例短语。
 
-在每个条目`ParameterVocabularies`必须指定一个 ID 字符串、 术语和术语适用于的目的。 此外，单个字词可能适用于多个目的。
+中的`ParameterVocabularies`每个条目都必须指定适用于术语的 ID 字符串、术语和意向。 此外, 一个术语可能适用于多个意向。
 
-有关可接受的值和所需的文件结构的完整列表，请参阅 Apple[应用词汇文件格式参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1)。
+有关可接受的值和所需文件结构的完整列表, 请参阅 Apple 的[应用词汇文件格式参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1)。
 
-若要添加`AppIntentVocabulary.plist`到应用程序项目文件中，执行以下操作：
+若要将`AppIntentVocabulary.plist`文件添加到应用项目, 请执行以下操作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右键单击项目名称在**解决方案资源管理器**，然后选择**添加** > **新文件...**  >  **iOS**:
+1. 右键单击 "**解决方案资源管理器**中的项目名称, 然后选择"**添加** > **新文件 ...** " >  **iOS**:
 
-    [![](implementing-sirikit-images/plist01.png "添加的属性列表")](implementing-sirikit-images/plist01.png#lightbox)
-2. 双击`AppIntentVocabulary.plist`文件中**解决方案资源管理器**打开进行编辑。
+    [![](implementing-sirikit-images/plist01.png "添加属性列表")](implementing-sirikit-images/plist01.png#lightbox)
+2. 双击 "**解决方案资源管理器**中`AppIntentVocabulary.plist`的文件以将其打开以进行编辑。
 3. 单击 **+** 若要添加的键，设置**名称**到`ParameterVocabularies`并**类型**到`Array`:
 
-    [![](implementing-sirikit-images/plist02.png "将名称设置为 ParameterVocabularies 和到数组类型")](implementing-sirikit-images/plist02.png#lightbox)
+    [![](implementing-sirikit-images/plist02.png "将名称设置为 ParameterVocabularies, 将类型设置为数组")](implementing-sirikit-images/plist02.png#lightbox)
 4. 展开`ParameterVocabularies`然后单击 **+** 按钮，然后设置**类型**到`Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "将类型设置为字典")](implementing-sirikit-images/plist03.png#lightbox)
 5. 单击 **+** 若要添加新的密钥，请设置**名称**到`ParameterNames`并**类型**到`Array`:
 
-    [![](implementing-sirikit-images/plist04.png "将名称设置为 ParameterNames 和到数组类型")](implementing-sirikit-images/plist04.png#lightbox)
-6. 单击 **+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
+    [![](implementing-sirikit-images/plist04.png "将名称设置为 ParameterNames, 将类型设置为数组")](implementing-sirikit-images/plist04.png#lightbox)
+6. 单击 **+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如`INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05.png#lightbox)
-7. 添加`ParameterVocabulary`关键`ParameterVocabularies`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist05.png "INStartWorkoutIntent. workoutName 键")](implementing-sirikit-images/plist05.png#lightbox)
+7. 将密钥添加`ParameterVocabularies`到**类型**为的`Array`密钥: `ParameterVocabulary`
 
-    [![](implementing-sirikit-images/plist06.png "将 ParameterVocabulary 密钥添加到具有数组类型的 ParameterVocabularies 键")](implementing-sirikit-images/plist06.png#lightbox)
-8. 添加的新键**类型**的`Dictionary`:
+    [![](implementing-sirikit-images/plist06.png "将 ParameterVocabulary 键添加到类型为的 ParameterVocabularies 键")](implementing-sirikit-images/plist06.png#lightbox)
+8. 添加**类型**为的`Dictionary`新密钥:
 
-    [![](implementing-sirikit-images/plist07.png "添加字典类型的新键")](implementing-sirikit-images/plist07.png#lightbox)
-9. 添加`VocabularyItemIdentifier`键，其**类型**的`String`和指定的期限内的唯一 ID:
+    [![](implementing-sirikit-images/plist07.png "添加具有字典类型的新键")](implementing-sirikit-images/plist07.png#lightbox)
+9. 添加类型为的  `String` 密钥,并为此术语指定唯一ID:`VocabularyItemIdentifier`
 
-    [![](implementing-sirikit-images/plist08.png "添加具有字符串类型的 VocabularyItemIdentifier 键，并指定一个唯一的 ID")](implementing-sirikit-images/plist08.png#lightbox)
-10. 添加`VocabularyItemSynonyms`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist08.png "添加包含字符串类型的 VocabularyItemIdentifier 键, 并指定唯一 ID")](implementing-sirikit-images/plist08.png#lightbox)
+10. 添加类型为的  `Array`密钥:`VocabularyItemSynonyms`
 
-    [![](implementing-sirikit-images/plist09.png "添加具有数组类型的 VocabularyItemSynonyms 键")](implementing-sirikit-images/plist09.png#lightbox)
-11. 添加的新键**类型**的`Dictionary`:
+    [![](implementing-sirikit-images/plist09.png "添加类型为 Array 的 VocabularyItemSynonyms 键")](implementing-sirikit-images/plist09.png#lightbox)
+11. 添加**类型**为的`Dictionary`新密钥:
 
-    [![](implementing-sirikit-images/plist10.png "添加字典类型的新键")](implementing-sirikit-images/plist10.png#lightbox)
-12. 添加`VocabularyItemPhrase`键，其**类型**的`String`和术语定义应用程序：
+    [![](implementing-sirikit-images/plist10.png "添加具有字典类型的新键")](implementing-sirikit-images/plist10.png#lightbox)
+12. 添加类型为的  `String` 密钥和应用定义的术语:`VocabularyItemPhrase`
 
-    [![](implementing-sirikit-images/plist11.png "添加具有字符串类型和应用程序所定义的术语的 VocabularyItemPhrase 键")](implementing-sirikit-images/plist11.png#lightbox)
-13. 添加`VocabularyItemPronunciation`键，其**类型**的`String`和术语的语音发音：
+    [![](implementing-sirikit-images/plist11.png "添加具有字符串类型和应用正在定义的术语的 VocabularyItemPhrase 键")](implementing-sirikit-images/plist11.png#lightbox)
+13. 添加具有以下**类型**的`String` 密钥和字词的拼音发音:`VocabularyItemPronunciation`
 
-    [![](implementing-sirikit-images/plist12.png "添加具有字符串类型和术语的语音发音的 VocabularyItemPronunciation 键")](implementing-sirikit-images/plist12.png#lightbox)
-14. 添加`VocabularyItemExamples`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist12.png "添加 VocabularyItemPronunciation 键, 其中包含字符串类型和字词的拼音发音")](implementing-sirikit-images/plist12.png#lightbox)
+14. 添加类型为的  `Array`密钥:`VocabularyItemExamples`
 
-    [![](implementing-sirikit-images/plist13.png "添加具有数组类型的 VocabularyItemExamples 键")](implementing-sirikit-images/plist13.png#lightbox)
-15. 添加了一些`String`术语的示例使用具有键：
+    [![](implementing-sirikit-images/plist13.png "添加类型为 Array 的 VocabularyItemExamples 键")](implementing-sirikit-images/plist13.png#lightbox)
+15. 使用以下术语`String`的示例用法添加几个键:
 
-    [![](implementing-sirikit-images/plist14.png "添加使用的术语的示例使用的几个字符串键")](implementing-sirikit-images/plist14.png#lightbox)
-16. 对应用程序需要定义任何其他自定义条款重复上述步骤。
-17. 折叠`ParameterVocabularies`密钥。
-18. 添加`IntentPhrases`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist14.png "使用字词的示例用法添加几个字符串键")](implementing-sirikit-images/plist14.png#lightbox)
+16. 针对应用需要定义的任何其他自定义术语, 重复以上步骤。
+17. 折叠该`ParameterVocabularies`密钥。
+18. 添加类型为的  `Array`密钥:`IntentPhrases`
 
-    [![](implementing-sirikit-images/plist15.png "添加具有数组类型的 IntentPhrases 键")](implementing-sirikit-images/plist15.png#lightbox)
-19. 添加的新键**类型**的`Dictionary`:
+    [![](implementing-sirikit-images/plist15.png "添加类型为 Array 的 IntentPhrases 键")](implementing-sirikit-images/plist15.png#lightbox)
+19. 添加**类型**为的`Dictionary`新密钥:
 
-    [![](implementing-sirikit-images/plist16.png "添加字典类型的新键")](implementing-sirikit-images/plist16.png#lightbox)
-20. 添加`IntentName`键，其**类型**的`String`和意向。 例如：
+    [![](implementing-sirikit-images/plist16.png "添加具有字典类型的新键")](implementing-sirikit-images/plist16.png#lightbox)
+20. 为此示例添加具有  `String`和意向类型的键:`IntentName`
 
-    [![](implementing-sirikit-images/plist17.png "添加该示例使用字符串类型和意图的 IntentName 密钥")](implementing-sirikit-images/plist17.png#lightbox)
-21. 添加`IntentExamples`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist17.png "为示例添加具有字符串和意向类型的 IntentName 键")](implementing-sirikit-images/plist17.png#lightbox)
+21. 添加类型为的  `Array`密钥:`IntentExamples`
 
-    [![](implementing-sirikit-images/plist18.png "添加具有数组类型的 IntentExamples 键")](implementing-sirikit-images/plist18.png#lightbox)
-22. 添加了一些`String`术语的示例使用具有键：
+    [![](implementing-sirikit-images/plist18.png "添加类型为 Array 的 IntentExamples 键")](implementing-sirikit-images/plist18.png#lightbox)
+22. 使用以下术语`String`的示例用法添加几个键:
 
-    [![](implementing-sirikit-images/plist19.png "添加使用的术语的示例使用的几个字符串键")](implementing-sirikit-images/plist19.png#lightbox)
-23. 对应用程序需要提供的示例用法任何意向重复上述步骤。
+    [![](implementing-sirikit-images/plist19.png "使用字词的示例用法添加几个字符串键")](implementing-sirikit-images/plist19.png#lightbox)
+23. 对于应用程序提供的示例使用情况, 请重复上述步骤。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 右键单击项目名称在**解决方案资源管理器**，然后选择**添加 > 新建项...> Apple > 属性列表 > Info.plist**:
+1. 右键单击 "**解决方案资源管理器**中的项目名称, 然后选择"**添加 > 新项 ... "> Apple > 属性列表 > 信息。 info.plist**:
 
-    [![](implementing-sirikit-images/plist01.w157-sml.png "添加新 Info.plist")](implementing-sirikit-images/plist01.w157.png#lightbox)
+    [![](implementing-sirikit-images/plist01.w157-sml.png "添加新信息。 info.plist")](implementing-sirikit-images/plist01.w157.png#lightbox)
 
-2. 双击`AppIntentVocabulary.plist`文件中**解决方案资源管理器**打开进行编辑。
+2. 双击 "**解决方案资源管理器**中`AppIntentVocabulary.plist`的文件以将其打开以进行编辑。
 3. 单击 **+** 若要添加的键，设置**名称**到`ParameterVocabularies`并**类型**到`Array`:
 
-    [![](implementing-sirikit-images/plist02w.png "将名称设置为 ParameterVocabularies 和到数组类型")](implementing-sirikit-images/plist02w.png#lightbox)
+    [![](implementing-sirikit-images/plist02w.png "将名称设置为 ParameterVocabularies, 将类型设置为数组")](implementing-sirikit-images/plist02w.png#lightbox)
 4. 展开`ParameterVocabularies`然后单击 **+** 按钮，然后设置**类型**到`Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "将类型设置为字典")](implementing-sirikit-images/plist03w.png#lightbox)
 5. 单击 **+** 若要添加新的密钥，请设置**名称**到`ParameterNames`并**类型**到`Array`:
 
-    [![](implementing-sirikit-images/plist04w.png "将名称设置为 ParameterNames 和到数组类型")](implementing-sirikit-images/plist04w.png#lightbox)
-6. 单击 **+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如， `INStartWorkoutIntent.workoutName`:
+    [![](implementing-sirikit-images/plist04w.png "将名称设置为 ParameterNames, 将类型设置为数组")](implementing-sirikit-images/plist04w.png#lightbox)
+6. 单击 **+** 若要添加的新键**类型**的`String`和作为其中一个可用的参数名称的值。 例如`INStartWorkoutIntent.workoutName`:
 
-    [![](implementing-sirikit-images/plist05w.png "The INStartWorkoutIntent.workoutName key")](implementing-sirikit-images/plist05w.png#lightbox)
-7. 添加`ParameterVocabulary`关键`ParameterVocabularies`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist05w.png "INStartWorkoutIntent. workoutName 键")](implementing-sirikit-images/plist05w.png#lightbox)
+7. 将密钥添加`ParameterVocabularies`到**类型**为的`Array`密钥: `ParameterVocabulary`
 
-    [![](implementing-sirikit-images/plist06w.png "将 ParameterVocabulary 密钥添加到具有数组类型的 ParameterVocabularies 键")](implementing-sirikit-images/plist06w.png#lightbox)
-8. 添加的新键**类型**的`Dictionary`:
+    [![](implementing-sirikit-images/plist06w.png "将 ParameterVocabulary 键添加到类型为的 ParameterVocabularies 键")](implementing-sirikit-images/plist06w.png#lightbox)
+8. 添加**类型**为的`Dictionary`新密钥:
 
-    [![](implementing-sirikit-images/plist07w.png "添加字典类型的新键")](implementing-sirikit-images/plist07w.png#lightbox)
-9. 添加`VocabularyItemIdentifier`键，其**类型**的`String`和指定的期限内的唯一 ID:
+    [![](implementing-sirikit-images/plist07w.png "添加具有字典类型的新键")](implementing-sirikit-images/plist07w.png#lightbox)
+9. 添加类型为的  `String` 密钥,并为此术语指定唯一ID:`VocabularyItemIdentifier`
 
-    [![](implementing-sirikit-images/plist08w.png "添加具有字符串类型的 VocabularyItemIdentifier 键，并指定的期限内的唯一 ID")](implementing-sirikit-images/plist08w.png#lightbox)
-10. 添加`VocabularyItemSynonyms`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist08w.png "添加包含字符串类型的 VocabularyItemIdentifier 键, 并为该术语指定唯一 ID")](implementing-sirikit-images/plist08w.png#lightbox)
+10. 添加类型为的  `Array`密钥:`VocabularyItemSynonyms`
 
-    [![](implementing-sirikit-images/plist09w.png "添加具有数组类型的 VocabularyItemSynonyms 键")](implementing-sirikit-images/plist09w.png#lightbox)
-11. 添加的新键**类型**的`Dictionary`:
+    [![](implementing-sirikit-images/plist09w.png "添加类型为 Array 的 VocabularyItemSynonyms 键")](implementing-sirikit-images/plist09w.png#lightbox)
+11. 添加**类型**为的`Dictionary`新密钥:
 
-    [![](implementing-sirikit-images/plist10w.png "添加字典类型的新键")](implementing-sirikit-images/plist10w.png#lightbox)
-12. 添加`VocabularyItemPhrase`键，其**类型**的`String`和术语定义应用程序：
+    [![](implementing-sirikit-images/plist10w.png "添加具有字典类型的新键")](implementing-sirikit-images/plist10w.png#lightbox)
+12. 添加类型为的  `String` 密钥和应用定义的术语:`VocabularyItemPhrase`
 
-    [![](implementing-sirikit-images/plist11w.png "添加具有字符串类型和应用程序所定义的术语的 VocabularyItemPhrase 键")](implementing-sirikit-images/plist11w.png#lightbox)
-13. 添加`VocabularyItemPronunciation`键，其**类型**的`String`和术语的语音发音：
+    [![](implementing-sirikit-images/plist11w.png "添加具有字符串类型和应用正在定义的术语的 VocabularyItemPhrase 键")](implementing-sirikit-images/plist11w.png#lightbox)
+13. 添加具有以下**类型**的`String` 密钥和字词的拼音发音:`VocabularyItemPronunciation`
 
-    [![](implementing-sirikit-images/plist12w.png "添加具有字符串类型和术语的语音发音的 VocabularyItemPronunciation 键")](implementing-sirikit-images/plist12w.png#lightbox)
-14. 添加`VocabularyItemExamples`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist12w.png "添加 VocabularyItemPronunciation 键, 其中包含字符串类型和字词的拼音发音")](implementing-sirikit-images/plist12w.png#lightbox)
+14. 添加类型为的  `Array`密钥:`VocabularyItemExamples`
 
-    [![](implementing-sirikit-images/plist13w.png "添加具有数组类型的 VocabularyItemExamples 键")](implementing-sirikit-images/plist13w.png#lightbox)
-15. 添加了一些`String`术语的示例使用具有键：
+    [![](implementing-sirikit-images/plist13w.png "添加类型为 Array 的 VocabularyItemExamples 键")](implementing-sirikit-images/plist13w.png#lightbox)
+15. 使用以下术语`String`的示例用法添加几个键:
 
-    [![](implementing-sirikit-images/plist14w.png "添加使用的术语的示例使用的几个字符串键")](implementing-sirikit-images/plist14w.png#lightbox)
-16. 对应用程序需要定义任何其他自定义条款重复上述步骤。
-17. 折叠`ParameterVocabularies`密钥。
-18. 添加`IntentPhrases`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist14w.png "使用字词的示例用法添加几个字符串键")](implementing-sirikit-images/plist14w.png#lightbox)
+16. 针对应用需要定义的任何其他自定义术语, 重复以上步骤。
+17. 折叠该`ParameterVocabularies`密钥。
+18. 添加类型为的  `Array`密钥:`IntentPhrases`
 
-    [![](implementing-sirikit-images/plist15w.png "添加具有数组类型的 IntentPhrases 键")](implementing-sirikit-images/plist15w.png#lightbox)
-19. 添加的新键**类型**的`Dictionary`:
+    [![](implementing-sirikit-images/plist15w.png "添加类型为 Array 的 IntentPhrases 键")](implementing-sirikit-images/plist15w.png#lightbox)
+19. 添加**类型**为的`Dictionary`新密钥:
 
-    [![](implementing-sirikit-images/plist16w.png "添加字典类型的新键")](implementing-sirikit-images/plist16w.png#lightbox)
-20. 添加`IntentName`键，其**类型**的`String`和意向。 例如：
+    [![](implementing-sirikit-images/plist16w.png "添加具有字典类型的新键")](implementing-sirikit-images/plist16w.png#lightbox)
+20. 为此示例添加具有  `String`和意向类型的键:`IntentName`
 
-    [![](implementing-sirikit-images/plist17w.png "添加该示例使用字符串类型和意图的 IntentName 密钥")](implementing-sirikit-images/plist17w.png#lightbox)
-21. 添加`IntentExamples`键，其**类型**的`Array`:
+    [![](implementing-sirikit-images/plist17w.png "为示例添加具有字符串和意向类型的 IntentName 键")](implementing-sirikit-images/plist17w.png#lightbox)
+21. 添加类型为的  `Array`密钥:`IntentExamples`
 
-    [![](implementing-sirikit-images/plist18w.png "添加具有数组类型的 IntentExamples 键")](implementing-sirikit-images/plist18w.png#lightbox)
-22. 添加了一些`String`术语的示例使用具有键：
+    [![](implementing-sirikit-images/plist18w.png "添加类型为 Array 的 IntentExamples 键")](implementing-sirikit-images/plist18w.png#lightbox)
+22. 使用以下术语`String`的示例用法添加几个键:
 
-    [![](implementing-sirikit-images/plist19w.png "添加使用的术语的示例使用的几个字符串键")](implementing-sirikit-images/plist19w.png#lightbox)
-23. 对应用程序需要提供的示例用法任何意向重复上述步骤。
+    [![](implementing-sirikit-images/plist19w.png "使用字词的示例用法添加几个字符串键")](implementing-sirikit-images/plist19w.png#lightbox)
+23. 对于应用程序提供的示例使用情况, 请重复上述步骤。
 
 -----
 
 > [!IMPORTANT]
-> `AppIntentVocabulary.plist`将注册使用 Siri 上测试在开发和它的设备可能需要一些时间 Siri 以合并自定义词汇。 因此，测试人员将需要等待几分钟，然后再尝试在更新后测试应用程序特定词汇。
+> 在开发过程中,将在测试设备上向Siri注册,可能需要一段时间才能合并自定义词汇。`AppIntentVocabulary.plist` 因此, 测试人员需要等待几分钟, 然后再尝试在更新应用程序特定词汇后对其进行测试。
 
-有关详细信息，请参阅我们[应用程序特定词汇参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[指定自定义词汇参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)。
+有关详细信息, 请参阅[应用特定词汇参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[指定自定义词汇引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1)。
 
-## <a name="adding-an-intents-extension"></a>添加的 Intents 扩展
+## <a name="adding-an-intents-extension"></a>添加意向扩展
 
-现在，已准备好应用程序，采用 SiriKit，开发人员将需要将一个 （或多个） Intents 扩展添加到解决方案后，可处理 Siri 集成所需的意图。
+现在, 应用已准备好采用 SiriKit, 开发人员需要向解决方案中添加一个 (或多个) 意向扩展, 以处理 Siri 集成所需的意图。
 
-每个所需的 Intents 扩展，请执行以下操作：
+对于所需的每个意向扩展, 请执行以下操作:
 
-- 添加到 Xamarin.iOS 应用程序解决方案的 Intents 扩展项目。
-- 配置 Intents 扩展`Info.plist`文件。
-- 修改的 Intents 扩展的主类。
+- 向 Xamarin iOS 应用解决方案添加意向扩展项目。
+- 配置意向扩展`Info.plist`文件。
+- 修改意向扩展的主类。
 
-有关详细信息，请参阅我们[Intents 扩展引用](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[创建的是 Intents 扩展引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW1)。
+有关详细信息, 请参阅我们[的意向扩展参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[创建意向扩展参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW1)。
 
 ### <a name="creating-the-extension"></a>创建扩展
 
-若要添加到解决方案的 Intents 扩展，请执行以下操作：
+若要向解决方案添加意向扩展, 请执行以下操作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右键单击**解决方案名称**中**Solution Pad** ，然后选择**添加** > **添加新项目...** .
-2. 从对话框中选择**iOS** > **扩展** > **意向扩展**然后单击**下一步**按钮： 
+1. 在**Solution Pad**中右键单击**解决方案名称**, 然后选择 "**添加** > " "添加" "**新建项目 ...** "。
+2. 在对话框中, 选择 " **iOS** > **扩展** > **意图扩展**", 然后单击 "**下一步**" 按钮: 
 
     [![](implementing-sirikit-images/intents05.png "选择意向扩展")](implementing-sirikit-images/intents05.png#lightbox)
-3. 接下来输入**名称**意向扩展并单击**下一步**按钮： 
+3. 接下来, 输入目的扩展的**名称**, 并单击 "**下一步**" 按钮: 
 
-    [![](implementing-sirikit-images/intents06.png "输入意向扩展的名称")](implementing-sirikit-images/intents06.png#lightbox)
-4. 最后，单击**创建**按钮将意向扩展添加到应用程序解决方案： 
+    [![](implementing-sirikit-images/intents06.png "输入目的扩展的名称")](implementing-sirikit-images/intents06.png#lightbox)
+4. 最后, 单击 "**创建**" 按钮, 将目的扩展添加到 "应用" 解决方案: 
 
-    [![](implementing-sirikit-images/intents07.png "将意向扩展添加到应用程序解决方案")](implementing-sirikit-images/intents07.png#lightbox)
-5. 在中**解决方案资源管理器**，右键单击**引用**新创建的意向扩展的文件夹。 检查常见的共享的代码库项目 （即上面创建的应用） 的名称，然后单击**确定**按钮： 
+    [![](implementing-sirikit-images/intents07.png "向 apps 解决方案添加意向扩展")](implementing-sirikit-images/intents07.png#lightbox)
+5. 在**解决方案资源管理器**中, 右键单击新创建的目的扩展的 "**引用**" 文件夹。 检查公共共享代码库项目 (在上面创建的应用) 的名称, 然后单击 **"确定"** 按钮: 
 
-    [![](implementing-sirikit-images/intents08.png "选择公共共享的代码库项目的名称")](implementing-sirikit-images/intents08.png#lightbox)
+    [![](implementing-sirikit-images/intents08.png "选择公共共享代码库项目的名称")](implementing-sirikit-images/intents08.png#lightbox)
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 右键单击**解决方案名称**中**解决方案资源管理器**，然后选择**添加** > **添加新项目...** .
-2. 从对话框中选择**可视化C#> iOS 扩展 > 意向扩展**然后单击**下一步**按钮：
+1. 在**解决方案资源管理器**中右键单击**解决方案名称**, 然后选择 "**添加** > " "添加" "**新建项目 ...** "。
+2. 在对话框中, 选择 **" C# Visual > IOS 扩展 > 意向扩展**", 然后单击 "**下一步**" 按钮:
 
     [![](implementing-sirikit-images/intents05.w157-sml.png "选择意向扩展")](implementing-sirikit-images/intents05.w157.png#lightbox)
-3. 接下来输入**名称**意向扩展并单击**确定**按钮。
-4. 在中**解决方案资源管理器**，右键单击**引用**新建的 Intents 扩展的文件夹，然后选择**添加 > 引用**。 检查常见的共享的代码库项目 （即上面创建的应用） 的名称，然后单击**确定**按钮：
+3. 接下来, 输入目的扩展的**名称**, 然后单击 **"确定"** 按钮。
+4. 在**解决方案资源管理器**中, 右键单击新创建的意向扩展的 "**引用**" 文件夹, 然后选择 "**添加 > 引用**"。 检查公共共享代码库项目 (在上面创建的应用) 的名称, 然后单击 **"确定"** 按钮:
 
-    [![](implementing-sirikit-images/intents08w.png "选择公共共享的代码库项目的名称")](implementing-sirikit-images/intents08w.png#lightbox)
+    [![](implementing-sirikit-images/intents08w.png "选择公共共享代码库项目的名称")](implementing-sirikit-images/intents08w.png#lightbox)
     
 -----
 
-重复这些步骤的意图扩展数 (基于[构建于扩展的应用](#architecting-the-app-for-extensions)上面部分)，该应用需要。
+对于应用将需要的目的扩展的数量, 请重复这些步骤 (基于上面[的扩展应用设计扩展](#architecting-the-app-for-extensions)部分)。
 
-### <a name="configuring-the-infoplist"></a>配置 Info.plist
+### <a name="configuring-the-infoplist"></a>配置信息。 info.plist
 
-对于每个已添加到应用程序的解决方案的 Intents 扩展，必须在配置`Info.plist`文件以使用应用。
+对于已添加到应用的解决方案的每个意向扩展, 必须在要与应用一起使用`Info.plist`的文件中进行配置。
 
-就像任何典型的应用程序扩展，应用将有现有的键`NSExtension`和`NSExtensionAttributes`。 Intents 扩展有必须配置的两个新属性：
+与任何典型的应用程序扩展一样, 应用程序将包含`NSExtension`和`NSExtensionAttributes`的现有密钥。 对于意向扩展, 必须配置两个新属性:
 
-[![](implementing-sirikit-images/intents01.png "必须配置两个新属性")](implementing-sirikit-images/intents01.png#lightbox)
+[![](implementing-sirikit-images/intents01.png "必须配置的两个新属性")](implementing-sirikit-images/intents01.png#lightbox)
 
-- **IntentsSupported** -是必需的包含应用程序想要支持从意向扩展的意向类名称的数组。
-- **IntentsRestrictedWhileLocked** -是应用程序以指定扩展的锁定屏幕行为的可选密钥。 它包含应用程序需要要求用户在登录后才能使用意向扩展中的意图类名称的数组。
+- **IntentsSupported** -是必需的, 由应用希望通过意向扩展提供支持的一系列意向类名称组成。
+- **IntentsRestrictedWhileLocked** -用于指定扩展的锁定屏幕行为的应用程序的可选键。 它包含一系列意向类名称, 应用需要用户登录才能使用目的扩展中的用户。
 
-若要配置意向扩展`Info.plist`文件中中, 双击该**解决方案资源管理器**打开进行编辑。 接下来，切换到**源**视图，然后展开`NSExtension`和`NSExtensionAttributes`在编辑器中的密钥：
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
-[![](implementing-sirikit-images/intents02.png "在编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents02.png#lightbox)
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-[![](implementing-sirikit-images/intents02w.png "在编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents02w.png#lightbox)
-
------
-
-展开`IntentsSupported`密钥，然后添加此扩展将支持任何意向类的名称。 对于示例 MonkeyChat 应用，它支持`INSendMessageIntent`:
+若要配置目的扩展的`Info.plist`文件, 请在**解决方案资源管理器**中双击该文件以将其打开以进行编辑。 接下来, 切换到 "**源**" 视图, `NSExtension`然后`NSExtensionAttributes`在编辑器中展开和键:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](implementing-sirikit-images/intents09.png "INSendMessageIntent 密钥")](implementing-sirikit-images/intents09.png#lightbox)
+[![](implementing-sirikit-images/intents02.png "编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents02.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](implementing-sirikit-images/intents09w.png "INSendMessageIntent 密钥")](implementing-sirikit-images/intents09w.png#lightbox)
+[![](implementing-sirikit-images/intents02w.png "编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents02w.png#lightbox)
 
 -----
 
-如果应用程序可以选择要求用户登录到设备后，若要使用给定的意向，请展开`IntentRestrictedWhileLocked`密钥，然后添加具有受限访问权限的方式的类名称。 对于示例 MonkeyChat 应用，用户必须登录才能发送聊天消息，因此我们添加了`INSendMessageIntent`:
+`IntentsSupported`展开密钥并添加此扩展将支持的任何意向类的名称。 对于示例 MonkeyChat 应用, 它支持`INSendMessageIntent`:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](implementing-sirikit-images/intents10.png "添加了的 INSendMessageIntent 密钥")](implementing-sirikit-images/intents10.png#lightbox)
+[![](implementing-sirikit-images/intents09.png "INSendMessageIntent 键")](implementing-sirikit-images/intents09.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](implementing-sirikit-images/intents10w.png "添加了的 INSendMessageIntent 密钥")](implementing-sirikit-images/intents10w.png#lightbox)
+[![](implementing-sirikit-images/intents09w.png "INSendMessageIntent 键")](implementing-sirikit-images/intents09w.png#lightbox)
+
+-----
+
+如果应用需要用户登录到设备以使用给定的目的, 请展开`IntentRestrictedWhileLocked`密钥并添加具有受限访问权限的类名称。 对于示例 MonkeyChat 应用, 用户必须登录才能发送聊天消息, 因此添加`INSendMessageIntent`了以下内容:
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+[![](implementing-sirikit-images/intents10.png "添加的 INSendMessageIntent 键")](implementing-sirikit-images/intents10.png#lightbox)
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+[![](implementing-sirikit-images/intents10w.png "添加的 INSendMessageIntent 键")](implementing-sirikit-images/intents10w.png#lightbox)
 
 -----
 
 
-有关可用意向域的完整列表，请参阅 Apple 的[意向域引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)。
+有关可用意向域的完整列表, 请参阅 Apple 的[意向域参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)。
 
-### <a name="configuring-the-main-class"></a>配置的主类
+### <a name="configuring-the-main-class"></a>配置主类
 
-接下来，开发人员将需要配置到 Siri 中充当意向扩展的主入口点的主类。 它必须是的子类`INExtension`这符合`IINIntentHandler`委托。 例如：
+接下来, 开发人员需要将充当目的扩展的主入口点的主类配置为 Siri。 它必须是符合`INExtension` `IINIntentHandler`委托的的子类。 例如:
 
 ```csharp
 using System;
@@ -724,25 +724,25 @@ namespace MonkeyChatIntents
 }
 ```
 
-应用上的意向扩展的主类，必须实现的一个孤立方法`GetHandler`方法。 此方法通过 SiriKit 传递意向，而该应用程序必须返回**意向处理程序**给定意向的类型匹配的。
+此应用必须在意向扩展主类 (即`GetHandler`方法) 上实现一个孤立方法。 此方法通过 SiriKit 传递意向, 应用必须返回与给定意向的类型匹配的**意向处理程序**。
 
-由于示例 MonkeyChat 应用仅处理一种意图，它返回自身中`GetHandler`方法。 如果扩展插件处理多个目的，开发人员会为每个意向类型添加类，并返回此处基于实例`Intent`传递给该方法。
+由于示例 MonkeyChat 应用仅处理一个意向, 因此它将在`GetHandler`方法中返回自身。 如果扩展处理了多个意向, 开发人员将为每个意向类型添加一个类, 并基于传递给方法的`Intent`返回一个实例。
 
-### <a name="handling-the-resolve-stage"></a>处理解决阶段
+### <a name="handling-the-resolve-stage"></a>处理解析阶段
 
-解决阶段其中意向扩展将阐明并验证参数传入 Siri 从，并且已通过用户的会话设置。
+解析阶段是指目的扩展将阐明并验证从 Siri 传入的参数, 并通过用户的会话进行设置。
 
-获取从 Siri 发送每个参数，对于没有`Resolve`方法。 应用程序需要实现此方法对于应用程序可能需要使用 Siri 的帮助以从用户获得正确答案的每个参数。
+对于从 Siri 发送的每个参数, 都有一个`Resolve`方法。 应用需要为每个参数实现此方法, 应用可能需要 Siri 的帮助才能获得用户的正确答案。
 
-对于示例 MonkeyChat 应用程序，意图扩展将需要将消息发送到一个或多个收件人。 为每个收件人列表中，该扩展将需要进行联系搜索可以具有以下结果：
+在示例 MonkeyChat 应用中, 目的扩展需要一个或多个收件人才能向发送消息。 对于列表中的每个收件人, 该扩展都需要执行一个联系人搜索, 该搜索可能具有以下结果:
 
-- 找到一个匹配的联系人。
-- 位于两个或多个匹配的联系人。
-- 不找到任何匹配的联系人。
+- 只找到一个匹配的联系人。
+- 找到两个或多个匹配联系人。
+- 找不到匹配的联系人。
 
-此外，MonkeyChat 需要消息的正文的内容。 如果用户未提供此，使用 Siri 需要提示用户输入内容。
+此外, MonkeyChat 还需要消息正文的内容。 如果用户未提供此内容, 则 Siri 需要提示用户输入内容。
 
-意向扩展需要适当地处理每种情况。
+目的扩展需要妥善处理每个情况。
 
 
 ```csharp
@@ -786,11 +786,11 @@ public void ResolveContent (INSendMessageIntent intent, Action<INStringResolutio
 }
 ```
 
-有关详细信息，请参阅我们[解决阶段引用](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple [Resolving 和处理意向参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ResolvingandHandlingIntents.html#//apple_ref/doc/uid/TP40016875-CH5-SW1)。
+有关详细信息, 请参阅[解析阶段参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[解析和处理意向参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ResolvingandHandlingIntents.html#//apple_ref/doc/uid/TP40016875-CH5-SW1)。
 
 ### <a name="handling-the-confirm-stage"></a>处理确认阶段
 
-在确认阶段是意向扩展在其中检查以查看其具有的所有信息以满足用户的请求。 应用程序需要发送确认此过程将内容的所有支持的详细信息是有关发生 siri 因此它可以确认的用户，这是预期的操作。
+在确认阶段, 目的扩展会进行检查以查看它是否具有满足用户请求的所有信息。 应用程序想要在 Siri 上发送确认, 并提供关于要进行的操作的所有支持详细信息, 以便可以向用户确认这是预期的操作。
 
 ```csharp
 [Export ("confirmSendMessage:completion:")]
@@ -805,11 +805,11 @@ public void ConfirmSendMessage (INSendMessageIntent intent, Action<INSendMessage
 }
 ```
 
-有关详细信息，请参阅我们[确认阶段引用](~/ios/platform/sirikit/understanding-sirikit.md)。
+有关详细信息, 请参阅["确认阶段参考"](~/ios/platform/sirikit/understanding-sirikit.md)。
 
 ### <a name="processing-the-intent"></a>处理意向
 
-这是意向扩展实际执行任务以完成用户的请求并将结果传递回 Siri，因此可以通知用户的点。
+这是目的扩展实际执行任务以满足用户的请求并将结果传递回 Siri 以便通知用户的点。
 
 
 ```csharp
@@ -850,92 +850,92 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 }
 ```
 
-有关详细信息，请参阅我们[处理阶段引用](~/ios/platform/sirikit/understanding-sirikit.md)。
+有关详细信息, 请参阅["句柄阶段参考"](~/ios/platform/sirikit/understanding-sirikit.md)。
 
-## <a name="adding-an-intents-ui-extension"></a>添加的 Intents UI 扩展
+## <a name="adding-an-intents-ui-extension"></a>添加意向 UI 扩展
 
-可选的 Intents UI 扩展提供了机会，将应用程序的 UI 和品牌到 Siri 体验，并使用户感到连接到该应用程序。 借助此扩展的品牌以及 visual 和其他信息转换脚本，可以将应用程序。
+可选意向 UI 扩展提供了机会, 使应用的 UI 和品牌进入 Siri 体验, 并使用户感觉连接到应用。 通过此扩展, 应用可以将品牌以及视觉对象和其他信息引入到脚本中。
 
-[![](implementing-sirikit-images/intentsui01.png "Intents UI 扩展输出示例")](implementing-sirikit-images/intentsui01.png#lightbox)
+[![](implementing-sirikit-images/intentsui01.png "示例意向 UI 扩展输出")](implementing-sirikit-images/intentsui01.png#lightbox)
 
-就像 Intents 扩展，开发人员将 Intents UI 扩展为执行以下步骤：
+与意向扩展一样, 开发人员可以针对意向 UI 扩展执行以下步骤:
 
-- 添加到 Xamarin.iOS 应用程序解决方案的 Intents UI 扩展项目。
-- 配置 Intents UI 扩展`Info.plist`文件。
-- 修改的 Intents UI 扩展的主类。
+- 向 Xamarin iOS 应用解决方案添加意向 UI 扩展项目。
+- 配置意向 UI 扩展`Info.plist`文件。
+- 修改意向 UI 扩展的主类。
 
-有关详细信息，请参阅我们[Intents UI 扩展引用](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[提供的自定义接口引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ProvidingaCustomInterface.html#//apple_ref/doc/uid/TP40016875-CH7-SW1)。
+有关详细信息, 请参阅我们[的意向 UI 扩展参考](~/ios/platform/sirikit/understanding-sirikit.md)和 Apple[提供自定义界面参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/ProvidingaCustomInterface.html#//apple_ref/doc/uid/TP40016875-CH7-SW1)。
 
 ### <a name="creating-the-extension"></a>创建扩展
 
-若要添加到解决方案的 Intents UI 扩展，请执行以下操作：
+若要向解决方案添加意向 UI 扩展, 请执行以下操作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右键单击**解决方案名称**中**Solution Pad** ，然后选择**添加** > **添加新项目...** .
-2. 从对话框中选择**iOS** > **扩展** > **意向 UI 扩展**然后单击**下一步**按钮： 
+1. 在**Solution Pad**中右键单击**解决方案名称**, 然后选择 "**添加** > " "添加" "**新建项目 ...** "。
+2. 在对话框中, 选择 " **iOS** > **扩展** > **意向 UI 扩展**", 然后单击 "**下一步**" 按钮: 
 
     [![](implementing-sirikit-images/intents11.png "选择意向 UI 扩展")](implementing-sirikit-images/intents11.png#lightbox)
-3. 接下来输入**名称**意向扩展并单击**下一步**按钮： 
+3. 接下来, 输入目的扩展的**名称**, 并单击 "**下一步**" 按钮: 
 
-    [![](implementing-sirikit-images/intents12.png "输入意向扩展的名称")](implementing-sirikit-images/intents12.png#lightbox)
-4. 最后，单击**创建**按钮将意向扩展添加到应用程序解决方案： 
+    [![](implementing-sirikit-images/intents12.png "输入目的扩展的名称")](implementing-sirikit-images/intents12.png#lightbox)
+4. 最后, 单击 "**创建**" 按钮, 将目的扩展添加到 "应用" 解决方案: 
 
-    [![](implementing-sirikit-images/intents13.png "将意向扩展添加到应用程序解决方案")](implementing-sirikit-images/intents13.png#lightbox)
-5. 在中**解决方案资源管理器**，右键单击**引用**新创建的意向扩展的文件夹。 检查常见的共享的代码库项目 （即上面创建的应用） 的名称，然后单击**确定**按钮： 
+    [![](implementing-sirikit-images/intents13.png "向 apps 解决方案添加意向扩展")](implementing-sirikit-images/intents13.png#lightbox)
+5. 在**解决方案资源管理器**中, 右键单击新创建的目的扩展的 "**引用**" 文件夹。 检查公共共享代码库项目 (在上面创建的应用) 的名称, 然后单击 **"确定"** 按钮: 
 
-    [![](implementing-sirikit-images/intents14.png "选择公共共享的代码库项目的名称")](implementing-sirikit-images/intents14.png#lightbox)
+    [![](implementing-sirikit-images/intents14.png "选择公共共享代码库项目的名称")](implementing-sirikit-images/intents14.png#lightbox)
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 右键单击**解决方案名称**中**解决方案资源管理器**，然后选择**添加** > **添加新项目...**
-2. 从对话框中选择**iOS** > **扩展** > **意向 UI 扩展**然后单击**下一步**按钮。
-3. 接下来输入**名称**意向扩展并单击**确定**按钮。
-4. 在中**解决方案资源管理器**，右键单击**引用**新创建的意向扩展的文件夹。 检查常见的共享的代码库项目 （即上面创建的应用） 的名称，然后单击**确定**按钮。
+1. 在**解决方案资源管理器**中右键单击**解决方案名称**, 然后选择 "**添加** > " "添加" "添加" "**新建项目 ...** "
+2. 在对话框中, 选择 " **iOS** > **扩展** > **意向 UI 扩展**", 然后单击 "**下一步**" 按钮。
+3. 接下来, 输入目的扩展的**名称**, 然后单击 **"确定"** 按钮。
+4. 在**解决方案资源管理器**中, 右键单击新创建的目的扩展的 "**引用**" 文件夹。 检查公共共享代码库项目 (在上面创建的应用) 的名称, 然后单击 **"确定"** 按钮。
     
 -----
 
-### <a name="configuring-the-infoplist"></a>配置 Info.plist
+### <a name="configuring-the-infoplist"></a>配置信息。 info.plist
 
-配置 Intents UI 扩展`Info.plist`文件以使用应用。
+配置意向 UI 扩展的`Info.plist`文件以使用应用。
 
-就像任何典型的应用程序扩展，应用将有现有的键`NSExtension`和`NSExtensionAttributes`。 Intents 扩展是一个新属性，必须配置：
+与任何典型的应用程序扩展一样, 应用程序将包含`NSExtension`和`NSExtensionAttributes`的现有密钥。 对于意向扩展, 有一个必须配置的新属性:
 
-[![](implementing-sirikit-images/intents03.png "必须配置一个新属性")](implementing-sirikit-images/intents03.png#lightbox)
+[![](implementing-sirikit-images/intents03.png "必须配置的一个新属性")](implementing-sirikit-images/intents03.png#lightbox)
 
-**IntentsSupported**是必需的包含应用程序想要支持从意向扩展的意向类名称的数组。
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
-若要配置意向 UI 扩展`Info.plist`文件中中, 双击该**解决方案资源管理器**打开进行编辑。 接下来，切换到**源**视图，然后展开`NSExtension`和`NSExtensionAttributes`在编辑器中的密钥：
-
-[![](implementing-sirikit-images/intents04.png "在编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents04.png#lightbox)
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-若要配置意向 UI 扩展`Info.plist`文件中中, 双击该**解决方案资源管理器**打开进行编辑。 展开`NSExtension`和`NSExtensionAttributes`在编辑器中的密钥：
-
-[![](implementing-sirikit-images/intents04w.png "在编辑器中参阅 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents04w.png#lightbox)
-
------
-
-展开`IntentsSupported`密钥，然后添加此扩展将支持任何意向类的名称。 对于示例 MonkeyChat 应用，它支持`INSendMessageIntent`:
+**IntentsSupported**是必需的, 由应用希望通过意向扩展支持的一系列意向类名称组成。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](implementing-sirikit-images/intents15.png "INSendMessageIntent 密钥")](implementing-sirikit-images/intents15.png#lightbox)
+若要配置意向 UI 扩展的`Info.plist`文件, 请在**解决方案资源管理器**中双击该文件以将其打开以进行编辑。 接下来, 切换到 "**源**" 视图, `NSExtension`然后`NSExtensionAttributes`在编辑器中展开和键:
+
+[![](implementing-sirikit-images/intents04.png "编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents04.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](implementing-sirikit-images/intents15w.png "INSendMessageIntent 密钥")](implementing-sirikit-images/intents15w.png#lightbox)
+若要配置意向 UI 扩展的`Info.plist`文件, 请在**解决方案资源管理器**中双击该文件以将其打开以进行编辑。 在编辑器中`NSExtensionAttributes`展开和键:`NSExtension`
+
+[![](implementing-sirikit-images/intents04w.png "编辑器中的 NSExtension 和 NSExtensionAttributes 键")](implementing-sirikit-images/intents04w.png#lightbox)
 
 -----
 
-有关可用意向域的完整列表，请参阅 Apple 的[意向域引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)。
+`IntentsSupported`展开密钥并添加此扩展将支持的任何意向类的名称。 对于示例 MonkeyChat 应用, 它支持`INSendMessageIntent`:
 
-### <a name="configuring-the-main-class"></a>配置的主类
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-配置到 Siri 中充当意向 UI 扩展插件的主入口点的主类。 它必须是的子类`UIViewController`这符合`IINUIHostedViewController`接口。 例如:
+[![](implementing-sirikit-images/intents15.png "INSendMessageIntent 键")](implementing-sirikit-images/intents15.png#lightbox)
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+[![](implementing-sirikit-images/intents15w.png "INSendMessageIntent 键")](implementing-sirikit-images/intents15w.png#lightbox)
+
+-----
+
+有关可用意向域的完整列表, 请参阅 Apple 的[意向域参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)。
+
+### <a name="configuring-the-main-class"></a>配置主类
+
+将充当意向 UI 扩展的主入口点的主类配置为 Siri。 它必须是符合`UIViewController` `IINUIHostedViewController`接口的的子类。 例如:
 
 ```csharp
 using System;
@@ -993,30 +993,30 @@ namespace MonkeyChatIntentsUI
 }
 ```
 
-将通过使用 Siri`INInteraction`类实例与`Configure`方法的`UIViewController`内意向 UI 扩展实例。
+Siri 会将`INInteraction`类实例传递`Configure`到意向 UI 扩展内`UIViewController`的实例的方法。
 
-`INInteraction`对象提供给扩展的信息的三个主要部分：
+`INInteraction`对象为扩展提供了三个关键信息:
 
-1. 正在处理的意向对象。
-2. 中的意图响应对象`Confirm`和`Handle`意向扩展方法。
-3. 定义应用程序和 Siri 之间的交互状态交互状态。
+1. 正在处理的目的对象。
+2. 意向扩展的`Confirm`和`Handle`方法中的意向响应对象。
+3. 定义应用和 Siri 之间的交互状态的交互状态。
 
-`UIViewController`实例是使用 Siri 与的交互的原则和从它继承，因此`UIViewController`，它有权访问的所有 UIKit 功能。
+实例是与 Siri 交互的主体类, 因为它继承自`UIViewController`, 它可以访问 UIKit 的所有功能。 `UIViewController`
 
-当调用 Siri`Configure`方法的`UIViewController`将指出视图控制器或者将托管在 Siri Snippit 或映射卡的视图上下文中传递。
+当 Siri 调用`Configure`该方法`UIViewController`的方法时, 该方法将在视图上下文中传递, 指出视图控制器将被托管在 Siri Snippit 或 map 卡片中。
 
-使用 Siri 也将该应用需要应用程序已完成对其进行配置后将返回该视图所需的大小的完成处理程序中。
+Siri 还会传入完成处理程序, 应用程序在完成配置后, 需要返回所需的视图大小。
 
-### <a name="design-the-ui-in-ios-designer"></a>IOS 设计器中的用户界面设计
+### <a name="design-the-ui-in-ios-designer"></a>在 iOS 设计器中设计 UI
 
-Intents UI 扩展用户界面中 iOS 设计器布局。 双击该扩展`MainInterface.storyboard`文件中**解决方案资源管理器**打开进行编辑。 将在所有所需的 UI 元素，以构建用户界面并保存所做的更改。
+在 iOS 设计器中布局用户界面扩展的用户界面。 双击`MainInterface.storyboard` **解决方案资源管理器**中的扩展文件, 将其打开进行编辑。 拖动所有必需的 UI 元素以生成用户界面并保存更改。
 
 > [!IMPORTANT]
-> 虽然可以添加交互元素，例如`UIButtons`或`UITextFields`意向 UI 扩展到`UIViewController`、 这些严格禁止用作意向 UI 中非交互式的用户将不能与之交互。
+> 尽管可以向意向 ui 扩展`UIButtons` `UIViewController`添加交互式元素 (例如`UITextFields`或), 但已严格禁止将这些元素作为非交互式的意向 UI, 并且用户将无法与它们进行交互。
 
-### <a name="wire-up-the-user-interface"></a>布置的用户界面
+### <a name="wire-up-the-user-interface"></a>连接用户界面
 
-Intents UI 扩展用户界面创建 iOS 设计器中，编辑`UIViewController`子类并重写`Configure`方法，如下所示：
+在 iOS 设计器中创建意向 UI 扩展的用户界面后, 编辑`UIViewController`子类并重`Configure`写方法, 如下所示:
 
 ```csharp
 [Export ("configureWithInteraction:context:completion:")]
@@ -1037,15 +1037,15 @@ public CGSize DesiredSize ()
 }
 ```
 
-### <a name="overriding-the-default-siri-ui"></a>重写默认 Siri UI
+### <a name="overriding-the-default-siri-ui"></a>重写默认的 Siri UI
 
-Intents UI 扩展将始终显示以及其他使用 Siri 内容，例如应用图标和名称在 UI 的顶部或，着眼于基于，可能会在底部显示 （如发送或取消） 按钮。
+意向 UI 扩展将始终与其他 Siri 内容一起显示, 如应用程序图标和 UI 顶部的名称, 或者, 根据目的, 按钮 (如 "发送" 或 "取消") 可能会显示在底部。
 
-有少数情况下，应用可以替换 Siri 向用户显示默认情况下，例如消息传送的信息或其中应用程序可以使用一个针对应用程序替换默认的体验的映射。
+在某些情况下, 应用程序可以在默认情况下替换 Siri 显示给用户的信息, 例如消息或映射, 应用程序可以将默认体验替换为应用程序定制的体验。
 
-如果需要重写默认 Siri UI 元素 Intents UI 扩展`UIViewController`子类需要实现`IINUIHostedViewSiriProviding`接口和参加专门显示特定界面元素。
+如果意向 UI 扩展需要重写默认 Siri UI 的元素, `UIViewController`子类将需要`IINUIHostedViewSiriProviding`实现接口, 并选择使用来显示特定的接口元素。
 
-将以下代码添加到`UIViewController`子类来告诉 Siri 意向 UI 扩展已显示的消息内容：
+将以下代码添加到`UIViewController`子类, 告诉 Siri 意向 UI 扩展已经显示消息内容:
 
 ```csharp
 public bool DisplaysMessage {
@@ -1055,23 +1055,23 @@ public bool DisplaysMessage {
 
 ### <a name="considerations"></a>注意事项
 
-Apple 建议开发人员考虑设计和实现意向 UI 扩展时，考虑以下注意事项：
+Apple 建议在设计和实现意向 UI 扩展时, 开发人员应考虑以下注意事项:
 
-- **是有意识的内存使用量**-因为意图 UI 扩展插件是临时的仅显示在短时间，系统会施加更严格内存约束不是与完整的应用一起使用。
-- **请考虑最小值和最大的视图大小**-确保意图 UI 扩展看起来不错对每个 iOS 设备类型、 大小和方向。 此外，应用会发送回 Siri 所需的大小可能不能授予。
-- **使用灵活的和自适应的布局模式**-同样，若要确保用户界面看起来很棒的每台设备上。
+- 请**关注内存使用情况**-由于意向 UI 扩展是临时的且仅在短时间内显示, 因此, 系统会对内存约束产生比完全应用使用的更严格的内存约束。
+- **考虑最小和最大视图大小**-确保意向 UI 扩展在每个 iOS 设备类型、大小和方向上都看起来良好。 此外, 应用发送回 Siri 的所需大小可能无法授予。
+- 再次**使用灵活的自适应布局模式**, 以确保 UI 在每个设备上都能正常显示。
 
 ## <a name="summary"></a>总结
 
-本文已涵盖 SiriKit，并显示如何将提供的 iOS 设备上使用 Siri 和 Maps 应用的用户可以访问的服务的 Xamarin.iOS 应用添加。
+本文介绍了 SiriKit, 并演示了如何将其添加到 Xamarin iOS 应用以提供用户可使用 Siri 和 iOS 设备上的地图应用程序访问的服务。
 
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [ElizaChat 示例](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
+- [ElizaChat 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-elizachat)
 - [SiriKit 编程指南](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
-- [意向框架引用](https://developer.apple.com/reference/intents)
-- [Intents UI 框架引用](https://developer.apple.com/reference/intentsui)
-- [意向域引用](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)
+- [意向框架参考](https://developer.apple.com/reference/intents)
+- [意向 UI 框架引用](https://developer.apple.com/reference/intentsui)
+- [意向域参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)

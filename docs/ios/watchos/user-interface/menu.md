@@ -1,48 +1,48 @@
 ---
-title: watchOS 在 Xamarin 中的菜单控件 (Force Touch)
-description: 本文档介绍如何在 Xamarin 中使用 watchOS 强制触摸手势。 它讨论了如何应对强制触摸屏输入，如何添加一个菜单，并更改菜单项。
+title: Xamarin 中的 watchOS 菜单控件 (Force Touch)
+description: 本文档介绍如何在 Xamarin 中使用 watchOS 强制触摸手势。 它讨论了如何响应强制触控、如何添加菜单以及如何更改菜单项。
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6ad021d07d1263b20919cf4f640a8b65bf3b12b2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880665"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655750"
 ---
-# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS 在 Xamarin 中的菜单控件 (Force Touch)
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 菜单控件 (Force Touch)
 
-观看工具包提供了触发一个菜单，当在监视应用程序屏幕上执行强制触摸手势。
+手表工具包提供了一个在 "监视" 应用屏幕上实现时触发菜单的 Force Touch 手势。
 
-![](menu-images/menu.png "在显示菜单的 Apple Watch")
+![](menu-images/menu.png "显示菜单 Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
-## <a name="responding-to-force-touch"></a>Force Touch 响应
+## <a name="responding-to-force-touch"></a>响应 Force Touch
 
-如果`Menu`用户在执行强制接触将显示菜单时已实现的界面控制器。 如果尚未实施无菜单，屏幕简要动画处理任何其他操作。
+如果已经`Menu`为接口控制器实现了, 则当用户执行时, 将显示菜单 Force Touch。 如果未实现菜单, 屏幕会进行短暂的动画处理, 不会发生其他操作。
 
-强制收尾工作了不与任何在屏幕上的特定元素相关联只有一个菜单可以附加到界面控制器，并且它将显示而不考虑 Force Touch 按在屏幕上出现的位置。
+强制润色与屏幕上的任何特定元素都不关联;只有一个菜单可以附加到接口控制器, 它将显示, 而不考虑在屏幕上出现 Force Touch 按下的位置。
 
-1 到 4 个菜单之间可以显示选项。
+可以在一个和四个菜单选项之间显示。
 
 
-## <a name="adding-a-menu"></a>将菜单添加
+## <a name="adding-a-menu"></a>添加菜单
 
-一个`Menu`必须添加到`InterfaceController`在设计时情节提要上。 菜单控件拖动到界面控制器上时无可视指示在情节提要预览，但**菜单**将出现在**文档大纲**板：
+必须在设计时`InterfaceController`向情节提要上的添加。 `Menu` 将菜单控件拖到接口控制器上时, 情节提要预览中不会显示任何视觉指示, 但会在 "**文档大纲**" 面板中显示该**菜单**:
 
 ![](menu-images/menu-action.png "在设计时编辑菜单")
 
-最多四个菜单项可以添加到菜单控件。 它们可以在中配置**属性**板。 可以设置以下属性：
+最多可以向 menu 控件添加四个菜单项。 它们可在**Properties** pad 中进行配置。 可以设置以下属性:
 
-- 标题、 和
-- 自定义映像，或
-- 系统映像：接受、 添加块、 拒绝、 信息，也许，更，设为静音、 暂停、 播放和重复，恢复、 共享、 无序播放、 演讲者、 回收站。
+- Title 和
+- 自定义映像, 或
+- 系统映像:接受, 添加, 阻止, 拒绝, 信息, 可能, 更多, 静音, 暂停, 播放, 重复, 恢复, 共享, 播放, 重复, 恢复, 共享, 无序, 发言人, 垃圾桶。
 
-创建`Action`通过选择**事件**一部分**属性**板和键入操作方法的名称。 将在代码中，它可以实现在界面控制器类中，此类创建的分部方法：
+通过选择 "**属性**" 板的 "事件" 部分, 然后键入操作方法的名称来创建。 `Action` 将在代码中创建分部方法, 该方法可在接口控制器类中实现, 如下所示:
 
 ```csharp
 partial void MenuItemTapped ()
@@ -53,9 +53,9 @@ partial void MenuItemTapped ()
 
 ### <a name="custom-images"></a>自定义映像
 
-类似于在 iOS 中的选项卡图像，需要具有 alpha 通道，背景以显示通过的不透明模式菜单项图像。
+类似于 iOS 中的选项卡图像, 菜单项图像需要一个带有 alpha 通道的不透明模式, 该模式允许透过显示背景。
 
-您应该添加用于为获得最佳性能的监视应用程序项目 （不是监视应用程序扩展项目） 菜单的图像。
+为了获得最佳性能, 应将用于菜单的图像添加到 "监视应用程序" 项目 (而不是 "监视应用扩展项目")。
 
 
 ## <a name="changing-the-menu-items"></a>更改菜单项
@@ -68,14 +68,14 @@ Menu items added the storyboard can be shown and hidden programmatically.
 
 ### <a name="adding-at-runtime"></a>在运行时添加
 
-不会导致`Menu`若要添加到界面控制器在运行时，尽管的集合`MenuItem`s*可以*以编程方式更改。
-使用`AddMenuItem`方法所示：
+尽管*可以*通过编程`Menu`方式更改的`MenuItem`集合, 但不能在运行时将添加到接口控制器。
+`AddMenuItem`使用方法, 如下所示:
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-Xamarin.iOS 监视工具包 API 当前需要`selector`为`AdMenuItem`方法，应声明如下：
+Xamarin Watch 工具包 API 当前要求`selector` `AdMenuItem`方法为, 此方法应如下所示声明:
 
 ```csharp
 [Export("tapped")]
@@ -85,15 +85,15 @@ void MenuItemTapped ()
 }
 ```
 
-### <a name="removing-at-runtime"></a>删除在运行时
+### <a name="removing-at-runtime"></a>在运行时删除
 
-`ClearAllMenuItems`可以调用方法来删除所有*以编程方式添加*菜单项。
+可以调用方法以移除所有*以编程方式添加*的菜单项。 `ClearAllMenuItems`
 
-不能清除情节提要中配置的菜单项。
+无法清除情节提要中配置的菜单项。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchKitCatalog （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Apple 菜单文档](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)
+- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Apple 的菜单文档](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

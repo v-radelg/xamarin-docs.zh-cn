@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512877"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655968"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 设备类
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 [ `Device` ](xref:Xamarin.Forms.Device)类包含大量属性和方法，以帮助开发人员自定义布局和根据每个平台的功能。
 
-除了方法和属性在特定硬件类型和大小，让代码面向`Device`类包含可用于与从后台线程的 UI 控件进行交互的方法。 有关详细信息，请参阅[与从后台线程 UI 交互](#interact-with-the-ui-from-background-threads)。
+除了使用特定硬件类型和大小的代码的方法和属性以外, `Device`类还包括可用于与后台线程中的 UI 控件交互的方法。 有关详细信息, 请参阅[从后台线程与 UI 交互](#interact-with-the-ui-from-background-threads)。
 
 ## <a name="providing-platform-specific-values"></a>提供特定于平台的值
 
@@ -180,24 +180,24 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 如果内部计时器的代码与用户界面进行交互 (例如，设置的文本`Label`，或显示的警报) 应在内部完成`BeginInvokeOnMainThread`表达式 （见下文）。
 
-## <a name="interact-with-the-ui-from-background-threads"></a>与从后台线程 UI 交互
+## <a name="interact-with-the-ui-from-background-threads"></a>从后台线程与 UI 交互
 
-大多数操作系统，包括 iOS、 Android 和通用 Windows 平台，为涉及用户界面的代码使用单线程模型。 此线程通常称为*主线程*或*UI 线程*。 此模型的结果是访问用户界面元素的所有代码必须在应用程序的主线程上都运行。
+大多数操作系统 (包括 iOS、Android 和通用 Windows 平台) 都将单线程模型用于涉及用户界面的代码。 此线程通常称为 "*主线程*" 或 " *UI 线程*"。 此模型的结果是, 所有访问用户界面元素的代码都必须在应用程序的主线程上运行。
 
-有时，应用程序使用后台线程来执行可能长时间运行操作，如从 web 服务检索数据。 如果在后台线程上运行的代码需要访问用户界面元素，则必须在主线程上运行该代码。
+应用程序有时会使用后台线程来执行可能长时间运行的操作, 例如从 web 服务检索数据。 如果后台线程上运行的代码需要访问用户界面元素, 则必须在主线程上运行该代码。
 
-`Device`类包括以下`static`方法可用于与用户交互界面背景线程的元素：
+此`Device`类包括以下`static`方法, 可用于与背景线程中的用户界面元素进行交互:
 
 | 方法 | 自变量 | 返回 | 用途 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | 调用`Action`主线程上并不会等待其完成。 |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 调用`Func<T>`上主线程，并等待它完成。 |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | 调用`Action`上主线程，并等待它完成。 |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 调用`Func<Task<T>>`上主线程，并等待它完成。 |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 调用`Func<Task>`上主线程，并等待它完成。 |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回`SynchronizationContext`主线程。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主线程上调用, 而不会等待它完成。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | `Func<T>`在主线程上调用, 并等待其完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | `Action`在主线程上调用, 并等待其完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | `Func<Task<T>>`在主线程上调用, 并等待其完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | `Func<Task>`在主线程上调用, 并等待其完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回主`SynchronizationContext`线程的。 |
 
-下面的代码演示使用的示例`BeginInvokeOnMainThread`方法：
+下面的代码显示使用`BeginInvokeOnMainThread`方法的示例:
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
@@ -208,6 +208,6 @@ Device.BeginInvokeOnMainThread (() =>
 
 ## <a name="related-links"></a>相关链接
 
-- [设备示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
-- [样式示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [设备示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+- [样式示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [设备](xref:Xamarin.Forms.Device)

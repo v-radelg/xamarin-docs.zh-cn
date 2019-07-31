@@ -7,16 +7,16 @@ ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cf31f3bd6f84a040d21420e865737417c374d947
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 50174844100eb852ac7daf5ce3f33b02b490ceb2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077954"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646660"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 位图
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [**创建和绘制 SkiaSharp 位图**](drawing.md)一文所述方式`SKBitmap`可以将对象传递给`SKCanvas`构造函数。 要在位图上呈现该画布原因图形上调用任何绘图方法。 这些绘制方法包括`DrawBitmap`，这意味着该技术允许将传输部分或全部一个位图到另一个位图，可能与应用的转换。
 
@@ -445,7 +445,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>承载照片 cropper 画布视图
 
-与处理裁剪的逻辑，这两个类**裁剪照片**页面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 应用程序具有很少要执行的任务。 XAML 文件实例化`Grid`到主机`PhotoCropperCanvasView`和一个**完成**按钮：
+与处理裁剪的逻辑，这两个类**裁剪照片**页面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序具有很少要执行的任务。 XAML 文件实例化`Grid`到主机`PhotoCropperCanvasView`和一个**完成**按钮：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -536,7 +536,7 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 著名的 Xamarin.Forms 版本 14-15 个填数游戏出现在书的第 22 章[_使用 Xamarin.Forms 创建移动应用_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)并且可以作为下载[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 但是，填数游戏变得更加有趣 （且通常更具挑战性） 当基于照片库中的映像。
 
-14-15 个填数游戏的此版本属于 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 应用程序，并包含一系列页面标题为**照片拼图**。
+14-15 个填数游戏的此版本属于 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序，并包含一系列页面标题为**照片拼图**。
 
 **PhotoPuzzlePage1.xaml**文件都包含`Button`:
 
@@ -765,4 +765,4 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

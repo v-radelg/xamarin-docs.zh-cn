@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: cb8aabb3649da3818c1b020508b78a03f513963b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5109e3a66e22d885d8dc8b685db0817057709464
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830687"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653695"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安装和在 Xamarin 中使用 watchOS
 
@@ -33,7 +33,7 @@ Watch 应用包含三个项目：
 
 - **监视应用程序项目**-这包含 Watch 应用与用户界面的所有资源的用户界面情节提要文件。
 
-[监视工具包目录示例](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)解决方案在 Xamarin.Studio 中如下所示：
+[监视工具包目录示例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)解决方案在 Xamarin.Studio 中如下所示：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -45,7 +45,7 @@ Watch 应用包含三个项目：
 
 -----
 
-下载并运行[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)示例开始。
+下载并运行[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例开始。
 从示例的屏幕，可[控件](~/ios/watchos/user-interface/index.md)页。
 
 
@@ -179,7 +179,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 使用 Xcode 6 时 iPhone 5，iPhone 5 秒，iPhone 6 和 iPhone 6 Plus 可以激活任意一个外部显示器**Apple Watch-38mm**或**Apple Watch-42 mm**将监视应用程序的位置显示。
 
 > [!NOTE]
-> 请记住，监视屏幕没有自动出现在 iOS 模拟器中使用 Xcode 6 时。
+> 请记住, 使用 Xcode 6 时, "监视" 屏幕不会自动出现在 iOS 模拟器中。
 > 使用**硬件 > 外部显示**菜单以显示监视屏幕。
 
 <a name="custommodes" />
@@ -232,6 +232,6 @@ WatchOS 模板文件 (如`InterfaceController`， `ExtensionDelegate`， `Notifi
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchKitCatalog （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [第一个 Watch 应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple WatchKit 提示](https://developer.apple.com/watchkit/tips/)

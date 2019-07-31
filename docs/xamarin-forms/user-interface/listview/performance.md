@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 37b14b60f3cd9aa6a3fb182583bde902cc677b89
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 4a0a7a4db4b0ca982a162ec3a0b67dc729af0ed2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925073"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655939"
 ---
 # <a name="listview-performance"></a>ListView 性能
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 
 如果编写移动应用程序，性能很重要。 用户都希望能平滑滚动并快速加载。 未能满足用户的期望将您的应用程序商店中的评级或成本对于业务线应用程序，成本的组织的时间和金钱。
 
@@ -133,7 +133,7 @@ var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>子类化 ListView 中设置缓存策略
 
-设置`CachingStrategy`子类化，从 XAML 的特性[ `ListView` ](xref:Xamarin.Forms.ListView)不会生成所需的行为，因为没有任何`CachingStrategy`属性`ListView`。 此外，如果[XAMLC](~/xamarin-forms/xaml/xamlc.md)是启用了，就会生成以下错误消息：**没有属性，可绑定属性或找到 CachingStrategy 的事件**
+设置`CachingStrategy`子类化，从 XAML 的特性[ `ListView` ](xref:Xamarin.Forms.ListView)不会生成所需的行为，因为没有任何`CachingStrategy`属性`ListView`。 此外, 如果启用了[XAMLC](~/xamarin-forms/xaml/xamlc.md) , 则将生成以下错误消息:**找不到属性、可绑定的属性或 "CachingStrategy" 的事件**
 
 此问题的解决方案是指定构造函数上子类[ `ListView` ](xref:Xamarin.Forms.ListView)接受[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)参数并将其传递到基类：
 
@@ -185,6 +185,6 @@ public class CustomListView : ListView
 
 ## <a name="related-links"></a>相关链接
 
-- [自定义呈现器视图 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [自定义呈现器 ViewCell （示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)
+- [自定义呈现器视图 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [自定义呈现器 ViewCell （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 - [ListViewCachingStrategy](xref:Xamarin.Forms.ListViewCachingStrategy)

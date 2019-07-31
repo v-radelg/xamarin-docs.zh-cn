@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 996e6469347a50523964a5b855804b0041ff8d21
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 40a44b2748b29b21a1456c55cb75514f18506dd7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970986"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648572"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的图像
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _可以使用 Xamarin.Forms 跨平台共享映像、 可以专门为每个平台，加载它们或它们可以为显示下载。_
 
@@ -44,7 +44,7 @@ _可以使用 Xamarin.Forms 跨平台共享映像、 可以专门为每个平台
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪图像，以便它同时还能保留方面填充显示区域 (即。 无扭曲)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -上下黑边映像 （如果需要），以便整个图像适合的显示区域的空白区域添加到顶部/底部或边，具体取决于图像是高或宽。
 
-可以从加载图像[本地文件](#local-images)，则[嵌入的资源](#embedded-images)，或[下载](#downloading-images)。 此外，通过显示字体图标[ `Image` ](xref:Xamarin.Forms.Image)通过指定中的字体图标数据的视图`FontImageSource`对象。 有关详细信息，请参阅[显示的图标字体](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字体](~/xamarin-forms/user-interface/text/fonts.md)指南。
+可以从加载图像[本地文件](#local-images)，则[嵌入的资源](#embedded-images)，或[下载](#downloading-images)。 此外, 通过在[`Image`](xref:Xamarin.Forms.Image) `FontImageSource`对象中指定字体图标数据, 可通过视图显示字体图标。 有关详细信息, 请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)指南中的[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="local-images"></a>本地映像
 
@@ -53,11 +53,11 @@ _可以使用 Xamarin.Forms 跨平台共享映像、 可以专门为每个平台
 所有应用之间使用的单一映像*必须在每个平台上使用相同的文件名*，并且它应为有效的 Android 资源名称 (即。 允许只包含小写字母、 数字、 下划线和句点)。
 
 - **iOS** -首选方式管理和支持的映像，因为 iOS 9 是使用**资产目录图像集**，其中应包含的所有所需支持各种设备和缩放比例的图像的版本应用程序。 有关详细信息，请参阅[将图像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
-- **Android** -将在图像放**资源/drawable**目录**生成操作：AndroidResource**。 此外可以提供的图像的高和低 DPI 版本 (在适当地命名为**资源**如子目录**drawable ldpi**， **drawable hdpi**，和**drawable xhdpi**)。
-- **通用 Windows 平台 (UWP)** -将图像放在应用程序的根目录下使用**生成操作：内容**。
+- **Android** -包含**生成操作的**资源/绘制**目录中的图像:AndroidResource**。 此外可以提供的图像的高和低 DPI 版本 (在适当地命名为**资源**如子目录**drawable ldpi**， **drawable hdpi**，和**drawable xhdpi**)。
+- **通用 Windows 平台 (UWP)** -在应用程序的根目录中放置包含**生成操作的图像:内容**。
 
 > [!IMPORTANT]
-> 在 iOS 9 之前, 映像通常放置在**资源**具有文件夹**生成操作：BundleResource**。 但是，apple 已弃用的 iOS 应用程序中的映像的使用此方法。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+> 在 iOS 9 之前, 映像通常放置在包含**生成操作的**Resources**文件夹中:BundleResource**。 但是，apple 已弃用的 iOS 应用程序中的映像的使用此方法。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
 遵守这些规则进行文件命名和放置允许以下的 XAML 加载和显示在所有平台上的图像：
 
@@ -90,7 +90,7 @@ iOS、 Android 和 UWP 包括针对不同的图像分辨率，其中操作系统
 
 因为 iOS 9 管理映像的首选的方法是拖动到相应的资产目录图像集所需的每个分辨率的图像。 有关详细信息，请参阅[将图像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-在 iOS 9 之前, retina 版本的映像无法放置在**资源**文件夹的两个和第三次使用的分辨率 **@2x** 或 **@3x** 上的文件扩展名 （例如之前, 的文件名的后缀。 **myimage@2x.png**). 但是，apple 已弃用的 iOS 应用程序中的映像的使用此方法。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+在 iOS 9 之前, retina 版本的映像无法放置在**资源**文件夹的两个和第三次使用的分辨率 **@2x** 或 **@3x** 上的文件扩展名 （例如之前, 的文件名的后缀。 **myimage@2x.png** ). 但是，apple 已弃用的 iOS 应用程序中的映像的使用此方法。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
 Android 备用分辨率图像应置于[特殊命名目录](https://developer.android.com/guide/practices/screens_support.html)在 Android 项目中，如以下屏幕截图中所示：
 
@@ -102,23 +102,23 @@ UWP 图像文件名称[可以使用作为后缀`.scale-xxx`文件扩展名之前
 
 某些控件具有显示图像，如的属性：
 
-- [`Page`](xref:Xamarin.Forms.Page) -任何页上，键入派生`Page`已[ `IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)并[ `BackgroundImageSource` ](xref:Xamarin.Forms.Page.BackgroundImageSource)属性，可以为其指定文件、 嵌入的资源、 URI 或流。 在某些情况下，例如何时[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)显示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，将显示该图标，如果受平台支持。
+- [`Page`](xref:Xamarin.Forms.Page)-派生自`Page`的任何页类型都[`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource)具有[`BackgroundImageSource`](xref:Xamarin.Forms.Page.BackgroundImageSource)和属性, 可以为其分配文件、嵌入资源、URI 或流。 在某些情况下，例如何时[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)显示[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，将显示该图标，如果受平台支持。
 
   > [!IMPORTANT]
-  > 在 iOS 上， [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)属性不能填充从资产目录映像组中的映像。 相反，加载图标图像的`Page.IconImageSource`属性从文件、 嵌入的资源、 URI 或流。
+  > 在 iOS 上， [ `Page.IconImageSource` ](xref:Xamarin.Forms.Page.IconImageSource)属性不能填充从资产目录映像组中的映像。 而是从文件、嵌入资源`Page.IconImageSource` 、URI 或流加载属性的图标图像。
 
-- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -具有[ `IconImageSource` ](xref:Xamarin.Forms.MenuItem.IconImageSource)可以设置从文件、 嵌入的资源、 URI 或流加载的图像的属性。
-- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -具有[ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource)从文件、 嵌入的资源、 URI 或流检索可以设置为图像的属性。
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)-具有一个[`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)属性, 该属性可设置为从文件、嵌入资源、URI 或流加载的图像。
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell)-具有一个[`ImageSource`](xref:Xamarin.Forms.ImageCell.ImageSource)属性, 该属性可设置为从文件、嵌入资源、URI 或流中检索的图像。
 
 ## <a name="embedded-images"></a>嵌入图像
 
 嵌入的图像还提供了应用程序 （例如本地映像），但而不是让每个应用程序的文件结构图像中的映像的副本在程序集作为资源嵌入文件。 此方法分发映像时每个平台上使用相同的映像，建议使用，并且是尤其适合于创建组件，如图像与代码捆绑在一起。
 
-若要在项目中嵌入图像，右键单击要添加新项，然后选择你想要添加的图像/秒。 默认情况下该图像将出现**生成操作：无**; 这需要设置为**生成操作：** EmbeddedResource”。
+若要在项目中嵌入图像，右键单击要添加新项，然后选择你想要添加的图像/秒。 默认情况下, 映像将**包含生成操作:无**; 这需要设置为**生成操作:** EmbeddedResource”。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](images-images/vs-buildaction.png "设置生成操作：EmbeddedResource")
+![](images-images/vs-buildaction.png "设置生成操作:EmbeddedResource")
 
 **生成操作**可以查看和更改在**属性**窗口中的文件。
 
@@ -128,7 +128,7 @@ IDE 已生成此默认值的串联**默认 Namespace**对于此项目包含文�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "设置生成操作：EmbeddedResource")
+![](images-images/xs-buildaction.png "设置生成操作:EmbeddedResource")
 
 **生成操作**还可以查看和更改**属性**的面板来显示文件。
 此面板会显示**资源 ID**用于引用在代码中的资源。 在下面的屏幕截图**资源 ID**是**WorkingWithImages.beach.jpg**。
@@ -298,7 +298,7 @@ webImage.Source = new UriImageSource
 
 请参阅[iOS 处理图像](~/ios/app-fundamentals/images-icons/index.md)， [Google 插图](https://developer.android.com/design/style/iconography.html)，并[准则磁贴和图标资产](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)有关创建这些应用程序资源的详细信息。
 
-此外，通过显示字体图标[ `Image` ](xref:Xamarin.Forms.Image)通过指定中的字体图标数据的视图`FontImageSource`对象。 有关详细信息，请参阅[显示的图标字体](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)中[字体](~/xamarin-forms/user-interface/text/fonts.md)指南。
+此外, 通过在[`Image`](xref:Xamarin.Forms.Image) `FontImageSource`对象中指定字体图标数据, 可通过视图显示字体图标。 有关详细信息, 请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)指南中的[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="splash-screens"></a>初始屏幕
 
@@ -314,7 +314,7 @@ Xamarin.Forms 提供多种不同方式在跨平台应用程序，允许跨平台
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithImages （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/)
+- [WorkingWithImages （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 - [iOS 处理图像](~/ios/app-fundamentals/images-icons/index.md)
 - [Android 插图](https://developer.android.com/design/style/iconography.html)
 - [磁贴和图标资产的指导原则](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

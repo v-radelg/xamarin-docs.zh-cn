@@ -1,38 +1,38 @@
 ---
-title: 在 Xamarin.iOS 中的通知
-description: 本部分演示如何在 Xamarin.iOS 中实现本地通知。 它将介绍 iOS 通知的各种 UI 元素，并讨论了 API 的涉及创建并显示一条通知。
+title: Xamarin 中的通知
+description: 本部分说明如何在 Xamarin 中实现本地通知。 它将解释 iOS 通知的各种 UI 元素, 并讨论创建和显示通知所涉及的 API。
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: 6710abd28a2b0f992296008d12950b95ec29783d
-ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.openlocfilehash: 7f2619010a410cabc54074e669ff4f1ea24bd0fa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394695"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655493"
 ---
-# <a name="notifications-in-xamarinios"></a>在 Xamarin.iOS 中的通知
+# <a name="notifications-in-xamarinios"></a>Xamarin 中的通知
 
 > [!IMPORTANT]
-> 在本部分中的信息与有关 iOS 9 及更高。 适用于 iOS 10 及更高版本，请参阅[用户通知框架指南](~/ios/platform/user-notifications/index.md)。
+> 本部分中的信息适用于 iOS 9 及更早的。 对于 iOS 10 及更高版本, 请参阅[用户通知框架指南](~/ios/platform/user-notifications/index.md)。
 
-iOS 具有三种方法可以向用户指示已收到通知：
+iOS 具有三种方式向用户指示已收到通知:
 
-- **声音或振动**-iOS 可以播放声音通知用户。 如果禁用了声音，可以配置该设备为振动。
-- **警报**-可以使用有关通知的信息在屏幕上显示一个对话框。
-- **徽章**-当发布一条通知时，可以显示一个数字 （带有徽章） 上的应用程序图标。
+- **声音或振动**-iOS 可以播放声音以通知用户。 如果禁用声音, 则可以将设备配置为振动。
+- **警报**-可以在屏幕上显示有关通知的信息。
+- **徽章**-发布通知后, 可以在应用程序图标上显示一个数字 (徽章)。
 
-此外提供了 iOS*通知中心*，将向用户显示的所有通知，本地和远程。 用户可以访问这从屏幕顶部向下轻扫：
+iOS 还提供*通知中心, 该通知中心*会向用户显示所有通知, 无论是本地的还是远程的。 用户可通过从屏幕顶部向下轻扫来访问此内容:
 
 ![通知中心](local-notifications-in-ios-images/image13.png "通知中心")
 
 ## <a name="creating-local-notifications-in-ios"></a>在 iOS 中创建本地通知
 
-iOS 就相当简单，若要创建和处理本地通知。
-首先，iOS 8 要求应用程序要求的显示通知用户的权限。 尝试发送本地通知之前将以下代码添加到您的应用程序-[附加示例](https://developer.xamarin.com/samples/monotouch/LocalNotifications/)将其放入**AppDelegate**的**FinishedLaunching**方法。
+iOS 使得创建和处理本地通知变得非常简单。
+首先, iOS 8 要求应用程序要求用户提供显示通知的权限。 尝试发送本地通知之前, 请将以下代码添加到应用-附加的[示例](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)将其放入**AppDelegate**的**FinishedLaunching**方法。
 
 ```csharp
 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -41,9 +41,9 @@ var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
 application.RegisterUserNotificationSettings(notificationSettings);
 ```
 
-[![确认发送本地通知的能力](local-notifications-in-ios-images/image0-sml.png "确认能够发送本地通知")](local-notifications-in-ios-images/image0.png#lightbox)
+[![确认发送本地通知的能力](local-notifications-in-ios-images/image0-sml.png "确认发送本地通知的能力")](local-notifications-in-ios-images/image0.png#lightbox)
 
-若要计划本地通知，创建`UILocalNotification`对象，设置`FireDate`，并将其通过安排`ScheduleLocalNotification`方法`UIApplication.SharedApplication`对象。 下面的代码段演示如何安排将触发一分钟以后，并显示一条消息的警报的通知：
+若要计划本地通知, 请创建`UILocalNotification`对象, `FireDate`设置, 并`UIApplication.SharedApplication`通过对象上的`ScheduleLocalNotification`方法对其进行安排。 下面的代码片段演示了如何计划一个通知, 该通知将在将来激发一分钟, 并显示一条消息, 其中包含一条消息:
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -54,36 +54,36 @@ notification.AlertBody = "Your 15 second alert has fired!";
 UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 ```
 
-下面的屏幕截图显示了此警报如下所示：
+以下屏幕截图显示了此警报的外观:
 
 [![](local-notifications-in-ios-images/image2-sml.png "示例警报")](local-notifications-in-ios-images/image2.png#lightbox)
 
-请注意，如果用户已选择*不允许*将显示通知，然后执行任何操作。
+请注意, 如果用户选择*不允许*通知, 则不会显示任何内容。
 
-如果你想要应用于应用程序图标带有编号的徽章，您可以将其如以下代码行中所示：
+如果要使用数字将徽章应用于应用程序图标, 则可以设置它, 如下面的代码行所示:
 
 ```csharp
 notification.ApplicationIconBadgeNumber = 1;
 ```
 
-在顺序 play 图标时，声音将 SoundName 属性设置通知下面的代码段中所示：
+若要播放带有图标的声音, 请在通知上设置 SoundName 属性, 如以下代码片段所示:
 
 ```csharp
 notification.SoundName = UILocalNotification.DefaultSoundName;
 ```
 
-如果通知声音的长度超过 30 秒，iOS 将播放默认声音相反。
+如果通知声音超过30秒, 则 iOS 将改为播放默认声音。
 
 > [!IMPORTANT]
-> 是将激发委托通知两次在 iOS 模拟器中的 bug。 在设备上运行应用程序时，不会发生此问题。
+> IOS 模拟器中有一个 bug, 该 bug 会两次激发委托通知。 在设备上运行应用程序时, 不应出现此问题。
 
 ## <a name="handling-notifications"></a>处理通知
 
-iOS 应用程序处理方式几乎完全相同的远程和本地通知。 当运行应用程序时，`ReceivedLocalNotification`方法或`ReceivedRemoteNotification`方法`AppDelegate`将调用类，并通知信息将作为参数传递。
+iOS 应用程序以几乎完全相同的方式处理远程和本地通知。 当应用程序运行时, 将`ReceivedLocalNotification`调用`AppDelegate`类中`ReceivedRemoteNotification`的方法或方法, 并且通知信息将作为参数传递。
 
-应用程序可以以不同方式处理一条通知。 例如，应用程序可能只显示警报，以提醒用户有关的一些事件。 或通知可能用于向过程已完成，如到服务器的同步文件的用户显示警报。
+应用程序可以通过不同的方式处理通知。 例如, 应用程序可能只显示一个警报, 提醒用户关于某个事件。 或者, 通知可用于向用户显示进程已完成的警报, 如将文件同步到服务器。
 
-下面的代码演示如何处理本地通知和显示警报，并将徽章编号重置为零：
+下面的代码演示如何处理本地通知并显示警报, 并将徽章编号重置为零:
 
 ```csharp
 public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-如果应用程序未运行，iOS 将播放声音和/或更新图标徽章 （如果适用）。 当用户启动与警报关联的应用程序时，将启动应用程序和`FinishedLaunching`将调用在应用程序委托的方法和通知信息将通过传入`launchOptions`参数。 如果选项字典包含键`UIApplication.LaunchOptionsLocalNotificationKey`，则`AppDelegate`知道从本地通知已启动应用程序。 以下代码段演示了此过程：
+如果应用程序未运行, 则 iOS 会播放声音并/或更新图标徽章 (如果适用)。 当用户启动与警报相关联的应用程序时, 应用程序将启动, 并`FinishedLaunching`将调用应用程序委托上的方法, 并且将`launchOptions`通过参数传入通知信息。 如果选项字典包含该键`UIApplication.LaunchOptionsLocalNotificationKey`, `AppDelegate`则知道应用程序是从本地通知启动的。 以下代码段演示了此过程:
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-有关远程的通知，请`launchOptions`将具有`LaunchOptionsRemoteNotificationKey`带有关联`NSDictionary`包含远程通知负载。 您可以通过通知有效负载中提取`alert`， `badge`，和`sound`密钥。 下面的代码段演示如何获取远程通知：
+对于远程通知, `launchOptions`将拥有一个`LaunchOptionsRemoteNotificationKey` , 其中包含与`NSDictionary`远程通知有效负载相关联的。 可以通过`alert`、 `badge`和`sound`键来提取通知有效负载。 下面的代码段演示如何获取远程通知:
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -131,12 +131,12 @@ if(remoteNotification != null)
 
 ## <a name="summary"></a>总结
 
-本部分介绍了如何创建和发布 Xamarin.iOS 中的通知。 它显示如何应用程序可能响应通知通过重写`ReceivedLocalNotification`方法或`ReceivedRemoteNotification`中的方法`AppDelegate`。
+本部分说明如何在 Xamarin 中创建和发布通知。 它显示应用程序如何通过重写`ReceivedLocalNotification`中`AppDelegate`的方法`ReceivedRemoteNotification`或方法来对通知做出反应。
 
 ## <a name="related-links"></a>相关链接
 
-- [本地通知 （示例）](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
-- [本地和推送通知面向开发人员](https://developer.apple.com/notifications/)
+- [本地通知 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
+- [面向开发人员的本地和推送通知](https://developer.apple.com/notifications/)
 - [本地和推送通知编程指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
 - [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UILocalNotification](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UILocalNotification)

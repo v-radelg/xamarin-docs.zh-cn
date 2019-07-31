@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上滚动 ListView 快速
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android-特定于平台，快速滚动 ListView 中的数据。
+title: 在 Android 上 ListView 快速滚动
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 以便能够快速滚动 ListView 中的数据。
 ms.prod: xamarin
 ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 6ae266f9309e32c79ec6028d737cfdcaaa85b0d4
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ce51483da9599cf049cf005ae18b35d110aa325b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926571"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649980"
 ---
-# <a name="listview-fast-scrolling-on-android"></a>在 Android 上滚动 ListView 快速
+# <a name="listview-fast-scrolling-on-android"></a>在 Android 上 ListView 快速滚动
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 特定于平台的用于启用通过中的数据快速滚动[ `ListView` ](xref:Xamarin.Forms.ListView)。 设置使用在 XAML`ListView.IsFastScrollEnabled`附加属性设置为`boolean`值：
+此 Android 平台特定用于启用快速滚动查看中的[`ListView`](xref:Xamarin.Forms.ListView)数据。 设置使用在 XAML`ListView.IsFastScrollEnabled`附加属性设置为`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -60,7 +60,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

@@ -1,38 +1,38 @@
 ---
 title: iOS 7 简介
-description: 本文介绍如何在 iOS 7，包括视图控制器转换，UIView 动画，UIKit Dynamics 和文本工具包的增强功能中引入的主要新 Api。 它还介绍了一些对用户界面和新的增强多任务处理功能的更改。
+description: 本文介绍了 iOS 7 中引入的主要新 Api, 包括查看控制器转换、UIView 动画的增强功能、UIKit Dynamics 和文本工具包。 还介绍了对用户界面的一些更改, 并介绍了新的增强多任务功能。
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: db2ce779962947e2121ff03280544a080e193e2e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 067d97e6a36dae6c11f056241c08c21899e96c08
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037254"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649334"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 简介
 
-_本文介绍如何在 iOS 7，包括视图控制器转换，UIView 动画，UIKit Dynamics 和文本工具包的增强功能中引入的主要新 Api。它还介绍了一些对用户界面和新的增强多任务处理功能的更改。_
+_本文介绍了 iOS 7 中引入的主要新 Api, 包括查看控制器转换、UIView 动画的增强功能、UIKit Dynamics 和文本工具包。还介绍了对用户界面的一些更改, 并介绍了新的增强多任务功能。_
 
-iOS 7 是针对 iOS 的重大更新。 它引入了全新的用户界面设计的内容，而不是应用程序在 chrome 上将焦点放。 可视更改，以及 iOS 7 将添加大量新的 Api 来创建更丰富的交互和体验。 此文档调查新技术引入了 iOS 7，并作为执行进一步的研究的起点。
+iOS 7 是对 iOS 的重大更新。 它引入了一个全新的用户界面设计, 该设计将重点放在内容上, 而不是应用程序镶边上。 除了视觉变化外, iOS 7 还添加了很多的新 Api, 以创建更丰富的交互和体验。 本文档调查 iOS 7 引入的新技术, 并作为进一步探索的起点。
 
 ## <a name="uiview-animation-enhancements"></a>UIView 动画增强功能
 
-iOS 7 增强 UIKit，允许应用程序执行以前需要直接在核心动画框架的删除操作中的动画支持。 例如， `UIView` spring 动画，以及关键帧动画，现在可以执行先前`CAKeyframeAnimation`应用于`CALayer`。
+iOS 7 增强了 UIKit 中的动画支持, 使应用程序可以执行以前需要直接放置在核心动画框架中的操作。 例如, `UIView`现在可以执行弹簧动画和关键帧动画, 这些动画`CAKeyframeAnimation`先前应用`CALayer`于。
 
-### <a name="spring-animations"></a>动画
+### <a name="spring-animations"></a>弹簧动画
 
- `UIView` 现在支持使用 spring 效果进行动画处理属性更改。 若要添加此，请调用`AnimateNotify`或`AnimateNotifyAsync`方法，传入值 spring 阻止比例和方向的初始 spring 速度，如下所述：
+ `UIView`现在支持使用弹簧效果对属性更改进行动画处理。 若要添加此方法, 请`AnimateNotify`调用`AnimateNotifyAsync`或方法, 并传入弹簧阻尼比率和初始弹簧速度的值, 如下所述:
 
--  `springWithDampingRatio` – 介于 0 和 1，振荡其中较小的值会增加。
--  `initialSpringVelocity` – 每秒的总动画距离的百分比初始 spring 速度。
+-  `springWithDampingRatio`–一个介于0和1之间的值, 其中, 振荡为较小的值增加。
+-  `initialSpringVelocity`–初始弹簧速度, 以每秒的总动画距离的百分比表示。
 
 
-下面的代码生成 spring 效果图像视图的中心更改时：
+以下代码将在图像视图的中心更改时产生弹簧效果:
 
 ```csharp
 void AnimateWithSpring ()
@@ -48,15 +48,15 @@ void AnimateWithSpring ()
 }
 ```
 
-此 spring 效果可使图像视图弹跳效果在它完成到新的中心位置，其动画，如下图所示：
+这一弹簧效果会使图像视图在向新的中心位置完成动画时出现弹跳, 如下所示:
 
- ![](images/spring-animation.png "此 spring 效果可使图像视图在它完成到新的中心位置动画弹跳效果")
+ ![](images/spring-animation.png "这一弹簧效果会使图像视图显示为在其将动画完成到新中心位置时弹跳")
 
 ### <a name="keyframe-animations"></a>关键帧动画
 
-`UIView`类现在包括`AnimateWithKeyframes`上创建关键帧动画方法`UIView`。 此方法是与其他`UIView`动画方法，只不过额外`NSAction`传递作为参数，以包括关键帧。 内`NSAction`，通过调用添加关键帧`UIView.AddKeyframeWithRelativeStartTime`。
+类现在包含用于在上`UIView`创建关键帧动画的方法。`AnimateWithKeyframes` `UIView` 此方法类似于其他`UIView`动画方法, 不同之处在于将附加`NSAction`作为参数传递以包含关键帧。 `UIView.AddKeyframeWithRelativeStartTime`在中`NSAction`, 通过调用来添加关键帧。
 
-例如，下面的代码段将创建一个关键帧动画进行动画处理关于旋转视图的视图的中心以及：
+例如, 以下代码片段将创建一个关键帧动画来对视图中心进行动画处理, 并旋转视图:
 
 ```csharp
 void AnimateViewWithKeyframes ()
@@ -83,44 +83,44 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-前两个参数`AddKeyframeWithRelativeStartTime`方法指定的开始时间和持续时间的关键帧，分别为整体的动画长度的一部分。 通过下一步的第二个旋转 90 度跟导致图像视图进行动画处理到其新中心通过第一个第二个，上面的示例。 由于动画指定`UIViewKeyframeAnimationOptions.Autoreverse`逆序也作为一个选项，这两个关键帧动画。 最后，最终的值设置为在完成处理程序中的初始状态。
+`AddKeyframeWithRelativeStartTime`方法的前两个参数分别指定关键帧的开始时间和持续时间 (以占总体动画长度的百分比表示)。 上面的示例将在第一秒中将图像视图动画处理到其新中心, 然后在下一秒旋转90度。 由于动画将指定`UIViewKeyframeAnimationOptions.Autoreverse`为一个选项, 因此, 这两个关键帧也会反向动画。 最后, 最后一个值设置为完成处理程序中的初始状态。
 
-下面的屏幕截图演示了组合的动画关键帧：
+下面的屏幕截图演示了通过关键帧的组合动画:
 
- ![](images/keyframes.png "此屏幕截图演示了通过关键帧的组合的动画")
+ ![](images/keyframes.png "此屏幕快照演示了通过关键帧的组合动画")
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
-UIKit Dynamics 是一组新的 Api 在 UIKit 中，它允许应用程序创建动画基于物理引擎的交互。 UIKit Dynamics 封装在 2D 物理引擎，为了实现这一点。
+UIKit Dynamics 是 UIKit 中一组新的 Api, 允许应用程序基于物理学创建动画交互。 UIKit Dynamics 封装了2D 物理学引擎来实现这一点。
 
-该 API 是声明性本质上。 声明的物理交互通过创建对象的调用的行为方式*行为*-express 物理概念，例如重力、 冲突、 弹簧，等等。然后将行为附加到另一个对象，调用*动态动画器*，其中封装一个视图。 动态动画器采用的声明的物理引擎将行为应用于需要*动态项*-项实现`IUIDynamicItem`，如`UIView`。
+API 本质上是声明性的。 可以通过创建对象 (称为*行为*) 来声明物理学交互的行为方式, 以表示物理概念, 如重力、碰撞、弹簧等。然后, 将这些行为附加到另一个对象, 该对象称为*动态 animator*, 它封装视图。 动态 animator 需要将声明的物理行为应用于*动态项*-实现`IUIDynamicItem`的项 (例如`UIView`)。
 
-有几个不同的基元行为可用于触发复杂的交互，包括：
+有几种不同的基元行为可用于触发复杂的交互, 包括:
 
--  `UIAttachmentBehavior` – 附加两个动态的项，以便它们将移动到一起，或将动态项附加到连接点。
--  `UICollisionBehavior` – 允许动态项参与冲突。
--  `UIDynamicItemBehavior` -指定一组常规要应用于动态项，如灵活性、 密度和冲突的属性。
--  `UIGravityBehavior` -适用于动态项，从而导致要加速引力方向中的项的重力。
--  `UIPushBehavior` – 适用于动态项强制。
--  `UISnapBehavior` -允许使用 spring 效果将其置于管理单元将动态选项。
+-  `UIAttachmentBehavior`–附加两个动态项, 以便将它们一起移动, 或将动态项附加到连接点。
+-  `UICollisionBehavior`–允许动态项参与冲突。
+-  `UIDynamicItemBehavior`–指定要应用于动态项 (如弹性、密度和摩擦) 的一组常规属性。
+-  `UIGravityBehavior`-对动态项应用重力, 使项在 gravitational 方向加速。
+-  `UIPushBehavior`–对动态项应用强制。
+-  `UISnapBehavior`–允许动态项与弹簧效果对齐位置。
 
 
-虽然有许多基元，但添加到使用 UIKit Dynamics 视图基于物理引擎的交互的一般过程在各种行为之间是一致的：
+虽然有许多基元, 但使用 UIKit Dynamics 向视图中添加基于物理的交互的一般过程在行为上保持一致:
 
-1.  创建动态动画器。
+1.  创建动态 animator。
 1.  创建行为。
-1.  将行为添加到动态动画器。
+1.  向动态 animator 中添加行为。
 
 
 ### <a name="dynamics-example"></a>Dynamics 示例
 
-让我们看看的示例，添加重力和碰撞边界`UIView`。
+我们来看一个示例, 该示例将重心和冲突边界添加到`UIView`。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
-向图像视图添加重力遵循上面所述的 3 个步骤。
+向图像视图添加重力后, 请按照上面所述的3个步骤进行操作。
 
-我们将使用`ViewDidLoad`对于此示例的方法。 首先，添加`UIImageView`实例，如下所示：
+在此示例中, `ViewDidLoad`我们将在方法中工作。 首先, 添加一个`UIImageView`实例, 如下所示:
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -132,38 +132,38 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-这将创建以在屏幕上边缘中心的图像视图。 若要使用重力使映像"回退"，创建的实例`UIDynamicAnimator`:
+这将创建一个在屏幕上边缘中间的图像视图。 若要使映像 "秋季" 使用重力, 请创建的实例`UIDynamicAnimator`:
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-`UIDynamicAnimator`采用的引用的实例`UIView`或`UICollectionViewLayout`，其中包含每个附加的行为进行动画处理的项。
+采用引用`UIView`或的`UICollectionViewLayout`实例, 该实例包含将按附加行为进行动画处理的项。 `UIDynamicAnimator`
 
-接下来，创建`UIGravityBehavior`实例。 您可以将实现的一个或多个对象传递`IUIDynamicItem`，例如`UIView`:
+接下来, 创建`UIGravityBehavior`一个实例。 可以传递一个或多个实现的`IUIDynamicItem`对象, `UIView`如下所示:
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-行为传递的数组`IUIDynamicItem`，在这种情况下，其中包含单个`UIImageView`我们进行动画处理的实例。
+向传递的是一个数组`IUIDynamicItem`, 在此示例中, 该数组包含要进行动画处理的单个`UIImageView`实例。
 
-最后，将行为添加到动态动画器：
+最后, 将行为添加到动态 animator:
 
 ```csharp
 dynAnimator.AddBehavior (gravity);
 ```
 
-这会导致进行动画处理与重力，为如下所示的向下拖动图像：
+这会使图像与重力向下动画, 如下所示:
 
-![](images/gravity2.png "启动映像位置") 
-![](images/gravity3.png "结束映像位置")
+![](images/gravity2.png "") 
+![](images/gravity3.png "结束图像位置的")起始图像位置
 
-由于没有任何限制在屏幕的边界，请将图像视图只需转出底部。 若要约束视图，以便与屏幕的边缘图像有冲突，我们可以添加`UICollisionBehavior`。 我们将介绍这在下一节中。
+由于屏幕边界没有任何限制, 因此图像视图只是底部。 若要约束视图以便图像与屏幕边缘冲突, 可以添加`UICollisionBehavior`。 下一节将介绍这一点。
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-我们将首先创建`UICollisionBehavior`并将其添加到动态动画器，就像我们对`UIGravityBehavior`。
+首先, 我们将创建一个`UICollisionBehavior`并将其添加到动态 animator, 就像我们`UIGravityBehavior`对进行的操作一样。
 
 修改代码以包括`UICollisionBehavior`:
 
@@ -190,9 +190,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-`UICollisionBehavior`具有一个名为属性`TranslatesReferenceBoundsIntoBoundry`。 此值设置为`true`导致要用作冲突边界的视图的边界的引用。
+具有`UICollisionBehavior`一个名`TranslatesReferenceBoundsIntoBoundry`为的属性。 如果将此`true`选项设置为, 则会将引用视图的边界用作冲突边界。
 
-现在，当该图像进行动画处理向下与重力，它弹回略有屏幕的底部确定那里 rest 之前。
+现在, 当图像与重力向下动画动画时, 它会在屏幕底部上弹跳, 然后在屏幕上进行静止。
 
 <!--, as shown below:
 
@@ -200,9 +200,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-我们可以进一步控制下降的图像视图与其他行为的行为。 例如，我们可以添加`UIDynamicItemBehavior`增加的良好灵活性，从而导致要弹跳的详细信息时它与屏幕的底部有冲突的图像视图。
+我们可以进一步控制正在处理的图像视图的行为, 并提供其他行为。 例如, 我们可以添加`UIDynamicItemBehavior`来增加弹性, 从而使图像视图在与屏幕底部冲突时更多地跳动。
 
-添加`UIDynamicItemBehavior`遵循相同的步骤与其他行为一样。 首先创建行为：
+`UIDynamicItemBehavior`添加与其他行为相同的步骤。 首先创建行为:
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {
@@ -210,39 +210,39 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 };
 ```
 
-然后，将行为添加到动态动画器：
+然后, 将行为添加到动态 animator:
 
  `dynAnimator.AddBehavior (dynBehavior);`
 
-通过此行为后，图像视图退回的详细信息时它与边界发生冲突。
+此行为到位后, 图像视图在与边界冲突时将会弹跳更多。
 
 ## <a name="general-user-interface-changes"></a>常规用户界面更改
 
-例如 UIKit Dynamics、 控制器转换和上面所述的增强的 UIView 动画的 UIKit 新 Api，除了 iOS 7 引入了各种 visual 的 ui 的更改和相关的 API 更改各种视图和控件。 有关详细信息请参阅[iOS 7 用户界面概述](~/ios/platform/introduction-to-ios7/ios7-ui.md)。
+除了上面所述的新的 UIKit Api (如 UIKit Dynamics、控制器转换和增强的 UIView 动画) 之外, iOS 7 还引入了对 UI 的各种视觉更改, 以及各种视图和控件的相关 API 更改。 有关详细信息, 请参阅[iOS 7 用户界面概述](~/ios/platform/introduction-to-ios7/ios7-ui.md)。
 
 ## <a name="text-kit"></a>文本工具包
 
-文本工具包是一个新 API，提供了强大的文本布局和呈现功能。 它基于核心文本框架的低级别，但可以更轻松地使用比核心文本。
+文本工具包是一个提供强大文本布局和呈现功能的新 API。 它构建在低级别核心文本框架之上, 但比核心文本更易于使用。
 
-有关详细信息，请参阅我们[TextKit](~/ios/platform/textkit.md)
+有关详细信息, 请参阅我们的[TextKit](~/ios/platform/textkit.md)
 
 ## <a name="multitasking"></a>多任务
 
-iOS 7 更改何时以及如何执行后台工作。 任务完成 iOS 7 中的不会再使应用程序保持唤醒状态时在后台运行的任务和应用程序都被唤醒，以非连续的方式处理的背景。 iOS 7 还添加了三个新的 Api 更新应用程序，并且在后台中的新内容：
+iOS 7 会在执行后台工作时进行更改。 当任务在后台运行时, iOS 7 中的任务完成不会再使应用程序保持唤醒状态, 并且应用程序将以不间断的方式唤醒后台处理。 iOS 7 还添加了三个新的 Api, 用于在后台用新内容更新应用程序:
 
--  后台获取 – 允许应用程序来更新按固定间隔在后台中的内容。
--  远程通知-允许应用程序以接收推送通知时，更新内容。 通知可以是无提示，也可以在锁定屏幕上显示一个横幅。
--  后台传输服务 – 允许上传和下载的数据，例如大型文件，而无需固定的时间限制。
+-  后台提取–允许应用程序定期更新后台内容。
+-  远程通知-允许应用程序在收到推送通知时更新内容。 通知可以是静默的, 也可以是在锁定屏幕上显示横幅。
+-  后台传输服务–允许上传和下载数据 (如大型文件), 而无需经过固定的时间限制。
 
 
-有关新的多任务处理功能的更多详细信息，请参阅 Xamarin 的 iOS 部分[后台处理指南](~/ios/app-fundamentals/backgrounding/index.md)。
+有关新的多任务功能的更多详细信息, 请参阅 Xamarin[后台处理 guide](~/ios/app-fundamentals/backgrounding/index.md)的 iOS 部分。
 
 ## <a name="summary"></a>总结
 
-本文介绍如何向 iOS 几个主要的新增功能。 首先，它演示如何将自定义转换添加到视图控制器。 然后，它演示如何使用在集合视图中，同时从内导航控制器，以及以交互方式集合视图之间的转换。 接下来，它引入了对 UIView 动画，显示应用程序如何使用 UIKit 以前需要直接对核心动画的编程的内容所做的多项增强功能。 最后，新的 UIKit Dynamics API，它为 UIKit 带来物理引擎，是与文本工具包框架现已提供的丰富的文本支持一起引入的。
+本文介绍 iOS 的几项重大新增内容。 首先, 它演示如何将自定义转换添加到视图控制器。 然后, 它演示了如何在集合视图中使用从导航控制器中的转换, 以及在集合视图之间交互使用转换。 接下来, 它引入了对 UIView 动画的几项增强功能, 显示应用程序如何使用 UIKit 来实现以前需要直接对核心动画进行编程的内容。 最后, 引入了新的 UIKit Dynamics API, 该 API 与 UIKit 的物理引擎一起引入, 现在可在文本工具包框架中使用丰富文本支持。
 
 ## <a name="related-links"></a>相关链接
 
-- [对 iOS 7 （示例） 简介](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
+- [IOS 7 简介 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 用户界面概述](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [后台处理](~/ios/app-fundamentals/backgrounding/index.md)

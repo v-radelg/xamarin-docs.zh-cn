@@ -7,16 +7,16 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189074"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649278"
 ---
 # <a name="the-scale-transform"></a>缩放转换
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _发现 SkiaSharp 缩放转换为缩放到不同大小的对象_
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可能想知道：缩放系数如何影响从返回的值`MeasureText`方法的`SKPaint`？ 答案是：完全不需要。 `Scale` 是一种方法的`SKCanvas`。 它不影响与执行任何操作`SKPaint`对象，直到该对象用于呈现在画布上的某些内容。
+您可能想知道:缩放系数如何影响从`MeasureText`方法返回的`SKPaint`值？ 答案是:完全不需要。 `Scale` 是一种方法的`SKCanvas`。 它不影响与执行任何操作`SKPaint`对象，直到该对象用于呈现在画布上的某些内容。
 
 您可以看到，所有内容绘制后`Scale`调用按比例增加：
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "三重各向异性缩放页屏幕截图")](scale-images/anisotropicscaling-large.png#lightbox "各向异性缩放页上的三个屏幕截图")
 
-另一种方法可以考虑一下`Scale`和`Translate`调用是确定在反向序列中的效果：`Translate`调用将转移路径，因此它将完全可见但面向在画布的左上角。 `Scale`方法然后使该星型相对于左上角更大。
+您可以考虑`Scale`和`Translate`调用的另一种方法是通过反向序列确定效果:`Translate`调用将移动路径, 使其完全可见, 但在画布的左上角。 `Scale`方法然后使该星型相对于左上角更大。
 
 实际上，它将显示 star 是有点大于画布。 问题在于笔划宽度。 `Bounds`属性的`SKPath`指示坐标维数编码在路径中，并且该程序使用来扩展它。 使用特定的笔划宽度呈现路径时，呈现的路径大于画布。
 
@@ -347,4 +347,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

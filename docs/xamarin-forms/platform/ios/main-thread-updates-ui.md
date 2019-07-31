@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的主线程控制更新
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台，使控件的布局和呈现要在主线程上执行更新。
+title: IOS 上的主线程控制更新
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的, 使控制布局和呈现更新能够在主线程上执行。
 ms.prod: xamarin
 ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: b9f39cd33d660999cfa00f2003edab7af731ca7c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9603cccc1f08be057bc66012cdde75e1b7391f1a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925718"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655277"
 ---
-# <a name="main-thread-control-updates-on-ios"></a>在 iOS 上的主线程控制更新
+# <a name="main-thread-control-updates-on-ios"></a>IOS 上的主线程控制更新
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的使控件的布局和呈现更新而不是在后台线程上执行，在主线程上执行。 它应很少需要但在某些情况下可能会阻止崩溃。 通过设置其已在使用的 XAML`Application.HandleControlUpdatesOnMainThread`可绑定属性设置为`true`:
+此 iOS 平台特定用于启用在主线程上执行的控件布局和呈现更新, 而不是在后台线程上执行。 它应很少需要但在某些情况下可能会阻止崩溃。 通过设置其已在使用的 XAML`Application.HandleControlUpdatesOnMainThread`可绑定属性设置为`true`:
 
 ```xaml
 <Application ...
@@ -42,6 +42,6 @@ Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

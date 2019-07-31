@@ -1,28 +1,28 @@
 ---
-title: 故障排除 tvOS 10 使用 Xamarin 生成应用
-description: 本文提供使用 tvOS 10 Xamarin 应用中的多个故障排除提示。 它介绍了与应用商店、 二进制文件兼容性、 CFNetwork HttpProtocol、 CloudKit、 Core 映像、 NSUserActivity 和 UIKit 相关的问题。
+title: 排查用 Xamarin 构建的 tvOS 10 应用的问题
+description: 本文提供了有关在 Xamarin 应用中使用 tvOS 10 的几个疑难解答技巧。 它介绍了与应用商店、二进制兼容性、CFNetwork HttpProtocol、CloudKit、Core Image、NSUserActivity 和 UIKit 相关的问题。
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 97cfe7220f8b351ec30a9f2c7a7347d318378fbc
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 54a4bf2a6f575a55ce9dde8ec87c93e0d56acf9c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830490"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657404"
 ---
-# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>故障排除 tvOS 10 使用 Xamarin 生成应用
+# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>排查用 Xamarin 构建的 tvOS 10 应用的问题
 
-以下部分列出了一些可以使用 Xamarin 和这些问题的解决方案中使用 tvOS 10 时可能发生的已知的问题：
+以下部分列出了在 Xamarin 中使用 tvOS 10 时可能出现的一些已知问题, 以及针对这些问题的解决方案:
 
 - [App Store](#App-Store)
-- [二进制文件兼容性](#Binary-Compatibility)
+- [二进制兼容性](#Binary-Compatibility)
 - [CFNetwork HTTP 协议](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [Core 映像](#CoreImage)
+- [核心映像](#CoreImage)
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
@@ -32,44 +32,44 @@ ms.locfileid: "67830490"
 
 已知问题：
 
-- 在沙盒环境中测试应用内购买时, 可能会两次出现身份验证对话框。
-- 时使用的沙盒环境中承载的内容测试应用内购买，每次应用转至前台，直到内容下载完成时将显示密码对话框中。
+- 在沙盒环境中测试应用内购买时, 身份验证对话框可能出现两次。
+- 在沙盒环境中测试应用内购买的托管内容时, 每次将应用程序置于前台时都会显示密码对话框, 直到内容下载完成。
 
 <a name="Binary-Compatibility" />
 
-## <a name="binary-compatibility"></a>二进制文件兼容性
+## <a name="binary-compatibility"></a>二进制兼容性
 
 已知问题：
 
-- 调用`NSObject.ValueForKey`将`null`密钥将导致异常。
-- 调用时，按名称引用字体`UIFont.WithName`将会导致故障发生。
-- 这两`NSURLSession`并`NSURLConnection`不再为在 TLS 握手期间的 RC4 密码套件`http://`Url。
-- 如果他们要更改超级视图的几何图形中的应用可以挂起`ViewWillLayoutSubviews`或`LayoutSubviews`方法。
-- 对于所有 SSL/TLS 连接，RC4 对称密码现在默认处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，建议应用程序停止使用 sha-1 和 3DES 加密方法越早越好。
+- `NSObject.ValueForKey` 调用`null`将会导致异常。
+- 当调用`UIFont.WithName`时, 按名称引用字体会导致崩溃。
+- 在`NSURLSession` TLS `NSURLConnection`握手期间, 和都不能再用于`http://` url。
+- 如果应用在`ViewWillLayoutSubviews`或`LayoutSubviews`方法中修改 superview 的几何, 则它们可能会挂起。
+- 对于所有 SSL/TLS 连接, 默认情况下, RC4 对称密码处于禁用状态。 此外, 安全传输 API 不再支持 SSLv3, 建议应用程序尽快停止使用 SHA-1 和3DES 加密。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP 协议
 
-`HTTPBodyStream`的属性`NSMutableURLRequest`类必须设置为以来的未打开流`NSURLConnection`和`NSURLSession`现在严格强制实施此要求。
+类的`HTTPBodyStream`属性`NSURLConnection` `NSURLSession`必须设置为未打开的流, 因为现在完全强制实施此要求。 `NSMutableURLRequest`
 
 <a name="CloudKit" />
 
 ## <a name="cloudkit"></a>CloudKit
 
-长时间运行的操作将返回 _"你无权保存文件。"_ 出现错误。
+长时间运行的操作将返回 _"您没有保存文件的权限"。_ 条.
 
 <a name="CoreImage" />
 
-## <a name="core-image"></a>Core 映像
+## <a name="core-image"></a>核心映像
 
-`CIImageProcessor` API 现在支持任意输入的图像计数。 `CIImageProcessor` TvOS 10 beta 1 中包含的 API 将被删除。
+`CIImageProcessor` API 现在支持任意输入图像计数。 `CIImageProcessor`将删除包含在 tvOS 10 beta 1 中的 API。
 
 <a name="NSUserActivity" />
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-提交操作后,`UserInfo`属性的`NSUserActivity`对象可能为空。 显式调用`BecomeCurrent`NSUserActivity 作为当前的解决方法的对象。
+在提交操作之后, `UserInfo` `NSUserActivity`对象的属性可能为空。 显式调用`BecomeCurrent` NSUserActivity 的对象作为当前的解决方法。
 
 <a name="UIKit" />
 
@@ -77,14 +77,14 @@ ms.locfileid: "67830490"
 
 已知问题：
 
-- 将更改为背景的外观`UINavigationBar`，`UITabBar`或`UIToolBar`可能会导致布局处理过程以解决新的外观。 尝试修改这些外观的内部`LayoutSubviews`， `UpdateConstraints`，`WillLayoutSubviews`或`DidUpdateSubviews`事件可能会导致无限布局循环。
-- TvOS 10 中，调用在`RemoveGestureRecognizer`方法的`UIView`对象显式取消任何正在进行中的笔势识别器。
-- 显示的视图控制器现在可能会影响状态条的外观。
-- tvOS 10 要求开发人员调用`base.AwakeFromNib`时创建的子类`UIViewController`并重写`AwakeFromNib`方法。
-- 使用自定义应用程序`UIView`子类重写`LayoutSubviews`和更新之前，调用布局`base.LayoutSubviews`可能会触发 tvOS 10 中的无限布局循环。
-- 特定于方向的或 flippable 图像资产是翻转时分配给`UIButton`对象。
+- 更改对的背景外观的`UINavigationBar`更改`UITabBar` , `UIToolBar`或可能导致布局传递来解析新的外观。 如果`LayoutSubviews`尝试在`UpdateConstraints` 、或`DidUpdateSubviews`事件内修改这些外观, 会导致无限布局循环。 `WillLayoutSubviews`
+- 在 tvOS 10 中, 调用`RemoveGestureRecognizer` `UIView`对象的方法会显式取消任何正在进行的笔势识别器。
+- 呈现的视图控制器现在会影响状态栏的外观。
+- tvOS 10 要求开发人员在进行`base.AwakeFromNib`子类`UIViewController`化和重写`AwakeFromNib`方法时调用。
+- 使用自定义`UIView`子类在调用`LayoutSubviews` `base.LayoutSubviews`之前重写和更新布局的应用可能会在 tvOS 10 中触发无限布局循环。
+- 指定`UIButton`给对象时, 方向特定或 flippable 图像资产不进行翻转。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
-- [什么是 tvOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [TvOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

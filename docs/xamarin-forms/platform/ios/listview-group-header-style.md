@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的 ListView 组标头样式
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的用于控制是否在滚动过程 float ListView 标头单元格。
+title: IOS 上的 ListView 组标头样式
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制在滚动过程中 ListView 标头单元格是否浮动。
 ms.prod: xamarin
 ms.assetid: 099B2C7F-727F-4BCF-903B-87E728108C24
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: e2f6a402d1df8b842e147ab145474688c203aaa6
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f40737799f63c6e0c61fcc6f4f59584222a49d6d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925865"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648323"
 ---
-# <a name="listview-group-header-style-on-ios"></a>在 iOS 上的 ListView 组标头样式
+# <a name="listview-group-header-style-on-ios"></a>IOS 上的 ListView 组标头样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 特定于平台的控件是否[ `ListView` ](xref:Xamarin.Forms.ListView)标头单元格浮动在滚动过程。 设置使用在 XAML`ListView.GroupHeaderStyle`可绑定属性的值的`GroupHeaderStyle`枚举：
+此 iOS 平台特定控制在滚动[`ListView`](xref:Xamarin.Forms.ListView)过程中标题单元是否浮动。 它通过将可`ListView.GroupHeaderStyle`绑定的属性设置为`GroupHeaderStyle`枚举的值, 在 XAML 中使用:
 
 ```xaml
 <ContentPage ...
@@ -41,19 +41,19 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 ```
 
-`ListView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 `ListView.SetGroupHeaderStyle`方法，请在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间，是否用于控制[ `ListView` ](xref:Xamarin.Forms.ListView)标头单元格浮动在滚动过程。 `GroupHeaderStyle`枚举提供两个可能值：
+`ListView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 命名空间`ListView.SetGroupHeaderStyle`中的方法用于控制标题单元是否[`ListView`](xref:Xamarin.Forms.ListView)在滚动过程中浮动。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) `GroupHeaderStyle`枚举提供了两个可能的值:
 
-- `Plain` – 指示标头单元格 float 何时[ `ListView` ](xref:Xamarin.Forms.ListView)是滚动 （默认值）。
-- `Grouped` – 指示标头单元格不浮动何时[ `ListView` ](xref:Xamarin.Forms.ListView)滚动。
+- `Plain`–指示在滚动时[`ListView`](xref:Xamarin.Forms.ListView)标题单元浮动 (默认值)。
+- `Grouped`–指示在滚动时[`ListView`](xref:Xamarin.Forms.ListView) , 标头单元格不浮动。
 
-此外，`ListView.GetGroupHeaderStyle`方法可用于返回`GroupHeaderStyle`应用于[ `ListView` ](xref:Xamarin.Forms.ListView)。
+此外, `ListView.GetGroupHeaderStyle`方法可用于`GroupHeaderStyle`返回应用于的[`ListView`](xref:Xamarin.Forms.ListView)。
 
-结果是，指定`GroupHeaderStyle`值应用于[ `ListView` ](xref:Xamarin.Forms.ListView)，它可以控制标头单元格是否浮动在滚动过程：
+结果是`GroupHeaderStyle` [`ListView`](xref:Xamarin.Forms.ListView), 将指定的值应用于, 后者控制在滚动过程中标题单元格是否浮动:
 
-[![浮点型和非浮动 ListView 标头单元格，在 iOS 上的屏幕截图](listview-group-header-style-images/group-header-styles.png "浮点型和非浮点的标头单元格与 ListView")](listview-group-header-style-images/group-header-styles-large.png#lightbox "使用浮点型和非浮点的标头单元格的 ListView")
+[(listview-group-header-style-images/group-header-styles.png "包含浮动和非浮动标题单元格")![的 iOS listview 上的浮动和非浮动 ListView 标头单元的屏幕截图]](listview-group-header-style-images/group-header-styles-large.png#lightbox "包含浮动和非浮动标题单元格的 ListView")
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

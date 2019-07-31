@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: fb70ea126216642af513036211f7dd2a86fd9559
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 61dedca1b89237bdd4669a63173b1c6e4fde072b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509539"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644309"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>演练-在 Xamarin 中使用本地通知
 
@@ -265,7 +265,7 @@ namespace LocalNotifications
 
 ## <a name="related-links"></a>相关链接
 
-- [LocalNotifications (示例)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
+- [LocalNotifications (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
 - [Android Oreo 通知通道](https://blog.xamarin.com/android-oreo-notification-channels/)
 - [提醒](xref:Android.App.Notification)
 - [NotificationManager](xref:Android.App.NotificationManager)

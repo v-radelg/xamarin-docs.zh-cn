@@ -7,16 +7,16 @@ ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2018
-ms.openlocfilehash: 121d505d578aa20e86977c0da5d69626bbad1f53
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: da923a3542a57b6150e536ecb6649140e57c81e1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289300"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655358"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint)类定义了六个可以下的常规术语分类的属性_效果_。 这些是更改的图形以某种方式正常显示的属性。 SkiaSharp 效果划分为六个类别：
 
@@ -44,9 +44,9 @@ SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint)类定义了六个可以下的常
 
 设置[ `ColorFilter` ](xref:SkiaSharp.SKPaint.ColorFilter)的属性`SKPaint`对象的类型[ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter)更改颜色使用表或矩阵转换。
 
-这些文章是中的所有示例都代码[ **SkiaSharpFormsDemos**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)。 在主页上，选择**SkiaSharp 效果**。
+这些文章是中的所有示例都代码[ **SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)。 在主页上，选择**SkiaSharp 效果**。
 
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

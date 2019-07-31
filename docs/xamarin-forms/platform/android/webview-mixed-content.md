@@ -1,24 +1,24 @@
 ---
-title: Web 视图混合在 Android 上的内容
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用该目标 API 21 或更高版本的 Android 平台特定的应用程序中 web 视图中显示混合的内容。
+title: Android 上的 Web 视图混合内容
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何在面向 API 21 或更高版本的应用程序中使用在 Web 视图中显示混合内容的 Android 平台特定的。
 ms.prod: xamarin
 ms.assetid: 68F908F3-04C5-4B91-B6E5-B7E8357B4154
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 67ab68ceda69f9000bb160d1e443fd82ad7b61b3
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 286a7dceead327d727110d4ebbcecbc2341345b3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924571"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656073"
 ---
-# <a name="webview-mixed-content-on-android"></a>Web 视图混合在 Android 上的内容
+# <a name="webview-mixed-content-on-android"></a>Android 上的 Web 视图混合内容
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合内容中的应用程序面向 API 21 或更高版本。 混合的内容是的内容的最初已加载，通过 HTTPS 连接，但这会通过 HTTP 连接加载资源 （如图像、 音频、 视频、 样式表、 脚本）。 设置使用在 XAML [ `WebView.MixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty)附加属性的值为[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)枚举：
+此 Android 平台特定的控制是否[`WebView`](xref:Xamarin.Forms.WebView)可以在面向 API 21 或更高版本的应用程序中显示混合内容。 混合的内容是的内容的最初已加载，通过 HTTPS 连接，但这会通过 HTTP 连接加载资源 （如图像、 音频、 视频、 样式表、 脚本）。 设置使用在 XAML [ `WebView.MixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty)附加属性的值为[ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)枚举：
 
 ```xaml
 <ContentPage ...
@@ -49,7 +49,7 @@ webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

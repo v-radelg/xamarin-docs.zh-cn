@@ -7,16 +7,16 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4414ce498bdf69e82269137c35af8f27b9e5f541
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410635"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649567"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>将 SkiaSharp 位图保存到文件
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp 应用程序具有创建或修改位图后，应用程序可能想要将位图保存到用户的照片库：
 
@@ -46,7 +46,7 @@ SkiaSharp 应用程序具有创建或修改位图后，应用程序可能想要�
 
 此外， [ `SKCodec` ](xref:SkiaSharp.SKCodec)类有两个方法名为`Create`，可以创建`SKCodec`从压缩源对象，并允许在解码过程中获取更多地涉及应用程序。 (`SKCodec`类在本文中所示[**进行动画处理 SkiaSharp 位图**](animating.md#gif-animation)与解码动画的 GIF 文件。)
 
-如果编码位图，则需要详细信息：编码器必须知道特定的文件格式应用程序想要使用 （JPEG 或 PNG 或其他内容）。 如果需要有损格式，则编码还必须知道所需的质量级别。
+对位图进行编码时, 需要更多信息:编码器必须知道应用程序要使用的特定文件格式 (JPEG 或 PNG 或其他内容)。 如果需要有损格式，则编码还必须知道所需的质量级别。
 
 `SKBitmap`类定义了一个[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法具有以下语法：
 
@@ -68,7 +68,7 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 如果你想要由其他应用程序共享的文件，它必须保存到用户的照片库中。 此任务需要特定于平台的代码以及如何使用 Xamarin.Forms [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)。
 
-**SkiaSharpFormsDemo**项目中[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)应用程序定义`IPhotoLibrary`接口用于`DependencyService`类。 这将定义的语法`SavePhotoAsync`方法：
+**SkiaSharpFormsDemo**项目中[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序定义`IPhotoLibrary`接口用于`DependencyService`类。 这将定义的语法`SavePhotoAsync`方法：
 
 ```csharp
 public interface IPhotoLibrary
@@ -280,7 +280,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 
 `SKManagedWStream`类派生自`SKWStream`（这表示"可写流"）。 `Encode`方法写入该流编码的位图文件。 该代码中的注释是指一些错误检查可能需要执行。
 
-**保存的文件格式**页面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)应用程序使用类似的代码，以便您可以试验各种格式保存位图。
+**保存的文件格式**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序使用类似的代码，以便您可以试验各种格式保存位图。
 
 XAML 文件包含`SKCanvasView`显示位图时，应用程序页的其余部分包含的所有内容时需要调用`Encode`方法的`SKBitmap`。 它具有`Picker`的成员`SKEncodedImageFormat`枚举，`Slider`质量参数有损位图格式的两个`Entry`输入文件名和文件夹名称时，视图和一个`Button`来保存文件。
 
@@ -471,7 +471,7 @@ public partial class SaveFileFormatsPage : ContentPage
 
 [**手指绘画中 SkiaSharp** ](../paths/finger-paint.md)文章演示了如何使用跟踪来实现基元手指绘制程序触摸屏输入。 该程序支持只有一个颜色和只有一个笔划宽度，但它保留整个集合中的绘制`SKPath`对象。
 
-**手指绘制与保存**页面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例还会保留整个集合中的绘制`SKPath`对象，但它还呈现位图，它可以将其保存到照片库上的绘图。
+**手指绘制与保存**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例还会保留整个集合中的绘制`SKPath`对象，但它还呈现位图，它可以将其保存到照片库上的绘图。
 
 此程序大部分都是类似于原始**手指绘制**程序。 一个增强功能是 XAML 文件现在实例化标记按钮**清晰**并**保存**:
 
@@ -698,7 +698,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 [![指保存画图](saving-images/FingerPaintSave.png "手指画图保存")](saving-images/FingerPaintSave-Large.png#lightbox)
 
-在使用非常类似的技术[ **SpinPaint** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)示例。 这也是一个手指绘制的程序，不同之处在于用户绘制然后重现上其其他四个象限的设计的旋转磁盘上。 旋转为磁盘的手指绘制更改颜色：
+在使用非常类似的技术[ **SpinPaint** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)示例。 这也是一个手指绘制的程序，不同之处在于用户绘制然后重现上其其他四个象限的设计的旋转磁盘上。 旋转为磁盘的手指绘制更改颜色：
 
 [![启动画图](saving-images/SpinPaint.png "启动画图")](saving-images/SpinPaint-Large.png#lightbox)
 
@@ -707,5 +707,5 @@ public partial class FingerPaintSavePage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [SpinPaint （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SpinPaint （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)

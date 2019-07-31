@@ -1,54 +1,54 @@
 ---
-title: 使用 Xamarin.iOS 中的用户默认值
-description: 本文介绍如何使用 NSUserDefaults 在 Xamarin iOS 应用程序或扩展中保存默认设置。 其中介绍了使用 NSUserDefaults 在高级别，并讨论了如何读取和写入值。
+title: 在 Xamarin 中使用用户默认值
+description: 本文介绍如何使用使用 nsuserdefaults 在 Xamarin iOS 应用或扩展中保存默认设置。 它从较高层面介绍了使用 nsuserdefaults, 并讨论了如何读取和写入值。
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 688db534d6c99a8fadb7535f0532f9c1e9564707
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1bc00d69f5b00787ba0e16b7e3846d5f18a4bed
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153381"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655136"
 ---
-# <a name="working-with-user-defaults-in-xamarinios"></a>使用 Xamarin.iOS 中的用户默认值
+# <a name="working-with-user-defaults-in-xamarinios"></a>在 Xamarin 中使用用户默认值
 
-_本文介绍如何使用 NSUserDefault Xamarin.iOS 应用程序或扩展中保存默认设置。_
+_本文介绍如何使用 NSUserDefault 在 Xamarin iOS 应用或扩展中保存默认设置。_
 
 
-`NSUserDefaults`类提供一种方法适用于 iOS 的应用和扩展来以编程方式与整个系统的默认系统进行交互。 通过使用默认系统，用户可以配置应用程序的行为或样式设计来满足其首选项 （基于应用的设计）。 例如，若要提供英制的指标的 vs 中的数据或选择一个给定的用户界面主题。
+`NSUserDefaults`类为 iOS 应用和扩展提供了一种以编程方式与系统范围的默认系统交互的方式。 通过使用默认系统, 用户可以配置应用的行为或样式以满足其首选项 (基于应用的设计)。 例如, 若要以指标与英制度量值显示数据, 或选择给定的 UI 主题。
 
-与应用组一起使用时`NSUserDefaults`还提供一种应用 （或扩展） 之间进行通信给定组中。
+与应用组一起使用时`NSUserDefaults` , 还提供一种在给定组内的应用 (或扩展) 之间进行通信的方式。
 
 <a name="About-User-Defaults" />
 
-## <a name="about-user-defaults"></a>有关用户默认值
+## <a name="about-user-defaults"></a>关于用户默认值
 
-正如所述的上方，用户默认设置 (`NSUserDefaults`) 可以添加到应用程序 （或扩展），用于提供最终用户可以修改它来调整其外观或在运行时应用的操作的可配置选项。
+如上所述, 用户默认值 (`NSUserDefaults`) 可添加到应用 (或扩展), 并用于提供可配置的选项, 最终用户可以修改这些选项以在运行时调整应用的外观或操作。
 
-当您的应用程序首次执行时，`NSUserDefaults`从应用程序的用户默认数据库中读取的键和值并将其缓存到内存中以避免打开和读取数据库每个时间值是必需的。 
+当你的应用程序第`NSUserDefaults`一次执行时, 将从应用的用户默认数据库中读取密钥和值, 并将它们缓存到内存中, 以避免每次需要值时打开和读取数据库。 
 
 > [!IMPORTANT]
-> Apple 不再建议开发人员调用`Synchronize`方法直接同步与数据库的内存中缓存。 相反，它将自动调用按周期性间隔，以使内存中缓存与用户的默认数据库同步。
+> Apple 不再建议开发人员调用`Synchronize`方法, 将内存中缓存直接与数据库同步。 相反, 它会定期自动调用, 以使内存中缓存与用户的默认数据库保持同步。
 
-`NSUserDefaults`类包含多个便捷方法，用于读取和写入首选项值为常见数据类型如： 字符串、 整数、 浮点、 布尔值和 Url。 其他类型的数据可以使用存档`NSData`，然后读取或写入到用户默认数据库。 有关详细信息，请参阅 Apple[首选项和设置编程指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)。
+`NSUserDefaults`类包含用于读取和写入常见数据类型 (例如: string、integer、float、boolean 和 url) 的首选项值的便捷方法。 其他类型的数据可以使用`NSData`进行存档, 然后读取或写入用户的默认数据库。 有关详细信息, 请参阅 Apple 的[首选项和设置编程指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)。
 
 <a name="Accessing-the-Shared-NSUserDefaults-Instance" />
 
-## <a name="accessing-the-shared-nsuserdefaults-instance"></a>访问共享的 NSUserDefaults 实例 
+## <a name="accessing-the-shared-nsuserdefaults-instance"></a>访问共享的使用 nsuserdefaults 实例 
 
-为当前用户的设备的情况下，共享的用户将默认实例提供对用户的默认设置的访问。 如果不存在共享默认值对象，它创建第一次访问和使用以下信息初始化：
+共享用户默认实例提供对设备当前用户的用户默认设置的访问权限。 如果共享的默认对象不存在, 则会在第一次访问该对象并将其初始化时, 为其创建以下信息:
 
-- `NSArgumentDomain`包含分析从当前应用程序的默认值。
+- 由从当前应用分析的默认值组成的。`NSArgumentDomain`
 - 应用的捆绑标识符域。
-- `NSGlobalDomain`包含的所有应用都共享的默认值。
-- 为每个用户的首选语言单独的域。
-- `NSRegistrationDomain`与一组可由应用程序以确保搜索始终成功修改的临时默认值。
+- 由所有应用共享的默认值组成的。`NSGlobalDomain`
+- 为每个用户首选语言单独的域。
+- `NSRegistrationDomain`具有一组临时默认值的, 应用程序可以对其进行修改, 以确保搜索始终成功。
 
-若要访问共享的用户将默认实例，请使用以下代码：
+若要访问共享用户默认实例, 请使用以下代码:
 
 ```csharp
 // Get Shared User Defaults
@@ -57,39 +57,39 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 <a name="Accessing-an-App-Group-NSUserDefaults-Instance" />
 
-## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>访问应用程序组使用 NSUserDefaults 实例
+## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>访问应用组使用 nsuserdefaults 实例
 
-如上所述，通过使用应用组`NSUserDefaults`可用于应用程序 （或扩展） 之间进行通信给定组中。 首先，需要确保，应用组和所需的应用程序 Id 是否已正确配置中**证书、 标识符和配置文件**部分[iOS 开发人员中心](https://developer.apple.com/devcenter/ios/)并且都已安装在开发环境中。
+如上所述, 通过使用应用组, `NSUserDefaults`可用于在给定组内的应用 (或扩展) 之间进行通信。 首先, 需要确保已在[IOS 开发人员中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符 & 配置文件**部分中正确配置了应用程序组和所需的应用 id, 并且已在开发环境中安装。
 
-接下来，需要有一个有效的应用程序 Id 为上面创建的应用程序和/或扩展项目和`Entitlements.plist`文件必须包含在与应用程序组启用了并指定应用程序包。
+接下来, 你的应用和/或扩展项目需要具有上面创建的有效应用 id 之一, 并且`Entitlements.plist`该文件必须包含在启用并指定了应用组的应用捆绑包中。
 
-这一切后，共享应用程序组用户默认设置即可访问使用以下代码：
+通过这一切, 可以使用以下代码访问共享应用组用户默认值:
 
 ```csharp
 // Get App Group User Defaults
 var plist = new NSUserDefaults ("group.com.xamarin.todaysharing", NSUserDefaultsType.SuiteName);
 ```
 
-其中`group.com.xamarin.todaysharing`中创建应用程序组**证书、 标识符和配置文件**想要访问。 有关详细信息，请参阅[应用程序组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文档。
+其中`group.com.xamarin.todaysharing` , 是在 "证书" 中创建的应用组 **, 标识符 &** 要访问的配置文件。 有关详细信息，请参阅[应用程序组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文档。
 
 <a name="Reading-Default-Values" />
 
 ## <a name="reading-default-values"></a>读取默认值
 
-具有访问所需的用户默认数据库后，您可以使用键/值对和多种便捷方法根据正在读取的数据类型的默认值来读取值：
+在访问了所需的用户默认数据库后, 可以使用键/值对从默认值中读取值, 并根据所读取的数据类型使用几种便捷方法:
 
-- `ArrayForKey` -返回的数组`NSObjects`的给定密钥值。
-- `BoolForKey` -返回一个布尔值，给定的键。
-- `DataForKey` -返回`NSData`给定键的对象。
-- `DictionaryForKey` -返回`NSDictionary`给定键。
-- `DoubleForKey` -返回给定键的双精度值。
-- `FloatForKey` -返回给定键的 float 值。
-- `IntForKey` -返回给定键的整数值。
-- `StringArrayForKey` -返回的数组`String`对象从给定的密钥值。
-- `StringForKey` -返回给定键的字符串值。
-- `URLForKey` -返回`NSUrl`给定键的值。
+- `ArrayForKey`-返回给定键值的`NSObjects`的数组。
+- `BoolForKey`-返回给定键的布尔值。
+- `DataForKey`-返回`NSData`给定键的对象。
+- `DictionaryForKey`-返回`NSDictionary`给定键的。
+- `DoubleForKey`-返回给定键的双精度值。
+- `FloatForKey`-返回给定键的 float 值。
+- `IntForKey`-返回给定键的整数值。
+- `StringArrayForKey`-从给定键值返回`String`对象的数组。
+- `StringForKey`-返回给定键的字符串值。
+- `URLForKey`-返回`NSUrl`给定键的值。
 
-例如，下面的代码将读取从用户默认设置一个布尔值：
+例如, 以下代码将从用户默认值读取一个布尔值:
 
 ```csharp
 // Get Shared User Defaults
@@ -103,17 +103,17 @@ var useHeader = plist.BoolForKey("UseHeader");
 
 <a name="Writing-Default-Values" />
 
-## <a name="writing-default-values"></a>编写默认值
+## <a name="writing-default-values"></a>写入默认值
 
-就像读取上述值，在访问所需的用户默认的数据库之后, 可以写入值使用键/值对和多种便捷方法根据正在写入的数据类型的默认值：
+例如, 在访问了所需的用户默认数据库之后, 可以使用键/值对将值写入默认值, 并根据要写入的数据类型, 使用几种便捷方法, 将值写入默认值:
 
-- `SetBool` -将给定的布尔值写入到给定的键。
-- `SetDouble` -将给定的双精度值写入到给定的键。
-- `SetFloat` -将给定的浮点值写入给定的键。
-- `SetString` -将给定的字符串值写入给定的键。
-- `SetURL` -写入给定的 URL (`NSUrl`) 到给定键的值。
+- `SetBool`-将给定的布尔值写入给定的键。
+- `SetDouble`-将给定的双精度值写入给定的键。
+- `SetFloat`-将给定的 float 值写入给定的键。
+- `SetString`-将给定的字符串值写入给定的键。
+- `SetURL`-将给定的 URL (`NSUrl`) 值写入给定的键。
 
-例如，下面的代码将写入到用户默认设置一个布尔值：
+例如, 下面的代码会将一个布尔值写入用户默认值:
 
 ```csharp
 // Get Shared User Defaults
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> 当您的应用程序首次执行时，`NSUserDefaults`从应用程序的用户默认数据库中读取的键和值并将其缓存到内存中以避免打开和读取数据库每个时间值是必需的。
+> 当你的应用程序第`NSUserDefaults`一次执行时, 将从应用的用户默认数据库中读取密钥和值, 并将它们缓存到内存中, 以避免每次需要值时打开和读取数据库。
 
 
 
@@ -135,11 +135,11 @@ plist.SetBool(useHeader, "UseHeader");
 
 ## <a name="summary"></a>总结
 
-本文只讨论了`NSUserDefaults`类以及如何使用它来提供一组最终用户可用于配置 Xamarin.iOS 应用程序的选项。 此外，其中包括如何使用应用组扩展其父应用程序之间或在组中的应用之间进行通信。
+本文介绍了`NSUserDefaults`类, 以及如何使用它提供一组可供最终用户用来配置 Xamarin iOS 应用的选项。 此外, 它还介绍了如何使用应用组在扩展及其父应用之间或组中的应用之间进行通信。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [首选项和设置编程指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
 - [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/#//apple_ref/doc/constant_group/NSUserDefaults_Domains)

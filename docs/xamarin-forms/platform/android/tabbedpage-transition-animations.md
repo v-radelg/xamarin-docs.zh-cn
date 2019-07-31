@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上 TabbedPage 页面过渡动画
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 特定于平台的以在您不要将 TabbedPage 页面中导航时禁用过渡动画。
+title: Android 上的 TabbedPage 页面过渡动画
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 在 TabbedPage 中导航页面时禁用过渡动画。
 ms.prod: xamarin
 ms.assetid: 2DB4EA6D-9CED-4137-BAB2-B20A457B1CA3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: b57718038c43f7bc2a9e27e780a0624eb50a54fe
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 4f8d6ec2b06855364970bc9b672c3d3f7b9bfdfc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926422"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649843"
 ---
-# <a name="tabbedpage-page-transition-animations-on-android"></a>在 Android 上 TabbedPage 页面过渡动画
+# <a name="tabbedpage-page-transition-animations-on-android"></a>Android 上的 TabbedPage 页面过渡动画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定于用于时的页面之间导航，或者以编程方式或在使用选项卡栏中，禁用过渡动画[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 设置使用在 XAML`TabbedPage.IsSmoothScrollEnabled`可绑定属性设置为`false`:
+此 Android 平台特定用于在中通过编程方式或使用选项卡栏在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)页面间导航时禁用转换动画。 设置使用在 XAML`TabbedPage.IsSmoothScrollEnabled`可绑定属性设置为`false`:
 
 ```xaml
 <TabbedPage ...
@@ -46,7 +46,7 @@ On<Android>().SetIsSmoothScrollEnabled(false);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

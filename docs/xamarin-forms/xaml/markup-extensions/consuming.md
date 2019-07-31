@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2019
-ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048318"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657280"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML 标记扩展帮助元素特性，若要设置从各种源，从而增强的功能和灵活性的 XAML。 多个 XAML 标记扩展是 XAML 2009 规范的一部分。 这些通常在与 XAML 文件中出现`x`命名空间前缀，且通常被引用到具有此前缀。 本文讨论了以下标记扩展：
 
@@ -27,7 +27,7 @@ XAML 标记扩展帮助元素特性，若要设置从各种源，从而增强的
 - [`x:Null`](#null) – 将属性设置为`null`值。
 - [`OnPlatform`](#onplatform) -自定义根据每个平台的 UI 外观。
 - [`OnIdiom`](#onidiom) -自定义 UI 外观基于的设备运行应用程序的惯用语法。
-- [`DataTemplate`](#datatemplate-markup-extension) -将转换到类型[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。
+- [`DataTemplate`](#datatemplate-markup-extension)-将类型转换为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。
 
 其他 XAML 标记扩展从历史上看其他 XAML 实现中，通过受支持和 Xamarin.Forms 还支持。 这些更全面介绍了其他文章：
 
@@ -44,7 +44,7 @@ XAML 标记扩展帮助元素特性，若要设置从各种源，从而增强的
 
 `x:Static`标记扩展受[ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension)类。 类具有名为的单个属性[ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member)类型的`string`设置为公共常量、 静态属性、 静态字段或枚举成员的名称。
 
-一种常用的方式来使用`x:Static`是第一次定义类与某些常量或静态变量，如这小`AppConstants`类[ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)程序：
+一种常用的方式来使用`x:Static`是第一次定义类与某些常量或静态变量，如这小`AppConstants`类[ **MarkupExtensions** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)程序：
 
 ```csharp
 static class AppConstants
@@ -85,7 +85,7 @@ static class AppConstants
 </Label>
 ```
 
-这可以更进一步简化，但更改，将引入某些新的语法：它包含将置于`StaticExtension`类和设置在大括号中的成员。 所生成的表达式将直接为`FontSize`属性：
+这可以进一步简化, 但更改会引入一些新语法:它包含将`StaticExtension`类和成员设置置于大括号中。 所生成的表达式将直接为`FontSize`属性：
 
 ```xaml
 <Label Text="Label No. 3"
@@ -504,7 +504,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom 标记扩展
 
-`OnIdiom`标记扩展允许您自定义 UI 外观基于的设备运行应用程序的惯用语法。 它受[ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)类，该类定义以下属性：
+`OnIdiom`标记扩展使你可以基于运行应用程序的设备的用法来自定义 UI 外观。 它受[ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)类，该类定义以下属性：
 
 - `Default` 类型的`object`，设置为默认值应用于设备的惯用语言表示的属性。
 - `Phone` 类型的`object`，设置为值用于在手机上应用。
@@ -538,14 +538,14 @@ public partial class TypeDemoPage : ContentPage
 
 [![OnIdiom 演示](consuming-images/onidiomdemo-small.png "OnIdiom 演示")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom 演示")
 
-## <a name="datatemplate-markup-extension"></a>DataTemplate 标记扩展
+## <a name="datatemplate-markup-extension"></a>System.windows.datatemplate> 标记扩展
 
-`DataTemplate`标记扩展可将转换到类型[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 它受`DataTemplateExtension`类，该类定义`TypeName`类型的属性`string`，即设置为的类型名称，以将转换为`DataTemplate`。 `TypeName`属性是 content 属性`DataTemplateExtension`。 因此，对于使用大括号表示 XAML 标记表达式，则可以消除`TypeName=`表达式的一部分。
+标记扩展允许你将类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)转换为。 `DataTemplate` `DataTemplateExtension`类支持该类, 该类`TypeName`定义类型`string`为的属性, 该属性被设置为要转换`DataTemplate`为的类型的名称。 `TypeName`属性是 content 属性`DataTemplateExtension`。 因此, 对于用大括号表示的 XAML 标记表达式, 可以消除`TypeName=`表达式的一部分。
 
 > [!NOTE]
-> 此 XAML 分析器允许`DataTemplateExtension`类，以缩写为`DataTemplate`。
+> XAML 分析器允许`DataTemplateExtension`将类缩写为`DataTemplate`。
 
-此标记扩展的典型用法是在 Shell 应用程序，如下面的示例中所示：
+此标记扩展的典型用法是在 Shell 应用程序中, 如下面的示例中所示:
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -553,9 +553,9 @@ public partial class TypeDemoPage : ContentPage
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-在此示例中，`MonkeysPage`转换从[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)到[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，将其设置的值为`ShellContent.ContentTemplate`属性。 这可确保`MonkeysPage`是仅创建导航到页时，而不是在应用程序启动。
+在此示例中`MonkeysPage` , [`ContentPage`](xref:Xamarin.Forms.ContentPage)从[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)转换为, `ShellContent.ContentTemplate`它设置为属性的值。 这可确保`MonkeysPage`仅在导航到页面时创建, 而不是在应用程序启动时创建。
 
-外壳应用程序的详细信息，请参阅[Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+有关 Shell 应用程序的详细信息, 请参阅[Xamarin。 Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
 
 ## <a name="define-your-own-markup-extensions"></a>定义你自己的标记扩展
 
@@ -563,9 +563,9 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [标记扩展 （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [标记扩展 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [从 Xamarin.Forms 书籍的 XAML 标记扩展一章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [动态样式](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+- [Xamarin。 Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。

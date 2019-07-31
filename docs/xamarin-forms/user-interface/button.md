@@ -7,28 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: d32ef0176f0eff5981720d9e83568a7a40d0a396
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 8c55fecc8605b8bb7312e658e5edf46008f6b6ce
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687137"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651352"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按钮
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _按钮响应点击或单击，将定向的应用程序来执行特定任务。_
 
 [ `Button` ](xref:Xamarin.Forms.Button)是所有 Xamarin.Forms 中最基本的交互控件。 `Button`通常会显示一个短文本字符串，指示某个命令，但它还可以显示图像和位图图像，或文本的组合。 用户按`Button`用手指或用来启动该命令的鼠标单击。
 
-大部分下面讨论的主题中的页对应[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)示例。
+大部分下面讨论的主题中的页对应[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)示例。
 
 ## <a name="handling-button-clicks"></a>处理按钮单击
 
 `Button` 定义[ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)在用户点击时激发的事件`Button`用手指或鼠标指针。 图面中释放手指或鼠标按钮时触发该事件`Button`。 `Button`必须具有其[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)属性设置为`true`，以便响应分流点。
 
-**基本按钮单击**页面[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)示例演示如何实例化`Button`XAML 和句柄中其`Clicked`事件。 **BasicButtonClickPage.xaml**文件包含`StackLayout`两个`Label`和`Button`:
+**基本按钮单击**页面[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)示例演示如何实例化`Button`XAML 和句柄中其`Clicked`事件。 **BasicButtonClickPage.xaml**文件包含`StackLayout`两个`Label`和`Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>禁用按钮
 
-有时应用程序处于特定状态的特定`Button`单击不是有效的操作。 在这些情况下，`Button`应禁用通过设置其`IsEnabled`属性设置为`false`。 典型的示例是`Entry`伴随文件打开的文件名的控件`Button`:`Button`键入一些文本，才应启用`Entry`。
+有时应用程序处于特定状态的特定`Button`单击不是有效的操作。 在这些情况下，`Button`应禁用通过设置其`IsEnabled`属性设置为`false`。 典型示例是`Entry`带有文件打开`Button`的文件名的控件:仅`Button`当已将某些文本键入`Entry`到中时, 才应启用。
 可以使用`DataTrigger`对于此任务，如中所示[**数据触发器**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)一文。
 
 ## <a name="using-the-command-interface"></a>使用命令界面
@@ -152,7 +152,7 @@ button.Clicked += OnButtonClicked;
 
 在 MVVM 应用程序，ViewModel 定义类型的属性`ICommand`，然后连接到 XAML`Button`具有数据绑定的元素。 此外定义了 Xamarin.Forms [ `Command` ]((xref:Xamarin.Forms.Command))并[ `Command<T>` ](xref:Xamarin.Forms.Command`1)类实现`ICommand`接口，并帮助 ViewModel 中定义的类型属性`ICommand`.
 
-命令一文中的更详细地介绍[**命令界面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)但**基本按钮命令**页中[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)示例显示了基本的方法。
+命令一文中的更详细地介绍[**命令界面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)但**基本按钮命令**页中[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)示例显示了基本的方法。
 
 `CommandDemoViewModel`类是非常简单的 ViewModel，用于定义类型的属性`double`名为`Number`，和类型的两个属性`ICommand`名为`MultiplyBy2Command`和`DivideBy2Command`:
 
@@ -268,7 +268,7 @@ class CommandDemoViewModel : INotifyPropertyChanged
 
 可以为两个或多个`Button`元素以绑定到同一`ICommand`属性。 `Button`可以使用可分辨元素[ `CommandParameter` ](xref:Xamarin.Forms.Button.CommandParameter)属性`Button`。 在这种情况下，你将想要使用泛型[ `Command<T>` ](xref:Xamarin.Forms.Command`1)类。 `CommandParameter`对象然后作为参数传递`execute`和`canExecute`方法。 中详细地演示了此技术[**基本命令**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)一部分[**命令接口**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)一文。
 
-[ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)示例还使用此方法在其`MainPage`类。 **MainPage.xaml**文件包含`Button`示例的每个页面：
+[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)示例还使用此方法在其`MainPage`类。 **MainPage.xaml**文件包含`Button`示例的每个页面：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -409,7 +409,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![按下并释放按钮](button-images/PressAndReleaseButton.png "按下并释放按钮")](button-images/PressAndReleaseButton-Large.png)
 
-这种行为具有适用于游戏应用程序：上一个手指`Button`可能会使特定方向移动一个在屏幕对象。
+这种行为具有游戏应用程序:停留在上`Button`的手指可能会使屏幕对象按特定方向移动。
 
 <a name="button-appearance" />
 
@@ -582,7 +582,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 ## <a name="creating-a-toggle-button"></a>创建一个切换按钮
 
-可以为子类`Button`，使其工作原理类似打开-关闭开关：点击按钮一次上切换按钮，然后点击它再次切换它禁用。
+可以将其划分为`Button`子类, 使其类似于一个开关:点击按钮一次, 切换按钮, 然后再次点击以将其关闭。
 
 以下`ToggleButton`类派生自`Button`，并定义名为的新事件`Toggled`和名为的布尔属性`IsToggled`。 这些是相同的两个属性定义的 Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
 
@@ -750,7 +750,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 `Button`类定义[ `ImageSource` ](xref:Xamarin.Forms.Button.Image)属性，允许用户上显示的位图图像`Button`，单独使用或与文本结合使用。 此外可以指定的文本和图像的排列方式。
 
-`ImageSource`属性属于类型[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)，这意味着可以从文件、 嵌入的资源、 URI 或流加载的位图。
+属性的类型[`ImageSource`](xref:Xamarin.Forms.ImageSource)为, 这意味着可以从文件、嵌入的资源、URI 或流加载位图。 `ImageSource`
 
 Xamarin.Forms 支持每个平台允许图像存储在不同的像素的各种设备上运行应用程序可能的解决方法的多个大小。 这些是名为多个位图或将其存储在为设备的视频，操作系统可以选取最佳匹配项的方式显示分辨率。
 
@@ -887,5 +887,5 @@ Button button = new Button
 
 ## <a name="related-links"></a>相关链接
 
-- [ButtonDemos 示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
+- [ButtonDemos 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 - [按钮 API](xref:Xamarin.Forms.Button)

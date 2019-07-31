@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: c85dd8dbc654ee9c55248db1133135a2806f4bf2
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d4d7358ca6188f2528ea200f901823f04324ba3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829895"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647471"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms 支持使用级联样式表 (CSS) 样式可视元素。_
 
@@ -76,7 +76,7 @@ stacklayout>image {
 > [!NOTE]
 > 目前，所有可以实现的 XAML 样式的样式不能使用 CSS 执行。 但是，可以使用 XAML 样式来补充 CSS Xamarin.Forms 当前不支持的属性。 有关 XAML 样式的详细信息，请参阅[样式设置 Xamarin.Forms 应用使用 XAML 样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
-[MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)示例演示了如何使用 CSS 来设置简单的应用程序的样式，并在下面的屏幕截图中所示：
+[MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)示例演示了如何使用 CSS 来设置简单的应用程序的样式，并在下面的屏幕截图中所示：
 
 [![使用 CSS 样式 MonkeyApp 主页](css-images/MonkeyAppMainPage.png "MonkeyApp 主页面的 CSS 样式")](css-images/MonkeyAppMainPage-Large.png#lightbox "MonkeyApp 主页面的 CSS 样式")
 
@@ -187,7 +187,7 @@ stacklayout {
 此选择器标识任何[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)的使用样式表，并将它们的边距设置为统一粗细，即 20 页上的元素。
 
 > [!NOTE]
-> `element`选择器不会确定指定类型的子类。
+> `element`选择器不标识指定类型的子类。
 
 ### <a name="selecting-elements-by-base-class"></a>由基类选择元素
 
@@ -342,7 +342,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`.class`|`.header`|选择所有元素与`StyleClass`包含 header 属性。 请注意，此选择器区分大小写。|
 |`#id`|`#email`|选择所有元素具有`StyleId`设置为`email`。 如果`StyleId`未设置，则回退到`x:Name`。 使用 XAML 时,`x:Name`最好通过`StyleId`。 请注意，此选择器区分大小写。|
 |`*`|`*`|选择所有元素。|
-|`element`|`label`|选择所有元素类型的`Label`，但不是子类。 请注意，此选择器不区分大小写。|
+|`element`|`label`|选择类型`Label`的所有元素, 但不选择子类。 请注意，此选择器不区分大小写。|
 |`^base`|`^contentpage`|选择所有元素具有`ContentPage`作为基类，包括`ContentPage`本身。 请注意，此选择器是不区分大小写，不是 CSS 规范的一部分。|
 |`element,element`|`label,button`|选择所有`Button`元素和所有`Label`元素。 请注意，此选择器不区分大小写。|
 |`element element`|`stacklayout label`|选择所有`Label`内的元素`StackLayout`。 请注意，此选择器不区分大小写。|
@@ -428,7 +428,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 此外，还有没有`inherit`值，因此继承不受支持。 因此不能例如，设置`font-size`布局的属性和预期所有[ `Label` ](xref:Xamarin.Forms.Label)要继承的值的布局中的实例。 是一个例外`direction`属性，它具有默认值的`inherit`。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms 的特定属性
+### <a name="xamarinforms-specific-properties"></a>Xamarin 特定于窗体的属性
 
 此外支持以下 Xamarin.Forms 特定 CSS 属性 (在**值**列中，类型为_斜体_，而字符串文本是`gray`):
 
@@ -447,9 +447,9 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`-xf-thumb-color`|`Slider`|_颜色_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_双精度_ \| `initial` |`-xf-spacing: 8;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms Shell 特定属性
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin。 Forms Shell 特定属性
 
-此外支持以下 Xamarin.Forms Shell 特定 CSS 属性 (在**值**列中，类型为_斜体_，而字符串文本是`gray`):
+以下 Xamarin. 还支持 Forms Shell 特定 CSS 属性 (在 "**值**" 列中, 类型为_斜体_, 而字符串文字为`gray`):
 
 |属性|适用对象|值|示例|
 |---|---|---|---|
@@ -504,10 +504,10 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS 视频**
+**Xamarin 3.0 CSS 视频**
 
 ## <a name="related-links"></a>相关链接
 
-- [MonkeyAppCSS （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+- [MonkeyAppCSS （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

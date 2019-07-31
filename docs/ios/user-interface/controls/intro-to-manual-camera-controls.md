@@ -1,68 +1,68 @@
 ---
-title: 在 Xamarin.iOS 中手动相机控件
-description: 本文档介绍如何在 iOS AVFoundation framework 可用于通过 Xamarin.iOS 启用手动相机控件。 手动相机控件允许用户与控件焦点、 白平衡和曝光度设置。
+title: 在 Xamarin 中手动照相机控件
+description: 本文档介绍如何将 iOS AVFoundation 框架与 Xamarin 一起用于启用手动照相机控制。 手动相机控制允许用户控制焦点、白平衡和曝光设置。
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: c61b3fee9009afb86ccd3fd0e16d7812a8e90feb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5230294dcacf6677e145dd8803d65841b3e22618
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384055"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655438"
 ---
-# <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin.iOS 中手动相机控件
+# <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin 中手动照相机控件
 
-提供的手动相机控件`AVFoundation Framework`在 iOS 8 中，允许在移动应用程序需要完全控制 iOS 设备的照相机。 此级别细粒度的控制可用于创建专业级别的相机应用程序，并通过创建静止图像或视频时调整相机的参数提供艺术家组合。
+手动相机控制 (由 iOS 8 中`AVFoundation Framework`的提供) 允许移动应用程序完全控制 ios 设备的照相机。 这一精细的控制级别可用于创建专业级相机应用程序, 并通过在拍摄静止图像或视频的同时调整照相机的参数来提供艺术家组合。
 
-开发科学记数法或行业应用程序，其中结果不太方便你的正确性或映像的优点，更方便你突出显示某些功能或要获得的图像元素时，这些控件也可以很有用。
+这些控件还可用于开发科学或工业应用程序, 在此类应用程序中, 结果不太适合图像的正确性或优点, 并且更多地强调了如何突出显示所采用的图像的某个功能或元素。
 
 ## <a name="avfoundation-capture-objects"></a>AVFoundation 捕获对象
 
-是否采用视频或静止图像使用的 iOS 设备上的照相机，用于捕获这些映像的过程是很大程度上相同。 这是使用默认的自动照相机控件或一种是充分利用新的手动相机控件的应用程序，则返回 true:
+无论是在 iOS 设备上使用摄像机拍摄视频还是静止图像, 用于捕获这些映像的进程在很大程度上都是相同的。 使用默认的自动照相机控件的应用程序或使用新的手动照相机控件的应用程序是如此:
 
  [![](intro-to-manual-camera-controls-images/image1.png "AVFoundation 捕获对象概述")](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
-输入来自`AVCaptureDeviceInput`成`AVCaptureSession`通过`AVCaptureConnection`。 结果是任一输出为静止图像或视频流。 整个过程由控制`AVCaptureDevice`。
+输入`AVCaptureDeviceInput` `AVCaptureSession`通过将从传入。`AVCaptureConnection` 结果可能输出为静止图像或视频流。 整个过程由控制`AVCaptureDevice`。
 
-## <a name="manual-controls-provided"></a>手动提供的控件
+## <a name="manual-controls-provided"></a>提供的手动控制
 
-使用 iOS 8 提供的新 Api，应用程序可以采取以下的相机功能的控件：
+使用 iOS 8 提供的新 Api, 应用程序可以控制以下相机功能:
 
--  **手动对焦**– 通过允许最终用户直接控制焦点，应用程序可以提供更好地控制获得的图像。
--  **手动曝光**– 应用程序可以通过提供手动控制曝光，向用户提供更多自由并允许他们获得风格化的外观。
--  **手动白平衡**– 白平衡用于调整图像中的颜色，通常以使其看起来真实。 不同光源具有不同的颜色温度，并在捕获映像使用的照相机设置调整以补偿这些差异。 同样，通过允许用户控制白平衡，用户可以进行调整，不能自动完成。
+-  **手动焦点**–通过允许最终用户直接控制焦点, 应用程序可以更好地控制所采用的图像。
+-  **手动曝光**–通过提供对曝光的手动控制, 应用程序可以为用户提供更大的自由度, 并使用户能够实现风格的外观。
+-  **手动白平衡**–用白色余额调整图像中的颜色, 通常是为了使其看起来真实。 不同光源的颜色温度不同, 用于捕获图像的照相机设置会进行调整, 以弥补这些差异。 同样, 通过允许用户控制白平衡, 用户可以进行自动调整。
 
 
-iOS 8 提供的扩展和增强功能到现有 iOS Api 以提供该映像对此进行精细控制捕获进程。
+iOS 8 提供对现有 iOS Api 的扩展和增强功能, 以提供对映像捕获过程的精细控制。
 
-## <a name="bracketed-capture"></a>用括号括起来的捕获
+## <a name="bracketed-capture"></a>带括号捕获
 
-括起来捕获取决于从手动相机控件上面介绍的设置，并允许应用程序中各种不同的方式捕获时，某个时间点。
+带括号的捕获基于上面提供的手动相机控件中的设置, 并允许应用程序以各种不同的方式捕获一段时间。
 
-简单地说，带中括号捕获是静止图像执行的各种图片从设置到图片的突然增加。
+简单地说, 用括号捕获是指使用各种设置从图片到图片的静止图像。
 
 ## <a name="requirements"></a>要求
 
-以下被所要完成本文中介绍的步骤：
+若要完成本文中所述的步骤, 需要满足以下要求:
 
--  **Xcode 7 + 和 iOS 8 或更高版本**– Apple 的 Xcode 7 和 iOS 8 或较新的 Api 需要安装并配置开发人员的计算机上。
--  **Visual Studio for Mac** – 应安装并配置用户设备上的 Visual Studio for Mac 的最新版本。
--  **iOS 8 设备**– 运行 iOS 8 的最新版本的 iOS 设备。 不能在 iOS 模拟器中测试照相机功能。
+-  需要在开发人员的计算机上安装和配置**Xcode 7 + 和 ios 8 或更高版本**的 Xcode 7 和 ios 8 或更高版本的 api。
+-  **Visual Studio for Mac** –应在用户设备上安装和配置 Visual Studio for Mac 的最新版本。
+-  **ios 8 设备**-运行最新版本 ios 8 的 ios 设备。 无法在 iOS 模拟器中测试相机功能。
 
 
-## <a name="general-av-capture-setup"></a>常规 AV 捕获安装程序
+## <a name="general-av-capture-setup"></a>常规 AV 捕获设置
 
-录制视频的 iOS 设备上时，没有始终是必需的一些常规设置代码。 本部分介绍从 iOS 设备的摄像机的视频录制和显示该视频中的所需最少的设置中实时`UIImageView`。
+在 iOS 设备上录制视频时, 某些一般的安装代码始终是必需的。 本部分介绍了从 iOS 设备相机记录视频所需的最小设置, 并将该视频实时显示在中`UIImageView`。
 
 ### <a name="output-sample-buffer-delegate"></a>输出示例缓冲区委托
 
-首要任务之一所需将是一个委托，以监视示例输出缓冲区，并显示到缓冲区中获取图像`UIImageView`应用程序 UI 中。
+首先需要的是用于监视示例输出缓冲区的委托, 并`UIImageView`在应用程序 UI 中将从缓冲区中采集的图像显示为。
 
-以下例程将监视示例缓冲区和更新用户界面：
+以下例程将监视示例缓冲区并更新 UI:
 
 ```csharp
 using System;
@@ -161,17 +161,17 @@ namespace ManualCameraControls
 }
 ```
 
-使用中的位置，此例程`AppDelegate`可以修改，以打开 AV 捕获会话以记录实时视频源。
+在此例程就绪后, `AppDelegate`可以修改以打开 AV 捕获会话来记录实时视频源。
 
 ### <a name="creating-an-av-capture-session"></a>创建 AV 捕获会话
 
-AV 捕获会话用来控制 iOS 设备的照相机中的实时视频录制，并且需要获取视频到 iOS 应用程序。 由于该示例`ManualCameraControl`示例应用程序在多个不同位置使用在捕获会话，它将在中配置`AppDelegate`，供整个应用程序。
+AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录, 并且需要将视频导入到 iOS 应用程序中。 由于示例`ManualCameraControl`应用程序在多个不同位置使用捕获会话, 因此它将`AppDelegate`在中进行配置, 并可用于整个应用程序。
 
-执行以下操作来修改应用程序的`AppDelegate`并添加所需的代码：
+执行以下操作来修改应用程序的`AppDelegate` , 并添加必要的代码:
 
 
-1. 双击`AppDelegate.cs`文件在解决方案资源管理器将其打开进行编辑。
-1. 添加以下 using 语句的文件的顶部：
+1. 双击 "解决方案资源管理器中`AppDelegate.cs`的文件以将其打开以进行编辑。
+1. 将以下 using 语句添加到文件顶部:
     
     ```
     using System;
@@ -187,7 +187,7 @@ AV 捕获会话用来控制 iOS 设备的照相机中的实时视频录制，并
     using CoreFoundation;
     ```
 
-1. 将以下私有变量和计算的属性添加`AppDelegate`类：
+1. 将以下私有变量和计算属性添加到`AppDelegate`类:
     
     ```
     #region Private Variables
@@ -205,7 +205,7 @@ AV 捕获会话用来控制 iOS 设备的照相机中的实时视频录制，并
     #endregion
     ```
   
-1. 重写已完成的方法，并将其更改为：
+1. 重写完成的方法, 并将其更改为:
     
     ```
     public override void FinishedLaunching (UIApplication application)
@@ -270,79 +270,79 @@ AV 捕获会话用来控制 iOS 设备的照相机中的实时视频录制，并
 1. 保存对文件所做的更改。
 
 
-利用此代码，手动相机控件可以轻松地实现进行试验和测试。
+完成此代码后, 可以轻松实现手动照相机控制来进行试验和测试。
 
-## <a name="manual-focus"></a>手动焦点
+## <a name="manual-focus"></a>手动定位
 
-通过允许最终用户来直接执行控件的焦点，应用程序可以提供更具艺术性控制获得的图像。
+通过允许最终用户直接控制焦点, 应用程序可以为所拍摄的图像提供更多的艺术控件。
 
-例如，专业摄影师可以减轻来实现的图像的焦点[散景效果](https://en.wikipedia.org/wiki/Bokeh):
+例如, 专业摄影师可以将图像的聚焦柔化, 以实现[Bokeh 效果](https://en.wikipedia.org/wiki/Bokeh):
 
-[![](intro-to-manual-camera-controls-images/image2.png "散景效果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image2.png "Bokeh 效果")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
-或者，创建[焦点拉取效果](http://www.mediacollege.com/video/camera/focus/pull.html)，如：
+或者, 创建一个[焦点效果](http://www.mediacollege.com/video/camera/focus/pull.html), 如:
 
-[![](intro-to-manual-camera-controls-images/image3.png "焦点请求效果")](intro-to-manual-camera-controls-images/image3.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image3.png "焦点拉取效果")](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
-对于科学家或医疗应用程序的编写器，该应用程序可能想要以编程方式移动可重用功能区的试验。 无论哪种方式的新 API 允许执行最终用户或应用程序来控制焦点时该映像。
+对于科学家或医疗应用程序的作者, 应用程序可能需要以编程方式移动镜头来实现试验。 无论采用哪种方式, 新的 API 都允许最终用户或应用程序在拍摄图像时控制焦点。
 
-### <a name="how-focus-works"></a>焦点的工作原理
+### <a name="how-focus-works"></a>焦点的工作方式
 
-然后再讨论控制 IOS 8 应用程序中的焦点的详细信息。 让我们快速看一下焦点 iOS 的设备中的工作方式：
+在讨论如何在 IOS 8 应用程序中控制焦点的详细信息之前。 让我们快速了解一下如何在 iOS 设备中工作:
 
-[![](intro-to-manual-camera-controls-images/image4.png "IOS 的设备中的焦点工作原理")](intro-to-manual-camera-controls-images/image4.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image4.png "IOS 设备中的焦点如何工作")](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
-光进入 iOS 设备上的相机镜头，并侧重于图像传感器。 从传感器可重用功能区的距离控制焦点 （该图像将显示清晰的区域） 是位置，相对于传感器。 可重用功能区从传感器是越远、 距离对象看起来清晰和接近附近对象看起来清晰。
+浅在 iOS 设备上进入相机镜头, 并专注于图像传感器。 该镜头相对于传感器的距离, 从传感器控制的距离 (图像将显示在尖的区域) 是。 该镜头远离传感器, 距离对象看起来尖, 接近的对象看似尖。
 
-在 iOS 设备，可重用功能区被移动更近或离传感器磁铁和 springs。 因此，可重用功能区的准确位置是不可能的的因为它将不同设备的并可能会受到参数，例如设备的方向或的设备和 spring 年龄。
+在 iOS 设备中, 镜头通过磁体和弹簧更接近或更接近传感器。 因此, 不可能精确定位镜头, 因为它会因设备而异, 并且可能会受参数 (如设备的方向或设备的使用时间和弹簧) 影响。
 
-### <a name="important-focus-terms"></a>重要的考虑条款
+### <a name="important-focus-terms"></a>重要的重点术语
 
-在处理时焦点，有一些开发人员应该已经熟悉的术语：
+在处理焦点时, 开发人员应熟悉几个术语:
 
--  **视野深度**– 最接近和最远的焦点对象之间的距离。 
--  **宏**-这是焦点范围的接近末尾，是可重用功能区专心的最近距离。
--  **无穷大**– 这是焦点范围的远端，此时可重用功能区可以将精力集中最远距离。
--  **Hyperfocal 距离**– 这是焦点范围中的点在框架中最远的对象所在局限于焦点的远端。 换而言之，这是最大化深度的字段的重要位置。 
--  **可重用功能区位置**– 这是什么控制了上述所有其他条款。 这是焦点的控制器的可重用功能区从传感器，从而的距离。
+-  **字段深度**–最接近和最远的聚焦对象之间的距离。 
+-  **宏**-这是 "焦点" 频谱的近距离, 是镜头可聚焦的最接近的距离。
+-  **无穷**–这是最远的重心, 是镜头可聚焦的距离。
+-  **Hyperfocal 距离**–这是在焦点范围内的点, 其中的最远对象刚好处于焦点的最末尾。 换句话说, 这是最大化字段深度的焦点位置。 
+-  **镜头位置**–这就是控制以上所有术语的内容。 这是镜头距传感器的距离, 进而成为焦点控制器。
 
 
-这些条款和记住的知识，新的手动焦点控件可以在 iOS 8 应用程序中成功实现。
+考虑到这些术语和知识, 可以在 iOS 8 应用程序中成功实现新的手动焦点控制。
 
 ### <a name="existing-focus-controls"></a>现有焦点控件
 
-iOS 7 和早期版本中，提供现有焦点控件通过`FocusMode`属性设置为：
+iOS 7 及更早版本, 通过`FocusMode`属性将现有的焦点控件提供为:
 
--   `AVCaptureFocusModeLocked` – 焦点锁定为单个焦点。
--   `AVCaptureFocusModeAutoFocus` – 相机扫描所有焦点点通过可重用功能区，直到找到 sharp 焦点，然后保持不动。
--   `AVCaptureFocusModeContinuousAutoFocus` – 照相机 refocuses 只要它检测到聚焦不准条件。
-
-
-现有的控件还提供了一个可设置通过关注点`FocusPointOfInterest`属性，以便用户可以点击能够专注于特定区域。 应用程序还可以通过监视跟踪可重用功能区移动`IsAdjustingFocus`属性。
-
-此外，通过提供的范围限制`AutoFocusRangeRestriction`属性设置为：
-
--   `AVCaptureAutoFocusRangeRestrictionNear` – 将 autofocus 限制到附近的深度。 在如扫描 QR 码或条码的情况下很有用。
--   `AVCaptureAutoFocusRangeRestrictionFar` – 将 autofocus 限制进行存有一定距离的深度。 在已知是不相关的对象在视图的字段 （例如，窗口框架） 中的位置的情况下很有用。
+-   `AVCaptureFocusModeLocked`–焦点锁定在单个焦点点上。
+-   `AVCaptureFocusModeAutoFocus`–照相机会将镜头扫描到所有焦点上, 直到它找到清晰的焦点, 然后停留在该处。
+-   `AVCaptureFocusModeContinuousAutoFocus`–当 refocuses 检测到超出焦点状态时, 照相机就会出现问题。
 
 
-最后还有`SmoothAutoFocus`速度变慢自动焦点算法和步骤以较小的增量，以避免当录制视频时移动项目的属性。
+现有的控件还通过`FocusPointOfInterest`属性提供了一种可设置的相关点, 以便用户可以点击以将焦点放在特定区域。 应用程序还可以通过监视`IsAdjustingFocus`属性来跟踪镜头运动。
 
-### <a name="new-focus-controls-in-ios-8"></a>IOS 8 中新的焦点控制
+此外, 范围限制由`AutoFocusRangeRestriction`属性提供, 如下所示:
 
-除了已提供 ios 7 及更高版本的功能，现可用于控制 iOS 8 中的焦点的以下功能：
-
--  当锁定焦点时的可重用功能区位置的完全手动控件。
--  键-值观测到的任何焦点模式中的可重用功能区位置。
+-   `AVCaptureAutoFocusRangeRestrictionNear`–将 autofocus 限制为附近深度。 用于扫描 QR 码或条形码等情况。
+-   `AVCaptureAutoFocusRangeRestrictionFar`–限制 autofocus 到远处的深度。 在视图 (例如窗口框架) 的字段中, 这种情况下非常有用。
 
 
-若要实现上述功能`AVCaptureDevice`类进行了修改，以包含一个只读的`LensPosition`属性用于获取相机镜头的当前位置。
+最后有`SmoothAutoFocus`一个属性, 该属性减慢了自动焦点算法, 并以较小的增量进行操作, 以避免在录制视频时移动项目。
 
-若要手动控制的可重用功能区位置，捕获设备必须在锁定焦点模式下。 示例:
+### <a name="new-focus-controls-in-ios-8"></a>IOS 8 中的新焦点控件
+
+除了 iOS 7 及更高版本提供的功能之外, 现在还可以使用以下功能在 iOS 8 中控制焦点:
+
+-  锁定焦点时完全手动控制镜头位置。
+-  任何焦点模式下的镜头位置的键-值观察。
+
+
+为了实现上述功能, `AVCaptureDevice`类已修改为包含一个只读`LensPosition`属性, 该属性用于获取相机镜头的当前位置。
+
+若要手动控制镜头位置, 捕获设备必须处于锁定的焦点模式。 示例:
 
  `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
 
-`SetFocusModeLocked`捕获设备的方法用于调整相机可重用功能区的位置。 可以提供可选的回调例程，以使更改生效时获得通知。 示例:
+捕获设备的方法用于调整照相机镜头的位置。 `SetFocusModeLocked` 在更改生效时, 可以提供可选的回调例程来获取通知。 示例:
 
 ```csharp
 ThisApp.CaptureDevice.LockForConfiguration(out Error);
@@ -350,25 +350,25 @@ ThisApp.CaptureDevice.SetFocusModeLocked(Position.Value,null);
 ThisApp.CaptureDevice.UnlockForConfiguration();
 ```
 
-如上面的代码中所示，捕获设备必须锁定配置中可重用功能区位置的更改之前。 有效的可重用功能区位置值为介于 0.0 和 1.0 之间。
+如上面的代码所示, 必须锁定捕获设备进行配置, 然后才能进行更改。 有效的镜头位置值介于0.0 和1.0 之间。
 
-### <a name="manual-focus-example"></a>手动对焦示例
+### <a name="manual-focus-example"></a>手动焦点示例
 
-使用常规 AV 捕获设置代码中的位置，`UIViewController`可添加到应用程序的情节提要和配置，如下所示：
+使用常规 AV 捕获安装代码后, `UIViewController`可将添加到应用程序的情节提要, 并按如下所示进行配置:
 
-[![](intro-to-manual-camera-controls-images/image5.png "可以添加到应用程序的情节提要 UIViewController，并将其配置如下所示")](intro-to-manual-camera-controls-images/image5.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image5.png "UIViewController 可以添加到应用程序情节提要, 并按如下所示进行配置")](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
-该视图包含以下主要元素：
+视图包含以下主要元素:
 
--  一个`UIImageView`将显示的视频源。
--  一个`UISegmentedControl`，将从自动更改焦点模式下，为已锁定。
--  一个`UISlider`，将显示和更新当前的可重用功能区位置。
-
-
-执行以下操作来布置视图控制器为手动焦点控制：
+-  将`UIImageView`显示视频源的。
+-  将`UISegmentedControl`焦点模式从自动更改为锁定状态的。
+-  `UISlider`将显示并更新当前镜头位置的。
 
 
-1. 添加以下 using 语句：
+执行以下操作以连接视图控制器以进行手动焦点控制:
+
+
+1. 添加以下 using 语句:
 
     ```csharp
     using System;
@@ -385,7 +385,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     using System.Timers;
     ```  
   
-1. 将以下私有变量添加：
+1. 添加以下私有变量:
 
     ```csharp
     #region Private Variables
@@ -394,7 +394,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     #endregion
     ```  
   
-1. 添加以下计算的属性：
+1. 添加以下计算属性:
 
     ```csharp
     #region Computed Properties
@@ -405,7 +405,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     #endregion
     ```  
   
-1. 重写`ViewDidLoad`方法并添加以下代码：
+1. 重写`ViewDidLoad`方法并添加以下代码:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -469,7 +469,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     }
     ```  
   
-1. 重写`ViewDidAppear`方法并添加以下内容来开始录制在视图加载：
+1. 重写`ViewDidAppear`方法并添加以下内容以在视图加载时开始记录:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -487,75 +487,75 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     }
     ```  
   
-1. 在 Auto 模式中对照相机，滑块将如照相机调整焦点自动移动:
+1. 当照相机处于 Auto 模式时, 滑块将在照相机调整焦点时自动移动:
 
-    [![](intro-to-manual-camera-controls-images/image6.png "滑块将自动移动，如照相机调整此示例应用程序中的焦点")](intro-to-manual-camera-controls-images/image6.png#lightbox)
-1. 点击锁定段，并将位置滑块手动调整的可重用功能区位置：
+    [![](intro-to-manual-camera-controls-images/image6.png "当照相机调整此示例应用中的焦点时, 滑块将自动移动")](intro-to-manual-camera-controls-images/image6.png#lightbox)
+1. 点击锁定段, 并拖动 "位置" 滑块以手动调整镜头位置:
 
-    [![](intro-to-manual-camera-controls-images/image7.png "手动调整的可重用功能区位置")](intro-to-manual-camera-controls-images/image7.png#lightbox)
+    [![](intro-to-manual-camera-controls-images/image7.png "手动调整镜头位置")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. 停止应用程序。
 
 
-上面的代码说明了如何监视可重用功能区位置照相机在自动模式下时或使用滑块来控制可重用功能区位置，当它处于锁定模式下时。
+上面的代码演示了如何在照相机处于自动模式时监视镜头位置, 或使用滑块控制处于锁定模式的镜头位置。
 
-## <a name="manual-exposure"></a>手动曝光
+## <a name="manual-exposure"></a>手动公开
 
-曝光指的是相对于源亮度，图像的亮度和由光的多少命中传感器的持续时间以及传感器 （ISO 映射） 的提升级别确定。 通过提供手动控制曝光，应用程序可以更自由地向最终用户，并允许他们获得风格化的外观。
+"公开" 是指相对于源亮度的图像亮度, 由感应器的点击率、传感器的最长持续时间以及传感器的增益级别 (ISO 映射) 决定。 通过提供对公开的手动控制, 应用程序可以为最终用户提供更多自由, 并允许他们实现风格化的外观。
 
-使用手动公开控件，用户可以采用深色和模式那样忧郁不切实际明亮的映像：
+使用手动公开控制, 用户可以从不切实际明亮到暗色和随和:
 
-[![](intro-to-manual-camera-controls-images/image8.png "示例为深色和模式那样忧郁显示从不切实际亮暴露的图像")](intro-to-manual-camera-controls-images/image8.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image8.png "示例显示了从不切实际明亮到暗色和随和的曝光")](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
-同样，这可以使用编程控制，自动为科学记数法的应用程序或通过手动提供的应用程序用户界面的控件。 无论哪种方式，新的 iOS 8 公开 Api 提供对照相机的曝光度设置进行精细控制。
+同样, 这可以使用科学应用程序的编程控件或应用程序用户界面提供的手动控件来自动完成。 无论采用哪种方式, 新的 iOS 8 公开 Api 都提供对相机曝光设置的精细控制。
 
-### <a name="how-exposure-works"></a>公开的工作原理
+### <a name="how-exposure-works"></a>曝光如何工作
 
-然后再讨论控制公开程度 IOS 8 应用程序中的详细信息。 让我们快速看一下公开的工作原理：
+在讨论 IOS 8 应用程序中的公开公开的详细信息之前。 让我们简单了解一下曝光的工作方式:
 
-[![](intro-to-manual-camera-controls-images/image9.png "公开的工作原理")](intro-to-manual-camera-controls-images/image9.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image9.png "曝光如何工作")](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
-结合使用来控制曝光的三个基本元素包括：
+共同控制其公开的三个基本元素是:
 
--  **快门速度**– 这是快门处于打开状态，以便到相机传感器上的光线的时间长度。 较短时间快门处于打开状态，更少 light 允许和更鲜艳的图像是 （更少的运动模糊）。 时间越长，快门处于打开状态，详细 light 让在和越动作发生的模糊。
--  **ISO 映射**– 这是从电影摄影借用的术语，指的是对象发光电影中化学品的敏感度。 在电影中的低 ISO 值具有更少的粒度和更精细度色彩重现;数字传感器上的低 ISO 值具有较少但更少亮度的传感器噪音。 ISO 值越大，则更亮图像，但有更多传感器噪音。 数字传感器上的"ISO"是度量值的[电子提升](https://en.wikipedia.org/wiki/Gain)，不是物理功能。 
--  **可重用功能区 Aperture** – 这是可重用功能区打开的大小。 所有 iOS 设备上被固定的镜头光圈，因此可用于调整曝光的只有两个值的快门速度和 ISO。
-
-
-### <a name="how-continuous-auto-exposure-works"></a>如何持续自动公开的工作原理
-
-在学习前手动曝光的工作原理，这是一个好办法了解如何持续自动公开适用于 iOS 设备。
-
-[![](intro-to-manual-camera-controls-images/image10.png "连续自动公开 iOS 的设备中的工作原理")](intro-to-manual-camera-controls-images/image10.png#lightbox)
-
-首先是自动暴露块，它计算理想暴露的作业，并持续进纸计数统计信息。它使用此信息来计算最佳混合的 ISO 和快门速度，以获取场景也亮起。 此周期称为 AE 循环。
-
-### <a name="how-locked-exposure-works"></a>如何锁定的危害工作原理
-
-接下来，让我们看一下如何锁定的公开适用于 iOS 设备。
-
-[![](intro-to-manual-camera-controls-images/image11.png "如何锁定公开适用于 iOS 设备")](intro-to-manual-camera-controls-images/image11.png#lightbox)
-
-同样，可以尝试计算最佳 iOS 和持续时间值自动公开块。 但是，在此模式下 AE 块已断开连接从计数统计信息引擎。
-
-### <a name="existing-exposure-controls"></a>现有风险控件
-
-iOS 7 和更高版本，提供以下现有公开控件通过`ExposureMode`属性：
-
--   `AVCaptureExposureModeLocked` – 一次示例场景，并使用这些值在整个场景。
--   `AVCaptureExposureModeContinuousAutoExposure` -示例场景持续以确保良好亮起。
+-  **快门速度**-这是打开快门以使相机传感器亮起的时间长度。 快门打开的时间越短, 图像的光线越小, 图像越小 (运动模糊越少)。 快门打开的时间越长, 会有更多的光线, 并产生更多的运动模糊。
+-  **ISO 映射**–这是从胶卷照片借用的一项术语, 表示电影中的化学用品的灵敏度。 电影中的低 ISO 值具有更少的颜色和更精细的颜色重现;数字传感器上的低 ISO 值具有更少的传感器噪音, 但亮度更少。 ISO 值越高, 图像越快, 但传感器噪音越多。 数字传感器上的 "ISO" 是[电子增益](https://en.wikipedia.org/wiki/Gain)的度量, 而不是物理功能。 
+-  **镜头口径**–这是镜头打开的大小。 在所有 iOS 设备上, 镜头口径都是固定的, 因此, 仅有两个可用于调整曝光度的值为快门速度和 ISO。
 
 
-`ExposurePointOfInterest`可以用于点击以选择目标对象上，公开公开场景和应用程序可以监视`AdjustingExposure`属性以查看时调整曝光。
+### <a name="how-continuous-auto-exposure-works"></a>连续自动曝光的工作方式
 
-### <a name="new-exposure-controls-in-ios-8"></a>在 iOS 8 中的新风险控件
+在了解手动曝光的工作方式之前, 最好了解 iOS 设备中的持续自动曝光工作方式。
 
-除了已提供 ios 7 及更高版本的功能，现可用于控制 iOS 8 中的进行展示了以下功能：
+[![](intro-to-manual-camera-controls-images/image10.png "IOS 设备中连续自动曝光的工作方式")](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
--  完全手动自定义的风险。
--  Get、 Set 和键值对观察到 IOS 和快门速度 （持续时间）。
+第一种是自动曝光块, 它可以计算理想的曝光度, 并持续送入计数统计信息。它使用此信息来计算 ISO 和快门速度的最佳组合, 以使场景良好发亮。 此循环称为自动曝光循环。
+
+### <a name="how-locked-exposure-works"></a>锁定的曝光如何工作
+
+接下来, 让我们看看在 iOS 设备中锁定的曝光如何工作。
+
+[![](intro-to-manual-camera-controls-images/image11.png "IOS 设备中锁定的曝光如何工作")](intro-to-manual-camera-controls-images/image11.png#lightbox)
+
+同样, 您具有自动曝光块, 尝试计算最佳 Io 和持续时间值。 但是, 在此模式下, 自动曝光块与计量统计信息引擎断开连接。
+
+### <a name="existing-exposure-controls"></a>现有公开控件
+
+iOS 7 及更高版本, 可通过`ExposureMode`属性提供以下现有公开控制:
+
+-   `AVCaptureExposureModeLocked`–对场景进行一次采样, 并在场景中使用这些值。
+-   `AVCaptureExposureModeContinuousAutoExposure`–对场景进行连续采样, 以确保其正常亮起。
 
 
-若要实现上述功能的新`AVCaptureExposureModeCustom`模式已添加。 自定义模式中的照相机时，以下代码可用于调整曝光持续时间和 ISO:
+可用于点击以通过选择要在其上公开的目标对象来公开场景, 应用程序可以`AdjustingExposure`监视属性以查看何时调整曝光。 `ExposurePointOfInterest`
+
+### <a name="new-exposure-controls-in-ios-8"></a>IOS 8 中的新公开控制
+
+除了 iOS 7 及更高版本提供的功能之外, 现在还可以使用以下功能来控制 iOS 8 中的公开:
+
+-  完全手动自定义公开。
+-  获取、设置和键-值观察 IOS 和快门速度 (持续时间)。
+
+
+为了实现上述功能, 已添加了`AVCaptureExposureModeCustom`新模式。 如果中的照相机是自定义模式, 则可以使用以下代码调整曝光持续时间和 ISO:
 
 ```csharp
 CaptureDevice.LockForConfiguration(out Error);
@@ -563,7 +563,7 @@ CaptureDevice.LockExposure(DurationValue,ISOValue,null);
 CaptureDevice.UnlockForConfiguration();
 ```
 
-在自动和已锁定模式中，应用程序可以调整自动曝光例程使用下面的代码的偏差：
+在 "自动" 和 "锁定" 模式下, 应用程序可以使用以下代码调整自动曝光例程的偏差:
 
 ```csharp
 CaptureDevice.LockForConfiguration(out Error);
@@ -571,7 +571,7 @@ CaptureDevice.SetExposureTargetBias(Value,null);
 CaptureDevice.UnlockForConfiguration();
 ```
 
-最小值和最大设置范围取决于的设备应用程序运行，因此它们应永远不会进行硬编码。 相反，使用以下属性以获取最小值和最大值的范围：
+最小值和最大值设置范围取决于运行应用程序的设备, 因此永远不应进行硬编码。 而是使用以下属性来获取最小值和最大值范围:
 
 -   `CaptureDevice.MinExposureTargetBias` 
 -   `CaptureDevice.MaxExposureTargetBias` 
@@ -581,25 +581,25 @@ CaptureDevice.UnlockForConfiguration();
 -   `CaptureDevice.ActiveFormat.MaxExposureDuration` 
 
 
-如上面的代码中所示，捕获设备必须锁定配置中公开的更改之前。
+如上面的代码所示, 必须锁定捕获设备进行配置, 然后才能进行更改。
 
 ### <a name="manual-exposure-example"></a>手动曝光示例
 
-使用常规 AV 捕获设置代码中的位置，`UIViewController`可添加到应用程序的情节提要和配置，如下所示：
+使用常规 AV 捕获安装代码后, `UIViewController`可将添加到应用程序的情节提要, 并按如下所示进行配置:
 
-[![](intro-to-manual-camera-controls-images/image12.png "可以添加到应用程序的情节提要 UIViewController，并将其配置如下所示")](intro-to-manual-camera-controls-images/image12.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image12.png "UIViewController 可以添加到应用程序情节提要, 并按如下所示进行配置")](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
-该视图包含以下主要元素：
+视图包含以下主要元素:
 
--  一个`UIImageView`将显示的视频源。
--  一个`UISegmentedControl`，将从自动更改焦点模式下，为已锁定。
--  四个`UISlider`将显示和更新的偏移量、 持续时间、 ISO 和偏置控件。
-
-
-执行以下操作来布置视图控制器手动 Exposure Control 的：
+-  将`UIImageView`显示视频源的。
+-  将`UISegmentedControl`焦点模式从自动更改为锁定状态的。
+-  将`UISlider`显示和更新偏移、持续时间、ISO 和偏差的四个控件。
 
 
-1. 添加以下 using 语句：
+执行以下操作以连接视图控制器以进行手动公开控制:
+
+
+1. 添加以下 using 语句:
     
     ```
     using System;
@@ -616,7 +616,7 @@ CaptureDevice.UnlockForConfiguration();
     using System.Timers;
     ```  
   
-1. 将以下私有变量添加：
+1. 添加以下私有变量:
 
     ```csharp
     #region Private Variables
@@ -627,7 +627,7 @@ CaptureDevice.UnlockForConfiguration();
     #endregion
     ```  
   
-1. 添加以下计算的属性：
+1. 添加以下计算属性:
 
     ```csharp
     #region Computed Properties
@@ -638,7 +638,7 @@ CaptureDevice.UnlockForConfiguration();
     #endregion
     ```  
   
-1. 重写`ViewDidLoad`方法并添加以下代码：
+1. 重写`ViewDidLoad`方法并添加以下代码:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -769,7 +769,7 @@ CaptureDevice.UnlockForConfiguration();
     }
     ```  
   
-1. 重写`ViewDidAppear`方法并添加以下内容来开始录制在视图加载：
+1. 重写`ViewDidAppear`方法并添加以下内容以在视图加载时开始记录:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -787,131 +787,131 @@ CaptureDevice.UnlockForConfiguration();
     }
     ```  
   
-1. 在 Auto 模式中对照相机，滑块将移动自动照相机调整曝光：
+1. 当照相机处于 Auto 模式时, 滑块会在相机调整曝光时自动移动:
 
-    [![](intro-to-manual-camera-controls-images/image13.png "如照相机调整曝光，滑块将自动移动")](intro-to-manual-camera-controls-images/image13.png#lightbox)
-1. 点击锁定段，并拖动偏差滑块手动调整的自动风险偏差：
+    [![](intro-to-manual-camera-controls-images/image13.png "当照相机调整曝光度时, 滑块会自动移动")](intro-to-manual-camera-controls-images/image13.png#lightbox)
+1. 点击锁定段并拖动偏向滑块, 手动调整自动曝光度的偏差:
 
-    [![](intro-to-manual-camera-controls-images/image14.png "手动调整自动风险的偏差")](intro-to-manual-camera-controls-images/image14.png#lightbox)
-1. 点击自定义段，并将持续时间和 ISO 滑块手动控制曝光：
+    [![](intro-to-manual-camera-controls-images/image14.png "手动调整自动曝光的偏差")](intro-to-manual-camera-controls-images/image14.png#lightbox)
+1. 点击自定义段, 并拖动 "持续时间" 和 "ISO" 滑块以手动控制曝光:
 
-    [![](intro-to-manual-camera-controls-images/image15.png "将持续时间和 ISO 滑块拖动到手动控制公开")](intro-to-manual-camera-controls-images/image15.png#lightbox)
+    [![](intro-to-manual-camera-controls-images/image15.png "拖动 \"持续时间\" 和 \"ISO\" 滑块以手动控制曝光")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. 停止应用程序。
 
 
-上面的代码说明了如何在自动模式下，照相机时监视的曝光度设置，以及如何使用滑块来控制透露时已锁定或自定义模式。
+上面的代码演示了如何在照相机处于自动模式时监视曝光设置, 以及如何使用滑块来控制处于锁定或自定义模式时的曝光度。
 
-## <a name="manual-white-balance"></a>手动白平衡
+## <a name="manual-white-balance"></a>人工白平衡
 
-白平衡控件允许用户调整图像以使其看起来更加逼真中 colosr 的平衡。 不同光源具有不同的颜色温度，并在捕获映像使用的照相机设置必须进行调整以补偿这些差异。 同样，通过允许用户控制白平衡它们可以进行自动例程是不支持的以实现艺术效果的专业调整。
+白平衡控制允许用户调整图像中的 colosr 余额, 使其看起来更逼真。 不同光源的颜色温度不同, 必须调整用于捕获图像的照相机设置, 以弥补这些差异。 同样, 通过允许用户控制白平衡, 他们可以进行专业调整, 使自动例程无法实现艺术效果。
 
-[![](intro-to-manual-camera-controls-images/image16.png "显示手动白平衡调整示例图像")](intro-to-manual-camera-controls-images/image16.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image16.png "显示人工白余额调整的示例图像")](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
-例如，夏时制具有蓝灰色的强制转换，而 tungsten incandescent 灯具有暖、 黄色橙色色彩。 （困惑，"冷"颜色具有更高版本的颜色温度比"热"的颜色。 颜色温度是物理度量值，一个不感知。）
+例如, 日光具有 blueish 铸造, 而 tungsten incandescent 灯的色调为黄色-橙色。 (令困惑, "冷" 颜色的颜色温度高于 "暖色" 颜色。 颜色温度是一种物理度量, 而不是可感知的。)
 
-人类大脑是很好地补偿颜色温度之间的差异，但这一点相机不能做到。 照相机的工作原理是提升相反范畴内形成的颜色差异调整颜色。
+对于颜色温度之间的差异, 用户想法非常不错, 但这是相机无法完成的工作。 相机的工作方式是提升相对色谱的颜色, 以调整颜色差异。
 
-新 iOS 8 公开 API 允许应用程序的进程的控制，并提供对照相机的白平衡设置进行精细控制。
+新的 iOS 8 公开 API 允许应用程序控制进程, 并提供对照相机白平衡设置的精细控制。
 
-### <a name="how-white-balance-works"></a>如何白色平衡工作原理
+### <a name="how-white-balance-works"></a>白平衡的工作原理
 
-然后再讨论控制 IOS 8 应用程序中的白平衡的详细信息。 让我们快速看一下如何白色平衡工作原理：
+在讨论 IOS 8 应用程序中对白平衡的详细信息之前。 让我们简单了解一下白平衡的工作方式:
 
-中的颜色识别的研究[CIE 1931 RGB 颜色空间和 CIE 1931 XYZ 颜色空间](https://en.wikipedia.org/wiki/CIE_1931_color_space)是第一个数学上定义颜色空间。 在 1931年中创建由国际委员会照明 (CIE)。
+在学习颜色感知的[同时, CIE 1931 RGB 颜色空间和 CIE 1931 XYZ color space](https://en.wikipedia.org/wiki/CIE_1931_color_space)是第一个数学定义的颜色空间。 它们是在1931的照明的国际佣金 (CIE) 上创建的。
 
 [![](intro-to-manual-camera-controls-images/image17.png "CIE 1931 RGB 颜色空间和 CIE 1931 XYZ 颜色空间")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
-上面的图表显示我们的所有颜色人眼中的可见蓝色为浅绿色到红色的深度。 可以使用 X 和 Y 值，绘制关系图上的任意点，如图中所示。
+上面的图表显示了人们眼中看到的所有颜色, 从深蓝色到鲜绿色到红色。 关系图上的任何点都可以用 X 和 Y 值绘制, 如上面的关系图中所示。
 
-为在关系图中可见，有 X 和 Y 值可以是人视觉的范围之外的关系图上绘制的因此不能通过照相机重现这些颜色。
+如图中所示, 有 X 和 Y 值可绘制在图形上, 这些值将在人机愿景范围之外, 因此, 照相机无法重现这些颜色。
 
-调用上述图表中的较小曲线[Planckian 轨迹](https://en.wikipedia.org/wiki/Planckian_locus)，这表示色温 （以度为单位开氏度），数字越大，蓝色的端 （年） 和较低数字红色端 (cooler)。 这些是适用于典型的照明的情况。
+上面的图表中的较小曲线称为[Planckian 出自](https://en.wikipedia.org/wiki/Planckian_locus), 它表示色温 (开氏度), 蓝端 (温度) 上的数字较大, 红色端 (温度) 上的数字更小。 这些方法对典型照明情况非常有用。
 
-在混合的光照条件的白平衡调整将需要偏离 Planckian 轨迹，以使所需的更改。 在这些情况下，将需要调整要移动到绿色或红色/洋红色 CIE 端缩放。
+在混合照明条件下, 白平衡调整需要与 Planckian 出自进行偏离, 才能进行所需的更改。 在这些情况下, 需要将调整移动到 CIE 刻度的绿色或红色/品红端。
 
-iOS 设备通过提升的相反的颜色提高补救颜色转换。 例如，如果一个场景有太多的蓝色，然后红色提升将提升进行补偿。 这些值校准特定设备的因此它们与设备相关的提升。
+iOS 设备通过提高相对颜色增益来补偿颜色转换。 例如, 如果场景的蓝色太多, 则会提升红色增益以进行补偿。 这些增益值是针对特定设备校准的, 因此它们依赖于设备。
 
 ### <a name="existing-white-balance-controls"></a>现有的白平衡控件
 
-iOS 7 和更高版本提供以下现有白平衡控件通过`WhiteBalanceMode`属性：
+iOS 7 和更高版本通过`WhiteBalanceMode`属性提供了以下现有的白平衡控件:
 
--   `AVCapture WhiteBalance ModeLocked` – 采样一次场景和使用这些值在整个场景。
--   `AVCapture WhiteBalance ModeContinuousAutoExposure` -示例场景持续以确保良好平衡。
-
-
-应用程序可以监视和`AdjustingWhiteBalance`属性以查看时调整曝光。
-
-### <a name="new-white-balance-controls-in-ios-8"></a>在 iOS 8 中的新空白平衡控件
-
-除了已提供 ios 7 及更高版本的功能，现可用于在 iOS 8 中的控件白平衡以下功能：
-
--  获得设备 RGB 的完全手动控制。
--  Get、 Set 和键-值观察设备 RGB 获得。
--  支持的白平衡使用灰色卡。
--  与设备无关的颜色空间转换例程。
+-   `AVCapture WhiteBalance ModeLocked`–对场景进行一次采样, 并在场景中使用这些值。
+-   `AVCapture WhiteBalance ModeContinuousAutoExposure`–对场景进行连续采样, 以确保其平衡。
 
 
-若要实现上述功能`AVCaptureWhiteBalanceGain`添加结构具有以下成员：
+应用程序可以监视`AdjustingWhiteBalance`属性, 以查看调整曝光的时间。
+
+### <a name="new-white-balance-controls-in-ios-8"></a>IOS 8 中的新白平衡控制
+
+除了 iOS 7 及更高版本提供的功能之外, 现在还可以使用以下功能在 iOS 8 中控制白平衡:
+
+-  完全手动控制设备 RGB 增益。
+-  获取、设置和键-值观察设备 RGB 增益。
+-  使用灰色卡支持白平衡。
+-  与设备无关颜色空间之间的转换例程。
+
+
+为了实现上述功能, `AVCaptureWhiteBalanceGain`已添加了以下成员的结构:
 
 -   `RedGain` 
 -   `GreenGain` 
 -   `BlueGain` 
 
 
-最大的白平衡提升目前四 （4)，并可以方便从`MaxWhiteBalanceGain`属性。 因此在合法范围是从一 (1) 到`MaxWhiteBalanceGain`(4) 当前。
+最大白余额收益目前为四 (4), 可以从`MaxWhiteBalanceGain`属性准备就绪。 因此, 合法范围为从1到`MaxWhiteBalanceGain` (4)。
 
-`DeviceWhiteBalanceGains`属性可用于观察当前值。 使用`SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains`要调整平衡获得照相机在锁定的白平衡模式下时。
+`DeviceWhiteBalanceGains`属性可用于观察当前的值。 当`SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains`照相机处于锁定的白平衡模式时, 使用调整余额提升。
 
 #### <a name="conversion-routines"></a>转换例程
 
-已添加到 iOS 8 帮助，来回转换，转换例程设备独立颜色空间。 若要实现转换例程`AVCaptureWhiteBalanceChromaticityValues`添加结构具有以下成员：
+转换例程已添加到 iOS 8, 可帮助转换为与设备无关的颜色空间。 若要实现转换例程, `AVCaptureWhiteBalanceChromaticityValues`已添加了以下成员的结构:
 
--   `X` -是一个介于 0 和 1 的值。
--   `Y` -是一个介于 0 和 1 的值。
-
-
-`AVCaptureWhiteBalanceTemperatureAndTintValues`结构也已添加包含下列成员：
-
--   `Temperature` -是浮点点以开氏度为单位的值。
--   `Tint` -是从绿色或洋红色从 0 到 150 与针对绿色的方向值为正和负向洋红色中的偏移量。
+-   `X`-值介于0和1之间。
+-   `Y`-值介于0和1之间。
 
 
-使用`CaptureDevice.GetTemperatureAndTintValues`和`CaptureDevice.GetDeviceWhiteBalanceGains`温度和色彩、 色度和 RGB 之间进行转换方法获得颜色空间。
+还`AVCaptureWhiteBalanceTemperatureAndTintValues`添加了一个结构, 其中包含以下成员:
+
+-   `Temperature`-为开氏度的浮点值。
+-   `Tint`-从0到150的偏移量, 正值为绿色, 正值方向为负值, 在洋红色方向为负值。
+
+
+`CaptureDevice.GetTemperatureAndTintValues`使用`CaptureDevice.GetDeviceWhiteBalanceGains`和方法在温度和淡色之间进行转换, chromaticity 和 RGB 增益颜色空间。
 
 > [!NOTE]
-> 要转换的值越接近 Planckian 轨迹，转换例程是更准确。
+> 转换例程越精确, 要转换的值越接近于 Planckian 出自。
 
 
 
 
 #### <a name="gray-card-support"></a>灰色卡支持
 
-Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 它允许用户将焦点置于物理的灰色卡，介绍了在至少 50%的帧的中心，并使用其调整白平衡。 灰色卡旨在实现出现非特定语言的白色。
+Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它使用户能够专注于至少涵盖帧中心 50% 的物理灰色卡, 并使用它来调整白平衡。 灰色卡的用途是实现显示为中性的白色。
 
-这可以在应用程序中实现，通过提示用户将放在摄像机前, 对物理灰色卡监视`GrayWorldDeviceWhiteBalanceGains`属性并等待，直到值静止。
+在应用程序中, 可以通过提示用户将物理灰色卡置于照相机的前面, 监视`GrayWorldDeviceWhiteBalanceGains`属性并等待直到值向下滚动, 来实现此目的。
 
-应用程序然后会锁定的白平衡提升`SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains`方法使用从值`GrayWorldDeviceWhiteBalanceGains`属性，将应用所做的更改。
+然后, 应用程序使用`SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains` `GrayWorldDeviceWhiteBalanceGains`属性中的值来应用更改, 从而锁定方法的白平衡收益。
 
-白平衡中的更改之前，必须配置锁定捕获设备。
+必须先锁定捕获设备的配置, 然后才能进行更改。
 
-### <a name="manual-white-balance-example"></a>手动白平衡示例
+### <a name="manual-white-balance-example"></a>手册白平衡示例
 
-使用常规 AV 捕获设置代码中的位置，`UIViewController`可添加到应用程序的情节提要和配置，如下所示：
+使用常规 AV 捕获安装代码后, `UIViewController`可将添加到应用程序的情节提要, 并按如下所示进行配置:
 
-[![](intro-to-manual-camera-controls-images/image18.png "可以添加到应用程序的情节提要 UIViewController，并将其配置如下所示")](intro-to-manual-camera-controls-images/image18.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image18.png "UIViewController 可以添加到应用程序情节提要, 并按如下所示进行配置")](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
-该视图包含以下主要元素：
+视图包含以下主要元素:
 
--  一个`UIImageView`将显示的视频源。
--  一个`UISegmentedControl`，将从自动更改焦点模式下，为已锁定。
--  两个`UISlider`将显示和更新的温度和色彩控件。
--  一个`UIButton`用于示例灰色卡 (灰色 World) 空间和设置白色平衡使用这些值。
-
-
-执行以下操作来布置视图控制器为手动白色均衡控件：
+-  将`UIImageView`显示视频源的。
+-  将`UISegmentedControl`焦点模式从自动更改为锁定状态的。
+-  将`UISlider`显示和更新温度和色调的两个控件。
+-  `UIButton`用于对灰色卡 (灰色世界) 空间取样并使用这些值设置白平衡的。
 
 
-1. 添加以下 using 语句：
+执行以下操作以将视图控制器连接到手动白平衡控件:
+
+
+1. 添加以下 using 语句:
 
     ```csharp
     using System;
@@ -928,7 +928,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     using System.Timers;
     ```  
   
-1. 将以下私有变量添加：
+1. 添加以下私有变量:
 
     ```csharp
     #region Private Variables
@@ -937,7 +937,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     #endregion
     ```
   
-1. 添加以下计算的属性：
+1. 添加以下计算属性:
 
     ```csharp
     #region Computed Properties
@@ -948,7 +948,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     #endregion
     ```  
   
-1. 添加以下专用方法，以设置新的空白温度和色彩之间达到平衡：
+1. 添加以下私有方法以设置新的白平衡温度和淡色:
 
     ```csharp
     #region Private Methods
@@ -983,7 +983,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     #endregion
     ```   
   
-1. 重写`ViewDidLoad`方法并添加以下代码：
+1. 重写`ViewDidLoad`方法并添加以下代码:
 
     ```csharp
     public override void ViewDidLoad ()
@@ -1088,7 +1088,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     }
     ``` 
   
-1. 重写`ViewDidAppear`方法并添加以下内容来开始录制在视图加载：
+1. 重写`ViewDidAppear`方法并添加以下内容以在视图加载时开始记录:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -1106,99 +1106,99 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     }
     ```  
   
-1. 保存所做的更改进行编码和运行应用程序。
-1. 在 Auto 模式中对照相机，滑块将移动自动照相机调整白平衡：
+1. 保存对代码所做的更改并运行应用程序。
+1. 当照相机处于 Auto 模式时, 滑块将自动移动, 因为照相机调整了白平衡:
 
-    [![](intro-to-manual-camera-controls-images/image19.png "滑块将自动移动，如照相机调整白平衡")](intro-to-manual-camera-controls-images/image19.png#lightbox)
-1. 点击锁定段并拖动 Temp 和色彩滑块手动调整白平衡：
+    [![](intro-to-manual-camera-controls-images/image19.png "当照相机调整白平衡时, 滑块会自动移动")](intro-to-manual-camera-controls-images/image19.png#lightbox)
+1. 点击锁定段, 并拖动 Temp 和淡色滑块以手动调整白平衡:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "拖动 Temp 和色彩滑块手动调整白平衡")](intro-to-manual-camera-controls-images/image20.png#lightbox)
-1. 已锁定的段仍处于选中状态，将在前面的相机的物理灰色卡，然后点击灰色卡按钮以调整灰色世界的白平衡：
+    [![](intro-to-manual-camera-controls-images/image20.png "拖动 Temp 和淡色滑块以手动调整白色余额")](intro-to-manual-camera-controls-images/image20.png#lightbox)
+1. 在仍选中锁定段的情况下, 将物理灰色卡置于照相机的前面, 然后点击灰色卡按钮, 以将白平衡调整到灰色世界:
 
-    [![](intro-to-manual-camera-controls-images/image21.png "点击灰色卡按钮以调整灰色世界的白平衡")](intro-to-manual-camera-controls-images/image21.png#lightbox)
+    [![](intro-to-manual-camera-controls-images/image21.png "点击灰色卡按钮, 将白平衡调整到灰色世界")](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. 停止应用程序。
 
-上面的代码说明了如何监视的白平衡设置照相机在自动模式下时或使用滑块来控制白平衡处于锁定模式下时。
+上面的代码演示了如何在相机处于自动模式时监视白色平衡设置, 或使用滑杆控制处于锁定模式下的白平衡。
 
-## <a name="bracketed-capture"></a>用括号括起来的捕获
+## <a name="bracketed-capture"></a>带括号捕获
 
-括起来捕获取决于从手动相机控件上面介绍的设置，并允许应用程序中各种不同的方式捕获时，某个时间点。
+带括号的捕获基于上面提供的手动相机控件中的设置, 并允许应用程序以各种不同的方式捕获一段时间。
 
-简单地说，带中括号捕获是静止图像执行的各种图片从设置到图片的突然增加。
+简单地说, 用括号捕获是指使用各种设置从图片到图片的静止图像。
 
-[![](intro-to-manual-camera-controls-images/image22.png "带中括号捕获的工作原理")](intro-to-manual-camera-controls-images/image22.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image22.png "括号捕获的工作原理")](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
-在 iOS 8 中使用带中括号捕获，应用程序可以预设一系列手动相机控件、 发布单独命令以及具有当前场景为每个手动预设返回一系列的图像。
+使用 iOS 8 中带括号的捕获, 应用程序可以预设一系列手动相机控件, 发出单个命令, 并使当前场景为每个手动预设返回一系列图像。
 
-### <a name="bracketed-capture-basics"></a>用括号括起来的捕获基础知识
+### <a name="bracketed-capture-basics"></a>带括号的捕获基础知识
 
-同样，带中括号捕获是静止图像执行的各种设置图片从图片的突然增加。 带中括号捕获可用的类型包括：
+同样, 括在括号中的捕获是指使用各种设置从图片到图片的静止图像。 可用的括起来捕获的类型包括:
 
--  **Auto 暴露括号**– 所有映像都具有不同的偏移量。
--  **手动公开括号**– 所有映像都具有不同的快门速度 （持续时间） 和 ISO 量。
--  **简单迸发括号**– 仍在短期内拍摄的图像的一系列。
-
-
-### <a name="new-bracketed-capture-controls-in-ios-8"></a>带中括号捕获中新的控制 iOS 8
-
-所有带中括号捕获命令实现中`AVCaptureStillImageOutput`类。 使用`CaptureStillImageBracket`方法以获取与给定数组设置的一系列的图像。
-
-已实现两个新类来处理设置：
-
--   `AVCaptureAutoExposureBracketedStillImageSettings` -它具有一个属性， `ExposureTargetBias`，可用来设置自动公开括号的偏量。 
--   `AVCaptureManual`  `ExposureBracketedStillImageSettings` -它具有两个属性，`ExposureDuration`和`ISO`，可用来为手动曝光括号设置快门速度和 ISO。 
+-  **自动曝光支架**–所有映像都具有不同的偏移量。
+-  **手动曝光支架**–所有图像都具有不同的快门速度 (持续时间) 和 ISO 量。
+-  **简单的突发括号**-一系列快速的静止图像。
 
 
-### <a name="bracketed-capture-controls-dos-and-donts"></a>用括号括起来的捕获控制的注意事项
+### <a name="new-bracketed-capture-controls-in-ios-8"></a>IOS 8 中的新括号内捕获控件
 
-#### <a name="dos"></a>注意事项
+所有括起来的捕获命令都是`AVCaptureStillImageOutput`在类中实现的。 `CaptureStillImageBracket`使用方法可通过给定的设置数组获取一系列图像。
 
-下面是使用带中括号捕获 iOS 8 中的控件时应完成的操作的列表：
+实现了两个新类来处理设置:
 
--  准备的最坏的情况捕获这种情况的应用，通过调用`PrepareToCaptureStillImageBracket`方法。
--  假定示例缓冲区，将来自于相同的共享池。
--  若要释放的以前的准备调用已分配的内存，调用`PrepareToCaptureStillImageBracket`试并将其发送一个对象的数组。
+-   `AVCaptureAutoExposureBracketedStillImageSettings`–它有一个属性, `ExposureTargetBias`用于为自动曝光支架设置偏置。 
+-   `AVCaptureManual`  `ExposureBracketedStillImageSettings`–它有两个属性`ExposureDuration` : `ISO`和, 用于为手动曝光支架设置快门速度和 ISO。 
+
+
+### <a name="bracketed-capture-controls-dos-and-donts"></a>用括号括起来的捕获控件
+
+#### <a name="dos"></a>执行的操作
+
+以下列表列出了在 iOS 8 中使用括号内捕获控件时应执行的操作:
+
+-  通过调用`PrepareToCaptureStillImageBracket`方法为最坏大小写捕获情况准备应用。
+-  假设示例缓冲区来自同一共享池。
+-  若要释放前面的准备调用分配的内存, 请再次调用`PrepareToCaptureStillImageBracket`并向其发送一个对象的数组。
 
 
 #### <a name="donts"></a>注意事项
 
-下面是使用带中括号捕获 iOS 8 中的控件时不应完成的操作的列表：
+以下列表列出了在 iOS 8 中使用括号内捕获控件时不应执行的操作:
 
--  不要混合括起来捕获单个捕获中的设置类型。
--  不请求多个`MaxBracketedCaptureStillImageCount`中单个捕获的映像。
+-  不要在单个捕获中混合使用括号内的捕获设置类型。
+-  不要在单个捕获`MaxBracketedCaptureStillImageCount`中请求多于个图像。
 
 
-### <a name="bracketed-capture-details"></a>用括号括起来的捕获的详细信息
+### <a name="bracketed-capture-details"></a>括起来的捕获详细信息
 
-使用 iOS 8 中的带中括号捕获时，应考虑以下详细信息：
+在 iOS 8 中使用带括号的捕获时, 应考虑以下详细信息:
 
--  用括号括起来的设置会暂时覆盖`AVCaptureDevice`设置。
--  Flash 和映像稳定设置仍将被忽略。
--  所有映像必须都使用相同的输出格式 （jpeg、 png 等）
+-  带括号的设置暂时`AVCaptureDevice`替代设置。
+-  忽略闪光和静止图像稳定设置。
+-  所有图像必须使用相同的输出格式 (jpeg、png 等)
 -  视频预览可能会丢弃帧。
--  与 iOS 8 兼容的所有设备上支持用括号括起来的捕获。
+-  与 iOS 8 兼容的所有设备均支持带括号捕获。
 
 
-记住此信息，让我们看看在 iOS 8 中使用带中括号捕获的一个示例。
+考虑到此信息, 让我们看一下在 iOS 8 中使用带括号的捕获的示例。
 
-### <a name="bracket-capture-example"></a>括号捕获示例
+### <a name="bracket-capture-example"></a>方括号捕获示例
 
-使用常规 AV 捕获设置代码中的位置，`UIViewController`可添加到应用程序的情节提要和配置，如下所示：
+使用常规 AV 捕获安装代码后, `UIViewController`可将添加到应用程序的情节提要, 并按如下所示进行配置:
 
-[![](intro-to-manual-camera-controls-images/image23.png "可以添加到应用程序的情节提要 UIViewController，并将其配置如下所示")](intro-to-manual-camera-controls-images/image23.png#lightbox)
+[![](intro-to-manual-camera-controls-images/image23.png "UIViewController 可以添加到应用程序情节提要, 并按如下所示进行配置")](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
-该视图包含以下主要元素：
+视图包含以下主要元素:
 
--  一个`UIImageView`将显示的视频源。
--  三个`UIImageViews`，将显示捕获的结果。
--  一个`UIScrollView`以容纳的视频源和结果视图。
--  一个`UIButton`用于携带括起来捕获一些预设的设置。
-
-
-执行以下操作来布置视图控制器为带中括号捕获：
+-  将`UIImageView`显示视频源的。
+-  三`UIImageViews`个将显示捕获结果的。
+-  用于`UIScrollView`容纳视频源和结果视图的。
+-  , `UIButton`用于采用某些预设设置进行带括号的捕获。
 
 
-1. 添加以下 using 语句：
+执行以下操作以将视图控制器连接到带外捕获:
+
+
+1. 添加以下 using 语句:
 
     ```csharp
     using System;
@@ -1216,7 +1216,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     using CoreImage;
     ```  
   
-1. 将以下私有变量添加：
+1. 添加以下私有变量:
 
     ```csharp
     #region Private Variables
@@ -1226,7 +1226,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     #endregion
     ```    
   
-1. 添加以下计算的属性：
+1. 添加以下计算属性:
 
     ```csharp
     #region Computed Properties
@@ -1236,7 +1236,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     #endregion
     ```  
   
-1. 添加以下专用方法，以生成所需的输出图像视图：
+1. 添加以下私有方法以生成所需的输出图像视图:
 
     ```csharp
     #region Private Methods
@@ -1263,7 +1263,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     #endregion
     ```  
   
-1. 重写`ViewDidLoad`方法并添加以下代码：
+1. 重写`ViewDidLoad`方法并添加以下代码:
     
     ```
     public override void ViewDidLoad ()
@@ -1322,7 +1322,7 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     ```
     
   
-1. 重写`ViewDidAppear`方法并添加以下代码：
+1. 重写`ViewDidAppear`方法并添加以下代码:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
@@ -1340,23 +1340,23 @@ Apple 使用灰色世界的术语来指代内置到 iOS 8 的灰色卡支持。 
     
     ```  
     
-1. 保存所做的更改进行编码和运行应用程序。
-1. 帧场景并点击捕获括号按钮：
+1. 保存对代码所做的更改并运行应用程序。
+1. 将场景画为一段, 然后点击 "捕获括号" 按钮:
 
-    [![](intro-to-manual-camera-controls-images/image24.png "想象一个场景并点击捕获括号按钮")](intro-to-manual-camera-controls-images/image24.png#lightbox)
-1. 轻扫从右到左查看三个执行的带中括号捕获的映像：
+    [![](intro-to-manual-camera-controls-images/image24.png "将场景画为一段")](intro-to-manual-camera-controls-images/image24.png#lightbox)
+1. 向左轻扫可查看按括号捕获拍摄的三个图像:
 
-    [![](intro-to-manual-camera-controls-images/image25.png "轻扫从右到左查看三个执行的带中括号捕获的映像")](intro-to-manual-camera-controls-images/image25.png#lightbox)
+    [![](intro-to-manual-camera-controls-images/image25.png "向左轻扫可查看按括号捕获拍摄的三个图像")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. 停止应用程序。
 
 
-上面的代码说明了如何配置并在 iOS 8 中其执行自动泄露括起来捕获。
+上面的代码演示了如何在 iOS 8 中配置和采用自动曝光包含的捕获。
 
 ## <a name="summary"></a>总结
 
-在本文中我们有涵盖 iOS 8 提供的新的手动相机控件简介，并介绍其功能和它们的工作原理的基础知识。 我们给出手动焦点、 手动曝光和手动白平衡的示例。 最后，我们给出示例采用括起来捕获使用前面所述的手动相机控件
+在本文中, 我们介绍了 iOS 8 提供的新手动摄像头控制, 并介绍了其功能及其工作原理的基础知识。 我们提供了手动重点、手动曝光和人工白平衡的示例。 最后, 我们提供了一个示例, 其中使用前面讨论过的手动照相机控件
 
 ## <a name="related-links"></a>相关链接
 
-- [ManualCameraControls （示例）](https://developer.xamarin.com/samples/monotouch/ManualCameraControls)
+- [ManualCameraControls (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
 - [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)

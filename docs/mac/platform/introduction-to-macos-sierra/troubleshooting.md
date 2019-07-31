@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 3bb2acd5ef560afa787c2746133c05066a15cf9e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8959527f0be7b4d5a3e0a2de5f0db4a4a25fa305
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511800"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647898"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin macOS Sierra 疑难解答
 
@@ -94,5 +94,5 @@ WebGeolocation 要求使用安全 (`https://`) URL 来处理 iOS 10 和 macOS Si
 
 ## <a name="related-links"></a>相关链接
 
-- [Mac 示例](https://developer.xamarin.com/samples/mac/)
+- [Mac 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [MacOS 10.12 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

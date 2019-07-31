@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 3bbea036efef44077ccbd28a16af06c97cd7026b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6363f84cb9c947fe8035b51c9f7aed05be6be9e0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61230298"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649209"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>将数据添加到选取器的项集合
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 
 _选取器视图是一个用于选择文本项中的数据列表控件。本文介绍如何通过将其添加到项目集合中填充数据选取器以及如何响应用户的项选择。_
 
-## <a name="populating-a-picker-with-data"></a>填充数据选取器
+## <a name="populating-a-picker-with-data"></a>使用数据填充选取器
 
 在 Xamarin.Forms 2.3.4，填充的过程之前[ `Picker` ](xref:Xamarin.Forms.Picker)的数据是添加到只读模式显示的数据[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合，其类型`IList<string>`. 集合中的每个项的类型必须为`string`。 项可以在 XAML 中通过初始化中添加`Items`具有一系列属性`x:String`项：
 
@@ -54,7 +54,7 @@ picker.Items.Add("Japanese Macaque");
 
 除了添加使用数据`Items.Add`方法中，数据还可以插入到集合使用`Items.Insert`方法。
 
-## <a name="responding-to-item-selection"></a>响应的项选择
+## <a name="responding-to-item-selection"></a>响应项目选择
 
 一个[ `Picker` ](xref:Xamarin.Forms.Picker)支持一次的一项选择。 当用户选择某个项， [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)事件触发时，和[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)属性更新为一个整数，表示列表中的选定项的索引。 `SelectedIndex`属性是一个从零开始的数字，指示用户选择的项。 如果未不选择任何项，这是这种情况时`Picker`首次创建和初始化，`SelectedIndex`将为-1。
 
@@ -83,5 +83,5 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [选取器演示 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+- [选取器演示 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 - [选取器](xref:Xamarin.Forms.Picker)

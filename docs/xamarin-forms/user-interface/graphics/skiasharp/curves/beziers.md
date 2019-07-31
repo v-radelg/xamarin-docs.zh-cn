@@ -7,22 +7,22 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 58cf11b2a88e0c399ee197e9c8365d7deafd0f39
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61229552"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646226"
 ---
 # <a name="three-types-of-bzier-curves"></a>贝塞尔曲线的三种类型
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 呈现三次方、 二次，和圆锥贝塞尔曲线_
 
 圣皮埃尔贝塞尔 （1910年 – 1999 年），汽车公司 Renault，计算机辅助设计的汽车正文使用曲线的法语工程师命名贝塞尔曲线。
 
-贝塞尔曲线是已知成为非常适合于交互设计：它们都运行正常&mdash;换而言之，没有会导致无限或难以处理的曲线的 singularities&mdash;并且它们通常是那样令人满意：
+贝塞尔曲线已知非常适合交互设计:它们表现得很&mdash;好, singularities 不会导致曲线变得无限大或难以&mdash;操作, 并且通常具
 
 ![](beziers-images/beziersample.png "示例贝塞尔曲线")
 
@@ -493,7 +493,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ![](beziers-images/conicarc.png "圆弧的锥形弧呈现")
 
-Trigonometry 可用于确定从圆的中心管理点的距离：它是半角度 α 的余弦值除以圆的半径。 若要开始和结束点之间绘制一个圆弧，将权重设置为该同一一半角度的余弦。 请注意，是否角是 180 度，然后切线永远不会满足和权重为零。 但对于角度小于 180 度、 数学计算工作正常。
+您可以使用三角函数来确定控制点与圆心中心之间的距离:它是圆的半径除以α角度的余弦值。 若要开始和结束点之间绘制一个圆弧，将权重设置为该同一一半角度的余弦。 请注意，是否角是 180 度，然后切线永远不会满足和权重为零。 但对于角度小于 180 度、 数学计算工作正常。
 
 **圆锥圆弧**页说明了这一点。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)文件实例化`Slider`用于选择表示的角度。 `PaintSurface`处理程序中的[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)代码隐藏文件计算的控制点和重量：
 
@@ -557,4 +557,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

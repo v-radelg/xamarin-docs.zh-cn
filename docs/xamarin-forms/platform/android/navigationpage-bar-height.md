@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的 NavigationPage 栏高度
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的设置上 NavigationPage 的导航栏的高度。
+title: Android 上的 NavigationPage 栏高度
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的来设置 NavigationPage 上导航栏的高度。
 ms.prod: xamarin
 ms.assetid: C8A73B64-FE70-408A-A72E-8AF147F0C52C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: e0d7c16edb3ec11c2ae27a60152fac31fe44dd5e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 501ea85a12a6e9b8b4198e0391e7ec8a16605069
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926561"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649994"
 ---
-# <a name="navigationpage-bar-height-on-android"></a>在 Android 上的 NavigationPage 栏高度
+# <a name="navigationpage-bar-height-on-android"></a>Android 上的 NavigationPage 栏高度
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 特定于平台的设置在导航栏的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 设置使用在 XAML [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)可绑定属性设置为一个整数值：
+此 Android 平台特定的设置上[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)导航栏的高度。 设置使用在 XAML [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)可绑定属性设置为一个整数值：
 
 ```xaml
 <NavigationPage ...
@@ -52,7 +52,7 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

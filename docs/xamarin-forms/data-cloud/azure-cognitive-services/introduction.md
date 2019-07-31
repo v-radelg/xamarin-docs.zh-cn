@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms 和 Azure 认知服务简介
+title: Xamarin. Forms 和 Azure 认知服务简介
 description: 本文演示如何调用的一些 Microsoft 认知服务 Api 的示例应用程序的简介。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 36aa53a6d257d8f5311cab84485e608bef3e97f8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659264"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652316"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms 和 Azure 认知服务简介
+# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms 和 Azure 认知服务简介
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft 认知服务是一组 Api、 Sdk 和适用于开发人员可以通过添加面部识别、 语音识别和语言理解等功能，使其应用程序更智能服务。本文演示如何调用的一些 Microsoft 认知服务 Api 的示例应用程序的简介。_
 
@@ -50,9 +50,9 @@ _Microsoft 认知服务是一组 Api、 Sdk 和适用于开发人员可以通过
 
 `RateAppPage`使用户可以拍照其人脸、 与显示返回情感提交人脸 api。
 
-## <a name="understand-the-application-anatomy"></a>了解应用程序剖析
+## <a name="understand-the-application-anatomy"></a>了解应用程序解析
 
-示例应用程序的共享的代码项目包含五个主文件夹：
+示例应用程序的共享代码项目包含五个主要文件夹:
 
 |文件夹|目标|
 |--- |--- |
@@ -62,7 +62,7 @@ _Microsoft 认知服务是一组 Api、 Sdk 和适用于开发人员可以通过
 |Utils|包含`Timer`类，该类用于通过`AuthenticationService`类，以续订时间间隔为 9 分钟的 JWT 访问令牌。|
 |Views|包含应用程序页。|
 
-共享的代码项目还包含一些重要的文件：
+共享代码项目还包含一些重要文件:
 
 |文件|目标|
 |--- |--- |
@@ -80,7 +80,7 @@ _Microsoft 认知服务是一组 Api、 Sdk 和适用于开发人员可以通过
 
 此外，以下 NuGet 包还安装其自己的依赖项。
 
-### <a name="model-the-data"></a>数据建模
+### <a name="model-the-data"></a>为数据建模
 
 示例应用程序使用`TodoItem`类显示在本地 SQLite 数据库中存储的数据建模。 以下代码示例演示 `TodoItem` 类：
 
@@ -105,9 +105,9 @@ public class TodoItem
 - **SaveItemAsync** – 创建或更新本地 SQLite 数据库中的项。
 - **DeleteItemAsync** – 从本地 SQLite 数据库中删除指定的项。
 
-### <a name="platform-project-implementations"></a>平台的项目实现
+### <a name="platform-project-implementations"></a>平台项目实现
 
-`Services`文件夹的共享的代码项目中包含`IFileHelper`并`IAudioRecorderService`使用的接口`DependencyService`类用来定位在平台项目中实现接口的类。
+共享`Services`代码项目中的文件夹`IFileHelper`包含`DependencyService`类使用的`IAudioRecorderService`和接口, 这些类用于在平台项目中查找实现接口的类。
 
 `IFileHelper`接口由实现`FileHelper`每个平台项目中的类。 此类包含单个方法`GetLocalFilePath`，这会返回存储的 SQLite 数据库的本地文件路径。
 
@@ -125,4 +125,4 @@ public class TodoItem
 ## <a name="related-links"></a>相关链接
 
 - [Microsoft 认知服务文档](https://www.microsoft.com/cognitive-services/documentation)
-- [Todo 认知服务 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Todo 认知服务 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

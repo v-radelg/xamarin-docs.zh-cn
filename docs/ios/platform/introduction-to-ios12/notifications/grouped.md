@@ -1,36 +1,36 @@
 ---
-title: 在 Xamarin.iOS 中分组的通知
-description: 与 iOS 12，就可以向组中的通知中心或由应用程序或线程在锁定屏幕通知。 本文档介绍如何将发送线程和非线程的通知使用 Xamarin.iOS。
+title: Xamarin 中的分组通知
+description: 使用 iOS 12, 可以在通知中心或锁定屏幕上按应用程序或线程对通知进行分组。 本文档介绍如何通过 Xamarin 发送线程和 unthreaded 通知。
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 6798c4c5fa7502ba5e99cb8bc209468acaa4a9ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3edaabe287bc2b37d2ec5a759ada9f59441c6d3a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402416"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652574"
 ---
-# <a name="grouped-notifications-in-xamarinios"></a>在 Xamarin.iOS 中分组的通知
+# <a name="grouped-notifications-in-xamarinios"></a>Xamarin 中的分组通知
 
-默认情况下，iOS 12 将一个组中放置的所有应用的通知。 锁定屏幕和通知中心显示该组为与最新通知在最前面的堆栈。 用户可以展开组以查看它包含并消除整个组的所有通知。
+默认情况下, iOS 12 将所有应用的通知放置在一个组中。 锁定屏幕和通知中心将此组显示为最顶部有最新通知的堆栈。 用户可以展开组以查看它包含的所有通知, 并将整个组关闭。
 
-应用还可以通过线程，使用户更轻松地查找并与他们感兴趣的特定信息交互组通知。
+应用还可以按线程对通知进行分组, 使用户能够更轻松地找到所需的特定信息并与其进行交互。
 
-## <a name="sample-app-groupednotifications"></a>应用程序示例：GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>示例应用:GroupedNotifications
 
-若要了解如何使用 Xamarin.iOS 分组的通知，看一看[GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)示例应用程序。
+若要了解如何对 Xamarin 使用分组通知, 请查看[GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)示例应用。
 
-此示例应用程序模拟与各种朋友发送每条消息的通知和对其进行分组的线程的对话。 它还演示了如何非线程的通知登录的应用程序级别组。
+此示例应用模拟与各个朋友的对话, 发送每条消息的通知并按线程对消息进行分组。 它还演示了如何在应用程序级别的组中 unthreaded 通知。
 
-本指南中的代码段来自此示例应用。
+本指南中的代码片段来自此示例应用。
 
-## <a name="request-authorization-and-allow-foreground-notifications"></a>请求授权，并允许前台通知
+## <a name="request-authorization-and-allow-foreground-notifications"></a>请求授权并允许前台通知
 
-应用可以发送本地通知之前，它必须请求执行此操作的权限。 在示例应用[ `AppDelegate` ](xref:UIKit.UIApplicationDelegate)，则[ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))方法请求此权限：
+在应用可以发送本地通知之前, 它必须请求权限才能执行此操作。 在示例应用程序[`AppDelegate`](xref:UIKit.UIApplicationDelegate)中[`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) , 方法请求此权限:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-[ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) （设置上面） 用于[ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter)决定前台应用程序是否应通过调用完成处理程序传递给显示传入通知[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
+(为上面设置) [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))[决定前景应用是否应通过调用传递给的完成处理程序来显示传入通知:`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate)
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,18 +56,18 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-[ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions)参数指示应用应显示警报，但不是播放声音或更新锁屏提醒。
+[`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions)参数指示应用应显示警报, 但不播放声音或更新徽章。
 
-## <a name="threaded-notifications"></a>线程的通知
+## <a name="threaded-notifications"></a>线程通知
 
-点击的示例应用**与 Alice 的消息**按钮重复，使其与名为 Alice 朋友发送通知的会话。
-因为此会话通知都属于同一个线程，锁定屏幕和通知中心将它们组合在一起。
+重复**使用 Alice**按钮点击示例应用的消息, 让其使用名为 Alice 的朋友发送会话通知。
+由于此对话的通知是同一线程的一部分, 因此锁屏界面和通知中心将它们组合在一起。
 
-若要使用不同的友元启动会话，请点击**选择新朋友**按钮。 此会话的通知出现在一个单独的组。
+若要开始与其他朋友的对话, 请点击 "**选择新朋友**" 按钮。 此对话的通知显示在单独的组中。
 
 ### <a name="threadidentifier"></a>ThreadIdentifier
 
-随时示例应用程序启动新线程，它将创建唯一的线程标识符：
+每当示例应用启动新线程时, 它都会创建一个唯一的线程标识符:
 
 ```csharp
 void StartNewThread()
@@ -77,13 +77,13 @@ void StartNewThread()
 }
 ```
 
-若要发送线程的通知，示例应用程序：
+若要发送线程通知, 示例应用:
 
-- 检查应用程序是否已授权发送通知。
-- 创建 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-对象的通知的内容和设置其 [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
-为上面创建的线程标识符。
-- 创建一个请求，并计划通知：
+- 检查应用是否有权发送通知。
+- 创建一个[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+通知内容的对象, 并将其[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
+到上面创建的线程标识符。
+- 创建请求并计划通知:
 
 ```csharp
 async partial void ScheduleThreadedNotification(UIButton sender)
@@ -119,29 +119,29 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 }
 ```
 
-从具有相同的线程标识符相同的应用程序的所有通知将都出现在相同的通知组。
+同一应用中具有相同线程标识符的所有通知都将出现在同一通知组中。
 
 > [!NOTE]
-> 若要设置远程通知的线程标识符，将添加`thread-id`关键通知的 JSON 有效负载。 请参阅 Apple[生成远程通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)文档的更多详细信息。
+> 若要在远程通知上设置线程标识符, 请将`thread-id`该密钥添加到通知的 JSON 有效负载中。 有关更多详细信息, 请参阅 Apple[生成远程通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)文档。
 
 ### <a name="summaryargument"></a>SummaryArgument
 
-`SummaryArgument` 指定如何通知会影响属于通知的通知组的左下角会出现的摘要文本。 iOS 中同一组中的通知若要创建的总体摘要说明的聚合摘要文本。
+`SummaryArgument`指定通知将如何影响出现在通知所属的通知组左下角的摘要文本。 iOS 将汇总文本从同一组中的通知聚合起来, 以创建整体摘要说明。
 
-示例应用使用摘要参数作为消息的作者。 使用此方法，可能会使用 Alice 的六个通知的一组的摘要文本**Alice 和我的 5 个更多通知**。
+示例应用使用消息的作者作为 summary 参数。 使用此方法时, 使用 Alice 的六个通知组的摘要文本可能会有**5 个来自 Alice 和我的通知**。
 
-## <a name="unthreaded-notifications"></a>非线程的通知
+## <a name="unthreaded-notifications"></a>Unthreaded 通知
 
-示例应用程序的每次点击**约会提醒**按钮发送一个各种约会提醒通知。 由于这些提醒不线程的因此它们显示在锁定屏幕上的应用程序级别通知组和通知中心。
+每点击一次示例应用的**约会提醒**按钮, 都将发送各种约会提醒通知。 由于这些提醒不是串接的, 它们显示在锁屏界面和通知中心的应用程序级通知组中。
 
-若要发送的非线程的通知，示例应用程序的`ScheduleUnthreadedNotification`方法使用与上面类似的代码。
-但是，它不会设置`ThreadIdentifier`上`UNMutableNotificationContent`对象。
+若要发送 unthreaded 通知, 示例应用的`ScheduleUnthreadedNotification`方法使用类似于上面的代码。
+但是, 它不会`ThreadIdentifier` `UNMutableNotificationContent`在对象上设置。
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用程序 – GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)
-- [在 Xamarin.iOS 中使用的用户通知框架](~/ios/platform/user-notifications/index.md)
-- [什么是用户通知 (WWDC 2018) 中的新增功能](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [使用分组的通知 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
-- [最佳实践和什么是用户通知 (WWDC 2017) 中的新增功能](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [示例应用– GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [Xamarin 中的用户通知框架](~/ios/platform/user-notifications/index.md)
+- [用户通知中的新增功能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [使用分组通知 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
+- [用户通知中的最佳实践和新增功能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
 - [生成远程通知 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

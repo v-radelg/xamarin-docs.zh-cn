@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: f9a3f6301005210d221f3223607e82adc0971a32
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 4aae2a206f07ea6caa7fc0d7530fb9fec05ce5f0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741019"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648427"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 是用于呈现数据，尤其是需要滚动的长列表的列表视图。
+[`ListView`](xref:Xamarin.Forms.ListView)是用于显示数据列表的视图, 特别是需要滚动的长列表。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 用于呈现数据的列表视图使用不同的布局规范。 它旨在提供更灵活和高性能替代方法[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个视图, 用于显示使用不同布局规范的数据列表。 它旨在提供更灵活、更高的性能替代方法[`ListView`](xref:Xamarin.Forms.ListView)。 有关详细信息, 请参阅[Xamarin. Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>用例
 
@@ -62,10 +62,10 @@ ListView 还支持多种交互样式，包括：
 
 ## <a name="related-links"></a>相关链接
 
-- [使用与 ListView （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
-- [两个双向绑定 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [构建在单元格 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [自定义单元格 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
-- [分组 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [自定义呈现器视图 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
-- [ListView 交互性 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [使用与 ListView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+- [两个双向绑定 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [构建在单元格 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [自定义单元格 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [分组 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [自定义呈现器视图 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative/)
+- [ListView 交互性 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

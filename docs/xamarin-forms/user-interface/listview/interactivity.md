@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386558"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653887"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 它提供与数据交互的支持。
+[`ListView`](xref:Xamarin.Forms.ListView)支持与它所呈现的数据进行交互。
 
 <a name="selectiontaps" />
 
@@ -37,7 +37,7 @@ ms.locfileid: "61386558"
 两次点击相同项会触发两个[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，但将只触发单个[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件。
 
 > [!NOTE]
-> [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs)类，该类包含的事件参数[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，具有[ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group)和[ `Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)属性，并`ItemIndex`其值表示中的索引的属性[ `ListView` ](xref:Xamarin.Forms.ListView)的项目。 同样， [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs)类，该类包含的事件参数[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件，具有[ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)属性，且`SelectedItemIndex`其值表示中的索引的属性`ListView`的选定项。
+> [`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item) [`Group`](xref:Xamarin.Forms.ItemTappedEventArgs.Group) `ItemIndex` [`ListView`](xref:Xamarin.Forms.ListView)类, 它包含[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件的事件参数, 具有和属性, 并且其值表示点击项的中的索引。 [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs) [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs)同样, `ListView`包含[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)事件的事件参数的类具有[`SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)属性和`SelectedItemIndex`属性, 其值表示所选项的中的索引。
 
 当[ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode)属性设置为[ `Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)中的项[ `ListView` ](xref:Xamarin.Forms.ListView)可以选择[ `ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)并[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)将不再触发事件，并且[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)属性将设置为所选的项的值。
 
@@ -149,20 +149,20 @@ public void OnDelete (object sender, EventArgs e) {
 
 ## <a name="pull-to-refresh"></a>下拉以刷新
 
-用户都希望能拉下在列表中的数据将刷新该列表。 [`ListView`](xref:Xamarin.Forms.ListView) 支持此--现成的。 若要启用下拉刷新功能，请设置[ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)到`true`:
+用户都希望能拉下在列表中的数据将刷新该列表。 [`ListView`](xref:Xamarin.Forms.ListView)支持此项。 若要启用请求刷新功能, 请将设置[`IsPullToRefreshEnabled`](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)为`true`:
 
 ```xaml
 <ListView ...
           IsPullToRefreshEnabled="true" />
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 listView.IsPullToRefreshEnabled = true;
 ```
 
-微调控件将显示在刷新期间，这是默认情况下黑色。 但是，旋转图标颜色可以更改 iOS 和 Android 上通过设置`RefreshControlColor`属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+在刷新过程中会出现一个微调框, 默认情况下为黑色。 但是, 可以通过将`RefreshControlColor`属性设置[`Color`](xref:Xamarin.Forms.Color)为, 在 iOS 和 Android 上更改微调按钮颜色:
 
 ```xaml
 <ListView ...
@@ -170,25 +170,25 @@ listView.IsPullToRefreshEnabled = true;
           RefreshControlColor="Red" />
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 listView.RefreshControlColor = Color.Red;
 ```
 
-下面的屏幕截图显示下拉刷新拉取用户：
+以下屏幕截图显示了在用户请求时的请求刷新:
 
 ![](interactivity-images/refresh-start.png "ListView 下拉以刷新正在进行中")
 
-下面的屏幕截图显示下拉刷新后用户现已发布旋转图标显示请求，而[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新：
+下面的屏幕截图显示了在用户释放请求之后的请求刷新, 并在更新时[`ListView`](xref:Xamarin.Forms.ListView)显示微调框:
 
-![](interactivity-images/refresh-in-progress.png "ListView 拉取到刷新完成")
+![](interactivity-images/refresh-in-progress.png "ListView 请求刷新完成")
 
-[`ListView`](xref:Xamarin.Forms.ListView) 激发[ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing)事件，以启动刷新，并且[ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing)属性将设置为`true`。 无论代码是必填项，若要刷新的内容`ListView`然后应通过事件处理程序执行`Refreshing`事件，或由执行的方法[ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)。 一次`ListView`被刷新，`IsRefreshing`属性应设置为`false`，则[ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh)方法应调用，以指示刷新已完成。
+[`ListView`](xref:Xamarin.Forms.ListView)触发事件以启动刷新, [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing)并将属性设置为`true`。 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 若要刷新的内容所需的`ListView`任何代码, 则应由`Refreshing`事件的事件处理程序或执行[`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)的方法执行。 刷新后, 应将`false` `IsRefreshing` [属性`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh)设置为, 或调用方法以指示刷新已完成。 `ListView`
 
 > [!NOTE]
-> 定义时[ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)，则`CanExecute`可以指定命令的方法来启用或禁用该命令。
+> 定义[`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)时`CanExecute` , 可以指定命令的方法以启用或禁用该命令。
 
 ## <a name="related-links"></a>相关链接
 
-- [ListView 交互性 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [ListView 交互性 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

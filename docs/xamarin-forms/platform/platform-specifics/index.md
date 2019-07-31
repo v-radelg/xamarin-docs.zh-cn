@@ -1,22 +1,22 @@
 ---
 title: 平台特定信息
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 此文章介绍了如何使用和创建平台特定信息。
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用和创建平台细节。
 ms.prod: xamarin
 ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 04cbdaac50b0ea77659d7c495dcd1a9e6d43335c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f6190b9c0d29d57d6d509bdff25e2ce3572e3a3c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926986"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646840"
 ---
-# <a name="platform-specifics"></a>平台特定信息
+# <a name="platform-specifics"></a>平台特定内容
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。_
 
@@ -34,11 +34,11 @@ _平台特定信息，可使用的功能仅适用于特定的平台，而无需�
 
 通过使用平台特定信息`On<T>`fluent 代码 API 返回[ `IPlatformElementConfiguration` ](xref:Xamarin.Forms.IPlatformElementConfiguration`2)对象。 这允许多个平台特定信息以与方法级联在同一对象上调用。
 
-Xamarin.Forms 提供的平台特定信息的详细信息，请参阅[iOS 平台特定信息](~/xamarin-forms/platform/ios/index.md)， [Android 平台特定信息](~/xamarin-forms/platform/android/index.md)，和[Windows 平台特定信息](~/xamarin-forms/platform/windows/index.md).
+有关 Xamarin 提供的平台细节的详细信息, 请参阅[IOS 平台说明](~/xamarin-forms/platform/ios/index.md)、 [Android 平台细节](~/xamarin-forms/platform/android/index.md)和[Windows 平台细节](~/xamarin-forms/platform/windows/index.md)。
 
-## <a name="creating-platform-specifics"></a>创建平台特定信息
+## <a name="creating-platform-specifics"></a>创建平台细节
 
-供应商可以使用效果创建其自己的平台特定信息。 影响提供特定功能，然后通过特定于平台的公开。 结果是通过 XAML，并通过 fluent 代码 API 可以更轻松地使用的效果。
+供应商可以创建自己的平台说明和效果。 影响提供特定功能，然后通过特定于平台的公开。 结果是通过 XAML，并通过 fluent 代码 API 可以更轻松地使用的效果。
 
 创建平台特定的过程如下所示：
 
@@ -53,15 +53,15 @@ Xamarin.Forms 提供的平台特定信息的详细信息，请参阅[iOS 平台�
 > [!NOTE]
 > 它是按设想供应商将使用此技术来创建其自己平台特定信息，以便于用户的消耗。 尽管用户可以选择创建自己的平台特定信息，但应该指出，它需要比创建和使用效果更多代码。
 
-[示例应用程序](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)演示`Shadow`添加到显示的文本阴影的平台特定[ `Label` ](xref:Xamarin.Forms.Label)控件：
+该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)演示`Shadow`了一个特定于平台的, 它将阴影添加到[`Label`](xref:Xamarin.Forms.Label)控件所显示的文本:
 
 ![](images/screenshots.png "隐藏特定于平台的")
 
-[示例应用程序](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)实现`Shadow`特定于平台的每个平台，为便于理解上。 但是，除了每个特定于平台的效果实现中，卷影类的实现是为每个平台大致相同。 因此，本指南重点介绍卷影类和关联的影响单一平台的实现。
+该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)在`Shadow`每个平台上实现特定于平台的, 以便于理解。 但是，除了每个特定于平台的效果实现中，卷影类的实现是为每个平台大致相同。 因此，本指南重点介绍卷影类和关联的影响单一平台的实现。
 
 有关效果的详细信息，请参阅[使用效果自定义控件](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
-### <a name="creating-a-platform-specific-class"></a>创建特定于平台的类
+### <a name="creating-a-platform-specific-class"></a>创建平台特定的类
 
 作为创建特定于平台的`public static`类：
 
@@ -77,7 +77,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 
 以下各节讨论的实现`Shadow`特定于平台和相关联的效果。
 
-#### <a name="adding-an-attached-property"></a>添加附加的属性
+#### <a name="adding-an-attached-property"></a>添加附加属性
 
 必须将附加的属性添加到`Shadow`特定于平台的允许使用通过 XAML:
 
@@ -277,11 +277,11 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
-- [ShadowPlatformSpecific （示例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
-- [iOS 平台特定信息](~/xamarin-forms/platform/ios/index.md)
-- [Android 平台特定信息](~/xamarin-forms/platform/android/index.md)
-- [Windows 平台特定信息](~/xamarin-forms/platform/windows/index.md)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [ShadowPlatformSpecific （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
+- [iOS 平台-详细信息](~/xamarin-forms/platform/ios/index.md)
+- [Android 平台-详细信息](~/xamarin-forms/platform/android/index.md)
+- [Windows 平台-详细信息](~/xamarin-forms/platform/windows/index.md)
 - [自定义控件起的作用](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [附加属性](~/xamarin-forms/xaml/attached-properties.md)
 - [PlatformConfiguration API](xref:Xamarin.Forms.PlatformConfiguration)

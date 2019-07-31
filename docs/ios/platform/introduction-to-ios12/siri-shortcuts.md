@@ -1,68 +1,68 @@
 ---
-title: 在 Xamarin.iOS Siri 快捷方式
-description: 本文档介绍如何在 iOS 12 中使用 Siri 快捷方式。 它讨论了 NSUserActivities，自定义的目的，将分配语音快捷方式、 相关的快捷方式，和的详细信息。
+title: Xamarin 中的 Siri 快捷方式
+description: 本文档介绍如何在 iOS 12 中使用 Siri 快捷方式。 它讨论了 NSUserActivities、自定义意向、指定声音快捷方式以及相关的快捷方式。
 ms.prod: xamarin
 ms.assetid: 86424F79-3A7D-436E-927D-9A3267DA333B
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 62b577393a498587ee2e2e899d20bfeec7988c4e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 4fa15e73575e20541df7ee8f606b01ec6e3d875a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832373"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656723"
 ---
-# <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin.iOS Siri 快捷方式
+# <a name="siri-shortcuts-in-xamarinios"></a>Xamarin 中的 Siri 快捷方式
 
-在中[iOS 10](~/ios/platform/sirikit/index.md)，Apple 引入了 SiriKit，从而可以生成消息传送、 VoIP 呼叫、 付款、 锻炼到，骑预订，和照片 Siri 与之交互的搜索应用。
+在[iOS 10](~/ios/platform/sirikit/index.md)中, Apple 引入了 SiriKit, 使你能够构建与 Siri 交互的消息传递、VoIP 呼叫、付款、workouts、行程预订和照片搜索应用。
 
-在中[iOS 11](~/ios/platform/introduction-to-ios11/sirikit.md)，SiriKit 获得更多类型的应用程序的支持和进行 UI 自定义更大的灵活性。
+在[iOS 11](~/ios/platform/introduction-to-ios11/sirikit.md)中, SiriKit 获得了更多类型的应用的支持, 并更灵活地进行 UI 自定义。
 
-iOS 12 添加 Siri 快捷方式，从而允许所有类型的应用程序以向 Siri 公开其功能。 当某些基于应用的任务最相关的用户，并使用这一知识建议通过潜在操作，了解到使用 Siri_快捷方式_。 点击的快捷方式或使用语音命令调用将打开应用或运行后台任务。
+iOS 12 添加了 Siri 快捷方式, 允许所有类型的应用向 Siri 公开其功能。 Siri 了解某些基于应用的任务与用户最相关的情况, 并使用此知识通过_快捷方式_建议可能的操作。 点击快捷方式或使用语音命令调用它将打开应用或运行后台任务。
 
-应使用快捷方式，以加速用户的功能来完成常见任务-在许多情况下，而无需打开应用程序有问题。
+快捷方式应用于加快用户完成常见任务的能力, 在许多情况下, 甚至无需打开相关应用。
 
-## <a name="sample-app-soup-chef"></a>应用程序示例：Soup Chef
+## <a name="sample-app-soup-chef"></a>示例应用:Soup Chef
 
-若要更好地了解 Siri 快捷方式，看一看[Soup Chef](https://developer.xamarin.com/samples/monotouch/ios12/SoupChef/)示例应用程序。 Soup Chef 允许用户从虚部 soup 餐馆下订单、 查看其订单历史记录和定义通过使用 Siri 与交互排序 soup 时要使用的短语。
+为了更好地了解 Siri 快捷方式, 请参阅[Soup Chef](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-soupchef)示例应用。 Soup Chef 允许用户从虚部 Soup 餐馆下订单, 查看其订单历史记录, 并定义在通过与 Siri 交互进行排序时使用的短语。
 
 > [!TIP]
-> 测试之前 Soup Chef iOS 12 模拟器或设备上，启用以下两个设置，当调试快捷方式时非常有用：
+> 在 iOS 12 模拟器或设备上测试 Soup Chef 之前, 请启用以下两个设置, 这些设置在调试快捷方式时非常有用:
 >
-> - 在中**设置**应用程序中，启用**开发人员 > 显示最新快捷方式**。
-> - 在中**设置**应用程序中，启用**开发人员 > 锁定屏幕上显示捐赠**。
+> - 在 "**设置**" 应用中, 启用 "**开发人员 > 显示最新的快捷方式**。
+> - 在 "**设置**" 应用中, 启用 "**开发人员 > 在锁定屏幕上显示捐赠**。
 >
-> 这些调试，可以轻松地查找最近创建的设置进行 （而不是预测） 在 iOS 上的快捷方式锁定屏幕和搜索屏幕。
+> 利用这些调试设置, 可以轻松地在 iOS 锁屏界面和搜索屏幕上查找最近创建的 (而不是预测的) 快捷方式。
 
-若要使用示例应用程序：
+使用示例应用:
 
-- 安装和运行 Soup Chef 示例应用 iOS 12 模拟器上或[设备](#testing-on-device)。
+- 在 iOS 12 模拟器或[设备](#testing-on-device)上安装并运行 Soup Chef 示例应用。
 - 单击 **+** 右上方以创建新订单中的按钮。
-- 选择一种类型的 soup，指定一个数量和选项，然后点击**下订单**。
-- 上**订单历史记录**屏幕上，点击新创建的顺序，以便查看其详细信息。
-- 在订单详细信息屏幕的底部，点击**将添加到 Siri**。
-- 记录与顺序相关联并点击的语音短语**完成**。
-- 最大程度减少 Soup Chef、 调用 Siri，并通过使用你刚才录制语音短语重新放置顺序。
-- 使用 Siri 完成订单后，重新打开 Soup Chef，并请注意上, 会列出新订单**订单历史记录**屏幕。
+- 选择一种类型的 soup, 指定数量和选项, 然后点击 "**下订单**"。
+- 在 "**订单历史记录**" 屏幕上, 点击新创建的订单以查看其详细信息。
+- 在 "订单详细信息" 屏幕的底部, 点击 "**添加到 Siri**"。
+- 录制一个语音短语, 使其与订单相关联, 然后点击 "**完成**"。
+- 最小化 Soup Chef, 调用 Siri, 并使用刚刚记录的语音短语再次放置顺序。
+- Siri 完成订单后, 重新打开 Soup Chef, 并注意到 "**订单历史记录**" 屏幕上列出了新订单。
 
-示例应用演示了如何：
+示例应用演示了如何:
 
 - [使用 NSUserActivity 快捷方式打开应用](#using-an-nsuseractivity-shortcut-to-open-an-app)。
-- [使用自定义意向快捷方式执行某项任务](#using-a-custom-intent-shortcut-to-perform-a-task)。
-- [提供一个用户界面的自定义意向](#providing-a-user-interface-for-a-custom-intent)。
+- [使用自定义意向快捷方式来执行任务](#using-a-custom-intent-shortcut-to-perform-a-task)。
+- [为自定义意向提供用户界面](#providing-a-user-interface-for-a-custom-intent)。
 - [创建语音快捷方式](#creating-a-voice-shortcut)。
 
-## <a name="infoplist-and-entitlementsplist"></a>Info.plist 和 Entitlements.plist
+## <a name="infoplist-and-entitlementsplist"></a>Info.plist 和 info.plist
 
-之前为 Soup Chef 代码更深入地深入，看一看其**Info.plist**并**Entitlements.plist**文件。
+在深入 Soup Chef 代码之前, 请先查看其**信息 info.plist** **和**文件。
 
 ### <a name="infoplist"></a>Info.plist
 
-**Info.plist**中的文件**SoupChef**项目定义**捆绑包标识符**作为`com.xamarin.SoupChef`。 此捆绑包标识符将用于作为前缀的捆绑包标识符的 Intents 和 Intents UI 扩展在本文档后面所述。
+**SoupChef**项目中的**Info.plist**文件将**绑定标识符**定义为`com.xamarin.SoupChef`。 此捆绑标识符将用作本文档后面部分介绍的意向和意向 UI 扩展的捆绑标识符的前缀。
 
-**Info.plist**文件还包含如下内容：
+**Info.plist**文件还包含以下内容:
 
 ```xml
 <key>NSUserActivityTypes</key>
@@ -72,13 +72,13 @@ iOS 12 添加 Siri 快捷方式，从而允许所有类型的应用程序以向 
 </array>
 ```
 
-这`NSUserActivityTypes`Soup Chef，知道如何处理键/值对表示`OrderSoupIntent`，和一个[ `NSUserActivity` ](xref:Foundation.NSUserActivity)拥有[ `ActivityType` ](xref:Foundation.NSUserActivity.ActivityType)的"com.xamarin.SoupChef.viewMenu"。
+此`NSUserActivityTypes`键/值对表示 Soup Chef 知道如何`OrderSoupIntent`处理[`ActivityType`](xref:Foundation.NSUserActivity.ActivityType) , 以及[`NSUserActivity`](xref:Foundation.NSUserActivity)具有 "SoupChef. viewMenu" 的。
 
-在处理活动和自定义传递给应用本身，而不是其扩展的目的`AppDelegate`( [ `UIApplicationDelegate` ](xref:UIKit.UIApplicationDelegate)由[ `ContinueUserActivity` ](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)方法。
+传递给应用本身的活动和自定义意向`AppDelegate` (而不是其扩展) 将在 (a [`UIApplicationDelegate`](xref:UIKit.UIApplicationDelegate) by [`ContinueUserActivity`](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)方法中进行处理。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-**Entitlements.plist**中的文件**SoupChef**项目包含如下内容：
+**SoupChef**项目中的**info.plist**文件包含以下内容:
 
 ```xml
 <key>com.apple.security.application-groups</key>
@@ -89,21 +89,21 @@ iOS 12 添加 Siri 快捷方式，从而允许所有类型的应用程序以向 
 <true/>
 ```
 
-此配置指示该应用使用"group.com.xamarin.SoupChef"应用组。 **SoupChefIntents**应用扩展使用此相同的应用程序组，它允许两个项目来共享 [`NSUserDefaults`](xref:Foundation.NSUserDefaults)
+此配置指示该应用使用 "SoupChef" 应用组。 **SoupChefIntents**应用扩展使用此相同的应用组, 这允许两个项目共享[`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 数据。
 
-`com.apple.developer.siri`键指示应用程序与使用 Siri 交互。
+`com.apple.developer.siri`键指示应用与 Siri 交互。
 
 > [!NOTE]
-> **SoupChef**项目的生成配置集**自定义权利**到**Entitlements.plist**。
+> **SoupChef**项目的生成配置将**自定义权利**设置为**info.plist**。
 
 ## <a name="using-an-nsuseractivity-shortcut-to-open-an-app"></a>使用 NSUserActivity 快捷方式打开应用
 
-若要创建将打开一个应用来显示特定内容的快捷方式，创建`NSUserActivity`并将其附加到为您希望快捷方式可打开的屏幕的视图控制器。
+若要创建用于打开应用以显示特定内容的快捷方式, 请`NSUserActivity`创建, 并将其附加到想要打开快捷方式的屏幕的视图控制器。
 
 ### <a name="setting-up-an-nsuseractivity"></a>设置 NSUserActivity
 
-在菜单屏幕上，`SoupMenuViewController`创建`NSUserActivity`并将其分配到视图控制器[ `UserActivity` ](xref:UIKit.UIResponder.UserActivity)属性：
+在菜单屏幕上, `SoupMenuViewController`创建一个`NSUserActivity`并将其分配给视图控制器的[`UserActivity`](xref:UIKit.UIResponder.UserActivity)属性:
 
 ```csharp
 public override void ViewDidLoad()
@@ -113,9 +113,9 @@ public override void ViewDidLoad()
 }
 ```
 
-设置`UserActivity`属性_无偿提供_siri 活动。 从本捐献的时隔 Siri 可获取有关此活动时间和位置与用户相关且学习更好地建议将来的信息。
+`UserActivity`将_donates_属性设置为 Siri。 从这一捐赠中, Siri 可以获得有关此活动与用户的关系以及在将来更好地提出建议的时间和位置的信息。
 
-`NSUserActivityHelper` 一个实用工具类，包含在**SoupChef**解决方案，请在**SoupKit**类库。 它会创建`NSUserActivity`和设置与 Siri 和搜索相关的各种属性：
+`NSUserActivityHelper`是**SoupChef**解决方案中包含在**SoupKit**类库中的实用工具类。 它创建一个`NSUserActivity`并设置与 Siri 和搜索相关的各种属性:
 
 ```csharp
 public static string ViewMenuActivityType = "com.xamarin.SoupChef.viewMenu";
@@ -146,15 +146,15 @@ public static NSUserActivity ViewMenuActivity {
 }
 ```
 
-尤其注意以下问题：
+请注意以下事项:
 
-- 设置`EligibleForPrediction`到`true`指示 Siri 可以预测此活动，它会呈现为一种快捷方式。
-- [ `ContentAttributeSet` ](xref:Foundation.NSUserActivity.ContentAttributeSet)数组是一种标准[ `CSSearchableItemAttributeSet` ](xref:CoreSpotlight.CSSearchableItemAttributeSet)用于包括`NSUserActivity`iOS 搜索结果中。
-- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) 是使用 Siri 向用户作为一个潜在的选择将建议分配给某个快捷方式短语时的短语。
+- 设置`EligibleForPrediction` 为`true`指示 Siri 可以预测此活动, 并将其呈现为快捷方式。
+- 数组是用于在 iOS 搜索结果中包含`NSUserActivity`的标准[`CSSearchableItemAttributeSet`。](xref:CoreSpotlight.CSSearchableItemAttributeSet) [`ContentAttributeSet`](xref:Foundation.NSUserActivity.ContentAttributeSet)
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase)是一个短语, 在将短语分配给快捷方式时, Siri 会向用户提供一个可能的选择。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>处理 NSUserActivity 快捷方式
 
-若要处理`NSUserActivity`快捷方式调用的用户，iOS 应用程序必须重写`ContinueUserActivity`方法`AppDelegate`根据响应的类，`ActivityType`字段的传入的`NSUserActivity`对象：
+若要处理`NSUserActivity`由用户调用的快捷方式, iOS 应用程序必须`ContinueUserActivity`重写`AppDelegate`类的方法, 并基于`ActivityType`传入`NSUserActivity`的对象的字段进行响应:
 
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,7 +169,7 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 }
 ```
 
-此方法调用`HandleUserActivity`，它查找到菜单屏幕 segue 并对其进行调用：
+此方法调用`HandleUserActivity`, 它将查找 segue 到菜单屏幕并调用它:
 
 ```csharp
 void HandleUserActivity()
@@ -186,139 +186,139 @@ void HandleUserActivity()
 }
 ```
 
-### <a name="assigning-a-phrase-to-an-nsuseractivity"></a>将短语分配给 NSUserActivity
+### <a name="assigning-a-phrase-to-an-nsuseractivity"></a>向 NSUserActivity 分配短语
 
-若要将分配到的短语`NSUserActivity`，打开 iOS**设置**应用程序，然后选择**Siri 和搜索 > 自定义快捷方式**。 然后，选择 （在此情况下，"顺序午餐"） 的快捷方式，并记录一个短语。
+若要将短语分配到`NSUserActivity`, 请打开 "iOS**设置**" 应用, 然后选择 **"Siri & 搜索 > 我的快捷方式**。 然后, 选择快捷方式 (在本例中为 "订单午餐") 并录制一个短语。
 
-调用 Siri 并使用此短语将打开到菜单屏幕 Soup Chef。
+调用 Siri 并使用此短语会将 Soup Chef 打开到菜单屏幕。
 
-## <a name="using-a-custom-intent-shortcut-to-perform-a-task"></a>使用自定义意向快捷方式来执行任务
+## <a name="using-a-custom-intent-shortcut-to-perform-a-task"></a>使用自定义意向快捷方式执行任务
 
 ### <a name="defining-a-custom-intent"></a>定义自定义意向
 
-若要提供使用户可以快速完成特定任务与应用相关的快捷方式，创建自定义意向。 自定义意向表示用户可能想要完成，参数与该任务，并且该任务执行后生成的可能响应相关的任务。 具体取决于如何定义自定义意向，调用它可以打开您的应用程序或运行后台任务。
+若要提供一个快捷方式, 使用户能够快速完成与应用相关的特定任务, 请创建自定义意向。 自定义意向表示用户可能需要完成的任务、与该任务相关的参数, 以及由任务执行导致的潜在响应。 根据自定义意向的定义方式, 调用它可以打开应用或运行后台任务。
 
-使用 Xcode 10 来创建自定义的目的。 在[SoupChef 存储库](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)，在中定义自定义意向**OrderSoupIntentCodeGen**，OBJECTIVE-C 的项目。 打开此项目并选择**Intents.intentdefinition**中的文件**项目导航器**若要查看**OrderSoup**意向。
+使用 Xcode 10 创建自定义意向。 在[SoupChef 存储库](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)中, 自定义意向在**OrderSoupIntentCodeGen**(目标 C 项目) 中定义。 打开此项目, 然后在 "**项目导航器**" 中选择**intentdefinition**文件以查看**OrderSoup**目的。
 
 注意下列事项：
 
-- 其目的有**类别**的**顺序**。 有各种预定义的类别，可用于自定义的目的;选择最符合你的自定义目标将启用该任务。 由于这是排序应用程序中，soup **OrderSoupIntent**使用**顺序**。
-- **确认**复选框指示是否使用 Siri 必须请求执行任务前的显示确认。 有关**顺序 Soup**意向中 Soup Chef，启用此选项是因为用户购买。
-- **参数**.intentdefinition 文件的部分定义与一种快捷方式相关的参数。 若要订购 soup，Soup Chef 必须知道 soup、 其数量和任何关联的选项的类型。
-每个参数的类型;不能由预定义类型的参数设置为**自定义**。
-- **快捷方式类型**接口描述了建议您的快捷方式时，可以使用 Siri 的各种参数组合。 关联**标题**并**副标题**部分允许您定义的消息向用户显示的建议的快捷方式时，将使用 Siri。
-- **支持后台执行**而无需打开进一步的用户交互的应用可以执行的任何快捷方式，应选择复选框。
+- 意向的**类别** **为。** 有各种预定义的类别可用于自定义意向;选择与自定义意向将启用的任务最匹配的项。 由于这是一个 soup 的订购应用程序, **OrderSoupIntent**使用**订单**。
+- **确认**复选框指示 Siri 在执行任务之前是否必须请求确认。 对于 Soup Chef 中的**Order Soup**意向, 此选项是在用户进行购买后启用的。
+- Intentdefinition 文件的**参数**部分定义了与快捷方式相关的参数。 若要设置 soup, Soup Chef 必须知道 soup 的类型、其数量以及任何关联的选项。
+每个参数都具有类型;预定义类型无法表示的参数将设置为**Custom**。
+- **快捷方式类型**接口描述了在建议快捷方式时可以使用的各种参数组合 Siri。 使用关联的 "**标题**" 和 "**副标题**" 部分可以定义在向用户提供建议的快捷方式时 Siri 将使用的消息。
+- 对于可以在不打开应用程序以进一步进行用户交互的情况下执行的任何快捷方式, 都应选择 "**支持后台执行**" 复选框。
 
 ### <a name="defining-custom-intent-responses"></a>定义自定义意向响应
 
-**响应**项下嵌套**OrderSoup**意向表示 soup 订单中产生的潜在响应。
+嵌套在**OrderSoup**意向下面的**响应**项表示由 soup 顺序产生的潜在响应。
 
-在中**OrderSoup**意向的响应定义的信息，请注意以下事项：
+在**OrderSoup**意向的响应定义中, 注意以下事项:
 
-- 响应**属性**可用于自定义消息发送回用户。 **OrderSoup**意向响应具有**soup**并**waitTime**属性。
-- **响应模板**指定各种可用于指示状态意向的任务完成后的成功和失败消息。
-- **成功**指示成功的响应，应选择复选框。
-- **OrderSoupIntent**成功响应使用**soup**并**waitTime**属性来提供友好且有用的消息描述当 soup 顺序将为准备就绪。
+- 响应的**属性**可用于自定义传回给用户的消息。 **OrderSoup**意向响应具有**soup**和**waitTime**属性。
+- **响应模板**指定可用于在完成目的任务后指示状态的各种成功和失败消息。
+- 对于表明成功的响应, 应选择 "**成功**" 复选框。
+- **OrderSoupIntent**成功响应使用**soup**和**waitTime**属性来提供友好且有用的消息, 用于描述 soup 订单何时准备就绪。
 
-### <a name="generating-code-for-the-custom-intent"></a>生成自定义意向的代码
+### <a name="generating-code-for-the-custom-intent"></a>为自定义意向生成代码
 
-生成包含此自定义意向定义的 Xcode 项目会导致 Xcode 生成可用于以编程方式与自定义意向和触发器及其响应进行交互的代码。
+生成包含此自定义意向定义的 Xcode 项目将导致 Xcode 生成代码, 该代码可用于以编程方式与自定义意向及其响应交互。
 
-若要查看此生成的代码：
+查看此生成的代码:
 
-- 打开**AppDelegate.m**。
-- 将导入添加到自定义意向的标头文件： `#import "OrderSoupIntent.h"`
-- 在类中的任何方法，添加对引用`OrderSoupIntent`。
-- 右键单击`OrderSoupIntent`，然后选择**跳转到定义**。
-- 在新打开文件中，右键单击**OrderSoupIntent.h**，然后选择**在查找器中显示**。
-- 这将打开**Finder**窗口，其中包含包含生成的代码的.h 和.m 文件。
+- 打开**AppDelegate**。
+- 将导入添加到自定义意向的标头文件:`#import "OrderSoupIntent.h"`
+- 在类的任何方法中, 添加对`OrderSoupIntent`的引用。
+- 右键单击并选择`OrderSoupIntent` "**跳转到定义**"。
+- 右键单击新打开的文件**OrderSoupIntent**, 然后选择 "**在查找器中显示**"。
+- 这会打开一个**查找**器窗口, 其中包含生成的代码的 .h 文件和. m 文件。
 
-此生成的代码包括：
+此生成的代码包括:
 
-- `OrderSoupIntent` – 一个表示自定义意向的类。
-- `OrderSoupIntentHandling` – 一种协议，用于定义将用于确认意图应执行的方法和实际执行的方法。
-- `OrderSoupIntentResponseCode` – 一个枚举值，定义了各种响应状态。
-- `OrderSoupIntentResponse` – 一个类，表示对意向的执行的响应。
+- `OrderSoupIntent`–表示自定义意向的类。
+- `OrderSoupIntentHandling`–一种协议, 用于定义将用于确认是否应执行意向以及实际执行此目的的方法。
+- `OrderSoupIntentResponseCode`–定义各种响应状态的枚举。
+- `OrderSoupIntentResponse`–表示对意向执行的响应的类。
 
-### <a name="creating-a-binding-to-the-custom-intent"></a>创建绑定到自定义意向
+### <a name="creating-a-binding-to-the-custom-intent"></a>创建自定义意向的绑定
 
-若要使用 Xcode 生成 Xamarin.iOS 应用程序中的代码，创建C#为其绑定。
+若要使用 Xcode 在 Xamarin iOS 应用程序中生成的代码, 请为C#其创建绑定。
 
 #### <a name="creating-a-static-library-and-c-binding-definitions"></a>创建静态库和C#绑定定义
 
-在中[SoupChef 存储库](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)，看一看**OrderSoupIntentStaticLib**文件夹，并打开**OrderSoupIntentStaticLib.xcodeproj** Xcode 项目。
+在[SoupChef 存储库](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)中, 查看**OrderSoupIntentStaticLib**文件夹, 并打开**OrderSoupIntentStaticLib .xcodeproj** Xcode 项目。
 
-这**Cocoa Touch 静态库**项目包含**OrderSoupIntent.h**并**OrderSoupIntent.m**由 Xcode 生成的文件。
+此**Cocoa 触控静态库**项目包含 Xcode 生成的**OrderSoupIntent**和**OrderSoupIntent**文件。
 
 #### <a name="configuring-the-static-library-project-build-settings"></a>配置静态库项目生成设置
 
-在 Xcode 中**项目导航器**，选择顶级项目， **OrderSoupIntentStaticLib**，并导航到**生成阶段 > 编译源**。
-请注意， **OrderSoupIntent.m** (它导入**OrderSoupIntent.h**) 会在此处列出。 在**二进制与库链接**，注意**Intents.framework**并**Foundation.framework**包括在内。
-在准备好这些设置，框架将正确生成。
+在 Xcode**项目导航器**中, 选择顶级项目 " **OrderSoupIntentStaticLib**", 并导航到 "**生成阶段 > 编译源**"。
+请注意, 此处列出了**OrderSoupIntent** (导入**OrderSoupIntent**)。 在 "将**二进制文件链接到库**" 中, 请注意, 包括了**意向. framework**和**Foundation。**
+设置好这些设置后, 框架将会正确生成。
 
 #### <a name="building-the-static-library-and-generating-c-bindings-definitions"></a>生成静态库和生成C#绑定定义
 
-若要生成静态库并生成C#绑定定义该信息，请执行以下步骤：
+若要生成静态库并为C#其生成绑定定义, 请执行以下步骤:
 
-- [安装目标 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/get-started?context=xamarin/mac#installing-objective-sharpie)，用来从由 Xcode 创建的.h 和.m 文件生成绑定定义的工具。
+- [安装客观 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/get-started?context=xamarin/mac#installing-objective-sharpie), 该工具用于通过 Xcode 创建的 .h 文件和. m 文件生成绑定定义。
 
-- 在系统配置为使用 Xcode 10 命令行工具：
+- 将系统配置为使用 Xcode 10 命令行工具:
 
     > [!WARNING]
-    > 正在更新所选的命令行工具将会影响所有已安装在系统上的 Xcode 版本。 完成后使用 Soup Chef 示例应用程序，应确保还原此设置为其原始配置。
+    > 更新选定的命令行工具将影响系统上安装的所有 Xcode 版本。 使用 Soup Chef 示例应用完成后, 请务必将此设置恢复为原始配置。
 
-    - 在 Xcode 中，选择**Xcode > 首选项 > 位置**并设置**命令行工具**到最新的 Xcode 10 安装系统上可用。
+    - 在 Xcode 中, 选择 " **Xcode > 首选项" > 位置**, 并将**命令行工具**设置为系统上可用的最新 Xcode 10 安装。
 
-- 在终端中，`cd`到**OrderSoupIntentStaticLib**目录。
+- 在终端中, `cd`到**OrderSoupIntentStaticLib**目录。
 
-- 类型`make`，哪些生成：
+- 类型`make`, 生成:
 
-    - 静态库， **libOrderSoupIntentStaticLib.a**
-    - 在中**bo**输出目录中，C#绑定定义：
+    - 静态库**libOrderSoupIntentStaticLib**
+    - 在**bo**输出目录中, C#绑定定义:
         - **ApiDefinitions.cs**
         - **StructsAndEnums.cs**
 
-**OrderSoupIntentBindings**项目，它依赖于此静态库和其关联的绑定定义，会自动生成这些项。
-但是，手动运行完成上述过程将确保按预期方式生成。
+依赖于此静态库及其关联的绑定定义的**OrderSoupIntentBindings**项目会自动生成这些项。
+但是, 通过上述过程手动运行将确保它按预期方式生成。
 
-有关如何创建静态库和使用目标 Sharpie 若要创建的详细信息C#绑定定义，看一看[绑定 iOS OBJECTIVE-C 库](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#creating-a-static-library)演练。
+若要详细了解如何创建静态库并使用客观 Sharpie 创建C#绑定定义, 请查看如何将[iOS 目标 C 库绑定到绑定](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#creating-a-static-library)。
 
 #### <a name="creating-a-bindings-library"></a>创建绑定库
 
-使用静态库和C#绑定定义创建，其余部分使用 Xcode 生成所需在 Xamarin.iOS 项目中与意图相关的代码是一个绑定库。
+创建静态库和C#绑定定义后, 在 Xamarin iOS 项目中使用 Xcode 生成的与意向相关的代码所需的剩余部分就是绑定库。
 
-在中[Soup Chef 存储库](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)，请打开**SoupChef.sln**文件。 此外，此解决方案包含**OrderSoupIntentBinding**，上述生成静态库的绑定库。
+在[Soup Chef 存储库](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)中, 打开**SoupChef**文件。 除此之外, 此解决方案包含**OrderSoupIntentBinding**, 这是上面生成的静态库的绑定库。
 
-请注意，具体而言，此项目包括：
+特别要注意的是, 此项目包括:
 
-- **ApiDefinitions.cs** – 文件由目标 Sharpie 上面生成并添加到此项目。 此文件的**生成操作**设置为**ObjcBindingApiDefinition**。
-- **StructsAndEnums.cs** – 另一个文件由目标 Sharpie 上面生成并添加到此项目。 此文件的**生成操作**设置为**ObjcBindingCoreSource**。
-- 一个**本机引用**到**libOrderSoupIntentStaticLib.a**，上面生成的静态库。
+- **ApiDefinitions.cs** –由客观 Sharpie 生成并添加到此项目中的文件。 此文件的**生成操作**设置为**ObjcBindingApiDefinition**。
+- **StructsAndEnums.cs** –客观 Sharpie 上面生成的另一个文件, 并将其添加到此项目中。 此文件的**生成操作**设置为**ObjcBindingCoreSource**。
+- 对**libOrderSoupIntentStaticLib**的**本机引用**, 这是上面生成的静态库。
 
 > [!NOTE]
-> 这两**ApiDefinitions.cs**并**StructsAndEnums.cs**包含属性，如`[Watch (5,0), iOS (12,0)]`。 这些属性，生成的目标 Sharpie 已被注释掉，因为它们不需要为此项目。
+> **ApiDefinitions.cs**和**StructsAndEnums.cs**都包含`[Watch (5,0), iOS (12,0)]`特性, 如。 由于目标 Sharpie 生成的这些属性不是此项目所必需的, 因此已将其注释掉。
 
-有关创建的详细信息C#绑定库，请查阅[： 绑定 iOS OBJECTIVE-C 库](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#create-a-xamarinios-binding-project)演练。
+有关创建C#绑定库的详细信息, 请参阅关于[IOS 目标-C 库的绑定](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#create-a-xamarinios-binding-project)演练。
 
-请注意， **SoupChef**项目包含对引用**OrderSoupIntentBinding**，这意味着，它现在可以访问，在C#，类、 接口和枚举，它包含：
+请注意, **SoupChef**项目包含对**OrderSoupIntentBinding**的引用, 这意味着它现在可以访问C#它所包含的类、接口和枚举:
 
 - `OrderSoupIntent`
 - `OrderSoupIntentHandling`
 - `OrderSoupIntentResponse`
 - `OrderSoupIntenseResponseCode`
 
-### <a name="adding-the-intentdefinition-file-to-your-solution"></a>将.intentdefinition 文件添加到你的解决方案
+### <a name="adding-the-intentdefinition-file-to-your-solution"></a>将 intentdefinition 文件添加到解决方案
 
-在C# **SoupChef**解决方案中， **SoupKit**项目包含应用程序和其扩展之间共享的代码。 **Intents.intentdefinition**文件置于**Base.lproj**目录**SoupKit**，并且它具有**生成操作**的**内容**。 生成过程将此文件复制到 Soup Chef 应用程序包中，这是必需的应用程序才能正常工作的。
+C#在**SoupChef**解决方案中, **SoupKit**项目包含应用及其扩展之间共享的代码。 **Intentdefinition**文件已放置在**SoupKit**的**lproj**目录中, 它具有**Content**的**生成操作**。 生成过程将此文件复制到 Soup Chef 应用程序捆绑包中, 以便应用程序正常运行。
 
 ### <a name="donating-an-intent"></a>捐赠意向
 
-为了使 Siri 建议一种快捷方式，它必须首先了解当的快捷方式是相关。
+为了使 Siri 建议一个快捷方式, 必须首先了解快捷方式的相关时间。
 
-若要使此理解，Soup Chef Siri_无偿提供_意向 siri 每次用户将放入 soup 顺序。 基于此捐赠 – 时它已捐赠，其中已捐赠，它包含的参数 – Siri 了解何时在将来建议快捷方式。
+若要为 Siri 这一理解, Soup Chef _donates_每次用户提出 Siri 订单时要 Soup。 基于这一捐赠–在捐赠时, 其所包含的参数为 "Siri", 它会学习何时建议在将来提供快捷方式。
 
-**SoupChef**使用`SoupOrderDataManager`类将捐赠。
-若要订购 soup 用户，在调用时`PlaceOrder`方法又调用[ `DonateInteraction` ](xref:Intents.INInteraction.DonateInteraction*):
+**SoupChef**使用`SoupOrderDataManager`类来放置捐赠。
+调用为用户提供 soup 顺序时, 此`PlaceOrder`方法将调用: [`DonateInteraction`](xref:Intents.INInteraction.DonateInteraction*)
 
 ```csharp
 void DonateInteraction(Order order)
@@ -332,11 +332,11 @@ void DonateInteraction(Order order)
 }
 ```
 
-正在提取意向之后, 它将包装在[ `INInteraction` ](xref:Intents.INInteraction)。
-`INInteraction`给定 [`Identifier`](xref:Intents.INInteraction.Identifier*)
-（这会有助于稍后删除不再有效的意向捐赠时） 的顺序的唯一 ID 与相匹配。 然后，交互将捐赠给使用 Siri。
+提取意向后, 将其包装在中[`INInteraction`](xref:Intents.INInteraction)。
+`INInteraction`为提供了一个[`Identifier`](xref:Intents.INInteraction.Identifier*)
+与顺序的唯一 ID 匹配 (这在删除不再有效的意向捐赠后会有所帮助)。 然后, 对 Siri 进行交互。
 
-在调用`order.Intent`getter 提取`OrderSoupIntent`，通过设置表示顺序其`Quantity`， `Soup`， `Options`，和图像，并调用短语作为一项建议，用户记录 Siri 将相关联的短语时其目的：
+对`order.Intent` getter 的调用通过设置其`OrderSoupIntent` `Quantity`、 `Soup`、 `Options`和 image 来提取表示顺序的, 当用户记录 Siri 要关联的短语时, 将使用调用短语作为建议目的:
 
 ```csharp
 public OrderSoupIntent Intent
@@ -368,15 +368,15 @@ public OrderSoupIntent Intent
 }
 ```
 
-#### <a name="removing-invalid-donations"></a>删除无效的捐赠
+#### <a name="removing-invalid-donations"></a>删除无效捐赠
 
-请务必删除不再有效，以便使用 Siri 不会使无用或令人困惑的快捷方式的建议的捐赠。
+务必要删除不再有效的捐赠, 使 Siri 不会导致无用或混乱的快捷方式建议。
 
-在 Soup Chef**配置菜单**屏幕可用于将标记一个菜单项不可用。 Siri 应不再建议的快捷方式进行排序的不可用的菜单项，因此`RemoveDonation`方法的`SoupMenuManager`删除捐赠的菜单项将不再可用。 之所以如此是因为：
+在 Soup Chef 中, 可以使用 "**配置" 菜单**屏幕将菜单项标记为 "不可用"。 Siri 不应再建议使用对不可用菜单项进行排序的快捷方式`RemoveDonation` , 因此`SoupMenuManager` , 方法会删除不再可用的菜单项的捐赠。 它通过以下方法实现此操作:
 
-- 查找与现在不可用的菜单项关联的订单。
-- 获取其标识符。
-- 正在删除具有该相同标识符的交互。
+- 查找与现在不可用菜单项关联的订单。
+- 抓取其标识符。
+- 删除具有相同标识符的交互。
 
 ```csharp
 void RemoveDonation(MenuItem menuItem)
@@ -409,17 +409,17 @@ void RemoveDonation(MenuItem menuItem)
 }
 ```
 
-### <a name="creating-an-intents-extension"></a>创建的 Intents 扩展
+### <a name="creating-an-intents-extension"></a>创建意向扩展
 
-运行时使用 Siri 调用意向的代码置于的 Intents 扩展，可以为新项目添加到现有的 Xamarin.iOS 应用程序如 Soup Chef 与相同的解决方案。 在中**SoupChef**解决方案，该扩展被称为**SoupChefIntents**。
+Siri 调用意向时运行的代码放置在一个意向扩展中, 该扩展可作为新项目添加到与现有 Xamarin iOS 应用 (如 Soup Chef) 相同的解决方案。 在**SoupChef**解决方案中, 扩展称为**SoupChefIntents**。
 
-#### <a name="soupchefintents-infoplist-and-entitlementsplist"></a>SoupChefIntents – Info.plist 和 Entitlements.plist
+#### <a name="soupchefintents-infoplist-and-entitlementsplist"></a>SoupChefIntents – info.plist 和 info.plist
 
-##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info.plist
+##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info. info.plist
 
-**Info.plist**中**SoupChefIntents**项目定义**捆绑包标识符**作为`com.xamarin.SoupChef.SoupChefIntents`。
+**SoupChefIntents**项目中的**Info.plist**将**包标识符**定义为`com.xamarin.SoupChef.SoupChefIntents`。
 
-**Info.plist**文件还包含如下内容：
+**Info.plist**文件还包含以下内容:
 
 ```xml
 <key>NSExtension</key>
@@ -442,16 +442,16 @@ void RemoveDonation(MenuItem menuItem)
 </dict>
 ```
 
-在上面**Info.plist**:
+在上面的**信息中。 info.plist**:
 
-- `IntentsRestrictedWhileLocked` 列出在设备处于解锁状态时应仅处理的方式。
-- `IntentsSupported` 列出此扩展插件处理的方式。
-- `NSExtensionPointIdentifier` 指定应用扩展的类型 (请参阅[Apple 的文档](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)有关详细信息)。
-- `NSExtensionPrincipalClass` 指定应该用于处理此扩展插件支持的意图的类。
+- `IntentsRestrictedWhileLocked`列出只应在设备解锁时进行处理的方法。
+- `IntentsSupported`列出此扩展处理的意向。
+- `NSExtensionPointIdentifier`指定应用扩展的类型 (有关详细信息, 请参阅[Apple 的文档](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15))。
+- `NSExtensionPrincipalClass`指定应该用于处理此扩展所支持的方法的类。
 
 ##### <a name="soupchefintents-entitlementsplist"></a>SoupChefIntents – Entitlements.plist
 
-**Entitlements.plist**中**SoupChefIntents**项目具有**应用组**功能。 此功能配置为使用与相同的应用组**SoupChef**项目：
+**SoupChefIntents**项目中的**Info.plist**具有**应用组**功能。 此功能配置为使用与**SoupChef**项目相同的应用组:
 
 ```xml
 <key>com.apple.security.application-groups</key>
@@ -460,16 +460,16 @@ void RemoveDonation(MenuItem menuItem)
 </array>
 ```
 
-Soup Chef 仍然存在数据与`NSUserDefaults`。 为了在共享应用程序和应用扩展之间的数据，它们引用同一个应用程序组中的其**Entitlements.plist**文件。
+Soup Chef 将数据与`NSUserDefaults`一起保存。 为了在应用程序和应用扩展之间共享数据, 它们在**info.plist**文件中引用了同一应用组。
 
 > [!NOTE]
-> **SoupChefIntents**项目的生成配置集**自定义权利**到**Entitlements.plist**。
+> **SoupChefIntents**项目的生成配置将**自定义权利**设置为**info.plist**。
 
 #### <a name="handling-an-ordersoupintent-background-task"></a>处理 OrderSoupIntent 后台任务
 
-Intents 扩展执行基于自定义意向的快捷方式的必要的后台任务。
+意向扩展会根据自定义意向为快捷方式执行必要的后台任务。
 
-Siri 调用[ `GetHandler` ](xref:Intents.INExtension.GetHandler*)方法`IntentHandler`类 (中定义**Info.plist**作为`NSExtensionPrincipalClass`) 来获取扩展的类的实例`OrderSoupIntentHandling`，可以使用若要处理`OrderSoupIntent`:
+[`GetHandler`](xref:Intents.INExtension.GetHandler*) Siri 调用`IntentHandler`类的方法 (在**info.plist**中定义为`NSExtensionPrincipalClass`) 来获取扩展`OrderSoupIntentHandling`的类的实例, 该实例可用于处理`OrderSoupIntent`:
 
 ```csharp
 [Register("IntentHandler")]
@@ -488,15 +488,15 @@ public class IntentHandler : INExtension
 }
 ```
 
-`OrderSoupIntentHandler`在中定义**SoupKit**项目共享代码，实现两个重要的方法：
+`OrderSoupIntentHandler`在共享代码的**SoupKit**项目中定义, 实现了两个重要的方法:
 
-- `ConfirmOrderSoup` – 确认应实际执行与意图相关的任务
-- `HandleOrderSoup` – 使 soup 顺序，并向用户提供响应通过调用传入的完成处理程序
+- `ConfirmOrderSoup`–确认是否确实要执行与意向关联的任务
+- `HandleOrderSoup`–通过调用传入的完成处理程序来放置 soup 顺序并响应用户
 
-#### <a name="handling-an-ordersoupintent-that-opens-the-app"></a>处理打开应用 OrderSoupIntent
+#### <a name="handling-an-ordersoupintent-that-opens-the-app"></a>处理打开应用程序的 OrderSoupIntent
 
-应用程序必须正确处理不会在后台运行的意图。
-这些参数进行处理的方式相同`NSUserActivity`快捷方式，请在`ContinueUserActivity`方法的`AppDelegate`:
+应用程序必须正确地处理不在后台运行的意向。
+这些`NSUserActivity` `ContinueUserActivity`方法的处理方式与快捷键相同, 方法`AppDelegate`如下:
 
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -513,15 +513,15 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 
 ## <a name="providing-a-user-interface-for-a-custom-intent"></a>为自定义意向提供用户界面
 
-Intents UI 扩展提供自定义用户界面的 Intents 扩展。 在中**SoupChef**解决方案， **SoupChefIntentsUI**是为提供的接口的 Intents UI 扩展**SoupChefIntents**。
+意向 UI 扩展为意向扩展提供自定义用户界面。 在**SoupChef**解决方案中, **SoupChefIntentsUI**是一种提供**SoupChefIntents**接口的意向 UI 扩展。
 
-### <a name="soupchefintentsui--infoplist-and-entitlementsplist"></a>SoupChefIntentsUI – Info.plist 和 Entitlements.plist
+### <a name="soupchefintentsui--infoplist-and-entitlementsplist"></a>SoupChefIntentsUI – info.plist 和 info.plist
 
 #### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
 
-**Info.plist**中**SoupChefIntentsUI**项目定义**捆绑包标识符**作为`com.xamarin.SoupChef.SoupChefIntentsui`。
+**SoupChefIntentsUI**项目中的**Info.plist**将**包标识符**定义为`com.xamarin.SoupChef.SoupChefIntentsui`。
 
-**Info.plist**文件还包含如下内容：
+**Info.plist**文件还包含以下内容:
 
 ```xml
 <key>NSExtension</key>
@@ -541,31 +541,31 @@ Intents UI 扩展提供自定义用户界面的 Intents 扩展。 在中**SoupCh
 </dict>
 ```
 
-在上面**Info.plist**:
+在上面的**信息中。 info.plist**:
 
-- `IntentsSupported` 指示`OrderSoupIntent`处理此 Intents UI 扩展插件。
-- `NSExtensionPointIdentifier` 指定应用扩展的类型 (请参阅[Apple 的文档](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)有关详细信息)。
-- `NSExtensionMainStoryboard` 指定定义此扩展的主接口的情节提要
+- `IntentsSupported``OrderSoupIntent`指示由此意向 UI 扩展处理。
+- `NSExtensionPointIdentifier`指定应用扩展的类型 (有关详细信息, 请参阅[Apple 的文档](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15))。
+- `NSExtensionMainStoryboard`指定定义此扩展的主接口的情节提要
 
 #### <a name="soupchefintentsui-entitlementsplist"></a>SoupChefIntentsUI – Entitlements.plist
 
-**SoupChefIntentsUI**项目不需要**Entitlements.plist**文件。
+**SoupChefIntentsUI**项目不需要**info.plist**文件。
 
 ### <a name="creating-the-user-interface"></a>创建用户界面
 
-由于**Info.plist**有关**SoupChefIntentsUI**设置`NSExtensionMainStoryboard`密钥`MainInterface`，则**MainInterace.storyboard**文件定义的接口Intents UI 扩展中。
+由于**info.plist** for **SoupChefIntentsUI**将`NSExtensionMainStoryboard`密钥设置为`MainInterface`, 因此**MainInterace**文件将定义意向 UI 扩展的接口。
 
-在此情节提要，没有类型的单个视图控制器**IntentViewController**。 它引用了两个视图：
+在此情节提要中, 有一个类型为**IntentViewController**的视图控制器。 它引用了两个视图:
 
-- **invoiceView**的类型 `InvoiceView`
-- **confirmationView**的类型 `ConfirmOrderView`
+- **invoiceView**, 类型为`InvoiceView`
+- **confirmationView**, 类型为`ConfirmOrderView`
 
 > [!NOTE]
-> 有关接口**invoiceView**并**confirmationView**中定义**Main.storyboard**作为辅助视图。 IOS 设计器在 Visual Studio for Mac 和 Visual Studio 2017 中不提供用于查看或编辑辅助视图; 支持若要执行此操作，打开**Main.storyboard** Xcode 的 Interface Builder 中。
+> **InvoiceView**和**confirmationView**的接口在**主情节提要**中定义为辅助视图。 Visual Studio for Mac 和 Visual Studio 2017 中的 iOS 设计器不支持查看或编辑辅助视图;为此, 请在 Xcode 的 Interface Builder**中打开**。
 
-`IntentViewController` 实现 [`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
-接口，用于提供自定义接口时使用 Siri 意向。 的 [`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
-调用方法以自定义界面，显示确认消息或发票，具体取决于是否正在确认交互 ([`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)) 或已成功执行了 ([ `INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)):
+`IntentViewController`实现[`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
+接口, 用于在使用 Siri 时提供自定义接口。 此[`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
+调用方法以自定义接口, 并显示确认或发票, 具体取决于是否要确认交互 ([`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)) 或是否已成功执行 ([`INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)):
 
 ```csharp
 [Export("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")]
@@ -594,13 +594,13 @@ public void ConfigureView(
 ```
 
 > [!TIP]
-> 有关详细信息`ConfigureView`方法中，Apple 的 WWDC 2017 演播[What's New in SiriKit](https://developer.apple.com/videos/play/wwdc2017/214/)。
+> 有关`ConfigureView`方法的详细信息, 请观看 Apple 的 WWDC 2017 演示文稿, [SiriKit 中的新增功能](https://developer.apple.com/videos/play/wwdc2017/214/)。
 
 ## <a name="creating-a-voice-shortcut"></a>创建语音快捷方式
 
-Soup Chef 提供了一个接口来将语音快捷方式分配给每个订单，因而可能会使用 Siri 顺序 soup。 实际上，用来记录并指定语音的快捷方式的接口提供的 iOS 和需要很少的自定义代码。
+Soup Chef 提供了一个接口, 用于为每个订单分配一个语音快捷方式, 使其可以使用 Siri 对 Soup 进行排序。 事实上, 用于记录和分配语音快捷方式的接口是由 iOS 提供的, 并且只需要很少的自定义代码。
 
-在中`OrderDetailViewController`，当用户点击表的**将添加到 Siri**行， [ `RowSelected` ](xref:UIKit.UITableViewSource.RowSelected*)方法显示一个屏幕来添加或编辑的语音快捷方式：
+在`OrderDetailViewController`中, 当用户点击该表的 "**添加到 Siri** " 行时[`RowSelected`](xref:UIKit.UITableViewSource.RowSelected*) , 该方法会显示一个屏幕, 以添加或编辑语音快捷方式:
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -631,80 +631,80 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-基于现有语音快捷方式是否存在当前显示顺序`RowSelected`提供类型的视图控制器[ `INUIEditVoiceShortcutViewController` ](xref:IntentsUI.INUIEditVoiceShortcutViewController)或[ `INUIAddVoiceShortcutViewController` ](xref:IntentsUI.INUIAddVoiceShortcutViewController)。
-每种情况下，`OrderDetailViewController`将自身设置为视图控制器的`Delegate`，正因如此，它还实现 [`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
-并[ `IINUIEditVoiceShortcutViewControllerDelegate` ](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate)。
+根据当前显示的顺序是否存在现有的语音快捷方式, `RowSelected`将呈现类型[`INUIEditVoiceShortcutViewController`](xref:IntentsUI.INUIEditVoiceShortcutViewController)为或[`INUIAddVoiceShortcutViewController`](xref:IntentsUI.INUIAddVoiceShortcutViewController)的视图控制器。
+在每种情况`OrderDetailViewController`下, 将自身设置为视图`Delegate`控制器, 这就是它也实现的原因[`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
+和[`IINUIEditVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate)。
 
-## <a name="testing-on-device"></a>在设备上进行测试
+## <a name="testing-on-device"></a>在设备上测试
 
-若要在设备上运行 Soup Chef，请执行下面的说明。 请参阅有关[有关自动预配说明](#automatic-provisioning)。
+若要在设备上运行 Soup Chef, 请按照以下说明进行操作。 另请阅读[有关自动预配的说明](#automatic-provisioning)。
 
-### <a name="app-group-app-ids-provisioning-profiles"></a>应用组，应用 Id，预配配置文件
+### <a name="app-group-app-ids-provisioning-profiles"></a>应用程序组, 应用程序 Id, 预配配置文件
 
-在中**证书、 Id 和配置文件**一部分[Apple 开发人员门户](https://developer.apple.com/)，执行以下操作：
+在[Apple 开发人员门户](https://developer.apple.com/)的 "**证书、Id & 配置文件**" 部分中, 执行以下操作:
 
-- 创建应用程序组，以便 Soup Chef 应用和其扩展之间共享数据。 例如： **group.com.yourcompanyname.SoupChef**
+- 创建应用组, 以在 Soup Chef 应用及其扩展之间共享数据。 例如: **com.lookout.enterprise.yourcompanyname. SoupChef**
 
-- 创建三个应用程序 Id： 一个用于应用程序本身，一个用于的是 Intents 扩展，，一个用于 Intents UI 扩展。 例如：
+- 创建三个应用 Id: 一个用于应用本身, 一个用于意向扩展, 另一个用于意向 UI 扩展。 例如：
 
-    - 应用程序： **com.yourcompanyname.SoupChef**
-        - 向此应用程序 ID，将分配 SiriKit 并**应用组**功能。
+    - 应用: **com.lookout.enterprise.yourcompanyname. SoupChef**
+        - 对于此应用程序 ID, 请分配 SiriKit 和**应用组**功能。
 
-    - Intents 扩展： **com.yourcompanyname.SoupChef.Intents**
-        - 向此应用程序 ID，将分配**应用组**功能。
+    - 意向扩展: **com.lookout.enterprise.yourcompanyname. SoupChef**
+        - 对于此应用程序 ID, 分配**应用组**功能。
 
-    - Intents UI 扩展： **com.yourcompanyname.SoupChef.Intentsui**
-        - 此应用程序 ID 需要任何特殊功能。
+    - 意向 UI 扩展: **com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
+        - 此应用 ID 不需要特殊功能。
 
-- 在创建更高版本的应用 Id 后, 编辑**应用组**上面创建分配给应用程序和 Intents 扩展并指定特定的应用程序组的功能。
+- 创建以上应用 Id 后, 编辑分配给应用的**应用组**功能和意向扩展, 并指定上面创建的特定应用组。
 
-- 创建三个新开发预配配置文件，分别为每个新的应用 Id。
+- 创建三个新的开发预配配置文件, 每个新的应用 Id 各有一个。
 
-- 下载这些预配配置文件，并双击每个证书即可安装。 如果已在运行 Visual Studio for Mac 或 Visual Studio 2017，重新启动，以确保它在注册新的预配配置文件。
+- 下载这些预配配置文件, 然后双击每个配置文件进行安装。 如果 Visual Studio for Mac 或 Visual Studio 2017 已在运行, 请重新启动它以确保它注册了新的预配配置文件。
 
-### <a name="editing-infoplist-entitlementsplist-and-source-code"></a>编辑 Info.plist、 Entitlements.plist 和源代码
+### <a name="editing-infoplist-entitlementsplist-and-source-code"></a>编辑 info.plist、info.plist 和源代码
 
-在 Visual Studio for Mac 或 Visual Studio 2017 中，执行以下步骤：
+在 Visual Studio for Mac 或 Visual Studio 2017 中, 执行以下操作:
 
-- 更新各种**Info.plist**解决方案中的文件。 设置应用程序、 Intents 扩展和 Intents UI 扩展**捆绑包标识符**到上面定义的应用 Id:
+- 更新解决方案中的各种**info.plist**文件。 将应用、意向扩展和意向 UI 扩展**捆绑标识符**设置为上面定义的应用 id:
 
-    - 应用程序： **com.yourcompanyname.SoupChef**
-    - Intents 扩展： **com.yourcompanyname.SoupChef.Intents**
-    - Intents UI 扩展： **com.yourcompanyname.SoupChef.Intentsui**
+    - 应用: **com.lookout.enterprise.yourcompanyname. SoupChef**
+    - 意向扩展: **com.lookout.enterprise.yourcompanyname. SoupChef**
+    - 意向 UI 扩展: **com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
 
-- 更新**Entitlements.plist**适用于文件**SoupChef**项目：
-    - 有关**应用组**功能，将组设置为上面创建的新应用程序组 (在上面的示例中，它已**group.com.yourcompanyname.SoupChef**)。
-    - 请确保**SiriKit**已启用。
+- 更新**SoupChef**项目的**info.plist**文件:
+    - 对于 "**应用组**" 功能, 请将组设置为前面创建的新应用组 (在上面的示例中为**com.lookout.enterprise.yourcompanyname. SoupChef**)。
+    - 请确保已启用**SiriKit** 。
 
-- 更新**Entitlements.plist**适用于文件**SoupChefIntents**项目：
-    - 有关**应用组**功能，将组设置为上面创建的新应用程序组 (在上面的示例中，它已**group.com.yourcompanyname.SoupChef**)。
+- 更新**SoupChefIntents**项目的**info.plist**文件:
+    - 对于 "**应用组**" 功能, 请将组设置为前面创建的新应用组 (在上面的示例中为**com.lookout.enterprise.yourcompanyname. SoupChef**)。
 
-- 最后，打开**NSUserDefaultsHelper.cs**。 设置`AppGroup`变量为新的应用程序组的值 (例如，将其设置为`group.com.yourcompanyname.SoupChef`)。
+- 最后, 打开**NSUserDefaultsHelper.cs**。 将变量设置为新应用组的值 (例如, 将其设置为`group.com.yourcompanyname.SoupChef`)。 `AppGroup`
 
 ### <a name="configuring-the-build-settings"></a>配置生成设置
 
-在 Visual Studio for Mac 或 Visual Studio 2017:
+在 Visual Studio for Mac 或 Visual Studio 2017 中:
 
-- 打开的选项/属性**SoupChef**项目。 上**iOS 捆绑签名**选项卡上，设置**签名标识**为自动和**预配配置文件**为特定于应用的预配配置文件创建。
+- 打开**SoupChef**项目的选项/属性。 在 " **IOS 捆绑签名**" 选项卡上, 将 "**签名标识**" 设置为 "自动", 并将**配置文件**设置为前面创建的新应用特定的配置文件。
 
-- 打开的选项/属性**SoupChefIntents**项目。 上**iOS 捆绑签名**选项卡上，设置**签名标识**为自动和**预配配置文件**到新的 Intents 扩展特定预配配置文件创建上面。
+- 打开**SoupChefIntents**项目的选项/属性。 在 " **IOS 捆绑签名**" 选项卡上, 将 "**签名标识**" 设置为 "自动", 并将**配置文件**设置为之前创建的特定于扩展插件的预配配置文件。
 
-- 打开的选项/属性**SoupChefIntentsUI**项目。 上**iOS 捆绑签名**选项卡上，设置**签名标识**为自动和**预配配置文件**到新的 Intents UI 扩展插件特定预配配置文件，上面的创建。
+- 打开**SoupChefIntentsUI**项目的选项/属性。 在 " **IOS 捆绑签名**" 选项卡上, 将 "**签名标识**" 设置为 "自动", 并将**配置文件**设置为前面创建的新意向 UI 扩展插件配置文件。
 
-与这些更改后，应用将在 iOS 设备上运行。
+进行这些更改后, 应用将在 iOS 设备上运行。
 
 ### <a name="automatic-provisioning"></a>自动预配
 
-请注意，可以使用[自动预配](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)用于完成许多这些设置直接在 IDE 中的任务。
-但是，自动预配不设置应用程序组。 将需要手动配置**Entitlements.plist**具有你想要使用，应用程序组的名称的文件，请访问 Apple 开发人员门户以创建应用程序组，将该应用程序组分配给由自动创建每个应用程序 ID预配，重新生成预配配置文件 （应用、 Intents 扩展、 Intents UI 扩展） 以包括新创建的应用组，然后下载并安装它们。
+请注意, 可以使用[自动预配](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)在 IDE 中直接完成许多预配任务。
+但是, 自动预配不会设置应用组。 你将需要使用你要使用的应用组的名称手动配置**info.plist**文件, 访问 Apple 开发人员门户以创建应用组, 将该应用组分配给自动预配创建的每个应用 ID、重新生成预配配置文件 (应用、意向扩展、意向 UI 扩展) 以包含新创建的应用组, 然后下载并安装它们。
 
 ## <a name="related-links"></a>相关链接
 
-- [Soup Chef (Xamarin)](https://developer.xamarin.com/samples/monotouch/ios12/SoupChef/)
+- [Soup Chef (Xamarin)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-soupchef)
 - [Soup Chef (Swift)](https://developer.apple.com/documentation/sirikit/accelerating_app_interactions_with_shortcuts?language=objc)
 - [SiriKit (Apple)](https://developer.apple.com/sirikit/)
-- [使用 Siri 快捷方式 – WWDC 2018 简介](https://developer.apple.com/videos/play/wwdc2018/211/)
-- [构建使用 Siri 快捷方式 – WWDC 2018 的声音](https://developer.apple.com/videos/play/wwdc2018/214/)
-- [使用 Siri 手表表盘 – WWDC 2018 Siri 快捷方式](https://developer.apple.com/videos/play/wwdc2018/217/)
-- [什么是 SiriKit – WWDC 2017 中的新增功能](https://developer.apple.com/videos/play/wwdc2017/214/)
-- [创建意向应用程序扩展 (Apple)](https://developer.apple.com/documentation/sirikit/creating_an_intents_app_extension?language=objc)
+- [Siri 快捷方式简介– WWDC 2018](https://developer.apple.com/videos/play/wwdc2018/211/)
+- [用 Siri 快捷方式生成语音-WWDC 2018](https://developer.apple.com/videos/play/wwdc2018/214/)
+- [Siri 的 Siri 快捷方式-WWDC 2018](https://developer.apple.com/videos/play/wwdc2018/217/)
+- [SiriKit 中的新增功能-WWDC 2017](https://developer.apple.com/videos/play/wwdc2017/214/)
+- [创建意向应用扩展 (Apple)](https://developer.apple.com/documentation/sirikit/creating_an_intents_app_extension?language=objc)

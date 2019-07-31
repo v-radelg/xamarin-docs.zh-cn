@@ -1,28 +1,28 @@
 ---
-title: 加载 XAML 在 Xamarin.Forms 中的运行时
-description: 可以加载和使用 LoadFromXaml 扩展方法在运行时分析 XAML。
+title: 在 Xamarin 中的运行时加载 XAML
+description: 可以在运行时通过 LoadFromXaml 扩展方法加载和分析 XAML。
 ms.prod: xamarin
 ms.assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/12/2018
-ms.openlocfilehash: ce8ba32a1a6a1f69033615558c7ebf15d41e70fe
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e253d2ba949a94637d7773fdc50b479679fd3f41
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178041"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657256"
 ---
-# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>加载 XAML 在 Xamarin.Forms 中的运行时
+# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>在 Xamarin 中的运行时加载 XAML
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XAML/LoadRuntimeXAML/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
-[ `Xamarin.Forms.Xaml` ](xref:Xamarin.Forms.Xaml)命名空间包含两个[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)扩展方法，可用于加载，并在运行时分析 XAML。
+命名空间包括两[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)个扩展方法, 可用于在运行时加载和分析 XAML。 [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml)
 
 ## <a name="background"></a>背景
 
-当构造 Xamarin.Forms XAML 类时， [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)间接调用方法。 这是因为 XAML 的代码隐藏文件类调用`InitializeComponent`来自其构造函数的方法：
+构造 Xamarin. Forms XAML 类时, 将间接调用[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)此方法。 之所以发生这种情况, 是因为 XAML 类的代码隐藏文件`InitializeComponent`从其构造函数中调用了方法:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-当 Visual Studio 将生成包含 XAML 文件的项目时，它会分析要生成的 XAML 文件C#代码文件 (例如， **MainPage.xaml.g.cs**)，其中包含的定义`InitializeComponent`方法：
+当 Visual Studio 生成包含 XAML 文件的项目时, 它会分析 XAML 文件以生成包含C# `InitializeComponent`方法定义的代码文件 (例如, **MainPage.xaml.g.cs**):
 
 ```csharp
 private void InitializeComponent()
@@ -44,16 +44,16 @@ private void InitializeComponent()
 }
 ```
 
-`InitializeComponent`方法调用[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法从.NET Standard 库中提取的 XAML 文件 （或其编译的二进制文件）。 经提取，它初始化的所有 XAML 文件中定义对象、 将它们组合在一起在父-子关系中连接、 将附加到 XAML 文件中设置的事件的代码中定义的事件处理程序和设置的内容作为对象的结果树页。
+`InitializeComponent` [方法`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)调用方法从 .NET Standard 库中提取 XAML 文件 (或其已编译的二进制文件)。 提取后, 它将初始化在 XAML 文件中定义的所有对象, 将它们一起连接到父-子关系, 将代码中定义的事件处理程序附加到 XAML 文件中设置的事件, 并将对象的结果树设置为分页.
 
 ## <a name="loading-xaml-at-runtime"></a>在运行时加载 XAML
 
-[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法都是`public`，因此可以调用从 Xamarin.Forms 应用程序加载，并且在运行时分析 XAML。 这将允许从 web 服务，从 XAML 中，创建所需的视图和应用程序中显示下载 XAML 的应用程序等方案。
+这些[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法是`public`, 因此可以从 Xamarin 应用程序调用, 在运行时加载和分析 XAML。 这将允许诸如应用程序从 web 服务下载 XAML、从 XAML 创建所需的视图, 以及在应用程序中显示该视图之类的方案。
 
 > [!WARNING]
-> 在运行时加载 XAML 具有显著的性能开销，并通常应避免使用。
+> 在运行时加载 XAML 会产生极高的性能开销, 通常应避免这样做。
 
-下面的代码示例显示了简单的使用情况：
+下面的代码示例演示了一个简单的用法:
 
 ```csharp
 using Xamarin.Forms.Xaml;
@@ -65,12 +65,12 @@ Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML);
 _stackLayout.Children.Add(navigationButton);
 ```
 
-在此示例中， [ `Button` ](xref:Xamarin.Forms.Button)创建实例后，使用它的[ `Text` ](xref:Xamarin.Forms.Button.Text)属性值被设置从 XAML 中定义`string`。 `Button`随后将添加到[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)页 XAML 中定义的。
+在此示例中, [`Button`](xref:Xamarin.Forms.Button)将创建一个实例, 并从[`Text`](xref:Xamarin.Forms.Button.Text)中`string`定义的 XAML 设置其属性值。 然后, 将添加[`StackLayout`](xref:Xamarin.Forms.StackLayout)到在该页面的 XAML 中定义的。 `Button`
 
 > [!NOTE]
-> [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)扩展方法允许指定泛型类型参数。 但是，它很少需要指定类型参数，因为它将对其操作从实例的类型推断。
+> [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)扩展方法允许指定泛型类型参数。 但是, 很少需要指定类型参数, 因为它将从它所操作的实例的类型推断。
 
-[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法可用于放任何 XAML，大量使用下面的示例都[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) ，然后导航到它：
+方法可用于将任何 XAML [`ContentPage`](xref:Xamarin.Forms.ContentPage)放在一起, 下面的示例因为这样做, 然后导航到该方法: [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)
 
 ```csharp
 using Xamarin.Forms.Xaml;
@@ -85,7 +85,7 @@ await Navigation.PushAsync(page);
 
 ## <a name="accessing-elements"></a>访问元素
 
-在与运行时加载 XAML [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法不允许指定运行时对象名称的 XAML 元素的强类型访问 (使用`x:Name`)。 但是，这些 XAML 元素可以使用检索[ `FindByName` ](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法，然后再根据需要访问：
+使用[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法在运行时加载 xaml 不允许强类型访问具有指定运行时对象名称 (使用`x:Name`) 的 xaml 元素。 但是, 可以使用[`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法检索这些 XAML 元素, 然后根据需要进行访问:
 
 ```csharp
 // See the sample for the full XAML string
@@ -97,8 +97,8 @@ monkeyLabel.Text = "Seated Monkey";
 ...
 ```
 
-在此示例中，为 XAML [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)进行扩充。 包含此 XAML [ `Label` ](xref:Xamarin.Forms.Label)名为`monkeyName`，使用检索[ `FindByName` ](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法，它具有之前[ `Text` ](xref:Xamarin.Forms.Label.Text)设置属性。
+在此示例中, 的 XAML [`ContentPage`](xref:Xamarin.Forms.ContentPage)被放大。 此 XAML 包含一个[`Label`](xref:Xamarin.Forms.Label)名`monkeyName`为的, 它[`Text`](xref:Xamarin.Forms.Label.Text)在设置[`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)属性前使用方法进行检索。
 
 ## <a name="related-links"></a>相关链接
 
-- [LoadRuntimeXAML （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/LoadRuntimeXAML/)
+- [LoadRuntimeXAML (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

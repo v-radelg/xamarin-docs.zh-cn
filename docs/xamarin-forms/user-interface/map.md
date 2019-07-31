@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: ec1600f57daf627742db41f7410ef4f49b53c2b3
-ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
+ms.openlocfilehash: 51555382e38412b7fa2c5c821b252984758bb1ec
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386183"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656969"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 映射
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 _Xamarin.Forms 每个平台上使用本机映射 Api。_
 
 Xamarin.Forms.Maps 每个平台上使用本机映射 Api。 这为用户提供了快速、熟悉的地图体验, 但这意味着需要执行一些配置步骤来符合每个平台的 API 要求。
 配置完成后，`Map`控制的工作方式就像在常见的代码中的任何其他 Xamarin.Forms 元素。
 
-已在使用地图控件[MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)示例，如下所示。
+已在使用地图控件[MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)示例，如下所示。
 
  [![MobileCRM 示例中的地图](map-images/maps-zoom-sml.png "地图控件示例")](map-images/maps-zoom.png#lightbox "地图控件示例")
 
@@ -377,8 +377,8 @@ public class MapItemTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>相关链接
 
-- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
+- [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [创建 Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
 - [地图 API](xref:Xamarin.Forms.Maps)

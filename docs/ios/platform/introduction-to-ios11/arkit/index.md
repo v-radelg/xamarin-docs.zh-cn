@@ -1,46 +1,46 @@
 ---
-title: 在 Xamarin.iOS ARKit 简介
-description: 本文档介绍与 ARKit iOS 11 中的增强的现实。 它讨论了如何将三维模型添加到应用程序、 配置视图、 会话委托实施，在世界中，定位三维模型和暂停增强的现实会话。
+title: Xamarin 中的 ARKit 简介
+description: 本文档介绍 iOS 11 with ARKit 中增加的现实。 它讨论了如何向应用程序添加3D 模型, 如何配置视图, 如何实现会话委托, 如何将三维模型置于世界上, 以及如何暂停扩充的现实会话。
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: 348d2f2090105ed693da7be5a44c82ef18bd2a89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 47c092215afef4aa6964a39f7dcb5b685d98a4fc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61176690"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655735"
 ---
-# <a name="introduction-to-arkit-in-xamarinios"></a>在 Xamarin.iOS ARKit 简介
+# <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin 中的 ARKit 简介
 
-_对于 iOS 11 增强的现实_
+_IOS 11 的增强现实_
 
-ARKit 使各种增强的现实应用程序和游戏。 此节涵盖以下主题：
+ARKit 实现了各种增加的现实应用程序和游戏。 此节涵盖以下主题：
 
-- [ARKit 入门](#gettingstarted)
-- [ARKit 使用 UrhoSharp](urhosharp.md)
+- [入门与 ARKit](#gettingstarted)
+- [将 ARKit 与 UrhoSharp 配合使用](urhosharp.md)
 
 <a name="gettingstarted" />
 
-## <a name="getting-started-with-arkit"></a>ARKit 入门
+## <a name="getting-started-with-arkit"></a>入门与 ARKit
 
-若要开始使用增强现实，下面的说明，引导完成简单的应用程序： 定位三维模型并让 ARKit 就地保留的模型，使用其跟踪功能。
+若要开始使用增强的现实, 以下说明将指导你完成一个简单的应用程序: 定位3D 模型并让 ARKit 将模型与其跟踪功能保持不变。
 
-![Jet 浮点照相机中图像的三维模型](images/jet-sml.png)
+![相机图像中的 Jet 3D 模型](images/jet-sml.png)
 
 ### <a name="1-add-a-3d-model"></a>1.添加三维模型
 
-应将资产添加到与项目**SceneKitAsset**生成操作。
+应通过**SceneKitAsset**生成操作将资产添加到项目。
 
-![在项目中的 SceneKit 资产](images/scene-assets.png)
+![SceneKit 项目中的资产](images/scene-assets.png)
 
 
 ### <a name="2-configure-the-view"></a>2.配置视图
 
-在视图控制器`ViewDidLoad`方法中，加载场景资产并将设置`Scene`在视图上的属性：
+在视图控制器的`ViewDidLoad`方法中, 加载场景资产, 并在视图上`Scene`设置属性:
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -52,9 +52,9 @@ var scene = SCNScene.FromFile("art.scnassets/ship");
 SceneView.Scene = scene;
 ```
 
-### <a name="3-optionally-implement-a-session-delegate"></a>3.可以选择实现会话委托
+### <a name="3-optionally-implement-a-session-delegate"></a>3.选择性地实现会话委托
 
-尽管无需进行简单的情况下，实现会话委托可能有助于调试 ARKit 会话 （以及在实际的应用程序，为用户提供反馈） 的状态。 创建一个简单的委派，使用以下代码：
+虽然对于简单情况并不是必需的, 但实现会话委托对于调试 ARKit 会话的状态 (在实际应用程序中, 为用户提供反馈) 很有用。 使用以下代码创建简单委托:
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -67,16 +67,16 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-分配中的委托中`ViewDidLoad`方法：
+在`ViewDidLoad`方法的中分配委托:
 
 ```csharp
 // Track changes to the session
 SceneView.Session.Delegate = new SessionDelegate();
 ```
 
-### <a name="4-position-the-3d-model-in-the-world"></a>4.在世界中定位的三维模型
+### <a name="4-position-the-3d-model-in-the-world"></a>4.将三维模型置于世界上
 
-在`ViewWillAppear`，下面的代码建立 ARKit 会话并设置相对于设备的摄像机的空间中的三维模型的位置：
+在`ViewWillAppear`中, 以下代码将建立 ARKit 会话, 并将3d 模型的位置设置为相对于设备照相机的空间:
 
 ```csharp
 // Create a session configuration
@@ -94,11 +94,11 @@ var ship = SceneView.Scene.RootNode.FindChildNode("ship", true);
 ship.Position = new SCNVector3(2f, -2f, -9f);
 ```
 
-每次运行该应用程序或将其恢复后，将在摄像机前放置三维模型。 一旦定位模型，使照相机并观察 ARKit 保留定位模型。
+每次运行或恢复应用程序时, 3D 模型都将位于照相机的前方。 定位模型后, 移动相机并观看 ARKit, 使模型保持定位。
 
-### <a name="5-pause-the-augmented-reality-session"></a>5.暂停增强的现实会话
+### <a name="5-pause-the-augmented-reality-session"></a>5.暂停扩充的现实会话
 
-它是很好的做法暂停 ARKit 会话不可见时的视图控制器 (在`ViewWillDisappear`方法：
+当视图控制器不可见时 (在`ViewWillDisappear`方法中为) 暂停 ARKit 会话是一种很好的做法:
 
 ```csharp
 SceneView.Session.Pause();
@@ -106,15 +106,15 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>总结
 
-上面的代码会导致一个简单的 ARKit 应用程序。 更复杂的示例所期望的托管实现在增强的现实会话的视图控制器`IARSCNViewDelegate`，并实现其他方法。
+上述代码会生成一个简单的 ARKit 应用程序。 更复杂的示例是, 要托管扩大现实会话的视图控制器实现`IARSCNViewDelegate`并实现其他方法。
 
-ARKit 提供大量更复杂的功能，如图面上跟踪和用户交互。 请参阅[UrhoSharp 演示](urhosharp.md)有关组合使用 UrhoSharp 跟踪 ARKit 示例。
+ARKit 提供大量更复杂的功能, 如面跟踪和用户交互。 有关将 ARKit 跟踪与 UrhoSharp 结合使用的示例, 请参阅[UrhoSharp 演示](urhosharp.md)。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [增强的现实 (Apple)](https://developer.apple.com/arkit/)
-- [ARKit 使用 UrhoSharp](urhosharp.md)
-- [简单 ARKit (Jet) 示例](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
-- [ARKit 放置对象 （示例）](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
-- [引入 ARKit-适用于 iOS (WWDC) （视频） 的增强现实](https://developer.apple.com/videos/play/wwdc2017/602/)
+- [扩充的现实 (Apple)](https://developer.apple.com/arkit/)
+- [将 ARKit 与 UrhoSharp 配合使用](urhosharp.md)
+- [简单 ARKit (Jet) 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit 放置对象 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [引入适用于 iOS 的 ARKit (WWDC) (视频)](https://developer.apple.com/videos/play/wwdc2017/602/)

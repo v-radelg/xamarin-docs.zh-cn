@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的条目字体大小
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用平台特定于 iOS 的可缩放的一个条目的字体大小。
+title: IOS 上的输入字体大小
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来缩放条目的字体大小。
 ms.prod: xamarin
 ms.assetid: E8881D4E-902B-4397-A43E-916B2885EC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 24e8c0e0b963cda7d3240c47ee526001db9d4533
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f0f5ca8aa7959d5c305c29c96f972dccc43a65ff
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926059"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648139"
 ---
-# <a name="entry-font-size-on-ios"></a>在 iOS 上的条目字体大小
+# <a name="entry-font-size-on-ios"></a>IOS 上的输入字体大小
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的用于缩放的字体大小[ `Entry` ](xref:Xamarin.Forms.Entry)以确保适合所的文本的控件。 设置使用在 XAML [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty)附加到属性`boolean`值：
+此 iOS 平台特定用于缩放的字体大小[`Entry`](xref:Xamarin.Forms.Entry) , 以确保输入的文本适合控件。 设置使用在 XAML [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty)附加到属性`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -55,6 +55,6 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

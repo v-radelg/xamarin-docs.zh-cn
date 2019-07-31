@@ -1,31 +1,31 @@
 ---
-title: 适用于 Xamarin.iOS 应用程序生命周期演示
-description: 本文档将检查所处理的应用程序委托的 iOS 应用程序，演示了何时以及如何处理这些事件的各种生命周期事件。
+title: 适用于 Xamarin 的应用程序生命周期演示
+description: 本文档介绍 iOS 应用程序中由应用程序委托处理的各种生命周期事件, 并演示如何处理这些事件。
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/17/2018
-ms.openlocfilehash: 3beb511c03b328ecea824bf89355d056df003f3e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4eefbd63a91c6fd9eeed7a6e5043db5a2ee9105b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946144"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649379"
 ---
-# <a name="application-lifecycle-demo-for-xamarinios"></a>适用于 Xamarin.iOS 应用程序生命周期演示
+# <a name="application-lifecycle-demo-for-xamarinios"></a>适用于 Xamarin 的应用程序生命周期演示
 
-这篇文章并[示例代码](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)演示了在 iOS 中，四种应用程序状态和角色的`AppDelegate`中通知的状态获取更改时应用程序的方法。 每当应用程序改变状态时，应用程序将打印到控制台的更新：
+本文和[代码示例](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)演示了 iOS 中的四种应用程序状态, 以及在状态`AppDelegate`发生更改时通知应用程序的方法的角色。 应用程序会在应用更改状态时将更新打印到控制台:
 
 [![](application-lifecycle-demo-images/image3-sml.png "示例应用")](application-lifecycle-demo-images/image3.png#lightbox)
 
-[![](application-lifecycle-demo-images/image4.png "每当应用程序改变状态时，应用程序将打印到控制台的更新")](application-lifecycle-demo-images/image4.png#lightbox)
+[![](application-lifecycle-demo-images/image4.png "应用会在应用更改状态时将更新打印到控制台")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>演练
 
-1. 打开**生命周期**项目中**LifecycleDemo**解决方案。
-1. 打开`AppDelegate`类。 日志记录已添加到生命周期方法，以指示当应用程序已更改状态：
+1. 在**LifecycleDemo**解决方案中打开**生命周期**项目。
+1. `AppDelegate`打开类。 已将日志记录添加到生命周期方法, 以指示应用程序何时发生更改状态:
 
     ```csharp
     public override void OnActivated(UIApplication application)
@@ -51,13 +51,13 @@ ms.locfileid: "60946144"
     }
     ```
 
-1. 启动应用程序在模拟器中或在设备上。 `OnActivated` 将在应用启动时调用。 应用程序现在处于_Active_状态。
-1. 点击主页按钮上的模拟器或设备将在后台应用程序。 `OnResignActivation` 并`DidEnterBackground`将从应用程序转换为调用`Active`到`Inactive`到`Backgrounded`状态。 由于没有任何应用程序代码设置为在后台执行，该应用程序被视为_挂起_在内存中。
-1. 导航回到应用程序以使其重新置于前台。 `WillEnterForeground` 和`OnActivated`将同时调用：
+1. 在模拟器或设备上启动应用程序。 `OnActivated`应用启动时将调用。 应用程序现在处于 "_活动_" 状态。
+1. 点击模拟器或设备上的 "主页" 按钮, 使应用程序进入背景。 `OnResignActivation`当`DidEnterBackground`应用从`Active`转换`Inactive` 到`Backgrounded`状态时, 将调用和。 由于没有设置为在后台执行的应用程序代码, 因此该应用程序在内存中被视为_挂起_。
+1. 向后导航到该应用, 使其返回到前台。 `WillEnterForeground`和`OnActivated`都将调用:
 
-    ![](application-lifecycle-demo-images/image4.png "打印到控制台的状态更改")
+    ![](application-lifecycle-demo-images/image4.png "将状态更改打印到控制台")
 
-    应用程序已进入前台从背景，并在屏幕上显示的文本更改时，执行以下视图控制器中的代码行：
+    当应用程序从后台进入前台并更改屏幕上显示的文本时, 将执行视图控制器中的以下代码行:
 
     ```csharp
     UIApplication.Notifications.ObserveWillEnterForeground ((sender, args) => {
@@ -65,16 +65,16 @@ ms.locfileid: "60946144"
     });
     ```
 
-1. 按**主页**按钮放置在后台将应用程序。 然后，双击**主页**按钮以显示应用程序切换器。 在 iPhone X 上往下轻扫向上从屏幕的底部：
+1. 按 "**主页**" 按钮, 将应用程序放入后台。 然后, 双击 "**主页**" 按钮, 打开应用程序切换器。 在 iPhone X 上, 从屏幕的底部向上轻扫:
 
-    [![应用程序切换器](application-lifecycle-demo-images/app-switcher-sml.png "应用程序切换器")](application-lifecycle-demo-images/app-switcher.png#lightbox)
+    [![应用程序切换]器(application-lifecycle-demo-images/app-switcher-sml.png "应用程序切换")器](application-lifecycle-demo-images/app-switcher.png#lightbox)
   
-1. 找到应用程序中应用切换器，并向上轻扫以将其删除 （在 iOS 11，长按直到角出现的红色图标）：
+1. 在应用切换器中找到应用程序, 然后向上轻扫以将其删除 (在 iOS 11 上, 长按, 直到红色图标显示在角上):
 
-    [![最多删除正在运行的应用的轻扫](application-lifecycle-demo-images/app-switcher-swipe-sml.png "轻扫最多删除正在运行的应用")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
+    [![向上轻扫以删除正在运行的应用](application-lifecycle-demo-images/app-switcher-swipe-sml.png "向上轻扫以删除正在运行的应用")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-iOS 将终止该应用程序。 请注意，`WillTerminate`不会调用它，因为应用程序是否已_挂起_背景中。
+iOS 将终止应用程序。 请注意`WillTerminate` , 由于应用程序已在后台_挂起_, 因此不会调用。
 
 ## <a name="related-links"></a>相关链接
 
-- [LifecycleDemo （示例）](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
+- [LifecycleDemo (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)

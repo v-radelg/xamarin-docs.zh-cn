@@ -1,31 +1,31 @@
 ---
 title: tvOS 应用分发概述
-description: 本文档概述了可用于 Xamarin.tvOS 应用的分发技巧，并充当有关该主题的更详细文档的指针。
+description: 本文档概述适用于 tvOS 应用的分发技术, 并将其用作指向主题中更详细文档的指针。
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: d2f4031eeddbaa206f38b7b1c2bb49d21482c175
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: df3a3462923ab396037f9267194588ffcb03f9e5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864948"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655242"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 应用分发概述
 
-_本文档概述了可用于 Xamarin.tvOS 应用的分发技巧，并充当有关该主题的更详细文档的指针。_
+_本文档概述适用于 tvOS 应用的分发技术, 并将其用作指向主题中更详细文档的指针。_
 
 
-后 Xamarin.tvOS 应用开发完毕，软件开发生命周期的下一步是将其分发给用户，如下面的关系图的突出显示部分中所示：
+开发完 tvOS 应用后, 软件开发生命周期中的下一步是将应用分发给用户, 如下面的关系图中突出显示的部分所示:
 
 
 [![软件开发生命周期概述](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 
-Apple 提供了以下的方式来分发 tvOS 应用支持的 Xamarin.tvOS:
+Apple 提供以下方法来分发 tvOS 应用, 这些应用由 tvOS 支持:
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
 2. [**In-House（企业）** ](#In-House-Distribution) 
@@ -35,32 +35,32 @@ Apple 提供了以下的方式来分发 tvOS 应用支持的 Xamarin.tvOS:
 
 <a name="Apple-TV-App-Store-Distribution" />
 
-## <a name="apple-tv-app-store-distribution"></a>Apple TV App Store 分发
+## <a name="apple-tv-app-store-distribution"></a>Apple TV 应用商店分发
 
-这是 tvOS 应用程序将分发给使用者在 Apple TV 设备上的主要方式。 所有提交到 Apple TV App Store 的应用需要 Apple 审批。
+这是将 tvOS 应用分发到 Apple TV 设备上的使用者的主要方式。 提交到 Apple TV 应用商店的所有应用都需要 Apple 批准。
 
-应用通过名为 iTunes Connect  的门户提交到 App Store。 请参阅我们[iTunes Connect 中配置你的应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南以获取有关以下主题的信息：
+应用通过名为 iTunes Connect  的门户提交到 App Store。 有关以下主题的信息, 请参阅[ITunes Connect guide 中的 "配置应用程序](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)":
 
-- 管理协议、 税款和银行。
+- 管理协议、税款和银行。
 - 创建 iTunes Connect 记录。
-- 管理应用视频和屏幕快照。
-- 管理应用程序名称、 说明、 最新内容、 关键字和 Url。
+- 管理应用视频和屏幕截图。
+- 管理应用名称、说明、新增功能、关键字和 Url。
 - 维护常规应用信息。
 - 维护 Game Center 信息。
-- 维护应用审核信息。
+- 维护应用检查信息。
 - 维护定价信息。
 - 维护应用内购买信息。
 - 查看应用程序评论。
 
-而不是专门为 tvOS 编写，本文档介绍如何设置和使用此门户来准备应用以便在 Apple TV App Store 中发布。 许多相同的步骤所需是否设置了 iOS 或 tvOS 应用。
+本文提供了有关如何设置和使用此门户来准备要在 Apple TV 应用商店中发布的应用程序的信息。 无论你是在设置 iOS 还是 tvOS 应用程序, 都需要执行许多相同的步骤。
 
-完成所有上面列出的步骤操作后，请参阅我们[iTunes Connect 中配置 tvOS 应用](~/ios/tvos/deploy-test/app-distribution/itunes-connect.md)添加需要的 tvOS 应用程序特定信息。
+完成上面列出的所有步骤后, 请参阅[在 ITunes Connect 中配置 TvOS 应用](~/ios/tvos/deploy-test/app-distribution/itunes-connect.md), 以添加所需的 tvOS 应用特定信息。
 
 务必注意，只有属于 **Apple 开发人员计划**的开发人员有权访问 iTunes Connect。 **Apple 开发人员企业计划**成员没有访问权限。
 
-如果您遇到的问题将 Xamarin.tvOS 应用提交到 Apple TV App Store，请参阅我们[故障排除](~/ios/tvos/troubleshooting.md)指南。 它包含可能会遇到的一些已知的问题和如何解决这些 Xamarin.tvOS 中。
+如果在将 tvOS 应用提交到 Apple TV 应用商店时遇到问题, 请参阅[故障排除](~/ios/tvos/troubleshooting.md)指南。 它包含一些你可能会遇到的已知问题, 以及如何在 tvOS 中解决这些问题。
 
-有关详细信息，请访问[发布到 Apple TV App Store](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md)指南。
+有关详细信息, 请访问[APPLE TV 应用商店](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md)指南中的发布。
 
 <a name="In-House-Distribution" />
 
@@ -68,27 +68,27 @@ Apple 提供了以下的方式来分发 tvOS 应用支持的 Xamarin.tvOS:
 
 In-House 分发（有时称为企业分发  ）允许 **Apple 开发人员企业计划**成员在内部向同一组织内的其他成员分发应用。 In-House 分发的优势在于无需 App Store 审核，且没有可安装应用程序的设备数量限制。 但是，值得注意的是，**Apple 开发人员企业计划**成员**没有**权限访问 iTunes Connect，因此许可证持有人负责分发应用。
 
-有关设置以及如何 In-House 分发你的应用程序的详细信息，请参阅[In-House 分发指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。 本文档是特定于 iOS 的但同样的技术用于 tvOS 应用。
+若要详细了解如何获取设置以及如何在内部分发应用程序, 请参阅[内部分发指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。 本文档特定于 iOS, 但使用相同的技术来进行 tvOS 应用。
 
 <a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>Ad Hoc 分发
 
-Xamarin.tvOS 应用可以进行用户测试通过 ad hoc 分发可**Apple Developer Program**，并**Apple Developer Enterprise Program**，并允许最多 100 个 Apple TV 设备若要进行测试。 ITunes Connect 不是一个选项时，ad hoc 分发的最佳用例是贵公司内的分发。
+TvOS 应用可通过 ad hoc 分发进行用户测试, 可在**Apple 开发人员计划**和**Apple developer Enterprise 计划**中获得, 最多可测试 100 Apple TV 设备。 当 iTunes Connect 不是一种选择时, 适用于 ad hoc 分发的最佳用例是在公司内分发的。
 
-有关设置以及如何 In-House 分发您的应用程序的详细信息，请参阅[Ad Hoc 分发指南](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)。 同样，本文档是特定于 iOS 的但同样的技术用于 tvOS 应用。
+若要详细了解如何获取设置以及如何在内部分发应用程序, 请参阅[即席分发指南](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)。 同样, 此文档特定于 iOS, 但使用相同的技术来 tvOS 应用。
 
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
-本文提供可用于 Xamarin.tvOS 应用分发机制的简要概述。 它引入了 Apple TV App Store 中，Ad Hoc 和 In-house 部署，并提供更多详细信息的链接。
+本文简要概述了适用于 tvOS 应用的分发机制。 它引入了 Apple TV 应用商店、即席部署和内部部署, 并提供了更多详细信息的链接。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人机接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [适用于 tvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

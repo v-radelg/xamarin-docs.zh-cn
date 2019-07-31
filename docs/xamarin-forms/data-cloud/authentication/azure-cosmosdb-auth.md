@@ -1,5 +1,5 @@
 ---
-title: 使用 Azure Cosmos DB 文档数据库和 Xamarin.Forms 的用户进行身份验证
+title: 使用 Azure Cosmos DB 文档数据库和 Xamarin 对用户进行身份验证
 description: 本文介绍如何将访问控制与 Azure Cosmos DB 分区集合相结合，以便用户只能访问自己的 Xamarin.Forms 应用程序中的文档。
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 0067a9e576e695a308e4326955b540be2ff46f61
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832366"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657232"
 ---
-# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库和 Xamarin.Forms 的用户进行身份验证
+# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库和 Xamarin 对用户进行身份验证
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
 _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服务器和分区，同时支持无限的存储和吞吐量。本文介绍如何将访问控制与已分区集合相结合，以便用户只能访问自己的 Xamarin.Forms 应用程序中的文档。_
 
@@ -271,7 +271,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 ## <a name="related-links"></a>相关链接
 
-- [Todo Azure Cosmos DB 身份验证 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [Todo Azure Cosmos DB 身份验证 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 - [使用 Azure Cosmos DB 文档数据库](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md)
 - [保护对 Azure Cosmos DB 数据访问](/azure/cosmos-db/secure-access-to-data/)
 - [SQL API 中的访问控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。

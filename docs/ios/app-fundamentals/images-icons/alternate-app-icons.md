@@ -1,75 +1,75 @@
 ---
-title: 在 Xamarin.iOS 中的备用的应用图标
-description: 本文档介绍如何在 Xamarin.iOS 中使用备用的应用图标。 它讨论了如何将这些图标添加到 Xamarin.iOS 项目、 如何修改 Info.plist 文件中，以及如何以编程方式管理应用的图标。
+title: Xamarin 中的备用应用程序图标
+description: 本文档介绍如何在 Xamarin 中使用替代的应用图标。 本文介绍如何将这些图标添加到 Xamarin iOS 项目, 如何修改 info.plist 文件, 以及如何以编程方式管理应用程序的图标。
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: fc4ef6eb16893cc1df0d980d27af8589a280e933
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 43ef420f569f7dbca6140798f798f3a128d9c706
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832425"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653436"
 ---
-# <a name="alternate-app-icons-in-xamarinios"></a>在 Xamarin.iOS 中的备用的应用图标
+# <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的备用应用程序图标
 
-_本文介绍如何在 Xamarin.iOS 中使用备用的应用图标。_
+_本文介绍如何在 Xamarin 中使用替代的应用图标。_
 
-Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增强功能：
+Apple 向 iOS 10.3 添加了几项增强功能, 使应用程序可以管理其图标:
 
-- `ApplicationIconBadgeNumber` -获取或设置应用图标徽章中 Springboard。
-- `SupportsAlternateIcons` -如果`true`应用具有一组替代的图标。
-- `AlternateIconName` -返回当前选定的备用图标的名称或`null`如果使用的主图标。
-- `SetAlternameIconName` -使用此方法以切换到给定替换图标的应用程序的图标。
+- `ApplicationIconBadgeNumber`-获取或设置 Springboard 中应用程序图标的徽章。
+- `SupportsAlternateIcons`-如果`true`应用程序具有一组备用图标, 则为。
+- `AlternateIconName`-返回当前选定`null`的备用图标的名称, 如果使用主图标, 则返回。
+- `SetAlternameIconName`-使用此方法将应用的图标切换到给定的替代图标。
 
-![](alternate-app-icons-images/icons04.png "示例警报，如果应用程序改变它的图标")
+![](alternate-app-icons-images/icons04.png "应用更改图标时的示例警报")
 
 <a name="Adding-Alternate-Icons" />
 
-## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>将备用图标添加到 Xamarin.iOS 项目
+## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>向 Xamarin iOS 项目添加替代图标
 
-若要允许的应用程序切换到备用的图标，将需要的图标图像集合要包含在 Xamarin.iOS 应用程序项目中。 这些映像不能添加到项目使用的典型`Assets.xcassets`方法，必须将它们添加到**资源**直接文件夹。
+若要允许应用切换到备用图标, 需要在 Xamarin iOS 应用项目中包含图标图像的集合。 不能使用典型`Assets.xcassets`方法将这些图像添加到项目中, 它们必须直接添加到**Resources**文件夹中。
 
 请执行以下操作：
 
-1. 选择所需的图标图像的文件夹中，选择所有并将其拖至**资源**中的文件夹**解决方案资源管理器**:
+1. 选择文件夹中所需的图标图像, 选择 "全部", 并将其拖动到**解决方案资源管理器**中的 "**资源**" 文件夹中:
 
-    ![](alternate-app-icons-images/icons00.png "选择文件夹中的图标图像")
+    ![](alternate-app-icons-images/icons00.png "从文件夹中选择图标图像")
 
-2. 出现提示时，选择**副本**，**为所有选定文件使用相同的操作**然后单击**确定**按钮：
+2. 出现提示时, 选择 "**复制**",**对所有选定的文件使用相同的操作**, 并单击 **"确定"** 按钮:
 
-    ![](alternate-app-icons-images/icons02.png "将文件添加到文件夹对话框")
+    ![](alternate-app-icons-images/icons02.png "\"将文件添加到文件夹\" 对话框")
 
-3. **资源**文件夹应如下所示完成时：
+3. "**资源**" 文件夹在完成后应如下所示:
 
-    ![](alternate-app-icons-images/icons01.png "资源文件夹应如下所示")
+    ![](alternate-app-icons-images/icons01.png "Resources 文件夹应如下所示")
 
 <a name="Modifying-the-Info.plist-File" />
 
-## <a name="modifying-the-infoplist-file"></a>修改 Info.plist 文件
+## <a name="modifying-the-infoplist-file"></a>修改 info.plist 文件
 
-使用添加到所需图像**资源**文件夹中， [CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13)密钥将需要添加到项目的**Info.plist**文件。 此密钥将定义新建图标和构成它的映像的名称。
+将所需的映像添加到**Resources**文件夹后, 需要将[CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13)项添加到项目的**info.plist**文件中。 此密钥将定义新图标的名称和组成它的映像。
 
 请执行以下操作：
 
 1. 在“解决方案资源管理器”  中，双击“Info.plist”  文件，将其打开进行编辑。
-2. 切换到**源**视图。
-3. 添加**捆绑包图标**键，将保留**类型**设置为**字典**。
-4. 添加`CFBundleAlternateIcons`项并将设置**类型**到**字典**。
-5. 添加`AppIcon2`项并将设置**类型**到**字典**。 这将是新的备用的应用图标集的名称。
-6. 添加`CFBundleIconFiles`项并将设置**类型**到**数组**
-7. 添加到新的字符串`CFBundleIconFiles`省去扩展每个图标文件的数组和`@2x`， `@3x`，等后缀 (示例`100_icon`)。 对于每个文件构成备用图标集重复此步骤。
-8. 添加`UIPrerenderedIcon`关键`AppIcon2`字典中，设置**类型**到**布尔**到**否**。
+2. 切换到 "**源**" 视图。
+3. 添加 "**捆绑" 图标**键并将 "**类型**" 设置为 "**字典**"。
+4. 添加密钥并将 "**类型**" 设置为 "字典"。 `CFBundleAlternateIcons`
+5. 添加密钥并将 "**类型**" 设置为 "字典"。 `AppIcon2` 这将是新的备用应用图标集的名称。
+6. 添加密钥并将**类型**设置为**数组** `CFBundleIconFiles`
+7. 将一个新字符串添加到`CFBundleIconFiles`每个图标文件的数组中`@2x`, 并保留扩展名和`@3x`、等后缀 (例如`100_icon`)。 为组成备用图标集的每个文件重复此步骤。
+8. `AppIcon2`向字典中添加键,将"类型"设置为"布尔值",将"值"设置为"否"。`UIPrerenderedIcon`
 9. 保存对文件所做的更改。
 
-得到**Info.plist**文件应如下所示完成时：
+完成后, 生成的**info.plist**文件应如下所示:
 
-![](alternate-app-icons-images/icons03.png "已完成的 Info.plist 文件")
+![](alternate-app-icons-images/icons03.png "已完成的 info.plist 文件")
 
-或在文本编辑器中打开像这样：
+例如, 如果在文本编辑器中打开, 则:
 
 ```xml
 <key>CFBundleIcons</key>
@@ -107,11 +107,11 @@ Apple 向 iOS 10.3 的允许的应用程序来管理其图标添加了多项增�
 
 <a name="Managing-the-Apps-Icon" />
 
-## <a name="managing-the-apps-icon"></a>管理应用程序的图标 
+## <a name="managing-the-apps-icon"></a>管理应用的图标 
 
-在使用包含在 Xamarin.iOS 项目中的图标图像并**Info.plist**正确配置的文件，开发人员可以使用添加到 iOS 10.3 的许多新功能之一来控制应用的图标。
+在 Xamarin 项目中包含图标映像和正确配置**info.plist**文件后, 开发人员可以使用添加到 iOS 10.3 的许多新功能之一来控制应用的图标。
 
-`SupportsAlternateIcons`属性的`UIApplication`类允许开发人员，确定应用是否支持备用的图标。 例如:
+`UIApplication`类的属性允许开发人员查看应用是否支持替换图标。 `SupportsAlternateIcons` 例如:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-`ApplicationIconBadgeNumber`属性的`UIApplication`类允许开发人员在获取或设置当前的应用图标的徽章数 Springboard。 默认值为零 (0)。 例如:
+`UIApplication`类的属性允许开发人员获取或设置 Springboard 中应用程序图标的当前徽章号。 `ApplicationIconBadgeNumber` 默认值为零 (0)。 例如:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-`AlternateIconName`的属性`UIApplication`类，开发人员可获取当前所选的备用应用图标的名称或它将返回`null`如果应用正在使用主图标。 例如:
+`UIApplication`类的`null`属性允许开发人员获取当前选定的备用应用程序图标的名称, 或者, 如果应用程序使用主图标, 则该属性返回。 `AlternateIconName` 例如：
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-`SetAlternameIconName`属性的`UIApplication`类允许开发人员更改应用程序图标。 传递图标以选择的名称或`null`以返回到主图标。 例如：
+`UIApplication`类`SetAlternameIconName`的属性允许开发人员更改应用图标。 传递图标的名称以选择或`null`返回到主图标。 例如:
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)
@@ -156,22 +156,22 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 }
 ```
 
-如果运行应用时，用户选择一个备用的图标将显示如下所示的警报：
+当应用程序运行时, 如果用户选择备用图标, 将显示如下所示的警报:
 
-![](alternate-app-icons-images/icons04.png "示例警报，如果应用程序改变它的图标")
+![](alternate-app-icons-images/icons04.png "应用更改图标时的示例警报")
 
-如果用户切换回主图标时，将显示如下所示的警报：
+如果用户切换回主图标, 将显示如下所示的警报:
 
-![](alternate-app-icons-images/icons05.png "示例警报，如果应用程序更改为主图标")
+![](alternate-app-icons-images/icons05.png "应用更改为主图标时的示例警报")
 
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
-本文介绍将备用的应用图标添加到 Xamarin.iOS 项目并在应用内使用它们。
+本文介绍了如何向 Xamarin iOS 项目添加备用应用程序图标并在应用程序中使用它们。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [iOSTenThree 示例](https://developer.xamarin.com/samples/ios/iOS10/iOSTenThree)
+- [iOSTenThree 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree/)

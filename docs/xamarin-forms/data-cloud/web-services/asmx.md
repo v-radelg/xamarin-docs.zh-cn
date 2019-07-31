@@ -1,5 +1,5 @@
 ---
-title: 使用 ASP.NET Web 服务 (ASMX)
+title: 使用 ASP.NET Web 服务 (.ASMX)
 description: 本文演示如何使用 Xamarin.Forms 应用程序中的 ASMX SOAP 服务。
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/02/2019
-ms.openlocfilehash: 73e7d13188c4c2ea1be39a237c3dc5cfd7fd8a7d
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 124cffaf827ebeb8109f3cd4ac4dfd2701e43f9c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659054"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656654"
 ---
-# <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服务 (ASMX)
+# <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服务 (.ASMX)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX 能够构建使用简单对象访问协议 (SOAP) 发送消息的 web 服务。SOAP 是一种独立于平台的和独立于语言的构建和访问 web 服务协议。一个 ASMX 服务的使用者不需要完全了解平台、 对象模型中或用于实现服务的编程语言。它们只需了解如何发送和接收 SOAP 消息。本文演示如何使用 Xamarin.Forms 应用程序中的 ASMX SOAP 服务。_
 
@@ -29,7 +29,7 @@ SOAP 消息是包含以下元素的 XML 文档：
 
 SOAP 可以在许多传输协议，包括 HTTP、 SMTP、 TCP 和 UDP 上操作。 但是，一个 ASMX 服务可以仅通过 HTTP 操作。 Xamarin 平台支持标准 SOAP 1.1 实现通过 HTTP，并且这包括对很多标准的 ASMX 服务配置的支持。
 
-此示例包括在物理或模拟设备运行的移动应用程序和 ASMX 服务所提供的方法来获取、 添加、 编辑和删除数据。 移动应用程序运行时，它们连接到本地托管 ASMX 服务如以下屏幕截图中所示：
+此示例包括在物理设备或模拟设备上运行的移动应用程序, 以及提供用于获取、添加、编辑和删除数据的方法的一个服务。 当移动应用程序运行时, 它们将连接到本地托管的 .ASMX 服务, 如以下屏幕截图所示:
 
 ![](asmx-images/portal.png "示例应用程序")
 
@@ -52,19 +52,19 @@ ASMX 服务提供了以下操作：
 
 ## <a name="create-the-todoservice-proxy"></a>创建 TodoService 代理
 
-一个名为的代理类`TodoService`，扩展了`SoapHttpClientProtocol`并提供通过 HTTP 与 ASMX 服务进行通信的方法。 通过将对每个特定于平台的项目的 web 引用添加在 Visual Studio 2019 或 Visual Studio 2017 中生成代理。 Web 引用生成的方法和服务的 Web 服务描述语言 (WSDL) 文档中定义每个操作的事件。
+名`TodoService`为的代理类扩展`SoapHttpClientProtocol`并提供通过 HTTP 与 .asmx 服务进行通信的方法。 通过在 Visual Studio 2019 或 Visual Studio 2017 中添加对每个特定于平台的项目的 web 引用来生成代理。 Web 引用为服务的 Web 服务描述语言 (WSDL) 文档中定义的每个操作生成方法和事件。
 
-例如，`GetTodoItems`服务操作都会导致`GetTodoItemsAsync`方法和一个`GetTodoItemsCompleted`代理中的事件。 生成的方法具有 void 返回类型并调用`GetTodoItems`的父操作`SoapHttpClientProtocol`类。 调用的方法从服务收到响应后，它将引发`GetTodoItemsCompleted`事件，并提供响应数据中的事件`Result`属性。
+例如, `GetTodoItems`服务操作将导致代理中的`GetTodoItemsAsync`方法和`GetTodoItemsCompleted`事件。 生成的方法的返回类型为 void, 并对`GetTodoItems`父`SoapHttpClientProtocol`类调用该操作。 当被调用的方法接收到来自服务的响应时, 它`GetTodoItemsCompleted`将触发事件, 并在事件的`Result`属性中提供响应数据。
 
 ## <a name="create-the-isoapservice-implementation"></a>创建 ISoapService 实现
 
-若要启用要使用的服务的共享的跨平台项目，此示例定义`ISoapService`接口，它遵循[中的任务的异步编程模型C# ](/dotnet/csharp/programming-guide/concepts/async/)。 每个平台实现`ISoapService`公开特定于平台的代理。 此示例使用`TaskCompletionSource`对象来公开为任务的异步接口的代理。 详细了解如何使用`TaskCompletionSource`在以下各节中找到的每个操作类型实现中。
+若要启用共享的跨平台项目以使用该服务, 此示例定义`ISoapService`了接口, 该接口遵循中[ C#的任务异步编程模型](/dotnet/csharp/programming-guide/concepts/async/)。 每个平台都`ISoapService`实现以公开特定于平台的代理。 该示例使用`TaskCompletionSource`对象将代理作为任务异步接口公开。 有关使用`TaskCompletionSource`的详细信息, 请参阅以下各节中每种操作类型的实现。
 
-该示例`SoapService`:
+示例`SoapService`:
 
-1. 实例化`TodoService`作为类级实例
-1. 创建一个名为集合`Items`来存储`TodoItem`对象
-1. 指定了可选的自定义终结点`Url`属性 `TodoService`
+1. `TodoService`实例化为类级别实例
+1. 创建一个名`Items`为的集合`TodoItem` , 用于存储对象
+1. 指定上的可选`Url`属性的自定义终结点`TodoService`
 
 ```csharp
 public class SoapService : ISoapService
@@ -97,7 +97,7 @@ ASMXService.TodoItem ToASMXServiceTodoItem (TodoItem item)
 }
 ```
 
-此方法创建一个新`ASMService.TodoItem`实例，并将每个属性设置为相同的属性从`TodoItem`实例。
+此方法创建一个新`ASMService.TodoItem`的实例, 并将每个属性设置为`TodoItem`实例中的相同属性。
 
 同样，当从 web 服务检索数据时，必须将它从转换生成的代理`TodoItem`键入到`TodoItem`实例。 这通过实现`FromASMXServiceTodoItem`方法，如下面的代码示例中所示：
 
@@ -113,13 +113,13 @@ static TodoItem FromASMXServiceTodoItem (ASMXService.TodoItem item)
 }
 ```
 
-此方法从生成的代理中检索数据`TodoItem`类型并将其设置在新创建`TodoItem`实例。
+此方法从代理生成`TodoItem`的类型中检索数据, 并在新创建`TodoItem`的实例中设置数据。
 
 ### <a name="retrieve-data"></a>检索数据
 
-`ISoapService`接口需要`RefreshDataAsync`方法以返回`Task`与项集合。 但是，`TodoService.GetTodoItemsAsync`方法返回 void。 若要满足接口模式，必须调用`GetTodoItemsAsync`，等待`GetTodoItemsCompleted`事件触发，并填充的集合。 这样，你可以返回到 UI 的有效的集合。
+接口要求方法返回`Task`具有项集合的。 `RefreshDataAsync` `ISoapService` 但是, 该`TodoService.GetTodoItemsAsync`方法返回 void。 若要满足接口模式, 必须调用`GetTodoItemsAsync`, 等待`GetTodoItemsCompleted`事件激发, 并填充集合。 这允许您将有效集合返回到 UI。
 
-下面的示例创建一个新`TaskCompletionSource`，开始中的异步调用`RefreshDataAsync`方法，并等待`Task`提供的`TaskCompletionSource`。 当`TodoService_GetTodoItemsCompleted`调用事件处理程序使用它来填充`Items`集合和更新`TaskCompletionSource`:
+下面的示例创建一个新`TaskCompletionSource`的, `RefreshDataAsync`在方法中开始异步调用, 并`TaskCompletionSource`等待提供`Task`的。 在调用`Items` `TaskCompletionSource`事件处理程序时, 它将填充集合并更新: `TodoService_GetTodoItemsCompleted`
 
 ```csharp
 public class SoapService : ISoapService
@@ -164,11 +164,11 @@ public class SoapService : ISoapService
 }
 ```
 
-有关详细信息，请参阅[异步编程模型](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm)并[TPL 和传统.NET Framework 异步编程](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming)。
+有关详细信息, 请参阅[异步编程模型](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm)和[TPL 和传统 .NET Framework 异步编程](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming)。
 
 ### <a name="create-or-edit-data"></a>创建或编辑数据
 
-当创建或编辑数据时，必须实现`ISoapService.SaveTodoItemAsync`方法。 此方法检测到是否`TodoItem`是一种新的或更新项并调用适当的方法上`todoService`对象。 `CreateTodoItemCompleted`并`EditTodoItemCompleted`应还实现事件处理程序，以了解何时`todoService`收到响应后从 ASMX 服务 （这些配置可以并入单个处理程序由于它们执行相同的操作）。 下面的示例演示了接口和事件处理程序实现，并将`TaskCompletionSource`对象，用于以异步方式运行：
+创建或编辑数据时, 必须实现`ISoapService.SaveTodoItemAsync`方法。 此方法将检测是否`TodoItem`为新的或更新的项, 并对`todoService`对象调用适当的方法。 还应`EditTodoItemCompleted`实现`todoService`和事件处理程序, 以便您知道何时接收到来自 .asmx 服务的响应 (这些操作可以合并为单个处理程序, 因为它们执行相同的操作)。 `CreateTodoItemCompleted` 下面的示例演示接口和事件处理程序的实现, 以及用于异步`TaskCompletionSource`操作的对象:
 
 ```csharp
 public class SoapService : ISoapService
@@ -220,7 +220,7 @@ public class SoapService : ISoapService
 
 ### <a name="delete-data"></a>删除数据
 
-删除数据需要类似的实现。 定义`TaskCompletionSource`，实现一个事件处理程序和`ISoapService.DeleteTodoItemAsync`方法：
+删除数据需要类似实现。 定义, 实现事件处理程序`ISoapService.DeleteTodoItemAsync`和方法: `TaskCompletionSource`
 
 ```csharp
 public class SoapService : ISoapService
@@ -263,9 +263,9 @@ public class SoapService : ISoapService
 
 ## <a name="test-the-web-service"></a>测试 web 服务
 
-测试与本地托管服务的物理或模拟设备需要自定义 IIS 配置、 终结点地址和防火墙规则，准备就绪。 有关如何设置用于测试环境的更多详细信息，请参阅[配置为 IIS Express 的远程访问](wcf.md#configure-remote-access-to-iis-express)。 测试 WCF 和 ASMX 之间唯一的区别是 TodoService 的端口号。
+使用本地托管的服务测试物理或模拟设备需要就地自定义 IIS 配置、终结点地址和防火墙规则。 有关如何设置环境以进行测试的更多详细信息, 请参阅[配置远程访问 IIS Express](wcf.md#configure-remote-access-to-iis-express)。 测试 WCF 和 .ASMX 之间唯一的区别是 TodoService 的端口号。
 
 ## <a name="related-links"></a>相关链接
 
-- [TodoASMX （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoASMX/)
+- [TodoASMX （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 - [IAsyncResult](https://docs.microsoft.com/dotnet/api/system.iasyncresult)

@@ -1,58 +1,58 @@
 ---
-title: 在 Xamarin.Mac 中的源列表
-description: 本文介绍如何使用 Xamarin.Mac 应用程序中的源列表。 它介绍了创建和维护在 Xcode 和 Interface Builder 中的源列表和 C# 代码中与其进行交互。
+title: Xamarin 中的源列表
+description: 本文介绍如何在 Xamarin. Mac 应用程序中使用源列表。 它介绍了如何在 Xcode 中创建和维护源列表, 并在代码C#中 Interface Builder 和与它们进行交互。
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 82e4dfb9add7002fd7d3568d0ec946ea38dfd530
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 33ef45fa08748e70ef376e43cb5ed9b12ba55198
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290557"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655264"
 ---
-# <a name="source-lists-in-xamarinmac"></a>在 Xamarin.Mac 中的源列表
+# <a name="source-lists-in-xamarinmac"></a>Xamarin 中的源列表
 
-_本文介绍如何使用 Xamarin.Mac 应用程序中的源列表。它介绍了创建和维护在 Xcode 和 Interface Builder 中的源列表和 C# 代码中与其进行交互。_
+_本文介绍如何在 Xamarin. Mac 应用程序中使用源列表。它介绍了如何在 Xcode 中创建和维护源列表, 并在代码C#中 Interface Builder 和与它们进行交互。_
 
-当使用C#和.NET 中的 Xamarin.Mac 应用程序中，您可以访问相同的源列表的开发人员*Objective C*和*Xcode* does。 由于 Xamarin.Mac 与 Xcode 直接集成，可以使用 Xcode 的_Interface Builder_创建和维护源列表 （或选择通过 C# 代码中直接创建）。
+在 Xamarin 应用C#程序中使用和 .net 时, 您可以访问与在*Xcode 和*中工作的开发人员相同的  源列表。 因为 Xamarin 与 Xcode 直接集成, 你可以使用 Xcode 的_Interface Builder_来创建和维护你的源列表 (或者可以选择直接在代码中C#创建)。
 
-源列表是一种特殊的大纲视图用于显示源的操作，例如在查找器或 iTunes 侧栏。
+源列表是一种特殊类型的大纲视图, 用于显示操作的源, 例如查找器或 iTunes 中的侧栏。
 
 [![](source-list-images/source05.png "示例源列表")](source-list-images/source05.png#lightbox)
 
-在本文中，我们将介绍 Xamarin.Mac 应用程序中使用的源列表基础的知识。 强烈建议您明确[Hello，Mac](~/mac/get-started/hello-mac.md)文章第一次，具体而言[Xcode 和 Interface Builder 简介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)并[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分中的，因为它介绍了关键概念和技术，我们将在本文中使用。
+在本文中, 我们将介绍在 Xamarin. Mac 应用程序中使用源列表的基本知识。 强烈建议您先完成[Hello, Mac](~/mac/get-started/hello-mac.md)一文, 特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介, 因为它涵盖了我们将在本文。
 
-可能想要看一看[公开 C# 类 / 方法添加到 Objective C](~/mac/internals/how-it-works.md)一部分[Xamarin.Mac 内部机制](~/mac/internals/how-it-works.md)文档，它还说明了`Register`和`Export`命令用于布置于 C# 类对 OBJECTIVE-C 对象和 UI 元素。
+你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " `Register` [公开C#类/方法到目标-C](~/mac/internals/how-it-works.md) " 部分, 并说明用于将C#类连接到的和`Export`命令目标-C 对象和 UI 元素。
 
 <a name="Introduction_to_Outline_Views" />
 
 ## <a name="introduction-to-source-lists"></a>源列表简介
 
-如上面所述，源列表是一种特殊的大纲视图用于显示源的操作，例如在查找器或 iTunes 侧栏。 源列表是一种表，用户可以通过展开或折叠的分层数据的行。 与不同的表视图中，源列表中的项不在平面列表中，它们在层次结构中，如文件和文件夹在硬盘上的组织方式。 如果源列表中的项包含其他项，它可展开或折叠的用户。
+如上所述, 源列表是一种特殊类型的大纲视图, 用于显示操作的源, 例如查找器或 iTunes 中的侧栏。 源列表是一种允许用户展开或折叠分层数据行的表。 与表视图不同, 源列表中的项不在简单列表中, 它们在层次结构中进行组织, 如硬盘驱动器上的文件和文件夹。 如果源列表中的某个项包含其他项, 则可以由用户展开或折叠。
 
-源列表是专门带样式的大纲视图 (`NSOutlineView`)，其本身是一个表视图的子类 (`NSTableView`) 并在这种情况下，将其大部分行为继承其父类。 因此，许多操作支持的大纲视图中，也支持源列表。 Xamarin.Mac 应用程序可以控制这些功能，并可以配置源列表的参数 （不管是在代码或 Interface Builder 中） 以允许或禁止某些操作。
+源列表是一个特殊的样式的大纲视图`NSOutlineView`(), 它本身是表视图 (`NSTableView`) 的子类, 因此从其父类继承了很多这类行为。 因此, 大纲视图支持的许多操作也受源列表支持。 Xamarin 应用程序可以控制这些功能, 并可以配置源列表的参数 (在代码或 Interface Builder 中) 以允许或禁止特定操作。
 
-源列表不会存储其自己的数据，而是依赖数据源 (`NSOutlineViewDataSource`) 提供的行和按需基于要求的列。
+源列表不存储它自己的数据, 而是依赖于数据源 (`NSOutlineViewDataSource`) 根据需要提供所需的行和列。
 
-可以通过提供的大纲视图委托子类自定义源列表的行为 (`NSOutlineViewDelegate`) 若要支持轮廓线类型以选择功能，项选择和编辑、 自定义跟踪和自定义视图中的单个项目。
+可以通过提供大纲视图委托 (`NSOutlineViewDelegate`) 的子类来自定义源列表的行为, 以便支持大纲类型, 以选择功能、项选择和编辑、自定义跟踪以及单个项的自定义视图。
 
-由于源列表与表视图和大纲视图共享大部分它的行为和功能，你可能想要通过我们[表视图](~/mac/user-interface/table-view.md)并[大纲视图](~/mac/user-interface/outline-view.md)文档，然后再继续操作通过这篇文章。
+由于源列表与表视图和大纲视图共用其行为和功能, 您可能需要浏览[表视图](~/mac/user-interface/table-view.md)和[大纲视图](~/mac/user-interface/outline-view.md)文档, 然后再继续阅读本文。
 
 <a name="Working_with_Source_Lists" />
 
 ## <a name="working-with-source-lists"></a>使用源列表
 
-源列表是一种特殊的大纲视图用于显示源的操作，例如在查找器或 iTunes 侧栏。 与不同的大纲视图中，我们中 Interface Builder 定义我们的源列表之前，让我们创建后备类在 Xamarin.Mac 中。
+源列表是一种特殊类型的大纲视图, 用于显示操作的源, 例如查找器或 iTunes 中的侧栏。 与大纲视图不同, 在 Interface Builder 中定义源列表之前, 让我们在 Xamarin 中创建支持类。
 
-首先，让我们创建一个新`SourceListItem`类来保存数据源列表。 在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新文件...** 选择**常规** > **空类**，输入`SourceListItem`有关**名称**然后单击**新建**按钮：
+首先, 让我们创建一个新`SourceListItem`类来保存源列表的数据。 在**解决方案资源管理器**中, 右键单击项目, 然后选择 "**添加** > **新文件 ...** "选择 "**常规** > " "**空类**", 输入`SourceListItem`作为**名称**, 然后单击 "**新建**" 按钮:
 
-[![](source-list-images/source01.png "添加一个空类")](source-list-images/source01.png#lightbox)
+[![](source-list-images/source01.png "添加空类")](source-list-images/source01.png#lightbox)
 
-使`SourceListItem.cs`文件外观如下所示： 
+`SourceListItem.cs`使文件如下所示: 
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新文件...** 选择**常规** > **空类**，输入`SourceListDataSource`有关**名称**然后单击**新建**按钮。 使`SourceListDataSource.cs`文件外观如下所示：
+在**解决方案资源管理器**中, 右键单击项目, 然后选择 "**添加** > **新文件 ...** "选择 "**常规** > **空类**" `SourceListDataSource` , 在 "**名称**" 中输入, 然后单击 "**新建**" 按钮。 `SourceListDataSource.cs`使文件如下所示:
 
 ```csharp
 using System;
@@ -352,9 +352,9 @@ namespace MacOutlines
 }
 ```
 
-这将为我们源的列表提供数据。
+这将为源列表提供数据。
 
-在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新文件...** 选择**常规** > **空类**，输入`SourceListDelegate`有关**名称**然后单击**新建**按钮。 使`SourceListDelegate.cs`文件外观如下所示：
+在**解决方案资源管理器**中, 右键单击项目, 然后选择 "**添加** > **新文件 ...** "选择 "**常规** > **空类**" `SourceListDelegate` , 在 "**名称**" 中输入, 然后单击 "**新建**" 按钮。 `SourceListDelegate.cs`使文件如下所示:
 
 ```csharp
 using System;
@@ -444,9 +444,9 @@ namespace MacOutlines
 }
 ```
 
-这将提供我们的源列表的行为。
+这将为源列表提供行为。
 
-最后，在**解决方案资源管理器**，右键单击该项目并选择**添加** > **新文件...** 选择**常规** > **空类**，输入`SourceListView`有关**名称**然后单击**新建**按钮。 使`SourceListView.cs`文件外观如下所示：
+最后, 在**解决方案资源管理器**中, 右键单击项目, 然后选择 "**添加** > **新文件 ...** "选择 "**常规** > **空类**" `SourceListView` , 在 "**名称**" 中输入, 然后单击 "**新建**" 按钮。 `SourceListView.cs`使文件如下所示:
 
 ```csharp
 using System;
@@ -524,35 +524,35 @@ namespace MacOutlines
 }
 ```
 
-这将创建的自定义的可重用子类`NSOutlineView`(`SourceListView`)，我们可以使用来驱动我们进行任何 Xamarin.Mac 应用程序中的源列表。
+这会创建一个自定义的可`NSOutlineView`重用`SourceListView`子类 (), 我们可以使用它们来驱动我们所做的任何 Xamarin 应用程序中的源列表。
 
 <a name="Creating_and_Maintaining_Source_Lists_in_Xcode" />
 
-## <a name="creating-and-maintaining-source-lists-in-xcode"></a>创建和维护在 Xcode 中的源列表
+## <a name="creating-and-maintaining-source-lists-in-xcode"></a>在 Xcode 中创建和维护源列表
 
-现在，让我们来设计我们的源列表中 Interface Builder。 双击`Main.storyboard`文件以打开进行编辑 Interface Builder 中并拖动拆分视图从**库检查器**、 将其添加到视图控制器，并将其重设大小与中的视图设置**约束编辑器**:
+现在, 让我们在 Interface Builder 中设计源列表。 双击该`Main.storyboard`文件以将其打开, 以便在 Interface Builder 中进行编辑, 并从**库检查器**中拖动拆分视图, 将其添加到视图控制器, 并将其设置为在 "**约束编辑器**" 中调整视图的大小:
 
 [![](source-list-images/source00.png "编辑约束")](source-list-images/source00.png#lightbox)
 
-接下来，将从源列表拖到**库检查器**，将其添加到左侧和右侧的拆分视图并将其设置为与视图中调整大小**约束编辑器**:
+接下来, 从**库检查器**中拖出源列表, 将其添加到拆分视图的左侧, 并将其设置为与 "**约束编辑器**" 中的视图一起调整大小:
 
 [![](source-list-images/source02.png "编辑约束")](source-list-images/source02.png#lightbox)
 
-接下来，切换到**标识视图**，选择源列表中，并将其更改的**类**到`SourceListView`:
+接下来, 切换到 "**标识" 视图**, 选择 "源" 列表, 并将其 "**类**" 更改为`SourceListView`:
 
-[![](source-list-images/source03.png "设置类名称")](source-list-images/source03.png#lightbox)
+[![](source-list-images/source03.png "设置类名")](source-list-images/source03.png#lightbox)
 
-最后，创建**输出口**为名为我们的源列表`SourceList`中`ViewController.h`文件：
+最后, 为`ViewController.h`文件  中调用`SourceList`的源列表创建一个插座:
 
-[![](source-list-images/source04.png "配置输出口")](source-list-images/source04.png#lightbox)
+[![](source-list-images/source04.png "配置插座")](source-list-images/source04.png#lightbox)
 
-保存所做的更改并返回到 Visual Studio for Mac 与 Xcode 同步。
+保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
 
 <a name="Populating the Source List" />
 
 ## <a name="populating-the-source-list"></a>填充源列表
 
-让我们编辑`RotationWindow.cs`文件在 Visual Studio for Mac，并使其的`AwakeFromNib`方法看起来像以下：
+让我们在 Visual Studio for Mac `RotationWindow.cs`中编辑文件, 使`AwakeFromNib`其方法如下所示:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-`Initialize ()`方法需要调用我们的源列表**输出口**_之前_任何项添加到它。 为项的每个组，创建父项并将子项添加到组该项。 随后将每个组添加到源列表集合`SourceList.AddItem (...)`。 最后两行加载源列表数据，并展开所有组：
+在`Initialize ()`将任何项添加到源列表的**插座**_之前_, 需要对其调用方法。 对于每个项组, 我们创建一个父项, 然后将子项添加到该组项。 然后, 将每个组添加到源列表的`SourceList.AddItem (...)`集合中。 最后两行加载源列表的数据, 并展开所有组:
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-最后，编辑`AppDelegate.cs`文件，然后进行`DidFinishLaunching`方法看起来像以下：
+最后, 编辑`AppDelegate.cs`文件并`DidFinishLaunching`使方法如下所示:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -612,19 +612,19 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-如果我们运行我们的应用程序时，下面将显示：
+如果我们运行应用程序, 将显示以下内容:
 
-[![](source-list-images/source05.png "运行示例应用")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "示例应用运行")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
-本文已详细的介绍了 Xamarin.Mac 应用程序中使用的源列表。 我们了解了如何创建和维护源列表在 Xcode 的 Interface Builder 中以及如何使用 C# 代码中的源列表。
+本文详细介绍了如何在 Xamarin. Mac 应用程序中使用源列表。 我们已了解如何在 Xcode 的 Interface Builder 中创建和维护源列表, 以及如何在代码中C#使用源列表。
 
 ## <a name="related-links"></a>相关链接
 
-- [MacOutlines （示例）](https://developer.xamarin.com/samples/mac/MacOutlines/)
+- [MacOutlines (示例)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [表视图](~/mac/user-interface/table-view.md)
 - [大纲视图](~/mac/user-interface/outline-view.md)

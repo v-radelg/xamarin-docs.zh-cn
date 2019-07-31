@@ -7,16 +7,16 @@ ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: df45908af9e2d13dcaeff732e8e8b1b49c523934
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218113"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647662"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循环渐变
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [ `SKShader` ](xref:SkiaSharp.SKShader)类定义用于创建四种不同类型的渐变的静态方法。 [ **SkiaSharp 线性渐变**](linear-gradient.md)一文讨论[ `CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*)方法。 本文介绍了其他三种类型的渐变，所有这些都按圆圈。
 
@@ -54,7 +54,7 @@ public static SKShader CreateRadialGradient (SKPoint center,
 
 如果使用`CreateRadialGradient`要填充一个圆圈，可以设置的渐变的中心圆的中心，向圆的半径渐变的半径。 在这种情况下，`SKShaderTileMode`参数不起作用的渐变的呈现。 但是，如果渐变填充的区域大于圆定义渐变，则`SKShaderTileMode`自变量具有会发生什么情况之外圆深远的影响。
 
-效果`SKShaderMode`中所示**径向渐变**页面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例。 此页面的 XAML 文件实例化`Picker`，允许你选择的三个成员之一`SKShaderTileMode`枚举：
+效果`SKShaderMode`中所示**径向渐变**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例。 此页面的 XAML 文件实例化`Picker`，允许你选择的三个成员之一`SKShaderTileMode`枚举：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ public partial class RadialGradientPage : ContentPage
 
 [![径向渐变](circular-gradients-images/RadialGradient.png "径向渐变")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-在所有三种情况下，渐变填充画布。 在左侧的 iOS 屏幕上超出半径渐变继续执行上一种颜色为白色。 这就是结果的`SKShaderTileMode.Clamp`。 Android 屏幕显示的效果`SKShaderTileMode.Repeat`:在从中心的 100 像素，渐变重新开始第一种颜色为黑色。 渐变重复 radius 每 100 个像素。 
+在所有三种情况下，渐变填充画布。 在左侧的 iOS 屏幕上超出半径渐变继续执行上一种颜色为白色。 这就是结果的`SKShaderTileMode.Clamp`。 Android 屏幕显示`SKShaderTileMode.Repeat`以下内容的效果:从中心100像素开始, 渐变将再次开始, 第一种颜色为黑色。 渐变重复 radius 每 100 个像素。 
 
 在右侧显示的通用 Windows 平台屏幕如何`SKShaderTileMode.Mirror`导致到备用 directions 渐变。 第一个渐变是从中心的黑色到在一个半径为 100 像素的白色。 下一步是从 100 像素 radius 在 200 像素 radius 黑色到白色，再次反转的下一步的渐变。
 
@@ -620,4 +620,4 @@ public class ConicalSpecularHighlightPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

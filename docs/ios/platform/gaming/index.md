@@ -1,64 +1,64 @@
 ---
-title: iOS 游戏 Api 在 Xamarin.iOS
-description: 本文介绍如何提供可用于改进您的 Xamarin.iOS 游戏图形和音频功能的 iOS 9 的新游戏增强功能。
+title: Xamarin 中的 iOS 游戏 Api
+description: 本文介绍 iOS 9 提供的新游戏增强功能, 这些增强功能可用于改进 Xamarin iOS 游戏的图形和音频功能。
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: d8a531e495a19be7437d4a600e758028594248ab
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 746d901714b4bba2d85e63e52d34781f07cf9923
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953303"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653285"
 ---
-# <a name="ios-gaming-apis-in-xamarinios"></a>iOS 游戏 Api 在 Xamarin.iOS
+# <a name="ios-gaming-apis-in-xamarinios"></a>Xamarin 中的 iOS 游戏 Api
 
-_本文介绍如何提供可用于改进您的 Xamarin.iOS 游戏图形和音频功能的 iOS 9 的新游戏增强功能。_
+_本文介绍 iOS 9 提供的新游戏增强功能, 这些增强功能可用于改进 Xamarin iOS 游戏的图形和音频功能。_
 
-Apple 已在 iOS 9 中玩游戏 Api，有助于轻松地在 Xamarin.iOS 应用程序中实现游戏图形和音频的多项技术改进。
-其中包括这两种易用性开发到高级框架和提高了的速度和图形能力的 iOS 设备的 GPU 的强大功能。
+Apple 在 iOS 9 中对游戏 Api 做出了多项技术改进, 使 Xamarin iOS 应用中的游戏图形和音频更容易实现。
+其中包括通过高级框架的轻松开发, 并利用 iOS 设备 GPU 的强大功能提高速度和图形性能。
 
-[![](images/flocking01.png "运行以应用程序示例")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "运行群的应用的示例")](images/flocking01.png#lightbox)
 
-这包括 GameplayKit、 ReplayKit、 模型 I/O、 MetalKit 和金属性能着色器以及裸机、 SceneKit 和 SpriteKit 的新的增强型功能。
+这包括 GameplayKit、ReplayKit、Model i/o、MetalKit 和金属绩效着色器, 以及金属、SceneKit 和 SpriteKit 的新增功能和增强功能。
 
-本文将介绍各种方式来提高您的 Xamarin.iOS 游戏具有 iOS 9 的新游戏增强功能：
+本文介绍了通过 iOS 9 的新游戏增强功能提高 Xamarin iOS 游戏的所有方法:
 
-## <a name="introducing-gameplaykit"></a>引入 GameplayKit
+## <a name="introducing-gameplaykit"></a>GameplayKit 简介
 
-Apple 的新 GameplayKit 框架提供了一组技术，它可以更轻松地减少重复的、 常见实现所需的代码量，创建适用于 iOS 设备的游戏。 GameplayKit 提供工具，用于为快速开发游戏机制，可轻松地组合使用 （例如 SceneKit 或 SpriteKit） 图形引擎提供已完成的游戏。
+Apple 的 new GameplayKit framework 提供了一组技术, 使你可以通过减少实现所需的重复的通用代码量来轻松创建适用于 iOS 设备的游戏。 GameplayKit 提供了用于开发游戏机制的工具, 然后可以轻松地将这些工具与图形引擎 (如 SceneKit 或 SpriteKit) 结合使用, 以便快速交付已完成的游戏。
 
-GameplayKit 包括若干常见，游戏播放算法，如：
+GameplayKit 包括几个常见的游戏播放算法, 例如:
 
-- 基于行为，允许你定义的移动和 AI 将自动追求的目标的代理模拟。
-- 基于轮次的游戏玩法 minmax 人工智能。
-- 数据驱动的游戏逻辑与模糊推理来提供紧急行为规则系统。
+- 基于行为的代理模拟, 可用于定义 AI 将自动实现的移动和目标。
+- 用于基于车的游戏的 minmax 人工智能。
+- 用于提供紧急行为的数据驱动游戏逻辑规则系统, 具有模糊推理。
 
-此外，GameplayKit 构建基块通过采用的方法到游戏开发使用模块化体系结构，它提供以下功能：
+此外, GameplayKit 通过使用提供以下功能的模块化体系结构, 对游戏开发采用了构造块方法:
 
-- 用于处理复杂的过程性代码的状态机基于中玩游戏的系统。
-- 提供的工具而不会导致调试问题随机化玩游戏和不可预测性。
-- 可重用的组件化实体基础体系结构。
+- 用于处理游戏中基于过程的复杂系统代码的状态机。
+- 用于提供随机游戏游戏和不可预测性的工具, 而不会引起调试问题。
+- 基于组件的可重复使用的体系结构。
 
-若要了解有关 GameplayKit 的详细信息，请参阅 Apple [Gameplaykit 编程指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)并[GameplayKit 框架引用](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)。
+若要了解有关 GameplayKit 的详细信息, 请参阅 Apple 的[GameplayKit 编程指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/GameplayKit_Guide/index.html#//apple_ref/doc/uid/TP40015172)和[GameplayKit Framework 参考](https://developer.apple.com/library/prerelease/ios/documentation/GameplayKit/Reference/GameplayKit_Framework/index.html#//apple_ref/doc/uid/TP40015199)。
 
 ## <a name="gameplaykit-examples"></a>GameplayKit 示例
 
-让我们快速看一下使用玩游戏工具包的 Xamarin.iOS 应用中实现一些简单的游戏玩法机制。
+让我们快速了解如何使用游戏游戏工具包在 Xamarin iOS 应用程序中实现一些简单的游戏游戏机制。
 
 ### <a name="pathfinding"></a>Pathfinding
 
-Pathfinding 是游戏的 AI 元素能够找到游戏板围绕其方法。
-例如，查找其错综复杂的方式或通过第一人称世界地形 3D 字符 2D 防范对象。
+Pathfinding 是游戏的 AI 元素在游戏板上查找其方式的功能。
+例如, 一位2D 敌人通过射击地形的一个迷宫或3D 字符来寻找其方式。
 
-请考虑以下映射：
+请看下面的地图:
 
-[![](images/gkpathfindpath.png "示例 pathfinding 映射")](images/gkpathfindpath.png#lightbox)
+[![](images/gkpathfindpath.png "Pathfinding 映射示例")](images/gkpathfindpath.png#lightbox)
 
-使用 pathfinding 此C#代码可找到一种方法通过映射：
+使用 pathfinding, C#此代码可通过以下方式查找:
 
 ```csharp
 var a = GKGraphNode2D.FromPoint (new Vector2 (0, 5));
@@ -84,7 +84,7 @@ Console.WriteLine(String.Join ("->", (object[]) a2f));
 
 ### <a name="classical-expert-system"></a>经典专家系统
 
-以下代码片段的C#的代码演示如何使用 GameplayKit 实现经典的专家系统：
+以下C#代码片段演示了如何使用 GameplayKit 来实现传统专家系统:
 
 ```csharp
 string output = "";
@@ -145,13 +145,13 @@ protected Func<GKRuleSystem, bool> mod(int m)
 }
 ```
 
-基于一组给定的规则 (`GKRule`) 和一组已知的输入，专家系统 (`GKRuleSystem`) 将创建可预测输出 (`fizzbuzz`为上述示例)。
+根据一组给定的规则 (`GKRule`) 和一组已知的输入, 专家系统 (`GKRuleSystem`) 将创建可预测的输出 (`fizzbuzz`在上面的示例中)。
 
-### <a name="flocking"></a>以
+### <a name="flocking"></a>群
 
-以允许 AI 的组控制游戏表现为纷纷采用，其中组响应的动作和操作的航班的鸟纷纷采用或鱼徜徉学校等的潜在客户实体的实体。
+群允许一组 AI 控制的游戏实体表现为 flock, 其中, 该组响应潜在顾客实体的运动和动作, 如航班或鱼游泳的一 flock。
 
-以下代码片段的C#代码实现的图形显示使用 GameplayKit 和 SpriteKit 的以行为：
+以下C#代码片段使用 GameplayKit 和 SpriteKit 来实现图形显示的群行为:
 
 ```csharp
 using System;
@@ -338,7 +338,7 @@ namespace FieldBehaviorExplorer
 }
 ```
 
-接下来，在视图控制器中实现此场景：
+接下来, 在视图控制器中实现此场景:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -365,114 +365,114 @@ public override void ViewWillLayoutSubviews ()
 }
 ```
 
-运行时，一些动画 _"Boids"_ 将围绕我们手指点击 flock:
+运行时, "Boids" 这一小动画的 _""_ 将围绕指尖 flock:
 
-[![](images/flocking01.png "一些动画的 Boids 将 flock 围绕手指点击")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "轻微的动画 Boids 将围绕指尖 flock")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>其他 Apple 示例
 
-除了上面介绍的示例，Apple 提供了以下示例应用可将转换为C#和 Xamarin.iOS:
+除了上面提供的示例, Apple 还提供了以下可转码C#和 Xamarin 的示例应用:
 
-- [FourInARow:使用适用于对手 AI GameplayKit Minmax 规划师](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
-- [AgentsCatalog:使用中 GameplayKit 代理系统](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [DemoBots:构建跨平台游戏，SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [FourInARow:为对手 AI 使用 GameplayKit Minmax 战略家](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [AgentsCatalog:在 GameplayKit 中使用代理系统](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
+- [DemoBots:使用 SpriteKit 和 GameplayKit 生成跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
 ## <a name="metal"></a>Metal
 
-在 iOS 9 中，Apple 对进行了几处更改和新增功能来提供对 GPU 的开销较低的访问配置文件。 使用配置文件可以最大化的图形和 iOS 应用的计算可能。
+在 iOS 9 中, Apple 已对金属进行了几项更改和添加, 以提供对 GPU 的低开销访问。 使用金属可以最大程度地提高 iOS 应用的图形和计算能力。
 
-金属框架包括以下新功能：
+该金属框架包含以下新功能:
 
-- 新的私有和深度模具纹理中适用于 OS X。
-- 改进了卷影的效果，而深度限制和单独前端和后模具值。
-- 裸机明暗度的语言和金属标准库改进。
-- 计算着色器支持广泛的像素格式。
+- 适用于 OS X 的新专用和深度模具纹理。
+- 通过深度钳位和独立的前端和后端子模具值提高了阴影质量。
+- 金属着色语言和金属标准库改进。
+- 计算着色器支持更大范围的像素格式。
 
-### <a name="the-metalkit-framework"></a>MetalKit Framework
+### <a name="the-metalkit-framework"></a>MetalKit 框架
 
-MetalKit 框架提供了一套实用工具类和减少的 iOS 应用中使用配置文件所需的功能。 MetalKit 提供了三个关键领域中的支持：
+MetalKit 框架提供了一组实用工具类和功能, 可减少在 iOS 应用中使用金属所需的工作量。 MetalKit 提供三个关键领域的支持:
 
-1. 从各种源包括 PNG、 JPEG、 KTX 和了解 PVR 等常见格式加载异步纹理。
-2. 模型 I/O 的轻松访问基于金属特定模型处理的资产。 这些功能已高度优化，可提供高效的数据模型 I/O 网格和金属缓冲区之间的传输。
-3. 预定义的金属视图和视图管理可极大减少显示的 iOS 应用中的图形呈现所需的代码量。
+1. 从各种源 (包括 PNG、JPEG、KTX 和 PVR 等常用格式) 加载异步纹理。
+2. 可以轻松访问基于特定于金属模型处理的基于模型 i/o 的资产。 已对这些功能进行了高度优化, 可在模型 i/o 网格和金属缓冲之间提供高效的数据传输。
+3. 预定义的金属视图和视图管理, 大大减少了在 iOS 应用中显示图形呈现所需的代码量。
 
-若要了解有关 MetalKit 的详细信息，请参阅 Apple [MetalKit 框架引用](https://developer.apple.com/library/prerelease/ios/documentation/MetalKit/Reference/MTKFrameworkReference/index.html#//apple_ref/doc/uid/TP40015356)，[金属编程指南](https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)，[金属框架引用](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalFrameworkReference/index.html#//apple_ref/doc/uid/TP40014161)和[裸机明暗度语言指南](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)。
+若要了解有关 MetalKit 的详细信息, 请参阅 Apple 的[MetalKit 框架参考](https://developer.apple.com/library/prerelease/ios/documentation/MetalKit/Reference/MTKFrameworkReference/index.html#//apple_ref/doc/uid/TP40015356)、[金属编程指南](https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014221)、[金属框架参考](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalFrameworkReference/index.html#//apple_ref/doc/uid/TP40014161)和[金属着色语言指南](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)。
 
-### <a name="metal-performance-shaders-framework"></a>裸机性能着色器框架
+### <a name="metal-performance-shaders-framework"></a>金属绩效着色器框架
 
-裸机性能着色器框架提供了一组高度优化图形和计算基于在您配置文件中使用的着色器基于的 iOS 应用。 每个已专门优化框架在裸机上提供高性能的金属性能着色器中的着色器支持 iOS 的 Gpu。
+金属性能着色器框架提供了一组高度优化的图形和基于计算的着色器, 以便在基于金属的 iOS 应用中使用。 金属性能着色器框架中的每个着色器已经过专门调整, 以便在金属支持的 iOS Gpu 上提供高性能。
 
-您可以通过使用裸机性能着色器类，而无需为目标和维护单个代码库来获得在每个特定 iOS GPU 上可能的最高性能。 裸机性能着色器可以用于任何裸机纹理和缓冲区等资源。
+通过使用金属性能着色器类, 您可以实现每个特定 iOS GPU 上的最高性能, 而无需面向和维护单独的基本代码。 金属绩效着色器可用于任何金属资源, 如纹理和缓冲区。
 
-裸机性能着色器 framework 提供了一组常见的着色器，例如：
+金属性能着色器框架提供一组常见着色器, 例如:
 
 - **高斯模糊**(`MPSImageGaussianBlur`)
 - **Sobel 边缘检测**(`MPSImageSobel`)
 - **图像直方图**(`MPSImageHistogram`)
 
-有关详细信息，请参阅 Apple[金属明暗度语言指南](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)。
+有关详细信息, 请参阅 Apple 的[金属着色语言指南](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)。
 
-## <a name="introducing-model-io"></a>引入模型 I/O
+## <a name="introducing-model-io"></a>模型 i/o 简介
 
-Apple 的模型 I/O 框架提供了深入了解三维资产 （如模型和及其相关的资源）。 模型 I/O 提供基于物理的材料，模型和可以用于 GameplayKit、 裸机和 SceneKit 的照明你的 iOS 游戏。
+Apple 的模型 i/o 框架可深入了解3D 资产 (如模型及其相关资源)。 模型 i/o 为你的 iOS 游戏提供基于物理的材料、型号和照明, 可与 GameplayKit、金属和 SceneKit 一起使用。
 
-进行的 I/O 模型，可以支持下列类型的任务：
+对于模型 i/o, 可以支持以下类型的任务:
 
-- 导入照明极差，材料，网格数据、 相机设置和各种常用的软件和游戏引擎格式从其他基于场景的信息。
-- 处理或生成基于场景的信息，如： 分步创建纹理天空圆顶或制作照明到网格。
-- 适用于 MetalKit、 SceneKit 和 GLKit，若要有效地将游戏资产加载到呈现的 GPU 缓冲区。
+- 从各种流行软件和游戏引擎格式导入光源、材料、网格数据、照相机设置和其他基于场景的信息。
+- 处理或生成基于场景的信息, 例如创建过程纹理的天空 domes 或制作照明入网格。
+- 与 MetalKit、SceneKit 和 GLKit 一起使用, 可有效地将游戏资产加载到 GPU 缓冲区以供渲染。
 - 将基于场景的信息导出为各种常用的软件和游戏引擎格式。
 
-若要了解有关模型 I/O 的详细信息，请参阅 Apple 的[模型 I/O 框架引用](https://developer.apple.com/library/prerelease/ios/documentation/ModelIO/Reference/ModelIO_Framework/index.html#//apple_ref/doc/uid/TP40015421)
+若要了解有关模型 i/o 的详细信息, 请参阅 Apple 的[模型 I/o 框架参考](https://developer.apple.com/library/prerelease/ios/documentation/ModelIO/Reference/ModelIO_Framework/index.html#//apple_ref/doc/uid/TP40015421)
 
-## <a name="introducing-replaykit"></a>引入 ReplayKit
+## <a name="introducing-replaykit"></a>ReplayKit 简介
 
-Apple 的新 ReplayKit 框架，可轻松地将玩游戏的录制添加到您的 iOS 游戏并允许用户快速轻松地编辑和共享在应用内的从该视频。
+Apple 的 new ReplayKit framework 使你可以轻松地将游戏录制的记录添加到 iOS 游戏, 并允许用户在应用中快速轻松地编辑和共享此视频。
 
-有关详细信息，请参阅 Apple [ReplayKit 和 Game Center 视频将社交](https://developer.apple.com/videos/wwdc/2015/?id=605)及其[DemoBots:构建跨平台游戏使用 SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)示例应用程序。
+有关详细信息, 请参阅 Apple 的[社交 ReplayKit 和 Game Center 视频](https://developer.apple.com/videos/wwdc/2015/?id=605)及其[DemoBots:使用 SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)示例应用构建跨平台游戏。
 
 ## <a name="scenekit"></a>SceneKit
 
-场景工具包是一个三维场景图形 API，用于简化 3D 图形。 它在 OS X 10.8 中首次引入，并具有现在转到 iOS 8。 使用场景工具包创建沉浸式 3D 可视化效果和休闲 3D 游戏不需要 OpenGL 的专业知识。 基于常见场景图形的概念，Scene Kit 抽象化 OpenGL 和 OpenGL ES，需要很轻松地添加 3D 内容到应用程序的复杂性。 但是，如果你是 OpenGL 方面的专家，场景工具包具有关联直接使用 OpenGL 以及强大的支持。 它还包括许多功能进行补充的 3D 图形，例如物理引擎，并与几个其他 Apple 框架，例如核心动画、 Core 映像和 Sprite Kit 很好地集成。
+场景工具包是一个3D 场景图形 API, 可简化使用三维图形的操作。 它是在 OS X 10.8 中首次引入的, 现已推出 iOS 8。 利用场景工具包创建沉浸式三维可视化效果和休闲三维游戏, 不需要在 OpenGL 中提供专业知识。 场景工具包是在常见场景图概念上构建的, 它可以简化 OpenGL 和 OpenGL ES 的复杂性, 使你可以轻松地将3D 内容添加到应用程序。 但是, 如果您是 OpenGL 专家, 则场景工具包也有很大的支持直接与 OpenGL 结合使用。 它还包括许多补充3D 图形的功能, 如物理学, 并与多个其他 Apple 框架 (如核心动画、核心图像和 Sprite 工具包) 紧密集成。
 
-有关详细信息，请参阅我们[SceneKit](~/ios/platform/gaming/scenekit.md)文档。
+有关详细信息, 请参阅我们的[SceneKit](~/ios/platform/gaming/scenekit.md)文档。
 
 ### <a name="scenekit-changes"></a>SceneKit 更改
 
-Apple 已添加了以下新功能到 SceneKit 适用于 iOS 9:
+Apple 向 SceneKit for iOS 9 添加了以下新功能:
 
-- Xcode 现在提供了一个场景编辑器，可用于快速构建游戏和交互式 3D 应用程序，通过编辑 Xcode 内的直接从场景。
-- `SCNView`和`SCNSceneRenderer`类可用于启用 （在支持的 iOS 设备） 的裸机呈现。
-- `SCNAudioPlayer`和`SCNNode`类可用于添加到 iOS 应用程序中自动跟踪玩家位置的空间音频效果。
+- Xcode 现在提供了一个场景编辑器, 通过它可以直接从 Xcode 内编辑场景来快速生成游戏和交互式3D 应用。
+- `SCNView` 和`SCNSceneRenderer`类可用于启用金属渲染 (在支持的 iOS 设备上)。
+- `SCNAudioPlayer` 和`SCNNode`类可用于添加可自动跟踪到 iOS 应用程序的播放机位置的空间音频效果。
 
-有关详细信息，请参阅我们[SceneKit 文档](~/ios/platform/introduction-to-ios8.md#scenekit)和 Apple [SceneKit 框架引用](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox:构建 SceneKit 游戏使用 Xcode 场景编辑器](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)示例项目。
+有关详细信息, 请参阅我们的[SceneKit 文档](~/ios/platform/introduction-to-ios8.md#scenekit)和 Apple 的[SceneKit 框架参考](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox:使用 Xcode 场景编辑器](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)示例项目构建 SceneKit 游戏。
 
 ## <a name="spritekit"></a>SpriteKit
 
-Sprite Kit，Apple 的 2D 游戏框架，已在 iOS 8 和 OS X Yosemite 一些有趣的新功能。 其中包括与 Scene Kit、 着色器的支持、 照明、 阴影、 约束、 法线贴图生成和物理引擎增强功能的集成。 具体而言，新的物理功能使其很容易将逼真的效果添加到游戏。
+与 Apple 的2D 游戏框架一样, 动画工具箱在 iOS 8 和 OS X Yosemite 中提供了一些有趣的新功能。 其中包括与场景工具包、着色器支持、照明、阴影、约束、正常地图生成和物理增强功能的集成。 特别是, 新的物理学功能使向游戏添加逼真效果变得非常简单。
 
-有关详细信息，请参阅我们[SpriteKit](~/ios/platform/gaming/spritekit.md)文档。
+有关详细信息, 请参阅我们的[SpriteKit](~/ios/platform/gaming/spritekit.md)文档。
 
-### <a name="spritekit-changes"></a>SpriteKit 的更改
+### <a name="spritekit-changes"></a>SpriteKit 更改
 
-Apple 已添加了以下新功能到 SpriteKit 适用于 iOS 9:
+Apple 向 SpriteKit for iOS 9 添加了以下新功能:
 
-- 自动跟踪玩家的位置使用的空间音频效果`SKAudioNode`类。
-- Xcode 目前精选场景编辑器和简单的 2D 游戏和应用程序创建的操作编辑器。
-- 轻松滚动游戏的照相机的新节点的支持 (`SKCameraNode`) 对象。
-- 上支持裸机的 iOS 设备，SpriteKit 将自动使用它进行呈现，即使你已在使用自定义的 OpenGL ES 着色器。
+- 空间音频效果, 可自动跟踪播放机与`SKAudioNode`类的位置。
+- Xcode 现在使用场景编辑器和操作编辑器来实现2D 游戏和应用创建。
+- 支持新的相机节点 (`SKCameraNode`) 对象的轻松滚动游戏。
+- 在支持金属的 iOS 设备上, SpriteKit 会自动将其用于渲染, 即使您已使用自定义 OpenGL ES 着色器也是如此。
 
-有关详细信息，请参阅我们[SpriteKit 文档](~/ios/platform/introduction-to-ios8.md#spritekit)Apple [SpriteKit 框架引用](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots:构建跨平台游戏使用 SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)示例应用程序。
+有关详细信息, 请参阅[SpriteKit 文档](~/ios/platform/introduction-to-ios8.md#spritekit)Apple 的[SpriteKit 框架参考](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots:使用 SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)示例应用构建跨平台游戏。
 
 ## <a name="summary"></a>总结
 
-本文只讨论了新游戏功能，该 iOS 9 提供适用于 Xamarin.iOS 应用。
-它引入了 GameplayKit 和模型 I/O;向的金属; 主要的增强功能和 SceneKit 和 SpriteKit 的新功能。
+本文介绍了 iOS 9 为你的 Xamarin iOS 应用提供的新游戏功能。
+它引入了 GameplayKit 和模型 i/o;金属的主要增强功能;和 SceneKit 和 SpriteKit 的新功能。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 9 示例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [面向开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

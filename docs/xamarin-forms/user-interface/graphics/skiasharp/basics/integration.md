@@ -7,16 +7,16 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: c4ca44488a4d10d3936e7bd8e664e3ffcb2a140a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 586cf0eaa7b0f38af61c9f7d619b30a39023a19e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179711"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652958"
 ---
 # <a name="integrating-with-xamarinforms"></a>与 Xamarin.Forms 集成
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _创建响应触摸和 Xamarin.Forms 元素 SkiaSharp 图形_
 
@@ -25,7 +25,7 @@ SkiaSharp 图形可以与 Xamarin.Forms 中通过多种方法的其余部分集�
 ![](integration-images/integrationexample.png "选择与滑块的颜色")
 
 在 Xamarin.Forms 中创建交互式 SkiaSharp 图形的另一种方法是通过触摸屏输入。
-中的第二页[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程序有权使用**点击切换填充**。 一个简单的圆形两种方法，它可绘制&mdash;没有填充和填充了&mdash;通过点击切换。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示了如何改变 SkiaSharp 图形以响应用户输入。
+中的第二页[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序有权使用**点击切换填充**。 一个简单的圆形两种方法，它可绘制&mdash;没有填充和填充了&mdash;通过点击切换。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示了如何改变 SkiaSharp 图形以响应用户输入。
 
 此页上，对于`SKCanvasView`类中实例化[TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)文件，还会设置 Xamarin.Forms [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)在视图上：
 
@@ -243,4 +243,4 @@ HSV 模型中的饱和度和值是 100 时，将导致纯颜色。 值为 0，�
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

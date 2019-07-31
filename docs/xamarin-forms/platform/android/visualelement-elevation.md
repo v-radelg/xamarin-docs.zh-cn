@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上 VisualElement 提升
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 特定于平台的用于控制提升 VisualElements 上面向 API 21 或更高版本的应用程序。
+title: Android 上的 VisualElement 提升
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的来控制 Visualelements> 对面向 API 21 或更高版本的应用程序的提升。
 ms.prod: xamarin
 ms.assetid: 5BFD6175-2BBD-41CD-B8F9-521B4750B708
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: c7cc6b560ea91dca89c468271b89d1dcedfcda53
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 243e351f29b056a6d4a567b8e39240a87f37aec2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65927028"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651886"
 ---
-# <a name="visualelement-elevation-on-android"></a>在 Android 上 VisualElement 提升
+# <a name="visualelement-elevation-on-android"></a>Android 上的 VisualElement 提升
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 特定于平台的是用于控制提升或 Z 顺序，对应用程序的可视元素的面向 API 21 或更高版本。 一个可视元素提升确定其绘制顺序，使用具有更高版本的 Z 值 occluding 具有较低的 Z 值的可视元素的可视元素。 设置使用在 XAML`VisualElement.Elevation`附加属性设置为`boolean`值：
+此 Android 平台特定用于控制面向 API 21 或更高版本的应用程序上的视觉对象的提升或 Z 顺序。 一个可视元素提升确定其绘制顺序，使用具有更高版本的 Z 值 occluding 具有较低的 Z 值的可视元素的可视元素。 设置使用在 XAML`VisualElement.Elevation`附加属性设置为`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -87,7 +87,7 @@ public class AndroidElevationPageCS : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

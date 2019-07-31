@@ -7,16 +7,16 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: c1e4a76a70dcac3414d384469f25bad7908ae77f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2bf493a5d8a4197fbc59044edf126761b41cf8d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019933"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649729"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素和与设备无关的单位
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解 SkiaSharp 坐标和 Xamarin.Forms 坐标之间的差异_
 
@@ -28,7 +28,7 @@ _了解 SkiaSharp 坐标和 Xamarin.Forms 坐标之间的差异_
 
 这些圆圈*是*Xamarin.Forms 大小很小。 默认情况下，SkiaSharp 绘制的像素为单位而 Xamarin.Forms 根据基础平台建立一个独立于设备的单元的坐标和大小。 (Xamarin.Forms 坐标系统的详细信息可在[第 5 章。处理大小](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)一书*使用 Xamarin.Forms 创建移动应用*。)
 
-中的页[ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程序资格**图面大小**使用 SkiaSharp 文本输出以显示来自三个不同源的显示图面大小：
+中的页[ **SkewSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序资格**图面大小**使用 SkiaSharp 文本输出以显示来自三个不同源的显示图面大小：
 
 - 正常的 Xamarin.Forms [ `Width` ](xref:Xamarin.Forms.VisualElement.Width)并[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)的属性`SKCanvasView`对象。
 - [ `CanvasSize` ](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)属性的`SKCanvasView`对象。
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-指定文本字符串，X 和 Y 坐标开始，文本的位置和一个`SKPaint`对象。 X 坐标指定左侧和右侧的文本的位置，但扩展的监视：Y 坐标指定的位置*基线*的文本。 如果您曾经编写过手动加下划线的纸张上，在基线是在哪个字符 sit，及更低的下行字母 （例如与字母 g、 p、 q 和 y） 降的行。
+指定文本字符串，X 和 Y 坐标开始，文本的位置和一个`SKPaint`对象。 X 坐标指定文本左侧的位置, 但观察:Y 坐标指定文本*基线*的位置。 如果您曾经编写过手动加下划线的纸张上，在基线是在哪个字符 sit，及更低的下行字母 （例如与字母 g、 p、 q 和 y） 降的行。
 
 `SKPaint`对象允许你指定的文本、 字体系列和文本大小的颜色。 默认情况下[ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize)属性具有值为 12，这会导致在手机等高分辨率设备上的小文本。 在除最简单的应用程序，您还需要在大小上都显示的文本的一些信息。 `SKPaint`类定义[ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics)属性和一些[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))方法，但对于较少花哨的需求， [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing)属性提供间距连续文本行的建议的值。
 
@@ -167,4 +167,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

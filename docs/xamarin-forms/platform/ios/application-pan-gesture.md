@@ -1,26 +1,26 @@
 ---
-title: 在 iOS 上的同时进行平移手势识别
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的同时进行的平移手势识别要使用的应用程序中。
+title: IOS 上的并发平移手势识别
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的, 以便能够在应用程序中使用同时使用的平移手势识别。
 ms.prod: xamarin
 ms.assetid: 883D89DA-F8FF-4B97-9C3F-2DD05C96A495
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4587bb89ddfe43873e666a07514075f1a952e985
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e86141ac27999a71a84ae7150b19ef3f60c117f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926778"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655972"
 ---
-# <a name="simultaneous-pan-gesture-recognition-on-ios"></a>在 iOS 上的同时进行平移手势识别
+# <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS 上的并发平移手势识别
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 当[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)附加到内部滚动视图中，所有平移手势捕获的一个视图，`PanGestureRecognizer`并不会传递给滚动视图。 因此，将无法再滚动滚动视图。
 
-此平台特定于 iOS 的使`PanGestureRecognizer`中滚动视图来捕获和共享平移手势与滚动视图。 设置使用在 XAML [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty)附加到属性`true`:
+此 iOS 平台特定`PanGestureRecognizer`用于在滚动视图中使用滚动视图来捕获和共享平移手势。 设置使用在 XAML [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty)附加到属性`true`:
 
 ```xaml
 <Application ...
@@ -46,6 +46,6 @@ Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecogni
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: b00452d348072060ab0e31a64fdb8cd4eb177471
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7a6ea06d77b8eb170f4165bfc8cf2fd643d56406
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926981"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651665"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中传递自变量
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
 
 _本文演示如何使用可用于将参数传递到非默认构造函数，以调用工厂方法，并指定泛型参数的类型的 XAML 属性。_
 
@@ -173,5 +173,5 @@ _本文演示如何使用可用于将参数传递到非默认构造函数，以�
 ## <a name="related-links"></a>相关链接
 
 - [XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)
-- [传递构造函数自变量 （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/PassingConstructorArguments/)
-- [调用工厂方法 （示例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/callingfactorymethods/)
+- [传递构造函数自变量 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
+- [调用工厂方法 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-callingfactorymethods)

@@ -1,38 +1,38 @@
 ---
-title: 在 Xamarin.iOS 中使用的用户通知框架
-description: 链接到文档，用于描述用户通知框架以及如何使用它来发送和接收 Xamarin.iOS 应用程序中本地和远程通知。
+title: Xamarin 中的用户通知框架
+description: 描述用户通知框架以及如何使用它在 Xamarin iOS 应用程序中发送和接收本地和远程通知的文档的链接。
 ms.prod: xamarin
 ms.assetid: 223FCE25-A3E6-4255-BCFC-0E3136F4E987
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/01/2016
-ms.openlocfilehash: 3e9103b02dd17529d0084d6f7eb4ddcc7749659a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 13fb48d5ee64c1d84926158381f0f69655fb2cf2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61423313"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651177"
 ---
-# <a name="user-notifications-framework-in-xamarinios"></a>在 Xamarin.iOS 中使用的用户通知框架
+# <a name="user-notifications-framework-in-xamarinios"></a>Xamarin 中的用户通知框架
 
-新 iOS 10，其用户通知框架允许传递和处理本地和远程通知。 使用此框架，应用程序或应用程序扩展插件可以计划本地通知的传递通过指定一组条件，如位置或一天的时间。
+用户通知框架是 iOS 10 的新功能, 它允许传递和处理本地和远程通知。 使用此框架, 应用或应用扩展可以通过指定一组条件 (如位置或一天的时间) 来计划本地通知的传送。
 
-此外，应用或扩展可以接收 （并可能修改） 本地和远程通知在传递到用户的 iOS 设备。
+此外, 在将本地和远程通知发送到用户的 iOS 设备时, 该应用或扩展可以接收 (并可能修改) 这些通知。
 
-新的用户通知 UI 框架允许应用或应用扩展时向用户显示自定义的本地和远程通知的外观。
+新用户通知 UI 框架允许应用或应用扩展在向用户显示本地和远程通知时, 对其外观进行自定义。
 
 ## <a name="enhanced-user-notificationsiosplatformuser-notificationsenhanced-user-notificationsmd"></a>[增强型用户通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)
 
-本文介绍了所有用户通知已得到增强适用于 iOS 10 和快速介绍了其使用新的用户通知框架实现的方式。
+本文介绍了为 iOS 10 增强用户通知的所有方式, 并简要介绍了如何使用新的用户通知框架来实现它们。
 
 ## <a name="advanced-user-notificationsiosplatformuser-notificationsadvanced-user-notificationsmd"></a>[高级用户通知](~/ios/platform/user-notifications/advanced-user-notifications.md)
 
-本文将深入地了解新的用户通知框架以及如何充分利用它在 Xamarin.iOS 应用程序中。
+本文更详细地介绍了新的用户通知框架, 以及如何在 Xamarin iOS 应用程序中充分利用它。
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 10 示例](https://developer.xamarin.com/samples/ios/iOS10/)
-- [UserNotifications 框架引用](https://developer.apple.com/reference/usernotifications)
+- [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [UserNotifications Framework 参考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [本地和远程通知编程指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)

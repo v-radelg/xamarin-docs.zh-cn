@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的 ImageButton 投影
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android-特定于平台，使上 ImageButton 投影。
+title: Android 上的 ImageButton 投影
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 以便在 ImageButton 上启用投影。
 ms.prod: xamarin
 ms.assetid: D3604D87-9F9F-4FE2-8B10-DF3B143C0734
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: ba666d2474934b0cd4349e607329433ae1988b47
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 567216171dd289e849ee0164452e4b876953f2a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926805"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653580"
 ---
-# <a name="imagebutton-drop-shadows-on-android"></a>在 Android 上的 ImageButton 投影
+# <a name="imagebutton-drop-shadows-on-android"></a>Android 上的 ImageButton 投影
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 特定于平台的用于上启用投影`ImageButton`。 设置使用在 XAML`ImageButton.IsShadowEnabled`可绑定属性设置为`true`，以及数量的其他控制投影的可选可绑定属性：
+此 Android 平台特定用于在上`ImageButton`启用投影。 设置使用在 XAML`ImageButton.IsShadowEnabled`可绑定属性设置为`true`，以及数量的其他控制投影的可选可绑定属性：
 
 ```xaml
 <ContentPage ...
@@ -77,7 +77,7 @@ imageButton.On<Android>()
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

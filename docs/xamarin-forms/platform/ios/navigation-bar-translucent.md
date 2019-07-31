@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的 NavigationPage 栏半透明度
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的更改在 NavigationPage 中导航栏的透明度。
+title: IOS 上的 NavigationPage Bar 半透明度
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来更改 NavigationPage 中导航栏的透明度。
 ms.prod: xamarin
 ms.assetid: 1150941B-56DB-4781-BE36-A4C4F9F2C500
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: d6a3538b4083112a2bf1a343a9db438e4894815b
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 6a8d1c0a4130e7f5b909e963fce23c87597a688c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925648"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652132"
 ---
-# <a name="navigationpage-bar-translucency-on-ios"></a>在 iOS 上的 NavigationPage 栏半透明度
+# <a name="navigationpage-bar-translucency-on-ios"></a>IOS 上的 NavigationPage Bar 半透明度
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的用于上更改导航栏的透明度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)，并设置在 XAML 中由[ `NavigationPage.IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty)附加属性设置为`boolean`值：
+此 iOS 平台特定用于更改上[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)导航栏的透明度, 并通过[`NavigationPage.IsNavigationBarTranslucent`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty)将附加属性设置为`boolean`值在 XAML 中使用:
 
 ```xaml
 <NavigationPage ...
@@ -54,6 +54,6 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 238ba1853df523ee275de628ebdbd138a6d1d1bf
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649603"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650265"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 条目
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _单行文本或输入的密码_
 
@@ -59,9 +59,9 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > 宽度`Entry`可以通过设置定义其`WidthRequest`属性。 不依赖于的宽度`Entry`所定义的值基于其`Text`属性。
 
-### <a name="preventing-text-entry"></a>阻止文本输入
+### <a name="preventing-text-entry"></a>防止文本输入
 
-可以阻止用户修改中的文本[ `Entry` ](xref:Xamarin.Forms.Entry)通过设置`IsReadOnly`属性，它具有默认值的`false`到`true`:
+[`Entry`](xref:Xamarin.Forms.Entry)通过`false` `true`将属性 (其默认值) 设置为, 可以防止用户修改中的文本: `IsReadOnly`
 
 ```xaml
 <Entry Text="This is a read-only Entry"
@@ -73,7 +73,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> `IsReadonly`属性不会更改的可视外观[ `Entry` ](xref:Xamarin.Forms.Entry)，但不同于`IsEnabled`也会更改的可视外观的属性`Entry`为灰色。
+> 属性不会改变的视觉外观[`Entry`](xref:Xamarin.Forms.Entry), 这与还会将`IsEnabled`的`Entry`视觉外观改为灰色的属性不同。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>输入的长度限制
 
@@ -323,11 +323,11 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; 当用户已结束输入通过键盘上按 return 键时引发。
 
 > [!NOTE]
-> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)类，从其[ `Entry` ](xref:Xamarin.Forms.Entry)继承，也有[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)和[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
+> 从其[`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)继承的[`VisualElement`类](xref:Xamarin.Forms.VisualElement) [`Entry`](xref:Xamarin.Forms.Entry)也具有和事件。
 
 ### <a name="completed"></a>已完成
 
-`Completed`使用事件做出反应的条目的交互完成。 `Completed` 当用户通过键盘上按 return 键 （或通过按 Tab 键在 UWP 上） 结束与某个字段的输入时引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
+`Completed`使用事件做出反应的条目的交互完成。 `Completed`当用户通过按键盘上的返回键 (或按 UWP 上的 Tab 键) 以字段结束输入时, 将引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -381,5 +381,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [文本 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [入口 API](xref:Xamarin.Forms.Entry)

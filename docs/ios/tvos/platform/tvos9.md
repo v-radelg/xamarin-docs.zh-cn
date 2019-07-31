@@ -1,36 +1,36 @@
 ---
 title: tvOS 9 简介
-description: 本文介绍适用于 Xamarin.tvOS 开发人员的所有新的和修改 Api 和 tvOS 9 中的可用功能。
+description: 本文介绍了 tvOS 9 for Xamarin tvOS 开发人员提供的所有新的和修改的 Api 和功能。
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: c4aea5a35fd5db46c9e7ca245b852c988e82f53e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: be59ee3f51801c67277aac1a3ec274e81997ff3b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830496"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657328"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 简介
 
-_本文介绍适用于 Xamarin.tvOS 开发人员的所有新的和修改 Api 和 tvOS 9 中的可用功能。_
+_本文介绍了 tvOS 9 for Xamarin tvOS 开发人员提供的所有新的和修改的 Api 和功能。_
 
-Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程，运行新的 （基于 iOS 9） 的 tvOS 操作系统的第四代。
+Apple 已发布第四代 Apple TV 硬件, 其中包含经过重新设计的触摸式远程远程运行, 并运行新的 tvOS 操作系统 (基于 iOS 9)。
 
-第一次，tvOS 打开 Apple TV 平台为开发人员，您可以创建丰富的沉浸式应用程序然后将它们发布通过 Apple tv 设备内置 App Store 中的过程类似于编写和发布适用于使用 iTunes 应用在 iOS 应用程序的体验存储区。
+第一次, tvOS 向开发人员开放 Apple TV 平台, 使用户能够创建丰富的沉浸式应用程序, 并在类似于使用 iTunes 应用编写和发布适用于 iOS 的应用的体验的过程中将其发布到 Apple TV 的内置应用商店店.
 
-如果您熟悉 Xamarin.iOS 开发，您会发现转换到 tvOS 相当简单。 Api 和功能的大部分都是相同，但是，许多常见的 Api （例如，WebKit) 不可用。 此外，使用与 Siri 远程会带来基于触摸屏的 iOS 设备中不存在的一些设计难题。
+如果你熟悉 Xamarin iOS 开发, 你应发现过渡到 tvOS 的方式非常简单。 大多数 Api 和功能都是相同的, 但很多公共 Api 都无法使用 (如 WebKit)。 此外, 使用 Siri 远程处理会引发一些设计挑战, 这些挑战在基于触摸屏的 iOS 设备中不存在。
 
-本指南将为 Xamarin.tvOS 开发人员提供的所有新的和修改 Api 和 tvOS 9 中的可用功能的简介。 TvOS 的详细信息，请参阅 Apple[开发的新 Apple TV](https://developer.apple.com/tvos/)文档。
+本指南将介绍 tvOS 9 中适用于 tvOS 开发人员的所有新的和修改的 Api 和功能。 有关 tvOS 的详细信息, 请参阅 Apple[针对新的 APPLE TV 文档开发](https://developer.apple.com/tvos/)。
 
 <a name="Supported-and-Unsupported-Capabilities" />
 
 ## <a name="supported-and-unsupported-capabilities"></a>支持和不支持的功能
 
-运行在 Apple TV 的 tvOS 应用具有支持以下功能和特性：
+Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能:
 
 - 应用组
 - 后台模式
@@ -41,7 +41,7 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
 - 应用内购买
 - Keychain 共享
 
-不支持以下功能和性能：
+不支持以下特性和功能:
 
 - Apple Pay
 - 应用沙盒
@@ -55,29 +55,29 @@ Apple 已发布 Apple TV 硬件特点是经过重新设计，触摸启用远程�
 - Wallet
 - 无线附件配置
 
-请参阅我们[支持程序集](~/ios/tvos/internals/assemblies.md)并[支持框架](~/ios/tvos/internals/frameworks.md)文档了解详细信息。
+有关详细信息, 请参阅[支持的程序集](~/ios/tvos/internals/assemblies.md)和[支持的框架](~/ios/tvos/internals/frameworks.md)文档。
 
 <a name="Apple-TV-Hardware" />
 
 ## <a name="apple-tv-hardware"></a>Apple TV 硬件
 
-新建 Apple TV 具有以下硬件规范：
+新的 Apple TV 具有以下硬件规范:
 
-- 64 位 A8 处理器
-- 32 GB 或 64 GB 的存储空间
-- 2 GB 的 RAM
-- 10/100Mbps Ethernet
-- WiFi 802.11a/b/g/n/ac
-- 分辨率为 1080p
+- 64位 A8 处理器
+- 存储的32GB 或64GB
+- 2GB RAM
+- 10/100Mbps 以太网
+- WiFi 802.11 a/b/g/n/ac
+- 1080p 解析
 - HDMI
-- USB C 端口 （适用于开发人员和仅供诊断使用）
-- 新 Siri 远程或 Apple TV 远程 （基于区域）
+- USB C 端口 (仅适用于开发人员和诊断)
+- New Siri 远程或 Apple TV 远程 (基于区域)
 
 ### <a name="siri-remote"></a>Siri 远程
 
-根据区域，提供 Apple TV 远程将有两个配置：Siri 远程或 Apple TV 远程。
+根据区域, 提供的 Apple TV 遥控器将进入两种配置:Siri 远程或 Apple TV 远程。
 
-Siri 远程目前已在以下国家/地区：
+当前在以下国家/地区提供 Siri 远程:
 
 - 澳大利亚
 - 加拿大
@@ -88,93 +88,93 @@ Siri 远程目前已在以下国家/地区：
 - 英国
 - 美国
 
-所有其他国家/地区，将收到的 Apple TV Remote 替换 Siri 按钮将显示与搜索文本输入的默认搜索屏幕的搜索按钮：
+所有其他国家/地区将收到使用 "搜索" 按钮替换 "Siri" 按钮的 Apple TV 遥控器, 该搜索按钮显示带有文本输入的默认搜索屏幕:
 
 [![](tvos9-images/remote02.png "Siri 远程")](tvos9-images/remote02.png#lightbox)
 
-有关详细信息，请参阅我们[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
+有关详细信息, 请参阅我们的[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
 <a name="Apple-TV-Provisioning" />
 
 ## <a name="apple-tv-provisioning"></a>Apple TV 预配
 
-就像开发 iOS，新的 tvOS 将用于开发和分发基于团队的成员身份和签名标识的已建立与 Apple 要求正确预配配置文件。
+就像为 iOS 进行开发一样, 新 tvOS 将需要正确的预配配置文件, 用于开发和分发, 这两项功能都基于你已使用 Apple 建立的团队成员身份和签名标识。
 
-正确预配，还必须访问 tvOS 功能，如 iCloud KVS 或 CloudKit 数据存储。 请参阅我们[资源和数据存储](~/ios/tvos/app-fundamentals/resources-data-storage.md)iCloud 支持 Xamarin.tvOS 应用程序中的信息。
+若要访问 tvOS 功能 (如 iCloud KVS 或 CloudKit 数据存储), 也必须进行适当的设置。 请参阅我们的[资源和数据存储](~/ios/tvos/app-fundamentals/resources-data-storage.md), 了解有关在 tvOS 应用中支持 iCloud 的信息。
 
-创建和安装一样使用 xamarin ios 应用预配配置文件。 在这种情况下，请参阅我们的 iOS[设备预配](~/ios/get-started/installation/device-provisioning/index.md)文档了解详细信息。
+预配配置文件的创建和安装方式与使用 Xamarin iOS 应用的方式相同。 同样, 请参阅 iOS[设备预配](~/ios/get-started/installation/device-provisioning/index.md)文档以了解更多详细信息。
 
 <a name="Apple-TV-Apps" />
 
 ## <a name="apple-tv-apps"></a>Apple TV 应用
 
-新建 Apple TV 硬件和 tvOS 9 支持两种类型的应用： 传统和客户端-服务器应用程序。
+新的 Apple TV 硬件和 tvOS 9 支持两种类型的应用: 传统应用和客户端-服务器应用。
 
 <a name="Traditional-Apps" />
 
-### <a name="traditional-apps"></a>传统的应用程序
+### <a name="traditional-apps"></a>传统应用
 
-传统的应用程序从 Apple TV App Store 购买，并且直接在设备上安装。 这些应用可以是游戏、 实用程序或使用相同的框架和技术为 Xamarin.iOS 应用开发的媒体应用程序。
+传统应用从 Apple TV 应用商店购买, 并直接安装在设备上。 这些应用可以是使用与 Xamarin iOS 应用相同的框架和技术开发的游戏、实用程序或媒体应用程序。
 
-Apple TV 应用具有的最大大小为 200 MB，可以下载额外的 2 GB 使用按需资源的内容。 请参阅我们[资源和数据存储](~/ios/tvos/app-fundamentals/resources-data-storage.md)有关详细信息。
+Apple TV 应用的最大大小为 200MB, 可以使用点播资源下载其他2GB 的内容。 有关详细信息, 请参阅我们的[资源和数据存储](~/ios/tvos/app-fundamentals/resources-data-storage.md)。
 
-请参阅我们[你好，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)您熟悉的工具和开发使用 Xamarin.tvOS tvOS 应用所需的概念。
+请参阅[tvOS 快速入门指南,](~/ios/tvos/get-started/hello-tvos.md)熟悉使用 tvOS 开发 tvOS 应用程序所需的工具和概念。
 
 <a name="Summary" />
 
-### <a name="client-server-apps"></a>客户端-服务器应用程序
+### <a name="client-server-apps"></a>客户端-服务器应用
 
-除了已安装的传统应用程序，Apple TV 可以轻松地创建基于 web 的客户端-服务器媒体流式处理应用程序使用 web 技术 （HTTPS、 XML 和 JavaScript）。 你将设计用户界面使用 Apple 的 TVML 标记语言和 JavaScript 用于定义使用 TVMLKit 的应用程序的行为。
+除了已安装的传统应用外, 通过 Apple TV, 还可以轻松地使用 web 技术 (HTTPS、XML 和 JavaScript) 创建基于 web 的客户端-服务器媒体流式处理应用。 你将使用 Apple 的 TVML 标记语言设计用户界面, 并使用 JavaScript 通过 TVMLKit 定义应用的行为。
 
-有关详细信息，请参阅 Apple [Apple TV 标记语言参考](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)， [TVJS 框架引用](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)， [TVMLKit 框架引用](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)，[有关HTTP 实时流式处理](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978)并[HLS Apple TV 的创作规范](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)文档。
+有关详细信息, 请参阅 Apple 的[APPLE Tv 标记语言参考](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064), [TVJS framework 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076), [TVMLKit FRAMEWORK 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429),[关于](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978) [apple TV 的 HTTP Live Streaming 和 HLS 创作规范](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)关于.
 
 <a name="User-Interface-Challenges" />
 
 ## <a name="user-interface-challenges"></a>用户界面问题
 
-与 iOS 或 OS X、 Apple TV 没有触摸屏或鼠标，允许用户直接选择并应用或其内容与之交互。 而是在用户导航应用程序的用户界面的新的 Siri 远程或蓝牙游戏控制器。 有关详细信息，请参阅我们[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
+与 iOS 或 OS X 不同, Apple TV 没有允许用户直接选择应用或其内容的触摸屏或鼠标。 相反, 他们将新的 Siri 远程或蓝牙游戏控制器用于导航应用程序的用户界面。 有关详细信息, 请参阅我们的[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
-此外，整体用户体验是与 iOS 或 Mac 应用程序往往是单个用户体验大大不同。 使用 Apple TV 中，用户体验往往是更多社交在本质上，其中多个用户可能同样的躺椅上与单个应用程序和彼此进行交互。 若要设计成功 Apple TV 应用体验 （新的应用程序或更改某个现有），这些更改必须纳入考虑范围。 
+此外, 总体用户体验明显不同于通常是单用户体验的 iOS 或 Mac 应用。 使用 Apple TV, 用户体验趋向于性质更高的社交领域, 其中有多个人在沙发上与单个应用程序交互。 若要设计成功的 Apple TV 应用体验 (新应用或移植现有应用), 必须考虑这些更改。 
 
 <a name="Summary" />
 
 ### <a name="working-with-focus-and-parallax-images"></a>使用焦点和视差图像
 
-如上面所述，使用它的接口直接作为 ios 其中用户点击设备的屏幕上的映像但间接从使用 Siri 远程在室内不进行交互 Xamarin.tvOS 应用程序的用户。 若要显示和处理这种用户交互，Apple TV 使用焦点基于模型。 
+如上所述, 你的 tvOS 应用程序的用户将不会与 iOS 直接交互, 因为这种情况下, 它在设备的屏幕上点击图像, 但使用 Siri 远程从房间上间接地进入。 为了提供和处理此用户交互, Apple TV 使用基于焦点的模型。 
 
-焦点发生变动，作为使用精致的动画效果和副作用 （例如映像上视差效果） 用于明确识别当前具有焦点的用户界面项。
+当重点变化时, 会使用细微的动画和效果 (如图像上的视差效果) 来清楚地识别当前有焦点的用户界面项。
 
-如果用户使用 Siri 远程上进行速度较慢且循环手势，已设定焦点的项将 sway 实时响应此移动。 Sway 出现时，照明的光泽应用于其图像进行似乎出类拔萃的图面。 给定的一段非活动状态后, 变暗聚焦不准的任何内容和焦点项将变得更大。
+如果用户在 Siri 遥控器上发出缓慢的循环手势, 则该聚焦项会实时地响应此移动。 在 sway 发生时, 会将发光的 sheen 应用于其图像, 使表面看起来像是发光。 在给定的非活动状态之后, 任何焦点不变的内容会变暗, 并且重点项会增长得更大。
 
-有关详细信息，请参阅我们[使用导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)并[使用的图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
+有关详细信息, 请参阅使用[导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和使用[图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
 
 <a name="The-Home-Screen" />
 
 ### <a name="the-home-screen"></a>主屏幕
 
-主页 Apple 电视屏幕显示所有应用的安装，并提供用于访问用户首选项的方法：
+Apple TV 主屏幕显示所有已安装的应用, 并提供一种方法来访问用户首选项:
 
 [![](tvos9-images/home01.png "主屏幕")](tvos9-images/home01.png#lightbox)
 
-用户导航的上使用 Siri 远程使用焦点中选择一个应用并启动它在使用触摸手势的应用图标的网格。 应用图标是您的第一个机会，使在潜在用户上良好印象和应传达一目了然的应用程序的用途。
+用户使用 Siri 远程浏览应用图标的网格, 并使用焦点来选择应用并启动应用。 在应用程序图标上, 你第一次机会让你的潜在用户印象非常好, 并应一目了然地传达你的应用程序的用途。
 
-每个应用程序必须提供小型和大型版本的应用程序图标。 安装应用后，将 Apple 电视主页屏幕上使用的小图标。 最大版本可供 App Store。 大型应用图标应模拟的小图标版本的外观。
+每个应用都必须同时提供小版本的应用图标。 安装应用程序时, 将在 Apple TV 主屏幕上使用小图标。 应用商店使用大版本。 大型应用图标应模拟小图标版本的外观。
 
-有关详细信息，请参阅我们[使用的图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
+有关详细信息, 请参阅[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
 
 <a name="The-Top-Shelf" />
 
-### <a name="the-top-shelf"></a>顶层架子
+### <a name="the-top-shelf"></a>顶部货位
 
-如果用户具有 Apple 电视主页屏幕上的顶部行上放置 Xamarin.tvOS 应用，则当用户选择您的应用程序时将显示大型的顶架图像。 此映像应突出显示您的应用程序的功能，或提供指向其内容的直接链接。
+如果用户将 tvOS 应用放置在 Apple TV 主屏幕上的最上面一行, 则当用户选择应用程序时, 将显示一个大型的顶部图像。 此图像应突出显示应用的功能, 或提供指向其内容的直接链接。
 
-[![](tvos9-images/topshelf01.png "顶层架子")](tvos9-images/topshelf01.png#lightbox)
+[![](tvos9-images/topshelf01.png "顶部货位")](tvos9-images/topshelf01.png#lightbox)
 
-可以为单个静态提供顶架图像`.png`或`.lsr`文件，也可以动态创建在运行时作为可获得焦点项的单个行。
+顶部货位图像可以作为单个静态`.png`或`.lsr`文件提供, 也可以在运行时动态创建为可设定焦点的单个行。
 
-而不是显示静态的顶架图像，它可以包含一组动态的滚动横幅或动态行或可获得焦点的项。 这两个这些动态样式，可以突出显示应用程序或跳转到其最常用功能提供的内容。
+它不会显示静态的顶层图像, 而是包含动态行、可设定焦点的项或动态的滚动条带集。 这两种动态样式都允许您突出显示应用程序提供的内容或跳转到其最常用的功能。
 
-有关详细信息，请参阅我们[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档和 Apple [TVServices 框架引用](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412)将 Top Shelf 扩展添加到您的应用程序提供的详细信息顶层的动态内容。
+有关详细信息, 请参阅[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档和 Apple 的[TVServices Framework 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412), 了解有关将顶层扩展添加到应用的详细信息, 以提供动态的顶层内容。
 
 
 
@@ -183,8 +183,8 @@ Apple TV 应用具有的最大大小为 200 MB，可以下载额外的 2 GB 使�
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人机接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [适用于 tvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [构建适用于使用 Xamarin （视频） 的 tvOS 应用](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [用 Xamarin 构建 tvOS 应用程序 (视频)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

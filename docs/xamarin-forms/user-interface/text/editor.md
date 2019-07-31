@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 1f9cd0acd201f124f4a4577fec23dce52aee627d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649549"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657510"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 编辑器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _多行文本输入_
 
@@ -59,9 +59,9 @@ var text = MyEditor.Text;
 var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
 ```
 
-### <a name="preventing-text-entry"></a>阻止文本输入
+### <a name="preventing-text-entry"></a>防止文本输入
 
-可以阻止用户修改中的文本[ `Editor` ](xref:Xamarin.Forms.Editor)通过设置`IsReadOnly`属性，它具有默认值的`false`到`true`:
+[`Editor`](xref:Xamarin.Forms.Editor)通过`false` `true`将属性 (其默认值) 设置为, 可以防止用户修改中的文本: `IsReadOnly`
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -73,7 +73,7 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 ```
 
 > [!NOTE]
-> `IsReadonly`属性不会更改的可视外观[ `Editor` ](xref:Xamarin.Forms.Editor)，但不同于`IsEnabled`也会更改的可视外观的属性`Editor`为灰色。
+> 属性不会改变的视觉外观[`Editor`](xref:Xamarin.Forms.Editor), 这与还会将`IsEnabled`的`Editor`视觉外观改为灰色的属性不同。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>输入的长度限制
 
@@ -189,9 +189,9 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 ### <a name="enabling-and-disabling-text-prediction"></a>启用和禁用文本预测
 
-`IsTextPredictionEnabled`属性控制是否文本预测和自动启用文本校正。 默认情况下，该属性设置为`true`。 当用户输入文本时，会显示 word 预测。
+`IsTextPredictionEnabled`属性控制是否启用文本预测和自动文本更正。 默认情况下，该属性设置为`true`。 当用户输入文本时，会显示 word 预测。
 
-但是，对于某些文本项方案，例如输入用户名、 文本预测和文本自动更正提供负体验，并应通过设置禁用`IsTextPredictionEnabled`属性设置为`false`:
+但是, 对于某些文本输入方案, 例如输入用户名, 文本预测和自动文本更正将提供消极的体验, 并应通过将`IsTextPredictionEnabled`属性设置为来`false`禁用它:
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -202,7 +202,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> 当`IsTextPredictionEnabled`属性设置为`false`，和自定义键盘不被使用，文本预测和自动禁用文本更正。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已设置该禁用文本预测`IsTextPredictionEnabled`属性将被忽略。 因此，该属性不能用于启用文本预测`Keyboard`的显式禁用它。
+> `false`如果将`IsTextPredictionEnabled`属性设置为, 并且未使用自定义键盘, 则会禁用文本预测和自动文本更正。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已设置该禁用文本预测`IsTextPredictionEnabled`属性将被忽略。 因此，该属性不能用于启用文本预测`Keyboard`的显式禁用它。
 
 ### <a name="colors"></a>颜色
 
@@ -260,11 +260,11 @@ public partial class EditorPage : ContentPage
 - [已完成](xref:Xamarin.Forms.Editor.Completed)&ndash;用户已结束输入通过键盘上按 return 键时引发。
 
 > [!NOTE]
-> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)类，从其[ `Entry` ](xref:Xamarin.Forms.Entry)继承，也有[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)和[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
+> 从其[`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)继承的[`VisualElement`类](xref:Xamarin.Forms.VisualElement) [`Entry`](xref:Xamarin.Forms.Entry)也具有和事件。
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用来与的交互完成做出反应`Editor`。 `Completed` 当用户通过键盘上输入 return 键 （或通过按 Tab 键在 UWP 上） 结束与某个字段的输入时引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
+`Completed`事件用来与的交互完成做出反应`Editor`。 `Completed`如果用户通过输入键盘上的 return 键 (或按 UWP 上的 Tab 键) 来结束输入, 则会引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -360,5 +360,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [文本 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [编辑器 API](xref:Xamarin.Forms.Editor)

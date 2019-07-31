@@ -1,24 +1,24 @@
 ---
 title: iPad 模式页面演示样式
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的设置模式在 iPad 上页面的呈现样式。
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的设置 iPad 上模式页面的呈现样式。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: fa851ddc753d1fb9cb39f4c08dcfde518a123b62
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c8962c46e0b496844bd3fc00346a117b6753f818
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926748"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651949"
 ---
 # <a name="ipad-modal-page-presentation-style"></a>iPad 模式页面演示样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的用于在 iPad 上设置的模式页面演示文稿样式。 设置使用在 XAML`Page.ModalPresentationStyle`可绑定属性设置为`UIModalPresentationStyle`枚举值：
+此 iOS 平台特定用于设置 iPad 上模式页的呈现样式。 设置使用在 XAML`Page.ModalPresentationStyle`可绑定属性设置为`UIModalPresentationStyle`枚举值：
 
 ```xaml
 <ContentPage ...
@@ -61,6 +61,6 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

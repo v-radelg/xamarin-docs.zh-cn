@@ -7,16 +7,16 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 4f8b6b7ea0db8d46886c3391f1aef3ba20a5be44
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8978bd386ec2f2ea0f9960f079ce82750941cfad
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085913"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655957"
 ---
 # <a name="clipping-with-paths-and-regions"></a>按路径和区域进行剪裁
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用剪辑图形路径指向的特定区域，并创建区域_
 
@@ -24,7 +24,7 @@ _使用剪辑图形路径指向的特定区域，并创建区域_
 
 ![](clipping-images/clippingsample.png "通过锁眼 monkey")
 
-*剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是，不能从一个区域，创建路径和它们在内部有很大差异：路径包含一系列直线和曲线，而由一系列水平扫描行定义一个区域。
+*剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是, 你不能从区域创建路径, 它们在内部有很大不同:路径由一系列线条和曲线组成, 而区域由一系列水平扫描线定义。
 
 上面的图像已通过**Monkey 通过锁眼**页。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)类定义使用 SVG 数据的路径，并使用构造函数从程序资源加载位图：
 
@@ -366,7 +366,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 如果每个路径缩短为水平扫描行，如老式清空 tube 电视中的一系列显著简化此作业。 每个扫描行是只需一条水平线起始点和终结点。 例如，10 个像素的半径的圆形可分解为 20 水平扫描行，其中每个圆的左侧部分开始，在右侧的部分结束。 结合使用的任何区域操作的两个圆成为非常简单，因为它是只需检查每个对相应扫描行的开始和结束坐标。
 
-这是什么区域是：一系列定义一个区域的水平扫描行。
+这是一个区域:一系列用于定义区域的水平扫描行。
 
 但是，当区域被简化为一系列的扫描行，这些扫描线基于特定的像素尺寸。 严格地说，区域不是向量图形对象。 它是在更接近本质上比为路径的压缩单色位图。 因此，区域不能缩放或旋转不失真，并因此它们不转换时使用的剪辑区域。
 
@@ -515,4 +515,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

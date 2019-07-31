@@ -1,33 +1,33 @@
 ---
-title: 在 Xamarin.iOS 影像框架
-description: 本文档介绍如何使用 iOS 11 影像框架在 Xamarin.iOS 中。 具体而言，它讨论了矩形检测和人脸检测。
+title: Xamarin 中的远景框架
+description: 本文档介绍如何在 Xamarin 中使用 iOS 11 远景框架。 具体而言, 它讨论了矩形检测和面部检测。
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/31/2017
-ms.openlocfilehash: 291cbdb93cfb6ac123d740e98065ba877bb44da5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c7fd1a933ba166b7c1b708bc102b84ce407b18fd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61159643"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648359"
 ---
-# <a name="vision-framework-in-xamarinios"></a>在 Xamarin.iOS 影像框架
+# <a name="vision-framework-in-xamarinios"></a>Xamarin 中的远景框架
 
-影像框架添加新图像处理功能到 iOS 11 中，包括了许多：
+远景框架向 iOS 11 添加了许多新的图像处理功能, 其中包括:
 
 - [矩形检测](#rectangles)
 - [人脸检测](#faces)
-- 机器学习图像分析 (中所述[CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
+- 机器学习图像分析 (在[CoreML](~/ios/platform/introduction-to-ios11/coreml.md)中讨论)
 - 条形码检测
-- 图像对齐方式分析
+- 图像对齐分析
 - 文本检测
-- 即将推出检测
-- 对象检测和跟踪
+- 范围检测
+- 对象检测 & 跟踪
 
-![使用检测到的三个矩形拍照](vision-images/found-rectangles-tiny.png) ![拍摄与检测到的两张脸](vision-images/xamarin-home-faces-tiny.png)
+![检测到包含三个矩形的照片](vision-images/found-rectangles-tiny.png) ![检测到两个面部的照片](vision-images/xamarin-home-faces-tiny.png)
 
 下面更详细地讨论了矩形检测和人脸检测。
 
@@ -35,13 +35,13 @@ ms.locfileid: "61159643"
 
 ## <a name="rectangle-detection"></a>矩形检测
 
-[VisionRects 示例](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)演示如何处理图像并在其上绘制检测到的矩形。
+[VisionRects 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)演示如何处理图像并在其上绘制检测到的矩形。
 
-### <a name="1-initialize-the-vision-request"></a>1.初始化视觉请求
+### <a name="1-initialize-the-vision-request"></a>1.初始化远景请求
 
-在中`ViewDidLoad`，创建`VNDetectRectanglesRequest`引用`HandleRectangles`将每个请求结束时调用的方法：
+在`ViewDidLoad`中, 创建`VNDetectRectanglesRequest`一个引用`HandleRectangles`将在每个请求结束时调用的方法的:
 
-`MaximumObservations`还应设置属性，否则为它将默认为 1 并将返回单个结果。
+还应设置属性, 否则将默认为 1, 并且仅返回一个结果。 `MaximumObservations`
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
@@ -50,7 +50,7 @@ RectangleRequest.MaximumObservations = 10;
 
 ### <a name="2-start-the-vision-processing"></a>2.开始视觉处理
 
-以下代码将开始处理请求。 在中**VisionRects**示例，此代码运行后用户所选映像：
+下面的代码开始处理请求。 在**VisionRects**示例中, 此代码在用户选择了图像后运行:
 
 ```csharp
 // Run the rectangle detector
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-此处理程序将传递`ciImage`影像框架到`VNDetectRectanglesRequest`在步骤 1 中创建。
+此处理程序将`ciImage`传递到在步骤`VNDetectRectanglesRequest` 1 中创建的远景框架。
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3.处理视觉处理的结果
 
-矩形检测完成后，框架将执行`HandleRectangles`方法，如下所示的摘要：
+完成矩形检测后, 框架将执行`HandleRectangles`方法, 摘要如下所示:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,30 +88,30 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4.显示结果
 
-`OverlayRectangles`中的方法**VisionRectangles**示例具有三个函数：
+VisionRectangles `OverlayRectangles`示例中的  方法有三个函数:
 
-- 呈现源映像
-- 绘制一个矩形以指示每个检测到其中，和
-- 添加使用 CoreGraphics 每个矩形的文本标签。
+- 渲染源图像,
+- 绘制一个矩形以指示每个的检测位置, 并
+- 使用 CoreGraphics 为每个矩形添加文本标签。
 
-视图[示例的源](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)确切 CoreGraphics 方法。
+查看 CoreGraphics 的确切方法[源](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)。
 
-![使用检测到的三个矩形拍照](vision-images/found-rectangles-phone-sml.png)
+![检测到包含三个矩形的照片](vision-images/found-rectangles-phone-sml.png)
 
-### <a name="5-further-processing"></a>5.进一步的处理
+### <a name="5-further-processing"></a>5.进一步处理
 
-矩形检测是通常只是第一步链中的操作，如使用[CoreMLVision 本例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)，其中矩形传递给要分析手写的数字的 CoreML 模型。
+矩形检测通常只是操作链中的第一步 (如[此 CoreMLVision 示例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)), 其中, 将矩形传递到 CoreML 模型来分析手写数字。
 
 
 <a name="faces" />
 
 ## <a name="face-detection"></a>人脸检测
 
-[VisionFaces 示例](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)适用于以类似的方式**VisionRectangles**示例，使用不同的视觉请求类。
+[VisionFaces 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)使用不同的远景请求类, 与**VisionRectangles**示例的工作方式类似。
 
-### <a name="1-initialize-the-vision-request"></a>1.初始化视觉请求
+### <a name="1-initialize-the-vision-request"></a>1.初始化远景请求
 
-在中`ViewDidLoad`，创建`VNDetectFaceRectanglesRequest`引用`HandleRectangles`将每个请求结束时调用的方法。
+在`ViewDidLoad`中, 创建`VNDetectFaceRectanglesRequest`一个引用`HandleRectangles`将在每个请求结束时调用的方法的。
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
@@ -119,7 +119,7 @@ FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 
 ### <a name="2-start-the-vision-processing"></a>2.开始视觉处理
 
-以下代码将开始处理请求。 在中**VisionFaces**此代码运行后用户所选映像的示例：
+下面的代码开始处理请求。 在**VisionFaces**示例中, 此代码在用户选择了图像后运行:
 
 ```csharp
 // Run the face detector
@@ -129,11 +129,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-此处理程序将传递`ciImage`影像框架到`VNDetectFaceRectanglesRequest`在步骤 1 中创建。
+此处理程序将`ciImage`传递到在步骤`VNDetectFaceRectanglesRequest` 1 中创建的远景框架。
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3.处理视觉处理的结果
 
-人脸检测完成后，在处理程序执行`HandleRectangles`方法进行错误处理，并显示检测到的人脸，并调用边界`OverlayRectangles`原始图片上绘制边框：
+面部检测完成后, 处理程序将执行`HandleRectangles`方法, 该方法执行错误处理并显示检测到的人脸的边界, 并`OverlayRectangles`调用来绘制原始图片上的边框:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -162,23 +162,23 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4.显示结果
 
-`OverlayRectangles`中的方法**VisionFaces**示例具有三个函数：
+VisionFaces `OverlayRectangles`示例中的  方法有三个函数:
 
-- 呈现源映像
-- 绘制检测到，每张人脸矩形和
-- 添加使用 CoreGraphics 每张人脸的文本标签。
+- 渲染源图像,
+- 为检测到的每个面部绘制一个矩形, 并
+- 使用 CoreGraphics 为每个面部添加一个文本标签。
 
-视图[示例的源](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)确切 CoreGraphics 方法。
+查看 CoreGraphics 的确切方法[源](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)。
 
-![拍摄与检测到的两张脸](vision-images/found-faces-phone-sml.png)
+![检测到两个面部的照片](vision-images/found-faces-phone-sml.png)
 
-### <a name="5-further-processing"></a>5.进一步的处理
+### <a name="5-further-processing"></a>5.进一步处理
 
-影像框架包括附加功能，用于检测面部识别功能，例如眼睛和嘴巴。 使用`VNDetectFaceLandmarksRequest`类型，它将返回`VNFaceObservation`结果，如上面，步骤 3 中所示，但与其他`VNFaceLandmark`数据。
+远景框架包含其他功能来检测面部功能, 如眼睛和嘴。 使用类型, 它将返回`VNFaceObservation`如上第3步中所示的结果, 但`VNFaceLandmark`包含其他数据。 `VNDetectFaceLandmarksRequest`
 
 
 ## <a name="related-links"></a>相关链接
 
-- [视觉矩形 （示例）](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
-- [愿景的人脸 （示例）](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
-- [在核心映像-筛选器、 裸机、 视觉和多 (WWDC) （视频） 方面的改进](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [远景矩形 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
+- [构想面 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [核心图像改进-筛选器、金属、视觉效果等 (WWDC) (视频)](https://developer.apple.com/videos/play/wwdc2017/510/)

@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的 ListView 行动画
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的用于控制更新 ListView 项集合时是否禁用行动画。
+title: IOS 上的 ListView 行动画
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制在更新 ListView 项集合时是否禁用行动画。
 ms.prod: xamarin
 ms.assetid: E8F5103F-4D8E-4A5A-A16C-7FA14EE786AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2019
-ms.openlocfilehash: ac71be25492866b1cf2b12d3343c2f4095fc738d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9e44c22e670847102cf0bc0f79a860abcac30760
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925799"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652837"
 ---
-# <a name="listview-row-animations-on-ios"></a>在 iOS 上的 ListView 行动画
+# <a name="listview-row-animations-on-ios"></a>IOS 上的 ListView 行动画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 特定于平台的控件是否行动画时禁用[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新项集合。 设置使用在 XAML`ListView.RowAnimationsEnabled`可绑定属性设置为`false`:
+此 iOS 平台特定控制在更新[`ListView`](xref:Xamarin.Forms.ListView)项集合时是否禁用行动画。 设置使用在 XAML`ListView.RowAnimationsEnabled`可绑定属性设置为`false`:
 
 ```xaml
 <ContentPage ...
@@ -41,13 +41,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 listView.On<iOS>().SetRowAnimationsEnabled(false);
 ```
 
-`ListView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 `ListView.SetRowAnimationsEnabled`方法，请在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间，用于控制行动画是否后将被禁用[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新项集合。 此外，`ListView.GetRowAnimationsEnabled`方法可用于返回是否被禁用，行动画`ListView`。
+`ListView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 命名空间`ListView.SetRowAnimationsEnabled`中的方法用于控制在更新[`ListView`](xref:Xamarin.Forms.ListView)项集合时是否禁用行动画。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 此外, `ListView.GetRowAnimationsEnabled`方法可用于返回是否`ListView`在上禁用了行动画。
 
 > [!NOTE]
-> [`ListView`](xref:Xamarin.Forms.ListView) 默认情况下启用行动画。 因此，动画会出现一个新行插入到中时`ListView`。
+> [`ListView`](xref:Xamarin.Forms.ListView)默认情况下启用行动画。 因此, 当将新行插入到`ListView`时, 会发生动画。
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

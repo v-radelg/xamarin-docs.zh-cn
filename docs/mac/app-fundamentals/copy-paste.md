@@ -1,73 +1,73 @@
 ---
-title: 复制并粘贴在 Xamarin.Mac 中
-description: 本文介绍如何使用粘贴板提供复制并粘贴在 Xamarin.Mac 应用程序中。 它演示如何在多个应用程序和如何支持给定应用内的自定义数据之间共享的标准数据类型。
+title: 在 Xamarin 中复制和粘贴
+description: 本文介绍如何使用粘贴板在 Xamarin 应用程序中提供复制和粘贴。 它演示如何处理可在多个应用之间共享的标准数据类型, 以及如何支持给定应用内的自定义数据。
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: f9e05b6d16210021257fe3958966739e526aed18
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 61b9d84d6d5882d447a78e6583a399013f8919ef
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61378559"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656551"
 ---
-# <a name="copy-and-paste-in-xamarinmac"></a>复制并粘贴在 Xamarin.Mac 中
+# <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin 中复制和粘贴
 
-_本文介绍如何使用粘贴板提供复制并粘贴在 Xamarin.Mac 应用程序中。它演示如何在多个应用程序和如何支持给定应用内的自定义数据之间共享的标准数据类型。_
+_本文介绍如何使用粘贴板在 Xamarin 应用程序中提供复制和粘贴。它演示如何处理可在多个应用之间共享的标准数据类型, 以及如何支持给定应用内的自定义数据。_
 
 ## <a name="overview"></a>概述
 
-在 Xamarin.Mac 应用程序中使用 C# 和.NET，必须对相同的粘贴板 （复制和粘贴） 支持使用 Objective C 中的开发人员具有的访问。
+在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在目标-C 中工作的开发人员对同一剪贴板 (复制和粘贴) 的支持。
 
-在本文中我们将介绍两种主要的方法，以在 Xamarin.Mac 应用中使用粘贴板：
+在本文中, 我们将介绍两种主要方法来使用 Xamarin 应用程序中的粘贴板:
 
-1. **标准数据类型**-都不应用粘贴板操作通常会执行两个不相关的应用程序之间，由于知道的另一种支持的数据类型。 若要最大限度地共享的可能性，粘贴板可以保存多个表示形式 （使用一组标准的常见数据类型） 的给定项，这允许正在使用的应用，以选择最适合其需求的版本。
-2. **自定义数据**-若要支持的复制和粘贴可以定义将由粘贴板的自定义数据类型在 Xamarin.Mac 中复杂的数据。 例如，矢量绘图应用程序，允许用户复制并粘贴由多个数据类型和点组成的复杂形状。
+1. **标准数据类型**-由于剪贴板操作通常在两个不相关的应用之间执行, 因此, 这两个应用都不知道其他支持的数据类型。 为了最大限度地实现共享的可能性, 剪贴板可以保存给定项的多个表示形式 (使用一组标准的常用数据类型), 这允许使用中的应用程序选择最适合其需求的版本。
+2. **自定义数据**-若要支持在 Xamarin 中复制和粘贴复杂数据, 可以定义将由粘贴板处理的自定义数据类型。 例如, 一个矢量绘图应用, 允许用户复制和粘贴由多个数据类型和点组成的复杂形状。
 
-[![正在运行的应用程序示例](copy-paste-images/intro01.png "的正在运行的应用程序示例")](copy-paste-images/intro01-large.png#lightbox)
+[![正在运行的应用的示例](copy-paste-images/intro01.png "正在运行的应用的示例")](copy-paste-images/intro01-large.png#lightbox)
 
-在本文中，我们将介绍使用 Xamarin.Mac 应用程序以支持复制和粘贴操作中粘贴板的基础知识。 强烈建议您明确[Hello，Mac](~/mac/get-started/hello-mac.md)文章第一次，具体而言[Xcode 和 Interface Builder 简介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)并[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分中的，因为它介绍了关键概念和技术，我们将在本文中使用。
+在本文中, 我们将介绍在 Xamarin. Mac 应用程序中使用粘贴板以支持复制和粘贴操作的基本知识。 强烈建议您先完成[Hello, Mac](~/mac/get-started/hello-mac.md)一文, 特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介, 因为它涵盖了我们将在本文。
 
-可能想要看一看[公开 C# 类 / 方法添加到 Objective C](~/mac/internals/how-it-works.md)一部分[Xamarin.Mac 内部机制](~/mac/internals/how-it-works.md)文档，它还说明了`Register`和`Export`属性使用绑定于 C# 类对 OBJECTIVE-C 对象和 UI 元素。
+你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " `Register` [向目标公开C#类/方法](~/mac/internals/how-it-works.md)" 部分, 并说明用于将C#类连接到的和`Export`特性。目标-C 对象和 UI 元素。
 
 ## <a name="getting-started-with-the-pasteboard"></a>粘贴板入门
 
-粘贴板提供标准化的机制用于在交换中给定的应用程序或应用程序之间的数据。 粘贴板 Xamarin.Mac 应用程序中的典型用途是处理复制和粘贴操作，但是很多其他操作还支持 （如拖动和删除与应用程序服务）。
+剪贴板提供了一种标准化的机制, 用于在给定的应用程序内或在应用程序之间交换数据。 Xamarin 应用程序中的粘贴板的典型用途是处理复制和粘贴操作, 但也支持许多其他操作 (例如拖动 & Drop 和应用程序服务)。
 
-可帮助你开始运行快速，我们将开始在 Xamarin.Mac 应用中使用选的简单、 实用的介绍。 更高版本，我们将提供深入讲解粘贴板的工作原理和使用的方法。
+若要快速将您从根本上开始, 我们将从一个简单、实用的介绍如何在 Xamarin pasteboards 应用程序中使用它。 稍后, 我们将提供有关粘贴板工作方式和所用方法的详细说明。
 
-对于此示例中，我们将创建简单的文档基于应用程序管理包含的图像视图的窗口。 用户将能够复制并粘贴文档在应用程序和到或从其他应用或在同一个应用程序的多个窗口之间的映像。
+在此示例中, 我们将创建一个简单的基于文档的应用程序, 该应用程序管理包含图像视图的窗口。 用户可以在应用中的文档之间以及与其他应用程序或同一应用内的多个窗口之间复制和粘贴图像。
 
 ### <a name="creating-the-xamarin-project"></a>创建 Xamarin 项目
 
-首先，我们将创建新的文档基于 Xamarin.Mac 应用，我们将会添加复制和粘贴的支持。
+首先, 我们将创建一个新的基于 Xamarin 的 Xamarin 应用程序, 我们将为其添加复制和粘贴支持。
 
 请执行以下操作：
 
-1. 启动 Visual Studio for Mac，然后单击**新建项目...** 链接。
-2. 选择**Mac** > **应用** > **Cocoa 应用**，然后单击**下一步**按钮： 
+1. 开始 Visual Studio for Mac 然后单击 "**新建项目 ...** " 链接。
+2. 选择 " **Mac** > **app** > **Cocoa 应用**", 并单击 "**下一步**" 按钮: 
 
-    [![创建一个新的 Cocoa 应用程序项目](copy-paste-images/sample01.png "创建一个新的 Cocoa 应用程序项目")](copy-paste-images/sample01-large.png#lightbox)
-3. 输入`MacCopyPaste`有关**项目名称**并保留所有其他默认项目。 单击下一步: 
+    [![创建新的 Cocoa 应用项目](copy-paste-images/sample01.png "创建新的 Cocoa 应用项目")](copy-paste-images/sample01-large.png#lightbox)
+3. 输入`MacCopyPaste`作为**项目名称**, 并将所有其他内容保留为默认值。 单击 "下一步": 
 
     [![设置项目的名称](copy-paste-images/sample01a.png "设置项目的名称")](copy-paste-images/sample01a-large.png#lightbox)
 
-4. 单击**创建**按钮： 
+4. 单击 "**创建**" 按钮: 
 
     [![确认新的项目设置](copy-paste-images/sample02.png "确认新的项目设置")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>添加 NSDocument
 
-接下来我们将添加自定义`NSDocument`将充当应用程序的用户界面的后台存储的类。 它将包含一个图像视图，并知道如何将图像复制到默认粘贴板视图中以及如何创建从默认粘贴板映像并将其显示在图像视图。
+接下来, 我们将`NSDocument`添加自定义类, 将其用作应用程序用户界面的后台存储。 它将包含一个图像视图, 并知道如何从视图中将图像复制到默认粘贴板, 以及如何从默认剪贴板拍摄图像并在图像视图中显示图像。
 
-在 Xamarin.Mac 项目中，右键单击**Solution Pad** ，然后选择**添加** > **新文件...**:
+右键单击**Solution Pad**中的 Xamarin 项目, 然后选择 "**添加** > **新文件 ...** ":
 
 ![向项目添加 NSDocument](copy-paste-images/sample03.png "向项目添加 NSDocument")
 
-对“名称”输入 `ImageDocument`，然后单击“新建”按钮。 编辑**ImageDocument.cs**类，并使其看起来如下所示：
+对“名称”  输入 `ImageDocument`，然后单击“新建”  按钮。 编辑**ImageDocument.cs**类, 使其类似于以下内容:
 
 ```csharp
 using System;
@@ -172,9 +172,9 @@ namespace MacCopyPaste
 }
 ```
 
-下面详细地看看一些代码。
+下面将详细介绍其中的一些代码。
 
-下面的代码提供的属性来测试是否存在默认粘贴板上的图像数据可用，映像是否`true`else 返回`false`:
+下面的代码提供了一个属性, 用于测试默认粘贴板上的图像数据是否存在, 如果有图像可用, `true`则返回; `false`否则返回:
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -189,7 +189,7 @@ public bool ImageAvailableOnPasteboard {
 }
 ```
 
-下面的代码会将映像复制到默认粘贴板附加的图像视图：
+以下代码将图像从附加图像视图复制到默认粘贴板:
 
 ```csharp
 [Export("CopyImage:")]
@@ -229,7 +229,7 @@ public void CopyImage(NSObject sender) {
 }
 ```
 
-和以下代码粘贴来自默认粘贴板的图像并将其显示在附加的图像视图 （如果粘贴板包含有效的图像）：
+下面的代码从默认剪贴板中粘贴图像, 并将其显示在附加图像视图中 (如果粘贴件包含有效图像):
 
 ```csharp
 [Export("PasteImage:")]
@@ -259,27 +259,27 @@ public void PasteImage(NSObject sender) {
 }
 ```
 
-使用本文档中的位置中，我们将创建 Xamarin.Mac 应用的用户界面。
+在此文档准备就绪后, 我们将为 Xamarin 应用创建用户界面。
 
 ### <a name="building-the-user-interface"></a>构建用户界面
 
-双击**Main.storyboard**文件以在 Xcode 中打开它。 接下来，还添加一个工具栏和一个图像，并将其配置如下：
+双击**Xcode 文件以**在其中打开。 接下来, 添加一个工具栏和图像, 并按如下所示对其进行配置:
 
 [![编辑工具栏](copy-paste-images/sample04.png "编辑工具栏")](copy-paste-images/sample04-large.png#lightbox)
 
-添加副本，然后粘贴**图像工具栏项**到左侧和右侧的工具栏。 我们将使用那些作为快捷方式进行复制和粘贴从编辑菜单。 接下来，添加了四个**图像工具栏项**工具栏的右侧。 我们将使用这些来填充也具有一些默认图像的图像。
+在工具栏的左侧添加 "复制并粘贴**图像" 工具栏项**。 我们将使用这些作为从 "编辑" 菜单复制和粘贴的快捷方式。 接下来, 将四个 "**图像工具栏" 项**添加到工具栏的右侧。 我们将使用这些设置, 用一些默认图像来填充图像。
 
-使用工具栏的详细信息，请参阅我们[工具栏](~/mac/user-interface/toolbar.md)文档。
+有关使用工具栏的详细信息, 请参阅[工具栏](~/mac/user-interface/toolbar.md)文档。
 
-接下来，让我们也公开以下输出口和操作我们工具栏项和映像：
+接下来, 让我们向工具栏项和图像提供以下插座和操作:
 
 [![创建输出口和操作](copy-paste-images/sample05.png "创建输出口和操作")](copy-paste-images/sample05-large.png#lightbox)
 
-有关如何使用输出口和操作的详细信息，请参阅[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)一部分我们[Hello，Mac](~/mac/get-started/hello-mac.md)文档。
+有关使用输出口和操作的详细信息, 请参阅我们的[Hello, Mac](~/mac/get-started/hello-mac.md)文档中的 "[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)" 部分。
 
 ### <a name="enabling-the-user-interface"></a>启用用户界面
 
-与我们在 Xcode 和我们 UI 元素通过输出口和操作中创建用户界面，我们需要添加代码以启用 UI。 双击**ImageWindow.cs**中的文件**Solution Pad**并使其如下所示：
+通过在 Xcode 中创建的用户界面和通过插座和操作公开的 UI 元素, 我们需要添加代码以启用 UI。 双击**Solution Pad**中的**ImageWindow.cs**文件, 使其类似于以下内容:
 
 ```csharp
 using System;
@@ -395,9 +395,9 @@ namespace MacCopyPaste
 }
 ```
 
-让我们看看这些代码在下方提供详细信息。
+下面将详细介绍以下代码。
 
-首先，我们公开的一个实例`ImageDocument`我们在上面创建的类：
+首先, 我们公开前面创建的`ImageDocument`类的实例:
 
 ```csharp
 private ImageDocument _document;
@@ -414,9 +414,9 @@ public ImageDocument Document {
 }
 ```
 
-通过使用`Export`，`WillChangeValue`并`DidChangeValue`，我们已设置`Document`属性，以允许键-值编码和 Xcode 中的数据绑定。
+通过使用`Export`、 `WillChangeValue`和`DidChangeValue`, 我们已设置了`Document`属性, 以允许在 Xcode 中实现键/值编码和数据绑定。
 
-我们还公开映像从映像也我们已添加到我们的 UI 在 Xcode 中使用下面的属性：
+此外, 我们还会通过以下属性, 从图像中将图像添加到 Xcode 中的用户界面:
 
 ```csharp
 public ViewController ImageViewController {
@@ -433,7 +433,7 @@ public NSImage Image {
 }
 ```
 
-当主窗口可以加载并显示时，我们创建的一个实例我们`ImageDocument`类，并将 UI 的映像附加至其与以下代码：
+当加载并显示主窗口时, 我们将创建`ImageDocument`类的一个实例, 并将 UI 的图像正确附加到下面的代码:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -448,7 +448,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-最后，在响应用户单击复制和粘贴工具栏项，我们调用的实例`ImageDocument`类来执行实际工作：
+最后, 为了响应用户单击复制和粘贴工具栏项的操作, 我们调用`ImageDocument`类的实例来执行实际工作:
 
 ```csharp
 partial void CopyImage (NSObject sender) {
@@ -462,9 +462,9 @@ partial void PasteImage (Foundation.NSObject sender) {
 
 ### <a name="enabling-the-file-and-edit-menus"></a>启用文件和编辑菜单
 
-我们需要做的最后一件事是启用**新建**菜单项从**文件**菜单 （若要创建主窗口的新实例），并启用**剪切**，**复制**并**粘贴**的菜单项，从**编辑**菜单。
+我们需要做的最后一件事是, 从 "**文件**" 菜单中启用 "**新建**" 菜单项 (创建主窗口的新实例), 并启用 "**编辑**" 菜单中的 "**剪切**"、"**复制**" 和 "**粘贴**" 菜单项。
 
-若要启用**新建**菜单项，编辑**AppDelegate.cs**文件，并添加以下代码：
+若要启用 "**新建**" 菜单项, 请编辑**AppDelegate.cs**文件并添加以下代码:
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
@@ -484,9 +484,9 @@ void NewDocument (NSObject sender) {
 }
 ```
 
-有关详细信息，请参阅[使用多个 Windows](~/mac/user-interface/window.md)一部分我们[Windows](~/mac/user-interface/window.md)文档。
+有关详细信息, 请参阅[Windows](~/mac/user-interface/window.md)文档中的[使用多个 windows](~/mac/user-interface/window.md)部分。
 
-若要启用**剪切**，**副本**并**粘贴**菜单项，请编辑**AppDelegate.cs**文件，并添加以下代码：
+若要启用**剪切**、**复制**和**粘贴**菜单项, 请编辑**AppDelegate.cs**文件并添加以下代码:
 
 ```csharp
 [Export("copy:")]
@@ -535,21 +535,21 @@ void PasteImage (NSObject sender)
 }
 ```
 
-对于每个菜单项，我们获取密钥的最顶层当前窗口并将其转换为我们`ImageWindow`类：
+对于每个菜单项, 获取最新的最顶部的键窗口, 并将其`ImageWindow`转换为类:
 
 ```csharp
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-从此处，我们调用`ImageDocument`该窗口来处理复制和粘贴操作的类实例。 例如： 
+从这里, 我们调用`ImageDocument`该窗口的类实例来处理复制和粘贴操作。 例如： 
 
 ```csharp
 window.Document.CopyImage (sender);
 ```
 
-我们只想**剪切**，**副本**并**粘贴**菜单项可以访问是否存在图像数据默认粘贴板上或在图中框的当前活动窗口。
+仅当默认剪贴板或当前活动窗口的图像中有图像数据时, 我们才需要**剪切**、**复制**和**粘贴**菜单项。
 
-让我们添加**EditMenuDelegate.cs**到 Xamarin.Mac 项目文件，并使其看起来如下所示：
+让我们将**EditMenuDelegate.cs**文件添加到 Xamarin 项目, 并使其类似于以下内容:
 
 ```csharp
 using System;
@@ -600,9 +600,9 @@ namespace MacCopyPaste
 }
 ```
 
-同样，我们获取当前的最顶层窗口，并使用其`ImageDocument`类实例，以查看是否存在所需的图像数据。 然后我们使用`MenuWillHighlightItem`方法可启用或禁用每一项基于此状态。
+同样, 我们获取当前的最顶层窗口, 并使用`ImageDocument`其类实例来确定所需的图像数据是否存在。 然后, `MenuWillHighlightItem`使用方法根据此状态启用或禁用每个项。
 
-编辑**AppDelegate.cs**文件，然后进行`DidFinishLaunching`方法看起来像以下：
+编辑**AppDelegate.cs**文件并使该`DidFinishLaunching`方法如下所示:
  
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -613,97 +613,97 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-首先，我们禁用自动启用和禁用编辑菜单中的菜单项。 接下来，我们将附加的实例`EditMenuDelegate`我们在上面创建的类。
+首先, 在 "编辑" 菜单中禁用菜单项的自动启用和禁用。 接下来, 附加前面创建的`EditMenuDelegate`类的实例。
 
-有关详细信息，请参阅我们[菜单](~/mac/user-interface/menu.md)文档。
+有关详细信息, 请参阅我们的[菜单](~/mac/user-interface/menu.md)文档。
 
 ### <a name="testing-the-app"></a>测试应用程序
 
-一切就绪后，我们已做好测试应用程序。 生成和运行应用并显示主界面：
+一切就绪后, 就可以测试应用程序了。 生成并运行应用, 并显示主界面:
 
 ![运行应用程序](copy-paste-images/run01.png "运行应用程序")
 
-如果您打开编辑菜单，请注意**剪切**，**副本**并**粘贴**被禁用，因为没有图像中没有图像良好，甚至在默认粘贴板：
+如果你打开 "编辑" 菜单, 请注意,**剪切**、**复制**和**粘贴**操作已禁用, 因为图像中没有图像或在默认的粘贴板中:
 
-![打开编辑菜单](copy-paste-images/run02.png "打开编辑菜单")
+![打开 "编辑" 菜单](copy-paste-images/run02.png "打开 \"编辑\" 菜单")
 
-如果您还将图像添加到映像，并重新打开编辑菜单，现在要启用的项目：
+如果将图像添加到映像, 并重新打开 "编辑" 菜单, 则会立即启用这些项:
 
-![显示编辑菜单项之外的所有](copy-paste-images/run03.png "显示编辑菜单项已启用")
+![已启用 "编辑" 菜单项](copy-paste-images/run03.png "已启用 \"编辑\" 菜单项")
 
-如果复制的映像并选择**新建**您可以从文件菜单中，粘贴到新窗口中的该映像：
+如果复制图像并从 "文件" 菜单中选择 "**新建**", 则可以将该图像粘贴到新窗口中:
 
-![将图像粘贴到新的窗口](copy-paste-images/run04.png "粘贴到新的窗口的图像")
+![将图像粘贴到新窗口中](copy-paste-images/run04.png "将图像粘贴到新窗口中")
 
-在以下部分中，我们将使用在 Xamarin.Mac 应用程序中粘贴板的详细的信息。
+在以下部分中, 我们将详细介绍如何在 Xamarin. Mac 应用程序中使用粘贴板。
 
-## <a name="about-the-pasteboard"></a>有关粘贴板
+## <a name="about-the-pasteboard"></a>关于粘贴板
 
-MacOS （以前称为 OS X） 中粘贴板 (`NSPasteboard`) 提供多个服务器处理，如复制和粘贴、 拖动和删除和应用程序服务的支持。 在以下部分中，我们将详细介绍几个关键粘贴板概念。
+在 macOS (以前称为 OS X) 中, 粘贴板`NSPasteboard`() 提供了对多个服务器进程 (例如 Copy & Paste) 的支持, 并将 & Drop 和应用程序服务。 在以下部分中, 我们将详细介绍几个关键的粘贴板概念。
 
-### <a name="what-is-a-pasteboard"></a>粘贴板是什么？
+### <a name="what-is-a-pasteboard"></a>什么是剪贴板？
 
-`NSPasteboard`类提供标准化的机制来交换信息的应用程序之间或给定应用内。 粘贴板的主要功能是用于处理复制和粘贴操作：
+`NSPasteboard`类提供一种标准化机制, 用于在应用程序之间或在给定应用程序之间交换信息。 粘贴板的主要功能用于处理复制和粘贴操作:
 
-1. 当用户在应用中选择某个项，并使用**剪切**或**副本**菜单项的选定项的一个或多个表示形式放置在剪贴板上。
-2. 当用户使用**粘贴**菜单项 （在同一应用程序或另一个），它可以处理的数据的版本已从剪贴板复制，已添加到应用。
+1. 当用户在应用中选择某一项并使用**剪切**或**复制**菜单项时, 会将所选项的一个或多个表示形式放置在粘贴板上。
+2. 当用户使用 "**粘贴**" 菜单项 (位于同一个应用程序或另一个应用程序中) 时, 它可以处理的数据的版本将从粘贴板复制并添加到应用中。
 
-不太明显粘贴板用途包括查找的拖放、 拖放，和应用程序服务操作：
+不太明显的粘贴板使用包括查找、拖放、拖放和应用程序服务操作:
 
-- 当用户启动拖动操作时，拖动数据复制到剪贴板。 如果拖动操作结束拖放到另一个应用，该应用将复制粘贴板中的数据。
-- 对于翻译服务，要转换的数据复制到粘贴板由请求的应用。 应用程序服务，从剪贴板中检索数据，然后将数据重新粘贴板上执行转换。
+- 用户启动拖放操作时, 会将拖动的数据复制到剪贴板。 如果拖动操作以放置到另一个应用的结尾结束, 则该应用将从粘贴板复制数据。
+- 对于翻译服务, 请求的应用会将要转换的数据复制到剪贴板。 应用程序服务从剪贴板中检索数据, 执行转换, 然后将数据粘贴回粘贴板上。
 
-在最简单的形式，选用于将数据在给定应用内或应用程序之间移动并因此位于应用程序的进程之外的特殊的全局内存区域。 虽然很容易被选概念 grasps，有几个必须考虑的更复杂详细信息。 这些将在下面详细介绍。
+最简单的形式是使用 pasteboards 在给定应用内或应用之间移动数据, 因此存在于应用进程外的特殊全局内存区域。 尽管 pasteboards 的概念很容易 grasps, 但还有一些必须考虑的更复杂的细节。 下面将详细介绍这些内容。
 
-### <a name="named-pasteboards"></a>命名的选
+### <a name="named-pasteboards"></a>命名 pasteboards
 
-粘贴板可以是公共或专用，并可用于多种应用程序中或多个应用间的用途。 macOS 提供了几个标准选，每个都有特定的定义完善的使用情况：
+粘贴板可以是公共或专用的, 可用于应用程序中或多个应用程序内的多种目的。 macOS 提供了几个标准 pasteboards, 其中每个都有一个明确定义的特定用法:
 
-- `NSGeneralPboard` -为默认剪贴板**剪切**，**副本**并**粘贴**操作。
-- `NSRulerPboard` -支持**剪切**，**副本**并**粘贴**上的操作**标尺**。
-- `NSFontPboard` -支持**剪切**，**副本**并**粘贴**上的操作`NSFont`对象。
-- `NSFindPboard` -支持特定于应用程序查找可以共享搜索文本的面板。
-- `NSDragPboard` -支持**拖放**操作。
+- `NSGeneralPboard`-用于**剪切**、**复制**和**粘贴**操作的默认剪贴板。
+- `NSRulerPboard`-支持对**标尺**进行**剪切**、**复制**和**粘贴**操作。
+- `NSFontPboard`-支持  对  `NSFont`对象进行剪切、**复制**和粘贴操作。
+- `NSFindPboard`-支持特定于应用程序的查找面板, 可以共享搜索文本。
+- `NSDragPboard`-支持**拖动 & 拖放**操作。
 
-大多数情况下，您将使用其中一个系统定义选。 但可能会要求您创建您自己选的情况。 在这些情况下，你可以使用`FromName (string name)`方法的`NSPasteboard`类，以创建具有给定名称的自定义粘贴板。
+大多数情况下, 将使用系统定义的 pasteboards 之一。 但在某些情况下, 可能需要创建自己的 pasteboards。 在这些情况下, 可以使用`FromName (string name)` `NSPasteboard`类的方法来创建具有给定名称的自定义粘贴板。
 
-（可选） 可以调用`CreateWithUniqueName`方法的`NSPasteboard`类，以创建唯一的命名粘贴板。
+或者, 您可以调用`CreateWithUniqueName` `NSPasteboard`类的方法来创建一个名为的唯一粘贴板。
 
 ### <a name="pasteboard-items"></a>粘贴板项
 
-每个应用程序写入粘贴板的数据片段被视为_粘贴板项_粘贴板同时又可以容纳多个项。 这样一来，应用可以写入多个版本的数据复制到剪贴板 （例如，纯文本和格式的文本） 中，并且检索应用程序可以读取关闭仅将数据 （例如仅限纯文本） 可以处理。
+应用程序写入剪贴板的每个数据片段都被视为一个_粘贴板项_, 粘贴板可以同时保存多个项。 这样一来, 应用就可以将多个版本的数据复制到粘贴板 (例如, 纯文本和格式化文本), 并且检索应用只能读取它可以处理的数据 (如纯文本)。
 
-### <a name="data-representations-and-uniform-type-identifiers"></a>数据表示形式和统一的类型标识符
+### <a name="data-representations-and-uniform-type-identifiers"></a>数据表示形式和统一类型标识符
 
-粘贴板操作通常需要两个 （或多个） 之间的应用程序无需了解每个其他或类型的数据，每个可以处理。 如上面的部分中所述，若要最大限度地共享信息，可能粘贴板可保留正在复制和粘贴的数据的多种表示形式。
+通常在两个 (或多个) 应用程序之间进行粘贴程序操作, 这些应用程序彼此不知道或每个都可以处理的数据类型。 如以上部分所述, 若要最大程度地利用共享信息, 粘贴板可以保存要复制和粘贴的数据的多个表示形式。
 
-每个表示形式标识通过统一类型标识符 (UTI)，这就是一个简单字符串，唯一标识显示的日期类型 (有关详细信息，请参阅 Apple 的[统一类型标识符概述](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319)文档)。 
+每个表示形式都通过统一的类型标识符 (UTI) 标识, 该标识符只是一个简单的字符串, 用于唯一标识要呈现的日期类型 (有关详细信息, 请参阅 Apple 的[统一类型标识符概述](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319)文档)。 
 
-如果要创建自定义数据类型 （例如，矢量图形应用程序中的绘图对象），则可以创建自己的 UTI 来唯一地标识中复制和粘贴操作。
+如果创建的是自定义数据类型 (例如矢量绘图应用中的绘图对象), 则可以创建自己的 UTI, 以便在复制和粘贴操作中唯一标识它。
 
-当应用程序正在准备将数据从剪贴板复制粘贴时，它必须找到最适合其功能 （如果存在） 的表示形式。 通常，这将是最丰富的类型可用 （例如格式化文本的文字处理应用程序），回退到所需 （纯文本的形式的简单文本编辑器） 可用的最简单窗体。
+当应用程序准备粘贴从粘贴板复制的数据时, 它必须找到最适合其功能的表示形式 (如果有)。 通常, 这是最丰富的可用类型 (例如, 用于字处理应用程序的格式化文本), 回退到最简单的窗体 (对于简单的文本编辑器为纯文本)。
 
 <a name="Promised_Data" />
 
 ### <a name="promised-data"></a>承诺的数据
 
-通常情况下，应提供尽可能多的要复制，以最大限度地在应用之间共享的数据的表示形式。 但是，由于时间或内存约束，可能不切合实际实际写入粘贴板每种数据类型。
+一般而言, 应提供尽可能多的数据表示形式, 以最大限度地在应用之间共享。 但是, 由于时间或内存限制, 实际将每个数据类型写入粘贴板可能不切实际。
 
-在此情况下，可以将第一个数据表示形式放置在剪贴板上并接收应用程序可以请求不同的表示形式，可生成上动态之前粘贴操作。
+在这种情况下, 您可以将第一个数据表示放置在粘贴板上, 接收应用可以请求不同的表示形式, 可以在粘贴操作之前即时生成。
 
-当你将初始项放在剪贴板中时，您将指定一个或多个可用的其他表示由一个对象，符合`NSPasteboardItemDataProvider`接口。 接收应用程序的要求，这些对象将按需提供额外的表示形式。
+将初始项放入剪贴板时, 您将指定一个或多个可用的表示形式由符合`NSPasteboardItemDataProvider`接口的对象提供。 根据接收应用的要求, 这些对象将按需提供额外的表示形式。
 
 ### <a name="change-count"></a>更改计数
 
-每个粘贴板维护_更改计数_递增每个时间的新所有者声明。 应用程序可以确定剪贴板的内容是否已更改自最后一次它会检查它通过检查的值更改计数。
+每个粘贴板维护每次声明新所有者时递增的_更改计数_。 应用可通过检查更改计数的值, 来确定剪贴板上的内容自上次检查后是否已更改。
 
-使用`ChangeCount`并`ClearContents`方法的`NSPasteboard`类来修改给定粘贴板更改计数。
+使用`NSPasteboard`类`ChangeCount`的`ClearContents`和方法来修改给定剪贴板的更改计数。
 
-## <a name="copying-data-to-a-pasteboard"></a>将数据复制到剪贴板
+## <a name="copying-data-to-a-pasteboard"></a>将数据复制到粘贴板
 
-第一个访问粘贴板中，清除任何现有内容并写入的数据粘贴到需要的任意多个表示形式来执行复制操作。
+首先要执行复制操作, 只需访问剪贴板, 清除任何现有内容, 并根据需要写入剪贴板上所需的数据表示形式。
 
-例如：
+例如:
 
 ```csharp
 // Get the standard pasteboard
@@ -716,24 +716,24 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-通常情况下，您将只写入到常规粘贴板，因为我们已经在上面的示例。 将发送到任何对象`WriteObjects`方法*必须*符合`INSPasteboardWriting`接口。 多个内置类 (如`NSString`， `NSImage`， `NSURL`， `NSColor`， `NSAttributedString`，并`NSPasteboardItem`) 自动符合此接口。
+通常, 您只需编写到一般的粘贴板, 就像我们在上面的示例中所做的那样。 发送给`WriteObjects`方法的任何对象*都必须*符合`INSPasteboardWriting`接口。 某些内置类 (例如`NSString` `NSURL`、 `NSImage` `NSColor`、、、和`NSPasteboardItem`) 会自动遵从此接口。 `NSAttributedString`
 
-如果要将自定义数据类写入粘贴板必须遵守`INSPasteboardWriting`接口或包装在的实例`NSPasteboardItem`类 (请参阅[自定义数据类型](#Custom_Data_Types)下面一节)。
+如果要将自定义数据类写入剪贴板, 则它必须符合`INSPasteboardWriting`接口, 或者包装在`NSPasteboardItem`类的实例中 (请参阅下面的 "[自定义数据类型](#Custom_Data_Types)" 一节)。
 
 ## <a name="reading-data-from-a-pasteboard"></a>从剪贴板读取数据
 
-如上所述，若要最大化应用之间共享数据的可能性所复制数据的多种表示形式可能会写入到粘贴板。 负责接收应用程序中，选择使其功能最丰富的版本 （如果存在）。
+如上所述, 若要最大程度地提高在应用之间共享数据的可能性, 可以将复制数据的多个表示形式写入剪贴板。 接收应用可选择其功能的最高版本 (如果存在)。
 
-### <a name="simple-paste-operation"></a>简单粘贴操作
+### <a name="simple-paste-operation"></a>简单的粘贴操作
 
-粘贴板使用读取数据`ReadObjectsForClasses`方法。 它将需要两个参数：
+使用`ReadObjectsForClasses`方法从剪贴板读取数据。 它需要两个参数:
 
-1. 一个数组`NSObject`基于你想要读取从粘贴板的类类型。 您应这最所需的数据类型与第一次，且排序减少首选项中的任何剩余类型。
-2. 一个包含其他约束 （例如，因此被限制为特定 URL 的内容类型） 的字典或如果没有其他约束所需的空字典。
+1. 要从粘贴`NSObject`板读取的一组基于类的类型。 你应该首先按照所需的最大数据类型对此进行排序, 所有剩余的类型都要降低首选项。
+2. 一个包含其他约束 (如限制特定 URL 内容类型) 的字典; 如果不需要进一步的约束, 则为空字典。
 
-该方法返回满足我们传入的条件的项的数组，并因此最多包含相同数量的请求的数据类型。 还有可能不存在任何请求的类型，并将返回空数组。
+方法返回项的数组, 这些项满足我们传入的条件, 因此最多包含所请求的数据类型。 还可能不存在任何请求的类型, 并且将返回空数组。
 
-例如，下面的代码检查以查看是否`NSImage`常规粘贴板中存在并将其显示在 image well — 图像中，如果是这样：
+例如, 以下代码将检查`NSImage`常规粘贴板中是否存在, 并在图像中将其显示为图像:
 
 ```csharp
 [Export("PasteImage:")]
@@ -765,20 +765,20 @@ public void PasteImage(NSObject sender) {
 
 ### <a name="requesting-multiple-data-types"></a>请求多个数据类型
 
-根据正在创建 Xamarin.Mac 应用程序的类型，它可能能够处理正在粘贴的数据的多种表示形式。 在这种情况下，有两种方案从剪贴板检索数据：
+根据所创建的 Xamarin 的 Xamarin 应用程序的类型, 它或许能够处理要粘贴的数据的多个表示形式。 在这种情况下, 有两种用于从粘贴板检索数据的方案:
 
-1. 执行一次调用到`ReadObjectsForClasses`方法并提供所有所需 （按首选顺序） 的表示形式的数组。
-2. 多次调用`ReadObjectsForClasses`方法要求的另一个数组类型定义每个时间。
+1. 对`ReadObjectsForClasses`方法进行单一调用, 并提供所需的所有表示形式的数组 (按优先顺序)。
+2. 对`ReadObjectsForClasses`方法进行多次调用, 每次都需要请求不同类型的数组。
 
-请参阅**简单粘贴操作**上面部分有关从剪贴板检索数据的详细信息。
+有关从粘贴板检索数据的详细信息, 请参阅上面的**简单粘贴操作**部分。
 
 ### <a name="checking-for-existing-data-types"></a>检查现有数据类型
 
-有时你可能想要检查是否粘贴板包含给定的数据表示形式，而实际上从剪贴板读取数据 (例如启用**粘贴**菜单项仅在有效的数据存在时)。
+有时, 你可能需要检查粘贴件是否包含给定的数据表示形式, 而不会实际从粘贴板中读取数据 (例如, 仅当存在有效数据时才启用 "**粘贴**" 菜单项)。
 
-调用`CanReadObjectForClasses`粘贴板以查看它是否包含给定的类型的方法。
+调用粘贴板的方法,查看其是否包含给定的类型。`CanReadObjectForClasses`
 
-例如，以下代码确定是否包含常规粘贴板`NSImage`实例：
+例如, 以下代码确定了 "常规" 粘贴板是否包含`NSImage`实例:
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -795,23 +795,23 @@ public bool ImageAvailableOnPasteboard {
 
 ### <a name="reading-urls-from-the-pasteboard"></a>从剪贴板读取 url
 
-根据给定的 Xamarin.Mac 应用的函数，可能会需要 Url 读取粘贴板，但只有当分区满足一组给定的条件 （如指向文件或 Url 的特定数据类型）。 在这种情况下，可以指定使用的第二个参数的其他搜索条件`CanReadObjectForClasses`或`ReadObjectsForClasses`方法。
+根据给定 Xamarin Mac 应用的功能, 可能需要从粘贴板读取 Url, 但前提是它们满足一组给定的条件 (如指向特定数据类型的文件或 Url)。 在这种情况下, 可以使用`CanReadObjectForClasses`或`ReadObjectsForClasses`方法的第二个参数指定其他搜索条件。
 
 <a name="Custom_Data_Types" />
 
 ## <a name="custom-data-types"></a>自定义数据类型
 
-有些的时候您将需要 Xamarin.Mac 应用中将你自己的自定义类型保存到剪贴板。 例如，矢量图形，则允许复制和粘贴对象绘制到用户的应用。
+有时, 你需要将自己的自定义类型保存到 Xamarin 应用程序的剪贴板中。 例如, 允许用户复制和粘贴绘图对象的矢量绘图应用程序。
 
-在此情况下，你将需要设计您的数据自定义类，以便它继承自`NSObject`且符合的几个接口 (`INSCoding`，`INSPasteboardWriting`和`INSPasteboardReading`)。 （可选） 可以使用`NSPasteboardItem`封装要复制或粘贴的数据。
+在这种情况下, 你将需要设计数据自定义类, 使其从`NSObject`继承, 并且它符合几个接口`INSCoding` `INSPasteboardWriting` (和`INSPasteboardReading`)。 或者, 您可以使用`NSPasteboardItem`来封装要复制或粘贴的数据。
 
-这两种选项将在下面详细介绍。
+下面将详细介绍这两个选项。
 
 ### <a name="using-a-custom-class"></a>使用自定义类
 
-在本部分中我们将我们在本文档的开始处创建简单的示例应用程序扩展并添加自定义类来跟踪之间 windows 映像，我们将复制和粘贴信息。
+在本部分中, 我们将在本文档开头部分创建的简单示例应用中进行扩展, 并添加自定义类, 以跟踪有关在窗口之间进行复制和粘贴的图像的信息。
 
-向项目添加新类并调用其**ImageInfo.cs**。 编辑文件，并使其看起来如下所示：
+向项目中添加一个新类, 并将其称为 " **ImageInfo.cs**"。 编辑文件, 使其类似于以下内容:
 
 ```csharp
 using System;
@@ -925,11 +925,11 @@ namespace MacCopyPaste
     
 ```
 
-以下部分中，我们将详细的介绍了此类。
+在以下部分中, 我们将详细介绍此类。
 
 #### <a name="inheritance-and-interfaces"></a>继承和接口
 
-可以写入到自定义数据类，或将其从剪贴板读取之前，必须遵守`INSPastebaordWriting`和`INSPasteboardReading`接口。 此外，它必须继承自`NSObject`并且也符合`INSCoding`接口：
+在将自定义数据类写入或读取粘贴板之前, 它必须符合`INSPastebaordWriting`和`INSPasteboardReading`接口。 此外, 它还必须从`NSObject`继承并符合`INSCoding`接口:
 
 ```csharp
 [Register("ImageInfo")]
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-类还必须公开到 Objective C 使用`Register`指令和它必须公开任何所需的属性或方法使用`Export`。 例如：
+还必须使用`Register`指令向目标-C 公开该类, 并且它必须使用`Export`公开任何所需的属性或方法。 例如:
 
 ```csharp
 [Export("name")]
@@ -947,13 +947,13 @@ public string Name { get; set; }
 public string ImageType { get; set; }
 ```
 
-我们将公开此类将包含数据的图像的名称和其类型 （jpg、 png 等） 的两个字段。 
+我们公开此类将包含的两个数据字段-图像的名称及其类型 (jpg、png 等)。 
 
-有关详细信息，请参阅[公开 C# 类 / objective-c 方法](~/mac/internals/how-it-works.md)一部分[Xamarin.Mac 内部机制](~/mac/internals/how-it-works.md)文档，它说明了`Register`和`Export`属性使用绑定于 C# 类对 OBJECTIVE-C 对象和 UI 元素。
+有关详细信息, 请参阅[Xamarin 内部](~/mac/internals/how-it-works.md)文档的`Register` [向目标公开C#类/方法](~/mac/internals/how-it-works.md)部分, 并说明用于将C#类连接到的和`Export`特性。目标-C 对象和 UI 元素。
 
 #### <a name="constructors"></a>构造函数
 
-以便它可以从剪贴板读取则在我们的自定义数据类时将需要使用两个构造函数 （正确公开到 Objective C）：
+自定义数据类需要两个构造函数 (正确公开给目标 C), 以便可以从粘贴件中读取:
 
 ```csharp
 [Export ("init")]
@@ -974,17 +974,17 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-首先，我们公开_空_构造函数下的默认 Objective C 方法`init`。
+首先, 我们在的  默认目标 C 方法`init`下公开空构造函数。
 
-接下来，我们公开`NSCoding`符合要求的构造函数将用于从粘贴板上创建对象的新实例，导出名称下方粘贴时`initWithCoder`。
+接下来, 我们将`NSCoding`公开一个兼容的构造函数, 该构造函数在粘贴到的导出`initWithCoder`名称下时用于从粘贴板创建对象的新实例。
 
-此构造函数采用`NSCoder`(如创建的`NSKeyedArchiver`写入到粘贴板时)，将提取的键/值配对的数据和将其保存到的数据类的属性字段。
+此构造函数采用`NSCoder` (在写入粘贴板`NSKeyedArchiver`时由创建), 提取键/值配对的数据并将其保存到数据类的属性字段。
 
 #### <a name="writing-to-the-pasteboard"></a>写入粘贴板
 
-通过符合`INSPasteboardWriting`接口，我们需要公开两种方法，和 （可选） 第三种方法，类可以写入到粘贴板。
+通过符合`INSPasteboardWriting`接口, 我们需要公开两个方法, 还可以选择使用第三个方法, 以便可以将类写入剪贴板。
 
-首先，我们需要告诉粘贴板哪种数据类型的表示形式，可以写入自定义类：
+首先, 我们需要告诉剪贴板自定义类可以写入的数据类型表示形式:
 
 ```csharp
 [Export ("writableTypesForPasteboard:")]
@@ -994,11 +994,11 @@ public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) 
 }
 ```
 
-每个表示形式标识通过统一类型标识符 (UTI)，这就是一个简单字符串，唯一标识要显示的数据类型 (有关详细信息，请参阅 Apple 的[统一类型标识符概述](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319)文档)。
+每个表示形式都通过统一的类型标识符 (UTI) 标识, 该标识符只是一个简单的字符串, 用于唯一标识要呈现的数据类型 (有关详细信息, 请参阅 Apple 的[统一类型标识符概述](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319)文档)。
 
-对于我们自定义格式，我们将创建我们自己的 UTI:"com.xamarin.image-info"（请注意，就像应用标识符反向表示法）。 我们的类也是支持的标准字符串写入粘贴板 (`public.text`)。 
+对于我们的自定义格式, 我们将创建自己的 UTI: "" (请注意, 正如应用标识符)。 我们的类也能够将标准字符串写入粘贴板 (`public.text`)。 
 
-接下来，我们需要以请求获取实际写入剪贴板的格式创建对象：
+接下来, 我们需要以请求的格式创建对象, 该对象实际上会写入粘贴到剪贴板:
 
 ```csharp
 [Export ("pasteboardPropertyListForType:")]
@@ -1017,7 +1017,7 @@ public virtual NSObject GetPasteboardPropertyListForType (string type) {
 }
 ```
 
-有关`public.text`类型，我们要返回一个简单、 格式化`NSString`对象。 自定义`com.xamarin.image-info`类型，我们将使用`NSKeyedArchiver`和`NSCoder`接口进行编码的键/值配对存档到自定义数据类。 我们将需要实现以下方法来实际处理的编码：
+对于类型, 我们将返回一个简单的格式`NSString`对象。 `public.text` 对于自定义`com.xamarin.image-info`类型, 我们`NSKeyedArchiver`使用和`NSCoder`接口将自定义数据类编码为键/值配对存档。 我们将需要实现以下方法来实际处理编码:
 
 ```csharp
 [Export ("encodeWithCoder:")]
@@ -1029,9 +1029,9 @@ public void EncodeTo (NSCoder encoder) {
 }
 ```
 
-单个键/值对写入到编码器，将使用我们前面添加的第二个构造函数进行解码。
+单个键/值对将写入编码器, 并将使用上面添加的第二个构造函数对其进行解码。
 
-根据需要，我们可以包含以下方法，以向剪贴板写入数据时定义的任何选项：
+(可选) 可以包含以下方法, 以便在将数据写入剪贴板时定义任何选项:
 
 ```csharp
 [Export ("writingOptionsForType:pasteboard:"), CompilerGenerated]
@@ -1040,9 +1040,9 @@ public virtual NSPasteboardWritingOptions GetWritingOptionsForType (string type,
 }
 ```
 
-目前仅`WritingPromised`选项可用，因此应仅承诺并不实际写入粘贴板给定的类型时。 有关详细信息，请参阅[承诺数据](#Promised_Data)上面一节。
+目前只有`WritingPromised`选项可用, 并且应在给定类型仅承诺而不是实际写入剪贴板时使用。 有关详细信息, 请参阅上面的 "[承诺数据](#Promised_Data)" 一节。
 
-使用这些方法后，下面的代码可用于向剪贴板写入自定义类：
+使用这些方法时, 可以使用以下代码将自定义类写入剪贴板:
 
 ```csharp
 // Get the standard pasteboard
@@ -1055,11 +1055,11 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new ImageInfo[] { Info });
 ```
 
-#### <a name="reading-from-the-pasteboard"></a>从剪贴板进行读取
+#### <a name="reading-from-the-pasteboard"></a>从剪贴板读取
 
-通过符合`INSPasteboardReading`接口，我们需要公开三个方法，以便可以从剪贴板读取自定义数据类。
+由于与`INSPasteboardReading`接口一致, 因此需要公开三个方法, 以便可以从剪贴板读取自定义数据类。
 
-首先，我们需要告诉粘贴板哪种数据类型的表示形式，可以从剪贴板读取自定义类：
+首先, 我们需要告诉粘贴程序自定义类可以从剪贴板读取哪些数据类型表示形式:
 
 ```csharp
 [Export ("readableTypesForPasteboard:")]
@@ -1069,9 +1069,9 @@ public static string[] GetReadableTypesForPasteboard (NSPasteboard pasteboard){
 }
 ```
 
-同样，这些定义为简单的 Uti 和中所定义的类型相同**写入粘贴板**上面一节。
+同样, 这些都定义为简单的 Uti, 它们的类型与上面**写入粘贴板**部分时所定义的类型相同。
 
-接下来，我们需要告诉粘贴板_如何_将使用以下方法读取每个 UTI 类型：
+接下来, 我们需要使用以下方法告诉剪贴板_如何_读取每个 UTI 类型:
 
 ```csharp
 [Export ("readingOptionsForType:pasteboard:")]
@@ -1090,9 +1090,9 @@ public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, 
 }
 ```
 
-有关`com.xamarin.image-info`类型，我们将指示粘贴板进行解码我们创建包含的键/值对`NSKeyedArchiver`类时写入粘贴板中通过调用`initWithCoder:`我们添加到类的构造函数。
+对于类型, 我们会告诉粘贴板`NSKeyedArchiver`使用向类中添加的`initWithCoder:`构造函数将类写入剪贴板时, 对使用创建的键/值对进行解码。 `com.xamarin.image-info`
 
-最后，我们需要添加以下方法从剪贴板读取其他 UTI 数据表示形式：
+最后, 我们需要添加以下方法, 以便从粘贴板读取其他 UTI 数据表示形式:
 
 ```csharp
 [Export ("initWithPasteboardPropertyList:ofType:")]
@@ -1109,7 +1109,7 @@ public NSObject InitWithPasteboardPropertyList (NSObject propertyList, string ty
 }
 ```
 
-与所有这些方法中的位置，可以从使用以下代码粘贴板读取自定义数据类：
+所有这些方法都准备就绪后, 可以使用以下代码从粘贴板读取自定义数据类:
 
 ```csharp
 // Initialize the pasteboard
@@ -1131,13 +1131,13 @@ if (ok) {
 
 ### <a name="using-a-nspasteboarditem"></a>使用 NSPasteboardItem
 
-可能需要自定义项写入粘贴板，不保证创建的自定义类或你想要提供数据的一种通用格式，仅在需要时的时间。 对于这些情况下，你可以使用`NSPasteboardItem`。
+有时, 你可能需要将自定义项写入到不保证自定义类创建的外接程序, 或者你想要根据需要提供公共格式的数据。 对于这些情况, 可以使用`NSPasteboardItem`。
 
-一个`NSPasteboardItem`提供细粒度控制对的数据写入到粘贴板并设计用于临时访问权限-它应释放的写入到粘贴板后。
+`NSPasteboardItem`提供对写入到粘贴到剪贴板的数据的精细控制, 并设计为进行临时访问, 在将其写入剪贴板后, 应将其释放。
 
-#### <a name="writing-data"></a>将数据写入
+#### <a name="writing-data"></a>写入数据
 
-要写入到自定义数据`NSPasteboardItem`都需要提供自定义`NSPasteboardItemDataProvider`。 向项目添加新类并调用其**ImageInfoDataProvider.cs**。 编辑文件，并使其看起来如下所示：
+若要将自定义数据`NSPasteboardItem`写入, 需要提供自定义。 `NSPasteboardItemDataProvider` 向项目中添加一个新类, 并将其称为 " **ImageInfoDataProvider.cs**"。 编辑文件, 使其类似于以下内容:
 
 ```csharp
 using System;
@@ -1200,9 +1200,9 @@ namespace MacCopyPaste
 }
 ```
 
-正如我们做的自定义数据类，我们需要使用`Register`和`Export`指令以将其公开到 Objective-c。 类必须继承`NSPasteboardItemDataProvider`和必须实现`FinishedWithDataProvider`和`ProvideDataForType`方法。
+与自定义数据类相比, 我们需要使用`Register`和`Export`指令将其公开给目标-C。 类必须从`NSPasteboardItemDataProvider`继承, 并且必须`FinishedWithDataProvider`实现和`ProvideDataForType`方法。
 
-使用`ProvideDataForType`方法以提供将包装在数据`NSPasteboardItem`，如下所示：
+使用方法来提供将包装`NSPasteboardItem`在中的数据, 如下所示: `ProvideDataForType`
 
 ```csharp
 [Export ("pasteboard:item:provideDataForType:")]
@@ -1220,9 +1220,9 @@ public override void ProvideDataForType (NSPasteboard pasteboard, NSPasteboardIt
 }
 ```
 
-在这种情况下，我们会存储有关我们的映像 （名称和映像类型） 的两条信息并写入到一个简单的字符串 (`public.text`)。
+在这种情况下, 我们将存储有关映像 (Name 和 ImageType) 的两个信息片段, 并将其写入简单`public.text`字符串 ()。
 
-类型来将数据写入到剪贴板，并使用以下代码：
+键入 "将数据写入剪贴板", 使用以下代码:
 
 ```csharp
 // Get the standard pasteboard
@@ -1244,7 +1244,7 @@ if (ok) {
 
 #### <a name="reading-data"></a>读取数据
 
-若要从剪贴板读取数据，使用以下代码：
+若要从粘贴板中读取数据, 请使用以下代码:
 
 ```csharp
 // Initialize the pasteboard
@@ -1274,13 +1274,13 @@ if (ok) {
 
 ## <a name="summary"></a>总结
 
-本文已使用 Xamarin.Mac 应用程序以支持复制和粘贴操作中粘贴板的详细的信息。 首先，它引入了一个简单的示例来帮助你熟悉标准选操作。 接下来，花费粘贴板以及如何读取和从其写入数据的详细的信息。 最后，它介绍了使用自定义数据类型支持的复制和粘贴应用程序内的复杂数据类型。
+本文详细介绍了如何在 Xamarin 应用程序中使用剪贴板, 以支持复制和粘贴操作。 首先, 它引入了一个简单的示例, 帮助你熟悉标准 pasteboards 操作。 接下来详细了解剪贴板以及如何从其读取和写入数据。 最后, 它介绍了使用自定义数据类型来支持在应用程序中复制和粘贴复杂数据类型。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [MacCopyPaste （示例）](https://developer.xamarin.com/samples/mac/MacCopyPaste/)
+- [MacCopyPaste (示例)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccopypaste)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [粘贴板编程指南](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [macOS 人机界面指南](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

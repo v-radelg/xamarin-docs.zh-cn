@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 8587cade1c5b4a6882f21603ee869f94f38fd04a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ebaf5bf2fcb82dd98147819ea9e089dcd427affc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085962"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644457"
 ---
 # <a name="native-views-in-c"></a>在 C# 中的本机视图
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _从 iOS、 Android 和 UWP 的本机视图，可以从使用 C# 创建的 Xamarin.Forms 页面直接引用。本文演示如何将本机视图添加到使用 C# 中，创建的 Xamarin.Forms 布局以及如何重写自定义视图来更正其度量 API 使用情况的布局。_
 
@@ -323,5 +323,5 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ## <a name="related-links"></a>相关链接
 
-- [NativeEmbedding （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeEmbedding/)
+- [NativeEmbedding （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 - [本机窗体](~/xamarin-forms/platform/native-forms.md)

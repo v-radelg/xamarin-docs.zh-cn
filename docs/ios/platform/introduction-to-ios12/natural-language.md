@@ -1,51 +1,51 @@
 ---
-title: 使用自然语言框架和 Xamarin.iOS
-description: 本文档介绍自然语言框架。 在 iOS 12 中引入，自然语言框架是要使用的语言识别、 词类标识和命名的实体识别的首选的 iOS API。
+title: 将自然语言框架与 Xamarin 配合使用
+description: 本文档介绍自然语言框架。 自然语言框架是在 iOS 12 中引入的, 它是用于语言识别的首选 iOS API, 是词性标识和命名实体识别的组成部分。
 ms.prod: xamarin
 ms.assetid: 126C8764-F873-4EB9-98A3-D82AB5689111
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/20/2018
-ms.openlocfilehash: 41f629739b06431a9b20548f61111bc31e911abb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 235628b512a63ee2f7ec4de2176ab0b90ad65487
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035018"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652615"
 ---
-# <a name="using-the-natural-language-framework-with-xamarinios"></a>使用自然语言框架和 Xamarin.iOS
+# <a name="using-the-natural-language-framework-with-xamarinios"></a>将自然语言框架与 Xamarin 配合使用
 
-在 iOS 12 中引入，自然语言框架使设备上的自然语言处理。 它支持语言识别、 词汇切分，和标记。 词汇切分将文本拆分为其组件字、 句子或段落;标记标识词类、 人员、 地点和组织。
+自然语言框架是在 iOS 12 中引入的, 用于实现设备自然语言处理。 它支持语言识别、词汇切分和标记。 已标记化将文本拆分为其构成的单词、句子或段落;标记标识语音、人物、地点和组织的各个部分。
 
-自然语言框架还可以使用自定义 Core ML 模型进行分类和标记文本在专用的上下文中。
+自然语言框架还可以使用自定义核心 ML 模型来分类和标记专用上下文中的文本。
 
-[NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)类是仍然可用。 但是，自然语言框架是使用自然语言处理的首选的机制。
+[NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)类仍可用。 但是, 自然语言框架是用于自然语言处理的首选机制。
 
-## <a name="sample-app-xamarinnl"></a>应用程序示例：XamarinNL
+## <a name="sample-app-xamarinnl"></a>示例应用:XamarinNL
 
-若要了解如何通过 Xamarin.iOS 使用自然语言框架，看一看[XamarinNL 示例应用](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL)。
-此示例应用演示了如何使用自然语言 framework:
+若要了解如何将自然语言框架与 Xamarin 一起使用, 请查看[XamarinNL 示例应用](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-xamarinnl)。
+此示例应用演示了如何使用自然语言框架执行以下操作:
 
 - [识别语言](#recognizing-languages)。
-- [对文本进行词汇切分划分为单词和句子](#tokenizing-text-into-words-sentences-and-paragraphs)。
-- [标记名为实体和词类](#tagging-named-entities-and-parts-of-speech)。
+- 将[文本标记为词和句子](#tokenizing-text-into-words-sentences-and-paragraphs)。
+- [标记命名实体和词性](#tagging-named-entities-and-parts-of-speech)。
 
 ## <a name="recognizing-languages"></a>识别语言
 
-**识别器**选项卡的示例应用演示了如何使用 [`NLLanguageRecognizer`](xref:NaturalLanguage.NLLanguageRecognizer)
-若要确定文本块的语言。
+示例应用程序的 "**识别器**" 选项卡演示了如何使用[`NLLanguageRecognizer`](xref:NaturalLanguage.NLLanguageRecognizer)
+确定文本块的语言。
 
 > [!NOTE]
-> 语言识别是特定类型的文本分类。 自然语言框架还支持通过开发人员提供核心机器学习模型的自定义文本分类。 有关详细信息，看一看[自然语言框架简介](https://developer.apple.com/videos/play/wwdc2018/713/)WWDC 2018 的会话。
+> 语言识别是一种特定类型的文本分类。 自然语言框架还支持通过开发人员提供的核心 ML 模型的自定义文本分类。 有关详细信息, 请参阅 WWDC 2018 中的[自然语言框架会话简介](https://developer.apple.com/videos/play/wwdc2018/713/)。
 
-### <a name="dominant-language"></a>主要语言
+### <a name="dominant-language"></a>主导语言
 
-点击**语言**按钮来标识用户输入中的主要语言。
+点击 "**语言**" 按钮, 以确定用户输入中的主要语言。
 
-`HandleDetermineLanguageButtonTap`方法的`LanguageRecognizerViewController`使用 [`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)
-方法的`NLLanguageRecognizer`提取到 [`NLLanguage`](xref:NaturalLanguage.NLLanguage)
-主要语言的文本中找到：
+的`HandleDetermineLanguageButtonTap`方法`LanguageRecognizerViewController`使用[`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)
+`NLLanguageRecognizer`用于提取[`NLLanguage`](xref:NaturalLanguage.NLLanguage)
+对于在文本中找到的主要语言:
 
 ```csharp
 partial void HandleDetermineLanguageButtonTap(UIButton sender)
@@ -61,11 +61,11 @@ partial void HandleDetermineLanguageButtonTap(UIButton sender)
 
 ### <a name="language-probabilities"></a>语言概率
 
-点击**语言概率**按钮以获取语言的假定供用户输入的列表。
+点击 "**语言概率**" 按钮, 为用户输入提取语言假设的列表。
 
-`HandleLanguageProbabilitiesButtonTap`方法`LanguageRecognizerViewController`类实例化`NLLanguageRecognizer`并要求它为 [`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
-用户的文本。 然后，它调用语言识别器的 [`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)
-方法会提取语言和关联的概率的字典。 `LanguageRecognizerTableViewController`类然后呈现这些语言和概率。
+`LanguageRecognizerViewController`类的`NLLanguageRecognizer`方法实例化, 并请求`HandleLanguageProbabilitiesButtonTap`[`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
+用户的文本。 然后, 它调用语言识别器的[`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)
+方法, 用于获取语言字典和关联的概率。 然后`LanguageRecognizerTableViewController` , 类呈现这些语言和概率。
 
 ```csharp
 partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
@@ -81,7 +81,7 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 }
 ```
 
-潜在`NLLanguage`值包括：
+可能`NLLanguage`的值包括:
 
 - `Amharic`
 - `Arabic`
@@ -141,18 +141,18 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 - `Urdu`
 - `Vietnamese`
 
-为提供了支持的语言的完整列表的一部分 [`NLLanguage`](xref:NaturalLanguage.NLLanguage)
+支持的语言的完整列表可作为[`NLLanguage`](xref:NaturalLanguage.NLLanguage)
 枚举 API 文档。
 
-## <a name="tokenizing-text-into-words-sentences-and-paragraphs"></a>到字、 句子和段落标记化文本
+## <a name="tokenizing-text-into-words-sentences-and-paragraphs"></a>将文本词汇切分为单词、句子和段落
 
-**Tokenizer**选项卡的示例应用演示了如何隔离成其组件的单词的文本块或与句子[ `NLTokenizer` ](xref:NaturalLanguage.NLTokenizer)。
+示例应用程序的 "**标记器**" 选项卡演示了如何使用[`NLTokenizer`](xref:NaturalLanguage.NLTokenizer)将文本块分隔到其分量关键字或句子。
 
-点击**单词**或**句子**按钮以获取令牌的列表。 每个标记都与 word 或句子中的原始文本相关联。
+点击 "**字词**" 或 "**句子**" 按钮, 提取令牌列表。 每个标记与原始文本中的一个词或句子相关联。
 
-`ShowTokens` 通过调用用户输入到令牌的拆分 [`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*)
-方法的`NLTokenizer`。 此方法返回的数组 [`NSValue`](xref:Foundation.NSValue)
-对象，每个包装`NSRange`与中的原始文本标记相对应的值。
+`ShowTokens`通过调用将用户的输入拆分为令牌[`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*)
+的`NLTokenizer`方法。 此方法返回的数组[`NSValue`](xref:Foundation.NSValue)
+对象, 每个对象`NSRange`都包装了与原始文本中的标记相对应的值。
 
 ```csharp
 void ShowTokens(NLTokenUnit unit)
@@ -168,7 +168,7 @@ void ShowTokens(NLTokenUnit unit)
 }
 ```
 
-`LanguageTokenizerTableViewController` 将呈现在每个表单元格中的单个令牌。 它提取`NSRange`从标记`NSValue`，查找相应的字符串中的原始文本，并在表视图单元格上设置标签：
+`LanguageTokenizerTableViewController`呈现每个表单元格中的单个标记。 它`NSRange`从标记`NSValue`中提取并在原始文本中查找相应的字符串, 并在表视图单元上设置标签:
 
 ```csharp
 public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -180,24 +180,24 @@ public override UITableViewCell GetCell(UITableView tableView, NSIndexPath index
 }
 ```
 
-## <a name="tagging-named-entities-and-parts-of-speech"></a>标记命名的实体和词类
+## <a name="tagging-named-entities-and-parts-of-speech"></a>标记命名实体和词性
 
-**标记器**XamarinNL 示例应用程序的选项卡将演示如何使用 [`NLTagger`](xref:NaturalLanguage.NLTagger)
-若要将类别与输入字符串的令牌相关联的类。
-自然语言框架包括对识别人物、 地点、 组织和词类的内置支持。
+XamarinNL 示例应用程序的 "标记 **" 选项卡**演示了如何使用[`NLTagger`](xref:NaturalLanguage.NLTagger)
+用于将类别与输入字符串的标记关联的类。
+自然语言框架包含用于识别人员、地点、组织和词性的内置支持。
 
 > [!NOTE]
-> 自然语言框架还支持通过开发人员提供核心机器学习模型的自定义标记方案。 有关详细信息，看一看[自然语言框架简介](https://developer.apple.com/videos/play/wwdc2018/713/)WWDC 2018 的会话。
+> 自然语言框架还支持通过开发人员提供的核心 ML 模型的自定义标记方案。 有关详细信息, 请参阅 WWDC 2018 中的[自然语言框架会话简介](https://developer.apple.com/videos/play/wwdc2018/713/)。
 
-点击**名为实体**或**词类**按钮以提取：
+点击 "**命名实体**" 或 "**词性**" 按钮以获取:
 
-- 一个数组`NSValue`对象，每个包装`NSRange`原始文本中的令牌。
-- 一个数组[ `NLTag` ](xref:NaturalLanguage.NLTag)值 – 类别`NSValue`相同的数组索引处的令牌。
+- 对象的`NSValue`数组, 每个对象都`NSRange`包装原始文本中的标记。
+- [`NLTag`](xref:NaturalLanguage.NLTag)值的数组–同一数组索引处`NSValue`的标记的类别。
 
-中`LanguageTaggerViewController`，`HandlePartsOfSpeechButtonTap`并`HandleNamedEntitiesButtonTap`每次调用`ShowTags`，并传递沿[ `NLTagScheme` ](xref:NaturalLanguage.NLTagScheme) – 任一`NLTagScheme.LexicalClass`（对于词类） 或`NLTagScheme.NameType`（对于名为实体）。
+`LanguageTaggerViewController` `ShowTags` [`NLTagScheme`](xref:NaturalLanguage.NLTagScheme) `NLTagScheme.NameType`在和中,`NLTagScheme.LexicalClass`每次调用都传递– (对于词性的部分) 或 (对于命名实体)。 `HandleNamedEntitiesButtonTap` `HandlePartsOfSpeechButtonTap`
 
-`ShowTags` 创建`NLTagger`，其实例化的数组`NLTagScheme`其中它将查询类型 (在此情况下，仅传入的`NLTagScheme`值)。 然后，它使用 [`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)
-方法`NLTagger`来确定与用户输入中的文本相关的标记。
+`ShowTags`创建一个`NLTagger`, 并将其实例化为`NLTagScheme`要查询的类型的数组 (在这种情况下, `NLTagScheme`仅为传入的值)。 然后, 它使用[`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)
+的`NLTagger`方法, 以确定与用户输入中的文本相关的标记。
 
 ```csharp
 void ShowTags(NLTagScheme tagScheme)
@@ -217,9 +217,9 @@ void ShowTags(NLTagScheme tagScheme)
 }
 ```
 
-然后，这些标记显示通过表中`LanguageTaggerTableViewController`。
+标记随后将显示在表`LanguageTaggerTableViewController`中。
 
-潜在`NLTag`值包括：
+可能`NLTag`的值包括:
 
 - `Adjective`
 - `Adverb`
@@ -253,11 +253,11 @@ void ShowTags(NLTagScheme tagScheme)
 - `Word`
 - `WordJoiner`
 
-为提供了支持的标记的完整列表的一部分 [`NLTag`](xref:NaturalLanguage.NLTag)
+支持标记的完整列表可作为[`NLTag`](xref:NaturalLanguage.NLTag)
 枚举 API 文档。
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用程序 – XamarinNL](https://developer.xamarin.com/samples/monotouch/iOS12/XamarinNL)
+- [示例应用– XamarinNL](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-xamarinnl)
 - [自然语言框架简介](https://developer.apple.com/videos/play/wwdc2018/713/)
 - [自然语言 (Apple)](https://developer.apple.com/documentation/naturallanguage?language=objc)

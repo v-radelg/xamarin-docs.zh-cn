@@ -1,234 +1,234 @@
 ---
-title: 适用于 Xamarin.iOS 应用启动屏幕
-description: 本文介绍如何在任何分辨率和方向，使用单个统一情节提要时创建所有的 iOS 设备，应用程序启动屏幕。
+title: 为 Xamarin iOS 应用启动屏幕
+description: 本文介绍如何使用单个统一的情节提要, 以任何分辨率和方向为所有 iOS 设备创建应用启动屏幕。
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 0ec1defa29a4fe85c4ae3e809d8733e68cc268ac
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 76e9d91b735f2ae5041330d8e290347ae9314487
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087408"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654808"
 ---
-# <a name="launch-screens-for-xamarinios-apps"></a>适用于 Xamarin.iOS 应用启动屏幕
+# <a name="launch-screens-for-xamarinios-apps"></a>为 Xamarin iOS 应用启动屏幕
 
-_本文介绍如何在任何分辨率和方向，使用单个统一情节提要时创建所有的 iOS 设备，应用程序启动屏幕。_
+_本文介绍如何使用单个统一的情节提要, 以任何分辨率和方向为所有 iOS 设备创建应用启动屏幕。_
 
-在 iOS 8 之前创建的 iOS 应用程序启动屏幕需要开发人员为每个不同设备外观造型和解决方法在其中运行应用程序无法提供的图像资产。 自 iOS 8 的发布，但是，它有了可以使用单一的统一的情节提要来创建一个看起来在所有情况下正确的启动屏幕。
+在 iOS 8 之前, 为 iOS 应用程序创建启动屏幕要求开发人员提供应用程序运行时所用的各种设备外形规格和分辨率的图像资产。 由于 iOS 8 的发布, 因此可以使用单个统一的情节提要来创建在所有情况下均正确显示的启动屏幕。
 
-本简短演练介绍如何使用新项目中默认情况下提供的任一情节提要或使用演示图板添加到现有项目中手动创建启动屏幕。 然后演示如何使用 iOS 设计器添加到情节提要，这些视图上设置约束，并验证情节提要看起来正确为各种设备和方向的图像视图和一个标签。
+此 brief 演练介绍了如何使用默认情况下在新项目中提供的情节提要或手动添加到现有项目中的情节提要创建启动屏幕。 然后, 它演示了如何使用 iOS 设计器将图像视图和标签添加到情节提要, 为这些视图设置约束, 并验证情节提要对于各种设备和方向是否正确显示。
 
 <a name="storyboard" />
 
-## <a name="managing-launch-screens-with-storyboards"></a>管理使用演示图板启动屏幕
+## <a name="managing-launch-screens-with-storyboards"></a>用情节提要管理启动屏幕
 
-在 iOS 8 （和更高版本），开发人员可以创建特殊统一情节提要提供而不是使用一个或多个静态启动映像启动屏幕。 如果创建 iOS 设计器启动情节提要，请使用大小类和自动布局来定义不同的显示环境的不同布局。 通过使用大小类和自动布局，开发人员可以创建一个看起来没问题在所有设备上的单一启动屏幕和显示环境。
+在 iOS 8 (及更高版本) 中, 开发人员可以创建一个特殊的统一情节提要来提供 "启动" 屏幕, 而不是使用一个或多个静态启动图像。 在 iOS 设计器中创建启动情节提要时, 可使用大小类和自动布局来定义不同显示环境的不同布局。 通过使用 Size 类和自动布局, 开发人员可以创建一个在所有设备上都能正常运行并显示环境的启动屏幕。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 Visual Studio for Mac 中，通过选择创建新项目**文件 > 新的解决方案**，然后选择**单一视图应用**: 
+1. 在 Visual Studio for Mac 中, 选择 "**文件" > "新建解决方案**", 然后选择 "**单视图应用**", 创建一个新项目: 
 
-    ![新建项目窗口中，使用所选的单一视图应用](launch-screens-images/launch01.png)
+    ![已选择 "单视图应用" 的 "新建项目" 窗口](launch-screens-images/launch01.png)
 
-    - 默认情况下，新的项目包括**LaunchScreen.storyboard**定义的启动屏幕界面文件。 
-    - 若要改为添加到现有项目的启动屏幕情节提要，请右键单击项目名称在**Solution Pad** ，然后选择**添加 > 新建文件...** ，然后选择**启动屏幕**:
+    - 默认情况下, 新项目包含定义启动屏幕界面的**LaunchScreen**文件。 
+    - 若要改为将启动屏幕情节提要添加到现有项目, 请在**Solution Pad**中右键单击项目名称, 然后选择 "**添加 > 新文件 ...** ", 然后选择 "**启动屏幕**":
 
-    ![具有 iOS 启动屏幕选择的新文件窗口](launch-screens-images/launch01b.png)
+    ![已选择 iOS 启动屏幕的 "新建文件" 窗口](launch-screens-images/launch01b.png)
 
-    - 将文件命名**LaunchScreen**或所选的另一个名称。
+    - 将该文件命名为**LaunchScreen**或您选择的其他名称。
 
-2. 项目配置为使用相应的情节提要为其启动屏幕：
+2. 将项目配置为使用合适的情节提要启动屏幕:
 
-    - 双击**Info.plist**中的文件**Solution Pad**打开进行编辑。
-    - 在中**启动图像**部分中，请确保**启动屏幕**设置为适当的情节提要的名称：
+    - 双击**Solution Pad**中的**info.plist**文件, 将其打开以进行编辑。
+    - 在 "**启动映像**" 部分中, 确保 "**启动屏幕**" 设置为相应情节提要的名称:
 
     ![Info.plist 中的启动屏幕选择器](launch-screens-images/launch02.png)
 
-    - 默认情况下，新的项目配置为使用**LaunchScreen.storyboard**作为其启动屏幕。
+    - 默认情况下, 新项目配置为使用**LaunchScreen**作为其启动屏幕。
 
-3. 添加到图像**Assets.xcassets**资产目录，这样就可在启动屏幕上使用。 有关详细信息，请参阅[将图像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)一部分[显示图像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南。
+3. 将图像添加到**Assets.xcassets**资产目录, 使其可用于启动屏幕。 有关详细信息, 请参阅[显示图像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南的将[图像添加到资产目录图像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)部分。
 
-4. 打开**LaunchScreen.storyboard**用于编辑中双击**Solution Pad**。
+4. 打开**LaunchScreen**进行编辑, 方法是在**Solution Pad**中双击它。
 
-5. 选择设备和在其预览启动屏幕情节提要中 iOS 设计器上的方向。 打开底部工具栏上的设备选择面板，然后选择**iPhone 4 秒**并**纵向**。
+5. 选择要在 iOS 设计器中预览启动屏幕情节提要的设备和方向。 打开底部工具栏上的 "设备选择" 面板, 然后选择 " **IPhone 4S** " 和 "**纵向**"。
 
-    ![设备选择工具栏上](launch-screens-images/launch05.png)
+    ![设备选择工具栏](launch-screens-images/launch05.png)
 
-    - 请注意，选择设备和方向仅更改 iOS 设计器预览设计的方式。 此处所做的选择，无论新添加的约束应用于所有设备和方向，除非**编辑特征**使用按钮来指定，否则。 
+    - 请注意, 选择设备和方向仅会改变 iOS 设计器预览设计的方式。 无论在什么情况下进行选择, 新添加的约束都将应用于所有设备和方向, 除非已使用 "**编辑特征**" 按钮进行指定。 
 
-6. 设置**背景**视图控制器的主视图的颜色。 通过单击视图控制器的中间选择的视图和背景颜色使用调整**Properties Pad**:
+6. 设置视图控制器主视图的**背景**色。 通过单击视图控制器的中间, 并使用**Properties Pad**调整背景色来选择视图:
 
-    ![一个视图，其中紫色背景色](launch-screens-images/launch06.png)
+    ![具有紫色背景色的单个视图](launch-screens-images/launch06.png)
 
-7. 添加**图像视图**到启动屏幕，然后设置其源**映像**:
+7. 向启动屏幕添加一个**图像视图**, 并设置其源**映像**:
 
-    - 拖动**图像视图**从**工具箱面板**到视图的中心。
-    - 与**图像视图**后，在**小组件**一部分**Properties Pad**设置**映像**到映像已设置的属性添加到**Assets.xcassets**资产目录。 重新定位并调整其大小**图像视图**所需的方式：
+    - 将 "**图像" 视图**从 "**工具箱**" 拖到视图的中心。
+    - 选中 "**图像" 视图**后, 在**Properties Pad**的 "**小组件**" 部分中, 将 " **image** " 属性设置为已添加到**assets.xcassets**资产目录中的映像集。 根据需要重新定位**图像视图**并调整其大小:
     
-    ![其图像属性设置与图像视图](launch-screens-images/launch07.png)
+    ![具有图像属性集的图像视图](launch-screens-images/launch07.png)
 
-8. 添加**标签**如下**图像视图**，并使用**Properties Pad**以设置其属性： 
+8. 在**图像视图**下面添加一个**标签**, 并使用**Properties Pad**设置其属性: 
 
-    ![具有其文本和颜色的一组的标签](launch-screens-images/launch08.png)
+    ![带有文本和颜色集的标签](launch-screens-images/launch08.png)
 
-9. 通过使用中的右侧按钮切换到约束编辑模式**约束工具栏**:
+9. 使用 "**约束" 工具栏**中的右侧按钮切换到 "约束编辑模式":
     
-    ![约束编辑模式按钮](launch-screens-images/launch09.png)
+    !["约束编辑模式" 按钮](launch-screens-images/launch09.png)
 
-10. 将约束添加到**图像视图**、 设置其高度和宽度以及水平和垂直居中它：
+10. 向**图像视图**添加约束, 设置其高度和宽度并水平和垂直居中对齐:
 
-    ![使用布局限制图像视图](launch-screens-images/launch10.png)
+    ![带有布局约束的图像视图](launch-screens-images/launch10.png)
 
-    - 有关如何添加约束的更多详细信息，请参阅[适用于 iOS 的 Xamarin 设计器的自动布局](~/ios/user-interface/designer/designer-auto-layout.md)。
+    - 有关如何添加约束的详细信息, 请参阅[与 Xamarin Designer for iOS 自动布局](~/ios/user-interface/designer/designer-auto-layout.md)。
 
-11. 将约束添加到**标签**、 水平居中、 为其提供高度和宽度，和定位固定从垂直距离**图像视图**:
+11. 将约束添加到**标签**, 将其水平居中, 使其成为高度和宽度, 并将其垂直放置在**图像视图**的固定距离上:
 
-    ![具有布局限制的标签](launch-screens-images/launch11.png)
+    ![带有布局约束的标签](launch-screens-images/launch11.png)
 
-12. 测试其他设备和方向，以验证设计运行安装程序，在所有方案中所示。 在其中调整需要的特定设备或方向进行的情况下，使用**编辑特征**按钮添加的特定大小类的约束：
+12. 测试其他设备和方向, 以验证设计在所有方案中是否按预期方式显示。 如果需要对特定设备或方向进行调整, 请使用 "**编辑特征**" 按钮添加特定大小类的约束:
 
-    ![呈现为 iPhone X 使用横向方向在启动屏幕](launch-screens-images/launch12.png)
+    ![使用横向方向呈现为 iPhone X 的启动屏幕](launch-screens-images/launch12.png)
 
-13. 将所做的更改保存到情节提要。 在模拟器或设备上运行应用并启动屏幕会显示，如应用程序正在启动。
+13. 保存对情节提要所做的更改。 在模拟器或设备上运行应用, 启动屏幕将在应用启动时可见。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 创建新项目。 在 Visual Studio 中，选择**文件 > 新建 > 项目 > Visual C# > iPhone 和 iPad > iOS 应用 (Xamarin)**:
+1. 创建新项目。 在 Visual Studio 中, 选择 "文件" " **> 新建C# > 项目" > Visual > iPhone & IPad > "IOS 应用 (Xamarin)** ":
 
-    ![新的项目，与 iOS 应用 (Xamarin) 所选的窗口](launch-screens-images/launch01.w157.png)
+    ![已选中 "iOS 应用 (Xamarin)" 的 "新建项目" 窗口](launch-screens-images/launch01.w157.png)
 
-    选择**单一视图应用**模板，，然后单击**确定**:
+    选择 "**单一视图应用程序**" 模板, 然后单击 **"确定"** :
 
-    ![单一视图应用程序模板](launch-screens-images/launch01-2.w157.png)
+    ![单一视图应用模板](launch-screens-images/launch01-2.w157.png)
 
-2. 如果**资源 > LaunchScreen.xib**存在于**解决方案资源管理器**，右键单击该文件并选择删除**删除**。 此文件将替换为下一步中将情节提要。
+2. 如果**解决方案资源管理器**中存在 **> LaunchScreen 的资源**, 请通过右键单击该文件并选择 "**删除**" 来删除它。 此文件将替换为下一步中的情节提要。
 
-3. 创建要用作启动屏幕情节提要。 在中**解决方案资源管理器**，右键单击该项目并选择**添加 > 新建项...** 跟**空情节提要**。 命名此情节提要**LaunchScreen.storyboard**然后单击**添加**:
+3. 创建要用作启动屏幕的情节提要。 在**解决方案资源管理器**中, 右键单击项目, 然后选择 "**添加 > 新项 ...** ", 后跟**空情节提要**。 将此情节提要命名为**LaunchScreen** , 然后单击 "**添加**":
 
-    ![添加新项窗口中的与所选的空情节提要，](launch-screens-images/launch03.w157.png)
+    ![已选中空情节提要的 "添加新项" 窗口](launch-screens-images/launch03.w157.png)
 
-4. 将项目配置为使用**LaunchScreen.storyboard**作为其启动屏幕情节提要：
+4. 将项目配置为使用**LaunchScreen**作为其启动屏幕情节提要:
 
-    - 在“解决方案资源管理器”中，双击 **Info.plist** 文件，打开它进行编辑。 
-    - 上**视觉对象资产**选项卡上，设置**启动屏幕**到**LaunchScreen**。
+    - 在“解决方案资源管理器”  中，双击 **Info.plist** 文件，打开它进行编辑。 
+    - 在 "**视觉对象资产**" 选项卡上, 将 "**启动屏幕**" 设置为**LaunchScreen**。
 
     ![Info.plist 中的启动屏幕选择器](launch-screens-images/launch04-vs.png)
 
-5. 将图像添加到项目中的资产目录，这样就可在启动屏幕上使用：
+5. 将图像添加到项目中的资产目录, 以使其可用于 "启动" 屏幕:
 
-    - 在中**解决方案资源管理器**，右键单击**资产目录**，然后选择**添加资产目录**。 此新的资产目录命名**资产**:
+    - 在**解决方案资源管理器**中, 右键单击 "**资产目录**", 然后选择 "**添加资产目录**"。 为此新资产目录命名**资产**:
 
-    ![添加新项窗口中的使用选择的资产目录，](launch-screens-images/launch05.w157.png)
+    !["添加新项" 窗口, 已选择资产目录](launch-screens-images/launch05.w157.png)
 
-    - 添加新图像设置为**资产**资产目录，如中所述[将映像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)一部分[显示图像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南。
+    - 如[显示图像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南的将[图像添加到资产目录图像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)部分中所述, 将新图像集添加到**资产**资产目录中。
 
-6. 打开**LaunchScreen.storyboard**用于编辑中双击**解决方案资源管理器**。
+6. 打开**LaunchScreen**进行编辑, 方法是在**解决方案资源管理器**中双击它。
 
-    - 若要编辑的情节提要文件，Visual Studio 需要到 Mac 生成主机的活动连接。 请参阅[连接到 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南以详细信息。
+    - 若要编辑情节提要文件, Visual Studio 需要与 Mac 生成主机建立活动连接。 有关详细信息, 请参阅[连接到 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南。
 
-7. 选择设备和在其预览启动屏幕情节提要中 iOS 设计器上的方向。 打开底部工具栏上的设备选择面板，然后选择**iPhone 4 秒**并**纵向**: 
+7. 选择要在 iOS 设计器中预览启动屏幕情节提要的设备和方向。 打开底部工具栏上的 "设备选择" 面板, 然后选择 " **IPhone 4S**和**纵向**": 
  
-    ![设备选择工具栏上](launch-screens-images/launch07-vs.png)
+    ![设备选择工具栏](launch-screens-images/launch07-vs.png)
 
-    - 请注意，选择设备和方向仅更改 iOS 设计器预览设计的方式。 此处所做的选择，无论新添加的约束应用于所有设备和方向，除非**编辑特征**使用按钮来指定，否则。 
+    - 请注意, 选择设备和方向仅会改变 iOS 设计器预览设计的方式。 无论在什么情况下进行选择, 新添加的约束都将应用于所有设备和方向, 除非已使用 "**编辑特征**" 按钮进行指定。 
 
-8. 添加**视图控制器**到通过拖动其中一个从情节提要**工具箱**拖到设计图面： 
+8. 将**视图控制器**从**工具箱**拖到设计图面, 将其添加到情节提要: 
 
-    ![一个空视图控制器添加到设计图面](launch-screens-images/launch08-vs.png)
+    ![添加到设计图面的空视图控制器](launch-screens-images/launch08-vs.png)
 
-9. 设置**背景**视图控制器的主视图的颜色。 通过单击视图控制器的中间选择的视图和背景颜色使用调整**属性窗口**:
+9. 设置视图控制器主视图的**背景**色。 通过单击视图控制器的中间点并使用 "**属性" 窗口**调整背景色来选择视图:
     
-    ![一个视图，其中紫色背景色](launch-screens-images/launch09-vs.png)
+    ![具有紫色背景色的单个视图](launch-screens-images/launch09-vs.png)
 
-10. 添加**图像视图**到启动屏幕，然后设置其源**映像**:
+10. 向启动屏幕添加一个**图像视图**, 并设置其源**映像**:
 
-    - 拖动**图像视图**从**工具箱**到视图的中心。
-    - 与**图像视图**仍然选择，在**小组件**一部分**属性窗口**设置**映像**属性设置为映像设置已添加到**资产**资产目录。 重新定位并调整其大小**图像视图**所需的方式：
+    - 将 "**图像" 视图**从 "**工具箱**" 拖至视图的中心。
+    - 如果仍选中 "**图像" 视图**, 则在 "属性"**窗口**的 "**小组件**" 部分中, 将 "**图像**" 属性设置为已添加到**资产**资产目录中的映像集。 根据需要重新定位**图像视图**并调整其大小:
     
-    ![其图像属性设置与图像视图](launch-screens-images/launch10-vs.png)
+    ![具有图像属性集的图像视图](launch-screens-images/launch10-vs.png)
 
-11. 添加**标签**如下**图像视图**:
+11. 在**图像视图**下面添加一个**标签**:
 
-    - 拖动**标签**从**工具箱**拖到设计图面中，将其放置下面**图像视图**。
-    - 为设置属性**标签**使用**属性窗口**:
+    - 将**标签**从 "**工具箱**" 拖到设计图面上, 将其放置在**图像视图**的下方。
+    - 使用 "**属性" 窗口**设置**标签**的属性:
 
-    ![具有其文本和颜色的一组的标签](launch-screens-images/launch11-vs.png) 
+    ![带有文本和颜色集的标签](launch-screens-images/launch11-vs.png) 
 
-12. 通过使用中的右侧按钮切换到约束编辑模式**约束工具栏**:
+12. 使用 "**约束" 工具栏**中的右侧按钮切换到 "约束编辑模式":
     
-    ![约束编辑模式按钮](launch-screens-images/launch12-vs.png) 
+    !["约束编辑模式" 按钮](launch-screens-images/launch12-vs.png) 
 
-13. 将约束添加到**图像视图**、 设置其高度和宽度以及水平和垂直居中它：
+13. 向**图像视图**添加约束, 设置其高度和宽度并水平和垂直居中对齐:
 
-    ![使用布局限制图像视图](launch-screens-images/launch13-vs.png) 
+    ![带有布局约束的图像视图](launch-screens-images/launch13-vs.png) 
 
-    - 有关添加约束的信息，请参阅[适用于 iOS 的 Xamarin 设计器的自动布局](~/ios/user-interface/designer/designer-auto-layout.md)。
+    - 有关添加约束的信息, 请参阅[与 Xamarin Designer for iOS 自动布局](~/ios/user-interface/designer/designer-auto-layout.md)。
 
-14. 将约束添加到**标签**、 水平居中、 为其提供高度和宽度，和定位固定从垂直距离**图像视图**:
+14. 将约束添加到**标签**, 将其水平居中, 使其成为高度和宽度, 并将其垂直放置在**图像视图**的固定距离上:
     
-    ![具有布局限制的标签](launch-screens-images/launch14-vs.png) 
+    ![带有布局约束的标签](launch-screens-images/launch14-vs.png) 
 
-15. 测试其他设备和方向，以验证设计运行安装程序，在所有方案中所示。 在其中调整需要的特定设备或方向进行的情况下，使用**编辑特征**按钮添加的特定大小类的约束：
+15. 测试其他设备和方向, 以验证设计在所有方案中是否按预期方式显示。 如果需要对特定设备或方向进行调整, 请使用 "**编辑特征**" 按钮添加特定大小类的约束:
 
-    ![呈现为 iPhone X 使用横向方向在启动屏幕](launch-screens-images/launch15-vs.png) 
+    ![使用横向方向呈现为 iPhone X 的启动屏幕](launch-screens-images/launch15-vs.png) 
 
-16. 将所做的更改保存到情节提要。 在模拟器或设备上运行应用并启动屏幕会显示，如应用程序正在启动。
+16. 保存对情节提要所做的更改。 在模拟器或设备上运行应用, 启动屏幕将在应用启动时可见。
 
 -----
 
 > [!NOTE]
-> 用作启动屏幕情节提要_必须_包括仅简单、 内置 UI 元素并**不能**执行任何计算或派生自定义类。
+> 用作_启动屏幕的_情节提要只能包含简单的内置 UI 元素,**不能**进行任何计算或从自定义类派生。
 
-有关使用统一的情节提要创建启动屏幕的详细信息，请参阅[动态启动屏幕](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens)一部分[统一情节提要](~/ios/user-interface/storyboards/unified-storyboards.md)指南。
+有关使用统一情节提要创建启动屏幕的详细信息, 请参阅[统一](~/ios/user-interface/storyboards/unified-storyboards.md)情节提要指南的[动态启动](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens)屏幕部分。
 
-## <a name="migrating-to-launch-screen-storyboards"></a>迁移以启动屏幕情节提要
+## <a name="migrating-to-launch-screen-storyboards"></a>迁移到启动屏幕情节提要
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-当更新现有应用程序要用于其启动屏幕情节提要，右键单击**项目名称**中**解决方案资源管理器**，然后选择**添加** > **新文件...**.选择**iOS** > **启动屏幕**然后单击**新建**按钮：
+更新现有应用程序以使用演示图板启动屏幕时, 右键单击 "**解决方案资源管理器**中的**项目名称**, 然后选择"**添加** > **新文件 ...** "。选择 " **iOS** > " "**启动" 屏幕**, 然后单击 "**新建**" 按钮:
 
 ![](launch-screens-images/storyboard02.png "选择 iOS 启动屏幕")
 
-接下来，双击`Info.plist`文件中**解决方案资源管理器**打开进行编辑。 下**启动屏幕**，选择上面创建的新情节提要文件。
+接下来, 在**解决方案资源管理器**中`Info.plist`双击该文件以将其打开以进行编辑。 在 "**启动" 屏幕**下, 选择上面创建的新情节提要文件。
 
 ![](launch-screens-images/storyboard09.png "选择上面创建的新情节提要文件")
 
 
-要将新情节提要用作启动屏幕，请执行以下操作：
+若要使用新的情节提要作为启动屏幕, 请执行以下操作:
 
-1. 双击`Info.plist`文件中**解决方案资源管理器**打开进行编辑。
-2. 滚动到**通用启动图像**部分中的编辑器中，打开**启动屏幕**下拉列表中，选择上面创建的情节提要的名称： 
+1. 双击 "**解决方案资源管理器**中`Info.plist`的文件以将其打开以进行编辑。
+2. 滚动到编辑器的 "**通用启动映像**" 部分, 打开 "**启动屏幕**" 下拉列表, 选择上面创建的情节提要的名称: 
 
-    ![](launch-screens-images/storyboard08.png "设置启动屏幕情节提要")
+    ![](launch-screens-images/storyboard08.png "将启动屏幕设置为情节提要")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 右键单击项目名称在**解决方案资源管理器**，然后选择**添加** > **新文件...**: 
+1. 右键单击 "**解决方案资源管理器**中的项目名称, 然后选择"**添加** > **新文件 ...** ": 
 
-    ![](launch-screens-images/image012.png "添加新的文件")
-2. 输入启动屏幕的名称，然后单击**添加**按钮： 
+    ![](launch-screens-images/image012.png "添加新文件")
+2. 输入启动屏幕的名称, 然后单击 "**添加**" 按钮: 
 
     ![](launch-screens-images/image013.png "输入启动屏幕的名称")
-3. 在中**解决方案资源管理器**，双击要打开以进行编辑的新创建的情节提要文件。
-4. 絋粄**大小类**设置为**任何： 任何**并**查看方式**是**泛型**: 
+3. 在**解决方案资源管理器**中, 双击新创建的情节提要文件, 将其打开以进行编辑。
+4. 确保**Size 类**设置为**any: any** , 并将**视图**设置为**泛型**: 
 
-    ![](launch-screens-images/image016.png "请确保大小类设置为任何： 任何和查看方式为泛型")
-5. 程序集的大小类，简单的 UI 元素的启动屏幕 (如`UIImageView`) 和应用程序的捆绑包中包含的图像： 
+    ![](launch-screens-images/image016.png "确保 Size 类设置为 any: any, 并将视图设置为泛型")
+5. 从大小类、简单 UI 元素 (如`UIImageView`) 和包含在应用程序捆绑中的图像的程序集启动屏幕: 
 
-    ![](launch-screens-images/image017.png "程序集在 iOS 设计器中启动屏幕")
-6. 将所做的更改保存到情节提要。
+    ![](launch-screens-images/image017.png "在 iOS 设计器中组装启动屏幕")
+6. 保存对情节提要所做的更改。
 
 -----
 
 ## <a name="related-links"></a>相关链接
 
-- [动态启动屏幕 （示例）](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
+- [动态启动屏幕 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [统一的情节提要](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS 设计器基本知识](~/ios/user-interface/designer/index.md)
-- [添加图像到资产目录映像设置](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
-- [适用于 iOS 的 Xamarin 设计器的自动布局](~/ios/user-interface/designer/designer-auto-layout.md)
-- [人机接口准则：启动屏幕](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [将图像添加到资产目录图像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
+- [用 Xamarin Designer for iOS 自动布局](~/ios/user-interface/designer/designer-auto-layout.md)
+- [人体学接口准则:启动屏幕](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

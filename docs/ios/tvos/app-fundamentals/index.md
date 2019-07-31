@@ -1,58 +1,58 @@
 ---
 title: tvOS 应用程序基础知识
-description: 本部分提供的最常见的任务和概念，开发人员需要编写 Xamarin.tvOS 应用程序时应注意的概念。
+description: 本部分介绍开发人员在编写 tvOS 应用时需要注意的最常见的任务和概念。
 ms.prod: xamarin
 ms.assetid: B245062F-1DD9-4BE5-8E11-728BA3C8AD4C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/07/2016
-ms.openlocfilehash: 8fe5b508bb92d11bc1a76c96ece0b89fd06dd402
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cc1a4ae46eb07c789e5f451fec1db201826ffb21
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61415736"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652164"
 ---
 # <a name="tvos-application-fundamentals"></a>tvOS 应用程序基础知识
 
-_本部分提供的最常见的任务和概念，开发人员需要编写 Xamarin.tvOS 应用程序时应注意的概念。_
+_本部分介绍开发人员在编写 tvOS 应用时需要注意的最常见的任务和概念。_
 
 <a name="Xamarin.tvOS-Application-Fundamentals" />
 
-## <a name="xamarintvos-application-fundamentals"></a>Xamarin.tvOS 应用程序基础知识
+## <a name="xamarintvos-application-fundamentals"></a>TvOS 应用程序基础知识
 
-在本部分文档提供了基本概念的应用知识和 tvOS 创建 Xamarin.tvOS 应用时将正在处理的功能。
+本部分中的文档提供了有关在创建 tvOS 应用时将使用的 tvOS 的基本概念和功能的信息。
 
-强烈建议您明确[你好，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)第一次，因为它包括了关键概念和技术，我们将在每篇文章中使用。
+强烈建议您先完成[Hello, tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md), 因为它涵盖了我们在每篇文章中将使用的重要概念和技巧。
 
 <a name="Working-with-Icons-and-Images" />
 
 ### <a name="working-with-icons-and-imagesiostvosapp-fundamentalsicons-imagesmd"></a>[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)
 
-本文介绍如何设计和使用的图标和 Xamarin.tvOS 应用内的图像。
+本文介绍如何在 tvOS 应用程序中设计和使用图标和图像。
 
 <a name="Working-with-Navigation-and-Focus" />
 
 ### <a name="working-with-navigation-and-focusiostvosapp-fundamentalsnavigation-focusmd"></a>[使用导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)
 
-本文介绍如何焦点和如何它用来显示和处理在 Xamarin.tvOS 应用内导航的概念。
+本文介绍了焦点的概念以及如何使用它来呈现和处理 tvOS 应用程序中的导航。
 
 <a name="Resources-and-Data-Storage" />
 
 ### <a name="resources-and-data-storageiostvosapp-fundamentalsresources-data-storagemd"></a>[资源和数据存储](~/ios/tvos/app-fundamentals/resources-data-storage.md)
 
-与 iOS 设备，新的 Apple TV 不提供 tvOS 应用的持久的本地存储。 本文介绍如何使用资源和 Xamarin.tvOS 应用中的持久数据存储。
+与 iOS 设备不同, 新的 Apple TV 不为 tvOS 应用提供永久性的本地存储。 本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储。
 
 <a name="Playing-Sound-with-AVAudioPlayer" />
 
 ### <a name="playing-sound-with-avaudioplayeriostvosapp-fundamentalssoundsmd"></a>[使用 AVAudioPlayer 播放声音](~/ios/tvos/app-fundamentals/sounds.md)
 
-本文介绍如何使用一个帮助器类控制的声音 Xamarin.tvOS 应用程序中使用 AVAudioPlayer 播放。
+本文介绍如何使用 helper 类在 tvOS 应用程序中使用 Avaudioplayer 播放声音控制声音播放。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人机接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [适用于 tvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

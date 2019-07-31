@@ -7,18 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7d323aa6616f7547ab91dfe2b394c339e273d61c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61321898"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650027"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 位图平铺
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
 如您在两个之前的文章中所见[ `SKShader` ](xref:SkiaSharp.SKShader)类可以创建线性或循环渐变。 这篇文章重点`SKShader`使用一个位图平铺区域的对象。 可以重复位图，水平或垂直地在其原始方向或或者水平和垂直翻转。 翻转可避免磁贴之间的不连续性：
 
@@ -42,7 +42,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 
 ## <a name="exploring-the-tile-modes"></a>浏览平铺模式
 
-中的第一个程序**位图平铺**一部分**着色器和其他效果**页[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例演示了两个效果`SKShaderTileMode`参数。 **位图磁贴翻转模式**XAML 文件实例化`SKCanvasView`并将两个`Picker`允许您选择的视图`SKShaderTilerMode`水平和垂直平铺的值。 请注意，数组`SKShaderTileMode`中定义成员`Resources`部分：
+中的第一个程序**位图平铺**一部分**着色器和其他效果**页[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例演示了两个效果`SKShaderTileMode`参数。 **位图磁贴翻转模式**XAML 文件实例化`SKCanvasView`并将两个`Picker`允许您选择的视图`SKShaderTilerMode`水平和垂直平铺的值。 请注意，数组`SKShaderTileMode`中定义成员`Resources`部分：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -300,7 +300,7 @@ public class PhotographicBrickWallPage : ContentPage
 
 所需一些工作以磁贴获取合适的位图。 这个不很好地起作用，因为突出显示的较暗的程序块太多。 它定期出现在重复的图像，显示此砖墙从较小位图构造这一事实。
 
-**媒体**的文件夹[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例还包括 stone 墙上的此图像：
+**媒体**的文件夹[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例还包括 stone 墙上的此图像：
 
 ![Stone 华尔街在摆脱磁贴](bitmap-tiling-images/StoneWallTile.jpg "Stone 华尔街在摆脱磁贴")
 
@@ -366,7 +366,7 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 
 在部分[**磁贴的对齐方式**](#tile-alignment)，可以看到示例转换变换应用到着色器。
 
-独立[ **Cat 时钟**](https://developer.xamarin.com/samples/xamarin-forms/CatClock)示例 (不属于**SkiaSharpFormsDemos**) 模拟使用基于此 240 像素的方形位图位图平铺的 wood 粒度背景：
+独立[ **Cat 时钟**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)示例 (不属于**SkiaSharpFormsDemos**) 模拟使用基于此 240 像素的方形位图位图平铺的 wood 粒度背景：
 
 ![木纹粒度](bitmap-tiling-images/WoodGrain.png "木纹粒度")
 
@@ -780,5 +780,5 @@ public class AnimatedBitmapTilePage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [CatClock （示例）](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [CatClock （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

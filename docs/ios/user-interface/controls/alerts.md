@@ -1,48 +1,48 @@
 ---
-title: 在 Xamarin.iOS 中显示的警报
-description: 本文档介绍如何通过使用看到在 iOS 8 中引入的 Api 在 Xamarin.iOS 中显示警报。
+title: 在 Xamarin 中显示警报
+description: 本文档介绍如何使用 iOS 8 中引入的 UIAlertController Api 在 Xamarin 中显示警报。
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674395"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652047"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin.iOS 中显示的警报
+# <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中显示警报
 
-从 iOS 8 开始，看到具有已完成替换的 UIActionSheet 和 UIAlertView 这两个其中现已弃用。
+从 iOS 8 开始, UIAlertController 已完成替换为 UIActionSheet 和 UIAlertView, 这两者现已弃用。
 
-看到与替换，即子类 UIView 类的 UIViewController 子类。
+不同于它所替换的类 (UIView 的子类), UIAlertController 是 UIViewController 的子类。
 
-使用`UIAlertControllerStyle`来指示要显示的警报类型。 这些警报类型包括：
+用于`UIAlertControllerStyle`指示要显示的警报的类型。 这些警报类型为:
 
 - **UIAlertControllerStyleActionSheet**
-    * 预 iOS 8 它将是 UIActionSheet
+    * IOS 8 之前, 这会是一个 UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * 预 iOS 8 它将是 UIAlertView 
+    * 预 iOS 8 此项会被 UIAlertView 
 
-有三个必要步骤，才能创建警报控制器：
+创建警报控制器时需要执行三个必要的步骤:
 
-- 创建和使用答： 配置警报
+- 使用以下内容创建并配置警报:
     * 标题
     * 消息
     * preferredStyle
     
-- （可选）添加文本字段
+- 可有可无添加文本字段
 - 添加所需的操作
 - 显示视图控制器
 
-最简单的警报包含一个按钮，在此屏幕截图所示：
+最简单的警报包含一个按钮, 如以下屏幕截图所示:
 
- ![警报一个按钮](alerts-images/alert1.png)
+ ![带有一个按钮的警报](alerts-images/alert1.png)
 
-若要显示的简单警报的代码如下所示：
+显示简单警报的代码如下所示:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-显示警报的多个选项，以类似的方式完成，但将添加两个操作。 例如，下面的屏幕截图显示了具有两个按钮的警报：
+显示包含多个选项的警报的方式类似, 但添加了两个操作。 例如, 以下屏幕截图显示了包含两个按钮的警报:
 
- ![警报两个按钮](alerts-images/alert2.png)
+ ![具有两个按钮的警报](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-警报还可以显示操作工作表，类似于下面的屏幕截图：
+警报还可以显示操作表, 类似于下面的屏幕截图:
 
- ![操作工作表警报](alerts-images/alert3.png)
+ ![操作表警报](alerts-images/alert3.png)
 
-按钮添加到与警报`AddAction`方法：
+将按钮添加到警报, `AddAction`方法如下:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 （示例）](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [控件 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

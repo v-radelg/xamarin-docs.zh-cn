@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的页面生命周期事件
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的禁用消失，并 Appearing 页面事件上应用程序暂停和恢复，分别。
+title: Android 上的页面生命周期事件
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 该平台可分别禁用应用程序暂停和恢复的消失和显示页事件。
 ms.prod: xamarin
 ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 295b060ee795244184b3ea88b101c720436d1fe5
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 1745f137f2eeb04c0894c57bb0e45e5c43be7d0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926540"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649936"
 ---
-# <a name="page-lifecycle-events-on-android"></a>在 Android 上的页面生命周期事件
+# <a name="page-lifecycle-events-on-android"></a>Android 上的页面生命周期事件
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 特定于平台的用来禁用[ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)并[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)上应用程序的页面事件暂停和继续分别使用 AppCompat 的应用程序。 此外，它包含控件的功能是否软键盘显示在恢复，如果它显示了上暂停，前提是软键盘的操作模式设置为[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。
+此 Android 平台特定用于对使用 AppCompat 的应用[`Disappearing`](xref:Xamarin.Forms.Page.Appearing)程序[`Appearing`](xref:Xamarin.Forms.Page.Appearing)分别禁用和页面事件。 此外，它包含控件的功能是否软键盘显示在恢复，如果它显示了上暂停，前提是软键盘的操作模式设置为[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。
 
 > [!NOTE]
 > 请注意默认情况下启用这些事件是以保留现有的应用程序依赖于事件的行为。 禁用这些事件将使匹配预 AppCompat 事件周期 AppCompat 事件周期。
@@ -59,7 +59,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: cfdd639672f7fa624c7c8e30f17fbfc9dad403af
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b135f916225f896680cfb73175ba0568928be06
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075459"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655762"
 ---
 # <a name="xaml-markup-extensions"></a>XAML 标记扩展
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML 标记扩展可帮助元素特性，若要从文本字符串以外的源设置，从而扩展的功能和灵活性的 XAML。
 
@@ -36,7 +36,7 @@ XAML 标记扩展可帮助元素特性，若要从文本字符串以外的源设
 
 您可能希望改为设置`Color`属性从存储中使用的资源字典的值或已创建的类的静态属性的值或类型的属性`Color`的页上，另一个元素或从构造分隔色调、 饱和度和亮度值。
 
-所有这些选项都可能使用 XAML 标记扩展。 但不要让短语"标记扩展"畏惧有多：XAML 标记扩展是*不*XML 的扩展。 即使使用 XAML 标记扩展，XAML 始终是合法的 XML。
+所有这些选项都可能使用 XAML 标记扩展。 但不要让短语 "标记扩展" 心有余悸:XAML 标记扩展*不*是 XML 的扩展。 即使使用 XAML 标记扩展，XAML 始终是合法的 XML。
 
 标记扩展是实际上只是以不同的方式来表示一个元素的属性。 XAML 标记扩展是通常可识别括在大括号中的属性设置：
 
@@ -60,7 +60,7 @@ XAML 标记扩展可帮助元素特性，若要从文本字符串以外的源设
 
 ## <a name="related-links"></a>相关链接
 
-- [标记扩展 （示例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [标记扩展 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [从 Xamarin.Forms 书籍的 XAML 标记扩展一章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [动态样式](~/xamarin-forms/user-interface/styles/dynamic.md)

@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的单元格背景色
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用平台特定于 iOS 的 ios 设备上设置单元格的默认背景色。
+title: IOS 上的单元格背景色
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来设置 iOS 上单元格的默认背景色。
 ms.prod: xamarin
 ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 6b1e2fe534c8b7d0c3346a18d1b82d797e52dba1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 24276dce97e4935ba41d7012cf6a9aa8fa2658a8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926764"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651379"
 ---
-# <a name="cell-background-color-on-ios"></a>在 iOS 上的单元格背景色
+# <a name="cell-background-color-on-ios"></a>IOS 上的单元格背景色
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定设置的默认背景色[ `Cell` ](xref:Xamarin.Forms.Cell)实例。 设置使用在 XAML`Cell.DefaultBackgroundColor`可绑定属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+此 iOS 平台特定的设置[`Cell`](xref:Xamarin.Forms.Cell)实例的默认背景色。 它通过将`Cell.DefaultBackgroundColor` [`Color`](xref:Xamarin.Forms.Color)可绑定的属性设置为来在 XAML 中使用:
 
 ```xaml
 <ContentPage ...
@@ -52,14 +52,14 @@ var viewCell = new ViewCell { View = ... };
 viewCell.On<iOS>().SetDefaultBackgroundColor(Color.Teal);
 ```
 
-`ListView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 `Cell.SetDefaultBackgroundColor`方法，请在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间中，将单元格背景色设置为指定[ `Color` ](xref:Xamarin.Forms.Color)。 此外，`Cell.DefaultBackgroundColor`方法可以用于检索当前的单元格背景色。
+`ListView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 命名空间`Cell.SetDefaultBackgroundColor`中的方法将单元格背景色设置为指定[`Color`](xref:Xamarin.Forms.Color)的。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 此外, 该`Cell.DefaultBackgroundColor`方法可用于检索当前单元格背景色。
 
-结果是，中的背景色[ `Cell` ](xref:Xamarin.Forms.Cell)可以设置为特定[ `Color` ](xref:Xamarin.Forms.Color):
+结果就是, [`Cell`](xref:Xamarin.Forms.Cell)可以将中的背景色设置为特定: [`Color`](xref:Xamarin.Forms.Color)
 
-[![青色组标头单元格，在 iOS 上的屏幕截图](cell-background-color-images/group-header-cell-color.png "青色组标头单元格与 ListView")](cell-background-color-images/group-header-cell-color-large.png#lightbox "青色组标头单元格与 ListView")
+[IOS(cell-background-color-images/group-header-cell-color.png "ListView 上带有青色组标题单元格")的![青色组头单元的屏幕截图]](cell-background-color-images/group-header-cell-color-large.png#lightbox "带有蓝绿色组头单元格的 ListView")
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
