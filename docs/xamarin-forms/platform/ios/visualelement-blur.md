@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上 VisualElement 模糊
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用适用于 VisualElement 模糊 iOS 特定于平台的。
+title: IOS 上的 VisualElement 模糊
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的, 将模糊应用于 VisualElement。
 ms.prod: xamarin
 ms.assetid: 2DE3B65E-B96E-4ECD-92DF-AA42D5205C44
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 42db25a05cc902b1b52e45f73a55748c9920b8a5
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 2536902a03618fd50fad5019f79cb834b0c748f0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925217"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642961"
 ---
-# <a name="visualelement-blur-on-ios"></a>在 iOS 上 VisualElement 模糊
+# <a name="visualelement-blur-on-ios"></a>IOS 上的 VisualElement 模糊
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的使用进行模糊处理框架，下面的内容和可以应用到任意[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 设置使用在 XAML [ `VisualElement.BlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty)附加属性的值为[ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)枚举：
+此 iOS 平台特定用于对其下分层的内容进行模糊, 并可应用于任何[`VisualElement`](xref:Xamarin.Forms.VisualElement)内容。 设置使用在 XAML [ `VisualElement.BlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty)附加属性的值为[ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)枚举：
 
 ```xaml
 <ContentPage ...
@@ -53,6 +53,6 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: d703de90378991d262a4b056b9ebc98d183e3fb8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658724"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656562"
 ---
 # <a name="emotion-recognition-using-the-face-api"></a>使用人脸 API 的情感识别
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _人脸 API 作为输入，图像中采用的面部表情，并返回数据，其中包括在映像中每张人脸的情感集的置信度级别。此文章介绍了如何使用人脸 API 来识别情感进行评级的 Xamarin.Forms 应用程序。_
 
@@ -181,5 +181,5 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 ## <a name="related-links"></a>相关链接
 
 - [人脸 API](/azure/cognitive-services/face/overview/)。
-- [Todo 认知服务 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Todo 认知服务 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [人脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

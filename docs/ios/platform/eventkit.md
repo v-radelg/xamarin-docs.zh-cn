@@ -1,54 +1,54 @@
 ---
-title: 在 Xamarin.iOS EventKit
-description: 本文档介绍 EventKit 以及如何在 Xamarin.iOS 中使用它。 它讨论了日历、 日历事件和提醒，查看使用 EventKit，和的详细信息进行编程时常用的类。
+title: Xamarin 中的 EventKit
+description: 本文档介绍了 EventKit 以及如何在 Xamarin 中使用它。 它讨论了日历、日历事件和提醒, 查看了使用 EventKit 进行编程时通常使用的类。
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: ea03c8b382e2de29bd20ab1d696d7abb7733e182
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 881590b7b2b7277a2f8f2cc17ce1c8bdff68c626
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61369221"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655779"
 ---
-# <a name="eventkit-in-xamarinios"></a>在 Xamarin.iOS EventKit
+# <a name="eventkit-in-xamarinios"></a>Xamarin 中的 EventKit
 
-iOS 应用有两个日历相关内置： 日历应用程序，并提醒应用程序。 它非常明了，若要了解如何日历应用程序管理日历数据，但提醒应用程序是不太明显。 提醒可能会遇到这样时它们的原因，当它们在完成后，使用它们的相关联的日期等。在这种情况下，iOS 日历将所有数据都存储，无论是日历事件或提醒，在一个位置，调用*日历数据库*。
+iOS 中内置了两个日历相关的应用程序: 日历应用程序和提醒应用程序。 它非常简单, 足以了解日历应用程序管理日历数据的方式, 但提醒应用程序不太明显。 提醒实际上可能会有与这些日期相关联的日期、完成时间, 等等。因此, iOS 会将所有日历数据 (无论是日历事件还是提醒) 存储在一个位置 (称为*日历数据库*) 中。
 
-EventKit framework 提供了一种访问方法*日历*，*日历事件*，并*提醒*日历数据库存储的数据。 访问对日历和日历事件以来提供 iOS 4，但访问提醒 iOS 6 中的新增功能。
+EventKit 框架提供了一种方法, 用于访问日历数据库存储的*日历*、*日历事件*和*提醒*数据。 自 iOS 4 开始, 对 "日历" 和 "日历" 事件的访问已可用, 但对提醒的访问是 iOS 6 中的新增功能。
 
-在本指南中我们将介绍：
+在本指南中, 我们将介绍:
 
--   **EventKit 基础知识**– 这会引入 EventKit 通过主要类的基本组成部分，并且提供了其使用情况的了解。 需要处理文档的下一步的一部分之前阅读此部分。 
--   **常见任务**– 常见的任务部分用于将如何执行常见如下所述的快速参考; 枚举日历、 创建、 保存和检索日历事件和提醒，以及使用的内置控制器创建和修改日历事件。 本部分中需要读取从前到后，按其目的是为特定任务的引用。 
+-   **EventKit 基础知识**-这将通过主要类引入 EventKit 的基本部分, 并提供对其使用的了解。 在处理文档的下一部分之前, 此部分是必需的。 
+-   **常见任务**– "常见任务" 部分旨在作为常见操作 (如) 的快速参考。枚举日历、创建、保存和检索日历事件和提醒, 以及使用内置控制器创建和修改日历事件。 此部分不需要从前台读取, 因为它是特定任务的引用。 
 
 
-配套示例应用程序中提供了本指南中的所有任务：
+本指南中的所有任务都在随附示例应用程序中提供:
 
- [![](eventkit-images/01.png "随附示例应用程序屏幕")](eventkit-images/01.png#lightbox)
+ [![](eventkit-images/01.png "伴生示例应用程序屏幕")](eventkit-images/01.png#lightbox)
 
 ## <a name="requirements"></a>要求
 
-IOS 4.0 中引入了 EventKit 但 iOS 6.0 中引入了对提醒数据的访问。 在这种情况下，为常规 EventKit 开发，都需要至少面向版本 4.0 和 6.0 的提醒。
+IOS 4.0 中引入了 EventKit, 但在 iOS 6.0 中引入了对提醒数据的访问。 因此, 若要执行常规的 EventKit 开发, 你需要至少以4.0 版为目标, 以及6.0 以获得提醒。
 
-此外，提醒应用程序不在模拟器中，这意味着，提醒数据将还不可用，除非首先添加上可用。 此外，访问请求才会显示到实际设备上的用户。 在这种情况下，EventKit 开发最适合在设备上进行测试。
+此外, "提醒" 应用程序在模拟器上不可用, 这意味着提醒数据也将不可用, 除非首先添加它们。 此外, 访问请求仅在实际设备上显示给用户。 因此, 最好在设备上测试 EventKit 开发。
 
-## <a name="event-kit-basics"></a>事件工具包基础知识
+## <a name="event-kit-basics"></a>事件包基础
 
-在使用 EventKit，务必掌握的公共类，其使用情况。 所有这些类可在`EventKit`并`EventKitUI`(对于`EKEventEditController`)。
+使用 EventKit 时, 请务必抓住公共类及其用法。 所有这些类都可以在`EventKit`和`EventKitUI`中找到 (适用`EKEventEditController`于)。
 
 ### <a name="eventstore"></a>EventStore
 
-*EventStore*类是在 EventKit 中最重要的类，因为它所需 EventKit 中执行任何操作。 它可以认为的永久性存储或数据库引擎，为所有 EventKit 数据。 从`EventStore`有权访问的日历和日历应用程序中的日历事件以及提醒应用程序中的提醒。
+*EventStore*类是 EventKit 中最重要的类, 因为需要在 EventKit 中执行任何操作。 可以将其视为适用于所有 EventKit 数据的持久存储或数据库引擎。 `EventStore`你可以在日历应用程序中访问日历和日历事件, 还可以在提醒应用程序中访问提醒。
 
-因为`EventStore`是如数据库引擎，它应该是生存期较长，这意味着，它应创建并在应用程序实例的生存期内销毁降至最低。 事实上，我们建议创建的一个实例后`EventStore`在应用程序，则使围绕该引用的整个生存期内的应用程序，除非您确信不会再次需要。 此外，所有调用应都转到单个`EventStore`实例。 出于此原因，单一实例模式被建议用于保持可用的单一实例。
+由于`EventStore`相当于数据库引擎, 因此它应该是长时间生存期, 这意味着在应用程序实例的生存期内, 应尽可能少地创建并销毁它。 事实上, 建议您`EventStore`在应用程序中创建一个的实例后, 在应用程序的整个生存期内保留该引用, 除非您确定不再需要它。 此外, 所有调用都应转为单个`EventStore`实例。 出于此原因, 建议使用单一实例模式使单个实例可用。
 
 #### <a name="creating-an-event-store"></a>创建事件存储
 
-以下代码演示了创建的单个实例的有效方法`EventStore`类，并使其以静态方式从应用程序中可用：
+下面的代码演示了一种有效的方法, 可创建`EventStore`类的单个实例, 并使其在应用程序中静态可用:
 
 ```csharp
 public class App
@@ -74,17 +74,17 @@ public class App
 }
 ```
 
-上面的代码使用单一实例模式来实例化的实例`EventStore`应用程序加载时。 `EventStore`可以访问全局范围内从应用程序中，如下所示：
+上面的代码使用单独模式在应用程序加载时实例化`EventStore`的实例。 然后`EventStore` , 可以从应用程序中全局访问, 如下所示:
 
 ```csharp
 App.Current.EventStore;
 ```
 
-请注意，此处中的所有示例都使用此模式中，因此它们引用`EventStore`通过`App.Current.EventStore`。
+请注意, 此处的所有示例都使用此模式, 因此它们`EventStore`通过`App.Current.EventStore`引用。
 
 #### <a name="requesting-access-to-calendar-and-reminder-data"></a>请求访问日历和提醒数据
 
-然后才允许访问通过 EventStore 任何数据，应用程序必须首先请求访问日历的事件数据或提醒数据，具体取决于哪一种需要。 以帮助实现这一点，`EventStore`公开一个名为方法`RequestAccess`的 — 调用时，将向用户告知应用程序正在请求访问的日历数据或提醒数据，具体取决于哪个显示警报视图`EKEntityType`传递给它。 因为它会发出警报的视图，该调用是异步的并且将调用完成处理程序作为传递`NSAction`（或 Lambda） 向其以接收两个参数; 一个布尔值，该值指示是否已授予访问权限的和`NSError`，而后者如果 not null 将包含在请求中的任何错误信息。 例如，以下编码将请求访问日历事件数据并显示警报查看如果未授予的请求。
+在允许通过 EventStore 访问任何数据之前, 应用程序必须先请求访问日历事件数据或提醒数据, 具体取决于所需的数据。 为了便于实现这一点`EventStore` , 会公开一个`RequestAccess`名为的方法, 该方法在调用时向用户显示一个警报视图, 告诉他们应用程序正在请求访问日历数据或提醒数据, 具体取决`EKEntityType`于传递给它。 由于调用是异步的, 因此调用是异步的, 并且将调用作为`NSAction` (或 Lambda) 传递给它的完成处理程序, 该处理程序将接收两个参数; 是否授予`NSError`访问权限的布尔值; 如果不为 null, 则为。包含请求中的任何错误信息。 例如, 以下代码将请求访问日历事件数据, 并在未授予请求时显示警报视图。
 
 ```csharp
 App.Current.EventStore.RequestAccess (EKEntityType.Event, 
@@ -98,28 +98,28 @@ App.Current.EventStore.RequestAccess (EKEntityType.Event,
             } );
 ```
 
-后已授予的请求，它将记住，只要该应用程序在设备上安装，不会弹出警报给用户。
-但是，访问仅提供给资源，日历事件或提醒授予的类型。 如果应用程序需要访问权限，则应请求两者。
+授予请求后, 只要在设备上安装了应用程序, 就会记住该请求, 而不会向用户弹出警报。
+但是, 只会将访问权限分配给所授予的资源类型。 如果应用程序需要访问两者, 则它应同时请求两个。
 
-记住权限，因为它是相对比较便宜，因此，最好始终在执行操作之前请求访问每次发出请求。
+因为需要记住权限, 所以每次发出请求相对便宜, 因此最好始终在执行操作之前请求访问。
 
-此外，由于完成处理程序在单独的 (非 UI) 线程上调用的因此完成处理程序中的用户界面的任何更新应调用通过`InvokeOnMainThread`，否则将引发异常，并且未被捕获，如果应用程序将崩溃。
+此外, 由于在单独的 (非 UI) 线程上调用了完成处理程序, 因此在完成处理程序中对 UI 的任何更新都应该`InvokeOnMainThread`通过调用, 否则将会引发异常, 如果未捕获, 应用程序会崩溃。
 
 ### <a name="ekentitytype"></a>EKEntityType
 
-`EKEntityType` 是一个枚举，描述类型的`EventKit`项或数据。 它有两个值：`Event`和提醒。 使用多种方法，包括`EventStore.RequestAccess`告诉`EventKit`要有权访问或检索的数据类型。
+`EKEntityType`描述项或数据类型的`EventKit`枚举。 它有两个值`Event` : 和提醒。 它用于多种方法, 包括`EventStore.RequestAccess`告诉`EventKit`要访问或检索的数据类型。
 
 ### <a name="ekcalendar"></a>EKCalendar
 
- *EKCalendar*表示一种日历，其中包含的一组日历事件。 日历可以存储在多个不同位置，如在本地， *iCloud*中的第三方提供程序位置，如*Exchange Server*或*Google*，等等。很多时候`EKCalendar`用于告知`EventKit`何处寻找的事件或将其保存的位置。
+ *EKCalendar*表示日历, 其中包含一组日历事件。 可以在很多不同的位置 (例如, 在本地, 以*iCloud*形式) 将日历存储在第三方提供商位置 (如*Exchange Server*或*Google*等) 中。多次`EKCalendar`用于指示`EventKit`在何处查找事件或在何处保存事件。
 
 ### <a name="ekeventeditcontroller"></a>EKEventEditController
 
- *EKEventEditController*可在`EventKitUI`命名空间，并且是可用于编辑或创建日历事件的内置控制器。 非常像内置照相机控制器`EKEventEditController`会为您显示 UI 和处理保存中完成繁重的任务。
+ 可在`EventKitUI`命名空间中找到 EKEventEditController, 它是可用于编辑或创建日历事件的内置控制器。 与内置照相机控制器非常相似, `EKEventEditController`它会增加 UI 的显示, 并处理保存。
 
 ### <a name="ekevent"></a>EKEvent
 
- *EKEvent*表示日历事件。 这两`EKEvent`并`EKReminder`继承`EKCalendarItem`和具有字段，例如`Title`， `Notes`，依次类推。
+ *EKEvent*表示日历事件。 `EKEvent` `Title`和从`EKReminder` `Notes`和继承,并且具有、等字段。`EKCalendarItem`
 
 ### <a name="ekreminder"></a>EKReminder
 
@@ -127,28 +127,28 @@ App.Current.EventStore.RequestAccess (EKEntityType.Event,
 
 ### <a name="ekspan"></a>EKSpan
 
-*EKSpan*是一个枚举，用于描述事件时修改的事件可以重复发生，并且有两个值的范围：*ThisEvent*并*FutureEvents*。 `ThisEvent` 表示的任何更改将只发生到正在引用的序列中的特定事件而`FutureEvents`会影响该事件和所有将来的重复周期。
+*EKSpan*是一个枚举, 用于描述修改可以重复的事件时的事件范围, 并有两个值:*ThisEvent*和*FutureEvents*。 `ThisEvent`这意味着, 任何更改只会发生在正在引用的序列中的特定事件, 而`FutureEvents`会影响该事件和所有将来的重复周期。
 
 ## <a name="tasks"></a>任务
 
-为了方便使用，EventKit 使用情况已被拆分成以下各节中所述的常见任务。
+为了便于使用, EventKit 的用法已分解为常见任务, 如以下各节所述。
 
-### <a name="enumerate-calendars"></a>枚举的日历
+### <a name="enumerate-calendars"></a>枚举日历
 
-若要枚举已在设备配置了用户的日历，请调用`GetCalendars`上`EventStore`并传递你希望接收的日历 （提醒或事件） 的类型：
+若要枚举用户在设备上配置的日历, 请调用`GetCalendars` `EventStore` , 并传递要接收的日历的类型 (提醒或事件):
 
 ```csharp
 EKCalendar[] calendars = 
 App.Current.EventStore.GetCalendars ( EKEntityType.Event );
 ```
 
-### <a name="add-or-modify-an-event-using-the-built-in-controller"></a>添加或修改使用内置的控制器的事件
+### <a name="add-or-modify-an-event-using-the-built-in-controller"></a>使用内置控制器添加或修改事件
 
-*EKEventEditViewController*为您做了大量繁重的任务，如果你想要创建或编辑具有相同的 UI，使用日历应用程序时，向用户显示的事件：
+如果要使用日历应用程序在使用日历应用程序时向用户显示的同一 UI 创建或编辑事件, *EKEventEditViewController*会为你执行大量繁重的操作:
 
- [![](eventkit-images/02.png "使用日历应用程序时，向用户显示 UI")](eventkit-images/02.png#lightbox)
+ [![](eventkit-images/02.png "使用日历应用程序时向用户显示的 UI")](eventkit-images/02.png#lightbox)
 
-若要使用它，您需要将其声明为类级别变量，以便它不会作为垃圾回收时获得方法中声明：
+若要使用此方法, 您需要将其声明为类级别的变量, 以便在方法中声明时不会进行垃圾回收:
 
 ```csharp
 public class HomeController : DialogViewController
@@ -158,7 +158,7 @@ public class HomeController : DialogViewController
 }
 ```
 
-然后，若要启动它： 它进行实例化、 为其提供的引用`EventStore`，接通*EKEventEditViewDelegate*委托给它，并显示其使用`PresentViewController`:
+然后, 若要启动该程序, 请将其实例化, 并`EventStore`为其指定一个对的引用, 将*EKEventEditViewDelegate*委托连接到它`PresentViewController`, 然后使用以下内容显示它:
 
 ```csharp
 EventKitUI.EKEventEditViewController eventController = 
@@ -175,7 +175,7 @@ eventController.EditViewDelegate = eventControllerDelegate;
 PresentViewController ( eventController, true, null );
 ```
 
-（可选） 如果你想要预填充该事件，您可以创建一个新事件 （如下所示），也可以检索已保存的事件：
+(可选) 若要预先填充事件, 可以创建全新的事件 (如下所示), 也可以检索保存的事件:
 
 ```csharp
 EKEvent newEvent = EKEvent.FromStore ( App.Current.EventStore );
@@ -188,15 +188,15 @@ newEvent.Title = "Get outside and exercise!";
 newEvent.Notes = "This is your reminder to go and exercise for 30 minutes.”;
 ```
 
-如果想要预填充 UI，请确保在控制器上设置的事件属性：
+如果确实要预填充 UI, 请确保在控制器上设置事件属性:
 
 ```csharp
 eventController.Event = newEvent;
 ```
 
-若要使用的现有事件，请参阅*检索事件 ID 通过*部分更高版本上。
+若要使用现有事件, 请参阅后面的*按 ID 检索事件*部分。
 
-委托应重写`Completed`方法，该用户已完成与对话框时，控制器会调用方法：
+委托应该重写`Completed`方法, 该方法在用户使用对话框完成后由控制器调用:
 
 ```csharp
 protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
@@ -219,7 +219,7 @@ protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
 }
 ```
 
-（可选） 在委托中，可以检查*操作*中`Completed`方法可以修改事件并将其重新保存，或执行其他操作，如果取消，等：
+(可选) 在委托中, 可以检查`Completed`方法中的*操作*以修改事件并重新保存, 或者执行其他操作 (如果已取消) 等:
 
 ```csharp
 public override void Completed (EventKitUI.EKEventEditViewController controller, EKEventEditViewAction action)
@@ -241,9 +241,9 @@ public override void Completed (EventKitUI.EKEventEditViewController controller,
 }
 ```
 
-### <a name="creating-an-event-programmatically"></a>以编程方式创建一个事件
+### <a name="creating-an-event-programmatically"></a>以编程方式创建事件
 
-若要在代码中创建的事件，请使用*FromStore*上的工厂方法`EKEvent`类，并对其设置的任何数据：
+若要在代码中创建事件, 请  在`EKEvent`类上使用 FromStore 工厂方法, 并在其上设置任何数据:
 
 ```csharp
 EKEvent newEvent = EKEvent.FromStore ( App.Current.EventStore );
@@ -256,30 +256,30 @@ newEvent.Title = "Get outside and do some exercise!";
 newEvent.Notes = "This is your motivational event to go and do 30 minutes of exercise. Super important. Do this.";
 ```
 
-必须设置要在中，保存该事件的日历，但如果您有没有首选项，则可以使用默认值：
+必须设置要保存事件的日历, 但如果没有首选项, 则可以使用默认值:
 
 ```csharp
 newEvent.Calendar = App.Current.EventStore.DefaultCalendarForNewEvents;
 ```
 
-若要保存该事件，请调用*SaveEvent*方法`EventStore`:
+若要保存事件, 请对调用*SaveEvent*方法`EventStore`:
 
 ```csharp
 NSError e;
 App.Current.EventStore.SaveEvent ( newEvent, EKSpan.ThisEvent, out e );
 ```
 
-保存后， *EventIdentifier*属性将更新为可用于更高版本中检索事件的唯一标识符：
+保存后, 将使用可用于检索事件的唯一标识符更新*EventIdentifier*属性:
 
 ```csharp
 Console.WriteLine ("Event Saved, ID: " + newEvent.CalendarItemIdentifier);
 ```
 
- `EventIdentifier` 是一个字符串格式的 GUID。
+ `EventIdentifier`是字符串格式的 GUID。
 
 ### <a name="create-a-reminder-programmatically"></a>以编程方式创建提醒
 
-在代码中创建提醒是类似于创建日历事件：
+在代码中创建提醒与创建日历事件大致相同:
 
 ```csharp
 EKReminder reminder = EKReminder.Create ( App.Current.EventStore );
@@ -287,60 +287,60 @@ reminder.Title = "Do something awesome!";
 reminder.Calendar = App.Current.EventStore.DefaultCalendarForNewReminders;
 ```
 
-若要保存，请调用*SaveReminder*方法`EventStore`:
+若要保存, 请对调用*SaveReminder*方法`EventStore`:
 
 ```csharp
 NSError e;
 App.Current.EventStore.SaveReminder ( reminder, true, out e );
 ```
 
-### <a name="retrieving-an-event-by-id"></a>检索按 ID 的事件
+### <a name="retrieving-an-event-by-id"></a>按 ID 检索事件
 
-若要通过它来检索事件 ID，请使用*EventFromIdentifier*方法`EventStore`并将其传递`EventIdentifier`从事件提取：
+若要按 ID 检索事件, 请在上`EventStore`使用*EventFromIdentifier*方法, `EventIdentifier`并向其传递从事件中提取的:
 
 ```csharp
 EKEvent mySavedEvent = App.Current.EventStore.EventFromIdentifier ( newEvent.EventIdentifier );
 ```
 
-对于事件，还有其他两个标识符属性，但`EventIdentifier`是仅适用于此的一种。
+对于事件, 有两个其他标识符属性, 但`EventIdentifier`是唯一可用于此的标识符属性。
 
-### <a name="retrieving-a-reminder-by-id"></a>检索按 ID 提醒
+### <a name="retrieving-a-reminder-by-id"></a>按 ID 检索提醒
 
-若要检索提醒，请使用*GetCalendarItem*方法`EventStore`并将其传递*CalendarItemIdentifier*:
+若要检索提醒, 请对使用*GetCalendarItem*方法`EventStore` , 并将其传递给*CalendarItemIdentifier*:
 
 ```csharp
 EKCalendarItem myReminder = App.Current.EventStore.GetCalendarItem ( reminder.CalendarItemIdentifier );
 ```
 
-因为`GetCalendarItem`将返回`EKCalendarItem`，必须强制转换为`EKReminder`您是否需要访问提醒数据或使用作为实例`EKReminder`更高版本。
+由于`GetCalendarItem` `EKReminder`返回, 因此必须将其强制转换为, 前提是需要访问`EKReminder`提醒数据或将实例用作后面的实例。 `EKCalendarItem`
 
-不要使用`GetCalendarItem`对于日历事件，因为在撰写本文之际，它不起作用。
+不要将`GetCalendarItem`用于日历事件, 在撰写本文时, 它不起作用。
 
 ### <a name="deleting-an-event"></a>删除事件
 
-若要删除的日历事件，调用*RemoveEvent*上你`EventStore`，并将传递到事件，然后使用适当的引用`EKSpan`:
+若要删除日历事件, 请  在上`EventStore`调用 RemoveEvent, 并将引用传递给该事件, 并`EKSpan`使用相应的:
 
 ```csharp
 NSError e;
 App.Current.EventStore.RemoveEvent ( mySavedEvent, EKSpan.ThisEvent, true, out e);
 ```
 
-请注意但是，事件已被删除后，事件引用将被`null`。
+但请注意, 在删除事件之后, 事件引用将为`null`。
 
 ### <a name="deleting-a-reminder"></a>删除提醒
 
-若要删除提醒，调用*RemoveReminder*上`EventStore`，并将传递到提醒的引用：
+若要删除提醒, 请  对调用 RemoveReminder `EventStore` , 并将引用传递给提醒:
 
 ```csharp
 NSError e;
 App.Current.EventStore.RemoveReminder ( myReminder as EKReminder, true, out e);
 ```
 
-请注意，在上面的代码没有强制转换为`EKReminder`，这是因为`GetCalendarItem`用于对其进行检索
+请注意, 在上面的代码中, 有一个`EKReminder`转换为`GetCalendarItem` , 因为用于检索它
 
 ### <a name="searching-for-events"></a>搜索事件
 
-若要搜索的日历事件，必须创建*NSPredicate*通过对象*PredicateForEvents*方法`EventStore`。 `NSPredicate`是一种查询的数据对象的 iOS 使用查找匹配项：
+要搜索日历事件, 必须通过上的*PredicateForEvents* `EventStore`方法创建*NSPredicate*对象。 `NSPredicate`是 iOS 用于查找匹配项的查询数据对象:
 
 ```csharp
 DateTime startDate = DateTime.Now.AddDays ( -7 );
@@ -349,18 +349,18 @@ DateTime endDate = DateTime.Now;
 NSPredicate query = App.Current.EventStore.PredicateForEvents ( startDate, endDate, null );
 ```
 
-创建后`NSPredicate`，使用*EventsMatching*方法`EventStore`:
+创建`NSPredicate`后, 使用上`EventStore`的*EventsMatching*方法:
 
 ```csharp
 // execute the query
 EKCalendarItem[] events = App.Current.EventStore.EventsMatching ( query );
 ```
 
-请注意查询是同步 （阻止），可能需要较长的时间，具体取决于查询，因此你可能想要启动新线程或任务以执行此操作。
+请注意, 查询是同步的 (阻止), 可能需要很长时间, 具体取决于查询, 因此, 你可能需要启动一个新的线程或任务来执行此操作。
 
 ### <a name="searching-for-reminders"></a>搜索提醒
 
-搜索提醒的是类似于事件;它需要一个谓词，但调用已是异步的因此无需担心如何阻止线程：
+搜索提醒类似于事件;它需要谓词, 但调用已是异步的, 因此您无需担心阻塞线程:
 
 ```csharp
 // create our NSPredicate which we'll use for the query
@@ -375,11 +375,11 @@ App.Current.EventStore.FetchReminders (
 
 ## <a name="summary"></a>总结
 
-本文档提供的 EventKit 框架中，这两个重要组件和许多最常见任务的概述。 但是，EventKit 框架是非常大而且功能强大，，包括尚未引入了此处，如的功能： 批量更新，配置警报，针对事件，注册并侦听更改日历数据库上配置重复周期设置地域隔离区和的详细信息。  有关详细信息，请参阅 Apple[日历和提醒编程指南](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)。
+本文档概述了 EventKit 框架的重要部分和多个最常见的任务。 不过, EventKit 框架非常大且功能强大, 其中包括未在此处引入的功能, 例如: 批处理更新、配置警报、配置事件的重复周期、注册和侦听日历数据库上的更改。设置现成等。  有关详细信息, 请参阅 Apple 的[日历和提醒编程指南](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [日历 （示例）](https://developer.xamarin.com/samples/monotouch/Calendars/)
+- [日历 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/calendars)
 - [iOS 6 简介](~/ios/platform/introduction-to-ios6/index.md)
 - [日历和提醒简介](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)

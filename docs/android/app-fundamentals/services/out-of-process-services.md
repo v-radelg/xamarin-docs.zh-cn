@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: aaecc0da52fe692840ed928946963a995364fa9f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509187"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644090"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在远程进程中运行 Android 服务
 
@@ -386,7 +386,7 @@ Android 提供四种不同的权限级别:
 
 * **正常**&ndash;这是默认权限级别。 它用于标识可由 Android 自动向请求它的客户端授予的低风险权限。 用户不必显式授予这些权限, 但可以在应用设置中查看权限。
 * **签名**&ndash;这是一种特殊的权限类别, 由 Android 自动授予使用同一证书签名的应用程序。 此权限旨在使应用程序开发人员能够轻松地在应用程序之间共享组件或数据, 而无需麻烦用户进行持续审批。
-* **signatureOrSystem**这非常类似于上面所述的签名权限。  &ndash; 除了自动授予由同一证书签名的应用之外, 还会将此权限授予已签名证书的应用, 该证书用于对随 Android 系统映像安装的应用进行签名。 此权限通常仅由 Android ROM 开发人员用于允许其应用程序使用第三方应用。 这种情况通常不是指一般的公开分发的应用程序。
+* **signatureOrSystem**这非常类似于上面所述的签名权限。 &ndash; 除了自动授予由同一证书签名的应用之外, 还会将此权限授予已签名证书的应用, 该证书用于对随 Android 系统映像安装的应用进行签名。 此权限通常仅由 Android ROM 开发人员用于允许其应用程序使用第三方应用。 这种情况通常不是指一般的公开分发的应用程序。
 * **危险**&ndash;危险权限是指那些可能会给用户带来问题的权限。 出于此原因, 必须由用户显式批准**危险**权限。
 
 由于`signature` 和`normal`权限是在安装时由 Android 自动授予的, 因此在包含客户端的 APK**之前**安装 APK 托管服务是非常重要的。 如果首先安装客户端, 则 Android 不会授予权限。 在这种情况下, 需要卸载客户端 APK, 安装服务 APK, 然后重新安装客户端 APK。
@@ -415,7 +415,7 @@ Android 提供四种不同的权限级别:
 
 若要使用自定义权限, 则在客户端显式请求该权限时, 此服务将声明该权限。
 
-若要在服务 APK 中创建权限, 请`permission`将元素添加到 androidmanifest.xml `manifest`中的元素。 此权限必须`name`设置、 `protectionLevel`和`label`属性。 `name`特性必须设置为唯一标识该权限的字符串。 该名称将显示在**Android 设置**的 "**应用信息**" 视图中 (如下一节所示)。
+若要在服务 APK 中创建权限, 请`permission`将元素添加到 androidmanifest.xml `manifest`中的  元素。 此权限必须`name`设置、 `protectionLevel`和`label`属性。 `name`特性必须设置为唯一标识该权限的字符串。 该名称将显示在**Android 设置**的 "**应用信息**" 视图中 (如下一节所示)。
 
 `protectionLevel`特性必须设置为上面所述的四个字符串值之一。  `label` 和`description`必须引用字符串资源, 并用于向用户提供用户友好名称和说明。
 
@@ -488,4 +488,4 @@ Android 提供四种不同的权限级别:
 - [进程和线程](https://developer.android.com/guide/components/processes-and-threads.html)
 - [Android 清单-权限](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms)
 - [安全提示](https://developer.android.com/training/articles/security-tips.html)
-- [MessengerServiceDemo (示例)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/MessengerServiceDemo/)
+- [MessengerServiceDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-messengerservicedemo)

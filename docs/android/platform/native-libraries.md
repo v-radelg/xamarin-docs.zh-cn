@@ -6,31 +6,31 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1b0771a0ccc2597ebd800468b82044e4020d9d94
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d3e5b36f2cbc48dac09b55bfba8c3613db12bbc8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153303"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643274"
 ---
 # <a name="using-native-libraries"></a>使用本机库
 
-Xamarin.Android 支持通过标准的 PInvoke 机制的本机库的使用。 此外可以绑定其他本机库，后者不是你.apk 到操作系统的一部分。
+Xamarin 支持通过标准 PInvoke 机制使用本机库。 你还可以将不属于 OS 的其他本机库绑定到你的 apk。
 
-若要部署 Xamarin.Android 应用程序使用的本机库，将二进制库添加到项目并设置其**生成操作**到**AndroidNativeLibrary**。
+若要使用 Xamarin Android 应用程序部署本机库, 请将库的二进制文件添加到项目中, 并将其**生成操作**设置为**AndroidNativeLibrary**。
 
-若要部署使用 Xamarin.Android 类库项目的本机库，将二进制库添加到项目并设置其**生成操作**到**EmbeddedNativeLibrary**。
+若要使用 Xamarin Android 库项目部署本机库, 请将库的二进制文件添加到项目, 并将其**生成操作**设置为**EmbeddedNativeLibrary**。
 
-请注意，由于 Android 支持多个应用程序二进制接口 (Abi)，则 Xamarin.Android 必须知道本机库专为哪个 ABI。
+请注意, 由于 Android 支持多个应用程序二进制接口 (Abi), 因此, Xamarin 必须知道为其生成本机库的 ABI。
 可以通过两种方法完成：
 
-1.  路径"探查"
-1.  通过使用`AndroidNativeLibrary/Abi`位于项目文件中的元素
+1.  路径 "窃听"
+1.  通过使用`AndroidNativeLibrary/Abi`项目文件中的元素
 
 
-通过路径探查，本机库的父目录名称用于指定库的目标 ABI。 因此，如果您将添加`lib/armeabi/libfoo.so`到项目中，然后 ABI 将被"探查"为`armeabi`。
+通过路径探查，本机库的父目录名称用于指定库的目标 ABI。 因此, 如果将添加`lib/armeabi/libfoo.so`到项目, 则 ABI 将为 "探查`armeabi`"。
 
-或者，可以编辑项目文件显式指定 ABI 使用：
+或者, 你可以编辑项目文件以显式指定要使用的 ABI:
 
 ```xml
 <ItemGroup>
@@ -40,24 +40,24 @@ Xamarin.Android 支持通过标准的 PInvoke 机制的本机库的使用。 此
 </ItemGroup>
 ```
 
-有关使用本机库的详细信息，请参阅[互操作使用本机库](https://www.mono-project.com/docs/advanced/pinvoke/)。
+有关使用本机库的详细信息, 请参阅[使用本机库的互操作](https://www.mono-project.com/docs/advanced/pinvoke/)。
 
-## <a name="debugging-native-code-with-visual-studio"></a>使用 Visual Studio 调试本机代码
+## <a name="debugging-native-code-with-visual-studio"></a>在 Visual Studio 中调试本机代码
 
-如果您使用的*Visual Studio 2019*或*Visual Studio 2017*，无需修改你的项目文件，如上文所述。
-可以生成和调试C++添加到项目引用在 Xamarin.Android 解决方案内C++**动态共享库 (Android)** 项目。
+如果使用的是*Visual studio 2019*或*visual studio 2017*, 则无需像上文所述修改项目文件。
+可以通过添加对C++ C++ **动态共享库 (Android)** 项目的项目引用, 在 Xamarin Android 解决方案内生成和调试。
 
-若要调试本机C++在项目中的代码，执行以下步骤：
+若要在C++项目中调试本机代码, 请执行以下步骤:
 
-1. 双击项目**属性**，然后选择**Android 选项**页。
-2. 向下滚动到**调试选项**。
-3. 在中**调试器**下拉列表菜单中，选择**C++** (而不是默认值 **/.net (Xamarin)**)。
+1. 双击 "项目**属性**", 然后选择 " **Android 选项**" 页。
+2. 向下滚动到 "**调试选项**"。
+3. 在**调试器**下拉菜单中, 选择**C++** (而不是默认的 **.net (Xamarin)** )。
 
-Visual StudioC++开发人员可以查看[SanAngeles_NativeDebug](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)示例尝试来调试C++从 Visual Studio 2019 或使用 Xamarin; Visual Studio 2017 和是指我们[博客文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)的详细信息信息。
+Visual Studio C++开发人员可以查看[SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)示例, 尝试从C++ visual Studio 2019 或带 Xamarin 的 visual studio 2017 进行调试;有关详细信息, 请参阅我们的[博客文章](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [SanAngeles_NativeDebug (sample)](https://developer.xamarin.com/samples/monodroid/SanAngeles_NDK/)
+- [SanAngeles_NativeDebug (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)
 - [开发 Xamarin Android 本机应用程序](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

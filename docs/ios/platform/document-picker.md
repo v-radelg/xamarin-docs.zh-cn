@@ -1,78 +1,78 @@
 ---
-title: 在 Xamarin.iOS 中的文档选取器
-description: 本文档介绍 iOS 文档选取器，并讨论如何在 Xamarin.iOS 中使用它。 它将介绍 iCloud、 文档、 公共安装程序代码、 文档提供程序扩展和的详细信息。
+title: Xamarin 中的文档选取器
+description: 本文档介绍 iOS 文档选取器并讨论如何在 Xamarin 中使用它。 它会查看 iCloud、文档、通用安装代码、文档提供程序扩展等。
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: ac77bbc27784d1b836f4a1d26365acd65ac63ae7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4bbb8559108573ef8204ceb5eac900802f9d7134
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61426032"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646021"
 ---
-# <a name="document-picker-in-xamarinios"></a>在 Xamarin.iOS 中的文档选取器
+# <a name="document-picker-in-xamarinios"></a>Xamarin 中的文档选取器
 
-文档选取器允许在应用之间共享文档。 这些文档可能存储在 iCloud 中或不同应用程序的目录中。 通过组的共享文档[文档提供程序扩展](~/ios/platform/extensions.md)用户在其设备上安装。 
+文档选取器允许在应用之间共享文档。 这些文档可以存储在 iCloud 或其他应用的目录中。 文档通过用户在其设备上安装的一组[文档提供程序扩展](~/ios/platform/extensions.md)来共享。 
 
-由于保持在应用程序和云同步的文档的难度，但带来了一定的必要的复杂性。
+由于跨应用和云保持文档同步非常困难, 它们会引入一定程度的必要的复杂性。
 
 ## <a name="requirements"></a>要求
 
-以下被所要完成本文中介绍的步骤：
+若要完成本文中所述的步骤, 需要满足以下要求:
 
--  **Xcode 7 和 iOS 8 或更高版本**– Apple 的 Xcode 7 和 iOS 8 或较新的 Api 需要安装并配置开发人员的计算机上。
--  **Visual Studio 或 Visual Studio for Mac** – 应安装 Visual Studio for Mac 的最新版本。
--  **iOS 设备**– iOS 的设备运行 iOS 8 或更高版本。
+-  需要在开发人员的计算机上安装和配置**Xcode 7 和 ios 8 或更高版本**的 Xcode 7 和 ios 8 或更高版本的 api。
+-  **Visual Studio 或 Visual Studio for Mac** –应安装最新版本的 Visual Studio for Mac。
+-  **Ios 设备**-运行 ios 8 或更高版本的 ios 设备。
 
-## <a name="changes-to-icloud"></a>更改到 iCloud
+## <a name="changes-to-icloud"></a>更改为 iCloud
 
-若要实现文档选取器的新功能，具有到 Apple 的 iCloud 服务已做出以下更改：
+若要实现文档选取器的新功能, 已对 Apple 的 iCloud 服务进行了以下更改:
 
--  ICloud 守护程序已使用 CloudKit 完全重新编写。
--  现有 iCloud 功能已被重命名 iCloud 驱动器。
--  对 Microsoft Windows 操作系统的支持已添加到 iCloud。
--  在 Mac OS 查找器中添加了 iCloud 文件夹。
--  iOS 设备可以访问的 Mac OS iCloud 文件夹的内容。
+-  已使用 CloudKit 完全重新编写 iCloud 后台程序。
+-  现有 iCloud 功能已重命名为 iCloud 驱动器。
+-  已将对 Microsoft Windows 操作系统的支持添加到 iCloud。
+-  Mac OS 查找程序中添加了一个 iCloud 文件夹。
+-  iOS 设备可以访问 Mac OS iCloud 文件夹的内容。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
 
 ## <a name="what-is-a-document"></a>什么是文档？
 
-如果引用到 iCloud 中的文档，它是单个独立的实体，应识别的用户的这种情况下。 用户可能想要修改文档或将其与其他用户共享 （通过使用电子邮件，例如）。
+当引用 iCloud 中的文档时, 该文档是单个独立的实体, 应视为用户。 用户可能想要修改文档或将其与其他用户共享 (例如, 通过使用电子邮件)。
 
-有多种类型的文件，用户将立即领悟到为文档，如页、 主题演讲或数字文件。 但是，iCloud 不局限于这一概念。 例如，可以视为文档 （如 Chess 匹配项） 的游戏的状态并将其存储在 iCloud 中。 此文件可能用户的设备之间传递，以便能够选取一个游戏上次退出的位置不同的设备上。
+用户可以将多种类型的文件立即识别为文档, 如页面、主题或数字文件。 但 iCloud 并不局限于这一概念。 例如, 游戏的状态 (如国际象棋匹配) 可以视为文档并存储在 iCloud 中。 此文件可以在用户的设备之间传递, 并允许他们在不同设备上从其开始的位置选择游戏。
 
 ## <a name="dealing-with-documents"></a>处理文档
 
-之前深入分析代码需要文档选取器中使用 Xamarin，这篇文章将介绍使用 iCloud 文档的最佳实践，对现有的 Api 进行修改的几个支持文档选取器所需。
+在深入探讨在 Xamarin 中使用文档选取器所需的代码之前, 本文将介绍使用 iCloud 文档的最佳实践, 以及对支持文档选取器所需的现有 Api 所做的一些修改。
 
 ### <a name="using-file-coordination"></a>使用文件协调
 
-由于可以从多个不同位置修改一个文件，因此必须使用协调，以防止数据丢失。
+因为文件可以从多个不同的位置修改, 所以必须使用协调来防止数据丢失。
 
  [![](document-picker-images/image1.png "使用文件协调")](document-picker-images/image1.png#lightbox)
 
-让我们看看上图中：
+让我们看看上图:
 
-1.  使用文件协调的 iOS 设备创建一个新文档，并将其保存到 iCloud 文件夹。
-2.  iCloud 将修改后的文件保存到云的分发到每个设备。
-3.  附加的 Mac 看到 iCloud 文件夹中的已修改的文件，并使用文件协调下所做的更改将复制到文件。
-4.  不使用文件协调在设备会对文件进行更改，并将其保存到 iCloud 文件夹。 这些更改会立即复制到其他设备。
+1.  使用文件协调的 iOS 设备会创建一个新文档, 并将其保存到 iCloud 文件夹中。
+2.  iCloud 将修改后的文件保存到云中, 以便分发给每个设备。
+3.  附加的 Mac 查看 iCloud 文件夹中修改的文件, 并使用文件协调将更改复制到该文件中。
+4.  不使用文件协调的设备会对文件进行更改并将其保存到 iCloud 文件夹中。 这些更改会立即复制到其他设备。
 
-假设原始 iOS 设备或 Mac 已编辑文件，现在他们的更改已丢失和覆盖来自不协调的设备的文件的版本。 若要防止数据丢失，文件协调时必须使用基于云的文档。
+假设原始 iOS 设备或 Mac 正在编辑该文件, 现在, 其更改会丢失, 并会被不协调设备中的文件版本覆盖。 若要防止数据丢失, 文件协调在使用基于云的文档时是必需的。
 
 ### <a name="using-uidocument"></a>使用 UIDocument
 
- `UIDocument` 使事情变得简单 (或`NSDocument`在 macOS 上) 通过执行所有繁重的工作为开发人员。 它提供了使用后台队列以防止阻止应用程序的 UI 构建文件结合使用。
+ `UIDocument`通过对开发人员执行`NSDocument`所有繁重的操作, 使操作简单 (或在 macOS 上)。 它提供与后台队列的内置文件协调, 防止阻止应用程序的 UI。
 
- `UIDocument` 公开多个，简化开发工作的 Xamarin 应用程序的任何目的，开发人员的高级 Api 要求。
+ `UIDocument`公开多个高级别 Api, 这些 Api 可简化 Xamarin 应用程序的开发工作, 以实现开发人员所需的任何目的。
 
-下面的代码创建的子类`UIDocument`来实现的可用于存储和从 iCloud 中检索文本的泛型基于文本的文档：
+下面的代码将创建一个子类`UIDocument` , 以实现可用于存储和检索 iCloud 中的文本的基于文本的通用文档:
 
 ```csharp
 using System;
@@ -152,13 +152,13 @@ namespace DocPicker
 }
 ```
 
-`GenericTextDocument`处理文档选取器和 Xamarin.iOS 8 应用程序中的外部文档时将本文通篇使用上面介绍的类。
+当`GenericTextDocument`在 Xamarin 8 应用程序中使用文档选取器和外部文档时, 将在本文中使用上面提供的类。
 
 ## <a name="asynchronous-file-coordination"></a>异步文件协调
 
-iOS 8 提供了几个新的异步文件协调功能，通过新的文件协调 Api。 IOS 8 之前所有的现有文件协调 Api 是完全同步。 这意味着开发人员负责实现其自己的后台队列以防止文件协调阻止应用程序的 UI。
+iOS 8 通过新的文件协调 Api 提供了多种新的异步文件协调功能。 在 iOS 8 之前, 所有现有文件协调 Api 完全同步。 这意味着开发人员负责实现自己的后台队列, 以防止文件协调阻止应用程序的 UI。
 
-新`NSFileAccessIntent`类包含指向文件和多个选项以控制协调所需的类型的 URL。 下面的代码演示如何将文件从一个位置移动到另一个使用意向：
+新`NSFileAccessIntent`类包含指向该文件的 URL, 以及用于控制所需协调类型的多个选项。 下面的代码演示如何使用意向将文件从一个位置移到另一个位置:
 
 ```csharp
 // Get source options
@@ -186,66 +186,66 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 });
 ```
 
-## <a name="discovering-and-listing-documents"></a>发现并列出文档
+## <a name="discovering-and-listing-documents"></a>发现和列出文档
 
-发现并列出文档的方法是通过使用现有`NSMetadataQuery`Api。 本部分将介绍新功能添加到`NSMetadataQuery`，请使用文档比以往更方便。
+发现和列出文档的方式是使用现有`NSMetadataQuery`的 api。 本部分将介绍添加到`NSMetadataQuery`中的新功能, 使文档的处理更加简单。
 
-### <a name="existing-behavior"></a>现有的行为
+### <a name="existing-behavior"></a>现有行为
 
-在 iOS 8 之前`NSMetadataQuery`如速度太慢拾取本地文件的更改： 删除、 创建和重命名。
+在 iOS 8 之前, `NSMetadataQuery`对拾取本地文件更改 (如删除、创建和重命名) 的速度很慢。
 
- [![](document-picker-images/image2.png "NSMetadataQuery 本地文件的更改概述")](document-picker-images/image2.png#lightbox)
+ [![](document-picker-images/image2.png "NSMetadataQuery 本地文件更改概述")](document-picker-images/image2.png#lightbox)
 
-在上图中：
+在上图中:
 
-1.  应用程序容器中已存在的文件`NSMetadataQuery`具有现有`NSMetadata`记录预先创建和后台处理以便它们可立即可供该应用程序。
-1.  应用程序在应用程序容器中创建一个新文件。
-1.  没有前的延迟`NSMetadataQuery`将看到应用程序容器的修改，并创建所需`NSMetadata`记录。
-
-
-由于在创建过程中延迟`NSMetadata`记录，应用程序必须具有两个数据源打开： 一个本地文件的更改，一个用于云基于更改。
-
-### <a name="stitching"></a>拼接
-
-在 iOS 8，`NSMetadataQuery`更轻松地直接使用名为拼接的新功能：
-
- [![](document-picker-images/image3.png "使用新功能的 NSMetadataQuery 调用拼接")](document-picker-images/image3.png#lightbox)
-
-在上图中使用拼接：
-
-1.  与前面一样，为应用程序容器中已存在的文件`NSMetadataQuery`具有现有`NSMetadata`记录预先创建和假脱机。
-1.  应用程序中使用文件协调的应用程序容器创建一个新文件。
-1.  修改和调用，会看到应用程序容器中的挂钩`NSMetadataQuery`以创建所需`NSMetadata`记录。
-1.  `NSMetadata`记录文件后直接创建和提供给应用程序。
+1.  对于应用程序容器中已存在的文件, `NSMetadataQuery`具有预先`NSMetadata`创建和假脱机的现有记录, 以便这些记录立即可用于应用程序。
+1.  应用程序会在应用程序容器中创建一个新文件。
+1.  在看到对应用程序`NSMetadataQuery`容器的修改并创建所需`NSMetadata`记录之前, 会有一段延迟。
 
 
-通过使用拼接应用程序不再具有要打开数据源来监视本地和基于云的文件更改。 现在，应用程序可以依赖于`NSMetadataQuery`直接。
+由于创建`NSMetadata`记录的延迟, 应用程序必须打开两个数据源: 一个用于本地文件更改, 另一个用于基于云的更改。
+
+### <a name="stitching"></a>装订
+
+在 iOS 8 中`NSMetadataQuery` , 可以更方便地直接使用称为 "拼接" 的新功能:
+
+ [![](document-picker-images/image3.png "带有称为 \"缝合\" 的新功能的 NSMetadataQuery")](document-picker-images/image3.png#lightbox)
+
+在上面的关系图中使用缝合:
+
+1.  如前所述, 对于已存在于应用程序容器中的文件, `NSMetadataQuery`具有预先`NSMetadata`创建和假脱机的现有记录。
+1.  应用程序使用文件协调在应用程序容器中创建一个新文件。
+1.  应用程序容器中的挂钩可查看修改和调用`NSMetadataQuery`以创建所需`NSMetadata`的记录。
+1.  `NSMetadata`记录是在文件后直接创建的, 并可用于应用程序。
+
+
+通过使用 "应用程序", 将不再需要打开数据源来监视本地和基于云的文件更改。 现在, 应用程序可以`NSMetadataQuery`直接依赖。
 
 > [!IMPORTANT]
-> 拼接仅适用于应用程序使用文件协调，在上面的部分中所示。 如果不使用文件协调，Api 将默认为现有的 pre iOS 8 行为。
+> 仅当应用程序正在使用上一节中所述的文件协调时, 才可以使用。 如果未使用文件协调, 则 Api 默认为现有的 iOS 8 之前的行为。
 
 
 
 
-### <a name="new-ios-8-metadata-features"></a>新 iOS 8 元数据功能
+### <a name="new-ios-8-metadata-features"></a>新的 iOS 8 元数据功能
 
-以下新功能已添加到`NSMetadataQuery`iOS 8 中：
+IOS 8 `NSMetadataQuery`中添加了以下新功能:
 
--   `NSMetatadataQuery` 现在可以列出存储在云中的非本地文档。
--  添加了新的 Api 以访问基于云的文档上的元数据信息。 
--  新增了一个`NSUrl_PromisedItems`将访问可能会或可能没有可用其内容本地文件的文件属性的 API。
--  使用`GetPromisedItemResourceValue`方法以获取有关给定文件的信息或者使用`GetPromisedItemResourceValues`方法以在多个文件上一次获取信息。
+-   `NSMetatadataQuery`现在可以列出存储在云中的非本地文档。
+-  添加了新的 Api 来访问基于云的文档的元数据信息。 
+-  有一个新`NSUrl_PromisedItems`的 API, 它将访问文件的文件属性, 这些文件可能或可能不具有本地可用内容。
+-  使用方法获取有关给定文件的信息, 或`GetPromisedItemResourceValues`使用方法一次获取多个文件的相关信息。 `GetPromisedItemResourceValue`
 
 
-处理元数据中添加了两个新文件协调标志：
+添加了两个新的文件协调标志来处理元数据:
 
 -   `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 -   `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
 
 
-与上面的标志，该文档文件的内容不需要为可用于使用这些本地。
+使用上述标志, 文档文件的内容不需要本地可用即可供使用。
 
-下面的代码段演示如何使用`NSMetadataQuery`可以查询特定的文件是否存在并且生成文件，如果不存在：
+下面的代码段演示了如何使用`NSMetadataQuery`查询是否存在特定的文件并在文件不存在时生成该文件:
 
 ```csharp
 using System;
@@ -425,60 +425,60 @@ internal void RaiseDocumentLoaded(GenericTextDocument document) {
 
 ### <a name="document-thumbnails"></a>文档缩略图
 
-Apple 感觉，列出应用程序的文档时的最佳用户体验是使用预览版。 这使得最终用户上下文，以便它们能够快速确定他们想要使用的文档。
+Apple 认为, 为应用程序列出文档时最好的用户体验是使用预览。 这将为最终用户提供上下文, 因此他们可以快速识别要使用的文档。
 
-在 iOS 8 之前显示文档预览所需的自定义实现。 新 ios 8 是允许开发人员可以快速使用文档缩略图的文件系统属性。
+在 iOS 8 之前, 显示文档预览需要自定义实现。 IOS 8 的新增特性是文件系统属性, 使开发人员能够快速处理文档缩略图。
 
 #### <a name="retrieving-document-thumbnails"></a>检索文档缩略图 
 
-通过调用`GetPromisedItemResourceValue`或`GetPromisedItemResourceValues`方法， `NSUrl_PromisedItems` API， `NSUrlThumbnailDictionary`，则返回。 当前此字典中的唯一键是`NSThumbnial1024X1024SizeKey`和其匹配`UIImage`。
+通过调用`GetPromisedItemResourceValue`或`GetPromisedItemResourceValues` `NSUrl_PromisedItems`方法,将返回 API。 `NSUrlThumbnailDictionary` 此字典中的唯一键是`NSThumbnial1024X1024SizeKey`和其匹配`UIImage`项。
 
-#### <a name="saving-document-thumbnails"></a>正在保存文档缩略图
+#### <a name="saving-document-thumbnails"></a>保存文档缩略图
 
-若要保存缩略图的最简单方法是使用`UIDocument`。 通过调用`GetFileAttributesToWrite`方法的`UIDocument`和设置在缩略图，它会自动保存文档文件时。 ICloud 守护程序将看到此更改，并将其传播到 iCloud。 在 Mac OS X 上的缩略图会自动生成帮助开发人员快速查找插件。
+保存缩略图的最简单方法是使用`UIDocument`。 通过调用`GetFileAttributesToWrite`的`UIDocument`方法并设置缩略图, 在文档文件为时, 它将自动保存。 ICloud 守护程序会看到此更改并将其传播到 iCloud。 在 Mac OS X 上, 快速查找插件会自动为开发人员生成缩略图。
 
-使用结构，以及对现有 API 进行修改的 iCloud 基于文档的基础知识，我们已准备好在 Xamarin iOS 8 中实现文档选取器视图控制器 Mobile 应用程序。
+利用基础知识, 以及对现有 API 的修改, 我们已准备好在 Xamarin iOS 8 移动应用程序中实现文档选取器视图控制器。
 
 
 ## <a name="enabling-icloud-in-xamarin"></a>在 Xamarin 中启用 iCloud
 
-文档选取器可在 Xamarin.iOS 应用程序之前，需要在应用程序中和通过 Apple 启用 iCloud 支持。 
+需要在应用程序中和 Apple 中启用 iCloud 支持, 然后才能在 Xamarin iOS 应用程序中使用文档选取器。 
 
-下面的步骤演练的 iCloud 的预配过程中。
+以下步骤演练为 iCloud 进行设置的过程。
 
 1. 创建 iCloud 容器。
 2. 创建包含 iCloud 应用服务的应用 ID。
-3. 创建预配配置文件包含此应用程序 id。
+3. 创建包含此应用 ID 的预配配置文件。
 
-[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南会指导完成前两个步骤。 若要创建预配配置文件，按照中的步骤[预配配置文件](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)指南。
+使用[功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南演练前两个步骤。 若要创建预配配置文件, 请按照[预配配置文件](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)指南中的步骤进行操作。
 
 
 
-以下步骤演练配置 iCloud 应用程序的过程：
+以下步骤演练为 iCloud 配置应用程序的过程:
 
 请执行以下操作：
 
-1.  在 Visual Studio for Mac 或 Visual Studio 打开的项目。
-2.  在中**解决方案资源管理器**，右键单击该项目并选择选项。
-3.  在选项对话框中，选择**iOS 应用程序**，确保**捆绑包标识符**中定义相匹配**应用程序 ID**上面创建的应用程序。 
-4.  选择**iOS 捆绑签名**，选择**开发人员标识**并**预配配置文件**上述步骤中创建。
-5.  单击**确定**按钮以保存所做的更改并关闭对话框。
-6.  右键单击`Entitlements.plist`中**解决方案资源管理器**以在编辑器中打开它。
+1.  在 Visual Studio for Mac 或 Visual Studio 中打开项目。
+2.  在**解决方案资源管理器**中, 右键单击项目, 然后选择 "选项"。
+3.  在 "选项" 对话框中, 选择 " **IOS 应用程序**", 确保**捆绑标识符**与上面为应用程序创建的**应用程序 ID**中定义的标识符相匹配。 
+4.  选择 " **IOS 捆绑签名**", 选择上面创建的**开发人员标识**和**预配配置文件**。
+5.  单击 **"确定"** 按钮保存更改并关闭对话框。
+6.  右键单击`Entitlements.plist` "**解决方案资源管理器**" 以在编辑器中打开它。
 
     > [!IMPORTANT]
-    > 在 Visual Studio 中您可能需要通过右键单击它打开权利编辑器选择**打开方式...** 并选择属性列表编辑器
+    > 在 Visual Studio 中, 你可能需要通过右键单击来打开 "权限编辑器", 然后选择 "**打开方式 ...** " 和选择属性列表编辑器
 
-7.  检查**启用 iCloud** ， **iCloud 文档**，**键-值存储**并**CloudKit** 。
-8.  请确保**容器**存在应用程序 （如上面创建）。 示例：`iCloud.com.your-company.AppName`
+7.  选中 "**启用 icloud** 、 **icloud 文档**、**键值存储**和**CloudKit** "。
+8.  请确保应用程序的**容器**(如上所创建)。 示例：`iCloud.com.your-company.AppName`
 9.  保存对文件所做的更改。
 
-有关权利的详细信息请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
+有关权利的详细信息, 请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-通过上述设置后，应用程序现在可以使用基于云的文档和新的文档选取器视图控制器。
+设置好上述设置后, 应用程序现在可以使用基于云的文档和新的文档选取器视图控制器。
 
-## <a name="common-setup-code"></a>常见设置代码
+## <a name="common-setup-code"></a>常见安装代码
 
-入门文档选取器视图控制器之前, 没有所需的一些标准设置代码。 通过修改应用程序的启动`AppDelegate.cs`文件，并使其看起来如下所示：
+开始处理文档选取器视图控制器之前, 需要提供一些标准的安装代码。 首先修改应用程序的`AppDelegate.cs`文件, 使其看起来如下所示:
 
 ```csharp
 using System;
@@ -794,11 +794,11 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> 上面的代码中包含的代码从上面的发现和列出文档部分。 它是此处提供完整的就像在实际的应用程序中显示。 为简单起见，此示例适用于一个硬编码文件 (`test.txt`) 仅。
+> 上面的代码包含上面的 "发现和列出文档" 部分中的代码。 它将在整个中提供, 因为它会出现在实际的应用程序中。 为简单起见, 此示例仅适用于单个硬编码文件 (`test.txt`)。
 
-上面的代码中公开了许多 iCloud 驱动器快捷方式以使其更轻松地使用应用程序的其余部分。
+上述代码公开了若干 iCloud 驱动器快捷方式, 使其更易于在应用程序的其余部分中使用。
 
-接下来，将以下代码添加到任何视图或查看容器将使用文档选取器或使用基于云的文档：
+接下来, 将以下代码添加到将使用文档选取器或使用基于云的文档的任何视图或视图容器:
 
 ```csharp
 using CloudKit;
@@ -815,43 +815,43 @@ public AppDelegate ThisApp {
 #endregion
 ```
 
-这会添加快捷方式即可`AppDelegate`并访问上面创建的 iCloud 快捷方式。
+这将添加访问的`AppDelegate`快捷方式, 并访问上面创建的 iCloud 快捷方式。
 
-此代码，让我们看一看在 Xamarin iOS 8 应用程序中实现文档选取器视图控制器。
+使用此代码后, 让我们看看如何在 Xamarin iOS 8 应用程序中实现文档选取器视图控制器。
 
 ## <a name="using-the-document-picker-view-controller"></a>使用文档选取器视图控制器
 
-IOS 8 之前，这是很难从另一个应用程序访问文档，因为没有方法来发现从应用中在应用程序之外的文档。
+在 iOS 8 之前, 从另一个应用程序访问文档是非常困难的, 因为无法从应用内发现应用程序之外的文档。
 
-### <a name="existing-behavior"></a>现有的行为
+### <a name="existing-behavior"></a>现有行为
 
  [![](document-picker-images/image31.png "现有行为概述")](document-picker-images/image31.png#lightbox)
 
-让我们看一看访问 iOS 8 之前的外部文档：
+让我们看一下如何访问 iOS 8 之前的外部文档:
 
-1.  首先，用户需要打开最初创建该文档的应用程序。
-1.  选择文档和`UIDocumentInteractionController`用于将文档发送到新的应用程序。
-1.  最后，原始文档的副本放置在新应用程序的容器中。
+1.  首先, 用户必须打开最初创建文档的应用程序。
+1.  将选择文档, 并`UIDocumentInteractionController`使用将文档发送到新应用程序。
+1.  最后, 将原始文档的副本放置在新应用程序的容器中。
 
 
-从此处是第二个应用程序可以打开和编辑文档。
+在该文档中, 第二个应用程序可以打开和编辑。
 
-### <a name="discovering-documents-outside-of-an-apps-container"></a>发现应用的容器外的文档
+### <a name="discovering-documents-outside-of-an-apps-container"></a>在应用容器外发现文档
 
-在 iOS 8、 应用程序是能够轻松地访问其自己的应用程序容器之外的文档：
+在 iOS 8 中, 应用程序能够轻松地在其自己的应用程序容器外访问文档:
 
- [![](document-picker-images/image32.png "发现应用的容器外的文档")](document-picker-images/image32.png#lightbox)
+ [![](document-picker-images/image32.png "在应用容器外发现文档")](document-picker-images/image32.png#lightbox)
 
-使用新的 iCloud 文档选取器 ( `UIDocumentPickerViewController`)，iOS 应用程序能够直接发现和访问该应用程序容器以外。 `UIDocumentPickerViewController`提供了一种机制，为用户授予访问权限和编辑这些权限通过发现文档。
+使用新的 iCloud 文档选取器`UIDocumentPickerViewController`(), iOS 应用程序可直接在其应用程序容器外发现和访问。 `UIDocumentPickerViewController`提供了一种机制, 使用户能够通过权限授予和编辑所发现的文档。
 
-应用程序必须选择项都具有其文档显示在 iCloud 文档选取器，并且可供其他应用程序能够发现和使用它们。 若要有一个 Xamarin iOS 8 应用程序共享其应用程序容器，请对其进行编辑`Info.plist`文件位于标准文本编辑器，并将以下两行添加到字典中的底部 (之间`<dict>...</dict>`标记):
+应用程序必须选择将其文档显示在 iCloud 文档选取器中, 并可供其他应用程序发现和使用它们。 若要让 Xamarin iOS 8 应用程序共享其应用程序容器, `Info.plist`请在标准文本编辑器中编辑该文件, 然后将以下两行添加到字典底部 ( `<dict>...</dict>`标记之间):
 
 ```xml
 <key>NSUbiquitousContainerIsDocumentScopePublic</key>
 <true/>
 ```
 
-`UIDocumentPickerViewController`提供出色的新 UI，它允许用户选择的文档。 若要在 Xamarin iOS 8 应用程序中显示文档选取器视图控制器，请执行以下操作：
+`UIDocumentPickerViewController`提供了一个强大的新 UI, 允许用户选择文档。 若要在 Xamarin iOS 8 应用程序中显示文档选取器视图控制器, 请执行以下操作:
 
 ```csharp
 using MobileCoreServices;
@@ -903,63 +903,63 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> 开发人员必须调用`StartAccessingSecurityScopedResource`方法的`NSUrl`可访问的外部文档之前。 `StopAccessingSecurityScopedResource`必须调用方法以加载文档时，就立即释放安全锁定。
+> 开发人员必须先调用`StartAccessingSecurityScopedResource`的方法, `NSUrl`然后才能访问外部文档。 当文档加载后, 必须调用方法以释放安全锁。`StopAccessingSecurityScopedResource`
 
 ### <a name="sample-output"></a>示例输出
 
-下面是上面的代码显示了文档选取器时 iPhone 设备上运行的方式的示例：
+下面的示例演示了上述代码在 iPhone 设备上运行时如何显示文档选取器:
 
-1.  用户启动应用程序，并显示主界面：   
+1.  用户启动应用程序并显示主界面:   
  
     [![](document-picker-images/image33.png "显示主界面")](document-picker-images/image33.png#lightbox)
-1.  用户点击**操作**在屏幕顶部的按钮并选择要求**文档提供程序**从可用提供程序的列表：   
+1.  用户点击屏幕顶部的 "**操作**" 按钮, 并要求从可用提供程序的列表中选择**文档提供程序**:   
  
-    [![](document-picker-images/image34.png "从可用的提供程序列表中选择文档提供程序")](document-picker-images/image34.png#lightbox)
-1.  **文档选取器视图控制器**显示为所选**文档提供程序**:   
+    [![](document-picker-images/image34.png "从可用提供程序的列表中选择文档提供程序")](document-picker-images/image34.png#lightbox)
+1.  显示选定**文档提供程序**的**文档选取器视图控制器**:   
  
     [![](document-picker-images/image35.png "显示文档选取器视图控制器")](document-picker-images/image35.png#lightbox)
-1.  在用户点击**文档文件夹**以显示其内容：   
+1.  用户点击**文档文件夹**以显示其内容:   
  
-    [![](document-picker-images/image36.png "该文档文件夹的内容")](document-picker-images/image36.png#lightbox)
-1.  用户选择**文档**并**文档选取器**已关闭。
-1.  主接口重新**文档**是从外部容器并显示其内容加载。
+    [![](document-picker-images/image36.png "文档文件夹内容")](document-picker-images/image36.png#lightbox)
+1.  用户选择**文档**并且**文档选取器**已关闭。
+1.  主界面重新显示,**文档**从外部容器加载, 并显示其内容。
 
 
-文档选取器视图控制器的实际显示取决于用户在设备上安装和已实现的文档选取器模式。 文档提供程序。 上面的示例使用开放模式，将在下面详细讨论其他模式类型。
+文档选取器视图控制器的实际显示取决于用户已安装在设备上的文档提供程序以及已实现的文档选取器模式。 上面的示例使用的是打开模式, 将在下面详细介绍其他模式类型。
 
 ## <a name="managing-external-documents"></a>管理外部文档
 
-如上所述，在 iOS 8 之前应用程序可以仅访问属于其应用程序容器的文档。 在 iOS 8 应用程序可以访问文档，从外部源：
+如上所述, 在 iOS 8 之前, 应用程序只能访问应用程序容器中的文档。 在 iOS 8 中, 应用程序可以从外部源访问文档:
 
  [![](document-picker-images/image37.png "管理外部文档概述")](document-picker-images/image37.png#lightbox)
 
-当用户从外部源中选择一个文档时，参考文档写入到指向原始文档的应用程序容器。
+当用户选择外部源中的文档时, 会将引用文档写入指向原始文档的应用程序容器。
 
-若要帮助你添加此项新功能到现有应用程序，多项新功能已添加到`NSMetadataQuery`API。 通常情况下，应用程序使用到 live 在其应用程序容器中的列出文档的通用文档作用域。 使用此作用域，只有应用程序容器中的文档将继续显示。
+为了帮助将这一新功能添加到现有的应用程序中, `NSMetadataQuery` API 中添加了几个新功能。 通常, 应用程序使用广泛的文档范围来列出其应用程序容器中的文档。 使用此作用域时, 将只显示应用程序容器中的文档。
 
-使用新的通用外部文档作用域时将返回 live 外部应用程序容器并为其返回的元数据文档。 `NSMetadataItemUrlKey`将指向 URL 文档所在的位置实际。
+使用新的通用外部文档范围将返回应用程序容器外部的文档, 并为其返回元数据。 `NSMetadataItemUrlKey`将指向文档实际所在的 URL。
 
-有时应用程序不希望处理个引用指向的文档。 相反，应用程序想要直接使用该参考文档。 例如，应用可能希望显示在 UI 中，应用程序的文件夹中的文档或以允许用户在一个文件夹内四处移动的引用。
+有时, 应用程序不希望使用按引用指向的文档。 相反, 应用程序需要直接使用引用文档。 例如, 应用可能需要在 UI 的应用程序文件夹中显示文档, 或者允许用户在文件夹中移动引用。
 
-在 iOS 8 中，新`NSMetadataItemUrlInLocalContainerKey`已提供直接访问参考文档。 此密钥将指向应用程序容器中的外部文档的实际引用。
+在 iOS 8 中, 提供`NSMetadataItemUrlInLocalContainerKey`了一个新的, 用于直接访问引用文档。 此键指向对应用程序容器中的外部文档的实际引用。
 
-`NSMetadataUbiquitousItemIsExternalDocumentKey`用于测试是否文档是外部的应用程序的容器。 `NSMetadataUbiquitousItemContainerDisplayNameKey`用于访问存储的外部文档的原始副本的容器的名称。
+`NSMetadataUbiquitousItemIsExternalDocumentKey`用于测试文档是否位于应用程序的容器的外部。 `NSMetadataUbiquitousItemContainerDisplayNameKey`用于访问承载外部文档的原始副本的容器的名称。
 
-### <a name="why-document-references-are-required"></a>文档引用所需的原因
+### <a name="why-document-references-are-required"></a>为什么需要文档引用
 
-该 iOS 8 使用的引用来访问外部文档的主要原因是安全性。 没有任何应用程序是授予对任何其他应用程序的容器的访问权限。 文档选取器可以这样做，因为是正在运行进程外并且具有广泛的系统的访问。
+IOS 8 使用引用访问外部文档的主要原因是安全的。 没有为应用程序提供对其他任何应用程序容器的访问权限。 只有文档选取器可以这样做, 因为在进程外运行并且具有系统范围的访问权限。
 
-转到应用程序容器外部文档的唯一方法是使用文档选取器，并且如果通过返回的 URL 选取器会安全作用域。 安全作用域 URL 包含刚好够用的信息以选择该文档以及作用域内以授予对文档的应用程序访问所需的权限。
+若要访问应用程序容器外的文档, 唯一的方法是使用文档选取器, 如果该选取器返回的 URL 具有安全作用域, 则为。 安全范围 URL 包含的信息足以用于选择该文档, 以及向应用程序授予对该文档的访问权限所需的作用域权限。
 
-请务必请注意，是否安全作用域 URL 已序列化为一个字符串，然后反序列化安全信息将会丢失，并且该文件将从该 URL 不可访问。 文档引用功能提供了一种机制，以返回到这些 Url 指向的文件。
+需要注意的是, 如果安全范围的 URL 已序列化为字符串, 然后反序列化, 则安全信息将丢失, 并且无法从 URL 中访问该文件。 "文档引用" 功能提供了一种机制, 可返回到这些 Url 指向的文件。
 
-因此，如果应用程序要求`NSUrl`从引用文档之一，它已经具有附加的安全作用域，而且可用于访问该文件。 出于此原因，强烈建议开发人员使用`UIDocument`因为它为其处理所有的此信息和过程。
+因此, 如果应用程序`NSUrl`从一个引用文档中获取, 则该应用程序已附加了安全作用域, 并可用于访问该文件。 出于此原因, 强烈建议开发人员使用`UIDocument` , 因为它会处理所有这些信息和过程。
 
 ### <a name="using-bookmarks"></a>使用书签
 
-它并不总是可行枚举应用程序的文档，以返回到特定文档执行还原状态时。 iOS 8 提供了一种机制来创建直接针对给定的文档的书签。
+枚举应用程序的文档以返回到特定文档 (例如, 在执行状态还原时) 并不总是可行。 iOS 8 提供一种机制, 用于创建直接以给定文档为目标的书签。
 
-下面的代码将创建从书签`UIDocument`的`FileUrl`属性：
+以下代码将从`UIDocument`的`FileUrl`属性创建书签:
 
 ```csharp
 // Trap all errors
@@ -989,7 +989,7 @@ catch (Exception e) {
 }
 ```
 
-现有的书签 API 用于创建针对现有书签`NSUrl`，可以保存和加载以提供直接访问权限的外部文件。 下面的代码将还原上面创建的书签：
+现有书签 API 用于创建针对现有`NSUrl`的书签, 可以保存和加载此书签以提供对外部文件的直接访问。 以下代码将还原上面创建的书签:
 
 ```csharp
 if (Bookmark != null) {
@@ -1016,135 +1016,135 @@ if (Bookmark != null) {
 }
 ```
 
-## <a name="open-vs-import-mode-and-the-document-picker"></a>打开 vs。导入模式和文档选取器
+## <a name="open-vs-import-mode-and-the-document-picker"></a>打开与导入模式和文档选取器
 
-文档选取器视图控制器的特点是两个不同的操作模式：
+文档选取器视图控制器具有两种不同的操作模式:
 
-1.  **打开模式**– 在此模式下，当用户选择和外部文档，文档选取器将安全作用域中创建书签应用程序容器。   
+1.  **打开模式**–在此模式下, 当用户选择和外部文档时, 文档选取器将在应用程序容器中创建一个安全范围书签。   
  
-    [![](document-picker-images/image37.png "安全作用域中的应用程序容器的书签")](document-picker-images/image37.png#lightbox)
-1.  **导入模式**– 在此模式下，当用户选择和外部文档，文档选取器将不创建书签，但相反，复制到临时位置的文件并提供对此位置上的文档的应用程序访问：   
+    [![](document-picker-images/image37.png "应用程序容器中的安全作用域书签")](document-picker-images/image37.png#lightbox)
+1.  **导入模式**–在此模式下, 当用户选择和外部文档时, 文档选取器不会创建书签, 而是将文件复制到临时位置, 并为应用程序提供对位于此位置的文档的访问权限:   
  
-    [![](document-picker-images/image38.png "文档选取器将文件复制到临时位置并提供对此位置上的文档的应用程序访问")](document-picker-images/image38.png#lightbox)   
- 一旦出于任何原因而终止应用程序，清空临时位置，并且该文件中删除。 如果应用程序需要维护对文件的访问，它应创建一个副本并将其放在其应用程序容器。
+    [![](document-picker-images/image38.png "文档选取器会将文件复制到一个临时位置, 并为应用程序提供对此位置的文档的访问权限")](document-picker-images/image38.png#lightbox)   
+ 一旦应用程序因某种原因终止, 临时位置就会被清空, 并删除该文件。 如果应用程序需要维护对文件的访问, 则应创建一个副本并将其放入其应用程序容器中。
 
 
-打开模式时，应用程序想要与另一个应用程序进行协作和共享与该应用程序的文档进行任何更改。 当不想与其他应用程序共享文档对其修改应用程序时，使用导入模式。
+当应用程序希望与其他应用程序协作并与该应用程序共享对文档所做的任何更改时, 打开模式非常有用。 当应用程序不希望与其他应用程序共享对文档所做的修改时, 可以使用导入模式。
 
-## <a name="making-a-document-external"></a>使文档外部
+## <a name="making-a-document-external"></a>使文档成为外部文档
 
-如上文所述，iOS 8 应用程序没有其自己的应用程序容器之外的容器访问权限。 应用程序可以写入其自己的容器，在本地或到一个临时位置，然后使用一种特殊的文本模式将应用程序容器外部生成的文档移至用户选择的位置。
+如上所述, iOS 8 应用程序无法访问其自己的应用程序容器之外的容器。 应用程序可以在本地或临时位置写入其自己的容器, 然后使用特殊文档模式将应用程序容器外的结果文档移动到用户选择的位置。
 
-若要将文档移到外部位置，请执行以下操作：
+若要将文档移动到外部位置, 请执行以下操作:
 
-1.  首先在本地或临时位置创建一个新的文档。
-1.  创建`NSUrl`指向新的文档。
-1.  打开新的文档选取器视图控制器，并将其传递`NSUrl`使用的模式`MoveToService`。 
-1.  一旦用户选择新位置，文档将被移从其当前位置到新位置。
-1.  参考文档将写入到应用的应用程序容器仍可以通过创建应用程序访问该文件。
+1.  首先在本地或临时位置创建新文档。
+1.  创建一个`NSUrl`指向新文档的。
+1.  打开新的文档选取器视图控制器, 并将`NSUrl`其传递到的`MoveToService`模式。 
+1.  用户选择新位置后, 该文档将从其当前位置移动到新位置。
+1.  引用文档将写入应用程序的应用程序容器, 以便创建应用程序仍可以访问该文件。
 
 
-下面的代码可用于将文档移到外部位置： `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
+下面的代码可用于将文档移动到外部位置:`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
-通过上述过程返回的引用文档正是一个创建的文档选取器将打开模式相同。 但是，有些时候，应用程序可能想要将文档移而不保留对它的引用。
+上述过程返回的引用文档与文档选取器的打开模式创建的文档完全相同。 但是, 有时应用程序可能希望在不保留对文档的引用的情况下移动文档。
 
-若要将文档移而不会生成一个引用，使用`ExportToService`模式。 示例：`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
+若要移动文档而不生成引用, 请使用`ExportToService`模式。 示例：`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
-当使用`ExportToService`模式下，将文档复制到外部容器和现有副本保留在其原始位置。
+使用`ExportToService`模式时, 会将文档复制到外部容器, 现有副本将保留在其原始位置。
 
 ## <a name="document-provider-extensions"></a>文档提供程序扩展
 
-与 iOS 8、 Apple 希望最终用户能够访问任何基于云的文档，无论它们实际存在的位置。 为了实现此目标，iOS 8 提供了一种新文档提供程序扩展机制。
+使用 iOS 8, Apple 希望最终用户能够访问其任何基于云的文档, 而不管它们实际存在于何处。 为了实现此目标, iOS 8 提供了一个新的文档提供程序扩展机制。
 
-### <a name="what-is-a-document-provider-extension"></a>文档提供程序扩展是什么？
+### <a name="what-is-a-document-provider-extension"></a>什么是文档提供程序扩展？
 
-文档提供程序扩展简单地说，是为开发人员或第三方提供到可在现有的 iCloud 存储位置完全相同的方式来访问应用程序替代文档存储的方式。
+简单地说, 文档提供商扩展是一种面向开发人员或第三方提供的应用程序备用文档存储的一种方法, 可使用与现有 iCloud 存储位置完全相同的方式进行访问。
 
-用户可以从文档选取器中选择其中一个备选存储位置，并且它们可以使用完全相同的访问模式 （打开、 导入、 移动或导出） 来处理该位置中的文件。
+用户可以从文档选取器中选择这些备用存储位置之一, 并且它们可以使用完全相同的访问模式 (打开、导入、移动或导出) 来处理该位置中的文件。
 
-这是使用两个不同的扩展插件实现的：
+这是使用两个不同的扩展实现的:
 
--  **文档选取器扩展**– 提供`UIViewController`提供用于用户从备选存储位置选择文档的图形界面的子类。 此子类将显示为文档选取器视图控制器的一部分。
--  **文件提供扩展名**– 这是一个非 UI 扩展，处理与实际提供的文件内容。 这些扩展通过文件协调提供 ( `NSFileCoordinator` )。 这是文件协调为所需的另一个重要用例。
-
-
-使用文档提供程序扩展时，下图显示了典型的数据流：
-
- [![](document-picker-images/image39.png "下图显示了典型的数据流时使用的文档提供程序扩展")](document-picker-images/image39.png#lightbox)
-
-以下过程：
-
-1.  该应用程序向要允许用户选择要使用的文件的文档选取器控制器。
-1.  用户选择备用的文件位置和自定义`UIViewController`扩展调用以显示用户界面。
-1.  用户从该位置选择一个文件并将 URL 传递回文档选取器。
-1.  文档选取器选择文件的 URL，并将其返回给用户后，若要在运行该应用程序。
-1.  将 URL 传递到文件处理协调器向应用程序返回文件内容。
-1.  文件处理协调器将调用自定义的文件提供程序扩展来检索该文件。
-1.  该文件的内容返回到文件处理协调器。
-1.  该文件的内容返回给应用程序。
+-  **文档选取器扩展**–提供`UIViewController`一个子类, 该子类提供一个图形界面, 使用户能够从备用存储位置中选择文档。 此子类将作为文档选取器视图控制器的一部分显示。
+-  **文件提供扩展**-这是一个处理实际提供文件内容的非 UI 扩展。 这些扩展通过文件协调 ( `NSFileCoordinator` ) 提供。 这是需要文件协调的另一个重要情况。
 
 
-### <a name="security-and-bookmarks"></a>安全和书签
+下图显示了使用文档提供程序扩展时的典型数据流:
 
-本部分将需要快速了解一下通过书签适用于文档提供程序扩展的访问安全性和永久性文件的方式。 ICloud 文档提供程序，它会自动将安全和书签保存到应用程序容器，与文档提供程序扩展不会因为它们不是文档参考系统的一部分。
+ [![](document-picker-images/image39.png "此图显示了使用文档提供程序扩展时的典型数据流")](document-picker-images/image39.png#lightbox)
 
-例如： 在企业设置中提供其自己的公司范围内安全数据存储，管理员不想访问或处理公共 iCloud 服务器机密的公司信息。 因此，不能使用内置的文档参考系统。
+将发生以下过程:
 
-仍可使用书签系统和文件提供程序扩展来正确处理标有书签的 URL 并返回指向由其文档的内容负责。
-
-出于安全目的，iOS 8 具有隔离层中保存有关哪些应用程序有权访问哪些文件提供程序的标识符信息。 应注意，所有文件访问都受此隔离层。
-
-使用书签和文档提供程序扩展时，以下关系图显示了数据流：
-
- [![](document-picker-images/image40.png "此图显示了流的数据时使用书签和文档提供程序扩展")](document-picker-images/image40.png#lightbox)
-
-以下过程：
-
-1.  应用程序即将进入后台，需要保存的状态。 它将调用`NSUrl`备选存储中创建书签的文件。
-1.  `NSUrl` 调用文件提供程序扩展，以获取指向文档的永久性 URL。 
-1.  文件提供程序扩展到字符串的形式返回 URL `NSUrl` 。
-1.  `NSUrl`捆绑到一个书签的 URL 并将其返回到应用程序。
-1.  当应用程序不在后台中被唤醒，并且需要还原状态时，会传递到书签`NSUrl`。
-1.  `NSUrl` 调用文件提供程序扩展使用的文件的 URL。
-1.  文件扩展提供程序访问该文件，并返回到文件的位置`NSUrl`。
-1.  文件位置是捆绑在一起使用的安全信息，并返回到应用程序。
+1.  应用程序将显示一个文档选取器控制器, 以允许用户选择要使用的文件。
+1.  用户选择另一个文件位置, 并调用自`UIViewController`定义扩展插件来显示用户界面。
+1.  用户从该位置选择文件, 并将该 URL 传递回文档选取器。
+1.  文档选取器选择文件的 URL 并将其返回给应用程序以供用户使用。
+1.  URL 将传递给文件协调器, 以将文件内容返回到应用程序。
+1.  文件协调器调用自定义文件提供程序扩展以检索文件。
+1.  文件的内容将返回到文件协调器。
+1.  文件的内容将返回到应用程序。
 
 
-在这里，应用程序可以访问该文件，并像平常一样使用它。
+### <a name="security-and-bookmarks"></a>安全性和书签
+
+本部分将简要介绍通过书签如何使用文档提供程序扩展来进行安全和持久的文件访问。 与 iCloud 文档提供程序不同, 该提供程序会自动将安全性和书签保存到应用程序容器中, 因为它们不是文档引用系统的一部分。
+
+例如: 在提供自己公司范围的安全数据存储的企业设置中, 管理员不希望公共 iCloud 服务器访问或处理机密公司信息。 因此, 不能使用内置文档引用系统。
+
+书签系统仍可使用, 并由文件提供程序扩展负责正确处理书签 URL 并返回由其指向的文档内容。
+
+出于安全方面的考虑, iOS 8 具有隔离层, 可将有关哪些应用程序具有访问权限的信息保留在哪个应用程序内。 应注意的是, 所有文件访问都受此隔离层控制。
+
+下图显示了使用书签和文档提供程序扩展时的数据流:
+
+ [![](document-picker-images/image40.png "此图显示了在使用书签和文档提供程序扩展时的数据流")](document-picker-images/image40.png#lightbox)
+
+将发生以下过程:
+
+1.  应用程序将进入背景, 并需要保持其状态。 它将`NSUrl`调用以在备用存储中为文件创建书签。
+1.  `NSUrl`调用文件提供程序扩展以获取文档的持久性 URL。 
+1.  文件提供程序扩展将 URL 以字符串的形式返回到`NSUrl` 。
+1.  将`NSUrl` URL 捆绑到一个书签, 并将其返回给应用程序。
+1.  当应用程序 awakes 在后台并且需要还原状态时, 它会将书签传递给`NSUrl` 。
+1.  `NSUrl`调用文件提供程序扩展和文件的 URL。
+1.  文件扩展提供程序将访问该文件, 并将该文件的位置`NSUrl`返回到。
+1.  文件位置与安全信息捆绑在一起并返回到应用程序。
+
+
+在此, 应用程序可以访问该文件并像平常一样使用它。
 
 ### <a name="writing-files"></a>写入文件
 
-本部分将需要快速了解一下如何编写文件到另一个位置与文档提供程序扩展中的工作原理。 IOS 应用程序将使用文件协调将信息保存到应用程序容器内的磁盘。 稍后在文件已成功写后，将更改的通知文件提供程序扩展。
+本部分将简要介绍如何使用文档提供程序扩展将文件写入到备用位置。 IOS 应用程序将使用文件协调将信息保存到应用程序容器中的磁盘。 文件写入完毕后不久, 文件提供程序扩展就会收到更改通知。
 
-在此情况下，文件提供程序扩展可以启动文件上传到备用位置 （或将文件标记为脏、 需要上传）。
+此时, 文件提供程序扩展可以开始将文件上传到备用位置 (或将文件标记为已更新, 并要求上传)。
 
-### <a name="creating-new-document-provider-extensions"></a>创建新文档提供程序扩展
+### <a name="creating-new-document-provider-extensions"></a>创建新的文档提供程序扩展
 
-创建新文档提供程序扩展是本介绍性文章的范围之外。 此信息是提供此处以显示此内容，根据用户已在其 iOS 设备中加载的扩展，应用程序可能有访问到 Apple 提供 iCloud 位置之外的文档的存储位置。
+创建新的文档提供程序扩展超出了本文的介绍范围。 此处提供的信息可根据用户已加载到其 iOS 设备中的扩展显示, 应用程序可能有权访问 Apple 提供的 iCloud 位置之外的文档存储位置。
 
-使用文档选取器时，应考虑这一点，开发人员和使用外部文档。 它们不应假定在 iCloud 中托管这些文档。
+开发人员在使用文档选取器并使用外部文档时应注意到这种情况。 它们不应假定这些文档托管于 iCloud。
 
-有关创建存储提供程序或文档选取器扩展的详细信息，请参阅[应用程序扩展插件简介](~/ios/platform/extensions.md)文档。
+有关创建存储提供程序或文档选取器扩展的详细信息, 请参阅[应用扩展简介](~/ios/platform/extensions.md)文档。
 
 ## <a name="migrating-to-icloud-drive"></a>迁移到 iCloud 驱动器
 
-在 iOS 8 中，用户可以选择继续使用现有的 iCloud 文档系统使用 iOS 7 （和之前的系统） 中或他们可以选择将现有文档迁移到新的 iCloud 驱动器机制。
+在 iOS 8 上, 用户可以选择继续使用在 iOS 7 (和以前的系统) 中使用的现有 iCloud 文档系统, 或者他们可以选择将现有文档迁移到新的 iCloud 驱动器机制。
 
-在 Mac OS X Yosemite，Apple 不提供向后兼容性因此所有文档必须都迁移到 iCloud 驱动器或它们将不再更新跨设备。
+在 Mac OS X Yosemite 上, Apple 不提供向后兼容性, 因此必须将所有文档迁移到 iCloud 驱动器, 否则它们将不再跨设备更新。
 
-用户的帐户已迁移到 iCloud 驱动器后，仅使用 iCloud 驱动器的设备将能够将更改传播到文档在这些设备上。
+用户的帐户迁移到 iCloud 驱动器后, 只有使用 iCloud 驱动器的设备才能将更改传播到这些设备上的文档。
 
 > [!IMPORTANT]
-> 开发人员应注意这篇文章中介绍的新功能才可用用户的帐户已迁移到 iCloud 驱动器。 
+> 开发人员应注意, 本文中所述的新功能仅在用户帐户已迁移到 iCloud 驱动器时才可用。 
 
 ## <a name="summary"></a>总结
 
-本文只讨论了对现有 iCloud Api 支持 iCloud 驱动器和新的文档选取器视图控制器所需的更改。 提到了文件协调和为什么它很重要，使用基于云的文档时。 它涵盖若要启用基于云的 Xamarin.iOS 应用程序中的文档所需的设置，并提供使用应用的应用程序容器使用文档选取器视图控制器外的文档的介绍性探讨。
+本文介绍了支持 iCloud 驱动器和新的文档选取器视图控制器所需的现有 iCloud Api 更改。 它涵盖了文件协调以及在使用基于云的文档时它非常重要的原因。 它介绍了在 Xamarin iOS 应用程序中启用基于云的文档所需的设置, 并提供了介绍如何使用文档选取器视图控制器在应用的应用程序容器外使用文档的介绍。
 
-此外，本文简要介绍了文档提供程序扩展和为什么开发人员应编写应用程序可以处理的基于云的文档时注意到它们。
+此外, 本文简要介绍了文档提供程序扩展, 以及开发人员在编写可处理基于云的文档的应用程序时应注意到这些扩展的原因。
 
 ## <a name="related-links"></a>相关链接
 
-- [DocPicker （示例）](https://developer.xamarin.com/samples/monotouch/ios8/DocPicker/)
+- [DocPicker (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-docpicker)
 - [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)
-- [应用程序扩展插件简介](~/ios/platform/extensions.md)
+- [应用扩展简介](~/ios/platform/extensions.md)

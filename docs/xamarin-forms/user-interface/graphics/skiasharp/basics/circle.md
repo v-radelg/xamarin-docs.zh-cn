@@ -7,22 +7,22 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 484a3ac742d162e1d6faaa38ad2e4eb056ed64a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018292"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644487"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 绘制一个简单的圆圈
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解 SkiaSharp 绘制，包括画布的基础知识和绘制对象_
 
 本文介绍在 Xamarin.Forms 中使用 SkiaSharp，包括创建绘制图形的概念`SKCanvasView`对象以承载图形，处理`PaintSurface`事件，以及如何使用`SKPaint`要指定颜色和其他图形对象特性。
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程序包含本系列的 SkiaSharp 文章的所有示例代码。 第一页是已获授权**简单的圆圈**，并调用 page 类[ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 此代码演示如何在一个半径为 100 像素的页的中心绘制一个圆。 圆的边框为红色，并内部的圆圈将显示为蓝色。
+[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序包含本系列的 SkiaSharp 文章的所有示例代码。 第一页是已获授权**简单的圆圈**，并调用 page 类[ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 此代码演示如何在一个半径为 100 像素的页的中心绘制一个圆。 圆的边框为红色，并内部的圆圈将显示为蓝色。
 
 ![](circle-images/circleexample.png "以红色标出将蓝色圆形")
 
@@ -153,7 +153,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 > [!NOTE]
 > `SKPaint`类定义[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)若要启用在图形的呈现抗锯齿。 抗锯齿通常导致直观地平滑边缘，因此您可能需要将此属性设置为`true`中的大多数您`SKPaint`对象。 为了简单起见，此属性是_不_设置中的大多数示例页面。
 
-尽管圆的轮廓的宽度指定为 25 像素&mdash;或四分之一圆的半径&mdash;似乎更精细，并且没有充分的理由：在行宽度的一半将被遮盖的蓝色圆圈。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
+尽管圆轮廓的宽度指定为25像素&mdash;或圆&mdash;的半径的四分之一, 但它看起来很薄, 但有一个充分的理由:线条宽度的一半被蓝色圆圈遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
 
 中的下一个示例[与 Xamarin.Forms 集成](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文章演示是以可视方式。
 
@@ -161,4 +161,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

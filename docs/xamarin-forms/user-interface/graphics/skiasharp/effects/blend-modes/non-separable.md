@@ -7,16 +7,16 @@ ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162296"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642778"
 ---
 # <a name="the-non-separable-blend-modes"></a>非可分离的混合模式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 本文中所示[ **SkiaSharp 可分离混合模式**](separable.md)，可分离的混合模式单独执行的红色、 绿色和蓝色通道上的操作。 非可分离的混合模式不适用。 对颜色的色调、 饱和度和亮度级别进行操作，非可分离的混合模式可以更改颜色以有趣的方式：
 
@@ -28,7 +28,7 @@ ms.locfileid: "61162296"
 
 HSL 颜色模型一文中介绍过[**与 Xamarin.Forms 集成**](../../basics/integration.md)和一个示例程序，该文章中的允许使用 HSL 颜色的试验。 您可以创建`SKColor`值使用具有静态色调、 饱和度和亮度值[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*)方法。
 
-色调表示颜色的主波长。 色调值的范围介于 0 到 360 之间循环的累加性和删减主副本：红色是 0，黄色的值为 60，绿色为 120，蓝绿色为 180，蓝色为 240、 洋红为 300，，周期可回溯到 360 在红色。
+色调表示颜色的主波长。 色调值介于0到360之间, 并循环到累加和 subtractive 主副本:红色为值 0, 黄色为 60, 绿色表示 120, 青色表示 180, 蓝色表示 240, 洋红色为 300, 循环恢复为红色。
 
 如果没有主色&mdash;例如，颜色是白色或黑色或灰影&mdash;然后色调是未定义，且通常设置为 0。 
 
@@ -198,7 +198,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 稍后您将看到此混合模式下的应用程序。
 
-最后，`SKBlendModes.Luminosity`混合模式与相反`SKBlendModes.Color`。 它保留色调和饱和度的目标，但使用源的亮度。 `Luminosity`混合模式是最令人费解的批处理：色调和饱和度滑块会影响映像，但即使在中等亮度图像并不相同：
+最后，`SKBlendModes.Luminosity`混合模式与相反`SKBlendModes.Color`。 它保留色调和饱和度的目标，但使用源的亮度。 `Luminosity`混合模式是该批的最神秘的模式:"色调" 和 "饱和度" 滑块会影响图像, 但是即使在中等亮度, 图像也不是不同的:
 
 [![非可分离的混合模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非可分离的混合模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
@@ -208,11 +208,11 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 ## <a name="a-matte-for-a-separable-mode"></a>对于可分离模式亚光效果
 
-下面是一个包含为中的资源的位图[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例。 文件名是**Banana.jpg**:
+下面是一个包含为中的资源的位图[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例。 文件名是**Banana.jpg**:
 
 ![香蕉 Monkey](non-separable-images/Banana.jpg "香蕉 Monkey")
 
-它是可以创建包含只香蕉亚光效果。 这也是中的资源[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例。 文件名是**BananaMatte.png**:
+它是可以创建包含只香蕉亚光效果。 这也是中的资源[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例。 文件名是**BananaMatte.png**:
 
 ![香蕉遮罩](non-separable-images/BananaMatte.png "香蕉亚光效果")
 
@@ -292,4 +292,4 @@ public class BlueBananaPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 61f74e54d4760bb3a85084371fa8e2a62dc06dfd
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e16aa1b96749047554b4f8e6887791d8ed4ff63b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510673"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643696"
 ---
 # <a name="creating-a-custom-contentprovider"></a>创建自定义 ContentProvider
 
@@ -124,7 +124,7 @@ public class VegetableProvider : ContentProvider
 
 有四种不同类型的元数据将在`ContentProvider`类上公开。 只有权限是必需的, 其余部分则按约定完成。
 
-- **颁发机构**必须将属性添加到类, 以便在安装应用程序时将其注册到 Android。 `ContentProvider` &ndash;
+- **颁发机构**必须将  属性添加到类, 以便在安装应用程序时将其注册到 Android。 `ContentProvider` &ndash;
 
 - **Uri**&ndash; 作为常数公开,以便在`CONTENT_URI`代码中轻松使用。 它应与颁发机构匹配, 但包含方案和基路径。
 
@@ -319,4 +319,4 @@ protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [SimpleContentProvider (示例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [SimpleContentProvider (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)

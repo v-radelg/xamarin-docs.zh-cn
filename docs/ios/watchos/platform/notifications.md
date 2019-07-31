@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f5961987e28c09ad703988083f1b127cd7b9dbd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60897153"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645911"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 中 Xamarin 的通知
 
@@ -69,11 +69,11 @@ ms.locfileid: "60897153"
 
 通知可以来自远程服务器 ([Apple 推送通知服务](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)，或者 APNS) 或可本地生成 iOS 应用程序中。
 
-请参阅[iOS 通知演练](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)有关如何生成本地通知的示例和[WatchNotifications 示例](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)有关工作示例。
+请参阅[iOS 通知演练](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)有关如何生成本地通知的示例和[WatchNotifications 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)有关工作示例。
 
 必须具有本地通知`AlertTitle`设置为显示在 Apple Watch-`AlertTitle`短外观界面中显示字符串。 同时`AlertTitle`并`AlertBody`显示在通知列表; 和`AlertBody`长时间看界面中显示。
 
-此屏幕截图显示`AlertTitle`显示在通知列表中，并`AlertBody`长时间看界面中显示 (使用[示例代码](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)):
+此屏幕截图显示`AlertTitle`显示在通知列表中，并`AlertBody`长时间看界面中显示 (使用[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)):
 
 ![](notifications-images/watch-notificationslist-sml.png "此屏幕截图显示在通知列表中显示 AlertTitle") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody 长时间看界面中显示")
 
@@ -98,7 +98,7 @@ ms.locfileid: "60897153"
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 监视扩展设置为时，visual Studio for Mac 将显示其他选项**启动项目**。
-右键单击监视扩展项目并选择**运行与 > 自定义参数...**:
+右键单击监视扩展项目并选择**运行与 > 自定义参数...** :
     
 [![](notifications-images/runwith-customparams-sml.png "使用自定义属性运行")](notifications-images/runwith-customparams.png#lightbox)
     
@@ -126,7 +126,7 @@ ms.locfileid: "60897153"
 
 ### <a name="example-notification-payload"></a>示例通知有效负载
 
-在中[监视工具包目录](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)示例有是 JSON 文件的示例有效负载**NotificationPayload.json** （列举如下）。
+在中[监视工具包目录](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例有是 JSON 文件的示例有效负载**NotificationPayload.json** （列举如下）。
 
 ```csharp
 {
@@ -151,6 +151,6 @@ ms.locfileid: "60897153"
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchNotifications （本地通知） （示例）](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)
-- [WatchKitCatalog （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchNotifications （本地通知） （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)
+- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple Watch 工具包通知文档](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

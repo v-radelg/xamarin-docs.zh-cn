@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61174533"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657104"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 从数据绑定到 MVVM
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _模型-视图-视图模型 (MVVM) 体系结构模式的发明时与 XAML 记住。该模式会强制实施三个软件层之间的隔离，XAML 用户界面，称为视图;基础数据，称为模型;并且在视图和模型之间的中介调用 ViewModel。通过 XAML 文件中定义的数据绑定通常连接中的视图和 ViewModel。视图 BindingContext 通常是 ViewModel 的实例。_
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` 是一个非常特殊属性：当您将设置`BindingContext`某个元素上，它由继承该元素的所有子级。 这意味着所有子级`StackLayout`具有此相同`BindingContext`，并且它们可以包含简单绑定到该对象的属性。
+`BindingContext`是一个非常特殊的属性:在元素`BindingContext`上设置时, 该元素的所有子级都将继承该元素。 这意味着所有子级`StackLayout`具有此相同`BindingContext`，并且它们可以包含简单绑定到该对象的属性。
 
 在中**One-Shot DateTime**程序，两个子级包含到这些属性的绑定`DateTime`值，但两个其他的子级包含似乎缺少绑定路径的绑定。 这意味着`DateTime`本身的值用于`StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>与 Viewmodel 命令
 
-在许多情况下，MVVM 模式被限制为数据项的操作：在 ViewModel 中的查看并行数据对象中的用户界面对象。
+在许多情况下, MVVM 模式被限制为数据项的操作:用户界面对象在 ViewModel 中的视图并行数据对象中。
 
 但是，有时视图需要包含触发 ViewModel 中的各种操作的按钮。 但不能包含 ViewModel`Clicked`按钮处理程序，可能会阻塞到特定的用户界面范例 ViewModel 因为。
 
@@ -581,7 +581,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>实现导航菜单
 
-[XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)包含在本系列的文章中的所有源代码的程序使用 ViewModel 其主页。 此 ViewModel 是具有名为三个属性的简短类的定义`Type`， `Title`，和`Description`的包含类型的每个示例页面、 标题和简短说明。 此外，ViewModel 定义名为的静态属性`All`，它是在程序中的所有页的集合：
+[XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)包含在本系列的文章中的所有源代码的程序使用 ViewModel 其主页。 此 ViewModel 是具有名为三个属性的简短类的定义`Type`， `Title`，和`Description`的包含类型的每个示例页面、 标题和简短说明。 此外，ViewModel 定义名为的静态属性`All`，它是在程序中的所有页的集合：
 
 ```csharp
 public class PageDataViewModel
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin Evolve 2016:可以轻松地 Xamarin.Forms 和 Prism MVVM**
+**Xamarin 演化 2016:通过 Xamarin 和 Prism 简化了 MVVM**
 
 ## <a name="summary"></a>总结
 
@@ -711,7 +711,7 @@ XAML 是用于在 Xamarin.Forms 应用程序，尤其是在数据绑定中定义
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部分：基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部分：XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

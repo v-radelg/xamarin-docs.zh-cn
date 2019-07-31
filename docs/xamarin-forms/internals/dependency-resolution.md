@@ -7,25 +7,25 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 56e50f0c3dffd54fe3d95f4cd140883613c9206f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61297156"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656367"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的依赖项解析
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-_此文章介绍了如何将依赖项解析方法注入到 Xamarin.Forms，以便应用程序的依赖关系注入容器具有控制创建和自定义呈现器、 效果和 DependencyService 实现的生存期。在本文中的代码示例摘自[使用容器的依赖项解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)示例。_
+_此文章介绍了如何将依赖项解析方法注入到 Xamarin.Forms，以便应用程序的依赖关系注入容器具有控制创建和自定义呈现器、 效果和 DependencyService 实现的生存期。在本文中的代码示例摘自[使用容器的依赖项解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)示例。_
 
 在上下文中使用模型-视图-视图模型 (MVVM) 模式的 Xamarin.Forms 应用程序，用于注册和解析视图模型，以及注册服务和将其注入到视图模型，可以使用依赖关系注入容器。 在视图模型创建期间容器会注入任何所需的依存关系。 如果尚未创建这些依赖项，该容器创建，并将首先解析依赖项。 有关依赖关系注入，包括将依赖项注入到视图模型的示例的详细信息请参阅[依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
 
 对创建的控制和 Xamarin.Forms，它使用传统上执行平台项目中的类型的生存期`Activator.CreateInstance`方法创建的自定义呈现器的效果，实例和[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)实现。 遗憾的是，这就限制了开发人员可以控制创建和生存期这些类型，并将依赖项注入到它们的功能。 通过将依赖项解析方法注入到 Xamarin.Forms，用于控制如何将创建类型 – 通过应用程序的依赖关系注入容器，或通过 Xamarin.Forms，可以更改此行为。 但是，请注意，没有无需将依赖项解析方法注入到 Xamarin.Forms。 Xamarin.Forms 将继续创建和管理在平台项目中的类型的生存期，如果不注入依赖关系解析方法。
 
 > [!NOTE]
-> 尽管本文着重介绍将依赖项解析方法注入到 Xamarin.Forms 解析已注册的类型使用依赖关系注入容器，还有可能注入使用工厂方法来解决的依赖关系解析方法已注册的类型。 有关详细信息，请参阅[使用工厂方法的依赖项解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/)示例。
+> 尽管本文着重介绍将依赖项解析方法注入到 Xamarin.Forms 解析已注册的类型使用依赖关系注入容器，还有可能注入使用工厂方法来解决的依赖关系解析方法已注册的类型。 有关详细信息，请参阅[使用工厂方法的依赖项解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)示例。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>注入依赖关系解析方法
 
@@ -301,7 +301,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [使用容器 （示例） 的依赖项解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
+- [使用容器 （示例） 的依赖项解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 - [依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [实现视频播放器](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [调用效果中的事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

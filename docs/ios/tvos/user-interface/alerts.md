@@ -1,67 +1,67 @@
 ---
-title: 使用 tvOS 在 Xamarin 中的警报
-description: 本文档介绍如何使用 Xamarin 中的 tvOS 警报。 它讨论了显示的警报，添加文本字段和一个帮助器类。
+title: 在 Xamarin 中使用 tvOS 警报
+description: 本文档介绍如何在 Xamarin 中使用 tvOS 警报。 它讨论了如何显示警报、添加文本字段和帮助器类。
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 13c5ae3fac76ec1ec1a0ade135d5919403066226
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3f1761df5c2b638c5777e6384f4c0c06e9b3071f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61409786"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657286"
 ---
-# <a name="working-with-tvos-alerts-in-xamarin"></a>使用 tvOS 在 Xamarin 中的警报
+# <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警报
 
-_本文介绍如何使用看到 Xamarin.tvOS 中向用户显示一条警告消息。_
+_本文介绍如何使用 UIAlertController 在 tvOS 中向用户显示警报消息。_
 
-如果需要获取 tvOS 用户的关注或要求执行破坏性操作 （如删除文件） 的权限，可以显示警报消息使用`UIAlertViewController`:
+如果需要 tvOS 用户或请求权限来执行破坏性操作 (如删除文件), 则可以使用`UIAlertViewController`显示警报消息:
 
 [![](alerts-images/alert01.png "示例 UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
-如果除了显示一条消息，则可以添加按钮和文本字段到警报，以允许用户响应操作并提供反馈。
+如果除了显示消息以外, 还可以向警报添加按钮和文本字段, 以允许用户响应操作并提供反馈。
 
 <a name="About-Alerts" />
 
-## <a name="about-alerts"></a>有关警报
+## <a name="about-alerts"></a>关于警报
 
-如上面所述，警报用于获取用户的注意力并通知他们你的应用或请求反馈的状态。 警报必须提供一个标题，它们可根据需要一条消息和一个或多个按钮或文本字段。
+如上所述, 警报用于使用户注意, 并通知用户应用状态或请求反馈。 警报必须包含一个标题, 可以有选择地包含一个消息和一个或多个按钮或文本字段。
 
 [![](alerts-images/alert04.png "示例警报")](alerts-images/alert04.png#lightbox)
 
-Apple 已使用警报的以下建议：
+Apple 提供了以下有关使用警报的建议:
 
-- **警报尽可能少地使用**-警报会中断应用程序的用户的流和中断用户体验并在这种情况下，应仅用于重要的情况下，例如错误通知、 应用内购买和破坏性操作。 
-- **提供了有用的选择**-如果警报选项显示给用户，你应确保每个选项提供关键信息，并提供了有用的用户来执行操作。
+- **使用警报**时, 警报会中断用户与应用的流动, 并使用户体验中断, 因此, 只应用于错误通知、应用内购买和破坏性操作等重要情况。 
+- **提供了有用的选择**-如果警报向用户提供选项, 您应确保每个选项都提供关键信息并为用户提供有用的操作。
 
 <a name="Alert-Titles-and-Messages" />
 
-### <a name="alert-titles-and-messages"></a>警报的标题和消息
+### <a name="alert-titles-and-messages"></a>提醒标题和消息
 
-Apple 具有以下建议来显示警报的标题和可选的消息：
+Apple 提供以下建议来演示警报的标题和可选消息:
 
-- **使用 Multiword 标题**-警报的标题应获取跨清楚地同时仍保持简单的情况的点。 单独的词标题极少能够提供足够的信息。
-- **使用不需要一条消息的描述性标题**-只要有可能，请考虑将足够的可选消息文本不是所需的警报的标题描述性。 
-- **使消息较短的完整句子**-可选的消息是否需要先获取跨警报的点，使其尽可能简单，使其与正确的大写和标点完整句子。
+- **使用 Multiword 标题**-警报的标题应当清楚地了解状况, 同时保持简单。 单个单词标题很少提供足够的信息。
+- 请尽可能**使用不需要消息的描述性标题**, 请考虑使警报的标题具有足够的描述性, 指出不需要可选消息文本。 
+- 将**消息设置为简短、完整的句子**-如果需要使用可选的消息来使警报点处于最佳位置, 请尽可能简化, 并使其成为具有正确大小写和标点的完整句子。
 
 <a name="Alert-Buttons" />
 
 ### <a name="alert-buttons"></a>警报按钮
 
-Apple 具有对于将按钮添加到警报的以下建议：
+Apple 对于向警报添加按钮有以下建议:
 
-- **限制到两个按钮**-只要有可能，限制为两个按钮的最大值警报。 单个按钮警报提供的信息，但任何操作。 两个按钮警报提供了一个简单的操作选择的是/否。
-- **使用 Succinct，逻辑按钮标题**-简单清晰地描述该按钮的操作的一到两个 word 按钮标题效果最佳。 有关详细信息，请参阅我们[使用按钮](~/ios/tvos/user-interface/buttons.md)文档。
-- **清楚地标记破坏性按钮**-对于执行破坏性操作 （如删除文件） 的按钮清楚地将它们标记`UIAlertActionStyle.Destructive`样式。
+- **限制为两个按钮**-尽可能将警报限制为最多两个按钮。 单按钮警报提供信息, 而不提供操作。 两个按钮警报提供简单的 "是/否" 操作选择。
+- **使用简洁的逻辑按钮标题**-简单一到两个单词按钮标题, 可清楚地说明按钮的操作效果。 有关详细信息, 请参阅[使用按钮](~/ios/tvos/user-interface/buttons.md)文档。
+- **清晰标记破坏性按钮**-对于执行破坏性操作的按钮 (如删除文件), 用`UIAlertActionStyle.Destructive`样式清楚地标记这些按钮。
 
 <a name="Displaying-an-Alert" />
 
 ## <a name="displaying-an-alert"></a>显示警报
 
-若要显示警报，你创建的实例`UIAlertViewController`和配置可以添加操作 （按钮） 并选择警报的样式。 例如，以下代码将显示确定 / 取消警报：
+若要显示警报, 请创建的`UIAlertViewController`实例, 并通过添加操作 (按钮) 并选择警报的样式来配置它。 例如, 以下代码显示 "确定"/"取消" 警报:
 
 ```csharp
 const string title = "A Short Title is Best";
@@ -88,13 +88,13 @@ alertController.AddAction (cancelAction);
 PresentViewController (alertController, true, null);
 ```
 
-让我们看看此代码中详细信息。 首先，我们使用给定的标题和消息创建新的警报：
+让我们详细了解一下此代码。 首先, 创建一个具有给定标题和消息的新警报:
 
 ```csharp
 UIAlertController.Create (title, message, UIAlertControllerStyle.Alert)
 ```
 
-接下来，我们想要在警报中显示每个按钮为我们创建了操作定义按钮、 其样式和我们希望按下按钮时要采取的操作的标题：
+接下来, 对于我们要在警报中显示的每个按钮, 我们将创建一个操作, 用于定义按钮的标题、样式以及在按下按钮时要执行的操作:
 
 ```csharp
 UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ => 
@@ -103,27 +103,27 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 );
 ```
 
-`UIAlertActionStyle`枚举允许您将按钮的样式设置为以下值之一：
+`UIAlertActionStyle`枚举允许你将按钮样式设置为以下内容之一:
 
-- **默认**-按钮为默认按钮处于选中状态时显示警报。
-- **取消**-按钮是警报的取消按钮。
-- **破坏性**-突出显示该按钮，以破坏性操作，如删除文件的形式。 目前，tvOS 呈现具有红色背景的破坏性按钮。
+- **默认值**-显示警报时, 该按钮将为选中状态。
+- **取消**-该按钮是警报的 "取消" 按钮。
+- **破坏性**-将按钮突出显示为破坏性操作, 如删除文件。 目前, tvOS 呈现具有红色背景的破坏性按钮。
 
-`AddAction`方法将添加到给定的操作`UIAlertViewController`最后`PresentViewController (alertController, true, null)`方法为用户显示给定的警报。
+方法将给定操作添加`UIAlertViewController`到, 最后, `PresentViewController (alertController, true, null)`方法向用户显示给定的警报。 `AddAction`
 
 <a name="Adding-Text-Fields" />
 
 ## <a name="adding-text-fields"></a>添加文本字段
 
-除了向警报添加操作 （按钮），可以将文本字段添加到警报，以允许用户填写信息，例如用户 Id 和密码：
+除了向警报添加操作 (按钮) 以外, 还可以向警报添加文本字段, 以允许用户填写用户 Id 和密码等信息:
 
-[![](alerts-images/alert02.png "在警报中的文本字段")](alerts-images/alert02.png#lightbox)
+[![](alerts-images/alert02.png "警报中的文本字段")](alerts-images/alert02.png#lightbox)
 
-如果用户选择该文本字段，将显示标准 tvOS 键盘，使他们能够为字段输入一个值：
+如果用户选择文本字段, 将显示标准的 tvOS 键盘, 使其能够为字段输入值:
 
 [![](alerts-images/alert03.png "输入文本")](alerts-images/alert03.png#lightbox)
 
-下面的代码显示用于输入一个值，确定/取消警报具有单个文本字段：
+以下代码显示一个 "确定"/"取消" 警报, 其中包含用于输入值的单个文本字段:
 
 ```csharp
 UIAlertController alert = UIAlertController.Create(title, description, UIAlertControllerStyle.Alert);
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-`AddTextField`方法将新的文本字段添加到可以通过设置属性，如占位符文本 （此字段为空时显示的文本）、 默认文本值和键盘的类型来配置警报。 例如：
+`AddTextField`方法将新的文本字段添加到警报, 然后通过设置属性 (如字段为空时显示的文本)、默认的文本值和键盘类型来配置该文本字段。 例如:
 
 ```csharp
 // Initialize field
@@ -172,7 +172,7 @@ field.ReturnKeyType = UIReturnKeyType.Done;
 field.ClearButtonMode = UITextFieldViewMode.WhileEditing;
 ```
 
-以便我们可以处理的文本字段更高版本的值，我们也节省了一份使用以下代码：
+这样, 我们可以在以后使用文本字段的值, 也可以使用以下代码保存的副本:
 
 ```csharp
 UITextField field = null;
@@ -186,13 +186,13 @@ alert.AddTextField ((textField) => {
 });
 ```
 
-用户在文本字段中输入一个值后，我们可以使用`field`变量访问该值。
+用户在 "文本" 字段中输入值后, 可以使用`field`该变量访问该值。
 
 <a name="Alert-View-Controller-Helper-Class" />
 
 ## <a name="alert-view-controller-helper-class"></a>警报视图控制器帮助程序类
 
-因为显示简单、 常见类型的警报使用`UIAlertViewController`可能会导致大量的重复代码，可以使用一个帮助器类来减少重复代码。 例如：
+由于使用`UIAlertViewController`显示简单的常见警报类型可能会导致很多重复的代码, 因此, 可以使用帮助器类来减少重复的代码量。 例如：
 
 ```csharp
 using System;
@@ -329,7 +329,7 @@ namespace UIKit
 }
 ```
 
-使用此类、 显示和响应的简单警报可以按如下所示：
+使用此类, 可以按如下所示显示和响应简单警报:
 
 ```csharp
 #region Custom Actions
@@ -366,13 +366,13 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 ## <a name="summary"></a>总结
 
-本文只讨论了使用`UIAlertController`Xamarin.tvOS 中向用户显示一条警告消息。 首先，它介绍了如何显示的简单警报，然后添加按钮。 接下来，它介绍了如何将文本字段添加到警报。 最后，它介绍了如何使用一个帮助器类以减少所需显示警报的重复代码。
+本文介绍`UIAlertController`如何使用将警报消息显示给 tvOS 中的用户。 首先, 它展示了如何显示简单的警报并添加按钮。 接下来, 该示例演示如何向警报添加文本字段。 最后, 它说明了如何使用 helper 类来减少显示警报所需的重复代码量。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人机接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [适用于 tvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

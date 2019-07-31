@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9855255464b32b99d78d7a1cdb24acce22d01648
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61319909"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654760"
 ---
 # <a name="listview-data-sources"></a>ListView 数据源
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
 一个[ `ListView` ](xref:Xamarin.Forms.ListView)用于显示数据的列表。 我们将了解有关填充 ListView 与数据和如何我们可以绑定到选定的项。
 
@@ -58,10 +58,6 @@ listView.ItemsSource = new string[]
   "monomodal",
   "mononucleosis"
 };
-
-//monochrome will not appear in the list because it was added
-//after the list was populated.
-listView.ItemsSource.Add("monochrome");
 ```
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView 显示的字符串列表")
@@ -88,7 +84,7 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 数据绑定的详细信息，请参阅[数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)这四个是一部分[Xamarin.Forms XAML 基础知识文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="binding-cells"></a>单元格绑定
-单元格 （和单元格的子项） 的属性可以绑定到对象中的属性`ItemsSource`。 例如，ListView 可以用于显示员工的列表。
+单元格 （和单元格的子项） 的属性可以绑定到对象中的属性`ItemsSource`。 例如, `ListView`可以使用来显示雇员列表。
 
 Employee 类：
 
@@ -99,10 +95,12 @@ public class Employee
 }
 ```
 
-`ObservableCollection<Employee>` 创建并设置为`ListView`的`ItemsSource`:
+创建, 并将其设置`ListView`为`ItemsSource`: `ObservableCollection<Employee>`
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+public ObservableCollection<Employee> Employees { get { return employees; }}
+
 public EmployeeListPage()
 {
   //defined in XAML to follow
@@ -131,11 +129,12 @@ public EmployeeListPage()
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
-x:Class="XamarinFormsXamlSample.Views.EmployeeListPage"
-Title="Employee List">
-  <ListView x:Name="EmployeeView">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
+             x:Class="XamarinFormsXamlSample.Views.EmployeeListPage"
+             Title="Employee List">
+  <ListView x:Name="EmployeeView"
+            ItemsSource="{Binding Employees}">
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell Text="{Binding DisplayName}" />
@@ -145,11 +144,7 @@ Title="Employee List">
 </ContentPage>
 ```
 
-尽管它可能已绑定在 XAML 中，请注意的绑定是在代码中为简单起见，安装程序。
-
-XAML 的上一位定义`ContentPage`，其中包含`ListView`。 数据源`ListView`通过设置`ItemsSource`属性。 中的每一行的布局`ItemsSource`中定义`ListView.ItemTemplate`元素。
-
-下面是结果：
+此 XAML 示例定义一个`ContentPage` `ListView`包含的。 数据源`ListView`通过设置`ItemsSource`属性。 在`ItemsSource` `ListView.ItemTemplate`元素中定义中每行的布局。 这会生成以下屏幕截图:
 
 ![](data-and-databinding-images/bound-data.png "使用数据绑定的 ListView")
 
@@ -169,4 +164,4 @@ XAML 的上一位定义`ContentPage`，其中包含`ListView`。 数据源`ListV
 
 ## <a name="related-links"></a>相关链接
 
-- [两个双向绑定 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
+- [两个双向绑定 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

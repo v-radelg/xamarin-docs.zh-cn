@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的大型页标题
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用平台特定于 iOS 的 NavigationPage 的导航栏上的大型标题显示的页面标题。
+title: IOS 上的大型页面标题
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的, 它在 NavigationPage 的导航栏上以大标题显示页面标题。
 ms.prod: xamarin
 ms.assetid: 45FD9145-8319-452C-9AE6-624431A4D43C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 01c5e4f449a1aed84a73b0284ba15e0c03deeed7
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ab9becf2f7363674346abf004c1748cb06eb0d31
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925786"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655415"
 ---
-# <a name="large-page-titles-on-ios"></a>在 iOS 上的大型页标题
+# <a name="large-page-titles-on-ios"></a>IOS 上的大型页面标题
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定用于显示页面标题为的导航栏上的大型标题[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)，对于使用 iOS 11 或更高版本的设备。 大型标题左对齐和使用的较大的图标，并将转换为标准标题当用户开始滚动的内容，以便有效地使用屏幕空间。 但是，在横向方向，标题将返回到导航栏来优化内容布局的中心。 设置使用在 XAML`NavigationPage.PrefersLargeTitles`附加属性设置为`boolean`值：
+此 iOS 平台特定用于在的导航栏[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)上将页面标题显示为大标题, 适用于使用 iOS 11 或更高版本的设备。 大型标题左对齐和使用的较大的图标，并将转换为标准标题当用户开始滚动的内容，以便有效地使用屏幕空间。 但是，在横向方向，标题将返回到导航栏来优化内容布局的中心。 设置使用在 XAML`NavigationPage.PrefersLargeTitles`附加属性设置为`boolean`值：
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,6 +101,6 @@ switch (On<iOS>().LargeTitleDisplay())
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

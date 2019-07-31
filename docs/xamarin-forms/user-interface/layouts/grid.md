@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511881"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648525"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 网格
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`Grid`](xref:Xamarin.Forms.Grid) 为行和列排列视图的支持。 可以设置行和列具有按比例大小或绝对大小。 `Grid`布局不应与传统表混淆和不应显示表格数据。 `Grid` 没有行、 列或单元格格式的概念。 HTML 与表不同，`Grid`纯粹用于对内容进行布局。
 
@@ -384,5 +384,5 @@ public CalculatorGridCode ()
 
 - [借助 Xamarin.Forms，第 17 章创建移动应用](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
 - [网格](xref:Xamarin.Forms.Grid)
-- [布局 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 示例 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

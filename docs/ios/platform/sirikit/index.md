@@ -1,43 +1,43 @@
 ---
-title: 在 Xamarin.iOS SiriKit
-description: 本文介绍如何在 Xamarin.iOS 应用程序中使用 SiriKit 提供 iOS 设备上使用 Siri 用户可访问的服务。
+title: Xamarin 中的 SiriKit
+description: 本文介绍如何在 Xamarin iOS 应用程序中使用 SiriKit, 以提供可在 iOS 设备上使用 Siri 的用户访问的服务。
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f7cbb3f7d9e448947ec8163a8660616910e750f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0438ea08bbdcbf0ce3c64e15192cbb90cd835b00
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61423457"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654018"
 ---
-# <a name="sirikit-in-xamarinios"></a>在 Xamarin.iOS SiriKit
+# <a name="sirikit-in-xamarinios"></a>Xamarin 中的 SiriKit
 
-_本文介绍如何在 Xamarin.iOS 应用程序中使用 SiriKit 提供 iOS 设备上使用 Siri 用户可访问的服务。_
+_本文介绍如何在 Xamarin iOS 应用程序中使用 SiriKit, 以提供可在 iOS 设备上使用 Siri 的用户访问的服务。_
 
-新 ios 10、 通过 SiriKit，iOS 应用程序提供服务可供用户使用应用扩展和新的 iOS 设备上使用 Siri 和 Maps 应用访问**意向**并**Intents UI**框架。
+使用 iOS 10 的新功能, SiriKit 允许 iOS 应用提供使用 Siri 的用户可访问的服务, 以及使用应用扩展**和新的**方法和**意向 UI**框架在 iOS 设备上映射应用的服务。
 
-使用 Siri 适用于这一概念**域**，组知道相关的任务的操作。 应用具有 Siri 与每个交互必须按如下所示划分为其已知的服务域之一：
+Siri 适用于**域**的概念、相关任务的一组已知操作。 应用使用 Siri 时, 每个交互都必须属于其已知的服务域之一, 如下所示:
 
 - 音频或视频呼叫。
-- 预订滑水感觉的时间。
-- 管理锻炼。
-- 消息传递。
-- 正在搜索照片。
+- 预订一本。
+- 管理 workouts。
+- 彩信.
+- 搜索照片。
 - 发送或接收付款。
 
-当用户发出的 Siri 请求涉及应用扩展的服务之一时，SiriKit 发送该扩展**意向**对象，描述用户的请求和任何支持的数据。 然后，应用扩展生成的相应**响应**对象的给定**意向**，详细介绍如何扩展可以处理该请求。
+当用户发出涉及某个应用扩展服务的 Siri 请求时, SiriKit 将向该扩展发送**意向**对象, 该对象描述用户的请求以及所有支持数据。 然后, 应用扩展会针对给定**意向**生成相应的**响应**对象, 并详细说明扩展如何处理请求。
 
 ## <a name="understanding-sirikit-conceptsiosplatformsirikitunderstanding-sirikitmd"></a>[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)
 
-本文介绍如何将需要在 Xamarin.iOS 应用程序中使用 SiriKit 的关键概念。 它涵盖了新 Intents 和 Intents UI 扩展点以及如何使用应用程序和用户词汇，若要打开应用程序使用 Siri。
+本文介绍了在 Xamarin iOS 应用程序中使用 SiriKit 时所需的重要概念。 它介绍了新的方法和意向 UI 扩展点, 以及它们如何与应用和用户词汇表一起使用来打开应用到 Siri。
 
 ## <a name="implementing-sirikitiosplatformsirikitimplementing-sirikitmd"></a>[实现 SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)
 
-本文介绍如何在 Xamarin.iOS 应用程序中实现 SiriKit 支持所需的步骤。 开发人员应尝试添加到应用，作为键概念介绍将需要以确保成功实现 SiriKit 支持之前阅读了解 SiriKit 概念指南上面。
+本文介绍了在 Xamarin iOS 应用程序中实现 SiriKit 支持所需的步骤。 开发人员应在尝试将 SiriKit 支持添加到应用之前, 先阅读下面的 "了解 SiriKit 概念" 指南, 因为已涵盖成功实现所需的关键概念。
 
 
 
@@ -45,7 +45,7 @@ _本文介绍如何在 Xamarin.iOS 应用程序中使用 SiriKit 提供 iOS 设�
 
 ## <a name="related-links"></a>相关链接
 
-- [ElizaChat 示例](https://developer.xamarin.com/samples/monotouch/ios10/ElizaChat/)
+- [ElizaChat 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-elizachat)
 - [SiriKit 编程指南](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)
-- [意向框架引用](https://developer.apple.com/reference/intents)
-- [Intents UI 框架引用](https://developer.apple.com/reference/intentsui)
+- [意向框架参考](https://developer.apple.com/reference/intents)
+- [意向 UI 框架引用](https://developer.apple.com/reference/intentsui)

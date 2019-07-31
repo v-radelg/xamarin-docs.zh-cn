@@ -1,6 +1,6 @@
 ---
-title: 实现片段的演练
-description: 本文介绍如何使用片段开发 Xamarin.Android 应用程序。
+title: 实现片段-演练
+description: 本文介绍如何使用片段开发 Xamarin Android 应用程序。
 ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
@@ -8,49 +8,49 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 2ff4729e68497391d41521da26917571c146b541
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e5a09c216f0def71efb1c3ddc0ed18672663bdfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953259"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643620"
 ---
-# <a name="implementing-fragments---walkthrough"></a>实现片段的演练
+# <a name="implementing-fragments---walkthrough"></a>实现片段-演练
 
-_片段是自包含的模块化组件，可帮助您解决有多种不同的屏幕大小的目标设备的 Android 应用的复杂性。本文介绍如何创建和开发 Xamarin.Android 应用程序时使用片段。_
+_片段是自包含的模块化组件, 可帮助解决面向设备的、使用各种屏幕大小的 Android 应用程序的复杂性。本文逐步讲解如何在开发 Xamarin Android 应用程序时创建和使用片段。_
 
 ## <a name="overview"></a>概述
 
-在本部分中，您将了解如何创建和使用 Xamarin.Android 应用程序中的片段。 此应用程序将通过 William 莎士比亚显示在列表中的多个播放的标题。 当用户点击播放的标题时，应用会在单独的活动显示该播放的引文：
+本部分介绍如何在 Xamarin Android 应用程序中创建和使用片段。 此应用程序将在列表中显示 William 莎士比亚的多个重头戏的标题。 当用户点击 "播放" 标题时, 应用会在单独的活动中显示此重头戏的报价:
 
-[![在纵向模式下在 Android 手机上运行的应用](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
+[![在 Android 手机上以纵向模式运行的应用](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-时电话旋转为横向模式下，将更改应用的外观： 列表播放和引号将出现在同一个活动。 选择播放时，引号将显示在同一活动中：
+当手机旋转到横向模式时, 应用的外观将发生变化: 播放和引号的列表将出现在同一活动中。 选择播放时, 报价将显示在同一活动中:
 
-[![在横向模式下在 Android 手机上运行的应用](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[![在处于横向模式的 Android 手机上运行的应用](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-最后，如果在平板电脑上运行该应用程序：
+最后, 如果应用程序在平板电脑上运行:
 
-[![在 Android 平板电脑上运行应用](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
+[![在 Android 平板电脑上运行的应用](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
-此示例应用程序可以轻松地适应不同外观造型和方向的最少的代码更改使用片段并[备用布局](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources)。
+此示例应用程序可以通过使用片段和[替代布局](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources)来轻松地适应不同的外形规格和方向, 同时实现最少的代码更改。
 
-应用程序的数据将作为应用程序中是硬编码的两个字符串数组中存在C#的字符串数组。 每个数组将充当一个段的数据源。  一个数组将保存的莎士比亚，某些播放的名称和其他数组将包含该播放的引文。 当应用启动时，它将显示中的 play 名称`ListFragment`。 当用户单击中发挥作用`ListFragment`，应用将启动另一个活动将显示引号。
+应用程序的数据将存在于两个字符串数组中, 这些数组在应用中C#硬编码为字符串数组。 每个数组都将用作一个片段的数据源。  一个数组将保存某些莎士比亚的名称, 另一个数组将保留该重头戏的报价。 当应用程序启动时, 它将在中`ListFragment`显示播放名称。 当用户在中单击 " `ListFragment`播放" 时, 该应用将启动另一个活动, 该活动将显示报价。
 
-应用程序的用户界面将包含两个布局、 一个用于纵向和横向模式下的一个。 在运行时，Android 将确定要加载哪些布局基于设备的方向，并将提供给要呈现的活动的布局。 片段中，将包含所有响应用户的单击操作和显示数据的逻辑。 仅为将承载片段的容器存在的应用中的活动。
+应用的用户界面将包含两个布局, 一个用于纵向模式, 另一个用于横向模式。 在运行时, Android 将根据设备的方向确定要加载的布局, 并为要呈现的活动提供该布局。 用于响应用户单击和显示数据的所有逻辑都将包含在片段中。 应用中的活动仅作为将承载片段的容器存在。
 
-本演练分为两个指南。 [第一部分](./walkthrough.md)将专注于应用程序的核心部分。 将创建一组布局 （已优化为纵向模式），以及两个片段和两个活动：
+本演练将分为两个指南。 [第一部分](./walkthrough.md)将重点放在应用程序的核心部分。 将创建一组布局 (适用于纵向模式), 以及两个片段和两个活动:
 
-1. `MainActivity` &nbsp; 这是应用程序的启动活动。
-1. `TitlesFragment` &nbsp; 此代码段将显示的编写的 William 莎士比亚剧本的标题的列表。 它将由托管`MainActivity`。
-1. `PlayQuoteActivity` &nbsp; `TitlesFragment` 将启动`PlayQuoteActivity`以响应用户选择在 play `TitlesFragment`。
-1. `PlayQuoteFragment` &nbsp; 此代码段将显示通过 William 莎士比亚播放的引文。 它将由托管`PlayQuoteActivity`。
+1. `MainActivity`&nbsp;这是应用的启动活动。
+1. `TitlesFragment`&nbsp;此片段将显示由 William 莎士比亚编写的播放标题列表。 它将由`MainActivity`托管。
+1. `PlayQuoteActivity`将启动以响应用户选择 "播放"。 `TitlesFragment` &nbsp; `TitlesFragment` `PlayQuoteActivity`
+1. `PlayQuoteFragment`&nbsp;此片段将显示由 William 莎士比亚播放的报价。 它将由`PlayQuoteActivity`托管。
 
-[本演练中的第二个](./walkthrough-landscape.md)将讨论添加备用布局 （已优化的横向模式下） 这将在屏幕上显示两个片段。 此外，一些细微的代码将进行更改的代码，以便该应用将调整其行为与在屏幕同时显示的片段数。
+[本演练的第二部分](./walkthrough-landscape.md)将讨论如何添加替代布局 (针对横向模式进行优化), 这会在屏幕上显示这两个片段。 此外, 还将对代码进行一些次要代码更改, 以便应用将其行为调整为在屏幕上并发显示的碎片数。
 
 ## <a name="related-links"></a>相关链接
 
-- [FragmentsWalkthrough （示例）](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
+- [FragmentsWalkthrough (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough)
 - [设计器概述](~/android/user-interface/android-designer/index.md)
 - [实现片段](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [支持包](https://developer.android.com/sdk/compatibility-library.html)

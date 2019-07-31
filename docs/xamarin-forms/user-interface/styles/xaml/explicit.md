@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7a149a41a6e50d3b18da166d9c7cb61e36f2d0e7
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970457"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647205"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的显式样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _显式样式是指通过设置其样式属性有选择地应用于控件。_
 
@@ -184,8 +184,8 @@ public class ExplicitStylesPageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [使用样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
 - [资源库](xref:Xamarin.Forms.Setter)

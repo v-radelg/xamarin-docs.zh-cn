@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b266ef96513ac392afa83bc672d41db7cfe3ce16
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 14b92bb576679dee3408c5805c6b698addd9bd8a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61278657"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657448"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 线和路径
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 绘制线条和图形路径_
 
@@ -24,7 +24,7 @@ _使用 SkiaSharp 绘制线条和图形路径_
 
 图形路径是到绘制的直线和曲线 SkiaSharp 中的最通用的方法。 本部分介绍如何使用[ `SKPath` ](xref:SkiaSharp.SKPath)对象绘制的直线，并使用一系列小直线，直线 (称为*折线*) 绘制可以从算法上定义的曲线。 在后面的部分[ **SkiaSharp 曲线和路径**](../curves/index.md)讨论了各种类型的支持的曲线`SKPath`。
 
-在本部分中的所有示例程序都显示在标题下**线和路径**中的主页[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程序，然后在[**路径**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)该解决方案的文件夹。
+在本部分中的所有示例程序都显示在标题下**线和路径**中的主页[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序，然后在[**路径**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)该解决方案的文件夹。
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[线和笔划大写字母](lines.md)
 
@@ -54,4 +54,4 @@ _使用 SkiaSharp 绘制线条和图形路径_
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

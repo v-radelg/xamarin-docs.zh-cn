@@ -1,24 +1,24 @@
 ---
-title: 在 Windows 上的 TabbedPage 图标
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 特定于平台的页面图标 TabbedPage 工具栏上显示。
+title: Windows 上的 TabbedPage 图标
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 平台特定的, 该平台允许在 TabbedPage 工具栏上显示页面图标。
 ms.prod: xamarin
 ms.assetid: 7C5031A5-74EE-4469-994E-BEA7BA9D33CB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: a2a0aa5c7d204a4dc135451a771c81b9739456fb
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: d755f2242b1af94ce5729b1004eb867217876ac6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971050"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656844"
 ---
-# <a name="tabbedpage-icons-on-windows"></a>在 Windows 上的 TabbedPage 图标
+# <a name="tabbedpage-icons-on-windows"></a>Windows 上的 TabbedPage 图标
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此通用 Windows 平台特定于平台的支持页面图标上显示[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)工具栏中，并提供的功能，还可以选择指定图标的大小。 设置使用在 XAML [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty)附加到的属性`true`，并根据需要设置[ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty)附加属性设置为[ `Size`](xref:Xamarin.Forms.Size)值：
+此通用 Windows 平台平台特定, 可以在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)工具栏上显示页面图标, 还可以选择指定图标大小。 设置使用在 XAML [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty)附加到的属性`true`，并根据需要设置[ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty)附加属性设置为[ `Size`](xref:Xamarin.Forms.Size)值：
 
 ```xaml
 <TabbedPage ...
@@ -75,6 +75,6 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

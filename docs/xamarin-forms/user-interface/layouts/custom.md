@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: a1027b1fd738c80cf5917effc66957f77a337ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+ms.openlocfilehash: 11707a1e871b0988847ab4a2c266d268db063000
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61304674"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645207"
 ---
 # <a name="creating-a-custom-layout"></a>创建自定义布局
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CustomLayout/WrapLayout/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms 定义了四个布局的类，这些 StackLayout、 AbsoluteLayout、 RelativeLayout 和网格中，并且每个不同的方式排列子项。但是，有时有必要来组织页面内容使用 Xamarin.Forms 不提供布局。本文说明如何编写一个自定义布局的类，并演示跨页上，水平排列子项，然后将包装对其他行的后续子级的显示方向区分 WrapLayout 类。_
 
@@ -380,27 +380,36 @@ public class ImageWrapLayoutPageCS : ContentPage
 ```csharp
 protected override async void OnAppearing()
 {
-  base.OnAppearing();
+    base.OnAppearing();
 
-  var images = await GetImageListAsync();
-  foreach (var photo in images.Photos)
-  {
-    var image = new Image
+    var images = await GetImageListAsync();
+    if (images != null)
     {
-      Source = ImageSource.FromUri(new Uri(photo + string.Format("?width={0}&height={0}&mode=max", Device.RuntimePlatform == Device.UWP ? 120 : 240)))
-    };
-    wrapLayout.Children.Add(image);
-  }
+        foreach (var photo in images.Photos)
+        {
+            var image = new Image
+            {
+                Source = ImageSource.FromUri(new Uri(photo))
+            };
+            wrapLayout.Children.Add(image);
+        }
+    }
 }
 
 async Task<ImageList> GetImageListAsync()
 {
-  var requestUri = "https://docs.xamarin.com/demo/stock.json";
-  using (var client = new HttpClient())
-  {
-    var result = await client.GetStringAsync(requestUri);
-    return JsonConvert.DeserializeObject<ImageList>(result);
-  }
+    try
+    {
+        string requestUri = "https://raw.githubusercontent.com/xamarin/docs-archive/master/Images/stock/small/stock.json";
+        string result = await _client.GetStringAsync(requestUri);
+        return JsonConvert.DeserializeObject<ImageList>(result);
+    }
+    catch (Exception ex)
+    {
+        Debug.WriteLine($"\tERROR: {ex.Message}");
+    }
+
+    return null;
 }
 ```
 
@@ -416,14 +425,9 @@ async Task<ImageList> GetImageListAsync()
 
 每个行中的列数取决于照片大小、 屏幕宽度和每个与设备无关单位的像素数。 [ `Image` ](xref:Xamarin.Forms.Image)元素以异步方式加载照片，并因此`WrapLayout`类将接收到频繁调用其[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))方法作为每个`Image`在元素收到基于加载照片的新大小。
 
-## <a name="summary"></a>总结
-
-这篇文章介绍了如何编写一个自定义布局的类，并演示了方向区分`WrapLayout`类跨页上，水平排列子项，然后将包装对其他行的后续子级的显示。
-
-
 ## <a name="related-links"></a>相关链接
 
-- [WrapLayout （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/CustomLayout/WrapLayout/)
+- [WrapLayout （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [自定义布局](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [在 Xamarin.Forms 中创建自定义布局 （视频）](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
 - [布局<T>](xref:Xamarin.Forms.Layout`1)

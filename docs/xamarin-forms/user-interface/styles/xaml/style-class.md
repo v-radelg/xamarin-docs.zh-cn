@@ -1,33 +1,33 @@
 ---
-title: Xamarin.Forms 样式类
-description: Xamarin.Forms 的样式类，多个样式应用到控件，而不必求助于样式继承。
+title: Xamarin 样式类
+description: Xamarin 样式类可以将多个样式应用于控件, 而无需采用样式继承。
 ms.prod: xamarin
 ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925286"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645553"
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.Forms 样式类
+# <a name="xamarinforms-style-classes"></a>Xamarin 样式类
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Xamarin.Forms 的样式类，多个样式应用到控件，而不必求助于样式继承。_
+_Xamarin 样式类可以将多个样式应用于控件, 而无需采用样式继承。_
 
 ## <a name="create-style-classes"></a>创建样式类
 
-可以通过设置创建的样式类[ `Class` ](xref:Xamarin.Forms.Style.Class)上的属性[ `Style` ](xref:Xamarin.Forms.Style)到`string`表示的类名。 这提供了对显式样式使用的定义的优势`x:Key`属性，请将多个样式类可应用于[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
+可以通过将的[`Class`](xref:Xamarin.Forms.Style.Class) [`Style`](xref:Xamarin.Forms.Style)属性设置为表示类名的来`string`创建样式类。 此功能的优势在于, 通过使用`x:Key`属性定义显式样式, 可以将多个样式类应用[`VisualElement`](xref:Xamarin.Forms.VisualElement)于。
 
 > [!IMPORTANT]
-> 多个样式可以共享相同的类名称，提供它们针对不同类型。 这可使多个样式类，具有相同命名为到不同目标类型。
+> 多个样式可以共享同一类名称, 前提是它们面向不同的类型。 这将启用多个具有相同名称的样式类以面向不同的类型。
 
-以下示例显示三个[ `BoxView` ](xref:Xamarin.Forms.BoxView)样式类，和一个[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)样式类：
+下面的示例演示了[`BoxView`](xref:Xamarin.Forms.BoxView)三个样式类和[`VisualElement`](xref:Xamarin.Forms.VisualElement)一个样式类:
 
 ```xaml
 <ContentPage ...>
@@ -74,9 +74,9 @@ _Xamarin.Forms 的样式类，多个样式应用到控件，而不必求助于�
 </ContentPage>
 ```
 
-`Separator`， `Rounded`，并`Circle`样式类每个集[ `BoxView` ](xref:Xamarin.Forms.BoxView)为特定值的属性。
+、和样式类分别将属性设置[`BoxView`](xref:Xamarin.Forms.BoxView)为特定值。 `Circle` `Rounded` `Separator`
 
-`Rotated`样式类具有[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)，这意味着它只能应用到`VisualElement`实例。 但是，其[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性设置为`true`，这可确保它可以应用于派生自任何控件`VisualElement`，如[ `BoxView` ](xref:Xamarin.Forms.BoxView)。 有关将样式应用于派生类型的详细信息，请参阅[将样式应用于派生类型](implicit.md#apply-a-style-to-derived-types)。
+`VisualElement`样式类[`TargetType`](xref:Xamarin.Forms.Style.TargetType)的为[,这意味着它只能应用于实例。`VisualElement`](xref:Xamarin.Forms.VisualElement) `Rotated` 但是, 其[`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性设置为`true`, 这可确保它可应用于[`BoxView`](xref:Xamarin.Forms.BoxView)派生自`VisualElement`的任何控件, 例如。 有关将样式应用于派生类型的详细信息, 请参阅[将样式应用于派生类型](implicit.md#apply-a-style-to-derived-types)。
 
 等效 C# 代码如下：
 
@@ -180,9 +180,9 @@ Resources = new ResourceDictionary
 
 ## <a name="consume-style-classes"></a>使用样式类
 
-可以通过设置使用样式类[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)控件，其类型的属性`IList<string>`，到样式类名的列表。 将应用的样式类，前提是控件的类型匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)的样式类。
+可以通过将控件[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) `IList<string>`的属性设置为样式类名称的列表来使用样式类。 如果控件的类型与样式类的[`TargetType`](xref:Xamarin.Forms.Style.TargetType)匹配, 则将应用样式类。
 
-以下示例显示三个[ `BoxView` ](xref:Xamarin.Forms.BoxView)情况下，每个设置为不同的样式类：
+下面的示例演示三[`BoxView`](xref:Xamarin.Forms.BoxView)个实例, 每个实例都设置为不同的样式类:
 
 ```xaml
 <ContentPage ...>
@@ -201,12 +201,12 @@ Resources = new ResourceDictionary
 </ContentPage>    
 ```
 
-在此示例中，第一个[ `BoxView` ](xref:Xamarin.Forms.BoxView)的样式设置为将行分隔符，而第三个`BoxView`为圆形。 第二个`BoxView`具有两个样式类应用，它为 it 舍入角并将其旋转 45 度：
+在此示例中, 第[`BoxView`](xref:Xamarin.Forms.BoxView)一个的样式为行分隔符, 而第三个`BoxView`为循环。 第二`BoxView`个应用了两个样式类, 它为其舍入角并将其旋转45度:
 
-![](style-class-images/boxviews.png "BoxViews 样式的样式类")
+![](style-class-images/boxviews.png "样式类的 BoxViews 样式")
 
 > [!IMPORTANT]
-> 多个样式类可以应用于控件，因为[ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass)属性属于类型`IList<string>`。 当发生这种情况时，可以按列表按升序应用样式类。 因此，当多个样式类设置相同属性，最高的列表位置的样式类中的属性将优先。
+> 可以将多个样式类应用于控件, 因为[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)该属性的类型`IList<string>`为。 出现这种情况时, 将按升序顺序应用样式类。 因此, 当多个样式类设置相同的属性时, 位于最高列表位置的 style 类中的属性将优先。
 
 等效 C# 代码如下：
 
@@ -225,4 +225,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>相关链接
 
-- [基本样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [基本样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

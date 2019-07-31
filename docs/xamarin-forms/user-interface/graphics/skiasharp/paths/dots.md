@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: f59aa92f5f4f013a2d14b1667f4d0679a7ba82b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9e12e901a4224580f72a4b92a4319e02a60efe46
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61384788"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643017"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>点和短划线在 SkiaSharp
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _掌握在 SkiaSharp 绘制点线和虚线线条的复杂性_
 
@@ -26,7 +26,7 @@ SkiaSharp 可绘制线条的都是不可靠的而是点和短划线组成：
 
 为此可以使用*路径效果*，即实例[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)设置为的类[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)属性`SKPaint`。 可以创建路径效果 （或合并路径效果），它使用由定义的静态创建方法之一`SKPathEffect`。 (`SKPathEffect` SkiaSharp 通过支持的六个效果之一; 是其他部分中所述[ **SkiaSharp 效果**](../effects/index.md)。)
 
-若要绘制虚线，请使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静态方法。 有两个参数：首先，这是一个数组`float`来指示点和短划线的长度，以及它们之间的空格的长度的值。 此数组必须具有偶数数目的元素，并且应至少两个元素。 （可以有零个元素数组中的，但该结果一条实线。）如果有两个元素，第一个圆点或短划线的长度，第二个间隙的长度在下一步的句点或破折号之前。 如果有多个两个元素，则它们是按以下顺序： 短划线的长度、 间隙长度、 短划线的长度、 间隙长度等。
+若要绘制虚线，请使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静态方法。 有两个参数:第一个是`float`值的数组, 这些值指示点和短划线的长度以及它们之间的空格长度。 此数组必须具有偶数数目的元素，并且应至少两个元素。 （可以有零个元素数组中的，但该结果一条实线。）如果有两个元素，第一个圆点或短划线的长度，第二个间隙的长度在下一步的句点或破折号之前。 如果有多个两个元素，则它们是按以下顺序： 短划线的长度、 间隙长度、 短划线的长度、 间隙长度等。
 
 通常情况下，您将想要的短划线和间隙长度笔划宽度的倍数。 如果笔划宽度为 10 个像素，例如，然后数组 {10，10} 将绘制点线的点和间隙的笔画粗细的长度相同。
 
@@ -217,4 +217,4 @@ public class AnimatedSpiralPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

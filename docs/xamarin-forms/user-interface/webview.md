@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: a56764771f3106f73809a51616e90fa30692a4d4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649634"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656265"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView) 是应用程序中显示 web 和 HTML 内容的视图。 与不同`OpenUri`，使用户转到 web 浏览器在设备上，`WebView`显示您的应用程序中的 HTML 内容。
 
@@ -110,7 +110,7 @@ browser.Source = htmlSource;
 在上面的代码，`@`用于将 HTML 标记作为字符串文本，这意味着，将忽略所有常见的转义字符。
 
 > [!NOTE]
-> 可能有必要设置`WidthRequest`并`HeightRequest`的属性[ `WebView` ](xref:Xamarin.Forms.WebView)若要查看的 HTML 内容，具体布局取决于`WebView`的子级。 例如，这必须执行[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
+> 可能需要设置`WidthRequest`的和`HeightRequest`属性[`WebView`](xref:Xamarin.Forms.WebView)以查看`WebView` HTML 内容, 具体取决于是的子布局。 例如, 在中[`StackLayout`](xref:Xamarin.Forms.StackLayout), 这是必需的。
 
 ### <a name="local-html-content"></a>本地 HTML 内容
 
@@ -334,25 +334,25 @@ public partial class InAppBrowserXaml : ContentPage
 
 Web 视图会引发以下事件以帮助您响应状态的变化：
 
-- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) – web 视图开始加载新页面时引发的事件。
-- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) – 当页面加载和导航已停止时引发事件。
-- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) – 当发出请求来重新加载当前内容时引发事件。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)–当 Web 视图开始加载新页时引发的事件。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)–加载页面和导航停止时引发的事件。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested)–发出请求以重新加载当前内容时引发的事件。
 
-[ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs)对象，它附带[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)事件具有四个属性：
+事件附带的对象具有四个属性: [`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs) [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)
 
-- `Cancel` – 指示是否取消导航。
-- `NavigationEvent` – 导航事件与被引发。
-- `Source` – 执行导航的元素。
-- `Url` – 导航目标。
+- `Cancel`-指示是否取消导航。
+- `NavigationEvent`–引发的导航事件。
+- `Source`–执行导航的元素。
+- `Url`–导航目标。
 
-[ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs)对象，它附带[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件具有四个属性：
+事件附带的对象具有四个属性: [`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs) [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)
 
-- `NavigationEvent` – 导航事件与被引发。
-- `Result` – 说明结果的导航窗格中，使用[ `WebNavigationResult` ](xref:Xamarin.Forms.WebNavigationResult)枚举成员。 有效值为 `Cancel`、`Failure`、`Success` 和 `Timeout`。
-- `Source` – 执行导航的元素。
-- `Url` – 导航目标。
+- `NavigationEvent`–引发的导航事件。
+- `Result`–介绍使用[`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)枚举成员的导航结果。 有效值为 `Cancel`、`Failure`、`Success` 和 `Timeout`。
+- `Source`–执行导航的元素。
+- `Url`–导航目标。
 
-如果你希望使用需要很长时间加载的网页，请考虑使用[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)并[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件来实现状态指示器。 例如：
+如果预计使用需要很长时间才能加载的网页, 请考虑使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件来实现状态指示器。 例如：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -482,7 +482,7 @@ AbsoluteLayout*而无需*WidthRequest & HeightRequest:
 
 ## <a name="invoking-javascript"></a>调用 JavaScript
 
-[`WebView`](xref:Xamarin.Forms.WebView) 包括能够调用一个 JavaScript 函数中的C#，并将任何结果返回到调用C#代码。 这通过实现[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，在以下示例中所示[WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)示例：
+[`WebView`](xref:Xamarin.Forms.WebView) 包括能够调用一个 JavaScript 函数中的C#，并将任何结果返回到调用C#代码。 这通过实现[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，在以下示例中所示[WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)示例：
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -516,5 +516,5 @@ function factorial(num) {
 
 ## <a name="related-links"></a>相关链接
 
-- [使用 WebView （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
-- [WebView （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)
+- [使用 WebView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [WebView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)

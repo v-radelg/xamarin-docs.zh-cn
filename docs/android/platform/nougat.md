@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 7a50488d8b18682dffd76dee582767c063920840
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: a28368e0fa4574fbb92a43dbd650a127008f5d06
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510509"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643453"
 ---
 # <a name="nougat-features"></a>Nougat 功能
 
@@ -150,7 +150,7 @@ Android Nougat 引入了多种新特性和功能, 如多窗口支持、通知增
 
 [![纵向和横向模式下在多窗口模式下运行的示例应用](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-你可以配置 Xamarin Android 应用程序的活动如何支持多窗口模式。 例如, 你可以配置属性, 以便在多窗口模式下设置应用的最小大小和默认高度和宽度。 您可以使用新`Activity.IsInMultiWindowMode`属性来确定您的活动是否处于多窗口模式下。 例如：
+你可以配置 Xamarin Android 应用程序的活动如何支持多窗口模式。 例如, 你可以配置属性, 以便在多窗口模式下设置应用的最小大小和默认高度和宽度。 您可以使用新`Activity.IsInMultiWindowMode`属性来确定您的活动是否处于多窗口模式下。 例如:
 
 ```csharp
 if (!IsInMultiWindowMode) {
@@ -160,7 +160,7 @@ if (!IsInMultiWindowMode) {
 }
 ```
 
-[MultiWindowPlayground](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/)示例应用包含C#的代码演示如何利用多个 windows 用户界面和应用。
+[MultiWindowPlayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)示例应用包含C#的代码演示如何利用多个 windows 用户界面和应用。
 
 有关多窗口模式的详细信息, 请参阅[多窗口支持](https://developer.android.com/guide/topics/ui/multi-window.html)。
 
@@ -210,7 +210,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
    .AddAction (actionReplyByRemoteInput);
 ```
 
-[消息服务](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/)示例应用包含C#的代码演示如何使用`RemoteInput`对象扩展通知。 有关向适用于 Android 7.0 或更高版本的应用添加内联答复操作的详细信息, 请参阅 Android[答复通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)主题。
+[消息服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)示例应用包含C#的代码演示如何使用`RemoteInput`对象扩展通知。 有关向适用于 Android 7.0 或更高版本的应用添加内联答复操作的详细信息, 请参阅 Android[答复通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)主题。
 
 
 #### <a name="bundled-notifications"></a>捆绑的通知
@@ -253,15 +253,15 @@ Android 7.1 引入了*应用快捷*功能, 使用户可以使用应用快速启�
 
 提供了多个 Xamarin 示例, 用于演示如何利用 Android Nougat 功能:
 
--   [MultiWindowPlayground](https://developer.xamarin.com/samples/monodroid/android-n/MultiWindowPlayground/)演示如何使用 Android Nougat 中提供的多窗口 API。 您可以将示例应用程序切换为多窗口模式, 以查看它如何影响应用程序的生命周期和行为。
+-   [MultiWindowPlayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)演示如何使用 Android Nougat 中提供的多窗口 API。 您可以将示例应用程序切换为多窗口模式, 以查看它如何影响应用程序的生命周期和行为。
 
--   [消息服务](https://developer.xamarin.com/samples/monodroid/android-n/MessagingService/)是一种使用`NotificationCompatManager`发送通知的简单服务。 它还使用`RemoteInput`对象扩展通知, 以允许 Android Nougat 设备直接从通知中回复文本, 而无需打开应用。
+-   [消息服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)是一种使用`NotificationCompatManager`发送通知的简单服务。 它还使用`RemoteInput`对象扩展通知, 以允许 Android Nougat 设备直接从通知中回复文本, 而无需打开应用。
 
--   [活动通知](https://developer.xamarin.com/samples/monodroid/android-n/ActiveNotifications/)演示了如何使用`NotificationManager` API 告诉你应用程序当前正在显示的通知数。
+-   [活动通知](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications)演示了如何使用`NotificationManager` API 告诉你应用程序当前正在显示的通知数。
 
--   [作用域的目录访问](https://developer.xamarin.com/samples/monodroid/android-n/ScopedDirectoryAccess/)演示如何使用限定作用域的目录访问 API 轻松访问特定的目录。 这是必须在清单中定义`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限的替代方法。
+-   [作用域的目录访问](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess)演示如何使用限定作用域的目录访问 API 轻松访问特定的目录。 这是必须在清单中定义`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限的替代方法。
 
--   [直接启动](https://developer.xamarin.com/samples/monodroid/android-n/DirectBoot/)说明如何将数据存储在设备加密存储中, 该存储始终可用, 同时在输入任何用户凭据 (PIN/模式/密码) 前后启动设备。
+-   [直接启动](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)说明如何将数据存储在设备加密存储中, 该存储始终可用, 同时在输入任何用户凭据 (PIN/模式/密码) 前后启动设备。
 
 
 ## <a name="summary"></a>总结

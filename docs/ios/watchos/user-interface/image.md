@@ -1,47 +1,47 @@
 ---
-title: watchOS 在 Xamarin 中的图像控件
-description: 本文档介绍如何使用 Xamarin 生成的 watchOS 应用中使用图像控件。 它讨论了 WKInterfaceImage 控件，SetImage 方法，将映像添加到监视扩展、 动画和的详细信息。
+title: Xamarin 中的 watchOS 图像控件
+description: 本文档介绍如何在使用 Xamarin 生成的 watchOS 应用程序中使用图像控件。 它讨论了 WKInterfaceImage 控件、SetImage 方法、将图像添加到监视扩展、动画等。
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 30bb8f096384dd9f76e208fbd3dbef73cf53bb33
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 7ff97f27a89b9943194ea875458f4e63f7797b76
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558694"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645855"
 ---
-# <a name="watchos-image-controls-in-xamarin"></a>watchOS 在 Xamarin 中的图像控件
+# <a name="watchos-image-controls-in-xamarin"></a>Xamarin 中的 watchOS 图像控件
 
-提供了 watchOS [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)控件来显示图像和简单的动画。 某些控件也可以 （例如按钮、 组和界面控制器） 的背景图像。
+提供了 watchOS [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)控件来显示图像和简单的动画。 某些控件还可以有背景图像 (如按钮、组和界面控制器)。
 
 ![](image-images/image-walkway.png "Apple Watch 显示图片") ![](image-images/image-animation.png "Apple Watch 与简单动画")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
-使用资产目录映像将映像添加到监视工具包应用程序。
+使用资产目录映像将图像添加到观看工具包应用。
 仅 **@2x** 版本是必需的因为所有监视具有 Retina 显示的设备。
 
-![](image-images/asset-universal-sml.png "只有 2 x 版本是必需的因为所有监视具有 Retina 显示的设备")
+![](image-images/asset-universal-sml.png "只需要2x 版本, 因为所有监视设备都有 Retina 显示")
 
-很好的做法，以确保图像本身的监视显示正确的大小。 *避免*使用不正确尺寸的图像 （尤其是大型的） 和缩放来监视上显示它们。
+最好确保图像本身的大小适合于监视显示。 *避免*使用不正确大小的图像 (尤其是大图像), 并缩放以在手表上显示它们。
 
-可以使用资产目录图像中的监视包大小 （38mm 和 42 mm） 来指定每个显示大小的不同映像。
+您可以使用资产目录图像中的手表套件大小 (38mm 和 42mm) 来指定每个显示大小的不同图像。
 
-![](image-images/asset-watch-sml.png "可用于监视工具包大小 38mm 和 42 mm 资产目录图像中为每个显示大小指定不同图像")
+![](image-images/asset-watch-sml.png "您可以使用资产目录图像中的 \"手表套件大小 38mm\" 和 \"42mm\" 来指定每个显示大小的不同图像")
 
 
-## <a name="images-on-the-watch"></a>Watch 上的图像
+## <a name="images-on-the-watch"></a>监视上的图像
 
-若要显示的图像的最有效方法是*将其包括在监视应用程序项目*并将其显示使用`SetImage(string imageName)`方法。
+显示图像最有效的方法是将*其包含在 "监视应用程序" 项目中*, 并使用`SetImage(string imageName)`方法显示这些图像。
 
-例如， [WatchKitCatalog](https://developer.xamarin.com/samples/WatchKitCatalog/)示例有许多映像添加到资产目录中监视应用程序项目：
+例如, [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)示例包含多个添加到 "监视应用程序" 项目中的资产目录的图像:
 
-![](image-images/asset-whale-sml.png "WatchKitCatalog 示例有许多映像添加到资产目录中监视应用程序项目")
+![](image-images/asset-whale-sml.png "WatchKitCatalog 示例在 \"监视应用程序\" 项目中向资产目录添加了许多映像")
 
-这些可以有效地加载并显示在监视使用`SetImage`与字符串名称参数：
+使用`SetImage` with string name 参数可以有效地加载和显示这些内容:
 
 ```csharp
 myImageControl.SetImage("Whale");
@@ -50,23 +50,23 @@ myOtherImageControl.SetImage("Worry");
 
 ### <a name="background-images"></a>背景图像
 
-相同的逻辑适用于`SetBackgroundImage (string imageName)`上`Button`， `Group`，和`InterfaceController`类。 将映像存储在 watch 应用本身实现最佳性能。
+对于`SetBackgroundImage (string imageName)` 、`Button`和`Group`类, 相同的逻辑也适用。 `InterfaceController` 通过将图像存储在手表应用本身中来实现最佳性能。
 
 
 ## <a name="images-in-the-watch-extension"></a>监视扩展中的图像
 
-除了加载存储在 watch 应用本身中的图像，可以将扩展包的映像发送到显示 watch 应用 （或可以从远程位置下载映像，并显示这些）。
+除了加载存储在 "监视应用程序" 本身中的图像外, 还可以将扩展捆绑中的映像发送到 "监视" 应用以显示 (或者可以从远程位置下载图像并显示这些图像)。
 
-若要从监视扩展加载图像，请创建`UIImage`实例，然后调用`SetImage`与`UIImage`对象。
+若要从监视扩展加载图像, 请`UIImage`创建实例, 然后`SetImage`调用`UIImage`对象。
 
-例如， [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)示例包含名为图像**Bumblebee**监视扩展项目中：
+例如, [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例在 "监视扩展" 项目中有一个名为**Bumblebee**的映像:
 
-![](image-images/asset-bumblebee-sml.png "WatchKitCatalog 示例中的图像监视扩展项目中名为 Bumblebee")
+![](image-images/asset-bumblebee-sml.png "WatchKitCatalog 示例在 \"监视扩展\" 项目中有一个名为 Bumblebee 的映像")
 
-下面的代码将导致：
+下面的代码将生成:
 
-- 正在加载到内存中，图像和
-- 显示受监视。
+- 要加载到内存中的映像, 以及
+- 显示在监视上。
 
 ```csharp
 using (var image = UIImage.FromBundle ("Bumblebee")) {
@@ -77,20 +77,20 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 ## <a name="animations"></a>Animations
 
-若要进行动画处理的图像集，它们应所有以相同前缀开头，并有数字后缀。
+若要对一组图像进行动画处理, 它们应该以相同的前缀开头并且具有数字后缀。
 
-[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)示例使用监视应用程序项目中有一系列已编号的图像**总线**前缀：
+[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例在具有**总线**前缀的 watch 应用项目中包含一系列已编号的图像:
 
-![](image-images/asset-bus-animation-sml.png "WatchKitCatalog 示例总线前缀与监视应用程序项目中具有一系列已编号的图像")
+![](image-images/asset-bus-animation-sml.png "WatchKitCatalog 示例在具有总线前缀的 \"监视应用程序\" 项目中包含一系列已编号的图像")
 
-若要显示这些映像为动画，请首先加载映像使用`SetImage`前缀名称，然后调用`StartAnimating`:
+若要以动画形式显示这些图像, 请首先使用`SetImage`前缀名称加载图像, 然后调用: `StartAnimating`
 
 ```csharp
 animatedImage.SetImage ("Bus");
 animatedImage.StartAnimating ();
 ```
 
-调用`StopAnimating`上要停止动画循环的图像控件：
+对`StopAnimating`图像控件调用以停止动画循环:
 
 ```csharp
 animatedImage.StopAnimating ();
@@ -99,14 +99,14 @@ animatedImage.StopAnimating ();
 
 <a name="cache" />
 
-## <a name="appendix-caching-images-watchos-1"></a>附录：缓存映像 (watchOS 1)
+## <a name="appendix-caching-images-watchos-1"></a>附录：缓存图像 (watchOS 1)
 
 > [!IMPORTANT]
-> watchOS 3 应用程序完全在设备上运行。 以下信息适用于仅限在 watchOS 1 中应用。
+> watchOS 3 应用完全在设备上运行。 以下信息仅适用于 watchOS 1 应用。
 
-如果应用程序重复使用存储的扩展中 （或已下载） 的映像，则可以缓存在监视的存储中，以提高性能的后续显示图像。
+如果应用程序重复使用存储在扩展中的映像 (或已下载), 则可以在监视的存储中缓存该映像, 以提高后续显示的性能。
 
-使用`WKInterfaceDevice`s`AddCachedImage`方法来将映像传输到监视项目，然后使用`SetImage`映像名称参数为要显示它的字符串的：
+`WKInterfaceDevice`使用 s `AddCachedImage`方法将图像传输到手表, 并使用`SetImage`图像名称参数作为要显示它的字符串:
 
 ```csharp
 var device = WKInterfaceDevice.CurrentDevice;
@@ -120,16 +120,16 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-您可以查询图像缓存在代码中使用的内容`WKInterfaceDevice.CurrentDevice.WeakCachedImages`。
+您可以使用`WKInterfaceDevice.CurrentDevice.WeakCachedImages`在代码中查询图像缓存的内容。
 
 
 ### <a name="managing-the-cache"></a>管理缓存
 
-缓存的大小大约 20 MB。 保留在应用重启后，并且它填满时由您负责清除出使用的文件`RemoveCachedImage`或`RemoveAllCachedImages`上的方法`WKInterfaceDevice.CurrentDevice`对象。
+大约 20 MB 的缓存大小。 它在应用程序重新启动时保持不变, 当填满时, 您就有责任使用`RemoveCachedImage`或`RemoveAllCachedImages`对象上的`WKInterfaceDevice.CurrentDevice`方法来清除文件。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchKitCatalog （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple 的图像文档](https://developer.apple.com/documentation/watchkit/wkinterfaceimage)

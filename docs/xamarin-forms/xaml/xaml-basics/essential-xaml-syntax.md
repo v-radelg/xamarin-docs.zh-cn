@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309514"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646562"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 主要用于实例化和初始化对象。但通常情况下，属性必须设置为复杂对象不能轻松地表示为 XML 字符串，并有时一个类定义的属性必须设置上一个子类。这些两个需要属性元素和附加的属性的基本 XAML 语法的功能。_
 
@@ -143,7 +143,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 </Label>
 ```
 
-再例如：`Grid`具有两个属性名为`RowDefinitions`和`ColumnDefinitions`。 这两个属性属于类型`RowDefinitionCollection`并`ColumnDefinitionCollection`，这是集合的`RowDefinition`和`ColumnDefinition`对象。 需要使用属性元素语法来设置这些集合。
+再例如：具有两个名为`RowDefinitions`和`ColumnDefinitions`的属性。 `Grid` 这两个属性属于类型`RowDefinitionCollection`并`ColumnDefinitionCollection`，这是集合的`RowDefinition`和`ColumnDefinition`对象。 需要使用属性元素语法来设置这些集合。
 
 下面是为 XAML 文件的开头`GridDemoPage`类，其中显示的属性元素标记`RowDefinitions`和`ColumnDefinitions`集合：
 
@@ -351,7 +351,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 </ContentPage>
 ```
 
-真正的问题是：为什么是这些属性的元素*不*所需的 XAML 文件中？
+真正的问题是:为什么 XAML 文件中*不*需要这些属性元素？
 
 允许在 XAML 中使用 Xamarin.Forms 中定义的元素中被标记了一个属性`ContentProperty`类中的属性。 如果您查找`ContentPage`类在联机的 Xamarin.Forms 文档，您将看到此属性：
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-你还可以执行在 XAML 中使用类似的内容[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)并[ `On` ](xref:Xamarin.Forms.On)类。 首先添加为属性元素`Padding`属性页的顶部附近：
+你还可以使用[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On)类在 XAML 中执行类似操作。 首先添加为属性元素`Padding`属性页的顶部附近：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -524,7 +524,7 @@ if (Device.RuntimePlatform == Device.iOS)
 ```
 
 > [!NOTE]
-> `OnPlatform`标记扩展还可在 XAML 中自定义根据每个平台的 UI 外观。 它提供了相同的功能`OnPlatform`和`On`类，但具有更简洁表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+> `OnPlatform`标记扩展还可以在 XAML 中用于根据每个平台自定义 UI 外观。 它提供与`OnPlatform`和`On`类相同的功能, 但具有更简洁的表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
 
 ## <a name="summary"></a>总结
 
@@ -532,7 +532,7 @@ if (Device.RuntimePlatform == Device.iOS)
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 3 部分：XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [第 4 部分：数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

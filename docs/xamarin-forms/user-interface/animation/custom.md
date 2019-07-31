@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 012fd6e5d9650a58018ccb7456ce48dcc0048405
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: b195e63bcc88c4d1c659216f99ab698773f73e9e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925012"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656808"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的自定义动画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Custom/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _动画类是所有 Xamarin.Forms 动画，创建一个或多个动画对象 ViewExtensions 类中的扩展方法使用构建基块。本文演示如何使用动画类来创建和取消动画，同步多个动画，并创建不通过现有的动画方法进行动画处理的属性进行动画处理的自定义动画。_
 
@@ -184,6 +184,6 @@ await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 
 ## <a name="related-links"></a>相关链接
 
-- [自定义动画 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Custom/)
+- [自定义动画 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 - [动画](xref:Xamarin.Forms.Animation)
 - [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 64210bc18532a5260bd31ff1c20e8ffaf92d0df2
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510551"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646402"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>使用 Xamarin 自定义 ListView 的外观
 
@@ -384,6 +384,6 @@ Android 尝试通过缓存布局信息来`ListView`提高滚动性能。 如果�
 
 ## <a name="related-links"></a>相关链接
 
-- [BuiltInViews (示例)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [AccessoryViews (示例)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [CustomRowView (示例)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
+- [BuiltInViews (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/builtinviews)
+- [AccessoryViews (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/accessoryviews)
+- [CustomRowView (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/customrowview)

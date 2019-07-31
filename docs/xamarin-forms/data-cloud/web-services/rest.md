@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: adfc3247bce4d40d73580d6ca9baa31df4f57229
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658964"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644581"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服务
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _将 web 服务集成到应用程序是一种常见方案。本文演示如何使用 Xamarin.Forms 应用程序中的 RESTful web 服务。_
 
@@ -38,7 +38,7 @@ RESTful web 服务通常使用 JSON 消息来将数据返回到客户端。 JSON
 
 REST 的简单性已帮助使其用于访问移动应用程序中的 web 服务的主要方法。
 
-运行示例应用程序时，它将连接到的本地托管的 REST 服务中，如以下屏幕截图中所示：
+运行示例应用程序时, 它将连接到本地托管的 REST 服务, 如以下屏幕截图所示:
 
 ![](rest-images/portal.png "示例应用程序")
 
@@ -208,5 +208,5 @@ REST 服务中发送的 HTTP 状态代码`HttpResponseMessage.IsSuccessStatusCod
 ## <a name="related-links"></a>相关链接
 
 - [为本机移动应用程序创建后端服务](/aspnet/core/mobile/native-mobile-backend/)
-- [TodoREST （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+- [TodoREST （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

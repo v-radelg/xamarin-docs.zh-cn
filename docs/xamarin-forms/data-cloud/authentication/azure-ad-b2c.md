@@ -1,50 +1,50 @@
 ---
-title: 使用 Azure Active Directory B2C 的用户进行身份验证
-description: Azure Active Directory B2C 提供云身份管理适用于面向消费者的 web 和移动应用程序。 本文介绍如何使用 Azure Active Directory B2C 在使用 Microsoft 身份验证库的移动应用程序中集成标识管理。
+title: 用 Azure Active Directory B2C 对用户进行身份验证
+description: Azure Active Directory B2C 为面向消费者的 web 和移动应用程序提供云标识管理。 本文介绍如何使用 Azure Active Directory B2C 将标识管理集成到使用 Microsoft 身份验证库的移动应用程序中。
 ms.prod: xamarin
 ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/17/2019
-ms.openlocfilehash: 06f5716c8decb21de39fd46abe734b5fdcd6bd43
-ms.sourcegitcommit: 0f78ec17210b915b43ddab75937de8063e472c70
+ms.openlocfilehash: 765f34af3b3c43531857b705bb4a39ea56e32f61
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67417939"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656139"
 ---
-# <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 的用户进行身份验证
+# <a name="authenticate-users-with-azure-active-directory-b2c"></a>用 Azure Active Directory B2C 对用户进行身份验证
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 
-_Azure Active Directory B2C 提供云身份管理适用于面向消费者的 web 和移动应用程序。本文介绍如何使用 Azure Active Directory B2C 在使用 Microsoft 身份验证库的移动应用程序中集成标识管理。_
+_Azure Active Directory B2C 为面向消费者的 web 和移动应用程序提供云标识管理。本文介绍如何使用 Azure Active Directory B2C 将标识管理集成到使用 Microsoft 身份验证库的移动应用程序中。_
 
 ## <a name="overview"></a>概述
 
-Azure Active Directory B2C (ADB2C) 是面向使用者的应用程序的标识管理服务。 它允许用户登录到你的应用程序使用其现有社交帐户或自定义凭据，例如电子邮件或用户名和密码。 自定义凭据帐户_本地_帐户。
+Azure Active Directory B2C (ADB2C) 是面向消费者的应用程序的标识管理服务。 它允许用户使用现有的社交帐户或自定义凭据 (如电子邮件或用户名和密码) 登录到你的应用程序。 自定义凭据帐户称为_本地_帐户。
 
 将 Azure Active Directory B2C 标识管理服务集成到移动应用程序的过程如下所示：
 
 1. 创建 Azure Active Directory B2C 租户
-1. 向 Azure Active Directory B2C 租户注册的移动应用程序
-1. 进行注册和登录、 创建策略并忘记了密码用户流
-1. 使用 Microsoft 身份验证库 (MSAL) 来启动与 Azure Active Directory B2C 租户的身份验证工作流。
+1. 将移动应用程序注册到 Azure Active Directory B2C 租户
+1. 创建用于注册和登录的策略, 并忘记了密码用户流
+1. 使用 Microsoft 身份验证库 (MSAL), 通过 Azure Active Directory B2C 租户开始身份验证工作流。
 
 > [!NOTE]
-> Azure Active Directory B2C 支持多个标识提供者包括 Microsoft、 GitHub、 Facebook、 Twitter 和的详细信息。 Azure Active Directory B2C 功能的详细信息，请参阅[Azure Active Directory B2C 文档](/azure/active-directory-b2c/)。
+> Azure Active Directory B2C 支持多个标识提供者, 包括 Microsoft、GitHub、Facebook、Twitter 等。 有关 Azure Active Directory B2C 功能的详细信息, 请参阅[Azure Active Directory B2C 文档](/azure/active-directory-b2c/)。
 >
-> Microsoft 身份验证库支持多个应用程序体系结构和平台。 MSAL 功能有关的信息，请参阅[Microsoft 身份验证库](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)GitHub 上。
+> Microsoft 身份验证库支持多个应用程序体系结构和平台。 有关 MSAL 功能的信息, 请参阅 GitHub 上的[Microsoft 身份验证库](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)。
 
 ## <a name="configure-an-azure-active-directory-b2c-tenant"></a>配置 Azure Active Directory B2C 租户
 
-若要运行示例项目，必须创建一个 Azure Active Directory B2C 租户。 有关详细信息，请参阅[Azure 门户中创建一个 Azure Active Directory B2C 租户](/azure/active-directory-b2c/active-directory-b2c-get-started/)。
+若要运行示例项目, 必须创建 Azure Active Directory B2C 租户。 有关详细信息，请参阅[Azure 门户中创建一个 Azure Active Directory B2C 租户](/azure/active-directory-b2c/active-directory-b2c-get-started/)。
 
-一旦创建租户时，将需要**租户名称**并**租户 ID**配置移动应用程序。 创建你的租户 URL 时，生成的域定义的租户 ID 和名称。 如果生成的租户 URL 是`https://contoso20190410tenant.onmicrosoft.com/`**租户 ID**是`contoso20190410tenant.onmicrosoft.com`并**租户名称**是`contoso20190410tenant`。 通过单击在 Azure 门户中找到租户域对租户**目录和订阅筛选器**顶部菜单中。 以下屏幕截图显示 Azure 目录和订阅筛选器按钮和租户域对租户：
+创建租户后, 你将需要**租户名称**和**租户 ID**来配置移动应用程序。 租户 ID 和名称由创建租户 URL 时生成的域定义。 如果生成的租户 URL 是`https://contoso20190410tenant.onmicrosoft.com/` `contoso20190410tenant.onmicrosoft.com` **租户 ID**且**租户名称**为`contoso20190410tenant`, 则为。 单击顶部菜单中的 "**目录和订阅" 筛选器**, 查找 Azure 门户中的租户域。 以下屏幕截图显示了 Azure 目录和订阅筛选器按钮以及租户域:
 
-[![在 Azure 目录和订阅筛选器视图中的租户名称](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
+[![Azure 目录和订阅筛选器视图中的租户名称](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
 
-在示例项目中，编辑**Constants.cs**文件以设置`tenantName`和`tenantId`字段。 下面的代码显示了应该如何设置这些值租户域是否为`https://contoso20190410tenant.onmicrosoft.com/`，这些值替换为在门户中的值：
+在示例项目中, 编辑**Constants.cs**文件以设置`tenantName`和`tenantId`字段。 下面的代码演示如果你的租户域为`https://contoso20190410tenant.onmicrosoft.com/`, 应如何设置这些值, 并将这些值替换为门户中的值:
 
 ```csharp
 public static class Constants
@@ -55,19 +55,19 @@ public static class Constants
 }
 ```
 
-## <a name="register-your-mobile-application-with-azure-active-directory-b2c"></a>移动应用程序注册到 Azure Active Directory B2C
+## <a name="register-your-mobile-application-with-azure-active-directory-b2c"></a>将移动应用程序注册到 Azure Active Directory B2C
 
-它可以连接并对用户进行身份验证之前，必须向租户注册的移动应用程序。 注册过程将分配一个唯一**应用程序 ID**应用程序，和一个**重定向 URL**定向回应用程序进行身份验证后的响应。 有关详细信息，请参阅[Azure Active Directory B2C:注册应用程序](/azure/active-directory-b2c/active-directory-b2c-app-registration/)。 将需要知道**应用程序 ID**分配给应用程序，这后在属性视图中的应用程序名称列出。 下面的屏幕截图显示了在何处可以找到应用程序 ID:
+移动应用程序必须先在租户中注册, 然后才能连接和验证用户身份。 注册过程将唯一的**应用程序 ID**分配给应用程序, 并在身份验证后将响应的**重定向 URL 定向**回应用程序。 有关详细信息, 请[参阅 Azure Active Directory B2C:注册你的](/azure/active-directory-b2c/active-directory-b2c-app-registration/)应用程序。 你将需要知道分配给应用程序的**应用程序 ID** , 该 ID 在 "属性" 视图中的应用程序名称之后列出。 以下屏幕截图显示了在何处可以找到应用程序 ID:
 
-[![在 Azure 应用程序属性视图中的应用程序 ID](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
+[![Azure 应用程序的 "属性" 视图中的应用程序 ID](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
 
-Microsoft 身份验证库要求**重定向 URL**为应用程序为您**应用程序 ID**带有文本"msal"前缀后, 跟一个名为"身份验证"的终结点。 如果你的应用程序 ID 为"1234abcd"，应为的完整 URL `msal1234abcd://auth`。 请确保你的应用程序已启用**本机客户端**设置并创建**自定义重定向 URI**使用你的应用程序 ID，如以下屏幕截图中所示：
+Microsoft 身份验证库需要将你的应用程序的**重定向 URL**作为前缀文本 "msal" 的**应用程序 ID** , 后跟一个名为 "auth" 的终结点。 如果你的应用程序 ID 是 "1234abcd", 则完整 URL `msal1234abcd://auth`应为。 请确保应用程序已启用**Native client**设置, 并使用应用程序 ID 创建**自定义重定向 URI** , 如以下屏幕截图所示:
 
-![在 Azure 应用程序属性视图中的自定义重定向 URI](azure-ad-b2c-images/azure-redirect-uri.png)
+![Azure 应用程序的 "属性" 视图中的自定义重定向 URI](azure-ad-b2c-images/azure-redirect-uri.png)
 
-URL 将使用更高版本中这两个 Android **ApplicationManifest.xml**和 iOS **Info.plist**。
+稍后将在 Android **applicationmanifest.xml**和 iOS**信息. INFO.PLIST**中使用 URL。
 
-在示例项目中，编辑**Constants.cs**文件以设置`clientId`字段你**应用程序 ID**。 下面的代码显示了应如何设置此值是否为应用程序 ID `1234abcd`:
+在示例项目中, 编辑**Constants.cs**文件以将字段设置`clientId`为你的**应用程序 ID**。 下面的代码演示如果你的应用程序 ID 为, `1234abcd`应如何设置此值:
 
 ```csharp
 public static class Constants
@@ -79,15 +79,15 @@ public static class Constants
 }
 ```
 
-## <a name="create-sign-up-and-sign-in-policies-and-forgot-password-policies"></a>创建注册和登录策略和忘记了密码策略
+## <a name="create-sign-up-and-sign-in-policies-and-forgot-password-policies"></a>创建注册和登录策略, 并忘记密码策略
 
-策略是用户可以通过完成的任务，例如，创建一个帐户或重置密码的体验。 策略还指定用户返回从体验时，应用程序收到的令牌的内容。 必须注册和登录中设置了这两个帐户的策略和重置密码。 Azure 具有简化的常见策略创建的内置策略。 有关详细信息，请参阅[Azure Active Directory B2C:内置策略](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
+策略是用户完成任务 (例如创建帐户或重置密码) 的一种体验。 策略还指定用户从经验返回时收到的令牌的内容。 你必须为帐户注册和登录设置策略, 然后重置密码。 Azure 提供了内置的策略来简化常见策略的创建。 有关详细信息, 请[参阅 Azure Active Directory B2C:内置策略](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
 
-完成策略设置后，应具有两个策略**用户流 （策略）** Azure 门户中的视图。 下面的屏幕截图演示了如何在 Azure 门户中的两个配置的策略：
+完成策略设置后, Azure 门户中的 "**用户流 (策略)** " 视图中应有两个策略。 以下屏幕截图演示了 Azure 门户中的两个已配置策略:
 
-![查看在 Azure 用户流 （策略） 中的两个配置的策略](azure-ad-b2c-images/azure-application-policies.png)
+![Azure 用户流 (策略) 视图中的两个已配置策略](azure-ad-b2c-images/azure-application-policies.png)
 
-在示例项目中，编辑**Constants.cs**文件以设置`policySignin`和`policyPassword`字段以反映在策略设置期间选择的名称：
+在示例项目中, 编辑**Constants.cs**文件以设置`policySignin`和`policyPassword`字段, 以反映在策略设置期间所选的名称:
 
 ```csharp
 public static class Constants
@@ -103,9 +103,9 @@ public static class Constants
 
 ## <a name="use-the-microsoft-authentication-library-msal-for-authentication"></a>使用 Microsoft 身份验证库 (MSAL) 进行身份验证
 
-Microsoft 身份验证库 (MSAL) NuGet 包必须添加到共享、.NET Standard 项目中，和 Xamarin.Forms 解决方案中的平台项目。 包括 MSAL`PublicClientApplicationBuilder`类构造一个对象，遵守`IPublicClientApplication`接口。 MSAL 利用`With`子句以提供额外的参数的构造函数和身份验证方法。
+必须将 Microsoft 身份验证库 (MSAL) NuGet 包添加到 Xamarin 解决方案中的共享、.NET Standard 项目和平台项目。 MSAL 包含一个`PublicClientApplicationBuilder`类, 该类用于构造遵守接口的`IPublicClientApplication`对象。 MSAL 利用`With`子句为构造函数和身份验证方法提供其他参数。
 
-在示例项目中的隐藏代码**App.xaml**定义名为静态属性`AuthenticationClient`并`UIParent`，并实例化`AuthenticationClient`构造函数中的对象。 `WithIosKeychainSecurityGroup`子句提供了 iOS 应用程序的安全组名称。 `WithB2CAuthority`子句提供的默认值**颁发机构**，或将使用用户进行身份验证的策略。 下面的示例演示如何实例化`PublicClientApplication`:
+在示例项目中,**应用**隐藏的代码将定义名`AuthenticationClient`为和`UIParent`的静态属性, 并在构造`AuthenticationClient`函数中实例化对象。 `WithIosKeychainSecurityGroup`子句提供 iOS 应用程序的安全组名称。 子句提供将用于对用户进行身份验证的默认**证书颁发机构。** `WithB2CAuthority` 下面的示例演示如何实例化`PublicClientApplication`:
 
 ```csharp
 public partial class App : Application
@@ -129,7 +129,7 @@ public partial class App : Application
     ...
 ```
 
-`OnAppearing`中的事件处理程序**LoginPage.xaml.cs**代码隐藏调用`AcquireTokenSilentAsync`刷新之前已登录的用户的身份验证令牌。 身份验证过程将重定向到`LogoutPage`如果成功，则并不执行任何操作失败。 下面的示例演示中的无提示重新进行身份验证过程`OnAppearing`:
+LoginPage.xaml.cs `OnAppearing`代码中的事件  处理程序调用`AcquireTokenSilentAsync`来刷新之前已登录的用户的身份验证令牌。 如果成功, 则身份验证`LogoutPage`过程将重定向到, 且不执行任何操作。 下面的示例演示中`OnAppearing`的无提示身份验证过程:
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -160,7 +160,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-`OnLoginButtonClicked` （单击登录按钮时触发） 的事件处理程序调用`AcquireTokenAsync`。 MSAL 库会自动打开移动设备浏览器并导航到登录页。 登录 URL，称为**颁发机构**，是租户名称的组合中定义的策略**Constants.cs**文件。 如果用户选择忘记了密码选项，它们将返回到应用程序异常，它会启动与忘记了密码体验。 下面的示例显示了身份验证过程：
+`OnLoginButtonClicked` 调用`AcquireTokenAsync`时, 事件处理程序 (在单击 "登录" 按钮时触发)。 MSAL 库会自动打开移动设备浏览器并导航到登录页。 登录 URL 称为**颁发机构**, 它是在**Constants.cs**文件中定义的租户名称和策略的组合。 如果用户选择 "忘记密码" 选项, 则会将其返回给应用程序, 但会出现异常, 这会启动 "忘记的密码" 体验。 以下示例显示了身份验证过程:
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -198,7 +198,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-`OnForgotPassword`方法类似于在登录过程，但实现自定义策略。 `OnForgotPassword` 使用的不同重载`AcquireTokenAsync`，这使您可以提供特定**颁发机构**。 下面的示例演示如何提供自定义**机构**时获取令牌：
+`OnForgotPassword`方法与登录过程类似, 但实现了自定义策略。 `OnForgotPassword`使用的不同重载`AcquireTokenAsync`, 这允许你提供特定的**权限**。 下面的示例演示如何在获取令牌时提供自定义**授权**:
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -224,7 +224,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-身份验证的最后一个部分是注销过程。 `OnLogoutButtonClicked`在用户按注销按钮时调用方法。 它循环访问所有帐户，并确保其令牌已失效。 下面的示例演示实现注销：
+最后一条身份验证是注销过程。 当用户按 "注销" 按钮时, 将调用方法。`OnLogoutButtonClicked` 它循环遍历所有帐户, 并确保其令牌已失效。 下面的示例演示了注销实现:
 
 ```csharp
 public partial class LogoutPage : ContentPage
@@ -247,15 +247,15 @@ public partial class LogoutPage : ContentPage
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上，与 Azure Active Directory B2C 注册的自定义 URL 方案必须注册中**Info.plist**。 MSAL 需要遵循前面所述的特定模式的 URL 方案[移动应用程序注册到 Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)。 以下屏幕截图显示了中的自定义 URL 方案**Info.plist**。
+在 iOS 上, 必须在**info.plist**中注册注册到 Azure Active Directory B2C 的自定义 URL 方案。 MSAL 要求 URL 方案符合特定模式, 前面介绍了如何将[移动应用程序注册到 Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)。 以下屏幕截图显示了**info.plist**中的自定义 URL 方案。
 
-!["注册在 iOS 上的自定义 URL 方案"](azure-ad-b2c-images/customurl-ios.png)
+!["在 iOS 上注册自定义 URL 方案"](azure-ad-b2c-images/customurl-ios.png)
 
-MSAL 还需要在 iOS 上，注册在 Keychain 权利**Entitilements.plist**，如以下屏幕截图中所示：
+MSAL 还需要在 iOS 上注册密钥链权利, 如  以下屏幕截图中所示:
 
-!["在 ios 设备上设置应用权利"](azure-ad-b2c-images/entitlements-ios.png)
+!["在 iOS 上设置应用程序权利"](azure-ad-b2c-images/entitlements-ios.png)
 
-Azure Active Directory B2C 完成授权请求，它将重定向到注册的重定向 URL。 在 iOS 中启动移动应用程序并在 URL 中传递作为启动参数，它由处理结果的自定义 URL 方案`OpenUrl`在应用程序的重写`AppDelegate`类，并将控制权返还到 MSAL 的体验。 `OpenUrl`实现下面的代码示例所示：
+Azure Active Directory B2C 完成授权请求，它将重定向到注册的重定向 URL。 自定义 URL 方案会导致 iOS 启动移动应用程序, 并将该 url 作为启动参数传入, 在此过程中, 它`OpenUrl`由应用程序的`AppDelegate`类的替代进行处理, 并将体验控制返回到 MSAL。 下面`OpenUrl`的代码示例演示了实现:
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -277,7 +277,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-在 Android 上，与 Azure Active Directory B2C 注册的自定义 URL 方案必须注册中**AndroidManifest.xml**。 MSAL 需要遵循前面所述的特定模式的 URL 方案[移动应用程序注册到 Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)。 下面的示例演示中的自定义 URL 方案**AndroidManifest.xml**。
+在 Android 上, 必须在**androidmanifest.xml**中注册注册到 Azure Active Directory B2C 的自定义 URL 方案。 MSAL 要求 URL 方案符合特定模式, 前面介绍了如何将[移动应用程序注册到 Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)。 下面的示例显示了**androidmanifest.xml**中的自定义 URL 方案。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -296,7 +296,7 @@ namespace TodoAzure.iOS
 </manifest>
 ```
 
-`MainActivity`必须修改类，以提供`UIParent`期间的应用程序的对象`OnCreate`调用。 Azure Active Directory B2C 完成授权请求，它将重定向到已注册的 URL 方案，从**AndroidManifest.xml**。 已注册的 URI 方案会导致 Android 电话`OnActivityResult`方法替换为启动参数，它由处理 URL`SetAuthenticationContinuationEventArgs`方法。
+必须修改`UIParent` 类,`OnCreate`以便在调用期间向应用程序提供对象。 `MainActivity` Azure Active Directory B2C 完成授权请求后, 它将从**androidmanifest.xml**重定向到注册的 URL 方案。 已注册的 URI 方案导致 Android 使用 URL `OnActivityResult`作为启动参数调用方法, 该参数`SetAuthenticationContinuationEventArgs`由方法进行处理。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -323,17 +323,17 @@ public class MainActivity : FormsAppCompatActivity
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在通用 Windows 平台上使用 MSAL 所不需的任何其他设置
+在通用 Windows 平台上使用 MSAL 不需要其他设置
 
 ## <a name="run-the-project"></a>运行该项目
 
-虚拟或物理设备上运行应用程序。 点击**登录名**按钮应该打开浏览器并导航到在其中登录或创建帐户的页面。 在登录过程后，您应返回到应用程序的注销页面。 下面的屏幕截图显示用户注册 Android 和 iOS 上运行的屏幕中：
+在虚拟或物理设备上运行该应用程序。 点击 "**登录**" 按钮会打开浏览器并导航到可在其中登录或创建帐户的页面。 完成登录过程后, 应返回到应用程序的注销页面。 以下屏幕截图显示了在 Android 和 iOS 上运行的用户登录屏幕:
 
-!["Azure ADB2C 登录 Android 和 iOS 上的屏幕"](azure-ad-b2c-images/login.png)
+!["Android 和 iOS 上的 Azure ADB2C 登录屏幕"](azure-ad-b2c-images/login.png)
 
 ## <a name="related-links"></a>相关链接
 
-- [AzureADB2CAuth （示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureADB2CAuth/)
+- [AzureADB2CAuth （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 - [Azure Active Directory B2C](/azure/active-directory-b2c/)
 - [Microsoft 身份验证库](https://www.nuget.org/packages/Microsoft.Identity.Client)
 - [Microsoft 身份验证库文档](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)

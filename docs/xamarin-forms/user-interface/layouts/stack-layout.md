@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804898"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657085"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout)水平或垂直方向组织是一维直线 （"堆栈"） 中的视图。 视图中`StackLayout`可以基于使用布局选项布局中的空间大小。 定位取决于视图已添加到的布局和视图的布局选项的顺序。
+[StackLayout](xref:Xamarin.Forms.StackLayout)在一维行 ("堆栈") 中以水平或垂直方式组织视图。 视图中`StackLayout`可以基于使用布局选项布局中的空间大小。 定位取决于视图已添加到的布局和视图的布局选项的顺序。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms 布局")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 布局")
 
@@ -226,5 +226,5 @@ Title="StackLayouts">
 ## <a name="related-links"></a>相关链接
 
 - [LayoutOptions](~/xamarin-forms/user-interface/layouts/layout-options.md)
-- [布局 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 示例 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

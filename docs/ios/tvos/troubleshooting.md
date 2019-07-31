@@ -1,6 +1,6 @@
 ---
-title: 使用 Xamarin 生成的 tvOS 应用进行故障排除
-description: 本文提供了各种提示来帮助解决在使用 Xamarin 生成的 tvOS 应用的开发过程。 它描述了已知的问题和特定错误。
+title: 用 Xamarin 构建的 tvOS 应用疑难解答
+description: 本文提供了一些提示, 可帮助在使用 Xamarin 生成的 tvOS 应用程序的开发过程中进行故障排除。 它介绍了已知问题和具体的错误。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
@@ -8,58 +8,58 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 6830df267aa0b9c4f12fbd53520206ea94fc8a38
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ad0952bb620645a4cbc5fbc17b21f6a977c889ff
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831893"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657313"
 ---
-# <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>使用 Xamarin 生成的 tvOS 应用进行故障排除
+# <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>用 Xamarin 构建的 tvOS 应用疑难解答
 
-_本文介绍了解使用 Xamarin 的 tvOS 支持时可能遇到的问题。_
+_本文介绍了在使用 Xamarin 的 tvOS 支持时可能遇到的问题。_
 
 <a name="Known-Issues" />
 
 ## <a name="known-issues"></a>已知问题
 
-当前版本的 Xamarin 的 tvOS 支持具有以下已知的问题：
+Xamarin 的 tvOS 支持的当前版本具有以下已知问题:
 
-- **Mono 框架**– Mono 4.3 Cryptography.ProtectedData 失败从 Mono 4.2 的数据进行解密。 结果是，NuGet 包都将失败并出现错误还原`Data unprotection failed`如果受保护的 NuGet 源配置。
-    - **解决方法**– 在 Visual Studio for Mac 将需要重新添加任何 NuGet 包源然后再重新尝试还原包的使用密码身份验证。
-- **Visual Studio for Mac w /F#外接程序**– 在创建时的错误F#在 Windows 上的 Android 模板。 这应仍正常工作的 mac 上
-- **Xamarin.Mac** – 当运行 Xamarin.Mac 统一的模板项目目标框架设置为`Unsupported`，弹出框`Could not connect to the debugger`可能会出现。
-    - **可能的变通方法**– 降级我们稳定通道中可用的 Mono 框架版本。
-- **Xamarin Visual Studio 和 Xamarin.iOS** -在 Visual studio 中，该错误的 WatchKit 应用程序部署时`The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist`可能会出现。
+- **Mono Framework** –单声道 4.3 ProtectedData 无法解密 mono 4.2 中的数据。 因此, 当配置受保护的 NuGet 源时, NuGet 包`Data unprotection failed`将无法还原, 并出现错误。
+    - **解决方法**–在 Visual Studio for Mac 中, 你将需要添加回使用密码身份验证的任何 NuGet 包源, 然后再重新尝试还原包。
+- **Visual Studio for Mac w/ F#外**接程序–在 Windows 上创建F# Android 模板时出错。 这仍应在 Mac 上正常运行。
+- **Xamarin** –当目标框架设置为`Unsupported`的情况下运行 Xamarin 和统一模板项目时, 可能会出现弹出窗口。 `Could not connect to the debugger`
+    - **可能的解决方法**–降级稳定通道中可用的 Mono framework 版本。
+- **Xamarin visual studio & xamarin** –在 Visual Studio 中部署 WatchKit 应用程序时, 可能会`The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist`出现错误。
 
-报表任何 bug，请在上找到[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)。
+请在[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)上报告你发现的任何错误。
 
 ## <a name="troubleshooting"></a>疑难解答
 
-以下部分列出了使用 tvOS 9 与 Xamarin.tvOS 和这些问题的解决方案时可能发生的一些已知的问题：
+以下部分列出了在将 tvOS 9 与 tvOS 结合使用时可能出现的一些已知问题, 以及针对这些问题的解决方案:
 
-### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>无效的可执行文件的可执行文件不包含 bitcode
+### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>可执行文件无效-可执行文件不包含 bitcode
 
-在尝试以提交到 Apple TV App Store Xamarin.tvOS 应用程序时，可能会在窗体中获取一条错误消息 _"无效的可执行文件的可执行文件不包含 bitcode"_ 。
+尝试将 tvOS 应用提交到 Apple TV 应用商店时, 可能会收到 _"无效可执行文件-可执行文件不包含 bitcode"_ 格式的错误消息。
 
-若要解决此问题，请执行以下操作：
+若要解决此问题, 请执行以下操作:
 
-1. 在 Visual Studio for Mac 中，右键单击你 Xamarin.tvOS 项目文件中**解决方案资源管理器**，然后选择**选项**。
-2. 选择**tvOS 生成**，并确保你位于**发行**配置： 
+1. 在 Visual Studio for Mac 中, 右键单击**解决方案资源管理器**中的 TvOS 项目文件, 然后选择 "**选项**"。
+2. 选择 " **TvOS 生成**", 并确保你在 "**发布**" 配置上: 
 
     [![](troubleshooting-images/ts01.png "选择 tvOS 生成选项")](troubleshooting-images/ts01.png#lightbox)
-3. 添加`--bitcode=asmonly`到**其他 mtouch 参数**字段，然后单击**确定**按钮。
-4. 重新生成你的应用**版本**配置。
+3. 添加`--bitcode=asmonly`到 "**其他 mtouch 参数**" 字段, 然后单击 **"确定"** 按钮。
+4. 在**发布**配置中重新生成应用。
 
-### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>验证你的 tvOS 应用包含 Bitcode
+### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>验证 tvOS 应用程序是否包含 Bitcode
 
-若要验证生成的 Xamarin.tvOS 应用包含 Bitcode，打开终端应用并输入以下信息：
+若要验证 tvOS 应用版本是否包含 Bitcode, 请打开终端应用并输入以下内容:
 
 ```csharp
 otool -l /path/to/your/tv.app/tv
 ```
 
-在输出中，查找以下：
+在输出中, 查找以下内容:
 
 ```csharp
 Section
@@ -76,11 +76,11 @@ Section
  reserved2 0
 ```
 
-`addr` 和`size`将会不同，但应与其他字段相同。
+`addr`和`size`将有所不同, 但其他字段应相同。
 
-将需要确保静态任何第三方 (`.a`) 正在使用的库生成针对 tvOS 库 （非 iOS 库），它们还包括 bitcode 信息。
+你将需要确保你使用的任何第三方静态`.a`() 库是针对 tvOS 库 (而不是 iOS 库) 构建的, 并且它们还包括 bitcode 信息。
 
-应用或库，包括有效 bitcode`size`将大于 1。 有某些情况下不包含有效 bitcode 还没有 bitcode 标记，一个库，可以在其中。 例如:
+对于包含有效 bitcode 的`size`应用或库, 将大于1。 在某些情况下, 库可以具有 bitcode 标记, 但不包含有效的 bitcode。 例如：
 
 **无效的 Bitcode**
 
@@ -92,7 +92,7 @@ Section
       size 0x0000000000000001
 ```
 
-**有效 Bitcode** 
+**有效的 Bitcode** 
 
 ```csharp
 $ otool -l -arch arm64 libDownloadableAgent-tvos.a |grep __bitcode -A 3
@@ -102,15 +102,15 @@ $ otool -l -arch arm64 libDownloadableAgent-tvos.a |grep __bitcode -A 3
       size 0x0000000000045440
 ```
 
-请注意在差异`size`之间在列出的示例中的两个库运行上面。 库必须从 Xcode 存档生成以生成启用 bitcode (Xcode 设置`ENABLE_BITCODE`) 作为此大小问题的解决方案。
+请注意上面列出`size`的示例中两个库之间的差异。 必须从启用了 bitcode 的 Xcode 存档版本 (Xcode 设置`ENABLE_BITCODE`) 生成库, 作为此大小问题的解决方案。
 
-### <a name="apps-that-only-contain-the-arm64-slice-must-also-have-arm64-in-the-list-of-uirequireddevicecapabilities-in-infoplist"></a>仅包含 arm64 切片应用的 Info.plist 中 UIRequiredDeviceCapabilities 列表中还必须具有"arm64"
+### <a name="apps-that-only-contain-the-arm64-slice-must-also-have-arm64-in-the-list-of-uirequireddevicecapabilities-in-infoplist"></a>仅包含 arm64 切片的应用还必须在信息 info.plist 中的 UIRequiredDeviceCapabilities 列表中包含 "arm64"。
 
-当提交到 Apple TV App Store 发布的应用，你可能会遇到错误，在窗体中：
+将应用提交到 Apple TV App Store 进行发布时, 可能会出现以下格式的错误:
 
-_"仅包含 arm64 切片应用还必须具有"arm64"UIRequiredDeviceCapabilities Info.plist 中的列表中"_
+_"仅包含 arm64 切片的应用还必须在 info.plist 的 UIRequiredDeviceCapabilities 列表中包含" arm64 "_
 
-如果发生这种情况，编辑你`Info.plist`文件，并确保它具有以下项：
+如果出现这种情况, `Info.plist`请编辑文件, 并确保其具有以下键:
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -119,43 +119,43 @@ _"仅包含 arm64 切片应用还必须具有"arm64"UIRequiredDeviceCapabilities
 </array>
 ```
 
-重新编译你的应用版本并重新提交到 iTunes Connect。
+重新编译你的应用程序以进行发布, 并重新提交到 iTunes Connect。
 
-### <a name="task-mtouch-execution----failed"></a>任务"MTouch"执行-失败
+### <a name="task-mtouch-execution----failed"></a>任务 "MTouch" 执行失败
 
-如果使用第三方库 （如 MonoGame) 和版本编译失败，出现错误消息中结束的一长串`Task "MTouch" execution -- FAILED`，请尝试添加`-gcc_flags="-framework OpenAL"`到你**额外触控参数**:
+如果你使用的是第三方库 (如 MonoGame), 并且你的发布编译失败, 并在`Task "MTouch" execution -- FAILED`结束时出现一系列长错误消息, 请尝试添加  `-gcc_flags="-framework OpenAL"`其他触控参数:
 
-[![](troubleshooting-images/mtouch01.png "MTouch 执行任务")](troubleshooting-images/mtouch01.png#lightbox)
+[![](troubleshooting-images/mtouch01.png "任务 MTouch 执行")](troubleshooting-images/mtouch01.png#lightbox)
 
-此外应包括`--bitcode=asmonly`中**额外触控参数**，链接器选项设置为**链接所有**执行干净的编译。
+还应在附加`--bitcode=asmonly`的**触控参数**中包含, 将链接器选项设置为 "**全部链接**", 并执行干净的编译。
 
-### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS 90471 时出错。 大图标缺少
+### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471 错误。 缺少大图标
 
-如果窗体中的消息"ITMS 90471 错误。 大图标缺少"尝试提交到版本中，Apple TV App Store Xamarin.tvOS 应用程序时请检查以下各项：
+如果收到消息, 格式为 "ITMS-90471 error"。 尝试将 tvOS 应用提交到 Apple TV 应用商店进行发布时, 缺少大图标 ", 请检查以下各项:
 
-1. 确保你已包含在大图标资产你`Assets.car`使用创建的文件[应用图标](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons)文档。
-2. 确保您包括`Assets.car`文件从[使用的图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)最终的应用程序捆绑包中的文档。
+1. 确保已在`Assets.car`文件中包含使用[应用图标](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons)文档创建的大图标资产。
+2. 确保在最终的应用`Assets.car`程序捆绑包中包括了使用[图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)的文档。
 
-### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>捆绑无效-游戏控制器支持的应用还必须支持 Apple TV 远程
-
-或 
-
-### <a name="invalid-bundle--apple-tv-apps-with-the-gamecontroller-framework-must-include-the-gcsupportedgamecontrollers-key-in-the-apps-infoplist"></a>捆绑无效-GameController framework 使用 Apple TV 应用必须在应用的 info.plist 文件中包含的 GCSupportedGameControllers 密钥
-
-游戏控制器可以用于增强游戏玩法，并提供在游戏中的浸入式的。 它们还可以用于控制标准的 Apple TV 接口，以便用户不具有远程和控制器之间进行切换。
-
-如果您要提交到 Apple TV 应用商店的游戏控制器支持包含的 Xamarin.tvOS 应用并收到一条错误消息的形式：
-
-
-_我们已发现的"应用名称"最近交付的一个或多个问题。交付已成功，但你可能想要更正中下一步行动的以下问题：_
-
-_捆绑无效-游戏控制器支持的应用还必须支持 Apple TV 远程。_
+### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>无效的捆绑–支持游戏控制器的应用还必须支持 Apple TV 远程
 
 或 
 
-_捆绑无效-GameController framework 使用 Apple TV 应用必须在应用的 info.plist 文件中包含的 GCSupportedGameControllers 密钥。_
+### <a name="invalid-bundle--apple-tv-apps-with-the-gamecontroller-framework-must-include-the-gcsupportedgamecontrollers-key-in-the-apps-infoplist"></a>无效的捆绑包–带有 GameController 框架的 Apple 电视应用程序的信息中必须包括 GCSupportedGameControllers 键。 info.plist
 
-解决方法是添加对 Siri 远程支持 (`GCMicroGamepad`) 到应用程序的`Info.plist`文件。 微型游戏控制器配置文件都已由 Apple Siri 远程目标。 例如，包括以下项：
+游戏控制器可用于增强游戏, 并在游戏中提供浸入式。 它们还可用于控制标准 Apple TV 界面, 因此用户无需在远程和控制器之间切换。
+
+如果你要将具有游戏控制器支持的 Xamarin tvOS 应用提交到 Apple TV 应用商店, 并且你将收到如下所示的错误消息:
+
+
+_我们发现你最近的 "应用名称" 传递有一个或多个问题。你的交付已成功完成, 但你可能希望在下一次传递时更正以下问题:_
+
+_无效的捆绑–支持游戏控制器的应用也必须支持 Apple TV 远程。_
+
+或 
+
+_无效的捆绑包–具有 GameController 框架的 Apple TV 应用必须在应用的 info.plist 中包含 GCSupportedGameControllers 键。_
+
+解决方法是将对 Siri 远程 (`GCMicroGamepad`) 的支持添加到`Info.plist`应用文件。 Apple 添加了微型游戏控制器配置文件以面向 Siri 远程。 例如, 包括以下项:
 
 ```xml
 <key>GCSupportedGameControllers</key>  
@@ -174,38 +174,38 @@ _捆绑无效-GameController framework 使用 Apple TV 应用必须在应用的 
 ```
 
 > [!IMPORTANT]
-> 蓝牙游戏控制器的可选购买内容，可能会使最终用户，您的应用程序不能强制用户购买一个。 如果您的应用程序支持游戏控制器，它还必须支持 Siri 远程，以便游戏的 Apple TV 的所有用户。
+> 蓝牙游戏控制器是最终用户可能会进行的可选购买, 你的应用程序无法强制用户购买一个。 如果你的应用程序支持游戏控制器, 则它还必须支持 Siri 远程, 以便所有 Apple TV 用户都可以使用该游戏。
 
-有关详细信息，请参阅我们[使用游戏控制器](~/ios/tvos/platform/remote-bluetooth.md#Working-with-Game-Controllers)一部分我们[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
+有关详细信息, 请参阅我们的[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档中的使用[游戏控制器](~/ios/tvos/platform/remote-bluetooth.md#Working-with-Game-Controllers)部分。
 
-### <a name="incompatible-target-framework-netportable-versionv45-profileprofile78"></a>目标框架不兼容:。NetPortable，版本 = v4.5 中，配置文件 = Profile78
+### <a name="incompatible-target-framework-netportable-versionv45-profileprofile78"></a>目标框架不兼容:。NetPortable, Version = 5v, Profile = Profile78
 
-尝试将以可移植类库 (PCL) 包含到 Xamarin.tvOS 项目时可能会出现一条消息以形成：
+尝试在 tvOS 项目中包含可移植类库 (PCL) 时, 可能会在中看到一条消息:
 
-_目标框架不兼容:。NetPortable，版本 = v4.5 中，配置文件 = Profile78_
+_目标框架不兼容:。NetPortable, Version = 5v, Profile = Profile78_
 
-若要解决此问题，添加名为 XML 文件`Xamarin.TVOS.xml`包含以下内容：
+若要解决此问题, 请添加一个名`Xamarin.TVOS.xml`为的 XML 文件, 其中包含以下内容:
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>
 ```
 
-到以下路径：
+到以下路径:
 
 ```csharp
 /Library/Frameworks/Mono.framework/Versions/Current/lib/mono/xbuild-frameworks/.NETPortable/v4.5/Profile/Profile259/SupportedFrameworks/
 
 ```
 
-请注意，在路径中的配置文件数必须匹配的 PCL 配置文件数。
+请注意, 路径中的配置文件编号必须与 PCL 的配置文件编号匹配。
 
-与此文件之后，您应能够成功地将 PCL 文件添加到 Xamarin.tvOS 项目。
+准备好此文件后, 应该能够成功地将 PCL 文件添加到 tvOS 项目。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人机接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [适用于 tvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 512aa2b54ec22acf8308b3452bfeee2318097b57
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 187befd88c115133a92aa90a711438e7754518d5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978147"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648805"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _使用 FlexLayout 堆叠或包装子视图的集合。_
 
@@ -27,13 +27,13 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms 版�
 
 `FlexLayout` 派生自[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) ，并继承[ `Children` ](xref:Xamarin.Forms.Layout`1.Children)类型的属性`IList<View>`。
 
-`FlexLayout` 定义了六个公共可绑定属性和影响大小、 方向和子元素的对齐方式的五个附加的可绑定属性。 (如果您不熟悉可绑定的附加属性，请参阅文章 **[附加属性](~/xamarin-forms/xaml/attached-properties.md)**。)在下面各节详细地介绍这些属性 **[详细信息中的可绑定属性](#bindable-properties)** 并 **[详细的附加可绑定属性](#attached-properties)**. 但是，将这篇文章开始一节介绍了一些 **[常见使用方案](#common-scenarios)** 的 `FlexLayout`更通俗地说描述其中的许多属性。 本文的末尾，将了解如何结合`FlexLayout`与[CSS 样式表](~/xamarin-forms/user-interface/styles/css/index.md)。
+`FlexLayout` 定义了六个公共可绑定属性和影响大小、 方向和子元素的对齐方式的五个附加的可绑定属性。 (如果您不熟悉可绑定的附加属性，请参阅文章 **[附加属性](~/xamarin-forms/xaml/attached-properties.md)** 。)在下面各节详细地介绍这些属性 **[详细信息中的可绑定属性](#bindable-properties)** 并 **[详细的附加可绑定属性](#attached-properties)** . 但是，将这篇文章开始一节介绍了一些 **[常见使用方案](#common-scenarios)** 的 `FlexLayout`更通俗地说描述其中的许多属性。 本文的末尾，将了解如何结合`FlexLayout`与[CSS 样式表](~/xamarin-forms/user-interface/styles/css/index.md)。
 
 <a name="common-scenarios" />
 
 ## <a name="common-usage-scenarios"></a>常见使用方案
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例程序包含多个演示的一些常见用途的页面`FlexLayout`，当你尝试使用其属性。
+**[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例程序包含多个演示的一些常见用途的页面`FlexLayout`，当你尝试使用其属性。
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>使用适用于简单堆栈 FlexLayout
 
@@ -92,7 +92,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms 版�
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>使用 FlexLayout 进行包装的项
 
-**照片包装** 页 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例演示如何`FlexLayout`可以包装到其他行或列及其子级。 XAML 文件实例化`FlexLayout`，并将分配两个属性：
+          **照片包装** 页 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例演示如何`FlexLayout`可以包装到其他行或列及其子级。 XAML 文件实例化`FlexLayout`，并将分配两个属性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -192,7 +192,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 在调用的 web 设计中没有的标准版式[ _holy grail_ ](https://en.wikipedia.org/wiki/Holy_grail_(web_design))因为它是非常有利，但通常难以实现与完善的布局格式。 布局包含在页面顶部的标头和页脚在底部，这两个扩展到整个页面的宽度。 占用的页的中心是主要的内容，但通常与左侧的内容和补充信息的纵栏式菜单 (有时称为_放在一边_区域) 右侧。 [CSS 灵活框布局规范的第 5.4.1 节](http://www.w3.org/TR/css-flexbox-1/#order-accessibility)介绍了如何在弹性框实现 holy grail 布局。
 
-**Holy Grail 布局** 页 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例显示了使用其中一个此布局的简单实现`FlexLayout`嵌套在另一个。 因为此页专为手机在纵向模式下，左侧和右侧的内容区域的区域只是 50 像素宽：
+          **Holy Grail 布局** 页 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例显示了使用其中一个此布局的简单实现`FlexLayout`嵌套在另一个。 因为此页专为手机在纵向模式下，左侧和右侧的内容区域的区域只是 50 像素宽：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -261,7 +261,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="catalog-items-with-flexlayout"></a>使用 FlexLayout 目录项
 
-**目录项** 页面 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例是类似于[示例 1 中的 CSS Flex 布局框规范部分1.1](http://www.w3.org/TR/css-flexbox-1/#overview)，只不过它将显示一系列可水平滚动的图片和说明的三个放弃：
+          **目录项** 页面 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例是类似于[示例 1 中的 CSS Flex 布局框规范部分1.1](http://www.w3.org/TR/css-flexbox-1/#overview)，只不过它将显示一系列可水平滚动的图片和说明的三个放弃：
 
 [![目录项页](flex-layout-images/CatalogItems.png "目录项页")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
@@ -384,11 +384,11 @@ public partial class PhotoWrappingPage : ContentPage
 现在，已了解的一些常见的应用程序`FlexLayout`的属性`FlexLayout`可以更详细地探讨了。
 `FlexLayout` 定义设置的六个可绑定属性`FlexLayout`本身，在代码或 XAML 控件方向和对齐方式。 (这些属性之一[ `Position` ](xref:Xamarin.Forms.FlexLayout.Position)，本文不介绍。)
 
-您可以尝试使用五个剩余可绑定属性使用 **试验** 页 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例。 此页面允许您添加或删除从子级`FlexLayout`并设置五个可绑定属性的组合。 所有子级`FlexLayout`都`Label`视图的各种颜色和大小，使用`Text`属性设置为对应的数字为在其位置`Children`集合。
+您可以尝试使用五个剩余可绑定属性使用 **试验** 页 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例。 此页面允许您添加或删除从子级`FlexLayout`并设置五个可绑定属性的组合。 所有子级`FlexLayout`都`Label`视图的各种颜色和大小，使用`Text`属性设置为对应的数字为在其位置`Children`集合。
 
 程序启动时，五`Picker`视图中显示五个默认值`FlexLayout`属性。 `FlexLayout`屏幕的底部包含三个子级：
 
-[![在实验页中：默认值](flex-layout-images/ExperimentDefault.png "实验页中的默认值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![试验页:默认](flex-layout-images/ExperimentDefault.png "的试验页-默认")值](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 每个`Label`视图具有灰色背景显示的分配的空间`Label`内`FlexLayout`。 背景`FlexLayout`本身是艾莉斯蓝。 它在左侧和右侧的小边距除外占据了整个底部区域中的页。
 
@@ -407,7 +407,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 下面是**实验**（从左到右），显示页面`Row`方向`Column`方向，和`ColumnReverse`方向：
 
-[![在实验页中：方向](flex-layout-images/ExperimentDirection.png "实验页的方向")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![试验页:(flex-layout-images/ExperimentDirection.png "\"试验\" 页方向")]](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
 请注意，对于`Reverse`项启动选项，在右侧或底部。
 
@@ -423,7 +423,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 从左到右，这些屏幕显示`NoWrap`，`Wrap`和`Reverse`12 子级的选项：
 
-[![在实验页中：包装](flex-layout-images/ExperimentWrap.png "实验页中的自动换行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![试验页:包装](flex-layout-images/ExperimentWrap.png "试验页包装")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 当`Wrap`属性设置为`NoWrap`和主轴受到约束 （如在此程序），以及主轴不高或足够宽，以适应所有子级`FlexLayout`尝试使项目变小，如 iOS 屏幕截图演示。 您可以控制的项 shrinkness [ `Shrink` ](#shrink)附加可绑定属性。
 
@@ -442,7 +442,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 此属性指定项在此示例中为水平轴的主要轴上的分布方式：
 
-[![在实验页中：调整内容](flex-layout-images/ExperimentJustifyContent.png "实验页中的对齐内容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![试验页:调整内容](flex-layout-images/ExperimentJustifyContent.png "\"试验\" 页-调整内容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 在所有三个屏幕截图`Wrap`属性设置为`Wrap`。 `Start`默认上面的 Android 屏幕截图中所示。 此处的 iOS 屏幕快照显示`Center`选项： 所有项都移动到中心。 其他三个选项从单词`Space`分配项未占用的额外空间。 `SpaceBetween` 分配的项; 同样之间的空间`SpaceAround` put 等于每个项周围的空间时`SpaceEvenly`put 等于每个项之间和第一项之前和之后的行的最后一项的空间。
 
@@ -459,7 +459,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 这是两个属性之一 (另一个执行[ `AlignContent` ](#align-content))，该值指示子交叉轴上的对齐方式。 在每个行中，子级是拉伸 （如上面的屏幕截图中所示），或对齐上开始、 居中或结束的每个项，如下面的三个屏幕截图中所示：
 
-[![在实验页中：对齐项](flex-layout-images/ExperimentAlignItems.png "实验页中的对齐项")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![试验页:对齐 "(flex-layout-images/ExperimentAlignItems.png "试验\" 页面对齐项")]](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 在 iOS 屏幕截图中，所有子级的顶部对齐。 中的 Android 屏幕截图，项是垂直方向上居中基于在最高的子活动。 在 UWP 屏幕截图中，所有项的底部对齐。
 
@@ -481,11 +481,11 @@ public partial class PhotoWrappingPage : ContentPage
 
 像`AlignItems`，则`AlignContent`属性还将对齐交叉轴上的子级，但会影响整个行或列：
 
-[![在实验页中：对齐内容](flex-layout-images/ExperimentAlignContent.png "实验页中的对齐内容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![试验页:对齐内容](flex-layout-images/ExperimentAlignContent.png "试验页-对齐内容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 在 iOS 屏幕截图中，这两个行位于顶部;在 Android 屏幕截图，它们在中心;并且 UWP 的屏幕截图中它们是在底部。 此外可以以各种方式分布行：
 
-[![在实验页中：对齐内容 2](flex-layout-images/ExperimentAlignContent2.png "实验页中的对齐内容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![试验页:对齐内容 2](flex-layout-images/ExperimentAlignContent2.png "\"试验\" 页-对齐内容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 `AlignContent`不起作用时只有一个行或列。
 
@@ -571,11 +571,11 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-**基础试验** 页 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例允许用户体验与`Basis`属性。 该页面显示的列已包装的五个`Label`交替背景和前景颜色的元素。 两个`Slider`元素允许您指定`Basis`第二个和第四个值`Label`:
+          **基础试验** 页 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例允许用户体验与`Basis`属性。 该页面显示的列已包装的五个`Label`交替背景和前景颜色的元素。 两个`Slider`元素允许您指定`Basis`第二个和第四个值`Label`:
 
 [![基础试验页](flex-layout-images/BasisExperiment.png "基础试验页")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-在左侧的 iOS 屏幕截图显示了这两个`Label`元素获得高度以与设备无关单位。 Android 屏幕显示它们被授予的总高度的一小部分的高度`FlexLayout`。 如果`Basis`设置为 100%，则的高度，该子级则`FlexLayout`，和将换行到下一列，并占用整个图柱的高度的如 UWP 的屏幕截图中所示：它会显示像五个子级排列在行，但实际上在五个列中排列。
+在左侧的 iOS 屏幕截图显示了这两个`Label`元素获得高度以与设备无关单位。 Android 屏幕显示它们被授予的总高度的一小部分的高度`FlexLayout`。 如果设置`FlexLayout`为 100%, 则子级为的高度, 将换到下一列并占用该列的整个高度, 如 UWP 屏幕截图所示: `Basis`它看起来就像这五个子级排列在一行中, 但实际上是按5列排列的。
 
 ### <a name="the-grow-property"></a>扩展属性
 
@@ -609,7 +609,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 ## <a name="css-styling-with-flexlayout"></a>CSS 样式设定 FlexLayout
 
-可以使用[CSS 样式](~/xamarin-forms/user-interface/styles/css/index.md)门户中的 Xamarin.Forms 3.0 中引入了功能`FlexLayout`。 **CSS 目录项** 页 **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** 示例重复项的布局 **目录项** 页上，但使用 CSS对于许多样式的样式表：
+可以使用[CSS 样式](~/xamarin-forms/user-interface/styles/css/index.md)门户中的 Xamarin.Forms 3.0 中引入了功能`FlexLayout`。           **CSS 目录项** 页 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例重复项的布局 **目录项** 页上，但使用 CSS对于许多样式的样式表：
 
 [![CSS 目录项页](flex-layout-images/CssCatalogItems.png "CSS 目录项页")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
@@ -738,8 +738,8 @@ button {
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin.Forms 3.0 Flex 布局视频**
+**Xamarin 3.0 Flex 布局视频**
 
 ## <a name="related-links"></a>相关链接
 
-- [FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)
+- [FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)

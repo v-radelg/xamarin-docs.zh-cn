@@ -6,39 +6,39 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 535eabe07cb4f4d36e6a6f918b5717efcc99185d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 08738a751fd630c6a413b1c7393f8007f5c97060
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023529"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643550"
 ---
 # <a name="fingerprint-authentication-guidance"></a>指纹身份验证指南
 
 ## <a name="fingerprint-authentication-guidance"></a>指纹身份验证指南
 
-现在，我们已了解概念和 Api 围绕 Android 6.0 指纹身份验证，让我们讨论的指纹 Api 使用一些常规建议。
+现在, 我们已经了解了关于 Android 6.0 指纹身份验证的概念和 Api, 接下来我们将讨论有关使用指纹 Api 的一些一般建议。
 
-1. **使用 Android 支持库 v4 兼容性 Api** &ndash;这将简化应用程序代码通过从代码中删除 API 检查，并允许应用程序以面向最可能的设备。
-2. **提供指纹身份验证的替代方法**&ndash;指纹身份验证是一种很好、 快速的方法，应用程序用户进行身份验证，但是，它不能假定将始终运行或可用。 很可能，指纹扫描程序可能会失败、 可重用功能区可能变脏，用户可能未配置设备使用指纹身份验证或指纹以来已丢失。 还有可能用户可能不希望与您的应用程序使用指纹身份验证。 出于这些原因，Android 应用程序应提供用户名和密码等一个备用身份验证过程。
-3. **使用 Google 的指纹图标**&ndash;所有应用程序应使用 Google 提供的相同指纹图标。 使用一个标准图标轻松 Android 用户，以便识别在应用中使用指纹身份验证的位置： 
+1. **使用 Android 支持库 V4 兼容性 api**&ndash;这将通过从代码中删除 API 检查来简化应用程序代码, 并允许应用程序以尽可能多的方式定位到最多的设备。
+2. **提供指纹身份验证的替代方法**&ndash;指纹身份验证是应用程序对用户进行身份验证的一种很好的方法, 但不能假定它将始终有效或可用。 指纹扫描器可能会失败, 镜头可能会变得脏, 用户可能未将设备配置为使用指纹身份验证, 或者指纹自丢失。 此外, 用户可能不希望对应用程序使用指纹身份验证。 由于这些原因, Android 应用程序应提供备用身份验证过程, 例如用户名和密码。
+3. **使用 Google 的指纹图标**&ndash;所有应用程序都应使用 Google 提供的同一指纹图标。 使用标准图标可以使 Android 用户轻松识别在应用中使用指纹身份验证的位置: 
     
     ![Android 指纹图标](summary-images/ic-fp-40px.png)
     
-4. **通知用户**&ndash;应用程序应显示给用户的通知指纹扫描程序处于活动状态的某种类型和等待触摸或轻扫。 
+4. **通知用户**&ndash;应用程序应向用户显示指纹扫描器处于活动状态并等待触摸或刷的通知。 
 
 ## <a name="summary"></a>总结
 
-指纹身份验证是允许在 Xamarin.Android 应用程序来快速验证用户，使用户更轻松地使用敏感功能进行交互，如应用内购买的好办法。 本指南介绍的概念和合并在 Xamarin.Android 应用程序中的 API 的 Android 6.0 指纹所需的代码。
+指纹身份验证是允许 Xamarin Android 应用程序快速验证用户的绝佳方法, 使用户可以更轻松地与敏感功能 (如应用内购买) 交互。 本指南讨论了在 Xamarin Android 应用程序中合并 Android 6.0 指纹 API 所需的概念和代码。
 
-首先，我们讨论了 API 的本身，指纹`FingerprintManager`(和`FingerprintManagerCompat`)。 我们探讨了如何将`FingerprintManager.AuthenticationCallbacks`必须由应用程序扩展抽象类，并将其用作指纹硬件和应用程序本身之间的中介。 然后介绍了如何验证指纹扫描程序结果使用 Java 的完整性`Cipher`对象。 最后，我们谈及有点测试通过描述如何注册设备上的指纹，并使用**adb**来模拟指纹轻扫的仿真程序上。 
+首先, 我们讨论了指纹 API 本身, `FingerprintManager` (和`FingerprintManagerCompat`)。 我们探讨了如何`FingerprintManager.AuthenticationCallbacks`使用抽象类来扩展应用程序, 并将其用作指纹硬件和应用程序本身之间的媒介。 然后, 我们已检查了如何使用 Java `Cipher`对象验证指纹扫描程序结果的完整性。 最后, 我们通过说明如何在设备上注册指纹并使用**adb**在模拟器上模拟指纹刷, 对测试进行了一些探讨。 
 
-如果尚未这样做，则应查看[示例应用程序](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)随附本指南。 [指纹对话框示例](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)已经通过 Java 移植到 Xamarin.Android 和提供有关如何将指纹身份验证添加到 Android 应用程序的另一个示例。
+如果尚未执行此操作, 应查看本指南附带的[示例应用程序](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)。 [指纹对话框示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)已从 Java 移植到 Xamarin, 还提供了另一个示例, 说明如何向 android 应用程序添加指纹身份验证。
 
 
 
 ## <a name="related-links"></a>相关链接
 
 - [指纹指南示例应用](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)
-- [指纹对话框示例](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog/)
+- [指纹对话示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
 - [指纹图标](https://raw.githubusercontent.com/xamarin/monodroid-samples/master/FingerprintGuide/FingerprintSampleApp/Resources/drawable-hdpi/ic_fp_40px.png)

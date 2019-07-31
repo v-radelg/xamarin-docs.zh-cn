@@ -1,34 +1,34 @@
 ---
-title: 触控和手势在 Xamarin.Android 中
-description: 在许多现有的设备上的触摸屏允许用户快速高效地与设备交互自然和直观的方式。 这种交互不只限于简单触摸检测-可以使用手势以及。 例如，捏合缩放手势是一个非常常见的示例通过收缩手势用户可以放大或缩小的两根手指与屏幕的一部分。本指南检查触摸屏输入，并在 Android 中的笔势。
+title: Xamarin 中的触摸和手势
+description: 如今的许多设备上的触摸屏允许用户以自然直观的方式快速、高效地与设备交互。 这种交互不只局限于简单的触摸式检测, 还可以使用手势。 例如, 通过使用两个手指 (用户可以放大或缩小) 收缩屏幕的一部分, 缩小到缩放手势的情况非常常见。本指南检查 Android 中的触摸和手势。
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1efccdd5f56194f002731b0490bad7573321d7d2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013110"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643987"
 ---
-# <a name="touch-and-gestures-in-xamarinandroid"></a>触控和手势在 Xamarin.Android 中
+# <a name="touch-and-gestures-in-xamarinandroid"></a>Xamarin 中的触摸和手势
 
-_在许多现有的设备上的触摸屏允许用户快速高效地与设备交互自然和直观的方式。这种交互不只限于简单触摸检测-可以使用手势以及。例如，捏合缩放手势是一个非常常见的示例通过收缩手势用户可以放大或缩小的两根手指与屏幕的一部分。本指南检查触摸屏输入，并在 Android 中的笔势。_
+_如今的许多设备上的触摸屏允许用户以自然直观的方式快速、高效地与设备交互。这种交互不只局限于简单的触摸式检测, 还可以使用手势。例如, 通过使用两个手指 (用户可以放大或缩小) 收缩屏幕的一部分, 缩小到缩放手势的情况非常常见。本指南检查 Android 中的触摸和手势。_
 
-## <a name="touch-overview"></a>触控概述
+## <a name="touch-overview"></a>触摸概述
 
-iOS 和 Android 是在它们处理触控的方式类似。 都可以支持多点触控的很多的联系点在屏幕上的和复杂的笔势。 本指南介绍一些概念中的相似之处以及实现触摸的 particularities，并在这两个平台上笔势。
+iOS 和 Android 的处理方式类似于处理触控的方式。 两者都可以在屏幕上和复杂的手势上支持多点触控。 本指南介绍了概念中的一些相似性, 以及在这两个平台上实现触控和手势的 particularities。
 
-Android 使用`MotionEvent`对象封装触控数据和要侦听的收尾工作了的视图对象上的方法。
+Android 使用`MotionEvent`对象封装触控数据, 并使用视图对象上的方法侦听接触。
 
-除了捕获触摸屏输入数据，iOS 和 Android 提供种解释模式的到手势收尾工作了。 这些笔势识别器又用于解释特定于应用程序的命令，例如图像的旋转或页面的一个轮次。 Android 提供了少量的受支持的手势，以及资源，以使添加简单的复杂自定义笔势。
+除了捕获触控数据之外, iOS 和 Android 都提供了一种方法来解释对手势的接触模式。 这些手势识别器可用于解释特定于应用程序的命令, 例如, 旋转图像或打开页面。 Android 提供少量支持的手势, 还提供了一些资源, 使你可以轻松地添加复杂的自定义手势。
 
-无论您在 Android 或 iOS 上使用，触摸和手势识别器之间的选择，可以是一个令人困惑。 本指南建议，一般情况下，首选项应授予给手势识别器。 笔势识别器都实现为离散类，它们提供更大关注点分离和更好的封装。 这样可以方便地共享尽量减少编写的代码量的不同视图之间的逻辑。
+无论你使用的是 Android 还是 iOS, 都可以选择触摸和手势识别器。 本指南建议在一般情况下, 应将首选项指定给手势识别器。 手势识别器作为离散类实现, 这可提供更大的问题分离和更好的封装。 这样就可以轻松地在不同视图之间共享逻辑, 从而最大程度地减少编写的代码量。
 
-本指南遵循类似的格式为每个操作系统： 首先，该平台的触控 Api 会引入并解释了，因为它们是哪些触摸交互的基础。 然后，我们深入探讨的手势识别器 – 世界上首次通过浏览一些常见的手势，并创建自定义笔势中的进行应用程序正在完成。 最后，您将了解如何跟踪各手指使用低级别触控跟踪创建 finger-paint 程序。
+本指南针对每个操作系统遵循类似的格式: 首先, 会引入和解释平台的触控 Api, 因为它们是构建触摸交互的基础。 接下来, 我们通过探索一些常见手势, 并完成为应用程序创建自定义手势, 深入探讨了手势识别器的世界。 最后, 你将了解如何使用底层触摸跟踪来跟踪单个手指, 以创建手指画图程序。
 
 ## <a name="sections"></a>部分
 
@@ -38,12 +38,12 @@ Android 使用`MotionEvent`对象封装触控数据和要侦听的收尾工作�
 
 ## <a name="summary"></a>总结
 
-在本指南中，我们将探讨在 Android 中的触控。 对于这两个操作系统，我们了解了如何启用触摸以及如何响应触摸事件。 接下来，我们了解到有关手势和一些手势识别器，Android 和 iOS 提供能够处理一些较为常见的情景。 介绍了如何创建自定义笔势和应用程序中实现它们。 演练演示的概念和 Api，用于在操作中，每个操作系统，您还了解到如何跟踪各手指。
+在本指南中, 我们检查了 Android 中的触控。 对于这两种操作系统, 我们学习了如何启用触控以及如何响应触控事件。 接下来, 我们了解了一些笔势和一些手势识别器, Android 和 iOS 都提供这些方法来处理一些更常见的方案。 我们检查了如何在应用程序中创建自定义笔势并实现它们。 本演练演示了操作中每个操作系统的概念和 Api, 还介绍了如何跟踪单个手指。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [Android 接触启动 （示例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android 接触最终 （示例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
-- [FingerPaint （示例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)
+- [Android Touch 开始 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android Touch 最终 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
+- [FingerPaint (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

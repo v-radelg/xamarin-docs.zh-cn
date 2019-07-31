@@ -1,58 +1,58 @@
 ---
-title: 创建适用于 Android 穿戴设备 1.0 手表表盘
-description: 本指南介绍如何实现自定义的观察人脸服务针对 Android Wear 1.0。 用于构建压下数字监视人脸服务后, 跟更多代码以创建模拟样式表盘提供分步说明。
+title: 为 Android 磨损1.0 创建手表面
+description: 本指南介绍如何实现适用于 Android 磨损1.0 的自定义监视人脸服务。 提供了一种循序渐进的说明, 用于构建一个去除的数字观看人脸服务, 后跟更多代码以创建模拟样式的手表面。
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: 067a39838fbfe3f1b33ac0d30b5069366b11e407
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 52891a11dcc271497031658d0eff9f98a01d3555
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61287017"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647884"
 ---
 # <a name="creating-a-watch-face"></a>创建表盘
 
-_本指南介绍如何实现自定义的观察人脸服务针对 Android Wear 1.0。用于构建压下数字监视人脸服务后, 跟更多代码以创建模拟样式表盘提供分步说明。_
+_本指南介绍如何实现适用于 Android 磨损1.0 的自定义监视人脸服务。提供了一种循序渐进的说明, 用于构建一个去除的数字观看人脸服务, 后跟更多代码以创建模拟样式的手表面。_
 
 ## <a name="overview"></a>概述
 
-在此演练中，创建一个基本的监视人脸服务来演示创建自定义的 Android Wear 1.0 手表表盘的基础知识。
-初始监视的人脸服务显示以小时和分钟显示的当前时间的简单数字监视：
+在本演练中, 将创建一个基本的 "监视人脸" 服务, 以说明创建自定义 Android 磨损1.0 监视面的基本要素。
+初始监视人脸服务显示一个简单的数字手表, 其中显示当前时间 (以小时和分钟为单位):
 
-[![数字手表表盘](creating-a-watchface-images/01-initial-face.png "的初始数字手表表盘的示例屏幕截图")](creating-a-watchface-images/01-initial-face.png#lightbox)
+[![数字观看面](creating-a-watchface-images/01-initial-face.png "初始数字监视面部的示例屏幕截图")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
-此数字手表表盘的开发和测试后，将其升级到更复杂的三个手与模拟手表表盘添加更多的代码：
+开发并测试了此数字手表面后, 添加了更多代码, 以将其升级到更复杂的模拟观看面:
 
-[![模拟手表表盘](creating-a-watchface-images/02-example-watchface.png "最终模拟手表表盘的屏幕截图示例")](creating-a-watchface-images/02-example-watchface.png#lightbox)
+[![模拟观看面](creating-a-watchface-images/02-example-watchface.png "最终模拟观看面的示例屏幕截图")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
-观看人脸服务是捆绑在一起且作为 Wear 1.0 应用程序的一部分安装。 在以下示例中，`MainActivity`包含没有什么比 Wear 1.0 应用程序模板中的代码，以便监视人脸服务可以打包并部署到智能手表应用的一部分。 实际上，此应用将充当纯粹获取监视人脸服务加载到 Wear 1.0 设备 （或仿真器） 的工具进行调试和测试。
+观看人脸服务作为磨损1.0 应用的一部分进行捆绑和安装。 在下面的示例中`MainActivity` , 只包含来自 "磨损 1.0" 应用程序模板的代码, 以便可以将手表人脸服务打包并部署到智能手表作为应用的一部分。 实际上, 此应用程序将纯粹作为一个车辆, 用于将手表人脸服务加载到磨损1.0 设备 (或模拟器) 中以进行调试和测试。
 
 ## <a name="requirements"></a>要求
 
-若要实现监视人脸服务，需要以下各项：
+若要实现 watch 面部服务, 需要满足以下要求:
 
--   Android 5.0 （API 级别 21） 或更高版本在穿戴设备或仿真程序上。
+-   在磨损设备或模拟器上的 Android 5.0 (API 级别 21) 或更高版本。
 
--   [Xamarin Android Wear 支持库](https://www.nuget.org/packages/Xamarin.Android.Wear)必须添加到 Xamarin.Android 项目。
+-   [Xamarin Android 支持库](https://www.nuget.org/packages/Xamarin.Android.Wear)必须添加到 xamarin 项目。
 
-虽然 Android 5.0 是最低 API 级别用于实现监视的人脸服务，Android 5.1 或更高版本建议。 Android Wear 运行 Android 5.1 (API 22) 的设备或更高版本允许穿戴设备应用来控制显示的内容在屏幕上时在设备处于低功耗*环境*模式。 当设备离开低功耗*环境*模式时，它是在*交互式*模式。 有关这些模式的详细信息，请参阅[使您的应用程序可见](https://developer.android.com/training/wearables/apps/always-on.html)。
+尽管 Android 5.0 是用于实现监视人脸服务的最低 API 级别, 但建议使用 Android 5.1 或更高版本。 运行 Android 5.1 (API 22) 或更高版本的 android 磨损设备允许损耗应用控制设备处于低功率*环境*模式时在屏幕上显示的内容。 当设备离开低功率*环境*模式时, 它处于*交互*模式。 有关这些模式的详细信息, 请参阅[使应用保持可见](https://developer.android.com/training/wearables/apps/always-on.html)。
 
 
-## <a name="start-an-app-project"></a>启动应用程序项目
+## <a name="start-an-app-project"></a>启动应用项目
 
-创建一个名为的新的 Android Wear 1.0 项目**WatchFace** (有关创建新的 Xamarin.Android 项目的详细信息，请参阅[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)):
+创建名为**WatchFace**的新 Android 磨损1.0 项目 (有关创建新的 Xamarin android 项目的详细信息, 请参阅[Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)):
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![新建项目对话框](creating-a-watchface-images/03-wear-project-vs-sml.png "新项目对话框中选择 Wear 应用")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
+["![新建项目" 对话框](creating-a-watchface-images/03-wear-project-vs-sml.png "在 \"新建项目\" 对话框中选择 \"应用")"](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![新建项目对话框](creating-a-watchface-images/03-wear-project-xs-sml.png "新项目对话框中选择 Wear 应用")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
+["![新建项目" 对话框](creating-a-watchface-images/03-wear-project-xs-sml.png "在 \"新建项目\" 对话框中选择 \"应用")"](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -61,102 +61,102 @@ _本指南介绍如何实现自定义的观察人脸服务针对 Android Wear 1.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![包名称设置](creating-a-watchface-images/04-package-name-vs.png "包名称设置为 com.xamarin.watchface")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
+[![包名称设置](creating-a-watchface-images/04-package-name-vs.png "将包名称设置为 watchface")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![包名称设置](creating-a-watchface-images/04-package-name-xs.png "包名称设置为 com.xamarin.watchface")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
+[![包名称设置](creating-a-watchface-images/04-package-name-xs.png "将包名称设置为 watchface")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-此外，向下滚动并启用**INTERNET**并**WAKE_LOCK**权限：
+此外, 向下滚动并启用**INTERNET**和**WAKE_LOCK**权限:
 
-[![所需的权限](creating-a-watchface-images/05-required-permissions-vs.png "启用 INTERNET 和 WAKE_LOCK 权限")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
+[![必需的权限](creating-a-watchface-images/05-required-permissions-vs.png "启用 INTERNET 和 WAKE_LOCK 权限")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-最低 Android 版本设置为**Android 5.1 （API 级别 22）**。
-此外，启用**Internet**并**WakeLock**权限：
+将最低 Android 版本设置为**android 5.1 (API 级别 22)** 。
+同时, 启用**Internet**和**WakeLock**权限:
 
-[![所需的权限](creating-a-watchface-images/05-required-permissions-xs.png "启用 Internet 和 WakeLock 权限")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
+[![必需的权限](creating-a-watchface-images/05-required-permissions-xs.png "启用 Internet 和 WakeLock 权限")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
-接下来，下载[preview.png](creating-a-watchface-images/preview.png) &ndash;这将添加到**绘图**稍后在本演练的文件夹。
+接下来, 下载[预览版。](creating-a-watchface-images/preview.png) &ndash;此演练稍后将添加到**绘图**文件夹中。
 
 
-## <a name="add-the-xamarinandroid-wear-package"></a>添加 Xamarin.Android 穿戴设备包
+## <a name="add-the-xamarinandroid-wear-package"></a>添加 Xamarin 文件包
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-启动 NuGet 包管理器 (在 Visual Studio 中，右键单击**引用**中**解决方案资源管理器**，然后选择**管理 NuGet 包...**).更新到最新稳定版本的项目**Xamarin.Android.Wear**:
+启动 NuGet 包管理器 (在 Visual Studio 中, 右键单击 "**解决方案资源管理器**中的"**引用**", 然后选择"**管理 NuGet 包 ...** ")。将项目更新为最新稳定版本的**Xamarin**:
 
-[![添加 NuGet 包管理器](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "添加 Xamarin.Android.Wear 包")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
+[![NuGet 包管理器添加](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "添加 Xamarin 包")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
-接下来，如果**Xamarin.Android.Support.v13**是安装，将其卸载：
+接下来, 如果安装了**v13** , 请将其卸载:
 
-[![NuGet 包管理器删除](creating-a-watchface-images/07-uninstall-v13-sml.png "删除 Xamarin.Support.v13")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
+[![NuGet 包管理器删除](creating-a-watchface-images/07-uninstall-v13-sml.png "删除 v13")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-启动 NuGet 包管理器 (在 Visual Studio for Mac 中，右键单击**包**中**解决方案窗格**，然后选择**添加包...**).更新到最新稳定版本的项目**Xamarin.Android.Wear**:
+启动 NuGet 包管理器 (在 Visual Studio for Mac 中, 右键单击 "解决方案"**窗格**中的 "**包**", 然后选择 "**添加包 ...** ")。将项目更新为最新稳定版本的**Xamarin**:
 
-[![添加 NuGet 包管理器](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "添加 Xamarin.Android.Wear 包")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
+[![NuGet 包管理器添加](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "添加 Xamarin 包")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
 
-生成并在穿戴设备或仿真器上运行应用 (有关如何执行此操作的详细信息，请参阅[Getting Started](~/android/wear/get-started/index.md)指南)。 在穿戴设备上看到以下应用屏幕：
+在磨损设备或模拟器上构建并运行应用程序 (有关如何执行此操作的详细信息, 请参阅[入门](~/android/wear/get-started/index.md)指南)。 你应在磨损设备上看到以下应用屏幕:
 
-[![应用程序的屏幕截图](creating-a-watchface-images/08-app-screen.png "穿戴设备上的应用屏幕")](creating-a-watchface-images/08-app-screen.png#lightbox)
+[![应用屏幕快照](creating-a-watchface-images/08-app-screen.png "磨损设备上的应用屏幕")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
-此时，基本 Wear 应用不具有监视人脸功能，因为尚未提供监视人脸服务实现。 接下来将添加此服务。
+此时, 基本应用程序不具有手表人脸功能, 因为它尚未提供监视人脸服务实现。 此服务将添加到下一步。
 
 
 ## <a name="canvaswatchfaceservice"></a>CanvasWatchFaceService
 
-Android 穿戴设备实现观看通过人脸`CanvasWatchFaceService`类。 `CanvasWatchFaceService` 派生自`WatchFaceService`，该类本身派生自`WallpaperService`以下关系图中所示：
+Android 损耗通过`CanvasWatchFaceService`类实现了观察面。 `CanvasWatchFaceService`派生自`WatchFaceService`, 它本身派生自`WallpaperService` , 如下图所示:
 
 [![继承关系图](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService 继承关系图")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
-`CanvasWatchFaceService` 包括嵌套`CanvasWatchFaceService.Engine`; 它实例化`CanvasWatchFaceService.Engine`执行绘制手表表盘的实际工作的对象。 `CanvasWatchFaceService.Engine` 派生自`WallpaperService.Engine`上图中所示。
+`CanvasWatchFaceService`包括嵌套`CanvasWatchFaceService.Engine`的; 它将实例`CanvasWatchFaceService.Engine`化一个对象, 该对象执行绘制观看面的实际工作。 `CanvasWatchFaceService.Engine`派生自`WallpaperService.Engine` , 如上面的关系图所示。
 
-不在此图中所示是`Canvas`该`CanvasWatchFaceService`用于绘制手表表盘&ndash;这`Canvas`通过传入`OnDraw`方法如下所述。
+此关系图中未显示的`Canvas`是`CanvasWatchFaceService`用于`Canvas`绘制手表面&ndash;的, 如下所述通过`OnDraw`方法传入。
 
-在以下部分中，将通过执行以下步骤创建自定义的观察人脸服务：
+在以下部分中, 将通过执行以下步骤来创建自定义监视人脸服务:
 
-1.  定义一个名为类`MyWatchFaceService`派生自`CanvasWatchFaceService`。
+1.  定义派生自`CanvasWatchFaceService`的`MyWatchFaceService`名为的类。
 
-2.  内`MyWatchFaceService`，创建一个名为的嵌套的类`MyWatchFaceEngine`派生自`CanvasWatchFaceService.Engine`。
+2.  在`MyWatchFaceService`中, 创建一个从`CanvasWatchFaceService.Engine`派生`MyWatchFaceEngine`的名为的嵌套类。
 
-3.  在中`MyWatchFaceService`，实现`CreateEngine`方法实例化`MyWatchFaceEngine`并将其返回。
+3.  在`MyWatchFaceService`中, 实现`CreateEngine`一个实例化`MyWatchFaceEngine`并返回该方法的方法。
 
-4.  在中`MyWatchFaceEngine`，实现`OnCreate`方法创建的监视人脸样式并执行任何其他初始化任务。
+4.  在`MyWatchFaceEngine`中, `OnCreate`实现方法以创建 watch 面部样式并执行任何其他初始化任务。
 
-5.  实现`OnDraw`方法的`MyWatchFaceEngine`。 每当手表表盘需要重绘时调用此方法 (即*失效*)。 `OnDraw` 为绘制 （和重绘） 监视人脸元素，如小时、 分钟和第二个指针的方法。
+5.  `OnDraw`实现的`MyWatchFaceEngine`方法。 只要需要重绘手表面 (即*失效*), 就会调用此方法。 `OnDraw`用于绘制 (和重绘) 观看面部元素 (例如小时、分钟和秒钟) 的方法。
 
-6.  实现`OnTimeTick`方法的`MyWatchFaceEngine`。
-    `OnTimeTick` 每分钟 （在环境和交互模式） 或日期/时间已更改时至少一次调用。
+6.  `OnTimeTick`实现的`MyWatchFaceEngine`方法。
+    `OnTimeTick`至少每分钟调用一次 (在环境模式和交互模式下), 或在日期/时间更改时调用。
 
-有关详细信息`CanvasWatchFaceService`，请参阅 Android [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) API 文档。
-同样， [CanvasWatchFaceService.Engine](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine.html)介绍手表表盘的实际实现。
+有关的详细信息`CanvasWatchFaceService`, 请参阅 Android [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) API 文档。
+同样, [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine.html)说明了观察面的实际实现。
 
 
 ### <a name="add-the-canvaswatchfaceservice"></a>添加 CanvasWatchFaceService
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-添加名为的新文件**MyWatchFaceService.cs** (在 Visual Studio 中，右键单击**WatchFace**中**解决方案资源管理器**，单击**添加 > 新建项...**，然后选择**类**)。
+添加名为**MyWatchFaceService.cs**的新文件 (在 Visual Studio 中, 右键单击 "**解决方案资源管理器**中的" **WatchFace** ", 单击"**添加 > 新项 ...** ", 然后选择"**类**"。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-添加名为的新文件**MyWatchFaceService.cs** (在 Visual Studio for Mac 中，右键单击**WatchFace**项目，请单击**添加 > 新建文件...**，然后选择**的空类**)。
+添加一个名为 " **MyWatchFaceService.cs** " 的新文件 (在 Visual Studio for Mac 中, 右键单击 " **WatchFace** " 项目, 单击 " **> 添加" "新建文件 ...** ", 然后选择 "**空类**")。
 
 -----
 
-此文件的内容替换为以下代码：
+将此文件的内容替换为以下代码:
 
 ```csharp
 using System;
@@ -186,20 +186,20 @@ namespace WatchFace
 }
 ```
 
-`MyWatchFaceService` (派生自`CanvasWatchFaceService`) 是手表表盘"主计划"。 `MyWatchFaceService` 实现只有一个方法， `OnCreateEngine`，其实例化并返回`MyWatchFaceEngine`对象 (`MyWatchFaceEngine`派生自`CanvasWatchFaceService.Engine`)。 实例化`MyWatchFaceEngine`对象必须作为返回`WallpaperService.Engine`。 封装`MyWatchFaceService`对象传递到构造函数。
+`MyWatchFaceService`(派生自`CanvasWatchFaceService`) 是手表面的 "主程序"。 `MyWatchFaceService`仅实现一个方法, `OnCreateEngine`此方法实例化并返回`MyWatchFaceEngine`一个对象`MyWatchFaceEngine` (派生自`CanvasWatchFaceService.Engine`)。 实例化`MyWatchFaceEngine`对象必须`WallpaperService.Engine`以形式返回。 将封装`MyWatchFaceService`对象传递到构造函数中。
 
-`MyWatchFaceEngine` 是实际观察人脸实现&ndash;它包含绘制手表表盘的代码。 它还处理系统事件，例如屏幕更改 （环境/交互模式中，屏幕关闭，等等。）。
+`MyWatchFaceEngine`是实际的监视面实现&ndash; , 它包含用于绘制观察面的代码。 它还处理系统事件, 如屏幕更改 (环境/交互模式、屏幕关闭等)。
 
 
-### <a name="implement-the-engine-oncreate-method"></a>实现引擎 OnCreate 方法
+### <a name="implement-the-engine-oncreate-method"></a>实现 Engine OnCreate 方法
 
-`OnCreate`方法初始化手表表盘。 以下字段添加到`MyWatchFaceEngine`:
+`OnCreate`方法初始化手表面。 将以下字段添加到`MyWatchFaceEngine`:
 
 ```csharp
 Paint hoursPaint;
 ```
 
-这`Paint`对象将用于绘制 watch 表盘上的当前时间。 接下来，添加以下方法`MyWatchFaceEngine`:
+此`Paint`对象将用于绘制监视面上的当前时间。 接下来, 将以下方法添加`MyWatchFaceEngine`到:
 
 ```csharp
 public override void OnCreate(ISurfaceHolder holder)
@@ -218,26 +218,26 @@ public override void OnCreate(ISurfaceHolder holder)
 }
 ```
 
-`OnCreate` 不久后调用`MyWatchFaceEngine`已启动。 设置了`WatchFaceStyle`（它可以控制在穿戴设备与用户交互的方式），并实例化`Paint`将用于显示时间的对象。
+`OnCreate`启动后`MyWatchFaceEngine`不久就会调用。 它设置`WatchFaceStyle` (控制磨损设备与用户交互的方式), 并`Paint`实例化将用于显示时间的对象。
 
-对调用`SetWatchFaceStyle`执行以下操作：
+对`SetWatchFaceStyle`的调用会执行以下操作:
 
-1.  集*peek 模式*到`PeekModeShort`，这将导致通知，以显示为小的"速览"卡上显示。
+1.  将*速览模式*设置`PeekModeShort`为, 这将导致通知在显示器上显示为较小的 "速览" 卡。
 
-2.  将背景可见性设置为`Interruptive`，这会导致背景的查看卡以显示只是暂时是否它表示中断通知。
+2.  将背景可见性设置`Interruptive`为, 这使得仅在显示会造成中断通知时才会显示速览卡的背景。
 
-3.  禁用默认系统 UI 时间从手表表盘上进行绘制，以使自定义手表表盘可以改为显示时间。
+3.  禁止在手表面上绘制默认系统 UI 时间, 以便自定义监视人可以显示时间。
 
-有关这些和其他监视人脸样式选项的详细信息，请参阅 Android [WatchFaceStyle.Builder](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API 文档。
+有关这些和其他手表样式选项的详细信息, 请参阅 Android [WatchFaceStyle](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API 文档。
 
-之后`SetWatchFaceStyle`完成后，`OnCreate`实例化`Paint`对象 (`hoursPaint`)，并将其颜色设置为白色，其文本大小以适合 48 像素 ([TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)必须指定以像素为单位)。
+完成`SetWatchFaceStyle`后, `OnCreate`实例化`Paint`对象 (`hoursPaint`), 并将其颜色设置为白色, 将其文本大小设置为48像素 (必须以像素为单位指定[TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29) )。
 
 
 ### <a name="implement-the-engine-ondraw-method"></a>实现引擎 OnDraw 方法
 
-`OnDraw`方法可能是最重要`CanvasWatchFaceService.Engine`方法&ndash;是，实际绘制观看人脸元素，如数字和时钟人脸指针的方法。
-在以下示例中，watch 表盘上绘制的时间字符串。
-添加以下方法`MyWatchFaceEngine`:
+此`OnDraw`方法可能是最重要`CanvasWatchFaceService.Engine`的方法&ndash; , 它是实际绘制观看人脸元素 (例如数字和时钟面部指针) 的方法。
+在下面的示例中, 它在手表面上绘制一个时间字符串。
+将以下方法添加到`MyWatchFaceEngine`:
 
 ```csharp
 public override void OnDraw (Canvas canvas, Rect frame)
@@ -249,14 +249,14 @@ public override void OnDraw (Canvas canvas, Rect frame)
 }
 ```
 
-当调用 Android `OnDraw`，它将传入`Canvas`实例，并可以在其中绘制将人脸的边界。 在上面的代码示例中，`DateTime`用于计算的当前时间以小时和分钟数 （采用 12 小时格式）。 生成的时间字符串在画布上绘制使用`Canvas.DrawText`方法。 字符串将显示 70 像素通过从左边的缘和 80 像素下的上边缘。
+当 Android 调用`OnDraw`时, 它会传入`Canvas`一个实例和可在其中绘制面部的边界。 在上面的代码示例中`DateTime` , 用来计算当前时间 (以小时和分钟为单位)。 使用`Canvas.DrawText`方法在画布上绘制生成的时间字符串。 该字符串将从左边缘向下显示70像素, 从上边缘向下移动80像素。
 
-有关详细信息`OnDraw`方法，请参阅 Android [onDraw](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine#ondraw) API 文档。
+有关`OnDraw`方法的详细信息, 请参阅 Android [onDraw](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.Engine#ondraw) API 文档。
 
 
-### <a name="implement-the-engine-ontimetick-method"></a>实现引擎 OnTimeTick 方法
+### <a name="implement-the-engine-ontimetick-method"></a>实现 Engine OnTimeTick 方法
 
-Android 定期调用`OnTimeTick`方法来更新通过手表表盘所显示的时间。 它在至少一次，每分钟 （在环境和交互模式下），或已更改的日期/时间或时区时调用。 添加以下方法`MyWatchFaceEngine`:
+Android 会定期调用`OnTimeTick`方法以更新监视面显示的时间。 至少每分钟调用一次 (在环境模式和交互模式下), 或在日期/时间或时区发生更改时调用。 将以下方法添加到`MyWatchFaceEngine`:
 
 ```csharp
 public override void OnTimeTick()
@@ -265,14 +265,14 @@ public override void OnTimeTick()
 }
 ```
 
-此实现`OnTimeTick`只需调用`Invalidate`。 `Invalidate`方法计划`OnDraw`重绘手表表盘。
+此实现`OnTimeTick`只需调用`Invalidate`。 `Invalidate`方法计划`OnDraw`重绘手表面。
 
-有关详细信息`OnTimeTick`方法，请参阅 Android [onTimeTick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) API 文档。
+有关`OnTimeTick`方法的详细信息, 请参阅 Android [onTimeTick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) API 文档。
 
 
 ## <a name="register-the-canvaswatchfaceservice"></a>注册 CanvasWatchFaceService
 
-`MyWatchFaceService` 必须在中注册**AndroidManifest.xml**关联穿戴设备应用程序。 若要执行此操作，添加以下 XML 到`<application>`部分：
+`MyWatchFaceService`必须在关联磨损应用的**androidmanifest.xml**中注册。 为此, 请将以下 XML 添加到`<application>`部分:
 
 ```xml
 <service
@@ -294,22 +294,22 @@ public override void OnTimeTick()
 </service>
 ```
 
-此 XML 将执行以下操作：
+此 XML 执行以下操作:
 
-1.  集`android.permission.BIND_WALLPAPER`权限。 此权限使更改在设备上的系统墙纸的监视人脸服务权限。 请注意，此权限必须设置在`<service>`部分，而不是在外部`<application>`部分。
+1.  `android.permission.BIND_WALLPAPER`设置权限。 此权限提供了在设备上更改系统墙纸的 "监视人脸服务" 权限。 请注意, 必须在`<service>`部分中而不是在外部`<application>`部分设置此权限。
 
-2.  定义`watch_face`资源。 此资源是声明一个简短的 XML 文件`wallpaper`资源 （在下一节中将创建此文件）。
+2.  `watch_face`定义资源。 此资源是一个简短的 XML 文件, 用于`wallpaper`声明资源 (此文件将在下一节中创建)。
 
-3.  声明名为 drawable 映像`preview`，将显示的监视选取器选择屏幕。
+3.  声明一个名`preview`为的可绘制图像, 将由 "监视选取器选择" 屏幕显示。
 
-4.  包括`intent-filter`让 Android 知道`MyWatchFaceService`将显示手表表盘。
+4.  包含一个`intent-filter` , 它`MyWatchFaceService`使 Android 知道将显示一个手表面。
 
-完成为基本代码`WatchFace`示例。 下一步是添加所需的资源。
+完成基本`WatchFace`示例的代码。 下一步是添加必要的资源。
 
 
 ## <a name="add-resource-files"></a>添加资源文件
 
-您可以运行监视服务之前，必须添加**watch_face**资源和预览图像。 首先，创建新的 XML 文件在**Resources/xml/watch_face.xml**并将其内容替换为以下 XML:
+必须先添加**watch_face**资源和预览图像, 然后才能运行该监视服务。 首先, 在**Resources/xml/watch_face**中创建新的 XML 文件, 并将其内容替换为以下 XML:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -320,124 +320,124 @@ public override void OnTimeTick()
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![生成操作](creating-a-watchface-images/10-android-resource-vs.png "组生成操作为 AndroidResource")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
+[![生成操作](creating-a-watchface-images/10-android-resource-vs.png "将生成操作设置为 AndroidResource")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![生成操作](creating-a-watchface-images/10-android-resource-xs.png "组生成操作为 AndroidResource")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
+[![生成操作](creating-a-watchface-images/10-android-resource-xs.png "将生成操作设置为 AndroidResource")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
-此资源文件定义了一个简单`wallpaper`用于手表表盘的元素。
+此资源文件定义将用于`wallpaper`监视人脸的简单元素。
 
-如果尚未这样做，下载[preview.png](creating-a-watchface-images/preview.png)。
-安装在**Resources/drawable/preview.png**。 请确保添加到此文件`WatchFace`项目。 在穿戴设备上观看人脸选取器中向用户显示此预览图像。 若要创建你自己的手表表盘的预览图像，可以在运行时执行手表表盘的屏幕截图。 (有关获取从穿戴设备的设备的屏幕截图的详细信息，请参阅[拍摄屏幕快照](~/android/wear/deploy-test/debug-on-device.md#screenshots))。
-
-
-## <a name="try-it"></a>试试看 ！
-
-生成并部署到在穿戴设备的应用程序。 您应该可以看到 Wear 应用屏幕像以前一样显示。 执行以下操作来启用新的手表表盘：
-
-1.  轻扫到右侧，直到您看到监视屏幕的背景。
-
-2.  触摸并在屏幕的背景上任意位置保存两秒钟。
-
-3.  轻扫，从左到右，可以浏览各种表盘。
-
-4.  选择**Xamarin 示例**观看 （显示在右侧） 的人脸：
-
-    [![选取器 Watchface](creating-a-watchface-images/11-watchface-picker.png "轻扫来查找 Xamarin 示例手表表盘")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
-
-5.  点击**Xamarin 示例**表盘以将其选中。
-
-这会更改要使用自定义的观察人脸服务实现到目前为止在穿戴设备表盘：
-
-[![数字手表表盘](creating-a-watchface-images/12-digital-watchface.png "穿戴设备上运行的自定义数字监视")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
-
-这是因为应用程序实现是因此最小种相对简陋手表表盘 (例如，它不包括监视人脸背景，它不会调用`Paint`抗锯齿方法以改善外观)。
-但是，它实现所需创建自定义手表表盘的基本功能。
-
-在下一步部分中，此手表表盘将升级到更复杂的实现。
+如果尚未这样做, 请下载[。](creating-a-watchface-images/preview.png)
+将其安装在**资源/绘制/预览 .png**。 请确保将此文件添加到`WatchFace`项目。 此预览图像将在磨损设备上的手表面部选取器中显示给用户。 若要为自己的 "手表面" 创建预览图像, 可以在运行时拍摄手表面的屏幕截图。 (有关从磨损设备获取屏幕截图的详细信息, 请参阅[拍摄屏幕快照](~/android/wear/deploy-test/debug-on-device.md#screenshots))。
 
 
-## <a name="upgrading-the-watch-face"></a>升级手表表盘
+## <a name="try-it"></a>试试吧!
 
-在本演练的其余部分`MyWatchFaceService`升级以显示模拟样式表盘，它可进行扩展以支持更多的功能。 将添加以下功能，若要创建已升级的手表表盘：
+构建应用并将其部署到磨损设备。 应该会看到 "应用程序" 屏幕显示为 "之前"。 执行以下操作以启用新的手表脸:
 
-1.  指示以模拟小时、 分钟和第二个手的时间。
+1.  向右轻扫, 直到看到 "监视" 屏幕的背景。
 
-2.  在可见性的更改作出反应。
+2.  在屏幕背景上的任意位置按住鼠标并保持两秒钟。
 
-3.  对环境的模式和交互模式之间的更改做出响应。
+3.  从左到右滑动以浏览各种手表面。
 
-4.  读取基础穿戴设备的属性。
+4.  选择**Xamarin 示例**监视面 (显示在右侧):
 
-5.  自动更新所在的时区更改发生的时间。
+    [![Watchface 选取器](creating-a-watchface-images/11-watchface-picker.png "轻扫以定位 Xamarin 示例监视面")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
-实现下面的代码更改之前, 下载[drawable.zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true)，将其解压缩，并移动到已解压缩的.png 文件**资源/drawable** (覆盖前一**preview.png**). 添加到新的.png 文件`WatchFace`项目。
+5.  点击**Xamarin 示例**监视人脸将其选中。
+
+这会更改磨损设备的手表面, 以使用迄今为止实现的自定义监视人脸服务:
+
+[![数字观看面](creating-a-watchface-images/12-digital-watchface.png "在磨损设备上运行的自定义数字观看")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
+
+这是一个相对较为粗糙的手表, 因为应用程序实现非常小 (例如, 它不包括手表面背景, 也不会调用`Paint`反别名方法来改善外观)。
+不过, 它确实实现了创建自定义监视人脸所需的基本功能。
+
+在下一部分中, 此监视面将升级到更复杂的实现。
+
+
+## <a name="upgrading-the-watch-face"></a>升级手表面
+
+本演练`MyWatchFaceService`的其余部分将升级以显示模拟样式的监视面, 并将其扩展以支持更多功能。 将添加以下功能来创建升级的监视面:
+
+1.  指示具有模拟小时、分钟和秒的时间。
+
+2.  对可见性变化做出反应。
+
+3.  响应环境模式和交互模式之间的更改。
+
+4.  读取基础磨损设备的属性。
+
+5.  自动更新发生时区更改的时间。
+
+在实现下面的代码更改之前, 请下载可[绘制的 .zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true), 将其解压缩, 然后将解压后的 .png 文件移动到**资源/可绘制**的文件 (覆盖以前的**预览版**)。 向`WatchFace`项目中添加新的 .png 文件。
 
 
 ### <a name="update-engine-features"></a>更新引擎功能
 
-下一步是升级**MyWatchFaceService.cs**到绘制模拟表盘和支持新功能的实现。 内容替换为**MyWatchFaceService.cs**中的监视人脸代码的模拟版本[MyWatchFaceService.cs](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/WatchFace/MyWatchFaceService.cs) (可以剪切并粘贴此源的现有**MyWatchFaceService.cs**)。
+下一步是将**MyWatchFaceService.cs**升级到绘制模拟监视面并支持新功能的实现。 将**MyWatchFaceService.cs**的内容替换为[MyWatchFaceService.cs](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/WatchFace/MyWatchFaceService.cs)中的手表面部代码的模拟版本 (可以将此源剪切并粘贴到现有的**MyWatchFaceService.cs**中)。
 
-此版本的**MyWatchFaceService.cs**将更多的代码添加到现有方法并包括其他重写的方法来添加更多的功能。 以下部分提供的源代码的指导的教程。
+此版本的**MyWatchFaceService.cs**将更多代码添加到现有方法, 并包括其他重写的方法来添加更多功能。 以下各节提供了有关源代码的指导教程。
 
 #### <a name="oncreate"></a>OnCreate
 
-已更新**OnCreate**方法配置监视人脸样式与之前一样，但它还包括一些附加步骤：
+已更新的**OnCreate**方法会像以前一样配置 watch 面部样式, 但它还包括一些附加步骤:
 
-1.  将背景图像设置为**xamarin_background**驻留在资源**Resources/drawable-hdpi/xamarin_background.png**。
+1.  将背景图像设置为**资源/drawable-hdpi/xamarin_background**中的**xamarin_background**资源。
 
-2.  初始化`Paint`绘制小时手、 分针和第二个指针的对象。
+2.  初始化`Paint`对象以绘制小时、分钟和秒。
 
-3.  初始化`Paint`对象，用于绘制手表表盘的边缘周围小时计时周期数。
+3.  初始化一个`Paint`对象, 用于绘制观察表面边缘的小时刻度。
 
-4.  该调用将创建一个计时器`Invalidate`（重绘） 方法，以便第二个指针都将重绘每隔一秒。 请注意，此计时器是必要的因为`OnTimeTick`调用`Invalidate`仅一次每隔一分钟。
+4.  创建一个调用`Invalidate` (重绘) 方法的计时器, 以便每秒重绘第二次。 请注意, 此计时器是必需`OnTimeTick`的`Invalidate` , 因为每分钟只调用一次。
 
-此示例包含一个**xamarin_background.png**映像; 但是，你可能想要创建你的自定义手表表盘将支持每个屏幕密度的不同的背景图像。
+此示例仅包含一个**xamarin_background**图像;但是, 你可能希望为自定义监视面将支持的每个屏幕密度创建不同的背景图像。
 
 #### <a name="ondraw"></a>OnDraw
 
-已更新**OnDraw**方法绘制模拟样式表盘使用以下步骤：
+已更新的**OnDraw**方法使用以下步骤绘制模拟样式的监视面:
 
-1.  获取当前时间，它现在保存在`time`对象。
+1.  获取当前时间, 现在该时间已在`time`对象中进行维护。
 
-2.  确定的绘图图面和其中心的边界。
+2.  确定绘图图面的边界及其中心。
 
-3.  绘制背景，缩放以适应设备绘制背景。
+3.  绘制背景, 在绘制背景时缩放以适合设备。
 
-4.  绘制 12*计时周期*围绕时钟 （对应于时钟表面上的小时数） 的人脸。
+4.  在时钟面的周围绘制十二个*刻度*(对应于时钟面上的小时数)。
 
-5.  计算角度、 旋转和每个监视指针的长度。
+5.  计算每个观看局的角度、旋转和长度。
 
-6.  监视的表面上绘制每个指针。 请注意是否所监视的环境模式不绘制第二个指针。
+6.  在手表面上绘制每个手。 请注意, 如果手表处于环境模式, 则不会绘制第二个。
 
 
 #### <a name="onpropertieschanged"></a>OnPropertiesChanged
 
-调用此方法以通知`MyWatchFaceEngine`穿戴设备 （如低位环境模式和刻录中保护） 的属性。 在`MyWatchFaceEngine`，此方法只检查的低位环境模式 （在低位环境模式下，屏幕支持较少的位用于每种颜色）。
+调用此方法以通知`MyWatchFaceEngine`有关磨损设备的属性 (如低位环境模式和烧入保护)。 在`MyWatchFaceEngine`中, 此方法仅检查低位环境模式 (在低位环境模式下, 屏幕支持每种颜色的位数更少)。
 
-有关此方法的详细信息，请参阅 Android [onPropertiesChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onPropertiesChanged%28android.os.Bundle%29) API 文档。
+有关此方法的详细信息, 请参阅 Android [onPropertiesChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onPropertiesChanged%28android.os.Bundle%29) API 文档。
 
 
 #### <a name="onambientmodechanged"></a>OnAmbientModeChanged
 
-在穿戴设备进入或退出环境模式时，调用此方法。 在`MyWatchFaceEngine`实现中，在环境的模式下时手表表盘禁用抗锯齿。
+当磨损设备进入或退出环境模式时, 将调用此方法。 `MyWatchFaceEngine`在实现中, 如果监视面处于环境模式, 则会禁用抗锯齿。
 
-有关此方法的详细信息，请参阅 Android [onAmbientModeChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onAmbientModeChanged%28boolean%29) API 文档。
+有关此方法的详细信息, 请参阅 Android [onAmbientModeChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onAmbientModeChanged%28boolean%29) API 文档。
 
 
 #### <a name="onvisibilitychanged"></a>OnVisibilityChanged
 
-调用此方法是每当监视变得可见还是隐藏。 在`MyWatchFaceEngine`，此方法注册/注销的时区接收方 （如下所述） 根据的可见性状态。
+只要手表变为可见或隐藏, 就会调用此方法。 在`MyWatchFaceEngine`中, 此方法根据可见性状态注册/注销时区接收器 (如下所述)。
 
-有关此方法的详细信息，请参阅 Android [onVisibilityChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onVisibilityChanged%28boolean%29) API 文档。
+有关此方法的详细信息, 请参阅 Android [onVisibilityChanged](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onVisibilityChanged%28boolean%29) API 文档。
 
 
 ### <a name="time-zone-feature"></a>时区功能
 
-新**MyWatchFaceService.cs**还包括功能更新时区更改 （例如在旅行跨时区） 的当前时间。 结尾附近**MyWatchFaceService.cs**，区域更改的时间`BroadcastReceiver`定义用于处理时区更改意向对象：
+新的**MyWatchFaceService.cs**还包括在时区发生更改时更新当前时间的功能 (例如, 在不同时区间进行传播)。 接近**MyWatchFaceService.cs**的末尾, 定义了一个时区更改`BroadcastReceiver` , 用于处理时区更改意向对象:
 
 ```csharp
 public class TimeZoneReceiver: BroadcastReceiver
@@ -451,10 +451,10 @@ public class TimeZoneReceiver: BroadcastReceiver
 }
 ```
 
-`RegisterTimezoneReceiver`并`UnregisterTimezoneReceiver`会调用方法`OnVisibilityChanged`方法。
-`UnregisterTimezoneReceiver` 调用时手表表盘的可见性状态更改为隐藏。 当再次可见时手表表盘`RegisterTimezoneReceiver`调用 (请参阅`OnVisibilityChanged`方法)。
+方法由`UnregisterTimezoneReceiver`方法调用和方法。`RegisterTimezoneReceiver` `OnVisibilityChanged`
+`UnregisterTimezoneReceiver`当 watch 面的可见性状态更改为隐藏时调用。 当监视面再次可见时, `RegisterTimezoneReceiver`将调用 ( `OnVisibilityChanged`请参阅方法)。
 
-引擎`RegisterTimezoneReceiver`方法将一个处理程序声明此时区接收器`Receive`事件; 此处理程序更新`time`对象所跨时区的新时间：
+Engine `RegisterTimezoneReceiver`方法为此时区接收方的`Receive`事件声明处理程序`time` ; 此处理程序在每次超过时区时用新时间更新对象:
 
 ```csharp
 timeZoneReceiver = new TimeZoneReceiver ();
@@ -464,35 +464,35 @@ timeZoneReceiver.Receive = (intent) => {
 };
 ```
 
-创建并注册为时区接收方意向筛选器：
+为时区接收方创建并注册了一个意向筛选器:
 
 ```csharp
 IntentFilter filter = new IntentFilter(Intent.ActionTimezoneChanged);
 Application.Context.RegisterReceiver (timeZoneReceiver, filter);
 ```
 
-`UnregisterTimezoneReceiver`方法注销时区接收方：
+方法`UnregisterTimezoneReceiver`将注销时区接收方:
 
 ```csharp
 Application.Context.UnregisterReceiver (timeZoneReceiver);
 ```
 
-### <a name="run-the-improved-watch-face"></a>运行改进的手表表盘
+### <a name="run-the-improved-watch-face"></a>运行改进的手表面
 
-生成并再次将应用部署到在穿戴设备。 从监视人脸选取器作为之前选择手表表盘。 在监视选取器中的预览将显示在左侧，并在右侧显示新的手表表盘：
+重新生成应用并将其部署到磨损设备。 像以前一样从 "手表人脸" 选取器中选择手表面。 监视选取器中的预览显示在左侧, 而新的手表面显示在右侧:
 
-[![模拟手表表盘](creating-a-watchface-images/13-analog-watchface.png "改进了在选取器和设备上的模拟人脸")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
+[![模拟观看面](creating-a-watchface-images/13-analog-watchface.png "改善了选择器和设备上的模拟脸")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
-在此屏幕截图，第二个指针每秒一次移动。 在穿戴设备上运行此代码时，第二个指针将消失时监视输入环境的模式。
+在此屏幕截图中, 第二个局每秒移动一次。 在磨损设备上运行此代码时, 第二个局会在手表进入环境模式时消失。
 
 
 ## <a name="summary"></a>总结
 
-在此演练中，自定义 Android Wear 1.0 watchface 是实现和测试。 `CanvasWatchFaceService`和`CanvasWatchFaceService.Engine`引入了类，并实现引擎类的基本方法来创建简单的数字表盘。 此实现了更新，采用更多的功能，以创建模拟的表盘，和其他方法在实现以处理更改可见性、 环境模式和设备属性之间的差异。 最后，时区广播的接收器已实现，以便监视会自动更新何时跨越一个时区的时间。
+在本演练中, 已实现并测试了自定义 Android 磨损 1.0 watchface。 引入`CanvasWatchFaceService`了`CanvasWatchFaceService.Engine`和类, 并实现了引擎类的基本方法来创建一个简单的数字监视面。 此实现已通过更多的功能进行了更新, 可创建模拟监视面, 还实现了其他方法来处理可见性、环境模式和设备属性差异方面的更改。 最后, 实现了时区广播接收器, 以便监视自动更新时区的时间。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [创建表盘](https://developer.android.com/training/wearables/watch-faces/index.html)
-- [WatchFace 示例](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)
+- [创建手表面](https://developer.android.com/training/wearables/watch-faces/index.html)
+- [WatchFace 示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchface)
 - [WatchFaceService.Engine](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html)

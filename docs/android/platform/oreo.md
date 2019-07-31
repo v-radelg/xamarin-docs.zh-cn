@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 29f7725e41e5163b8f990c827983fbd79bdd1b1e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510481"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643434"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -205,7 +205,7 @@ Android Oreo 引入了各种新特性和功能, 如通知通道、通知徽章�
 *通知通道*是应用定义的通知类别。
 你可以为需要发送的每种类型的通知创建通知通道, 还可以创建通知通道, 以反映应用的用户所做的选择。 利用新的 "通知通道" 功能, 您可以为用户提供对各种通知的精细控制。 例如, 如果要实现消息传递应用, 可以为用户创建的每个会话组创建单独的通知通道。
 
-[通知通道](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)说明了如何创建通知通道, 并将其用于发布本地通知。 有关实际的代码示例, 请参阅[NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)示例;此示例应用管理两个通道并设置其他通知选项。
+[通知通道](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)说明了如何创建通知通道, 并将其用于发布本地通知。 有关实际的代码示例, 请参阅[NotificationChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)示例;此示例应用管理两个通道并设置其他通知选项。
 
 
 
@@ -262,7 +262,7 @@ Android Oreo*在 XML 中*引入了字体, 这使你可以将自定义字体作�
 
 当你调用`RequestFonts`方法时, 它首先会检查是否在本地缓存了该字体 (从以前对的`RequestFont`调用)。 如果未缓存此`OnTypeFaceRetrieved`方法, 它将调用字体提供程序, 以异步方式检索字体, 然后通过调用方法将结果传递回应用程序。
 
-[可下载字体](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts)示例演示如何使用 Android Oreo 中引入的可下载字体功能。 
+[可下载字体](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)示例演示如何使用 Android Oreo 中引入的可下载字体功能。 
 
 有关下载字体的详细信息, 请参阅 Android Developer[可下载字体](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)主题。
 
@@ -272,7 +272,7 @@ Android Oreo*在 XML 中*引入了字体, 这使你可以将自定义字体作�
 
 Android Oreo 中的新自动_填充_框架使用户能够更轻松地处理重复性任务, 如登录、帐户创建和信用卡交易。 用户花费更少的时间重新键入信息 (这可能会导致输入错误)。 在您的应用程序可以使用自动填充框架之前, 必须在系统设置中启用自动填充服务 (用户可以启用或禁用自动填充)。
 
-[AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework/)示例演示如何使用自动填充框架。 它包括具有应 autofilled 的视图的客户端活动的实现, 以及可向客户端活动提供自动填充数据的服务。
+[AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)示例演示如何使用自动填充框架。 它包括具有应 autofilled 的视图的客户端活动的实现, 以及可向客户端活动提供自动填充数据的服务。
 
 有关新的自动填充功能以及如何优化应用程序进行自动填充的详细信息, 请参阅 Android 开发人员自动[填充框架](https://developer.android.com/guide/topics/text/autofill.html)主题。
 
@@ -294,7 +294,7 @@ android:supportsPictureInPicture
 
 -   [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;更新活动的 PIP 配置设置 (例如, 纵横比的更改)。
 
-[PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)示例演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
+[PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)示例演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
 
 
 
@@ -333,19 +333,19 @@ Android Oreo 包括各种系统和 API 行为更改, 这些更改可能会影响
 
 提供了多个 Xamarin 示例, 用于演示如何利用 Android Oreo 功能:
 
--   [NotificationsChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)演示如何使用 Android Oreo 中引入的新通知通道系统。 此示例管理两个通知通道: 一个具有默认重要性, 另一个具有高重要性。
+-   [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)演示如何使用 Android Oreo 中引入的新通知通道系统。 此示例管理两个通知通道: 一个具有默认重要性, 另一个具有高重要性。
 
--   [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
+-   [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
 
--   [AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework)演示如何使用自动填充框架。 它包括具有应 autofilled 的视图的客户端活动的实现, 以及可向客户端活动提供自动填充数据的服务。
+-   [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)演示如何使用自动填充框架。 它包括具有应 autofilled 的视图的客户端活动的实现, 以及可向客户端活动提供自动填充数据的服务。
 
--   [可下载字体](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts)提供了有关如何使用前面所述的可下载字体功能的示例。
+-   [可下载字体](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)提供了有关如何使用前面所述的可下载字体功能的示例。
 
--   [EmojiCompat](https://developer.xamarin.com/samples/monodroid/android-o/EmojiCompat)演示 EmojiCompat 支持库的使用情况。 您可以使用此库来防止您的应用程序将缺少的表情符号字符显示为 "tofu" 字符。
+-   [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)演示 EmojiCompat 支持库的使用情况。 您可以使用此库来防止您的应用程序将缺少的表情符号字符显示为 "tofu" 字符。
 
--   [位置更新挂起意向](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdPendIntent)说明位置 API 的使用情况, 以获取有关使用`PendingIntent`的设备位置的更新。
+-   [位置更新挂起意向](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)说明位置 API 的使用情况, 以获取有关使用`PendingIntent`的设备位置的更新。
 
--   [位置更新前景服务](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService)演示了如何使用定位 API, 通过绑定和启动的前台服务获取有关设备位置的更新。
+-   [位置更新前景服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)演示了如何使用定位 API, 通过绑定和启动的前台服务获取有关设备位置的更新。
 
 
 ## <a name="video"></a>视频

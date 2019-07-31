@@ -1,52 +1,52 @@
 ---
 title: tvOS 12 简介
-description: 本文档提供了当前提供的 C# 绑定高级别中的哪些 Xamarin 的预览版本的 tvOS 12 的新增和更新功能的概述。
+description: 本文档提供了 tvOS 12 中新增和更新功能的概述, 其中 Xamarin 的预览版本当前提供C#绑定。
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16568ca06a7c6be9d23ebb44e9c958b06bbc6bdf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932532"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657355"
 ---
 # <a name="introduction-to-tvos-12"></a>tvOS 12 简介
 
-本文档提供了新的和更新 tvOS 12 的高级概述。
+本文档提供了新的和更新的 tvOS 12 的高级概述。
 
-若要开始构建使用 Xamarin 的 tvOS 12 应用程序，看一看[入门指南](~/ios/platform/introduction-to-ios12/get-started.md)。
+若要开始使用 Xamarin 生成 tvOS 12 应用, 请查看[入门指南](~/ios/platform/introduction-to-ios12/get-started.md)。
 
 ## <a name="tvuikit"></a>TVUIKit
 
-tvOS 12 包括 TVUIKit，一组 Api，以便 tvOS 开发人员可以使用常用的 tvOS 控件，如海报视图、 标题按钮、 卡视图和字母组合式视图。 tvOS 12 还引入了一个属性，可以让您滚动太长，会完全可见的文本标签。
+tvOS 12 包括 TVUIKit, 这是一组 Api, 使 tvOS 开发人员可以使用常用的 tvOS 控件, 如海报视图、标题按钮、卡片视图和 monogram 视图。 tvOS 12 还引入了一个属性, 该属性允许标签滚动太长而无法完全显示的文本。
 
 ## <a name="password-autofill"></a>密码自动填充
 
-使用 tvOS 12，用户可以使用其 iOS 设备中登录到 tvOS 应用一次点击。 启用此选项通过组合使用`UITextContentType`使用情况，以指定用户名和密码字段，关联的域来建立 iOS 应用程序和 tvOS 应用和首选的焦点环境，可以选择要在用户接收焦点的项之间的关系提供用户名和密码。
+使用 tvOS 12, 用户可以通过点击一次来使用其 iOS 设备登录到 tvOS 应用程序。 这可以通过`UITextContentType`使用的组合来指定用户名和密码字段、关联的域以建立 iOS 应用与 tvOS 应用之间的关系, 以及选择在用户提供用户名和密码。
 
-## <a name="focus-engine-enhancements"></a>焦点引擎增强功能
+## <a name="focus-engine-enhancements"></a>重点引擎增强功能
 
-tvOS 12 允许所有应用程序，无论它们的呈现方式，与焦点引擎进行交互。 通过使用 Siri 远程用户的交互，焦点引擎可与任何应用程序选择一个项、 在可能的焦点发生变动，提示和自然地更新焦点。 这通过 UIKit 的自定义应用程序中启用`IUIFocusItemContainer`接口，`UIFocusMovementHint`类，`IUIFocusItemScrollableContainer`接口，其他相关的类和方法。
+tvOS 12 允许所有应用 (无论如何呈现) 与焦点引擎交互。 通过用户与 Siri 远程进行交互, 可以在任何应用程序中使用焦点引擎来选择项目、提示可能的焦点更改和自然更新焦点。 在自定义应用程序中通过 UIKit 的`IUIFocusItemContainer`接口`UIFocusMovementHint` 、类、 `IUIFocusItemScrollableContainer`接口以及其他相关的类和方法启用了此功能。
 
-## <a name="vision-framework"></a>影像框架
+## <a name="vision-framework"></a>远景框架
 
-影像框架包括改进的面部检测器可以检测人脸的不同的方向。 此外，请求修订，现在可以使用以选择特定的视觉 framework 算法修订版本。
+远景框架包含可检测各种方向的人脸的改进面部检测器。 而且, 现在可以使用请求修订来选择特定的远景框架算法修订版本。
 
 ## <a name="natural-language-framework"></a>自然语言框架
 
-自然语言框架使应用程序可以执行各种类型的语言分析。 例如，它可用来识别词类并确定所表示的文本块的语言。
+自然语言框架使应用程序可以执行各种类型的语言分析。 例如, 它可用于标识词性的各个部分, 并确定文本块所代表的语言。
 
 ## <a name="deprecations"></a>弃用功能
 
-使用 tvOS 12，Apple 便已弃用 OpenGL ES[鼓励开发人员](https://developer.apple.com/tvos/whats-new/)采用裸机。
+使用 tvOS 12, Apple 已弃用 OpenGL ES,[鼓励开发人员](https://developer.apple.com/tvos/whats-new/)采用金属。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
-- [tvOS – Apple 开发人员 (Apple)](https://developer.apple.com/tvos/)
-- [什么是 tvOS 12 (Apple) （视频） 中的新增功能](https://developer.apple.com/videos/play/wwdc2018/208/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS-Apple 开发人员 (Apple)](https://developer.apple.com/tvos/)
+- [TvOS 12 (Apple) 中的新增功能 (视频)](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [电视 (Apple)](https://www.apple.com/tv/)

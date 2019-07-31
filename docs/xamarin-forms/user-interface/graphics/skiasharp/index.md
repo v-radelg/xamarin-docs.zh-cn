@@ -6,16 +6,16 @@ ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 9cd5a25c598a25500aee595439aeecd648d50526
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b85cdcd92c4680ced9f75d7b8c5a69c9512d6c4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61291141"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656148"
 ---
 # <a name="skiasharp-graphics-in-xamarinforms"></a>Xamarin.Forms 中的 SkiaSharp Graphics
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _用于二维图形 Xamarin.Forms 应用程序中使用 SkiaSharp_
 
@@ -25,7 +25,7 @@ SkiaSharp 是.NET 和 C# 由 Google 产品中广泛使用的开放源代码 Skia
 
 > [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-**网络研讨会：适用于 Xamarin.Forms 的 SkiaSharp**
+**网上SkiaSharp for Xamarin. Forms**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp 初步准备之后
 
@@ -65,5 +65,5 @@ SkiaSharp xamarin.forms 打包为 NuGet 包。 创建 Xamarin.Forms 解决方案
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [SkiaSharp 通过 Xamarin.Forms 网络研讨会 （视频）](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

@@ -1,105 +1,105 @@
 ---
-title: 在 Xamarin.iOS 中的高级的消息应用扩展
-description: 本文介绍用于使用与消息应用扩展的 Xamarin.iOS 解决方案可与该消息应用程序集成，并向用户提供新功能的高级的技术。
+title: Xamarin 中的高级消息应用扩展
+description: 本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级方法, 该解决方案与 Messages 应用集成并向用户提供新功能。
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7175cfa3b671a1510182b1497c941521170f39a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61155506"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654516"
 ---
-# <a name="advanced-message-app-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的高级的消息应用扩展
+# <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的高级消息应用扩展
 
-_本文介绍用于使用与消息应用扩展的 Xamarin.iOS 解决方案可与该消息应用程序集成，并向用户提供新功能的高级的技术。_
+_本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级方法, 该解决方案与 Messages 应用集成并向用户提供新功能。_
 
 
-新建与消息应用扩展集成到 iOS 10**消息**应用并提供新功能提供给用户。 该扩展可以发送文本、 贴纸、 媒体文件和交互式消息。
+新的 iOS 10, 消息应用扩展与**Messages**应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
 
-## <a name="about-message-app-extensions"></a>有关消息应用扩展
+## <a name="about-message-app-extensions"></a>关于消息应用扩展
 
-如上面所述，消息应用扩展可与集成**消息**应用并提供新功能提供给用户。 该扩展可以发送文本、 贴纸、 媒体文件和交互式消息。 提供了两种类型的消息应用扩展：
+如上所述, 消息应用扩展与**Messages**应用集成, 并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。 提供两种类型的消息应用扩展:
 
-- **不干胶标签包**-包含一系列可以将用户添加到一条消息的贴纸。 不干胶标签包可以创建无需编写任何代码。
-- **iMessage 应用**-可以显示用于选择不干胶标签、 输入文本，包括 （具有可选类型转换） 的媒体文件和创建、 编辑和发送交互消息在 Messages 应用内自定义用户界面。
+- **不干胶标签**-包含用户可添加到消息中的不干胶标签集合。 无需编写任何代码即可创建不干胶标签。
+- **IMessage 应用**-可在邮件应用中提供自定义用户界面, 用于选择不干胶标签, 输入文本, 包括媒体文件 (使用可选类型转换) 以及创建、编辑和发送交互消息。
 
-消息应用扩展提供了三种主要的内容类型：
+消息应用扩展提供了三种主要内容类型:
 
-- **交互式消息**-是一种类型的应用程序生成的自定义消息内容，当在用户点击该消息，该应用程序将启动在前台。
-- **贴纸**-是由可以包含在用户之间发送的消息的应用程序生成的图像。 请参阅我们[Ice cream 生成器](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)不干胶标签包应用的示例实现的示例应用程序。
-- **其他支持内容**-应用程序可提供内容，如照片、 视频、 文本或始终支持通过邮件应用类型的链接。
+- **交互式消息**-应用生成的一种自定义消息内容, 当用户点击消息时, 将在前台启动应用。
+- **不干胶标签**-由应用生成的映像, 可包含在用户之间发送的消息中。 若要实现不干胶标签包应用的示例, 请参阅[冰淇淋生成器](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)示例应用。
+- **其他支持的内容**-应用可以提供消息应用始终支持的类型的内容, 如照片、视频、文本或链接。
 
-新 ios 10、 消息应用程序现在包括其自己专用的内置应用商店。 包含消息应用扩展的任何应用将显示，并且可以提升此存储区中。 新的消息应用抽屉将显示已从要向用户提供快速访问的消息应用程序存储区中下载任何应用。
+新的 iOS 10, 消息应用现在包含其自己的内置应用商店。 任何包含消息应用扩展的应用都将在此存储中显示和升级。 "新邮件" 应用抽屉将显示已从 "邮件" 应用商店下载的任何应用, 以提供对用户的快速访问。
 
-此外新在 iOS 10 中，Apple 已添加内联应用归属这样用户就可以轻松发现应用程序。 例如，如果一个用户从第二个用户不具有的应用将内容发送到另一个安装 （如示例的贴纸），发送应用的名称被下列出的消息历史记录中的内容。 如果在用户点击应用的名称，我们打开消息应用商店和存储区中选择的应用程序。
+此外, iOS 10 中的新增功能, Apple 添加了内嵌应用归属, 使用户能够轻松发现应用。 例如, 如果某个用户从不安装第2个用户的应用发送内容 (例如不干胶标签), 则发送应用的名称将列在消息历史记录中的内容下。 如果用户点击应用程序的名称, 将打开 "消息应用商店", 并在存储中选择应用。
 
-消息应用扩展是类似于现有 iOS 应用开发人员所熟悉创建，且必须对所有标准框架和标准的 iOS 应用的功能的访问。 例如：
+消息应用扩展与开发人员熟悉的现有 iOS 应用类似, 他们将有权访问标准 iOS 应用的所有标准框架和功能。 例如：
 
 - 他们有权访问应用内购买。
 - 他们有权访问 Apple Pay。
-- 他们有权访问设备的硬件，例如照相机。
+- 它们有权访问设备硬件, 如相机。
 
-IOS 10 仅支持消息应用扩展，但是，这些扩展将发送的内容是在 watchOS 和 macOS 设备上可查看。 新_最近使用的项目页_添加到 watchOS 3，将显示通过手机，包括那些从消息应用扩展，已发送的最新不干胶标签，并允许用户从手表发送这些贴纸。
+仅在 iOS 10 上支持消息应用扩展, 但是, 可以在 watchOS 和 macOS 设备上查看这些扩展发送的内容。 添加到 watchOS 3 的新_最近页面_将显示已从手机发送的最近不干胶标签, 包括来自邮件应用扩展的标签, 并允许用户从手表发送这些不干胶标签。
 
-## <a name="about-interactive-messages"></a>有关交互式消息
+## <a name="about-interactive-messages"></a>关于交互消息
 
-交互式消息提供自定义消息气泡，并提供的消息应用扩展。 它们允许用户创建交互式消息内容，将其插入消息输入字段中，并将其发送。
+交互式消息显示自定义消息冒泡, 并通过消息应用扩展提供。 它们允许用户创建交互式消息内容, 将其插入消息输入字段并发送。
 
 [![](advanced-message-app-extensions-images/interactive01.png "创建交互式消息内容")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
-接收的用户可以回复而使用交互式消息通过点击以加载创建消息应用扩展的消息历史记录中其消息气泡。 该扩展将会启动的全屏幕，并允许用户撰写回复并将其发送回原始用户。
+接收用户可以通过在消息历史记录中点击消息 "冒泡" 来加载创建它的消息应用扩展, 来回复交互式消息。 该扩展将以全屏幕启动, 并允许用户撰写答复并将其发送回发起方用户。
 
-[![](advanced-message-app-extensions-images/interactive02.png "扩展启动全屏幕")](advanced-message-app-extensions-images/interactive02.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive02.png "扩展已启动全屏")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
-将下面将详细介绍以下主题：
+下面将详细介绍以下主题:
 
 - 消息 API 概述
 - 扩展生命周期
-- 编写一条消息
+- 撰写消息
 - 发送消息
 
 ## <a name="messages-api-overview"></a>消息 API 概述
 
-在用户调用，消息应用扩展将显示在底部的精简视图模式中的消息历史记录：
+用户调用消息应用扩展时, 该扩展将显示在紧凑视图模式下的消息历史记录底部:
 
 [![](advanced-message-app-extensions-images/interactive03.png "消息 API 概述")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
-1. `MSMessageAppViewController`消息应用扩展中的对象是向用户显示的扩展视图时调用的主类。
-2. 会话提供给用户作为`MSConversation`对象实例。
-3. `MSMessage`类表示会话中给定的消息气泡。
-4. `MSSession` 控制如何发送一条消息。
-5. `MSMessageTemplateLayout` 控制消息的显示方式
+1. 消息`MSMessageAppViewController`应用扩展中的对象是在向用户显示扩展视图时调用的主类。
+2. 此对话以`MSConversation`对象实例的形式呈现给用户。
+3. `MSMessage`类表示会话中给定的消息冒泡。
+4. `MSSession`控制消息的发送方式。
+5. `MSMessageTemplateLayout`控制消息的显示方式
 
 ## <a name="the-extension-lifecycle"></a>扩展生命周期
 
-看看变为活动状态消息应用扩展的过程：
+查看正在激活的消息应用扩展过程:
 
-[![](advanced-message-app-extensions-images/interactive04.png "变为活动状态消息应用扩展的过程")](advanced-message-app-extensions-images/interactive04.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive04.png "消息应用扩展的进程变为活动状态")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
-1. 扩展在启动时 （例如从应用抽屉中），消息应用程序将启动一个进程。
-2. `DidBecomeActive`方法调用并传递`MSConversation`，它表示消息应用扩展运行中的会话。
-3. 因为基于扩展`UIViewController`两者`ViewWillAppear`和`ViewDidAppear`调用。
+1. 当扩展启动时 (例如, 从应用抽屉), 消息应用将启动一个进程。
+2. 调用方法并传递一个`MSConversation` , 它表示正在运行消息应用扩展的会话。 `DidBecomeActive`
+3. 因为该扩展是从`UIViewController` `ViewWillAppear`中的开始, 并且`ViewDidAppear`称为。
 
-接下来，看看成为停用消息应用扩展的过程：
+接下来, 请查看正在停用消息应用扩展的过程:
 
-[![](advanced-message-app-extensions-images/interactive05.png "成为停用消息应用扩展的过程")](advanced-message-app-extensions-images/interactive05.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive05.png "停用消息应用扩展的过程")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
-1. 消息应用扩展正在停用后，`ViewWillDisappear`将首先调用方法。
-2. 然后`ViewDidDisappear`将调用方法。
-3. `WillResignActive`方法调用并传递`MSConversation`，它表示消息应用扩展运行中的会话。 此时，邮件应用和扩展之间的连接已释放。
-4. 在以后某个时刻，进程将终止通过消息应用程序。
+1. 停用消息应用扩展时, `ViewWillDisappear`将首先调用方法。
+2. 然后, `ViewDidDisappear`将调用方法。
+3. 调用方法并传递一个`MSConversation` , 它表示正在运行消息应用扩展的会话。 `WillResignActive` 此时, 将会释放邮件应用和扩展之间的连接。
+4. 稍后, 此过程由 Messages 应用终止。
 
-扩展是一个短生存期的进程，因为它是主动的方式终止系统来节省处理和电池电量。 开发人员应记住这一点设计和实现消息应用扩展时。
+由于扩展是一个短暂的生存期, 系统会主动终止该扩展, 以节省处理能力和电池电量。 设计和实现消息应用扩展时, 开发人员应牢记这一点。
 
-## <a name="composing-a-message"></a>编写一条消息
+## <a name="composing-a-message"></a>撰写消息
 
-一旦消息应用扩展的进程中运行，并显示其用户界面，下面的代码可用于撰写新消息：
+消息应用扩展在进程中运行并显示其用户界面后, 可以使用以下代码编写新消息:
 
 ```csharp
 MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session = null)
@@ -122,31 +122,31 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 }
 ```
 
-此代码将创建一个新`MSMessage`，并设置几个属性 (如`Url`)。 尽管仅在 ios 设备上创建消息，它可以发送到 iOS 和 macOS 显示。
+此代码将创建一个`MSMessage`新的并设置多个属性`Url`(如)。 虽然该消息只能在 iOS 上创建, 但可以同时发送到 iOS 和 macOS。
 
-如果用户单击消息气泡图在 macOS 上的会话中，Mac 将尝试打开 web 浏览器中的 URL 中指定的地址。 因此，开发人员网站应该能够显示在 macOS 上的 web 浏览器中的消息的某些表示基于计算机。
+如果用户在 macOS 上单击会话中的消息冒泡, Mac 将尝试在 web 浏览器中打开 URL 中指定的地址。 因此, 开发人员的网站应该能够在基于 macOS 的计算机上的 web 浏览器中显示邮件的某种表示形式。
 
-`AccessibilityLabel`屏幕阅读器使用属性来读取用户的会话的脚本。 `Layout`属性指定如何将显示消息，当前仅`MSMessageTemplateLayout`支持，如以下所示：
+屏幕读取器使用属性来读取与用户的会话的脚本。`AccessibilityLabel` 属性指定如何显示消息, 当前`MSMessageTemplateLayout`仅支持, 并如下所示: `Layout`
 
 [![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout 模板")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
-`Image`属性的`MSMessageTemplateLayout`MessageBubble 屏幕上的主要部分的提供内容。 `MediaFileUrl`属性也提供消息气泡的正文内容，但允许的内容的不受`UIImage`（例如将在后台循环播放视频文件）。 如果这两个`Image`并`MediaFileUrl`提供了属性，`Image`属性将优先。 `MediaFileUrl`支持 PNG、 JPEG、 GIF 和格式的视频 （任何可以播放的媒体播放器框架） 的媒体格式。
+`Image` 的`MSMessageTemplateLayout`属性为屏幕上的 MessageBubble 的主体提供内容。 属性还为消息冒泡正文提供内容, 但允许使用不`UIImage`受支持的内容 (例如, 在后台循环的视频文件)。 `MediaFileUrl` 如果同时提供`Image`了`MediaFileUrl`和属性, 则`Image`属性将优先。 `MediaFileUrl`支持 PNG、JPEG、GIF 和视频 (以可由 Media Player 框架的任何格式播放) 媒体格式。
 
-建议大小为 3 x 分辨率 300 x 300 像素。 也接受略有更大、 较小的资产并测试了几个不同的大小以获得最佳结果，Apple 提供建议。 消息应用程序将向下采样和缩放要求此媒体。
+建议的媒体大小为 300 x 300 像素, 分辨率为3倍。 还会接受稍大、较小的资产, 而且 Apple 建议使用几种不同大小的测试, 以获得最佳结果。 此消息应用将会关闭示例并根据需要缩放此媒体。
 
-当资产发送到接收方时，附加任何媒体会自动转码消息应用程序以对其通过网络传输从优化操作。 正因为如此，Apple 会阻止包括的媒体的媒体将按比例缩小和压缩以便传输，因为附加到邮件中的文本这样可能会呈现文本无法看清。
+向接收方发送资产时, "消息" 应用会自动转码附加的任何介质, 以优化它们通过网络传输。 因此, Apple 不鼓励在附加到邮件的媒体中包括文本, 因为媒体会缩小并压缩以进行传输, 从而可能导致文本无法辨认。
 
-`ImageTitle`和`ImageSubtitle`属性提供的媒体，消息气泡图中显示的说明。 这些属性将发送以文本形式接收设备到其中它们将清晰地呈现在图像的左下角。
+`ImageTitle` 和`ImageSubtitle`属性提供消息气泡中显示的媒体的说明。 这些属性将以文本的形式发送到接收设备, 在接收设备上, 它们将在图像左下角直接呈现。
 
-`Caption`， `SubCaption`，`TrailingCaption`和`TrailingSubcaption`属性进一步描述映像，并将呈现在图像下的部分。 设置所有这些属性设置为`null`将创建没有标题区域消息气泡：
+`Caption` 、`SubCaption`和属性进一步描述了图像,并将呈现在图像下的部分中。`TrailingSubcaption` `TrailingCaption` 将所有这些属性设置为`null`将在没有标题区的情况下创建消息气泡:
 
-[![](advanced-message-app-extensions-images/interactive07.png "而无需标题区域消息气泡图")](advanced-message-app-extensions-images/interactive07.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive07.png "不带标题区的消息气泡")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
-最后要注意的是邮件应用将在消息气泡的左上角绘制消息应用扩展的图标。
+最后要注意的是, 邮件应用程序会在消息气泡的左上角绘制消息应用扩展的图标。
 
 ## <a name="sending-a-message"></a>发送消息
 
-一次`MSMessage`已组合，可以使用以下代码以将其发送：
+`MSMessage`撰写完毕后, 可以使用以下代码发送:
 
 ```csharp
 public void SendMessage (MSMessage message)
@@ -165,30 +165,30 @@ public void SendMessage (MSMessage message)
 }
 ```
 
-`ActiveConversation`属性的`MSMessagesAppViewController`将保存当前会话中启动了消息应用扩展。
+`ActiveConversation` 的`MSMessagesAppViewController`属性将包含在其中启动消息应用扩展的当前会话。
 
-调用`InsertMessage`的`MSConversation`要包含在会话中的消息处理可能会出现任何错误。 如果成功地包括该消息，则将在输入字段中显示消息气泡。
+`InsertMessage` 调用的以在会话中包含消息,并处理可能`MSConversation`出现的任何错误。 如果成功包含该消息, 则消息冒泡将显示在输入字段中。
 
-此外，扩展可以将不同类型的数据发送到如会话：
+此外, 扩展可以向会话发送不同类型的数据, 例如:
 
-- **Text** - `ActiveConversation.InsertText ("Message", (error) => {...});`
+- **全文** - `ActiveConversation.InsertText ("Message", (error) => {...});`
 - **附件** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
-- **贴纸** -  `ActiveConversation.InsertSticker (sticker, (obj) => {...});`其中`sticker`是`MSSticker`。
+- **不干胶标签** -  ,`ActiveConversation.InsertSticker (sticker, (obj) => {...});`其中是`sticker` 。 `MSSticker`
 
-后的新内容的输入字段中，用户便可将消息发送通过点击蓝色**发送**按钮 （就像任何典型的消息）。 没有自动将内容发送该消息应用扩展的方法，此过程是完全受控制的用户。
+新内容出现在输入字段中后, 用户可以通过点击蓝色的 "**发送**" 按钮 (就像处理任何典型消息一样) 发送消息。 邮件应用程序扩展无法自动发送内容, 此过程完全由用户控制。
 
-## <a name="handling-the-compact-and-expanded-modes"></a>处理的紧凑和扩展模式
+## <a name="handling-the-compact-and-expanded-modes"></a>处理紧凑模式和展开模式
 
-消息应用扩展可以在两种不同的视图模式之一显示：
+可以通过以下两种不同的视图模式之一来显示消息应用扩展:
 
-[![](advanced-message-app-extensions-images/interactive08.png "在两个不同的视图模式下显示一个消息应用扩展：Compact 和扩展")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "消息应用扩展以两种不同的视图模式显示:压缩 & 扩展")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
-- **Compact** -这是默认模式消息应用扩展，将消息视图中的底部 25%占用。 以简洁模式，应用不具有访问键盘、 水平滚动或轻扫手势识别器。 应用程序有权访问输入字段以及对调用`InsertMessage`将立即显示给用户存在。
-- **展开**-消息应用扩展会填充整个消息视图。 它不能访问到输入字段，但确实有权访问键盘、 水平滚动和轻扫手势识别器。
+- **Compact** -这是默认模式, 其中消息应用扩展占据消息视图的底部 25%。 在 Compact 模式下, 应用程序不能访问键盘、水平滚动或轻扫手势识别器。 应用可以访问输入字段, 并会立即向用户显示`InsertMessage`对的调用。
+- 已**展开**-消息应用扩展会填充整个消息视图。 它无权访问输入字段, 但有权访问键盘、水平滚动和轻扫手势识别器。
 
-消息应用扩展可以切换这些模式之间手动或以编程方式由用户在任何时候，应该立即响应任何更改在视图模式。
+用户随时可以通过编程方式或手动方式在这两种模式之间切换消息应用扩展, 并且应立即响应视图模式中的任何更改。
 
-看看下面的示例处理两种不同的视图模式之间切换。 两个不同的视图控制器将需要为每个状态。 `StickerBrowserViewController`句柄**Compact**视图和`AddStickerViewController`将处理**扩展**视图：
+请看下面的示例, 该示例在两个不同的视图模式之间处理切换。 每个状态都需要两个不同的视图控制器。 处理精简视图  , 并`AddStickerViewController`将处理展开的视图: `StickerBrowserViewController`
 
 ```csharp
 using System;
@@ -359,7 +359,7 @@ namespace MessagesExtension {
 }
 ```
 
-`DidTransition`重写方法以处理两种模式之间切换：
+重`DidTransition`写方法以处理两种模式间的切换:
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -378,48 +378,48 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-（可选） 可以使用应用`WillTransition`方法以处理视图模式更改之前 （就像在上面的 Icecream 生成器示例） 向用户显示。 有关详细信息，请参阅我们[进一步不干胶标签自定义](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)文档。
+或者, 应用程序可能已使用`WillTransition`方法在向用户显示视图模式更改之前对其进行处理 (如上面的 Icecream 生成器示例中所述)。 有关详细信息, 请参阅[进一步的不干胶标签自定义](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)文档。
 
-## <a name="replying-to-a-message"></a>答复消息
+## <a name="replying-to-a-message"></a>回复消息
 
-有两种情况下，将需要处理答复消息时消息应用扩展：
+在答复消息时, 有两种情况需要消息应用扩展才能处理:
 
-[![](advanced-message-app-extensions-images/interactive09.png "非活动和主动模式中的消息应用扩展")](advanced-message-app-extensions-images/interactive09.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive09.png "处于非活动和活动模式的消息应用扩展")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
-- **扩展插件为非活动**-还有一个脚本中的用户可以点击以激活扩展并继续此交互式会话的消息文字消息应用扩展消息气泡。
-- **扩展处于活动状态**-用户可以点击该消息应用扩展消息气泡图中的消息文字输入已展开视图模式并继续从上次退出的位置的交互式过程。
+- **扩展处于非活动状态**-消息应用扩展的消息消息中有一个冒泡消息, 用户可以点击此项来激活扩展并继续交互式对话。
+- **扩展处于活动状态**-用户可以点击消息脚本中的消息应用扩展的消息冒泡来进入展开的视图模式, 并在交互进程从中断的位置继续。
 
-### <a name="the-extension-is-inactive"></a>扩展的非活动状态
+### <a name="the-extension-is-inactive"></a>扩展处于非活动状态
 
-当消息气泡点击消息脚本中的用户以及消息应用扩展处于非活动状态时将发生以下过程：
+当用户在消息脚本中向消息冒泡, 并且消息应用扩展处于非活动状态时, 将发生以下过程:
 
-[![](advanced-message-app-extensions-images/interactive10.png "处理非活动状态的消息气泡图")](advanced-message-app-extensions-images/interactive10.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive10.png "处理非活动消息气泡")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
-1. 在用户点击的扩展消息气泡。
-2. 启动扩展时，消息应用程序将启动一个进程。
-3. `DidBecomeActive`方法调用并传递`MSConversation`，它表示消息应用扩展运行中的会话。
-4. 因为基于扩展`UIViewController`两者`ViewWillAppear`和`ViewDidAppear`调用。
+1. 用户点击扩展的消息冒泡。
+2. 启动扩展后, 消息应用将启动进程。
+3. 调用方法并传递一个`MSConversation` , 它表示正在运行消息应用扩展的会话。 `DidBecomeActive`
+4. 因为该扩展是从`UIViewController` `ViewWillAppear`中的开始, 并且`ViewDidAppear`称为。
 
-该过程完成后，将在扩展视图模式中显示消息应用扩展。
+完成此过程后, 将在展开的视图模式下显示消息应用扩展。
 
 ### <a name="the-extension-is-active"></a>扩展处于活动状态
 
-当消息气泡点击消息脚本中的用户以及消息应用扩展处于活动状态时将发生以下过程：
+当用户在消息脚本中向消息冒泡, 并且消息应用扩展处于活动状态时, 将发生以下过程:
 
-[![](advanced-message-app-extensions-images/interactive11.png "处理活动的消息气泡图")](advanced-message-app-extensions-images/interactive11.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive11.png "处理活动消息气泡")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
-1. 在用户点击的扩展消息气泡。
-2. 消息应用扩展已处于活动状态，因为`WillTransition`方法的`MSMessagesAppViewController`调用以处理从 Compact 切换到已展开视图模式。
-3. `DidSelectMessage`方法`MSMessagesAppViewController`调用并传递`MSMessage`和`MSConversation`消息气泡所属。
-4. `DidTransition`方法的`MSMessagesAppViewController`调用以处理从 Compact 切换到已展开视图模式。
+1. 用户点击扩展的消息冒泡。
+2. 由于消息应用扩展已处于活动状态, `WillTransition`因此调用的方法`MSMessagesAppViewController`来处理从 Compact 切换到展开的视图模式。
+3. 调用的`MSMessagesAppViewController`方法并传递消息冒泡所属的`MSMessage`和`MSConversation`。 `DidSelectMessage`
+4. 调用的`MSMessagesAppViewController`方法来处理从 Compact 到展开的视图模式的切换。 `DidTransition`
 
-同样，该过程完成后，会扩展视图模式中看到消息应用扩展。
+同样, 在此过程完成后, 将在展开的视图模式下显示消息应用扩展。
 
-### <a name="accessing-the-selected-message"></a>访问所选的邮件
+### <a name="accessing-the-selected-message"></a>访问选定的消息
 
-在任一情况下，当用户点击消息气泡属于消息应用扩展，它将需要获取访问权限`MSMessage`的点击的使用`SelectedMessage`属性的`MSConversation`。
+在这两种情况下, 当用户点击属于消息应用扩展的消息气泡时, 它需要`MSMessage` `SelectedMessage`使用的`MSConversation`属性来获取对的访问权限。
 
-例如：
+例如:
 
 ```csharp
 using System;
@@ -451,19 +451,19 @@ namespace MessageExtension
 }
 ```
 
-应在消息应用扩展的用户界面中显示所选的消息，并且应允许用户编写响应。
+所选消息应显示在消息应用扩展的 UI 中, 用户应允许编写响应。
 
-## <a name="removing-partially-completed-messages"></a>删除部分完成消息
+## <a name="removing-partially-completed-messages"></a>删除部分完成的消息
 
-发送会话中的两个用户之间的不同步骤的交互式会话，过程中部分已完成的消息气泡可以开始变得混乱消息脚本：
+在会话中的两个用户之间发送交互式对话的不同步骤的过程中, 部分完成的消息冒泡会开始打乱消息脚本:
 
-[![](advanced-message-app-extensions-images/interactive12.png "部分完成的消息气泡可导致消息脚本")](advanced-message-app-extensions-images/interactive12.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive12.png "部分完成的消息冒泡可能会打乱消息脚本")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
-相反，消息应用扩展应折叠到脚本中的消息文字的简洁注释以前的消息气泡：
+相反, 消息应用扩展应将上一条消息冒泡折叠为消息脚本中的简洁注释:
 
-[![](advanced-message-app-extensions-images/interactive13.png "折叠消息脚本中的上一个消息气泡")](advanced-message-app-extensions-images/interactive13.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive13.png "折叠消息脚本中的前一条消息冒泡")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
-这处理使用`MSSession`折叠所有现有的步骤。 因此`DidSelectMessage`方法的`MSMessagesAppViewController`类无法修改为如下所示：
+此操作通过使用`MSSession`折叠所有现有步骤来处理。 因此, 可以将`MSMessagesAppViewController`类的方法修改为如下所示:`DidSelectMessage`
 
 ```csharp
 public override void DidSelectMessage (MSMessage message, MSConversation conversation)
@@ -498,56 +498,56 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 }
 ```
 
-如果所选的消息已具有退出`MSSession`，它其他使用新`MSSession`创建。 `SummaryText`属性的`MSMessage`用于将标题添加到折叠前面的步骤。 如果`SummaryText`属性设置为`null`，将从会话脚本完全删除会话中的上一步骤。
+如果所选消息已有退出`MSSession`, 则使用它来创建新`MSSession`的。 `SummaryText` 的`MSMessage`属性用于向折叠的前面的步骤添加标题。 如果该`SummaryText`属性设置为`null`, 则将从对话脚本中完全删除该会话中的前面的步骤。
 
 ## <a name="advanced-message-api-features"></a>高级消息 API 功能
 
-使用更高版本的详细介绍新的消息 API 的基本功能，接下来检查一些更高级的功能，Apple 已内置到框架。
+在上面详细介绍了新消息 API 的基本功能后, 接下来要检查 Apple 内置于框架中的一些更高级的功能。
 
-首先，有几个其他重写方法中的`MSMessagesAppViewController`提供更深入地访问会话的类：
+首先, `MSMessagesAppViewController`类中有几个其他替代方法, 可提供对会话的更深层访问:
 
-- `DidStartSendingMessage` -这在用户点击发送按钮时调用。 这并不意味着，消息确实已传递给收件人，只需发送进程已启动。
-- `DidCancelSendingMessage` 的发生这种情况是当用户点击*X*会话脚本中的消息气泡图右上角的按钮。
-- `DidReceiveMessage` 的消息应用扩展处于活动状态时调用此方法从一个会话中参与者收到新消息。
+- `DidStartSendingMessage`-当用户点击 "发送" 按钮时, 将调用此项。 这并不意味着该消息实际上已传递给接收方, 只是发送进程已启动。
+- `DidCancelSendingMessage`-当用户点击对话脚本的消息气泡右上角的*X*按钮时, 会发生这种情况。
+- `DidReceiveMessage`-当消息应用扩展处于活动状态时, 将调用此方法。从会话中的某个参与者接收到新消息。
 
 ### <a name="group-conversations"></a>组对话
 
-虽然组对话 （有 3 个或更多的人） 所涉及的用户，这将需要加以考虑，设计和实现消息应用扩展时，可以使用消息应用扩展。
+当用户参与组对话 (包含3个或更多个人) 时, 可以使用消息应用扩展, 在设计和实现消息应用扩展时, 必须考虑到这一点。
 
-看看以下交互与三个用户的组对话中：
+请看一下与三个用户的组对话中的下列交互:
 
 [![](advanced-message-app-extensions-images/interactive14.png "与三个用户的组对话中的交互")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
-1. 用户 1 会发送一组交互式消息询问用户 2 和用户 3 中进行选择点子浇头。
-2. 用户 2 选择 tomatoes。
-3. 用户 3 选择像。
-4. 选择用户 2 和用户 3 到达回用户 1 在几乎同一时间。 因此，用户 2 选择折叠成一个摘要行和不可用。 这种情况下可能有也已翻转、 与用户 2 的选择显示和用户 3 的被折叠。
+1. 用户1向组发送交互式消息, 要求用户2和用户3选择快餐浇头。
+2. 用户2选择 tomatoes。
+3. 用户3选择泡菜。
+4. 用户2的和用户3的选择几乎同时到达用户1。 因此, 用户2的选择将折叠为摘要行并不可用。 这种情况也可能已翻转, 并显示用户2的选项, 并且用户3被折叠。
 
-在任一情况下，此行为是不需要用户 1 应能够访问用户 2 和 3 用户的选择。 若要处理这种情况下，Apple 建议消息应用扩展在云中存储的消息状态和使用的 URL 属性`MSMessage`（，获取在用户之间发送的） 若要访问此状态。
+无论是哪种情况, 都不会出现这种行为, 因为用户1应能够访问用户2的和用户3的选项。 为了应对这种情况, Apple 建议将消息应用扩展存储在云中, 并使用 (在用户之间发送) 的`MSMessage` URL 属性来访问此状态。
 
-当用户发送一条消息时，会话令牌生成，并推送到云与当前消息状态。 当用户点击上会话脚本中有消息气泡时，会话令牌用于从云中检索当前会话状态。
+当用户发送消息时, 将生成会话令牌并将其推送到当前消息状态下的云。 当用户点击对话稿本中的消息冒泡时, 会话令牌用于从云中检索当前会话状态。
 
 ### <a name="sender-identifiers"></a>发件人标识符
 
-若要讨论访问消息的发件人标识符，执行组对话上面给出的示例：
+若要讨论如何访问消息发件人的标识符, 请使用上面给出的组会话示例:
 
-[![](advanced-message-app-extensions-images/interactive15.png "发送标识符的组对话")](advanced-message-app-extensions-images/interactive15.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive15.png "组会话发送标识符")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
-1. 同样，用户 1 会发送一组交互式消息询问用户 2 和用户 3 中进行选择点子浇头。
-2. 用户 3 选取像。
-3. 用户 3 的选择能够到达回用户 1，并且用户 2 不尚未回复。
-4. 由于 Apple 是非常关心用户隐私，消息应用扩展只了解唯一标识符 (作为`NSUUID`) 分配会话中的每个参与者。 在本地设备上仅当前用户的标识符是已知的。
-5. `MSMessage`具有`SenderIdentifier`属性之一相匹配的用户的参与者列表中已知的扩展。
-6. 每个用户设备都有其自己副本，其中同样，只有本地用户的标识符已知的参与者列表。
-7. 发送一条消息，其`SenderIdentifier`属性也称为为本地用户。
+1. 同样, 用户1将发送一个组交互式消息, 要求用户2和用户3选择快餐浇头。
+2. 用户3选取泡菜。
+3. 用户3的选择将向用户1返回, 用户2尚未回复。
+4. 由于 Apple 非常关注用户隐私, 因此, 消息应用扩展仅知道每个参与者在会话中分配的`NSUUID`唯一标识符 (作为)。 在本地设备上, 仅知道当前用户的标识符。
+5. `MSMessage`具有一个`SenderIdentifier`属性, 该属性与用户在扩展已知的参与者列表中的一个匹配。
+6. 每个用户设备的参与者列表都有自己的副本, 但仅知道本地用户的标识符。
+7. 发送消息时, 其`SenderIdentifier`属性也称为本地用户的属性。
 
-可以按以下方式使用发件人标识符：
+可以通过以下方式使用发送方标识符:
 
-- 通过查看参与者列表扩展可以获取会话中的用户数。
-- 当在扩展插件接收来自用户的一条消息时，它可以跟踪的发送方标识符。 如果收到具有相同的发件人标识符的另一条消息，该扩展知道它是来自同一用户。
-- 它们可以用于帮助识别特定用户会话中。
+- 通过查看参与者列表, 扩展可以获取会话中的用户数。
+- 当扩展接收到来自用户的消息时, 它可以跟踪发送方标识符。 如果它收到具有相同发送方标识符的另一条消息, 则该扩展将知道该消息来自同一用户。
+- 它们可用于帮助确定会话中的特定用户。
 
-可在任何文本字段的发件人标识符`MSMessageTemplateLayout`前缀美元符号 (`$`)。 例如：
+发送方标识符可以在的任何文本字段中使用, `MSMessageTemplateLayout`方法是使用美元符号 (`$`) 作为前缀。 例如:
 
 ```csharp
 // Pass along the sender identifier
@@ -555,13 +555,13 @@ var layout = new MSMessageTemplateLayout()
 layout.Caption = string.format("${0} wants pickles.",Conversation.LocalParticipantIdentifier.UuidString);
 ```
 
-当邮件应用显示与此类型的格式设置消息气泡时，它将替换`$uuid...`与发送消息的会话中的参与者的联系人名称。
+当 "消息" 应用显示具有此类型格式的消息气泡时, 它会将`$uuid...`替换为发送该消息的会话中的参与者的联系人姓名。
 
-发件人标识符是每个设备上唯一的因此查看另请注意上面的关系图，该用户 1 的设备和用户 3 设备的会话中的每个参与者都有一个不同的唯一发件人标识符。
+发件人标识符在每个设备上都是唯一的, 因此请再次查看上面的关系图, 请注意, 用户1的设备和用户3的设备对于会话中的每个参与者都有不同的唯一发送方标识符。
 
-发件人标识符的作用域的消息应用扩展安装。 因此如果用户卸载并重新安装消息应用扩展新的发送方标识符将生成新的安装。
+发件人标识符的范围限定为安装消息应用扩展。 因此, 如果用户卸载并重新安装了邮件应用程序扩展, 将为新的安装生成新的发送程序标识符。
 
-若要访问发件人标识符，该扩展可以使用以下代码：
+若要访问发送方标识符, 扩展可以使用以下代码:
 
 ```csharp
 public override void DidStartSendingMessage (MSMessage message, MSConversation conversation)
@@ -581,34 +581,34 @@ public override void DidStartSendingMessage (MSMessage message, MSConversation c
 
 ## <a name="supported-platforms"></a>支持的平台
 
-将下列 Apple 平台上传送消息应用扩展生成的交互式消息：
+消息应用扩展生成的交互式消息将在以下 Apple 平台上传递:
 
 - watchOS 3
 - macOS Sierra
 - iOS 10
 
-三个平台，只有 iOS 10 将允许用户生成交互式消息。 在 macOS Sierra，如果用户单击交互式消息气泡图 URL 附加到`MSMessage`将在 Safari 中打开和消息的表示形式应在此处显示。
+在三个平台中, 只有 iOS 10 允许用户生成交互式消息。 在 macOS Sierra 上, 如果用户单击交互式消息冒泡, 则附加到的`MSMessage` URL 将在 Safari 中打开, 并且应在此处显示消息的表示形式。
 
-在 watchOS 中，在邮件应用可切换到附加的 iOS 设备，用户可撰写回复的交互式消息。
+在 watchOS 上, 消息应用可以将交互式消息移交给用户可以在其中撰写答复的附加 iOS 设备。
 
-如果交互式消息收到较旧的 Apple 平台上，新消息 API 具有回退的支持：
+如果在较旧的 Apple 平台上收到交互消息, 则新消息 API 支持回退:
 
 - watchOS 2 +
 - OS X 10.11 +
 - iOS 9 +
 
-为两个单独的消息，将回退格式传递它们：
+它们将以回退格式作为两个单独的消息提供:
 
-- 提供的模板布局，其中一个将成为的图像。
-- 中提供另一个将是 URL `MSMessage`。
+- 其中一个将是模板布局提供的映像。
+- 另一个将是中`MSMessage`提供的 URL。
 
 ## <a name="summary"></a>总结
 
-本文介绍了用于使用与消息应用扩展与集成的 Xamarin.iOS 解决方案的高级的技术**消息**应用并向用户提供新功能。
+本文介绍了一些高级技术, 适用于在与**Messages**应用集成的 Xamarin iOS 解决方案中使用消息应用扩展, 并向用户提供新功能。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [Ice cream 生成器 （示例）](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
-- [消息引用](https://developer.apple.com/reference/messages)
+- [冰淇淋生成器 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [消息参考](https://developer.apple.com/reference/messages)
 - [应用扩展编程指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

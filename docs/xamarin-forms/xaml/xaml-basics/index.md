@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: e85eb64099ba60a2b3663730a6fb058efdac6c60
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7d46744c20874dd122b63e56ec92c7aa5ae6562e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61211248"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656993"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。 XAML 永远不会需要在 Xamarin.Forms 程序中，但通常会更简洁和更直观地一致比等效的代码，并可能会非常有用。 XAML 是非常适合于与常用的 MVVM （模型-视图-视图） 应用程序体系结构一起使用：XAML 定义通过基于 XAML 的数据绑定链接到 ViewModel 代码的视图。
+XAML (Extensible Application Markup Language) 允许开发人员在 Xamarin.Forms 应用程序中使用标记（而不是代码）来定义用户界面。 XAML 永远不会需要在 Xamarin.Forms 程序中，但通常会更简洁和更直观地一致比等效的代码，并可能会非常有用。 XAML 特别适用于常用 MVVM (ViewModel) 应用程序体系结构:XAML 定义通过基于 XAML 的数据绑定链接到 ViewModel 代码的视图。
 
 ## <a name="xaml-basics-contents"></a>XAML 基础知识内容
 
@@ -107,6 +107,6 @@ XAML 基本上是 XML，但 XAML 具有一些独特的语法功能。 最重要�
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [创建移动应用书籍](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)

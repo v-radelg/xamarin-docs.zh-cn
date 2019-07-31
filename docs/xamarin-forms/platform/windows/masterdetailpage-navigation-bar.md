@@ -1,24 +1,24 @@
 ---
-title: 在 Windows 上的 MasterDetailPage 导航栏
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 的特定于平台上 MasterDetailPage 折叠导航栏。
+title: Windows 上的 MasterDetailPage 导航栏
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用在 MasterDetailPage 上折叠导航栏的特定于 Windows 平台的。
 ms.prod: xamarin
 ms.assetid: 0E7436C9-FA3E-40CD-801C-3F7ED95C412D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 4601aaefa09dcf5e3c4cf773ca9efff941547502
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: dc79421f7be3a35fe19f239fa24f6a14429953ac
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924779"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656894"
 ---
-# <a name="masterdetailpage-navigation-bar-on-windows"></a>在 Windows 上的 MasterDetailPage 导航栏
+# <a name="masterdetailpage-navigation-bar-on-windows"></a>Windows 上的 MasterDetailPage 导航栏
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此通用 Windows 平台特定于平台的用于在折叠导航栏[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)，并设置在 XAML 中由[ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty)和[ `MasterDetailPage.CollapsedPaneWidth`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)附加属性：
+此通用 Windows 平台平台特定用于在上[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)折叠导航栏, 并通过[`MasterDetailPage.CollapseStyle`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty)设置和[`MasterDetailPage.CollapsedPaneWidth`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)附加属性在 XAML 中使用:
 
 ```xaml
 <MasterDetailPage ...
@@ -48,6 +48,6 @@ page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(14
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

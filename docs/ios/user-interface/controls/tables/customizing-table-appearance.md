@@ -1,38 +1,38 @@
 ---
-title: 自定义在 Xamarin.iOS 中的表的外观
-description: 本文档介绍如何自定义在 Xamarin.iOS 中的表的外观。 它讨论的单元格样式、 附件、 单元格分隔符和自定义单元格布局。
+title: 在 Xamarin 中自定义表的外观
+description: 本文档介绍如何在 Xamarin 中自定义表的外观。 它讨论了单元样式、附件、单元分隔符和自定义单元布局。
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e1e86918d29e12d2f34dd3008b8c1d8e47471c24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cad7378e3d569454606a9d472cf30c42956553e4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61225757"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644946"
 ---
-# <a name="customizing-a-tables-appearance-in-xamarinios"></a>自定义在 Xamarin.iOS 中的表的外观
+# <a name="customizing-a-tables-appearance-in-xamarinios"></a>在 Xamarin 中自定义表的外观
 
-若要更改表的外观的最简单方法是使用不同的单元格样式。 你可以创建在每个单元格时使用的单元格样式`UITableViewSource`的`GetCell`方法。
+若要更改表的外观, 最简单的方法是使用不同的单元格样式。 在`UITableViewSource`的`GetCell`方法中创建每个单元格时, 可以更改所使用的单元格样式。
 
 ## <a name="cell-styles"></a>单元格样式
 
-有四个内置样式：
+有四种内置样式:
 
--  **默认值**– 支持`UIImageView`。
--  **副标题**– 支持`UIImageView`和副标题。
--  **Value1** – 右对齐的副标题支持`UIImageView`。
--  **Value2** – 标题是右对齐和子标题是左对齐 （但没有图像）。
+-  **默认**–支持`UIImageView`。
+-  **副标题**–支持`UIImageView`和副标题。
+-  **Value1** -右对齐副标题, 支持`UIImageView`。
+-  **Value2** –标题右对齐, 副标题按左对齐 (但不含图像)。
 
 
-这些屏幕截图显示了每种样式的显示方式：
+这些屏幕截图显示每种样式的显示方式:
 
- [![](customizing-table-appearance-images/image7.png "这些屏幕截图显示了每种样式的显示方式")](customizing-table-appearance-images/image7.png#lightbox)
+ [![](customizing-table-appearance-images/image7.png "这些屏幕截图显示每种样式的显示方式")](customizing-table-appearance-images/image7.png#lightbox)
 
-该示例**CellDefaultTable**包含用于生成这些屏幕的代码。 在中设置的单元格样式`UITableViewCell`构造函数，如下：
+示例**CellDefaultTable**包含用于生成这些屏幕的代码。 单元格样式在`UITableViewCell`构造函数中设置, 如下所示:
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -41,7 +41,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-[支持的属性](xref:UIKit.UITableViewCell)设置中的单元格样式然后：
+然后, 可以设置单元格样式的[支持属性](xref:UIKit.UITableViewCell):
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;
@@ -49,21 +49,21 @@ cell.DetailTextLabel.Text = tableItems[indexPath.Row].SubHeading;
 cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].ImageName); // don't use for Value2
 ```
 
-## <a name="accessories"></a>附件
+## <a name="accessories"></a>附属
 
-单元格都可以具有以下附件添加到视图的右侧：
+单元格可以将以下附件添加到视图右侧:
 
--   **复选标记**– 能用来表示表中的多选。
--   **DetailButton** – 响应触摸独立于其他单元格，以便它可以执行到接触的单元格本身的不同函数 (如打开一个弹出窗口或新的窗口，不是属于`UINavigationController`堆栈)。
--   **DisclosureIndicator** -通常用于指示接触单元格将会打开另一个视图。
--   **DetailDisclosureButton** – 的组合`DetailButton`和`DisclosureIndicator`。
+-   **复选标记**-可用于指示表中的多个选择。
+-   **DetailButton** –独立于单元格的其余部分响应触摸, 使其能够执行不同的功能来接触单元格本身 (例如打开弹出窗口或不属于`UINavigationController`堆栈一部分的新窗口)。
+-   **DisclosureIndicator** –通常用于指示触摸单元会打开另一个视图。
+-   **DetailDisclosureButton** – `DetailButton`和`DisclosureIndicator`的组合。
 
 
-这是它们的外观：
+如下所示:
 
  [![](customizing-table-appearance-images/image8.png "示例附件")](customizing-table-appearance-images/image8.png#lightbox)
 
-若要显示一个可以设置这些附件`Accessory`中的属性`GetCell`方法：
+若要显示这些附件之一, 可以`Accessory` `GetCell`在方法中设置属性:
 
 ```csharp
 cell.Accessory = UITableViewCellAccessory.Checkmark;
@@ -72,7 +72,7 @@ cell.Accessory = UITableViewCellAccessory.Checkmark;
 //cell.Accessory = UITableViewCellAccessory.None; // to clear the accessory
 ```
 
-当`DetailButton`或`DetailDisclosureButton`所示，还应该重写`AccessoryButtonTapped`接触时执行某些操作。
+`DetailButton`显示或`DetailDisclosureButton`时, 还应重写`AccessoryButtonTapped` , 以便在接触时执行某种操作。
 
 ```csharp
 public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
@@ -85,18 +85,18 @@ public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath i
 }
 ```
 
-该示例**CellAccessoryTable**演示如何使用附件。
+示例**CellAccessoryTable**演示了一个使用附件的示例。
 
-## <a name="cell-separators"></a>单元格分隔符
+## <a name="cell-separators"></a>单元分隔符
 
-单元格分隔符是用于分隔表的表单元格。 在表上设置属性。
+单元分隔符是用于分隔表的表单元。 在表上设置属性。
 
 ```csharp
 TableView.SeparatorColor = UIColor.Blue;
 TableView.SeparatorStyle = UITableViewCellSeparatorStyle.DoubleLineEtched;
 ```
 
-它，还可以将模糊或活力效果添加到分隔符：
+还可以将模糊或活力效果添加到分隔符:
 
 ```csharp
 // blur effect
@@ -108,28 +108,28 @@ var effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Light);
 TableView.SeparatorEffect = UIVibrancyEffect.FromBlurEffect(effect);
 ```
 
-分隔符可以嵌入在：
+分隔符还可以包含内陷:
 
 ```csharp
 TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 ```
 
-## <a name="creating-custom-cell-layouts"></a>创建自定义单元格布局
+## <a name="creating-custom-cell-layouts"></a>创建自定义单元布局
 
-若要更改的视觉样式的表需要提供自定义单元格，才能显示。 自定义单元格可以具有不同的颜色和控件布局。
+若要更改表的视觉样式, 需要提供自定义单元格以使其显示。 自定义单元格可以具有不同的颜色和控件布局。
 
-CellCustomTable 示例实现`UITableViewCell`定义的自定义布局的子类`UILabel`s 和`UIImage`使用不同的字体和颜色。 生成的单元格如下所示：
+CellCustomTable 示例实现了一个`UITableViewCell`子类, 该子类`UIImage`使用不同的`UILabel`字体和颜色来定义的自定义布局。 生成的单元格如下所示:
 
- [![](customizing-table-appearance-images/image9.png "自定义单元格布局")](customizing-table-appearance-images/image9.png#lightbox)
+ [![](customizing-table-appearance-images/image9.png "自定义单元布局")](customizing-table-appearance-images/image9.png#lightbox)
 
-自定义单元格类包含只有三个方法：
+自定义单元格类只包含三种方法:
 
--   **构造函数**– 创建 UI 控件和设置的自定义的样式属性 （例如。 字体、 大小和颜色）。
--   **UpdateCell** – 一种方法`UITableView.GetCell`要用于设置单元格的属性。
--   **LayoutSubviews** – 设置 UI 控件的位置。 在示例中的每个单元都具有相同的布局，但更复杂的单元格 （特别是那些具有不同大小） 可能需要不同的布局位置，具体取决于所显示的内容。
+-   **构造函数**–创建 UI 控件并设置自定义样式属性 (例如 字体、大小和颜色)。
+-   **UpdateCell** –用于设置单元`UITableView.GetCell`格的属性的方法。
+-   **LayoutSubviews** –设置 UI 控件的位置。 在示例中, 每个单元格都具有相同的布局, 但更复杂的单元格 (尤其是具有不同大小的单元格) 可能需要不同的布局位置, 具体取决于所显示的内容。
 
 
-中的完整示例代码**CellCustomTable > CustomVegeCell.cs**后面：
+**CellCustomTable > CustomVegeCell.cs**中的完整示例代码如下:
 
 ```csharp
 public class CustomVegeCell : UITableViewCell  {
@@ -170,7 +170,7 @@ public class CustomVegeCell : UITableViewCell  {
 }
 ```
 
-`GetCell`方法的`UITableViewSource`需要对其进行修改来创建自定义单元格：
+需要修改的`UITableViewSource` 方法以创建自定义单元格:`GetCell`
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -189,4 +189,4 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithTables （示例）](https://developer.xamarin.com/samples/monotouch/WorkingWithTables)
+- [WorkingWithTables (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

@@ -1,39 +1,39 @@
 ---
-title: 演练-在 Xamarin.iOS 中的后台位置
-description: 本文档提供了如何在 backgrounded Xamarin.iOS 应用程序中使用位置信息的演练。 它介绍了必要的安装程序、 用户界面和应用程序状态。
+title: 演练-Xamarin 中的背景位置
+description: 本文档提供有关如何在 backgrounded Xamarin iOS 应用程序中使用位置信息的演练。 它介绍了必需的设置、用户界面和应用程序状态。
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: fa8a48e165764a449af4bc5414d2e66aecea8269
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 20f49f3f0c103791064545311d9f66d409cff357
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61392246"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656537"
 ---
-# <a name="walkthrough---background-location-in-xamarinios"></a>演练-在 Xamarin.iOS 中的后台位置
+# <a name="walkthrough---background-location-in-xamarinios"></a>演练-Xamarin 中的背景位置
 
-在此示例中，我们将构建 iOS 打印有关我们当前的位置信息的位置应用程序： 纬度、 经度和屏幕的其他参数。 此应用程序将演示如何正确执行位置更新该应用程序时处于活动状态或 Backgrounded。
+在此示例中, 我们将构建一个 iOS 位置应用程序, 用于打印有关当前位置的信息: 纬度、经度和其他参数到屏幕。 此应用程序将演示如何在应用程序处于活动状态或 Backgrounded 时正确执行位置更新。
 
-本演练说明了一些后台处理概念，包括作为背景需要应用程序注册的应用程序、 挂起更新 UI 时应用程序在后台运行，以及使用密钥`WillEnterBackground`并`WillEnterForeground``AppDelegate`方法.
+本演练介绍一些重要的后台处理概念, 包括将应用注册为后台必需的应用程序、在应用程序 backgrounded 时暂停 UI 更新以及`WillEnterBackground`使用和方法`WillEnterForeground` `AppDelegate`.
 
-## <a name="application-set-up"></a>设置应用程序
+## <a name="application-set-up"></a>应用程序设置
 
 
-1. 首先，创建一个新**iOS > 应用程序 > 单视图应用程序 (C#)**。 调用它_位置_，并确保 iPad 和 iPhone 已选中。
+1. 首先, 创建新的**iOS > 应用 > 单一视图应用程序C#()** 。 调用该_位置_, 并确保已选择 IPad 和 iPhone。
 
-1. 作为背景需要应用程序在 iOS 中限定位置应用程序。 注册应用程序作为位置的应用程序通过编辑**Info.plist**项目文件。
+1. 位置应用程序在 iOS 中限定为后台必需的应用程序。 通过编辑项目的**info.plist**文件, 将应用程序注册为位置应用程序。
 
-    在解决方案资源管理器，双击**Info.plist**文件来打开它，并滚动到列表的底部。 由已勾选**启用后台模式**并**位置更新**复选框。
+    在 "解决方案资源管理器" 下, 双击 " **info.plist** " 文件将其打开, 然后滚动到列表的底部。 选中 "**启用后台模式**" 和 "**位置更新**" 复选框。
 
-    在 Visual Studio for Mac 中，它将类似如下：
+    在 Visual Studio for Mac 中, 它将如下所示:
 
-    [![](location-walkthrough-images/image7.png "通过启用后台模式和位置更新复选框选中")](location-walkthrough-images/image7.png#lightbox)
+    [![](location-walkthrough-images/image7.png "选中 \"启用后台模式\" 和 \"位置更新\" 复选框")](location-walkthrough-images/image7.png#lightbox)
 
-    在 Visual Studio 中， **Info.plist**需要手动更新通过添加以下键/值对：
+    在 Visual Studio 中, 需要通过添加以下键/值对, 手动更新**info.plist** :
 
     ```xml
     <key>UIBackgroundModes</key>
@@ -42,9 +42,9 @@ ms.locfileid: "61392246"
     </array>
     ```
 
-1. 现在，注册应用程序，它可以从设备获取位置数据。 在 iOS 中，`CLLocationManager`类用于访问位置信息，并可以引发提供位置更新的事件。
+1. 现在, 应用程序已注册, 可以从设备获取位置数据。 在 iOS 中, `CLLocationManager`类用于访问位置信息, 并可以引发提供位置更新的事件。
 
-1. 在代码中，创建一个名为的新类`LocationManager`，提供各种屏幕和代码以订阅位置更新了一个位置。 在中`LocationManager`类中，使实例`CLLocationManager`调用`LocMgr`:
+1. 在代码中, 创建一个名`LocationManager`为的新类, 它为用于订阅位置更新的各种屏幕和代码提供单一位置。 在类中, 创建一个`CLLocationManager`名`LocMgr`为的实例: `LocationManager`
 
     ```csharp
     public class LocationManager
@@ -72,21 +72,21 @@ ms.locfileid: "61392246"
     }
     ```
 
-    上面的代码上设置的属性和权限数[CLLocationManager](xref:CoreLocation.CLLocationManager)类：
+    上面的代码在[CLLocationManager](xref:CoreLocation.CLLocationManager)类上设置了多个属性和权限:
 
-    - `PausesLocationUpdatesAutomatically` – 这是一个布尔值，可以根据是否允许系统暂停位置更新设置。 在某些设备上则默认为`true`，这可能导致设备停止获取位置的更新，大约 15 分钟后的背景。
-    - `RequestAlwaysAuthorization` -你应传入此方法为应用程序用户提供的选项以允许要在背景中访问的位置。 `RequestWhenInUseAuthorization` 此外可以传递如果想要为用户提供选项以便仅当该应用位于前台时，才可访问的位置。
-    - `AllowsBackgroundLocationUpdates` – 这是一个布尔值属性，在 iOS 9，可设置为允许接收位置更新挂起时的应用程序中引入。
+    - `PausesLocationUpdatesAutomatically`–这是一个布尔值, 可根据系统是否允许暂停位置更新来设置。 在某些设备上, 它`true`默认为, 这可能会导致设备在大约15分钟后停止获取后台位置更新。
+    - `RequestAlwaysAuthorization`-应传递此方法以向应用程序用户授予允许在后台访问位置的选项。 `RequestWhenInUseAuthorization`如果希望为用户授予仅在应用程序处于前台时才允许访问位置的选项, 也可以传递。
+    - `AllowsBackgroundLocationUpdates`–这是在 iOS 9 中引入的布尔属性, 可将其设置为允许应用在挂起时接收位置更新。
 
     > [!IMPORTANT]
-    > iOS 8 （和更高版本） 还要求中的条目**Info.plist**文件向用户显示授权请求的一部分。
+    > iOS 8 (及更高版本) 也需要**info.plist**文件中的条目, 以将用户显示为授权请求的一部分。
 
-1. 添加的键`NSLocationAlwaysUsageDescription`或`NSLocationWhenInUseUsageDescription`将向用户请求位置数据的访问权限的警报中显示的字符串。
+1. 添加一个键`NSLocationAlwaysUsageDescription`或`NSLocationWhenInUseUsageDescription`一个字符串, 该字符串将在请求位置数据访问的警报中显示给用户。
 
-1. iOS 9 需要使用时`AllowsBackgroundLocationUpdates` **Info.plist**包括密钥`UIBackgroundModes`值`location`。 如果您已完成本演练的步骤 2 中，这已应已在 Info.plist 文件中。
+1. iOS 9 要求`AllowsBackgroundLocationUpdates`在使用**info.plist**时包含具有值`UIBackgroundModes` `location`的密钥。 如果已完成本演练的步骤 2, 则该操作应已在 info.plist 文件中。
 
 
-1. 内部`LocationManager`类中，创建一个名为方法`StartLocationUpdates`用下面的代码。 此代码显示了如何开始接收来自的位置更新`CLLocationManager`:
+1. 在类中, 使用以下代码创建`StartLocationUpdates`一个名为的方法。 `LocationManager` 此代码显示了如何开始接收位置更新`CLLocationManager`:
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -101,20 +101,20 @@ ms.locfileid: "61392246"
     }
     ```
 
-    有几种重要方法，此方法中发生的情况。 首先，我们将执行检查以查看应用程序是否在设备上有权访问位置数据。 我们验证这是否通过调用`LocationServicesEnabled`上`CLLocationManager`。 此方法将返回**false**如果用户已拒绝应用程序访问位置信息。
+    此方法有几个重要事项。 首先, 我们执行检查以查看应用程序是否有权访问设备上的位置数据。 我们通过调用`LocationServicesEnabled` `CLLocationManager`来验证这一点。 如果用户拒绝了应用程序对位置信息的访问, 则此方法将返回**false** 。
 
-1. 接下来，告知何种频率的位置管理器来更新。 `CLLocationManager` 提供了许多选项用于筛选和配置位置数据，包括更新的频率。 在此示例中，设置`DesiredAccuracy`更新位置发生更改的一个表，用时。 有关配置位置更新频率和其他首选项的详细信息，请参阅[CLLocationManager 类引用](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)Apple 文档中。
+1. 接下来, 告诉位置管理器更新的频率。 `CLLocationManager`提供了许多用于筛选和配置位置数据的选项, 包括更新的频率。 在此示例中, 将`DesiredAccuracy`设置为, 每当位置由计量器更改时更新。 有关配置位置更新频率和其他首选项的详细信息, 请参阅 Apple 文档中的[CLLocationManager 类引用](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)。
 
-1. 最后，调用`StartUpdatingLocation`上`CLLocationManager`实例。 这将告知位置管理器来获取初始的修补程序上当前的位置，并开始发送更新
+1. 最后, 对`StartUpdatingLocation` `CLLocationManager`实例调用。 这会告诉位置管理器在当前位置获取初始修补程序, 以及开始发送更新
 
-到目前为止，位置管理器创建后，配置了我们想要接收的数据类型，并已确定的初始位置。 现在该代码需要呈现用户界面的位置数据。 我们可以执行此操作与自定义事件采用`CLLocation`作为自变量：
+到目前为止, 已创建位置管理器, 并配置了要接收的数据类型, 并确定了初始位置。 现在, 代码需要将位置数据呈现给用户界面。 我们可以使用采用`CLLocation`作为参数的自定义事件来执行此操作:
 
 ```csharp
 // event for the location changing
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-下一步将订阅从位置更新`CLLocationManager`，并引发自定义`LocationUpdated`新位置数据可用，传入作为自变量位置时的事件。 若要执行此操作，创建一个新类**LocationUpdateEventArgs.cs**。 此代码可以在主应用程序中访问，并引发事件时返回设备位置：
+下一步是订阅中的`CLLocationManager`位置更新, 并在新位置数据变得可用时引发自定义`LocationUpdated`事件, 并将该位置作为参数传入。 为此, 请创建新类**LocationUpdateEventArgs.cs**。 此代码可在主应用程序中访问, 并在引发事件时返回设备位置:
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -135,16 +135,16 @@ public class LocationUpdatedEventArgs : EventArgs
 
 ## <a name="user-interface"></a>用户界面
 
-1. 使用 iOS 设计器生成的屏幕将显示位置的信息。 双击**Main.storyboard**文件以开始。
+1. 使用 iOS 设计器生成将显示位置信息的屏幕。 双击要开始的**主情节提要**文件。
 
-    在情节提要，将多个标签拖屏幕充当占位符的位置信息。 在此示例中，有纬度、 经度、 海拔高度、 课程和速度的标签。
+    在情节提要上, 将若干标签拖到屏幕上, 作为位置信息的占位符。 在此示例中, 有用于纬度、经度、海拔高度、课程和速度的标签。
 
-    布局应如下所示：
+    布局应如下所示:
 
-    ![](location-walkthrough-images/image8.png "在 iOS 设计器布局示例 UI")
+    ![](location-walkthrough-images/image8.png "IOS 设计器中的示例 UI 布局")
 
-1. 在解决方案面板中，双击`ViewController.cs`文件，并编辑它以创建 LocationManager 和调用的新实例`StartLocationUpdates`上它。
-  更改代码以如下所示：
+1. 在 Solution Pad 中, 双击该`ViewController.cs`文件并编辑它以创建 LocationManager 的新实例, 并对其调用。 `StartLocationUpdates`
+  将代码更改为如下所示:
 
     ```csharp
     #region Computed Properties
@@ -166,9 +166,9 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-    虽然会不显示任何数据，这会在应用程序启动时启动位置更新。
+    这会在应用程序启动时启动位置更新, 但不会显示任何数据。
 
-1. 现在，接收位置更新，则使用位置信息更新屏幕。 以下方法获取从位置我们`LocationUpdated`事件并将其显示在 UI 中：
+1. 收到位置更新后, 请用位置信息更新屏幕。 下面的方法从`LocationUpdated`事件获取位置, 并将其显示在 UI 中:
 
     ```csharp
     #region Public Methods
@@ -188,7 +188,7 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-我们仍需订阅`LocationUpdated`事件中，我们 AppDelegate 中，并调用新方法来更新 UI。 将以下代码中的添加`ViewDidLoad,`之后`StartLocationUpdates`调用：
+我们仍需要订阅 AppDelegate 中的`LocationUpdated`事件, 并调用新方法来更新 UI。 在`ViewDidLoad,` 调用`StartLocationUpdates`后立即在其中添加以下代码:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -203,13 +203,13 @@ public override void ViewDidLoad ()
 ```
 
 
-现在，当运行该应用程序时，它应如下所示：
+现在, 当应用程序运行时, 它应该如下所示:
 
-[![](location-walkthrough-images/image5.png "运行示例应用")](location-walkthrough-images/image5.png#lightbox)
+[![](location-walkthrough-images/image5.png "示例应用运行")](location-walkthrough-images/image5.png#lightbox)
 
-## <a name="handling-active-and-background-states"></a>处理活动和背景的状态
+## <a name="handling-active-and-background-states"></a>处理活动状态和后台状态
 
-1. 在前景中并处于活动状态时，应用程序将输出位置更新。 若要演示时应用程序进入后台，会发生什么情况，重写`AppDelegate`跟踪应用程序的方法状态更改，以便应用程序在前台和后台之间转换时写入控制台：
+1. 当应用程序处于前台和活动状态时, 将会输出位置更新。 若要演示应用进入后台时所发生的情况, 请`AppDelegate`重写跟踪应用程序状态更改的方法, 使应用程序在前台和后台之间转换时写入控制台:
 
     ```csharp
     public override void DidEnterBackground (UIApplication application)
@@ -223,7 +223,7 @@ public override void ViewDidLoad ()
     }
     ```
 
-    中的以下代码添加`LocationManager`连续打印更新的位置到应用程序输出中，若要验证的位置信息的数据是在后台中仍然可用：
+    在中`LocationManager`添加以下代码, 以便将更新的位置数据连续打印到应用程序输出, 以验证位置信息在后台是否仍然可用:
 
     ```csharp
     public class LocationManager
@@ -247,11 +247,11 @@ public override void ViewDidLoad ()
     }
     ```
 
-1. 使用代码的一个剩余问题： 尝试更新用户界面，当应用在后台运行时将原因 iOS 将终止它。 当应用程序进入后台时，代码需要取消订阅位置更新并停止更新 UI。
+1. 此代码还有一个问题: 尝试在应用程序 backgrounded 时更新 UI 会导致 iOS 终止。 当应用进入后台时, 代码需要取消订阅位置更新并停止更新 UI。
 
-    iOS 为我们提供了通知时在应用程序即将转换到另一个应用程序状态。 在这种情况下，我们可以订阅`ObserveDidEnterBackground`通知。
+    当应用程序要过渡到不同的应用程序状态时, iOS 会向我们提供通知。 在这种情况下, 我们可以订阅`ObserveDidEnterBackground`通知。
 
-    以下代码段演示如何使用通知来让知道何时停止 UI 更新视图。 这将进入`ViewDidLoad`:
+    下面的代码段演示如何使用通知来让视图知道何时暂停 UI 更新。 这将在`ViewDidLoad`:
 
     ```csharp
     UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
@@ -259,15 +259,15 @@ public override void ViewDidLoad ()
     });
     ```
 
-    当运行该应用程序时，输出将如下所示：
+    当应用程序运行时, 输出将如下所示:
 
-    ![](location-walkthrough-images/image6.png "在控制台中的位置输出示例")
+    ![](location-walkthrough-images/image6.png "控制台中位置输出的示例")
 
-1. 应用程序在前台，操作时将打印到屏幕的位置更新，并继续在后台操作时打印到应用程序输出窗口的数据。
+1. 应用程序在前台操作时, 会在屏幕上打印位置更新, 并在后台操作时继续将数据打印到 "应用程序输出" 窗口。
 
-仍然只有一个未完成的问题： 当首次加载应用程序，但是它没有办法知道当应用重新进入前台时，屏幕启动 UI 更新。 如果 backgrounded 应用程序恢复到前台，不会恢复 UI 更新。
+仅存在一个未解决的问题: 第一次加载应用时, 屏幕将启动 UI 更新, 但无法了解应用重新进入前台的时间。 如果 backgrounded 应用程序恢复到前台, UI 更新将无法继续。
 
-若要解决此问题，嵌套调用以启动在另一条通知，当应用程序进入活动状态时将触发 UI 更新：
+若要解决此问题, 请在另一个通知内嵌套调用以启动 UI 更新, 这会在应用程序进入活动状态时触发:
 
 ```csharp
 UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
@@ -275,12 +275,12 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 });
 ```
 
-现在 UI 将开始更新时首次启动应用程序，并且恢复更新应用程序的任何时间回来置于前台。
+现在, UI 将在首次启动应用程序时开始更新, 并在应用程序重新进入前台时继续更新。
 
-在本演练中，我们生成打印到屏幕和应用程序输出窗口的位置数据的良好、 识别背景的 iOS 应用程序。
+在本演练中, 我们构建了一种操作良好的、可识别背景的 iOS 应用程序, 该应用程序将位置数据同时打印到屏幕和 "应用程序输出" 窗口。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [位置 (第 4) （示例）](https://developer.xamarin.com/samples/monotouch/Location/)
-- [核心位置框架引用](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)
+- [位置 (第4部分) (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
+- [核心位置框架参考](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

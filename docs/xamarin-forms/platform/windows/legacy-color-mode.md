@@ -1,26 +1,26 @@
 ---
-title: 在 Windows 上的 VisualElement 旧式颜色模式
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 特定于平台的 Xamarin.Forms 旧颜色模式中禁用的。
+title: Windows 上的 VisualElement 旧版颜色模式
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 平台特定的, 后者禁用了 Xamarin 格式的旧版颜色模式。
 ms.prod: xamarin
 ms.assetid: B8759309-07C7-4DCA-A18A-C1A198A7951B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: a3b6611ab5c7b318938dfc40b702d6f65787cfbf
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 7319b0886476ea502b7b9c450416cb4fe69e01fa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924839"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656913"
 ---
-# <a name="visualelement-legacy-color-mode-on-windows"></a>在 Windows 上的 VisualElement 旧式颜色模式
+# <a name="visualelement-legacy-color-mode-on-windows"></a>Windows 上的 VisualElement 旧版颜色模式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 某些 Xamarin.Forms 视图功能旧颜色模式。 在此模式下，当[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)视图的属性设置为`false`，视图将重写由具有已禁用状态的默认本机颜色用户设置的颜色。 有关向后兼容性，这种旧颜色模式保持不受支持视图的默认行为。
 
-此通用 Windows 平台特定于平台的禁用此旧颜色模式、 颜色设置用户的视图，以便保持，即使禁用的视图。 设置使用在 XAML [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty)附加到属性`false`:
+此通用 Windows 平台平台特定禁用了这种旧的颜色模式, 因此即使在禁用视图时, 用户在视图上设置的颜色也会保留。 设置使用在 XAML [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty)附加到属性`false`:
 
 ```xaml
 <ContentPage ...
@@ -57,6 +57,6 @@ _legacyColorModeDisabledEditor.On<Windows>().SetIsLegacyColorModeEnabled(false);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

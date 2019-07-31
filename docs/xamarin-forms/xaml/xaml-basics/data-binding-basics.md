@@ -7,22 +7,22 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309522"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655251"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 数据绑定基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _数据绑定使两个用于链接，这样一个导致更改中的其他对象的属性。这是一个非常有价值的工具，并可以完全在代码中定义数据绑定，而 XAML 提供快捷方式和便利。因此，在 Xamarin.Forms 中最重要的标记扩展之一绑定。_
 
 ## <a name="data-bindings"></a>数据绑定
 
-数据绑定连接两个对象，调用的属性*源*并*目标*。 在代码中，则需要两个步骤：`BindingContext`的目标对象的属性必须设置为源对象，并`SetBinding`方法 (通常与结合使用`Binding`类) 必须在要将该对象的属性绑定到源属性的目标对象上调用对象。
+数据绑定连接两个对象，调用的属性*源*并*目标*。 在代码中, 需要执行两个步骤:必须`BindingContext`将目标对象的属性设置为源对象, `SetBinding`并且必须在目标对象上调用方法 (通常与`Binding`类结合使用), 以将该对象的属性绑定到源的属性对象.
 
 目标属性必须是可绑定属性，这意味着目标对象必须派生自`BindableObject`。 联机 Xamarin.Forms 文档将指示哪个属性是可绑定属性。 属性`Label`如`Text`与可绑定属性关联`TextProperty`。
 
@@ -114,11 +114,11 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` -值从源传输到目标
 - `OneWayToSource` -值从目标传输到源
 - `TwoWay` -值传输源和目标之间的这两种方式
-- `OneTime` -数据源从转到目标，但仅当`BindingContext`更改
+- `OneTime`-数据从源到目标进行, 但仅当`BindingContext`发生更改时,
 
 下面的程序说明的一个常见用途`OneWayToSource`和`TwoWay`绑定模式。 四个`Slider`视图都为了控制`Scale`， `Rotate`， `RotateX`，并`RotateY`属性的`Label`。 首先，它看起来像的这四个属性`Label`应为数据绑定目标，因为每个所设置`Slider`。 但是，`BindingContext`的`Label`可以是只有一个对象，并且有四个不同的滑块。
 
-因此，所有绑定中都设置似乎是向后的方式：`BindingContext`的每四个滑块设置为`Label`，并在设置绑定`Value`滑块的属性。 通过使用`OneWayToSource`和`TwoWay`模式下，这些`Value`属性可以设置的源属性，即`Scale`， `Rotate`， `RotateX`，并`RotateY`的属性`Label`:
+出于此原因, 所有绑定都以看似向后的方式设置:四个滑块中每个滑块的均设置`Label`为, 并在滑块的`Value`属性上设置绑定。 `BindingContext` 通过使用`OneWayToSource`和`TwoWay`模式下，这些`Value`属性可以设置的源属性，即`Scale`， `Rotate`， `RotateX`，并`RotateY`的属性`Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -255,7 +255,7 @@ XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColo
 ```
 
 > [!NOTE]
-> 单元格和单元格的子级的绑定源是`ListView.ItemsSource`集合。
+> 单元格的绑定源和单元格的子元素是`ListView.ItemsSource`集合。
 
 `Label`元素设置为`View`属性的`ViewCell`。 (`ViewCell.View`不需要标记，因为`View`属性是 content 属性`ViewCell`。)此标记将显示`FriendlyName`每个属性`NamedColor`对象：
 
@@ -410,7 +410,7 @@ namespace XamlSamples
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：开始使用 XAML （示例）](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部分：基本 XAML 语法 （示例）](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部分：XAML 标记扩展 （示例）](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

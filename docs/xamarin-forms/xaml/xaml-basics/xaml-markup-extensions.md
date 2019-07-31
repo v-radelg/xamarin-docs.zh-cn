@@ -7,16 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 17ca8ec481b8af5ad0515e6544613864f0a66271
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342088"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655486"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 标记扩展
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 标记扩展构成允许将属性设置为对象或从其他源间接引用的值的 XAML 中的重要功能。XAML 标记扩展是特别重要的共享对象，并引用整个应用程序，使用的常量，但它们在数据绑定中查找其最大的实用程序。_
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 请注意，在关键字`clr-namespace`后跟一个冒号，然后.NET 命名空间名称后, 接分号，关键字`assembly`，等号和程序集名称。
 
-是的加上冒号`clr-namespace`但等号后面`assembly`。 语法方式故意定义在此：大多数 XML 命名空间声明引用一个 URI，如开始一个 URI 方案名称`http`，这始终后跟一个冒号。 `clr-namespace`此字符串的一部分用于模拟这种约定。
+是的加上冒号`clr-namespace`但等号后面`assembly`。 语法是特意定义的:大多数 XML 命名空间声明都引用了一个 uri, 该 uri 开始使用`http`uri 方案名称 (如), 该名称后面始终跟有一个冒号。 `clr-namespace`此字符串的一部分用于模拟这种约定。
 
 中包含以下两个命名空间声明**StaticConstantsPage**示例。 请注意，`BoxView`尺寸设置为`Math.PI`和`Math.E`，但缩放到原来的 100:
 
@@ -547,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-可能需要与此示例的最重要经验是标记扩展的语法：没有引号必须出现在标记扩展的大括号内。 键入时标记扩展在 XAML 文件中，是自然地想要将属性的值括在引号。 忍不住 ！
+也许, 本示例中应执行的最重要的课程是标记扩展的语法:标记扩展的大括号内不能出现引号。 键入时标记扩展在 XAML 文件中，是自然地想要将属性的值括在引号。 忍不住 ！
 
 下面是运行的程序：
 
@@ -561,7 +561,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部分：基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 4 部分：数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

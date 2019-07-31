@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 270191890e8747ecad7d250fb0fe18ce253d3823
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49bb3f901f2b1f8ed4ae26650cb0509aabfd2369
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169815"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647619"
 ---
 # <a name="customizing-listview-appearance"></a>自定义 ListView 外观
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 能够控制表示法的列表中，除了[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)实例列表中的每一行。
+[`ListView`](xref:Xamarin.Forms.ListView)除了能够控制列表中每一行的[`ViewCell`](xref:Xamarin.Forms.ViewCell)实例, 还能够控制列表的显示。
 
 <a name="Grouping" />
 
@@ -78,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-在上述代码中，我们可以调用`Add`上的元素`groups`，这是类型的实例`PageTypeGroup`。 这可能是因为`PageTypeGroup`继承`List<PageModel>`。 这是列表的上面记下列表模式的示例。
+在上面的代码中, 我们还可以`Add`调用的`groups`元素, 这些元素是类型`PageTypeGroup`的实例。 这可能是因为`PageTypeGroup`继承`List<PageModel>`。 这是列表的上面记下列表模式的示例。
 
 下面是用于显示分组的列表 XAML:
 
@@ -203,11 +203,11 @@ ListView HeaderList = new ListView() {
 
 ## <a name="scrollbar-visibility"></a>滚动条可见性
 
-[`ListView`](xref:Xamarin.Forms.ListView) 具有`HorizontalScrollBarVisibility`并`VerticalScrollBarVisibility`属性，获取或设置[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，该值表示当水平或垂直滚动条是否可见。 这两个属性可以设置为以下值：
+[`ListView`](xref:Xamarin.Forms.ListView)具有`HorizontalScrollBarVisibility` [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)和`VerticalScrollBarVisibility`属性, 这些属性可获取或设置一个值, 该值表示水平或垂直滚动条可见的时间。 这两个属性都可以设置为以下值:
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 表示在平台的默认滚动栏行为，它是默认值`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`属性。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条将显示，即使内容适合在视图中。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条将不可见，即使内容无法放入视图中。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)指示平台的默认滚动条行为, 是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`属性的默认值。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)指示滚动条是可见的, 即使在视图中显示内容时也是如此。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)指示即使内容无法在视图中显示, 也不会显示滚动条。
 
 <a name="Row_Separators" />
 
@@ -342,8 +342,8 @@ void OnImageTapped (object sender, EventArgs args)
 
 ## <a name="related-links"></a>相关链接
 
-- [分组 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [自定义呈现器视图 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [动态调整大小的行 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
+- [分组 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [自定义呈现器视图 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [动态调整大小的行 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [1.4 的发行说明](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 的发行说明](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

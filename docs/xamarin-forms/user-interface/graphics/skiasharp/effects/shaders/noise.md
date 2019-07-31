@@ -7,16 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dea7f5e51a864922d56f7b65d19b21a889cbc650
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61292915"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656155"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 干扰和组合
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 简单的向量图形可能会看起来不自然。 直线、 平滑曲线和纯色不类似于实际对象的不理想的部分。 1982 电影的计算机生成的图形处理时_Tron_，计算机科学家 Ken Perlin 开始开发使用随机进程提供这些映像更现实可行的纹理的算法。 于 1997 年，Ken Perlin 赢得技术成就的学院奖励。 他的工作就被称为 Perlin 噪音，和它在 SkiaSharp 中受支持。 以下是一个示例：
 
@@ -44,7 +44,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 `seed`参数是随机数字生成器的起始点。 指定为浮点值，尽管部分被截断之前使用它，且 0 与 1 相同。
 
-**Perlin 噪音**页面[ **SkiaSharpFormsDemos**)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例允许您体验各种值`baseFrequency`和`numOctaves`参数。 下面是 XAML 文件：
+**Perlin 噪音**页面[ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例允许您体验各种值`baseFrequency`和`numOctaves`参数。 下面是 XAML 文件：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -399,4 +399,4 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SK
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

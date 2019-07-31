@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms TimePicker
-description: TimePicker 是 Xamarin.Forms 的视图，允许用户选择的时间。 本文介绍如何使用 Xamarin.Forms 应用程序中的 TimePicker。
+description: TimePicker 是一个 Xamarin 窗体视图, 它允许用户选择时间。 本文介绍如何使用 Xamarin.Forms 应用程序中的 TimePicker。
 ms.prod: xamarin
 ms.assetid: 2E99FB23-B82D-4EB4-AFB3-5002E736E7B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: 1b929b507d738cb4000bab20cfab5480b2222ed2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d5c4cc6600c8192718257abf4ef1cbec49c12eee
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024009"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656489"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 
 _允许用户选择的时间，一个 Xamarin.Forms 视图。_
 
@@ -79,7 +79,7 @@ TimePicker timePicker = new TimePicker
 
 ## <a name="timepicker-in-an-application"></a>应用程序中的 TimePicker
 
-[ **SetTimer** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)示例包括[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)， [ `Entry` ](xref:Xamarin.Forms.Entry)，和[ `Switch` ](xref:Xamarin.Forms.Switch)在其页面上的视图。 `TimePicker`可以用来选择时间，以及显示警报对话框，用于提醒用户中的文本时的时间发生`Entry`提供`Switch`上切换。 下面是 XAML 文件：
+[ **SetTimer** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)示例包括[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)， [ `Entry` ](xref:Xamarin.Forms.Entry)，和[ `Switch` ](xref:Xamarin.Forms.Switch)在其页面上的视图。 `TimePicker`可以用来选择时间，以及显示警报对话框，用于提醒用户中的文本时的时间发生`Entry`提供`Switch`上切换。 下面是 XAML 文件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,5 +179,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SetTimer 示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)
+- [SetTimer 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 - [TimePicker API](xref:Xamarin.Forms.TimePicker)

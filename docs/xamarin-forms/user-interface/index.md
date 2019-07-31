@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: f9c7ada224cefc9bb80e0bcba370d0dee4a664c9
-ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
+ms.openlocfilehash: 36e2869ec272f74b1d76a3cdab7a63a6fbf0780d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603837"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642940"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms 用户界面视图
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/FormsGallery/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 _如何使用 Xamarin.Forms 提供的视图_
 
@@ -146,4 +146,4 @@ Xamarin.Forms 使用每个平台上的本机 web 浏览器控件，并可以显�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms 库（示例）](https://developer.xamarin.com/samples/FormsGallery/)
+- [Xamarin.Forms 库（示例）](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)

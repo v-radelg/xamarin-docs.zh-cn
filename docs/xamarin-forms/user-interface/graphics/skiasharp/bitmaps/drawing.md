@@ -7,16 +7,16 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 030655ba94130294729871348b3408fe6c3695e6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61401499"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656958"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>创建并在 SkiaSharp 位图上绘制
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 您已了解如何应用程序可以加载位图，从 Web、 应用程序资源和用户的照片库。 还有可能要创建新应用程序中的位图。 最简单的方法涉及到的构造函数之一[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
@@ -56,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然后可以显示位图。 在更高版本时，该程序可以创建一个新`SKCanvas`相同位图，并在其上绘制的更多基于对象。
 
-**Hello 位图**页面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 应用程序写入的文本"Hello，位图 ！" 位图和显示的位图多次。  
+**Hello 位图**页面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序写入的文本"Hello，位图 ！" 位图和显示的位图多次。  
 
 构造函数`HelloBitmapPage`首先创建`SKPaint`用于显示文本的对象。 它会确定文本字符串的维度并使用这些维度创建一个位图。 然后，创建`SKCanvas`对象，基于该位图，调用`Clear`，然后调用`DrawText`。 它始终是一个好办法调用`Clear`与新位图因为新创建的位图可能包含随机数据。
 
@@ -121,7 +121,7 @@ public partial class HelloBitmapPage : ContentPage
 
 显示**Hello 位图**页演示位图创建的应用程序是透明的黑色文本除外。 这就是为什么显示图面水绿色显露出来。
 
-文档`Clear`方法的`SKCanvas`介绍使用语句："将替换在画布上的当前播放中的所有像素。" 使用字"替换"会显示这些方法的重要特征：所有绘图方法`SKCanvas`将内容添加到现有的显示图面。 `Clear`方法_替换为_已有。
+以下文档`Clear` `SKCanvas`介绍了这些方法:"替换画布的当前剪辑中的所有像素。 使用 "替换" 一词会显示这些方法的重要特征:的`SKCanvas`所有绘制方法都将内容添加到现有的显示图面。 `Clear`方法_替换为_已有。
 
 `Clear` 存在两个不同的版本： 
 
@@ -131,7 +131,7 @@ public partial class HelloBitmapPage : ContentPage
 
 调用`Clear`新位图上没有自变量初始化整个位图是完全透明。 随后在位图上绘制的任何内容通常是不透明或半透明。
 
-下面是要尝试的内容：在中**Hello 位图**页上，替换`Clear`方法应用于`bitmapCanvas`用这个：
+下面是要尝试的操作:在 " **Hello 位图**" 页上, `Clear`将应用于的`bitmapCanvas`方法替换为以下方法:
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
@@ -264,7 +264,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 通过访问实际像素位是最通用的方法来修改位图，主题的文章中介绍 **[访问 SkiaSharp 位图像素](pixel-bits.md)** 。 但有许多其他方法来修改不需要访问像素位的位图。
 
-中包含的以下位图 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 应用程序为 360 像素宽，高度 480 像素：
+中包含的以下位图 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序为 360 像素宽，高度 480 像素：
 
 ![山地车的攀岩运动员](drawing-images/MountainClimbers.jpg "Mountain 攀岩运动员")
 
@@ -496,7 +496,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 调用另一个常见用途上位图_翻转_。 从概念上讲，在三个维度围绕垂直轴或通过位图的中心水平轴旋转位图。 垂直翻转创建镜像映像。
 
-**位图挡板** 页面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 应用程序演示了这些过程。 XAML 文件包含`SKCanvasView`和用于翻转水平和垂直方向的两个按钮：
+          **位图挡板** 页面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序演示了这些过程。 XAML 文件包含`SKCanvasView`和用于翻转水平和垂直方向的两个按钮：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -599,4 +599,4 @@ public partial class BitmapFlipperPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

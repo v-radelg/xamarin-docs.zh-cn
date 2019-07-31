@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的家庭指示器可见性
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的设置页面上的家庭指示器的可见性。
+title: IOS 上的主指示器可见性
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来设置页面上主指示器的可见性。
 ms.prod: xamarin
 ms.assetid: F81022E0-3C6C-49C0-A000-FAF6574D3FB7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: c0d6717cd8f89344be7df3dc3ec687a5f1b375f4
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: c8acf826eb5b3f42f62803ac1caaaa5929c5ea75
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971619"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648867"
 ---
-# <a name="home-indicator-visibility-on-ios"></a>在 iOS 上的家庭指示器可见性
+# <a name="home-indicator-visibility-on-ios"></a>IOS 上的主指示器可见性
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的上设置主指示器的可见性[ `Page` ](xref:Xamarin.Forms.Page)。 设置使用在 XAML [ `Page.PrefersHomeIndicatorAutoHidden` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHiddenProperty)可绑定属性设置为`boolean`:
+此 iOS 平台特定用于[`Page`](xref:Xamarin.Forms.Page)设置上主指示器的可见性。 它通过将[`Page.PrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHiddenProperty) `boolean`可绑定的属性设置为来在 XAML 中使用:
 
 ```xaml
 <ContentPage ...
@@ -38,17 +38,17 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetPrefersHomeIndicatorAutoHidden(true);
 ```
 
-`Page.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 [ `Page.SetPrefersHomeIndicatorAutoHidden` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetPrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page},System.Boolean))方法，在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间，控制家庭指示器的可见性。 此外， [ `Page.PrefersHomeIndicatorAutoHidden` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page}))方法可以用于检索家庭的指示器的可见性。
+`Page.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 [命名`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)空间中的[`Page.SetPrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetPrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page},System.Boolean))方法控制主指示器的可见性。 此外, 该[`Page.PrefersHomeIndicatorAutoHidden`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.PrefersHomeIndicatorAutoHidden(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Page}))方法可用于检索主指示器的可见性。
 
-结果是，在主指示器的可见性[ `Page` ](xref:Xamarin.Forms.Page)可以控制：
+结果就是[`Page`](xref:Xamarin.Forms.Page)可以控制上的主指示器的可见性:
 
-![在 iOS 页上的家庭指示器可见性的屏幕截图](page-home-indicator-images/home-indicator-visibility.png "页家庭指示器的可见性")
+![IOS 页面上主指示器可见性的屏幕截图](page-home-indicator-images/home-indicator-visibility.png "Page home 指示器可见性")
 
 > [!NOTE]
-> 此特定于平台的可应用于[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)， [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)， [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)，并[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)对象。
+> 此特定于平台[`ContentPage`](xref:Xamarin.Forms.ContentPage)的可应用于、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)和[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)对象。
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5fa46a67496123eb105ae12404d5607032f5ac1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971151"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657061"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的样式继承
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _样式可以继承其他样式以减少重复和使重复使用。_
 
-## <a name="style-inheritance-in-xaml"></a>在 XAML 中的样式继承
+## <a name="style-inheritance-in-xaml"></a>XAML 中的样式继承
 
 通过设置执行的样式继承[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)属性设置为现有[ `Style` ](xref:Xamarin.Forms.Style)。 在 XAML，这通过设置来实现`BasedOn`属性设置为`StaticResource`引用以前创建的标记扩展`Style`。 在 C# 中，这通过设置来实现`BasedOn`属性设置为`Style`实例。
 
@@ -108,7 +108,7 @@ _样式可以继承其他样式以减少重复和使重复使用。_
 
 在此示例中，`labelStyle`并`buttonStyle`是控制级别的资源，而`baseStyle`是一个页级别资源。 然而，尽管`labelStyle`并`buttonStyle`继承`baseStyle`，不可能`baseStyle`继承`labelStyle`或`buttonStyle`，因为视图层次结构中其各自的位置。
 
-## <a name="style-inheritance-in-c35"></a>在 C 中的样式继承&#35;
+## <a name="style-inheritance-in-c35"></a>C 中的样式继承&#35;
 
 等效的 C# 页上，其中[ `Style` ](xref:Xamarin.Forms.Style)实例直接分配给[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)必选控件的属性下面的代码示例中所示：
 
@@ -158,8 +158,8 @@ public class StyleInheritancePageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [使用样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
 - [资源库](xref:Xamarin.Forms.Setter)

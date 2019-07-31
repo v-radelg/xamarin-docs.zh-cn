@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: dff2efe687fde16903df19fefad2e2589c888086
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510105"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646351"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>使用数据填充 Xamarin ListView ListView
 
@@ -218,6 +218,6 @@ public int GetSectionForPosition(int position)
 
 ## <a name="related-links"></a>相关链接
 
-- [BasicTableAndroid (示例)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [BasicTableAdapter (示例)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [FastScroll (示例)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
+- [BasicTableAndroid (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
+- [BasicTableAdapter (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableadapter)
+- [FastScroll (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fastscroll)

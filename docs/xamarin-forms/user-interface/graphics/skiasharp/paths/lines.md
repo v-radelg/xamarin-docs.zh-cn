@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed423a19eabd9c7f1d91457cc1834f28d62b2121
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290719"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647308"
 ---
 # <a name="lines-and-stroke-caps"></a>线和笔划大写字母
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 绘制具有不同笔画顶端行_
 
@@ -30,7 +30,7 @@ SkiaSharp，呈现单行是非常不同于呈现一系列相互连接的直线�
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-默认情况下[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)属性的新实例化`SKPaint`对象是 0，它具有为粗细中呈现的一个像素行 1 的值相同的效果。 这会显示非常细小手机，等的高分辨率设备上可能需要设置`StrokeWidth`到更大的值。 但后启动的可调整大小的粗细的绘制线条时，将引发另一个问题：应开始和结束这些粗线条呈现方式？
+默认情况下[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)属性的新实例化`SKPaint`对象是 0，它具有为粗细中呈现的一个像素行 1 的值相同的效果。 这会显示非常细小手机，等的高分辨率设备上可能需要设置`StrokeWidth`到更大的值。 但一旦您开始绘制可调整大小的粗细的线条, 就会引发另一个问题:如何呈现这些粗线条的开头和结尾？
 
 调用的开始和结束的行的外观*线帽*，或者在 Skia，*笔划 cap*。 在此上下文中的"cap"一词是指一种类型的 hat&mdash;位于行尾的内容。 您设置[ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap)的属性`SKPaint`对象的以下成员之一[ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap)枚举：
 
@@ -38,7 +38,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - `Square`
 - `Round`
 
-这些最好说明与示例程序。 **SkiaSharp 线和路径**一部分[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程序开始页面标题为**笔划大写字母**基于[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)类。 此页定义`PaintSurface`循环访问的三个成员的事件处理程序`SKStrokeCap`显示这两个枚举成员的名称和绘制一条直线使用该笔划 cap 枚举：
+这些最好说明与示例程序。 **SkiaSharp 线和路径**一部分[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序开始页面标题为**笔划大写字母**基于[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)类。 此页定义`PaintSurface`循环访问的三个成员的事件处理程序`SKStrokeCap`显示这两个枚举成员的名称和绘制一条直线使用该笔划 cap 枚举：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,4 +242,4 @@ UWP 的屏幕截图显示的结果`SKPointMode.Polygon`值。 在数组中，在
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

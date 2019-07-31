@@ -1,123 +1,123 @@
 ---
-title: 主动建议在 Xamarin.iOS 简介
-description: 本文介绍如何通过使系统能够主动地向用户自动地提供有用的信息提高参与度的 Xamarin.iOS 应用中使用主动提供的建议。
+title: Xamarin 中的主动建议简介
+description: 本文介绍如何在 Xamarin iOS 应用程序中使用前瞻性建议, 使系统能够自动向用户显示有用的信息。
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 2ab0147f918b36dc47ef6eed7d9bf1b6295d9733
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fe3dc38d632d921ebd636ead381babbba448d62e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408151"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654132"
 ---
-# <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>主动建议在 Xamarin.iOS 简介
+# <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin 中的主动建议简介
 
-_本文介绍如何通过使系统能够主动地向用户自动地提供有用的信息提高参与度的 Xamarin.iOS 应用中使用主动提供的建议。_
+_本文介绍如何在 Xamarin iOS 应用程序中使用前瞻性建议, 使系统能够自动向用户显示有用的信息。_
 
-新 iOS 10，主动建议存在新闻方式供用户与 Xamarin.iOS 应用程序通过向用户自动以适当的次数的主动存在有用的信息。
+从 iOS 10 开始, 主动建议为用户提供了新闻方法, 使用户能够在适当的时间自动向用户提供有用的信息。
 
-iOS 10 展示驾驶参与到应用的新方法使系统能够主动有用的信息自动向用户显示在适当的时间。 只需为 iOS 9 提供使用 Spotlight、 切换和 Siri 建议向应用添加深层搜索的功能 (请参阅[新的搜索 Api](~/ios/platform/search/index.md))，应用可以使用 iOS 10 公开可以提供给用户系统中的功能以下位置：
+iOS 10 提供了新的方法, 可让系统在适当的时间自动向用户提供有用的信息, 从而促进应用程序的参与。 正如 iOS 9 提供的功能, 可以使用聚光灯、移交和 Siri 建议 (请参阅[新搜索 api](~/ios/platform/search/index.md)) 将深层搜索添加到应用, 而在 ios 10 中, 应用可以从下列位置的系统中公开可向用户显示的功能:
 
-- 应用程序切换器
-- 在锁定屏幕
+- 应用切换器
+- 锁定屏幕
 - CarPlay
 - 映射
-- 使用 Siri 交互
+- Siri 交互
 - QuickType 建议
 
-应用程序公开此功能对系统使用一系列技术如`NSUserActivity`，web 标记中，核心聚焦、 MapKit、 Media Player 和 UIKit。 此外，通过为应用提供主动建议支持，它可以获取更深入的 Siri 集成免费。
+此应用使用一系列技术 ( `NSUserActivity`如 web 标记、核心聚焦、MapKit、Media Player 和 UIKit) 向系统公开此功能。 此外, 通过提供对应用程序的主动建议支持, 它会免费获得更深入的 Siri 集成。
 
 ## <a name="location-based-suggestions"></a>基于位置的建议
 
-IOS 10 中，为新`NSUserActivity`类包括`MapItem`属性，它允许开发人员提供可以在其他上下文中使用的位置信息。 例如，如果应用显示餐馆评论，开发人员可以设置`MapItem`属性设置为的应用中查看用户餐厅的位置。 如果用户切换到地图应用程序，餐馆的位置是自动可用。
+IOS 10 新增, `NSUserActivity`该类包含一个`MapItem`属性, 该属性允许开发人员提供可在其他上下文中使用的位置信息。 例如, 如果应用显示餐馆评论, 开发人员可将`MapItem`属性设置为用户在应用中查看的餐馆的位置。 如果用户切换到 Maps 应用, 则餐馆的位置会自动可用。
 
-如果应用支持应用程序搜索，它可以使用的新地址组件`CSSearchableItemAttributesSet`类，以指定用户可能想要访问的位置。 通过设置`MapItem`属性的其他属性是自动填入。
+如果应用支持应用搜索, 则可以使用`CSSearchableItemAttributesSet`类的新地址组件来指定用户可能想要访问的位置。 通过设置`MapItem`属性, 其他属性会自动填充。
 
-除了设置之外`Latitude`并`Longitude`组件的地址属性，则建议应用程序提供`NamedLocation`和`PhoneNumbers`属性，因此使用 Siri 可以启动到的位置的调用。
+除了设置 address 组件属性`Latitude`的`Longitude`和以外, 还建议应用还提供`NamedLocation`和`PhoneNumbers`属性, 因此 Siri 可以启动对该位置的调用。
 
-## <a name="web-markup-based-suggestions"></a>基于 web 标记建议
+## <a name="web-markup-based-suggestions"></a>基于 Web 标记的建议
 
-iOS 9 添加到功能丰富了用户在聚焦和 Safari 搜索结果中看到的内容的网站中包含结构化的数据标记 (请参阅[搜索与 Web 标记](~/ios/platform/search/web-markup.md))。 iOS 10 添加了包括基于位置的标记的功能 (如[邮政地址](http://schema.org/PostalAddress)定义的[Schema.org](http://schema.org/)) 以进一步增强用户体验。 例如，如果用户视图的位置标记为网站上的页面，系统可以建议将打开地图时相同的位置。
+添加了 iOS 9, 使其能够在网站中包含结构化数据标记, 这些标记丰富用户在聚焦和 Safari 搜索结果中看到的内容 (请参阅[利用 Web 标记进行搜索](~/ios/platform/search/web-markup.md))。 iOS 10 增加了包含基于位置的标记 (如[Schema.org](http://schema.org/)定义的[PostalAddress](http://schema.org/PostalAddress) ), 以进一步增强用户体验。 例如, 如果用户在网站上查看标记为 "页面" 的位置, 则当其打开地图时, 系统可以建议相同的位置。
 
 ## <a name="text-based-suggestions"></a>基于文本的建议
 
-已在 iOS 10，以包括扩展 UIKit [TextContentType](https://developer.apple.com/reference/uikit/uitextinputtraits/1649656-textcontenttype)的属性[UITextInputTraits](https://developer.apple.com/reference/uikit/uitextinputtraits)类，以指定文本区域中的内容的语义含义。 使用此信息后，系统可以通常会自动选择相应的键盘类型、 改进自动更正建议和主动集成来自其他应用程序和网站的信息。
+UIKit 已在 iOS 10 中展开, 以包括[UITextInputTraits](https://developer.apple.com/reference/uikit/uitextinputtraits)类的[TextContentType](https://developer.apple.com/reference/uikit/uitextinputtraits/1649656-textcontenttype)属性, 以指定文本区域中内容的语义含义。 利用此信息, 系统通常可以自动选择相应的键盘类型, 提高自动更正建议并主动集成其他应用程序和网站中的信息。
 
-例如，如果用户标记的文本字段中输入文本`UITextContentType.FullStreetAddress`，系统可以建议自动填充该字段与最近查看用户的位置。
+例如, 如果用户在标记`UITextContentType.FullStreetAddress`的文本字段中输入文本, 则系统可以建议使用用户最近查看的位置自动填充字段。
 
-## <a name="media-based-suggestions"></a>基于介质的建议
+## <a name="media-based-suggestions"></a>基于媒体的建议
 
-如果应用程序可以播放媒体使用[MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) API，iOS 10 允许用户查看唱片集画面和锁定屏幕上播放通过应用的媒体。
+如果应用使用[MPPlayableContentManager](xref:MediaPlayer.MPPlayableContentManager) API 播放媒体, 则 iOS 10 允许用户在锁屏界面上查看唱片集画面并通过应用播放媒体。
 
 ## <a name="contextual-siri-reminders"></a>上下文 Siri 提醒
 
-允许使用 Siri 来快速使应用程序的提示指出要查看的内容晚些时候当前正在应用中查看用户。 例如，如果它们已在应用中查看餐馆评论，它们可能调用 Siri 和说 *"提醒我有关此当我回到家。"* 使用 Siri 会在应用中生成提醒，其中评审的链接。
+允许用户在以后查看当前正在应用中查看的内容时, 用户可以使用 Siri 快速提醒。 例如, 如果他们在应用中查看餐馆评论, 则他们可以调用 Siri, 并说 *"我在家时提醒我"。* Siri 会生成提醒, 其中包含应用中评审的链接。
 
-## <a name="contact-based-suggestions"></a>请联系基于建议
+## <a name="contact-based-suggestions"></a>基于联系人的建议
 
-允许此应用的联系人 （和相关的联系信息） 显示在**联系**存储在系统中所有用户的联系人以及在 iOS 设备上的应用。
+允许应用的联系人 (和联系人相关信息) 显示在 iOS 设备上的**联系人**应用中, 以及存储在系统中的所有用户联系人。
 
-## <a name="ride-sharing-based-suggestions"></a>共享的骑行基于建议
+## <a name="ride-sharing-based-suggestions"></a>基于建议的基于共享的建议
 
-如果持续一段时间共享应用程序使用[MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) API，iOS 10 会将其显示为应用程序切换器中的一个选项有时如果用户可能会想滑水感觉的时间。 应用程序还必须注册为拼车应用通过指定`MKDirectionsModeRideShare`有关[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)键中其`Info.plist`文件。
+如果应用程序使用[MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) API, 则 iOS 10 会在用户可能想要一段时间后, 将其作为应用程序切换器中的一个选项提供。 还必须通过在其`MKDirectionsModeRideShare` `Info.plist`文件中指定[MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)密钥的来将应用注册为应用程序共享应用。
 
-如果应用仅支持共享持续一段时间，将以系统建议 *"获取滑水感觉的时间到..."*，如果支持其他类型的路由方向 （如 Walking 或自行车），则系统将使用 *"获取方向到..."*
+如果应用仅支持对等共享, 则系统建议将以 *"获取 ..."* 开头, 如果支持其他类型的路由方向 (如行走或自行车), 系统将使用 *"获取行车路线 ..."*
 
 > [!IMPORTANT]
-> [MKMapItem](xref:MapKit.MKMapItem)对象，该应用程序将收到对象可能不包括经度和纬度的信息，并且将需要地理编码。
+> 应用接收的[MKMapItem](xref:MapKit.MKMapItem)对象可能不包括经度和纬度信息, 并且需要地理编码。
 
-## <a name="implementing-proactive-suggestions"></a>实现主动建议
+## <a name="implementing-proactive-suggestions"></a>实现前瞻性建议
 
-添加主动建议向 Xamarin.iOS 应用程序的支持是通常作为实现的一些 Api 或扩展该应用程序可能正在实现的几个 Api 上一样简单。
+向 Xamarin iOS 应用程序添加主动建议支持通常与实现几个 Api 或扩展应用程序可能已经实现的几个 Api 一样简单。
 
-主动建议使用以下三种主要方式应用：
+主动建议使用以下三种主要方式使用应用:
 
-- **`NSUserActivity` 和 Schema.org**  -  `NSUserActivity`帮助了解用户在屏幕当前正在使用哪些信息系统。 Schema.org 将添加到网页功能是类似的。
-- **位置建议**-如果应用程序提供或使用基于位置的信息，这些 API 扩展产品/服务的新方法以在应用间共享此信息。
-- **媒体的应用建议**-系统时，才能升级应用程序和其媒体内容基于上下文的 iOS 设备的用户的交互。
+- **`NSUserActivity`和** -  Schema.org`NSUserActivity`帮助系统了解用户当前在屏幕上使用的信息。 Schema.org 将类似的功能添加到网页。
+- **位置建议**-如果应用提供或使用基于位置的信息, 则这些 API 扩展提供了新的方法来跨应用共享此信息。
+- **媒体应用建议**-系统可根据用户与 iOS 设备交互的上下文来升级应用及其媒体内容。
 
-通过实现以下支持的应用中：
+在应用程序中, 通过实现以下内容来支持和:
 
-- **Handoff**  -  `NSUserActivity`已开始支持移交，允许开发人员在一个设备上启动活动，然后继续在另一台 iOS 8 (请参阅[简介切换](~/ios/platform/handoff.md))。
-- **Spotlight 搜索**-iOS 9 添加了使用 Spotlight 搜索结果中推广应用内容`NSUserActivity`(请参阅[使用核心聚焦搜索](~/ios/platform/search/corespotlight.md))。
-- **上下文 Siri 提醒**-在 iOS 10，`NSUserActivity`已扩展为允许使用 Siri 来快速使应用程序的提示指出要查看的内容用户当前查看的应用中在更高版本的日期。
-- **位置建议**-增强了 iOS 10`NSUserActivity`捕获查看在应用内的位置并将它们提升在整个系统的多个位置。
-- **上下文 Siri 请求** -  `NSUserActivity`为提供的信息在应用内使用 Siri，以便用户可以获得方向或位置调用是在应用中的调用 Siri 提供上下文。
-- **请联系交互**-在 iOS 10 中新`NSUserActivity`允许通信应用程序从作为备用的通信方法联系人卡 （在联系人应用程序） 升级。
+-  - 已在 iOS 8 中添加了移交`NSUserActivity`以支持移交, 这允许开发人员在一个设备上启动活动, 然后在另一台设备上继续操作 (请参阅[移交简介](~/ios/platform/handoff.md))。
+- **聚焦搜索**-iOS 9 增加了使用`NSUserActivity`从聚光灯搜索结果中升级应用内容的功能 (请参阅[使用核心聚焦进行搜索](~/ios/platform/search/corespotlight.md))。
+- IOS 10 `NSUserActivity`中的**上下文 Siri 提醒**已扩展为允许 Siri 快速提醒查看用户当前在应用程序中查看的内容。
+- **位置建议**-iOS 10 增强`NSUserActivity`了捕获在应用内查看的位置, 并在整个系统的多个位置中进行升级。
+- **上下文 Siri**  -  请求`NSUserActivity`为在应用内提供的信息提供上下文以 Siri, 以便用户可以在应用内从应用程序中获取或调用 Siri。
+- **联系人交互**-iOS 10 `NSUserActivity`中的新增功能允许将通信应用作为备用通信方法从联系人卡片 (在联系人应用中) 进行升级。
 
-所有这些功能都有一个共同点，它们都使用`NSUserActivity`中一个窗体或另一个用来提供相应的功能。 
+所有这些功能都有一个共同之处, 它们都使用`NSUserActivity`一种窗体或其他功能来提供其功能。 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-如上所述，`NSUserActivity`帮助了解用户在屏幕当前正在使用哪些信息系统。 `NSUserActivity` 一种轻型状态缓存机制用户导航应用程序中捕获用户的活动。 例如，查看餐馆应用：
+如上所述, `NSUserActivity`帮助系统了解用户当前在屏幕上使用的信息。 `NSUserActivity`是一种轻型状态缓存机制, 用于在用户浏览应用时捕获用户的活动。 例如, 查看餐馆应用:
 
-[![](proactive-suggestions-images/activity02.png "缓存机制 NSUserActivity 轻型状态")](proactive-suggestions-images/activity02.png#lightbox)
+[![](proactive-suggestions-images/activity02.png "NSUserActivity 轻型状态缓存机制")](proactive-suggestions-images/activity02.png#lightbox)
 
-使用以下对象交互：
+具有以下交互:
 
-1. 用户可用于应用，如`NSUserActivity`创建以重新创建应用程序更高版本的状态。
-2. 如果一家餐厅搜索用户，则遵循同一模式，创建活动。
-3. 同样，当用户查看结果。 在此最后一个的情况下，用户正在查看位置并在 iOS 10 中，系统是更好地识别的某些概念 （如位置或通信交互）。
+1. 用户使用应用时, 会创建一个, `NSUserActivity`以便在以后重新创建该应用的状态。
+2. 如果用户搜索餐馆, 则会遵循相同的创建活动模式。
+3. 再次查看结果时。 在最后一种情况下, 用户正在查看某个位置, 在 iOS 10 中, 系统更了解某些概念 (如位置或通信交互)。
 
-仔细看一下最后一个屏幕：
+仔细查看最后一个屏幕:
 
 [![](proactive-suggestions-images/activity03.png "NSUserActivity 详细信息")](proactive-suggestions-images/activity03.png#lightbox)
 
-此处创建应用`NSUserActivity`和更高版本重新创建状态的信息填充。 应用程序还包含一些元数据位置的名称和地址等。 通过创建此活动，此应用程序允许 iOS 知道它表示用户的当前状态。
+此时, 该应用程序正在`NSUserActivity`创建, 并且已填充了信息以便以后重新创建状态。 该应用程序还包含某些元数据, 如位置的名称和地址。 创建此活动后, 应用程序会让 iOS 知道它代表用户的当前状态。
 
-应用程序然后确定是否将播发无线以便提交、 另存为位置建议的临时值或添加到设备上 Spotlight 索引，用于显示搜索结果中的活动。
+然后, 该应用会确定是否会通过无线方式播发活动, 并将其保存为位置建议的临时值, 或添加到设备聚焦索引以在搜索结果中显示。
 
-有关交接和 Spotlight 搜索的详细信息，请参阅我们[简介移交](~/ios/platform/handoff.md)并[iOS 9 新搜索 Api](~/ios/platform/search/index.md)指南。
+有关移交和聚焦搜索的详细信息, 请参阅我们的[移交简介](~/ios/platform/handoff.md)和[IOS 9 全新搜索 api](~/ios/platform/search/index.md)指南。
 
 ### <a name="creating-an-activity"></a>创建活动
 
-然后再创建一个活动，活动类型标识符将需要创建以将其标识。 活动类型标识符是添加到一个短字符串`NSUserActivityTypes`的应用程序的数组`Info.plist`用于唯一标识给定的用户的活动类型的文件。 为每个活动的应用程序支持，并公开给应用程序搜索数组中将有一个条目。 请参阅我们[创建活动类型的标识符引用](~/ios/platform/search/nsuseractivity.md)的更多详细信息。
+创建活动之前, 需要创建一个活动类型标识符来识别它。 活动类型标识符是添加到`NSUserActivityTypes` `Info.plist`应用文件 (用于唯一标识给定用户活动类型) 数组的短字符串。 对于应用程序支持的每个活动, 数组中将有一个条目, 并将其公开给应用搜索。 有关更多详细信息, 请参阅[创建活动类型标识符引用](~/ios/platform/search/nsuseractivity.md)。
 
-在活动的示例所示：
+查看活动示例:
 
 ```csharp
 // Create App Activity
@@ -140,9 +140,9 @@ activity.EligibleForPublicIndexing = true;
 activity.BecomeCurrent();
 ```
 
-使用活动类型标识符创建一个新的活动。 接下来，以便可以在以后还原此状态下创建一些定义活动的元数据。 然后，该活动提供有意义的标题以及连接到的用户信息。 最后，一些功能已启用，并且该活动发送到系统。
+使用活动类型标识符创建新活动。 接下来, 创建一些定义活动的元数据, 以便以后可以还原此状态。 然后, 为活动提供一个有意义的标题, 并将其附加到用户信息。 最后, 会启用某些功能, 并将活动发送到系统。
 
-上面的代码进一步得到增强，包括以下更改，从而提供到活动的上下文的元数据：
+上面的代码可以进一步增强, 以包括通过进行以下更改向活动提供上下文的元数据:
 
 ```csharp
 ...
@@ -157,7 +157,7 @@ activity.ContentAttributeSet = attributes;
 activity.BecomeCurrent();
 ```
 
-如果开发人员能够显示与应用相同的信息的网站，该应用程序可以包括 URL 和可以在没有安装 （通过切换） 的应用程序的其他设备上显示内容：
+如果开发人员有一个网站, 该网站能够与应用程序显示相同的信息, 则该应用程序可以包含 URL, 并且内容可以在未安装应用的其他设备上显示 (通过移交):
 
 ```csharp
 // Restore on the web
@@ -166,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>还原活动
 
-以响应用户点击搜索结果 (`NSUserActivity`) 的应用程序中，编辑**AppDelegate.cs**文件，然后重写`ContinueUserActivity`方法。 例如：
+若要对应用程序点击搜索结果 (`NSUserActivity`), 请编辑**AppDelegate.cs** `ContinueUserActivity`文件并重写方法。 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -183,41 +183,41 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-开发人员将需要确保此路径是相同的活动类型标识符 (`com.xamarin.platform`) 为上面创建的活动。 该应用使用的信息存储在`NSUserActivity`以返回到该用户离开的位置还原状态。
+开发人员需要确保这与上面创建的活动具有相同的活动`com.xamarin.platform`类型标识符 ()。 应用使用存储在中`NSUserActivity`的信息将状态还原回用户离开的位置。
 
-### <a name="benefits-of-creating-an-activity"></a>创建活动的优点
+### <a name="benefits-of-creating-an-activity"></a>创建活动的好处
 
-使用上面介绍的代码的最少工作量，应用程序现能够利用三个新的 iOS 10 功能：
+由于上面提供的代码量最少, 应用现在可以利用三个新的 iOS 10 功能:
 
 - **Handoff**
-- **Spotlight 搜索**
+- **聚光灯搜索**
 - **上下文 Siri 提醒**
 
-以下部分将看看启用两个其他新的 iOS 10 功能：
+以下部分将介绍如何启用另外两个新的 iOS 10 功能:
 
 - **位置建议**
 - **上下文 Siri 请求**
 
 ### <a name="location-based-suggestions"></a>基于位置的建议 
 
-需要更高版本的餐馆搜索应用程序示例。 如果已实现`NSUserActivity`和正确填充所有的元数据和属性，用户将能够执行以下操作：
+请看上方餐馆搜索应用的示例。 如果它已经实现`NSUserActivity`并正确填充了所有的元数据和属性, 则用户将能够执行以下操作:
 
-1. 他们想要满足的朋友联系，在应用中找到一家餐厅。
-2. 当用户移动离开应用程序使用的多任务处理应用程序切换器时，系统会自动显示建议 （位于屏幕的底部） 以获取到餐馆使用其最喜欢的导航布局应用程序的说明操作。
-3. 如果用户切换到消息应用程序并开始键入 *"让我们在符合"*，QuickType 键盘将自动建议粘贴餐馆的地址。
-4. 如果用户切换到地图应用程序，餐馆的地址自动建议作为目标。
-5. 这甚至适用于第三方应用 (支持`NSUserActivity`)，因此用户可以切换到持续一段时间共享应用和餐馆的地址自动都还建议为存在的目标。
-6. 它还提供了上下文到 Siri，这样用户可以调用 Siri 餐馆应用程序中并要求 *"获取方向..."* Siri 将提供给用户查看的餐馆的方向。
+1. 在应用程序中查找要与朋友见面的餐厅。
+2. 当用户使用 "多任务应用切换器" 移出应用时, 系统会自动显示一个建议 (在屏幕底部), 以使用其最喜欢的导航应用来向餐馆显示行车路线。
+3. 如果用户切换到 "消息" 应用程序并开始键入 *"我们的会面"* , QuickType 键盘将自动建议在餐馆的地址中粘贴内容。
+4. 如果用户切换到 Maps 应用, 则会自动将餐馆的地址建议为目标。
+5. 这也适用于第三方应用 (支持`NSUserActivity`), 因此, 用户可以切换到 "应用商店" 应用, 并自动将餐馆的地址作为目标提供。
+6. 它还向 Siri 提供上下文, 因此用户可以在餐馆应用中调用 Siri, 并请求 *"获取行车路线 ..."* 和 Siri 将向用户正在查看的餐厅提供行车路线。
 
-所有上述功能共同具有一件事，它们都指示建议的最初来源。 在上面的示例中，它是虚构的餐馆查看应用程序。
+上述所有功能都有一个共同之处, 它们都表示建议最初来自何处。 在上述示例中, 它是虚构的餐馆评论应用。
 
-iOS 10 已得到增强，以启用此功能通过多个小的修改，以及现有的框架的新增功能的应用：
+iOS 10 已增强, 可通过对现有框架进行几项小型修改和添加操作来为应用程序启用此功能:
 
-- `NSUserActivity` 具有其他字段，用于捕获查看在应用内的位置信息。
-- 多个新增功能已得到 MapKit 和 CoreSpotlight 捕获位置。
-- 位置感知功能已添加到 Siri、 映射、 键盘、 多任务和其他系统中的应用。
+- `NSUserActivity`具有用于捕获在应用内查看的位置信息的附加字段。
+- 已对 MapKit 和 CoreSpotlight 进行了几项添加以捕获位置。
+- 位置感知功能已添加到 Siri、Maps、键盘、多任务和系统中的其他应用。
 
-若要实现基于位置的建议，请使用上面介绍的相同活动代码开始：
+若要实现基于位置的建议, 请从上面提供的相同活动代码开始:
 
 ```csharp
 // Create App Activity
@@ -249,14 +249,14 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 activity.BecomeCurrent();
 ```
 
-如果应用正在使用 MapKit，它只需添加当前映射`MKMapItem`到的活动：
+如果应用使用的是 MapKit, 则只需要将当前地图`MKMapItem`添加到活动即可:
 
 ```csharp
 // Save MKMapItem location
 activity.MapItem = myMapItem;
 ```
 
-如果应用程序不使用 MapKit，它可以采用应用程序搜索并指定位置的以下新属性：
+如果应用未使用 MapKit, 则它可以采用 "应用搜索" 并为 "位置" 指定以下新属性:
 
 ```csharp
 // Provide context
@@ -276,13 +276,13 @@ attributes.SupportsPhoneCalls = true;
 attributes.SupportsNavigation = true;
 ```
 
-看看上面的代码中详细信息。 首先，每个实例需要的位置的名称：
+请详细了解上述代码。 首先, 每个实例中都需要位置的名称:
 
 ```csharp
 attributes.NamedLocation = "Apple Inc.";
 ```
 
-位置的基于文本的说明，则需要为基于文本的实例 （例如 QuickType 键盘）：
+然后, 基于文本的实例 (例如 QuickType 键盘) 需要基于文本的说明:
 
 ```csharp
 attributes.SubThoroughfare = "1";
@@ -292,51 +292,51 @@ attributes.StateOrProvince = "CA";
 attributes.Country = "United States";
 ```
 
-纬度和经度是可选的但可确保将用户路由到该应用程序想要将它们发送到，因此它应包含的确切位置：
+纬度和经度是可选的, 但请确保将用户路由到应用程序要将其发送到的确切位置, 因此应将其包含在内:
 
 ```csharp
 attributes.Latitude = 37.33072;
 attributes.Longitude = 122.029674;
 ```
 
-通过设置电话号码，该应用程序可以访问使用 Siri 以便用户可以通过内容类似，从应用调用 Siri *"调用该邻居"*:
+通过设置电话号码, 应用可以获取对 Siri 的访问权限, 以便用户可以从应用程序中调用 Siri, 如 *"调用此位置"* :
 
 ```csharp
 attributes.PhoneNumbers = new string[]{"(800) 275-2273"};
 ```
 
-最后，应用可能表示该实例则适合用于导航和电话呼叫：
+最后, 该应用程序可以指示该实例是否适用于导航和电话呼叫:
 
 ```csharp
 attributes.SupportsPhoneCalls = true;
 attributes.SupportsNavigation = true;
 ```
 
-### <a name="implementing-contact-interactions"></a>实现联系交互
+### <a name="implementing-contact-interactions"></a>实现联系人交互
 
-新 ios 10，通信应用是紧密地集成到中的联系人卡片的联系人应用程序。 对于已实现联系人交互的应用程序，用户可以将给定的应用的信息添加到其联系人中的特定人员。 如果，例如，它们达到顶部的卡发送一条消息的快速操作按钮，将作为一个选项，若要从其发送消息列出附加的应用。
+IOS 10 中的新增技术, 通信应用通过联系人卡片深度集成到 "联系人" 应用。 对于已经实现了联系人交互的应用程序, 用户可以向其联系人中的特定人员添加给定的应用程序信息。 例如, 如果它们点击了卡片顶部的 "快速操作" 按钮来发送消息, 则附加的应用程序将被列为用于发送消息的选项。
 
-如果选择了第三方应用程序，它可以记住并显示为消息的给定的人员在的下次用户想要与他们联系的默认方法。
+如果选择了第三方应用, 则可以将其视为默认方式, 以便在用户下一次要与给定人员联系时向其显示消息。
 
-联系人的交互实现在应用中使用`NSUserActivity`并在 iOS 10 中引入的新意向框架。 有关如何使用意向的更多详细信息，请参阅我们[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)并[实现 SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)指南。
+在应用程序中实现联系人交互, `NSUserActivity`并使用 iOS 10 中引入的新意向框架。 有关使用意向的详细信息, 请参阅[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)和[实现 SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)指南。
 
-#### <a name="donating-interactions"></a>捐赠的交互
+#### <a name="donating-interactions"></a>捐赠交互
 
-看看如何应用程序可以指定用于交互：
+了解应用程序如何捐赠交互:
 
 [![](proactive-suggestions-images/activity04.png "捐赠交互概述")](proactive-suggestions-images/activity04.png#lightbox)
 
-应用创建`INInteraction`对象，其中包含**意向**(`INIntent`)，**参与者**并**元数据**。 **意向**代表如发起视频呼叫或发送短信的用户操作。 **参与者**包括接收通信的人员。 **元数据**定义其他信息，例如已成功发送的消息，等等。
+应用程序创建一个`INInteraction`包含**意向**(`INIntent`)、**参与者**和**元数据**的对象。 **意向**表示用户操作, 例如进行视频呼叫或发送短信。 **参与者**包含接收通信的人。 **元数据**定义了附加信息 (例如, 成功发送消息等)。
 
-开发人员永远不会直接创建的实例`INIntent`或`INIntentResponse`，它们会将一个 （基于应用程序代表用户完成的任务） 的特定子类别，从这些父类继承。 例如，`INSendMessageIntent`和`INSendMessageIntentResponse`用于发送短信。 
+开发人员绝不会直接创建`INIntent`或`INIntentResponse`的实例, 而是使用从这些父类继承的某个特定子类 (基于应用代表用户执行的任务)。 例如, `INSendMessageIntent` `INSendMessageIntentResponse`用于发送短信。 
 
-一旦已完全填充交互，调用`DonateInteraction`方法以通知的交互是可供使用的系统。
+完全填充交互后, 调用`DonateInteraction`方法以通知系统交互可供使用。
 
-交互时用户与联系人卡片中的应用程序交互时，获取与捆绑`NSUserActivity`，然后用于启动该应用程序：
+当用户从联系人卡片与应用程序交互时, 将与`NSUserActivity`进行交互, 并将其用于启动应用程序:
 
-[![](proactive-suggestions-images/activity05.png "获取与用于启动该应用程序 NSUserActivity 捆绑在交互")](proactive-suggestions-images/activity05.png#lightbox)
+[![](proactive-suggestions-images/activity05.png "交互与用于启动应用的 NSUserActivity 捆绑在一起。")](proactive-suggestions-images/activity05.png#lightbox)
 
-看看下面的示例发送消息意图的：
+请看下面的发送消息意向示例:
 
 ```csharp
 using System;
@@ -397,25 +397,25 @@ namespace MonkeyNotification
 }
 ```
 
-查看详细信息中的此代码时，它会创建并填充的实例`NSUserActivity`(如中所示[创建活动](#creating-an-activity)上面部分)。 接下来，它创建的实例`INSendMessageIntent`(它是从`INIntent`) 并使用要发送的消息的详细信息填充它：
+查看此代码的详细信息, 它会创建并填充的`NSUserActivity`实例 (如上面的[创建活动](#creating-an-activity)部分所示)。 接下来, 它将创建的`INSendMessageIntent`实例 (继承自`INIntent`), 并用所发送消息的详细信息填充它:
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
 ```
 
-`INSendMessageIntentResponse`创建并传递`NSUserActivity`上面创建：
+创建并传递上面创建的`NSUserActivity`: `INSendMessageIntentResponse`
 
 ```csharp
 var response = new INSendMessageIntentResponse (INSendMessageIntentResponseCode.Success, activity);
 ```
 
-`INInteraction`发送消息意向从生成 (`INSendMessageIntent`) 和响应 (`INSendMessageIntentResponse`) 只需创建：
+是从刚刚创建的发送消息意向 (`INSendMessageIntent`) 和响应 (`INSendMessageIntentResponse`) 生成的: `INInteraction`
 
 ```csharp
 var interaction = new INInteraction (intent, response);
 ```
 
-最后，系统是交互的通知：
+最后, 系统是交互的通知:
 
 ```csharp
 // Donate interaction to the system
@@ -425,33 +425,33 @@ interaction.DonateInteraction ((err) => {
 });
 ```
 
-完成处理程序传入应用程序可以响应捐赠上成功或失败。
+在应用可以响应成功或失败的情况下传入完成处理程序。
 
-### <a name="activities-best-practices"></a>活动最佳做法
+### <a name="activities-best-practices"></a>活动最佳实践
 
-Apple 提供建议处理活动的以下最佳实践：
+Apple 建议在使用活动时采用以下最佳做法:
 
-- 使用`NeedsSave`延迟有效负载更新。
-- 请确保保留对当前活动的强引用。
-- 仅传输小型包括刚好够用的信息以还原状态的有效负载。
-- 确保活动类型标识符是唯一的描述性的使用反向 DNS 表示法来指定它们。 
+- `NeedsSave`用于迟缓负载更新。
+- 确保保持对当前活动的强引用。
+- 仅传输包含足够信息的小负载以还原状态。
+- 请确保活动类型标识符是唯一的, 并使用反向 DNS 表示法指定它们进行描述性。 
 
 ## <a name="schemaorg"></a>Schema.org
 
-如上所示，`NSUserActivity`帮助了解用户在屏幕当前正在使用哪些信息系统。 Schema.org 将添加到网页功能是类似的。
+如上所示, `NSUserActivity`帮助系统了解用户当前在屏幕上使用的信息。 Schema.org 将类似的功能添加到网页。
 
-Schema.org 可以提供相同类型的基于位置到网站的交互。 Apple 设计新的位置建议，若要在本机应用程序中一样在 Safari 中查看时也运行。
+Schema.org 可以提供与网站的相同类型的基于位置的交互。 Apple 设计好新位置建议, 以便在 Safari 中查看, 就像在本机应用中一样。
 
-Schema.org 一些背景信息：
+一些 Schema.org 背景:
 
-- 它提供了一种开放的 web 标记词汇标准。
-- 它可通过包含在网页上的结构化元数据。
-- 有 500 多个架构表示可用的各种概念。
-- 通过实现其网站上，开发人员可以获得一些使用的好处`NSUserActivity`本机应用程序中。
+- 它提供开放式 web 标记词汇标准。
+- 它的工作方式是在网页中包含结构化元数据。
+- 有超过500个架构表示各个可用的概念。
+- 通过在网站上实现它, 开发人员可以获得在本机应用中使用`NSUserActivity`的一些优点。
 
-架构在像结构，特定于类型如树中排列*餐馆*，如从更通用的类型继承*当地营业*。 有关详细信息，请参阅[Schema.org](http://schema.org)。
+架构在结构树 (其中, 特定类型, 例如*餐馆*) 继承自其他泛型类型 (如*本地业务*) 中进行排列。 有关详细信息, 请参阅[Schema.org](http://schema.org)。
 
-例如，如果 web 页包含以下数据：
+例如, 如果网页包含以下数据:
 
 ```xml
 <script type="application/ld+json>
@@ -476,43 +476,43 @@ Schema.org 一些背景信息：
 </script>
 ```
 
-如果用户查看过此页在 Safari 中，然后切换到另一个应用，将捕获位置信息的页面，并将其作为提供位置建议在系统的其他部分 （如上面的活动中所示） 中。
+如果用户在 Safari 中访问此页, 然后切换到另一个应用程序, 则会捕获该页的位置信息, 并在系统的其他部分中将其作为位置建议提供 (如上述活动中所示)。
 
-Safari 将提取符合以下架构属性的任何 web 页面上的所有内容：
+Safari 将提取符合以下任一架构属性的网页上的任何内容:
 
 - **PostalAddress**
 - **GeoCoordinates**
-- 电话属性中。
+- 电话属性。
 
-有关详细信息，请参阅我们[搜索与 Web 标记](~/ios/platform/search/web-markup.md)指南。
+有关详细信息, 请参阅 "[通过 Web 标记搜索](~/ios/platform/search/web-markup.md)" 指南。
 
 ## <a name="consuming-location-suggestions"></a>使用位置建议
 
-此下一节将介绍使用来自系统 （如地图应用程序） 或其他第三方应用的其他部分的位置建议。
+下一部分将介绍来自系统其他部分 (如 Maps 应用) 或其他第三方应用的使用位置建议。
 
-有两种主要方式，应用程序可以使用位置的建议：
+应用可通过两种主要方式来使用位置建议:
 
 - 通过 QuickType 键盘。
-- 直接通过使用路由的应用程序中的位置信息。
+- 直接通过在路由应用中使用位置信息。
 
-### <a name="location-suggestions-and-the-quicktype-keyboard"></a>位置的建议和 QuickType 键盘
+### <a name="location-suggestions-and-the-quicktype-keyboard"></a>位置建议和 QuickType 键盘
 
-如果应用程序处理基于文本的格式中的地址，该应用程序可以充分利用通过 QuickType UI 位置建议。 iOS 10 展开 QuickType UI 具有以下功能：
+如果应用处理基于文本格式的地址, 则应用可以通过 QuickType UI 利用位置建议。 iOS 10 将扩展 QuickType UI, 并提供以下功能:
 
-- 应用程序可以在 UI 中添加有关语义意图的文本字段的提示。
-- 应用程序可以在应用中获取主动的建议。
-- 应用程序可以受益于增强的自动更正。
+- 应用可为 UI 中的文本字段添加有关语义意向的提示。
+- 应用程序可以在应用程序中获取主动建议。
+- 该应用可从增强的自动更正中获益。
 
-新`TextContentType`iOS 10 中的文本字段控件的属性，开发人员可定义用户要在给定字段中输入的值语义意图。 例如：
+IOS 10 `TextContentType`中的文本字段控件的新属性允许开发人员为用户要在给定字段中输入的值定义语义意向。 例如:
 
 ```csharp
 var textField = new UITextField();
 textField.TextContentType = UITextContentType.FullStreetAddress;
 ```
 
-将告知系统应用程序需要用户以在给定字段中输入完整街道地址。 这将允许 QuickType 键盘自动提供键盘位置的建议，当用户在此字段中输入一个值。
+会告诉系统应用程序要求用户在给定字段中输入完整的街道地址。 当用户在此字段中输入值时, 这将允许 QuickType 键盘自动提供键盘上的位置建议。
 
-以下是几个可在开发人员的更常见类型`UITextContentType`静态类：
+下面是一些可供`UITextContentType`静态类中的开发人员使用的常见类型:
 
 * `Name`
 * `GivenName`
@@ -523,16 +523,16 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 * `TelephoneNumber`
 * `EmailAddress`
 
-### <a name="routing-apps-and-locations-suggestions"></a>路由的应用程序和位置建议
+### <a name="routing-apps-and-locations-suggestions"></a>路由应用和位置建议
 
-本部分中将看看使用位置提供的建议直接路由的应用程序中。 若要添加此功能路由应用，开发人员将利用现有`MKDirectionsRequest`框架，如下所示：
+本部分将直接查看路由应用中的使用位置建议。 为了使路由应用添加此功能, 开发人员将利用现有`MKDirectionsRequest`框架, 如下所示:
 
-- 若要升级的应用程序中的多任务。
-- 若要将应用注册为路由的应用程序。
-- 若要处理启动应用程序与 MapKit`MKDirectionsRequest`对象。
-- 若要使 iOS 能够了解如何在适当情况下，建议向用户应用基于用户参与度。
+- 在多任务中升级应用程序。
+- 将应用注册为路由应用。
+- 处理使用 MapKit `MKDirectionsRequest`对象启动应用程序的情况。
+- 为了使 iOS 能够在适当的时间根据用户参与向用户提供向用户提供的建议。
 
-应用程序入门 MapKit`MKDirectionsRequest`对象，它应会自动开始为提供的用户说明进行操作的请求的位置，或显示 UI，方便用户开始查询路线。 例如：
+当应用程序使用 MapKit `MKDirectionsRequest`对象启动时, 它应自动开始向请求的位置提供用户指示, 或提供一个用户界面, 使用户能够轻松开始获取行车路线。 例如:
 
 
 ```csharp
@@ -570,19 +570,19 @@ namespace MonkeyChat
 }
 ```
 
-看看此代码中详细信息。 它进行测试以了解它是否是有效的目标请求：
+请查看此代码的详细信息。 它将对其进行测试, 以确定它是否为有效的目标请求:
 
 ```csharp
 if (MKDirectionsRequest.IsDirectionsRequestUrl(url)) {
 ```
 
-如果是，则它会创建`MKDirectionsRequest`从 URL:
+如果是, 则它`MKDirectionsRequest`从 URL 创建:
 
 ```csharp
 var request = new MKDirectionsRequest(url);
 ```
 
-新在 iOS 10 中，应用可以发送该原因，开发人员需要编码地址中不具有地理坐标的地址：
+IOS 10 中的新增功能, 可向应用发送不具有地理坐标的地址, 原因是开发人员需要对地址进行编码:
 
 ```csharp
 var geocoder = new CLGeocoder();
@@ -593,20 +593,20 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 
 ```
 
-## <a name="media-app-suggestions"></a>媒体的应用建议
+## <a name="media-app-suggestions"></a>媒体应用建议
 
-如果应用程序处理任何类型的媒体等播客应用或流媒体内容，例如音频或视频中的，ios 10 中，它可以在系统中充分利用媒体的建议。
+如果应用程序处理任何类型的媒体 (如播客应用程序) 或流媒体内容 (如音频或视频) 以及 iOS 10, 则可以利用系统中的媒体建议。
 
-对于处理媒体的应用程序，iOS 支持以下行为：
+对于处理媒体的应用, iOS 支持以下行为:
 
-- iOS 将提升用户很可能要使用以前的行为的应用。
-- 聚焦和今日视图将显示与应用相关的建议。
-- 如果应用满足下列触发器之一，它可能会提升到锁定屏幕建议：
-    - 插入耳机或蓝牙设备中之后建立的连接。
-    - 之后在汽车中获取。
-    - 后到达家庭或工作。 
+- iOS 会根据用户以前的行为, 升级用户可能使用的应用。
+- 与应用相关的建议将显示在 "聚光灯" 和 "今日" 视图中。
+- 如果应用程序满足以下某个触发器, 则可能会将其提升为锁定屏幕建议:
+    - 插入耳机或 Bluetooth 设备后, 即可建立连接。
+    - 进入汽车后。
+    - 在家中或工作后。 
 
-通过在 iOS 10 中包含简单的 API 调用，开发人员可以创建的媒体应用的用户提供更具吸引力锁定屏幕体验。 通过使用`MPPlayableContentManager`类来管理媒体的播放、 完全媒体控件 （如所述的音乐应用程序） 将应用程序在锁定屏幕上显示。
+通过在 iOS 10 中加入简单的 API 调用, 开发人员可以为媒体应用程序的用户创建更吸引人的锁屏体验。 使用`MPPlayableContentManager`类管理媒体播放时, 将在应用的锁定屏幕上显示完全媒体控件 (如音乐应用提供的控件)。
 
 
 ```csharp
@@ -681,11 +681,11 @@ namespace MonkeyPlayer
 
 ## <a name="summary"></a>总结
 
-本文已涵盖主动建议，并介绍了开发人员可以如何使用它们驱动器流量发送到 Xamarin.iOS 应用程序。 它涉及的步骤来实现主动建议，并提供使用指南。
+本文介绍了前瞻性建议, 并展示了开发人员如何使用它们来驱动向 Xamarin iOS 应用程序的流量。 本文介绍了实现前瞻性建议并提供使用准则的步骤。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 10 示例](https://developer.xamarin.com/samples/ios/iOS10/)
+- [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [SiriKit 编程指南](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)

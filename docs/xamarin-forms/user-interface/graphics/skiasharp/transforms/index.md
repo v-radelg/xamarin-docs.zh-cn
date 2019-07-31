@@ -7,16 +7,16 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: a57e50f098c92dbfcdcaa3139565d2ba0e291e3d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 39de35c8e43ebf2b3db25724ad761e3576ba5057
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61347750"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644960"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 转换
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何应用于显示 SkiaSharp 图形转换_
 
@@ -49,9 +49,9 @@ Xamarin.Forms 还支持 SkiaSharp 相似的转换。 Xamarin.Forms [ `VisualElem
 
 SkiaSharp 转换是相对于左上角`SKCanvas`相对于左上角的 Xamarin.Forms 转换时`VisualElement`对其应用。 应用缩放时，这种差异很重要，旋转时会转换，因为这些转换始终是相对于某个特定点。
 
-非常大的区别是 SKiaSharp 转换*方法*Xamarin.Forms 转换时*属性*。 这是超出的语法差异的语义差异：SkiaSharp 转换操作时执行一组 Xamarin.Forms 转换状态。 SkiaSharp 转换应用于随后绘制的图形对象，但不适用于应用转换之前，先绘制的图形对象。 与此相反，Xamarin.Forms 转换适用于以前呈现的元素的属性设置时，就立即。 SkiaSharp 转换是累积的因为会调用这些方法;当此属性设置与另一个值，会替换 Xamarin.Forms 转换。
+非常大的区别是 SKiaSharp 转换*方法*Xamarin.Forms 转换时*属性*。 这是与语法区别不同的语义差异:SkiaSharp 转换在 Xamarin. Forms 转换设置状态时执行操作。 SkiaSharp 转换应用于随后绘制的图形对象，但不适用于应用转换之前，先绘制的图形对象。 与此相反，Xamarin.Forms 转换适用于以前呈现的元素的属性设置时，就立即。 SkiaSharp 转换是累积的因为会调用这些方法;当此属性设置与另一个值，会替换 Xamarin.Forms 转换。
 
-在本部分中的所有示例程序都显示在**SkiaSharp 转换**一部分[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程序。 可以在中找到源代码[**转换**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)解决方案的文件夹。
+在本部分中的所有示例程序都显示在**SkiaSharp 转换**一部分[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序。 可以在中找到源代码[**转换**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)解决方案的文件夹。
 
 ## <a name="the-translate-transformtranslatemd"></a>[翻译转换](translate.md)
 
@@ -89,4 +89,4 @@ SkiaSharp 转换是相对于左上角`SKCanvas`相对于左上角的 Xamarin.For
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

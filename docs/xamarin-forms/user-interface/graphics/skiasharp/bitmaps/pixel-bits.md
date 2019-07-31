@@ -7,20 +7,20 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c066f89dc8f558a9154138bf38ad4326fe21291
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410919"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642519"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>访问 SkiaSharp 位图像素位
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 本文中所示[**到文件的保存 SkiaSharp 位图**](saving.md)，位图通常存储在文件中的压缩格式，如 JPEG 或 PNG。 在与此相反，不压缩 SkiaSharp 位图存储在内存中。 已存储为一系列连续的像素为单位。 此压缩的格式便于将位图转移到显示图面。
 
-SkiaSharp 位图占用的内存块的结构非常简单的方式：它以像素为单位，从左到右，第一行开始，然后继续使用第二行。 对于全彩色位图，每个像素由四个字节，这意味着位图所需的总内存空间是四次其宽度和高度的产品。
+SkiaSharp 位图占用的内存块以非常简单的方式进行组织:它从从左到右的第一行开始, 然后继续第二行。 对于全彩色位图，每个像素由四个字节，这意味着位图所需的总内存空间是四次其宽度和高度的产品。
 
 本指南介绍了如何应用程序有权访问这些像素，通过访问位图的像素的内存块，直接或间接。 在某些情况下，程序可能想要分析的图像的像素为单位，并构造某种类型的直方图。 更常见的是，应用程序可以通过从算法上创建构成位图像素构造唯一映像：
 
@@ -37,7 +37,7 @@ SkiaSharp 提供几种方法用于访问位图的像素位。 你选择哪一个
 
 您可以将为"高级别"的前两个技术和第二个两个作为"低级别。 有一些其他方法和属性，您可以使用，但这些是最有价值。
 
-若要允许你查看这些技术之间的性能差异[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)应用程序包含一个名为页**渐变位图**，创建使用组合创建渐变的红色和蓝色阴影的像素的位图。 程序创建八个不同副本，此位图，所有使用的不同的方法用于设置位图像素。 每个这些八个位图创建在单独的方法，还设置该技术的简短文本说明，并计算所需设置所有像素为单位的时间。 每个方法循环访问的像素设置逻辑 100 次若要更好地估计的性能。
+若要允许你查看这些技术之间的性能差异[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序包含一个名为页**渐变位图**，创建使用组合创建渐变的红色和蓝色阴影的像素的位图。 程序创建八个不同副本，此位图，所有使用的不同的方法用于设置位图像素。 每个这些八个位图创建在单独的方法，还设置该技术的简短文本说明，并计算所需设置所有像素为单位的时间。 每个方法循环访问的像素设置逻辑 100 次若要更好地估计的性能。
 
 ### <a name="the-setpixel-method"></a>SetPixel 方法
 
@@ -280,7 +280,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 }
 ```
 
-唯一的问题是：是整数格式`SKColor`值的顺序`SKColorType.Rgba8888`颜色类型，或`SKColorType.Bgra8888`颜色类型，或者它是其他内容完全？ 应很快显示该问题的答案。
+唯一的问题是:`SKColor`值的整数格式是以`SKColorType.Rgba8888` `SKColorType.Bgra8888`颜色类型的顺序或颜色类型, 还是完全是其他内容？ 应很快显示该问题的答案。
 
 ### <a name="the-setpixels-method"></a>SetPixels 方法
 
@@ -294,7 +294,7 @@ bitmap.SetPixels(intPtr);
 
 首先，它看起来像`SetPixels`没有更多电源和性能而不为您提供了`GetPixels`而且太方便。 使用`GetPixels`获取位图的内存块并对其进行访问。 使用`SetPixels`分配和访问一些内存，然后将其设为位图的内存块。
 
-不过，使用`SetPixels`提供独特的语法优势：它可以访问使用数组的位图像素位。 下面是该方法中`GradientBitmapPage`演示此技术。 该方法首先定义对应的位图的像素的字节的多维度的字节数组。 第一个维度是行，第二个维度列和第三个维度对应于每个像素的四个组件：
+但使用`SetPixels`提供了独特的语法优势:它允许你使用数组访问位图像素位。 下面是该方法中`GradientBitmapPage`演示此技术。 该方法首先定义对应的位图的像素的字节的多维度的字节数组。 第一个维度是行，第二个维度列和第三个维度对应于每个像素的四个组件：
 
 ```csharp
 SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
@@ -499,7 +499,7 @@ public class GradientBitmapPage : ContentPage
 
 按预期方式调用`SetPixel`65,536 情况下是设置位图的像素为单位的最少 effeicient 方法。 填充`SKColor`数组和设置`Pixels`属性是好得多，甚至更具优势的某些`GetPixels`和`SetPixels`技术。 使用`uint`像素值是通常比单独设置更快`byte`组件，并将转换`SKColor`为无符号整数值到进程会增加一些开销。
 
-有趣的是还比较各种渐变：每个平台的顶行是相同的并按预期显示渐变。 这意味着`SetPixel`方法和`Pixels`属性正确创建颜色而不考虑基础的像素格式中的像素为单位。
+比较各种渐变也是有意义的:每个平台的最前面几行相同, 并按预期显示渐变。 这意味着`SetPixel`方法和`Pixels`属性正确创建颜色而不考虑基础的像素格式中的像素为单位。
 
 IOS 和 Android 的屏幕截图的接下来两行也是相同的这可确认的一小`MakePixel`方法已正确定义默认值为`Rgba8888`这些平台的像素格式。
 
@@ -794,4 +794,4 @@ public class PosterizePage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

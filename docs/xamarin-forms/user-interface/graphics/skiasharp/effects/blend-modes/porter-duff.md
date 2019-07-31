@@ -7,16 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60de4b8abc200ac7892838765210167f8a79dcfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61205438"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645832"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff 的混合模式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Thomas Porter 和 Tom Duff，他们负责开发组合的情况下在 Lucasfilm 代数后命名 Porter Duff 的混合模式。 其纸张[_组合的情况下数字图像_](https://graphics.pixar.com/library/Compositing/paper.pdf)在 1984 年 7 月发行的已发布_计算机图形中_，页 253 向 259。 这些混合模式是组合的情况下，这组合到复合场景的各种映像的基础：
 
@@ -279,11 +279,11 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>使用 Porter Duff 遮罩
 
-**程序块-Wall 合成**页显示了经典的组合任务的示例：图片必须为收集组从几个部分，包括需要消除背景位图。 下面是**SeatedMonkey.jpg**有问题的背景位图：
+"**砖墙合成**" 页显示了一个经典合成任务的示例:需要将图片从多个部分进行组装, 其中包括需要消除背景的位图。 下面是**SeatedMonkey.jpg**有问题的背景位图：
 
 ![就位 Monkey](porter-duff-images/SeatedMonkey.jpg "装 Monkey")
 
-在组合的情况下，相应准备_亚光效果_创建的这是另一个位图，否则为黑色，如果你想要显示的图像和透明。 此文件命名为**SeatedMonkeyMatte.png**是在中资源之间**媒体**文件夹中的[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例:
+在组合的情况下，相应准备_亚光效果_创建的这是另一个位图，否则为黑色，如果你想要显示的图像和透明。 此文件命名为**SeatedMonkeyMatte.png**是在中资源之间**媒体**文件夹中的[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例:
 
 ![就位 Monkey 遮罩](porter-duff-images/SeatedMonkeyMatte.png "装 Monkey 亚光效果")
 
@@ -505,9 +505,9 @@ Porter Duff 示例混合模式在这篇文章有所有涉及组成不透明像�
 - **Sa**是源 alpha 通道
 - **Sc**是 RGB 颜色的源
 
-RGB 颜色预先乘以 alpha 值。 例如，如果**Sc**表示纯红色，但**Sa**是 RGB 颜色为 0x80， **(0x80，0，0)**。 如果**Sa**为 0，则所有 RGB 组件也都是零。
+RGB 颜色预先乘以 alpha 值。 例如，如果**Sc**表示纯红色，但**Sa**是 RGB 颜色为 0x80， **(0x80，0，0)** 。 如果**Sa**为 0，则所有 RGB 组件也都是零。
 
-结果显示在使用 alpha 通道和由逗号分隔的 RGB 颜色的方括号中： **[alpha，颜色]**。 颜色为红色、 绿色和蓝色组件单独执行计算：
+结果显示在使用 alpha 通道和由逗号分隔的 RGB 颜色的方括号中： **[alpha，颜色]** 。 颜色为红色、 绿色和蓝色组件单独执行计算：
 
 | 模式       | 操作 |
 | ---------- | --------- |
@@ -526,11 +526,11 @@ RGB 颜色预先乘以 alpha 值。 例如，如果**Sc**表示纯红色，但**
 | `Plus`     | [Sa + Da、 Sc + Dc] |
 | `Modulate` | [Sa·Da Sc·Dc] | 
 
-这些操作是更轻松地分析何时**Da**并**Sa**为 0 或 1。 例如，对于默认值`SrcOver`模式下，如果**Sa**为 0，则**Sc**是 0，并将该结果也是 **[Da，Dc]**，目标 alpha 和颜色。 如果**Sa**为 1，则会得到 **[Sa，Sc]**，源 alpha 和颜色，或 **[1，Sc]**。
+这些操作是更轻松地分析何时**Da**并**Sa**为 0 或 1。 例如，对于默认值`SrcOver`模式下，如果**Sa**为 0，则**Sc**是 0，并将该结果也是 **[Da，Dc]** ，目标 alpha 和颜色。 如果**Sa**为 1，则会得到 **[Sa，Sc]** ，源 alpha 和颜色，或 **[1，Sc]** 。
 
-`Plus`和`Modulate`模式是从其他稍有不同，新的颜色，可以得到的源和目标组合。 `Plus`模式可以解释使用字节组件或浮点组件。 在中**Porter Duff 网格**目标颜色之前所示的页面 **(0xC0、 0x80，0x00)** 源颜色是 **(0x00、 0x80，0xC0)**。 添加组件的每个对，但在 0xFF 其限制之和。 结果是颜色 **(0xC0、 0xff 内，0xC0)**。 这是交集所示的颜色。
+`Plus`和`Modulate`模式是从其他稍有不同，新的颜色，可以得到的源和目标组合。 `Plus`模式可以解释使用字节组件或浮点组件。 在中**Porter Duff 网格**目标颜色之前所示的页面 **(0xC0、 0x80，0x00)** 源颜色是 **(0x00、 0x80，0xC0)** 。 添加组件的每个对，但在 0xFF 其限制之和。 结果是颜色 **(0xC0、 0xff 内，0xC0)** 。 这是交集所示的颜色。
 
-有关`Modulate`模式下，必须 RGB 值转换为浮点。 目标颜色是 **（0.75，0.5，0）** ，而源 **（0、 0.5、 0.75）**。 RGB 组件是每个全部相乘，并且结果为 **（0，0.25，0）**。 这是在交集所示的颜色**Porter Duff 网格**此模式下的页。
+有关`Modulate`模式下，必须 RGB 值转换为浮点。 目标颜色是 **（0.75，0.5，0）** ，而源 **（0、 0.5、 0.75）** 。 RGB 组件是每个全部相乘，并且结果为 **（0，0.25，0）** 。 这是在交集所示的颜色**Porter Duff 网格**此模式下的页。
 
 **Porter Duff 透明度**页面允许您检查 Porter Duff 的混合模式的部分透明的图形对象的进行操作。 XAML 文件包含`Picker`Porter Duff 模式：
 
@@ -903,4 +903,4 @@ public partial class GradientTransitionsPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

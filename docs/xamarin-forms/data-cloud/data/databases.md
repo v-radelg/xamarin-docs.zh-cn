@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 235a30293939333555c52b8d9e00bcf25ddd4dbd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658584"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645257"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本地数据库
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程序，如此即可在共享代码中加载和保存对象。本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 读取和写入数据到本地 SQLite 数据库。_
 
@@ -122,6 +122,6 @@ Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程�
 
 ## <a name="related-links"></a>相关链接
 
-- [待办事项示例](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
-- [Xamarin.Forms 示例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [待办事项示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 

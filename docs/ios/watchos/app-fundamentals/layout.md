@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 9a9bec364990f683a59e6ddce1a536950cdf3861
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a714b8bd1984f22a138d09912a0a7fe1a51e857c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61392610"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646807"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>使用 watchOS 在 Xamarin 中的布局
 
@@ -84,6 +84,6 @@ Separator 控件旨在帮助提供在布局中的可视指南。 使用分隔符
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchKitCatalog （示例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple 的布局参考](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
 - [Apple 的颜色和版式引用](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)

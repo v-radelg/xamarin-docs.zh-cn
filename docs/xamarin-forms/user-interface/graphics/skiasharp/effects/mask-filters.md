@@ -7,16 +7,16 @@ ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1d85c705fb993e9b6b558b0c051de93e449b9d05
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289088"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648724"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp 掩码筛选器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 掩码筛选器是操作几何图形和 alpha 通道的图形对象的效果。 若要使用掩码筛选器，设置[ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)的属性`SKPaint`对象的类型[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)已通过调用之一创建了`SKMaskFilter`静态方法。
 
@@ -43,7 +43,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 以下示例中显示了这些样式的效果。 `sigma`参数指定的模糊程度。 在较旧版本的 Skia，radius 值指出了模糊程度。 如果为应用程序适合的半径值，则静态[ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*)可以从另一个转换的方法。 该方法乘以 0.57735 半径，并将 0.5。
 
-**掩码模糊试验**页面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例允许用户体验与模糊样式和 sigma 的值。 XAML 文件实例化`Picker`具有四个`SKBlurStyle`枚举成员和一个`Slider`函数指定 sigma 值：
+**掩码模糊试验**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例允许用户体验与模糊样式和 sigma 的值。 XAML 文件实例化`Picker`具有四个`SKBlurStyle`枚举成员和一个`Slider`函数指定 sigma 值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 
 [![屏蔽模糊实验](mask-filters-images/MaskBlurExperiment.png "屏蔽模糊实验")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS 屏幕截图显示了`Solid`样式：文本字符都是作为纯黑色的笔画，仍然存在，模糊添加到这些文本字符的外部。 
+IOS 屏幕快照显示`Solid`样式:文本字符仍以纯黑色笔划形式出现, 并且模糊将添加到这些文本字符的外部。 
 
-Android 屏幕截图中所示中间`Outer`样式：字符笔画本身将消除 （如位图） 和模糊环绕的文本字符一次出现的空白区域。 
+中间的 Android 屏幕截图显示`Outer`样式:将消除字符笔划本身 (如位图), 模糊会将文本字符出现的空白区域环绕在空白区域。 
 
 UWP 上正确显示的屏幕截图`Inner`样式。 模糊被限制为文本字符通常占用的区域。
 
@@ -274,4 +274,4 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

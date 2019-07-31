@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a5a70594b0fe48fe601ef836977f69b29e097ab5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 74d626fb1028c630b67888f84153adeb33ae32b9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510386"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644698"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin CardView
 
@@ -157,7 +157,7 @@ Android 5.0 (棒糖形) 中引入的小组件是一个UI组件,用于在类似�
 
 [![图像下方带有图像和标题的 CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
-此屏幕截图是从[RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)示例应用程序中获取的, `RecyclerView`它使用小组件提供用于查看`CardView`照片的图像滚动列表。 有关的详细信息`RecyclerView`, 请参阅[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)指南。
+此屏幕截图是从[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)示例应用程序中获取的, `RecyclerView`它使用小组件提供用于查看`CardView`照片的图像滚动列表。 有关的详细信息`RecyclerView`, 请参阅[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)指南。
 
 请注意, `CardView`可以在其内容区域中显示一个以上的子视图。 例如, 在上述照片查看应用程序示例中, 内容区域由`ListView` `ImageView`包含和`TextView`的组成。 尽管`CardView`实例通常是垂直排列的, 但您也可以水平排列它们 (有关示例屏幕截图, 请参阅[创建自定义视图样式](~/android/user-interface/material-theme.md#customview))。
 
@@ -253,6 +253,6 @@ Android 5.0 (棒糖形) 中引入的小组件是一个UI组件,用于在类似�
 
 ## <a name="related-links"></a>相关链接
 
-- [RecyclerView (示例)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
+- [RecyclerView (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [棒糖形简介](~/android/platform/lollipop.md)
 - [CardView 类引用](https://developer.android.com/reference/android/support/v7/widget/CardView.html)

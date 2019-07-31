@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 28475df4baa225cc9a608607be6ed673ad0e6e8a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 105d06c7cea23ac0873c8de68d7ad1ad62ae1ffc
+ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251216"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665704"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的代码中创建 iOS 用户界面
 
@@ -89,10 +89,10 @@ Visual Studio for Mac 不提供一个空的模板。 所有模板都都具有支
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -118,10 +118,10 @@ public class AppDelegate : UIApplicationDelegate
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -132,7 +132,7 @@ public class AppDelegate : UIApplicationDelegate
 
 ## <a name="adding-a-controller"></a>添加控制器
 
-您的应用程序可以包含多个视图控制器，但它需要有一个根视图控制器，以控制所有视图控制器。  将控制器添加到窗口中，通过创建`UIViewController`实例并将其设置为`window.RootViewController`属性：
+您的应用程序可以包含多个视图控制器，但它需要有一个根视图控制器，以控制所有视图控制器。  将控制器添加到窗口中，通过创建`UIViewController`实例并将其设置为`Window.RootViewController`属性：
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -632,4 +632,4 @@ Apple 建议.xib 或情节提要文件用于应用程序面向 iOS 8 或更高�
 
 ## <a name="related-links"></a>相关链接
 
-- [SimpleLogin （示例）](https://developer.xamarin.com/samples/monotouch/SimpleLogin)
+- [SimpleLogin （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)

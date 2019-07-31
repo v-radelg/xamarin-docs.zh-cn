@@ -7,16 +7,16 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 54f6c8b94a1abdfcc3be9a86e179e766c417232b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290178"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655380"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像筛选器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 映像筛选器是在所有构成图像的像素的颜色位操作的效果。 它们是掩码筛选器，仅对 alpha 通道，如本文所述的功能更多[ **SkiaSharp 掩码筛选器**](mask-filters.md)。 若要使用的映像筛选器，设置[ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)的属性`SKPaint`对象的类型[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)已通过调用类的静态方法之一创建了。
 
@@ -28,7 +28,7 @@ ms.locfileid: "61290178"
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>模糊矢量图形和位图
 
-创建的模糊效果[ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法具有中的模糊方法通过一个明显的优势[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)类：映像筛选器可使整个位图变得模糊。 该方法具有以下语法：
+[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法创建的模糊效果与[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)类中的模糊方法相比具有明显的优势:图像筛选器可以对整个位图进行模糊。 该方法具有以下语法：
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -38,7 +38,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 该方法具有两个 sigma 值&mdash;第一个针对在水平方向和垂直方向的第二个中的模糊程度。 可以通过指定为可选的第三个参数的另一个映像筛选器进行级联的映像筛选器。 此外可以指定裁剪矩形。
 
-**图像模糊试验**页面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)包含两个`Slider`视图，可设置不同级别的模糊试验：
+**图像模糊试验**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)包含两个`Slider`视图，可设置不同级别的模糊试验：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许你选择负 Z 值，但这也仅以便您可以看到会发生什么情况：从概念上讲，负 Z 坐标导致光线的点移出屏幕。 用于任何其他然后小负值，光照效果将停止工作。
+第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许您选择负 Z 值, 但这只是为了您可以看到发生了什么情况:从概念上讲, 负 Z 坐标使光源指向屏幕。 用于任何其他然后小负值，光照效果将停止工作。
 
 `surfaceScale`自变量的范围可以介于-1 到 1。 （高或较低的值不会进一步影响。）这些是在 Z 轴相对指示画布图面中的图形对象 （在此情况下，文本字符串） 的偏移量的值。 使用负值引发在画布的图面上面的文本字符串和正值按其下进画布。
 
@@ -439,9 +439,9 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android 屏幕快照具有 Z 值为 0，这意味着向下和向右仅指向光线。 在后台不点亮，照亮的文本字符串的图面并不是。 光只影响非常细微效果的文本的边缘。
 
-本文中演示文和阳文文本的备用方法[转换转换](../transforms/translate.md):两次彼此略有偏移的不同颜色将显示的文本字符串。
+[转换转换](../transforms/translate.md)中介绍了一种用于浮凸和阴文文本的替代方法:文本字符串将显示两次, 颜色分别偏移不同的颜色。
 
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

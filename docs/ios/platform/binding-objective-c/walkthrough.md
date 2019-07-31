@@ -1,54 +1,54 @@
 ---
 title: 演练：绑定 iOS Objective-C 库
-description: 本文提供了实际演练如何创建现有 OBJECTIVE-C 的库，InfColorPicker 的 Xamarin.iOS 绑定。 它介绍了编译静态 Objective C 库、 绑定，以及在 Xamarin.iOS 应用程序中使用绑定等主题。
+description: 本文介绍了如何为现有的目标-C 库 (InfColorPicker) 创建 Xamarin iOS 绑定。 它介绍了一些主题, 如编译静态目标-C 库、绑定和在 Xamarin iOS 应用程序中使用绑定。
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 2897129779b698eae60338d44f9af19b6a2761bc
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252359"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646177"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
-_本文提供了实际演练如何创建现有 OBJECTIVE-C 的库，InfColorPicker 的 Xamarin.iOS 绑定。它介绍了编译静态 Objective C 库、 绑定，以及在 Xamarin.iOS 应用程序中使用绑定等主题。_
+_本文介绍了如何为现有的目标-C 库 (InfColorPicker) 创建 Xamarin iOS 绑定。它介绍了一些主题, 如编译静态目标-C 库、绑定和在 Xamarin iOS 应用程序中使用绑定。_
 
-IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 的库。 在这些情况下，可以使用 Xamarin.iOS_绑定项目_来创建[C#绑定](~/cross-platform/macios/binding/overview.md)它将允许您使用 Xamarin.iOS 应用程序中的库。
+使用 iOS 时, 可能会遇到需要使用第三方目标-C 库的情况。 在这些情况下, 你可以使用 xamarin ios_绑定项目_来创建允许在 Xamarin iOS 应用程序中使用库的[ C#绑定](~/cross-platform/macios/binding/overview.md)。
 
-通常 iOS 生态系统中可以找到库 3 两种版本：
+通常在 iOS 生态系统中, 可以找到3种风格的库:
 
-* 为使用预编译静态库文件`.a`以及其标头 （.h 文件） 的扩展。 例如， [Google 的分析库](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* 作为预编译的框架。 这是仅包含静态库、 标头和有时其他相关资源的文件夹`.framework`扩展。 例如， [Google 的 AdMob 库](https://developers.google.com/admob/ios/download)。
-* 正如刚才源代码文件。 例如，一个库，其中仅包含`.m`和`.h`Objective C 文件。
+* 作为带有`.a`扩展名及其标头 (.h 文件) 的预编译静态库文件。 例如, [Google 的分析库](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+* 作为预编译框架。 这只是包含静态库和标头的文件夹, 有时还包含扩展`.framework`的其他资源。 例如, [Google 的 Admob 是库](https://developers.google.com/admob/ios/download)。
+* 作为源代码文件。 例如, 包含仅`.m` `.h`包含目标 C 文件的库。
 
-在第一个和第二个方案将已有预编译的 CocoaTouch 静态库以便在本文中我们将重点放在第三个方案上。 请记住，然后再开始创建一个绑定，请始终检查与库以确保你可以随意将其绑定提供了许可证。
+在第一个和第二个方案中, 已有一个预编译的 CocoaTouch 静态库, 因此在本文中, 我们将重点介绍第三个方案。 请记住, 在开始创建绑定之前, 请始终检查随库一起提供的许可, 以确保可随意绑定。
 
-本文提供了创建使用开放源代码的绑定项目的分步演练[InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective C 项目作为示例，但本指南中的所有信息都可以与任何调整，以使用第三方 OBJECTIVE-C 的库。 InfColorPicker 库提供了允许用户选择一种颜色根据其 HSB 表示形式，使用户更加友好的颜色选择的可重用视图控制器。
+本文提供了有关使用开源[InfColorPicker](https://github.com/InfinitApps/InfColorPicker)目标-c 项目作为示例创建绑定项目的分步演练, 不过, 本指南中的所有信息都可以改编为适用于任何第三方目标-c 库. InfColorPicker 库提供了一个可重用的视图控制器, 该控制器允许用户根据其 HSB 表示形式选择颜色, 使颜色选择更易于用户使用。
 
-[![](walkthrough-images/run01.png "在 iOS 上运行的 InfColorPicker 库的示例")](walkthrough-images/run01.png#lightbox)
+[![](walkthrough-images/run01.png "IOS 上运行的 InfColorPicker 库示例")](walkthrough-images/run01.png#lightbox)
 
-我们将介绍所有必要的步骤才能使用此特定的 Objective C API，在 Xamarin.iOS 中：
+我们将介绍在 Xamarin 中使用此特定目标-C API 的所有必要步骤:
 
-- 首先，我们将创建使用 Xcode 的 Objective C 静态库。
-- 然后，我们会将绑定与 Xamarin.iOS 此静态库。
-- 接下来，显示目标 Sharpie 如何通过自动生成部分 （而不是全部） 来减少工作负荷的 Xamarin.iOS 绑定所需的必要 API 定义。
-- 最后，我们将创建使用该绑定的 Xamarin.iOS 应用程序。
+- 首先, 我们将使用 Xcode 创建目标为 C 的静态库。
+- 然后, 将此静态库与 Xamarin 绑定。
+- 接下来, 通过自动生成 Xamarin 绑定所需的某些 (但不是全部) 必要 API 定义, 显示目标 Sharpie 如何减小工作负荷。
+- 最后, 我们将创建一个使用绑定的 Xamarin iOS 应用程序。
 
-示例应用程序将演示如何使用强委托 InfColorPicker API 之间的通信和我们C#代码。 我们已了解如何使用强委托后，我们将介绍如何使用弱委托来执行相同的任务。
+示例应用程序将演示如何使用强委托在 InfColorPicker API 和我们C#的代码之间进行通信。 了解如何使用强委托后, 我们将介绍如何使用弱委托执行相同的任务。
 
 ## <a name="requirements"></a>要求
 
-本文假定你已具备一定的 Xcode 和 OBJECTIVE-C 的语言，并且您已经阅读了我们[绑定 OBJECTIVE-C](~/cross-platform/macios/binding/index.md)文档。 此外，下面是需要填写显示的步骤：
+本文假设你已熟悉 Xcode 和目标 C 语言, 并已阅读我们的[绑定目标-c](~/cross-platform/macios/binding/index.md)文档。 此外, 必须满足以下要求才能完成显示的步骤:
 
--  **Xcode 和 iOS SDK** -Apple 的 Xcode 和最新的 iOS API 需要安装并配置开发人员的计算机上。
--  **[Xcode 命令行工具](#Installing_the_Xcode_Command_Line_Tools)** -Xcode 命令行工具必须安装 Xcode （请参阅下面有关安装的详细信息） 的当前安装的版本。
--  **Visual Studio for Mac 或 Visual Studio** -最新版本的 Visual Studio for Mac 或 Visual Studio 应安装并配置开发计算机上。 Apple Mac 开发所需的 Xamarin.iOS 应用程序，并使用 Visual Studio 时您必须连接到[Xamarin.iOS 生成主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **最新版本的目标 Sharpie** -从下载目标 Sharpie 工具的当前副本[此处](~/cross-platform/macios/binding/objective-sharpie/get-started.md)。 如果已安装的目标 Sharpie，则可以更新它的最新版本通过使用 `sharpie update`
+-  在开发人员的计算机上, 需要安装和配置**Xcode 和 IOS SDK** -Apple 的 Xcode 和最新的 ios API。
+-  **[Xcode 命令行工具](#Installing_the_Xcode_Command_Line_Tools)** -必须为当前安装的 Xcode 版本安装 Xcode 命令行工具 (有关安装详细信息, 请参阅下文)。
+-  **Visual Studio for Mac 或 Visual studio** -应在开发计算机上安装和配置 Visual Studio for Mac 或 visual studio 的最新版本。 需要 Apple Mac 才能开发 Xamarin iOS 应用程序, 并且在使用 Visual Studio 时, 必须连接到[Xamarin build 主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+-  **最新版本的客观 Sharpie** -从[此处](~/cross-platform/macios/binding/objective-sharpie/get-started.md)下载目标 Sharpie 工具的当前副本。 如果你已安装了客观 Sharpie, 则可使用`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -57,134 +57,134 @@ IOS 上工作时，可能会遇到情况下你想要使用第三方 OBJECTIVE-C 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
-如上面所述，我们将使用 Xcode 命令行工具 (具体而言`make`和`lipo`) 在本演练中。 `make`命令是一个非常常见的 Unix 实用工具，将通过使用自动化的可执行程序和库编译_生成文件_，它指定应如何构建程序。 `lipo`命令是 OS X 命令行实用程序，用于创建多体系结构的文件; 它将合并多个`.a`到一个文件，它可以使用的所有硬件体系结构的文件。
+如上所述, 在本演练中, 我们将使用 Xcode 命令行工具`make` ( `lipo`具体和)。 命令是一个非常常见的 Unix 实用程序, 它通过使用指定如何生成程序的_生成文件_来自动编译可执行程序和库。 `make` 命令是 OS X 命令行实用程序, 用于创建多体系结构文件; 它会将多`.a`个文件合并到一个文件中, 该文件可由所有硬件体系结构使用。 `lipo`
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-如上面所述，我们将使用 Xcode 命令行工具上**Mac 生成主机**(具体而言`make`和`lipo`) 在本演练中。 `make`命令是一个非常常见的 Unix 实用工具，将通过使用自动化的可执行程序和库编译_生成文件_来指定如何生成程序。 `lipo`命令是 OS X 命令行实用程序，用于创建多体系结构的文件; 它将合并多个`.a`到一个文件，它可以使用的所有硬件体系结构的文件。
+如上所述, 在本演练中, 我们将使用 Xcode 命令行工具 **(具体** `make`取决于和`lipo`)。 命令是一个非常常见的 Unix 实用工具, 它将通过使用_生成文件_指定如何生成程序来自动编译可执行程序和库。 `make` 命令是 OS X 命令行实用程序, 用于创建多体系结构文件; 它会将多`.a`个文件合并到一个文件中, 该文件可由所有硬件体系结构使用。 `lipo`
 
 
 -----
 
-根据 Apple[从命令行的 Xcode 常见问题解答生成](https://developer.apple.com/library/ios/technotes/tn2339/_index.html)文档，在 OS X 10.9 及更高版本，则**下载**窗格中的 Xcode**首选项**对话框不不再支持支持下载命令行工具。
+根据 Apple 在[命令行中通过 XCODE FAQ](https://developer.apple.com/library/ios/technotes/tn2339/_index.html)编写文档的内容, 在 OS X 10.9 及更高版本中, "Xcode**首选项**" 对话框的 "**下载**" 窗格不支持下载命令行工具。
 
-你将需要使用以下方法之一来安装工具：
+你需要使用以下方法之一来安装这些工具:
 
-- **安装 Xcode** -时安装 Xcode，它附带的所有命令行工具。 在 OS X 10.9 填充码 (安装在`/usr/bin`)，可以将映射中包含的任何工具`/usr/bin`到在 Xcode 内相应的工具。 例如，`xcrun`命令，可用于查找或从命令行运行在 Xcode 内的任何工具。
-- **终端应用程序**-从终端应用程序，可以通过运行安装命令行工具`xcode-select --install`命令：
+- **安装 Xcode** -安装 Xcode 时, 它与所有命令行工具捆绑在一起。 在 OS X 10.9 填充程序 (安装`/usr/bin`在中) 中, 可以将中`/usr/bin`包含的任何工具映射到 Xcode 中的相应工具。 例如, `xcrun`命令允许您从命令行在 Xcode 内查找或运行任何工具。
+- **终端应用程序**-从终端应用程序中, 可以通过运行`xcode-select --install`命令来安装命令行工具:
     - 启动终端应用程序。
-    - 类型`xcode-select --install`并按**Enter**，例如：
+    - 键入`xcode-select --install` , 然后按**enter**, 例如:
 
     ```bash
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - 你将需要安装的命令行工具，请单击**安装**按钮： [![](walkthrough-images/xcode01.png "安装命令行工具")](walkthrough-images/xcode01.png#lightbox)
+    - 系统会要求安装命令行工具, 请单击 "**安装**" 按钮: [![](walkthrough-images/xcode01.png "安装命令行工具")](walkthrough-images/xcode01.png#lightbox)
 
-    - 将下载并安装从 Apple 的服务器工具： [![](walkthrough-images/xcode02.png "下载工具")](walkthrough-images/xcode02.png#lightbox)
+    - 将从 Apple 的服务器下载和安装这些工具: [![](walkthrough-images/xcode02.png "下载工具")](walkthrough-images/xcode02.png#lightbox)
 
-- **适用于 Apple 开发人员的下载**-命令行工具包形式提供[适用于 Apple 开发人员的下载](https://developer.apple.com/downloads/index.action)网页。 登录你的 Apple ID，然后搜索并下载命令行工具：[![](walkthrough-images/xcode03.png "查找的命令行工具")](walkthrough-images/xcode03.png#lightbox)
+- **适用于 Apple 开发人员的下载**-命令行工具包适用于[Apple 开发人员下载](https://developer.apple.com/downloads/index.action)网页。 用你的 Apple ID 登录, 然后搜索并下载命令行工具:[![](walkthrough-images/xcode03.png "查找命令行工具")](walkthrough-images/xcode03.png#lightbox)
 
-安装的命令行工具，我们就准备好继续演练。
+安装命令行工具后, 可以继续执行演练。
 
 ## <a name="walkthrough"></a>演练
 
-在本演练中，我们将介绍以下步骤：
+在本演练中, 我们将介绍以下步骤:
 
-- **[创建静态库](#Creating_A_Static_Library)** -此步骤涉及到创建的静态库**InfColorPicker** Objective C 代码。 将具有静态库`.a`文件扩展名，并且将嵌入到类库项目的.NET 程序集。
-- **[创建 Xamarin.iOS 绑定项目](#Create_a_Xamarin.iOS_Binding_Project)** -静态库后，我们将使用它来创建 Xamarin.iOS 绑定项目。 绑定项目包含我们刚刚创建的静态库和元数据的窗体中的C#介绍了如何使用 Objective C API 的代码。 此元数据通常称为 API 定义。 我们将使用 **[目标 Sharpie](#Using_Objective_Sharpie)** 来帮助我们与创建 API 定义。
-- **[规范化的 API 定义](#Normalize_the_API_Definitions)** -目标 Sharpie 能够很好地帮助我们，但它不能执行的所有内容。 我们将讨论一些更改，我们需要创建到 API 定义，然后可以使用它们。
-- **[使用绑定库](#Using_the_Binding)** -最后，我们将创建一个 Xamarin.iOS 应用程序来演示如何使用我们新创建的绑定的项目。
+- **[创建静态库](#Creating_A_Static_Library)** -此步骤涉及创建**InfColorPicker**目标 C 代码的静态库。 静态库将具有`.a`文件扩展名, 并将嵌入到库项目的 .net 程序集中。
+- **[创建 Xamarin Ios 绑定项目](#Create_a_Xamarin.iOS_Binding_Project)** -一旦有了静态库, 我们将使用它来创建 Xamarin iOS 绑定项目。 绑定项目包含我们刚刚创建的静态库和以C#代码形式编写的元数据, 用于说明如何使用目标 C API。 此元数据通常称为 API 定义。 我们将使用 **[目标 Sharpie](#Using_Objective_Sharpie)** 来帮助我们与创建 API 定义。
+- **[规范化 API 定义](#Normalize_the_API_Definitions)** -目标 Sharpie 执行帮助我们的工作非常出色, 但它不能执行任何操作。 我们将讨论一些需要在 API 定义中进行的更改, 然后才能使用这些更改。
+- **[使用绑定库](#Using_the_Binding)** -最后, 我们将创建一个 Xamarin iOS 应用程序, 用于演示如何使用新创建的绑定项目。
 
-现在，我们已了解涉及哪些步骤，让我们继续本演练的其余部分。
+现在, 我们了解了涉及到的步骤, 接下来, 让我们继续执行本演练的其余部分。
 
 <a name="Creating_A_Static_Library"/>
 
 ## <a name="creating-a-static-library"></a>创建静态库
 
-如果我们在 Github 中 InfColorPicker 的检查的代码：
+如果我们在 Github 中检查 InfColorPicker 的代码:
 
-[![](walkthrough-images/image02.png "检查为 InfColorPicker 在 Github 中的代码")](walkthrough-images/image02.png#lightbox)
+[![](walkthrough-images/image02.png "在 Github 中检查 InfColorPicker 的代码")](walkthrough-images/image02.png#lightbox)
 
-我们可以看到项目中的以下三个目录：
+可以在项目中看到以下三个目录:
 
-- **InfColorPicker** -此目录包含项目的 Objective C 代码。
+- **InfColorPicker** -该目录包含项目的目标 C 代码。
 - **PickerSamplePad** -此目录包含一个示例 iPad 项目。
 - **PickerSamplePhone** -此目录包含一个示例 iPhone 项目。
 
-让我们来下载 InfColorPicker 项目从[GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip)并将其解压缩我们选择的目录中。 打开 Xcode 目标`PickerSamplePhone`项目中，我们看到 Xcode 导航器中的以下项目结构：
+让我们从[GitHub](https://github.com/InfinitApps/InfColorPicker/archive/master.zip)下载 InfColorPicker 项目, 并将其解压缩到所选的目录中。 正在打开`PickerSamplePhone`项目的 Xcode 目标, 将在 Xcode 导航器中看到以下项目结构:
 
 [![](walkthrough-images/image03.png "Xcode 导航器中的项目结构")](walkthrough-images/image03.png#lightbox)
 
-此项目通过直接将 InfColorPicker 源代码 （在红框中） 添加到每个示例项目来实现代码重用。 有关示例项目代码是在蓝色的框中。 由于此特定项目不提供我们的静态库，因此有必要为我们创建 Xcode 项目来编译此静态库。
+此项目通过直接将 InfColorPicker 源代码 (在红框中) 添加到每个示例项目中来实现代码重用。 示例项目的代码位于蓝色框中。 由于此特定项目不会向我们提供静态库, 因此, 我们需要创建一个 Xcode 项目来编译静态库。
 
-第一步是我们要添加到静态库 InfoColorPicker 源代码。 若要实现此目的让我们执行以下操作：
+第一步是将 InfoColorPicker 源代码添加到静态库中。 若要实现此目的, 请执行以下操作:
 
 1. 启动 Xcode。
-2. 从**文件**菜单中选择**新建** > **项目...** :
+2. 从 "**文件**" 菜单中选择 "**新建** > **项目 ...** ":
 
-    [![](walkthrough-images/image04.png "开始一个新项目")](walkthrough-images/image04.png#lightbox)
-3. 选择**框架和库**，则**Cocoa Touch 静态库**模板，然后单击**下一步**按钮：
+    [![](walkthrough-images/image04.png "启动新项目")](walkthrough-images/image04.png#lightbox)
+3. 选择 "**框架 & 库**"、 **Cocoa "触摸静态库**" 模板, 然后单击 "**下一步**" 按钮:
 
     [![](walkthrough-images/image05.png "选择 Cocoa Touch 静态库模板")](walkthrough-images/image05.png#lightbox)
 
-4. 输入`InfColorPicker`有关**项目名称**然后单击**下一步**按钮：
+4. 输入`InfColorPicker`作为**项目名称**, 然后单击 "**下一步**" 按钮:
 
-    [![](walkthrough-images/image06.png "输入项目名称 InfColorPicker")](walkthrough-images/image06.png#lightbox)
-5. 选择一个位置来保存项目，然后单击**确定**按钮。
-6. 现在，我们需要将源从 InfColorPicker 项目添加到我们的静态库项目。 因为**InfColorPicker.h**文件已存在静态库中默认情况下，Xcode 将不允许我们将其覆盖。 从**Finder**、 导航到在原始项目中，我们从 GitHub 解压缩 InfColorPicker 源代码、 将所有 InfColorPicker 文件复制和粘贴到我们新的静态库项目：
+    [![](walkthrough-images/image06.png "输入项目名称的 InfColorPicker")](walkthrough-images/image06.png#lightbox)
+5. 选择保存项目的位置, 然后单击 **"确定"** 按钮。
+6. 现在, 我们需要将 InfColorPicker 项目中的源添加到静态库项目。 因为**InfColorPicker**文件已存在于静态库中 (默认情况下), Xcode 将不允许我们覆盖它。 从**查找**器中, 导航到从 GitHub 解压缩的原始项目中的 InfColorPicker 源代码, 复制所有 InfColorPicker 文件并将其粘贴到新的静态库项目中:
 
-    [![](walkthrough-images/image12.png "将所有 InfColorPicker 文件复制")](walkthrough-images/image12.png#lightbox)
+    [![](walkthrough-images/image12.png "复制所有 InfColorPicker 文件")](walkthrough-images/image12.png#lightbox)
 
-7. 返回到 Xcode 中，右键单击**InfColorPicker**文件夹，然后选择**将文件添加到"InfColorPicker..."** :
+7. 返回到 Xcode, 右键单击**InfColorPicker**文件夹, 然后选择 **"将文件添加到" InfColorPicker ... "** :
 
     [![](walkthrough-images/image08.png "添加文件")](walkthrough-images/image08.png#lightbox)
 
-8. 在添加文件对话框中，导航到我们刚刚复制的 InfColorPicker 源代码文件，它们全部选中，单击**添加**按钮：
+8. 在 "添加文件" 对话框中, 导航到刚刚复制的 InfColorPicker 源代码文件, 选择所有这些文件并单击 "**添加**" 按钮:
 
-    [![](walkthrough-images/image09.png "选择所有，然后单击添加按钮")](walkthrough-images/image09.png#lightbox)
+    [![](walkthrough-images/image09.png "选择 \"全部\", 然后单击 \"添加\" 按钮")](walkthrough-images/image09.png#lightbox)
 
-9. 源代码将复制到我们的项目：
+9. 源代码将复制到项目中:
 
-    [![](walkthrough-images/image10.png "源代码将复制到项目")](walkthrough-images/image10.png#lightbox)
+    [![](walkthrough-images/image10.png "源代码将被复制到项目中")](walkthrough-images/image10.png#lightbox)
 
-10. 从 Xcode 项目导航器中，选择**InfColorPicker.m**文件并注释掉的最后两行 （由于写入此库，不使用此文件的方式）：
+10. 从 Xcode 项目导航器中, 选择**InfColorPicker**文件并注释掉最后两行 (由于此库的写入方式, 不使用此文件):
 
-    [![](walkthrough-images/image14.png "编辑 InfColorPicker.m 文件")](walkthrough-images/image14.png#lightbox)
+    [![](walkthrough-images/image14.png "编辑 InfColorPicker 文件")](walkthrough-images/image14.png#lightbox)
 
-11. 我们现在需要检查是否有任何框架所需的库。 在自述文件，或通过打开提供的示例项目之一，可以找到此信息。 此示例使用`Foundation.framework`， `UIKit.framework`，和`CoreGraphics.framework`让我们来添加它们。
+11. 我们现在需要检查库是否需要任何框架。 可以在自述文件或打开提供的示例项目之一中找到此信息。 此示例使用`Foundation.framework`、 `UIKit.framework`, 并`CoreGraphics.framework`添加它们。
 
-12. 选择**InfColorPicker 目标 > 生成阶段**展开**二进制与库链接**部分：
+12. 选择**InfColorPicker 目标 > 生成阶段**, 并展开 "将**二进制文件链接到库**" 部分:
 
-    [![](walkthrough-images/image16b.png "展开二进制与库链接部分")](walkthrough-images/image16b.png#lightbox)
+    [![](walkthrough-images/image16b.png "展开 \"将二进制文件链接到库\" 部分")](walkthrough-images/image16b.png#lightbox)
 
 13. 使用 **+** 按钮以打开对话框让你可以添加上面列出的所需的帧框架：
 
-    [![](walkthrough-images/image16c.png "添加上面列出的所需的帧框架")](walkthrough-images/image16c.png#lightbox)
+    [![](walkthrough-images/image16c.png "添加上面列出的所需框架框架")](walkthrough-images/image16c.png#lightbox)
 
-14. **二进制与库链接**部分现在应类似于下图所示：
+14. "将**二进制文件链接到库**" 部分现在应如下图所示:
 
-    [![](walkthrough-images/image16d.png "二进制与库链接部分")](walkthrough-images/image16d.png#lightbox)
+    [![](walkthrough-images/image16d.png "\"将二进制文件链接到库\" 部分")](walkthrough-images/image16d.png#lightbox)
 
-此时，我们已关闭，但我们不完全正确完成。 创建静态库，但我们需要生成它以创建 Fat 二进制，包含所有所需的体系结构适用于 iOS 设备和 iOS 模拟器。
+此时, 我们已关闭, 但我们并未完成此操作。 已创建静态库, 但我们需要生成它以创建包含适用于 iOS 设备和 iOS 模拟器的所有所需体系结构的 Fat 二进制文件。
 
 ### <a name="creating-a-fat-binary"></a>创建 Fat 二进制文件
 
-所有 iOS 设备都已由 ARM 体系结构提供支持都了随着时间的推移而开发的处理器。 每个新的体系结构仍保持向后兼容性的同时添加了新指令和其他改进。 iOS 设备具有 armv6、 armv7、 armv7s、 arm64 指令集 – 尽管[armv6 不使用任何更](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS 模拟器不支持通过 ARM 并且改为 x86 和提供支持的 x86_64 模拟器。 这意味着必须为每个指令集提供库。
+所有 iOS 设备都具有由一段时间内开发的 ARM 体系结构提供支持的处理器。 每个新的体系结构都添加了新指令和其他改进, 同时仍保持向后兼容性。 iOS 设备具有 armv6、armv7、armv7s、arm64 指令集–尽管[armv6 没有更多的使用](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS 模拟器不支持 ARM, 而是使用 x86 和 x86_64 的模拟器。 这意味着必须为每个指令集提供库。
 
-Fat 库是`.a`文件包含所有支持的体系结构。
+Fat 库是`.a`包含所有受支持的体系结构的文件。
 
-创建 fat 二进制是一个三步骤过程：
+创建 fat 二进制文件的过程分为三个步骤:
 
-- 编译静态库的 ARM 7 和 ARM64 版本。
+- 编译 ARM 7 & ARM64 的静态库版本。
 - 编译静态库的 x86 和 x84_64 版本。
-- 使用`lipo`命令行工具，可将两个静态库合并为一个。
+- `lipo`使用命令行工具将两个静态库合并为一个。
 
-虽然这三个步骤是很简单，可能需要重复这些步骤，在将来时 OBJECTIVE-C 库接收更新，或如果我们需要使用 bug 修补程序。 如果您决定自动执行这些步骤，它将简化未来的维护和支持的 iOS 绑定项目。
+虽然这三个步骤非常简单, 但将来可能需要重复这些步骤, 前提是目标-C 库收到更新或需要修复 bug。 如果决定自动执行这些步骤, 它将简化 iOS 绑定项目的将来维护和支持。
 
-有许多工具可用于自动执行此类任务的 shell 脚本[rake](http://rake.rubyforge.org/)， [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)，并[使](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)。 安装 Xcode 命令行工具时,`make`也会安装，这就是将用于本演练的生成系统。 下面是**生成文件**可用于创建将适用于 iOS 设备和模拟器的任何库的多体系结构共享的库：
+有许多工具可用于自动执行此类任务-shell 脚本、 [rake](http://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)和[进行](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)操作。 安装 Xcode 命令行工具时, `make`还会安装, 因此, 这是将用于本演练的生成系统。 以下是可用于创建可在 iOS 设备上工作的多体系结构共享库和适用于任何库的模拟器的**生成文件**:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,62 +213,62 @@ clean:
     -rm -f *.a *.dll
 ```
 
-输入**生成文件**您选择的纯文本编辑器中的命令和更新各部分之间用**YOUR 项目名称**与项目的名称。 它还是必须确保，您粘贴到上面的说明，请准确中保留的说明进行操作的选项卡。
+在所选的纯文本编辑器中输入**生成文件**命令,**并通过项目**名称更新部分。 还必须确保严格粘贴上述说明, 并保留指令中的选项卡。
 
-使用名称保存文件**生成文件**到与我们在上面创建 InfColorPicker Xcode 静态库相同的位置：
+将具有名称**生成**文件的文件保存到与上面创建的 InfColorPicker Xcode 静态库相同的位置:
 
-[![](walkthrough-images/lib00.png "生成文件的名称保存该文件")](walkthrough-images/lib00.png#lightbox)
+[![](walkthrough-images/lib00.png "用名称生成文件保存文件")](walkthrough-images/lib00.png#lightbox)
 
-打开你的 Mac 上的终端应用程序并导航到你的生成文件的位置。 类型`make`在终端中，按**Enter**并且**生成文件**将执行：
+打开你的 Mac 上的终端应用程序并导航到生成文件所在的位置。 键入`make`终端, 按**enter** , 将执行**生成文件**:
 
-[![](walkthrough-images/lib01.png "生成文件的示例输出")](walkthrough-images/lib01.png#lightbox)
+[![](walkthrough-images/lib01.png "示例生成文件输出")](walkthrough-images/lib01.png#lightbox)
 
-运行时进行，您将看到大量滚动的文本。 如果一切运行正常，则会看到单词**生成成功**并`libInfColorPicker-armv7.a`，`libInfColorPicker-i386.a`并`libInfColorPickerSDK.a`文件将复制到与相同的位置**生成文件**:
+运行 "生成" 时, 会看到大量文本滚动。 如果一切正常, 你将看到 " `libInfColorPickerSDK.a` **生成成功** `libInfColorPicker-armv7.a` `libInfColorPicker-i386.a` " 字样, 并且文件将复制到**生成**文件所在的同一位置:
 
-[![](walkthrough-images/lib02.png "生成生成文件的 libInfColorPicker armv7.a、 libInfColorPicker i386.a 和 libInfColorPickerSDK.a 文件")](walkthrough-images/lib02.png#lightbox)
+[![](walkthrough-images/lib02.png "Armv7、libInfColorPicker 和 libInfColorPickerSDK 生成的 libInfColorPicker 文件的文件的文件。")](walkthrough-images/lib02.png#lightbox)
 
-可以通过使用以下命令来确认 Fat 二进制文件中的体系结构：
+可以使用以下命令确认 Fat 二进制文件中的体系结构:
 
 ```bash
 xcrun -sdk iphoneos lipo -info libInfColorPicker.a
 ```
 
-这应显示以下信息：
+这应显示以下内容:
 
 ```bash
 Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 ```
 
-此时，我们已通过创建静态库使用 Xcode 和 Xcode 命令行工具完成我们的 iOS 绑定的第一步`make`和`lipo`。 让我们移动到下一步，并使用**目标 Sharpie**自动为我们的 API 绑定创建。
+此时, 我们已完成了 iOS 绑定的第一步, 方法是使用 Xcode 和 Xcode 命令行工具`make`和`lipo`创建静态库。 让我们转到下一步, 并使用**Sharpie**自动创建 API 绑定。
 
 <a name="Create_a_Xamarin.iOS_Binding_Project"/>
 
-## <a name="create-a-xamarinios-binding-project"></a>创建 Xamarin.iOS 绑定项目
+## <a name="create-a-xamarinios-binding-project"></a>创建 Xamarin iOS 绑定项目
 
-我们可以使用之前**目标 Sharpie**若要自动执行绑定过程，我们需要创建 Xamarin.iOS 绑定项目，以容纳 API 定义 (，我们将使用**目标 Sharpie**来帮助我们生成），并创建C#我们的绑定。
+在我们可以使用**Sharpie**实现绑定过程的自动化之前, 我们需要创建一个 Xamarin IOS 绑定项目来容纳 API 定义 (我们将使用**Sharpie**来帮助生成) 并为我们创建C#绑定。
 
-让我们执行以下操作：
+让我们执行以下操作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 启动 Visual Studio for mac。
-1. 从**文件**菜单中，选择**新建** > **解决方案...** :
+1. 开始 Visual Studio for Mac。
+1. 从 "**文件**" 菜单中, 选择 "**新建** > **解决方案 ...** ":
 
-    ![](walkthrough-images/bind01.png "启动新的解决方案")
+    ![](walkthrough-images/bind01.png "启动新解决方案")
 
-1. 从新解决方案对话框中，选择**库** > **iOS 绑定项目**:
+1. 在 "新建解决方案" 对话框中, 选择 "**库** > " "**iOS 绑定项目**":
 
     ![](walkthrough-images/bind02.png "选择 iOS 绑定项目")
 
-1. 单击**下一步**按钮。
+1. 单击 "**下一步**" 按钮。
 
-1. 输入"InfColorPickerBinding"作为**项目名称**然后单击**创建**按钮以创建解决方案：
+1. 输入 "InfColorPickerBinding" 作为**项目名称**, 然后单击 "**创建**" 按钮以创建解决方案:
 
-    ![](walkthrough-images/bind02a.png "作为项目名称输入 InfColorPickerBinding")
+    ![](walkthrough-images/bind02a.png "输入 InfColorPickerBinding 作为项目名称")
 
-将创建解决方案和两个默认文件将包含：
+将创建该解决方案, 并将包括两个默认文件:
 
-![](walkthrough-images/bind03.png "在解决方案资源管理器中的解决方案结构")
+![](walkthrough-images/bind03.png "解决方案资源管理器中的解决方案结构")
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -276,66 +276,66 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 启动 Visual Studio。
 
-1. 从**文件**菜单中，选择**新建** > **项目...** :
+1. 从 "**文件**" 菜单中, 选择 "**新建** > **项目 ...** ":
 
-    ![开始一个新项目](walkthrough-images/bind01vs.png "开始一个新项目")
+    ![启动新项目](walkthrough-images/bind01vs.png "启动新项目")
 
-1. 从新建项目对话框中，选择**可视化C#> iPhone 和 iPad > iOS 绑定库 (Xamarin)** :
+1. 在 "新建项目" 对话框中, 选择 " **Visual C# > iPhone & IPad > iOS 绑定库 (Xamarin)** ":
 
     [![选择 iOS 绑定库](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
-1. 输入"InfColorPickerBinding"作为**名称**然后单击**确定**按钮以创建解决方案。
+1. 输入 "InfColorPickerBinding" 作为**名称**, 然后单击 **"确定**" 按钮以创建解决方案。
 
-将创建解决方案和两个默认文件将包含：
+将创建该解决方案, 并将包括两个默认文件:
 
-![](walkthrough-images/bind03vs.png "在解决方案资源管理器中的解决方案结构")
+![](walkthrough-images/bind03vs.png "解决方案资源管理器中的解决方案结构")
 
 -----
 
-- **ApiDefinition.cs** -此文件将包含协定来定义如何 Objective C API 将包装在C#。
-- **Structs.cs** -此文件将保存的任何结构或枚举值所需的接口和委托。
+- **ApiDefinition.cs** -此文件将包含定义如何在中C#包装目标 C API 的协定。
+- **Structs.cs** -此文件将包含接口和委托所需的任何结构或枚举值。
 
-我们将使用在本演练后面这两个文件。 首先，我们需要将 InfColorPicker 库添加到绑定项目。
+稍后将在本演练中使用这两个文件。 首先, 需要将 InfColorPicker 库添加到绑定项目。
 
-### <a name="including-the-static-library-in-the-binding-project"></a>绑定项目中包括静态库
+### <a name="including-the-static-library-in-the-binding-project"></a>将静态库包含在绑定项目中
 
-现在，我们使用基本绑定项目准备就绪，我们需要添加我们上面创建的 Fat 二进制库**InfColorPicker**库。
+现在我们已准备好基本绑定项目, 需要为**InfColorPicker**库添加上面创建的 Fat 二进制库。
 
-请执行以下步骤添加到库：
+按照以下步骤添加库:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 右键单击**本机引用**在 Solution Pad 中，选择文件夹**添加本机引用**:
+1. 右键单击 "Solution Pad 中的"**本机引用**"文件夹, 然后选择"**添加本机引用**":
 
     ![](walkthrough-images/bind04a.png "添加本机引用")
 
-1. 导航到 Fat 二进制我们前面所做 (`libInfColorPickerSDK.a`) 按**打开**按钮：
+1. 导航到前面创建的 Fat 二进制文件 (`libInfColorPickerSDK.a`), 然后按 "**打开**" 按钮:
 
-    ![](walkthrough-images/bind05.png "选择 libInfColorPickerSDK.a 文件")
-1. 该文件将包括在项目中：
+    ![](walkthrough-images/bind05.png "选择 libInfColorPickerSDK 文件")
+1. 此文件将包含在项目中:
 
-    ![](walkthrough-images/bind04.png "包括的文件")
+    ![](walkthrough-images/bind04.png "包含文件")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 复制`libInfColorPickerSDK.a`从你**Mac 生成主机**并将其粘贴到你绑定的项目。
+1. 将从**Mac 生成主机**复制并粘贴到绑定项目。 `libInfColorPickerSDK.a`
 
-1. 右键单击项目并选择**添加 > 现有项...** :
+1. 右键单击该项目, 然后选择 "**添加 > 现有项 ...** ":
 
     ![](walkthrough-images/bind04vs.png "添加现有文件")
 
-1. 导航到`libInfColorPickerSDK.a`并按**添加**按钮：
+1. 导航到`libInfColorPickerSDK.a`并按 "**添加**" 按钮:
 
-    ![](walkthrough-images/bind05vs.png "添加 libInfColorPickerSDK.a")
+    ![](walkthrough-images/bind05vs.png "添加 libInfColorPickerSDK")
 
-1. 将项目中包含该文件。
+1. 此文件将包含在项目中。
 
 -----
 
-当 **.a**文件添加到项目中，将自动设置 Xamarin.iOS**生成操作**的文件**ObjcBindingNativeLibrary**，并创建一个特殊的文件名为`libInfColorPickerSDK.linkwith.cs`。
+将 **.** 文件添加到项目中时, Xamarin 会自动将该文件的**生成操作**设置为**ObjcBindingNativeLibrary**, 并创建一个名`libInfColorPickerSDK.linkwith.cs`为的特殊文件。
 
 
-此文件包含`LinkWith`告知 Xamarin.iOS 如何句柄的静态库刚刚添加的属性。 此文件的内容如下面的代码段所示：
+此文件包含`LinkWith`属性, 该属性告诉 Xamarin iOS 如何处理刚刚添加的静态库。 以下代码片段显示了此文件的内容:
 
 ```csharp
 using ObjCRuntime;
@@ -343,10 +343,10 @@ using ObjCRuntime;
 [assembly: LinkWith ("libInfColorPickerSDK.a", SmartLink = true, ForceLoad = true)]
 ```
 
-`LinkWith`特性标识为项目和一些重要链接器标志的静态库。
+`LinkWith`特性标识项目的静态库和一些重要的链接器标志。
 
 
-我们需要做的下一件事是创建 InfColorPicker 项目的 API 定义。 出于本演练的目的，我们将使用目标 Sharpie 生成文件**ApiDefinition.cs**。
+接下来需要为 InfColorPicker 项目创建 API 定义。 出于本演练的目的, 我们将使用客观 Sharpie 生成文件**ApiDefinition.cs**。
 
 <a name="Using_Objective_Sharpie"/>
 
@@ -355,26 +355,26 @@ using ObjCRuntime;
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
-目标 Sharpie 是一个命令行工具 （由 Xamarin 提供），它可以帮助您创建绑定到第三方 Objective C 库所需的定义C#。 在本部分中，我们将使用目标 Sharpie，创建初始**ApiDefinition.cs** InfColorPicker 项目。
+客观 Sharpie 是一个命令行工具 (由 Xamarin 提供), 可以帮助创建将第三方目标-C 库绑定到C#所需的定义。 在本部分中, 我们将使用客观 Sharpie 为 InfColorPicker 项目创建初始**ApiDefinition.cs** 。
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-目标 Sharpie 是一个命令行工具 （由 Xamarin 提供），它可以帮助您创建绑定到第三方 Objective C 库所需的定义C#。 在本部分中，我们将使用目标 Sharpie 上我们**Mac 生成主机**，创建初始**ApiDefinition.cs** InfColorPicker 项目。
+客观 Sharpie 是一个命令行工具 (由 Xamarin 提供), 可以帮助创建将第三方目标-C 库绑定到C#所需的定义。 在本部分中, 我们将在**Mac 生成主机**上使用客观 Sharpie 为 InfColorPicker 项目创建初始**ApiDefinition.cs** 。
 
 
 -----
 
-若要开始，让我们来下载目标 Sharpie 安装程序文件，作为在此详细[指南](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing)。 运行安装程序并按照屏幕提示的所有从安装向导，我们开发计算机上安装目标 Sharpie。
+若要开始, 请下载目标 Sharpie 安装程序文件, 如本[指南](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing)中所述。 运行安装程序并按照安装向导中的所有屏幕提示操作, 在开发计算机上安装目标 Sharpie。
 
-我们已成功地将目标 Sharpie 之后安装，让我们启动终端应用并输入以下命令以获取有关所有工具，它提供了可帮助在绑定中的帮助：
+成功安装目标 Sharpie 后, 请启动终端应用并输入以下命令, 获取有关它提供的所有工具的帮助, 以帮助进行绑定:
 
 ```bash
 sharpie -help
 ```
 
-如果我们执行上面的命令，将生成以下输出：
+如果执行上面的命令, 则将生成以下输出:
 
 ```bash
 Europa:Resources kmullins$ sharpie -help
@@ -392,12 +392,12 @@ Available Tools:
 Europa:Resources kmullins$
 ```
 
-为本演练中，我们将使用以下目标 Sharpie 工具：
+出于本演练的目的, 我们将使用以下目标 Sharpie 工具:
 
-- **xcode** -此工具为我们提供了有关我们当前的 Xcode 安装以及 iOS 和 Mac Api，我们已安装了版本的信息。 我们将使用此信息更高版本生成我们的绑定时。
-- **将绑定**-我们将使用此工具来分析 **.h**到初始 InfColorPicker 项目中的文件**ApiDefinition.cs**并**StructsAndEnums.cs**文件。
+- **xcode** -此工具提供我们当前 xcode 安装的相关信息, 以及我们安装的 IOS 和 Mac api 版本。 稍后我们将在生成绑定时使用此信息。
+- **bind** -我们将使用此工具将 InfColorPicker 项目中的 **.h**文件分析为初始**ApiDefinition.cs**和**StructsAndEnums.cs**文件。
 
-若要获取特定的目标 Sharpie 工具的帮助，请输入工具的名称和`-help`选项。 例如，`sharpie xcode -help`将返回以下输出：
+若要获取特定目标 Sharpie 工具的帮助, 请输入工具的名称和`-help`选项。 例如, `sharpie xcode -help`返回以下输出:
 
 ```bash
 Europa:Resources kmullins$ sharpie xcode -help
@@ -411,7 +411,7 @@ Options:
 Europa:Resources kmullins$
 ```
 
-我们可以在绑定过程之前，我们需要通过在终端中输入以下命令获取有关当前已安装 Sdk 的信息`sharpie xcode -sdks`:
+在可以开始绑定过程之前, 需要通过在终端`sharpie xcode -sdks`中输入以下命令来获取有关当前已安装的 sdk 的信息:
 
 ```bash
 amyb:Desktop amyb$ sharpie xcode -sdks
@@ -421,17 +421,17 @@ sdk: macosx10.11     arch: x86_64  i386
 sdk: watchos2.2      arch: armv7
 ```
 
-综上所述，我们可以看到，我们有`iphoneos9.3`在我们的机器上安装 SDK。 使用此信息后，我们已准备好分析 InfColorPicker 项目`.h`文件到初始**ApiDefinition.cs**和`StructsAndEnums.cs`InfColorPicker 项目。
+在上面, 我们可以看到我们的`iphoneos9.3`计算机上已安装了 SDK。 利用此信息, 我们可以将 InfColorPicker 项目`.h`文件分析到初始**ApiDefinition.cs**和`StructsAndEnums.cs` InfColorPicker 项目中。
 
-在终端应用中输入以下命令：
+在终端应用中输入以下命令:
 
 ```bash
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-其中`[full-path-to-project]`是到目录的完整路径位置**InfColorPicker** Xcode 项目文件位于我们的计算机，和 [iphone 操作系统] 是 iOS SDK，我们已安装了，如标记所示`sharpie xcode -sdks`命令。 请注意，在此示例中我们已传递 **\*.h**作为参数，其中包括*所有*此目录-中的标头文件通常您应不这样做，而改为仔细阅读标头文件，以查找顶层 **.h**引用的所有其他相关文件，并只需将其传递给目标 Sharpie 文件。
+其中`[full-path-to-project]`是**InfColorPicker** Xcode 项目文件位于计算机上的目录的完整路径, [iphone-os] 是我们安装的 iOS SDK, `sharpie xcode -sdks`如命令所述。 请注意, 在此示例中, 我们已将 **\*.h**作为参数传递, 其中包含此目录中的*所有*头文件-通常不应执行此操作, 而是仔细阅读标头文件以查找顶级 **.h**引用所有其他相关文件的文件, 只是将其传递到目标 Sharpie。
 
-以下[输出](walkthrough-images/os05.png)将生成在终端中：
+在终端中将生成以下[输出](walkthrough-images/os05.png):
 
 ```bash
 Europa:Resources kmullins$ sharpie bind -output InfColorPicker -namespace InfColorPicker -sdk iphoneos8.1 /Users/kmullins/Projects/InfColorPicker/InfColorPicker/InfColorPicker.h -unified
@@ -458,14 +458,14 @@ In file included from /Users/kmullins/Projects/InfColorPicker/InfColorPicker/Inf
 Europa:Resources kmullins$
 ```
 
-并**InfColorPicker.enums.cs**并**InfColorPicker.cs**将我们目录中创建文件：
+并且将在目录中创建**InfColorPicker.enums.cs**和**InfColorPicker.cs**文件:
 
 [![](walkthrough-images/os06.png "InfColorPicker.enums.cs 和 InfColorPicker.cs 文件")](walkthrough-images/os06.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
-我们在上面创建的绑定项目中打开这两个文件。 将复制的内容**InfColorPicker.cs**文件，并将其粘贴到**ApiDefinition.cs**文件中，替换现有`namespace ...`代码块的内容与**InfColorPicker.cs**文件 (离开`using`语句不变):
+在上面创建的绑定项目中打开这两个文件。 复制**InfColorPicker.cs**文件的内容并将其粘贴到**ApiDefinition.cs**文件中, 将现有`namespace ...`代码块替换为**InfColorPicker.cs**文件的内容 (保留`using`语句完整):
 
 ![](walkthrough-images/os07.png "InfColorPickerControllerDelegate 文件")
 
@@ -473,43 +473,43 @@ Europa:Resources kmullins$
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-我们在上面创建的绑定项目中打开这两个文件。 将复制的内容**InfColorPicker.cs**文件 (从**Mac 生成主机**) 并将其粘贴到**ApiDefinition.cs**文件中，替换现有`namespace ...`代码块的内容**InfColorPicker.cs**文件 (离开`using`语句不变)。
+在上面创建的绑定项目中打开这两个文件。 复制**InfColorPicker.cs**文件的内容 (从**Mac 生成主机**), 并将其粘贴到**ApiDefinition.cs**文件, 并将现有`namespace ...`代码块替换为**InfColorPicker.cs**文件的内容 (`using`保持语句不变)。
 
 
 -----
 
 <a name="Normalize_the_API_Definitions"/>
 
-## <a name="normalize-the-api-definitions"></a>规范化的 API 定义
+## <a name="normalize-the-api-definitions"></a>规范化 API 定义
 
-目标 Sharpie 有时会有问题翻译`Delegates`，因此我们将需要修改的定义`InfColorPickerControllerDelegate`接口，并替换`[Protocol, Model]`用以下行：
+目标 Sharpie 有时会转换`Delegates`问题, 因此我们需要修改`InfColorPickerControllerDelegate`接口的定义, 并将`[Protocol, Model]`行替换为以下内容:
 
 ```csharp
 [BaseType(typeof(NSObject))]
 [Model]
 ```
-因此，定义如下所示：
+这样定义如下所示:
 
 [![](walkthrough-images/os11.png "定义")](walkthrough-images/os11.png#lightbox)
 
-接下来，我们执行的内容相同的操作`InfColorPicker.enums.cs`文件，复制和粘贴它们`StructsAndEnums.cs`文件，保留`using`保持不变的语句：
+接下来, 我们对`InfColorPicker.enums.cs`文件的内容执行相同的操作, 将这些内容复制并粘贴到`StructsAndEnums.cs`文件中, 使`using`语句保持不变:
 
-[![](walkthrough-images/os09.png "内容 StructsAndEnums.cs 文件 ")](walkthrough-images/os09.png#lightbox)
+[![](walkthrough-images/os09.png "StructsAndEnums.cs 文件的内容")](walkthrough-images/os09.png#lightbox)
 
-您还可能会发现目标 Sharpie 已批注的绑定`[Verify]`属性。 这些属性指示您应该验证目标 Sharpie 通过比较与原始 C/Objective C 声明 （它将在绑定声明上方的注释中提供） 的绑定未正确的做法。 确认绑定后，应删除验证属性。 有关详细信息，请参阅[验证](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)指南。
+你还可能会发现, 目标 Sharpie 已将绑定注释`[Verify]`为属性。 这些属性指示您应该通过将绑定与原始 C/目标-C 声明 (将在绑定声明中的注释中提供) 进行比较来验证目标 Sharpie 是否执行了正确的操作。 验证绑定后, 应删除 "验证" 属性。 有关详细信息, 请参阅[验证](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)指南。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 
-此时，我们绑定的项目应完成并可以生成。 让我们来生成我们绑定的项目，并确保我们最终会有任何错误：
+此时, 我们的绑定项目应已完成, 可以开始生成。 让我们来构建绑定项目, 并确保最终没有错误:
 
-[生成绑定项目，并确保没有任何错误](walkthrough-images/os12.png)
+[生成绑定项目并确保没有错误](walkthrough-images/os12.png)
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-此时，我们绑定的项目应完成并可以生成。 让我们来生成我们绑定的项目，并确保我们最终会有任何错误。
+此时, 我们的绑定项目应已完成, 可以开始生成。 让我们来构建绑定项目, 并确保最终不会有任何错误。
 
 
 -----
@@ -518,57 +518,57 @@ Europa:Resources kmullins$
 
 ## <a name="using-the-binding"></a>使用绑定
 
-请按照以下步骤创建示例 iPhone 应用程序，以使用的 iOS 绑定库上面创建操作：
+按照以下步骤创建一个示例 iPhone 应用程序, 以使用上面创建的 iOS 绑定库:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **创建 Xamarin.iOS 项目**-添加一个名为的新 Xamarin.iOS 项目**InfColorPickerSample**到解决方案，如以下屏幕截图中所示：
+1. **创建 Xamarin Ios 项目**-向解决方案添加名为**InfColorPickerSample**的新的 Xamarin iOS 项目, 如以下屏幕截图所示:
 
     ![](walkthrough-images/use01.png "添加单一视图应用")
 
     ![](walkthrough-images/use01a.png "设置标识符")
 
-1. **将引用添加到绑定项目**-更新**InfColorPickerSample**项目，以便它具有对引用**InfColorPickerBinding**项目：
+1. **将引用添加到绑定项目**-更新**InfColorPickerSample**项目, 使其具有对**InfColorPickerBinding**项目的引用:
 
-    ![](walkthrough-images/use02.png "添加对绑定项目引用")
+    ![](walkthrough-images/use02.png "添加对绑定项目的引用")
 
-1. **创建用户界面 iPhone** -双击**mainstoryboard.storyboard**中的文件**InfColorPickerSample**项目以在 iOS 设计器中编辑它。 添加**按钮**到视图，并调用它`ChangeColorButton`，在下面的示例所示：
+1. **创建 IPhone 用户界面**-双击**InfColorPickerSample**项目中的**Mainstoryboard.storyboard**文件可在 iOS 设计器中对其进行编辑。 将一个**按钮**添加到视图并调用它`ChangeColorButton`, 如下所示:
 
-    ![](walkthrough-images/use03.png "向视图添加一个按钮")
+    ![](walkthrough-images/use03.png "向视图添加按钮")
 
-1. **添加 InfColorPickerView.xib** -InfColorPicker OBJECTIVE-C 库包括 **.xib**文件。 Xamarin.iOS 不包括此 **.xib**在绑定项目中，这将导致在我们的示例应用程序的运行时错误。 对此解决方法是将添加 **.xib**对 Xamarin.iOS 项目文件。 选择在 Xamarin.iOS 项目，右键单击并选择**添加 > 添加文件**，并添加 **.xib**文件中，如以下屏幕截图所示：
+1. **添加 xib** -InfColorPicker InfColorPickerView 库包含**xib**文件。 Xamarin 不会在绑定项目中包含**xib** , 这将导致示例应用程序中出现运行时错误。 解决此问题的方法是将**xib**文件添加到 Xamarin iOS 项目。 选择 "Xamarin" 项目, 右键单击并选择 "**添加" >** "添加文件", 并添加**xib**文件, 如以下屏幕截图所示:
 
-    ![](walkthrough-images/use04.png "添加 InfColorPickerView.xib")
+    ![](walkthrough-images/use04.png "添加 InfColorPickerView. xib")
 
-1. 当要求时，将复制 **.xib**文件到项目中的。
+1. 系统提示时, 将**xib**文件复制到项目中。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. **创建 Xamarin.iOS 项目**-添加一个名为的新 Xamarin.iOS 项目**InfColorPickerSample**使用**单一视图应用**模板：
+1. **创建 Xamarin Ios 项目**-使用 "**单一视图应用**" 模板添加名为**InfColorPickerSample**的新 Xamarin 项目:
 
     [![iOS 应用 (Xamarin) 项目](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
     [![选择模板](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
-1. **将引用添加到绑定项目**-更新**InfColorPickerSample**项目，以便它具有对引用**InfColorPickerBinding**项目：
+1. **将引用添加到绑定项目**-更新**InfColorPickerSample**项目, 使其具有对**InfColorPickerBinding**项目的引用:
 
     ![](walkthrough-images/use02vs.png "将引用添加到绑定项目")
 
-1. **创建用户界面 iPhone** -双击**mainstoryboard.storyboard**中的文件**InfColorPickerSample**项目以在 iOS 设计器中编辑它。 添加**按钮**到视图，并调用它`ChangeColorButton`，在下面的示例所示：
+1. **创建 IPhone 用户界面**-双击**InfColorPickerSample**项目中的**Mainstoryboard.storyboard**文件可在 iOS 设计器中对其进行编辑。 将一个**按钮**添加到视图并调用它`ChangeColorButton`, 如下所示:
 
     ![](walkthrough-images/use03vs.png "创建 iPhone 用户界面")
 
-1. **添加 InfColorPickerView.xib** -InfColorPicker OBJECTIVE-C 库包括 **.xib**文件。 Xamarin.iOS 不包括此 **.xib**在绑定项目中，这将导致在我们的示例应用程序的运行时错误。 对此解决方法是将添加 **.xib**对 Xamarin.iOS 项目从文件我们**Mac 生成主机**。 选择在 Xamarin.iOS 项目，右键单击并选择**外** > **现有项...** ，并添加 **.xib**文件。
+1. **添加 xib** -InfColorPicker InfColorPickerView 库包含**xib**文件。 Xamarin 不会在绑定项目中包含**xib** , 这将导致示例应用程序中出现运行时错误。 解决此问题的方法是将**xib**文件添加到**Mac 生成主机**的 Xamarin iOS 项目。 选择 "Xamarin" 项目, 右键单击并选择 "**添加** > **现有项 ...** ", 然后添加**xib**文件。
 
 -----
 
-接下来，让我们快速看一下在 OBJECTIVE-C 和我们处理这些绑定中的协议和C#代码。
+接下来, 让我们快速了解目标-C 中的协议以及如何在绑定和C#代码中处理它们。
 
-### <a name="protocols-and-xamarinios"></a>协议和 Xamarin.iOS
+### <a name="protocols-and-xamarinios"></a>协议和 Xamarin
 
-Objective C 中一种协议定义方法 （或消息），可以在某些情况下使用。 从概念上讲，它们是非常类似于中的接口C#。 OBJECTIVE-C 协议之间的主要区别和一个C#接口是协议可以有可选的方法的类没有实现的方法。 Objective C 使用@optional关键字用于指示哪些方法是可选的。 有关协议的详细信息请参阅[事件、 协议和委托](~/ios/app-fundamentals/delegates-protocols-and-events.md)。
+在目标-C 中, 协议定义可在某些情况下使用的方法 (或消息)。 从概念上讲, 它们与中C#的接口非常类似。 目标为 C 协议与C#接口之间的一个主要区别是, 协议可以具有可选的方法-类不需要实现的方法。 目标-C 使用@optional关键字来指示哪些方法是可选的。 有关协议的详细信息, 请参阅[事件、协议和委托](~/ios/app-fundamentals/delegates-protocols-and-events.md)。
 
-**InfColorPickerController**具有一个此类协议，以下代码段中所示：
+**InfColorPickerController**有一个此类协议, 如以下代码片段所示:
 
 ```csharp
 @protocol InfColorPickerControllerDelegate
@@ -583,7 +583,7 @@ Objective C 中一种协议定义方法 （或消息），可以在某些情况�
 @end
 ```
 
-通过使用此协议**InfColorPickerController**以通知用户上选择了一种新颜色和的客户端**InfColorPickerController**已完成。 目标 Sharpie 映射此协议，如下面的代码段中所示：
+**InfColorPickerController**使用此协议通知客户端用户已选择了新颜色并且**InfColorPickerController**已完成。 目标 Sharpie 映射了此协议, 如以下代码片段所示:
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -599,22 +599,22 @@ public partial interface InfColorPickerControllerDelegate {
 
 ```
 
-Xamarin.iOS 绑定库编译时，将创建名为的抽象基类`InfColorPickerControllerDelegate`，它使用虚拟方法实现此接口。
+编译绑定库时, Xamarin 会创建一个名`InfColorPickerControllerDelegate`为的抽象基类, 该基类用虚方法实现此接口。
 
-有两种方法，我们可以在 Xamarin.iOS 应用程序中实现此接口：
+可以通过两种方法在 Xamarin iOS 应用程序中实现此接口:
 
-- **强委托**-使用强委托时，需要创建C#类的子类`InfColorPickerControllerDelegate`并重写相应的方法。 **InfColorPickerController**将使用此类的实例与其客户端进行通信。
-- **弱委派**-弱委派是一种略有不同的技术，包括一些类上创建一个公共方法 (如`InfColorPickerSampleViewController`)，然后公开该方法`InfColorPickerDelegate`协议通过`Export`属性。
+- **强委托**-使用强委托涉及创建子类C# `InfColorPickerControllerDelegate`并重写相应方法的类。 **InfColorPickerController**将使用此类的实例与客户端通信。
+- **弱委托**-弱委托是一种略有不同的技术, 它涉及在某个类 (如`InfColorPickerSampleViewController`) 上创建一个公共方法, 然后通过`Export`特性`InfColorPickerDelegate`将该方法公开给协议。
 
-强委托提供了 Intellisense、 类型安全和更好的封装。 出于这些原因，应使用强委托您可以在其中，而不是弱委派。
+强委托提供 Intellisense、类型安全性和更好的封装。 出于这些原因, 应该使用强委托, 而不是弱委托。
 
-在本演练中，我们将讨论这两种技术： 首次实现强委托，然后介绍了如何实现弱委派。
+在本演练中, 我们将讨论这两种方法: 首先实现强委托, 然后说明如何实现弱委托。
 
 ### <a name="implementing-a-strong-delegate"></a>实现强委托
 
-最后，Xamarin.iOS 应用程序使用强委托响应`colorPickerControllerDidFinish:`消息：
+使用强委托完成 Xamarin iOS 应用程序以响应`colorPickerControllerDidFinish:`消息:
 
-**子类 InfColorPickerControllerDelegate** -将新类添加到名为的项目`ColorSelectedDelegate`。 编辑类，使它具有以下代码：
+**子类 InfColorPickerControllerDelegate** -将新类添加到名`ColorSelectedDelegate`为的项目。 编辑类, 使其具有以下代码:
 
 ```csharp
 using InfColorPickerBinding;
@@ -640,15 +640,15 @@ namespace InfColorPickerSample
 }
 ```
 
-Xamarin.iOS 将绑定 OBJECTIVE-C 的委托，通过创建名为的抽象基类`InfColorPickerControllerDelegate`。 子类此类型和重写`ColorPickerControllerDidFinish`方法访问的值`ResultColor`属性的`InfColorPickerController`。
+Xamarin 将通过创建一个名`InfColorPickerControllerDelegate`为的抽象基类来绑定目标 C 委托。 将此类型划分为子类`ColorPickerControllerDidFinish`并重写方法以访问的`ResultColor`属性`InfColorPickerController`的值。
 
-**创建一个实例 ColorSelectedDelegate** -我们的事件处理程序将需要的实例`ColorSelectedDelegate`我们在上一步中创建的类型。 编辑类`InfColorPickerSampleViewController`并将以下实例变量添加到类：
+**创建 ColorSelectedDelegate 的实例**-我们的事件处理程序将需要在上一`ColorSelectedDelegate`步中创建的类型的实例。 编辑类`InfColorPickerSampleViewController` , 并将以下实例变量添加到类:
 
 ```csharp
 ColorSelectedDelegate selector;
 ```
 
-**初始化 ColorSelectedDelegate 变量**-若要确保`selector`是一个有效实例，更新方法`ViewDidLoad`中`ViewController`以匹配以下代码片段：
+**初始化 ColorSelectedDelegate 变量**-若要确保是`selector`有效的实例, 请更新中`ViewController`的`ViewDidLoad`方法以匹配以下代码片段:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -658,7 +658,7 @@ public override void ViewDidLoad ()
     selector = new ColorSelectedDelegate (this);
 }
 ```
-**实现方法 HandleTouchUpInsideWithStrongDelegate** -下一步实现的事件处理程序时在用户触摸**ColorChangeButton**。 编辑`ViewController`，并添加以下方法：
+**实现方法 HandleTouchUpInsideWithStrongDelegate** -接下来, 在用户接触**ColorChangeButton**时实现事件处理程序。 编辑`ViewController`并添加以下方法:
 
 ```csharp
 using InfColorPicker;
@@ -673,19 +673,19 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 ```
 
-我们首先获取的实例`InfColorPickerController`通过静态方法，并使该实例通过属性我们强委托注意`InfColorPickerController.Delegate`。 此属性是自动生成为我们的目标 Sharpie。 最后我们调用`PresentModallyOverViewController`以显示的视图`InfColorPickerSampleViewController.xib`，以便用户可以选择一种颜色。
+首先, 我们`InfColorPickerController`通过静态方法获取实例, 并通过属性`InfColorPickerController.Delegate`使该实例知道我们的强委托。 此属性是由目标 Sharpie 自动生成的。 最后, 我们`PresentModallyOverViewController`调用来显示视图`InfColorPickerSampleViewController.xib` , 以便用户可以选择颜色。
 
-**运行应用程序**-此时我们已经完成了所有我们的代码。 如果您运行该应用程序，您应能更改的背景色`InfColorColorPickerSampleView`如以下屏幕截图中所示：
+**运行应用程序**, 此时我们已经完成了所有代码。 如果运行应用程序, 你应该能够更改的`InfColorColorPickerSampleView`背景色, 如以下屏幕截图所示:
 
 [![](walkthrough-images/run01.png "运行应用程序")](walkthrough-images/run01.png#lightbox)
 
-祝贺你！ 此时您已成功创建并绑定 OBJECTIVE-C 库在 Xamarin.iOS 应用程序中使用。 接下来，让我们了解如何使用弱委托。
+祝贺你！ 此时, 您已成功创建并绑定了用于 Xamarin iOS 应用程序的目标-C 库。 接下来, 让我们了解如何使用弱委托。
 
-### <a name="implementing-a-weak-delegate"></a>实现弱委派
+### <a name="implementing-a-weak-delegate"></a>实现弱委托
 
-而不是设置为特定的委托绑定到 OBJECTIVE-C 的协议的类的子类，Xamarin.iOS 还可以从派生的任何类中实现此协议方法`NSObject`，修饰方法使用与`ExportAttribute`，，然后提供相应的选择器。 为您的类的一个实例时采用此方法时，分配`WeakDelegate`属性，而不是个`Delegate`属性。 弱委派提供了灵活地采用委托类按不同的继承层次结构。 让我们了解如何实现和使用弱委派在 Xamarin.iOS 应用程序中。
+Xamarin 也允许在派生自的任何类中实现协议方法, 并`NSObject` `ExportAttribute`使用修饰方法, 然后在派生自的任何类中实现协议方法, 而不是将绑定到的类作为子类的子类提供适当的选择器。 采用此方法时, 请将类`WeakDelegate`的实例分配给属性, 而不是分配`Delegate`给属性。 弱委托使你可以灵活地将委托类向下移动到不同的继承层次结构。 让我们看看如何在我们的 Xamarin iOS 应用程序中实现和使用弱委托。
 
-**创建事件处理程序为 TouchUpInside** -让我们来创建新的事件处理程序`TouchUpInside`更改背景色按钮的事件。 此处理程序将填充与相同的角色`HandleTouchUpInsideWithStrongDelegate`我们在上一节中创建，但将使用弱委派而不是强委托处理程序。 编辑类`ViewController`，并添加以下方法：
+**创建 TouchUpInside 的事件处理程序**-让我们为`TouchUpInside` "更改背景色" 按钮的事件创建新的事件处理程序。 此处理程序将填充与我们在上`HandleTouchUpInsideWithStrongDelegate`一节中创建的处理程序相同的角色, 但将使用弱委托而不是强委托。 编辑类`ViewController`, 并添加以下方法:
 
 ```csharp
 private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
@@ -696,7 +696,7 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
     picker.PresentModallyOverViewController (this);
 }
 ```
-**更新 ViewDidLoad** -我们必须更改`ViewDidLoad`，使其使用我们刚刚创建的事件处理程序。 编辑`ViewController`并更改`ViewDidLoad`为类似于下面的代码段：
+**Update ViewDidLoad** -必须更改`ViewDidLoad` , 使其使用刚刚创建的事件处理程序。 编辑`ViewController`和更改`ViewDidLoad`为类似于以下代码片段:
 
 
 ```csharp
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**句柄 colorPickerControllerDidFinish:消息**-当`ViewController`是完成后，iOS 将消息发送`colorPickerControllerDidFinish:`到`WeakDelegate`。 我们需要创建C#可以处理此消息的方法。 若要执行此操作，我们创建C#方法，然后将其与修饰`ExportAttribute`。 编辑`ViewController`，并将以下方法添加到类：
+**处理 colorPickerControllerDidFinish:消息** `colorPickerControllerDidFinish:` `WeakDelegate`- `ViewController`完成后, iOS 会将消息发送到。 我们需要创建一个C#可处理此消息的方法。 为此, 我们创建了一个C#方法, 然后使用将`ExportAttribute`其修饰。 编辑`ViewController`, 并将以下方法添加到类:
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -720,15 +720,15 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 ```
 
-运行该应用程序。 现在应进行的操作完全按照它以前的但它使用弱委派而不强的委托。 此时您已成功完成此演练。 现在应已了解如何创建和使用 Xamarin.iOS 绑定项目。
+运行该应用程序。 它现在应完全按照之前的方式运行, 但它使用弱委托, 而不是强委托。 此时, 你已成功完成本演练。 你现在应该已经了解了如何创建和使用 Xamarin iOS 绑定项目。
 
 ## <a name="summary"></a>总结
 
-本文介绍创建和使用 Xamarin.iOS 绑定项目的过程。 首先，我们讨论了如何将现有的 OBJECTIVE-C 库编译为静态库。 然后，我们介绍如何创建 Xamarin.iOS 绑定项目，以及如何使用目标 Sharpie 生成 Objective C 库的 API 定义。 我们讨论了如何更新和调整生成的 API 定义，以使其适合公共使用。 Xamarin.iOS 绑定项目完成后，我们将使用该绑定中的 Xamarin.iOS 应用程序，重点是使用委托强和弱委托。
+本文逐步介绍了创建和使用 Xamarin iOS 绑定项目的过程。 首先, 我们介绍了如何将现有的目标 C 库编译为静态库。 然后我们介绍了如何创建 Xamarin iOS 绑定项目, 以及如何使用客观 Sharpie 为目标-C 库生成 API 定义。 我们讨论了如何更新和调整生成的 API 定义, 使其适用于公共使用。 完成 Xamarin iOS 绑定项目后, 我们将在 Xamarin iOS 应用程序中使用该绑定, 重点介绍使用强委托和弱委托。
 
 ## <a name="related-links"></a>相关链接
 
-- [绑定示例 （示例）](https://developer.xamarin.com/samples/monotouch/InfColorPicker/)
+- [绑定示例 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/infcolorpicker)
 - [绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [绑定详细信息](~/cross-platform/macios/binding/overview.md)
 - [绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)

@@ -8,39 +8,39 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 661f27b90882234ddc629ac280690d534aca499d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977798"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657035"
 ---
 # <a name="layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的布局
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Forms 具有多个布局和功能的组织在屏幕上的内容。
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Xamarin.Forms 布局视频**
+**Xamarin. Forms 布局视频**
 
 每个布局控件被下述，以及如何处理屏幕方向更改的详细信息：
 
-* **[StackLayout](stack-layout.md)**  -用于线性增长，排列视图水平或垂直。 视图在 StackLayout 中的可以对齐到中心，左或向右的布局。
-* **[AbsoluteLayout](absolute-layout.md)**  -用于排列视图通过设置坐标和大小方面绝对值或比率。 AbsoluteLayout 可以用于分层视图，以及定位到左、 靠右或居中。
-* **[RelativeLayout](relative-layout.md)**  -用于排列视图通过设置相对于其父级的尺寸和位置的约束。
-* **[网格](grid.md)** -用于排列在网格中的视图。 根据绝对值或比率，可以指定行和列。
-* **[FlexLayout](flex-layout.md)**  -用于与包装水平或垂直排列视图。
-* **[ScrollView](scroll-view.md)**  -用于提供滚动时视图无法完全适合屏幕的界限。
-* **[LayoutOptions](layout-options.md)**  – 定义对齐方式和视图，相对于其父级的扩展。
-* **[输入透明度](#input_transparency)** – 指定元素是否接收输入。
-* **[边距和填充](margin-and-padding.md)** – 演示如何在用户界面中呈现元素时控制布局行为。
-* **[设备方向](device-orientation.md)** – 说明如何处理设备方向更改。
-* **[在平板电脑和桌面设备上的布局](tablet.md)** – 演示如何针对每个平台上较大的屏幕进行优化。
-* **[可绑定的布局](bindable-layouts.md)** – 启用布局类来生成其内容通过绑定到的项的集合。
-* **[创建自定义布局](custom.md)** – 介绍如何创建一个自定义布局的类。
-* **[布局压缩](layout-compression.md)** – 删除指定从可视化树的布局以试图提升页面呈现性能。
+* **[StackLayout](stack-layout.md)** –用于以线性方式 (水平或垂直) 排列视图。 视图在 StackLayout 中的可以对齐到中心，左或向右的布局。
+* **[AbsoluteLayout](absolute-layout.md)** –用于通过设置坐标 & 大小 (以绝对值或比率为依据) 来排列视图。 AbsoluteLayout 可以用于分层视图，以及定位到左、 靠右或居中。
+* **[RelativeLayout](relative-layout.md)** –用于通过相对于其父级的维度 & 位置设置约束来排列视图。
+* **[网格](grid.md)** -用于排列网格中的视图。 根据绝对值或比率，可以指定行和列。
+* **[FlexLayout](flex-layout.md)** -用于水平或垂直排列视图, 并进行换行。
+* **[ScrollView](scroll-view.md)** –用于在视图无法完全容纳在屏幕边界内时提供滚动。
+* **[LayoutOptions](layout-options.md)** -定义视图相对于其父级的对齐方式和展开。
+* **[输入透明度](#input_transparency)** –指定元素是否接收输入。
+* **[边距和边距](margin-and-padding.md)** –演示如何在用户界面中呈现元素时控制布局行为。
+* **[设备方向](device-orientation.md)** -介绍如何处理设备方向更改。
+* **[Tablet 和桌面设备上的布局](tablet.md)** –演示如何针对每个平台上的更大屏幕进行优化。
+* 可 **[绑定布局](bindable-layouts.md)** -通过绑定到项的集合, 启用布局类以生成其内容。
+* **[创建自定义布局](custom.md)** -介绍如何创建自定义布局类。
+* **[布局压缩](layout-compression.md)** -从可视化树中删除指定的布局, 以尝试改善页面呈现性能。
 
 平台控件还可直接在与 Xamarin.Forms 布局[**本机嵌入**](~/xamarin-forms/platform/native-views/index.md) （新 Xamarin.Forms 2.2 中），你可以[**创建自定义布局**](custom.md)来满足特定要求。
 
@@ -206,7 +206,7 @@ iOS、 Android 和通用 Windows 平台支持更大的屏幕大小上的所有�
 
 ### <a name="bindable-layoutsbindable-layoutsmd"></a>[可绑定的布局](bindable-layouts.md)
 
-`BindableLayout`类，派生的任何布局类[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)类来生成其内容通过绑定到的项，用于设置与每个项的外观的选项的集合[ `DataTemplate`](xref:Xamarin.Forms.DataTemplate).
+类可实现[`Layout<T>`](xref:Xamarin.Forms.Layout`1)从类派生的任何布局类, 通过绑定到项的集合生成其内容, 并且可以选择使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)设置每个项的外观。 `BindableLayout`
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[创建自定义布局](custom.md)
 
@@ -225,5 +225,5 @@ Xamarin.Forms 定义了四个布局类- [ `StackLayout` ](xref:Xamarin.Forms.Sta
 
 - [Apple 的人机接口指南](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG)
 - [Android 设计网站](https://developer.android.com/design/index.html)
-- [布局 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 示例 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 93218289cefe26c523bf14721202f7ec4743f022
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659074"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656686"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的文件处理
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 使用 .NET Standard 库中的代码或使用嵌入式资源，即可实现使用 Xamarin.Forms 处理文件。 
 
@@ -87,7 +87,7 @@ using (var reader = new System.IO.StreamReader (stream)) {
 }
 ```
 
-然后，可以使用 `text` 变量来显示文本，或者在代码中以其他方式使用它。 [示例应用](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)的屏幕截图显示了在 `Label` 控件中呈现的文本。
+然后，可以使用 `text` 变量来显示文本，或者在代码中以其他方式使用它。 [示例应用](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)的屏幕截图显示了在 `Label` 控件中呈现的文本。
 
  [![内嵌在 PCL 中的文本文件](files-images/pcltext-sml.png "内嵌在 PCL 中的文本文件显示在应用中")](files-images/pcltext.png#lightbox "Embedded Text File in PCL Displayed in App")
 
@@ -166,7 +166,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 ## <a name="related-links"></a>相关链接
 
-- [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+- [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 中的文件系统](~/ios/app-fundamentals/file-system.md)
 

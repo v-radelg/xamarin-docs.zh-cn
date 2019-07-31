@@ -7,16 +7,16 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: da820b0c48eaec52da76504b1aed8e9793c1e74d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f526be2156c4d74cf695b6b11706e3bbb7f355bb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61352079"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642986"
 ---
 # <a name="non-affine-transforms"></a>非仿射转换
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用转换矩阵的第三个列创建透视和锥化效果_
 
@@ -473,4 +473,4 @@ W 和 H 表示宽度和位图的高度。 第一个转换`S`只是缩放为 1 �
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

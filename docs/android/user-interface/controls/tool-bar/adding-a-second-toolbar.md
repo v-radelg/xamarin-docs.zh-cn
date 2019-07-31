@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: fc95c05c1945464cd9cac8565d8a11ff1b4c7e1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175107"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645157"
 ---
 # <a name="adding-a-second-toolbar"></a>添加第二个工具栏
 
 
 ## <a name="overview"></a>概述 
 
-`Toolbar`可以执行多个替换操作栏&ndash;它可以在活动内使用多个时间可以放置任意位置在屏幕上，自定义，可以将它配置为跨越仅屏幕的部分的宽度。 下面的示例演示了如何创建第二个`Toolbar`并将其放在屏幕的底部。 这`Toolbar`实现**副本**，**剪切**，并且**粘贴**菜单项。 
+除了替换操作栏&ndash;以外, 它还可以在一个活动中多次使用, 并且可以对其进行自定义以放置在屏幕上的任何位置, 并且可以将其配置为仅覆盖屏幕的部分宽度。 `Toolbar` 下面的示例演示如何创建另`Toolbar`一个, 并将其放置在屏幕底部。 这`Toolbar`会实现 "**复制**"、"**剪切**" 和 "**粘贴**" 菜单项。 
 
 
 ## <a name="define-the-second-toolbar"></a>定义第二个工具栏 
 
-编辑布局文件**Main.axml**和包含其内容替换为以下 XML:
+编辑布局文件**main.axml** , 并将其内容替换为以下 XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -54,53 +54,53 @@ ms.locfileid: "61175107"
 </RelativeLayout>
 ```
 
-此 XML 将添加第二个`Toolbar`用空屏幕的底部到`ImageView`填充在屏幕中间。 此高度`Toolbar`设置为操作栏的高度： 
+此 XML 会将第`Toolbar`二个添加到屏幕的底部, 并`ImageView`在屏幕中间显示空的。 此`Toolbar`的高度设置为操作栏的高度: 
 
 ```xml
 android:minHeight="?android:attr/actionBarSize"
 ```
 
-背景色`Toolbar`设置为将在接下来定义以强调文字颜色：
+此`Toolbar`的背景色设置为将在下一次定义的强调文字颜色:
 
 ```xml
 android:background="?android:attr/colorAccent
 ```
 
-请注意，此`Toolbar`基于不同的主题 (**ThemeOverlay.Material.Dark.ActionBar**) 比使用`Toolbar`中创建[替换操作栏](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash;它不绑定到活动的窗口装潢或使用在第一个主题`Toolbar`。
+请注意, `Toolbar`这是基于与[操作栏](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash;创建时所使用的不同的主题 (**ThemeOverlay ActionBar**), 而不`Toolbar`是将其绑定到活动的窗口 décor 或第一个`Toolbar`中使用的主题。
 
-编辑**Resources/values/styles.xml**并将以下的强调文字颜色添加到样式定义： 
+编辑**资源/值/样式 .xml** , 并将以下强调颜色添加到样式定义: 
 
 ```xml
 <item name="android:colorAccent">#C7A935</item>
 ```
 
-这样，在底部工具栏深琥珀色颜色。 生成和运行应用程序在屏幕的底部显示一个空白的第二个工具栏： 
+这为底部工具栏提供了深灰色的琥珀色。 生成和运行应用会在屏幕底部显示空白的第二个工具栏: 
 
-[![在屏幕底部的黄色第二个工具栏使用应用程序的屏幕截图](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
+[![屏幕底部具有黄色第二个工具栏的应用屏幕截图](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
  
 ## <a name="add-edit-menu-items"></a>添加编辑菜单项 
 
-本部分介绍如何将编辑菜单项添加到底部`Toolbar`。 
+本部分介绍如何在底部`Toolbar`添加 "编辑" 菜单项。 
 
-若要将菜单项添加到辅助`Toolbar`: 
+向辅助副本`Toolbar`添加菜单项: 
 
-1.  添加到的菜单图标`mipmap-`文件夹的应用程序项目 （如果需要）。
+1.  将菜单图标添加到`mipmap-`应用项目的文件夹中 (如果需要)。
 
-2.  通过添加到一个额外的菜单资源文件中定义的菜单项的内容**资源/菜单**。 
+2.  通过将附加的菜单资源文件添加到**资源/菜单**来定义菜单项的内容。 
 
-3.  在活动的`OnCreate`方法中，找到`Toolbar`(通过调用`FindViewById`) 和放大量`Toolbar`的菜单。
+3.  在活动的`OnCreate`方法中, `Toolbar`查找 (通过`Toolbar`调用`FindViewById`) 并放大的菜单。
 
-4.  实现单击处理程序中的`OnCreate`的新菜单项。 
+4.  为新菜单项实现`OnCreate`中的 click 处理程序。 
 
-以下各节演示此过程的详细信息：**剪切**，**副本**，和**粘贴**菜单项添加到底部`Toolbar`。 
+以下部分详细说明了此过程:**剪切**、**复制**和**粘贴**菜单项添加到底部`Toolbar`。 
 
 
 
 ### <a name="define-the-edit-menu-resource"></a>定义编辑菜单资源
 
-在中**资源/菜单**子目录中，创建名为的新 XML 文件**edit_menus.xml**并将内容替换为以下 XML:
+在**资源/菜单**子目录中, 创建一个名为**EDIT_MENUS**的新 XML 文件, 并将内容替换为以下 XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -123,13 +123,13 @@ android:background="?android:attr/colorAccent
 </menu>
 ```
 
-此 XML 创建**剪切**，**副本**，并**粘贴**菜单项 (使用已添加到的图标`mipmap-`中的文件夹[替换操作栏](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
+此 XML 将创建**剪切**、**复制**和**粘贴**菜单项 (使用在`mipmap-` [替换操作栏](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)中添加到文件夹中的图标)。
 
 
 
-### <a name="inflate-the-menus"></a>放大量菜单
+### <a name="inflate-the-menus"></a>菜单菜单
 
-在末尾`OnCreate`中的方法**MainActivity.cs**，添加以下代码行： 
+在`OnCreate` **MainActivity.cs**的方法末尾, 添加以下代码行: 
 
 ```csharp
 var editToolbar = FindViewById<Toolbar>(Resource.Id.edit_toolbar);
@@ -140,28 +140,28 @@ editToolbar.MenuItemClick += (sender, e) => {
 };
 ```
 
-此代码定位`edit_toolbar`视图中定义**Main.axml**，将其标题设置为**编辑**，并增大其菜单项 (在中定义**edit_menus.xml**)。 它定义了一个菜单，单击显示 toast 通知来指示点击的编辑图标的处理程序。 
+此代码将查找`edit_toolbar`在**main.axml**中定义的视图, 将其标题设置为 "**编辑**", 并增加其菜单项 (在**edit_menus**中定义)。 它定义了一个菜单单击处理程序, 该处理程序显示 toast 以指示点击了哪个编辑图标。 
 
-生成并运行应用。 应用运行时，则将显示的文本和前面添加的图标如下所示： 
+生成并运行应用。 应用运行时, 将显示上面添加的文本和图标, 如下所示: 
 
-[![使用剪切、 复制和粘贴图标的底部工具栏的关系图](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
+[![带有剪切、复制和粘贴图标的底部工具栏示意图](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
-点击**剪切**菜单图标将导致显示以下 toast: 
+点击 "**剪切**" 菜单图标会显示以下 toast: 
 
-[![指示点击的剪切菜单图标 Toast 的屏幕截图](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
+[![Toast 屏幕截图, 指示点击了剪切菜单图标](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
-点击任一工具栏上的菜单项将显示生成 toast: 
+点击任一工具栏上的菜单项将显示生成的 toast: 
 
-[![屏幕截图的 Toast 有关保存、 复制和粘贴所点击的菜单项](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
+[![用于 "保存"、"复制" 和 "粘贴" 菜单项的 Toast 的屏幕截图](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
 
-## <a name="the-up-button"></a>上移按钮 
+## <a name="the-up-button"></a>向上键 
 
-依赖于大多数 Android 应用**回**应用导航的按钮; 按**回**按钮以便用户可以在上一屏幕。
-但是，您可能还想要提供**向上**便于用户在"已启动"到应用程序的主屏幕导航的按钮。 当用户选择**向上**按钮，用户会向上移到应用程序层次结构中较高级别&ndash;应用，即从用户返回弹出 back 堆栈而非弹出回到以前访问的多个活动活动。 
+大多数 Android 应用依赖于应用导航的 "**后退**" 按钮;按 "**后退**" 按钮会使用户进入上一屏幕。
+但是, 您可能还需要**提供一个按钮**, 使用户可以轻松地导航到应用程序的主屏幕。 当用户选择 "**向上**" 按钮时, 用户会在应用层次结构&ndash;中上移到较高的级别, 即, 应用在后退堆栈中弹出用户多个活动, 而不是弹出回以前访问的活动。 
 
-若要启用**向上**使用的第二个活动中的按钮`Toolbar`作为其操作栏中，调用`SetDisplayHomeAsUpEnabled`并`SetHomeButtonEnabled`中的第二个活动的方法`OnCreate`方法：
+若要在使用`Toolbar`作为操作栏的第二个活动中启用 "**上移**" 按钮`SetDisplayHomeAsUpEnabled` , 请调用第二个活动`OnCreate`的方法中的和`SetHomeButtonEnabled`方法:
 
 ```csharp
 SetActionBar (toolbar);
@@ -170,7 +170,7 @@ ActionBar.SetDisplayHomeAsUpEnabled (true);
 ActionBar.SetHomeButtonEnabled (true);
 ```
 
-[支持 v7 工具栏](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)代码示例演示如何**向上**中操作的按钮。 此示例 （它使用下文所述的 AppCompat 库） 实现该第二个活动使用工具栏**向上**返回到上一个活动的分层导航的按钮。 在此示例中，`DetailActivity`主页按钮使**向上**通过进行以下按钮`SupportActionBar`方法调用： 
+[Support V7 Toolbar](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)代码示例演示了操作中的**向上**键。 此示例 (使用下面所述的 AppCompat 库) 实现第二个活动, 该活动使用工具栏上的 "**上移**" 按钮将层次结构导航回上一个活动。 在此示例中, `DetailActivity`通过进行以下`SupportActionBar`方法调用, "主页" 按钮启用 "**向上**" 按钮: 
 
 ```csharp
 SetSupportActionBar (toolbar);
@@ -179,15 +179,15 @@ SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 SupportActionBar.SetHomeButtonEnabled (true);
 ```
 
-当用户导航从`MainActivity`到`DetailActivity`，则`DetailActivity`显示**向上**按钮 （左箭头） 的屏幕截图中所示：
+当用户导航`MainActivity`到`DetailActivity`时, 将`DetailActivity`显示一个 "**向上**" 按钮 (左指箭头), 如屏幕截图中所示:
 
-[![在工具栏中的向上按钮左箭头的屏幕截图示例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
+[![工具栏中的向上按钮左箭头的屏幕截图示例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-点击这**向上**按钮将导致应用程序返回到`MainActivity`。 在具有多个级别的层次结构更复杂的应用，点击此按钮将返回用户的应用中的下一步最高级别，而不是上一屏幕。 
+点击此**按钮**会使应用返回到`MainActivity`。 在具有多个层次结构级别的更复杂的应用中, 点击此按钮会将用户返回到应用中的下一个最高级别, 而不是返回到上一屏幕。 
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [棒糖形工具栏 （示例）](https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/)
-- [AppCompat 工具栏 （示例）](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)
+- [棒糖形工具栏 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar)
+- [AppCompat 工具栏 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)

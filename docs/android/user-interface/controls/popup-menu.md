@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: e7665ee1d3506fb4b6a237a7c6906d9bfb3e9cb1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 9b3e4177d6be5854e80952d091aa78787d9645bb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510213"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644926"
 ---
 # <a name="xamarinandroid-popup-menu"></a>Xamarin Android 弹出式菜单
 
@@ -82,4 +82,4 @@ showPopupMenu.Click += (s, arg) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [PopupMenuDemo (示例)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
+- [PopupMenuDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)

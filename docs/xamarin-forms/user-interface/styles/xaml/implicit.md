@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 0be5c788b5be3d01234cc9a3124fa6a01ded2394
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 328063fd6924902738722813cfb961e56af5385e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971132"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644479"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的隐式样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _隐式样式是指可供所有控件的相同的目标类型，而无需每个控件以引用样式。_
 
-## <a name="create-an-implicit-style-in-xaml"></a>在 XAML 中创建的隐式样式
+## <a name="create-an-implicit-style-in-xaml"></a>在 XAML 中创建隐式样式
 
 若要声明[ `Style` ](xref:Xamarin.Forms.Style)级别的页[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必须添加到页面，然后一个或多个`Style`声明可以包含在`ResourceDictionary`。 一个`Style`由*隐式*通过不指定`x:Key`属性。 然后将对匹配的可视元素应用样式`TargetType`确实如此，但不适用于元素派生自`TargetType`值。
 
@@ -57,7 +57,7 @@ _隐式样式是指可供所有控件的相同的目标类型，而无需每个�
 
 此外，第四个[ `Entry` ](xref:Xamarin.Forms.Entry)重写[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)并[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)属性隐式样式应用到不同`Color`值。
 
-### <a name="create-an-implicit-style-at-the-control-level"></a>在控件级别创建的隐式样式
+### <a name="create-an-implicit-style-at-the-control-level"></a>在控件级别创建隐式样式
 
 除了创建之外*隐式*页面级别的样式，则可以也在创建这些控件级别，如下面的代码示例中所示：
 
@@ -84,7 +84,7 @@ _隐式样式是指可供所有控件的相同的目标类型，而无需每个�
 
 有关创建在应用程序的样式信息[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，请参阅[全局样式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="create-an-implicit-style-in-c35"></a>在 C 中创建的隐式样式&#35;
+## <a name="create-an-implicit-style-in-c35"></a>在 C 中创建隐式样式&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) 实例可以添加到页面的[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中通过创建一个新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，然后通过将添加`Style`实例到`ResourceDictionary`，如中所示下面的代码示例：
 
@@ -121,9 +121,9 @@ public class ImplicitStylesPageCS : ContentPage
 
 ## <a name="apply-a-style-to-derived-types"></a>将样式应用于派生类型
 
-[ `Style.ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性启用要应用于从所引用的基类型派生的控件的样式[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性。 因此，此属性设置为`true`使单个样式以面向多个类型，前提是类型派生自基类型中指定`TargetType`属性。
+属性允许将样式应用于从[`TargetType`](xref:Xamarin.Forms.Style.TargetType)属性引用的基类型派生的控件。 [`Style.ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) 因此, 将此属性设置`true`为可启用单个样式以面向多个类型, 前提是这些类型派生自在`TargetType`属性中指定的基类型。
 
-下面的示例演示设置的背景色的隐式样式[ `Button` ](xref:Xamarin.Forms.Button)为红色的实例：
+下面的示例演示了一个隐式样式, 该样式将[`Button`](xref:Xamarin.Forms.Button)实例的背景色设置为红色:
 
 ```xaml
 <Style TargetType="Button"
@@ -133,7 +133,7 @@ public class ImplicitStylesPageCS : ContentPage
 </Style>
 ```
 
-将此样式放置在页面级[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)将导致它适用于所有[ `Button` ](xref:Xamarin.Forms.Button)实例的页上，以及从派生的任何控件`Button`。 但是，如果[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性保持取消设置，该样式将仅应用于`Button`实例。
+将此样式置于页面级别[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)将导致其应用于页面上的所有[`Button`](xref:Xamarin.Forms.Button)实例, 还会应用于从`Button`派生的任何控件。 但是, 如果[`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)属性仍未设置, 则样式仅`Button`应用于实例。
 
 等效 C# 代码如下：
 
@@ -157,8 +157,8 @@ Resources = new ResourceDictionary { buttonStyle };
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [使用样式 （示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
 - [资源库](xref:Xamarin.Forms.Setter)

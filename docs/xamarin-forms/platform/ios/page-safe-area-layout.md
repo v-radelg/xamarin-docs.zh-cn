@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的安全区域布局指南
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 特定于平台的以确保页面内容定位在屏幕上，则可以使用 iOS 11 和更高版本的所有设备的安全区域上。
+title: IOS 上的安全区域布局指南
+description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的, 确保页面内容定位在屏幕上, 此区域对于使用 iOS 11 及更高版本的所有设备是安全的。
 ms.prod: xamarin
 ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f38064027b4eb6dada2becc69b4163d6fa6082fb
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c6a2ec5a4d1466b7118e6cc7b03cc5518b27e2fb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65927015"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644532"
 ---
-# <a name="safe-area-layout-guide-on-ios"></a>在 iOS 上的安全区域布局指南
+# <a name="safe-area-layout-guide-on-ios"></a>IOS 上的安全区域布局指南
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此平台特定于 iOS 的用于确保页面内容定位在屏幕上，则可以使用 iOS 11 和更高版本的所有设备的安全区域上。 具体而言，这将有助于确保该内容未剪辑的舍入的设备角部、 家庭的指示符或在 iPhone X 上的传感器底座。设置使用在 XAML`Page.UseSafeArea`附加属性设置为`boolean`值：
+此 iOS 平台特定用于确保页面内容定位在屏幕上, 此区域对于使用 iOS 11 及更高版本的所有设备是安全的。 具体而言，这将有助于确保该内容未剪辑的舍入的设备角部、 家庭的指示符或在 iPhone X 上的传感器底座。设置使用在 XAML`Page.UseSafeArea`附加属性设置为`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -65,6 +65,6 @@ protected override void OnAppearing()
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

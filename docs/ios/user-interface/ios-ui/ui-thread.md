@@ -1,30 +1,30 @@
 ---
-title: 使用 Xamarin.iOS 中的 UI 线程
-description: 本文档介绍如何使用 Xamarin.iOS 中对 UI 线程。 它讨论了 UI 线程执行，提供后台线程示例中，并检查 async/await。
+title: 使用 Xamarin 中的 UI 线程
+description: 本文档介绍如何在 Xamarin 中使用 UI 线程。 它讨论 UI 线程执行, 提供后台线程示例并检查 async/await。
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: e4485c485b708bdec06f7f1dc22f0bf33e07e982
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 6f9f11a84f9a57d699a219958883afae33824e95
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827746"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655288"
 ---
-# <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin.iOS 中的 UI 线程
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin 中的 UI 线程
 
-应用程序用户界面始终是单线程，即使在多线程的设备 – 没有仅一种表示形式的屏幕，显示的内容的任何更改需要协调通过单个访问点。 这可以防止多个线程尝试 （例如） 在同一时间更新同一像素。
+应用程序用户界面始终是单线程的, 即使在多线程设备中–只有屏幕的一种表示形式, 并且对所显示内容所做的任何更改都需要通过单个 "访问点" 进行协调。 这可以防止多个线程尝试同时更新同一像素 (例如)。
 
-你的代码仅需更改用户界面控件的主 （或 UI） 线程。 （例如回调或后台线程中） 在不同线程发生的任何 UI 更新不获取呈现到屏幕，或甚至可能导致崩溃。
+你的代码只应从主 (或 UI) 线程对用户界面控件进行更改。 在不同线程 (如回调或后台线程) 上发生的任何 UI 更新可能无法呈现到屏幕上, 甚至可能会导致崩溃。
 
 ## <a name="ui-thread-execution"></a>UI 线程执行
 
-要在视图中，创建控件或处理用户启动的事件，如触摸屏输入时，会在 UI 线程的上下文中已执行代码。
+在视图中创建控件或处理用户启动的事件 (如触控) 时, 代码已在 UI 线程的上下文中执行。
 
-如果代码中的任务或回调的后台线程上执行它很可能不在主 UI 线程上执行。 在这种情况下应将代码包装在调用`InvokeOnMainThread`或`BeginInvokeOnMainThread`如下所示：
+如果代码是在后台线程上执行, 则在任务或回调中, 它很可能不会在主 UI 线程上执行。 在这种情况下, 应将代码包装在对`InvokeOnMainThread` `BeginInvokeOnMainThread`的调用中, 如下所示:
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,9 +32,9 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-`InvokeOnMainThread`方法定义上`NSObject`以便它可以从内部调用任何 UIKit 对象 （如视图或视图控制器） 上定义的方法。
+方法`InvokeOnMainThread`是在上`NSObject`定义的, 因此可以从在任何 UIKit 对象 (如视图或视图控制器) 上定义的方法中调用它。
 
-在调试 Xamarin.iOS 应用程序时，如果你的代码尝试从错误的线程访问 UI 控件，将引发错误。 这可帮助你跟踪并修复这些问题的 InvokeOnMainThread 方法。 这仅在调试时发生，且不会发布版本中引发错误。 此类情况下，将显示错误消息：
+调试 Xamarin iOS 应用程序时, 如果您的代码尝试从错误的线程访问 UI 控件, 将引发错误。 这可以帮助您跟踪并修复 InvokeOnMainThread 方法的这些问题。 这仅在调试时出现, 在发布版本中不会引发错误。 错误消息会如下所示:
 
  ![](ui-thread-images/image10.png "UI 线程执行")
 
@@ -43,7 +43,7 @@ InvokeOnMainThread ( () => {
 
 ## <a name="background-thread-example"></a>后台线程示例
 
-下面是尝试访问用户界面控件示例 ( `UILabel`) 从后台线程使用简单的线程：
+下面的示例尝试使用简单线程从后台线程访问用户界面控件`UILabel`(a):
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -51,7 +51,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-代码将引发`UIKitThreadAccessException`调试时。 若要解决此问题 （并确保只能从主 UI 线程访问用户界面控件），包装引用 UI 控件内的任何代码`InvokeOnMainThread`如下表达式：
+调试`UIKitThreadAccessException`时, 该代码将引发。 若要解决此问题 (并确保仅从主 UI 线程访问用户界面控件), 请将引用 UI 控件的任何代码包装在`InvokeOnMainThread`表达式内, 如下所示:
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -61,16 +61,16 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-无需将其用于此文档中的示例的其余部分，但很重要概念记住您的应用程序时发出网络请求，使用通知中心或需要完成的处理程序将在另一台运行的其他方法线程。
+对于本文档中的其余示例, 你不需要使用此方法, 但这是一个重要的概念, 可以记住应用何时发出网络请求, 使用通知中心或其他需要完成处理程序的方法 (将在另一个上运行)thread.
 
  <a name="Async_Await_Example" />
 
 
 ## <a name="asyncawait-example"></a>Async/Await 示例
 
-当使用C#5 async/await 关键字`InvokeOnMainThread`因为不需要等待的任务完成时此方法在调用线程上继续。
+使用C# 5 个 async/await 关键字`InvokeOnMainThread`不是必需的, 因为等待的任务完成后, 该方法将在调用线程上继续。
 
-（它等待延迟方法调用，用于演示目的） 此示例代码演示 （它是 TouchUpInside 处理程序） 在 UI 线程调用的异步方法。 由于包含的方法在 UI 线程上调用的因此 UI 之类的操作上设置文本`UILabel`或显示`UIAlertView`后，可以安全地调用异步操作已完成的后台线程。
+此示例代码 (在延迟方法调用中, 纯粹用于演示目的) 显示了在 UI 线程上调用的异步方法 (它是 TouchUpInside 处理程序)。 由于在 ui 线程上调用了包含方法, 因此在后台线程上完成异步操作后`UILabel` , 可以安全`UIAlertView`地调用在上设置或显示的 UI 操作。
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -91,10 +91,10 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-如果从后台线程 （非主 UI 线程） 调用异步方法然后`InvokeOnMainThread`也仍然需要。
+如果异步方法是从后台线程 (而不是主 UI 线程) 调用的, `InvokeOnMainThread`则仍需要。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 （示例）](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [控件 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [线程处理](~/ios/app-fundamentals/threading.md)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924560"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644802"
 ---
 # <a name="attached-properties"></a>附加属性
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _附加的属性是特殊类型的一个类中定义，但附加到其他对象的可绑定属性和可识别为属性的 XAML 中包含的类和属性名称之间以句点分隔。本文介绍了附加属性，并演示如何创建并使用它们。_
 
@@ -147,6 +147,6 @@ ShadowEffect.SetHasShadow (label, true);
 
 - [可绑定属性](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)
-- [阴影效果 （示例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [阴影效果 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

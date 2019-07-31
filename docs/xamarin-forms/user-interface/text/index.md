@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363265"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656180"
 ---
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文本
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _使用 Xamarin.Forms 来输入或显示文本。_
 
@@ -66,7 +66,7 @@ Xamarin.Forms 具有用于处理文本的三个主要视图：
 
 ## <a name="fontsfontsmd"></a>[字体](fonts.md)
 
-许多控件都支持不同的字体设置，请在每个平台或您的应用程序中包含的自定义字体使用内置的字体。 请参阅[字体](fonts.md)文章更多详细信息。
+许多控件都支持在每个平台上使用内置字体的不同字体设置, 或应用中包含的自定义字体。 请参阅[字体](fonts.md)文章更多详细信息。
 
 <a name="Styles" />
 
@@ -76,4 +76,4 @@ Xamarin.Forms 具有用于处理文本的三个主要视图：
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [文本 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
