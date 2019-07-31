@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511891"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656252"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑块
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _使用滑块选择从一系列连续值。_
 
@@ -56,11 +56,11 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可以由用户选择操
 
 ## <a name="basic-slider-code-and-markup"></a>滑块的基本代码和标记
 
-[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)示例开头是功能上相同的但以不同方式实现的三个页面。 第一页仅使用 C# 代码、 第二个与事件处理程序在代码中，使用 XAML 和第三个是可以避免使用 XAML 文件中的数据绑定事件处理程序。
+[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)示例开头是功能上相同的但以不同方式实现的三个页面。 第一页仅使用 C# 代码、 第二个与事件处理程序在代码中，使用 XAML 和第三个是可以避免使用 XAML 文件中的数据绑定事件处理程序。
 
 ### <a name="creating-a-slider-in-code"></a>在代码中创建一个滑块
 
-**滑块的基本代码**页面[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)示例演示显示创建`Slider`并将两个`Label`代码中的对象：
+**滑块的基本代码**页面[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)示例演示显示创建`Slider`并将两个`Label`代码中的对象：
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -295,7 +295,7 @@ Android 的实现`Slider`在 Android 上基于[ `SeekBar` ](xref:Android.Widget.
 
 UWP 实现`Slider`基于 UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)控件。 `StepFrequency`属性的 UWP`Slider`设置为的差异`Maximum`和`Minimum`属性除以 10，但不能大于 1。
 
-例如，对于默认范围为 0 到 1`StepFrequency`属性设置为 0.1。 作为`Slider`操作，`Value`属性被限制到 0，0.1、 0.2、 0.3、 0.4、 0.5、 0.6，0.7，0.8、 0.9，且 1.0。 (这是中的最后一页中显而易见[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)示例。)时之间的差异`Maximum`并`Minimum`属性为 10 或更高，则`StepFrequency`设置为 1，和`Value`属性具有整数值。
+例如，对于默认范围为 0 到 1`StepFrequency`属性设置为 0.1。 作为`Slider`操作，`Value`属性被限制到 0，0.1、 0.2、 0.3、 0.4、 0.5、 0.6，0.7，0.8、 0.9，且 1.0。 (这是中的最后一页中显而易见[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)示例。)时之间的差异`Maximum`并`Minimum`属性为 10 或更高，则`StepFrequency`设置为 1，和`Value`属性具有整数值。
 
 ### <a name="the-stepslider-solution"></a>StepSlider 解决方案
 
@@ -303,7 +303,7 @@ UWP 实现`Slider`基于 UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/win
 
 ## <a name="sliders-for-color-selection"></a>滑块的颜色选择
 
-中的两个页面最终[ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)示例都使用三个`Slider`颜色选择的实例。 第一页处理代码隐藏文件中的所有交互，而第二页显示了如何使用 ViewModel 数据绑定。
+中的两个页面最终[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)示例都使用三个`Slider`颜色选择的实例。 第一页处理代码隐藏文件中的所有交互，而第二页显示了如何使用 ViewModel 数据绑定。
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>处理代码隐藏文件中的滑块
 
@@ -509,5 +509,5 @@ Viewmodel 并`INotifyPropertyChanged`一文中讨论了接口[数据绑定](~/xa
 
 ## <a name="related-links"></a>相关链接
 
-- [滑块演示示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+- [滑块演示示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 - [滑块 API](xref:Xamarin.Forms.Slider)

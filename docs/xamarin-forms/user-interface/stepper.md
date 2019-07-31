@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
-ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c89f04b1d1d87fed8d86d50cb68527391a7f317
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250434"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656194"
 ---
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms 分档器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
 _使用分档器从一系列值中选择的数字值。_
 
@@ -42,11 +42,11 @@ Xamarin.Forms [ `Stepper` ](xref:Xamarin.Forms.Stepper)包含带标记的两个�
 
 ## <a name="basic-stepper-code-and-markup"></a>基本分档器代码和标记
 
-[ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)示例包含三个页面是功能上相同的但以不同方式实现。 第一页仅使用C#代码，第二个使用 XAML 使用在代码中和第三个事件处理程序是可以避免使用 XAML 文件中的数据绑定事件处理程序。
+[ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)示例包含三个页面是功能上相同的但以不同方式实现。 第一页仅使用C#代码，第二个使用 XAML 使用在代码中和第三个事件处理程序是可以避免使用 XAML 文件中的数据绑定事件处理程序。
 
 ### <a name="creating-a-stepper-in-code"></a>在代码中创建分档器
 
-**基本分档器代码**页面[ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)示例演示如何创建[ `Stepper` ](xref:Xamarin.Forms.Stepper)并将两个[`Label` ](xref:Xamarin.Forms.Label)代码中的对象：
+**基本分档器代码**页面[ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)示例演示如何创建[ `Stepper` ](xref:Xamarin.Forms.Stepper)并将两个[`Label` ](xref:Xamarin.Forms.Label)代码中的对象：
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -182,7 +182,7 @@ double value = stepper.Value;
 </ContentPage>
 ```
 
-[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一个属性[ `Label` ](xref:Xamarin.Forms.Label)绑定到[ `Value` ](xref:Xamarin.Forms.Stepper.Value)属性[ `Stepper` ](xref:Xamarin.Forms.Stepper)、 原样[ `Text` ](xref:Xamarin.Forms.Label.Text)属性的第二个`Label`与`StringFormat`规范。 **基本分档器绑定**页函数有点以不同的方式从两个前面的页：当页面第一次出现时，第二个`Label`显示的文本字符串的值。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)通过从类构造函数调用的事件处理程序的事件.
+[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)的第一个属性[ `Label` ](xref:Xamarin.Forms.Label)绑定到[ `Value` ](xref:Xamarin.Forms.Stepper.Value)属性[ `Stepper` ](xref:Xamarin.Forms.Stepper)、 原样[ `Text` ](xref:Xamarin.Forms.Label.Text)属性的第二个`Label`与`StringFormat`规范。 **基本分档器绑定**页的工作方式与前两页的功能略有不同:第一次显示页面时, 第`Label`二个显示带有值的文本字符串。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发[ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged)通过从类构造函数调用的事件处理程序的事件.
 
 ## <a name="precautions"></a>预防措施
 
@@ -258,5 +258,5 @@ Stepper stepper = new Stepper
 
 ## <a name="related-links"></a>相关链接
 
-- [分档器演示示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+- [分档器演示示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 - [分档器 API](xref:Xamarin.Forms.Stepper)

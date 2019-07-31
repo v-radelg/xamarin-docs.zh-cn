@@ -7,16 +7,16 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e1e21fe121fba30755efbabe302ed0f22149e7e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61157375"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645889"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>位图中 SkiaSharp 的基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _从各种源加载位图并将其显示。_
 
@@ -65,7 +65,7 @@ public class BasicBitmapsPage : ContentPage
 HttpClient httpClient = new HttpClient();
 ```
 
-使用时`HttpClient`iOS 和 Android 应用程序，你将想要设置项目属性，如文档中所述 **[传输层安全 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
+使用时`HttpClient`iOS 和 Android 应用程序，你将想要设置项目属性，如文档中所述 **[传输层安全 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** 。
 
 因为它是最方便的方式使用`await`运算符，其中`HttpClient`，不能执行的代码中`BasicBitmapsPage`构造函数。 相反，它是一部分`OnAppearing`重写。 此处的 URL 指向具有一些示例位图的 Xamarin web 站点上的区域。 在网站上的包，可以追加大小调整为特定宽度位图的规范：
 
@@ -104,7 +104,7 @@ Android 操作系统使用时引发异常`Stream`从返回`GetStreamAsync`中`SK
 
 在代码中，方面加载位图的最简单方法直接在您的应用程序中包括的位图资源。 **SkiaSharpFormsDemos**程序包括一个名为文件夹**媒体**包含几个位图文件，其中一个名为**monkey.png**。 对于存储为程序资源的位图，必须使用**属性**对话框，可以为该文件提供**生成操作**的**嵌入的资源**！
 
-每个嵌入的资源具有*资源 ID*项目名称、 文件夹和文件名，所有连接通过句点组成：**SkiaSharpFormsDemos.Media.monkey.png**. 可以通过指定该资源获取访问此资源 ID 作为参数到[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)类：
+每个嵌入资源都具有一个*资源 ID* , 其中包含项目名称、文件夹和文件名, 所有连接都按句点:**SkiaSharpFormsDemos**的。 可以通过指定该资源获取访问此资源 ID 作为参数到[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)类：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -250,5 +250,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

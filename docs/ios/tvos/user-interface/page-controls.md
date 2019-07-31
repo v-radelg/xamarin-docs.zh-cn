@@ -1,78 +1,78 @@
 ---
-title: 使用 tvOS 在 Xamarin 中的页面控件
-description: 本文档介绍如何使用 Xamarin 生成的应用程序中的 tvOS 页面控件使用。 它提供页面控件的高级别说明，介绍了如何设置在情节提要，并探讨如何响应页更改事件。
+title: 在 Xamarin 中使用 tvOS 页面控件
+description: 本文档介绍如何在使用 Xamarin 生成的应用程序中使用 tvOS 页面控件。 它提供页控件的高级说明, 讨论如何在情节提要中对其进行设置, 并检查如何响应页面更改事件。
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 173bc7713b5b8c330d4d4c5863bef24be8bdcb52
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bb53c11612cf492cda39067db861c1d67e0d3e16
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179549"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648985"
 ---
-# <a name="working-with-tvos-page-controls-in-xamarin"></a>使用 tvOS 在 Xamarin 中的页面控件
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 页面控件
 
-有时您可能需要 Xamarin.tvOS 应用程序中显示一系列的网页或图像。 页面控件的设计可清晰显示服务的用户是在超出最大页数的页。 页面控件将显示一系列针对深，oval 形状背景的点。 当前页将显示实心圆点，所有其他页显示为空心点。 如果有太多，无法容纳在其背景区域中，页面控件将剪辑的外部的大多数点。
+有时, 可能需要在 tvOS 应用中显示一系列页面或图像。 页面控件旨在清楚地显示用户在最多页的最大数目。 页面控件显示一系列的点, 这些点针对的是深色 oval 形背景。 当前页将显示一个实心点, 所有其他页显示为空心点。 如果背景区域内容纳太多无法容纳, 则页面控件将剪裁外最多点。
 
-[![](page-controls-images/page01.png "示例页面控件")](page-controls-images/page01.png#lightbox)
+[![](page-controls-images/page01.png "示例页控件")](page-controls-images/page01.png#lightbox)
 
-旨在为用户提供反馈的非交互式元素中的页控件。 你将需要添加其他控件来更改 （如手势或按钮） 的当前页码。
+非交互式元素中的页面控件, 旨在仅向用户提供反馈。 您将需要添加其他控件以更改当前页码 (如手势或按钮)。
 
-使用页面控件时，Apple 将具有以下建议：
+Apple 在使用页面控件时具有以下建议:
 
-- **仅完整集合上的使用**-页面控件适合在全屏幕环境以显示单个集合中存在的多个页中。
-- **限制页面数**-页面控件适合进行十 （10） 或更少的页和最多为二十 （20） 页。 对于超过 20 种页面，请考虑使用[集合视图](~/ios/tvos/user-interface/collection-views.md)和在网格中显示页。
+- **仅对完全集合使用**-页面控件在全屏环境中最适合用于显示存在于单个集合中的多个页面。
+- **限制页面数**-页控件最适用于十 (10) 个或更少的页, 最多可以有20个页。 对于20多页, 请考虑使用[集合视图](~/ios/tvos/user-interface/collection-views.md)并在网格中显示页。
 
 <a name="Page-Controls-and-Storyboards" />
 
 ## <a name="page-controls-and-storyboards"></a>页面控件和情节提要
 
-Xamarin.tvOS 应用中使用的页控件的最简单方法是将它们添加到应用程序的 UI 使用 iOS 设计器。
+在 tvOS 应用程序中使用页面控件的最简单方法是使用 iOS 设计器将它们添加到应用的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
     
-1. 在中**Solution Pad**，双击`Main.storyboard`文件，然后打开进行编辑。
-1. 拖动**页面控件**从**工具箱**并将其放在视图上： 
+1. 在**Solution Pad**中, 双击该`Main.storyboard`文件, 然后将其打开进行编辑。
+1. 从 "**工具箱**" 中将**页面控件**拖放到视图上: 
 
     [![](page-controls-images/page02.png "页面控件")](page-controls-images/page02.png#lightbox)
-1. 在中**小组件选项卡**的**Properties Pad**，您可以调整页面控件的多个属性，如其**当前页**和 **# 页**: 
+1. 在**Properties Pad**的 "**小组件" 选项卡**中, 可以调整页控件的多个属性, 如其**当前页**和**页数**: 
 
-    [![](page-controls-images/page03.png "小组件选项卡")](page-controls-images/page03.png#lightbox)
-1. 接下来，将控件或笔势添加到要向后移动和向前移动页的集合的视图。
-1. 最后，将分配**名称**的控件，以便可以响应在C#代码。 例如： 
+    [![](page-controls-images/page03.png "\"小组件\" 选项卡")](page-controls-images/page03.png#lightbox)
+1. 接下来, 向视图添加控件或笔势, 以便在页的集合中向后移动。
+1. 最后, 为控件指定**名称**, 以便可以在代码中C#对其进行响应。 例如： 
 
-    [![](page-controls-images/page04.png "将控件")](page-controls-images/page04.png#lightbox)
+    [![](page-controls-images/page04.png "命名控件")](page-controls-images/page04.png#lightbox)
 1. 保存更改。
     
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     
-1. 在中**解决方案资源管理器**，双击`Main.storyboard`文件，然后打开进行编辑。
-1. 拖动**页面控件**从**工具箱**并将其放在视图上： 
+1. 在**解决方案资源管理器**中, 双击该`Main.storyboard`文件, 然后将其打开进行编辑。
+1. 从 "**工具箱**" 中将**页面控件**拖放到视图上: 
 
     [![](page-controls-images/page02-vs.png "页面控件")](page-controls-images/page02-vs.png#lightbox)
-1. 在中**小组件选项卡**的**属性资源管理器**，您可以调整页面控件的多个属性，如其**当前页**和 **# 页**: 
+1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中, 可以调整页控件的多个属性, 如其**当前页**和**页数**: 
 
-    [![](page-controls-images/page03-vs.png "小组件选项卡")](page-controls-images/page03-vs.png#lightbox)
-1. 接下来，将控件或笔势添加到要向后移动和向前移动页的集合的视图。
-1. 最后，将分配**名称**的控件，以便可以响应在C#代码。 例如： 
+    [![](page-controls-images/page03-vs.png "\"小组件\" 选项卡")](page-controls-images/page03-vs.png#lightbox)
+1. 接下来, 向视图添加控件或笔势, 以便在页的集合中向后移动。
+1. 最后, 为控件指定**名称**, 以便可以在代码中C#对其进行响应。 例如: 
 
-    [![](page-controls-images/page04-vs.png "将控件")](page-controls-images/page04-vs.png#lightbox)
+    [![](page-controls-images/page04-vs.png "命名控件")](page-controls-images/page04-vs.png#lightbox)
 1. 保存更改。
     
 
 -----
 
 > [!IMPORTANT]
-> 虽然可以将事件分配如`TouchUpInside`到 UI 元素 （例如用户界面按钮） iOS 设计器中，它将永远不会调用，因为 Apple TV 没有触摸屏输入屏幕上或支持触控事件。 应始终使用`Primary Action`事件时创建用户界面元素的适用于 tvOS 的事件处理程序。
+> 尽管可以在 iOS 设计器中将事件`TouchUpInside` (例如 UIButton) 分配给 UI 元素 (例如, 如), 但永远不会调用它, 因为 Apple TV 没有触摸屏或支持触控事件。 创建 tvOS 用户界面元素`Primary Action`的事件处理程序时, 应始终使用事件。
 
-编辑视图控制器 (示例`ViewController.cs`) 文件，并添加代码来处理正在更改的页。 例如：
+编辑视图控制器 (示例`ViewController.cs`) 文件, 并添加代码以处理所更改的页面。 例如：
 
 ```csharp
 using System;
@@ -146,33 +146,33 @@ namespace MySingleView
 }
 ```
 
-让我们进一步看一下页面控件的两个属性。 首先，若要指定最大页面数，使用以下方法：
+让我们进一步了解一下页面控件的两个属性。 首先, 若要指定最大页数, 请使用以下内容:
 
 ```csharp
 PageView.Pages = 6;
 ```
 
-若要更改当前页码，请使用以下代码：
+若要更改当前页码, 请使用以下代码:
 
 ```csharp
 PageView.CurrentPage = PageNumber;
 ```
 
-`CurrentPage`属性为零 (0) 工作，因此第一页将为零和最后一个也是最大页面数减一。
+`CurrentPage`属性的值为零 (0), 因此第一页为零, 最后一页的最大页数为零。
 
-使用情节提要的详细信息，请参阅我们[你好，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 
+有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 
 
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
-本文只讨论了设计和使用在 Xamarin.tvOS 应用内的页控件。
+本文介绍了如何在 tvOS 应用内设计和使用页面控件。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人机接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [适用于 tvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

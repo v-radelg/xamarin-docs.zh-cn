@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 2c218b030739dee8d3e49fab4e5c2a70ff5e71e0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511827"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656787"
 ---
 # <a name="device-orientation"></a>设备方向
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 请务必要考虑将如何使用你的应用程序和如何合并横向方向以改善用户体验。 可以设计单独的布局以容纳多个方向和最佳使用的可用空间。 在应用程序级别，可以禁用或启用旋转。
 
@@ -475,7 +475,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 ## <a name="related-links"></a>相关链接
 
-- [布局 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 示例 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
-- [响应式布局 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+- [布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [响应式布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 - [显示基于屏幕方向的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

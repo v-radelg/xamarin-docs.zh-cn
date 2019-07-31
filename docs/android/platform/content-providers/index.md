@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 1e62dc32e9764667cb8737167a49bcc9a4516f0f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 2533ad80571e2c8fe94cb4a2dcb0ec0ff0dd68cb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510627"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643583"
 ---
 # <a name="intro-to-contentproviders"></a>Contentprovider 简介
 
@@ -45,8 +45,8 @@ _Android 操作系统使用内容提供程序来帮助访问共享数据, 如媒
 
 ## <a name="related-links"></a>相关链接
 
-- [ContactsAdapter 演示 (示例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
-- [SimpleContentProvider (示例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [ContactsAdapter 演示 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [SimpleContentProvider (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
 - [内容提供商开发人员指南](https://developer.android.com/guide/topics/providers/content-providers.html)
 - [ContentProvider 类引用](xref:Android.Content.ContentProvider)
 - [ContentResolver 类引用](xref:Android.Content.ContentResolver)

@@ -7,16 +7,16 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5aa8b2e85d5a7d547af5333dcaf350025b86cc26
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342396"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647701"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp 颜色筛选器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 颜色筛选器可以将位图 （或其他图像） 中的颜色转换为其他颜色的色调分离等效果：
 
@@ -120,7 +120,7 @@ M44 单元格是非常重要，因为它将保留不透明度。 它通常是 M4
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-其中`matrix`是一个数组 20`float`值。 创建中的数组时C#，很容易地设置数字的格式，因此它们类似于 4 × 5 矩阵。 了这一点**灰度矩阵**页面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例：
+其中`matrix`是一个数组 20`float`值。 创建中的数组时C#，很容易地设置数字的格式，因此它们类似于 4 × 5 矩阵。 了这一点**灰度矩阵**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例：
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -163,7 +163,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`此代码中使用的方法是从**BitmapExtension.cs**文件中包含[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)示例。 
+`DrawBitmap`此代码中使用的方法是从**BitmapExtension.cs**文件中包含[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例。 
 
 下面是 iOS、 Android 和通用 Windows 平台上运行的结果：
 
@@ -232,7 +232,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-数组始终包含 256 的条目。 在`CreateTable`为红色、 绿色和蓝色组件使用与一个表，在同一个表的方法。 它是一个简单的查找表：如果源颜色为 (R、 G、 B)，并且目标颜色 (R，B、 G)，然后通过索引获取目标组件`table`与源组件：
+数组始终包含 256 的条目。 在`CreateTable`为红色、 绿色和蓝色组件使用与一个表，在同一个表的方法。 这是一个简单的查找表:如果源颜色为 (r, G, b), 目标颜色为 (r ', B ', G '), 则通过与源组件建立索引`table`来获取目标组件:
 
 `R' = table[R]`
 
@@ -300,4 +300,4 @@ public class PosterizeTablePage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

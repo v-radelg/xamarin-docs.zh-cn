@@ -1,31 +1,31 @@
 ---
-title: 使用表和 Xamarin.iOS 中的单元格
-description: 本文档所链接到各种指南描述如何在 Xamarin.iOS 应用程序中显示与 UITableView 控件的数据。
+title: 在 Xamarin 中使用表和单元格
+description: 本文档链接到各种指南, 这些指南介绍如何在 Xamarin iOS 应用中使用 UITableView 控件显示数据。
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: 275c7553e465da67ca0780ea6aa9e986ca33b1f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d01814bc241dcfb7b62f40bef226ee720a96ff23
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61379120"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657010"
 ---
-# <a name="working-with-tables-and-cells-in-xamarinios"></a>使用表和 Xamarin.iOS 中的单元格
+# <a name="working-with-tables-and-cells-in-xamarinios"></a>在 Xamarin 中使用表和单元格
 
-本部分介绍了用来创建和显示表的类，然后提供了有关如何在 Xamarin.iOS 中使用它们的示例。 它将介绍如何为自定义布局，实现编辑和使用 Xamarin iOS 设计器直观地设计表的表使用的默认外观。 有时显示显然是一系列行 （如音乐应用程序） 和其他情况下很难识别表控件 （如编辑联系人应用或在邮件应用中的会话中）。
+本部分介绍用于创建和显示表的类, 然后提供有关如何在 Xamarin 中使用它们的示例。 它将介绍如何使用表的默认外观, 自定义布局, 实现编辑, 并使用 Xamarin iOS 设计器直观地设计表。 有时, 显示的是行 (如 "音乐" 应用) 的列表, 而另一些时候很难识别表控件 (例如在 "联系人" 应用程序中编辑或在 Messages 应用中进行的对话)。
 
-对于那些致力于跨平台应用程序使用 Xamarin.Android，UITableView 控件是类似于在 Android 中的 ListView 类 （和 UITableViewSource 类是类似于 Android 的适配器类）。
+对于使用 Xamarin 的跨平台应用程序, UITableView 控件类似于 Android 中的 ListView 类 (并且 UITableViewSource 类类似于 Android 的适配器类)。
 
-这些文章将介绍全面介绍了使用表，其中包括：
+这些文章全面介绍了如何使用表, 其中包括:
 
--   **表部件**– 介绍和解释的可见元素`UITableView`控件。 
--   **在表中显示数据**– 演示了如何创建和填充表，使用不同的表和单元格样式和通过回收 cell 对象来避免内存问题。 
--   **高级用法**– 生成自定义单元格并使用 UITableView 类的编辑功能。 
--   **直观地创建表**– 适用于 iOS 使用 Xamarin 设计器和情节提要中创建的表驱动的界面。 
+-   **表部分**–介绍和解释`UITableView`控件的可视元素。 
+-   **在表中显示数据**-演示如何创建和填充表, 如何使用不同的表和单元格样式, 并通过回收单元对象避免出现内存问题。 
+-   **高级用法**–生成自定义单元, 并使用 UITableView 类的编辑功能。 
+-   **直观地创建表**–使用 Xamarin Designer for iOS 创建包含情节提要的表驱动接口。 
 
 ## <a name="contents"></a>内容
 
@@ -45,11 +45,11 @@ ms.locfileid: "61379120"
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithTables （示例）](https://developer.xamarin.com/samples/monotouch/WorkingWithTables/)
-- [情节提要 （示例） 中的表](https://developer.xamarin.com/samples/monotouch/StoryboardTable/)
+- [WorkingWithTables (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [情节提要中的表 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable)
 - [情节提要简介](~/ios/user-interface/storyboards/index.md)
-- [情节提要 TableView 方案](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/storyboard_a_tableview)
-- [MonoTouch.Dialog 简介](~/ios/user-interface/monotouch.dialog/index.md)
+- [情节提要 TableView 食谱](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/storyboard_a_tableview)
+- [Monotouch.dialog 简介](~/ios/user-interface/monotouch.dialog/index.md)
 - [Github 上的 TableEditing 示例](https://github.com/xamarin/monotouch-samples/tree/master/TableEditing)
 - [Github 上的 TableParts 示例](https://github.com/xamarin/monotouch-samples/tree/master/TableParts)
 - [Github 上的 TableAndCellStyles 示例](https://github.com/xamarin/mobile-samples/tree/master/TablesLists)

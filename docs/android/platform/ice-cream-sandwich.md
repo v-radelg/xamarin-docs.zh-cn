@@ -1,72 +1,72 @@
 ---
-title: Ice Cream Sandwich 功能
-description: 本指南介绍了几个与 Android 4 API-Ice Cream Sandwich 应用程序开发人员的新功能。 它介绍了几种新的用户界面技术，然后检查各种 Android 4 提供的数据之间的应用程序和设备之间共享的新功能。
+title: 冰淇淋三明治功能
+description: 本文介绍了使用 Android 4 API 冰淇淋三明治的应用程序开发人员可以使用的一些新功能。 它介绍了几种新的用户界面技术, 然后检查 Android 4 提供的各种新功能, 用于在应用程序之间以及设备之间共享数据。
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 00b553ae8de0dfcd86d57d1d5e3e2a892d6b5463
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 548d513d8b949b56711bacad6924c692c0454bf4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091159"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643512"
 ---
-# <a name="ice-cream-sandwich-features"></a>Ice Cream Sandwich 功能
+# <a name="ice-cream-sandwich-features"></a>冰淇淋三明治功能
 
-_本指南介绍了几个与 Android 4 API-Ice Cream Sandwich 应用程序开发人员的新功能。它介绍了几种新的用户界面技术，然后检查各种 Android 4 提供的数据之间的应用程序和设备之间共享的新功能。_
+_本文介绍了使用 Android 4 API 冰淇淋三明治的应用程序开发人员可以使用的一些新功能。它介绍了几种新的用户界面技术, 然后检查 Android 4 提供的各种新功能, 用于在应用程序之间以及设备之间共享数据。_
 
 ## <a name="overview"></a>概述
 
-Android OS 版本 4.0 (API 级别 14) 表示主要的改编 Android 操作系统的并包括大量的重要更改和升级，包括：
+Android OS 版本 4.0 (API 级别 14) 表示 Android 操作系统的主要重新处理, 并包括许多重要更改和升级, 其中包括:
 
--   **更新用户界面**– 几个新的 UI 功能使开发人员能够更多电源和接口时它们创建应用程序用户的灵活性。 这些新功能包括： `GridLayout` ， `PopupMenu` ，`Switch`小组件中，和`TextureView`。 
--   **更好的硬件加速**– 2D 呈现现在所有 Android 控件在 GPU 上的发生。 此外，硬件加速，默认情况下为针对 Android 4.0 开发的所有应用程序中。 
--   **新的数据 Api** – 新访问不是以前正式访问，如日历数据和设备所有者的用户配置文件的数据。 
--   **应用数据共享**– 应用程序和设备之间共享数据状态变得过通过技术如`ShareActionProvider`，这样就可以轻松从操作栏中，创建共享操作并*Android 无线发送*有关*近场通信 (NFC)* ，便于管理单元中相互邻近的设备之间共享数据。 
+-   **已更新的用户界面**–当开发人员创建应用程序用户界面时, 多个新的 UI 功能使开发人员能够更强大的功能。 这些新功能包括: `GridLayout` 、 `PopupMenu` 、 `Switch`小组件和`TextureView` 。 
+-   **更好的硬件加速**–二维渲染现在适用于所有 Android 控件的 GPU。 此外, 默认情况下, 在为 Android 4.0 开发的所有应用程序中启用硬件加速。 
+-   **新的数据 api** -对以前未正式访问的数据有新的访问权限, 如日历数据和设备所有者的用户配置文件。 
+-   **应用数据共享**–在`ShareActionProvider`应用程序和设备之间共享数据现在比以往更容易通过技术 (例如), 这使你可以轻松地从操作栏创建共享操作, 将*Android 横梁*用于*近乎现场通信 (NFC)* , 使其能够在彼此接近的设备之间共享数据。 
 
 
-在本文中，我们将探索这些功能和其他 Android 4.0 API，对所做的更改，我们将介绍如何通过 Xamarin.Android 使用的每个功能。
+在本文中, 我们将探讨对 Android 4.0 API 的这些功能和其他更改, 我们将介绍如何将每项功能与 Xamarin 一起使用。
 
 ## <a name="user-interface-features"></a>用户界面功能
 
-各种新的用户界面技术是适用于 Android 4，其中包括：
+Android 4 提供多种新的用户界面技术, 其中包括:
 
--   **[GridLayout](~/android/user-interface/layouts/grid-layout.md)**  – 支持的控件的 2D 网格布局。 
--   **[切换小组件](~/android/user-interface/controls/switch.md)** – 允许之间切换为 ON 或 OFF。 
--   **[TextureView](~/android/user-interface/controls/texture-view.md)**  – 使视频和 OpenGL 内容视图中的。 
--   **[导航栏](~/android/user-interface/controls/navigation-bar.md)** – 包含虚拟按钮后，home 和多任务。 
+-   **[GridLayout](~/android/user-interface/layouts/grid-layout.md)** –支持控件的2d 网格布局。 
+-   **[切换小组件](~/android/user-interface/controls/switch.md)** –允许在打开或关闭之间切换。 
+-   **[TextureView](~/android/user-interface/controls/texture-view.md)** –启用视图中的视频和 OpenGL 内容。 
+-   **[导航栏](~/android/user-interface/controls/navigation-bar.md)** -包含用于后退、home 和多任务的虚拟按钮。 
 
 
-此外，其他 UI 元素得到了增强，如`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`，这是现在更轻松地使用，和选项卡，它具有更精美的外观。
+另外, 还增强了其他 UI 元素, 如`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`现在更易于使用的和选项卡, 它们具有更精美的外观。
 
 ## <a name="sharing-features"></a>共享功能
 
-Android 4 包括多种新技术，让我们跨设备和应用程序之间共享数据。 它还提供对各种类型的数据未之前提供，如日历信息和设备所有者的用户配置文件的访问。 在本部分中我们将介绍各种功能 Android 4 提供该地址这些领域包括：
+Android 4 包括几种新技术, 使我们能够跨设备和应用程序共享数据。 它还提供对以前未提供的各种数据类型 (例如日历信息和设备所有者的用户配置文件) 的访问权限。 在本部分中, 我们将检查 Android 4 提供的各种功能, 这些功能包括:
 
--  **[Android 无线发送](~/android/platform/android-beam.md)** – 允许数据通过 NFC 共享。
--   **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)**  – 创建提供程序，允许开发人员指定操作栏中的共享操作。 
--   **[用户配置文件](~/android/user-interface/user-profile.md)** – 提供对设备所有者的配置文件数据的访问。 
--   **[日历 API](~/android/user-interface/controls/calendar.md)**  – 从日历提供程序提供对日历数据的访问。 
+-  **[Android 无线](~/android/platform/android-beam.md)** 支持-允许通过 NFC 共享数据。
+-   **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)** –创建允许开发人员指定操作栏共享操作的访问接口。 
+-   **[用户配置文件](~/android/user-interface/user-profile.md)** –提供对设备所有者的配置文件数据的访问。 
+-   **[日历 API](~/android/user-interface/controls/calendar.md)** –提供对日历提供商提供的日历数据的访问。 
 
-## <a name="x86-emulators"></a>x86 仿真程序
+## <a name="x86-emulators"></a>x86 模拟器
 
-ICS 尚不支持 x86 开发仿真程序。 x86 仿真程序仅在使用 Android 2.3.3，API 级别 10 支持。 请参阅[配置 x86 仿真程序](~/android/get-started/installation/android-emulator/index.md)有关详细信息。
+ICS 还不支持使用 x86 模拟器进行开发。 x86 模拟器仅支持 Android 2.3.3 (API 级别 10)。 有关详细信息, 请参阅[配置 X86 模拟器](~/android/get-started/installation/android-emulator/index.md)。
 
 ## <a name="summary"></a>总结
 
-本文介绍了各种现适用于 Android 4 的新技术。 我们讨论了新的用户界面功能等*GridLayout*， *PopupMenu*，并*开关*小组件。 我们还了解了一些用于控制系统 UI，以及如何使用新的支持*TextureView*。 然后，我们讨论了各种新共享和技术。 我们介绍如何*Android 无线发送*让我们使用的设备之间共享信息*NFC*，讨论新*日历 API*，还介绍了如何使用内置的*ShareActionProvider*。
-最后，我们探讨了如何使用*ContactsContract*访问用户配置文件数据提供程序。
+本文介绍了现在适用于 Android 4 的各种新技术。 我们回顾了新的用户界面功能, 如*GridLayout*、 *PopupMenu*和*切换*小组件。 还介绍了一些用于控制系统 UI 的新支持, 并介绍了如何使用*TextureView*。 然后我们讨论了各种新的共享技术。 我们介绍了*Android 横梁*如何让你在使用*NFC*的设备上共享信息, 并讨论了新的*日历 API*, 还演示了如何使用内置的*ShareActionProvider*。
+最后, 我们探讨了如何使用*ContactsContract*提供程序访问用户配置文件数据。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [Ice Cream Sandwich 示例](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/)
-- [TextureViewDemo （示例）](https://developer.xamarin.com/samples/monodroid/TextureViewDemo/)
-- [CalendarDemo （示例）](https://developer.xamarin.com/samples/monodroid/CalendarDemo/)
+- [冰淇淋三明治示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-ics-samples)
+- [TextureViewDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
+- [CalendarDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
 - [选项卡布局教程](~/android/user-interface/layouts/tab-layout/index.md)
-- [Ice Cream Sandwich](https://developer.android.com/about/versions/android-4.0-highlights.html)
+- [冰淇淋三明治](https://developer.android.com/about/versions/android-4.0-highlights.html)
 - [Android 4.0 平台](https://developer.android.com/about/versions/android-4.0.html)

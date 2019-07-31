@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc3837cd0d69d49b9939b04da667010aac919fe2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61194535"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657125"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 
-[`TableView`](xref:Xamarin.Forms.TableView) 是用于显示数据或选择的可滚动列表视图的行不共享同一个模板。 与不同[ListView](~/xamarin-forms/user-interface/listview/index.md)，`TableView`不具有这一概念`ItemsSource`，因此，项必须手动添加为子级。
+[`TableView`](xref:Xamarin.Forms.TableView)是一个视图, 用于显示数据的可滚动列表或可选择的不共享同一模板的行。 与[ListView](~/xamarin-forms/user-interface/listview/index.md)不同`TableView` , 没有的概念`ItemsSource`, 因此必须手动将项添加为子级。
 
 ![](tableview-images/tableview-all-sml.png "TableView 示例")
 
@@ -26,19 +26,19 @@ ms.locfileid: "61194535"
 
 ## <a name="use-cases"></a>用例
 
-[`TableView`](xref:Xamarin.Forms.TableView) 当非常有用：
+[`TableView`](xref:Xamarin.Forms.TableView)在以下情况中非常有用:
 
 - 显示一系列的设置，
 - 在窗体中收集数据或
 - 显示呈现的数据以不同的方式从行与行 （例如数字、 百分比和图像）。
 
-[`TableView`](xref:Xamarin.Forms.TableView) 处理滚动和布局中极具吸引力的部分中，针对上述情形，通常需要的行。 `TableView`控件使用每个平台的基础等效的视图时可用，创建每个平台的本机外观。
+[`TableView`](xref:Xamarin.Forms.TableView)处理引人注目的部分中的行滚动和布局, 这是上述方案的常见需求。 `TableView`控件使用每个平台的基础等效的视图时可用，创建每个平台的本机外观。
 
 <a name="TableView_Structure" />
 
 ## <a name="structure"></a>结构
 
-中的元素[ `TableView` ](xref:Xamarin.Forms.TableView)划分为部分。 根目录`TableView`是[ `TableRoot` ](xref:Xamarin.Forms.TableRoot)，这是一个或多个父级[ `TableSection` ](xref:Xamarin.Forms.TableSection)实例。 每个[ `TableSection` ](xref:Xamarin.Forms.TableSection)包括标题和一个或多个[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)实例：
+中的[`TableView`](xref:Xamarin.Forms.TableView)元素组织为多个节。 的根`TableView` [`TableRoot`](xref:Xamarin.Forms.TableRoot)为, 它是一个或多个[`TableSection`](xref:Xamarin.Forms.TableSection)实例的父级。 每[`TableSection`](xref:Xamarin.Forms.TableSection)个都包含一个标题和一个或[`ViewCell`](xref:Xamarin.Forms.ViewCell)多个实例:
 
 ```xaml
 <TableView Intent="Settings">
@@ -51,7 +51,7 @@ ms.locfileid: "61194535"
 </TableView>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 Content = new TableView
@@ -73,22 +73,22 @@ Content = new TableView
 
 ## <a name="appearance"></a>外观
 
-[`TableView`](xref:Xamarin.Forms.TableView) 公开[ `Intent` ](xref:Xamarin.Forms.TableView.Intent)属性，可以设置为任一[ `TableIntent` ](xref:Xamarin.Forms.TableIntent)枚举成员：
+[`TableView`](xref:Xamarin.Forms.TableView)公开属性, 该属性可以设置为任何[`TableIntent`](xref:Xamarin.Forms.TableIntent)枚举成员: [`Intent`](xref:Xamarin.Forms.TableView.Intent)
 
-- `Data` – 用于显示数据条目时。 请注意， [ListView](~/xamarin-forms/user-interface/listview/index.md)可能是更好的选择进行滚动数据的列表。
-- `Form` – TableView 充当窗体时使用。
-- `Menu` – 用于显示选择的菜单时。
-- `Settings` – 用于显示配置设置的列表时。
+- `Data`–在显示数据项时使用。 请注意， [ListView](~/xamarin-forms/user-interface/listview/index.md)可能是更好的选择进行滚动数据的列表。
+- `Form`–当 TableView 充当窗体时使用。
+- `Menu`–用于在显示选择菜单时使用。
+- `Settings`–在显示配置设置列表时使用。
 
-[ `TableIntent` ](xref:Xamarin.Forms.TableIntent)选择可能会影响的值如何[ `TableView` ](xref:Xamarin.Forms.TableView)显示每个平台上。 即使有不清除差异，它是最佳选择`TableIntent`的最匹配你想要使用表。
+你[`TableIntent`](xref:Xamarin.Forms.TableIntent)选择的值可能会影响每[`TableView`](xref:Xamarin.Forms.TableView)个平台上显示的方式。 即使有不清除差异，它是最佳选择`TableIntent`的最匹配你想要使用表。
 
-此外，文本的颜色显示每个[ `TableSection` ](xref:Xamarin.Forms.TableSection)可以更改通过设置`TextColor`属性设置为[ `Color` ](xref:Xamarin.Forms.Color)。
+此外, 通过`TextColor`将属性设置为[`Color`](xref:Xamarin.Forms.Color), 可以更改为[`TableSection`](xref:Xamarin.Forms.TableSection)每个显示的文本的颜色。
 
 <a name="Built-In_Cells" />
 
-## <a name="built-in-cells"></a>内置的单元格
+## <a name="built-in-cells"></a>内置单元
 
-Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 尽管[ `ListView` ](xref:Xamarin.Forms.ListView)并[ `TableView` ](xref:Xamarin.Forms.TableView)可以使用的相同单元中，所有[ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)和[ `EntryCell` ](xref:Xamarin.Forms.EntryCell)最为相关的`TableView`方案。
+Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 虽然[`ListView`](xref:Xamarin.Forms.ListView) [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)和[`TableView`](xref:Xamarin.Forms.TableView)可以使用所有相同的单元, [`EntryCell`](xref:Xamarin.Forms.EntryCell)但与`TableView`方案最为相关。
 
 请参阅[ListView 单元格的外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)有关的详细说明[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell)并[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell)。
 
@@ -96,15 +96,15 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 尽管[ 
 
 ### <a name="switchcell"></a>SwitchCell
 
-[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 是要用于显示和捕获的控件打开/关闭或`true` / `false`状态。 它定义以下属性：
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 是要用于显示和捕获的控件打开/关闭或`true` / `false`状态。 它定义以下属性:
 
-- `Text` – 开关旁边显示的文本。
-- `On` – 此开关是否显示为 on 或 off。
-- `OnColor` – [ `Color` ](xref:Xamarin.Forms.Color)的开关处于打开位置时。
+- `Text`–要在开关旁显示的文本。
+- `On`–开关是显示为打开还是关闭。
+- `OnColor`[`Color`](xref:Xamarin.Forms.Color) –交换机处于开启位置时的。
 
-所有这些属性都是可绑定。
+所有这些属性都是可绑定属性。
 
-[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 此外公开`OnChanged`事件，从而可以对该单元格的状态变化作出响应。
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)还公开`OnChanged`事件, 使您可以对单元格状态的更改做出响应。
 
 ![](tableview-images/switch-cell.png "SwitchCell 示例")
 
@@ -112,16 +112,16 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 尽管[ 
 
 ### <a name="entrycell"></a>EntryCell
 
-[`EntryCell`](xref:Xamarin.Forms.EntryCell) 如果需要显示的用户可以编辑的文本数据时非常有用。 它定义以下属性：
+[`EntryCell`](xref:Xamarin.Forms.EntryCell) 如果需要显示的用户可以编辑的文本数据时非常有用。 它定义以下属性:
 
-- `Keyboard` – 若要编辑时显示键盘。 有数字值、 电子邮件、 电话号码等之类的内容的选项。[请参阅 API 文档](xref:Xamarin.Forms.Keyboard)。
-- `Label` – 要显示的文本输入字段左侧的标签文本。
-- `LabelColor` – 标签文本的颜色。
-- `Placeholder` – 它为 null 或空时在输入字段中显示的文本。 文本输入开始时，此文本将消失。
-- `Text` – 文本输入字段中。
-- `HorizontalTextAlignment` – 文本的水平对齐方式。 可以在中心，左侧或右侧对齐。 [请参阅 API 文档](xref:Xamarin.Forms.TextAlignment)。
+- `Keyboard`–编辑时要显示的键盘。 有数字值、 电子邮件、 电话号码等之类的内容的选项。[请参阅 API 文档](xref:Xamarin.Forms.Keyboard)。
+- `Label`–要显示在文本输入字段左侧的标签文本。
+- `LabelColor`–标签文本的颜色。
+- `Placeholder`–当输入字段为 null 或为空时显示的文本。 文本输入开始时，此文本将消失。
+- `Text`– "输入" 字段中的文本。
+- `HorizontalTextAlignment`–文本的水平对齐方式。 可以在中心，左侧或右侧对齐。 [请参阅 API 文档](xref:Xamarin.Forms.TextAlignment)。
 
-[`EntryCell`](xref:Xamarin.Forms.EntryCell) 此外公开`Completed`事件，当用户编辑文本时点击键盘上的完成按钮时触发该事件。
+[`EntryCell`](xref:Xamarin.Forms.EntryCell)还公开`Completed`事件, 当用户在编辑文本时在键盘上的 "完成" 按钮上命中时, 将触发该事件。
 
 ![](tableview-images/entry-cell.png "EntryCell 示例")
 
@@ -137,7 +137,7 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 尽管[ 
 
 ![](tableview-images/custom-cell.png "自定义单元格示例")
 
-下面的示例演示用于创建 XAML [ `TableView` ](xref:Xamarin.Forms.TableView)上面的屏幕截图中：
+下面的示例演示了在上面的屏幕截图[`TableView`](xref:Xamarin.Forms.TableView)中创建的 XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -164,7 +164,7 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 尽管[ 
 </ContentPage>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 var table = new TableView();
@@ -194,10 +194,10 @@ table.Root = new TableRoot ()
 Content = table;
 ```
 
-根元素下的[ `TableView` ](xref:Xamarin.Forms.TableView)是[ `TableRoot` ](xref:Xamarin.Forms.TableRoot)，并且没有[ `TableSection` ](xref:Xamarin.Forms.TableSection)下面紧接着`TableRoot`。 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)直接下定义`TableSection`，和一个[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)用于管理布局的自定义单元格，但也可在此处使用任何布局。
+下[`TableView`](xref:Xamarin.Forms.TableView)的根元素[`TableRoot`](xref:Xamarin.Forms.TableRoot)是[`TableSection`](xref:Xamarin.Forms.TableSection) , 并且紧靠`TableRoot`在下。 直接在下定义[`StackLayout`](xref:Xamarin.Forms.StackLayout) , 而用于管理自定义单元格的布局, 尽管可以在此处使用任何布局。 `TableSection` [`ViewCell`](xref:Xamarin.Forms.ViewCell)
 
 > [!NOTE]
-> 与不同[ `ListView` ](xref:Xamarin.Forms.ListView)， [ `TableView` ](xref:Xamarin.Forms.TableView)不需要该自定义 （或者任何） 中定义的单元格`ItemTemplate`。
+> 与[`ListView`](xref:Xamarin.Forms.ListView)不同[`TableView`](xref:Xamarin.Forms.TableView) , 不要求在中定义自定义 (或任何) `ItemTemplate`单元。
 
 ## <a name="row-height"></a>行高
 
@@ -263,4 +263,4 @@ void OnViewCellTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [TableView （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
+- [TableView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

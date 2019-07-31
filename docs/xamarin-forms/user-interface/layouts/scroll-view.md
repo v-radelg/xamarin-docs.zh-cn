@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 34339b9ca3a15c7f7f24edee5401c542fd09ba74
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 79f3f88dba37899bcb9467fcd6d1bd7e9dc5eb10
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370517"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657165"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 包含布局，使他们能够滚动屏幕外。 `ScrollView` 此外用于允许视图以显示键盘时自动移至屏幕的可见部分。
 
@@ -119,5 +119,5 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [布局 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 示例 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

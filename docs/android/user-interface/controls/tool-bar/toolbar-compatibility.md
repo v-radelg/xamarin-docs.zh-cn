@@ -6,60 +6,60 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 12c19cf1024b78e8be30b7c9f2652019e9854375
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ce13532026e2c49cb733e5afc0f6abd41ff1abdd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300330"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645036"
 ---
 # <a name="toolbar-compatibility"></a>工具栏兼容性
 
 
 ## <a name="overview"></a>概述
 
-本部分介绍如何使用`Toolbar`早于 Android 5.0 Lollipop 版本的 Android 上。 如果您的应用程序不支持早于 Android 5.0 的 Android 版本，则可以跳过本部分中。 
+本部分介绍如何使用`Toolbar`早于 android 5.0 棒糖形的 android 版本。 如果你的应用不支持早于 Android 5.0 的 Android 版本, 则可以跳过此部分。 
 
-因为`Toolbar`是一部分的 Android v7 支持库，它可以在设备上使用运行 Android 2.1 （API 级别 7） 和更高版本。 但是， [Android 支持库 v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)必须在安装 NuGet 和代码修改，使其使用`Toolbar`此库中提供的实现。 本部分介绍如何安装此 NuGet 和修改**ToolbarFun**应用程序从[添加第二个工具栏](~/android/user-interface/controls/tool-bar/adding-a-second-toolbar.md)，以便它早于棒糖形 5.0 版本的 Android 上运行。
+由于`Toolbar`属于 android v7 支持库, 因此它可用于运行 Android 2.1 (API 级别 7) 和更高版本的设备上。 但是, 必须安装[Android 支持库 v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet, 并对代码进行修改, 使其使用此`Toolbar`库中提供的实现。 本部分介绍如何安装此 NuGet 并修改**ToolbarFun**应用程序, 使其不会[添加另一个工具栏](~/android/user-interface/controls/tool-bar/adding-a-second-toolbar.md), 使其在早于棒糖5.0 的 Android 版本上运行。
 
-若要修改应用以使用 AppCompat 版本的 Toolbar: 
+若要修改应用以使用工具栏的 AppCompat 版本, 请执行以下操作: 
 
-1.  设置应用程序的最小值和目标 Android 版本。
+1.  设置应用的最低和目标 Android 版本。
 
 2.  安装 AppCompat NuGet 包。
 
-3.  而不是内置的 Android 主题使用 AppCompat 主题。
+3.  使用 AppCompat 主题, 而不是内置的 Android 主题。
 
-4.  修改`MainActivity`，以便它子类`AppCompatActivity`而非`Activity`。 
+4.  修改`MainActivity`以使其成为`AppCompatActivity`子类而`Activity`不是。 
 
-每个步骤是以下各节中详细介绍。
+以下各部分将详细介绍其中的每个步骤。
 
 
 
-## <a name="set-the-minimum-and-target-android-version"></a>设置最小值和目标 Android 版本
+## <a name="set-the-minimum-and-target-android-version"></a>设置最低和目标 Android 版本
 
-为 API 级别 21 或更高版本，必须设置应用的目标框架或应用程序将不能正确部署。 如果如错误**没有资源标识符找到属性 tileModeX 包 android 中**将被同时部署应用，这是因为目标框架未设置为**Android 5.0 (API 级别 21-棒糖形)** 或更高版本。 
+应用的目标框架必须设置为 API 级别21或更高版本, 否则将无法正确部署应用。 在部署应用时, 如果在**包 "android" 中找不到属性 "tileModeX" 的任何资源标识符**, 则这是因为目标框架未设置为**ANDROID 5.0 (API 级别为)** 或更高版本。 
 
-设置目标框架级别为 API 级别 21 或更高版本并将 Android API 级别的项目设置设置为应用程序是支持的最低 Android 版本。 有关设置 Android API 级别的详细信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)。 在`ToolbarFun`示例中，最低 Android 版本设置为 KitKat (API 级别 4.4)。 
+将目标框架级别设置为 API 级别21或更高, 并将 Android API 级别项目设置设置为应用支持的最低 Android 版本。 有关设置 Android API 级别的详细信息, 请参阅[了解 ANDROID Api 级别](~/android/app-fundamentals/android-api-levels.md)。 在本`ToolbarFun`示例中, 最低 Android 版本设置为 KitKat (API 级别为 4.4)。 
 
 
 ## <a name="install-the-appcompat-nuget-package"></a>安装 AppCompat NuGet 包
 
-接下来，添加[Android 支持库 v7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)到项目的包。 在 Visual Studio 中，右键单击**引用**，然后选择**管理 NuGet 包...**.单击**浏览**并搜索**Android 支持库 v7 AppCompat**。 选择**Xamarin.Android.Support.v7.AppCompat**然后单击**安装**: 
+接下来, 将[Android 支持库 V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)包添加到项目。 在 Visual Studio 中, 右键单击 "**引用**", 然后选择 "**管理 NuGet 包 ...** "。单击 "**浏览**", 搜索**Android 支持库 v7 AppCompat**。 选择 " **AppCompat** ", 然后单击 "**安装**": 
 
-[![选择管理 NuGet 包中的屏幕截图的 V7 Appcompat 包](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
+[![在 "管理 NuGet 包" 中选择的 V7 Appcompat 包的屏幕截图](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
-安装此 NuGet 时，多个其他 NuGet 包还会安装如果尚不存在 (如**Xamarin.Android.Support.Animated.Vector.Drawable**， **Xamarin.Android.Support.v4**，并**Xamarin.Android.Support.Vector.Drawable**)。 有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 
+安装此 NuGet 后, 还会安装其他几个 NuGet 包 (如不存在) (如 " **xamarin**"、"支持"、" **xamarin**" 和**Xamarin. Support**)。 有关安装 NuGet 包的详细信息, 请[参阅演练:在项目](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)中包括 NuGet。 
 
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>使用 AppCompat 主题和工具栏
 
-AppCompat 库提供了几个`Theme.AppCompat`Android AppCompat 库支持的任何版本可用的主题。 `ToolbarFun`示例应用主题派生自`Theme.Material.Light.DarkActionBar`，其上不可用之前的 Android 版本比棒糖形。 因此，`ToolbarFun`必须进行适配化以便 AppCompat 对应用于此主题`Theme.AppCompat.Light.DarkActionBar`。 此外，由于`Toolbar`是不可用的 Android 版本早于棒糖形，我们必须使用的 AppCompat 版本`Toolbar`。 因此，必须使用布局`android.support.v7.widget.Toolbar`而不是`Toolbar`。 
+AppCompat 库附带多个`Theme.AppCompat`主题, 可用于 AppCompat 库支持的任何 Android 版本。 示例应用主题是从派生的`Theme.Material.Light.DarkActionBar`, 它在 Android 版本之前的版本中不可用。 `ToolbarFun` 因此, `ToolbarFun`必须改编才能使用本`Theme.AppCompat.Light.DarkActionBar`主题的 AppCompat 对应项。 此外, 由于`Toolbar`在早于棒糖的 Android 版本上不可用, 因此必须使用的 AppCompat `Toolbar`版本。 因此, 布局必须使用`android.support.v7.widget.Toolbar` `Toolbar`而不是。 
 
 
 ### <a name="update-layouts"></a>更新布局
 
-编辑**Resources/layout/Main.axml** ，并将为`Toolbar`具有下面的 XML 元素： 
+编辑**Resources/layout/main.axml** , 并将`Toolbar`元素替换为以下 XML: 
 
 ```xml
 <android.support.v7.widget.Toolbar
@@ -71,7 +71,7 @@ AppCompat 库提供了几个`Theme.AppCompat`Android AppCompat 库支持的任�
     android:layout_height="wrap_content" />
 ```
 
-编辑**Resources/layout/toolbar.xml**并将其内容替换为以下 XML: 
+编辑**资源/布局/toolbar .xml** , 并将其内容替换为以下 xml: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -84,12 +84,12 @@ AppCompat 库提供了几个`Theme.AppCompat`Android AppCompat 库支持的任�
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 ```
 
-请注意，`?attr`值不能再带有前缀`android:`(请记住，`?`表示法引用当前主题中的资源)。 如果`?android:attr`仍使用了此处，Android 会引用属性值，从当前正在运行的平台，而不是从 AppCompat 库。 因为此示例使用`actionBarSize`AppCompat 库定义的`android:`删除前缀。 同样，`@android:style`更改为`@style`以便`android:theme`AppCompat 库中将属性设置为主题&ndash;`ThemeOverlay.AppCompat.Dark.ActionBar`此处使用主题而非`ThemeOverlay.Material.Dark.ActionBar`。 
+请注意, `?attr`这些值不再带有`android:`前缀 (回想一下, `?`表示法引用了当前主题中的资源)。 如果`?android:attr`此处仍使用, 则 Android 将从当前运行的平台而不是从 AppCompat 库引用属性值。 由于本示例使用由`actionBarSize` AppCompat 库定义的, 因此将`android:`删除该前缀。 同样, `@android:style`将更改为`@style` , 以使`android:theme`特性设置`ThemeOverlay.AppCompat.Dark.ActionBar`为 AppCompat `ThemeOverlay.Material.Dark.ActionBar`库&ndash;中的主题, 而不是使用主题。 
 
 
 ### <a name="update-the-style"></a>更新样式
 
-编辑**Resources/values/styles.xml**并将其内容替换为以下 XML: 
+编辑**资源/值/样式 .xml** , 并将其内容替换为以下 xml: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -104,15 +104,15 @@ AppCompat 库提供了几个`Theme.AppCompat`Android AppCompat 库支持的任�
 </resources>
 ```
 
-项名称和在此示例中的父主题不再带有前缀`android:`因为我们使用 AppCompat 库。 此外，父主题更改为 AppCompat 新版`Light.DarkActionBar`。 
+本示例中的项名称和父主题不再带有前缀, `android:`因为我们使用的是 AppCompat 库。 此外, 父主题还会更改为的 AppCompat 版本`Light.DarkActionBar`。 
 
 
 
 ### <a name="update-menus"></a>更新菜单
 
-为了支持早期版本的 Android，AppCompat 库使用镜像的属性的自定义特性`android:`命名空间。 但是，某些属性 (如`showAsAction`属性中使用`<menu>`标记) 在较旧的设备上的 Android framework 中不存在&ndash; `showAsAction` Android API 11 中引入了，但在 Android API 7 中不可用。 出于此原因，必须使用自定义的命名空间前缀的所有支持库定义的属性。 在菜单资源文件，命名空间中调用`local`为前缀定义`showAsAction`属性。 
+为了支持早期版本的 Android, AppCompat 库使用自定义属性来镜像`android:`命名空间的属性。 但是, 在 android api 11 中引入`showAsAction`了某些属性 ( `<menu>`如标记中使用的属性), 这些&ndash; `showAsAction`属性在 android api 11 中已引入, 但在 android api 7 中不可用。 出于此原因, 必须使用自定义命名空间作为支持库定义的所有属性的前缀。 在菜单资源文件中, 定义了一个`local`名为的命名空间`showAsAction` , 用于为属性指定前缀。 
 
-编辑**Resources/menu/top_menus.xml**并将其内容替换为以下 XML:
+编辑**资源/菜单/top_menus** , 并将其内容替换为以下 xml:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -135,19 +135,19 @@ AppCompat 库提供了几个`Theme.AppCompat`Android AppCompat 库支持的任�
 </menu>
 ```
 
-`local`命名空间添加用下面这行：
+`local`命名空间添加了以下行:
 
 ```xml
 xmlns:local="http://schemas.android.com/apk/res-auto">
 ```
 
-`showAsAction`属性开头，但这`local:`命名空间而非 `android:` 
+属性以此`local:`命名空间开头, 而不是`showAsAction``android:` 
 
 ```csharp
 local:showAsAction="ifRoom"
 ```
 
-同样，编辑**Resources/menu/edit_menus.xml**并将其内容替换为以下 XML:
+同样, 编辑**资源/菜单/edit_menus** , 并将其内容替换为以下 xml:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -171,43 +171,43 @@ local:showAsAction="ifRoom"
 </menu>
 ```
 
-此命名空间开关如何提供对支持`showAsAction`API 级别 11 之前的 Android 版本上的属性？ 自定义特性`showAsAction`，并且所有可能的值包含在应用程序时 AppCompat NuGet 是否已安装。 
+此命名空间开关如何在 API 级别 11 `showAsAction`之前的 Android 版本上提供对该属性的支持？ 安装 AppCompat NuGet `showAsAction`时, 该自定义属性及其所有可能的值都包含在应用中。 
 
 
 ## <a name="subclass-appcompatactivity"></a>子类 AppCompatActivity
 
-在转换过程中的最后一步是修改`MainActivity`，以便它是一个的子类`AppCompactActivity`。 编辑**MainActivity.cs**并添加以下`using`语句： 
+转换中的最后一步是修改`MainActivity` , 以便它是的`AppCompactActivity`子类。 编辑**MainActivity.cs**并添加以下`using`语句: 
 
 ```csharp
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 ```
 
-这会将声明`Toolbar`AppCompat 版本的`Toolbar`。 接下来，更改的类定义`MainActivity`: 
+这声明`Toolbar`为的 AppCompat `Toolbar`版本。 接下来, 更改的`MainActivity`类定义: 
 
 ```csharp
 public class MainActivity : AppCompatActivity
 ```
 
-若要设置到 AppCompat 版本的操作栏`Toolbar`，替换为调用`SetActionBar`与`SetSupportActionBar`。 在此示例中，标题也会更改以指示 AppCompat 新版`Toolbar`正在使用：
+若要将操作栏设置为的`Toolbar`AppCompat 版本, 请将`SetSupportActionBar`对`SetActionBar`的调用替换为。 在此示例中, 还更改了标题, 以指示正在使用的 AppCompat `Toolbar`版本:
 
 ```csharp
 SetSupportActionBar (toolbar);
 SupportActionBar.Title = "My AppCompat Toolbar";
 ```
 
-最后，将最小 Android 级别更改为支持 （例如 API 19） 的预棒糖形值。 
+最后, 将最低 Android 级别更改为要支持的棒糖之前的值 (例如, API 19)。 
 
-生成应用并在预棒糖形设备或 Android 仿真器上运行。 以下屏幕截图显示了 AppCompat 新版**ToolbarFun**上 Nexus 4 个正在运行 KitKat (API 19): 
+构建应用程序, 并在前棒糖设备或 Android 模拟器上运行它。 以下屏幕截图显示了**ToolbarFun**上运行 KitKat 的 AppCompat 版本: 
 
-[![KitKat 设备上运行的应用的完整屏幕截图，显示这两个工具栏](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
+[![在 KitKat 设备上运行的应用的完整屏幕截图, 同时显示两个工具栏](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
-当使用 AppCompat 库时，主题而不必切换根据 Android 版本&ndash;AppCompat 库可以跨所有受支持的 Android 版本提供一致的用户体验。 
+使用 AppCompat 库时, 无需根据 Android 版本&ndash;切换主题, AppCompat 库使你可以在所有受支持的 Android 版本中提供一致的用户体验。 
 
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [棒糖形工具栏 （示例）](https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/)
-- [AppCompat 工具栏 （示例）](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)
+- [棒糖形工具栏 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar)
+- [AppCompat 工具栏 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)

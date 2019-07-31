@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493360"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656517"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内容和一起使用C#代码隐藏文件。_
 
@@ -102,7 +102,7 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 </ContentPage>
 ```
 
-两个 XML 命名空间 (`xmlns`) 声明将引用的 Uri，看起来在 Xamarin 的网站上的第一个和第二个在 Microsoft 的。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
+这两个 XML 命名`xmlns`空间 () 声明引用了 uri、第一个看起来是 Xamarin 网站上的第二个和第二个。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
 
 第一个 XML 命名空间声明意味着在没有任何前缀的 XAML 文件中定义的标记如指在 Xamarin.Forms 中，类`ContentPage`。 第二个命名空间声明定义前缀为`x`。 这使用多个元素和属性的 XAML 中的内部本身和它们支持 XAML 的其他实现。 但是，这些元素和属性是略有不同，具体取决于嵌入在 URI 中的年份。 Xamarin.Forms 支持 2009 XAML 规范，但它不是所有。
 
@@ -203,9 +203,9 @@ namespace XamlSamples
 
 另请注意，`Title`特性已设置的根标记。
 
-在此时间应明显类、 属性和 XML 之间的关系：Xamarin.Forms 类 (如`ContentPage`或`Label`) 出现在 XML 元素 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
+此时, 类、属性和 XML 之间的关系应该是显而易见的:Xamarin 类 (如`ContentPage`或`Label`) 作为 XML 元素出现在 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
 
-多个快捷方式存在以便为设置这些属性的值。 某些属性是基本数据类型：例如，`Title`和`Text`属性属于类型`String`，`Rotation`的类型`Double`，和`IsVisible`(这是`true`默认情况下，仅用于说明此处设置) 的类型`Boolean`.
+多个快捷方式存在以便为设置这些属性的值。 某些属性是基本数据类型:例如`Title` , `true`和`Double`属性的类型为,`IsVisible`并且为类型, 并且 (默认情况下, 在此处设置为仅用于说明) 的类型为`Rotation` `String` `Text` `Boolean`.
 
 `HorizontalTextAlignment`属性属于类型`TextAlignment`，这是一个枚举。 对于任何枚举类型的属性，只需提供有成员名称。
 
@@ -453,7 +453,7 @@ public partial class XamlPlusCodePage : ContentPage {
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 2 部分：基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部分：XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [第 4 部分：数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

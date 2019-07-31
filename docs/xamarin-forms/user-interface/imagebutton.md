@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: f97cd3030b865b53b82845ff8941e3f0a10f0320
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 90d860cb6429025672a058e22e76f029872d3b34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169779"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657177"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton 显示图像和响应点击或单击，将定向的应用程序来执行特定任务。_
 
@@ -25,7 +25,7 @@ _ImageButton 显示图像和响应点击或单击，将定向的应用程序来�
 > [!NOTE]
 > 虽然[ `Button` ](xref:Xamarin.Forms.Button)视图定义[ `Image` ](xref:Xamarin.Forms.Button.Image)属性，您可在显示的图像`Button`，此属性应显示一个小图标时使用下一步`Button`文本。
 
-本指南中的代码示例摘自[FormsGallery 示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)。
+本指南中的代码示例摘自[FormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)。
 
 ## <a name="setting-the-image-source"></a>设置图像源
 
@@ -276,4 +276,4 @@ public class ImageButtonDemoPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [FormsGallery 示例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+- [FormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

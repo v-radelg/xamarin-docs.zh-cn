@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 7717e247ca3b3ecf82e1814ab43e8351b4f75ba6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4a0d0e46147a37da4787224e797d403ab7b1097e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510444"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643040"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>适用于 Xamarin 的 ActionBar
 
@@ -87,7 +87,7 @@ this.ActionBar.AddTab (tab);
 
 ### <a name="image-sharing-example"></a>图像共享示例
 
-例如, 下面是一个操作栏屏幕截图, 其中包含一个用于共享图像的菜单项 (取自[ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)示例)。 当用户点击操作栏上的菜单项时, ShareActionProvider 会加载该应用程序以处理与`ShareActionProvider`相关联的意向。 在此示例中, 以前使用过消息应用程序, 因此它显示在操作栏。
+例如, 下面是一个操作栏屏幕截图, 其中包含一个用于共享图像的菜单项 (取自[ShareActionProvider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)示例)。 当用户点击操作栏上的菜单项时, ShareActionProvider 会加载该应用程序以处理与`ShareActionProvider`相关联的意向。 在此示例中, 以前使用过消息应用程序, 因此它显示在操作栏。
 
 [![操作栏中的消息应用程序图标的屏幕截图](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
@@ -150,7 +150,7 @@ Intent CreateIntent ()
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello 选项卡 ICS (示例)](https://developer.xamarin.com/samples/monodroid/HelloTabsICS/)
-- [ShareActionProvider 演示 (示例)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
+- [Hello 选项卡 ICS (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
+- [ShareActionProvider 演示 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
 - [冰淇淋三明治](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: e02b5631aff76e35300ae4d7dd5e3c6652f6e3da
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61426938"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657544"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>选项卡栏和 Xamarin.iOS 中的选项卡栏控制器
 
@@ -61,7 +61,7 @@ ms.locfileid: "61426938"
 
 ### <a name="adding-the-uitabbarcontroller"></a>添加 UITabBarController
 
-接下来，通过选择添加一个空类**文件 > 新建文件**，然后选择**常规：空类**模板。 将文件命名`TabController`，如下所示：
+接下来, 通过选择 "文件" **> 新文件**并选择 "常规 **", 添加一个空类:空的**类模板。 将文件命名`TabController`，如下所示：
 
 [![](creating-tabbed-applications-images/02-newclass.png "添加 TabController 类")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
@@ -283,8 +283,8 @@ Visual Studio for Mac 将自动生成的类和设计器所需的文件，这可�
 
 我们想要拖动`Label`和一个`Button`到从 ViewController1**工具箱**右侧。 接下来我们将使用属性面板来编辑在名称和文本的控件所示：
 
--  **标签**:`Text` = **One**
--  **按钮**:`Title` = **用户会执行一些初始操作**
+-  **标签**:`Text` = **逐个**
+-  **按钮**:`Title` = **用户执行一些初始操作**
 
 
 我们将控制在我们按钮的可见性`TouchUpInside`事件，并且我们需要在后面的代码中引用它。 让我们来确定其与**名称**`aButton`中属性面板，下面的屏幕截图中所示：
@@ -370,6 +370,6 @@ public override void ViewDidLoad ()
 
 ## <a name="related-links"></a>相关链接
 
-- [创建选项卡式应用程序 （示例）](https://developer.xamarin.com/samples/monotouch/CreatingTabbedApplications/)
+- [创建选项卡式应用程序 （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/creatingtabbedapplications)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)
 - [UITabBarController 类引用](https://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)

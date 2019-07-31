@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: d3e1c8a2b17ba41e3c9d212948f42023c15205ac
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 59ec82c222208ff0e73b0b7b5226d416d3a53398
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926233"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656602"
 ---
 # <a name="bindable-properties"></a>可绑定属性
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _在 Xamarin.Forms 中，公共语言运行时 (CLR) 属性的功能扩展可绑定属性。可绑定属性是属性的特殊类型，其中 Xamarin.Forms 属性系统跟踪属性的值。本文介绍了可绑定属性，并演示如何创建并使用它们。_
 
@@ -226,8 +226,8 @@ public static readonly BindableProperty SizeProperty =
 ## <a name="related-links"></a>相关链接
 
 - [XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)
-- [事件到，命令行为 （示例）](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
-- [验证回叫 （示例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
-- [强制值回叫 （示例）](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
+- [事件到，命令行为 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+- [验证回叫 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-validationcallback)
+- [强制值回叫 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-coercevaluecallback)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

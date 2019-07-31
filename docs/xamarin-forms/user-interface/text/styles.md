@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f70ab3faf6984720e395f5a41b4cabb63fe03053
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188731"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642881"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文本样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _在 Xamarin.Forms 中的文本样式_
 
@@ -150,5 +150,5 @@ label.Style = Device.Styles.TitleStyle;
 
 - [借助 Xamarin.Forms，第 12 章创建移动应用](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [样式](~/xamarin-forms/user-interface/styles/index.md)
-- [文本 （示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [文本 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [样式](xref:Xamarin.Forms.Style)
