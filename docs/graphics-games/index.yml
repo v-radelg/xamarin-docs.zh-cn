@@ -11,7 +11,7 @@ abstract:
   description: 适用于移动和桌面平台的跨平台图形、2D 和 3D 游戏。
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin'
         text: 示例
 sections:
   - title: null

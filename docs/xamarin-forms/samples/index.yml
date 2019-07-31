@@ -11,7 +11,7 @@ abstract:
   description: 帮助你开始和了解 Xamarin.Forms 中的概念的 Xamarin.Forms 示例应用和代码演示。
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
         text: 所有 Xamarin.Forms 示例
 sections:
   - title: null
@@ -56,9 +56,9 @@ sections:
               src: images/xuzzle.png
               href: 'https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/'
             title: Xuzzle
-          - href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
             html: 一组完整的 Xamarin.Forms 示例应用和代码演示。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/xamarin-forms/all/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms'
             title: 所有 Xamarin.Forms 示例

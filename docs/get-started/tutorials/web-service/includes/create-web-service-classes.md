@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0c07199a8f839d8dc9d334ae06c96a9b363c36e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61388774"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669547"
 ---
 REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览器用于检索页面和将数据发送到服务器所使用的谓词相同。 在本练习中，你将创建一个使用 GET 谓词的类，以从 [OpenWeatherMap](https://openweathermap.org/) Web API 检索数据。 此 Web API 可用于检索指定位置的天气预报数据。 使用此 Web API 需要注册 API 密钥。
 
@@ -13,7 +13,7 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在“解决方案资源管理器”的“WebServiceTutorial”项目中，向该项目添加名为 `Constants` 的新类。 然后在“Constants.cs”中，删除所有模板代码并将其替换为以下代码：
+1. 在“解决方案资源管理器”的“WebServiceTutorial”项目中，向该项目添加名为 `Constants` 的新类   。 然后在“Constants.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
     ```csharp
     namespace WebServiceTutorial
@@ -31,7 +31,7 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
     > [!IMPORTANT]
     > 必须将个人 OpenWeatherMap API 密钥设置为 `OpenWeatherMapAPIKey` 常量的值。
 
-1. 在“解决方案资源管理器”的“WebServicesTutorial”项目中，向该项目添加名为 `WeatherData` 的新类。 然后在“WeatherData.cs”中，删除所有模板代码并将其替换为以下代码：
+1. 在“解决方案资源管理器”的“WebServicesTutorial”项目中，向该项目添加名为 `WeatherData` 的新类   。 然后在“WeatherData.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
     ```csharp
     using Newtonsoft.Json;
@@ -82,9 +82,9 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
     此代码定义了四个类，用于对从 Web 服务检索的 JSON 数据进行建模。 每个属性都使用 `JsonProperty` 属性进行修饰，其中包含 JSON 字段名称。 在将 JSON 数据反序列化为模型对象时，Newtonsoft.Json 将使用此 JSON 字段名称映射到 CLR 属性。
 
     > [!NOTE]
-    > 上面的类定义已经简化，并且没有对从 Web 服务检索到的 JSON 数据进行完全建模。 有关完整的数据模型示例，请参阅[天气应用 (Weather App)](https://developer.xamarin.com/samples/xamarin-forms/Weather/) 示例。
+    > 上面的类定义已经简化，并且没有对从 Web 服务检索到的 JSON 数据进行完全建模。 有关完整的数据模型示例，请参阅[天气应用 (Weather App)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/) 示例。
 
-1. 在“解决方案资源管理器”的“WebServiceTutorial”项目中，向该项目添加名为 `RestService` 的新类。 然后，在“RestService.cs”中，删除所有模板代码并将其替换为以下代码：
+1. 在“解决方案资源管理器”的“WebServiceTutorial”项目中，向该项目添加名为 `RestService` 的新类   。 然后，在“RestService.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
     ```csharp
     using System;
@@ -133,7 +133,7 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在“Solution Pad”的“WebServiceTutorial”项目中，向该项目添加名为 `Constants` 的新类。 然后在“Constants.cs”中，删除所有模板代码并将其替换为以下代码：
+1. 在“Solution Pad”的“WebServiceTutorial”项目中，向该项目添加名为 `Constants` 的新类   。 然后在“Constants.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
     ```csharp
     namespace WebServiceTutorial
@@ -151,7 +151,7 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
     > [!IMPORTANT]
     > 必须将个人 OpenWeatherMap API 密钥设置为 `OpenWeatherMapAPIKey` 常量的值。
 
-1. 在“Solution Pad”的“WebServicesTutorial”项目中，向该项目添加名为 `WeatherData` 的新类。 然后在“WeatherData.cs”中，删除所有模板代码并将其替换为以下代码：
+1. 在“Solution Pad”的“WebServicesTutorial”项目中，向该项目添加名为 `WeatherData` 的新类   。 然后在“WeatherData.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
     ```csharp
     using Newtonsoft.Json;
@@ -202,9 +202,9 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
     此代码定义了四个类，用于对从 Web 服务检索的 JSON 数据进行建模。 每个属性都使用 `JsonProperty` 属性进行修饰，其中包含 JSON 字段名称。 在将 JSON 数据反序列化为模型对象时，Newtonsoft.Json 将使用此 JSON 字段名称映射到 CLR 属性。
 
     > [!NOTE]
-    > 上面的类定义已经简化，并且没有对从 Web 服务检索到的 JSON 数据进行完全建模。 有关完整的数据模型示例，请参阅[天气应用 (Weather App)](https://developer.xamarin.com/samples/xamarin-forms/Weather/) 示例。
+    > 上面的类定义已经简化，并且没有对从 Web 服务检索到的 JSON 数据进行完全建模。 有关完整的数据模型示例，请参阅[天气应用 (Weather App)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/) 示例。
 
-1. 在“Solution Pad”的“WebServiceTutorial”项目中，向该项目添加名为 `RestService` 的新类。 然后，在“RestService.cs”中，删除所有模板代码并将其替换为以下代码：
+1. 在“Solution Pad”的“WebServiceTutorial”项目中，向该项目添加名为 `RestService` 的新类   。 然后，在“RestService.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
     ```csharp
     using System;

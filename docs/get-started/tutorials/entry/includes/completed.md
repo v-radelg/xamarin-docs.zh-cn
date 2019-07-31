@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 064ef79d79a74582e8deb6999589fda14d227e91
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b01edc9807b63613a66f5c24706eb694fef6dfbc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343382"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669548"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -22,6 +22,6 @@ ms.locfileid: "61343382"
 
 ## <a name="related-links"></a>相关链接
 
-- [EntryTutorial（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/EntryTutorial)
+- [EntryTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-entrytutorial/)
 - [Xamarin.Forms 输入（指南）](~/xamarin-forms/user-interface/text/entry.md)
 - [输入 API](xref:Xamarin.Forms.Entry)

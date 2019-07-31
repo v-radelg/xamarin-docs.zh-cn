@@ -121,4 +121,4 @@ sections:
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12">iOS API 文档</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">基类库</a></p>'
           - title: 示例
             href: 'https://developer.xamarin.com/samples'
-            html: '<p><a href="https://developer.xamarin.com/samples/ios/all/">iOS 示例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">watchOS 示例</a></p><p><a href="https://developer.xamarin.com/samples/ios/all/">tvOS 示例</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">iOS 示例</a></p><p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">watchOS 示例</a></p><p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">tvOS 示例</a></p>'

@@ -11,7 +11,7 @@ abstract:
   description: '帮助你使用 C# 和 Xamarin 开始生成移动应用的 Xamarin Android 示例应用和代码演示。'
   menu:
     items:
-      - href: 'https://developer.xamarin.com/samples/android/all/'
+      - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
         text: 所有 Xamarin.Android 示例
 sections:
   - title: null
@@ -68,9 +68,9 @@ sections:
               src: images/watchface.png
               href: 'https://developer.xamarin.com/samples/monodroid/wear/WatchFace/'
             title: WatchFace
-          - href: 'https://developer.xamarin.com/samples/android/all/'
+          - href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
             html: 一组完整的 Xamarin.Android 示例应用和代码演示。
             image:
               src: ~/media/shared/sample-download.svg
-              href: 'https://developer.xamarin.com/samples/android/all/'
+              href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
             title: 所有 Xamarin.Android 示例

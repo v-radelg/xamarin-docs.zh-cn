@@ -113,6 +113,6 @@ sections:
           - title: API
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms">Xamarin.Forms API 文档</a></p>'
           - title: 示例
-            html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms 示例</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms">Xamarin.Forms 示例</a></p>'
           - title: 图书
             html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">创建移动应用电子图书</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">企业应用程序模式电子图书</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">电子图书：Xamarin.Forms 中的 SkiaSharp Graphics</a></p>
