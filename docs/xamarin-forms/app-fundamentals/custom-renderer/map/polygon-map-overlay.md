@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 01db31a797efc4b383f3bda3fbcf3bb91e0d38e1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 45a85c8ac2f40e92078d46f5765aaf2af1518b77
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926035"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650742"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>突出显示地图上的区域
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polygon/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polygon)
 
 本文介绍如何向地图添加多边形叠加层，以突出显示地图上的某一区域。多边形是内部空间已填充的封闭形状。_
 
@@ -308,6 +308,6 @@ namespace MapOverlay.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [多边形地图叠加层（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polygon/)
+- [多边形地图叠加层（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polygon)
 - [自定义图钉](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

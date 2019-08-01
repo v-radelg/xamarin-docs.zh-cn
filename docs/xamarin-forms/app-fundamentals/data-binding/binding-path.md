@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0c63e33309802f0945ad94a858af45f6b29b2cc4
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b9658aa0a4222fb9d257299ea3c6fd69016abdb4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53050774"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646751"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 绑定路径
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在前面的所有数据绑定示例中，`Binding` 类的 [`Path`](xref:Xamarin.Forms.Binding.Path) 属性（或 `Binding` 标记扩展的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 属性）已设置为单个属性。 实际上，可以将 `Path` 设置为“子属性”（属性的属性），也可以设置为集合的成员。
+在前面的所有数据绑定示例中，`Binding` 类的 [`Path`](xref:Xamarin.Forms.Binding.Path) 属性（或 `Binding` 标记扩展的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 属性）已设置为单个属性。 实际上，可以将 `Path` 设置为“子属性”（属性的属性），也可以设置为集合的成员  。
 
 例如，假定你的页面包含 `TimePicker`：
 
@@ -35,7 +35,7 @@ ms.locfileid: "53050774"
 
 `Time` 属性的类型是 `TimeSpan`，该类型具有 `TotalSeconds` 属性。 `Time` 和 `TotalSeconds` 属性之间仅用一个句点连接。 `Path` 字符串中的项始终引用属性，而不是这些属性的类型。
 
-“路径变化”页中显示了该示例和其他几个示例：
+“路径变化”页中显示了该示例和其他几个示例  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ ms.locfileid: "53050774"
 
 ## <a name="paths-with-indexers"></a>使用索引器的路径
 
-“路径变化”页中的第三个 `Label` 中的绑定引用 `System.Globalization` 命名空间中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 类：
+“路径变化”页中的第三个 `Label` 中的绑定引用 `System.Globalization` 命名空间中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 类  ：
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -167,5 +167,5 @@ ms.locfileid: "53050774"
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

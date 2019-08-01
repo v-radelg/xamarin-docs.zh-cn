@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c60eecd5ebd0f518514cd77d8dd963568d1a1d43
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 702ec35bca051f7255c5c9d67d2dc68d4f89ca52
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970918"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645954"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版-详细信息页
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
 _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中一个为显示项的母版页，另一个为详细信息页，显示母版页上各项的详细信息。本文介绍如何使用 MasterDetailPage 并在其信息页面之间导航。_
 
@@ -29,7 +29,7 @@ _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中
 每个平台上的项列表的位置是相同的，选择某一项将导航到相关的详细信息页。 此外，母版页还提导航栏功能，包含一个可用于导航到活动详细信息页的按钮：
 
 - 在 iOS 中，导航栏位于页面顶部，并有一个导航到详细信息页的按钮。 此外，可通过向左滑动母版页来导航到活动详细信息页。
-- 在 Android 中，导航栏位于页面顶部，显示标题、图标和导航到详细信息页的按钮。 在 `[Activity]` 属性中定义图标，该属性修饰特定于 Android 平台的项目中的 `MainActivity` 类。 此外，可以通过向左滑动母版页、点击最右侧的详细信息页或点击屏幕底部的“返回”按钮来导航到活动详细信息页。
+- 在 Android 中，导航栏位于页面顶部，显示标题、图标和导航到详细信息页的按钮。 在 `[Activity]` 属性中定义图标，该属性修饰特定于 Android 平台的项目中的 `MainActivity` 类。 此外，可以通过向左滑动母版页、点击最右侧的详细信息页或点击屏幕底部的“返回”按钮来导航到活动详细信息页  。
 - 在通用 Windows 平台 (UWP) 中，导航栏位于页面顶部，并有一个可以导航到详细信息页的按钮。
 
 详细信息页显示和母版页上选择的项相关的数据，且以下屏幕截图中展示了详细信息页的主要组件：
@@ -46,8 +46,8 @@ _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中
 
 母版页和详细信息页之间的导航体验行为取决于平台：
 
-- 在 iOS 中，当母版页从左侧滑动时，详细信息页向右滑动，并且详细信息页的左侧部分仍然可见。
-- 在 Android 中，详细信息和母版页相互叠加。
+- 在 iOS 中，当母版页从左侧滑动时，详细信息页向右滑动，并且详细信息页的左侧部分仍然可见  。
+- 在 Android 中，详细信息和母版页相互叠加  。
 - 在 UWP 上，如果 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 属性设置为 `Popover`，母版页会从左侧滑动到部分详细信息页上方。 有关更多信息，请参阅[控制详细信息页显示行为](#Controlling_the_Detail_Page_Display_Behavior)。
 
 在横向模式下将观察到类似的行为，除了 iOS 和 Android 中的母版页在纵向模式下具有与母版页类似的宽度，因此将显示更多详细信息页。
@@ -286,7 +286,7 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-但是，[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 属性的值只影响在平板电脑或桌面上运行的应用程序。 在手机上运行的应用程序始终具有弹出框行为。
+但是，[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 属性的值只影响在平板电脑或桌面上运行的应用程序。 在手机上运行的应用程序始终具有弹出框行为  。
 
 ## <a name="summary"></a>总结
 
@@ -295,5 +295,5 @@ public class MainPageCS : MasterDetailPage
 ## <a name="related-links"></a>相关链接
 
 - [页类型](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [MasterDetailPage（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/MasterDetailPage/)
+- [MasterDetailPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 - [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

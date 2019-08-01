@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667584"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509023"
 ---
 # <a name="gdb"></a>GDB
 
@@ -79,7 +79,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ## <a name="debug-builds-without-fast-deployment"></a>不使用快速部署的调试版本
 
-使用快速部署的调试版本，方法是将 Android NDK 的 `gdbserver` 程序复制到快速部署 `.__override__` 目录。 快速部署禁用时，此目录可能不存在。
+ 使用快速部署的调试版本，方法是将 Android NDK 的 `gdbserver` 程序复制到快速部署 `.__override__` 目录。 快速部署禁用时，此目录可能不存在。
 
 有两种解决方法：
 
@@ -117,7 +117,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 2. 将 `gdbserver` 重命名为 **libs/armeabi-v7a/libgdbserver.so**。
 
-3. 使用 `AndroidNativeLibrary` 的“生成操作”将 **libs/armeabi-v7a/libgdbserver.so** 添加到你的项目。
+3. 使用 `AndroidNativeLibrary` 的“生成操作”  将 **libs/armeabi-v7a/libgdbserver.so** 添加到你的项目。
 
 4. 重新生成并重新安装你的应用程序。
 
@@ -147,7 +147,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 默认在调试应用中启用 `INTERNET` 权限。 如果它在你的应用程序中尚未出现，可以通过编辑 **Properties/AndroidManifest.xml** 或[“项目属性”](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)来添加它。
 
-应用调试可通过下面的方法启用：将 [ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) 自定义属性设置为 `true`，或编辑 **Properties/AndroidManifest.xml**，并将 `//application/@android:debuggable` 属性设置为 `true`：
+应用调试可通过下面的方法启用：将 [ApplicationAttribute.Debugging](xref:Android.App.ApplicationAttribute.Debuggable) 自定义属性设置为 `true`，或编辑 **Properties/AndroidManifest.xml**，并将 `//application/@android:debuggable` 属性设置为 `true`：
 
 ```xml
 <application android:label="Example.Name.Here" android:debuggable="true">

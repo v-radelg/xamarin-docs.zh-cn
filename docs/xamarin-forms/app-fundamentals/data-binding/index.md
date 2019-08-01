@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2018
-ms.openlocfilehash: c607cecf6c7044fa4c8d0270a5b8d1471d3f9227
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059056"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653369"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 数据绑定
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
+数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。  数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
 
 ## <a name="the-data-linking-problem"></a>数据链接问题
 
-Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包含多个名为“视图”的用户界面对象。 该程序的一项首要任务是确保这些视图保持同步，并跟踪它们所表示的各种值或选项。 通常，视图表示来自基础数据源的值，用户可对这些视图进行处理以更改该数据。 当视图发生更改时，基础数据必会反映该更改；同样，当基础数据发生更改时，该更改必将反映在视图中。
+Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包含多个名为“视图”的用户界面对象  。 该程序的一项首要任务是确保这些视图保持同步，并跟踪它们所表示的各种值或选项。 通常，视图表示来自基础数据源的值，用户可对这些视图进行处理以更改该数据。 当视图发生更改时，基础数据必会反映该更改；同样，当基础数据发生更改时，该更改必将反映在视图中。
 
 要成功执行此作业，程序必须知晓这些视图或基础数据的更改。 常用的解决方案是定义一个事件，在发生更改时发出信号。 随后将安装事件处理程序，就这些更改进行通知。 它通过将数据从一个对象传输到另一个对象来响应。 但是，如果存在多个视图，就必须使用多个事件处理程序并将涉及大量代码。
 
@@ -35,7 +35,7 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 - 派生自另一个 `View`，且通常位于同一页面。
 - 或是代码文件中的对象。
 
-在演示程序中（如 [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) 示例中的程序），为了清楚简便起见，通常会显示两个 `View` 派生对象之间的数据绑定。 但是，相同的原则也可应用于 `View` 和其他对象之间的数据绑定。 使用模型-视图-视图模型 (MVVM) 架构生成应用程序时，具有基础数据的类通常称为视图模型。
+在演示程序中（如 [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 示例中的程序），为了清楚简便起见，通常会显示两个 `View` 派生对象之间的数据绑定。 但是，相同的原则也可应用于 `View` 和其他对象之间的数据绑定。 使用模型-视图-视图模型 (MVVM) 架构生成应用程序时，具有基础数据的类通常称为视图模型。
 
 以下系列文章探讨了数据绑定：
 
@@ -73,6 +73,6 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)

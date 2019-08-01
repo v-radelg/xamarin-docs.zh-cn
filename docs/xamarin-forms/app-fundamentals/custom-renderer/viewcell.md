@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 90215be6356722729b441513bf749150c77755ca
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: aa1093336a79689380e920783dd772c5e68c76b9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924650"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650446"
 ---
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。_
 
@@ -577,4 +577,4 @@ namespace CustomRenderer.UWP
 ## <a name="related-links"></a>相关链接
 
 - [ListView 性能](~/xamarin-forms/user-interface/listview/performance.md)
-- [CustomRendererViewCell（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ViewCell/)
+- [CustomRendererViewCell（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)

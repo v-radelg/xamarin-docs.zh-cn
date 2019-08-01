@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 8c79075c9e01ef5da73255b152b4cbbd676b4f4e
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 20e7385c16324643545e156950efaca565eb0e0c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674736"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643944"
 ---
 # <a name="building-abi-specific-apks"></a>构建特定于 ABI 的 APK
 
@@ -185,6 +185,6 @@ rake 任务完成后，将有三个包含文件 `xamarin.helloworld.apk` 的 `bi
 
 ## <a name="related-links"></a>相关链接
 
-- [OneABIPerAPK（示例）](https://developer.xamarin.com/samples/monodroid/OneABIPerAPK/)
+- [OneABIPerAPK（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/oneabiperapk)
 - [发布应用程序](~/android/deploy-test/publishing/index.md)
 - [面向 Google Play 的多 APK 支持](https://developer.android.com/google/play/publishing/multiple-apks.html)

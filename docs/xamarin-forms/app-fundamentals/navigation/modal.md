@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c84995e210d61e735d12a089f40bf9afa720acb5
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: cd29e284c45bfe59633dde924e27d8022e8416ba
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329281"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645926"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
 Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。_
 
@@ -82,7 +82,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 ### <a name="popping-pages-from-the-modal-stack"></a>从模式堆栈中弹出页面
 
-通过设备上的“后退”按钮（无论是设备上的物理按钮还是屏幕按钮），可以从模式堆栈中弹出活动页面。
+通过设备上的“后退”  按钮（无论是设备上的物理按钮还是屏幕按钮），可以从模式堆栈中弹出活动页面。
 
 若要以编程方式返回原始页，`ModalPage` 实例必须调用 [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync) 方法，如以下代码示例所示：
 
@@ -103,7 +103,7 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 
 ### <a name="disabling-the-back-button"></a>禁用“后退”按钮
 
-在 Android 上，只要按设备上的标准“后退”按钮，用户就可返回到上一页。 如果模式页面要求用户在离开页面之前完成独立任务，则应用程序必须禁用“后退”按钮。 可通过替代模式页面上的 [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) 方法来完成此操作。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
+在 Android 上，只要按设备上的标准“后退”  按钮，用户就可返回到上一页。 如果模式页面要求用户在离开页面之前完成独立任务，则应用程序必须禁用“后退”  按钮。 可通过替代模式页面上的 [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) 方法来完成此操作。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
 ### <a name="animating-page-transitions"></a>对页面过渡效果进行动画处理
 
@@ -262,5 +262,5 @@ public class DetailPageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [页面导航](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [模式（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
-- [PassingData（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
+- [模式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
+- [PassingData（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)

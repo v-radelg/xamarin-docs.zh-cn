@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ba29e57008bfea420562d88ab1612c09f4460e85
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830350"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651065"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的键盘辅助功能
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 如果用户使用屏幕阅读器或有行动障碍，他们在使用不提供相应键盘访问的应用程序时可能会遇到困难。 Xamarin.Forms 应用程序可以根据需要指定 Tab 键顺序，以改进可用性和辅助功能。 为控件指定 Tab 键顺序可启用键盘导航，准备应用程序页以特定顺序接收输入，并允许屏幕阅读器为用户读取可聚焦的元素。
 
@@ -146,4 +146,4 @@ ms.locfileid: "67830350"
 
 ## <a name="related-links"></a>相关链接
 
-- [可访问性（示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [可访问性（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

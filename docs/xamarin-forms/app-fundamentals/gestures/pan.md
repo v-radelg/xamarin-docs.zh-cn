@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 36f01fb309f174e0ed7c709fb77f133b101ef8e0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 03b9c5f903cea67032a9560754a32ac552635e92
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061088"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653877"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>添加平移手势识别器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
 _平移手势用于检测手指在屏幕上的移动并将该移动应用于内容，可通过 `PanGestureRecognizer` 类实现。平移手势的常见使用场景是水平和垂直平移图像，以便在小于图像尺寸的视区中显示图像内容时，可以查看所有图像内容。这是通过在视区内移动图像来实现的，本文将对此进行演示。_
 
@@ -151,6 +151,6 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [PanGesture（示例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
+- [PanGesture（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)

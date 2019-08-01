@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2018
-ms.openlocfilehash: a5273897539cdce4aeb0abde28a0912e8327284a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8effabc66b51b1cf32e3be455428c44eeea3f26d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052175"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656228"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 已编译绑定
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-已编译绑定的解析速度快于传统绑定解析，因而可提升 Xamarin.Forms 应用程序中的数据绑定的性能。
+已编译绑定的解析速度快于传统绑定解析，因而可提升 Xamarin.Forms 应用程序中的数据绑定的性能  。
 
 数据绑定存在两个主要问题：
 
@@ -35,14 +35,14 @@ ms.locfileid: "53052175"
 > [!NOTE]
 > 建议在设置 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 的视图层次结构中将 `x:DataType` 属性设置为相同级别。
 
-在 XAML 编译时，会将任何无效绑定表达式报告为生成错误。 但是，XAML 编译器仅报告遇到的第一个无效绑定表达式的生成错误。 无论是在 XAML 还是代码中设置 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，都将编译在 `VisualElement` 或其子元素上定义的任何有效绑定表达式。 编译绑定表达式会生成编译代码，该代码将从源上的属性获取值，并将在标记中指定的目标的属性上对其进行设置。 此外，根据绑定表达式，生成的代码可能会观察到源属性值的更改并刷新目标属性，并可能会将更改从目标推送回源。
+在 XAML 编译时，会将任何无效绑定表达式报告为生成错误。 但是，XAML 编译器仅报告遇到的第一个无效绑定表达式的生成错误。 无论是在 XAML 还是代码中设置 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，都将编译在 `VisualElement` 或其子元素上定义的任何有效绑定表达式。 编译绑定表达式会生成编译代码，该代码将从源上的属性获取值，并将在标记中指定的目标的属性上对其进行设置   。 此外，根据绑定表达式，生成的代码可能会观察到源属性值的更改并刷新目标属性，并可能会将更改从目标推送回源     。
 
 > [!IMPORTANT]
 > 目前，定义 [`Source`](xref:Xamarin.Forms.Binding.Source) 属性的任何绑定表达式都禁用了编译绑定。 这是因为 `Source` 属性始终使用 `x:Reference` 标记扩展进行设置，该设置在编译时无法解析。
 
 ## <a name="using-compiled-bindings"></a>使用已编译的绑定
 
-已编译的颜色选择器页演示在 Xamarin.Forms 视图和 ViewModel 属性之间使用已编译的绑定：
+已编译的颜色选择器页演示在 Xamarin.Forms 视图和 ViewModel 属性之间使用已编译的绑定  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +89,7 @@ ms.locfileid: "53052175"
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中的绑定在模板化的对象的上下文中进行解释。 因此，在 `DataTemplate` 中使用已编译的绑定时，`DataTemplate` 需要使用 `x:DataType` 属性来声明其数据对象的类型。
 
-已编译的颜色列表页演示在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中使用已编译的绑定：
+已编译的颜色列表页演示在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中使用已编译的绑定  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -136,7 +136,7 @@ ms.locfileid: "53052175"
 
 绑定表达式仅针对定义了 `x:DataType` 属性的视图层次结构进行编译。 相反，未定义 `x:DataType` 属性的层次结构中的任何视图都将使用传统绑定。 因此，可以在页面上组合已编译的绑定和传统绑定。 例如，在之前的部分中，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中的视图使用已编译的绑定，而设置为 [`ListView`](xref:Xamarin.Forms.ListView) 中所选颜色的 [`BoxView`](xref:Xamarin.Forms.BoxView) 则不使用。
 
-因此仔细构造 `x:DataType` 属性可以生成使用已编译绑定和传统绑定的页面。 或者，可以使用 `x:Null` 标记扩展在视图层次结构中的任意点将 `x:DataType` 属性重新定义为 `null`。 执行此操作表示视图层次结构中的任何绑定表达式都将使用传统绑定。 混合绑定页展示这种方法：
+因此仔细构造 `x:DataType` 属性可以生成使用已编译绑定和传统绑定的页面。 或者，可以使用 `x:Null` 标记扩展在视图层次结构中的任意点将 `x:DataType` 属性重新定义为 `null`。 执行此操作表示视图层次结构中的任何绑定表达式都将使用传统绑定。 混合绑定页展示这种方法  ：
 
 ```xaml
 <StackLayout x:DataType="local:HslColorViewModel">
@@ -175,4 +175,4 @@ ms.locfileid: "53052175"
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

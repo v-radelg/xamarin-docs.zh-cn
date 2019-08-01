@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3e5db00a73047aaadb1162fa1cc8a21f6e77b3a0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926192"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650640"
 ---
 # <a name="custom-video-transport-controls"></a>自定义视频传输控件
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-视频播放器的传输控件包括执行“播放”、“暂停”和“停止”功能的按钮。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮。
+视频播放器的传输控件包括执行“播放”、“暂停”和“停止”功能的按钮    。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮   。
 
 默认情况下，`VideoPlayer` 显示每个平台支持的传输控件。 当你将 `AreTransportControlsEnabled` 属性设置为 `false` 时，将禁止这些控件。 然后，可以通过编程控制 `VideoPlayer` 或提供自己的传输控件。
 
@@ -212,11 +212,11 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-video-player-status"></a>视频播放器状态
 
-实现“播放”、“暂停”、“停止”功能不足以支持传输控件。 通常“播放”和“暂停”命令都是通过同一个按钮实现的，该按钮会更改外观，以指示视频当前是播放还是暂停。 此外，如果视频尚未加载，则不应启用该按钮。
+实现“播放”、“暂停”、“停止”功能不足以支持传输控件    。 通常“播放”和“暂停”命令都是通过同一个按钮实现的，该按钮会更改外观，以指示视频当前是播放还是暂停   。 此外，如果视频尚未加载，则不应启用该按钮。
 
 这些要求意味着视频播放器需要提供一个当前状态，以指示它是否正在播放或暂停，或者是否还没有准备好播放视频。 （每个平台还支持一些属性，这些属性指示视频是否可以暂停，或者是否可以移动到新的位置，但是这些属性适用于流式处理视频，而不是视频文件，因此这里描述的 `VideoPlayer` 中不支持这些属性。）
 
-“VideoPlayerDemos”项目包括具有三个成员的 `VideoStatus` 枚举：
+“VideoPlayerDemos”项目包括具有三个成员的 `VideoStatus` 枚举  ：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -364,7 +364,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-status-setting"></a>Android 状态设置
 
-Android `VideoView` 的 [`IsPlaying`](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) 属性是一个布尔值，仅指示视频是播放或暂停。 若要确定 `VideoView` 是否不能播放或暂停视频，必须处理 `VideoView` 的 `Prepared` 事件。 这两个处理程序在 `OnElementChanged` 方法中设置，并在 `Dispose` 重写期间拆离：
+Android `VideoView` 的 [`IsPlaying`](xref:Android.Widget.VideoView.IsPlaying) 属性是一个布尔值，仅指示视频是播放或暂停。 若要确定 `VideoView` 是否不能播放或暂停视频，必须处理 `VideoView` 的 `Prepared` 事件。 这两个处理程序在 `OnElementChanged` 方法中设置，并在 `Dispose` 重写期间拆离：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -522,25 +522,25 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>播放、暂停和停止按钮
 
-使用表示“播放”、“暂停”和“停止”图像的 Unicode 字符时会出现问题。 Unicode 标准的[杂类技术](https://unicode-table.com/en/blocks/miscellaneous-technical/)部分定义了三个似乎适用于此用途的符号字符。 这些是：
+使用表示“播放”、“暂停”和“停止”图像的 Unicode 字符时会出现问题    。 Unicode 标准的[杂类技术](https://unicode-table.com/en/blocks/miscellaneous-technical/)部分定义了三个似乎适用于此用途的符号字符。 这些是：
 
-- 0x23F5（黑色中等直角三角形）或 &#x23F5；表示“播放”
-- 0x23F8（双竖线）或 &#x23F8；表示“暂停”
-- 0x23F9 （黑色方框）或 &#x23F9；表示“停止”
+- 0x23F5（黑色中等直角三角形）或 &#x23F5；表示“播放” 
+- 0x23F8（双竖线）或 &#x23F8；表示“暂停” 
+- 0x23F9 （黑色方框）或 &#x23F9；表示“停止” 
 
-不管这些符号在浏览器中是如何显示的（不同的浏览器处理方式不同），它们在 Xamarin.Forms 支持的平台上的显示并不一致。 在 iOS 和 UWP 设备上，“暂停”和“停止”字符具有蓝色 3D 背景和白色前景的图形外观。 但在 Android 上却不是这样，它的符号只是蓝色。 但是，“播放”的 0x23F5 码点在 UWP 上没有相同的外观，iOS 和 Android 甚至不支持它。
+不管这些符号在浏览器中是如何显示的（不同的浏览器处理方式不同），它们在 Xamarin.Forms 支持的平台上的显示并不一致。 在 iOS 和 UWP 设备上，“暂停”和“停止”字符具有蓝色 3D 背景和白色前景的图形外观   。 但在 Android 上却不是这样，它的符号只是蓝色。 但是，“播放”的 0x23F5 码点在 UWP 上没有相同的外观，iOS 和 Android 甚至不支持它  。
 
-因此，0x23F5 码点不能用于“播放”。 一个不错的替代品是：
+因此，0x23F5 码点不能用于“播放”  。 一个不错的替代品是：
 
-- 0x25B6（黑色直角三角形）或 &#x25B6；表示“播放”
+- 0x25B6（黑色直角三角形）或 &#x25B6；表示“播放” 
 
-每个平台都支持此功能，除了它是一个简单的黑色三角形，不像“暂停”和“停止”的 3D 外观。 一种可能性是在 0x25B6 码点之后添加一个变体代码：
+每个平台都支持此功能，除了它是一个简单的黑色三角形，不像“暂停”和“停止”的 3D 外观   。 一种可能性是在 0x25B6 码点之后添加一个变体代码：
 
-- 0x25B6 后面跟着 0xFE0F（变量 16）或 &#x25B6；&#xFE0F；表示“播放”
+- 0x25B6 后面跟着 0xFE0F（变量 16）或 &#x25B6；&#xFE0F；表示“播放” 
 
-这就是如下所示标记中使用的内容。 在 iOS 系统中，“播放”符号与“暂停”和“停止”按钮具有相同的 3D 外观，但在 Android 和 UWP 上无法使用。
+这就是如下所示标记中使用的内容。 在 iOS 系统中，“播放”符号与“暂停”和“停止”按钮具有相同的 3D 外观，但在 Android 和 UWP 上无法使用    。
 
-“自定义传输”页面将“AreTransportControlsEnabled”属性设置为“false”，并包括加载视频时显示的 `ActivityIndicator` 和两个按钮。 `DataTrigger` 对象用于启用和禁用 `ActivityIndicator` 和按钮，并在“播放”和“暂停”之间切换第一个按钮：
+“自定义传输”页面将“AreTransportControlsEnabled”属性设置为“false”，并包括加载视频时显示的 `ActivityIndicator` 和两个按钮    。 `DataTrigger` 对象用于启用和禁用 `ActivityIndicator` 和按钮，并在“播放”和“暂停”之间切换第一个按钮   ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -647,11 +647,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-由于“CustomTransport.xaml”文件中的 `AutoPlay` 设置为 `false`，因此启用视频后，需要按下“播放”按钮，。 定义按钮使得上述 Unicode 字符附带其文本等效项。 播放视频时，按钮在每个平台上都具有一致的外观：
+由于“CustomTransport.xaml”文件中的 `AutoPlay` 设置为 `false`，因此启用视频后，需要按下“播放”按钮，   。 定义按钮使得上述 Unicode 字符附带其文本等效项。 播放视频时，按钮在每个平台上都具有一致的外观：
 
 [![自定义传输播放](custom-transport-images/customtransportplaying-small.png "Custom Transport Playing")](custom-transport-images/customtransportplaying-large.png#lightbox "自定义传输播放")
 
-但在 Android 和 UWP 上，当视频暂停时，“播放”按钮看起来大不相同：
+但在 Android 和 UWP 上，当视频暂停时，“播放”按钮看起来大不相同  ：
 
 [![自定义传输暂停](custom-transport-images/customtransportpaused-small.png "Custom Transport Paused")](custom-transport-images/customtransportpaused-large.png#lightbox "自定义传输暂停")
 
@@ -660,4 +660,4 @@ namespace VideoPlayerDemos
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

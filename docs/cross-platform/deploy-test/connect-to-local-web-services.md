@@ -6,16 +6,16 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
-ms.openlocfilehash: bc88a5eb977ea49b761df22407329dfaf20fa122
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
+ms.openlocfilehash: 1318d8e1563239d5215d8cfc03c971be8b2cff35
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477567"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647645"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>从 iOS 模拟器和 Android 模拟器连接到本地 Web 服务
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 
 许多移动应用程序使用 Web 服务。 在开发阶段，在本地部署 Web 服务和从 iOS 模拟器或 Android 模拟器中运行的移动应用程序中使用它是很常见的操作。 这可避免向托管的终结点部署 Web 服务并可直接进行调试体验，因为移动应用程序和 Web 服务都是在本地运行的。
 
@@ -121,7 +121,7 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="related-links"></a>相关链接
 
-- [TodoREST（示例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+- [TodoREST（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 - [启用本地 HTTPS](/aspnet/core/getting-started#enable-local-https)
 - [iOS/macOS 的 HttpClient 和 SSL/TLS 实现选择器](~/cross-platform/macios/http-stack.md)
 - [Android 的 HttpClient 堆栈和 SSL/TLS 实现选择器](~/android/app-fundamentals/http-stack.md)

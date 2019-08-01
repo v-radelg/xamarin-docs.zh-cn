@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 2dd7efb9f295143775961afb97e70b5f241d1337
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 87972df2b15a5bc1f6323a6953f809379cae4a50
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056118"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644529"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 有时，使用数据绑定来显示代表对象或值的字符串十分方便。 例如，可能想使用 `Label` 来显示 `Slider` 当前的值。 在此数据绑定中，`Slider` 是源，目标是 `Label` 的 `Text` 属性。
 
@@ -39,7 +39,7 @@ ms.locfileid: "53056118"
 
 将在[绑定路径](binding-path.md)中的下一篇文章中看到，数据绑定可能会变得相当复杂且费解。 调试这些数据绑定时，可以将 `Label` 添加到带 `StringFormat` 的 XAML 文件中以显示某些中间结果。 即使仅用于显示对象类型，这仍然非常有用。
 
-字符串格式页面说明了 `StringFormat` 属性的多种用法：
+字符串格式页面说明了 `StringFormat` 属性的多种用法  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -129,7 +129,7 @@ XAML 文件的下一部分是 `StackLayout`，其中 `BindingContext` 设置为�
 
 当使用 `Label` 和 `StringFormat` 显示同为 ViewModel 目标的视图的值时，可以将绑定定义为从视图到 `Label` 或从 ViewModel 到 `Label`。 一般情况下第二种方法最佳，因为它验证了试图和 ViewModel 之间的绑定是否正常运作。
 
-此方法展示在更好的颜色选择器示例中，其中使用与[绑定模式](binding-mode.md)一文中展示的简单颜色选择器程序使用的相同 ViewModel：
+此方法展示在更好的颜色选择器示例中，其中使用与[绑定模式](binding-mode.md)一文中展示的简单颜色选择器程序使用的相同 ViewModel    ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,12 +180,12 @@ XAML 文件的下一部分是 `StackLayout`，其中 `BindingContext` 设置为�
 
 你可能想知道如何在传统的两位数十六进制格式中显示 RGB（红、绿、蓝）值。 这些整数值不是从 `Color` 结构中直接提供的。 一种解决方案是计算 ViewModel 中的颜色组件的整数值，并将其作为属性公开。 然后可以使用 `X2` 格式规范对这些值进行格式设置。
 
-另一种方法更常用：可以编写一个绑定值转换器，在后文[**绑定值转换器**](converters.md)中有所描述。
+另一种方法更常用：可以编写一个绑定值转换器  ，在后文[**绑定值转换器**](converters.md)中有所描述。
 
-但下一篇文章更详细地探讨了[绑定路径](binding-path.md)并展示了如何使用它来引用子属性和集合中的项。
+但下一篇文章更详细地探讨了[绑定路径](binding-path.md)并展示了如何使用它来引用子属性和集合中的项  。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

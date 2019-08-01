@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 43f8b1185900ff20f8e4c53680c1adf62ac8316a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d3635ccc61a0be50e4a4b6d8bc44e60515cc21e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829701"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509076"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -127,7 +127,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
     在 Android 包中，可能只存在一个具有 `<AndroidApplication>True</AndroidApplication>` 的项目。 （遗憾的是，这点尚未得到验证，这可能会导致与 Android 资源有关的微妙和奇怪的错误。）
 
--    AndroidApplicationJavaClass &ndash; 类继承自 [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) 时，用于替代 `android.app.Application` 的完整 Java 类名称。
+-    AndroidApplicationJavaClass &ndash; 类继承自 [Android.App.Application](xref:Android.App.Application) 时，用于替代 `android.app.Application` 的完整 Java 类名称。
 
     此属性通常由其他  属性（如 `$(AndroidEnableMultiDex)` MSBuild 属性）设置。
 

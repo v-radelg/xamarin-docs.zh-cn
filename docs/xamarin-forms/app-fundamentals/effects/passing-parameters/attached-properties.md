@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925438"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645375"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>将效果参数作为附加属性传递
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _附加属性可用于定义响应运行时属性更改的效果参数。本文演示如何使用附加属性将参数传递给效果，以及如何在运行时更改参数。_
 
@@ -318,7 +318,7 @@ namespace EffectsDemo.Droid
     }
 ```
 
-`OnAttached` 方法调用使用 `ShadowEffect` getter 检索附加属性值的方法，并调用对使用属性值创建阴影的 [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) 方法进行调用的方法。 效果所附加到的控件没有 `Control.Layer` 属性时，此功能包装在 `try`/`catch` 块中。 `OnDetached` 方法不提供任何实现，因为不需要进行清理。
+`OnAttached` 方法调用使用 `ShadowEffect` getter 检索附加属性值的方法，并调用对使用属性值创建阴影的 [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) 方法进行调用的方法。 效果所附加到的控件没有 `Control.Layer` 属性时，此功能包装在 `try`/`catch` 块中。 `OnDetached` 方法不提供任何实现，因为不需要进行清理。
 
 #### <a name="responding-to-property-changes"></a>响应属性更改
 
@@ -440,4 +440,4 @@ public class LabelShadowEffect : PlatformEffect
 - [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [阴影效果（示例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+- [阴影效果（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

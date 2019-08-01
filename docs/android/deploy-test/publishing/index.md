@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 4b50d230be642466de68c54957a3fe9a79c1093b
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ebf29e99e1145c23bf476cb80e068e79f72816f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670933"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643902"
 ---
 # <a name="publishing-an-application"></a>发布应用程序
 
@@ -22,9 +22,9 @@ ms.locfileid: "57670933"
 
 Xamarin.Android 应用程序开发的最终步骤是发布应用程序。 发布是编译 Xamarin.Android 应用程序，使其可供用户安装在设备上的过程，其中包括 2 个基本任务：
 
--   做好发布准备 &ndash; 创建可部署到支持 Android 的设备的应用程序的一个发布版本（有关发布准备的详细信息，请参阅[做好应用程序发布准备](~/android/deploy-test/release-prep/index.md)）。
+-    做好发布准备 &ndash; 创建可部署到支持 Android 的设备的应用程序的一个发布版本（有关发布准备的详细信息，请参阅[做好应用程序发布准备](~/android/deploy-test/release-prep/index.md)）。
 
--   分发 &ndash; 通过一个或多个不同的分发渠道提供应用程序的发行版本。
+-    分发 &ndash; 通过一个或多个不同的分发渠道提供应用程序的发行版本。
 
 下图说明了发布 Xamarin.Android 应用程序涉及的步骤：
 
@@ -32,9 +32,9 @@ Xamarin.Android 应用程序开发的最终步骤是发布应用程序。 发布
 
 如上图所示，所有分发方式的准备过程都是相同的。 可通过以下几种方式将 Android 应用程序发布给用户：
 
--   通过网站 &ndash; Xamarin.Android 应用程序可通过在网站下载获得，用户可在网站中单击链接安装应用程序。
--   通过电子邮件 &ndash; 用户可以从电子邮件安装 Xamarin.Android 应用程序。 在 Android 设备上打开附件时会安装应用程序。
--   通过应用商店 &ndash; 有多个应用市场可用于分发，例如 [Google Play](http://play.google.com/) 或 [Android 版 Amazon 应用商店](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
+-    通过网站 &ndash; Xamarin.Android 应用程序可通过在网站下载获得，用户可在网站中单击链接安装应用程序。
+-    通过电子邮件 &ndash; 用户可以从电子邮件安装 Xamarin.Android 应用程序。 在 Android 设备上打开附件时会安装应用程序。
+-    通过应用商店 &ndash; 有多个应用市场可用于分发，例如 [Google Play](http://play.google.com/) 或 [Android 版 Amazon 应用商店](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
 
 
 发布应用程序最常见的方法是通过知名的应用商店，因为它可以提供最广的市场范围和达到最佳的分发控制。 但是，通过应用市场发布应用程序需要进行其他工作。
@@ -55,7 +55,7 @@ Google Play 无疑是最全面和最受欢迎的 Android 应用程序应用市�
 
 ## <a name="related-links"></a>相关链接
 
-- [HelloWorldPublishing（示例）](https://developer.xamarin.com/samples/monodroid/HelloWorldPublishing/)
+- [HelloWorldPublishing（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [生成过程](~/android/deploy-test/building-apps/build-process.md)
 - [链接](~/android/deploy-test/linker.md)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)

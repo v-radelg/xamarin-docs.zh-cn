@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: b0dfcd2cd50cc70ea7735988236506e18ccf7937
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b96877045a3f289cb4b9ba83a8159d26ed768d99
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53051301"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655596"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms Carousel Page
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
 _Xamarin.Forms CarouselPage 页就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。_
 
@@ -255,6 +255,6 @@ public class MainPageCS : CarouselPage
 ## <a name="related-links"></a>相关链接
 
 - [页类型](~/xamarin-forms/user-interface/controls/pages.md)
-- [CarouselPage（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/)
-- [CarouselPageTemplate（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPageTemplate/)
+- [CarouselPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
+- [CarouselPageTemplate（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpagetemplate)
 - [CarouselPage](xref:Xamarin.Forms.CarouselPage)

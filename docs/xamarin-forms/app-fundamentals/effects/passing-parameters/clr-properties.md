@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 9f3d95b3901295c29c2276bfdd85579b321f9795
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c5271aab5342f065694e598bd5c2892ef1f18aeb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925435"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656663"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>将效果参数作为公共语言运行时属性传递
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 公共语言运行时 (CLR) 属性可用于定义不响应运行时属性更改的效果参数。本文演示如何使用 CLR 属性将参数传递给效果。_
 
@@ -185,7 +185,7 @@ namespace EffectsDemo.Droid
 }
 ```
 
-`OnAttached` 方法检索 `ShadowEffect` 实例，并调用 [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) 方法使用指定的属性值创建阴影。 效果所附加到的控件没有 `Control.Layer` 属性时，此功能包装在 `try`/`catch` 块中。 `OnDetached` 方法不提供任何实现，因为不需要进行清理。
+`OnAttached` 方法检索 `ShadowEffect` 实例，并调用 [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) 方法使用指定的属性值创建阴影。 效果所附加到的控件没有 `Control.Layer` 属性时，此功能包装在 `try`/`catch` 块中。 `OnDetached` 方法不提供任何实现，因为不需要进行清理。
 
 ### <a name="universal-windows-platform-project"></a>通用 Windows 平台项目
 
@@ -245,4 +245,4 @@ namespace EffectsDemo.UWP
 - [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [阴影效果（示例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [阴影效果（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
