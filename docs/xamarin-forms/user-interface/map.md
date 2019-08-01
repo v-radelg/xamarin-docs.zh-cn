@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 映射
-description: 本文介绍如何使用 Xamarin.Forms Map 类如何使用每个平台上本机地图 Api 提供熟悉的映射的用户体验。
+title: Xamarin.Forms 地图
+description: 本文介绍如何使用 Xamarin.Forms 地图类在每个平台上使用本机地图 API，从而为用户提供熟悉的地图体验。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
@@ -14,24 +14,24 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/30/2019
 ms.locfileid: "68656969"
 ---
-# <a name="xamarinforms-map"></a>Xamarin.Forms 映射
+# <a name="xamarinforms-map"></a>Xamarin.Forms 地图
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 _Xamarin.Forms 每个平台上使用本机映射 Api。_
 
-Xamarin.Forms.Maps 每个平台上使用本机映射 Api。 这为用户提供了快速、熟悉的地图体验, 但这意味着需要执行一些配置步骤来符合每个平台的 API 要求。
+Xamarin.Forms.Maps 在每个平台上使用本机地图 API。 这为用户提供了快速、熟悉的地图体验，但这意味着需要执行一些配置步骤以符合每个平台的 API 要求。
 配置完成后，`Map`控制的工作方式就像在常见的代码中的任何其他 Xamarin.Forms 元素。
 
 已在使用地图控件[MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)示例，如下所示。
 
  [![MobileCRM 示例中的地图](map-images/maps-zoom-sml.png "地图控件示例")](map-images/maps-zoom.png#lightbox "地图控件示例")
 
-映射功能可以通过创建进一步增强[映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)。
+可通过创建[地图自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)来进一步增强地图功能。
 
 <a name="Maps_Initialization" />
 
-## <a name="map-initialization"></a>映射初始化
+## <a name="map-initialization"></a>地图初始化
 
 将地图添加到 Xamarin.Forms 应用程序时**Xamarin.Forms.Maps**是一个单独的 NuGet 包，应添加到解决方案中的每个项目。
 在 Android 上，这也存在依赖关系添加 Xamarin.Forms.Maps 时，会自动下载的 GooglePlayServices (另一个 NuGet)。
@@ -66,7 +66,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 ## <a name="platform-configuration"></a>平台配置
 
-之前该映射将显示在某些平台上需要其他配置步骤。
+一些平台上需执行其他配置步骤，然后该地图才可显示。
 
 ### <a name="ios"></a>iOS
 
@@ -140,13 +140,13 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-若要在通用 Windows 平台上使用映射必须生成授权令牌。 有关详细信息，请参阅[请求一个地图身份验证密钥](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)MSDN 上。
+若要在通用 Windows 平台上使用地图，则必须生成授权令牌。 有关详细信息，请参阅 MSDN 上的 [请求地图身份验证密钥](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)。
 
 然后应在中指定的身份验证令牌`FormsMaps.Init("AUTHORIZATION_TOKEN")`方法调用中，与必应地图应用进行身份验证。
 
 <a name="Using_Maps" />
 
-## <a name="map-configuration"></a>映射配置
+## <a name="map-configuration"></a>地图配置
 
 请参阅[MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) MobileCRM 示例以举例说明如何在代码中使用地图控件中。 一个简单`MapPage`类看起来像此-请注意，新`MapSpan`创建来定位地图的视图：
 
@@ -168,7 +168,7 @@ public class MapPage : ContentPage {
 }
 ```
 
-### <a name="map-type"></a>映射类型
+### <a name="map-type"></a>地图类型
 
 此外可以通过设置更改地图内容`MapType`属性，以显示正则街道地图 （默认值）、 卫星照片或这两者的组合。
 
@@ -184,7 +184,7 @@ map.MapType == MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>地图区域和 MapSpan
 
-上面的代码段中所示，提供`MapSpan`map 构造函数的实例设置的初始视图 （中心点和缩放级别） 的映射在加载时。 `MoveToRegion`然后使用 map 类上的方法来更改映射的位置或缩放级别。 有两种方法来创建一个新`MapSpan`实例：
+如上面的代码片段所示，若向地图构造函数提供一个 `MapSpan` 实例，则会在加载地图时设置地图的初始视图（中心点和缩放级别）。 然后，可使用地图类上的 `MoveToRegion` 方法来更改地图的位置或缩放级别。 创建新 `MapSpan` 实例的方法有两种：
 
 -  **MapSpan.FromCenterAndRadius()** 的静态方法，用于创建从 span`Position`并指定`Distance`。
 -  **新 MapSpan （)** 的构造函数使用`Position`和程度的纬度和经度来显示。
@@ -203,7 +203,7 @@ slider.ValueChanged += (sender, e) => {
 
  [![与 zoom 的地图](map-images/maps-zoom-sml.png "地图控件缩放")](map-images/maps-zoom.png#lightbox "地图控件缩放")
 
-### <a name="map-pins"></a>映射 pin
+### <a name="map-pins"></a>地图图钉
 
 可以在代码图上标记位置`Pin`对象。
 
@@ -244,9 +244,9 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 
 <a name="Using_Xaml" />
 
-### <a name="create-a-map-in-xaml"></a>在 XAML 中创建映射
+### <a name="create-a-map-in-xaml"></a>在 XAML 中创建地图
 
-还可以在 XAML 中创建映射, 如以下示例中所示:
+还可以在 XAML 创建地图，如下例所示：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
