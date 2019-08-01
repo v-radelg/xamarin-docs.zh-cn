@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: deb4caa4d23d23b2997361cca161b218c1ff7b61
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511293"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680210"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>使用跨平台应用中的本机类型
 
@@ -58,7 +58,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 #### <a name="using-duplicate-methods"></a>使用重复方法
 
-采用在上面给出的矩形数据进行转换的库示例。 如果库只包含一种或两种非常简单的方法, 可以选择为 Xamarin 和 Xamarin 创建这些方法的重复版本。 例如：
+采用在上面给出的矩形数据进行转换的库示例。 如果库只包含一种或两种非常简单的方法, 可以选择为 Xamarin 和 Xamarin 创建这些方法的重复版本。 例如:
 
 ```csharp
 using System;
@@ -214,7 +214,7 @@ namespace NativeShared
 
 #### <a name="using-type-conversions-in-the-front-end-app"></a>在前端应用中使用类型转换
 
-如果你的前端应用程序只对你的共享代码库进行少量调用, 另一个解决方案是将库保持不变, 并在调用现有例程时在 Xamarin 或 Xamarin 应用程序中执行类型强制转换。 例如：
+如果你的前端应用程序只对你的共享代码库进行少量调用, 另一个解决方案是将库保持不变, 并在调用现有例程时在 Xamarin 或 Xamarin 应用程序中执行类型强制转换。 例如:
 
 ```csharp
 using NativeShared;
@@ -251,4 +251,4 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [本机类型](~/cross-platform/macios/nativetypes.md)
 - [共享代码选项](~/cross-platform/app-fundamentals/code-sharing.md)
-- [代码共享示例](https://developer.xamarin.com/samples/mobile/SharingCode/)
+- [代码共享示例](https://docs.microsoft.com/samples/xamarin/mobile-samples/sharingcode/)

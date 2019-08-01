@@ -1,31 +1,31 @@
 ---
-title: MonoGame 中绘制 3D 图形的顶点
-description: MonoGame 支持使用数组的顶点来定义三维对象在每个点的基础上的呈现方式。 用户可以利用顶点数组来创建动态的几何图形、 实现特殊效果，提高通过消除其呈现效率。
+title: 在 MonoGame 中绘制带有顶点的3D 图形
+description: MonoGame 支持使用顶点数组定义三维对象如何基于每个点进行呈现。 用户可以利用顶点数组创建动态几何、实现特殊效果, 并通过精选提高其渲染效率。
 ms.prod: xamarin
 ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: df36c149e98e8c0cbb16de4c2cf52def5713ec13
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f125f8f20d22da4e988440cbaa936771d86a7673
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178493"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680972"
 ---
-# <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>MonoGame 中绘制 3D 图形的顶点
+# <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>在 MonoGame 中绘制带有顶点的3D 图形
 
 _MonoGame 支持使用顶点数组来定义3D对象在每个点上的渲染方式。用户可以利用顶点数组创建动态几何体，实现特殊效果，并通过剔除提高渲染效率。_
 
-阅读过[模型渲染指南](~/graphics-games/monogame/3d/part1.md)的用户对于在 MonoGame 中渲染3D模型会比较熟悉。 在处理文件（例如 .fbx）中定义的数据时以及处理静态数据时，`Model` 类是渲染3D图形的一种有效方法。 某些游戏需要在运行时动态定义或操纵3D几何体。 在这些情况下，可以使用顶点数组来定义和渲染几何体。 顶点是3D空间中的点的概括性术语，它是用于定义几何体的有序列表的一部分。 通常，顶点的排序方式基于一系列三角形的定义。
+阅读过[模型渲染指南](~/graphics-games/monogame/3d/part1.md)的用户对于在 MonoGame 中渲染3D模型会比较熟悉。 在处理文件（例如 .fbx）中定义的数据时以及处理静态数据时，`Model` 类是渲染3D图形的一种有效方法。 某些游戏需要在运行时动态定义或操纵3D几何体。 在这些情况下，可以使用顶点数组来定义和渲染几何体。  顶点是3D空间中的点的概括性术语，它是用于定义几何体的有序列表的一部分。 通常，顶点的排序方式基于一系列三角形的定义。
 
 为直观显示如何使用顶点创建 3D 对象，请参考以下球体：
 
-![](part2-images/image1.png "若要帮助直观地显示如何使用顶点创建三维对象，请考虑此球体")
+![](part2-images/image1.png "若要直观地显示如何使用顶点创建3D 对象, 请考虑此球")
 
 如上所示，球体由多个三角形构成。 可查看球体的线框，了解顶点是如何连接构成三角形的。
 
-![](part2-images/image2.png "查看球体，若要查看顶点如何连接到窗体三角形的线框")
+![](part2-images/image2.png "查看球体的线框, 查看顶点如何连接到形成三角形")
 
 本演练将涵盖以下主题：
 
@@ -38,15 +38,15 @@ _MonoGame 支持使用顶点数组来定义3D对象在每个点上的渲染方�
 
 完成的项目将包含一个使用顶点数组绘制的棋盘图案地板：
 
-![](part2-images/image3.png "完成的项目将包含其将通过将顶点数组绘制越过方格形终点的 floor")
+![](part2-images/image3.png "已完成的项目将包含将使用顶点数组绘制的棋盘楼层")
 
 ## <a name="creating-a-project"></a>创建项目
 
-首先，下载一个项目作为起点。 我们将使用模型项目[可在此处找到](https://developer.xamarin.com/samples/mobile/ModelRenderingMG/)。
+首先，下载一个项目作为起点。 我们将使用模型项目[可在此处找到](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)。
 
 下载并解压缩后，打开并运行该项目。 屏幕上会显示六个机器人模型：
 
-![](part2-images/image4.png "屏幕上绘制的六个机器人模型")
+![](part2-images/image4.png "在屏幕上绘制六个机器人模型")
 
 项目最后会将自定义顶点渲染与机器人`Model`相结合，因此不删除机器人渲染代码。 现在只需清除`Game1.Draw`调用来删除绘制的6个机器人。 为此，打开**Game1.cs**文件并找到`Draw`方法。 修改它以使其包含以下代码：
 
@@ -60,7 +60,7 @@ protected override void Draw(GameTime gameTime)
 
 结果是屏幕上的游戏中只显示一个蓝色的背景：
 
-![](part2-images/image5.png "这将导致显示空蓝屏游戏")
+![](part2-images/image5.png "这将导致游戏显示空的蓝屏")
 
 ## <a name="creating-the-vertices"></a>创建顶点
 
@@ -75,7 +75,7 @@ protected override void Draw(GameTime gameTime)
 
 每种类型的名称都表明了它所包含的组件。 例如，`VertexPositionColor`包含位置和颜色的值。 让我们来看看每个组件：
 
-- Position - 所有顶点类型都包含一个`Position`组件。 `Position`值定义了顶点在 3D 空间（X，Y 和 Z）中的位置。
+- Position - 所有顶点类型都包含一个`Position`组件。           `Position`值定义了顶点在 3D 空间（X，Y 和 Z）中的位置。
 - Color - 顶点可以选择性地指定`Color`值以执行自定义着色。
 - Normal - Normal 定义物体表面朝向的方向。 如果使用光照来渲染对象，必须使用 Normal，因为表面所朝向的方向会影响它的光照度。 Normal 通常被指定为*单位矢量* - 长度为 1 的 3D 矢量。
 - Texture – Texture 是指纹理坐标 - 即纹理的哪个部分应显示在给定的顶点。 如果使用纹理渲染3D对象，则必须使用 Texture 值。 纹理坐标是归一化坐标，这意味着值落在 0 和 1 之间。 我们将在本指南后面更详细地介绍纹理坐标。
@@ -107,7 +107,7 @@ protected override void Initialize ()
 
 为便于直观显示顶点，请参考下图：
 
-![](part2-images/image6.png "若要帮助直观地显示顶点将如下所示，请考虑此关系图")
+![](part2-images/image6.png "为了帮助可视化顶点的外观, 请考虑此示意图")
 
 需依靠此图来直观显示顶点，直到最终实现渲染代码。
 
@@ -125,7 +125,7 @@ VertexPositionTexture[] floorVerts;
 BasicEffect effect;
 ```
 
-接下来，修改`Initialize`方法以定义效果：
+接下来, 修改`Initialize`方法以定义效果:
 
 ```csharp
 protected override void Initialize ()
@@ -146,7 +146,7 @@ protected override void Initialize ()
 }
 ```
 
-现在我们可以添加代码来执行绘制：
+现在, 我们可以添加代码来执行绘制操作:
 
 ```csharp
 void DrawGround()
@@ -203,13 +203,13 @@ protected override void Draw (GameTime gameTime)
 
 应用程序在执行时将显示以下内容：
 
-![](part2-images/image7.png "应用程序执行时将显示此")
+![](part2-images/image7.png "应用将在执行时显示此")
 
 让我们来看看上面代码中的一些细节。
 
 ### <a name="view-and-projection-properties"></a>View和Projection属性
 
-`View`和`Projection`属性控制我们查看场景的方式。 后面在重新添加模型渲染代码时，将修改此代码。 具体来说，`View`控制相机的位置和方向，`Projection`控制*视野*（可用于缩放相机）。
+          `View`和`Projection`属性控制我们查看场景的方式。 后面在重新添加模型渲染代码时，将修改此代码。 具体来说，`View`控制相机的位置和方向，`Projection`控制*视野*（可用于缩放相机）。
 
 ### <a name="techniques-and-passes"></a>Technique和Pass
 
@@ -233,7 +233,7 @@ protected override void Draw (GameTime gameTime)
 
 此时，应用程序渲染出一个白色平面（在透视模式下）。 接下来要为渲染平面时使用的项目添加纹理。 
 
-为简单起见，将 .png 直接添加到项目中，而不是使用 MonoGame Pipeline 工具。 为此，请将[此 .png  文件](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)下载到计算机上。 下载完成后，右键单击解决方案面板中的**内容**文件夹，然后选择**添加”>“添加文件…**。 如果是在 Android 上操作，则此文件夹位于特定于 Android 的项目中的**资产**文件夹下。 如果在 iOS 上操作，那么此文件夹位于 iOS 项目的根目录中。 导航到保存 **checkerboard.png** 的位置，然后选择此文件。 选择将文件复制到该目录中。
+为简单起见，将 .png 直接添加到项目中，而不是使用 MonoGame Pipeline 工具。 为此，请将[此 .png  文件](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)下载到计算机上。 下载完成后，右键单击解决方案面板中的**内容**文件夹，然后选择**添加”>“添加文件…** 。 如果是在 Android 上操作，则此文件夹位于特定于 Android 的项目中的**资产**文件夹下。 如果在 iOS 上操作，那么此文件夹位于 iOS 项目的根目录中。 导航到保存 **checkerboard.png** 的位置，然后选择此文件。 选择将文件复制到该目录中。
 
 接下来，要添加代码来创建 `Texture2D` 实例。 首先，将 `Texture2D` 作为 `Game1` 的成员添加到 `BasicEffect` 实例下方：
 
@@ -244,7 +244,7 @@ BasicEffect effect;
 Texture2D checkerboardTexture;
 ```
 
-修改`Game1.LoadContent`，如下所示：
+修改`Game1.LoadContent` , 如下所示:
 
 
 ```csharp
@@ -337,13 +337,13 @@ protected override void Initialize ()
 
 如果运行此代码，可以看到平面现在会显示出一个棋盘图案：
 
-![](part2-images/image8.png "在平面现在显示棋盘图案")
+![](part2-images/image8.png "平面现在显示棋盘模式")
 
 ## <a name="modifying-texture-coordinates"></a>修改纹理坐标
 
 MonoGame 使用归一化纹理坐标，即坐标在 0 到 1 之间，而不是 0 到纹理的宽度或高度之间。 下图有助于直观展示归一化坐标：
 
-![](part2-images/image9.png "此图可以帮助可视化规范化的坐标")
+![](part2-images/image9.png "此关系图可帮助可视化规范化坐标")
 
 归一化纹理坐标允许调整纹理大小，且无需重写代码或重新创建模型（例如 .fbx 文件）。 因为归一化坐标表示的是比率而不是特定像素，才使之成为可能。 例如，无论纹理大小如何，（1, 1）始终表示右下角。
 
@@ -381,7 +381,7 @@ protected override void Initialize ()
 
 这会使纹理重复 20 次：
 
-![](part2-images/image10.png "这会导致重复 20 次的纹理")
+![](part2-images/image10.png "这将导致纹理重复20次")
 
 
 ## <a name="rendering-vertices-with-models"></a>使用模型渲染顶点
@@ -455,7 +455,7 @@ void DrawGround()
 
 现在，如果运行代码，可以同时看到模型和地面：
 
-![](part2-images/image11.png "模型和一开始显示在同一时间")
+![](part2-images/image11.png "同时同时显示模型和地面")
 
 如果修改相机位置（例如通过增加其 X 值，在这种情况下相机向左移动），可以看到该值会同时影响地面和模型：
 
@@ -463,7 +463,7 @@ void DrawGround()
 Vector3 cameraPosition = new Vector3(15, 10, 10);
 ```
 
-此代码产生以下结果：
+此代码将产生以下结果:
 
 ![](part2-images/image3.png "此代码会导致此视图")
 
@@ -473,5 +473,5 @@ Vector3 cameraPosition = new Vector3(15, 10, 10);
 
 ## <a name="related-links"></a>相关链接
 
-- [棋盘文件 （示例）](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)
-- [已完成的项目 （示例）](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/)
+- [棋盘文件 (示例)](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)
+- [已完成的项目 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)

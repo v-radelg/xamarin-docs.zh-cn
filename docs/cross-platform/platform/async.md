@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4ade8fbb3ac596ef2da5d76b4efa751661cd8611
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646253"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680938"
 ---
 # <a name="async-support-overview"></a>异步支持概述
 
@@ -89,7 +89,7 @@ Await 运算符可应用于标记为 async 的方法中的任务。 这会使方
 
 ## <a name="example"></a>示例
 
-下载[示例 Xamarin 解决方案](https://developer.xamarin.com/samples/mobile/AsyncAwait/)(适用于 iOS 和 Android), 以查看移动应用中`async`和`await`的工作示例。 本部分将对该示例代码进行更详细的讨论。
+下载[示例 Xamarin 解决方案](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)(适用于 iOS 和 Android), 以查看移动应用中`async`和`await`的工作示例。 本部分将对该示例代码进行更详细的讨论。
 
 ### <a name="writing-an-async-method"></a>编写 async 方法
 
@@ -196,7 +196,7 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [AsyncAwait (示例)](https://developer.xamarin.com/samples/mobile/AsyncAwait/)
+- [AsyncAwait (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)
 - [作为代的 "跳到" 语句的回调](https://tirania.org/blog/archive/2013/Aug-15.html)
 - [数据 (iOS) (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/data/)
 - [HttpClient (iOS) (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/httpclient/)

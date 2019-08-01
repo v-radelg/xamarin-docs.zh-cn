@@ -1,21 +1,21 @@
 ---
-title: 使用 MonoGame 的游戏开发简介
-description: 此多部分演练演示如何创建使用 MonoGame 的简单 2D 应用程序。  它涵盖了常见的游戏编程概念，例如，图形中，输入，游戏实体和物理特性。
+title: MonoGame 的游戏开发简介
+description: 此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。  它介绍常见的游戏编程概念, 如图形、输入、游戏实体和物理学。
 ms.prod: xamarin
 ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4ab98d59bc74672f9531f4dbd3c33a6270582612
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 47ed7fc1b4485864646a17940aceed395a4a8983
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386256"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680912"
 ---
-# <a name="introduction-to-game-development-with-monogame"></a>使用 MonoGame 的游戏开发简介
+# <a name="introduction-to-game-development-with-monogame"></a>MonoGame 的游戏开发简介
 
-_此多部分演练演示如何创建使用 MonoGame 的简单 2D 应用程序。它涵盖了常见的游戏编程概念，例如，图形中，输入，游戏实体和物理特性。_
+_此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。它介绍常见的游戏编程概念, 如图形、输入、游戏实体和物理学。_
 
 本文介绍了用于制作跨平台游戏的 MonoGame API 技术。 有关平台的完整列表，请参阅 [MonoGame 网站](http://www.monogame.net/)。 本教程将使用 C＃ 代码示例，虽然 MonoGame 也完全可以使用F＃。
 
@@ -27,9 +27,9 @@ MonoGame 是一个跨平台的硬件加速API、提供图形、音频、游戏�
 
 下面显示了此演练的结果：
 
-![示例游戏字符跟随鼠标的动画](images/image1.gif)
+![鼠标后的示例游戏字符的动画](images/image1.gif)
 
-## <a name="monogame-and-xna"></a>Monogame 和 XNA
+## <a name="monogame-and-xna"></a>Monogame 和
 
 MonoGame 库旨在模仿 Microsoft XNA 库的功能和语法。  所有 MonoGame 对象都存在于 Microsoft.Xna 命名空间下 - 允许大多数 XNA 代码在 MonoGame 中使用而无需修改。 
 
@@ -43,8 +43,8 @@ MonoGame 库旨在模仿 Microsoft XNA 库的功能和语法。  所有 MonoGame
 
 ## <a name="related-links"></a>相关链接
 
-- [WalkingGame MonoGame 项目 （示例）](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
-- [XNB 字体 iOS](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
+- [WalkingGame MonoGame 项目 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
+- [XNB 字体](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
 - [XNB 字体 Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
 - [NuGet 上的 MonoGame Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [NuGet 上的 MonoGame iOS](https://www.nuget.org/packages/MonoGame.Framework.iOS/)

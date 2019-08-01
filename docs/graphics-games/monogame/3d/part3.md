@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f2e65439084d4e89ae529bda79c2cb2739f1529d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656216"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680997"
 ---
 # <a name="3d-coordinates-in-monogame"></a>MonoGame 中的三维坐标
 
@@ -37,7 +37,7 @@ _了解3D 坐标系统是开发3D 游戏的一个重要步骤。MonoGame 提供�
 
 ## <a name="creating-a-project"></a>创建项目
 
-本演练重点介绍如何在三维空间中移动对象。 我们将从用于呈现模型和顶点数组的项目开始,[可在此处找到](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/)。 下载后, 解压缩并打开项目以确保其运行, 我们应该会看到以下内容:
+本演练重点介绍如何在三维空间中移动对象。 我们将从用于呈现模型和顶点数组的项目开始,[可在此处找到](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)。 下载后, 解压缩并打开项目以确保其运行, 我们应该会看到以下内容:
 
 ![](part3-images/image2.png "下载后, 解压缩并打开该项目以确保其运行并且应显示此视图")
 
