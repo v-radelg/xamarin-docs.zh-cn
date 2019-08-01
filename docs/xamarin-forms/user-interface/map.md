@@ -276,7 +276,7 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-## <a name="populate-a-map-with-data-using-data-binding"></a>使用数据绑定填充包含数据的映射
+## <a name="populate-a-map-with-data-using-data-binding"></a>通过数据绑定可使用数据填充地图
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)类还公开了以下属性:
 
@@ -378,7 +378,7 @@ public class MapItemTemplateSelector : DataTemplateSelector
 ## <a name="related-links"></a>相关链接
 
 - [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [地图自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [创建 Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
 - [地图 API](xref:Xamarin.Forms.Maps)
