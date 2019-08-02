@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ad1c033b35da548921ec47d8cc2f3a8ef87d2fa8
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 00e48907f3044fab8dcf23d0bbb5838bc587bb2f
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486069"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68681087"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -294,7 +294,7 @@ Xamarin.Forms 是一种跨平台的工具包，它使用 C# 和 .NET，适用于
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -305,7 +305,7 @@ Xamarin.Forms 是一种跨平台的工具包，它使用 C# 和 .NET，适用于
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>应用程序基础知识</h3>
-                                                    <p>生成应用需要了解的所有内容，例如使用文件、映像和数据库等。</p>
+                                                    <p>开发 Xamarin.Forms 应用所需要了解的一切内容，例如导航、手势、数据绑定等。</p>
                                                 </div>
                                             </div>
                                         </div>
