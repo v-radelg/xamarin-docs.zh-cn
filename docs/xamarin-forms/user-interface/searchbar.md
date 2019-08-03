@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 66d947c8b80546e68c68915b960587a48bd2448d
-ms.sourcegitcommit: 25be5acf979f6b18b6d0e64392c9ab307259c032
+ms.openlocfilehash: 391820cf2e94c1131f4082798ee9efa05d8489b8
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68610487"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739399"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SearchBar)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin [`SearchBar`](xref:Xamarin.Forms.SearchBar)是用于启动搜索的用户输入控件。 `SearchBar`控件支持占位符文本、查询输入、搜索执行和取消。 以下屏幕截图显示`SearchBar`了一个查询, 其中显示了`ListView`中的结果:
 
@@ -184,7 +184,7 @@ public class SearchViewModel : INotifyPropertyChanged
 
 ## <a name="related-links"></a>相关链接
 
-* [SearchBar 演示](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SearchBar)
+* [SearchBar 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 * [Xamarin. Forms 文本控件](~/xamarin-forms/user-interface/text/index.md)
 * [Xamarin 中的字体](~/xamarin-forms/user-interface/text/fonts.md)
 * [Xamarin. 窗体数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)

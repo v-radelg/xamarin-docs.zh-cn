@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645889"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738891"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>位图中 SkiaSharp 的基础知识
 
@@ -22,7 +22,7 @@ _从各种源加载位图并将其显示。_
 
 SkiaSharp 中的支持是位图的非常大。 本文介绍如何仅基本&mdash;如何加载位图和它们的显示方式：
 
-![](bitmaps-images/bitmapssample.png "两个位图的显示")
+![](bitmaps-images/basicbitmaps-small.png "两个位图的显示")
 
 部分中可包含位图中的多更深入地探讨[SkiaSharp 位图](../bitmaps/index.md)。
 
@@ -98,7 +98,7 @@ protected override async void OnAppearing()
 
 Android 操作系统使用时引发异常`Stream`从返回`GetStreamAsync`中`SKBitmap.Decode`方法因为它正在执行主线程上较长的操作。 出于此原因，位图文件的内容复制到`MemoryStream`对象使用`CopyToAsync`。
 
-静态`SKBitmap.Decode`方法负责解码的位图文件。 它适用于 JPEG、 PNG 和 GIF 的位图格式，并将结果存储在内部 SkiaSharp 格式。 在此情况下，`SKCanvasView`需要失效允许`PaintSurface`处理程序以更新显示。 
+静态`SKBitmap.Decode`方法负责解码的位图文件。 它适用于 JPEG、 PNG 和 GIF 的位图格式，并将结果存储在内部 SkiaSharp 格式。 在此情况下，`SKCanvasView`需要失效允许`PaintSurface`处理程序以更新显示。
 
 ## <a name="loading-a-bitmap-resource"></a>正在加载位图资源
 

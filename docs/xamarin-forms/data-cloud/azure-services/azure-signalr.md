@@ -1,66 +1,66 @@
 ---
-title: 使用 Xamarin.Forms azure SignalR 服务
-description: Azure SignalR 服务和 Azure Functions 使用 Xamarin.Forms 入门
+title: 具有 Xamarin 的 Azure SignalR 服务
+description: 通过 Xamarin 进行 Azure SignalR 服务和 Azure Functions 入门
 ms.prod: xamarin
 ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
-ms.openlocfilehash: 587f3dbbd46b65ec92c4e0eff18a56e89337f191
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658754"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739215"
 ---
-# <a name="azure-signalr-service-with-xamarinforms"></a>使用 Xamarin.Forms azure SignalR 服务
+# <a name="azure-signalr-service-with-xamarinforms"></a>具有 Xamarin 的 Azure SignalR 服务
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/WebServices/AzureSignalR)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
-ASP.NET Core SignalR 是一个应用程序模型，简化了向应用程序添加实时通信的过程。 Azure SignalR 服务允许快速开发和部署可缩放的 SignalR 应用程序。 Azure Functions 是可以组合使用窗体事件驱动、 可缩放的应用程序的生存期较短的无服务器代码方法。
+ASP.NET Core SignalR 是一个应用程序模型, 可简化将实时通信添加到应用程序的过程。 Azure SignalR 服务允许快速开发和部署可缩放的 SignalR 应用程序。 Azure Functions 是一种生存期较短的无服务器代码方法, 可以组合起来形成事件驱动的可缩放应用程序。
 
-此文章和示例演示如何将 Azure SignalR 服务以及使用 Xamarin.Forms 中，Azure Functions，以将实时消息传递到连接的客户端。
+本文和示例展示了如何将 Azure SignalR 服务和 Azure Functions 与 Xamarin 结合起来, 以将实时消息传递到连接的客户端。
 
-## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>创建 Azure SignalR 服务和 Azure Functions 应用
+## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>创建 Azure SignalR 服务并 Azure Functions 应用
 
-示例应用程序包含三个关键组件： Azure SignalR 服务中心、 Azure Functions 有两个函数实例和可以发送和接收消息的移动应用程序。 这些组件进行交互，如下所示：
+该示例应用程序包含三个关键组件: 一个 Azure SignalR 服务中心、一个包含两个函数的 Azure Functions 实例, 以及一个可发送和接收消息的移动应用程序。 这些组件的交互方式如下:
 
-1. 移动应用程序调用**Negotiate** Azure 函数来获取有关 SignalR 集线器的信息。
-1. 移动应用程序使用的协商信息将自身注册 SignalR hub，并形成连接。
-1. 注册后，移动应用程序将消息发布到**讨论**Azure 函数。
-1. **讨论**函数将传入的消息传递到 SignalR hub。
-1. SignalR hub 广播到所有连接的移动应用程序实例，包括原始发件人的消息。
+1. 移动应用程序调用**Negotiate** Azure Function 获取有关 SignalR 中心的信息。
+1. 移动应用程序使用协商信息向 SignalR 中心注册自身, 并形成连接。
+1. 注册后, 移动应用程序将消息发送到 "**交谈**" Azure 功能。
+1. **对话**函数将传入消息传递给 SignalR 中心。
+1. SignalR 中心将消息广播到所有连接的移动应用程序实例, 包括原始发送方。
 
 > [!NOTE]
-> **Negotiate**并**通信**可以使用 Visual Studio 2019 和 Azure 运行时工具在本地运行示例应用程序中的函数。 但是，Azure SignalR 服务不能进行本地模拟，并且很难公开本地托管 Azure Functions 添加到物理或虚拟设备以进行测试。 建议将 Azure 函数部署到 Azure 函数应用实例，因为这会使跨平台测试。 有关部署的详细信息，请参阅[使用 Visual Studio 2019 部署 Azure Functions](#deploy-azure-functions-with-visual-studio-2019)。
+> 可以使用 Visual Studio 2019 和 Azure 运行时工具在本地运行示例应用程序中的**Negotiate**和**交谈**函数。 但是, Azure SignalR 服务不能在本地进行模拟, 并且很难向物理或虚拟设备公开本地承载的 Azure Functions 以便进行测试。 建议将 Azure Functions 部署到 Azure Functions 应用程序实例, 因为这样做可以进行跨平台测试。 有关部署的详细信息, 请参阅[与 Visual Studio 2019 一起部署 Azure Functions](#deploy-azure-functions-with-visual-studio-2019)。
 
 ### <a name="create-an-azure-signalr-service"></a>创建 Azure SignalR 服务
 
-Azure SignalR 服务可以通过选择创建**创建资源**在 Azure 门户，然后搜索左上角**SignalR**。 可以在免费层创建 Azure SignalR 服务。 Azure SignalR 服务必须在**无服务器**服务模式。 如果您意外地选择默认值或经典服务模式下，可以更高版本中的 Azure SignalR 服务属性进行更改。
+可以通过在 Azure 门户的左上角选择 "**创建资源**" 并搜索**SignalR**, 来创建 Azure SignalR 服务。 可以在免费层创建 Azure SignalR 服务。 Azure SignalR 服务必须处于**无服务器**服务模式。 如果意外选择了 "默认" 或 "经典" 服务模式, 可以稍后在 Azure SignalR 服务属性中进行更改。
 
-下面的屏幕截图演示如何创建新的 Azure SignalR 服务：
+以下屏幕截图显示了如何创建新的 Azure SignalR 服务:
 
-![在 Azure 门户中创建 Azure SignalR 服务的屏幕截图](azure-signalr-images/azure-signalr-create.png "创建 Azure SignalR 服务")
+![Azure 门户中的 Azure SignalR 服务创建屏幕截图](azure-signalr-images/azure-signalr-create.png "创建 Azure SignalR 服务")
 
-创建后，**密钥**Azure SignalR 服务的部分包含**连接字符串**，用于将 Azure 函数应用连接到 SignalR hub。 下面的屏幕截图显示了在何处可以找到 Azure SignalR 服务中的连接字符串：
+创建后, Azure SignalR 服务的 "**密钥**" 部分包含一个**连接字符串**, 用于将 Azure Functions 应用连接到 SignalR 中心。 以下屏幕截图显示在 Azure SignalR 服务中找到连接字符串的位置:
 
-![在 Azure 门户中的屏幕截图的 Azure SignalR 连接字符串](azure-signalr-images/azure-signalr-connection-string.png "Azure SignalR 连接字符串")
+![Azure 门户中的 Azure SignalR 连接字符串的屏幕截图](azure-signalr-images/azure-signalr-connection-string.png "Azure SignalR 连接字符串")
 
-此连接字符串是用于[使用 Visual Studio 2019 部署 Azure Functions](#deploy-azure-functions-with-visual-studio-2019)。
+此连接字符串用于[与 Visual Studio 2019 一起部署 Azure Functions](#deploy-azure-functions-with-visual-studio-2019)。
 
-### <a name="create-an-azure-functions-app"></a>创建 Azure 函数应用
+### <a name="create-an-azure-functions-app"></a>创建 Azure Functions 应用
 
-若要测试示例应用程序，应在 Azure 门户中创建新的 Azure 函数应用。 请记下的**应用名称**根据示例应用程序中使用此 URL **Constants.cs**文件。 下面的屏幕截图演示如何创建名为"xdocsfunctions"新的 Azure 函数应用：
+若要测试示例应用程序, 应在 Azure 门户中创建新的 Azure Functions 应用程序。 记下**应用程序名称**, 因为示例应用程序**Constants.cs**文件中使用了此 URL。 以下屏幕截图显示了一个名为 "xdocsfunctions" 的新 Azure Functions 应用程序的创建:
 
-[![创建 Azure 函数应用的屏幕截图](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![Azure Functions 应用创建的屏幕截图](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
-Azure functions 可以从 Visual Studio 2019 部署到 Azure 函数应用实例。 以下各节介绍了部署到 Azure 函数应用实例的示例应用程序中的两个函数。
+可以通过 Visual Studio 2019 将 Azure 函数部署到 Azure Functions 的应用程序实例。 以下各节介绍如何将示例应用程序中的两个函数部署到 Azure Functions 的应用程序实例。
 
-### <a name="build-azure-functions-in-visual-studio-2019"></a>生成 Azure Functions 在 Visual Studio 2019
+### <a name="build-azure-functions-in-visual-studio-2019"></a>在 Visual Studio 2019 中生成 Azure Functions
 
-示例应用程序包含名为类库**ChatServer**，其中包括名为的文件中的两个无服务器 Azure Functions **Negotiate.cs**并**Talk.cs**。
+该示例应用程序包含一个名为**ChatServer**的类库, 其中包括两个无服务器 Azure Functions 在名为**Negotiate.cs**和**Talk.cs**的文件中。
 
-`Negotiate`函数将响应 web 请求`SignalRConnectionInfo`对象，其中包含`AccessToken`属性和一个`Url`属性。 移动应用程序使用这些值将自身注册 SignalR hub。 下面的代码演示`Negotiate`函数：
+`Negotiate`函数使用`AccessToken`包含属性和属性的对象响应web请求。`Url` `SignalRConnectionInfo` 移动应用程序使用这些值向 SignalR 中心注册自身。 下面的代码演示`Negotiate`函数:
 
 ```csharp
 [FunctionName("Negotiate")]
@@ -74,7 +74,7 @@ public static SignalRConnectionInfo GetSignalRInfo(
 }
 ```
 
-`Talk`函数会响应提供 POST 正文中的消息对象的 HTTP POST 请求。 POST 正文转换为`SignalRMessage`并将其转发到 SignalR hub。 下面的代码演示`Talk`函数：
+`Talk`函数响应在 post 正文中提供消息对象的 HTTP POST 请求。 POST 正文转换`SignalRMessage`为并转发到 SignalR 中心。 下面的代码演示`Talk`函数:
 
 ```csharp
 [FunctionName("Talk")]
@@ -116,31 +116,31 @@ public static async Task<IActionResult> Run(
 }
 ```
 
-若要了解有关 Azure functions 和 Azure 函数应用的详细信息，请参阅[Azure Functions 文档](/azure/azure-functions/)。
+若要了解有关 Azure 函数和 Azure Functions 应用的详细信息, 请参阅[Azure Functions 文档](/azure/azure-functions/)。
 
-### <a name="deploy-azure-functions-with-visual-studio-2019"></a>部署 Azure Functions 与 Visual Studio 2019
+### <a name="deploy-azure-functions-with-visual-studio-2019"></a>与 Visual Studio 2019 一起部署 Azure Functions
 
-Visual Studio 2019，可将函数部署到 Azure 函数应用。 Azure 托管函数简化跨平台测试通过的所有设备提供可访问的测试终结点。
+Visual Studio 2019 允许你将函数部署到 Azure Functions 应用。 Azure 托管函数通过为所有设备提供可访问的测试终结点来简化跨平台测试。
 
-右键单击示例函数应用并选择**发布**启动对话框以发布到 Azure Functions App 的函数。 如果您遵循前面的步骤设置 Azure 函数应用，可以选择**选择现有**示例应用程序发布到 Azure Functions 应用。 下面的屏幕截图显示了发布对话框选项在 Visual Studio 2019:
+右键单击示例函数应用, 然后选择 "**发布**" 启动对话框, 将函数发布到 Azure Functions 应用。 如果按照前面的步骤设置 Azure Function App, 可以选择 "**选择现有**项" 将示例应用程序发布到 Azure Functions 应用程序。 以下屏幕截图显示了 Visual Studio 2019 中的 "发布" 对话框选项:
 
-![在 Visual Studio 2019 发布选项对话框](azure-signalr-images/vs-publish-target.png "在 Visual Studio 2019 中发布选项")
+![Visual Studio 2019 中的 "发布选项" 对话框](azure-signalr-images/vs-publish-target.png "Visual Studio 2019 中的发布选项")
 
-一旦你已登录到你的 Microsoft 帐户，可以找到并选择你作为发布目标的 Azure 函数应用。 下面的屏幕截图显示了示例 Azure 函数应用在 Visual Studio 2019 发布对话框：
+登录到 Microsoft 帐户后, 可以找到并选择 Azure Functions 应用作为发布目标。 以下屏幕截图显示了 Visual Studio 2019 发布对话框中 Azure Functions 应用示例:
 
-![Visual Studio 2019 发布对话框中的 Azure 函数应用](azure-signalr-images/vs-app-selection.png "Visual Studio 2019 发布对话框中的 Azure 函数应用")
+![Visual Studio 2019 发布对话框中的 Azure Functions 应用](azure-signalr-images/vs-app-selection.png "在 Visual Studio 2019 发布对话框中 Azure Functions 应用")
 
-选择 Azure 函数应用后显示实例、 站点 URL、 配置和目标 Azure Functions App 的其他信息。 选择**编辑 Azure 应用服务设置**并输入你的连接字符串中**远程**字段。 通过使用的连接字符串**Negotiate**和**通信**函数以连接到 Azure SignalR 服务，可在**密钥**Azure SignalR 的部分在 Azure 门户中的服务。 有关连接字符串的详细信息，请参阅[创建 Azure SignalR 服务](#create-an-azure-signalr-service)。
+选择 Azure Functions 的应用程序实例后, 将显示 "网站 URL"、"配置" 和 "目标 Azure Functions 应用的其他信息"。 选择 "**编辑 Azure App Service 设置**", 然后在**远程**字段中输入连接字符串。 **协商**和**交谈**函数使用连接字符串连接到 azure SignalR 服务, 并在 Azure 门户的 azure SignalR 服务的 "**密钥**" 部分中找到。 有关连接字符串的详细信息, 请参阅[创建 Azure SignalR 服务](#create-an-azure-signalr-service)。
 
-输入连接字符串后, 你可以单击**发布**将函数部署到 Azure Functions 应用。 完成后，将在 Azure 门户中的 Azure 函数应用中列出函数。 下面的屏幕截图显示了在 Azure 门户中的已发布的函数：
+输入连接字符串后, 可以单击 "**发布**" 将函数部署到 Azure Functions 应用。 完成后, 函数将在 Azure 门户中的 Azure Functions 应用中列出。 以下屏幕截图显示了 Azure 门户中的已发布函数:
 
-![在 Azure Functions App 中函数发布](azure-signalr-images/azure-functions-deployed.png "函数发布 Azure 函数应用中")
+![Azure Functions 应用中发布的函数](azure-signalr-images/azure-functions-deployed.png "Azure Functions 应用中发布的函数")
 
-## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>将 Azure SignalR 服务与 Xamarin.Forms 集成
+## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>将 Azure SignalR Service 与 Xamarin 集成
 
-Azure SignalR 服务和 Xamarin.Forms 应用程序之间的集成是在实例化一个 SignalR 服务类`MainPage`与分配给三个事件的事件处理程序类。 有关这些事件处理程序的详细信息，请参阅[在 Xamarin.Forms 中使用 SignalR 服务类](#use-the-signalr-service-class-in-xamarinforms)。
+Azure SignalR 服务和 Xamarin 应用程序之间的集成是在`MainPage`类中实例化的 SignalR 服务类, 事件处理程序分配给了三个事件。 有关这些事件处理程序的详细信息, 请参阅[在 Xamarin 中使用 SignalR 服务类](#use-the-signalr-service-class-in-xamarinforms)。
 
-示例应用程序包括**Constants.cs**必须使用 Azure Functions 应用的 URL 终结点自定义的类。 值设置`HostName`属性设置为你的 Azure 函数应用的地址。 下面的代码演示**Constants.cs**属性的示例`HostName`值：
+该示例应用程序包含一个**Constants.cs**类, 该类必须使用 Azure Functions 应用程序的 URL 终结点进行自定义。 将`HostName`属性的值设置为 Azure Functions 应用地址。 以下代码显示具有示例 `HostName`值的 Constants.cs 属性:
 
 ```csharp
 public static class Constants
@@ -162,13 +162,13 @@ public static class Constants
 ```
 
 > [!NOTE]
-> `Username`示例应用程序中的属性**Constants.cs**文件使用设备的`RuntimePlatform`作为用户名的值。 这样，可以轻松测试设备的跨平台并确定哪些设备正在发送消息。 在实际应用程序中，此值可能会存在一个唯一用户名、 在登录过程中收集注册或登录过程。
+> 示例`Username`应用程序**Constants.cs**文件中的属性使用设备的`RuntimePlatform`值作为用户名。 这样就可以轻松地测试设备跨平台, 并识别哪个设备正在发送消息。 在实际应用程序中, 此值可能是在注册或登录过程中收集的唯一用户名。
 
 ### <a name="the-signalr-service-class"></a>SignalR 服务类
 
-`SignalRService`类中**ChatClient**示例应用程序中的项目显示一个实现，调用 Azure 函数应用连接到 Azure SignalR 服务中的函数。
+示例`SignalRService`应用程序的**ChatClient**项目中的类演示一个实现, 该实现调用 Azure Functions 应用程序中的函数以连接到 Azure SignalR 服务。
 
-`SendMessageAsync`中的方法`SignalRService`类用于将消息发送到客户端连接到 Azure SignalR 服务。 此方法执行到 HTTP POST 请求**交流**函数托管在 Azure 函数应用，包括 JSON 的序列化`Message`对象作为 POST 负载。 **讨论**函数为广播到所有已连接的客户端将消息传递到 Azure SignalR 服务。 下面的代码演示了 `SendMessageAsync` 方法：
+类中的`SendMessageAsync`方法用于将消息发送到连接到 Azure SignalR 服务的客户端。 `SignalRService` 此方法对 Azure Functions 应用中托管的**对话**函数执行 HTTP POST 请求, 其中包括 JSON 序列化`Message`的对象作为 POST 有效负载。 **对话**函数将消息传递到 Azure SignalR 服务, 以便广播到所有连接的客户端。 下面的代码演示了 `SendMessageAsync` 方法：
 
 ```csharp
 public async Task SendMessageAsync(string username, string message)
@@ -189,9 +189,9 @@ public async Task SendMessageAsync(string username, string message)
 }
 ```
 
-`ConnectAsync`中的方法`SignalRService`类执行 HTTP GET 请求到**Negotiate**函数托管在 Azure 函数应用。 **Negotiate**函数将返回到的实例进行反序列化的 JSON`NegotiateInfo`类。 一次`NegotiateInfo`对象进行检索，它用于直接向 Azure SignalR 服务使用的实例注册`HubConnection`类。
+类中的`ConnectAsync`方法对 Azure Functions 应用中托管的 Negotiate 函数执行 HTTP GET 请求。 `SignalRService` **Negotiate**函数返回被反序列化为`NegotiateInfo`类的实例的 JSON。 检索对象后, 它将用于通过使用`HubConnection`类的实例直接注册到 Azure SignalR 服务。 `NegotiateInfo`
 
-ASP.NET Core SignalR 将转换成消息，打开的连接从传入的数据，并允许开发人员定义的消息类型并将事件处理程序绑定到按类型对传入消息。 `ConnectAsync`方法注册的事件处理程序中的示例应用程序定义的消息名称**Constants.cs**文件，它是默认情况下的"newMessage"。
+ASP.NET Core SignalR 会将传入数据从打开的连接转换为消息, 并允许开发人员定义消息类型, 并按类型将事件处理程序绑定到传入消息。 方法为示例应用程序的 Constants.cs 文件 (默认为 "newMessage") 中定义的消息名称注册事件处理程序。 `ConnectAsync`
 
 下面的代码演示了 `ConnectAsync` 方法：
 
@@ -226,7 +226,7 @@ public async Task ConnectAsync()
 }
 ```
 
-`AddNewMessage`方法中的事件处理程序绑定`ConnectAsync`消息，因为在前面的代码所示。 当收到一条消息时，`AddNewMessage`使用为提供的消息数据调用方法`JObject`。 `AddNewMessage`方法将`JObject`的实例`Message`类，然后调用的处理程序`NewMessageReceived`如果其中一个已绑定。 下面的代码演示了 `AddNewMessage` 方法：
+如前面的代码所示, `ConnectAsync` 方法被绑定为消息中的事件处理程序。`AddNewMessage` 接收到消息时, 将调用`AddNewMessage`方法, 并将消息数据`JObject`作为提供。 方法将转换`NewMessageReceived`为类的实例, 然后调用处理程序 (如果已绑定)。 `Message` `AddNewMessage` `JObject` 下面的代码演示了 `AddNewMessage` 方法：
 
 ```csharp
 public void AddNewMessage(JObject message)
@@ -242,11 +242,11 @@ public void AddNewMessage(JObject message)
 }
 ```
 
-### <a name="use-the-signalr-service-class-in-xamarinforms"></a>在 Xamarin.Forms 中使用 SignalR 服务类
+### <a name="use-the-signalr-service-class-in-xamarinforms"></a>在 Xamarin 中使用 SignalR 服务类
 
-使用 Xamarin.Forms 中的 SignalR 服务类通过绑定来实现`SignalRService`类中的事件`MainPage`代码隐藏类。
+利用 Xamarin 中的 SignalR 服务类, 可以通过绑定`SignalRService` `MainPage`代码隐藏类中的类事件来实现 Forms。
 
-`Connected`中的事件`SignalRService`类 SignalR 连接是否已成功完成时激发。 `ConnectionFailed`中的事件`SignalRService`类在 SignalR 连接失败时被激发。 `SignalR_ConnectionChanged`事件处理程序方法绑定到这两个事件中`MainPage`构造函数。 此事件处理程序更新基于连接的连接和发送按钮状态`success`自变量，并将添加到聊天队列使用的事件所提供的消息`AddMessage`方法。 下面的代码演示`SignalR_ConnectionChanged`事件处理程序方法：
+SignalR `Connected`连接成功完成`SignalRService`后, 将触发类中的事件。 当`ConnectionFailed` SignalR 连接失败`SignalRService`时, 将激发类中的事件。 事件处理程序方法绑定到`MainPage`构造函数中的两个事件。 `SignalR_ConnectionChanged` 此事件处理程序根据连接`success`参数更新 "连接" 和 "发送" 按钮状态, 并`AddMessage`使用方法将事件提供的消息添加到聊天队列。 下面的代码显示`SignalR_ConnectionChanged`了事件处理程序方法:
 
 ```csharp
 void SignalR_ConnectionChanged(object sender, bool success, string message)
@@ -259,7 +259,7 @@ void SignalR_ConnectionChanged(object sender, bool success, string message)
 }
 ```
 
-`NewMessageReceived`中的事件`SignalRService`类从 Azure SignalR 服务收到一封新邮件时触发。 `SignalR_NewMessageReceived`事件处理程序方法绑定到`NewMessageReceived`中的事件`MainPage`构造函数。 此事件处理程序将为传入`Message`对象转换为字符串，并将其添加到聊天队列使用`AddMessage`方法。 下面的代码演示`SignalR_NewMessageReceived`事件处理程序方法：
+从`NewMessageReceived` Azure SignalR 服务`SignalRService`收到新消息时, 将触发类中的事件。 事件处理程序方法绑定到`MainPage`构造函数`NewMessageReceived`中的事件。 `SignalR_NewMessageReceived` 此事件处理程序`Message` `AddMessage`使用方法将传入对象转换为字符串, 并将其添加到聊天队列。 下面的代码显示`SignalR_NewMessageReceived`了事件处理程序方法:
 
 ```csharp
 void SignalR_NewMessageReceived(object sender, Model.Message message)
@@ -269,7 +269,7 @@ void SignalR_NewMessageReceived(object sender, Model.Message message)
 }
 ```
 
-`AddMessage`方法将添加新的消息作为`Label`到聊天队列对象。 `AddMessage`方法通常称为由事件处理程序从外部主 UI 线程，因此它会强制 UI 更新以防止异常在主线程上发生。 下面的代码演示了 `AddMessage` 方法：
+方法将新消息`Label`作为对象添加到聊天队列。 `AddMessage` 此`AddMessage`方法通常由主 UI 线程之外的事件处理程序调用, 因此它强制在主线程上发生 UI 更新以防止出现异常。 下面的代码演示了 `AddMessage` 方法：
 
 ```csharp
 void AddMessage(string message)
@@ -290,18 +290,18 @@ void AddMessage(string message)
 
 ## <a name="test-the-application"></a>测试应用程序
 
-如果您具备，则可以 iOS、 Android 和 UWP 上进行测试 SignalR 聊天应用程序：
+可在 iOS、Android 和 UWP 上测试 SignalR chat 应用程序, 前提是你拥有:
 
-1. 创建 Azure SignalR 服务。
-1. 创建了一个 Azure 函数应用。
-1. 自定义**Constants.cs**文件与 Azure Functions 应用终结点。
+1. 已创建 Azure SignalR 服务。
+1. 已创建 Azure Functions 应用。
+1. 已通过 Azure Functions 应用终结点自定义**Constants.cs**文件。
 
-完成这些步骤并运行应用程序时，单击后**Connect**按钮窗体的与 Azure SignalR 服务的连接。 键入一条消息，然后单击**发送**按钮使其不显示任何聊天队列中的消息中的结果连接的移动应用程序。
+完成这些步骤并运行应用程序后, 单击 "**连接**" 按钮即可与 Azure SignalR 服务建立连接。 键入一条消息并单击 "**发送**" 按钮会导致消息显示在任何连接的移动应用程序的聊天队列中。
 
 ## <a name="related-links"></a>相关链接
 
-* [有关使用 Xamarin 和 SignalR 的实时移动应用程序](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
+* [用 Xamarin 和 SignalR 编制实时移动应用](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
 * [SignalR 简介](/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 * [Azure Functions 简介](/azure/azure-functions/functions-overview)
 * [Azure Functions 文档](/azure/azure-functions/)
-* [MVVM SignalR 聊天示例](https://github.com/lbugnion/sample-xamarin-signalr)
+* [MVVM SignalR chat 示例](https://github.com/lbugnion/sample-xamarin-signalr)

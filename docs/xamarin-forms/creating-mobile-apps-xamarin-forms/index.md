@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c05bc88ef6d182f282decedff3e4fb03b4bb96b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: feae1a33b2e090ccfe3573285c75978aacd1799a
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334536"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739203"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms 书籍创建移动应用
 
@@ -26,11 +26,11 @@ ms.locfileid: "61334536"
 
 下载 Microsoft Virtual Academy 中的首选电子书格式：
 
-*    [**PDF (56Mb)**](https://aka.ms/xamebook)
+*    [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-*    [**ePub (151Mb)**](https://aka.ms/xamebook/epub)
+*    [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
 
-*    [**Kindle 版 (325 Mb)**](https://aka.ms/xamebook/mobi)
+*    [**Kindle 版 (325 Mb)** ](https://aka.ms/xamebook/mobi)
 
 此外可以[下载各个章节](#download-chapters-and-summaries)作为 PDF 文件。
 
@@ -103,7 +103,7 @@ Xamarin.Forms 应用程序通常使用的库以在不同平台之间共享代码
 
 <i>使用 Xamarin.Forms 创建移动应用</i>首先介绍如何编写 Xamarin.Forms 应用程序使用 C#。 Extensible Application Markup Language (XAML) 不引入直到[第 7 章。XAML vs。代码](summaries/chapter07.md)。
 
-XAML 现在在 Xamarin.Forms 中有多重要的角色。 通过 Visual Studio 分发的 Xamarin.Forms 解决方案模板创建基于 XAML 的页面文件。 使用 Xamarin.Forms 的开发人员应熟悉 XAML 尽可能早。 [可扩展应用程序标记语言 (XAML)](~/xamarin-forms/xaml/index.md) Xamarin.Forms 文档部分包含有关 XAML 来帮助你入门的多篇文章。
+XAML 现在在 Xamarin.Forms 中有多重要的角色。 通过 Visual Studio 分发的 Xamarin.Forms 解决方案模板创建基于 XAML 的页面文件。 使用 Xamarin.Forms 的开发人员应熟悉 XAML 尽可能早。 [可扩展应用程序标记语言 (XAML)](~/xamarin-forms/xaml/index.yml) Xamarin.Forms 文档部分包含有关 XAML 来帮助你入门的多篇文章。
 
 ### <a name="supported-platforms"></a>受支持的平台
 

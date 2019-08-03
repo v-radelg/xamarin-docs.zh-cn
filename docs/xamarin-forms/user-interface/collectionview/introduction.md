@@ -1,68 +1,68 @@
 ---
-title: Xamarin.Forms CollectionView 简介
-description: CollectionView 是灵活且高性能视图来显示数据使用不同的布局规范的列表。
+title: Xamarin CollectionView 简介
+description: CollectionView 是一种灵活且高性能的视图, 可使用不同的布局规范呈现数据列表。
 ms.prod: xamarin
 ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 456c83808ff685a8c2199cf80c96d63b9334675e
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 25e2d9bad11614cf594980480db14ddc18125a96
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512732"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738898"
 ---
-# <a name="xamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView 简介
+# <a name="xamarinforms-collectionview-introduction"></a>Xamarin CollectionView 简介
 
 ![](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 用于呈现数据的列表视图使用不同的布局规范。 它旨在提供更灵活和高性能替代方法[ `ListView` ](xref:Xamarin.Forms.ListView)。 例如，下面的屏幕截图显示`CollectionView`，它使用两个列的垂直网格，并且允许多个选择：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个视图, 用于显示使用不同布局规范的数据列表。 它旨在提供更灵活、更高的性能替代方法[`ListView`](xref:Xamarin.Forms.ListView)。 例如, 下面的屏幕截图显示了`CollectionView`一个使用两个垂直网格网格的, 它允许多个选择:
 
-[![CollectionView 垂直网格布局，在 iOS 和 Android 上的屏幕截图](introduction-images/verticalgrid-multipleselection.png "CollectionView 与多个所选内容的垂直网格布局")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "具有 CollectionView 垂直网格布局多个所选内容")
+[(introduction-images/verticalgrid-multipleselection.png "具有多个选择的 IOS 和 Android CollectionView 垂直网格布局")![上的 CollectionView 垂直网格布局屏幕截图]](introduction-images/verticalgrid-multipleselection-large.png#lightbox "具有多个选定内容的 CollectionView 垂直网格布局")
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 现已推出 Xamarin.Forms 4.0。 但是，它是当前处于实验阶段并仅可以通过添加以下代码行来使用你`AppDelegate`类在 iOS 上，或为你`MainActivity`类在 Android 上，然后才能调用`Forms.Init`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)在 Xamarin. Forms 4.0 中提供。 但是, 它当前是实验性的, 只能通过将以下代码行添加到`AppDelegate` iOS 上的类, 或者添加`MainActivity`到 Android 上的类, 然后再调用`Forms.Init`:
 
 ```csharp
 Forms.SetFlags("CollectionView_Experimental");
 ```
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 为适用于 iOS 和 Android，但仅为部分适用于通用 Windows 平台。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)在 iOS 和 Android 上可用, 但在通用 Windows 平台仅部分可用。
 
-## <a name="collectionview-and-listview-differences"></a>CollectionView 和 ListView 的差异
+## <a name="collectionview-and-listview-differences"></a>CollectionView 和 ListView 差异
 
-虽然[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)并[ `ListView` ](xref:Xamarin.Forms.ListView) Api 类似，有一些明显的差异：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)尽管和[`ListView`](xref:Xamarin.Forms.ListView) api 相似, 但有一些明显的区别:
 
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 提供了灵活的布局模式，允许列表或网格中显示垂直或水平地数据。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 支持单个和多个选择。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 有没有单元格的概念。 相反，数据模板用于在列表中定义的数据的每个项的外观。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 自动利用虚拟化提供的基础本机控件。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 减少的 API 面[ `ListView` ](xref:Xamarin.Forms.ListView)。 很多属性和事件[ `ListView` ](xref:Xamarin.Forms.ListView)中不存在`CollectionView`。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView) 不包括内置的分隔符。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)具有灵活的布局模型, 允许在列表或网格中垂直或水平显示数据。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持单个和多个选择。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)没有单元的概念。 相反, 数据模板用于定义列表中每个数据项的外观。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)自动利用基础本机控件提供的虚拟化。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)减少的 API 图面[`ListView`](xref:Xamarin.Forms.ListView)。 中的很多属性[`ListView`](xref:Xamarin.Forms.ListView)和事件都不`CollectionView`存在于中。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含内置分隔符。
 
-## <a name="move-from-listview-to-collectionview"></a>将 ListView 移动到之间导航
+## <a name="move-from-listview-to-collectionview"></a>从 ListView 移到 CollectionView
 
-[`ListView`](xref:Xamarin.Forms.ListView) 在现有的 Xamarin.Forms 实现中实现可迁移到[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)实现的帮助下表：
+[`ListView`](xref:Xamarin.Forms.ListView)现有 Xamarin 中的实现。窗体实现可以通过[`CollectionView`](xref:Xamarin.Forms.CollectionView)下表的帮助迁移到实现:
 
 | 概念 | ListView API | CollectionView |
 |---|---|---|
-| 数据 | `ItemsSource` | 一个[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)通过设置使用数据填充其`ItemsSource`属性。 有关详细信息，请参阅[填充数据 CollectionView](populate-data.md#populate-a-collectionview-with-data)。 |
-| 项外观 | `ItemTemplate` | 在每个项的外观[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以定义通过设置`ItemTemplate`属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 有关详细信息，请参阅[定义项外观](populate-data.md#define-item-appearance)。 |
-| 单元 | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 有没有单元格的概念。 相反，数据模板用于在列表中定义的数据的每个项的外观。 |
-| 行分隔符 | `SeparatorColor`， `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 不包括内置的分隔符。 这些可以提供，如果需要，在项模板中。 |
-| 选择 | `SelectionMode`， `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 支持单个和多个选择。 有关详细信息，请参阅[Xamarin.Forms CollectionView 选择](selection.md)。 |
-| 行高 | `HasUnevenRows`， `RowHeight` | 在中`CollectionView`，每个项的行高度由`ItemSizingStrategy`属性。 有关详细信息，请参阅[项大小调整](layout.md#item-sizing)。|
-| 缓存 | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 自动使用虚拟化提供的基础本机控件。 |
-| 页眉和页脚 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | 页眉和页脚目前不在支持`CollectionView`，但会在将来的版本中添加。|
-| 分组 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | 中当前不支持分组`CollectionView`，但会在将来的版本中添加。 |
-| 下拉以刷新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 中当前不支持下拉以刷新`CollectionView`，但会在将来的版本中添加。 |
-| 上下文操作 | `ContextActions` | 上下文操作中目前不支持`CollectionView`，但会在将来的版本中添加。 |
-| 滚动 | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义`ScrollTo`项滚动到视图的方法。 有关详细信息，请参阅[滚动](scrolling.md)。 |
+| 数据 | `ItemsSource` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 通过`ItemsSource`设置的属性来填充。 有关详细信息, 请参阅[使用数据填充 CollectionView](populate-data.md#populate-a-collectionview-with-data)。 |
+| 项外观 | `ItemTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)将属性设置为来定义中每个项的外观。 `ItemTemplate` 有关详细信息, 请参阅[定义项外观](populate-data.md#define-item-appearance)。 |
+| 单元 | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)没有单元的概念。 相反, 数据模板用于定义列表中每个数据项的外观。 |
+| 行分隔符 | `SeparatorColor`， `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含内置分隔符。 如果需要, 可在项模板中提供这些项。 |
+| 选择 | `SelectionMode`， `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持单个和多个选择。 有关详细信息, 请参阅[Xamarin CollectionView 选择](selection.md)。 |
+| 行高 | `HasUnevenRows`， `RowHeight` | 在中`ItemSizingStrategy` , 每个项的行高由属性确定。 `CollectionView` 有关详细信息, 请参阅[项大小调整](layout.md#item-sizing)。|
+| 缓存 | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)自动使用基础本机控件提供的虚拟化。 |
+| 页眉和页脚 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | 当前不支持`CollectionView`标头和表尾, 但会在将来的版本中添加。|
+| 分组 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | 当前不支持`CollectionView`分组, 但将在未来的版本中添加。 |
+| 请求刷新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 当前不支持`CollectionView`请求刷新, 但会在将来的版本中添加。 |
+| 上下文操作 | `ContextActions` | 当前不支持`CollectionView`上下文操作, 但将在未来版本中添加。 |
+| 滚动 | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)定义`ScrollTo`将项滚动到视图中的方法。 有关详细信息, 请参阅[滚动](scrolling.md)。 |
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+- [CollectionView (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

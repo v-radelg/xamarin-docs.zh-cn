@@ -1,42 +1,42 @@
 ---
-title: Xamarin.Forms CollectionView EmptyView
-description: 在之间导航，可以向用户提供反馈，当没有数据可用于显示时指定空的视图。 一个字符串、 视图或多个视图，可以是空的视图。
+title: Xamarin. Forms CollectionView EmptyView
+description: 在 CollectionView 中, 可以指定一个空视图, 在没有可显示的数据时向用户提供反馈。 空视图可以是字符串、视图或多个视图。
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 6bf24cb81bbd40c7e3f5b0f65ed2a2af7cbbe98b
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: c6a2a53f267a7f6764ec441944193e8c5ecd9189
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005328"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739193"
 ---
-# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
+# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin. Forms CollectionView EmptyView
 
 ![](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义可用于没有要显示的数据时提供用户反馈的以下属性：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义以下属性, 这些属性可用于在没有要显示的数据时提供用户反馈:
 
-- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)类型的`object`，字符串、 绑定或视图将显示何时[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性是`null`，或指定集合`ItemsSource`属性是`null`或为空。 默认值为 `null`。
-- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)类型的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，用于设置格式指定的模板`EmptyView`。 默认值为 `null`。
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)`object`、类型`null` 、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)属性为`null`时将显示的字符串、绑定或视图, 或由`ItemsSource`属性指定的集合为或为空。 默认值为 `null`。
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate), 类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为, 用于设置指定`EmptyView`的格式的模板。 默认值为 `null`。
 
-这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。
+这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的, 这意味着属性可以是数据绑定的目标。
 
-设置主要使用方案[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性显示时的筛选操作的用户反馈[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)不产生任何数据，以及时显示用户反馈正在从 web 服务检索数据。
+设置[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)属性的主要使用方案是在对执行[`CollectionView`](xref:Xamarin.Forms.CollectionView)筛选操作时显示用户反馈, 并在从 web 服务检索数据时显示用户反馈。
 
 > [!NOTE]
-> [ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性可以设置为包含交互式内容，如果所需的视图。
+> 如果需要, 可以将[属性设置为包含交互式内容的视图。`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)
 
 有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-## <a name="display-a-string-when-data-is-unavailable"></a>数据不可用时显示的字符串
+## <a name="display-a-string-when-data-is-unavailable"></a>数据不可用时显示字符串
 
-[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性可以设置为一个字符串，将显示当[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性是`null`，或指定集合`ItemsSource`属性是`null`或为空。 以下 XAML 演示此方案的示例：
+`null` [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` `ItemsSource`属性可以设置为字符串, 当属性为时, 或属性指定的集合为或空时, 将显示此字符串。 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 以下 XAML 显示了此方案的示例:
 
 ```xaml
 <CollectionView ItemsSource="{Binding EmptyMonkeys}"
@@ -53,13 +53,13 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 ```
 
-结果是，由于数据绑定集合`null`，该字符串设置为[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)显示属性值：
+结果是, 由于数据绑定集合为`null`, 因此显示的字符串设置[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)为属性值:
 
-[![IOS 和 Android 上的文本为空视图之间导航垂直列表的屏幕截图](emptyview-images/null-itemssource.png "CollectionView 垂直文本空视图列表")](emptyview-images/null-itemssource-large.png#lightbox "CollectionView 具有空的文本的垂直列表视图")
+使用[![文本为空视图、在 IOS 和 Android](emptyview-images/null-itemssource.png "CollectionView 垂直列表文本为空视图")的 CollectionView 垂直列表屏幕截图](emptyview-images/null-itemssource-large.png#lightbox "文本为空的 CollectionView 垂直列表视图")
 
 ## <a name="display-views-when-data-is-unavailable"></a>数据不可用时显示视图
 
-[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性可以设置为视图中，将显示当[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性是`null`，或指定集合`ItemsSource`属性是`null`或为空。 这可以是单个视图中或包含多个子视图的视图。 下面的 XAML 示例演示`EmptyView`属性设置为包含多个子视图的视图：
+`null` [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` `ItemsSource`属性可以设置为视图, 当属性为时, 或属性指定的集合为或空时, 该视图将显示。 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 这可以是单个视图, 也可以是包含多个子视图的视图。 下面的 XAML 示例演示`EmptyView`如何将属性设置为包含多个子视图的视图:
 
 ```xaml
 <StackLayout Margin="20">
@@ -110,13 +110,13 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-当[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)执行`FilterCommand`，通过显示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)进行筛选的搜索词会存储在[ `SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)属性。 如果为筛选操作会不产生任何数据， [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)设置为[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)显示属性值：
+[`SearchBar`](xref:Xamarin.Forms.SearchBar)当[`CollectionView`](xref:Xamarin.Forms.CollectionView) [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)执行时,将针对存储在属性中的搜索词筛选`FilterCommand`显示的集合。 如果筛选操作不产生数据, [`StackLayout`](xref:Xamarin.Forms.StackLayout)则会显示设置[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)为属性值:
 
-[![使用自定义的空视图，在 iOS 和 Android 上 CollectionView 垂直列表的屏幕截图](emptyview-images/filter-multiple-views.png "与自定义的空视图之间导航垂直列表")](emptyview-images/filter-multiple-views-large.png#lightbox "CollectionView 垂直列表使用的自定义空的视图")
+带有自定义空[![视图的 CollectionView 垂直列表的屏幕截图, 在 IOS 和 Android CollectionView 中](emptyview-images/filter-multiple-views.png "具有自定义空视图的垂直列表")](emptyview-images/filter-multiple-views-large.png#lightbox "带有自定义空视图的 CollectionView 垂直列表")
 
-## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>数据不可用时显示的模板化自定义类型
+## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>数据不可用时显示模板化自定义类型
 
-[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性可以设置为自定义类型，其模板时显示[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性是`null`，当集合中指定或`ItemsSource`属性是`null`或为空。 [ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)定义的外观`EmptyView`。 以下 XAML 演示此方案的示例：
+`null` [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` `ItemsSource`属性可以设置为自定义类型, 该类型的模板在属性为时显示, 或属性指定的集合为空时显示。 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 属性可以设置[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为, 用于`EmptyView`定义的外观。 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) 以下 XAML 显示了此方案的示例:
 
 ```xaml
 <StackLayout Margin="20">
@@ -161,7 +161,7 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-`FilterData`类型定义`Filter`属性，并相应[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty):
+类型定义一个`Filter`属性和一个对应[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)的: `FilterData`
 
 ```csharp
 public class FilterData : BindableObject
@@ -176,16 +176,16 @@ public class FilterData : BindableObject
 }
 ```
 
-[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性设置为`FilterData`对象，并且`Filter`属性数据绑定到[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)属性。 当[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)执行`FilterCommand`，通过显示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)进行筛选的搜索词会存储在`Filter`属性。 如果为筛选操作会不产生任何数据， [ `Label` ](xref:Xamarin.Forms.Label)中定义[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，设置为[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)属性值显示：
+属性设置`Filter`为对象, 属性数据绑定到[`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)属性。 `FilterData` [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) [`SearchBar`](xref:Xamarin.Forms.SearchBar)当[`CollectionView`](xref:Xamarin.Forms.CollectionView) `Filter`执行时,将针对存储在属性中的搜索词筛选`FilterCommand`显示的集合。 如果筛选操作不生成任何数据, [`Label`](xref:Xamarin.Forms.Label)则会显示在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中定义的, [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)它设置为属性值:
 
-[![使用空的视图模板，在 iOS 和 Android 上 CollectionView 垂直列表的屏幕截图](emptyview-images/emptyviewtemplate.png "CollectionView 垂直列表与空视图模板")](emptyview-images/emptyviewtemplate-large.png#lightbox "CollectionView 垂直列表空视图模板")
+带有空视图[![模板的 CollectionView 垂直列表的屏幕截图, 在 IOS 和 Android](emptyview-images/emptyviewtemplate.png "CollectionView 中具有空视图模板")](emptyview-images/emptyviewtemplate-large.png#lightbox "带有空视图模板的 CollectionView 垂直列表")
 
 > [!NOTE]
-> 数据不可用时显示的模板化自定义类型时[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)属性可以设置为包含多个子视图的视图。
+> 当数据不可用时显示模板化自定义类型时[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) , 可以将属性设置为包含多个子视图的视图。
 
-## <a name="choose-an-emptyview-at-runtime"></a>选择在运行时 EmptyView
+## <a name="choose-an-emptyview-at-runtime"></a>在运行时选择 EmptyView
 
-将显示为视图[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)数据不可用时，可以定义为[ `ContentView` ](xref:Xamarin.Forms.ContentView)中的对象[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 `EmptyView`然后会将属性设置为特定`ContentView`根据一些业务逻辑，在运行时。 下面的 XAML 示例演示此方案的示例：
+数据不可用[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)时将显示为的视图可以定义为[`ContentView`](xref:Xamarin.Forms.ContentView)中[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)的对象。 然后`EmptyView` , 可以在运行时将该属性`ContentView`设置为基于一些业务逻辑的特定。 下面的 XAML 示例显示了此方案的示例:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -242,7 +242,7 @@ public class FilterData : BindableObject
 </ContentPage>
 ```
 
-此 XAML 定义了两个[ `ContentView` ](xref:Xamarin.Forms.ContentView)页面级别中的对象[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，与[ `Switch` ](xref:Xamarin.Forms.Switch)对象控制其`ContentView`将对象设置为[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性值。 当[ `Switch` ](xref:Xamarin.Forms.Switch)处于切换状态`OnEmptyViewSwitchToggled`事件处理程序执行`ToggleEmptyView`方法：
+此 XAML 定义页面[`ContentView`](xref:Xamarin.Forms.ContentView)级别[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中的两个对象, [`Switch`](xref:Xamarin.Forms.Switch)对象[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)控制将哪个`ContentView`对象设置为属性值。 切换后, 事件处理程序将执行`ToggleEmptyView`方法: `OnEmptyViewSwitchToggled` [`Switch`](xref:Xamarin.Forms.Switch)
 
 ```csharp
 void ToggleEmptyView(bool isToggled)
@@ -251,15 +251,15 @@ void ToggleEmptyView(bool isToggled)
 }
 ```
 
-`ToggleEmptyView`方法设置[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性`collectionView`到两种状态之一的对象[ `ContentView` ](xref:Xamarin.Forms.ContentView)中存储的对象[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)的值根据[ `Switch.IsToggled` ](xref:Xamarin.Forms.Switch.IsToggled)属性。 当[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)执行`FilterCommand`，通过显示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)进行筛选的搜索词会存储在[ `SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)属性。 如果为筛选操作会不产生任何数据，`ContentView`对象设置为`EmptyView`属性显示：
+`collectionView` [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) [`ContentView`](xref:Xamarin.Forms.ContentView)方法根据[`Switch.IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)属性的值将对象的属性设置为存储在中[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)的两个对象之一。 `ToggleEmptyView` [`SearchBar`](xref:Xamarin.Forms.SearchBar)当[`CollectionView`](xref:Xamarin.Forms.CollectionView) [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)执行时,将针对存储在属性中的搜索词筛选`FilterCommand`显示的集合。 如果筛选操作不产生任何数据, 则`ContentView`会显示设置`EmptyView`为属性的对象:
 
-[![包含在 iOS 和 Android 上的已交换空视图之间导航垂直列表的屏幕截图](emptyview-images/swap.png "CollectionView 垂直列表与交换的空视图")](emptyview-images/swap-large.png#lightbox "CollectionView 垂直列表交换为空的视图")
+具有交换空视图[ ![、在 IOS 和 Android](emptyview-images/swap.png "CollectionView 垂直列表")中交换空视图的 CollectionView 垂直列表屏幕截图](emptyview-images/swap-large.png#lightbox "带有交换空视图的 CollectionView 垂直列表")
 
-有关资源字典的详细信息，请参阅[Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
+有关资源字典的详细信息, 请参阅[Xamarin。 Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
 
-## <a name="choose-an-emptyviewtemplate-at-runtime"></a>选择在运行时 EmptyViewTemplate
+## <a name="choose-an-emptyviewtemplate-at-runtime"></a>在运行时选择 EmptyViewTemplate
 
-外观[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)可以在运行时，通过设置基于它的值，选择[ `CollectionView.EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)属性设置为[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)对象：
+通过[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)将属性设置为对象, 可在运行时根据其值选择的外观: [`CollectionView.EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)
 
 ```xaml
 <ContentPage ...
@@ -302,11 +302,11 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[ `EmptyView` ](xref:Xamarin.Forms.ItemsView.EmptyView)属性设置为[ `SearchBar.Text` ](xref:Xamarin.Forms.SearchBar.Text)属性，以及[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)属性设置为`SearchTermDataTemplateSelector`对象。
+将属性设置[`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)为属性, 并[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)将属性设置为`SearchTermDataTemplateSelector`对象。 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)
 
-当[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)执行`FilterCommand`，通过显示的集合[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)进行筛选的搜索词会存储在[ `SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)属性。 如果为筛选操作会不产生任何数据， [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)所选`SearchTermDataTemplateSelector`对象设置为[ `EmptyViewTemplate` ](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)属性和显示。
+[`SearchBar`](xref:Xamarin.Forms.SearchBar)当[`CollectionView`](xref:Xamarin.Forms.CollectionView) [`SearchBar.Text`](xref:Xamarin.Forms.SearchBar.Text)执行时,将针对存储在属性中的搜索词筛选`FilterCommand`显示的集合。 如果筛选操作不生成任何数据, 则[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)会将`SearchTermDataTemplateSelector` [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)对象选择的设置为属性, 并显示。
 
-下面的示例演示`SearchTermDataTemplateSelector`类：
+下面的示例演示`SearchTermDataTemplateSelector`了类:
 
 ```csharp
 public class SearchTermDataTemplateSelector : DataTemplateSelector
@@ -322,15 +322,15 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`SearchTermTemplateSelector`类定义`DefaultTemplate`并`OtherTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)设置为不同的数据模板的属性。 `OnSelectTemplate`重写返回`DefaultTemplate`，其中向用户显示一条消息，搜索查询不等于"xamarin"时。 等于"xamarin"，搜索查询时`OnSelectTemplate`重写返回`OtherTemplate`，这为用户显示一个基本的消息：
+类定义`DefaultTemplate`了并`OtherTemplate`将[属性设置为不同的数据模板。`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `SearchTermTemplateSelector` 当`OnSelectTemplate`搜索查询`DefaultTemplate`不等于 "xamarin" 时, 重写将返回, 后者向用户显示一条消息。 当搜索查询等于 "xamarin" 时, 重写将`OnSelectTemplate`返回`OtherTemplate`, 这将向用户显示基本消息:
 
-[![选择屏幕截图 CollectionView 运行时的空视图模板，在 iOS 和 Android](emptyview-images/datatemplateselector.png "运行时的空视图模板所选内容中之间导航")](emptyview-images/datatemplateselector-large.png#lightbox "运行时的空视图模板之间导航中的选定内容")
+[ ![CollectionView 运行时空视图模板选择、IOS 和 Android]运行时的屏幕截图在(emptyview-images/datatemplateselector.png "CollectionView 中选择的空视图模板选择")](emptyview-images/datatemplateselector-large.png#lightbox "CollectionView 中的运行时空视图模板选择")
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息, 请参阅[Create a Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
-- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [CollectionView (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin. Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin. Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [创建 Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

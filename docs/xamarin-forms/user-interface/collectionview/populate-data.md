@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Forms 之间导航数据
-description: 通过将其 ItemsSource 属性设置为任何实现 IEnumerable 的集合情况下，使用数据填充之间导航。
+title: Xamarin CollectionView 数据
+description: 使用数据填充 CollectionView, 方法是将其 System.windows.controls.itemscontrol.itemssource 属性设置为任何实现 IEnumerable 的集合。
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: d2729250c0f991564ae70ddf6a15b40425ed6c46
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: ce745109ea2852b597de3a8a5922a171ad83e289
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005267"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738922"
 ---
-# <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms 之间导航数据
+# <a name="xamarinforms-collectionview-data"></a>Xamarin CollectionView 数据
 
 ![](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义以下属性，定义要显示的数据，其外观：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义以下属性, 这些属性定义要显示的数据及其外观:
 
-- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)类型的`IEnumerable`，指定要显示项目的集合，默认值为`null`。
-- [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)类型的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，指定要应用于要显示的项集合中的每个项目的模板。
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)类型`IEnumerable`为的指定要显示的项的集合, 其默认`null`值为。
+- [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为的指定要应用于要显示的项集合中的每一项的模板。
 
-这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着，属性可以是数据绑定的目标。
+这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的, 这意味着属性可以是数据绑定的目标。
 
-## <a name="populate-a-collectionview-with-data"></a>填充数据 CollectionView
+## <a name="populate-a-collectionview-with-data"></a>使用数据填充 CollectionView
 
-一个[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)通过设置使用数据填充其[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性设置为任何实现的集合`IEnumerable`。 项可以在 XAML 中通过初始化中添加`ItemsSource`属性从一个字符串数组：
+使用数据填充数据, 方法[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable`是将其属性设置为任何实现的集合。 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过从字符串数组中初始化`ItemsSource`属性, 在 XAML 中添加项:
 
 ```xaml
 <CollectionView>
@@ -67,17 +67,17 @@ collectionView.ItemsSource = new string[]
 ```
 
 > [!IMPORTANT]
-> 如果[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是所需刷新，如添加、 移除或更改基础集合中的项，应为基础集合`IEnumerable`发送属性的集合更改通知，例如`ObservableCollection`.
+> 如果需要在基础集合中添加、删除或更改项时进行刷新, 则基础集合应`IEnumerable`为发送属性`ObservableCollection`更改通知的集合, 如。 [`CollectionView`](xref:Xamarin.Forms.CollectionView)
 
-默认情况下[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)垂直列表中显示项，如以下屏幕截图中所示：
+默认情况下[`CollectionView`](xref:Xamarin.Forms.CollectionView) , 显示垂直列表中的项, 如以下屏幕截图所示:
 
-[![包含文本项，在 iOS 和 Android 上的 CollectionView 的屏幕截图](populate-data-images/text.png "文本项中 CollectionView")](populate-data-images/text-large.png#lightbox "之间导航中的文本项")
+在[CollectionView 中的 iOS 和 Android(populate-data-images/text.png "文本项中")![包含文本项的 CollectionView 的屏幕截图]](populate-data-images/text-large.png#lightbox "CollectionView 中的文本项")
 
-有关如何更改的信息[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)布局，请参阅[指定布局](layout.md)。 了解如何定义在每个项的外观`CollectionView`，请参阅[定义项外观](#define-item-appearance)。
+有关如何更改[`CollectionView`](xref:Xamarin.Forms.CollectionView)布局的信息, 请参阅[指定布局](layout.md)。 有关如何定义中`CollectionView`每个项的外观的信息, 请参阅[定义项外观](#define-item-appearance)。
 
 ### <a name="data-binding"></a>数据绑定
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 通过使用数据绑定来绑定可以使用数据填充其[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性设置为`IEnumerable`集合。 在 XAML，这实现与`Binding`标记扩展：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)使用数据绑定将其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)属性绑定`IEnumerable`到集合, 可以填充数据。 在 XAML 中, 这是通过`Binding`标记扩展实现的:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}" />
@@ -90,16 +90,16 @@ CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-在此示例中， [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)属性数据绑定到`Monkeys`连接的视图模型属性。
+在此示例中, [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)属性数据绑定`Monkeys`到连接的视图模型的属性。
 
 > [!NOTE]
-> 可以启用已编译的绑定，以提高 Xamarin.Forms 应用程序中的数据绑定性能。 有关详细信息，请参阅[编译绑定](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
+> 可以启用编译的绑定以提高 Xamarin. Forms 应用程序中的数据绑定性能。 有关详细信息, 请参阅[已编译绑定](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
 
 有关数据绑定的详细信息，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 ## <a name="define-item-appearance"></a>定义项外观
 
-在每个项的外观[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以定义通过设置[ `CollectionView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)将属性设置为来定义中每个项的外观: [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -167,7 +167,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-中指定的元素[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)在列表中定义每个项的外观。 在示例中中的布局`DataTemplate`由[ `Grid` ](xref:Xamarin.Forms.Grid)。 `Grid`包含[ `Image` ](xref:Xamarin.Forms.Image)对象和两个[ `Label` ](xref:Xamarin.Forms.Label)对象时，所有绑定到的属性`Monkey`类：
+在中[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)指定的元素定义列表中每一项的外观。 在此示例中, 中的`DataTemplate`布局由管理。 [`Grid`](xref:Xamarin.Forms.Grid) 包含一个[`Image`](xref:Xamarin.Forms.Image)对象和两个[`Label`](xref:Xamarin.Forms.Label)对象`Monkey` , 这些对象都绑定到类的属性: `Grid`
 
 ```csharp
 public class Monkey
@@ -179,15 +179,15 @@ public class Monkey
 }
 ```
 
-下面的屏幕截图显示的模板化结果列表中的每个项：
+以下屏幕截图显示列表中每一项的模板化结果:
 
-[![每个项是 iOS 和 Android 上模板化 CollectionView 的屏幕截图](populate-data-images/datatemplate.png "之间导航中的模板化项")](populate-data-images/datatemplate-large.png#lightbox "之间导航中的模板化项")
+[ ![CollectionView 的屏幕截图, 其中每一项都在 CollectionView 中的 IOS 和 Android 模板项上进行了模板化](populate-data-images/datatemplate.png "") ](populate-data-images/datatemplate-large.png#lightbox "CollectionView 中的模板化项")
 
 有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-## <a name="choose-item-appearance-at-runtime"></a>选择项在运行时的外观
+## <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 
-在每个项的外观[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以在运行时，通过设置基于项值中，选择[ `CollectionView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)对象：
+通过[`CollectionView`](xref:Xamarin.Forms.CollectionView) [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)将属性设置为对象, 可在运行时根据项值选择每个项的外观: [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)
 
 ```xaml
 <ContentPage ...
@@ -221,7 +221,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为`MonkeyDataTemplateSelector`对象。 下面的示例演示`MonkeyDataTemplateSelector`类：
+[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置`MonkeyDataTemplateSelector`为对象。 下面的示例演示`MonkeyDataTemplateSelector`了类:
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -236,15 +236,18 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MonkeyDataTemplateSelector`类定义`AmericanMonkey`并`OtherMonkey` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)设置为不同的数据模板的属性。 `OnSelectTemplate`重写返回`AmericanMonkey`青色，显示的 monkey 名称和位置，当 monkey 名中包含"America"的模板。 Monkey 名称中不包含"America"时`OnSelectTemplate`重写返回`OtherMonkey`模板，其中显示中 silver monkey 名称和位置：
+类定义`AmericanMonkey`了并`OtherMonkey`将[属性设置为不同的数据模板。`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `MonkeyDataTemplateSelector` 重写将`AmericanMonkey`返回模板, 该模板将在猴子名称包含 "北美洲" 时显示猴子名称和位置。 `OnSelectTemplate` 当猴子名称中不包含 "美洲" 时, `OnSelectTemplate`该重写`OtherMonkey`将返回模板, 该模板将在银中显示猴子名称和位置:
 
-[![屏幕截图的 CollectionView 运行时项目模板选择，在 iOS 和 Android](populate-data-images/datatemplateselector.png "运行时之间导航中的项模板选择")](populate-data-images/datatemplateselector-large.png#lightbox "运行时中的项模板选择之间导航")
+[ ![CollectionView 运行时项模板选择的屏幕截图, 在 CollectionView 中选择的 IOS 和 Android](populate-data-images/datatemplateselector.png "运行时项模板")](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView 中的运行时项模板选择")
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息, 请参阅[Create a Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+
+> [!IMPORTANT]
+> 使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)时, 不要将[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象的根元素设置为`ViewCell`。 这将导致引发异常, 因为`CollectionView`没有单元的概念。
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
-- [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [CollectionView (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin. 窗体数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin. Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [创建 Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
