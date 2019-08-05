@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: d3fa958e999a10832d5fa15e4190077955b0e6df
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
+ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997370"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68486014"
 ---
 # <a name="introduction-to-effects"></a>效果简介
 
@@ -38,7 +38,7 @@ Xamarin.Forms [页面、布局和控件](~/xamarin-forms/user-interface/controls
 
 下表列出了 `PlatformEffect` 类在每个平台上的命名空间，以及其属性的类型：
 
-|平台|命名空间|容器|控件|
+|Platform|命名空间|容器|控件|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|视图|

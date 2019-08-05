@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f488ebe1df814a476346de15c740093fc6de54df
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 6757f25cb54adc464f7e41a1cd59db8cf6c7d22a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854686"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511713"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>对 Xamarin.iOS 应用进行单元测试
 
@@ -21,7 +21,7 @@ ms.locfileid: "58854686"
 
 ## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中安装测试项目
 
-若要为项目创建单元测试框架，只需向解决方案添加“iOS 单元测试项目”类型的项目。 为此，请右键单击解决方案，然后选择“添加”>“添加新项目”。 从列表中选择“iOS”>“测试”>“统一 API”>“iOS 单元测试项目”（可选择 C# 或 F#）。
+若要为项目创建单元测试框架，只需向解决方案添加“iOS 单元测试项目”  类型的项目。 为此，请右键单击解决方案，然后选择“添加”>“添加新项目”  。 从列表中选择“iOS”>“测试”>“统一 API”>“iOS 单元测试项目”  （可选择 C# 或 F#）。
 
 ![](touch.unit-images/00.png "选择 C# 或 F#")
 
@@ -66,7 +66,7 @@ public partial class AppDelegate : UIApplicationDelegate
 
 方法是通过创建类进行编写并对测试应用 `[TestFixture]` 属性。 在每个 TestFixture 类中，应对测试运行程序需调用的每种方法应用 `[Test]` 属性。 实际测试装置可位于测试项目的任一文件中。
 
-若要快速开始，请选择“添加”/“添加新文件”，然后在 Xamarin.iOS 组中选择“UnitTests”。 这将添加一个主干文件，其中包含三个测试（一个通过、一个失败，一个已忽略），文件如下所示：
+若要快速开始，请选择“添加”/“添加新文件”  ，然后在 Xamarin.iOS 组中选择“UnitTests”  。 这将添加一个主干文件，其中包含三个测试（一个通过、一个失败，一个已忽略），文件如下所示：
 
 ```csharp
 using System;
@@ -101,7 +101,7 @@ namespace Fixtures {
 
 ## <a name="running-your-tests"></a>运行测试
 
-若要在解决方案内运行此项目，请右键单击该项目，然后选择“调试项目”或“运行项目”。
+若要在解决方案内运行此项目，请右键单击该项目，然后选择“调试项目”  或“运行项目”  。
 
 通过测试运行程序，可查看已注册的测试，并单独选择可执行的测试。
 
@@ -119,11 +119,10 @@ namespace Fixtures {
 ## <a name="writing-new-tests"></a>编写新测试
 
 NUnitLite 是 [Touch.Unit](https://github.com/xamarin/Touch.Unit) 项目的 NUnit 修改版本。 它是一个用于 .NET 的轻量级测试框架，以 [NUnit](http://nunit.com/) 中的概念为基础，并提供其中的部分功能。
-该框架使用的资源极少并可在资源受限的平台（例如嵌入式开发和移动开发所用的平台）上运行。 若要查看可用的 API，可在 Xamarin.iOS 中[浏览 NUnitLite API](https://developer.xamarin.com/api/namespace/NUnitLite/)。 对于此单元测试模板所提供的基本主干，主入口点应为 [Assert 类](https://developer.xamarin.com/api/type/NUnit.Framework.Assert/)方法。
+该框架使用的资源极少并可在资源受限的平台（例如嵌入式开发和移动开发所用的平台）上运行。 Xamarin.iOS 中为你提供了 NUnitLite API。 对于此单元测试模板所提供的基本主干，主入口点应为 [Assert 类](xref:NUnit.Framework.Assert)方法。
 
 除 assert 类方法外，还会在 NUnitLite 包含的以下命名空间上拆分单元测试功能：
 
-- [NUnit.Framework](https://developer.xamarin.com/api/namespace/NUnit.Framework/)
-- [NUnit.Constraints](https://developer.xamarin.com/api/namespace/NUnit.Framework.Constraints/)
-- [NUnitLite](https://developer.xamarin.com/api/namespace/NUnitLite/)
-- [NUniteLite.Runner](https://developer.xamarin.com/api/namespace/NUnitLite.Runner/)
+- [NUnit.Framework](xref:NUnit.Framework)
+- [NUnit.Constraints](xref:NUnit.Framework.Constraints)
+- [NUniteLite.Runner](xref:NUnitLite.Runner)

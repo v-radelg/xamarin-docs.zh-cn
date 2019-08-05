@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670176"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509578"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
@@ -63,7 +63,7 @@ _本指南由两部分构成，在本指南中，用户将生成第一个 Xamari
 
 Visual Studio 是 Microsoft 提供的强大 IDE。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 在本指南中，将了解如何使用 Visual Studio 的一些基本功能以及 Xamarin 插件。
 
-Visual Studio 将代码组织为解决方案和项目。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 **Phoneword** 应用中，你已使用了“Android 应用程序”模板将新的 Android 项目添加到了在[了解 Android](~/android/get-started/hello-android/hello-android-quickstart.md)指南中所创建的 **Phoneword** 解决方案中。
+Visual Studio 将代码组织为解决方案  和项目  。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 **Phoneword** 应用中，你已使用了“Android 应用程序”  模板将新的 Android 项目添加到了在[了解 Android](~/android/get-started/hello-android/hello-android-quickstart.md)指南中所创建的 **Phoneword** 解决方案中。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -72,7 +72,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 Visual Studio for Mac 是免费的开源 IDE，类似于 Visual Studio。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南介绍如何使用 Visual Studio for Mac 中的一些基本功能。 如果是初次接触 Visual Studio for Mac，可能需阅读更深入的 [Visual Studio for Mac 简介](https://docs.microsoft.com/visualstudio/mac/)。
 
-Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 **Phoneword** 应用中，你已使用了“Android 应用程序”模板将新的 Android 项目添加到了在[了解 Android](~/android/get-started/hello-android/hello-android-quickstart.md)指南中所创建的 **Phoneword** 解决方案中。
+Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法   。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 **Phoneword** 应用中，你已使用了“Android 应用程序”  模板将新的 Android 项目添加到了在[了解 Android](~/android/get-started/hello-android/hello-android-quickstart.md)指南中所创建的 **Phoneword** 解决方案中。
 
 ::: zone-end
 
@@ -105,22 +105,22 @@ Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual St
 
 - **资产** &ndash; 包含应用程序需要运行的文件（包括字体、本地数据文件和文本文件）。 此处包括的文件可通过生成的 `Assets` 类访问。 有关 Android 资产的详细信息，请参阅 Xamarin [使用 Android 资产](~/android/app-fundamentals/resources-in-android/android-assets.md)指南。
 
-- **资源** &ndash; 包含应用程序资源，例如字符串、图像和布局。 可以通过生成的 `Resource` 类访问代码中的这些资源。 [Android 资源](~/android/app-fundamentals/resources-in-android/index.md)指南提供有关“资源”目录的更多详细信息。 应用程序模板在 **AboutResources.txt** 文件中还包含有“资源”的简明指南。
+- **资源** &ndash; 包含应用程序资源，例如字符串、图像和布局。 可以通过生成的 `Resource` 类访问代码中的这些资源。 [Android 资源](~/android/app-fundamentals/resources-in-android/index.md)指南提供有关“资源”  目录的更多详细信息。 应用程序模板在 **AboutResources.txt** 文件中还包含有“资源”的简明指南。
 
 ### <a name="resources"></a>资源
 
-“资源”目录包含 4 个文件夹（drawable、layout、mipmap 和 values），还有一个名为 Resource.designer.cs 的文件。
+“资源”目录包含 4 个文件夹（drawable、layout、mipmap 和 values），还有一个名为 Resource.designer.cs 的文件       。
 
 下表总结了这些项：
 
 - **drawable** &ndash; 可绘制目录包含[可绘制资源](https://developer.android.com/guide/topics/resources/drawable-resource.html)，如图像和位图。
 
-- **mipmap** &ndash; mipmap 目录包含适用于不同启动器图标密度的可绘制文件。 在默认模板中，drawable 目录包含应用程序图标文件“Icon.png”。
+- **mipmap** &ndash; mipmap 目录包含适用于不同启动器图标密度的可绘制文件。 在默认模板中，drawable 目录包含应用程序图标文件“Icon.png”  。
 
 
 ::: zone pivot="windows"
 
-- **layout** &ndash; 布局目录包含 _Android 设计器文件_ (.axml)，该文件定义每个屏幕或活动的用户界面。 该模板创建名为 activity_main.axml 的默认布局。
+- **layout** &ndash; 布局目录包含 _Android 设计器文件_ (.axml)，该文件定义每个屏幕或活动的用户界面。 该模板创建名为 activity_main.axml 的默认布局  。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -141,11 +141,11 @@ Android 应用程序不具有单一入口点；也就是说，应用程序中没
 
 ### <a name="phoneword-scenario---starting-with-an-activity"></a>Phoneword 解决方案 - 以活动开始
 
-在仿真器或设备中首次打开 **Phoneword** 应用程序时，操作系统会创建第一个活动。 活动是特殊的 Android 类，对应于单个应用程序屏幕，负责绘制和支持用户界面。 Android 创建应用程序的第一个活动时，会加载整个应用程序：
+在仿真器或设备中首次打开 **Phoneword** 应用程序时，操作系统会创建第一个活动  。 活动是特殊的 Android 类，对应于单个应用程序屏幕，负责绘制和支持用户界面。 Android 创建应用程序的第一个活动时，会加载整个应用程序：
 
 [![活动负载](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
-由于 Android 应用程序中没有线性发展（可以通过多个点启动应用程序），Android 采用一种独特方式来跟踪哪些类和文件组成应用程序。 在 **Phoneword** 示例中，将向名为“Android 清单”的特殊 XML 文件注册组成应用程序的所有部分。 “Android 清单”的作用是跟踪应用程序的内容、属性和权限，并将这些信息告知 Android 操作系统。 可以将 **Phoneword** 应用程序当作单一活动（屏幕）和由 Android 清单文件捆绑在一起的资源文件和帮助程序文件的集合，如以下关系图所示：
+由于 Android 应用程序中没有线性发展（可以通过多个点启动应用程序），Android 采用一种独特方式来跟踪哪些类和文件组成应用程序。 在 **Phoneword** 示例中，将向名为“Android 清单”  的特殊 XML 文件注册组成应用程序的所有部分。 “Android 清单”  的作用是跟踪应用程序的内容、属性和权限，并将这些信息告知 Android 操作系统。 可以将 **Phoneword** 应用程序当作单一活动（屏幕）和由 Android 清单文件捆绑在一起的资源文件和帮助程序文件的集合，如以下关系图所示：
 
 [![资源帮助程序](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
@@ -153,9 +153,14 @@ Android 应用程序不具有单一入口点；也就是说，应用程序中没
 
 ## <a name="user-interface"></a>用户界面
 
+> [!TIP]
+> Visual Studio 的较新版本支持在 Android Designer 中打开 .xml 文件。
+>
+> .axml 和 .xml 文件均受 Android Designer 支持。
+
 ::: zone pivot="windows"
 
-activity_main.axml 是应用程序中第一个屏幕的用户界面布局文件。 .axml 指示这是 Android 设计器文件（AXML 表示 *Android XML*。 名称 Main 对 Android 而言是任意的 &ndash; 可将布局文件命名为其他名称。 在 IDE 中打开 activity_main.axml 时，会显示名为“Android Designer”的 Android 布局文件的可视编辑器：
+activity_main.axml 是应用程序中第一个屏幕的用户界面布局文件  。 .axml 指示这是 Android 设计器文件（AXML 表示 *Android XML*。 名称 Main  对 Android 而言是任意的 &ndash; 可将布局文件命名为其他名称。 在 IDE 中打开 activity_main.axml 时，会显示名为“Android Designer”的 Android 布局文件的可视编辑器   ：
 
 [![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
@@ -166,7 +171,7 @@ activity_main.axml 是应用程序中第一个屏幕的用户界面布局文件�
 ::: zone-end
 ::: zone pivot="macos"
 
-Main.axml 是应用程序中第一个屏幕的用户界面布局文件。 .axml 指示这是 Android 设计器文件（AXML 表示 *Android XML*。 名称 Main 对 Android 而言是任意的 &ndash; 可将布局文件命名为其他名称。 在 IDE 中打开 **Main.axml** 时，会显示名为“Android 设计器”的 Android 布局文件的可视编辑器：
+Main.axml 是应用程序中第一个屏幕的用户界面布局文件  。 .axml 指示这是 Android 设计器文件（AXML 表示 *Android XML*。 名称 Main  对 Android 而言是任意的 &ndash; 可将布局文件命名为其他名称。 在 IDE 中打开 **Main.axml** 时，会显示名为“Android 设计器”  的 Android 布局文件的可视编辑器：
 
 [![Android Designer](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
@@ -176,11 +181,11 @@ Main.axml 是应用程序中第一个屏幕的用户界面布局文件。 .axml 
 
 ::: zone-end
 
-设置 **TranslateButton** 的 `id` 属性时，Android Designer 会将 **TranslateButton** 控件映射到 `Resource` 类，并为其分配 `TranslateButton` 的资源 ID。 通过将可视控件映射到类，可以找到并使用 **TranslateButton** 和应用代码中的其他控件。 当你剖析为控件提供支持的代码时，会更详细地了解这一内容。 此时，只需知道控件的代码表示形式是通过 `id` 属性链接到设计器中控件的可视表示形式即可。
+设置 **TranslateButton** 的 `id` 属性时，Android Designer 会将 **TranslateButton** 控件映射到 `Resource` 类，并为其分配 `TranslateButton` 的资源 ID  。 通过将可视控件映射到类，可以找到并使用 **TranslateButton** 和应用代码中的其他控件。 当你剖析为控件提供支持的代码时，会更详细地了解这一内容。 此时，只需知道控件的代码表示形式是通过 `id` 属性链接到设计器中控件的可视表示形式即可。
 
 ### <a name="source-view"></a>源视图
 
-在设计界面上定义的所有内容都会转换成 XML，以供 Xamarin.Android 使用。 Android 设计器提供源视图，此源视图包含从可视化设计器生成的 XML。 可以切换到设计器视图左下角的“源”面板以查看此 XML，如以下屏幕截图所示：
+在设计界面上定义的所有内容都会转换成 XML，以供 Xamarin.Android 使用。 Android 设计器提供源视图，此源视图包含从可视化设计器生成的 XML。 可以切换到设计器视图左下角的“源”  面板以查看此 XML，如以下屏幕截图所示：
 
 ::: zone pivot="windows"
 
@@ -193,7 +198,7 @@ Main.axml 是应用程序中第一个屏幕的用户界面布局文件。 .axml 
 
 ::: zone-end
 
-此 XML 源代码应包含**文本（大型）**、**纯文本**和两个**按钮**元素。 有关 Android 设计器的更深入教程，请参阅 Xamarin Android [设计器概述](~/android/user-interface/android-designer/index.md)指南。
+此 XML 源代码应包含四个控件元素：两个 TextView、一个 EditText 和一个“按钮”元素    。 有关 Android 设计器的更深入教程，请参阅 Xamarin Android [设计器概述](~/android/user-interface/android-designer/index.md)指南。
 
 现在已讨论了用户界面可视部分背后的工具和概念。 接下来，通过探索活动和活动生命周期介绍为用户界面提供支持的代码。
 
@@ -207,7 +212,7 @@ Main.axml 是应用程序中第一个屏幕的用户界面布局文件。 .axml 
 
 **Phoneword** 应用程序只有一个屏幕（活动）。 为屏幕提供支持的类称为 `MainActivity`，位于 **MainActivity.cs** 文件中。 名称 `MainActivity` 在 Android 中没有特别的意义 &ndash; 虽然约定是命名应用程序 `MainActivity` 中的第一个活动，但 Android 并不在意将其命名为其他名称。
 
-打开 **MainActivity.cs** 时，可以看到，`MainActivity` 类是 `Activity` 类的子类并且活动标有 [Activity](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) 属性：
+打开 **MainActivity.cs** 时，可以看到，`MainActivity` 类是 `Activity` 类的子类  并且活动标有 [Activity](xref:Android.App.ActivityAttribute) 属性：
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -237,7 +242,7 @@ public class MainActivity : Activity
 
 - **OnPause** &ndash; 执行每当活动离开设备屏幕时必须发生的任何任务。
 
-向 `Activity` 中的生命周期方法添加自定义代码时，重写该生命周期方法的基实现。 可以利用现有的生命周期方法（已在其中附加了一些代码）并使用自己的代码来扩展该方法。 从方法内调用基实现，确保原始代码在新代码之前运行。 下一部分对此提供示例说明。
+向 `Activity` 中的生命周期方法添加自定义代码时，重写  该生命周期方法的基实现  。 可以利用现有的生命周期方法（已在其中附加了一些代码）并使用自己的代码来扩展该方法。 从方法内调用基实现，确保原始代码在新代码之前运行。 下一部分对此提供示例说明。
 
 活动生命周期是 Android 中一个重要且复杂的部分。 完成_入门_系列后，如果想要了解有关活动的详细信息，请阅读[活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)指南。 本指南下一步的重点是活动生命周期的第一个阶段 - `OnCreate`。
 
@@ -258,24 +263,24 @@ protected override void OnCreate (Bundle bundle)
 
 ::: zone pivot="windows"
 
-在 **Phoneword** 应用中，首先在 `OnCreate` 中加载在 Android Designer 中创建的用户界面。 若要加载 UI，请调用 `SetContentView` 并向其传递布局文件的资源布局名称：activity_main.axml。 布局位于 `Resource.Layout.activity_main`：
+在 **Phoneword** 应用中，首先在 `OnCreate` 中加载在 Android Designer 中创建的用户界面。 若要加载 UI，请调用 `SetContentView` 并向其传递布局文件的资源布局名称：activity_main.axml   。 布局位于 `Resource.Layout.activity_main`：
 
 ```csharp
 SetContentView (Resource.Layout.activity_main);
 ```
 
-当 `MainActivity` 开始运行后，会基于 activity_main.axml 文件的内容创建一个视图。
+当 `MainActivity` 开始运行后，会基于 activity_main.axml 文件的内容创建一个视图  。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-在 **Phoneword** 应用中，首先在 `OnCreate` 中加载在 Android Designer 中创建的用户界面。 若要加载 UI，请调用 `SetContentView` 并向其传递布局文件的资源布局名称：Main.axml。 布局位于 `Resource.Layout.Main`：
+在 **Phoneword** 应用中，首先在 `OnCreate` 中加载在 Android Designer 中创建的用户界面。 若要加载 UI，请调用 `SetContentView` 并向其传递布局文件的资源布局名称  ：Main.axml  。 布局位于 `Resource.Layout.Main`：
 
 ```csharp
 SetContentView (Resource.Layout.Main);
 ```
 
-当 `MainActivity` 开始运行后，会基于 **Main.axml** 文件中内容创建一个视图。 请注意，布局文件名称应与活动名称匹配 &ndash; Main.axml 是 Main 活动的布局。 这不是 Android 要求的，但当你开始向应用程序添加更多屏幕时，会发现此命名约定便于匹配布局文件和代码文件。
+当 `MainActivity` 开始运行后，会基于 **Main.axml** 文件中内容创建一个视图。 请注意，布局文件名称应与活动名称匹配 &ndash;  Main.axml 是 Main  活动的布局。 这不是 Android 要求的，但当你开始向应用程序添加更多屏幕时，会发现此命名约定便于匹配布局文件和代码文件。
 
 ::: zone-end
 
@@ -326,14 +331,14 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 
 ::: zone pivot="windows"
 
-配置设备后，可通过插入设备，从“选择设备”对话框中将其选中，然后启动应用程序，对设备进行部署：
+配置设备后，可通过插入设备，从“选择设备”  对话框中将其选中，然后启动应用程序，对设备进行部署：
 
 ![选择调试设备](hello-android-deepdive-images/vs/06-select-device.png "Select debug device")
 
 ::: zone-end
 ::: zone pivot="macos"
 
-配置设备后，可通过插入设备，按“开始(播放)”，从“选择设备”对话框中将其选中，然后按“确定”，对设备进行部署：
+配置设备后，可通过插入设备，按“开始(播放)”  ，从“选择设备”  对话框中将其选中，然后按“确定”  ，对设备进行部署：
 
 [![选择调试设备](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
@@ -349,7 +354,7 @@ Android 设备具有不同的屏幕大小和分辨率，不是所有图像都能
 
 [![模糊的图标](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png#lightbox)
 
-考虑到这一点，最好将不同分辨率的图标添加到 **Resources** 文件夹。 Android 提供了不同版本的 mipmap 文件夹来处理不同密度的启动器图标，包括针对中等密度屏幕的 mdpi、针对高密度屏幕的 hdpi，以及针对超高密度屏幕的 xhdpi、xxhdpi 和 xxxhdpi。 不同大小的图标存储在相应的 mipmap- 文件夹中：
+考虑到这一点，最好将不同分辨率的图标添加到 **Resources** 文件夹。 Android 提供了不同版本的 mipmap 文件夹来处理不同密度的启动器图标，包括针对中等密度屏幕的 mdpi、针对高密度屏幕的 hdpi，以及针对超高密度屏幕的 xhdpi、xxhdpi 和 xxxhdpi       。 不同大小的图标存储在相应的 mipmap- 文件夹中  ：
 
 ::: zone pivot="windows"
 
@@ -401,18 +406,18 @@ Android 根据合适的密度选择图标：
 
 ### <a name="adding-google-play-services-packages"></a>添加 Google Play Services 包
 
-Google Play Services 是一套外接程序库，让 Android 开发人员可以利用 Google 的最新功能，如 Google Maps、Google Cloud Messaging 和 In-App Billing。
+ Google Play Services 是一套外接程序库，让 Android 开发人员可以利用 Google 的最新功能，如 Google Maps、Google Cloud Messaging 和 In-App Billing。
 以前，由 Xamarin 以单一包的形式提供对所有 Google Play Services 库的绑定 &ndash; 从 Visual Studio for Mac 开始，提供了一个新的项目对话框，用于选择要包括在应用中的 Google Play Services 包。
 
-若要添加一个或多个 Google Play Service 库，右键单击项目树中的“包”节点，并单击“添加 Google Play Service...”：
+若要添加一个或多个 Google Play Service 库，右键单击项目树中的“包”  节点，并单击“添加 Google Play Service...”  ：
 
 [![添加 Google Play 服务](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
-出现“添加 Google Play Services”对话框时，选择想要添加到项目的包 (nuget)：
+出现“添加 Google Play Services”  对话框时，选择想要添加到项目的包 (nuget)：
 
 [![选择包](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
-选择服务并单击“添加包”时，Visual Studio for Mac 会下载并安装所选包及其所需的任何 Google Play Services 依赖包。 在某些情况下，可能会看到“接受许可”对话框，要求在安装包之前单击“接受”：
+选择服务并单击“添加包”时，Visual Studio for Mac 会下载并安装所选包及其所需的任何 Google Play Services 依赖包  。 在某些情况下，可能会看到“接受许可”  对话框，要求在安装包之前单击“接受”  ：
 
 [![许可证接受](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
@@ -422,4 +427,4 @@ Google Play Services 是一套外接程序库，让 Android 开发人员可以�
 
 祝贺你！ 你现在应已充分了解了 Xamarin.Android 应用程序的组件以及创建它们所需的工具。
 
-在入门系列的另一个教程中，你将扩展应用程序以处理多个屏幕，同时探索更高级的 Android 体系结构和概念。
+在入门  系列的另一个教程中，你将扩展应用程序以处理多个屏幕，同时探索更高级的 Android 体系结构和概念。

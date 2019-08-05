@@ -7,52 +7,52 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: d0c79a5eb417762531245256ff062c5c34ca394c
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: f06af6a2121fc037f5c3f496ee8bd6b91e2969e6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112313"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656748"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>演练 - 使用 Apple Instruments 工具
 
 _本文介绍如何使用 Apple 的 Instruments 工具诊断通过 Xamarin 生成的 iOS 应用程序的内存问题。它演示了如何启动 Instruments、拍摄堆快照和分析内存增长情况。此外，还演示了如何使用 Instruments 显示和确定造成内存问题的确切代码行。_
 
 本页演示如何使用 **Xcode 的 Instruments 工具**诊断 iOS 应用程序中的内存问题。
-首先，下载 [MemoryDemo 示例](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/)，并在 Visual Studio for Mac 中打开先前解决方案。
+首先，下载 [MemoryDemo 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)，并在 Visual Studio for Mac 中打开先前  解决方案。
 
 ## <a name="diagnosing-the-memory-issues"></a>诊断内存问题
 
-1. 在 Visual Studio for Mac 中，通过“工具”>“启动 Instruments”菜单项启动“Instruments”。
-2. 通过选择“运行”>“上传到设备”菜单项，将应用程序上传到设备。
-3. 选择“分配”模板（带白色边框的橙色图标）
+1. 在 Visual Studio for Mac 中，通过“工具”>“启动 Instruments”  菜单项启动“Instruments”  。
+2. 通过选择“运行”>“上传到设备”  菜单项，将应用程序上传到设备。
+3. 选择“分配”  模板（带白色边框的橙色图标）
 
     ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "选择“分配”模板")
 
-4. 在窗口顶部的“选择分析模板的对象:”列表中，选择“Memory Demo”应用程序。 首先单击 iOS 设备，展开显示已安装应用程序的菜单。
+4. 在窗口顶部的“选择分析模板的对象:”  列表中，选择“Memory Demo”  应用程序。 首先单击 iOS 设备，展开显示已安装应用程序的菜单。
 
     ![](walkthrough-apples-instrument-images/01-mem-demo.png "选择“Memory Demo”应用程序")
 
-5. 按“选择”按钮（窗口右下方），启动“Instruments”。 此模板会在顶部窗格中显示两项：分配和 VM 跟踪程序。
+5. 按“选择”  按钮（窗口右下方），启动“Instruments”  。 此模板会在顶部窗格中显示两项：分配和 VM 跟踪程序。
 
-6. 按 Instruments 中的“录制”按钮（左上方的红色圈），启动应用程序。
+6. 按 Instruments 中的“录制”  按钮（左上方的红色圈），启动应用程序。
 
-7. 在顶部窗格中选择“VM 跟踪程序”行（应用运行后，会包含两个部分：脏大小和驻留大小）。 在“检查器”窗格中，选择“显示显示设置”选项（齿轮图标），然后选中“自动快照”复选框，如右下方屏幕截图所示：
+7. 在顶部窗格中选择“VM 跟踪程序”  行（应用运行后，会包含两个部分：脏大小和驻留大小）。 在“检查器”  窗格中，选择“显示显示设置”  选项（齿轮图标），然后选中“自动快照”  复选框，如右下方屏幕截图所示：
 
     ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "选择“显示显示设置”选项（齿轮图标），然后勾选“自动快照”复选框")
 
-8. 在顶部窗格中选择“分配”行（应用运行后，会显示“所有堆和匿名 VM”）
-9. 在“检查器”窗格中，选择“显示显示设置”选项（齿轮图标），然后单击“标记生成”按钮生成基线。 窗口顶部的时间线中会出现红色小标记
-10. 滚动应用程序，然后再次选择“标记生成”（重复几次）
-11. 单击“停止”按钮。
-12. 展开具有最大“增长”的“生成”节点，并按“增长”排序（降序）。
-13. 将“检查器”窗格更改为“显示扩展详细信息”(E)，显示“堆栈跟踪”。
+8. 在顶部窗格中选择“分配”  行（应用运行后，会显示“所有堆和匿名 VM”  ）
+9. 在“检查器”  窗格中，选择“显示显示设置”  选项（齿轮图标），然后单击“标记生成”  按钮生成基线。 窗口顶部的时间线中会出现红色小标记
+10. 滚动应用程序，然后再次选择“标记生成”  （重复几次）
+11. 单击“停止”  按钮。
+12. 展开具有最大“增长”  的“生成”  节点，并按“增长”  排序（降序）。
+13. 将“检查器”  窗格更改为“显示扩展详细信息”  (E)，显示“堆栈跟踪”  。
 
-14. 请注意，“&lt;非对象>”节点显示内存增加过多。 单击此节点旁边的箭头，查看更多详细信息 - 右键单击堆栈跟踪，将“源位置”添加到窗格中：
+14. 请注意，“&lt;非对象>”  节点显示内存增加过多。 单击此节点旁边的箭头，查看更多详细信息 - 右键单击堆栈跟踪，将“源位置”  添加到窗格中：
 
     ![](walkthrough-apples-instrument-images/03-mem-growth.png "向窗格添加源位置")
 
-15. 按“大小”进行排序，并显示“扩展详细信息”视图：
+15. 按“大小”  进行排序，并显示“扩展详细信息”  视图：
 
     ![](walkthrough-apples-instrument-images/04-extended-detail.png "按“大小”进行排序，并显示“扩展详细信息”视图")
 
@@ -81,11 +81,11 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-现在，运行应用程序时，内存使用率会大幅降低 - 此时生成之间的“增长”按 Kib（千字节）测量，而在代码修复前则是 MiB（兆字节）：
+现在，运行应用程序时，内存使用率会大幅降低 - 此时生成之间的“增长”  按 Kib（千字节）测量，而在代码修复前则是 MiB（兆字节）：
 
 ![](walkthrough-apples-instrument-images/06-reduced-memory.png "显示应用内存使用情况")
 
-在 Visual Studio for Mac 的随后解决方案中，[MemoryDemo 示例](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/)中提供了改进的代码。
+在 Visual Studio for Mac 的随后  解决方案中，[MemoryDemo 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)中提供了改进的代码。
 
 若要了解如何处理 Xamarin.iOS 方面的内存问题，可参考关于 [Xamarin.iOS 垃圾回收](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)该社区博客。
 
@@ -97,5 +97,5 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ## <a name="related-links"></a>相关链接
 
-- [MemoryDemo 示例](https://developer.xamarin.com/samples/monotouch/Profiling/MemoryDemo/)
+- [MemoryDemo 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
 - [Xamarin.iOS 垃圾回收（博客文章）](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: f3fb083457fa1fbf6590eb53eea504257e93ecc6
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: d59d4fc3ff9df3ea883ab4d5845da193e6cb8c51
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617769"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643785"
 ---
 # <a name="xamarin-for-java-developers"></a>面向 Java 开发人员的 Xamarin
 
@@ -74,15 +74,15 @@ C# 为 Xamarin.Android 提供了许多主要功能，Java 开发人员当前尚�
 
 -   [属性](#properties) &ndash; 可通过 C# 属性系统直接安全地访问成员变量，而无需编写 setter 和 getter 方法。
 
--   [Lambda 表达式](#lambdas) &ndash; 在 C# 中，你可以使用匿名方法（也称为“lambda”）更简洁、更高效地表示你的功能。 你可以避免编写一次性对象的开销，并且可以向某个方法传递本地状态而无需添加参数。
+-   [Lambda 表达式](#lambdas) &ndash; 在 C# 中，你可以使用匿名方法（也称为“lambda”  ）更简洁、更高效地表示你的功能。 你可以避免编写一次性对象的开销，并且可以向某个方法传递本地状态而无需添加参数。
 
--   [事件处理](#events) &ndash; C# 为事件驱动的编程提供语言级别支持，对象可以进行注册，以便在出现感兴趣的事件时接收通知。 `event` 关键字定义发布服务器类可用于通知事件订阅者的多播广播机制。
+-   [事件处理](#events) &ndash; C# 为事件驱动的编程  提供语言级别支持，对象可以进行注册，以便在出现感兴趣的事件时接收通知。 `event` 关键字定义发布服务器类可用于通知事件订阅者的多播广播机制。
 
 -   [异步编程](#async) &ndash; C# 的异步编程功能 (`async`/`await`) 使应用保持响应状态。
     此功能的语言级别支持使异步编程轻松实现，且不容易出错。
 
 
-最后，Xamarin 允许你通过已知的绑定技术来[利用现有的 Java 资产](#interop)。 你可以通过使用 Xamarin 的自动绑定生成器，从 C# 调用现有的 Java 代码、框架和库。 若要执行此操作，只需在 Java 中创建静态库，并通过绑定将其公开到 C#。
+最后，Xamarin 允许你通过已知的绑定  技术来[利用现有的 Java 资产](#interop)。 你可以通过使用 Xamarin 的自动绑定生成器，从 C# 调用现有的 Java 代码、框架和库。 若要执行此操作，只需在 Java 中创建静态库，并通过绑定将其公开到 C#。
 
 <a name="fundamentals" />
 
@@ -94,7 +94,7 @@ C# 为 Xamarin.Android 提供了许多主要功能，Java 开发人员当前尚�
 
 ### <a name="libraries-vs-assemblies"></a>库和程序集
 
-Java 通常将相关类打包到 .jar 文件中。 然而，在 C# 和 .NET 中，预编译代码的可重用位将打包到程序集，通常打包为 .dll 文件。 程序集是部署 C#/.NET 代码的单位，每个程序集通常与 C# 项目相关联。 程序集包含在运行时实时编译的中间代码 (IL)。
+Java 通常将相关类打包到 .jar  文件中。 然而，在 C# 和 .NET 中，预编译代码的可重用位将打包到程序集  ，通常打包为 .dll  文件。 程序集是部署 C#/.NET 代码的单位，每个程序集通常与 C# 项目相关联。 程序集包含在运行时实时编译的中间代码 (IL)。
 
 有关程序集的详细信息，请参阅[程序集和全局程序集缓存](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/)主题。
 
@@ -146,7 +146,7 @@ using System.Threading.Tasks;
 
 ### <a name="generics"></a>泛型
 
-Java 和 C# 支持泛型，这是允许你在编译时插入不同类型中的占位符。 但是，泛型在 C# 中的工作方式略有不同。 在 Java 中，[类型擦除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)仅在编译时提供类型信息，而不是在运行时。 与此相反，.NET 公共语言运行时 (CLR) 对泛型类型提供显式支持，这意味着 C# 有权在运行时访问类型信息。 在日常 Xamarin.Android 开发中，这一区别的重要性通常不明显，但如果使用的是[反射](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，你将依赖此功能在运行时访问类型信息。
+Java 和 C# 支持泛型  ，这是允许你在编译时插入不同类型中的占位符。 但是，泛型在 C# 中的工作方式略有不同。 在 Java 中，[类型擦除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)仅在编译时提供类型信息，而不是在运行时。 与此相反，.NET 公共语言运行时 (CLR) 对泛型类型提供显式支持，这意味着 C# 有权在运行时访问类型信息。 在日常 Xamarin.Android 开发中，这一区别的重要性通常不明显，但如果使用的是[反射](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，你将依赖此功能在运行时访问类型信息。
 
 在 Xamarin.Android 中，通常会看到泛型方法 `FindViewById` 用于获取对布局控件的引用。 此方法接受一个泛型类型参数，指定要查找的控件类型。 例如:
 
@@ -154,7 +154,7 @@ Java 和 C# 支持泛型，这是允许你在编译时插入不同类型中的�
 TextView label = FindViewById<TextView> (Resource.Id.Label);
 ```
 
-在此代码示例中，`FindViewById` 将布局中定义的 `TextView` 控件作为标签引用，然后将其作为 `TextView` 类型返回。
+在此代码示例中，`FindViewById` 将布局中定义的 `TextView` 控件作为标签  引用，然后将其作为 `TextView` 类型返回。
 
 有关泛型的更多信息，请参阅[泛型](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)主题。
 请注意，Xamarin.Android 对泛型 C# 类的支持存在一些限制；有关详细信息，请参阅[限制](~/android/internals/limitations.md)。
@@ -174,7 +174,7 @@ Java 和 C# 使用非常相似的面向对象的编程惯用语：
 
 -   所有类实例均通过 `new` 运算符在堆上创建。
 
--   由于这两种语言都使用垃圾回收，因此有一种方法可以显式释放未使用的对象（即，不像 C++ 一样存在 `delete` 关键字）。
+-   由于这两种语言都使用垃圾回收，因此无法显式释放未使用的对象（即，不像 C++ 一样存在 `delete` 关键字）。
 
 -   可以通过继承扩展类，并且这两种语言只允许每种类型有单个基类。
 
@@ -225,7 +225,7 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 ### <a name="properties"></a>属性
 
-在 Java 中，赋值函数方法 (setter) 和检查器方法 (getter) 通常用于控制在隐藏和保护类成员不受外部代码影响时如何对这些成员进行更改。 例如，Android `TextView` 类提供 `getText` 和 `setText` 方法。 C# 提供相似但更直接的机制，称为“属性”。
+在 Java 中，赋值函数方法 (setter) 和检查器方法 (getter) 通常用于控制在隐藏和保护类成员不受外部代码影响时如何对这些成员进行更改。 例如，Android `TextView` 类提供 `getText` 和 `setText` 方法。 C# 提供相似但更直接的机制，称为“属性”  。
 C# 类用户可以使用与访问字段相同的方式来访问属性，但是每次访问实际上会导致对调用方透明的方法调用。 此“隐秘”方法会导致一些副作用，如设置其他值、执行转换，或更改对象状态。
 
 属性通常用于访问和修改 UI（用户界面）对象成员。 例如:
@@ -286,9 +286,9 @@ public class MainActivity : Activity
 
 Java 和 C# 都支持 `public`、`private` 和 `protected` 访问修饰符。 但是，C# 支持以下两个其他访问修饰符：
 
--   `internal` &ndash; 只能在当前程序集内访问类成员。
+-   `internal`  &ndash; 只能在当前程序集内访问类成员。
 
--   `protected internal` &ndash; 可在定义程序集、定义类和派生类中访问类成员定义（程序集内部和外部的派生类都具有访问权限）。
+-   `protected internal`  &ndash; 可在定义程序集、定义类和派生类中访问类成员定义（程序集内部和外部的派生类都具有访问权限）。
 
 有关 C# 访问修饰符的详细信息，请参阅[访问修饰符](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)主题。
 
@@ -296,7 +296,7 @@ Java 和 C# 都支持 `public`、`private` 和 `protected` 访问修饰符。 �
 
 ### <a name="virtual-and-override-methods"></a>虚拟和重写方法
 
-Java 和 C# 均支持多形性，即能够以相同方式处理相关对象。 在这两种语言中，可以使用基类引用来引用派生类对象，且派生类的方法可以重写基类的方法。 两种语言都具有虚拟方法的概念，此基类方法旨在替换为派生类中的方法。
+Java 和 C# 均支持多形性  ，即能够以相同方式处理相关对象。 在这两种语言中，可以使用基类引用来引用派生类对象，且派生类的方法可以重写基类的方法。 两种语言都具有虚拟  方法的概念，此基类方法旨在替换为派生类中的方法。
 和 Java 一样，C# 支持 `abstract` 类和方法。
 
 但是，Java 和 C# 之间在如何声明和重写虚拟方法方面存在一些差异：
@@ -314,7 +314,7 @@ Java 和 C# 均支持多形性，即能够以相同方式处理相关对象。 �
 
 ## <a name="lambda-expressions"></a>Lambda 表达式
 
-可以通过 C# 创建一个闭包：内联匿名方法，可以访问它们包含在其中的方法的状态。
+可以通过 C# 创建一个闭包  ：内联匿名方法，可以访问它们包含在其中的方法的状态。
 使用 lambda 表达式，你可以编写较少的代码行来实现相同功能，你可能已使用更多的代码行在 Java 中实现该功能。
 
 Lambda 表达式使你可以跳过像在 Java 中创建一次性类或匿名类时会涉及到的其他繁琐操作 &ndash; 而只需编写方法代码内联的业务逻辑即可。 此外，由于 lambda 对周围方法中的变量具备访问权限，因此不必创建用于将状态传递到方法代码的长参数列表。
@@ -345,12 +345,12 @@ button.Click += (sender, args) => {
 
 ## <a name="event-handling"></a>事件处理
 
-事件是在对象出现一些有趣的内容时，该对象通知注册订阅者所采用的一种方式。 与 Java 不同，订阅者通常在 Java 中实现 `Listener` 接口，其中包含一个回调方法，而 C# 则通过委托为事件处理提供语言级别支持。 委托类似于面向对象的类型安全函数指针 &ndash; 它封装对象引用和方法令牌。 如果客户端对象想要订阅事件，它将创建委托并将该委托传递给通知对象。
+事件  是在对象出现一些有趣的内容时，该对象通知注册订阅者所采用的一种方式。 与 Java 不同，订阅者通常在 Java 中实现 `Listener` 接口，其中包含一个回调方法，而 C# 则通过委托  为事件处理提供语言级别支持。 委托  类似于面向对象的类型安全函数指针 &ndash; 它封装对象引用和方法令牌。 如果客户端对象想要订阅事件，它将创建委托并将该委托传递给通知对象。
 发生事件时，通知对象将调用委托对象所表示的方法，以通知订阅事件的客户端对象。 在 C# 中，事件处理程序实际上就是通过委托调用的方法。
 
 有关委托的详细信息，请参阅[委托](https://docs.microsoft.com/dotnet/csharp/programming-guide/delegates/index)主题。
 
-在 C# 中，事件为多播；也就是说，发生某事件时可以通知多个侦听器。 当你考虑 Java 和 C# 事件注册之间的语法差异时，将观察到这种差异。 在 Java 中，可以调用 `SetXXXListener` 来注册事件通知；在 C# 中，可以使用 `+=` 运算符来注册事件通知，方法是将委托“添加”到事件侦听器列表。
+在 C# 中，事件为多播  ；也就是说，发生某事件时可以通知多个侦听器。 当你考虑 Java 和 C# 事件注册之间的语法差异时，将观察到这种差异。 在 Java 中，可以调用 `SetXXXListener` 来注册事件通知；在 C# 中，可以使用 `+=` 运算符来注册事件通知，方法是将委托“添加”到事件侦听器列表。
 在 Java 中，可以调用 `SetXXXListener` 以取消注册，而在 C# 中，则使用 `-=`将委托从侦听器列表中“去除”。
 
 在 Xamarin.Android 中，事件通常用于在用户对 UI 控件执行某操作时通知对象。 通常，UI 控件将具有使用 `event` 关键字定义的成员；将委托附加到这些成员，以便从该 UI 控件中订阅事件。
@@ -394,12 +394,12 @@ startActivityButton.Click += (sender, e) => {
 
 ## <a name="asynchronous-programming"></a>异步编程
 
-异步编程是改进应用程序总体响应能力的一种方法。 当应用程序的某些部分被冗长的操作所阻塞时，异步编程功能使应用代码的其余部分得以继续运行。
+异步编程  是改进应用程序总体响应能力的一种方法。 当应用程序的某些部分被冗长的操作所阻塞时，异步编程功能使应用代码的其余部分得以继续运行。
 如果应用程序未以异步方式编写，访问 Web、处理图像和读取/写入文件等操作示例可能会导致整个应用看上去像冻结了一样。
 
 C# 包含对通过 `async` 和 `await` 关键字进行异步编程的语言级别支持。 通过这些语言功能，可以非常方便地编写代码来执行长时间运行的任务，而不会阻止应用的主线程。 简而言之，可以在某个方法上使用 `async` 关键字来指示方法中以异步方式运行，且不会阻止调用方线程的代码。 在调用标记有 `async` 的方法时使用 `await` 关键字。 编译器会将 `await` 解释为一个点，其中方法执行将移至后台线程（会向调用方返回一个任务）。 完成此任务后，将在代码中 `await` 点处的调用方线程上恢复代码执行，从而返回 `async` 调用的结果。 按照约定，异步运行的方法的名称带有 `Async` 后缀。
 
-在 Xamarin.Android 应用中，`async` 和 `await` 通常用于释放 UI 线程，以便在后台任务中发生长时间运行的操作时，它可以响应用户输入（如点击“取消”按钮）。
+在 Xamarin.Android 应用中，`async` 和 `await` 通常用于释放 UI 线程，以便在后台任务中发生长时间运行的操作时，它可以响应用户输入（如点击“取消”  按钮）。
 
 在以下示例中，按钮点击事件处理程序将导致异步操作从 Web 下载映像：
 
@@ -433,7 +433,7 @@ async void downloadAsync(object sender, System.EventArgs e)
 
 Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Java 关键字在 C# 中具有以不同方式命名的等效对应项，如下表所示：
 
-|Java|C#|描述|
+|Java|C#|说明|
 |---|---|---|
 |`boolean`|[bool](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/bool)|用于声明布尔值 true 和 false。|
 |`extends`|`:`|先于要从中继承的类和接口。|
@@ -448,9 +448,9 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 |`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|使用锁获取和发布包装代码的关键部分。|
 
 
-此外，还有很多关键字是 C# 所特有的，且在 Java 中没有对应项。 Xamarin.Android 代码通常使用下面的 C# 关键字（读取 Xamarin.Android [示例代码](https://developer.xamarin.com/samples/android/all/)时，可使用此表作为参考）:
+此外，还有很多关键字是 C# 所特有的，且在 Java 中没有对应项。 Xamarin.Android 代码通常使用下面的 C# 关键字（读取 Xamarin.Android [示例代码](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android)时，可使用此表作为参考）:
 
-|C#|描述|
+|C#|说明|
 |---|---|
 |[as](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|在兼容的引用类型或可以为 null 的类型之间执行转换。|
 |[async](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)|指定方法或 lambda 表达式为异步。|
@@ -473,7 +473,7 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|封装一组相关变量的值类型。|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|获取对象类型。|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|声明一个隐式类型局部变量。|
-|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|引用客户端代码想要分配到属性的值。|
+|[值](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|引用客户端代码想要分配到属性的值。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|允许在派生类中重写方法。|
 
 
@@ -483,9 +483,9 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 
 如果你有不希望转换为 C# 的现有 Java 功能，可以在 Xamarin.Android 应用程序中通过两种技术重复使用现有的 Java 库：
 
--  创建 Java 绑定库 &ndash; 通过此方法，你可以使用 Xamarin 工具生成围绕 Java 类型的 C# 包装器。 这些包装器称为“绑定”。 因此，Xamarin.Android 应用程序可以通过调用这些包装器来使用 .jar 文件。
+-  创建 Java 绑定库  &ndash; 通过此方法，你可以使用 Xamarin 工具生成围绕 Java 类型的 C# 包装器。 这些包装器称为“绑定”  。 因此，Xamarin.Android 应用程序可以通过调用这些包装器来使用 .jar  文件。
 
--  Java 本机接口 &ndash; Java 本机接口 (JNI) 是一个框架，使 C# 应用可以调用 Java 代码或者由 Java 代码调用。
+-  Java 本机接口  &ndash; Java 本机接口  (JNI) 是一个框架，使 C# 应用可以调用 Java 代码或者由 Java 代码调用。
 
 有关这些技术的详细信息，请参阅 [Java 集成概述](~/android/platform/java-integration/index.md)。
 

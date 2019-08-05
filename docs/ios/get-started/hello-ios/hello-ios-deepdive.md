@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
-ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
+ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58751266"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647048"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -28,7 +28,7 @@ ms.locfileid: "58751266"
 
 Visual Studio for Mac 是将来自 Visual Studio 和 XCode 的功能结合在一起的免费开放源代码 IDE。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南介绍一些基本的 Visual Studio for Mac 功能，但如果初次使用 Visual Studio for Mac，请查看 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/) 文档。
 
-Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目。 初始解决方案如下所示：
+Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法   。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目  。 初始解决方案如下所示：
 
 ![](hello-ios-deepdive-images/image30.png "初始解决方案的屏幕快照")
 
@@ -39,7 +39,7 @@ Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual St
 
 Visual Studio 是 Microsoft 提供的强大 IDE。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南会介绍一些基本 Visual Studio 功能以及 Visual Studio 的 Xamarin 工具。
 
-Visual Studio 将代码组织为解决方案和项目。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目。 初始解决方案如下所示：
+Visual Studio 将代码组织为解决方案和项目。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目  。 初始解决方案如下所示：
 
 ![](hello-ios-deepdive-images/vs-image30.png "初始解决方案的屏幕快照")
 
@@ -49,20 +49,20 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 ::: zone pivot="macos"
 
-左侧是解决方案板，它包含与解决方案关联的目录结构和所有文件：
+左侧是解决方案板，它包含与解决方案关联的目录结构和所有文件  ：
 
 ![](hello-ios-deepdive-images/image31.png "解决方案板，包含与解决方案关联的目录结构和所有文件")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-右侧是解决方案窗格，它包含与解决方案关联的目录结构和所有文件：
+右侧是解决方案窗格，它包含与解决方案关联的目录结构和所有文件  ：
 
 ![](hello-ios-deepdive-images/vs-image31.png "解决方案窗格，包含与解决方案关联的目录结构和所有文件")
 
 ::: zone-end
 
-在[了解 iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) 演练中，你创建了一个名为 Phoneword 的解决方案，并将一个 iOS 项目 (Phoneword_iOS) 置于其内部。 项目内的项包括：
+在[了解 iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) 演练中，你创建了一个名为 Phoneword 的解决方案，并将一个 iOS 项目 (Phoneword_iOS) 置于其内部   。 项目内的项包括：
 
 - **引用** - 包含生成和运行应用程序所需的程序集。 展开该目录可查看对 .NET 程序集（如 [System](https://docs.microsoft.com/dotnet/api/system)、System.Core 和 [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml)）的引用以及对 Xamarin.iOS 程序集的引用。
 - **包** - 包目录包含现成的 NuGet 包。
@@ -72,12 +72,12 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 - **Main.storyboard** - 情节提要包含应用程序用户界面的可视化设计。 情节提要文件在一个名为 iOS 设计器的图形编辑器中打开。
 - **ViewController.cs** – 视图控制器为用户看到和触摸的屏幕（视图）提供支持。 视图控制器负责处理用户与视图之间的交互。
 - **ViewController.designer.cs** - `designer.cs` 是自动生成的文件，在视图中的控件与这些控件在视图控制器中的代码表示形式之间充当粘合剂。 由于这是内部管道文件时，因此 IDE 会覆盖任何手动更改，在大多数情况下可以忽略此文件。 有关可视化设计器与支持代码之间的关系的详细信息，请参阅  [iOS 设计器简介](~/ios/user-interface/designer/introduction.md)指南。
-- **Info.plist** - Info.plist 是设置应用程序属性（如应用程序名称、图标、启动图像等）的位置。 这是一个功能强大的文件，在[使用属性列表](~/ios/app-fundamentals/property-lists.md)指南中对它进行了全面介绍。
-- **Entitlements.plist** - 权利属性列表使我们可以指定应用程序功能（也称为应用商店技术），如 iCloud、PassKit 等。 [使用属性列表](~/ios/app-fundamentals/property-lists.md)指南中提供了有关 Entitlements.plist 的详细信息。 有关权利的一般简介，请参阅 [设备预配](~/ios/get-started/installation/device-provisioning/index.md)指南。
+- **Info.plist** - Info.plist 是设置应用程序属性（如应用程序名称、图标、启动图像等）的位置  。 这是一个功能强大的文件，在[使用属性列表](~/ios/app-fundamentals/property-lists.md)指南中对它进行了全面介绍。
+- **Entitlements.plist** - 权利属性列表使我们可以指定应用程序功能（也称为应用商店技术），如 iCloud、PassKit 等  。 [使用属性列表](~/ios/app-fundamentals/property-lists.md)指南中提供了有关 Entitlements.plist 的详细信息  。 有关权利的一般简介，请参阅 [设备预配](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
 ## <a name="architecture-and-app-fundamentals"></a>体系结构和应用基础知识
 
-需要首先完成两个工作，然后 iOS 应用程序才能加载用户界面。 首先，应用程序需要定义一个入口点 – 在应用程序的进程加载到内存中时运行的第一段代码。 其次，需要定义一个类来处理应用程序范围事件以及与操作系统进行交互。
+需要首先完成两个工作，然后 iOS 应用程序才能加载用户界面。 首先，应用程序需要定义一个入口点  – 在应用程序的进程加载到内存中时运行的第一段代码。 其次，需要定义一个类来处理应用程序范围事件以及与操作系统进行交互。
 
 此部分会研究下图中所示的关系：
 
@@ -85,7 +85,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 ### <a name="main-method"></a>Main 方法
 
-iOS 应用程序的主入口点是 `Application` 类。 `Application` 类在 Main.cs 文件中定义，其中包含静态 `Main` 方法。 该方法会创建新 Xamarin.iOS 应用程序实例并传递将处理 OS 事件的“应用程序委托”类的名称。 静态 `Main` 方法的模板代码如下所示：
+iOS 应用程序的主入口点是 `Application` 类。 `Application` 类在 Main.cs 文件中定义，其中包含静态 `Main` 方法  。 该方法会创建新 Xamarin.iOS 应用程序实例并传递将处理 OS 事件的“应用程序委托”类的名称  。 静态 `Main` 方法的模板代码如下所示：
 
 ```csharp
 using System;
@@ -105,9 +105,9 @@ namespace Phoneword_iOS
 
 ### <a name="application-delegate"></a>应用委托
 
-在 iOS 中，“应用程序委托”类会处理系统事件；此类处于 AppDelegate.cs 中。 `AppDelegate` 类管理应用程序窗口。 窗口是充当用户界面容器的 `UIWindow` 类的单个实例。 默认情况下，应用程序只获取一个将其内容加载到其中的窗口，该窗口会附加到提供与物理设备屏幕尺寸匹配的边框的屏幕（单个 `UIScreen` 实例）。
+在 iOS 中，“应用程序委托”类会处理系统事件；此类处于 AppDelegate.cs 中   。 `AppDelegate` 类管理应用程序窗口  。 窗口是充当用户界面容器的 `UIWindow` 类的单个实例。 默认情况下，应用程序只获取一个将其内容加载到其中的窗口，该窗口会附加到提供与物理设备屏幕尺寸匹配的边框的屏幕  （单个 `UIScreen` 实例）。
 
-AppDelegate 组件还负责订阅有关重要应用程序事件（如应用完成启动时或内存不足时）的系统更新。
+AppDelegate  组件还负责订阅有关重要应用程序事件（如应用完成启动时或内存不足时）的系统更新。
 
 下面提供了 AppDelegate 的模板代码：
 
@@ -136,7 +136,7 @@ namespace Phoneword_iOS
 
 ## <a name="user-interface"></a>用户界面
 
-iOS 应用的用户界面类似于店面 - 应用程序通常只获取一个窗口，但是它可以使用所需数量的对象填满窗口，并且可以根据应用要显示的内容更改对象和排列方式。 此情形中的对象（用户看到的内容）称为视图。 为了在应用程序中构建单个屏幕，视图会在“内容视图层次结构”中互相堆叠，该层次结构由单个视图控制器进行管理。 具有多个屏幕的应用程序具有多个内容视图层次结构（各自具有自己的视图控制器），应用程序会将视图置于窗口中，以基于用户所处的屏幕创建不同的内容视图层次结构。
+iOS 应用的用户界面类似于店面 - 应用程序通常只获取一个窗口，但是它可以使用所需数量的对象填满窗口，并且可以根据应用要显示的内容更改对象和排列方式。 此情形中的对象（用户看到的内容）称为视图。 为了在应用程序中构建单个屏幕，视图会在“内容视图层次结构”中互相堆叠，该层次结构由单个视图控制器进行管理  。 具有多个屏幕的应用程序具有多个内容视图层次结构（各自具有自己的视图控制器），应用程序会将视图置于窗口中，以基于用户所处的屏幕创建不同的内容视图层次结构。
 
 此部分会通过介绍视图、内容视图层次结构和 iOS 设计器来深入探讨用户界面。
 
@@ -148,11 +148,11 @@ iOS 设计器是一种用于在 Xamarin 中构建用户界面的可视化工具�
 
 ![](hello-ios-deepdive-images/image33.png "iOS 设计器接口")
 
-Storyboard 是包含应用屏幕的可视化设计以及屏幕切换效果和关系的文件。 情节提要中的应用程序屏幕表示形式称为_场景_。 每个场景都表示一个视图控制器以及它管理的视图堆栈（内容视图层次结构）。 通过模板新建“单一视图应用程序”项目后，Visual Studio for Mac 会自动生成一个名为 `Main.storyboard` 的 Storyboard 文件，并使用一个场景进行填充，如下面的屏幕截图所示：
+Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和关系的文件。 情节提要中的应用程序屏幕表示形式称为_场景_。 每个场景都表示一个视图控制器以及它管理的视图堆栈（内容视图层次结构）。 通过模板新建“单一视图应用程序”项目后，Visual Studio for Mac 会自动生成一个名为 `Main.storyboard` 的 Storyboard 文件，并使用一个场景进行填充，如下面的屏幕截图所示  ：
 
 ![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac 自动生成名为 Main.storyboard 的情节提要文件，并使用单个场景对其进行填充")
 
-可以选择 Storyboard 屏幕底部的黑色条，以便选择场景的视图控制器。 视图控制器是 `UIViewController` 类的实例，该类包含内容视图层次结构的支持代码。 可以在“Properties Pad”中查看和设置此视图控制器的属性，如下面的屏幕截图所示：
+可以选择 Storyboard 屏幕底部的黑色条，以便选择场景的视图控制器。 视图控制器是 `UIViewController` 类的实例，该类包含内容视图层次结构的支持代码。 可以在“Properties Pad”中查看和设置此视图控制器的属性，如下面的屏幕截图所示  ：
 
 ![](hello-ios-deepdive-images/image35.png "“属性”窗格")
 
@@ -161,25 +161,25 @@ Storyboard 是包含应用屏幕的可视化设计以及屏幕切换效果和关
 
 ![](hello-ios-deepdive-images/vs-image33.png "iOS 设计器接口")
 
-Storyboard 是包含应用屏幕的可视化设计以及屏幕切换效果和关系的文件。 情节提要中的应用程序屏幕表示形式称为_场景_。 每个场景都表示一个视图控制器以及它管理的视图堆栈（内容视图层次结构）。 通过模板新建“单视图应用”项目后，Visual Studio 会自动生成名为 `Main.storyboard` 的 Storyboard 文件，并使用一个场景进行填充，如下面的屏幕截图所示：
+Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和关系的文件。 情节提要中的应用程序屏幕表示形式称为_场景_。 每个场景都表示一个视图控制器以及它管理的视图堆栈（内容视图层次结构）。 通过模板新建“单视图应用”项目后，Visual Studio 会自动生成名为 `Main.storyboard` 的 Storyboard 文件，并使用一个场景进行填充，如下面的屏幕截图所示  ：
 
 ![](hello-ios-deepdive-images/vs-image34.png "Visual Studio 自动生成名为 Main.storyboard 的情节提要文件，并使用单个场景对其进行填充")
 
-可以选择 Storyboard 屏幕底部栏，以便选择场景的视图控制器。 视图控制器是 `UIViewController` 类的实例，该类包含内容视图层次结构的支持代码。 可以在“属性窗格”中查看和设置此视图控制器的属性，如下面的屏幕截图所示：
+可以选择 Storyboard 屏幕底部栏，以便选择场景的视图控制器。 视图控制器是 `UIViewController` 类的实例，该类包含内容视图层次结构的支持代码。 可以在“属性窗格”中查看和设置此视图控制器的属性，如下面的屏幕截图所示  ：
 
 ![](hello-ios-deepdive-images/vs-image35.png "“属性”窗格")
 
 ::: zone-end
 
-可以单击场景的白色部分，选择视图。 视图是 `UIView` 类的实例，该类定义屏幕的某个区域，并为使用该区域中的内容提供接口。 默认视图是填充整个设备屏幕的单个“根视图”。
+可以单击场景的白色部分，选择视图  。 视图是 `UIView` 类的实例，该类定义屏幕的某个区域，并为使用该区域中的内容提供接口。 默认视图是填充整个设备屏幕的单个“根视图”  。
 
 场景左侧是一个具有标志图标的灰色箭头，如下面的屏幕截图所示：
 
  [![](hello-ios-deepdive-images/image37.png "包含标记图标的灰色箭头")](hello-ios-deepdive-images/image37.png#lightbox)
 
-该灰色箭头表示情节提要转换，称为 Segue（发音为“seg-way”）。 由于此 Segue 没有源，因此它称为无源 Segue。 无源 Segue 指向其视图在应用程序启动时加载到应用程序窗口的第一个场景。 场景及其中的视图会是用户在应用加载时看到的第一个内容。
+该灰色箭头表示情节提要转换，称为 Segue（发音为“seg-way”）  。 由于此 Segue 没有源，因此它称为无源 Segue  。 无源 Segue 指向其视图在应用程序启动时加载到应用程序窗口的第一个场景。 场景及其中的视图会是用户在应用加载时看到的第一个内容。
 
-构建用户界面时，可以将其他视图从“工具箱”拖动到设计图面上的主视图，如下面的屏幕截图所示：
+构建用户界面时，可以将其他视图从“工具箱”拖动到设计图面上的主视图，如下面的屏幕截图所示  ：
 
 ::: zone pivot="macos"
 
@@ -192,7 +192,7 @@ Storyboard 是包含应用屏幕的可视化设计以及屏幕切换效果和关
 
 ::: zone-end
 
-这些其他视图称为子视图。 根视图连同子视图都是“内容视图层次结构”（由 `ViewController` 管理）的一部分。 可以通过在“文档大纲”板中进行检查来查看场景中所有元素的大纲：
+这些其他视图称为子视图  。 根视图连同子视图都是“内容视图层次结构”（由 `ViewController` 管理）的一部分  。 可以通过在“文档大纲”板中进行检查来查看场景中所有元素的大纲  ：
 
 ::: zone pivot="macos"
 
@@ -222,11 +222,11 @@ Storyboard 是包含应用屏幕的可视化设计以及屏幕切换效果和关
 
 ## <a name="content-view-hierarchy"></a>内容视图层次结构
 
-“内容视图层次结构”是由单个视图控制器管理的视图和子视图的堆栈，如下图所示：
+“内容视图层次结构”是由单个视图控制器管理的视图和子视图的堆栈，如下图所示  ：
 
  [![](hello-ios-deepdive-images/image41.png "内容视图层次结构")](hello-ios-deepdive-images/image41.png#lightbox)
 
-我们可以通过在“属性板”的“视图”部分中暂时将根视图的背景色更改为黄色，使 `ViewController` 的内容视图层次结构可以更方便地进行查看，如下面的屏幕截图所示：
+我们可以通过在“属性板”  的“视图”部分中暂时将根视图的背景色更改为黄色，使 `ViewController` 的内容视图层次结构可以更方便地进行查看，如下面的屏幕截图所示：
 
 ::: zone pivot="macos"
 
@@ -253,28 +253,28 @@ Storyboard 是包含应用屏幕的可视化设计以及屏幕切换效果和关
 
 ::: zone pivot="macos"
 
-视图控制器在 Storyboard 中的场景底部以条状呈现。 选择视图控制器可以在“Properties Pad”中查看其属性：
+视图控制器在 Storyboard 中的场景底部以条状呈现。 选择视图控制器可以在“Properties Pad”中查看其属性  ：
 
 ![](hello-ios-deepdive-images/image44.png "选择视图控制器可以在“属性”窗格中查看其属性")
 
-可以在“Properties Pad”的“标识”部分中编辑“类”属性，设置此场景表示的内容视图层次结构的自定义视图控制器类。 例如，我们的“Phoneword”应用将 `ViewController` 设置为第一屏的视图控制器，如下面的屏幕截图所示：
+可以在“Properties Pad”的“标识”部分中编辑“类”属性，设置此场景表示的内容视图层次结构的自定义视图控制器类    。 例如，我们的“Phoneword”应用将 `ViewController` 设置为第一屏的视图控制器，如下面的屏幕截图所示  ：
 
 ![](hello-ios-deepdive-images/image45new.png "Phoneword 应用程序将 ViewController 设置为视图控制器")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-视图控制器在 Storyboard 中的场景底部以条状呈现。 选择视图控制器可以在“属性”窗格中查看其属性：
+视图控制器在 Storyboard 中的场景底部以条状呈现。 选择视图控制器可以在“属性”窗格中查看其属性  ：
 
 ![](hello-ios-deepdive-images/vs-image44.png "选择视图控制器可以在“属性”窗格中查看其属性")
 
-可以在“属性窗格”的“标识”部分中编辑“类”属性，设置此场景表示的内容视图层次结构的自定义视图控制器类。 例如，我们的“Phoneword”应用将 `ViewController` 设置为第一屏的视图控制器，如下面的屏幕截图所示：
+可以在“属性窗格”的“标识”部分中编辑“类”属性，设置此场景表示的内容视图层次结构的自定义视图控制器类    。 例如，我们的“Phoneword”应用将 `ViewController` 设置为第一屏的视图控制器，如下面的屏幕截图所示  ：
 
 ![](hello-ios-deepdive-images/vs-image45.png "Phoneword 应用程序将 ViewController 设置为视图控制器")
 
 ::: zone-end
 
-这会将视图控制器的情节提要表示链接到 `ViewController` C# 类。 打开 `ViewController.cs` 文件，请注意视图控制器是 `UIViewController` 的“子类”，如下面的代码所示：
+这会将视图控制器的情节提要表示链接到 `ViewController` C# 类。 打开 `ViewController.cs` 文件，请注意视图控制器是 `UIViewController` 的“子类”，如下面的代码所示  ：
 
 ```csharp
 public partial class ViewController : UIViewController
@@ -289,7 +289,7 @@ public partial class ViewController : UIViewController
 `ViewController` 现在会推动情节提要中与此视图控制器关联的内容视图层次结构的交互。 接下来，你会通过引入一个称为视图生命周期的进程，来了解视图控制器在管理视图方面的角色。
 
 > [!NOTE]
-> 对于不需要用户交互的仅可视化屏幕，可以在“Properties Pad”中将“Class”属性留空。 这会将视图控制器的支持类设置为 `UIViewController` 的默认实现（这适合于不打算添加自定义代码的情况）。
+> 对于不需要用户交互的仅可视化屏幕，可以在“Properties Pad”  中将“Class”  属性留空。 这会将视图控制器的支持类设置为 `UIViewController` 的默认实现（这适合于不打算添加自定义代码的情况）。
 
 ### <a name="view-lifecycle"></a>视图生命周期
 
@@ -297,12 +297,12 @@ public partial class ViewController : UIViewController
 
 以下这些是基本生命周期方法及其功能：
 
-- **ViewDidLoad** - 在视图控制器首次将其内容视图层次结构加载到内存中时调用一次。 这是进行初始设置的好时机，因为它是子视图首次在代码中可用的时间。
+- **ViewDidLoad** - 在视图控制器首次将其内容视图层次结构加载到内存中时调用一次  。 这是进行初始设置的好时机，因为它是子视图首次在代码中可用的时间。
 - **ViewWillAppear** - 每当视图控制器的视图将要添加到内容视图层次结构并出现在屏幕上时进行调用。
 - **ViewWillDisappear** - 每当视图控制器的视图将要从内容视图层次结构中删除并从屏幕上消失时进行调用。 此生命周期事件用于清理和保存状态。
 - **ViewDidAppear** 和 **ViewDidDisappear** - 分别在对内容视图层次结构添加或删除视图时进行调用。
 
-自定义代码添加到生命周期的任何阶段时，生命周期方法的“基实现”都必须进行“替代”。 这通过利用现有生命周期方法（已附加了一些代码）并使用其他代码扩展它来实现。 基实现从方法内部进行调用，以确保原始代码在新代码之前运行。 下一部分中对此演示了一个示例。
+自定义代码添加到生命周期的任何阶段时，生命周期方法的“基实现”都必须进行“替代”   。 这通过利用现有生命周期方法（已附加了一些代码）并使用其他代码扩展它来实现。 基实现从方法内部进行调用，以确保原始代码在新代码之前运行。 下一部分中对此演示了一个示例。
 
 有关使用视图控制器的详细信息，请参阅 Apple 的[适用于 iOS 的视图控制器编程指南](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#//apple_ref/doc/uid/TP40007457-CH2-SW1)和 [UIViewController 参考](https://developer.apple.com/documentation/uikit/uiviewcontroller?language=objc)。
 
@@ -315,7 +315,7 @@ public partial class ViewController : UIViewController
 
 [![](hello-ios-deepdive-images/image1.png "名为 TranslateButton 的按钮添加到内容视图层次结构")](hello-ios-deepdive-images/image1.png#lightbox)
 
-在“属性板”中将“名称”分配给“按钮”控件时，iOS 设计器会自动将它映射到 **ViewController.designer.cs** 中的控件，从而使 `TranslateButton` 在 `ViewController` 类中可用。 控件会首先在视图生命周期的 `ViewDidLoad` 阶段中可用，因此此生命周期方法用于响应用户的触摸：
+在“属性板”  中将“名称”  分配给“按钮”  控件时，iOS 设计器会自动将它映射到 **ViewController.designer.cs** 中的控件，从而使 `TranslateButton` 在 `ViewController` 类中可用。 控件会首先在视图生命周期的 `ViewDidLoad` 阶段中可用，因此此生命周期方法用于响应用户的触摸：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -414,9 +414,9 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 设备会花费时间进行设置并需要 Apple 开发人员帐户。 [设备预配](~/ios/get-started/installation/device-provisioning/index.md)指南提供了有关使设备准备好进行开发的详尽说明。
 
 > [!NOTE]
-> 目前，Apple 要求需拥有开发证书或签名标识才能为设备或模拟器生成代码。 请按照[设备预配指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步骤执行此设置。
+> 目前，Apple 要求需拥有开发证书或签名标识才能为物理设备或模拟器生成代码  。 请按照[设备预配指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步骤执行此设置。
 
-设置了设备之后，便可以通过将它插入，在生成工具栏中将目标更改为 iOS 设备，以及按“启动”（“播放”）来部署到它，如下面的屏幕截图所示：
+设置了设备之后，便可以通过将它插入，在生成工具栏中将目标更改为 iOS 设备，以及按“启动”  （“播放”  ）来部署到它，如下面的屏幕截图所示：
 
 ::: zone pivot="macos"
 
@@ -439,7 +439,7 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 
 ::: zone pivot="macos"
 
-- [Sketch](https://www.sketchapp.com") - Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 在应用商店中提供了 Sketch 3。 还可以免费试用 [Sketch 工具](http://bohemiancoding.com/sketch/tool/)。
+- [Sketch](https://www.sketchapp.com")  - Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 在应用商店中提供了 Sketch 3。 还可以免费试用 [Sketch 工具](http://bohemiancoding.com/sketch/tool/)。
 - [**Pixelmator**](http://www.pixelmator.com/) – 适用于 Mac 的通用图像编辑应用（成本大约为 30 美元）。
 - [**Glyphish**](http://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
 - [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。  可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
@@ -462,6 +462,6 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，iOS（示例）](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [iOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [iOS 预配门户](https://developer.apple.com/account/#/overview)
