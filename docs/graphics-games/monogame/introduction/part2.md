@@ -1,75 +1,75 @@
 ---
-title: 第二部分-实现 WalkingGame
-description: 本演练演示如何添加游戏逻辑和到空 MonoGame 项目创建与移动动画子画面的演示内容触摸屏输入。
+title: 第2部分-实现 WalkingGame
+description: 本演练演示如何将游戏逻辑和内容添加到空的 MonoGame 项目中, 以创建使用触控输入移动动画动画动画效果的演示。
 ms.prod: xamarin
 ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c9e0cf2f29d304f042bc56ee91029adadcaba570
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832506"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680958"
 ---
-# <a name="part-2--implementing-the-walkinggame"></a>第二部分-实现 WalkingGame
+# <a name="part-2--implementing-the-walkinggame"></a>第2部分-实现 WalkingGame
 
-_本演练演示如何添加游戏逻辑和到空 MonoGame 项目创建与移动动画子画面的演示内容触摸屏输入。_
+_本演练演示如何将游戏逻辑和内容添加到空的 MonoGame 项目中, 以创建使用触控输入移动动画动画动画效果的演示。_
 
-本演练前面部分介绍了如何创建空 MonoGame 项目。 通过进行简单的游戏演示，我们将生成这些前面部分上。 本文包含以下各节：
+本演练的前面部分演示了如何创建空的 MonoGame 项目。 我们将通过创建一个简单的游戏演示来构建这些先前的部分。 本文包含以下各节：
 
-- 解压缩我们游戏的内容
+- 解压缩游戏内容
 - MonoGame 类概述
-- 呈现我们第一个子画面
+- 渲染第一个 Sprite
 - 创建 CharacterEntity
-- 向游戏添加 CharacterEntity
+- 将 CharacterEntity 添加到游戏
 - 创建动画类
 - 将第一个动画添加到 CharacterEntity
-- 添加移动的字符
-- 匹配的移动和动画
+- 将移动添加到字符
+- 匹配移动和动画
 
 
-## <a name="unzipping-our-game-content"></a>解压缩我们游戏的内容
+## <a name="unzipping-our-game-content"></a>解压缩游戏内容
 
-我们开始编写代码之前，我们想要将我们的游戏中解压缩*内容*。 游戏开发人员通常使用术语*内容*来引用其通常由 visual 艺术家、 游戏设计器或音频设计器创建非代码文件。 常见类型的内容包括用于显示视觉对象、 播放声音，或控制人工智能 (AI) 行为的文件。 从游戏开发团队的角度来看内容通常由非程序员创建。
+在开始编写代码之前, 我们需要解压缩游戏*内容*。 游戏开发人员通常使用术语 "*内容*" 来指通常由视觉对象、游戏设计人员或音频设计人员创建的非代码文件。 常见内容类型包括用于显示视觉对象、播放声音或控制人工智能 (AI) 行为的文件。 从游戏开发团队的角度来看, 通常由非程序员创建。
 
-可在此处使用的内容[github 上](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)。 我们将需要这些文件下载到我们将稍后在本演练中访问的位置。
+此处使用的内容可[在 github 上](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)找到。 我们需要将这些文件下载到我们稍后将在本演练中访问的位置。
 
 ## <a name="monogame-class-overview"></a>MonoGame 类概述
 
-对于初学者而言，我们将探讨基本呈现中使用的 MonoGame 类：
+对于初学者, 我们将探讨基本呈现中使用的 MonoGame 类:
 
-- `SpriteBatch` – 用于在屏幕上绘制 2D 图形。 *Sprite*是二维的可视元素用于在屏幕上显示的图像。 `SpriteBatch`对象之间的一次可以绘制单个 sprite 其`Begin`并`End`方法或多个子画面可以组合在一起，或者*批处理*。
-- `Texture2D` – 表示在运行时的图像对象。 `Texture2D` 尽管它们也可以创建动态地在运行时，通常从如.png 或.bmp 文件格式创建实例。 `Texture2D` 与在呈现时，将使用实例`SpriteBatch`实例。
-- `Vector2` – 表示通常用于定位视觉对象的二维坐标系统中的位置。 此外包括 MonoGame`Vector3`并`Vector4`但我们将仅使用`Vector2`在本演练中。
-- `Rectangle` – 与位置、 宽度和高度的四个边的区域。 我们将使用此定义的哪个部分我们`Texture2D`时开始，我们将使用动画呈现。
+- `SpriteBatch`–用于在屏幕上绘制2D 图形。 *Sprite*是用于在屏幕上显示图像的2d 视觉对象。 对象可以在其`Begin`和`End`方法之间一次绘制一个子画面, 也可以将多个子画面组合在一起或*分批*。 `SpriteBatch`
+- `Texture2D`–表示运行时的图像对象。 `Texture2D`通常通过文件格式 (如 .png 或 .bmp) 创建实例, 但也可以在运行时动态创建。 `Texture2D`当使用`SpriteBatch`实例进行呈现时, 将使用实例。
+- `Vector2`–表示二维坐标系统中的一个位置, 该位置通常用于定位视觉对象。 MonoGame 还包括`Vector3`和`Vector4` , 但我们将仅`Vector2`在本演练中使用。
+- `Rectangle`–位置、宽度和高度的四面区域。 我们将使用它来定义我们开始使用动画时`Texture2D`要呈现的部分。
 
-我们还应注意，MonoGame 不由 Microsoft 维护 – 尽管其命名空间。 `Microsoft.Xna`命名空间使用 MonoGame 中，若要更加轻松地将现有的 XNA 项目迁移到 MonoGame。
+还应注意, MonoGame 不由 Microsoft 维护–无论其命名空间。 `Microsoft.Xna`命名空间用于 MonoGame, 以便更轻松地将现有的未生成项目迁移到 MonoGame。
 
-## <a name="rendering-our-first-sprite"></a>呈现我们第一个子画面
+## <a name="rendering-our-first-sprite"></a>渲染第一个 Sprite
 
-接下来我们将单个 sprite 绘制到屏幕以显示如何在 MonoGame 中执行 2D 呈现。
+接下来, 我们将在屏幕上绘制一个子画面, 以演示如何在 MonoGame 中执行2D 呈现。
 
 ### <a name="creating-a-texture2d"></a>创建 Texture2D
 
-我们需要创建`Texture2D`以呈现我们 sprite 时所使用的实例。 所有游戏内容最终包含在名为的文件夹**内容，** 位于特定于平台的项目。 共享的 MonoGame 项目不能包含的内容，因为内容必须使用特定于平台的生成操作。 在 iOS 项目，并在 Android 项目中的资产文件夹内，可以找到的 Content 文件夹。
+我们需要创建一个在`Texture2D`呈现子画面时要使用的实例。 所有游戏内容最终都包含在一个名为**content**的文件夹中, 该文件夹位于特定于平台的项目中。 MonoGame 共享项目不能包含内容, 因为内容必须使用平台特定的生成操作。 内容文件夹可以在 iOS 项目中找到, 也可以在 Android 项目的 "资产" 文件夹中找到。
 
-若要添加我们的游戏中的内容，请右键单击**内容**文件夹，然后选择**添加 > 添加文件...** 导航到已解压缩 content.zip 文件的位置并选择**charactersheet.png**文件。 如果系统询问有关如何将文件添加到文件夹，我们应选择**复制**选项：
+若要添加游戏内容, 请右键单击 "**内容**" 文件夹, 然后选择 "**添加 > 添加文件 ...** "导航到提取内容 .zip 文件的位置, 然后选择 " **charactersheet** " 文件。 如果系统询问如何将文件添加到文件夹, 应选择 "**复制**" 选项:
 
-![](part2-images/image1.png "如果系统询问有关如何将文件添加到文件夹，选择复制选项")
+![](part2-images/image1.png "如果系统询问如何将文件添加到文件夹, 请选择 \"复制\" 选项")
 
-内容文件夹现在包含 charactersheet.png 文件：
+Content 文件夹现在包含 charactersheet 文件:
 
-![](part2-images/image2.png "内容文件夹现在包含 charactersheet.png 文件")
+![](part2-images/image2.png "Content 文件夹现在包含 charactersheet 文件")
 
-接下来，我们将添加代码来加载 charactersheet.png 文件并创建`Texture2D`。 为此，请打开`Game1.cs`文件，并将以下字段添加到 Game1.cs 类：
+接下来, 我们将添加代码来加载 charactersheet 文件并创建`Texture2D`。 要执行此操作, `Game1.cs`请打开文件, 并将以下字段添加到 Game1.cs 类:
 
 ```csharp
 Texture2D characterSheetTexture;
 ```
 
-接下来，我们将创建`characterSheetTexture`在`LoadContent`方法。 任何修改之前`LoadContent`方法如下所示：
+接下来, 我们将`characterSheetTexture` `LoadContent`在方法中创建。 在任何修改`LoadContent`方法如下之前:
 
 ```csharp
 protected override void LoadContent()
@@ -80,7 +80,7 @@ protected override void LoadContent()
 }
 ```
 
-需要注意的是已经实例化的默认项目`spriteBatch`为我们的实例。 我们将使用此更高版本，但我们不会添加任何其他代码来准备`spriteBatch`供使用。 但是，我们`spriteSheetTexture`确实需要初始化，因此我们将初始化之后`spriteBatch`创建：
+请注意, 默认项目已为我们`spriteBatch`实例化实例。 稍后我们将使用此代码, 但我们不会添加任何其他代码来准备`spriteBatch`要使用的。 另一方面, 我们`spriteSheetTexture`需要初始化, 因此, 我们将在创建后对`spriteBatch`其进行初始化:
 
 ```csharp
 protected override void LoadContent()
@@ -95,7 +95,7 @@ protected override void LoadContent()
 }
 ```
 
-现在，我们已经`SpriteBatch`实例和一个`Texture2D`我们可以添加到我们呈现代码的实例`Game1.Draw`方法：
+现在, 我们有了`SpriteBatch`一个实例和`Texture2D`一个实例, 接下来可以将呈现代码`Game1.Draw`添加到方法:
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -115,37 +115,37 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-现在运行游戏显示单个 sprite 显示 charactersheet.png 从创建的纹理：
+运行游戏现在会显示一个子画面, 其中显示了从 charactersheet 创建的纹理:
 
-![](part2-images/image3.png "现在运行游戏显示单个 sprite 显示 charactersheet.png 从创建的纹理")
+![](part2-images/image3.png "现在运行游戏显示了一个子画面, 其中显示了从 charactersheet 创建的纹理。")
 
 ## <a name="creating-the-characterentity"></a>创建 CharacterEntity
 
-到目前为止我们已经添加了代码来呈现在屏幕上; 单个 sprite但是，如果我们要开发完整的游戏，而无需创建任何其他类，我们将会出现代码组织问题。
+到目前为止, 我们已添加了用于将一个子画面呈现到屏幕的代码;但是, 如果我们要开发完整的游戏而不创建任何其他类, 就会遇到代码组织问题。
 
-### <a name="what-is-an-entity"></a>实体是什么？
+### <a name="what-is-an-entity"></a>什么是实体？
 
-组织的游戏代码的常见模式是创建每个游戏的新类*实体*类型。 游戏开发中的实体是一个对象，它可以包含一些 （并非所有所需） 的以下特征：
+用于组织游戏代码的常见模式是为每个游戏*实体*类型创建一个新类。 游戏开发中的实体是一个对象, 该对象可以包含以下某些特征 (并非全部都需要):
 
-- 在可视化元素，如子画面、 文本或三维模型
-- 物理引擎或每个帧的行为，例如 patrolling 设置的路径或播放机字符响应任何输入的单元
-- 可以创建和销毁动态，如强化显示和收集的播放机
+- 视觉对象, 如子画面、文本或三维模型
+- 物理学或每个帧行为, 如单元 patrolling 设置路径或播放机字符响应输入
+- 可以动态创建和销毁, 如播放机显示和回收
 
-实体组织系统可能很复杂，并且许多游戏引擎提供类，以帮助管理实体。 我们将实现一个非常简单的实体系统，因此值得注意的完整的游戏通常需要在开发人员更有条理。
+实体组织系统可能比较复杂, 许多游戏引擎提供类来帮助管理实体。 我们将实现一个非常简单的实体系统, 因此, 值得注意的是, 完整的游戏通常需要开发人员的更多组织。
 
 
 ### <a name="defining-the-characterentity"></a>定义 CharacterEntity
 
-我们的实体，我们将其称为`CharacterEntity`，将具有以下特征：
+我们将调用`CharacterEntity`的实体将具有以下特征:
 
-- 加载其自身的功能 `Texture2D`
-- 呈现自身，包括包含调用的方法来更新遍历动画的功能
-- `X` 和 Y 属性来控制字符的位置。
-- 若要更新本身-具体而言，若要读取值从触摸屏幕上，并相应地调整位置功能。
+- 能够加载自己的`Texture2D`
+- 呈现自己的功能, 包括用于更新行走动画的调用方法
+- `X`和 Y 属性以控制字符的位置。
+- 自行更新的能力–具体而言, 是为了从触摸屏读取值并适当调整位置。
 
-若要添加`CharacterEntity`我们的游戏中，右键单击或单击上**WalkingGame**项目，然后选择**添加 > 新建文件...** .选择**的空类**选项，然后将新文件命名**CharacterEntity**，然后单击**新建**。
+若要将`CharacterEntity`添加到游戏, 请右键单击或单击鼠标右键, 单击 " **WalkingGame** " 项目, 然后选择 "**添加 > 新文件 ...** "。选择 "**空类**" 选项并将新文件命名为**CharacterEntity**, 然后单击 "**新建**"。
 
-首先，我们将添加的功能`CharacterEntity`加载`Texture2D`并绘制自身。 我们将修改新添加`CharacterEntity.cs`文件，如下所示：
+首先, 我们将添加的功能`CharacterEntity` , 以便`Texture2D`加载和自行绘制。 我们将修改新添加`CharacterEntity.cs`的文件, 如下所示:
 
 ```csharp
 using System;
@@ -193,32 +193,32 @@ namespace WalkingGame
 }
 ```
 
-上面的代码中添加定位、 呈现、 和加载到内容的责任`CharacterEntity`。 让我们看一段时间来指出的是上面的代码中执行的一些注意事项。
+上面的代码添加了将内容定位、呈现和加载到的`CharacterEntity`责任。 我们花点时间来指出上述代码中的一些注意事项。
 
-### <a name="why-are-x-and-y-floats"></a>为什么是 X 和 Y 浮点数？
+### <a name="why-are-x-and-y-floats"></a>为什么 X 和 Y 是浮动的？
 
-新游戏编程的开发人员可能想知道为什么`float`而不是使用类型`int`或`double`。 原因是最常见的低级呈现代码中定位的 32 位值。 双精度类型占用 64 位精度，很少需要定位对象。 32 位差异可能看起来无意义，许多现代游戏包括图形需要处理数万个位置值 （30 个或每秒 60 次） 的每个帧。 剪切的内存量必须移动通过图形管道的下半部分会对游戏的性能产生重大影响。
+不熟悉游戏编程的开发人员可能会想知道`float`为什么要`int`使用该类型, 而不`double`是或。 原因在于, 32 位值最常用于在低级别呈现代码中定位。 Double 类型占用64位的精度, 这对于定位对象很少需要。 尽管32位差异看起来不是重要的, 但许多新式游戏都包含需要处理每个帧每个帧 (每秒30或60次) 的数十个位置值的图形。 将必须通过图形管道移动的内存量减少一半可能会对游戏性能产生显著影响。
 
-`int`数据类型可以是合适的单元的度量进行定位，但它可以放置于实体的方式加以限制。 例如，使用整数值使其更难以实现平滑移动游戏支持放大或三维照相机 (这允许通过`SpriteBatch`)。
+`int`数据类型可以是用于定位的适当度量单位, 但它可能会对实体的定位方式施加限制。 例如, 使用整数值会使对支持放大或3D 相机的游戏 (允许使用`SpriteBatch`) 实现平滑移动变得更加困难。
 
-最后，我们将看到，后者将人物在屏幕上四处移动的逻辑将该操作使用游戏的计时值。 一个整数，因此我们需要使用将很少造成相乘速度在给定的框架中经过了多少时间的结果`float`有关`X`和`Y`。
+最后, 我们会看到, 在屏幕上移动人物的逻辑将使用游戏的时间值来实现。 在给定帧中所经过的时间相乘的速度很少导致产生整数, 因此, 我们需要为`float` `X`和`Y`使用。
 
-### <a name="why-is-charactersheettexture-static"></a>为何 characterSheetTexture 静态？
+### <a name="why-is-charactersheettexture-static"></a>为什么 characterSheetTexture 静态？
 
-`characterSheetTexture` `Texture2D`实例是 charactersheet.png 文件的运行时表示形式。 换而言之，它包含每个像素的颜色值从源中提取**charactersheet.png**文件。 如果要创建两个游戏`CharacterEntity`实例，则每个需要访问信息从 charactersheet.png。 在此情况下，我们不希望产生两次，加载 charactersheet.png 的性能成本，也不我们想要存储在 ram 中的重复纹理内存。 使用`static`字段可用于共享相同`Texture2D`跨所有`CharacterEntity`实例。
+`characterSheetTexture` 实例是charactersheet文件的`Texture2D`运行时表示形式。 换句话说, 它包含从源**charactersheet**文件中提取的每个像素的颜色值。 如果我们的游戏创建了两`CharacterEntity`个实例, 则每个实例都需要访问 charactersheet 中的信息。 在这种情况下, 我们不希望产生两次加载 charactersheet 的性能开销, 也不希望在 ram 中存储重复的纹理内存。 使用字段允许我们在所有`CharacterEntity`实例中共享`Texture2D`相同的。 `static`
 
-使用`static`内容的运行时表示的成员是一个简单的解决方案并不能解决时将其从一个级别移动到另一个更大的游戏，例如卸载内容中遇到的问题。 更复杂的解决方案，不在本演练的范围，包括使用 MonoGame 的内容管道或创建自定义内容管理系统。
+将`static`成员用于内容的运行时表示形式是一种简化的解决方案, 它不能解决在较大的游戏中遇到的问题, 例如在从一个级别移到另一个级别时卸载内容。 更复杂的解决方案超出了本演练的范围, 包括使用 MonoGame 的内容管道或创建自定义的内容管理系统。
 
-### <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>为什么这 SpriteBatch 传递自变量的 instead Of 实例化的实体。
+### <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>为什么 SpriteBatch 作为参数传递, 而不是由实体进行实例化？
 
-`Draw`方法，如实施的上述采用`SpriteBatch`自变量，但相比之下`characterSheetTexture`通过实例化`CharacterEntity`。
+上面`Draw`实现的方法`SpriteBatch`采用参数, `characterSheetTexture`但相比之下, 由实例化`CharacterEntity`。
 
-这样做的原因是因为时最有效的呈现是可能相同`SpriteBatch`实例使用的所有`Draw`调用，以及何时所有`Draw`调用进行一组之间`Begin`和`End`调用。 当然，我们的游戏中将仅包括对单一实体实例，但更复杂的游戏将受益于允许多个实体使用相同的模式`SpriteBatch`实例。
+出现这种情况的原因是, 当`SpriteBatch`对所有`Draw`调用使用同一个实例时, 以及在一组`Begin`和`End`调用之间`Draw`进行所有调用时, 可以使用最有效的呈现方式。 当然, 我们的游戏只包含一个实体实例, 但是, 更复杂的游戏会从允许多个实体使用相同`SpriteBatch`实例的模式中受益。
 
 
-## <a name="adding-characterentity-to-the-game"></a>向游戏添加 CharacterEntity
+## <a name="adding-characterentity-to-the-game"></a>将 CharacterEntity 添加到游戏
 
-现在，我们添加了我们`CharacterEntity`，用于呈现自身的代码，我们可以替换中的代码`Game1.cs`以使用此新实体的实例。 若要这样做我们会将为`Texture2D`字段`CharacterEntity`字段中`Game1`:
+现在我们已添加`CharacterEntity`了包含代码来呈现自身, 接下来我们可以替换中`Game1.cs`的代码以使用此新实体的实例。 为此, 我们将`Texture2D` `CharacterEntity`使用中`Game1`的字段替换字段:
 
 ```csharp
 public class Game1 : Game
@@ -233,7 +233,7 @@ public class Game1 : Game
     ...
 ```
 
-接下来，我们将添加中的此实体的实例化`Game1.Initialize`:
+接下来, 我们将在中`Game1.Initialize`添加此实体的实例化:
 
 ```csharp
 protected override void Initialize()
@@ -244,7 +244,7 @@ protected override void Initialize()
 }
 ```
 
-我们还需要删除`Texture2D`创建从`LoadContent`由于现在进行的内部处理我们`CharacterEntity`。 `Game1.LoadContent` 应如下所示：
+我们还需要从中`Texture2D` `LoadContent`删除创建, 因为`CharacterEntity`现在在中进行了处理。 `Game1.LoadContent`应该如下所示:
 
 ```csharp
 protected override void LoadContent()
@@ -254,9 +254,9 @@ protected override void LoadContent()
 }
 ```
 
-值得注意的是，尽管其名称`LoadContent`方法不是在其中可以加载内容 – 许多游戏实现内容加载在其 Initialize 方法中，或在其更新代码作为内容，甚至可能不需要直到播放机的唯一位置游戏的特定点。
+值得一提的是, 尽管`LoadContent`该方法不是可以加载内容的唯一位置, 但在播放机到达之前, 可能不需要许多游戏在其 Initialize 方法中实现内容加载, 甚至会将其更新代码作为内容。游戏的特定点。
 
-最后我们可以按如下所示修改 Draw 方法：
+最后, 我们可以修改 Draw 方法, 如下所示:
 
 
 ```csharp
@@ -276,20 +276,20 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-如果我们运行该游戏，我们现在将看到该字符。 X 和 Y 默认值为 0，因为该字符是与屏幕的左上角进行定位：
+如果运行该游戏, 现在会看到字符。 由于 X 和 Y 默认值为 0, 因此字符位于屏幕的左上角:
 
-![](part2-images/image4.png "由于 X 和 Y 默认值为 0，然后该字符位于对屏幕的左上角")
+![](part2-images/image4.png "由于 X 和 Y 默认值为 0, 因此字符位于屏幕的左上角")
 
 ## <a name="creating-the-animation-class"></a>创建动画类
 
-目前我们`CharacterEntity`显示完整**charactersheet.png**文件。 在一个文件中的多个映像的这种安排称为*子画面表单*。 通常情况下，子画面将呈现仅为一部分子画面表单。 我们将修改`CharacterEntity`呈现的这一部分**charactersheet.png**，和此部分会随时间才会显示一个遍历的动画。
+目前, `CharacterEntity`我们会显示完整的**charactersheet**文件。 这种在一个文件中排列多个图像的方式称为子*画面*。 通常, sprite 仅呈现部分动画工作表。 我们将修改`CharacterEntity`以呈现此**charactersheet**的一部分, 并且此部分将随时间变化以显示遍历动画。
 
-我们将创建`Animation`类来控制的逻辑和 CharacterEntity 动画的状态。 动画类将是一个常规类，该类可以用于任何实体，而不仅仅是`CharacterEntity`动画。 Ultimate`Animation`类将提供`Rectangle`其`CharacterEntity`绘制自身时将使用。 我们还会创建`AnimationFrame`类，用于定义动画。
+我们将创建`Animation`类以控制 CharacterEntity 动画的逻辑和状态。 动画类将是一个常规类, 可用于任何实体, 而不只`CharacterEntity`是动画。 终极类将`Rectangle` 提供`CharacterEntity`在绘制自身时将使用的。 `Animation` 我们还将创建一个`AnimationFrame`用于定义动画的类。
 
 
 ### <a name="defining-animationframe"></a>定义 AnimationFrame
 
-`AnimationFrame` 将不包含与动画相关的任何逻辑。 我们将使用它只用来存储数据。 若要添加`AnimationFrame`类中，右键单击或单击上**WalkingGame**共享项目，然后选择**添加 > 新建文件...** 输入的名称**AnimationFrame**然后单击**新建**按钮。 我们将修改`AnimationFrame.cs`文件，使其包含以下代码：
+`AnimationFrame`不会包含任何与动画相关的逻辑。 我们将仅使用它来存储数据。 若要添加`AnimationFrame`类, 请右键单击或单击控件, 然后单击 " **WalkingGame** " 共享项目, 然后选择 "**添加 > 新文件 ...** "。输入名称**AnimationFrame** , 并单击 "**新建**" 按钮。 我们将修改该`AnimationFrame.cs`文件, 使其包含以下代码:
 
 
 ```csharp
@@ -306,16 +306,16 @@ namespace WalkingGame
 }
 ```
 
-`AnimationFrame`类包含两条信息：
+`AnimationFrame`类包含两个信息片段:
 
-- `SourceRectangle` – 定义的区域`Texture2D`这将显示的`AnimationFrame`。 此值以像素为单位，其中顶部左侧是 （0，0）。
-- `Duration` – 定义长`AnimationFrame`中使用时显示`Animation`。
+- `SourceRectangle`–定义将`AnimationFrame`由显示的`Texture2D`区域。 此值以像素为单位进行度量, 左上方为 (0, 0)。
+- `Duration`–定义`AnimationFrame` `Animation`在中使用时显示的时间。
 
 ### <a name="defining-animation"></a>定义动画
 
-`Animation`类将包含`List<AnimationFrame>`以及切换经过多少时间根据当前显示的帧的逻辑。
+`Animation`类将`List<AnimationFrame>`包含和逻辑, 以根据已通过的时间来切换当前显示的帧。
 
-若要添加`Animation`类中，右键单击或单击上**WalkingGame**共享项目，然后选择**添加 > 新建文件...** .输入的名称**动画**然后单击**新建**按钮。 我们将修改`Animation.cs`文件使其包含以下代码：
+若要添加`Animation`类, 请右键单击或单击控件, 然后单击 " **WalkingGame** " 共享项目, 然后选择 "**添加 > 新文件 ...** "。输入名称**动画**并单击 "**新建**" 按钮。 我们将修改该`Animation.cs`文件, 使其包含以下代码:
 
 
 ```csharp
@@ -370,25 +370,25 @@ namespace WalkingGame
 }
 ```
 
-让我们看一些的详细信息`Animation`类。
+让我们看看`Animation`类中的一些详细信息。
 
 ### <a name="frames-list"></a>帧列表
 
-`frames`成员是将我们的动画数据的存储。 它会实例化动画的代码将添加`AnimationFrame`到实例`frames`列出通过`AddFrame`方法。 可能会提供的更完整实现`public`方法或属性用于修改`frames`，但我们将仅添加在本演练中的帧的功能。
+该`frames`成员是存储动画数据的内容。 实例化动画的代码将通过`AnimationFrame` `AddFrame`方法向`frames`列表中添加实例。 更完整的实现可能会`public`提供用于修改`frames`的方法或属性, 但我们会限制为此演练添加帧的功能。
 
 ### <a name="duration"></a>Duration
 
-持续时间返回的总持续时间`Animation,`从中获取通过添加包含所有的持续时间`AnimationFrame`实例。 无法缓存此值，如果`AnimationFrame`不可变对象，但由于我们 AnimationFrame 作为类实现可添加到动画后更改，因此我们需要计算此值，只要访问的属性。
+Duration 返回的总持续时间`Animation,` , 这是通过添加所有包含`AnimationFrame`实例的持续时间获取的。 如果是不可变对象, `AnimationFrame`则可能会缓存此值, 但由于我们已将 AnimationFrame 作为类实现, 在将其添加到动画后, 我们需要在访问属性时计算此值。
 
 ### <a name="update"></a>更新
 
-`Update`方法应调用每个帧 （即，每次更新整个游戏）。 其目的是提高`timeIntoAnimation`用于返回当前显示的帧的成员。 中的逻辑`Update`可防止`timeIntoAnimation`曾经不大于整个动画的持续时间。
+应`Update`每帧调用一次该方法 (即每次更新整个游戏时)。 其目的是增加`timeIntoAnimation`用于返回当前显示的帧的成员。 中`Update`的逻辑`timeIntoAnimation`可防止超出整个动画的持续时间。
 
-由于我们将使用`Animation`类，以显示遍历动画，则我们想要让它已到达末尾时，重复此动画。 我们可以实现此目的通过检查是否`timeIntoAnimation`大于`Duration`值。 如果是这样它将返回到开始循环，并保留其余部分，从而导致循环的动画。
+由于我们将使用`Animation`类来显示遍历动画, 因此我们希望在此动画结束后重复此动画。 可以通过检查`timeIntoAnimation`是否`Duration`大于值来实现此目的。 如果是这样, 则会循环回到开头, 并保留余数, 导致循环动画。
 
-### <a name="obtaining-the-current-frames-rectangle"></a>获取当前帧的矩形
+### <a name="obtaining-the-current-frames-rectangle"></a>获取当前框架的矩形
 
-目的`Animation`类是最终提供`Rectangle`绘制 sprite 时，可以使用的。 目前`Animation`类包含用于更改逻辑`timeIntoAnimation`成员，我们将使用以获取该`Rectangle`应显示。 我们将执行此操作通过创建`CurrentRectangle`中的属性`Animation`类。 将复制到此属性`Animation`类：
+`Animation`类的目的最终是`Rectangle`提供在绘制子画面时可以使用的。 此`Animation`类当前包含用于`timeIntoAnimation`更改成员的逻辑, 我们将使用这些逻辑来获取`Rectangle`应显示的成员。 为此, 我们将`CurrentRectangle` `Animation`在类中创建一个属性。 将此属性复制到`Animation`类:
 
 ```csharp
 public Rectangle CurrentRectangle
@@ -435,16 +435,16 @@ public Rectangle CurrentRectangle
 
 ## <a name="adding-the-first-animation-to-characterentity"></a>将第一个动画添加到 CharacterEntity
 
-`CharacterEntity`将包含的每个步骤和位置，以及对当前的引用的动画效果`Animation`显示。
+将包含遍历和执行的动画, 以及对当前`Animation`正在显示的的引用。 `CharacterEntity`
 
-首先，我们将添加第一个`Animation,`该选项将测试的功能，如当前编写。 让我们将以下成员添加到 CharacterEntity 类：
+首先, 我们将添加第一个`Animation,` , 我们将使用它来测试迄今为止编写的功能。 将以下成员添加到 CharacterEntity 类:
 
 ```csharp
 Animation walkDown;
 Animation currentAnimation;
 ```
 
-接下来，让我们来定义`walkDown`动画。 若要执行此修改`CharacterEntity`构造函数，如下所示：
+接下来, 让我们定义`walkDown`动画。 为此, 请按`CharacterEntity`如下所示修改构造函数:
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -465,7 +465,7 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 }
 ```
 
-前面曾提到，我们需要调用`Animation.Update`的基于时间的动画播放。 我们仍需分配`currentAnimation`。 对于现在我们将进行指派`currentAnimation`到`walkDown`，但我们将会替换这些代码，更高版本时，我们实现我们移动逻辑。 我们将添加`Update`方法`CharacterEntity`，如下所示：
+如前文所述, 我们需要调用`Animation.Update`来播放基于时间的动画。 我们还需要分配`currentAnimation`。 现在, 我们将分配`currentAnimation`给`walkDown`, 但我们会在以后实现移动逻辑时替换此代码。 我们会将`Update`方法添加到`CharacterEntity` , 如下所示:
 
 
 ```csharp
@@ -479,7 +479,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-现在，我们已经`currentAnimation`正在分配和更新，我们可以使用它来执行我们绘制。 我们将修改`CharacterEntity.Draw`，如下所示：
+现在, 我们已分配`currentAnimation`和更新了, 可以使用它来执行我们的绘图。 我们将按`CharacterEntity.Draw`如下所示进行修改:
 
 ```csharp
 public void Draw(SpriteBatch spriteBatch)
@@ -492,7 +492,7 @@ public void Draw(SpriteBatch spriteBatch)
 }
 ```
 
-获取的最后一步`CharacterEntity`进行动画处理是调用新添加`Update`方法从`Game1`。 修改`Game1.Update`，如下所示：
+获取`CharacterEntity`动画效果的最后一步是调用中`Game1`新添加`Update`的方法。 修改`Game1.Update` , 如下所示:
 
 ```csharp
 protected override void Update(GameTime gameTime)
@@ -502,17 +502,17 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-现在`CharacterEntity`将播放其`walkDown`动画：
+现在, `CharacterEntity`将播放其`walkDown`动画:
 
-![](part2-images/image5.gif "现在 CharacterEntity 将播放其 walkDown 动画")
+![](part2-images/image5.gif "现在, CharacterEntity 将播放其 walkDown 动画")
 
-## <a name="adding-movement-to-the-character"></a>添加移动的字符
+## <a name="adding-movement-to-the-character"></a>将移动添加到字符
 
-接下来，我们将为我们字符使用触控控件添加移动。 在用户触摸屏幕，该字符将向其中接触屏幕的点。 如果检测不到任何收尾工作了，该字符将位置内进行构建。
+接下来, 我们将使用触控控件向字符添加移动。 当用户接触到屏幕时, 该字符将移到屏幕的接触点。 如果未检测到任何接触, 则该字符将到位。
 
 ### <a name="defining-getdesiredvelocityfrominput"></a>定义 GetDesiredVelocityFromInput
 
-我们将使用 MonoGame 的`TouchPanel`类，该类提供触摸屏的当前状态有关的信息。 让我们添加一种方法可将检查`TouchPanel`并返回我们字符所需的速度：
+我们将使用 MonoGame 的`TouchPanel`类, 它提供有关触摸屏的当前状态的信息。 让我们添加一个方法, 该方法将`TouchPanel`检查并返回字符的所需速度:
 
 
 ```csharp
@@ -539,23 +539,23 @@ Vector2 GetDesiredVelocityFromInput()
 }
 ```
 
-`TouchPanel.GetState`方法将返回`TouchCollection`其中包含有关用户触摸屏幕的位置信息。 如果用户不触摸屏幕，则`TouchCollection`将为空，这种情况下，我们不应将字符。
+方法返回一个`TouchCollection` , 其中包含有关用户正在触摸屏幕的位置的信息。 `TouchPanel.GetState` 如果用户未接触到屏幕, `TouchCollection`则将为空, 在这种情况下, 我们不应移动字符。
 
-如果用户触摸屏幕，我们将针对第一次触摸，字符换而言之，则`TouchLocation`位于索引 0 处。 最初，我们将设置所需的速度为等于该字符的位置和第一次触摸的位置之间的差异：
+如果用户正在触摸屏幕, 我们会将字符移动到第一个触摸的`TouchLocation`位置, 即索引0处。 最初, 我们会将所需速度设置为等于字符位置和第一个触摸位置之间的差异:
 
 ```csharp
         desiredVelocity.X = touchCollection [0].Position.X - this.X;
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-后面是数学这可以使移动的字符保持相同速度的位。 为了帮助说明为什么这很重要，让我们考虑用户触摸屏幕 500 像素离开该字符所在的位置的其中一种情况。 第一个行`desiredVelocity.X`是组会分配值为 500。 但是，如果用户已触摸屏幕的字符，从 100 个单位距离则`desiredVelocity.X`将设置为 100。 结果将为您的人物的移动速度会响应如何距离遥远的触摸点是从字符。 由于我们想要始终以相同的速度移动的字符，我们需要修改 desiredVelocity。
+下面是一些数学, 这会使字符在同一速度下移动。 为了帮助解释这一点很重要, 让我们考虑一下, 用户在远离屏幕500像素的地方接触到该字符所在的位置。 设置的第一行`desiredVelocity.X`的值将为500。 但是, 如果用户只是在屏幕上以100个单位的距离触摸屏幕, `desiredVelocity.X`则会将设置为100。 结果就是该字符的移动速度将响应触摸点距字符的距离。 由于我们希望字符始终以相同的速度移动, 因此我们需要修改 desiredVelocity。
 
-`if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`语句的作用检查方向的速度是非-零 – 换句话说，是否它检查以确保用户不接触字符的当前位置为相同的位置。 如果不是，然后我们需要设置人物的速度远为常量而不考虑如何触摸屏输入。 我们完成此操作通过规范化速度向量，这将使其在长度为 1。 1 表示字符将在每秒 1 像素移动速度向量。 我们将加快此速度，通过将值乘以所需的速度为 200。
+`if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`语句检查速度是否为非零值, 换言之, 检查以确保用户不会接触到与字符当前位置相同的位置。 如果不是, 则需要将字符的速度设置为常量, 而不管触摸远距离。 为此, 我们通过规范化速度向量来实现此目的, 导致其长度为1。 如果速度向量为 1, 则表示该字符将每秒1个像素移动。 我们将通过将值乘以200的所需速度来提高速度。
 
 
-### <a name="applying-velocity-to-position"></a>应用到的位置的速度
+### <a name="applying-velocity-to-position"></a>将速度应用于位置
 
-从返回的速度`GetDesiredVelocityFromInput`需要将应用到的字符`X`和`Y`值，以在运行时产生任何影响。 我们将修改`Update`方法，如下所示：
+从`GetDesiredVelocityFromInput`返回的速度需要应用于字符的`X`和`Y`值, 以在运行时产生任何影响。 我们将修改`Update`方法, 如下所示:
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -574,22 +574,22 @@ public void Update(GameTime gameTime)
 }
 ```
 
-我们已实现称为*基于时间*移动 (而不是*基于帧的*移动)。 基于时间的移动乘以速度值 (在本例中的值存储在`velocity`变量) 的上次更新存储在后经过了多少时间`gameTime.ElapsedGameTime.TotalSeconds`。 如果在每秒帧数较少运行游戏时，帧之间经过的时间转到上 – 最终结果是使用基于时间的移动对象始终将以同一速度而不考虑帧速率。
+此处实现的内容称为*基于时间的*移动 (与*基于帧的*移动相反)。 基于时间的移动会将速度值 (在我们的示例中存储`velocity`的值) 与存储在中`gameTime.ElapsedGameTime.TotalSeconds`的上一个更新后经过的时间相乘。 如果游戏每秒运行的帧数更少, 则帧之间的运行时间会向上–最终结果是, 使用基于时间的移动的对象将始终以相同的速度移动, 而与帧速率无关。
 
-如果我们现在运行我们的游戏中，我们将看到的字符是转移到触摸位置：
+如果我们现在运行游戏, 将看到该字符正朝着触摸位置移动:
 
-![](part2-images/image6.gif "字符位移至触摸位置")
+![](part2-images/image6.gif "人物向触摸位置移动")
 
-## <a name="matching-movement-and-animation"></a>匹配的移动和动画
+## <a name="matching-movement-and-animation"></a>匹配移动和动画
 
-人物移动和播放单个动画后，我们可以定义我们动画的其余部分，然后使用它们以反映移动的字符。 当完成我们将有八个动画总数：
+当我们将字符移动和播放一个动画后, 便可以定义动画的其余部分, 并使用它们来反映字符的移动。 完成后, 总共会有8个动画:
 
-- 向上，向下、 左和右的动画效果
-- 现有的动画仍和正面朝上向下，左右，
+- 向上、向下、向左和向右滚动的动画
+- 仍有正面和正面朝上、向下、向左、向右的动画
 
-### <a name="defining-the-rest-of-the-animations"></a>定义动画的其余部分
+### <a name="defining-the-rest-of-the-animations"></a>定义其余动画
 
-首先，我们将添加`Animation`到实例`CharacterEntity`类的所有相同的位置，我们添加了我们动画`walkDown`。 在我们完成此操作，请`CharacterEntity`将具有以下`Animation`成员：
+首先, 我们会在`Animation`添加`walkDown`的同一`CharacterEntity`位置将实例添加到类中。 完成此操作后, `CharacterEntity`将具有以下`Animation`成员:
 
 ```csharp
 Animation walkDown;
@@ -605,7 +605,7 @@ Animation standRight;
 Animation currentAnimation;
 ```
 
-现在，我们将定义中的动画`CharacterEntity`构造函数，如下所示：
+现在, 我们将在`CharacterEntity`构造函数中定义动画, 如下所示:
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -657,9 +657,9 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 }
 ```
 
-我们应注意上面的代码已添加到`CharacterEntity`构造函数，以使本演练中较短。 游戏通常将分隔字符动画添加到其自己的类的定义，或从数据格式，如 XML 或 JSON 加载此信息。
+请注意, 上面的代码已添加到`CharacterEntity`构造函数, 以使本演练更短一些。 游戏通常会将字符动画的定义分隔到自己的类中, 或从 XML 或 JSON 等数据格式加载此信息。
 
-接下来，我们将调整的逻辑，如果字符已只是停止使用根据方向移动的字符，或根据最后一个动画的动画。 若要执行此操作，我们将修改`Update`方法：
+接下来, 我们将调整逻辑, 以便根据字符的移动方向或最后一个动画 (如果该字符刚停止) 使用动画。 为此, 我们将修改`Update`方法:
 
 
 ```csharp
@@ -730,19 +730,19 @@ public void Update(GameTime gameTime)
 }
 ```
 
-若要切换动画的代码分解为两个块。 第一个检查方向的速度是否不等于`Vector2.Zero`– 这将告诉我们的字符是否是移动。 如果该字符被移动，则我们可以看看`velocity.X`和`velocity.Y`值，以确定哪些遍历动画播放。
+用于切换动画的代码分为两个块。 第一个检查速度是否不等于`Vector2.Zero` –这会告诉我们该字符是否正在移动。 如果移动了字符, 则可以查看`velocity.X`和`velocity.Y`值来确定要播放的动画。
 
-如果字符没有移动，则我们想要设置的字符`currentAnimation`到一个现有的动画 – 但我们仅执行此操作如果`currentAnimation`是遍历动画或如果未设置动画。 如果`currentAnimation`不是一个四个遍历动画，则已站着字符，因此我们无需更改`currentAnimation`。
+如果该字符不是移动的, 则我们希望将该字符`currentAnimation`设置为一个上移动画–但仅`currentAnimation`当是行走动画或尚未设置动画时才执行此操作。 如果不`currentAnimation`是四个行走动画中的一种, 则该字符已存在, 因此我们不需要进行更改。 `currentAnimation`
 
-此代码的结果是字符将正确进行动画处理时的每个步骤，且然后人脸走它停止时的最后一个方向：
+此代码的结果是字符将在浏览时正确地进行动画处理, 然后面对停止时的最后方向:
 
-![](part2-images/image7.gif "此代码的结果是字符将正确进行动画处理时的每个步骤，且然后人脸走它停止时的最后一个方向")
+![](part2-images/image7.gif "此代码的结果是字符将在浏览时正确地进行动画处理, 然后在停止时面对正在进行的最后方向")
 
 ## <a name="summary"></a>总结
 
-本演练演示了如何使用 MonoGame 创建跨平台游戏使用 sprite、 移动对象、 输入的检测和动画。 它介绍如何创建常规用途的动画类。 它还介绍了如何创建用于组织代码逻辑的字符实体。
+本演练演示了如何使用 MonoGame 创建一个包含子画面、移动对象、输入检测和动画的跨平台游戏。 它介绍了如何创建常规用途动画类。 还介绍了如何创建用于组织代码逻辑的字符实体。
 
 ## <a name="related-links"></a>相关链接
 
-- [CharacterSheet 图像资源 （示例）](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)
-- [每个步骤完成游戏 （示例）](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
+- [CharacterSheet 图像资源 (示例)](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)
+- [完成游戏 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)

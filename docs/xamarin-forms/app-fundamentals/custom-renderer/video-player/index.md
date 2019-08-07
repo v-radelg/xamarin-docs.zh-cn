@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 5b48340233304f44b30fb9083b30be5c6c165b18
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e6f37fb607f4b0bc0ddfd41ad86dfe7ecbc03df
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925986"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650530"
 ---
 # <a name="implementing-a-video-player"></a>实现视频播放器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 有时需要在 Xamarin.Forms 应用程序中播放视频文件。 本系列文章介绍如何为名为 `VideoPlayer` 的 Xamarin.Forms 类编写适用于 iOS、Android 和通用 Windows 平台 (UWP) 的自定义呈现器。
 
-在 [VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 示例中，所有实现和支持 `VideoPlayer` 的文件都位于名为 `FormsVideoLibrary` 的文件夹中，并使用 `FormsVideoLibrary` 命名空间或以 `FormsVideoLibrary` 开头的命名空间进行标识。 通过这种组织结构和命名方式，可以轻松地将视频播放器文件复制到自己的 Xamarin.Forms 解决方案中。
+在 [VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 示例中，所有实现和支持 `VideoPlayer` 的文件都位于名为 `FormsVideoLibrary` 的文件夹中，并使用 `FormsVideoLibrary` 命名空间或以 `FormsVideoLibrary` 开头的命名空间进行标识  。 通过这种组织结构和命名方式，可以轻松地将视频播放器文件复制到自己的 Xamarin.Forms 解决方案中。
 
 `VideoPlayer` 可播放来自以下三类源的视频文件：
 
@@ -28,7 +28,7 @@ ms.locfileid: "65925986"
 - 嵌入在平台应用程序中的资源
 - 设备的视频库
 
-视频播放器需具备传输控件（即用于播放和暂停视频的按钮）和定位条（用于显示视频进度并允许用户快速跳转到不其他位置）。 `VideoPlayer` 可使用平台提供的传输控件和定位条（如下所示），也可使用你提供的自定义传输控件和定位条。 下面是 iOS、Android 和通用 Windows 平台上运行的程序：
+视频播放器需具备传输控件（即用于播放和暂停视频的按钮）和定位条（用于显示视频进度并允许用户快速跳转到不其他位置）  。 `VideoPlayer` 可使用平台提供的传输控件和定位条（如下所示），也可使用你提供的自定义传输控件和定位条。 下面是 iOS、Android 和通用 Windows 平台上运行的程序：
 
 [![播放 Web 视频](web-videos-images/playwebvideo-small.png "播放 Web 视频")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 视频")
 
@@ -60,7 +60,7 @@ Internet 或许是视频播放器最常见的视频来源。 本文介绍如何�
 
 ## <a name="custom-video-transport-controlscustom-transportmd"></a>[自定义视频传输控件](custom-transport.md)
 
-虽然每个平台上的视频播放器都提供自己的传输控件（即“播放”和“暂停”按钮），但你可以不使用这些按钮并提供自己的按钮。 本文介绍如何进行此操作。
+虽然每个平台上的视频播放器都提供自己的传输控件（即“播放”和“暂停”按钮），但你可以不使用这些按钮并提供自己的按钮   。 本文介绍如何进行此操作。
 
 ## <a name="custom-video-positioningcustom-positioningmd"></a>[自定义视频定位](custom-positioning.md)
 
@@ -72,4 +72,4 @@ Internet 或许是视频播放器最常见的视频来源。 本文介绍如何�
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

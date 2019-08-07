@@ -8,27 +8,27 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d1759701708c337a804471167223ef68cc3f2910
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 8cec67ec582edad506aecb0945257b9baae3da90
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479740"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650352"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本绑定
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Xamarin.Forms 数据绑定连接两个对象之间的一对属性，其中至少有一个通常是用户界面对象。 这两个对象称为“目标”和“源”：
+Xamarin.Forms 数据绑定连接两个对象之间的一对属性，其中至少有一个通常是用户界面对象。 这两个对象称为“目标”和“源”   ：
 
-- “目标”是设置数据要绑定的对象（和属性）。
-- “源”是数据绑定引用的对象（和属性）。
+- “目标”是设置数据要绑定的对象（和属性）  。
+- “源”是数据绑定引用的对象（和属性）  。
 
 这种区别有时可能有点令人困惑：在最简单的情况下，数据从源流到目标，这意味着目标属性值是从源属性的值设置的。 但是，在某些情况下，数据也可以从目标流向源，或者双向流动。 为了避免混淆，请记住，即使目标提供数据而非接收数据，也始终是设置数据绑定的对象。
 
 ## <a name="bindings-with-a-binding-context"></a>使用绑定上下文绑定
 
-虽然数据绑定通常完全在 XAML 中指定，但在代码中查看数据绑定也是有指导意义的。 “基本代码绑定”页包含具有 `Label` 和 `Slider` 的 XAML 文件：
+虽然数据绑定通常完全在 XAML 中指定，但在代码中查看数据绑定也是有指导意义的。 “基本代码绑定”页包含具有 `Label` 和 `Slider` 的 XAML 文件  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -60,7 +60,7 @@ Xamarin.Forms 数据绑定连接两个对象之间的一对属性，其中至少
 
 在本例中，`Label` 是绑定目标，`Slider` 是绑定源。 `Slider` 源中的更改会影响 `Label` 目标的旋转。 数据从源流向目标。
 
-`BindableObject` 定义的 `SetBinding` 方法的参数类型为 [`BindingBase`](xref:Xamarin.Forms.BindingBase)，[`Binding`](xref:Xamarin.Forms.Binding) 类从该类派生而来，但 [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) 类还定义了其他 `SetBinding` 方法。 “基本代码绑定”示例中的代码隐藏文件使用此类中更简单的 [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 扩展方法。
+`BindableObject` 定义的 `SetBinding` 方法的参数类型为 [`BindingBase`](xref:Xamarin.Forms.BindingBase)，[`Binding`](xref:Xamarin.Forms.Binding) 类从该类派生而来，但 [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) 类还定义了其他 `SetBinding` 方法。 “基本代码绑定”示例中的代码隐藏文件使用此类中更简单的 [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 扩展方法  。
 
 ```csharp
 public partial class BasicCodeBindingPage : ContentPage
@@ -81,9 +81,9 @@ public partial class BasicCodeBindingPage : ContentPage
 
 `SetBinding` 方法揭示了数据绑定最重要的规则之一：
 
-目标属性必须由可绑定属性支持。
+目标属性必须由可绑定属性支持  。
 
-此规则意味着目标对象必须是从 `BindableObject` 派生的类的实例。 有关可绑定对象和绑定属性的概述，请参阅[“可绑定属性”](~/xamarin-forms/xaml/bindable-properties.md)一文。
+此规则意味着目标对象必须是从 `BindableObject` 派生的类的实例。 有关可绑定对象和绑定属性的概述，请参阅[“可绑定属性”](~/xamarin-forms/xaml/bindable-properties.md)一文  。
 
 源属性没有此类规则，该属性指定为字符串。 在内部，反射用于访问实际属性。 然而，在这种特殊情况下，`Value` 属性还受可绑定属性支持。
 
@@ -99,7 +99,7 @@ label.SetBinding(RotationProperty, "Value");
 
 [![基本代码绑定](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
 
-“基本 Xaml 绑定”页等同于“基本代码绑定”，不同之处在于它定义了 XAML 中的整个数据绑定：
+“基本 Xaml 绑定”页等同于“基本代码绑定”，不同之处在于它定义了 XAML 中的整个数据绑定   ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -138,7 +138,7 @@ BindingContext="slider"
 
 请注意，源属性是由 `BindingExtension` 的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 属性指定的，它对应于 [`Binding`](xref:Xamarin.Forms.Binding) 类的 [`Path`](xref:Xamarin.Forms.Binding.Path) 属性。
 
-可以简化“基本 XAML 绑定”页上显示的标记：XAML 标记扩展名（如 `x:Reference` 和 `Binding`）可以定义“内容属性”属性，对于 XAML 标记扩展，这意味着不需要出现属性名称。 `Name` 属性是 `x:Reference` 的内容属性，`Path` 属性是 `Binding` 的内容属性，这意味着可以从表达式中删除它们：
+可以简化“基本 XAML 绑定”  页上显示的标记：XAML 标记扩展名（如 `x:Reference` 和 `Binding`）可以定义“内容属性”  属性，对于 XAML 标记扩展，这意味着不需要出现属性名称。 `Name` 属性是 `x:Reference` 的内容属性，`Path` 属性是 `Binding` 的内容属性，这意味着可以从表达式中删除它们：
 
 ```xaml
 <Label Text="TEXT"
@@ -153,7 +153,7 @@ BindingContext="slider"
 
 `BindingContext` 属性是数据绑定的重要组件，但并不总是必要的。 源对象可以在 `SetBinding` 调用或 `Binding` 标记扩展中指定。
 
-“可选代码绑定”示例演示了这一点。 XAML 文件类似于“基本代码绑定”示例，但定义 `Slider` 是为了控制 `Label` 的 `Scale` 属性。 因此，`Slider` 在 &ndash;2 到 2 范围进行设置：
+“可选代码绑定”示例演示了这一点  。 XAML 文件类似于“基本代码绑定”示例，但定义 `Slider` 是为了控制 `Label` 的 `Scale` 属性  。 因此，`Slider` 在 &ndash;2 到 2 范围进行设置：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -204,7 +204,7 @@ public partial class AlternativeCodeBindingPage : ContentPage
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement) 类还定义了 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 属性，这些属性可以在水平和垂直方向上以不同方式缩放 `VisualElement`。
 
-“替代 XAML 绑定”页完全显示出在 XAML 中的等效绑定：
+“替代 XAML 绑定”页完全显示出在 XAML 中的等效绑定  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -286,11 +286,11 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 `BindingContext` 属性具有一个极其重要的特性：
 
-`BindingContext` 属性的设置是通过可视化树继承的。
+`BindingContext` 属性的设置是通过可视化树继承的。 
 
 正如你所看到的，这对于简化绑定表达式非常方便，在某些情况下，&mdash; 特别是在模型-视图-视图模型 (MVVM) 场景中&mdash;，这是非常重要的。
 
-“绑定上下文继承”示例是绑定上下文继承的简单演示：
+“绑定上下文继承”示例是绑定上下文继承的简单演示  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -327,12 +327,12 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 [![绑定上下文继承](basic-bindings-images/bindingcontextinheritance-small.png "Binding Context Inheritance")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Binding Context Inheritance")
 
-在[下一篇文章](binding-mode.md)中，你将看到“绑定模式”如何更改目标对象和源对象之间的数据流。
+在[下一篇文章](binding-mode.md)中，你将看到“绑定模式”如何更改目标对象和源对象之间的数据流  。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>相关视频

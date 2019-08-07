@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 35df6e4ca799a875bcd7db50adbc7a300460885c
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832262"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680969"
 ---
 # <a name="using-the-model-class"></a>使用模型类
 
@@ -24,20 +24,20 @@ MonoGame API 包含一个 `Model` 类，可用于存储从内容文件加载的�
 - 开始一个新的游戏项目
 - 为模型和其纹理创建 XNBs
 - 在游戏项目中包括 XNB
-- 绘制三维模型
+- 绘制3D 模型
 - 绘制多个模型
 
-完成后，我们的项目将如下所示：
+完成后, 项目将如下所示:
 
-![已完成的示例显示六个机器人](part1-images/image1.png)
+![已完成示例, 显示六个机器人](part1-images/image1.png)
 
-## <a name="creating-an-empty-game-project"></a>创建一个空的游戏项目
+## <a name="creating-an-empty-game-project"></a>创建空游戏项目
 
 我们需要首先设置一个名为 MonoGame3D 的游戏项目。 有关创建新 MonoGame 项目的信息，请参阅[有关如何创建跨平台 Monogame 项目的演练](~/graphics-games/monogame/introduction/part1.md)。
 
 在继续之前，应验证项目是否打开并正确部署。 一旦部署完成，应会看到一个蓝色屏幕：
 
-![空白的蓝色游戏屏幕](part1-images/image2.png)
+![黑屏蓝游戏屏幕](part1-images/image2.png)
 
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>在游戏项目中包括 XNB
@@ -52,7 +52,7 @@ MonoGame API 包含一个 `Model` 类，可用于存储从内容文件加载的�
 
 这两个文件现应为项目的一部分：
 
-![解决方案资源管理器具有 xnb 文件的内容文件夹](part1-images/xnbsinxs.png)
+![包含 xnb 文件的解决方案资源管理器内容文件夹](part1-images/xnbsinxs.png)
 
 Visual Studio for Mac可能不会自动为新添加的 XNB 设置生成操作。 对于iOS，右键单击每个文件，然后选择 **“生成操作”->“BundleResource”** 。 对于 Android，右键单击每个文件并选择**生成操作-> AndroidAsset**。
 
@@ -164,7 +164,7 @@ public class Game1 : Game
 
 如果运行此代码，会在屏幕上看此模型：
 
-![显示在屏幕上的模型](part1-images/image8.png "运行此代码时，如果将屏幕上显示模型")
+![屏幕上显示的模型](part1-images/image8.png "如果运行此代码, 模型将显示在屏幕上")
 
 ### <a name="model-class"></a>Model 类
 
@@ -176,7 +176,7 @@ public class Game1 : Game
 
 ### <a name="basiceffect-class"></a>BasicEffect 类
 
-          `BasicEffect`类提供用于控制渲染选项的属性。 要对 `BasicEffect` 进行的第一个修改是调用`EnableDefaultLighting` 方法。 顾名思义，这使默认的光照，这是非常方便地验证`Model`显示游戏中按预期方式。 如果我们注释掉`EnableDefaultLighting`调用，然后我们将看到呈现只是其纹理，但没有明暗度或反射发光的模型：
+          `BasicEffect`类提供用于控制渲染选项的属性。 要对 `BasicEffect` 进行的第一个修改是调用`EnableDefaultLighting` 方法。 顾名思义, 这会启用默认照明, 这非常适合用于验证`Model`是否按预期方式出现在游戏中。 如果注释掉`EnableDefaultLighting`调用, 就会看到模型只是其纹理, 但没有着色或反光发光:
 
 ```csharp
 //effect.EnableDefaultLighting ();
@@ -209,7 +209,7 @@ var cameraPosition = new Vector3 (0, 30, 0);
 
 ## <a name="rendering-multiple-models"></a>渲染多个模型
 
-如上所述，单个`Model`可绘制多个时间。 如上所述，单个 `Model` 可以绘制多次。为简化此过程，可将 `Model` 绘制代码移动到它自己的方法中，该方法将目标模型位置作为参数。 完成后，`Draw` 和 `DrawModel` 方法如下所示：
+如上所述, 可以多次绘制单个`Model` 。 如上所述，单个 `Model` 可以绘制多次。为简化此过程，可将 `Model` 绘制代码移动到它自己的方法中，该方法将目标模型位置作为参数。 完成后，`Draw` 和 `DrawModel` 方法如下所示：
 
 
 ```csharp
@@ -265,4 +265,4 @@ void DrawModel(Vector3 modelPosition)
 
 - [MonoGame 模型参考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Graphics_Model)
 - [Content.zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
-- [已完成的项目 （示例）](https://developer.xamarin.com/samples/mobile/ModelRenderingMG/)
+- [已完成的项目 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)

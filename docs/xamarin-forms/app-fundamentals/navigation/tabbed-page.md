@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8926813e8efae72efa9af2221318d6f1ff1e344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 6979b4d3e0d750ee962346a94dd832c86c92d995
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970929"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652950"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 选项卡式页面
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 _Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都将内容加载到详细信息区域。本文演示如何使用 TabbedPage 浏览页集合。_
 
@@ -32,7 +32,7 @@ _Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域
 
 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 的布局以及其选项卡取决于不同的平台：
 
-- 在 iOS 上，选项卡的列表显示在屏幕的底部，而详细信息区域显示在上方。 每个选项卡还有一个图标图像，正常分辨率为 30x30 具有透明度的 PNG，高分辨率为 60x60，iPhone 6 Plus 分辨率为 90x90。 如果有五个以上的选项卡，会显示“更多”选项卡，可用于访问其他选项卡。 有关在 Xamarin.Forms 应用程序中加载图像的详细信息，请参阅[使用图像](~/xamarin-forms/user-interface/images.md)。 有关图标要求的详细信息，请参阅[创建选项卡式应用程序](~/ios/user-interface/controls/creating-tabbed-applications.md)。
+- 在 iOS 上，选项卡的列表显示在屏幕的底部，而详细信息区域显示在上方。 每个选项卡还有一个图标图像，正常分辨率为 30x30 具有透明度的 PNG，高分辨率为 60x60，iPhone 6 Plus 分辨率为 90x90。 如果有五个以上的选项卡，会显示“更多”选项卡，可用于访问其他选项卡  。 有关在 Xamarin.Forms 应用程序中加载图像的详细信息，请参阅[使用图像](~/xamarin-forms/user-interface/images.md)。 有关图标要求的详细信息，请参阅[创建选项卡式应用程序](~/ios/user-interface/controls/creating-tabbed-applications.md)。
 
   > [!NOTE]
   > 请注意，`TabbedRenderer` for iOS 有可替代的 `GetIcon` 方法，可以用来从指定的源加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标。 此外，可以提供选定和未选定版本的图标。
@@ -109,11 +109,11 @@ public class MainPageCS : TabbedPage
 > [!NOTE]
 > [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 不支持 UI 虚拟化。 因此，如果 `TabbedPage` 包含太多子元素，可能会影响性能。
 
-以下屏幕截图显示了 `TodayPage`[`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例，该实例显示在“今天”选项卡上：
+以下屏幕截图显示了 `TodayPage`[`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例，该实例显示在“今天”选项卡上  ：
 
 ![](tabbed-page-images/today-page.png "TabbedPage 中的 ContentPage")
 
-选择“计划”选项卡以显示 `SchedulePage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例，该实例被包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例中，并由以下屏幕截图显示：
+选择“计划”选项卡以显示 `SchedulePage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例，该实例被包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例中，并由以下屏幕截图显示  ：
 
 ![](tabbed-page-images/schedule-page.png "TabbedPage 中的 NavigationPage")
 
@@ -243,7 +243,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-每个选项卡都会显示 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，它使用一系列 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`Label`](xref:Xamarin.Forms.Label) 实例来显示选项卡的数据。以下屏幕截图显示 Tamarin 选项卡的内容：
+每个选项卡都会显示 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，它使用一系列 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`Label`](xref:Xamarin.Forms.Label) 实例来显示选项卡的数据。以下屏幕截图显示 Tamarin 选项卡的内容  ：
 
 ![](tabbed-page-images/tab3.png "使用模板填充 TabbedPage")
 
@@ -262,6 +262,6 @@ public class TabbedPageDemoPageCS : TabbedPage
 ## <a name="related-links"></a>相关链接
 
 - [页类型](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [TabbedPageWithNavigationPage（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPageWithNavigationPage)
-- [TabbedPage（示例）](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TabbedPage/)
+- [TabbedPageWithNavigationPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+- [TabbedPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [TabbedPage](xref:Xamarin.Forms.TabbedPage)

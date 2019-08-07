@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 901bf683f59574d71c035b9635abaa3441152252
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: b803c1ccfbd8bae008a763f8a31283b653ae4cf3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741065"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652153"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。
 
@@ -333,5 +333,5 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="related-links"></a>相关链接
 
-- [触发器示例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
+- [触发器示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 - [Xamarin.Forms API 文档](xref:Xamarin.Forms.TriggerAction`1)

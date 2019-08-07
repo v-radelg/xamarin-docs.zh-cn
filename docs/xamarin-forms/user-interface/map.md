@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms 地图
-description: 本文介绍如何使用 Xamarin.Forms 地图类在每个平台上使用本机地图 API，从而为用户提供熟悉的地图体验。 
+description: 本文介绍如何使用 Xamarin.Forms 地图类在每个平台上使用本机地图 API，从而为用户提供熟悉的地图体验。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
@@ -20,7 +20,7 @@ ms.locfileid: "68656969"
 
 Xamarin.Forms 在每个平台上使用本机地图 API。
 
-Xamarin.Forms.Maps 在每个平台上使用本机地图 API。这为用户提供了快速、熟悉的地图体验，但这意味着需要执行一些配置步骤以符合每个平台的 API 要求。
+Xamarin.Forms.Maps 在每个平台上使用本机地图 API。 这为用户提供了快速、熟悉的地图体验，但这意味着需要执行一些配置步骤以符合每个平台的 API 要求。
 配置完成后，`Map`控制的工作方式就像在常见的代码中的任何其他 Xamarin.Forms 元素。
 
 已在使用地图控件[MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)示例，如下所示。
@@ -140,7 +140,7 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-若要在通用 Windows 平台上使用地图，则必须生成授权令牌。有关详细信息，请参阅 MSDN 上的 [请求地图身份验证密钥](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)。
+若要在通用 Windows 平台上使用地图，则必须生成授权令牌。 有关详细信息，请参阅 MSDN 上的 [请求地图身份验证密钥](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx)。
 
 然后应在中指定的身份验证令牌`FormsMaps.Init("AUTHORIZATION_TOKEN")`方法调用中，与必应地图应用进行身份验证。
 
@@ -184,7 +184,7 @@ map.MapType == MapType.Street;
 
 ### <a name="map-region-and-mapspan"></a>地图区域和 MapSpan
 
-如上面的代码片段所示，若向地图构造函数提供一个 `MapSpan` 实例，则会在加载地图时设置地图的初始视图（中心点和缩放级别）。然后，可使用地图类上的 `MoveToRegion` 方法来更改地图的位置或缩放级别。创建新 `MapSpan` 实例的方法有两种：
+如上面的代码片段所示，若向地图构造函数提供一个 `MapSpan` 实例，则会在加载地图时设置地图的初始视图（中心点和缩放级别）。 然后，可使用地图类上的 `MoveToRegion` 方法来更改地图的位置或缩放级别。 创建新 `MapSpan` 实例的方法有两种：
 
 -  **MapSpan.FromCenterAndRadius()** 的静态方法，用于创建从 span`Position`并指定`Distance`。
 -  **新 MapSpan （)** 的构造函数使用`Position`和程度的纬度和经度来显示。

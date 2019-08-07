@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645257"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739179"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本地数据库
 
@@ -24,7 +24,7 @@ Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程�
 
 Xamarin.Forms 应用程序可以使用 [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) 包通过引用 NuGet 中提供的 `SQLite` 类将数据库操作融入共享代码。 可在 Xamarin.Forms 解决方案的 .NET Standard 库项目中定义数据库操作。
 
-随附的[示例应用程序](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo)是一个简单的待办事项列表应用程序。 以下屏幕截图显示示例在每个平台上的显示方式：
+随附的[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)是一个简单的待办事项列表应用程序。 以下屏幕截图显示示例在每个平台上的显示方式：
 
 [![Xamarin.Forms 数据库示例屏幕截图](databases-images/todo-list-sml.png "待办事项列表第一页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList First Page Screenshots")[![Xamarin.Forms 数据库示例屏幕截图](databases-images/todo-list-sml.png "待办事项第一页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList First Page Screenshots")
 
@@ -32,7 +32,7 @@ Xamarin.Forms 应用程序可以使用 [SQLite.NET PCL NuGet](https://www.nuget.
 
 ## <a name="using-sqlite"></a>使用 SQLite
 
-若要将 SQLite 支持添加到 Xamarin.Forms.NET Standard 库，请使用 NuGet 的搜索功能查找 sqlite-net-pcl 并安装最新包  ：
+若要将 SQLite 支持添加到 Xamarin.Forms.NET Standard 库，请使用 NuGet 的搜索功能查找 sqlite-net-pcl 并安装最新包：
 
 ![添加 NuGet SQLite.NET PCL 包](databases-images/vs2017-sqlite-pcl-nuget.png "Add NuGet SQLite.NET PCL Package")
 
@@ -43,7 +43,7 @@ Xamarin.Forms 应用程序可以使用 [SQLite.NET PCL NuGet](https://www.nuget.
 - **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> 不管包名称，即便在 .NET Standard 项目中也使用 sqlite-net-pcl NuGet 包  。
+> 不管包名称，即便在 .NET Standard 项目中也使用 sqlite-net-pcl NuGet 包。
 
 添加引用后，将属性添加到 `App` 类，该类返回用于存储数据库的本地文件路径：
 
@@ -118,10 +118,9 @@ public Task<int> DeleteItemAsync(TodoItem item)
 
 Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程序，如此即可在共享代码中加载和保存对象。
 
-本文重点关注如何使用 Xamarin.Forms 访问 SQLite 数据库  。 有关使用 SQLite.Net 本身的详细信息，请参阅 [Android 上的 SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) 或 [iOS 上的 SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) 文档。
+本文重点关注如何使用 Xamarin.Forms 访问 SQLite 数据库。 有关使用 SQLite.Net 本身的详细信息，请参阅 [Android 上的 SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) 或 [iOS 上的 SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) 文档。
 
 ## <a name="related-links"></a>相关链接
 
 - [待办事项示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-

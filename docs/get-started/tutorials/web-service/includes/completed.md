@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4e759917eac2c6d966d8cd577838c311c13b2a9e
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 2c9895f36faccb0d0c82b0e7884cc04b8c4273bf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659752"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669546"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -31,6 +31,6 @@ ms.locfileid: "67659752"
 
 ## <a name="related-links"></a>相关链接
 
-- [WebServiceTutorial（示例）](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Tutorials/WebServiceTutorial)
+- [WebServiceTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-webservicetutorial/)
 - [使用 RESTful Web 服务（指南）](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [Newtonsoft.Json Nuget 包](https://www.nuget.org/packages/Newtonsoft.Json/)

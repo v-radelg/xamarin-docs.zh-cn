@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: cc7bdcfff3916f7d7ae04e4ef63cb02f17315c2a
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 2deee2bd7fa07f562bee02409d1a7a19cdac0be9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926708"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650852"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Entry/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
 Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。_
 
@@ -117,7 +117,7 @@ public class MainPage : ContentPage
 
 ![](entry-images/screenshots.png "每个平台上的 MyEntry 控件")
 
-`EntryRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 控件时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `MyEntry` 控件的引用。
+`EntryRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 控件时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `MyEntry` 控件的引用。
 
 `MyEntryRenderer` 类中 `OnElementChanged` 方法的替代版本可执行本机控件自定义。 可以通过 `Control` 属性访问平台上使用的对本机控件的类型化引用。 此外，可以通过 `Element` 属性获取对正在呈现的 Xamarin.Forms 控件的引用，尽管它没有在示例应用程序中使用。
 
@@ -216,4 +216,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererEntry（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Entry/)
+- [CustomRendererEntry（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)

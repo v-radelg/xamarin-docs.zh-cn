@@ -1,41 +1,41 @@
 ---
 title: 可移植类库 (PCL) 简介
-description: 本文介绍了可移植类库 (PCL) 项目，并将指导完成创建和使用适用于 Mac 和 Visual Studio 的 Visual Studio 中的 PCL 项目。
+description: 本文介绍可移植类库 (PCL) 项目, 并演练如何在 Visual Studio for Mac 和 Visual Studio 中创建和使用 PCL 项目。
 ms.prod: xamarin
 ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
-ms.openlocfilehash: 221ee49e282b3b038d03f659d238336710283a66
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a4ee81f7d59c9fb680dfd371a7aaba7660fb3343
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61229867"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68681064"
 ---
 # <a name="portable-class-libraries-pcl"></a>可移植类库 (PCL)
 
 > [!TIP]
-> 可移植类库 (Pcl) 被视为最新版本的 Visual Studio 中不推荐使用。
-> 虽然仍可以打开、 编辑和编译 Pcl，为新项目建议使用[.NET Standard 库](~/cross-platform/app-fundamentals/net-standard.md)访问较大的 API 外围应用。
+> 可移植类库 (Pcl) 在最新版本的 Visual Studio 中被视为已弃用。
+> 尽管仍可以打开、编辑和编译 Pcl, 但对于新项目, 建议使用[.NET Standard 库](~/cross-platform/app-fundamentals/net-standard.md)来访问更大的 API 外围应用。
 
-构建跨平台应用程序的关键组件能够在各种特定于平台的项目间共享代码。 但是，这被复杂，因为不同的平台通常使用另一子组的.NET 基类库 (BCL)，并因此实际上只会生成到不同的.NET Core 库配置文件。 这意味着，每个平台只能使用类库，因此它们将出现需要单独的类库项目的每个平台以相同的配置文件为目标。
+构建跨平台应用程序的一个关键组件是能够跨不同于平台的项目共享代码。 但是，这被复杂，因为不同的平台通常使用另一子组的.NET 基类库 (BCL)，并因此实际上只会生成到不同的.NET Core 库配置文件。 这意味着, 每个平台只能使用以相同配置文件为目标的类库, 因此它们似乎需要为每个平台使用单独的类库项目。
 
-有三种主要方法代码共享，解决此问题： **.NET Standard 项目**，**共享资产项目**，和**可移植类库 (PCL) 项目**.
+有三种主要的代码共享方法可解决此问题: **.NET Standard 项目**、**共享资产项目**和**可移植类库 (PCL) 项目**。
 
-- **.NET standard 项目**是首选的方法共享.NET 代码，详细了解[.NET Standard 项目和 Xamarin](~/cross-platform/app-fundamentals/net-standard.md)。
-- **共享资产项目**使用一组文件和产品/服务的快速而简单的方法，用来共享代码的解决方案中，通常使用条件编译指令来指定将使用它 （有关详细信息的各种平台的代码路径信息，请参阅[共享的项目文章](~/cross-platform/app-fundamentals/shared-projects.md))。
-- **PCL**项目以支持一组已知的 BCL 类/功能的特定配置文件为目标。 但是，为 PCL 缺点是，它们通常需要额外体系结构工作配置文件特定代码分离到他们自己的库。
+- **.NET Standard 项目**是用于共享 .net 代码的首选方法, 请阅读有关[.NET Standard 项目和 Xamarin](~/cross-platform/app-fundamentals/net-standard.md)的详细信息。
+- **共享资产项目**使用一组文件, 并提供一种快速而简单的方法, 用于在解决方案中共享代码, 通常使用条件编译指令为要使用它的各种平台指定代码路径 (有关详细信息,信息, 请参阅[共享项目一文](~/cross-platform/app-fundamentals/shared-projects.md))。
+- **PCL**项目面向支持一组已知的 BCL 类/功能的特定配置文件。 但是, PCL 的向下, 它们通常需要额外的体系结构, 以便将配置文件特定代码分隔到它们自己的库中。
 
-此页说明如何创建**PCL**面向特定的配置文件，然后可由多个特定于平台的项目引用的项目。
+本页说明如何创建以特定配置文件为目标的**PCL**项目, 该配置文件随后可由多个特定于平台的项目引用。
 
 ## <a name="what-is-a-portable-class-library"></a>什么是可移植类库？
 
-当您创建一个应用程序项目或类库项目时，生成的 DLL 被限制到为创建在特定平台上工作。 这可以防止您从编写 Windows 应用程序，程序集，然后将其重新使用 Xamarin.iOS 和 Xamarin.Android。
+当你创建应用程序项目或库项目时, 所生成的 DLL 将被限制为可以在为其创建它的特定平台上工作。 这会阻止你为 Windows 应用编写程序集, 然后在 Xamarin 和 Xamarin 上重新使用该程序集。
 
-当您创建可移植类库时，但是，可以选择您希望代码上运行的平台的组合。 请创建可移植类库时的兼容性选项将转换为一个"配置文件"的标识符，其中描述了此库支持哪些平台。
+但是, 在创建可移植类库时, 可以选择想要在其中运行代码的平台组合。 创建可移植类库时所做的兼容性选择会转换为 "Profile" 标识符, 该标识符描述库支持哪些平台。
 
-下表显示了一些因.NET 平台的功能。 若要编写保证在特定的设备平台上运行的 PCL 程序集只需选择创建项目时需要哪些支持。
+下表显示了由 .NET 平台变化的一些功能。 若要编写保证在特定设备/平台上运行的 PCL 程序集, 只需选择创建项目时所需的支持。
 
 |功能|.NET Framework|UWP 应用|Silverlight|Windows Phone|Xamarin|
 |---|---|---|---|---|---|
@@ -45,175 +45,175 @@ ms.locfileid: "61229867"
 |序列化|Y|Y|Y|Y|Y|
 |数据注释|4.0.3 +|Y|Y||Y|
 
-Xamarin 列反映了这一事实，Xamarin.iOS 和 Xamarin.Android 支持随 Visual Studio 的所有配置文件，并且仅由你选择支持的其他平台受限于您创建的所有库中的功能可用性。
+Xamarin 列反映了 Xamarin iOS 和 Xamarin 支持 Visual Studio 随附的所有配置文件的事实, 你创建的任何库中的功能可用性仅受你选择支持的其他平台的限制。
 
-这包括的组合的配置文件：
+这包括组合的配置文件:
 
-- .NET 4 或.NET 4.5
+- .NET 4 或 .NET 4。5
 - Silverlight 5
 - Windows Phone 8
 - UWP 应用
 
-你可以阅读更多有关在不同的配置文件的功能[Microsoft 的网站](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)，并查看其他社区成员的[PCL 配置文件摘要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)framework 信息以及其他说明，其中包括支持。
+可以在[Microsoft 网站](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)上阅读有关不同配置文件功能的详细信息, 并查看另一个社区成员的[PCL 配置文件摘要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY), 其中包括受支持的框架信息和其他说明。
 
 **权益**
 
-1. 集中式的代码共享 – 中编写和测试代码可以使用由其他库或应用程序的单个项目。
-2. 重构操作将影响所有代码加载到解决方案 （可移植类库和特定于平台的项目） 中。
-3. PCL 项目中，可以轻松地引用其他项目在解决方案中，或可供其他人在其解决方案中引用共享输出程序集。
+1. 集中式代码共享–在可由其他库或应用程序使用的单个项目中编写和测试代码。
+2. 重构操作将影响解决方案中加载的所有代码 (可移植类库和特定于平台的项目)。
+3. 解决方案中的其他项目可以轻松地引用 PCL 项目, 或者可以共享输出程序集以便其他人在其解决方案中引用。
 
 **缺点**
 
-1. 因为多个应用程序之间共享相同的可移植类库时，不能 （例如引用特定于平台的库。 Community.CsharpSqlite.WP7).
-2. 可移植类库子集可能包括应 MonoTouch 和 Mono for Android （如 DllImport 或 System.IO.File） 中提供的类。
+1. 因为在多个应用程序之间共享相同的可移植类库, 所以不能引用平台特定的库 (例如 Community.CsharpSqlite.WP7).
+2. 可移植类库子集不能包含在 Monotouch.dialog 和适用于 Android 的 Mono 中都可用的类 (如 DllImport 或)。
 
 > [!NOTE]
-> 可移植类库中最新版本的 Visual Studio 中，已弃用并[.NET 标准库](net-standard.md)建议改为。
+> Visual Studio 的最新版本中已弃用可移植类库, 但建议改用[.NET Standard 库](net-standard.md)。
 
-某种程度上这两个缺点可以绕过使用提供程序模式或依赖关系注入的代码在平台项目中针对可移植类库中定义的接口或基类的实际实现。
+在某种程度上, 可以使用提供程序模式或依赖项注入对平台项目中的实际实现进行编码, 以便对可移植类库中定义的接口或基类进行编码。
 
-此图显示了使用可移植类库来共享代码，但它还使用依赖关系注入以传入依赖于平台的功能的跨平台应用程序的体系结构：
+此图显示了使用可移植类库共享代码的跨平台应用程序的体系结构, 但也使用依赖关系注入来传递依赖于平台的功能:
 
-[![](pcl-images/image1.png "下图显示了使用可移植类库来共享代码，但它还使用依赖关系注入以传入依赖于平台的功能的跨平台应用程序的体系结构")](pcl-images/image1.png#lightbox)
+[![](pcl-images/image1.png "此图显示了使用可移植类库共享代码的跨平台应用程序的体系结构, 还使用依赖关系注入来传入依赖于平台的功能")](pcl-images/image1.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 演练
 
-本部分逐步讲解如何创建和使用可移植类库使用 Visual Studio for mac。 请参阅完整的实现中的 PCL 示例部分。
+本部分介绍如何使用 Visual Studio for Mac 创建和使用可移植类库。 有关完整实现, 请参考 PCL 示例部分。
 
 ### <a name="creating-a-pcl"></a>创建 PCL
 
-将可移植类库添加到你的解决方案是非常类似于常规的库项目中添加。
+向解决方案添加可移植类库与添加常规库项目非常相似。
 
-1. 在中**新的项目**对话框中，选择**多平台 > 库 > 可移植库**选项：
+1. 在 "**新建项目**" 对话框中, 选择 "多**平台 > 库 > 可移植库**" 选项:
 
     ![创建新的 PCL 项目](pcl-images/image2.png)
 
-1. PCL 在 Visual Studio for Mac 创建时它是自动配置适用于 Xamarin.iOS 和 Xamarin.Android 的配置文件。 PCL 项目将显示此屏幕截图中所示：
+1. 当在中创建 PCL 时 Visual Studio for Mac 它会自动配置一个适用于 Xamarin 和 Xamarin 的配置文件。 此时将显示 PCL 项目, 如以下屏幕截图所示:
 
-    ![在 solution pad 中的 PCL 项目](pcl-images/image3.png)
+    ![解决方案板中的 PCL 项目](pcl-images/image3.png)
 
-在 PCL 中现已准备好要添加的代码。 此外可以引用其他项目 （应用程序项目，库项目和甚至是其他 PCL 项目）。
+PCL 现在已准备好添加代码。 它还可由其他项目 (应用程序项目、库项目甚至其他 PCL 项目) 引用。
 
 ### <a name="editing-pcl-settings"></a>编辑 PCL 设置
 
-若要查看和更改此项目的 PCL 设置，右键单击该项目并选择**选项 > 生成 > 常规**以查看屏幕如下所示：
+若要查看和更改此项目的 PCL 设置, 请右键单击该项目, 然后选择 "**选项" > 生成 > 常规**"以查看此处所示的屏幕:
 
-[![若要设置配置文件的 PCL 项目选项](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
+[![用于设置配置文件的 PCL 项目选项](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
 
-单击**更改...** 来改变此可移植类库的目标配置文件。
+单击 "**更改 ...** " 更改此可移植类库的目标配置文件。
 
-如果已向 PCL 添加代码后更改配置文件，，就可以在库将无法再编译，如果代码引用不是新选择了配置文件的一部分的功能。
+如果在将代码添加到 PCL 后, 配置文件发生了更改, 则在代码引用了不是新选择的配置文件的一部分的功能时, 库将无法再编译。
 
 ## <a name="working-with-a-pcl"></a>使用 PCL
 
-当 PCL 库中编写代码时，Visual Studio for Mac 编辑器将识别所选配置文件的限制，并相应地调整自动完成选项。 例如，此屏幕截图显示了 System.IO 的自动完成选项使用在 Visual Studio for Mac 中使用的默认配置文件 (Profile136) – 请注意滚动条，该值指示是否显示大约一半的可用类 （实际上有仅 14可用的类）。
+在 PCL 库中编写代码时, Visual Studio for Mac 编辑器将识别所选配置文件的限制, 并相应地调整自动完成选项。 例如, 此屏幕截图显示了使用 Visual Studio for Mac 中使用的默认配置文件 (Profile136) 的 System.IO 自动完成选项–请注意, 滚动条指示显示了大约一半的可用类 (实际上只有14个)可用的类)。
 
-[![智能感知列表 14 中的类 PCL 的 System.IO 类](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
+[![PCL 的 System.IO 类中14类的 Intellisense 列表](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
 
-进行比较，使用自动完成在 Xamarin.iOS 或 Xamarin.Android 项目中 – System.IO 有 40 类通常包括可使用的类，如`File`和`Directory`这不是任何 PCL 配置文件中。
+将其与 xamarin 或 xamarin 项目中的 System.IO 自动完成进行比较–提供了40类, 包括常用类 (如`File`和), `Directory`它们不在任何 PCL 配置文件中。
 
-[![.NET Framework System.IO 命名空间中的 40 类的智能感知列表](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
+[![.NET Framework System.IO 命名空间中40类的 Intellisense 列表](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
 
-这反映了使用 PCL 的基础的权衡 – 能够跨多个平台无缝地共享代码意味着某些 Api 不可用于你，因为它们没有可比较实现跨所有可能的平台。
+这反映了使用 PCL 的底层权衡–能够无缝地跨多个平台共享代码, 这意味着某些 Api 不能供你使用, 因为它们没有跨所有可能平台的可比较实现。
 
 ### <a name="using-pcl"></a>使用 PCL
 
-一旦创建 PCL 项目后，你可以与您通常将引用添加相同的方式添加对它从任何兼容的应用程序或库项目的引用。 在 Visual Studio for Mac 中，右键单击引用节点并选择**编辑引用...** 然后切换到**项目**选项卡上所示：
+创建 PCL 项目后, 可以采用与通常添加引用相同的方式从任何兼容的应用程序或库项目中添加对该项目的引用。 在 Visual Studio for Mac 中, 右键单击 "引用" 节点, 然后选择 "**编辑引用 ...** ", 然后切换到 "**项目**" 选项卡, 如下所示:
 
-[![添加对通过编辑引用选项 PCL 的引用](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
+[![通过 "编辑引用" 选项添加对 PCL 的引用](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
 
-下面的屏幕截图显示了 Solution pad TaskyPortable 示例应用程序，在 Xamarin.iOS 项目显示在底部，对该 PCL 库的引用的 PCL 库。
+以下屏幕截图显示了 TaskyPortable 示例应用的解决方案板, 其中显示了底部的 PCL 库, 并在 Xamarin 项目中显示了对该 PCL 库的引用。
 
-[![TaskyPortable 示例解决方案显示 PCL 项目](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
+[![显示 PCL 项目的 TaskyPortable 示例解决方案](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
 
-PCL 的输出 (即。 生成的程序集 DLL) 也可以作为对大多数项目的引用添加。 这使得 PCL 提供跨平台组件和库的理想方法。
+PCL (即生成的程序集 DLL) 的输出也可以作为对大多数项目的引用添加。 这使 PCL 成为交付跨平台组件和库的理想方法。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio 演练
 
-本部分将指导完成如何创建和使用可移植类库使用 Visual Studio。 请参阅完整的实现中的 PCL 示例部分。
+本部分介绍如何使用 Visual Studio 创建和使用可移植类库。 有关完整实现, 请参考 PCL 示例部分。
 
 ### <a name="creating-a-pcl"></a>创建 PCL
 
-将 PCL 添加到你在 Visual Studio 中的解决方案是添加常规项目略有不同：
+在 Visual Studio 中向解决方案添加 PCL 与添加常规项目略有不同:
 
-1. 在中**添加新项目**屏幕上，选择**类库 （旧版可移植）** 选项。 请注意右侧说明建议此项目类型已被弃用。
+1. 在 "**添加新项目**" 屏幕中, 选择 "类库 **(旧版可移植)** " 选项。 请注意, 右侧的说明建议此项目类型已弃用。
 
-    [![新项目窗口创建可移植类库](pcl-images/image10-sml.png "可移植类库")](pcl-images/image10.png#lightbox)
+    [![用于创建可移植类库的 "新建项目" 窗口](pcl-images/image10-sml.png "可移植类库")](pcl-images/image10.png#lightbox)
 
-2. Visual Studio 会立即提示以下对话框，以便可以配置该配置文件。
- 刻度线的平台需要支持，并按确定。
+2. Visual Studio 会立即提示以下对话框, 以便可以配置配置文件。
+ 勾选需要支持的平台, 并按 "确定"。
 
-    [![选择库的目标平台](pcl-images/image11-sml.png "勾选您需要支持，并按确定的平台")](pcl-images/image11.png#lightbox)
+    [![选择库的目标平台](pcl-images/image11-sml.png "勾选需要支持的平台, 并按 \"确定\"")](pcl-images/image11.png#lightbox)
 
-3. PCL 项目将显示在解决方案资源管理器中所示&ndash;文本 **（可移植）** 项目名称，以指示它是一个 PCL 旁边将显示：
+3. PCL 项目将显示在解决方案资源管理器&ndash;文本 **(可移植)** 出现在项目名称旁边, 以指示它是 PCL:
 
-    ![NET Framework 定义的 PCL 配置文件](pcl-images/image12.png "NET Framework 定义的 PCL 配置文件")
+    ![PCL 配置文件定义的 NET Framework](pcl-images/image12.png "PCL 配置文件定义的 NET Framework")
 
-在 PCL 中现已准备好要添加的代码。 此外可以引用其他项目 （应用程序项目，库项目和甚至是其他 PCL 项目）。
+PCL 现在已准备好添加代码。 它还可由其他项目 (应用程序项目、库项目甚至其他 PCL 项目) 引用。
 
 ### <a name="editing-pcl-settings"></a>编辑 PCL 设置
 
-PCL 设置都可以查看和更改通过右键单击项目，然后选择**属性 > 库**，此屏幕截图中所示：
+可以通过右键单击项目并选择 "**属性" > 库**"来查看和更改 PCL 设置, 如以下屏幕截图所示:
 
 [![编辑平台目标](pcl-images/image13-sml.png)](pcl-images/image13.png#lightbox)
 
-如果已向 PCL 添加代码后更改配置文件，，就可以在库将无法再编译，如果代码引用不是新选择了配置文件的一部分的功能。
+如果在将代码添加到 PCL 后, 配置文件发生了更改, 则在代码引用了不是新选择的配置文件的一部分的功能时, 库将无法再编译。
 
 > [!TIP]
-> 此外，还有一条消息提示的 **。NETStandard 是用于共享代码的建议的方法**。 这是指示，尽管 Pcl 中仍受支持，建议升级到.NET Standard。
+> 还有一条消息通知 **。建议使用 NETStandard 来共享代码**。 这表明, 在仍支持 Pcl 的情况下, 建议升级到 .NET Standard。
 
 ### <a name="working-with-a-pcl"></a>使用 PCL
 
-当 PCL 库中编写代码时，Visual Studio 将识别所选配置文件的限制，并相应地调整 Intellisense 选项。 例如，此屏幕截图显示了 System.IO 的自动完成选项使用默认配置文件 (Profile136) – 请注意滚动条，该值指示是否显示大约一半的可用类 （实际上是仅 14 类可用）。
+当代码以 PCL 库编写时, Visual Studio 将识别所选配置文件的限制, 并相应地调整 Intellisense 选项。 例如, 此屏幕截图显示了使用默认配置文件 (Profile136) 的 System.IO 的自动完成选项–注意指示显示了大约一半可用类的滚动条 (实际上只有14类可用)。
 
-[![减少的 IO 类在 PCL 中可用的数量](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
+[![减少了 PCL 中可用的 IO 类的数目](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
 
-进行比较，使用常规的项目 – 中的自动完成 System.IO 有 40 类通常包括可使用的类，如`File`和`Directory`这不是任何 PCL 配置文件中。
+将其与常规项目中的 System.IO 自动完成进行比较–提供了40个类, 包括常用类 ( `File`如`Directory`和), 它们不在任何 PCL 配置文件中。
 
-[![很多更多 IO 的类在.NET Framework 中可用](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
+[![.NET Framework 中提供了更多的 IO 类](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
 
-这反映了使用 PCL 的基础的权衡 – 能够跨多个平台无缝地共享代码意味着某些 Api 不可用于你，因为它们没有可比较实现跨所有可能的平台。
+这反映了使用 PCL 的底层权衡–能够无缝地跨多个平台共享代码, 这意味着某些 Api 不能供你使用, 因为它们没有跨所有可能平台的可比较实现。
 
 > [!TIP]
-> .NET standard 2.0 表示更大 API 图面上的区域比 Pcl，包括 System.IO 命名空间。 对于新项目，.NET 标准建议而不是 PCL。
+> .NET Standard 2.0 表示比 Pcl 更大的 API 外围应用, 包括 System.IO 命名空间。 对于新项目, 建议使用 PCL .NET Standard。
 
 ### <a name="using-pcl"></a>使用 PCL
 
-一旦创建 PCL 项目后，你可以与您通常将引用添加相同的方式添加对它从任何兼容的应用程序或库项目的引用。 在 Visual Studio 中，右键单击引用节点并选择`Add Reference...`然后切换到**解决方案 > 项目**选项卡上所示：
+创建 PCL 项目后, 可以采用与通常添加引用相同的方式从任何兼容的应用程序或库项目中添加对该项目的引用。 在 Visual Studio 中, 右键单击 "引用" 节点, 然后`Add Reference...`选择 " **> 项目**" 选项卡切换到解决方案, 如下所示:
 
-[![添加对通过添加引用项目选项卡的 PCL 的引用](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
+[![通过 "添加引用项目" 选项卡添加对 PCL 的引用](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
 
-下面的屏幕截图显示了 TaskyPortable 示例应用中，在 Xamarin.iOS 项目显示在底部，对该 PCL 库的引用的 PCL 库的解决方案窗格。
+以下屏幕截图显示了 TaskyPortable 示例应用的解决方案窗格, 其中显示了底部的 PCL 库, 并在 Xamarin 项目中显示了对该 PCL 库的引用。
 
-[![显示了 PCL 库 TaskyPortable 示例解决方案](pcl-images/image17.png)](pcl-images/image17.png#lightbox)
+[![显示 PCL 库的 TaskyPortable 示例解决方案](pcl-images/image17.png)](pcl-images/image17.png#lightbox)
 
-PCL 的输出 (即。 生成的程序集 DLL) 也可以作为对大多数项目的引用添加。
-这使得 PCL 提供跨平台组件和库的理想方法。
+PCL (即生成的程序集 DLL) 的输出也可以作为对大多数项目的引用添加。
+这使 PCL 成为交付跨平台组件和库的理想方法。
 
 -----
 
 ## <a name="pcl-example"></a>PCL 示例
 
-[TaskyPortable](https://developer.xamarin.com/samples/mobile/TaskyPortable/)示例应用程序演示了如何通过 Xamarin 使用可移植类库。
-下面是生成 iOS 和 Android 上运行的应用的一些屏幕快照：
+[TaskyPortable](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)示例应用程序演示如何在 Xamarin 中使用可移植类库。
+下面是在 iOS 和 Android 上运行的应用程序的一些屏幕截图:
 
-[![](pcl-images/image18.png "下面是生成的应用在 iOS、 Android 和 Windows Phone 上运行的一些屏幕快照")](pcl-images/image18.png#lightbox)
+[![](pcl-images/image18.png "下面是在 iOS、Android 和 Windows Phone 上运行的应用程序的一些屏幕截图")](pcl-images/image18.png#lightbox)
 
-共享多个数据和逻辑是完全可移植代码的类，它还演示了如何结合使用依赖关系注入的 SQLite 数据库实现的特定于平台的要求。
+它共享多个纯粹是可移植代码的数据和逻辑类, 还演示了如何使用 SQLite 数据库实现的依赖项注入来合并平台特定的要求。
 
-解决方案结构如下所示 (在 Visual Studio for Mac 和 Visual Studio 中分别):
+解决方案结构如下所示 (分别在 Visual Studio for Mac 和 Visual Studio 中):
 
-[![](pcl-images/image19.png "解决方案结构是此处分别显示为 Visual Studio for Mac 和 Visual Studio")](pcl-images/image19.png#lightbox)
+[![](pcl-images/image19.png "解决方案结构分别显示在 Visual Studio for Mac 和 Visual Studio 中")](pcl-images/image19.png#lightbox)
 
-由于 SQLite NET 代码有特定于平台的部分 （可使用 SQLite 实现每个不同的操作系统上），用于演示目的重构到一个抽象类，该类可编译为可移植类库和实际的代码实现为 iOS 和 Android 项目中的子类。
+由于 SQLite 网络代码具有平台特定的部分 (以便在每个不同的操作系统上使用 SQLite 实现), 因此为了便于演示, 它已重构为可编译到可移植类库中的抽象类, 并作为 iOS 和 Android 项目中的子类实现的实际代码。
 
 ### <a name="taskyportablelibrary"></a>TaskyPortableLibrary
 
-可移植类库可以支持的.NET 功能方面的限制。 因为它被编译多个平台上运行，但不能使用`[DllImport]`SQLite 的网络中使用的功能。 改为 SQLite NET 是一个抽象类作为实现，然后引用共享代码的其余部分中。 抽象 API 提取如下所示：
+可移植类库受支持的 .NET 功能的限制。 由于它编译为在多个平台上运行, 因此它不能`[DllImport]`使用 SQLite-NET 中使用的功能。 相反, SQLite 作为抽象类实现, 然后通过其余共享代码进行引用。 抽象 API 的提取如下所示:
 
 ```csharp
 public abstract class SQLiteConnection : IDisposable {
@@ -248,13 +248,13 @@ public abstract class SQLiteConnection : IDisposable {
 }
 ```
 
-共享代码的其余部分使用抽象类"存储"和"检索"对象中的数据库。 在任何应用程序中，使用此抽象类，我们必须通过在完整的实现，提供实际的数据库功能。
+共享代码的其余部分使用抽象类从数据库 "存储" 和 "检索" 对象。 在使用此抽象类的任何应用程序中, 都必须传入提供实际数据库功能的完整实现。
 
 ### <a name="taskyandroid-and-taskyios"></a>TaskyAndroid 和 TaskyiOS
 
-IOS 和 Android 应用程序项目包含用户界面和用来布置在 pcl 中共享的代码的其他特定于平台的代码。
+IOS 和 Android 应用程序项目包含用户界面和其他特定于平台的代码, 用于在 PCL 中连接共享代码。
 
-这些项目还包含抽象数据库 API，适用于该平台的实现。 在 iOS 和 Android Sqlite 数据库引擎是内置于操作系统，因此可以使用实现`[DllImport]`提供数据库连接的具体实现，如上所示。 一段摘录的特定于平台的实现代码如下所示：
+这些项目还包含在该平台上运行的抽象数据库 API 的实现。 在 iOS 和 Android 上, Sqlite 数据库引擎内置于操作系统中, 因此实现可以使用`[DllImport]`来提供数据库连接的具体实现。 下面显示了特定于平台的实现代码摘录:
 
 ```csharp
 [DllImport("sqlite3", EntryPoint = "sqlite3_open")]
@@ -264,17 +264,17 @@ public static extern Result Open(string filename, out IntPtr db);
 public static extern Result Close(IntPtr db);
 ```
 
-完整的实现所示的示例代码。
+可以在示例代码中查看完整的实现。
 
 ## <a name="summary"></a>总结
 
-本文简要讨论过的可移植类库的优缺点，演示了如何创建和使用从 Pcl 在 Visual Studio for Mac 和 Visual Studio;最后引入了完整的示例应用程序 – TaskyPortable – 显示操作中的 PCL 的和。
+本文简要介绍了可移植类库的优点和缺陷, 演示了如何从 Visual Studio for Mac 和 Visual Studio 内部创建和使用 Pcl;最后引入了一个完整的示例应用程序– TaskyPortable –它显示了操作中的 PCL。
 
 ## <a name="related-links"></a>相关链接
 
-- [TaskyPortable （示例）](https://developer.xamarin.com/samples/mobile/TaskyPortable/)
+- [TaskyPortable (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
 - [生成跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [可移植 Visual Basic](~/cross-platform/platform/visual-basic/index.md)
 - [共享项目](~/cross-platform/app-fundamentals/shared-projects.md)
 - [共享代码选项](~/cross-platform/app-fundamentals/code-sharing.md)
-- [使用.NET Framework (Microsoft) 的跨平台开发](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
+- [采用 .NET Framework 的跨平台开发 (Microsoft)](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)

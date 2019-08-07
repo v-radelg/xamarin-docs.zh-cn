@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827198"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643831"
 ---
 # <a name="linking-on-android"></a>在 Android 上链接
 
 Xamarin.Android 应用程序使用链接器  缩减应用程序大小。 链接器使用应用程序的静态分析来确定实际使用的程序集、类型以及成员。 然后，链接器像垃圾回收器  一样运行，不断寻找被引用的程序集、类型和成员，直到找到引用的程序集、类型和成员的完整闭包。 然后，放弃  此闭包之外的所有内容。
 
-例如，[Hello，Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) 示例：
+例如，[Hello，Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 示例：
 
-|Configuration|1.2.0 大小|4.0.1 大小|
+|配置|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |在不链接的情况下进行发布：|14.0 MB|16.0 MB|
 |在链接的情况下进行发布：|4.2 MB|2.9 MB|
@@ -98,7 +98,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 -   如果你使用 XML 序列化，则需要保留类型的属性。
 
-在这些情况下，你可以使用 [Android.Runtime.Preserve](https://developer.xamarin.com/api/type/Android.Runtime.PreserveAttribute/) 属性。 应用程序未静态链接的每个成员都可能被删除，因此可以使用此属性标记未被静态引用但应用程序仍然需要的成员。 你可以将此属性应用于某种类型的每个成员或类型本身。
+在这些情况下，你可以使用 [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute) 属性。 应用程序未静态链接的每个成员都可能被删除，因此可以使用此属性标记未被静态引用但应用程序仍然需要的成员。 你可以将此属性应用于某种类型的每个成员或类型本身。
 
 在以下示例中，此属性用于保留 `Example` 类的构造函数：
 

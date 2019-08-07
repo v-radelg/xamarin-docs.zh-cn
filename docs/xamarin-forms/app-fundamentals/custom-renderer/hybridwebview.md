@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: d09188373d11b33f3b3d78b92faa46bf754797f6
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cd4bb8cae59e5d9cdcc36a58fb37e71e56d580b3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268988"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650869"
 ---
 # <a name="implementing-a-hybridwebview"></a>实现 HybridWebView
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于在屏幕上放置布局和控件。本文演示如何为 HybridWebView 自定义控件创建自定义呈现器，演示如何增强特定于平台的 Web 控件以允许从 JavaScript 调用 C# 代码。_
 
@@ -377,7 +377,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`HybridWebViewRenderer` 类将 `HybridWebView.Uri` 属性中指定的网页加载到本机 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 控件中，并在网页加载完成后使用 `JavascriptWebViewClient` 类中 `OnPageFinished` 的替代方法将 `invokeCSharpAction` JavaScript函数注入到网页中：
+`HybridWebViewRenderer` 类将 `HybridWebView.Uri` 属性中指定的网页加载到本机 [`WebView`](xref:Android.Webkit.WebView) 控件中，并在网页加载完成后使用 `JavascriptWebViewClient` 类中 `OnPageFinished` 的替代方法将 `invokeCSharpAction` JavaScript函数注入到网页中：
 
 ```csharp
 public class JavascriptWebViewClient : WebViewClient
@@ -401,10 +401,10 @@ public class JavascriptWebViewClient : WebViewClient
 
 - 如果已将自定义呈现器附加到新的 Xamarin.Forms 元素：
   - 如果 `Control` 属性为 `null`，则执行以下操作：
-    - 创建本机 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 实例，启用控件中的 JavaScript，并将 `JavascriptWebViewClient` 实例设置为 `WebViewClient` 实现。
-    - 调用 `SetNativeControl` 方法以将对本机 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 控件的引用分配给 `Control` 属性。
-  - [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) 方法将新的 `JSBridge` 实例注入到 WebView 的 JavaScript 上下文的主框架中，并将其命名为 `jsBridge`。 这允许从 JavaScript 访问 `JSBridge` 类中的方法。
-  - [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) 方法加载 `HybridWebView.Uri` 属性指定的 HTML 文件。 该代码指定该文件存储在 `Content` 项目的文件夹中。
+    - 创建本机 [`WebView`](xref:Android.Webkit.WebView) 实例，启用控件中的 JavaScript，并将 `JavascriptWebViewClient` 实例设置为 `WebViewClient` 实现。
+    - 调用 `SetNativeControl` 方法以将对本机 [`WebView`](xref:Android.Webkit.WebView) 控件的引用分配给 `Control` 属性。
+  - [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) 方法将新的 `JSBridge` 实例注入到 WebView 的 JavaScript 上下文的主框架中，并将其命名为 `jsBridge`。 这允许从 JavaScript 访问 `JSBridge` 类中的方法。
+  - [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) 方法加载 `HybridWebView.Uri` 属性指定的 HTML 文件。 该代码指定该文件存储在 `Content` 项目的文件夹中。
   - 在 `JavascriptWebViewClient` 类中，页面加载完成后会将 `invokeCSharpAction` JavaScript 函数注入到网页中。
 - 当呈现器附加到的元素产生更改时：
   - 资源被释放。
@@ -511,5 +511,5 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererHybridWebView（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
+- [CustomRendererHybridWebView（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 - [从 JavaScript 调用 C#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

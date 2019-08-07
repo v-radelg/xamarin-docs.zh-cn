@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5245ce6c2c8a2317e18a90514039d36232e933ef
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 25a0a6f5f16b3035307b6b42f1c509401beb3553
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117899"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647131"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 应用的应用程序图标
 
-本文介绍如何创建 Xamarin.Mac 应用程序图标所需的图像，将图像捆绑到 .icns 文件以及将该图标包含在 Xamarin.Mac 项目中。
+ 本文介绍如何创建 Xamarin.Mac 应用程序图标所需的图像，将图像捆绑到 .icns 文件以及将该图标包含在 Xamarin.Mac 项目中。
 
 
 ## <a name="overview"></a>概述
@@ -54,10 +54,10 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 像开发人员将在 Xamarin.Mac 应用中使用的任何其他图像资源一样，应用图标需要提供有标准和 Retina 分辨率版本。 同样，与任何其他图像一样，命名图标文件时请使用 `@2x` 格式：
 
-- 标准分辨率   -  ImageName **.** filename-extension（示例：icon_512x512.png）
-- 高分辨率   -  ImageName**@2x.** filename-extension（示例：icon_512x512@2x.png）
+- 标准分辨率    -   ImageName **.**  filename-extension（示例：  icon_512x512.png）
+- 高分辨率    -   ImageName **@2x.**  filename-extension（示例：icon_512x512@2x.png  ）
 
-例如，若要提供应用图标的 512 x 512 版本，文件将命名为 icon_512x512.png 和 icon_512x512@2x.png。
+例如，若要提供应用图标的 512 x 512 版本，文件将命名为  icon_512x512.png 和 icon_512x512@2x.png  。
 
 若要确保图标在用户会看到它的所有位置良好呈现，请提供以下所列大小的资源：
 
@@ -83,7 +83,7 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 请执行以下操作：
 
-1. 在“Solution Pad”中，打开“Assets.xcassets” > “AppIcons.appiconset”： 
+1. 在“Solution Pad”  中，打开  “Assets.xcassets” >   “AppIcons.appiconset”： 
 
     ![编辑 AppIcon.appiconset](app-icon-images/intro01.png "编辑 AppIcon.appiconset")
 2. 对于每个所需的图标大小，单击图标并选择上面创建的相应图像文件： 
@@ -98,8 +98,8 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 请执行以下操作：
 
-1. 在“Solution Pad”中双击 **Info.plist** 打开“项目选项”。
-2. 在“Mac OS X 应用程序目标”部分，单击“应用图标”选择 `AppIcon.appiconset` 文件： 
+1. 在“Solution Pad”  中双击 **Info.plist** 打开“项目选项”  。
+2. 在“Mac OS X 应用程序目标”  部分，单击“应用图标”  选择 `AppIcon.appiconset` 文件： 
 
     [![设置图标集](app-icon-images/icon01.png "设置图标集")](app-icon-images/icon01-large.png#lightbox)
 3. 保存更改。
@@ -116,7 +116,7 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 ## <a name="related-links"></a>相关链接
 
-- [MacImages（示例）](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacImages（示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [使用图像](~/mac/app-fundamentals/image.md)
 - [macOS 人机接口指南 - 图标和图像](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)

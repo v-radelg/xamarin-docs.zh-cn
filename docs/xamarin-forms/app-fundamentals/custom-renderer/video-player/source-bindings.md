@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 93383376c9167900bd69e43e8d83044bfdc3b607
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924974"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650456"
 ---
 # <a name="binding-video-sources-to-the-player"></a>将视频源绑定到播放器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-如果将 `VideoPlayer` 视图的 `Source` 属性设置为新视频文件，当前视频会停止播放并且开始播放新视频。 这通过[“VideoPlayerDemos”](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)示例的“选择 Web 视频”页演示。 该页包含 `ListView`，并且三个视频的标题引用自“App.xaml”文件：
+如果将 `VideoPlayer` 视图的 `Source` 属性设置为新视频文件，当前视频会停止播放并且开始播放新视频。 这通过[“VideoPlayerDemos”](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)示例的“选择 Web 视频”页演示   。 该页包含 `ListView`，并且三个视频的标题引用自“App.xaml”文件  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -49,7 +49,7 @@ ms.locfileid: "65924974"
 </ContentPage>
 ```
 
-选中视频后，执行代码隐藏文件中的 `ItemSelected` 事件处理程序。 该处理程序删除标题中的任何空格和撇号，并将其用作密钥以获取 App.xaml 文件中定义的某一资源。 该 `UriVideoSource` 对象设置为 `VideoPlayer` 的 `Source` 属性。
+选中视频后，执行代码隐藏文件中的 `ItemSelected` 事件处理程序。 该处理程序删除标题中的任何空格和撇号，并将其用作密钥以获取 App.xaml 文件中定义的某一资源  。 该 `UriVideoSource` 对象设置为 `VideoPlayer` 的 `Source` 属性。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -77,7 +77,7 @@ namespace VideoPlayerDemos
 
 [![选择 Web 视频](source-bindings-images/selectwebvideo-small.png "Select Web Video")](source-bindings-images/selectwebvideo-large.png#lightbox "Select Web Video")
 
-`VideoPlayer` 的 `Source` 属性由可绑定属性支持，这意味着它可以是数据绑定的目标。 这通过“绑定到视频播放器”页进行演示。 BindToVideoPlayer.xaml 文件中的标记由以下封装视频标题和相应 `VideoSource` 对象的类支持：
+`VideoPlayer` 的 `Source` 属性由可绑定属性支持，这意味着它可以是数据绑定的目标。 这通过“绑定到视频播放器”页进行演示  。 BindToVideoPlayer.xaml 文件中的标记由以下封装视频标题和相应 `VideoSource` 对象的类支持  ：
 
 ```csharp
 namespace VideoPlayerDemos
@@ -96,7 +96,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-BindToVideoPlayer.xaml 文件中的 `ListView` 包含这些 `VideoInfo` 对象的数组，其中每个对象都由视频标题和 `UriVideoSource` 对象初始化（`UriVideoSource` 对象来自 App.xaml 中的资源字典）：
+BindToVideoPlayer.xaml 文件中的 `ListView` 包含这些 `VideoInfo` 对象的数组，其中每个对象都由视频标题和 `UriVideoSource` 对象初始化（`UriVideoSource` 对象来自 App.xaml 中的资源字典）   ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -137,9 +137,9 @@ BindToVideoPlayer.xaml 文件中的 `ListView` 包含这些 `VideoInfo` 对象�
 
 `VideoPlayer` 的 `Source` 属性绑定到 `ListView`。 绑定的 `Path` 指定为由两个属性所组成的复合路径 `SelectedItem.VideoSource`：`SelectedItem` 是 `ListView` 的属性。 所选项目类型为 `VideoInfo`，它具有 `VideoSource` 属性。
 
-正如第一个“选择 Web 视频”页一样，最初没有从 `ListView` 中选择任何项，因此需要选择一个视频，然后开始播放。
+正如第一个“选择 Web 视频”页一样，最初没有从 `ListView` 中选择任何项，因此需要选择一个视频，然后开始播放  。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

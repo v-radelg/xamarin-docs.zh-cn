@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 784c4d22a112de1adc98d6b7f183f9fa2081a897
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9beff615c39fc34b5a58a93d309bb20543cad77f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926275"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650417"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 视频
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 `VideoPlayer` 类定义用于指定视频文件源的 `Source` 属性，以及 `AutoPlay` 属性。 `AutoPlay` 默认设置为 `true`，这意味着视频应在设置 `Source` 后自动开始播放：
 
@@ -449,7 +449,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>设置 URL 源
 
-通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**]( https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 程序中的“播放 Web 视频”页由以下 XAML 文件定义：
+通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序中的“播放 Web 视频”页由以下 XAML 文件定义  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-`VideoSourceConverter` 类将字符串转换为 `UriVideoSource`。 导航到“播放 Web 视频”页时，视频会开始加载，并在下载和缓冲足够数量的数据后开始播放。 视频时长约为 10 分钟：
+`VideoSourceConverter` 类将字符串转换为 `UriVideoSource`。 导航到“播放 Web 视频”页时，视频会开始加载，并在下载和缓冲足够数量的数据后开始播放  。 视频时长约为 10 分钟：
 
 [![播放 Web 视频](web-videos-images/playwebvideo-small.png "播放 Web 视频")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 视频")
 
@@ -476,7 +476,7 @@ namespace FormsVideoLibrary.UWP
                    AutoPlay="false" />
 ```
 
-需要按“播放”按钮才能启动视频。
+需要按“播放”按钮才能启动视频  。
 
 同样，可以通过将 `AreTransportControlsEnabled` 属性设置为 `false` 来禁止显示传输控件：
 
@@ -525,4 +525,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

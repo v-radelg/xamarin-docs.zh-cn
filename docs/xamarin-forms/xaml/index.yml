@@ -1,0 +1,129 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: 可扩展应用程序标记语言 (XAML)
+metadata:
+  title: 可扩展应用程序标记语言 (XAML)
+  description: 了解如何使用 XAML 定义 Xamarin.Forms 用户界面。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/31/2019
+abstract:
+  description: 了解如何使用 XAML 定义 Xamarin.Forms 用户界面。
+sections:
+  - title: 开始操作
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: xaml-basics/index.md
+            html: 了解使用 XAML 开发 Xamarin.Forms 用户界面的基本知识。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+              href: xaml-basics/index.md
+            title: 基本知识
+          - href: xaml-controls.md
+            html: 了解可以从 XAML 文件引用的 Xamarin.Forms 视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_form.svg'
+              href: xaml-controls.md
+            title: 控件
+          - href: xamlc.md
+            html: 了解如何使用 XAML 编译器将 XAML 直接编译为中间语言。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_build.svg'
+              href: xamlc.md
+            title: 编译
+          - href: markup-extensions/index.md
+            html: 了解 XAML 标记扩展的相关信息，这些扩展允许从文本字符串以外的源设置元素属性。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: markup-extensions/index.md
+            title: 标记扩展
+  - title: 工具
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: toolbox.md
+            html: 了解如何使用 XAML 工具箱将 Xamarin.Forms 控件和布局拖动到 XAML 编辑器。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
+              href: toolbox.md
+            title: 工具箱
+          - href: xaml-previewer/index.md
+            html: 了解如何使用 XAML 预览程序通过其 XAML 标记并排查看页面的实时预览。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_responsive.svg'
+              href: xaml-previewer/index.md
+            title: 预览程序
+  - title: 命名空间
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: namespaces.md
+            html: 了解 XAML 命名空间语法，以及如何声明 XAML 命名空间来访问一个类型。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_namespace.svg'
+              href: namespaces.md
+            title: 命名空间
+          - href: custom-namespace-schemas.md
+            html: 了解如何创建 XAML 自定义命名空间架构，这些架构指定一个自定义 URL 和一个或多个 CLR 命名空间之间的映射。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
+              href: custom-namespace-schemas.md
+            title: 自定义命名空间架构
+          - href: custom-prefix.md
+            html: 了解如何为 XAML 用法指定与 XAML 命名空间关联的建议前缀。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-automate.svg'
+              href: custom-prefix.md
+            title: 命名空间推荐前缀
+  - title: 其他功能
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: bindable-properties.md
+            html: 了解如何创建可绑定的属性，以及如何从 XAML 来使用这些属性。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-edit.svg'
+              href: bindable-properties.md
+            title: 可绑定属性
+          - href: attached-properties.md
+            html: 了解如何创建附加的属性，以及如何从 XAML 来使用这些属性。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
+              href: bindable-properties.md
+            title: 附加属性
+          - href: resource-dictionaries.md
+            html: 了解如何创建 XAML 资源，并在整个 Xamarin.Forms 应用程序中重复使用这些资源。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_reference.svg'
+              href: resource-dictionaries.md
+            title: 资源字典
+          - href: passing-arguments.md
+            html: 了解如何使用 XAML 将参数传递到构造函数、调用工厂方法以及指定泛型参数的类型。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_learn-about.svg'
+              href: passing-arguments.md
+            title: 传递参数
+          - href: field-modifiers.md
+            html: 了解 XAML 字段修饰符相关信息，这些修饰符指定已命名的 XAML 元素的生成字段的访问级别。
+            image:
+              src: ~/media/icons/i_xaml-forms.svg
+              href: field-modifiers.md
+            title: 字段修饰符
+          - href: runtime-load.md
+            html: 了解如何在运行时加载和分析 XAML。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
+              href: runtime-load.md
+            title: 在运行时加载 XAML

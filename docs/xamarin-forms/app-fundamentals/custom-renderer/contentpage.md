@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 290cd36f36d86d161b7fc124f8961888ade41955
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 73d57c632cfcd36bd7f38865c39acb7fecb55e3e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925949"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650922"
 ---
 # <a name="customizing-a-contentpage"></a>自定义 ContentPage
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
 ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。_
 
@@ -111,7 +111,7 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 ![](contentpage-images/screenshots.png "每个平台上的 CameraPage")
 
-`PageRenderer` 类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 页面时被调用以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPage` 实例的引用。
+`PageRenderer` 类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 页面时被调用以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPage` 实例的引用。
 
 `CameraPageRenderer` 类中 `OnElementChanged` 方法的替代版本是执行本机页面自定义的位置。 可通过 `Element` 属性获取对正在呈现的 Xamarin.Forms 页面实例的引用。
 
@@ -199,7 +199,7 @@ namespace CustomRenderer.Droid
 
 调用基类的 `OnElementChanged` 方法可对 Android `ViewGroup` 控件实例化，该控件是一组视图。 实时摄像头流仅在呈现器尚未附加到现有 Xamarin.Forms 元素的前提下呈现，并且假设存在自定义呈现器正在呈现的页面实例。
 
-然后，将通过调用使用 `Camera` API 的一系列方法自定义页面，以在调用 `AddView` 方法之前提供来自摄像头的实时流和捕获照片的功能，以向 `ViewGroup` 添加实时摄像头流 UI。 请注意，在 Android 上，还有必要替代 `OnLayout` 方法以对视图执行测量和布局操作。 有关详细信息，请参阅 [ContentPage 呈现器示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)。
+然后，将通过调用使用 `Camera` API 的一系列方法自定义页面，以在调用 `AddView` 方法之前提供来自摄像头的实时流和捕获照片的功能，以向 `ViewGroup` 添加实时摄像头流 UI。 请注意，在 Android 上，还有必要替代 `OnLayout` 方法以对视图执行测量和布局操作。 有关详细信息，请参阅 [ContentPage 呈现器示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>在 UWP 上创建页面呈现器
 
@@ -257,4 +257,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererContentPage（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
+- [CustomRendererContentPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

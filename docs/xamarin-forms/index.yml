@@ -57,7 +57,7 @@ sections:
         className: cardsB
         items:
           - href: ~/xamarin-forms/app-fundamentals/
-            html: 要生成 Xamarin.Forms 应用需要了解的所有内容，例如使用文件、映像、数据库等。
+            html: 开发 Xamarin.Forms 应用所需要了解的一切内容，例如导航、手势、数据绑定等。
             image:
               src: ~/media/icons/i_app-build.svg
               href: ~/xamarin-forms/app-fundamentals/
@@ -113,6 +113,6 @@ sections:
           - title: API
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms">Xamarin.Forms API 文档</a></p>'
           - title: 示例
-            html: '<p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Xamarin.Forms 示例</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms">Xamarin.Forms 示例</a></p>'
           - title: 图书
             html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">创建移动应用电子图书</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">企业应用程序模式电子图书</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">电子图书：Xamarin.Forms 中的 SkiaSharp Graphics</a></p>

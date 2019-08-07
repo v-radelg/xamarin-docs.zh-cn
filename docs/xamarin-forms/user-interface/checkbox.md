@@ -1,33 +1,33 @@
 ---
-title: Xamarin.Forms 复选框
-description: Xamarin.Forms 复选框是一种按钮可以进行检查或为空。 选中一个复选框后，它已被视为不上。 如果一个复选框为空，它被视为处于关闭状态。
+title: Xamarin 复选框
+description: Xamarin 复选框是一种可以选中或空的按钮类型。 选中复选框后, 它将被视为已启用。 如果复选框为空, 则将其视为关闭。
 ms.prod: xamarin
 ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 42631b1b67dc1d342e9f8666916604e68ee158d8
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: f78ca9d2cf7a9e57b81c5d923c64b36a7982c4b0
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67517916"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739149"
 ---
-# <a name="xamarinforms-checkbox"></a>Xamarin.Forms 复选框
+# <a name="xamarinforms-checkbox"></a>Xamarin 复选框
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CheckBoxDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
-Xamarin.Forms`CheckBox`的一种可能的按钮为选中或为空。 选中一个复选框后，它已被视为不上。 如果一个复选框为空，它被视为处于关闭状态。
+Xamarin `CheckBox`是可以选中或空的按钮类型。 选中复选框后, 它将被视为已启用。 如果复选框为空, 则将其视为关闭。
 
-`CheckBox` 定义`bool`名为属性`IsChecked`，指示是否`CheckBox`检查。 此属性还受[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着它可以设置样式，并将数据绑定的目标。
+`CheckBox`定义一个`bool`名为`IsChecked`的属性`CheckBox` , 指示是否选中。 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象也支持此属性, 这意味着它可以进行样式设计, 并且是数据绑定的目标。
 
 > [!NOTE]
-> `IsChecked`可绑定属性设置了默认绑定模式[ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)。
+> 可绑定的属性的默认绑定模式为[`BindingMode.TwoWay`。](xref:Xamarin.Forms.BindingMode.TwoWay) `IsChecked`
 
-`CheckBox` 定义`CheckedChanged`已经激发时`IsChecked`属性更改，可通过用户操作，或当应用程序设置`IsChecked`属性。 `CheckedChangedEventArgs`对象，它附带`CheckedChanged`事件都有一个名为的单个属性`Value`，类型的`bool`。 激发事件时，值`Value`属性设置为的新值`IsChecked`属性。
+`CheckBox`定义一个`CheckedChanged`事件, 该事件`IsChecked`在属性更改时通过用户操作或应用程序设置`IsChecked`属性时引发。 事件附带的`Value`对象具有`bool`名为的单个属性, 类型为。 `CheckedChangedEventArgs` `CheckedChanged` 触发事件时, `Value`属性的值设置为`IsChecked`属性的新值。
 
-## <a name="create-a-checkbox"></a>创建一个复选框
+## <a name="create-a-checkbox"></a>创建复选框
 
 下面的示例演示如何实例化`CheckBox`在 XAML 中：
 
@@ -35,21 +35,21 @@ Xamarin.Forms`CheckBox`的一种可能的按钮为选中或为空。 选中一�
 <CheckBox />
 ```
 
-此 XAML 会导致下面的屏幕截图中所示的外观：
+此 XAML 将显示以下屏幕截图所示的外观:
 
-![空复选框，在 iOS 和 Android 上的屏幕截图](checkbox-images/checkbox-empty.png "空的复选框")
+![IOS 和 Android 上的空复选框的屏幕截图](checkbox-images/checkbox-empty.png "空复选框")
 
-默认情况下，`CheckBox`为空。 `CheckBox`用户操作，或通过设置可以检查`IsChecked`属性设置为`true`:
+默认情况下, `CheckBox`为空。 可以通过用户操作来检查, 也可以通过`IsChecked`将属性设置为`true`来进行检查: `CheckBox`
 
 ```xaml
 <CheckBox IsChecked="true" />
 ```
 
-此 XAML 会导致下面的屏幕截图中所示的外观：
+此 XAML 将显示以下屏幕截图所示的外观:
 
-![选中的复选框，在 iOS 和 Android 上的屏幕截图](checkbox-images/checkbox-checked.png "选中复选框")
+![IOS 和 Android 上选中的复选框的屏幕截图](checkbox-images/checkbox-checked.png "选中的复选框")
 
-或者，`CheckBox`可以在代码中创建：
+或者, `CheckBox`可以在代码中创建:
 
 ```csharp
 CheckBox checkBox = new CheckBox { IsChecked = true };
@@ -57,7 +57,7 @@ CheckBox checkBox = new CheckBox { IsChecked = true };
 
 ## <a name="respond-to-a-checkbox-changing-state"></a>响应更改状态的复选框
 
-当`IsChecked`属性更改，可通过用户操作，或当应用程序设置`IsChecked`属性，`CheckedChanged`事件触发。 若要对更改做出响应，可以注册此事件的事件处理程序：
+当属性更改时, 无论是通过用户操作, 还是在应用程序`IsChecked`设置属性时`CheckedChanged` , 都将激发该事件。 `IsChecked` 可注册此事件的事件处理程序以响应更改:
 
 ```xaml
 <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" />
@@ -74,7 +74,7 @@ void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
 
 `sender`自变量是`CheckBox`负责此事件。 可以使用此访问`CheckBox`对象，或以区分多个`CheckBox`对象共享相同`CheckedChanged`事件。
 
-或者，事件处理程序`CheckedChanged`可以在代码中注册事件：
+或者, 可以在代码中注册`CheckedChanged`事件的事件处理程序:
 
 ```csharp
 CheckBox checkBox = new CheckBox { ... };
@@ -84,9 +84,9 @@ checkBox.CheckedChanged += (sender, e) =>
 };
 ```
 
-## <a name="data-bind-a-checkbox"></a>将数据绑定的复选框
+## <a name="data-bind-a-checkbox"></a>数据绑定复选框
 
-`CheckedChanged`事件处理程序可通过使用数据绑定和触发器以响应来消除`CheckBox`被选中或为空：
+可以通过使用数据绑定和触发器来响应`CheckBox`选中或空的事件处理程序:`CheckedChanged`
 
 ```xaml
 <CheckBox x:Name="checkBox" />
@@ -104,33 +104,33 @@ checkBox.CheckedChanged += (sender, e) =>
 </Label>
 ```
 
-在此示例中， [ `Label` ](xref:Xamarin.Forms.Label)在数据触发器中使用绑定表达式来监视`IsChecked`属性`CheckBox`。 当此属性变为`true`，则`FontAttributes`并`FontSize`的属性`Label`更改。 当`IsChecked`属性将返回到`false`，则`FontAttributes`并`FontSize`的属性`Label`重置为其初始状态。
+在此示例中, [`Label`](xref:Xamarin.Forms.Label)在数据触发器中使用绑定表达式来`IsChecked`监视的属性`CheckBox`。 当此属性为`true`时`FontAttributes` , 此`FontSize`属性的和`Label`属性将为。 `false` `FontAttributes` `FontSize`当属性返回到时,的`Label`和属性将重置为它们的初始状态。 `IsChecked`
 
-IOS 的屏幕截图中的以下屏幕截图，显示[ `Label` ](xref:Xamarin.Forms.Label)格式设置时`CheckBox`为空，而 Android 屏幕截图显示了`Label`格式设置时`CheckBox`检查：
+在下面的屏幕截图中, iOS 屏幕快照[`Label`](xref:Xamarin.Forms.Label)在`CheckBox`为空时显示格式设置, 而 Android 屏幕截图`Label`在选中时`CheckBox`显示格式设置:
 
-[![数据的屏幕截图绑定复选框，在 iOS 和 Android](checkbox-images/checkbox-databinding.png "数据绑定的复选框")](checkbox-images/checkbox-databinding-large.png#lightbox "数据绑定的复选框")
+[ !["数据绑定" 复选框、"IOS 和 Android](checkbox-images/checkbox-databinding.png "数据绑定\" 复选框")中的屏幕截图]"(checkbox-images/checkbox-databinding-large.png#lightbox "数据绑定\" 复选框")
 
-有关触发器的详细信息，请参阅[Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
+有关触发器的详细信息, 请参阅[Xamarin。窗体触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
 
-## <a name="disable-a-checkbox"></a>禁用一个复选框
+## <a name="disable-a-checkbox"></a>禁用复选框
 
-有时应用程序进入状态其中`CheckBox`正在检查不是有效的操作。 在这种情况下，`CheckBox`可以禁用通过设置其`IsEnabled`属性设置为`false`。
+有时, 应用程序会进入处于选中`CheckBox`状态的状态, 该状态是无效操作。 在这种情况下`CheckBox` , 可以通过将其`IsEnabled`属性设置为`false`来禁用。
 
-## <a name="checkbox-appearance"></a>复选框的外观
+## <a name="checkbox-appearance"></a>CheckBox 外观
 
-除了属性外，`CheckBox`继承自[ `View` ](xref:Xamarin.Forms.View)类`CheckBox`还定义了`Color`属性，可将其颜色设置为[ `Color` ](xref:Xamarin.Forms.Color):
+除了`CheckBox` `CheckBox` `Color`从类继承的属性之外, 还定义了[`Color`](xref:Xamarin.Forms.Color)一个属性, 该属性将其颜色设置为: [`View`](xref:Xamarin.Forms.View)
 
 ```xaml
 <CheckBox Color="Red" />
 ```
 
-以下屏幕截图显示了一系列选中`CheckBox`对象，其中每个对象都有其`Color`属性设置为另一种[ `Color` ](xref:Xamarin.Forms.Color):
+下面的屏幕截图显示一系列已`CheckBox`选中的对象, 其中每个`Color`对象的属性设置为[`Color`](xref:Xamarin.Forms.Color)不同的:
 
-![彩色复选框，在 iOS 和 Android 上的屏幕截图](checkbox-images/checkbox-colors.png "彩色的复选框")
+![IOS 和 Android 上的彩色复选框的屏幕截图](checkbox-images/checkbox-colors.png "彩色复选框")
 
-## <a name="checkbox-visual-states"></a>复选框的视觉状态
+## <a name="checkbox-visual-states"></a>复选框可视状态
 
-`CheckBox` 具有`IsChecked` [ `VisualState` ](xref:Xamarin.Forms.VisualState)可用于启动到可视更改`CheckBox`时它将变为选中状态。
+`CheckBox`包含一个`IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) , 它可用于在检查时启动对的`CheckBox`视觉对象更改。
 
 下面的 XAML 示例演示如何定义的可视状态`IsChecked`状态：
 
@@ -156,12 +156,12 @@ IOS 的屏幕截图中的以下屏幕截图，显示[ `Label` ](xref:Xamarin.For
 </CheckBox>
 ```
 
-在此示例中， `IsChecked` [ `VisualState` ](xref:Xamarin.Forms.VisualState)指定当`CheckBox`处于选中状态，其`Color`属性将设置为绿色。 `Normal` `VisualState`指定当`CheckBox`处于正常状态，其`Color`属性将设置为红色。 因此，总体效果是，`CheckBox`为红色，当它为空，且绿色时对其进行检查。
+在此示例中, `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState)指定在选中时`CheckBox` , 其`Color`属性将设置为绿色。 指定在`CheckBox`处于正常状态时, `Color`其属性将设置为红色。 `Normal` `VisualState` 因此, 整体效果是`CheckBox`在为空时为红色, 选中时为绿色。
 
-可视状态的详细信息，请参阅[Xamarin.Forms 视觉状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+有关可视状态的详细信息, 请参阅[Xamarin。窗体可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [复选框演示 （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CheckBoxDemos)
-- [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [复选框演示 (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+- [Xamarin。窗体触发器](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin. Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

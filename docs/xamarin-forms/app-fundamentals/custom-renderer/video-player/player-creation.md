@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 21a707ebd189e9cbfa6735b233a6c0af65138e0c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926638"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650493"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-[VideoPlayerDemos](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 解决方案包含为 Xamarin.Forms 实现视频播放器的所有代码。 它还包括一系列页面，演示如何在应用程序中使用视频播放器。 所有 `VideoPlayer` 代码及其平台呈现器都存于名为 `FormsVideoLibrary` 的项目文件夹中，并且也使用命名空间 `FormsVideoLibrary`。 这样应可以很容易地将文件复制到自己的应用程序中并引用这些类。
+[VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解决方案包含为 Xamarin.Forms 实现视频播放器的所有代码  。 它还包括一系列页面，演示如何在应用程序中使用视频播放器。 所有 `VideoPlayer` 代码及其平台呈现器都存于名为 `FormsVideoLibrary` 的项目文件夹中，并且也使用命名空间 `FormsVideoLibrary`。 这样应可以很容易地将文件复制到自己的应用程序中并引用这些类。
 
 ## <a name="the-video-player"></a>视频播放器
 
-[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) 类是各个平台之间共享的“VideoPlayerDemos”.NET Standard 库的一部分。 它派生自 `View`：
+[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) 类是各个平台之间共享的“VideoPlayerDemos”.NET Standard 库的一部分  。 它派生自 `View`：
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-view"></a>Android 视频视图
 
-`VideoPlayer` 的 Android 呈现器基于 Android [`VideoView`](https://developer.xamarin.com/api/type/Android.Widget.VideoView/) 类。 但是，如果 `VideoView` 本身用于在 Xamarin.Forms 应用程序中播放视频，则视频填充分配给 `VideoPlayer` 的区域，且无需保持正确的纵横比。 出于这个原因（很快将进行说明），`VideoView` 设置为 Android `RelativeLayout` 的子类。 `using` 指令定义 `ARelativeLayout` 来区别于 Xamarin.Forms `RelativeLayout`，并且这是 `ViewRenderer` 中的第二个泛型参数：
+`VideoPlayer` 的 Android 呈现器基于 Android [`VideoView`](xrtef:Android.Widget.VideoView) 类。 但是，如果 `VideoView` 本身用于在 Xamarin.Forms 应用程序中播放视频，则视频填充分配给 `VideoPlayer` 的区域，且无需保持正确的纵横比。 出于这个原因（很快将进行说明），`VideoView` 设置为 Android `RelativeLayout` 的子类。 `using` 指令定义 `ARelativeLayout` 来区别于 Xamarin.Forms `RelativeLayout`，并且这是 `ViewRenderer` 中的第二个泛型参数：
 
 ```csharp
 using System;
@@ -365,7 +365,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-media-controller"></a>Android 媒体控制器
 
-在 Android 中，显示传输控件需要创建 [`MediaController`](https://developer.xamarin.com/api/type/Android.Widget.MediaController/) 对象，并将其与 `VideoView` 对象关联。 该机制采用 `SetAreTransportControlsEnabled` 方法进行演示：
+在 Android 中，显示传输控件需要创建 [`MediaController`](xref:Android.Widget.MediaController) 对象，并将其与 `VideoView` 对象关联。 该机制采用 `SetAreTransportControlsEnabled` 方法进行演示：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

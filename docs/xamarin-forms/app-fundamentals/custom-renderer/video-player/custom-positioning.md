@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a962c61027fa6f9f05c59272c900a3ca32e1b01f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926127"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650648"
 ---
 # <a name="custom-video-positioning"></a>自定义视频定位
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 由每个平台实现的传输控件都有一个定位条。 该定位条类似于滑块或滚动条，用于显示视频进度。 此外，用户可以操纵该定位条，前移或后移到视频中的新位置。
 
@@ -70,7 +70,7 @@ namespace FormsVideoLibrary
 
 另请注意，本文稍后将介绍调用名为 `SetTimeToEnd` 方法的属性更改处理程序。
 
-设置 `VideoPlayer` 的 `Source` 属性后，无法立即获取视频持续时间。 必须先下载部分视频文件，然后基础视频播放器才能确定其持续时间。
+设置 `VideoPlayer` 的 `Source` 属性后，无法立即获取视频持续时间  。 必须先下载部分视频文件，然后基础视频播放器才能确定其持续时间。
 
 下面是每个平台呈现器获取视频持续时间的方法：
 
@@ -418,7 +418,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 
 这是很好的建议，但是这三个 `VideoPlayerRenderer` 类已经间接地使用计时器来更新 `Position` 属性了。 `Position` 属性在 `UpdateStatus` 事件的处理程序中更改，其每秒仅触发 10 次。
 
-因此，`VideoPlayer` 的 `Position` 属性可以绑定到 `PositionSlider` 的 `Position` 属性上，而且不存在性能问题，如“自定义定位条”页面中所示：
+因此，`VideoPlayer` 的 `Position` 属性可以绑定到 `PositionSlider` 的 `Position` 属性上，而且不存在性能问题，如“自定义定位条”页面中所示  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -473,7 +473,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 </ContentPage>
 ```
 
-第一个省略号 (···) 隐藏 `ActivityIndicator`；与上一个“自定义传输”页面中的省略号相同。 请注意两个显示 `Position` 和 `TimeToEnd` 属性的 `Label` 元素。 这两个 `Label` 元素之间的省略号隐藏“自定义传输”页面中显示的“播放”、“暂停”和“停止”的两个 `Button` 元素。 代码隐藏逻辑也与“自定义传输”页面相同。
+第一个省略号 (···) 隐藏 `ActivityIndicator`；与上一个“自定义传输”页面中的省略号相同  。 请注意两个显示 `Position` 和 `TimeToEnd` 属性的 `Label` 元素。 这两个 `Label` 元素之间的省略号隐藏“自定义传输”页面中显示的“播放”、“暂停”和“停止”的两个 `Button` 元素  。 代码隐藏逻辑也与“自定义传输”页面相同  。
 
 [![自定义定位](custom-positioning-images/custompositioning-small.png "Custom Positioning")](custom-positioning-images/custompositioning-large.png#lightbox "Custom Positioning")
 
@@ -481,4 +481,4 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

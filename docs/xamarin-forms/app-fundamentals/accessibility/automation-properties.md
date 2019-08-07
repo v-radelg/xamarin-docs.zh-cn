@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 17e6f4a935924b9c7e282747443bb579d08a5ab9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971247"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651117"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms 中的自动化属性
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 _Xamarin.Forms 允许通过使用 AutomationProperties 类中的附加属性在用户界面元素上设置可访问性值，且后者反过来设置了本机可访问性值。本文介绍如何使用 AutomationProperties 类，以便屏幕阅读器可讲述页面上的元素。_
 
@@ -179,4 +179,4 @@ master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ## <a name="related-links"></a>相关链接
 
 - [附加属性](~/xamarin-forms/xaml/attached-properties.md)
-- [可访问性（示例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [可访问性（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

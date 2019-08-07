@@ -1,86 +1,86 @@
 ---
-title: Xamarin.Forms ProgressBar
-description: Xamarin.Forms 进度条是以可视方式表示为水平条填充的浮点型属性所基于的进度的控件。
+title: Xamarin. Forms ProgressBar
+description: Xamarin ProgressBar 是一个控件, 它以直观的方式将进度表示为基于 float 属性填充的水平栏。
 ms.prod: xamarin
 ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/09/2019
-ms.openlocfilehash: 2e2917077575ebc78dbdda8ae55aa230a39a7ba1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 78c5f38428e20a2e0c6a15d0964f8fd505a8d082
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67837007"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739405"
 ---
-# <a name="xamarinforms-progressbar"></a>Xamarin.Forms ProgressBar
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos)
+# <a name="xamarinforms-progressbar"></a>Xamarin. Forms ProgressBar
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
-Xamarin.Forms [ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar)是一个控件，以可视方式表示为水平条填充为表示百分比的进度`float`值。 `ProgressBar`类继承自[ `View` ](xref:Xamarin.Forms.View)。
+Xamarin [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)是一个控件, 它以可视方式将进度表示为一个水平条, 其填充方式为由`float`值表示的百分比。 类继承自[`View`。](xref:Xamarin.Forms.View) `ProgressBar`
 
-以下屏幕截图显示`ProgressBar`iOS 和 Android 上：
+以下屏幕截图显示了`ProgressBar` iOS 和 Android 上的:
 
-![IOS 和 Android 上的屏幕截图的 ProgressBar](progressbar-images/progressbars-default.png "iOS 和 Android 上的进度栏")
+![IOS 和 Android 上 ProgressBar 的屏幕截图](progressbar-images/progressbars-default.png "IOS 和 Android 上的 ProgressBar")
 
-`ProgressBar`控件定义了两个属性：
+`ProgressBar`控件定义了两个属性:
 
-* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress) 是`float`值，该值表示当前进度为的值从 0 到 1。 `Progress` 小于 0 将被限制到 0，大于 1 将被限制为 1 的值的值。
-* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor) 是`Color`影响内部颜色来表示当前进度栏。
+* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)表示当前进度的值,该值为0到1之间的值。`float` `Progress`小于0的值将被限制为 0, 大于1的值将限制为1。
+* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor)`Color`影响表示当前进度的内部条形颜色的。
 
-这些属性受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)对象，这意味着`ProgressBar`可以设置的样式和作为目标的数据绑定。
+这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的, 这意味着`ProgressBar`可以对进行样式化, 并使其成为数据绑定的目标。
 
-`ProgressBar`控件还定义了`ProgressTo`之间进行动画处理到指定的值从其当前值栏的方法。 有关详细信息，请参阅[进行动画处理 ProgressBar](#animate-a-progressbar)。
+该`ProgressBar`控件还定义了`ProgressTo`一个方法, 该方法将从其当前值到指定值的一种动画效果。 有关详细信息, 请参阅对[ProgressBar 进行动画处理](#animate-a-progressbar)。
 
 > [!NOTE]
-> `ProgressBar`不接受用户操作，因此它会跳过使用 Tab 键来选择控件时。
+> `ProgressBar`不接受用户操作, 因此当使用 Tab 键选择控件时, 将跳过该操作。
 
-## <a name="create-a-progressbar"></a>创建进度栏
+## <a name="create-a-progressbar"></a>创建 ProgressBar
 
-一个`ProgressBar`可以在 XAML 中实例化。 其`Progress`可以设置属性来确定内部、 彩色条的填充百分比。 如果`Progress`属性未设置，则它默认为 0。 下面的示例演示如何实例化`ProgressBar`中使用可选的 XAML`Progress`属性集：
+`ProgressBar`可以在 XAML 中实例化。 可以`Progress`设置其属性以确定内部颜色栏的填充百分比。 如果未`Progress`设置该属性, 则默认为0。 下面的示例演示如何使用可选`ProgressBar` `Progress`的属性集在 XAML 中实例化:
 
 ```xaml
 <ProgressBar Progress="0.5" />
 ```
 
-一个`ProgressBar`还可以在代码中创建：
+也`ProgressBar`可以在代码中创建:
 
 ```csharp
 ProgressBar progressBar = new ProgressBar { Progress = 0.5f };
 ```
 
 > [!WARNING]
-> 如不使用不受约束的水平布局选项`Center`， `Start`，或`End`与`ProgressBar`。 在 UWP，`ProgressBar`将折叠为零宽度的条。 保留默认值`HorizontalOptions`的值`Fill`且不使用的宽度`Auto`放置时`ProgressBar`中`Grid`布局。
+> 不要将不受约束的水平布局选项`Center`( `Start`如、 `End`或`ProgressBar`) 用于。 在 UWP 上, `ProgressBar`折叠到宽度为零的一条。 `ProgressBar`在`HorizontalOptions` 布局中`Grid`放置`Auto`时`Fill` , 请保留的默认值, 不要使用的宽度。
 
-## <a name="progressbar-appearance-properties"></a>ProgressBar 的外观属性
+## <a name="progressbar-appearance-properties"></a>ProgressBar 外观属性
 
-`ProgressColor`可以设置属性来定义内部栏颜色时`Progress`属性是大于零。 下面的示例演示如何实例化`ProgressBar`中使用的 XAML`ProgressColor`属性集：
+当属性大于零时, 可以将属性设置为定义内部条形颜色。`ProgressColor` `Progress` 下面的示例演示如何`ProgressBar` `ProgressColor`使用属性集在 XAML 中实例化:
 
 ```xaml
 <ProgressBar OnColor="Orange" />
 ```
 
-`ProgressColor`创建时，还可以设置属性`ProgressBar`在代码中：
+`ProgressBar`在`ProgressColor`代码中创建时, 还可以设置属性:
 
 ```csharp
 ProgressBar progressBar = new ProgressBar { ProgressColor = Color.Orange };
 ```
 
-以下屏幕截图显示`ProgressBar`与`ProgressColor`属性设置为`Color.Orange`iOS 和 Android 上：
+以下屏幕截图显示了`ProgressBar`在 iOS `ProgressColor`和 Android 上`Color.Orange`的属性设置为的:
 
-![带样式的进度栏，在 iOS 和 Android 的屏幕截图](progressbar-images/progressbars-styled.png "样式在 iOS 和 Android 上的进度栏")
+![IOS 和 Android 上的样式化 ProgressBar 的屏幕截图](progressbar-images/progressbars-styled.png "IOS 和 Android 上的 ProgressBar 样式")
 
 ## <a name="animate-a-progressbar"></a>对 ProgressBar 进行动画处理
 
-`ProgressTo`方法进行动画处理`ProgressBar`从其当前`Progress`段时间内提供的值的值。 该方法接受`float`进度值，`uint`持续时间以毫秒为单位，`Easing`枚举值，并返回`Task<bool>`。 下面的代码演示如何进行动画处理`ProgressBar`:
+方法将`ProgressBar`从其当前`Progress`值到提供的值在一段时间内进行动画处理。 `ProgressTo` 方法接受一个`float`进度值`uint` (以毫秒为单位), `Easing`并返回一个`Task<bool>`。 下面的代码演示如何对`ProgressBar`执行动画处理:
 
 ```csharp
 // animate to 75% progress over 500 milliseconds with linear easing
 await progressBar.ProgressTo(0.75, 500, Easing.Linear);
 ```
 
-有关详细信息`Easing`枚举，请参阅[在 Xamarin.Forms 中的缓动函数](~/xamarin-forms/user-interface/animation/easing.md)。
+有关`Easing`枚举的详细信息, 请参阅[Xamarin 中的缓动函数](~/xamarin-forms/user-interface/animation/easing.md)。
 
 ## <a name="related-links"></a>相关链接
 
-* [ProgressBar 演示](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos)
+* [ProgressBar 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)

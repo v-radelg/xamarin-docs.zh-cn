@@ -1,44 +1,46 @@
 ---
-title: 在 Xamarin.Forms 中 XAML 字段修饰符
-description: X:fieldmodifier 命名空间特性指定的命名 XAML 元素生成的字段的访问级别。
+title: Xamarin 中的 XAML 字段修饰符
+description: X:FieldModifier namespace 特性指定已命名的 XAML 元素的生成字段的访问级别。
 ms.prod: xamarin
 ms.assetid: 12357CE0-3C11-4B62-947F-72DB6DFC23A2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2018
-ms.openlocfilehash: 8be56524ec1c5331f30418fcc29a4bd2c26ccde1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 08/02/2019
+ms.openlocfilehash: 0f6050de943ca9878cf41b448d44bf222689be56
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075293"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739449"
 ---
-# <a name="xaml-field-modifiers-in-xamarinforms"></a>在 Xamarin.Forms 中 XAML 字段修饰符
+# <a name="xaml-field-modifiers-in-xamarinforms"></a>Xamarin 中的 XAML 字段修饰符
 
-_`x:FieldModifier`命名空间属性指定为命名 XAML 元素生成的字段的访问级别。_
+`x:FieldModifier` Namespace 特性指定为命名 XAML 元素生成的字段的访问级别。 特性的有效值为:
 
-## <a name="overview"></a>概述
+- `private`–指定 XAML 元素的生成字段只能在声明它的类的主体内访问。
+- `public`–指定 XAML 元素的生成字段没有访问限制。
+- `protected`–指定 XAML 元素的生成字段可在其类和派生类实例内访问。
+- `internal`–指定只能在同一程序集内的类型内访问 XAML 元素的生成字段。
+- `notpublic`–指定只能在同一程序集内的类型内访问 XAML 元素的生成字段。
 
-该属性的有效值为：
+默认情况下, 如果未设置该属性的值, 则该元素的生成字段将为`private`。
 
-- `Public` – 指定的 XAML 元素所生成的字段是`public`。
-- `NotPublic` – 指定的 XAML 元素所生成的字段是`internal`对程序集。
+> [!NOTE]
+> 特性的值可以使用任何大小写, 因为它将按 Xamarin 转换为小写形式。
 
-如果未设置该属性的值，所生成的字段的元素将`private`。
+若要处理某个`x:FieldModifier`属性, 必须满足以下条件:
 
-必须满足以下条件`x:FieldModifier`要处理的属性：
+- 顶级 XAML 元素必须是有效`x:Class`的。
+- 当前 XAML 元素具有指定的`x:Name` 。
 
-- XAML 中的顶级元素必须是有效`x:Class`。
-- 当前的 XAML 元素具有`x:Name`指定。
-
-以下 XAML 演示设置该属性的示例：
+以下 XAML 显示了设置属性的示例:
 
 ```xaml
 <Label x:Name="privateLabel" />
-<Label x:Name="internalLabel" x:FieldModifier="NotPublic" />
-<Label x:Name="publicLabel" x:FieldModifier="Public" />
+<Label x:Name="internalLabel" x:FieldModifier="internal" />
+<Label x:Name="publicLabel" x:FieldModifier="public" />
 ```
 
-> [!NOTE]
+> [!IMPORTANT]
 > `x:FieldModifier`特性不能用于指定 XAML 类的访问级别。

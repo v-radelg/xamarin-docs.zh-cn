@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 3be63eb8909f129f046b2959ec7963e493674914
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b3a6dfb11b49f9ab3b09cf09594eb374f63fe304
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644229"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680218"
 ---
 # <a name="default-resources"></a>默认资源
 
@@ -38,7 +38,7 @@ ms.locfileid: "68644229"
  
 -  **layout**&ndash;描述用户界面布局，如活动或列表中的行的 XML 文件。
 
--  **menu** &ndash; XML 文件，如描述应用程序菜单*选项菜单*，*上下文菜单*，和*子菜单*。 有关菜单的示例, 请参阅[弹出菜单演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[标准控件](https://developer.xamarin.com/samples/mobile/StandardControls/)示例。
+-  **menu** &ndash; XML 文件，如描述应用程序菜单*选项菜单*，*上下文菜单*，和*子菜单*。 有关菜单的示例, 请参阅[弹出菜单演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[标准控件](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)示例。
 
 -  **raw**&ndash;保存在其原始的、 二进制形式的任意文件。 这些文件将编译为采用二进制格式的 Android 应用程序。
 
@@ -70,7 +70,7 @@ ms.locfileid: "68644229"
 
 -  **layout**&ndash;描述用户界面布局，如活动或列表中的行的 XML 文件。
 
--  **menu** &ndash; XML 文件，如描述应用程序菜单*选项菜单*，*上下文菜单*，和*子菜单*。 有关菜单的示例, 请参阅[弹出菜单演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[标准控件](https://developer.xamarin.com/samples/mobile/StandardControls/)示例。
+-  **menu** &ndash; XML 文件，如描述应用程序菜单*选项菜单*，*上下文菜单*，和*子菜单*。 有关菜单的示例, 请参阅[弹出菜单演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[标准控件](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)示例。
 
 -  **raw**&ndash;保存在其原始的、 二进制形式的任意文件。 这些文件将编译为采用二进制格式的 Android 应用程序。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831484"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646765"
 ---
 # <a name="localization"></a>本地化
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 可以使用 .NET 资源文件本地化 Xamarin.Forms 应用  。
 
@@ -805,8 +805,8 @@ strings.xml 的内容只是一个键值，用于配置应用名称  ：
 
 ## <a name="related-links"></a>相关链接
 
-- [RESX 本地化示例](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
-- [TodoLocalized 示例应用](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalized/)
+- [RESX 本地化示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [TodoLocalized 示例应用](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalized)
 - [跨平台本地化](~/cross-platform/app-fundamentals/localization.md)
 - [iOS 本地化](~/ios/app-fundamentals/localization/index.md)
 - [Android 本地化](~/android/app-fundamentals/localization.md)

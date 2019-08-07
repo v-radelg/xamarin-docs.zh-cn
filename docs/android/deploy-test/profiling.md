@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 9ea2b3ddef731efb9e4bf291ec836248c13d6390
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 400075a1cbd2303f2ecddb9b1cc9465bbcbde32d
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113127"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680266"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 应用
 
@@ -38,58 +38,58 @@ Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用
 
 ### <a name="launching-a-xamarin-android-app-in-android-profiler"></a>在 Android Profiler 中启动 Xamarin Android 应用
 
-下列步骤介绍如何在 Android Studio 的 Android Profiler 工具中启动 Xamarin Android 应用程序。 在下面的示例屏幕截图中，Xamarin 窗体 [XamagonXuzzle](https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/) 应用是使用 Android Profiler 生成和分析的：
+下列步骤介绍如何在 Android Studio 的 Android Profiler 工具中启动 Xamarin Android 应用程序。 在下面的示例屏幕截图中，Xamarin 窗体 [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 应用是使用 Android Profiler 生成和分析的：
 
-1.  在 Android 项目生成选项中，禁用“使用共享运行时”。 这可确保 Android 应用程序包 (APK) 的生成不依赖于共享开发时间 Mono 运行时。
+1.  在 Android 项目生成选项中，禁用“使用共享运行时”  。 这可确保 Android 应用程序包 (APK) 的生成不依赖于共享开发时间 Mono 运行时。
 
     ![禁用“使用共享运行时”](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
-2.  生成用于“调试”的应用，并将其部署到物理设备或仿真器中。 这可生成 APK 的已签名“调试”版本。
-    对于 XamagonXuzzle 示例，生成的 APK 名为 com.companyname.XamagonXuzzle Signed.apk。
+2.  生成用于“调试”的应用，并将其部署到物理设备或仿真器中  。 这可生成 APK 的已签名“调试”版本  。
+    对于 XamagonXuzzle 示例，生成的 APK 名为 com.companyname.XamagonXuzzle Signed.apk   。
 
-3.  打开项目文件夹，然后导航到 bin/Debug。 在此文件夹中，找到 Signed.apk 版本的应用并将其复制到易于访问的位置（例如桌面）。 在下面的屏幕截图中，已找到 APK com.companyname.XamagonXuzzle Signed.apk，并已将其复制到桌面：
+3.  打开项目文件夹，然后导航到 bin/Debug  。 在此文件夹中，找到 Signed.apk 版本的应用并将其复制到易于访问的位置（例如桌面）  。 在下面的屏幕截图中，已找到 APK com.companyname.XamagonXuzzle Signed.apk，并已将其复制到桌面  ：
 
     [![调试已签名 APK 文件的位置](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
-4.  启动 Android Studio，然后选择“分析或调试 APK”：
+4.  启动 Android Studio，然后选择“分析或调试 APK”  ：
 
     ![从 Android Studio 启动屏幕启动探查器](profiling-images/vswin/03-android-studio.png)
 
-5.  在“选择 APK 文件”对话框中，导航到先前生成和复制的 APK。 选择 APK，然后单击“确定”： 
+5.  在“选择 APK 文件”对话框中，导航到先前生成和复制的 APK  。 选择 APK，然后单击“确定”  ： 
     
     ![在“选择 APK 文件”对话框中选择 APK](profiling-images/vswin/04-select-apk-dialog.png)
 
-6.  Android Studio 将加载 APK 并反汇编 classes.dex：
+6.  Android Studio 将加载 APK 并反汇编 classes.dex  ：
 
     ![设置 APK](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7.  加载 APK 后，Android Studio 显示以下 APK 项目屏幕。 右键单击左侧树视图中的应用名称，然后选择“打开模块设置”：
+7.  加载 APK 后，Android Studio 显示以下 APK 项目屏幕。 右键单击左侧树视图中的应用名称，然后选择“打开模块设置”  ：
 
     [![“打开模块设置”菜单项的位置](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8.  导航到“项目设置”>“模块”，选择应用的 -Signed 节点，然后单击“&lt;无 SDK&gt;”：
+8.  导航到“项目设置”>“模块”，选择应用的 -Signed 节点，然后单击“&lt;无 SDK&gt;”    ：
 
     [![导航到 SDK 设置](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9.  在“模块 SDK”下拉菜单中，选择用于生成应用的 Android SDK 级别（在此示例中，使用 API 级别 26 来生成 XamagonXuzzle）：
+9.  在“模块 SDK”下拉菜单中，选择用于生成应用的 Android SDK 级别（在此示例中，使用 API 级别 26 来生成 XamagonXuzzle）   ：
 
     [![设置项目 SDK 级别](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
-    单击“应用”和“确定”保存此设置。
+    单击“应用”和“确定”保存此设置   。
 
 10. 从工具栏图标启动探查器：
 
     [![探查器工具栏图标的位置](profiling-images/vswin/09-launch-profiler-sml.png)](profiling-images/vswin/09-launch-profiler.png#lightbox)
 
-11. 选择运行/分析应用的部署目标，然后单击“确定”。 部署目标可以是物理设备，也可以是在仿真器中运行的虚拟设备。 此示例使用的是 Nexus 5X 设备：
+11. 选择运行/分析应用的部署目标，然后单击“确定”  。 部署目标可以是物理设备，也可以是在仿真器中运行的虚拟设备。 此示例使用的是 Nexus 5X 设备：
 
     ![选择部署目标](profiling-images/vswin/10-select-deployment-target.png)
 
-12. 探查器启动后，需要几秒钟时间才能连接到部署设备和应用进程。 安装 APK 时，Android Profiler 将报告“无已连接设备”和“无可调试进程”。
+12. 探查器启动后，需要几秒钟时间才能连接到部署设备和应用进程。 安装 APK 时，Android Profiler 将报告“无已连接设备”和“无可调试进程”   。
 
     [![探查器安装 APK](profiling-images/vswin/11-no-connected-devices-sml.png)](profiling-images/vswin/11-no-connected-devices.png#lightbox)
 
-13. 几秒钟后，Android Profiler 完成 APK 安装并启动 APK，报告正在分析的设备名称和应用进程名称（在此示例中，分别是 LGE Nexus 5X 和 com.companyname.XamagonXuzzle）：
+13. 几秒钟后，Android Profiler 完成 APK 安装并启动 APK，报告正在分析的设备名称和应用进程名称（在此示例中，分别是 LGE Nexus 5X 和 com.companyname.XamagonXuzzle）   ：
 
     [![启动后的 Profiler 窗口](profiling-images/vswin/12-profiler-starts-sml.png)](profiling-images/vswin/12-profiler-starts.png#lightbox)
 
@@ -97,7 +97,7 @@ Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用
 
     [![为正在运行的应用显示的 Profiler](profiling-images/vswin/13-profiler-running-sml.png)](profiling-images/vswin/13-profiler-running.png#lightbox)
 
-15. 如果点击 XamagonXuzzle 上的“随机化”按钮（这会导致其移动和随机化磁贴），可看到 CPU 使用率在应用的随机化间隔期间增加：
+15. 如果点击 XamagonXuzzle 上的“随机化”按钮（这会导致其移动和随机化磁贴），可看到 CPU 使用率在应用的随机化间隔期间增加   ：
 
     [![点击“随机化”按钮时的 CPU 使用率](profiling-images/vswin/14-tap-randomize-sml.png)](profiling-images/vswin/14-tap-randomize.png#lightbox)
 
