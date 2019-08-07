@@ -18,7 +18,7 @@ ms.locfileid: "68656969"
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-_Xamarin.Forms 每个平台上使用本机映射 Api。_
+Xamarin.Forms 在每个平台上使用本机地图 API。
 
 Xamarin.Forms.Maps 在每个平台上使用本机地图 API。 这为用户提供了快速、熟悉的地图体验，但这意味着需要执行一些配置步骤以符合每个平台的 API 要求。
 配置完成后，`Map`控制的工作方式就像在常见的代码中的任何其他 Xamarin.Forms 元素。
@@ -227,7 +227,7 @@ map.Pins.Add(pin);
 
 ### <a name="map-clicks"></a>地图单击
 
-`Map`定义在点击地图时触发的事件。`MapClicked` 事件附带的`Position`对象具有`Position`名为的单个属性, 类型为。 `MapClickedEventArgs` `MapClicked` 触发事件时, `Position`属性的值将设置为点击的映射位置。
+`Map` 定义一个 `MapClicked` 事件，该事件在点击地图时触发。`MapClicked` 事件附带的 `MapClickedEventArgs` 对象具有一个名为 `Position` 的属性，类型为 `Position`。触发该事件时，`Position` 属性的值被设置为点击的地图位置。
 
 下面的代码示例演示`MapClicked`事件的事件处理程序:
 
@@ -317,7 +317,7 @@ MyMap.MoveToRegion(
 
 以下屏幕截图显示了[`Map`](xref:Xamarin.Forms.Maps.Map)使用数据[`Pin`](xref:Xamarin.Forms.Maps.Pin)绑定显示集合的内容:
 
-[![在 IOS 和 Android 地图上带有数据绑定插针、](map-images/pins-itemssource.png "包含")数据绑定插针的地图屏幕截图](map-images/pins-itemssource-large.png#lightbox "具有数据绑定插针的映射")
+[![iOS 和 Android 上带有数据绑定图钉的地图屏幕截图](map-images/pins-itemssource.png "包含")带有数据绑定图钉的地图屏幕截图](map-images/pins-itemssource-large.png#lightbox "带有数据绑定图钉的地图")
 
 ### <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 
