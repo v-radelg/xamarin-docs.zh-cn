@@ -128,7 +128,8 @@
 ##### [创建数据模板](app-fundamentals/templates/data-templates/creating.md)
 ##### [选择数据模板](app-fundamentals/templates/data-templates/selector.md)
 ### [触发器](app-fundamentals/triggers.md)
-## [用户界面](user-interface/index.md)
+## 用户界面
+### [概述](user-interface/index.yml)
 ### [活动指示器](user-interface/activityindicator.md)
 ### [动画](user-interface/animation/index.md)
 #### [简单动画](user-interface/animation/simple.md)

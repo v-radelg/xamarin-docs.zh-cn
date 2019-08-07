@@ -39,7 +39,7 @@ _需要在防火墙中允许 Xamarin 的平台为你的公司工作的主机列�
 
 需要添加以下地址才可访问 NuGet（Xamarin.Forms 打包为 NuGet）：
 
-- www.nuget.org （用于访问 NuGet）
+- [www.nuget.org](www.nuget.org) （用于访问 NuGet）
 - globalcdn.nuget.org (NuGet 下载)
 - dl-ssl.google.com（适用于 Android 和 Xamarin.Forms 的 Google 组件）
 
