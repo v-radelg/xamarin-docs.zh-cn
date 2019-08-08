@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/05/2019
-ms.openlocfilehash: aab5f56594f9b9b81acb9c447eee238d151bd533
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 0bbe4310a32c11da35e41b01693f8cb1a66fc39b
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832185"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739326"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 注册和解析
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 使用 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 调用本机平台功能时，必须通过 `DependencyService` 注册平台实现，然后从共享代码进行解析，才能调用它们。
 
@@ -175,5 +175,5 @@ using (service as IDisposable)
 
 ## <a name="related-links"></a>相关链接
 
-- [DependencyService 演示（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+- [DependencyService 演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 - [Xamarin.Forms 中的依赖项解析](~/xamarin-forms/internals/dependency-resolution.md)
