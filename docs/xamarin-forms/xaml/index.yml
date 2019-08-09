@@ -101,7 +101,7 @@ sections:
             html: 了解如何创建附加的属性，以及如何从 XAML 来使用这些属性。
             image:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-              href: bindable-properties.md
+              href: attached-properties.md
             title: 附加属性
           - href: resource-dictionaries.md
             html: 了解如何创建 XAML 资源，并在整个 Xamarin.Forms 应用程序中重复使用这些资源。
