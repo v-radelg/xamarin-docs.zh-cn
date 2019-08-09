@@ -584,7 +584,7 @@
           items:
             - name: 介绍
               href: data-cloud/data/introduction.md
-            - name: Configuration
+            - name: 配置
               href: data-cloud/data/configuration.md
             - name: 使用 SQLite.NET ORM
               href: data-cloud/data/using-sqlite-orm.md
@@ -714,7 +714,7 @@
                   href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/ios
                 - name: 工具和命令
                   href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/ios
-                - name: 功能
+                - name: 特征
                   href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/ios
                   items:
                     - name: ApiDefinitions 和 StructsAndEnums
@@ -829,6 +829,8 @@
               href: troubleshooting/questions/exception-marshal-obj-c.md
             - name: 运行时错误：找不到或无法加载程序集 mscorlib.dll
               href: troubleshooting/questions/error-mscorlib-not-found.md
+            - name: 编译错误 - 无法在生成的分散重定位中编码偏移 X
+              href: troubleshooting/questions/error-encode-offset-scattered-relocation.md
             - name: IPA 文件为 0 字节
               href: troubleshooting/questions/ipa-zero-bytes.md
             - name: IBTool 错误：无法完成该操作。

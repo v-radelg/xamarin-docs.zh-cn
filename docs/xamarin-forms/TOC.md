@@ -151,6 +151,7 @@
 #### [布局](user-interface/controls/layouts.md)
 #### [Views](user-interface/controls/views.md)
 #### [单元格](user-interface/controls/cells.md)
+#### [第三方控件](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [入门](user-interface/datapages/get-started.md)
 #### [控件引用](user-interface/datapages/controls.md)
@@ -339,7 +340,7 @@
 #### [语音识别](data-cloud/azure-cognitive-services/speech-recognition.md)
 #### [拼写检查](data-cloud/azure-cognitive-services/spell-check.md)
 #### [文本翻译](data-cloud/azure-cognitive-services/text-translation.md)
-#### [表情识别](data-cloud/azure-cognitive-services/emotion-recognition.md)
+#### [感知情感识别](data-cloud/azure-cognitive-services/emotion-recognition.md)
 ### Web 服务
 #### [Web 服务概述](data-cloud/web-services/index.md)
 #### [介绍](data-cloud/web-services/introduction.md)
