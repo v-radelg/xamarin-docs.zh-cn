@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 71836021b29094911f9d1ad43639ed103fa18b73
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8173ebcc174df6e34a53f226a43083bd28941031
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652819"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869377"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>创建 Xamarin Forms 视觉对象呈现器
 
@@ -104,20 +104,23 @@ public class CustomVisual : IVisual
 
 ## <a name="register-the-ivisual-type"></a>注册 IVisual 类型
 
-在平台项目中, 用`ExportRendererAttribute`以下内容修饰呈现器类:
+在平台项目中, 用`ExportRendererAttribute`以下内容修饰呈现器命名空间:
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]
-public class CustomButtonRenderer : ButtonRenderer
+namespace VisualDemos.iOS
 {
-    protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+    public class CustomButtonRenderer : ButtonRenderer
     {
-        ...
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        {
+            // ...
+        }
     }
 }
 ```
 
-在此示例中, `ExportRendererAttribute`指定`CustomButtonRenderer`类将用于呈现[`Button`](xref:Xamarin.Forms.Button)使用对象, `IVisual`其类型注册为第三个参数。 指定一个`IVisual`类型 (作为其`ExportRendererAttribute`一部分) 的呈现器将用于呈现所选择的视图, 而不是默认呈现器。
+在 iOS 平台项目的此示例中`ExportRendererAttribute` , 指定`CustomButtonRenderer`类将用于呈现[`Button`](xref:Xamarin.Forms.Button)使用对象, `IVisual`其类型注册为第三个参数。 指定一个`IVisual`类型 (作为其`ExportRendererAttribute`一部分) 的呈现器将用于呈现所选择的视图, 而不是默认呈现器。
 
 ## <a name="consume-the-visual-renderer"></a>使用可视化呈现器
 

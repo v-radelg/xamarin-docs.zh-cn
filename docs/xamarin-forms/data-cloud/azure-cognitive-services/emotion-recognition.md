@@ -1,5 +1,5 @@
 ---
-title: 使用人脸 API 的情感识别
+title: 使用人脸 API 感知情感识别
 description: 人脸 API 作为输入，图像中采用的面部表情，并返回数据，其中包括在映像中每张人脸的情感集的置信度级别。 此文章介绍了如何使用人脸 API 来识别情感进行评级的 Xamarin.Forms 应用程序。
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
@@ -7,22 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656562"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869397"
 ---
-# <a name="emotion-recognition-using-the-face-api"></a>使用人脸 API 的情感识别
+# <a name="perceived-emotion-recognition-using-the-face-api"></a>使用人脸 API 感知情感识别
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_人脸 API 作为输入，图像中采用的面部表情，并返回数据，其中包括在映像中每张人脸的情感集的置信度级别。此文章介绍了如何使用人脸 API 来识别情感进行评级的 Xamarin.Forms 应用程序。_
+人脸 API 可以执行情感检测, 在基于人为普通人的可感知批注的面部表达式中检测愤怒、蔑视、厌恶、恐惧、幸福、中性、悲伤和惊喜。 但是, 请务必注意, 单独的面部表达式可能不一定表示用户的内部状态。
 
-## <a name="overview"></a>概述
-
-人脸 API 可以执行情绪检测来检测愤怒、 蔑视、 厌恶、 恐惧、 幸福、 中立、 悲伤和惊讶的是中的面部表情。 这些情感普遍和区域性传递通过相同的基本面部表情。 返回的面部表情的情感结果，以及人脸 API 还可以返回检测的人脸的边界框。 请注意，必须获取 API 密钥以使用人脸 API。 这可以获得[试用认知服务](https://azure.microsoft.com/try/cognitive-services/?api=face-api)。
+除了为面部表达式返回情感结果外, 人脸 API 还可以返回检测到的人脸的边界框。 请注意，必须获取 API 密钥以使用人脸 API。 这可以获得[试用认知服务](https://azure.microsoft.com/try/cognitive-services/?api=face-api)。
 
 通过客户端库，并通过 REST API，可以执行情感识别。 本文重点介绍对执行通过 REST API 的情感识别。 有关 REST API 的详细信息，请参阅[人脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
@@ -44,7 +42,7 @@ public FaceRecognitionService()
 
 未能传递给人脸 API 的一个有效的 API 密钥将导致 401 响应错误。
 
-## <a name="performing-emotion-recognition"></a>对执行情感识别
+## <a name="perform-emotion-recognition"></a>执行情感识别
 
 包含图像的 POST 请求，从而执行情感识别`detect`API， `https://[location].api.cognitive.microsoft.com/face/v1.0`，其中`[location]]`是用于获取 API 密钥的区域。 可选的请求参数包括：
 
@@ -81,7 +79,7 @@ public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, boo
 > [!NOTE]
 > 在您为您用来获取订阅密钥的人脸 API 调用中，必须使用相同的区域。 例如，如果从订阅密钥的获取`westus`区域中，人脸检测终结点将是`https://westus.api.cognitive.microsoft.com/face/v1.0/detect`。
 
-### <a name="sending-the-request"></a>发送请求
+### <a name="send-the-request"></a>发送请求
 
 `SendRequestAsync`方法向人脸 API 的 POST 请求，并返回结果作为`Face`数组：
 
@@ -132,7 +130,7 @@ async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMetho
 
 `detect` API 将在响应中，提供请求的有效，指示请求成功，并且请求的信息包含在响应中发送 HTTP 状态代码 200 （正常）。 有关可能的错误响应的列表，请参阅[人脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
-### <a name="processing-the-response"></a>处理响应
+### <a name="process-the-response"></a>处理响应
 
 API 响应以 JSON 格式返回。 以下 JSON 数据显示了一个典型的成功响应消息，提供所请求的示例应用程序数据：
 
@@ -173,10 +171,6 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 下面的屏幕截图显示了示例应用程序中的情感识别过程的结果：
 
 ![](emotion-recognition-images/emotion-recognition.png "表情识别")
-
-## <a name="summary"></a>总结
-
-本文介绍了如何使用人脸 API 来识别情感进行评级的 Xamarin.Forms 应用程序。 人脸 API 采用的面部表情作为输入，图像中，并返回数据，其中包括在映像中每张人脸的情感集的置信度。
 
 ## <a name="related-links"></a>相关链接
 
