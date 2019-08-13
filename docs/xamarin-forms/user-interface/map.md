@@ -227,7 +227,7 @@ map.Pins.Add(pin);
 
 ### <a name="map-clicks"></a>地图单击
 
-`Map` 定义一个 `MapClicked` 事件，该事件在点击地图时触发。`MapClicked` 事件附带的 `MapClickedEventArgs` 对象具有一个名为 `Position` 的属性，类型为 `Position`。触发该事件时，`Position` 属性的值被设置为点击的地图位置。
+`Map` 定义一个 `MapClicked` 事件， 该事件在点击地图时触发。`MapClicked` 事件附带的 `MapClickedEventArgs` 对象具有一个名为 `Position` 的属性，类型为 `Position`。 触发该事件时，`Position` 属性的值被设置为点击的地图位置。
 
 下面的代码示例演示`MapClicked`事件的事件处理程序:
 
