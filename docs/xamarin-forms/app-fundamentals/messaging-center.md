@@ -1,118 +1,104 @@
 ---
 title: Xamarin.Forms MessagingCenter
-description: 本文介绍如何使用 Xamarin.Forms MessagingCenter 发送和接收消息，以减少如视图模型等类之间的耦合度。
+description: Xamarin.Forms MessagingCenter 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。
 ms.prod: xamarin
 ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/01/2016
-ms.openlocfilehash: b40617dc9ed2054540ce04d5527fae8de6e2285b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 07/30/2019
+ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
+ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644898"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68821003"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
-_Xamarin.Forms 具有简单的消息传送服务，用于发送和接收消息。_
+发布-订阅模式是一种消息传递模式，在此模式下，发布者可在无需知道任何接收方（称为订阅方）的情况下发送消息。 同样，订阅方可在不了解任何发布方的情况下侦听特定消息。
 
-<a name="Overview" />
+Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 这种机制允许发布方和订阅方在没有彼此引用的情况下进行通信，这有助于减少它们之间的依赖关系。
 
-## <a name="overview"></a>概述
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类提供多播发布-订阅功能。 这意味着可以有多个发布方发布单个消息，并且可能有多个订阅方正在侦听同一消息：
 
-借助 Xamarin.Forms `MessagingCenter`只需一个简单的消息协定，而不必知道任何关于彼此的信息，便能实现视图模型和其他组件的相互通信。
+![](messaging-center-images/messaging-center.png " 多播发布-订阅功能")
 
-<a name="How_the_MessagingCenter_Works" />
+发布方使用 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法发送消息，而订阅方使用 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法侦听消息。 此外，订阅方还可以使用 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法取消消息订阅（如果需要）。
 
-## <a name="how-the-messagingcenter-works"></a>MessagingCenter 的工作原理
+> [!IMPORTANT]
+> 在内部，[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类使用弱引用。 这意味着它不会使对象保持活动状态，而是允许对它们进行垃圾回收。 因此，只有当类不再希望接收消息时才需要取消订阅消息。
 
-`MessagingCenter` 分为两部分：
+## <a name="publish-a-message"></a>发布消息
 
--  **订阅** - 侦听具有特定签名的消息，并在接收这些消息时执行某些操作。 多个订阅者可以侦听同一条消息。
--  **发送** - 发布供侦听器执行操作的消息。 如果没有侦听器订阅该消息，则忽略该消息。
-
-`MessagingCenter` 是一个静态类，在整个解决方案中使用 `Subscribe` 和 `Send` 方法。
-
-消息具有字符串 `message` 参数，用作定位消息的方式  。 `Subscribe` 和 `Send` 方法使用泛型参数进一步控制消息的接收方式 - 具有相同 `message` 文本但泛型类型参数不同的两则消息不会发送给同一个订阅者。
-
-`MessagingCenter` 的 API 很简单：
-
-- `Subscribe<TSender> (object subscriber, string message, Action<TSender> callback, TSender source = null)`
-- `Subscribe<TSender, TArgs> (object subscriber, string message, Action<TSender, TArgs> callback, TSender source = null)`
-- `Send<TSender> (TSender sender, string message)`
-- `Send<TSender, TArgs> (TSender sender, string message, TArgs args)`
-- `Unsubscribe<TSender, TArgs> (object subscriber, string message)`
-- `Unsubscribe<TSender> (object subscriber, string message)`
-
-下面介绍了这些方法。
-
-<a name="Using_the_MessagingCenter" />
-
-## <a name="using-the-messagingcenter"></a>使用 MessagingCenter
-
-消息可能作为用户交互的结果发送（例如单击按钮）、作为系统事件发送（例如更改状态的控件）或作为某些其他事件发送（例如异步下载完成）。 订阅者可能会侦听用户界面的外观更改、保存数据或触发某个其他操作。
-
-要详细了解如何使用 `MessagingCenter` 类，请参阅[在松散耦合组件之间通信](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)。
-
-### <a name="simple-string-message"></a>简单字符串消息
-
-最简单的消息只包含 `message` 参数中的一个字符串。 侦听简单字符串消息的 `Subscribe` 方法如下所示 - 请注意指定发送方应为 `MainPage` 类型的泛型类型  。 解决方案中的任何类都可以使用以下语法订阅消息：
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 消息是字符串。 发布方通过一种 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 重载通知订阅方查看消息。 以下代码示例可发布 `Hi` 消息：
 
 ```csharp
-MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) => {
-    // do something whenever the "Hi" message is sent
+MessagingCenter.Send<MainPage>(this, "Hi");
+```
+
+在此示例中，[`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法指定表示发送方的泛型参数。 若要接收消息，订阅方还必须指定相同的泛型参数，表明他们正在侦听来自该发送方的消息。 此外，此示例指定两个方法参数：
+
+- 第一个参数指定发送方实例。
+- 第二个参数指定消息。
+
+还可以通过消息发送有效负载数据：
+
+```csharp
+MessagingCenter.Send<MainPage, string>(this, "Hi", "John");
+```
+
+在此示例中，[`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法指定了两个泛型参数。 第一个参数是发送消息的类型，第二个参数是发送的有效负载数据的类型。 若要接收消息，订阅方还必须指定相同的泛型参数。 这允许多条消息共享一个消息标识，但发送不同的有效负载数据类型以供不同的订阅方接收。 此外，此示例指定第三个方法参数，该参数表示要发送到订阅方的有效负载数据。 在这种情况下，有效负载数据是 `string`。
+
+[`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法将使用“即发即弃”方法发布消息和任何有效负载数据。 因此，即使没有注册的订阅方接收消息，消息也仍会发送。 在这种情况下，将忽略已发送的消息。
+
+## <a name="subscribe-to-a-message"></a>订阅消息
+
+订阅方可以使用一种 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 重载进行注册以接收消息。 下面的代码示例演示了此示例：
+
+```csharp
+MessagingCenter.Subscribe<MainPage> (this, "Hi", (sender) =>
+{
+    // Do something whenever the "Hi" message is received
 });
 ```
 
-在 `MainPage` 类中，以下代码发送消息  。 `this` 参数是 `MainPage` 的一个实例。
+在此示例中，[`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法使 `this` 对象订阅 `MainPage` 类型发送的 `Hi` 消息，并执行回调委托以响应接收消息。 指定为 lambda 表达式的回调委托可以是更新 UI、保存某些数据或触发其他操作的代码。
+
+> [!NOTE]
+> 订阅方可能不需要处理已发布消息的每个实例，这可以通过 [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法中指定的泛型类型参数来控制。
+
+以下示例显示如何订阅包含有效负载数据的消息：
 
 ```csharp
-MessagingCenter.Send<MainPage> (this, "Hi");
-```
-
-字符串不会更改 - 它指示消息类型并用于确定通知哪些订阅者  。 此类消息用于指示发生了某些事件，例如“上传已完成”这类不需要更多消息的事件。
-
-### <a name="passing-an-argument"></a>传递参数
-
-若要使用消息传递参数，请在 `Subscribe` 泛型参数和操作签名中指定参数类型。
-
-```csharp
-MessagingCenter.Subscribe<MainPage, string> (this, "Hi", (sender, arg) => {
-    // do something whenever the "Hi" message is sent
-    // using the 'arg' parameter which is a string
+MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
+{
+    await DisplayAlert("Message received", "arg=" + arg, "OK");
 });
 ```
 
-若要使用参数发送消息，请在 `Send` 方法调用中包含类型泛型参数和参数的值。
+在此示例中，[`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法订阅 `MainPage` 类型发送的 `Hi` 消息，其有效负载数据为 `string`。 回调委托在接收到此类消息时执行，该消息将在警报中显示有效负载数据。
+
+## <a name="unsubscribe-from-a-message"></a>取消订阅消息
+
+订阅者可以取消订阅他们不想再收到的消息。 这可以通过一种 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 重载实现：
 
 ```csharp
-MessagingCenter.Send<MainPage, string> (this, "Hi", "John");
+MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 ```
 
-示例使用 `string` 参数，但可以传递任何 C# 对象。
+在此示例中，[`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法使 `this` 对象取消订阅 `MainPage` 类型发送的 `Hi` 消息。
 
-### <a name="unsubscribe"></a>取消订阅
-
-对象可以取消订阅消息签名，以便将来不会传递任何消息。 `Unsubscribe` 方法语法应反映消息签名（因此可能需要包括消息参数的泛型类型参数）。
+应使用指定两个泛型参数的 [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 重载来取消订阅包含有效负载数据的消息：
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage> (this, "Hi");
-MessagingCenter.Unsubscribe<MainPage, string> (this, "Hi");
+MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
 ```
 
-<a name="Summary" />
-
-## <a name="summary"></a>总结
-
-MessagingCenter 是减少耦合度的简单方法，尤其是视图模型之间的耦合度。 它可以用于发送和接收简单消息或在类之间传递参数。 类应取消订阅不再想要接收的消息。
-
+在此示例中，[`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法使 `this` 对象取消订阅 `MainPage` 类型发送的 `Hi` 消息，其有效负载数据为 `string`。
 
 ## <a name="related-links"></a>相关链接
 
 - [MessagingCenterSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
-- [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)
-- [松散耦合组件之间的通信](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)
