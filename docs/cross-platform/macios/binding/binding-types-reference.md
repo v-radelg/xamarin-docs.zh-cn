@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 65e551669edeebfb3c28d16b4eaa0f9e549eb291
-ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
+ms.openlocfilehash: de0d7ae6ac6a028166c13aa29bf0ea44035eddce
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665692"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012438"
 ---
 # <a name="binding-types-reference-guide"></a>绑定类型参考指南
 
@@ -232,6 +232,13 @@ public interface UIActionSheetDelegate {
 }
 ```
 
+<a name="DesignatedDefaultCtorAttribute" />
+
+### <a name="designateddefaultctorattribute"></a>DesignatedDefaultCtorAttribute
+
+将此特性应用于接口定义时, 它将在映射`[DesignatedInitializer]` `init`到选择器的默认 (生成) 构造函数上生成属性。
+
+<a name="DisableDefaultCtorAttribute" />
 
 ### <a name="disabledefaultctorattribute"></a>DisableDefaultCtorAttribute
 
@@ -239,6 +246,7 @@ public interface UIActionSheetDelegate {
 
 如果需要使用类中的其他构造函数之一初始化对象, 请使用此特性。
 
+<a name="PrivateDefaultCtorAttribute" />
 
 ### <a name="privatedefaultctorattribute"></a>PrivateDefaultCtorAttribute
 
@@ -327,7 +335,7 @@ interface FooObject {
 
 将此特性应用于类时, 它只会生成一个不是从`NSObject`派生的静态类, 因此该[`[BaseType]`](#BaseTypeAttribute)属性将被忽略。 静态类用于托管要公开的 C 公共变量。
 
-例如：
+例如:
 
 ```csharp
 [Static]
@@ -996,6 +1004,16 @@ Task<string> UploadAsync (string file);
 
 使用此属性可自定义生成的异步方法的名称。   默认情况下, 若要使用方法的名称并追加文本 "Async", 则可以使用此方法来更改此默认值。
 
+<a name="DesignatedInitializerAttribute" />
+
+### <a name="designatedinitializerattribute"></a>DesignatedInitializerAttribute
+
+如果将此特性应用于构造函数, 它将在最终`[DesignatedInitializer]`平台程序集中生成相同的。 这是为了帮助 IDE 指出应在子类中使用哪个构造函数。
+
+这应映射到的`__attribute__((objc_designated_initializer))`目标-C/clang 使用。
+
+<a name="DisableZeroCopyAttribute" />
+
 ### <a name="disablezerocopyattribute"></a>DisableZeroCopyAttribute
 
 此特性应用于字符串参数或字符串属性, 并指示代码生成器不要对此参数使用零副本字符串封送处理, 而是从C#字符串创建新的 NSString 实例。
@@ -1010,6 +1028,7 @@ Task<string> UploadAsync (string file);
 @property(nonatomic,assign) NSString *name2;
 ```
 
+<a name="DisposeAttribute" />
 
 ### <a name="disposeattribute"></a>DisposeAttribute
 
@@ -1017,7 +1036,7 @@ Task<string> UploadAsync (string file);
 
 `bmac-native` `[Dispose]`由于和`Dispose` `Dispose`工具会自动生成方法, 因此需要使用属性在生成的方法实现中注入一些代码。 `btouch-native`
 
-例如：
+例如:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1159,7 +1178,7 @@ public NSObject this [NSObject idx] {
 
 此特性可用于不带有效负载的通知的参数, 或者你可以指定`System.Type`引用 API 定义中的另一个接口的, 通常名称以 "EventArgs" 结尾。 生成器会将接口转换为子类`EventArgs` , 并将包含列出的所有属性。 应在类中使用特性来列出用于查找目标 C 字典以获取该值的键的名称。 [`[Export]`](#ExportAttribute) `EventArgs`
 
-例如：
+例如:
 
 ```csharp
 interface MyClass {
@@ -1273,7 +1292,7 @@ interface MyClass {
 
 如果引用类型不具有此属性, 则绑定工具将在将值传递给目标-C 之前为赋值生成检查, 并将生成一个检查, 该检查将在指定的`ArgumentNullException`值为时`null`引发。
 
-例如:
+例如：
 
 ```csharp
 // In properties
@@ -1469,6 +1488,13 @@ interface XyzPanel {
 }
 ```
 
+如果对`[Wrap]` `[Category]`使用属性修饰的类型中的方法应用该属性, 则需要将作为第一个`This`参数包括在内, 因为正在生成扩展方法。 例如：
+
+```csharp
+[Wrap ("Write (This, image, options?.Dictionary, out error)")]
+bool Write (CIImage image, CIImageRepresentationOptions options, out NSError error);
+```
+
 默认`[Wrap]`情况`isVirtual` `true` 下,`virtual`生成的成员不是可以设置为可选参数的成员。`virtual`
 
 ```csharp
@@ -1479,6 +1505,40 @@ interface FooExplorer {
 
     [Wrap ("FromUrl (NSUrl.FromString (url))", isVirtual: true)]
     void FromUrl (string url);
+}
+```
+
+`[Wrap]`还可以直接在属性 getter 和 setter 中使用。
+这允许对其进行完全控制, 并根据需要调整代码。
+例如, 请考虑以下使用智能枚举的 API 定义:
+
+```csharp
+// Smart enum.
+enum PersonRelationship {
+        [Field (null)]
+        None,
+
+        [Field ("FMFather", "__Internal")]
+        Father,
+
+        [Field ("FMMother", "__Internal")]
+        Mother
+}
+```
+
+接口定义:
+
+```csharp
+// Property definition.
+
+[Export ("presenceType")]
+NSString _PresenceType { get; set; }
+
+PersonRelationship PresenceType {
+    [Wrap ("PersonRelationshipExtensions.GetValue (_PresenceType)")]
+    get;
+    [Wrap ("_PresenceType = value.GetConstant ()")]
+    set;
 }
 ```
 
@@ -1905,6 +1965,12 @@ public interface UITableViewController {
 
 此属性中的信息显示在文档和工具中, 可以为用户提供有关如何改进的建议
 
+### <a name="requiressuperattribute"></a>RequiresSuperAttribute
+
+这是`[Advice]`特性的专用化子类, 可用于提示重写方法的开发人员**需要**对基 (重写) 方法的调用。
+
+这对应`clang`于[`__attribute__((objc_requires_super))`](https://clang.llvm.org/docs/AttributeReference.html#objc-requires-super)
+
 ### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
 仅适用于 Xamarin 5.4 及更高版本。
@@ -1954,7 +2020,7 @@ interface MyBinding {
 
 此属性采用一个参数, 即包含用于访问字典中的元素的键的类的名称。   默认情况下, 具有属性的接口中的每个属性都将查找指定类型中的成员作为后缀为 "Key" 的名称。
 
-例如：
+例如:
 
 ```csharp
 [StrongDictionary ("MyOptionKeys")]
