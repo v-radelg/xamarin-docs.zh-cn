@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d63dafbb17a3757f5d15f65e977b4b0cb8bc44a
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657035"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980865"
 ---
 # <a name="layouts-in-xamarinforms"></a>在 Xamarin.Forms 中的布局
 
@@ -32,6 +32,7 @@ Xamarin.Forms 具有多个布局和功能的组织在屏幕上的内容。
 * **[RelativeLayout](relative-layout.md)** –用于通过相对于其父级的维度 & 位置设置约束来排列视图。
 * **[网格](grid.md)** -用于排列网格中的视图。 根据绝对值或比率，可以指定行和列。
 * **[FlexLayout](flex-layout.md)** -用于水平或垂直排列视图, 并进行换行。
+* **[框架](frame.md)** -用于使用边框 (或框架) 包装视图, 可以使用颜色、投影等进行配置。
 * **[ScrollView](scroll-view.md)** –用于在视图无法完全容纳在屏幕边界内时提供滚动。
 * **[LayoutOptions](layout-options.md)** -定义视图相对于其父级的对齐方式和展开。
 * **[输入透明度](#input_transparency)** –指定元素是否接收输入。
@@ -179,6 +180,10 @@ RelativeLayout 可以用于创建跨设备的大小按比例扩展的用户界�
 - 网格和列显式指定，不会推断出的内容。
 - `Height` 和`Width`可将该值设置为星号，这意味着，网格会设置这些值以填充可用空间。
 - 每个按钮的位置由指定`Grid.Row`  &  `Grid.Column`属性。
+
+### <a name="frameframemd"></a>[框架](frame.md)
+
+布局用于在子级`View`周围创建可自定义的边框。 `Frame` 可用于在控件 (如`Button`或`Label` ) 周围放置边框, 也可以通过环绕其他布局来创建更复杂的 UI 对象, 如卡。 `Frame`
 
 ### <a name="layoutoptionslayout-optionsmd"></a>[LayoutOptions](layout-options.md)
 

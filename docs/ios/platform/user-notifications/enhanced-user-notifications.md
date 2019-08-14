@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 775675e11b85bb53bb51c36b71129a086d9dd60f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ccb10829f10ddd76fe7402143d66a32949daccc1
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651261"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980805"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin 中的增强用户通知
 
@@ -78,7 +78,7 @@ IOS 应用可以发送的远程通知具有以下功能和属性:
 IOS 应用提供了两种类型的远程通知:
 
 - **面向用户**-在设备上向用户显示这些用户。
-- **无提示更新**-这些更新提供了一种机制, 用于在后台更新 iOS 应用程序的内容。 接收到静默更新后, 应用可以转到 "删除服务器" 下拉最新内容。
+- **无提示更新**-这些更新提供了一种机制, 用于在后台更新 iOS 应用程序的内容。 当收到无提示更新时, 应用程序可以与远程服务器联系以拉取最新的内容。
 
 有关详细信息, 请参阅 Apple 的[本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications)文档。
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>处理前台应用通知
 
-IOS 10 新增, 应用程序可以在前台处理通知, 并触发通知。 通过提供`UNUserNotificationCenterDelegate`并`WillPresentNotification`实现方法, 应用程序可以接管显示通知的责任。 例如:
+IOS 10 新增, 应用程序可以在前台处理通知, 并触发通知。 通过提供`UNUserNotificationCenterDelegate`并`WillPresentNotification`实现方法, 应用程序可以接管显示通知的责任。 例如：
 
 ```csharp
 using System;
@@ -442,7 +442,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-对于 "本地通知", `CategoryIdentifier`请设置`UNMutableNotificationContent`对象的属性。 例如:
+对于 "本地通知", `CategoryIdentifier`请设置`UNMutableNotificationContent`对象的属性。 例如：
 
 ```csharp
 var content = new UNMutableNotificationContent ();

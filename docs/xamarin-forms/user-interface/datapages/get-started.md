@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d47a8d4a0fa72cee59a054554e9868f20323d00b
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832441"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980785"
 ---
 # <a name="getting-started-with-datapages"></a>开始使用 DataPages
 
@@ -21,8 +21,7 @@ ms.locfileid: "67832441"
 ![](~/media/shared/preview.png "此 API 目前处于预览状态")
 
 > [!IMPORTANT]
-> 需要 DataPages [Xamarin.Forms 主题](~/xamarin-forms/user-interface/themes/index.md)引用来呈现。
-
+> DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中, 然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
 
 若要开始构建使用 DataPages 预览一个简单的数据驱动页面，请执行以下步骤。 在预览中的硬编码样式 （"事件"） 生成此演示使用仅适用于在代码中特定的 JSON 格式。
 
@@ -52,7 +51,7 @@ ms.locfileid: "67832441"
 ```
 
 > [!IMPORTANT]
-> 您还应遵循的步骤[加载程序集 （下面） 为主题](#loadtheme)通过将一些样本代码添加到 iOS`AppDelegate`和 Android `MainActivity`。 这将在将来的预览版的版本中得到改进。
+> 还应按照以下步骤通过将一些样板代码添加到 iOS `AppDelegate`和 Android `MainActivity`来[加载主题程序集 (见下文)](#loadtheme) 。 这将在将来的预览版的版本中得到改进。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.添加 XAML 页面
@@ -100,7 +99,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 删除`Content`元素并将其替换为`p:ListDataPage.DataSource`来填充的数据页。 在远程 Json 下面的示例从 URL 是正在加载数据文件。
 
 > [!NOTE]
-> 在预览*需要*`StyleClass`属性来为数据源提供呈现提示。 `StyleClass="Events"`指的是在预览中预定义的包含样式的布局*硬编码*以匹配正在使用的 JSON 数据源。
+> 预览*需要*一个`StyleClass`属性以提供数据源的呈现提示。 `StyleClass="Events"`指的是在预览中预定义的包含样式的布局*硬编码*以匹配正在使用的 JSON 数据源。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,7 +176,7 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
 
-它是要从头开始创建主题的更多工作 (请参阅[主题指南](~/xamarin-forms/user-interface/themes/index.md)) 但未来的预览版本将使这更轻松地执行。
+从头开始创建主题的工作要多一些, 但将来的预览版本会使此操作变得更容易。
 
 
 ## <a name="troubleshooting"></a>疑难解答

@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680958"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978482"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第2部分-实现 WalkingGame
 
@@ -29,12 +29,11 @@ _本演练演示如何将游戏逻辑和内容添加到空的 MonoGame 项目中
 - 将移动添加到字符
 - 匹配移动和动画
 
-
 ## <a name="unzipping-our-game-content"></a>解压缩游戏内容
 
 在开始编写代码之前, 我们需要解压缩游戏*内容*。 游戏开发人员通常使用术语 "*内容*" 来指通常由视觉对象、游戏设计人员或音频设计人员创建的非代码文件。 常见内容类型包括用于显示视觉对象、播放声音或控制人工智能 (AI) 行为的文件。 从游戏开发团队的角度来看, 通常由非程序员创建。
 
-此处使用的内容可[在 github 上](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)找到。 我们需要将这些文件下载到我们稍后将在本演练中访问的位置。
+此处使用的内容可[在 GitHub 上](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)找到。 我们需要将这些文件下载到我们稍后将在本演练中访问的位置。
 
 ## <a name="monogame-class-overview"></a>MonoGame 类概述
 
@@ -57,11 +56,11 @@ _本演练演示如何将游戏逻辑和内容添加到空的 MonoGame 项目中
 
 若要添加游戏内容, 请右键单击 "**内容**" 文件夹, 然后选择 "**添加 > 添加文件 ...** "导航到提取内容 .zip 文件的位置, 然后选择 " **charactersheet** " 文件。 如果系统询问如何将文件添加到文件夹, 应选择 "**复制**" 选项:
 
-![](part2-images/image1.png "如果系统询问如何将文件添加到文件夹, 请选择 \"复制\" 选项")
+![如果系统询问如何将文件添加到文件夹, 请选择 "复制" 选项](part2-images/image1.png)
 
 Content 文件夹现在包含 charactersheet 文件:
 
-![](part2-images/image2.png "Content 文件夹现在包含 charactersheet 文件")
+![Content 文件夹现在包含 charactersheet 文件](part2-images/image2.png)
 
 接下来, 我们将添加代码来加载 charactersheet 文件并创建`Texture2D`。 要执行此操作, `Game1.cs`请打开文件, 并将以下字段添加到 Game1.cs 类:
 
@@ -117,7 +116,7 @@ protected override void Draw(GameTime gameTime)
 
 运行游戏现在会显示一个子画面, 其中显示了从 charactersheet 创建的纹理:
 
-![](part2-images/image3.png "现在运行游戏显示了一个子画面, 其中显示了从 charactersheet 创建的纹理。")
+![现在运行游戏显示了一个子画面, 其中显示了从 charactersheet 创建的纹理。](part2-images/image3.png)
 
 ## <a name="creating-the-characterentity"></a>创建 CharacterEntity
 
@@ -132,7 +131,6 @@ protected override void Draw(GameTime gameTime)
 - 可以动态创建和销毁, 如播放机显示和回收
 
 实体组织系统可能比较复杂, 许多游戏引擎提供类来帮助管理实体。 我们将实现一个非常简单的实体系统, 因此, 值得注意的是, 完整的游戏通常需要开发人员的更多组织。
-
 
 ### <a name="defining-the-characterentity"></a>定义 CharacterEntity
 
@@ -215,7 +213,6 @@ namespace WalkingGame
 
 出现这种情况的原因是, 当`SpriteBatch`对所有`Draw`调用使用同一个实例时, 以及在一组`Begin`和`End`调用之间`Draw`进行所有调用时, 可以使用最有效的呈现方式。 当然, 我们的游戏只包含一个实体实例, 但是, 更复杂的游戏会从允许多个实体使用相同`SpriteBatch`实例的模式中受益。
 
-
 ## <a name="adding-characterentity-to-the-game"></a>将 CharacterEntity 添加到游戏
 
 现在我们已添加`CharacterEntity`了包含代码来呈现自身, 接下来我们可以替换中`Game1.cs`的代码以使用此新实体的实例。 为此, 我们将`Texture2D` `CharacterEntity`使用中`Game1`的字段替换字段:
@@ -278,7 +275,7 @@ protected override void Draw(GameTime gameTime)
 
 如果运行该游戏, 现在会看到字符。 由于 X 和 Y 默认值为 0, 因此字符位于屏幕的左上角:
 
-![](part2-images/image4.png "由于 X 和 Y 默认值为 0, 因此字符位于屏幕的左上角")
+![由于 X 和 Y 默认值为 0, 因此字符位于屏幕的左上角](part2-images/image4.png)
 
 ## <a name="creating-the-animation-class"></a>创建动画类
 
@@ -286,11 +283,9 @@ protected override void Draw(GameTime gameTime)
 
 我们将创建`Animation`类以控制 CharacterEntity 动画的逻辑和状态。 动画类将是一个常规类, 可用于任何实体, 而不只`CharacterEntity`是动画。 终极类将`Rectangle` 提供`CharacterEntity`在绘制自身时将使用的。 `Animation` 我们还将创建一个`AnimationFrame`用于定义动画的类。
 
-
 ### <a name="defining-animationframe"></a>定义 AnimationFrame
 
 `AnimationFrame`不会包含任何与动画相关的逻辑。 我们将仅使用它来存储数据。 若要添加`AnimationFrame`类, 请右键单击或单击控件, 然后单击 " **WalkingGame** " 共享项目, 然后选择 "**添加 > 新文件 ...** "。输入名称**AnimationFrame** , 并单击 "**新建**" 按钮。 我们将修改该`AnimationFrame.cs`文件, 使其包含以下代码:
-
 
 ```csharp
 using System;
@@ -504,7 +499,7 @@ protected override void Update(GameTime gameTime)
 
 现在, `CharacterEntity`将播放其`walkDown`动画:
 
-![](part2-images/image5.gif "现在, CharacterEntity 将播放其 walkDown 动画")
+![现在, CharacterEntity 将播放其 walkDown 动画](part2-images/image5.gif)
 
 ## <a name="adding-movement-to-the-character"></a>将移动添加到字符
 
@@ -513,7 +508,6 @@ protected override void Update(GameTime gameTime)
 ### <a name="defining-getdesiredvelocityfrominput"></a>定义 GetDesiredVelocityFromInput
 
 我们将使用 MonoGame 的`TouchPanel`类, 它提供有关触摸屏的当前状态的信息。 让我们添加一个方法, 该方法将`TouchPanel`检查并返回字符的所需速度:
-
 
 ```csharp
 Vector2 GetDesiredVelocityFromInput()
@@ -552,7 +546,6 @@ Vector2 GetDesiredVelocityFromInput()
 
 `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`语句检查速度是否为非零值, 换言之, 检查以确保用户不会接触到与字符当前位置相同的位置。 如果不是, 则需要将字符的速度设置为常量, 而不管触摸远距离。 为此, 我们通过规范化速度向量来实现此目的, 导致其长度为1。 如果速度向量为 1, 则表示该字符将每秒1个像素移动。 我们将通过将值乘以200的所需速度来提高速度。
 
-
 ### <a name="applying-velocity-to-position"></a>将速度应用于位置
 
 从`GetDesiredVelocityFromInput`返回的速度需要应用于字符的`X`和`Y`值, 以在运行时产生任何影响。 我们将修改`Update`方法, 如下所示:
@@ -578,7 +571,7 @@ public void Update(GameTime gameTime)
 
 如果我们现在运行游戏, 将看到该字符正朝着触摸位置移动:
 
-![](part2-images/image6.gif "人物向触摸位置移动")
+![人物向触摸位置移动](part2-images/image6.gif)
 
 ## <a name="matching-movement-and-animation"></a>匹配移动和动画
 
@@ -661,7 +654,6 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 
 接下来, 我们将调整逻辑, 以便根据字符的移动方向或最后一个动画 (如果该字符刚停止) 使用动画。 为此, 我们将修改`Update`方法:
 
-
 ```csharp
 public void Update(GameTime gameTime)
 {
@@ -736,7 +728,7 @@ public void Update(GameTime gameTime)
 
 此代码的结果是字符将在浏览时正确地进行动画处理, 然后面对停止时的最后方向:
 
-![](part2-images/image7.gif "此代码的结果是字符将在浏览时正确地进行动画处理, 然后在停止时面对正在进行的最后方向")
+![此代码的结果是字符将在浏览时正确地进行动画处理, 然后在停止时面对正在进行的最后方向](part2-images/image7.gif)
 
 ## <a name="summary"></a>总结
 

@@ -1,76 +1,76 @@
 ---
-title: Xamarin.Forms DataPages
-description: 本文介绍了 Xamarin.Forms DataPages，它提供到 API 快速且轻松地将数据源绑定到预建的视图。
+title: Xamarin. Forms DataPages
+description: 本文介绍了 Xamarin. Forms DataPages, 它提供了一个 API, 可用于快速轻松地将数据源绑定到预先生成的视图。
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9dc34f412549c4be6099b373ddae7cbd2e8d21c8
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407664"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980774"
 ---
-# <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin. Forms DataPages
 
 ![](~/media/shared/preview.png "此 API 目前处于预览状态")
 
 > [!IMPORTANT]
-> 需要 DataPages [Xamarin.Forms 主题](~/xamarin-forms/user-interface/themes/index.md)引用来呈现。
+> DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中, 然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
 
-Xamarin.Forms DataPages 曾宣布在 Evolve 2016，并可作为客户试用并提供反馈的预览。
+Xamarin DataPages 于2016年推出, 并以预览版的形式提供, 供客户试用并提供反馈。
 
-DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预建的视图。 列表项和详细信息页将自动呈现数据，并可以使用主题自定义。
+DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预建的视图。 列表项和详细信息页将自动呈现数据, 并可使用主题进行自定义。
 
-若要查看发展主题演讲演示的工作原理，请查看[入门指南](get-started.md)。
+若要查看演化的主题演示如何工作, 请查看[入门指南](get-started.md)。
 
 [![](images/demo-sml.png "DataPages 示例应用程序")](images/demo.png#lightbox "DataPages 示例应用程序")
 
 ## <a name="introduction"></a>介绍
 
-数据源和关联的数据页允许开发人员快速、 轻松地使用支持的数据源，并使其与主题中使用的内置基架，UI 可以自定义。
+数据源和关联的数据页使开发人员能够快速轻松地使用受支持的数据源, 并使用可使用主题自定义的内置 UI 基架对其进行呈现。
 
-通过包括 DataPages 添加到 Xamarin.Forms 应用程序**Xamarin.Forms.Pages** Nuget 包。
+通过包括**Xamarin** DataPages Nuget 包, 将其添加到 xamarin 应用程序应用程序。
 
 ### <a name="data-sources"></a>Data Sources
 
-在预览具有可供使用一些预构建的数据源：
+预览版有一些可供使用的预生成数据源:
 
 * **JsonDataSource**
-* **AzureDataSource** （单独的 Nuget）
-* **AzureEasyTableDataSource** （单独的 Nuget）
+* **AzureDataSource**(单独的 Nuget)
+* **AzureEasyTableDataSource**(单独的 Nuget)
 
-请参阅[入门指南](get-started.md)示例使用`JsonDataSource`。
-
-
-### <a name="pages--controls"></a>页和控件
-
-以下页面和控件都包括在内，以便允许轻松绑定到提供的数据源：
-
-* **ListDataPage** – 请参阅[入门示例](get-started.md)。
-* **DirectoryPage** – 已启用分组列表。
-* **PersonDetailPage** – 单个数据项为特定对象类型 （联系人项） 自定义的视图。
-* **DataView** – 公开从采用一般形式的源数据的视图。
-* **CardView** – 样式视图，它包含图像、 标题文本和说明文本。
-* **HeroImage** – 图像呈现视图。
-* **ListItem** – 预构建的具有类似于本机 iOS 和 Android 的列表项的布局视图。
-
-请参阅[DataPages 控件参考](controls.md)有关示例。
+有关使用`JsonDataSource`的示例, 请参阅[入门指南](get-started.md)。
 
 
+### <a name="pages--controls"></a>页面 & 控件
 
-### <a name="under-the-hood"></a>揭秘
+包括以下页面和控件, 以便轻松绑定到提供的数据源:
 
-Xamarin.Forms 数据源遵守`IDataSource`接口。
+* **ListDataPage** –请参阅[入门示例](get-started.md)。
+* **DirectoryPage** –启用了分组的列表。
+* **PersonDetailPage** –针对特定对象类型 (联系人项) 自定义的单个数据项视图。
+* **DataView** –用于以一般方式从源公开数据的视图。
+* **CardView** –包含图像、标题文本和说明文本的样式视图。
+* **HeroImage** -图像呈现视图。
+* 列表-预建的视图, 其布局类似于本机 IOS 和 Android 列表项。
 
-Xamarin.Forms 基础结构进行交互与数据源通过以下属性：
+有关示例, 请参阅[DataPages 控件参考](controls.md)。
 
-* `Data` – 可以显示的数据项的只读列表。
-* `IsLoading` – 一个布尔值，该值指示数据是否已加载并可用于呈现。
-* `[key]` – 要从中检索元素的索引器。
 
-有两种方法`MaskKey`和`UnmaskKey`可用来隐藏 （或显示） （即数据项目属性 防止它们呈现）。
-键对应于数据项对象上的已命名的属性。
+
+### <a name="under-the-hood"></a>在后台
+
+Xamarin. Forms 数据源遵从`IDataSource`接口。
+
+Xamarin 基础结构通过以下属性与数据源进行交互:
+
+* `Data`–可显示的数据项的只读列表。
+* `IsLoading`–一个布尔值, 该值指示数据是否已加载并可用于呈现。
+* `[key]`–用于检索元素的索引器。
+
+有两种方法`MaskKey` `UnmaskKey`可用于隐藏 (或显示) 数据项属性 (即 阻止其呈现)。
+键对应于数据项对象的命名属性。

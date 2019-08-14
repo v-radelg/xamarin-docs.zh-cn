@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: b48e92bcb49109dad6e8c5260b5cb822945e7a0b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82ca106f29eb28672abcbd282b60841bfdb4da8c
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651335"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980826"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
 
@@ -45,7 +45,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| [ `Frame` ](xref:Xamarin.Forms.Frame)类派生自[ `ContentView` ](#contentView)并显示其子级矩形边框。 `Frame` 具有默认值[ `Padding` ](xref:Xamarin.Forms.Layout.Padding)值为 20，还定义[ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor)， [ `CornerRadius` ](xref:Xamarin.Forms.Frame.CornerRadius)，并[ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow)属性。<br /><br />[API 文档](xref:Xamarin.Forms.Frame) | [![帧示例](layouts-images/Frame.png "帧示例")](layouts-images/Frame-Large.png#lightbox "帧示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| 类派生自[`ContentView`](#contentView) , 并在其子级周围显示一个边框或框架。 [`Frame`](xref:Xamarin.Forms.Frame) [`Padding`](xref:Xamarin.Forms.Layout.Padding) [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)类的默认值为 20, 还定义、和[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)属性。 `Frame`<br /><br />[API 文档](xref:Xamarin.Forms.Frame) / [指南](~/xamarin-forms/user-interface/layouts/frame.md) / [示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![帧示例](layouts-images/Frame.png "帧示例")](layouts-images/Frame-Large.png#lightbox "帧示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />

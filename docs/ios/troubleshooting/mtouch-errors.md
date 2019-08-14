@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: da19b9071695f11a7c5591b7e715d85daa01841b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3291589f4a61fad7d7465e0ac2bd4844ae4a0655
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508722"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980736"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -137,7 +137,7 @@ Xamarin 无法在错误消息中提到的位置找到程序集。 请验证路�
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:ABI: * 无效。 支持的 Abi 包括: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64 和 arm64 + llvm。
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:ABI: * 无效。 支持的 Abi 包括: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64 和 arm64 + llvm。
 
 向 mtouch 传递了无效的 ABI。 请指定有效的 ABI。
 
@@ -252,7 +252,7 @@ Mtouch 无法识别错误消息中提到的命令行参数。
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x8664"></a>MT0037: monotouch.dialog 不兼容64位。 引用 Xamarin 或不生成64位体系结构 (ARM64 和/或 x86_64)。
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: monotouch.dialog 不兼容64位。 引用 Xamarin 或不生成64位体系结构 (ARM64 和/或 x86_64)。
 
 <a name="MT0038" />
 
@@ -583,7 +583,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件来构建�
 
 错误消息中提到的程序集具有冲突的生成目标。
 
-例如:
+例如：
 
     --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
 
@@ -595,7 +595,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件来构建�
 
 错误消息中提及的程序集全部编译为单个静态对象。 这是不允许的, 必须将每个程序集编译为不同的静态对象。
 
-例如:
+例如：
 
     --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
 
@@ -838,7 +838,7 @@ class Program {
 
 触摸文件时出错 (这是为了确保部分生成正确完成)。
 
-最可能忽略此警告;如果出现任何问题, 请提交错误 (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) 将进行调查。
+最可能忽略此警告;如果出现任何问题, 请提交 bug [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) , 并进行调查。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:与项目相关的错误消息
 
@@ -1678,7 +1678,7 @@ Parameter name: instruction
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvancedtopicslimitationsreversecallbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 限制:方法 "*" 必须是静态的, 因为它是用 [MonoPInvokeCallback] 修饰的。 请参阅[developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 限制:方法 "*" 必须是静态的, 因为它是用 [MonoPInvokeCallback] 修饰的。 请参阅[developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 此错误消息来自 AOT 编译器。
 
@@ -1824,7 +1824,7 @@ Bitcode 支持需要使用 LLVM AOT 后端 (--LLVM)。
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:注册器发现无效类型`*`。 不支持使用目标-C 注册泛型类型, 并且可能会导致随机行为和/或崩溃 (以便与早期版本的 Xamarin 向后兼容。 iOS 可以通过作为附加的 mtouch 进行传递`--unsupported--enable-generics-in-registrar`来忽略此错误。参数的参数。 有关详细信息, 请参阅[developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) 。
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:注册器发现无效类型`*`。 不支持使用目标-C 注册泛型类型, 并且可能会导致随机行为和/或崩溃 (以便与早期版本的 Xamarin 向后兼容。 iOS 可以通过作为附加的 mtouch 进行传递`--unsupported--enable-generics-in-registrar`来忽略此错误。参数的参数。 有关详细信息, 请参阅[developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) 。
 
 <a name="MT4113" />
 
@@ -2110,7 +2110,7 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managedname-because-its-objective-c-name-exportedname-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:无法注册类型 "{managed\_name}", 因为其目标 c 名称 "{导出\_名称}" 是一个目标 c 关键字。 请使用其他名称。
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:无法注册类型 "{managed\_name}", 因为其目标 c 名称 "{导出\_名称}" 是一个目标 c 关键字。 请使用其他名称。
 
 相关类型的目标-C 名称不是有效的目标 C 标识符。
 
@@ -2310,7 +2310,7 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214:本机链接失败, 未定义符号: *。 此符号引用了托管成员 *。 请验证是否引用了所有必需的框架, 并链接了本机库。
 
-当托管代码包含对不存在的本机方法的 P/Invoke 时, 会报告此错误。 例如:
+当托管代码包含对不存在的本机方法的 P/Invoke 时, 会报告此错误。 例如：
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2931,7 +2931,7 @@ Xamarin iOS 项目经常会动态引用本机符号, 这意味着本机链接器
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:对于*方法的*返回值, 找不到用于阻止转换特性的委托 ([DelegateProxy])。 请提交 bug 在  http://bugzilla.xamarin.com 。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011:对于方法的返回值, 找不到用于阻止转换特性的委托 ([DelegateProxy])。 请提交 bug 在  http://bugzilla.xamarin.com 。
 
 Xamarin 无法在运行时定位所需的方法 (将委托转换为块)。
 
@@ -3017,6 +3017,6 @@ Xamarin 无法在运行时定位所需的方法 (将委托转换为块)。
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:找不到智能枚举 "{smart_type}" 的有效扩展类型。 请提交 bug 在  https://bugzilla.xamarin.com 。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:找不到智能枚举 "{smart_type}" 的有效扩展类型。 请提交 bug 在  https://bugzilla.xamarin.com 。
 
 这表示 Xamarin 中的 bug。 请提交在 bug [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
