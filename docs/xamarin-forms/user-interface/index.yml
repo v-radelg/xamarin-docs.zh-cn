@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
+  ms.date: 08/07/2019
 abstract:
   description: 了解如何使用 Xamarin.Forms 创建用户界面。
 sections:
@@ -115,6 +115,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: map.md
             title: 映射
+          - href: menuitem.md
+            html: 了解如何使用 MenuItem 类向 ListView 单元格的上下文菜单添加项。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: menuitem.md
+            title: MenuItem
           - href: picker/index.md
             html: 了解如何使用选取器控件从数据列表中选择文本项。
             image:
@@ -169,12 +175,24 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: text/index.md
             title: Text
+          - href: theming.md
+            html: 了解如何为 Xamarin 应用程序创建主题以及如何在运行时更改主题。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: theming.md
+            title: 主题设置
           - href: timepicker.md
             html: 了解如何使用 TimePicker 来允许选择时间。
             image:
               src: ~/media/icons/i_user-interface.svg
               href: timepicker.md
             title: TimePicker
+          - href: toolbaritem.md
+            html: 了解如何使用 ToolbarItem 向导航栏添加按钮。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: toolbaritem.md
+            title: ToolbarItem
           - href: visual/index.md
             html: 了解如何使用 Xamarin.Forms 材料视觉对象创建在 iOS 和 Android 上呈现效果相同或大致相同的应用程序。
             image:
