@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/14/2019
-ms.openlocfilehash: fbc966fdf1d79ecc9794d2156db81b583694ce36
-ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
+ms.openlocfilehash: 523113a7b54541733e14f947eefa247e4f774b99
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665682"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024517"
 ---
 # <a name="create-a-controltemplate"></a>创建 ControlTemplate
 
@@ -152,7 +152,7 @@ void OnButtonClicked (object sender, EventArgs e)
 
 ## <a name="create-a-controltemplate-in-c35"></a>使用 C&#35; 创建 ControlTemplate
 
-要在应用程序级别定义[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，必须创建表示 `ControlTemplate` 的 `class`。 该类应该派生自用于模板的[布局](~/xamarin-forms/user-interface/layouts/index.md)，如下面的代码示例所示：
+要在应用程序级别定义[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)，必须创建表示 `ControlTemplate` 的 `class`。 该类应该派生自用于模板的[布局](~/xamarin-forms/user-interface/layouts/index.yml)，如下面的代码示例所示：
 
 ```csharp
 class TealTemplate : Grid

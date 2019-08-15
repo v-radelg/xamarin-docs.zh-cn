@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 0ae5dd86341912354938a8509668c843d412367b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 25ebf101dfe0cc3d51e8411b7977e6dc0b061f2d
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832582"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978410"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 中的钱包功能
 
@@ -65,6 +65,6 @@ Wallet 是一款用于存储和显示条形码和其他内容的应用，允许�
 
 * 在应用中使用框架命名空间。
 * 将所需权利添加到应用。 有关所需权利以及添加方法的详细信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。 ****  ****  对“调试”和“iOS 模拟器”生成来说，这不是默认设置。 __  
+* 在应用的“iOS 捆绑包签名”中，确保“自定义权利”设置为“Entitlements.plist”。    对“调试”和“iOS 模拟器”生成来说，这不是默认设置  。
 
 如果遇到与应用服务有关的问题，请参考主要指南的[故障排除](~/ios/deploy-test/provisioning/capabilities/index.md)部分。
