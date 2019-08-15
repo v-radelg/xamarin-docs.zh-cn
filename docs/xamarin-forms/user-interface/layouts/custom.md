@@ -1,5 +1,5 @@
 ---
-title: 创建自定义布局
+title: 在 Xamarin 中创建自定义布局
 description: 本文说明如何编写一个自定义布局的类，并演示跨页上，水平排列子项，然后将包装对其他行的后续子级的显示方向区分 WrapLayout 类。
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
@@ -7,20 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 11707a1e871b0988847ab4a2c266d268db063000
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645207"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024520"
 ---
-# <a name="creating-a-custom-layout"></a>创建自定义布局
+# <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中创建自定义布局
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms 定义了四个布局的类，这些 StackLayout、 AbsoluteLayout、 RelativeLayout 和网格中，并且每个不同的方式排列子项。但是，有时有必要来组织页面内容使用 Xamarin.Forms 不提供布局。本文说明如何编写一个自定义布局的类，并演示跨页上，水平排列子项，然后将包装对其他行的后续子级的显示方向区分 WrapLayout 类。_
-
-## <a name="overview"></a>概述
 
 在 Xamarin.Forms 中，所有布局类都派生自[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)类和约束的泛型类型[ `View` ](xref:Xamarin.Forms.View)及其派生类型。 依次`Layout<T>`类派生自[ `Layout` ](xref:Xamarin.Forms.Layout)类，该类提供用于定位和大小调整子元素的机制。
 
@@ -67,7 +65,7 @@ _Xamarin.Forms 定义了四个布局的类，这些 StackLayout、 AbsoluteLayou
 
 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)可以重写以实现缓存以最大程度减少反复调用[ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))布局的子级的方法。 重写`InvalidateLayout`方法将提供的子级添加到或从布局中删除时的通知。 同样， [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)可以重写方法的一个子级的布局大小更改时提供通知。 有关这两种方法重写自定义布局应响应通过清除缓存。 有关详细信息，请参阅[计算和缓存数据](#caching)。
 
-## <a name="creating-a-custom-layout"></a>创建自定义布局
+## <a name="create-a-custom-layout"></a>创建自定义布局
 
 创建自定义布局的过程如下所示：
 
@@ -89,7 +87,7 @@ _Xamarin.Forms 定义了四个布局的类，这些 StackLayout、 AbsoluteLayou
 
 <a name="creating" />
 
-### <a name="creating-a-wraplayout"></a>创建 WrapLayout
+### <a name="create-a-wraplayout"></a>创建 WrapLayout
 
 示例应用程序演示了方向区分`WrapLayout`类跨页上，水平排列子项，然后将包装对其他行的后续子级的显示。
 
@@ -107,7 +105,7 @@ public class WrapLayout : Layout<View>
 
 <a name="caching" />
 
-#### <a name="calculating-and-caching-layout-data"></a>计算和缓存布局数据
+#### <a name="calculate-and-cache-layout-data"></a>计算和缓存布局数据
 
 `LayoutData`结构将有关子对象集合的数据存储在多个属性：
 
@@ -200,7 +198,7 @@ LayoutData GetLayoutData(double width, double height)
 
 <a name="adding_properties" />
 
-#### <a name="adding-properties-backed-by-bindable-properties"></a>将属性添加受可绑定属性
+#### <a name="add-properties-backed-by-bindable-properties"></a>添加可绑定属性支持的属性
 
 `WrapLayout`类定义`ColumnSpacing`和`RowSpacing`属性，其值用于分隔的行和列在布局中，支持，其中受可绑定属性。 可绑定属性下面的代码示例所示：
 
@@ -230,7 +228,7 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
 
 <a name="onmeasure" />
 
-#### <a name="overriding-the-onmeasure-method"></a>重写 OnMeasure 方法
+#### <a name="override-the-onmeasure-method"></a>重写 OnMeasure 方法
 
 `OnMeasure`重写下面的代码示例所示：
 
@@ -256,7 +254,7 @@ protected override SizeRequest OnMeasure(double widthConstraint, double heightCo
 
 <a name="layoutchildren" />
 
-#### <a name="overriding-the-layoutchildren-method"></a>重写 LayoutChildren 方法
+#### <a name="override-the-layoutchildren-method"></a>重写 LayoutChildren 方法
 
 `LayoutChildren`重写下面的代码示例所示：
 
@@ -307,7 +305,7 @@ protected override void LayoutChildren(double x, double y, double width, double 
 
 <a name="invalidatelayout" />
 
-#### <a name="overriding-the-invalidatelayout-method"></a>重写 InvalidateLayout 方法
+#### <a name="overridethe-invalidatelayout-method"></a>Overridethe InvalidateLayout 方法
 
 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)重写调用时添加或删除从布局中，或一个子级的`WrapLayout`属性更改值，如下面的代码示例中所示：
 
@@ -326,7 +324,7 @@ protected override void InvalidateLayout()
 
 <a name="onchildmeasureinvalidated" />
 
-#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>重写 OnChildMeasureInvalidated 方法
+#### <a name="override-the-onchildmeasureinvalidated-method"></a>重写 OnChildMeasureInvalidated 方法
 
 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)重写调用时的一个布局的子级更改大小，并在下面的代码示例所示：
 
@@ -342,7 +340,7 @@ protected override void OnChildMeasureInvalidated()
 
 <a name="consuming" />
 
-### <a name="consuming-the-wraplayout"></a>使用 WrapLayout
+### <a name="consume-the-wraplayout"></a>使用 WrapLayout
 
 `WrapLayout`类可以通过将它放置在消耗[ `Page` ](xref:Xamarin.Forms.Page)派生类型，如以下 XAML 代码示例所示：
 
