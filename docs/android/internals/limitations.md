@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 57d9d6a91f88d117f0889a8dba9e6198ec6b7f62
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510713"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524772"
 ---
 # <a name="limitations"></a>限制
 
@@ -90,7 +90,7 @@ class MyIntentService : IntentService {
 仅C#部分支持泛型类。 存在以下限制:
 
 
--   泛型类型不能使用`[Export]`或`[ExportField`]。 如果尝试这样做, 将会`XA4207`生成错误。
+- 泛型类型不能使用`[Export]`或`[ExportField`]。 如果尝试这样做, 将会`XA4207`生成错误。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -103,7 +103,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   泛型方法不能使用`[Export]`或`[ExportField]`:
+- 泛型方法不能使用`[Export]`或`[ExportField]`:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -118,7 +118,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   `[ExportField]`不能用于返回`void`的方法:
+- `[ExportField]`不能用于返回`void`的方法:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -131,7 +131,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   _不_能从 Java 代码创建泛型类型的实例。
+- _不_能从 Java 代码创建泛型类型的实例。
     只能从托管代码安全地创建它们:
 
     ```csharp

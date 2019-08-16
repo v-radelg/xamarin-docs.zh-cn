@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 736195182713eb35ad18fb1ae12c5cc7ddce0787
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012520"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528709"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -130,8 +130,8 @@ Xamarin 无法在错误消息中提到的位置找到程序集。 请验证路�
 
 在下列情况下可能会发生这种情况:
 
-*  已启用 ARMv6 并已安装 Xcode 4.5 或更高版本。
-*  ARMv7s 已启用, 且已安装 Xcode 4.4 或更早版本。
+* 已启用 ARMv6 并已安装 Xcode 4.5 或更高版本。
+* ARMv7s 已启用, 且已安装 Xcode 4.4 或更早版本。
 
 请验证安装的 Xcode 版本是否支持所选体系结构。
 
@@ -165,12 +165,12 @@ Mtouch 无法识别错误消息中提到的命令行参数。
 
 不能同时使用多个 mtouch 选项:
 
--  --logdev
--  --installdev
--  --killdev
--  --launchdev
--  --launchdebug
--  --launchsim
+- --logdev
+- --installdev
+- --killdev
+- --launchdev
+- --launchdebug
+- --launchsim
 
 <a name="MT0020" />
 
@@ -334,7 +334,7 @@ Mtouch 无法识别错误消息中提到的命令行参数。
 
 <a name="MT0056" />
 
-### <a name="mt0056-cannot-find-xcode-in-the-default-location-applicationsxcodeapp-please-install-xcode-or-pass-a-custom-path-using---sdkroot-path"></a>MT0056:在默认位置找不到 Xcode (/Applications/Xcode.app)。 请安装 Xcode, 或使用--sdkroot <path>传递自定义路径。
+### <a name="mt0056-cannot-find-xcode-in-the-default-location-applicationsxcodeapp-please-install-xcode-or-pass-a-custom-path-using---sdkroot-path"></a>MT0056:在默认位置找不到 Xcode (/Applications/Xcode.app)。 请安装 Xcode, 或使用--sdkroot \<路径 > 传递自定义路径。
 
 <a name="MT0057" />
 
@@ -585,7 +585,9 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件来构建�
 
 例如:
 
-    --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
+```
+  --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
+```
 
 此示例尝试使用相同的 make (`MyBinary`) 创建动态库和框架。
 
@@ -595,9 +597,11 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件来构建�
 
 错误消息中提及的程序集全部编译为单个静态对象。 这是不允许的, 必须将每个程序集编译为不同的静态对象。
 
-例如：
+例如:
 
-    --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
+```
+--assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
+```
 
 此示例尝试生成包含两个程序集`MyBinary`(`Assembly1.dll`和`Assembly2.dll`) 的静态对象 (), 这是不允许的。
 
@@ -619,7 +623,9 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件来构建�
 
 例如, 这些值将触发此错误:
 
-    --assembly-build-target:Assembly1.dll=staticobject=my/path.o
+```
+--assembly-build-target:Assembly1.dll=staticobject=my/path.o
+```
 
 由于`my/path.o`目录分隔符字符, 不是有效的文件名。
 
@@ -1143,7 +1149,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="mt1108-could-not-find-developer-tools-for-this-xx-yy-device"></a>MT1108:找不到此 XX (YY) 设备的开发人员工具。
 
-Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。   此文件是 Xcode 的一部分, 并且通常与用于构建的 SDK 相对应, 位于<tt>Xcode/内容/开发人员/iPhoneOS/DeviceSupport/DeveloperDiskImage</tt>。
+Mtouch 中的一些操作需要`DeveloperDiskImage.dmg`文件存在。   此文件是 Xcode 的一部分, 通常与用于构建的 SDK 相对应, 在中`Xcode.app/Contents/Developer/iPhoneOS.platform/DeviceSupport/VERSION/DeveloperDiskImage.dmg`。
 
 发生此错误的原因可能是您没有与您连接的设备相匹配的 DeveloperDiskImage。
 
@@ -1254,7 +1260,7 @@ Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。  
 若要尝试修复此问题, 请执行以下操作:
 
 * 在 Xcode 中使用一次模拟器。
-* 使用--SDK <version>传递显式 SDK 版本。
+* 使用--SDK \<版本 > 传递显式 SDK 版本。
 * 重新安装 Xcode。
 
 <a name="MT1221" />
@@ -1425,7 +1431,9 @@ Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。  
 
 可以使用终端中的`file`命令验证库的格式:
 
-    file -arch all -l /path/to/library.dylib
+```
+file -arch all -l /path/to/library.dylib
+```
 
 <a name="MT1601" />
 
@@ -1437,7 +1445,9 @@ Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。  
 
 可以使用终端中的`file`命令验证库的格式:
 
-    file -arch all -l /path/to/library.a
+```
+file -arch all -l /path/to/library.a
+```
 
 <a name="MT1602" />
 
@@ -1449,7 +1459,9 @@ Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。  
 
 可以使用终端中的`file`命令验证库的格式:
 
-    file -arch all -l /path/to/library.dylib
+```
+file -arch all -l /path/to/library.dylib
+```
 
 <a name="MT1603" />
 
@@ -1461,7 +1473,9 @@ Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。  
 
 可以使用终端中的`file`命令验证 fat 存档的格式:
 
-    file -arch all -l /path/to/file
+```
+file -arch all -l /path/to/file
+```
 
 <a name="MT1604" />
 
@@ -1473,7 +1487,9 @@ Mtouch 中的一些操作要求存在<tt>DeveloperDiskImage. dmg</tt>文件。  
 
 可以使用终端中的`file`命令验证文件的格式:
 
-    file -arch all -l /path/to/file
+```
+file -arch all -l /path/to/file
+```
 
 ## <a name="mt2xxx-linker-error-messages"></a>MT2xxx:链接器错误消息
 
@@ -2225,7 +2241,9 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 * 第三方绑定需要框架, 但绑定不会在其`[LinkWith]`属性中指定此项。 解决方案
   - 如果你是第三方绑定的作者, 或有权访问其源, 请修改绑定的`[LinkWith]`属性, 使其包含所需的框架:
 
-            [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
+    ```csharp
+    [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
+    ```
 
   - 如果无法修改第三方绑定, 可以通过传递`-gcc_flags '-framework SystemFramework'`到来`mtouch`手动链接所需的框架 (这是通过在项目的 "iOS 生成" 选项页中修改其他 mtouch 参数来完成的。 请记住, 必须针对每个项目配置完成此操作)。
 * 在某些情况下, 托管绑定由多个本机库组成, 它们必须包含在绑定中。 每个绑定项目中可以有多个本机库, 因此解决方案只是将所有必需的本机库添加到绑定项目。</li>
@@ -2235,9 +2253,11 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 * 第三方绑定/库是使用C++生成的, 但是绑定不在其`[LinkWith]`属性中指定此项。 这通常相当容易识别, 因为符号有损坏C++的符号 (一个常见示例是`__ZNKSt9exception4whatEv`)。
   - 如果你是第三方绑定的作者, 或有权访问其源, 请修改绑定的`[LinkWith]`属性以设置该`IsCxx`标志:
 
-            [LinkWith ("mylib.a", IsCxx = true)]
+    ```csharp
+    [LinkWith ("mylib.a", IsCxx = true)]
+    ```
 
-  - 如果无法修改第三方绑定, 或者是使用第三方库手动链接, 则可以通过传递<code>-cxx</code>到 mtouch 来设置等效标志 (这是通过在项目的 "iOS 生成" 选项页中修改其他 mtouch 参数来完成的. 请记住, 必须针对每个项目配置完成此操作)。
+  - 如果无法修改第三方绑定, 或者是使用第三方库手动链接, 则可以通过传递`-cxx`到 mtouch 来设置等效标志 (这是通过在项目的 "iOS 生成" 选项页中修改其他 mtouch 参数来完成的. 请记住, 必须针对每个项目配置完成此操作)。
 
 <a name="MT5211" />
 
@@ -2245,14 +2265,16 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 
 当本机链接器找不到某个位置引用的目标-C 类时, 会发生这种情况。 出现这种情况的原因有以下几种: 与用于[MT5210](#MT5210)和此外, 还包括:
 
-* 第三方绑定绑定了目标 C 协议, 但未使用其 api 定义中的<code>[Protocol]</code>属性对其进行批注。 解决方案
+* 第三方绑定绑定了目标 C 协议, 但未使用其 api 定义中的`[Protocol]`属性对其进行批注。 解决方案
   - 添加缺少`[Protocol]`的属性:
 
-              [BaseType (typeof (NSObject))]
-              [Protocol] // Add this
-              public interface MyProtocol
-              {
-              }
+    ```csharp
+    [BaseType (typeof (NSObject))]
+    [Protocol] // Add this
+    public interface MyProtocol
+    {
+    }
+    ```
 
 <a name="MT5212" />
 
@@ -2265,48 +2287,54 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 * 本机库未正确生成, 并且包含相同的符号。
   你可以通过使用终端中的以下命令集来确认这一点 (根据你所构建的体系结构, 将 i386 替换为 x86_64/armv7/armv7s/arm64):
 
-        # Native libraries are usually fat libraries, containing binary code for
-        # several architectures in the same file. First we extract the binary
-        # code for the architecture we're interested in.
-        lipo libNative.a -thin i386 -output libNative.i386.a
+  ```
+  # Native libraries are usually fat libraries, containing binary code for
+  # several architectures in the same file. First we extract the binary
+  # code for the architecture we're interested in.
+  lipo libNative.a -thin i386 -output libNative.i386.a
 
-        # Now query the native library for the duplicated symbol.
-        nm libNative.i386.a | fgrep 'SYMBOL'
+  # Now query the native library for the duplicated symbol.
+  nm libNative.i386.a | fgrep 'SYMBOL'
 
-        # You can also list the object files inside the native library.
-        # In most cases this will reveal duplicated object files.
-        ar -t libNative.i386.a
+  # You can also list the object files inside the native library.
+  # In most cases this will reveal duplicated object files.
+  ar -t libNative.i386.a
+  ```
 
   有几种可能的解决方法:
 
   - 请求本机库的提供程序将其修复, 并提供更新的版本。
   - 通过删除额外的对象文件来自行修复此问题 (这仅适用于问题是重复的对象文件)
 
-            # Find out if the library is a fat library, and which
-            # architectures it contains.
-            lipo -info libNative.a
+  ```
+  # Find out if the library is a fat library, and which
+  # architectures it contains.
+  lipo -info libNative.a
 
-            # Extract each architecture (i386/x86_64/armv7/armv7s/arm64) to a separate file
-            lipo libNative.a -thin ARCH -output libNative.ARCH.a
+  # Extract each architecture (i386/x86_64/armv7/armv7s/arm64) to a separate file
+  lipo libNative.a -thin ARCH -output libNative.ARCH.a
 
-            # Extract the object files for the offending architecture
-            # This will remove the duplicates by overwriting them
-            # (since they have the same filename)
-            mkdir -p ARCH
-            cd ARCH
-            ar -x ../libNative.ARCH.a
+  # Extract the object files for the offending architecture
+  # This will remove the duplicates by overwriting them
+  # (since they have the same filename)
+  mkdir -p ARCH
+  cd ARCH
+  ar -x ../libNative.ARCH.a
 
-            # Reassemble the object files in an .a
-            ar -r ../libNative.ARCH.a *.o
-            cd ..
+  # Reassemble the object files in an .a
+  ar -r ../libNative.ARCH.a *.o
+  cd ..
 
-            # Reassemble the fat library
-            lipo *.a -create -output libNative.a
+  # Reassemble the fat library
+  lipo *.a -create -output libNative.a
+  ```
 
   - 请求链接器删除未使用的代码。 如果满足以下所有条件, 则 Xamarin 将自动执行此操作:
     - 所有第三方绑定的`[LinkWith]`属性都已启用 SmartLink:
 
-            [assembly: LinkWith ("libNative.a", SmartLink = true)]
+      ```csharp
+      [assembly: LinkWith ("libNative.a", SmartLink = true)]
+      ```
 
     - " `-gcc_flags`否" 传递到 mtouch (在项目的 iOS 生成选项的 "其他 mtouch 参数" 字段中)。
     - 还可以通过将添加`-gcc_flags -dead_strip`到项目的 iOS 生成选项中的其他 mtouch 参数, 直接请求链接器删除未使用的代码。
@@ -2321,7 +2349,7 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214:本机链接失败, 未定义符号: *。 此符号引用了托管成员 *。 请验证是否引用了所有必需的框架, 并链接了本机库。
 
-当托管代码包含对不存在的本机方法的 P/Invoke 时, 会报告此错误。 例如:
+当托管代码包含对不存在的本机方法的 P/Invoke 时, 会报告此错误。 例如：
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2751,7 +2779,7 @@ Xamarin iOS 项目经常会动态引用本机符号, 这意味着本机链接器
 - dict
 - bool
 - 实数
-- 整数
+- integer
 - date
 - 数据
 

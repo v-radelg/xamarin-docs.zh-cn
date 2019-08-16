@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 40a44b2748b29b21a1456c55cb75514f18506dd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648572"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527073"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的图像
 
@@ -204,7 +204,7 @@ public class ImageResourceExtension : IMarkupExtension
 
 #### <a name="debugging-code"></a>调试代码
 
-因为它是有时难以理解为什么不加载特定的图像资源，可以暂时将以下调试代码添加到应用程序以帮助确认正确配置了资源。 它会输出所有已知的资源嵌入到给定的程序集<span class="UIItem">控制台</span>来帮助调试加载问题的资源。
+因为它是有时难以理解为什么不加载特定的图像资源，可以暂时将以下调试代码添加到应用程序以帮助确认正确配置了资源。 它会输出所有已知的资源嵌入到给定的程序集**控制台**来帮助调试加载问题的资源。
 
 ```csharp
 using System.Reflection;

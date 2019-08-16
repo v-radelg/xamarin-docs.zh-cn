@@ -6,30 +6,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7f68695b4fa6b8abb7938dd96794eb1d0d1d13a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 274c441e0507f100697fc153a9f748de1bce4cf3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643957"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526066"
 ---
 # <a name="touch-in-android"></a>Android 中的触控
 
 与 iOS 非常类似, Android 会创建一个对象, 该对象保存有关用户与屏幕&ndash; `Android.View.MotionEvent`上的用户物理交互的数据。 此对象保存数据, 如执行的操作、触控发生的位置、应用的压力等。`MotionEvent`对象将移动细分为以下值:
 
--  描述运动类型的操作代码, 如初次触摸、触摸屏上移动或触摸结束。
+- 描述运动类型的操作代码, 如初次触摸、触摸屏上移动或触摸结束。
 
--  一组轴值, 用于描述`MotionEvent`和其他移动属性 (例如触摸正在发生的位置、触控发生的时间以及使用的压力)。
+- 一组轴值, 用于描述`MotionEvent`和其他移动属性 (例如触摸正在发生的位置、触控发生的时间以及使用的压力)。
    轴值可能因设备而异, 因此上一个列表不描述所有轴值。
 
 
 `MotionEvent`对象将被传递到应用程序中的适当方法。 Xamarin Android 应用程序响应触控事件有三种方式:
 
--  *将事件处理程序分配`View.Touch`到*- `Android.Views.View`类有一个`EventHandler<View.TouchEventArgs>`应用程序可以为其分配处理程序。 这是典型的 .NET 行为。
+- *将事件处理程序分配`View.Touch`到*- `Android.Views.View`类有一个`EventHandler<View.TouchEventArgs>`应用程序可以为其分配处理程序。 这是典型的 .NET 行为。
 
--  *实现`View.IOnTouchListener`*  -可以使用视图将此接口的实例分配给视图对象。 `SetOnListener`付款方式.这在功能上等效于向`View.Touch`事件分配事件处理程序。 如果有一些公共或共享的逻辑在触摸时可能需要许多不同的视图, 则创建类并实现此方法比为每个视图分配自己的事件处理程序更有效。
+- *实现`View.IOnTouchListener`*  -可以使用视图将此接口的实例分配给视图对象。 `SetOnListener`付款方式.这在功能上等效于向`View.Touch`事件分配事件处理程序。 如果有一些公共或共享的逻辑在触摸时可能需要许多不同的视图, 则创建类并实现此方法比为每个视图分配自己的事件处理程序更有效。
 
--  *替代`View.OnTouchEvent`*  -Android 子类`Android.Views.View`中的所有视图。 查看视图时, Android 将调用`OnTouchEvent` , 并将`MotionEvent`对象作为参数传递。
+- *替代`View.OnTouchEvent`*  -Android 子类`Android.Views.View`中的所有视图。 查看视图时, Android 将调用`OnTouchEvent` , 并将`MotionEvent`对象作为参数传递。
 
 
 > [!NOTE]
@@ -67,17 +67,17 @@ public override bool OnTouchEvent(MotionEvent e)
 当的实例`GestureDetector`标识感兴趣的手势时, 它将通过引发事件或通过`GestureDetector.IOnGestureListener`提供的回调通知活动或应用程序。
 此接口为各种手势提供六种方法:
 
--  *OnDown* -当出现点击但未释放时调用。
+- *OnDown* -当出现点击但未释放时调用。
 
--  *OnFling* -当发生 fling 时调用, 并在触发事件的开始和结束触控上提供数据。
+- *OnFling* -当发生 fling 时调用, 并在触发事件的开始和结束触控上提供数据。
 
--  *OnLongPress* -在长按下时调用。
+- *OnLongPress* -在长按下时调用。
 
--  *OnScroll* -发生滚动事件时调用。
+- *OnScroll* -发生滚动事件时调用。
 
--  *OnShowPress* -在 OnDown 发生之后调用, 并且尚未执行移动或释放事件。
+- *OnShowPress* -在 OnDown 发生之后调用, 并且尚未执行移动或释放事件。
 
--  *OnSingleTapUp* -在出现单次点击时调用。
+- *OnSingleTapUp* -在出现单次点击时调用。
 
 
 在许多情况下, 应用程序可能只对笔势的子集感兴趣。 在这种情况下, 应用程序应扩展类 GestureDetector, 并覆盖与它们感兴趣的事件相对应的方法。

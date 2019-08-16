@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2018
-ms.openlocfilehash: ee96288cee83e3a073da4e12aaa4332e38beb804
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2dfa88ae349a792c524b17a25d454dae86575756
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649275"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521378"
 ---
 # <a name="backgrounding-in-xamarinios"></a>Xamarin 中的后台处理
 
@@ -26,11 +26,11 @@ _后台处理或后台处理是让应用程序在后台中执行任务的过程�
 
 ## <a name="contents"></a>内容
 
-1.  [iOS 中的后台处理简介](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)
-1.  [应用程序生命周期演示](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)
-1.  [iOS 后台处理技术](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)
-1.  [演练：iOS 中的后台处理](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
-1.  [iOS 后台处理指南](~/ios/app-fundamentals/backgrounding/ios-backgrounding-guidance.md)
+1. [iOS 中的后台处理简介](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)
+1. [应用程序生命周期演示](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)
+1. [iOS 后台处理技术](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)
+1. [演练：iOS 中的后台处理](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+1. [iOS 后台处理指南](~/ios/app-fundamentals/backgrounding/ios-backgrounding-guidance.md)
 
 ## <a name="summary"></a>总结
 

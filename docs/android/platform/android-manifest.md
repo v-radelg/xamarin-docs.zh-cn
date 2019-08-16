@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 4a5b0e7d45878dcaa0f3e97411c2ef83d2e26c5a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510697"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524692"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 清单
 
@@ -82,7 +82,7 @@ public class MyActivity : Activity
 ### <a name="activity-title-bar"></a>活动标题栏
 
 默认情况下, 当应用程序运行时, 它将为应用程序提供标题栏。 用于此的值为[`/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大多数情况下, 此值将与类名称不同。 若要在标题栏上指定应用的标签, 请使用[`Label`](xref:Android.App.ActivityAttribute.Label)属性。
-例如: 
+例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -101,7 +101,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>从应用程序选择器可启动
 
-默认情况下, 你的活动不会显示在 Android 的 "应用程序启动器" 屏幕中。 这是因为您的应用程序可能有很多活动, 并且您不希望每个活动都有一个图标。 若要指定哪个应用程序启动器应可启动, 请使用[`MainLauncher`](xref:Android.App.ActivityAttribute.MainLauncher)属性。 例如: 
+默认情况下, 你的活动不会显示在 Android 的 "应用程序启动器" 屏幕中。 这是因为您的应用程序可能有很多活动, 并且您不希望每个活动都有一个图标。 若要指定哪个应用程序启动器应可启动, 请使用[`MainLauncher`](xref:Android.App.ActivityAttribute.MainLauncher)属性。 例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -237,18 +237,18 @@ Android 清单还提供了一种为整个应用程序声明属性的方法。 �
 
 ## <a name="list-of-custom-attributes"></a>自定义属性列表
 
--   [ActivityAttribute](xref:Android.App.ActivityAttribute) :生成[/Manifest/application/activity](https://developer.android.com/guide/topics/manifest/activity-element.html) XML 片段 
--   [ApplicationAttribute](xref:Android.App.ApplicationAttribute) :生成[/Manifest/application](https://developer.android.com/guide/topics/manifest/application-element.html) XML 片段 
--   [InstrumentationAttribute](xref:Android.App.InstrumentationAttribute) :生成[/Manifest/instrumentation](https://developer.android.com/guide/topics/manifest/instrumentation-element.html) XML 片段 
--   [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) :生成[//Intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML 片段 
--   [MetaDataAttribute](xref:Android.App.MetaDataAttribute) :生成[//Meta-data](https://developer.android.com/guide/topics/manifest/meta-data-element.html) XML 片段 
--   [PermissionAttribute](xref:Android.App.PermissionAttribute) :生成[//Permission](https://developer.android.com/guide/topics/manifest/permission-element.html) XML 片段 
--   [PermissionGroupAttribute](xref:Android.App.PermissionGroupAttribute) :生成[//Permission-group](https://developer.android.com/guide/topics/manifest/permission-group-element.html) XML 片段 
--   [PermissionTreeAttribute](xref:Android.App.PermissionTreeAttribute) :生成[//Permission-tree](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML 片段 
--   [ServiceAttribute](xref:Android.App.ServiceAttribute) :生成[/Manifest/application/service](https://developer.android.com/guide/topics/manifest/service-element.html) XML 片段 
--   [UsesLibraryAttribute](xref:Android.App.UsesLibraryAttribute) :生成[/Manifest/application/uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) XML 片段 
--   [UsesPermissionAttribute](xref:Android.App.UsesPermissionAttribute) :生成[/Manifest/uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML 片段 
--   [BroadcastReceiverAttribute](xref:Android.Content.BroadcastReceiverAttribute) :生成[/Manifest/application/receiver](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML 片段 
--   [ContentProviderAttribute](xref:Android.Content.ContentProviderAttribute) :生成[/Manifest/application/provider](https://developer.android.com/guide/topics/manifest/provider-element.html) XML 片段 
--   [GrantUriPermissionAttribute](xref:Android.Content.GrantUriPermissionAttribute) :生成[/Manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML 片段
+- [ActivityAttribute](xref:Android.App.ActivityAttribute) :生成[/Manifest/application/activity](https://developer.android.com/guide/topics/manifest/activity-element.html) XML 片段 
+- [ApplicationAttribute](xref:Android.App.ApplicationAttribute) :生成[/Manifest/application](https://developer.android.com/guide/topics/manifest/application-element.html) XML 片段 
+- [InstrumentationAttribute](xref:Android.App.InstrumentationAttribute) :生成[/Manifest/instrumentation](https://developer.android.com/guide/topics/manifest/instrumentation-element.html) XML 片段 
+- [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) :生成[//Intent-filter](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) XML 片段 
+- [MetaDataAttribute](xref:Android.App.MetaDataAttribute) :生成[//Meta-data](https://developer.android.com/guide/topics/manifest/meta-data-element.html) XML 片段 
+- [PermissionAttribute](xref:Android.App.PermissionAttribute) :生成[//Permission](https://developer.android.com/guide/topics/manifest/permission-element.html) XML 片段 
+- [PermissionGroupAttribute](xref:Android.App.PermissionGroupAttribute) :生成[//Permission-group](https://developer.android.com/guide/topics/manifest/permission-group-element.html) XML 片段 
+- [PermissionTreeAttribute](xref:Android.App.PermissionTreeAttribute) :生成[//Permission-tree](https://developer.android.com/guide/topics/manifest/permission-tree-element.html) XML 片段 
+- [ServiceAttribute](xref:Android.App.ServiceAttribute) :生成[/Manifest/application/service](https://developer.android.com/guide/topics/manifest/service-element.html) XML 片段 
+- [UsesLibraryAttribute](xref:Android.App.UsesLibraryAttribute) :生成[/Manifest/application/uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) XML 片段 
+- [UsesPermissionAttribute](xref:Android.App.UsesPermissionAttribute) :生成[/Manifest/uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) XML 片段 
+- [BroadcastReceiverAttribute](xref:Android.Content.BroadcastReceiverAttribute) :生成[/Manifest/application/receiver](https://developer.android.com/guide/topics/manifest/receiver-element.html) XML 片段 
+- [ContentProviderAttribute](xref:Android.Content.ContentProviderAttribute) :生成[/Manifest/application/provider](https://developer.android.com/guide/topics/manifest/provider-element.html) XML 片段 
+- [GrantUriPermissionAttribute](xref:Android.Content.GrantUriPermissionAttribute) :生成[/Manifest/application/provider/grant-uri-permission](https://developer.android.com/guide/topics/manifest/grant-uri-permission-element.html) XML 片段
 

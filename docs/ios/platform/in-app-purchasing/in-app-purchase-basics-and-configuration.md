@@ -1,131 +1,131 @@
 ---
-title: 应用内购买基本知识和配置 Xamarin.iOS
-description: 本文档介绍了在 Xamarin.iOS 中，讨论有关规则、 配置和 iTunes Connect 的相关信息的应用内购买。
+title: Xamarin 中的应用内购买基础知识和配置
+description: 本文档介绍了 Xamarin 中的应用内购买, 并讨论了有关规则、配置和 iTunes Connect 的相关信息。
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c8e08c5393bed1f96baa7c1bced85eed3d2d0c6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61406810"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527914"
 ---
-# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>应用内购买基本知识和配置 Xamarin.iOS
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的应用内购买基础知识和配置
 
-实现应用内购买需要应用程序以使用设备上的 StoreKit API。 StoreKit 管理与 Apple 的 iTunes 服务器以获取产品信息和执行事务的所有通信。 必须配置预配配置文件应用内购买并且必须在 iTunes Connect 中输入产品信息。
+实现应用内购买要求应用程序在设备上使用 StoreKit API。 StoreKit 管理与 Apple iTunes 服务器的所有通信, 以获取产品信息和执行事务。 必须为应用内购买配置配置文件, 并且必须在 iTunes Connect 中输入产品信息。
 
- [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit 管理与 Apple 的所有通信，在此图中所示")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit 管理与 Apple 的所有通信, 如此图所示")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
-使用应用商店提供应用内购买，需要以下安装和配置：
+使用应用商店提供应用内购买需要以下设置和配置:
 
--  **在 iTunes Connect** – 配置要销售的产品和设置沙盒用户帐户来测试购买。 您必须还提供你的银行和税务信息到 Apple 以便它们可以汇出收集代表你的资金。
--   **iOS 设置门户**– 创建捆绑包标识符并启用应用商店应用的访问权限。
--  **存储工具包**– 将代码添加到您的应用程序，用于显示产品、 购买产品和还原的事务。
--  **自定义代码**– 若要将跟踪通过客户的购买并提供已购买的服务或产品。 您可能还需要实现服务器端进程，以验证回执，如果您的产品包含的服务器 （例如书籍和杂志期刊） 从下载的内容。
+- **ITunes Connect** –配置产品以销售和设置沙盒用户帐户以测试购买。 你还必须向 Apple 提供银行和税务信息, 以便他们能够为你代表你收集的资金。
+- **IOS 预配门户**–创建捆绑标识符, 并为应用启用应用商店访问。
+- **应用商店工具包**–将代码添加到应用, 以显示产品、购买产品和还原交易。
+- **自定义代码**-跟踪客户进行的购买, 并提供他们购买的产品或服务。 如果你的产品包含从服务器下载的内容 (如书籍和杂志问题), 则你可能还需要实施服务器端过程来验证回执。
 
 
-有两个存储工具包"服务器环境":
+有两个存储包 "服务器环境":
 
--  **生产**– 具有真实的货币交易的事务。 仅可通过已提交并批准由 Apple 的应用程序访问。 应用内购买产品还必须将审核和批准之前它们可在生产环境。
--  **沙盒**– 你测试时。 产品位于以下位置 （审批过程仅适用于生产环境） 创建后立即。 在沙盒中的事务需要测试用户 (不是实际的 Apple Id) 来执行事务。
+- **生产**-具有真实费用的交易。 仅可通过 Apple 提交和批准的应用程序进行访问。 在生产环境中提供应用内购买产品之前, 还必须对其进行审核和批准。
+- **沙盒**–测试发生的位置。 产品在创建后立即可用 (审批过程仅适用于生产环境)。 沙盒中的事务需要测试用户 (而非实际的 Apple Id) 来执行事务。
 
 ## <a name="in-app-purchase-rules"></a>应用内购买规则
 
-不能接受其他形式的数字产品或服务的付款到你的应用，也不提一下或指用户从应用内。 这意味着您不能接受信用卡或 PayPal 应用内购买时最合适的付款机制。 购买应用外的数字产品的特殊情况，但对于使用在应用中，例如购买书籍在网站上所带来的特定于"登录"，并使用在应用中的"登录"，允许用户访问权限的已购买的书籍。
-运行这种方式的应用程序不能说或链接到外部购买功能 – 开发人员必须进行通信，向其用户以其他方式 （也许是通过电子邮件市场营销或某些其他直接渠道） 此功能。
+你不能在应用中接受数字产品或服务的其他支付形式, 也不会提及它们, 也不能让用户从应用内部获取它们。 这意味着, 在应用内购买时, 不能接受信用卡或 PayPal, 这是最合适的支付机制。 有一种特殊情况用于在应用外购买数字产品, 但在应用程序中使用, 如在与特定 "登录" 相关联的网站上购买书籍, 并使用应用中的 "登录" 功能, 用户可以访问购买的书籍。
+以这种方式运行的应用程序不能提及或链接到外部购买功能, 开发人员必须以其他方式 (可能通过电子邮件营销或某个其他直接渠道) 向其用户传达此功能。
 
-但是，由于不能使用应用内购买为物理商品上，，允许您的情况下使用备用的付款机制 （例如。 信用卡、 PayPal） 从应用中。
+但是, 由于不能对实物货物使用应用内购买, 因此在这种情况下, 可以使用备用支付机制 (例如 信用卡, PayPal)。
 
-Apple 必须审批每个产品之前就上出售 – 名称、 说明和产品的屏幕截图是所必需的审阅。 产品评审时间是应用程序评论的一样。
+Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产品" 的名称、描述和屏幕截图。 产品审查时间与应用程序审阅的时间相同。
 
-不能为您的产品选择任何价格 – 你可能只选择价格层中每个国家/地区/货币的 Apple 支持具有特定值。 在不同的市场中，不能具有不同的价格层。
+不能为产品选择任何价格–您只能选择在 Apple 支持的每个国家/地区内具有特定值的 "价格层"。 不同市场中不能有不同的价格层。
 
 ## <a name="configuration"></a>配置
 
-在编写任何应用程序内购买代码之前必须执行一些设置工作在 iTunes Connect 中的 ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 设置门户 ( [developer.apple.com/iOS](https://developer.apple.com/iOS))。
+编写任何应用内购买代码之前, 必须在 iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 IOS 预配门户 ( [developer.apple.com/iOS](https://developer.apple.com/iOS)) 中执行一些设置工作。
 
-在编写任何代码之前，应完成以下三个步骤：
+编写任何代码之前, 应完成这三个步骤:
 
--  **Apple 开发人员帐户**– 提交到 Apple 银行和税务信息。
--  **iOS 设置门户**– 请确保你的应用具有有效的应用程序 ID (不带星号是通配符 * 中它) 并启用了应用购买中。
--  **iTunes Connect 应用程序管理**– 将产品添加到你的应用程序。
+- **Apple 开发人员帐户**–将银行和税务信息提交到 Apple。
+- **IOS 预配门户**–确保你的应用具有有效的应用 ID (不是包含星号 * 的通配符), 并且已启用应用采购。
+- **ITunes Connect 应用程序管理**–将产品添加到你的应用程序。
 
 
 ### <a name="apple-developer-account"></a>Apple 开发人员帐户
 
-构建和分发免费的应用程序需要在配置很少[iTunes Connect](https://itunesconnect.apple.com)，但要销售付费应用或应用内购买，你需要向 Apple 提供银行和税务信息。 单击**协议、 税款和银行**从主菜单如下所示：
+构建和分发免费应用程序需要在[ITunes Connect](https://itunesconnect.apple.com)中进行极少的配置, 但是, 若要销售付费应用或应用内购买, 要求你向 Apple 提供银行和税务信息。 单击此处显示的主菜单中的 "**协议"、"税款" 和 "银行**":
 
- [![](in-app-purchase-basics-and-configuration-images/image2.png "协议、 税款和银行从主菜单上单击")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "单击主菜单中的协议、税款和银行")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
-开发人员帐户应有**iOS 付费应用程序**协定实际上，此屏幕截图中所示：
+开发人员帐户应具有有效的**IOS 付费应用程序**合同, 如以下屏幕截图所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image3.png "你的开发人员帐户应具有付费应用程序协定有效的 iOS")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "开发人员帐户应具有有效的 iOS 付费应用程序协定")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
-你将不能测试任何 StoreKit 功能，直到有**iOS 付费应用程序**协定 – 在代码中的 StoreKit 调用将会失败直到处理 Apple 你**协定、 税款和银行**信息。
+你将无法测试任何 StoreKit 功能, 除非 Apple 处理你的**合同、税务和银行信息,** 否则代码中的 StoreKit 调用将失败。
 
 ### <a name="ios-provisioning-portal"></a>iOS 预配门户
 
-新应用程序设置**应用 Id**一部分**iOS 设置门户**。 若要创建新的应用 ID，请转到[Member Center 的 iOS 设置门户](https://developer.apple.com/membercenter/index.action)，导航到**证书、 标识符和配置文件**部分中的门户，并单击**标识符**下*iOS 应用*。 然后，单击"+"的顶部右侧以生成新的应用程序 id。
+在**IOS 设置门户**的 "**应用 id** " 部分中设置新应用程序。 若要创建新的应用 ID, 请转到[IOS 设置门户的成员中心](https://developer.apple.com/membercenter/index.action), 导航到门户的 "**证书、标识符和配置文件**" 部分, 然后单击 " *iOS 应用*" 下的 "**标识符**"。 然后, 单击右上方的 "+" 以生成新的应用 ID。
 
 
-用于创建新的窗体**应用 Id**
+用于创建新**应用程序 id**的窗体
 
- 如下所示：
+ 如下所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image4.png "用于创建新应用 Id 的窗体")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "用于创建新应用程序 Id 的窗体")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
-输入内容适合*说明*，因此可以轻松地识别此应用 ID 列表中。 有关*应用 ID 前缀*，选择团队 id。
+输入适用于*说明*的内容, 以便可以轻松地在列表中标识此应用 ID。 对于 "*应用 ID 前缀*", 请选择 "团队 id"。
 
-#### <a name="bundle-identifierapp-id-suffix-format"></a>捆绑包标识符/应用 ID 后缀格式
+#### <a name="bundle-identifierapp-id-suffix-format"></a>捆绑标识符/应用 ID 后缀格式
 
-可以使用您喜欢的任何字符串你**捆绑包标识符**（只要它是在你的帐户中唯一），但 Apple 建议遵循反向 DNS 格式，而不是使用任意字符串。 本文附带的示例应用程序使用 com.xamarin.storekit.testing 捆绑包标识符，但是同样有效使用标识符，例如 my_store_example （即使 Apple 不推荐这么做）。
+你可以使用你喜欢的任何字符串作为**包标识符**(只要它在帐户中是唯一的), 但 Apple 建议你遵循反向 DNS 格式, 而不是使用任何任意字符串。 本文附带的示例应用程序使用 storekit 作为捆绑标识符, 但使用 my_store_example 等标识符 (即使 Apple 不建议这样做) 是相同的。
 
 > [!IMPORTANT]
-> Apple 还允许通配符星号，若要添加到末尾**捆绑包标识符**，以便单个应用 ID 可用于多个应用程序，但是_通配符应用 Id 不能用于 AppPurchase_. 通配符捆绑包标识符可能 com.xamarin.* 示例
+> Apple 还允许将通配符添加到**捆绑标识符**的末尾, 以便单个应用 id 可用于多个应用程序, 但_通配符应用 id 不能用于 AppPurchase 中_。 例如, 通配符捆绑标识符可以是 .com. *
 
 #### <a name="enabling-app-services"></a>启用应用服务
 
-请注意，**应用内购买**将在服务列表中自动启用：
+请注意,**在 "应用内购买**" 将自动在服务列表中启用:
 
- [![](in-app-purchase-basics-and-configuration-images/image5.png "在服务列表中自动启用应用内购买")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "应用内购买将在服务列表中自动启用")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>预配配置文件
 
-通常情况下，选择已设置为应用内购买的应用程序 ID 创建开发和生产预配配置文件。 请参阅[iOS 设备预配](~/ios/get-started/installation/device-provisioning/index.md)并[发布到应用商店](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)指南的详细信息。
+按常规方式创建开发和生产预配配置文件, 选择已为应用内购买设置的应用 ID。 有关详细信息, 请参阅[IOS 设备预配](~/ios/get-started/installation/device-provisioning/index.md)和[发布到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)指南。
 
-## <a name="itunes-connect"></a>在 iTunes Connect
+## <a name="itunes-connect"></a>iTunes 连接
 
-单击**我的应用**在 iTunes Connect 若要创建或编辑的 iOS 应用程序项中。 应用程序概述页如下所示：
+在 iTunes Connect 中单击 **"我的应用**" 以创建或编辑 iOS 应用程序条目。 应用程序概述页如下所示:
 
  [![](in-app-purchase-basics-and-configuration-images/image6.png "应用程序概述页")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
-单击**应用内购买**创建或编辑你销售的产品。 此屏幕截图显示了示例应用已添加的多个产品：
+单击 "**应用内购买**", 创建或编辑要销售的产品。 此屏幕截图显示已添加几个产品的示例应用:
 
- [![](in-app-purchase-basics-and-configuration-images/image7.png "具有多个产品已添加了示例应用程序")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "已添加几个产品的示例应用")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
-添加新产品的过程具有两个步骤：
+添加新产品的过程有两个步骤:
 
-1.   选择产品类型：[![](in-app-purchase-basics-and-configuration-images/image8.png "选择产品类型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   输入产品的属性，包括产品 Id、 定价层和本地化的说明：[![](in-app-purchase-basics-and-configuration-images/image9.png "输入的产品属性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1. 选择产品类型:[![](in-app-purchase-basics-and-configuration-images/image8.png "选择产品类型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2. 输入产品的属性, 包括产品 Id、定价层和本地化说明:[![](in-app-purchase-basics-and-configuration-images/image9.png "输入 products 特性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
-每个应用内购买产品所需的字段如下所述：
+下面介绍了每个应用内购买产品所需的字段:
 
 
 ### <a name="reference-name"></a>引用名称
 
-引用名称不显示给用户;它是供内部使用，并仅出现在 iTunes Connect。
+不会向用户显示引用名称;它供内部使用, 且仅出现在 iTunes Connect 中。
 
 ### <a name="product-id-format"></a>产品 ID 格式
 
-产品标识符只能包含字母数字 (A-Z、 a-z、 0-9)、 下划线 (_) 和句点 （.） 字符。 虽然你标识符，可以使用任何字符串，Apple 建议的反向 DNS 格式。 例如，示例应用程序使用此捆绑包标识符：
+产品标识符只能包含字母数字字符 (A-z、a-z、0-9)、下划线 (_) 和句点 (.) 字符。 尽管可以使用任何字符串作为标识符, 但 Apple 建议使用反向 DNS 格式。 例如, 示例应用程序使用此捆绑标识符:
 
  `com.xamarin.storekit.testing`
 
-因此若要识别应用内购买产品的约定将如下所示：
+因此, 用于标识应用内购买产品的约定如下所示:
 
 ```csharp
 com.xamarin.storekit.testing.consume5credits
@@ -134,67 +134,67 @@ com.xamarin.storekit.testing.sepia
 com.xamarin.storekit.testing.greyscale
 ```
 
-不强制使用此命名约定，只需一个建议，帮助您管理您的产品。 此外，产品标识符都遵循相同的反向 DNS 约定，尽管*无关*到捆绑包标识符并不需要的相同字符串开头。 它仍可以有效地使用标识符如 photo_product_greyscale （即使 Apple 不推荐这么做）。
+此命名约定不是强制性的, 只是一种建议, 可帮助您管理您的产品。 此外, 尽管遵循相同的反向 DNS 约定, 产品标识符与捆绑标识符无关, 不需要以相同的字符串开头。 使用类似于 photo_product_greyscale 的标识符仍然有效 (即使 Apple 不建议这样做)。
 
-产品 ID 不会显示给用户，但它用于引用应用程序代码中的产品。
+产品 ID 不会显示给用户, 而是用于引用应用程序代码中的产品。
 
 ### <a name="product-type"></a>产品类型
 
-有五种类型的应用内购买产品可提供：
+可以提供五种类型的应用内购买产品:
 
-1.  **可使用**– 的使用了，如游戏中播放机可以花费的货币。 如果用户不备份/还原或否则刷新其设备，可使用的事务不会不获取还原 （这会有效地将播放机再次重新一样的优势）。 应用程序代码必须确保提供可使用 item，一旦完成该事务。
-1.  **非易耗型**– 用户拥有一次购买，例如数字杂志问题或游戏级别的产品。
-1.  **自动续订订阅**– 只需像现实世界的杂志订阅，在订阅期结束 Apple 自动再次费用客户和永久或客户之前显式扩展订阅期，取消它。 这是 Newsstand 应用的首选的付款方式 （实际上，应用程序必须支持此付款方法将被批准为 Newsstand 分发）。
-1.  **免费订阅**– 仅可以在 Newsstand 启用应用程序中提供，并允许其设备上的客户访问订阅内容。 免费订阅永不过期。
-1.  **非续订订阅**– 应该用于销售的限时访问静态内容，例如照片存档到一个月的访问。
+1. 可使用– "已用时" 的项, 如播放机可花费的游戏货币。 如果用户执行备份/还原或在其他情况下刷新了其设备, 则也不会还原可使用的事务 (这将有效地为播放机会提供相同的优势)。 在事务完成后, 应用程序代码必须确保提供 "可耗用项"。
+1. **不可耗用**–用户购买后的产品 (如数字杂志问题或游戏级别)。
+1. **自动可续订订阅**–与实际杂志订阅一样, 在订阅期结束时, Apple 会自动向客户收取费用, 并在客户显式取消之前自动向客户收费。 这是 Newsstand 应用的首选付款方式 (事实上, 应用必须支持将此支付方法用于 Newsstand 分发)。
+1. **免费订阅**–只能在已启用 Newsstand 的应用中提供, 并允许客户访问其所有设备上的订阅内容。 免费订阅永不过期。
+1. **非续订订阅**–应该用于出售对静态内容 (例如一个月的照片存档访问权限) 的限时访问。
 
 
- *本文档目前包括仅前两个产品类型 （可使用和非易耗型）。*
+ *本文档当前仅介绍前两种产品类型 (可耗用和不可用)。*
 
  <a name="Price_Tiers" />
 
 ### <a name="price-tiers"></a>价格层
 
-应用商店不允许您选择您的产品可任意价格 – Apple 提供了可供选择的固定的价格层。 价格固定的每个货币和 Apple 保留相对价格调整 （例如，在特定货币和美元之间的相对外汇速率持续更改） 的权利。
+应用商店不允许你为你的产品选择任意价格– Apple 提供了你可以从中选择的固定价格层。 价格以每个货币进行固定, 并且 Apple 保留调整相对价格的权利 (例如, 在特定货币和美国元之间的相对外汇汇率发生了持久更改后)。
 
-Apple 提供了价格矩阵来帮助你选择正确的层所需的货币/价格。 如下所示价格矩阵 (2012 年 8 月) 的一段摘录：
+Apple 提供了一个价格矩阵, 可帮助你选择所需的货币/价格的正确层。 价格矩阵 (2012 年8月) 的摘选如下所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image10.png "价格矩阵 2012 年 8 月的一段摘录")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "2012年8月的价格矩阵摘录")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-在撰写本文时 (2013 年 6 月)，有从 USD 87 层 999.99 美元到 0.99。 定价矩阵显示的价格，你的客户将支付和也的量你将收到来自 Apple – 这是更小其 30%的费用以及本地的任何税款需收集 （请注意，在美国和加拿大的卖家接收 99 c p 70 c 的示例产品，而澳大利亚卖方获得仅 63 c 由于商品&amp;服务税征收的销售价格)。
+撰写本文时 (2013 年6月), 有87层 (从 USD 0.99 到 USD 999.99)。 定价矩阵显示了你的客户将支付的价格, 还显示了你将从 Apple 获得的金额–这少于 30% 的费用, 还需要收集的任何当地税 (请注意, 美国和加拿大卖方收到 99c p 的70c 的示例产品, 而澳大利亚卖方只收到 63c, 因为在销售&amp;价格上征收了 "货物服务税"。
 
-可以在任意时间，包括在将来某个日期生效的计划的价格更改更新您的产品的定价。 此屏幕截图显示如何添加未来日期的价格变化 – 价格将暂时更改从第 1 层为第 3 层年 9 月的月内仅：
+您可以随时更新您的产品的定价, 包括计划在将来的日期生效的价格变化。 此屏幕截图显示了如何添加未来的价格变化–价格在9月的第1层临时更改为第3层:
 
- [![](in-app-purchase-basics-and-configuration-images/image11.png "其中价格将暂时更改从第 1 层为第 3 层年 9 月的月内仅未来日期的价格变化")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "未来的价格变化, 其中价格将从第1层暂时更改为第3个月的第3个月")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
-### <a name="free-products-not-supported"></a>不支持的免费产品
+### <a name="free-products-not-supported"></a>免费产品不受支持
 
-尽管 Apple 提供了 Newsstand 应用特殊免费订阅选项，但不能为任何其他应用内购买类型设置为零 （免费） 的价格。 虽然您可以编辑 (即。 较低) 的促销价格，不能进行应用内购买免费，通过 iTunes Connect。
+尽管 Apple 提供了一个用于 Newsstand 应用的特殊免费订阅选项, 但不能为任何其他应用内采购类型设置零 (免费) 价格。 尽管可以编辑 (即较低) 的销售促销价格, 但无法通过 iTunes Connect 进行应用内购买。
 
 ### <a name="localization"></a>本地化
 
-在 iTunes Connect 中您可以输入任意数量的支持的语言不同的名称和说明文本。 每种语言可以添加/编辑中通过一个弹出窗口：
+在 iTunes Connect 中, 可以为任意数量的受支持的语言输入不同的名称和描述文本。 可以通过弹出窗口在中添加/编辑每种语言:
 
- [![](in-app-purchase-basics-and-configuration-images/image12.png "每种语言可以添加/编辑中通过一个弹出窗口")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "可以通过弹出窗口添加/编辑每种语言")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
- 应用程序中显示的产品信息，请将可供您可以通过 StoreKit 显示本地化的文本。 此外必须本地化的货币显示以显示正确的符号和十进制格式设置 – 文档后面部分中介绍了此格式设置。
+ 当你在应用中显示产品信息时, 可通过 StoreKit 显示本地化的文本。 还必须本地化货币显示以显示正确的符号和小数点格式, 这种格式设置将在此文档的后面部分介绍。
 
 ### <a name="app-store-review"></a>App Store 审核
 
-相同的应用 – 每个产品是由 Apple 前查看允许转上销售。 产品可能拒绝不适当内容中的名称或描述，或 Apple 可能会决定选择的错误的产品类型 （例如。 你已创建书籍或杂志问题但使用的可使用产品类型）。 产品评论可以需要长达应用审核。
+与应用相同–每个产品都是由 Apple 审核的, 然后才允许开始使用。 对于名称或说明中不适当的内容, 可能会拒绝产品, 或者 Apple 可能会决定选择了错误的产品类型 (例如 您已经创建了图书或杂志问题, 但使用的是可使用的产品类型)。 对于应用评审, 产品审查可能需要花费很长时间。
 
-第一次使用应用内购买启用 （无论它是一个新的应用，还是功能已添加到一个现有） 提交应用程序还必须选择某些产品来与它一起提交。 在 iTunes Connect 门户将提示你执行此操作，如以下屏幕截图中所示：
+第一次在应用中启用应用内购买 (无论它是新应用程序还是已将功能添加到现有应用程序) 时, 还必须选择要随其一起提交的产品。 ITunes Connect 门户将提示你执行此操作, 如以下屏幕截图所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image13.png "在 iTunes Connect 门户将提示你提交某些产品也")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect 门户还会提示你还提交一些产品")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    
- 应用程序和应用内购买将查看在一起，以便它们都获得批准在一次 （因此，该应用不会进入已批准的任何产品的商店 ！）。
+ 应用程序和应用内购买将一起进行查看, 因此它们都将立即获得批准 (因此, 在没有任何批准的产品的情况下, 应用程序不会进入存储区!)。
 
-第一个版本通过应用内购买功能已获得批准后，可以添加更多产品并将其提交供随时查看。 您还可以选择将提交与特定的应用内购买产品的新版本使用**版本的详细信息**页，因为在提示符处提供建议。
+在第一版具有应用内购买功能的第一版获得批准后, 可以添加更多产品并随时提交以供查看。 你还可以选择随特定应用内购买产品一起提交新版本, 并在提示时使用**版本详细信息**页。
 
-请参阅[应用商店查看准则](https://developer.apple.com/appstore/guidelines.html)有关详细信息。
+有关详细信息, 请参阅[应用商店查看指南](https://developer.apple.com/appstore/guidelines.html)。
 
- [第 2 部分-存储工具包概述和检索产品信息](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ [第2部分-商店工具包概述和检索产品信息](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)

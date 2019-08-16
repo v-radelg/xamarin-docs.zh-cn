@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646402"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522618"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>使用 Xamarin 自定义 ListView 的外观
 
@@ -164,17 +164,17 @@ Console.WriteLine();
 
 此示例与前面的示例在多种方面有所不同:
 
--  继承自`Activity` , 而`ListActivity`不是。 你可以为任何`ListView`自定义行, 但其他控件也可以包含`Activity`在布局中 (例如标题、按钮或其他用户界面元素)。 此示例在`ListView`上添加一个标题, 以说明。
+- 继承自`Activity` , 而`ListActivity`不是。 你可以为任何`ListView`自定义行, 但其他控件也可以包含`Activity`在布局中 (例如标题、按钮或其他用户界面元素)。 此示例在`ListView`上添加一个标题, 以说明。
 
--  需要屏幕的 MAIN.AXML 布局文件;在前面的示例中`ListActivity` , 不需要布局文件。 此 main.axml 包含一个`ListView`控件声明。
+- 需要屏幕的 MAIN.AXML 布局文件;在前面的示例中`ListActivity` , 不需要布局文件。 此 main.axml 包含一个`ListView`控件声明。
 
--  需要使用 MAIN.AXML 布局文件来呈现每一行。 此 MAIN.AXML 文件包含具有自定义字体和颜色设置的文本和图像控件。
+- 需要使用 MAIN.AXML 布局文件来呈现每一行。 此 MAIN.AXML 文件包含具有自定义字体和颜色设置的文本和图像控件。
 
--  使用可选的自定义选择器 XML 文件来设置选定行的外观。
+- 使用可选的自定义选择器 XML 文件来设置选定行的外观。
 
--  `Adapter` 实现`GetView`从重写中返回自定义布局。
+- `Adapter` 实现`GetView`从重写中返回自定义布局。
 
--  `ItemClick`必须以不同的方式声明 (将事件处理程序`ListView.ItemClick`附加到, 而`OnListItemClick`不`ListActivity`是中的重写)。
+- `ItemClick`必须以不同的方式声明 (将事件处理程序`ListView.ItemClick`附加到, 而`OnListItemClick`不`ListActivity`是中的重写)。
 
 
 下面将详细介绍这些更改, 从创建活动的视图和自定义行视图开始, 然后覆盖对适配器和活动的修改以呈现这些更改。

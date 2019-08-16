@@ -1,154 +1,154 @@
 ---
 title: 结合使用 Jenkins 和 Xamarin
-description: 本文档介绍如何使用 Jenkins 实现与 Xamarin 应用程序的持续集成。 它介绍如何安装、 配置和使用 Jenkins。
+description: 本文档介绍了如何使用 Jenkins 与 Xamarin 应用程序进行持续集成。 它讨论了如何安装、配置和使用 Jenkins。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e6a75fa3c4c63e8dea402c6761f8ef753908540
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d44e7232529386b7cb6b3db5fbb8bc4a285972fb
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61047485"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529110"
 ---
 # <a name="using-jenkins-with-xamarin"></a>结合使用 Jenkins 和 Xamarin
 
-_本指南说明如何设置 Jenkins 持续集成服务器，并自动执行编译使用 Xamarin 创建的移动应用程序。它介绍如何在 OS X 上安装 Jenkins，其进行配置，并将作业设置为编译 Xamarin.iOS 和 Xamarin.Android 应用程序时更改会提交到源代码管理系统。_
+_本指南说明如何将 Jenkins 设置为持续集成服务器, 并自动编译使用 Xamarin 创建的移动应用程序。它介绍了如何在 OS X 上安装 Jenkins, 如何对其进行配置, 以及如何设置在将更改提交到源代码管理系统时编译 Xamarin 和 Xamarin Android 应用程序的作业。_
 
-[与 Xamarin 持续集成简介](~/tools/ci/intro-to-ci.md)引入了有用的软件开发做法是提供早期警告的已损坏的或不兼容的代码的持续集成。 CI 允许开发人员解决问题和问题出现，并在部署的合适的状态中保留该软件。 本演练介绍如何结合使用这两个文档中的内容。
+[与 Xamarin 持续集成的简介](~/tools/ci/intro-to-ci.md)引入了持续集成作为一种有用的软件开发方案, 该方案可提供中断或不兼容代码的早期警告。 CI 使开发人员能够在出现问题时解决问题和问题, 并使软件处于适当的部署状态。 本演练介绍如何将这两个文档中的内容一起使用。
 
-本指南演示如何在运行 OS X 的专用计算机上安装 Jenkins 并将其配置为在计算机启动时自动运行。 安装 Jenkins 后，我们将安装更多插件以支持 MS Build。 Jenkins 在现成支持 Git。 如果 TFS 用于源代码管理，还必须安装其他插件和命令行实用程序。
+本指南演示如何在运行 OS X 的专用计算机上安装 Jenkins, 并将其配置为在计算机启动时自动运行。 安装 Jenkins 后, 我们将安装其他插件以支持 MS Build。 Jenkins 支持现成的 Git。 如果 TFS 正在用于源代码管理, 则还必须安装其他插件和命令行实用工具。
 
-配置 Jenkins 并安装了任何必要的插件之后, 我们将创建一个或多个作业，以编译 Xamarin.Android 和 Xamarin.iOS 项目。 作业是一系列步骤和执行一些工作所需的元数据。 作业通常包括以下：
+配置 Jenkins 并安装任何所需插件后, 我们将创建一个或多个作业以编译 Xamarin 和 Xamarin iOS 项目。 作业是执行一些工作所需的步骤和元数据的集合。 作业通常包括以下内容:
 
-- **源代码管理 (SCM)** – 这是包含有关如何连接到源代码管理和要检索的文件信息的元数据条目的 Jenkins 配置文件中。
-- **触发器**– 使用触发器来启动基于特定的操作，例如当开发人员提交到源代码存储库更改的作业。
-- **构建说明**– 这是一个插件或将编译的源代码并生成可在移动设备安装的二进制文件的脚本。
-- **可选的生成操作**– 这可能包括运行单元测试，签署代码的代码执行静态分析或启动另一个作业来执行其他生成相关的工作。
-- **通知**– 作业可能会发送出某种类型的生成的状态通知。
-- **安全**– 尽管是可选的强烈建议还启用 Jenkins 安全功能。
+- **源代码管理 (SCM)** –这是 Jenkins 配置文件中的元数据条目, 其中包含有关如何连接到源代码管理和要检索的文件的信息。
+- **触发器**–触发器用于基于特定操作启动作业, 例如当开发人员将更改提交到源代码存储库时。
+- **生成说明**-这是一个插件或脚本, 它将编译源代码并生成可以安装在移动设备上的二进制文件。
+- **可选的生成操作**-这可能包括运行单元测试、对代码执行静态分析、签名代码或启动其他作业来执行其他与生成相关的工作。
+- **通知**-作业可以发送有关生成状态的某种通知。
+- **安全性**–尽管是可选的, 但强烈建议同时启用 Jenkins 安全功能。
 
-本指南将指导如何设置 Jenkins 服务器涵盖每个点。 它的结束时，我们应该充分了解如何设置和配置 Jenkins 以我们 Xamarin 移动项目中创建 IPA 和 APK。
+本指南将指导如何设置涵盖每个点的 Jenkins 服务器。 最后, 我们应该非常了解如何设置和配置 Jenkins, 以便为 Xamarin mobile 项目创建 IPA 和 APK。
 
 ## <a name="requirements"></a>要求
 
-理想的生成服务器是专用于生成和可能测试应用程序的唯一目的的独立计算机。 在专用的计算机可确保项目可能需要其他角色 （例如，web 服务器） 的切勿弄脏生成。 例如，如果生成服务器还充当 web 服务器，web 服务器可能需要一些公用库的冲突版本。 由于此冲突的 web 服务器可能无法正常运行或 Jenkins 可能创建部署到用户时不起作用的生成。
+理想的生成服务器是专门用于构建和测试应用程序的唯一目的的独立计算机。 专用计算机可确保其他角色 (如 web 服务器) 可能需要的项目不会污染生成。 例如, 如果生成服务器也充当 web 服务器, 则 web 服务器可能需要某些公用库的冲突版本。 由于此冲突, web 服务器可能无法正常工作, 或者 Jenkins 可能会创建部署到用户时不工作的生成。
 
-Xamarin 移动应用的生成服务器设置非常类似的开发人员的工作站。 它具有用户帐户中的 Jenkins，Visual Studio for Mac，并将安装 Xamarin.iOS 和 Xamarin.Android。 必须也安装的所有代码签名证书时，预配配置文件和密钥存储。 *通常生成服务器的用户帐户是独立于开发人员帐户-请务必安装和配置所有软件、 密钥和证书时使用的生成服务器用户帐户登录。*
+Xamarin 移动应用生成服务器的设置与开发人员工作站非常类似。 它有一个用户帐户, 将在该帐户中安装 Jenkins、Visual Studio for Mac 和 Xamarin 和 Xamarin。 所有代码签名证书、预配配置文件和密钥存储也必须安装。 *通常, 生成服务器的用户帐户与开发人员帐户不同-请确保在用生成服务器用户帐户登录时安装和配置所有软件、密钥和证书。*
 
-下图说明了所有这些元素的典型的 Jenkins 生成服务器上：
+下图演示了典型的 Jenkins 生成服务器上的所有这些元素:
 
-[![](jenkins-walkthrough-images/image1.png "此图描述了所有这些元素的典型的 Jenkins 生成服务器上")](jenkins-walkthrough-images/image1.png#lightbox)
+[![](jenkins-walkthrough-images/image1.png "此关系图说明典型 Jenkins 生成服务器上的所有这些元素")](jenkins-walkthrough-images/image1.png#lightbox)
 
-iOS 应用程序可以仅生成并在运行 macOS 的计算机上进行签名。 Mac Mini 是合理的成本较低的选项，但能够运行 OS X 10.10 (Yosemite) 的任何计算机或更高版本就足够了。
+iOS 应用程序只能在运行 macOS 的计算机上生成和签名。 Mac 迷你是合理的低成本选项, 但能够运行 OS X 10.10 (Yosemite) 或更高版本的任何计算机都已足够。
 
-如果 TFS 用于源代码管理，你将想要安装[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)。 Team Explorer Everywhere 提供跨平台访问 TFS 在 macOS 中终端。
+如果 TFS 正在用于源代码管理, 则需要安装[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)。 Team Explorer Everywhere 提供对 macOS 中终端的 TFS 的跨平台访问。
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
 ## <a name="installing-jenkins"></a>安装 Jenkins
 
-使用 Jenkins 的第一个任务是安装它。 有三种方法在 OS x： 上运行 Jenkins
+使用 Jenkins 的第一个任务是安装该任务。 有三种方法可以在 OS X 上运行 Jenkins:
 
-- 作为守护程序，在后台运行。
-- 在如 Tomcat、 Jetty 或 JBoss servlet 容器。
-- 作为普通进程用户帐户下运行。
+- 作为后台运行的后台程序。
+- 在 servlet 容器中, 例如 Tomcat、Jetty 或 JBoss。
+- 作为在用户帐户下运行的普通进程。
 
-大多数传统的持续集成应用程序在后台运行，或者作为守护程序 (OS X 上或\*nix) 或 （在 Windows) 上的服务。 ： 必需的没有 GUI 交互并且可以轻松地执行安装程序的生成环境，这是适用于方案。 移动应用还需要密钥库和签名作为后台进程运行 Jenkins 时可能会访问有问题的证书。 由于这些问题，本文档重点介绍第三个方案 – Jenkins 用户帐户下运行生成服务器上。
+大多数传统的持续集成应用程序在后台运行, 既可以作为守护程序 (在 OS \*X 或 nix 上), 也可以作为服务 (在 Windows 上) 运行。 这适用于无需 GUI 交互的情况, 以及可以轻松执行生成环境设置的情况。 移动应用还需要密钥库和签名证书, 当 Jenkins 作为守护程序运行时, 访问时可能会有问题。 由于这些问题, 本文档重点介绍第三种方案, 即在生成服务器上的用户帐户下运行 Jenkins。
 
-Jenkins.App 是方便地安装 Jenkins。 这是一个 AppleScript 包装器，可简化的开始和停止的 Jenkins 服务器。 而不是在 bash shell 中运行，Jenkins 将作为运行，应用程序图标在停靠，如以下屏幕截图中所示：
+Jenkins 是安装 Jenkins 的一种简便方法。 这是简化 Jenkins 服务器的启动和停止的 AppleScript 包装器。 Jenkins 在停靠中使用图标作为应用运行, 而不是在 bash shell 中运行, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image2.png "而不是运行 bash shell 中，Jenkins 将作为运行，应用程序中停靠、 图标，在此屏幕截图所示")](jenkins-walkthrough-images/image2.png#lightbox)
+[![](jenkins-walkthrough-images/image2.png "Jenkins 在停靠中使用图标作为应用运行, 而不是在 bash shell 中运行, 如以下屏幕截图所示")](jenkins-walkthrough-images/image2.png#lightbox)
 
-启动或停止 Jenkins 是启动或停止 Jenkins.App 一样简单。
+启动或停止 Jenkins 非常简单, 只是启动或停止 Jenkins。
 
-若要安装 Jenkins.App，请从下面的屏幕截图中所示的项目的下载页下载最新版本：
+若要安装 Jenkins, 请从项目的下载页下载最新版本, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image3.png "应用程序，请从项目的最新版本下载页上，此屏幕截图中所示的下载")](jenkins-walkthrough-images/image3.png#lightbox)
+[![](jenkins-walkthrough-images/image3.png "应用, 从 \"项目下载\" 页下载最新版本, 如以下屏幕截图所示")](jenkins-walkthrough-images/image3.png#lightbox)
 
-Zip 文件提取到`/Applications`上你的生成服务器和它就像任何其他 OS X 应用程序的启动文件夹。
-第一次启动 Jenkins.App，它将显示一个对话框，通知它将下载 Jenkins:
+将 zip 文件提取到生成`/Applications`服务器上的文件夹, 并像任何其他 OS X 应用程序一样启动它。
+首次启动 Jenkins 时, 它将显示一个对话框, 通知你它将下载 Jenkins:
 
-[![](jenkins-walkthrough-images/image4.png "应用程序，它将显示一个对话框，通知它将下载 Jenkins")](jenkins-walkthrough-images/image4.png#lightbox)
+[![](jenkins-walkthrough-images/image4.png "应用, 它将显示一个对话框, 通知你将下载 Jenkins")](jenkins-walkthrough-images/image4.png#lightbox)
 
-Jenkins.App 完成下载后，它将显示另一个对话框，要求你是否你想要自定义 Jenkins 启动过程，如以下屏幕截图中所示：
+Jenkins 完成下载后, 将显示另一个对话框, 询问你是否要自定义 Jenkins 启动, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image5.png "应用程序已经完成下载，它将显示另一个对话框，要求你是否你想要自定义 Jenkins 启动过程，如以下屏幕截图中所示")](jenkins-walkthrough-images/image5.png#lightbox)
+[![](jenkins-walkthrough-images/image5.png "应用已完成下载, 它将显示另一个对话框, 询问你是否要自定义 Jenkins 启动, 如以下屏幕截图所示")](jenkins-walkthrough-images/image5.png#lightbox)
 
-自定义 Jenkins 是可选的不需要为 Jenkins 将适用于大多数情况下执行每次启动应用时-默认设置。
+自定义 Jenkins 是可选的, 无需在每次启动应用时执行– Jenkins 的默认设置适用于大多数情况。
 
-如果需要自定义 Jenkins，单击**更改默认值**按钮。 这将给你带来两个连续的对话框： 一个 Java 命令行参数的询问，另一个 Jenkins 命令行参数的要求。 以下两个屏幕截图显示这些两个对话框：
+如果需要自定义 Jenkins, 请单击 "**更改默认值**" 按钮。 这会显示两个连续的对话框: 一个对话框要求提供 Java 命令行参数, 另一个对话框要求提供 Jenkins 命令行参数。 以下两个屏幕截图显示了这两个对话框:
 
-[![](jenkins-walkthrough-images/image6.png "此屏幕截图显示对话框")](jenkins-walkthrough-images/image6.png#lightbox)
+[![](jenkins-walkthrough-images/image6.png "此屏幕截图显示了对话框")](jenkins-walkthrough-images/image6.png#lightbox)
 
-[![](jenkins-walkthrough-images/image7.png "此屏幕截图显示对话框")](jenkins-walkthrough-images/image7.png#lightbox)
+[![](jenkins-walkthrough-images/image7.png "此屏幕截图显示了对话框")](jenkins-walkthrough-images/image7.png#lightbox)
 
-后运行 Jenkins，你可能想要将其设置为登录名项，以便它将开始每次中的用户登录到计算机。 您可以执行此操作通过右键单击停靠面板中的 Jenkins 图标，然后选择**选项...> 在登录时打开**，如以下屏幕截图中所示：
+Jenkins 运行后, 你可能想要将其设置为登录项, 以便在每次用户登录到计算机时启动它。 为此, 可以右键单击停靠中的 Jenkins 图标, 然后选择 "**选项 ..."。在登录时 > 打开**, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image8.png "此屏幕截图中所示，可以执行此 Jenkins 图标停靠面板中右键单击并选择登录名，在 OptionsOpen 操作")](jenkins-walkthrough-images/image8.png#lightbox)
+[![](jenkins-walkthrough-images/image8.png "若要执行此操作, 请右键单击 Dock 中的 Jenkins 图标, 然后选择 \"登录时 OptionsOpen\", 如以下屏幕截图所示")](jenkins-walkthrough-images/image8.png#lightbox)
 
-这将导致 Jenkins.App 以自动启动每次用户登录，但不是在计算机启动注册。 它是可以指定 OS X 将在启动时使用自动使用的登录的用户帐户。 打开**系统首选项**，然后选择**用户和组**图标，在此屏幕截图所示：
+这将导致 Jenkins 在用户每次登录时自动启动, 但不会在计算机启动时自动启动。 可以指定 OS X 将用于在启动时自动登录的用户帐户。 打开 "**系统首选项**", 然后选择 "**用户 & 组**" 图标, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image9.png "打开系统首选项，并选择用户组图标，如以下屏幕截图中所示")](jenkins-walkthrough-images/image9.png#lightbox)
+[![](jenkins-walkthrough-images/image9.png "打开 \"系统首选项\", 然后选择 \"用户组\" 图标, 如以下屏幕截图所示")](jenkins-walkthrough-images/image9.png#lightbox)
 
-单击**登录选项**按钮，并选择 OS X 将在启动时用于登录的帐户。
+单击 "**登录选项**" 按钮, 然后选择 OS X 将用于在启动时登录的帐户。
 
-此时已安装 Jenkins。 但是，如果我们想要生成 Xamarin 移动应用程序，我们需要安装一些插件。
+此时, 已安装 Jenkins。 但是, 如果我们想要生成 Xamarin 移动应用程序, 则需要安装一些插件。
 
 ### <a name="installing-plugins"></a>安装插件
 
-完成 Jenkins.App 安装程序后，它将启动 Jenkins 并启动 web 浏览器的 url http://localhost:8080，如以下屏幕截图中所示：
+Jenkins 安装程序完成后, 它将开始 Jenkins 并启动 web 浏览器 http://localhost:8080, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image10.png "8080，如以下屏幕截图中所示")](jenkins-walkthrough-images/image10.png#lightbox)
+[![](jenkins-walkthrough-images/image10.png "8080, 如以下屏幕截图所示")](jenkins-walkthrough-images/image10.png#lightbox)
 
-在此页中，选择**Jenkins > 管理 Jenkins > 管理插件**的菜单中的左上角，如下面的屏幕截图中所示：
+在此页上, 从左上角的菜单中选择 " **Jenkins > 管理 Jenkins > 管理插件**", 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image11.png "在此页中，从左上角的菜单中选择 Jenkins 管理的 Jenkins 管理插件")](jenkins-walkthrough-images/image11.png#lightbox)
+[![](jenkins-walkthrough-images/image11.png "从此页中, 从左上角的菜单中选择 \"Jenkins\" \"管理插件\"。")](jenkins-walkthrough-images/image11.png#lightbox)
 
-这将显示**Jenkins 插件管理器**页。 如果单击可用选项卡上，您将看到一系列超过 600 个插件，可以下载并安装。 这是下面的屏幕截图中所示：
+此时将显示 " **Jenkins 插件管理器**" 页。 如果单击 "可用" 选项卡, 则会看到一个列表, 其中列出了可下载和安装的超过600个插件。 下面的屏幕截图中介绍了这一点:
 
-[![](jenkins-walkthrough-images/image12.png "如果单击可用选项卡上，你将看到一系列超过 600 个插件，可以下载并安装")](jenkins-walkthrough-images/image12.png#lightbox)
+[![](jenkins-walkthrough-images/image12.png "如果单击 \"可用\" 选项卡, 你会看到一个列表, 其中列出了可下载和安装的超过600个插件")](jenkins-walkthrough-images/image12.png#lightbox)
 
-滚动浏览所有 600 插件查找几个可能比较繁琐且容易出错。 Jenkins 提供接口的右上角的筛选器搜索字段。 使用此筛选器字段搜索将简化查找和安装一个或所有以下插件：
+滚动所有600的插件来找出少量的插件可能会很繁琐, 而且容易出错。 Jenkins 在界面的右上角提供筛选器搜索字段。 使用此筛选器字段进行搜索可简化查找和安装以下一项或所有插件:
 
-- **Jenkins MSBuild 插件**– 此插件可以生成适用于 Mac 解决方案 (.sln) 和项目 (.csproj) Visual Studio 和 Visual Studio。
-- **环境注入器插件**– 这是一个可选的但有用的插件，从而能够在作业中设置环境变量和生成级别。 例如，代码使用的密码登录该应用程序，它还提供对变量的额外保护。 有时缩写为*EnvInject 插件*。
-- **Team Foundation Server 插件**– 这是一个可选的插件，只需如果使用 Team Foundation Server 或 Team Foundation Services 进行源代码管理。
+- **Jenkins MSBuild 插件**–此插件可以构建 Visual Studio 并 Visual Studio for Mac 解决方案 (.sln) 和项目 (.csproj)。
+- **环境注入器插件**-这是一个可选但有用的插件, 它可以在作业和生成级别设置环境变量。 它还为变量提供额外的保护, 如用于对应用程序进行编码的密码。 它有时缩写为*EnvInject 插件*。
+- **Team Foundation Server 插件**–这是一个可选的插件, 仅当你使用 Team Foundation Server 或 Team Foundation service 进行源代码控制时才需要此插件。
 
-没有任何额外的插件的情况下，Jenkins 支持 Git。
+Jenkins 支持 Git, 无需任何额外的插件。
 
-安装所有的插件之后, 你将想要重新启动 Jenkins 并配置每个插件的全局设置。 可以通过选择找到的全局设置插件**Jenkins > 管理 Jenkins > 配置系统**从左上角，如下面的屏幕截图中所示：
+安装所有插件后, 需要重新启动 Jenkins 并为每个插件配置全局设置。 可以通过从左上角选择 "Jenkins" > "**管理 Jenkins" > 配置系统**"来查找插件的全局设置, 如以下屏幕截图中所示:
 
-[![](jenkins-walkthrough-images/image13.png "可以通过选择 Jenkins 找到插件的全局设置 / 管理 Jenkins / 配置系统从左上分发角")](jenkins-walkthrough-images/image13.png#lightbox)
+[![](jenkins-walkthrough-images/image13.png "可以通过从左上角选择 Jenkins/Manage Jenkins/Configure System 来查找插件的全局设置")](jenkins-walkthrough-images/image13.png#lightbox)
 
-当选择此菜单选项时，您将进入**配置系统 [Jenkins]** 页。 此页包含部分配置 Jenkins 本身以及设置某些全局插件值。  下面的屏幕截图演示了此页的一个示例：
+选择此菜单选项时, 将转到 "**配置系统 [Jenkins]** " 页。 此页面包含用于配置 Jenkins 本身并设置某些全局插件值的部分。  下面的屏幕截图演示了此页的一个示例:
 
-[![](jenkins-walkthrough-images/image14.png "此屏幕截图演示了此页的示例")](jenkins-walkthrough-images/image14.png#lightbox)
+[![](jenkins-walkthrough-images/image14.png "此屏幕截图演示了此页面的示例")](jenkins-walkthrough-images/image14.png#lightbox)
 
 #### <a name="configuring-the-msbuild-plugin"></a>配置 MSBuild 插件
 
-MSBuild 插件必须配置为使用 **/Library/Frameworks/Mono.framework/Commands/xbuild**编译 Visual Studio for Mac 解决方案和项目文件。 向下滚动**配置系统 [Jenkins]** 页上，直到**添加 MSBuild**按钮将出现，如下面的屏幕截图中所示：
+必须将 MSBuild 插件配置为使用 **/Library/Frameworks/Mono.framework/Commands/xbuild**来编译 Visual Studio for Mac 解决方案和项目文件。 向下滚动**配置系统 [Jenkins]** 页, 直到出现 "**添加 MSBuild** " 按钮, 如以下屏幕截图中所示:
 
- [![](jenkins-walkthrough-images/image15.png "配置系统 Jenkins 页面向下滚动，直到添加 MSBuild 按钮将出现")](jenkins-walkthrough-images/image15.png#lightbox)
+ [![](jenkins-walkthrough-images/image15.png "在 \"配置 System Jenkins\" 页中向下滚动, 直到出现 \"添加 MSBuild\" 按钮")](jenkins-walkthrough-images/image15.png#lightbox)
 
-单击此按钮，并填写**名称**并**路径**到**MSBuild**上显示的窗体的字段。 名称在**MSBuild**安装应该有意义的名称，同时**MSBuild 路径**应为路径`xbuild`，通常是 **/Library/框架 /Mono.framework/Commands/xbuild**。 我们通过单击保存或在页面底部的应用按钮保存所做的更改后，Jenkins 将能够使用`xbuild`来编译你的解决方案。
+单击此按钮, 并在显示的窗体上填写 " **MSBuild** " 字段的**名称**和**路径**。 **Msbuild**安装的名称应该有意义, 而**msbuild 路径**应是指向`xbuild`的路径, 通常为 **/Library/Frameworks/Mono.framework/Commands/xbuild**。 通过单击页面底部的 "保存" 或 "应用" 按钮保存更改后, Jenkins 将能够用于`xbuild`编译解决方案。
 
 #### <a name="configuring-the-tfs-plugin"></a>配置 TFS 插件
 
-本部分是如果你想要使用 TFS 进行源代码管理必需的。
+如果要将 TFS 用于源代码管理, 则本部分是必需的。
 
-为了使与 TFS 服务器，进行交互的 macOS 工作站[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)必须安装在工作站上。 Team Explorer Everywhere 是跨平台命令行客户端包括用于访问 TFS 的 Microsoft 工具的一组。 Team Explorer Everywhere 可从 Microsoft 下载并安装三个步骤：
+为了使 macOS 工作站与 TFS 服务器进行交互, 必须在工作站上安装[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) 。 Team Explorer Everywhere 是 Microsoft 提供的一套工具, 其中包括用于访问 TFS 的跨平台命令行客户端。 可以从 Microsoft 下载 Team Explorer Everywhere, 并通过三个步骤进行安装:
 
-1. 将存档文件提取到用户帐户可以访问的目录。 例如，可能会将文件提取到 **~/tee**。
-2. 配置要包含的文件夹，包含了在上述步骤中解压缩的文件的 shell 或系统路径。 例如，应用于对象的
+1. 将存档文件解压缩到用户帐户可以访问的目录。 例如, 你可以将文件解压缩到 **~/tee**。
+2. 将 shell 或系统路径配置为包含一个文件夹, 该文件夹包含上述第一步中解压缩的文件。 例如，应用于对象的
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
     ```
 
-3. 若要确认是否安装了 Team Explorer Everywhere，请打开终端会话中，并执行`tf`命令。 如果 tf 已正确配置，将在终端会话中看到以下输出：
+3. 若要确认已安装 Team Explorer Everywhere, 请打开终端会话, 然后执行`tf`命令。 如果正确配置了 tf, 你会在终端会话中看到以下输出:
 
     ```
     $ tf
@@ -157,241 +157,241 @@ MSBuild 插件必须配置为使用 **/Library/Frameworks/Mono.framework/Command
     Available commands and their options:
     ```
 
-安装 TFS 的命令行客户端后，必须使用的完整路径配置 Jenkins`tf`命令行客户端。 向下滚动**配置系统 [Jenkins]** 页直到找到 Team Foundation Server 部分中，如以下屏幕截图中所示：
+安装 TFS 的命令行客户端后, 必须将 Jenkins 配置为`tf`具有命令行客户端的完整路径。 在 "**配置系统 [Jenkins]** " 页中向下滚动, 直到找到 "Team Foundation Server" 部分, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image17.png "配置系统 Jenkins 页面向下滚动，直到找到 Team Foundation Server 部分")](jenkins-walkthrough-images/image17.png#lightbox)
+[![](jenkins-walkthrough-images/image17.png "在 \"配置 System Jenkins\" 页中向下滚动, 直到找到 \"Team Foundation Server\" 部分")](jenkins-walkthrough-images/image17.png#lightbox)
 
-输入的完整路径`tf`命令，并单击**保存**按钮。
+输入`tf`命令的完整路径, 然后单击 "**保存**" 按钮。
 
 ### <a name="configure-jenkins-security"></a>配置 Jenkins 安全性
 
-首次安装，Jenkins 将具有安全性已禁用，因此可以为任何用户设置和运行任何类型的作业以匿名方式。 本部分介绍如何使用 Jenkins 用户数据库配置身份验证和授权配置安全性。
+首次安装时, Jenkins 已禁用安全功能, 因此任何用户都可以匿名设置和运行任意类型的作业。 本部分介绍如何使用 Jenkins 用户数据库配置安全性, 以配置身份验证和授权。
 
-可以通过选择找到的安全设置**Jenkins > 管理 Jenkins > 配置全局安全性**，此屏幕截图中所示：
+可以通过选择**Jenkins > 管理 Jenkins > 配置全局安全性**来找到安全设置, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image18.png "可以通过选择 Jenkins 找到安全设置 / 管理 Jenkins / 配置全局安全性")](jenkins-walkthrough-images/image18.png#lightbox)
+[![](jenkins-walkthrough-images/image18.png "可以通过选择 Jenkins/管理 Jenkins/配置全局安全性来找到安全设置")](jenkins-walkthrough-images/image18.png#lightbox)
 
-上**配置全局安全性**页上，选中**启用安全**复选框和**访问控制**窗体外观，类似于下面的屏幕截图：
+在 "**配置全局安全性**" 页上, 选中 "**启用安全性**" 复选框和 "**访问控制**" 窗体, 如下所示:
 
-[![](jenkins-walkthrough-images/image19.png "在配置全局安全性页上，选中启用安全复选框，并访问控制窗体外观，类似于以下屏幕截图")](jenkins-walkthrough-images/image19.png#lightbox)
+[![](jenkins-walkthrough-images/image19.png "在 \"配置全局安全性\" 页上, 选中 \"启用安全性\" 复选框, 应显示 \"访问控制\" 窗体, 此屏幕截图类似于此屏幕截图")](jenkins-walkthrough-images/image19.png#lightbox)
 
-切换的单选按钮**Jenkins 的用户数据库**中**安全领域部分**，并确保**允许用户注册**还检查，如中所示以下屏幕截图：
+在 "**安全领域" 部分**切换 " **Jenkins 的用户数据库"** 单选按钮, 并确保还选中 "**允许用户注册**", 如以下屏幕截图中所示:
 
-[![](jenkins-walkthrough-images/image20.png "切换在安全领域部分中，Jenkins 自己的用户数据库的单选按钮，并确保也选中允许用户注册")](jenkins-walkthrough-images/image20.png#lightbox)
+[![](jenkins-walkthrough-images/image20.png "在 \"安全领域\" 部分切换 \"Jenkins 用户数据库\" 单选按钮, 并确保还选中 \"允许用户注册\"")](jenkins-walkthrough-images/image20.png#lightbox)
 
-最后，重新启动 Jenkins 并创建新的帐户。 创建的第一个帐户是根帐户，此帐户将自动提升为管理员。 导航回到**配置全局安全性**页上，并核对**矩阵基于安全**单选按钮。 应为根帐户授予完全访问权限，并匿名帐户应授予只读访问，如以下屏幕截图中所示：
+最后, 重新启动 Jenkins 并创建一个新帐户。 创建的第一个帐户是根帐户, 此帐户将自动提升为管理员。 向后导航到 "**配置全局安全性**" 页, 然后选中 "**基于矩阵的安全**" 单选按钮。 应授予根帐户完全访问权限, 并且应为匿名帐户授予只读访问权限, 如以下屏幕截图所示:
 
-[![](jenkins-walkthrough-images/image21.png "应为根帐户授予完全访问权限，并应为匿名帐户授予只读访问权限")](jenkins-walkthrough-images/image21.png#lightbox)
+[![](jenkins-walkthrough-images/image21.png "应为根帐户授予完全访问权限, 并且应为匿名帐户授予只读访问权限")](jenkins-walkthrough-images/image21.png#lightbox)
 
-一旦保存这些设置并重新启动 Jenkins，将开启安全。
+保存这些设置并重新启动 Jenkins 后, 安全将打开。
 
-#### <a name="disabling-security"></a>禁用安全性
+#### <a name="disabling-security"></a>禁用安全
 
-发生时忘记了的密码或 Jenkins 范围锁定，则可以通过执行以下步骤禁用安全性：
+如果忘记了密码或 Jenkins 的锁定, 可以通过执行以下步骤来禁用安全性:
 
-1. 停止 Jenkins。 如果使用 Jenkins.app，可以通过右键单击停靠面板中的 Jenkins.App 图标并从弹出菜单中选择退出来执行此操作：
+1. 停止 Jenkins。 如果你使用的是 Jenkins, 则可以通过右键单击 Dock 中的 "Jenkins" 图标, 然后从弹出菜单中选择 "退出" 来执行此操作:
 
-    ![在停靠，并从弹出菜单中选择退出应用程序图标](jenkins-walkthrough-images/image19.png)
+    ![停靠中的应用图标, 然后从弹出的菜单中选择 "退出"](jenkins-walkthrough-images/image19.png)
 
-2. 打开文件 **~/.jenkins/config.xml**在文本编辑器中。
-3. 更改的值`<usesecurity></usesecurity>`元素从`true`到`false`。
-4. 删除`<authorizationstrategy></authorizationstrategy>`和`<securityrealm></securityrealm>`文件中的元素。
-5. 重启 Jenkins。
+2. 在文本编辑器中打开文件 **~/.jenkins/config.xml** 。
+3. 将`<usesecurity></usesecurity>`元素的值从`true`更改为`false`。
+4. 从文件中删除`<securityrealm></securityrealm>` 和元素。`<authorizationstrategy></authorizationstrategy>`
+5. 重新启动 Jenkins。
 
 ## <a name="setting-up-a-job"></a>设置作业
 
-在顶层，Jenkins 将组织构建软件转换所需的各种任务的所有*作业*。 为作业还指定了元数据与之关联，提供有关如何获取源代码、 生成的运行频率、 任何特殊的变量所需的构建，以及如何在生成失败时通知开发人员等生成的信息。
+在顶级, Jenkins 将构建软件所需的各种任务组织到一个*作业*中。 作业还具有与之关联的元数据, 提供有关生成的信息, 例如如何获取源代码、生成的运行频率、生成所需的任何特殊变量以及如何在生成失败时通知开发人员。
 
-通过选择创建作业**Jenkins > 新作业**的菜单中的右上角，如以下屏幕截图中所示：
+可以通过在右上角的菜单中选择 " **Jenkins" > "新建作业**" 来创建作业, 如以下屏幕截图所示:
 
-![](jenkins-walkthrough-images/image22.png "通过从右上角的菜单中选择新的 Jenkins 作业创建作业")
+![](jenkins-walkthrough-images/image22.png "作业是通过在右上角菜单中选择 \"Jenkins 新建作业\" 来创建的")
 
-这将显示**新的作业 [Jenkins]** 页。 输入作业的名称，然后选择**生成自由格式的软件项目**单选按钮。 下面的屏幕截图显示了此示例：
+这将显示 "**新建作业 [Jenkins]** " 页。 输入作业的名称, 然后选择 "**生成自由格式的软件项目**" 单选按钮。 以下屏幕截图显示了一个示例:
 
-![](jenkins-walkthrough-images/image23.png "输入作业的名称，然后选择生成自由格式的软件项目单选按钮")
+![](jenkins-walkthrough-images/image23.png "输入作业的名称, 然后选择 \"生成自由格式的软件项目\" 单选按钮")
 
-单击**确定**按钮显示作业的配置页。 这应类似于以下屏幕截图：
+单击 **"确定"** 按钮将显示该作业的配置页。 这应类似于以下屏幕截图:
 
 ![](jenkins-walkthrough-images/image24.png "这应类似于此屏幕截图")
 
-Jenkins 将组织在位于以下路径的硬盘上的某个目录中的作业： **~/.jenkins/jobs/[JOB 名称]**
+Jenkins 在硬盘上的目录中组织作业, 路径为: **~/.jenkins/jobs/[作业名称]**
 
-此文件夹包含的所有文件和项目特定于该作业，例如日志、 配置文件和需要进行编译的源代码。
+此文件夹包含特定于作业的所有文件和项目, 如日志、配置文件和需要编译的源代码。
 
-一旦创建初始作业后，它必须与一个或多个以下配置：
+初始作业创建完成后, 必须将其配置为以下一项或多项:
 
 - 必须指定源代码管理系统。
-- 一个或多个*生成操作*必须添加到项目。 这些是步骤或生成应用程序所需的任务。
-- 作业必须分配一个*生成触发器*– 一组指令通知频率 Jenkins 检索代码和生成的最终项目。
+- 必须将一个或多个*生成操作*添加到项目。 这些是生成应用程序所需的步骤或任务。
+- 必须为该作业分配一个*生成触发器*–一组说明, 通知 Jenkins 检索代码和生成最终项目的频率。
 
 ### <a name="configuring-source-code-control"></a>配置源代码管理
 
-Jenkins does 的第一个任务是从源代码管理系统中检索的源代码。 Jenkins 支持许多流行的源代码代码管理系统立即可用。 本部分介绍两种受欢迎的系统，Git 和 Team Foundation Server。 以下部分更详细地讨论了每这些源代码管理系统。
+Jenkins 的第一个任务是检索源代码管理系统中的源代码。 Jenkins 支持目前可用的许多常用源代码管理系统。 本部分介绍了两个热门系统: Git 和 Team Foundation Server。 以下各节将更详细地讨论每个源代码管理系统。
 
-#### <a name="using-git-for-source-code-control"></a>使用 Git 为源代码管理
+#### <a name="using-git-for-source-code-control"></a>使用 Git 进行源代码管理
 
-如果使用 TFS 进行源代码管理[跳过](#using-tfs-for-source-code-management)此部分并转到下一部分使用的 TFS。
+如果使用 TFS 进行源代码管理, 请[跳过](#using-tfs-for-source-code-management)此部分, 并使用 TFS 转到下一节。
 
-Jenkins 支持现成的 – 没有额外的插件所需的 Git。 若要使用 Git，请单击**Git**单选按钮和 Git 存储库中，输入的 URL，如以下屏幕截图中所示：
+Jenkins 支持现成的 Git –无需额外的插件。 若要使用 Git, 请单击**git**单选按钮并输入 git 存储库的 URL, 如以下屏幕截图所示:
 
-![](jenkins-walkthrough-images/image25.png "若要使用 Git，请单击 Git 单选按钮并输入 Git 存储库的 URL")
+![](jenkins-walkthrough-images/image25.png "若要使用 Git, 请单击 Git 单选按钮并输入 Git 存储库的 URL")
 
-所做的更改保存后，Git 配置已完成。
+保存更改后, Git 配置完成。
 
-#### <a name="using-tfs-for-source-code-management"></a>使用源代码管理 TFS
+#### <a name="using-tfs-for-source-code-management"></a>使用 TFS 进行源代码管理
 
 本部分仅适用于 TFS 用户。
 
-单击**Team Foundation Server**单选按钮和 TFS 配置部分应显示，类似于以下屏幕截图中：
+单击 " **Team Foundation Server** " 单选按钮, 应显示 "TFS 配置" 部分, 类似于以下屏幕截图所示:
 
-![](jenkins-walkthrough-images/image26.png "单击 Team Foundation Server 单选按钮和 TFS 配置部分应显示")
+![](jenkins-walkthrough-images/image26.png "单击 \"Team Foundation Server\" 单选按钮, \"TFS 配置\" 部分应会出现")
 
-提供为 TFS 所需的信息。 以下屏幕截图显示完成的窗体的示例：
+提供 TFS 的必要信息。 以下屏幕截图显示了已完成表单的示例:
 
-![](jenkins-walkthrough-images/image27.png "此屏幕截图显示完成的窗体的示例")
+![](jenkins-walkthrough-images/image27.png "此屏幕截图显示了已完成的窗体示例")
 
-#### <a name="testing-the-source-code-control-configuration"></a>测试源代码控制配置
+#### <a name="testing-the-source-code-control-configuration"></a>测试源代码管理配置
 
-一旦配置了相应的源代码管理，请单击**保存**以保存所做的更改。 这将使你返回到作业，将类似于以下屏幕截图的主页上：
+配置适当的源代码管理后, 单击 "**保存**" 以保存所做的更改。 这会将你返回到作业的主页, 这将与以下屏幕截图类似:
 
-![](jenkins-walkthrough-images/image28.png "这将使你返回到作业，将类似于此屏幕截图的主页")
+![](jenkins-walkthrough-images/image28.png "这会将你返回到该作业的主页, 这将与此屏幕截图类似")
 
-若要验证已正确配置源代码管理的最简单方法是手动触发的生成但不没有指定任何生成操作。 若要手动启动生成，该作业的主页已经有**立即生成**链接左侧，在菜单中，如下面的屏幕截图中所示：
+验证源代码管理正确配置的最简单方法是手动触发生成, 即使未指定任何生成操作也是如此。 若要手动启动生成, 作业的 "主页" 链接位于左侧的菜单中, 如下面的屏幕截图中所示:
 
-![](jenkins-walkthrough-images/image29.png "若要手动启动生成，主页上的作业具有的立即生成链接上的左侧菜单中")
+![](jenkins-walkthrough-images/image29.png "若要手动启动生成, 作业的主页在左侧的菜单中有一个 \"立即生成\" 链接")
 
-启动生成后，生成历史记录对话框中将显示一个闪烁的蓝色圆圈、 进度条、 内部版本号和生成开始，类似于下面的屏幕快照的时间：
+启动生成后, "生成历史记录" 对话框将显示一个闪烁的蓝色圆圈、一个进度栏、生成号和生成的开始时间, 类似于以下屏幕截图:
 
-![](jenkins-walkthrough-images/image30.png "启动生成后，生成历史记录对话框中显示一个闪烁的蓝色圆圈、 进度条、 内部版本号和生成开始的时间")
+![](jenkins-walkthrough-images/image30.png "启动生成后, \"生成历史记录\" 对话框将显示一个闪烁的蓝色圆圈、一个进度栏、生成号和生成开始的时间。")
 
-如果作业成功时，将显示一个蓝色圆。 如果作业失败时，将显示一个红色圆圈。
+如果作业成功, 将显示一个蓝色圆圈。 如果作业失败, 将显示一个红色圆圈。
 
-若要帮助进行故障排除可能作为生成的一部分出现的问题，Jenkins 将捕获所有作业的控制台输出。 若要查看控制台输出，请单击中的作业**生成历史记录**，然后在**控制台输出**左侧菜单中的链接。 以下屏幕截图显示**控制台输出**链接，以及一些成功的作业的输出：
+为了帮助解决在生成过程中可能出现的问题, Jenkins 将捕获作业的所有控制台输出。 若要查看控制台输出, 请单击**生成历史记录**中的作业, 然后单击左侧菜单中的 "**控制台输出**" 链接。 以下屏幕截图显示了**控制台输出**链接, 并显示了成功作业的一些输出:
 
-![](jenkins-walkthrough-images/image31.png "此屏幕截图显示控制台输出链接，以及一些成功的作业的输出")
+![](jenkins-walkthrough-images/image31.png "此屏幕截图显示了控制台输出链接, 以及成功作业的一些输出")
 
 #### <a name="location-of-build-artifacts"></a>生成项目的位置
 
-Jenkins 将检索到一个名为的特殊文件夹的完整源代码*工作区*。 可在文件夹上的以下位置找到此目录：
+Jenkins 会将整个源代码检索到一个名为 "*工作区*" 的特殊文件夹中。 可在以下位置的文件夹中找到此目录:
 
-    ```
-    ~/.jenkins/jobs/[JOB NAME]/workspace
-    ```
+```
+~/.jenkins/jobs/[JOB NAME]/workspace
+```
 
-工作区的路径将存储在名为一个环境变量`$WORKSPACE`。
+工作区的路径将存储在一个名为`$WORKSPACE`的环境变量中。
 
-可以通过导航到的登录页，一个作业，然后单击浏览在 Jenkins 中的工作区文件夹**工作区**左侧菜单中的链接。 以下屏幕截图显示了一个名为作业的工作区的示例**HelloWorld**:
+通过导航到作业的登陆页面, 然后单击左侧菜单中的 "**工作区**" 链接, 可以浏览 Jenkins 中的工作区文件夹。 以下屏幕截图显示了名为**HelloWorld**的作业的工作区示例:
 
-![](jenkins-walkthrough-images/image32.png "此屏幕截图显示了一个名为 HelloWorld 作业的工作区的示例")
+![](jenkins-walkthrough-images/image32.png "此屏幕截图显示了名为 HelloWorld 的作业的工作区示例")
 
 ### <a name="build-triggers"></a>生成触发器
 
-适用于启动在 Jenkins 中的生成多个不同的策略，这些参数称为*生成触发器*。 生成触发器可帮助决定何时启动作业，并生成项目的 Jenkins。 两个更常见的生成触发器是：
+可以通过几种不同的策略来启动 Jenkins 中的生成, 这些策略称为 "*生成触发器*"。 生成触发器有助于 Jenkins 决定何时启动作业并生成项目。 还有两个常见的生成触发器:
 
-- **定期生成**– 此触发器使 Jenkins 以在指定的时间间隔，例如每隔两小时或在工作日的午夜启动作业。 生成将启动而不考虑是否在源代码存储库中进行了任何更改。
-- **轮询 SCM** – 此触发器将轮询定期的源代码管理。 如果任何更改都已提交到源代码存储库，Jenkins 将启动新的生成。
+- **定期生成**–此触发器会导致 Jenkins 按指定的时间间隔 (例如每两小时或每周午夜) 启动作业。 无论源代码存储库中是否有任何更改, 都将开始生成。
+- **轮询 SCM** –此触发器将定期轮询源代码管理。 如果任何更改已提交到源代码存储库, Jenkins 将启动新的生成。
 
-轮询 SCM 是常用的触发器，因为当开发人员提交会导致生成中断的更改，它提供快速反馈。 这可用于一些最近提交的代码导致的问题，并允许开发人员解决该问题仍全新记住所做的更改时发出警报的团队。
+轮询 SCM 是一个流行的触发器, 因为当开发人员提交导致生成中断的更改时, 它可以提供快速反馈。 这对于通知团队, 某些最近提交的代码会导致问题, 并使开发人员能够解决问题, 而这些更改仍需要全新进行。
 
-定期生成通常用于创建应用程序的可分发给测试人员的版本。 例如，可能会定期生成安排为星期五晚上上，这样的 QA 团队成员可以测试与前一周的工作。
+定期生成通常用于创建可以分发给测试人员的应用程序版本。 例如, 可以安排在星期五晚上计划定期生成, 以便 QA 团队的成员可以测试上一周的工作。
 
-### <a name="compiling-a-xamarinios-applications"></a>编译 Xamarin.iOS 应用程序
-Xamarin.iOS 项目可以在命令行中使用编译`xbuild`或`msbuild`。 Shell 命令将在运行 Jenkins 的用户帐户的上下文中执行。 非常重要的用户帐户有权访问预配配置文件，以便应用程序可以正确打包进行分发。 就可以将此 shell 命令添加到该作业配置页。
+### <a name="compiling-a-xamarinios-applications"></a>编译 Xamarin iOS 应用程序
+可以使用`xbuild`或`msbuild`在命令行编译 Xamarin iOS 项目。 Shell 命令将在运行 Jenkins 的用户帐户的上下文中执行。 重要的是, 用户帐户有权访问预配配置文件, 以便可以正确打包应用程序进行分发。 可以将此 shell 命令添加到作业配置页。
 
-向下滚动到**生成**部分。 单击**添加生成步骤**按钮，然后选择**执行 shell**，如以下屏幕截图所示：
+向下滚动到 "**生成**" 部分。 单击 "**添加生成步骤**" 按钮, 然后选择 "**执行 shell**", 如以下屏幕截图所示:
 
-![](jenkins-walkthrough-images/image33.png "单击添加生成步骤按钮，然后选择执行 shell")
+![](jenkins-walkthrough-images/image33.png "单击 \"添加生成步骤\" 按钮, 然后选择 \"执行 shell\"")
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-### <a name="building-a-xamarinandroid-project"></a>生成 Xamarin.Android 项目
+### <a name="building-a-xamarinandroid-project"></a>生成 Xamarin Android 项目
 
-生成 Xamarin.Android 项目是在概念上非常类似于生成 Xamarin.iOS 项目。 若要从 Xamarin.Android 项目创建 APK，必须配置 Jenkins 以执行以下两个步骤：
+生成 Xamarin Android 项目在概念上非常类似于生成 Xamarin iOS 项目。 若要从 Xamarin Android 项目创建 APK, 必须将 Jenkins 配置为执行以下两个步骤:
 
-- 编译使用 MSBuild 插件的项目
-- 登录和 zip 对齐使用有效的 release 密钥存储 APK。
+- 使用 MSBuild 插件编译项目
+- 使用有效的 release 密钥, 对 APK 进行签名和压缩。
 
-将在接下来的两部分更详细地介绍这两个步骤。
+接下来的两个部分将更详细地介绍这两个步骤。
 
 ### <a name="creating-the-apk"></a>创建 APK
 
-单击**添加生成步骤**按钮，然后选择**生成的 Visual Studio 项目或解决方案使用 MSBuild**，如以下屏幕截图中所示：
+单击 "**添加生成步骤**" 按钮, 然后选择 "**使用 MSBuild 生成 Visual Studio 项目或解决方案**", 如下面的屏幕截图所示:
 
-![](jenkins-walkthrough-images/image36.png "创建 APK 单击添加生成步骤按钮，并选择生成上的 Visual Studio 项目或解决方案使用 MSBuild")
+![](jenkins-walkthrough-images/image36.png "创建 APK 单击 \"添加生成步骤\" 按钮, 然后选择 \"使用 MSBuild 生成 Visual Studio 项目或解决方案\"")
 
-一旦生成步骤添加到项目中，填写显示的窗体字段。 下面的屏幕截图是完成的窗体的一个示例：
+将生成步骤添加到项目后, 请填写显示的窗体字段。 以下屏幕截图是已完成表单的一个示例:
 
-![](jenkins-walkthrough-images/image37.png "一旦生成步骤添加到项目中，填写显示的窗体字段")
+![](jenkins-walkthrough-images/image37.png "将生成步骤添加到项目后, 请填写显示的窗体字段")
 
-此生成步骤将执行`xbuild`中 **$WORKSPACE**文件夹。 MSBuild 生成文件设置为**Xamarin.Android.csproj**文件。 **命令行参数**指定目标的版本生成**PackageForAndroid**。 此步骤的产品将 APK 的以下位置：
+此生成步骤将在`xbuild` **$WORKSPACE**文件夹中执行。 MSBuild 生成文件设置为**Xamarin. .csproj**文件。 **命令行参数**指定目标**PackageForAndroid**的发布版本。 此步骤的产品将是以下位置的 APK:
 
-    ```
-    $WORKSPACE/[PROJECT NAME]/bin/Release
-    ```
+```
+$WORKSPACE/[PROJECT NAME]/bin/Release
+```
 
-下面的屏幕截图显示了此 APK 的示例：
+以下屏幕截图显示了此 APK 的示例:
 
 ![](jenkins-walkthrough-images/image38.png "此屏幕截图显示了此 APK 的示例")
 
-此 APK 不准备好进行部署，因为它没有签名使用专用密钥存储并必须对齐 zip。
+此 APK 尚未准备好进行部署, 因为它尚未使用专用密钥存储进行签名, 因此必须进行 zip 对齐。
 
-#### <a name="signing-and-zipaligning-the-apk-for-release"></a>签名以及归档 APK 版本
+#### <a name="signing-and-zipaligning-the-apk-for-release"></a>对 APK 进行签名和归档
 
-签名以及归档 APK 是从技术上讲两个单独的任务执行的 Android SDK 中的两个单独的命令行工具。 但是，它是可以方便地在一个生成操作中执行它们。 有关签名以及归档 APK 的详细信息，请参阅有关准备 Android 应用程序版本的 Xamarin 的文档。
+对 APK 进行签名和归档在技术上是两个单独的任务, 这些任务由 Android SDK 两个单独的命令行工具执行。 但是, 在一个生成操作中执行这些操作非常方便。 有关签名和归档 APK 的详细信息, 请参阅用于准备 Android 应用程序进行发布的 Xamarin 文档。
 
-这两种命令要求可能不同项目到项目的命令行参数。 此外，密码时不应出现在控制台输出中生成正在运行的是其中一些命令行参数。 我们将在环境变量中存储其中一些命令行参数。 下表所述的环境变量所需的签名和/或 zip 对齐：
+这两个命令都需要命令行参数, 这些参数可能与项目不同。 此外, 其中的某些命令行参数是在运行生成时不应显示在控制台输出中的密码。 我们会在环境变量中存储某些命令行参数。 下表描述了签名和/或 zip 对齐所需的环境变量:
 
 |环境变量|描述|
 |--- |--- |
-|KEYSTORE_FILE|这是用于对 apk 进行签名的密钥存储的路径|
-|KEYSTORE_ALIAS|将使用对 APK 进行签名的密钥存储中的键。|
-|INPUT_APK|创建的 APK `xbuild`。|
-|SIGNED_APK|生成的已签名的 APK `jarsigner`。|
-|FINAL_APK|这是 zip 对齐由生成的 APK `zipalign`。|
-|STORE_PASS|这是用于访问的内容进行签名文件的密钥存储的密码。|
+|KEYSTORE_FILE|这是用于对 APK 进行签名的密钥存储的路径|
+|KEYSTORE_ALIAS|用于对 APK 进行签名的密钥存储中的密钥。|
+|INPUT_APK|由`xbuild`创建的 APK。|
+|SIGNED_APK|由`jarsigner`生成的已签名 APK。|
+|FINAL_APK|这是由`zipalign`生成的 zip 对齐 APK。|
+|STORE_PASS|这是用于访问唱歌文件的密钥存储的内容的密码。|
 
-如所述的要求部分中，可以使用 EnvInject 插件在生成过程中设置这些环境变量。 作业均应具有新的生成步骤添加基于插入的环境变量，如下面的屏幕截图中所示：
+如 "要求" 部分所述, 可以在生成过程中使用 EnvInject 插件设置这些环境变量。 应根据注入环境变量添加新的生成步骤, 如以下屏幕截图所示:
 
-![](jenkins-walkthrough-images/image39.png "作业均应具有新的生成步骤添加到基于插入的环境变量")
+![](jenkins-walkthrough-images/image39.png "应根据注入环境变量添加新的生成步骤")
 
-在中**内容属性**形成将显示的字段、 添加变量的环境，每行，一个采用以下格式：
+在将显示的 "**属性" 内容**窗体字段中, 按以下格式添加环境变量 (每行一个):
 
-    ```
-    ENVIRONMENT_VARIABLE_NAME = value
-    ```
+```
+ENVIRONMENT_VARIABLE_NAME = value
+```
 
-下面的屏幕截图显示了所需的对 apk 进行签名的环境变量：
+以下屏幕截图显示了对 APK 进行签名所需的环境变量:
 
-![](jenkins-walkthrough-images/image40.png "此屏幕截图显示了所需的对 apk 进行签名的环境变量")
+![](jenkins-walkthrough-images/image40.png "此屏幕快照显示了对 APK 进行签名所需的环境变量")
 
-请注意，某些环境变量的 APK 文件基于`WORKSPACE`环境变量。
+请注意, APK 文件的某些环境变量是在`WORKSPACE`环境变量上构建的。
 
-最后一个环境变量是用于访问密钥存储的内容的密码： `STORE_PASS`。 密码是应被遮盖或日志文件中省略的敏感值。 EnvInject 插件可以配置为保护这些值，以便它们不显示在日志中。
+最终环境变量是用于访问密钥存储的内容的密码: `STORE_PASS`。 密码是应在日志文件中隐藏或省略的敏感值。 可以将 EnvInject 插件配置为保护这些值, 使其不显示在日志中。
 
-紧靠**构建**作业配置的部分是**Build Environment**部分。 当**注入密码**切换复选框，才会出现某种形式的字段。 这些窗体字段用于捕获的名称和环境变量的值。 以下屏幕截图是添加的示例`STORE_PASS`环境变量：
+紧跟在作业配置的 "**生成**" 部分之前的 "**生成环境**" 部分。 切换 "**插入密码**" 复选框时, 将显示一些窗体字段。 这些窗体字段用于捕获环境变量的名称和值。 下面的屏幕截图是添加`STORE_PASS`环境变量的示例:
 
-![](jenkins-walkthrough-images/image41.png "这是屏幕截图添加 STOREPASS 环境变量的示例")
+![](jenkins-walkthrough-images/image41.png "此屏幕截图是添加 STOREPASS 环境变量的示例")
 
-环境变量已初始化后下, 一步是添加生成步骤进行签名和压缩排列 APK。 立即生成步骤要插入的环境变量将是另一个后**执行 shell**将执行的命令生成`jarsigner`和`zipalign`。 每个命令将占用一行，如以下代码片段中所示：
+初始化环境变量后, 下一步是添加用于签名的生成步骤, 并使 APK 对齐。 紧跟在要插入环境变量的生成步骤之后, 将执行`jarsigner`和`zipalign`的另一个**执行 shell**命令生成。 每个命令将占用一行, 如以下代码片段所示:
 
-    ```
-    jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore $KEYSTORE_FILE -storepass $STORE_PASS -signedjar $SIGNED_APK $INPUT_APK $KEYSTORE_ALIAS
-    zipalign -f -v 4 $SIGNED_APK $FINAL_APK
-    ```
+```
+jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore $KEYSTORE_FILE -storepass $STORE_PASS -signedjar $SIGNED_APK $INPUT_APK $KEYSTORE_ALIAS
+zipalign -f -v 4 $SIGNED_APK $FINAL_APK
+```
 
-以下屏幕截图显示如何输入的示例`jarsigner`和`zipalign`到步骤的命令：
+以下屏幕截图显示了一个示例, 说明如何在`jarsigner`步骤`zipalign`中输入和命令:
 
-![](jenkins-walkthrough-images/image42.png "此屏幕截图显示了如何将输入步骤的 jarsigner 和 zipalign 命令的示例")
+![](jenkins-walkthrough-images/image42.png "此屏幕截图显示了如何将 jarsigner 和 zipalign 命令输入到步骤中的示例")
 
-位置生成的所有操作后，它是很好的做法触发手动生成以验证一切正常工作。 如果生成失败，**控制台输出**应查看有关导致生成失败的原因的信息。
+完成所有生成操作后, 最好触发手动生成来验证所有内容是否正常工作。 如果生成失败, 应查看**控制台输出**, 了解导致生成失败的原因的信息。
 
-### <a name="submitting-tests-to-test-cloud"></a>提交到测试云测试
+### <a name="submitting-tests-to-test-cloud"></a>将测试提交到 Test Cloud
 
-自动的测试可以提交到 Test Cloud 使用 shell 命令。 有关 Xamarin Test Cloud 中的测试运行设置的详细信息，请参阅本指南为使用[Xamarin.UITest](/appcenter/test-cloud/preparing-for-upload/uitest/)。
+可以使用 shell 命令将自动测试提交到 Test Cloud。 有关 Xamarin Test Cloud 中设置测试运行的详细信息, 请参阅本指南以了解如何使用[UITest](/appcenter/test-cloud/preparing-for-upload/uitest/)。
 
 ## <a name="summary"></a>总结
 
-本指南中，我们引入了 Jenkins，作为在 macOS 上，在生成服务器并将其配置为编译和准备的版本的 Xamarin 移动应用程序。 我们以及多个插件以支持生成过程的 macOS 计算机上安装 Jenkins。 我们创建并配置将从 TFS 或 Git、 拉取代码，然后将该代码编译到发行就绪应用程序的作业。 我们还探讨了两种不同的方式来计划应运行作业。
+在本指南中, 我们在 macOS 上引入了 Jenkins 作为生成服务器, 并将其配置为编译和准备 Xamarin 移动应用程序以供发布。 我们在 macOS 计算机上安装了 Jenkins 以及多个插件来支持生成过程。 我们创建并配置了一个作业, 该作业将从 TFS 或 Git 拉取代码, 然后将该代码编译为发布就绪应用程序。 我们还探讨了两种不同的方法来安排作业的运行时间。
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646177"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527995"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
@@ -45,10 +45,10 @@ _本文介绍了如何为现有的目标-C 库 (InfColorPicker) 创建 Xamarin i
 
 本文假设你已熟悉 Xcode 和目标 C 语言, 并已阅读我们的[绑定目标-c](~/cross-platform/macios/binding/index.md)文档。 此外, 必须满足以下要求才能完成显示的步骤:
 
--  在开发人员的计算机上, 需要安装和配置**Xcode 和 IOS SDK** -Apple 的 Xcode 和最新的 ios API。
--  **[Xcode 命令行工具](#Installing_the_Xcode_Command_Line_Tools)** -必须为当前安装的 Xcode 版本安装 Xcode 命令行工具 (有关安装详细信息, 请参阅下文)。
--  **Visual Studio for Mac 或 Visual studio** -应在开发计算机上安装和配置 Visual Studio for Mac 或 visual studio 的最新版本。 需要 Apple Mac 才能开发 Xamarin iOS 应用程序, 并且在使用 Visual Studio 时, 必须连接到[Xamarin build 主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **最新版本的客观 Sharpie** -从[此处](~/cross-platform/macios/binding/objective-sharpie/get-started.md)下载目标 Sharpie 工具的当前副本。 如果你已安装了客观 Sharpie, 则可使用`sharpie update`
+- 在开发人员的计算机上, 需要安装和配置**Xcode 和 IOS SDK** -Apple 的 Xcode 和最新的 ios API。
+- **[Xcode 命令行工具](#Installing_the_Xcode_Command_Line_Tools)** -必须为当前安装的 Xcode 版本安装 Xcode 命令行工具 (有关安装详细信息, 请参阅下文)。
+- **Visual Studio for Mac 或 Visual studio** -应在开发计算机上安装和配置 Visual Studio for Mac 或 visual studio 的最新版本。 需要 Apple Mac 才能开发 Xamarin iOS 应用程序, 并且在使用 Visual Studio 时, 必须连接到[Xamarin build 主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- **最新版本的客观 Sharpie** -从[此处](~/cross-platform/macios/binding/objective-sharpie/get-started.md)下载目标 Sharpie 工具的当前副本。 如果你已安装了客观 Sharpie, 则可使用`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -63,7 +63,7 @@ _本文介绍了如何为现有的目标-C 库 (InfColorPicker) 创建 Xamarin i
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
-如上所述, 在本演练中, 我们将使用 Xcode 命令行工具 **(具体** `make`取决于和`lipo`)。 命令是一个非常常见的 Unix 实用工具, 它将通过使用_生成文件_指定如何生成程序来自动编译可执行程序和库。 `make` 命令是 OS X 命令行实用程序, 用于创建多体系结构文件; 它会将多`.a`个文件合并到一个文件中, 该文件可由所有硬件体系结构使用。 `lipo`
+如上所述, 在本演练中, 我们将使用 Xcode 命令行工具 (具体`make`取决于和`lipo`)。 命令是一个非常常见的 Unix 实用工具, 它将通过使用_生成文件_指定如何生成程序来自动编译可执行程序和库。 `make` 命令是 OS X 命令行实用程序, 用于创建多体系结构文件; 它会将多`.a`个文件合并到一个文件中, 该文件可由所有硬件体系结构使用。 `lipo`
 
 
 -----
@@ -213,7 +213,7 @@ clean:
     -rm -f *.a *.dll
 ```
 
-在所选的纯文本编辑器中输入**生成文件**命令,**并通过项目**名称更新部分。 还必须确保严格粘贴上述说明, 并保留指令中的选项卡。
+在所选的纯文本编辑器中输入**生成文件**命令, 并通过项目名称更新部分。 还必须确保严格粘贴上述说明, 并保留指令中的选项卡。
 
 将具有名称**生成**文件的文件保存到与上面创建的 InfColorPicker Xcode 静态库相同的位置:
 

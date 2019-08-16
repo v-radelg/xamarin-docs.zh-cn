@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: ce13532026e2c49cb733e5afc0f6abd41ff1abdd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 31602b14179691d13d8058c90cf20a6f7f667124
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645036"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522819"
 ---
 # <a name="toolbar-compatibility"></a>工具栏兼容性
 
@@ -24,13 +24,13 @@ ms.locfileid: "68645036"
 
 若要修改应用以使用工具栏的 AppCompat 版本, 请执行以下操作: 
 
-1.  设置应用的最低和目标 Android 版本。
+1. 设置应用的最低和目标 Android 版本。
 
-2.  安装 AppCompat NuGet 包。
+2. 安装 AppCompat NuGet 包。
 
-3.  使用 AppCompat 主题, 而不是内置的 Android 主题。
+3. 使用 AppCompat 主题, 而不是内置的 Android 主题。
 
-4.  修改`MainActivity`以使其成为`AppCompatActivity`子类而`Activity`不是。 
+4. 修改`MainActivity`以使其成为`AppCompatActivity`子类而`Activity`不是。 
 
 以下各部分将详细介绍其中的每个步骤。
 

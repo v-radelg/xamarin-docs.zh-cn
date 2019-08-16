@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 2efc782386b8ec39ecca21aaf88738c813c260f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511662"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529043"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -143,8 +143,8 @@ Xamarin Profiler 为开发人员提供了一种方法, 用于分析 Visual Studi
 
 #### <a name="launching-from-visual-studio"></a>从 Visual Studio 启动
 
-1.  首先, 请确保已在 Visual Studio 中加载应用程序, 并选择 "(默认)" 调试配置, 如上所述。
-2.  浏览以分析 Visual Studio 中的 **> Xamarin Profiler** , 以打开探查器, 如下图所示:
+1. 首先, 请确保已在 Visual Studio 中加载应用程序, 并选择 "(默认)" 调试配置, 如上所述。
+2. 浏览以分析 Visual Studio 中的 **> Xamarin Profiler** , 以打开探查器, 如下图所示:
 
 ![从 Visual Studio 启动探查器](images/start-profiling-vs.png)
 
@@ -231,8 +231,8 @@ Xamarin Profiler 由五个部分组成, 如下所示:
 分配的检查器视图提供了用于筛选和分组对象的选项, 提供了有关分配的内存和最大分配的统计信息, 以及用于堆栈跟踪的视图和指向根路径的路径。
 
 - "**调用树**" –这会显示应用程序中所有线程的整个调用树, 并包括有关在每个节点上分配的内存的信息。 如果在列表中选择了某个元素, 则所有同级节点都将显示为灰色。 您可以展开树, 或双击元素向下钻取。显示此数据视图时, 可以使用 "显示设置检查器" 视图更改其显示方式。 目前有两个选项:
-    1.  **反转调用树**–这会将堆栈跟踪从上到下。 这是一个方便的视图选项, 因为它表示 CPU 花费了时间的最深层方法。
-    2.  **按线程分隔**–此选项按线程组织调用树。
+    1. **反转调用树**–这会将堆栈跟踪从上到下。 这是一个方便的视图选项, 因为它表示 CPU 花费了时间的最深层方法。
+    2. **按线程分隔**–此选项按线程组织调用树。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

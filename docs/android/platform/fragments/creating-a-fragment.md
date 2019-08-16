@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: b20ce0dc76cbe663d35e7fab01d9a4ba943c0cd6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1948c700827f1cc235de5857cde9a2a149af8412
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510618"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524365"
 ---
 # <a name="creating-a-fragment"></a>创建片段
 
@@ -34,9 +34,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 可以通过两种方法在活动中承载片段:
 
--   **以声明方式**可以使用标记在布局文件`.axml`中以声明方式使用片段。 `<Fragment>` &ndash;
+- **以声明方式**可以使用标记在布局文件`.axml`中以声明方式使用片段。 `<Fragment>` &ndash;
 
--   **以编程方式**&ndash;还可以`FragmentManager`使用类的 API 动态地实例化片段。
+- **以编程方式**&ndash;还可以`FragmentManager`使用类的 API 动态地实例化片段。
 
 本指南稍后将`FragmentManager`介绍如何通过类进行编程使用。
 
@@ -67,9 +67,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 必须为每个片段分配一个唯一的标识符:
 
--  **android: id**&ndash;与布局文件中的其他 UI 元素一样, 这是一个唯一的 ID。
+- **android: id**&ndash;与布局文件中的其他 UI 元素一样, 这是一个唯一的 ID。
 
--  **android: 标记**&ndash;此属性是一个唯一字符串。
+- **android: 标记**&ndash;此属性是一个唯一字符串。
 
 如果前面两种方法都不使用, 则该片段将采用容器视图的 ID。 在以下示例`android:id`中, 不提供`android:tag`和, Android 会将 ID `fragment_container`分配给片段:
 
@@ -115,37 +115,37 @@ Android 不允许包名称中有大写字符;如果包名称包含大写字符, 
 
 下面的列表显示了在创建片段的生命周期中的各种回调的流:
 
--   **`OnInflate()`** &ndash;在将片段创建为视图布局的一部分时调用。 从 XML 布局文件以声明方式创建片段后, 可以立即调用此代码。 该片段尚未与其活动相关联, 但该视图层次结构中的**活动**、**绑定**和**AttributeSet**作为参数传入。 此方法最适合用于分析**AttributeSet**并保存片段稍后可能使用的属性。
+- **`OnInflate()`** &ndash;在将片段创建为视图布局的一部分时调用。 从 XML 布局文件以声明方式创建片段后, 可以立即调用此代码。 该片段尚未与其活动相关联, 但该视图层次结构中的**活动**、**绑定**和**AttributeSet**作为参数传入。 此方法最适合用于分析**AttributeSet**并保存片段稍后可能使用的属性。
 
--   **`OnAttach()`** &ndash;在片段与活动关联后调用。 这是段准备就绪时要运行的第一个方法。 通常情况下, 片段不应实现构造函数或重写默认构造函数。 应在此方法中初始化片段所需的任何组件。
+- **`OnAttach()`** &ndash;在片段与活动关联后调用。 这是段准备就绪时要运行的第一个方法。 通常情况下, 片段不应实现构造函数或重写默认构造函数。 应在此方法中初始化片段所需的任何组件。
 
--   **`OnCreate()`** &ndash;由活动调用, 用于创建片段。 如果调用此方法, 则宿主活动的视图层次结构可能不会完全实例化, 因此, 片段不应依赖于活动的视图层次结构的任何部分, 直到稍后在片段的生命周期中。 例如, 不要使用此方法对应用程序的 UI 执行任何调整或调整操作。 这是片段开始收集所需数据的最早时间。 此时, 片段会在 UI 线程中运行, 因此应避免任何冗长的处理, 或在后台线程上执行该处理。 如果调用**SetRetainInstance (true)** , 则可以跳过此方法。
+- **`OnCreate()`** &ndash;由活动调用, 用于创建片段。 如果调用此方法, 则宿主活动的视图层次结构可能不会完全实例化, 因此, 片段不应依赖于活动的视图层次结构的任何部分, 直到稍后在片段的生命周期中。 例如, 不要使用此方法对应用程序的 UI 执行任何调整或调整操作。 这是片段开始收集所需数据的最早时间。 此时, 片段会在 UI 线程中运行, 因此应避免任何冗长的处理, 或在后台线程上执行该处理。 如果调用**SetRetainInstance (true)** , 则可以跳过此方法。
     下面将更详细地介绍此替代方法。
 
--   **`OnCreateView()`** &ndash;创建片段的视图。
+- **`OnCreateView()`** &ndash;创建片段的视图。
     在活动的**OnCreate ()** 方法完成后, 将调用此方法。 此时, 可以安全地与活动的视图层次结构进行交互。 此方法应返回将由片段使用的视图。
 
--   **`OnActivityCreated()`** 在活动完成后调用**OnCreate。** &ndash;
+- **`OnActivityCreated()`** 在活动完成后调用**OnCreate。** &ndash;
     此时应对用户界面执行最后调整。
 
--   **`OnStart()`** &ndash;在包含活动恢复后调用。 这使片段对用户可见。 在许多情况下, 片段将包含活动的**OnStart ()** 方法中的代码。
+- **`OnStart()`** &ndash;在包含活动恢复后调用。 这使片段对用户可见。 在许多情况下, 片段将包含活动的**OnStart ()** 方法中的代码。
 
--   **`OnResume()`** &ndash;这是用户可以与片段交互之前调用的最后一个方法。 在此方法中应执行的代码类型的一个示例是, 将启用用户可与之交互的设备功能, 如定位服务的照相机。 但这类服务可能会导致电池消耗过多, 并且应用程序应最大限度地降低电池电量。
+- **`OnResume()`** &ndash;这是用户可以与片段交互之前调用的最后一个方法。 在此方法中应执行的代码类型的一个示例是, 将启用用户可与之交互的设备功能, 如定位服务的照相机。 但这类服务可能会导致电池消耗过多, 并且应用程序应最大限度地降低电池电量。
 
 
 ### <a name="fragment-destruction-lifecycle-methods"></a>片段析构生命周期方法
 
 接下来的列表说明作为片段销毁的生命周期方法:
 
--   **`OnPause()`** &ndash;用户无法再与片段交互。 出现这种情况的原因是其他一些片段操作正在修改此片段, 或暂停宿主活动。 承载此片段的活动可能仍是可见的, 也就是说, 焦点上的活动是部分透明的, 或者不会占据整个屏幕。 此方法变为活动状态时, 这是用户离开该片段的第一个指示。 片段应保存所有更改。
+- **`OnPause()`** &ndash;用户无法再与片段交互。 出现这种情况的原因是其他一些片段操作正在修改此片段, 或暂停宿主活动。 承载此片段的活动可能仍是可见的, 也就是说, 焦点上的活动是部分透明的, 或者不会占据整个屏幕。 此方法变为活动状态时, 这是用户离开该片段的第一个指示。 片段应保存所有更改。
 
--   **`OnStop()`** &ndash;片段将不再可见。 主机活动可能已停止, 或者片段操作正在活动中修改它。 此回调的作用与 Activity 的**行为**相同。
+- **`OnStop()`** &ndash;片段将不再可见。 主机活动可能已停止, 或者片段操作正在活动中修改它。 此回调的作用与 Activity 的**行为**相同。
 
--   **`OnDestroyView()`** &ndash;调用此方法以清理与视图关联的资源。 当已销毁与片段关联的视图时, 将调用此代码。
+- **`OnDestroyView()`** &ndash;调用此方法以清理与视图关联的资源。 当已销毁与片段关联的视图时, 将调用此代码。
 
--   **`OnDestroy()`** &ndash;当不再使用片段时, 将调用此方法。 它仍与活动相关联, 但片段不再正常工作。 此方法应释放由片段使用的任何资源, 例如可用于照相机的[**SurfaceView**](xref:Android.Views.SurfaceView) 。 如果调用**SetRetainInstance (true)** , 则可以跳过此方法。 下面将更详细地介绍此替代方法。
+- **`OnDestroy()`** &ndash;当不再使用片段时, 将调用此方法。 它仍与活动相关联, 但片段不再正常工作。 此方法应释放由片段使用的任何资源, 例如可用于照相机的[**SurfaceView**](xref:Android.Views.SurfaceView) 。 如果调用**SetRetainInstance (true)** , 则可以跳过此方法。 下面将更详细地介绍此替代方法。
 
--   **`OnDetach()`** &ndash;此方法只在片段不再与活动关联之前被调用。 片段的视图层次结构不再存在, 此时应释放该片段使用的所有资源。
+- **`OnDetach()`** &ndash;此方法只在片段不再与活动关联之前被调用。 片段的视图层次结构不再存在, 此时应释放该片段使用的所有资源。
 
 
 ### <a name="using-setretaininstance"></a>使用 SetRetainInstance
@@ -194,9 +194,9 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 
 尽管使用`OnSaveInstanceState`可以轻松地保存暂时性数据, 但使用此方法存在一些限制:
 
--  如果未将该片段添加到 back 堆栈, 则当用户按 "**后退**" 按钮时, 不会还原其状态。
+- 如果未将该片段添加到 back 堆栈, 则当用户按 "**后退**" 按钮时, 不会还原其状态。
 
--  当使用绑定保存数据时, 将序列化数据。 这可能导致处理延迟。
+- 当使用绑定保存数据时, 将序列化数据。 这可能导致处理延迟。
 
 
 ## <a name="contributing-to-the-menu"></a>参与菜单

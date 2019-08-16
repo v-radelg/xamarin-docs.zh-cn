@@ -6,12 +6,12 @@ ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: 2ac361ae48e353944420482c7beedbec07774be6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: de56c133bfc28d66081505e458c35d533885c574
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511366"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526731"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure 移动应用
 
@@ -45,17 +45,17 @@ Validate and modify data    http://go.microsoft.com/fwlink/p/?LinkId=331330
 本文提供了有关启动和运行第一个 Xamarin Azure 应用程序的分步说明。
 其中介绍了如何在门户中创建新的 Azure 移动应用, 并下载并运行预配置的应用。
 
--  [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
--  [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
--  [Xamarin.Forms](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started)
+- [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
+- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
+- [Xamarin.Forms](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started)
 
 <!--
 ## Validate, Modify and Augment Data in Scripts
 
 Demonstrates how to add server-side scripts to Azure Mobile Services data tables to implement server-side validation and other functionality.
 
--  [iOS](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
--  [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
+- [iOS](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
+- [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#errors)
 -->
 
 <!--
@@ -63,39 +63,39 @@ Demonstrates how to add server-side scripts to Azure Mobile Services data tables
 
 A quick example of paging large sets of data using Skip() and Take().
 
--  [iOS](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
--  [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
+- [iOS](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
+- [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
 -->
 
 ## <a name="get-started-with-users"></a>用户入门
 
 提供使用 Azure 移动服务配置和编码登录屏幕的完整说明。 支持的身份验证提供程序包括 Microsoft、Google、Facebook 和 Twitter。
 
--  [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
--  [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
+- [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
+- [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
 
 
 ## <a name="authorize-users-in-scripts"></a>在脚本中授权用户
 
 Javascript 后端的一些示例代码
 
--  [Todo.js](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)
+- [Todo.js](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)
 
 
 ## <a name="get-started-with-push"></a>推送入门
 
 有关在 Apple 和 Google 网站上配置推送通知的完整说明, 然后从 Azure 移动服务向设备发送推送通知。
 
--  [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
--  [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
+- [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
+- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
 
 
 ## <a name="get-started-with-notification-hubs"></a>通知中心入门
 
 有关在 Apple 和 Google 网站上配置推送通知的完整说明, 请配置 Azure 通知中心, 然后生成到设备的推送通知。
 
--  [iOS](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
--  [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
+- [iOS](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
+- [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
 
 
 

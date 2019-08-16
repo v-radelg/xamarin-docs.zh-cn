@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: fb51d0d04c86274d43e23e4912ed16765b7cdc8b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7f1e61f9364a6a59f2bbacd1c773fe49cc338db9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657521"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528828"
 ---
 # <a name="displaying-images-with-xamarinios"></a>用 Xamarin 显示映像
 
@@ -48,8 +48,8 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**, 但是你�
 
 放置在**Resources**目录中的文件的处理方式与常规文件不同–**资源**文件夹的内容将被复制到应用程序的根目录, 并且可以在代码中引用。 这可能会很多原因:
 
--  存储在应用程序的属性中配置的映像, 例如, 默认启动映像和应用程序图标。
--  将其他图像和文件与代码分开存储, 使其更易于管理 (复制资源目录内容时, 会保留子目录)。
+- 存储在应用程序的属性中配置的映像, 例如, 默认启动映像和应用程序图标。
+- 将其他图像和文件与代码分开存储, 使其更易于管理 (复制资源目录内容时, 会保留子目录)。
 
 
 **资源**目录在库项目中特别有用, 因为代码可以假设这些图像将复制到使用应用程序的根目录中, 这样就可以更轻松地编写需要图像、声音、视频、XML 或其他文件。

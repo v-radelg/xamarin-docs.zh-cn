@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fe0f3c6904255284c01cbb3277086b01ec852d7b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 54e910d0a4f3301ca441fd18ddb27da930e9415c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654058"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528771"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin 中的 Touch ID
 
@@ -53,7 +53,7 @@ ms.locfileid: "68654058"
 |设备配置|策略评估|备份机制|
 |--- |--- |--- |
 |不带密码的设备|无访问权限|无|
-|带密码的设备|需要密码|None|
+|带密码的设备|需要密码|无|
 |具有 Touch ID 的设备|首选 Touch ID|允许密码|
 
 安全 Enclave 内的所有操作都可以相互信任。 这意味着我们可以使用 Touch ID 身份验证结果来授权密钥链项解密。 Secure Enclave 还会保留失败的触摸 ID 匹配的计数器, 在这种情况下, 用户必须使用密码还原。
@@ -127,10 +127,10 @@ IOS 8 中称为_本地身份验证_的新框架在设备中支持此身份验证
 3. 将新**视图控制器**从**工具箱**拖动到**Design Surface**。 **按住 Ctrl 并**从**导航控制器**拖动, 将此设置为**根视图控制器**:
 
     [![](touchid-images/image4.png "设置根视图控制器")](touchid-images/image4.png#lightbox)
-4.  命名新的视图控制器`AuthenticationViewController`。
+4. 命名新的视图控制器`AuthenticationViewController`。
 5. 接下来, 拖动一个按钮并将其放置`AuthenticationViewController`在上。 调用此`AuthenticateButton`方法, 并为其指定`Add a Chore`文本。
 6. 在调用`AuthenticateButton` `AuthenticateMe`的上创建一个事件。
-7. 单击底部的黑色条`AuthenticationViewController` **, 并**选择 "**推送**" (或 "使用大小类时**显示**" `MasterViewController` ) 从栏中创建手动 segue:
+7. 单击底部的黑色条`AuthenticationViewController` , 并选择 "**推送**" (或 "使用大小类时`MasterViewController` **显示**") 从栏中创建手动 segue:
 
     [![](touchid-images/image5.png "从栏拖到 MasterViewController, 然后选择 \"推送\" 或 \"显示\"")](touchid-images/image6.png#lightbox)
 8. 单击新创建的 segue 并为其指定标识符`AuthenticationSegue`, 如下所示:

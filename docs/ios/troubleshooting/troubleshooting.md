@@ -1,6 +1,6 @@
 ---
-title: 适用于 Xamarin.iOS 的故障排除技巧
-description: 本文档提供适用于 Xamarin.iOS 应用程序开发过程故障排除的各种技巧。 它描述了特定错误消息，以及其他潜在问题。
+title: Xamarin 的故障排除提示
+description: 本文档提供了在开发 Xamarin iOS 应用程序的过程中用于故障排除的各种提示。 它描述了特定错误消息以及其他潜在问题。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
@@ -8,58 +8,58 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 38c0ece3e8f0361f3c891713e53b033351512f94
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 37e5e68aff293910db4638c52f592e10fd60abfa
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829911"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528125"
 ---
-# <a name="troubleshooting-tips-for-xamarinios"></a>适用于 Xamarin.iOS 的故障排除技巧 
+# <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示 
 
-## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin.iOS 不能解决 System.ValueTuple
+## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin 无法解析 ValueTuple
 
-此错误是由于使用 Visual Studio 不兼容。
+发生此错误的原因是与 Visual Studio 不兼容。
 
-- **Visual Studio 2017 Update 1** （版本 15.1 或更低版本） 是仅与兼容**System.ValueTuple NuGet 4.3.0** （或更低版本）。
+- **Visual Studio 2017 Update 1**(版本15.1 或更低版本) 仅与**ValueTuple NuGet 4.3.0** (或更早版本) 兼容。
 
-- **Visual Studio 2017 Update 2** （版本 15.2 或更高版本） 是仅与兼容**System.ValueTuple NuGet 4.3.1**或更高版本。
+- **Visual Studio 2017 Update 2**(版本15.2 或更高版本) 仅与**ValueTuple NuGet 4.3.1**或更高版本兼容。
 
-请选择对应于 Visual Studio 2017 安装正确 System.ValueTuple NuGet。
+请选择与你的 Visual Studio 2017 安装相对应的正确 ValueTuple NuGet。
 
 
-## <a name="receiving-error-retrieving-update-information-error-message"></a>收到检索更新信息的错误错误消息
+## <a name="receiving-error-retrieving-update-information-error-message"></a>正在接收 "检索更新信息时出错" 错误消息
 
-尝试更新该软件和此错误消息出现时，请尝试在 IDE 中重新启动 IDE 并注销然后再在到你的帐户。
+尝试更新软件时, 如果显示此错误消息, 请尝试重新启动 IDE 并注销, 然后重新登录到 IDE 中的帐户。
 
-## <a name="how-do-i-create-outlets-or-actions-with-interface-builder"></a>如何使用 Interface Builder 创建插座或操作？
+## <a name="how-do-i-create-outlets-or-actions-with-interface-builder"></a>如何实现通过 Interface Builder 创建插座或操作？
 
-使用适用于 Mac 和 Visual studio 的 Xamarin 设计器适用于 Visual Studio 中的 iOS 引入，Xamarin.iOS 开发人员现在可以创建情节提要和.xibs 通过 UI 的优势。 请参阅[Hello，iOS](~/ios/get-started/hello-ios/index.md)使用设计器的详细信息的指南。
+随着 Visual Studio for Mac 和 Visual Studio 中的 Xamarin Designer for iOS 的引入, Xamarin iOS 开发人员现在可以利用通过情节提要和 xib 创建 UI。 有关使用设计器的详细信息, 请参阅[iOS](~/ios/get-started/hello-ios/index.md)指南。
 
-此外可以对 Apple 的引用[输出口](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingOutlet.html)并[操作](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingAction.html)IB 中使用输出口和操作的详细信息的指南。
+有关在 IB 中使用输出口和操作的详细信息, 请参阅 Apple 的[插座](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingOutlet.html)和[操作](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingAction.html)指南。
 
-## <a name="systemtextencodinggetencoding-throws-notsupportedexception"></a>System.Text.Encoding.GetEncoding 将引发 notsupportedexception 异常
+## <a name="systemtextencodinggetencoding-throws-notsupportedexception"></a>Encoding.getencoding 抛出 NotSupportedException
 
-您可能正在使用未按默认添加的编码。 检查[国际化](~/ios/app-fundamentals/localization/index.md)页后，可以了解如何添加对更多编码的支持。
+你可能正在使用默认情况下未添加的编码。 查看[国际化](~/ios/app-fundamentals/localization/index.md)页面, 了解如何添加对更多编码的支持。
 
-## <a name="systemmissingmethodexception-anything-else"></a>System.MissingMethodException （任何其他内容）
+## <a name="systemmissingmethodexception-anything-else"></a>MissingMethodException (其他任何内容)
 
-该成员可能已删除链接器，并因此在运行时程序集中不存在。  有多个解决方案：
+此成员可能已被链接器删除, 因此在运行时不存在于程序集中。  有多种解决方案:
 
-- 添加[ `[Preserve]` ](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性成员。  这将阻止链接器中将其删除。
-- 调用时[ **mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)，使用 **-nolink**或者 **-linksdkonly**选项：
+- 向成员添加属性。 [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)  这会阻止链接器删除它。
+- 调用[**mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)时, 请使用 **-nolink**或 **-linksdkonly**选项:
   - **-nolink**禁用所有链接。
-  - **-linksdkonly**仅将链接提供 Xamarin.iOS 程序集，如**xamarin.ios.dll**，同时保留用户创建的程序集中的所有类型 (即。 应用程序项目)。
+  - **-linksdkonly**将仅链接 xamarin 提供的程序集 (如**xamarin**), 同时保留用户创建的程序集中的所有类型 (即应用项目)。
 
-请注意，链接程序集，以便生成可执行文件是较小;因此，禁用链接可能会导致更大的可执行文件不是最好。
+请注意, 对程序集进行了链接, 使生成的可执行文件更小;因此, 禁用链接可能导致比预期更大的可执行文件。
 
-## <a name="you-are-getting-a-modelnotimplementedexception"></a>如果您听到 ModelNotImplementedException
+## <a name="you-are-getting-a-modelnotimplementedexception"></a>正在获取 ModelNotImplementedException
 
-如果收到此异常，这意味着您所调用的基。重写一个模型的类上的方法 （)。 不需要的模型 （这些是使用 [模型] 特性标记的类） 在类中调用基方法。
+如果您收到此异常, 则表示您正在调用 base。重写模型的类上的方法 ()。 不需要在模型的类中调用基方法 (这些类是用 [Model] 特性标记的类)。
 
-## <a name="this-class-is-not-key-value-coding-compliant-for-the-key-xxxx"></a>此类不是编码符合密钥 XXXX 键值
+## <a name="this-class-is-not-key-value-coding-compliant-for-the-key-xxxx"></a>此类不符合键 XXXX 的键值编码
 
-如果在加载它意味着在托管类找不到 XXXX 值 NIB 文件时收到此错误。 这意味着你缺少如下声明：
+如果在加载笔尖文件时收到此错误, 则表示在托管类上找不到值 XXXX。 这意味着缺少如下声明:
 
 ```csharp
 [Connect]
@@ -73,9 +73,9 @@ TypeName XXXX {
 }
 ```
 
-上面的定义由自动生成 Visual Studio for Mac 向 Visual Studio for Mac 中添加任何 XIB 文件`NAME_OF_YOUR_XIB_FILE.designer.xib.cs`文件。
+对于添加到`NAME_OF_YOUR_XIB_FILE.designer.xib.cs`文件中 Visual Studio for Mac 的任何 XIB 文件, 将自动 Visual Studio for Mac 生成上述定义。
 
-此外，其中包含上面的代码中的类型必须的子类[NSObject](xref:Foundation.NSObject)。  如果在命名空间中包含的类型，它还应具有[[注册]](xref:Foundation.RegisterAttribute)提供没有命名空间的类型名称 （如 Interface Builder 不支持在类型中的命名空间） 的属性：
+此外, 包含上述代码的类型必须是[NSObject](xref:Foundation.NSObject)的子类。  如果包含类型在命名空间中, 则它还应具有一个[[Register]](xref:Foundation.RegisterAttribute)特性, 该特性提供不带命名空间的类型名称 (因为 Interface Builder 不支持类型中的命名空间):
 
 ```csharp
 namespace Samples.GLPaint {
@@ -87,94 +87,94 @@ namespace Samples.GLPaint {
 }
 ```
 
-## <a name="unknown-class-xxxx-in-interface-builder-file"></a>未知的类 XXXX Interface Builder 文件中
+## <a name="unknown-class-xxxx-in-interface-builder-file"></a>Interface Builder 文件中的未知类 XXXX
 
-如果在接口生成器文件中定义一个类，但未提供实际实现的示例中，会生成此错误在C#代码。
+如果在接口生成器文件中定义类, 但没有在C#代码中提供它的实际实现, 则会生成此错误。
 
-您需要添加一些代码如下：
+需要添加一些类似于下面的代码:
 
 ```csharp
 public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System.MissingMethodException:未找到为 Foo.Bar::ctor(System.IntPtr) 构造函数
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>MissingMethodException:找不到 Foo:: ctor (system.string) 的构造函数
 
-当代码尝试实例化从 Interface Builder 文件引用的类的实例时，将在运行时生成此错误。 这意味着你忘记添加采用一个单一 IntPtr，作为参数的构造函数。
+当代码尝试实例化从 Interface Builder 文件中引用的类的实例时, 将在运行时生成此错误。 这意味着你忘记添加使用单个 IntPtr 作为参数的构造函数。
 
-带有一个 IntPtr 句柄的构造函数用于绑定具有其非托管表示形式的托管的对象。
+带有 IntPtr 句柄的构造函数用于绑定托管对象及其非托管表示形式。
 
-若要解决此问题，到类 Foo.Bar 添加以下代码行：
+若要解决此问题, 请将以下代码行添加到类 Foo. Bar:
 
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>{Foo} 类型不包含用于定义`GetNativeField`扩展方法和`GetNativeField`的类型找不到 {Foo}
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>类型 {Foo} 不包含的定义, 并且`GetNativeField`找不到类型`GetNativeField`为 {Foo} 的扩展方法
 
-如果你收到此错误在设计器生成的文件 (*。 xib.designer.cs)，这意味着两个条件之一：
+如果在设计器生成的文件 (*. xib.designer.cs) 中出现此错误, 则表示以下两种情况之一:
 
- **1） 缺少分部类或基类**
+ **1) 缺少分部类或基类**
 
-在设计器生成的分部类必须具有相应分部类在用户代码中继承的一些子类`NSObject`，通常`UIViewController`。 确保您有这样的类提供错误的类型。
+设计器生成的分部类在用户代码中必须有对应的分部类`NSObject`, 这些类通常`UIViewController`是从的某些子类继承而来。 确保为该类型提供了该错误的类。
 
- **2） 默认命名空间更改**
+ **2) 更改了默认命名空间**
 
-使用你的项目的默认命名空间设置生成的设计器文件。 如果您更改这些设置，或者重命名项目，生成的分部类可能无法再在相同的命名空间对应的用户代码。
+设计器文件是使用项目的默认命名空间设置生成的。 如果更改了这些设置, 或重命名了项目, 则生成的分部类可能不再与它们的用户代码对应的命名空间相同。
 
-在项目选项对话框中，可以找到 Namespace 设置。 默认命名空间中找到**常规-> Main 设置**部分。 如果为空，则项目的名称用作默认值。 更多高级命名空间设置可在**源代码->.NET 命名策略**部分。
+命名空间设置可在 "项目选项" 对话框中找到。 默认命名空间位于 "**常规-> 主设置**" 部分中。 如果为空, 则将项目名称用作默认值。 可以在**源代码-> .Net 命名策略**"部分中找到更高级的命名空间设置。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>警告的操作：永远不会使用 Foo 的私有方法。 (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>针对操作的警告:从未使用私有方法 "Foo"。 (CS0169)
 
-接口生成器文件的操作被连接到小组件通过在运行时，反射，因此预期此警告。
+接口生成器文件的操作在运行时通过反射连接到小组件, 因此应该出现此警告。
 
-可以使用"#pragma 警告禁用 0169年""#pragma 警告启用 0169" 围绕你的操作如果你想要取消显示此警告只需为这些方法，或如果你想要禁用其整个项目 （非添加 0169 编译器选项中的"忽略警告"字段建议）。
+如果要针对这些方法仅禁止显示此警告, 可以在操作中使用 "#pragma 警告禁用 0169" #pragma 警告启用 0169 "; 如果想要为整个项目禁用此警告, 请将0169添加到" 编译器选项 "中的" 忽略警告 "字段 (而不是建议使用)。
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch 失败，出现以下消息：无法打开程序集 ' / path/to/yourproject.exe
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch 失败, 出现以下消息:无法打开程序集 "/path/to/yourproject.exe"
 
-如果看到此错误消息，通常问题是你的项目的绝对路径包含空格。 这将修复的 Xamarin.iOS，未来版本中，但可以通过将项目移到不含空格的文件夹来解决此问题。
+如果看到此错误消息, 则通常是您的项目的绝对路径包含空格。 此问题将在未来的 Xamarin 版本中得到解决, 但你可以通过将项目移到没有空格的文件夹来解决此问题。
 
-## <a name="your-sqlite3-version-is-old---please-upgrade-to-at-least-v350"></a>Sqlite3 版本太旧，-请至少升级到 v3.5.0 ！
+## <a name="your-sqlite3-version-is-old---please-upgrade-to-at-least-v350"></a>你的 sqlite3 版本已过时-请升级到至少 v 3.5.0!
 
-执行以下所有操作时，将发生这种情况：
+执行以下所有操作时, 会发生这种情况:
 
-1.  使用 Mono.Data.Sqlite
-1.  使用 Mac OS X Leopard (10.5)
-1.  运行你的应用在模拟器中。
+1. 使用 Mono
+1. 使用 Mac OS X Leopard (10.5)
+1. 在模拟器中运行应用。
 
 
-问题是 Mono 选取 OS X `libsqlite3.dylib`，不 iPhoneSimulator 的`libsqlite3.dylib`文件。 您的应用程序*将*设备，但只是无法在模拟器上工作。
+问题在于单声道是指 OS X `libsqlite3.dylib`, 而不是 iPhoneSimulator 的`libsqlite3.dylib`文件。 您的应用程序*将*在设备上运行, 而不是模拟器。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>将部署到设备失败，并 System.Exception:AMDeviceInstallApplication returned 3892346901
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>部署到设备失败, 出现系统异常:AMDeviceInstallApplication 返回了3892346901
 
-此错误意味着你的证书/捆绑包 id 的代码签名配置与在设备上安装了预配配置文件不匹配。  确认您有适当的证书在项目选项中选择-> iPhone 捆绑包签名，并且项目选项中指定的正确程序包 id-> iPhone 应用程序
+此错误表示证书/捆绑 id 的代码签名配置与设备上安装的预配配置文件不匹配。  确认在项目选项中选择了适当的证书-> iPhone 捆绑签名, 以及在项目选项-> iPhone 应用程序中指定的正确的捆绑 id
 
-## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>代码完成功能不工作在 Visual Studio for Mac
+## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>代码完成在 Visual Studio for Mac 中不起作用
 
-请确保使用最新版本的 Visual Studio for Mac 和 Xamarin.iOS
+确保使用最新版本的 Visual Studio for Mac 和 Xamarin
 
-如果问题仍然存在，请[提交 bug](http://monodevelop.com/Developers#Reporting_Bugs)、 附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，并**组件的 {TIMESTAMP}.log**日志文件。
+如果问题仍然存在, 请提交[bug](http://monodevelop.com/Developers#Reporting_Bugs), 附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{timestamp} .log**, 并附加**组件-{TIMESTAMP} .log**日志文件。
 
-如果所有其他方法均失败，您可以尝试删除的代码完成缓存，以便重新生成它：
+如果所有其他操作都失败, 可以尝试删除代码完成缓存, 以便重新生成它:
 
  `[rm -r ~/.config/XamarinStudio-{VERSION}/CodeCompletionData]`
 
-请注意正确键入以下命令，或可能会意外地删除重要的文件。
+请小心键入此命令, 否则可能会意外地删除重要文件。
 
-## <a name="visual-studio-for-mac-crashes-when-you-copy-text"></a>Visual Studio for Mac 崩溃时复制文本
+## <a name="visual-studio-for-mac-crashes-when-you-copy-text"></a>复制文本时出现 Visual Studio for Mac 崩溃
 
-流行的 Mac 实用工具 QuickSilver、 Google 工具栏和启动具有用于 Mac 的内存损坏 Visual Studio 的剪贴板功能。 在其选项中，您可以作为它们应不会干扰的进程，Visual Studio for Mac 列出。
+常用的 Mac 实用程序 QuickSilver、Google 工具栏和启动栏具有 Visual Studio for Mac 的内存损坏的剪贴板功能。 在这些选项中, 你可以将 Visual Studio for Mac 列出为不应干扰的进程。
 
-## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio for Mac 错误报告所需的 Mono 2.4
+## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio for Mac 投诉原因有关 Mono 2.4 的要求
 
-如果你由于最近的更新，更新 Visual Studio for Mac，当你尝试启动它时再次它抱怨 Mono 2.4 不可存在，只需是[升级 Mono 2.4 安装](http://www.go-mono.com/mono-downloads/download.html)。  
+如果由于最近的更新而更新了 Visual Studio for Mac, 并且当你尝试再次启动时, 投诉原因不存在 Mono 2.4, 你只需[升级 mono 2.4 安装](http://www.go-mono.com/mono-downloads/download.html)即可。  
 
-Mono 2.4.2.3_6 修复了阻止可靠地运行，有时会挂起 Visual Studio for Mac 在启动 Visual Studio for Mac 或阻止正在生成代码完成数据库的一些重要问题。
+Mono 2.4.2.3 _6 修复了一些 Visual Studio for Mac 无法可靠运行的重要问题, 有时会在启动时挂起 Visual Studio for Mac 或阻止生成代码完成数据库。
 
-一旦安装新的 Mono，请按预期方式将启动 Visual Studio for Mac。
+安装新 Mono 后, Visual Studio for Mac 将按预期方式启动。
 
-## <a name="assertion-at-monometadatageneric-sharingc704-condition-oti-not-met"></a>在断言.../../../../mono/metadata/generic-sharing.c:704，oti 不满足条件
+## <a name="assertion-at-monometadatageneric-sharingc704-condition-oti-not-met"></a>中的断言。/../../../mono/metadata/generic-sharing.c: 704, 不满足条件 "oti"
 
-如果收到以下的堆栈跟踪：
+如果你正在接收以下 stack 跟踪:
 
 ```csharp
  - Assertion at ../../../../mono/metadata/generic-sharing.c:704, condition `oti' not met
@@ -184,11 +184,11 @@ Stacktrace:
     at (wrapper runtime-invoke) object.runtime_invoke_dynamic (intptr,intptr,intptr,intptr) <0xffffffff>`
 ```
 
-这意味着要链接到你的项目使用 thumb 代码编译的静态库。 从 iPhone SDK 版本 3.1 （或更高版本在撰写本文时） 开始链接非 Thumb 代码 (Xamarin.iOS) 和 Thumb 代码 （静态库） 时，Apple 引入了其链接器中的 bug。你将需要与静态库来缓解此问题的非 Thumb 版本链接。
+这意味着你要将使用 thumb 代码编译的静态库链接到你的项目中。 从 iPhone SDK 版本 3.1 (在撰写本文时, 或更高版本), Apple 在使用 Thumb 代码 (静态库) 链接非 Thumb 代码 (Xamarin) 时在其链接器中引入了 bug。你将需要与静态库的非 Thumb 版本链接, 以减轻此问题。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1getcount-"></a>System.ExecutionEngineException:尝试 JIT 编译方法 （托管到托管的包装） Foo[]:System.Collections.Generic.ICollection'1.get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException:尝试 JIT 编译方法 (托管到托管的包装) Foo []: get_Count ()
 
-[] 后缀指示您或类库正在通过泛型集合，如 ienumerable<>、 icollection<> 或 IList <> 数组上调用的方法。 解决此问题，可以显式强制 AOT 编译器包含此类方法通过调用方法，并确保触发了异常的调用之前执行此代码。 在这种情况下，您可以编写：
+[] 后缀指示你或类库正在通过泛型集合 (如 IEnumerable < >、ICollection < > 或 IList < > 调用数组中的方法。 作为一种解决方法, 你可以通过自行调用方法, 并确保在触发异常的调用之前执行此代码, 从而显式强制 AOT 编译器包含此类方法。 在这种情况下, 可以编写:
 
 ```csharp
 Foo [] array = null;
@@ -197,106 +197,106 @@ int count = ((ICollection<Foo>) array).Count;
 
 这将强制 AOT 编译器包含 get_Count 方法。
 
-## <a name="visual-studio-for-mac-source-editor-is-extremely-slow"></a>Visual Studio for Mac 源编辑器是速度极慢
+## <a name="visual-studio-for-mac-source-editor-is-extremely-slow"></a>Visual Studio for Mac 源编辑器非常慢
 
-有时 Visual Studio for Mac 源编辑器变得非常缓慢，使其不显示为挂起之间键入字符数秒钟的时间。
+有时 Visual Studio for Mac 的源编辑器会变得非常慢, 因此在键入字符之间等待几秒钟。
 
-此问题是非常少见，非常难以重现的-它通常无法重现同一台计算机上后启 Visual Studio for mac。 因此我们将不胜感激如果可以在重新启动 Visual Studio for Mac 中之前, 执行几个调试步骤，并将结果发送给我们。
+此问题很少发生, 并且很难重现-在 Visual Studio for Mac 重新启动之后, 通常无法在同一台计算机上重现此问题。 出于此原因, 如果你可以在重新启动 Visual Studio for Mac 之前执行几个调试步骤, 则会非常感激, 并将结果发送给我们。
 
-1.  请尝试关闭编辑器选项卡上，并重新打开它。 需要少量编辑或四处移动插入符号，直到再次发生缓慢？
-1.  禁用"则不同同步"使用"Quartz Debug"开发人员工具 (可找到使用 Spotlight)，并检查是否能够源编辑器性能恢复正常状态。
-1.  使用电子束以同步仍处于禁用状态，请尝试重复步骤 (1)。
-1.  如果在编辑器挂起超过几秒钟，尝试运行"killall-退出 [Visual Studio for Mac]"在终端中而被挂起。 它可能很难时间 kill 命令发生这种情况时编辑器已经被挂起，但它至关重要，若要执行此操作，因为命令会强制 Mono 要写入到 MD 日志，我们可以使用发现时 XS 挂起线程都在何种状态的所有线程的堆栈跟踪。
+1. 请尝试关闭编辑器选项卡, 然后重新打开它。 是否需要花一些时间来编辑或移动插入符号, 直到减速再次出现？
+1. 使用 "Quartz 调试" 开发人员工具 (你可以使用聚光灯查找) 禁用 "横梁同步", 并检查源编辑器性能是否还原为正常。
+1. 试用始终禁用了横梁同步的重复步骤 (1)。
+1. 如果编辑器挂起了几秒钟以上, 请尝试在终端中运行 "killall-QUIT [Visual Studio for Mac]", 同时将其挂起。 当编辑器挂起时, 可能很难终止 kill 命令, 但执行此操作非常重要, 因为该命令强制 Mono 将所有线程的堆栈跟踪写入 MD 日志, 这样, 我们可以使用它们来发现当 XS 挂起时线程处于哪些状态。
 
 
 
-请附加 XS 日志 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{TIMESTAMP}.log**，和**组件-{TIMESTAMP}.log**(在较旧版本的 XS/MonoDevelop，只需发送 **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**)。
+请附加 XS 日志, **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **ANDROIDTOOLS-{timestamp} .Log**, AND**组件-{timestamp} .log** (在旧版本的 XS/MonoDevelop 中, 只需 send **~/Library/Logs/MonoDevelop-(3.0 | 2.8 | 2.6)/MonoDevelop.log**)。
 
- **注意：中 XS 2.2 最终修复上述问题**
+ **注意：上述问题已在 XS 2.2 最终版本中修复**
 
-## <a name="compiled-application-is-very-large"></a>编译的应用程序是非常大
+## <a name="compiled-application-is-very-large"></a>已编译的应用程序非常大
 
-若要支持调试，调试版本包含额外的代码。 在发布模式下生成的项目是大小的一小部分。
+为了支持调试, 调试版本包含其他代码。 在发布模式下生成的项目是大小的一小部分。
 
-截至 Xamarin.iOS 1.3 调试生成包含调试 Mono （每个类的框架中每个方法） 的每个单个组件的支持。  
+自 Xamarin. iOS 1.3, 调试版本包括针对 Mono 的每个组件 (每类框架的每个方法) 的调试支持。  
 
-我们将使用 Xamarin.iOS 1.4 引入用于调试的更加精细的方法，默认行为是仅针对你的代码和库，库可以提供调试检测，并且不执行此操作的所有[Mono 程序集](~/cross-platform/internals/available-assemblies.md)（这仍将可能的但必须要选择加入到调试这些程序集）。
+使用 Xamarin 1.4, 我们将介绍一种更细化的调试方法, 默认情况下, 它只是为你的代码和库提供调试检测, 而不是针对所有[Mono 程序集](~/cross-platform/internals/available-assemblies.md)执行此操作 (这仍是可行的, 但你需要选择对这些程序集进行调试。
 
 ## <a name="installation-hangs"></a>安装挂起
 
-如果您有运行的 iPhone 模拟器的 Mono 和 Xamarin.iOS 安装程序挂起。 此问题并不局限于 Mono 或 Xamarin.iOS，这是任何软件的尝试安装软件上 MacOS Snow Leopard，如果在 iPhone 模拟器运行在安装时出现相同的问题。
+如果你正在运行 iPhone 模拟器, 则 Mono 和 Xamarin iOS 安装程序都挂起。 此问题并不局限于 Mono 或 Xamarin, 这是在安装时在 MacOS 雪 Leopard 上尝试安装软件的任何软件的一致性问题。
 
-请确保你退出在 iPhone 模拟器，然后重试安装。
+请确保退出 iPhone 模拟器, 然后重试安装。
 
 <a name="trampolines" />
 
-## <a name="ran-out-of-trampolines-of-type-0"></a>用尽了 trampolines 类型 0
+## <a name="ran-out-of-trampolines-of-type-0"></a>已用完类型为0的 trampolines
 
-如果运行设备时收到此消息，您可以创建多个类型 0 trampolines （键入特定于） 通过修改您的项目选项"iPhone 生成"部分。  你想要添加的设备的额外参数生成目标：
+如果在运行设备时收到此消息, 则可以通过修改项目选项 "iPhone Build" 部分来创建更多类型 0 trampolines (类型特定)。  要为设备生成目标添加额外参数:
 
  `-aot "ntrampolines=2048"`
 
-默认数 trampolines 为 1024年。  请尝试增大此数字，直到具有足够的应用程序。
+Trampolines 的默认数目为1024。 尝试增加此数量, 直到你的应用程序已足够。
 
-## <a name="ran-out-of-trampolines-of-type-1"></a>用尽了 trampolines 类型 1
+## <a name="ran-out-of-trampolines-of-type-1"></a>已用完类型为1的 trampolines
 
-如果进行大量使用递归泛型的您可能会在设备上收到此消息。  通过修改您的项目选项"iPhone 生成"部分中，创建多个类型 1 trampolines （类型为 RGCTX）。  你想要添加的设备的额外参数生成目标：
+如果大量使用递归泛型, 则可能会在设备上收到此消息。  可以通过修改项目选项 "iPhone Build" 部分来创建更多类型 1 trampolines (类型 RGCTX)。  要为设备生成目标添加额外参数:
 
  `-aot "nrgctx-trampolines=2048"`
 
-默认数 trampolines 为 1024年。  请尝试增大此数字，直到具有足够的有关泛型的使用情况。
+Trampolines 的默认数目为1024。 请尝试增加此数量, 直到你已有足够的使用泛型。
 
-## <a name="ran-out-of-trampolines-of-type-2"></a>用尽了 trampolines 类型 2
+## <a name="ran-out-of-trampolines-of-type-2"></a>已用完类型为2的 trampolines
 
-如果进行频繁使用接口，您可能会收到此消息在设备上。
-通过修改您的项目选项"iPhone 生成"部分中，创建多个类型 2 trampolines （类型为 IMT Thunk）。  你想要添加的设备的额外参数生成目标：
+如果使用接口, 则可能会在设备上收到此消息。
+可以通过修改项目选项 "iPhone Build" 部分来创建更多类型 2 trampolines (类型 IMT Thunk)。  要为设备生成目标添加额外参数:
 
  `-aot "nimt-trampolines=512"`
 
-默认的 IMT Thunk trampolines 数为 128。  请尝试增大此数字，直到您有足够的接口的使用情况。
+IMT Thunk trampolines 的默认数目为128。 请尝试增加此数量, 直到你使用了接口。
 
-## <a name="debugger-is-unable-to-connect-with-the-device"></a>调试器不能与设备连接
+## <a name="debugger-is-unable-to-connect-with-the-device"></a>调试器无法与设备连接
 
-当开始调试设备配置时，你将看到调试器显示一个对话框，指示它尝试连接到该应用程序。 有多个原因，调试器可能无法连接到该应用程序，具体取决于模式因为使用连接 （USB 或 WiFi）。
+开始调试设备配置时, 会看到调试器显示一个对话框, 指示它正在尝试连接到应用程序。 调试器可能无法连接到应用程序的原因有多种, 具体取决于连接的模式 (USB 或 WiFi)。
 
- **如果设备和调试器主机位于不同的网络**，防火墙或专用网络可能会阻止连接到 WiFi 模式中的调试器主机提供的应用程序。
+ **如果设备和调试器主机位于不同网络上**, 则防火墙或专用网络可能会阻止应用程序在 WiFi 模式下连接到调试器主机。
 
- **Visual Studio for Mac 可能不能查询主机的正确 IP**。 在 WiFi 模式 Visual Studio for Mac，给出了应用程序所有 Ip，它可以找到的主机和应用程序尝试所有可以了解是否它可以使用其中任何一个连接到 Visual Studio for mac。
+ **Visual Studio for Mac 可能无法查询主机的正确 IP**。 在 WiFi 模式下 Visual Studio for Mac 向应用程序提供它可以找到的主机的所有 Ip, 应用程序会尝试所有这些 Ip 来确定是否可以使用这些 Ip 来连接到 Visual Studio for Mac。
 
- **另一台设备连接到主机上的 USB 端口中。** 在少数情况下，其他设备连接到 USB 端口在主机上的具有已知要以某种方式会影响在 USB 模式中进行调试。
+ **另一台设备连接到主机上的 USB 端口。** 在少数情况下, 连接到主机上的 USB 端口的其他设备被识别为在某种程度上干扰 USB 模式下的调试。
 
-如果 WiFi 或 USB 模式不起作用，您可以轻松地尝试其他： 在 Visual Studio for Mac 中，打开首选项，请转到首选项 / 调试器 / iPhone 调试程序页中，并切换"iOS 设备通过 WiFi 调试而不是通过 USB"复选框。   如果都不适用，可以看到设备控制台以详细模式中故障的详细信息 (其中通过添加启用了"-v-v-v"到项目的选项中的其他 mtouch 参数)。
+如果 WiFi 或 USB 模式不起作用, 则可以轻松尝试其他模式: 在 Visual Studio for Mac 中, 打开首选项, 转到 "首选项"/"调试器/iPhone 调试器" 页, 并切换 "通过 WiFi 而不是通过 USB 调试 iOS 设备" 复选框。   如果两者都不起作用, 则可以在详细模式下查看有关设备控制台中故障的详细信息 (通过将 "-v-v" 添加到项目选项中的其他 mtouch 参数启用)。
 
-## <a name="error-134-mtouch-failed-with-the-following-message"></a>错误 134: mtouch 失败，出现以下消息：
+## <a name="error-134-mtouch-failed-with-the-following-message"></a>错误 134: mtouch 失败, 出现以下消息:
 
-如果你尝试使用-nolink 生成上的版本的 Xamarin.iOS 1.4 样式，可能会引发此错误。 可以通过在 monodevelop 项目配置中指定额外参数来解决此错误。
+如果尝试在 Xamarin 1.4 版的版本上生成 nolink, 则可能会引发此错误。 可以通过在 monodevelop 项目配置中指定额外参数来解决此错误。
 
 添加参数
 
  `-nosymbolstrip`
 
-和问题应该会得到解决。
+并且应该解决该问题。
 
-## <a name="distribution-identity-is-not-shown-in-visual-studio-for-mac-project-signing-options"></a>分发标识不显示在 Visual Studio for Mac 签名选项
+## <a name="distribution-identity-is-not-shown-in-visual-studio-for-mac-project-signing-options"></a>分发标识不显示在 Visual Studio for Mac 项目签名选项中
 
-Visual Studio for Mac 2.2 具有导致其无法检测包含逗号的分发证书的 bug。 请更新 Visual Studio for Mac 2.2.1。
+Visual Studio for Mac 2.2 有一个 bug, 该 bug 导致无法检测包含逗号的分发证书。 请更新到 Visual Studio for Mac 2.2.1。
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>错误"AFCFileRefWrite 返回：1"上传期间
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>返回 "AFCFileRefWrite" 错误:1 "上传
 
-将应用上传到你的设备时可能会收到错误"AFCFileRefWrite 返回：1". 这可能是如果您有一个零长度文件。
+将应用上传到设备时, 可能会收到错误 "AFCFileRefWrite 返回:1". 如果你有一个长度为零的文件, 则可能会发生这种情况。
 
-## <a name="error-mtouch-failed-with-no-output"></a>错误"mtouch 失败且无输出"
+## <a name="error-mtouch-failed-with-no-output"></a>错误 "mtouch 失败, 无输出"
 
-Xamarin.iOS 和 Visual Studio for Mac 的当前版本失败时的项目名称或存储解决方案或项目的目录包含空格。
+当存储解决方案或项目的项目名称或目录包含空格时, Xamarin 和 Visual Studio for Mac 的当前版本会失败。
 修复此问题的方法：
 
 
--  请确保你的项目或存储位置的目录都不包含空格。
--  在项目"Main 设置"请确保项目名称不包含任何空格。
+- 确保你的项目或其中存储它的目录都包含空格。
+- 在项目 "主要设置" 中, 确保项目名称不包含任何空格。
 
-## <a name="error-the-binary-you-uploaded-was-invalid-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-application"></a>错误"已上传二进制文件无效。 使用预发布 beta 版本的 SDK 生成应用程序"
+## <a name="error-the-binary-you-uploaded-was-invalid-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-application"></a>错误: 上传的二进制文件无效。 SDK 的预发布 beta 版本用于生成应用程序 "
 
-此错误通常由于与 Xamarin.iOS 2.0.0 发布前在 iPad 开发过程中启动项目，如你的 Info.plist 中可能有一些键：
+此错误通常是由于在2.0.0 发布之前在 iPad 开发中启动的项目引起的, 你可能在信息中有一些密钥。 info.plist, 如:
 
 ```xml
 <key>UIDeviceFamily</key>
@@ -305,39 +305,39 @@ Xamarin.iOS 和 Visual Studio for Mac 的当前版本失败时的项目名称或
        </array>
 ```
 
-应删除此密钥对，因为 Visual Studio for Mac 它为您自动处理。
+应删除此密钥, 因为 Visual Studio for Mac 会自动对其进行处理。
 
-## <a name="error-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-app"></a>错误"预发布 beta 版本的 SDK 用于生成应用程序"
+## <a name="error-a-pre-release-beta-version-of-the-sdk-was-used-to-build-the-app"></a>错误 "用于构建应用的 SDK 的预发布 beta 版本
 
-（由 Ed Anuff 提供）
+(由 Ed Anuff 提供)
 
 请执行以下步骤：
 
--  在 iPhone 生成到 3.2 或 iTunes 的 SDK 版本连接的更改将拒绝此上传由于其查看使用 SDK 版本不会早于 3.2 构建的 iPad 兼容应用程序
--  创建自定义项目的 Info.plist 并显式设置为在其中 3.0 MinimumOSVersion。   这将重写设置 Xamarin.iOS 的 MinimumOSVersion 3.2 值。   如果不这样做，应用程序不能在 iPhone 上运行。
--  重新生成、 zip 和上的传到 iTunes connect。
+- 将 iPhone Build 中的 SDK 版本更改为3.2 或 iTunes connect 将在上传时拒绝它, 因为它看到使用小于3.2 的 SDK 版本生成的 iPad 兼容的应用
+- 为项目创建自定义 info.plist, 并在其中将 MinimumOSVersion 显式设置为3.0。   这将覆盖 Xamarin 设置的 MinimumOSVersion 3.2 值。   如果未执行此操作, 应用将无法在 iPhone 上运行。
+- 重新生成、压缩并上传到 iTunes connect。
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未经处理的异常：“System.Exception:找不到选择器 someSelector： 在 {type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未经处理的异常：“System.Exception:未能找到选择器 someSelector: 在 {type} 上
 
-此异常是由以下三种情况引起的：
-
-
-1.  而无需将相应的 [导出] 特性应用于一种方法提供了到 OBJECTIVE-C 运行时的选择器
-1.  已启用完整链接并不应用于 [导出] ed 方法的 [Preserve] 属性。
-1.  已应用于继承的类型中的私有方法的 [Export] 特性。
+此异常由以下三种情况之一引起:
 
 
-## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>MainWindow.xib.designer.cs 文件不会更新
+1. 你向目标 C 运行时提供了一个选择器, 而未将相应的 [Export] 特性应用于方法
+1. 已启用完全链接, 但未将 [Preserve] 属性应用于 [Export] ed 方法。
+1. 已将 [Export] 特性应用于继承类型中的私有方法。
 
-在 Xamarin Studio 2.4 导致其无法组与新的项目中的 MainWindow.xib.designer 文件 MainWindow.xib 文件出现 bug。 这意味着它不会更新该特定文件的设计器代码。
 
-此问题固定的版本的 Visual Studio for Mac 现已推出其内置的更新程序，因此请确保使用较新版本。
+## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>未更新 MainWindow.xib.designer.cs 文件
 
-您可以通过删除 （不删除） 来解决现有项目 xib 和其设计器文件，然后将其添加回。 此重新应正确组文件。
+Xamarin Studio 2.4 中存在 bug, 导致它不会将 xib 文件与新项目中的 Mainwindow.xaml 文件组合在一起。 这意味着它不会更新该特定文件的设计器代码。
 
-## <a name="uialertview-or-uiactionsheet-vanish-after-being-created"></a>正在创建后消失 UIAlertView 或 UIActionSheet
+此问题已在内置更新程序中提供的 Visual Studio for Mac 版本中得到解决, 因此请确保使用较新版本。
 
-如果你有如下一些代码：
+可以通过删除 (而不是删除) xib 及其设计器文件, 然后再将其添加回去来修复现有项目。 这应该会正确地对文件进行分组。
+
+## <a name="uialertview-or-uiactionsheet-vanish-after-being-created"></a>UIAlertView 或 UIActionSheet 在创建后消失
+
+如果你的代码如下所示:
 
 ```csharp
 var actionSheet = new UIActionSheet ("My ActionSheet", null, null, "OK", null){
@@ -349,71 +349,71 @@ actionSheet.Clicked += delegate (sender, args){
 };
 ```
 
-在"actionSheet"对象存在为该函数中的临时变量和函数将终止，对象就可以进行垃圾回收，因此其结果是进行垃圾回收。
+"actionSheet" 对象作为函数中的临时变量存在, 一旦函数终止, 该对象就有资格进行垃圾回收, 因此最终会进行垃圾回收。
 
-若要解决此问题，需要保留对"actionSheet"你的方法，某个位置之外，将 live 超出您的方法的引用。
+若要解决此问题, 需要保留对方法之外的 "actionSheet" 的引用, 该引用将位于方法之外。
 
-## <a name="project-always-runs-in-the-ipad-simulator"></a>项目始终运行在 iPad 模拟器
+## <a name="project-always-runs-in-the-ipad-simulator"></a>项目始终在 iPad 模拟器中运行
 
-IPhone SDK 4.0 安装程序安装 2 Sdk-3.2 SDK，用于构建仅限 iPad 的应用程序，并为 4.0 SDK，用于生成 iPhone 和通用应用。 它还会安装模拟仅 iPad，3.2 模拟器以及 4.0 的模拟器，模拟 iPhone 或 iPhone 4。 删除所有旧的 Sdk 和模拟器。
+IPhone SDK 4.0 安装程序安装了2个 Sdk-3.2 SDK, 用于构建仅限 iPad 的应用和 4.0 SDK, 用于生成 iPhone 和通用应用。 它还会安装一个3.2 模拟器, 该模拟器仅模拟 iPad 和模拟 iPhone 或 iPhone 4 的4.0 模拟器。 删除所有旧版本的 Sdk 和模拟器。
 
-Visual Studio for Mac iPhone 项目生成选项中构建您的应用程序包含将使用的 SDK 版本的设置。 此设置可在**项目选项-> 生成-> iPhone 生成**。
+Visual Studio for Mac iPhone 项目生成选项包含用于构建应用的 SDK 版本的设置。 此设置可在**项目选项-> 生成 > IPhone 版本**中找到。
 
-Visual Studio for Mac 中的新项目作为其默认 SDK 设置，使用最早的已安装的 SDK 和 Visual Studio for Mac 如果指定的 SDK 不存在，将使用它可以找到以生成您的应用程序的最接近。 执行此操作，以便项目始终就不需要最新的 SDK。 但是，这当前会导致 3.2 SDK 正在使用-这会导致正在使用 iPad 模拟器。
+Visual Studio for Mac 中的新项目使用最早安装的 SDK 作为其默认 SDK 设置, 如果指定的 SDK 不存在, Visual Studio for Mac 将使用最接近的版本来构建你的应用。 这样做是为了使项目不会始终需要最新的 SDK。 但是, 这当前会导致使用 3.2 SDK, 这会导致使用 iPad 模拟器。
 
-若要解决此问题通过使用为 4.0 SDK，请转到**项目选项-> 生成-> iPhone 生成**> 并将 SDK 值更改为"4.0"，然后使用下拉列表框。 必须为每个配置和平台组合，访问面板的顶部使用下拉列表来执行此操作。
+若要使用 4.0 SDK 修复此问题, 请转到**项目选项-> 生成 > IPhone 版本**> 并使用下拉框将 SDK 值更改为 "4.0"。 您必须为每个配置和平台组合执行此操作, 并使用面板顶部的下拉列表进行访问。
 
-不应与"的最低操作系统版本"设置混淆的 SDK 版本。
-此值不会不一定要匹配的 SDK 版本值-它会影响您的应用程序将安装上，可以是早于 SDK，前提是使用仅存在于较旧操作系统，或防止使用运行时操作系统版本检查的较新功能的使用的 Api 的操作系统的最低版本ks。 应将其设置为在其测试您的应用程序的最早 OS 版本。
+SDK 版本不应与 "最低操作系统版本" 设置混淆。
+此值不必与 SDK 版本值匹配-它会影响你的应用程序将安装在其上的操作系统的最低版本 (可以比 SDK 更早的版本), 前提是你只使用了旧版本中的 Api, 或者使用运行时操作系统版本签来保护新功能的使用。ks. 你应将其设置为在其上测试你的应用程序的最早的 OS 版本。
 
-另请注意**项目-> iPhone 模拟器目标**> 菜单可用于选择运行/调试项目时，默认情况下使用模拟器。 此外，**运行-> 运行与**> 菜单可用于选择用来运行特定模拟器
+另请注意,**项目 > IPhone 模拟器目标**> 菜单可用于选择运行/调试项目时默认使用的模拟器。 此外,**运行 > 使用**> "菜单运行, 可用于选取要运行的特定模拟器
 
-## <a name="ibtool-returns-error-133"></a>ibtool 将返回错误 133
+## <a name="ibtool-returns-error-133"></a>ibtool 返回错误133
 
-这意味着已安装的 XCode 4。   在 XCode 4 中，工具 ibtool 已删除，不再可以编辑 XIB 文件使用独立工具。
+这意味着你已安装 XCode 4。   在 XCode 4 中, 删除了工具 ibtool 后, 就不能再使用独立工具编辑 XIB 文件。
 
-如果你想要使用 Interface Builder，安装[XCode 系列 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)，可通过 Apple 的网站。
+如果要使用 Interface Builder, 请从 Apple 网站上安装[XCode 系列 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
 
-## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-wbrinterface-builder"></a>"无法创建 mime 类型的显示绑定： application/vnd.apple-<wbr/>接口生成器"
+## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>"无法为 mime 类型创建显示绑定: application/vnd.apple.mpegurl. apple-interface-builder"
 
-如果你尝试从非 iPhone 项目创建 iPhone UI，会发生此错误。 请确保使用 iPhone/iPad 解决方案开始，不能只是将 iPhone UI 元素添加到 iPhone/iPad 项目。
+如果尝试从非 iPhone 项目创建 iPhone UI, 会发生此错误。 请确保你开始使用 iPhone/iPad 解决方案, 但不能只是将 iPhone UI 元素添加到非 iPhone/iPad 项目。
 
-## <a name="startup-crash-when-executing-inside-the-ios-simulator"></a>在 iOS 模拟器内执行时启动故障
+## <a name="startup-crash-when-executing-inside-the-ios-simulator"></a>在 iOS 模拟器内执行时启动崩溃
 
-如果看到如下所示的堆栈跟踪以及在模拟器中运行时崩溃 (SIGSEGV):
+如果在模拟器内获取运行时崩溃 (SIGSEGV) 以及如下所示的堆栈跟踪:
 
 ```csharp
   at (wrapper managed-to-native) System.Reflection.Assembly.GetTypes (System.Reflection.Assembly,bool)
   at MonoTouch.ObjCRuntime.Runtime.RegisterAssembly (System.Reflection.Assembly)
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
-...则可能在模拟器应用程序目录中有一个 （或多个） 过时的程序集。 由于 Apple iOS 模拟器中添加并更新文件，但永远不会将其删除，则可能存在这样的程序集。 如果发生这种情况则最简单的解决方案是从模拟器菜单中选择"重置和内容和设置..."。   
+...那么, 你可能会在模拟器应用程序目录中具有一个 (或多个) 过时的程序集。 此类程序集可能存在, 因为 Apple iOS 模拟器添加并更新文件, 但不会删除它们。 如果发生这种情况, 最简单的解决方法是选择 "重置和内容和设置 ..."从模拟器菜单。   
 
 > [!WARNING]
-> 这将从模拟器中删除所有文件、 应用程序和数据。   下一次执行应用程序时，Visual Studio for Mac 会将其部署到模拟器，并且将会导致故障发生任何旧的、 陈旧程序集。
+> 这会从模拟器中删除所有文件、应用程序和数据。   下一次执行应用程序时, Visual Studio for Mac 会将其部署到模拟器, 并且没有旧的过时程序集可导致崩溃。
 
-## <a name="simulator-hangs-during-application-installation"></a>在应用程序安装过程中的模拟器挂起
+## <a name="simulator-hangs-during-application-installation"></a>在应用程序安装过程中模拟器挂起
 
-这可能会在应用程序名称中包含。（句点） 在它们的名称。
-即使可以中 （如设备） 的许多其他情况下的工作原理，这不能用作 CFBundleExecutable-中的可执行文件名称。
+当应用程序名称包含 "." 时, 可能会发生这种情况。的名称。
+这在 CFBundleExecutable 中被禁止作为可执行文件名称, 即使它可以在许多其他情况 (如设备) 中运行。
 
- *"值不应包含任何扩展名称。"- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* "此值不应包含名称上的任何扩展名"。-[https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>错误："不支持自定义特性类型 0x43"时双击.xib 文件
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>错误：双击 xib 文件时, 不支持 "自定义属性类型 0x43"
 
-原因是尝试打开.xib 文件时未正确设置环境变量。 这应不会使用正常使用的 Visual Studio 针对 Mac/Xamarin.iOS，并重新打开 Visual Studio for Mac 进行/应用程序 — 应修复的问题。
+这是由于未正确设置环境变量时尝试打开 xib 文件引起的。 Visual Studio for Mac/Xamarin 的正常使用情况下不会发生这种情况, 并且从/Applications 重新打开 Visual Studio for Mac 应能解决该问题。
 
-尝试更新软件和此错误消息出现后，请电子邮件 *support@xamarin.com*
+尝试更新软件时出现此错误消息, 请发送电子邮件至 *support@xamarin.com*
 
-## <a name="application-runs-on-simulator-but-fails-on-device"></a>应用程序在模拟器上运行，但无法在设备上
+## <a name="application-runs-on-simulator-but-fails-on-device"></a>应用程序在模拟器上运行, 但在设备上失败
 
-此问题可能表现在多个窗体中，并且不会始终生成一致的错误。 如果应用程序包含.xib，检查以确保**生成操作**.xib 设置为**接口定义**。 这是.xibs 的默认生成操作。
+此问题可能以多种形式出现, 并且不会始终产生一致的错误。 如果应用程序包含 xib, 请检查以确保 xib 上的**生成操作**设置为**InterfaceDefinition**。 这是 xib 的默认生成操作。
 
-若要检查的生成操作，请右键单击.xib 文件，然后选择**生成操作**。
+若要检查生成操作, 请右键单击 "xib" 文件, 然后选择 "**生成操作**"。
 
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException:没有数据是可用于编码 437
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException:没有可用于编码437的数据
 
-当 Xamarin.iOS 应用程序中包括第三方库，你可能会遇到错误，在窗体"System.NotSupportedException:没有数据是可用于编码 437"尝试编译和运行应用时。 例如，库，如`Ionic.Zip.ZipFile`，可能会引发此异常在操作过程。
+在 Xamarin iOS 应用中包括第三方库时, 可能会出现 "NotSupportedException:尝试编译和运行应用程序时, 没有可用于编码437的数据。 例如, 库 (如`Ionic.Zip.ZipFile`) 可能会在操作过程中引发此异常。
 
-这可以通过打开 Xamarin.iOS 项目中，转到用于解决**iOS 生成** > **国际化**并检查**西部**国际化。
+若要解决此情况, 可以打开 Xamarin 项目的选项, 转到**iOS 生成** > **国际化**并检查**西**国际化。

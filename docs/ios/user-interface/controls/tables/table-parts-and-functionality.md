@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d6ad088f9223dccb1966148fe8f53d76e85040a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff0773b3073221bead48439b7d99f1db993e3353
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645608"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528591"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的表部件和功能
 
 UITableView 可以具有 "分组" 或 "纯" 样式, 由以下部分组成:
 
--  [节标头](#Section_Header)
--  [单元](#Cells)(如果需要, 也可以使用行)
--  [节页脚](#Section_Footer)
--  [Tuple](#Index)
--  [编辑模式](#Edit_Features)(包括 "轻扫到删除" 和拖动句柄以更改行顺序) 
+- [节标头](#Section_Header)
+- [单元](#Cells)(如果需要, 也可以使用行)
+- [节页脚](#Section_Footer)
+- [Tuple](#Index)
+- [编辑模式](#Edit_Features)(包括 "轻扫到删除" 和拖动句柄以更改行顺序) 
 
 这些屏幕截图显示部分行、页眉、页脚、编辑控件和索引的显示方式。
 
@@ -50,7 +50,7 @@ UITableView 可以具有 "分组" 或 "纯" 样式, 由以下部分组成:
 
 <a name="Index" />
 
-## <a name="index"></a>索引
+## <a name="index"></a>Index
 
 索引在表的右边缘下显示为一条字符。
 触摸或拖动索引会加速滚动到该表的该部分。 索引是可选的, 但建议使用它来帮助导航较长的列表。 索引通常不与分组样式一起使用。

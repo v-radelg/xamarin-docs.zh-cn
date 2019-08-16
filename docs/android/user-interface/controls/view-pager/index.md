@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 8c7aae672d284d4105c6b09dfe81b72cf4ad519b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f2272b90f664331959cfc8f60c6e59adc9550a98
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645519"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522765"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -31,10 +31,10 @@ _ViewPager 是一个布局管理器, 可用于实现 gestural 导航。Gestural 
 
 本指南演示了这两种方法: 
 
--   在[Viewpager 的视图](~/android/user-interface/controls/view-pager/viewpager-and-views.md)中, 开发了[TreePager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)应用, 以演示如何使用`ViewPager`来显示树目录 (落叶和长时间树的图像库) 的视图。 
+- 在[Viewpager 的视图](~/android/user-interface/controls/view-pager/viewpager-and-views.md)中, 开发了[TreePager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)应用, 以演示如何使用`ViewPager`来显示树目录 (落叶和长时间树的图像库) 的视图。 
     `PagerTabStrip`和`PagerTitleStrip`用于显示可帮助进行页面导航的标题。
 
--   在[包含片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 开发稍微复杂的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)应用程序, 以演示如何`ViewPager`使用`Fragment`来构建一个应用程序, 该应用程序将数学问题呈现为闪存卡并响应用户输入。 
+- 在[包含片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 开发稍微复杂的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)应用程序, 以演示如何`ViewPager`使用`Fragment`来构建一个应用程序, 该应用程序将数学问题呈现为闪存卡并响应用户输入。 
 
 
 ## <a name="requirements"></a>要求
@@ -46,9 +46,9 @@ _ViewPager 是一个布局管理器, 可用于实现 gestural 导航。Gestural 
 
 使用以下三个组件实现 gestural 导航`ViewPager`:
 
--   ViewPager
--   适配器
--   寻呼指示器
+- ViewPager
+- 适配器
+- 寻呼指示器
 
 下面总结了其中的每个组件。
 

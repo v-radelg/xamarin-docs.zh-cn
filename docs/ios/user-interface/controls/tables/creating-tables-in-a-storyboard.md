@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e73695046786e4d9949fd46bdbba665ff4f6cc72
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 46729df70d08b8d6d1b5b953d74f5619a5dc5858
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645181"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528684"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 设计器中使用表
 
@@ -58,9 +58,9 @@ StoryboardTable 示例包含一个简单的主-从应用, 它使用情节提要�
 
 将通过三个步骤编辑情节提要:
 
--  首先, 设置所需的视图控制器布局并设置其属性。
--  其次, 通过将对象拖放到视图上来创建 UI
--  最后, 将所需的 UIKit 类添加到每个视图中, 并为各个控件提供一个名称, 以便可以在代码中引用它们。
+- 首先, 设置所需的视图控制器布局并设置其属性。
+- 其次, 通过将对象拖放到视图上来创建 UI
+- 最后, 将所需的 UIKit 类添加到每个视图中, 并为各个控件提供一个名称, 以便可以在代码中引用它们。
 
 
 情节提要完成后, 可以添加代码以使一切正常工作。
@@ -71,19 +71,19 @@ StoryboardTable 示例包含一个简单的主-从应用, 它使用情节提要�
 
 首次更改情节提要时, 会删除现有的详细信息视图, 并将其替换为 UITableViewController。 请执行以下步骤：
 
-1.  选择视图控制器底部的栏并将其删除。
-2.  将**导航控制器**和**表视图控制器**从工具箱拖至情节提要。 
-3.  创建从根视图控制器到刚刚添加的第二个表视图控制器的 segue。 若要创建 segue, 请控制并将*详细信息单元*拖到新添加的 UITableViewController 中。 选择选项 "在**Segue**选项下**显示**"。 
-4.  选择创建的新 segue, 并为其指定一个标识符以在代码中引用此 segue。 单击 "segue", 并`TaskSegue`在**Properties Pad**中输入**标识符**, 如下所示:    
+1. 选择视图控制器底部的栏并将其删除。
+2. 将**导航控制器**和**表视图控制器**从工具箱拖至情节提要。 
+3. 创建从根视图控制器到刚刚添加的第二个表视图控制器的 segue。 若要创建 segue, 请控制并将*详细信息单元*拖到新添加的 UITableViewController 中。 选择选项 "在**Segue**选项下**显示**"。 
+4. 选择创建的新 segue, 并为其指定一个标识符以在代码中引用此 segue。 单击 "segue", 并`TaskSegue`在**Properties Pad**中输入**标识符**, 如下所示:    
   [![属性面板中的命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. 接下来, 通过选择两个表视图并使用 Properties Pad 进行配置。 请确保选择 "查看", 而不是 "查看控制器" –您可以使用文档大纲来帮助选择。
 
-6.  将根视图控制器改为**内容:动态原型** (Design Surface 上的视图将作为**原型内容**的标签):
+6. 将根视图控制器改为**内容:动态原型** (Design Surface 上的视图将作为**原型内容**的标签):
 
     [![将 Content 属性设置为动态原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  将新的**UITableViewController**更改为**内容:静态单元**。 
+7. 将新的**UITableViewController**更改为**内容:静态单元**。 
 
 
 8. 新的 UITableViewController 必须具有其类名称和标识符集。 在**Properties Pad**中为**类**选择视图控制器并键入_TaskDetailViewController_ –这会在 Solution Pad 中创建新`TaskDetailViewController.cs`的文件。 输入**StoryboardID**作为_详细信息_, 如以下示例中所示。 稍后将用于在代码中C#加载此视图:  
@@ -114,9 +114,9 @@ StoryboardTable 示例包含一个简单的主-从应用, 它使用情节提要�
 
 请执行以下操作： 
 
--  将 "**条形" 按钮项**从工具箱拖动到_导航栏的右侧_。
--  在中 **Properties Pad** 下 **栏按钮项** 选择 **标识符：添加** (以使其 *+* 加号按钮)。 
--  为其指定一个名称, 以便可以在以后的代码中识别该名称。 请注意, 需要为根视图控制器提供类名 (例如**ItemViewController**), 以允许您设置条形按钮项的名称。
+- 将 "**条形" 按钮项**从工具箱拖动到_导航栏的右侧_。
+- 在中 **Properties Pad** 下 **栏按钮项** 选择 **标识符：添加** (以使其 *+* 加号按钮)。 
+- 为其指定一个名称, 以便可以在以后的代码中识别该名称。 请注意, 需要为根视图控制器提供类名 (例如**ItemViewController**), 以允许您设置条形按钮项的名称。
 
 
 #### <a name="taskdetail-view-controller"></a>TaskDetail 视图控制器
@@ -129,10 +129,10 @@ StoryboardTable 示例包含一个简单的主-从应用, 它使用情节提要�
 
 选择表视图并打开**属性板**。 更新以下属性:
 
--  **部分**:_2_ 
--  **样式**:_编组_
--  **分隔符**:_内容_
--  **选择**:_无选择_
+- **部分**:_2_ 
+- **样式**:_编组_
+- **分隔符**:_内容_
+- **选择**:_无选择_
 
 选择顶部部分, 然后在 "**属性 > 表视图部分**将**行**更改为_3_, 如下所示:
 
@@ -141,16 +141,16 @@ StoryboardTable 示例包含一个简单的主-从应用, 它使用情节提要�
 
 对于每个单元, 打开**Properties Pad**并设置:
 
--  **样式**:_自定义_
--  **标识符**:为每个单元选择唯一标识符 (例如 "_标题_"、"_说明_"、"_完成_")。
--  拖动所需的控件以生成屏幕截图中显示的布局 (将**UILabel**、 **UITextField**和**UISwitch**置于正确的单元上, 并适当设置标签, 即 ie。标题、说明和完成。
+- **样式**:_自定义_
+- **标识符**:为每个单元选择唯一标识符 (例如 "_标题_"、"_说明_"、"_完成_")。
+- 拖动所需的控件以生成屏幕截图中显示的布局 (将**UILabel**、 **UITextField**和**UISwitch**置于正确的单元上, 并适当设置标签, 即 ie。标题、说明和完成。
 
 
 在第二部分中, 将 "**行**" 设置为 " _1_ ", 并抓住单元格的底部调整大小控点, 使其更高。
 
--  **将标识符: 设置**为唯一值 (例如 "保存")。 
--  **设置背景**:_清除颜色_。
--  将两个按钮拖到单元格上, 并适当地设置其标题 (如_保存_并_删除_), 如下所示:
+- **将标识符: 设置**为唯一值 (例如 "保存")。 
+- **设置背景**:_清除颜色_。
+- 将两个按钮拖到单元格上, 并适当地设置其标题 (如_保存_并_删除_), 如下所示:
 
    [![设置下一部分中的两个按钮](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
@@ -160,11 +160,11 @@ StoryboardTable 示例包含一个简单的主-从应用, 它使用情节提要�
 
 创建情节提要的最后几个步骤。 首先, 我们必须在 "**标识" > 名称**"下为每个控件提供一个名称, 以便以后可以在代码中使用它们。 将这些名称命名如下:
 
--  **标题 UITextField** :_TitleText_
--  **说明 UITextField** :_NotesText_
--  **UISwitch** :_DoneSwitch_
--  **删除 UIButton** :_DeleteButton_
--  **保存 UIButton** :_SaveButton_
+- **标题 UITextField** :_TitleText_
+- **说明 UITextField** :_NotesText_
+- **UISwitch** :_DoneSwitch_
+- **删除 UIButton** :_DeleteButton_
+- **保存 UIButton** :_SaveButton_
 
 
 <a name="Adding_Code" />
@@ -346,10 +346,10 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 该示例演示:
 
--  使用原型内容创建一个表, 其中单元定义用于显示数据列表。 
--  创建具有静态内容的表以生成输入窗体。 这包括更改表样式并添加部分、单元格和 UI 控件。 
--  如何创建 segue 并重写`PrepareForSegue`方法, 以通知目标视图其所需的任何参数。 
--  直接用`Storyboard.InstantiateViewController`方法加载情节提要视图。
+- 使用原型内容创建一个表, 其中单元定义用于显示数据列表。 
+- 创建具有静态内容的表以生成输入窗体。 这包括更改表样式并添加部分、单元格和 UI 控件。 
+- 如何创建 segue 并重写`PrepareForSegue`方法, 以通知目标视图其所需的任何参数。 
+- 直接用`Storyboard.InstantiateViewController`方法加载情节提要视图。
 
 
 

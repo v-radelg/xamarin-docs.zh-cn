@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dd935e6feb14d9077c1ad98a2e7e10e67646dc4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f77a4f2f31c72726515e33dc273616f175df2891
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650121"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528524"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中创建用户界面对象
 
@@ -28,9 +28,9 @@ using UIKit;
 
 可以通过以下三种方式编辑 UI 控件和布局:
 
--  **[Xamarin IOS 设计器](~/ios/user-interface/designer/index.md)** –使用 Xamarin 的内置布局设计器设计屏幕。 双击 "情节提要" 或 "XIB 文件" 以利用内置设计器进行编辑。
--  **Xcode Interface Builder** -将控件拖动到 Interface Builder 的屏幕布局。 右键单击 " **Solution Pad** " 中的文件, 然后选择 "**打开方式" > Xcode Interface Builder**, 在 Xcode 中打开情节提要或 XIB 文件。
--  **使用C#**  –还可以使用代码以编程方式构造控件, 并将其添加到视图层次结构中。
+- **[Xamarin IOS 设计器](~/ios/user-interface/designer/index.md)** –使用 Xamarin 的内置布局设计器设计屏幕。 双击 "情节提要" 或 "XIB 文件" 以利用内置设计器进行编辑。
+- **Xcode Interface Builder** -将控件拖动到 Interface Builder 的屏幕布局。 右键单击 " **Solution Pad** " 中的文件, 然后选择 "**打开方式" > Xcode Interface Builder**, 在 Xcode 中打开情节提要或 XIB 文件。
+- **使用C#**  –还可以使用代码以编程方式构造控件, 并将其添加到视图层次结构中。
 
 可以通过右键单击 iOS 项目, 然后选择 "**添加 > 新文件 ...** " 来添加新的情节提要和 XIB 文件。
 
@@ -76,7 +76,7 @@ using UIKit;
 
  [![](creating-ui-objects-images/image5a.png "Xcode 对象库")](creating-ui-objects-images/image5a.png#lightbox)
 
-使用 Interface Builder 设计 UI 时, 必须为要在中  C#引用的每个控件创建一个插座。 这是通过使用 Xcode 工具栏按钮上的 "中心**编辑器**" 按钮打开**助手编辑器**来完成的:
+使用 Interface Builder 设计 UI 时, 必须为要在中 C#引用的每个控件创建一个插座。 这是通过使用 Xcode 工具栏按钮上的 "中心**编辑器**" 按钮打开**助手编辑器**来完成的:
 
  [![](creating-ui-objects-images/image6a.png "\"助手编辑器\" 按钮")](creating-ui-objects-images/image6a.png#lightbox)
 
@@ -92,12 +92,12 @@ using UIKit;
 
 如果你决定以编程方式使用C#创建用户界面对象 (例如, 在视图或视图控制器中), 请执行以下步骤:
 
--  为用户界面对象声明类级别的字段。 创建控件本身, `ViewDidLoad`例如。 然后, 可以在视图控制器的整个生命周期方法中引用该对象 (例如
+- 为用户界面对象声明类级别的字段。 创建控件本身, `ViewDidLoad`例如。 然后, 可以在视图控制器的整个生命周期方法中引用该对象 (例如
 `ViewWillAppear`）格式模式中出现的位置生成。
--  创建一个`CGRect` , 它定义控件的框架 (屏幕上的 X 和 Y 坐标以及其宽度和高度)。 你需要确保具有`using CoreGraphics`此的指令。
--  调用构造函数来创建和分配控件。
--  设置任何属性或事件处理程序。
--  调用`Add()`将控件添加到视图层次结构。
+- 创建一个`CGRect` , 它定义控件的框架 (屏幕上的 X 和 Y 坐标以及其宽度和高度)。 你需要确保具有`using CoreGraphics`此的指令。
+- 调用构造函数来创建和分配控件。
+- 设置任何属性或事件处理程序。
+- 调用`Add()`将控件添加到视图层次结构。
 
 下面是在视图控制器中使用`UILabel` C#创建的一个简单示例:
 

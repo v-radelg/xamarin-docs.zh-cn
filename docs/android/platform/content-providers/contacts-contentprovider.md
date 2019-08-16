@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: e83b9a594bad5ee3d29800988eb94812600da8a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e5b23973d7784a9116d4c82ef6d892aacbf584a1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643707"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524470"
 ---
 # <a name="using-the-contacts-contentprovider"></a>使用联系人 ContentProvider
 
@@ -33,11 +33,11 @@ Android*联系人*提供程序在`android.provider.ContactsContract`类中公开
 
 其中每个方法都具有相同的基本输入集:
 
--  **Uri**的完全限定名称`ContentProvider`。 &ndash;
--  **投影**&ndash;为游标选择哪些列的规范。
--  **选择**&ndash;与SQL`WHERE`子句类似。
--  **SelectionArgs**&ndash;要在选定内容中替换的参数。
--  **SortOrder**&ndash;排序所依据的列。
+- **Uri**的完全限定名称`ContentProvider`。 &ndash;
+- **投影**&ndash;为游标选择哪些列的规范。
+- **选择**&ndash;与SQL`WHERE`子句类似。
+- **SelectionArgs**&ndash;要在选定内容中替换的参数。
+- **SortOrder**&ndash;排序所依据的列。
 
 
 

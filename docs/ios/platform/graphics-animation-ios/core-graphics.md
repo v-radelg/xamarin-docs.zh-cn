@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: dac81a40983ea8414ec730f10c4c1f17e4d9915c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653810"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527926"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心图形
 
@@ -24,10 +24,10 @@ iOS 包括[*核心图形*](https://developer.apple.com/library/prerelease/ios/do
 
 在许多情况下, 核心图形支持绘图, 其中包括:
 
--  [通过在`UIView`屏幕上绘制](#Drawing_in_a_UIView_Subclass)。
--  [在内存或屏幕上绘制图像](#Drawing_Images_and_Text)。
--  创建和绘制到 PDF。
--  读取和绘制现有的 PDF。
+- [通过在`UIView`屏幕上绘制](#Drawing_in_a_UIView_Subclass)。
+- [在内存或屏幕上绘制图像](#Drawing_Images_and_Text)。
+- 创建和绘制到 PDF。
+- 读取和绘制现有的 PDF。
 
 
 ## <a name="geometric-space"></a>几何空间
@@ -36,9 +36,9 @@ iOS 包括[*核心图形*](https://developer.apple.com/library/prerelease/ios/do
 
 此方法有几个好处:
 
--  绘图代码变为动态代码, 并可在运行时修改图形。
--  减少应用程序捆绑中的静态映像需求会降低应用程序的大小。
--  对于跨设备解决更改, 图形变得更具弹性。
+- 绘图代码变为动态代码, 并可在运行时修改图形。
+- 减少应用程序捆绑中的静态映像需求会降低应用程序的大小。
+- 对于跨设备解决更改, 图形变得更具弹性。
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
@@ -270,10 +270,10 @@ public override void Draw (RectangleF rect)
 
 除了绘制到视图的图形上下文外, 核心图形还支持绘图内存已备份的图像, 也称为在屏幕上绘制。 这样做需要:
 
--  创建由内存中位图支持的图形上下文
--  设置绘制状态和发出绘图命令
--  从上下文获取映像
--  删除上下文
+- 创建由内存中位图支持的图形上下文
+- 设置绘制状态和发出绘图命令
+- 从上下文获取映像
+- 删除上下文
 
 
 不同于`Draw`方法, 其中的上下文由视图提供, 在这种情况下, 您可以通过以下两种方式之一创建上下文:

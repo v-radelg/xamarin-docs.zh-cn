@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e54f499316d2b99d87d05fbd202308eecaaed220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 614a0e3952db42d2587930b66bf71ce4c703d035
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643370"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524074"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean 功能
 
@@ -48,9 +48,9 @@ Android 应用程序的稳定性经过改进, 能够隔离对不稳定的内容�
 
 可以使用缩放动画或使用`ActivityOptions`类的自定义动画来启动活动。 提供以下新方法以支持这些动画:
 
--   `MakeScaleUpAnimation`–这将创建一个动画, 用于在屏幕上从起始位置和大小向上缩放活动窗口。
--   `MakeThumbnailScaleUpAnimation`–这将创建从屏幕上指定位置向上缩放缩略图的动画。
--   `MakeCustomAnimation`–这将从应用程序中的资源创建动画。 当活动打开时, 有一个动画用于活动停止时的另一个。
+- `MakeScaleUpAnimation`–这将创建一个动画, 用于在屏幕上从起始位置和大小向上缩放活动窗口。
+- `MakeThumbnailScaleUpAnimation`–这将创建从屏幕上指定位置向上缩放缩略图的动画。
+- `MakeCustomAnimation`–这将从应用程序中的资源创建动画。 当活动打开时, 有一个动画用于活动停止时的另一个。
 
 
 新`TimeAnimator`类提供一个接口, `TimeAnimator.ITimeListener`该接口可在每次动画中帧发生更改时通知应用程序。 例如, 请考虑以下实现`TimeAnimator.ITimeListener`:
@@ -85,12 +85,12 @@ Android 4.1 改进了 Android 3.0 中引入的应用程序堆栈导航。 通过
 
 对于更复杂的方案, 可以使用活动类的新方法来处理向上导航和构造后堆栈的行为:
 
--   `OnNavigateUp`–通过重写此方法, 可以在按下 "<span class="ui">向上</span>" 按钮时执行自定义操作。
--   `NavigateUpTo`–调用此方法将导致应用程序从当前活动导航到给定意向指定的活动。
--   `ParentActivityIntent`–用于获取将启动当前活动的父活动的意图。
--   `ShouldUpRecreateTask`–此方法用于查询是否必须创建合成 back 堆栈才能向上导航到父活动。 如果`true`必须创建合成堆栈, 则返回。 
--   `FinishAffinity`–调用此方法将在当前任务中完成当前活动及其下的所有活动, 该任务具有相同的任务关联。
--   `OnCreateNavigateUpTaskStack`–当需要完全控制如何创建合成堆栈时, 此方法将被重写。
+- `OnNavigateUp`–通过重写此方法, 可以在按下 "**向上**" 按钮时执行自定义操作。
+- `NavigateUpTo`–调用此方法将导致应用程序从当前活动导航到给定意向指定的活动。
+- `ParentActivityIntent`–用于获取将启动当前活动的父活动的意图。
+- `ShouldUpRecreateTask`–此方法用于查询是否必须创建合成 back 堆栈才能向上导航到父活动。 如果`true`必须创建合成堆栈, 则返回。 
+- `FinishAffinity`–调用此方法将在当前任务中完成当前活动及其下的所有活动, 该任务具有相同的任务关联。
+- `OnCreateNavigateUpTaskStack`–当需要完全控制如何创建合成堆栈时, 此方法将被重写。
 
 
 
@@ -120,10 +120,10 @@ public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
 
 新类`MediaActionSound`提供一组 API, 用于为各种媒体操作生成声音。 照相机可能会发生多种操作, 这些操作是通过枚举`Android.Media.MediaActionSoundType`定义的:
 
--   `MediaActionSoundType.FocusComplete`–焦点完成时播放的声音。
--   `MediaActionSoundType.ShutterClick`–当拍摄静止图像图片时, 将播放此声音。
--   `MediaActionSoundType.StartVideoRecording`–此声音用于指示视频的开始记录。
--   `MediaActionSoundType.StopVideoRecording`–将播放此声音以指示视频录制的结束。
+- `MediaActionSoundType.FocusComplete`–焦点完成时播放的声音。
+- `MediaActionSoundType.ShutterClick`–当拍摄静止图像图片时, 将播放此声音。
+- `MediaActionSoundType.StartVideoRecording`–此声音用于指示视频的开始记录。
+- `MediaActionSoundType.StopVideoRecording`–将播放此声音以指示视频录制的结束。
 
 
 下面的代码片段演示如何使用`MediaActionSound`类:
@@ -178,10 +178,10 @@ Android 4.1 包含新的 API, 用于基于 DNS 的多播服务发现。
 
 在 Jelly Bean 中`WifiP2pManager` , 可以使用*Bonjour*或*Upnp*发现附近的设备。 Bonjour 是 zeroconf 的 Apple 实现。 Upnp 是一组也支持 zeroconf 的网络协议。 添加了`WiFiP2pManager`以下方法来支持 wi-fi 服务发现:
 
--   `AddLocalService()`–此方法用于通过 Wi-fi 向对等端发现应用程序即服务。
--   `AddServiceRequest(`) –此方法用于向框架发送服务发现请求。 它用于初始化 Wi-fi 服务发现。
--   `SetDnsSdResponseListeners()`–此方法用于注册要在接收来自 Bonjour 的发现请求的响应时调用的回调。
--   `SetUpnpServiceResponseListener()`–此方法用于注册在接收对发现请求的响应时要调用的回调。
+- `AddLocalService()`–此方法用于通过 Wi-fi 向对等端发现应用程序即服务。
+- `AddServiceRequest(`) –此方法用于向框架发送服务发现请求。 它用于初始化 Wi-fi 服务发现。
+- `SetDnsSdResponseListeners()`–此方法用于注册要在接收来自 Bonjour 的发现请求的响应时调用的回调。
+- `SetUpnpServiceResponseListener()`–此方法用于注册在接收对发现请求的响应时要调用的回调。
 
 
 
@@ -196,9 +196,9 @@ Android 4.1 包含新的 API, 用于基于 DNS 的多播服务发现。
 
 类现在可以通过`Intent.ClipData`属性与对象关联。`ClipData` `Intent` 此方法允许将剪贴板中的额外数据与意向传输。 的`ClipData`实例可以包含一个或多个`ClipData.Item`。 `ClipData.Item`是以下类型的项:
 
--   **文本**–这是任何文本字符串, 无论是 HTML 还是任何格式受内置 Android 样式范围支持的字符串。
--  **意向**–任何`Intent`对象。
--   **Uri** –可以是任何 Uri, 例如 HTTP 书签或内容提供商的 uri。
+- **文本**–这是任何文本字符串, 无论是 HTML 还是任何格式受内置 Android 样式范围支持的字符串。
+- **意向**–任何`Intent`对象。
+- **Uri** –可以是任何 Uri, 例如 HTTP 书签或内容提供商的 uri。
 
 
 
@@ -214,9 +214,9 @@ Android 4.1 包含新的 API, 用于基于 DNS 的多播服务发现。
 
 添加了`Android.Media.Audiofx.AudioEffect`新的子类, 以支持捕获的音频上的其他音频预处理:
 
--   `Android.Media.Audiofx.AcousticEchoCanceler`–此类用于预处理音频, 以从远程方删除从捕获的音频信号发出的信号。 例如, 从语音通信应用程序中删除回声。
--   `Android.Media.Audiofx.AutomaticGainControl`–此类用于通过提高或降低输入信号来规范化捕获的信号, 以便输出信号为常量。
--   `Android.Media.Audiofx.NoiseSuppressor`–此类将删除捕获的信号中的背景噪音。
+- `Android.Media.Audiofx.AcousticEchoCanceler`–此类用于预处理音频, 以从远程方删除从捕获的音频信号发出的信号。 例如, 从语音通信应用程序中删除回声。
+- `Android.Media.Audiofx.AutomaticGainControl`–此类用于通过提高或降低输入信号来规范化捕获的信号, 以便输出信号为常量。
+- `Android.Media.Audiofx.NoiseSuppressor`–此类将删除捕获的信号中的背景噪音。
 
 
 并非所有设备都支持这些效果。 此方法`AudioEffect.IsAvailable`应由应用程序调用, 以查看在运行应用程序的设备上是否支持所涉及的音频效果。
@@ -225,8 +225,8 @@ Android 4.1 包含新的 API, 用于基于 DNS 的多播服务发现。
 
 以下新类提供了标准机制和 UI, 可用于选择媒体的播放位置:
 
--   `MediaRouter`–此类允许应用程序控制从设备到外部扬声器或其他设备的媒体通道路由。
--   `MediaRouterActionProvider`和`MediaRouteButton` –这些类可帮助提供用于选择和播放媒体的一致 UI。
+- `MediaRouter`–此类允许应用程序控制从设备到外部扬声器或其他设备的媒体通道路由。
+- `MediaRouterActionProvider`和`MediaRouteButton` –这些类可帮助提供用于选择和播放媒体的一致 UI。
 
 
 
@@ -235,17 +235,17 @@ Android 4.1 包含新的 API, 用于基于 DNS 的多播服务发现。
 
 Android 4.1 允许应用程序更灵活, 并可控制显示通知。 现在, 应用程序可以向用户显示更大更好的通知。 新方法`NotificationBuilder.SetStyle()`允许在通知上设置新的三种新样式之一:
 
--   `Notification.BigPictureStyle`–这是一个帮助器类, 它将生成将包含图像的通知。 下图显示了包含大图像的通知的示例:
+- `Notification.BigPictureStyle`–这是一个帮助器类, 它将生成将包含图像的通知。 下图显示了包含大图像的通知的示例:
 
 
  [![BigPictureStyle 通知的示例屏幕截图](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
--   `Notification.BigTextStyle`–这是一个帮助器类, 它将生成将具有多行文本的通知, 如电子邮件。 可以在以下屏幕截图中查看此新通知样式的示例:
+- `Notification.BigTextStyle`–这是一个帮助器类, 它将生成将具有多行文本的通知, 如电子邮件。 可以在以下屏幕截图中查看此新通知样式的示例:
 
 
  [![BigTextStyle 通知的示例屏幕截图](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
--   `Notification.InboxStyle`–这是一个帮助器类, 它将生成包含字符串列表的通知, 如电子邮件中的代码段, 如以下屏幕截图所示:
+- `Notification.InboxStyle`–这是一个帮助器类, 它将生成包含字符串列表的通知, 如电子邮件中的代码段, 如以下屏幕截图所示:
 
 
  [![通知的示例屏幕截图。 InboxStyle 通知](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
@@ -263,11 +263,11 @@ Android 4.1 允许应用程序更灵活, 并可控制显示通知。 现在, 应
 
 添加了以下新权限:
 
--   `READ_EXTERNAL_STORAGE`-应用程序需要对外部存储的只读访问权限。 默认情况下, 所有应用程序都具有读取访问权限, 但 Android 的未来版本将要求应用程序显式请求读取访问权限。
--   `READ_USER_DICTIONARY`-允许对用户的 word 字典进行读取访问。
--   `READ_CALL_LOG`-允许应用程序通过读取调用日志来获取有关传入和传出调用的信息。
--   `WRITE_CALL_LOG`-允许应用程序在电话上写入呼叫日志。
--   `WRITE_USER_DICTIONARY`-允许应用程序写入用户的 word 词典。
+- `READ_EXTERNAL_STORAGE`-应用程序需要对外部存储的只读访问权限。 默认情况下, 所有应用程序都具有读取访问权限, 但 Android 的未来版本将要求应用程序显式请求读取访问权限。
+- `READ_USER_DICTIONARY`-允许对用户的 word 字典进行读取访问。
+- `READ_CALL_LOG`-允许应用程序通过读取调用日志来获取有关传入和传出调用的信息。
+- `WRITE_CALL_LOG`-允许应用程序在电话上写入呼叫日志。
+- `WRITE_USER_DICTIONARY`-允许应用程序写入用户的 word 词典。
 
 
 需要注意`READ_EXTERNAL_STORAGE`的一个重要更改-目前, Android 会自动授予此权限。 未来版本的 Android 将要求应用程序在授予权限之前请求此权限。

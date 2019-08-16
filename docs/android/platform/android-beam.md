@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 83fa64ca207358b712341e1923a3a9a67a449e1f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643763"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524735"
 ---
 # <a name="android-beam"></a>Android 无线发送
 
@@ -23,9 +23,9 @@ Android 无线横梁是 Android 4.0 中引入的近乎现场通信 (NFC) 技术,
 
 Android 支持通过两种方式设置具有 Android 无线消息的消息:
 
--   `SetNdefPushMessage`-在启动 Android 横梁之前, 应用程序可以调用 SetNdefPushMessage 来指定要推送到 NFC 上的 NdefMessage, 以及推送该活动的活动。 当应用程序正在使用时, 如果消息未发生更改, 则最好使用此机制。
+- `SetNdefPushMessage`-在启动 Android 横梁之前, 应用程序可以调用 SetNdefPushMessage 来指定要推送到 NFC 上的 NdefMessage, 以及推送该活动的活动。 当应用程序正在使用时, 如果消息未发生更改, 则最好使用此机制。
 
--   `SetNdefPushMessageCallback`-启动 Android 横梁后, 应用程序可以处理回调以创建 NdefMessage。 此机制允许消息创建延迟, 直到设备处于范围内。 它支持消息根据应用程序中发生的情况而有所不同。
+- `SetNdefPushMessageCallback`-启动 Android 横梁后, 应用程序可以处理回调以创建 NdefMessage。 此机制允许消息创建延迟, 直到设备处于范围内。 它支持消息根据应用程序中发生的情况而有所不同。
 
 
 在任一情况下, 若要使用 Android 横梁发送数据, 应用程序`NdefMessage`将发送, 并将数据`NdefRecords`打包到多个中。 让我们看看必须解决的要点, 然后才能触发 Android 横梁。 首先, 我们将使用创建`NdefMessage`的回调样式。

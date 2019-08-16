@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 12bb8fe6f8ed77ea9091c165d4656da292266679
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9412012949cd012d572b65b7af6e2890160338dc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656621"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527945"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心动画
 
@@ -40,9 +40,9 @@ UIKit 提供了几项功能, 使你可以轻松地向应用程序添加动画。
 
 本部分介绍 UIKit 动画功能, 包括:
 
--  控制器间的转换
--  视图间的转换
--  查看属性动画
+- 控制器间的转换
+- 视图间的转换
+- 查看属性动画
 
 
 ### <a name="view-controller-transitions"></a>视图控制器转换
@@ -59,9 +59,9 @@ SecondViewController vc2 = new SecondViewController {
 
 在这种情况`PartialCurl`下, 将使用动画, 尽管有几个动画可用, 包括:
 
--  `CoverVertical`–从屏幕底部向上滑动
--  `CrossDissolve`–旧视图 & 新视图淡出
--  `FlipHorizontal`-从右到左水平翻转。 在消除上, 过渡从左向右翻转。
+- `CoverVertical`–从屏幕底部向上滑动
+- `CrossDissolve`–旧视图 & 新视图淡出
+- `FlipHorizontal`-从右到左水平翻转。 在消除上, 过渡从左向右翻转。
 
 
 若要对转换进行动画`true`处理, 请将作为`PresentViewController`第二个参数传递到:
@@ -100,12 +100,12 @@ UIView.Transition (
 
 UIKit 支持对`UIView`类的各种属性进行免费动态操作, 包括:
 
--  Frame
--  汇编
--  居中
--  Alpha
--  Transform
--  颜色
+- Frame
+- 汇编
+- 居中
+- Alpha
+- Transform
+- 颜色
 
 
 这些动画通过指定传递给静态`NSAction` `UIView.Animate`方法的委托中的属性更改, 隐式发生。 例如, 下面的代码对的中心点进行了`UIImageView`动画处理:

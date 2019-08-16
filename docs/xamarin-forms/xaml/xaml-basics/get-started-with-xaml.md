@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656517"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528354"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -211,9 +211,9 @@ namespace XamlSamples
 
 对于更复杂的类型的属性中，但是，转换器用于分析 XAML。 这些是在 Xamarin.Forms 中派生的类`TypeConverter`。 许多都是公共类，但有些不。 对于此特定的 XAML 文件，这些类的几个播放在后台角色：
 
--  `LayoutOptionsConverter` 有关`VerticalOptions`属性
--  `FontSizeConverter` 有关`FontSize`属性
--  `ColorTypeConverter` 有关`TextColor`属性
+- `LayoutOptionsConverter` 有关`VerticalOptions`属性
+- `FontSizeConverter` 有关`FontSize`属性
+- `ColorTypeConverter` 有关`TextColor`属性
 
 这些转换器控制允许的属性设置的语法。
 

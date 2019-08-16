@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: e22d1d8a1c2604c1bbe710fcaf1ba7793455e6f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c4050f439f3499289063c286afd255241bf0343
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508861"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521455"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 级别
 
@@ -23,11 +23,11 @@ _Xamarin 具有几个 Android API 级别设置, 可确定应用与多个 Android
 
 Xamarin 公开了三个 Android API 级别项目设置:
 
--   [目标框架](#framework)&ndash;指定要在生成应用程序时使用的框架。 在*编译*时, Xamarin 使用此 API 级别。
+- [目标框架](#framework)&ndash;指定要在生成应用程序时使用的框架。 在*编译*时, Xamarin 使用此 API 级别。
 
--   [最低 Android 版本](#minimum)&ndash;指定您希望应用程序支持的最早 Android 版本。 此 API 级别由 Android 在*运行*时使用。
+- [最低 Android 版本](#minimum)&ndash;指定您希望应用程序支持的最早 Android 版本。 此 API 级别由 Android 在*运行*时使用。
 
--   [目标 Android 版本](#target)&ndash;指定应用程序要在其上运行的 Android 版本。 此 API 级别由 Android 在*运行*时使用。
+- [目标 Android 版本](#target)&ndash;指定应用程序要在其上运行的 Android 版本。 此 API 级别由 Android 在*运行*时使用。
 
 你必须为该 API 级别安装 SDK 平台组件, 然后才能为你的项目配置 API 级别。 有关下载和安装 Android SDK 组件的详细信息, 请参阅[Android SDK 安装程序](~/android/get-started/installation/android-sdk.md)。
 
@@ -81,9 +81,9 @@ Xamarin 公开了三个 Android API 级别项目设置:
 
 每个版本的 Android 按多个名称进行:
 
--   Android 版本, 如**android 9.0**
--   代码 (或甜品) 名称, 如_饼图_
--   相应的 API 级别, 如**api 级别 28**
+- Android 版本, 如**android 9.0**
+- 代码 (或甜品) 名称, 如_饼图_
+- 相应的 API 级别, 如**api 级别 28**
 
 Android 代码名称可能对应于多个版本和 API 级别 (如下表中所示), 但每个 Android 版本正好对应于一个 API 级别。
 
@@ -100,9 +100,9 @@ Android 代码名称可能对应于多个版本和 API 级别 (如下表中所�
 
 构建应用程序时, 它包含以下 API 级别信息:
 
--   要在其上运行应用程序的 Android*目标*API 级别。
+- 要在其上运行应用程序的 Android*目标*API 级别。
 
--   Android 设备运行应用所需的*最低*android API 级别。 
+- Android 设备运行应用所需的*最低*android API 级别。 
 
 这些设置用于确保正常运行应用程序所需的功能在安装时在 Android 设备上可用。 如果未运行, 则阻止应用在该设备上运行。 例如, 如果 Android 设备的 API 级别低于你为应用指定的最小 API 级别, 则 Android 设备将阻止用户安装你的应用。
 
@@ -227,7 +227,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 
 在此示例中, 我们的应用程序的目标框架设置为**android 5.0 (Api 级别 21)** , 其最低 android 版本设置为**ANDROID 4.1 (api 级别 16)** 。 由于`SetCategory`在 api 级别`Android.OS.BuildVersionCodes.Lollipop`和更高版本中可用, 因此此示例`SetCategory`代码仅在实际可用&ndash;时调用,*不*会在 API `SetCategory`级别为16、17、18、19或20时尝试调用。 此功能在早期的 Android 版本中减少了, 但通知未正确排序 (因为这些通知未按类型分类), 但仍会发布通知以提醒用户。 应用仍可正常工作, 但其功能略有降低。
 
-通常情况下, 生成版本检查可帮助代码在运行时决定是否在新的方式与旧方法之间执行操作。 例如：
+通常情况下, 生成版本检查可帮助代码在运行时决定是否在新的方式与旧方法之间执行操作。 例如:
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
@@ -263,9 +263,9 @@ else
 
 最低 android 版本和目标 android 版本设置不可用, 因为生成的库不是独立应用程序&ndash;库可以在任何 Android 版本上运行, 具体取决于打包时使用的应用程序。 您可以指定如何*编译*库, 但无法预测库将运行的平台 API 级别。 考虑到这一点, 在使用或创建库时应遵循以下最佳做法:
 
--   **使用 Android 库时**如果要在应用程序中使用 Android 库, 请确保将应用的 "目标框架" 设置设为至少与库的 "目标框架" 设置相同的 API 级别。  &ndash;
+- **使用 Android 库时**如果要在应用程序中使用 Android 库, 请确保将应用的 "目标框架" 设置设为至少与库的 "目标框架" 设置相同的 API 级别。 &ndash;
 
--   **创建 Android 库时**&ndash;如果要创建一个 Android 库供其他应用程序使用, 请确保将其 "目标框架" 设置设置为编译所需的最小 API 级别。
+- **创建 Android 库时**&ndash;如果要创建一个 Android 库供其他应用程序使用, 请确保将其 "目标框架" 设置设置为编译所需的最小 API 级别。
 
 建议使用这些最佳实践, 以帮助防止库尝试调用在运行时不可用的 API (这可能会导致应用崩溃)。 如果你是库开发人员, 则应该尽力限制 API 调用的使用情况, 使其成为总体 API 外围应用程序的一个小且完善的子集。 这样做有助于确保库可以安全地在更广泛的 Android 版本中使用。
 

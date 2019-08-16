@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 2320aa9a611a44d654bcbae18bb2664797054e50
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fb8f4a8e62ea163dc58589382c31c4bf19973c36
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647922"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528268"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的应用内购买
 
@@ -20,11 +20,11 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 提供应用内购买功能需要执行许多步骤:
 
--  **配置应用**–必须正确设置应用程序的预配配置文件。
--  **创建产品**–必须在 iTunes Connect 门户中创建产品描述和价格。
--  **实现 StoreKit** –必须根据要销售的产品类型来实现 StoreKit API。
--  **构建用户界面和产品本身**–必须实现产品, 其中包括跟踪每个购买和备份/还原它们的机制 (如果适用)。
--  **监视销售和接收资金**–使用 iTunes Connect 提供的信息来监视销售趋势和跟踪收入。
+- **配置应用**–必须正确设置应用程序的预配配置文件。
+- **创建产品**–必须在 iTunes Connect 门户中创建产品描述和价格。
+- **实现 StoreKit** –必须根据要销售的产品类型来实现 StoreKit API。
+- **构建用户界面和产品本身**–必须实现产品, 其中包括跟踪每个购买和备份/还原它们的机制 (如果适用)。
+- **监视销售和接收资金**–使用 iTunes Connect 提供的信息来监视销售趋势和跟踪收入。
 
 本文档介绍了如何完成所有这些步骤, 以使用 Xamarin 提供应用内购买。
 
@@ -50,11 +50,11 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 本文介绍了应用内购买的概念, 其中概述了如何配置应用程序以利用它并使用 Xamarin 提供的示例。 其中包括:
 
--  **IOS 预配门户**–启用应用内购买功能的指导原则。
--  **ITunes Connect** –配置要在应用中销售的产品。
--  **应用商店工具包**–对用于构建应用内购买功能的类的说明。
--  **编写应用程序的采购代码**-如何将应用内购买构建到 Xamarin iOS 应用中的示例。
--  **报告**–有关通过 iTunes Connect 提供的统计信息的概述。
+- **IOS 预配门户**–启用应用内购买功能的指导原则。
+- **ITunes Connect** –配置要在应用中销售的产品。
+- **应用商店工具包**–对用于构建应用内购买功能的类的说明。
+- **编写应用程序的采购代码**-如何将应用内购买构建到 Xamarin iOS 应用中的示例。
+- **报告**–有关通过 iTunes Connect 提供的统计信息的概述。
 
 
 ## <a name="related-links"></a>相关链接

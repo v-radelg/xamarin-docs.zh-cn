@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 3e0430b8ed9c42030441021e71c3b08b1ddccc57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5b829b1c38007bbb070b643a355d70bffaef01a5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61022189"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524300"
 ---
 # <a name="managing-fragments"></a>管理片段
 
-为了帮助管理片段，Android 提供`FragmentManager`类。 每个活动具有实例`Android.App.FragmentManager`，将查找或动态更改其片段。 这些更改的每个组称为*事务*，并使用该类中包含的 Api 之一执行`Android.App.FragmentTransation`，它由托管`FragmentManager`。 活动可能会启动此类事务：
+为了帮助管理片段, Android 提供`FragmentManager`了类。 每个活动都有一个`Android.App.FragmentManager`实例, 该实例将查找或动态更改其片段。 这些更改的每一组称为*事务*, 并使用类中包含的其中一个 api 来执行, 此类`Android.App.FragmentTransation`由管理。 `FragmentManager` 活动可能会启动如下所示的事务:
 
 ```csharp
 FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction();
 ```
 
-在执行这些更改到片段`FragmentTransaction`实例使用的方法类似于`Add()`，`Remove(),`并`Replace().`所做的更改使用，然后应用`Commit()`。 在事务中的更改不会立即执行。
-相反，它们被计划尽可能快地运行活动的 UI 线程上。
+这些对片段的更改是使用等方法`FragmentTransaction` `Add()`在实例中执行的, `Remove(),` `Replace().`然后使用`Commit()`来应用这些更改。 事务中的更改不会立即执行。
+相反, 它们计划为尽快在活动的 UI 线程上运行。
 
-下面的示例演示如何将片段添加到现有的容器：
+下面的示例演示如何向现有容器添加片段:
 
 ```csharp
 // Create a new fragment and a transaction.
@@ -38,11 +38,11 @@ fragmentTx.Add(Resource.Id.fragment_container, aDifferentDetailsFrag);
 fragmentTx.Commit();
 ```
 
-如果一个事务被提交之后`Activity.OnSaveInstanceState()`是调用，就会引发异常。 这是因为当该活动将保存其状态，Android 会保存任何托管片段的状态。 如果任何片段的事务提交此点后，这些事务的状态将丢失时还原该活动中。
+如果在调用后`Activity.OnSaveInstanceState()`提交事务, 则会引发异常。 发生这种情况是因为当活动保存其状态时, Android 还会保存任何托管片段的状态。 如果在此点之后提交了任何片段事务, 则在还原活动时, 这些事务的状态将丢失。
 
-可以将片段事务保存到活动的[back 堆栈](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)由调用`FragmentTransaction.AddToBackStack()`。 这允许用户通过向后导航片段更改何时**回**按下按钮。 而无需对此方法的调用，将删除的片段将被销毁和将用户导航返回到活动的情况下不可用。
+可以通过调用来`FragmentTransaction.AddToBackStack()`将片段事务保存到活动的[back 堆栈](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)中。 这样, 当按下 "**后退**" 按钮时, 用户可以通过片段更改向后导航。 如果不调用此方法, 删除的片段将被销毁, 如果用户向后导航到活动, 则将无法使用。
 
-下面的示例演示如何使用`AddToBackStack`方法的`FragmentTransaction`替换一个片段中，同时保留后退堆栈上的第一个片段的状态：
+下面的示例演示如何使用`AddToBackStack`的方法`FragmentTransaction`来替换一个片段, 同时保留后堆栈上第一个片段的状态:
 
 ```csharp
 // Create a new fragment and a transaction.
@@ -60,17 +60,17 @@ fragmentTx.Commit();
 ```
 
 
-## <a name="communicating-with-fragments"></a>使用片段进行通信
+## <a name="communicating-with-fragments"></a>与片段通信
 
-*FragmentManager*知道有关所有附加到活动的片段，并提供两种方法来帮助查找这些片段：
+*FragmentManager*知道附加到活动的所有片段, 并提供两种方法来帮助查找这些片段:
 
--   **FindFragmentById** &ndash;此方法将查找一个片段作为事务的一部分添加的片段时使用的布局文件中指定的 ID 或容器 ID。
+- **FindFragmentById**&ndash;此方法将通过使用在布局文件中指定的 ID 或在将片段作为事务的一部分添加时使用容器 id 查找片段。
 
--   **FindFragmentByTag** &ndash;使用此方法来查找已的标记的布局文件中提供或在事务中已添加的片段。
+- **FindFragmentByTag**&ndash;此方法用于查找具有在布局文件中提供或已在事务中添加的标记的片段。
 
-片段和活动引用`FragmentManager`，因此相同的方法使用了它们之间的往返通信。 应用程序可能会使用这两种方法之一查找片段的引用、 强制转换为适当的类型，该引用，然后在片段上直接调用方法。 以下代码片段提供了一个示例：
+片段和活动都引用`FragmentManager`, 因此, 使用相同的方法在它们之间来回通信。 应用程序可以通过使用这两种方法中的一种来查找引用片段, 将该引用强制转换为相应的类型, 然后直接对片段调用方法。 以下代码片段提供了一个示例:
 
-还有可能要使用的活动的`FragmentManager`查找片段：
+活动还可以使用`FragmentManager`来查找片段:
 
 ```csharp
 var emailList = FragmentManager.FindFragmentById<EmailListFragment>(Resource.Id.email_list_fragment);
@@ -80,7 +80,7 @@ emailList.SomeCustomMethod(parameter1, parameter2);
 
 ### <a name="communicating-with-the-activity"></a>与活动通信
 
-很可能要使用的片段`Fragment.Activity`属性来引用其主机。 通过强制转换到更具体的类型的活动，它是调用方法和属性在其主机上，活动可能，如下面的示例中所示：
+片段可以使用`Fragment.Activity`属性来引用其主机。 通过将活动强制转换为更具体的类型, 活动可以调用其主机上的方法和属性, 如以下示例中所示:
 
 ```csharp
 var myActivity = (MyActivity) this.Activity;

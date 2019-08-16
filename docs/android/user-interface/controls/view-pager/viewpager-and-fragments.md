@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 90bffc2360654f571728f76810f144e702a81e57
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0657e89e3026cbe2d146d538ca0158ed1d1806d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646092"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522739"
 ---
 # <a name="viewpager-with-fragments"></a>带片段的 ViewPager
 
@@ -106,11 +106,11 @@ protected override void OnCreate(Bundle bundle)
 
 此代码执行以下操作:
 
-1.  设置**main.axml**布局资源中的视图。
+1. 设置**main.axml**布局资源中的视图。
 
-2.  从布局中检索对`ViewPager`的引用。
+2. 从布局中检索对`ViewPager`的引用。
 
-3.  实例化一个`FlashCardDeck`新的作为数据源。
+3. 实例化一个`FlashCardDeck`新的作为数据源。
 
 生成并运行此代码时, 应会看到类似于以下屏幕截图的显示: 
 
@@ -248,9 +248,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 实现`FragmentPagerAdapter`时, 必须重写以下项:
 
--   **计数**&ndash;只读属性, 可返回可用的视图 (页) 数。
+- **计数**&ndash;只读属性, 可返回可用的视图 (页) 数。
 
--   **GetItem**&ndash;返回要为指定页显示的片段。
+- **GetItem**&ndash;返回要为指定页显示的片段。
 
 添加一个名为**FlashCardDeckAdapter.cs**的新文件, 并将其内容替换为以下代码:
 
@@ -335,13 +335,13 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 
 此代码执行以下操作:
 
-1.  在指定位置的`FlashCardDeck`卡片组中查找数学问题字符串。 
+1. 在指定位置的`FlashCardDeck`卡片组中查找数学问题字符串。 
 
-2.  在`FlashCardDeck`卡片上查找指定位置的答案字符串。 
+2. 在`FlashCardDeck`卡片上查找指定位置的答案字符串。 
 
-3.  调用工厂方法`newInstance`, 并传入闪存卡问题和答案字符串。 `FlashCardFragment` 
+3. 调用工厂方法`newInstance`, 并传入闪存卡问题和答案字符串。 `FlashCardFragment` 
 
-4.  创建并返回一个新的闪存`Fragment`卡, 其中包含该位置的问题和答案文本。 
+4. 创建并返回一个新的闪存`Fragment`卡, 其中包含该位置的问题和答案文本。 
 
 `Fragment` `TextBox`当在`position`上`ViewPager` 呈现时,它将显示包含位于"闪存卡"面板中的数学`position`问题字符串的。 
 

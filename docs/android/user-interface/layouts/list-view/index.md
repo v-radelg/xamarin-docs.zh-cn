@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3817a6a111bb8a19248127d3be31a719fac68ba8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646323"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522566"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin Android ListView
 
@@ -192,26 +192,26 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 其余主题 (链接如下) 全面介绍`ListView`了如何使用类以及可用于它的不同类型的适配器类型。 该结构如下所示：
 
--   **视觉外观**控件的`ListView`各个部分&ndash;及其工作原理。
+- **视觉外观**控件的`ListView`各个部分&ndash;及其工作原理。
 
--   **类**用于显示的类的概述。 `ListView` &ndash;
+- **类**用于显示的类的概述。 `ListView` &ndash;
 
--   **在 ListView 中显示数据**如何显示数据的简单列表; 如何实现`ListView's`可用性功能; 如何使用不同的内置行布局; 以及适配器如何通过重复使用行视图来节省内存。 &ndash;
+- **在 ListView 中显示数据**如何显示数据的简单列表; 如何实现`ListView's`可用性功能; 如何使用不同的内置行布局; 以及适配器如何通过重复使用行视图来节省内存。 &ndash;
 
--   **自定义外观**&ndash;将的`ListView`样式更改为自定义布局、字体和颜色。
+- **自定义外观**&ndash;将的`ListView`样式更改为自定义布局、字体和颜色。
 
--   **使用 SQLite**如何使用显示 SQLite 数据库中的数据。 `CursorAdapter` &ndash;
+- **使用 SQLite**如何使用显示 SQLite 数据库中的数据。 `CursorAdapter` &ndash;
 
--   **活动生命周期**&ndash; 实现`ListView`活动时的设计注意事项, 包括在生命周期中应填充数据的位置以及何时释放资源。
+- **活动生命周期**&ndash; 实现`ListView`活动时的设计注意事项, 包括在生命周期中应填充数据的位置以及何时释放资源。
 
 讨论 (分为六部分) 首先概述`ListView`类本身, 然后再介绍如何使用它的更为复杂的示例。
 
--   [ListView 部件和功能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [使用数据填充 ListView](~/android/user-interface/layouts/list-view/populating.md)
--   [自定义 ListView 的外观](~/android/user-interface/layouts/list-view/customizing-appearance.md)
--   [使用 CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
--   [使用 ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
--   [ListView 和活动生命周期](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
+- [ListView 部件和功能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
+- [使用数据填充 ListView](~/android/user-interface/layouts/list-view/populating.md)
+- [自定义 ListView 的外观](~/android/user-interface/layouts/list-view/customizing-appearance.md)
+- [使用 CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
+- [使用 ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
+- [ListView 和活动生命周期](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
 
 ## <a name="summary"></a>总结

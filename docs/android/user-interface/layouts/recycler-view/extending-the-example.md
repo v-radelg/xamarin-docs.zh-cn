@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645336"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522493"
 ---
 # <a name="extending-the-recyclerview-example"></a>扩展 RecyclerView 示例
 
@@ -26,11 +26,11 @@ ms.locfileid: "68645336"
 
 为了说明如何处理项单击事件, 以下步骤说明了如何修改基本照片查看应用程序, 以报告用户已接触到的照片。 在示例应用中发生项单击事件时, 将发生以下序列:
 
-1.  照片`CardView`会检测项目单击事件, 并通知适配器。
+1. 照片`CardView`会检测项目单击事件, 并通知适配器。
 
-2.  适配器将事件 (包含项位置信息) 转发到活动的项的单击处理程序。
+2. 适配器将事件 (包含项位置信息) 转发到活动的项的单击处理程序。
 
-3.  活动的项单击处理程序响应项单击事件。
+3. 活动的项单击处理程序响应项单击事件。
 
 首先, 将名`ItemClick`为的事件处理程序成员添加`PhotoAlbumAdapter`到类定义中:
 

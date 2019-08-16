@@ -1,37 +1,37 @@
 ---
 title: 使用 Razor 模板构建 HTML 视图
-description: " 使用全屏网页以呈现 HTML 可以是简单而有效的方式来呈现复杂的格式以跨平台方式，尤其是如果网站项目中已有的 HTML、 JavaScript 和 CSS。"
+description: " 在跨平台的方式下, 使用全屏网页呈现 HTML 可能是一种简单而有效的格式, 尤其是在您已经具有网站项目的 HTML、JavaScript 和 CSS 的情况下。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 539f59b9835cab6281327bcd1a37482ef82b62cc
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650179"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521805"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 模板构建 HTML 视图
 
-在移动开发领域中术语"混合应用"通常是指显示部分 （或全部） 其屏幕内托管的 web 查看器控件的 HTML 页面，并且应用程序。
+在移动开发世界, 术语 "混合应用" 通常指的是在托管的 web 查看器控件内将其屏幕显示为 HTML 页面的应用程序。
 
-有某些开发环境中，可生成也限制了在平台中移动应用完全在 HTML 和 JavaScript，但这些应用程序可能会降低了性能问题时想要实现复杂的处理或用户界面效果，而是它们可以访问的功能。
+在某些开发环境中, 你可以完全在 HTML 和 JavaScript 中构建移动应用程序, 但在尝试完成复杂的处理或 UI 效果时, 这些应用程序可能会遇到性能问题, 并且在平台中也受到限制可访问的功能。
 
-Xamarin 提供的这两个优势，尤其是在利用 Razor HTML 模板化引擎。 使用 Xamarin 可以灵活地构建跨平台模板化 HTML 视图，使用 JavaScript 和 CSS，但还具有完全访问基础平台 Api 和快速处理使用C#。
+Xamarin 提供两种世界的优势, 特别是在利用 Razor HTML 模板化引擎时。 借助 Xamarin, 你可以灵活地生成使用 JavaScript 和 CSS 的跨平台模板化 HTML 视图, 还可以使用C#来完全访问基础平台 api 和快速处理。
 
-本文档介绍如何使用 Razor 模板化引擎来构建可跨移动平台使用 Xamarin 的 HTML + JavaScript + CSS 视图。
+本文档介绍了如何使用 Razor 模板化引擎来构建可跨使用 Xamarin 的移动平台使用的 HTML + JavaScript + CSS 视图。
 
 ## <a name="using-web-views-programmatically"></a>以编程方式使用 Web 视图
 
-我们了解 Razor 之前本部分介绍如何使用 web 视图以显示 HTML 内容直接 – 尤其是应用内生成的 HTML 内容。
+在了解 Razor 之前, 此部分介绍如何使用 web 视图直接显示 HTML 内容, 具体来说就是在应用程序中生成的 HTML 内容。
 
-Xamarin iOS 和 Android 上提供完全访问基础平台 Api，因此很容易地创建并显示使用 C# 的 HTML。 每个平台的基本语法如下所示。
+Xamarin 提供对 iOS 和 Android 上底层平台 Api 的完全访问权限, 因此可以使用C#轻松地创建和显示 HTML。 每个平台的基本语法如下所示。
 
 ### <a name="ios"></a>iOS
 
-在 Xamarin.iOS UIWebView 控件中显示 HTML 还需要只需几行代码：
+在 Xamarin 中的 UIWebView 控件中显示 HTML 也只需几行代码:
 
 ```csharp
 var webView = new UIWebView (View.Bounds);
@@ -41,11 +41,11 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-请参阅[iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)方案使用 UIWebView 控件有关的详细信息。
+有关使用 UIWebView 控件的详细信息, 请参阅[IOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)食谱。
 
 ### <a name="android"></a>Android
 
-使用 Xamarin.Android 的 WebView 控件中显示 HTML 只需几行代码来完成：
+使用 Xamarin 在 Web 视图控件中显示 HTML 只需几行代码即可完成:
 
 ```csharp
 // webView is declared in an AXML layout file
@@ -58,11 +58,11 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-请参阅[Android WebView](http://docs.xamarin.com/recipes/android/controls/webview/)方案使用 WebView 控件的更多详细信息。
+有关使用 "Web 视图" 控件的详细信息, 请参阅[Android Web 视图](http://docs.xamarin.com/recipes/android/controls/webview/)食谱。
 
-### <a name="specifying-the-base-directory"></a>指定的基目录
+### <a name="specifying-the-base-directory"></a>指定基目录
 
-在这两个平台上是一个参数，指定的 HTML 页的基目录。 这是用于解析相对引用到资源，如图像和 CSS 文件的设备的文件系统上的位置。 例如，这样的标签
+在这两个平台上, 都有一个参数, 该参数指定 HTML 页面的基目录。 这是设备文件系统上的位置, 用于解析对资源 (如图像和 CSS 文件) 的相对引用。 例如, 像这样的标记
 
 ```html
 <link rel="stylesheet" href="style.css" />
@@ -70,51 +70,51 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 <script type="text/javascript" src="jscript.js">
 ```
 
-这些文件，请参阅： **style.css**， **monkey.jpg**并**jscript.js**。 基目录设置告诉 web 视图，这些文件的位置使他们可以加载到页面。
+请参阅以下文件: **style .css**、**猴子**和**jscript**。 "基目录" 设置告知 web 视图这些文件所在的位置, 以便可以将这些文件加载到页面中。
 
 #### <a name="ios"></a>iOS
 
-模板输出呈现在 iOS 中使用以下 C# 代码：
+模板输出呈现在 iOS 中, 并具有以下C#代码:
 
 ```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-基目录指定为`NSBundle.MainBundle.BundleUrl`这是指在安装了应用程序的目录。 中的所有文件**资源**文件夹复制到此位置，如**style.css**文件如下所示：
+指定基目录, `NSBundle.MainBundle.BundleUrl`其指的是应用程序安装到的目录。 **资源**文件夹中的所有文件都复制到此位置, 如此处所示的**样式 .css**文件:
 
  ![iPhoneHybrid 解决方案](images/image1_240x163.png)
 
-所有静态内容文件的生成操作应**BundleResource**:
+所有静态内容文件的生成操作应为**BundleResource**:
 
- ![iOS 项目的生成操作：BundleResource](images/image2_250x131.png)
+ ![iOS 项目生成操作:BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
-Android 还需要时显示在 web 视图中 html 字符串作为参数传递的基目录。
+当 html 字符串显示在 web 视图中时, Android 还需要一个基目录作为参数传递。
 
 ```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
-特殊的字符串**file:///android_asset/** 是指应用程序中，显示在此处包含 Android 资产文件夹**style.css**文件。
+特殊字符串**file:///android_asset/** 指的是应用程序中的 "android 资产" 文件夹, 此处显示的是包含**样式 .css**文件。
 
  ![AndroidHybrid 解决方案](images/image3_240x167.png)
 
-所有静态内容文件的生成操作应**AndroidAsset**。
+所有静态内容文件的生成操作都应为**AndroidAsset**。
 
- ![Android 项目生成操作：AndroidAsset](images/image4_250x71.png)
+ ![Android 项目生成操作:AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>调用C#从 HTML 和 JavaScript
+### <a name="calling-c-from-html-and-javascript"></a>从C# HTML 和 JavaScript 调用
 
-当 html 页加载到 web 视图时，它将处理的链接和窗体就像从服务器加载了页面。 这意味着，如果用户单击链接或提交窗体的 web 视图将尝试导航到指定的目标。
+当 html 页面加载到 web 视图时, 它会像从服务器加载页面一样处理链接和表单。 这意味着, 如果用户单击链接或提交窗体, web 视图将尝试导航到指定的目标。
 
-如果链接是指向外部服务器 （例如 google.com) 然后 web 视图将尝试加载外部网站 （假设没有 internet 连接）。
+如果链接指向外部服务器 (如 google.com), 则 web 视图将尝试加载外部网站 (假定存在 internet 连接)。
 
 ```html
 <a href="http://google.com/">Google</a>
 ```
 
-如果链接为相对然后 web 视图将尝试从基目录中加载该内容。 显然，内容存储在设备上的应用，也不不需要为实现此目的，任何网络连接。
+如果链接是相对的, 则 web 视图将尝试从基本目录加载该内容。 显然, 此操作不需要网络连接, 因为内容存储在设备上的应用程序中。
 
 ```html
 <a href="somepage.html">Local content</a>
@@ -127,13 +127,13 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 <form method="get" action="somepage.html"></form>
 ```
 
-您不打算承载客户端; 上的 web 服务器但是，可以使用当今的响应式设计模式中采用相同的服务器的通信技术通过 HTTP GET 时，调用服务并以异步方式处理响应，通过发出 JavaScript （或调用 JavaScript 已托管在 web 视图中）。 这使您轻松地将数据从 HTML 传递回处理然后将结果返回 HTML 页显示的 C# 代码。
+不会在客户端上托管 web 服务器;但是, 你可以使用目前的响应式设计模式中使用的相同服务器通信技术通过 HTTP GET 来调用服务, 并通过发出 JavaScript (或调用已在 web 视图中托管的 JavaScript) 来异步处理响应。 这使您可以轻松地将数据从 HTML 传递回C#代码进行处理, 然后在 HTML 页上显示结果。
 
-IOS 和 Android 提供用于应用程序代码以截获这些导航事件，以便应用程序代码可以响应 （如果需要） 的机制。 此功能对构建混合应用程序，因为它允许与 web 视图进行交互的本机代码至关重要。
+IOS 和 Android 均提供一种机制, 使应用程序代码能够截获这些导航事件, 使应用程序代码能够响应 (如果需要)。 此功能对于生成混合应用至关重要, 因为它允许本机代码与 web 视图交互。
 
 #### <a name="ios"></a>iOS
 
-在 iOS web 视图上的 ShouldStartLoad 事件可以重写以允许应用程序代码处理导航请求 （例如链接单击）。 方法参数提供的所有信息
+可以重写 iOS 中 web 视图上的 ShouldStartLoad 事件, 以允许应用程序代码处理导航请求 (例如, 单击链接)。 方法参数提供所有信息
 
 ```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
@@ -142,7 +142,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 }
 ```
 
-然后将分配的事件处理程序：
+然后分配事件处理程序:
 
 ```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
@@ -150,7 +150,7 @@ webView.ShouldStartLoad += HandleShouldStartLoad;
 
 #### <a name="android"></a>Android
 
-在 Android 上只需子类 WebViewClient，然后实现代码来响应导航请求。
+在 Android 上, 只需将 WebViewClient 为子类, 然后实现代码来响应导航请求。
 
 ```csharp
 class HybridWebViewClient : WebViewClient {
@@ -161,7 +161,7 @@ class HybridWebViewClient : WebViewClient {
 }
 ```
 
-然后在 web 视图上设置客户端：
+然后在 web 视图上设置客户端:
 
 ```csharp
 webView.SetWebViewClient (new HybridWebViewClient ());
@@ -169,11 +169,11 @@ webView.SetWebViewClient (new HybridWebViewClient ());
 
 ### <a name="calling-javascript-from-c"></a>从调用 JavaScriptC#
 
-除了告诉 web 视图，以加载新的 HTML 页面，C#代码还可以在当前显示页内运行 JavaScript。 可以使用创建整个 JavaScript 代码块C#字符串，并执行，或您就可以完成对 JavaScript 通过本页中已提供的方法调用`script`标记。
+除了告诉 web 视图加载新的 HTML 页面外, C#代码还可以在当前显示的页面中运行 JavaScript。 可以使用C#字符串并执行整个 javascript 代码块, 也可以通过`script`标记将方法调用创建到页面上已有的 javascript。
 
 #### <a name="android"></a>Android
 
-创建 JavaScript 代码来执行，然后将其与前缀"javascript:"，并指示要加载该字符串的 web 视图：
+创建要执行的 JavaScript 代码, 然后将其作为 "javascript:" 的前缀, 并指示 web 视图加载该字符串:
 
 ```csharp
 var js = "alert('test');";
@@ -182,7 +182,7 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-iOS web 视图提供了专门用于 JavaScript 调用的方法：
+iOS web 视图提供专用于调用 JavaScript 的方法:
 
 ```csharp
 var js = "alert('test');";
@@ -191,31 +191,31 @@ webView.EvaluateJavascript (js);
 
 ### <a name="summary"></a>总结
 
-本部分中引入了 Android 和 iOS，让我们构建使用 Xamarin，混合应用程序上的 web 视图控件的功能包括：
+本部分介绍了 Android 和 iOS 上的 web 视图控件功能, 使我们能够通过 Xamarin 构建混合应用程序, 包括:
 
--  从字符串生成在代码中，加载 HTML 的功能
--  能够引用本地文件 （CSS、 JavaScript、 图像或其他 HTML 文件）
--  拦截在 C# 代码中，导航请求
--  从 JavaScript 调用的能力C#代码。
+- 能够从代码中生成的字符串加载 HTML,
+- 引用本地文件 (CSS、JavaScript、图像或其他 HTML 文件) 的功能,
+- 能够在代码中C#截获导航请求,
+- 从C#代码调用 JavaScript 的能力。
 
 
-下一部分将介绍 Razor，轻松地创建混合应用中使用的 HTML。
+下一节介绍 Razor, 这使得创建在混合应用程序中使用的 HTML 变得更加容易。
 
-## <a name="what-is-razor"></a>Razor 是什么？
+## <a name="what-is-razor"></a>什么是 Razor？
 
-Razor 是一个模板化引擎，引入了 ASP.NET MVC 中，最初以在服务器上运行，并生成要提供给 web 浏览器的 HTML。
+Razor 是一种模板化引擎, 它是使用 ASP.NET MVC 引入的, 最初在服务器上运行并生成用于 web 浏览器的 HTML。
 
-Razor 模板化引擎扩展了标准 HTML 语法与C#，以便可以表达布局并轻松地将 CSS 样式表和 JavaScript 的合并。 该模板可以引用 Model 类，可以是任何自定义类型和可以直接从该模板访问其属性。 其主要优势之一是能够轻松地混合使用 HTML 和 C# 语法。
+Razor 模板化引擎将标准 HTML 语法扩展C#为, 这样您就可以轻松表达布局, 并可以轻松地合并 CSS 样式表和 JavaScript。 模板可以引用模型类, 该类可以是任何自定义类型, 可以直接从模板访问其属性。 它的主要优点之一是能够轻松地混合 HTML 和C#语法。
 
-Razor 模板不限于服务器端使用，也可以在 Xamarin 应用中包含它们。 使用 Razor 模板能够以编程方式使用 web 视图，若要使用 Xamarin 生成的复杂的跨平台混合应用程序。
+Razor 模板不仅限于服务器端使用, 还可以包含在 Xamarin apps 中。 使用 Razor 模板以及通过编程方式使用 web 视图, 可以通过 Xamarin 构建复杂的跨平台混合应用程序。
 
-### <a name="razor-template-basics"></a>Razor 模板的基础知识
+### <a name="razor-template-basics"></a>Razor 模板基础知识
 
-Razor 模板文件具有 **.cshtml**文件扩展名。 他们可以添加到 Xamarin 项目中的文本模板化部分从**新的文件**对话框：
+Razor 模板文件的文件扩展名为**cshtml** 。 可以通过 "**新建文件**" 对话框中的 "文本模板化" 部分将其添加到 Xamarin 项目:
 
  ![新文件-Razor 模板](images/image5_400x201.png)
 
-一个简单的 Razor 模板 ( **RazorView.cshtml**) 如下所示。
+下面显示了一个简单的 Razor 模板 ( **RazorView**)。
 
 ```html
 @model string
@@ -226,31 +226,31 @@ Razor 模板文件具有 **.cshtml**文件扩展名。 他们可以添加到 Xam
 </html>
 ```
 
-请注意，与常规的 HTML 文件的以下差异：
+请注意与常规 HTML 文件的以下差异:
 
--  `@`符号 Razor 模板中具有特殊含义，它表示以下表达式是 C#，以进行评估。
-- `@model` 指令始终显示为 Razor 模板文件的第一行。
--  `@model`指令后应执行一种类型。 在此示例中被一个简单的字符串传递给模板，但这可能是任何自定义类。
--  当`@Model`引用在整个模板，它提供对生成 （在此示例中它将是一个字符串） 时传递给模板的对象的引用。
--  IDE 将自动生成分部类模板 (文件的工具 **.cshtml**扩展)。 你可以查看此代码，但不是应进行编辑。
- ![RazorView.cshtml](images/image6_125x34.png)分部类名为 RazorView 以匹配.cshtml 模板文件的名称。 它是用于在 C# 代码中模板引用此名称。
-- `@using` 语句还可以包含在使用 Razor 模板来包含其他命名空间的顶部。
+- 符号在 Razor 模板中具有特殊含义–它表示C#要计算以下表达式。 `@`
+- `@model`指令始终显示为 Razor 模板文件的第一行。
+- `@model`指令后面应跟有一个类型。 在此示例中, 一个简单的字符串将传递给模板, 但这可以是任何自定义类。
+- 在`@Model`整个模板中引用时, 它会在生成时提供对传递给模板的对象的引用 (在本示例中, 它是一个字符串)。
+- IDE 将自动生成模板的分部类 (扩展名为 **... 扩展名为...** )。 您可以查看此代码, 但不能对其进行编辑。
+ ![RazorView 分部类的名称为 RazorView, 以与 # 模板文件名匹配。](images/image6_125x34.png) 此名称用于在代码中C#引用模板。
+- `@using`还可以在 Razor 模板的顶部包含语句以包括其他命名空间。
 
 
-然后可以使用以下 C# 代码生成最终的 HTML 输出。 请注意，我们指定为字符串"Hello World"这将合并到呈现的模板输出的模型。
+然后, 可以通过以下C#代码生成最终的 HTML 输出。 请注意, 我们将模型指定为字符串 "Hello World", 该字符串将合并到呈现的模板输出中。
 
 ```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
 
-下面是 iOS 模拟器和 Android 的仿真程序上的 web 视图中所示的输出：
+下面是 iOS 模拟器上的 web 视图中显示的输出, 并 Android Emulator:
 
  ![Hello World](images/image7_523x135.png)
 
-### <a name="more-razor-syntax"></a>更多的 Razor 语法
+### <a name="more-razor-syntax"></a>更多 Razor 语法
 
-在本部分中我们将介绍一些基本的 Razor 语法，以帮助你开始使用它。 在本部分中的示例填充以下数据类并将其使用 Razor 显示：
+在本部分中, 我们将介绍一些基本 Razor 语法, 以帮助你开始使用它。 本节中的示例使用数据填充以下类, 并使用 Razor 显示它:
 
 ```csharp
 public class Monkey {
@@ -273,7 +273,7 @@ var animal = new Monkey {
 
 #### <a name="displaying-model-properties"></a>显示模型属性
 
-具有属性的类模型时，它们轻松地引用 Razor 模板中，在此示例模板中所示：
+如果该模型是具有属性的类, 则可在 Razor 模板中轻松引用这些属性, 如以下示例模板所示:
 
 ```html
 @model Monkey
@@ -285,20 +285,20 @@ var animal = new Monkey {
 </html>
 ```
 
-这可以呈现为字符串使用以下代码：
+可以使用以下代码将其呈现给字符串:
 
 ```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
 
-最终输出 iOS 模拟器和 Android 的仿真程序上的 web 视图中的如下所示：
+最终输出显示在 iOS 模拟器上的 web 视图中, 并 Android Emulator:
 
  ![Rupert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>C# 语句
+#### <a name="c-statements"></a>C#前瞻性
 
-更复杂的 C# 可以在模板中，如模型属性更新和年龄的计算在此示例包括：
+可在C#模板中包含更复杂的内容, 例如模型属性更新和在此示例中的期限计算:
 
 ```html
 @model Monkey
@@ -315,13 +315,13 @@ var page = template.GenerateString ();
 </html>
 ```
 
-可以通过括起的代码与编写复杂的单行 C# 表达式 （如格式设置年龄） `@()`。
+您可以通过使用C# `@()`代码将代码括起来来编写复杂的单行表达式 (如设置年龄格式)。
 
-可由具有其周围写入多个 C# 语句`@{}`。
+可以C#通过使用`@{}`来编写多个语句。
 
-#### <a name="if-else-statements"></a>If-else 语句
+#### <a name="if-else-statements"></a>Else 语句
 
-可以使用表示代码分支`@if`此模板的示例中所示。
+可以用表示代码分支, `@if`如此模板示例中所示。
 
 ```html
 @model Monkey
@@ -342,7 +342,7 @@ var page = template.GenerateString ();
 
 #### <a name="loops"></a>循环
 
-循环结构类似`foreach`还可以添加。 `@`可以循环变量上使用前缀 (`@food`这种情况下) 以 html 格式呈现。
+也可以添加`foreach`循环构造, 如。 前缀可用于循环变量 ( `@food`在本例中为), 以 HTML 格式呈现。 `@`
 
 ```html
 @model Monkey
@@ -365,95 +365,95 @@ var page = template.GenerateString ();
 </html>
 ```
 
-上述模板的输出所示在 iOS 模拟器或 Android 仿真器上运行：
+上述模板的输出显示在 iOS 模拟器上运行, 并 Android Emulator:
 
- ![Rupert X Monkey](images/image9_520x277.png)
+ ![Rupert X 猴子](images/image9_520x277.png)
 
-本部分已介绍了使用 Razor 模板来呈现简单的只读视图的基础知识。 下一部分将介绍如何构建使用 Razor 可以接受用户输入和 HTML 视图中的 JavaScript 之间进行互操作的更完整应用和C#。
+本部分介绍了使用 Razor 模板呈现简单的只读视图的基础知识。 下一节将介绍如何使用 Razor 生成更完整的应用程序, 这些应用可以接受用户输入, 并在 HTML 视图和C#中的 JavaScript 之间进行互操作。
 
-## <a name="using-razor-templates-with-xamarin"></a>通过 Xamarin 使用 Razor 模板
+## <a name="using-razor-templates-with-xamarin"></a>将 Razor 模板用于 Xamarin
 
-本部分介绍如何使用自己使用的解决方案模板在 Visual Studio for mac 的混合应用程序的生成 三个模板都不能从**文件 > 新建 > 解决方案...** 窗口：
+本部分说明如何在 Visual Studio for Mac 中使用解决方案模板来构建自己的混合应用程序。 **> 新建 > 解决方案**"窗口中提供了三个模板:
 
-- **Android > 应用程序 > Android WebView 应用程序**
-- **iOS > 应用程序 > WebView 应用程序**
+- **Android > 应用 > Android Web 视图应用程序**
+- **iOS > 应用 > Web 视图应用程序**
 - **ASP.NET MVC 项目**
 
 
 
-**新的解决方案**窗口如下所示适用于 iPhone 和 Android 项目-在右侧的解决方案说明突出显示了支持 Razor 模板化引擎。
+对于 iPhone 和 Android 项目, 新的 "**解决方案**" 窗口将如下所示-适用于 Razor 模板化引擎的突出显示的解决方案说明。
 
- ![创建 iPhone 和 Android 的解决方案](images/image13_1139x959.png)
+ ![创建 iPhone 和 Android 解决方案](images/image13_1139x959.png)
 
-请注意，您可以轻松地添加 **.cshtml** Razor 模板*任何*现有 Xamarin 项目，它不需要使用这些解决方案模板。 iOS 项目不需要情节提要以进行使用 Razor 这两个;只需以编程方式向任何视图添加 UIWebView 控件并呈现 Razor 模板整个 C# 代码中。
+请注意, 你可以轻松地将**cshtml** Razor 模板添加到*任何*现有 Xamarin 项目中, 无需使用这些解决方案模板。 iOS 项目不需要演示图板即可使用 Razor;只需以编程方式将 UIWebView 控件添加到任何视图, 即可在代码中C#整体呈现 Razor 模板。
 
-适用于 iPhone 和 Android 项目的默认模板解决方案内容如下所示：
+IPhone 和 Android 项目的默认模板解决方案内容如下所示:
 
  ![iPhone 和 Android 模板](images/image10_428x310.png)
 
-模板会为你提供已准备就绪应用程序基础结构来加载具有数据模型对象的 Razor 模板，处理用户输入并追溯到通过 JavaScript 用户进行通信。
+模板为你提供了现成的应用程序基础结构, 以便使用数据模型对象加载 Razor 模板, 处理用户输入并通过 JavaScript 向用户进行通信。
 
-该解决方案的重要部分是：
+解决方案的重要组成部分如下:
 
--  静态内容**style.css**文件。
--  Razor 模板文件.cshtml 喜欢**RazorView.cshtml** 。
--  如 Razor 模板中引用的模型类**ExampleModel.cs** 。
--  特定于平台的类能够创建 web 视图和呈现模板中，如`MainActivity`在 Android 上和`iPhoneHybridViewController`在 iOS 上。
+- 静态内容, 如**样式 .css**文件。
+- Razor 模板文件 (如**RazorView** )。
+- Razor 模板中引用的模型类, 如**ExampleModel.cs** 。
+- 平台特定的类, 该类创建 web 视图并呈现模板, 如`MainActivity` Android `iPhoneHybridViewController`和 iOS 上的。
 
 
-以下部分介绍项目的工作原理。
+以下部分说明了项目的工作方式。
 
 ### <a name="static-content"></a>静态内容
 
-静态内容包括 CSS 样式表、 图像、 JavaScript 文件或其他内容，可以从链接或 web 视图中显示的 HTML 文件的引用。
+静态内容包括 CSS 样式表、图像、JavaScript 文件或其他内容, 可从 web 视图中显示的 HTML 文件链接或引用这些内容。
 
-模板项目包括演示如何在混合应用中包含静态内容的最小的样式表。 CSS 样式表中与此类似模板引用：
+模板项目包含最小样式表, 用于演示如何在混合应用中包含静态内容。 模板中引用了 CSS 样式表, 如下所示:
 
 ```html
 <link rel="stylesheet" href="style.css" />
 ```
 
-您可以添加任何样式表和 JavaScript 所需的文件，包括 JQuery 等框架。
+可以添加所需的任何样式表和 JavaScript 文件, 包括 JQuery 等框架。
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml 模板
 
-该模板包含 Razor **.cshtml**具有预编写的代码，可帮助 HTML/JavaScript 之间传输数据的文件和C#。 这样就可以的生成复杂的混合应用不只是显示只读数据模型，但还接受用户输入以 html 格式并将其传递回 C# 代码进行处理或存储。
+该模板包含一个 Razor **. cshtml**文件, 该文件具有预编写的代码, 可帮助在 HTML/JavaScript 和C#之间传递数据。 这样, 你便可以生成复杂的混合应用, 这些应用不只是显示模型中的只读数据, 而且还接受 HTML 中的用户输入, 并将C#其传递回代码以进行处理或存储。
 
 #### <a name="rendering-the-template"></a>呈现模板
 
-调用`GenerateString`在模板上呈现 HTML 准备好 web 视图中显示。 如果该模板使用一个模型，则它应在呈现之前提供。 此图描述了呈现的工作原理 – 未解析的 web 视图在运行时，使用提供的基目录来查找指定的文件、 静态资源。
+对模板`GenerateString`调用会将 HTML 呈现为可在 web 视图中显示的。 如果模板使用模型, 则应在呈现之前提供。 此图说明了呈现的工作方式, 而不是在运行时由 web 视图解析静态资源, 使用提供的基目录查找指定的文件。
 
  ![Razor 流程图](images/image12_700x421.png)
 
-#### <a name="calling-c-code-from-the-template"></a>从模板中调用 C# 代码
+#### <a name="calling-c-code-from-the-template"></a>从C#模板调用代码
 
-来自呈现的 web 视图回调到 C# 的通信可通过设置 web 视图的 URL，然后截获 C# 中的请求处理本机请求，而不重新加载 web 视图。
+从呈现的 web 视图进行的调用C#是通过设置 web 视图的 URL, 然后截获中C#的请求来处理本机请求, 而不会重新加载 web 视图。
 
-一个示例所示 RazorView 的按钮的处理方式。 该按钮具有以下 HTML:
+可在如何处理 RazorView 的按钮中查看示例。 此按钮具有以下 HTML:
 
 ```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-`InvokeCSharpWithFormValues` JavaScript 函数中读取的所有值的 HTML 窗体和集从`location.href`web 视图：
+JavaScript 函数读取 HTML 窗体中的所有值, 并设置 web 视图`location.href`的: `InvokeCSharpWithFormValues`
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-此操作只能导航到自定义方案 （例如使用 URL 的 web 视图。 `hybrid:`)
+这会尝试使用自定义方案将 web 视图导航到 URL (例如 `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
 ```
 
-当本机 web 视图处理此导航请求时，我们有机会截获。 在 iOS 中，这是通过处理 UIWebView HandleShouldStartLoad 事件。 在 Android 中，我们只需子类 WebViewClient 中窗体中，使用和重写 ShouldOverrideUrlLoading。
+当本机 web 视图处理此导航请求时, 我们有机会截获该请求。 在 iOS 中, 这是通过处理 UIWebView 的 HandleShouldStartLoad 事件来完成的。 在 Android 中, 只需为窗体中使用的 WebViewClient 划分子类, 并重写 ShouldOverrideUrlLoading。
 
-这些两个导航侦听器的内部结构实质上是相同的。
+这两个导航侦听器的内部机制实质上是相同的。
 
-首先，请检查 URL 的 web 视图尝试加载，并且如果它不会启动具有自定义方案 (`hybrid:`)，允许作为普通发生的导航。
+首先, 检查 web 视图尝试加载的 URL, 如果不是以自定义方案 (`hybrid:`) 开头, 则允许导航正常进行。
 
-对于自定义 URL 方案，方案之间的 URL 中的所有内容和"？" 是用于处理 （在此情况下，"UpdateLabel"） 的方法名称。 查询字符串中的所有内容将被视为方法调用的参数：
+对于自定义 URL 方案, 方案和 "？" 之间 URL 中的所有内容 要处理的方法名称 (在本例中为 "UpdateLabel")。 查询字符串中的所有内容都将被视为方法调用的参数:
 
 ```csharp
 var resources = url.Substring(scheme.Length).Split('?');
@@ -461,68 +461,68 @@ var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-`UpdateLabel` 在此示例执行最少量的字符串操作 （追加"C# 向表明:"字符串） 的文本框中参数，然后回调到 web 视图。
+`UpdateLabel`在此示例中, 对 textbox 参数执行最小数量的字符串操作 (在C#字符串前面加上 "说"), 然后回调到 web 视图。
 
-在处理 URL 后, 方法中止在导航窗格，以便 web 视图不会尝试完成导航到自定义 URL。
+处理 URL 后, 方法将中止导航, 以便 web 视图不会尝试完成导航到自定义 URL。
 
-#### <a name="manipulating-the-template-from-c"></a>操作从 C# 模板
+#### <a name="manipulating-the-template-from-c"></a>操作模板C#
 
-与中呈现的 HTML web 视图的通信C#通过 JavaScript 调用 web 视图中。 在 iOS 上，这是通过调用`EvaluateJavascript`UIWebView 上：
+通过在 web 视图中调用 JavaScript, C#可以从与呈现的 HTML web 视图进行通信。 在 iOS 上, 此操作通过对`EvaluateJavascript` UIWebView 调用:
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-在 Android 上，JavaScript 可以调用 web 视图中通过加载为 URL 使用 JavaScript `"javascript:"` URL 方案：
+在 Android 上, 可以通过使用`"javascript:"` url 方案将 javascript 作为 url 加载来在 web 视图中调用 javascript:
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 
-## <a name="making-an-app-truly-hybrid"></a>使应用真正的混合
+## <a name="making-an-app-truly-hybrid"></a>使应用真正混合
 
-这些模板禁止使用的每个平台上的本机控件 – 使用单个 web 视图填充整个屏幕。
+这些模板不会在每个平台上使用本机控件–使用单个 web 视图填充整个屏幕。
 
-HTML 可以是适合用于原型制作，显示了几种 web 最适合在多格式文本和响应式布局等。 例如，但是并非所有的任务适用于 HTML 和 JavaScript – 滚动的数据，较长的列表执行更好地在 Android 上使用本机 UI 控件，如 (UITableView 在 iOS 上的) 或 ListView。
+HTML 可以很好地用于原型制作, 并显示 web 最适合的内容种类, 例如富文本和响应式布局。 不过, 并非所有任务都适用于 HTML 和 JavaScript –滚动查看长数据列表, 例如, 使用本机 UI 控件 (如 iOS 上的 UITableView 或 Android 上的 ListView) 更好地执行。
 
-在模板中的 web 视图可以轻松地扩充与特定于平台的控制 – 只需编辑**mainstoryboard.storyboard** iOS 设计器中或**Resources/layout/Main.axml**在 Android 上。
+可以轻松地将模板中的 web 视图与特定于平台的控件结合, 只需在 iOS 设计器中编辑**mainstoryboard.storyboard** , 或在 Android 上编辑**Resources/layout/main.axml** 。
 
-### <a name="razortodo-sample"></a>RazorTodo Sample
+### <a name="razortodo-sample"></a>RazorTodo 示例
 
-[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存储库包含两个不同的解决方案，若要显示的完全 HTML 驱动的应用并将 HTML 与本机控件相结合的应用之间的差异：
+[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存储库包含两个单独的解决方案, 用于显示完全 html 驱动应用和将 HTML 与本机控件结合使用的应用之间的差异:
 
--  **RazorTodo** -使用 Razor 模板完全 HTML 驱动应用程序。
--  **RazorNativeTodo** -使用适用于 iOS 和 Android 的本机列表视图控件，但显示使用 HTML 和 Razor 的编辑屏幕。
+- **RazorTodo** -使用 Razor 模板的完全 HTML 驱动的应用。
+- **RazorNativeTodo** -使用适用于 IOS 和 Android 的本机列表视图控件, 但使用 HTML 和 Razor 显示编辑屏幕。
 
 
-在 iOS 和 Android，利用可移植类库 (Pcl) 以共享通用代码，如数据库和模型类上运行这些 Xamarin 应用。 Razor **.cshtml**模板也可以将包含在 pcl 中以便轻松地在跨平台共享。
+这些 Xamarin 应用在 iOS 和 Android 上运行, 利用可移植类库 (Pcl) 来共享公共代码, 如数据库和模型类。 Razor模板还可以包括在 PCL 中, 以便可以轻松地在平台之间共享这些模板。
 
-Twitter 共享和演示，Xamarin 混合应用程序仍具有的访问权限的基本功能的所有 HTML Razor 模板驱动视图的文本到语音转换 Api 的本机平台中，将合并这两个示例应用。
+这两个示例应用都结合了本地平台中的 Twitter 共享和文本到语音 Api, 演示了使用 Xamarin 的混合应用程序仍可以访问 HTML Razor 模板驱动视图中的所有基础功能。
 
-**RazorTodo**应用使用 HTML Razor 模板列表和编辑视图。 这意味着我们可以构建的应用程序几乎完全中共享的可移植类库 (包括数据库和 **.cshtml** Razor 模板)。 下面的屏幕截图显示 iOS 和 Android 应用。
+**RazorTodo**应用使用 HTML Razor 模板作为列表和编辑视图。 这意味着我们几乎可以完全在共享的可移植类库 (包括数据库和 **. cshtml**模板) 中构建应用。 下面的屏幕截图显示 iOS 和 Android 应用。
 
  ![RazorTodo](images/Both_700x290.png)
 
-**RazorNativeTodo**应用的编辑视图中，使用 HTML Razor 模板，但每个平台上实现本机滚动列表。 这提供了很多好处包括：
+**RazorNativeTodo**应用使用 "编辑" 视图的 HTML Razor 模板, 但在每个平台上实现本机滚动列表。 这带来了许多好处, 包括:
 
--  性能-本机滚动控件使用虚拟化以确保快速、 顺利地滚动甚至使用很长数据的列表。
--  本机体验-特定于平台的 UI 元素很容易被启用，如 iOS 和 Android 中的快速滚动索引支持。
+- 性能-本机滚动控件使用虚拟化来确保快速平稳滚动, 甚至包含非常长的数据列表。
+- 本机体验-可轻松启用特定于平台的 UI 元素, 如 iOS 和 Android 中的快速滚动索引支持。
 
 
-构建使用 Xamarin 混合应用程序的主要优点是可以具有完全 HTML 驱动的用户界面 （如第一个示例） 开始，将特定于平台的功能 （如第二个示例所示） 需要时添加。 本机列表屏幕和 HTML Razor 编辑屏幕上这两个 iOS 和 Android 如下所示。
+使用 Xamarin 构建混合应用程序的一个主要优点是, 您可以从完全 HTML 驱动的用户界面 (如第一个示例) 开始, 然后在需要时添加特定于平台的功能 (如第二个示例所示)。 IOS 和 Android 上的本机列表屏幕和 HTML Razor 编辑屏幕如下所示。
 
  ![RazorNativeTodo](images/BothNative_700x290.png)
 
 ## <a name="summary"></a>总结
 
-本文讲述了一些可用的 web 视图控件的功能在 iOS 和 Android，便于您构建混合应用程序。
+本文介绍了在 iOS 和 Android 上提供的用于简化混合应用程序的 web 视图控件的功能。
 
-然后讨论了 Razor 模板化引擎以及可用于使用 Xamarin 应用中轻松地生成 HTML 的语法。**cshtml** Razor 模板文件。 它还介绍了为 Mac 解决方案模板，您可以快速开始构建使用 Xamarin 混合应用程序的 Visual Studio。
+然后, 它讨论了 Razor 模板化引擎, 以及可用于在 Xamarin 应用程序中轻松生成 HTML 的语法。**cshtml**Razor 模板文件。 它还介绍了 Visual Studio for Mac 解决方案模板, 可让你快速开始用 Xamarin 构建混合应用程序。
 
-最后，它引入了 RazorTodo 示例，演示如何将 web 视图结合使用本机用户界面和 Api。
+最后, 它引入了 RazorTodo 示例, 该示例演示如何将 web 视图与本机用户界面和 Api 组合在一起。
 
 ### <a name="related-links"></a>相关链接
 
-- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [RazorTodo 示例](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3-Razor 视图引擎 (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [使用 Razor 语法 (Microsoft) 的 ASP.NET Web 编程简介](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [使用 Razor 语法的 ASP.NET Web 编程简介 (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

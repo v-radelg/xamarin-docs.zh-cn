@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 6d80af60ae94c638c7d90229852f304a40ce0b0c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4c612faca90d4b2b4e44cfbb53ff65ec07fcdfd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643810"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524838"
 ---
 # <a name="binding-an-aar"></a>绑定 .AAR
 
@@ -24,10 +24,10 @@ _本演练提供了从 Android 创建 Xamarin Android Java 绑定库的分步说
 *Android 存档 (。AAR)* file 是 Android 库的文件格式。
 无.AAR 文件是一个。包含以下内容的 ZIP 存档:
 
--   已编译的 Java 代码
--   资源 Id
--   资源
--   元数据 (例如, 活动声明、权限)
+- 已编译的 Java 代码
+- 资源 Id
+- 资源
+- 元数据 (例如, 活动声明、权限)
 
 在本指南中, 我们将逐步介绍为单一的绑定库创建基础知识。AAR 文件。 有关一般情况下的 Java 库绑定概述 (带有基本的代码示例), 请参阅[绑定 Java 库](~/android/platform/binding-java-library/index.md)。
 
@@ -81,35 +81,35 @@ public class TextCounter
 
 在开始执行以下步骤之前, 请下载示例[textanalyzer. aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android 存档文件:
 
-1.  从 "Android 绑定库" 模板开始创建一个新的绑定库项目。 你可以使用 Visual Studio for Mac 或 Visual Studio (下面的屏幕截图显示 Visual Studio, 但 Visual Studio for Mac 非常相似)。 将解决方案命名为**AarBinding**:
+1. 从 "Android 绑定库" 模板开始创建一个新的绑定库项目。 你可以使用 Visual Studio for Mac 或 Visual Studio (下面的屏幕截图显示 Visual Studio, 但 Visual Studio for Mac 非常相似)。 将解决方案命名为**AarBinding**:
 
     [![创建 AarBindings 项目](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
-2.  该模板包含一个**jar**文件夹, 可在其中添加。AAR 绑定库项目。 右键单击 " **jar** " 文件夹, 然后选择 "**添加 > 现有项**:
+2. 该模板包含一个**jar**文件夹, 可在其中添加。AAR 绑定库项目。 右键单击 " **jar** " 文件夹, 然后选择 "**添加 > 现有项**:
 
     [![添加现有项](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
-3.  导航到之前下载的**textanalyzer**文件, 选择它, 然后单击 "**添加**":
+3. 导航到之前下载的**textanalyzer**文件, 选择它, 然后单击 "**添加**":
 
     [![添加 textanalayzer。 aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
-4.  验证**textanalyzer aar**文件是否已成功添加到项目中:
+4. 验证**textanalyzer aar**文件是否已成功添加到项目中:
 
     [![添加了 textanalyzer aar 文件](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
-5.  将 textanalyzer 的生成操作设置为**aar** `LibraryProjectZip`。 在 Visual Studio for Mac 中, 右键单击 " **aar** " 以设置生成操作。 在 Visual Studio 中, 可在 "**属性**" 窗格中设置生成操作:
+5. 将 textanalyzer 的生成操作设置为**aar** `LibraryProjectZip`。 在 Visual Studio for Mac 中, 右键单击 " **aar** " 以设置生成操作。 在 Visual Studio 中, 可在 "**属性**" 窗格中设置生成操作:
 
     [![将 textanalyzer aar 生成操作设置为 LibraryProjectZip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
-6.  打开项目属性以配置*目标框架*。 如果为。AAR 使用任何 Android Api, 将目标框架设置为的 API 级别。AAR 期望。 (有关目标框架设置和一般 Android API 级别的详细信息, 请参阅[了解 ANDROID Api 级别](~/android/app-fundamentals/android-api-levels.md)。)
+6. 打开项目属性以配置*目标框架*。 如果为。AAR 使用任何 Android Api, 将目标框架设置为的 API 级别。AAR 期望。 (有关目标框架设置和一般 Android API 级别的详细信息, 请参阅[了解 ANDROID Api 级别](~/android/app-fundamentals/android-api-levels.md)。)
 
     设置绑定库的目标 API 级别。 在此示例中, 我们可以自由使用最新的平台 API 级别 (API 级别 23), 因为我们的**textanalyzer**不依赖 Android api:
 
     [![将目标级别设置为 API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
-7.  生成绑定库。 绑定库项目应成功生成并生成输出。DLL 位于以下位置:**AarBinding/bin/Debug/AarBinding.dll**
+7. 生成绑定库。 绑定库项目应成功生成并生成输出。DLL 位于以下位置:**AarBinding/bin/Debug/AarBinding.dll**
 
 
 
@@ -117,19 +117,19 @@ public class TextCounter
 
 使用此。DLL, 必须首先添加对绑定库的引用。 使用以下步骤:
 
-1.  我们要在与绑定库相同的解决方案中创建此应用程序, 以简化本演练。 (使用绑定库的应用程序也可以驻留在不同的解决方案中。)创建新的 Xamarin Android 应用: 右键单击该解决方案, 然后选择 "**添加新项目**"。 将新项目命名为**BindingTest**:
+1. 我们要在与绑定库相同的解决方案中创建此应用程序, 以简化本演练。 (使用绑定库的应用程序也可以驻留在不同的解决方案中。)创建新的 Xamarin Android 应用: 右键单击该解决方案, 然后选择 "**添加新项目**"。 将新项目命名为**BindingTest**:
 
     [![创建新的 BindingTest 项目](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
-2.  右键单击 " **BindingTest** " 项目的 "**引用**" 节点, 然后选择 "**添加引用 ...** ":
+2. 右键单击 " **BindingTest** " 项目的 "**引用**" 节点, 然后选择 "**添加引用 ...** ":
 
     [![单击 "添加引用"](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
-3.  选择前面创建的**AarBinding**项目, 然后单击 **"确定"** :
+3. 选择前面创建的**AarBinding**项目, 然后单击 **"确定"** :
 
     [![检查 AAR 绑定项目](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
-4.  打开**BindingTest**项目的 "**引用**" 节点, 验证是否存在**AarBinding**引用:
+4. 打开**BindingTest**项目的 "**引用**" 节点, 验证是否存在**AarBinding**引用:
 
     [![AarBinding 在 "引用" 下列出](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
@@ -276,7 +276,7 @@ Xamarin 工具合并了**R**数据。AAR 到应用的**资源**类中。 因此,
 <ImageView android:src="@drawable/image" ... />
 ```
 
-你还可以访问驻留在中的资源布局。AAR. 为此, 请使用**资源. 布局**中打包的布局的名称。AAR. 例如:
+你还可以访问驻留在中的资源布局。AAR. 为此, 请使用**资源. 布局**中打包的布局的名称。AAR. 例如：
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 548d513d8b949b56711bacad6924c692c0454bf4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f8d9841deff485a67919aea9fede75044541ba5f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643512"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524198"
 ---
 # <a name="ice-cream-sandwich-features"></a>冰淇淋三明治功能
 
@@ -22,10 +22,10 @@ _本文介绍了使用 Android 4 API 冰淇淋三明治的应用程序开发人�
 
 Android OS 版本 4.0 (API 级别 14) 表示 Android 操作系统的主要重新处理, 并包括许多重要更改和升级, 其中包括:
 
--   **已更新的用户界面**–当开发人员创建应用程序用户界面时, 多个新的 UI 功能使开发人员能够更强大的功能。 这些新功能包括: `GridLayout` 、 `PopupMenu` 、 `Switch`小组件和`TextureView` 。 
--   **更好的硬件加速**–二维渲染现在适用于所有 Android 控件的 GPU。 此外, 默认情况下, 在为 Android 4.0 开发的所有应用程序中启用硬件加速。 
--   **新的数据 api** -对以前未正式访问的数据有新的访问权限, 如日历数据和设备所有者的用户配置文件。 
--   **应用数据共享**–在`ShareActionProvider`应用程序和设备之间共享数据现在比以往更容易通过技术 (例如), 这使你可以轻松地从操作栏创建共享操作, 将*Android 横梁*用于*近乎现场通信 (NFC)* , 使其能够在彼此接近的设备之间共享数据。 
+- **已更新的用户界面**–当开发人员创建应用程序用户界面时, 多个新的 UI 功能使开发人员能够更强大的功能。 这些新功能包括: `GridLayout` 、 `PopupMenu` 、 `Switch`小组件和`TextureView` 。 
+- **更好的硬件加速**–二维渲染现在适用于所有 Android 控件的 GPU。 此外, 默认情况下, 在为 Android 4.0 开发的所有应用程序中启用硬件加速。 
+- **新的数据 api** -对以前未正式访问的数据有新的访问权限, 如日历数据和设备所有者的用户配置文件。 
+- **应用数据共享**–在`ShareActionProvider`应用程序和设备之间共享数据现在比以往更容易通过技术 (例如), 这使你可以轻松地从操作栏创建共享操作, 将*Android 横梁*用于*近乎现场通信 (NFC)* , 使其能够在彼此接近的设备之间共享数据。 
 
 
 在本文中, 我们将探讨对 Android 4.0 API 的这些功能和其他更改, 我们将介绍如何将每项功能与 Xamarin 一起使用。
@@ -34,10 +34,10 @@ Android OS 版本 4.0 (API 级别 14) 表示 Android 操作系统的主要重新
 
 Android 4 提供多种新的用户界面技术, 其中包括:
 
--   **[GridLayout](~/android/user-interface/layouts/grid-layout.md)** –支持控件的2d 网格布局。 
--   **[切换小组件](~/android/user-interface/controls/switch.md)** –允许在打开或关闭之间切换。 
--   **[TextureView](~/android/user-interface/controls/texture-view.md)** –启用视图中的视频和 OpenGL 内容。 
--   **[导航栏](~/android/user-interface/controls/navigation-bar.md)** -包含用于后退、home 和多任务的虚拟按钮。 
+- **[GridLayout](~/android/user-interface/layouts/grid-layout.md)** –支持控件的2d 网格布局。 
+- **[切换小组件](~/android/user-interface/controls/switch.md)** –允许在打开或关闭之间切换。 
+- **[TextureView](~/android/user-interface/controls/texture-view.md)** –启用视图中的视频和 OpenGL 内容。 
+- **[导航栏](~/android/user-interface/controls/navigation-bar.md)** -包含用于后退、home 和多任务的虚拟按钮。 
 
 
 另外, 还增强了其他 UI 元素, 如`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`现在更易于使用的和选项卡, 它们具有更精美的外观。
@@ -46,10 +46,10 @@ Android 4 提供多种新的用户界面技术, 其中包括:
 
 Android 4 包括几种新技术, 使我们能够跨设备和应用程序共享数据。 它还提供对以前未提供的各种数据类型 (例如日历信息和设备所有者的用户配置文件) 的访问权限。 在本部分中, 我们将检查 Android 4 提供的各种功能, 这些功能包括:
 
--  **[Android 无线](~/android/platform/android-beam.md)** 支持-允许通过 NFC 共享数据。
--   **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)** –创建允许开发人员指定操作栏共享操作的访问接口。 
--   **[用户配置文件](~/android/user-interface/user-profile.md)** –提供对设备所有者的配置文件数据的访问。 
--   **[日历 API](~/android/user-interface/controls/calendar.md)** –提供对日历提供商提供的日历数据的访问。 
+- **[Android 无线](~/android/platform/android-beam.md)** 支持-允许通过 NFC 共享数据。
+- **[ShareActionProvider](~/android/user-interface/controls/action-bar.md)** –创建允许开发人员指定操作栏共享操作的访问接口。 
+- **[用户配置文件](~/android/user-interface/user-profile.md)** –提供对设备所有者的配置文件数据的访问。 
+- **[日历 API](~/android/user-interface/controls/calendar.md)** –提供对日历提供商提供的日历数据的访问。 
 
 ## <a name="x86-emulators"></a>x86 模拟器
 

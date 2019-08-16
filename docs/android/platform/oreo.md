@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 798819176c741d8afc07f9cd097a61d753debbc9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643434"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523772"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -30,11 +30,11 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 在基于 Xamarin 的应用中使用 Android Oreo 功能时需要以下各项:
 
--   **Visual Studio**&ndash;如果使用的是 Windows, 则需要 Visual Studio 版本15.5 或更高版本。  如果你使用的是 Mac, Visual Studio for Mac 版本7.2.0 是必需的。
+- **Visual Studio**&ndash;如果使用的是 Windows, 则需要 Visual Studio 版本15.5 或更高版本。  如果你使用的是 Mac, Visual Studio for Mac 版本7.2.0 是必需的。
 
--   必须通过 Visual Studio 安装和配置**Xamarin** xamarin8.0或更高版本。&ndash;
+- 必须通过 Visual Studio 安装和配置**Xamarin** xamarin8.0或更高版本。&ndash;
 
--   **Android SDK**&ndash;必须通过 Android SDK 管理器安装 Android SDK 8.0 (API 26) 或更高版本。
+- **Android SDK**&ndash;必须通过 Android SDK 管理器安装 Android SDK 8.0 (API 26) 或更高版本。
 
 
 
@@ -141,26 +141,26 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  打开命令提示符窗口, 并将`JAVA_HOME`设置为 Java SDK 在计算机上的位置。 对于典型的 Xamarin 安装, 你可以使用以下命令:
+1. 打开命令提示符窗口, 并将`JAVA_HOME`设置为 Java SDK 在计算机上的位置。 对于典型的 Xamarin 安装, 你可以使用以下命令:
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2.  将 Android SDK `bin`文件夹的位置添加`PATH`到。
+2. 将 Android SDK `bin`文件夹的位置添加`PATH`到。
     对于典型的 Xamarin 安装, 你可以使用以下命令:
 
     ```cmd
     setx PATH "%PATH%;C:\Program Files (x86)\Android\android-sdk\tools\bin"
     ```
 
-3.  关闭命令提示符窗口并打开一个新的命令提示符窗口。 使用[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)命令创建新的虚拟设备。 例如, 若要使用 x86 系统映像为 API 级别26创建名为**AVD-8.0**的 AVD, 请使用以下命令:
+3. 关闭命令提示符窗口并打开一个新的命令提示符窗口。 使用[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)命令创建新的虚拟设备。 例如, 若要使用 x86 系统映像为 API 级别26创建名为**AVD-8.0**的 AVD, 请使用以下命令:
 
     ```cmd
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  当提示你是否要**创建自定义硬件配置文件 [no]** 时, 你可以输入**no**并接受默认硬件配置文件。 如果你说**是**, **avdmanager**会提示你提供自定义硬件配置文件的问题列表。
+4. 当提示你是否要**创建自定义硬件配置文件 [no]** 时, 你可以输入**no**并接受默认硬件配置文件。 如果你说**是**, **avdmanager**会提示你提供自定义硬件配置文件的问题列表。
 
 **Avdmanager**创建虚拟设备后, 该设备将包含在设备下拉菜单中:
 
@@ -168,19 +168,19 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  打开**终端**窗口, 并切换到 Mac 上 Android SDK tools 目录的位置。 对于典型的 Xamarin 安装, 你可以使用以下命令:
+1. 打开**终端**窗口, 并切换到 Mac 上 Android SDK tools 目录的位置。 对于典型的 Xamarin 安装, 你可以使用以下命令:
 
     ```bash
     cd ~/Library/Developer/Xamarin/android-sdk-macosx/tools/bin
     ```
 
-2.  使用[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)命令创建新的虚拟设备。 例如, 若要使用 x86 系统映像为 API 级别26创建名为**AVD-8.0**的 AVD, 请使用以下命令:
+2. 使用[avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)命令创建新的虚拟设备。 例如, 若要使用 x86 系统映像为 API 级别26创建名为**AVD-8.0**的 AVD, 请使用以下命令:
 
     ```bash
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  当提示你是否要**创建自定义硬件配置文件 [no]** 时, 你可以输入**no**并接受默认硬件配置文件。 如果你说**是**, **avdmanager**会提示你提供自定义硬件配置文件的问题列表。
+3. 当提示你是否要**创建自定义硬件配置文件 [no]** 时, 你可以输入**no**并接受默认硬件配置文件。 如果你说**是**, **avdmanager**会提示你提供自定义硬件配置文件的问题列表。
 
 使用**avdmanager**创建虚拟设备后, 该设备将包含在设备下拉菜单中:
 
@@ -250,15 +250,15 @@ Android Oreo*在 XML 中*引入了字体, 这使你可以将自定义字体作�
 
 当应用需要字体时, 可以创建`FontsRequest`对象 (指定要下载的字体), 然后将其传递`FontsContract`给方法以下载字体。 以下步骤更详细地介绍了字体下载过程:
 
-1.  实例化[FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html)对象。 
+1. 实例化[FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html)对象。 
 
-2.  子类并实例化[FontsContract. FontRequestCallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html)。
+2. 子类并实例化[FontsContract. FontRequestCallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html)。
 
-3.  实现[FontRequestCallback. OnTypeFaceRetrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29)方法, 该方法用于处理字体请求的完成。
+3. 实现[FontRequestCallback. OnTypeFaceRetrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29)方法, 该方法用于处理字体请求的完成。
 
-4.  实现[FontRequestCallback. OnTypeFaceRequestFailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29)方法, 该方法用于向应用程序通知在执行字体请求过程中发生的任何错误。
+4. 实现[FontRequestCallback. OnTypeFaceRequestFailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29)方法, 该方法用于向应用程序通知在执行字体请求过程中发生的任何错误。
 
-5.  调用[FontsContract. RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback))方法可从字体提供程序检索字体。 
+5. 调用[FontsContract. RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback))方法可从字体提供程序检索字体。 
 
 当你调用`RequestFonts`方法时, 它首先会检查是否在本地缓存了该字体 (从以前对的`RequestFont`调用)。 如果未缓存此`OnTypeFaceRetrieved`方法, 它将调用字体提供程序, 以异步方式检索字体, 然后通过调用方法将结果传递回应用程序。
 
@@ -290,9 +290,9 @@ android:supportsPictureInPicture
 
 若要指定活动处于 PIP 模式时的行为方式, 请使用新的[PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html)对象。 `PictureInPictureParams`表示一组参数, 这些参数用于初始化和更新 PIP 模式下的活动 (例如活动的首选纵横比)。 Android Oreo `Activity`中添加了以下新 PIP 方法:
 
--   [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29)&ndash;将活动置于 PIP 模式下。 活动位于屏幕的角上, 而屏幕的其余部分则由屏幕上的前一个活动填充。
+- [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29)&ndash;将活动置于 PIP 模式下。 活动位于屏幕的角上, 而屏幕的其余部分则由屏幕上的前一个活动填充。
 
--   [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;更新活动的 PIP 配置设置 (例如, 纵横比的更改)。
+- [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;更新活动的 PIP 配置设置 (例如, 纵横比的更改)。
 
 [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)示例演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
 
@@ -313,9 +313,9 @@ Android Oreo 包括各种系统和 API 行为更改, 这些更改可能会影响
 
 为了改进用户体验, Android Oreo 对应用在后台运行时可以执行的操作施加限制。 例如, 如果用户正在观看视频或玩游戏, 在后台运行的应用可能会影响在前台运行的视频密集型应用程序的性能。 因此, Android Oreo 在不直接与用户交互的应用上施加以下限制:
 
-1.  **后台服务限制**&ndash;当应用在后台运行时, 它有几分钟的时间, 仍允许创建和使用服务。 在该窗口结束时, Android 会停止应用的后台服务, 并将其视为_空闲状态_。
+1. **后台服务限制**&ndash;当应用在后台运行时, 它有几分钟的时间, 仍允许创建和使用服务。 在该窗口结束时, Android 会停止应用的后台服务, 并将其视为_空闲状态_。
 
-2.  **广播限制**&ndash; Android 7.0 (API 25) 对应用注册接收的广播施加限制。 Android Oreo 使得这些限制更严格。 例如, Android Oreo 应用程序无法再为其清单中的隐式广播注册广播接收器。
+2. **广播限制**&ndash; Android 7.0 (API 25) 对应用注册接收的广播施加限制。 Android Oreo 使得这些限制更严格。 例如, Android Oreo 应用程序无法再为其清单中的隐式广播注册广播接收器。
 
 有关新的后台执行限制的详细信息, 请参阅 Android 开发人员[后台执行限制](https://developer.android.com/about/versions/oreo/background.html)主题。
 
@@ -333,19 +333,19 @@ Android Oreo 包括各种系统和 API 行为更改, 这些更改可能会影响
 
 提供了多个 Xamarin 示例, 用于演示如何利用 Android Oreo 功能:
 
--   [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)演示如何使用 Android Oreo 中引入的新通知通道系统。 此示例管理两个通知通道: 一个具有默认重要性, 另一个具有高重要性。
+- [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)演示如何使用 Android Oreo 中引入的新通知通道系统。 此示例管理两个通知通道: 一个具有默认重要性, 另一个具有高重要性。
 
--   [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
+- [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)演示了在 Oreo 中引入的手持式设备的图画 (PiP) 模式的基本用法。 此示例播放一个视频, 在显示模式或其他活动之间来回切换时, 该视频无间断地继续。
 
--   [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)演示如何使用自动填充框架。 它包括具有应 autofilled 的视图的客户端活动的实现, 以及可向客户端活动提供自动填充数据的服务。
+- [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)演示如何使用自动填充框架。 它包括具有应 autofilled 的视图的客户端活动的实现, 以及可向客户端活动提供自动填充数据的服务。
 
--   [可下载字体](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)提供了有关如何使用前面所述的可下载字体功能的示例。
+- [可下载字体](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)提供了有关如何使用前面所述的可下载字体功能的示例。
 
--   [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)演示 EmojiCompat 支持库的使用情况。 您可以使用此库来防止您的应用程序将缺少的表情符号字符显示为 "tofu" 字符。
+- [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)演示 EmojiCompat 支持库的使用情况。 您可以使用此库来防止您的应用程序将缺少的表情符号字符显示为 "tofu" 字符。
 
--   [位置更新挂起意向](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)说明位置 API 的使用情况, 以获取有关使用`PendingIntent`的设备位置的更新。
+- [位置更新挂起意向](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)说明位置 API 的使用情况, 以获取有关使用`PendingIntent`的设备位置的更新。
 
--   [位置更新前景服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)演示了如何使用定位 API, 通过绑定和启动的前台服务获取有关设备位置的更新。
+- [位置更新前景服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)演示了如何使用定位 API, 通过绑定和启动的前台服务获取有关设备位置的更新。
 
 
 ## <a name="video"></a>视频

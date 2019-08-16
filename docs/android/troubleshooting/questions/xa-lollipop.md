@@ -7,20 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: fb357f0342aef68cd2e20d8f8d83474686593743
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4fe1bd4dda9a54eb3a1692f07d1069adb39345cb
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510940"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523289"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪个版本的 Xamarin.Android 添加了 Lollipop 支持？
 
 > [!NOTE]
 > 本指南最初是为 Android L 预览版编写的。
 
--   [Xamarin 4.17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md)添加了 Android L 预览版支持。
--   [Xamarin 4.20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md)添加了 Android 棒糖形支持。
+- [Xamarin 4.17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md)添加了 Android L 预览版支持。
+- [Xamarin 4.20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md)添加了 Android 棒糖形支持。
 
 Xamarin 仅主动支持 Xamarin 工具的当前稳定版本。 对于较旧版本的工具, 以下信息是 "按原样" 提供的。 有关 Xamarin 版本的最新信息, 请查看[此处](http://releases.xamarin.com/)。
 
@@ -46,8 +46,8 @@ Error 1 Could not find android.jar for API Level 21.
 
 3. 暂时降级到 Android API 级别 21 "L" 预览版 [1]:
 
-    1.  删除 **% LOCALAPPDATA\\% android\\android-sdk\\平台\\android-21** 
-    2.  将 [1] 提取**到 C\\:\\Users&gt;&lt;username\\AppData\\Localandroidandroid\\-要创建的 sdk\\平台\\** 一个**android-L**文件夹。
+    1. 删除 **% LOCALAPPDATA\\% android\\android-sdk\\平台\\android-21** 
+    2. 将 [1] 提取**到 C\\:\\Users&gt;&lt;username\\AppData\\Localandroidandroid\\-要创建的 sdk\\平台\\** 一个**android-L**文件夹。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -70,8 +70,8 @@ Error: Could not find android.jar for API Level 21.**
 
 3. 暂时降级到 Android API 级别 21 "L" 预览版 [1]:
 
-    1.  删除 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
-    2.  将 [1] 提取到 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**中, 创建一个**android-L**文件夹。
+    1. 删除 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
+    2. 将 [1] 提取到 **/Users/username/Library/Developer/Xamarin/android-sdk-macosx**中, 创建一个**android-L**文件夹。
 
 -----
 

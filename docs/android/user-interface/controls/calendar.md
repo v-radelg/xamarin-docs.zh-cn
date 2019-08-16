@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 027b526815c56e5a0092b68b550129d9ffbf1493
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 610f9be346b761c4d20e4bbf97ecfcda74c0bee0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643036"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523060"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin Android 日历
 
@@ -224,10 +224,10 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 我们已了解如何读取日历数据。 现在, 让我们看看如何向日历添加事件。 为此, 请确保包括前面提到的`android.permission.WRITE_CALENDAR`权限。 若要将事件添加到日历, 我们将:
 
-1.  `ContentValues`创建实例。
-1.  使用类中的`CalendarContract.Events.InterfaceConsts`键来`ContentValues`填充实例。
-1.  设置事件开始和结束时间的时区。
-1.  `ContentResolver`使用将事件数据插入日历中。
+1. `ContentValues`创建实例。
+1. 使用类中的`CalendarContract.Events.InterfaceConsts`键来`ContentValues`填充实例。
+1. 设置事件开始和结束时间的时区。
+1. `ContentResolver`使用将事件数据插入日历中。
 
 
 下面的代码演示了这些步骤:

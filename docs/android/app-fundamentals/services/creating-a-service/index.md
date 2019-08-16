@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509248"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526231"
 ---
 # <a name="creating-a-service"></a>创建服务
 
@@ -75,7 +75,7 @@ public class DemoService : Service
 
 在 Android 中启动服务的最基本方法是调度`Intent` , 其中包含元数据, 以帮助标识应启动的服务。 可以使用两种不同的方法来启动服务:
 
--   **显式意图**明确的目的将确定应该使用哪种服务来完成给定的操作。  &ndash; 可以将显式意图视为具有特定地址的字母;Android 会将意向路由到显式标识的服务。 此代码片段是使用显式意图启动名`DownloadService`为的服务的一个示例:
+- **显式意图**明确的目的将确定应该使用哪种服务来完成给定的操作。 &ndash; 可以将显式意图视为具有特定地址的字母;Android 会将意向路由到显式标识的服务。 此代码片段是使用显式意图启动名`DownloadService`为的服务的一个示例:
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ public class DemoService : Service
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **隐式意向**&ndash;此类意向松散标识用户希望执行的操作, 但完成该操作的确切服务是未知的。 可以将隐式意向看作是 "可能关注的人员 ..." 的字母。
+- **隐式意向**&ndash;此类意向松散标识用户希望执行的操作, 但完成该操作的确切服务是未知的。 可以将隐式意向看作是 "可能关注的人员 ..." 的字母。
     Android 将检查意图的内容, 并确定是否存在与意向匹配的现有服务。
 
     _意向筛选器_用于帮助与已注册的服务匹配隐式目的。 意向筛选器是一个 XML 元素, 它将添加到**androidmanifest.xml**中, 该元素包含必要的元数据以帮助与具有隐式目的的服务匹配。

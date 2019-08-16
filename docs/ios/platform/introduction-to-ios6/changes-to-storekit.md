@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 03c18c50b15db05d26e1cec20e571367219f8643
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 818d5c734e8e662c271e20c26347e5e941ddad3e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643068"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527871"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中对 StoreKit 的更改
 
@@ -244,8 +244,8 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 我们的示例应用程序提供销售图书章节–每个章节内容包都包含:
 
--  文本文件和
--  用于表示章节的图像。
+- 文本文件和
+- 用于表示章节的图像。
 
 
 首先从菜单中选择 "**文件" > "新建项目**", 然后选择 "**应用内购买内容**":
@@ -415,7 +415,7 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-新重写`UpdatedDownloads`的方法如下所示。 应用商店工具包在中`StartDownloads` `UpdatedTransactions`触发后调用此方法。 此方法*将按不*确定的间隔多次调用, 以提供下载进度, 并在下载完成后再次进行。 请注意, 方法接受对象的`SKDownload`数组, 因此每个方法调用都可以在队列中提供多个下载的状态。 如以下实现中所示, 每次都会检查下载状态, 并采取适当的措施。
+新重写`UpdatedDownloads`的方法如下所示。 应用商店工具包在中`StartDownloads` `UpdatedTransactions`触发后调用此方法。 此方法将按不确定的间隔多次调用, 以提供下载进度, 并在下载完成后再次进行。 请注意, 方法接受对象的`SKDownload`数组, 因此每个方法调用都可以在队列中提供多个下载的状态。 如以下实现中所示, 每次都会检查下载状态, 并采取适当的措施。
 
 ```csharp
 // ENTIRELY NEW METHOD IN iOS6

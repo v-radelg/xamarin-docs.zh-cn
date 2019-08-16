@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9a5186fe49edc81f5d6ec8ca297146a27a0274fa
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1c477f030dc69394ba601b31d71a772f5037af48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509675"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522306"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin TableLayout
 
@@ -118,7 +118,7 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main`  ) 方法加载的布局文件, 该文件由资源 ID 指定, 表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
+[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main` ) 方法加载的布局文件, 该文件由资源 ID 指定, 表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
 运行该应用程序。 应该会看到以下内容:
 
@@ -128,11 +128,8 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 ## <a name="references"></a>参考资料
 
--   [`TableLayout`](xref:Android.Widget.TableLayout) 
+- [`TableLayout`](xref:Android.Widget.TableLayout)
+- [`TableRow`](xref:Android.Widget.TableRow)
+- [`TextView`](xref:Android.Widget.TextView)
 
--   [`TableRow`](xref:Android.Widget.TableRow) 
-
--   [`TextView`](xref:Android.Widget.TextView) 
-
-*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
-[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。
+_此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据[创造性 Commons 2.5 归属许可证](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。_

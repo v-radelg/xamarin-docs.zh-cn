@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: d81435f7d693204a76249fc3fa6953766f7ab59a
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.openlocfilehash: 16708ad1d26c9d7394ad95b2d449ca304534a2bd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012468"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528862"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin 错误消息 (mmp)
 
@@ -103,7 +103,7 @@ ms.locfileid: "69012468"
 
 <a name="MM0056" />
 
-#### <a name="mm0056-cannot-find-xcode-in-any-of-our-default-locations-please-install-xcode-or-pass-a-custom-path-using---sdkrootpath"></a>MM0056:在任何默认位置都找不到 Xcode。 请安装 Xcode, 或使用--sdkroot = 传递自定义路径<path>
+#### <a name="mm0056-cannot-find-xcode-in-any-of-our-default-locations-please-install-xcode-or-pass-a-custom-path-using---sdkrootpath"></a>MM0056:在任何默认位置都找不到 Xcode。 请安装 Xcode, 或使用--sdkroot =\<path 传递自定义路径 >
 
 <a name="MM0059" />
 
@@ -566,7 +566,7 @@ Apple 宣布, 它将不允许 macOS 应用商店提交32位应用 (从年1月 1 
 
 <a name="MM5309" />
 
-#### <a name="mm5309-native-linking-failed-with-error-code-1--check-build-log-for-details"></a>MM5309:本机链接失败, 错误代码为1。  有关详细信息, 请查看生成日志。
+#### <a name="mm5309-native-linking-failed-with-error-code-1-check-build-log-for-details"></a>MM5309:本机链接失败, 错误代码为1。 有关详细信息, 请查看生成日志。
 
 <a name="MM5310" />
 

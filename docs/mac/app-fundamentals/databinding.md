@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: dfc4c8a5f00fd11d1554dcadf5e35018046e49f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: beb063d423c860958948751d162af661040004b7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642906"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529009"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin 中的数据绑定和键/值编码
 
@@ -20,7 +20,7 @@ _本文介绍如何使用键/值编码和键-值观察, 以允许数据绑定到
 
 ## <a name="overview"></a>概述
 
-在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和* *中工作*的开发人员所使用的相同的键/值编码和数据绑定技术。 由于 Xamarin 与 Xcode 直接集成, 因此可以使用 Xcode 的_Interface Builder_与 UI 元素进行数据绑定, 而不是编写代码。
+在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同的键/值编码和数据绑定技术。 由于 Xamarin 与 Xcode 直接集成, 因此可以使用 Xcode 的_Interface Builder_与 UI 元素进行数据绑定, 而不是编写代码。
 
 通过在 Xamarin 应用程序中使用键/值编码和数据绑定技术, 可以极大地减少需要编写和维护的代码量, 以填充和处理 UI 元素。 您还可以从您的前端用户界面 (_模型-视图-控制器_) 进一步分离您的备份数据 (_数据模型_), 从而更易于维护, 更灵活的应用程序设计。
 
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 首先, `[Register("PersonModel")]`属性注册类并将其公开给目标-C。 然后, 类需要从`NSObject` (或`NSObject`继承自的子类) 继承, 这会添加几个允许类 KVC 兼容的基方法。 接下来, `[Export("Name")]`特性`Name`公开属性, 并定义稍后用于通过 KVC 和 KVO 技术访问属性的键值。 
 
-最后, 若要能够以键值方式观察到对属性值的更改, 访问器必须在和`WillChangeValue` `DidChangeValue`方法调用中包装其值的更改 (指定与`Export`特性相同的键)。  例如:
+最后, 若要能够以键值方式观察到对属性值的更改, 访问器必须在和`WillChangeValue` `DidChangeValue`方法调用中包装其值的更改 (指定与`Export`特性相同的键)。  例如：
 
 ```csharp
 set {
@@ -704,7 +704,7 @@ public override void AwakeFromNib ()
 
     ![添加所需的密钥路径](databinding-images/outline05.png "添加所需的密钥路径")
 4. 这会告知树控制器它所管理的数组, 以及应公开的属性 (通过键)。
-5. 在 "**树控制器**" 部分下`personModelArray` , `NumberOfEmployees`为 "子级" 输入, 在 " `isEmployee` **叶**" 下**输入并输入**:  
+5. 在 "**树控制器**" 部分下`personModelArray` , `NumberOfEmployees`为 "**子级**" 输入 , 在 " `isEmployee` **叶**" 下输入并输入:  
 
     ![设置树控制器密钥路径](databinding-images/outline05.png "设置树控制器密钥路径")
 6. 这会告知树控制器查找任何子节点的位置、有多少个子节点以及当前节点是否有子节点。
@@ -816,8 +816,8 @@ Now we need to create our Collection View, double-click the **Main.storyboard** 
 
 When you add a Collection View to a User Interface design, two extra elements are also added:
 
-1.  **Collection View Item** -  That manages a single instance of an item in the collection.
-2.  **View** - A custom view that provides the visual size and appearance of each item in the collection. This view is tied to and managed by the **Collection View Item**.
+1. **Collection View Item** -  That manages a single instance of an item in the collection.
+2. **View** - A custom view that provides the visual size and appearance of each item in the collection. This view is tied to and managed by the **Collection View Item**.
 
 Select the view and make it look like the following using an Image View and two Text Fields:
 

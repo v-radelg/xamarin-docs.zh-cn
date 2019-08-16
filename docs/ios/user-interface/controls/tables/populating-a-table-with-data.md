@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a27bc699d6c7a77c8a970e363ca55bf54751df66
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655644"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528620"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
@@ -34,8 +34,8 @@ ms.locfileid: "68655644"
 
 要使表显示数据, 只需要两个必需的方法:
 
--   **RowsInSection** –返回[`nint`](~/cross-platform/macios/nativetypes.md)该表应显示的数据的总行数。
--   **GetCell** –为传递`UITableCellView`给方法的相应行索引返回填充了数据的。
+- **RowsInSection** –返回[`nint`](~/cross-platform/macios/nativetypes.md)该表应显示的数据的总行数。
+- **GetCell** –为传递`UITableCellView`给方法的相应行索引返回填充了数据的。
 
 
 BasicTable 示例文件**TableSource.cs**的可能实现的`UITableViewSource`最简单实现。 在下面的代码片段中可以看到, 它接受要在表中显示的字符串数组, 并返回包含每个字符串的默认单元格样式:
@@ -239,9 +239,9 @@ keys = indexedTableItems.Keys.ToArray ();
 
 然后`UITableViewSource` , 子类需要添加或修改以下方法来`Dictionary<>`使用:
 
--   **NumberOfSections** –此方法是可选的, 默认情况下, 该表假设有一个部分。 显示索引时, 此方法应返回索引中项的数目 (例如, 如果索引包含英文字母表中的所有字母, 则为 26)。
--   **RowsInSection** –返回给定节中的行数。
--   **SectionIndexTitles** –返回将用于显示索引的字符串数组。 示例代码返回一个字母数组。
+- **NumberOfSections** –此方法是可选的, 默认情况下, 该表假设有一个部分。 显示索引时, 此方法应返回索引中项的数目 (例如, 如果索引包含英文字母表中的所有字母, 则为 26)。
+- **RowsInSection** –返回给定节中的行数。
+- **SectionIndexTitles** –返回将用于显示索引的字符串数组。 示例代码返回一个字母数组。
 
 
 示例文件**BasicTableIndex/TableSource**中的更新的方法如下所示:
@@ -275,8 +275,8 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 若要显示页眉和页脚`UITableViewSource` , 子类需要以下附加方法:
 
--   **TitleForHeader** –返回用作标题的文本
--   **TitleForFooter** –返回要用作页脚的文本。
+- **TitleForHeader** –返回用作标题的文本
+- **TitleForFooter** –返回要用作页脚的文本。
 
 
 示例文件**BasicTableHeaderFooter/Code/TableSource**中的更新的方法如下所示:

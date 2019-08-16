@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f772bf1309330b41f9faea812e2cdcdba8e969cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653126"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527065"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin 中使用触控
 
@@ -181,8 +181,8 @@ ms.locfileid: "68653126"
 [上一节](#Touch_Samples)演示了如何使用触控事件围绕屏幕拖动对象。
 在本部分中, 我们将消除触控事件, 并演示如何使用以下手势识别器:
 
--  用于`UIPanGestureRecognizer`在屏幕周围拖动图像的。
--  响应`UITapGestureRecognizer`屏幕上双击的。
+- 用于`UIPanGestureRecognizer`在屏幕周围拖动图像的。
+- 响应`UITapGestureRecognizer`屏幕上双击的。
 
 如果运行[起始示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)并单击 "**手势识别器示例**" 按钮, 则会看到以下屏幕:
 

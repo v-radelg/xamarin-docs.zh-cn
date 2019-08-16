@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2256e52e1b2a468ecbed97d5c7ed2d0a05f6cc4e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510747"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524703"
 ---
 # <a name="app-linking-in-android"></a>Android 中的应用链接
 
@@ -159,7 +159,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 
 可以执行两个测试, 以确保已正确配置目的筛选器并将应用设置为 URI 的默认处理程序:
 
-1.  正确托管数字资产文件, 如上所述。 第一次测试会调度 Android 应重定向到移动应用程序的意图。 Android 应用程序应启动并显示为 URL 注册的活动。 在命令提示符下键入:
+1. 正确托管数字资产文件, 如上所述。 第一次测试会调度 Android 应重定向到移动应用程序的意图。 Android 应用程序应启动并显示为 URL 注册的活动。 在命令提示符下键入:
 
     ```shell
     $ adb shell am start -a android.intent.action.VIEW \
@@ -167,7 +167,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2.  显示在给定设备上安装的应用程序的现有链接处理策略。 以下命令将为设备上的每个用户转储一个链接策略列表, 其中包含以下信息。 在命令提示符处，键入下列命令：
+2. 显示在给定设备上安装的应用程序的现有链接处理策略。 以下命令将为设备上的每个用户转储一个链接策略列表, 其中包含以下信息。 在命令提示符处，键入下列命令：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps

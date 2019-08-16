@@ -1,45 +1,45 @@
 ---
-title: 使用 iOS 应用程序中的数据
-description: 本文档介绍了 DataAccess_Adv 示例中，该示例演示了如何收集用户输入并执行创建、 读取、 更新和删除 (CRUD) 数据库中的 Xamarin.iOS 应用程序的操作。
+title: 在 iOS 应用中使用数据
+description: 本文档介绍了 DataAccess_Adv 示例, 该示例演示如何在 Xamarin iOS 应用程序中收集用户输入并执行创建、读取、更新和删除 (CRUD) 数据库操作。
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: a47ab26777c594658810b014025477486bbe5cc2
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 9da0f48a8798a16ccd6410913d0b31c0b4444cb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650152"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527189"
 ---
-# <a name="using-data-in-an-ios-app"></a>使用 iOS 应用程序中的数据
+# <a name="using-data-in-an-ios-app"></a>在 iOS 应用中使用数据
 
-**DataAccess_Adv**示例演示的工作应用程序允许用户输入并*CRUD* （创建、 读取、 更新和删除） 的数据库功能。 此应用程序包含两个屏幕： 列表和数据输入窗体。 所有数据访问代码都是在 iOS 和 Android 中无需修改即可重复使用。
+**DataAccess_Adv**示例显示允许用户输入和*CRUD* (创建、读取、更新和删除) 数据库功能的工作应用程序。 该应用程序包含两个屏幕: 一个列表和一个数据输入窗体。 所有数据访问代码在 iOS 和 Android 中可重复使用, 而无需修改。
 
-添加一些数据后的应用程序屏幕如下所示在 iOS 上：
+添加一些数据后, 应用程序屏幕上的应用程序屏幕将如下所示:
 
  ![](using-data-in-an-app-images/image9.png "iOS 示例列表")
 
  ![](using-data-in-an-app-images/image10.png "iOS 示例详细信息")
 
-在 iOS 项目如下所示 – 在本部分中所示的代码包含在**Orm**目录：
+IOS 项目如下所示–此部分中所示的代码包含在**Orm**目录中:
 
  ![](using-data-in-an-app-images/image13.png "iOS 项目树")
 
-在 iOS 中 ViewControllers 的本机 UI 代码不在本文范围之内。
-请参阅[iOS 使用表和单元格](~/ios/user-interface/controls/tables/index.md)指南以获取对 UI 控件的详细信息。
+IOS 中的 ViewControllers 的本机 UI 代码超出了本文档的范围。
+有关 UI 控件的详细信息, 请参阅[使用表和单元格的 iOS](~/ios/user-interface/controls/tables/index.md)指南。
 
 ## <a name="read"></a>读取
 
-有几个示例中的读取操作：
+示例中有两个读取操作:
 
--  读取列表
--  读取单个记录
+- 阅读列表
+- 读取单个记录
 
 
-中的两个方法`StockDatabase`类：
+`StockDatabase`类中的两个方法是:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -56,12 +56,12 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS 导致的数据以不同的方式为`UITableView`。
+iOS 以不同的`UITableView`形式呈现数据。
 
 ## <a name="create-and-update"></a>创建和更新
 
-为了简化应用程序代码，一条存储方法是提供执行插入或更新取决于是否已设置 PrimaryKey。 因为`Id`属性是否标记有`[PrimaryKey]`属性不应在代码中设置它。
-此方法将检测是否值已被以前保存 （通过检查主键属性），并插入或相应地更新该对象：
+为了简化应用程序代码, 提供了一个 save 方法, 该方法根据 PrimaryKey 是否已设置, 执行插入或更新。 由于属性`Id`是`[PrimaryKey]`用特性标记的, 因此不应在代码中对其进行设置。
+此方法将检测是否之前已保存值 (通过检查主键属性), 并相应地插入或更新对象:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -79,13 +79,13 @@ public int SaveStock (Stock item)
 
 
 
-实际应用程序通常需要一些 （如必填的字段，最小长度或其他业务规则） 的验证。
-尽可能多的验证逻辑作为在共享的代码，传递验证错误，备份到平台的功能根据显示的 UI，可以实现很好的跨平台应用程序。
+实际的应用程序通常需要进行一些验证 (例如, 必填字段、最小长度或其他业务规则)。
+良好的跨平台应用程序在共享代码中实现尽可能多的验证逻辑, 将验证错误传递给 UI, 以根据平台的功能显示。
 
 ## <a name="delete"></a>删除
 
-与不同`Insert`并`Update`方法，`Delete<T>`方法可接受只是主密钥值而不是一个完整`Stock`对象。
-在此示例中`Stock`对象传递给该方法，但仅 Id 属性传递给`Delete<T>`方法。
+`Delete<T>` `Stock`与和方法`Update`不同, 方法只接受主键值而不接受完整的对象。 `Insert`
+在此示例`Stock`中, 将对象传递到方法, 但仅将 Id 属性传递`Delete<T>`给方法。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -96,18 +96,18 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>使用预填充的 SQLite 数据库文件
+## <a name="using-a-pre-populated-sqlite-database-file"></a>使用预先填充的 SQLite 数据库文件
 
-某些应用程序附带已用数据填充数据库。
-您可以轻松地完成此操作在移动应用程序中传送你的应用与现有的 SQLite 数据库文件并对其进行访问之前将其复制到可写目录。 由于 SQLite 是多个平台使用的标准文件格式，有许多工具可用于创建一个 SQLite 数据库文件：
+某些应用程序附带已填充数据的数据库。
+可以在移动应用程序中轻松完成此项工作, 方法是: 将现有 SQLite 数据库文件与应用程序一起传送, 并将其复制到可写目录, 然后再访问该文件。 由于 SQLite 是在许多平台上使用的标准文件格式, 因此可以使用多种工具来创建 SQLite 数据库文件:
 
--  **SQLite Manager Firefox 扩展**– 适用于 Mac 和 Windows，并生成与 iOS 和 Android 兼容的文件。
--  **命令行**– 请参阅[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
+- **SQLite 管理器 Firefox 扩展**–适用于 Mac 和 Windows, 并生成与 IOS 和 Android 兼容的文件。
+- **命令行**–请参阅[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
 
 
-时使用您的应用程序创建分发数据库文件，请注意使用命名的表和列，确保它们与您的代码的预期，尤其是如果您使用 SQLite.NET 这将要求要与 C# 类和属性匹配的名称 （或关联的自定义属性）。
+创建与应用程序一起分发的数据库文件时, 请注意表和列的命名, 以确保它们与代码所需的名称匹配, 尤其是在使用 SQLite.NET 时, 这会希望名称与C#类和属性匹配 (或关联的自定义特性)。
 
-对于 iOS，应用程序中包含 sqlite 文件并确保将标有**生成操作：内容**。 中的代码放`FinishedLaunching`若要将文件复制到可写目录*之前*调用任何数据的方法。 下面的代码将名为将现有数据库复制**data.sqlite**，仅当它尚不存在。
+对于 iOS, 请在应用程序中包含 sqlite 文件, 并确保其标记**为 "生成操作":内容**。 将代码放入, `FinishedLaunching`以将文件复制到可写目录,*然后*调用任何数据方法。 下面的代码将复制名为**数据**的现有数据库, 仅当它尚不存在时。
 
 ```csharp
 // Copy the database across (if it doesn't exist)
@@ -119,12 +119,12 @@ if (!File.Exists (Database.DatabaseFilePath))
 }
 ```
 
-任何数据访问代码 (是否 ADO.NET 或使用 SQLite.NET)，可执行此操作已完成的将有权访问的预填充数据后。
+在此完成后执行的任何数据访问代码 (无论是 ADO.NET 还是使用 SQLite.NET) 都将有权访问预填充的数据。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [DataAccess Basic （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess 高级 （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS 数据方案](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms 数据访问](~/xamarin-forms/data-cloud/data/databases.md)
+- [DataAccess Basic (示例)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess 高级 (示例)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS 数据食谱](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
+- [Xamarin. 窗体数据访问](~/xamarin-forms/data-cloud/data/databases.md)

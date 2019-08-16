@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647806"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522166"
 ---
 # <a name="setup-and-installation"></a>设置和安装
 
@@ -22,13 +22,13 @@ _本文逐步讲解为你的计算机和设备准备 Android 磨损开发所需�
 
 若要创建基于 Xamarin 的 Android 应用, 需要满足以下要求:
 
--   **Visual Studio 或 Visual Studio for Mac**&ndash;需要 Visual Studio 2017 社区或更高版本。
+- **Visual Studio 或 Visual Studio for Mac**&ndash;需要 Visual Studio 2017 社区或更高版本。
 
--   必须安装和配置**Xamarin** xamarin4.17或更高版本,并且必须安装VisualStudio或VisualStudioforMac。&ndash;
+- 必须安装和配置**Xamarin** xamarin4.17或更高版本,并且必须安装VisualStudio或VisualStudioforMac。&ndash;
 
--   **Android SDK** Android SDK 5.0.1 (API 21) 或更高版本必须通过 Android SDK 管理器进行安装。
+- **Android SDK** Android SDK 5.0.1 (API 21) 或更高版本必须通过 Android SDK 管理器进行安装。
 
--   **Java 开发人员工具包**Xamarin Android 开发需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (如果要针对 api 级别24或更高版本进行开发) (jdk 1.8 还支持早于24的 api 级别)。 &ndash;
+- **Java 开发人员工具包**Xamarin Android 开发需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (如果要针对 api 级别24或更高版本进行开发) (jdk 1.8 还支持早于24的 api 级别)。 &ndash;
 
 如果要专门针对 API 级别23或更早版本进行开发, 可以继续使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
@@ -39,9 +39,9 @@ _本文逐步讲解为你的计算机和设备准备 Android 磨损开发所需�
 
 安装 Xamarin 后, 请执行以下步骤, 以便能够生成和测试 Android 应用程序: 
 
-1.  安装所需的 Android SDK 和工具。
-2.  配置测试设备。
-3.  创建第一个 Android 应用。
+1. 安装所需的 Android SDK 和工具。
+2. 配置测试设备。
+3. 创建第一个 Android 应用。
 
 以下部分介绍了这些步骤。
 

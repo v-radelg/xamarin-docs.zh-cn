@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7fe03fbbdff02df9494317abe223ede5ed386c48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657544"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528928"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>选项卡栏和 Xamarin.iOS 中的选项卡栏控制器
 
@@ -26,8 +26,8 @@ ms.locfileid: "68657544"
 
 `UITabBarController`支持通过以下选项卡式应用程序开发：
 
--  允许多个控制器添加到它。
--  通过提供一个选项卡式的用户界面，`UITabBar`类，以允许用户控制器和其视图之间进行切换。 
+- 允许多个控制器添加到它。
+- 通过提供一个选项卡式的用户界面，`UITabBar`类，以允许用户控制器和其视图之间进行切换。 
 
 
 控制器被添加至`UITabBarController`通过其`ViewControllers`属性，它是`UIViewController`数组。 `UITabBarController`本身处理加载正确的控制器并显示其视图基于所选的选项卡。
@@ -69,9 +69,9 @@ ms.locfileid: "68657544"
 
 若要实现`UITabBarController`我们需要执行以下操作：
 
-1.  设置类的基类`TabController`到`UITabBarController`。 
-1.  创建`UIViewController`实例将添加到`TabController`。 
-1.  添加`UIViewController`实例为数组分配给`ViewControllers`属性的`TabController`。 
+1. 设置类的基类`TabController`到`UITabBarController`。 
+1. 创建`UIViewController`实例将添加到`TabController`。 
+1. 添加`UIViewController`实例为数组分配给`ViewControllers`属性的`TabController`。 
 
 
 将以下代码添加到`TabController`类来实现这些步骤：
@@ -283,8 +283,8 @@ Visual Studio for Mac 将自动生成的类和设计器所需的文件，这可�
 
 我们想要拖动`Label`和一个`Button`到从 ViewController1**工具箱**右侧。 接下来我们将使用属性面板来编辑在名称和文本的控件所示：
 
--  **标签**:`Text` = **逐个**
--  **按钮**:`Title` = **用户执行一些初始操作**
+- **标签**:`Text` = **逐个**
+- **按钮**:`Title` = **用户执行一些初始操作**
 
 
 我们将控制在我们按钮的可见性`TouchUpInside`事件，并且我们需要在后面的代码中引用它。 让我们来确定其与**名称**`aButton`中属性面板，下面的屏幕截图中所示：

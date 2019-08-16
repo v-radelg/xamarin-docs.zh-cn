@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 02bc6fe7109f13629e776c800657846fca02641e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657134"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528537"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的统一情节提要
 
@@ -28,8 +28,8 @@ iOS 8 包含一种用于创建用户界面 (统一情节提要) 的全新、易�
 
 设备是按大小类定义的, 在垂直和水平轴中, 在 iOS 8 中有两种类型的类:
 
--  **常规**–这适用于大屏幕大小 (如 iPad) 或小尺寸的小工具 (例如,`UIScrollView`
--  **Compact** –适用于较小的设备 (如 iPhone)。 此大小会考虑设备的方向。
+- **常规**–这适用于大屏幕大小 (如 iPad) 或小尺寸的小工具 (例如,`UIScrollView`
+- **Compact** –适用于较小的设备 (如 iPhone)。 此大小会考虑设备的方向。
 
 
 如果将两个概念一起使用, 则结果为 2 x 2 网格, 该网格定义可在不同方向上使用的不同可能大小, 如下图所示:
@@ -51,8 +51,8 @@ IPhone 根据设备的方向提供不同大小的类:
 
  [![](unified-storyboards-images/iphonesizeclasses.png "iPhone 大小类")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
--  当设备处于纵向模式时, 屏幕会**水平和垂直**地显示**精简**类
--  当设备处于横向模式时, 屏幕类会从纵向模式反转。
+- 当设备处于纵向模式时, 屏幕会水平和垂直地显示**精简**类
+- 当设备处于横向模式时, 屏幕类会从纵向模式反转。
 
 ### <a name="iphone-6-plus-size-classes"></a>iPhone 6 加上大小类
 
@@ -91,11 +91,11 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 特性环境是 iOS 8 中的新接口, 能够返回以下对象的特征集合:
 
--  屏幕 ( `UIScreens` )。
--  Windows ( `UIWindows` )。
--  查看控制器 ( `UIViewController` )。
--  视图 ( `UIView` )。
--  表示控制器 ( `UIPresentationController` )。
+- 屏幕 ( `UIScreens` )。
+- Windows ( `UIWindows` )。
+- 查看控制器 ( `UIViewController` )。
+- 视图 ( `UIView` )。
+- 表示控制器 ( `UIPresentationController` )。
 
 
 开发人员使用特性环境返回的特征集合来确定应如何布置用户界面。
@@ -114,7 +114,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 下面是开发人员在 iPhone 上可能看到的典型特征集合:
 
-|属性|值|
+|Property|值|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
 |`VerticalSizeClass`|规则|
@@ -230,16 +230,16 @@ iOS 8 提供若干次回调, 开发人员可以使用这些回调来参与特征
 
 现在, 让我们详细了解拆分视图控制器从两列到一个列视图的折叠情况。 作为此更改的一部分, 需要执行两个过程:
 
--  默认情况下, 展开后, 拆分视图控制器将使用主视图控制器作为视图。 开发人员可以重写此行为, `GetPrimaryViewControllerForCollapsingSplitViewController`方法是重写的`UISplitViewControllerDelegate`方法, 并提供要在折叠状态下显示的任何视图控制器。
--  辅助视图控制器必须合并到主视图控制器。 通常, 开发人员无需在此步骤中执行任何操作;拆分视图控制器包括基于硬件设备的此阶段的自动处理。 但是, 在某些特殊情况下, 开发人员需要与此更改进行交互。 `UISplitViewControllerDelegate` `CollapseSecondViewController`通过调用的方法, 可以在进行折叠时显示母版视图控制器, 而不是详细信息视图。
+- 默认情况下, 展开后, 拆分视图控制器将使用主视图控制器作为视图。 开发人员可以重写此行为, `GetPrimaryViewControllerForCollapsingSplitViewController`方法是重写的`UISplitViewControllerDelegate`方法, 并提供要在折叠状态下显示的任何视图控制器。
+- 辅助视图控制器必须合并到主视图控制器。 通常, 开发人员无需在此步骤中执行任何操作;拆分视图控制器包括基于硬件设备的此阶段的自动处理。 但是, 在某些特殊情况下, 开发人员需要与此更改进行交互。 `UISplitViewControllerDelegate` `CollapseSecondViewController`通过调用的方法, 可以在进行折叠时显示母版视图控制器, 而不是详细信息视图。
 
 
 ### <a name="expanding-the-split-view-controller"></a>展开拆分视图控制器
 
 现在, 让我们详细了解拆分视图控制器从折叠状态扩展后会发生的情况。 同样, 需要执行两个阶段:
 
--  首先, 定义新的主视图控制器。 默认情况下, 拆分视图控制器将自动从折叠视图使用主视图控制器。 同样, 开发人员可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`来重写此行为。
--  选择主视图控制器后, 必须重新创建辅助视图控制器。 同样, 拆分视图控制器包括基于硬件设备的此阶段的自动处理。 开发人员可以通过调用`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`来重写此行为。
+- 首先, 定义新的主视图控制器。 默认情况下, 拆分视图控制器将自动从折叠视图使用主视图控制器。 同样, 开发人员可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`来重写此行为。
+- 选择主视图控制器后, 必须重新创建辅助视图控制器。 同样, 拆分视图控制器包括基于硬件设备的此阶段的自动处理。 开发人员可以通过调用`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`来重写此行为。
 
 
 在拆分视图控制器中, 主视图控制器通过实现`CollapseSecondViewController`和`SeparateSecondaryViewController`方法`UISplitViewControllerDelegate`, 在展开和折叠视图中扮演着一个部分。 `UINavigationController`实现这些方法以自动推送和弹出辅助视图控制器。
@@ -250,8 +250,8 @@ Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的�
 
 这会在导航控制器和它运行时所处的环境之间出现紧密耦合。 在 iOS 8 中, Apple 通过提供两种新方法来分离此内容:
 
--  `ShowViewController`–改编以根据其环境显示新的视图控制器。 例如, 在中`UINavigationController` , 只需将新视图推送到堆栈上。 在拆分视图控制器中, 新的视图控制器将作为新的主视图控制器显示在左侧。 如果没有容器视图控制器, 则新视图将显示为模式视图控制器。
--  `ShowDetailViewController`–的工作方式类似`ShowViewController`于, 但在拆分视图控制器上实现, 用于将详细信息视图替换为传入的新视图控制器。 如果拆分视图控制器已折叠 (在 iPhone 应用程序中可能会看到), 则调用将被重定向到`ShowViewController`方法, 新视图将显示为主视图控制器。 同样, 如果不存在容器视图控制器, 则新视图将显示为模式视图控制器。
+- `ShowViewController`–改编以根据其环境显示新的视图控制器。 例如, 在中`UINavigationController` , 只需将新视图推送到堆栈上。 在拆分视图控制器中, 新的视图控制器将作为新的主视图控制器显示在左侧。 如果没有容器视图控制器, 则新视图将显示为模式视图控制器。
+- `ShowDetailViewController`–的工作方式类似`ShowViewController`于, 但在拆分视图控制器上实现, 用于将详细信息视图替换为传入的新视图控制器。 如果拆分视图控制器已折叠 (在 iPhone 应用程序中可能会看到), 则调用将被重定向到`ShowViewController`方法, 新视图将显示为主视图控制器。 同样, 如果不存在容器视图控制器, 则新视图将显示为模式视图控制器。
 
 
 这些方法的工作方式是从叶视图控制器开始, 遍历视图层次结构, 直到找到正确的容器视图控制器来处理新视图的显示。
@@ -266,8 +266,8 @@ Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的�
 
 此方法将遍历层次结构链, 直到找到正确的容器视图控制器。 例如:
 
-1.  如果调用`ShowViewController`方法, 则实现此方法的链中的第一个视图控制器是导航控制器, 因此它将用作新视图的父控制器。
-1.  如果已调用方法, 则拆分视图控制器是第一个要实现它的视图控制器, 因此它将用作父级。 `ShowDetailViewController`
+1. 如果调用`ShowViewController`方法, 则实现此方法的链中的第一个视图控制器是导航控制器, 因此它将用作新视图的父控制器。
+1. 如果已调用方法, 则拆分视图控制器是第一个要实现它的视图控制器, 因此它将用作父级。 `ShowDetailViewController`
 
 
 `GetTargetForAction`方法的工作方式是: 查找实现给定操作的视图控制器, 然后询问视图控制器 (如果它要接收该操作)。 由于此方法是公共的, 因此开发人员可以创建自己的自定义方法, 这些方法`ShowViewController`与`ShowDetailViewController`内置和方法相同。
@@ -558,9 +558,9 @@ public override void ViewDidLoad ()
 
 统一情节提要的主要优点是:
 
--  使用适用于 iPhone 和 iPad 的相同情节提要文件。
--  向后部署到 iOS 6 和 iOS 7。
--  在 Xamarin iOS 设计器中预览不同设备、方向和操作系统版本的布局。
+- 使用适用于 iPhone 和 iPad 的相同情节提要文件。
+- 向后部署到 iOS 6 和 iOS 7。
+- 在 Xamarin iOS 设计器中预览不同设备、方向和操作系统版本的布局。
 
 此功能在 Visual Studio for Mac 完全受支持
 
@@ -625,7 +625,7 @@ Size 类选择器按钮位于 Design Surface 的左上角 (位于视图附近)�
 
 ### <a name="adaptive-segue-types"></a>自适应 Segue 类型
 
-如果开发人员以前使用过情节提要, 则他们将熟悉现有的**segue、** **模式**和**segue**类型。 在统一情节提要文件上启用大小类时, 将提供以下自适应 Segue 类型 (与上述新视图控制器 API 对应):**显示**和**显示详细信息**。
+如果开发人员以前使用过情节提要, 则他们将熟悉现有的 segue、**模式**和 **segue**类型。 在统一情节提要文件上启用大小类时, 将提供以下自适应 Segue 类型 (与上述新视图控制器 API 对应):**显示**和**显示详细信息**。
 
 > [!IMPORTANT]
 > 启用大小类后, 任何现有的 segue 都将转换为新类型。

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/14/2016
-ms.openlocfilehash: 7bc728360c26321c16839c5d67b93a91d2593602
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 26c418355c83da807d6dfa514e58f9bf1675759f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655515"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528425"
 ---
 # <a name="hello-watchos--walkthrough"></a>你好, watchOS –演练
 
 按照[设置和安装](~/ios/watchos/get-started/installation.md)中的步骤创建解决方案后, 将有3个项目:
 
-- 用于安装程序或其他设备上管理任务的 iOS 父应用程序。 (对于其他类型的 iOS 扩展, 这通常称为 "容器" 应用。)借助 Watch 应用, 用户可以开始运行 Watch 应用 **, 而无**需运行父应用;
+- 用于安装程序或其他设备上管理任务的 iOS 父应用程序。 (对于其他类型的 iOS 扩展, 这通常称为 "容器" 应用。)借助 Watch 应用, 用户可以开始运行 Watch 应用, 而无需运行父应用 ;
 - 监视扩展, 其中包含 watch 应用程序的程序代码;与
 - Watch 应用, 用于保存在手表上呈现的情节提要和图像资源。
 
@@ -43,10 +43,10 @@ ms.locfileid: "68655515"
 双击 Watch 应用中的 "情节提要", 以启动 Xamarin iOS 设计器 (如果在 Mac 上, 还可以右键单击并**打开 > Xcode Interface Builder**)
 
 
-1.  确保 "**工具箱**" 和 "**属性**" 板可见,
-1.  单击以选择接口控制器,
-1.  将接口控制器的标识符和标题设置为**interfaceController**和**Hi 手表**,
-1.  验证**类**是否设置为**InterfaceController**
+1. 确保 "**工具箱**" 和 "**属性**" 板可见,
+1. 单击以选择接口控制器,
+1. 将接口控制器的标识符和标题设置为**interfaceController**和**Hi 手表**,
+1. 验证**类**是否设置为**InterfaceController**
 
     ![](hello-watch-images/interfacecontrollerattributes.png "将接口控制器的标识符和标题设置为 interfaceController 和高手表")
 
@@ -54,10 +54,10 @@ ms.locfileid: "68655515"
 
 双击 Watch 应用中的 "情节提要", 在 Visual Studio 中通过 Xamarin iOS 设计器进行编辑:
 
-1.  打开 "属性" 窗格;
-1.  将类更改为**InterfaceController**;
-1.  单击接口控制器;与
-1.  将接口控制器的标识符和标题设置为**interfaceController**和**Hi**。
+1. 打开 "属性" 窗格;
+1. 将类更改为**InterfaceController**;
+1. 单击接口控制器;与
+1. 将接口控制器的标识符和标题设置为**interfaceController**和**Hi**。
 
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "将接口控制器的标识符和标题设置为 interfaceController 和高手表")
 

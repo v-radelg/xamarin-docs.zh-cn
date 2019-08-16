@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c017ab96bdd78a41b31a3305021c5bc1f8e472d0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bb2b47623c03d335ae1edc4bf87881622823ea1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644916"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522921"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Xamarin Android 导航栏
 
@@ -22,9 +22,9 @@ Android 4 引入了一个名为 "*导航栏*" 的新的系统用户界面功能,
 
 可以使用多个新标志来控制导航栏及其控件的可见性, 以及 Android 3 中引入的系统栏的可见性。 标志在`Android.View.View`类中定义, 如下所示:
 
--   `SystemUiFlagVisible`&ndash;使导航栏可见。 
--   `SystemUiFlagLowProfile`&ndash;缩小导航栏中的控件。 
--   `SystemUiFlagHideNavigation`&ndash;隐藏导航栏。 
+- `SystemUiFlagVisible`&ndash;使导航栏可见。 
+- `SystemUiFlagLowProfile`&ndash;缩小导航栏中的控件。 
+- `SystemUiFlagHideNavigation`&ndash;隐藏导航栏。 
 
 
 可以通过设置`SystemUiVisibility`属性将这些标志应用于视图层次结构中的任何视图。 如果有多个视图设置了此属性, 系统会将它们与或操作组合在一起, 并应用它们, 只要设置了标志的窗口保持焦点。 删除视图时, 还将删除其设置的所有标志。

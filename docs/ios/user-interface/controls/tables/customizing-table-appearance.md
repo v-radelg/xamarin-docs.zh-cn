@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: cad7378e3d569454606a9d472cf30c42956553e4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 24f5ce0daddab090b5486af99eebc0d6e7a2b1dd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644946"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528666"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>在 Xamarin 中自定义表的外观
 
@@ -22,10 +22,10 @@ ms.locfileid: "68644946"
 
 有四种内置样式:
 
--  **默认**–支持`UIImageView`。
--  **副标题**–支持`UIImageView`和副标题。
--  **Value1** -右对齐副标题, 支持`UIImageView`。
--  **Value2** –标题右对齐, 副标题按左对齐 (但不含图像)。
+- **默认**–支持`UIImageView`。
+- **副标题**–支持`UIImageView`和副标题。
+- **Value1** -右对齐副标题, 支持`UIImageView`。
+- **Value2** –标题右对齐, 副标题按左对齐 (但不含图像)。
 
 
 这些屏幕截图显示每种样式的显示方式:
@@ -53,10 +53,10 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 
 单元格可以将以下附件添加到视图右侧:
 
--   **复选标记**-可用于指示表中的多个选择。
--   **DetailButton** –独立于单元格的其余部分响应触摸, 使其能够执行不同的功能来接触单元格本身 (例如打开弹出窗口或不属于`UINavigationController`堆栈一部分的新窗口)。
--   **DisclosureIndicator** –通常用于指示触摸单元会打开另一个视图。
--   **DetailDisclosureButton** – `DetailButton`和`DisclosureIndicator`的组合。
+- **复选标记**-可用于指示表中的多个选择。
+- **DetailButton** –独立于单元格的其余部分响应触摸, 使其能够执行不同的功能来接触单元格本身 (例如打开弹出窗口或不属于`UINavigationController`堆栈一部分的新窗口)。
+- **DisclosureIndicator** –通常用于指示触摸单元会打开另一个视图。
+- **DetailDisclosureButton** – `DetailButton`和`DisclosureIndicator`的组合。
 
 
 如下所示:
@@ -124,9 +124,9 @@ CellCustomTable 示例实现了一个`UITableViewCell`子类, 该子类`UIImage`
 
 自定义单元格类只包含三种方法:
 
--   **构造函数**–创建 UI 控件并设置自定义样式属性 (例如 字体、大小和颜色)。
--   **UpdateCell** –用于设置单元`UITableView.GetCell`格的属性的方法。
--   **LayoutSubviews** –设置 UI 控件的位置。 在示例中, 每个单元格都具有相同的布局, 但更复杂的单元格 (尤其是具有不同大小的单元格) 可能需要不同的布局位置, 具体取决于所显示的内容。
+- **构造函数**–创建 UI 控件并设置自定义样式属性 (例如 字体、大小和颜色)。
+- **UpdateCell** –用于设置单元`UITableView.GetCell`格的属性的方法。
+- **LayoutSubviews** –设置 UI 控件的位置。 在示例中, 每个单元格都具有相同的布局, 但更复杂的单元格 (尤其是具有不同大小的单元格) 可能需要不同的布局位置, 具体取决于所显示的内容。
 
 
 **CellCustomTable > CustomVegeCell.cs**中的完整示例代码如下:

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 64a12f4f797630ad37e5821cd04a14a9d561c53e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8fb0b5136cc75463fc35ced2336e0ea321e8aecd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510683"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524416"
 ---
 # <a name="how-content-providers-work"></a>内容提供商的工作方式
 
@@ -73,10 +73,10 @@ Android 提供对各种系统和用户数据的访问, 使用`ContentProviders`:
 
 `ContentProvider` API 允许使用者对数据执行各种操作, 例如:
 
--  查询数据以返回列表或单个记录。
--  修改各个记录。
--  添加新记录。
--  删除记录。
+- 查询数据以返回列表或单个记录。
+- 修改各个记录。
+- 添加新记录。
+- 删除记录。
 
 本文档包含一个示例, 该示例使用系统提供`ContentProvider`的, 以及一个简单的只读示例, 用于实现自定义。 `ContentProvider`
 

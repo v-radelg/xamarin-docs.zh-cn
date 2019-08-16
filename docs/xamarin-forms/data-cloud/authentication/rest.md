@@ -1,5 +1,5 @@
 ---
-title: RESTful Web 服务进行身份验证
+title: 对 RESTful Web 服务进行身份验证
 description: 基本身份验证提供给具有正确的凭据这些客户端对资源的访问。 本文介绍如何使用基本身份验证保护 RESTful web 服务资源的访问权限。
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: bf334c7fde8433b7bbe45c8caaf962705c39320d
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5a0e820c8a9f04b7ad9173893852285d53dbe7a6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650399"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529201"
 ---
-# <a name="authenticate-a-restful-web-service"></a>RESTful Web 服务进行身份验证
+# <a name="authenticate-a-restful-web-service"></a>对 RESTful Web 服务进行身份验证
 
 _HTTP 支持使用多个身份验证机制来控制对资源的访问。基本身份验证提供给具有正确的凭据这些客户端对资源的访问。本文演示如何使用基本身份验证保护 RESTful web 服务资源的访问权限。_
 
@@ -35,7 +35,7 @@ _HTTP 支持使用多个身份验证机制来控制对资源的访问。基本�
 ![](rest-images/basic-authentication-success.png "基本身份验证成功")
 
 > [!NOTE]
-> 只应通过 HTTPS 连接使用基本身份验证。 当通过 HTTP 连接，使用<code>Authorization</code>标头很容易被解码，如果攻击者捕获的 HTTP 流量。
+> 只应通过 HTTPS 连接使用基本身份验证。 当通过 HTTP 连接，使用`Authorization`标头很容易被解码，如果攻击者捕获的 HTTP 流量。
 
 ## <a name="specifying-basic-authentication-in-a-web-request"></a>在 Web 请求中指定基本身份验证
 
@@ -73,11 +73,11 @@ public class RestService : IRestService
 然后当请求时，web 服务操作使用签名请求`Authorization`标头，指示用户是否有权调用该操作。
 
 > [!NOTE]
-> 尽管此代码将凭据存储为常量，它们不应存储发布的应用程序中以不安全的格式。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet 提供了用于将凭据安全地存储功能。 有关详细信息请参阅[存储和检索设备上的帐户信息](~/xamarin-forms/data-cloud/authentication/oauth.md)。
+> 尽管此代码将凭据存储为常量, 但在已发布的应用程序中不应以不安全的格式存储它们。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet 提供了用于将凭据安全地存储功能。 有关详细信息请参阅[存储和检索设备上的帐户信息](~/xamarin-forms/data-cloud/authentication/oauth.md)。
 
 ## <a name="processing-the-authorization-header-server-side"></a>处理授权标头服务器端
 
-REST 服务应修饰每个操作具有`[BasicAuthentication]`属性。 此属性用于分析`Authorization`标头，并确定 base64 编码凭据是否有效由将其与存储中的值进行比较*Web.config*。虽然这种方法适合于示例服务，它需要面向公众的 web 服务扩展。
+REST 服务应用`[BasicAuthentication]`属性修饰每个操作。 此特性用于分析`Authorization`标头并确定 base64 编码的凭据是否有效, 方法是将它们与 web.config 中存储的值进行比较。虽然这种方法适用于示例服务, 但它需要为面向公众的 web 服务进行扩展。
 
 使用 IIS 的基本身份验证模块，在用户进行身份验证针对其 Windows 凭据。 因此，用户必须在服务器的域上拥有帐户。 但是，可以配置基本身份验证模型，以允许自定义身份验证的用户帐户进行身份验证对外部源，例如数据库。 有关详细信息请参阅[ASP.NET Web API 中的基本身份验证](http://www.asp.net/web-api/overview/security/basic-authentication)ASP.NET 网站上。
 

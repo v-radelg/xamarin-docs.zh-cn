@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6826088dcc192f4bc4dcfa7424236f98391e0bd6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656705"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528402"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -105,37 +105,39 @@ with an alpha channel. Icons should not have an alpha channel.
 
 4. 关闭情节提要并返回到 Visual Studio for Mac。 在 " C# **监视应用扩展**" 项目中创建新文件**MyInterfaceController.cs** (或任何所需的名称) (而不是情节提要的 "监视" 应用本身)。 添加下面的代码 (更新命名空间、classname 和构造函数名称):
 
-        using System;
-        using WatchKit;
-        using Foundation;
-        
-        namespace WatchAppExtension  // remember to update this
+    ```csharp
+    using System;
+    using WatchKit;
+    using Foundation;
+
+    namespace WatchAppExtension  // remember to update this
+    {
+        public partial class MyInterfaceController // remember to update this
+        : WKInterfaceController
         {
-            public partial class MyInterfaceController // remember to update this
-            : WKInterfaceController
+            public MyInterfaceController // remember to update this
+            (IntPtr handle) : base (handle)
             {
-                public MyInterfaceController // remember to update this
-                (IntPtr handle) : base (handle)
-                {
-                }
-                public override void Awake (NSObject context)
-                {
-                    base.Awake (context);
-                    // Configure interface objects here.
-                    Console.WriteLine ("{0} awake with context", this);
-                }
-                public override void WillActivate ()
-                {
-                    // This method is called when the watch view controller is about to be visible to the user.
-                    Console.WriteLine ("{0} will activate", this);
-                }
-                public override void DidDeactivate ()
-                {
-                    // This method is called when the watch view controller is no longer visible to the user.
-                    Console.WriteLine ("{0} did deactivate", this);
-                }
+            }
+            public override void Awake (NSObject context)
+            {
+                base.Awake (context);
+                // Configure interface objects here.
+                Console.WriteLine ("{0} awake with context", this);
+            }
+            public override void WillActivate ()
+            {
+                // This method is called when the watch view controller is about to be visible to the user.
+                Console.WriteLine ("{0} will activate", this);
+            }
+            public override void DidDeactivate ()
+            {
+                // This method is called when the watch view controller is no longer visible to the user.
+                Console.WriteLine ("{0} did deactivate", this);
             }
         }
+    }
+    ```
 
 5. 在 " C# **监视应用扩展**" 项目中创建另一个新文件**MyInterfaceController.designer.cs** , 并添加以下代码。 请确保更新命名空间、classname 和`Register`属性:
 
@@ -155,7 +157,7 @@ with an alpha channel. Icons should not have an alpha channel.
     }
     ```
     
-    提示:您可以选择将此文件作为第一个文件的子节点, 方法是将其拖到 Visual Studio for Mac C# Solution Pad 的其他文件中。 它将如下所示:
+    提示：您可以选择将此文件作为第一个文件的子节点, 方法是将其拖到 Visual Studio for Mac C# Solution Pad 的其他文件中。 它将如下所示:
     
     ![](troubleshooting-images/add-5.png "解决方案板")
 
@@ -188,22 +190,22 @@ with an alpha channel. Icons should not have an alpha channel.
 
 11. 保存情节提要更改并关闭 Xcode 后, 将返回 Visual Studio for Mac。 它将检测头文件更改, 并自动将代码添加到**designer.cs**文件中:
 
+    ```csharp
+    [Register ("MyInterfaceController")]
+    partial class MyInterfaceController
+    {
+        [Outlet]
+        WatchKit.WKInterfaceButton myButton { get; set; }
 
-        [Register ("MyInterfaceController")]
-        partial class MyInterfaceController
+        void ReleaseDesignerOutlets ()
         {
-            [Outlet]
-            WatchKit.WKInterfaceButton myButton { get; set; }
-        
-            void ReleaseDesignerOutlets ()
-            {
-                if (myButton != null) {
-                    myButton.Dispose ();
-                    myButton = null;
-                }
+            if (myButton != null) {
+                myButton.Dispose ();
+                myButton = null;
             }
         }
-
+    }
+    ```
 
 你现在可以在中C#引用控件 (或实现操作)!
 

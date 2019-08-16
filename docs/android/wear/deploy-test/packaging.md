@@ -1,69 +1,69 @@
 ---
-title: 打包 Wear 应用
+title: 打包应用程序
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 585c276b327a9092bdd13fa633307477017558c5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bca29089a61ed1f3400458f4b102c61023f47247
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276783"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522110"
 ---
-# <a name="packaging-wear-apps"></a>打包 Wear 应用
+# <a name="packaging-wear-apps"></a>打包应用程序
 
-Android Wear 应用都打包在一起的完整的 Android 应用的 Google Play 上的分发。 
+Android 磨损应用打包在 Google Play 上, 适用于分发的完整 Android 应用。 
 
 ## <a name="automatic-packaging"></a>自动打包
 
-从 Xamarin Android 5.0 开始，Wear 应用自动打包为掌上电脑应用中资源时您创建从手持项目穿戴设备项目到项目引用。 可以使用以下步骤来创建此关联： 
+从 Xamarin Android 5.0 开始, 当你创建从掌上项项目到磨损项目的项目引用时, 你的损耗应用会自动打包为你的手持式应用中的资源。 你可以使用以下步骤来创建此关联: 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 如果 Wear 应用尚未手持式解决方案的一部分，右键单击解决方案节点，然后选择**添加 > 添加现有项目...**.
+1. 如果你的应用程序还不在你的手持式解决方案中, 请右键单击 "解决方案" 节点, 然后选择 "**添加 > 添加现有项目 ...** "。
 
-2. 导航到 **.csproj**文件的穿戴设备应用，选择它，然后单击**打开**。 Wear 应用程序项目现在应可以看到在手持设备的解决方案中。
+2. 导航到你的应用程序的 **.csproj**文件, 选择它, 然后单击 "**打开**"。 应用程序项目现在应在你的手持式解决方案中可见。
 
-3. 右键单击**引用**节点，然后选择**添加引用**。
+3. 右键单击 "**引用**" 节点, 然后选择 "**添加引用**"。
 
-4. 在中**引用管理器**对话框中，启用穿戴设备项目 （单击以添加一个复选标记），然后单击**确定**。
+4. 在 "**引用管理器**" 对话框中, 启用你的磨损项目 (单击添加复选标记), 然后单击 **"确定"** 。
 
-5. 更改包名称为穿戴设备项目，使其匹配手持项目的包名称 (包名称可以更改下**属性 > Android 清单**)。
+5. 更改磨损项目的包名称, 使其与掌上项目的包名称匹配 (包名称可在 "**属性 > Android 清单**" 下更改)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 如果 Wear 应用尚未手持式解决方案的一部分，右键单击解决方案节点，然后选择**添加 > 添加现有项目...**.
+1. 如果你的应用程序还不在你的手持式解决方案中, 请右键单击 "解决方案" 节点, 然后选择 "**添加 > 添加现有项目 ...** "。
 
-2. 导航到 **.csproj**文件的穿戴设备应用，选择它，然后单击**打开**。 Wear 应用程序项目现在应可以看到在手持设备的解决方案中。
+2. 导航到你的应用程序的 **.csproj**文件, 选择它, 然后单击 "**打开**"。 应用程序项目现在应在你的手持式解决方案中可见。
 
-3. 右键单击解决方案，单击中的手持项目节点**编辑引用...**.
+3. 右键单击解决方案中的手持式项目节点, 然后单击 "**编辑引用 ...** "。
 
-4. 在中**编辑引用**对话框中，启用穿戴设备项目 （单击以添加一个复选标记），然后单击**确定**。
+4. 在 "**编辑引用**" 对话框中, 启用你的磨损项目 (单击添加复选标记), 然后单击 **"确定"** 。
 
-5. 更改包名称为穿戴设备项目，使其匹配手持项目的包名称 (包名称可以更改下**项目选项 > Android 应用程序**)。
+5. 更改你的磨损项目的包名称, 使其与掌上项项目的包名称匹配 (包名称可在**项目选项 > Android 应用程序**) 下进行更改。
 
 -----
 
 
-请注意，您将获得**XA5211**如果 Wear 应用的包名称与手持应用的包名称不匹配错误。 例如：
+请注意, 如果磨损应用的包名称与手持应用的包名称不匹配, 则会出现**XA5211**错误。 例如:
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 
 app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
 ```
 
-若要更正此错误，请更改 Wear 应用的包名称，使其匹配掌上电脑应用的包名称。
+若要更正此错误, 请更改该应用程序的包名称, 使其与手持应用程序的包名称匹配。
 
-当您单击**生成 > 生成所有**，这种关联触发穿戴设备项目自动打包到主 Handheld (Phone) 项目。 Wear 应用自动生成并包含为掌上电脑应用中的资源。
+单击 "**生成" >** "生成" 时, 该关联会触发将磨损项目自动打包到主要手持式 (电话) 项目中。 会自动生成应用程序并将其作为资源包含在手持式应用中。
 
-Wear 应用程序项目生成的程序集不用作 Handheld (Phone) 项目中的程序集引用。 相反，生成过程将执行以下操作：
+应用程序项目生成的程序集不在手持式 (电话) 项目中用作程序集引用。 相反, 生成过程将执行以下操作:
 
--   验证包名匹配。 
+- 验证包名称是否匹配。 
 
--   生成的 XML 并将其添加到手持项目，以将它与 Wear 应用相关联。 例如： 
+- 生成 XML, 并将其添加到手持式项目, 以将其与应用程序关联。 例如: 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->
@@ -74,20 +74,20 @@ Wear 应用程序项目生成的程序集不用作 Handheld (Phone) 项目中的
     </ProjectReference>
     ```
 
--   将作为 Wear 应用添加**原始**到手持项目的资源。 
+- 将磨损应用作为**原始**资源添加到手持项目。 
 
 
 ## <a name="manual-packaging"></a>手动打包
 
-可以之前的版本 5.0 中，在 Xamarin.Android 中编写 Android Wear 应用程序，但是，必须执行这些手动打包说明将应用分发： 
+在版本5.0 之前, 可以在 Xamarin 中编写 Android 应用程序, 但必须遵循以下手动打包说明来分发应用程序: 
 
-1. 请确保你的可穿戴项目和 Handheld (Phone) 项目具有相同的版本数和包名称。
+1. 确保你的可穿戴项目和手持 (电话) 项目具有相同的版本号和包名称。
 
-2. 手动构建该项目可穿戴视为**版本**生成。
+2. 手动将可穿戴项目构建为**发布**版本。
 
-3. 手动添加发布 **。APK**从步骤 (2) 到**资源/原始**Handheld (Phone) 项目的目录。
+3. 手动添加发布 **。** 从步骤 (2) APK 到手持式 (电话) 项目的**资源/原始**目录。
 
-4. 手动添加新的 XML 资源**Resources/xml/wearable_app_desc.xml**在手持设备项目中，是指可穿戴设备**APK**步骤 (3) 中：
+4. 手动在手持式项目中添加一个新的 XML 资源**资源/xml/wearable_app_desc** , 该项目引用步骤中的可穿戴**APK** (3):
 
     ```xml
     <wearableApp package="wearable.app.package.name">
@@ -97,12 +97,12 @@ Wear 应用程序项目生成的程序集不用作 Handheld (Phone) 项目中的
     </wearableApp>
     ```
 
-5. 手动添加`<meta-data />`到手持项目的元素**AndroidManifest.xml** `<application>`指的是新的 XML 资源的元素：
+5. 将`<meta-data />`元素手动添加到手持式项目的 `<application>` androidmanifest.xml 元素中, 该元素引用新的 xml 资源:
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"
         android:resource="@xml/wearable_app_desc"/>
     ```
 
-另请参阅 Android 开发人员站点[手动 packging 说明](https://developer.android.com/training/wearables/apps/packaging.html#PackageManually)。
+另请参阅 Android 开发人员网站的[手动 packging 说明](https://developer.android.com/training/wearables/apps/packaging.html#PackageManually)。
 

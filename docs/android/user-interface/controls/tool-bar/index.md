@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 25287e5aa52eeac712f93c3973e02c7e14c89a78
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 065c68ce6fbe816e503ace0ab42b3e86aa6916a7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645101"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522832"
 ---
 # <a name="toolbar"></a>Toolbar
 
@@ -29,45 +29,45 @@ _工具栏是比默认操作栏提供更多灵活性的操作栏组件: 可以�
 
 `Toolbar`和操作栏之间存在一些重要的区别: 
 
--   `Toolbar`可以放置在用户界面中的任何位置。
+- `Toolbar`可以放置在用户界面中的任何位置。
 
--   同一屏幕上可以显示多个工具栏。
+- 同一屏幕上可以显示多个工具栏。
 
--   如果使用片段, 则每个片段都可以有`Toolbar`自己的片段。 
+- 如果使用片段, 则每个片段都可以有`Toolbar`自己的片段。 
 
--   `Toolbar`可以配置为仅跨越屏幕的部分宽度。 
+- `Toolbar`可以配置为仅跨越屏幕的部分宽度。 
 
--   `Toolbar`由于未绑定到活动的窗口 décor 的配色方案, 因此它可以有一个视觉上不同的配色方案。 
+- `Toolbar`由于未绑定到活动的窗口 décor 的配色方案, 因此它可以有一个视觉上不同的配色方案。 
 
--   不同于操作栏, `Toolbar`不会在左侧包含一个图标。 其菜单上的菜单使用更少的空间。 
+- 不同于操作栏, `Toolbar`不会在左侧包含一个图标。 其菜单上的菜单使用更少的空间。 
 
--   高度`Toolbar`是可调整的。 
+- 高度`Toolbar`是可调整的。 
 
--   其他视图可以包括在中`Toolbar`。 
+- 其他视图可以包括在中`Toolbar`。 
 
 `Toolbar`可以包含一个或多个以下元素: 
 
--   导航按钮
+- 导航按钮
 
--   品牌徽标图像
+- 品牌徽标图像
 
--   标题和副标题
+- 标题和副标题
 
--   自定义视图
+- 自定义视图
 
--   操作菜单
+- 操作菜单
 
--   溢出菜单
+- 溢出菜单
 
 Google 的[材料设计指南](https://material.google.com/)建议利用这些元素, 使应用具有不同的外观 (而不只是依赖于应用程序图标和标题)。 
 
 本指南涵盖最常使用`Toolbar`的方案:
 
--   将`Toolbar`活动的默认操作栏替换为。 
+- 将`Toolbar`活动的默认操作栏替换为。 
 
--   将第二`Toolbar`个添加到活动。
+- 将第二`Toolbar`个添加到活动。
 
--   使用**android 支持库 v7 AppCompat**库 (在本指南的其余部分中称为 " *AppCompat* ") 来部署`Toolbar`到早期版本的 Android。 
+- 使用**android 支持库 v7 AppCompat**库 (在本指南的其余部分中称为 " *AppCompat* ") 来部署`Toolbar`到早期版本的 Android。 
 
  
  

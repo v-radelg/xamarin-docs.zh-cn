@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 6a0fe95d6d471bfb464234f0540b8398acb22e6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b870d96a2ffc599e010e049554b51b550a7311
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262827"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521592"
 ---
 # <a name="uninstalling-xamarin"></a>卸载 Xamarin
 
@@ -196,14 +196,18 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 1. 右键单击脚本并选择“另存为…”， 在 Mac 上保存文件。
 
-2.  打开“终端”，并将工作目录更改为下载脚本的位置：
+2. 打开“终端”，并将工作目录更改为下载脚本的位置：
 
-        $ cd /location/of/file
+    ```
+    cd /location/of/file
+    ```
 
 3. 使脚本可执行，并通过 **sudo** 运行它：
 
-        $ chmod +x ./xamarin_uninstall.sh
-        $ sudo ./xamarin_uninstall.sh
+    ```
+    chmod +x ./xamarin_uninstall.sh
+    sudo ./xamarin_uninstall.sh
+    ```
 
 4. 最后，删除卸载脚本。
 
@@ -224,7 +228,7 @@ Xamarin 在以下各项中受支持：
 
 ### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 和 Visual Studio 2017
 
-从 Visual Studio 2019 和使用安装程序应用的 Visual Studio 2017 中卸载 Xamarin:
+使用安装程序应用从 Visual Studio 2019 和 Visual Studio 2017 中卸载 Xamarin:
 
 1. 使用“开始”菜单打开“Visual Studio 安装程序”。
 
@@ -271,7 +275,7 @@ Xamarin 在以下各项中受支持：
 
 要完全卸载 Visual Studio 2015，请使用 [visualstudio.com 上的支持答案](https://visualstudio.microsoft.com/vs/support/vs2015/uninstall-visual-studio-2015/)。
 
-通过“控制面板”，可从 Windows 计算机卸载 Xamarin。 导航到“程序和功能” ，或“程序”>“卸载程序”，如下所示：
+通过“控制面板”，可从 Windows 计算机卸载 Xamarin。 导航到“程序和功能”，或“程序”>“卸载程序”，如下所示：
 
  [![](uninstalling-xamarin-images/image3.png "导航到“程序和功能”，或“程序”>“卸载程序”，如下所示")](uninstalling-xamarin-images/image3.png#lightbox) 
 

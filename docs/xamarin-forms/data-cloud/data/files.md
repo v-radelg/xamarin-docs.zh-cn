@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656686"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529235"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的文件处理
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
-使用 .NET Standard 库中的代码或使用嵌入式资源，即可实现使用 Xamarin.Forms 处理文件。 
+使用 .NET Standard 库中的代码或使用嵌入式资源，即可实现使用 Xamarin.Forms 处理文件。
 
 ## <a name="overview"></a>概述
 
@@ -64,7 +64,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 ## <a name="loading-files-embedded-as-resources"></a>加载作为资源嵌入的文件
 
-若要将文件嵌入到“.NET Standard”  程序集中，请创建或添加文件，并确保“生成操作：  EmbeddedResource”。
+若要将文件嵌入到“.NET Standard”程序集中，请创建或添加文件，并确保“生成操作：EmbeddedResource”。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -76,7 +76,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件  。 默认情况下，资源 ID 是一个文件名，前缀是它所嵌入的项目的默认命名空间 - 在本例中，程序集是“WorkingWithFile”，文件名是“PCLTextResource.txt”，所以资源 ID 是 `WorkingWithFiles.PCLTextResource.txt`   。
+`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件。 默认情况下，资源 ID 是一个文件名，前缀是它所嵌入的项目的默认命名空间 - 在本例中，程序集是“WorkingWithFile”，文件名是“PCLTextResource.txt”，所以资源 ID 是 `WorkingWithFiles.PCLTextResource.txt`。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -115,8 +115,8 @@ listView.ItemsSource = monkeys;
 
 通过共享项目，有两种解决方案：
 
--  **同步项目** - 编辑每个平台的项目属性，以使用相同程序集名称和默认命名空间  。 然后，可以将该值硬编码，作为共享项目中嵌入式资源 ID 的前缀。
--  **#if 编译器指令** - 使用编译器指令设置正确的资源 ID 前缀，并使用该值动态构造正确的资源 ID。
+- **同步项目** - 编辑每个平台的项目属性，以使用相同程序集名称和默认命名空间。 然后，可以将该值硬编码，作为共享项目中嵌入式资源 ID 的前缀。
+- **#if 编译器指令** - 使用编译器指令设置正确的资源 ID 前缀，并使用该值动态构造正确的资源 ID。
 
 
 说明第二个选项的代码如下所示。 编译器指令用于选择硬编码的资源前缀（通常与引用项目的默认命名空间相同）。 然后，将 `resourcePrefix` 变量与嵌入的资源文件名串联起来，从而创建有效的资源 ID。
@@ -140,15 +140,15 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>组织资源
 
-上面的例子假设该文件已嵌入 .NET Standard 库项目的根目录中，在这种情况下，资源 ID 的形式是“Namespace.Filename.Extension”，如 `WorkingWithFiles.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`  。
+上面的例子假设该文件已嵌入 .NET Standard 库项目的根目录中，在这种情况下，资源 ID 的形式是“Namespace.Filename.Extension”，如 `WorkingWithFiles.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
 
-可以在文件夹中组织嵌入式资源。 当嵌入式资源被放置在一个文件夹中时，文件夹名称就成为资源 ID 的一部分（以句点分隔），因此资源 ID 格式就变成了“Namespace.Folder.Filename.Extension”  。 将示例应用中使用的文件放入文件夹“MyFolder”将生成相应的资源 ID `WorkingWithFiles.MyFolder.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`  。
+可以在文件夹中组织嵌入式资源。 当嵌入式资源被放置在一个文件夹中时，文件夹名称就成为资源 ID 的一部分（以句点分隔），因此资源 ID 格式就变成了“Namespace.Folder.Filename.Extension”。 将示例应用中使用的文件放入文件夹“MyFolder”将生成相应的资源 ID `WorkingWithFiles.MyFolder.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
 
 <a name="Debugging_Embedded_Resources" />
 
 ### <a name="debugging-embedded-resources"></a>调试嵌入的资源
 
-由于有时很难理解为什么没有加载特定资源，因此可以将以下调试代码临时添加到应用程序中，以帮助确认资源配置正确。 它将把给定程序集中嵌入的所有已知资源输出到“错误”面板，以帮助调试资源加载问题  。
+由于有时很难理解为什么没有加载特定资源，因此可以将以下调试代码临时添加到应用程序中，以帮助确认资源配置正确。 它将把给定程序集中嵌入的所有已知资源输出到“错误”面板，以帮助调试资源加载问题。
 
 ```csharp
 using System.Reflection;

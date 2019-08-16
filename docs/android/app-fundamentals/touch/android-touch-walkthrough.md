@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/09/2018
-ms.openlocfilehash: 78878e62a36e3f6dd6ca3c7fcfb6413da4f0e0f9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: efff9edd81f17979ce8f4441da3d512d0a8ec188
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644127"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526262"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>演练-在 Android 中使用 Touch
 
@@ -23,17 +23,17 @@ ms.locfileid: "68644127"
 
 ## <a name="touch-sample-activity"></a>触摸示例活动
 
--   打开**TouchWalkthrough\_** 项目。 **MainActivity**全部设置为&ndash; , 以在活动中实现触摸行为。 如果运行应用程序, 并单击 "**触摸示例**", 则以下活动将启动:
+- 打开**TouchWalkthrough\_** 项目。 **MainActivity**全部设置为&ndash; , 以在活动中实现触摸行为。 如果运行应用程序, 并单击 "**触摸示例**", 则以下活动将启动:
 
     [![具有触控的活动屏幕截图开始显示](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
--   现在, 我们已确认活动已启动, 打开文件**TouchActivity.cs**并添加的`Touch`事件`ImageView`处理程序:
+- 现在, 我们已确认活动已启动, 打开文件**TouchActivity.cs**并添加的`Touch`事件`ImageView`处理程序:
 
     ```csharp
     _touchMeImageView.Touch += TouchMeImageViewOnTouch;
     ```
 
--   接下来, 将以下方法添加到**TouchActivity.cs**:
+- 接下来, 将以下方法添加到**TouchActivity.cs**:
 
     ```csharp
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
@@ -74,7 +74,7 @@ ms.locfileid: "68644127"
 
 现在, 让我们实现手势识别器活动。 此活动将演示如何在屏幕上拖动视图, 并演示实现缩小到缩放的一种方法。
 
--   向应用程序中添加一个名`GestureRecognizer`为的新活动。
+- 向应用程序中添加一个名`GestureRecognizer`为的新活动。
     编辑此活动的代码, 使其类似于以下代码:
 
     ```csharp
@@ -89,7 +89,7 @@ ms.locfileid: "68644127"
     }
     ```
 
--   向项目中添加一个新的 Android 视图, 并将`GestureRecognizerView`其命名为。 将以下变量添加到此类:
+- 向项目中添加一个新的 Android 视图, 并将`GestureRecognizerView`其命名为。 将以下变量添加到此类:
 
     ```csharp
     private static readonly int InvalidPointerId = -1;
@@ -105,7 +105,7 @@ ms.locfileid: "68644127"
     private float _scaleFactor = 1.0f;
     ```
 
--   将以下构造函数添加`GestureRecognizerView`到。 此构造函数将在`ImageView`活动中添加。 此时, 代码仍将无法编译&ndash; , 我们需要创建一个类`MyScaleListener` , 以便在用户 pinches 它`ImageView`时帮助调整大小:
+- 将以下构造函数添加`GestureRecognizerView`到。 此构造函数将在`ImageView`活动中添加。 此时, 代码仍将无法编译&ndash; , 我们需要创建一个类`MyScaleListener` , 以便在用户 pinches 它`ImageView`时帮助调整大小:
 
     ```csharp
     public GestureRecognizerView(Context context): base(context, null, 0)
@@ -116,7 +116,7 @@ ms.locfileid: "68644127"
     }
     ```
 
--   若要在活动中绘制图像, 需要重写`OnDraw` View 类的方法, 如以下代码片段所示。 此代码会将移动`ImageView`到由`_posX`和指定的位置`_posY` , 并根据缩放系数调整图像的大小:
+- 若要在活动中绘制图像, 需要重写`OnDraw` View 类的方法, 如以下代码片段所示。 此代码会将移动`ImageView`到由`_posX`和指定的位置`_posY` , 并根据缩放系数调整图像的大小:
 
     ```csharp
     protected override void OnDraw(Canvas canvas)
@@ -130,7 +130,7 @@ ms.locfileid: "68644127"
     }
     ```
 
--   接下来, 需要更新实例变量`_scaleFactor` , 因为用户`ImageView`pinches。 我们将添加一个名`MyScaleListener`为的类。 此类将侦听当用户 pinches `ImageView`时将由 Android 引发的缩放事件。
+- 接下来, 需要更新实例变量`_scaleFactor` , 因为用户`ImageView`pinches。 我们将添加一个名`MyScaleListener`为的类。 此类将侦听当用户 pinches `ImageView`时将由 Android 引发的缩放事件。
     将以下内部类添加到`GestureRecognizerView`。 此类是一个`ScaleGesture.SimpleOnScaleGestureListener`。 此类是一个便利类, 当你对笔势子集感兴趣时, 侦听器可以为其划分子类:
 
     ```csharp
@@ -163,7 +163,7 @@ ms.locfileid: "68644127"
     }
     ```
 
--   在中`GestureRecognizerView` , 我们需要替代的下一个`OnTouchEvent`方法是。 下面的代码列出了此方法的完全实现。 这里有很多代码, 让我们花点时间看一下这里的内容。 此方法所做的第一件事是, 如&ndash;有必要, 可通过`_scaleDetector.OnTouchEvent`调用来处理此操作。 接下来, 我们将尝试确定调用此方法的操作:
+- 在中`GestureRecognizerView` , 我们需要替代的下一个`OnTouchEvent`方法是。 下面的代码列出了此方法的完全实现。 这里有很多代码, 让我们花点时间看一下这里的内容。 此方法所做的第一件事是, 如&ndash;有必要, 可通过`_scaleDetector.OnTouchEvent`调用来处理此操作。 接下来, 我们将尝试确定调用此方法的操作:
 
     - 如果用户与屏幕接触, 则会记录 X 和 Y 位置以及与屏幕接触的第一个指针的 ID。
 
@@ -231,12 +231,12 @@ ms.locfileid: "68644127"
     }
     ```
 
--   现在, 运行该应用程序, 并启动手势识别器活动。
+- 现在, 运行该应用程序, 并启动手势识别器活动。
     当它启动时, 屏幕应类似于下面的屏幕截图:
 
     [![带有 Android 图标的笔势识别器启动屏幕](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
--   现在触摸图标, 并将其拖动到屏幕上。 尝试 "缩小到缩放" 手势。 某些时候, 屏幕可能类似于以下屏幕截图所示:
+- 现在触摸图标, 并将其拖动到屏幕上。 尝试 "缩小到缩放" 手势。 某些时候, 屏幕可能类似于以下屏幕截图所示:
 
     [![屏幕周围的手势移动图标](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
@@ -248,7 +248,7 @@ ms.locfileid: "68644127"
 
 出于本演练的目的, 已使用手势工具创建了手势库, 并将其添加到了文件**资源/原始/笔势**中。 通过这种方式, 让我们在演练中获得最后一个活动。
 
--   将名为 "**自定义\_笔势\_main.axml** " 的布局文件添加到项目中, 其内容如下。 该项目已包含**Resources**文件夹中的所有映像:
+- 将名为 "**自定义\_笔势\_main.axml** " 的布局文件添加到项目中, 其内容如下。 该项目已包含**Resources**文件夹中的所有映像:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -274,14 +274,14 @@ ms.locfileid: "68644127"
     </LinearLayout>
     ```
 
--   接下来, 将新活动添加到项目并将`CustomGestureRecognizerActivity.cs`其命名为。 将两个实例变量添加到类, 如以下两行代码所示:
+- 接下来, 将新活动添加到项目并将`CustomGestureRecognizerActivity.cs`其命名为。 将两个实例变量添加到类, 如以下两行代码所示:
 
     ```csharp
     private GestureLibrary _gestureLibrary;
     private ImageView _imageView;
     ```
 
--   编辑此活动的方法,使其类似于以下代码。`OnCreate` 在此代码中, 我们需要一分钟的时间来解释。 我们要做的第一件事`GestureOverlayView`是实例化并将其设置为活动的根视图。
+- 编辑此活动的方法,使其类似于以下代码。`OnCreate` 在此代码中, 我们需要一分钟的时间来解释。 我们要做的第一件事`GestureOverlayView`是实例化并将其设置为活动的根视图。
     还会为的`GesturePerformed` `GestureOverlayView`事件分配事件处理程序。 接下来, 将显示先前创建的布局文件, 并将其添加为的子视图`GestureOverlayView`。 最后一步是初始化变量`_gestureLibrary` , 并从应用程序资源加载笔势文件。 如果由于某种原因无法加载笔势文件, 则此活动没有太多可执行的操作, 因此它会关闭:
 
     ```csharp
@@ -306,7 +306,7 @@ ms.locfileid: "68644127"
     }
     ```
 
--   首先, 我们需要实现方法`GestureOverlayViewOnGesturePerformed` , 如以下代码片段所示。 `GestureOverlayView`当检测到手势时, 它将回调到此方法。 首先, 我们尝试通过调用`IList<Prediction>` `_gestureLibrary.Recognize()`来获取与该笔势匹配的对象。 我们使用一些 LINQ 获取`Prediction`具有该笔势的最高分的。
+- 首先, 我们需要实现方法`GestureOverlayViewOnGesturePerformed` , 如以下代码片段所示。 `GestureOverlayView`当检测到手势时, 它将回调到此方法。 首先, 我们尝试通过调用`IList<Prediction>` `_gestureLibrary.Recognize()`来获取与该笔势匹配的对象。 我们使用一些 LINQ 获取`Prediction`具有该笔势的最高分的。
 
     如果没有足够多的匹配笔势, 则不执行任何操作, 事件处理程序将退出。 否则, 检查预测的名称, 并根据该笔势的名称更改要显示的图像:
 
@@ -339,7 +339,7 @@ ms.locfileid: "68644127"
     }
     ```
 
--   运行应用程序, 并启动自定义手势识别器活动。 它应类似于以下屏幕截图:
+- 运行应用程序, 并启动自定义手势识别器活动。 它应类似于以下屏幕截图:
 
     [![带有签入图像的屏幕截图](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 

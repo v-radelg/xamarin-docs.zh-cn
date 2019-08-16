@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642913"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528694"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的映射
 
@@ -48,8 +48,8 @@ map.MapType = MKMapType.Hybrid;
 
  `MKMapView`支持映射交互功能, 如:
 
--  通过挤压手势缩放
--  通过平移手势平移
+- 通过挤压手势缩放
+- 通过平移手势平移
 
 
 只需设置`ZoomEnabled` `MKMapView`实例的和`ScrollEnabled`属性即可启用或禁用这些功能, 其中, 默认值为 true。 例如, 若要显示静态映射, 只需将相应的属性设置为 false:
@@ -96,8 +96,8 @@ map.ShowsUserLocation = true;
 
 批注本身包含两部分:
 
--  `MKAnnotation`对象, 包含有关批注的模型数据, 例如批注的标题和位置。
--  `MKAnnotationView` , 其中包含要显示的图像, 还可以选择在用户点击批注时显示的标注。
+- `MKAnnotation`对象, 包含有关批注的模型数据, 例如批注的标题和位置。
+- `MKAnnotationView` , 其中包含要显示的图像, 还可以选择在用户点击批注时显示的标注。
 
 
 Map 工具包使用 iOS 委托模式将批注添加到地图, 其中`Delegate`的属性`MKMapView`设置`MKMapViewDelegate`为的实例。 此委托的实现负责为批注返回`MKAnnotationView` 。
@@ -177,9 +177,9 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 在地图上对图形进行分层的另一种方法是使用叠加。 叠加层支持绘制在地图缩放时随之缩放的图形内容。 iOS 提供多种类型的覆盖支持, 包括:
 
--  多边形-通常用于突出显示地图上的某个区域。
--  折线-在显示路线时通常会出现这种情况。
--  圆圈-用于突出显示地图的圆形区域。
+- 多边形-通常用于突出显示地图上的某个区域。
+- 折线-在显示路线时通常会出现这种情况。
+- 圆圈-用于突出显示地图的圆形区域。
 
 
 此外, 还可以创建自定义覆盖, 以显示具有精细自定义绘图代码的任意几何图形。 例如, 天气雷达图非常适合用于自定义覆盖区。
@@ -188,8 +188,8 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 与批注类似, 添加覆盖区涉及2部分:
 
--  为覆盖对象创建模型对象并将其添加到`MKMapView`中。
--  在中`MKMapViewDelegate`为覆盖创建视图。
+- 为覆盖对象创建模型对象并将其添加到`MKMapView`中。
+- 在中`MKMapViewDelegate`为覆盖创建视图。
 
 
 覆盖模型可以是任何`MKShape`子类。 Xamarin 包括`MKShape`多边形、折线和圆圈的子类, 分别`MKPolygon`通过、 `MKPolyline`和`MKCircle`类。
@@ -225,10 +225,10 @@ iOS 包含带有地图工具包的本地搜索 API, 该 API 允许在指定地�
 
 若要执行本地搜索, 应用程序必须执行以下步骤:
 
-1.  创建`MKLocalSearchRequest`对象。
-1.  从创建`MKLocalSearch`对象。 `MKLocalSearchRequest`
-1.  对对象`MKLocalSearch`调用方法。 `Start`
-1.  检索回调`MKLocalSearchResponse`中的对象。
+1. 创建`MKLocalSearchRequest`对象。
+1. 从创建`MKLocalSearch`对象。 `MKLocalSearchRequest`
+1. 对对象`MKLocalSearch`调用方法。 `Start`
+1. 检索回调`MKLocalSearchResponse`中的对象。
 
 
 本地搜索 API 本身不提供用户界面。 它甚至不需要使用地图。 但是, 若要充分利用本地搜索, 应用程序需要提供某种方式来指定搜索查询并显示结果。 此外, 由于结果将包含位置数据, 因此在地图上显示它们通常是有意义的。

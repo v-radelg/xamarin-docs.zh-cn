@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f0f15647e439381c2aa291234b444d668d1b63d0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869358"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524621"
 ---
 # <a name="java-bindings-metadata"></a>Java 绑定元数据
 
@@ -55,21 +55,21 @@ Xamarin Android **Java 绑定库**尝试自动完成在绑定现有 Android 库�
 
 可以在项目的**转换**文件夹中找到这些 XML 映射文件:
 
--   MetaData 允许对最终 API 进行更改, 如更改生成的绑定的命名空间。 &ndash; 
+- MetaData 允许对最终 API 进行更改, 如更改生成的绑定的命名空间。 &ndash; 
 
--   C# **EnumFields**包含Java`int`常量与`enums`之间的映射。 &ndash; 
+- C# **EnumFields**包含Java`int`常量与`enums`之间的映射。 &ndash; 
 
--   C# `enums` `int` **EnumMethods**允许更改方法参数, 并从 Java 常量将类型返回到。 &ndash; 
+- C# `enums` `int` **EnumMethods**允许更改方法参数, 并从 Java 常量将类型返回到。 &ndash; 
 
 **元数据 .xml**文件是这些文件的最多导入, 因为它允许对绑定进行一般用途的更改, 例如:
 
--   重命名命名空间、类、方法或字段, 使其遵循 .NET 约定。 
+- 重命名命名空间、类、方法或字段, 使其遵循 .NET 约定。 
 
--   删除不需要的命名空间、类、方法或字段。 
+- 删除不需要的命名空间、类、方法或字段。 
 
--   将类移到不同的命名空间。 
+- 将类移到不同的命名空间。 
 
--   添加其他支持类以使绑定的设计遵循 .NET framework 模式。 
+- 添加其他支持类以使绑定的设计遵循 .NET framework 模式。 
 
 让我们更详细地讨论**Metadata。**
 
@@ -103,13 +103,13 @@ Xamarin Android **Java 绑定库**尝试自动完成在绑定现有 Android 库�
 
 下面列出了 Java API 的一些常用 XPath 元素:
 
--   `interface`&ndash;用于定位 Java 接口。 `/interface[@name='AuthListener']`例如。
+- `interface`&ndash;用于定位 Java 接口。 `/interface[@name='AuthListener']`例如。
 
--   `class`&ndash;用于定位类。 `/class[@name='MapView']`例如。
+- `class`&ndash;用于定位类。 `/class[@name='MapView']`例如。
 
--   `method`&ndash;用于在 Java 类或接口上查找方法。 `/class[@name='MapView']/method[@name='setTitleSource']`例如。
+- `method`&ndash;用于在 Java 类或接口上查找方法。 `/class[@name='MapView']/method[@name='setTitleSource']`例如。
 
--   `parameter`&ndash;标识方法的参数。 192.168.0.2.`/parameter[@name='p0']`
+- `parameter`&ndash;标识方法的参数。 192.168.0.2.`/parameter[@name='p0']`
 
 
 

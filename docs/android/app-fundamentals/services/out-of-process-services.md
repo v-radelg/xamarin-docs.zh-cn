@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644090"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526249"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在远程进程中运行 Android 服务
 
@@ -83,7 +83,7 @@ _通常, Android 应用程序中的所有组件都将在同一进程中运行。
 
 服务将运行的进程类型取决于`Process`属性的值。 Android 标识三种不同类型的进程:
 
--   **专用流程**&ndash;专用进程是指仅适用于启动它的应用程序。 若要将进程标识为专用, 其名称必须以 **:** (分号) 开头。 上面的代码片段中描述的服务和屏幕截图是一个专用进程。 以下代码片段是一个示例`ServiceAttribute`:
+- **专用流程**&ndash;专用进程是指仅适用于启动它的应用程序。 若要将进程标识为专用, 其名称必须以 **:** (分号) 开头。 上面的代码片段中描述的服务和屏幕截图是一个专用进程。 以下代码片段是一个示例`ServiceAttribute`:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -91,7 +91,7 @@ _通常, Android 应用程序中的所有组件都将在同一进程中运行。
              Exported=true)]
     ```
 
--   **全局进程**&ndash;设备上运行的所有应用程序都可以访问在全局进程中运行的服务。 全局进程必须是以小写字符开头的完全限定类名。
+- **全局进程**&ndash;设备上运行的所有应用程序都可以访问在全局进程中运行的服务。 全局进程必须是以小写字符开头的完全限定类名。
     (除非采取措施来保护服务, 否则其他应用程序可能会与之进行绑定和交互。 在本指南的后面部分将讨论如何保护服务不受未经授权的使用。)
 
     ```csharp
@@ -100,7 +100,7 @@ _通常, Android 应用程序中的所有组件都将在同一进程中运行。
              Exported=true)]
     ```
 
--   **独立进程**&ndash;独立进程是在其自己的沙盒中运行的进程, 该进程与系统的其余部分隔离, 并且没有自己的特殊权限。 若要在隔离的进程中运行服务, `IsolatedProcess`的`ServiceAttribute`属性将设置为`true` , 如以下代码片段所示:
+- **独立进程**&ndash;独立进程是在其自己的沙盒中运行的进程, 该进程与系统的其余部分隔离, 并且没有自己的特殊权限。 若要在隔离的进程中运行服务, `IsolatedProcess`的`ServiceAttribute`属性将设置为`true` , 如以下代码片段所示:
     
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -374,7 +374,7 @@ if (clientMessenger!= null)
 }
 ```
 
-请注意, 在上面的代码示例中`Messenger` , 客户端创建的*实例与服务*接收的对象不同。 这两个不同`Messenger`的对象在两个单独的进程中运行, 表示信道。
+请注意, 在上面的代码示例中`Messenger` , 客户端创建的实例与服务接收的对象不同。 这两个不同`Messenger`的对象在两个单独的进程中运行, 表示信道。
 
 ## <a name="securing-the-service-with-android-permissions"></a>通过 Android 权限保护服务
 
@@ -393,7 +393,7 @@ Android 提供四种不同的权限级别:
 
 使用 Android 权限保护服务的方法有两种:
 
-1.  **实现签名级别安全性**&ndash;签名级别安全是指将权限自动授予那些使用同一密钥进行签名的应用程序, 该密钥用于对保存该服务的 APK 进行签名。 这是开发人员保护其服务的一种简单方法, 使其能够从他们自己的应用程序中进行访问。 通过将的`Permission` `ServiceAttribute`属性设置为来`signature`声明签名级别权限:
+1. **实现签名级别安全性**&ndash;签名级别安全是指将权限自动授予那些使用同一密钥进行签名的应用程序, 该密钥用于对保存该服务的 APK 进行签名。 这是开发人员保护其服务的一种简单方法, 使其能够从他们自己的应用程序中进行访问。 通过将的`Permission` `ServiceAttribute`属性设置为来`signature`声明签名级别权限:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -404,7 +404,7 @@ Android 提供四种不同的权限级别:
     }
     ```
 
-2.  **创建自定义权限**&ndash;服务的开发人员可以为该服务创建自定义权限。 这最适用于开发人员想要与其他开发人员的应用程序共享其服务的情况。 自定义权限需要更多精力才能实现并将在下面介绍。
+2. **创建自定义权限**&ndash;服务的开发人员可以为该服务创建自定义权限。 这最适用于开发人员想要与其他开发人员的应用程序共享其服务的情况。 自定义权限需要更多精力才能实现并将在下面介绍。
 
 下一节将介绍创建自`normal`定义权限的简化示例。 有关 Android 权限的详细信息, 请参阅 Google 的文档, 以了解[& 安全性的最佳做法](https://developer.android.com/training/articles/security-tips.html)。 有关 Android 权限的详细信息, 请参阅应用程序清单的 Android 文档的 "[权限" 部分](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms), 了解有关 android 权限的详细信息。
 
@@ -415,7 +415,7 @@ Android 提供四种不同的权限级别:
 
 若要使用自定义权限, 则在客户端显式请求该权限时, 此服务将声明该权限。
 
-若要在服务 APK 中创建权限, 请`permission`将元素添加到 androidmanifest.xml `manifest`中的  元素。 此权限必须`name`设置、 `protectionLevel`和`label`属性。 `name`特性必须设置为唯一标识该权限的字符串。 该名称将显示在**Android 设置**的 "**应用信息**" 视图中 (如下一节所示)。
+若要在服务 APK 中创建权限, 请`permission`将元素添加到 androidmanifest.xml `manifest`中的元素。 此权限必须`name`设置、 `protectionLevel`和`label`属性。 `name`特性必须设置为唯一标识该权限的字符串。 该名称将显示在**Android 设置**的 "**应用信息**" 视图中 (如下一节所示)。
 
 `protectionLevel`特性必须设置为上面所述的四个字符串值之一。  `label` 和`description`必须引用字符串资源, 并用于向用户提供用户友好名称和说明。
 

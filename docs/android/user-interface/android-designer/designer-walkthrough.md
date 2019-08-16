@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9387b44419af87785d45a25ab254d3361a5615a3
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485927"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523649"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin. Android Designer
 
@@ -25,9 +25,9 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 本文演示如何使用 Xamarin Android Designer 直观地创建用户界面。
 
 > [!TIP]
-> 较新版本的 Visual Studio 支持在 Android Designer 中打开 .xml 文件。
+> Visual Studio 的较新版本支持在 Android Designer 中打开 .xml 文件。
 >
-> Android Designer 支持 main.axml 和 .xml 文件。
+> .axml 和 .xml 文件均受 Android Designer 支持。
 
 ## <a name="walkthrough"></a>演练
 
@@ -105,11 +105,11 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 下一步是修改 UI, 使其显示`ImageView`在左侧, 将两个`TextView`小组件堆叠`ImageView`到右侧。
 
-1.  选择 `ImageView`。
+1. 选择 `ImageView`。
 
-2.  在**属性窗口**的 "搜索" 框中输入*width* , 并找到 "**布局宽度**"。
+2. 在**属性窗口**的 "搜索" 框中输入*width* , 并找到 "**布局宽度**"。
 
-3.  将**布局宽度**设置更改为`wrap_content`:
+3. 将**布局宽度**设置更改为`wrap_content`:
 
 ![设置环绕内容](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
@@ -153,11 +153,11 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 `ImageView`由于正在用于显示颜色 (而不是图像), 因此下一步是删除模板添加的默认图像源。
 
-1.  在设计**器图面**上选择。 `ImageView`
+1. 在设计**器图面**上选择。 `ImageView`
 
-2.  在 "**属性**" 中, 在搜索框中输入*src* 。
+2. 在 "**属性**" 中, 在搜索框中输入*src* 。
 
-3.  单击**Src**属性设置右侧的小正方形, 然后选择 "**重置**":
+3. 单击**Src**属性设置右侧的小正方形, 然后选择 "**重置**":
 
 [![清除 ImageView src 设置](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
@@ -357,11 +357,11 @@ namespace DesignerWalkthrough
 
 下一步是修改 UI, 使其显示`ImageView`在左侧, 将两个`TextView`小组件堆叠`ImageView`到右侧。
 
-1.  选定后, 请单击 "属性" 选项卡。  `ImageView`
+1. 选定后, 请单击 "属性" 选项卡。 `ImageView`
 
-2.  在 "**属性**" 选项卡下, 单击 "**布局**"。
+2. 在 "**属性**" 选项卡下, 单击 "**布局**"。
 
-3.  向下滚动到**ViewGroup** , 并`Width`将设置`wrap_content`更改为:
+3. 向下滚动到**ViewGroup** , 并`Width`将设置`wrap_content`更改为:
 
 [![设置环绕内容](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
@@ -380,7 +380,7 @@ namespace DesignerWalkthrough
 
 ### <a name="modifying-the-spacing"></a>修改间距
 
-下一步是修改 UI 中的 "填充" 和 "边距" 设置, 以便在小组件之间提供更多空间。 选择, 然后单击 "**属性**" 下的 "布局" 选项卡。  `ImageView` `50dp` `Padding`将更改为,`Min Height` 将更改`10dp`为, 并将更改为。 `70dp` `Min Width`
+下一步是修改 UI 中的 "填充" 和 "边距" 设置, 以便在小组件之间提供更多空间。 选择, 然后单击 "**属性**" 下的 "布局" 选项卡。 `ImageView` `50dp` `Padding`将更改为,`Min Height` 将更改`10dp`为, 并将更改为。 `70dp` `Min Width`
 这会在的`ImageView`所有边周围应用填充, 并将其垂直 elongates:
 
 [![设置填充](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
@@ -397,11 +397,11 @@ namespace DesignerWalkthrough
 
 `ImageView`由于正在用于显示颜色 (而不是图像), 因此下一步是删除模板添加的默认图像源。
 
-1.  选择 `ImageView`。
+1. 选择 `ImageView`。
 
-2.  单击 "**属性**" 下的 "**小组件**" 选项卡。
+2. 单击 "**属性**" 下的 "**小组件**" 选项卡。
 
-3.  清除该`Src`设置, 使其为空:
+3. 清除该`Src`设置, 使其为空:
 
 [![清除 ImageView src 设置](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 

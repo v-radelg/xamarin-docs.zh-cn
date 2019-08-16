@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: dfc50defb6eafe705cc9c59b1b9793f1ce48c527
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984299"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522023"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
@@ -37,6 +37,9 @@ Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)类是可以添加`Page`�
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)指定应传递到的`SearchCommand`参数的。 `object`
 
 这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的`ToolbarItem` , 因此, 实例可以是数据绑定的目标。
+
+> [!NOTE]
+> 从[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)对象创建工具栏的另一种方法是[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)将附加属性设置为包含多个视图的布局类。 有关详细信息, 请参阅[在导航栏中显示视图](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)。
 
 ## <a name="create-a-toolbaritem"></a>创建 ToolbarItem
 

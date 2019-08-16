@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 4e98dd824d5044367b975ae66c77327f10e826f1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 729daef1a7a003613bebc4f82067bc267dab8e00
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510185"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522842"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin RatingBar
 
@@ -48,5 +48,5 @@ RatingBar 是一个 UI 小组件, 用于显示一到五个星的分级。 用户
 
     这会从[`RatingBar`](xref:Android.Widget.RatingBar) [`FindViewById`](xref:Android.App.Activity.FindViewById*)布局中捕获小组件, 然后设置事件方法, 并定义在用户设置分级时要执行的操作。 在这种情况下, [`Toast`](xref:Android.Widget.Toast)简单消息会显示新级别。
 
-3.  运行该应用程序。
+3. 运行该应用程序。
 

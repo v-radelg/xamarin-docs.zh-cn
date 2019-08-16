@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: a9297d9a19ef56d658e983c38329b1aa400ffd05
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680938"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521715"
 ---
 # <a name="async-support-overview"></a>异步支持概述
 
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 请注意以下几点:
 
--  方法声明包含`async`关键字。
--  返回类型为`Task<int>` , 因此调用代码可以`int`访问在此方法中计算的值。
--  返回语句`return exampleInt;`是一个整数对象-该方法返回`Task<int>`的事实是语言改进的一部分。
+- 方法声明包含`async`关键字。
+- 返回类型为`Task<int>` , 因此调用代码可以`int`访问在此方法中计算的值。
+- 返回语句`return exampleInt;`是一个整数对象-该方法返回`Task<int>`的事实是语言改进的一部分。
 
 
 ### <a name="calling-an-async-method-1"></a>调用 async 方法1
@@ -148,11 +148,11 @@ GetButton.Click += async (sender, e) => {
 
 注意：
 
--  匿名委托具有 async 关键字前缀。
--  异步方法 DownloadHomepage 返回存储在 sizeTask <int>变量中的任务。
--  代码等待 sizeTask 变量。  *这*是方法挂起的位置, 并将控制权返回给调用代码, 直到异步任务在自己的线程上完成。
--  当在方法的第一行上创建任务时, 不管在该处创建任务, 执行不*会暂停。* Await 关键字表示执行暂停的位置。
--  异步任务完成后, 将从 await 行中设置 intResult, 并在原始线程上继续执行。
+- 匿名委托具有 async 关键字前缀。
+- 异步方法 DownloadHomepage 返回存储在 sizeTask\<变量中的任务 int >。
+- 代码等待 sizeTask 变量。  *这*是方法挂起的位置, 并将控制权返回给调用代码, 直到异步任务在自己的线程上完成。
+- 当在方法的第一行上创建任务时, 不管在该处创建任务, 执行不会暂停。 Await 关键字表示执行暂停的位置。
+- 异步任务完成后, 将从 await 行中设置 intResult, 并在原始线程上继续执行。
 
 
 ### <a name="calling-an-async-method-2"></a>调用 async 方法2
@@ -181,9 +181,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 一些重要事项:
 
--  方法标记为, `async`但返回。 `void` 通常仅对事件处理程序执行此操作 (否则, 你将`Task`返回`Task<TResult>`或)。
--  与前面`await`的示例不同`DownloadHomepage` , 在对变量 ( `intResult` ) 的赋值上, 直接在该方法上使用的代码用于`Task<int>`引用该任务。  *这*是将控件返回给调用方的位置, 直到异步方法在另一个线程上完成。
--  当异步方法完成并返回时, 执行将`await`继续, 这意味着返回整数结果, 然后在 UI 小组件中呈现。
+- 方法标记为, `async`但返回。 `void` 通常仅对事件处理程序执行此操作 (否则, 你将`Task`返回`Task<TResult>`或)。
+- 与前面`await`的示例不同`DownloadHomepage` , 在对变量 ( `intResult` ) 的赋值上, 直接在该方法上使用的代码用于`Task<int>`引用该任务。  *这*是将控件返回给调用方的位置, 直到异步方法在另一个线程上完成。
+- 当异步方法完成并返回时, 执行将`await`继续, 这意味着返回整数结果, 然后在 UI 小组件中呈现。
 
 
 ## <a name="summary"></a>总结

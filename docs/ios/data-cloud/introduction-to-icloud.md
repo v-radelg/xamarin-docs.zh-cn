@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: e4728d14e4fdb914fbfc950ffe38abee031b4c49
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d25ad46b0d8797da8f14987f54006b63d2b8233d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649642"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527576"
 ---
 # <a name="using-icloud-with-xamarinios"></a>对 Xamarin 使用 iCloud
 
@@ -45,9 +45,9 @@ IOS 5 中的 iCloud 存储 API 允许应用程序将用户文档和特定于应�
 
 若要正确配置应用程序以访问 iCloud:
 
--   **查找 TeamID** -登录到[Developer.apple.com](https://developer.apple.com)并访问**成员中心 > 你的帐户 > 开发人员帐户摘要**, 以获取你的团队 id (或单个开发人员的单个 id)。 它将是10个字符串 (例如**A93A5CM278** )-这是 "容器标识符" 的一部分。
+- **查找 TeamID** -登录到[Developer.apple.com](https://developer.apple.com)并访问**成员中心 > 你的帐户 > 开发人员帐户摘要**, 以获取你的团队 id (或单个开发人员的单个 id)。 它将是10个字符串 (例如**A93A5CM278** )-这是 "容器标识符" 的一部分。
 
--   **创建新的应用 id** -若要创建应用 id, 请按照[设备预配指南中的存储技术配置部分](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)中列出的步骤进行操作, 并确保以允许的服务的形式检查**iCloud** :
+- **创建新的应用 id** -若要创建应用 id, 请按照[设备预配指南中的存储技术配置部分](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)中列出的步骤进行操作, 并确保以允许的服务的形式检查**iCloud** :
 
  [![](introduction-to-icloud-images/icloud-sml.png "检查 iCloud 是否为允许的服务")](introduction-to-icloud-images/icloud.png#lightbox)
 
@@ -402,7 +402,7 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 ### <a name="managing-icloud-documents"></a>管理 iCloud 文档
 
-用户可以通过 "设置" 在应用程序外部的 "无处不容器 **" 目录中**管理 iCloud 文档;用户可以查看文件列表, 然后轻扫即可删除。 应用程序代码应能够处理用户删除文档的情况。 不要在**Documents**目录中存储内部应用程序数据。
+用户可以通过 "设置" 在应用程序外部的 "无处不容器" 目录中管理 iCloud 文档;用户可以查看文件列表, 然后轻扫即可删除。 应用程序代码应能够处理用户删除文档的情况。 不要在**Documents**目录中存储内部应用程序数据。
 
  [![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 文档工作流")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 

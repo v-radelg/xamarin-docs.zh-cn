@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 99723c390b217600e6aaea570195cf21b177abf0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e09d8511dc74bdf9368497ff8fe39bd87b62565c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648171"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528290"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>在 Xamarin 中购买不可耗用的产品
 
@@ -55,14 +55,14 @@ ms.locfileid: "68648171"
    
  在某些情况下, 应用程序无法判断是否已购买过不需要的产品:
 
--  如果删除了某个应用程序并将其重新安装到设备上, 则将不会删除所有购买记录 (除非用户执行备份-还原)。 
--  如果用户将应用程序安装在两个 (或更多) 设备上, 并在其中一台设备上进行购买。 其他设备将继续显示可以购买的产品。 
--  如果客户尝试在这些情况下重新购买非使用的产品, 应用商店将再次免费完成产品。 用户界面最初会显示 "执行购买" (例如, 显示确认警报并需要 Apple ID), 但是用户会看到一条消息, 告知他们已购买产品。  
+- 如果删除了某个应用程序并将其重新安装到设备上, 则将不会删除所有购买记录 (除非用户执行备份-还原)。 
+- 如果用户将应用程序安装在两个 (或更多) 设备上, 并在其中一台设备上进行购买。 其他设备将继续显示可以购买的产品。 
+- 如果客户尝试在这些情况下重新购买非使用的产品, 应用商店将再次免费完成产品。 用户界面最初会显示 "执行购买" (例如, 显示确认警报并需要 Apple ID), 但是用户会看到一条消息, 告知他们已购买产品。  
    
    
    
  此方案中的代码路径与常规购买完全相同, 唯一的区别在于:
 
--  用户不会再为该产品付费。
--  传递给应用程序的`OriginalTransaction` 对象将具有一个属性,该属性引用最初购买产品时生成的事务。`SKPaymentTransaction` 
--  销售非耗用产品的应用程序还必须实现 StoreKit 的**还原**功能, 以帮助用户检索现有购买内容。 
+- 用户不会再为该产品付费。
+- 传递给应用程序的`OriginalTransaction` 对象将具有一个属性,该属性引用最初购买产品时生成的事务。`SKPaymentTransaction` 
+- 销售非耗用产品的应用程序还必须实现 StoreKit 的**还原**功能, 以帮助用户检索现有购买内容。 

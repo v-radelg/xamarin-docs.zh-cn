@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: f5a672f6b34edf02eeac0f2820989d0656342167
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a6077029a82577cccbf060f14cdd7586c2793a94
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648828"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529254"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -62,7 +62,7 @@ Xamarin.Forms 是本机、 特定于平台的 UI 系统根据生成的。 例如
 CocosSharp Nuget 程序包中包含的所有创建 CocosSharp 对象所需对象。
 CocosSharp.Forms nuget 包包含`CocosSharpView`类，该类用于托管 CocosSharp 在 Xamarin.Forms 中。
 添加**CocosSharp.Forms** NuGet 和**CocosSharp**将也会自动添加。
-若要执行此操作，右键单击<span class="UIItem">包</span>在.NET Standard 库项目中，选择文件夹<span class="UIItem">添加包...</span>.输入搜索词<span class="UIItem">CocosSharp.Forms</span>，选择<span class="UIItem">适用于 Xamarin.Forms 的 CocosSharp</span>，然后单击<span class="UIItem">添加包</span>。
+若要执行此操作，右键单击**包**在.NET Standard 库项目中，选择文件夹**添加包...** .输入搜索词**CocosSharp.Forms**，选择**适用于 Xamarin.Forms 的 CocosSharp**，然后单击**添加包**。
 
 ![](cocossharp-images/image1.png "添加包对话框")
 

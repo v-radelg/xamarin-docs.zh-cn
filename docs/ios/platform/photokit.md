@@ -1,119 +1,130 @@
 ---
-title: 在 Xamarin.iOS PhotoKit
-description: 本文档介绍了 PhotoKit，讨论其模型对象、 如何查询模型数据，并保存对照片库的更改。
+title: Xamarin 中的 PhotoKit
+description: 本文档介绍 PhotoKit, 讨论其模型对象, 如何查询模型数据, 以及如何将更改保存到照片库。
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 78646a0a420820218a8c61ea34ecc5db4438a91d
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5e5cc20e9fbeaf2b00e022ccdbf67286aed6d5ef
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832739"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528814"
 ---
-# <a name="photokit-in-xamarinios"></a>在 Xamarin.iOS PhotoKit
+# <a name="photokit-in-xamarinios"></a>Xamarin 中的 PhotoKit
 
-PhotoKit 是一个新的框架，允许应用程序查询系统图像库和创建自定义用户界面，可以查看和修改其内容。 它包括多个类，表示图像和视频资源，以及资产，例如唱片集和文件夹的集合。
+PhotoKit 是一个新的框架, 它允许应用程序查询系统映像库并创建自定义用户界面来查看和修改其内容。 它包括多种类, 这些类表示图像和视频资产, 以及资产 (如影集和文件夹) 的集合。
 
 ## <a name="model-objects"></a>模型对象
 
-PhotoKit 表示它调用模型对象中的这些资源。 表示照片和视频本身的模型对象属于类型`PHAsset`。 一个`PHAsset`包含元数据，例如资产的媒体类型和其创建日期。
-同样，`PHAssetCollection`和`PHCollectionList`类分别包含资产集合和集合列表有关的元数据。 资产集合是资产，例如所有照片和视频在给定年份的组。 同样，集合列表是组的资产集合，如照片和视频按年分组。
+PhotoKit 在它调用模型对象的内容中表示这些资产。 代表照片和视频的模型对象的类型`PHAsset`为。 `PHAsset`包含元数据 (例如资产的媒体类型) 及其创建日期。
+同样, 和`PHAssetCollection` `PHCollectionList`类分别包含有关资产集合和集合列表的元数据。 资产集合是一组资产, 例如给定年份的所有照片和视频。 同样, 收集列表也是一组资产集合, 如按年份分组的照片和视频。
 
 ## <a name="querying-model-data"></a>查询模型数据
 
-PhotoKit 轻松查询模型数据通过各种 fetch 方法。 例如，若要检索的所有映像，将调用`PFAsset.Fetch`，并传递`PHAssetMediaType.Image`媒体类型。
+使用 PhotoKit 可以轻松地通过各种 fetch 方法来查询模型数据。 例如, 若要检索所有图像, 请调用`PFAsset.Fetch`, `PHAssetMediaType.Image`传递媒体类型。
 
-    PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
+```csharp
+PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
+```
 
-`PHFetchResult`实例中将包含所有`PFAsset`实例表示映像。 若要获取这些图像本身，请使用`PHImageManager`(或缓存的版本中， `PHCachingImageManager`) 来发出请求的映像，通过调用`RequestImageForAsset`。 例如，下面的代码检索图像中每个资产`PHFetchResult`要在集合视图单元格中显示：
+然后`PHFetchResult` , 实例将包含表示图像`PFAsset`的所有实例。 若要获取图像本身, 请使用`PHImageManager` (或缓存`PHCachingImageManager`版本) 通过调用`RequestImageForAsset`来发出对图像的请求。 例如, 以下代码将为中`PHFetchResult`的每个资产检索一个图像, 以便在 "集合" 视图单元格中显示:
 
-
-    public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
-    {
-              var imageCell = (ImageCell)collectionView.DequeueReusableCell (cellId, indexPath);
-            imageMgr.RequestImageForAsset ((PHAsset)fetchResults [(uint)indexPath.Item], thumbnailSize,
-        PHImageContentMode.AspectFill, new PHImageRequestOptions (), (img, info) => {
+```csharp
+public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
+{
+    var imageCell = (ImageCell)collectionView.DequeueReusableCell (cellId, indexPath);
+    imageMgr.RequestImageForAsset (
+        (PHAsset)fetchResults [(uint)indexPath.Item],
+        thumbnailSize,
+        PHImageContentMode.AspectFill, new PHImageRequestOptions (),
+        (img, info) => {
             imageCell.ImageView.Image = img;
-        });
-        return imageCell;
-    }
+        }
+    );
+    return imageCell;
+}
+```
 
-这会导致的映像，如下所示的网格：
+这会生成图像网格, 如下所示:
 
-![](photokit-images/image4.png "正在运行的应用显示一个图像网格")
- 
-## <a name="saving-changes-to-the-photo-library"></a>将更改保存到照片库
+![](photokit-images/image4.png "正在运行的应用程序显示图像网格")
 
-这是如何处理查询和读取数据。 此外可以对库重新编写的更改。 由于多个希望应用程序能够与系统照片库进行交互，您可以注册观察者的使用 PhotoLibraryObserver 更改通知。 然后，当更改，你的应用程序可以相应地更新。 例如，下面是一个简单实现，以重新加载在上面的集合视图：
+## <a name="saving-changes-to-the-photo-library"></a>保存对照片库所做的更改
 
-    class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
+这就是处理查询和读取数据的方法。 你还可以将更改写入库。 由于多个感兴趣的应用程序能够与系统照片库进行交互, 因此你可以注册一个观察者, 以便使用 PhotoLibraryObserver 通知更改。 然后, 当发生更改时, 应用程序可以相应地进行更新。 例如, 下面是一个简单的实现, 用于重载上面的集合视图:
+
+```csharp
+class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
+{
+    readonly PhotosViewController controller;
+    public PhotoLibraryObserver (PhotosViewController controller)
+
     {
-        readonly PhotosViewController controller;
-        public PhotoLibraryObserver (PhotosViewController controller)
-        
-        {
-            this.controller = controller;
-        }
-    
-        public override void PhotoLibraryDidChange (PHChange changeInstance)
-        {
-            DispatchQueue.MainQueue.DispatchAsync (() => {
-            var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
-            controller.fetchResults = changes.FetchResultAfterChanges;
-            controller.CollectionView.ReloadData ();
-            });
-        }
+        this.controller = controller;
     }
-    
-若要实际将更改写回从你的应用程序，您创建更改请求。 每个模型类有一个关联的更改请求类。 例如，若要更改 PHAsset，则创建 PHAssetChangeRequest。 若要执行的写回的照片库和发送给观察程序与上述更改的步骤如下：
+
+    public override void PhotoLibraryDidChange (PHChange changeInstance)
+    {
+        DispatchQueue.MainQueue.DispatchAsync (() => {
+        var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
+        controller.fetchResults = changes.FetchResultAfterChanges;
+        controller.CollectionView.ReloadData ();
+        });
+    }
+}
+```
+
+若要实际从你的应用程序中写回更改, 你需要创建一个更改请求。 每个模型类都具有关联的更改请求类。 例如, 若要更改 PHAsset, 请创建一个 PHAssetChangeRequest。 执行写回照片库并发送到观察者的更改的步骤如下:
 
 - 执行编辑操作。
-- 将筛选出的图像数据保存到 PHContentEditingOutput 实例。
-- 请更改请求将更改窗体发布编辑输出。
+- 将筛选的图像数据保存到 PHContentEditingOutput 实例。
+- 发出更改请求, 以发布编辑输出中的更改。
 
-下面是将更改写回适用 Core 映像树上筛选器的图像的示例：
+下面是一个示例, 该示例将更改写入到应用核心映像 noir 筛选器的映像:
 
-    void ApplyNoirFilter (object sender, EventArgs e)
-    {
-            
-            Asset.RequestContentEditingInput (new PHContentEditingInputRequestOptions (), (input, options) => {
-            
+```csharp
+void ApplyNoirFilter (object sender, EventArgs e)
+{
+
+    Asset.RequestContentEditingInput (new PHContentEditingInputRequestOptions (), (input, options) => {
+
         // perform the editing operation, which applies a noir filter in this case
-            var image = CIImage.FromUrl (input.FullSizeImageUrl);
-            image = image.CreateWithOrientation((CIImageOrientation)input.FullSizeImageOrientation);
-            var noir = new CIPhotoEffectNoir {
-                Image = image
-            };
-            var ciContext = CIContext.FromOptions (null);
-            var output = noir.OutputImage;
-            var uiImage = UIImage.FromImage (ciContext.CreateCGImage (output, output.Extent));
-            imageView.Image = uiImage;
+        var image = CIImage.FromUrl (input.FullSizeImageUrl);
+        image = image.CreateWithOrientation((CIImageOrientation)input.FullSizeImageOrientation);
+        var noir = new CIPhotoEffectNoir {
+            Image = image
+        };
+        var ciContext = CIContext.FromOptions (null);
+        var output = noir.OutputImage;
+        var uiImage = UIImage.FromImage (ciContext.CreateCGImage (output, output.Extent));
+        imageView.Image = uiImage;
         //
         // save the filtered image data to a PHContentEditingOutput instance
-            var editingOutput = new PHContentEditingOutput(input);
-            var adjustmentData = new PHAdjustmentData();
-            var data = uiImage.AsJPEG();
-            NSError error;
-            data.Save(editingOutput.RenderedContentUrl, false, out error);
-            editingOutput.AdjustmentData = adjustmentData;
+        var editingOutput = new PHContentEditingOutput(input);
+        var adjustmentData = new PHAdjustmentData();
+        var data = uiImage.AsJPEG();
+        NSError error;
+        data.Save(editingOutput.RenderedContentUrl, false, out error);
+        editingOutput.AdjustmentData = adjustmentData;
         //
         // make a change request to publish the changes form the editing output
-            PHPhotoLibrary.GetSharedPhotoLibrary.PerformChanges (() => {
-                PHAssetChangeRequest request = PHAssetChangeRequest.ChangeRequest(Asset);
-                request.ContentEditingOutput = editingOutput;
-          },
-          (ok, err) => Console.WriteLine ("photo updated successfully: {0}", ok));
-      });
-    }
-    
-当用户选择按钮时，应用筛选器：
+        PHPhotoLibrary.GetSharedPhotoLibrary.PerformChanges (() => {
+            PHAssetChangeRequest request = PHAssetChangeRequest.ChangeRequest(Asset);
+            request.ContentEditingOutput = editingOutput;
+        },
+        (ok, err) => Console.WriteLine ("photo updated successfully: {0}", ok));
+    });
+}
+```
 
-![](photokit-images/image5.png "正在应用的筛选器的一个示例")
- 
-并感谢 PHPhotoLibraryChangeObserver，更改都反映在集合视图时用户后退浏览：
+当用户选择该按钮时, 将应用筛选器:
 
-![](photokit-images/image6.png "当用户导航回会反映在集合视图中更改")
+![](photokit-images/image5.png "要应用的筛选器示例")
+
+而且, 由于 PHPhotoLibraryChangeObserver, 当用户向后导航时, 该更改将反映在 "集合" 视图中:
+
+![](photokit-images/image6.png "当用户向后导航时, 该更改将反映在 \"集合\" 视图中。")

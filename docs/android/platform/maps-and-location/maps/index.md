@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 80ec7a2ae13b3c76bccae80d2c6956533b027047
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e36a8e25c5924ac82356c0f1c3110d1596f81cbf
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643266"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523881"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何将 Google Maps 和 Location 与 Xamarin 配合使用
 
@@ -22,9 +22,9 @@ _本文介绍如何将 maps 和 location 与 Xamarin 一起使用。其中包括
 
 映射技术是移动设备的普遍补充。 台式计算机和便携式计算机不会在位置感知内置。 另一方面, 移动设备使用此类应用程序来查找设备, 并显示变化的位置信息。 Android 具有强大的内置技术, 可在设备上使用可能提供的位置硬件显示地图上的位置数据。 本文介绍了在 Xamarin 中映射应用程序所需的各种功能, 包括: 
 
--  使用内置 maps 应用程序快速添加映射功能。
--  使用 Maps API 控制地图的显示。
--  使用多种技术来添加图形覆盖。
+- 使用内置 maps 应用程序快速添加映射功能。
+- 使用 Maps API 控制地图的显示。
+- 使用多种技术来添加图形覆盖。
 
 本节中的主题涵盖各种映射功能。
 首先, 他们将介绍如何利用 Android 的内置地图应用程序以及如何显示位置的全景街道视图。 然后讨论如何使用 Maps API 直接在应用程序中合并映射功能, 同时涵盖如何控制地图的位置和显示, 以及如何添加图形覆盖。

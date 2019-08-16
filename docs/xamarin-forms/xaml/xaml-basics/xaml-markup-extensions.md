@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655486"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529264"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 标记扩展
 
@@ -441,9 +441,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 多个标记扩展是固有的 XAML 和在 Xamarin.Forms XAML 文件中受支持。 其中一些不常使用，但在需要时至关重要：
 
--  如果属性具有非`null`值的默认值，但你想要将其设置为`null`，将其设置为`{x:Null}`标记扩展。
--  如果某个属性属于类型`Type`，你可以将其分配给`Type`对象使用标记扩展`{x:Type someClass}`。
--  可在 XAML 中使用定义数组`x:Array`标记扩展。 此标记扩展具有所需的属性名为`Type`，该值指示数组中元素的类型。
+- 如果属性具有非`null`值的默认值，但你想要将其设置为`null`，将其设置为`{x:Null}`标记扩展。
+- 如果某个属性属于类型`Type`，你可以将其分配给`Type`对象使用标记扩展`{x:Type someClass}`。
+- 可在 XAML 中使用定义数组`x:Array`标记扩展。 此标记扩展具有所需的属性名为`Type`，该值指示数组中元素的类型。
 - `Binding`标记扩展中讨论了[第 4 部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 ## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression 标记扩展

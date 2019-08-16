@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9d36101c1416ea8ddf451f5677258972c4f34990
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1e8723fd8cc2119c6d65ea760d514373d00ce1d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511133"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521820"
 ---
 # <a name="unified-api-overview"></a>Unified API 概述
 
@@ -40,8 +40,8 @@ Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码, 并支持具�
 
 从此时开始, 我们的 Api 将以两种方式出现:
 
--  **Classic API:** 仅限32位 (仅限), 在`monotouch.dll`和`XamMac.dll`程序集中公开。
--  **Unified API:** 使用`Xamarin.iOS.dll` 和`Xamarin.Mac.dll`程序集中提供的单个 API 支持32和64位开发。
+- **Classic API:** 仅限32位 (仅限), 在`monotouch.dll`和`XamMac.dll`程序集中公开。
+- **Unified API:** 使用`Xamarin.iOS.dll` 和`Xamarin.Mac.dll`程序集中提供的单个 API 支持32和64位开发。
 
 这意味着, 对于企业开发人员 (不针对应用商店), 可以继续使用现有的经典 Api, 因为我们将不断保留这些 Api, 或升级到新 Api。
 
@@ -55,8 +55,8 @@ Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码, 并支持具�
 
 这样就可以更轻松地在 Mac 和 iOS 平台之间共享代码, 而无需进行条件编译, 并会减少源代码文件顶部的干扰。
 
--  **Classic API:** 命名空间`MonoTouch.`使用`MonoMac.`或前缀。
--  **Unified API:** 没有命名空间前缀
+- **Classic API:** 命名空间`MonoTouch.`使用`MonoMac.`或前缀。
+- **Unified API:** 没有命名空间前缀
 
 ## <a name="runtime-defaults"></a>运行时默认值
 
@@ -133,7 +133,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>数组和 System.object
 
-由于C#索引器需要类型`int`, 因此必须将值显式转换`nint`为`int`以访问集合或数组中的元素。 例如:
+由于C#索引器需要类型`int`, 因此必须将值显式转换`nint`为`int`以访问集合或数组中的元素。 例如：
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -179,9 +179,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 在 Xamarin iOS 经典 API (monotouch.dialog) 中, 属性以`[Obsolete]`两种不同的方式使用:
 
--  **弃用的 iOS API:** 这是因为 Apple 提示您停止使用 API, 因为它被更新了。 Classic API 仍可正常工作, 并且通常是必需的 (如果支持旧版本的 iOS)。
+- **弃用的 iOS API:** 这是因为 Apple 提示您停止使用 API, 因为它被更新了。 Classic API 仍可正常工作, 并且通常是必需的 (如果支持旧版本的 iOS)。
  此类 API (和`[Obsolete]`属性) 包含在新的 Xamarin iOS 程序集中。
--  **API 不正确**某些 API 的名称上有错误。
+- **API 不正确**某些 API 的名称上有错误。
 
 对于原始程序集 (monotouch.dialog 和 XamMac), 我们保存了旧代码以实现兼容, 但已将其从 Unified API 程序集 (Xamarin. .dll 和 Xamarin) 中删除。
 
@@ -195,7 +195,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 为避免出现这种问题`IntPtr` , 构造函数现在`protected`位于**统一**API 中, 仅用于子类化。 这将确保使用正确的/安全 API 通过句柄创建托管实例, 即
 
-    var label = Runtime.GetNSObject<UILabel> (handle);
+```csharp
+var label = Runtime.GetNSObject<UILabel> (handle);
+```
 
 此 API 将返回现有的托管实例 (如果已存在) 或将创建一个新实例 (如果需要)。 它已在经典 API 和统一 API 中可用。
 
@@ -222,15 +224,17 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 `Action`以前, 由于无法分配给`UITapGestureRecognizer` `NSAction`, 将导致编译器错误, `Action`但由于现在使用而不`NSAction`是, 它在统一 api 中是有效的。
 
-### <a name="custom-delegates-replaced-with-actiont"></a>自定义委托替换为操作<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>自定义委托替换为\<操作 T >
 
 在**统一**的部分 (例如一个参数) 中, .net 委托已替换`Action<T>`为。 例如，
 
-    public delegate void NSNotificationHandler (NSNotification notification);
+```csharp
+public delegate void NSNotificationHandler (NSNotification notification);
+```
 
 现在可用作`Action<NSNotification>`。 这会在 Xamarin 和你自己的应用程序中提高代码重用性并减少代码重复。
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>任务<bool>已替换为 task < Boolean, NSError > >
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>任务\<bool > 替换为 task < Boolean, NSError > >
 
 在**经典**中, 有一些返回`Task<bool>`的异步 api。 但是, 其中的某些在是签名的一部分`NSError`时使用, 即`bool`已存在`true` , 你`NSError`必须捕获异常才能获取。
 
@@ -240,13 +244,17 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 在少数情况下, 某些常量必须从`string`更改为`NSString`, 例如`UITableViewCell`
 
-**传统型**
+**经典**
 
-    public virtual string ReuseIdentifier { get; }
+```csharp
+public virtual string ReuseIdentifier { get; }
+```
 
 **统**
 
-    public virtual NSString ReuseIdentifier { get; }
+```csharp
+public virtual NSString ReuseIdentifier { get; }
+```
 
 通常, 我们更喜欢 .net `System.String`类型。 但是, 尽管有 Apple 准则, 但某些本机 API 比较的是常数指针 (而不是字符串本身), 这仅在我们将常数`NSString`公开为时才起作用。
 
@@ -258,25 +266,33 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 这些限制已在统一 Api 上删除并清除。 大多数更改将如下所示:
 
-**传统型**
+**经典**
 
-    public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 **统**
 
-    public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```
 
-前缀表示统一公开接口, 而不是 ObjC 协议的特定类型。  `I` 这样就可以轻松地不希望为 Xamarin 提供的特定类型划分子类。
+前缀表示统一公开接口, 而不是 ObjC 协议的特定类型。 `I` 这样就可以轻松地不希望为 Xamarin 提供的特定类型划分子类。
 
 它还允许更精确、更易于使用的 API, 例如:
 
-**传统型**
+**经典**
 
-    public virtual void SelectionDidChange (NSObject uiTextInput);
+```csharp
+public virtual void SelectionDidChange (NSObject uiTextInput);
+```
 
 **统**
 
-    public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```csharp
+public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```
 
 此类 API 现在更易于我们, 无需参考文档, IDE 代码完成将为你提供基于协议/接口的更多有用建议。
 

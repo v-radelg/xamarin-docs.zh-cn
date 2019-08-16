@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655372"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528728"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin 中的 TextKit
 
@@ -20,17 +20,17 @@ TextKit 是一个新的 API, 它提供强大的文本布局和呈现功能。 �
 
 为了使 TextKit 的功能可用于标准控件, 已重新实现多个 iOS 文本控件以使用 TextKit, 其中包括:
 
--  UITextView
--  UITextField
--  UILabel
+- UITextView
+- UITextField
+- UILabel
 
 ## <a name="architecture"></a>体系结构
 
 TextKit 提供了用于将文本存储与布局和显示分离的分层体系结构, 包括以下类:
 
--  `NSTextContainer`–提供坐标系统和用于布局文本的几何图形。
--  `NSLayoutManager`–通过将文本转换为字型来布局文本。 
--  `NSTextStorage`–保存文本数据, 并处理批文本属性更新。 任何批更新都将传递到布局管理器, 以实际处理更改, 如重新计算布局和重绘文本。
+- `NSTextContainer`–提供坐标系统和用于布局文本的几何图形。
+- `NSLayoutManager`–通过将文本转换为字型来布局文本。 
+- `NSTextStorage`–保存文本数据, 并处理批文本属性更新。 任何批更新都将传递到布局管理器, 以实际处理更改, 如重新计算布局和重绘文本。
 
 
 这三个类应用于呈现文本的视图。 内置文本`UITextView`处理视图 (如`UITextField`、和`UILabel` ) 已设置, 但你也可以创建它们并将其应用于任何`UIView`实例。

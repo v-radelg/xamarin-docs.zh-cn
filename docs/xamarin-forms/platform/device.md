@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 802f9ff60f74914a9369c7ef281cb2e70ca01d4b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655968"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529058"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 设备类
 
@@ -71,12 +71,12 @@ layout.Margin = new Thickness(5, top, 5, 0);
 
 `Device.Idiom`属性可用于更改布局或功能，具体取决于设备应用程序上运行。 [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom)枚举包含的以下值：
 
--  **Phone** – iPhone、 iPod touch 和 Android 设备窄于 600 dip ^
--  **平板电脑**– iPad，Windows 设备和 Android 设备宽于 600 dip ^
--  **桌面**– 仅在返回[UWP 应用](~/xamarin-forms/platform/windows/installation/index.md)Windows 10 桌面计算机上 (返回`Phone`移动 Windows 设备，包括连续体方案中)
--  **电视**– Tizen TV 设备
--  **观看**– Tizen 监视设备
--  **不支持**– 未使用
+- **Phone** – iPhone、 iPod touch 和 Android 设备窄于 600 dip ^
+- **平板电脑**– iPad，Windows 设备和 Android 设备宽于 600 dip ^
+- **桌面**– 仅在返回[UWP 应用](~/xamarin-forms/platform/windows/installation/index.md)Windows 10 桌面计算机上 (返回`Phone`移动 Windows 设备，包括连续体方案中)
+- **电视**– Tizen TV 设备
+- **观看**– Tizen 监视设备
+- **不支持**– 未使用
 
 *^ dip 不一定是物理像素计数*
 

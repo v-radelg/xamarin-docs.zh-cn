@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645157"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522876"
 ---
 # <a name="adding-a-second-toolbar"></a>添加第二个工具栏
 
@@ -86,13 +86,13 @@ android:background="?android:attr/colorAccent
 
 向辅助副本`Toolbar`添加菜单项: 
 
-1.  将菜单图标添加到`mipmap-`应用项目的文件夹中 (如果需要)。
+1. 将菜单图标添加到`mipmap-`应用项目的文件夹中 (如果需要)。
 
-2.  通过将附加的菜单资源文件添加到**资源/菜单**来定义菜单项的内容。 
+2. 通过将附加的菜单资源文件添加到**资源/菜单**来定义菜单项的内容。 
 
-3.  在活动的`OnCreate`方法中, `Toolbar`查找 (通过`Toolbar`调用`FindViewById`) 并放大的菜单。
+3. 在活动的`OnCreate`方法中, `Toolbar`查找 (通过`Toolbar`调用`FindViewById`) 并放大的菜单。
 
-4.  为新菜单项实现`OnCreate`中的 click 处理程序。 
+4. 为新菜单项实现`OnCreate`中的 click 处理程序。 
 
 以下部分详细说明了此过程:**剪切**、**复制**和**粘贴**菜单项添加到底部`Toolbar`。 
 
@@ -159,7 +159,7 @@ editToolbar.MenuItemClick += (sender, e) => {
 ## <a name="the-up-button"></a>向上键 
 
 大多数 Android 应用依赖于应用导航的 "**后退**" 按钮;按 "**后退**" 按钮会使用户进入上一屏幕。
-但是, 您可能还需要**提供一个按钮**, 使用户可以轻松地导航到应用程序的主屏幕。 当用户选择 "**向上**" 按钮时, 用户会在应用层次结构&ndash;中上移到较高的级别, 即, 应用在后退堆栈中弹出用户多个活动, 而不是弹出回以前访问的活动。 
+但是, 您可能还需要提供一个按钮 , 使用户可以轻松地导航到应用程序的主屏幕。 当用户选择 "**向上**" 按钮时, 用户会在应用层次结构&ndash;中上移到较高的级别, 即, 应用在后退堆栈中弹出用户多个活动, 而不是弹出回以前访问的活动。 
 
 若要在使用`Toolbar`作为操作栏的第二个活动中启用 "**上移**" 按钮`SetDisplayHomeAsUpEnabled` , 请调用第二个活动`OnCreate`的方法中的和`SetHomeButtonEnabled`方法:
 
@@ -183,7 +183,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 [![工具栏中的向上按钮左箭头的屏幕截图示例](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-点击此**按钮**会使应用返回到`MainActivity`。 在具有多个层次结构级别的更复杂的应用中, 点击此按钮会将用户返回到应用中的下一个最高级别, 而不是返回到上一屏幕。 
+点击此按钮会使应用返回到`MainActivity`。 在具有多个层次结构级别的更复杂的应用中, 点击此按钮会将用户返回到应用中的下一个最高级别, 而不是返回到上一屏幕。 
 
 
 

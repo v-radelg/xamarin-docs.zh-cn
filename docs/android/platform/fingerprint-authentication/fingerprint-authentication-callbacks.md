@@ -6,32 +6,32 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: c720a30a59eea8f1ed74033da8d1c045a1fb9109
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb4933695d34a0805be4139c7b345f7a70f33613
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023478"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524332"
 ---
 # <a name="responding-to-authentication-callbacks"></a>响应身份验证回调
 
-指纹扫描程序在后台运行在它自己的线程上和完成后，它将通过调用的一种方法报告的扫描结果`FingerprintManager.AuthenticationCallback`UI 线程上。 Android 应用程序必须提供自己的处理程序扩展了此实现以下所有方法的抽象类：
+指纹扫描器在后台运行在其自己的线程上, 完成后, 它将通过调用 UI 线程上的的`FingerprintManager.AuthenticationCallback`一种方法来报告扫描结果。 Android 应用程序必须提供其自己的处理程序, 该处理程序可扩展此抽象类, 实现以下所有方法:
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; 不可恢复的错误时调用。 没有任何应用程序或用户可以如何更正这种情况只可能是重试。
-* **`OnAuthenticationFailed()`** &ndash; 已检测到但无法识别该设备的指纹时，将调用此方法。
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; 可恢复的错误，如通过扫描程序快速实现到手指时调用。
-* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; 这称为时已识别指纹。
+* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash;当出现无法恢复的错误时调用。 除了可能再次尝试外, 应用程序或用户不能执行其他操作来纠正这种情况。
+* **`OnAuthenticationFailed()`** &ndash;检测到指纹但设备无法识别指纹时, 会调用此方法。
+* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash;当存在可恢复的错误时调用, 如手指通过扫描程序重击。
+* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash;识别指纹后, 会调用此。
 
-如果`CryptoObject`调用时使用`Authenticate`，建议调用`Cipher.DoFinal`中`OnAuthenticationSuccessful`。
-`DoFinal` 如果密码已被篡改或未正确初始化，将引发异常，这表明，指纹扫描程序的结果可能已被篡改应用程序之外。
+如果在`CryptoObject`调用`Authenticate`时使用了, 则建议在中`OnAuthenticationSuccessful`调用`Cipher.DoFinal` 。
+`DoFinal`如果密码被篡改或初始化不正确, 则会引发异常, 指示指纹扫描器的结果可能在应用程序外被篡改。
 
 
 > [!NOTE]
-> 建议保留回调类相对较轻量和免费的应用程序特定逻辑。 回调应充当"流量 cop"Android 应用程序和结果之间指纹扫描程序。
+> 建议保持回调类相对较轻量, 并释放应用程序特定逻辑。 回调应充当 Android 应用程序和指纹扫描器的结果之间的 "流量 cop"。
 
 ## <a name="a-sample-authentication-callback-handler"></a>示例身份验证回调处理程序
 
-下面的类是举例说明最小`FingerprintManager.AuthenticationCallback`实现： 
+下面的类是一个最小`FingerprintManager.AuthenticationCallback`实现的示例: 
 
 ```csharp
 class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
@@ -91,70 +91,70 @@ class MyAuthCallbackSample : FingerprintManagerCompat.AuthenticationCallback
 }
 ```
 
-`OnAuthenticationSucceeded` 检查以查看是否`Cipher`提供给`FingerprintManager`时`Authentication`调用时。 如果是这样，`DoFinal`密码上调用方法。 这会关闭`Cipher`，将其还原到其原始状态。 如果出现问题具有密码，然后`DoFinal`将引发异常，并且应考虑身份验证尝试已失败。
+`OnAuthenticationSucceeded`检查是否在调用`FingerprintManager`时`Authentication`向提供。 `Cipher` 如果是这样, `DoFinal`则对密码调用方法。 这会关闭`Cipher`, 并将其还原到其原始状态。 如果密码有问题, 则`DoFinal`会引发异常, 并且身份验证尝试应视为已失败。
 
-`OnAuthenticationError`和`OnAuthenticationHelp`回调每个接收一个整数，指示出现了什么问题。 以下部分介绍每个可能的帮助或错误代码。 两个回调具有相似的用途&ndash;以通知应用程序的指纹身份验证失败。 它们之间的区别是在严重级别。 `OnAuthenticationHelp` 用户可恢复错误，如轻扫太快; 指纹`OnAuthenticationError`是更严重错误，例如损坏的指纹扫描程序。
+`OnAuthenticationError` 和`OnAuthenticationHelp`回调分别接收指示问题的整数。 以下部分介绍每个可能的帮助或错误代码。 这两个回调的作用&ndash;类似, 通知应用程序指纹身份验证已失败。 它们之间的不同之处在于严重性。 `OnAuthenticationHelp`用户可恢复的错误, 例如轻扫指纹的速度太快;`OnAuthenticationError`出现严重错误, 如指纹扫描器损坏。
 
-请注意，`OnAuthenticationError`通过取消指纹扫描时，将调用`CancellationSignal.Cancel()`消息。 `errMsgId`参数将具有值为 5 (`FingerprintState.ErrorCanceled`)。 根据要求的实现`AuthenticationCallbacks`可能不同于其他错误处理这种情况。 
+请注意`OnAuthenticationError` , 当`CancellationSignal.Cancel()`通过消息取消指纹扫描时, 将调用。 参数的值将为 5 (`FingerprintState.ErrorCanceled`)。 `errMsgId` 根据要求, 的`AuthenticationCallbacks`实现可能会不同于其他错误来处理这种情况。 
 
-`OnAuthenticationFailed` 已成功扫描指纹，但与任何已注册设备的指纹不匹配时调用。 
+`OnAuthenticationFailed`如果指纹已成功扫描, 但与向设备注册的任何指纹不匹配, 则会调用。 
 
 ## <a name="help-codes-and-error-message-ids"></a>帮助代码和错误消息 Id 
 
-中可能找到的列表和说明的错误代码和帮助代码[Android SDK 文档](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)FingerprintManager 类。 Xamarin.Android 表示这些值用于`Android.Hardware.Fingerprints.FingerprintState`枚举：
+有关错误代码和帮助代码的列表和说明, 请参阅 FingerprintManager 类的[Android SDK 文档](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html#FINGERPRINT_ACQUIRED_GOOD)。 Xamarin 通过`Android.Hardware.Fingerprints.FingerprintState`枚举表示这些值:
 
 
--   **`AcquiredGood`** &ndash; （值 0）获取图像的很好。
+- **`AcquiredGood`** &ndash; (值为 0) 获取的图像良好。
 
 
--   **`AcquiredImagerDirty`** &ndash; （值 3）指纹图像的传感器上的可疑或检测到灰尘由于过多的干扰。 例如，它是合理地在多个后返回此`AcquiredInsufficient`或实际检测的传感器 （像素滞留、 负责等） 上的灰尘。 用户需要采取措施来清理传感器时，返回此项。
+- **`AcquiredImagerDirty`** &ndash; (值 3) 在传感器上怀疑或检测到灰尘时, 指纹映像太干扰。 例如, 在传感器上检测到多个`AcquiredInsufficient`或实际检测到灰尘 (粘滞像素、大量等) 后, 合理地将其返回。 返回此时, 用户应采取措施清理传感器。
 
 
--   **`AcquiredInsufficient`** &ndash; （值 2）指纹图像的过多的干扰处理由于检测到的条件 （即 dry 外观） 或可能是脏的传感器 (请参阅`AcquiredImagerDirty`。
-
-
-
--   **`AcquiredPartial`** &ndash; （值 1）检测到仅部分指纹映像。 注册期间，用户应通知上需要发生若要解决此问题，例如，&ldquo;用力按传感器。&rdquo;
+- **`AcquiredInsufficient`** (值 2) 由于检测到的条件 (即晾干外观) 或可能的脏传感器 (请参阅`AcquiredImagerDirty`), 指纹映像太干扰。 &ndash;
 
 
 
--   **`AcquiredTooFast`** &ndash; （值为 5）指纹映像是由于快速动作不完整。 尽管主要适用于线性数组传感器，还时会发生此情况期间获取移动手指。 应会要求用户移动手指速度较慢 （线性） 或将手指保留更长的传感器上。
+- **`AcquiredPartial`** &ndash; (值 1) 仅检测到部分指纹映像。 在注册期间, 应通知用户要解决此问题所需执行的操作, 例如, &ldquo;用力按传感器。&rdquo;
 
 
 
-
--   **`AcquiredToSlow`** &ndash; （值 4）指纹图像会由于缺乏动作不可读。 这是最适合于需要进行轻扫移动的线性数组传感器。
-
-
-
--   **`ErrorCanceled`** &ndash; （值为 5）该操作已取消，因为指纹传感器是不可用。 例如，这可能会发生时切换用户、 设备锁定状态，或另一个挂起操作会阻止或禁用它。
-
-
-
--   **`ErrorHwUnavailable`** &ndash; （值 1）硬件不可用。 请稍后再试。
+- **`AcquiredTooFast`** &ndash; (值 5) 由于快速动作, 指纹映像不完整。 大多数情况下适用于线性阵列传感器, 如果在获取过程中移动了 finger, 也会发生这种情况。 应要求用户将手指向后移动 (线性), 或将手指置于传感器的更长时间。
 
 
 
 
--   **`ErrorLockout`** &ndash; （值 7）该操作已取消，因为 API 因尝试次数过多而被锁定。
+- **`AcquiredToSlow`** &ndash; (值 4) 由于缺少动作, 无法读取指纹映像。 这对于需要轻扫运动的线性阵列传感器非常合适。
+
+
+
+- **`ErrorCanceled`** &ndash; (值 5) 操作被取消, 因为指纹传感器不可用。 例如, 在切换用户、锁定设备或另一个挂起操作阻止或禁用此操作时, 可能会发生这种情况。
+
+
+
+- **`ErrorHwUnavailable`** &ndash; (值 1) 硬件不可用。 请稍后再试。
 
 
 
 
--   **`ErrorNoSpace`** &ndash; （值 4）为操作，例如注册; 返回的错误状态无法完成该操作，因为没有要完成该操作的剩余足够的存储。
+- **`ErrorLockout`** &ndash; (值 7) 该操作已被取消, 因为由于尝试次数过多, API 被锁定。
 
 
 
--   **`ErrorTimeout`** &ndash; （值 3）当前请求已运行太长时返回的错误状态。 这是为了防止程序无限期地等待指纹传感器。 超时是平台和特定于传感器的但通常大约 30 秒。
+
+- **`ErrorNoSpace`** &ndash; (值 4) 为注册操作返回的错误状态; 该操作无法完成, 因为没有足够的存储空间来完成该操作。
 
 
 
--   **`ErrorUnableToProcess`** &ndash; （值 2）传感器无法处理当前映像时，返回的错误状态。
+- **`ErrorTimeout`** &ndash; (值 3) 当前请求运行时间太长时返回的错误状态。 这是为了防止程序无限期地等待指纹传感器。 超时是平台和特定于传感器的, 但通常约为30秒。
+
+
+
+- **`ErrorUnableToProcess`** &ndash; (值 2) 传感器无法处理当前图像时返回的错误状态。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [Cipher](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
+- [密码](https://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html)
 - [AuthenticationCallback](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.AuthenticationCallback.html)
 - [AuthenticationCallback](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.AuthenticationCallback.html)

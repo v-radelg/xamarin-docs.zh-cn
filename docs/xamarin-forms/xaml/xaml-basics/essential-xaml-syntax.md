@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646562"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529295"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
@@ -82,9 +82,9 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 
 使用此新语法，可以引入了一些便利的术语：
 
--  `Label` 是*对象元素*。 它是 Xamarin.Forms 对象表示为一个 XML 元素。
--  `Text``VerticalOptions`，`FontAttributes`并`FontSize`是*属性的特性*。 它们是 Xamarin.Forms 属性表示为 XML 属性。
--  在此最后一段中，`TextColor`变得*property 元素*。 它是 Xamarin.Forms 属性，但它现在是一个 XML 元素。
+- `Label` 是*对象元素*。 它是 Xamarin.Forms 对象表示为一个 XML 元素。
+- `Text``VerticalOptions`，`FontAttributes`并`FontSize`是*属性的特性*。 它们是 Xamarin.Forms 属性表示为 XML 属性。
+- 在此最后一段中，`TextColor`变得*property 元素*。 它是 Xamarin.Forms 属性，但它现在是一个 XML 元素。
 
 
 定义的属性元素可能在第一次似乎是违反了 XML 语法，但它不是。 期间必须在 XML 中没有特殊含义。 对 XML 解码器，`Label.TextColor`是只是正常的子元素。
@@ -176,13 +176,13 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 
 中的每个子级的标记`Grid`指定行和列的该子项，使用以下属性：
 
--  `Grid.Row`
--  `Grid.Column`
+- `Grid.Row`
+- `Grid.Column`
 
 这些属性的默认值为 0。 您还可以指示是否子跨越多个行或列具有这些属性：
 
--  `Grid.RowSpan`
--  `Grid.ColumnSpan`
+- `Grid.RowSpan`
+- `Grid.ColumnSpan`
 
 这两个属性具有默认值为 1。
 

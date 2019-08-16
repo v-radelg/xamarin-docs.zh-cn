@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9b4f71599ecf85e51899c41c37aecc63e44e7188
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86198c7a2fa0460070d012afd0b7b9d078d2a5f3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646427"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528563"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
 
@@ -66,11 +66,11 @@ ms.locfileid: "68646427"
 
 存在不同类型的转换, 每个转换都控制如何向用户显示新视图控制器, 以及如何与情节提要中的其他视图控制器交互。 如下所述。 还可以为 segue 对象划分子类, 以实现自定义转换:
 
--  **显示/推送**–推送 segue 将视图控制器添加到导航堆栈。 它假定发起推送的视图控制器与要添加到堆栈中的视图控制器属于同一导航控制器。 这与相同`pushViewController` , 通常在屏幕上的数据之间存在某种关系时使用。 使用 push segue, 你可以使用一个导航栏, 其中包含向堆栈上的每个视图添加的 "后退" 按钮和标题, 从而允许在视图层次结构中向下钻取导航。
--  **Modal** –模式 segue 在项目中的任意两个视图控制器之间创建关系, 并在其中显示动画过渡的选项。 进入 "查看" 时, 子视图控制器会完全掩盖父视图控制器。 不同于推送 segue, 后者将向我们添加一个 "后退" 按钮;使用模式 segue `DismissViewController`时, 必须使用模式, 才能返回到上一个视图控制器。
--  **Custom** –可以将任意自定义 segue 创建为的子类`UIStoryboardSegue`。
--  **展开**–展开 segue 可用于通过推送或模式 segue 导航回来–例如, 通过关闭按模式显示的视图控制器。 除此之外, 你不仅可以通过一个展开操作来遍历一系列推送和模式 segue, 并返回导航层次结构中的多个步骤。 若要了解如何在 iOS 中使用展开 segue, 请阅读[创建展开 segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)食谱。
--  **Sourceless** – Sourceless segue 指示包含初始视图控制器的场景, 从而显示用户首先看到的视图。 它由如下所示的 segue 表示:  
+- **显示/推送**–推送 segue 将视图控制器添加到导航堆栈。 它假定发起推送的视图控制器与要添加到堆栈中的视图控制器属于同一导航控制器。 这与相同`pushViewController` , 通常在屏幕上的数据之间存在某种关系时使用。 使用 push segue, 你可以使用一个导航栏, 其中包含向堆栈上的每个视图添加的 "后退" 按钮和标题, 从而允许在视图层次结构中向下钻取导航。
+- **Modal** –模式 segue 在项目中的任意两个视图控制器之间创建关系, 并在其中显示动画过渡的选项。 进入 "查看" 时, 子视图控制器会完全掩盖父视图控制器。 不同于推送 segue, 后者将向我们添加一个 "后退" 按钮;使用模式 segue `DismissViewController`时, 必须使用模式, 才能返回到上一个视图控制器。
+- **Custom** –可以将任意自定义 segue 创建为的子类`UIStoryboardSegue`。
+- **展开**–展开 segue 可用于通过推送或模式 segue 导航回来–例如, 通过关闭按模式显示的视图控制器。 除此之外, 你不仅可以通过一个展开操作来遍历一系列推送和模式 segue, 并返回导航层次结构中的多个步骤。 若要了解如何在 iOS 中使用展开 segue, 请阅读[创建展开 segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)食谱。
+- **Sourceless** – Sourceless segue 指示包含初始视图控制器的场景, 从而显示用户首先看到的视图。 它由如下所示的 segue 表示:  
 
     [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
 
@@ -142,12 +142,14 @@ if (callHistoryController != null) {
     这等效于在应用委托内实例化`FinishedLaunching`方法中的初始视图控制器。 设置此选项后, 应用程序将实例化窗口 (见下文), 加载主情节提要, 并将情节提要的初始视图控制器 (sourceless Segue) 的实例分配为`RootViewController`窗口的属性, 然后使屏幕上显示的窗口。
 
 3. 在中`Window` , 用以下代码替换默认方法, 以实现窗口属性: `AppDelegate`
-        
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 右键单击项目以**添加 > 新文件 > iOS > 空情节提要**, 如下所示, 创建新的情节提要文件。 
@@ -162,11 +164,13 @@ if (callHistoryController != null) {
 
 3. 在中`Window` , 用以下代码替换默认方法, 以实现窗口属性: `AppDelegate`
 
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 -----
 
 ## <a name="creating-a-storyboard-with-the-ios-designer"></a>使用 iOS 设计器创建情节提要
@@ -311,7 +315,7 @@ public partial class MainViewController : UIViewController
 
 ## <a name="conditional-segues"></a>条件 Segue
 
-通常, 从一个视图控制器移到下一个视图控制器会依赖于特定的条件。 例如, 如果我们要创建一个简单的登录屏幕, 则只需在验证用户名和密码后转到下*一屏幕。*
+通常, 从一个视图控制器移到下一个视图控制器会依赖于特定的条件。 例如, 如果我们要创建一个简单的登录屏幕, 则只需在验证用户名和密码后转到下一屏幕。
 
 在下面的示例中, 我们将向上面的示例中添加一个密码字段。 如果用户输入了正确的密码, 则用户将只能访问*PinkViewController* , 否则将显示错误。
 

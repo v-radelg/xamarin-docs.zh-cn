@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 9dc98480d57dc7d4883306e9f4fc530599af9bd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6482d0626874b3f2ca5e90efb0e376be60551fd7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652420"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528444"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反射 API 创建 Xamarin iOS 应用程序
 
@@ -26,9 +26,9 @@ MT。D 反射 API 允许用 MT 的特性修饰类。D 使用自动创建屏幕�
 
 使用反射 API 非常简单, 如下所示:
 
-1.  创建用 MT 修饰的类。D 特性。
-1.  创建一个`BindingContext`实例, 并将上面的类的一个实例传递给它。 
-1.  创建, 并`BindingContext’s` 将`RootElement`其传递给。 `DialogViewController` 
+1. 创建用 MT 修饰的类。D 特性。
+1. 创建一个`BindingContext`实例, 并将上面的类的一个实例传递给它。 
+1. 创建, 并`BindingContext’s` 将`RootElement`其传递给。 `DialogViewController` 
 
 
 我们来看一个示例, 说明如何使用反射 API。 在此示例中, 我们将生成一个简单的数据输入屏幕, 如下所示:

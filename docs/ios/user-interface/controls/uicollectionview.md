@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 256f38b4e08b1a7cb91b0a0a977ef222f7affbb4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 871020ff1f69edc20b582806a584dfd51982d336
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642870"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528606"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合视图
 
@@ -28,9 +28,9 @@ iOS 提供了一个名`UICollectionViewFlowLayout`为的布局类, 该布局类�
 
 `UICollectionView`类由三个不同的项组成:
 
--  **单元**–每个项的数据驱动视图
--  **补充视图**–与部分关联的数据驱动视图。
--  **修饰视图**-布局创建的非数据驱动视图
+- **单元**–每个项的数据驱动视图
+- **补充视图**–与部分关联的数据驱动视图。
+- **修饰视图**-布局创建的非数据驱动视图
 
 ## <a name="cells"></a>单元
 
@@ -40,9 +40,9 @@ iOS 提供了一个名`UICollectionViewFlowLayout`为的布局类, 该布局类�
 
 `UICollectionViewCell`类具有以下每个视图的属性:
 
--   `ContentView`–此视图包含单元格显示的内容。 它在屏幕上按最顶层 z 顺序呈现。
--   `SelectedBackgroundView`–单元格内置了对选择的支持。 此视图用于以可视方式表示单元格处于选中状态。 如果选择了单元格, `ContentView`它就会呈现在下面。
--   `BackgroundView`–单元还可以显示背景, 它由`BackgroundView`提供。 此视图在`SelectedBackgroundView`下呈现。
+- `ContentView`–此视图包含单元格显示的内容。 它在屏幕上按最顶层 z 顺序呈现。
+- `SelectedBackgroundView`–单元格内置了对选择的支持。 此视图用于以可视方式表示单元格处于选中状态。 如果选择了单元格, `ContentView`它就会呈现在下面。
+- `BackgroundView`–单元还可以显示背景, 它由`BackgroundView`提供。 此视图在`SelectedBackgroundView`下呈现。
 
 
 通过将其`ContentView`设置为`BackgroundView`小于和`SelectedBackgroundView` `BackgroundView` ,`SelectedBackgroundView`可使用来直观显示内容, 而在选择单元时将显示, 如下所示:
@@ -142,10 +142,10 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 与其他部分的 Io，如`UITableView`并`MKMapView`，`UICollectionView`获取从其数据 *数据源*，通过 Xamarin.iOS 中公开了此 **`UICollectionViewDataSource`** 类。 此类负责向`UICollectionView`提供内容, 例如:
 
--  **Cells** –从`GetCell`方法返回。
--  **补充视图**–从`GetViewForSupplementaryElement`方法返回。
--  **部分数**–从`NumberOfSections`方法返回。 如果未实现, 默认值为1。
--  **每节的项数**–从`GetItemsCount`方法返回。
+- **Cells** –从`GetCell`方法返回。
+- **补充视图**–从`GetViewForSupplementaryElement`方法返回。
+- **部分数**–从`NumberOfSections`方法返回。 如果未实现, 默认值为1。
+- **每节的项数**–从`GetItemsCount`方法返回。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 为方便起见, `UICollectionViewController`类可用。这会自动配置为委托, 这将在下一节中讨论, 而用于其`UICollectionView`视图的数据源。
@@ -193,9 +193,9 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
 类使用类型`UICollectionViewDelegate`的委托来支持与中的内容进行`UICollectionView`交互。 `UICollectionView` 这允许控制:
 
--  **单元格选择**–确定是否选择了单元。
--  **单元格突出显示**–确定当前是否正在触及某个单元。
--  **单元菜单**–为响应长按下手势而显示的单元格的菜单。
+- **单元格选择**–确定是否选择了单元。
+- **单元格突出显示**–确定当前是否正在触及某个单元。
+- **单元菜单**–为响应长按下手势而显示的单元格的菜单。
 
 
 对于数据源, `UICollectionViewController`默认情况下, 配置为的委托。 `UICollectionView`
@@ -250,9 +250,9 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 中的`UICollectionView`每个单元格都能够显示允许剪切、复制和粘贴的菜单 (可选)。 若要创建单元格上的 "编辑" 菜单:
 
-1.  如果`ShouldShowMenu`项应显示菜单, 则重写并返回 true。
-1.  对于`CanPerformAction`项可以执行的每个操作, 重写并返回 true, 该操作将是剪切、复制或粘贴。
-1.  重`PerformAction`写以执行 "编辑"、"粘贴" 操作的副本。
+1. 如果`ShouldShowMenu`项应显示菜单, 则重写并返回 true。
+1. 对于`CanPerformAction`项可以执行的每个操作, 重写并返回 true, 该操作将是剪切、复制或粘贴。
+1. 重`PerformAction`写以执行 "编辑"、"粘贴" 操作的副本。
 
 
 以下屏幕截图显示了长时间按下某个单元格的菜单:
@@ -274,8 +274,8 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 中`UICollectionView`的布局在从`UICollectionViewLayout`继承的类中定义。 布局实现负责为中的`UICollectionView`每个项创建布局特性。 可以通过两种方法创建布局:
 
--  使用内置`UICollectionViewFlowLayout` 。
--  通过从`UICollectionViewLayout`继承来提供自定义布局。
+- 使用内置`UICollectionViewFlowLayout` 。
+- 通过从`UICollectionViewLayout`继承来提供自定义布局。
 
 
  <a name="Flow_Layout" />
@@ -287,14 +287,14 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 使用流布局:
 
--  创建的`UICollectionViewFlowLayout`实例:
+- 创建的`UICollectionViewFlowLayout`实例:
 
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
--  将该实例传递到的`UICollectionView`构造函数:
+- 将该实例传递到的`UICollectionView`构造函数:
 
 
 ```csharp
@@ -332,10 +332,10 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 若要通过子类`UICollectionViewFlowLayout`化实现此操作, 需要:
 
--  初始化应用于布局本身或构造函数中布局中的所有项的任何布局属性。
--  重`ShouldInvalidateLayoutForBoundsChange`写, 返回 true, 以便在`UICollectionView`更改边界时, 将重新计算单元格的布局。 在这种情况下, 将使用此代码, 以确保在滚动过程中应用应用于 centermost 单元格的转换代码。
--  重`TargetContentOffset`写以使 centermost 单元与的中心`UICollectionView`对齐, 因为滚动将停止。
--  重`LayoutAttributesForElementsInRect`写以返回的`UICollectionViewLayoutAttributes`数组。 每`UICollectionViewLayoutAttribute`个都包含有关如何对特定项进行布局的信息, 包括诸如`Center`其`Size` 、 `ZIndex`和`Transform3D`之类的属性。
+- 初始化应用于布局本身或构造函数中布局中的所有项的任何布局属性。
+- 重`ShouldInvalidateLayoutForBoundsChange`写, 返回 true, 以便在`UICollectionView`更改边界时, 将重新计算单元格的布局。 在这种情况下, 将使用此代码, 以确保在滚动过程中应用应用于 centermost 单元格的转换代码。
+- 重`TargetContentOffset`写以使 centermost 单元与的中心`UICollectionView`对齐, 因为滚动将停止。
+- 重`LayoutAttributesForElementsInRect`写以返回的`UICollectionViewLayoutAttributes`数组。 每`UICollectionViewLayoutAttribute`个都包含有关如何对特定项进行布局的信息, 包括诸如`Center`其`Size` 、 `ZIndex`和`Transform3D`之类的属性。
 
 
 下面的代码演示此类实现:
@@ -416,9 +416,9 @@ namespace SimpleCollectionView
 
 要重写的关键方法为:
 
--   `PrepareLayout`–用于执行将在整个布局过程中使用的初始几何计算。
--   `CollectionViewContentSize`–返回用于显示内容的区域的大小。
--   `LayoutAttributesForElementsInRect`–如前面所示的 UICollectionViewFlowLayout 示例所示, 此方法用于提供有关如何布局`UICollectionView`每个项的信息。 不过, 与不同`UICollectionViewFlowLayout`的是, 在创建自定义布局时, 您可以选择定位项。
+- `PrepareLayout`–用于执行将在整个布局过程中使用的初始几何计算。
+- `CollectionViewContentSize`–返回用于显示内容的区域的大小。
+- `LayoutAttributesForElementsInRect`–如前面所示的 UICollectionViewFlowLayout 示例所示, 此方法用于提供有关如何布局`UICollectionView`每个项的信息。 不过, 与不同`UICollectionViewFlowLayout`的是, 在创建自定义布局时, 您可以选择定位项。
 
 
 例如, 可以在循环布局中显示相同的内容, 如下所示:

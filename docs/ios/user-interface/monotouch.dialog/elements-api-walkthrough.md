@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 82320b069156828101d17e79ca48a8933b8a8777
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655080"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528461"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>使用元素 API 创建 Xamarin iOS 应用程序
 
 _本文基于 Monotouch.dialog 对话框简介一文中提供的信息。其中提供了演示如何使用 Monotouch.dialog (MT) 的演练。D) 元素 API 快速开始使用 MT 构建应用程序。2-d._
 
-在本演练中, 我们将使用 MT。D 元素 API, 用于创建显示任务列表的应用程序的主-详细信息样式。 当用户在导航栏<span class="ui">+</span>中选择按钮时, 会将一个新行添加到该任务的表中。 选择该行将导航到 "详细信息" 屏幕, 该屏幕允许更新任务描述和截止日期, 如下所示:
+在本演练中, 我们将使用 MT。D 元素 API, 用于创建显示任务列表的应用程序的主-详细信息样式。 当用户在导航栏 **+** 中选择按钮时, 会将一个新行添加到该任务的表中。 选择该行将导航到 "详细信息" 屏幕, 该屏幕允许更新任务描述和截止日期, 如下所示:
 
  [![](elements-api-walkthrough-images/01-task-list-app.png "选择该行将导航到 \"详细信息\" 屏幕, 该屏幕允许更新任务描述和截止日期")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
@@ -36,11 +36,11 @@ _本文基于 Monotouch.dialog 对话框简介一文中提供的信息。其中�
 
 若要使用 Monotouch.dialog 创建多屏幕应用程序, 我们需要:
 
-1.  创建一个`UINavigationController.`
-1.  创建一个`DialogViewController.`
-1.  `DialogViewController`添加作为的根`UINavigationController.` 
-1.  将添加`RootElement`到`DialogViewController.`
-1.  将`Sections` 和`Elements`添加到`RootElement.` 
+1. 创建一个`UINavigationController.`
+1. 创建一个`DialogViewController.`
+1. `DialogViewController`添加作为的根`UINavigationController.` 
+1. 将添加`RootElement`到`DialogViewController.`
+1. 将`Sections` 和`Elements`添加到`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>使用 UINavigationController
 
@@ -77,14 +77,14 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="using-dialogviewcontroller"></a>使用 DialogViewController
 
-`DialogViewController` `UITableView`作为子类,具有作为其视图`UITableViewController` 。 在此示例中, 我们希望在每次<span class="ui">+</span>点击按钮时向表中添加项。 `NavigationItem` <span class="ui">+</span> `RightBarButton`由于已将添加`UINavigationController`到中, 因此我们可以使用的属性添加按钮, 如下所示: `DialogViewController`
+`DialogViewController` `UITableView`作为子类,具有作为其视图`UITableViewController` 。 在此示例中, 我们希望在每次 **+** 点击按钮时向表中添加项。 `NavigationItem` **+** `RightBarButton`由于已将添加`UINavigationController`到中, 因此我们可以使用的属性添加按钮, 如下所示: `DialogViewController`
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-当我们前面创建`RootElement`了一个实例时, 我们向`Section`它传递了单个实例, 以便<span class="ui">+</span>可以在用户点击按钮时添加元素。 我们可以使用以下代码在按钮的事件处理程序中完成此操作:
+当我们前面创建`RootElement`了一个实例时, 我们向`Section`它传递了单个实例, 以便 **+** 可以在用户点击按钮时添加元素。 我们可以使用以下代码在按钮的事件处理程序中完成此操作:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                

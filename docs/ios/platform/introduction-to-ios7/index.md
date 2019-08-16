@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 067d97e6a36dae6c11f056241c08c21899e96c08
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649334"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527565"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 简介
 
@@ -28,8 +28,8 @@ iOS 7 增强了 UIKit 中的动画支持, 使应用程序可以执行以前需�
 
  `UIView`现在支持使用弹簧效果对属性更改进行动画处理。 若要添加此方法, 请`AnimateNotify`调用`AnimateNotifyAsync`或方法, 并传入弹簧阻尼比率和初始弹簧速度的值, 如下所述:
 
--  `springWithDampingRatio`–一个介于0和1之间的值, 其中, 振荡为较小的值增加。
--  `initialSpringVelocity`–初始弹簧速度, 以每秒的总动画距离的百分比表示。
+- `springWithDampingRatio`–一个介于0和1之间的值, 其中, 振荡为较小的值增加。
+- `initialSpringVelocity`–初始弹簧速度, 以每秒的总动画距离的百分比表示。
 
 
 以下代码将在图像视图的中心更改时产生弹簧效果:
@@ -97,19 +97,19 @@ API 本质上是声明性的。 可以通过创建对象 (称为*行为*) 来声
 
 有几种不同的基元行为可用于触发复杂的交互, 包括:
 
--  `UIAttachmentBehavior`–附加两个动态项, 以便将它们一起移动, 或将动态项附加到连接点。
--  `UICollisionBehavior`–允许动态项参与冲突。
--  `UIDynamicItemBehavior`–指定要应用于动态项 (如弹性、密度和摩擦) 的一组常规属性。
--  `UIGravityBehavior`-对动态项应用重力, 使项在 gravitational 方向加速。
--  `UIPushBehavior`–对动态项应用强制。
--  `UISnapBehavior`–允许动态项与弹簧效果对齐位置。
+- `UIAttachmentBehavior`–附加两个动态项, 以便将它们一起移动, 或将动态项附加到连接点。
+- `UICollisionBehavior`–允许动态项参与冲突。
+- `UIDynamicItemBehavior`–指定要应用于动态项 (如弹性、密度和摩擦) 的一组常规属性。
+- `UIGravityBehavior`-对动态项应用重力, 使项在 gravitational 方向加速。
+- `UIPushBehavior`–对动态项应用强制。
+- `UISnapBehavior`–允许动态项与弹簧效果对齐位置。
 
 
 虽然有许多基元, 但使用 UIKit Dynamics 向视图中添加基于物理的交互的一般过程在行为上保持一致:
 
-1.  创建动态 animator。
-1.  创建行为。
-1.  向动态 animator 中添加行为。
+1. 创建动态 animator。
+1. 创建行为。
+1. 向动态 animator 中添加行为。
 
 
 ### <a name="dynamics-example"></a>Dynamics 示例
@@ -230,9 +230,9 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 
 iOS 7 会在执行后台工作时进行更改。 当任务在后台运行时, iOS 7 中的任务完成不会再使应用程序保持唤醒状态, 并且应用程序将以不间断的方式唤醒后台处理。 iOS 7 还添加了三个新的 Api, 用于在后台用新内容更新应用程序:
 
--  后台提取–允许应用程序定期更新后台内容。
--  远程通知-允许应用程序在收到推送通知时更新内容。 通知可以是静默的, 也可以是在锁定屏幕上显示横幅。
--  后台传输服务–允许上传和下载数据 (如大型文件), 而无需经过固定的时间限制。
+- 后台提取–允许应用程序定期更新后台内容。
+- 远程通知-允许应用程序在收到推送通知时更新内容。 通知可以是静默的, 也可以是在锁定屏幕上显示横幅。
+- 后台传输服务–允许上传和下载数据 (如大型文件), 而无需经过固定的时间限制。
 
 
 有关新的多任务功能的更多详细信息, 请参阅 Xamarin[后台处理 guide](~/ios/app-fundamentals/backgrounding/index.md)的 iOS 部分。

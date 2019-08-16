@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 209d8a61e6505e34fdf714b94ba40465f7f6aa4b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646374"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528798"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>你好, tvOS 快速入门指南
 
@@ -38,10 +38,10 @@ Apple TV 平台面向开发人员, 使他们能够创建丰富的沉浸式应用
 
 我们将介绍以下概念:
 
--  **Visual Studio for Mac** – Visual Studio for Mac 简介, 以及如何创建 tvOS 应用程序。
--  **TvOS 应用的剖析**-tvOS 应用的组成。
--  **创建用户界面**–如何使用 Xamarin Designer for iOS 来创建用户界面。
--  **部署和测试**–如何在 tvOS 模拟器和实际 tvOS 硬件上运行和测试应用。
+- **Visual Studio for Mac** – Visual Studio for Mac 简介, 以及如何创建 tvOS 应用程序。
+- **TvOS 应用的剖析**-tvOS 应用的组成。
+- **创建用户界面**–如何使用 Xamarin Designer for iOS 来创建用户界面。
+- **部署和测试**–如何在 tvOS 模拟器和实际 tvOS 硬件上运行和测试应用。
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中启动新的 tvOS 应用
 
@@ -77,12 +77,12 @@ Visual Studio for Mac 使用**解决方案**和**项目**, 与 Visual Studio 完
 
 让我们看一下项目中的文件:
 
--   `Main.cs` – 此文件包含应用的主入口点。 启动应用时，其中会包含运行的首个类和方法。
--   `AppDelegate.cs`–此文件包含主应用程序类, 该类负责侦听来自操作系统的事件。
--   `Info.plist`–此文件包含应用程序属性, 如应用程序名称、图标等。
--   `ViewController.cs`–这是表示主窗口并控制其生命周期的类。
--   `ViewController.designer.cs`–此文件包含可帮助你与主屏幕的用户界面集成的管道代码。
--  `Main.storyboard`–主窗口的 UI。 此文件可以由 Xamarin Designer for iOS 创建和维护。
+- `Main.cs` – 此文件包含应用的主入口点。 启动应用时，其中会包含运行的首个类和方法。
+- `AppDelegate.cs`–此文件包含主应用程序类, 该类负责侦听来自操作系统的事件。
+- `Info.plist`–此文件包含应用程序属性, 如应用程序名称、图标等。
+- `ViewController.cs`–这是表示主窗口并控制其生命周期的类。
+- `ViewController.designer.cs`–此文件包含可帮助你与主屏幕的用户界面集成的管道代码。
+- `Main.storyboard`–主窗口的 UI。 此文件可以由 Xamarin Designer for iOS 创建和维护。
 
 在以下部分中, 我们将简要介绍一下其中一些文件。 稍后我们将更详细地探讨这些问题, 但最好立即了解其基础知识。
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-需要使用, 而`ViewDidLoad`不是使用其他方法 ( `Initialize`如), `ViewDidLoad`因为在  `.storyboard`操作系统加载并实例化文件中的用户界面后调用。 如果在完全加载并实例化`.storyboard`文件之前尝试访问 "标签" 控件, 则会出现`NullReferenceException`错误, 因为尚未创建 "标签" 控件。
+需要使用, 而`ViewDidLoad`不是使用其他方法 ( `Initialize`如), `ViewDidLoad`因为在 `.storyboard`操作系统加载并实例化文件中的用户界面后调用。 如果在完全加载并实例化`.storyboard`文件之前尝试访问 "标签" 控件, 则会出现`NullReferenceException`错误, 因为尚未创建 "标签" 控件。
 
 接下来, 我们需要添加代码以响应用户单击按钮。 将以下内容添加到我们创建的分部类:
 
@@ -435,8 +435,8 @@ partial void Clicked (UIButton sender)
 
 每次生成应用程序时, 都可以选择所需的生成类型:
 
--   **调试**–使用额外的元数据将调试版本编译到 "" (应用程序) 文件中, 以便在应用程序运行时对其进行调试。
--   **Release** –发布版本还创建 "" 文件, 但它不包含调试信息, 因此它更小, 执行速度更快。  
+- **调试**–使用额外的元数据将调试版本编译到 "" (应用程序) 文件中, 以便在应用程序运行时对其进行调试。
+- **Release** –发布版本还创建 "" 文件, 但它不包含调试信息, 因此它更小, 执行速度更快。  
 
 你可以从 "Visual Studio for Mac" 屏幕左上角的 "**配置选择器**" 中选择生成类型:
 
@@ -452,9 +452,9 @@ partial void Clicked (UIButton sender)
 
 若要运行应用程序, 我们有三个选项:
 
--  按 **⌘+Enter**。
--  在“运行”  菜单中，选择“调试”  。
--  单击 Visual Studio for Mac 工具栏中的“播放”  按钮（位于“解决方案资源管理器”  上方）。
+- 按 **⌘+Enter**。
+- 在“运行”菜单中，选择“调试”。
+- 单击 Visual Studio for Mac 工具栏中的“播放”按钮（位于“解决方案资源管理器”上方）。
 
 应用程序将生成 (如果尚未生成), 在调试模式下启动, tvOS 模拟器将启动并显示该应用程序的主界面窗口:
 

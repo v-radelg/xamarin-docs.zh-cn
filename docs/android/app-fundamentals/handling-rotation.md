@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b1039dd433456731b775399ab42222fe0e4cc6d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 198d667ea52fcad4758c2845e5f2e935d1f74a0b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644373"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521119"
 ---
 # <a name="handling-rotation"></a>处理旋转
 
@@ -25,9 +25,9 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 
 本指南将探讨以下方向主题:
 
--   **声明性布局旋转**&ndash;如何使用 Android 资源系统构建方向感知应用程序, 包括如何为特定方向加载布局和绘图。
+- **声明性布局旋转**&ndash;如何使用 Android 资源系统构建方向感知应用程序, 包括如何为特定方向加载布局和绘图。
 
--   **编程布局旋转**&ndash;如何以编程方式添加控件, 以及如何手动处理方向更改。
+- **编程布局旋转**&ndash;如何以编程方式添加控件, 以及如何手动处理方向更改。
 
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>用布局以声明方式处理旋转
@@ -35,9 +35,9 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 通过在遵循命名约定的文件夹中包含文件, Android 会在方向更改时自动加载相应的文件。
 这包括对以下内容的支持:
 
--   *布局资源*&ndash;指定为每个方向放大的布局文件。
+- *布局资源*&ndash;指定为每个方向放大的布局文件。
 
--   *绘制资源*&ndash;指定为每个方向加载的绘图。
+- *绘制资源*&ndash;指定为每个方向加载的绘图。
 
 
 ### <a name="layout-resources"></a>布局资源
@@ -133,12 +133,12 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 
 若要以编程方式添加控件, 应用程序需要执行以下步骤:
 
--  创建布局。
--  设置布局参数。
--  创建控件。
--  设置控件布局参数。
--  将控件添加到布局。
--  将布局设置为内容视图。
+- 创建布局。
+- 设置布局参数。
+- 创建控件。
+- 设置控件布局参数。
+- 将控件添加到布局。
+- 将布局设置为内容视图。
 
 例如, 假设有一个用户界面, 其中包含`TextView`一个添加到的`RelativeLayout`控件, 如下面的代码所示。
 

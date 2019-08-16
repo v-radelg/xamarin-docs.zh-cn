@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 881590b7b2b7277a2f8f2cc17ce1c8bdff68c626
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bb64a0457ad5228e32f233d630576da2836547c1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655779"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528053"
 ---
 # <a name="eventkit-in-xamarinios"></a>Xamarin 中的 EventKit
 
@@ -22,8 +22,8 @@ EventKit 框架提供了一种方法, 用于访问日历数据库存储的*日�
 
 在本指南中, 我们将介绍:
 
--   **EventKit 基础知识**-这将通过主要类引入 EventKit 的基本部分, 并提供对其使用的了解。 在处理文档的下一部分之前, 此部分是必需的。 
--   **常见任务**– "常见任务" 部分旨在作为常见操作 (如) 的快速参考。枚举日历、创建、保存和检索日历事件和提醒, 以及使用内置控制器创建和修改日历事件。 此部分不需要从前台读取, 因为它是特定任务的引用。 
+- **EventKit 基础知识**-这将通过主要类引入 EventKit 的基本部分, 并提供对其使用的了解。 在处理文档的下一部分之前, 此部分是必需的。 
+- **常见任务**– "常见任务" 部分旨在作为常见操作 (如) 的快速参考。枚举日历、创建、保存和检索日历事件和提醒, 以及使用内置控制器创建和修改日历事件。 此部分不需要从前台读取, 因为它是特定任务的引用。 
 
 
 本指南中的所有任务都在随附示例应用程序中提供:
@@ -243,7 +243,7 @@ public override void Completed (EventKitUI.EKEventEditViewController controller,
 
 ### <a name="creating-an-event-programmatically"></a>以编程方式创建事件
 
-若要在代码中创建事件, 请  在`EKEvent`类上使用 FromStore 工厂方法, 并在其上设置任何数据:
+若要在代码中创建事件, 请在`EKEvent`类上使用 FromStore 工厂方法, 并在其上设置任何数据:
 
 ```csharp
 EKEvent newEvent = EKEvent.FromStore ( App.Current.EventStore );
@@ -318,7 +318,7 @@ EKCalendarItem myReminder = App.Current.EventStore.GetCalendarItem ( reminder.Ca
 
 ### <a name="deleting-an-event"></a>删除事件
 
-若要删除日历事件, 请  在上`EventStore`调用 RemoveEvent, 并将引用传递给该事件, 并`EKSpan`使用相应的:
+若要删除日历事件, 请在上`EventStore`调用 RemoveEvent, 并将引用传递给该事件, 并`EKSpan`使用相应的:
 
 ```csharp
 NSError e;
@@ -329,7 +329,7 @@ App.Current.EventStore.RemoveEvent ( mySavedEvent, EKSpan.ThisEvent, true, out e
 
 ### <a name="deleting-a-reminder"></a>删除提醒
 
-若要删除提醒, 请  对调用 RemoveReminder `EventStore` , 并将引用传递给提醒:
+若要删除提醒, 请对调用 RemoveReminder `EventStore` , 并将引用传递给提醒:
 
 ```csharp
 NSError e;

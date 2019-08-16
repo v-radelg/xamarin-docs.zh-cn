@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 3837e28fa657764312cdbe379ba66caf9ccf18a4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644206"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526160"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase 云消息传送的远程通知
 
@@ -26,11 +26,11 @@ _本演练逐步说明如何使用 Firebase Cloud 消息传递 Xamarin Android �
 
 将探讨以下主题领域:
 
-1.  背景通知
+1. 背景通知
 
-2.  主题消息
+2. 主题消息
 
-3.  前台通知
+3. 前台通知
 
 在本演练中, 你将以增量方式向**FCMClient**添加功能并在设备或仿真器上运行它, 以了解它如何与 FCM 交互。 你将使用日志记录来通过 FCM 服务器对实时应用事务进行见证, 你将看到如何从你输入到 Firebase 控制台通知 GUI 的 FCM 消息生成通知。
 
@@ -55,9 +55,9 @@ _本演练逐步说明如何使用 Firebase Cloud 消息传递 Xamarin Android �
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  打开**FCMClient**项目的 "属性"。
+1. 打开**FCMClient**项目的 "属性"。
 
-2.  在 " **Android 清单**" 页上, 设置包名称。
+2. 在 " **Android 清单**" 页上, 设置包名称。
 
 在下面的示例中, 包名称设置为`com.xamarin.fcmexample`:
 
@@ -67,9 +67,9 @@ _本演练逐步说明如何使用 Firebase Cloud 消息传递 Xamarin Android �
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  打开**FCMClient**项目的 "属性"。
+1. 打开**FCMClient**项目的 "属性"。
 
-2.  在 " **Android 应用程序**" 页中, 设置包名称。
+2. 在 " **Android 应用程序**" 页中, 设置包名称。
 
 在下面的示例中, 包名称设置为`com.xamarin.fcmexample`:
 
@@ -88,21 +88,21 @@ _本演练逐步说明如何使用 Firebase Cloud 消息传递 Xamarin Android �
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中, 右键单击 "**引用" > "管理 NuGet 包 ...** "。
+1. 在 Visual Studio 中, 右键单击 "**引用" > "管理 NuGet 包 ...** "。
 
-2.  单击 "**浏览**" 选项卡, 然后搜索 " **GooglePlayServices**"。
+2. 单击 "**浏览**" 选项卡, 然后搜索 " **GooglePlayServices**"。
 
-3.  将此包安装到**FCMClient**项目中:
+3. 将此包安装到**FCMClient**项目中:
 
     [![安装 Google Play Services 基](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac 中, 右键单击 "**包" > "添加包 ...** "。
+1. 在 Visual Studio for Mac 中, 右键单击 "**包" > "添加包 ...** "。
 
-2.  搜索 " **GooglePlayServices**"。
+2. 搜索 " **GooglePlayServices**"。
 
-3.  将此包安装到**FCMClient**项目中:
+3. 将此包安装到**FCMClient**项目中:
 
     [![安装 Google Play Services 基](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
@@ -125,21 +125,21 @@ using Android.Gms.Common;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中, 右键单击 "**引用" > "管理 NuGet 包 ...** "。
+1. 在 Visual Studio 中, 右键单击 "**引用" > "管理 NuGet 包 ...** "。
 
 2. 搜索 " **Firebase**"。
 
-3.  将此包安装到**FCMClient**项目中:
+3. 将此包安装到**FCMClient**项目中:
 
     [![安装 Xamarin Firebase 消息传送](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac 中, 右键单击 "**包" > "添加包 ...** "。
+1. 在 Visual Studio for Mac 中, 右键单击 "**包" > "添加包 ...** "。
 
-2.  搜索 " **Firebase**"。
+2. 搜索 " **Firebase**"。
 
-3.  将此包安装到**FCMClient**项目中:
+3. 将此包安装到**FCMClient**项目中:
 
     [![安装 Xamarin Firebase 消息传送](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
@@ -163,13 +163,13 @@ using Android.Util;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  将**google-服务 json**复制到项目文件夹。
+1. 将**google-服务 json**复制到项目文件夹。
 
-2.  将**google-services**添加到应用项目 (在**解决方案资源管理器**中单击 "**显示所有文件**",**右键单击 "** ", 然后选择 "**包括在项目中**")。
+2. 将**google-services**添加到应用项目 (在**解决方案资源管理器**中单击 "**显示所有文件**", 右键单击"", 然后选择 "**包括在项目中**")。
 
-3.  在 "**解决方案资源管理器**" 窗口中选择 " **google-服务 json** "。
+3. 在 "**解决方案资源管理器**" 窗口中选择 " **google-服务 json** "。
 
-4.  在 "**属性**" 窗格中, 将 "**生成操作**" 设置为**GoogleServicesJson**:
+4. 在 "**属性**" 窗格中, 将 "**生成操作**" 设置为**GoogleServicesJson**:
 
     [![将生成操作设置为 GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
@@ -178,13 +178,13 @@ using Android.Util;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  将**google-服务 json**复制到项目文件夹。
+1. 将**google-服务 json**复制到项目文件夹。
 
-2.  将**google-services**添加到应用项目中。
+2. 将**google-services**添加到应用项目中。
 
-3.  右键单击 " **google-服务 json**"。
+3. 右键单击 " **google-服务 json**"。
 
-4.  将**生成操作**设置为**GoogleServicesJson**:
+4. 将**生成操作**设置为**GoogleServicesJson**:
 
     [![将生成操作设置为 GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
 
@@ -338,11 +338,11 @@ protected override void OnCreate (Bundle bundle)
 
 此 XML 执行以下操作:
 
--   声明一个`FirebaseInstanceIdReceiver`实现, 该实现为每个应用实例提供[唯一标识符](https://developers.google.com/instance-id/)。 此接收器还进行身份验证和授权操作。
+- 声明一个`FirebaseInstanceIdReceiver`实现, 该实现为每个应用实例提供[唯一标识符](https://developers.google.com/instance-id/)。 此接收器还进行身份验证和授权操作。
 
--   声明的内部`FirebaseInstanceIdInternalReceiver`用于安全地启动服务的实现。
+- 声明的内部`FirebaseInstanceIdInternalReceiver`用于安全地启动服务的实现。
 
--   [应用 ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)存储在已[添加到项目](#add-googleplayservices-json)中的**google-服务 json**文件中。 Xamarin Firebase 绑定会将令牌`${applicationId}`替换为应用 id; 客户端应用不需要其他代码来提供应用 id。
+- [应用 ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)存储在已[添加到项目](#add-googleplayservices-json)中的**google-服务 json**文件中。 Xamarin Firebase 绑定会将令牌`${applicationId}`替换为应用 id; 客户端应用不需要其他代码来提供应用 id。
 
 `FirebaseInstanceIdReceiver` `FirebaseInstanceIdService`是接收和`FirebaseMessaging`事件并将其传递给从派生的类的。 `FirebaseInstanceId` `WakefulBroadcastReceiver`
 
@@ -351,9 +351,9 @@ protected override void OnCreate (Bundle bundle)
 向 FCM 注册应用程序的工作由您提供的自定义`FirebaseInstanceIdService`服务处理。
 `FirebaseInstanceIdService`执行以下步骤:
 
-1.  使用[实例 ID API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)生成授权客户端应用访问 FCM 和应用服务器的安全令牌。 在返回时, 应用程序将从 FCM 获取[注册令牌](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)。
+1. 使用[实例 ID API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)生成授权客户端应用访问 FCM 和应用服务器的安全令牌。 在返回时, 应用程序将从 FCM 获取[注册令牌](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)。
 
-2.  如果应用服务器需要, 则将注册令牌转发到应用服务器。
+2. 如果应用服务器需要, 则将注册令牌转发到应用服务器。
 
 添加一个名为**MyFirebaseIIDService.cs**的新文件, 并将其模板代码替换为以下代码:
 
@@ -393,13 +393,13 @@ Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 
 `OnTokenRefresh`不常发生地调用: 在以下情况下, 它用于更新令牌:
 
--   安装或卸载应用程序。
+- 安装或卸载应用程序。
 
--   用户删除应用数据时。
+- 用户删除应用数据时。
 
--   应用清除实例 ID。
+- 应用清除实例 ID。
 
--   当令牌的安全性受到威胁时。
+- 当令牌的安全性受到威胁时。
 
 根据 Google 的[实例 id](https://developers.google.com/instance-id/guides/android-implementation)文档, FCM 实例 id 服务将请求应用定期刷新其令牌 (通常每6个月)。
 
@@ -573,19 +573,19 @@ subscribeButton.Click += delegate {
 
 使用以下步骤发送主题消息:
 
-1.  在 Firebase 控制台中, 单击 "**新建消息**"。
+1. 在 Firebase 控制台中, 单击 "**新建消息**"。
 
-2.  在 "**撰写消息**" 页上, 输入消息文本, 然后选择 "**主题**"。
+2. 在 "**撰写消息**" 页上, 输入消息文本, 然后选择 "**主题**"。
 
-3.  在 "**主题**" 下拉菜单中, 选择内置主题 "**新闻**:
+3. 在 "**主题**" 下拉菜单中, 选择内置主题 "**新闻**:
 
     [![选择新闻主题](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
-4.  在 Android 设备 (或模拟器) 上, 通过点击 "Android**概述**" 按钮并触摸主屏幕来背景应用。
+4. 在 Android 设备 (或模拟器) 上, 通过点击 "Android**概述**" 按钮并触摸主屏幕来背景应用。
 
-5.  设备准备就绪后, 在 Firebase 控制台中单击 "**发送消息**"。
+5. 设备准备就绪后, 在 Firebase 控制台中单击 "**发送消息**"。
 
-6.  检查 IDE "输出" 窗口以查看日志输出中的 **/topics/news** :
+6. 检查 IDE "输出" 窗口以查看日志输出中的 **/topics/news** :
 
     [![显示来自/topic/news 的消息](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
@@ -653,19 +653,19 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 
 卸载应用程序, 重新生成它, 再次运行它, 然后按照以下步骤发送另一条消息:
 
-1.  在 Firebase 控制台中, 单击 "**新建消息**"。
+1. 在 Firebase 控制台中, 单击 "**新建消息**"。
 
-2.  在 "**撰写消息**" 页上, 输入消息正文, 然后选择 "**单一设备**"。
+2. 在 "**撰写消息**" 页上, 输入消息正文, 然后选择 "**单一设备**"。
 
-3.  从 IDE "输出" 窗口中复制标记字符串, 并将其粘贴到 "Firebase" 控制台的 " **FCM 注册令牌**" 字段中。
+3. 从 IDE "输出" 窗口中复制标记字符串, 并将其粘贴到 "Firebase" 控制台的 " **FCM 注册令牌**" 字段中。
 
-4.  确保应用在前台运行, 然后在 Firebase 控制台中单击 "**发送消息**":
+4. 确保应用在前台运行, 然后在 Firebase 控制台中单击 "**发送消息**":
 
     [![从控制台发送另一条消息](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
-5.  显示 "**检查消息**" 对话框时, 单击 "**发送**"。
+5. 显示 "**检查消息**" 对话框时, 单击 "**发送**"。
 
-6.  传入消息将记录到 IDE "输出" 窗口中:
+6. 传入消息将记录到 IDE "输出" 窗口中:
 
     [![将消息正文打印到输出窗口](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
@@ -679,7 +679,7 @@ using FCMClient;
 using System.Collections.Generic;
 ```
 
-将以下方法添加到`MyFirebaseMessagingService`:
+将以下方法添加到 `MyFirebaseMessagingService`：
 
 <a name="sendnotification-method"></a>
 
@@ -741,13 +741,13 @@ public override void OnMessageReceived(RemoteMessage message)
 
 卸载应用程序, 重新生成它, 再次运行它, 然后使用以下步骤发送最后一条消息:
 
-1.  在 Firebase 控制台中, 单击 "**新建消息**"。
+1. 在 Firebase 控制台中, 单击 "**新建消息**"。
 
-2.  在 "**撰写消息**" 页上, 输入消息正文, 然后选择 "**单一设备**"。
+2. 在 "**撰写消息**" 页上, 输入消息正文, 然后选择 "**单一设备**"。
 
-3.  从 IDE "输出" 窗口中复制标记字符串, 并将其粘贴到 "Firebase" 控制台的 " **FCM 注册令牌**" 字段中。
+3. 从 IDE "输出" 窗口中复制标记字符串, 并将其粘贴到 "Firebase" 控制台的 " **FCM 注册令牌**" 字段中。
 
-4.  确保应用在前台运行, 然后在 Firebase 控制台中单击 "**发送消息**":
+4. 确保应用在前台运行, 然后在 Firebase 控制台中单击 "**发送消息**":
 
     [![发送前台消息](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 
@@ -772,7 +772,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-若要完全从 FCM 注销设备, 请通过对[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法来删除实例 ID。 例如：
+若要完全从 FCM 注销设备, 请通过对[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法来删除实例 ID。 例如:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

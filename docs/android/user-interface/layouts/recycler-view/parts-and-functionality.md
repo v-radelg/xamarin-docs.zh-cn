@@ -1,160 +1,160 @@
 ---
 title: RecyclerView 部件和功能
-description: RecyclerView 布局管理器、 适配器和视图持有者的概述。
+description: RecyclerView 布局管理器、适配器和视图持有者的概述。
 ms.prod: xamarin
 ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 13678d3b1bca102e6f608ad1c11838db1f14cd08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 89b7f70ae69987edbd465d669f1bac17ddebc7c8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61309156"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522442"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 部件和功能
 
 
-`RecyclerView` 某些任务在内部 （如滚动和回收的视图），但它的句柄是实质上是协调帮助程序类来显示集合的管理器。 `RecyclerView` 委托到以下帮助器类的任务：
+`RecyclerView`在内部处理某些任务 (如视图的滚动和回收), 但是它实质上是协调 helper 类以显示集合的管理器。 `RecyclerView`将任务委托给以下帮助程序类:
 
--   **`Adapter`** &ndash; 增大项布局 （实例化布局文件的内容），并将数据绑定到视图中显示`RecyclerView`。 适配器还报告项单击事件。
+- **`Adapter`** 增加项布局 (实例化布局文件的内容), 并将数据绑定到`RecyclerView`中显示的视图。 &ndash; 适配器还会报告项目单击事件。
 
--   **`LayoutManager`** &ndash; 度量值并将项中的视图`RecyclerView`并管理视图回收的策略。
+- **`LayoutManager`** 度量和定位中的`RecyclerView`项视图, 并管理视图回收策略。 &ndash;
 
--   **`ViewHolder`** &ndash; 查找并存储视图的引用。 视图持有者还有助于检测项目视图下鼠标。
+- **`ViewHolder`** &ndash;查找并存储视图引用。 视图刀柄还有助于检测项目-查看单击。
 
--   **`ItemDecoration`** &ndash; 允许应用将特殊的绘制和布局偏移量添加到项目中，突出显示和可视化分组边界之间绘制分隔线的特定视图。
+- **`ItemDecoration`** &ndash;允许应用向特定视图添加特殊的绘图和布局偏移量, 以便在项、突出显示和视觉分组边界之间绘制分隔线。
 
--   **`ItemAnimator`** &ndash; 定义动画的项的操作期间发生或进行更改时向适配器。
+- **`ItemAnimator`** &ndash;定义在项操作期间或对适配器进行更改时所发生的动画。
 
-之间的关系`RecyclerView`， `LayoutManager`，和`Adapter`类在下图中所示：
+下图描述了`RecyclerView`、 `LayoutManager`和`Adapter`类之间的关系:
 
-![RecyclerView 包含 LayoutManager、 适配器用于访问数据集的关系图](parts-and-functionality-images/01-recyclerview-diagram.png)
+![包含 LayoutManager 的 RecyclerView 关系图, 使用适配器访问数据集](parts-and-functionality-images/01-recyclerview-diagram.png)
 
-此图所示，`LayoutManager`可视为之间的媒介`Adapter`和`RecyclerView`。 `LayoutManager`对进行调用`Adapter`代表方法`RecyclerView`。 例如，`LayoutManager`调用`Adapter`方法时就可以创建新视图中的特定项位置`RecyclerView`。 `Adapter`增大该项的布局，并创建`ViewHolder`实例 （未显示） 来缓存对视图中的该位置的引用。 当`LayoutManager`调用`Adapter`若要将某个特定项绑定到数据集，`Adapter`定位的项的数据，检索从数据集中，并将其复制到关联的项目视图。
+如图所示, `LayoutManager`可以将视为`Adapter`和`RecyclerView`之间的中介。 可代表`Adapter` 调用`RecyclerView`方法。 `LayoutManager` 例如, 当需要`LayoutManager`为中`Adapter`的`RecyclerView`特定项位置创建新的视图时, 将调用方法。 增加该项目的布局, 并`ViewHolder`创建实例 (未显示) 来缓存对该位置的视图的引用。 `Adapter` `LayoutManager`当`Adapter`调用将特定项绑定到数据集时, 将为该项定位数据, 从数据集中检索数据, 并将其复制到关联的项视图。 `Adapter`
 
-当使用`RecyclerView`在您的应用程序，创建以下类的派生的类型是必需的：
+在应用`RecyclerView`中使用时, 需要创建以下类的派生类型:
 
--   **`RecyclerView.Adapter`** &ndash; 提供从应用程序的数据集 （这是特定于您的应用程序） 中显示的项视图到的绑定`RecyclerView`。 适配器知道如何将关联中的每个项目视图位置`RecyclerView`到数据源中的特定位置。 此外，该适配器处理其中每个单独的项视图的内容的布局，并创建每个视图的视图持有者。 适配器还报告检测到的项目视图的项的单击事件。
+- **`RecyclerView.Adapter`** 提供从应用程序的数据集 (特定于您的应用程序) 到`RecyclerView`中显示的项视图的绑定。 &ndash; 适配器知道如何将中的`RecyclerView`每个项视图位置与数据源中的特定位置相关联。 此外, 适配器还处理每个单独项视图中内容的布局, 并为每个视图创建视图占位符。 适配器还会报告项目视图检测到的项目单击事件。
 
--   **`RecyclerView.ViewHolder`** &ndash; 缓存对项布局文件中的视图的引用，以便不会不必要地重复资源查找。 查看项单击事件，以在用户点击视图持有者关联的项目视图时将它们转发到适配器还排列视图持有者。
+- **`RecyclerView.ViewHolder`** &ndash;缓存对项布局文件中的视图的引用, 以避免不必要地重复资源查找。 视图容纳器还会安排在用户点击视图持有者的关联项视图时, 将其转发到适配器。
 
--   **`RecyclerView.LayoutManager`** &ndash; 定位中的项`RecyclerView`。 可以使用多个预定义的布局管理器之一，也可以实现自己的自定义布局管理器。
-    `RecyclerView` 委托到布局管理器，因此您可以在不同的布局管理器中而无需进行大量插入布局策略更改为您的应用程序。
+- **`RecyclerView.LayoutManager`** 定位中的`RecyclerView`项。 &ndash; 您可以使用几个预定义的布局管理器之一, 也可以实现您自己的自定义布局管理器。
+    `RecyclerView`将布局策略委托给布局管理器, 这样您就可以插入不同的布局管理器, 而无需对应用进行重大更改。
 
-此外，可以选择性地扩展要更改的外观的以下类`RecyclerView`应用程序中：
+此外, 还可以选择扩展以下类, 以更改应用`RecyclerView`中的外观:
 
--   **`RecyclerView.ItemDecoration`**
--   **`RecyclerView.ItemAnimator`**
+- **`RecyclerView.ItemDecoration`**
+- **`RecyclerView.ItemAnimator`**
 
-如果不扩展`ItemDecoration`并`ItemAnimator`，`RecyclerView`使用默认实现。 本指南不介绍如何创建自定义`ItemDecoration`并`ItemAnimator`类; 有关这些类的详细信息，请参阅[RecyclerView.ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html)和[RecyclerView.ItemAnimator](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html).
+如果未扩展`ItemDecoration`和`ItemAnimator`, `RecyclerView`则使用默认实现。 本指南不介绍如何`ItemDecoration`创建自定义类和`ItemAnimator`类; 有关这些类的详细信息, 请参阅[RecyclerView. ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html) and [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html)。
 
 
 <a name="recycling" />
 
-### <a name="how-view-recycling-works"></a>如何查看回收的工作原理
+### <a name="how-view-recycling-works"></a>视图回收的工作原理
 
-`RecyclerView` 不会为您的数据源中的每个项分配项目视图。 相反，它会分配仅在屏幕上显示的项视图的数量，它重用这些项布局，当用户滚动。 当不可见的第一次滚动视图时，会经历在下图中所示的回收过程：
+`RecyclerView`不会为数据源中的每个项分配项视图。 相反, 它仅分配适合屏幕的项视图数, 并在用户滚动时重用这些项布局。 当视图第一次滚动时, 它会经历下图所示的回收过程:
 
-[![说明的视图回收的六个步骤的关系图](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
+[![说明查看回收的六个步骤的示意图](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
-1.  当不可见的滚动并不会再显示视图时，它将成为*报废视图*。
+1. 当视图在视觉上滚动并不再显示时, 它将成为一个*废料视图*。
 
-2.  片段视图放在池中，并成为*回收视图*。
-    此池是缓存的显示相同类型的数据的视图。
+2. "碎片" 视图放置在一个池中, 并成为*回收视图*。
+    此池是显示相同数据类型的视图缓存。
 
-3.  当新项时显示时，则视图取自回收池以供重复使用。 因为此视图必须重新绑定适配器在显示之前，调用*脏视图*。
+3. 当显示新项时, 将从回收池中获取视图以供重用。 因为此视图必须在适配器重新绑定后才能显示, 所以称为 "*脏视图*"。
 
-4.  已更新的视图是回收： 适配器查找要显示的下一项的数据并将此数据复制到此项目的视图。 从与回收的视图关联的视图持有者中检索这些视图的引用。
+4. 已回收脏视图: 适配器查找要显示的下一项的数据, 并将此数据复制到此项的视图。 这些视图的引用将从与回收视图关联的视图持有者中进行检索。
 
-5.  回收的视图添加到中的项列表`RecyclerView`以转到屏幕上。
+5. 回收视图将添加到中的项的列表中`RecyclerView` , 这些项将在屏幕上进行。
 
-6.  回收的视图会屏幕上，因为在用户滚动`RecyclerView`到列表中的下一项。 同时，另一个视图滚动视线之外，会根据上述步骤被回收。
+6. 当用户将滚动`RecyclerView`到列表中的下一项时, 回收视图将在屏幕上显示。 同时, 另一个视图会滚动显示, 并根据以上步骤进行回收。
 
-除了项目视图重用`RecyclerView`还使用另一个效率优化： 查看持有者。 一个*视图持有者*是缓存查看引用一个简单类。 适配器增大的项布局文件，每次它还会创建相应的视图持有者。 视图持有人使用`FindViewById`夸大的项布局文件中获取对视图的引用。 这些引用用于将新数据加载到视图，每次布局时回收显示新数据。
+除项-视图重用外, `RecyclerView`还使用另一个效率优化: 查看持有者。 *视图占位符*是缓存视图引用的简单类。 每次适配器增加项布局文件时, 它也会创建相应的视图持有者。 视图占位符`FindViewById`用于获取对放大项-布局文件内的视图的引用。 每次回收布局以显示新数据时, 这些引用用于将新数据加载到视图中。
  
 
 
 ### <a name="the-layout-manager"></a>布局管理器
 
-布局管理器负责定位中的项`RecyclerView`显示; 它确定表示类型 （列表或网格）、 （是否项都显示垂直或水平） 的方向，并应显示哪些方向项（按正常顺序或按相反的顺序）。 程序还负责计算的大小和位置中的每个项的布局管理器**RecycleView**显示。
+布局管理器负责在`RecyclerView`显示中定位项; 它确定表示类型 (列表或网格)、方向 (项是垂直显示还是水平显示) 以及应显示哪些方向项(按正常顺序或按相反的顺序)。 布局管理器还负责计算**RecycleView**显示中每个项的大小和位置。
 
-该布局管理器的其他用途： 它会确定何时回收不再对用户可见的项视图的策略。
-因为布局管理器识别哪些视图是可见 （，哪些不是），它是在要确定视图可以回收的最佳位置。 若要回收视图，布局管理器通常会对适配器调用，以回收视图的内容替换为不同的数据，如前面所述[视图回收的工作原理](#recycling)。
+布局管理器有一个额外的用途: 它确定何时回收不再向用户显示的项视图的策略。
+由于布局管理器识别哪些视图是可见的 (而不是), 因此, 它在确定何时可以回收视图的最佳位置。 若要回收视图, 布局管理器通常会调用适配器, 以将回收视图的内容替换为不同的数据, 如前面的[视图回收的工作原理](#recycling)中所述。
 
-您可以扩展`RecyclerView.LayoutManager`创建自己的布局管理器中，也可以使用预定义的布局管理器。 `RecyclerView` 提供了以下预定义的布局管理器：
+您可以扩展`RecyclerView.LayoutManager`以创建自己的布局管理器, 也可以使用预定义的布局管理器。 `RecyclerView`提供以下预定义的布局管理器:
 
--   **`LinearLayoutManager`** &ndash; 排列项中可垂直滚动的列或行中，可以水平滚动。
+- **`LinearLayoutManager`** &ndash;对可垂直滚动的列中的项或在可水平滚动的行中进行排列。
 
--   **`GridLayoutManager`** &ndash; 在网格中显示项。
+- **`GridLayoutManager`** &ndash;在网格中显示项。
 
--   **`StaggeredGridLayoutManager`** &ndash; 交错的网格，其中某些项具有不同高度和宽度中显示的项。
+- **`StaggeredGridLayoutManager`** &ndash;显示分散网格中的项, 其中某些项具有不同的高度和宽度。
 
-若要指定布局管理器，实例化所选的布局管理器，并将其传递给`SetLayoutManager`方法。 请注意，您*必须*指定的布局管理器&ndash;`RecyclerView`不会默认情况下选择一个预定义的布局管理器。
+若要指定布局管理器, 请实例化所选的布局管理器`SetLayoutManager` , 并将其传递给方法。 请注意,在默认情况下, &ndash;必须指定布局管理器`RecyclerView`未选择预定义的布局管理器。
 
-有关布局管理器的详细信息，请参阅[RecyclerView.LayoutManager 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
+有关布局管理器的详细信息, 请参阅[RecyclerView. LayoutManager 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
 
 
 ### <a name="the-view-holder"></a>视图持有者
 
-视图持有者是为缓存视图引用定义的类。 适配器使用这些视图引用绑定到其内容的每个视图。 中的每个项`RecyclerView`具有关联的视图持有者实例的缓存项的视图引用。 若要创建视图持有者，使用以下步骤来定义一个类来保存每个项的视图的这组：
+视图占位符是您为缓存视图引用定义的类。 适配器使用这些视图引用将每个视图绑定到其内容。 中的`RecyclerView`每个项都有一个关联的视图持有者实例, 该实例将缓存该项的视图引用。 若要创建视图持有者, 请使用以下步骤来定义一个类, 以便保存每个项目的确切视图集:
 
-1.  子类`RecyclerView.ViewHolder`。
-2.  实现一个构造函数，查找并存储视图的引用。
-3.  实现该适配器可用于访问这些引用的属性。
+1. 子类`RecyclerView.ViewHolder`。
+2. 实现一个查找并存储视图引用的构造函数。
+3. 实现适配器可用于访问这些引用的属性。
 
-详细的示例`ViewHolder`实现所示[基本 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)。
-有关详细信息`RecyclerView.ViewHolder`，请参阅[RecyclerView.ViewHolder 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
+[基本 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)中提供`ViewHolder`了实现的详细示例。
+有关的详细信息`RecyclerView.ViewHolder`, 请参阅[RecyclerView. ViewHolder 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
 
 
 ### <a name="the-adapter"></a>适配器
 
-大部分"繁琐"`RecyclerView`集成代码会在适配器中发生。 `RecyclerView` 要求提供适配器派生自`RecyclerView.Adapter`访问您的数据源并填充数据源的内容与每个项。
-由于数据源是特定于应用程序，必须实现一个知道如何访问你的数据适配器功能。 适配器从数据源中提取信息，并将其加载到每个项`RecyclerView`集合。
+`RecyclerView`集成代码的大部分 "繁重" 操作都在适配器中进行。 `RecyclerView`要求你提供从`RecyclerView.Adapter`派生的适配器以访问数据源, 并使用数据源中的内容填充每个项。
+由于数据源是特定于应用的, 因此你必须实现可了解如何访问数据的适配器功能。 适配器从数据源中提取信息, 并将其加载到集合中的`RecyclerView`每个项。
 
-下图阐释了适配器如何将数据源视图持有人通过中的内容映射到在每个行项中的各个视图`RecyclerView`:
+下图说明了适配器如何将数据源中的内容映射到中的每个行项内的`RecyclerView`各个视图:
 
-[![说明数据源连接到 ViewHolders 的适配器的关系图](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
+[![说明将数据源连接到 ViewHolders 的适配器的关系图](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
-适配器将加载每个`RecyclerView`具有特定行项的数据行。 有关行位置*P*，例如，适配器找到位置处的关联的数据*P*行到此数据在位置中的数据源和副本项*P*中`RecyclerView`集合。
-在上面的绘图中，例如，适配器使用视图持有者来查找其引用`ImageView`并`TextView`中的该位置，使其不包含重复调用`FindViewById`这些视图作为用户滚动浏览集合和重用视图。
+适配器使用特定行`RecyclerView`项的数据加载每一行。 例如, 对于行位置*p*, 适配器会在数据源中的位置*p*找到关联的数据, 并将此数据复制到`RecyclerView`集合中位于*p*位置的行项。
+例如, 在上面的绘图中, 适配器使用视图持有者在该位置查找`ImageView`和`TextView`的引用, 以便在用户滚动到集合时无需重复`FindViewById`调用这些视图。重用视图。
 
-在实现适配器时，必须重写以下`RecyclerView.Adapter`方法：
+实现适配器时, 必须重写以下`RecyclerView.Adapter`方法:
 
--   **`OnCreateViewHolder`** &ndash; 实例化项布局文件和视图持有者。
+- **`OnCreateViewHolder`** &ndash;实例化项布局文件和视图持有者。
 
--   **`OnBindViewHolder`** &ndash; 将指定位置处的数据加载到其引用存储在给定的视图持有者的视图。
+- **`OnBindViewHolder`** &ndash;将位于指定位置的数据加载到其引用存储在给定视图持有者中的视图中。
 
--   **`ItemCount`** &ndash; 在数据源中返回的项数。
+- **`ItemCount`** &ndash;返回数据源中的项数。
 
-布局管理器调用这些方法，它将定位中的项而`RecyclerView`。 
+布局管理器在定位中的`RecyclerView`项时调用这些方法。 
 
 
 
-### <a name="notifying-recyclerview-of-data-changes"></a>通知数据更改 RecyclerView
+### <a name="notifying-recyclerview-of-data-changes"></a>向 RecyclerView 通知数据更改
 
-`RecyclerView` 不会自动更新其显示时其数据的内容源发生更改;适配器必须通知`RecyclerView`数据集中的更改时。 数据集可能会更改在许多方面;例如，可以更改其中某个项的内容或数据的整体结构可能会更改。
-`RecyclerView.Adapter` 提供了多种可以调用的方法，以便`RecyclerView`响应数据更改的最高效的方式：
+`RecyclerView`不会在其数据源的内容更改时自动更新其显示;数据集发生更改`RecyclerView`时, 适配器必须发出通知。 数据集可以通过多种方式进行更改;例如, 项目中的内容可能会更改, 或者可能会更改数据的整体结构。
+`RecyclerView.Adapter`提供了许多方法, 您可以调用`RecyclerView`这些方法以最有效的方式响应数据更改:
 
--  **`NotifyItemChanged`** &ndash; 位于指定位置处的项已更改的信号。
+- **`NotifyItemChanged`** &ndash;指示位于指定位置处的项已更改。
 
--  **`NotifyItemRangeChanged`** &ndash; 指定范围中的位置的项已更改的信号。
+- **`NotifyItemRangeChanged`** &ndash;指示指定位置范围内的项已更改。
 
--  **`NotifyItemInserted`** &ndash; 发出信号，表明新插入指定位置中的项。
+- **`NotifyItemInserted`** &ndash;指示指定位置中的项已新插入。
 
--  **`NotifyItemRangeInserted`** &ndash; 指定范围中的位置的项已插入新的信号。
+- **`NotifyItemRangeInserted`** &ndash;指示指定位置范围内的项已新插入。
 
--  **`NotifyItemRemoved`** &ndash; 已删除的指定位置中的项的信号。
+- **`NotifyItemRemoved`** &ndash;指示已删除指定位置中的项。
 
--  **`NotifyItemRangeRemoved`** &ndash; 指定范围中的位置的项已删除的信号。
+- **`NotifyItemRangeRemoved`** &ndash;指示已删除指定范围内的项。
 
--  **`NotifyDataSetChanged`** &ndash; 数据集已更改的信号 （强制执行完整的更新）。
+- **`NotifyDataSetChanged`** &ndash;通知数据集已更改 (强制执行完全更新)。
 
-如果您知道确切数据集的更改方式，可以调用适当的方法更高版本，若要刷新`RecyclerView`最高效的方式。 如果不知道确切数据集的更改方式，可以调用`NotifyDataSetChanged`，大大减少效率更高因为`RecyclerView`必须刷新所有对用户可见的视图。 有关这些方法的详细信息，请参阅[RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)。
+如果确切知道数据集的更改方式, 则可以调用上述相应方法, 以最有效的`RecyclerView`方式进行刷新。 如果你不确切地知道数据集的更改方式, 则可以调用`NotifyDataSetChanged`, 这种方式要低得多, 因为`RecyclerView`必须刷新对用户可见的所有视图。 有关这些方法的详细信息, 请参阅[RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)。
 
-在下一主题[基本 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)，示例应用程序实现以演示的部件和上面所述的功能的实际代码示例。
+下一主题是[一个基本的 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md), 它是一个示例应用程序, 用于演示上述部分和功能的实际代码示例。
 
 
 ## <a name="related-links"></a>相关链接

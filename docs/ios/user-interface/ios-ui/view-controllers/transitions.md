@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 43c57b552ab9465e67290018fe5f1908eecf2ee9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82a2e2b4abe5bc634c74c083b860d1f4f59a90b7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656048"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528472"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin 中查看控制器转换
 
@@ -24,10 +24,10 @@ IOS 7 中视图控制器之间的动态过渡是完全可自定义的。 `UIView
 
 若要将自定义转换`PresentViewController`用于:
 
-1.  在要显示`UIModalPresentationStyle.Custom`的控制器上将设置为。`ModalPresentationStyle`
-2.  实现`UIViewControllerTransitioningDelegate`以创建 animator 类, 该类是的`UIViewControllerAnimatedTransitioning`实例。
-3.  将属性设置为的`UIViewControllerTransitioningDelegate`实例, 还会在要显示的控制器上设置。 `TransitioningDelegate`
-4.  显示视图控制器。
+1. 在要显示`UIModalPresentationStyle.Custom`的控制器上将设置为。`ModalPresentationStyle`
+2. 实现`UIViewControllerTransitioningDelegate`以创建 animator 类, 该类是的`UIViewControllerAnimatedTransitioning`实例。
+3. 将属性设置为的`UIViewControllerTransitioningDelegate`实例, 还会在要显示的控制器上设置。 `TransitioningDelegate`
+4. 显示视图控制器。
 
 
 例如, 下面的代码提供了一个类型为`ControllerTwo` `UIViewController`的类的视图控制器:
@@ -80,8 +80,8 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 
 `UIViewControllerAnimatedTransitioning`类处理实际动画。 必须实现两种方法:
 
-1.  `TransitionDuration`–返回动画的持续时间 (以秒为单位)。
-1.  `AnimateTransition`–执行实际动画。
+1. `TransitionDuration`–返回动画的持续时间 (以秒为单位)。
+1. `AnimateTransition`–执行实际动画。
 
 
 例如, 下面的类实现`UIViewControllerAnimatedTransitioning`以对控制器视图的框架进行动画处理:
@@ -126,18 +126,18 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 
 集合视图为创建动态转换提供内置支持:
 
--  **导航控制器**–两个`UICollectionViewController`实例之间的动画转换可以选择在`UINavigationController`管理它们时自动处理。
--  **转换布局**–新`UICollectionViewTransitionLayout`类允许在布局之间进行交互式转换。
+- **导航控制器**–两个`UICollectionViewController`实例之间的动画转换可以选择在`UINavigationController`管理它们时自动处理。
+- **转换布局**–新`UICollectionViewTransitionLayout`类允许在布局之间进行交互式转换。
 
 
 ### <a name="navigation-controller-transitions"></a>导航控制器转换
 
 在导航控制器中使用时, `UICollectionViewController`包括对控制器间的动画转换的支持。 此支持是内置的, 只需几个简单的步骤即可实现:
 
-1.  在`UseLayoutToLayoutNavigationTransitions`上将设置`false`为。 `UICollectionViewController`
-1.  将的`UICollectionViewController`实例添加到导航控制器堆栈的根。
-1.  创建另`UICollectionViewController`一个, 并将`UseLayoutToLayoutNavigtionTransitions`其属性`true`设置为。
-1.  将第二`UICollectionViewController`个推送到导航控制器的堆栈上。
+1. 在`UseLayoutToLayoutNavigationTransitions`上将设置`false`为。 `UICollectionViewController`
+1. 将的`UICollectionViewController`实例添加到导航控制器堆栈的根。
+1. 创建另`UICollectionViewController`一个, 并将`UseLayoutToLayoutNavigtionTransitions`其属性`true`设置为。
+1. 将第二`UICollectionViewController`个推送到导航控制器的堆栈上。
 
 
 下面的代码将名`UICollectionViewController` `ImagesCollectionViewController`为的子类添加到导航控制器堆栈的根目录中, 并`UseLayoutToLayoutNavigationTransitions`将属性设置为`false`:
@@ -208,13 +208,13 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 使用`UICollectionViewTransitionLayout`的笔势识别器中实现交互式转换的步骤如下所示:
 
-1.  创建笔势识别器。
-1.  调用的`StartInteractiveTransition` `UICollectionView`方法, 并向其传递目标布局和完成处理程序。
-1.  设置从`UICollectionViewTransitionLayout` `TransitionProgress` 方法返回的`StartInteractiveTransition`实例的属性。
-1.  使布局无效。
-1.  调用的`FinishInteractiveTransition`方法`UICollectionView` 以`CancelInteractiveTransition`完成转换或取消方法。  `FinishInteractiveTransition`使动画完成其到目标布局的转换, 而`CancelInteractiveTransition`使动画返回到原始布局。
-1.  在`StartInteractiveTransition`方法的完成处理程序中处理转换完成。
-1.  将手势识别器添加到集合视图。
+1. 创建笔势识别器。
+1. 调用的`StartInteractiveTransition` `UICollectionView`方法, 并向其传递目标布局和完成处理程序。
+1. 设置从`UICollectionViewTransitionLayout` `TransitionProgress` 方法返回的`StartInteractiveTransition`实例的属性。
+1. 使布局无效。
+1. 调用的`FinishInteractiveTransition`方法`UICollectionView` 以`CancelInteractiveTransition`完成转换或取消方法。  `FinishInteractiveTransition`使动画完成其到目标布局的转换, 而`CancelInteractiveTransition`使动画返回到原始布局。
+1. 在`StartInteractiveTransition`方法的完成处理程序中处理转换完成。
+1. 将手势识别器添加到集合视图。
 
 
 下面的代码实现了一个在缩小手势识别器内的交互式布局转换:

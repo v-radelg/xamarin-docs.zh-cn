@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: fd5ac3e9e5752aa143872138e9b452a61dbe862e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3171a89678e88a924198c3921d197c0f0378d29b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510095"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522626"
 ---
 # <a name="xamarinandroid-linearlayout"></a>Xamarin LinearLayout
 
@@ -120,7 +120,7 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[`Activity`](xref:Android.App.Activity) &ndash; `Resources.Layout.Main`  ) 方法加载的布局文件, 该文件由资源 ID 指定, 表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
+[`Activity`](xref:Android.App.Activity) &ndash; `Resources.Layout.Main` ) 方法加载的布局文件, 该文件由资源 ID 指定, 表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
 运行该应用程序。 应该会看到以下内容:
 
@@ -132,9 +132,7 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 ## <a name="references"></a>参考资料
 
--   [`LinearLayout`](xref:Android.Widget.LinearLayout) 
--   [`TextView`](xref:Android.Widget.TextView) 
+- [`LinearLayout`](xref:Android.Widget.LinearLayout)
+- [`TextView`](xref:Android.Widget.TextView)
 
-*此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据*
-[*创造性 Commons 2.5 归属许可证*](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。
-
+_此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据[创造性 Commons 2.5 归属许可证](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。_

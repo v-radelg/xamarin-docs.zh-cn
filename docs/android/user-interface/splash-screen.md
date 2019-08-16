@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 30e471174d30e58b126c174fd4eacfdbe87d97b0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d8f467b4dcc5e6c4628ed7afa43779cc48b7ef5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646065"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522189"
 ---
 # <a name="splash-screen"></a>初始屏幕
 
@@ -25,11 +25,11 @@ Android 应用程序需要一些时间才能启动, 特别是在第一次在设�
 
 本指南讨论了在 Android 应用程序中实现初始屏幕的一项技术。 其中包括以下步骤:
 
-1.  创建初始屏幕的 "绘制资源"。
+1. 创建初始屏幕的 "绘制资源"。
 
-2.  定义将显示可绘制资源的新主题。
+2. 定义将显示可绘制资源的新主题。
 
-3.  向应用程序添加一个新活动, 该活动将用作上一步骤中创建的主题定义的初始屏幕。
+3. 向应用程序添加一个新活动, 该活动将用作上一步骤中创建的主题定义的初始屏幕。
 
 [![示例 Xamarin 徽标初始屏幕, 后面跟有应用屏幕](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
@@ -178,11 +178,11 @@ public class MainActivity : AppCompatActivity
     </layer-list>
     ```
 
-3.  如果**资源/值**尚不存在, 则创建它们。
+3. 如果**资源/值**尚不存在, 则创建它们。
 
-4.  将文件**colors .xml**和**style .xml**添加到**值-土地**(可从现有的**值/颜色 .xml**和**值/样式 .xml**文件进行复制和修改)。
+4. 将文件**colors .xml**和**style .xml**添加到**值-土地**(可从现有的**值/颜色 .xml**和**值/样式 .xml**文件进行复制和修改)。
 
-5.  修改**values-land/style .xml** , 使其使用的可绘制的`windowBackground`横向版本。 在此示例中, 使用了**splash_screen_land** :
+5. 修改**values-land/style .xml** , 使其使用的可绘制的`windowBackground`横向版本。 在此示例中, 使用了**splash_screen_land** :
 
     ```xml
     <resources>
@@ -200,7 +200,7 @@ public class MainActivity : AppCompatActivity
     </resources>
     ```
 
-6.  修改**values-land/colors**以配置要用于初始屏幕的横向版本的颜色。 在此示例中, 对于横向模式, 初始背景色更改为蓝色:
+6. 修改**values-land/colors**以配置要用于初始屏幕的横向版本的颜色。 在此示例中, 对于横向模式, 初始背景色更改为蓝色:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -213,7 +213,7 @@ public class MainActivity : AppCompatActivity
     </resources>
     ```
 
-7.  重新生成并运行应用。 在仍显示初始屏幕时, 将设备旋转到横向模式。 初始屏幕更改为横向版本:
+7. 重新生成并运行应用。 在仍显示初始屏幕时, 将设备旋转到横向模式。 初始屏幕更改为横向版本:
 
     [![初始屏幕旋转到横向模式](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 

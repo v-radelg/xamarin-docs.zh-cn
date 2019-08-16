@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 1d4c93e625b92275828428917ebbc86d931e8363
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649510"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522016"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定目标-C 库
 
@@ -97,10 +97,10 @@ namespace Cocos2D {
 
 若要生成完整的绑定, 通常需要处理四个组件:
 
--  API 定义文件 (`ApiDefinition.cs`在模板中)。
--  可选: API 定义文件 (`StructsAndEnums.cs`在模板中) 所需的任何枚举、类型和结构。
--  可选: 额外的源, 可以扩展生成的绑定, 或提供更C#友好的 API ( C#添加到项目的任何文件)。
--  要绑定的本机库。
+- API 定义文件 (`ApiDefinition.cs`在模板中)。
+- 可选: API 定义文件 (`StructsAndEnums.cs`在模板中) 所需的任何枚举、类型和结构。
+- 可选: 额外的源, 可以扩展生成的绑定, 或提供更C#友好的 API ( C#添加到项目的任何文件)。
+- 要绑定的本机库。
 
 此图显示了文件之间的关系:
 
@@ -309,10 +309,10 @@ interface MyMutableTree {
 
 此`btouch-native`工具将在类中自动生成 fours 构造函数, 对于给定的`Foo`类, 它将生成:
 
--  `Foo ()`: 默认构造函数 (映射到目标-C 的 "init" 构造函数)
--  `Foo (NSCoder)`: 在对笔尖文件进行反序列化期间使用的构造函数 (映射到目标-C 的 "initWithCoder:" 构造函数)。
--  `Foo (IntPtr handle)`: 用于基于句柄的创建的构造函数, 在运行时需要从非托管对象公开托管对象时, 运行时将调用此构造函数。
--  `Foo (NSEmptyFlag)`: 派生类使用此方法阻止双重初始化。
+- `Foo ()`: 默认构造函数 (映射到目标-C 的 "init" 构造函数)
+- `Foo (NSCoder)`: 在对笔尖文件进行反序列化期间使用的构造函数 (映射到目标-C 的 "initWithCoder:" 构造函数)。
+- `Foo (IntPtr handle)`: 用于基于句柄的创建的构造函数, 在运行时需要从非托管对象公开托管对象时, 运行时将调用此构造函数。
+- `Foo (NSEmptyFlag)`: 派生类使用此方法阻止双重初始化。
 
 对于您定义的构造函数, 它们需要在接口定义中使用以下签名进行声明: 它们必须返回一个`IntPtr`值, 并且该方法的名称应为构造函数。 例如, 若要绑定`initWithFrame:`构造函数, 请使用以下方法:
 
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常, 这些字段包含必须引用的字符串或整数值。 它们通常用作表示特定通知的字符串, 以及字典中的键。
 
-若要绑定字段, 请将属性添加到接口定义文件, 并使用[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)特性修饰属性。 此属性采用一个参数: 要查找的符号的 C 名称。 例如：
+若要绑定字段, 请将属性添加到接口定义文件, 并使用[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)特性修饰属性。 此属性采用一个参数: 要查找的符号的 C 名称。 例如:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -545,14 +545,14 @@ interface LonelyClass {
 
 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)特性可应用于以下数据类型:
 
--  `NSString`引用 (仅只读属性)
--  `NSArray`引用 (仅只读属性)
--  32位整数 (`System.Int32`)
--  64位整数 (`System.Int64`)
--  32位浮点数 (`System.Single`)
--  64位浮点数 (`System.Double`)
--  `System.Drawing.SizeF`
--  `CGSize`
+- `NSString`引用 (仅只读属性)
+- `NSArray`引用 (仅只读属性)
+- 32位整数 (`System.Int32`)
+- 64位整数 (`System.Int64`)
+- 32位浮点数 (`System.Single`)
+- 64位浮点数 (`System.Double`)
+- `System.Drawing.SizeF`
+- `CGSize`
 
 除了本机字段名称外, 还可以通过传递库名称来指定字段所在的库的名称:
 
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)还支持和`NSNumber` `NSValue` (`NSString`枚举) 的数组。
 
-例如:
+例如：
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -1197,9 +1197,9 @@ void SomeString (ref NSObject byref);
 
 以上会将值标记为具有 "保留" 语义。 可用的语义包括:
 
--  Assign
--  复制
--  保留
+- Assign
+- 复制
+- 保留
 
 <a name="Style_Guidelines" />
 
@@ -1255,9 +1255,9 @@ interface MyClassDelegate {
 
 若要包装类, 您必须:
 
--  在主机类中, 将添加到[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+- 在主机类中, 将添加到[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
    声明作为委托的类型以及你公开的C#名称。 在上面的示例中, `typeof (MyClassDelegate)`它们`WeakDelegate`分别为和。
--  在您的委托类中, 对于每个具有两个以上参数的方法, 您需要指定要用于自动生成的 EventArgs 类的类型。
+- 在您的委托类中, 对于每个具有两个以上参数的方法, 您需要指定要用于自动生成的 EventArgs 类的类型。
 
 绑定生成器并不局限于只包装单个事件目标, 某些目标 C 类可能会将消息发送到多个委托, 因此您将需要提供支持此设置的数组。 大多数设置不需要它, 但生成器已准备就绪, 可支持这些情况。
 

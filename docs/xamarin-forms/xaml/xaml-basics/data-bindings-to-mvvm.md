@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f81a9d232e1702d112e837a80d35403162e3adca
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657104"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529340"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 从数据绑定到 MVVM
 
@@ -304,26 +304,26 @@ namespace XamlSamples
 
 若要允许 Viewmodel 更独立于特定用户界面对象，但仍允许在 ViewModel 中，调用的方法*命令*存在接口。 此命令接口支持在 Xamarin.Forms 中的以下元素：
 
--  `Button`
--  `MenuItem`
--  `ToolbarItem`
--  `SearchBar`
--  `TextCell` (因此也`ImageCell`)
--  `ListView`
--  `TapGestureRecognizer`
+- `Button`
+- `MenuItem`
+- `ToolbarItem`
+- `SearchBar`
+- `TextCell` (因此也`ImageCell`)
+- `ListView`
+- `TapGestureRecognizer`
 
 除`SearchBar`和`ListView`元素，这些元素定义两个属性：
 
--  `Command` 类型  `System.Windows.Input.ICommand`
--  `CommandParameter` 类型  `Object`
+- `Command` 类型  `System.Windows.Input.ICommand`
+- `CommandParameter` 类型  `Object`
 
 `SearchBar`定义`SearchCommand`并`SearchCommandParameter`属性，而`ListView`定义`RefreshCommand`类型的属性`ICommand`。
 
 `ICommand`接口定义两个方法和一个事件：
 
--  `void Execute(object arg)`
--  `bool CanExecute(object arg)`
--  `event EventHandler CanExecuteChanged`
+- `void Execute(object arg)`
+- `bool CanExecute(object arg)`
+- `event EventHandler CanExecuteChanged`
 
 ViewModel 可以定义类型的属性`ICommand`。 然后可以将绑定到这些属性`Command`每个属性`Button`或其他元素或可能是实现此接口的自定义视图。 可以选择性地设置`CommandParameter`属性标识单个`Button`对象 （或其他元素） 的绑定到此 ViewModel 属性。 在内部，`Button`调用`Execute`方法，只要用户点击`Button`，并传递到`Execute`方法及其`CommandParameter`。
 

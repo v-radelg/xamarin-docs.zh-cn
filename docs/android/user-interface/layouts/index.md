@@ -7,46 +7,46 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/18/2017
-ms.openlocfilehash: b4ffe10278c5764d945ab2387daa9e383d2ad36a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 79183963e59a7ca167ffbc3c0cc4b3628595389e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510140"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522650"
 ---
 # <a name="xamarinandroid-layouts"></a>Xamarin Android 布局
 
 布局用于排列组成屏幕 UI 界面 (如活动) 的元素。 以下部分介绍如何在 Xamarin Android 应用中使用最常用的布局。
 
--   [LinearLayout](~/android/user-interface/layouts/linear-layout.md)是一个视图组, 它以垂直或水平方式以线性方向显示子视图元素。
+- [LinearLayout](~/android/user-interface/layouts/linear-layout.md)是一个视图组, 它以垂直或水平方式以线性方向显示子视图元素。
 
     ![线性布局示例](images/linear-layout.png)
 
--   [RelativeLayout](~/android/user-interface/layouts/relative-layout.md)是在相对位置显示子视图元素的视图组。 可以将视图的位置指定为相对于同级元素。
+- [RelativeLayout](~/android/user-interface/layouts/relative-layout.md)是在相对位置显示子视图元素的视图组。 可以将视图的位置指定为相对于同级元素。
 
     ![示例相对布局](images/relative-layout.png)
 
--   [TableLayout](~/android/user-interface/layouts/table-layout.md)是一个视图组, 用于显示行和列中的子视图元素。
+- [TableLayout](~/android/user-interface/layouts/table-layout.md)是一个视图组, 用于显示行和列中的子视图元素。
 
     ![示例表布局](images/table-layout.png)
 
--   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)是一个 UI 元素, 用于显示列表或网格中的项集合, 使用户能够滚动浏览该集合。
+- [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)是一个 UI 元素, 用于显示列表或网格中的项集合, 使用户能够滚动浏览该集合。
 
     ![示例 Recycler 视图](images/recycler-view.png)
 
--   [ListView](~/android/user-interface/layouts/list-view/index.md)是创建可滚动项列表的视图组。 列表项自动使用列表适配器插入列表中。 `ListView`是 Android 应用程序的重要 UI 组件, 因为它可用于从菜单选项的简短列表到长列表的联系人或 internet 收藏夹。 它提供了一种简单的方法来显示可使用内置样式或广泛自定义的行的滚动列表。 ListView 实例需要适配器, 以便将其与行视图中包含的数据一起馈送。
+- [ListView](~/android/user-interface/layouts/list-view/index.md)是创建可滚动项列表的视图组。 列表项自动使用列表适配器插入列表中。 `ListView`是 Android 应用程序的重要 UI 组件, 因为它可用于从菜单选项的简短列表到长列表的联系人或 internet 收藏夹。 它提供了一种简单的方法来显示可使用内置样式或广泛自定义的行的滚动列表。 ListView 实例需要适配器, 以便将其与行视图中包含的数据一起馈送。
 
     ![示例列表视图](images/list-view.png)
 
--   [GridView](~/android/user-interface/layouts/grid-view.md)是一个 UI 元素, 用于显示二维网格中可滚动的项。
+- [GridView](~/android/user-interface/layouts/grid-view.md)是一个 UI 元素, 用于显示二维网格中可滚动的项。
 
     ![网格视图示例](images/grid-view.png)
 
--   [GridLayout](~/android/user-interface/layouts/grid-layout.md)是一个视图组, 支持在二维网格中布局视图, 这与 HTML 表类似。
+- [GridLayout](~/android/user-interface/layouts/grid-layout.md)是一个视图组, 支持在二维网格中布局视图, 这与 HTML 表类似。
 
     ![网格布局示例](images/grid-layout.png)
 
--   在移动应用程序中,[选项卡式布局](~/android/user-interface/layouts/tab-layout/index.md)是一种常用的用户界面模式, 因为它们简单易用。 它们提供了一种在应用程序的不同屏幕之间导航的一致且简单的方法。
+- 在移动应用程序中,[选项卡式布局](~/android/user-interface/layouts/tab-layout/index.md)是一种常用的用户界面模式, 因为它们简单易用。 它们提供了一种在应用程序的不同屏幕之间导航的一致且简单的方法。
 
     ![选项卡式布局示例](images/tabbed-layout.png)
  

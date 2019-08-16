@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f374da4a541b81bb1bcf84f2b9342785551c15a4
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: e7739642bdb9a10046286035c4aa1a3699bb75b0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512959"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526790"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 实际代码共享策略
 
@@ -29,7 +29,7 @@ ms.locfileid: "67512959"
 
 SQLite 是开放源代码数据库实现。 源和文档，请参阅[SQLite.org](http://www.sqlite.org/)。SQLite 支持，可在每个移动平台上：
 
--  **iOS** – 内置于操作系统。
+- **iOS** – 内置于操作系统。
 - **Android** – 内置于操作系统自 Android 2.2 (API 级别 10)。
 - **Windows** – 请参阅[适用于通用 Windows 平台扩展的 SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)。
 
@@ -97,10 +97,10 @@ SQLite NET 充当一个简单的 ORM，您可以保存和检索您在 SQLite 中
 
 SQLite NET 功能：
 
--  通过将属性添加到模型的类定义的表。
--  数据库实例都由的子类`SQLiteConnection`，SQLite 的网络库中的主类。
--  数据可以插入、 查询和删除使用的对象。 任何 SQL 语句不是必需的 （尽管您可以编写 SQL 语句，如果需要）。
--  可以对返回的 SQLite NET 集合执行基本的 Linq 查询。
+- 通过将属性添加到模型的类定义的表。
+- 数据库实例都由的子类`SQLiteConnection`，SQLite 的网络库中的主类。
+- 数据可以插入、 查询和删除使用的对象。 任何 SQL 语句不是必需的 （尽管您可以编写 SQL 语句，如果需要）。
+- 可以对返回的 SQLite NET 集合执行基本的 Linq 查询。
 
 
 源代码和 SQLite NET 文档位于[github 上的 SQLite Net](https://github.com/praeclarum/sqlite-net)和已实现了这两个案例研究。 SQLite NET 代码的简单示例 (从*Tasky Pro*案例研究) 如下所示。
@@ -141,9 +141,9 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 
 文件访问是确定以任何应用程序的关键部分。 可能不属于应用程序包含的文件的常见示例：
 
--  SQLite 数据库文件。
--  用户生成 （文本、 图像、 声音、 视频） 的数据。
--  下载用于缓存 （映像、 html 或 PDF 文件） 的数据。
+- SQLite 数据库文件。
+- 用户生成 （文本、 图像、 声音、 视频） 的数据。
+- 下载用于缓存 （映像、 html 或 PDF 文件） 的数据。
 
 
 
@@ -154,10 +154,10 @@ Xamarin.iOS 和 Xamarin.Android 允许使用中的类的文件系统访问`Syste
 
 每个平台都有不同的访问限制，必须加以考虑：
 
--  iOS 应用程序具有严格限制的文件系统访问权限的沙盒中运行。 Apple 进一步决定了如何通过指定会备份某些位置 （和其他人不是） 应使用文件系统。 请参阅[使用 Xamarin.iOS 中的文件系统](~/ios/app-fundamentals/file-system.md)更多详细信息的指南。
--  Android 还将访问限制为某些目录中与应用程序，但它也支持外部媒体 （例如。 SD 卡） 和访问共享的数据。
--  Windows Phone 8 (Silverlight) 不允许直接进行文件访问权限 – 仅可以使用操作文件`IsolatedStorage`。
--  Windows 8.1 WinRT 和 Windows 10 UWP 项目中只提供通过异步文件操作`Windows.Storage`Api，这不同于其他平台。
+- iOS 应用程序具有严格限制的文件系统访问权限的沙盒中运行。 Apple 进一步决定了如何通过指定会备份某些位置 （和其他人不是） 应使用文件系统。 请参阅[使用 Xamarin.iOS 中的文件系统](~/ios/app-fundamentals/file-system.md)更多详细信息的指南。
+- Android 还将访问限制为某些目录中与应用程序，但它也支持外部媒体 （例如。 SD 卡） 和访问共享的数据。
+- Windows Phone 8 (Silverlight) 不允许直接进行文件访问权限 – 仅可以使用操作文件`IsolatedStorage`。
+- Windows 8.1 WinRT 和 Windows 10 UWP 项目中只提供通过异步文件操作`Windows.Storage`Api，这不同于其他平台。
 
 #### <a name="example-for-ios-and-android"></a>适用于 iOS 和 Android 示例
 
@@ -216,10 +216,10 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 大多数移动应用程序将具有网络组件，例如：
 
--  下载图像、 视频和音频 （例如。 缩略图、 照片、 音乐）。
--  下载文档 （例如。 HTML、 PDF)。
--  上传用户数据 （如照片或文本）。
--  访问 web 服务或第三方 Api （包括 SOAP、 XML 或 JSON）。
+- 下载图像、 视频和音频 （例如。 缩略图、 照片、 音乐）。
+- 下载文档 （例如。 HTML、 PDF)。
+- 上传用户数据 （如照片或文本）。
+- 访问 web 服务或第三方 Api （包括 SOAP、 XML 或 JSON）。
 
 
 .NET Framework 提供几个不同的类，用于访问网络资源： `HttpClient`， `WebClient`，和`HttpWebRequest`。
@@ -290,9 +290,9 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
 移动应用可能需要在这些情况下的操作包括：
 
--  如果网络不可用，告知用户。 如果它们已手动将其禁用 （例如。 飞行模式或关闭 Wi-fi） 然后它们可以解决此问题。
--  如果连接是 3g，应用程序的行为可能有所不同 （例如，Apple 不允许应用程序超过 20 Mb，要下载超过 3g）。 应用程序可以使用此信息来警告用户过多的下载时间检索大型文件时。
--  即使网络不可用，它是很好的做法启动其他请求之前验证与目标服务器的连接。 这将阻止应用的网络操作超时，重复，并且还允许信息更丰富的错误消息来向用户显示。
+- 如果网络不可用，告知用户。 如果它们已手动将其禁用 （例如。 飞行模式或关闭 Wi-fi） 然后它们可以解决此问题。
+- 如果连接是 3g，应用程序的行为可能有所不同 （例如，Apple 不允许应用程序超过 20 Mb，要下载超过 3g）。 应用程序可以使用此信息来警告用户过多的下载时间检索大型文件时。
+- 即使网络不可用，它是很好的做法启动其他请求之前验证与目标服务器的连接。 这将阻止应用的网络操作超时，重复，并且还允许信息更丰富的错误消息来向用户显示。
 
 
 没有[Xamarin.iOS 示例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (后者基于 Apple[可访问性的示例代码](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 以帮助检测网络可用性。
@@ -378,10 +378,10 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 对于不使用并行任务库的代码，每个平台都有其自己的语法的封送处理回 UI 线程的操作：
 
--  **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
--  **Android** – `owner.RunOnUiThread(action)`
--  **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
--  **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
+- **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
+- **Android** – `owner.RunOnUiThread(action)`
+- **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
+- **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
 
 
 

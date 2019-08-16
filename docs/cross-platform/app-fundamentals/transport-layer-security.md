@@ -6,19 +6,19 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 639a62316d718534677b0ae86f9e5b57791c23e1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 31069199e8ebc89da76b63e58651adea82db6882
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649218"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526777"
 ---
 # <a name="transport-layer-security-tls-12"></a>传输层安全性 (TLS) 1。2
 
 使用最新版本的[_传输层安全性_(TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security)非常重要, 可确保应用程序网络通信是安全的。
 
 > [!WARNING]
-> **2018 年4月**–由于安全要求增加, 包括 PCI 合规性, 主要云提供商和 web 服务器应停止支持早于1.2 的 TLS 版本。  在 Visual Studio 的早期版本中创建的 Xamarin 项目默认使用较旧版本的 TLS。
+> **2018 年4月**–由于安全要求增加, 包括 PCI 合规性, 主要云提供商和 web 服务器应停止支持早于1.2 的 TLS 版本。 在 Visual Studio 的早期版本中创建的 Xamarin 项目默认使用较旧版本的 TLS。
 >
 > 为了确保你的应用程序继续使用这些服务器和服务,**你应该更新 Xamarin 项目以使用以下设置, 然后重新生成应用并将其重新部署**到用户。
 

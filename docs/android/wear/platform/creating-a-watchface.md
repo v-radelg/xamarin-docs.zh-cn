@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: 52891a11dcc271497031658d0eff9f98a01d3555
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a3b38a77f045c17b66c65a14eda32f5a7fcd5fc5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647884"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522255"
 ---
 # <a name="creating-a-watch-face"></a>创建表盘
 
@@ -35,9 +35,9 @@ _本指南介绍如何实现适用于 Android 磨损1.0 的自定义监视人脸
 
 若要实现 watch 面部服务, 需要满足以下要求:
 
--   在磨损设备或模拟器上的 Android 5.0 (API 级别 21) 或更高版本。
+- 在磨损设备或模拟器上的 Android 5.0 (API 级别 21) 或更高版本。
 
--   [Xamarin Android 支持库](https://www.nuget.org/packages/Xamarin.Android.Wear)必须添加到 xamarin 项目。
+- [Xamarin Android 支持库](https://www.nuget.org/packages/Xamarin.Android.Wear)必须添加到 xamarin 项目。
 
 尽管 Android 5.0 是用于实现监视人脸服务的最低 API 级别, 但建议使用 Android 5.1 或更高版本。 运行 Android 5.1 (API 22) 或更高版本的 android 磨损设备允许损耗应用控制设备处于低功率*环境*模式时在屏幕上显示的内容。 当设备离开低功率*环境*模式时, 它处于*交互*模式。 有关这些模式的详细信息, 请参阅[使应用保持可见](https://developer.android.com/training/wearables/apps/always-on.html)。
 
@@ -127,17 +127,17 @@ Android 损耗通过`CanvasWatchFaceService`类实现了观察面。 `CanvasWatc
 
 在以下部分中, 将通过执行以下步骤来创建自定义监视人脸服务:
 
-1.  定义派生自`CanvasWatchFaceService`的`MyWatchFaceService`名为的类。
+1. 定义派生自`CanvasWatchFaceService`的`MyWatchFaceService`名为的类。
 
-2.  在`MyWatchFaceService`中, 创建一个从`CanvasWatchFaceService.Engine`派生`MyWatchFaceEngine`的名为的嵌套类。
+2. 在`MyWatchFaceService`中, 创建一个从`CanvasWatchFaceService.Engine`派生`MyWatchFaceEngine`的名为的嵌套类。
 
-3.  在`MyWatchFaceService`中, 实现`CreateEngine`一个实例化`MyWatchFaceEngine`并返回该方法的方法。
+3. 在`MyWatchFaceService`中, 实现`CreateEngine`一个实例化`MyWatchFaceEngine`并返回该方法的方法。
 
-4.  在`MyWatchFaceEngine`中, `OnCreate`实现方法以创建 watch 面部样式并执行任何其他初始化任务。
+4. 在`MyWatchFaceEngine`中, `OnCreate`实现方法以创建 watch 面部样式并执行任何其他初始化任务。
 
-5.  `OnDraw`实现的`MyWatchFaceEngine`方法。 只要需要重绘手表面 (即*失效*), 就会调用此方法。 `OnDraw`用于绘制 (和重绘) 观看面部元素 (例如小时、分钟和秒钟) 的方法。
+5. `OnDraw`实现的`MyWatchFaceEngine`方法。 只要需要重绘手表面 (即*失效*), 就会调用此方法。 `OnDraw`用于绘制 (和重绘) 观看面部元素 (例如小时、分钟和秒钟) 的方法。
 
-6.  `OnTimeTick`实现的`MyWatchFaceEngine`方法。
+6. `OnTimeTick`实现的`MyWatchFaceEngine`方法。
     `OnTimeTick`至少每分钟调用一次 (在环境模式和交互模式下), 或在日期/时间更改时调用。
 
 有关的详细信息`CanvasWatchFaceService`, 请参阅 Android [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) API 文档。
@@ -222,11 +222,11 @@ public override void OnCreate(ISurfaceHolder holder)
 
 对`SetWatchFaceStyle`的调用会执行以下操作:
 
-1.  将*速览模式*设置`PeekModeShort`为, 这将导致通知在显示器上显示为较小的 "速览" 卡。
+1. 将*速览模式*设置`PeekModeShort`为, 这将导致通知在显示器上显示为较小的 "速览" 卡。
 
-2.  将背景可见性设置`Interruptive`为, 这使得仅在显示会造成中断通知时才会显示速览卡的背景。
+2. 将背景可见性设置`Interruptive`为, 这使得仅在显示会造成中断通知时才会显示速览卡的背景。
 
-3.  禁止在手表面上绘制默认系统 UI 时间, 以便自定义监视人可以显示时间。
+3. 禁止在手表面上绘制默认系统 UI 时间, 以便自定义监视人可以显示时间。
 
 有关这些和其他手表样式选项的详细信息, 请参阅 Android [WatchFaceStyle](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API 文档。
 
@@ -237,7 +237,7 @@ public override void OnCreate(ISurfaceHolder holder)
 
 此`OnDraw`方法可能是最重要`CanvasWatchFaceService.Engine`的方法&ndash; , 它是实际绘制观看人脸元素 (例如数字和时钟面部指针) 的方法。
 在下面的示例中, 它在手表面上绘制一个时间字符串。
-将以下方法添加到`MyWatchFaceEngine`:
+将以下方法添加到 `MyWatchFaceEngine`：
 
 ```csharp
 public override void OnDraw (Canvas canvas, Rect frame)
@@ -256,7 +256,7 @@ public override void OnDraw (Canvas canvas, Rect frame)
 
 ### <a name="implement-the-engine-ontimetick-method"></a>实现 Engine OnTimeTick 方法
 
-Android 会定期调用`OnTimeTick`方法以更新监视面显示的时间。 至少每分钟调用一次 (在环境模式和交互模式下), 或在日期/时间或时区发生更改时调用。 将以下方法添加到`MyWatchFaceEngine`:
+Android 会定期调用`OnTimeTick`方法以更新监视面显示的时间。 至少每分钟调用一次 (在环境模式和交互模式下), 或在日期/时间或时区发生更改时调用。 将以下方法添加到 `MyWatchFaceEngine`：
 
 ```csharp
 public override void OnTimeTick()
@@ -296,13 +296,13 @@ public override void OnTimeTick()
 
 此 XML 执行以下操作:
 
-1.  `android.permission.BIND_WALLPAPER`设置权限。 此权限提供了在设备上更改系统墙纸的 "监视人脸服务" 权限。 请注意, 必须在`<service>`部分中而不是在外部`<application>`部分设置此权限。
+1. `android.permission.BIND_WALLPAPER`设置权限。 此权限提供了在设备上更改系统墙纸的 "监视人脸服务" 权限。 请注意, 必须在`<service>`部分中而不是在外部`<application>`部分设置此权限。
 
-2.  `watch_face`定义资源。 此资源是一个简短的 XML 文件, 用于`wallpaper`声明资源 (此文件将在下一节中创建)。
+2. `watch_face`定义资源。 此资源是一个简短的 XML 文件, 用于`wallpaper`声明资源 (此文件将在下一节中创建)。
 
-3.  声明一个名`preview`为的可绘制图像, 将由 "监视选取器选择" 屏幕显示。
+3. 声明一个名`preview`为的可绘制图像, 将由 "监视选取器选择" 屏幕显示。
 
-4.  包含一个`intent-filter` , 它`MyWatchFaceService`使 Android 知道将显示一个手表面。
+4. 包含一个`intent-filter` , 它`MyWatchFaceService`使 Android 知道将显示一个手表面。
 
 完成基本`WatchFace`示例的代码。 下一步是添加必要的资源。
 
@@ -338,17 +338,17 @@ public override void OnTimeTick()
 
 构建应用并将其部署到磨损设备。 应该会看到 "应用程序" 屏幕显示为 "之前"。 执行以下操作以启用新的手表脸:
 
-1.  向右轻扫, 直到看到 "监视" 屏幕的背景。
+1. 向右轻扫, 直到看到 "监视" 屏幕的背景。
 
-2.  在屏幕背景上的任意位置按住鼠标并保持两秒钟。
+2. 在屏幕背景上的任意位置按住鼠标并保持两秒钟。
 
-3.  从左到右滑动以浏览各种手表面。
+3. 从左到右滑动以浏览各种手表面。
 
-4.  选择**Xamarin 示例**监视面 (显示在右侧):
+4. 选择**Xamarin 示例**监视面 (显示在右侧):
 
     [![Watchface 选取器](creating-a-watchface-images/11-watchface-picker.png "轻扫以定位 Xamarin 示例监视面")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
-5.  点击**Xamarin 示例**监视人脸将其选中。
+5. 点击**Xamarin 示例**监视人脸将其选中。
 
 这会更改磨损设备的手表面, 以使用迄今为止实现的自定义监视人脸服务:
 
@@ -364,15 +364,15 @@ public override void OnTimeTick()
 
 本演练`MyWatchFaceService`的其余部分将升级以显示模拟样式的监视面, 并将其扩展以支持更多功能。 将添加以下功能来创建升级的监视面:
 
-1.  指示具有模拟小时、分钟和秒的时间。
+1. 指示具有模拟小时、分钟和秒的时间。
 
-2.  对可见性变化做出反应。
+2. 对可见性变化做出反应。
 
-3.  响应环境模式和交互模式之间的更改。
+3. 响应环境模式和交互模式之间的更改。
 
-4.  读取基础磨损设备的属性。
+4. 读取基础磨损设备的属性。
 
-5.  自动更新发生时区更改的时间。
+5. 自动更新发生时区更改的时间。
 
 在实现下面的代码更改之前, 请下载可[绘制的 .zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true), 将其解压缩, 然后将解压后的 .png 文件移动到**资源/可绘制**的文件 (覆盖以前的**预览版**)。 向`WatchFace`项目中添加新的 .png 文件。
 
@@ -387,13 +387,13 @@ public override void OnTimeTick()
 
 已更新的**OnCreate**方法会像以前一样配置 watch 面部样式, 但它还包括一些附加步骤:
 
-1.  将背景图像设置为**资源/drawable-hdpi/xamarin_background**中的**xamarin_background**资源。
+1. 将背景图像设置为**资源/drawable-hdpi/xamarin_background**中的**xamarin_background**资源。
 
-2.  初始化`Paint`对象以绘制小时、分钟和秒。
+2. 初始化`Paint`对象以绘制小时、分钟和秒。
 
-3.  初始化一个`Paint`对象, 用于绘制观察表面边缘的小时刻度。
+3. 初始化一个`Paint`对象, 用于绘制观察表面边缘的小时刻度。
 
-4.  创建一个调用`Invalidate` (重绘) 方法的计时器, 以便每秒重绘第二次。 请注意, 此计时器是必需`OnTimeTick`的`Invalidate` , 因为每分钟只调用一次。
+4. 创建一个调用`Invalidate` (重绘) 方法的计时器, 以便每秒重绘第二次。 请注意, 此计时器是必需`OnTimeTick`的`Invalidate` , 因为每分钟只调用一次。
 
 此示例仅包含一个**xamarin_background**图像;但是, 你可能希望为自定义监视面将支持的每个屏幕密度创建不同的背景图像。
 
@@ -401,17 +401,17 @@ public override void OnTimeTick()
 
 已更新的**OnDraw**方法使用以下步骤绘制模拟样式的监视面:
 
-1.  获取当前时间, 现在该时间已在`time`对象中进行维护。
+1. 获取当前时间, 现在该时间已在`time`对象中进行维护。
 
-2.  确定绘图图面的边界及其中心。
+2. 确定绘图图面的边界及其中心。
 
-3.  绘制背景, 在绘制背景时缩放以适合设备。
+3. 绘制背景, 在绘制背景时缩放以适合设备。
 
-4.  在时钟面的周围绘制十二个*刻度*(对应于时钟面上的小时数)。
+4. 在时钟面的周围绘制十二个*刻度*(对应于时钟面上的小时数)。
 
-5.  计算每个观看局的角度、旋转和长度。
+5. 计算每个观看局的角度、旋转和长度。
 
-6.  在手表面上绘制每个手。 请注意, 如果手表处于环境模式, 则不会绘制第二个。
+6. 在手表面上绘制每个手。 请注意, 如果手表处于环境模式, 则不会绘制第二个。
 
 
 #### <a name="onpropertieschanged"></a>OnPropertiesChanged

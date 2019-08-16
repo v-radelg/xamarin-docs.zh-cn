@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: d9f624084c83b318487f1162a9a2350f9e2cc409
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 750cf801d8ae9dfe63f9b2259d4a3f6a386a4404
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510506"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523234"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>资源限定符和可视化选项
 
@@ -29,9 +29,9 @@ _本主题说明如何定义将仅在某些限定符值匹配时使用的资源�
 
 此对话框显示以下资源限定符的下拉菜单:
 
--   **语言**&ndash;显示可用的语言资源, 并提供添加新语言/区域资源的选项。
+- **语言**&ndash;显示可用的语言资源, 并提供添加新语言/区域资源的选项。
 
--   **UI 模式**列出显示模式 (如**汽车 dock**和**书桌 dock**) 以及布局方向。 &ndash;
+- **UI 模式**列出显示模式 (如**汽车 dock**和**书桌 dock**) 以及布局方向。 &ndash;
 
 其中每个下拉菜单都将打开新对话框, 您可以在其中选择和配置资源限定符 (如下所述)。
 
@@ -58,7 +58,7 @@ _本主题说明如何定义将仅在某些限定符值匹配时使用的资源�
 
 [![UI 模式菜单](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-此列表的下面是夜景**模式,** **不晚**于晚间, 后跟从**左**到右和从**右到左**的布局方向 (有关**从左到右**和从**右到左**的选项的信息, 请参阅[Layoutdirection.](xref:Android.Util.LayoutDirection))。
+此列表的下面是夜景模式,**不晚** **于**晚间, 后跟从左到右和从**右到左**的布局方向 (有关**从左到右**和从**右到左**的选项的信息, 请参阅 [Layoutdirection.](xref:Android.Util.LayoutDirection))。
 "**资源限定符选项**" 对话框中的最后一项是**圆形屏幕**(用于 Android 磨损) 或**不是圆形**屏幕。
 有关圆形和非圆角屏幕的信息, 请参阅[布局](https://developer.android.com/training/wearables/ui/layouts.html)。
 有关 Android UI 模式的详细信息, 请参阅[UiModeManager](xref:Android.App.UiModeManager)。
@@ -71,11 +71,11 @@ _本主题说明如何定义将仅在某些限定符值匹配时使用的资源�
 
 此图标将打开一个对话框 segue, 该对话框提供一种方法来选择三个操作栏模式之一:
 
--   **标准**&ndash;包含带有可选副标题的徽标、图标和标题文本。
+- **标准**&ndash;包含带有可选副标题的徽标、图标和标题文本。
 
--   **列表**&ndash;列表导航模式。 此模式为在活动中导航提供一个列表菜单 (即, 可以作为下拉列表显示给用户), 而不是静态标题文本。
+- **列表**&ndash;列表导航模式。 此模式为在活动中导航提供一个列表菜单 (即, 可以作为下拉列表显示给用户), 而不是静态标题文本。
 
--   **选项卡**&ndash;选项卡导航模式。 此模式为在活动中导航提供一系列选项卡, 而不是静态标题文本。
+- **选项卡**&ndash;选项卡导航模式。 此模式为在活动中导航提供一系列选项卡, 而不是静态标题文本。
 
 ## <a name="themes"></a>主题
 
@@ -111,9 +111,9 @@ Android**版本**选择器设置用于在设计器中呈现布局的 android 版
 
 此对话框显示以下资源限定符的下拉菜单:
 
--   **语言**&ndash;显示可用的语言资源, 并提供添加新语言/区域资源的选项。
+- **语言**&ndash;显示可用的语言资源, 并提供添加新语言/区域资源的选项。
 
--   **UI 模式**列出显示模式 (如**汽车 dock**和**书桌 dock**) 以及布局方向。 &ndash;
+- **UI 模式**列出显示模式 (如**汽车 dock**和**书桌 dock**) 以及布局方向。 &ndash;
 
 其中每个下拉菜单都将打开新对话框, 您可以在其中选择和配置资源限定符 (如下所述)。
 
@@ -153,11 +153,11 @@ Android**版本**选择器设置用于在设计器中呈现布局的 android 版
 
 此图标将打开一个对话框 segue, 该对话框提供一种方法来选择三个操作栏模式之一:
 
--   **标准**&ndash;包含带有可选副标题的徽标、图标和标题文本。
+- **标准**&ndash;包含带有可选副标题的徽标、图标和标题文本。
 
--   **列表**&ndash;列表导航模式。 此模式为在活动中导航提供一个列表菜单 (即, 可以作为下拉列表显示给用户), 而不是静态标题文本。
+- **列表**&ndash;列表导航模式。 此模式为在活动中导航提供一个列表菜单 (即, 可以作为下拉列表显示给用户), 而不是静态标题文本。
 
--   **选项卡**&ndash;选项卡导航模式。 此模式为在活动中导航提供一系列选项卡, 而不是静态标题文本。
+- **选项卡**&ndash;选项卡导航模式。 此模式为在活动中导航提供一系列选项卡, 而不是静态标题文本。
 
 ## <a name="themes"></a>主题
 

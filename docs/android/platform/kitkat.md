@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: efb55b060243950640978ae2cfc3fe6998efdb87
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e68ac0a39d3268ce7c84f583c64b247e9f82362
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643475"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524185"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -22,13 +22,13 @@ _Android 4.4 (KitKat) 为用户和开发人员提供了 cornucopia 功能。本�
 
 Android 4.4 (API 级别 19) (也称为 "KitKat") 在后期2013发布。 KitKat 提供了各种新的功能和改进, 包括:
 
--  [用户体验](#user_experience)&ndash;使用转换框架、半透明状态和导航栏以及全屏沉浸模式的简单动画有助于为用户带来更好的体验。
+- [用户体验](#user_experience)&ndash;使用转换框架、半透明状态和导航栏以及全屏沉浸模式的简单动画有助于为用户带来更好的体验。
 
--  [用户内容](#user_content)&ndash;使用存储访问框架简化了用户文件管理; 打印图片、网站和其他内容更易于打印 api。
+- [用户内容](#user_content)&ndash;使用存储访问框架简化了用户文件管理; 打印图片、网站和其他内容更易于打印 api。
 
--  [硬件](#hardware)使用基于 nfc 主机的卡仿真将任何应用转换为 nfc 卡; `SensorManager`使用运行低功耗传感器。 &ndash;
+- [硬件](#hardware)使用基于 nfc 主机的卡仿真将任何应用转换为 nfc 卡; `SensorManager`使用运行低功耗传感器。 &ndash;
 
--  [开发人员工具](#developer_tools)&ndash; Android Debug Bridge 客户端使用的 Screencast 应用程序, 可作为 Android SDK 的一部分。
+- [开发人员工具](#developer_tools)&ndash; Android Debug Bridge 客户端使用的 Screencast 应用程序, 可作为 Android SDK 的一部分。
 
 
 本指南提供有关将现有 Xamarin Android 应用程序迁移到 KitKat 的指导, 以及针对 Xamarin 开发人员的 KitKat 的高级概述。
@@ -79,11 +79,11 @@ KitKat 不再允许您设置精确的重复警报。 使用的应用程序[`SetR
 
 外部存储现在划分为两种类型-应用程序的唯一存储空间, 以及由多个应用程序共享的数据。 在外部存储上读取和写入应用的特定位置不需要特殊权限。 与共享存储上的数据交互现在需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限。 这两种类型可以分类为:
 
--  如果是通过调用方法`Context`获取文件或目录路径, 例如:[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+- 如果是通过调用方法`Context`获取文件或目录路径, 例如:[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
    或[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
    - 您的应用程序不需要额外的权限。
 
--  如果是通过访问属性或对`Environment`调用方法来获取文件或目录路径, 例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+- 如果是通过访问属性或对`Environment`调用方法来获取文件或目录路径, 例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
    或[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
    , 应用需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限。
 
@@ -284,11 +284,11 @@ TransitionManager.Go (scene1, transition);
 
 KitKat 使你可以更好地控制具有可选半透明状态和导航栏的应用的主题。 你可以在用于定义 Android 主题的同一 XML 文件中更改系统 UI 元素的半透明度。 KitKat 引入了以下属性:
 
--  `windowTranslucentStatus`-如果设置为 true, 则使顶部状态栏成为半透明的。
+- `windowTranslucentStatus`-如果设置为 true, 则使顶部状态栏成为半透明的。
 
--  `windowTranslucentNavigation`-设置为 true 时, 使底部导航栏半透明。
+- `windowTranslucentNavigation`-设置为 true 时, 使底部导航栏半透明。
 
--  `fitsSystemWindows`-默认情况下, 将顶部或底部栏设置为 "transcluent" 可在透明 UI 元素下移动内容。 如果将此属性`true`设置为, 则可以使用一种简单的方法来防止内容与半透明系统 UI 元素重叠。
+- `fitsSystemWindows`-默认情况下, 将顶部或底部栏设置为 "transcluent" 可在透明 UI 元素下移动内容。 如果将此属性`true`设置为, 则可以使用一种简单的方法来防止内容与半透明系统 UI 元素重叠。
 
 
 下面的代码定义了一个带有半透明状态和导航栏的主题:
@@ -537,9 +537,9 @@ HCE 要求将 HCE 功能和`Nfc`权限都注册到应用程序的: `AndroidManif
 
 若要工作, HCE 必须能够在后台运行, 并且在用户进行 NFC 事务时必须启动, 即使使用 HCE 的应用程序未运行也是如此。 可以通过将`Service`HCE 代码编写为来实现此目的。 HCE 服务实现了`HostApduService`接口, 该接口实现以下方法:
 
--  *ProcessCommandApdu* -应用程序协议数据单元 (APDU) 是 NFC 读取器和 HCE 服务之间发送的内容。 此方法从读取器使用 ADPU, 并返回响应中的数据单位。
+- *ProcessCommandApdu* -应用程序协议数据单元 (APDU) 是 NFC 读取器和 HCE 服务之间发送的内容。 此方法从读取器使用 ADPU, 并返回响应中的数据单位。
 
--  *OnDeactivated* - `HostAdpuService`当 HCE 服务不再与 NFC 读取器通信时, 将停用。
+- *OnDeactivated* - `HostAdpuService`当 HCE 服务不再与 NFC 读取器通信时, 将停用。
 
 
 还需要在应用程序清单中注册 HCE 服务, 并使用适当的权限、意向筛选器和元数据对其进行修饰。 下面的代码是`HostApduService` `Service`使用属性注册到 Android 清单的示例 (有关属性的详细信息, 请参阅使用[android 清单](~/android/platform/android-manifest.md)的 Xamarin 指南):
@@ -591,9 +591,9 @@ class HceService : HostApduService
 
 KitKat 还附带了两种新的传感器类型, 用于跟踪用户的步骤。 这些是基于加速感应, 并包括:
 
--  *StepDetector* -当用户执行某个步骤时, 会通知/唤醒, 并且当发生该步骤时, 检测程序会提供一个时间值。
+- *StepDetector* -当用户执行某个步骤时, 会通知/唤醒, 并且当发生该步骤时, 检测程序会提供一个时间值。
 
--  *StepCounter* -跟踪用户自传感器注册到*下一次设备重新启动*以来所执行的步骤数。
+- *StepCounter* -跟踪用户自传感器注册到*下一次设备重新启动*以来所执行的步骤数。
 
 下面的屏幕截图描述了操作中的步骤计数器:
 
@@ -678,29 +678,29 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 除了上述更改之外, KitKat 允许你:
 
--  *使用全屏*-KitKat 引入了一种新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)), 用于浏览内容、玩游戏, 以及运行可从全屏体验中获益的其他应用程序。
+- *使用全屏*-KitKat 引入了一种新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)), 用于浏览内容、玩游戏, 以及运行可从全屏体验中获益的其他应用程序。
 
--  *自定义通知*-获取有关系统通知的其他详细信息[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
+- *自定义通知*-获取有关系统通知的其他详细信息[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
    . 这使你能够以不同的方式在应用程序中显示信息。
 
--  *镜像可绘制资源*-可绘制资源具有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
+- *镜像可绘制资源*-可绘制资源具有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
    此属性告知系统为需要翻转以实现从左到右布局的图像创建镜像版本。
 
--  *暂停动画*-暂停和恢复用[`Animator`](xref:Android.Animation.Animator)
+- *暂停动画*-暂停和恢复用[`Animator`](xref:Android.Animation.Animator)
    类的新实例。
 
--  *阅读动态更改文本*-表示 UI 的部分, 这些部分以新[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+- *阅读动态更改文本*-表示 UI 的部分, 这些部分以新[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    特性, 以便在辅助功能模式下自动读取新文本。
 
--  *增强音频体验*-使跟踪与[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
+- *增强音频体验*-使跟踪与[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
    , 查找音频流的峰值和 RMS, 其中包含[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
    类, 并从[音频时间戳](xref:Android.Media.AudioTimestamp)获取信息以帮助进行音频视频同步。
 
--  *同步 ContentResolver 自定义间隔*-KitKat 将一些可变性添加到同步请求的执行时间。 通过调用`ContentResolver.RequestSync`并传入在`SyncRequest`自定义时间或间隔同步。 `ContentResolver`
+- *同步 ContentResolver 自定义间隔*-KitKat 将一些可变性添加到同步请求的执行时间。 通过调用`ContentResolver.RequestSync`并传入在`SyncRequest`自定义时间或间隔同步。 `ContentResolver`
 
--  *区分控制器*-在 KitKat 中, 为控制器分配唯一的整数标识符, 可通过设备的`ControllerNumber`属性进行访问。 这样就可以更轻松地在游戏中区分玩家。
+- *区分控制器*-在 KitKat 中, 为控制器分配唯一的整数标识符, 可通过设备的`ControllerNumber`属性进行访问。 这样就可以更轻松地在游戏中区分玩家。
 
--  *远程控制*-对硬件和软件端进行一些更改, KitKat 允许你使用 IR 发送器将设备 outfitted 启用到远程控制`ConsumerIrService`, 并使用新的[`RemoteController`](xref:Android.Media.RemoteController)
+- *远程控制*-对硬件和软件端进行一些更改, KitKat 允许你使用 IR 发送器将设备 outfitted 启用到远程控制`ConsumerIrService`, 并使用新的[`RemoteController`](xref:Android.Media.RemoteController)
    Api.
 
 有关上述 API 更改的详细信息, 请参阅 Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)概述。

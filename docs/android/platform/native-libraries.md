@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: d3e5b36f2cbc48dac09b55bfba8c3613db12bbc8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa0a3a75a4cc2cfd04b607f17206faa822af0474
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643274"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523640"
 ---
 # <a name="using-native-libraries"></a>使用本机库
 
@@ -24,8 +24,8 @@ Xamarin 支持通过标准 PInvoke 机制使用本机库。 你还可以将不�
 请注意, 由于 Android 支持多个应用程序二进制接口 (Abi), 因此, Xamarin 必须知道为其生成本机库的 ABI。
 可以通过两种方法完成：
 
-1.  路径 "窃听"
-1.  通过使用`AndroidNativeLibrary/Abi`项目文件中的元素
+1. 路径 "窃听"
+1. 通过使用`AndroidNativeLibrary/Abi`项目文件中的元素
 
 
 通过路径探查，本机库的父目录名称用于指定库的目标 ABI。 因此, 如果将添加`lib/armeabi/libfoo.so`到项目, 则 ABI 将为 "探查`armeabi`"。

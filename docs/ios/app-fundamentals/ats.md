@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 62ccaea83a3648c5d9b0a029b3a22d136c4f2cee
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6890846a1cb5cd44429c9157b3aeb75c7a1f2f4b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649415"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521427"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的应用传输安全
 
@@ -175,7 +175,7 @@ NSAppTransportSecurity
 - **NSAllowsArbitraryLoads**(`Boolean`)-如果`YES`将对中`NSExceptionDomains`**未**列出的任何域禁用 ATS。 对于列出的域, 将使用指定的安全设置。
 - **NSAllowsArbitraryLoadsInWebContent**(`Boolean`)-如果`YES`将在应用程序的其余部分仍启用 Apple 传输安全性 (ATS) 保护时允许正确加载网页。
 - **NSExceptionDomains**(`Dictionary`)-域的集合, 以及 ATS 应用于给定域的安全设置。
-- **< 的域名 (> 为例外**)(`Dictionary`)-给定域的异常集合 (例如 `www.xamarin.com`）格式模式中出现的位置生成。
+- 域名-`Dictionary`作为异常 > ()-给定域的异常的集合 (例如,  **\<** `www.xamarin.com`）格式模式中出现的位置生成。
 - **NSExceptionMinimumTLSVersion**(`String`)-最小 TLS 版本`TLSv1.0`为`TLSv1.1`或`TLSv1.2` (这是默认值)。
 - **NSExceptionRequiresForwardSecrecy**(`Boolean`)-如果`NO`域不必使用具有 "转发安全" 的密码。 默认值为 `YES`。
 - **NSExceptionAllowsInsecureHTTPLoads**(`Boolean`)-如果`NO`为 (默认值), 则与此`HTTPS`域的所有通信都必须在协议中。

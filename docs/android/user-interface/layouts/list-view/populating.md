@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646351"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522539"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>使用数据填充 Xamarin ListView ListView
 
@@ -62,14 +62,14 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 `ArrayAdapter<string>`非常简单, 因为它很简单, 但非常有限。 不过, 通常会有一系列业务实体, 而不只是要绑定的字符串。
 例如, 如果您的数据包含 Employee 类的集合, 则您可能希望该列表只显示每个雇员的姓名。 若要自定义的行为`ListView`来控制要显示的数据, 您必须实现一个`BaseAdapter`子类来重写以下四项:
 
--   **计数**&ndash;通知控件数据中的行数。
+- **计数**&ndash;通知控件数据中的行数。
 
--   **GetView**&ndash;为每行返回一个视图, 并用数据填充。
+- **GetView**&ndash;为每行返回一个视图, 并用数据填充。
     此方法有一个参数, 该`ListView`参数用于传入未使用的现有行以供重用。
 
--   **GetItemId**&ndash;返回行标识符 (通常为行号, 尽管它可以是你喜欢的任意 long 值)。
+- **GetItemId**&ndash;返回行标识符 (通常为行号, 尽管它可以是你喜欢的任意 long 值)。
 
--   **此 [int]** 索引&ndash;器返回与特定行号关联的数据。
+- **此 [int]** 索引&ndash;器返回与特定行号关联的数据。
 
 **BasicTableAdapter/HomeScreenAdapter**中的示例代码演示如何为子类`BaseAdapter`:
 
@@ -159,11 +159,11 @@ ListView.FastScrollEnabled = true;
 
 若要`ISectionIndexer`实现, 需要将三个方法添加到适配器:
 
--   **GetSections**&ndash;提供可以显示的节索引标题的完整列表。 此方法需要 Java 对象的数组, 因此代码需要`Java.Lang.Object[]`从 .net 集合创建。 在本示例中, 它将列表中的初始字符列表返回为`Java.Lang.String` 。
+- **GetSections**&ndash;提供可以显示的节索引标题的完整列表。 此方法需要 Java 对象的数组, 因此代码需要`Java.Lang.Object[]`从 .net 集合创建。 在本示例中, 它将列表中的初始字符列表返回为`Java.Lang.String` 。
 
--   **GetPositionForSection**&ndash;返回给定节索引的第一个行位置。
+- **GetPositionForSection**&ndash;返回给定节索引的第一个行位置。
 
--   **GetSectionForPosition**&ndash;返回要为给定行显示的节索引。
+- **GetSectionForPosition**&ndash;返回要为给定行显示的节索引。
 
 
 示例`SectionIndex/HomeScreenAdapter.cs`文件实现了这些方法, 并在构造函数中实现了一些其他代码。 构造函数通过循环遍历每一行并提取标题的第一个字符来生成节索引 (必须已对项进行排序才能使其正常工作)。

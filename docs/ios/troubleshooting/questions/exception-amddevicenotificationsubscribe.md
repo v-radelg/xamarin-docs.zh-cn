@@ -7,28 +7,28 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d834c06c5fa5ee55e5e3b91bd16b5b4d326c42ee
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421939"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528170"
 ---
 # <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>System.Exception AMDeviceNotificationSubscribe 已返回...
 
 > [!IMPORTANT]
-> 最新版本的 Xamarin 中已解决此问题。 但是，如果最新版本的软件会出现此问题，请提出[新 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)与完整的版本控制信息和完整生成日志输出。
+> 此问题已在最新版本的 Xamarin 中解决。 但是, 如果该软件的最新版本发生问题, 请使用完整的版本信息和完整的生成日志输出来记录[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
 
 
 ## <a name="fix"></a>修补程序
 
-1.  终止`usbmuxd`处理，以便系统将重新启动它：
+1. `usbmuxd`终止进程, 使系统重新启动它:
 
     ```csharp
     sudo killall -QUIT usbmuxd
     ```
 
-2.  如果这样不会解决问题，重启 mac。
+2. 如果这不能解决问题, 请重新启动 Mac。
 
 ## <a name="error-message"></a>错误消息
 
@@ -42,13 +42,13 @@ AMDeviceNotificationSubscribe returned: 3892314211
   at Mtb.Application.MainClass.Main (System.String[] args) [0x00000] in <filename unknown="">:0
 ```
 
-此消息可以出现在错误对话框，在首次启动 Visual Studio for Mac 中，或在`mtbserver.log`Xamarin.iOS 生成主机应用程序中的文件 (**Xamarin.iOS 生成主机 > 查看生成主机日志**)。
+首次启动 Visual Studio for Mac 时, 或在`mtbserver.log` xamarin 生成主机应用 (xamarin 生成主机 **> 查看生成主机日志**) 的文件中, 此消息可能出现在错误对话框中。
 
-请注意，这是不常见的问题。 如果 Visual Studio 无法连接到 Mac 生成主机，还有更有可能出现在其他错误`mtbserver.log`文件。
+请注意, 这是一个不常见的问题。 如果 Visual Studio 在连接到 Mac 生成主机时遇到问题, 则会有其他错误, 更有可能出现在`mtbserver.log`文件中。
 
-### <a name="errors-in-systemlog"></a>System.log 中的错误
+### <a name="errors-in-systemlog"></a>系统日志中的错误
 
-在某些情况下以下两个错误消息可能也会显示重复在`/var/log/system.log`:
+在某些情况下, 以下两个错误消息可能还会`/var/log/system.log`在中重复出现:
 
 ```csharp
 17:17:11.369 usbmuxd[55040]: dnssd_clientstub ConnectToServer: socket failed 24 Too many open files
@@ -57,10 +57,10 @@ AMDeviceNotificationSubscribe returned: 3892314211
 
 ## <a name="additional-information"></a>其他信息
 
-一个猜测该错误的根本原因是在 OS X 系统服务负责报告 iOS 设备和模拟器信息可以在极少数情况下，输入意外的状态。 Xamarin 不能与此状态中的系统服务正确交互。 重启计算机重新启动系统服务，解决了问题。
+其中一次推测错误的根本原因是, 在极少数情况下, 负责报告 iOS 设备和模拟器信息的 OS X 系统服务进入意外状态。 在此状态下, Xamarin 无法与系统服务正确交互。 重新启动计算机将重新启动系统服务并解决该问题。
 
-基于出现的错误`system.log`它将出现此问题可能与 Bonjour (`mDNSResponder`)。 不同的 WiFi 网络之间的更改似乎会增加的问题的可能性。
+根据出现的错误`system.log` , 此问题可能与 Bonjour (`mDNSResponder`) 相关。 在不同的 WiFi 网络之间进行更改似乎会增加出现问题的几率。
 
 ## <a name="references"></a>参考资料
 
-*   [Bug 11789-MonoTouch.MobileDevice.MobileDeviceException:Amdevicenotificationsubscribe 已返回：0XE8000063 [解析 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+* [Bug 11789-Monotouch.dialog. MobileDevice. MobileDeviceException:AMDeviceNotificationSubscribe 返回:0xe8000063 [已解析 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

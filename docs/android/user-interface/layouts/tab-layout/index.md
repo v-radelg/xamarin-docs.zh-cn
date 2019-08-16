@@ -1,34 +1,34 @@
 ---
 title: 选项卡式布局
-description: 在 Android 中的选项卡式布局的概述
+description: Android 中的选项卡式布局概述
 ms.prod: xamarin
 ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 32d1ce4e440a962e02fda052375171bea7676053
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5f67ec30ce04993701634387f7c2023a0f92004f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61303244"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522359"
 ---
 # <a name="tabbed-layouts"></a>选项卡式布局
 
 
 ## <a name="overview"></a>概述
 
-选项卡是由于其简单性和可用性的移动应用程序中的常见用户界面模式。 它们提供一致、 简单的方法的应用程序中的各种屏幕之间进行导航。 Android 有几个 API 的选项卡式接口： 
+在移动应用程序中, 选项卡是一种常用的用户界面模式, 因为它们简单易用。 它们提供了一种在应用程序的不同屏幕之间导航的一致且简单的方法。 Android 有多个用于选项卡式界面的 API: 
 
--   **ActionBar** &ndash;这是一组新的 API 的目标是提供一致的 Android 3.0 （API 级别为 11） 中引入的一部分导航和切换视图的接口。 已为 Android 2.2 （API 级别 8） 与返回移植[Android 支持库 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)。 
+- **ActionBar**&ndash;这是 Android 3.0 (api 级别 11) 中引入的一组新的 API 的一部分, 其目标是提供一致的导航和视图切换界面。 它已通过[Android 支持库 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)返回到 android 2.2 (API 级别 8)。 
 
--   **PagerTabStrip** &ndash;指示当前、 下一步，和上一个页面的`ViewPager`。 `ViewPager` 仅可[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)。
-     有关详细信息`PagerTabStrip`，请参阅[ViewPager](~/android/user-interface/controls/view-pager/index.md)。
+- **PagerTabStrip**指示的当前页、下一页页`ViewPager`和上一页。 &ndash; `ViewPager`仅可通过[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)提供。
+     有关的详细信息`PagerTabStrip`, 请参阅[ViewPager](~/android/user-interface/controls/view-pager/index.md)。
 
--   **工具栏** &ndash; `Toolbar`是取代的更新、 更灵活的操作栏组件`ActionBar`。 `Toolbar` 在 Android 5.0 Lollipop 或更高版本，并且仍可用于较旧版本的 Android 通过[Android 支持库 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet 包。 
-    `Toolbar` 目前在 Android 应用中使用的建议的操作栏组件。
-    有关详细信息，请参阅[工具栏](~/android/user-interface/controls/tool-bar/index.md)。 
+- **工具栏**是一个更新的更灵活的`ActionBar`操作栏组件。 &ndash; `Toolbar` `Toolbar`适用于 Android 5.0 棒糖或更高版本, 也可通过[Android 支持库 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet 包用于较早版本的 android。 
+    `Toolbar`当前是建议用于 Android 应用程序的操作栏组件。
+    有关详细信息, 请参阅[Toolbar](~/android/user-interface/controls/tool-bar/index.md)。 
 
 
 

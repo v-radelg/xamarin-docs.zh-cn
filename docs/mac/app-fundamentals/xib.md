@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4878f2516e764f3ea01ac89569ab4dfdbdbd37e6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5e0f096e5f2c05452a285182db4e455769aa737b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647577"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529018"
 ---
 # <a name="xib-files-in-xamarinmac"></a>Xamarin 中的 xib 文件
 
@@ -23,7 +23,7 @@ _本文介绍如何使用在 Xcode 的 Interface Builder 中创建的 xib 文件
 
 ## <a name="overview"></a>概述
 
-在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和* *中工作*的开发人员所使用的相同用户界面元素和工具。 由于 Xamarin 与 Xcode 直接集成, 因此可以使用 Xcode 的_Interface Builder_来创建和维护用户界面 (也可以在代码中C#直接创建)。
+在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同用户界面元素和工具。 由于 Xamarin 与 Xcode 直接集成, 因此可以使用 Xcode 的_Interface Builder_来创建和维护用户界面 (也可以在代码中C#直接创建)。
 
 MacOS 使用 xib 文件定义应用程序的用户界面 (例如菜单、窗口、视图、标签、文本字段) 的元素, 这些元素在 Xcode 的 Interface Builder 中以图形方式创建和维护。
 
@@ -73,20 +73,20 @@ MacOS 使用 xib 文件定义应用程序的用户界面 (例如菜单、窗口�
 
 此部分最初是空的, 但是, 如果您在 "**界面编辑器**" 或 "**界面层次结构**" 中选择元素, 则 "**属性**" 部分将填充有关给定元素和属性的信息, 您可以适应.
 
-“属性”  部分内具有 8 个不同的检查器选项卡  ，如下所示：
+“属性”部分内具有 8 个不同的检查器选项卡，如下所示：
 
 [![所有检查器的概述](xib-images/xcode05.png "所有检查器的概述")](xib-images/xcode05-large.png#lightbox)
 
 由左至右，这些选项卡依次为：
 
--   **文件检查器** – 文件检查器显示文件信息，例如正在编辑的 Xib 文件的文件名称和位置。
--   **快速帮助** – 快速帮助选项卡基于 Xcode 中所选内容提供相应背景帮助。
--   **标识检查器** – 标识检查器提供有关所选控件/视图的信息。
--   **属性检查器**–属性检查器允许您自定义所选控件/视图的各种属性。
--   **大小检查器**–大小检查器允许您控制所选控件/视图的大小和大小调整行为。
--   **连接检查器**– "连接" 检查器显示选定控件的插座和操作连接。 我们只需片刻就能查看输出口和操作。
--   **绑定检查器**–绑定检查器允许你配置控件, 使其值自动绑定到数据模型。
--   **查看效果检查器**–查看效果检查器允许您指定控件上的效果, 例如动画。
+- **文件检查器** – 文件检查器显示文件信息，例如正在编辑的 Xib 文件的文件名称和位置。
+- **快速帮助** – 快速帮助选项卡基于 Xcode 中所选内容提供相应背景帮助。
+- **标识检查器** – 标识检查器提供有关所选控件/视图的信息。
+- **属性检查器**–属性检查器允许您自定义所选控件/视图的各种属性。
+- **大小检查器**–大小检查器允许您控制所选控件/视图的大小和大小调整行为。
+- **连接检查器**– "连接" 检查器显示选定控件的插座和操作连接。 我们只需片刻就能查看输出口和操作。
+- **绑定检查器**–绑定检查器允许你配置控件, 使其值自动绑定到数据模型。
+- **查看效果检查器**–查看效果检查器允许您指定控件上的效果, 例如动画。
 
 在 "**库**" 部分中, 可以找到要置于设计器中的控件和对象, 以图形方式生成用户界面:
 
@@ -203,19 +203,19 @@ namespace MacXib
 
 例如：
 
-1. 在 Xcode 中，从“库”  部分拖动“Push Button”  ：
+1. 在 Xcode 中，从“库”部分拖动“Push Button”：
 
     [![从库中选择一个按钮](xib-images/xcode07.png "从库中选择一个按钮")](xib-images/xcode07-large.png#lightbox)
 2. 将此按钮拖放到 "**界面编辑器**" 中的**窗口**上:
 
     [![向窗口添加按钮](xib-images/xcode08.png "向窗口添加按钮")](xib-images/xcode08-large.png#lightbox)
-3. 单击“属性检查器”  中的 **Title** 属性，将此按钮的标题更改为 `Click Me`：
+3. 单击“属性检查器”中的 **Title** 属性，将此按钮的标题更改为 `Click Me`：
 
     ![设置按钮特性](xib-images/xcode09.png "设置按钮特性")
-4. 从“库”  部分拖动“标签”  ：
+4. 从“库”部分拖动“标签”：
 
     [![选择库中的标签](xib-images/xcode10.png "选择库中的标签")](xib-images/xcode10-large.png#lightbox)
-5. 将此标签拖放到“界面编辑器”  中此按钮旁的“窗口”  中：
+5. 将此标签拖放到“界面编辑器”中此按钮旁的“窗口”中：
 
     [![向窗口添加标签](xib-images/xcode11.png "向窗口添加标签")](xib-images/xcode11-large.png#lightbox)
 6. 按住此标签上的右控点，将其拖动至靠近窗口边缘的位置：
@@ -271,8 +271,8 @@ namespace MacXib
 
 什么是插座和操作？ 在传统的 .NET 用户界面编程中，用户界面中的控件在添加时会自动作为属性公开。 然而在 Mac 中情况则不同，如果仅将控件添加到视图，代码不可对其进行访问。 开发人员必须对代码显式公开 UI。 为此, Apple 提供了两个选项:
 
--  **输出口** – 输出口类似于属性。 如果将控件绑定到插座, 则会通过属性向代码公开此控件, 因此可以执行诸如附加事件处理程序、调用其上的方法等操作。
--  **操作** - 操作类似于 WPF 中的命令模式。 例如, 在对控件执行操作时, 如果单击按钮, 则控件将自动调用代码中的方法。 操作功能强大且方便, 因为可以将多个控件连接到相同操作。
+- **输出口** – 输出口类似于属性。 如果将控件绑定到插座, 则会通过属性向代码公开此控件, 因此可以执行诸如附加事件处理程序、调用其上的方法等操作。
+- **操作** - 操作类似于 WPF 中的命令模式。 例如, 在对控件执行操作时, 如果单击按钮, 则控件将自动调用代码中的方法。 操作功能强大且方便, 因为可以将多个控件连接到相同操作。
 
 在 Xcode 中, 通过*控件-拖动*直接在代码中添加输出口和操作。 更具体地说, 这意味着若要创建输出口或操作, 请选择想要添加插座或操作的控制元素, 按住键盘上的 "**控制**" 按钮, 然后将该控件直接拖到代码中。
 
@@ -280,7 +280,7 @@ namespace MacXib
 
 [![Xcode 中的 .h 文件的示例](xib-images/xcode16.png "Xcode 中的 .h 文件的示例")](xib-images/xcode16-large.png#lightbox)
 
-此存根 .h 文件会在创建  新`NSWindow`的时反映自动添加到 Xamarin Mac 项目的 MainWindow.designer.cs。 此文件将用于同步 Interface Builder 所做的更改, 我们将在其中创建输出口和操作, 以便向C#代码公开 UI 元素。
+此存根 .h 文件会在创建新`NSWindow`的时反映自动添加到 Xamarin Mac 项目的 MainWindow.designer.cs。 此文件将用于同步 Interface Builder 所做的更改, 我们将在其中创建输出口和操作, 以便向C#代码公开 UI 元素。
 
 
 #### <a name="adding-an-outlet"></a>添加插座
@@ -289,10 +289,10 @@ namespace MacXib
 
 请执行以下操作：
 
-1. 在 Xcode 中屏幕右上角，单击“双圆”  按钮，打开“助手编辑器”  ：
+1. 在 Xcode 中屏幕右上角，单击“双圆”按钮，打开“助手编辑器”：
 
     [![选择助手编辑器](xib-images/outlet01.png "选择助手编辑器")](xib-images/outlet01-large.png#lightbox)
-2. 此时 Xcode 会切换为拆分视图模式，“界面编辑器”  位于一边，“代码编辑器”  位于另一边。
+2. 此时 Xcode 会切换为拆分视图模式，“界面编辑器”位于一边，“代码编辑器”位于另一边。
 3. 请注意, Xcode 已在**代码编辑器**中自动选取**MainWindowController**文件, 这是不正确的。 如果你记得讨论了上述哪些插座和操作, 则需要选择**mainwindow.xaml** 。
 4. 在**代码编辑器**的顶部, 单击 "自动"**链接**, 然后选择 " **mainwindow.xaml** " 文件:
 
@@ -444,7 +444,7 @@ partial void ClickedButton (Foundation.NSObject sender);
 2. 在 "新建文件" 对话框中, > 选择**包含控制器的 Xamarin Cocoa 窗口**:
 
     ![添加新的窗口控制器](xib-images/new01.png "添加新的窗口控制器")
-3. 对“名称”  输入 `PreferencesWindow`，然后单击“新建”  按钮。
+3. 对“名称”输入 `PreferencesWindow`，然后单击“新建”按钮。
 4. 双击 "PreferencesWindow" **xib**文件, 将其打开, 以便在 Interface Builder 中进行编辑:
 
     [![编辑 Xcode 中的窗口](xib-images/new02.png "编辑 Xcode 中的窗口")](xib-images/new02-large.png#lightbox)
@@ -485,7 +485,7 @@ void ShowPreferences (NSObject sender)
 2. 在 "新建文件" 对话框中, > 选择**包含控制器的 Xamarin Cocoa 视图**:
 
     ![添加新视图](xib-images/view01.png "添加新视图")
-3. 对“名称”  输入 `SubviewTable`，然后单击“新建”  按钮。
+3. 对“名称”输入 `SubviewTable`，然后单击“新建”按钮。
 4. 双击 "SubviewTable" **xib**文件以将其打开, 以便在 Interface Builder 中进行编辑并设计用户界面:
 
     [![在 Xcode 中设计新视图](xib-images/view02.png "在 Xcode 中设计新视图")](xib-images/view02-large.png#lightbox)
@@ -575,7 +575,7 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-这将为要显示的新视图创建视图控制器的新实例, 设置其类型 (由添加到项目中的枚举指定) 并使用添加到窗口的`DisplaySubview`类的方法来实际显示视图。 例如：
+这将为要显示的新视图创建视图控制器的新实例, 设置其类型 (由添加到项目中的枚举指定) 并使用添加到窗口的`DisplaySubview`类的方法来实际显示视图。 例如:
 
 [![运行示例应用](xib-images/view04.png "运行示例应用")](xib-images/view04-large.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 646a26b4c9b2d44595315a6a32b7294b18c42d7a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648954"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528845"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆积视图
 
@@ -67,7 +67,7 @@ ms.locfileid: "68648954"
 
 此外, 还可以指定堆栈视图的**高度**和**宽度**约束。 在这种情况下, 子视图将布局 (调整大小) 以填充由`Distribution`和`Alignment`属性确定的堆栈视图指定的空间。
 
-`true`-    如果属性为, 则将基于第一个或最后一个子视图的基线来布局子视图, 而不是使用上、下或 * 中心 Y 位置。 `BaselineRelativeArrangement` 这些是在堆栈视图的内容上计算的, 如下所示:
+`true`- 如果属性为, 则将基于第一个或最后一个子视图的基线来布局子视图, 而不是使用上、下或 * 中心 Y 位置。 `BaselineRelativeArrangement` 这些是在堆栈视图的内容上计算的, 如下所示:
 
 * 垂直堆栈视图将返回第一个基线和最后一个基线的第一个子视图。 如果这两个子视图本身都是堆栈视图, 则将使用其第一个或最后一个基线。
 * 水平堆栈视图将为第一个和最后一个基线使用最高的子视图。 如果最高视图也是堆栈视图, 它将使用最高的子视图作为基线。
@@ -85,9 +85,9 @@ ms.locfileid: "68648954"
 有几种布局类型适用于堆栈视图控件。 根据 Apple, 以下是一些更常见的用法:
 
 - **沿轴定义大小**–将两个边缘沿堆栈视图`Axis`和一个相邻边缘固定以设置位置时, 堆栈视图将沿轴增长以适应其子视图定义的空间。
-*  **定义子视图的位置**–通过将堆栈视图的相邻边缘固定到其父视图, 堆栈视图将以这两个维度增长, 以适合包含子视图。
+- **定义子视图的位置**–通过将堆栈视图的相邻边缘固定到其父视图, 堆栈视图将以这两个维度增长, 以适合包含子视图。
 - **定义堆栈的大小和位置**–通过将堆栈视图的所有四个边缘固定到父视图, 堆栈视图会根据堆栈视图中定义的空间排列子视图。
-*  **定义垂直于轴的大小**–通过将垂直于堆栈视图的`Axis`边缘和沿轴的一个边缘固定到设置位置, 堆栈视图将与轴垂直增长以适应其子视图定义的空间。
+- **定义垂直于轴的大小**–通过将垂直于堆栈视图的`Axis`边缘和沿轴的一个边缘固定到设置位置, 堆栈视图将与轴垂直增长以适应其子视图定义的空间。
 
 <a name="Stack-Views-and-Storyboards" />
 

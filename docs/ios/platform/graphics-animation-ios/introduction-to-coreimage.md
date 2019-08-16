@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e4676314b361bac17b3c6df64631572e62f4d870
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6960fe3db1ddf7d6d911fe8151e49b1a42388d26
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653730"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527853"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin 中的核心映像
 
@@ -22,9 +22,9 @@ _核心映像是 iOS 5 引入的新框架, 用于提供图像处理和实时视�
 
 本文档包含的简单示例:
 
--  人脸检测。
--  将筛选器应用于映像
--  列出可用的筛选器。
+- 人脸检测。
+- 将筛选器应用于映像
+- 列出可用的筛选器。
 
 
 这些示例可帮助你开始将核心映像功能合并到你的 Xamarin iOS 应用程序中。
@@ -49,12 +49,12 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 
 功能数组将填充`CIFaceFeature`对象 (如果检测到任何面部)。 每个面`CIFaceFeature`都有一个。 `CIFaceFeature`具有以下属性:
 
--  HasMouthPosition-是否为此人脸检测到嘴。
--  HasLeftEyePosition-是否为此人脸检测到了左侧眼。
--  HasRightEyePosition-是否为此人脸检测到了正确的眼睛。 
--  MouthPosition-此人脸的嘴坐标。
--  LeftEyePosition-此人脸的左侧眼睛坐标。
--  RightEyePosition-此人脸的适当眼睛坐标。
+- HasMouthPosition-是否为此人脸检测到嘴。
+- HasLeftEyePosition-是否为此人脸检测到了左侧眼。
+- HasRightEyePosition-是否为此人脸检测到了正确的眼睛。 
+- MouthPosition-此人脸的嘴坐标。
+- LeftEyePosition-此人脸的左侧眼睛坐标。
+- RightEyePosition-此人脸的适当眼睛坐标。
 
 
 所有这些属性的坐标在左下角均为原点–不同于 UIKit, 它使用左上角作为原点。 当使用上`CIFaceFeature`的坐标时, 请确保 "翻转" 它们。 CoreImage\CoreImageViewController.cs 中这个非常基本的自定义图像视图演示了如何在图像上绘制 "面部指示器" 三角形 ( `FlipForBottomOrigin`请注意方法):

@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: b825b0d7f9e18350514e3f84e70f901f5fcb6724
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 06d7ef896a560040f2e2820945264b92d9cf2ada
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655929"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528483"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin 中的布局选项
 
 调整视图的大小或旋转时, 有两种不同的机制来控制布局:
 
--  **自动调整**–设计器中的自动调整检查器提供了一种设置`AutoresizingMask`属性的方法。 这会使控件锚定到其容器的边缘, 并/或修复其大小。 自动调整适用于所有版本的 iOS。 下面更详细地介绍了这一点
--  **自动布局**– iOS 6 中引入的一项功能, 可用于对 UI 控件的关系进行精细的控制。 它将允许控制相对于设计图面上的其他元素的元素位置。 本主题将在[具有 Xamarin IOS 设计器指南的自动布局](~/ios/user-interface/designer/designer-auto-layout.md)中更详细地介绍。
+- **自动调整**–设计器中的自动调整检查器提供了一种设置`AutoresizingMask`属性的方法。 这会使控件锚定到其容器的边缘, 并/或修复其大小。 自动调整适用于所有版本的 iOS。 下面更详细地介绍了这一点
+- **自动布局**– iOS 6 中引入的一项功能, 可用于对 UI 控件的关系进行精细的控制。 它将允许控制相对于设计图面上的其他元素的元素位置。 本主题将在[具有 Xamarin IOS 设计器指南的自动布局](~/ios/user-interface/designer/designer-auto-layout.md)中更详细地介绍。
 
 ## <a name="autosizing"></a>自动调整
 
