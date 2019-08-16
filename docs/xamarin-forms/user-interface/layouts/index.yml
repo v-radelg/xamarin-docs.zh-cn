@@ -1,0 +1,105 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms 布局
+metadata:
+  title: Xamarin.Forms 布局
+  description: 了解 Xamarin.Forms 中的布局类和布局功能。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CF6BD41F-CD4B-4576-841D-B8A49A4EC754
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 08/14/2019
+abstract:
+  description: 了解 Xamarin.Forms 中的布局类和布局功能。
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: stack-layout.md
+            html: 了解如何以水平或垂直方式在一维堆栈中组织视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: stack-layout.md
+            title: StackLayout
+          - href: grid.md
+            html: 了解如何将视图组织成行和列，这些行和列可以具有比例或绝对大小。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: grid.md
+            title: Grid
+          - href: flex-layout.md
+            html: 了解如何在水平方向或垂直方向使用换行组织视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: flex-layout.md
+            title: FlexLayout
+          - href: absolute-layout.md
+            html: 了解如何通过设置坐标值和大小值（这些值可以是比例值，也可以是绝对值）来组织视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
+          - href: relative-layout.md
+            html: 了解如何通过设置相对于布局或同级视图属性的约束来组织视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: RelativeLayout
+          - href: scroll-view.md
+            html: 了解如何在视图无法适配屏幕边界时提供滚动。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: scroll-view.md
+            title: ScrollView
+          - href: frame.md
+            html: 了解如何使用可配置颜色、投影和其他选项的框架来包装视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: frame.md
+            title: Frame
+          - href: layout-options.md
+            html: 了解如何定义视图在其父级布局中的对齐方式。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-options.md
+            title: LayoutOptions
+          - href: margin-and-padding.md
+            html: 了解如何控制元素与其相邻元素及其子元素之间的距离。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: margin-and-padding.md
+            title: 边距和填充
+          - href: device-orientation.md
+            html: 了解如何配置和响应设备的方向更改。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: device-orientation.md
+            title: 设备方向
+          - href: tablet.md
+            html: 了解如何优化平板电脑和桌面应用程序的布局。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: tablet.md
+            title: 平板电脑和桌面布局
+          - href: bindable-layouts.md
+            html: 了解如何通过绑定到项集合，使布局类生成内容并设置其外观。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: bindable-layouts.md
+            title: 可绑定的布局
+          - href: layout-compression.md
+            html: 了解如何从可视化树中删除特定布局，以提升页面呈现性能。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-compression.md
+            title: 布局压缩
+          - href: custom.md
+            html: 了解如何创建区分方向的自定义布局类。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: custom.md
+            title: 自定义布局
