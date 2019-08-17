@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657085"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560278"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
@@ -219,7 +219,7 @@ Title="StackLayouts">
 
 ![](stack-layout-images/stack.png "复杂 StackLayout")
 
-请注意， `StackLayouts`s 嵌套的因为在某些情况下嵌套布局可能会比提供相同的布局中的所有元素。 另请注意，因为`StackLayout`不支持重叠项，找到的页面不会有布局奇思妙想的一些其他布局页中。
+请注意, `StackLayouts`是嵌套的, 因为在某些情况下, 嵌套布局比呈现同一布局中的所有元素更容易。 另请注意，因为`StackLayout`不支持重叠项，找到的页面不会有布局奇思妙想的一些其他布局页中。
 
 
 

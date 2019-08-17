@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c1a374feaadf28898b7fde8e364cf0adab83acd5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dc23aed074360a06fcef6ad540d91aa98a19318b
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509607"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560299"
 ---
 # <a name="updating-existing-mac-apps"></a>更新现有 Mac 应用
 
@@ -40,7 +40,7 @@ Xamarin 为 Visual Studio for Mac 和 Visual Studio 提供了工具来自动执�
 在 Xamarin 应用程序中使用 Unified API 时, 可以选择两种受支持的目标框架类型:
 
 - **Xamarin Mobile Framework** -这是适用于 Xamarin 和 xamarin 的优化 .net Framework, 支持完整**桌面**框架的子集。 这是建议的框架, 因为它提供较小的平均二进制文件, 因为这种链接行为较高。
-- **Xamarin .net 4.5 Framework** -此框架同样是**桌面**框架的子集。 但是, 它与**移动**框架相比, 它比移动框架要少得多, 而且_应该使用_大多数 NuGet 包或第三方库。 这允许开发人员在仍使用受支持的框架时使用标准**桌面**程序集, 但此选项可生成更大的应用程序捆绑包。 这是推荐的框架, 其中使用的是与**Xamarin Mobile framework**不兼容的第三方 .net 程序集。 有关支持的程序集的列表, 请参阅我们的[程序集](~/cross-platform/internals/available-assemblies.md)文档。
+- **Xamarin .net 4.5 Framework** -此框架同样是**桌面**框架的子集。 但是, 它与移动框架相比, 它比 **移动**框架要少得多, 而且应该使用大多数 NuGet 包或第三方库。 这允许开发人员在仍使用受支持的框架时使用标准**桌面**程序集, 但此选项可生成更大的应用程序捆绑包。 这是推荐的框架, 其中使用的是与**Xamarin Mobile framework**不兼容的第三方 .net 程序集。 有关支持的程序集的列表, 请参阅我们的[程序集](~/cross-platform/internals/available-assemblies.md)文档。
 
 有关目标框架以及为 Xamarin Mac 应用程序选择特定目标的影响的详细信息, 请参阅我们的[目标框架](~/mac/platform/target-framework.md)文档。 
 
@@ -70,7 +70,7 @@ Xamarin 为 Visual Studio for Mac 和 Visual Studio 提供了工具来自动执�
 
 示例:
 
-![](updating-mac-apps-images/csproj3.png "在 < AssemblyName > 元素的后面添加以下代码行")
+![将以下代码行添加到\<AssemblyName > 元素后面](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2.更新项目引用
 
