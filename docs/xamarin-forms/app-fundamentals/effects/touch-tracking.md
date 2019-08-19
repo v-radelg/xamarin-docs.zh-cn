@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651680"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978566"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件
 

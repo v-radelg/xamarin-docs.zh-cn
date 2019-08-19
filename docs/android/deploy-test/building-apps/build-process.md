@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 5d3635ccc61a0be50e4a4b6d8bc44e60515cc21e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ffa462ed7cfdc45357f0ac62cae23d307cdb92b7
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509076"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012447"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -72,6 +72,28 @@ Xamarin.Android 生成过程基于 MSBuild，它也是 Visual Studio for Mac 和
 
 -    UpdateAndroidResources &ndash; 更新 `Resource.designer.cs` 文件。 将新的资源添加到项目中时，这个目标通常由 IDE 调用。
 
+## <a name="build-extension-points"></a>生成扩展点
+
+Xamarin.Android 为希望连接到我们的生成过程的用户公开一些公共扩展点。 为了使用其中一个扩展点，你需要将你的自定义目标添加到 `PropertyGroup` 中的相应 MSBuild 属性。 例如:
+
+```xml
+<PropertyGroup>
+   <AfterGenerateAndroidManifest>
+      $(AfterGenerateAndroidManifest);
+      YourTarget;
+   </AfterGenerateAndroidManifest>
+</PropertyGroup>
+```
+
+有关扩展生成过程的注意事项：如果编写不正确，则生成扩展会影响生成性能，尤其是在每个生成上运行时。 强烈建议先阅读 MSBuild [文档](https://docs.microsoft.com/visualstudio/msbuild/msbuild)，再实现此类扩展。
+
+-   **AfterGenerateAndroidManifest** &ndash; 此属性中列出的目标将在 `_GenerateJavaStubs` 目标后直接运行。 这是 `AndroidManifest.xml` 文件在 `$(IntermediateOutputPath)` 中生成时的位置。 因此，如果想要对生成的 `AndroidManifest.xml` 文件进行任何修改，则可以使用此扩展点完成。
+
+    Added in Xamarin.Android 9.4。
+
+-   **BeforeGenerateAndroidManifest** &ndash; 此属性中列出的目标将在 `_GenerateJavaStubs` 之前直接运行。
+
+    Added in Xamarin.Android 9.4。
 
 ## <a name="build-properties"></a>生成属性
 
@@ -113,13 +135,19 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 打包属性控制如何创建 Android 包，由 `Install` 和 `SignAndroidPackage` 目标使用。
 打包发布应用程序时，[签名属性](#Signing_Properties)也是相关的。
 
+-   **AndroidApkDigestAlgorithm** &ndash; 此字符串值指定将使用 `jarsigner -digestalg` 的摘要算法。
+
+    对于 APK，默认值为 `SHA1`，对于应用程序包，默认值为 `SHA-256`。
+
+    Added in Xamarin.Android 9.4。
+
 -   **AndroidApkSignerAdditionalArguments** &ndash; 一个字符串属性，允许开发人员向 `apksigner` 工具提供其他参数。
 
     在 Xamarin.Android 8.2 中新增。
 
 -   **AndroidApkSigningAlgorithm** &ndash; 字符串值，用于指定对 `jarsigner -sigalg` 使用的签名算法。
 
-    默认值为 `md5withRSA`。
+    对于 APK，默认值为 `md5withRSA`，对于应用程序包，默认值为 `SHA256withRSA`。
 
     在 Xamarin.Android 8.2 中新增。
 
@@ -147,6 +175,10 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -   **AndroidEnableDesugar** &ndash; 确定是否启用了 `desugar` 的布尔属性。 Android 当前不支持所有 Java 8 功能；默认工具链通过对 `javac` 编译器的输出执行称为 `desugar` 的字节码转换，实现新的语言功能。 如果使用 `AndroidDexTool=dx`，默认为 `False`；如果使用 `AndroidDexTool=d8`，默认为`True`。
 
+-   **AndroidEnableGooglePlayStoreChecks** &ndash; 此布尔属性允许开发人员禁用以下 Google Play 商店检查：XA1004、XA1005 和 XA1006。 对于目标不是 Google Play 商店并且不想运行这些检查的开发人员来说，这非常有用。
+
+    Added in Xamarin.Android 9.4。
+
 -    AndroidEnableMultiDex &ndash; 一个布尔属性，用于确定是否将在最终的 `.apk` 中使用 multi-dex 支持。
 
     Xamarin.Android 5.1 中增加了对该属性的支持。
@@ -166,6 +198,14 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
     默认情况下，此值设置为 `True`。
 
     在 Xamarin.Android 9.2 中新增。
+
+-   **AndroidEnableProfiledAot** &ndash; 该布尔属性确定是否在预先编译时使用 AOT 配置文件。
+
+    配置文件在 `AndroidAotProfile` 项组中列出。 此 ItemGroup 包含默认配置文件。 通过删除现有的配置文件并添加你自己的 AOT 配置文件可以进行替代。
+
+    在 Xamarin.Android 9.4 中增加了对此属性的支持。
+
+    该属性默认为 `False`。
 
 -    AndroidEnableSGenConcurrent &ndash; 一个布尔属性，用于确定是否使用 Mono 的[并发垃圾收集器](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)。
 
@@ -238,11 +278,23 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
     在 Xamarin.Android 9.2 中新增。
 
 -   **AndroidHttpClientHandlerType** &ndash; 控制 `System.Net.Http.HttpClient` 默认构造函数使用的默认 `System.Net.Http.HttpMessageHandler` 实现。 值是 `HttpMessageHandler` 子类的程序集限定类型名称，适用于 [`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_)。
+    此属性最常见的值为：
 
-    默认值为 `System.Net.Http.HttpClientHandler, System.Net.Http`。
+    -   `Xamarin.Android.Net.AndroidClientHandler`：使用 Android Java API 执行网络请求。 这样，如果基础 Android 版本支持 TLS 1.2，就可以访问 TLS 1.2 URL。 只有 Android 5.0 及更高版本通过 Java 可靠提供 TLS 1.2 支持。
 
-    这可能会被重写为包含 `Xamarin.Android.Net.AndroidClientHandler`，后者使用 Android Java API 执行网络请求。 这样，如果基础 Android 版本支持 TLS 1.2，就可以访问 TLS 1.2 URL。  
-    只有 Android 5.0 及更高版本通过 Java 可靠提供 TLS 1.2 支持。
+        这对应于 Visual Studio 属性页中的“Android”选项，以及 Visual Studio for Mac 属性页中的“AndroidClientHandler”选项   。
+
+        当 Visual Studio 中“最低 Android 版本”配置为“Android 5.0 (Lollipop)”或更高版本，或者当 Visual Studio for Mac 中“目标平台”设置为“最新和最高版本”时，新建项目向导为新项目选择此选项     。
+
+    -   取消设置/空字符串：这等效于 `System.Net.Http.HttpClientHandler, System.Net.Http`
+
+        这对应于 Visual Studio 属性页中的“默认”选项  。
+
+        当 Visual Studio 中“最低 Android 版本”配置为“Android 4.4.87”或更低版本，或者当 Visual Studio for Mac 中“目标平台”设置为“新式开发”或“最大兼容性”时，新建项目向导为新项目选择此选项      。
+
+    -  `System.Net.Http.HttpClientHandler, System.Net.Http`：使用托管 `HttpMessageHandler`。
+
+       这对应于 Visual Studio 属性页中的“托管”选项  。
 
     *说明*：如果需要在低于 Android 5.0 的版本上具备 TLS 1.2 支持，或者 TLS 1.2 支持需要与 `System.Net.WebClient` 及相关 API 一起使用，则应使用 `$(AndroidTlsProvider)`  。
 
@@ -314,6 +366,17 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
     在 Xamarin.Android 8.3 中新增。
 
+-   **AndroidPackageFormat** &ndash; 枚举样式的属性，有效值为 `apk` 或 `aab`。 该属性指示你希望将 Android 应用程序打包为 [APK 文件][apk]还是 [Android 应用程序包][bundle]。 应用程序包是一种新的格式，适用于要在 Google Play 上提交的 `Release` 版本。 该值当前默认为 `apk`。
+
+    当 `$(AndroidPackageFormat)` 设置为 `aab` 时，系统将设置 Android 应用程序包所必需的其他 MSBuild 属性：
+
+    * `$(AndroidUseAapt2)` 为 `True`。
+    * `$(AndroidUseApkSigner)` 为 `False`。
+    * `$(AndroidCreatePackagePerAbi)` 为 `False`。
+
+[apk]: https://en.wikipedia.org/wiki/Android_application_package
+[bundle]: https://developer.android.com/platform/technology/app-bundle
+
 -   **AndroidR8JarPath** &ndash; 指向 `r8.jar` 的路径，供与 R8 Dex 编译器和压缩器结合使用。 默认为 Xamarin.Android 安装中的路径。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
 
 -    AndroidSdkBuildToolsVersion &ndash; Android SDK 生成工具包提供 aapt  和 zipalign  工具等。 可以同时安装多个不同版本的生成工具包。 若要选择用于打包的生成工具包，请检查是否有“首选”生成工具版本。如果有，请使用它；如果没有  “首选”版本，请使用版本最高的已安装生成工具包。
@@ -331,19 +394,27 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -    AndroidTlsProvider &ndash; 一个字符串值，指定应用程序中应使用哪个 TLS 提供程序。 可能的值有：
 
+    -   取消设置/空字符串：在 Xamarin.Android 7.3 和更高版本中，这等效于 `btls`。
+
+        在 Xamarin.Android 7.1 中，这等效于 `legacy`。
+
+        这对应于 Visual Studio 属性页中的“默认”设置  。
+
     -   `btls`：针对与 [HttpWebRequest](xref:System.Net.HttpWebRequest) 的通信，使用 [Boring SSL](https://boringssl.googlesource.com/boringssl)。
+
         这样，可以对所有 Android 版本使用 TLS 1.2。
+
+        这对应于 Visual Studio 属性页中的“Native TLS 1.2+”设置  。
 
     -   `legacy`：对于网络交互使用之前托管的 SSL 实现。 这  不支持 TLS 1.2。
 
-    -   `default`：允许 Mono 选择默认 TLS 提供程序  。
-        这相当于 `legacy`，即使在 Xamarin.Android 7.3 中，也不例外。  
-        *说明*：此值不可能出现在 `.csproj` 值中，因为 IDE 的“默认”值会导致删除 `$(AndroidTlsProvider)` 属性  。
+        这对应于 Visual Studio 属性页中的“托管 TLS 1.0”设置  。
 
-    -   取消设置/空字符串：在 Xamarin.Android 7.1 中，这等效于 `legacy`。  
-        在 Xamarin.Android 7.3 中，这相当于 `btls`。
+    -   `default`：该值不太可能用于 Xamarin.Android 项目。 建议改用的值为空列表，它对应于 Visual Studio 属性页中的“默认”设置  。
 
-    默认值为空字符串。
+        Visual Studio 属性页中不提供 `default` 值。
+
+        这当前等效于 `legacy`。
 
     已在 Xamarin.Android 7.1 中添加。
 
@@ -521,7 +592,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 -    AndroidExplicitCrunch &ndash; 如果你正在生成具有大量本地绘图的应用，则需要花费数分钟才能完成初始生成（或重新生成）。 要加快生成过程，请尝试包含该属性并将其设置为 `True`。 设置该属性时，生成过程会预处理 .png 文件。
 
-    注意:此选项与 `$(AndroidUseAapt2)` 选项不兼容。 如果启用了 `$(AndroidUseAapt2)`，将禁用此功能。 如果希望继续使用此功能，请将 `$(AndroidUseAapt2)` 设置为 `False`。
+    注意：此选项与 `$(AndroidUseAapt2)` 选项不兼容。 如果启用了 `$(AndroidUseAapt2)`，将禁用此功能。 如果希望继续使用此功能，请将 `$(AndroidUseAapt2)` 设置为 `False`。
 
      “实验”。 已在 Xamarin.Android 7.0 中添加。
 
