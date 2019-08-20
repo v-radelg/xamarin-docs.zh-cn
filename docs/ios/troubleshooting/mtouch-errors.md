@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528709"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620610"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -24,7 +24,7 @@ ms.locfileid: "69528709"
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
  https://github.com/xamarin/xamarin-macios/blob/master/tools/mtouch/error.cs
-    -->
+  -->
 
 <a name="MT0000" />
 
@@ -1975,14 +1975,14 @@ Bitcode 支持需要使用 LLVM AOT 后端 (--LLVM)。
 ```csharp
 class MyNSObject : NSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -1995,14 +1995,14 @@ class MyNSObject : NSObject
 
 class MyCustomNSObject : MyNSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -2349,7 +2349,7 @@ Objectice 类的名称不能包含空格, 这意味着`Register`对应托管类�
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214:本机链接失败, 未定义符号: *。 此符号引用了托管成员 *。 请验证是否引用了所有必需的框架, 并链接了本机库。
 
-当托管代码包含对不存在的本机方法的 P/Invoke 时, 会报告此错误。 例如：
+当托管代码包含对不存在的本机方法的 P/Invoke 时, 会报告此错误。 例如:
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2414,8 +2414,8 @@ Xamarin iOS 项目经常会动态引用本机符号, 这意味着本机链接器
 此操作主要有两个原因:
 
 * 符号名称不正确。
-    * 不要在符号名前面加上一个下划线。
-    * 目标-C 类的符号为`OBJC_CLASS_$_<classname>`。
+  * 不要在符号名前面加上一个下划线。
+  * 目标-C 类的符号为`OBJC_CLASS_$_<classname>`。
 * 符号是正确的, 但它是已按正常方式保留的符号 (某些生成选项会导致动态符号的确切列表改变)。
 
 ### <a name="mt53xx-other-tools"></a>MT53xx:其他工具

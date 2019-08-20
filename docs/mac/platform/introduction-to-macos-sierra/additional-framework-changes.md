@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5c8b2b20d037edd35fd3c50d1418df2110cb8e4c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528887"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620907"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra Framework 更改
 
@@ -33,17 +33,17 @@ ms.locfileid: "69528887"
 已对 macOS Sierra 的 AppKit 框架进行了以下改进:
 
 - 一些增强功能`NSCollectionView` , 例如:
-    - 可**折叠部分**-允许用户将集合视图部分折叠到单个水平行中。
-    - 使用与 iOS 中的[UICollectionView](https://developer.apple.com/reference/uikit/uicollectionview)相同的 API, 可以在流布局中浮动**页眉**和页脚。
-    - 可**滚动的背景视图**-现在可以将 "集合视图背景" 设置为随内容一起滚动。
+  - 可**折叠部分**-允许用户将集合视图部分折叠到单个水平行中。
+  - 使用与 iOS 中的[UICollectionView](https://developer.apple.com/reference/uikit/uicollectionview)相同的 API, 可以在流布局中浮动**页眉**和页脚。
+  - 可**滚动的背景视图**-现在可以将 "集合视图背景" 设置为随内容一起滚动。
 - 已对延迟的视图布局经过优化和扩展。
 - 拖放 API 现在包含新`NSFilePromiseProvider`的和`NSFilePromiseReceiver`类以支持拖动群。
 - 已向现有控件添加了几个便利性构造函数:
-    - `NSButton`包含用于创建推送按钮、复选框和单选按钮的新构造函数。
-    - `NSTextField`包括用于创建环绕和非包装标签、特性化标签和可编辑文本字段的新构造函数。
-    - `NSSegmentedControl`包含用于从一组标签或图像创建分段控件的新构造函数。
-    - `NSSlider`包括用于创建水平线性滑块的新构造函数。
-    - `NSImageView`包括用于从给定`NSImage`创建不可编辑的图像视图的新构造函数。
+  - `NSButton`包含用于创建推送按钮、复选框和单选按钮的新构造函数。
+  - `NSTextField`包括用于创建环绕和非包装标签、特性化标签和可编辑文本字段的新构造函数。
+  - `NSSegmentedControl`包含用于从一组标签或图像创建分段控件的新构造函数。
+  - `NSSlider`包括用于创建水平线性滑块的新构造函数。
+  - `NSImageView`包括用于从给定`NSImage`创建不可编辑的图像视图的新构造函数。
 - 添加了`NSGridView`新的, 以自动将子视图的集合布局为具有可变大小的行和列的网格, 可以动态隐藏或显示这些列。
 
 <a name="AVFoundation-Framework-Enhancements" />

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 75affbdb6e919c15c644a68ae45e7ff657a53f6a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652277"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620389"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的情节提要简介
 
@@ -79,9 +79,9 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 在设计时 (在 Xcode 的 Interface Builder 中布局 UI 时), 应用 UI 的每个元素将细分为其构成项:
 
 - **场景**-由以下内容组成:
-    - **查看控制器**-定义视图与支持它们的数据之间的关系。
-    - **视图和子视图**-组成用户界面的实际元素。
-    - **包含 segue** -定义场景之间的父子关系。
+  - **查看控制器**-定义视图与支持它们的数据之间的关系。
+  - **视图和子视图**-组成用户界面的实际元素。
+  - **包含 segue** -定义场景之间的父子关系。
 - **表示 segue** -定义单独的演示模式。 
 
 通过以这种方式定义每个元素, 它只允许在运行时中需要的每个元素的延迟加载。 在 macOS 中, 整个过程旨在使开发人员能够创建复杂、灵活的用户界面, 该界面需要最少的支持代码来使其正常工作, 同时尽可能提高系统资源的效率。

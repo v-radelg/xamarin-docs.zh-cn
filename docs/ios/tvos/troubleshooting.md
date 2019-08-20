@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ad0952bb620645a4cbc5fbc17b21f6a977c889ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2503b8a96e8f1c6f08dfcd19672db3b93a5ce7e1
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657313"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620321"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>用 Xamarin 构建的 tvOS 应用疑难解答
 
@@ -26,10 +26,10 @@ _本文介绍了在使用 Xamarin 的 tvOS 支持时可能遇到的问题。_
 Xamarin 的 tvOS 支持的当前版本具有以下已知问题:
 
 - **Mono Framework** –单声道 4.3 ProtectedData 无法解密 mono 4.2 中的数据。 因此, 当配置受保护的 NuGet 源时, NuGet 包`Data unprotection failed`将无法还原, 并出现错误。
-    - **解决方法**–在 Visual Studio for Mac 中, 你将需要添加回使用密码身份验证的任何 NuGet 包源, 然后再重新尝试还原包。
+  - **解决方法**–在 Visual Studio for Mac 中, 你将需要添加回使用密码身份验证的任何 NuGet 包源, 然后再重新尝试还原包。
 - **Visual Studio for Mac w/ F#外**接程序–在 Windows 上创建F# Android 模板时出错。 这仍应在 Mac 上正常运行。
 - **Xamarin** –当目标框架设置为`Unsupported`的情况下运行 Xamarin 和统一模板项目时, 可能会出现弹出窗口。 `Could not connect to the debugger`
-    - **可能的解决方法**–降级稳定通道中可用的 Mono framework 版本。
+  - **可能的解决方法**–降级稳定通道中可用的 Mono framework 版本。
 - **Xamarin visual studio & xamarin** –在 Visual Studio 中部署 WatchKit 应用程序时, 可能会`The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist`出现错误。
 
 请在[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)上报告你发现的任何错误。
@@ -115,7 +115,7 @@ _"仅包含 arm64 切片的应用还必须在 info.plist 的 UIRequiredDeviceCap
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
 <array>
-    <string>arm64</string>
+  <string>arm64</string>
 </array>
 ```
 
@@ -123,7 +123,7 @@ _"仅包含 arm64 切片的应用还必须在 info.plist 的 UIRequiredDeviceCap
 
 ### <a name="task-mtouch-execution----failed"></a>任务 "MTouch" 执行失败
 
-如果你使用的是第三方库 (如 MonoGame), 并且你的发布编译失败, 并在`Task "MTouch" execution -- FAILED`结束时出现一系列长错误消息, 请尝试添加  `-gcc_flags="-framework OpenAL"`其他触控参数:
+如果你使用的是第三方库 (如 MonoGame), 并且你的发布编译失败, 并在`Task "MTouch" execution -- FAILED`结束时出现一系列长错误消息, 请尝试添加 `-gcc_flags="-framework OpenAL"`其他触控参数:
 
 [![](troubleshooting-images/mtouch01.png "任务 MTouch 执行")](troubleshooting-images/mtouch01.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 77d526fd49ac62788bea1ab885cb1248ffc5697e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654082"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620961"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>在 Xamarin 中用 Web 标记搜索
 
@@ -46,7 +46,7 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 
 在网站上提供智能应用横幅, 以向应用提供清晰的链接。 如果应用尚未安装, Safari 会自动提示用户安装应用。 否则, 可以点击 "**查看**" 链接从网站启动你的应用。 例如, 若要创建智能应用横幅, 可以使用以下代码:
 
-```xml
+```html
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
@@ -65,7 +65,7 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 
 可以使用 Twitter 卡提供指向应用内容的深层链接。 例如:
 
-```xml
+```html
 <meta name="twitter:app:name:iphone" content="AppName">
 <meta name="twitter:app:id:iphone" content="AppNameID">
 <meta name="twitter:app:url:iphone" content="AppNameURL">
@@ -77,7 +77,7 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 
 可使用 Facebook 应用链接提供指向应用内容的深层链接。 例如:
 
-```xml
+```html
 <meta property="al:ios:app_name" content="AppName">
 <meta property="al:ios:app_store_id" content="AppNameID">
 <meta property="al:ios:url" content="AppNameURL">
@@ -87,29 +87,29 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 
 ## <a name="opening-deep-links"></a>打开深层链接
 
-需要在 Xamarin iOS 应用中添加对打开和显示深层链接的支持。 编辑**AppDelegate.cs**文件并重写`OpenURL`方法以处理自定义 URL 格式。 例如：
+需要在 Xamarin iOS 应用中添加对打开和显示深层链接的支持。 编辑**AppDelegate.cs**文件并重写`OpenURL`方法以处理自定义 URL 格式。 例如:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 {
 
-    // Handling a URL in the form http://company.com/appname/?123
-    try {
-        var components = new NSUrlComponents(url,true);
-        var path = components.Path;
-        var query = components.Query;
+  // Handling a URL in the form http://company.com/appname/?123
+  try {
+    var components = new NSUrlComponents(url,true);
+    var path = components.Path;
+    var query = components.Query;
 
-        // Is this a known format?
-        if (path == "/appname") {
-            // Display the view controller for the content
-            // specified in query (123)
-            return ContentViewController.LoadContent(query);
-        }
-    } catch {
-        // Ignore issue for now
+    // Is this a known format?
+    if (path == "/appname") {
+      // Display the view controller for the content
+      // specified in query (123)
+      return ContentViewController.LoadContent(query);
     }
+  } catch {
+    // Ignore issue for now
+  }
 
-    return false;
+  return false;
 }
 ```
 
@@ -123,7 +123,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 提供结构化数据标记的一种方法是使用打开关系图。 例如:
 
-```xml
+```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
 <meta property="og:audio" content="http://company.com/appname/theme.m4a">
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
@@ -131,24 +131,22 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 有关详细信息, 请参阅[开放图形](http://ogp.me)网站。
 
-结构化数据标记的另一种常见格式是架构. org 的微数据格式。 例如:
+结构化数据标记的另一种常见格式是架构. org 的微数据格式。 例如：
 
-```xml
+```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue">4** stars -
-    <span itemprop="reviewCount">255** reviews
-
-
+  <span itemprop="ratingValue">4** stars -
+  <span itemprop="reviewCount">255** reviews
 ```
 
 相同的信息可以用架构. org 的 JSON-LD 格式表示:
 
-```xml
+```html
 <script type="application/ld+json">
-    "@content":"http://schema.org",
-    "@type":"AggregateRating",
-    "ratingValue":"4",
-    "reviewCount":"255"
+  "@content":"http://schema.org",
+  "@type":"AggregateRating",
+  "ratingValue":"4",
+  "reviewCount":"255"
 </script>
 ```
 
@@ -179,34 +177,28 @@ Apple 目前支持 schema.org 中的以下架构类型:
 
 例如, 定义用于拨打电话号码的操作可能如下所示:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/Organization">
-    <span itemprop="telephone">(408) 555-1212**
-
-
+  <span itemprop="telephone">(408) 555-1212**
 ```
 
 当向最终用户显示此搜索结果时, 结果中会显示一个小的手机图标。 如果用户点击该图标, 将调用指定的数字。
 
 以下 HTML 将添加一个操作, 以便从搜索结果播放音频文件:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/AudioObject">
-    <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
-
-
+  <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
 ```
 
 最后, 以下 HTML 将添加一个操作以从搜索结果中获取说明:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/PostalAddress">
-    <span itemprop="streetAddress">1 Infinite Loop**
-    <span itemprop="addressLocality">Cupertino**
-    <span itemprop="addressRegion">CA**
-    <span itemprop="postalCode">95014**
-
-
+  <span itemprop="streetAddress">1 Infinite Loop**
+  <span itemprop="addressLocality">Cupertino**
+  <span itemprop="addressRegion">CA**
+  <span itemprop="postalCode">95014**
 ```
 
 有关详细信息, 请参阅 Apple 的[应用搜索开发人员网站](https://developer.apple.com/ios/search/)。

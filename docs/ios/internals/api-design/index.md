@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 11d9c3d27fa9cf9ba830648d95ef8af9ed386afb
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 5fe0c4d02dbe6cc5b3768ea92179b3781ef09aa9
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526471"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620848"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 设计
 
@@ -48,16 +48,16 @@ ms.locfileid: "69526471"
 - 鼓励对 Api 进行 IDE 浏览:
 
   - 例如, 无需公开弱类型化数组, 如下所示:
-    
+
     ```objc
     NSArray *getViews
     ```
     公开强类型, 如下所示:
-    
+
     ```csharp
     NSView [] Views { get; set; }
     ```
-    
+
     这为 Visual Studio for Mac 提供了在浏览 API 时执行自动完成的功能, 使所有`System.Array`操作均可在返回值上使用, 并允许返回值参与 LINQ。
 
 - 本机C#类型:
@@ -72,8 +72,8 @@ ms.locfileid: "69526471"
 
 - 支持目标-C 委托模式:
 
-    - C#事件系统
-    - 将C#委托 (lambda、匿名方法和`System.Delegate`) 作为块公开给目标-C api
+  - C#事件系统
+  - 将C#委托 (lambda、匿名方法和`System.Delegate`) 作为块公开给目标-C api
 
 ### <a name="assemblies"></a>程序集
 
@@ -96,7 +96,7 @@ Xamarin 包含若干构成*Xamarin IOS 配置文件*的程序集。 "[程序集]
 
 来自目标的类的C#层次结构中的 Xamarin 镜像。 例如, 可C#通过[NSObject](xref:Foundation.NSObject)使用目标 C 基类[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) 。
 
-虽然此命名空间提供基础目标 C 基础类型的绑定, 但在少数情况下, 我们已将基础类型映射到 .NET 类型。 例如：
+虽然此命名空间提供基础目标 C 基础类型的绑定, 但在少数情况下, 我们已将基础类型映射到 .NET 类型。 例如:
 
 - 运行时不是处理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)和[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), 而是在整个C#API 中将它们公开为[字符串](xref:System.String)s 和强类型[数组](xref:System.Array)。
 
@@ -630,7 +630,7 @@ UITextField UserName {
 
 目标 C 编程的核心概念是选择器。 你经常会遇到需要你传递选择器的 Api, 或者期望你的代码响应选择器。
 
-中C#创建新的`ObjCRuntime.Selector`选择器非常简单–只需创建类的新实例, 并在需要它的 API 中的任何位置使用结果。 例如：
+中C#创建新的`ObjCRuntime.Selector`选择器非常简单–只需创建类的新实例, 并在需要它的 API 中的任何位置使用结果。 例如:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");

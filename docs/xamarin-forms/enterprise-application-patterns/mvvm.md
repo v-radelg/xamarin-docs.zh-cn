@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 1e3e1a2165c9acee127a543301f00262aa4bdc4f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2bd704b17f5aff1b4d3f2da1813d1eb19ef29e59
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529084"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620680"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>模型-视图-ViewModel 模式
 
@@ -284,7 +284,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 通过附加属性附加到控件的行为称为*附加行为*。 然后, 该行为可以使用它附加到的元素的公开 API 向该控件的可视化树中的控件或其他控件添加功能。 EShopOnContainers 移动应用包含`LineColorBehavior`类, 该类是附加的行为。 有关此行为的详细信息, 请参阅[显示验证错误](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
 
-Xamarin. 窗体行为是从[`Behavior`](xref:Xamarin.Forms.Behavior)或[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)类派生的类, 其中`T `是该行为应应用到的控件的类型。 这些类提供`OnAttachedTo`了`OnDetachingFrom`和方法, 应重写这些方法, 以提供在将行为附加到控件并将其与控件分离时执行的逻辑。
+Xamarin. 窗体行为是从[`Behavior`](xref:Xamarin.Forms.Behavior)或[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)类派生的类, 其中`T`是该行为应应用到的控件的类型。 这些类提供`OnAttachedTo`了`OnDetachingFrom`和方法, 应重写这些方法, 以提供在将行为附加到控件并将其与控件分离时执行的逻辑。
 
 在 eShopOnContainers 移动应用中, `BindableBehavior<T>`类派生[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)自类。 `BindableBehavior<T>`类的目的是为 Xamarin. 窗体行为提供一个基类, 要求将该[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)行为的设置为附加的控件。
 

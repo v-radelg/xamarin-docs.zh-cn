@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 733f50954c7ea6bd4ada7468eb14443f4f3b1f1d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654416"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620673"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 简介
 
@@ -52,7 +52,7 @@ Apple 在 iOS 9 中添加了几个新的 Api 和服务, 并对现有功能进行
 
 - **滑过**-允许用户在滑出面板中临时运行第二个 iOS 应用 (根据语言方向在屏幕的右侧或左侧), 该面板大约包含当前正在运行的主要应用程序的 25%。 滑过只能在 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4上使用。
 - **拆分视图**-在受支持的 ipad 硬件上 (ipad Air 2、ipad 迷你4和 ipad Pro), 用户可以选择第二个应用, 并在拆分屏幕模式下并行运行当前正在运行的应用程序。 用户可以控制每个应用占用的主屏幕的百分比。
-- 图片 **: 对于**播放视频内容的应用, 视频现在可以在可移动且可调整大小的窗口中播放, 该窗口将浮动在当前运行在 iOS 设备上的其他应用。 用户可以完全控制此窗口的大小和位置。 图片中的图片仅在 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4上可用。
+- 图片: 对于播放视频内容的应用, 视频现在可以在可移动且可调整大小的窗口中播放, 该窗口将浮动在当前运行在 iOS 设备上的其他应用。 用户可以完全控制此窗口的大小和位置。 图片中的图片仅在 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4上可用。
 
 若要了解有关 iOS 9 的新多任务功能的详细信息, 请参阅我们的[多任务 For iPad](~/ios/platform/multitasking.md)指南。
 
@@ -124,12 +124,12 @@ IOS 8 和 OS X Yosemite (10.10) 中的 Apple 引入了移交 (也称为连续性
 - **新的音频设备扩展点**–使用此扩展点来提供音频效果、乐器、声音生成器等, 以便在其他音频设备主机应用 (如 GarageBand) 中使用。 此扩展点还允许你在应用商店中销售_音频单位_(音频插件)。
 - **新索引维护扩展点**-使用此扩展点来支持应用程序数据的重新索引, 而无需重新启动应用程序。
 - **新网络扩展点**(这需要 Apple 的特殊权限):
-    - **应用代理提供程序扩展**-使用此扩展点实现自定义透明客户端网络代理。
-    - **筛选数据提供程序/筛选器控件提供程序扩展**-使用这些扩展点来实现设备上的动态网络内容筛选。
-    - **数据包隧道提供程序扩展**-使用此扩展点实现自定义 VPN 隧道协议客户端。
+  - **应用代理提供程序扩展**-使用此扩展点实现自定义透明客户端网络代理。
+  - **筛选数据提供程序/筛选器控件提供程序扩展**-使用这些扩展点来实现设备上的动态网络内容筛选。
+  - **数据包隧道提供程序扩展**-使用此扩展点实现自定义 VPN 隧道协议客户端。
 - **新的 Safari 扩展点**:
-    - **内容阻止扩展**-使用此扩展点定义用户浏览 web 时不会显示的阻止内容的列表。
-    - **共享链接扩展**-使用此扩展点可以在 Safari 的共享链接中查看应用内容。
+  - **内容阻止扩展**-使用此扩展点定义用户浏览 web 时不会显示的阻止内容的列表。
+  - **共享链接扩展**-使用此扩展点可以在 Safari 的共享链接中查看应用内容。
 
 有关详细信息, 请参阅我们的扩展和 Apple[应用扩展编程指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)文档[介绍](~/ios/platform/extensions.md)。
 

@@ -6,13 +6,13 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/03/2019
-ms.openlocfilehash: 0543d35b8bd4160aa84688da21dbc5bda5408444
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.date: 08/19/2019
+ms.openlocfilehash: 0c84b844455b8a792b8cbe2f4dac97097e5ebd97
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560308"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621058"
 ---
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin 本机项目中的 Xamarin.Forms
 
@@ -43,13 +43,11 @@ ms.locfileid: "69560308"
 [Register("AppDelegate")]
 public class AppDelegate : UIApplicationDelegate
 {
-    public static string FolderPath { get; private set; }
-
     public static AppDelegate Instance;
-
     UIWindow _window;
-    UINavigationController _navigation;
-    UIViewController _noteEntryPage;
+    AppNavigationController _navigation;
+
+    public static string FolderPath { get; private set; }
 
     public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
     {
@@ -67,13 +65,13 @@ public class AppDelegate : UIApplicationDelegate
         UIViewController mainPage = new NotesPage().CreateViewController();
         mainPage.Title = "Notes";
 
-        _navigation = new UINavigationController(mainPage);
+        _navigation = new AppNavigationController(mainPage);
         _window.RootViewController = _navigation;
         _window.MakeKeyAndVisible();
 
         return true;
     }
-    ...
+    // ...
 }
 ```
 
@@ -85,8 +83,8 @@ public class AppDelegate : UIApplicationDelegate
 - 将`FolderPath`属性初始化为设备上存储注释数据的路径。
 - `NotesPage`类，该类是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生在 XAML 中定义的页中，会构造并转换为`UIViewController`使用`CreateViewController`扩展方法。
 - `Title`的属性`UIViewController`设置，这将显示在`UINavigationBar`。
-- 一个`UINavigationController`创建用于管理分层导航。 `UINavigationController`类管理一摞视图控制器，并`UIViewController`传递到构造函数将显示最初时`UINavigationController`加载。
-- `UINavigationController`实例设置为顶级`UIViewController`有关`UIWindow`，和`UIWindow`被设置为密钥窗口中的应用程序，变为可见。
+- 一个`AppNavigationController`创建用于管理分层导航。 这是从`UINavigationController`派生的自定义导航控制器类。 对象管理视图控制器的堆栈, 并且传递到构造`UIViewController`函数中的将在加载时最初`AppNavigationController`显示。 `AppNavigationController`
+- 将对象设置为的顶级`UIViewController` `UIWindow`, 并将设置为应用程序的`UIWindow`键窗口, 并使其可见。 `AppNavigationController`
 
 一次`FinishedLaunching`方法执行，在 Xamarin.Forms 中定义 UI`NotesPage`将显示类，如以下屏幕截图中所示：
 
@@ -106,23 +104,42 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    _noteEntryPage = new NoteEntryPage
+    var noteEntryPage = new NoteEntryPage
     {
         BindingContext = note
     }.CreateViewController();
-    _noteEntryPage.Title = "Note Entry";
-    _navigation.PushViewController(_noteEntryPage, true);
+    noteEntryPage.Title = "Note Entry";
+    _navigation.PushViewController(noteEntryPage, true);
 }
 ```
 
-`NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`UIViewController`与`CreateViewController`扩展方法，并设置`Title`属性`UIViewController`。 `UIViewController`然后推送到`UINavigationController`通过`PushViewController`方法。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示类，如以下屏幕截图中所示：
+`NavigateToNoteEntryPage`方法将为 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-派生页`UIViewController`与`CreateViewController`扩展方法，并设置`Title`属性`UIViewController`。 `UIViewController`然后推送到`AppNavigationController`通过`PushViewController`方法。 因此，在 Xamarin.Forms 中定义 UI`NoteEntryPage`将显示类，如以下屏幕截图中所示：
 
 [![定义的 ui 的 Xamarin Ios 应用程序的屏幕截图](native-forms-images/ios-noteentrypage.png " 使用 xaml Xamarin ios 应用中使用 xaml ui")](native-forms-images/ios-noteentrypage-large.png#lightbox "使用 XAML UI 的 Xamarin iOS 应用")
 
-时`NoteEntryPage`点击后的显示箭头会弹出`UIViewController`有关`NoteEntryPage`类派生`UINavigationController`，返回到用户`UIViewController`为`NotesPage`类。
+`AppNavigationController` `NoteEntryPage` `UIViewController` `NotesPage` `UIViewController`当显示时, 后退导航将从中弹出类的, 并将用户返回到类的。 `NoteEntryPage` 但是, `UIViewController`从 iOS 本机导航堆栈中弹出会自动释放`UIViewController`和附加`Page`的对象。 因此, `AppNavigationController`类会`PopViewController`重写方法, 以释放反向导航中的视图控制器:
+
+```csharp
+public class AppNavigationController : UINavigationController
+{
+    //...
+    public override UIViewController PopViewController(bool animated)
+    {
+        UIViewController topView = TopViewController;
+        if (topView != null)
+        {
+            // Dispose of ViewController on back navigation.
+            topView.Dispose();
+        }
+        return base.PopViewController(animated);
+    }
+}
+```
+
+重写从 iOS `Dispose`本机导航堆栈`UIViewController`中弹出的对象上调用方法。 `PopViewController` 如果不这样做, 将导致和`UIViewController`附加`Page`的对象被孤立。
 
 > [!IMPORTANT]
-> 从 iOS 本机导航堆栈中弹出时, 不会自动`UIViewController`释放。 `UIViewController` 开发人员负责确保`UIViewController`不再需要的任何`Dispose`方法都调用了方法, 否则, 附加`Page`的将是孤立的`UIViewController` , 并且不会被垃圾回收器收集。导致内存泄露。
+> 不能对孤立对象进行垃圾回收, 因此会导致内存泄露。
 
 ## <a name="android"></a>Android
 

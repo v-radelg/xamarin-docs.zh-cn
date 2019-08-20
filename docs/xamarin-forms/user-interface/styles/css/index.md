@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 5d4d7358ca6188f2528ea200f901823f04324ba3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ed9a376da0fcfebffd707e2e93919237adfef87b
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647471"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620842"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
@@ -129,7 +129,7 @@ stacklayout>image {
 
 有关资源字典的详细信息，请参阅[资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
 
-### <a name="c"></a>C#
+### <a name="c"></a>C\#
 
 在C#，可以作为嵌入资源加载样式表，并将其添加到[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
@@ -451,7 +451,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 以下 Xamarin. 还支持 Forms Shell 特定 CSS 属性 (在 "**值**" 列中, 类型为_斜体_, 而字符串文字为`gray`):
 
-|属性|适用对象|值|示例|
+|Property|适用对象|值|示例|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_颜色_ \| `initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_颜色_ \| `initial` |`-xf-shell-background: green;`|

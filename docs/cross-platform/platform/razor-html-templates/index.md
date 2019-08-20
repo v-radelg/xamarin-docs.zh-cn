@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521805"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621038"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 模板构建 HTML 视图
 
@@ -167,7 +167,7 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>从调用 JavaScriptC#
+### <a name="calling-javascript-from-c"></a>从 C 调用 JavaScript\#
 
 除了告诉 web 视图加载新的 HTML 页面外, C#代码还可以在当前显示的页面中运行 JavaScript。 可以使用C#字符串并执行整个 javascript 代码块, 也可以通过`script`标记将方法调用创建到页面上已有的 javascript。
 
@@ -465,7 +465,7 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 处理 URL 后, 方法将中止导航, 以便 web 视图不会尝试完成导航到自定义 URL。
 
-#### <a name="manipulating-the-template-from-c"></a>操作模板C#
+#### <a name="manipulating-the-template-from-c"></a>从 C 操作模板\#
 
 通过在 web 视图中调用 JavaScript, C#可以从与呈现的 HTML web 视图进行通信。 在 iOS 上, 此操作通过对`EvaluateJavascript` UIWebView 调用:
 

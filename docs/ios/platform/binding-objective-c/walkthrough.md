@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4c4aaeaa451a67da16057cd9b345fbbcd0af6f35
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527995"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621022"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
@@ -74,16 +74,16 @@ _本文介绍了如何为现有的目标-C 库 (InfColorPicker) 创建 Xamarin i
 
 - **安装 Xcode** -安装 Xcode 时, 它与所有命令行工具捆绑在一起。 在 OS X 10.9 填充程序 (安装`/usr/bin`在中) 中, 可以将中`/usr/bin`包含的任何工具映射到 Xcode 中的相应工具。 例如, `xcrun`命令允许您从命令行在 Xcode 内查找或运行任何工具。
 - **终端应用程序**-从终端应用程序中, 可以通过运行`xcode-select --install`命令来安装命令行工具:
-    - 启动终端应用程序。
-    - 键入`xcode-select --install` , 然后按**enter**, 例如:
+  - 启动终端应用程序。
+  - 键入`xcode-select --install` , 然后按**enter**, 例如:
 
-    ```bash
-    Europa:~ kmullins$ xcode-select --install
-    ```
+  ```bash
+  Europa:~ kmullins$ xcode-select --install
+  ```
 
-    - 系统会要求安装命令行工具, 请单击 "**安装**" 按钮: [![](walkthrough-images/xcode01.png "安装命令行工具")](walkthrough-images/xcode01.png#lightbox)
+  - 系统会要求安装命令行工具, 请单击 "**安装**" 按钮:[![](walkthrough-images/xcode01.png "安装命令行工具")](walkthrough-images/xcode01.png#lightbox)
 
-    - 将从 Apple 的服务器下载和安装这些工具: [![](walkthrough-images/xcode02.png "下载工具")](walkthrough-images/xcode02.png#lightbox)
+  - 将从 Apple 的服务器下载和安装这些工具:[![](walkthrough-images/xcode02.png "下载工具")](walkthrough-images/xcode02.png#lightbox)
 
 - **适用于 Apple 开发人员的下载**-命令行工具包适用于[Apple 开发人员下载](https://developer.apple.com/downloads/index.action)网页。 用你的 Apple ID 登录, 然后搜索并下载命令行工具:[![](walkthrough-images/xcode03.png "查找命令行工具")](walkthrough-images/xcode03.png#lightbox)
 
@@ -186,7 +186,8 @@ Fat 库是`.a`包含所有受支持的体系结构的文件。
 
 有许多工具可用于自动执行此类任务-shell 脚本、 [rake](http://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)和[进行](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)操作。 安装 Xcode 命令行工具时, `make`还会安装, 因此, 这是将用于本演练的生成系统。 以下是可用于创建可在 iOS 设备上工作的多体系结构共享库和适用于任何库的模拟器的**生成文件**:
 
-```bash
+<!--markdownlint-disable MD010 -->
+```makefile
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 PROJECT_ROOT=./YOUR-PROJECT-NAME
 PROJECT=$(PROJECT_ROOT)/YOUR-PROJECT-NAME.xcodeproj
@@ -212,6 +213,7 @@ lib$(TARGET).a: lib$(TARGET)-i386.a lib$(TARGET)-armv7.a lib$(TARGET)-arm64.a
 clean:
     -rm -f *.a *.dll
 ```
+<!--markdownlint-enable MD010 -->
 
 在所选的纯文本编辑器中输入**生成文件**命令, 并通过项目名称更新部分。 还必须确保严格粘贴上述说明, 并保留指令中的选项卡。
 
@@ -622,21 +624,21 @@ using UIKit;
 
 namespace InfColorPickerSample
 {
-    public class ColorSelectedDelegate:InfColorPickerControllerDelegate
+  public class ColorSelectedDelegate:InfColorPickerControllerDelegate
+  {
+    readonly UIViewController parent;
+
+    public ColorSelectedDelegate (UIViewController parent)
     {
-        readonly UIViewController parent;
-
-        public ColorSelectedDelegate (UIViewController parent)
-        {
-            this.parent = parent;
-        }
-
-        public override void ColorPickerControllerDidFinish (InfColorPickerController controller)
-        {
-            parent.View.BackgroundColor = controller.ResultColor;
-            parent.DismissViewController (false, null);
-        }
+      this.parent = parent;
     }
+
+    public override void ColorPickerControllerDidFinish (InfColorPickerController controller)
+    {
+      parent.View.BackgroundColor = controller.ResultColor;
+      parent.DismissViewController (false, null);
+    }
+  }
 }
 ```
 
@@ -653,9 +655,9 @@ ColorSelectedDelegate selector;
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.ViewDidLoad ();
-    ChangeColorButton.TouchUpInside += HandleTouchUpInsideWithStrongDelegate;
-    selector = new ColorSelectedDelegate (this);
+  base.ViewDidLoad ();
+  ChangeColorButton.TouchUpInside += HandleTouchUpInsideWithStrongDelegate;
+  selector = new ColorSelectedDelegate (this);
 }
 ```
 **实现方法 HandleTouchUpInsideWithStrongDelegate** -接下来, 在用户接触**ColorChangeButton**时实现事件处理程序。 编辑`ViewController`并添加以下方法:
