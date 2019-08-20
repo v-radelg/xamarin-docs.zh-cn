@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 143dd8c5ad2e762235641680e1217a11e1b48bb5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: c707cb1afb774d73be7ea441695b88920489eb5f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651320"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528763"
 ---
 # <a name="push-notifications-in-ios"></a>IOS 中的推送通知
 
@@ -32,24 +32,24 @@ Apple 维护两个 APNS 环境: 一个*沙箱*和一个*生产*环境。 沙盒�
 
 推送通知必须遵循 APNS 体系结构规定的以下规则:
 
--  **256 字节消息限制**-通知的整个消息大小不得超过256个字节。
--  **无回执确认**-APNS 不向发送方提供消息将其发送给目标接收方的任何通知。 如果设备无法访问且发送了多个顺序通知, 则除了最近的所有通知都将丢失。 仅将最新的通知传送到设备。
--  **每个应用程序都需要一个安全的证书**-必须通过 SSL 来与 APNS 通信。
+- **256 字节消息限制**-通知的整个消息大小不得超过256个字节。
+- **无回执确认**-APNS 不向发送方提供消息将其发送给目标接收方的任何通知。 如果设备无法访问且发送了多个顺序通知, 则除了最近的所有通知都将丢失。 仅将最新的通知传送到设备。
+- **每个应用程序都需要一个安全的证书**-必须通过 SSL 来与 APNS 通信。
 
 
 ## <a name="creating-and-using-certificates"></a>创建和使用证书
 
 上一部分中所述的每个环境都需要各自的证书。 本部分将介绍如何创建证书, 如何将其与预配配置文件相关联, 以及如何获取用于 PushSharp 的个人信息交换证书。
 
-1.  若要创建证书, 请在 Apple 网站上的 iOS 预配门户上, 如以下屏幕截图所示 (请注意左侧的 "应用 Id" 菜单项):
+1. 若要创建证书, 请在 Apple 网站上的 iOS 预配门户上, 如以下屏幕截图所示 (请注意左侧的 "应用 Id" 菜单项):
 
     [![](remote-notifications-in-ios-images/image5new.png "Apple 网站上的 iOS 预配门户")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
-2.  接下来, 导航到应用 ID 部分, 并创建新的应用 ID, 如以下屏幕截图所示:
+2. 接下来, 导航到应用 ID 部分, 并创建新的应用 ID, 如以下屏幕截图所示:
 
     [![](remote-notifications-in-ios-images/image6new.png "导航到 \"应用 Id\" 部分, 并创建新的应用 ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  当您单击 **+** 按钮，可以输入说明和捆绑包标识符的应用程序 ID，如下面的屏幕截图中所示：
+3. 当您单击 **+** 按钮，可以输入说明和捆绑包标识符的应用程序 ID，如下面的屏幕截图中所示：
 
     [![](remote-notifications-in-ios-images/image7new.png "输入应用 ID 的描述和捆绑标识符")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
@@ -63,7 +63,7 @@ Apple 维护两个 APNS 环境: 一个*沙箱*和一个*生产*环境。 沙盒�
 
     [![](remote-notifications-in-ios-images/image9new.png "确认新的应用 ID 注册")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-7.  接下来, 必须为应用 ID 创建证书。 在左侧导航栏中, 浏览到 "**证书" >** ", `+`然后选择按钮, 如以下屏幕截图所示:
+7. 接下来, 必须为应用 ID 创建证书。 在左侧导航栏中, 浏览到 "**证书" >** ", `+`然后选择按钮, 如以下屏幕截图所示:
 
     [![](remote-notifications-in-ios-images/image10new.png "为应用 ID 创建证书")](remote-notifications-in-ios-images/image8.png#lightbox)
 
@@ -75,24 +75,24 @@ Apple 维护两个 APNS 环境: 一个*沙箱*和一个*生产*环境。 沙盒�
 
     [![](remote-notifications-in-ios-images/image12new.png "选择刚创建的新应用 ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-10.  这会显示一些说明, 指导你完成使用 Mac 上的**密钥链 Access**应用程序创建*证书签名请求*的过程。
+10. 这会显示一些说明, 指导你完成使用 Mac 上的**密钥链 Access**应用程序创建*证书签名请求*的过程。
 
-11.  创建证书后, 必须将其用作生成过程的一部分, 以对应用程序进行签名, 使其可以注册 APNs。 这需要创建并安装使用该证书的预配配置文件。
+11. 创建证书后, 必须将其用作生成过程的一部分, 以对应用程序进行签名, 使其可以注册 APNs。 这需要创建并安装使用该证书的预配配置文件。
 
-12.  若要创建开发预配配置文件, 请导航到 "**预配配置文件**" 部分, 并使用刚刚创建的应用 Id 执行创建该配置文件的步骤。
+12. 若要创建开发预配配置文件, 请导航到 "**预配配置文件**" 部分, 并使用刚刚创建的应用 Id 执行创建该配置文件的步骤。
 
-13.  创建预配配置文件后, 打开**Xcode 管理器**并进行刷新。 如果创建的预配配置文件未出现, 则可能需要从 iOS 预配门户下载配置文件并手动导入它。 下面的屏幕截图显示了一个添加了预配配置文件的组织程序的示例:  
+13. 创建预配配置文件后, 打开**Xcode 管理器**并进行刷新。 如果创建的预配配置文件未出现, 则可能需要从 iOS 预配门户下载配置文件并手动导入它。 下面的屏幕截图显示了一个添加了预配配置文件的组织程序的示例:  
     [![](remote-notifications-in-ios-images/image13new.png "此屏幕截图显示添加了预配配置文件的组织程序的示例")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-14.  此时, 我们需要将 Xamarin 项目配置为使用这个新创建的预配配置文件。 这是在 " **IOS 捆绑签名**" 选项卡下的 "**项目选项**" 对话框中完成的, 如以下屏幕截图所示:  
+14. 此时, 我们需要将 Xamarin 项目配置为使用这个新创建的预配配置文件。 这是在 " **IOS 捆绑签名**" 选项卡下的 "**项目选项**" 对话框中完成的, 如以下屏幕截图所示:  
     [![](remote-notifications-in-ios-images/image11.png "将 Xamarin iOS 项目配置为使用这个新创建的预配配置文件")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 此时, 应用程序配置为使用推送通知。 但是, 证书仍需要几个步骤。 此证书采用的是 DER 格式, 该格式与需要个人信息交换 (PKCS12) 证书的 PushSharp 不兼容。 若要转换证书, 使其可供 PushSharp 使用, 请执行以下最终步骤:
 
-1.  **下载证书文件**-登录到 IOS 设置门户, 选择 "证书" 选项卡, 选择与正确的配置文件关联的证书, 然后选择 "**下载**"。
-1.  **打开密钥链访问**-这是应用程序是 OS X 中的密码管理系统的 GUI 界面。
-1.  **导入证书**-如果尚未安装基于证书, 则**文件 .。。** 从 "密钥链访问" 菜单导入项目。 导航到上面导出的证书, 然后选择该证书。
-1.  **导出证书**-展开证书以便显示关联的私钥, 右键单击密钥并选择 "导出"。 系统将提示你输入导出文件的文件名和密码。
+1. **下载证书文件**-登录到 IOS 设置门户, 选择 "证书" 选项卡, 选择与正确的配置文件关联的证书, 然后选择 "**下载**"。
+1. **打开密钥链访问**-这是应用程序是 OS X 中的密码管理系统的 GUI 界面。
+1. **导入证书**-如果尚未安装基于证书, 则**文件 .。。** 从 "密钥链访问" 菜单导入项目。 导航到上面导出的证书, 然后选择该证书。
+1. **导出证书**-展开证书以便显示关联的私钥, 右键单击密钥并选择 "导出"。 系统将提示你输入导出文件的文件名和密码。
 
 此时, 我们已完成了证书。 我们创建了一个证书, 用于对 iOS 应用程序进行签名, 并将该证书转换为可在服务器应用程序中与 PushSharp 一起使用的格式。 接下来, 让我们看看 iOS 应用程序如何与 APNS 交互。
 

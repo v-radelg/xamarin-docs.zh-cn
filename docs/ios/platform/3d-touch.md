@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 209d70c2e158261ca671e6a889e979de39362d53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 38d58350cf067a2d5f7813250590cc0715b6c9ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647989"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527385"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin 中的3D 触控简介
 
@@ -78,7 +78,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 3D Touch 提供了新的方法, 使用户能够比以往更快地与应用程序中的信息交互, 而不必从当前位置导航。
 
-例如, 如果你的应用程序显示的是一张消息, 则用户可以按下某个项目的 "hard" 来预览覆盖视图 (Apple 指的是*查看) 中*的内容。
+例如, 如果你的应用程序显示的是一张消息, 则用户可以按下某个项目的 "hard" 来预览覆盖视图 (Apple 指的是查看)中的内容。
 
 [![](3d-touch-images/peekandpop01.png "查看内容的示例")](3d-touch-images/peekandpop01.png#lightbox)
 
@@ -175,7 +175,7 @@ namespace DTouch
 
 方法用于执行查看操作。 `GetViewControllerForPreview` 它可以访问表单元和备份数据, 然后`DetailViewController`从当前情节提要加载。 通过将设置`PreferredContentSize`为 (0, 0), 我们要求提供默认的**速览**视图大小。 最后, 我们将显示所有内容 (但不显示`previewingContext.SourceRect = cell.Frame`的单元格), 并返回显示的新视图。
 
-重新显示在用户按下 "更难" 时**在 "查看**" 视图中创建的视图。 `CommitViewController`
+重新显示在用户按下 "更难" 时在 "查看" 视图中创建的视图。 `CommitViewController`
 
 ### <a name="registering-for-peek-and-pop"></a>注册速览和 Pop
 
@@ -274,11 +274,11 @@ public override void ViewDidLoad ()
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-        ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType 图像")
 
-* `UIApplicationShortcutItemSubtitle`-定义项的副标题。
-* `UIApplicationShortcutItemTitle`-定义项的标题。
-* `UIApplicationShortcutItemType`-一个字符串值, 我们将使用它来确定应用程序中的项。 有关详细信息，请参阅下一节。
+- `UIApplicationShortcutItemSubtitle`-定义项的副标题。
+- `UIApplicationShortcutItemTitle`-定义项的标题。
+- `UIApplicationShortcutItemType`-一个字符串值, 我们将使用它来确定应用程序中的项。 有关详细信息，请参阅下一节。
 
 > [!IMPORTANT]
 > `Info.plist` 无法`Application.ShortcutItems`通过属性访问文件中设置的快速操作快捷方式项。 它们只传递到`HandleShortcutItem`事件处理程序。

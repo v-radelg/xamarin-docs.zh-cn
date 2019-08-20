@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 4137ce7542a213a0a4c27b6a66b38828e4646520
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: dbc0802b39e8fa736ec3b71dc23f488d08fd8a42
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653468"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621079"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin 中的 iOS 扩展
 
@@ -91,13 +91,13 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 
 - 它必须有一个以其容器应用的捆绑标识符开头的捆绑标识符。 例如, 如果容器应用的包标识符`com.myCompany.ContainerApp`为, 则该扩展的标识符可能是: `com.myCompany.ContainerApp.MyExtension` 
 
-    ![](extensions-images/bundleidentifiers.png) 
+  ![](extensions-images/bundleidentifiers.png) 
 - 它必须`NSExtensionPointIdentifier`定义密钥, 并在其`Info.plist`文件中使用适当的`com.apple.widget-extension`值 (例如, 对于**今天**通知中心小组件)。
-- 它还必须在其`NSExtensionMainStoryboard` `NSExtensionPrincipalClass` `Info.plist`文件中使用适当的*值定义密钥*或密钥:
-    - 使用 " `NSExtensionMainStoryboard`密钥" 指定显示扩展 (减号`.storyboard`) 的主 UI 的情节提要的名称。 例如, `Main` `Main.storyboard`对于文件。
-    - `NSExtensionPrincipalClass`使用键指定启动扩展时要初始化的类。 该值必须与的**Register**值`UIViewController`匹配: 
+- 它还必须在 `NSExtensionMainStoryboard` `NSExtensionPrincipalClass` 其`Info.plist`文件中使用适当的值定义密钥或密钥:
+  - 使用 " `NSExtensionMainStoryboard`密钥" 指定显示扩展 (减号`.storyboard`) 的主 UI 的情节提要的名称。 例如, `Main` `Main.storyboard`对于文件。
+  - `NSExtensionPrincipalClass`使用键指定启动扩展时要初始化的类。 该值必须与的**Register**值`UIViewController`匹配: 
 
-    ![](extensions-images/registerandprincipalclass.png)
+  ![](extensions-images/registerandprincipalclass.png)
 
 特定类型的扩展可能具有其他要求。 例如,**今天**或**通知中心**的主体类必须实现[INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding)。
 
@@ -182,28 +182,28 @@ using CoreGraphics;
 
 namespace DaysRemaining
 {
-    [Register("CodeBasedViewController")]
-    public class CodeBasedViewController : UIViewController, INCWidgetProviding
+  [Register("CodeBasedViewController")]
+  public class CodeBasedViewController : UIViewController, INCWidgetProviding
+  {
+    public CodeBasedViewController ()
     {
-        public CodeBasedViewController ()
-        {
-        }
-
-        public override void ViewDidLoad ()
-        {
-            base.ViewDidLoad ();
-
-            // Add label to view
-            var TodayMessage = new UILabel (new CGRect (0, 0, View.Frame.Width, View.Frame.Height)) {
-                TextAlignment = UITextAlignment.Center
-            };
-
-            View.AddSubview (TodayMessage);
-            
-            // Insert code to power extension here...
-
-        }
     }
+
+    public override void ViewDidLoad ()
+    {
+      base.ViewDidLoad ();
+
+      // Add label to view
+      var TodayMessage = new UILabel (new CGRect (0, 0, View.Frame.Width, View.Frame.Height)) {
+        TextAlignment = UITextAlignment.Center
+      };
+
+      View.AddSubview (TodayMessage);
+
+      // Insert code to power extension here...
+
+    }
+  }
 }
 ```
 
@@ -216,19 +216,19 @@ namespace DaysRemaining
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.ViewDidLoad ();
+  base.ViewDidLoad ();
 
-    // Calculate the values
-    var dayOfYear = DateTime.Now.DayOfYear;
-    var leapYearExtra = DateTime.IsLeapYear (DateTime.Now.Year) ? 1 : 0;
-    var daysRemaining = 365 + leapYearExtra - dayOfYear;
+  // Calculate the values
+  var dayOfYear = DateTime.Now.DayOfYear;
+  var leapYearExtra = DateTime.IsLeapYear (DateTime.Now.Year) ? 1 : 0;
+  var daysRemaining = 365 + leapYearExtra - dayOfYear;
 
-    // Display the message
-    if (daysRemaining == 1) {
-        TodayMessage.Text = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
-    } else {
-        TodayMessage.Text = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
-    }
+  // Display the message
+  if (daysRemaining == 1) {
+    TodayMessage.Text = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
+  } else {
+    TodayMessage.Text = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
+  }
 }
 ```
 

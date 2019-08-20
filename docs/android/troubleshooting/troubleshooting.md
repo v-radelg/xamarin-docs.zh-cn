@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
-ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
-ms.translationtype: HT
+ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757247"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523196"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
 
@@ -22,9 +22,9 @@ ms.locfileid: "68757247"
 在追踪各种 bug 时, Xamarin 有一些需要注意的地方。
 这些问题包括：
 
-1.  诊断 MSBuild 输出。
-2.  设备部署日志。
-3.  Android 调试日志输出。
+1. 诊断 MSBuild 输出。
+2. 设备部署日志。
+3. Android 调试日志输出。
 
 
 <a name="Diagnostic_MSBuild_Output" />
@@ -35,23 +35,23 @@ ms.locfileid: "68757247"
 
 若要在 Visual Studio 中启用诊断 MSBuild 输出：
 
-1.  单击 "**工具" > 选项 ...**
-2.  在左侧树视图中, 选择 "**项目和解决方案" > "生成和运行**"
-3.  在右侧面板中, 将 "MSBuild 生成输出详细级别" 下拉列表设置为 "诊断"
-4.  单击“确定”
-5.  清除并重新生成包。
-6.  诊断输出显示在 "输出" 面板中。
+1. 单击 "**工具" > 选项 ...**
+2. 在左侧树视图中, 选择 "**项目和解决方案" > "生成和运行**"
+3. 在右侧面板中, 将 "MSBuild 生成输出详细级别" 下拉列表设置为 "诊断"
+4. 单击“确定”
+5. 清除并重新生成包。
+6. 诊断输出显示在 "输出" 面板中。
 
 
 在 Visual Studio for Mac/OS X 中启用诊断 MSBuild 输出:
 
-1.  单击**Visual Studio for Mac > 首选项 ...**
-2.  在左侧树视图中, 选择 "**项目 > 生成**"
-3.  在右侧面板中, 将 "日志详细级别" 下拉箭头设置为 "诊断"
-4.  单击“确定”
-5.  重启 Visual Studio for Mac
-6.  清除并重新生成包。
-7.  通过单击 "生成输出" 按钮, 可在 "错误" 面板中查看诊断输出 ( **> > 错误**)。
+1. 单击**Visual Studio for Mac > 首选项 ...**
+2. 在左侧树视图中, 选择 "**项目 > 生成**"
+3. 在右侧面板中, 将 "日志详细级别" 下拉箭头设置为 "诊断"
+4. 单击“确定”
+5. 重启 Visual Studio for Mac
+6. 清除并重新生成包。
+7. 通过单击 "生成输出" 按钮, 可在 "错误" 面板中查看诊断输出 ( **> > 错误**)。
 
 
 
@@ -60,16 +60,16 @@ ms.locfileid: "68757247"
 
 若要在 Visual Studio 中启用设备部署日志记录:
 
-1.  **工具 > 选项 。** >
-2.  在左侧树视图中, 选择 " **Xamarin > Android 设置**"
-3.  在右侧面板中, 启用 [X] "**调试日志记录" (将 monodroid 写入桌面)** 复选框。
-4.  日志消息将写入桌面上的 monodroid 文件。
+1. **工具 > 选项 。** >
+2. 在左侧树视图中, 选择 " **Xamarin > Android 设置**"
+3. 在右侧面板中, 启用 [X] "**调试日志记录" (将 monodroid 写入桌面)** 复选框。
+4. 日志消息将写入桌面上的 monodroid 文件。
 
 
 Visual Studio for Mac 始终写入设备部署日志。 找到这些方法稍微难些;每日创建一个*AndroidUtils*日志文件, 部署发生的时间为, 例如:**AndroidTools-2012-10-24 _12-35-45. 日志**。
 
--  在 Windows 上, 将日志文件写入`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
--  在 OS X 上, 将日志文件写入`$HOME/Library/Logs/XamarinStudio-{VERSION}`。
+- 在 Windows 上, 将日志文件写入`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
+- 在 OS X 上, 将日志文件写入`$HOME/Library/Logs/XamarinStudio-{VERSION}`。
 
 
 
@@ -91,9 +91,9 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Xamarin 支持以下系统属性:
 
--   *调试 mono*:如果非空字符串, 则它等效于`*mono-debug*`。
+- *调试 mono*:如果非空字符串, 则它等效于`*mono-debug*`。
 
--   *debug.exe. env*:在应用程序启动过程中 *|* , mono 初始化*之前*要导出的环境变量 ("") 列表。 这允许设置控制 mono 日志记录的环境变量。
+- *debug.exe. env*:在应用程序启动过程中 *|* , mono 初始化*之前*要导出的环境变量 ("") 列表。 这允许设置控制 mono 日志记录的环境变量。
 
     - *说明*：由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
 
@@ -101,18 +101,20 @@ Xamarin 支持以下系统属性:
 
     - 示例:
 
-            adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
+      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
 
--   *调试 mono 日志*:用逗号分隔的 (" *,* ") 组件列表, 这些组件应将其他消息打印到 Android 调试日志。 默认情况下, 不设置任何内容。 组件包括:
+- *调试 mono 日志*:用逗号分隔的 (" *,* ") 组件列表, 这些组件应将其他消息打印到 Android 调试日志。 默认情况下, 不设置任何内容。 组件包括:
 
-    -   *全部*:打印所有消息
-    -   *gc*:打印 GC 相关的消息。
-    -   *gref*:Print (弱、全局) 引用分配和释放消息。
-    -   *lref*:打印本地引用分配和释放消息。
+    - *全部*:打印所有消息
+    - *gc*:打印 GC 相关的消息。
+    - *gref*:Print (弱、全局) 引用分配和释放消息。
+    - *lref*:打印本地引用分配和释放消息。
 
     *注意*: 这些内容*非常*详细。 除非确实需要, 否则不要启用。
 
--   *debug . trace*:允许设置[mono 跟踪](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`设置。
+- *debug . trace*:允许设置[mono 跟踪](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`设置。
 
 ## <a name="deleting-bin-and-obj"></a>删除`bin`和`obj`
 
@@ -213,10 +215,10 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 
 有四个结果消息:
 
--  全局引用创建: 这些是以 *+ g +* 开头的行, 并将为创建代码路径提供堆栈跟踪。
--  全局引用析构: 这些行以 *-g*开头, 可以为全局引用的代码路径释放提供堆栈跟踪。 如果 GC 正在释放 gref, 则不会提供任何堆栈跟踪。
--  弱全局引用创建: 这是以 *+ w +* 开头的行。
--  弱全局引用析构: 这是以 *-w*开头的行。
+- 全局引用创建: 这些是以 *+ g +* 开头的行, 并将为创建代码路径提供堆栈跟踪。
+- 全局引用析构: 这些行以 *-g*开头, 可以为全局引用的代码路径释放提供堆栈跟踪。 如果 GC 正在释放 gref, 则不会提供任何堆栈跟踪。
+- 弱全局引用创建: 这是以 *+ w +* 开头的行。
+- 弱全局引用析构: 这是以 *-w*开头的行。
 
 
 在所有消息中, *grefc*值是 xamarin 创建的全局引用计数, 而*Grefwc*值是 xamarin 创建的弱全局引用的计数。 *句柄*或*obj 句柄*值为 JNI 句柄值, 而 */* "" 后面的字符是句柄值的类型: */l*用于本地引用, */g*用于全局引用, */w*用于弱全局引用。
@@ -345,15 +347,15 @@ emulator -partition-size 512 -avd MonoDroid
 
 Android 包名称*必须*包含一个句点 (" *.* ")。 编辑包名称, 使其包含句点。
 
--   在 Visual Studio 中:
-    -   右键单击项目 > 属性
-    -   单击左侧的 "Android 清单" 选项卡。
-    -   更新 "包名称" 字段。
-        -   如果看到消息&ldquo;"未找到 androidmanifest.xml。 单击以添加一个。&rdquo;, 单击该链接, 然后更新 "包名称" 字段。
--   在 Visual Studio for Mac 中:
-    -   右键单击项目 > 选项。
-    -   导航到 "生成/Android 应用程序" 部分。
-    -   更改包名称字段以包含 "."。
+- 在 Visual Studio 中:
+    - 右键单击项目 > 属性
+    - 单击左侧的 "Android 清单" 选项卡。
+    - 更新 "包名称" 字段。
+        - 如果看到消息&ldquo;"未找到 androidmanifest.xml。 单击以添加一个。&rdquo;, 单击该链接, 然后更新 "包名称" 字段。
+- 在 Visual Studio for Mac 中:
+    - 右键单击项目 > 选项。
+    - 导航到 "生成/Android 应用程序" 部分。
+    - 更改包名称字段以包含 "."。
 
 
 
@@ -375,15 +377,15 @@ Android 包指定`<uses-library/>`元素需要哪些共享库。 如果目标设
 
 Android 包有三个要求:
 
--   它们必须包含 "."(请参阅上一项)
--   它们必须具有唯一的字符串包名称 (因此, 在 Android 应用程序名称中会出现反向 tld 约定, 如 Chrome 应用的 .com)。
--   升级包时, 包必须具有相同的签名密钥。
+- 它们必须包含 "."(请参阅上一项)
+- 它们必须具有唯一的字符串包名称 (因此, 在 Android 应用程序名称中会出现反向 tld 约定, 如 Chrome 应用的 .com)。
+- 升级包时, 包必须具有相同的签名密钥。
 
 因此, 请设想以下情况:
 
-1.  构建 & 将应用部署为调试应用
-2.  更改签名密钥, 例如用作发布应用 (或因为你不喜欢默认提供的调试签名密钥)
-3.  安装应用程序时无需先将其删除, 例如调试 > 在 Visual Studio 中启动而不调试
+1. 构建 & 将应用部署为调试应用
+2. 更改签名密钥, 例如用作发布应用 (或因为你不喜欢默认提供的调试签名密钥)
+3. 安装应用程序时无需先将其删除, 例如调试 > 在 Visual Studio 中启动而不调试
 
 
 发生这种情况时, 程序包安装将失败,\_并\_出现\_"安装失败的更新不兼容错误", 因为在签名密钥执行时包名称未更改。 [Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)还将包含类似于以下内容的消息:
@@ -433,10 +435,10 @@ E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:36
 
 如果是这样, 则有两个可能的原因:
 
-1.  Apk 不提供目标设备支持的 ABI。
+1. Apk 不提供目标设备支持的 ABI。
     例如, apk 仅包含 armeabi-armeabi-v7a 二进制文件, 而目标设备仅支持 armeabi。
 
-2.  [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果是这种情况, 请卸载该应用程序, 将其置于手指上, 然后重新安装该应用程序。
+2. [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果是这种情况, 请卸载该应用程序, 将其置于手指上, 然后重新安装该应用程序。
 
 若要修复此问题, 请编辑项目选项/属性, 并[将所需 ABI 的支持添加到支持的 abi 列表](~/android/app-fundamentals/cpu-architectures.md)中。 若要确定需要添加的 ABI, 请针对目标设备运行以下 adb 命令:
 
@@ -457,7 +459,7 @@ $ adb shell getprop | grep ro.product.cpu
 
 这通常意味着您具有 HP 计算机, 环境变量&ldquo;平台&rdquo;已设置为类似于 MCD 或 HPD 的内容。 这与&ldquo;通常设置为任何 CPU&rdquo;或&ldquo;x86&rdquo;的 MSBuild 平台属性冲突。 您将需要从您的计算机中删除此环境变量, 然后 MSBuild 才能工作:
 
--   控制面板 > 系统 > 高级 > 环境变量
+- 控制面板 > 系统 > 高级 > 环境变量
 
 重新启动 Visual Studio 或 Visual Studio for Mac 并尝试重新生成。 应该会按预期方式工作。
 
@@ -686,11 +688,11 @@ E/dalvikvm( 123): VM aborting
 
 ### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>在发布版本中, 在运行时动态代码会发生 MissingMethodException。
 
--   你的应用程序项目可能不具有对 System.web、node.js 或 Mono. .dll 或 Mono 的引用。 请确保引用这些程序集。
+- 你的应用程序项目可能不具有对 System.web、node.js 或 Mono. .dll 或 Mono 的引用。 请确保引用这些程序集。
 
-    -   请记住, 动态代码始终会产生费用。 如果需要有效的代码, 请考虑不要使用动态代码。
+    - 请记住, 动态代码始终会产生费用。 如果需要有效的代码, 请考虑不要使用动态代码。
 
--   在第一个预览版中, 除非应用程序代码显式使用每个程序集中的类型, 否则会排除这些程序集。 有关解决方法, 请参阅以下内容:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+- 在第一个预览版中, 除非应用程序代码显式使用每个程序集中的类型, 否则会排除这些程序集。 有关解决方法, 请参阅以下内容:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>X86 设备上通过 AOT + LLVM 崩溃生成的项目

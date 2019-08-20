@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 19998f685955ce118ffe37e7624fd43b082ab994
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 3ff6bc9c603360232b22a36dadb42b6caf31cada
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644417"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522393"
 ---
 # <a name="local-notifications-on-android"></a>Android 上的本地通知
 
@@ -30,9 +30,9 @@ Android 提供两个系统控制的区域, 用于向用户显示通知图标和�
 
 Android 通知使用两种类型的布局:
 
--   ***基本布局***&ndash;简洁、固定的演示文稿格式。
+- ***基本布局***&ndash;简洁、固定的演示文稿格式。
 
--   ***展开布局***&ndash;一种表示形式, 可以扩展到更大的大小, 以显示详细信息。
+- ***展开布局***&ndash;一种表示形式, 可以扩展到更大的大小, 以显示详细信息。
 
 以下各节介绍了其中的每种布局类型 (以及如何创建它们)。
 
@@ -43,13 +43,13 @@ Android 通知使用两种类型的布局:
 
 所有 Android 通知都以基本布局格式生成, 其中至少包括以下元素:
 
-1.  *通知图标*(表示原始应用程序), 如果应用支持不同类型的通知, 则为通知类型。
+1. *通知图标*(表示原始应用程序), 如果应用支持不同类型的通知, 则为通知类型。
 
-2.  通知*标题*, 如果通知是个人消息, 则为发送方的名称。
+2. 通知*标题*, 如果通知是个人消息, 则为发送方的名称。
 
-3.  通知消息。
+3. 通知消息。
 
-4.  *时间戳*。
+4. *时间戳*。
 
 这些元素显示如下图所示:
 
@@ -75,11 +75,11 @@ Android 5.0 引入了高优先级的通知演示文稿格式, 称为 "*打印头
 
 Android 包括对通知元数据的支持, 以便可以智能地对通知进行排序和显示。 通知元数据还控制通知在锁屏界面上的显示方式。 应用程序可以设置以下通知元数据类型:
 
--   **优先级**&ndash;优先级确定如何以及何时提供通知。 例如, 在 Android 5.0 中, 高优先级通知显示为打印头通知。
+- **优先级**&ndash;优先级确定如何以及何时提供通知。 例如, 在 Android 5.0 中, 高优先级通知显示为打印头通知。
 
--   **可见性**&ndash;指定通知出现在锁屏界面上时要显示的通知内容量。
+- **可见性**&ndash;指定通知出现在锁屏界面上时要显示的通知内容量。
 
--   **类别**通知系统如何在各种情况下 (如设备处于 "*请勿打扰*" 模式时) 处理通知。 &ndash;
+- **类别**通知系统如何在各种情况下 (如设备处于 "*请勿打扰*" 模式时) 处理通知。 &ndash;
 
 > [!NOTE]
 > **可见性** 并 **类别** 引入在 Android 5.0 和早期版本的 Android 中不可用。 从 Android 8.0 开始,[通知通道](#notif-chan)用于控制向用户显示通知的方式。
@@ -97,11 +97,11 @@ Android 包括对通知元数据的支持, 以便可以智能地对通知进行�
 
 Android 为单事件通知支持三个扩展的布局样式:
 
--   ***大文本***&ndash;在 "合同" 模式下, 将显示消息中第一行后跟两个句点的摘录。 在展开模式下, 显示整个消息 (如上面的示例所示)。
+- ***大文本***&ndash;在 "合同" 模式下, 将显示消息中第一行后跟两个句点的摘录。 在展开模式下, 显示整个消息 (如上面的示例所示)。
 
--   ***收件箱***&ndash;在 "合同" 模式下显示新消息的数量。 在展开模式下, 显示第一封电子邮件或收件箱中的邮件列表。
+- ***收件箱***&ndash;在 "合同" 模式下显示新消息的数量。 在展开模式下, 显示第一封电子邮件或收件箱中的邮件列表。
 
--   ***图像***&ndash;在合同模式下, 仅显示消息文本。 在展开模式下, 显示文本和图像。
+- ***图像***&ndash;在合同模式下, 仅显示消息文本。 在展开模式下, 显示文本和图像。
 
 [基本通知外](#beyond-the-basic-notification)(本文稍后将介绍如何创建*大文本*、*收件箱*和*图像*通知。
 
@@ -121,15 +121,15 @@ Android 为单事件通知支持三个扩展的布局样式:
 
 在此屏幕中, 用户可以通过执行以下操作来修改**下载**通知通道的行为:
 
--   将 "重要性" 级别设置为 "**紧急**"、"**高**"、"**中等**" 或 "**低**", 这将配置声音级别和视觉中断。
+- 将 "重要性" 级别设置为 "**紧急**"、"**高**"、"**中等**" 或 "**低**", 这将配置声音级别和视觉中断。
 
--   打开或关闭通知点。
+- 打开或关闭通知点。
 
--   打开或关闭闪烁的灯。
+- 打开或关闭闪烁的灯。
 
--   在锁定屏幕上显示或隐藏通知。
+- 在锁定屏幕上显示或隐藏通知。
 
--   替代 "**请勿打扰**" 设置。
+- 替代 "**请勿打扰**" 设置。
 
 **一般通知**通道具有类似的设置:
 
@@ -144,19 +144,19 @@ Android 为单事件通知支持三个扩展的布局样式:
 
 `NotificationCompat.Builder`提供用于设置通知中各种选项的方法, 例如:
 
--   内容, 包括标题、消息文本和通知图标。
+- 内容, 包括标题、消息文本和通知图标。
 
--   通知的样式, 如 "*大文本*"、 *"收件箱*" 或 "*图像*样式"。
+- 通知的样式, 如 "*大文本*"、 *"收件箱*" 或 "*图像*样式"。
 
--   通知的优先级: 最小、最小、默认值、最大值或最大值。 在 Android 8.0 及更高版本中, 通过[_通知通道_](#notification-channels)设置优先级。
+- 通知的优先级: 最小、最小、默认值、最大值或最大值。 在 Android 8.0 及更高版本中, 通过[_通知通道_](#notification-channels)设置优先级。
 
--   锁定屏幕上通知的可见性: 公共、私有或机密。
+- 锁定屏幕上通知的可见性: 公共、私有或机密。
 
--   有助于 Android 分类和筛选通知的类别元数据。
+- 有助于 Android 分类和筛选通知的类别元数据。
 
--   一个可选意图, 指示点击通知时要启动的活动。
+- 一个可选意图, 指示点击通知时要启动的活动。
 
--   将在其上发布通知的通知通道的 ID (Android 8.0 及更高版本)。
+- 将在其上发布通知的通知通道的 ID (Android 8.0 及更高版本)。
 
 在生成器中设置这些选项后, 您将生成一个包含设置的通知对象。 若要发布通知, 请将此通知对象传递到*通知管理器*。 Android 提供[NotificationManager](xref:Android.App.NotificationManager)类, 该类负责发布通知并向用户显示通知。 可以从任何上下文 (例如活动或服务) 获取对此类的引用。
 
@@ -200,21 +200,21 @@ void CreateNotificationChannel()
 
 若要在 Android 中生成通知, 请执行以下步骤:
 
-1.  实例化`NotificationCompat.Builder`对象。
+1. 实例化`NotificationCompat.Builder`对象。
 
-2.  对`NotificationCompat.Builder`对象调用各种方法以设置通知选项。
+2. 对`NotificationCompat.Builder`对象调用各种方法以设置通知选项。
 
-3.  调用`NotificationCompat.Builder`对象的[生成](xref:Android.App.Notification.Builder.Build)方法来实例化通知对象。
+3. 调用`NotificationCompat.Builder`对象的[生成](xref:Android.App.Notification.Builder.Build)方法来实例化通知对象。
 
-4.  调用通知管理器的[通知](xref:Android.App.NotificationManager.Notify*)方法以发布通知。
+4. 调用通知管理器的[通知](xref:Android.App.NotificationManager.Notify*)方法以发布通知。
 
 必须为每个通知至少提供以下信息:
 
--   小图标 (大小为24x24 的 dp)
+- 小图标 (大小为24x24 的 dp)
 
--   简短标题
+- 简短标题
 
--   通知文本
+- 通知文本
 
 下面的代码示例演示如何使用`NotificationCompat.Builder`生成基本通知。 请注意, `NotificationCompat.Builder`方法支持[方法链接](https://en.wikipedia.org/wiki/Method_chaining);也就是说,每个方法都返回生成器对象,以便您可以使用最后一个方法调用的结果来调用下一个方法调用:
 
@@ -321,11 +321,11 @@ notificationManager.Notify (notificationId, notification);
 
 通知将保持可见, 直到发生以下三种情况之一:
 
--   用户关闭通知 (或点击 "*全部清除*")。
+- 用户关闭通知 (或点击 "*全部清除*")。
 
--   应用程序对进行`NotificationManager.Cancel`调用, 并传入发布通知时分配的唯一通知 ID。
+- 应用程序对进行`NotificationManager.Cancel`调用, 并传入发布通知时分配的唯一通知 ID。
 
--   应用程序调用`NotificationManager.CancelAll`。
+- 应用程序调用`NotificationManager.CancelAll`。
 
 有关更新 Android 通知的详细信息, 请参阅[修改通知](https://developer.android.com/training/notify-user/managing.html#Updating)。
 
@@ -604,22 +604,22 @@ builder.SetStyle (inboxStyle);
 
 在 Android 7.1 和更低版本上运行的应用程序需要直接在通知本身上设置优先级。 通知的优先级设置确定发布通知时的两个结果:
 
--   通知显示在与其他通知相关的位置。
+- 通知显示在与其他通知相关的位置。
     例如, 在通知抽屉中, 高优先级通知在优先级较低的通知的上方显示, 而不考虑每个通知发布的时间。
 
--   通知是否以打印头通知格式 (Android 5.0 及更高版本) 显示。 只有*高*优先级和*最*高优先级的通知显示为打印头通知。
+- 通知是否以打印头通知格式 (Android 5.0 及更高版本) 显示。 只有*高*优先级和*最*高优先级的通知显示为打印头通知。
 
 Xamarin 定义以下用于设置通知优先级的枚举:
 
--   `NotificationPriority.Max`&ndash;提醒用户出现紧急或严重情况 (例如, 传入呼叫、轮流指示或紧急警报)。 在 Android 5.0 及更高版本的设备上, 最高优先级通知以标头的格式显示。
+- `NotificationPriority.Max`&ndash;提醒用户出现紧急或严重情况 (例如, 传入呼叫、轮流指示或紧急警报)。 在 Android 5.0 及更高版本的设备上, 最高优先级通知以标头的格式显示。
 
--   `NotificationPriority.High`&ndash;通知用户重要事件 (例如重要的电子邮件或实时聊天消息的到达)。 在 Android 5.0 及更高版本的设备上, 高优先级通知以打印头显示格式显示。
+- `NotificationPriority.High`&ndash;通知用户重要事件 (例如重要的电子邮件或实时聊天消息的到达)。 在 Android 5.0 及更高版本的设备上, 高优先级通知以打印头显示格式显示。
 
--   `NotificationPriority.Default`&ndash;向用户通知具有中等重要性级别的条件。
+- `NotificationPriority.Default`&ndash;向用户通知具有中等重要性级别的条件。
 
--   `NotificationPriority.Low`&ndash;对于需要通知用户的非紧急信息 (例如, 软件更新提醒或社交网络更新)。
+- `NotificationPriority.Low`&ndash;对于需要通知用户的非紧急信息 (例如, 软件更新提醒或社交网络更新)。
 
--   `NotificationPriority.Min`&ndash;有关用户查看通知时 (例如, 位置或天气信息) 仅注意到的背景信息。
+- `NotificationPriority.Min`&ndash;有关用户查看通知时 (例如, 位置或天气信息) 仅注意到的背景信息。
 
 若要设置通知的优先级, 请调用`NotificationCompat.Builder`对象的[SetPriority](xref:Android.App.Notification.Builder.SetPriority*)方法, 并传入优先级别。 例如：
 
@@ -649,11 +649,11 @@ builder.SetPriority (NotificationPriority.High);
 从 Android 5.0 开始,*可见性*设置可用于控制安全锁定屏幕上显示的通知内容的数量。
 Xamarin 定义以下用于设置通知可见性的枚举:
 
--   `NotificationVisibility.Public`&ndash;通知的完整内容显示在安全锁定屏幕上。
+- `NotificationVisibility.Public`&ndash;通知的完整内容显示在安全锁定屏幕上。
 
--   `NotificationVisibility.Private`&ndash;安全锁定屏幕上只显示了必要的信息 (例如, 通知图标和发布的应用程序的名称), 但其余通知的详细信息是隐藏的。 所有通知默认为`NotificationVisibility.Private`。
+- `NotificationVisibility.Private`&ndash;安全锁定屏幕上只显示了必要的信息 (例如, 通知图标和发布的应用程序的名称), 但其余通知的详细信息是隐藏的。 所有通知默认为`NotificationVisibility.Private`。
 
--   `NotificationVisibility.Secret`&ndash;不会在安全锁定屏幕上显示任何内容, 甚至不会显示通知图标。 通知内容仅在用户解锁设备后可用。
+- `NotificationVisibility.Secret`&ndash;不会在安全锁定屏幕上显示任何内容, 甚至不会显示通知图标。 通知内容仅在用户解锁设备后可用。
 
 若要设置通知的可见性, 应用程序将`SetVisibility`调用`NotificationCompat.Builder`对象的方法, 并传入可见性设置。 例如, 此调用将`SetVisibility`发出通知: `Private`
 
@@ -671,33 +671,33 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 从 Android 5.0 开始, 预定义的类别可用于排名和筛选通知。 Xamarin 提供以下类别的枚举:
 
--   `Notification.CategoryCall`&ndash;传入电话呼叫。
+- `Notification.CategoryCall`&ndash;传入电话呼叫。
 
--   `Notification.CategoryMessage`&ndash;传入的短信。
+- `Notification.CategoryMessage`&ndash;传入的短信。
 
--   `Notification.CategoryAlarm`&ndash;警报条件或计时器过期。
+- `Notification.CategoryAlarm`&ndash;警报条件或计时器过期。
 
--   `Notification.CategoryEmail`&ndash;传入电子邮件。
+- `Notification.CategoryEmail`&ndash;传入电子邮件。
 
--   `Notification.CategoryEvent`&ndash;日历事件。
+- `Notification.CategoryEvent`&ndash;日历事件。
 
--   `Notification.CategoryPromo`&ndash;促销消息或播发。
+- `Notification.CategoryPromo`&ndash;促销消息或播发。
 
--   `Notification.CategoryProgress`&ndash;后台操作的进度。
+- `Notification.CategoryProgress`&ndash;后台操作的进度。
 
--   `Notification.CategorySocial`&ndash;社交网络更新。
+- `Notification.CategorySocial`&ndash;社交网络更新。
 
--   `Notification.CategoryError`&ndash;后台操作或身份验证过程失败。
+- `Notification.CategoryError`&ndash;后台操作或身份验证过程失败。
 
--   `Notification.CategoryTransport`&ndash;媒体播放更新。
+- `Notification.CategoryTransport`&ndash;媒体播放更新。
 
--   `Notification.CategorySystem`&ndash;保留以供系统使用 (系统或设备状态)。
+- `Notification.CategorySystem`&ndash;保留以供系统使用 (系统或设备状态)。
 
--   `Notification.CategoryService`&ndash;指示后台服务正在运行。
+- `Notification.CategoryService`&ndash;指示后台服务正在运行。
 
--   `Notification.CategoryRecommendation`&ndash;与当前正在运行的应用相关的建议消息。
+- `Notification.CategoryRecommendation`&ndash;与当前正在运行的应用相关的建议消息。
 
--   `Notification.CategoryStatus`&ndash;有关设备的信息。
+- `Notification.CategoryStatus`&ndash;有关设备的信息。
 
 对通知进行排序时, 通知的优先级优先于其类别设置。 例如, 高优先级通知显示为 "已启动" `Promo` , 即使属于该类别也是如此。 若要设置通知的类别, 请调用`SetCategory` `NotificationCompat.Builder`对象的方法, 并传入类别设置。 例如：
 

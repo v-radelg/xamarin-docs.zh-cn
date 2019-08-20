@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 67fb12fd66d4d218f6e8bd40e21499e6c07e9e15
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: e49f12dd656d5e07feccd34e231a00124d81048a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510592"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524273"
 ---
 # <a name="specialized-fragment-classes"></a>专用片段类
 
 片段 API 提供其他子类, 用于封装在应用程序中发现的一些更常用的功能。 这些子类为:
 
--   **ListFragment**&ndash;此片段用于显示绑定到数据源 (例如数组或游标) 的项的列表。
+- **ListFragment**&ndash;此片段用于显示绑定到数据源 (例如数组或游标) 的项的列表。
 
--   **DialogFragment**&ndash;此片段用作对话框周围的包装器。 片段会在其活动之上显示该对话框。
+- **DialogFragment**&ndash;此片段用作对话框周围的包装器。 片段会在其活动之上显示该对话框。
 
--   **PreferenceFragment**&ndash;此片段用于将首选项对象显示为列表。
+- **PreferenceFragment**&ndash;此片段用于将首选项对象显示为列表。
 
 
 
@@ -91,9 +91,9 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 `DialogFragment`确保片段和对话框之间的状态保持一致。 对话框对象的所有交互和控制都应该通过`DialogFragment` API 发生, 而不会对对话框对象进行直接调用。 API 为每个实例提供一个`Show()`方法, 用于显示片段。 `DialogFragment` 可以通过两种方法来删除片段:
 
--  对实例调用`DialogFragment.Dismiss()` `DialogFragment` 。 
+- 对实例调用`DialogFragment.Dismiss()` `DialogFragment` 。 
 
--  显示另`DialogFragment`一个。
+- 显示另`DialogFragment`一个。
 
 若要创建`DialogFragment`, 类从`Android.App.DialogFragment,`继承, 然后重写以下两种方法之一:
 

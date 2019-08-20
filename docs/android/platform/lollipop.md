@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c89b78e58918d2b561c6236ac273ffdb872211f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 7cc7eeabebbfbcd4b264202235307638b88842d8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511401"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524208"
 ---
 # <a name="lollipop-features"></a>棒糖形功能
 
@@ -24,32 +24,32 @@ Android 5.0 (棒糖形) 引入了一种新的设计语言和*材料设计*, 并�
 
 *材料主题*是 Android 中这些 UI 设计原则的体现。 本文首先介绍材料主题的支持功能:
 
--   **动画**触摸反馈动画、活动过渡动画、查看状态转换动画和显示效果。 &ndash;
+- **动画**触摸反馈动画、活动过渡动画、查看状态转换动画和显示效果。 &ndash;
 
--   **查看阴影和提升**视图现在具有属性; 值较高`elevation`的视图在背景上转换较大的阴影。 `elevation` &ndash;
+- **查看阴影和提升**&ndash;视图现在`elevation`具有属性;  具有较高`elevation`值的视图在背景上转换较大的阴影。
 
--   **颜色特征**可绘制着色使你可以通过更改图像资产的颜色来重复使用图像资产, 而*突出的颜色提取*可帮助你基于图像中的颜色动态地为应用提供主题。 &ndash;
+- **颜色特征**可绘制着色使你可以通过更改图像资产的颜色来重复使用图像资产, 而*突出的颜色提取*可帮助你基于图像中的颜色动态地为应用提供主题。 &ndash;
 
 许多材料主题功能已内置于 Android 5.0 UI 体验中, 而另一些则必须显式添加到应用中。 例如, 某些标准视图 (如按钮) 已经包含触摸反馈动画, 而应用程序必须启用大多数视图阴影。
 
 除了通过材料主题引入的 UI 改进之外, Android 5.0 还包括本文中所述的一些其他新功能:
 
--   **增强的通知**Android 5.0 中的通知已使用全新的外观 (对锁屏通知的支持) 和新的打印头通知演示格式进行了重大更新。 &ndash;
+- **增强的通知**Android 5.0 中的通知已使用全新的外观 (对锁屏通知的支持) 和新的打印头通知演示格式进行了重大更新。 &ndash;
 
--   **新的 UI 小组件**新的小组件使应用程序更易于传达大数据集和复杂信息, 而新`CardView`小组件提供了一种简化的、类似于卡的表示形式, 用于显示文本和图像。 `RecyclerView` &ndash;
+- **新的 UI 小组件**新的小组件使应用程序更易于传达大数据集和复杂信息, 而新`CardView`小组件提供了一种简化的、类似于卡的表示形式, 用于显示文本和图像。 `RecyclerView` &ndash;
 
--   **新 api**&ndash; Android 5.0 添加了用于多个网络支持的新 api、更高的蓝牙连接性、更轻松的存储管理和更灵活的多媒体播放机和照相机设备控制。 新作业计划功能可用于在计划时间异步运行任务。 此功能有助于缩短电池使用时间, 例如, 在设备接通电源和充电时要执行的任务。
+- **新 api**&ndash; Android 5.0 添加了用于多个网络支持的新 api、更高的蓝牙连接性、更轻松的存储管理和更灵活的多媒体播放机和照相机设备控制。 新作业计划功能可用于在计划时间异步运行任务。 此功能有助于缩短电池使用时间, 例如, 在设备接通电源和充电时要执行的任务。
 
 
 ## <a name="requirements"></a>要求
 
 若要在基于 Xamarin 的应用中使用新的 Android 5.0 功能, 需要满足以下要求:
 
--   必须安装和配置**Xamarin** xamarin4.20或更高版本,并且必须安装VisualStudio或VisualStudioforMac。&ndash; 
+- 必须安装和配置**Xamarin** xamarin4.20或更高版本,并且必须安装VisualStudio或VisualStudioforMac。&ndash; 
 
--   **Android SDK**&ndash; Android 5.0 (API 21) 或更高版本必须通过 Android SDK 管理器进行安装。
+- **Android SDK**&ndash; Android 5.0 (API 21) 或更高版本必须通过 Android SDK 管理器进行安装。
 
--   **Java 开发人员工具包** &ndash; Xamarin.Android 需要 [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 如果要针对 API 级别24或更高版本进行开发, 则需要安装 Xamarin 1.8 或更高版本 (JDK 1.8 还支持早于24的 api 级别, 包括棒糖形)。 如果使用的是自定义控件或窗体预览器, 则需要64位版本的 JDK 1.8。
+- **Java 开发人员工具包** &ndash; Xamarin.Android 需要 [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 如果要针对 API 级别24或更高版本进行开发, 则需要安装 Xamarin 1.8 或更高版本 (JDK 1.8 还支持早于24的 api 级别, 包括棒糖形)。 如果使用的是自定义控件或窗体预览器, 则需要64位版本的 JDK 1.8。
 
 如果要专门针对 API 级别23或更早版本进行开发, 可以继续使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
@@ -93,11 +93,11 @@ Android 5.0 中的更改可能会影响以前发布的 Android 应用。 具体�
 
 Android 5.0 使用新的 Android 运行时 (ART) 作为默认运行时, 而不是 Dalvik。 ART 实现了几个主要的新功能:
 
--   **预先 (AOT) 编译**&ndash;在首次启动应用程序之前, AOT 可以通过编译应用程序代码来提高应用程序性能。 在安装应用程序时, ART 将为目标设备生成已编译的应用程序可执行文件。
+- **预先 (AOT) 编译**&ndash;在首次启动应用程序之前, AOT 可以通过编译应用程序代码来提高应用程序性能。 在安装应用程序时, ART 将为目标设备生成已编译的应用程序可执行文件。
 
--   **改进的垃圾回收 (GC)** &ndash;作品的 GC 改进还可以提高应用程序性能。 垃圾回收现在使用一个 GC 暂停, 而不是两个, 并发 GC 操作以更及时的方式完成。
+- **改进的垃圾回收 (GC)** &ndash;作品的 GC 改进还可以提高应用程序性能。 垃圾回收现在使用一个 GC 暂停, 而不是两个, 并发 GC 操作以更及时的方式完成。
 
--   **改进的应用程序调试**&ndash; ART 提供更多诊断详细信息, 以帮助分析异常和故障报告。
+- **改进的应用程序调试**&ndash; ART 提供更多诊断详细信息, 以帮助分析异常和故障报告。
 
 现有应用应在不更改的情况&ndash;下正常工作, 除非应用程序利用了以前的 Dalvik 运行时所独有的技术, 而这可能不会在艺术中使用。 有关这些更改的详细信息, 请参阅[验证 Android 运行时上的应用行为 (ART)](https://developer.android.com/guide/practices/verifying-apps-art.html)。
 
@@ -106,23 +106,23 @@ Android 5.0 使用新的 Android 运行时 (ART) 作为默认运行时, 而不�
 
 在 Android 5.0 中, 通知发生了重大更改:
 
--   **声音和振动的处理方式不同**`Ringtone` `MediaPlayer` `Vibrator`通知声音和 vibrations 现在由`Notification.Builder`而不是、和来处理。 &ndash;
+- **声音和振动的处理方式不同**`Ringtone` `MediaPlayer` `Vibrator`通知声音和 vibrations 现在由`Notification.Builder`而不是、和来处理。 &ndash;
 
--   **新配色方案**&ndash;根据材料主题, 在白色或非常浅的背景上, 用暗文本呈现通知。 此外, 可以通过 Android 修改通知图标中的 alpha 通道, 以与系统颜色方案协调。 
+- **新配色方案**&ndash;根据材料主题, 在白色或非常浅的背景上, 用暗文本呈现通知。 此外, 可以通过 Android 修改通知图标中的 alpha 通道, 以与系统颜色方案协调。 
 
--   **锁屏通知**&ndash;通知现在可以显示在设备锁屏上。
+- **锁屏通知**&ndash;通知现在可以显示在设备锁屏上。
 
--   **打印头**&ndash;当设备解锁并且屏幕打开时, 高优先级通知现在会显示在小型浮动窗口 (打印头提示) 中。
+- **打印头**&ndash;当设备解锁并且屏幕打开时, 高优先级通知现在会显示在小型浮动窗口 (打印头提示) 中。
 
 在大多数情况下, 将现有应用通知功能移植到 Android 5.0 需要执行以下步骤:
 
-1.  将代码转换为使用`Notification.Builder` (或`NotificationsCompat.Builder`) 来创建通知。 
+1. 将代码转换为使用`Notification.Builder` (或`NotificationsCompat.Builder`) 来创建通知。 
 
-2.  验证你的现有通知资产是否可在新的材料主题配色方案中查看。
+2. 验证你的现有通知资产是否可在新的材料主题配色方案中查看。
 
-3.  确定通知显示在锁屏上时应具有的可见性。 如果通知不是公共的, 则锁屏上应显示哪些内容？
+3. 确定通知显示在锁屏上时应具有的可见性。 如果通知不是公共的, 则锁屏上应显示哪些内容？
 
-4.  设置通知的类别, 使其在新的 Android 5.0 "请勿*打扰*" 模式下得到正确处理。
+4. 设置通知的类别, 使其在新的 Android 5.0 "请勿*打扰*" 模式下得到正确处理。
 
 如果通知显示传输控件、显示媒体播放状态、使用`RemoteControlClient`或调用`ActivityManager.GetRecentTasks`, 请参阅重要的[行为更改](https://developer.android.com/preview/api-overview.html#Behaviors), 了解有关更新 Android 5.0 通知的详细信息。
 
@@ -163,11 +163,11 @@ Android 5.0 提供触摸反馈动画、活动过渡动画和查看状态转换�
 
 活动过渡动画使用户能够在一个活动转换到另一个活动时了解可视连续性。 应用可指定三种类型的过渡动画:
 
--   **输入转换**&ndash;当活动进入场景时。
+- **输入转换**&ndash;当活动进入场景时。
 
--   **退出转换**&ndash;当活动退出场景时。
+- **退出转换**&ndash;当活动退出场景时。
 
--   **共享元素转换**&ndash;对于两个活动共用的视图, 当第一个活动转换到下一个活动时, 将更改为。
+- **共享元素转换**&ndash;对于两个活动共用的视图, 当第一个活动转换到下一个活动时, 将更改为。
 
 例如, 下面的屏幕截图序列说明了共享元素转换:
 
@@ -179,31 +179,31 @@ Android 5.0 提供触摸反馈动画、活动过渡动画和查看状态转换�
 
 对于 enter 转换, Android 5.0 提供了三种类型的动画:
 
--   **分解动画**&ndash;将视图从场景中心放大。
+- **分解动画**&ndash;将视图从场景中心放大。
 
--   **滑动动画**&ndash;将视图从场景的一个边缘移入。
+- **滑动动画**&ndash;将视图从场景的一个边缘移入。
 
--   **淡化动画**&ndash;将视图淡化为场景。
+- **淡化动画**&ndash;将视图淡化为场景。
 
 #### <a name="exit-transition-animation-types"></a>退出过渡动画类型
 
 对于退出转换, Android 5.0 提供了三种类型的动画:
 
--   **分解动画**&ndash;将视图缩小到场景的中心。
+- **分解动画**&ndash;将视图缩小到场景的中心。
 
--   **滑动动画**&ndash;将视图移到场景的一个边缘。
+- **滑动动画**&ndash;将视图移到场景的一个边缘。
 
--   **淡化动画**&ndash;将视图淡出场景。
+- **淡化动画**&ndash;将视图淡出场景。
 
 #### <a name="shared-element-transition-animation-types"></a>共享元素过渡动画类型
 
 共享元素转换支持多种动画类型, 如:
 
--   更改视图的布局或剪辑边界。
+- 更改视图的布局或剪辑边界。
 
--   更改视图的缩放和旋转。
+- 更改视图的缩放和旋转。
 
--   更改视图的大小和缩放类型。
+- 更改视图的大小和缩放类型。
 
 有关 Android 5.0 中活动过渡动画的详细信息, 请参阅[自定义活动过渡](https://developer.android.com/training/material/animations.html#Transitions)。
 
@@ -212,9 +212,9 @@ Android 5.0 提供触摸反馈动画、活动过渡动画和查看状态转换�
 
 Android 5.0 使动画在视图状态发生更改时可以运行。 您可以使用以下方法之一对视图状态转换进行动画处理:
 
--   创建对与特定视图关联的状态更改进行动画处理的绘图。 新`AnimatedStateListDrawable`类使你能够创建绘图, 用于显示视图状态更改之间的动画。
+- 创建对与特定视图关联的状态更改进行动画处理的绘图。 新`AnimatedStateListDrawable`类使你能够创建绘图, 用于显示视图状态更改之间的动画。
 
--   定义视图状态更改时运行的动画功能。 使用新`StateListAnimator`的类可以定义在视图状态更改时运行的 animator。
+- 定义视图状态更改时运行的动画功能。 使用新`StateListAnimator`的类可以定义在视图状态更改时运行的 animator。
 
 有关 Android 5.0 中的视图状态转换动画的详细信息, 请参阅[动画视图状态更改](https://developer.android.com/training/material/animations.html#ViewState)。
 
@@ -238,11 +238,11 @@ Android 5.0 使动画在视图状态发生更改时可以运行。 您可以使�
 
 除了这些动画功能, Android 5.0 还提供了新的 Api, 使您能够指定动画的时间和运动曲线。 Android 5.0 使用这些曲线在动画过程中插入临时和空间移动。 在 Android 5.0 中定义了三条曲线:
 
--   **快速扩展线性\_快速加速,直到动画结束时才继续。\_\_** &ndash;
+- **快速扩展线性\_快速加速,直到动画结束时才继续。\_\_** &ndash;
 
--   **在动画结束\_时, 快速缓慢加速速度快、缓慢减速。\_\_** &ndash;
+- **在动画结束\_时, 快速缓慢加速速度快、缓慢减速。\_\_** &ndash;
 
--   **线性\_输出\_速度慢\_** 于从峰值速度开始,慢慢减速到动画结束。&ndash;
+- **线性\_输出\_速度慢\_** 于从峰值速度开始,慢慢减速到动画结束。&ndash;
 
 您可以使用新`PathInterpolator`类来指定运动内插的发生方式。 `PathInterpolator`是根据指定的控制点和运动曲线遍历动画路径的插值程序。 有关如何在 Android 5.0 中指定弯曲动作设置的详细信息, 请参阅[使用弯曲动作](https://developer.android.com/training/material/animations.html#CurvedMotion)。
 
@@ -264,9 +264,9 @@ Android 5.0 使动画在视图状态发生更改时可以运行。 您可以使�
 
 Android 5.0 提供了两个用于在应用中管理颜色的新功能:
 
--   利用可*绘制的着色*, 可以通过更改布局特性来更改图像资产的颜色。
+- 利用可*绘制的着色*, 可以通过更改布局特性来更改图像资产的颜色。
 
--   *突出颜色提取*使你能够动态自定义应用的颜色主题, 以与所显示图像的调色板进行协调。
+- *突出颜色提取*使你能够动态自定义应用的颜色主题, 以与所显示图像的调色板进行协调。
 
 
 ### <a name="drawable-tinting"></a>绘制色调
@@ -288,17 +288,17 @@ Android 5.0 布局识别了一个`tint`新属性, 可用于设置绘图的颜色
 
 利用新的 Android `Palette` 5.0 类, 您可以从图像中提取颜色, 以便可以将它们动态应用于自定义调色板。 `Palette`类从图像中提取六个颜色, 并根据颜色饱和度和亮度的相对级别来标记这些颜色:
 
--   活跃
+- 活跃
 
--   鲜暗
+- 鲜暗
 
--   强光
+- 强光
 
--   柔
+- 柔
 
--   黑色暗
+- 黑色暗
 
--   静音
+- 静音
 
 例如, 在下面的屏幕截图中, 照片查看应用程序从显示的图像中提取突出显示的颜色, 并使用这些颜色来调整应用程序的配色方案, 使其与图像匹配:
 
@@ -313,9 +313,9 @@ Android 5.0 布局识别了一个`tint`新属性, 可用于设置绘图的颜色
 
 Android 5.0 引入了两个新的 UI 小组件:
 
--   `RecyclerView`&ndash;显示可滚动项列表的视图组。
+- `RecyclerView`&ndash;显示可滚动项列表的视图组。
 
--   `CardView`&ndash;带有圆角的基本布局。
+- `CardView`&ndash;带有圆角的基本布局。
 
 这两个小组件都包含融入支持材料主题功能;例如, `RecyclerView`使用动画来添加和删除视图, 并`CardView`使用视图阴影使每个卡片显示在背景之上。 以下屏幕截图显示了这些新小组件的示例:
 
@@ -375,13 +375,13 @@ Android 5.0 引入了新的高优先级通知演示文稿格式, 称为 "*打印
 
 打印头通知通常用于以下事件:
 
--   新的下一条消息
+- 新的下一条消息
 
--   传入的电话呼叫
+- 传入的电话呼叫
 
--   电池电量不足指示
+- 电池电量不足指示
 
--   警报
+- 警报
 
 仅当 Android 5.0 具有高优先级或最高优先级设置时, Android 才会显示该通知。
 
@@ -401,13 +401,13 @@ Android 5.0 提供了几个新的 Api, 用于增强照相机功能。 新`Androi
 
 以下 Api 可以实现这些新功能:
 
--   `CameraManager.GetCameraIdList`帮助你以编程方式访问照相机设备; 用于`CameraManager.OpenCamera`连接到特定相机设备。 &ndash;
+- `CameraManager.GetCameraIdList`帮助你以编程方式访问照相机设备; 用于`CameraManager.OpenCamera`连接到特定相机设备。 &ndash;
 
--   `CameraCaptureSession`&ndash;捕获或流式传输照相机设备中的图像。 实现`CameraCaptureSession.CaptureListener`接口以处理新的映像捕获事件。
+- `CameraCaptureSession`&ndash;捕获或流式传输照相机设备中的图像。 实现`CameraCaptureSession.CaptureListener`接口以处理新的映像捕获事件。
 
--   `CaptureRequest`&ndash;定义捕获参数。
+- `CaptureRequest`&ndash;定义捕获参数。
 
--   `CaptureResult`&ndash;提供映像捕获操作的结果。
+- `CaptureResult`&ndash;提供映像捕获操作的结果。
 
 有关 Android 5.0 中新相机 Api 的详细信息, 请参阅[媒体](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
@@ -415,11 +415,11 @@ Android 5.0 提供了几个新的 Api, 用于增强照相机功能。 新`Androi
 
 Android 5.0 更新`AudioTrack`类, 以便更好地播放音频:
 
--   `ENCODING_PCM_FLOAT`将配置`AudioTrack`为接受浮点格式的音频数据, 以获得更好的动态范围、更大的空间和更高的质量 (感谢精度增加)。 &ndash; 而且, 浮点格式有助于避免音频剪辑。
+- `ENCODING_PCM_FLOAT`将配置`AudioTrack`为接受浮点格式的音频数据, 以获得更好的动态范围、更大的空间和更高的质量 (感谢精度增加)。 &ndash; 而且, 浮点格式有助于避免音频剪辑。
 
--   `ByteBuffer`你现在可以将音频数据作为字节数组提供给`AudioTrack`。 &ndash;
+- `ByteBuffer`你现在可以将音频数据作为字节数组提供给`AudioTrack`。 &ndash;
 
--   `WRITE_NON_BLOCKING`&ndash;此选项可简化某些应用的缓冲和多线程处理。
+- `WRITE_NON_BLOCKING`&ndash;此选项可简化某些应用的缓冲和多线程处理。
 
 有关 Android 5.0 `AudioTrack`中的改进的详细信息, 请参阅[媒体](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
@@ -427,9 +427,9 @@ Android 5.0 更新`AudioTrack`类, 以便更好地播放音频:
 
 Android 5.0 引入了新`Android.Media.MediaController`类, 它将`RemoteControlClient`替换。 `Android.Media.MediaController`提供简化的传输控制 Api, 并为 UI 上下文外的播放提供线程安全的控制。 以下新 Api 处理传输控制:
 
--   `Android.Media.Session.MediaSession`&ndash;处理多个控制器的媒体控制会话。 调用`MediaSession.GetSessionToken`以请求应用用于与会话进行交互的令牌。
+- `Android.Media.Session.MediaSession`&ndash;处理多个控制器的媒体控制会话。 调用`MediaSession.GetSessionToken`以请求应用用于与会话进行交互的令牌。
 
--   `MediaController.TransportControls`处理传输命令, 如**播放**、**停止**和**跳过。** &ndash;
+- `MediaController.TransportControls`处理传输命令, 如**播放**、**停止**和**跳过。** &ndash;
 
 此外, 还可以使用新`Android.App.Notification.MediaStyle`类将媒体会话与丰富通知内容 (如提取和显示唱片集画面) 相关联。
 
@@ -439,11 +439,11 @@ Android 5.0 引入了新`Android.Media.MediaController`类, 它将`RemoteControl
 
 Android 5.0 更新存储访问框架, 使应用程序能够更轻松地使用目录和文档:
 
--   若要选择目录子树, 可以构建并发送`Android.Intent.Action.OPEN_DOCUMENT_TREE`意向。 这种意向会使系统显示支持子树选择的所有提供程序实例;然后, 用户浏览并选择一个目录。
+- 若要选择目录子树, 可以构建并发送`Android.Intent.Action.OPEN_DOCUMENT_TREE`意向。 这种意向会使系统显示支持子树选择的所有提供程序实例;然后, 用户浏览并选择一个目录。
 
--   若要在子树下的任意位置创建和管理新文档或目录, `CreateDocument`请`RenameDocument`使用的`DeleteDocument` `DocumentsContract`新的、和方法。
+- 若要在子树下的任意位置创建和管理新文档或目录, `CreateDocument`请`RenameDocument`使用的`DeleteDocument` `DocumentsContract`新的、和方法。
 
--   若要获取所有共享存储设备上的媒体目录的路径, 请调用`Android.Content.Context.GetExternalMediaDirs`新方法。
+- 若要获取所有共享存储设备上的媒体目录的路径, 请调用`Android.Content.Context.GetExternalMediaDirs`新方法。
 
 有关 Android 5.0 中的新存储 Api 的详细信息, 请参阅[存储](https://developer.android.com/preview/api-overview.html#Storage)。
 
@@ -451,11 +451,11 @@ Android 5.0 更新存储访问框架, 使应用程序能够更轻松地使用目
 
 Android 5.0 添加了以下适用于无线和连接的 API 增强功能:
 
--   新的*多网络*api, 使应用程序能够在建立连接前使用特定功能查找和选择网络。
+- 新的*多网络*api, 使应用程序能够在建立连接前使用特定功能查找和选择网络。
 
--   蓝牙广播功能, 可使 Android 5.0 设备充当低能耗蓝牙外设。
+- 蓝牙广播功能, 可使 Android 5.0 设备充当低能耗蓝牙外设。
 
--   NFC 增强功能使你可以更轻松地使用近域通信功能与其他设备共享数据。
+- NFC 增强功能使你可以更轻松地使用近域通信功能与其他设备共享数据。
 
 有关 Android 5.0 中新增的无线和连接 Api 的详细信息, 请参阅[无线和连接](https://developer.android.com/preview/api-overview.html#Wireless)。
 
@@ -469,19 +469,19 @@ Android 5.0 引入了一个`JobScheduler`新的 API, 可通过将特定任务计
 
 本文提供了适用于 Xamarin 的 5.0 Android 应用开发人员的重要新功能概述:
 
--   材料主题
+- 材料主题
 
--   Animations
+- Animations
 
--   查看阴影和提升
+- 查看阴影和提升
 
--   颜色特征, 例如, 绘制色调和突出颜色提取
+- 颜色特征, 例如, 绘制色调和突出颜色提取
 
--   新`RecyclerView`的和`CardView`小组件
+- 新`RecyclerView`的和`CardView`小组件
 
--   通知增强功能
+- 通知增强功能
 
--   用于照相机、音频播放、媒体控制、存储、无线/连接和作业计划的新 Api
+- 用于照相机、音频播放、媒体控制、存储、无线/连接和作业计划的新 Api
 
 如果你不熟悉 Xamarin Android 开发, 请阅读[安装和安装](~/android/get-started/installation/index.md)以帮助你开始安装 xamarin。
 [你好, android](~/android/get-started/hello-android/index.md)是了解如何创建 android 项目的绝佳简介。

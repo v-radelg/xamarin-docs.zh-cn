@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: eda75041add4b5fc9f7998f426aab42ed2618c4b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 91e49c387818ca4d7472325efa665a5c2bfd9e64
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508817"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522039"
 ---
 # <a name="activity-lifecycle"></a>活动生命周期
 
@@ -29,9 +29,9 @@ _活动是 Android 应用程序的基本构建基块, 可在许多不同的状�
 
 本章详细介绍活动生命周期, 包括:
 
--  活动状态
--  生命周期方法
--  保留应用程序的状态
+- 活动状态
+- 生命周期方法
+- 保留应用程序的状态
 
 
 本部分还包括一个[演练](~/android/app-fundamentals/activity-lifecycle/saving-state.md), 其中提供了有关如何在活动生命周期内有效保存状态的实际示例。 本章结束时, 你应了解活动生命周期, 以及如何在 Android 应用程序中对其进行支持。
@@ -48,14 +48,14 @@ Android OS 仲裁活动基于其状态。 这有助于 Android 识别不再使�
 
 这些状态可分为4个主要组, 如下所示:
 
-1.  *活动或正在运行*&ndash;如果活动处于前台 (也称为活动堆栈的顶部), 则将这些活动视为处于活动状态或正在运行。 这会被视为 Android 中优先级最高的活动, 因此, 只有在极端情况下, 操作系统才会终止此活动, 如活动尝试使用比设备上提供的内存更多的内存, 这可能会导致 UI 无响应。
+1. *活动或正在运行*&ndash;如果活动处于前台 (也称为活动堆栈的顶部), 则将这些活动视为处于活动状态或正在运行。 这会被视为 Android 中优先级最高的活动, 因此, 只有在极端情况下, 操作系统才会终止此活动, 如活动尝试使用比设备上提供的内存更多的内存, 这可能会导致 UI 无响应。
 
-1.  已*暂停*&ndash;当设备进入睡眠状态时, 或者活动仍可见, 但不会被新的、未完全大小的或透明的活动部分隐藏时, 该活动将被视为已暂停。 暂停的活动仍处于活动状态, 即, 它们维护所有状态和成员信息, 并保持附加到窗口管理器。 这被视为 Android 中的第二个优先级最高的活动, 因此, 只有在终止此活动时, 操作系统才会终止此活动, 这是因为终止此活动将满足保持活动/活动活动稳定和响应所需的资源要求。
+1. 已*暂停*&ndash;当设备进入睡眠状态时, 或者活动仍可见, 但不会被新的、未完全大小的或透明的活动部分隐藏时, 该活动将被视为已暂停。 暂停的活动仍处于活动状态, 即, 它们维护所有状态和成员信息, 并保持附加到窗口管理器。 这被视为 Android 中的第二个优先级最高的活动, 因此, 只有在终止此活动时, 操作系统才会终止此活动, 这是因为终止此活动将满足保持活动/活动活动稳定和响应所需的资源要求。
 
-1.  *已停止/Backgrounded*&ndash;完全被其他活动遮盖的活动被视为已停止或处于后台。
+1. *已停止/Backgrounded*&ndash;完全被其他活动遮盖的活动被视为已停止或处于后台。
     已停止的活动仍会尝试尽可能地保留其状态和成员信息, 但停止的活动被认为是三个状态的最低优先级, 因此, OS 将首先终止此状态下的活动以满足资源优先级较高的活动的要求。
 
-1.  *重新启动*&ndash;在生命周期中, 从暂停的任何位置到停止的活动都有可能被 Android 从内存中删除。 如果用户向后导航到活动, 则必须重新启动它, 还原到其以前保存的状态, 然后向用户显示。
+1. *重新启动*&ndash;在生命周期中, 从暂停的任何位置到停止的活动都有可能被 Android 从内存中删除。 如果用户向后导航到活动, 则必须重新启动它, 还原到其以前保存的状态, 然后向用户显示。
 
 
 ### <a name="activity-re-creation-in-response-to-configuration-changes"></a>响应配置更改时的活动重新创建
@@ -116,11 +116,11 @@ protected override void OnCreate(Bundle bundle)
 当活动准备好开始与用户交互时, 系统将调用[OnResume](xref:Android.App.Activity.OnResume) 。
 活动应重写此方法以执行如下任务:
 
--  斜向上帧速率 (游戏开发中的常见任务)
--  开始动画
--  侦听 GPS 更新
--  显示任何相关的警报或对话框
--  连接外部事件处理程序
+- 斜向上帧速率 (游戏开发中的常见任务)
+- 开始动画
+- 侦听 GPS 更新
+- 显示任何相关的警报或对话框
+- 连接外部事件处理程序
 
 
 例如, 下面的代码段演示如何初始化照相机:
@@ -143,15 +143,15 @@ public void OnResume()
 
 当系统要将活动放入背景中或活动被部分遮盖时, 将调用[OnPause](xref:Android.App.Activity.OnPause) 。 如果活动需要, 则应重写此方法:
 
--   提交永久性数据的未保存更改
+- 提交永久性数据的未保存更改
 
--   销毁或清理使用资源的其他对象
+- 销毁或清理使用资源的其他对象
 
--   增加帧速率和暂停动画
+- 增加帧速率和暂停动画
 
--   注销外部事件处理程序或通知处理程序 (即绑定到服务的程序)。 必须执行此操作以防止活动内存泄露。
+- 注销外部事件处理程序或通知处理程序 (即绑定到服务的程序)。 必须执行此操作以防止活动内存泄露。
 
--   同样, 如果活动显示了任何对话框或警报, 则必须用`.Dismiss()`方法对其进行清理。
+- 同样, 如果活动显示了任何对话框或警报, 则必须用`.Dismiss()`方法对其进行清理。
 
 例如, 下面的代码段将释放相机, 因为活动不能在暂停时使用它:
 
@@ -171,17 +171,17 @@ public void OnPause()
 
 将在`OnPause`以下两种可能的生命周期方法调用:
 
-1.  `OnResume`如果活动将返回到前台, 则会调用。
-1.  `OnStop`如果活动位于后台, 则会调用。
+1. `OnResume`如果活动将返回到前台, 则会调用。
+1. `OnStop`如果活动位于后台, 则会调用。
 
 
 #### <a name="onstop"></a>OnStop
 
 当用户不再显示该活动时, 将调用[OnStop](xref:Android.App.Activity.OnStop) 。 发生以下情况之一时, 会发生这种情况:
 
--  正在启动新活动, 并覆盖此活动。
--  现有活动将进入前台。
--  正在销毁活动。
+- 正在启动新活动, 并覆盖此活动。
+- 现有活动将进入前台。
+- 正在销毁活动。
 
 
 `OnStop`不一定会在内存不足的情况下调用, 如 Android 对资源会耗尽, 无法正确地为活动提供背景。 出于此原因, 最好不要依赖`OnStop`于在准备用于销毁的活动时调用。 如果活动即将消失, 或者`OnDestroy` `OnRestart`活动返回到与用户交互, 则可以在此之后调用的下一个生命周期方法将是。
@@ -330,11 +330,11 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 尽管`OnSaveInstanceState`可以轻松地保存暂时性数据, 但有一些限制:
 
--   在所有情况下均不会调用它。 例如, 按**Home**或**Back**退出活动将`OnSaveInstanceState`不会导致调用。
+- 在所有情况下均不会调用它。 例如, 按**Home**或**Back**退出活动将`OnSaveInstanceState`不会导致调用。
 
--   传入`OnSaveInstanceState`的捆绑包不适用于大型对象, 例如图像。 对于大型对象, 如下面所述, 保存[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)中的对象更可取。
+- 传入`OnSaveInstanceState`的捆绑包不适用于大型对象, 例如图像。 对于大型对象, 如下面所述, 保存[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)中的对象更可取。
 
--   使用捆绑包保存的数据将被序列化, 这可能会导致延迟。
+- 使用捆绑包保存的数据将被序列化, 这可能会导致延迟。
 
 绑定状态对于不使用大量内存的简单数据很有用, 而*非配置实例数据*对于更复杂的数据或检索开销很大的数据 (如从 web 服务调用或复杂的数据库查询) 很有用。 非配置实例数据将根据需要保存在对象中。 下一节将`OnRetainNonConfigurationInstance`介绍如何通过配置更改来保留更复杂的数据类型。
 
@@ -343,9 +343,9 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 除了保留捆绑中的数据以外, Android 还支持通过重写[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)并返回包含要保存的数据的`Java.Lang.Object`实例来保存数据。 使用`OnRetainNonConfigurationInstance`保存状态有两个主要优点:
 
--   从`OnRetainNonConfigurationInstance`返回的对象对更大、更复杂的数据类型执行良好的工作, 因为内存会保留此对象。
+- 从`OnRetainNonConfigurationInstance`返回的对象对更大、更复杂的数据类型执行良好的工作, 因为内存会保留此对象。
 
--   `OnRetainNonConfigurationInstance`方法将按需调用, 并且仅在需要时调用。 这比使用手动缓存更经济。
+- `OnRetainNonConfigurationInstance`方法将按需调用, 并且仅在需要时调用。 这比使用手动缓存更经济。
 
 使用`OnRetainNonConfigurationInstance`适用于多次检索数据 (如在 web 服务调用中) 的情况。 例如, 请考虑以下搜索 Twitter 的代码:
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2b8e524d95fb60c8eb45b3dd5b64b68469d97ad1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: ec93083ee3d99dbf748309b23248e982b793ce13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510734"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524851"
 ---
 # <a name="architecture"></a>体系结构
 
@@ -33,12 +33,11 @@ Xamarin Android 开发人员通过调入已知的 .NET Api (适用于低级别�
 
 Android 应用程序包是具有*apk*文件扩展名的 ZIP 容器。 Xamarin Android 应用程序包与普通 Android 包具有相同的结构和布局, 其中添加了以下内容:
 
--   应用程序程序集 (包含 IL) 以未压缩的形式*存储*在*程序集*文件夹中。 在发布过程中, 在发布过程中, apk 是*mmap ()* ed 到进程中, 并从内存中加载程序集 *。* 这样就可以更快地启动应用程序, 因为程序集在执行之前无需提取。  
--   *注意：* 程序集位置信息, 例如[程序集、位置](xref:System.Reflection.Assembly.Location)和[程序集。](xref:System.Reflection.Assembly.CodeBase)
-    在发布版本中*无法依赖*于基本代码。 它们不作为 distinct filesystem 条目存在, 它们没有可用的位置。
+- 应用程序程序集 (包含 IL) 以未压缩的形式*存储*在*程序集*文件夹中。 在发布过程中, 在发布过程中, apk 是*mmap ()* ed 到进程中, 并从内存中加载程序集 *。* 这样就可以更快地启动应用程序, 因为程序集在执行之前无需提取。  
+- *注意：* 程序集位置信息, 例如[程序集、位置](xref:System.Reflection.Assembly.Location)和[程序集。](xref:System.Reflection.Assembly.CodeBase)在发布版本中*无法依赖*于基本代码。 它们不作为 distinct filesystem 条目存在, 它们没有可用的位置。
 
 
--   包含 Mono 运行时的本机库出现在*apk*中。 Xamarin Android 应用程序必须包含适用于或目标 Android 体系结构的本机库, 如*armeabi* 、 *armeabi-armeabi-v7a* 、 *x86* 。 Xamarin Android 应用程序不能在平台上运行, 除非它包含相应的运行时库。
+- 包含 Mono 运行时的本机库出现在*apk*中。 Xamarin Android 应用程序必须包含适用于或目标 Android 体系结构的本机库, 如*armeabi* 、 *armeabi-armeabi-v7a* 、 *x86* 。 Xamarin Android 应用程序不能在平台上运行, 除非它包含相应的运行时库。
 
 
 Xamarin Android 应用程序还包含*android*可调用包装, 以允许 android 调入托管代码。
@@ -90,27 +89,27 @@ Xamarin Android 应用程序还包含*android*可调用包装, 以允许 android
 请注意, (2) 是一个谨防抽象。 在 Java 中, 与C#在中一样, 对构造函数的虚方法的调用始终调用派生程度最大的方法实现。 例如, [TextView (Context, AttributeSet, int) 构造函数](xref:Android.Widget.TextView#ctor*)调用虚拟方法 TextView, [getDefaultMovementMethod ()](https://developer.android.com/reference/android/widget/TextView.html#getDefaultMovementMethod())被绑定为[TextView 属性](xref:Android.Widget.TextView.DefaultMovementMethod)。
 因此, 如果类型[LogTextBox](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs)为 (1)[子类 TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L26), (2)[重写 TextView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L45), 并 (3)[通过 XML 激活该类的实例,](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Resources/layout/log_text_box_1.xml#L29)则重写的*DefaultMovementMethod*属性将在 ACW 构造函数有机会执行之前调用, 并在C#构造函数有机会执行之前发生。
 
-这种支持的方法是: 在 ACW LogTextBox 实例第一次进入托管代码时, 通过[LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28)构造函数实例化实例 LogTextBox [int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41)构造*函数*执行。
+这种支持的方法是: 在 ACW LogTextBox 实例第一次进入托管代码时, 通过[LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28)构造函数实例化实例 LogTextBox [int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41)构造函数执行。
 
 事件的顺序:
 
-1.  布局 XML 加载到[ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)中。
+1. 布局 XML 加载到[ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)中。
 
-2.  Android 实例化布局对象图, 并实例化 monodroid 的实例*Apidemo LogTextBox* , ACW for *LogTextBox* 。
+2. Android 实例化布局对象图, 并实例化 monodroid 的实例*Apidemo LogTextBox* , ACW for *LogTextBox* 。
 
-3.  *Monodroid. apidemo. LogTextBox*构造函数执行[android. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)构造函数。
+3. *Monodroid. apidemo. LogTextBox*构造函数执行[android. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)构造函数。
 
-4.  *TextView*构造函数调用*monodroid ()* 。
+4. *TextView*构造函数调用*monodroid ()* 。
 
-5.  *monodroid* () 调用 LogTextBox ( *), 这*将调用 apidemo *()* , 这[会调用()。&lt;TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) 。
+5. *monodroid* () 调用 LogTextBox (), 这将调用 apidemo *()* , 这[会调用()。&lt;TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) 。
 
-6.  *TextView&gt;() 检查是否已存在一个对应的句柄实例。&lt;* C# 如果有, 则返回。 在这种情况下, 不存在, 因此*对象&lt;node.js&gt;t ()* 必须创建一个。
+6. *TextView&gt;() 检查是否已存在一个对应的句柄实例。&lt;* C# 如果有, 则返回。 在这种情况下, 不存在, 因此*对象&lt;node.js&gt;t ()* 必须创建一个。
 
-7.  *对象。 GetObject&lt;T&gt;()* 查找*LogTextBox (IntPtr, JniHandleOwneship)* 构造函数, 调用它, 创建*句柄*和创建的实例之间的映射, 并返回创建的实例。
+7. *对象。 GetObject&lt;T&gt;()* 查找*LogTextBox (IntPtr, JniHandleOwneship)* 构造函数, 调用它, 创建*句柄*和创建的实例之间的映射, 并返回创建的实例。
 
-8.  *TextView. n_GetDefaultMovementMethod ()* 调用*LogTextBox*属性 getter。
+8. *TextView. n_GetDefaultMovementMethod ()* 调用*LogTextBox*属性 getter。
 
-9.  控件返回到完成执行的*TextView*构造函数。
+9. 控件返回到完成执行的*TextView*构造函数。
 
 10. *Monodroid. apidemo. LogTextBox*构造函数执行, 调用*TypeManager ()* 。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f21964fff0ac37fd87b8dcc6321e47c42c78a49
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 0a9921706acc4da076e98b1c42c0624c7f56e62f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644326"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521193"
 ---
 # <a name="android-graphics-and-animation"></a>Android 图形和动画
 
@@ -30,18 +30,18 @@ Android 中的 UI API 框架可以大致分为两个类别:图形和动画。
 
 Android 提供两个用于创建2D 图形的不同 API。 一种是高级声明性方法, 另一种是编程低级别 API:
 
--   **绘制资源**&ndash;这些方法用于以编程方式或 (通常) 通过在 XML 文件中嵌入绘图指令来创建自定义图形。 可绘制资源通常定义为 XML 文件, 其中包含 Android 用于呈现2D 图形的指令或操作。 
+- **绘制资源**&ndash;这些方法用于以编程方式或 (通常) 通过在 XML 文件中嵌入绘图指令来创建自定义图形。 可绘制资源通常定义为 XML 文件, 其中包含 Android 用于呈现2D 图形的指令或操作。 
 
--   **画布**&ndash;这是一种低级别的 API, 涉及直接在基础位图上绘图。 它提供对显示内容的精细控制。 
+- **画布**&ndash;这是一种低级别的 API, 涉及直接在基础位图上绘图。 它提供对显示内容的精细控制。 
 
 除了这些2D 图形技术以外, Android 还提供了几种不同的方法来创建动画:
 
--   **绘制动画**Android 还支持称为可*绘制动画*的逐帧动画。 &ndash; 这是最简单的动画 API。 Android 按顺序加载并显示按顺序进行绘制的资源 (非常类似于卡通)。
+- **绘制动画**Android 还支持称为可*绘制动画*的逐帧动画。 &ndash; 这是最简单的动画 API。 Android 按顺序加载并显示按顺序进行绘制的资源 (非常类似于卡通)。
 
--   **查看动画**视图动画是 android 中的原始动画 API, 适用于所有版本的 android。 &ndash; 此 API 只适用于视图对象, 只能对这些视图执行简单转换。
+- **查看动画**视图动画是 android 中的原始动画 API, 适用于所有版本的 android。 &ndash; 此 API 只适用于视图对象, 只能对这些视图执行简单转换。
     视图动画通常是在`/Resources/anim`文件夹中找到的 XML 文件中定义的。
 
--   **属性动画**Android 3.0 引入了一组新的动画 API, 称为*属性动画。* &ndash; 这些新 API 引入了一个可扩展的灵活系统, 可用于对任何对象的属性进行动画处理, 而不仅仅是查看对象。 这种灵活性允许将动画封装在不同的类中, 使代码共享变得更加容易。
+- **属性动画**Android 3.0 引入了一组新的动画 API, 称为*属性动画。* &ndash; 这些新 API 引入了一个可扩展的灵活系统, 可用于对任何对象的属性进行动画处理, 而不仅仅是查看对象。 这种灵活性允许将动画封装在不同的类中, 使代码共享变得更加容易。
 
 
 视图动画更适用于必须支持较旧的 Android 之前 3.0 API (API 级别 11) 的应用程序。 否则, 应用程序应使用较新的属性动画 API, 因为以上所述的原因。
@@ -75,23 +75,23 @@ Android 提供两个用于创建2D 图形的不同 API。 一种是高级声明�
 在运行时, Android 应用程序将加载这些资源, 并使用这些 XML 文件中包含的指令创建2D 图形。
 Android 定义了几种不同类型的 "绘制资源":
 
--   [ShapeDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)&ndash;这是一个可绘制的对象, 用于绘制基元几何形状, 并对该形状应用有限的图形效果集。 它们对于自定义按钮或设置 TextViews 背景非常有用。 本文`ShapeDrawable`稍后将介绍如何使用的示例。
+- [ShapeDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)&ndash;这是一个可绘制的对象, 用于绘制基元几何形状, 并对该形状应用有限的图形效果集。 它们对于自定义按钮或设置 TextViews 背景非常有用。 本文`ShapeDrawable`稍后将介绍如何使用的示例。
 
--   [StateListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList)&ndash;这是一个可绘制的资源, 将根据小组件/控件的状态更改外观。 例如, 按钮可能会根据是否已按下而更改其外观。
+- [StateListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList)&ndash;这是一个可绘制的资源, 将根据小组件/控件的状态更改外观。 例如, 按钮可能会根据是否已按下而更改其外观。
 
--   [LayerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)&ndash;这是一种可绘制的资源, 它将多个绘图。 以下屏幕截图显示了*LayerDrawable*的示例:
+- [LayerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)&ndash;这是一种可绘制的资源, 它将多个绘图。 以下屏幕截图显示了*LayerDrawable*的示例:
 
     ![LayerDrawable 示例](graphics-and-animation-images/image1.png)
 
--   [TransitionDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)这是一个 LayerDrawable, 但有一个不同之处。 &ndash; *TransitionDrawable*可以使一层上的显示在另一个层上。
+- [TransitionDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)这是一个 LayerDrawable, 但有一个不同之处。 &ndash; *TransitionDrawable*可以使一层上的显示在另一个层上。
 
--   [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)这非常类似于 StateListDrawable, 因为它会根据特定条件显示图像。 &ndash; 但是, 与*StateListDrawable*不同, *LevelListDrawable*会根据整数值显示图像。 *LevelListDrawable*的一个示例就是显示 WiFi 信号的强度。 当 WiFi 信号的强度改变时, 显示的可绘制将相应更改。
+- [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)这非常类似于 StateListDrawable, 因为它会根据特定条件显示图像。 &ndash; 但是, 与*StateListDrawable*不同, *LevelListDrawable*会根据整数值显示图像。 *LevelListDrawable*的一个示例就是显示 WiFi 信号的强度。 当 WiFi 信号的强度改变时, 显示的可绘制将相应更改。
 
--   [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash; 顾名思义 , 这些绘图提供了缩放和剪裁功能。 *ScaleDrawable*将缩放其他可绘制的, 而*ClipDrawable*将剪裁另一个可绘制的。
+- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash; 顾名思义 , 这些绘图提供了缩放和剪裁功能。 *ScaleDrawable*将缩放其他可绘制的, 而*ClipDrawable*将剪裁另一个可绘制的。
 
--   [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset)&ndash;此可绘制的将应用于其他可绘制资源的两侧。 当视图需要的背景小于视图的实际边界时, 可使用此方法。
+- [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset)&ndash;此可绘制的将应用于其他可绘制资源的两侧。 当视图需要的背景小于视图的实际边界时, 可使用此方法。
 
--   Xml [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;此文件是一组在 XML 中对实际位图执行的指令。 Android 可以执行的某些操作包括平铺、抖动和抗锯齿。 这种情况的一个常见用途是在布局的背景上平铺位图。
+- Xml [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;此文件是一组在 XML 中对实际位图执行的指令。 Android 可以执行的某些操作包括平铺、抖动和抗锯齿。 这种情况的一个常见用途是在布局的背景上平铺位图。
 
 #### <a name="drawable-example"></a>绘制示例
 
@@ -214,11 +214,11 @@ public class MyView : View
 
 用户喜欢在其应用程序中移动的东西。 动画是改善应用程序的用户体验并帮助其突出的好方法。最好的动画是用户不会注意的, 因为它们的外观非常简单。 Android 为动画提供了以下三个 API:
 
--   **查看动画**&ndash;这是原始 API。 这些动画与特定视图相关联, 并且可以对视图内容执行简单转换。 由于这种做法很简单, 因此, 此 API 对于 alpha 动画、旋转等操作仍然很有用。
+- **查看动画**&ndash;这是原始 API。 这些动画与特定视图相关联, 并且可以对视图内容执行简单转换。 由于这种做法很简单, 因此, 此 API 对于 alpha 动画、旋转等操作仍然很有用。
 
--   **属性动画**&ndash; Android 3.0 中引入了属性动画。 它们使应用程序可以对几乎任何内容进行动画处理。 属性动画可用于更改任何对象的任何属性, 即使该对象在屏幕上不可见。
+- **属性动画**&ndash; Android 3.0 中引入了属性动画。 它们使应用程序可以对几乎任何内容进行动画处理。 属性动画可用于更改任何对象的任何属性, 即使该对象在屏幕上不可见。
 
--   **绘制动画**&ndash;这是一种特殊的可绘制资源, 用于将非常简单的动画效果应用于布局。
+- **绘制动画**&ndash;这是一种特殊的可绘制资源, 用于将非常简单的动画效果应用于布局。
 
 通常, 属性动画是要使用的首选系统, 因为它更灵活, 并提供更多功能。
 
@@ -230,25 +230,25 @@ public class MyView : View
 
 动画 XML 文件将存储在 Xamarin Android 项目`/Resources/anim`的目录中。 此文件必须具有以下元素之一作为根元素:
 
--   `alpha`&ndash;淡入或淡出动画。
+- `alpha`&ndash;淡入或淡出动画。
 
--   `rotate`&ndash;旋转动画。
+- `rotate`&ndash;旋转动画。
 
--   `scale`&ndash;调整动画大小。
+- `scale`&ndash;调整动画大小。
 
--   `translate`&ndash;水平和/或垂直动作。
+- `translate`&ndash;水平和/或垂直动作。
 
--   `set`&ndash;可以容纳一个或多个其他动画元素的容器。
+- `set`&ndash;可以容纳一个或多个其他动画元素的容器。
 
 默认情况下, 将同时应用 XML 文件中的所有动画。 若要使动画按顺序发生, `android:startOffset`请在上面定义的一个元素上设置属性。
 
 使用*插值*可以影响动画中的变化速率。 使用插插程序, 可以加速、重复或 decelerated 动画效果。 Android framework 提供了几个现成的 interpolators, 例如 (但不限于):
 
--   `AccelerateInterpolator`这些interpolators提高或降低动画的变化速率/。 `DecelerateInterpolator` &ndash;
+- `AccelerateInterpolator`这些interpolators提高或降低动画的变化速率/。 `DecelerateInterpolator` &ndash;
 
--   `BounceInterpolator`&ndash;更改将在末尾弹跳。
+- `BounceInterpolator`&ndash;更改将在末尾弹跳。
 
--   `LinearInterpolator`&ndash;更改速率是固定的。
+- `LinearInterpolator`&ndash;更改速率是固定的。
 
 
 下面的 XML 显示了合并其中一些元素的动画文件示例:
@@ -316,20 +316,20 @@ myImage.StartAnimation(myAnimation);
 
 所有属性动画都由[Animator](xref:Android.Animation.Animator)子类的实例创建。 应用程序不直接使用此类, 而是使用它的一个子类:
 
--   [ValueAnimator](xref:Android.Animation.ValueAnimator)&ndash;此类是整个属性动画 API 中最重要的类。 它计算需要更改的属性的值。 不`ViewAnimator`会直接更新这些值, 而是引发可用于更新动画对象的事件。
+- [ValueAnimator](xref:Android.Animation.ValueAnimator)&ndash;此类是整个属性动画 API 中最重要的类。 它计算需要更改的属性的值。 不`ViewAnimator`会直接更新这些值, 而是引发可用于更新动画对象的事件。
 
--   [ObjectAnimator](xref:Android.Animation.ObjectAnimator)此类是的`ValueAnimator`子类。 &ndash; 它旨在通过接受要更新的目标对象和属性来简化对象的动画处理过程。
+- [ObjectAnimator](xref:Android.Animation.ObjectAnimator)此类是的`ValueAnimator`子类。 &ndash; 它旨在通过接受要更新的目标对象和属性来简化对象的动画处理过程。
 
--   [AnimationSet](xref:Android.Animation.AnimatorSet)&ndash;此类负责协调动画的相互关系。 动画可以按顺序同时运行, 也可以在它们之间的指定延迟时间运行。
+- [AnimationSet](xref:Android.Animation.AnimatorSet)&ndash;此类负责协调动画的相互关系。 动画可以按顺序同时运行, 也可以在它们之间的指定延迟时间运行。
 
 
 *计算器*是 animators 用来计算动画过程中的新值的特殊类。 Android 提供以下计算器:
 
--   [IntEvaluator](xref:Android.Animation.IntEvaluator)&ndash;计算整数属性的值。
+- [IntEvaluator](xref:Android.Animation.IntEvaluator)&ndash;计算整数属性的值。
 
--   [FloatEvaluator](xref:Android.Animation.FloatEvaluator)&ndash;计算 float 属性的值。
+- [FloatEvaluator](xref:Android.Animation.FloatEvaluator)&ndash;计算 float 属性的值。
 
--   [ArgbEvaluator](xref:Android.Animation.ArgbEvaluator)&ndash;计算颜色属性的值。
+- [ArgbEvaluator](xref:Android.Animation.ArgbEvaluator)&ndash;计算颜色属性的值。
 
 如果要进行动画处理的属性不`float` `int`是或颜色, 应用程序可以通过实现`ITypeEvaluator`接口来创建自己的计算器。 (实现自定义计算器超出了本主题的范围。)
 
@@ -340,9 +340,9 @@ myImage.StartAnimation(myAnimation);
 
 您可以通过调用以下`ValueAnimator`工厂方法之一来获取的实例:
 
--  `ValueAnimator.OfInt`
--  `ValueAnimator.OfFloat`
--  `ValueAnimator.OfObject`
+- `ValueAnimator.OfInt`
+- `ValueAnimator.OfFloat`
+- `ValueAnimator.OfObject`
 
 完成此操作后, `ValueAnimator`实例必须设置其持续时间, 然后才能启动。 下面的示例演示如何在1000毫秒的范围内对0到1之间的值进行动画处理:
 

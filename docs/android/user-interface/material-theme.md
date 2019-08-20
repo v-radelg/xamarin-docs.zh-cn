@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 027460196f97173fcf977971b79def722ab672d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: fca8ee02fc48979db1d29716374ba300a0e8bbbf
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647869"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522363"
 ---
 # <a name="material-theme"></a>材料主题
 
@@ -20,11 +20,11 @@ ms.locfileid: "68647869"
 
 Android 提供三种材料主题风格:
 
--  `Theme.Material`&ndash;深色版本的材料主题; 这是 Android 5.0 中的默认风格。
+- `Theme.Material`&ndash;深色版本的材料主题; 这是 Android 5.0 中的默认风格。
 
--  `Theme.Material.Light`&ndash;材料主题的轻型版本。
+- `Theme.Material.Light`&ndash;材料主题的轻型版本。
 
--  `Theme.Material.Light.DarkActionBar`&ndash;材料主题的轻型版本, 但具有深色操作栏。
+- `Theme.Material.Light.DarkActionBar`&ndash;材料主题的轻型版本, 但具有深色操作栏。
 
 此处显示了这些材料主题风格的示例:
 
@@ -41,11 +41,11 @@ Android 提供三种材料主题风格:
 
 若要在基于 Xamarin 的应用中使用新的 Android 5.0 材料主题功能, 需要满足以下要求:
 
--  必须安装和配置**Xamarin** xamarin4.20或更高版本,并且必须安装VisualStudio或VisualStudioforMac。&ndash; 
+- 必须安装和配置**Xamarin** xamarin4.20或更高版本,并且必须安装VisualStudio或VisualStudioforMac。&ndash; 
 
--  **Android SDK**&ndash; Android 5.0 (API 21) 或更高版本必须通过 Android SDK 管理器进行安装。
+- **Android SDK**&ndash; Android 5.0 (API 21) 或更高版本必须通过 Android SDK 管理器进行安装。
 
--  **JAVA JDK 1.8**&ndash;如果你专门针对 API 级别23和更早版本, 则可以使用 JDK 1.7。 JDK 1.8 可从[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)获得。
+- **JAVA JDK 1.8**&ndash;如果你专门针对 API 级别23和更早版本, 则可以使用 JDK 1.7。 JDK 1.8 可从[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)获得。
 
 若要了解如何配置 Android 5.0 应用项目, 请参阅[设置 android 5.0 项目](~/android/platform/lollipop.md)。
 
@@ -59,11 +59,11 @@ Android 提供三种材料主题风格:
 
 若要将整个应用程序配置为使用材料主题风格, 请`android:theme`将**androidmanifest.xml**中的 "应用程序" 节点的属性设置为以下其中一项:
 
--  `@android:style/Theme.Material`&ndash;深色主题。
+- `@android:style/Theme.Material`&ndash;深色主题。
 
--  `@android:style/Theme.Material.Light`&ndash;浅色主题。
+- `@android:style/Theme.Material.Light`&ndash;浅色主题。
 
--  `@android:style/Theme.Material.Light.DarkActionBar`&ndash;带有深色操作栏的浅色主题。
+- `@android:style/Theme.Material.Light.DarkActionBar`&ndash;带有深色操作栏的浅色主题。
 
 下面的示例将 application *MyApp*配置为使用浅色主题:
 
@@ -101,19 +101,19 @@ Android 提供三种材料主题风格:
 
 材料主题公开以下用于自定义的布局属性:
 
--  `colorPrimary`&ndash;应用栏的颜色。
+- `colorPrimary`&ndash;应用栏的颜色。
 
--  `colorPrimaryDark`状态栏和上下文应用栏的颜色; 这通常是的`colorPrimary`深色版本。 &ndash;
+- `colorPrimaryDark`状态栏和上下文应用栏的颜色; 这通常是的`colorPrimary`深色版本。 &ndash;
 
--  `colorAccent`&ndash; UI 控件 (如复选框、单选按钮和编辑文本框) 的颜色。
+- `colorAccent`&ndash; UI 控件 (如复选框、单选按钮和编辑文本框) 的颜色。
 
--  `windowBackground`&ndash;屏幕背景的颜色。
+- `windowBackground`&ndash;屏幕背景的颜色。
 
--  `textColorPrimary`&ndash;应用栏中 UI 文本的颜色。
+- `textColorPrimary`&ndash;应用栏中 UI 文本的颜色。
 
--  `statusBarColor`&ndash;状态栏的颜色。
+- `statusBarColor`&ndash;状态栏的颜色。
 
--  `navigationBarColor`&ndash;导航栏的颜色。
+- `navigationBarColor`&ndash;导航栏的颜色。
 
 以下关系图中标记了这些屏幕区域:
 
@@ -126,7 +126,7 @@ Android 提供三种材料主题风格:
 
 可以通过在应用项目的 "**资源**" 文件夹中创建和修改文件来创建自定义应用主题。 若要为应用程序定义自定义主题, 请使用以下步骤:
 
--   在**资源/值** &mdash;中创建一个**colors**文件。使用此文件来定义自定义主题颜色。 例如, 可以将以下代码粘贴到**colors**中, 以帮助您入门:
+- 在**资源/值** &mdash;中创建一个**colors**文件。使用此文件来定义自定义主题颜色。 例如, 可以将以下代码粘贴到**colors**中, 以帮助您入门:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -138,15 +138,15 @@ Android 提供三种材料主题风格:
 </resources>
 ```
 
--   修改此示例文件以定义将在自定义主题中使用的颜色资源的名称和颜色代码。
+- 修改此示例文件以定义将在自定义主题中使用的颜色资源的名称和颜色代码。
 
--   创建**资源/值-v21**文件夹。 在此文件夹中, 创建一个**样式 .xml**文件:
+- 创建**资源/值-v21**文件夹。 在此文件夹中, 创建一个**样式 .xml**文件:
 
     [![Resources/values-21 文件夹中的 xml 位置](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     请注意, **v21**是特定于 android 5.0 &ndash;旧版 android 的, 将不会读取此文件夹中的文件。
 
--   将节点添加到**styles .xml** , 并使用自`style`定义主题的名称定义节点。 `resources` 例如, 下面是一个定义*MyCustomTheme* (派生自`Theme.Material.Light`内置主题样式) 的 style **.xml**文件:
+- 将节点添加到**styles .xml** , 并使用自`style`定义主题的名称定义节点。 `resources` 例如, 下面是一个定义*MyCustomTheme* (派生自`Theme.Material.Light`内置主题样式) 的 style **.xml**文件:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -158,11 +158,11 @@ Android 提供三种材料主题风格:
 </resources>
 ```
 
--   此时, 使用*MyCustomTheme*的应用程序将显示不带自定义`Theme.Material.Light`项的股票主题:
+- 此时, 使用*MyCustomTheme*的应用程序将显示不带自定义`Theme.Material.Light`项的股票主题:
 
     [![自定义前的自定义主题外观](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
--   通过定义要更改的布局特性的颜色, 将颜色自定义添加到**样式 .xml。** 例如, 若要将应用程序栏颜色更改`my_blue`为, 并将 UI 控件的颜色`my_purple`更改为, 请向**样式 .xml**添加颜色重写。 **xml:**
+- 通过定义要更改的布局特性的颜色, 将颜色自定义添加到**样式 .xml。** 例如, 若要将应用程序栏颜色更改`my_blue`为, 并将 UI 控件的颜色`my_purple`更改为, 请向**样式 .xml**添加颜色重写。 xml:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -190,7 +190,7 @@ Android 提供三种材料主题风格:
 Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style **.xml**后 (如上一节所述), 可以将视图样式添加到 style **.xml**。
 若要为单个视图的样式, 请使用以下步骤:
 
--   编辑**资源/values-v21/style .xml**并添加`style`具有自定义视图样式名称的节点。 为此`style`节点中的视图设置自定义颜色属性。 例如, 若要创建具有更多圆角并`my_blue`用作卡片背景色的自定义 [CardView](~/android/user-interface/controls/card-view.md) 样式, 请将`style`节点添加到 **style .xml** (在`resources`节点内), 并配置背景色和角半径:
+- 编辑**资源/values-v21/style .xml**并添加`style`具有自定义视图样式名称的节点。 为此`style`节点中的视图设置自定义颜色属性。 例如, 若要创建具有更多圆角并`my_blue`用作卡片背景色的自定义 [CardView](~/android/user-interface/controls/card-view.md) 样式, 请将`style`节点添加到 **style .xml** (在`resources`节点内), 并配置背景色和角半径:
 
 ```xml
 <!-- Theme an individual view: -->
@@ -204,7 +204,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 </style>
 ```
 
--   在布局中, 为该`style`视图设置属性, 使之与你在上一步中选择的自定义样式名称匹配。 例如:
+- 在布局中, 为该`style`视图设置属性, 使之与你在上一步中选择的自定义样式名称匹配。 例如:
 
 ```xml
 <android.support.v7.widget.CardView
@@ -225,7 +225,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 
 若要为应用程序应用格式, 使其在 Android 5.0 上使用材料主题, 但会自动恢复到早期版本的 Android 版本的向下兼容样式, 请使用以下步骤:
 
--   在**资源/values-v21/style .xml**中定义从材料主题样式派生的自定义主题。 例如:
+- 在**资源/values-v21/style .xml**中定义从材料主题样式派生的自定义主题。 例如:
 
 ```xml
 <resources>
@@ -235,7 +235,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 </resources>
 ```
 
--   在**资源/值/样式 .xml**中定义派生自旧版主题的自定义主题, 但使用与上面相同的主题名称。 例如:
+- 在**资源/值/样式 .xml**中定义派生自旧版主题的自定义主题, 但使用与上面相同的主题名称。 例如:
 
 ```xml
 <resources>
@@ -245,7 +245,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 </resources>
 ```
 
--   在**androidmanifest.xml**中, 配置应用的自定义主题名称。 
+- 在**androidmanifest.xml**中, 配置应用的自定义主题名称。 
     例如:
 
 ```xml
@@ -254,7 +254,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 </application>
 ```
 
--   或者, 您可以使用自定义主题来为特定活动指定样式:
+- 或者, 您可以使用自定义主题来为特定活动指定样式:
 
 ```C#
 [Activity(Label = "MyActivity", Theme = "@style/MyCustomTheme")]

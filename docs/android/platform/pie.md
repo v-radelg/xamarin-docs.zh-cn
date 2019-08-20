@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: d4d7379e1d4d2dd605331b30d692df299f5f5c13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511444"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523661"
 ---
 # <a name="android-pie-features"></a>Android 饼图功能
 
@@ -95,13 +95,13 @@ Xamarin 9.0 支持 Android 饼图。 有关适用于 Android 的 Xamarin Android
 
 Android 饼图引入了多种新功能。 其中一些新功能旨在利用最新 Android 设备提供的新硬件功能, 而其他功能旨在进一步增强 Android 用户体验:
 
--   **显示切除支持**提供 api, 以便在更高版本的 Android 设备上查找页面顶部的切除位置和形状。 &ndash;
+- **显示切除支持**提供 api, 以便在更高版本的 Android 设备上查找页面顶部的切除位置和形状。 &ndash;
 
--   **通知增强功能**通知消息现在可以显示图像, 而使用新`Person`的类来简化会话参与者。 &ndash;
+- **通知增强功能**通知消息现在可以显示图像, 而使用新`Person`的类来简化会话参与者。 &ndash;
 
--   **室内定位**&ndash;适用于 wifi 往返时间协议的平台支持, 使应用可以使用 wifi 设备在室内设置中进行导航。
+- **室内定位**&ndash;适用于 wifi 往返时间协议的平台支持, 使应用可以使用 wifi 设备在室内设置中进行导航。
 
--   **多相机支持**&ndash;提供了一项功能, 可同时从多个物理照相机 (如双面和双回摄像机) 访问流。
+- **多相机支持**&ndash;提供了一项功能, 可同时从多个物理照相机 (如双面和双回摄像机) 访问流。
 
 
 以下各节重点介绍了这些功能, 并提供了简短的代码示例, 帮助你在应用程序中开始使用它们。
@@ -115,11 +115,11 @@ Android 饼图引入了多种新功能。 其中一些新功能旨在利用最�
 
 为了管理应用程序窗口在带有显示切除的设备上显示其内容的方式, Android 饼图添加了一个新的[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)窗口布局特性。 此属性可设置为以下值之一:
 
--   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;该窗口不能与裁剪区域重叠。
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;该窗口不能与裁剪区域重叠。
 
--   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;允许该窗口扩展到剪切区域中, 只显示在屏幕的短边上。 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;允许该窗口扩展到剪切区域中, 只显示在屏幕的短边上。 
 
--   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;如果在系统栏中包含切口, 则允许该窗口扩展到剪切区。
+- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;如果在系统栏中包含切口, 则允许该窗口扩展到剪切区。
 
 例如, 若要防止应用窗口与剪切区域重叠, 请将布局剪切模式设置为 "*从不*": 
 
@@ -145,13 +145,13 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 Android 饼图引入了以下增强功能来改善消息传递体验:
 
--   通知通道 (在[Android Oreo](~/android/platform/oreo.md)中引入) 现在支持阻止通道组。
+- 通知通道 (在[Android Oreo](~/android/platform/oreo.md)中引入) 现在支持阻止通道组。
 
--   通知系统包含三个新的 "不干扰" 类别 (确定警报、系统声音和媒体源的优先级)。 此外, 还有七种新的 "不干扰" 模式, 可用于阻止视觉中断 (例如徽章、通知灯、状态栏外观和启动全屏活动)。
+- 通知系统包含三个新的 "不干扰" 类别 (确定警报、系统声音和媒体源的优先级)。 此外, 还有七种新的 "不干扰" 模式, 可用于阻止视觉中断 (例如徽章、通知灯、状态栏外观和启动全屏活动)。
 
--   添加了一个新的[Person](https://developer.android.com/reference/android/app/Person.html)类来表示邮件的发件人。 此类的使用有助于通过标识会话中涉及的人员 (包括其头像和 Uri) 来优化每个通知的呈现。
+- 添加了一个新的[Person](https://developer.android.com/reference/android/app/Person.html)类来表示邮件的发件人。 此类的使用有助于通过标识会话中涉及的人员 (包括其头像和 Uri) 来优化每个通知的呈现。
 
--   通知现在可以显示图像。 
+- 通知现在可以显示图像。 
 
 下面的示例演示如何使用新 Api 生成包含图像的通知。 在下面的屏幕截图中, 将发布文本通知, 并在其后面跟有嵌入图像的通知。 当扩展通知 (如右侧所示) 时, 将显示第一条通知的文本, 并扩大第二个通知中嵌入的图像:
 
@@ -230,13 +230,13 @@ Android 饼图还包含一个新的[SessionConfiguration](https://developer.andr
 
 此外, Android 饼图还支持其他几项新功能:
 
--   新的[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)类, 可用于绘制和显示动画图像。
+- 新的[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)类, 可用于绘制和显示动画图像。
 
--   替换`BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)类。 `ImageDecoder`可用于对进行解码`AnimatedImageDrawable`。
+- 替换`BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)类。 `ImageDecoder`可用于对进行解码`AnimatedImageDrawable`。
 
--   支持 HDR (高动态范围) 视频和 HEIF (高效率图像文件格式) 图像。
+- 支持 HDR (高动态范围) 视频和 HEIF (高效率图像文件格式) 图像。
 
--   [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)已经过增强, 可以更智能地处理与网络相关的作业。 [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters)类的新的[GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)方法返回最佳网络, 以执行给定作业的任何网络请求。
+- [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)已经过增强, 可以更智能地处理与网络相关的作业。 [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters)类的新的[GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)方法返回最佳网络, 以执行给定作业的任何网络请求。
 
 有关最新 Android 饼图功能的详细信息, 请参阅[android 9 功能和 api](https://developer.android.com/about/versions/pie/android-9.0)。
 
@@ -245,11 +245,11 @@ Android 饼图还包含一个新的[SessionConfiguration](https://developer.andr
 
 如果将 "目标 Android 版本" 设置为 "API 级别 28", 则即使未实现上述新功能, 也可能会影响应用的行为。 以下列表概述了这些更改:
 
--  应用现在必须先请求前台权限, 然后才能使用前台服务。
+- 应用现在必须先请求前台权限, 然后才能使用前台服务。
 
--  如果应用有多个进程, 则不能跨进程共享单个[web](xref:Android.Webkit.WebView)程序数据目录。
+- 如果应用有多个进程, 则不能跨进程共享单个[web](xref:Android.Webkit.WebView)程序数据目录。
 
--  不再允许按路径直接访问另一个应用的数据目录。
+- 不再允许按路径直接访问另一个应用的数据目录。
 
 有关面向 Android P 的应用的行为更改的详细信息, 请参阅[行为更改](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)。
 
