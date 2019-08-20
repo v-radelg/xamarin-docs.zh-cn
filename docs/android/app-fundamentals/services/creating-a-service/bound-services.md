@@ -1,68 +1,68 @@
 ---
-title: 在 Xamarin.Android 中绑定服务
-description: 绑定的服务是 Android 提供客户端 （例如 Android 活动） 可与之交互的客户端-服务器接口的服务。 本指南介绍了与创建绑定的服务以及如何在 Xamarin.Android 应用程序中使用它所涉及的关键组件。
+title: Xamarin 中的绑定服务
+description: 绑定服务是一项 Android 服务, 提供客户端-服务器接口, 客户端 (如 Android 活动) 可以与进行交互。 本指南将讨论创建绑定服务所涉及的关键组件以及如何在 Xamarin Android 应用程序中使用它。
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 490331663d94a1e3130fc794a11a52acdacca014
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 6b585783f21cc18112ef766819c9851baac96ef1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829746"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644192"
 ---
-# <a name="bound-services-in-xamarinandroid"></a>在 Xamarin.Android 中绑定服务
+# <a name="bound-services-in-xamarinandroid"></a>Xamarin 中的绑定服务
 
-_绑定的服务是 Android 提供客户端 （例如 Android 活动） 可与之交互的客户端-服务器接口的服务。本指南介绍了与创建绑定的服务以及如何在 Xamarin.Android 应用程序中使用它所涉及的关键组件。_
+_绑定服务是一项 Android 服务, 提供客户端-服务器接口, 客户端 (如 Android 活动) 可以与进行交互。本指南将讨论创建绑定服务所涉及的关键组件以及如何在 Xamarin Android 应用程序中使用它。_
 
 ## <a name="bound-services-overview"></a>绑定服务概述
 
-向客户端进行直接交互的客户端-服务器接口提供服务的服务被称为_绑定服务_。  可以有多个客户端同时连接到服务的单一实例。 绑定的服务和客户端是相互隔离的。 相反，Android 提供了一系列管理这两个之间的连接状态的中间对象。 此状态由对象实现[ `Android.Content.IServiceConnection` ](https://developer.xamarin.com/api/type/Android.Content.IServiceConnection/)接口。  客户端创建此对象并将其作为参数传递给[ `BindService` ](https://developer.xamarin.com/api/member/Android.Content.Context.BindService/)方法。 `BindService`是出现在任何[ `Android.Content.Context` ](https://developer.xamarin.com/api/type/Android.Content.Context)对象 （如活动）。 它是对 Android 操作系统启动该服务并绑定到该客户端的请求。 有三种方式向客户端可能会将绑定到服务使用`BindService`方法：
+为客户端提供客户端-服务器接口以与服务直接交互的服务称为_绑定服务_。  可以同时将多个客户端连接到服务的单个实例。 绑定的服务和客户端彼此隔离。 相反, Android 提供一系列中间对象, 这些对象管理两者之间的连接状态。 此状态由实现[`Android.Content.IServiceConnection`](xref:Android.Content.IServiceConnection)接口的对象维护。  此对象由客户端创建并作为参数传递给[`BindService`](xref:Android.Content.Context.BindService*)方法。 可用于任何[`Android.Content.Context`](xref:Android.Content.Context)对象 (例如活动)。 `BindService` 这是对 Android 操作系统的请求, 用于启动服务并将客户端绑定到它。 有三种方法可以使用`BindService`方法将客户端绑定到服务:
 
-* **服务活页夹**&ndash;服务联编程序是一个类，实现[ `Android.OS.IBinder` ](https://developer.xamarin.com/api/type/Android.OS.IBinder)接口。 大多数应用程序将不会直接实现此接口，它们将改为扩展[ `Android.OS.Binder` ](https://developer.xamarin.com/api/type/Android.OS.Binder)类。 这是最常用的方法，适用于在同一进程中时存在服务和客户端。
-* **使用 Messenger** &ndash;这种技术适合时该服务可能存在于单独的进程中。 相反，服务请求客户端和服务通过之间封送[ `Android.OS.Messenger` ](https://developer.xamarin.com/api/type/Android.OS.Messenger)。 [ `Android.OS.Handler` ](https://developer.xamarin.com/api/type/Android.OS.Handler)将要用于处理在服务中创建`Messenger`请求。 另一指南中包含此文件。
-* **使用 Android 接口定义语言 (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl)是一种高级的技术，将此指南中未提及。
+* **服务联编**程序服务绑定器是[`Android.OS.IBinder`](xref:Android.OS.IBinder)实现接口的类。 &ndash; 大多数应用程序将不会直接实现此接口, 而是扩展[`Android.OS.Binder`](xref:Android.OS.Binder)该类。 这是最常用的方法, 适用于服务和客户端位于同一进程中的情况。
+* **使用 Messenger**&ndash;此方法适用于在单独的进程中可以存在该服务的情况。 相反, 服务请求通过[`Android.OS.Messenger`](xref:Android.OS.Messenger)在客户端和服务之间进行封送处理。 [`Android.OS.Handler`](xref:Android.OS.Handler)在将`Messenger`处理请求的服务中创建。 这将在其他指南中介绍。
+* **使用 Android 接口定义语言 (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl) 是一种高级技术, 不在本指南中介绍。
 
-一旦客户端具有已绑定到的服务，二者之间的通信是通过时`Android.OS.IBinder`对象。  此对象负责将允许客户端与服务进行交互的接口。 没有必要为每个 Xamarin.Android 应用程序以实现此接口从零开始，Android SDK 提供[ `Android.OS.Binder` ](https://developer.xamarin.com/api/type/Android.OS.Binder)负责大部分所需的对象之间的封送处理代码的类客户端和服务。
+将客户端绑定到服务后, 这两者之间的通信将通过`Android.OS.IBinder`对象进行。  此对象负责使客户端能够与服务交互的接口。 每个 Xamarin 应用程序都不需要从头开始实现此接口, Android SDK 提供[`Android.OS.Binder`](xref:Android.OS.Binder)类, 它负责在客户端和服务之间对对象进行封送处理所需的大部分代码。
 
-完成客户端与服务操作后，它必须通过调用从它取消绑定`UnbindService`方法。 一旦从一种服务，最后一个客户端具有未绑定，Android 将停止并释放绑定服务。
+使用服务完成客户端时, 必须通过调用`UnbindService`方法将其从其解除绑定。 最后一台客户端与服务解除绑定后, Android 将停止并释放绑定的服务。
 
-此图描述了如何将活动、 服务连接、 联编程序和服务所有彼此相关的：
+此图说明了活动、服务连接、联编程序和服务之间的相互关系:
 
-![一个显示每个服务组件之间的关系的图表](bound-services-images/bound-services-02.png "关系图显示每个服务组件之间的关系。")
+![显示服务组件彼此关联的关系图](bound-services-images/bound-services-02.png "显示服务组件彼此关联的关系图。")
 
-本指南介绍了如何扩展`Service`类，以实现绑定的服务。 它还将介绍实现`IServiceConnection`和扩展`Binder`以允许客户端与服务进行通信。 示例应用程序附带本指南中，其中包含一个名为 Xamarin.Android 项目使用的一种解决方案 **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** 。 这是非常基本的应用程序，该示例演示了如何实现的服务以及如何将活动绑定到它。 绑定的服务具有只有一个方法，使用非常简单的 API `GetFormattedTimestamp`，这会返回一个字符串，告知用户已启动该服务时，多长时间运行。 应用程序还允许用户手动解除绑定，并将绑定到该服务。
+本指南将介绍如何扩展`Service`类以实现绑定服务。 它还将介绍如何`IServiceConnection`实现和`Binder`扩展, 以允许客户端与服务进行通信。 示例应用程序附带本指南中，其中包含一个名为 Xamarin.Android 项目使用的一种解决方案 **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** 。 这是一个非常基本的应用程序, 演示如何实现服务, 以及如何将活动绑定到该服务。 绑定服务具有一个非常简单的 API, 该 API 只包含`GetFormattedTimestamp`一种方法, 该方法返回一个字符串, 该字符串告知用户服务启动的时间和运行时间。 应用还允许用户手动取消绑定并绑定到服务。
 
-[![在 Android 手机上运行的应用程序的屏幕截图](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
+[![Android 手机上运行的应用程序的屏幕截图](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
-## <a name="implementing-and-consuming-a-bound-service"></a>实现和使用绑定的服务
+## <a name="implementing-and-consuming-a-bound-service"></a>实现和使用绑定服务
 
-有三个组件必须实现中使用的绑定的服务的 Android 应用程序的顺序：
+为了使 Android 应用程序使用绑定的服务, 必须实现三个组件:
 
-1. **扩展`Service`类并实现生命周期回调方法**&ndash;此类将包含将执行将服务的请求的工作的代码。 下面更详细地包含此文件。
-2. **创建一个类实现`IServiceConnection`**  &ndash;回叫方法将调用此接口提供通过 Android 通知客户端与服务连接发生更改时，即客户端已连接或断开连接到服务。 服务连接还会提供对客户端可用来直接与服务交互的对象的引用。 此引用名为_联编程序_。
-3. **创建一个类实现`IBinder`**  &ndash; A_联编程序_实现提供的 API 的客户端用于与服务通信。 此联编程序可以提供对绑定的服务中，引用允许直接调用方法或联编程序可以提供一个客户端 API 的封装并隐藏该应用程序中的绑定的服务。 `IBinder`必须为远程过程调用提供所需的代码。 不需要 （或不建议） 若要实现`IBinder`直接接口。 应用程序应改为扩展`Binder`提供了大部分所需的基本功能的类型`IBinder`。
-4. **启动并绑定到服务** &ndash; Android 应用程序的服务连接，联编程序和服务创建后是负责启动服务并将绑定到它。
+1. **扩展`Service`类并实现生命周期回调方法** &ndash;此类将包含执行服务所需工作的代码。 下面将更详细地介绍这一点。
+2. **创建一个实现`IServiceConnection`**  &ndash;此接口的类提供回调方法, Android 将调用该方法, 以便在服务连接发生更改时通知客户端, 即客户端已连接或断开连接到服务. 服务连接还将提供对对象的引用, 客户端可使用该对象直接与服务交互。 此引用称为_联编_程序。
+3. **创建实现`IBinder`**  联编&ndash;程序实现的类提供客户端用来与服务进行通信的 API。 联编程序可以提供对绑定服务的引用、允许直接调用方法或联编程序可以提供一个客户端 API, 用于封装和隐藏应用程序中的绑定服务。 `IBinder`必须提供远程过程调用所需的代码。 不需要 (或建议) 直接实现`IBinder`接口。 相反, 应用程序应`Binder`扩展提供所需`IBinder`的大多数基本功能的类型。
+4. **启动并绑定到服务**&ndash;创建服务连接、联编程序和服务后, Android 应用程序负责启动该服务并将其绑定到它。
 
-将以下各节更详细地讨论每个步骤。
+以下各部分将更详细地讨论其中的每个步骤。
 
-### <a name="extend-the-service-class"></a>扩展`Service`类
+### <a name="extend-the-service-class"></a>`Service`扩展类
 
-若要创建使用 Xamarin.Android 的服务，有必要为子类`Service`并进行修饰的类[ `ServiceAttribute` ](https://developer.xamarin.com/api/type/Android.App.ServiceAttribute)。 Xamarin.Android 生成工具使用该属性来正确注册该服务在应用中**AndroidManifest.xml**文件非常类似活动中，绑定的服务具有其自己的生命周期和回叫方法与相关联在其生命周期中的重要事件。 以下列表是某些较常用服务将实现的回调方法的示例：
+若要使用 Xamarin 创建服务, 需要`Service` [`ServiceAttribute`](xref:Android.App.ServiceAttribute)使用对类进行子类化和修饰。 Xamarin 版本工具使用特性来正确地在应用程序的**androidmanifest.xml**文件中注册服务, 这与活动非常相似, 绑定服务具有自己的生命周期以及与中的重要事件关联的回调方法其生命周期。 下面的列表是服务将实现的一些更常见的回调方法的示例:
 
-* `OnCreate` &ndash; 通过 Android 调用此方法，因为它实例化服务。 它用于初始化的任何变量或对象的生存期内所需的服务。 此方法是可选的。
-* `OnBind` &ndash; 所有绑定的服务必须实现此方法。 第一个客户端尝试连接到服务时，调用此操作。 它将返回的实例`IBinder`，以便客户端可能会与服务交互。 只要服务正在运行，`IBinder`对象将用于满足绑定到服务的任何将来的客户端请求。
-* `OnUnbind` &ndash; 具有未绑定的绑定的所有客户端时，调用此方法。 通过返回`true`该服务将更高版本调用此方法中，从`OnRebind`传递到意向`OnUnbind`时将新的客户端绑定到它。 服务继续运行之后未绑定时将执行此操作。 如果最近未绑定的服务也已启动的服务，会发生此情况并`StopService`或`StopSelf`尚未调用。 在此类方案中，`OnRebind`允许检索的意图。 默认值返回`false`，这不执行任何操作。 可选。
-* `OnDestroy` &ndash; Android 销毁该服务时，调用此方法。 在这种方法，应执行任何必要的清理，释放资源，例如。 可选。
+* `OnCreate`&ndash;此方法由 Android 调用, 因为它将实例化服务。 它用于初始化服务在生存期内所需的任何变量或对象。 此方法是可选的。
+* `OnBind`&ndash;此方法必须由所有绑定服务实现。 它在第一个客户端尝试连接到该服务时调用。 它将返回一个实例`IBinder` , 以便客户端可以与该服务进行交互。 只要服务正在运行, `IBinder`就会使用对象来完成以后要绑定到服务的客户端请求。
+* `OnUnbind`&ndash;当所有绑定的客户端都未绑定时, 将调用此方法。 通过从此`true`方法返回, 在新客户端绑定到`OnRebind`服务的情况下, `OnUnbind`服务将在以后调用。 如果服务在未绑定后继续运行, 则可以执行此操作。 如果最近未绑定的服务也是已启动的服务, `StopService`或`StopSelf`未调用, 则会发生这种情况。 在这种情况下`OnRebind` , 允许检索意向。 默认返回`false` , 它不执行任何操作。 可选。
+* `OnDestroy`&ndash;当 Android 销毁服务时, 将调用此方法。 在此方法中, 应执行任何必要的清理 (如释放资源)。 可选。
 
-绑定服务的密钥生命周期事件显示在此图中：
+此图显示了绑定服务的关键生命周期事件:
 
-![图示的生命周期方法的调用的顺序](bound-services-images/bound-services-01.png "图示的生命周期方法的调用的顺序。")
+![显示生命周期方法调用顺序的关系图](bound-services-images/bound-services-01.png "显示生命周期方法调用顺序的关系图。")
 
-附带本指南的配套应用程序中的以下的代码段显示了如何在 Xamarin.Android 中实现的绑定的服务：
+以下代码片段 (来自本指南附带的配套应用程序) 演示如何在 Xamarin 中实现绑定服务:
 
 ```csharp
 using Android.App;
@@ -124,11 +124,11 @@ namespace BoundServiceDemo
 }
 ```
 
-在示例中，`OnCreate`方法初始化一个对象，保存用于检索和格式设置客户端将请求的时间戳的逻辑。 当第一个客户端尝试绑定到服务时，将调用 Android`OnBind`方法。 此服务将实例化`TimestampBinder`将允许客户端访问正在运行的服务的此实例的对象。 `TimestampBinder`类下一节中所述。
+在此示例中, `OnCreate`方法初始化一个对象, 该对象包含用于检索和格式化客户端请求的时间戳的逻辑。 当第一个客户端尝试绑定到服务时, Android 将调用`OnBind`方法。 此服务将实例化`TimestampBinder`对象, 以允许客户端访问正在运行的服务的此实例。 下一节将讨论该类。`TimestampBinder`
 
 ### <a name="implementing-ibinder"></a>实现 IBinder
 
-如前文所述，`IBinder`对象提供客户端和服务之间的通信通道。 Android 应用程序不应实现`IBinder`接口， [ `Android.OS.Binder` ](https://developer.xamarin.com/api/type/Android.OS.Binder/)应进行扩展。 `Binder`类提供了许多必要的基础结构这是必要的封送到客户端从服务 （这可能会在单独的进程中运行） 联编程序对象。 在大多数情况下，`Binder`子类是只有少量的代码行，并将包装对服务的引用。 在此示例中，`TimestampBinder`具有一个属性，它公开`TimestampService`到客户端：
+如前所述, `IBinder`对象提供客户端和服务之间的信道。 Android 应用程序不应实现`IBinder`接口[`Android.OS.Binder`](xref:Android.OS.Binder) , 应扩展。 此`Binder`类提供了许多必要的基础结构, 需要将该服务中的联编程序对象 (可能在单独的进程中运行) 封送到客户端。 在大多数情况下, `Binder`子类只是几行代码, 并包装对服务的引用。 在此示例中`TimestampBinder` , 有一个向客户端`TimestampService`公开的属性:
 
 ```csharp
 public class TimestampBinder : Binder
@@ -142,19 +142,19 @@ public class TimestampBinder : Binder
 }
 ```
 
-这`Binder`就可以调用该服务; 上的公共方法为例：
+这样`Binder`就可以在服务上调用公共方法; 例如:
 
 ```csharp
 string currentTimestamp = serviceConnection.Binder.Service.GetFormattedTimestamp()
 ```
 
-一次`Binder`已被扩展，它是实现所需`IServiceConnection`将所有内容连接在一起。
+扩展`Binder`后, 必须实现`IServiceConnection`将所有内容连接在一起。
 
 ### <a name="creating-the-service-connection"></a>创建服务连接
 
-`IServiceConnection`将显示 | 引入 | 公开 | 连接`Binder`到客户端对象。 除了实现`IServiceConnection`接口，类必须扩展`Java.Lang.Object`。 服务连接还应提供客户端可以访问某些方式`Binder`（并因此与其绑定的服务）。
+将显示 | 引入 | 公开 | 将`Binder`对象连接到客户端。 `IServiceConnection` 除了实现`IServiceConnection`接口外, 类还必须扩展`Java.Lang.Object`。 服务连接还应提供客户端可以访问的`Binder`某种方式 (并因此与绑定的服务进行通信)。
 
-此代码摘自随附的示例项目是一种实现`IServiceConnection`:
+此代码来自随附的示例项目, 这是实现`IServiceConnection`的一种可行方法:
 
 ```csharp
 using Android.Util;
@@ -224,19 +224,19 @@ namespace BoundServiceDemo
 
 ```
 
-在绑定过程的一部分，将调用 Android`OnServiceConnected`方法，提供`name`要绑定的服务和`binder`，保存对服务本身的引用。 在此示例中，服务连接具有两个属性，如果客户端连接到服务，或不保存对此联编程序和为一个布尔型标志的引用的其中一个。
+作为绑定过程的一部分, Android 将调用`OnServiceConnected`方法, 并`name`提供要绑定的服务的和`binder`包含对服务本身的引用的。 在此示例中, 服务连接具有两个属性, 一个用于保存对联编程序的引用, 另一个用于在客户端连接到服务时为的布尔标志。
 
-`OnServiceDisconnected`客户端和服务之间的连接意外丢失或损坏时，才会调用方法。 此方法允许客户端有机会响应对的服务中断。  
+仅`OnServiceDisconnected`当客户端和服务之间的连接意外丢失或损坏时, 才会调用方法。 此方法允许客户端响应服务中断。  
 
-## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>启动并绑定到具有目的在于明确指示服务
+## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>使用显式意图启动并绑定到服务
 
-若要使用的绑定的服务，客户端 （例如活动） 必须实例化实现的对象`Android.Content.IServiceConnection`并调用`BindService`方法。 `BindService` 将返回`true`如果该服务所绑定到`false`如果不是。 `BindService` 方法采用三个参数：
+若要使用绑定服务, 客户端 (例如活动) 必须实例化实现`Android.Content.IServiceConnection`和`BindService`调用方法的对象。 `BindService`如果服务`true`绑定到, 则将返回, `false`如果不是, 则返回。 `BindService` 方法采用三个参数：
 
-* **`Intent`**  &ndash;意图应显式标识要连接到的服务。
-* **`IServiceConnection`对象**&ndash;此对象是提供回调方法以在绑定的服务启动和停止时通知客户端的中介。
-* **[`Android.Content.Bind`](https://developer.xamarin.com/api/type/Android.Content.Bind/) 枚举**&ndash;此参数是一组标志用于系统时，用于绑定对象。 最常使用的值是[ `Bind.AutoCreate` ](https://developer.xamarin.com/api/field/Android.Content.Bind.AutoCreate/)，这将自动启动服务，如果它尚未运行。
+* 目的应显式标识要连接到的服务。 **`Intent`** &ndash;
+* **对象`IServiceConnection`**  此对象是一个中介,它提供回调方法,以便在启动和停止绑定&ndash;服务时通知客户端。
+* 枚举此参数是在绑定对象时系统使用的一组标志。 **[`Android.Content.Bind`](xref:Android.Content.Bind)** &ndash; 最常使用的值为[`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate), 如果服务尚未运行, 则将自动启动该服务。
 
-以下代码片段示范了如何在使用目的在于明确指示活动中启动绑定的服务：
+下面的代码片段举例说明如何使用显式意图在活动中启动绑定服务:
 
 ```csharp
 protected override void OnStart ()
@@ -255,13 +255,13 @@ protected override void OnStart ()
 ```
 
 > [!IMPORTANT]
-> 启动 Android 5.0 （API 级别 21） 它才可以绑定到的目的在于明确指示服务。
+> 从 Android 5.0 (API 级别 21) 开始, 只能通过显式意图绑定到服务。
 
 ## <a name="architectural-notes-about-the-service-connection-and-the-binder"></a>有关服务连接和联编程序的体系结构说明。
 
-某些 OOP 纯粹主义者可能会否决的以前的实现`TimestampBinder`类，如不符合[Demeter 定律](https://en.wikipedia.org/wiki/Law_of_Demeter)其中，最简单窗体中指出"不与陌生人;仅与您的朋友"。 此特定的实现公开具体`TimestampService`给所有客户端类。
+某些 OOP 纯粹主义者可能会否决`TimestampBinder`类的上一个实现, 因为它违反[迪米特法则](https://en.wikipedia.org/wiki/Law_of_Demeter)这一 , 这是最简单的形式状态 "不与陌生人交谈;仅与朋友交谈。 此特定实现向所有客户`TimestampService`端公开具体的类。
 
-严格地说，不需要客户端了解的有关`TimestampService`和公开给客户端的具体类可能会导致应用程序更加脆弱且难以维护它的生存期内。 另一种方法是使用接口公开`GetFormattedTimestamp()`方法，并对通过该服务的代理调用`Binder`（或可能的服务连接类）：  
+严格地说, 客户端不必知道`TimestampService`具体类并向客户端公开该具体类, 就能使应用程序更脆弱, 并在其生存期内更难维护。 另一种方法是使用接口, 该接口公开`GetFormattedTimestamp()`方法, 并`Binder`通过 (或可能是服务连接类) 对服务进行代理调用:  
 
 ```csharp
 public class TimestampBinder : Binder, IGetTimestamp
@@ -279,7 +279,7 @@ public class TimestampBinder : Binder, IGetTimestamp
 }
 ```
 
-此特定示例允许用于在服务本身上调用方法的活动：
+此特定示例允许活动对服务本身调用方法:
 
 ```csharp
 // In this example the Activity is only talking to a friend, i.e. the IGetTimestamp interface provided by the Binder.
@@ -289,10 +289,10 @@ string currentTimestamp = serviceConnection.Binder.GetFormattedTimestamp()
 
 ## <a name="related-links"></a>相关链接
 
-- [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.Content.Bind](https://developer.xamarin.com/api/type/Android.Content.Bind/)
-- [Android.Content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)
-- [Android.Content.IServiceConnection](https://developer.xamarin.com/api/type/Android.Content.IServiceConnection/)
-- [Android.OS.Binder](https://developer.xamarin.com/api/type/Android.OS.Binder/)
-- [Android.OS.IBinder](https://developer.xamarin.com/api/type/Android.OS.IBinder)
-- [BoundServiceDemo （示例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/BoundServiceDemo/)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.Content.Bind](xref:Android.Content.Bind)
+- [Android.Content.Context](xref:Android.Content.Context)
+- [Android.Content.IServiceConnection](xref:Android.Content.IServiceConnection)
+- [Android.OS.Binder](xref:Android.OS.Binder)
+- [Android.OS.IBinder](xref:Android.OS.IBinder)
+- [BoundServiceDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-boundservicedemo)

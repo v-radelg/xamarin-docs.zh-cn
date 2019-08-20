@@ -1,34 +1,34 @@
 ---
 title: 演练 - 保存活动状态
-description: 我们已介绍其理论依据活动生命周期指南; 中保存状态现在，让我们看一下示例。
+description: 在活动生命周期指南中, 我们已介绍了保存状态的理论,现在, 让我们看一个示例。
 ms.prod: xamarin
 ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c8f92e55648dff469227cc3bad981ad5f6e6d0ac
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9fafc6965c5d2dec79f440579a5cf3746a545bae
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019111"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644399"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>演练 - 保存活动状态
 
-_我们已介绍其理论依据活动生命周期指南; 中保存状态现在，让我们看一下示例。_
+_在活动生命周期指南中, 我们已介绍了保存状态的理论,现在, 让我们看一个示例。_
 
 ## <a name="activity-state-walkthrough"></a>活动状态演练
 
-让我们打开**ActivityLifecycle_Start**项目 (在[ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)示例)，生成它，并运行它。 这是一个非常简单的项目具有两个活动以演示活动生命周期和各种生命周期方法的调用方式。 当启动应用程序的屏幕`MainActivity`显示： 
+让我们打开**ActivityLifecycle_Start**项目 (在[ActivityLifecycle](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle)示例中), 生成并运行它。 这是一个非常简单的项目, 其中包含两个活动来演示活动生命周期和如何调用各种生命周期方法。 当你启动应用程序时, `MainActivity`会显示的屏幕:
 
-[![一个活动屏幕](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
+[![活动 A 屏幕](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>查看状态转换
 
-在此示例中的每个方法将写入到 IDE 应用程序输出窗口以指示活动状态。 (若要在 Visual Studio 中打开输出窗口，键入**CTRL ALT O**; 若要将在 Visual Studio for Mac 中打开输出窗口中，单击**视图 > 板 > 应用程序输出**。)
+此示例中的每个方法都将写入 IDE 应用程序的输出窗口以指示活动状态。 (若要在 Visual Studio 中打开 "输出" 窗口, 请键入**CTRL-ALT-O**; 若要在 Visual Studio for Mac 中打开 "输出" 窗口, 请单击 "**查看 > 填充 > 应用程序输出**"。)
 
-当首次启动该应用程序时，输出窗口会显示的状态更改*活动 A*: 
+当应用程序首次启动时, "输出" 窗口将显示*活动 A*的状态更改: 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnCreate
@@ -36,7 +36,7 @@ _我们已介绍其理论依据活动生命周期指南; 中保存状态现在�
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-当我们单击**启动活动 B**按钮，我们看到*活动 A*暂停和停止时*活动 B*经历其状态更改： 
+单击 "**启动活动 b** " 按钮时, 会看到*活动 a*暂停并停止, 同时*活动 B*经历其状态更改: 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
@@ -46,11 +46,11 @@ _我们已介绍其理论依据活动生命周期指南; 中保存状态现在�
 [ActivityLifecycle.MainActivity] Activity A - OnStop
 ```
 
-因此，*活动 B*已启动并显示来代替*活动 A*: 
+因此,*活动 B*会启动并显示, 代替*活动 a*: 
 
 [![活动 B 屏幕](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
-当我们单击**回**按钮，*活动 B*销毁并*活动 A*恢复： 
+当我们单击 "**后退**" 按钮时,*活动 B*被销毁,*活动 A*恢复: 
 
 ```shell
 [ActivityLifecycle.SecondActivity] Activity B - OnPause
@@ -60,15 +60,15 @@ _我们已介绍其理论依据活动生命周期指南; 中保存状态现在�
 [ActivityLifecycle.SecondActivity] Activity B - OnStop
 [ActivityLifecycle.SecondActivity] Activity B - OnDestroy
 ```
-### <a name="adding-a-click-counter"></a>添加一个单击计数器
+### <a name="adding-a-click-counter"></a>添加 Click 计数器
 
-接下来，我们将更改应用程序，它使我们能够计算并显示单击次数的按钮。 首先，让我们添加`_counter`实例的变量`MainActivity`:
+接下来, 我们将更改应用程序, 以便我们有一个用于统计并显示其单击次数的按钮。 首先, 让我们将一个`_counter`实例变量添加`MainActivity`到:
 
 ```csharp
 int _counter = 0;
 ```
 
-接下来，让我们编辑**Resource/layout/Main.axml**布局文件，并添加一个新`clickButton`显示的用户单击按钮的次数。 得到**Main.axml**应如下所示： 
+接下来, 让我们编辑**Resource/layout/main.axml**布局文件, 并添加一个新`clickButton`的, 其中显示用户单击了该按钮的次数。 生成的**main.axml**应如下所示: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,7 +89,7 @@ int _counter = 0;
 </LinearLayout>
 ```
 
-让我们将以下代码添加到末尾[OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)中的方法`MainActivity`&ndash;此代码处理单击事件从`clickButton`:
+在`MainActivity` 此代码中, 将以下代码添加到 [OnCreate](xref:Android.App.Activity.OnCreate*) &ndash;`clickButton`方法的末尾:
 
 ```csharp
 var clickbutton = FindViewById<Button> (Resource.Id.clickButton);
@@ -103,15 +103,15 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 } ;
 ```
 
-当我们生成并再次运行该应用，一个新按钮显示的递增，并显示的值`_counter`上每次单击：
+当我们再次生成并运行应用程序时, 将显示一个新按钮, 该按钮将`_counter`在每次单击时递增并显示的值:
 
-[![添加触摸计数](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
+[![添加触控计数](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
-但当我们旋转为横向模式的设备，此计数将丢失：
+但当我们将设备旋转到横向模式时, 此计数会丢失:
 
-[![旋转为横向将计数设置为零](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
+[![旋转到横向会将计数重新设置为零](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
-检查应用程序输出，我们看到*活动 A*已暂停、 停止、 销毁、 重新创建、 重新启动，然后恢复期间从纵向到横向模式下的旋转： 
+检查应用程序输出, 我们看到*活动 A*暂停、停止、销毁、重新创建、重新启动, 然后在从纵向模式旋转到横向模式时恢复: 
 
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
@@ -123,11 +123,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 [ActivityLifecycle.MainActivity] Activity A - OnResume
 ```
 
-因为*活动 A*即被损坏和将设备旋转时，再次重新创建其实例状态将丢失。 接下来，我们将添加代码以保存并还原实例状态。
+由于在旋转设备时*活动 A*会销毁并再次重新创建, 因此其实例状态将丢失。 接下来, 我们将添加代码来保存和还原实例状态。
 
-### <a name="adding-code-to-preserve-instance-state"></a>将代码添加到保留实例状态
+### <a name="adding-code-to-preserve-instance-state"></a>添加代码以保留实例状态
 
-让我们将方法添加到`MainActivity`保存实例状态。 之前*活动 A*是销毁，Android 会自动调用[OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) ，并在将传递[捆绑](https://developer.xamarin.com/api/type/Android.OS.Bundle/)，我们可以使用它来存储我们实例状态。 让我们使用它来将我们单击计数另存为一个整数值：
+让我们添加一个方法来`MainActivity`保存实例状态。 销毁*活动 A*之前, Android 会自动调用[OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*) , 并传入可用于存储实例状态的[捆绑包](xref:Android.OS.Bundle)。 让我们使用它将我们的单击计数保存为整数值:
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -140,7 +140,7 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-当*活动 A*重新创建和恢复后，Android 将此传递`Bundle`返回到我们`OnCreate`方法。 让我们将代码添加到`OnCreate`还原`_counter`从传入的值`Bundle`。 添加以下代码行之前只是其中`clickbutton`定义： 
+重新创建并恢复*活动 A*时, Android 会将`Bundle`其传递回`OnCreate`方法。 将代码添加到`OnCreate`以`Bundle`从传入的`_counter`还原值。 紧靠定义的行`clickbutton`之前添加以下代码: 
 
 ```csharp
 if (bundle != null)
@@ -150,13 +150,12 @@ if (bundle != null)
 }
 ```
 
-生成和应用程序再次运行，然后单击第二个按钮几次。 当我们旋转为横向模式的设备时，将被保留计数 ！
+再次生成并运行应用程序, 然后单击第二个按钮几次。 当我们将设备旋转到横向模式时, 将保留计数!
 
 [![旋转屏幕显示四个保留的计数](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
+让我们看看 "输出" 窗口以了解发生了什么情况:
 
-让我们看看输出窗口以查看发生了什么情况：
-    
 ```shell
 [ActivityLifecycle.MainActivity] Activity A - OnPause
 [ActivityLifecycle.MainActivity] Activity A - Saving instance state
@@ -167,19 +166,16 @@ if (bundle != null)
 [ActivityLifecycle.MainActivity] Activity A - Recovered instance state
 [ActivityLifecycle.MainActivity] Activity A - OnStart
 [ActivityLifecycle.MainActivity] Activity A - OnResume
-``` 
+```
 
-之前[OnStop](https://developer.xamarin.com/api/member/Android.App.Activity.OnStop/)调用方法，我们的新`OnSaveInstanceState`调用方法以保存`_counter`中的值`Bundle`。 Android 传递这`Bundle`告诉我们调用时我们`OnCreate`方法，并且我们能够用它来还原`_counter`到从我们离开的位置的值。
-
+在调用[OnStop](xref:Android.App.Activity.OnStop)方法之前, `OnSaveInstanceState` `_counter`调用新方法以将值保存在中`Bundle`。 在调用我们`Bundle` `OnCreate` 的`_counter`方法时, Android 会将此传回给我们, 我们可以使用它将值还原到我们离开的位置。
 
 ## <a name="summary"></a>总结
 
-在本演练中，我们使用了我们的活动生命周期的知识来保留状态数据。 
-
-
+在此演练中, 我们已使用活动生命周期的知识来保留状态数据。
 
 ## <a name="related-links"></a>相关链接
 
-- [ActivityLifecycle （示例）](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle)
+- [ActivityLifecycle (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/activitylifecycle)
 - [活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [Android 活动](https://developer.xamarin.com/api/type/Android.App.Activity/)
+- [Android 活动](xref:Android.App.Activity)

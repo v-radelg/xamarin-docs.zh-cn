@@ -6,174 +6,174 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 09466cc9eed4899ef0aa1198ff0aee5cd420e110
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
-ms.translationtype: MT
+ms.openlocfilehash: 3b89f63d42b01140d73cd1551c75211d2fea8e27
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674638"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510715"
 ---
 # <a name="garbage-collection"></a>垃圾回收
 
-Xamarin.Android 使用 Mono[简单分代垃圾回收器](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 这是使用这两代标记和清除垃圾回收器和一个*大型对象空间*，两种类型的集合： 
+Xamarin 使用 Mono 的[简单代垃圾回收器](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)。 这是一个带有两个代和*大型对象空间*的标记和扫描垃圾回收器, 具有两种类型的集合: 
 
--   次要集合 （收集 Gen0 堆） 
--   （收集 Gen1 和大型对象空间堆） 的主要集合。 
+-   次要集合 (收集 Gen0 堆) 
+-   主要集合 (收集 Gen1 和大型对象空间堆)。 
 
 > [!NOTE]
-> 通过显式集合没有[GC。Collect （)](xref:System.GC.Collect)的集合是否*按需*、 基于堆分配。 *这不是引用计数系统*; 对象*只要有任何未完成的引用将不会收集*，或当作用域已退出。 GC 将运行时运行次要堆的新分配的内存不足。 如果不存在分配，将不运行。
+> 如果没有通过 GC 进行显式收集[。](xref:System.GC.Collect)根据堆分配,*按需*收集 () 集合。 *这不是引用计数系统*;如果没有未完成的引用或某个范围已退出,*则不会立即收集*对象。 当次堆内存不足以用于新分配时, GC 将运行。 如果没有分配, 则不会运行。
 
 
-次要集合是低成本且频繁，并且用于收集最近已分配和死对象。 之后每隔几 MB 的已分配的对象执行了次要的集合。 可以通过调用来手动执行次要集合[GC。收集 (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
+次要集合开销较低, 并且用于收集最近分配和死的对象。 次要集合在每隔几 MB 的分配对象之后执行。 次要集合可能是通过调用 GC 手动执行的[。Collect (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-主要集合是成本高昂且频率较低，并且用于回收所有死对象。 内存已用尽当前的堆大小 （调整大小之前堆） 后，会执行主要集合。 主要集合可能会通过调用来手动执行[GC。收集 （）](xref:System.GC.Collect)或通过调用[GC。收集 (int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_)使用参数[GC。MaxGeneration](xref:System.GC.MaxGeneration)。 
+主要集合开销较低, 并且用于回收所有死对象。 为当前堆大小 (调整堆大小之前) 耗尽内存后, 将执行主要集合。 主要集合可以通过调用 GC 手动执行[。收集 ()](xref:System.GC.Collect)或通过调用[GC。用参数 GC 收集 (int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) [。MaxGeneration](xref:System.GC.MaxGeneration)。 
 
 
 
 ## <a name="cross-vm-object-collections"></a>跨 VM 对象集合
 
-有三个类别的对象类型。
+有三种类别的对象类型。
 
--   **托管对象**： 执行此操作的类型*不*继承自[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) ，例如[System.String](xref:System.String)。 
-    这些是正常情况下收集的 GC。 
+-   **托管对象**:*不*从[.java](xref:Java.Lang.Object)派生的类型, 例如[system.object](xref:System.String)。 
+    它们通常由 GC 收集。 
 
--   **Java 对象**:这在 Android 运行时的 VM，但不是会公开到 Mono VM 的 Java 类型。 这些是令人乏味，并且不会进一步讨论。 这些是正常情况下收集的 Android 运行时的 VM。 
+-   **Java 对象**:位于 Android 运行时 VM 内但不会向 Mono VM 公开的 Java 类型。 这些都是镗孔的, 不会进一步讨论。 它们通常由 Android 运行时 VM 收集。 
 
--   **对等对象**： 类型实现[IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) ，例如所有[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)并[Java.Lang.Throwable](https://developer.xamarin.com/api/type/Java.Lang.Throwable/)子类。 这些类型的实例具有两个"halfs"*托管对等方*和一个*纯对等方*。 托管的对等方是实例的C#类。 本机的对等是 VM，在 Android 运行时中的 Java 类的实例和C# [IJavaObject.Handle](https://developer.xamarin.com/api/property/Android.Runtime.IJavaObject.Handle/)属性包含对本机的对等的 JNI 全局引用。 
-
-
-有两种类型的本机的对等方：
-
--   **框架对等方**:知道 nothing Xamarin.Android，例如"normal"Java 类型[android.content.Context](https://developer.xamarin.com/api/type/Android.Content.Context/)。
-
--   **用户对等方**:[Android 可调用包装器](~/android/platform/java-integration/working-with-jni.md)生成在生成时针对每个应用程序中存在的 Java.Lang.Object 子类。
+-   **对等对象**: 实现[IJavaObject](xref:Android.Runtime.IJavaObject)的类型 ([如所有](xref:Java.Lang.Object) [java.lang.throwable](xref:Java.Lang.Throwable)子类)。 这些类型的实例具有两个 "halfs"*托管对等*方和*本机对等节点*。 托管对等是C#类的实例。 本机对等是 Android 运行时 VM 内 Java 类的实例, C# [IJavaObject](xref:Android.Runtime.IJavaObject.Handle)属性包含对本机对等方的 JNI 全局引用。 
 
 
-因为有两个 Vm Xamarin.Android 进程内的，有两种类型的垃圾回收：
+本机对等机有两种类型:
+
+-   **框架对等**:不知道 Xamarin 的任何内容的 "常规" Java 类型, 例如 " [android](xref:Android.Content.Context)"。
+
+-   **用户对等**:为应用程序中出现的每个 .Java 子类生成时生成的[Android 可调用包装](~/android/platform/java-integration/working-with-jni.md)。
+
+
+Xamarin Android 进程中有两个虚拟机, 有两种类型的垃圾回收:
 
 -   Android 运行时集合 
 -   Mono 集合 
 
-Android 运行时集合的运行正常，但需要特别注意： 的 JNI 全局引用视为 GC 根。 如果 JNI 全局因此，引用虚拟机对象，该对象保存到 Android 运行时*不能*收集一次，即使不符合回收的条件。
+Android 运行时集合正常运行, 但有一个注意事项: JNI 全局引用被视为 GC 根。 因此, 如果有一个 JNI 的全局引用持有 Android 运行时 VM 对象, 则*无法*收集该对象, 即使该对象有资格进行收集也是如此。
 
-Mono 集合是有趣的发生位置。 通常情况下收集托管的对象。 对等对象将收集通过执行以下过程：
+Mono 集合就是有趣之处。 通常收集托管的对象。 通过执行以下过程收集对等对象:
 
-1.  Mono 集合的符合条件的所有对等对象具有使用 JNI 弱全局引用替换其 JNI 全局引用。 
+1.  符合 Mono 收集条件的所有对等对象的 JNI 全局引用均替换为 JNI 弱全局引用。 
 
-2.  Android 运行时 VM GC 将调用。 可能会收集任何本机的对等实例。 
+2.  调用 Android 运行时 VM GC。 可以收集任何本机对等实例。 
 
-3.  检查在 (1) 中创建的 JNI 弱全局引用。 如果已收集的弱引用，则收集对等对象。 如果具有弱引用*不*已收集，然后弱引用替换为的 JNI 全局引用，并且不收集的对等对象。 注意： 在 API 14 +，这意味着，从返回的值`IJavaObject.Handle`垃圾回收后仍可能会更改。 
+3.  检查在 (1) 中创建的 JNI 弱全局引用。 如果已收集弱引用, 则将收集对等对象。 如果*尚未*收集弱引用, 则弱引用将替换为 JNI 全局引用, 并且不会收集对等对象。 注意: 在 API 14 + 上, 这意味着从`IJavaObject.Handle`返回的值可能会在 GC 后发生更改。 
 
-最终结果，所有这是对等对象的实例将 live，只要它通过以下任一方式引用的托管代码 (例如存储在中`static`变量) 或所引用的 Java 代码。 此外，将超出否则它们将扩展本机的对等方的生存期 live，如之前的本机的对等方和托管对等都是可回收不可回收的本机的对等方。
+所有这一切的最终结果是, 对等对象的实例将在其被托管代码引用 (例如, 存储在`static`变量中) 或由 Java 代码引用的情况下进行。 此外, 本机对等方的生存期将会超出它们的实际生存期, 因为在本机对等节点和托管对等节点都可回收之前, 不会对其进行可回收。
 
 
-## <a name="object-cycles"></a>对象周期
+## <a name="object-cycles"></a>对象循环
 
-在 Android 运行时和 Mono VM 内以逻辑方式存在对等对象。 例如， [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/)托管的对等实例将具有相应[android.app.Activity](https://developer.android.com/reference/android/app/Activity.html) framework 对等 Java 实例。 继承的所有对象[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)需要具有两个 Vm 中的表示形式。 
+对等对象在公共上出现在 Android 运行时和 Mono VM 的中。 例如, 一个[android. 活动](xref:Android.App.Activity)托管的对等实例将具有相应的 " [android](https://developer.android.com/reference/android/app/Activity.html) "。 从[.java](xref:Java.Lang.Object)继承的所有对象都可以在这两个 vm 中具有表示形式。 
 
-具有两个 Vm 中表示形式的所有对象都具有与仅在单个 VM 中存在的对象相比进行了扩展的生存期 (如[ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601))。 调用[GC。收集](xref:System.GC.Collect)一定不会收集这些对象，因为 Xamarin.Android GC 需要确保收集它之前不引用由任一 VM 的对象。 
+在两个 Vm 中具有表示形式的所有对象都具有与仅在单个 VM (例如[`System.Collections.Generic.List<int>`](xref:System.Collections.Generic.List%601)) 中存在的对象相比的生存期。 调用[GC。收集](xref:System.GC.Collect)并不需要收集这些对象, 因为在收集对象之前, Xamarin 需要确保两个 VM 未引用该对象。 
 
-若要缩短对象生存期[Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/)应调用。 这将会手动"断开"两个 Vm，因为全局引用，从而允许以更快地进行收集的对象之间的对象上的连接。 
+若要缩短对象生存期, 应调用[.java ()](xref:Java.Lang.Object.Dispose) 。 这将通过释放全局引用来在两个 Vm 之间手动 "服务器" 连接, 从而使对象更快收集。 
 
 
 ## <a name="automatic-collections"></a>自动集合
 
-开头[版本 4.1.0](https://developer.xamarin.com/releases/android/mono_for_android_4/mono_for_android_4.1.0)，Xamarin.Android 会自动执行完整 GC gref 阈值时。 此阈值为 90%的已知的最大 grefs 平台：在仿真程序 (2000 最大) 上的 1800 grefs 和 46800 grefs 硬件 (最大 52000) 上。 *注意：* Xamarin.Android 仅计数通过创建 grefs [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)，并且将无法知道有关此过程中创建的任何其他 grefs。 这是启发式方法*仅*。 
+从[Release 4.1.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/mono_for_android_4/mono_for_android_4.1.0/index.md)开始, 当超过 gref 阈值时, Xamarin 会自动执行完全 GC。 此阈值为该平台的已知最大 grefs 的 90%:1800 grefs (2000 max) 和 46800 grefs on 硬件 (最大 52000)。 *注意：* Xamarin 只计算[JNIEnv](xref:Android.Runtime.JNIEnv)创建的 grefs, 并不知道在该过程中创建的任何其他 grefs。 这*只*是一种试探法。 
 
-执行自动收集时，类似于以下的消息将被打印到调试日志：
+当执行自动收集时, 会将类似于以下内容的消息输出到调试日志:
 
 ```shell
 I/monodroid-gc(PID): 46800 outstanding GREFs. Performing a full GC!
 ```
 
-此匹配项是不确定的和不适当的时候 （例如中间图形呈现），可能会发生。 如果你看到此消息，可能想要执行的显式集合在其他位置，或者你可能想要尝试[减少对等对象的生存期](#Helping_the_GC)。 
+出现这种情况是不确定的, 并且可能会在不合时宜 (例如, 在图形呈现的中间) 发生。 如果看到此消息, 则可能需要在其他位置执行显式集合, 或者可能想要[减少对等对象的生存期](#Helping_the_GC)。 
 
-## <a name="gc-bridge-options"></a>GC 桥选项
+## <a name="gc-bridge-options"></a>GC Bridge 选项
 
-Xamarin.Android 提供了使用 Android 和 Android 运行时进行透明的内存管理。 实现作为 Mono 的垃圾回收器调用的扩展*GC 桥*。 
+Xamarin 通过 Android 和 Android 运行时提供透明的内存管理。 它实现为对 Mono 垃圾回收器 (称为*GC Bridge*) 的扩展。 
 
-GC Bridge 的工作原理在 Mono 垃圾回收和图出哪些对等对象需要使用 Android 运行时堆验证其"实时性"过程。 GC 桥做出该决定，通过执行以下步骤 （按顺序）：
+GC 桥在 Mono 垃圾回收过程中起作用, 并确定哪些对等对象需要使用 Android 运行时堆来验证其 "活动"。 GC Bridge 通过执行以下步骤来做出此决定 (按顺序):
 
-1.  引入到它们所代表的 Java 对象无法访问对等对象的 mono 引用关系图。 
+1.  将不可访问的对等对象的 mono 引用图引入它们所表示的 Java 对象。 
 
 2.  执行 Java GC。
 
-3.  验证为真正死对象的对象。 
+3.  验证哪些对象确实处于死锁。 
 
-此复杂的过程是一种使类的子类`Java.Lang.Object`自由地引用任何对象; 它会删除任何限制的 Java 对象可以绑定到C#。 由于这种复杂性，桥过程可能会耗费大量资源，它可能会导致明显的暂停应用程序中。 如果应用程序很重要的暂停，值得调查以下三个 GC 桥实现之一： 
+这种复杂的过程使的`Java.Lang.Object`子类可以自由引用任何对象; 它删除了可以绑定到C#的 Java 对象的任何限制。 由于这种复杂性, 桥过程可能非常昂贵, 并且可能会导致应用程序中出现明显的暂停。 如果应用程序遇到重大暂停, 则有必要调查以下三个 GC Bridge 实现之一: 
 
--   **Tarjan** -GC 桥的全新设计基于[Robert Tarjan 算法和向后引用传播](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)。
-    它有下我们模拟工作负荷的最佳性能，但它还具有更大的实验性代码共享。 
+-   **Tarjan** -基于[Robert Tarjan 算法和向后引用传播](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)的 GC Bridge 的全新设计。
+    它在我们的模拟工作负载下具有最佳性能, 但它也具有更大的实验性代码份额。 
 
--   **新**-重大革新的原始代码修复的二次行为的两个实例，但保留核心算法 (基于[Kosaraju 的算法](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)强查找连接组件)。 
+-   **新增**-对原始代码的主要修正, 修复二次行为的两个实例, 但保留核心算法 (基于[Kosaraju 的算法](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)来寻找强连接的组件)。 
 
--   **旧**的原始实现 （被视为最稳定的三个）。 这是应用程序应使用如果桥`GC_BRIDGE`暂停是可接受。 
-
-
-最好地找出哪些 GC Bridge 的工作原理的唯一方法是通过应用程序中进行试验并分析输出。 有两种方法收集的数据进行基准测试： 
-
--   **启用日志记录**-启用日志记录 (中所述[配置](~/android/internals/garbage-collection.md)部分) 对于每个 GC 桥选项，然后捕获并比较每个设置的日志输出。 检查`GC`消息的每个选项; 具体而言，`GC_BRIDGE`消息。 暂停最多 150ms年为非交互式应用程序可承受，但上面非常交互式应用程序 （如游戏） 60 毫秒暂停问题。 
-
--   **启用桥记帐**-桥记帐将显示指向桥过程中涉及的每个对象的对象的平均成本。 按大小排序此信息将提供什么具有多余的对象的最大容量提示。 
+-   **旧**-原始实现 (被视为最稳定的三个)。 如果`GC_BRIDGE`暂停是可接受的, 则这是应用程序应使用的桥。 
 
 
-若要指定将哪个`GC_BRIDGE`应使用应用程序选项，则传递`bridge-implementation=old`，`bridge-implementation=new`或`bridge-implementation=tarjan`到`MONO_GC_PARAMS`环境变量，例如： 
+确定哪一个 GC 桥的唯一方法是通过试验应用程序并分析输出。 可以通过两种方法来收集用于基准测试的数据: 
+
+-   为每个 GC Bridge 选项**启用日志**记录-启用日志记录 (如 "[配置](~/android/internals/garbage-collection.md)" 部分中的说明), 然后捕获并比较每个设置的日志输出。 检查每个选项的`GC_BRIDGE` 消息,尤其是消息。`GC` 不能为非交互式应用程序暂停最多 150ms, 但对于非常交互式的应用程序 (如游戏), 会暂停上述60毫秒。 
+
+-   **启用桥记帐**-桥核算将显示桥接过程中涉及的每个对象所指向的对象的平均成本。 如果按大小对此信息进行排序, 则会提供有关保留最大数量的额外对象的提示。 
+
+
+若要指定`GC_BRIDGE`应用程序应使用的选项, `bridge-implementation=old`请`bridge-implementation=new`将`bridge-implementation=tarjan`或传递`MONO_GC_PARAMS`到环境变量, 例如: 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-默认设置是**Tarjan**。 如果找到一个回归，您可能会发现有必要将此选项设置为**旧**。 此外，您可以选择使用更稳定**旧**选项时如果**Tarjan**不会生成中的性能改进。 
+默认设置为**Tarjan**。 如果发现回归, 可能会发现需要将此选项设置为 "**旧**"。 此外, 如果**Tarjan**不能提高性能, 则可以选择使用更稳定的**旧**选项。 
 
 <a name="Helping_the_GC" />
 
 ## <a name="helping-the-gc"></a>帮助 GC
 
-有多种方法来帮助 GC 以减少内存使用和收集时间。
+有多种方法可帮助 GC 减少内存使用和收集时间。
 
 
 
-### <a name="disposing-of-peer-instances"></a>对等方实例的释放
+### <a name="disposing-of-peer-instances"></a>释放对等实例
 
-GC 具有不完整的视图的过程和可能不会运行时内存较少的因为 GC 不知道该内存不足。 
+GC 有一个不完整的进程视图, 当内存不足时可能不会运行, 因为 GC 不知道内存不足。 
 
-例如，实例[Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/)类型或派生的类型有至少 20 个字节的大小 (变动，恕不另行通知，等等，等等。)。 
-[托管可调用包装器](~/android/internals/architecture.md)不要将添加其他实例成员，因此后[Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/)实例引用的 10MB blob 的内存，Xamarin.Android 的 gc 便不会知道&ndash;GC将看到的 20 字节对象，将不能以确定其与 Android 使 10 MB 的内存保持活动状态的运行时分配的对象。 
+例如, [.java](xref:Java.Lang.Object)类型或派生类型的实例的大小至少为20个字节 (如有更改, 恕不另行通知, 等等)。 
+[托管的可调用包装](~/android/internals/architecture.md)器不会添加其他实例成员, 因此, 当你具有引用内存的 10mb blob 的[android. Bitmap](xref:Android.Graphics.Bitmap)实例时, Xamarin 的 gc &ndash;不知道 GC 将会看到20个字节的对象,将无法确定它是否链接到了 Android 运行时分配的、保持10MB 的内存的对象。 
 
-很频繁地需要帮助 GC。 遗憾的是， *GC。AddMemoryPressure()* 和*GC。RemoveMemoryPressure()* 不受支持，因此，如果您*知道*您只需释放大型 Java 分配对象关系图可能需要手动调用[GC。Collect （)](xref:System.GC.Collect)提示符 GC 释放 Java 端到内存，也可以显式释放*Java.Lang.Object*子类，重大托管的可调用包装器和 Java 实例之间的映射。 有关示例，请参阅[Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
+经常需要帮助 GC。 遗憾的是, *GC。AddMemoryPressure ()* 和*GC。不支持 RemoveMemoryPressure ()* , 因此如果你*知道*刚刚释放了一个大型 Java 分配的对象图, 则可能需要手动调用[GC。收集 ()](xref:System.GC.Collect)以提示 GC 释放 Java 端内存, 或者可以显式释放 *.java*子类, 从而中断托管可调用包装器和 Java 实例之间的映射。 例如, 请参阅[Bug 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
 
 
 > [!NOTE]
-> 您必须是*极*释放时请小心`Java.Lang.Object`子类实例。
+> 处理`Java.Lang.Object`子类实例时, 必须*格外小心。*
 
-为了尽量减少内存损坏的可能性，应遵守以下原则调用时`Dispose()`。
+若要最大程度地减少内存损坏的可能性, 请在`Dispose()`调用时遵循以下准则。
 
 
-#### <a name="sharing-between-multiple-threads"></a>多个线程间共享
+#### <a name="sharing-between-multiple-threads"></a>在多个线程之间共享
 
-如果*Java 或托管*实例可能会共享多个线程间*不应`Dispose()`d*，**曾经**。 例如， [`Typeface.Create()`](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/(System.String%2cAndroid.Graphics.TypefaceStyle)) 
-可能会返回*缓存的实例*。 如果多个线程提供相同的参数，他们将获得*同一*实例。 因此，`Dispose()`运算结果`Typeface`实例从一个线程可能会使其他线程，这可能会导致`ArgumentException`s 从`JNIEnv.CallVoidMethod()`（及其他） 因为实例已从另一个线程释放。 
+如果可以在多个线程之间共享*Java 或托管*实例,*则该实例不`Dispose()`应为 d* **。** 例如,[`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
+可能返回*缓存的实例*。 如果多个线程提供相同的参数, 则它们将获得*相同*的实例。 因此, `Dispose()`一个线程中`Typeface`实例的 ing 可能会使其他线程失效, 因为该实例`ArgumentException`是从`JNIEnv.CallVoidMethod()`另一个线程释放的, 所以这可能会导致来自 (在其他线程中)。 
 
 
 #### <a name="disposing-bound-java-types"></a>释放绑定的 Java 类型
 
-如果绑定的 Java 类型的实例，实例可释放的*只要*实例不能重复使用从托管代码*和*Java 实例不能在线程 （请参阅以前之间共享`Typeface.Create()`讨论)。 （在进行此决定可能比较困难。）下一次 Java 实例进入托管代码中，*新*将为其创建包装器。 
+如果该实例为绑定 Java 类型, 则*只要*实例不会从托管代码中重复使用,*并且*不能在线程间共享 Java 实例 (请参阅上一`Typeface.Create()`讨论), 就可以释放该实例。 (做出此决定可能会很困难。)下次 Java 实例进入托管代码时, 将为其创建*新*的包装器。 
 
-谈到绘图和其他大量资源的实例，这是十分有用：
+当涉及到绘图和其他资源繁重的实例时, 这通常很有用:
 
 ```csharp
 using (var d = Drawable.CreateFromPath ("path/to/filename"))
     imageView.SetImageDrawable (d);
 ```
 
-以上是安全因为对等方的[Drawable.CreateFromPath()](https://developer.xamarin.com/api/member/Android.Graphics.Drawables.Drawable.CreateFromPath/) Framework 对等方，将引用返回*不*用户对等。 `Dispose()`调用的末尾`using`块将中断之间的托管关系[Drawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.Drawable/)和 framework [Drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)实例，从而使 Java 实例收集只要 Android 运行时需要。 这一点*不*为安全起见，如果用户对等引用对等实例; 此处我们使用"external"信息*知道*的`Drawable`用户对等方，不能引用，因此`Dispose()`调用是安全的。 
+上述是安全的, 因为[CreateFromPath ()](xref:Android.Graphics.Drawables.Drawable.CreateFromPath*)返回的对等将引用框架对等方,*而不*是用户对等方。 `using` 块末尾的 `Dispose()` 调用将中断托管的[可绘制](xref:Android.Graphics.Drawables.Drawable)和框架[可绘制](https://developer.android.com/reference/android/graphics/drawable/Drawable.html)实例之间的关系, 从而允许在 Android 运行时需要时立即收集 Java 实例。 如果对等实例引用用户对等方实例, 这将*不*安全;这里 `Drawable` ,我们使用"外部"信息来了解,无法引用用户对等方,因此调用是安全`Dispose()`的。 
 
 
 #### <a name="disposing-other-types"></a>释放其他类型 
 
-如果该实例所引用的不是 Java 类型的绑定的类型 (如自定义`Activity`)，**不要**调用`Dispose()`除非您*知道*没有 Java 代码将对的调用重写的方法实例。 如果不这样做会导致[ `NotSupportedException`s](~/android/internals/architecture.md#Premature_Dispose_Calls)。 
+如果该实例引用的类型不是 Java 类型 (如自`Activity`定义) 的绑定, 则**不要**调用`Dispose()` , 除非您*知道*没有 java 代码对该实例调用重写的方法。 否则, 会导致[ `NotSupportedException`失败。](~/android/internals/architecture.md#Premature_Dispose_Calls) 
 
-例如，如果您有一个自定义单击侦听器：
+例如, 如果你有一个自定义单击侦听器:
 
 ```csharp
 partial class MyClickListener : Java.Lang.Object, View.IOnClickListener {
@@ -181,7 +181,7 @@ partial class MyClickListener : Java.Lang.Object, View.IOnClickListener {
 }
 ```
 
-您*不应*释放此实例中，如 Java 将尝试在将来调用它的方法：
+*不应*释放此实例, 因为 Java 会在将来尝试调用它的方法:
 
 ```csharp
 // BAD CODE; DO NOT USE
@@ -191,9 +191,9 @@ using (var listener = new MyClickListener ())
 ```
 
 
-#### <a name="using-explicit-checks-to-avoid-exceptions"></a>使用显式检查，以避免异常
+#### <a name="using-explicit-checks-to-avoid-exceptions"></a>使用显式检查来避免异常
 
-如果已实现[Java.Lang.Object.Dispose](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose(System.Boolean)/)重载方法，应避免触及涉及 JNI 的对象。 执行此操作可能会创建*双 dispose*就可以将代码移植到 （严重） 的情况下尝试访问已被垃圾回收的基础 Java 对象。 执行此操作将生成类似于以下异常： 
+如果已实现了 JNI[重载方法](xref:Java.Lang.Object.Dispose*), 请避免触及涉及到的对象。 这样做可能会产生*双重释放*的情况, 使您的代码 (严重) 尝试访问已经过垃圾回收的基础 Java 对象。 这样做会产生类似于下面的异常: 
 
 ```shell
 System.ArgumentException: 'jobject' must not be IntPtr.Zero.
@@ -201,9 +201,9 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-这种情况通常第一个对象的 dispose 将导致成员，才能成为为 null，且然后此 null 成员上的后续访问尝试会导致引发异常时发生。 具体而言，该对象的`Handle`（该链接的托管的实例到其基础 Java 实例） 会在第一个 dispose 上失效，但仍将托管的代码尝试访问此基础 Java 实例，即使它不再可用 （请参阅[托管可调用包装器](~/android/internals/architecture.md#Managed_Callable_Wrappers)Java 实例和托管的实例之间的映射的详细信息)。 
+这种情况通常在第一次释放对象导致成员变为 null 时出现, 然后在此 null 成员上进行后续访问尝试会导致引发异常。 具体而言, 对象的`Handle` (它将托管实例链接到其基础 java 实例) 在第一个 dispose 上失效, 但托管代码仍尝试访问此基础 Java 实例, 即使该实例不再可用 (请参阅[托管的可调用包装](~/android/internals/architecture.md#Managed_Callable_Wrappers)器, 详细了解 Java 实例与托管实例之间的映射。 
 
-若要避免此异常的好方法是显式验证在你`Dispose`托管的实例与基础 Java 实例之间的映射是否仍然有效; 这就是方法，检查以查看是否对象的`Handle`为 null (`IntPtr.Zero`)然后才能访问其成员。 例如，以下`Dispose`方法访问`childViews`对象： 
+避免此异常的一个好方法是在`Dispose`方法中显式验证托管实例和基础 Java 实例之间的映射是否仍然有效; 即, 查看对象的`Handle`是否为 null (`IntPtr.Zero`)在访问其成员之前。 例如, 下面`Dispose`的方法`childViews`访问对象: 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -219,7 +219,7 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-如果初始 dispose 通过的原因`childViews`具有无效`Handle`，则`for`循环访问将引发`ArgumentException`。 通过添加显式`Handle`为 null 之前先检查`childViews`访问以下`Dispose`方法可以防止异常抛出： 
+如果初始 dispose 传递`childViews`导致无效`Handle`, 则`for`循环访问将引发`ArgumentException`。 通过在第一`Handle`次`childViews`访问前添加显式 null 检查, 以下`Dispose`方法可防止发生此异常: 
 
 ```csharp
 class MyClass : Java.Lang.Object, ISomeInterface 
@@ -241,11 +241,11 @@ class MyClass : Java.Lang.Object, ISomeInterface
 ```
 
 
-### <a name="reduce-referenced-instances"></a>减少被引用的实例
+### <a name="reduce-referenced-instances"></a>减少引用的实例
 
-每当的实例`Java.Lang.Object`类型或子类 GC，整个过程中扫描*对象图*必须还扫描实例表示。 在对象图是"根实例"引用的对象实例的组*加上*所有内容根实例引用的引用，以递归方式。 
+每当在 GC 期间扫描`Java.Lang.Object`某一类型或子类的实例时, 该实例所引用的整个*对象图*也必须进行扫描。 对象图是 "根实例" 引用的对象实例的集合,*以及*由根实例引用的内容所引用的所有内容。 
 
-请考虑以下类：
+请考虑以下类:
 
 ```csharp
 class BadActivity : Activity {
@@ -263,11 +263,11 @@ class BadActivity : Activity {
 }
 ```
 
-时`BadActivity`是构造的在对象图将包含 10004 实例 (1 x `BadActivity`，1 x `strings`，1 x`string[]`持有`strings`，10000 x 字符串实例)，*所有*的将需要将每当扫描`BadActivity`扫描实例。 
+构造`BadActivity`后, 对象图将包含10004实例 (1x `BadActivity`、1x `strings`、1x `string[]`持有的`strings`10000x 字符串实例), 每次 都需要扫描`BadActivity`将扫描实例。 
 
-这可能会产生不利影响上你收集的时间，从而提高了 GC 暂停时间。 
+这可能会对收集时间造成不利影响, 导致 GC 暂停时间增加。 
 
-可帮助通过 GC*减少*这由用户对等实例取得 root 权限的对象图的大小。 在上述示例中，这可以通过移动`BadActivity.strings`到单独的类，其中不从 Java.Lang.Object 继承： 
+可以通过*减少*对象图的大小, 该对象图以用户对等实例为根来帮助 GC。 在上面的示例中, 可以通过移`BadActivity.strings`到不从 .java 继承的单独类来完成此操作: 
 
 ```csharp
 class HiddenReference<T> {
@@ -315,54 +315,54 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>次要集合
 
-可以通过调用来手动执行次要集合[GC。Collect(0)](xref:System.GC.Collect)。 次要集合是低 （相比于主要的集合），但执行具有显著固定成本，因此你不想要触发它们过于频繁，应具有的暂停时间为几毫秒。 
+次要集合可能是通过调用 GC 手动执行的[。Collect (0)](xref:System.GC.Collect)。 次要集合的开销较低 (与主要集合相比), 但却有很大的固定开销, 因此您不会过于频繁地触发这些集合, 而且会有几毫秒的暂停时间。 
 
-如果你的应用程序已在其中反复完成相同的操作的"任务周期"，可能会建议你手动任务周期结束后执行一次。 示例工作周期包括： 
+如果你的应用程序有一个 "责任周期", 在这种情况下, 将同时执行相同的操作, 因此, 在工作周期结束后, 最好手动执行次要收集。 例如, 责任周期包括: 
 
 -  单个游戏帧的呈现循环。
--  与给定的应用对话框 （打开、 填充、 关闭） 的整个交互 
--  一组的网络请求以刷新/同步应用数据。
+-  与给定应用对话框 (打开、填充、关闭) 的整体交互 
+-  一组用于刷新/同步应用数据的网络请求。
 
 
 
-## <a name="major-collections"></a>主要的集合
+## <a name="major-collections"></a>主要集合
 
-主要集合可能会通过调用来手动执行[GC。Collect （)](xref:System.GC.Collect)或`GC.Collect(GC.MaxGeneration)`。 
+主要集合可以通过调用 GC 手动执行[。Collect ()](xref:System.GC.Collect)或`GC.Collect(GC.MaxGeneration)`。 
 
-它们应该很少，执行并可能会暂停时遇到的第二个 Android 风格的设备上收集 512MB 堆时。 
+它们应该很少执行, 并且在收集512MB 堆时, Android 样式设备上可能会有一秒的暂停时间。 
 
-主要集合应仅手动调用，如果有过： 
+如果需要, 只能手动调用主要集合: 
 
--   耗时较长的值班末尾周期和较长的暂停时不会向用户出现问题。 
+-   在漫长的工作周期结束时, 如果时间较长, 则不会给用户带来问题。 
 
--   中被重写[Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/)方法。 
+-   在重写的[OnLowMemory ()](xref:Android.App.Activity.OnLowMemory)方法内。 
 
 
 
 ## <a name="diagnostics"></a>诊断
 
-若要跟踪时创建和销毁全局引用，可以设置[debug.mono.log](~/android/troubleshooting/index.md)系统属性以包含[ *gref* ](~/android/troubleshooting/index.md)和/或[ *gc*](~/android/troubleshooting/index.md)。 
+若要跟踪创建和销毁全局引用的时间, 可以将 [debug.mono.log](~/android/troubleshooting/index.md) 系统属性设置为包含 [*gref*](~/android/troubleshooting/index.md) 和/或 [*gc*](~/android/troubleshooting/index.md) 
 
 
 
 ## <a name="configuration"></a>配置
 
-可以通过设置配置 Xamarin.Android 垃圾回收器`MONO_GC_PARAMS`环境变量。 可能的生成操作设置环境变量[AndroidEnvironment](~/android/deploy-test/environment.md)。
+可以通过设置`MONO_GC_PARAMS`环境变量来配置 Xamarin 垃圾回收器。 可以使用[AndroidEnvironment](~/android/deploy-test/environment.md)的生成操作来设置环境变量。
 
-`MONO_GC_PARAMS`环境变量是以逗号分隔列表的以下参数： 
+`MONO_GC_PARAMS`环境变量是以下参数的逗号分隔列表: 
 
--   `nursery-size` = *大小*:设置在小的大小。 大小以字节为单位指定，并且必须是 2 的幂。 后缀`k`，`m`和`g`可用于指定千、 庞大和千兆字节为单位，分别。 小堆是第一代 （两个）。 更大的小堆通常会提高程序的速度，但显然会使用更多的内存。 默认值小堆大小为 512 kb。 
+-   `nursery-size` = *大小*:设置小堆的大小。 大小以字节为单位指定, 并且必须是2的幂。 后缀`k` `m`和分别可用于指定每个千兆字节和兆字节。`g` 小堆是第一代 (共2个)。 较大的小堆通常会提高程序的速度, 但会明显地使用更多的内存。 默认小堆大小 512 kb。 
 
--   `soft-heap-limit` = *大小*:目标最大托管应用程序的内存占用情况。 当内存使用情况低于指定的值时，GC 进行了优化的执行时间 （更少的集合）。 
-    超出此限制，GC 进行了优化的内存使用 （更多集合）。 
+-   `soft-heap-limit` = *大小*:应用的目标最大托管内存消耗。 当内存使用小于指定值时, GC 将针对执行时间进行优化 (回收量更少)。 
+    此限制高于此限制, 为内存使用量 (更多集合) 优化 GC。 
 
--   `evacuation-threshold` = *阈值*:以百分比为单位设置疏散阈值。 值必须是 0 到 100 范围内的整数。 默认值为 66。 如果集合的扫描阶段找到的特定堆块类型的占用小于此百分比，它将执行下一步的主要集合中的块类型，从而还原到接近 100%的空间使用量的复制集合。 值为 0 将关闭疏散。 
+-   `evacuation-threshold` = *阈值*:设置疏散阈值 (以百分比表示)。 该值必须是0到100范围内的整数。 默认值为66。 如果集合的扫描阶段发现特定堆块类型的占用量小于此百分比, 它将在下一个主要集合中为该块类型执行复制集合, 从而将占用量降低到 100%。 值0会关闭疏散。 
 
--   `bridge-implementation` = *桥接实现*:这会设置 GC 桥选项，可帮助解决 GC 性能问题。 有三个可能值：*旧*，*新*， *tarjan*。
+-   `bridge-implementation` = *桥接*:这将设置 GC Bridge 选项以帮助解决 GC 性能问题。 有三个可能的值: *old* 、 *new* 、 *tarjan*。
 
--   `bridge-require-precise-merge`：网桥包含一种优化这可能，在少数情况下，会使对象可 Tarjan 后首次将成为垃圾收集一个 GC。 包括此选项会禁用该优化，从而使 Gc 更可预测，但可能会较慢。
+-   `bridge-require-precise-merge`：Tarjan 桥包含一种优化, 在极少数情况下, 它可能会导致对象在第一次变为垃圾后被回收。 如果包括此选项, 则将禁用此优化, 从而使 Gc 更可预测但可能更慢。
 
-例如，若要配置 GC 堆大小限制为 128 MB，添加一个新的文件到你的项目**生成操作**的`AndroidEnvironment`的内容： 
+例如, 若要将 GC 配置为使堆大小限制为 128mb, 请将具有的**生成操作**的`AndroidEnvironment`新文件添加到项目中: 
 
 ```shell
 MONO_GC_PARAMS=soft-heap-limit=128m

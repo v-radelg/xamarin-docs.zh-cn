@@ -6,35 +6,35 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 75d95d630415cdaa4c0c1ed3b8ddebb32b8e3c4d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.openlocfilehash: 67fb12fd66d4d218f6e8bd40e21499e6c07e9e15
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60947983"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510592"
 ---
 # <a name="specialized-fragment-classes"></a>专用片段类
 
-片段 API 提供了封装应用程序中的更常见功能的一些其他子类。 这些子类是：
+片段 API 提供其他子类, 用于封装在应用程序中发现的一些更常用的功能。 这些子类为:
 
--   **ListFragment** &ndash;此片段用于显示的项绑定到如数组或游标的数据源的列表。
+-   **ListFragment**&ndash;此片段用于显示绑定到数据源 (例如数组或游标) 的项的列表。
 
--   **DialogFragment** &ndash;作为包装一个对话框，使用此片段。 该片段将显示在其活动之上对话框。
+-   **DialogFragment**&ndash;此片段用作对话框周围的包装器。 片段会在其活动之上显示该对话框。
 
--   **PreferenceFragment** &ndash;此片段用于显示作为列表的首选项对象。
+-   **PreferenceFragment**&ndash;此片段用于将首选项对象显示为列表。
 
 
 
 ## <a name="the-listfragment"></a>ListFragment
 
-`ListFragment`的概念和功能提供给非常类似`ListActivity`; 它是托管的包装器`ListView`片段中。 下的图显示`ListFragment`平板电脑和手机上运行：
+对于的`ListActivity`概念和功能非常相似, 它是`ListView`在片段中承载的包装。 `ListFragment` 下图显示了在`ListFragment`平板电脑和手机上运行的:
 
-[![屏幕截图的 ListFragment 平板电脑和手机上](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
+[![平板电脑和手机上 ListFragment 的屏幕截图](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
 
 
-### <a name="binding-data-with-the-listadapter"></a>绑定数据和 ListAdapter
+### <a name="binding-data-with-the-listadapter"></a>用 ListAdapter 绑定数据
 
-`ListFragment`类已经提供了默认的布局，因此不需要重写`OnCreateView`若要显示的内容`ListFragment`。 `ListView`通过使用绑定到数据`ListAdapter`实现。 下面的示例演示如何这也可以由通过将简单的字符串数组：
+类已提供默认布局, 因此不需要重写`OnCreateView`来`ListFragment`显示的内容。 `ListFragment` `ListView` 使用`ListAdapter`实现绑定到数据。 下面的示例演示如何使用简单的字符串数组完成此操作:
 
 ```csharp
 public override void OnActivityCreated(Bundle savedInstanceState)
@@ -47,13 +47,13 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 }
 ```
 
-设置时`ListAdapter`，务必要使用`ListFragment.ListAdapter`属性，而不`ListView.ListAdapter`属性。 使用`ListView.ListAdapter`将导致重要的初始化代码要跳过。
+在设置`ListAdapter`时, 必须`ListFragment.ListAdapter`使用`ListView.ListAdapter`属性, 而不是属性。 使用`ListView.ListAdapter`会导致跳过重要的初始化代码。
 
 
 
 ### <a name="responding-to-user-selection"></a>响应用户选择
 
-若要响应用户选择，应用程序必须重写`OnListItemClick`方法。 下面的示例显示了一个这种可能性：
+若要响应用户选择, 应用程序必须重写`OnListItemClick`方法。 下面的示例展示了这种可能性:
 
 ```csharp
 public override void OnListItemClick(ListView l, View v, int index, long id)
@@ -79,37 +79,37 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 }
 ```
 
-在上面的代码，当用户选择中的项`ListFragment`，托管活动，其中显示有关所选的项的更多详细信息中显示新片段。
+在上面的代码中, 当用户在中`ListFragment`选择某一项时, 将在宿主活动中显示一个新片段, 其中显示了有关所选项的更多详细信息。
 
 
 
 ## <a name="dialogfragment"></a>DialogFragment
 
-*DialogFragment*是用于显示一个对话框对象内的活动窗口的顶部将浮动的片段的片段。 它旨在替换为托管对话框中 （从开始在 Android 3.0 中） 的 Api。 以下屏幕截图显示的示例`DialogFragment`:
+*DialogFragment*是一个片段, 用于显示在活动窗口顶部浮动的片段内的对话框对象。 它旨在替换托管对话框 Api (从 Android 3.0 开始)。 以下屏幕截图显示了一个`DialogFragment`示例:
 
-[![显示添加新车辆 EditBox DialogFragment 的屏幕截图](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
+[![显示 "添加新车辆" 编辑框 "的 DialogFragment 的屏幕截图](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
 
-一个`DialogFragment`可确保该片段和对话框之间的状态保持一致。 所有的交互和对话框对象的控件应执行的操作通过`DialogFragment`API，并不会执行与直接调用对话框对象上。 `DialogFragment` API 提供了与每个实例`Show()`方法，用来显示一个片段。 有两种方法，若要消除的片段：
+`DialogFragment`确保片段和对话框之间的状态保持一致。 对话框对象的所有交互和控制都应该通过`DialogFragment` API 发生, 而不会对对话框对象进行直接调用。 API 为每个实例提供一个`Show()`方法, 用于显示片段。 `DialogFragment` 可以通过两种方法来删除片段:
 
--  调用`DialogFragment.Dismiss()`上`DialogFragment`实例。 
+-  对实例调用`DialogFragment.Dismiss()` `DialogFragment` 。 
 
--  显示另一个`DialogFragment`。
+-  显示另`DialogFragment`一个。
 
-若要创建`DialogFragment`，一个类继承自`Android.App.DialogFragment,`和设置将覆盖以下两种方法之一：
+若要创建`DialogFragment`, 类从`Android.App.DialogFragment,`继承, 然后重写以下两种方法之一:
 
-- **OnCreateView** &ndash;这将创建并返回的视图。
+- **OnCreateView**&ndash;这将创建并返回视图。
 
-- **OnCreateDialog** &ndash;这将创建一个自定义对话框。 它通常用于显示*AlertDialog*。 当重写此方法，不需要重写`OnCreateView`。
+- **OnCreateDialog**&ndash;这将创建一个自定义对话框。 它通常用于显示*AlertDialog*。 重写此方法时, 不需要重写`OnCreateView` 。
 
 
 
-### <a name="a-simple-dialogfragment"></a>简单 DialogFragment
+### <a name="a-simple-dialogfragment"></a>简单的 DialogFragment
 
-以下屏幕截图显示了一个简单`DialogFragment`，其`TextView`并将两个`Button`s:
+以下屏幕截图显示了`DialogFragment` `TextView`具有和两个`Button`的简单:
 
-[![使用一个 TextView 和两个按钮的示例 DialogFragment](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
+[![使用 TextView 和两个按钮的示例 DialogFragment](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
 
-`TextView`将显示的用户已单击了中的一个按钮的次数`DialogFragment`，而单击其他按钮将关闭该片段。 有关代码`DialogFragment`是：
+将显示用户`DialogFragment`在中单击一个按钮的次数, 而单击其他按钮将关闭该片段。 `TextView` 的代码`DialogFragment`是:
 
 ```csharp
 public class MyDialogFragment : DialogFragment
@@ -143,11 +143,11 @@ public class MyDialogFragment : DialogFragment
 
 ### <a name="displaying-a-fragment"></a>显示片段
 
-像所有片段`DialogFragment`显示的上下文中`FragmentTransaction`。
+与所有片段一样, `DialogFragment`在的上下文`FragmentTransaction`中显示。
 
-`Show()`方法`DialogFragment`采用`FragmentTransaction`和一个`string`作为输入。 对话将添加到的活动和`FragmentTransaction`提交。
+上的`Show()`方法采用`FragmentTransaction` 和`string`作为输入。 `DialogFragment` 此对话框将添加到活动, 并`FragmentTransaction`提交。
 
-以下代码演示了一个活动可能会使用一种`Show()`方法来显示`DialogFragment`:
+下面的代码演示活动可以使用`Show()`方法显示的`DialogFragment`一种可能的方法:
 
 ```csharp
 public void ShowDialog()
@@ -159,15 +159,15 @@ public void ShowDialog()
 ```
 
 
-### <a name="dismissing-a-fragment"></a>正在取消片段
+### <a name="dismissing-a-fragment"></a>关闭片段
 
-调用`Dismiss()`的实例上`DialogFragment`导致要从活动中删除的片段并提交该事务。
-将调用标准的片段生命周期方法涉及使用片段的析构。
+对`Dismiss()` 实例`DialogFragment`调用将导致从活动中删除片段并提交该事务。
+将调用与某个片段的销毁相关的标准片段生命周期方法。
 
 
 ### <a name="alert-dialog"></a>警报对话框
 
-而不是替代`OnCreateView`、 一个`DialogFragment`可能会改为重写`OnCreateDialog`。 这允许应用程序来创建[AlertDialog](https://developer.xamarin.com/api/type/Android.App.AlertDialog/)由一个片段。 下面的代码是使用的示例，`AlertDialog.Builder`若要创建`Dialog`:
+可以改为`OnCreateView` `DialogFragment`重写`OnCreateDialog`, 而不是重写。 这允许应用程序创建由片段管理的[AlertDialog](xref:Android.App.AlertDialog) 。 下面的代码是使用`AlertDialog.Builder`创建的`Dialog`示例:
 
 ```csharp
 public class AlertDialogFragment : DialogFragment
@@ -191,17 +191,17 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-为了帮助管理首选项，该片段 API 提供了`PreferenceFragment`子类。 `PreferenceFragment`类似于[PreferenceActivity](https://developer.xamarin.com/api/type/Android.Preferences.PreferenceActivity/) &ndash;它会在片段中显示给用户的首选项的层次结构。 当用户首选项与交互时，它们将自动保存到[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)。
-在 Android 3.0 或更高版本的应用程序中，使用`PreferenceFragment`处理应用程序中的首选项。 下图显示的示例`PreferenceFragment`:
+为了帮助管理首选项, 片段 API 提供`PreferenceFragment`子类。 `PreferenceFragment` 类似于[PreferenceActivity](xref:Android.Preferences.PreferenceActivity) &ndash;, 它将在片段中显示用户的首选项层次结构。 当用户与首选项交互时, 它们将自动保存到[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)。
+在 Android 3.0 或更高版本的应用`PreferenceFragment`程序中, 使用来处理应用程序中的首选项。 下图显示了一个`PreferenceFragment`示例:
 
-[![使用内联、 对话框和启动首选项的示例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
+[![带有内嵌、对话框和启动首选项的示例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
 
 
-### <a name="create-a-preference-fragment-from-a-resource"></a>从资源中创建首选项片段
+### <a name="create-a-preference-fragment-from-a-resource"></a>从资源创建首选项片段
 
-片段可能由使用放大从 XML 资源文件的首选项[PreferenceFragment.AddPreferencesFromResource](https://developer.xamarin.com/api/member/Android.Preferences.PreferenceFragment.AddPreferencesFromResource/p/System.Int32/)方法。 逻辑起点片段的生命周期中调用此方法会采用`OnCreate`方法。
+可以使用[PreferenceFragment. AddPreferencesFromResource](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromResource*)方法从 XML 资源文件中放大首选项片段。 在片段的生命周期中调用此方法的逻辑位置将是`OnCreate`方法中的。
 
-`PreferenceFragment`图所示更高版本已通过从 XML 加载资源。 资源文件是：
+上述`PreferenceFragment`图片是通过从 XML 加载资源创建的。 资源文件为:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -254,7 +254,7 @@ public class AlertDialogFragment : DialogFragment
 </PreferenceScreen>
 ```
 
-片段的首选项的代码如下所示：
+首选项片段的代码如下所示:
 
 ```csharp
 public class PrefFragment : PreferenceFragment
@@ -269,11 +269,11 @@ public class PrefFragment : PreferenceFragment
 
 
 
-### <a name="querying-activities-to-create-a-preference-fragment"></a>查询活动创建的首选项片段
+### <a name="querying-activities-to-create-a-preference-fragment"></a>查询活动以创建首选项片段
 
-另一种方法创建`PreferenceFragment`涉及查询活动。 每个活动可以使用[元数据\_密钥\_首选项](https://developer.xamarin.com/api/field/Android.Preferences.PreferenceManager.MetadataKeyPreferences/)将指向的 XML 资源文件的属性。 在 Xamarin.Android 中，这是通过装饰的活动`MetaDataAttribute`，然后指定要使用的资源文件。 `PreferenceFragment`类提供了方法[AddPreferenceFromIntent](https://developer.xamarin.com/api/member/Android.Preferences.PreferenceFragment.AddPreferencesFromIntent/p/Android.Content.Intent/)) 可用于查询用于查找此 XML 资源和放大量有关它的首选项层次结构的活动。
+用于创建的`PreferenceFragment`另一种方法涉及查询活动。 每个活动都可以[使用\_元\_数据密钥首选项](xref:Android.Preferences.PreferenceManager.MetadataKeyPreferences)属性, 该属性将指向 XML 资源文件。 在 Xamarin 中, 这是通过装饰活动`MetaDataAttribute`并指定要使用的资源文件来完成的。 `PreferenceFragment`类提供 [AddPreferenceFromIntent](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromIntent*) 方法, 该方法可用于查询活动以查找此 XML 资源并为其提供一个首选项层次结构。
 
-在以下代码片段中，它使用提供了此过程的一个示例`AddPreferencesFromIntent`若要创建`PreferenceFragment`:
+下面的代码段中提供了此过程的示例, 该代码片段`AddPreferencesFromIntent`使用来`PreferenceFragment`创建:
 
 ```csharp
 public class MyPreferenceFragment : PreferenceFragment
@@ -287,7 +287,7 @@ public class MyPreferenceFragment : PreferenceFragment
 }
 ```
 
-Android 将看看的类`MyActivityWithPreference`。 类必须标有`MetaDataAttribute,`如下面的代码段中所示：
+Android 将查看类`MyActivityWithPreference`。 必须用`MetaDataAttribute,`来装饰类, 如下面的代码段所示:
 
 ```csharp
 [Activity(Label = "My Activity with Preferences")]
@@ -302,6 +302,6 @@ public class MyActivityWithPreferences : Activity
 }
 ```
 
-`MetaDataAttribute`声明的 XML 资源文件`PreferenceFragment`将使用放大量首选项层次结构。 如果`MetatDataAttribute`未提供，则在运行时将引发异常。 此代码运行时，`PreferenceFragment`显示如以下屏幕截图中所示：
+`MetaDataAttribute`声明`PreferenceFragment`将用于使首选项层次结构膨胀的 XML 资源文件。 `MetatDataAttribute`如果未提供, 则在运行时将引发异常。 此代码运行时, `PreferenceFragment`将显示为以下屏幕截图中所示:
 
-[![PreferenceFragment 显示示例应用程序的屏幕截图](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)
+[![显示 PreferenceFragment 的示例应用程序的屏幕截图](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)

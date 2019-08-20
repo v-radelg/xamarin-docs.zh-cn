@@ -20,7 +20,7 @@ ms.locfileid: "68655332"
 
 用于控制你的 Xamarin 的其他选项-Forms iOS 应用的外观包括:
 
-* 配置 info.plist 中的显示选项[](#info-plist)
+* 配置 [**info.plist**](#info-plist) 中的显示选项
 * [通过`UIAppearance` API 设置控件样式](#uiappearance)
 
 下面讨论了这些备选方法。

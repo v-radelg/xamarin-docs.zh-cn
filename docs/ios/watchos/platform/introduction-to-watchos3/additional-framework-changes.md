@@ -1,93 +1,93 @@
 ---
 title: 其他 watchOS 3 框架更改
-description: 本文档介绍各种 framework 更改引入了 watchOS 3，以及如何在 Xamarin 中使用它们。 讨论了核心数据、 Core 运动、 Foundation、 HealthKit、 HomeKit、 PassKit 和 UIKit。
+description: 本文档介绍了 watchOS 3 引入的各种框架更改, 以及如何在 Xamarin 中使用它们。 讨论了核心数据、核心动作、Foundation、HealthKit、HomeKit、PassKit 和 UIKit。
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: e3eb4e3454aeab08d1333c5dbc3d4808fa4d676c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d8c1ace9972f15c3f068bda88bc21e7cb5990f25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61224508"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655560"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 框架更改
 
-_本文介绍如何附加的次要更改或增强功能到现有框架，可用于 watchOS 3。_
+_本文介绍了 watchOS 3 的现有框架的附加、小更改或增强功能。_
 
-除了 iOS 的主要更改，Apple 已 watchOS 3 中进行修改和改进到多个现有框架。
+除了对 iOS 的重大更改之外, Apple 还在 watchOS 3 中对多个现有框架进行了修改和改进。
 
 
 ## <a name="core-data"></a>核心数据
 
-具有对监视 OS 3 的核心数据框架进行了以下增强功能：
+以下对用于监视操作系统3的核心数据框架进行了以下改进:
 
-- 根[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)对象支持并发故障和提取而无需序列化。
-- [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)类维护的 SQLite 数据存储区池。
-- [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) SQLite 在 WAL 日志模式下支持新的查询生成的数据存储的对象功能可以将托管对象上下文 (MOC) 固定到将来中提取的特定数据库版本和出错的事务。
-- 使用高级`NSPersistenceContainer`引用`NSPersistentStoreCoordinator`， [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)和其他核心数据配置资源。
-- 已添加到多个新的便捷方法`NSManagedObject`轻松地执行提取操作，并创建子类。
+- 根[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)对象支持并发错误和不序列化的提取。
+- [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)类维护 SQLite 数据存储的池。
+- 在 WAL 日志模式下, 具有 SQLite 数据存储的[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)对象支持新的查询生成功能, 在该功能中, 托管对象上下文 (MOC) 可以固定到特定数据库版本, 以供将来获取和出错事务。
+- 使用高级`NSPersistenceContainer` `NSPersistentStoreCoordinator`引用、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)和其他核心数据配置资源。
+- 添加了几个新的便利方法`NSManagedObject` , 以便更轻松地执行提取和创建子类。
 
-有关详细信息，请参阅 Apple[核心数据框架引用](https://developer.apple.com/reference/coredata)。
+有关详细信息, 请参阅 Apple 的[核心数据框架参考](https://developer.apple.com/reference/coredata)。
 
 
-## <a name="core-motion"></a>核心运动
+## <a name="core-motion"></a>核心动作
 
-已对核心运动框架，用于监视 OS 3 进行以下增强功能：
+针对观看 OS 3 的核心运动框架进行了以下改进:
 
-- 新设备运动事件使用加速感应器和陀螺仪提供动作和方向的更新。 应用可以注册此更新 （在最多 100 Hz 费率）。
-- 新的计步器事件可以快速、 实时通知时用户暂停和继续运行。 使用[CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)注册前景色或背景计步器事件。
+- 新的设备运动事件使用加速感应和陀螺仪来提供运动和方向更新。 应用可以注册此更新 (速率为 100Hz)。
+- 当用户暂停和继续运行时, 新的 Pedometer 事件可实现快速实时通知。 使用[CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)注册前台或后台 pedometer 事件。
 
 
 ## <a name="foundation"></a>Foundation
 
-具有对监视 OS 3 Foundation 框架进行了以下增强功能：
+已对监视 OS 3 的基础框架进行了以下改进:
 
-- 使用新[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)类，以使日期和时间间隔计算，如持续时间，用于比较的时间间隔和测试的时间间隔的交叉点。
-- 多个新属性已添加到[NSLocal](https://developer.apple.com/reference/foundation/nslocale)类来获取本地信息和可用的显示格式。
-- 使用新[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)类来转换之间不同单位的度量值 (UOM) 或对不同 UOMs 中的值执行计算。
-- 使用新[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)类设置用于向最终用户显示本地化的度量值的格式。
-- 使用新[NSUnit](https://developer.apple.com/reference/foundation/nsunit)并[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)类用于表示特定 UOMs。
+- 使用新的[NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval)类可以进行日期和时间间隔计算, 如持续时间, 用于比较间隔和测试间隔交点。
+- 向[NSLocal](https://developer.apple.com/reference/foundation/nslocale)类添加了几个新属性, 以获取本地信息和可用的显示格式。
+- 使用新的[NSMeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)类在不同的度量单位 (UOM) 之间进行转换, 或对不同 UOMs 中的值执行计算。
+- 使用新的[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)类来设置要向最终用户显示的本地化度量值的格式。
+- 使用新的[NSUnit](https://developer.apple.com/reference/foundation/nsunit)和[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)类来表示特定的 UOMs。
 
 
 ## <a name="healthkit"></a>HealthKit
 
-具有对 HealthKit 框架，用于监视 OS 3 进行以下增强功能：
+HealthKit 框架对监视操作系统3进行了以下改进:
 
-- 使用新[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)类，以指定`ActivityType`和`LocationType`的健身。
-- 新[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)并`WheelchairUse`方法[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)类中添加了使用轮椅通道相关的运行状况数据。
-- 新的元数据密钥已添加的天气类型 (如`HKWeatherConditionClear`并`HKWeatherConditionCloudy`) 和健身类型 (如`HKWorkoutActivityTypeFlexibility`和`HKWorkoutActivityTypeWheelchairRunPace`) 已添加。
+- 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)类指定`ActivityType`健身的和`LocationType` 。
+- 添加了新的 [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) 和[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)类的`WheelchairUse`方法, 以便使用轮椅相关的运行状况数据。
+- 添加了新的元数据密钥, 用于天气类型 ( `HKWeatherConditionClear`如`HKWeatherConditionCloudy`和) 和`HKWorkoutActivityTypeFlexibility`健身类型 (如和`HKWorkoutActivityTypeWheelchairRunPace`)。
 
 
 ## <a name="homekit"></a>HomeKit
 
-具有对监视 OS 3 HomeKit 框架进行了以下增强功能：
+HomeKit 框架对监视操作系统3进行了以下改进:
 
-- 添加能够查看并与其交互 HomeKit 连接 IP 相机。
-- 添加了几个新的服务和特征。
-- 添加更多上下文和配置的主服务和链接服务的附件。
+- 添加了查看和与 HomeKit 连接的 IP 照相机的交互功能。
+- 添加了几个新的服务和特性。
+- 添加了更多上下文和配置主要服务和链接服务的附件。
 
 
 ## <a name="passkit"></a>PassKit
 
-具有对监视 OS 3 PassKit 框架进行了以下增强功能：
+PassKit 框架对监视操作系统3进行了以下改进:
 
-- 扩展框架，以支持安全的应用程序内的支付实体商品和服务的 Apple Watch 上。
-- 目前有以下类：[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)， [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)， [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
+- 扩展框架, 以支持对物理商品和服务的 Apple Watch 进行安全的应用内付款。
+- 现在提供以下类:[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)、 [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)、 [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 
 ## <a name="uikit"></a>UIKit
 
-具有对监视 OS 3 UIKit 框架进行了以下增强功能：
+UIKit 框架对监视操作系统3进行了以下改进:
 
-- 若要在标签中支持动态类型，文本字段和文本框中使用的新`PreferredFontForTextStyle`方法的`UIFont`类。
-- `ColorWithDisplayP3`方法为了支持广泛的颜色。
+- 为了支持标签中的动态类型, 文本字段和文本框使用`PreferredFontForTextStyle` `UIFont`类的新方法。
+- 添加`ColorWithDisplayP3`了方法以支持宽色。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [入门 （示例）](https://developer.xamarin.com/samples/monotouch/WatchKit/)
-- [什么是 watchOS 3 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)
+- [watchOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS%20watchos)
+- [WatchOS 3 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

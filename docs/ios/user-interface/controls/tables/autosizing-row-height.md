@@ -1,71 +1,71 @@
 ---
-title: 在 Xamarin.iOS 中的自动调整行高
-description: 本文档介绍如何将其高度改变基于的内容的表视图行添加到 Xamarin.iOS 应用程序。 它讨论了 iOS 设计器中的单元格布局和启用自动调整大小的高度。
+title: 在 Xamarin 中自动调整行高
+description: 本文档介绍如何添加到 Xamarin apps 表视图, 这些行的高度因内容而异。 它讨论了 iOS 设计器中的单元布局和启用自动调整大小的高度。
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e4446abc73817eb0672cd10a69ff6f738de0c1e1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 025c3ee6fc176df02f72e78395b880153d6b841d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029033"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655719"
 ---
-# <a name="auto-sizing-row-height-in-xamarinios"></a>在 Xamarin.iOS 中的自动调整行高
+# <a name="auto-sizing-row-height-in-xamarinios"></a>在 Xamarin 中自动调整行高
 
-从 iOS 8 开始，Apple 添加创建表视图的功能 (`UITableView`)，可以自动扩展和收缩使用自动布局、 大小类和约束其内容的大小基于某一给定行的高度。
+从 iOS 8 开始, Apple 增加了创建表视图 (`UITableView`) 的功能, 可以使用自动布局、大小类和约束, 根据其内容的大小自动增长和收缩给定行的高度。
 
-iOS 11 已添加行以自动将其扩展的功能。 标头、 页脚和单元格可以现在自动调整根据其内容。 但是，如果在 iOS 设计器中，Interface Builder 中创建表，或者如果它具有固定行高则必须手动启用自动调整单元格，如本指南中所述。
+iOS 11 增加了自动扩展行的能力。 现在, 标题、页脚和单元格可以根据其内容自动调整大小。 但是, 如果你的表是在 iOS 设计器中创建的, Interface Builder, 或者它具有固定的行高度, 则必须手动启用自行调整大小的单元格, 如本指南中所述。
 
-## <a name="cell-layout-in-the-ios-designer"></a>IOS 设计器中的单元格布局
+## <a name="cell-layout-in-the-ios-designer"></a>IOS 设计器中的单元布局
 
-打开你想要在 iOS 设计器中，有的行的自动调整表视图的情节提要选择单元格的*原型*和设计的单元格的布局。 例如：
+打开要在 iOS 设计器中为其自动调整行的表视图的情节提要, 选择单元格的*原型*并设计单元格的布局。 例如：
 
 [![](autosizing-row-height-images/table01.png "单元格的原型设计")](autosizing-row-height-images/table01.png#lightbox)
 
-对于每个元素在原型中，将约束添加到表视图的旋转或不同的 iOS 设备的屏幕大小调整大小时将元素保留在正确的位置。 例如，固定`Title`上、 左和右侧的单元格*内容视图*:
+对于原型中的每个元素, 添加约束以使元素保持正确位置, 因为调整表视图的大小以进行旋转或不同的 iOS 设备屏幕大小。 例如, 将固定`Title`到单元格*内容视图*的顶部、左侧和右侧:
 
-[![](autosizing-row-height-images/table02.png "固定到顶端、 左侧和右侧的单元格内容视图的标题")](autosizing-row-height-images/table02.png#lightbox)
+[![](autosizing-row-height-images/table02.png "将标题固定到单元格内容视图的顶部、左侧和右侧")](autosizing-row-height-images/table02.png#lightbox)
 
-在示例表中，较小的情况下`Label`(下`Title`) 是可以缩小和增大以增大或减小行的高度的字段。 若要实现此效果，添加以下约束固定左侧、 右侧、 顶部和底部标签：
+在我们的示例表中, 小型`Label` ( `Title`在下) 是一个字段, 可以缩小和增大以增加或减少行高。 若要实现此效果, 请添加以下约束, 以便固定标签的左、右、顶部和底部:
 
-[![](autosizing-row-height-images/table03.png "这些约束固定左侧、 右侧、 顶部和底部的标签")](autosizing-row-height-images/table03.png#lightbox)
+[![](autosizing-row-height-images/table03.png "这些约束用于固定标签的左、右、顶部和底部。")](autosizing-row-height-images/table03.png#lightbox)
 
-现在，我们已完全受限制的单元中的元素，我们需要明确哪些元素应拉伸。 若要执行此操作，设置**内容拥抱优先级**并**内容压缩阻力优先级**根据需要在**布局**部分中的属性面板：
+现在, 我们已完全限制了单元格中的元素, 我们需要阐明应拉伸哪个元素。 为此, 请根据 Properties Pad 的**布局**部分中的需要, 设置**内容 Hugging 优先级**和**内容压缩电阻优先级**:
 
-[![](autosizing-row-height-images/table03a.png "布局部分中的属性面板")](autosizing-row-height-images/table03a.png#lightbox)
+[![](autosizing-row-height-images/table03a.png "Properties Pad 的布局部分")](autosizing-row-height-images/table03a.png#lightbox)
 
-设置你想要展开此项可以具有的元素**较低**拥抱优先级值和一个**低**压缩阻力优先级值。
+将要展开的元素设置为具有**较低**的 Hugging 优先级值和**较小**的压缩电阻优先级值。
 
-接下来，我们需要选择单元格原型并为其提供一个唯一**标识符**:
+接下来, 我们需要选择单元格原型, 并为其指定一个唯一**标识符**:
 
-[![](autosizing-row-height-images/table04.png "为单元格原型提供的唯一标识符")](autosizing-row-height-images/table04.png#lightbox)
+[![](autosizing-row-height-images/table04.png "为单元原型提供唯一标识符")](autosizing-row-height-images/table04.png#lightbox)
 
-对于本示例中， `GrowCell`。 当我们填充表时，我们将更高版本使用此值。
+对于我们的示例, `GrowCell`为。 稍后我们将使用此值来填充表。
 
 > [!IMPORTANT]
-> 如果表中包含多个单元格类型 (**原型**)，您需要确保每个类型都有自己的唯一`Identifier`自动行调整大小，若要运行的。
+> 如果您的表包含多个单元格类型 (**原型**), 则需要确保每个类型都有自己`Identifier`的唯一, 以便自动调整行大小。
 
-我们的单元格原型的每个元素，将分配**名称**公开到C#代码。 例如：
+为单元原型的每个元素分配一个**名称**以将其公开给C#代码。 例如:
 
-[![](autosizing-row-height-images/table05.png "将分配一个名称以公开到C#代码")](autosizing-row-height-images/table05.png#lightbox)
+[![](autosizing-row-height-images/table05.png "分配一个名称以将其公开C#给代码")](autosizing-row-height-images/table05.png#lightbox)
 
-接下来，添加的自定义类`UITableViewController`，则`UITableView`和`UITableCell`（原型）。 例如： 
+接下来, 为`UITableViewController` `UITableView` 、和`UITableCell` (原型) 添加自定义类。 例如: 
 
-[![](autosizing-row-height-images/table06.png "对 UITableViewController、 UITableView 和 UITableCell 添加自定义类")](autosizing-row-height-images/table06.png#lightbox)
+[![](autosizing-row-height-images/table06.png "为 UITableViewController、UITableView 和 UITableCell 添加自定义类")](autosizing-row-height-images/table06.png#lightbox)
 
-最后，若要确保所有预期的内容显示在我们的标签，设置**线条**属性设置为`0`:
+最后, 为了确保所有预期内容都显示在标签中, 请将 "**行**" 属性设置`0`为:
 
-[![](autosizing-row-height-images/table06.png "行属性设置为 0")](autosizing-row-height-images/table06a.png#lightbox)
+[![](autosizing-row-height-images/table06.png "\"行\" 属性设置为0")](autosizing-row-height-images/table06a.png#lightbox)
 
-定义用户界面，让我们来添加代码以启用自动行高度的调整大小。
+定义 UI 后, 让我们添加代码, 使自动调整行高。
 
-## <a name="enabling-auto-resizing-height"></a>启用自动调整高度
+## <a name="enabling-auto-resizing-height"></a>启用自动调整大小
 
-在表视图的数据源 (`UITableViewDatasource`) 或源 (`UITableViewSource`)，当我们取消排队的单元格，我们需要使用`Identifier`我们在设计器中定义。 例如：
+在表视图的数据源 (`UITableViewDatasource`) 或源 (`UITableViewSource`) 中, 当我们取消对单元格的排队时, `Identifier`需要使用设计器中定义的。 例如:
 
 ```csharp
 public string CellID {
@@ -87,7 +87,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-默认情况下，表视图将设置为自动调整行高。 若要确保此操作，请`RowHeight`属性应设置为`UITableView.AutomaticDimension`。 我们还需要设置`EstimatedRowHeight`属性中的我们`UITableViewController`。 例如：
+默认情况下, 将设置表视图以便自动调整行高。 若要确保这一点`RowHeight` , 应将属性设置`UITableView.AutomaticDimension`为。 我们还需要`UITableViewController`在中设置`EstimatedRowHeight`属性。 例如：
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -103,13 +103,13 @@ public override void ViewWillAppear (bool animated)
 }
 ```
 
-此估计值不一定是准确的只需在表视图中每个行的平均高度的粗略估计。
+此估算不必精确, 只是表视图中每行的平均高度的粗略估计。
 
-利用此代码，当应用运行时，每一行将收缩和增长根据单元格原型中的最后一个标签的高度。 例如：
+执行此代码后, 在运行应用时, 每行都将根据单元原型中最后一个标签的高度进行收缩和增长。 例如:
 
-[![](autosizing-row-height-images/table07.png "运行一个示例表")](autosizing-row-height-images/table07.png#lightbox)
+[![](autosizing-row-height-images/table07.png "示例表运行")](autosizing-row-height-images/table07.png#lightbox)
 
 
 ## <a name="related-links"></a>相关链接
 
-- [GrowRowTable （示例）](https://developer.xamarin.com/samples/monotouch/GrowRowTable/)
+- [GrowRowTable (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/growrowtable)

@@ -1,91 +1,90 @@
 ---
 title: 活动生命周期
-description: 活动是 Android 应用程序的基本构造块，它们可以存在于多个不同的状态。 活动生命周期以实例化开始和结尾析构，，并且包括很多状态之间。 当活动更改状态时，会调用相应的生命周期事件方法，通知即将发生的状态更改的活动并使其能够执行的代码以适应所做的更改。 本文分析活动的生命周期，并解释了负责该活动具有这些状态更改为良好、 可靠的应用程序的一部分的每一阶段。
+description: 活动是 Android 应用程序的基本构建基块, 可在许多不同的状态中存在。 活动生命周期从实例化开始, 以析构结束, 并在之间包含许多状态。 活动更改状态时, 将调用相应的生命周期事件方法, 并通知活动即将发生的状态更改, 并允许它执行代码以适应该更改。 本文介绍活动的生命周期, 并说明在每种状态中, 活动在每种状态中所发生的责任改变为操作良好且可靠的应用程序的一部分。
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
-ms.translationtype: MT
+ms.openlocfilehash: eda75041add4b5fc9f7998f426aab42ed2618c4b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740768"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508817"
 ---
 # <a name="activity-lifecycle"></a>活动生命周期
 
-_活动是 Android 应用程序的基本构造块，它们可以存在于多个不同的状态。活动生命周期以实例化开始和结尾析构，，并且包括很多状态之间。当活动更改状态时，会调用相应的生命周期事件方法，通知即将发生的状态更改的活动并使其能够执行的代码以适应所做的更改。本文分析活动的生命周期，并解释了负责该活动具有这些状态更改为良好、 可靠的应用程序的一部分的每一阶段。_
+_活动是 Android 应用程序的基本构建基块, 可在许多不同的状态中存在。活动生命周期从实例化开始, 以析构结束, 并在之间包含许多状态。活动更改状态时, 将调用相应的生命周期事件方法, 并通知活动即将发生的状态更改, 并允许它执行代码以适应该更改。本文介绍活动的生命周期, 并说明在每种状态中, 活动在每种状态中所发生的责任改变为操作良好且可靠的应用程序的一部分。_
 
 ## <a name="activity-lifecycle-overview"></a>活动生命周期概述
 
-活动是一个不寻常的特定于 Android 编程概念。 在传统的应用程序开发通常会有一个静态 main 方法，执行以启动应用程序。 与 Android，但是，情况就不同了;Android 应用程序可以通过任何已注册的活动应用程序中启动。 在实践中，大多数应用程序只能指定为应用程序入口点的特定活动。 但是，如果应用程序崩溃，或终止由操作系统，操作系统可以尝试重新启动应用程序在打开的最后一个活动或以前的活动堆栈内的其他任何位置。
-此外，操作系统可能会暂停活动，当它们不处于活动状态，并回收它们是否内存不足。 若要允许应用程序的情况活动重新启动时，尤其是当活动依赖于以前的活动中的数据的正确还原其状态，必须进行仔细考虑。
+活动是特定于 Android 的异常编程概念。 在传统的应用程序开发中, 通常会执行一个静态 main 方法, 以启动应用程序。 但对于 Android, 情况有所不同;可以通过应用程序内的任何已注册活动启动 Android 应用程序。 实际上, 大多数应用程序将只有指定为应用程序入口点的特定活动。 但是, 如果应用程序崩溃或由操作系统终止, 则 OS 可以尝试在上一次打开的活动中或之前的活动堆栈中的任何其他位置重新启动应用程序。
+此外, 当操作系统不处于活动状态时, 它们可能会暂停活动, 如果内存不足, 则回收它们。 若要使应用程序能够在活动重新启动时正确地还原其状态, 则必须谨慎考虑, 尤其是在该活动依赖于先前活动中的数据时。
 
-活动生命周期实现为一系列操作系统的方法调用的生命周期的活动。 这些方法允许开发人员实现，才可满足他们的应用程序的状态和资源管理要求的功能。
+活动生命周期实现为操作系统在活动的整个生命周期中调用的方法的集合。 这些方法允许开发人员实现满足其应用程序的状态和资源管理要求所必需的功能。
 
-它是非常重要的应用程序开发人员分析每个活动的要求，以确定需要实现公开的活动生命周期的方法。 如果不这样做可能会导致应用程序不稳定、 崩溃、 资源膨胀和甚至基础操作系统不稳定。
+对于应用程序开发人员而言, 分析每个活动的要求以确定需要实现活动生命周期所公开的方法极其重要。 如果不这样做, 可能会导致应用程序不稳定、崩溃、资源膨胀, 甚至可能导致基础操作系统不稳定。
 
-本章介绍活动生命周期中详细信息，包括：
+本章详细介绍活动生命周期, 包括:
 
 -  活动状态
 -  生命周期方法
 -  保留应用程序的状态
 
 
-本部分还包括[演练](~/android/app-fundamentals/activity-lifecycle/saving-state.md)，提供了有关如何有效地将状态保存在活动生命周期中的实际示例。 本章结束时应了解活动生命周期和如何支持 Android 应用程序中。
+本部分还包括一个[演练](~/android/app-fundamentals/activity-lifecycle/saving-state.md), 其中提供了有关如何在活动生命周期内有效保存状态的实际示例。 本章结束时, 你应了解活动生命周期, 以及如何在 Android 应用程序中对其进行支持。
 
 ## <a name="activity-lifecycle"></a>活动生命周期
 
-Android 活动生命周期包括开发人员提供资源管理框架的方法中的 Activity 类公开的集合。 此框架允许开发人员以满足应用程序中的每个活动的唯一的状态管理要求并正确处理资源管理。
+Android 活动生命周期包含在向开发人员提供资源管理框架的活动类中公开的方法的集合。 此框架使开发人员能够满足应用程序内每个活动的唯一状态管理要求, 并正确处理资源管理。
 
 ### <a name="activity-states"></a>活动状态
 
-Android OS 进行仲裁基于其状态的活动。 这有助于确定不再使用，从而允许操作系统以回收内存和资源的活动的 Android。 下图说明了活动可能在其生存期内要经历的状态：
+Android OS 仲裁活动基于其状态。 这有助于 Android 识别不再使用的活动, 从而允许操作系统回收内存和资源。 下图说明了活动在其生存期内可以经历的状态:
 
 [![活动状态关系图](images/image1-sml.png)](images/image1.png#lightbox)
 
-这些状态可分为 4 个主要的组，如下所示：
+这些状态可分为4个主要组, 如下所示:
 
-1.  *活动或正在运行*&ndash;活动都被视为处于活动状态或运行它们是否在前台，也称为活动堆栈的顶部。 这被视为在 Android 中，最高优先级的活动，这种情况下将仅在终止由操作系统在极端情况下，此类像该活动将尝试使用更多的内存比是设备上的可用因为这样可能会导致 UI 无响应。
+1.  *活动或正在运行*&ndash;如果活动处于前台 (也称为活动堆栈的顶部), 则将这些活动视为处于活动状态或正在运行。 这会被视为 Android 中优先级最高的活动, 因此, 只有在极端情况下, 操作系统才会终止此活动, 如活动尝试使用比设备上提供的内存更多的内存, 这可能会导致 UI 无响应。
 
-1.  *暂停*&ndash;当设备进入睡眠状态，或活动是仍然可见，但通过新的、 非全尺寸或透明的活动部分隐藏时，活动将被视为已暂停。 暂停的活动是仍保持活动状态，也就是说，维护状态和成员的所有信息，并保持附加到窗口管理器。 这被视为第二个如果取消此活动将满足保持稳定且高度可响应的活动/正在运行活动所需的资源要求最高优先级的活动在 Android 中，，因此，将仅由操作系统被终止。
+1.  已*暂停*&ndash;当设备进入睡眠状态时, 或者活动仍可见, 但不会被新的、未完全大小的或透明的活动部分隐藏时, 该活动将被视为已暂停。 暂停的活动仍处于活动状态, 即, 它们维护所有状态和成员信息, 并保持附加到窗口管理器。 这被视为 Android 中的第二个优先级最高的活动, 因此, 只有在终止此活动时, 操作系统才会终止此活动, 这是因为终止此活动将满足保持活动/活动活动稳定和响应所需的资源要求。
 
-1.  *已停止/Backgrounded* &ndash;完全遮盖的另一个活动的活动被视为已停止或在后台。
-    请尝试停止的活动仍保留其状态和成员的信息，以便只要有可能，但已停止活动都被认为是最低优先级的三种状态，并且在这种情况下，操作系统将终止此状态，首先以满足资源中的活动要求的更高优先级的活动。
+1.  *已停止/Backgrounded*&ndash;完全被其他活动遮盖的活动被视为已停止或处于后台。
+    已停止的活动仍会尝试尽可能地保留其状态和成员信息, 但停止的活动被认为是三个状态的最低优先级, 因此, OS 将首先终止此状态下的活动以满足资源优先级较高的活动的要求。
 
-1.  *重新启动*&ndash;可能会从任何位置的活动已暂停为停止在要从内存中删除由 Android 的生命周期中。 如果用户导航回必须重新启动的活动将还原到以前保存的状态，且然后向用户显示。
+1.  *重新启动*&ndash;在生命周期中, 从暂停的任何位置到停止的活动都有可能被 Android 从内存中删除。 如果用户向后导航到活动, 则必须重新启动它, 还原到其以前保存的状态, 然后向用户显示。
 
 
-### <a name="activity-re-creation-in-response-to-configuration-changes"></a>活动重新创建以响应配置更改
+### <a name="activity-re-creation-in-response-to-configuration-changes"></a>响应配置更改时的活动重新创建
 
-更复杂得多，Android 将一个详细扳手引发调用配置更改的组合中。 配置更改会快速活动析构/重新 creation 周期发生活动的配置更改时，例如，当设备是[旋转](~/android/app-fundamentals/handling-rotation.md)（和该活动需要重新生成在横向或纵向模式下），当显示键盘 （和活动提供的机会来调整自身大小），或当设备处于停靠，等等。
+为了使问题更复杂, Android 在混合环境中多次引发了一次扳手, 称为配置更改。 配置更改是指在活动的配置发生更改时 (例如, 当设备[旋转](~/android/app-fundamentals/handling-rotation.md)时, 以及在横向或纵向模式下重新生成活动需要重新生成活动) 时的快速活动销毁/重新创建循环。将显示键盘 (并且向活动提供一种调整其自身大小的机会), 或将设备放置在停靠中以及其他设备。
 
-配置更改仍会导致相同的活动状态更改会停止并重新启动活动过程中发生的。 但是，为了确保应用程序感觉响应，并且还在配置更改过程中执行，十分重要尽可能快地处理这些。 正因为如此，Android 有一个特定的 API，可用于在配置更改过程中保留状态。
-我们将介绍这更高版本中[Lifecycle 整个管理状态](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle)部分。
+配置更改仍会导致在停止和重启活动期间发生相同的活动状态更改。 但是, 为了确保应用程序在配置更改期间感觉到响应并正常运行, 必须尽快处理它们。 因此, Android 具有特定的 API, 可用于在配置更改期间保持状态。
+稍后我们将在[整个生命周期的 "管理状态](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle)" 部分介绍这一点。
 
 ### <a name="activity-lifecycle-methods"></a>活动生命周期方法
 
-Android SDK 和扩展插件，Xamarin.Android framework 所提供的用于管理应用程序中的活动的状态的功能强大的模型。 当更改活动的状态时，活动将通知由操作系统，对该活动调用特定的方法。 下图说明了这些方法与活动生命周期相关：
+Android SDK 和扩展, Xamarin framework 提供了一个功能强大的模型, 可用于管理应用程序内的活动状态。 当活动的状态发生变化时, 操作系统会通知活动, 这会对该活动调用特定的方法。 下图演示了与活动生命周期相关的这些方法:
 
 [![活动生命周期流程图](images/image2-sml.png)](images/image2.png#lightbox)
 
-作为开发人员，您可以通过重写这些方法对在活动中的处理状态更改。 请务必注意，但是，所有生命周期方法在 UI 线程上调用，且将阻止执行下的一个 UI 工作，例如隐藏当前活动中，操作系统显示一个新的活动，等等。在这种情况下，这些方法中的代码应该越简单越好感觉良好执行使用应用程序。 应在后台线程上执行任何长时间运行的任务。
+作为开发人员, 您可以通过在活动中重写这些方法来处理状态更改。 但请务必注意, 所有生命周期方法都在 UI 线程上调用, 并将阻止操作系统执行下一步的 UI 工作, 如隐藏当前活动、显示新活动等。因此, 这些方法中的代码应尽可能简短, 以使应用程序感觉良好。 应在后台线程上执行任何长时间运行的任务。
 
-让我们检查每个这些生命周期方法和它们的使用：
+让我们来看一下这些生命周期方法及其用法:
 
 #### <a name="oncreate"></a>OnCreate
 
-[OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/)是第一种方法来创建活动时调用。
-`OnCreate` 始终重写以执行任何启动初始化，则可能如要求的活动：
+[OnCreate](xref:Android.App.Activity.OnCreate*)是创建活动时要调用的第一个方法。
+`OnCreate`始终会重写, 以执行活动可能需要的任何启动初始化, 如:
 
--  创建视图
--  初始化变量
--  静态数据绑定到列表
+- 创建视图
+- 初始化变量
+- 将静态数据绑定到列表
 
-
-`OnCreate` 采用[捆绑](https://developer.xamarin.com/api/type/Android.OS.Bundle/)参数，它是用于存储和活动，如果绑定不是 null 之间传递状态信息和对象的字典，这表示该活动正在重新启动，并且它应还原其状态从在前一个实例。 下面的代码演示如何从捆绑检索值：
+`OnCreate`采用一个[绑定](xref:Android.OS.Bundle)参数, 该参数是在绑定不为 null 时用于存储和传递状态信息和活动之间的对象的字典, 这表示活动正在重新启动, 应从上一个实例还原其状态。 下面的代码演示如何从捆绑包中检索值:
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -106,25 +105,25 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-一次`OnCreate`已完成后，将调用 Android `OnStart`。
+完成后, Android 将调用`OnStart`。 `OnCreate`
 
 #### <a name="onstart"></a>OnStart
 
-[OnStart](https://developer.xamarin.com/api/member/Android.App.Activity.OnStart/)始终在调用后系统`OnCreate`已完成。 如果它们需要活动变得可见例如刷新活动中的视图的当前值之前执行特定任务的任何权利，活动可能会重写此方法。 Android 将调用`OnResume`紧跟此方法。
+`OnCreate` 完成后 , 系统始终会调用 [OnStart](xref:Android.App.Activity.OnStart)。 如果活动在活动可见之前需要执行任何特定的任务, 例如刷新活动中视图的当前值, 则活动可能会重写此方法。 Android 将立即`OnResume`调用此方法之后的。
 
 #### <a name="onresume"></a>OnResume
 
-系统调用[OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/)时该活动已准备好开始与用户进行交互。
-活动应重写此方法以执行以下任务：
+当活动准备好开始与用户交互时, 系统将调用[OnResume](xref:Android.App.Activity.OnResume) 。
+活动应重写此方法以执行如下任务:
 
--  帧速率 （游戏开发中的常见任务） 的提升效应
--  启动动画
+-  斜向上帧速率 (游戏开发中的常见任务)
+-  开始动画
 -  侦听 GPS 更新
 -  显示任何相关的警报或对话框
--  绑定外部事件处理程序
+-  连接外部事件处理程序
 
 
-例如，下面的代码段演示如何初始化照相机：
+例如, 下面的代码段演示如何初始化照相机:
 
 ```csharp
 public void OnResume()
@@ -138,23 +137,23 @@ public void OnResume()
 }
 ```
 
-`OnResume` 很重要，因为这是任何操作中完成`OnPause`应在未完成`OnResume`，因为它是唯一的生命周期方法，保证操作之后执行`OnPause`时将返回到生命的活动。
+`OnResume`很重要, 因为在`OnPause`中执行的任何操作都应该在中取消, 因为这是在将活动恢复到生活中`OnResume`后`OnPause`保证执行的唯一生命周期方法。
 
 #### <a name="onpause"></a>OnPause
 
-[OnPause](https://developer.xamarin.com/api/member/Android.App.Activity.OnPause/)系统以将活动放到背景或将成为部分遮住活动时调用。 在需要时，活动应重写此方法：
+当系统要将活动放入背景中或活动被部分遮盖时, 将调用[OnPause](xref:Android.App.Activity.OnPause) 。 如果活动需要, 则应重写此方法:
 
--   未保存的更改提交到持久性数据
+-   提交永久性数据的未保存更改
 
--   销毁或清理消耗资源的其他对象
+-   销毁或清理使用资源的其他对象
 
--   负载增加帧速率和暂停动画
+-   增加帧速率和暂停动画
 
--   取消注册通知处理程序 （即绑定到服务的那些） 或外部事件处理程序。 这必须进行以防止活动内存泄漏。
+-   注销外部事件处理程序或通知处理程序 (即绑定到服务的程序)。 必须执行此操作以防止活动内存泄露。
 
--   同样，如果活动具有显示任何对话框或警报，它们必须先清除与`.Dismiss()`方法。
+-   同样, 如果活动显示了任何对话框或警报, 则必须用`.Dismiss()`方法对其进行清理。
 
-例如，下面的代码段即会发布照相机，活动不能进行使用它暂停时：
+例如, 下面的代码段将释放相机, 因为活动不能在暂停时使用它:
 
 ```csharp
 public void OnPause()
@@ -170,81 +169,78 @@ public void OnPause()
 }
 ```
 
-有两种可能的生命周期方法将调用之后的`OnPause`:
+将在`OnPause`以下两种可能的生命周期方法调用:
 
-1.  `OnResume` 如果活动是要返回到前台，将会调用。
-1.  `OnStop` 如果该活动放入后台，将会调用。
+1.  `OnResume`如果活动将返回到前台, 则会调用。
+1.  `OnStop`如果活动位于后台, 则会调用。
 
 
 #### <a name="onstop"></a>OnStop
 
-[OnStop](https://developer.xamarin.com/api/member/Android.App.Activity.OnStop/)不再对用户可见的活动时调用。 发生以下情况之一时，将发生这种情况：
+当用户不再显示该活动时, 将调用[OnStop](xref:Android.App.Activity.OnStop) 。 发生以下情况之一时, 会发生这种情况:
 
--  新的活动启动，并介绍了此活动。
--  将现有的活动置于前台。
--  活动已被破坏。
+-  正在启动新活动, 并覆盖此活动。
+-  现有活动将进入前台。
+-  正在销毁活动。
 
 
-`OnStop` 可能不会始终会调用在内存不足的情况下，例如 Android 时可用的资源以及不能正确后台活动。 出于此原因，最好是不依赖于`OnStop`获取准备销毁活动时调用。 下一步后将在可能调用的生命周期方法`OnDestroy`如果该活动将消失，或`OnRestart`如果返回传入活动与用户进行交互。
+`OnStop`不一定会在内存不足的情况下调用, 如 Android 对资源会耗尽, 无法正确地为活动提供背景。 出于此原因, 最好不要依赖`OnStop`于在准备用于销毁的活动时调用。 如果活动即将消失, 或者`OnDestroy` `OnRestart`活动返回到与用户交互, 则可以在此之后调用的下一个生命周期方法将是。
 
 #### <a name="ondestroy"></a>OnDestroy
 
-[OnDestroy](https://developer.xamarin.com/api/member/Android.App.Activity.OnDestroy/)是之前它已被销毁并从内存中完全删除活动实例调用的最后一个方法。 在极端情况下 Android 会严重影响应用程序过程在承载活动，这将导致`OnDestroy`不调用。 大多数活动将不会实现此方法，因为大多数清理并完成了关机`OnPause`和`OnStop`方法。 `OnDestroy`方法通常被重写清理长时间运行的资源可能会泄漏资源。 出现这种可能是后台线程中启动`OnCreate`。
+[OnDestroy](xref:Android.App.Activity.OnDestroy)是在将其销毁并从内存中完全删除之前, 在活动实例上调用的最终方法。 在极端情况下, Android 可能会终止宿主活动的应用程序进程, 这将导致`OnDestroy`不会被调用。 大多数活动将不会实现此方法, 因为和`OnPause` `OnStop`方法中的大多数清理和关闭操作都已完成。 通常会重写方法,以清理可能会泄漏资源的长时间运行的资源。`OnDestroy` 这种情况的一个示例可能是在中`OnCreate`启动的后台线程。
 
-将名为该活动已被销毁后没有生命周期方法。
+在活动被销毁后, 不会调用任何生命周期方法。
 
 #### <a name="onrestart"></a>OnRestart
 
-[OnRestart](https://developer.xamarin.com/api/member/Android.App.Activity.OnRestart/)后您的活动已停止，在它重新启动之前调用。 在用户按应用程序中的上一个活动的主页按钮时，会是很好的例子。 当发生这种情况`OnPause`，然后`OnStop`调用方法，并将活动移动到后台，但不是会被销毁。 如果用户是使用任务管理器或类似的应用程序还原应用程序，Android 将调用`OnRestart`活动的方法。
+当活动停止后, 在重新启动活动之前, 将调用[OnRestart](xref:Android.App.Activity.OnRestart) 。 例如, 当用户在应用程序中的活动上按下 "主页" 按钮时, 就会出现这种情况。 发生这种`OnPause`情况`OnStop`时, 将调用方法, 并将活动移动到后台但不会销毁。 如果用户随后使用任务管理器或类似的应用程序来还原应用程序, 则 Android 将调用`OnRestart`活动的方法。
 
-有哪种逻辑应在实现通用准则`OnRestart`。 这是因为`OnStart`总是调用而不考虑是否正在创建活动或正在重新启动，因此应在初始化活动所需的任何资源`OnStart`，而非`OnRestart`。
+对于应在中`OnRestart`实现的逻辑类型, 没有一般的指导原则。 这是因为`OnStart`无论活动是正在创建还是正在重新启动, 都将始终调用, 因此应在中`OnStart`(而不是`OnRestart`) 初始化活动所需的任何资源。
 
-下一个生命周期方法之后调用`OnRestart`将为`OnStart`。
+之后`OnRestart`调用的下一个生命周期方法`OnStart`将是。
 
-### <a name="back-vs-home"></a>备份 vs。主页
+### <a name="back-vs-home"></a>后退与主页
 
-许多 Android 设备都有两个不同的按钮:"上一步"按钮和"主页"按钮。 可以为 Android 4.0.3 下面的屏幕截图中看到此示例：
+许多 Android 设备具有两个不同的按钮: "后退" 按钮和 "主页" 按钮。 Android 4.0.3 的以下屏幕截图中显示了这种情况的示例:
 
-[![上一页和主页按钮](images/image4-sml.png)](images/image4.png#lightbox)
+[!["后退" 和 "主页" 按钮](images/image4-sml.png)](images/image4.png#lightbox)
 
-即使它们看上去拥有相同的效果将应用程序放在后台的没有在两个按钮之间略有不同。 当用户单击后退按钮时，它们在告诉 Android 与活动完成。 Android 将销毁该活动。 与此相反，当用户单击主页按钮该活动只是放入后台&ndash;Android 将终止该活动。
+这两个按钮之间存在细微的差异, 尽管它们看起来与将应用程序放置在后台的效果相同。 当用户单击 "后退" 按钮时, 他们会告诉 Android 它们已在活动中完成。 Android 会销毁活动。 相反, 当用户单击 "主页" 按钮时, 该活动仅置于后台&ndash; , 而不会终止活动。
 
 <a name="Managing_State_Throughout_the_Lifecycle" />
 
-## <a name="managing-state-throughout-the-lifecycle"></a>管理整个生命周期状态
+## <a name="managing-state-throughout-the-lifecycle"></a>管理整个生命周期中的状态
 
-已停止或销毁活动时系统将提供的机会保存更高版本的解除冻结的活动的状态。
-已保存状态，这称为实例状态。 Android 提供了用于在活动生命周期过程中存储实例状态的三个选项：
+当活动停止或销毁时, 系统将提供保存活动状态的机会, 以便以后解除冻结。
+此保存状态称为实例状态。 Android 提供三个用于在活动生命周期内存储实例状态的选项:
 
-1. 存储中的基元值`Dictionary`称为[捆绑](https://developer.xamarin.com/api/type/Android.OS.Bundle/)Android 将用于保存状态。
+1. 将基元值存储在`Dictionary` Android 将用于保存状态的[绑定](xref:Android.OS.Bundle)中。
 
-1. 创建自定义类将保存位图等复杂值。 Android 将使用此自定义类来保存状态。
+1. 创建将包含复杂值 (如位图) 的自定义类。 Android 将使用此自定义类来保存状态。
 
-1. 绕过配置更改生命周期中，并假设完成负责维护活动中的状态。
+1. 规避配置更改生命周期, 并假设完全负责维护活动中的状态。
 
+本指南介绍前两个选项。
 
-本指南介绍了前两个选项。
+### <a name="bundle-state"></a>绑定状态
 
+保存实例状态的主要选项是使用称为[捆绑](xref:Android.OS.Bundle)的键/值字典对象。
+请记住, 当创建`OnCreate`了向其传递捆绑作为参数的方法的活动时, 可以使用此绑定来还原实例状态。 对于更复杂的数据, 不建议使用捆绑包, 这些数据不会快速或轻松地序列化为键/值对 (如位图);相反, 应将其用于简单的值 (如字符串)。
 
+活动提供一些方法来帮助在捆绑包中保存和检索实例状态:
 
-### <a name="bundle-state"></a>捆绑包状态
+- [OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*)&ndash;此操作由 Android 在活动被销毁时调用。 如果活动需要保留任何键/值状态项, 则这些活动可以实现此方法。
 
-用于保存实例状态的首要选项是使用键/值字典对象，称为[捆绑](https://developer.xamarin.com/api/type/Android.OS.Bundle/)。
-请记住，创建一个活动时`OnCreate`方法作为参数传递一个捆绑包，则此捆绑包可用于还原实例状态。 不建议用于捆绑包进行更复杂的数据，不会快速或轻松地进行序列化键/值对 （如位图）;相反，它应该用于简单的值，例如字符串。
+- [OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*)&ndash;此`OnCreate`方法在方法完成后被调用, 并为活动提供了在初始化完成后恢复其状态的另一种机会。
 
-活动提供方法来帮助进行保存和检索捆绑中的实例状态：
+下图演示了如何使用这些方法:
 
--   [OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/) &ndash;这由 Android 时调用的活动已被破坏。 活动可以实现此方法，如果它们需要保存任何键/值状态项。
-
--   [OnRestoreInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnRestoreInstanceState/p/Android.OS.Bundle/) &ndash;之后调用此`OnCreate`方法完成，并且提供了另一种可能用于初始化完成后恢复其状态的活动。
-
-下图说明了如何使用这些方法：
-
-[![捆绑包状态流程图](images/image3-sml.png)](images/image3.png#lightbox)
+[![绑定状态流程图](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
-[OnSaveInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnSaveInstanceState/p/Android.OS.Bundle/)正在停止活动都会调用。 它将接收该活动可以存储在其状态的捆绑包参数。 活动时设备体验的配置更改，可以使用`Bundle`传入的要通过重写保留的活动状态的对象`OnSaveInstanceState`。 例如，考虑以下代码：
+当活动正在停止时, 将调用[OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*) 。 它将接收一个捆绑参数, 活动可在其中存储其状态。 当设备遇到配置更改时, 活动可以使用`Bundle`传入的对象通过重写`OnSaveInstanceState`来保留活动状态。 例如，考虑以下代码：
 
 ```csharp
 int c;
@@ -273,11 +269,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-上面的代码增加名为一个整数`c`名为的按钮时`incrementCounter`单击时，显示在结果`TextView`名为`output`。 当配置更改发生-例如，当将设备旋转-上面的代码将丢失的值`c`因为`bundle`是`null`，如下图中所示：
+当单击名`incrementCounter`为的按钮时`c` , 上面的代码会递增名为的整数, 并将`output`结果显示在一个名为的`TextView`中。 发生配置更改时 (例如, 当设备旋转时), 上面的代码将丢失的值`c` , 这是`bundle` `null`因为应为, 如下图所示:
 
-[![显示不会显示以前的值](images/07-sml.png)](images/07.png#lightbox)
+[![显示不显示上一个值](images/07-sml.png)](images/07.png#lightbox)
 
-若要保留的值`c`活动可以在此示例中，重写`OnSaveInstanceState`，捆绑中保存值，如下所示：
+若要在此示例`c`中保留的值, 活动可以重`OnSaveInstanceState`写, 并将值保存在绑定中, 如下所示:
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -287,20 +283,18 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-现在当将设备与新方向旋转的整数部分将为绑定中保存和检索的行：
+现在, 当设备旋转到新方向时, 该整数将保存在绑定中, 并使用以下行进行检索:
 
 ```csharp
 c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> 它是重要始终调用基实现`OnSaveInstanceState`，以便也可以保存的视图层次结构的状态。
-
-
+> 务必始终调用的`OnSaveInstanceState`基实现, 以便还可以保存视图层次结构的状态。
 
 ##### <a name="view-state"></a>视图状态
 
-重写`OnSaveInstanceState`是用于在活动中的暂时性数据保存在方向更改，如上面的示例中的计数器之间适当机制。 但是的默认实现`OnSaveInstanceState`将负责的每个视图中，在 UI 中保存暂时性数据，只要每个视图都有分配的 ID。 例如，假设应用程序具有`EditText`元素在 XML 中定义，如下所示：
+重`OnSaveInstanceState`写是一种适当的机制, 用于跨方向更改 (如上面示例中的计数器) 保存活动中的暂时性数据。 但是, 只要每个视图`OnSaveInstanceState`都分配了 ID, 的默认实现就会在 UI 中为每个视图保存暂时性数据。 例如, 假设应用程序有一个`EditText`在 XML 中定义的元素, 如下所示:
 
 ```xml
 <EditText android:id="@+id/myText"
@@ -308,15 +302,15 @@ c = bundle.GetInt ("counter", -1);
   android:layout_height="wrap_content"/>
 ```
 
-由于`EditText`控件具有`id`分配，在用户输入一些数据并旋转设备时，数据仍显示，如下所示：
+由于控件具有已分配`id`的, 因此, 当用户输入某些数据并旋转设备时, 数据仍将显示, 如下所示: `EditText`
 
-[![在横向模式中保留数据](images/08-sml.png)](images/08.png#lightbox)
+[![在横向模式下保留数据](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
-[OnRestoreInstanceState](https://developer.xamarin.com/api/member/Android.App.Activity.OnRestoreInstanceState/p/Android.OS.Bundle/)后将调用`OnStart`。 它使活动能够还原以前保存在上一个过程绑定到任何状态`OnSaveInstanceState`。 这是提供给在同一个包`OnCreate`，但是。
+将在 `OnStart` 之后调用 [ OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*)。 它为活动提供了在之前`OnSaveInstanceState`保存到捆绑包的任何状态的机会。 不过, 这是提供给`OnCreate`的相同捆绑包。
 
-下面的代码演示如何在还原状态`OnRestoreInstanceState`:
+下面的代码演示如何在中`OnRestoreInstanceState`还原状态:
 
 ```csharp
 protected override void OnRestoreInstanceState(Bundle savedState)
@@ -327,33 +321,33 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 }
 ```
 
-此方法存在是为了提供一些灵活地时应还原状态。 有时是等待，直到还原实例状态之前完成所有初始化更为合适。 此外，将现有的活动的子类可能只想要从实例状态还原的某些值。 在许多情况下，它不需要重写`OnRestoreInstanceState`，因为大多数活动可以还原使用提供给此捆绑包的状态`OnCreate`。
+此方法用于在应还原状态时提供一些灵活性。 有时, 更适合等待所有初始化完成后再还原实例状态。 此外, 现有活动的子类可能只需要从实例状态还原某些值。 在许多情况下, 不需要重写`OnRestoreInstanceState`, 因为大多数活动都可以使用提供给的捆绑来`OnCreate`还原状态。
 
-有关保存状态使用的示例`Bundle`，请参阅[演练-保存活动状态](saving-state.md)。
-
-
-#### <a name="bundle-limitations"></a>捆绑包限制
-
-尽管`OnSaveInstanceState`可以轻松地保存暂时性数据，它具有一些限制：
-
--   它不是在所有情况下调用。 例如，按**主页**或**回**退出活动不会导致`OnSaveInstanceState`被调用。
-
--   捆绑包传递到`OnSaveInstanceState`不专为大型对象，如图像。 对于大型对象，保存该对象从[OnRetainNonConfigurationInstance](https://developer.xamarin.com/api/member/Android.App.Activity.OnRetainNonConfigurationInstance/)非常可取，如下所述。
-
--   通过使用此捆绑包来保存的数据进行序列化，这可能会导致延迟。
-
-捆绑包状态是适用于不使用太多内存的简单数据，而*非配置实例数据*很有用的更复杂的数据或检索成本较高的数据，如 web 服务调用或很复杂数据库查询。 根据需要在对象中获取保存非配置实例数据。 下一部分将介绍`OnRetainNonConfigurationInstance`作为保留通过配置更改的更复杂数据类型的一种方法。
+有关使用`Bundle`保存状态的示例, 请参阅[演练-保存活动状态](saving-state.md)。
 
 
-### <a name="persisting-complex-data"></a>保存的复杂数据
+#### <a name="bundle-limitations"></a>绑定限制
 
-捆绑包中保存数据，除了 Android 还支持将数据保存通过重写[OnRetainNonConfigurationInstance](https://developer.xamarin.com/api/member/Android.App.Activity.OnRetainNonConfigurationInstance/) ，并返回的实例`Java.Lang.Object`，其中包含要保留的数据。 有两个主要好处使用`OnRetainNonConfigurationInstance`保存状态：
+尽管`OnSaveInstanceState`可以轻松地保存暂时性数据, 但有一些限制:
 
--   从返回的对象`OnRetainNonConfigurationInstance`性能也具有更大、 更复杂的数据类型，因为内存保留此对象。
+-   在所有情况下均不会调用它。 例如, 按**Home**或**Back**退出活动将`OnSaveInstanceState`不会导致调用。
 
--   `OnRetainNonConfigurationInstance`方法是按需、 被调用，并且只在需要时。 这是比使用手动缓存更经济。
+-   传入`OnSaveInstanceState`的捆绑包不适用于大型对象, 例如图像。 对于大型对象, 如下面所述, 保存[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)中的对象更可取。
 
-使用`OnRetainNonConfigurationInstance`是适用于方案是相当昂贵检索多个时间的数据，如 web 服务调用。 有关示例，请搜索 Twitter 的以下代码：
+-   使用捆绑包保存的数据将被序列化, 这可能会导致延迟。
+
+绑定状态对于不使用大量内存的简单数据很有用, 而*非配置实例数据*对于更复杂的数据或检索开销很大的数据 (如从 web 服务调用或复杂的数据库查询) 很有用。 非配置实例数据将根据需要保存在对象中。 下一节将`OnRetainNonConfigurationInstance`介绍如何通过配置更改来保留更复杂的数据类型。
+
+
+### <a name="persisting-complex-data"></a>保留复杂数据
+
+除了保留捆绑中的数据以外, Android 还支持通过重写[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)并返回包含要保存的数据的`Java.Lang.Object`实例来保存数据。 使用`OnRetainNonConfigurationInstance`保存状态有两个主要优点:
+
+-   从`OnRetainNonConfigurationInstance`返回的对象对更大、更复杂的数据类型执行良好的工作, 因为内存会保留此对象。
+
+-   `OnRetainNonConfigurationInstance`方法将按需调用, 并且仅在需要时调用。 这比使用手动缓存更经济。
+
+使用`OnRetainNonConfigurationInstance`适用于多次检索数据 (如在 web 服务调用中) 的情况。 例如, 请考虑以下搜索 Twitter 的代码:
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -400,11 +394,11 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-此代码检索从格式化为 JSON web 结果、 分析它们，然后在列表中，显示结果，如以下屏幕截图中所示：
+此代码从 web 中检索格式为 JSON 的结果, 对其进行分析, 然后将结果显示在列表中, 如以下屏幕截图所示:
 
-[![在屏幕上显示的结果](images/06-sml.png)](images/06.png#lightbox)
+[![屏幕上显示的结果](images/06-sml.png)](images/06.png#lightbox)
 
-配置发生更改时-例如，在旋转设备-时代码重复该过程。 若要重复使用最初检索到的结果并不会导致不必要的冗余网络调用，我们可以使用`OnRetainNonconfigurationInstance`来保存这些结果，如下所示：
+发生配置更改时 (例如, 当设备旋转时), 代码将重复该过程。 若要重用最初检索到的结果, 而不会导致不必要的冗余网络`OnRetainNonconfigurationInstance`调用, 可以使用保存结果, 如下所示:
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -439,7 +433,7 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-现在，当将设备旋转，从检索原始结果`LastNonConfiguartionInstance`属性。 在此示例中，结果组成`string[]`包含推文。 由于`OnRetainNonConfigurationInstance`要求`Java.Lang.Object`将返回`string[]`子类包装在类中`Java.Lang.Object`，如下所示：
+现在当设备旋转时, 会从`LastNonConfiguartionInstance`属性中检索原始结果。 在此示例中, 结果包含一个`string[]`包含推文的。 由于`OnRetainNonConfigurationInstance`要求`Java.Lang.Object`返回`Java.Lang.Object`, `string[]`因此包装在子类的类中, 如下所示:
 
 ```csharp
 class TweetListWrapper : Java.Lang.Object
@@ -448,7 +442,7 @@ class TweetListWrapper : Java.Lang.Object
 }
 ```
 
-例如，尝试使用`TextView`返回的对象作为`OnRetainNonConfigurationInstance`将导致泄露活动，如下面的代码所示：
+例如, 如果尝试`TextView`将用作从`OnRetainNonConfigurationInstance`返回的对象, 将会泄漏活动, 如下面的代码所示:
 
 ```csharp
 TextView _textView;
@@ -478,14 +472,14 @@ public override Java.Lang.Object OnRetainNonConfigurationInstance ()
 }
 ```
 
-在本部分中，我们已了解如何保留与简单的状态数据`Bundle`，并保留更复杂的数据类型与`OnRetainNonConfigurationInstance`。
+在本部分中, 我们了解了如何在`Bundle`中保留简单状态数据, 以及如何在中保存更复杂的`OnRetainNonConfigurationInstance`数据类型。
 
 ## <a name="summary"></a>总结
 
-Android 活动生命周期为状态管理的应用程序中的活动提供强大的框架，但它可能难以理解和实现。 这一章介绍了活动可能会经历其生存期内，以及与这些状态相关联的生命周期方法期间的不同状态。 接下来，指南提供有关应在每个这些方法中执行逻辑的类型。
+Android 活动生命周期提供了一个功能强大的框架, 可用于对应用程序中的活动进行状态管理, 但这可能对理解和实现非常棘手。 本章介绍活动在其生存期内可能经历的不同状态, 以及与这些状态关联的生命周期方法。 接下来, 提供有关应在每个方法中执行的逻辑类型的指南。
 
 
 ## <a name="related-links"></a>相关链接
 
 - [处理旋转](~/android/app-fundamentals/handling-rotation.md)
-- [Android 活动](https://developer.xamarin.com/api/type/Android.App.Activity/)
+- [Android 活动](xref:Android.App.Activity)
