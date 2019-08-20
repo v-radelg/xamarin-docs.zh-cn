@@ -1,29 +1,29 @@
 ---
-title: 多点触控手指在 Xamarin.Android 中跟踪
-description: 本主题演示如何跟踪从多个手指触摸事件
+title: Xamarin 中的多点触控 Finger 跟踪
+description: 本主题演示如何从多个手指跟踪触摸事件
 ms.prod: xamarin
 ms.assetid: 048D51F9-BD6C-4B44-8C53-CCEF276FC5CC
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 34a9d2d9b8acb05a1b978a70e85038507032faaa
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 26dfc4f9327f12d6854d72349dc46e0b4427fa72
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61011778"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643932"
 ---
-# <a name="multi-touch-finger-tracking"></a>多点触控手指跟踪
+# <a name="multi-touch-finger-tracking"></a>多点触控 Finger 跟踪
 
-_本主题演示如何跟踪从多个手指触摸事件_
+_本主题演示如何从多个手指跟踪触摸事件_
 
-有些的时候多点触控应用程序需要跟踪各手指，因为它们在屏幕上同时移动。 一个典型的应用程序是一个 finger-paint 程序。 你希望用户能够绘制的一根手指，而且还可以同时使用多个手指绘制。 在您的程序处理多个触控事件，它需要区分哪些事件对应于每个手指。 Android 提供 ID 代码实现此目的，但获取和处理该代码可能有点棘手。
+有时, 多点触控应用程序需要在屏幕上同时移动时跟踪各个手指。 一个典型的应用程序就是一个手指画图程序。 您希望用户能够用一个手指绘图, 还可以一次使用多个手指进行绘制。 当程序处理多个触控事件时, 它需要区分每个手指对应的事件。 Android 为此目的提供 ID 代码, 但获取和处理这些代码可能有点棘手。
 
-对于特定手指与关联的所有事件，ID 代码保持不变。 当手指首先触摸屏幕，并从屏幕上抬起手指后变为无效时分配的 ID 代码。
-这些 ID 代码是通常非常小的整数，并且 Android 将它们重新用于更高版本的触控事件。
+对于与特定手指关联的所有事件, ID 代码保持不变。 当手指首次触摸屏幕时, 将分配 ID 代码, 并在手指从屏幕上提起后变为无效。
+这些 ID 代码通常是非常小的整数, Android 重用它们以用于以后的触控事件。
 
-几乎总是跟踪各手指的程序维护触控体验跟踪的字典。 字典的键是标识特定手指的 ID 代码。 字典的值取决于应用程序。 在中[; FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)程序中，每个手指笔划 （从触摸以释放） 是与包含呈现与该手指绘制的线条所需的所有信息的对象相关联。 程序定义了一个较小`FingerPaintPolyline`类实现此目的：
+几乎始终会有一次跟踪单个手指的程序维护用于触摸跟踪的字典。 字典键是标识特定手指的 ID 代码。 字典值依赖于应用程序。 在[FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)程序中, 每个 finger 笔划 (从触控到 release) 都与一个对象相关联, 该对象包含用该手指绘制的线条所需的所有信息。 程序出于此目的定义`FingerPaintPolyline`了一个小型类:
 
 ```csharp
 class FingerPaintPolyline
@@ -41,29 +41,29 @@ class FingerPaintPolyline
 }
 ```
 
-每个 polyline 具有一种颜色，笔划宽度和 Android 图形[ `Path` ](https://developer.xamarin.com/api/type/Android.Graphics.Path/)地累积并呈现在行的多个点，因为所绘制的对象。
+每个折线都有一种颜色、描边宽度和一个[`Path`](xref:Android.Graphics.Path) Android 图形对象, 可在绘制时聚合并渲染行的多个点。
 
-如下所示的代码的其余部分包含在`View`派生类名为`FingerPaintCanvasView`。 类维护类型的对象的字典`FingerPaintPolyline`他们主动正在由一个或多个手指绘制期间：
+下面显示的代码的其余部分包含在名为`View` `FingerPaintCanvasView`的导数中。 在当前由一个或多个手指绘制`FingerPaintPolyline`时, 该类将维护类型为的对象的字典:
 
 ```csharp
 Dictionary<int, FingerPaintPolyline> inProgressPolylines = new Dictionary<int, FingerPaintPolyline>();
 ```
 
-此字典可让视图快速获取`FingerPaintPolyline`特定手指与关联的信息。
+此字典允许视图快速获取与特定手指`FingerPaintPolyline`关联的信息。
 
-`FingerPaintCanvasView`类还维护`List`折线已完成的对象：
+类还会为已`List`完成的折线维护一个对象: `FingerPaintCanvasView`
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-在此对象`List`中已绘制它们的顺序相同。
+此`List`中的对象的顺序与它们的绘制顺序相同。
 
-`FingerPaintCanvasView` 重写两个方法定义的`View`: [`OnDraw`](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/p/Android.Graphics.Canvas/)
-并[ `OnTouchEvent` ](https://developer.xamarin.com/api/member/Android.Views.View.OnTouchEvent/p/Android.Views.MotionEvent/)。
-在其`OnDraw`重写时，该视图绘制已完成的折线，然后绘制正在折线。
+`FingerPaintCanvasView`重写由定义的`View`两种方法:[`OnDraw`](xref:Android.Views.View.OnDraw*)
+和[`OnTouchEvent`](xref:Android.Views.View.OnTouchEvent*)。
+在其`OnDraw`重写中, 视图绘制已完成的折线, 然后绘制正在进行的折线。
 
-重写`OnTouchEvent`方法首先获取`pointerIndex`值从`ActionIndex`属性。 这`ActionIndex`值区分多个手指，但它不一致跨多个事件。 为此，您使用`pointerIndex`若要获取指针`id`值从`GetPointerId`方法。 此 ID*是*一致跨多个事件：
+`OnTouchEvent`方法的重写通过从`ActionIndex`属性`pointerIndex`获取值开始。 此`ActionIndex`值在多个手指之间区分, 但在多个事件之间并不一致。 出于此原因, 请使用`pointerIndex`从`GetPointerId`方法获取指针`id`值。 此 ID*在*多个事件之间保持一致:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -88,17 +88,17 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-请注意，使用重写`ActionMasked`中的属性`switch`语句而不是`Action`属性。 原因是：
+请注意, 重写使用`ActionMasked` `switch`语句中的属性而不是`Action`属性。 原因是：
 
-时就需要使用多点触控`Action`属性的值为`MotionEventsAction.Down`的第一个手指触摸屏幕，和的值`Pointer2Down`和`Pointer3Down`因为第二个和第三个手指同时触摸屏幕。 第四个和第五个手指进行联系人`Action`属性具有甚至不对应于的成员的数值`MotionEventsAction`枚举 ！ 您需要检查中的值来解释它们的含义的位标志的值。
+当处理多点`Action`触控时, 属性的`MotionEventsAction.Down`值为, 第一个手指触摸屏幕`Pointer2Down` , 然后将和`Pointer3Down`的值作为第二个和第三个手指同时触摸屏幕。 由于第四个和第五个手指联系`Action` , 因此属性具有数值, 甚至不与`MotionEventsAction`枚举的成员相对应! 需要检查值中的位标志的值, 以解释它们的含义。
 
-同样，如在手指离开屏幕，请联系`Action`属性具有值`Pointer2Up`并`Pointer3Up`第二个和第三个手指，和`Up`的第一根手指。
+同样, 由于手指与屏幕保持联系`Action` , 因此该属性的`Pointer2Up`值`Pointer3Up` `Up`为, 第二个和第三个手指为第一个手指。
 
-`ActionMasked`属性采用上较少因为它旨在与结合使用的值数目`ActionIndex`属性来区分多个手指。 当手指触摸屏幕时，可以仅为属性`MotionEventActions.Down`的第一根手指和`PointerDown`的后续手指。 在手指离开屏幕，如`ActionMasked`具有值`Pointer1Up`后续手指和`Up`的第一根手指。
+属性所采用的值数量更少, 因为它应`ActionIndex`与属性结合使用以区分多个手指。 `ActionMasked` 手指触摸屏幕时, 属性只能与第一个手指`MotionEventActions.Down`和`PointerDown`下一根手指相等。 在手指离开屏幕时, `ActionMasked`将的`Pointer1Up`值显示为后面的手指和`Up`第一个手指的值。
 
-使用时`ActionMasked`，则`ActionIndex`后续手指触摸和保留的屏幕，但您通常不需要使用该以外的值作为中的其他方法的参数用于区分`MotionEvent`对象。 多点触控，最重要的一种方法是`GetPointerId`在上面的代码中调用。 方法返回一个值可用于字典键可以将手指的特定事件关联。
+使用时`ActionMasked` ,可`MotionEvent`通过下一根手指来区分屏幕,但通常不需要使用该值,除非作为对象中其他方法的参数。`ActionIndex` 对于多点触控, 上面的代码中`GetPointerId`调用了这些方法中的最重要的一种方法。 该方法返回一个值, 该值可用于字典键, 以将特定事件与手指相关联。
 
-`OnTouchEvent`中重写[; FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)程序进程`MotionEventActions.Down`并`PointerDown`相同通过创建一个新的事件`FingerPaintPolyline`对象并将其添加到字典：
+`MotionEventActions.Down`[FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)`PointerDown` `OnTouchEvent`程序中的重写通过创建新 `FingerPaintPolyline`的对象并将其添加到字典中来处理和事件:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -133,9 +133,9 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-请注意，`pointerIndex`还用于获取视图中的手指的位置。 与之关联的所有触摸信息`pointerIndex`值。 `id`唯一标识多条消息，手指，以便创建字典项的使用。
+`pointerIndex`请注意, 还用于获取该指针在视图中的位置。 所有触摸信息都与`pointerIndex`值相关联。 `id`唯一标识跨多个消息的手指, 以便用于创建字典条目。
 
-同样，`OnTouchEvent`还重写句柄`MotionEventActions.Up`并`Pointer1Up`相同通过转移到已完成的折线`completedPolylines`集合，因此它们可以在绘制`OnDraw`重写。 该代码还会删除`id`字典中的条目：
+同样`OnTouchEvent` , 重写还会通过`MotionEventActions.Up`将已完成的折线传输到`completedPolylines`集合来处理和`Pointer1Up`相同, 以便在`OnDraw`重写过程中绘制它们。 此代码还会从`id`字典中删除该项:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -163,9 +163,9 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-现在的最为棘手的部分。
+现在为棘手部分。
 
-之间的向下和向上事件，通常有很多`MotionEventActions.Move`事件。 对单个调用中这些捆绑在一起`OnTouchEvent`，并且必须从以不同方式处理它们`Down`和`Up`事件。 `pointerIndex`从前面获取的值`ActionIndex`必须忽略属性。 相反，该方法必须获得多个`pointerIndex`循环之间 0 的值和`PointerCount`属性，然后获取`id`其中每个`pointerIndex`值：
+在停机和向上事件之间, 通常有很多`MotionEventActions.Move`事件。 这些将在对`OnTouchEvent`的单个调用中捆绑在一起, 它们的处理方式必须与`Up` `Down`和事件的处理方式不同。 `pointerIndex` 之前`ActionIndex`从属性中获取的值必须被忽略。 相反, 该方法必须通过循环`pointerIndex` 0 `PointerCount`与属性来获取多个值`id` , 然后获取其中每个`pointerIndex`值的:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -191,14 +191,14 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-处理此类允许[; FingerPaint](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)程序来跟踪各手指，并在屏幕上绘制结果：
+这种类型的处理允许[FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)程序跟踪单个手指并在屏幕上绘制结果:
 
 [![FingerPaint 示例中的示例屏幕截图](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
-现在已了解如何跟踪各手指在屏幕上并区分它们。
+现在, 你已了解如何在屏幕上跟踪各个手指并区分它们。
 
 
 ## <a name="related-links"></a>相关链接
 
-- [等效的 Xamarin iOS 》 指南](~/ios/app-fundamentals/touch/touch-tracking.md)
-- [FingerPaint （示例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)
+- [等效的 Xamarin iOS 指南](~/ios/app-fundamentals/touch/touch-tracking.md)
+- [FingerPaint (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)
