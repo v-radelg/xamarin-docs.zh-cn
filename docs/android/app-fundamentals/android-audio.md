@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 256871fd225808af1fdebf14c4eb2b43e575e105
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 960b4eb058209547c65a3b438bed541c3ade257c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644340"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521263"
 ---
 # <a name="android-audio"></a>Android 音频
 
@@ -25,13 +25,13 @@ _Android OS 为多媒体提供了广泛的支持, 包括音频和视频。本指
 
 Android 为多媒体提供广泛支持。 本文介绍如何在 Android 中使用音频, 并介绍了以下主题
 
-1.  **通过 MediaPlayer 播放音频**&ndash;使用`AudioTrack`内置`MediaPlayer`类播放音频, 包括本地音频文件和具有类的流音频文件。
+1. **通过 MediaPlayer 播放音频**&ndash;使用`AudioTrack`内置`MediaPlayer`类播放音频, 包括本地音频文件和具有类的流音频文件。
 
-2.  **录制音频**&ndash;使用内置`MediaRecorder`类记录音频。
+2. **录制音频**&ndash;使用内置`MediaRecorder`类记录音频。
 
-3.  使用**音频通知**&ndash;使用音频通知来创建正常运行的应用程序, 这些应用程序可以通过挂起或取消其音频输出来正确响应事件 (例如传入的电话呼叫)。
+3. 使用**音频通知**&ndash;使用音频通知来创建正常运行的应用程序, 这些应用程序可以通过挂起或取消其音频输出来正确响应事件 (例如传入的电话呼叫)。
 
-4.  使用**低级别音频**通过直接写入内存`AudioTrack`缓冲区来使用类播放音频。 &ndash; 使用`AudioRecord`类记录音频并直接从内存缓冲区读取。
+4. 使用**低级别音频**通过直接写入内存`AudioTrack`缓冲区来使用类播放音频。 &ndash; 使用`AudioRecord`类记录音频并直接从内存缓冲区读取。
 
 
 ## <a name="requirements"></a>要求
@@ -228,15 +228,15 @@ recorder.Release();
 
 请求设备的音频资源所需的步骤如下所示:
 
-1.  获取`AudioManager`系统服务的句柄。
+1. 获取`AudioManager`系统服务的句柄。
 
-2.  创建回调类的实例。
+2. 创建回调类的实例。
 
-3.  通过对调用`RequestAudioFocus`方法`AudioManager`来请求设备的音频资源。 参数是回调对象、流类型 (音乐、语音呼叫、环等) 和所请求的访问权限的类型 (例如, 可以暂时请求音频资源或无限期地请求音频资源)。
+3. 通过对调用`RequestAudioFocus`方法`AudioManager`来请求设备的音频资源。 参数是回调对象、流类型 (音乐、语音呼叫、环等) 和所请求的访问权限的类型 (例如, 可以暂时请求音频资源或无限期地请求音频资源)。
 
-4.  如果授予了该请求, `playMusic`则会立即调用方法, 并且音频开始播放。
+4. 如果授予了该请求, `playMusic`则会立即调用方法, 并且音频开始播放。
 
-5.  如果拒绝请求, 则不执行其他操作。 在这种情况下, 仅当稍后授予请求时, 才会播放音频。
+5. 如果拒绝请求, 则不执行其他操作。 在这种情况下, 仅当稍后授予请求时, 才会播放音频。
 
 
 下面的代码示例显示了以下步骤:
@@ -267,11 +267,11 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 低级别音频 Api 可以更好地控制音频播放和录制, 因为它们直接与内存缓冲区交互, 而不是使用文件 Uri。 在某些情况下, 这种方法更可取。 这种情况包括:
 
-1.  从加密的音频文件播放时。
+1. 从加密的音频文件播放时。
 
-2.  播放连续的短剪辑时。
+2. 播放连续的短剪辑时。
 
-3.  音频流式处理。
+3. 音频流式处理。
 
 
 ### <a name="audiotrack-class"></a>AudioTrack 类
@@ -283,17 +283,17 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 若要播放音频, 必须实例化`AudioTrack`的新实例。 传入[构造函数](xref:Android.Media.AudioTrack)的参数列表指定如何播放缓冲区中包含的音频示例。 参数包括:
 
-1.  流类型&ndash;语音、铃声、音乐、系统或警报。
+1. 流类型&ndash;语音、铃声、音乐、系统或警报。
 
-2.  以&ndash; Hz 表示的采样速率的频率。
+2. 以&ndash; Hz 表示的采样速率的频率。
 
-3.  通道配置&ndash; Mono 或立体声。
+3. 通道配置&ndash; Mono 或立体声。
 
-4.  8位&ndash;或16位编码的音频格式。
+4. 8位&ndash;或16位编码的音频格式。
 
-5.  缓冲区大小&ndash; (以字节为单位)。
+5. 缓冲区大小&ndash; (以字节为单位)。
 
-6.  缓冲区模式&ndash;流式处理或静态。
+6. 缓冲区模式&ndash;流式处理或静态。
 
 
 构造后, 将调用`AudioTrack`的[播放](xref:Android.Media.AudioTrack.Play)方法, 将其设置为开始播放。 将音频缓冲区写入到`AudioTrack`开始播放:
@@ -354,17 +354,17 @@ audioTrack.Release();
 
 第一步是构造一个新的[AudioRecord](xref:Android.Media.AudioRecord)对象。 传入[构造函数](xref:Android.Media.AudioRecord)的参数列表提供记录所需的所有信息。 与中`AudioTrack`不同, 其中的参数是很大程度的枚举, `AudioRecord`中的等效参数是整数。 这些问题包括：
 
-1.  硬件音频输入源, 如麦克风。
+1. 硬件音频输入源, 如麦克风。
 
-2.  流类型&ndash;语音、铃声、音乐、系统或警报。
+2. 流类型&ndash;语音、铃声、音乐、系统或警报。
 
-3.  以&ndash; Hz 表示的采样速率的频率。
+3. 以&ndash; Hz 表示的采样速率的频率。
 
-4.  通道配置&ndash; Mono 或立体声。
+4. 通道配置&ndash; Mono 或立体声。
 
-5.  8位&ndash;或16位编码的音频格式。
+5. 8位&ndash;或16位编码的音频格式。
 
-6.  缓冲区大小 (以字节为单位)
+6. 缓冲区大小 (以字节为单位)
 
 
 构造后, 将调用其[StartRecording 方法。](xref:Android.Media.AudioRecord.StartRecording) `AudioRecord` 现在可以开始录制了。 `AudioRecord`持续读取音频缓冲区的输入, 并将此输入写入音频文件。
