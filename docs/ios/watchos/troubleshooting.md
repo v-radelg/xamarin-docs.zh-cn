@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528402"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629662"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -92,7 +92,7 @@ with an alpha channel. Icons should not have an alpha channel.
 *如果*你使用的是 Xcode Interface Builder, 请按照以下步骤为你的手表应用创建新的界面控制器并启用与 Xcode 的同步, 以便可以在中C#使用插座和操作:
 
 1. 在 Xcode 中打开 "监视" 应用的**界面。情节提要** **Interface Builder**。
-    
+
     ![](troubleshooting-images/add-6.png "在 Xcode 中打开情节提要 Interface Builder")
 
 2. 将新`InterfaceController`的拖到情节提要:
@@ -144,7 +144,7 @@ with an alpha channel. Icons should not have an alpha channel.
     ```csharp
     using Foundation;
     using System.CodeDom.Compiler;
-    
+
     namespace HelloWatchExtension  // remember to update this
     {
         [Register ("MyInterfaceController")] // remember to update this
@@ -156,9 +156,10 @@ with an alpha channel. Icons should not have an alpha channel.
         }
     }
     ```
-    
-    提示：您可以选择将此文件作为第一个文件的子节点, 方法是将其拖到 Visual Studio for Mac C# Solution Pad 的其他文件中。 它将如下所示:
-    
+
+    > [!TIP]
+    > 您可以选择将此文件作为第一个文件的子节点, 方法是将其拖到 Visual Studio for Mac C# Solution Pad 的其他文件中。 它将如下所示:
+
     ![](troubleshooting-images/add-5.png "解决方案板")
 
 6. 选择 "**生成" > "生成所有**", 以便 Xcode 同步将识别使用的`Register`新类 (通过属性)。
@@ -168,7 +169,7 @@ with an alpha channel. Icons should not have an alpha channel.
     ![](troubleshooting-images/add-6.png "在 Interface Builder 中打开情节提要")
 
 8. 选择新的接口控制器, 并为其指定上面定义的类名, 例如。 `MyInterfaceController`。
-如果一切都正常工作, 则它应自动显示在**类:** 下拉列表中, 你可以从该下拉列表中选择它。
+    如果一切都正常工作, 则它应自动显示在**类:** 下拉列表中, 你可以从该下拉列表中选择它。
 
     ![](troubleshooting-images/add-4.png "设置自定义类")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 88823aa2d86b7cc5db72b3949453cd6aa464bd74
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528461"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629642"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>使用元素 API 创建 Xamarin iOS 应用程序
 
@@ -20,9 +20,9 @@ _本文基于 Monotouch.dialog 对话框简介一文中提供的信息。其中�
 
 在本演练中, 我们将使用 MT。D 元素 API, 用于创建显示任务列表的应用程序的主-详细信息样式。 当用户在导航栏 **+** 中选择按钮时, 会将一个新行添加到该任务的表中。 选择该行将导航到 "详细信息" 屏幕, 该屏幕允许更新任务描述和截止日期, 如下所示:
 
- [![](elements-api-walkthrough-images/01-task-list-app.png "选择该行将导航到 \"详细信息\" 屏幕, 该屏幕允许更新任务描述和截止日期")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+[![](elements-api-walkthrough-images/01-task-list-app.png "选择该行将导航到 \"详细信息\" 屏幕, 该屏幕允许更新任务描述和截止日期")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
- ## <a name="setting-up-mtd"></a>设置 MT。2-d
+## <a name="setting-up-mtd"></a>设置 MT。2-d
 
 隶书.D 与 Xamarin 一起分发。 若要使用此方法, 请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点, 然后添加对**monotouch.dialog**程序集的引用。 然后, 根据`using MonoTouch.Dialog`需要在源代码中添加语句。
 
