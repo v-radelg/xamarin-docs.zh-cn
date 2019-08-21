@@ -169,6 +169,7 @@
 #### [AbsoluteLayout](user-interface/layouts/absolute-layout.md)
 #### [RelativeLayout](user-interface/layouts/relative-layout.md)
 #### [ScrollView](user-interface/layouts/scroll-view.md)
+#### [ContentView](user-interface/layouts/contentview.md)
 #### [框架](user-interface/layouts/frame.md)
 #### [LayoutOptions](user-interface/layouts/layout-options.md)
 #### [边距和填充](user-interface/layouts/margin-and-padding.md)
