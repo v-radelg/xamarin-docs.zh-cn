@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: 58755c54ce2afe80a8bf43adc25a0cf2d90a0bb5
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739458"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658045"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin Forms 开关
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Xamarin [`Switch`](xref:Xamarin.Forms.Switch)是一个水平切换按钮, 用户可以对其进行操作, 以在打开和关闭状态之间切换, 这些状态由一个`boolean`值表示。 类继承自[`View`。](xref:Xamarin.Forms.View) `Switch`
+Xamarin [`Switch`](xref:Xamarin.Forms.Switch)控件是一个水平切换按钮, 用户可以对其进行操作以在打开和关闭状态之间切换, 这些状态由一个`boolean`值表示。 类继承自[`View`。](xref:Xamarin.Forms.View) `Switch`
 
-下面的屏幕截图显示`Switch`了在 iOS和 Android上的开关状态下的控件:
+以下屏幕截图显示了`Switch`在 iOS 和 Android 上, 控件在其**打开**和**关闭**切换状态:
 
 ![IOS 和 Android 上的开启和关闭状态的开关屏幕截图](switch-images/switch-states-default.png "IOS 和 Android 上的交换机")
 
@@ -31,7 +31,7 @@ Xamarin [`Switch`](xref:Xamarin.Forms.Switch)是一个水平切换按钮, 用户
 
 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持这些属性, 这`Switch`意味着可以对其进行样式化并成为数据绑定的目标。
 
-控件定义一个`Toggled`事件, 该事件在`IsToggled`属性更改时通过`IsToggled`用户操作或应用程序设置属性时引发。 `Switch` 事件附带的`Value`对象具有`bool`名为的单个属性, 类型为。 `ToggledEventArgs` `Toggled` 触发事件时, `Value`属性的值将反映`IsToggled`属性的新值。
+控件定义一个`Toggled`事件, 该事件在`IsToggled`属性更改时通过`IsToggled`用户操作或应用程序设置属性时引发。 `Switch` 该事件在点击地图时触发。`Toggled` 事件附带的 `ToggledEventArgs` 对象具有一个名为 `Value` 的属性，类型为 `bool`。 触发事件时, `Value`属性的值将反映`IsToggled`属性的新值。
 
 ## <a name="create-a-switch"></a>创建开关
 
@@ -44,7 +44,7 @@ Xamarin [`Switch`](xref:Xamarin.Forms.Switch)是一个水平切换按钮, 用户
 也`Switch`可以在代码中创建:
 
 ```csharp
-Switch switch = new Switch { IsToggled = true };
+Switch switchControl = new Switch { IsToggled = true };
 ```
 
 ### <a name="switch-style-properties"></a>切换样式属性
@@ -58,10 +58,10 @@ Switch switch = new Switch { IsToggled = true };
 `Switch`在`OnColor`代码中创建时, 还可以设置属性:
 
 ```csharp
-Switch switch = new Switch { OnColor = Color.Orange };
+Switch switchControl = new Switch { OnColor = Color.Orange };
 ```
 
-下面的屏幕截图显示`Switch`了在 iOS 和 Android 上的`OnColor`属性设置为`Color.Orange`时, 其**打开**和**关闭**切换状态:
+下面的屏幕截图显示`Switch`其 "**打开**" 和 "**关闭**" 切换状态`OnColor` , 在 iOS `Color.Orange`和 Android 上, 其属性设置为:
 
 ![IOS 和 Android 上的开启和关闭状态的开关屏幕截图](switch-images/switch-states-oncolor.png "IOS 和 Android 上的交换机")
 
@@ -87,8 +87,8 @@ void OnToggled(object sender, ToggledEventArgs e)
 还可以在代码中指定事件处理程序:`Toggled`
 
 ```csharp
-Switch switch = new Switch {...};
-switch.Toggled += (sender, e) =>
+Switch switchControl = new Switch {...};
+switchControl.Toggled += (sender, e) =>
 {
     // Perform an action after examining e.Value
 }

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 391820cf2e94c1131f4082798ee9efa05d8489b8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739399"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658027"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
@@ -22,7 +22,7 @@ Xamarin [`SearchBar`](xref:Xamarin.Forms.SearchBar)是用于启动搜索的用�
 
 Ios 和 android 上[![的 SearchBar on Ios 和 android](searchbar-images/device-searchbars-cropped.png "SearchBar") ](searchbar-images/device-searchbars.png#lightbox "IOS 和 Android 上的 SearchBar")
 
-`SearchBar`定义以下属性:
+`SearchBar`类定义以下属性:
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)`Color`定义 "取消" 按钮的颜色的。
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)一个`FontAttributes`枚举值, 该值确定`SearchBar`字体是粗体、斜体还是两者都不是。
@@ -66,7 +66,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
            FontAttributes="Italic" />
 ```
 
-`SearchBar`在代码中创建时, 还可以指定这些属性:
+在代码中创建`SearchBar`对象时, 还可以指定这些属性:
 
 ```csharp
 SearchBar searchBar = new SearchBar
@@ -80,7 +80,7 @@ SearchBar searchBar = new SearchBar
 };
 ```
 
-以下屏幕截图显示了生成`SearchBar`的:
+以下屏幕截图显示了生成`SearchBar`的控件:
 
 Ios 和 android 上[![的自定义 SearchBar (](searchbar-images/device-searchbars-styled-cropped.png "ios 和 android 自定义 SearchBar") ) 的屏幕截图](searchbar-images/device-searchbars-styled.png#lightbox "IOS 和 Android 上的自定义 SearchBar")
 

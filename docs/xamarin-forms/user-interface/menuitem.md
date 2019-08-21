@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 68560c6cc814f54bb8ba9348bc53334089c36a93
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 396853e2e61904689069b7abd157c73d1da59fed
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984469"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658096"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin。窗体 MenuItem
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 
-Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)类用于定义菜单的菜单项, `ListView`如项上下文菜单和 Shell 应用程序飞出菜单。
+Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)类定义菜单的菜单项, `ListView`如项上下文菜单和 Shell 应用程序飞出菜单。
 
-以下屏幕截图显示`MenuItem`了 iOS 和`ListView` Android 上上下文菜单中的对象:
+以下屏幕截图显示`MenuItem` iOS 和 Android `ListView`上上下文菜单中的对象:
 
 [(menuitem-images/menuitem-demo-cropped.png "Ios 和 android 上的") !["ios 和 android 上的菜单项"]菜单项](menuitem-images/menuitem-demo-full.png#lightbox "IOS 和 Android 上的菜单项full image")
 

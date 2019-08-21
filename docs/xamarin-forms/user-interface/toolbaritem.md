@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522023"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658063"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
@@ -20,21 +20,21 @@ ms.locfileid: "69522023"
 
 Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)类是可以添加`Page`到对象的`ToolbarItems`集合中的一种特殊类型的按钮。 每`ToolbarItem`个对象都将作为一个按钮显示在应用程序的导航栏中。 一个`ToolbarItem`实例可以有一个图标, 并显示为主菜单项或辅助菜单项。 类继承自[`MenuItem`。](xref:Xamarin.Forms.MenuItem) `ToolbarItem`
 
-以下屏幕截图显示`ToolbarItem`了 iOS 和 Android 上导航栏中的对象:
+以下屏幕截图显示`ToolbarItem` iOS 和 Android 上导航栏中的对象:
 
 !["Android 和 iOS 上的 ToolbarItem 演示屏幕截图"](toolbaritem-images/toolbaritem-device-screenshot.png "Android 和 iOS 上的 ToolbarItem 演示屏幕截图")
 
-`ToolbarItem`控件定义以下属性:
+`ToolbarItem`类定义以下属性:
 
 * [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)是一个`ToolbarItemOrder`枚举值, 它确定`ToolbarItem`实例是在主菜单还是辅助菜单中显示。
 * [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)`Page`确定对象的`ToolbarItems`集合中项的显示顺序的值。`integer`
 
 类继承`MenuItem`类中通常使用的以下属性: `ToolbarItem`
 
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)`string`确定对象`ToolbarItem`上显示文本的。
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)确定对象上显示图标的值。`ImageSource` `ToolbarItem`
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一个`ICommand` , 它允许将用户操作 (如指指单击或单击) 绑定到在 viewmodel 上定义的命令。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)指定应传递到的`SearchCommand`参数的。 `object`
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)指定应传递到的`Command`参数的。 `object`
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)确定对象上显示图标的值。`ImageSource` `ToolbarItem`
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text)`string`确定对象`ToolbarItem`上显示文本的。
 
 这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的`ToolbarItem` , 因此, 实例可以是数据绑定的目标。
 
@@ -119,3 +119,4 @@ void OnItemClicked(object sender, EventArgs e)
 
 * [ToolbarItem 演示](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 中的图像](~/xamarin-forms/user-interface/images.md)
+* [Xamarin。窗体 MenuItem](~/xamarin-forms/user-interface/menuitem.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 82ca106f29eb28672abcbd282b60841bfdb4da8c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: ef73462000de90693e527121d1ebad3a9d670ed3
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980826"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658126"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
 
@@ -36,7 +36,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含与设置的一个子[ `Content` ](xref:Xamarin.Forms.ContentView.Content)属性。 `Content`属性可以设置为任意`View`派生类，包括其他`Layout`派生类。 `ContentView` 主要用作结构化元素并用作基类[ `Frame` ](#frame)。<br /><br />[API 文档](xref:Xamarin.Forms.ContentView) | [![ContentView 示例](layouts-images/ContentView.png "ContentView 示例")](layouts-images/ContentView-Large.png#lightbox "ContentView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含与设置的一个子[ `Content` ](xref:Xamarin.Forms.ContentView.Content)属性。 `Content`属性可以设置为任意`View`派生类，包括其他`Layout`派生类。 `ContentView` 主要用作结构化元素并用作基类[ `Frame` ](#frame)。<br /><br />[API 文档](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md)/[示例] (https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![ContentView 示例](layouts-images/ContentView.png "ContentView 示例")](layouts-images/ContentView-Large.png#lightbox "ContentView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
