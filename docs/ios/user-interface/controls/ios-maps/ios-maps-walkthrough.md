@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dba8fc3c239a8c20795913d6d1e5409a478c4072
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642727"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889764"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注释和叠加
 
@@ -178,6 +178,7 @@ ms.locfileid: "68642727"
     
     map.AddOverlay (hotelOverlay);  
     ```
+
 这会完成中`ViewDidLoad`的代码。 现在, 我们需要实现`MapDelegate`类来分别处理创建批注和重叠视图。
 
 
@@ -192,6 +193,7 @@ ms.locfileid: "68642727"
         ...
     }
     ```
+
     这里只有一个批注, 因此不需要重复使用代码, 但最好将其包含在内。
 
 1. 实现方法, 以便使用本演练中包含`ConferenceAnnotation`的 " **png** " 图像返回的视图: `GetViewForAnnotation`
@@ -261,6 +263,7 @@ ms.locfileid: "68642727"
         }
     }
     ```
+
     现在, 我们已准备好批注代码。 剩下的就是将代码添加到`MapDelegate`以创建酒店覆盖的视图。
 
 1. 将的`GetViewForOverlay`以下实现添加`MapDelegate`到:

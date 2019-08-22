@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: ff406b8bd6630ef9e17011e0b4b6b996fa944d89
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b95c68b43e4c7fda4d60f6976ab626968800d3dc
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528784"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889799"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交框架
 
@@ -252,6 +252,7 @@ var parameters = new NSDictionary ();
 var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?count=10");
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
+
 此示例通过在 URL 中包含`?count=10`来将返回的结果限制为最后10个条目。 最后, 它会将请求附加到 Twitter 帐户 (在上面加载), 并对 Twitter 执行调用以提取数据:
 
 ```csharp
@@ -301,7 +302,7 @@ request.PerformRequest ((data, response, error) => {
 
 由于社交框架是设计用于访问多个社交网络的统一 API, 因此无论使用何种社交网络, 代码几乎都是相同的。
 
-例如, `SLComposeViewController`可以完全像之前所示的 Twitter 示例中一样使用, 唯一不同的是切换到特定于 Facebook 的设置和选项。 例如:
+例如, `SLComposeViewController`可以完全像之前所示的 Twitter 示例中一样使用, 唯一不同的是切换到特定于 Facebook 的设置和选项。 例如：
 
 ```csharp
 using System;

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: febfa23ecb2f1536631b3009d6ddc614fa355f01
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e6bc829ec947f8f3c01c7ef9679a5feadf4a42a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656504"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887367"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin 中的数据库
 
@@ -612,6 +612,7 @@ for (nuint n = 0; n < People.Count; ++n) {
     Person.Update (conn);
 }
 ```
+
 #### <a name="loading-a-record"></a>正在加载记录
 
 添加了以下代码以从 SQLite 数据库加载现有记录:
@@ -1971,6 +1972,7 @@ namespace MacDatabase
 [PrimaryKey, AutoIncrement]
 public int ID { get; set; }
 ```
+
 ### <a name="initializing-the-database"></a>正在初始化数据库
 
 对数据模型进行了更改, 以便支持读取和写入数据库时, 需要打开到数据库的连接, 并在首次运行时对其进行初始化。 接下来, 添加以下代码:

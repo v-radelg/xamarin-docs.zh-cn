@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 953b36eb48823cc23c5e7b3e831beca7b655a057
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eb6eff59ccb44d9954139c294592fafcba1f08e0
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645054"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889524"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin 中的 OpenTK 简介
 
@@ -52,7 +52,7 @@ OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用�
 
 ### <a name="starting-a-new-project"></a>启动新项目
 
-开始 Visual Studio for Mac 并创建新的 Xamarin Mac 解决方案。 选择**Mac** >   应用常规 >    Cocoa应用 > :
+开始 Visual Studio for Mac 并创建新的 Xamarin Mac 解决方案。 选择**Mac** > 应用常规 > Cocoa应用 > :
 
 [![](opentk-images/sample01.png "添加新的 Cocoa 应用")](opentk-images/sample01.png#lightbox)
 
@@ -180,6 +180,7 @@ using OpenTK.Platform.MacOS;
 using Foundation;
 using CoreGraphics;
 ```
+
 使用 OpenTK 的任何类都需要这一最小集。
 
 <a name="Adding_the_Game_View" />
@@ -279,7 +280,7 @@ Game.RenderFrame += (sender, e) =>
 通常, 呈现代码将调用`GL.Clear` , 以在绘制新元素之前删除任何现有元素。
 
 > [!IMPORTANT]
-> 对于**OpenTK 版本**的, 在呈现代码末尾不要调用`SwapBuffers` `MonoMacGameView`实例的方法。 这样做将导致游戏视图快速看起来, 而不是显示呈现的视图。
+> 对于 OpenTK 版本的, 在呈现代码末尾不要调用`SwapBuffers` `MonoMacGameView`实例的方法。 这样做将导致游戏视图快速看起来, 而不是显示呈现的视图。
 
 <a name="Running_the_Game_View" />
 

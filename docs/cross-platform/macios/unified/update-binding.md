@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 16cf976b252e409ae4302ab51eb594370a6689d1
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e6aac37561d107cb7e3f646c15621b86385dd0ee
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620943"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887513"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>将绑定迁移到 Unified API
 
@@ -89,6 +89,7 @@ int Add(int operandUn, int operandDeux);
 [Export("add:and:")]
 nint Add(nint operandUn, nint operandDeux);
 ```
+
 如果要映射到的第三方版本与最初链接到的版本不同, 我们需要`.h`检查库的标头文件, 并查看是否存在、、 `uint32_t`或的显式调用`int` `int32_t` `unsigned int`已升级为`NSInteger`或`NSUInteger` 。 `CGFloat` `float` 如果是这样, 则还需要对`nint`其`nuint`映射`nfloat`进行相同的修改。
 
 若要了解有关这些数据类型更改的详细信息, 请参阅[本机类型](~/cross-platform/macios/nativetypes.md)文档。

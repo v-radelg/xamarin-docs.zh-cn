@@ -6,13 +6,13 @@ ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 89bbe402f056b875a7dadd96527364847ad470e8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/13/2019
+ms.openlocfilehash: 303266f44664f7f57aeaf36869a3a06c8eb91870
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738926"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888640"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin CollectionView 滚动
 
@@ -24,7 +24,50 @@ ms.locfileid: "68738926"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定义在调用其中一个[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法时激发的[事件。`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) `IsAnimated` `Index` `ScrollToPosition`事件附带的[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)对象具有多个`Item`属性, 包括、、和。 `ScrollToRequested` 这些属性是从`ScrollTo`方法调用中指定的参数设置的。
 
+此外, [`CollectionView`](xref:Xamarin.Forms.CollectionView)还定义了`Scrolled`一个事件, 该事件将激发以指示发生滚动。 事件附带的对象具有多个属性。 `ItemsViewScrolledEventArgs` `Scrolled` 有关详细信息, 请参阅[检测滚动](#detect-scrolling)。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)还定义了`ItemsUpdatingScrollMode`一个属性, 该属性表示在添加`CollectionView`新项时的滚动行为。 有关此属性的详细信息, 请参阅[在添加新项时控制滚动位置](#control-scroll-position-when-new-items-are-added)。
+
 当用户 swipes 启动滚动时, 可以控制滚动的结束位置, 以便完全显示项。 此功能称为 "对齐", 因为当滚动停止时, 项会对齐到位置。 有关详细信息, 请参阅[对齐点](#snap-points)。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)还可以在用户滚动时以增量方式加载数据。 有关详细信息, 请参阅[以增量方式加载数据](populate-data.md#load-data-incrementally)。
+
+## <a name="detect-scrolling"></a>检测滚动
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义一个`Scrolled`事件, 该事件将激发以指示发生滚动。 下面的 XAML 示例显示了`CollectionView`一个, 它设置`Scrolled`事件的事件处理程序:
+
+```xaml
+<CollectionView Scrolled="OnCollectionViewScrolled">
+    ...
+</CollectionView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView();
+collectionView.Scrolled += OnCollectionViewScrolled;
+```
+
+在此代码示例中, `OnCollectionViewScrolled`事件处理程序在`Scrolled`事件激发时执行:
+
+```csharp
+void OnCollectionViewScrolled(object sender, ItemsViewScrolledEventArgs e)
+{
+    Debug.WriteLine("HorizontalDelta: " + e.HorizontalDelta);
+    Debug.WriteLine("VerticalDelta: " + e.VerticalDelta);
+    Debug.WriteLine("HorizontalOffset: " + e.HorizontalOffset);
+    Debug.WriteLine("VerticalOffset: " + e.VerticalOffset);
+    Debug.WriteLine("FirstVisibleItemIndex: " + e.FirstVisibleItemIndex);
+    Debug.WriteLine("CenterItemIndex: " + e.CenterItemIndex);
+    Debug.WriteLine("LastVisibleItemIndex: " + e.LastVisibleItemIndex);
+}
+```
+
+事件处理程序输出事件随附的`ItemsViewScrolledEventArgs`对象的值。 `OnCollectionViewScrolled`
+
+> [!IMPORTANT]
+> 触发用户启动滚动的事件和以编程方式滚动事件。`Scrolled`
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>将索引中的项滚动到视图中
 
@@ -33,6 +76,9 @@ ms.locfileid: "68738926"
 ```csharp
 collectionView.ScrollTo(12);
 ```
+
+> [!NOTE]
+> 调用[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) [方法`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)时, 将触发事件。
 
 ## <a name="scroll-an-item-into-view"></a>将项滚动到视图
 
@@ -43,6 +89,17 @@ MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
 Monkey monkey = viewModel.Monkeys.FirstOrDefault(m => m.Name == "Proboscis Monkey");
 collectionView.ScrollTo(monkey);
 ```
+
+> [!NOTE]
+> 调用[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) [方法`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)时, 将触发事件。
+
+## <a name="scroll-bar-visibility"></a>滚动条可见性
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义`HorizontalScrollBarVisibility`由`VerticalScrollBarVisibility`可绑定属性支持的和属性。 这些属性可获取或设置[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)一个枚举值, 该值表示水平或垂直滚动条可见的时间。 `ScrollBarVisibility` 枚举定义下列成员：
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)指示平台的默认滚动条行为, 是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`属性的默认值。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)指示滚动条是可见的, 即使在视图中显示内容时也是如此。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)指示即使内容无法在视图中显示, 也不会显示滚动条。
 
 ## <a name="control-scroll-position"></a>控制滚动位置
 
@@ -105,6 +162,31 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 ```csharp
 collectionView.ScrollTo(monkey, animate: false);
+```
+
+## <a name="control-scroll-position-when-new-items-are-added"></a>在添加新项时控制滚动位置
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义一个`ItemsUpdatingScrollMode`属性, 该属性由可绑定的属性支持。 此属性获取或设置一个`ItemsUpdatingScrollMode`枚举值, 该值表示在添加新项`CollectionView`时的滚动行为。 `ItemsUpdatingScrollMode` 枚举定义下列成员：
+
+- `KeepItemsInView`调整滚动偏移量, 以便在添加新项时保持显示第一个可见项。
+- `KeepScrollOffset`在添加新项时, 使滚动偏移量相对于列表的开头保持。
+- `KeepLastItemInView`调整滚动偏移量, 以便在添加新项时使最后一项可见。
+
+`ItemsUpdatingScrollMode`属性的默认值为`KeepItemsInView`。 因此, 将新项添加到[`CollectionView`](xref:Xamarin.Forms.CollectionView)列表中的第一个可见项时, 将保持显示。 若要确保新添加的项始终显示在列表的底部, `ItemsUpdatingScrollMode`应将属性设置为: `KeepLastItemInView`
+
+```xaml
+<CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
+    ...
+</CollectionView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ItemsUpdatingScrollMode = ItemsUpdatingScrollMode.KeepLastItemInView
+};
 ```
 
 ## <a name="snap-points"></a>对齐点

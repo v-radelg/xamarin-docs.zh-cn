@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d700aa8c0744d08e6536614b8cb8b024a99c84e1
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528620"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889796"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
@@ -109,6 +109,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 ```csharp
 HomeScreen owner;
 ```
+
 向 UITableViewSource 类添加一个构造函数, 该构造函数将视图控制器作为参数, 并将其保存在字段中:
 
 ```csharp
@@ -119,11 +120,13 @@ public TableSource (string[] items, HomeScreen owner)
 
 }
 ```
+
 修改创建 UITableViewSource 类的 ViewDidLoad 方法以传递`this`引用:
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
+
 最后, 返回到`RowSelected`方法, 对缓存的字段调用: `PresentViewController`
 
 ```csharp

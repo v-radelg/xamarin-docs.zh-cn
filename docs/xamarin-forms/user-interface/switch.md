@@ -6,13 +6,13 @@ ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/03/2019
-ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.date: 07/18/2019
+ms.openlocfilehash: 1f2ef838287e32df5df42f73e4b43816d618552d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658045"
+ms.locfileid: "69887890"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin Forms 开关
 
@@ -26,8 +26,9 @@ Xamarin [`Switch`](xref:Xamarin.Forms.Switch)控件是一个水平切换按钮, 
 
 `Switch`控件定义了两个属性:
 
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是一个`Color` , 它会影响`Switch`在切换或**开启**状态下呈现的方式。
 * [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)指示是否**打开**的`Switch`值。 `boolean`
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是一个`Color` , 它会影响`Switch`在切换或**开启**状态下呈现的方式。
+* `ThumbColor``Color`是交换机拇指的。
 
 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持这些属性, 这`Switch`意味着可以对其进行样式化并成为数据绑定的目标。
 
@@ -47,23 +48,24 @@ Xamarin [`Switch`](xref:Xamarin.Forms.Switch)控件是一个水平切换按钮, 
 Switch switchControl = new Switch { IsToggled = true };
 ```
 
-### <a name="switch-style-properties"></a>切换样式属性
+## <a name="switch-appearance"></a>切换外观
 
-属性可以设置为在其处于**开启**状态时`Switch`定义颜色。 `OnColor` 下面的示例演示如何`Switch` `OnColor`使用属性集在 XAML 中实例化:
+[`Switch`](xref:Xamarin.Forms.Switch)除了继承`Switch` `ThumbColor`自类的属性以外, 还可以定义`OnColor`和属性。 [`View`](xref:Xamarin.Forms.View) `Color` `Switch` `ThumbColor`属性可以设置为在其处于开启状态时定义颜色, 并且属性可以设置为定义交换块的。 `OnColor` 下面的示例演示如何`Switch`在 XAML 中使用以下属性集来实例化:
 
 ```xaml
-<Switch OnColor="Orange" />
+<Switch OnColor="Orange"
+        ThumbColor="Green" />
 ```
 
-`Switch`在`OnColor`代码中创建时, 还可以设置属性:
+`Switch`在代码中创建时, 还可以设置属性:
 
 ```csharp
-Switch switchControl = new Switch { OnColor = Color.Orange };
+Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-下面的屏幕截图显示`Switch`其 "**打开**" 和 "**关闭**" 切换状态`OnColor` , 在 iOS `Color.Orange`和 Android 上, 其属性设置为:
+下面的屏幕截图显示`Switch`了`OnColor`和`ThumbColor`属性集的**打开**和**关闭**切换状态:
 
-![IOS 和 Android 上的开启和关闭状态的开关屏幕截图](switch-images/switch-states-oncolor.png "IOS 和 Android 上的交换机")
+![IOS 和 Android 上的开启和关闭状态的开关屏幕截图](switch-images/switch-states-colors.png "IOS 和 Android 上的交换机")
 
 ## <a name="respond-to-a-switch-state-change"></a>响应交换机状态更改
 

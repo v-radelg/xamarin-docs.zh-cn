@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/01/2019
-ms.openlocfilehash: 5fb92882f443007e5b3dd693f54e582757db1905
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/12/2019
+ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739022"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888653"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin CollectionView 布局
 
@@ -105,16 +105,12 @@ ms.locfileid: "68739022"
 </CollectionView>
 ```
 
-此外, [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)也可以通过将属性设置为[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)类的对象, 并将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定`Vertical`为自变量来完成此操作:
+此外, 也可以[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)通过将属性设置为[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)类的对象, 并将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定`Vertical`为`Orientation`属性值, 来实现此目的:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Vertical" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -173,16 +169,12 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-此外, 也[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)可以通过将属性设置[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)为对象, 并将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定`Horizontal`为参数来完成此操作:
+此外, 也可以[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)通过将属性设置为[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)类的对象, 并将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定`Horizontal`为`Orientation`属性值, 来实现此目的:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Horizontal</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Horizontal" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -313,6 +305,147 @@ CollectionView collectionView = new CollectionView
 默认情况下, 水平[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)将在单个行中显示项。 但是, 此示例将`GridItemsLayout.Span`属性设置为4。 这会导致四行网格, 这会在添加新项时水平增长:
 
 [ ![CollectionView 水平网格布局的屏幕截图, 适用于 IOS 和 Android](layout-images/horizontal-grid.png "CollectionView 水平网格布局")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平网格布局")
+
+## <a name="headers-and-footers"></a>页眉和页脚
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以显示通过列表中的项滚动的页眉和页脚。 页眉和页脚可以是字符串、视图或[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)为指定页眉和页脚定义以下属性:
+
+- `Header`类型`object`为的指定要在列表开头显示的字符串、绑定或视图。
+- `HeaderTemplate`类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为的`DataTemplate`指定用于格式化的`Header`。
+- `Footer`, 类型`object`为, 指定将显示在列表末尾的字符串、绑定或视图。
+- `FooterTemplate`类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为的`DataTemplate`指定用于格式化的`Footer`。
+
+这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的, 这意味着属性可以是数据绑定的目标。
+
+> [!IMPORTANT]
+> 目前仅支持在 Android 上支持标头和表尾。
+
+将标题添加到水平增长的布局时, 将在列表的左侧显示页眉。 同样, 在将页脚添加到水平增长的布局时, 将在列表右侧显示页脚。
+
+### <a name="display-strings-in-the-header-and-footer"></a>在页眉和页脚中显示字符串
+
+和属性可以设置为`string`值, 如下面的示例中所示: `Footer` `Header`
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="Monkeys"
+                Footer="2019">
+    ...
+</CollectionView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = "Monkeys",
+    Footer = "2019"
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-views-in-the-header-and-footer"></a>在页眉和页脚中显示视图
+
+`Header` 和`Footer`属性可以设置为视图。 这可以是单个视图, 也可以是包含多个子视图的视图。 下面的`Header`示例显示了每个设置到包含[`Label`](xref:Xamarin.Forms.Label)对象[`StackLayout`](xref:Xamarin.Forms.StackLayout)的对象的和`Footer`属性:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.Header>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Monkeys"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Header>
+    <CollectionView.Footer>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Friends of Xamarin Monkey"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Footer>
+    ...
+</CollectionView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Monkeys", ... }
+        }
+    },
+    Footer = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Friends of Xamarin Monkey", ... }
+        }
+    }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-a-templated-header-and-footer"></a>显示模板化页眉和页脚
+
+和属性可以设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)用于设置页眉和页脚格式的对象。 `FooterTemplate` `HeaderTemplate` 在此方案中, `Header`和`Footer`属性必须绑定到要应用的模板的当前源, 如以下示例中所示:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="{Binding .}"
+                Footer="{Binding .}">
+    <CollectionView.HeaderTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Monkeys"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.HeaderTemplate>
+    <CollectionView.FooterTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Friends of Xamarin Monkey"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.FooterTemplate>
+    ...
+</CollectionView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    HeaderTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    }),
+    FooterTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    })
+};
+collectionView.SetBinding(ItemsView.HeaderProperty, ".");
+collectionView.SetBinding(ItemsView.FooterProperty, ".");
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
 
 ## <a name="item-spacing"></a>项间距
 

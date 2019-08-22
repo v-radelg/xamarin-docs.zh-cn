@@ -1,32 +1,32 @@
 ---
-title: 在 Xamarin.iOS 和 Xamarin.Mac NSString
-description: 本文档介绍了 Xamarin.iOS 如何以透明方式将转换到 NSString 对象C#字符串对象，这不会发生时。
+title: Xamarin 和 Xamarin 中的 NSString
+description: 本文档介绍当不发生此情况时, Xamarin 如何C#以透明方式将 NSString 对象转换为字符串对象。
 ms.prod: xamarin
 ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: cc9e3f992642f3cdc3d16fe6f829b6a6c06b50fc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 589b584e0526ffdc56dd5ec26aa25a0b61e2141a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277809"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889893"
 ---
-# <a name="nsstring-in-xamarinios-and-xamarinmac"></a>在 Xamarin.iOS 和 Xamarin.Mac NSString
+# <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin 和 Xamarin 中的 NSString
 
-Xamarin.iOS 和 Xamarin.Mac 的设计要求使用 API 公开的本机.NET 字符串类型， `string`，用于字符串操作中C#和其他.NET 编程语言，并将字符串公开为 API 而不是公开的数据类型 `NSString` 数据类型。
+Xamarin 和 xamarin 的设计都调用使用 API 来公开本机 .net 字符串类型`string`, 为中C#的字符串操作和其他 .net 编程语言公开, 并将字符串公开为 API 公开的数据类型, 而不是 `NSString`数据类型 。
 
-这意味着，开发人员不应该有要保留旨在用于调入 Xamarin.iOS 和 Xamarin.Mac API （统一） 的字符串中一种特殊类型 (`Foundation.NSString`)，它们可以继续使用 Mono 的`System.String`所有操作，和每当在 Xamarin.iOS 或 Xamarin.Mac 的 API 需要一个字符串，我们的 API 绑定负责封送处理信息。
+这意味着开发人员无需保留用于在特殊类型 (`Foundation.NSString`) 中调用 xamarin & xamarin API (统一) 的字符串, 而是可以将`System.String` Mono 用于所有操作, 并在每次Xamarin 或 Xamarin 中的 API 需要字符串, 我们的 API 绑定负责封送处理信息。
 
-例如，OBJECTIVE-C 的"text"上的属性`UILabel`类型的`NSString`，声明如下：
+例如, 类型`NSString`为的目标为 C 的 "text" 属性`UILabel`的声明如下所示:
 
 ```objc
 @property(nonatomic, copy) NSString *text
 ```
 
-这公开了作为 Xamarin.iOS:
+这在 Xamarin 中公开为:
 
 ```csharp
 class UILabel {
@@ -34,28 +34,29 @@ class UILabel {
 }
 ```
 
-在后台，此属性的实现将封送C#字符串`NSString`并调用`objc_msgSend`方式 Objective C 将完全相同的方法。
+在后台, 此属性的实现将C#字符串封送到`NSString` , 并以与目标 C 相同的方式调用`objc_msgSend`方法。
 
-第三方 Objective C api，也不会占用几`NSString`，但改为使用 C 字符串 ("*char*")。 在这些情况下，仍可以使用C#字符串数据类型，但必须使用[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)属性以通知不此字符串作为封送的绑定生成器`NSString`，而是作为 C 字符串。
+有少量的第三方目标 C api 不使用`NSString`, 而是使用 C 字符串 ("*char*")。 在这些情况下, 你仍可以使用C#字符串数据类型, 但你必须使用[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)属性来通知绑定生成器`NSString`, 此字符串不应作为而作为 C 字符串进行封送处理。
 
  <a name="Exceptions_to_the_Rule" />
 
 ## <a name="exceptions-to-the-rule"></a>规则的例外情况
 
-在 Xamarin.iOS 和 Xamarin.Mac，我们做了此规则的例外。 当我们公开之间做出决定 `string`s，和我们进行时除外，并公开 `NSString`s，由如果 `NSString` 方法无法执行操作而不是内容比较指针比较。
+在 Xamarin 和 Xamarin 中, 我们已对此规则进行了例外。  `string` `NSString`如果该 `NSString`方法可能执行指针比较而不是内容比较, 则当我们公开时, 以及当我们进行除和公开时, 会作出决定 。
 
-发生此情况时 Objective C Api 使用公共 `NSString` 常量用作表示某一操作，而不是比较字符串的实际内容的标记。
+当目标 C api 使用公共 `NSString` 常量作为表示某种操作的令牌, 而不是比较字符串的实际内容时, 就会发生这种情况。
 
-在这些情况下， `NSString` 公开的 Api，并且有极少的具有此 Api。 您还会注意到 NSString 属性都在部分类中。 那些`NSString`属性公开的通知等项。 这些都是属性通常如下：
+在这些情况下`NSString`,  将公开 api, 其中包含少数 api。 你还会注意到, 在某些类中公开了 NSString 属性。 这些`NSString`属性对通知等项目公开。 这些属性通常如下所示:
 
 ```csharp
 class Foo {
      public NSString FooNotification { get; }
 }
 ```
-通知是为使用的密钥`NSNotification`类时要广播的运行时为特定事件注册。
 
-密钥通常如下所示：
+当您想要注册由运行时`NSNotification`广播的特定事件时, 通知是用于类的键。
+
+密钥通常类似于:
 
 ```csharp
 class Foo {
@@ -63,4 +64,4 @@ class Foo {
 }
 ```
 
-另一个位置其中`NSString`s 中公开的 API 是用作在 iOS 中的某些 Api 或 OS X 获取的参数的令牌作为`NSDictionary`对象作为参数。 字典通常包含`NSString`密钥。 Xamarin.iOS，按照约定，名称与静态`NSString`通过将"密钥"名称添加属性。
+在 API 中`NSString`公开的另一个位置是作为标记, 用作在 iOS 或 OS X `NSDictionary`中将对象作为参数的某些 api 的参数。 字典通常包含`NSString`键。 根据约定, Xamarin 通过添加 "键" 名称`NSString`命名这些静态属性。

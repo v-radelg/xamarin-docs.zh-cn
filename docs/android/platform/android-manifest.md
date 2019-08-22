@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524692"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887840"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 清单
 
@@ -82,7 +82,7 @@ public class MyActivity : Activity
 ### <a name="activity-title-bar"></a>活动标题栏
 
 默认情况下, 当应用程序运行时, 它将为应用程序提供标题栏。 用于此的值为[`/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大多数情况下, 此值将与类名称不同。 若要在标题栏上指定应用的标签, 请使用[`Label`](xref:Android.App.ActivityAttribute.Label)属性。
-例如： 
+例如: 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -101,7 +101,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>从应用程序选择器可启动
 
-默认情况下, 你的活动不会显示在 Android 的 "应用程序启动器" 屏幕中。 这是因为您的应用程序可能有很多活动, 并且您不希望每个活动都有一个图标。 若要指定哪个应用程序启动器应可启动, 请使用[`MainLauncher`](xref:Android.App.ActivityAttribute.MainLauncher)属性。 例如： 
+默认情况下, 你的活动不会显示在 Android 的 "应用程序启动器" 屏幕中。 这是因为您的应用程序可能有很多活动, 并且您不希望每个活动都有一个图标。 若要指定哪个应用程序启动器应可启动, 请使用[`MainLauncher`](xref:Android.App.ActivityAttribute.MainLauncher)属性。 例如: 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -227,6 +227,7 @@ Android 清单还提供了一种为整个应用程序声明属性的方法。 �
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
+
 在此示例中, 应用中的所有活动都将默认`Theme.Light`为样式。 如果将活动`Theme.Dialog`的主题设置为, 则只有该活动将`Theme.Dialog`使用样式, 而应用中的所有其他活动将默认为`<application>`元素`Theme.Light`中设置的样式。 
 
 元素不是配置`<application>`属性的唯一方法。 `Application` 或者, 可以将属性直接插入`<application>` **Properties/androidmanifest.xml**的元素中。 这些设置将合并到驻留在`<application>` **obj/Debug/android/androidmanifest.xml**中的最后一个元素中。 请注意, **Properties/androidmanifest.xml**的内容始终会重写自定义属性提供的数据。 

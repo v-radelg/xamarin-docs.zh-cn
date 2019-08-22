@@ -1,26 +1,26 @@
 ---
-title: XAML 预览程序中使用设计时数据
-description: 本文介绍如何使用设计时数据而无需运行您的应用程序在 XAML 预览程序中显示大量数据的布局。
+title: 将设计时数据与 XAML 预览器结合使用
+description: 本文介绍如何使用设计时数据来显示 XAML 预览器中的数据密集型布局, 而不运行您的应用程序。
 ms.prod: xamarin
 ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557434"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887853"
 ---
-# <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML 预览程序中使用设计时数据
+# <a name="use-design-time-data-with-the-xaml-previewer"></a>将设计时数据与 XAML 预览器结合使用
 
-_某些布局很难直观显示不包含数据。使用这些提示可以充分利用预览 XAML 预览程序中大量数据的页面。_
+_某些布局难以直观显示, 无需数据。使用这些提示可充分利用 XAML 预览器中的数据密集型页面。_
 
-## <a name="design-time-data-basics"></a>设计时间数据基础知识
+## <a name="design-time-data-basics"></a>设计时数据基础
 
-设计时数据是假设置以使您的控件更容易可视化 XAML 预览程序中的数据。 若要开始，到 XAML 页面的标头中添加以下代码行：
+设计时数据是您设置的虚假数据, 以使您的控件更易于在 XAML 预览程序中可视化。 若要开始, 请将以下代码行添加到 XAML 页面的标头:
 
 ```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -28,40 +28,41 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-添加命名空间之后, 您可以将`d:`任何属性或控件以显示 XAML 预览程序中的前面。 元素与`d:`不会显示在运行时。
+添加命名空间后, 可以将其`d:`置于任何属性或控件的前面, 以便在 XAML 预览器中显示它。 运行时`d:`未显示的元素。
 
-例如，可以将文本添加到通常具有数据绑定到它的标签。
+例如, 可以将文本添加到通常具有绑定数据的标签。
 
 ```xaml
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![设计时数据与在标签中的文本](xaml-previewer-images/designtimedata-label-sm.png "设计时间数据使用文本标签")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![使用标签中的文本设计时间数据](xaml-previewer-images/designtimedata-label-sm.png "使用文本标记设计时间数据")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-在此示例中，而无需`d:Text`，XAML 预览程序不会显示任何标签。 相反，它显示了"Name ！" 标签将包含实际数据的情况在运行时。
+在此示例中, `d:Text`如果没有, XAML 预览程序将不会显示标签。 相反, 它会显示 "Name!" 其中, 标签在运行时将包含实际数据。
 
-可以使用`d:`使用 Xamarin.Forms 控件，如颜色、 字体大小和间距的任何属性。 您甚至可以将其添加到控件本身：
+可以将与`d:` Xamarin 控件的任何特性一起使用, 如颜色、字号和间距。 甚至可以将其添加到控件本身:
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![设计时数据与按钮控件](xaml-previewer-images/designtimedata-controls-sm.png "设计时数据与按钮控件")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![使用按钮控件设计时间数据](xaml-previewer-images/designtimedata-controls-sm.png "使用按钮控件设计时间数据")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
-在此示例中，才会显示按钮在设计时。 使用此方法将在占位符[XAML 预览程序不支持的自定义控件](render-custom-controls.md)。
+在此示例中, 按钮仅在设计时出现。 使用此方法可为[XAML 预览器不支持的自定义控件](render-custom-controls.md)放置中的占位符。
 
 ## <a name="preview-images-at-design-time"></a>在设计时预览图像
 
-可以设置与页面绑定或动态加载中的图像的设计时间源。 在 Android 项目中，添加你想要为 XAML 预览程序中显示的图像**资源 > Drawable**文件夹。 在 iOS 项目中，将映像添加到**资源**文件夹。 然后可以在设计时在 XAML 预览程序中显示该图像：
+您可以为绑定到页面或动态加载的图像设置设计时间源。 在 Android 项目中, 将你想要在 XAML 预览器中显示的图像添加到 **> 可绘制**文件夹的资源。 在 iOS 项目中, 将图像添加到**Resources**文件夹。 然后, 你可以在设计时在 XAML 预览器中显示该图像:
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![设计时数据与图像](xaml-previewer-images/designtimedata-image-sm.png "设计时数据与配置映像")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+
+[![用图像设计时间数据](xaml-previewer-images/designtimedata-image-sm.png "用配置映像设计时间数据")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview 的设计时数据
 
-Listview 是一种流行方式移动应用中显示数据。 但是，也很难直观显示不包含实际数据。 若要使用与它们的设计时数据，您必须创建要用作 ItemsSource 的设计时间数组。 XAML 预览程序显示什么是在设计时在 ListView 中该数组中。
+Listview 是在移动应用中显示数据的一种常用方式。 但是, 如果没有实际数据, 就难以直观显示。 若要将设计时数据与它们一起使用, 必须创建一个用作 System.windows.controls.itemscontrol.itemssource 的设计时数组。 XAML 预览器会在设计时显示 ListView 中该数组的内容。
 
 ```xaml
 <StackLayout>
@@ -83,26 +84,26 @@ Listview 是一种流行方式移动应用中显示数据。 但是，也很难�
 </StackLayout>
 ```
 
-[![设计时数据与 ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "设计时数据与 ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![使用 ListView 设计时间数据](xaml-previewer-images/designtimedata-itemssource-sm.png "使用 ListView 设计时间数据")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-此示例将 XAML 预览程序中显示三个 TextCells 的 ListView。 您可以更改`x:String`到你的项目中的现有数据模型。
+此示例将在 XAML 预览器中显示三个 TextCells 的 ListView。 您可以更改`x:String`为项目中现有的数据模型。
 
-请参阅[James Montemagno 的 Hanselman.Forms 应用](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)有关更复杂的示例。
+有关更复杂的示例, 请参阅[James Montemagno 的 Hanselman 应用程序。](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)
 
-## <a name="alternative-hardcode-a-static-viewmodel"></a>备选过程：进行硬编码静态 ViewModel
+## <a name="alternative-hardcode-a-static-viewmodel"></a>其他硬编码静态 ViewModel
 
-如果不想要为单个控件添加设计时数据，您可以设置模拟数据存储区将绑定到您的页面。 请参阅 James Montemagno[博客文章上添加设计时数据](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)若要了解如何将绑定到 XAML 中静态 ViewModel。
+如果不想将设计时数据添加到各个控件, 可以设置模拟数据存储以绑定到页面。 请参阅 James Montemagno 的[博客文章添加设计时数据](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data), 了解如何绑定到 XAML 中的静态 ViewModel。
 
 ## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="requirements"></a>要求
 
-设计时数据要求的最低版本为 Xamarin.Forms 3.6。
+设计时数据需要最少的 Xamarin 版本。窗体3.6。
 
-### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense 会显示在我的设计时数据下的波浪线
+### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense 在我的设计时数据下显示波浪线
 
-这是一个已知的问题，将在将来的 Visual Studio 版本中修复。 该项目仍将生成未出现错误。
+这是一个已知问题, 将在即将发布的 Visual Studio 版本中得到解决。 项目仍将生成, 但不会发生错误。
 
-### <a name="the-xaml-previewer-stopped-working"></a>XAML 预览程序停止工作
+### <a name="the-xaml-previewer-stopped-working"></a>XAML 预览器已停止工作
 
-请尝试关闭并重新打开 XAML 文件中，并清除和重新生成项目。
+尝试关闭并重新打开 XAML 文件, 并清除和重新生成项目。

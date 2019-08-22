@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: d26f8f68b2cf4eca2d28a365c921b533e657c64b
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: 06283987e1d70659653729b4f3d5a00e1877aa5f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629608"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887388"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示 
 
@@ -98,6 +98,7 @@ public partial class MyImageView : UIView {
    public MyImageView (IntPtr handle) : base (handle {}
 }
 ```
+
 ## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>MissingMethodException:找不到 Foo:: ctor (system.string) 的构造函数
 
 当代码尝试实例化从 Interface Builder 文件中引用的类的实例时, 将在运行时生成此错误。 这意味着你忘记添加使用单个 IntPtr 作为参数的构造函数。
@@ -109,6 +110,7 @@ public partial class MyImageView : UIView {
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
+
 ## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>类型 {Foo} 不包含的定义, 并且`GetNativeField`找不到类型`GetNativeField`为 {Foo} 的扩展方法
 
 如果在设计器生成的文件 (*. xib.designer.cs) 中出现此错误, 则表示以下两种情况之一:
@@ -388,6 +390,7 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
   at MonoTouch.ObjCRuntime.Runtime.RegisterAssembly (System.Reflection.Assembly)
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
+
 ...那么, 你可能会在模拟器应用程序目录中具有一个 (或多个) 过时的程序集。 此类程序集可能存在, 因为 Apple iOS 模拟器添加并更新文件, 但不会删除它们。 如果发生这种情况, 最简单的解决方法是选择 "重置和内容和设置 ..."从模拟器菜单。   
 
 > [!WARNING]

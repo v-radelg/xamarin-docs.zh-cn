@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7f5c205f73d29c3751acc351294e3ef66c23bb22
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8593ef34922fca076aa13c70faa4289824f94374
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656397"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889507"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin 中的 watchOS 主动建议
 
@@ -275,6 +275,7 @@ attributes.PhoneNumbers = new string[]{"(800) 275-2273"};
 attributes.SupportsPhoneCalls = true;
 attributes.SupportsNavigation = true;
 ```
+
 ## <a name="activities-best-practices"></a>活动最佳实践
 
 Apple 建议在使用活动时采用以下最佳做法:
@@ -297,7 +298,7 @@ Apple 建议在使用活动时采用以下最佳做法:
 - 处理使用 MapKit `MKDirectionsRequest`对象启动应用程序的情况。
 - 为 watchOS 提供根据用户参与建议应用的能力。
 
-当应用程序使用 MapKit `MKDirectionsRequest`对象启动时, 它应自动开始向请求的位置提供用户指示, 或提供一个用户界面, 使用户能够轻松开始获取行车路线。 例如：
+当应用程序使用 MapKit `MKDirectionsRequest`对象启动时, 它应自动开始向请求的位置提供用户指示, 或提供一个用户界面, 使用户能够轻松开始获取行车路线。 例如:
 
 
 ```csharp

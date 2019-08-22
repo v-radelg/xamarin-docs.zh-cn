@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528694"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887477"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的映射
 
@@ -28,25 +28,27 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView`是显示映射的子类。`UIView` 只需使用上面的代码添加地图就会生成一个交互式地图:
+`MKMapView`是显示映射的子类。`UIView` 只需使用上面的代码添加地图就会生成一个交互式地图:
 
- ![](images/00-map.png "示例映射")
+![](images/00-map.png "示例映射")
 
 ## <a name="map-style"></a>地图样式
 
- `MKMapView`支持3种不同的地图样式。 若要应用地图样式, 只需将`MapType`属性设置为`MKMapType`枚举中的一个值:
- ```
+`MKMapView`支持3种不同的地图样式。 若要应用地图样式, 只需将`MapType`属性设置为`MKMapType`枚举中的一个值:
+
+```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
- ```
-  以下屏幕截图显示了可用的不同地图样式:
+```
 
- ![](images/01-mapstyles.png "此屏幕截图显示了可用的不同地图样式")
+以下屏幕截图显示了可用的不同地图样式:
+
+![](images/01-mapstyles.png "此屏幕截图显示了可用的不同地图样式")
 
 ## <a name="panning-and-zooming"></a>平移和缩放
 
- `MKMapView`支持映射交互功能, 如:
+`MKMapView`支持映射交互功能, 如:
 
 - 通过挤压手势缩放
 - 通过平移手势平移

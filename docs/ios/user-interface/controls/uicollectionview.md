@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 43ce43b7ffb8cbe24fd4bb9dd95e496de27110d6
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 8557a3efca1336f70c0feef2ac4dc9c462eedbf5
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620963"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889883"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合视图
 
@@ -453,7 +453,7 @@ namespace SimpleCollectionView
 
 在 iOS 9 中, 将重新排序添加到集合视图的最快捷方法是使用`UICollectionViewController`。
 集合视图控制器现在具有一个`InstallsStandardGestureForInteractiveMovement`属性, 该属性添加一个支持拖动以重新排列集合中的项的标准*笔势识别器*。
-由于默认值为`true`, 因此您只需`MoveItem`实现`UICollectionViewDataSource`类的方法来支持拖放。 例如:
+由于默认值为`true`, 因此您只需`MoveItem`实现`UICollectionViewDataSource`类的方法来支持拖放。 例如：
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -462,6 +462,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
   ...
 }
 ```
+
 <a name="Simple-Reordering-Example" />
 
 ### <a name="simple-reordering-example"></a>简单的重新排序示例

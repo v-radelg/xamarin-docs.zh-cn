@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/28/2019
-ms.openlocfilehash: d170e37b8bf4ce880f9d8f48d30defb42ee6bba2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 28cb1573262b63cc2b0ccad9f468fe36c682718d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648013"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888852"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服务
 
@@ -232,6 +232,7 @@ Web 服务将引发`FaultException`如果无法找到或删除`TodoItem`，这�
 默认情况下, IIS Express 仅响应对`localhost`的请求。 远程设备 (如 Android 设备, iPhone 甚至是模拟器) 将无法访问本地 WCF 服务。 需要在本地网络上了解 Windows 10 工作站的 IP 地址。 出于本示例的目的, 假设工作站有 IP 地址`192.168.1.143`。 以下步骤说明如何配置 Windows 10 和 IIS Express 以接受远程连接并从物理或虚拟设备连接到服务:
 
 1. **向 Windows 防火墙添加例外**。 必须通过 Windows 防火墙打开端口, 子网中的应用程序才能使用这些应用程序与 WCF 服务进行通信。 在防火墙中创建入站规则打开端口49393。 在管理命令提示符下, 运行以下命令:
+
     ```
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6085f85a1b13bdeb4fe7b906beeca0bdc7a45a17
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528537"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890178"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的统一情节提要
 
@@ -71,6 +71,7 @@ IOS 中的映像加载行为还识别了`@3x`映像文件上的后缀。 例如,
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
+
 或者, 如果使用 iOS 设计器`MonkeyIcon.png`将图像分配给 UI 元素`MonkeyIcon@3x.png` , 则在 iPhone 6 Plus 上将再次自动使用。
 
 <a name="dynamic-launch-screens" />
@@ -125,7 +126,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 还可以具有一个特征集合, 其中缺少某些值 (Apple 将其称为*未指定*):
 
-|Property|值|
+|属性|值|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
 |`VerticalSizeClass`|未指定|

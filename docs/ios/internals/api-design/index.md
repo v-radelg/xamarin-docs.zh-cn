@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fe0c4d02dbe6cc5b3768ea92179b3781ef09aa9
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 39786fa9aef526488837ce2fe7c078a23d12cc10
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620848"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889943"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 设计
 
@@ -52,6 +52,7 @@ ms.locfileid: "69620848"
     ```objc
     NSArray *getViews
     ```
+
     公开强类型, 如下所示:
 
     ```csharp
@@ -385,7 +386,7 @@ web.Delegate = new Notifier ();
 除了强类型属性以外, 还有一个弱类型化委托, 使开发人员可以根据需要以不同的方式对其进行绑定。
 在 Xamarin 的绑定`Delegate`中, 任何位置都公开了强类型属性, 还`WeakDelegate`会公开相应的属性。
 
-使用`WeakDelegate`时, 您需要负责使用[Export](xref:Foundation.ExportAttribute)特性来指定选择器, 从而正确地修饰类。 例如:
+使用`WeakDelegate`时, 您需要负责使用[Export](xref:Foundation.ExportAttribute)特性来指定选择器, 从而正确地修饰类。 例如：
 
 ```csharp
 class Notifier : NSObject  {
@@ -630,13 +631,13 @@ UITextField UserName {
 
 目标 C 编程的核心概念是选择器。 你经常会遇到需要你传递选择器的 Api, 或者期望你的代码响应选择器。
 
-中C#创建新的`ObjCRuntime.Selector`选择器非常简单–只需创建类的新实例, 并在需要它的 API 中的任何位置使用结果。 例如:
+中C#创建新的`ObjCRuntime.Selector`选择器非常简单–只需创建类的新实例, 并在需要它的 API 中的任何位置使用结果。 例如：
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-对于响应C#选择器调用的方法, 它必须从`NSObject`类型继承, 并且C#方法必须使用`[Export]`属性以选择器名称进行修饰。 例如：
+对于响应C#选择器调用的方法, 它必须从`NSObject`类型继承, 并且C#方法必须使用`[Export]`属性以选择器名称进行修饰。 例如:
 
 ```csharp
 public class MyMath : NSObject {

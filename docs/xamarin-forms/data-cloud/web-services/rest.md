@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9b99421755b1ad979b4beed279bef6e194659ab7
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644581"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888859"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服务
 
@@ -173,6 +173,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 }
 ```
+
 操作`PutAsync`方法等同于`PostAsync`用于在 web 服务中创建数据的方法。 但是，从 web 服务发送的可能响应不同。
 
 REST 服务中发送的 HTTP 状态代码`HttpResponseMessage.IsSuccessStatusCode`属性，以指示 HTTP 请求是成功还是失败。 此操作通常的反应是：
