@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 4f545893ca4cde441cd05fc3d8e52ecf0f6aae98
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c67544824f23ea72ad325d39347330a863846c2b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669487"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526533"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 捆绑 Xamarin.iOS 应用
 
@@ -28,26 +28,26 @@ iPhone 应用程序以应用程序捆绑包的形式发货。 这些是扩展名
 
 在 Mac 上，`mtouch` 与 Xamarin.iOS 捆绑在一起。 可在以下目录中找到它：
 
-/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
+/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin 
 
 若要使 `mtouch` 便于使用，请将它的父目录添加到系统的 `PATH` 环境变量。  
 
-例如，若要在 Bash 中执行此操作，可将以下行添加到 ~/.bash_profile 文件末尾：
+例如，若要在 Bash 中执行此操作，可将以下行添加到 ~/.bash_profile  文件末尾：
 
 ```bash
 export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 ```
 
 > [!WARNING]
-> 若要使用 `mtouch`，请不要依赖于是否存在 /Developer/MonoTouch/usr/bin，一个指向 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin 的符号链接。 该符号链接的存在只是为了与未在 /Library/Frameworks/... 中安装的旧 MonoTouch 版本保持兼容性，它可能会在未来版本中消失。
+> 若要使用 `mtouch`，请不要依赖于是否存在 /Developer/MonoTouch/usr/bin  ，一个指向 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin  的符号链接。 该符号链接的存在只是为了与未在 /Library/Frameworks/...  中安装的旧 MonoTouch 版本保持兼容性，它可能会在未来版本中消失。
 
 ## <a name="building"></a>生成
 
 `mtouch` 命令可以用三种不同的方式编译代码：
 
--  针对模拟器测试进行编译。
--  针对设备部署进行编译。
--  将可执行文件部署到设备。
+- 针对模拟器测试进行编译。
+- 针对设备部署进行编译。
+- 将可执行文件部署到设备。
 
 
 ### <a name="building-for-the-simulator"></a>针对模拟器进行构建

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865892"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526630"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手动预配
 
@@ -193,14 +193,14 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 Apple Developer 门户中已创建的证书和配置文件可能不会自动显示在 Xcode 中。 因此，可能需要下载它们，以便其可由 Visual Studio for Mac 和 Visual Studio 访问。 若要更新和下载 Apple Developer 门户中创建的任何证书，请执行以下操作：
 
-1.   退出 Visual Studio for Mac 或 Visual Studio。
-2.   启动 Xcode。
-3.   选择“Xcode 菜单”>“偏好设置...” 
-4.   单击“帐户”  选项卡。
-5.   选择团队，然后单击“下载手动配置文件”按钮  ：[![](manual-provisioning-images/selectteam1.png "下载手动配置文件")](manual-provisioning-images/selectteam1.png#lightbox)
+1. 退出 Visual Studio for Mac 或 Visual Studio。
+2. 启动 Xcode。
+3. 选择“Xcode 菜单”>“偏好设置...” 
+4. 单击“帐户”  选项卡。
+5. 选择团队，然后单击“下载手动配置文件”按钮  ：[![](manual-provisioning-images/selectteam1.png "下载手动配置文件")](manual-provisioning-images/selectteam1.png#lightbox)
 
-6.   退出 Xcode。
-7.  启动 Visual Studio for Mac 或 Visual Studio。
+6. 退出 Xcode。
+7. 启动 Visual Studio for Mac 或 Visual Studio。
 
 Visual Studio for Mac 或 Visual Studio 将有新的证书或预配配置文件可供使用。
 

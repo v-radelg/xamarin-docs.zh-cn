@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: aa1093336a79689380e920783dd772c5e68c76b9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6fd952fc929fc11d19d8ceb0153aa8d7702a21a7
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650446"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889229"
 ---
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
@@ -68,6 +68,7 @@ public class NativeCell : ViewCell
   }
 }
 ```
+
 `NativeCell` 类创建在 .NET Standard 库项目中，它定义自定义单元的 API。 自定义单元公开可以通过数据绑定显示的 `Name`、`Category` 和 `ImageFilename` 属性。 若要深入了解数据绑定，请参阅[数据绑定基本知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 <a name="Consuming_the_Custom_Cell" />

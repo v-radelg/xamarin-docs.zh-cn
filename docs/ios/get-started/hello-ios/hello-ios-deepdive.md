@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647048"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527706"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -442,14 +442,14 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 - [Sketch](https://www.sketchapp.com")  - Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 在应用商店中提供了 Sketch 3。 还可以免费试用 [Sketch 工具](http://bohemiancoding.com/sketch/tool/)。
 - [**Pixelmator**](http://www.pixelmator.com/) – 适用于 Mac 的通用图像编辑应用（成本大约为 30 美元）。
 - [**Glyphish**](http://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
-- [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。  可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
+- [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
 
 ::: zone-end
 ::: zone pivot="windows"
 
 * Visual Studio – 可以用于直接在 IDE 中为应用创建简单图标集。
 - [**Glyphish**](http://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
-- [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。  可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
+- [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
 
 ::: zone-end
 

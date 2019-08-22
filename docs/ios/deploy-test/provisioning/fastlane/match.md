@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0363f6fa1611a15c6925717f7bdf3905f467831e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 92631fa50dc4826e70df4333bb55f7f69937d053
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107789"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526555"
 ---
 # <a name="fastlane-for-ios---match"></a>Fastlane for iOS - Match
 
@@ -53,13 +53,15 @@ Match 负责创建和维护代码签名证书和预配配置文件，使 iOS 开
 
 通过使用终端，将目录更改为项目目录并运行：
 
-    fastlane match init
+```
+fastlane match init
+```
 
 出现提示时，请输入 GIT 存储库的 URL：
 
  [![](match-images/fastlane-image7.png "输入 git 存储库的 URL")](match-images/fastlane-image7.png#lightbox)
 
-然后可以找到此 URL，通过单击 github.com 上的“克隆或下载”按钮可复制此 URL，如下所示：
+然后可以找到此 URL，通过单击 github.com 上的“克隆或下载”  按钮可复制此 URL，如下所示：
 
 [![](match-images/fastlane-image6.png "github.com 上的“克隆”或“下载”按钮下的 URL")](match-images/fastlane-image6.png#lightbox)
 
@@ -76,11 +78,13 @@ Match 负责创建和维护代码签名证书和预配配置文件，使 iOS 开
 
 根据所需的环境，可以使用以下任一命令创建新证书和预配配置文件，并将其存储在新的 GIT 存储库：
 
-    fastlane match appstore
+```
+fastlane match appstore
 
-    fastlane match adhoc
+fastlane match adhoc
 
-    fastlane match development
+fastlane match development
+```
 
 除了创建新的证书和配置文件，使用以下任一命令还可以将以下项添加或更新（如果已存在）到 GIT 存储库：
 
@@ -99,15 +103,21 @@ Match 负责创建和维护代码签名证书和预配配置文件，使 iOS 开
 
 如果证书比较杂乱，可以通过以下命令使用 `nuke` 吊销每种环境的证书和配置文件：
 
-    fastlane match nuke
+```
+fastlane match nuke
+```
 
 若要撤销特定环境的所有证书和预配配置文件：
 
-    fastlane match nuke development
+```
+fastlane match nuke development
+```
 
- 或
+ or
 
-    fastlane match nuke distribution
+```
+fastlane match nuke distribution
+```
 
 Fastlane 将在进行删除前确认将要删除的文件。
 
@@ -127,15 +137,21 @@ Fastlane 将在进行删除前确认将要删除的文件。
 
 - 将 `-–help` 标志用于所有的可用命令列表：
 
-        fastlane match cert --help
+    ```
+    fastlane match cert --help
+    ```
 
 - 使用 `-–verbose` 标志增加输出的详细程度：
 
-        fastlane match --development --verbose
+    ```
+    fastlane match --development --verbose
+    ```
 
 - 如果开发人员门户上的设备计数已更改，请使用 `--force_for_new_devices` 标识强制预配配置文件进行续订”
 
-        fastlane match development --force_for_new_devices
+    ```
+    fastlane match development --force_for_new_devices
+    ```
 
 ## <a name="related-links"></a>相关链接
 

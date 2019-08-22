@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c03815776921a61c1f54136e3f09c0996dff71d3
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: f632b44e087c0e380ecd81c2af7db3d49c072f7e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528408"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887748"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
 
-本文介绍了 iTunesMetadata.plist 文件，该文件用于向 iTunes 提供 iOS 应用程序使用 Ad Hoc 分发进行测试或企业部署的相关信息。
+本文介绍了 iTunesMetadata.plist 文件，该文件用于向 iTunes 提供 iOS 应用程序使用 Ad Hoc 分发进行测试或企业部署的相关信息。 
 
 在 iTunes Connect 中创建 iOS 应用程序（无论是用于在 iTunes App Store 中销售还是免费发布）时，开发人员可指定应用程序类型、子类型、版权声明、支持的 iOS 设备和必需设备功能等信息。 对于通过 Ad Hoc 分发传递给测试员或企业用户的 iOS 应用程序，缺少此信息。
 
@@ -119,6 +119,7 @@ ms.locfileid: "51528408"
     <true/>
 </dict>
 ```
+
 指定 iOS 设备必须在支持 ARM7 指令集并拥有前置摄像头后才可安装该应用程序。 有关允许值的完整列表，请参阅 Apple 的 [UIRequiredDeviceCapabilities](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW3) 文档。
 
 ### <a name="artistname-and-playlistartistname"></a>artistName 和 playlistArtistName
@@ -188,7 +189,7 @@ ms.locfileid: "51528408"
 
 ### <a name="softwareiconneedsshine"></a>softwareIconNeedsShine
 
-`softwareIconNeedsShine` 键用于就 iOS 应用程序图标是否需要对 iOS 6（及先前版本）使用高亮突出显示通知 iTunes。 示例:
+`softwareIconNeedsShine` 键用于就 iOS 应用程序图标是否需要对 iOS 6（及先前版本）使用高亮突出显示  通知 iTunes。 示例:
 
 ```xml
 <key>softwareIconNeedsShine</key>
@@ -298,27 +299,27 @@ ms.locfileid: "51528408"
 
 请执行以下操作：
 
-1. 在“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加” > “新文件...”
-2. 在“新文件”对话框中，依次选择“iOS” > “属性列表”：
+1. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “新文件...” 
+2. 在“新文件”对话框中，依次选择“iOS”   > “属性列表”  ：
 
     ![](itunesmetadata-images/image01.png "选择 iOS 属性列表")
-3. 对“名称”输入 `iTunesMetadata`，然后单击“新建”按钮。
-4. 在“解决方案资源管理器”中，双击打开 `iTunesMetadata.plist` 文件进行编辑：
+3. 对“名称”  输入 `iTunesMetadata`，然后单击“新建”  按钮。
+4. 在“解决方案资源管理器”  中，双击打开 `iTunesMetadata.plist` 文件进行编辑：
 
     ![](itunesmetadata-images/image02.png "iTunesMetadata.plist 编辑器")
-5. 单击绿色的“+”新建条目，再输入“`UIRequiredDeviceCapabilities`”作为键名称：
+5. 单击绿色的“+”  新建条目，再输入“`UIRequiredDeviceCapabilities`”作为键名称：
 
     ![](itunesmetadata-images/image03.png "创建新条目并输入 UIRequiredDeviceCapabilities 作为键名称")
-6. 单击“字符串”值类型，再从弹出列表中选择“字典”：
+6. 单击“字符串”  值类型，再从弹出列表中选择“字典”  ：
 
     ![](itunesmetadata-images/image04.png "从弹出列表中选择字典")
 7. 单击属性名左侧的折叠图标，以显示字典条目：
 
     ![](itunesmetadata-images/image05.png "显示字典条目")
-8. 依次单击“添加新条目”文本和绿色的“+”，向字典添加条目：
+8. 依次单击“添加新条目”  文本和绿色的“+”  ，向字典添加条目：
 
     ![](itunesmetadata-images/image06.png "向字典添加一个条目")
-9. 输入“`armv7`”作为键名称，选择“布尔”类型，再输入“Yes”作为值：
+9. 输入“`armv7`”作为键名称，选择“布尔”  类型，再输入“Yes”  作为值：
 
     ![](itunesmetadata-images/image07.png "输入“armv7”作为键名称，选择“布尔”类型，并输入“Yes”作为值")
 10. 重复上述步骤，直到已使用所有必需键/值对填充 `iTunesMetadata.plist` 文件（有关详细信息，请参阅上方的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)部分）。
@@ -333,9 +334,9 @@ ms.locfileid: "51528408"
 2. 复制上面的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)中的示例内容。
 3. 将内容粘贴到文件并按需进行编辑。
 4. 保存文件并返回 Visual Studio for Mac。
-5. 在“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加” > “现有文件...”。
-6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“确定”按钮。
-7. 将此文件的“生成操作”保留设置为“无”。
+5. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “现有文件...”  。
+6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“确定”  按钮。
+7. 将此文件的“生成操作”  保留设置为“无”  。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -347,9 +348,9 @@ ms.locfileid: "51528408"
 2. 复制上面的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)中的示例内容。
 3. 将内容粘贴到文件并按需进行编辑。
 4. 保存文件并返回 Visual Studio。
-5. 在“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加” > “现有文件...”。
-6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“打开”按钮。
-7. 将此文件的“生成操作”保留设置为“无”。
+5. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “现有文件...”  。
+6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“打开”  按钮。
+7. 将此文件的“生成操作”  保留设置为“无”  。
 
 -----
 

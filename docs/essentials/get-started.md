@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: fd4c51714cea370f1d62457931a5820d5f1a5b97
-ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
+ms.openlocfilehash: d120b9420061ac0c3c4e2ccda3021320d29a547d
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850939"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629580"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门
 
@@ -30,6 +30,7 @@ Xamarin.Essentials 可用作 NuGet 包，可以通过使用 Visual Studio 将其
 
 3. 将 [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet 包添加到每个项目：
 
+    <!--markdownlint-disable MD023 -->
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     在“解决方案资源管理器”面板中，右键单击解决方案名称，然后选择“管理 NuGet 包”  。 搜索  Xamarin.Essentials 并将包安装到  所有项目，包括 Android、iOS、UWP 和 .NET Standard 库。

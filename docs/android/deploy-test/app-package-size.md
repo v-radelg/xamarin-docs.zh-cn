@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: a6fe5cc3a126cc42c07f38b89c5d1de308b3c0dc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109908"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525789"
 ---
 # <a name="application-package-size"></a>应用程序包大小
 
-本文将讨论 Xamarin.Android 应用程序包的组成部分，以及可用于在开发的调试和发布阶段进行高效包部署的相关策略。
+本文将讨论 Xamarin.Android 应用程序包的组成部分，以及可用于在开发的调试和发布阶段进行高效包部署的相关策略。 
 
 
 ## <a name="overview"></a>概述
@@ -49,7 +49,7 @@ Xamarin.Android 可使用各种机制来最大程度地减小包的大小，同�
 
 Android 在复制和安装包方面相对较慢，因此，我们希望包大小尽可能地小。 如上所述，最大程度降低包大小的一个可行方法就是通过链接器。 但是链接速度比较慢，而且我们通常只想要部署应用程序自上次部署以来有更改的部分。 为实现此目的，我们将应用程序从核心 Xamarin.Android 组件中分离了出来。
 
-第一次在设备上进行调试时，我们复制了两个较大的包：共享运行时和共享平台。 共享运行时包含 Mono 运行时和 BCL，而共享平台包含 Android API 级别的特定程序集：
+第一次在设备上进行调试时，我们复制了两个较大的包：共享运行时  和共享平台  。 共享运行时包含 Mono 运行时和 BCL，而共享平台包含 Android API 级别的特定程序集：
 
 [![共享运行时包大小](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
@@ -59,21 +59,21 @@ Android 在复制和安装包方面相对较慢，因此，我们希望包大小
 
 ### <a name="fast-assembly-deployment"></a>快速程序集部署
 
-“快速程序集部署”生成选项可用于进一步减小调试安装包的大小，方法是通过在应用程序包中将程序集排除在外、直接在设备上安装程序集且只进行一次，并仅复制自上次部署以来有修改的文件。
+“快速程序集部署”  生成选项可用于进一步减小调试安装包的大小，方法是通过在应用程序包中将程序集排除在外、直接在设备上安装程序集且只进行一次，并仅复制自上次部署以来有修改的文件。
 
-若要启用“快速程序集部署”，请执行以下操作：
+若要启用“快速程序集部署”  ，请执行以下操作：
 
-1.  右键单击“解决方案资源管理器”中的 Android 项目，并选择“选项”。
+1. 右键单击“解决方案资源管理器”中的 Android 项目，并选择“选项”  。
 
-2.  在“项目选项”对话框中，选择“Android 版本”：  
+2. 在“项目选项”对话框中，选择“Android 版本”  ：  
 
     ![项目选项 Android 版本](app-package-size-images/fastdev0.png)
 
-3.  选中“使用共享 Mono 运行时”复选框和“快速程序集部署”复选框：  
+3. 选中“使用共享 Mono 运行时”复选框  和“快速程序集部署”  复选框：  
 
     ![“打包”选项卡下选中的复选框](app-package-size-images/fastdev.png)
 
-4.  单击“确定”按钮，以保存所做的更改并关闭“项目选项”对话框。
+4. 单击“确定”  按钮，以保存所做的更改并关闭“项目选项”对话框。
 
 
 下一次构建应用程序进行调试时，将直接在设备上安装程序集（如果尚未安装），并且会在设备上安装一个较小的应用程序包（不包括程序集）。 这将缩短部署应用程序更改并运行测试所需的时间。

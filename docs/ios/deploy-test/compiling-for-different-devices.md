@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: aac558f52423132bef53f1754307e743c69f6f22
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b3bc6874a8584b60b15d1d373ad97fde565dfc4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121199"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527129"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>在 Xamarin.iOS 中针对不同的设备进行编译
 
-可以从项目的“iOS 生成”属性页上配置可执行文件的生成属性，可通过右键单击项目名称并浏览至 Visual Studio for Mac 中的“选项”>“iOS 生成”查找，或在 Visual Studio 的“属性”中查找：
+可以从项目的“iOS 生成”  属性页上配置可执行文件的生成属性，可通过右键单击项目名称并浏览至 Visual Studio for Mac 中的“选项”>“iOS 生成”  查找，或在 Visual Studio 的“属性”  中查找：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -40,9 +40,9 @@ ms.locfileid: "50121199"
 
 Visual Studio for Mac 允许你配置两个与 SDK 相关的重要属性：用于生成软件的 iOS SDK 版本和部署目标（或所需的最低 iOS 版本）。
 
-iOS SDK 版本选项允许你使用不同版本的 Apple 发布的 SDK，这会将 Xamarin.iOS 定向到在生成过程中应该引用的编译器、链接器和库。 
+iOS SDK 版本  选项允许你使用不同版本的 Apple 发布的 SDK，这会将 Xamarin.iOS 定向到在生成过程中应该引用的编译器、链接器和库。 
 
-部署目标设置用于选择在其上运行应用程序的操作系统所需的最低版本。 这在项目的 Info.plist 文件中设置。 应该选取具有运行应用程序所需的所有 API 的最低版本。
+部署目标  设置用于选择在其上运行应用程序的操作系统所需的最低版本。 这在项目的 Info.plist 文件中设置。 应该选取具有运行应用程序所需的所有 API 的最低版本。
 
 一般情况下，Xamarin.iOS API 会公开最新版本的 SDK 中的所有可用方法，如有必要，我们会提供允许你检测功能在运行时是否可用的方便属性（例如，`UIDevice.UserInterfaceIdiom` 和 `UIDevice.IsMultitaskingSupported` 始终在 Xamarin.iOS 上运行，我们会完成幕后的所有工作）。
 
@@ -128,8 +128,8 @@ Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支�
 
 若要执行此操作，应执行以下步骤：
 
--  打开“项目选项”并导航到“iOS 生成”窗格。
--  将 `'-gcc_flags "-weak_framework iAd"'` 添加到你想弱链接到的每个配置上的其他选项：
+- 打开“项目选项”  并导航到“iOS 生成”  窗格。
+- 将 `'-gcc_flags "-weak_framework iAd"'` 添加到你想弱链接到的每个配置上的其他选项  ：
 
 
 [![](compiling-for-different-devices-images/image3.png "其他选项")](compiling-for-different-devices-images/image3.png#lightbox)

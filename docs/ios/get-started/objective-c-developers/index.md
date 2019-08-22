@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 6d0e6fe402a657b3df0a03f2a9ce30ce22702f20
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: d64f92c9bb145da6ab4bfa688ea52bffb4de22d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741101"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526487"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>面向 Objective-C 开发人员的 Xamarin
 
@@ -28,8 +28,8 @@ Xamarin 针对 iOS 为开发人员提供了一个途径，用于将他们的非�
 
 你将可以在我们的文档站点上找到大量信息，以帮助简化到 Xamarin 的过渡，同时了解如何将 C# 代码与已知的内容集成。 帮助你入门的一些要点包括：
 
--   [面向 Objective-C 开发人员的 C# 入门](primer.md) - 针对希望转移到 Xamarin 和 C# 语言的 Objective-C 开发人员的快速入门。 
--   [演练：绑定 Objective-C 库](~/ios/platform/binding-objective-c/walkthrough.md) - 在 Xamarin.iOS 应用程序中重复使用现有 Objective-C 代码的逐步演练。 
+- [面向 Objective-C 开发人员的 C# 入门](primer.md) - 针对希望转移到 Xamarin 和 C# 语言的 Objective-C 开发人员的快速入门。 
+- [演练：绑定 Objective-C 库](~/ios/platform/binding-objective-c/walkthrough.md) - 在 Xamarin.iOS 应用程序中重复使用现有 Objective-C 代码的逐步演练。 
 
 
 ## <a name="binding-objective-c"></a>绑定 Objective-C

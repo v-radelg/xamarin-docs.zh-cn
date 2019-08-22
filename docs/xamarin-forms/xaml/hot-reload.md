@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 4f6a0b45d37252c141b2741dd0b37a980c958a51
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 59b72daecdc1159494d069bec044ee1891916d11
+ms.sourcegitcommit: fd349a121164c85545f4b0881940eefdd0cf3b65
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984529"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896406"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>适用于 Xamarin 的 XAML 热重载 (预览)
 
@@ -30,7 +30,7 @@ Xamarin.Forms | 4.1 或更高版本
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>使用适用于 Xamarin 的 XAML 热重载
 
-使用 XAML 热重载不需要额外的安装或设置。 它内置于 Visual Studio 中, 并可在 IDE 设置中启用。 启用后, 可以通过在模拟器、模拟器或物理设备上调试应用, 开始使用 XAML 热重载。
+使用 XAML 热重载不需要额外的安装或设置。 它内置于 Visual Studio 中, 并可在 IDE 设置中启用。 启用后, 可以通过在模拟器、模拟器或物理设备上调试应用, 开始使用 XAML 热重载。 目前, XAML 热重载仅适用于在 iOS 或 Android 上调试时的工作。
 
 在 Windows 上, 可以通过选中 "在**工具** > **选项** >  > 中**启用 xamarin 热**重载" 复选框**热重载**来启用 XAML 热重载。
 

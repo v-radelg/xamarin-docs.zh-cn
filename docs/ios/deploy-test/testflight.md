@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5729c32ca671a4fcc309d235a34929dcba6a3d03
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865583"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621113"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -55,21 +55,21 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 3. 管理 Beta 测试：
     - 添加元数据。
     - 添加内部用户：
-        - 最多 25 位用户。
+      - 最多 25 位用户。
     - 添加外部用户：
-        - 最多 1000 位用户。
-        - 需要 Beta 测试审核，这需要遵守 Apple 相关指南。
+      - 最多 1000 位用户。
+      - 需要 Beta 测试审核，这需要遵守 Apple 相关指南。
 4. 接收来自用户的反馈，采取相应操作，然后返回到步骤 2。
 
 ## <a name="create-an-itunes-connect-record"></a>创建 iTunes Connect 记录
 
-1.  使用 Apple 开发人员凭据登录到 [iTunes Connect 门户](https://itunesconnect.apple.com/)。
-2.  选择“我的应用”  ：
+1. 使用 Apple 开发人员凭据登录到 [iTunes Connect 门户](https://itunesconnect.apple.com/)。
+2. 选择“我的应用”  ：
 
     [![](testflight-images/my-apps.png "选择“我的应用”")](testflight-images/my-apps.png#lightbox)
 
 
-3.  在“我的应用”  屏幕上，单击屏幕左上角的“+”  按钮以添加新的应用。 若拥有 Mac 和 iOS 开发人员帐户，则系统将提示你在此处选择新的应用类型。
+3. 在“我的应用”  屏幕上，单击屏幕左上角的“+”  按钮以添加新的应用。 若拥有 Mac 和 iOS 开发人员帐户，则系统将提示你在此处选择新的应用类型。
 
 将显示“新 iOS 应用”  提交窗口，其中需包含与应用的 Info.plist 中完全相同的信息
 
@@ -84,12 +84,12 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 [![](testflight-images/infoplist.png "应用的 Info.plist")](testflight-images/infoplist.png#lightbox)
 [![](testflight-images/newiosapp.png "iTunes Connect 上的窗体")](testflight-images/newiosapp.png#lightbox)
 
--  **名称** - 设置应用程序包时使用的描述性名称。 它必须与 `Info.plist` 中的“应用程序名称”  条目完全匹配。
--  **主要语言** - 应用中使用的基本语言。 这通常是你所说的语言。
--  **程序包 ID** - 一个下拉菜单，其列出在开发人员帐户上创建的所有应用 ID。
-    *   **应用程序包 ID 后缀** - 如果已选择通配符应用程序包 ID（即以 * 结尾，如上面的示例所示），则会看到其他框，提示输入应用程序包 ID 后缀。 在此示例中，“应用程序包 ID”  是“`mobi.chkn.*`”，“后缀”是“PageView”  。 这些一起构成了 `Info.plist` 中的应用程序包标识符  。
--  **版本** - 正在上传的应用的版本号。 这由开发人员选择。
--  **SKU** - SKU 是应用的唯一 ID，不向用户显示。 可按类似方式将其视为产品 ID。 在以上示例中，我选择了日期和该日期的版本号。
+- **名称** - 设置应用程序包时使用的描述性名称。 它必须与 `Info.plist` 中的“应用程序名称”  条目完全匹配。
+- **主要语言** - 应用中使用的基本语言。 这通常是你所说的语言。
+- **程序包 ID** - 一个下拉菜单，其列出在开发人员帐户上创建的所有应用 ID。
+  - **应用程序包 ID 后缀** - 如果已选择通配符应用程序包 ID（即以 * 结尾，如上面的示例所示），则会看到其他框，提示输入应用程序包 ID 后缀。 在此示例中，“应用程序包 ID”  是“`mobi.chkn.*`”，“后缀”是“PageView”  。 这些一起构成了 `Info.plist` 中的应用程序包标识符  。
+- **版本** - 正在上传的应用的版本号。 这由开发人员选择。
+- **SKU** - SKU 是应用的唯一 ID，不向用户显示。 可按类似方式将其视为产品 ID。 在以上示例中，我选择了日期和该日期的版本号。
 
 
 ## <a name="upload-your-app"></a>上传应用
@@ -190,9 +190,9 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
 内部测试员是你的开发团队的成员，其已分配有 iTunes Connect 中的以下某一角色：
 
--  **管理员** - 管理员负责在 iTunes Connect 中添加和管理新用户。
--  **律师** - 团队代理是将分配有法律角色的唯一管理用户。 它允许代理签署法律合同。
--  **技术员** - 技术用户可更改有关应用的大多数属性。 例如，编辑应用信息、上传二进制文件和发送应用进行审核。
+- **管理员** - 管理员负责在 iTunes Connect 中添加和管理新用户。
+- **律师** - 团队代理是将分配有法律角色的唯一管理用户。 它允许代理签署法律合同。
+- **技术员** - 技术用户可更改有关应用的大多数属性。 例如，编辑应用信息、上传二进制文件和发送应用进行审核。
 
 每个内部版本最多可与 25 名成员共享。
 

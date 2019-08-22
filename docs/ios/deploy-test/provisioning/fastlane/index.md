@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 23bf62688da4e2e82cb3e0fadc9a3b7c13ab1a7d
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: becf9696a13dbd1ae96693729618d70b043d1c3a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865518"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527429"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Fastlane for iOS 介绍
 
@@ -78,7 +78,7 @@ Fastlane 是一个开源项目，旨在简化 iOS 和 Android 应用混乱冗长
     export PATH="$HOME/.fastlane/bin:$PATH"
     ```
 
-8.  再次运行 `which fastlane`，以确认路径类似 `/Users/[user]/.fastlane/bin`
+8. 再次运行 `which fastlane`，以确认路径类似 `/Users/[user]/.fastlane/bin`
 
 
 ## <a name="updating-fastlane"></a>更新 Fastlane

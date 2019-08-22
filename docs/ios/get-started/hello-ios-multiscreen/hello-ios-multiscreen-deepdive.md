@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 9ce29df9070ee99bb3de9579025f5b0f366d6331
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c7572c3d3a785264e9f26c17e74c41ee28e8af6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655906"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526521"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>深入了解 iOS 多屏显示
 
@@ -72,17 +72,17 @@ MVC 完全不考虑数据持久性  和模型的访问权限  。 换言之，MV
 
 导航控制器有 3 大主要功能：
 
--  **提供用于向前导航的 Hook** – 导航控制器在内容视图层次结构推送到导航堆栈的情况下使用分层导航手法   。 可将导航堆栈视为一叠扑克牌，只有最上面的牌可见，如下图所示：  
+- **提供用于向前导航的 Hook** – 导航控制器在内容视图层次结构推送到导航堆栈的情况下使用分层导航手法   。 可将导航堆栈视为一叠扑克牌，只有最上面的牌可见，如下图所示：  
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "此图描述了作为卡堆栈的导航")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **选择性提供后退按钮** - 将新项目推送到导航堆栈时，标题栏可自动显示后退按钮  ，允许用户向后导航。 按后退按钮弹出导航堆栈中的当前视图控制器，并将先前的内容视图层次结构加载到窗口中  ：  
+- **选择性提供后退按钮** - 将新项目推送到导航堆栈时，标题栏可自动显示后退按钮  ，允许用户向后导航。 按后退按钮弹出导航堆栈中的当前视图控制器，并将先前的内容视图层次结构加载到窗口中  ：  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "此图描述了从堆栈中“弹出”卡的过程")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **提供标题栏** - 导航控制器的顶部称为标题栏  。 它负责显示视图控制器标题，如下图所示：  
+- **提供标题栏** - 导航控制器的顶部称为标题栏  。 它负责显示视图控制器标题，如下图所示：  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "标题栏负责显示“视图控制器”标题")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
@@ -191,9 +191,9 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概念包括：
 
--  **视图控制器的自动创建** – 在“属性面板”中输入视图控制器的类名称时，iOS 设计器将检查该类是否存在并生成视图控制器支持的类  。 若要深入了解此选项以及其他 iOS 设计器功能，请参阅 [iOS 设计器简介](~/ios/user-interface/designer/introduction.md)指南。
--  **表格视图控制器** - `CallHistoryController` 是一种表格视图控制器。 表格视图控制器包含表格视图、iOS 中最常见的布局和数据显示工具。 但是，表格不在本指南的讨论范围内。 有关表格视图控制器的详细信息，请参阅[使用表格和单元格](~/ios/user-interface/controls/tables/index.md)指南。
--   **情节提要 ID** – 通过设置情节提要 ID，可在 Objective-C 中创建“视图控制器”类，其中包含情节提要中视图控制器的代码后置。 情节提要 ID 用于查找 Objective-C 类并在情节提要中执行视图控制器的实例化。 有关情节提要 ID 的详细信息，请参阅[情节提要简介](~/ios/user-interface/storyboards/index.md)指南。
+- **视图控制器的自动创建** – 在“属性面板”中输入视图控制器的类名称时，iOS 设计器将检查该类是否存在并生成视图控制器支持的类  。 若要深入了解此选项以及其他 iOS 设计器功能，请参阅 [iOS 设计器简介](~/ios/user-interface/designer/introduction.md)指南。
+- **表格视图控制器** - `CallHistoryController` 是一种表格视图控制器。 表格视图控制器包含表格视图、iOS 中最常见的布局和数据显示工具。 但是，表格不在本指南的讨论范围内。 有关表格视图控制器的详细信息，请参阅[使用表格和单元格](~/ios/user-interface/controls/tables/index.md)指南。
+- **情节提要 ID** – 通过设置情节提要 ID，可在 Objective-C 中创建“视图控制器”类，其中包含情节提要中视图控制器的代码后置。 情节提要 ID 用于查找 Objective-C 类并在情节提要中执行视图控制器的实例化。 有关情节提要 ID 的详细信息，请参阅[情节提要简介](~/ios/user-interface/storyboards/index.md)指南。
 
 ## <a name="summary"></a>总结
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: b1f2dbe87fed951223e731912b696c649d0b6edb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647195"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621102"
 ---
 # <a name="hierarchical-navigation"></a>分层导航
 
@@ -366,5 +366,5 @@ public class TitleViewPage : ContentPage
 - [PassingData（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
 - [LoginFlow（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
 - [TitleView（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
-- [如何在 Xamarin.Forms 视频中创建登录屏幕流](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- [如何在 Xamarin.Forms 视频中创建登录屏幕流](https://www.youtube.com/watch?v=qKQ7pyyG1fo)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

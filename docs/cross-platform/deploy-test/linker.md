@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: caf43e6cb975b65240f5c0f8538b9be175978eac
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: bf934d50c90efaba266cbfac00aa5140ea92009b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780455"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526685"
 ---
 # <a name="custom-linker-configuration"></a>自定义链接器配置
 
@@ -20,12 +20,12 @@ ms.locfileid: "34780455"
 你可以提供链接器的额外定义，以确保不会消除应用程序中的类型、方法和/或字段。 在你自己的代码中，首选方式是使用 `[Preserve]` 自定义特性，如[在 iOS 上链接](~/ios/deploy-test/linker.md)和[在 Android 上链接](~/android/deploy-test/linker.md)指南中所述。
 但是，如果你需要一些来自 SDK 或产品程序集中的定义，则使用 XML 文件可能是最好的解决方案（而不是添加确保链接器不会消除所需内容的代码）。
 
-若要执行此操作，可以使用顶级元素 <linker> 定义 XML 文件，它包括反过来包括类型节点的程序集节点，它又包括方法和字段节点。
+若要执行此操作，可以使用顶级元素 `<linker>` 定义 XML 文件，它包括反过来包括类型  节点的程序集  节点，它又包括方法  和字段  节点。
 
 拥有此链接器说明文件后，将其添加到项目并执行下列操作：
 
--  对于 Android：将生成操作设置为 LinkDescription
--  对于 iOS：将生成操作设置为 LinkDescription
+- 对于 Android  ：将生成操作  设置为 LinkDescription 
+- 对于 iOS  ：将生成操作  设置为 LinkDescription 
 
 
 下面的示例显示了 XML 文件的外观：

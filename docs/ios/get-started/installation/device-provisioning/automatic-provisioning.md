@@ -8,12 +8,12 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 796c196b5c8ebcd70a0529112189cea6116a9ab0
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865323"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890100"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
@@ -43,12 +43,15 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 > [!IMPORTANT]
 > 在开始之前，请确保登录 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com) 以检查是否已接受最新的 Apple 帐户策略。 如果系统提示，请完成这些步骤以接受 Apple 的任何新帐户协议。 如果不接受自 2018 年 5 月起的隐私协议，那么在尝试预配设备时，将看到以下警报之一：
+>
 > ```
 > Unexpected authentication failure. Reason: {
 > "authType" : "sa"
 > }
 > ```
+>
 > or
+>
 > ```
 > Authentication Service Is Unavailable
 > ```

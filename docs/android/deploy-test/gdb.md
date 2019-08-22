@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: aa72daae1727e0d100592873a7895a7d8942b4f2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509023"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525500"
 ---
 # <a name="gdb"></a>GDB
 
@@ -24,9 +24,9 @@ Xamarin.Android 4.10 通过使用 `_Gdb` MSBuild 目标引入了对使用 `gdb` 
 
 有三种使用 `gdb` 的方法：
 
-1.  [启用快速部署的调试版本](#Debug_Builds_with_Fast_Deployment)。
-1.  [禁用快速部署的调试版本](#Debug_Builds_without_Fast_Deployment)。
-1.  [发行版本](#Release_Builds)。
+1. [启用快速部署的调试版本](#Debug_Builds_with_Fast_Deployment)。
+1. [禁用快速部署的调试版本](#Debug_Builds_without_Fast_Deployment)。
+1. [发行版本](#Release_Builds)。
 
 
 出现错误时，请参阅[故障排除](#Troubleshooting)部分。
@@ -83,8 +83,8 @@ GNU gdb (GDB) 7.3.1-gg2
 
 有两种解决方法：
 
--   设置 `debug.mono.log` 系统属性，以便创建 `.__override__` 目录。
--   将 `gdbserver` 包含在你的 `.apk` 中。
+- 设置 `debug.mono.log` 系统属性，以便创建 `.__override__` 目录。
+- 将 `gdbserver` 包含在你的 `.apk` 中。
 
 ### <a name="setting-the-debugmonolog-system-property"></a>设置 `debug.mono.log` 系统属性
 
@@ -141,9 +141,9 @@ GNU gdb (GDB) 7.3.1-gg2
 
 `gdb` 支持需要三项内容：
 
-1.  `INTERNET` 权限。
-2.  应用调试已启用。
-3.  可访问的 `gdbserver`。
+1. `INTERNET` 权限。
+2. 应用调试已启用。
+3. 可访问的 `gdbserver`。
 
 默认在调试应用中启用 `INTERNET` 权限。 如果它在你的应用程序中尚未出现，可以通过编辑 **Properties/AndroidManifest.xml** 或[“项目属性”](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)来添加它。
 
@@ -161,7 +161,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ## <a name="troubleshooting"></a>疑难解答
 
-### <a name="monopmip-doesnt-work"></a>`mono_pmip` 不起作用
+### <a name="mono_pmip-doesnt-work"></a>`mono_pmip` 不起作用
 
 从 `libmonosgen-2.0.so` 导出 `mono_pmip` 函数（用于[获取托管堆栈帧](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)），`_Gdb` 目标目前不会下拉。 （未来版本会修复此问题。）
 

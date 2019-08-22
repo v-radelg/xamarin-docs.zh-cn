@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e6f7ec4fe018181b6f470de4201d5e5a3f90d4da
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831511"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527645"
 ---
 # <a name="app-store-distribution"></a>App Store 分发
 
@@ -64,11 +64,11 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 
 或者，可通过 Xcode 中的”首选项”对话框请求证书。 为此，请执行以下步骤：
 
-1.   选择团队，然后单击“管理证书...”  ：[![](images/selectteam.png "选择团队和“查看详细信息”")](images/selectteam.png#lightbox)
+1. 选择团队，然后单击“管理证书...”  ：[![](images/selectteam.png "选择团队和“查看详细信息”")](images/selectteam.png#lightbox)
 
-2.   然后，单击“iOS 分发证书”  旁边的“创建”  按钮：[![](images/selectcert.png "创建 iOS 分发证书")](images/selectcert.png#lightbox)
+2. 然后，单击“iOS 分发证书”  旁边的“创建”  按钮：[![](images/selectcert.png "创建 iOS 分发证书")](images/selectcert.png#lightbox)
 
-3.   将根据你的团队特权生成签名标识（如下所示），或者可能需要等待团队代理或管理员批准：[![](images/generated.png "将生成签名标识并显示一个对话框")](images/generated.png#lightbox)
+3. 将根据你的团队特权生成签名标识（如下所示），或者可能需要等待团队代理或管理员批准：[![](images/generated.png "将生成签名标识并显示一个对话框")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e1792eb9150aa92b04b873ae18ccd89723722529
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8236dc01f31141544bef88011d87a457f18072e8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108036"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526565"
 ---
 # <a name="fastlane-for-ios--cert"></a>Fastlane for iOS – Cert
 
@@ -53,11 +53,15 @@ Cert 提供终端界面，用于创建新的代码签名标识（通常称为开
 
 若要使用 cert 实用程序，请在终端 CLI 中输入以下命令：
 
-    fastlane cert
+```
+fastlane cert
+```
 
 默认情况下，这将创建分发证书。 若要创建开发证书，请传递 `--development` 标志：
 
-    fastlane cert --development
+```
+fastlane cert --development
+```
 
 Cert 将提示输入 Apple ID 和密码，因此请立即输入：
 
@@ -68,7 +72,9 @@ Cert 将提示输入 Apple ID 和密码，因此请立即输入：
 
 通过使用以下命令，还可以将 Apple ID 作为参数传递：
 
-    fastlane cert -u myemailadress@domain.com
+```
+fastlane cert -u myemailadress@domain.com
+```
 
 如果 Apple ID 关联多个团队，此处将显示这些团队。 选择你想要使用的团队所对应的数字：
 
@@ -76,7 +82,9 @@ Cert 将提示输入 Apple ID 和密码，因此请立即输入：
 
 通过使用以下标志也可以传递团队 ID：
 
-    fastlane cert -l 2TU993NY9J
+```
+fastlane cert -l 2TU993NY9J
+```
 
 Fastlane 将会检查本地计算机上是否已安装了可用的签名证书，并且是否会使用此证书。
 
@@ -99,12 +107,15 @@ Fastlane 将会检查本地计算机上是否已安装了可用的签名证书�
 
 - 将 `-–help` 标志用于所有的可用命令列表：
 
-        fastlane cert --help
+    ```
+    fastlane cert --help
+    ```
 
 - 使用 `-–verbose` 标志增加输出的详细程度
 
-        fastlane cert --development --verbose
-
+    ```
+    fastlane cert --development --verbose
+    ```
 
 ## <a name="related-links"></a>相关链接
 

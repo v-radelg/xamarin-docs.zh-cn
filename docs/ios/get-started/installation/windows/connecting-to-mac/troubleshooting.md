@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865805"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890163"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -83,6 +83,7 @@ ms.locfileid: "67865805"
     ```bash
     ssh amyb@10.1.8.95
     ```
+
     <a name="stepnine" />
 
 9. 如果**步骤 8 成功**，则可以尝试通过连接运行简单命令（如 `ls`）：
@@ -218,7 +219,7 @@ ms.locfileid: "67865805"
 
 除非注意到连接对话框不显示 Mac 生成主机的 IP 地址，否则可以忽略此消息。 如果在该对话框中_缺少_ IP 地址，则仍可以[手动添加 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
-#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>“来自 10.1.8.95 的用户无效”和“input\_userauth\_request: 无效用户 a [预身份验证]”
+#### <a name="invalid-user-a-from-101895-and-input_userauth_request-invalid-user-a-preauth"></a>“来自 10.1.8.95 的用户无效”和“input\_userauth\_request: 无效用户 a [预身份验证]”
 
 如果你查看 **sshd.log** 文件，则可能会注意到此消息。 这些消息是正常连接过程的一部分。 它们的出现原因是 Xamarin 在检索 _SSH 指纹_ 时会暂时使用用户名 **a**。
 

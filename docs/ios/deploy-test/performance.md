@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 4954b83b75618128f32b0e5fceed2f04df183433
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 47211f60d55f1f355a92307eff53ed9af754eda2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511471"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527409"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 性能
 
@@ -62,10 +62,10 @@ container.AddSubview (new MyView (container));
 
 在所含对象保留对其容器的链接的情况下，可通过多种选项处理循环引用：
 
--  通过将容器的链接设置为 `null` 来手动中断循环。
--  从容器中手动删除所含对象。
--  调用对象上的 `Dispose`。
--  避免循环引用保持对容器的弱引用。 详细了解弱引用。
+- 通过将容器的链接设置为 `null` 来手动中断循环。
+- 从容器中手动删除所含对象。
+- 调用对象上的 `Dispose`。
+- 避免循环引用保持对容器的弱引用。 详细了解弱引用。
 
 ### <a name="using-weakreferences"></a>使用弱引用
 
