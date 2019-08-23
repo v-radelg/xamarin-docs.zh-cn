@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: choose-layout.md
+            html: 了解 Xamarin.Forms 中的主要布局类如何调整其子类的位置和大小。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: choose-layout.md
+            title: 选择布局
           - href: stack-layout.md
             html: 了解如何以水平或垂直方式在一维堆栈中组织视图。
             image:
@@ -37,18 +43,18 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: flex-layout.md
             title: FlexLayout
-          - href: absolute-layout.md
-            html: 了解如何通过设置坐标值和大小值（这些值可以是比例值，也可以是绝对值）来组织视图。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: AbsoluteLayout
           - href: relative-layout.md
             html: 了解如何通过设置相对于布局或同级视图属性的约束来组织视图。
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: absolute-layout.md
             title: RelativeLayout
+          - href: absolute-layout.md
+            html: 了解如何通过设置坐标值和大小值（这些值可以是比例值，也可以是绝对值）来组织视图。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
           - href: scroll-view.md
             html: 了解如何在视图无法适配屏幕边界时提供滚动。
             image:
@@ -60,7 +66,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: contentview.md
-            title: Frame
+            title: ContentView
           - href: frame.md
             html: 了解如何使用可配置颜色、投影和其他选项的框架来包装视图。
             image:
