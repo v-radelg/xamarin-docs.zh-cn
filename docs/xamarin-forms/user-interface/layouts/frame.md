@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/06/2019
-ms.openlocfilehash: 329edf455a4778efa5f6fbd1ec88cfb274c5cb49
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 619b29a9d65594b1badd805c3361fe1a174d7174
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984419"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976504"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin。窗体框架
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 Xamarin [`Frame`](xref:Xamarin.Forms.Frame)类是一种布局, 用于使用可以配置颜色、阴影和其他选项的边框来包装视图。 框架通常用于在控件周围创建边框, 但可用于创建更复杂的 UI。 有关详细信息, 请参阅[高级帧使用](#advanced-frame-usage)。
 
@@ -193,5 +193,5 @@ Frame circleImageFrame = new Frame
 
 ## <a name="related-links"></a>相关链接
 
-* [帧演示](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [帧演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 * [Xamarin 中的图像](~/xamarin-forms/user-interface/images.md)

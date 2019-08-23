@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/12/2019
-ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 08/22/2019
+ms.openlocfilehash: ac32e340212dd42c373a39df138436e7ee313958
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888653"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976546"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin CollectionView 布局
 
@@ -319,9 +319,6 @@ CollectionView collectionView = new CollectionView
 
 这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的, 这意味着属性可以是数据绑定的目标。
 
-> [!IMPORTANT]
-> 目前仅支持在 Android 上支持标头和表尾。
-
 将标题添加到水平增长的布局时, 将在列表的左侧显示页眉。 同样, 在将页脚添加到水平增长的布局时, 将在列表右侧显示页脚。
 
 ### <a name="display-strings-in-the-header-and-footer"></a>在页眉和页脚中显示字符串
@@ -346,6 +343,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+此代码将产生以下屏幕截图, 其中的标头显示在 iOS 屏幕截图中, 在 Android 屏幕截图中显示了页脚:
+
+[ ![CollectionView 字符串标头和脚注的屏幕截图, 适用于 IOS 和 Android](layout-images/header-footer-string.png "CollectionView 字符串标头和表尾")](layout-images/header-footer-string-large.png#lightbox "CollectionView 字符串标头和表尾")
 
 ### <a name="display-views-in-the-header-and-footer"></a>在页眉和页脚中显示视图
 
@@ -395,6 +396,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+此代码将产生以下屏幕截图, 其中的标头显示在 iOS 屏幕截图中, 在 Android 屏幕截图中显示了页脚:
+
+[在 iOS 和 Android(layout-images/header-footer-view.png "CollectionView 视图页眉和页脚")![上使用视图的 CollectionView 页眉和页脚的屏幕截图]](layout-images/header-footer-view-large.png#lightbox "CollectionView 视图页眉和页脚")
 
 ### <a name="display-a-templated-header-and-footer"></a>显示模板化页眉和页脚
 
@@ -446,6 +451,10 @@ collectionView.SetBinding(ItemsView.HeaderProperty, ".");
 collectionView.SetBinding(ItemsView.FooterProperty, ".");
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+此代码将产生以下屏幕截图, 其中的标头显示在 iOS 屏幕截图中, 在 Android 屏幕截图中显示了页脚:
+
+[在 iOS 和 Android(layout-images/header-footer-template.png "CollectionView 模板标头和表尾")![使用模板的 CollectionView 标头和脚注的屏幕截图]](layout-images/header-footer-template-large.png#lightbox "CollectionView 模板页眉和页脚")
 
 ## <a name="item-spacing"></a>项间距
 

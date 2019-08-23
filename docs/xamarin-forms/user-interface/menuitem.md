@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 396853e2e61904689069b7abd157c73d1da59fed
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: cbc39ee38ce623ce446d50494829119058fc88dc
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658096"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976475"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin。窗体 MenuItem
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 
 Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)类定义菜单的菜单项, `ListView`如项上下文菜单和 Shell 应用程序飞出菜单。
 
@@ -215,5 +215,5 @@ public MenuItemXamlMvvmPage()
 
 ## <a name="related-links"></a>相关链接
 
-* [MenuItem 演示](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+* [MenuItem 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 * [Xamarin 中的图像](~/xamarin-forms/user-interface/images.md)

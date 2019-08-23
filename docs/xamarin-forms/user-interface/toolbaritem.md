@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: e6ce55f25b130c64b72a5a7e2ec2ec9a00291d14
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658063"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976346"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)类是可以添加`Page`到对象的`ToolbarItems`集合中的一种特殊类型的按钮。 每`ToolbarItem`个对象都将作为一个按钮显示在应用程序的导航栏中。 一个`ToolbarItem`实例可以有一个图标, 并显示为主菜单项或辅助菜单项。 类继承自[`MenuItem`。](xref:Xamarin.Forms.MenuItem) `ToolbarItem`
 
@@ -117,6 +117,6 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-* [ToolbarItem 演示](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [ToolbarItem 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 中的图像](~/xamarin-forms/user-interface/images.md)
 * [Xamarin。窗体 MenuItem](~/xamarin-forms/user-interface/menuitem.md)

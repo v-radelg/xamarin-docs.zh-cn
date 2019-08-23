@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 77ab879205f0260291f04f94111ea95e0d4e556f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 278256f75d94fe47510ae4d15f12a3ff3a6a2b19
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657494"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976447"
 ---
 # <a name="xamarinforms-pages"></a>Xamarin.Forms 页面
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 _Xamarin.Forms 页呈现跨平台移动应用程序屏幕。_
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2019
-ms.openlocfilehash: 9d9d07388c2dc32e82fb780d0ed09e586e401662
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f146fc25af5b5c62acece5c736522773e6dc455d
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648642"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976520"
 ---
 # <a name="xaml-controls"></a>XAML 控件
 
@@ -40,7 +40,7 @@ Xamarin 中定义的所有视图都可以从 XAML 文件引用。
 | --- | --- |
 | <h3>Button</h3>显示矩形对象中的文本。<p align="center">![按钮的屏幕截图](xaml-controls-images/Button.png "按钮")</p>[API](xref:Xamarin.Forms.Button) / [指南](~/xamarin-forms/user-interface/button.md) | <p valign="center"><pre>&lt;Button Text="Click Me!"<br />        Font="Large"<br />        BorderWidth="1"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand"<br />        Clicked="OnButtonClicked" /&gt;</pre></p> |
 | <h3>ImageButton</h3>在矩形对象中显示图像。<p align="center">![ImageButton 的屏幕截图](xaml-controls-images/ImageButton.png "ImageButton")</p>[API](xref:Xamarin.Forms.ImageButton) / [指南](~/xamarin-forms/user-interface/imagebutton.md) | <p valign="center"><pre>&lt;ImageButton Source="XamarinLogo.png"<br />             HorizontalOptions="Center"<br />             VerticalOptions="CenterAndExpand"<br />             Clicked="OnImageButtonClicked" /&gt;</pre></p> |
-| <h3>搜索栏</h3>显示用于执行搜索的搜索栏。<p align="center">![SearchBar 的屏幕截图](xaml-controls-images/SearchBar.png "SearchBar")</p>[API](xref:Xamarin.Forms.SearchBar) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
+| <h3>搜索栏</h3>显示用于执行搜索的搜索栏。<p align="center">![SearchBar 的屏幕截图](xaml-controls-images/SearchBar.png "SearchBar")</p>[API](xref:Xamarin.Forms.SearchBar) / [指南](~/xamarin-forms/user-interface/searchbar.md) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>对于设置值的视图
@@ -67,8 +67,8 @@ Xamarin 中定义的所有视图都可以从 XAML 文件引用。
 
 |     |     |
 | --- | --- |
-| <h3>ActivityIndicator</h3>显示一个动画来表明, 应用程序参与了长时间的活动, 而不提供任何进度指示。<p align="center">![ActivityIndicator 的屏幕截图](xaml-controls-images/ActivityIndicator.png "ActivityIndicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>ProgressBar</h3>显示一个动画, 用于显示应用程序正在经历长时间的活动。<p align="center">![ProgressBar 的屏幕截图](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>ActivityIndicator</h3>显示一个动画来表明, 应用程序参与了长时间的活动, 而不提供任何进度指示。<p align="center">![ActivityIndicator 的屏幕截图](xaml-controls-images/ActivityIndicator.png "ActivityIndicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator) / [指南](~/xamarin-forms/user-interface/activityindicator.md) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>ProgressBar</h3>显示一个动画, 用于显示应用程序正在经历长时间的活动。<p align="center">![ProgressBar 的屏幕截图](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar) / [指南](~/xamarin-forms/user-interface/progressbar.md) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>显示集合的视图
