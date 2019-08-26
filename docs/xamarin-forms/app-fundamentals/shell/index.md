@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
-ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252274"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888919"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -43,6 +43,10 @@ Shell 应用程序包括基于 URI 的导航方案：使用路由导航到应用
 ## <a name="searchsearchmd"></a>[搜索](search.md)
 
 Shell 应用程序可以使用搜索框提供的集成搜索功能，并且可将搜索框添加到各个页面的顶部。
+
+## <a name="lifecyclelifecyclemd"></a>[生命周期](lifecycle.md)
+
+Shell 应用程序遵循 Xamarin.Forms 生命周期，当页面将出现在屏幕上时，将引发 `Appearing` 事件，当页面将从屏幕上消失时，将引发 `Disappearing` 事件。
 
 ## <a name="custom-rendererscustomrenderersmd"></a>[自定义呈现器](customrenderers.md)
 

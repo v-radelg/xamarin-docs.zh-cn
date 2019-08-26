@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119509"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526511"
 ---
 # <a name="fastlane-for-ios-sigh"></a>Fastlane for iOS – Sigh
 
@@ -50,7 +50,7 @@ ms.locfileid: "50119509"
 
 ## <a name="what-is-sigh"></a>什么是 Sigh
 
-Sigh 提供终端界面，你可以通过此界面创建和续订预配配置文件以进行以下所有配置：开发、应用商店分发、Ad Hoc 分发和企业分发。 此外，它还提供了一种直接下载和修复预配配置文件的方法。
+Sigh 提供一个终端接口，可用于为所有配置创建和续订预配配置文件：开发、应用商店分发、临时分发和企业分发。 此外，它还提供了一种直接下载和修复预配配置文件的方法。
 
 <a name="appid" />
 
@@ -58,7 +58,9 @@ Sigh 提供终端界面，你可以通过此界面创建和续订预配配置文
 
 可以使用以下命令创建应用程序 ID：
 
-    fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
+fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
 
 其中，`com.company.appname` 是应用的捆绑 ID，在 Xamarin.iOS 应用程序的 Info.plist 文件中可找到此捆绑 ID，如下所示：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: addb367d8e730919b621b5858f458444ace62024
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 37403b9e33ccd54baac4fd36afbe50504e0380f0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651002"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528958"
 ---
 # <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
 
@@ -214,4 +214,4 @@ entry.Behaviors.Clear();
 - [Xamarin.Forms 行为（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 - [通过样式应用的 Xamarin.Forms 行为（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [行为](xref:Xamarin.Forms.Behavior)
-- [行为<T>](xref:Xamarin.Forms.Behavior`1)
+- [Behavior\<T>](xref:Xamarin.Forms.Behavior`1)

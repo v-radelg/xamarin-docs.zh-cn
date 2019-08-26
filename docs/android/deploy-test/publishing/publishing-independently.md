@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d7135611c3c0a13794b1ed538d62a0788227b7bd
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977758"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525379"
 ---
 # <a name="publishing-independently"></a>独立发布
 
@@ -21,18 +21,18 @@ ms.locfileid: "64977758"
 
 可使用多个许可证来开发、部署和分发 Xamarin.Android 应用：
 
--   **Visual Studio Community** &ndash; 面向使用 Windows 的学生、小型团队和 OSS 开发者。
+- Visual Studio Community &ndash; 面向使用 Windows 的学生、小型团队和 OSS 开发者  。
 
--   **Visual Studio Professional** &ndash; 面向独立开发者或小型团队（仅限 Windows）。 该许可证提供标准订阅或云订阅，并且没有使用限制。
+- **Visual Studio Professional** &ndash; 面向独立开发者或小型团队（仅限 Windows）。 该许可证提供标准订阅或云订阅，并且没有使用限制。
 
--   **Visual Studio Enterprise** &ndash; 面向任何规模的团队（仅限 Windows）。 此许可包括企业功能（标准或云订阅）。
+- **Visual Studio Enterprise** &ndash; 面向任何规模的团队（仅限 Windows）。 此许可包括企业功能（标准或云订阅）。
 
 若要下载社区版或深入了解如何购买 Professional 版和 Enterprise 版，请访问 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/)。
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>允许来自未知源的安装
 
-默认情况下，Android 仅允许用户下载和安装来自 Google Play 的应用程序。 若要允许来自非应用商店的安装，用户必须先在设备上启用未知源设置，才可尝试安装应用程序。 可通过“设置”>“安全”找到此设置，如下图所示：
+默认情况下，Android 仅允许用户下载和安装来自 Google Play 的应用程序。 若要允许来自非应用商店的安装，用户必须先在设备上启用未知源  设置，才可尝试安装应用程序。 可通过“设置”>“安全”  找到此设置，如下图所示：
 
 [![安全设置屏幕](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
@@ -44,7 +44,7 @@ ms.locfileid: "64977758"
 
 ## <a name="publishing-by-e-mail"></a>通过电子邮件发布
 
-若要向用户分发应用程序，一种简单快捷的方式是将发布 APK 附加到电子邮件。 用户在 Android 设备上打开电子邮件时，Android 将识别 APK 附件并显示“安装”按钮，如下图所示：
+若要向用户分发应用程序，一种简单快捷的方式是将发布 APK 附加到电子邮件。 用户在 Android 设备上打开电子邮件时，Android 将识别 APK 附件并显示“安装”  按钮，如下图所示：
 
 [![附件安装按钮](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
@@ -60,11 +60,11 @@ ms.locfileid: "64977758"
 
 手动安装是安装应用程序的第 3 个选择。 若要手动安装应用程序：
 
-1.   **向用户分发 APK 副本** &ndash; 例如可通过 CD 或 U 盘分发此副本。
-1.   **（用户）在 Android 设备上安装应用程序** &ndash; 使用命令行 *Android Debug Bridge* (**adb**) 工具。 **adb** 是一种多功能的命令行工具，支持与仿真器实例或 Android 设备进行通信。 Android SDK 内附有 **adb**其位于 **<sdk>/platform-tools/** 目录中。
+1. **向用户分发 APK 副本** &ndash; 例如可通过 CD 或 U 盘分发此副本。
+1. **（用户）在 Android 设备上安装应用程序** &ndash; 使用命令行 *Android Debug Bridge* (**adb**) 工具。 **adb** 是一种多功能的命令行工具，支持与仿真器实例或 Android 设备进行通信。 Android SDK 内附有 adb；其位于 \<sdk>/platform-tools/ 目录中   。
 
 Android 设备必须使用 USB 接口线连接到计算机。
-Windows 计算机可能还需要电话供应商提供额外的 USB 驱动程序，使其能够被 adb 识别。 本文未介绍其他 USB 驱动程序的安装说明。
+Windows 计算机可能还需要电话供应商提供额外的 USB 驱动程序，使其能够被 adb 识别  。 本文未介绍其他 USB 驱动程序的安装说明。
 
 发出任何 **adb** 命令之前，有必要了解连接了哪些仿真器实例或设备（如有）。 可使用 `devices` 命令查看附加对象的列表，如以下代码段所示：
 

@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/19/2019
+ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739289"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889205"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -130,6 +130,32 @@ Shell.Current.FlyoutIsPresented = false;
     ...
 </Shell>
 ```
+
+## <a name="flyout-background-image"></a>浮出控件背景图像
+
+浮出控件可以有一个可选背景图像，该图像显示在浮出控件标头的下方，并且位于任何浮出控件项和菜单项的后面。 可以通过将类型 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 的 `FlyoutBackgroundImage` 可绑定属性设置为文件、嵌入的资源、URI 或流来指定背景图像。
+
+可以通过将类型 [`Aspect`](xref:Xamarin.Forms.Aspect) 的 `FlyoutBackgroundImageAspect` 可绑定属性设置为 `Aspect` 枚举成员之一来配置背景图像的纵横比：
+
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) - 剪裁图像，使其填充显示区域，同时保持纵横比。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) - 根据需要对图像上下加框，以使其适合显示区域，并根据图像的宽度或高度，将空白添加到顶部/底部或侧边。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) - 拉伸图像，以完全、准确填充显示区域。 这可能会导致图像失真。
+
+默认情况下，`FlyoutBackgroundImageAspect` 属性将设置为 `AspectFit`。
+
+以下示例演示如何设置这些属性：
+
+```xaml
+<Shell ...
+       FlyoutBackgroundImage="photo.jpg"
+       FlyoutBackgroundImageAspect="AspectFill">
+    ...
+</Shell>
+```
+
+这会导致浮出控件中出现背景图像：
+
+![浮出控件背景图像的屏幕截图](flyout-images/flyout-backgroundimage.png "浮出控件背景图像")
 
 ## <a name="flyout-items"></a>浮出控件项
 

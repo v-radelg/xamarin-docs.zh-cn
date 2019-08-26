@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 3be28815441b65df101ac9722a665e01503e1b5c
-ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
+ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386207"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525108"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>设置用于 Xamarin.Android 的 Android SDK
 
@@ -41,11 +41,11 @@ Xamarin Android SDK 管理器（作为 .NET 移动开发  的一部分安装）�
 
 Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动安装在 Xamarin.Android 中）。 有多种 JDK 可选方案供选择：
 
--   Xamarin.Android 默认使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
+- Xamarin.Android 默认使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
 
--   如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+- 如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
--   如果使用 Visual Studio 15.8 Preview 5 或更高版本，可尝试使用 [Microsoft Mobile OpenJDK 分发](openjdk.md)（目前处于预览阶段）而不使用 JDK 8。
+- 如果使用 Visual Studio 15.8 Preview 5 或更高版本，可尝试使用 [Microsoft Mobile OpenJDK 分发](openjdk.md)（目前处于预览阶段）而不使用 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。
@@ -134,15 +134,15 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 若要使用 Xamarin Android SDK 管理器，需要以下工具：
 
--   Visual Studio for Mac 7.5（或更高版本）。
+- Visual Studio for Mac 7.5（或更高版本）。
 
 Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动安装在 Xamarin.Android 中）。 有多种 JDK 可选方案供选择：
 
--   Xamarin.Android 默认使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
+- Xamarin.Android 默认使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，这是在为 API 级别 24 或更高级别进行开发时所必需的（JDK 8 还支持低于 24 的 API 级别）。
 
--   如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+- 如果专门为 API 级别 23 或更低级别进行开发，可以继续使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
--   如果使用 Visual Studio for Mac 7.7 或更高版本，可尝试使用 [Microsoft Mobile OpenJDK 分发](openjdk.md)（目前处于预览阶段）而不使用 JDK 8。
+- 如果使用 Visual Studio for Mac 7.7 或更高版本，可尝试使用 [Microsoft Mobile OpenJDK 分发](openjdk.md)（目前处于预览阶段）而不使用 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。

@@ -8,19 +8,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 400075a1cbd2303f2ecddb9b1cc9465bbcbde32d
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680266"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525578"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 应用
 
 在将应用部署到应用商店之前，必须先识别并修复任何性能瓶颈、过度占用内存或网络资源利用效率低下的问题。 可以使用两个探查器工具来实现此目的：
 
--  Xamarin Profiler 
--  Android Studio 中的 Android Profiler
+- Xamarin Profiler 
+- Android Studio 中的 Android Profiler
 
 本指南介绍了 Xamarin Profiler，并提供了有关如何开始使用 Android Profiler 的详细信息。
 
@@ -40,38 +40,38 @@ Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用
 
 下列步骤介绍如何在 Android Studio 的 Android Profiler 工具中启动 Xamarin Android 应用程序。 在下面的示例屏幕截图中，Xamarin 窗体 [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 应用是使用 Android Profiler 生成和分析的：
 
-1.  在 Android 项目生成选项中，禁用“使用共享运行时”  。 这可确保 Android 应用程序包 (APK) 的生成不依赖于共享开发时间 Mono 运行时。
+1. 在 Android 项目生成选项中，禁用“使用共享运行时”  。 这可确保 Android 应用程序包 (APK) 的生成不依赖于共享开发时间 Mono 运行时。
 
     ![禁用“使用共享运行时”](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
-2.  生成用于“调试”的应用，并将其部署到物理设备或仿真器中  。 这可生成 APK 的已签名“调试”版本  。
+2. 生成用于“调试”的应用，并将其部署到物理设备或仿真器中  。 这可生成 APK 的已签名“调试”版本  。
     对于 XamagonXuzzle 示例，生成的 APK 名为 com.companyname.XamagonXuzzle Signed.apk   。
 
-3.  打开项目文件夹，然后导航到 bin/Debug  。 在此文件夹中，找到 Signed.apk 版本的应用并将其复制到易于访问的位置（例如桌面）  。 在下面的屏幕截图中，已找到 APK com.companyname.XamagonXuzzle Signed.apk，并已将其复制到桌面  ：
+3. 打开项目文件夹，然后导航到 bin/Debug  。 在此文件夹中，找到 Signed.apk 版本的应用并将其复制到易于访问的位置（例如桌面）  。 在下面的屏幕截图中，已找到 APK com.companyname.XamagonXuzzle Signed.apk，并已将其复制到桌面  ：
 
     [![调试已签名 APK 文件的位置](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
-4.  启动 Android Studio，然后选择“分析或调试 APK”  ：
+4. 启动 Android Studio，然后选择“分析或调试 APK”  ：
 
     ![从 Android Studio 启动屏幕启动探查器](profiling-images/vswin/03-android-studio.png)
 
-5.  在“选择 APK 文件”对话框中，导航到先前生成和复制的 APK  。 选择 APK，然后单击“确定”  ： 
+5. 在“选择 APK 文件”对话框中，导航到先前生成和复制的 APK  。 选择 APK，然后单击“确定”  ： 
     
     ![在“选择 APK 文件”对话框中选择 APK](profiling-images/vswin/04-select-apk-dialog.png)
 
-6.  Android Studio 将加载 APK 并反汇编 classes.dex  ：
+6. Android Studio 将加载 APK 并反汇编 classes.dex  ：
 
     ![设置 APK](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7.  加载 APK 后，Android Studio 显示以下 APK 项目屏幕。 右键单击左侧树视图中的应用名称，然后选择“打开模块设置”  ：
+7. 加载 APK 后，Android Studio 显示以下 APK 项目屏幕。 右键单击左侧树视图中的应用名称，然后选择“打开模块设置”  ：
 
     [![“打开模块设置”菜单项的位置](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8.  导航到“项目设置”>“模块”，选择应用的 -Signed 节点，然后单击“&lt;无 SDK&gt;”    ：
+8. 导航到“项目设置”>“模块”，选择应用的 -Signed 节点，然后单击“&lt;无 SDK&gt;”    ：
 
     [![导航到 SDK 设置](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9.  在“模块 SDK”下拉菜单中，选择用于生成应用的 Android SDK 级别（在此示例中，使用 API 级别 26 来生成 XamagonXuzzle）   ：
+9. 在“模块 SDK”下拉菜单中，选择用于生成应用的 Android SDK 级别（在此示例中，使用 API 级别 26 来生成 XamagonXuzzle）   ：
 
     [![设置项目 SDK 级别](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
@@ -107,8 +107,8 @@ Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用
 [Android Studio 文档](https://developer.android.com/studio/profile/android-profiler.html)中记录了有关使用 Android Profiler 的详细信息。
 Xamarin Android 开发人员可能对以下主题感兴趣：
 
--   [CPU Profiler](https://developer.android.com/studio/profile/cpu-profiler.html) &ndash; 说明如何实时检查应用的 CPU 使用情况和线程活动。
+- [CPU Profiler](https://developer.android.com/studio/profile/cpu-profiler.html) &ndash; 说明如何实时检查应用的 CPU 使用情况和线程活动。
 
--   [内存 Profiler](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; 显示应用内存使用情况的实时图，并包括记录内存分配以进行分析的按钮。
+- [内存 Profiler](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; 显示应用内存使用情况的实时图，并包括记录内存分配以进行分析的按钮。
 
--   [网络 Profiler](https://developer.android.com/studio/profile/network-profiler.html) &ndash; 显示应用发送和接收的数据的实时网络活动。
+- [网络 Profiler](https://developer.android.com/studio/profile/network-profiler.html) &ndash; 显示应用发送和接收的数据的实时网络活动。

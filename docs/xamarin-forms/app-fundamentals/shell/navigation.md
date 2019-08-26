@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 4c0fc5edd309d5ed8103c5fc3e33817001049241
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739273"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888968"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
 
@@ -91,7 +91,7 @@ about
 要导航到 `dogs` 路由的 `ShellContent` 对象，绝对路由 URI 为 `//animals/domestic/dogs`。 同样，要导航到 `about` 路由的 `ShellContent` 对象，绝对路由 URI 为 `//about`。
 
 > [!IMPORTANT]
-> 允许存在重复的路由名称。 但是，不允许存在重复路由。 如果检测到重复路由，则将在应用程序启动时引发 `ArgumentException`。
+> 如果检测到重复路由，则将在应用程序启动时引发 `ArgumentException`。 如果层次结构中同一级别的两个或更多路由共享一个路由名称，也会引发此异常。
 
 #### <a name="register-page-routes"></a>注册页面路由
 
@@ -123,7 +123,7 @@ Routing.RegisterRoute("elephants/details", typeof(ElephantDetailPage));
 此示例启用上下文页面导航，其中从 `monkeys` 路由的页面导航到 `details` 路由将显示 `MonkeyDetailPage`。 同样，从 `elephants` 路由的页面导航到 `details` 路由将显示 `ElephantDetailPage`。
 
 > [!IMPORTANT]
-> 目前，使用 `Routing.RegisterRoute` 方法时允许出现重复路由名称，重复注册会覆盖以前的注册。
+> 如果 `Routing.RegisterRoute` 方法尝试将同一路由注册到两个或更多不同类型，将引发 `ArgumentException`。
 
 ## <a name="perform-navigation"></a>执行导航
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509214"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525707"
 ---
 # <a name="android-debug-log"></a>Android 调试日志
 
@@ -22,8 +22,8 @@ ms.locfileid: "68509214"
 
 “调试日志”  工具使你能够在通过 Visual Studio 调试应用时查看日志输出。 调试日志支持以下设备：
 
--   物理 Android 手机、平板电脑和可穿戴设备。
--   在 Android Emulator 上运行的 Android 虚拟设备。 
+- 物理 Android 手机、平板电脑和可穿戴设备。
+- 在 Android Emulator 上运行的 Android 虚拟设备。 
 
 > [!NOTE]
 > “调试日志”  工具并不适用于 Xamarin Live Player。
@@ -41,24 +41,24 @@ ms.locfileid: "68509214"
 
 或者，也可以从以下菜单选项之一启动“设备日志”  工具：
 
--   “视图”>“其他窗口”>“设备日志” 
--   “工具”>“Android”>“设备日志” 
+- “视图”>“其他窗口”>“设备日志” 
+- “工具”>“Android”>“设备日志” 
 
 下面的屏幕截图演示了“调试工具”  窗口的各个部分：
 
 [![调试工具窗口的各个部分](android-debug-log-images/vswin-03-features-sml.png)](android-debug-log-images/vswin-03-features.png#lightbox)
 
--   设备选择器  &ndash; 选择要监视哪些物理设备或运行的仿真器。
+- 设备选择器 &ndash; 选择要监视哪些物理设备或运行的仿真器  。
 
--   日志条目  &ndash; logcat 中的日志消息表。
+- 日志条目  &ndash; logcat 中的日志消息表。
 
--   清除日志条目  &ndash; 清除表中所有当前日志条目。
+- 清除日志条目  &ndash; 清除表中所有当前日志条目。
 
--   播放/暂停  &ndash; 在更新或暂停显示新日志条目之间切换。
+- 播放/暂停 &ndash; 在更新或暂停显示新日志条目之间切换  。
 
--   停止  &ndash; 暂停显示新日志条目。
+- 停止  &ndash; 暂停显示新日志条目。
 
--   搜索框  &ndash; 在此框中输入搜索字符串以筛选日志条目子集。
+- 搜索框 &ndash; 在此框中输入搜索字符串以筛选日志条目子集  。
 
 
 当显示“调试日志”  工具窗口时，使用设备下拉菜单来选择要监视的 Android 设备：
@@ -78,23 +78,23 @@ ms.locfileid: "68509214"
 
 [![调试工具窗口的功能](android-debug-log-images/vsmac-03-features-sml.png)](android-debug-log-images/vsmac-03-features.png#lightbox)
 
--   设备选择器  &ndash; 选择要监视哪些物理设备或运行的仿真器。
+- 设备选择器 &ndash; 选择要监视哪些物理设备或运行的仿真器  。
 
--   日志条目  &ndash; logcat 中的日志消息表。
+- 日志条目  &ndash; logcat 中的日志消息表。
 
--   清除日志条目  &ndash; 清除表中所有当前日志条目。
+- 清除日志条目  &ndash; 清除表中所有当前日志条目。
 
--   搜索框  &ndash; 在此框中输入搜索字符串以筛选日志条目子集。
+- 搜索框 &ndash; 在此框中输入搜索字符串以筛选日志条目子集  。
 
--   显示消息  &ndash; 切换显示信息性消息。
+- 显示消息  &ndash; 切换显示信息性消息。
 
--   显示警告  &ndash; 切换显示警告消息（警告消息显示为黄色）。
+- 显示警告  &ndash; 切换显示警告消息（警告消息显示为黄色）。
 
--   显示错误  &ndash; 切换显示错误消息（警告消息显示为红色）。
+- 显示错误  &ndash; 切换显示错误消息（警告消息显示为红色）。
 
--   重新连接  &ndash; 重新连接到设备并刷新日志条目显示。
+- 重新连接  &ndash; 重新连接到设备并刷新日志条目显示。
 
--   添加标记  &ndash; 在最新日志条目后插入标记消息（如 `--- Marker N ---`），其中 N  是从 1 开始的计数器，并在添加新标记时增加 1。
+- 添加标记 &ndash; 在最新日志条目后插入标记消息（如 `--- Marker N ---`），其中 N 是从 1 开始的计数器，并在添加新标记时增加 1   。
 
 当显示“调试日志”工具窗口时，使用设备下拉菜单来选择要监视的 Android 设备：
 

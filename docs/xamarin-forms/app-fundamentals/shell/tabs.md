@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 25fcf40f7ad94bf5c2ba03fca7413fcaaedba09e
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739235"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888985"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
@@ -163,6 +163,9 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 ```
 
 在每个 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象中，可以导航到其他 `ContentPage` 对象。 有关导航的详细信息，请参阅 [Xamarin.Forms Shell 导航](navigation.md)。
+
+> [!NOTE]
+> 每个 `ShellContent` 对象的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 均继承自父级 `Tab` 对象。
 
 ### <a name="shellcontent-class"></a>ShellContent 类
 

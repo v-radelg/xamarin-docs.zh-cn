@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: d59d4fc3ff9df3ea883ab4d5845da193e6cb8c51
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5edde7cff0867161394270250a8fe622e8e03ee3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643785"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524897"
 ---
 # <a name="xamarin-for-java-developers"></a>面向 Java 开发人员的 Xamarin
 
@@ -27,17 +27,17 @@ _如果你是 Java 开发人员，则可以在 Xamarin 平台上充分利用你�
 
 可以在 C# 中找到 Java 的许多主要特征：
 
--   面向对象的基于类的编程
+- 面向对象的基于类的编程
 
--   强类型化
+- 强类型化
 
--   支持接口
+- 支持接口
 
--   泛型
+- 泛型
 
--   垃圾回收
+- 垃圾回收
 
--   运行时编译
+- 运行时编译
 
 Java 和 C# 都被编译为中间语言，在托管执行环境中运行。 C# 和 Java 都是静态类型，这两种语言将字符串视为不可变类型。
 这两种语言使用单根类层次结构。 和 Java 一样，C# 仅支持单一继承，不支持全局方法。
@@ -45,40 +45,40 @@ Java 和 C# 都被编译为中间语言，在托管执行环境中运行。 C# �
 
 但是，Java 和 C# 之间存在很多不同。 例如:
 
--   Java 不支持隐式类型的局部变量（C# 支持 `var` 关键字）。
+- Java 不支持隐式类型的局部变量（C# 支持 `var` 关键字）。
 
--   在 Java 中，可以仅按值传递参数，而在 C# 中，你可以按引用以及值进行传递。 （C# 提供 `ref` 和 `out` 关键字，用于按引用传递参数；Java 中无此类等效项）。
+- 在 Java 中，可以仅按值传递参数，而在 C# 中，你可以按引用以及值进行传递。 （C# 提供 `ref` 和 `out` 关键字，用于按引用传递参数；Java 中无此类等效项）。
 
--   Java 不支持预处理器指令，如 `#define`。
+- Java 不支持预处理器指令，如 `#define`。
 
--   Java 不支持无符号的整数类型，而 C# 提供无符号的整数类型，如 `ulong`、`uint`、`ushort` 和 `byte`。
+- Java 不支持无符号整数类型，而 C# 提供无符号整数类型，如 `ulong`、`uint`、`ushort` 和 `byte`。
 
--   Java 不支持运算符重载；在 C# 中，你可以重载运算符和转换。
+- Java 不支持运算符重载；在 C# 中，可以重载运算符和转换。
 
--   在 Java `switch` 语句中，代码可以贯穿到下一个 switch 部分，但在 C# 中，每个 `switch` 部分的结尾必须终止 swith（每个部分的结尾必须以 `break` 语句结束）。
+- 在 Java `switch` 语句中，代码可以贯穿到下一个 switch 部分，但在 C# 中，每个 `switch` 部分的结尾必须终止 swith（每个部分的结尾必须以 `break` 语句结束）。
 
--   在 Java 中，指定由带 `throws` 关键字的方法引发的异常，但 C# 没有检查异常的概念 &ndash; `throws` 关键字在 C# 中不受支持。
+- 在 Java 中，指定由带 `throws` 关键字的方法引发的异常，但 C# 没有检查异常的概念 &ndash; `throws` 关键字在 C# 中不受支持。
 
--   C# 支持语言集成查询 (LINQ)，这样就可以使用保留的字 `from`、`select` 和 `where`，以便以类似于数据库查询的方式编写针对集合的查询。
+- C# 支持语言集成查询 (LINQ)，这样就可以使用保留的字 `from`、`select` 和 `where`，以便以类似于数据库查询的方式编写针对集合的查询。
 
 
 当然，与本文所讨论的相比，C# 和 Java 之间还有更多的区别。 此外，Java 和 C# 将继续演进（例如，Android 工具链中尚不存在的 Java 8，它支持 C# 样式的 lambda 表达式），因此这些差异会随时间而变化。 本文仅概述了首次使用 Xamarin.Android 的 Java 开发人员当前遇到的最重要的差异。
 
--   [从 Java 到 C# 开发](#fundamentals)介绍了 C# 和 Java 之间的基本区别。
+- [从 Java 到 C# 开发](#fundamentals)介绍了 C# 和 Java 之间的基本区别。
 
--   [面向对象的编程功能](#oopfeatures)概述了两种语言之间最重要的面向对象的功能区别。
+- [面向对象的编程功能](#oopfeatures)概述了两种语言之间最重要的面向对象的功能区别。
 
--   [关键字差异](#keywords)提供了一个表格，其中包含有效的关键字等效项、仅限 C# 的关键字以及指向 C# 关键字定义的链接。
+- [关键字差异](#keywords)提供了一个表格，其中包含有效的关键字等效项、仅限 C# 的关键字以及指向 C# 关键字定义的链接。
 
 C# 为 Xamarin.Android 提供了许多主要功能，Java 开发人员当前尚不可在 Android 上使用这些功能。 这些功能可帮助你在更短的时间内编写出更好的代码：
 
--   [属性](#properties) &ndash; 可通过 C# 属性系统直接安全地访问成员变量，而无需编写 setter 和 getter 方法。
+- [属性](#properties) &ndash; 可通过 C# 属性系统直接安全地访问成员变量，而无需编写 setter 和 getter 方法。
 
--   [Lambda 表达式](#lambdas) &ndash; 在 C# 中，你可以使用匿名方法（也称为“lambda”  ）更简洁、更高效地表示你的功能。 你可以避免编写一次性对象的开销，并且可以向某个方法传递本地状态而无需添加参数。
+- [Lambda 表达式](#lambdas) &ndash; 在 C# 中，你可以使用匿名方法（也称为“lambda”  ）更简洁、更高效地表示你的功能。 你可以避免编写一次性对象的开销，并且可以向某个方法传递本地状态而无需添加参数。
 
--   [事件处理](#events) &ndash; C# 为事件驱动的编程  提供语言级别支持，对象可以进行注册，以便在出现感兴趣的事件时接收通知。 `event` 关键字定义发布服务器类可用于通知事件订阅者的多播广播机制。
+- [事件处理](#events) &ndash; C# 为事件驱动的编程  提供语言级别支持，对象可以进行注册，以便在出现感兴趣的事件时接收通知。 `event` 关键字定义发布服务器类可用于通知事件订阅者的多播广播机制。
 
--   [异步编程](#async) &ndash; C# 的异步编程功能 (`async`/`await`) 使应用保持响应状态。
+- [异步编程](#async) &ndash; C# 的异步编程功能 (`async`/`await`) 使应用保持响应状态。
     此功能的语言级别支持使异步编程轻松实现，且不容易出错。
 
 
@@ -166,31 +166,31 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 
 Java 和 C# 使用非常相似的面向对象的编程惯用语：
 
--   所有类最终都派生自单个根对象 &ndash;，所有 Java 对象均派生自 `java.lang.Object`，而所有 C# 对象均派生自 `System.Object`。
+- 所有类最终都派生自单个根对象 &ndash; 所有 Java 对象均派生自 `java.lang.Object`，而所有 C# 对象均派生自 `System.Object`。
 
--   类实例为引用类型。
+- 类实例为引用类型。
 
--   当你访问某个实例的属性和方法时，可以使用“<code>.</code>”运算符。
+- 访问某个实例的属性和方法时，可以使用“`.`”运算符。
 
--   所有类实例均通过 `new` 运算符在堆上创建。
+- 所有类实例均通过 `new` 运算符在堆上创建。
 
--   由于这两种语言都使用垃圾回收，因此无法显式释放未使用的对象（即，不像 C++ 一样存在 `delete` 关键字）。
+- 由于这两种语言都使用垃圾回收，因此无法显式释放未使用的对象（即，不像 C++ 一样存在 `delete` 关键字）。
 
--   可以通过继承扩展类，并且这两种语言只允许每种类型有单个基类。
+- 可以通过继承来扩展类，并且这两种语言只允许每种类型有单个基类。
 
--   可以定义接口，并且一个类可以继承自（即，实现）多个接口定义。
+- 可以定义接口，并且一个类可以继承自（即，实现）多个接口定义。
 
 但是，也有一些重要的区别：
 
--   Java 有两个 C# 不支持的强大功能：匿名类和内部类。 （但是，C# 允许嵌套类定义 &ndash; C# 的嵌套类就像 Java 的静态嵌套类。）
+- Java 有两个 C# 不支持的强大功能：匿名类和内部类。 （但是，C# 允许嵌套类定义 &ndash; C# 的嵌套类就像 Java 的静态嵌套类。）
 
--   C# 支持 C 样式结构类型 (`struct`)，而 Java 不支持。
+- C# 支持 C 样式结构类型 (`struct`)，而 Java 不支持。
 
--   在 C# 中，你可以在单独的源文件中通过使用 `partial` 关键字实现类定义。
+- 在 C# 中，可以在单独的源文件中通过使用 `partial` 关键字实现类定义。
 
--   C# 接口不能声明字段。
+- C# 接口不能声明字段。
 
--   C# 使用 C++ 样式析构函数语法来表示终结器。 该语法不同于 Java 的 `finalize` 方法，但语义大致相同。 （请注意，在 C# 中，析构函数自动调用基类析构函数 &ndash;而在 Java 中则使用对 `super.finalize` 的显式调用。）
+- C# 使用 C++ 样式析构函数语法来表示终结器。 该语法不同于 Java 的 `finalize` 方法，但语义大致相同。 （请注意，在 C# 中，析构函数自动调用基类析构函数 &ndash;而在 Java 中则使用对 `super.finalize` 的显式调用。）
 
 
 
@@ -286,9 +286,9 @@ public class MainActivity : Activity
 
 Java 和 C# 都支持 `public`、`private` 和 `protected` 访问修饰符。 但是，C# 支持以下两个其他访问修饰符：
 
--   `internal`  &ndash; 只能在当前程序集内访问类成员。
+- `internal` &ndash; 只能在当前程序集内访问类成员  。
 
--   `protected internal`  &ndash; 可在定义程序集、定义类和派生类中访问类成员定义（程序集内部和外部的派生类都具有访问权限）。
+- `protected internal` &ndash; 可在定义程序集、定义类和派生类中访问类成员（程序集内部和外部的派生类都具有访问权限）  。
 
 有关 C# 访问修饰符的详细信息，请参阅[访问修饰符](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)主题。
 
@@ -301,11 +301,11 @@ Java 和 C# 均支持多形性  ，即能够以相同方式处理相关对象。
 
 但是，Java 和 C# 之间在如何声明和重写虚拟方法方面存在一些差异：
 
--   默认情况下，在 C# 中，方法是非虚拟的。 父类必须显式标记要使用 `virtual` 关键字重写的方法。 与此相反，Java 中的所有方法都默认为虚拟方法。
+- 默认情况下，在 C# 中，方法是非虚拟的。 父类必须显式标记要使用 `virtual` 关键字重写的方法。 与此相反，Java 中的所有方法都默认为虚拟方法。
 
--   要防止在 C# 中重写方法，只需删除 `virtual` 关键字。 与此相反，Java 使用 `final` 关键字将方法标记为“不允许重写”。
+- 要防止在 C# 中重写方法，只需删除 `virtual` 关键字。 与此相反，Java 使用 `final` 关键字将方法标记为“不允许重写”。
 
--   C# 派生类必须使用 `override` 关键字显式指示正在重写虚拟基类方法。
+- C# 派生类必须使用 `override` 关键字显式指示正在重写虚拟基类方法。
 
 有关 C# 对多形性支持的详细信息，请参阅[多形性](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)主题。
 
@@ -357,9 +357,9 @@ button.Click += (sender, args) => {
 
 订阅事件：
 
-1.  创建一个委托对象，在事件发生时引用要调用的方法。
+1. 创建一个委托对象，在事件发生时引用要调用的方法。
 
-2.  使用 `+=` 运算符将委托附加到你订阅的事件。
+2. 使用 `+=` 运算符将委托附加到你订阅的事件。
 
 下面的示例定义了一个委托（显式使用 `delegate` 关键字）以订阅按钮点击事件。
 此按钮点击处理程序将启动新的活动：
@@ -483,9 +483,9 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 
 如果你有不希望转换为 C# 的现有 Java 功能，可以在 Xamarin.Android 应用程序中通过两种技术重复使用现有的 Java 库：
 
--  创建 Java 绑定库  &ndash; 通过此方法，你可以使用 Xamarin 工具生成围绕 Java 类型的 C# 包装器。 这些包装器称为“绑定”  。 因此，Xamarin.Android 应用程序可以通过调用这些包装器来使用 .jar  文件。
+- 创建 Java 绑定库  &ndash; 通过此方法，你可以使用 Xamarin 工具生成围绕 Java 类型的 C# 包装器。 这些包装器称为“绑定”  。 因此，Xamarin.Android 应用程序可以通过调用这些包装器来使用 .jar  文件。
 
--  Java 本机接口  &ndash; Java 本机接口  (JNI) 是一个框架，使 C# 应用可以调用 Java 代码或者由 Java 代码调用。
+- Java 本机接口 &ndash; Java 本机接口 (JNI) 是一个框架，使 C# 应用可以调用 Java 代码或者由 Java 代码调用   。
 
 有关这些技术的详细信息，请参阅 [Java 集成概述](~/android/platform/java-integration/index.md)。
 

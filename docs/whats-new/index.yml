@@ -19,11 +19,17 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: 2019-08.md
+            html: 2019 年 8 月 Xamarin 文档中的新增内容：Xamarin.Forms 4.2 发布、用户界面更新及其他更新。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-08.md
+            title: 2019 年 8 月
           - href: 2019-07.md
             html: 2019 年 7 月 Xamarin 文档中的新增内容：Xamarin.Forms 4.1 发布，数据和云服务更新，还有其他更新。
             image:
               src: 'https://docs.microsoft.com/media/common/i_article.svg'
-              href: 2019-06.md
+              href: 2019-07.md
             title: 2019 年 7 月
           - href: 2019-06.md
             html: 2019 年 6 月 Xamarin 文档中的新增内容：Xamarin.Forms 4.0 发布，数据和云服务更新，API 文档现在位于 docs.microsoft.com 上。

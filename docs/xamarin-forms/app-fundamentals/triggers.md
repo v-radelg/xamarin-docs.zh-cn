@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b803c1ccfbd8bae008a763f8a31283b653ae4cf3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652153"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629630"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -111,7 +111,8 @@ ms.locfileid: "68652153"
 </Button>
 ```
 
-提示：对 `Path=Text.Length` 求值时，请务必提供目标属性的默认值（例如， `Text=""`），因为如不提供，它将为 `null`，且触发器将不按预期工作。
+> [!TIP]
+> 对 `Path=Text.Length` 求值时，请务必提供目标属性的默认值（例如， `Text=""`），因为如不提供，它将为 `null`，且触发器将不按预期工作。
 
 除了指定 `Setter`，你还可提供 [`EnterActions` 和 `ExitActions`](#enterexit)。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643831"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525415"
 ---
 # <a name="linking-on-android"></a>在 Android 上链接
 
@@ -55,9 +55,9 @@ public class MyActivity {
 
 用于控制链接器的主要机制为“项目选项”  对话框中的“链接器行为”  （在 Visual Studio 中为“链接”  ）下拉列表。 有三个选项：
 
-1.  **不链接**（在 Visual Studio 中为“无”  ）
-1.  **链接 SDK 程序集**（仅 SDK 程序集  ）
-1.  **链接所有程序集**（SDK 和用户程序集  ）
+1. **不链接**（在 Visual Studio 中为“无”  ）
+1. **链接 SDK 程序集**（仅 SDK 程序集  ）
+1. **链接所有程序集**（SDK 和用户程序集  ）
 
 
 “不链接”  选项会关闭链接器；上述“在不链接的情况下进行发布”应用程序大小示例使用了此行为。 这对排除运行时故障很有用，可了解链接器是否负责。 通常不建议将此设置用于生产版本。
@@ -92,11 +92,11 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 链接器有时会删除你想要保留的代码。 例如:
 
--   你可能拥有通过 `System.Reflection.MemberInfo.Invoke` 动态调用的代码。
+- 你可能拥有通过 `System.Reflection.MemberInfo.Invoke` 动态调用的代码。
 
--   如果你动态实例化类型，则需要保留类型的默认构造函数。
+- 如果动态实例化类型，则需要保留类型的默认构造函数。
 
--   如果你使用 XML 序列化，则需要保留类型的属性。
+- 如果使用 XML 序列化，则需要保留类型的属性。
 
 在这些情况下，你可以使用 [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute) 属性。 应用程序未静态链接的每个成员都可能被删除，因此可以使用此属性标记未被静态引用但应用程序仍然需要的成员。 你可以将此属性应用于某种类型的每个成员或类型本身。
 
@@ -198,27 +198,27 @@ class MyActivity {
 
 链接程序集时，将从所有成员中删除以下自定义属性类型：
 
--  System.ObsoleteAttribute
--  System.MonoDocumentationNoteAttribute
--  System.MonoExtensionAttribute
--  System.MonoInternalNoteAttribute
--  System.MonoLimitationAttribute
--  System.MonoNotSupportedAttribute
--  System.MonoTODOAttribute
--  System.Xml.MonoFIXAttribute
+- System.ObsoleteAttribute
+- System.MonoDocumentationNoteAttribute
+- System.MonoExtensionAttribute
+- System.MonoInternalNoteAttribute
+- System.MonoLimitationAttribute
+- System.MonoNotSupportedAttribute
+- System.MonoTODOAttribute
+- System.Xml.MonoFIXAttribute
 
 
 链接程序集时，将从发行版本的所有成员中删除以下自定义属性类型：
 
--  System.Diagnostics.DebuggableAttribute
--  System.Diagnostics.DebuggerBrowsableAttribute
--  System.Diagnostics.DebuggerDisplayAttribute
--  System.Diagnostics.DebuggerHiddenAttribute
--  System.Diagnostics.DebuggerNonUserCodeAttribute
--  System.Diagnostics.DebuggerStepperBoundaryAttribute
--  System.Diagnostics.DebuggerStepThroughAttribute
--  System.Diagnostics.DebuggerTypeProxyAttribute
--  System.Diagnostics.DebuggerVisualizerAttribute
+- System.Diagnostics.DebuggableAttribute
+- System.Diagnostics.DebuggerBrowsableAttribute
+- System.Diagnostics.DebuggerDisplayAttribute
+- System.Diagnostics.DebuggerHiddenAttribute
+- System.Diagnostics.DebuggerNonUserCodeAttribute
+- System.Diagnostics.DebuggerStepperBoundaryAttribute
+- System.Diagnostics.DebuggerStepThroughAttribute
+- System.Diagnostics.DebuggerTypeProxyAttribute
+- System.Diagnostics.DebuggerVisualizerAttribute
 
 
 ## <a name="related-links"></a>相关链接
