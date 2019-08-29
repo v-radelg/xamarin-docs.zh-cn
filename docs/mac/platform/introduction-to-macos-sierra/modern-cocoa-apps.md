@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: f79e7f3576748737a4feb9204fb9840afdbb1ef4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 914afe63136323e3506bb40d4759869f97fb264c
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645437"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065685"
 ---
 # <a name="building-modern-macos-apps"></a>生成新式 macOS 应用
 
@@ -177,7 +177,7 @@ public override void ViewWillAppear ()
 
 若要添加附件视图控制器, 请执行以下操作:
 
-1. 在“解决方案资源管理器”  中，双击 `Main.storyboard` 文件，将其打开进行编辑。
+1. 在“解决方案资源管理器”中，双击 `Main.storyboard` 文件，将其打开进行编辑。
 2. 将**自定义视图控制器**拖动到窗口的层次结构中: 
 
     [![](modern-cocoa-apps-images/content05.png "添加新的自定义视图控制器")](modern-cocoa-apps-images/content05.png#lightbox)
@@ -436,7 +436,7 @@ public override void GetNewWindowForTab (NSObject sender)
 
 #### <a name="redrawing-views-with-layers"></a>用层重绘视图
 
-在 Xamarin for Mac 应用中使用支持层级视图的另一个重要步骤是`LayerContentsRedrawPolicy`将的`NSView`设置`OnSetNeedsDisplay`为中`NSViewController`的。 例如：
+在 Xamarin for Mac 应用中使用支持层级视图的另一个重要步骤是`LayerContentsRedrawPolicy`将的`NSView`设置`OnSetNeedsDisplay`为中`NSViewController`的。 例如:
 
 ```csharp
 public override void ViewWillAppear ()
@@ -637,7 +637,7 @@ macOS Sierra 为以前版本的操作系统中可用的现有容器视图控件�
 
 ## <a name="table-view-enhancements"></a>表视图增强功能
 
-开发人员应始终使用基于新`NSView`版本的容器视图控件, `NSTableView`例如。 例如:
+开发人员应始终使用基于新`NSView`版本的容器视图控件, `NSTableView`例如。 例如：
 
 ```csharp
 using System;

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 54e910d0a4f3301ca441fd18ddb27da930e9415c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 0f92dca71f74266e1408cd65c842f729a9a648ce
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528771"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065666"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin 中的 Touch ID
 
@@ -102,15 +102,15 @@ IOS 8 中称为_本地身份验证_的新框架在设备中支持此身份验证
 
 若要通过利用本地身份验证 API 来使用 Touch ID 而不密钥链, 可以使用一些函数。 下面详细介绍了这些内容:
 
-*   `CanEvaluatePolicy`–只需检查设备是否能够接受 Touch ID。
-*   `EvaluatePolicy`–这将启动身份验证操作并显示 UI, 并返回`true`或`false`回答。
-*   `DeviceOwnerAuthenticationWithBiometrics`–这是可用于显示 "Touch ID" 屏幕的策略。 值得注意的是, 此处没有密码回退机制, 你应在应用程序中实现此回退, 以允许用户跳过 Touch ID 身份验证。
+* `CanEvaluatePolicy`–只需检查设备是否能够接受 Touch ID。
+* `EvaluatePolicy`–这将启动身份验证操作并显示 UI, 并返回`true`或`false`回答。
+* `DeviceOwnerAuthenticationWithBiometrics`–这是可用于显示 "Touch ID" 屏幕的策略。 值得注意的是, 此处没有密码回退机制, 你应在应用程序中实现此回退, 以允许用户跳过 Touch ID 身份验证。
 
 使用本地身份验证时, 请注意以下几点:
 
-*   与密钥链一样, 它只能在前台运行。 在后台线程上调用该方法将导致其失败。
-*   请记住, 策略评估可能会失败。 需要将密码按钮作为回退来实现。
-*   您必须提供`localizedReason`以说明为何需要身份验证。 这有助于建立与用户的信任关系。
+* 与密钥链一样, 它只能在前台运行。 在后台线程上调用该方法将导致其失败。
+* 请记住, 策略评估可能会失败。 需要将密码按钮作为回退来实现。
+* 您必须提供`localizedReason`以说明为何需要身份验证。 这有助于建立与用户的信任关系。
 
 接下来, 在下面的部分中, 我们将介绍如何实现 API 来考虑这些注意事项。
 

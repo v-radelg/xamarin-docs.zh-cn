@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 2dde7415f40c9db205351a81d63d273fc211ed2b
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 86e92ee5293b4c9ed902f1c8d9858e06db1aa458
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976583"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065512"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 Xamarin [`ContentView`](xref:Xamarin.Forms.ContentView)类是一`Layout`种包含一个子元素的类型, 通常用于创建自定义的可重用控件。 类继承自[`TemplatedView`。](xref:Xamarin.Forms.TemplatedView) `ContentView` 本文和相关示例说明了如何创建基于`CardView` `ContentView`类的自定义控件。
 
@@ -205,7 +205,7 @@ CardView card = new CardView
 
 ## <a name="related-links"></a>相关链接
 
-* [ContentView 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+* [ContentView 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin. 窗体数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * 可[绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
 * [Xamarin. Forms 控件模板](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)

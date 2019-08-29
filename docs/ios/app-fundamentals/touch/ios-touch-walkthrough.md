@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527065"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065442"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin 中使用触控
 
@@ -37,7 +37,7 @@ ms.locfileid: "69527065"
 
 
 1. 打开项目**Touch_Start**。 首先运行项目以确保一切正常, 并触摸 "**触摸示例**" 按钮。 应该会看到类似于下面的屏幕 (尽管所有按钮都不起作用):
-    
+
     [![](ios-touch-walkthrough-images/image4.png "使用非工作按钮运行示例应用")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
@@ -164,11 +164,11 @@ ms.locfileid: "69527065"
         touchStartedInside = false;
     }
     ```
-    
+
     这两种方法都会将`touchStartedInside`标志重置为 false。 `TouchesEnded`还将显示`TouchesEnded`在屏幕上。
 
 1. 此时, "触摸示例" 屏幕已完成。 请注意, 当你与每个图像交互时, 屏幕会发生变化, 如以下屏幕截图所示:
-        
+
     [![](ios-touch-walkthrough-images/image4.png "正在启动应用程序屏幕")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "用户拖动按钮后的屏幕")](ios-touch-walkthrough-images/image5.png#lightbox)

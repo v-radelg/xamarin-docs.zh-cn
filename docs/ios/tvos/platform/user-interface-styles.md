@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: fc9a8acb2c04d805e7abc52b2996ec5546b0fb69
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657373"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065582"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin 中的 tvOS 用户界面样式
 
@@ -46,12 +46,12 @@ tvOS 10 现在支持一个深色和浅色用户界面主题, 所有内置 UIKit 
 
 若要选择支持轻型和深色主题, 请执行以下操作:
 
-1. 在“解决方案资源管理器”  中，双击 `Info.plist` 文件，将其打开进行编辑。
+1. 在“解决方案资源管理器”中，双击 `Info.plist` 文件，将其打开进行编辑。
 2. 从编辑器的底部选择**源**视图。
-3. 添加新密钥并调用该`UIUserInterfaceStyle`密钥: 
+3. 添加新密钥并调用该`UIUserInterfaceStyle`密钥:
 
     [![](user-interface-styles-images/theme03.png "UIUserInterfaceStyle 键")](user-interface-styles-images/theme03.png#lightbox)
-4. 将类型设置为`String` , 并输入`Automatic`以下值: 
+4. 将类型设置为`String` , 并输入`Automatic`以下值:
 
     [![](user-interface-styles-images/theme04.png "输入自动")](user-interface-styles-images/theme04.png#lightbox)
 5. 保存对文件所做的更改。
@@ -95,7 +95,7 @@ tvOS 10 现在支持一个深色和浅色用户界面主题, 所有内置 UIKit 
 - **未指定**-视图尚未显示在屏幕上, 因此当前 UI 主题未知。
 
 此外, 特征集合在 tvOS 10 中具有以下功能:
- 
+
 - 外观代理可以基于`UserInterfaceStyle`给定`UITraitCollection`的进行自定义, 以根据主题更改图像或项颜色等内容。
 - TvOS 应用可以通过重写`TraitCollectionDidChange` `UIView`或`UIViewController`类的方法来处理特征集合更改。
 
@@ -131,13 +131,13 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 
 在开发人员需要根据所选 ui 主题更深入地控制 ui 元素的外观, 他们可以重写`TraitCollectionDidChange` `UIView`或`UIViewController`类的方法。
 
-例如:
+例如：
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
 {
     base.TraitCollectionDidChange (previousTraitCollection);
-    
+
     // Take action based on the Light or Dark theme
     ...
 }
@@ -149,7 +149,7 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 
 基于 tvOS 应用程序的设计, 有时, 开发人员可能需要重写给定用户界面元素的特征集合, 并使其始终使用特定的 UI 主题。
 
-可以通过对`SetOverrideTraitCollection` `UIViewController`类使用方法来完成此操作。 例如：
+可以通过对`SetOverrideTraitCollection` `UIViewController`类使用方法来完成此操作。 例如:
 
 ```csharp
 // Create new trait and configure it
@@ -170,13 +170,13 @@ SetOverrideTraitCollection (trait, this);
 
 若要启用特征收集支持, 请执行以下操作:
 
-1. 右键单击 "**解决方案资源管理器**中的情节提要文件, 然后选择"**打开方式** > **Xcode "Interface Builder**: 
+1. 右键单击 "**解决方案资源管理器**中的情节提要文件, 然后选择"**打开方式** > **Xcode "Interface Builder**:
 
-    [![](user-interface-styles-images/theme05.png "用 Xcode 打开 Interface Builder")](user-interface-styles-images/theme05.png#lightbox) 
-2. 若要启用特性集合支持, 请切换到**文件检查器**并在 " **Interface Builder 文档**" 部分中选中 "**使用特征变体**" 属性: 
+    [![](user-interface-styles-images/theme05.png "用 Xcode 打开 Interface Builder")](user-interface-styles-images/theme05.png#lightbox)
+2. 若要启用特性集合支持, 请切换到**文件检查器**并在 " **Interface Builder 文档**" 部分中选中 "**使用特征变体**" 属性:
 
     [![](user-interface-styles-images/theme06.png "启用特征收集支持")](user-interface-styles-images/theme06.png#lightbox)
-3. 确认更改以使用特征变体: 
+3. 确认更改以使用特征变体:
 
     [![](user-interface-styles-images/theme07.png "使用特征变体警报")](user-interface-styles-images/theme07.png#lightbox)
 4. 保存对情节提要文件所做的更改。
@@ -184,23 +184,23 @@ SetOverrideTraitCollection (trait, this);
 在 Interface Builder 中编辑 tvOS 情节提要时, Apple 添加了以下功能:
 
 * 开发人员可以根据**特性检查器**中的 UI 主题来指定不同的用户界面元素变体:
-    
-    * 现在有多个属性 + 旁边的可单击要添加的用户界面主题特定版本： 
 
-        [![](user-interface-styles-images/theme08.png "添加特定于 UI 主题的版本")](user-interface-styles-images/theme08.png#lightbox) 
-    
-    * 开发人员可以指定新属性或单击**x**按钮将其删除: 
+  * 现在有多个属性 + 旁边的可单击要添加的用户界面主题特定版本：
 
-        [![](user-interface-styles-images/theme09.png "指定新属性或单击 x 按钮以将其删除")](user-interface-styles-images/theme09.png#lightbox)
+    [![](user-interface-styles-images/theme08.png "添加特定于 UI 主题的版本")](user-interface-styles-images/theme08.png#lightbox)
+
+  * 开发人员可以指定新属性或单击**x**按钮将其删除:
+
+    [![](user-interface-styles-images/theme09.png "指定新属性或单击 x 按钮以将其删除")](user-interface-styles-images/theme09.png#lightbox)
 * 开发人员可以从 Interface Builder 中预览 "浅色" 或 "深色" 主题中的 UI 设计:
-    
-    * Design Surface 的底部允许开发人员切换当前 UI 主题: 
 
-        [![](user-interface-styles-images/theme10.png "Design Surface 的底部")](user-interface-styles-images/theme10.png#lightbox)
-        
-    * 新主题将在 Interface Builder 中显示, 并将显示任何特定于特征的集合: 
+  * Design Surface 的底部允许开发人员切换当前 UI 主题:
 
-        [![](user-interface-styles-images/theme11.png "Interface Builder 中显示的主题")](user-interface-styles-images/theme11.png#lightbox)
+    [![](user-interface-styles-images/theme10.png "Design Surface 的底部")](user-interface-styles-images/theme10.png#lightbox)
+
+  * 新主题将在 Interface Builder 中显示, 并将显示任何特定于特征的集合:
+
+    [![](user-interface-styles-images/theme11.png "Interface Builder 中显示的主题")](user-interface-styles-images/theme11.png#lightbox)
 
 此外, tvOS 模拟器现在提供了一个键盘快捷键, 使开发人员能够在调试 tvOS 应用时在浅色和深色主题之间快速切换。 使用**Command-D**键盘序列在浅色和深色之间切换。
 

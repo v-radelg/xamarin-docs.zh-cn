@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 39c77b4016027171a4e76bc4fb15c77d733cf5ba
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645911"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065365"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 中 Xamarin 的通知
 
@@ -37,7 +37,7 @@ ms.locfileid: "68645911"
 
 有两种类型的通知：
 
-- **短外观**的系统定义的非可滚动的静态视图。
+- 系统定义的**简短**无滚动静态视图。
 
 - **长时间看**-滚动的由你定义的可自定义视图 ！ 可以指定一个更简单的、 静态版本和更复杂的动态版本。
 
@@ -99,21 +99,21 @@ ms.locfileid: "68645911"
 
 监视扩展设置为时，visual Studio for Mac 将显示其他选项**启动项目**。
 右键单击监视扩展项目并选择**运行与 > 自定义参数...** :
-    
+
 [![](notifications-images/runwith-customparams-sml.png "使用自定义属性运行")](notifications-images/runwith-customparams.png#lightbox)
-    
+
 这将打开**执行参数**窗口，其中包含**WatchKit**选项卡。选择**通知**，并提供 JSON 有效负载，然后按**Execute**若要在模拟器中启动监视应用程序：
-    
+
 [![](notifications-images/runwith-execargs-sml.png "选择通知有效负载的默认值")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要编辑的监视扩展中右键单击 Visual Studio 设置测试通知有效负载**项目属性**。 转到**调试**部分，并从列表中 （它会自动列出项目中包含的所有 JSON 文件） 选择通知 JSON 文件。
-    
+
 [![](notifications-images/runwith-execargs-sml-vs.png "选择通知 JSON 文件")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 监视扩展时**启动项目**，Visual Studio 将显示其他选项，如下所示。 选择其中一个**通知**选项以在启动监视应用程序**通知**模式 （使用属性窗口中选择的 JSON 文件）：
-    
+
 ![](notifications-images/runwith-vs.png "设备菜单")
 
 -----
@@ -128,7 +128,7 @@ ms.locfileid: "68645911"
 
 在中[监视工具包目录](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例有是 JSON 文件的示例有效负载**NotificationPayload.json** （列举如下）。
 
-```csharp
+```json
 {
     "aps": {
         "alert": "Test message content",

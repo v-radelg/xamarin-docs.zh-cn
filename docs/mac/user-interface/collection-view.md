@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 432e875969164b6481671d769d488c5f34458fe0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ee1b3043033ea1d6e024619e6a176947733e9f24
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657265"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065488"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin 中的集合视图
 
 _本文介绍如何在 Xamarin. Mac 应用中使用集合视图。它介绍了如何在 Xcode 中创建和维护集合视图, 并 Interface Builder 以编程方式使用它们。_
 
-在 Xamarin 应用C#程序中使用和 .net 时, 开发人员有权访问在*AppKit 和* *Xcode*中工作的开发人员。 因为 Xamarin 与 Xcode 直接集成, 所以开发人员使用 Xcode 的_Interface Builder_来创建和维护集合视图。
+在 Xamarin 应用C#程序中使用和 .net 时, 开发人员有权访问在 AppKit 和*Xcode*中工作的开发人员。 因为 Xamarin 与 Xcode 直接集成, 所以开发人员使用 Xcode 的_Interface Builder_来创建和维护集合视图。
 
 显示使用组织的子视图网格。 `NSCollectionViewLayout` `NSCollectionView` 网格中的每个子视图都用`NSCollectionViewItem`来表示, 后者管理`.xib`从文件中加载视图的内容。
 
@@ -34,7 +34,7 @@ _本文介绍如何在 Xamarin. Mac 应用中使用集合视图。它介绍了�
 
 集合视图 (`NSCollectionView`) 的主要目标是使用集合视图布局 (`NSCollectionViewLayout`) 以有序的方式排列一组对象, 其中每个单独的对象 (`NSCollectionViewItem`) 在更大的集合中获取其自己的视图。 集合视图通过数据绑定和键/值编码方法工作, 因此, 在继续阅读本文之前, 您应该阅读[数据绑定和键/值编码](~/mac/app-fundamentals/databinding.md)文档。
 
-集合视图没有标准的内置集合视图项 (例如大纲视图或表视图), 因此开发人员_负责使用其他_AppKit 控件 (如图像字段、文本字段、标签、等.此原型视图将用于显示和使用由集合视图管理的每个项, 并存储在`.xib`文件中。
+集合视图没有标准的内置集合视图项 (例如大纲视图或表视图), 因此开发人员负责使用其他 AppKit 控件 (如图像字段、文本字段 、标签、等.此原型视图将用于显示和使用由集合视图管理的每个项, 并存储在`.xib`文件中。
 
 由于开发人员负责收集视图项的外观, 因此 "集合" 视图不支持突出显示网格中选定的项。 本文将介绍如何实现此功能。
 

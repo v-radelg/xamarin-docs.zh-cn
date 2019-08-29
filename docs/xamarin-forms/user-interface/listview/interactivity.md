@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653887"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065549"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
@@ -75,7 +75,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 默认情况下，菜单项具有无法知道它属于哪个单元格。 `CommandParameter` 可在上找到`MenuItem`来存储对象，如后面的 MenuItem ViewCell 对象。 `CommandParameter` 可以在 XAML 和 C# 中设置。
 
-### <a name="c"></a>C#  
+### <a name="c"></a>C\#
 
 可以在任何实现上下文操作`Cell`子类 （只要它不被用作组标头） 通过创建`MenuItem`s 并将它们添加到`ContextActions`单元格的集合。 具有以下属性可配置的上下文操作：
 

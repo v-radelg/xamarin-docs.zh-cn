@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 197600f713527ed79d9a52768d367589d9edf2fa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bdd4ba57dfce96e469639e4b90b06c73c339b0f0
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646872"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065388"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin 中的映像
 
@@ -20,7 +20,7 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用图像和图标。本�
 
 ## <a name="overview"></a>概述
 
-在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在*Xcode 和* *中工作*的开发人员所使用的相同图像和图标工具。
+在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同图像和图标工具。
 
 可以通过多种方式在 macOS (以前称为 Mac OS X) 应用程序中使用映像资产。 从简单地将图像作为应用程序的一部分进行显示, 并将其分配给 UI 控件 (如工具栏或源列表项), 以提供图标, Xamarin 使你可以使用以下方法轻松地将精彩图稿添加到 macOS 应用程序: 
 
@@ -44,7 +44,7 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用图像和图标。本�
 
 - **主项目树 [弃用]** -可以直接将图像添加到项目树中。 在从代码中调用存储在主项目树中的图像时, 未指定文件夹位置。 例如：`NSImage image = NSImage.ImageNamed("tags.png");`。 
 - **Resources 文件夹 [已弃用]** -"特殊**资源**" 文件夹适用于将成为应用程序捆绑包 (如图标、启动屏幕或常规映像 (或开发人员希望添加的任何其他图像或文件) 的一部分的任何文件。 当从代码调用**资源**文件夹中存储的图像时, 就像存储在主项目树中的图像一样, 未指定文件夹位置。 例如：`NSImage.ImageNamed("tags.png")`。
-- **自定义文件夹或子文件夹 [弃用]** -开发人员可以向项目源树添加自定义文件夹并将图像存储在此处。 添加文件的位置可以嵌套在子文件夹中, 以便进一步帮助组织项目。 例如, `Card`如果开发人员将文件夹添加到项目, 将  的子`Hearts` `Hearts`文件夹添加到该文件夹中, 则`NSImage.ImageNamed("Card/Hearts/Jack.png")`会在运行时加载该图像。
+- **自定义文件夹或子文件夹 [弃用]** -开发人员可以向项目源树添加自定义文件夹并将图像存储在此处。 添加文件的位置可以嵌套在子文件夹中, 以便进一步帮助组织项目。 例如, `Card`如果开发人员将文件夹添加到项目, 将的子`Hearts` `Hearts`文件夹添加到该文件夹中, 则`NSImage.ImageNamed("Card/Hearts/Jack.png")`会在运行时加载该图像。
 - **资产目录图像集 [首选]** -在 OS X El Capitan 中添加,**资产目录映像集**包含为应用程序提供支持各种设备和规模因素所需的映像的所有版本或表示形式。 而不是依赖于映像资产文件名 ( **@1x** 、 **@2x** )。
 
 <a name="asset-catalogs" />
@@ -345,7 +345,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>使用带有大纲视图的图像
 
-若要`NSOutlineView`在中包含图像作为单元的一部分, 需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式, 以使用`NSTableCellView`而不是典型`NSTextField`的。 例如：
+若要`NSOutlineView`在中包含图像作为单元的一部分, 需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式, 以使用`NSTableCellView`而不是典型`NSTextField`的。 例如:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
