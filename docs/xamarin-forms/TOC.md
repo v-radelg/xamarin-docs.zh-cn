@@ -154,6 +154,7 @@
 #### [布局](user-interface/controls/layouts.md)
 #### [Views](user-interface/controls/views.md)
 #### [单元格](user-interface/controls/cells.md)
+#### [常用属性、方法和事件](user-interface/controls/common-properties.md)
 #### [第三方控件](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [入门](user-interface/datapages/get-started.md)
@@ -324,6 +325,7 @@
 ### [单位转换器](~/essentials/unit-converters.md?context=xamarin/xamarin-forms)
 ### [版本跟踪](~/essentials/version-tracking.md?context=xamarin/xamarin-forms)
 ### [振动](~/essentials/vibrate.md?context=xamarin/xamarin-forms)
+### [Xamarin Essentials 发行说明](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 ### [疑难解答](~/essentials/troubleshooting.md?context=xamarin/xamarin-forms)
 
 ## 数据和 Azure 云服务

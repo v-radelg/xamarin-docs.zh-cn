@@ -559,6 +559,8 @@
           href: ~/essentials/version-tracking.md?context=xamarin/ios
         - name: 振动
           href: ~/essentials/vibrate.md?context=xamarin/ios
+        - name: Xamarin.Essentials 发行说明
+          href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
         - name: 疑难解答
           href: ~/essentials/troubleshooting.md?context=xamarin/ios
     - name: 数据和云服务

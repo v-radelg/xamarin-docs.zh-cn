@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e04b6be1547183869fb49955703245e19365bdb3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620509"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120159"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速交互技术
 
@@ -230,16 +230,16 @@ MenuTable.PerformSegue (0);
 
 WatchOS 3 的新增内容:
 
-* 通知在所有平台 (iOS、watchOS、tvOS 和 macOS) 中使用类似的 API。
-* 可以在 Apple Watch 上计划本地通知。
-* 如果计划在 Apple Watch 上, 则后台通知将路由到应用程序的扩展。
+- 通知在所有平台 (iOS、watchOS、tvOS 和 macOS) 中使用类似的 API。
+- 可以在 Apple Watch 上计划本地通知。
+- 如果计划在 Apple Watch 上, 则后台通知将路由到应用程序的扩展。
 
 #### <a name="notification-scheduling-and-delivery"></a>通知计划和传递
 
 当发生以下情况时, 用户的 iPhone 的通知将转发到 Apple Watch:
 
-* IPhone 的屏幕处于关闭状态。
-* Apple Watch 正在磨损, 已解除锁定。
+- IPhone 的屏幕处于关闭状态。
+- Apple Watch 正在磨损, 已解除锁定。
 
 在 watchOS 3 中, 可以在 Apple Watch 上计划本地通知, 并且只能在手表上传递。 如果应用需要, 开发人员需要计划相应的 iPhone 通知。
 
