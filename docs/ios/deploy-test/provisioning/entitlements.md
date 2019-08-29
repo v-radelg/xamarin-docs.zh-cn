@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865841"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121329"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>在 Xamarin.iOS 中使用权利
 
@@ -94,13 +94,13 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="wallet"></a>Wallet
 
-*   说明  ：以前称为 Passbook，是一款用于存储和管理凭证的应用。 这些凭证可以是信用卡、购物卡、登机牌或票证。
+- 说明  ：以前称为 Passbook，是一款用于存储和管理凭证的应用。 这些凭证可以是信用卡、购物卡、登机牌或票证。
 
     - **类型标识符**
-        * **键**：com.apple.developer.pass-type-identifiers
-        * **字符串**：`$(TeamIdentifierPrefix)*`
+        - **键**：com.apple.developer.pass-type-identifiers
+        - **字符串**：`$(TeamIdentifierPrefix)*`
 
-* **注意**：
+- **注意**：
     - 这会使应用允许所有凭证类型。 若要限制应用并仅允许一部分团队凭证类型，请将字符串值设置为 `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
     其中，pass.$(CFBundleIdentifier) 是[上文](~/ios/platform/passkit.md)创建的凭证 ID
@@ -109,7 +109,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 ### <a name="icloud"></a>iCloud
 
-*   **说明**：iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在设备之间共享内容。 开发人员可采用四种方法使用 iCloud 来为用户提供存储方式：键值存储、UIDocument 存储、CoreData 和使用 CloudKit 直接为单个文件和目录提供存储。 有关这些方面的详细信息，请参阅 iCloud 指南简介。
+- **说明**：iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在设备之间共享内容。 开发人员可采用四种方法使用 iCloud 来为用户提供存储方式：键值存储、UIDocument 存储、CoreData 和使用 CloudKit 直接为单个文件和目录提供存储。 有关这些方面的详细信息，请参阅 iCloud 指南简介。
 
     - **iCloud 文档和 CloudKit**
         - **键**：com.apple.developer.ubiquity-container-identifiers
@@ -118,7 +118,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
         - **键**：com.apple.developer.ubiquity-kvstore-identifier
         - **字符串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
-* **注意**：
+- **注意**：
     - 通过登录到 developer.apple.com 可找到 `$(TeamIdentifierPrefix)` 字符串，访问“会员中心”>“帐户”>“开发人员帐户摘要”  可获取团队 ID（若是单个开发人员则为个人 ID）。 该字符串是一个含有 10 个字符的字符串（例如 A93A5CM278）。
     - `$(CFBundleIdentifier)` 字符串以 `iCloud` 开头，在根据[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步骤创建 iCloud 容器时，设置了该字符串。
     - 为在生成时获得正确的值，可使用和替换 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 占位符。

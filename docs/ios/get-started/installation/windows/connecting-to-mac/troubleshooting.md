@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 842738d45bf7c8e86f7d6a748bd9968105ece785
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890163"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121535"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -35,13 +35,13 @@ ms.locfileid: "69890163"
 
 > [!IMPORTANT]
 > 这些疑难解答步骤主要针对在新系统上进行初始设置的过程中发生的问题。  如果以前在特定环境中已成功使用连接，然后连接突然或间歇性停止工作，则可以（在大多数情况下）直接跳过以检查以下任一情况看是否有帮助： 
-> * 按如下所述[由于现有生成主机进程而导致的错误](#errors)，终止剩余进程。 
-> * 按如下所述[清除中转站、IDB、生成和设计器代理](#clearing)清除代理，然后按如下所述[无法连接到 MacBuildHost。请重试。](#tryagain)使用有线 Internet 连接并通过 IP 地址直接连接。  
+> - 按如下所述[由于现有生成主机进程而导致的错误](#errors)，终止剩余进程。 
+> - 按如下所述[清除中转站、IDB、生成和设计器代理](#clearing)清除代理，然后按如下所述[无法连接到 MacBuildHost。请重试。](#tryagain)使用有线 Internet 连接并通过 IP 地址直接连接。  
 > 如果这些选项都不能解决问题，请按照[步骤 9](#stepnine) 中的说明提交新的 bug 报告。
 
 1. 检查是否在 Mac 上安装了兼容 Xamarin.iOS 版本。 若要使用 Visual Studio 2017 执行此操作，请确保你位于 Visual Studio for Mac 中  稳定的分发通道上。 在 Visual Studio 2015 及更早版本中，请确保在两个 IDE 中都处于相同分发通道上。
-    * 在 Visual Studio for Mac 中，转到“Visual Studio for Mac”>“检查更新...”  ，以查看或更改“更新通道”  。
-    * 在 Visual Studio 2015 及更低版本中，依次转到“工具”>“选项”>“Xamarin”>“其他”  下，检查分发通道。
+    - 在 Visual Studio for Mac 中，转到“Visual Studio for Mac”>“检查更新...”  ，以查看或更改“更新通道”  。
+    - 在 Visual Studio 2015 及更低版本中，依次转到“工具”>“选项”>“Xamarin”>“其他”  下，检查分发通道。
 
 2. 确保在 Mac 上启用“远程登录”  。 为“仅这些用户”  设置访问权限，并确保 Mac 用户包含在列表或组中：
 

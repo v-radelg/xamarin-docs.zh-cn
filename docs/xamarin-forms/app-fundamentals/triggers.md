@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: d9e3055130a66fe240bf378ad2f63679e71bec14
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629630"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121143"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -24,13 +24,13 @@ ms.locfileid: "69629630"
 
 有四种类型触发器：
 
-* [属性触发器](#property) - 将控件上的属性设置为特定值时发生。
+- [属性触发器](#property) - 将控件上的属性设置为特定值时发生。
 
-* [数据触发器](#data) - 根据其他控件的属性使用到触发器的数据绑定。
+- [数据触发器](#data) - 根据其他控件的属性使用到触发器的数据绑定。
 
-* [事件触发器](#event) - 当控件上发生某事件时发生。
+- [事件触发器](#event) - 当控件上发生某事件时发生。
 
-* [多触发器](#multi) - 允许操作发生前设置多个触发条件。
+- [多触发器](#multi) - 允许操作发生前设置多个触发条件。
 
 <a name="property" />
 
@@ -52,15 +52,15 @@ ms.locfileid: "69629630"
 
 触发器声明的重要部件有：
 
-* **TargetType** - 触发器适用的控件类型。
+- **TargetType** - 触发器适用的控件类型。
 
-* **Property** - 要监视的控件上的属性。
+- **Property** - 要监视的控件上的属性。
 
-* **Value** - 当针对监视的属性发生时，导致激活触发器的值。
+- **Value** - 当针对监视的属性发生时，导致激活触发器的值。
 
-* **Setter** - `Setter` 元素的集合，可进行添加且在满足触发条件时使用。 必须指定要设置的 `Property` 和 `Value`。
+- **Setter** - `Setter` 元素的集合，可进行添加且在满足触发条件时使用。 必须指定要设置的 `Property` 和 `Value`。
 
-* **EnterActions 和 ExitActions** （未显示） - 编写于代码中，且可用于 `Setter` 之外（或者不是该元素）的元素。 它们[如下所述](#enterexit)。
+- **EnterActions 和 ExitActions** （未显示） - 编写于代码中，且可用于 `Setter` 之外（或者不是该元素）的元素。 它们[如下所述](#enterexit)。
 
 ### <a name="applying-a-trigger-using-a-style"></a>使用样式应用触发器
 
@@ -140,11 +140,11 @@ ms.locfileid: "69629630"
 
 触发器操作实现应该：
 
-* 实现泛型 `TriggerAction<T>` 类，并且泛型参数对应于触发器将应用到的控件类型。 可以使用 `VisualElement` 之类的超类编写适用于多种控件的触发器操作，或指定 `Entry` 等控件类型。
+- 实现泛型 `TriggerAction<T>` 类，并且泛型参数对应于触发器将应用到的控件类型。 可以使用 `VisualElement` 之类的超类编写适用于多种控件的触发器操作，或指定 `Entry` 等控件类型。
 
-* 替代 `Invoke` 方法 - 每当满足触发器条件时调用该方法。
+- 替代 `Invoke` 方法 - 每当满足触发器条件时调用该方法。
 
-* 声明触发器时，可选择公开可在 XAML 中设置的属性（例如此示例中的 `Anchor`、`Scale` 和 `Length`）。
+- 声明触发器时，可选择公开可在 XAML 中设置的属性（例如此示例中的 `Anchor`、`Scale` 和 `Length`）。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -236,9 +236,9 @@ public class MultiTriggerConverter : IValueConverter
 
 XAML 如下所示。 请注意下面的示例与第一个触发器示例之间的差异：
 
-* 该按钮默认设置为 `IsEnabled="false"`。
-* 多触发器条件可使用转换器将 `Text.Length` 值转换为 `boolean`。
-* 如果所有条件为 `true`，setter 可使按钮的 `IsEnabled` 属性为 `true`。
+- 该按钮默认设置为 `IsEnabled="false"`。
+- 多触发器条件可使用转换器将 `Text.Length` 值转换为 `boolean`。
+- 如果所有条件为 `true`，setter 可使按钮的 `IsEnabled` 属性为 `true`。
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />

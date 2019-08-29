@@ -4,18 +4,18 @@ description: Xamarin.Essentials 中的 Share 类使应用程序能够将数据�
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
+ms.date: 08/20/2019
 ms.custom: video
-ms.openlocfilehash: 1a9a7b008773255d9d7743a4fcb21f02feb3e116
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: b889573c0cefbd692b1e879c1612a143d4bb7c99
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869372"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120750"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共享
 
-Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到设备上的其他应用程序。
+Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到设备上的其他应用程序  。
 
 ## <a name="get-started"></a>入门
 
@@ -59,35 +59,9 @@ public class ShareTest
 
 ![共享](images/share.png)
 
-## <a name="platform-differences"></a>平台差异
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-* `Subject` 属性用于所需的消息主题。
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-* `Subject` 未使用。
-* `Title` 未使用。
-
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
-
-* 如果未设置，`Title` 将默认为应用程序名称。
-* `Subject` 未使用。
-
------
-
 ## <a name="files"></a>文件
 
-![预览版功能](~/media/shared/preview.png)
-
-共享文件在 Xamarin.Essentials 1.1.0 版本中作为实验性预览版提供。 借助此功能，应用可以在设备上与其他应用程序共享文件。 若要启用此功能，请在应用的启动代码中设置以下属性：
-
-```csharp
-ExperimentalFeatures.Enable(ExperimentalFeatures.ShareFileRequest);
-```
-
-启用此功能后，可以共享任何文件。 Xamarin.Essentials 将自动检测文件类型 (MIME) 并请求进行共享。 每个平台可能只支持特定文件扩展名。
+借助此功能，应用可以在设备上与其他应用程序共享文件。 Xamarin.Essentials 将自动检测文件类型 (MIME) 并请求进行共享。 每个平台可能只支持特定文件扩展名。
 
 以下是将文本写入磁盘并将其与其他应用共享的示例：
 
@@ -102,6 +76,25 @@ await Share.RequestAsync(new ShareFileRequest
     File = new ShareFile(file)
 });
 ```
+
+## <a name="platform-differences"></a>平台差异
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+- `Subject` 属性用于所需的消息主题。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+- `Subject` 未使用。
+- `Title` 未使用。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+- 如果未设置，`Title` 将默认为应用程序名称。
+- `Subject` 未使用。
+
+-----
+
 
 ## <a name="api"></a>API
 

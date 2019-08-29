@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 24aa6dae3767255155c6b739e50174214a28d3d8
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 92081ceed9df0525f49005b636298a8142162a31
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855245"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120936"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安装
 
@@ -40,5 +40,5 @@ Xcode 的最新版可通过 [iOS 开发人员中心](https://developer.apple.com
 
 成功安装 Xamarin.iOS 后，了解如何设置 iOS 设备，以便在设备上开发和测试 Xamarin.iOS 应用程序。
 
-* [设置设备进行开发](device-provisioning/index.md)
-* [可用设置](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [设置设备进行开发](device-provisioning/index.md)
+- [可用设置](~/ios/get-started/installation/device-provisioning/free-provisioning.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f0d6d2343350455a101033aced7cec0c31695503
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 477bb7289588d0ab1b1dd29909c7dc36f2b2dfac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353225"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121426"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>针对 Xamarin.iOS 的设备预配
 
@@ -24,7 +24,7 @@ ms.locfileid: "39353225"
 
 接着，下一步是分发应用程序。 有关部署的详细信息，请访问[应用分发](~/ios/deploy-test/app-distribution/index.md)指南。
 
-将应用程序部署到设备之前，需要具有 Apple 开发者计划的活动订阅或使用[免费设置](~/ios/get-started/installation/device-provisioning/free-provisioning.md)。 Apple 提供两种计划选项：
+将应用程序部署到设备之前，需要具有 Apple 开发者计划的活动订阅或  使用[免费设置](~/ios/get-started/installation/device-provisioning/free-provisioning.md)。 Apple 提供两种计划选项：
 
 - **Apple 开发者计划** – 无论你是个人用户还是代表组织，Apple 开发者计划都能让你开发、测试和分发应用。
 - **Apple 企业开发者计划** – 企业计划最适合想要在内部开发和分发应用的组织。 企业计划的成员不能访问 iTunes 连接，且创建的应用不能发布到 App Store。
@@ -47,17 +47,17 @@ ms.locfileid: "39353225"
 
 预配 iOS 设备有两种方法：
 
-* **自动（推荐）**- 选择项目中的“自动预配”方案，让 Visual Studio 自动创建和管理签名标识、应用 ID 和预配配置文件。 有关如何自动管理预配的信息，请参阅[自动预配](automatic-provisioning.md)指南。 这是预配 iOS 设备的推荐方法。
+- **自动（推荐）** - 选择项目中的“自动预配”方案，让 Visual Studio 自动创建和管理签名标识、应用 ID 和预配配置文件  。 有关如何自动管理预配的信息，请参阅[自动预配](automatic-provisioning.md)指南。 这是预配 iOS 设备的推荐方法。
 
-* **手动** – 可以通过 Apple 开发人员门户创建和管理签名标识、应用 ID 和预配配置文件，如[手动预配](manual-provisioning.md)指南中所述。 然后对这些项目进行管理，如 [Apple 帐户管理](~/cross-platform/macios/apple-account-management.md)指南中所述。
+- **手动** – 可以通过 Apple 开发人员门户创建和管理签名标识、应用 ID 和预配配置文件，如[手动预配](manual-provisioning.md)指南中所述。 然后对这些项目进行管理，如 [Apple 帐户管理](~/cross-platform/macios/apple-account-management.md)指南中所述。
 
 ## <a name="provisioning-for-application-services"></a>对应用程序服务进行预配
 
-Apple 提供一系列精选的特殊应用服务（亦称为“功能”），可以为 Xamarin.iOS 应用激活这些服务。 必须同时在 iOS 设置门户（创建“应用 ID”时）和“Entitlements.plist”文件（它是 Xamarin.iOS 应用程序项目的一部分）上配置这些应用程序服务。 若要了解如何将应用程序服务添加到应用，请参阅[功能简介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用授权](~/ios/deploy-test/provisioning/entitlements.md)指南。
+Apple 提供一系列精选的特殊应用服务（亦称为“功能”），可以为 Xamarin.iOS 应用激活这些服务。 必须同时在 iOS 设置门户（创建“应用 ID”  时）和“Entitlements.plist”  文件（它是 Xamarin.iOS 应用程序项目的一部分）上配置这些应用程序服务。 若要了解如何将应用程序服务添加到应用，请参阅[功能简介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用授权](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-* 创建具备所需应用服务的应用 ID。
-* 创建含有此应用 ID 的新[配置文件](#provisioning-your-device)。
-* 在 Xamarin.iOS 项目中设置权利
+- 创建具备所需应用服务的应用 ID。
+- 创建含有此应用 ID 的新[配置文件](#provisioning-your-device)。
+- 在 Xamarin.iOS 项目中设置权利
 
 ## <a name="related-links"></a>相关链接
 

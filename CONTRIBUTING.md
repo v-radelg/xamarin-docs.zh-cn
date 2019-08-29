@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521103"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118914"
 ---
 # <a name="contributing"></a>参与
 
@@ -12,7 +12,7 @@ ms.locfileid: "69521103"
 
 本页介绍在 [Xamarin 文档](https://docs.microsoft.com/xamarin)中更新内容的基本流程。
 
-* [参与者许可协议](LICENSE)
+- [参与者许可协议](LICENSE)
 
 ## <a name="process-for-contributing"></a>参与流程
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/18/2017
-ms.openlocfilehash: 654eca1098f9486e0c41fd296b3f8d381ac7ea34
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a61a4a313fa23b5cdc629279bee39f1eed792cc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105371"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120505"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Xamarin.iOS 的 Info.plist 引用
 
@@ -22,8 +22,8 @@ ms.locfileid: "50105371"
 
 访问用户位置也需要对 Info.plist 进行修改。 应设置如下与位置数据相关的键： 
 
-* **NSLocationWhenInUseUsageDescription** - 用于用户在和你的应用互动时访问用户的位置。 
-* **NSLocationAlwaysUsageDescription** - 用于应用在后台访问用户的位置时。
+- **NSLocationWhenInUseUsageDescription** - 用于用户在和你的应用互动时访问用户的位置。 
+- **NSLocationAlwaysUsageDescription** - 用于应用在后台访问用户的位置时。
 
 ## <a name="photos"></a>照片 
 

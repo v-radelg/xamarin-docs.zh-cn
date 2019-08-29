@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 32ededcda1fdfc463269c7e4a2db444edab51d22
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524946"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119765"
 ---
 # <a name="windows-installation"></a>Windows 安装
 
@@ -74,9 +74,9 @@ Android 使用多个 Android API 级别设置来确定应用在各种版本的 A
 
 在计算机上模拟 Android 设备包括以下部分：
 
-* **Google Android Emulator** &ndash; 它是基于 [QEMU](https://www.qemu.org/) 的仿真器，用于创建在开发人员的工作站上运行的虚拟化设备。
-* **仿真器映像** &ndash; 仿真器映像是旨在进行虚拟化的硬件和操作系统的模板或规范  。 例如，一个仿真器映像可以确定运行安装 Google Play Services 的 Android 7.0 的 Nexus 5X 的硬件要求。 另一个仿真器映像可以指定运行 Android 6.0 的 10 英寸平板电脑。
-* **Android 虚拟设备 (AVD)** &ndash; Android 虚拟设备是从仿真器映像创建的 Android 仿真设备  。 运行和测试 Android 应用时，Xamarin.Android 将启动 Android Emulator，启动特定 AVD，安装 APK，然后运行应用。
+- **Google Android Emulator** &ndash; 它是基于 [QEMU](https://www.qemu.org/) 的仿真器，用于创建在开发人员的工作站上运行的虚拟化设备。
+- **仿真器映像** &ndash; 仿真器映像是旨在进行虚拟化的硬件和操作系统的模板或规范  。 例如，一个仿真器映像可以确定运行安装 Google Play Services 的 Android 7.0 的 Nexus 5X 的硬件要求。 另一个仿真器映像可以指定运行 Android 6.0 的 10 英寸平板电脑。
+- **Android 虚拟设备 (AVD)** &ndash; Android 虚拟设备是从仿真器映像创建的 Android 仿真设备  。 运行和测试 Android 应用时，Xamarin.Android 将启动 Android Emulator，启动特定 AVD，安装 APK，然后运行应用。
 
 在基于 x86 的计算机上进行开发时，可以通过使用针对 x86 体系结构进行优化的特殊仿真器映像以及以下两项虚拟化技术之一显著提高性能：
 

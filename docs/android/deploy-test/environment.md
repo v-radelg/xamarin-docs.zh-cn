@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 14be0fec50138aed7b2b3e8d48d49cad86abbb2b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508987"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119419"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 环境
 
@@ -58,16 +58,16 @@ Xamarin.Android 支持 `XA_HTTP_CLIENT_HANDLER_TYPE` 变量，可通过 `adb she
 
 Xamarin.Android 支持以下系统属性，可通过 `adb shell setprop` 或 `$(AndroidEnvironment)` 生成操作进行设置。
 
-* `debug.mono.debug`
-* `debug.mono.env`
-* `debug.mono.gc`
-* `debug.mono.log`
-* `debug.mono.max_grefc`
-* `debug.mono.profile`
-* `debug.mono.runtime_args`
-* `debug.mono.trace`
-* `debug.mono.wref`
-* `XA_HTTP_CLIENT_HANDLER_TYPE`
+- `debug.mono.debug`
+- `debug.mono.env`
+- `debug.mono.gc`
+- `debug.mono.log`
+- `debug.mono.max_grefc`
+- `debug.mono.profile`
+- `debug.mono.runtime_args`
+- `debug.mono.trace`
+- `debug.mono.wref`
+- `XA_HTTP_CLIENT_HANDLER_TYPE`
 
 ### `debug.mono.debug`
 
@@ -90,15 +90,15 @@ Xamarin.Android 支持以下系统属性，可通过 `adb shell setprop` 或 `$(
 控制 Xamarin.Android 将记录到 `adb logcat` 的其他信息。
 它是一个以逗号分隔的字符串 (`,`)，包含以下值之一：
 
-* `all`：输出所有消息  。 这不是一个好主意，因为它包含 `lref` 消息。
-* `assembly`：打印 `.apk` 和程序集分析消息。
-* `gc`：输出与 GC 相关的消息。
-* `gref`：输出 JNI 全局引用消息。
-* `lref`：输出 JNI 本地引用消息。  
+- `all`：输出所有消息  。 这不是一个好主意，因为它包含 `lref` 消息。
+- `assembly`：打印 `.apk` 和程序集分析消息。
+- `gc`：输出与 GC 相关的消息。
+- `gref`：输出 JNI 全局引用消息。
+- `lref`：输出 JNI 本地引用消息。  
     *说明*：这将是真正的垃圾邮件  `adb logcat`。  
     在 Xamarin.Android 5.1 中，它还会创建 `.__override__/lrefs.txt` 文件，从中获取 gigantic  。  
     请避免。
-* `timing`：输出某些方法计时信息。 这还将创建文件 `.__override__/methods.txt` 和 `.__override__/counters.txt`。
+- `timing`：输出某些方法计时信息。 这还将创建文件 `.__override__/methods.txt` 和 `.__override__/counters.txt`。
 
 
 ### `debug.mono.max_grefc`
@@ -131,15 +131,15 @@ debug.mono.max_grefc` 一起使用，因为当此值在 environment.txt 文件�
 
 `debug.mono.wref` 系统属性可重写默认检测到的 JNI 弱引用机制。 有两个支持的值：
 
-* `jni`：使用 JNI 弱引用，由 `JNIEnv::NewWeakGlobalRef()` 创建并由 `JNIEnv::DeleteWeakGlobalREf()` 销毁。
-* `java`：使用引用 `java.lang.WeakReference` 实例的 JNI 全局引用。
+- `jni`：使用 JNI 弱引用，由 `JNIEnv::NewWeakGlobalRef()` 创建并由 `JNIEnv::DeleteWeakGlobalREf()` 销毁。
+- `java`：使用引用 `java.lang.WeakReference` 实例的 JNI 全局引用。
 
 默认情况下使用 `java`，通过 API 7 和 API-19 (Kit Katt) 启用，同时启用 ART。 （API 8 添加了 `jni` 引用，而 ART 中断了  `jni` 引用。）
 
 此系统属性可用于测试和进行某些形式的调查。
 一般情况下  ，不应更改此属性。
 
-### <a name="xahttpclienthandlertype"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
+### <a name="xa_http_client_handler_type"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
 
 在 Xamarin.Android 6.1 中首次引入，此环境变量声明将由 `HttpClient` 使用的默认 `HttpMessageHandler` 实现。 默认情况下不设置此变量，Xamarin.Android 将使用 `HttpClientHandler`。
 

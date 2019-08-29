@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646765"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119117"
 ---
 # <a name="localization"></a>本地化
 
@@ -28,8 +28,8 @@ ms.locfileid: "68646765"
 
 有两个示例与此文档关联：
 
-* [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization) 是关于所述概念的非常简单的演示。 如下所示的代码片段均来自此示例。
-* [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized) 是可使用这些本地化技的基本工作应用。
+- [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization) 是关于所述概念的非常简单的演示。 如下所示的代码片段均来自此示例。
+- [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized) 是可使用这些本地化技的基本工作应用。
 
 #### <a name="shared-projects-are-not-recommended"></a>不建议使用共享的项目
 
@@ -64,8 +64,8 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 
 两个文件即会添加到项目中：
 
-* AppResources.resx 文件，其中以 XML 格式存储已翻译的字符串  。
-* AppResources.designer.cs 文件，声明分部类，以包含对 RESX XML 文件中创建的所有元素的引用  。
+- AppResources.resx 文件，其中以 XML 格式存储已翻译的字符串  。
+- AppResources.designer.cs 文件，声明分部类，以包含对 RESX XML 文件中创建的所有元素的引用  。
 
 解决方案树将显示相关的文件。 应编辑 RESX 文件，以添加新的已翻译字符串；不应编辑 .designer.cs 文件    。
 
@@ -112,10 +112,10 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 
 遗憾的是，Visual Studio for Mac 中没有内置 RESX 编辑器。 添加新的可翻译字符串需要为每个字符串添加新的 XML `data` 元素。 每个 `data` 元素均可包含以下内容：
 
-* `name` 属性（必需）是此可翻译字符串的关键值。 它必须是有效的 C# 属性名称 - 因此不允许使用任何空格或特殊字符。
-* `value` 元素（必需）是应用程序中显示的实际字符串。
-* `comment` 元素（可选）可以包含介绍如何使用此字符串的翻译工具的说明。
-* `xml:space` 属性（可选）用于控制如何保留字符串中的间距。
+- `name` 属性（必需）是此可翻译字符串的关键值。 它必须是有效的 C# 属性名称 - 因此不允许使用任何空格或特殊字符。
+- `value` 元素（必需）是应用程序中显示的实际字符串。
+- `comment` 元素（可选）可以包含介绍如何使用此字符串的翻译工具的说明。
+- `xml:space` 属性（可选）用于控制如何保留字符串中的间距。
 
 部分示例 `data` 元素如下所示：
 
@@ -145,14 +145,14 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 将为我们要支持的每种语言添加一个额外的 RESX 文件。
 特定语言资源文件必须遵循特定的命名约定：使用相同的文件名作为基础资源文件（例如， AppResources），后面跟一个句点 (.) 和语言代码  。 简单的示例包括：
 
-* **AppResources.fr.resx** - 法语翻译。
-* **AppResources.es.resx** - 西班牙语翻译。
-* **AppResources.de.resx** - 德语翻译。
-* **AppResources.ja.resx** - 日语翻译。
-* **AppResources.zh-Hans.resx** - 中文（简体）翻译。
-* **AppResources.zh-Hant.resx** - 中文（繁体）翻译。
-* **AppResources.pt.resx** - 葡萄牙语翻译。
-* **AppResources.pt-BR.resx** - 葡萄牙语（巴西）翻译。
+- **AppResources.fr.resx** - 法语翻译。
+- **AppResources.es.resx** - 西班牙语翻译。
+- **AppResources.de.resx** - 德语翻译。
+- **AppResources.ja.resx** - 日语翻译。
+- **AppResources.zh-Hans.resx** - 中文（简体）翻译。
+- **AppResources.zh-Hant.resx** - 中文（繁体）翻译。
+- **AppResources.pt.resx** - 葡萄牙语翻译。
+- **AppResources.pt-BR.resx** - 葡萄牙语（巴西）翻译。
 
 常规模式是使用两个字母的语言代码，但也有使用不同格式的示例（例如中文）以及需要 4 字符区域设置标识符的其他示例（例如葡萄牙语（巴西））。
 
@@ -255,10 +255,10 @@ System.Resources.ResourceManager temp =
 如果没有，则 `AppResources` 类将无法加载其资源。
 检查以下项目，解决找不到资源的问题：
 
-* 项目的默认命名空间与 AppResources.Designer.cs 文件中的根命名空间匹配  。
-* 如果 AppResources.resx 文件位于子目录中，则子目录名称应为命名空间和资源标识符的一部分   。
-* AppResources.resx  文件包含“生成操作：  EmbeddedResource”。
-* 勾选了“项目选项”>“源代码”>“.NET 命名策略”>“使用 Visual Studio 样式的资源名称”  。 如果愿意可以取消勾选，但是引用 RESX 资源时将使用命名空间，以更新整个应用。
+- 项目的默认命名空间与 AppResources.Designer.cs 文件中的根命名空间匹配  。
+- 如果 AppResources.resx 文件位于子目录中，则子目录名称应为命名空间和资源标识符的一部分   。
+- AppResources.resx  文件包含“生成操作：  EmbeddedResource”。
+- 勾选了“项目选项”>“源代码”>“.NET 命名策略”>“使用 Visual Studio 样式的资源名称”  。 如果愿意可以取消勾选，但是引用 RESX 资源时将使用命名空间，以更新整个应用。
 
 #### <a name="doesnt-work-in-debug-mode-android-only"></a>不能在调试模式下操作（仅限 Android）
 
@@ -654,13 +654,13 @@ namespace UsingResxLocalization
 
 以下项目符号说明了上述代码中的重要元素：
 
-* 该类名为 `TranslateExtension`，但根据约定，我们可在标记中翻译时引用  。
-* 该类可实现 `IMarkupExtension`，这是 Xamarin.Forms 正常工作所必需。
-* `"UsingResxLocalization.Resx.AppResources"` 是 RESX 资源的资源标识符。 它由默认命名空间、资源文件所处文件夹和默认 RESX 文件名组成。
-* 使用 `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` 创建 `ResourceManager` 类，以确定要从其加载资源的当前程序集，并缓存在静态 `ResMgr` 字段中。 它将作为 `Lazy` 类型创建，因此创建操作将推迟到在 `ProvideValue` 方法中第一次使用它时发生。
-* `ci` 使用依赖项服务获取本机操作系统中的用户所选语言。
-* `GetString` 是从资源文件中检索实际的已翻译字符串的方法。 在通用 Windows 平台上，`ci` 将为 null，因为在这些平台上无法实现 `ILocalize` 界面。 这相当于仅使用第一个参数调用 `GetString` 方法。 相反，资源框架会自动识别区域设置，并从相应的 RESX 文件中检索已翻译的字符串。
-* 错误处理已包括在内，以通过引发异常帮助调试缺少的资源（仅限 `DEBUG` 模式下）。
+- 该类名为 `TranslateExtension`，但根据约定，我们可在标记中翻译时引用  。
+- 该类可实现 `IMarkupExtension`，这是 Xamarin.Forms 正常工作所必需。
+- `"UsingResxLocalization.Resx.AppResources"` 是 RESX 资源的资源标识符。 它由默认命名空间、资源文件所处文件夹和默认 RESX 文件名组成。
+- 使用 `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` 创建 `ResourceManager` 类，以确定要从其加载资源的当前程序集，并缓存在静态 `ResMgr` 字段中。 它将作为 `Lazy` 类型创建，因此创建操作将推迟到在 `ProvideValue` 方法中第一次使用它时发生。
+- `ci` 使用依赖项服务获取本机操作系统中的用户所选语言。
+- `GetString` 是从资源文件中检索实际的已翻译字符串的方法。 在通用 Windows 平台上，`ci` 将为 null，因为在这些平台上无法实现 `ILocalize` 界面。 这相当于仅使用第一个参数调用 `GetString` 方法。 相反，资源框架会自动识别区域设置，并从相应的 RESX 文件中检索已翻译的字符串。
+- 错误处理已包括在内，以通过引发异常帮助调试缺少的资源（仅限 `DEBUG` 模式下）。
 
 以下 XAML 代码片段演示如何使用标记扩展。 可通过两个步骤实现：
 
@@ -691,8 +691,8 @@ namespace UsingResxLocalization
 
 尽管我们可以在 Xamarin.Forms 代码中处理用户界面翻译，但在每个平台特定项目中，均存在必须完成的某些元素。 本部分将介绍如何本地化：
 
-* Application Name
-* 映像
+- Application Name
+- 映像
 
 示例项目包括名为 flag.png 的示例项目，在 C# 中引用，如下所示  ：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 25ebf101dfe0cc3d51e8411b7977e6dc0b061f2d
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8cb5d1cb29f5668194d15102c0b2fb4118388e94
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978410"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065475"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 中的钱包功能
 
@@ -22,11 +22,11 @@ Wallet 是一款用于存储和显示条形码和其他内容的应用，允许�
 
 开发人员可以多种方式使用 Wallet：
 
-*   若要创建凭证，则无需生成应用程序。 Passfile 是一个包含一些 JSON 文件和可选元数据文件的压缩存档。 若要准备，则需要[凭证类型 ID](~/ios/platform/passkit.md)和[凭证证书](~/ios/platform/passkit.md)。 此信息稍后会在 JSON 文件中声明。 有关预配 Passfile 的详细信息，请参阅 [PassKit 简介](~/ios/platform/passkit.md)指南。
+* 若要创建凭证，则无需生成应用程序。 Passfile 是一个包含一些 JSON 文件和可选元数据文件的压缩存档。 若要准备，则需要[凭证类型 ID](~/ios/platform/passkit.md)和[凭证证书](~/ios/platform/passkit.md)。 此信息稍后会在 JSON 文件中声明。 有关预配 Passfile 的详细信息，请参阅 [PassKit 简介](~/ios/platform/passkit.md)指南。
 
-*   同时编写了用于分发凭证的配套应用。 此外，它们还可以创建、编辑和更新凭证，并将凭证添加到 Wallet 应用。 影院应用是此类应用的一个典型示例 - 用户通过应用购买票证后，此票证可直接从该应用添加到 Wallet。 若要使用配套应用，预配配置文件应包含具有“钱包”功能的应用 ID，可以通过以下步骤进行设置。 应用还必须包含所需的权利。
+* 同时编写了用于分发凭证的配套应用。 此外，它们还可以创建、编辑和更新凭证，并将凭证添加到 Wallet 应用。 影院应用是此类应用的一个典型示例 - 用户通过应用购买票证后，此票证可直接从该应用添加到 Wallet。 若要使用配套应用，预配配置文件应包含具有“钱包”功能的应用 ID，可以通过以下步骤进行设置。 应用还必须包含所需的权利。
 
-*   中间应用为不直接操作凭证的应用。 除接收凭证以及可让用户选择将其添加到 Wallet 外，这些应用极少与凭证互动。 这些应用程序虽不需要任何特殊预配或权利，但会使用来自 PassKit 框架的一些方法。
+* 中间应用为不直接操作凭证的应用。 除接收凭证以及可让用户选择将其添加到 Wallet 外，这些应用极少与凭证互动。 这些应用程序虽不需要任何特殊预配或权利，但会使用来自 PassKit 框架的一些方法。
 
 ## <a name="developer-center"></a>开发人员中心
 
@@ -57,7 +57,7 @@ Wallet 是一款用于存储和显示条形码和其他内容的应用，允许�
 
 有关使用 Wallet 的详细信息，请参阅以下指南：
 
-*   [PassKit 简介](~/ios/platform/passkit.md)
+* [PassKit 简介](~/ios/platform/passkit.md)
  
 ## <a name="next-steps"></a>后续步骤
  

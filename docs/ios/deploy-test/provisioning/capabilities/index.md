@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7bb4e142a8b7bd0cf0691da381729dc226028193
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832184"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121362"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
@@ -21,28 +21,28 @@ _向应用程序添加功能通常需要其他预配设置。本指南将介绍�
 Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服务  ，是扩展功能和拓宽 iOS 应用作用范围的一种方式。 通过这些功能，开发人员可向其应用添加更深入的平台功能集成，例如：从应用、其他设备服务（例如 Siri）等启动货币交易。
 这些功能可用于 Xamarin.iOS 项目。 服务的完整列表如下所述：
 
-* 应用组
-* 关联的域
-* 数据保护
-* Game Center
-* HealthKit
-* HomeKit
-* 无线附件配置
-* iCloud
-* 应用内购买
-* 应用间音频
-* Apple Pay
-* Wallet
-* 推送通知
-* 个人 VPN
-* Siri
-* 映射
-* 后台模式
-* Keychain 共享
-* 网络扩展
-* 热点配置
-* 多路径
-* NFC 标记读取
+- 应用组
+- 关联的域
+- 数据保护
+- Game Center
+- HealthKit
+- HomeKit
+- 无线附件配置
+- iCloud
+- 应用内购买
+- 应用间音频
+- Apple Pay
+- Wallet
+- 推送通知
+- 个人 VPN
+- Siri
+- 映射
+- 后台模式
+- Keychain 共享
+- 网络扩展
+- 热点配置
+- 多路径
+- NFC 标记读取
 
 可通过 Visual Studio for Mac 和 Visual Studio 2019 或在 Apple 开发人员门户中手动启动这些功能。 Wallet、Apple Pay 和 iCloud 等某些功能需要应用 ID 的其他配置。
 
@@ -57,16 +57,16 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 > [!IMPORTANT]
 > 并非所有功能都可通过自动预配进行添加和管理。 以下列表包含受支持的功能：
 >
->* HealthKit 
->* HomeKit 
->* 个人 VPN 
->* 无线附件配置 
->* 应用间音频 
->* SiriKit 
->* 热点 
->* 网络扩展 
->* NFC 标记读取
->* 多路径 
+>- HealthKit 
+>- HomeKit 
+>- 个人 VPN 
+>- 无线附件配置 
+>- 应用间音频 
+>- SiriKit 
+>- 热点 
+>- 网络扩展 
+>- NFC 标记读取
+>- 多路径 
 >
 >当前不支持推送通知、Game Center、应用内购买、映射、Keychain 共享、关联域和数据保护功能。 若要添加这些功能，请使用手动预配并遵循[开发人员中心](#devcenter)部分中的步骤。
 
@@ -85,8 +85,8 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
     ![将功能添加到 entitlements.plist 文件](images/image17.png)
 
     选择一个功能执行两项操作：
-    * 将该功能添加到应用 ID
-    * 将权利键/值对添加到 Entitlements.plist 文件。
+    - 将该功能添加到应用 ID
+    - 将权利键/值对添加到 Entitlements.plist 文件。
 
     执行这些任务后，Visual Studio for Mac 将通过显示以下成功消息通知用户：
 
@@ -108,8 +108,8 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
     保存“Entitlement.plist”会实现两项操作  ：
 
-    * 将该功能添加到应用 ID
-    * 将权利键/值对添加到 Entitlements.plist 文件。
+    - 将该功能添加到应用 ID
+    - 将权利键/值对添加到 Entitlements.plist 文件。
 
 -----
 
@@ -196,8 +196,8 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
 在服务器端启用功能后，仍需执行一些步骤才可让应用使用该功能。 下表列出了可能需要采取的其他步骤：
 
-*   在应用中使用框架命名空间。
-*   将所需权利添加到应用。 有关所需权利以及添加方法的详细信息，请参阅[权利简介](~/ios/deploy-test/provisioning/entitlements.md)指南。
+- 在应用中使用框架命名空间。
+- 将所需权利添加到应用。 有关所需权利以及添加方法的详细信息，请参阅[权利简介](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 <a name="troubleshooting" />
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 4ddae1ae4f49c01220b2f5ce78dc19122b3015a0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525274"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119628"
 ---
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
@@ -319,15 +319,15 @@ LLVM 优化编译器  会创建更小更快速的编译代码，并将 AOT 编�
 
 “解决方案列表”  将显示所有解决方案，其中至少有一个项目已存档。 “解决方案列表”  包括以下各部分：
 
-* **当前解决方案** &ndash; 显示当前的解决方案。 请注意，如果当前解决方案不含现有存档，此区域可能为空。
-* **全部存档** &ndash; 显示包含存档的所有解决方案。
-* **搜索**文本框（顶部）&ndash; 根据文本框中输入的搜索字符串筛选“全部存档”  列表中列出的解决方案。
+- **当前解决方案** &ndash; 显示当前的解决方案。 请注意，如果当前解决方案不含现有存档，此区域可能为空。
+- **全部存档** &ndash; 显示包含存档的所有解决方案。
+- **搜索**文本框（顶部）&ndash; 根据文本框中输入的搜索字符串筛选“全部存档”  列表中列出的解决方案。
 
 “存档列表”  显示有关所选解决方案的所有存档的列表。 “存档列表”  包括以下各部分：
 
-* **所选解决方案名称** &ndash; 显示“解决方案列表”  中所选解决方案的名称。 “存档列表”  中显示的所有信息均与此选定的解决方案有关。
-* **平台筛选器** &ndash; 此字段可按平台类型（如 iOS 或 Android）筛选存档。
-* **存档项目** &ndash; 选定解决方案的存档列表。 此列表中的每个项均包括项目名称、创建日期和平台。 还可以显示其他信息，例如存档或发布项目时的进度。
+- **所选解决方案名称** &ndash; 显示“解决方案列表”  中所选解决方案的名称。 “存档列表”  中显示的所有信息均与此选定的解决方案有关。
+- **平台筛选器** &ndash; 此字段可按平台类型（如 iOS 或 Android）筛选存档。
+- **存档项目** &ndash; 选定解决方案的存档列表。 此列表中的每个项均包括项目名称、创建日期和平台。 还可以显示其他信息，例如存档或发布项目时的进度。
 
 “详细信息面板”  显示有关每个存档的其他信息。 用户还可以从此面板启动分发工作流或打开创建分发的文件夹。 “生成注释”  部分可将生成注释包括在存档中。
 
@@ -343,9 +343,9 @@ LLVM 优化编译器  会创建更小更快速的编译代码，并将 AOT 编�
 
 可选择以下分发通道之一：
 
-* **Ad-Hoc** &ndash; 将已签名的 APK 保存到磁盘，以将其旁加载到 Android 设备。 继续查看[对应用包进行签名](~/android/deploy-test/signing/index.md)，了解如何创建 Android 签名标识、为 Android 应用程序创建新的签名证书以及将“临时”版本的应用发布到磁盘  。 这是为测试创建 APK 的好方法。
+- **Ad-Hoc** &ndash; 将已签名的 APK 保存到磁盘，以将其旁加载到 Android 设备。 继续查看[对应用包进行签名](~/android/deploy-test/signing/index.md)，了解如何创建 Android 签名标识、为 Android 应用程序创建新的签名证书以及将“临时”版本的应用发布到磁盘  。 这是为测试创建 APK 的好方法。
 
-* **Google Play** &ndash; 将已签名的 APK 发布到 Google Play。 继续查看[发布到 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何对 APK 进行签名并将其发布到 Google Play 商店。
+- **Google Play** &ndash; 将已签名的 APK 发布到 Google Play。 继续查看[发布到 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何对 APK 进行签名并将其发布到 Google Play 商店。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

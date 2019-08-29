@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 42edb04cb6dfe5fca59a6cc96f34cb8f9c5e1e88
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527706"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120583"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -447,7 +447,7 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 ::: zone-end
 ::: zone pivot="windows"
 
-* Visual Studio – 可以用于直接在 IDE 中为应用创建简单图标集。
+- Visual Studio – 可以用于直接在 IDE 中为应用创建简单图标集。
 - [**Glyphish**](http://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
 - [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
 

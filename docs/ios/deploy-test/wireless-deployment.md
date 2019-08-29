@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: ac4ae1d8b247a709307841be1ffa1fee2afbf68f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865502"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121480"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>适用于 Xamarin.iOS 和 tvOS 应用的无线部署
 
@@ -95,9 +95,9 @@ Visual Studio for Mac 和 Visual Studio 提供无线部署功能。
 
 2. 如果设备未显示在 Visual Studio 中，请检查 Xcode 的“设备和模拟器”  窗口。 
 
-    * 如果 Xcode **未**将设备显示为已连接，请尝试再次[配对](#pair)设备。
+    - 如果 Xcode **未**将设备显示为已连接，请尝试再次[配对](#pair)设备。
 
-    * 如果 Xcode 未将设备显示为已连接，请尝试重新启动 Visual Studio 和设备。
+    - 如果 Xcode 未将设备显示为已连接，请尝试重新启动 Visual Studio 和设备。
 
 3. 如果尚未执行操作，你需要[预配](~/ios/get-started/installation/device-provisioning/index.md)设备。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: e57254ce724c5660e53dcd9deaa0f4a27bf91400
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a290f29707bd59a22f612f31e544a211488eba0d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675188"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121488"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 测试和部署 - 疑难解答
 
@@ -20,19 +20,19 @@ ms.locfileid: "67675188"
 
 iOS 方面的代码签名和设置可能非常麻烦，因此务必要确保代码签名证书和设置配置文件井然有序。
 
-* 大型团队应避免在 Xcode 中使用“修复问题”按钮，如此处所示：
+- 大型团队应避免在 Xcode 中使用“修复问题”按钮，如此处所示：
 
     [![](troubleshooting-images/fixissue.png "“修复问题”对话框")](troubleshooting-images/fixissue.png#lightbox)
 
     这会创建新的设置配置文件和证书。 在最好的情况下，这会在团队成员每次单击它时创建设置配置文件，从而导致配置文件杂乱无章。 在最坏的情况下，它会吊销公司中其他所有人的证书，从而导致其应用停止工作。
 
-* 使密钥链访问保持组织有序，并删除过期证书和配置文件。 企业证书可持续三年，而其他证书仅持续一年。 证书无法进行续订，因此需要恰好在旧证书过期之前创建新证书。 确保吊销并删除旧证书，以及使用新证书对应用重新签名。
+- 使密钥链访问保持组织有序，并删除过期证书和配置文件。 企业证书可持续三年，而其他证书仅持续一年。 证书无法进行续订，因此需要恰好在旧证书过期之前创建新证书。 确保吊销并删除旧证书，以及使用新证书对应用重新签名。
 
-* 安装新设置配置文件时删除旧配置文件。 这意味着 Visual Studio for Mac 不必决定要使用的配置文件。 若要实现此目的，请首先请确保在 Apple 开发人员中心中删除配置文件，然后浏览到“首选项”>“你的帐户”>“查看详细信息...”  。选择设置配置文件，然后单击“在查找工具中显示”  。 这样会显示配置文件在 Mac 文件系统中的位置，随后可以在该位置使用查找程序删除它。
+- 安装新设置配置文件时删除旧配置文件。 这意味着 Visual Studio for Mac 不必决定要使用的配置文件。 若要实现此目的，请首先请确保在 Apple 开发人员中心中删除配置文件，然后浏览到“首选项”>“你的帐户”>“查看详细信息...”  。选择设置配置文件，然后单击“在查找工具中显示”  。 这样会显示配置文件在 Mac 文件系统中的位置，随后可以在该位置使用查找程序删除它。
 
-* 确保所有所需证书和对应私钥都可用。 每个团队都需要开发人员证书（用于在自己的设备上安装应用）和分发证书（用于在其他设备上安装）
+- 确保所有所需证书和对应私钥都可用。 每个团队都需要开发人员证书（用于在自己的设备上安装应用）和分发证书（用于在其他设备上安装）
 
-* 安装新预配配置文件或证书时，重新启动 Xcode 和 Visual Studio for Mac / Visual Studio。
+- 安装新预配配置文件或证书时，重新启动 Xcode 和 Visual Studio for Mac / Visual Studio。
 
 ## <a name="testflight"></a>TestFlight
 

@@ -5,16 +5,16 @@ ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 61d0a77d7a6a862ec5e06c7b693f8e23e4cdb975
-ms.sourcegitcommit: 6d41b5d48fd626d3f649809ed5480e5356755f14
+ms.openlocfilehash: 9c0eb4f856dbbb05e891a07326f40528a4e99bea
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986232"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120104"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:设备显示信息
 
-DeviceDisplay 类提供有关运行应用程序的设备屏幕指标的信息，并可以请求在应用程序运行时防止屏幕进入睡眠状态。
+DeviceDisplay 类提供有关运行应用程序的设备屏幕指标的信息，并可以请求在应用程序运行时防止屏幕进入睡眠状态  。
 
 ## <a name="get-started"></a>入门
 
@@ -30,7 +30,7 @@ using Xamarin.Essentials;
 
 ## <a name="main-display-info"></a>主显示器信息
 
-除了基本的设备信息外，DeviceDisplay 类还包含有关设备的屏幕和方向信息。
+除了基本的设备信息外，DeviceDisplay 类还包含有关设备的屏幕和方向信息  。
 
 ```csharp
 // Get Metrics
@@ -52,7 +52,7 @@ var height = mainDisplayInfo.Height;
 var density = mainDisplayInfo.Density;
 ```
 
-DeviceDisplay 类还会公开可以订阅的一个事件，每当任何屏幕指标更改时就会触发此事件：
+DeviceDisplay 类还会公开可以订阅的一个事件，每当任何屏幕指标更改时就会触发此事件  ：
 
 ```csharp
 public class DisplayInfoTest
@@ -71,7 +71,7 @@ public class DisplayInfoTest
 }
 ```
 
-DeviceDisplay 类公开调用了 `KeepScreenOn` 的 `bool` 属性，可将其设置为防止关闭或锁定设备的显示器。
+DeviceDisplay  类公开调用了 `KeepScreenOn` 的 `bool` 属性，可将其设置为防止关闭或锁定设备的显示器。
 
 ```csharp
 public class KeepScreenOnTest
@@ -91,7 +91,7 @@ public class KeepScreenOnTest
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* 必须在 UI 线程上访问 `DeviceDisplay`，否则将引发异常。 可以使用 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) 方法在 UI 线程上运行该代码。
+- 必须在 UI 线程上访问 `DeviceDisplay`，否则将引发异常。 可以使用 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) 方法在 UI 线程上运行该代码。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0702241b5dbc744bf40c59928103d92a73a4c462
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526630"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121214"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手动预配
 
@@ -222,9 +222,9 @@ Visual Studio for Mac 或 Visual Studio 将有新的证书或预配配置文件�
 
 Apple 提供一系列精选的特殊应用服务（亦称为“功能”），可以为 Xamarin.iOS 应用激活这些服务。 必须同时在 iOS 设置门户（创建“应用 ID”  时）和“Entitlements.plist”  文件（它是 Xamarin.iOS 应用程序项目的一部分）上配置这些应用程序服务。 若要了解如何将应用程序服务添加到应用，请参阅[功能简介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用授权](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-* 创建具备所需应用服务的应用 ID。
-* 创建含有此应用 ID 的新[配置文件](#provisioningprofile)。
-* 在 Xamarin.iOS 项目中设置权利
+- 创建具备所需应用服务的应用 ID。
+- 创建含有此应用 ID 的新[配置文件](#provisioningprofile)。
+- 在 Xamarin.iOS 项目中设置权利
 
 ## <a name="deploying-to-a-device"></a>部署到设备
 

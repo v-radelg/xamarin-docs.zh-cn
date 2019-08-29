@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 86b077c95bfe1cb32731c92c0c1cfec451295c12
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ef36e79254a6d07ae6d23de7e86f6a43b2140b09
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831346"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065523"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS 中的 iCloud 功能
 
@@ -97,9 +97,9 @@ iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在�
 
 有关使用 iCloud 的详细信息，请参阅以下指南：
 
-*   [iCloud 简介](~/ios/data-cloud/introduction-to-icloud.md)
-*   [CloudKit 简介](~/ios/data-cloud/intro-to-cloudkit.md)
-*   [文档选取器简介](~/ios/platform/document-picker.md)
+* [iCloud 简介](~/ios/data-cloud/introduction-to-icloud.md)
+* [CloudKit 简介](~/ios/data-cloud/intro-to-cloudkit.md)
+* [文档选取器简介](~/ios/platform/document-picker.md)
 
 ## <a name="next-steps"></a>后续步骤
  
