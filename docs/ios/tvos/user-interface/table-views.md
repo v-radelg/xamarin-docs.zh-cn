@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3df0d8f686ec521a55948a9eb4632d77e5c3691f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652325"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121375"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 表视图
 
@@ -108,14 +108,14 @@ Apple 对于使用表视图单元有以下建议:
 
     [![](table-views-images/table14.png "分配名称")](table-views-images/table14.png#lightbox)
 1. 对于表视图中的所有原型单元, 请重复上述步骤。
-1. 接下来, 将自定义类分配给 UI 设计的其余部分, 对详细信息视图进行  布局, 并为详细信息视图中的每个 UI 元素分配唯一的C#名称, 以便也可以在中访问它们。 例如： 
+1. 接下来, 将自定义类分配给 UI 设计的其余部分, 对详细信息视图进行布局, 并为详细信息视图中的每个 UI 元素分配唯一的C#名称, 以便也可以在中访问它们。 例如： 
 
     [![](table-views-images/table15.png "UI 布局")](table-views-images/table15.png#lightbox)
 1. 保存对情节提要所做的更改。
     
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-1. 在 Visual Studio 中, 启动新的 tvOS 应用程序项目, 并选择 " **tvOS** > " "**单一视图应用**", 然后输入应用的名称。 单击 "**确定**" 按钮以创建新的解决方案: 
+1. 在 Visual Studio 中, 启动新的 tvOS 应用程序项目, 并选择 " **tvOS** > " "**单一视图应用**", 然后输入应用的名称。 单击 "确定" 按钮以创建新的解决方案: 
 
     [![](table-views-images/table02-vs.png "选择单一视图应用")](table-views-images/table02-vs.png#lightbox)
 1. 在**解决方案资源管理器**中, 双击该`Main.storyboard`文件以在 iOS 设计器中将其打开: 
@@ -149,7 +149,7 @@ Apple 对于使用表视图单元有以下建议:
 
     [![](table-views-images/table14-vs.png "\"小组件\" 选项卡")](table-views-images/table14-vs.png#lightbox)
 1. 对于表视图中的所有原型单元, 请重复上述步骤。
-1. 接下来, 将自定义类分配给 UI 设计的其余部分, 对详细信息视图进行  布局, 并为详细信息视图中的每个 UI 元素分配唯一的C#名称, 以便也可以在中访问它们。 例如： 
+1. 接下来, 将自定义类分配给 UI 设计的其余部分, 对详细信息视图进行布局, 并为详细信息视图中的每个 UI 元素分配唯一的C#名称, 以便也可以在中访问它们。 例如： 
 
     [![](table-views-images/table15.png "UI 布局")](table-views-images/table15.png#lightbox)
 1. 保存对情节提要所做的更改。
@@ -844,7 +844,7 @@ namespace tvTable
 }
 ```
 
-在这里, 我们提供了  显示为`AttractionInformation`属性的引力 (), 并创建了`UpdateUI`一个方法, 该方法填充添加到接口设计器中的视图的 UI 小组件。
+在这里, 我们提供了显示为`AttractionInformation`属性的引力 (), 并创建了`UpdateUI`一个方法, 该方法填充添加到接口设计器中的视图的 UI 小组件。
 
 我们还定义了一个指向拆分视图控制器 (`SplitView`) 的快捷方式, 用于将更改传递回表格视图 (`AcctractionTableView`)。
 
@@ -883,8 +883,8 @@ namespace tvTable
 
 同样, 此类只定义一些快捷方式, 使其更易于在拆分视图控制器的两个边之间进行通信:
 
-* `SplitView`-指向导航视图控制器所属的拆分视图控制器`MainSpiltViewController`() 的链接。
-* `TableController`-获取在导航视图控制器中`AttractionTableViewController`显示为顶部视图的表视图控制器 ()。
+- `SplitView`-指向导航视图控制器所属的拆分视图控制器`MainSpiltViewController`() 的链接。
+- `TableController`-获取在导航视图控制器中`AttractionTableViewController`显示为顶部视图的表视图控制器 ()。
 
 <a name="The-Split-View-Controller" />
 

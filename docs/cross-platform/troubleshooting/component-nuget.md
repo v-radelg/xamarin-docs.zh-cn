@@ -1,47 +1,47 @@
 ---
-title: 更新对 NuGet 的组件引用
-description: 本文档介绍如何引用替换为你组件 NuGet 程序包添加到未来的你的应用，因为 Xamarin 组件存储已停止使用。
+title: 将组件引用更新到 NuGet
+description: 本文档介绍如何将组件引用替换为 NuGet 包, 以便在将来对应用进行校对, 因为 Xamarin 组件存储已停止使用。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: fbef8f60a31511be926ee2adf5e239ad8955b208
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 270d02fb5045e322b167101d82de9a61c64ce836
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864526"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118948"
 ---
-# <a name="updating-component-references-to-nuget"></a>更新对 NuGet 的组件引用
+# <a name="updating-component-references-to-nuget"></a>将组件引用更新到 NuGet
 
 > [!IMPORTANT]
-> 截至 2018 年 5 月 15 日之前停用组件应用商店 (最初为此闭包[宣布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)在 2017 年 11 月)。
+> 组件存储已于 2018 2017 年5月15日停用 (此节假日最初[公布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)于11月11日)。
 >
-> Xamarin 组件不再支持在 Visual Studio 中，并应替换为 NuGet 包。 请按照以下说明手动从项目中删除组件的引用。
+> Visual Studio 中不再支持 Xamarin 组件, 并应将其替换为 NuGet 包。 按照以下说明手动删除项目中的组件引用。
 
-请参阅这些说明中的添加 NuGet 包[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+有关在[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)上添加 NuGet 包的说明, 请参阅这些说明。
 
-一组常用 Xamarin[插件和库](https://github.com/xamarin/XamarinComponents/blob/master/README.md)可用来帮助查找组件是作为 NuGet 包不可用的替代方法。
+常用 Xamarin[插件和库](https://github.com/xamarin/XamarinComponents/blob/master/README.md)的列表可用于帮助查找作为 NuGet 包不可用的组件替代项。
 
-## <a name="manually-removing-component-references"></a>手动删除组件的引用
+## <a name="manually-removing-component-references"></a>手动删除组件引用
 
-15.6 版本的 Visual Studio 和 Visual Studio for Mac 7.4 版本不再支持组件在项目中。 
+15.6 版本的 Visual Studio 和7.4 版本的 Visual Studio for Mac 不再支持项目中的组件。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-如果将项目加载到 Visual Studio 时，会显示以下对话框，说明，你必须删除任何组件从你的项目手动：
+如果将项目加载到 Visual Studio 中, 则会显示以下对话框, 说明必须手动从项目中删除任何组件:
 
-![警报对话框说明组件已在你的项目中找到，并且必须删除](component-nuget-images/component-alert-vs.png)
+![说明已在项目中找到组件并且必须将其删除的警报对话框](component-nuget-images/component-alert-vs.png)
 
-若要删除你的项目的组件：
+从项目中删除组件:
 
-1. 打开 **.csproj**文件。 若要执行此操作，右键单击项目名称并选择**卸载项目**。 
+1. 打开 **.csproj**文件。 为此, 请右键单击项目名称, 然后选择 "**卸载项目**"。 
 
-2. 右键再次单击已卸载的项目并选择**编辑 {你的项目名称}.csproj**。
+2. 再次右键单击卸载的项目, 然后选择 "**编辑 {你的项目名称}. .csproj**"。
 
-3. 到文件中找到的任何引用`XamarinComponentReference`。 其外观应类似于下面的示例：
+3. 查找文件`XamarinComponentReference`中的任何引用。 其外观应类似于以下示例:
 
     ```xml
     <ItemGroup>
@@ -60,23 +60,23 @@ ms.locfileid: "67864526"
     </ItemGroup>
     ```
 
-4. 删除对引用`XamarinComponentReference`并保存该文件。 在上面的示例中，则可以安全地删除整个`ItemGroup`。
+4. 删除对`XamarinComponentReference`的引用, 并保存该文件。 在上面的示例中, 可以安全地删除整个`ItemGroup`。
 
-5. 后已保存该文件，右键单击项目名称并选择**重新加载项目**。
+5. 保存该文件后, 右键单击项目名称, 然后选择 "**重新加载项目**"。
 
-6. 你的解决方案中每个项目重复上述步骤。
+6. 为解决方案中的每个项目重复上述步骤。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-如果你将项目加载到 Visual Studio for Mac，将显示以下对话框，说明，你必须删除任何组件从你的项目手动：
+如果将项目加载到 Visual Studio for Mac 中, 将显示以下对话框, 说明必须手动从项目中删除任何组件:
 
-![警报对话框说明组件已在你的项目中找到，并且必须删除](component-nuget-images/component-alert.png)
+![说明已在项目中找到组件并且必须将其删除的警报对话框](component-nuget-images/component-alert.png)
 
-若要删除你的项目的组件：
+从项目中删除组件:
 
-1. 打开.csproj 文件。 若要执行此操作，右键单击项目名称并选择**工具 > 编辑文件**。
+1. 打开 .csproj 文件。 为此, 请右键单击项目名称, 然后选择 "**工具" > "编辑文件**"。
 
-2. 到文件中找到的任何引用`XamarinComponentReference`。 其外观应类似于下面的示例：
+2. 查找文件`XamarinComponentReference`中的任何引用。 其外观应类似于以下示例:
 
     ```xml
     <ItemGroup>
@@ -95,115 +95,115 @@ ms.locfileid: "67864526"
     </ItemGroup>
     ```
 
-3. 删除对引用`XamarinComponentReference`并保存该文件。 在上面的示例中，则可以安全地删除整个 `ItemGroup`
+3. 删除对`XamarinComponentReference`的引用, 并保存该文件。 在上面的示例中, 可以安全地删除整个`ItemGroup`
 
-4. 你的解决方案中每个项目重复上述步骤。
+4. 为解决方案中的每个项目重复上述步骤。
 
 -----
 
 > [!WARNING]
-> 以下说明仅适用于较旧版本的 Visual Studio。
-> **组件**节点不再可在当前版本的 Visual Studio 2017 或 Visual Studio for mac。
+> 以下说明仅适用于早期版本的 Visual Studio。
+> Visual Studio 2017 或 Visual Studio for Mac 的当前版本中不再提供 "**组件**" 节点。
 
-以下部分介绍如何更新现有的 Xamarin 解决方案，若要更改对 NuGet 包的组件引用。
+以下部分介绍如何更新现有 Xamarin 解决方案, 以更改对 NuGet 包的组件引用。
 
 - [包含 NuGet 包的组件](#contain)
-- [NuGet 的替换的组件](#replace)
+- [带有 NuGet 替换的组件](#replace)
 
-大多数组件都属于上述类别之一。
-如果使用的一个组件，它不具有等效的 NuGet 包，请阅读[组件不包含 NuGet 迁移路径](#require-update)下面一节。
+大多数组件属于上述类别之一。
+如果你使用的组件看起来没有等效的 NuGet 包, 请阅读下面的 "[不包含 nuget 迁移路径的组件](#require-update)" 一节。
 
 <a name="contain" />
 
 ## <a name="components-that-contain-nuget-packages"></a>包含 NuGet 包的组件
 
-许多组件已包含 NuGet 包和迁移路径是只需删除组件的引用。
+许多组件已经包含 NuGet 包, 迁移路径只是删除组件引用。
 
-您可以确定组件是否通过双击解决方案中的组件的 NuGet 包已包含：
+可以通过双击解决方案中的组件来确定组件是否已包含 NuGet 包:
 
-![展开的组件节点](component-nuget-images/solution-sml.png)
+![组件节点已展开](component-nuget-images/solution-sml.png)
 
-**包**选项卡将列出组件中包括的任何 NuGet 包：
+"**包**" 选项卡将列出组件中包含的任何 NuGet 包:
 
 ![包选项卡包含 NuGet](component-nuget-images/packages-tab-sml.png)
 
-请注意，**程序集**选项卡将为空：
+请注意, "**程序集**" 选项卡将为空:
 
 ![程序集选项卡为空](component-nuget-images/assemblies-tab-empty-sml.png)
 
-### <a name="updating-the-solution"></a>正在更新解决方案
+### <a name="updating-the-solution"></a>更新解决方案
 
-若要更新你的解决方案，请删除**组件**解决方案中的条目：
+若要更新解决方案, 请从解决方案中删除**组件**条目:
 
 ![删除组件](component-nuget-images/delete-component-sml.png)
 
-NuGet 包将保留在中列出**包**节点和应用程序将编译并按常规方式运行。 在将来，将通过执行对此包更新**Nuget**更新功能：
+NuGet 包将继续在 "**包**" 节点中列出, 并且你的应用程序将照常编译和运行。 将来, 将通过**Nuget**更新功能执行对此包的更新:
 
 ![更新 NuGet 包](component-nuget-images/nuget-update-sml.png)
 
 
 <a name="replace" />
 
-## <a name="components-with-nuget-replacements"></a>NuGet 的替换的组件
+## <a name="components-with-nuget-replacements"></a>带有 NuGet 替换的组件
 
-如果组件信息页面**程序集**选项卡包含的条目，如下所示，将需要手动查找等效的 NuGet 包。
+如果 "组件信息" 页的 "**程序集**" 选项卡包含如下所示的条目, 则需要手动查找等效的 NuGet 包。
 
 ![包含程序集](component-nuget-images/assemblies-tab-sml.png)
 
-请注意，**包**选项卡将可能为空：
+请注意, "**包**" 选项卡可能为空:
 
 ![](component-nuget-images/packages-tab-empty-sml.png)
 
-_它可能包含 NuGet 依赖项，但是可以忽略这些警告。_
+_它可能包含 NuGet 依赖项, 但可以忽略这些依赖项。_
 
-若要确认更换 NuGet 程序包是否存在，请搜索[NuGet.org](https://www.nuget.org/packages)，使用该组件名称，或者由作者。
+若要确认替换 NuGet 包存在, 请使用组件名称或作者, 搜索[NuGet.org](https://www.nuget.org/packages)。
 
-例如，可以找到常用**sqlite net pcl**通过搜索包：
+例如, 你可以通过搜索来查找常见的**sqlite 网络-pcl**包:
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – 产品名称。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – 作者的个人资料。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–产品名称。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作者的个人资料。
 
-### <a name="updating-the-solution"></a>正在更新解决方案
+### <a name="updating-the-solution"></a>更新解决方案
 
-一旦确认该组件是在 NuGet 中提供，请执行以下步骤：
+确认组件在 NuGet 中可用之后, 请执行以下步骤:
 
-#### <a name="delete-the-component"></a>删除的组件
+#### <a name="delete-the-component"></a>删除组件
 
-右键单击该解决方案中的组件，然后选择**删除**:
+右键单击解决方案中的组件, 然后选择 "**删除**":
 
 ![删除组件](component-nuget-images/remove-component-sml.png)
 
-这将删除该组件的任何引用。 这将中断生成，直到添加等效的 NuGet 包，以将其替换为。
+这将删除该组件和任何引用。 这会中断您的生成, 直到您添加了等效的 NuGet 包来替换它。
 
 #### <a name="add-the-nuget-package"></a>添加 NuGet 包
 
-1. 右键单击**包**节点，然后选择**添加包...** .
-2. 搜索按名称或作者 NuGet 替换：
+1. 右键单击 "**包**" 节点, 然后选择 "**添加包 ...** "。
+2. 按名称或作者搜索 NuGet 替换:
 
     ![](component-nuget-images/nuget-search-sml.png)
 
-3. 按**将包添加**。
+3. 按 "**添加包**"。
 
-NuGet 包将添加到你的项目，以及任何依赖项。
-这样应修复生成。 如果生成继续失败，调查每个错误，以查看是否存在该组件和 NuGet 包的 API 差异。
+NuGet 包将添加到你的项目, 以及任何依赖项。
+这会修复生成。 如果生成继续失败, 请调查每个错误, 查看组件和 NuGet 包之间是否存在 API 差异。
 
 <a name="require-update" />
 
-## <a name="components-without-a-nuget-migration-path"></a>组件没有 NuGet 迁移路径
+## <a name="components-without-a-nuget-migration-path"></a>无 NuGet 迁移路径的组件
 
-请不要担心，如果您没有立即找到您的应用程序中使用的组件的替换。 现有组件将继续在 Visual Studio 15.5 中，并**组件**节点将显示在解决方案中像往常一样。
+如果你不想立即找到应用程序中使用的组件, 请不要担心。 现有组件将继续在 Visual Studio 15.5 中工作, "**组件**" 节点会照常出现在解决方案中。
 
-将来的 Visual Studio 版本，但是，将_不_还原或更新组件。
-这意味着，如果您打开新的计算机上的解决方案，该组件将不会下载并安装;和作者将不能为您提供更新。 应计划：
+但未来的 Visual Studio 版本将_不_会还原或更新组件。
+这意味着, 如果在新的计算机上打开该解决方案, 则将不会下载和安装该组件;作者将无法向您提供更新。 你应计划:
 
-* 从组件中提取的程序集，并直接在您的项目中引用它们。
-* 请与组件作者联系并请求有关计划将迁移到 NuGet 的信息。
-* 调查其他 NuGet 包，或查找的源代码，如果该组件是开放源代码。
+- 从组件提取程序集并直接在项目中引用它们。
+- 请与组件作者联系, 并询问计划迁移到 NuGet。
+- 调查备用 NuGet 包, 或者在组件为开源的情况下查找源代码。
 
-迁移到 NuGet，仍在使用多个组件供应商和其他人 （包括地区销售的产品） 可能会调查替代交付选项。
+许多组件供应商仍在努力迁移到 NuGet, 其他组件 (包括商业可用产品) 可能正在研究备选交付选项。
 
 
 ## <a name="related-links"></a>相关链接
-- [受欢迎的 Xamarin 插件和库的列表](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
+- [常用 Xamarin 插件和库的列表](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [安装和使用 NuGet 包 (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [包括 NuGet 包 (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

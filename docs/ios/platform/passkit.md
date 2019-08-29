@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528315"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119172"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin 中的 PassKit
 
@@ -326,9 +326,9 @@ ISO-8859-1 编码是最常见的, 可检查将读取你的阶段的扫描系统�
 
 可以通过以下方式将 pass 添加到钱包:
 
-* **管道应用程序**-这些操作不会直接操作传递, 它们只是加载传递文件并向用户显示将其添加到钱包的选项。 
+- **管道应用程序**-这些操作不会直接操作传递, 它们只是加载传递文件并向用户显示将其添加到钱包的选项。 
 
-* **附属应用**-这些应用程序由提供商编写, 用于分发刀路, 并提供其他功能来浏览或编辑这些应用。 Xamarin iOS 应用程序可以完全访问 PassKit API, 以创建和操作 pass。 然后, 可以使用`PKAddPassesViewController`将传递添加到钱包。 本文档的相关**应用程序**部分详细介绍了此过程。
+- **附属应用**-这些应用程序由提供商编写, 用于分发刀路, 并提供其他功能来浏览或编辑这些应用。 Xamarin iOS 应用程序可以完全访问 PassKit API, 以创建和操作 pass。 然后, 可以使用`PKAddPassesViewController`将传递添加到钱包。 本文档的相关**应用程序**部分详细介绍了此过程。
 
 ### <a name="conduit-applications"></a>管道应用程序
 

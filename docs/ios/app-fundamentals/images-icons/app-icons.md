@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 0f20e7dafaa855e3610595886537ee4910b09d2e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dd712940ff6e7000ffd9181f808a8ab32093b38d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643060"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121465"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的应用程序图标
 
 将详细介绍以下主题：
 
-* "[应用程序"、"聚光灯" 和 "设置" 图标](#icon-types)-IOS 应用程序所需的不同类型的图标。
-* 使用资产[目录管理图标](#managing)-使用资产目录管理应用程序图标。
-* [ITunes 图稿](#itunes)-为提供应用程序的即席方法提供所需的 iTunes 作品。
+- "[应用程序"、"聚光灯" 和 "设置" 图标](#icon-types)-IOS 应用程序所需的不同类型的图标。
+- 使用资产[目录管理图标](#managing)-使用资产目录管理应用程序图标。
+- [ITunes 图稿](#itunes)-为提供应用程序的即席方法提供所需的 iTunes 作品。
 
 <a name="icon-types" />
 

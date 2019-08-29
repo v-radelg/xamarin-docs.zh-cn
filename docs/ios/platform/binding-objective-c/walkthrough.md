@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 634081b63ce4a70368ef7621837932a3ae6de0a8
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: ffd244a77ae75fefcf42f185bad1e8f7ccdbe560
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890394"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121337"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
@@ -22,9 +22,9 @@ _本文介绍了如何为现有的目标-C 库 (InfColorPicker) 创建 Xamarin i
 
 通常在 iOS 生态系统中, 可以找到3种风格的库:
 
-* 作为带有`.a`扩展名及其标头 (.h 文件) 的预编译静态库文件。 例如, [Google 的分析库](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* 作为预编译框架。 这只是包含静态库和标头的文件夹, 有时还包含扩展`.framework`的其他资源。 例如, [Google 的 Admob 是库](https://developers.google.com/admob/ios/download)。
-* 作为源代码文件。 例如, 包含仅`.m` `.h`包含目标 C 文件的库。
+- 作为带有`.a`扩展名及其标头 (.h 文件) 的预编译静态库文件。 例如, [Google 的分析库](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+- 作为预编译框架。 这只是包含静态库和标头的文件夹, 有时还包含扩展`.framework`的其他资源。 例如, [Google 的 Admob 是库](https://developers.google.com/admob/ios/download)。
+- 作为源代码文件。 例如, 包含仅`.m` `.h`包含目标 C 文件的库。
 
 在第一个和第二个方案中, 已有一个预编译的 CocoaTouch 静态库, 因此在本文中, 我们将重点介绍第三个方案。 请记住, 在开始创建绑定之前, 请始终检查随库一起提供的许可, 以确保可随意绑定。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 2445645012e54b1818b1ec72116a85d8b985ead3
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 2e429002923d4bfdd2cf5ded4ef1508f8ebf20b8
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976459"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121501"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的应用内购买
 
@@ -34,17 +34,17 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 ## <a name="contents"></a>内容
 
-* [应用内购买基本知识和配置](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
+- [应用内购买基本知识和配置](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
-* [StoreKit 概述和检索产品信息](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+- [StoreKit 概述和检索产品信息](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
-* [购买易耗型产品](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
+- [购买易耗型产品](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
-* [购买非易耗型产品](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
+- [购买非易耗型产品](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
 
-* [事务和验证](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
+- [事务和验证](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
-* [订阅和报告](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
+- [订阅和报告](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
 ## <a name="summary"></a>总结
 

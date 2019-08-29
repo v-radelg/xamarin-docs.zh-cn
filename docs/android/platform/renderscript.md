@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9f15ef73e51a2e94e1a1174134f3e69d2cb2c4a3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 14fb3740f558b006d507ff6875fd2cfc81a04298
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511430"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119735"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript 简介
 
@@ -22,11 +22,11 @@ _本指南介绍了 Renderscript, 并说明了如何在面向 API 级别17或更
 
 Renderscript 是 Google 创建的编程框架, 目的在于提高需要大量计算资源的 Android 应用程序的性能。 这是一个基于[C99](https://en.wikipedia.org/wiki/C99)的低级别、高性能 API。 由于它是将在 Cpu、Gpu 或 Dsp 上运行的低级别 API, Renderscript 非常适合用于可能需要执行以下任一操作的 Android 应用:
 
-* 图形
-* 图像处理
-* 加密
-* 信号处理
-* 数学例程
+- 图形
+- 图像处理
+- 加密
+- 信号处理
+- 数学例程
 
 Renderscript 将使用`clang`并将脚本编译为绑定到 APK 的 LLVM 字节代码。 首次运行应用时, LLVM 字节代码将被编译为设备上的处理器的机器代码。 此体系结构允许 Android 应用程序利用机器代码的优点, 而开发人员无需为设备自身的每个处理器编写该代码。
 

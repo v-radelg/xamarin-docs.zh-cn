@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2794a1d23cd7c1eab9cf4e94eaa805ad2b8bca61
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526249"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119121"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在远程进程中运行 Android 服务
 
@@ -33,9 +33,9 @@ _通常, Android 应用程序中的所有组件都将在同一进程中运行。
 
 在许多方面, 绑定到在另一个进程中运行的服务与[绑定到本地服务](~/android/app-fundamentals/services/creating-a-service/bound-services.md)的操作相同。 客户端将调用`BindService`以绑定 (并在必要时启动) 服务。 将`Android.OS.IServiceConnection`创建一个对象, 用于管理客户端和服务之间的连接。 如果客户端成功绑定到服务, 则 Android 将通过`IServiceConnection`返回一个对象, 该对象可用于对服务调用方法。 然后, 客户端使用此对象与服务进行交互。 若要查看, 请执行以下步骤以绑定到服务:
 
-* **创建意向**&ndash;必须使用显式目的才能绑定到服务。
-* **实现并实例化`IServiceConnection`**  &ndash;对象:对象充当客户端和服务之间的中介。 `IServiceConnection`  它负责监视客户端与服务器之间的连接。
-* **调用`BindService`**  方法&ndash;会将在前面步骤中创建的意向和服务连接调度到 Android, 这将负责启动服务并在`BindService`客户端和服务。
+- **创建意向**&ndash;必须使用显式目的才能绑定到服务。
+- **实现并实例化`IServiceConnection`**  &ndash;对象:对象充当客户端和服务之间的中介。 `IServiceConnection`  它负责监视客户端与服务器之间的连接。
+- **调用`BindService`**  方法&ndash;会将在前面步骤中创建的意向和服务连接调度到 Android, 这将负责启动服务并在`BindService`客户端和服务。
 
 跨进程边界的需求会带来额外的复杂性: 通信是单向的 (客户端到服务器), 而客户端不能直接对服务类调用方法。 请记住, 当服务运行与客户端相同的进程时, Android 会提供`IBinder`一个允许双向通信的对象。 如果服务在其自己的进程中运行, 则不会出现这种情况。 客户端使用`Android.OS.Messenger`类的帮助与远程服务进行通信。
 
@@ -68,9 +68,9 @@ _通常, Android 应用程序中的所有组件都将在同一进程中运行。
 
 如上所述, 服务在其自己的进程中运行的事实意味着涉及到一些不同的 Api。 下面是使用远程服务进行绑定和使用的步骤:  
 
-* **创建`Service`子类**子类类型`Service`并实现绑定服务的生命周期方法。 &ndash; 还必须设置元数据, 以通知 Android 服务要在自己的进程中运行。
-* 实现负责分析客户端请求, 提取从客户端传递的任何参数, 并对服务调用适当的方法。 **`Handler`** &ndash; `Handler`
-* `Service` `Handler` **`Messenger`** 如以上`Messenger`所述实例化, 每个必须维护类的实例, 该实例将客户端请求路由到在上一步中创建的。 &ndash;
+- **创建`Service`子类**子类类型`Service`并实现绑定服务的生命周期方法。 &ndash; 还必须设置元数据, 以通知 Android 服务要在自己的进程中运行。
+- 实现负责分析客户端请求, 提取从客户端传递的任何参数, 并对服务调用适当的方法。 **`Handler`** &ndash; `Handler`
+- `Service` `Handler` **`Messenger`** 如以上`Messenger`所述实例化, 每个必须维护类的实例, 该实例将客户端请求路由到在上一步中创建的。 &ndash;
 
 打算在其自身进程中运行的服务从根本上讲, 仍是一项绑定服务。 服务类将扩展基类`Service` , 并`ServiceAttribute`通过包含 android 需要在 android 清单中捆绑的元数据进行修饰。 首先是, 的以下属性`ServiceAttribute`对于进程外服务非常重要:
 
@@ -133,8 +133,8 @@ _通常, Android 应用程序中的所有组件都将在同一进程中运行。
 
 下面的示例应用程序中的代码片段演示了一个`HandleMessage`示例。 在此示例中, 客户端可以请求服务的两个操作:
 
-* 第一个操作是_Hello, World_消息, 客户端已向服务发送了简单消息。
-* 第二个操作将对服务调用方法并检索字符串, 在这种情况下, 该字符串是一条消息, 该消息返回服务启动的时间和运行时间:
+- 第一个操作是_Hello, World_消息, 客户端已向服务发送了简单消息。
+- 第二个操作将对服务调用方法并检索字符串, 在这种情况下, 该字符串是一条消息, 该消息返回服务启动的时间和运行时间:
 
 ```csharp
 public class TimestampRequestHandler : Android.OS.Handler
@@ -384,10 +384,10 @@ if (clientMessenger!= null)
 
 Android 提供四种不同的权限级别:
 
-* **正常**&ndash;这是默认权限级别。 它用于标识可由 Android 自动向请求它的客户端授予的低风险权限。 用户不必显式授予这些权限, 但可以在应用设置中查看权限。
-* **签名**&ndash;这是一种特殊的权限类别, 由 Android 自动授予使用同一证书签名的应用程序。 此权限旨在使应用程序开发人员能够轻松地在应用程序之间共享组件或数据, 而无需麻烦用户进行持续审批。
-* **signatureOrSystem**这非常类似于上面所述的签名权限。 &ndash; 除了自动授予由同一证书签名的应用之外, 还会将此权限授予已签名证书的应用, 该证书用于对随 Android 系统映像安装的应用进行签名。 此权限通常仅由 Android ROM 开发人员用于允许其应用程序使用第三方应用。 这种情况通常不是指一般的公开分发的应用程序。
-* **危险**&ndash;危险权限是指那些可能会给用户带来问题的权限。 出于此原因, 必须由用户显式批准**危险**权限。
+- **正常**&ndash;这是默认权限级别。 它用于标识可由 Android 自动向请求它的客户端授予的低风险权限。 用户不必显式授予这些权限, 但可以在应用设置中查看权限。
+- **签名**&ndash;这是一种特殊的权限类别, 由 Android 自动授予使用同一证书签名的应用程序。 此权限旨在使应用程序开发人员能够轻松地在应用程序之间共享组件或数据, 而无需麻烦用户进行持续审批。
+- **signatureOrSystem**这非常类似于上面所述的签名权限。 &ndash; 除了自动授予由同一证书签名的应用之外, 还会将此权限授予已签名证书的应用, 该证书用于对随 Android 系统映像安装的应用进行签名。 此权限通常仅由 Android ROM 开发人员用于允许其应用程序使用第三方应用。 这种情况通常不是指一般的公开分发的应用程序。
+- **危险**&ndash;危险权限是指那些可能会给用户带来问题的权限。 出于此原因, 必须由用户显式批准**危险**权限。
 
 由于`signature` 和`normal`权限是在安装时由 Android 自动授予的, 因此在包含客户端的 APK**之前**安装 APK 托管服务是非常重要的。 如果首先安装客户端, 则 Android 不会授予权限。 在这种情况下, 需要卸载客户端 APK, 安装服务 APK, 然后重新安装客户端 APK。
 

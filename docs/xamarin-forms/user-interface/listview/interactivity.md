@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 3949dd85492a8181ee53e23b3ba2e986e59f8f47
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065549"
+ms.locfileid: "70121626"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
@@ -79,9 +79,9 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 可以在任何实现上下文操作`Cell`子类 （只要它不被用作组标头） 通过创建`MenuItem`s 并将它们添加到`ContextActions`单元格的集合。 具有以下属性可配置的上下文操作：
 
-* **文本**&ndash;菜单项中显示的字符串。
-* **单击**&ndash;时单击项的事件。
-* **IsDestructive** &ndash; （可选） 为 true 时呈现的项是以不同的方式在 iOS 上。
+- **文本**&ndash;菜单项中显示的字符串。
+- **单击**&ndash;时单击项的事件。
+- **IsDestructive** &ndash; （可选） 为 true 时呈现的项是以不同的方式在 iOS 上。
 
 多个上下文操作可以添加到单元格，，但是只有一个应有`IsDestructive`设置为`true`。 下面的代码演示如何上下文操作将添加到`ViewCell`:
 

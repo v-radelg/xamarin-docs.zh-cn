@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: f4ff4b7b39f589f29f0c4c5df76ff36fe0060d83
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a350a3ae37b66b8701f977370fcbe79940d84f50
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529213"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120491"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms 书籍创建移动应用
 
@@ -26,11 +26,11 @@ ms.locfileid: "69529213"
 
 下载 Microsoft Virtual Academy 中的首选电子书格式：
 
-* [**PDF (56Mb)** ](https://aka.ms/xamebook)
+- [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-* [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
+- [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
 
-* [**Kindle 版 (325 Mb)** ](https://aka.ms/xamebook/mobi)
+- [**Kindle 版 (325 Mb)** ](https://aka.ms/xamebook/mobi)
 
 此外可以[下载各个章节](#download-chapters-and-summaries)作为 PDF 文件。
 

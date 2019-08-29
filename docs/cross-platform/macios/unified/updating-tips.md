@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: c0e4152574cf400f5b77b504955b248dd8477a7c
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 2b82de58b9d2f9e8acb8996f484845f9a71b6e80
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509516"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120309"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>将代码更新为 Unified API 的提示
 
@@ -55,43 +55,43 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 使用迁移工具后, 可能仍会出现一些需要手动干预的编译器错误。
 可能需要手动修复的一些事项包括:
 
-* 比较`enum`可能`(int)`需要强制转换。
+- 比较`enum`可能`(int)`需要强制转换。
 
-* `NSDictionary.IntValue`现在返回`nint`, 可以改`Int32Value`为使用。
+- `NSDictionary.IntValue`现在返回`nint`, 可以改`Int32Value`为使用。
 
-* `nfloat`和`nint`类型无法标记`const`;  `static readonly nint`是一个合理的替代方法。
+- `nfloat`和`nint`类型无法标记`const`;  `static readonly nint`是一个合理的替代方法。
 
-* 通常`MonoTouch.` `MonoTouch.Constants.Version` 在命名`ObjCRuntime.Constants.Version`空间中通常是在命名空间中使用的内容(例如:现在为)。`ObjCRuntime.`
+- 通常`MonoTouch.` `MonoTouch.Constants.Version` 在命名`ObjCRuntime.Constants.Version`空间中通常是在命名空间中使用的内容(例如:现在为)。`ObjCRuntime.`
 
-* 尝试序列化`nint`和`nfloat`类型时, 序列化对象的代码可能会中断。 请确保在迁移后按预期检查序列化代码。
+- 尝试序列化`nint`和`nfloat`类型时, 序列化对象的代码可能会中断。 请确保在迁移后按预期检查序列化代码。
 
-* 有时, 自动工具不会在`#if #else`条件编译器指令内丢失代码。 在这种情况下, 需要手动进行修补 (请参阅下面的常见错误)。
+- 有时, 自动工具不会在`#if #else`条件编译器指令内丢失代码。 在这种情况下, 需要手动进行修补 (请参阅下面的常见错误)。
 
-* 迁移工具不会`[Export]`自动修复使用的手动导出方法, 例如, 在此代码中 snippert 必须手动将返回类型更新为: `nfloat`
+- 迁移工具不会`[Export]`自动修复使用的手动导出方法, 例如, 在此代码中 snippert 必须手动将返回类型更新为: `nfloat`
 
     ```csharp
     [Export("tableView:heightForRowAtIndexPath:")]
     public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
     ```
 
-* Unified API 不会提供 NSDate 与 .NET DateTime 之间的隐式转换, 因为它不是无损转换。 如果为, 则在`DateTimeKind.Unspecified`强制转换为`DateTime` `NSDate`之前, 阻止将 .net 转换为本地或 UTC 的相关错误。
+- Unified API 不会提供 NSDate 与 .NET DateTime 之间的隐式转换, 因为它不是无损转换。 如果为, 则在`DateTimeKind.Unspecified`强制转换为`DateTime` `NSDate`之前, 阻止将 .net 转换为本地或 UTC 的相关错误。
 
-* 目标-C 类别方法现在作为 Unified API 中的扩展方法生成。 例如, 以前使用`UIView.DrawString`的代码现在在 Unified API 中引用。 `NSString.DrawString`
+- 目标-C 类别方法现在作为 Unified API 中的扩展方法生成。 例如, 以前使用`UIView.DrawString`的代码现在在 Unified API 中引用。 `NSString.DrawString`
 
-* 使用 AVFoundation 类的`VideoSettings`代码应更改为`WeakVideoSettings`使用属性。 这需要一个`Dictionary`, 它可用作设置类的属性, 例如:
+- 使用 AVFoundation 类的`VideoSettings`代码应更改为`WeakVideoSettings`使用属性。 这需要一个`Dictionary`, 它可用作设置类的属性, 例如:
 
     ```csharp
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
-* NSObject `.ctor(IntPtr)`构造函数已从公共更改为受保护 ([以防不正当使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
+- NSObject `.ctor(IntPtr)`构造函数已从公共更改为受保护 ([以防不正当使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 
-* `NSAction`已[替换](~/cross-platform/macios/unified/overview.md#NSAction)为标准 .net `Action`。 一些简单的 (单个参数) 委托也已替换为`Action<T>`。
+- `NSAction`已[替换](~/cross-platform/macios/unified/overview.md#NSAction)为标准 .net `Action`。 一些简单的 (单个参数) 委托也已替换为`Action<T>`。
 
 最后, 请参考[经典的 Unified API 差异](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md), 以便在代码中查找对 api 所做的更改。 搜索[此页](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)将帮助查找经典 api 和已更新的内容。
 
 > [!NOTE]
-> 迁移`MonoTouch.Dialog`后命名空间保持不变。 如果你的代码使用**monotouch.dialog** , 则应该继续使用该命名空间-不要*更改* `MonoTouch.Dialog`为`Dialog`!
+> 迁移`MonoTouch.Dialog`后命名空间保持不变。 如果你的代码使用**monotouch.dialog** , 则应该继续使用该命名空间-不要更改`MonoTouch.Dialog`为`Dialog`!
 
 ## <a name="common-compiler-errors"></a>常见编译器错误
 
@@ -152,13 +152,13 @@ public override nint NumberOfSections (UITableView tableView)
 
 能够更正拼写为`AddEllipseInRect`。 其他名称更改包括:
 
-* 将 "Color" `NSColor.Black`变为黑色。
-* 将 MapKit "AddAnnotation" 更改`AddAnnotations`为。
-* 将 AVFoundation "DataUsingEncoding" 更改`Encode`为。
-* 将 AVFoundation "AVMetadataObject. TypeQRCode" 更改`AVMetadataObjectType.QRCode`为。
-* 将 AVFoundation "VideoSettings" 更改`WeakVideoSettings`为。
-* 将 PopViewControllerAnimated 更改`PopViewController`为。
-* 将 CoreGraphics "CGBitmapContext. SetRGBFillColor" 更改`SetFillColor`为。
+- 将 "Color" `NSColor.Black`变为黑色。
+- 将 MapKit "AddAnnotation" 更改`AddAnnotations`为。
+- 将 AVFoundation "DataUsingEncoding" 更改`Encode`为。
+- 将 AVFoundation "AVMetadataObject. TypeQRCode" 更改`AVMetadataObjectType.QRCode`为。
+- 将 AVFoundation "VideoSettings" 更改`WeakVideoSettings`为。
+- 将 PopViewControllerAnimated 更改`PopViewController`为。
+- 将 CoreGraphics "CGBitmapContext. SetRGBFillColor" 更改`SetFillColor`为。
 
 **错误 CS0546: 无法重写, 因为 "MapKit" 没有可重写的 set 访问器 (CS0546)**
 
@@ -166,10 +166,10 @@ public override nint NumberOfSections (UITableView tableView)
 
 [修复](https://forums.xamarin.com/discussion/comment/109505/#Comment_109505):
 
-* 添加字段以跟踪坐标
-* 在坐标属性的 getter 中返回此字段
-* 重写 SetCoordinate 方法并设置字段
-* 在具有传入坐标参数的 ctor 中调用 SetCoordinate
+- 添加字段以跟踪坐标
+- 在坐标属性的 getter 中返回此字段
+- 重写 SetCoordinate 方法并设置字段
+- 在具有传入坐标参数的 ctor 中调用 SetCoordinate
 
 它应类似于以下内容：
 

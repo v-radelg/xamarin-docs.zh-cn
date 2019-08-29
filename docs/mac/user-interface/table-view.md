@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b5ffa884def5acb01dc07ce39a2189e2570209c3
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 09e4ca561f962e46dfe4eccbaf1cf284f4bb2827
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620576"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120834"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin 中的表视图
 
@@ -40,8 +40,8 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用表视图。它介绍�
 
 创建表视图时, Apple 建议以下内容:
 
-* 允许用户通过单击列标题对表进行排序。
-* 创建用名词或短名词短语描述列中显示的数据的列标题。
+- 允许用户通过单击列标题对表进行排序。
+- 创建用名词或短名词短语描述列中显示的数据的列标题。
 
 有关详细信息, 请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[内容视图](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1)部分。
 
@@ -581,7 +581,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 ## <a name="using-images-in-table-views"></a>在表视图中使用图像
 
-若要在中`NSTableView`包含图像作为单元的一部分, 您需要更改表视图的`NSTableViewDelegate's` `GetViewForItem`方法返回数据的方式以使用`NSTableCellView`而非典型`NSTextField`的。 例如:
+若要在中`NSTableView`包含图像作为单元的一部分, 您需要更改表视图的`NSTableViewDelegate's` `GetViewForItem`方法返回数据的方式以使用`NSTableCellView`而非典型`NSTextField`的。 例如：
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 22efd672c041ad84488f822ac2e7e51a80ea2b61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: be353c6274dcf69946740e2d195b9e4d64208313
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655332"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121577"
 ---
 # <a name="adding-ios-specific-formatting"></a>添加特定于 iOS 的格式
 
@@ -20,8 +20,8 @@ ms.locfileid: "68655332"
 
 用于控制你的 Xamarin 的其他选项-Forms iOS 应用的外观包括:
 
-* 配置 [**info.plist**](#info-plist) 中的显示选项
-* [通过`UIAppearance` API 设置控件样式](#uiappearance)
+- 配置 [**info.plist**](#info-plist) 中的显示选项
+- [通过`UIAppearance` API 设置控件样式](#uiappearance)
 
 下面讨论了这些备选方法。
 

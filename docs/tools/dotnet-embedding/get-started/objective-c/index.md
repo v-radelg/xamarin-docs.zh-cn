@@ -1,68 +1,68 @@
 ---
-title: Objective C 入门
-description: 本文档介绍了如何开始使用.NET 嵌入 Objective-c。 它讨论了要求、 安装.NET 嵌入从 NuGet 和受支持的平台。
+title: 客观入门-C
+description: 本文档介绍如何开始使用与目标 C 的 .NET 嵌入。 它讨论了要求、从 NuGet 安装 .NET 嵌入以及支持的平台。
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: lobrien
 ms.author: laobri
 ms.date: 11/14/2017
-ms.openlocfilehash: 92b11db2ee566bcd9f3f8a3ee3771e163a47589b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9d17027b1b84c7d742404c36fbdd4886de523914
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61040890"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119980"
 ---
-# <a name="getting-started-with-objective-c"></a>Objective C 入门
+# <a name="getting-started-with-objective-c"></a>客观入门-C
 
-这是适用于 OBJECTIVE-C 的其中介绍了所有支持平台的基础知识的入门页。
+这是针对目标-C 的入门页面, 涵盖所有支持的平台的基础知识。
 
 ## <a name="requirements"></a>要求
 
-若要使用.NET 嵌入 Objective C，您将需要运行的 Mac:
+若要将 .NET 嵌入与目标-C 一起使用, 需要运行以下 Mac:
 
-* macOS 10.12 (Sierra) 或更高版本
-* Xcode 8.3.2 或更高版本
-* [Mono 5.0](https://www.mono-project.com/download/)
+- macOS 10.12 (塞拉利昂) 或更高版本
+- Xcode 8.3.2 或更高版本
+- [Mono 5。0](https://www.mono-project.com/download/)
 
-你可以安装[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)来编辑和编译在C#代码。
+您可以安装[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)来编辑和编译您C#的代码。
 
 > [!NOTE]
-> * 早期版本的 macOS、 Xcode 和 Mono_可能_起作用，而是经过测试，不受支持
-> * 在 Windows 中，可以进行代码生成，但就仅可以在其中安装 Xcode 的 Mac 计算机上编译该
+> - 早期版本的 macOS、Xcode 和 Mono_可能_有效, 但未经测试且不受支持
+> - 代码生成可以在 Windows 上完成, 但只能在安装了 Xcode 的 Mac 计算机上进行编译
 
-## <a name="installing-net-embedding-from-nuget"></a>.NET 嵌入从 NuGet 安装
+## <a name="installing-net-embedding-from-nuget"></a>从 NuGet 安装 .NET 嵌入
 
-请按照这些[说明](~/tools/dotnet-embedding/get-started/install/install.md)来安装和配置.NET 嵌入为你的项目。
+按照以下[说明](~/tools/dotnet-embedding/get-started/install/install.md)安装和配置项目的 .net 嵌入。
 
-示例命令调用被列入[macOS](~/tools/dotnet-embedding/get-started/objective-c/macos.md)并[iOS](~/tools/dotnet-embedding/get-started/objective-c/ios.md)入门指南。
+[MacOS](~/tools/dotnet-embedding/get-started/objective-c/macos.md)和[iOS](~/tools/dotnet-embedding/get-started/objective-c/ios.md)入门指南中列出了一个示例命令调用。
 
 ## <a name="platforms"></a>平台
 
-OBJECTIVE-C 是一种语言，最常用于编写适用于 macOS、 iOS、 tvOS 和 watchOS 应用程序;.NET 嵌入支持所有这些平台。 每个平台使用暗示着[此处介绍的主要差异和这些](~/tools/dotnet-embedding/objective-c/platforms.md)。
+目标-C 是一种最常用于编写 macOS、iOS、tvOS 和 watchOS 应用程序的语言; .NET 嵌入支持所有这些平台。 使用每个平台意味着存在一些[关键差异, 这里介绍了这些差异](~/tools/dotnet-embedding/objective-c/platforms.md)。
 
 ### <a name="macos"></a>macOS
 
-[创建 macOS 应用程序](~/tools/dotnet-embedding/get-started/objective-c/macos.md)是最简单的因为它不涉及任意数量的其他步骤，类似于设立标识、 provisining 配置文件、 模拟器和设备。 建议使用 macOS 文档之前适用于 iOS 的一个启动的。
+[创建 macOS 应用程序](~/tools/dotnet-embedding/get-started/objective-c/macos.md)最为简单, 因为它不涉及多个附加步骤, 如设置标识、provisining 配置文件、模拟器和设备。 建议你首先了解适用于 iOS 的 macOS 文档。
 
-### <a name="ios--tvos"></a>iOS / tvOS
+### <a name="ios--tvos"></a>iOS/tvOS
 
-请确保你已设置为之前尝试创建一个开发 iOS 应用程序使用.NET 嵌入。 [按照](~/tools/dotnet-embedding/get-started/objective-c/ios.md)假定您已成功地构建和部署 iOS 应用程序从您的计算机。
+请确保已设置为开发 iOS 应用程序, 然后再尝试使用 .NET 嵌入进行创建。 [以下说明](~/tools/dotnet-embedding/get-started/objective-c/ios.md)假定你已成功从计算机生成并部署了 iOS 应用程序。
 
-对 tvOS 的支持是类似于 iOS 的工作原理，只需在 Ide （Visual Studio 和 Xcode） 而不是 iOS 项目中使用 tvOS 项目。
+对 tvOS 的支持与 iOS 的工作方式类似, 只是在 Ide 中使用 tvOS 项目 (Visual Studio 和 Xcode), 而不是使用 iOS 项目。
 
 > [!NOTE]
-> 对 watchOS 将在未来版本中提供，并将非常类似于 iOS/tvOS 的支持。
+> 将来的版本将提供对 watchOS 的支持, 并将非常类似于 iOS/tvOS。
 
 ## <a name="further-reading"></a>其他阅读材料
 
-* [.NET 嵌入特定于 Objective C 的功能](~/tools/dotnet-embedding/objective-c/index.md)
-* [适用于 OBJECTIVE-C 的最佳实践](~/tools/dotnet-embedding/objective-c/best-practices.md)
-* [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
-* [参与到开放源代码项目](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [错误代码和说明](~/tools/dotnet-embedding/errors.md)
-* [目标平台](~/tools/dotnet-embedding/objective-c/platforms.md)
+- [特定于目标的 .NET 嵌入功能-C](~/tools/dotnet-embedding/objective-c/index.md)
+- [针对目标的最佳实践-C](~/tools/dotnet-embedding/objective-c/best-practices.md)
+- [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
+- [参与开源项目](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+- [错误代码和描述](~/tools/dotnet-embedding/errors.md)
+- [目标平台](~/tools/dotnet-embedding/objective-c/platforms.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [天气示例 （iOS 和 macOS）](https://github.com/jamesmontemagno/embeddinator-weather)
+- [天气示例 (iOS & macOS)](https://github.com/jamesmontemagno/embeddinator-weather)

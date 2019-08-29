@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 63f815cc974315735220a99fd4cce2af408a8c2f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526231"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119048"
 ---
 # <a name="creating-a-service"></a>创建服务
 
 Xamarin Android 服务必须遵守 Android 服务的两个 inviolable 规则:
 
-* 它们必须扩展[`Android.App.Service`](xref:Android.App.Service)。
-* 它们必须用[`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)来修饰。
+- 它们必须扩展[`Android.App.Service`](xref:Android.App.Service)。
+- 它们必须用[`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)来修饰。
 
 Android 服务的另一要求是必须在**androidmanifest.xml**中注册, 并为其指定唯一名称。 Xamarin 会自动在生成时将清单中的服务注册到必需的 XML 属性。
 

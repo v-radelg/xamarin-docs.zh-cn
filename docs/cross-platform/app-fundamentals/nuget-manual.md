@@ -1,40 +1,40 @@
 ---
 title: 手动为 Xamarin 创建 NuGet 包
-description: 本文档包含提示以帮助您构建面向 Xamarin 平台的 NuGet 包。 它描述 NuGet 包 Xamarin 配置文件，PCL Nuget 平台依赖项，并链接到各种开源的示例。
+description: 本文档包含有助于构建面向 Xamarin 平台的 NuGet 包的提示。 它介绍了 NuGet 包 Xamarin 配置文件、带有平台依赖项的 PCL Nuget 以及指向各种开源示例的链接。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 2f66d8a3960741643013a1010162f52d283026d6
-ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
+ms.openlocfilehash: cf694b54c8d2cdb33fd480d89d32b439f036ddc5
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67855711"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119449"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>手动为 Xamarin 创建 NuGet 包
 
-_此页面包含一些提示，以帮助您构建面向 Xamarin 平台的 NuGet 包。_
+_本页包含有助于构建面向 Xamarin 平台的 NuGet 包的一些提示。_
 
 > [!NOTE]
-> Xamarin Studio 6.2 （和 Visual Studio for Mac） 包括以下功能_自动_从 PCL、.NET Standard，或共享的项目生成 NuGet 包。 请参阅[用于代码共享的多平台库](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)更多详细信息的指南。
+> Xamarin Studio 6.2 (和 Visual Studio for Mac) 包括_自动_从 PCL、.NET Standard 或共享项目中生成 NuGet 包的能力。 有关更多详细信息, 请参阅代码共享指南中的多[平台库](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)。
 
 ## <a name="nuget-package-xamarin-profiles"></a>NuGet 包 Xamarin 配置文件
 
-NuGet 网站[支持多个.NET Framework 版本和配置文件](https://docs.nuget.org/create/enforced-package-conventions)讨论如何支持其他 Microsoft 框架与配置文件，但不包括使用 Xamarin 的目标框架名称。
+NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nuget.org/create/enforced-package-conventions)讨论如何支持不同的 Microsoft 框架和配置文件, 但不包括 Xamarin 使用的目标框架名称。
 
-目前正在使用的主要 Xamarin 目标框架：
+目前使用的主要 Xamarin 目标框架是:
 
-* **MonoAndroid** - Xamarin.Android
-* **Xamarin.iOS** -Xamarin.iOS [Unified API](~/cross-platform/macios/unified/index.md) （支持 64 位）
-* **Xamarin.Mac** -Xamarin.Mac 的移动配置文件，它相当于 Xamarin.iOS 和 Xamarin.Android API 图面。
+- **MonoAndroid** -Xamarin
+- **Xamarin** ios [Unified API](~/cross-platform/macios/unified/index.md) (支持64位)
+- **Xamarin** -xamarin-xamarin 的移动配置文件, 等效于 Xamarin 和 xamarin API surface。
 
-此外，还有针对较旧 iOS[经典 API](~/cross-platform/macios/unified/index.md):
+旧的 iOS [Classic API](~/cross-platform/macios/unified/index.md)还有一个目标:
 
-* **MonoTouch** -iOS 经典 API
+- **Monotouch.dialog** -iOS Classic API
 
-一个 **.nuspec**针对所有这些文件将如下所示：
+以**nuspec**文件为目标, 其内容如下所示:
 
 ```xml
 <files>
@@ -45,39 +45,39 @@ NuGet 网站[支持多个.NET Framework 版本和配置文件](https://docs.nuge
 </files>
 ```
 
-上述将忽略任何可移植类库。
+以上将忽略任何可移植类库。
 
-大多数 **.nuspec**文件指定的目标框架的版本号，但它是可选的如果您的程序集适用于所有版本的目标框架。 因此，如果你的目标已**lib\MonoAndroid**这就意味着它适用于任何版本的 Xamarin.Android。
+大多数**nuspec**文件指定目标框架的版本号, 但如果您的程序集适用于该目标框架的所有版本, 它是可选的。 如果你的目标是**lib\MonoAndroid** , 这意味着它适用于任何版本的 Xamarin。
 
-可以使用一组不带小数点的数字指定的版本，也可以指定它使用小数点。 而无需小数点 NuGet 将只需采取的每个数字并将其转换为一个版本的方法是插入。 每个数字之间。
+您可以使用一组不带小数点的数字来指定版本, 也可以使用小数点指定它。 如果不使用小数点, NuGet 将仅提取每个数字, 并在每个数字之间插入一个 ".", 从而将其转换为版本。
 
-在上述"MonoAndroid10"意味着"Android 1.0"。 这只是意味着项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 1.0 或更高版本。 在指定的版本`<TargetFrameworkVersion>`项目文件中的元素。
+在上述 "MonoAndroid10" 中, 表示 "Android 1.0"。 这就意味着, 项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 版本1.0 或更高版本。 版本是在项目文件的`<TargetFrameworkVersion>`元素中指定的。
 
-若要阐明：
+明确说明:
 
-- **MonoAndroid403**匹配 Android 4.0.3 和更高版本 （即 API 级别 15）
-- **Xamarin.iOS10**匹配 Xamarin.iOS 1.0 和更高版本
-- **Xamarin.iOS1.0**也匹配 Xamarin.iOS 1.0 和更高版本
+- **MonoAndroid403**匹配 Android 4.0.3 和更高版本 (ie API 级别 15)
+- **IOS10**与 Xamarin 1.0 和更高版本匹配
+- **Xamarin 1.0**还与 Xamarin 1.0 和更高版本匹配
 
-## <a name="pcl-nugets-with-platform-dependencies"></a>PCL 平台依赖项的 Nuget
+## <a name="pcl-nugets-with-platform-dependencies"></a>带有平台依赖项的 PCL Nuget
 
-PCL 配置文件的哪些.NET framework Api，他们可以访问将受到限制，他们肯定不能访问特定于平台的代码。 这些第三方链接讨论了创建使用 PCL 和本机 Api 提供的 Xamarin 和其他平台兼容性的 NuGet 包的不同方法：
+PCL 配置文件限制了可访问的 .NET framework Api, 它们当然无法访问特定于平台的代码。 这些第三方链接介绍了创建使用 PCL 和本机 Api 为 Xamarin 和其他平台提供兼容性的 NuGet 包的不同方法:
 
-- [如何使可移植库工作](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
-- [Bait 和 Switch PCL 技巧](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
-- [创建 NuGet PCL 适用于 Xamarin.iOS](http://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
+- [如何使可移植类库适用于你](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
+- [Bait 和交换机 PCL 技巧](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
+- [创建适用于 Xamarin 的 NuGet PCL](http://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
 
-此外部[PCL 配置文件的 NuGet 目标名称的列表](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)也是一个有用的参考。
+此外部[的 PCL 配置文件列表及其 NuGet 目标名称](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)也是一个有用的参考。
 
 ## <a name="examples"></a>示例
 
-可以参阅一些开放源代码示例：
+可以引用的一些开源示例:
 
-- [**ModernHttpClient** ](https://www.nuget.org/packages/modernhttpclient/) – 编写应用程序使用 System.Net.Http，但删除此库，它将会极大地更快 (视图[源](https://github.com/paulcbetts/ModernHttpClient))。
-- [**Splat** ](https://www.nuget.org/packages/Splat/) – 一个库来使跨平台的操作应 (视图[源](https://github.com/paulcbetts/Splat))。
-- [**NGraphics** ](https://www.nuget.org/packages/NGraphics/) -用于呈现矢量图形的.NET 的跨平台库 (视图[源](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec))。
+- [**ModernHttpClient**](https://www.nuget.org/packages/modernhttpclient/) –使用系统 .net 编写你的应用程序, 但将此库放入中, 它的速度将大大加快 (查看[源](https://github.com/paulcbetts/ModernHttpClient))。
+- [**Splat**](https://www.nuget.org/packages/Splat/) –一个用于实现跨平台 (查看[源](https://github.com/paulcbetts/Splat)) 的任务的库。
+- [**NGraphics**](https://www.nuget.org/packages/NGraphics/) -用于在 .net 上呈现矢量图形的跨平台库 (查看[源](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec))。
 
 ## <a name="related-links"></a>相关链接
 
-- [Nugetizer 3000 自动 Nuget 创建](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
+- [Nugetizer-3000 自动创建 Nuget](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
 - [在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

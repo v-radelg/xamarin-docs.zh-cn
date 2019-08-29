@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528845"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120744"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆积视图
 
@@ -61,16 +61,16 @@ ms.locfileid: "69528845"
 
 通常, 这意味着至少固定堆栈视图的两个边缘来展开和收缩, 从而定义其位置。 如果没有任何其他约束, 堆栈视图将自动调整大小以适合其所有子视图, 如下所示:
 
-* 沿其`Axis`大小将为所有子视图大小加上在每个子视图之间定义的任何空间的总和。
-* 如果属性为`true`, 则堆栈视图大小还将包括边距空间。 `LayoutMarginsRelativeArrangement`
-* 垂直于的`Axis`大小将设置为集合中的最大子视图。
+- 沿其`Axis`大小将为所有子视图大小加上在每个子视图之间定义的任何空间的总和。
+- 如果属性为`true`, 则堆栈视图大小还将包括边距空间。 `LayoutMarginsRelativeArrangement`
+- 垂直于的`Axis`大小将设置为集合中的最大子视图。
 
 此外, 还可以指定堆栈视图的**高度**和**宽度**约束。 在这种情况下, 子视图将布局 (调整大小) 以填充由`Distribution`和`Alignment`属性确定的堆栈视图指定的空间。
 
 `true`- 如果属性为, 则将基于第一个或最后一个子视图的基线来布局子视图, 而不是使用上、下或 * 中心 Y 位置。 `BaselineRelativeArrangement` 这些是在堆栈视图的内容上计算的, 如下所示:
 
-* 垂直堆栈视图将返回第一个基线和最后一个基线的第一个子视图。 如果这两个子视图本身都是堆栈视图, 则将使用其第一个或最后一个基线。
-* 水平堆栈视图将为第一个和最后一个基线使用最高的子视图。 如果最高视图也是堆栈视图, 它将使用最高的子视图作为基线。
+- 垂直堆栈视图将返回第一个基线和最后一个基线的第一个子视图。 如果这两个子视图本身都是堆栈视图, 则将使用其第一个或最后一个基线。
+- 水平堆栈视图将为第一个和最后一个基线使用最高的子视图。 如果最高视图也是堆栈视图, 它将使用最高的子视图作为基线。
 
 > [!IMPORTANT]
 > 基线对齐不适用于拉伸或压缩的子视图大小, 因为基线将计算到错误的位置。 对于基线对齐, 请确保子视图的**高度**与内部内容视图的**高度**匹配。
@@ -150,7 +150,7 @@ ms.locfileid: "69528845"
 
 有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
-在我们的示例中, 我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中, 我们将基于当前段隐藏和显示播放机。 例如：
+在我们的示例中, 我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中, 我们将基于当前段隐藏和显示播放机。 例如:
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {

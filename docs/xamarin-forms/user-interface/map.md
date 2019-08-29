@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
-ms.openlocfilehash: 4cfedad6ccf87dfef819b677233be1edb2d2c62d
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5eee9fea7ea0fffe9dc254ac4340ff05d087ce33
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887965"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121561"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 地图
 
@@ -115,13 +115,13 @@ Xamarin 文档中的说明进行操作并遵照[获取 Google Maps API v2 密钥
 
 您还需要通过右键单击 Android 项目，然后选择启用适当的权限**选项 > 生成 > Android 应用程序**和勾选以下：
 
-* `AccessCoarseLocation`
-* `AccessFineLocation`
-* `AccessLocationExtraCommands`
-* `AccessMockLocation`
-* `AccessNetworkState`
-* `AccessWifiState`
-* `Internet`
+- `AccessCoarseLocation`
+- `AccessFineLocation`
+- `AccessLocationExtraCommands`
+- `AccessMockLocation`
+- `AccessNetworkState`
+- `AccessWifiState`
+- `Internet`
 
 下面的屏幕截图显示了其中一些：
 

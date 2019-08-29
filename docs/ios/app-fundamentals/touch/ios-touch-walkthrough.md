@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: bd6f40a117734712941585b6ce0d630105e54693
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065442"
+ms.locfileid: "70121043"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin 中使用触控
 
@@ -96,9 +96,9 @@ ms.locfileid: "70065442"
     
     此方法的工作方式是检查`UITouch`某个对象, 如果该对象存在, 则根据触控发生的位置执行某些操作:
 
-    * In _TouchImage_ –在标签中`Touches Began`显示文本并更改图像。
-    * _内部 DoubleTouchImage_ –如果手势是双击, 则更改显示的图像。
-    * _DragImage 内_–设置指示触摸已开始的标志。 方法`TouchesMoved`将使用此标志来确定是否`DragImage`应在屏幕上移动, 如我们将在下一步中看到的那样。
+    - In _TouchImage_ –在标签中`Touches Began`显示文本并更改图像。
+    - _内部 DoubleTouchImage_ –如果手势是双击, 则更改显示的图像。
+    - _DragImage 内_–设置指示触摸已开始的标志。 方法`TouchesMoved`将使用此标志来确定是否`DragImage`应在屏幕上移动, 如我们将在下一步中看到的那样。
 
     上述代码只涉及单个触摸, 如果用户在屏幕上移动手指, 则没有任何行为。 若要响应移动, 请`TouchesMoved`实现, 如以下代码所示:
 

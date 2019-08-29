@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 2c69c995317d5121f203946cf1a4196bce9b4177
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643085"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120602"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中显示映像
 
@@ -159,9 +159,9 @@ if (MyIcon.Image != null) {
 
 有三种可能的`UIImage.RenderMode` `UIImageRenderingMode`通过枚举的设置:
 
-* `AlwaysOriginal`-强制将图像呈现为原始源映像文件, 而不进行任何更改。
-* `AlwaysTemplate`-通过使用指定`Tint`颜色着色像素来强制将图像呈现为模板图像。
-* `Automatic`-将图像作为模板呈现, 或者根据它所使用的环境呈现原始映像。 `UIToolBar`例如, 如果在`UINavigationBar` `UITabBar` 、或`UISegmentControl`中使用图像, 则会将其视为模板。
+- `AlwaysOriginal`-强制将图像呈现为原始源映像文件, 而不进行任何更改。
+- `AlwaysTemplate`-通过使用指定`Tint`颜色着色像素来强制将图像呈现为模板图像。
+- `Automatic`-将图像作为模板呈现, 或者根据它所使用的环境呈现原始映像。 `UIToolBar`例如, 如果在`UINavigationBar` `UITabBar` 、或`UISegmentControl`中使用图像, 则会将其视为模板。
 
 ## <a name="adding-new-assets-collections"></a>添加新资产集合
 

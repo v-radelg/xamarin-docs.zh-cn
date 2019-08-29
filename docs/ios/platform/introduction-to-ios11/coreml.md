@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: c2092cd9e7beb233c9478869ebff91d85b5b30c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c2747b24c47e826e0d832faa36ddb93d8aa06f37
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649608"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121516"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin 中的 CoreML 简介
 
@@ -171,11 +171,11 @@ void HandleClassification(VNRequest request, NSError error){
 
 有三个 CoreML 示例可供尝试:
 
-* [Mars Habitat 价格预测器示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)具有简单的数值输入和输出。
+- [Mars Habitat 价格预测器示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)具有简单的数值输入和输出。
 
-* [远景 & CoreML 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)接受 image 参数, 并使用远景框架标识图像中的正方形区域, 这些区域被传递到识别单个数字的 CoreML 模型。
+- [远景 & CoreML 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)接受 image 参数, 并使用远景框架标识图像中的正方形区域, 这些区域被传递到识别单个数字的 CoreML 模型。
 
-* 最后, [CoreML 图像识别示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)使用 CoreML 标识照片中的功能。 默认情况下, 它使用较小的**SqueezeNet**模型 (5mb), 但已编写它, 以便您可以下载和合并更大的**VGG16**模型 (553MB)。 有关详细信息, 请参阅[示例的自述文件](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)。
+- 最后, [CoreML 图像识别示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)使用 CoreML 标识照片中的功能。 默认情况下, 它使用较小的**SqueezeNet**模型 (5mb), 但已编写它, 以便您可以下载和合并更大的**VGG16**模型 (553MB)。 有关详细信息, 请参阅[示例的自述文件](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)。
 
 ## <a name="related-links"></a>相关链接
 

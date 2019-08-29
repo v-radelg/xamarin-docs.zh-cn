@@ -7,12 +7,12 @@ ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 46a9887d12d251e60cf6767fe89f6125fe1438d4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1f96a69cbb12748a77aa6ebeb92c4ac191ce4bad
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529249"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120538"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章的摘要。 自定义布局
 
@@ -20,10 +20,10 @@ ms.locfileid: "69529249"
 
 Xamarin.Forms 包含多个类派生自[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1):
 
-* `StackLayout`,
-* `Grid`,
-* `AbsoluteLayout` 和
-* `RelativeLayout`。
+- `StackLayout`,
+- `Grid`,
+- `AbsoluteLayout` 和
+- `RelativeLayout`。
 
 本章节介绍了如何创建您自己的类派生自`Layout<View>`。
 

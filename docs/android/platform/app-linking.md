@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9ca14ff360fb3f1d7fdc8df277a93b0d30c4394c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524703"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119697"
 ---
 # <a name="app-linking-in-android"></a>Android 中的应用链接
 
@@ -55,12 +55,12 @@ Android 6.0 通过使用自动链接处理改善了这一点。 Android 可以�
 
 需要配置一个意向筛选器, 将 URI (或可能为的一组 uri) 从网站映射到 Android 应用程序中的活动。 在 Xamarin 中, 此关系是通过使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)的活动装饰建立的。 目的筛选器必须声明以下信息:
 
-* **`Intent.ActionView`** &ndash;这将注册意向筛选器以响应查看信息的请求
-* **`Categories`** &ndash;  意向的筛选器应注册同时 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 为了能够正确处理 web URI。
-* **`DataScheme`** 目的筛选器必须声明`http`和/或`https`。 &ndash; 这是两个有效的方案。
-* **`DataHost`** &ndash;这是 uri 将源自的域。
-* **`DataPathPrefix`** &ndash;这是网站上的资源的可选路径。
-* **`AutoVerify`** &ndash; 特性告诉Android验证应用程序与`autoVerify`网站之间的关系。 下面将对此进行更详细的讨论。
+- **`Intent.ActionView`** &ndash;这将注册意向筛选器以响应查看信息的请求
+- **`Categories`** &ndash;  意向的筛选器应注册同时 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 为了能够正确处理 web URI。
+- **`DataScheme`** 目的筛选器必须声明`http`和/或`https`。 &ndash; 这是两个有效的方案。
+- **`DataHost`** &ndash;这是 uri 将源自的域。
+- **`DataPathPrefix`** &ndash;这是网站上的资源的可选路径。
+- **`AutoVerify`** &ndash; 特性告诉Android验证应用程序与`autoVerify`网站之间的关系。 下面将对此进行更详细的讨论。
 
 下面的示例演示如何使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)处理来自`https://www.recipe-app.com/recipes`和的`http://www.recipe-app.com/recipes`链接:
 
@@ -90,9 +90,9 @@ Android 6.0 应用链接要求在将应用程序设置为 URI 的默认处理程
 
 数字资产文件包含 Android 验证关联所需的元数据。 **Assetlinks**文件具有以下键-值对:
 
-* `namespace`&ndash; Android 应用程序的命名空间。
-* `package_name`&ndash; Android 应用程序的包名称 (在应用程序清单中声明)。
-* `sha256_cert_fingerprints`&ndash;已签名应用程序的 SHA256 指纹。 有关如何获取应用程序的 SHA1 指纹的详细信息, 请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)指南。
+- `namespace`&ndash; Android 应用程序的命名空间。
+- `package_name`&ndash; Android 应用程序的包名称 (在应用程序清单中声明)。
+- `sha256_cert_fingerprints`&ndash;已签名应用程序的 SHA256 指纹。 有关如何获取应用程序的 SHA1 指纹的详细信息, 请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)指南。
 
 以下代码片段是**assetlinks**的一个示例, 其中列出了单个应用程序:
 
@@ -173,9 +173,9 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    * **`Package`** &ndash;应用程序的包名称。
-    * **`Domain`** &ndash;将由应用程序处理其 web 链接的域 (由空格分隔)
-    * **`Status`** &ndash;这是应用程序的当前链接处理状态。 如果值为 "**始终**", 则表示`android:autoVerify=true`应用程序已声明并通过了系统验证。 后跟一个十六进制数字, 表示该首选项的 Android 系统记录。
+    - **`Package`** &ndash;应用程序的包名称。
+    - **`Domain`** &ndash;将由应用程序处理其 web 链接的域 (由空格分隔)
+    - **`Status`** &ndash;这是应用程序的当前链接处理状态。 如果值为 "**始终**", 则表示`android:autoVerify=true`应用程序已声明并通过了系统验证。 后跟一个十六进制数字, 表示该首选项的 Android 系统记录。
 
     例如:
 

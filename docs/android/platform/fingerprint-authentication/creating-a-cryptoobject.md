@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8e5d4cf50874a0976c1dd10e35e7bd84518f14c4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 03796af880aaef74c2d4b54007ac34ef1c5dc180
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511145"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119841"
 ---
 # <a name="creating-a-cryptoobject"></a>创建 CryptoObject
 
@@ -105,10 +105,10 @@ public class CryptoObjectHelper
 
 需要注意的是, 在某些情况下, Android 可能会使密钥失效: 
 
-* 新指纹已注册到设备。
-* 未向设备注册任何指纹。
-* 用户已禁用屏幕锁。
-* 用户更改了屏幕锁 (screenlock 的类型或使用的 PIN/模式)。
+- 新指纹已注册到设备。
+- 未向设备注册任何指纹。
+- 用户已禁用屏幕锁。
+- 用户更改了屏幕锁 (screenlock 的类型或使用的 PIN/模式)。
 
 发生这种情况`Cipher.Init`时, 将[`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)引发。 上面的示例代码将捕获该异常, 删除该密钥, 然后创建一个新密钥。
 
@@ -122,11 +122,11 @@ public class CryptoObjectHelper
 
 接下来, `KeyGenParameterSpec` `KeyGenParameterSpec.Builder`使用创建。 `KeyGenParameterSpec.Builder`包装有关要创建的密钥的下列信息:
 
-* 密钥名称。
-* 密钥必须对加密和解密都有效。
-* 在示例代码`BLOCK_MODE`中, 将设置为_密码块链_(`KeyProperties.BlockModeCbc`), 这意味着每个块都与前一个块 XORed (创建每个块之间的依赖关系)。 
-* 使用公钥[_加密标准 #7_](https://tools.ietf.org/html/rfc2315) (PKCS7) 生成将填充块的字节, 以确保它们都具有相同的大小。 `CryptoObjectHelper`
-* `SetUserAuthenticationRequired(true)`表示在使用密钥之前需要用户身份验证。
+- 密钥名称。
+- 密钥必须对加密和解密都有效。
+- 在示例代码`BLOCK_MODE`中, 将设置为_密码块链_(`KeyProperties.BlockModeCbc`), 这意味着每个块都与前一个块 XORed (创建每个块之间的依赖关系)。 
+- 使用公钥[_加密标准 #7_](https://tools.ietf.org/html/rfc2315) (PKCS7) 生成将填充块的字节, 以确保它们都具有相同的大小。 `CryptoObjectHelper`
+- `SetUserAuthenticationRequired(true)`表示在使用密钥之前需要用户身份验证。
 
 创建后, 它将用于`KeyGenerator`初始化, 它将生成一个密钥并将其安全地存储在设备上。 `KeyGenParameterSpec` 
 

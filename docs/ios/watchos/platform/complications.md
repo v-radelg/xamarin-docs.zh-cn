@@ -1,62 +1,62 @@
 ---
-title: watchOS 在 Xamarin 中的并发数据
-description: 本文档介绍如何使用在 Xamarin 中的 watchOS 复杂情况。 它讨论了如何将添加一个问题，编写复杂，模板，并提供示例代码。
+title: Xamarin 中的 watchOS 复杂性
+description: 本文档介绍如何在 Xamarin 中使用 watchOS 复杂性。 本文介绍如何添加复杂的、编写复杂的模板, 并提供示例代码。
 ms.prod: xamarin
 ms.assetid: 7ACD9A2B-CF69-46EA-B0C8-10E7D81216E8
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/03/2017
-ms.openlocfilehash: 85b0c9b0688e9fb310a8f427018a02fe629404bb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3fc40f3a422901d0ffb4779e0c0b7c46de052d3a
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61225518"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121201"
 ---
-# <a name="watchos-complications-in-xamarin"></a>watchOS 在 Xamarin 中的并发数据
+# <a name="watchos-complications-in-xamarin"></a>Xamarin 中的 watchOS 复杂性
 
-_watchOS 允许开发人员能够编写自定义复杂情况用于监视的人脸_
+_watchOS 允许开发人员为观看面部编写自定义的复杂问题_
 
-此页介绍了不同类型的复杂情况，以及如何将一个问题添加到你的 watchOS 3 应用。
+此页说明了不同类型的可用的复杂程度, 以及如何将问题添加到 watchOS 3 应用程序中。
 
-请注意，每个 watchOS 应用程序只能有一个存在问题。
+请注意, 每个 watchOS 应用程序只能有一个复杂的。
 
-首先阅读[Apple 的 docs](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)以确定您的应用程序是否适用于一个问题。 有 5`CLKComplicationFamily`类型的显示可供选择：
+首先阅读[Apple 的文档](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html), 以确定你的应用是否适合于复杂性。 有 5 `CLKComplicationFamily`种显示类型可供选择:
 
-[![](complications-images/all-complications-sml.png "5 CLKComplicationFamily 可用的类型：小圆形，模块化，小、 大、 最有效小模块、 实用的大型")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "5 CLKComplicationFamily 类型可用:圆形小、模块式小型、模块式大、实用小、实用大")](complications-images/all-complications.png#lightbox)
 
-应用程序可以实现只是一种样式，或者所有五个，具体取决于要显示的数据。
-您还可以支持按时间顺序查看，提供在用户打开数字 Crown 过去和/或将来的某个时间值。
+应用只能实现一种样式, 也可以仅实现五种类型, 具体取决于所显示的数据。
+你还可以支持时间段, 并在用户打开 Digital Crown 的情况下为过去和/或未来的时间提供值。
 
 <a name="adding" />
 
-## <a name="adding-a-complication"></a>添加了问题
+## <a name="adding-a-complication"></a>添加复杂
 
 ### <a name="configuration"></a>配置
 
-可以在创建期间，添加到监视应用程序或手动添加到现有解决方案复杂情况。
+可以在创建期间将复杂性添加到 watch 应用, 也可以手动添加到现有解决方案。
 
-### <a name="add-new-project"></a>添加新项目...
+### <a name="add-new-project"></a>添加新项目 。
 
-**添加新项目...** 向导包括一个复选框，将自动创建难点控制器类和配置**Info.plist**文件：
+"**添加新项目 ...** " 向导包含一个复选框, 该复选框将自动创建一个复杂的控制器类并配置**info.plist**文件:
 
-![](complications-images/file-new-project-sml.png "包括功能栏复选框")
+![](complications-images/file-new-project-sml.png "\"包含复杂化\" 复选框")
 
 ### <a name="existing-projects"></a>现有项目
 
-若要添加到现有项目的一个问题：
+若要向现有项目添加复杂化:
 
-1. 创建一个新**ComplicationController.cs**类文件，并实现`CLKComplicationDataSource`。
-2. 将应用配置**Info.plist**公开的复杂性和标识支持的复杂性系列的类别。
+1. 创建新的**ComplicationController.cs**类文件并实现`CLKComplicationDataSource`。
+2. 配置应用的**info.plist**以揭示复杂的, 并识别支持哪些复杂的系列。
 
-下面更详细地介绍这些步骤。
+下面更详细地介绍了这些步骤。
 
 <a name="clkcomplicationcontroller" />
 
 ### <a name="clkcomplicationdatasource-class"></a>CLKComplicationDataSource 类
 
-以下C#模板包括所需最小的方法来实现`CLKComplicationDataSource`。
+以下C#模板包含实现`CLKComplicationDataSource`所需的最低方法。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -77,45 +77,45 @@ public class ComplicationController : CLKComplicationDataSource
 }
 ```
 
-请按照[编写复杂](#writing)将代码添加到此类的说明。
+请按照[编写复杂](#writing)说明向此类中添加代码。
 
 ### <a name="infoplist"></a>Info.plist
 
-监视扩展**Info.plist**文件应指定的名称`CLKComplicationDataSource`和你想要支持的复杂性系列的类别：
+监视扩展的**info.plist**文件应指定的`CLKComplicationDataSource`名称以及要支持的复杂系列:
 
-[![](complications-images/complications-config-sml.png "复杂类型系列")](complications-images/complications-config.png#lightbox)
+[![](complications-images/complications-config-sml.png "更复杂的系列类型")](complications-images/complications-config.png#lightbox)
 
-**数据源类**条目列表将显示类名该子类`CLKComplicationDataSource`包括复杂逻辑的子类。
+**数据源类**条目列表将显示子类`CLKComplicationDataSource`的类名称, 这些子类包含您的复杂逻辑。
 
 ## <a name="clkcomplicationdatasource"></a>CLKComplicationDataSource
 
-单个类，重写从方法中实现所有复杂功能`CLKComplicationDataSource`抽象类 (该类实现`ICLKComplicationDataSource`接口)。
+所有复杂的功能都是在一个类中实现的, 该`CLKComplicationDataSource`抽象类 ( `ICLKComplicationDataSource`实现接口) 会重写方法。
 
-### <a name="required-methods"></a>所需的方法
+### <a name="required-methods"></a>必需的方法
 
-必须实现以下用于运行复杂的方法：
+您必须实现以下方法, 以使运行复杂化:
 
-- `GetPlaceholderTemplate` -返回静态显示在配置期间或在应用程序不能提供的值时使用。
-- `GetCurrentTimelineEntry` -运行复杂性时计算正确的显示。
-- `GetSupportedTimeTravelDirections` -返回从选项`CLKComplicationTimeTravelDirections`如`None`， `Forward`， `Backward`，或`Forward | Backward`。
+- `GetPlaceholderTemplate`-返回在配置期间或应用无法提供值时使用的静态显示。
+- `GetCurrentTimelineEntry`-在运行复杂化时计算正确的显示。
+- `GetSupportedTimeTravelDirections`- `CLKComplicationTimeTravelDirections`返回中`Forward` `None`的选项, 例如、 `Backward`、或`Forward | Backward`。
 
 ### <a name="privacy"></a>隐私
 
-显示个人数据的复杂性
+显示个人数据的复杂情况
 
-* `GetPrivacyBehavior` - `CLKComplicationPrivacyBehavior.ShowOnLockScreen` 或 `HideOnLockScreen`
+- `GetPrivacyBehavior` - `CLKComplicationPrivacyBehavior.ShowOnLockScreen` 或 `HideOnLockScreen`
 
-如果此方法返回`HideOnLockScreen`出现的错误将会显示一个图标或应用程序名称 （和没有任何数据） 锁定监视时。
+如果此方法返回`HideOnLockScreen` , 则当监视锁定时, 将显示一个图标或应用程序名称 (而不是任何数据)。
 
 ### <a name="updates"></a>更新
 
-- `GetNextRequestedUpdateDate` 返回操作系统在接下来查询适用于应用一次更新的功能栏显示数据。
+- `GetNextRequestedUpdateDate`-返回操作系统接下来应在应用程序中查询已更新的复杂显示数据的时间。
 
-此外可以从 iOS 应用程序强制更新。
+你还可以强制执行 iOS 应用的更新。
 
-### <a name="supporting-time-travel"></a>支持按时间顺序查看
+### <a name="supporting-time-travel"></a>支持旅行
 
-时间的差旅支持是可选的并由控制`GetSupportedTimeTravelDirections`方法。 如果它返回`Forward`， `Backward`，或`Forward | Backward`然后，必须实现以下方法
+行程支持是可选的, 由`GetSupportedTimeTravelDirections`方法控制。 如果它返回`Forward`、 `Backward`或`Forward | Backward` , 则必须实现以下方法
 
 - `GetTimelineStartDate`
 - `GetTimelineEndDate`
@@ -124,9 +124,9 @@ public class ComplicationController : CLKComplicationDataSource
 
 <a name="writing" />
 
-## <a name="writing-a-complication"></a>编写一个问题
+## <a name="writing-a-complication"></a>编写复杂
 
-复杂性范围从简单的数据显示为复杂的图像和按时间顺序查看支持的数据呈现。 下面的代码演示如何生成简单的、 单模板的复杂性。
+复杂范围从简单的数据显示到复杂的图像, 以及带有时间行程支持的数据呈现。 下面的代码演示如何构建简单的单模板。
 
 <!--
 The [sample]() for this article supports more template styles.
@@ -134,7 +134,7 @@ The [sample]() for this article supports more template styles.
 
 ## <a name="sample-code"></a>代码示例
 
-此示例中仅支持`UtilitarianLarge`模板，因此只能在特定的表盘支持该类型的复杂的选择。 时*选择*复杂性上监视，它将显示**我复杂性**以及何时*运行*其显示文本**分钟_小时_**  （与时间的部分）。
+此示例仅支持`UtilitarianLarge`模板, 因此只能在支持该类型的复杂的特定监视面上选择。 在监视上*选择*"复杂" 时, 它会显示 "**我**的问题", 并在*运行*时显示文本 "**分钟**  " (包含部分时间)。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -182,62 +182,62 @@ public class ComplicationController : CLKComplicationDataSource
 
 <a name="templates" />
 
-## <a name="complication-templates"></a>问题模板
+## <a name="complication-templates"></a>复杂模板
 
-有多种不同的模板可用于每个复杂样式。
-**环**模板，可以显示周围复杂性，可用于以图形方式显示进度或其他某个值的进度样式环。
+有多种不同的模板可用于每种复杂样式。
+**环形**模板使你可以在复杂的周围显示进度样式环形, 这种方式可用于以图形方式显示进度或其他某个值。
 
-[Apple 的 CLKComplicationTemplate docs](https://developer.apple.com/reference/clockkit/clkcomplicationtemplate)
+[Apple 的 CLKComplicationTemplate 文档](https://developer.apple.com/reference/clockkit/clkcomplicationtemplate)
 
-### <a name="circular-small"></a>小圆形
+### <a name="circular-small"></a>圆形小
 
-这些模板类名称的前缀为`CLKComplicationTemplateCircularSmall`:
+这些模板类名称都带有`CLKComplicationTemplateCircularSmall`前缀:
 
-- **RingImage** -显示包含在其周围采用进度环的单一映像。
-- **RingText** -显示单行文本，与在其周围采用进度环。
-- **SimpleImage** -只是显示一个小的单个图像。
-- **SimpleText** -只显示文本的一小段代码。
-- **StackImage** -显示图像和文本，逐一行
+- **RingImage** -显示单个图像, 周围有一个进度环。
+- **RingText** -显示单行文本, 其中包含进度圆圈。
+- **SimpleImage** -只显示小型单一图像。
+- **SimpleText** -只显示小文本片段。
+- **StackImage** -显示一个图像和一个文本行, 其中一个文本在另一个上方
 - **StackText** -显示两行文本。
 
-### <a name="modular-small"></a>小模块
+### <a name="modular-small"></a>小型模块
 
-这些模板类名称的前缀为`CLKComplicationTemplateModularSmall`:
+这些模板类名称都带有`CLKComplicationTemplateModularSmall`前缀:
 
-- **ColumnsText** -显示的文本值 （2 行和 2 列） 的一个小网格。
-- **RingImage** -显示包含在其周围采用进度环的单一映像。
-- **RingText** -显示单行文本，与在其周围采用进度环。
-- **SimpleImage** -只是显示一个小的单个图像。
-- **SimpleText** -只显示文本的一小段代码。
-- **StackImage** -显示图像和文本，逐一行
+- **ColumnsText** -显示文本值的小网格 (2 行和2列)。
+- **RingImage** -显示单个图像, 周围有一个进度环。
+- **RingText** -显示单行文本, 其中包含进度圆圈。
+- **SimpleImage** -只显示小型单一图像。
+- **SimpleText** -只显示小文本片段。
+- **StackImage** -显示一个图像和一个文本行, 其中一个文本在另一个上方
 - **StackText** -显示两行文本。
 
 ### <a name="modular-large"></a>大模块
 
-这些模板类名称的前缀为`CLKComplicationTemplateModularLarge`:
+这些模板类名称都带有`CLKComplicationTemplateModularLarge`前缀:
 
-- **列**-显示包含 2 列，也可以选择包含每个行的左侧图像 3 行的网格。
-- **StandardBody** -显示具有两个行的纯文本的加粗标题字符串。 标头 （可选） 可以在左侧显示的图像。
-- **表**-显示的加粗标题的字符串，其下的文本的一个 2 x 2 网格。 标头 （可选） 可以在左侧显示的图像。
-- **TallBody** -显示具有更大字体单个文本行下方的加粗标题字符串。
+- **列**-显示包含2列的3行网格, 还可以选择在每行左侧包含一个图像。
+- **StandardBody** -显示带有两行纯文本的粗体标头字符串。 标题可以选择在左侧显示图像。
+- **表**-显示一个粗体标头字符串, 其中包含文本的2x2 网格。 标题可以选择在左侧显示图像。
+- **TallBody** -显示一个粗体标头字符串, 其下有一个较大的字体。
 
-### <a name="utilitarian-small"></a>实用小
+### <a name="utilitarian-small"></a>小型实用
 
-这些模板类名称的前缀为`CLKComplicationTemplateUtilitarianSmall`:
+这些模板类名称都带有`CLKComplicationTemplateUtilitarianSmall`前缀:
 
-- **平面**-（文本应该更短） 在单个行上显示图像和一些文本。
-- **RingImage** -显示包含在其周围采用进度环的单一映像。
-- **RingText** -显示单行文本，与在其周围采用进度环。
-- **正方形**-显示正方形的图像 （40px 或 44px 38 mm 或 42 mm Apple Watch 分别为正方形）。
+- **平面**-在单个行上显示图像和某些文本 (文本应为 short)。
+- **RingImage** -显示单个图像, 周围有一个进度环。
+- **RingText** -显示单行文本, 其中包含进度圆圈。
+- **方形**-显示正方形图像 (40px 或44px 正方形分别用于38mm 或 42mm Apple Watch)。
 
-### <a name="utilitarian-large"></a>实用的大型
+### <a name="utilitarian-large"></a>实用大型
 
-没有此功能栏样式只能有一个模板： `CLKComplicationTemplateUtilitarianLargeFlat`。
-它显示单个图像和一些文本，在单个行。
+对于此复杂样式, 只有一个模板: `CLKComplicationTemplateUtilitarianLargeFlat`。
+它在一行上显示单个图像和一些文本。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [Apple 的文档](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ComplicationEssentials.html)
+- [Apple 文档](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ComplicationEssentials.html)
 - [WWDC 视频](https://developer.apple.com/videos/play/wwdc2015-209/)

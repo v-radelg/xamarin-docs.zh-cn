@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 648b03dc34daa8906adab316c552a9615649800d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa4744ba217d602dbd3134e616ac3bc4d47f7b76
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655821"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120816"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 简介
 
@@ -61,24 +61,24 @@ Siri 现在支持更多的交互, 包括列表和注释以及其他增强功能,
 
 我们有很多C# [示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)可帮助你入门:
 
-* [ARKit 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-* [ARKit 放置对象](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-* [ARKit 和 UrhoSharp](arkit/urhosharp.md)
-* [CoreML 图像识别示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-* [Azure 自定义模型的 CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
-* [CoreNFC 标记读取器示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
-* [拖动 & 删除表视图](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
-* [拖动 & 删除集合视图](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
-* [拖动 & 删除自定义视图](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
-* [DragBoard 拖 & Drop 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
-* [MapKit 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
-* [SiriKit 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
-* [更新的照片框架示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
-* [远景 & CoreML 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-* [远景矩形检测示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
-* [面部观点检测示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
-* [PDKFit 小组件示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
-* [PDFKit 水印示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
+- [ARKit 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit 放置对象](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [ARKit 和 UrhoSharp](arkit/urhosharp.md)
+- [CoreML 图像识别示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [Azure 自定义模型的 CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [CoreNFC 标记读取器示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [拖动 & 删除表视图](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [拖动 & 删除集合视图](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [拖动 & 删除自定义视图](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+- [DragBoard 拖 & Drop 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+- [MapKit 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [SiriKit 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [更新的照片框架示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
+- [远景 & CoreML 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+- [远景矩形检测示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
+- [面部观点检测示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [PDKFit 小组件示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+- [PDFKit 水印示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>相关链接
 

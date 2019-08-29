@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/28/2017
-ms.openlocfilehash: 604313009129ad3c7133098d8e7880b0e07eef6e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 70e9f403e40cff8e1af536acf3a5efc3d12ad20b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527105"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121407"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin 中的本地化
 
@@ -145,9 +145,9 @@ Xamarin 中的以下功能可以轻松地在 Xamarin 中利用, 以提供用于�
 
 应转义字符串中的以下字符:
 
-* `\"`引言
-* `\\`符号
-* `\n`换
+- `\"`引言
+- `\\`符号
+- `\n`换
 
 这是**es/可本地化的示例。字符串**(即西班牙语) 文件:
 

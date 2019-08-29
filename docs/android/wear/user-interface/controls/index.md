@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 821e50b345a7b00d7b545ce7b7890ee5971e5cf1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: db240fa91c7eb99bd628fbb04c7c9352fb615e83
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526661"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119946"
 ---
 # <a name="android-wear-controls"></a>Android 损耗控件
 
@@ -25,15 +25,15 @@ Android 应用可以使用许多相同的控件, 这些控件已用于常规 And
 
 适用于应用程序的其他重要控件包括:
 
-* `BoxInsetLayout`(请参阅[使用屏幕大小](~/android/wear/screen-sizes.md)),
+- `BoxInsetLayout`(请参阅[使用屏幕大小](~/android/wear/screen-sizes.md)),
 
-* `WatchViewStub`(请参阅[使用屏幕大小](~/android/wear/screen-sizes.md)),
+- `WatchViewStub`(请参阅[使用屏幕大小](~/android/wear/screen-sizes.md)),
 
-* `CardFrame`(请参阅[Android 创建卡](https://developer.android.com/training/wearables/ui/cards.html)),
+- `CardFrame`(请参阅[Android 创建卡](https://developer.android.com/training/wearables/ui/cards.html)),
 
-* `CardScrollView`(请参阅[Android 创建卡](https://developer.android.com/training/wearables/ui/cards.html)),
+- `CardScrollView`(请参阅[Android 创建卡](https://developer.android.com/training/wearables/ui/cards.html)),
 
-* `WearableListView`(请参阅[Android 创建列表](https://developer.android.com/training/wearables/ui/lists.html))。
+- `WearableListView`(请参阅[Android 创建列表](https://developer.android.com/training/wearables/ui/lists.html))。
 
 
 ## <a name="related-links"></a>相关链接

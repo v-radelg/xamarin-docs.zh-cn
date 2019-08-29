@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5138062cec6ee71f1db17d0118001b59dd7bc02c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 58250770b925c20b912b71e5591b1d0e252c801a
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642956"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119034"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
 
@@ -28,9 +28,9 @@ ms.locfileid: "68642956"
 
 下面是在 Xamarin 中开发扩展时可能会出现的限制和已知问题:
 
-* Visual Studio for Mac 中当前没有调试支持。 所有调试都需要通过**NSLog**和**控制台**完成。 有关详细信息, 请参阅下面的提示部分。
-* 扩展必须包含在主机应用程序中, 该应用程序运行一次并向系统注册一次。 然后必须在 "**系统首选项**" 的 "**扩展**" 部分启用。 
-* 某些扩展崩溃可能会使主机应用程序不稳定, 并导致异常行为。 特别是,**通知中心**的 "**查找**器" 和 "**今日**" 部分可能会变为 "卡住" 并无响应。 这也是在 Xcode 中的扩展项目中遇到的, 当前与 Xamarin 无关。 通常, 可以在系统日志中查看 (通过**控制台**查看有关详细信息的提示) 打印重复的错误消息。 重新启动 macOS 将会解决此问题。
+- Visual Studio for Mac 中当前没有调试支持。 所有调试都需要通过**NSLog**和**控制台**完成。 有关详细信息, 请参阅下面的提示部分。
+- 扩展必须包含在主机应用程序中, 该应用程序运行一次并向系统注册一次。 然后必须在 "**系统首选项**" 的 "**扩展**" 部分启用。 
+- 某些扩展崩溃可能会使主机应用程序不稳定, 并导致异常行为。 特别是,**通知中心**的 "**查找**器" 和 "**今日**" 部分可能会变为 "卡住" 并无响应。 这也是在 Xcode 中的扩展项目中遇到的, 当前与 Xamarin 无关。 通常, 可以在系统日志中查看 (通过**控制台**查看有关详细信息的提示) 打印重复的错误消息。 重新启动 macOS 将会解决此问题。
 
 <a name="Tips" />
 
@@ -40,7 +40,7 @@ ms.locfileid: "68642956"
 
 - 因为 Xamarin 目前不支持调试扩展, 所以调试体验主要依赖于执行和`printf` like 语句。 但是, 扩展在沙盒进程中运行, 因此`Console.WriteLine`不会像在其他 Xamarin 应用程序中那样工作。 [ `NSLog`直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)调用会将调试消息输出到系统日志。
 - 任何未捕获的异常都将导致扩展过程崩溃, 仅在**系统日志**中提供少量有用的信息。 在重新引发之前, `try/catch` `NSLog`在 (异常) 块中包装有麻烦的代码可能会很有用。
-- 可以从  应用 > 程序**实用工具**下的**控制台**应用程序访问**系统日志**:
+- 可以从应用 > 程序**实用工具**下的**控制台**应用程序访问**系统日志**:
 
     [![](extensions-images/extension02.png "系统日志")](extensions-images/extension02.png#lightbox)
 - 如上所述, 运行扩展主机应用程序会将其注册到系统。 删除应用程序包, 并将其取消注册。 

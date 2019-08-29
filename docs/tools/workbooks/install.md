@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: d94a14bcd1486b7b64e9ce6d9fee6d36406b2710
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dd1e0838fbd3c3606021ddc996bf94cabc084f77
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511856"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119996"
 ---
 # <a name="workbooks-installation-and-requirements"></a>工作簿安装和要求
 
@@ -78,7 +78,7 @@ ms.locfileid: "68511856"
 
 从工作簿中的主菜单:
 
-* **帮助 > 复制版本信息**
+- **帮助 > 复制版本信息**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>工作簿1.3 及更早版本的说明:
 

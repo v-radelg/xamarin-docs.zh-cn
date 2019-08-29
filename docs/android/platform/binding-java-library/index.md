@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 4c01022e01c5ba6a9099b88e99558bd7d7ce728d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b795a53fc78adee19e1e2d1c57c9c4344aa4281b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524555"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119646"
 ---
 # <a name="binding-a-java-library"></a>绑定 Java 库
 
@@ -68,36 +68,36 @@ using Com.Company.Package;
 
 绑定现有 Android 库时, 需要记住以下几点:
 
-* **库是否有任何外部依赖项？** &ndash;Android 库所需的任何 Java 依赖项都必须包含在 Xamarin 项目中作为**ReferenceJar**或**EmbeddedReferenceJar**。 必须以**EmbeddedNativeLibrary**的形式将任何本机程序集添加到绑定项目。  
+- **库是否有任何外部依赖项？** &ndash;Android 库所需的任何 Java 依赖项都必须包含在 Xamarin 项目中作为**ReferenceJar**或**EmbeddedReferenceJar**。 必须以**EmbeddedNativeLibrary**的形式将任何本机程序集添加到绑定项目。  
 
-* **Android 库面向哪个版本的 Android API？** &ndash;不能 "降级" Android API 级别;确保 Xamarin 绑定项目的目标 API 级别 (或更高版本) 为 Android 库。
+- **Android 库面向哪个版本的 Android API？** &ndash;不能 "降级" Android API 级别;确保 Xamarin 绑定项目的目标 API 级别 (或更高版本) 为 Android 库。
 
-* **用于编译库的 JDK 版本是什么？** &ndash;如果使用不同于 Xamarin 的 JDK 版本生成 Android 库, 则可能会发生绑定错误。 如果可能, 请使用安装 Xamarin 所用的同一版本的 JDK 重新编译 Android 库。
+- **用于编译库的 JDK 版本是什么？** &ndash;如果使用不同于 Xamarin 的 JDK 版本生成 Android 库, 则可能会发生绑定错误。 如果可能, 请使用安装 Xamarin 所用的同一版本的 JDK 重新编译 Android 库。
 
 
 ## <a name="build-actions"></a>生成操作
 
 创建绑定库时, 将在 **.jar**或上设置*生成操作*。将合并到绑定库项目&ndash;中的 AAR 文件每个生成操作确定了 **.jar**或的方式。AAR 文件将嵌入到绑定库 (或被其引用) 中。 下面的列表总结了这些生成操作:
 
-* `EmbeddedJar`将 .jar 作为嵌入资源嵌入到生成的绑定库 DLL 中。 &ndash; 这是最简单且最常用的生成操作。 如果希望将 **.jar**自动编译到字节代码中并打包到绑定库中, 请使用此选项。
+- `EmbeddedJar`将 .jar 作为嵌入资源嵌入到生成的绑定库 DLL 中。 &ndash; 这是最简单且最常用的生成操作。 如果希望将 **.jar**自动编译到字节代码中并打包到绑定库中, 请使用此选项。
 
-* `InputJar`不会将 .jar 嵌入到生成的绑定库。 &ndash;.DLL. 绑定库。DLL 将在运行时依赖于此 **.jar** 。 如果你不希望在绑定库中包含 **.jar** (例如, 出于许可原因), 请使用此选项。 如果使用此选项, 则必须确保输入 **.jar**在运行应用的设备上可用。
+- `InputJar`不会将 .jar 嵌入到生成的绑定库。 &ndash;.DLL. 绑定库。DLL 将在运行时依赖于此 **.jar** 。 如果你不希望在绑定库中包含 **.jar** (例如, 出于许可原因), 请使用此选项。 如果使用此选项, 则必须确保输入 **.jar**在运行应用的设备上可用。
 
-* `LibraryProjectZip`&ndash;嵌入。AAR 文件转换为生成的绑定库.DLL. 这类似于 EmbeddedJar, 但你可以在绑定中访问资源 (以及代码)。AAR 文件。 如果要嵌入, 请使用此选项。AAR 到绑定库。
+- `LibraryProjectZip`&ndash;嵌入。AAR 文件转换为生成的绑定库.DLL. 这类似于 EmbeddedJar, 但你可以在绑定中访问资源 (以及代码)。AAR 文件。 如果要嵌入, 请使用此选项。AAR 到绑定库。
 
-* `ReferenceJar`指定引用 .jar: 引用 .jar 是您的一个或多个绑定的 .jar。 &ndash;AAR 文件依赖于。 此引用 **.jar**仅用于满足编译时依赖关系。 使用此生成操作时, C#不会为引用 **.jar**创建绑定, 也不会将其嵌入到生成的绑定库中.DLL. 当你将绑定库用于引用 **.jar**后, 请使用此选项。 此生成操作适用于打包多个 **.jar**(和/或。AARs) 转换为多个相互依赖的绑定库。
+- `ReferenceJar`指定引用 .jar: 引用 .jar 是您的一个或多个绑定的 .jar。 &ndash;AAR 文件依赖于。 此引用 **.jar**仅用于满足编译时依赖关系。 使用此生成操作时, C#不会为引用 **.jar**创建绑定, 也不会将其嵌入到生成的绑定库中.DLL. 当你将绑定库用于引用 **.jar**后, 请使用此选项。 此生成操作适用于打包多个 **.jar**(和/或。AARs) 转换为多个相互依赖的绑定库。
 
-* `EmbeddedReferenceJar`将一个引用 jar 嵌入到生成的绑定库。 &ndash;.DLL. 若要为输入 **.jar** (或) 创建C#绑定, 请使用此生成操作。AAR) 及其所有引用 **.jar**的绑定库。
+- `EmbeddedReferenceJar`将一个引用 jar 嵌入到生成的绑定库。 &ndash;.DLL. 若要为输入 **.jar** (或) 创建C#绑定, 请使用此生成操作。AAR) 及其所有引用 **.jar**的绑定库。
 
-* `EmbeddedNativeLibrary`将本机嵌入到绑定中。 &ndash; 此生成操作用于 **。因此**, 所绑定的 **.jar**文件所需的文件。 可能需要在执行 Java 库中的代码之前手动加载 **。** 下面对此进行了介绍。
+- `EmbeddedNativeLibrary`将本机嵌入到绑定中。 &ndash; 此生成操作用于 **。因此**, 所绑定的 **.jar**文件所需的文件。 可能需要在执行 Java 库中的代码之前手动加载 **。** 下面对此进行了介绍。
 
 以下指南中更详细地介绍了这些生成操作。
 
 此外, 以下生成操作用于帮助导入 Java API 文档并将其转换为C# XML 文档:
 
-* `JavaDocJar`用于指向符合 Maven 包样式的 Java 库的 Javadoc 存档 Jar (通常`FOOBAR-javadoc**.jar**`为)。
-* `JavaDocIndex`用于指向`index.html` API 参考文档 HTML 中的文件。
-* `JavaSourceJar`用于进行补充`JavaDocJar`, 以便首先从源生成 JavaDoc, 然后将`JavaDocIndex`结果视为符合 Maven 包样式的 Java 库 (通常`FOOBAR-sources**.jar**`为)。
+- `JavaDocJar`用于指向符合 Maven 包样式的 Java 库的 Javadoc 存档 Jar (通常`FOOBAR-javadoc**.jar**`为)。
+- `JavaDocIndex`用于指向`index.html` API 参考文档 HTML 中的文件。
+- `JavaSourceJar`用于进行补充`JavaDocJar`, 以便首先从源生成 JavaDoc, 然后将`JavaDocIndex`结果视为符合 Maven 包样式的 Java 库 (通常`FOOBAR-sources**.jar**`为)。
 
 API 文档应是来自 Java8、Java7 或 Java6 SDK 的默认 doclet (它们都是不同的格式) 或 DroidDoc 样式。
 

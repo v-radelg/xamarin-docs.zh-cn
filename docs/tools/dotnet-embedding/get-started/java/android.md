@@ -6,26 +6,26 @@ ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: df29a7f595973a0447899666838e21418ff69330
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d1d05c75b8026112e8b81c91144361b65ad3a8e0
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650075"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120026"
 ---
 # <a name="getting-started-with-android"></a>Android 入门
 
 除了[Java](~/tools/dotnet-embedding/get-started/java/index.md)入门指南中的要求外, 还需要:
 
-* [Xamarin 7.5](https://visualstudio.microsoft.com/xamarin/)或更高版本
-* [Android Studio](https://developer.android.com/studio/index.html) 1.X 与 Java 1。8
+- [Xamarin 7.5](https://visualstudio.microsoft.com/xamarin/)或更高版本
+- [Android Studio](https://developer.android.com/studio/index.html) 1.X 与 Java 1。8
 
 作为概述, 我们将:
 
-* 创建C# Android 库项目
-* 通过 NuGet 安装 .NET 嵌入
-* 在 Android 库程序集上运行 .NET 嵌入
-* 在 Android Studio 的 Java 项目中使用生成的 AAR 文件
+- 创建C# Android 库项目
+- 通过 NuGet 安装 .NET 嵌入
+- 在 Android 库程序集上运行 .NET 嵌入
+- 在 Android Studio 的 Java 项目中使用生成的 AAR 文件
 
 ## <a name="create-an-android-library-project"></a>创建 Android 库项目
 
@@ -159,17 +159,17 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 请注意此处发生了什么:
 
-* 我们有一个C#类`HelloActivity`, 它是一个子类,
-* 我们有 Android 资源文件
-* 在 Android Studio 中, 我们使用了它们
+- 我们有一个C#类`HelloActivity`, 它是一个子类,
+- 我们有 Android 资源文件
+- 在 Android Studio 中, 我们使用了它们
 
 若要使此示例正常工作, 请在最终 APK 中设置以下所有内容:
 
-* 在应用程序启动时配置 Xamarin。
-* **资产/程序集中**包含的 .net 程序集
-* 对C#活动进行 androidmanifest.xml 修改等。
-* .NET 库中的 Android 资源和资产
-* 任何`Java.Lang.Object`子类的[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)器
+- 在应用程序启动时配置 Xamarin。
+- **资产/程序集中**包含的 .net 程序集
+- 对C#活动进行 androidmanifest.xml 修改等。
+- .NET 库中的 Android 资源和资产
+- 任何`Java.Lang.Object`子类的[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)器
 
 如果你正在寻找其他演练, 请查看以下视频, 其中演示了如何将 Charles Petzold 的[FingerPaint 演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)嵌入到 Android Studio 项目中:
 
@@ -223,8 +223,8 @@ public class ViewSubclass : TextView
 }
 ```
 
-* `[Register]`需要映射到所需的 Java 包名称
-* `[Export]`使方法对 Java 可见是必需的
+- `[Register]`需要映射到所需的 Java 包名称
+- `[Export]`使方法对 Java 可见是必需的
 
 我们可以在`ViewSubclass` Java 中使用, 如下所示:
 
@@ -243,18 +243,18 @@ v.apply("Hello");
 
 这会导致出现问题, 因为 .NET 嵌入需要将许多类型的文件包含到最终 AAR 中, 例如:
 
-* Android 资产
-* Android 资源
-* Android 本机库
-* Android java 源
+- Android 资产
+- Android 资源
+- Android 本机库
+- Android java 源
 
 您很可能不想将这些文件包含在 Android 支持库中或 Google Play Services 到 AAR 中, 而是使用 Android Studio 中 Google 的官方版本。
 
 下面是建议的方法:
 
-* 通过 .NET 嵌入你拥有的任何程序集 (具有的源), 并希望从 Java 调用
-* 通过 .NET 将需要 Android 资产、本机库或资源的任何程序集嵌入到
-* 添加 Java 依赖项, 例如 Android 支持库或 Android Studio 中的 Google Play Services
+- 通过 .NET 嵌入你拥有的任何程序集 (具有的源), 并希望从 Java 调用
+- 通过 .NET 将需要 Android 资产、本机库或资源的任何程序集嵌入到
+- 添加 Java 依赖项, 例如 Android 支持库或 Android Studio 中的 Google Play Services
 
 因此, 你的命令可能是:
 
@@ -277,11 +277,11 @@ dependencies {
 
 ## <a name="further-reading"></a>其他阅读材料
 
-* [Android 上的回调](~/tools/dotnet-embedding/android/callbacks.md)
-* [Android 初步研究](~/tools/dotnet-embedding/android/index.md)
-* [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
-* [参与开源项目](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [错误代码和描述](~/tools/dotnet-embedding/errors.md)
+- [Android 上的回调](~/tools/dotnet-embedding/android/callbacks.md)
+- [Android 初步研究](~/tools/dotnet-embedding/android/index.md)
+- [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
+- [参与开源项目](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+- [错误代码和描述](~/tools/dotnet-embedding/errors.md)
 
 ## <a name="related-links"></a>相关链接
 

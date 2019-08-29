@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528798"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119162"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>你好, tvOS 快速入门指南
 
@@ -327,8 +327,8 @@ namespace HellotvOS
 
 可通过以下两种主要方法从代码访问 iOS 设计器中添加的控件:
 
-* 为控件创建事件处理程序。
-* 为控件提供一个名称, 以便以后可以引用它。
+- 为控件创建事件处理程序。
+- 为控件提供一个名称, 以便以后可以引用它。
 
 当添加其中任何一个时, 中`ViewController.designer.cs`的分部类将进行更新以反映所做的更改。 这将允许您访问视图控制器中的控件。
 

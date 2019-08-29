@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065582"
+ms.locfileid: "70120058"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin 中的 tvOS 用户界面样式
 
@@ -131,7 +131,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 
 在开发人员需要根据所选 ui 主题更深入地控制 ui 元素的外观, 他们可以重写`TraitCollectionDidChange` `UIView`或`UIViewController`类的方法。
 
-例如：
+例如:
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
@@ -183,22 +183,22 @@ SetOverrideTraitCollection (trait, this);
 
 在 Interface Builder 中编辑 tvOS 情节提要时, Apple 添加了以下功能:
 
-* 开发人员可以根据**特性检查器**中的 UI 主题来指定不同的用户界面元素变体:
+- 开发人员可以根据**特性检查器**中的 UI 主题来指定不同的用户界面元素变体:
 
-  * 现在有多个属性 + 旁边的可单击要添加的用户界面主题特定版本：
+  - 现在有多个属性 + 旁边的可单击要添加的用户界面主题特定版本：
 
     [![](user-interface-styles-images/theme08.png "添加特定于 UI 主题的版本")](user-interface-styles-images/theme08.png#lightbox)
 
-  * 开发人员可以指定新属性或单击**x**按钮将其删除:
+  - 开发人员可以指定新属性或单击**x**按钮将其删除:
 
     [![](user-interface-styles-images/theme09.png "指定新属性或单击 x 按钮以将其删除")](user-interface-styles-images/theme09.png#lightbox)
-* 开发人员可以从 Interface Builder 中预览 "浅色" 或 "深色" 主题中的 UI 设计:
+- 开发人员可以从 Interface Builder 中预览 "浅色" 或 "深色" 主题中的 UI 设计:
 
-  * Design Surface 的底部允许开发人员切换当前 UI 主题:
+  - Design Surface 的底部允许开发人员切换当前 UI 主题:
 
     [![](user-interface-styles-images/theme10.png "Design Surface 的底部")](user-interface-styles-images/theme10.png#lightbox)
 
-  * 新主题将在 Interface Builder 中显示, 并将显示任何特定于特征的集合:
+  - 新主题将在 Interface Builder 中显示, 并将显示任何特定于特征的集合:
 
     [![](user-interface-styles-images/theme11.png "Interface Builder 中显示的主题")](user-interface-styles-images/theme11.png#lightbox)
 

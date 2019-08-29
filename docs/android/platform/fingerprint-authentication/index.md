@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b865f08c9f6506996b5303bb80677977f1d0fa21
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643566"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119526"
 ---
 # <a name="fingerprint-authentication"></a>指纹身份验证
 
@@ -27,9 +27,9 @@ FingerprintManager Api 使用指纹扫描器来定位设备, 并运行 API 级�
 
 [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (及其支持库对应的[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) 是使用指纹扫描硬件的主要类。 此类是围绕系统级服务的 Android SDK 包装器, 用于管理与硬件本身的交互。 它负责启动指纹扫描器并响应扫描程序的反馈。 此类的接口非常简单, 只包含三个成员:
 
-* **`Authenticate`** &ndash;此方法将初始化硬件扫描程序并在后台启动该服务, 并等待用户扫描其指纹。
-* **`EnrolledFingerprints`** 如果用户已向设备注册一个或多个指纹, 此属性将返回`true`。 &ndash;
-* **`HardwareDetected`** &ndash;此属性用于确定设备是否支持指纹扫描。
+- **`Authenticate`** &ndash;此方法将初始化硬件扫描程序并在后台启动该服务, 并等待用户扫描其指纹。
+- **`EnrolledFingerprints`** 如果用户已向设备注册一个或多个指纹, 此属性将返回`true`。 &ndash;
+- **`HardwareDetected`** &ndash;此属性用于确定设备是否支持指纹扫描。
 
 Android 应用程序使用方法来启动指纹扫描器。`FingerprintManager.Authenticate` 以下代码片段举例说明了如何使用支持库兼容性 Api 调用它:
 

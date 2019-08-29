@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a7276b6a3269c012ad57e13510b6479266c43209
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526160"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119802"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase 云消息传送的远程通知
 
@@ -731,9 +731,9 @@ public override void OnMessageReceived(RemoteMessage message)
 
 当应用处于后台时,[消息的负载](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)将确定消息的处理方式:
 
-* **通知**消息将发送到**系统托盘。** &ndash; 本地通知将显示在此处。 当用户点击通知时, 应用程序将启动。
-* **数据**消息将由`OnMessageReceived`处理。 &ndash;
-* **两者**&ndash;同时提供通知和数据负载的消息将发送到系统托盘。 当应用程序启动时, 数据负载将出现在用于`Extras`启动应用`Intent`程序的的中。
+- **通知**消息将发送到**系统托盘。** &ndash; 本地通知将显示在此处。 当用户点击通知时, 应用程序将启动。
+- **数据**消息将由`OnMessageReceived`处理。 &ndash;
+- **两者**&ndash;同时提供通知和数据负载的消息将发送到系统托盘。 当应用程序启动时, 数据负载将出现在用于`Extras`启动应用`Intent`程序的的中。
 
 在此示例中, 如果应用程序为 backgrounded `SendNotification` , 则在消息具有数据负载的情况下将运行。 否则, 会启动一个后台通知 (在本演练的前面部分所述)。
 
@@ -772,7 +772,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-若要完全从 FCM 注销设备, 请通过对[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法来删除实例 ID。 例如:
+若要完全从 FCM 注销设备, 请通过对[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法来删除实例 ID。 例如：
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

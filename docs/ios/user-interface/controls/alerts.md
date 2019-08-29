@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: e8113a9cefad5f53b66595728340f71101faa9de
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: b8ffeb996783d7a3b1a385265b14f37f36126e8f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065577"
+ms.locfileid: "70119064"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中显示警报
 
@@ -23,16 +23,16 @@ ms.locfileid: "70065577"
 用于`UIAlertControllerStyle`指示要显示的警报的类型。 这些警报类型为:
 
 - **UIAlertControllerStyleActionSheet**
-  * IOS 8 之前, 这会是一个 UIActionSheet
+  - IOS 8 之前, 这会是一个 UIActionSheet
 - **UIAlertControllerStyleAlert**
-  * 预 iOS 8 此项会被 UIAlertView 
+  - 预 iOS 8 此项会被 UIAlertView 
 
 创建警报控制器时需要执行三个必要的步骤:
 
 - 使用以下内容创建并配置警报:
-  * 标题
-  * 消息
-  * preferredStyle
+  - 标题
+  - 消息
+  - preferredStyle
 
 - 可有可无添加文本字段
 - 添加所需的操作
