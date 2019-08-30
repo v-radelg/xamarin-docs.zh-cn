@@ -250,6 +250,8 @@
               href: platform/ios13/index.md
             - name: 入门
               href: platform/ios13/get-started.md
+            - name: 深色模式
+              href: platform/ios13/dark-mode.md
             - name: 疑难解答
               href: platform/ios13/troubleshooting/index.md
         - name: iOS 12

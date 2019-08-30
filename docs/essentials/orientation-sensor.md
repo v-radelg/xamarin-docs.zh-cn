@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Essentials：OrientationSensor
+title: Xamarin.Essentials:OrientationSensor
 description: OrientationSensor 类可让你监视设备在三维空间中的方向。
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1fceaef93e7ac30bbbe0f13da7dde3cde5275fd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898661"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120717"
 ---
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials：OrientationSensor
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials:OrientationSensor
 
-OrientationSensor 类可让你监视设备在三维空间中的方向。
+ OrientationSensor 类可让你监视设备在三维空间中的方向。
 
 > [!NOTE]
 > 此类用于确定设备在三维空间中的方向。 如果需要确定设备的视频显示器是处于纵向模式还是横向模式，请使用可从 [`DeviceDisplay`](device-display.md) 类获得的 `ScreenMetrics` 对象的 `Orientation` 属性。
@@ -98,13 +98,13 @@ public class OrientationSensorTest
 
 示例：
 
-* 如果设备平躺在桌子上，使其屏幕面朝上，设备顶部（在纵向模式下）指向北边，则会对齐这两个坐标系。 `Quaternion` 值表示标识四元数 (0, 0, 0, 1)。 可以相对于此位置分析所有旋转。
+- 如果设备平躺在桌子上，使其屏幕面朝上，设备顶部（在纵向模式下）指向北边，则会对齐这两个坐标系。 `Quaternion` 值表示标识四元数 (0, 0, 0, 1)。 可以相对于此位置分析所有旋转。
 
-* 如果设备平躺在桌子上，使其屏幕面朝上，设备顶部（在纵向模式下）指向西边，则 `Quaternion` 值为 (0, 0, 0.707, 0.707)。 设备已绕地球的 Z 轴旋转 90 度。
+- 如果设备平躺在桌子上，使其屏幕面朝上，设备顶部（在纵向模式下）指向西边，则 `Quaternion` 值为 (0, 0, 0.707, 0.707)。 设备已绕地球的 Z 轴旋转 90 度。
 
-* 如果设备直立，设备顶部（在纵向模式下）指向天空，设备背面朝向北边，则设备已绕 X 轴旋转 90 度。 `Quaternion` 值为 (0.707, 0, 0, 0.707)。
+- 如果设备直立，设备顶部（在纵向模式下）指向天空，设备背面朝向北边，则设备已绕 X 轴旋转 90 度。 `Quaternion` 值为 (0.707, 0, 0, 0.707)。
 
-* 如果设备的左边缘在桌子上，顶部指向北边，则设备已绕 Y 轴旋转 &ndash;90 度（或绕 Y 轴负方向旋转 90 度）。 `Quaternion` 值为 (0, -0.707, 0, 0.707)。
+- 如果设备的左边缘在桌子上，顶部指向北边，则设备已绕 Y 轴旋转 &ndash;90 度（或绕 Y 轴负方向旋转 90 度）。 `Quaternion` 值为 (0, -0.707, 0, 0.707)。
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

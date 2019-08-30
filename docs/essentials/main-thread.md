@@ -1,26 +1,26 @@
 ---
-title: Xamarin.Essentials：MainThread
+title: Xamarin.Essentials:MainThread
 description: MainThread 类允许应用程序在主执行线程上运行代码。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7ec1420d87c898f63614eb6d980c28834e980afd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 08/20/2019
+ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899000"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060118"
 ---
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials：MainThread
+# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
-MainThread 类允许应用程序在主执行线程上运行代码，并确定当前是否在主线程上运行特定代码块。
+ MainThread 类允许应用程序在主执行线程上运行代码，并确定当前是否在主线程上运行特定代码块。
 
 ## <a name="background"></a>背景
 
-大多数操作系统（包括 iOS、Android 和通用 Windows 平台）对涉及用户界面的代码使用单线程模型。 正确序列化用户界面事件（包括击键和触控输入）需要此模型。 此线程通常称为“主线程”、“用户界面线程”或“UI 线程”。 此模型的缺点是用于访问用户界面元素的所有代码必须在应用程序的主线程上运行。 
+大多数操作系统（包括 iOS、Android 和通用 Windows 平台）对涉及用户界面的代码使用单线程模型。 正确序列化用户界面事件（包括击键和触控输入）需要此模型。 此线程通常称为“主线程”  、“用户界面线程”  或“UI 线程”  。 此模型的缺点是用于访问用户界面元素的所有代码必须在应用程序的主线程上运行。 
 
-应用程序有时需要使用在辅助执行线程上调用事件处理程序的事件。 （Xamarin.Essentials 类 [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md) 和 [`OrientationSensor`](orientation-sensor.md) 以更快的速度使用时，可能会返回有关辅助线程的信息。）如果事件处理程序需要访问用户界面元素，则必须在主线程上运行该代码。 MainThread 类允许应用程序在主线程上运行此代码。
+应用程序有时需要使用在辅助执行线程上调用事件处理程序的事件。 （Xamarin.Essentials 类 [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md) 和 [`OrientationSensor`](orientation-sensor.md) 以更快的速度使用时，可能会返回有关辅助线程的信息。）如果事件处理程序需要访问用户界面元素，则必须在主线程上运行该代码。  MainThread 类允许应用程序在主线程上运行此代码。
 
 ## <a name="get-started"></a>入门
 
@@ -93,6 +93,18 @@ else
 如果已在主线程上运行代码块，你可能会猜想此检查可能会提高性能。
 
 _但是，不需要执行此检查。_ `BeginInvokeOnMainThread` 的平台实现本身会检查是否在主线程上调用代码。 如果在并不需要时调用 `BeginInvokeOnMainThread`，则很少会有性能损失。
+
+## <a name="additional-methods"></a>其他方法
+
+`MainThread` 类包括以下附加 `static` 方法，可用于与背景线程中的用户界面元素进行交互：
+
+| 方法 | 自变量 | 返回 | 目标 |
+|---|---|---|---|
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主线程上调用 `Func<T>`，并等待其完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 在主线程上调用 `Action`，并等待其完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主线程上调用 `Func<Task<T>>`，并等待其完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主线程上调用 `Func<Task>`，并等待其完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回主线程的 `SynchronizationContext`。 |
 
 ## <a name="api"></a>API
 

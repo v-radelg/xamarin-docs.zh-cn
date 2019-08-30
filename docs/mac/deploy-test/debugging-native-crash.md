@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 777e8d2880313b5a793d6257cc0fd9d8299cb94d
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 4a80b14aeb1517bac1e0d994a606ac4e74b2a94a
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528476"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065638"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>调试 Xamarin.Mac 应用中的本机故障
 
@@ -24,7 +24,7 @@ ms.locfileid: "51528476"
 
 ## <a name="example-1-assertion-failure"></a>示例 1：断言失败
 
-下面是一个简单的测试应用程序中的前几行故障（信息位于“应用程序输出”板）：
+下面是一个简单的测试应用程序中的前几行故障（信息位于“应用程序输出”  板）：
 
 ```csharp
 2014-10-15 16:18:02.364 NSOutlineViewHottness[79111:1304993] *** Assertion failure in -[NSTableView _uncachedRectHeightOfRow:], /SourceCache/AppKit/AppKit-1343.13/TableView.subproj/NSTableView.m:1855
@@ -32,17 +32,17 @@ ms.locfileid: "51528476"
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] *** Assertion failure in -[NSTableView _uncachedRectHeightOfRow:], /SourceCache/AppKit/AppKit-1343.13/TableView.subproj/NSTableView.m:1855
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] NSTableView variable rowHeight error: The value must be > 0 for row 0, but the delegate <NSOutlineViewHottness_HotnessViewDelegate: 0xaa01860> gave -1.000.
 2014-10-15 16:18:02.381 NSOutlineViewHottness[79111:1304993] (
-    0   CoreFoundation                      0x91888343 __raiseError + 195
-    1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
-    2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
-    3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
-    4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
-    5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
-    6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
-    7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
-    8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
-    9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
-    10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
+  0   CoreFoundation                      0x91888343 __raiseError + 195
+  1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
+  2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
+  3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
+  4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
+  5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
+  6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
+  7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
+  8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
+  9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
+  10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
 ```
 
 以数字作为前缀的行是本机堆栈跟踪。 从中你可以看到，故障发生在处理行高的 `NSTableView` 中的某处。 然后，`NSAssertionHandler` 会触发 `NSException (objc_exception_throw)`，我们就看到了断言失败：
@@ -136,7 +136,7 @@ mainWindowController.Window.StandardWindowButton (NSWindowButton.CloseButton).Ac
 
 ## <a name="example-3-callbacks-and-managed-objects"></a>示例 3：回调和托管对象
 
-当某些事件发生或需要某些数据执行任务时，许多 Cocoa API 会涉及被库“回调”，这会为你提供响应的机会。 虽然你主要考虑 Delegate 和 DataSource 模式，但是有许多以这种方式运行的 API。 例如，当你替代 `NSView` 的方法，然后将其插入可视化树时，你会期待 AppKit 在发生某些事件时对你进行回调。
+当某些事件发生或需要某些数据执行任务时，许多 Cocoa API 会涉及被库“回调”，这会为你提供响应的机会。 虽然你主要考虑 Delegate  和 DataSource  模式，但是有许多以这种方式运行的 API。 例如，当你替代 `NSView` 的方法，然后将其插入可视化树时，你会期待 AppKit 在发生某些事件时对你进行回调。
 
 在大多数情况下，当仍然可以回调这些回调的托管对象目标时，Xamarin.Mac 会正确地避免回收它们。 但是，捆绑中只有很少的 bug 可以中断这一操作。 发生这种情况时，你会看到类似下面的令人不快的故障：
 
@@ -165,7 +165,7 @@ Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
 
 在大部分出现此性质的 bug 的情况下，主要症状是本机故障，通常是一些与 `mono_sigsegv_signal_handler` 或堆栈的顶框架中的 `_sigtrap` 类似的内容。 Cocoa 正在尝试回调到 C# 代码中，这会命中垃圾回收的对象并发生故障。 但是，并不是每个有这些符号的故障都是由此类绑定问题引起的，你需要进行其他深入探索来确认这就是问题所在。 
 
-跟踪这些 bug 的困难之处在于，它们只在垃圾回收已经处理问题对象之后才发生。 如果你相信自己已经命中了一个这种 bug，请在启动顺序中的某处添加以下代码：
+跟踪这些 bug 的困难之处在于，它们只在垃圾回收已经处理问题对象之后  才发生。 如果你相信自己已经命中了一个这种 bug，请在启动顺序中的某处添加以下代码：
 
 ```csharp
 new System.Threading.Thread (() => 
@@ -196,13 +196,13 @@ GitHub 的问题是完全公开的。 不能隐藏注释或附件。
 
 请尽可能多地包含以下内容：
 
-- 一个重现此问题的简单示例。 在可能的情况下，这非常有用。 
+- 一个重现此问题的简单示例。 在可能的情况下，这非常有用  。 
 - 故障的完整堆栈跟踪。
 - 故障周围的 C# 代码。   
 
 ### <a name="working-around"></a>解决问题
 
-跟踪到问题后，使用解决办法修补问题，直到可以修复的捆绑变得简单。 目的在于，通过保存开放引用，避免错误处理的对象（View、Delegate、DataSource）退出内存。
+跟踪到问题后，使用解决办法修补问题，直到可以修复的捆绑变得简单。 目的在于，通过保存开放引用，避免错误处理的对象（View  、Delegate  、DataSource  ）退出内存。
 
 对于只有单个对象实例的简单情况，请更改以下代码：
 
@@ -248,7 +248,7 @@ void AddObject ()
 
 绝不应该允许 C# 异常将托管代码“转义”到调用的 Objective-C 方法。 如果允许，结果会处于未定义状态，但通常会涉及故障。 一般情况下，我们会执行所有可能的操作，使本机和托管故障的有用信息冒泡，以帮助你快速解决问题。
 
-在没有技术原因就陷入困境的情况下，设置基础结构来捕获每个托管/本机边界处的托管异常十分昂贵，还有许多在很多常规操作中都会发生的转换。 很多操作（尤其是涉及 UI 线程的操作）必须快速结束，否则，应用会不连续，并出现不可接受的性能特征。 很多回调都会执行不太可能出现引发的简单操作，所以，在这些情况下，这一开销昂贵且不必要。
+在没有技术原因就陷入困境的情况下，设置基础结构来捕获每个托管/本机边界处的托管异常十分昂贵，还有许多  在很多常规操作中都会发生的转换。 很多操作（尤其是涉及 UI 线程的操作）必须快速结束，否则，应用会不连续，并出现不可接受的性能特征。 很多回调都会执行不太可能出现引发的简单操作，所以，在这些情况下，这一开销昂贵且不必要。
 
 因此，我们不会为你设置这些尝试/捕获。 在代码执行不常用操作（除了返回布尔值或简单的数学外）的地方，你可以尝试自行捕获。 
 
