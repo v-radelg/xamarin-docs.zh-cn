@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525470"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119812"
 ---
 # <a name="publishing-to-google-play"></a>发布到 Google Play
 
@@ -240,16 +240,16 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 
 #### <a name="publish"></a>发布
 
-单击“允许”  后，浏览器会报告已接收验证码。即将关闭...  ，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”  对话框中，单击“继续”  ：
+单击“允许”  后，浏览器会报告已接收验证码。即将关闭..._ ，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”  对话框中，单击“继续”  ：
 
 [![已添加到 Google Play 帐户的帐户](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
 接下来，会显示“Google Play 轨道”  对话框。 Google Play 提供 4 个可用于上传应用的轨道：
 
-* **Alpha** &ndash; 用于将早期版本的应用上传到较小的测试员列表。
-* **Beta** &ndash; 用于将早期版本的应用上传到较大的测试员列表。
-* **Rollout** &ndash; 允许一定比例的用户接收应用的更新版本；这样可逐渐增加比例，例如，以 10% 的用户开始，消除 bug 后增加到 100% 用户。
-* **Production** &ndash; 准备好从 Google Play 应用商店全面分发应用时，请选择此轨道。
+- **Alpha** &ndash; 用于将早期版本的应用上传到较小的测试员列表。
+- **Beta** &ndash; 用于将早期版本的应用上传到较大的测试员列表。
+- **Rollout** &ndash; 允许一定比例的用户接收应用的更新版本；这样可逐渐增加比例，例如，以 10% 的用户开始，消除 bug 后增加到 100% 用户。
+- **Production** &ndash; 准备好从 Google Play 应用商店全面分发应用时，请选择此轨道。
 
 选择用于上传应用的 Google Play 轨道，然后单击“上传”  。 如果选择 **Rollout**，请确保输入百分比值：
 

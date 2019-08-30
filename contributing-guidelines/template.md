@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: eac7d316b65b57231d2fc25ef6b859293650d3f8
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "53709577"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119006"
 ---
 # <a name="metadata-and-markdown-template"></a>元数据和 Markdown 模板
 
@@ -46,7 +46,7 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 - 如果可选元数据元素没有值，则将其删除（不要留空或使用“na”）。
 - 值（例如标题）中的冒号会中断元数据解析器。 在此情况下，使用双引号将标题括起来（例如， `title: "Writing .NET Core console apps: An advanced step-by-step guide"`）。
 - **title**：此标题将显示在搜索引擎结果中。 此标题不需要与 H1 标题相同，并且包含的字符数不超过 60 个。
-- author、manager、ms.reviewer：作者字段应包含作者的 GitHub 用户名，而不是其别名。  另一方面，“manager”和“ms.reviewer”字段应包含 Microsoft 别名。 ms.reviewer 指定与文章或功能相关联的 PM/开发人员的姓名。
+- author  、manager  、ms.reviewer  ：作者字段应包含作者的 GitHub 用户名  ，而不是其别名。  另一方面，“manager”和“ms.reviewer”字段应包含 Microsoft 别名。 ms.reviewer 指定与文章或功能相关联的 PM/开发人员的姓名。
 - **ms.assetid**：文章的 GUID，用于内部跟踪，例如商业智能 (BI)。 创建新的 Markdown 文件文件后，可从 [https://www.guidgenerator.com](https://www.guidgenerator.com) 获取 GUID。
 
 ## <a name="basic-markdown-gfm-and-special-characters"></a>基本 Markdown、 GFM 和特殊字符
@@ -65,12 +65,12 @@ Markdown 使用特殊字符如 \*、\` 和 \# 进行格式化。 如果要在内
 ## <a name="file-name"></a>文件名
 
 文件名使用以下规则：
-* 只包含小写字母、数字和连字符。
-* 不包括空格或标点字符。 在文件名中使用连字符分隔单词和数字。
-* 使用具体的动作动词，例如 develop、buy、build、troubleshoot。 不使用带 -ing 的单词。
-* 不使用小单词 - 不包含 a、and、the、in、or 等。
-* 必须为 Markdown 格式，使用 .md 文件扩展名。
-* 保持文件名简短。 它们是文章 URL 的一部分。
+- 只包含小写字母、数字和连字符。
+- 不包括空格或标点字符。 在文件名中使用连字符分隔单词和数字。
+- 使用具体的动作动词，例如 develop、buy、build、troubleshoot。 不使用带 -ing 的单词。
+- 不使用小单词 - 不包含 a、and、the、in、or 等。
+- 必须为 Markdown 格式，使用 .md 文件扩展名。
+- 保持文件名简短。 它们是文章 URL 的一部分。
 
 
 
