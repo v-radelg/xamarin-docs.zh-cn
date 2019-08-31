@@ -1,26 +1,26 @@
 ---
 title: Xamarin iOS API 设计
-description: 本文档介绍了一些指导原则, 这些原则用于构建 Xamarin iOS Api 以及这些原则与目标-C 之间的关系。
+description: 指导原则, 这些原则用于构建 Xamarin iOS Api 以及这些 Api 与目标-C 之间的关系。
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 39786fa9aef526488837ce2fe7c078a23d12cc10
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: f453e6a7d4f516ee87dda25141cfd9ff81b9110d
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889943"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169251"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 设计
 
 除了包含 Mono 的核心基类库外, [Xamarin](http://www.xamarin.com/iOS)还附带了各种 iOS api 的绑定, 以允许开发人员通过 Mono 创建本机 iOS 应用程序。
 
-在 Xamarin 的核心中, 有一个互操作引擎, 该引擎将C#世界与目标-C 世界架在一起, 并提供基于 iOS C 的 api (例如 CoreGraphics 和[OpenGL ES](#OpenGLES)) 的绑定。
+在 Xamarin 的核心中, 有一个互操作引擎, 该引擎将C#世界与目标-C 世界架在一起, 并提供基于 iOS C 的 api (例如 CoreGraphics 和[OpenGL ES](#opengles)) 的绑定。
 
-与目标-C 代码通信的低级别运行时是在[monotouch.dialog. ObjCRuntime](#MonoTouch.ObjCRuntime)中。 在此基础上, 提供了[Foundation](#MonoTouch.Foundation)、CoreFoundation 和[UIKit](#MonoTouch.UIKit)的绑定。
+与目标-C 代码通信的低级别运行时是在[monotouch.dialog. ObjCRuntime](#objcruntime)中。 在此基础上, 提供了[Foundation](#foundation)、CoreFoundation 和[UIKit](#uikit)的绑定。
 
 ## <a name="design-principles"></a>设计原则
 
@@ -80,16 +80,12 @@ ms.locfileid: "69889943"
 
 Xamarin 包含若干构成*Xamarin IOS 配置文件*的程序集。 "[程序集](~/cross-platform/internals/available-assemblies.md)" 页包含详细信息。
 
-### <a name="major-namespaces"></a>主要命名空间 
-
-<a name="MonoTouch.ObjCRuntime" />
+### <a name="major-namespaces"></a>主要命名空间
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 [ObjCRuntime](xref:ObjCRuntime)命名空间允许开发人员在和目标- C# C 之间桥接世界。
 这是一个新的绑定, 专为 iOS 设计, 基于 Cocoa # 和 Gtk # 的经验。
-
-<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
@@ -97,14 +93,13 @@ Xamarin 包含若干构成*Xamarin IOS 配置文件*的程序集。 "[程序集]
 
 来自目标的类的C#层次结构中的 Xamarin 镜像。 例如, 可C#通过[NSObject](xref:Foundation.NSObject)使用目标 C 基类[NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) 。
 
-虽然此命名空间提供基础目标 C 基础类型的绑定, 但在少数情况下, 我们已将基础类型映射到 .NET 类型。 例如:
+虽然此命名空间提供基础目标 C 基础类型的绑定, 但在少数情况下, 我们已将基础类型映射到 .NET 类型。 例如：
 
 - 运行时不是处理[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)和[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html), 而是在整个C#API 中将它们公开为[字符串](xref:System.String)s 和强类型[数组](xref:System.Array)。
 
 - 此处公开了各种帮助器 Api, 使开发人员能够绑定当前不受 Xamarin 支持的第三方目标 C Api、其他 iOS Api 或 Api。
 
 有关绑定 Api 的更多详细信息, 请参阅 " [Xamarin 绑定生成器](~/cross-platform/macios/binding/binding-types-reference.md)" 部分。
-
 
 ##### <a name="nsobject"></a>NSObject
 
@@ -115,7 +110,6 @@ Xamarin 包含若干构成*Xamarin IOS 配置文件*的程序集。 "[程序集]
 虽然 Mono 将提供所有对象的垃圾回收, `Foundation.NSObject`但实现了[IDisposable](xref:System.IDisposable)接口。 这意味着, 你可以显式释放任意给定 NSObject 的资源, 而无需等待垃圾回收器启动。 当使用繁重的 NSObjects (例如, UIImages 可能包含指向大型数据块的指针) 时, 这一点非常重要。
 
 如果你的类型需要执行确定性终止, 请重写[NSObject (布尔) 方法。](xref:Foundation.NSObject.Dispose(System.Boolean))要释放的参数为 "bool 释放", 如果设置为 true, 则表示正在调用 dispose 方法, 因为用户显式调用了对象上的 Dispose ()。 如果该值为 false, 则表示 Dispose (bool 释放) 方法正在终结器线程上从终结器调用。
-
 
 ##### <a name="categories"></a>Categories
 
@@ -169,7 +163,7 @@ public static class MyStringCategory
 [Category (typeof (UIViewController))]
 public static class MyViewControllerCategory
 {
-    [Export ("shouldAudoRotate")]
+    [Export ("shouldAutoRotate")]
     static bool GlobalRotate ()
     {
         return true;
@@ -190,7 +184,6 @@ class Rotation_IOS6 {
 }
 ```
 
-
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
 PreserveAttribute 是一个自定义属性, 用于在处理应用程序以减小其大小时, 通知 mtouch – Xamarin 部署工具, 用于保留类型或类型的成员。
@@ -201,26 +194,21 @@ PreserveAttribute 是一个自定义属性, 用于在处理应用程序以减小
 
 你可以在类型的每个成员上或类型本身应用此属性。 如果要保留整个类型, 则可以对类型使用语法 [Preserve (AllMembers = true)]。
 
-<a name="MonoTouch.UIKit" />
-
 #### <a name="uikit"></a>UIKit
 
 [UIKit](xref:UIKit)命名空间包含到所有以C#类形式构成 CocoaTouch 的 UI 组件的一对一映射。 已将 API 修改为遵循C#语言中使用的约定。
 
-C#为常见操作提供了委托。 有关详细信息, 请参阅 "[委托](#Delegates)" 部分。
-
-<a name="OpenGLES" />
+C#为常见操作提供了委托。 有关详细信息, 请参阅 "[委托](#delegates)" 部分。
 
 #### <a name="opengles"></a>OpenGLES
 
 对于 OpenGLES, 我们分发[OpenTK](http://www.opentk.com/) API 的[修改版本](xref:OpenTK), 这是一个面向对象的绑定, 它已被修改为使用 CoreGraphics 数据类型和结构, 并只公开了 iOS 上可用的功能。
 
-OpenGLES 1.1 功能通过 ES11.GL 类型提供,[此处](xref:OpenTK.Graphics.ES11.GL)提供了文档。
+OpenGLES 1.1 功能通过[ES11.GL 类型](xref:OpenTK.Graphics.ES11.GL)提供。
 
-OpenGLES 2.0 功能通过 ES20.GL 类型提供,[此处](xref:OpenTK.Graphics.ES20.GL)提供了文档。
+OpenGLES 2.0 功能通过[ES20.GL 类型](xref:OpenTK.Graphics.ES20.GL)提供。
 
-OpenGLES 3.0 功能通过 ES30.GL 类型提供,[此处](xref:OpenTK.Graphics.ES30.GL)提供了文档。
-
+OpenGLES 3.0 功能通过[ES30.GL 类型](xref:OpenTK.Graphics.ES30.GL)提供。
 
 ### <a name="binding-design"></a>绑定设计
 
@@ -229,8 +217,6 @@ Xamarin 并非仅绑定到基础目标 C 平台。 它扩展了 .NET 类型系�
 正如 P/Invoke 是一种用于在 Windows 和 Linux 上调用本机库的有用工具, 或在 Windows 上的 COM 互操作上可以使用 IJW 支持一样, Xamarin 将扩展运行C#时以支持将对象绑定到目标 C 对象。
 
 对于创建 Xamarin iOS 应用程序的用户来说, 以下几节中的讨论并不是必需的, 但它将帮助开发人员了解如何完成操作并在创建更复杂的应用程序时提供帮助。
-
-
 
 #### <a name="types"></a>类型
 
@@ -252,14 +238,11 @@ UIView [] GetViews ();
 
 此外, 在**Classic API** (而不是`CGRect`公开`CGPoint` ) `CGSize`和 CoreGraphics API, 我们将它们`System.Drawing`替换为实现, `PointF` `RectangleF` `SizeF`它们有助于开发人员保留使用 OpenTK 的现有 OpenGL 代码。 使用新的64位**Unified API**时, 应使用 CoreGraphics API。
 
-<a name="Inheritance" />
-
 #### <a name="inheritance"></a>继承
 
 Xamarin iOS API 设计允许开发人员使用派生类上的 "override" 关键字来扩展本机目标 C 类型, 并C#使用 "基" C#链接到基实现, 这与扩展类型的方式相同。关键字.
 
 此设计允许开发人员避免在开发过程中处理目标 C 选择器, 因为整个目标 C 系统都已包装在 Xamarin 类库中。
-
 
 #### <a name="types-and-interface-builder"></a>类型和 Interface Builder
 
@@ -274,9 +257,6 @@ public partial class void MyView : UIView {
 }
 ```
 
-<a name="Delegates" />
-
-
 #### <a name="delegates"></a>委托
 
 对于每种语言C#中的单词委托, 目标为 C 并具有不同的含义。
@@ -289,20 +269,17 @@ public partial class void MyView : UIView {
 - 实现数据可视化控件的模型。
 - 用于驱动控件的行为。
 
-
 编程模式旨在最大程度地减少创建派生类以改变控件的行为。 此解决方案在本质上与其他 GUI 工具包对多年所做的操作非常相似:Gtk 的信号、Qt 的槽、Winforms 事件、WPF/Silverlight 事件等。 为了避免具有数百个接口 (每个操作一个), 或者要求开发人员实现不需要的多个方法, 目标-C 支持可选的方法定义。 这不同于C#需要实现所有方法的接口。
 
 在目标 C 类中, 你将看到使用此编程模式的类公开了一个属性 (通常称为`delegate`), 这是实现接口的必需部分和零个或更多可选部分所必需的。
 
 在 Xamarin 中, 提供了绑定到这些委托的三个互相排斥的机制:
 
-1. [通过事件](#Via_Events)。
-2. [通过`Delegate`属性强类型化](#StrongDelegate)
-3. [通过属性进行`WeakDelegate`松散类型化](#WeakDelegate)
+1. [通过事件](#via-events)。
+2. [通过`Delegate`属性强类型化](#strongly-typed-via-a-delegate-property)
+3. [通过属性进行`WeakDelegate`松散类型化](#loosely-typed-via-the-weakdelegate-property)
 
 例如, 请考虑[UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)类。 这会调度到分配给[委托](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)属性的[UIWebViewDelegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)实例。
-
-<a name="Via_Events" />
 
 ##### <a name="via-events"></a>通过事件
 
@@ -320,7 +297,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
 
 ##### <a name="via-properties"></a>Via 属性
 
@@ -341,8 +317,6 @@ void SetupTextField (UITextField tf)
 ```
 
 在`UITextField`此`ShouldReturn`示例中, 的属性将返回一个布尔值的委托作为参数, 并确定该字段是否应使用按下的 "返回" 按钮执行某个操作。 在我们的方法中, 将对调用方返回*true* , 但我们也会从屏幕中删除键盘 (当字段调用`ResignFirstResponder`时, 会发生这种情况)。
-
-<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>通过委托属性强类型化
 
@@ -379,14 +353,12 @@ web.Delegate = new Notifier ();
 
 此模式还用于按需为几个控件提供数据。 例如, [UITableView](xref:UIKit.UITableView)控件是一个功能强大的表呈现控件, 而外观和内容由[UITableViewDataSource](xref:UIKit.UITableViewDataSource)的实例驱动
 
-<a name="WeakDelegate"/>
-
 ### <a name="loosely-typed-via-the-weakdelegate-property"></a>通过 WeakDelegate 属性进行松散类型化
 
 除了强类型属性以外, 还有一个弱类型化委托, 使开发人员可以根据需要以不同的方式对其进行绑定。
 在 Xamarin 的绑定`Delegate`中, 任何位置都公开了强类型属性, 还`WeakDelegate`会公开相应的属性。
 
-使用`WeakDelegate`时, 您需要负责使用[Export](xref:Foundation.ExportAttribute)特性来指定选择器, 从而正确地修饰类。 例如：
+使用`WeakDelegate`时, 您需要负责使用[Export](xref:Foundation.ExportAttribute)特性来指定选择器, 从而正确地修饰类。 例如:
 
 ```csharp
 class Notifier : NSObject  {
@@ -413,12 +385,11 @@ web.WeakDelegate = new Notifier ();
 
 请注意, 分配`WeakDelegate`属性后`Delegate` , 将不会使用属性。 此外, 如果在要执行 [导出] 的继承基类中实现方法, 则必须将其设为公共方法。
 
-
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>将目标 C 委托模式映射到 C&#35;
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>将目标 C 委托模式映射到 C\#
 
 看到如下所示的客观-C 示例:
 
-```csharp
+```objc
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
@@ -430,8 +401,7 @@ foo.Delegate = new SomethingDelegate ();
 
 在 Xamarin 中, 我们提供了映射到目标 C 委托类的强类型类。 若要使用这些方法, 你将进行子类化, 并覆盖 Xamarin 的实现所定义的方法。 有关其工作原理的详细信息, 请参阅下面的 "模型" 一节。
 
-
-##### <a name="mapping-delegates-to-c35"></a>将委托映射到 C&#35;
+### <a name="mapping-delegates-to-c"></a>将委托映射到 C\#
 
 UIKit 一般使用两种形式的目标-C 委托。
 
@@ -474,7 +444,6 @@ web.LoadStarted += () => { startTime = DateTime.Now; }
 web.LoadFinished += () => { endTime = DateTime.Now; }
 ```
 
-
 #### <a name="responding-to-events"></a>对事件作出响应
 
 在目标 C 代码中, 有时多个控件的事件处理程序和多个控件的信息提供程序将托管在同一个类中。 这是可能的, 因为类响应消息, 只要类响应消息, 就可以将对象链接在一起。
@@ -505,8 +474,6 @@ public class MyCallbacks : NSObject {
 
 使用这种类型的编程时, 请确保C#参数与运行时引擎将通过的实际类型匹配。
 
-<a name="Models" />
-
 #### <a name="models"></a>Models
 
 在 UIKit 存储设施中, 或在使用 helper 类实现的响应程序中, 这些在目标 C 代码中通常称为委托, 它们作为协议实现。
@@ -514,7 +481,6 @@ public class MyCallbacks : NSObject {
 目标-C 协议与接口类似, 但它们支持可选方法, 也就是说, 并非所有方法都需要实现才能使用。
 
 实现模型有两种方法。 可以手动实现, 也可以使用现有的强类型定义。
-
 
 当你尝试实现未由 Xamarin 绑定的类时, 必须使用手动机制。 这非常简单:
 
@@ -566,8 +532,7 @@ public class AppController : UIApplicationDelegate {
 
 优点在于, 无需深入了解目标 C 头文件来查找选择器、自变量的类型或映射到C#, 以及从 Visual Studio for Mac 获取 intellisense 以及强类型。
 
-
-#### <a name="xib-outlets-and-c35"></a>XIB 插座和 C&#35;
+#### <a name="xib-outlets-and-c"></a>XIB 插座和 C\#
 
 > [!IMPORTANT]
 > 本部分说明了使用 XIB 文件时 IDE 与插座的集成。 使用 Xamarin Designer for iOS 时, 将通过在 IDE 的 "属性" 部分中的 "**标识 > 名称**" 下输入名称来替换这一点, 如下所示:
@@ -631,13 +596,13 @@ UITextField UserName {
 
 目标 C 编程的核心概念是选择器。 你经常会遇到需要你传递选择器的 Api, 或者期望你的代码响应选择器。
 
-中C#创建新的`ObjCRuntime.Selector`选择器非常简单–只需创建类的新实例, 并在需要它的 API 中的任何位置使用结果。 例如：
+中C#创建新的`ObjCRuntime.Selector`选择器非常简单–只需创建类的新实例, 并在需要它的 API 中的任何位置使用结果。 例如:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-对于响应C#选择器调用的方法, 它必须从`NSObject`类型继承, 并且C#方法必须使用`[Export]`属性以选择器名称进行修饰。 例如:
+对于响应C#选择器调用的方法, 它必须从`NSObject`类型继承, 并且C#方法必须使用`[Export]`属性以选择器名称进行修饰。 例如：
 
 ```csharp
 public class MyMath : NSObject {

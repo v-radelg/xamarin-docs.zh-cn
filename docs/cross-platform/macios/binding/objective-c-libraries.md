@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120480"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169259"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定目标-C 库
 
@@ -325,7 +325,7 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>绑定协议
 
-如 API 设计文档中所述, 在[讨论模型和协议](~/ios/internals/api-design/index.md#Models)部分, Xamarin 将 ansi-c 协议映射到已使用[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+如 API 设计文档中所述, 在[讨论模型和协议](~/ios/internals/api-design/index.md#models)部分, Xamarin 将 ansi-c 协议映射到已使用[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
 attribute. 这通常在实现目标 C 委托类时使用。
 
 常规绑定类与委托类之间的主要区别在于委托类可能具有一个或多个可选方法。
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常, 这些字段包含必须引用的字符串或整数值。 它们通常用作表示特定通知的字符串, 以及字典中的键。
 
-若要绑定字段, 请将属性添加到接口定义文件, 并使用[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)特性修饰属性。 此属性采用一个参数: 要查找的符号的 C 名称。 例如：
+若要绑定字段, 请将属性添加到接口定义文件, 并使用[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)特性修饰属性。 此属性采用一个参数: 要查找的符号的 C 名称。 例如:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -682,7 +682,7 @@ Xamarin 绑定生成器为开发人员提供了对绑定通知的支持。 为�
 
 此特性可用于不带有效负载的通知的参数, 或者你可以指定`System.Type`引用 API 定义中的另一个接口的, 通常名称以 "EventArgs" 结尾。 生成器会将接口转换为子类`EventArgs` , 并将包含列出的所有属性。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)特性应在 EventArgs 类中用于列出用于查找目标 C 字典以获取该值的键的名称。
 
-例如:
+例如：
 
 ```csharp
 interface MyClass {
@@ -1337,7 +1337,7 @@ c.Loaded += delegate (sender, args){
 上面的示例将链接`libMyLibrary.a`, `libSystemLibrary.dylib`并`CFNetwork`将框架库转换为最终可执行文件。
 
 或者, 你可以利用程序集级别[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), 你可以将其嵌入到约定文件中 ( `AssemblyInfo.cs`例如)。
-当你使用[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)时, 你将需要在进行绑定时使用本机库, 因为这会将本机库嵌入你的应用程序。 例如：
+当你使用[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)时, 你将需要在进行绑定时使用本机库, 因为这会将本机库嵌入你的应用程序。 例如:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1404,4 +1404,3 @@ class Demo {
 ## <a name="related-links"></a>相关链接
 
 - [绑定示例](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
- 
