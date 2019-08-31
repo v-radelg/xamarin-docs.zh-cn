@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 43ef420f569f7dbca6140798f798f3a128d9c706
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e194edcea75df9dc18d89bba00c0b97e5bd71c34
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653436"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197871"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的备用应用程序图标
 
@@ -55,7 +55,7 @@ Apple 向 iOS 10.3 添加了几项增强功能, 使应用程序可以管理其�
 
 请执行以下操作：
 
-1. 在“解决方案资源管理器”  中，双击“Info.plist”  文件，将其打开进行编辑。
+1. 在“解决方案资源管理器”中，双击“Info.plist”文件，将其打开进行编辑。
 2. 切换到 "**源**" 视图。
 3. 添加 "**捆绑" 图标**键并将 "**类型**" 设置为 "**字典**"。
 4. 添加密钥并将 "**类型**" 设置为 "字典"。 `CFBundleAlternateIcons`

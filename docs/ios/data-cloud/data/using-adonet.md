@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4f2d16ca2ff258da1b65bf7c7174c989ead7782c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 09c20b776f2c5d4ddd36e8b515f5bcbf6d92d7a4
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527363"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199702"
 ---
 # <a name="using-adonet-with-xamarinios"></a>将 ADO.NET 与 Xamarin 配合使用
 
@@ -56,7 +56,7 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持, 并使用熟
     ```
 
     如前所述, 连接永远不能在不同的线程之间重复使用。 如果有疑问, 请根据需要创建连接并在完成后关闭它;但请注意, 此操作的执行频率要高于所需的频率。
-    
+
 3. **创建和执行数据库命令**-一旦建立了连接, 就可以对其执行任意 SQL 命令。 下面的代码显示正在执行的 CREATE TABLE 语句。
 
     ```csharp

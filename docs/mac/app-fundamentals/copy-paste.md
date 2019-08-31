@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 61b9d84d6d5882d447a78e6583a399013f8919ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 43da869cfdb4ccbf5fcd8836a6fa5ca5ca732bfa
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656551"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199890"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin 中复制和粘贴
 
@@ -67,7 +67,7 @@ _本文介绍如何使用粘贴板在 Xamarin 应用程序中提供复制和粘�
 
 ![向项目添加 NSDocument](copy-paste-images/sample03.png "向项目添加 NSDocument")
 
-对“名称”  输入 `ImageDocument`，然后单击“新建”  按钮。 编辑**ImageDocument.cs**类, 使其类似于以下内容:
+对“名称”输入 `ImageDocument`，然后单击“新建”按钮。 编辑**ImageDocument.cs**类, 使其类似于以下内容:
 
 ```csharp
 using System;
@@ -263,7 +263,7 @@ public void PasteImage(NSObject sender) {
 
 ### <a name="building-the-user-interface"></a>构建用户界面
 
-双击**Xcode 文件以**在其中打开。 接下来, 添加一个工具栏和图像, 并按如下所示对其进行配置:
+双击 Xcode 文件以在其中打开。 接下来, 添加一个工具栏和图像, 并按如下所示对其进行配置:
 
 [![编辑工具栏](copy-paste-images/sample04.png "编辑工具栏")](copy-paste-images/sample04-large.png#lightbox)
 
@@ -541,7 +541,7 @@ void PasteImage (NSObject sender)
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-从这里, 我们调用`ImageDocument`该窗口的类实例来处理复制和粘贴操作。 例如： 
+从这里, 我们调用`ImageDocument`该窗口的类实例来处理复制和粘贴操作。 例如: 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -661,7 +661,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 - `NSGeneralPboard`-用于**剪切**、**复制**和**粘贴**操作的默认剪贴板。
 - `NSRulerPboard`-支持对**标尺**进行**剪切**、**复制**和**粘贴**操作。
-- `NSFontPboard`-支持  对  `NSFont`对象进行剪切、**复制**和粘贴操作。
+- `NSFontPboard`-支持对 `NSFont`对象进行剪切、**复制**和粘贴操作。
 - `NSFindPboard`-支持特定于应用程序的查找面板, 可以共享搜索文本。
 - `NSDragPboard`-支持**拖动 & 拖放**操作。
 
@@ -974,7 +974,7 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-首先, 我们在的  默认目标 C 方法`init`下公开空构造函数。
+首先, 我们在的默认目标 C 方法`init`下公开空构造函数。
 
 接下来, 我们将`NSCoding`公开一个兼容的构造函数, 该构造函数在粘贴到的导出`initWithCoder`名称下时用于从粘贴板创建对象的新实例。
 

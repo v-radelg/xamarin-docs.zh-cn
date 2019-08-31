@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: dc23aed074360a06fcef6ad540d91aa98a19318b
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: a6d245e60a0d163c054fd74e0fb64780225da031
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560299"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197805"
 ---
 # <a name="updating-existing-mac-apps"></a>更新现有 Mac 应用
 
@@ -118,7 +118,7 @@ Xamarin 为 Visual Studio for Mac 和 Visual Studio 提供了工具来自动执�
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>启用 Xamarin. Mac 应用的64位版本
 
 对于已转换为 Unified API 的 Xamarin 应用程序, 开发人员仍需从应用的选项启用64位计算机的应用程序的构建。 有关启用64位生成的详细说明, 请参阅启用[32/64 位平台注意事项](~/cross-platform/macios/32-and-64/index.md)文档的**Xamarin for Xamarin 应用的64位版本**。
-    
+
 ## <a name="finishing-up"></a>完成
 
 无论是否选择使用自动或手动方法将 Xamarin. Mac 应用程序从经典 Api 转换为统一 Api, 都有几个需要进一步干预的实例。 请参阅我们有关将[代码更新到 Unified API 文档以](~/cross-platform/macios/unified/updating-tips.md)了解已知问题和解决办法的技巧。

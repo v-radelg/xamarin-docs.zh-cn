@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 236a64736bc5f92537c858b9cdf938410cf4b0f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b114cad16095a2afd80b690a4654b91b2aa203
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649665"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199936"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 选项卡栏控制器
 
@@ -59,7 +59,7 @@ Apple 对于使用选项卡栏有以下建议:
 在 tvOS 应用中使用选项卡栏的最简单方法是使用 iOS 设计器将它们添加到应用的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 启动新的 tvOS 应用, 并选择**tvOS** > **应用** > **选项卡式应用**: 
 
     [![](tab-bars-images/tab02.png "选择选项卡式应用")](tab-bars-images/tab02.png#lightbox)
@@ -84,7 +84,7 @@ Apple 对于使用选项卡栏有以下建议:
 1. 保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 启动新的 tvOS 应用, 并选择**tvOS** > **应用** > **选项卡式应用**: 
 
     [![](tab-bars-images/tab02vs.png "选择选项卡式应用")](tab-bars-images/tab02vs.png#lightbox)
@@ -107,7 +107,7 @@ Apple 对于使用选项卡栏有以下建议:
 1. 公开任何所需的事件, 以便在代码中C#使用您的 UI 控件。
 1. 命名要在代码中C#公开的任何 UI 控件。
 1. 保存更改。
-    
+
 -----
 
 > [!IMPORTANT]

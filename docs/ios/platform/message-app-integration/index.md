@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2016
-ms.openlocfilehash: 7cb079beac7fd97072333bccf3ff387a9e8c5465
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8f029084982237d7dd16c8f3e5e5ae46f5d0223c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654309"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198991"
 ---
 # <a name="message-app-integration-in-xamarinios"></a>Xamarin 中的消息应用集成
 
@@ -20,7 +20,6 @@ _本文介绍如何在与 Messages 应用集成的 Xamarin iOS 解决方案中�
 
 新的 iOS 10, 消息应用扩展与**Messages**应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
 
-    
 ## <a name="message-app-extension-basicsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[消息应用扩展基本知识](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
 本文介绍如何在与**Messages**应用集成的 Xamarin iOS 解决方案中包含消息应用扩展, 并向用户提供新功能。

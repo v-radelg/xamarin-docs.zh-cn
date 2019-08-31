@@ -1,61 +1,61 @@
 ---
-title: 在 Xamarin.iOS SpriteKit
-description: 本文档介绍 SpriteKit，Apple 的 2D 图形框架与 SceneKit 集成，其中包含的物理和动画，包括支持照明和明暗度，以及的详细信息。 可以使用 SpriteKit 创建 2D 游戏。
+title: Xamarin 中的 SpriteKit
+description: 本文档介绍了与 SceneKit 集成的 SpriteKit 和 Apple 2D 图形框架, 其中包含了物理学和动画, 其中包括对照明和着色等的支持。 SpriteKit 可用于创建2D 游戏。
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: ef1e9a98b76166f4ee5638d1ab9762896d1e3bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 432ae6013988946eb516a632ae054f072ca25f9a
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293859"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200354"
 ---
-# <a name="spritekit-in-xamarinios"></a>在 Xamarin.iOS SpriteKit
+# <a name="spritekit-in-xamarinios"></a>Xamarin 中的 SpriteKit
 
-SpriteKit，apple 的 2D 图形 framework 具有 iOS 8 和 OS X Yosemite 中一些有趣的新功能。 其中包括与 SceneKit、 着色器的支持、 照明、 阴影、 约束、 法线贴图生成和物理引擎增强功能的集成。 具体而言，新的物理功能使其很容易将逼真的效果添加到游戏。
+SpriteKit 是 Apple 的2D 图形框架, 在 iOS 8 和 OS X Yosemite 中有一些有趣的新功能。 其中包括与 SceneKit、着色器支持、照明、阴影、约束、正常地图生成和物理增强功能的集成。 特别是, 新的物理学功能使向游戏添加逼真效果变得非常简单。
 
-## <a name="physics-bodies"></a>物理学正文
+## <a name="physics-bodies"></a>物理学主体
 
-SpriteKit 包括 2D，刚体物理引擎 API。 每个 sprite 具有关联的物理正文 (`SKPhysicsBody`)，在物理世界中定义的物理属性 （例如大容量和阻力，） 和正文的几何图形。
+SpriteKit 包括一个二维的硬正文物理 API。 每个 sprite 都有一个关联的`SKPhysicsBody`物理主体 (), 用于定义物理属性 (例如大容量和摩擦) 以及物理世界中主体的几何。
 
-## <a name="creating-a-physics-body-from-a-texture"></a>从纹理创建物理正文
-SpriteKit 现在支持从其纹理派生的子画面物理学正文。 这样，可以轻松实现看上去更自然的冲突。
+## <a name="creating-a-physics-body-from-a-texture"></a>基于纹理创建物理主体
+SpriteKit 现在支持从其纹理中派生子画面的物理主体。 这样就可以轻松地实现外观更自然的冲突。
 
-例如，请注意，在以下冲突几乎在每个图像表面 banana 和 monkey 的相冲突：
+例如, 在以下冲突中, 请注意香蕉和猴子如何在每个图像的图面上发生冲突:
  
-![](spritekit-images/image13.png "几乎在每个图像表面 banana 和 monkey 发生冲突")
+![](spritekit-images/image13.png "香蕉和猴子几乎在每个图像表面发生冲突")
 
-SpriteKit 使创建物理正文使用一行代码成为可能。 只需调用`SKPhysicsBody.Create`纹理，大小： 子画面。PhysicsBody = SKPhysicsBody.Create （子画面。纹理，子画面。大小）;
+SpriteKit 使使用一行代码就能创建这样的物理体。 只需`SKPhysicsBody.Create`调用纹理和大小: 子画面即可。PhysicsBody = SKPhysicsBody (sprite。纹理、sprite。大小);
 
 ## <a name="alpha-threshold"></a>Alpha 阈值
 
-除了只需设置`PhysicsBody`直接向派生自纹理的几何图形的属性，则可以设置应用程序和 alpha 阈值来控制如何派生几何图形。 
+除了直接将`PhysicsBody`属性设置为从纹理派生的几何以外, 应用程序还可以设置和 alpha 阈值来控制如何派生几何。 
 
-Alpha 阈值定义像素必须具有要包含在生成的物理学正文中的最小 alpha 值。 例如，下面的代码会略有不同的物理正文中：
+Alpha 阈值定义要在生成的物理主体中包含的像素必须包含的最小 alpha 值。 例如, 以下代码会产生略微不同的物理主体:
 
 ```chsarp
 sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 ```
 
-调整此类的 alpha 阈值的效果调整上一冲突，以便 monkey 跌落香蕉与其碰撞时：
+调整 alpha 阈值 (如这种方式) 的效果会微调上一个冲突, 以便在与香蕉发生冲突时, 猴子会下降:
 
-![](spritekit-images/image14.png "Monkey 跌落香蕉与其碰撞时")
+![](spritekit-images/image14.png "与香蕉发生冲突时, 猴子会下降")
  
 ## <a name="physics-fields"></a>物理字段
 
-另一个很好的补充 SpriteKit 是新的物理字段支持。 这些插件，可以添加顶点字段等径向重力字段和 spring 字段，等等。
+SpriteKit 的另一个极佳补充是新的物理领域支持。 利用这些功能, 您可以将 vortex 字段、径向重力字段和弹簧字段等一些东西命名为几个。
 
-使用 SKFieldNode 类，它添加到场景中就像任何其他一样创建物理字段`SKNode`。 上有各种工厂方法`SKFieldNode`创建不同的物理字段。 您可以通过调用创建 spring 字段`SKFieldNode.CreateSpringField()`，通过调用一个径向重力字段`SKFieldNode.CreateRadialGravityField()`，依次类推。
+物理学字段是使用 SKFieldNode 类创建的, 它与任何其他`SKNode`类一样添加到场景中。 上`SKFieldNode`有各种用于创建不同物理字段的工厂方法。 可以通过`SKFieldNode.CreateSpringField()`调用、径向重力字段 (通过调用`SKFieldNode.CreateRadialGravityField()`) 等来创建弹簧字段。
 
-`SKFieldNode` 此外具有属性来控制字段属性，例如字段强度、 字段区域和字段强制的衰减。
+`SKFieldNode`还具有属性来控制字段特性, 例如字段强度、字段区域和字段强制的衰减。
 
-## <a name="spring-field"></a>Spring 字段
+## <a name="spring-field"></a>弹簧字段
 
-例如，以下代码创建 spring 字段，并将其添加到场景：
+例如, 下面的代码创建一个弹簧字段并将其添加到场景中:
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateSpringField ();
@@ -66,7 +66,7 @@ fieldNode.Region = new SKRegion(Frame.Size);
 AddChild (fieldNode);
 ```
 
-然后可以添加 sprite，并设置其`PhysicsBody`属性，使物理字段将影响子画面，如以下代码在用户触摸屏幕：
+然后, 可以添加子画面并设置`PhysicsBody`其属性, 使物理学字段影响 sprite, 如以下代码在用户接触屏幕时执行操作:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -83,13 +83,13 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-这将导致香蕉振动等 spring 围绕字段节点：
+这会导致 bananas 有, 如字段节点周围的弹簧:
 
-![](spritekit-images/image15.png "香蕉振动等字段节点周围 spring")
+![](spritekit-images/image15.png "Bananas 有类似于 \"字段\" 节点附近的弹簧")
  
 ## <a name="radial-gravity-field"></a>径向重力字段
 
-添加不同的字段是类似的。 例如，以下代码创建径向重力字段：
+添加不同的字段类似。 例如, 以下代码将创建一个径向重力字段:
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateRadialGravityField ();
@@ -99,6 +99,6 @@ fieldNode.Strength = 10.0f;
 fieldNode.Falloff = 1.0f;
 ```
 
-这会导致不同的强制字段，其中香蕉放射拉取有关字段：
+这会产生一个不同的 "强制" 字段, 其中 bananas 将 radially 有关字段的请求:
 
-![](spritekit-images/image16.png "该字段周围放射拉取香蕉")
+![](spritekit-images/image16.png "Bananas 在字段周围拉 radially")

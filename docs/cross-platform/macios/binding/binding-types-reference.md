@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: de0d7ae6ac6a028166c13aa29bf0ea44035eddce
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.openlocfilehash: 52c4f6b45a44eaa9df253e9d049d1016de4a6e30
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012438"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199351"
 ---
 # <a name="binding-types-reference-guide"></a>绑定类型参考指南
 
@@ -114,7 +114,7 @@ public delegate bool UIScrollViewCondition (UIScrollView scrollView);
 
 绑定生成器支持生成事件和属性, 这些事件和属性将`UIScrollView`与其关联`UIScrollViewDelegate`的类 (也称为模型类), 这是通过使用`Events`和[`[BaseType]`](#BaseTypeAttribute) `Delegates`批注您的定义来实现的。参数 (如下所述)。 除了[`[BaseType]`](#BaseTypeAttribute)使用这些参数进行注释外, 还必须将更多组件通知生成器。
 
-对于采用多个参数的事件 (在目标-C 中, 约定是委托类中的第一个参数是发送方对象的实例), 您必须为生成`EventArgs`的类提供要使用的名称。 这是通过模型类中[`[EventArgs]`](#EventArgsAttribute)的方法声明上的属性实现的。 例如：
+对于采用多个参数的事件 (在目标-C 中, 约定是委托类中的第一个参数是发送方对象的实例), 您必须为生成`EventArgs`的类提供要使用的名称。 这是通过模型类中[`[EventArgs]`](#EventArgsAttribute)的方法声明上的属性实现的。 例如:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -335,7 +335,7 @@ interface FooObject {
 
 将此特性应用于类时, 它只会生成一个不是从`NSObject`派生的静态类, 因此该[`[BaseType]`](#BaseTypeAttribute)属性将被忽略。 静态类用于托管要公开的 C 公共变量。
 
-例如:
+例如：
 
 ```csharp
 [Static]
@@ -855,7 +855,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 * bool
 * byte
 * double
-* float
+* 浮点数
 * short
 * int
 * long
@@ -926,7 +926,7 @@ public interface UIView {
 当在 getter 或 setter 中使用时, `[Bind]`该属性用于在生成属性的 getter 和 setter 目标-C 选择器名称时, 更改代码生成器推导出的默认值。 默认情况下, 在使用名称`fooBar`标记属性时, 生成器将为 getter 和`fooBar` `setFooBar:` setter 生成导出。 在少数情况下, 目标 C 不遵循此约定, 通常它们会将 getter 名称更改为`isFooBar`。
 您可以使用此属性来通知生成器此。
 
-例如:
+例如：
 
 ```csharp
 // Default behavior
@@ -1036,7 +1036,7 @@ Task<string> UploadAsync (string file);
 
 `bmac-native` `[Dispose]`由于和`Dispose` `Dispose`工具会自动生成方法, 因此需要使用属性在生成的方法实现中注入一些代码。 `btouch-native`
 
-例如:
+例如：
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1125,7 +1125,7 @@ interface CameraEffects {
 
 设计绑定时, 通常会使用此特性隐藏方法或属性, 并为方法或属性提供不同的名称, 然后在C#补充支持文件中添加一个强类型包装器, 该包装器将公开基础功能。
 
-例如:
+例如：
 
 ```csharp
 [Internal]
@@ -1292,7 +1292,7 @@ interface MyClass {
 
 如果引用类型不具有此属性, 则绑定工具将在将值传递给目标-C 之前为赋值生成检查, 并将生成一个检查, 该检查将在指定的`ArgumentNullException`值为时`null`引发。
 
-例如：
+例如:
 
 ```csharp
 // In properties
@@ -1475,7 +1475,7 @@ var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
-`[Wrap]`特性的另一个用途是支持强类型版本的方法。  例如:
+`[Wrap]`特性的另一个用途是支持强类型版本的方法。  例如：
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1488,7 +1488,7 @@ interface XyzPanel {
 }
 ```
 
-如果对`[Wrap]` `[Category]`使用属性修饰的类型中的方法应用该属性, 则需要将作为第一个`This`参数包括在内, 因为正在生成扩展方法。 例如：
+如果对`[Wrap]` `[Category]`使用属性修饰的类型中的方法应用该属性, 则需要将作为第一个`This`参数包括在内, 因为正在生成扩展方法。 例如:
 
 ```csharp
 [Wrap ("Write (This, image, options?.Dictionary, out error)")]
@@ -1733,7 +1733,7 @@ enum NSRunLoopMode {
 
 通过上述绑定定义, 生成器将创建`enum`自身, 还会创建一个`*Extensions`静态类型, 其中包含枚举值和`NSString`常量之间的双向转换方法。 这意味着, 即使它们不是 API 的一部分, 它们仍可供开发人员使用。
 
-示例：
+例如：
 
 ```csharp
 // using the NSString constant in a different API / framework / 3rd party code
@@ -1769,13 +1769,13 @@ Call (x.GetConstant ()); // NSDefaultRunLoopMode will be used
 示例:
 
 ```csharp
-    [Native]
-    [ErrorDomain ("AVKitErrorDomain")]
-    public enum AVKitError : nint {
-        None = 0,
-        Unknown = -1000,
-        PictureInPictureStartFailed = -1001
-    }
+[Native]
+[ErrorDomain ("AVKitErrorDomain")]
+public enum AVKitError : nint {
+    None = 0,
+    Unknown = -1000,
+    PictureInPictureStartFailed = -1001
+}
 ```
 
 然后, 可以调用扩展方法`GetDomain`获取任何错误的域常量。
@@ -1855,7 +1855,7 @@ public class LinkWithAttribute : Attribute {
 
 请注意, 由 Xamarin 推导参数,无需设置。`LinkTarget`
 
-示例：
+例如：
 
 ```csharp
 // Specify additional linker:

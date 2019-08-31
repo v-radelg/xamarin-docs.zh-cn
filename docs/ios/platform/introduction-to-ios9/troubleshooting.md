@@ -1,98 +1,98 @@
 ---
-title: Xamarin.iOS 9 – 故障排除
-description: 本文提供使用 Xamarin.iOS 中的 iOS 9 的各种故障排除提示。 提示介绍 XML 分析、 模拟器、 布局限制、 网络问题和许多其他主题。
+title: Xamarin (iOS 9)-故障排除
+description: 本文提供了有关在 Xamarin 中使用 iOS 9 的各种疑难解答技巧。 提示介绍 XML 分析、模拟器、布局约束、网络问题以及许多其他主题。
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: f8fae79af654339b54a8df0d2ea32eef38f34adb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e6e264d9f1cd959c95a27597649d2ec23d832b1c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425176"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200066"
 ---
-# <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – 故障排除
+# <a name="xamarinios-9--troubleshooting"></a>Xamarin (iOS 9)-故障排除
 
-_本文提供使用 Xamarin.iOS 应用程序中的 iOS 9 的多个故障排除提示。_
+_本文提供了有关在 Xamarin iOS 应用中使用 iOS 9 的几个疑难解答技巧。_
 
-## <a name="there-was-a-problem-parsing-the-xml"></a>无法分析 XML
+## <a name="there-was-a-problem-parsing-the-xml"></a>分析 XML 时出现问题
 
-Xamarin iOS 设计器尚不支持 Xcode 7 功能。 将无法使用设计器中加载情节提要 _"时出现问题分析 XML"_ 时尝试使用新的 iOS 9 (Xcode 7) 如 StackView 设计器元素。
+Xamarin iOS 设计器尚不支持 Xcode 7 功能。 当尝试使用新的 iOS 9 (Xcode 7) 设计器元素 (如 System.windows.forms.toolstrip.stackview) 时, 演示图板将无法在设计器中加载, 出现 _"分析 XML 时出现问题"_ 。
 
-iOS 设计器支持 Xcode 7 功能，针对即将发布周期 6 功能版本。 周期 6 的预览版本目前以 Alpha 通道，受到有限的新 Xcode 7 功能的支持。
+iOS Designer 对 Xcode 7 功能的支持面向即将推出的周期6功能版本。 周期6的预览版本当前在 Alpha 通道中提供, 并且对新 Xcode 7 功能的支持有限。
 
-针对 Visual Studio for Mac 的部分解决方法：右键单击情节提要，然后选择**打开** > **Xcode Interface Builder**。
+Visual Studio for Mac 的部分解决方法:右键单击情节提要, 然后选择 "**打开方式** > **Xcode" Interface Builder**。
 
-## <a name="where-are-the-ios-8-simulators"></a>在哪里？ iOS 8 模拟器
+## <a name="where-are-the-ios-8-simulators"></a>IOS 8 模拟器位于何处？
 
-如果已安装的 Xcode 7 （或更高版本） 将自动替换所有 iOS 8 模拟器 iOS 9 模拟器默认情况下。 如果您仍需要在 iOS 8 上测试，可以启动 Xcode，然后下载并安装 iOS 8 模拟器。
+如果安装了 Xcode 7 (或更高版本), 则默认情况下会自动将所有 iOS 8 模拟器替换为 iOS 9 模拟器。 如果仍需要在 iOS 8 上进行测试, 可以启动 Xcode, 然后下载并安装 iOS 8 模拟器。
 
-在 Xcode 中，选择**Xcode**菜单然后**首选项...**  > **下载**:
+在 Xcode 中, 选择**Xcode**菜单, 然后选择 "**首选项 ...** " > **下载**:
 
 [![](troubleshooting-images/ios8.png "iOS 8 模拟器下载")](troubleshooting-images/ios8.png#lightbox)
 
-单击**检查和立即安装**按钮以重新安装 iOS 8 模拟器。
+单击 "**检查并立即安装**" 按钮, 重新安装 iOS 8 模拟器。
 
-## <a name="layout-constraint-with-leftright-attribute-errors"></a>使用左/右属性错误布局约束
+## <a name="layout-constraint-with-leftright-attribute-errors"></a>具有左/右属性错误的布局约束
 
-在 iOS 8 （及先前版本） 中的情节提要的 UI 元素可以使用这二者的融合**右** & **左侧**属性 (`NSLayoutAttributeRight` & `NSLayoutAttributeLeft`) 和**前导** & **尾随**属性 (`NSLayoutAttributeLeading` & `NSLayoutAttributeTrailing`) 中相同的布局。
+在 iOS 8 (及更早的) 中, 情节提要中的 UI 元素可能混合使用**右** & **左**属性`NSLayoutAttributeRight`( &  & `NSLayoutAttributeLeft`) 和前导**尾随**属性 ()在同一布局`NSLayoutAttributeLeading`中。  &  `NSLayoutAttributeTrailing`
 
-如果在 iOS 9 中运行相同的情节提要中，则将导致以下窗体中出现异常：
+如果中的同一情节提要在 iOS 9 中运行, 则它将导致以下格式的异常:
 
-> 终止应用，因为未捕获异常 NSInvalidArgumentException，原因: * * * + [NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]:不能前导/尾随属性和一个右/左属性之间建立一个约束。 使用前导/尾随的同时还是两者皆否。
+> 由于未捕获的异常 "NSInvalidArgumentException", 正在终止应用, 原因: "* * * + [NSLayoutConstraint constraintWithItem: attribute: relatedBy: toItem: attribute: 乘法器: 常量:]:不能在前导/尾随特性和右/左特性之间进行约束。 对两者均使用前导/尾随。 "
 
-iOS 9 强制执行布局以使用两种**右** & **左侧**_或者_**前导** &  **尾随**属性，但*不*两者。 若要解决此问题，请更改所有布局限制为使用相同的情节提要文件中设置的属性。
+iOS 9 强制执行布局, 以使用**Right** & **Left** _或_**前导** & **尾随**属性, 但*不*能同时使用两者。 若要解决此问题, 请更改所有布局约束以在情节提要文件中使用相同的属性集。
 
-有关详细信息，请参阅[iOS 9 约束错误](https://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 讨论。
+有关详细信息, 请参阅[iOS 9 约束错误](https://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 讨论。
 
-## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>错误 ITMS-90535:意外的 CFBundleExecutable 关键字
+## <a name="error-itms-90535-unexpected-cfbundleexecutable-key"></a>错误 ITMS-90535:意外的 CFBundleExecutable 键
 
-切换到 iOS 9 后, 从应用程序使用第三方组件 （特别是我们现有 Google Maps 组件） 编译并运行 ios 8 （或更早），尝试提交到 iTunes Connect 窗体中出现错误的新的生成时的：
+切换到 iOS 9 后, 从应用使用在 iOS 8 (或更早版本) 上编译并运行的第三方组件 (特别是我们的现有 Google Maps 组件), 尝试将新版本提交到 iTunes Connect 时, 可能会出现以下格式的错误:
 
-> 错误 ITMS-90535:意外的 CFBundleExecutable 键。 在 Payload/app-name.app/component.bundle 捆绑包不包含捆绑包可执行文件...
+> 错误 ITMS-90535:意外的 CFBundleExecutable 键。 "负载/app-name/组件捆绑" 中的捆绑包不包含捆绑可执行文件 。
 
-此问题可以通常通过在项目中查找名为捆绑包来解决，然后将-就像错误消息的建议-编辑`Info.plist`捆绑包中是通过删除`CFBundleExecutable`密钥。 `CFBundlePackageType`密钥应设置为`BNDL`也。
+通常可以通过在项目中查找指定的捆绑来解决此问题, 正如错误消息中所建议的那样, `Info.plist`通过`CFBundleExecutable`删除密钥来编辑捆绑包中的。 还应将`BNDL` `CFBundlePackageType`密钥设置为。
 
-进行这些更改之后, 执行清理和重新生成整个项目。 您应能够进行这些更改后提交到 iTunes Connect 毫无问题。
+进行这些更改后, 请执行干净的操作并重新生成整个项目。 进行这些更改后, 你应该能够提交到 iTunes Connect, 而不会出现问题。
 
-有关详细信息，请参阅此[Stack Overflow](https://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)讨论。
+有关详细信息, 请参阅此[Stack Overflow](https://stackoverflow.com/questions/32096130/unexpected-cfbundleexecutable-key)讨论。
 
 ## <a name="cfnetwork-sslhandshake-failed--9824-error"></a>CFNetwork SSLHandshake 失败 (-9824) 错误
 
-在尝试连接到 internet，直接或从 iOS 9 中的 web 视图时，你可能会遇到错误，在窗体中：
+尝试在 iOS 9 中直接或从 web 视图连接到 internet 时, 可能会收到如下格式的错误:
 
 ```csharp
 2015-09-04 14:38:05.757 FormsWebViewiOS[2553:30362] CFNetwork SSLHandshake failed (-9824)
 2015-09-04 14:38:05.758 FormsWebViewiOS[2553:30363] NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9824)
 ```
 
-或在窗体中：
+或采用以下格式:
 
 ```csharp
 2015-09-04 14:39:17.881 FormsWebViewiOS[2568:30974] App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure.
 Temporary exceptions can be configured via your app's Info.plist file.
 ```
 
-IOS9，在应用程序传输安全 (ATS) 强制实施 internet 资源 （如应用程序的后端服务器） 和您的应用程序之间的安全连接。 此外，ATS 要求通信使用`HTTPS`协议和高级别 API 通信进行加密与正向保密使用 TLS 1.2 版。
+在 iOS9 中, 应用传输安全 (ATS) 在 internet 资源 (如应用的后端服务器) 和应用之间强制实施安全连接。 此外, ATS 要求使用`HTTPS`协议进行通信, 并使用 TLS 版本1.2 和正向保密加密来对高级 API 通信进行加密。
 
-由于默认情况下，所有连接使用适用于 iOS 9 和 OS X 10.11 (El Capitan) 都构建应用程序中启用了 ATS `NSURLConnection`，`CFURL`或`NSURLSession`将受到 ATS 安全要求。 如果你的连接不能满足这些要求，它们将失败并出现异常。
+由于默认情况下, 在为 iOS 9 和 OS X 10.11 (El Capitan) 构建的应用中启用了 ATS `NSURLConnection`, `CFURL`因此`NSURLSession` , 使用或的所有连接都将受到 ATS 安全要求。 如果连接不满足这些要求, 它们将失败并出现异常。
 
-请参阅[Opting 带 ATS](~/ios/app-fundamentals/ats.md)的部分我们[应用传输安全](~/ios/app-fundamentals/ats.md)指南以获取有关如何解决此问题的信息。
+有关如何解决此问题的信息, 请参阅我们的[应用传输安全](~/ios/app-fundamentals/ats.md)指南中的[ATS](~/ios/app-fundamentals/ats.md)部分。
 
-## <a name="my-existing-apps-dont-run-on-ios-9"></a>我现有的应用程序不运行于 iOS 9
+## <a name="my-existing-apps-dont-run-on-ios-9"></a>我的现有应用不在 iOS 9 上运行
 
-请参阅我们[iOS 9 兼容性信息](~/ios/platform/introduction-to-ios9/ios9.md)有关重新生成和重新部署现有应用程序以运行于 iOS 9 的说明。
+有关重新构建和重新部署现有应用以在 iOS 9 上运行的说明, 请参阅[ios 9 兼容性信息](~/ios/platform/introduction-to-ios9/ios9.md)。
 
 <a name="UICollectionViewCell.ContentView-is-null-in-constructors" />
 
-## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell.ContentView 是构造函数中的为 Null
+## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell ContentView 在构造函数中为 Null
 
-**原因：** 在 iOS 9`initWithFrame:`构造函数现在是必需的由于为 iOS 9 中的行为更改[UICollectionView 文档中所声明](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果注册为指定的标识符的类，并且必须创建新的单元格，单元格现在通过调用来初始化其`initWithFrame:`方法。
+**在于**在 ios 9 中`initWithFrame:` , 构造函数现在是必需的, 因为 iOS 9 中的行为更改为[UICollectionView 文档状态](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果为指定标识符注册了一个类, 并且必须创建新的单元格, 则该单元格现在通过调用其`initWithFrame:`方法进行初始化。
 
-**解决方法：** 添加`initWithFrame:`此类构造函数：
+**能够**添加如下`initWithFrame:`所示的构造函数:
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -102,15 +102,15 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-相关的示例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)， [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+相关示例:[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 <a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
 
-## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView Init 与编码员到 Xib/Nib 从加载视图时将失败
+## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>从 Xib/笔尖加载视图时, UIView 无法使用编码员初始化
 
-**原因：**`initWithCoder:`构造函数是另一个名为从接口生成器 Xib 文件加载视图时。 如果此构造函数不会导出非托管的代码不能调用我们托管的版本。 以前 （例如。 在 iOS 8)`IntPtr`已调用构造函数来初始化视图。
+**在于**`initWithCoder:`构造函数是从 Interface Builder Xib 文件加载视图时调用的构造函数。 如果此构造函数不是导出的, 则非托管代码不能调用我们的托管版本。 之前 (例如 在 iOS 8 中) `IntPtr`已调用构造函数来初始化视图。
 
-**解决方法：** 创建和导出`initWithCoder:`此类构造函数：
+**能够**创建和导出此`initWithCoder:`构造函数, 如下所示:
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -120,80 +120,80 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-相关的示例：[Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+相关示例:[网上](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息：没有具有名称的缓存图像...
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息:没有名称为的缓存映像 。
 
-你可能会遇到在系统崩溃时在日志中的以下信息：
+日志中的以下信息可能会出现崩溃:
 
 ```csharp
 Dyld Error Message:
 Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**原因：** 这是 Apple 的本机链接器，这种情况发生时它们公开专用框架中的 bug （JavaScriptCore 被公开在 iOS 7 中, 之前，它是一个专用的框架），和框架为私有时，应用程序的部署目标是 iOS 版本。 在这种情况下 Apple 的链接器将链接而不是公共版本 framework 的专用版本。
+**在于**这是 Apple 的本机链接器中的一个 bug, 在这种情况下, 会发生这种情况: 公共框架公开 (JavaScriptCore 是在 iOS 7 中公开的, 在这种情况下, 它是一个专用框架), 该应用的部署目标是在该框架专用时用于 iOS 版本。 在这种情况下, Apple 的链接器将链接到框架的私有版本, 而不是公共版本。
 
-**解决方法：** 这将解决适用于 iOS 9，但可以将自己在此期间应用简单的解决方法： 只需面向更高版本 iOS 版本在项目中的 （在这种情况下，你可以尝试 iOS 7）。 其他框架可能会表现出类似的问题，例如 WebKit framework 被公开在 iOS 8 （和以便面向 iOS 7 将导致此错误; 应面向 iOS 8 应用程序中使用易于使用的功能）。
+**能够**这适用于 iOS 9, 但有一种简单的解决方法, 你可以在此期间自行应用: 仅面向更高版本的项目中的 iOS 版本 (在这种情况下, 你可以尝试使用 iOS 7)。 其他框架可能会出现类似的问题, 例如, WebKit 框架已在 iOS 8 中公开 (因此面向 iOS 7 会导致此错误; 应以 iOS 8 为目标, 以在应用中使用 WebKit)。
 
-## <a name="untrusted-enterprise-developer"></a>不受信任的企业级开发版
+## <a name="untrusted-enterprise-developer"></a>不受信任的企业开发人员
 
-在尝试在真实的 iOS 硬件上运行 Xamarin.iOS 应用的 iOS 9 版本时，可能会收到一条消息指出在设备上你的开发人员帐户不受信任。 例如：
+尝试在实际 iOS 硬件上运行你的 Xamarin iOS 应用的 iOS 9 版本时, 可能会收到一条消息, 指出你的开发人员帐户尚未在设备上受信任。 例如：
 
-[![](troubleshooting-images/untrusted01.png "不受信任的企业级开发版警报")](troubleshooting-images/untrusted01.png#lightbox)
+[![](troubleshooting-images/untrusted01.png "不受信任的企业开发人员警报")](troubleshooting-images/untrusted01.png#lightbox)
 
-若要解决此问题，请执行以下操作：
+若要解决此问题, 请执行以下操作:
 
-1. 启动 Xcode （最新 beta 版本） 上开发的 mac。
-2. 选择**设备**从**窗口**菜单以打开设备窗口： 
+1. 启动开发 Mac 上的 Xcode (最新的 beta 版本)。
+2. 从 "**窗口**" 菜单中选择 "**设备**", 打开 "设备" 窗口: 
 
-    [![](troubleshooting-images/untrusted02.png "设备窗口")](troubleshooting-images/untrusted02.png#lightbox)
-3. 下**设备**侧面板中，选择设备，右键单击并选择**显示预配配置文件...**: 
+    [![](troubleshooting-images/untrusted02.png "\"设备\" 窗口")](troubleshooting-images/untrusted02.png#lightbox)
+3. 在 "**设备**" 侧面板中, 选择你的设备, 右键单击并选择 "**显示预配配置文件 ...** ": 
 
     [![](troubleshooting-images/untrusted03.png "SShow 预配配置文件")](troubleshooting-images/untrusted03.png#lightbox)
-4. 选择当前在该设备并单击每个预配配置文件**-** 按钮以将其删除： 
+4. 选择当前设备上的每个设置配置文件, **-** 并单击按钮将其删除: 
 
-    [![](troubleshooting-images/untrusted04.png "正在删除预配配置文件")](troubleshooting-images/untrusted04.png#lightbox)
-5. 从**Xcode**菜单中，选择**首选项...** 并**帐户**: 
+    [![](troubleshooting-images/untrusted04.png "删除预配配置文件")](troubleshooting-images/untrusted04.png#lightbox)
+5. 从 " **Xcode** " 菜单中, 选择 "**首选项 ...** " 和 "**帐户**": 
 
     [![](troubleshooting-images/untrusted05.png "Xcode 帐户首选项")](troubleshooting-images/untrusted05.png#lightbox)
-6. 单击**查看详细信息...** 按钮，然后单击**下载所有**按钮： 
+6. 单击 "**查看详细信息 ...** " 按钮, 然后单击 "**全部下载**" 按钮: 
 
     [![](troubleshooting-images/untrusted06.png "下载所有配置文件")](troubleshooting-images/untrusted06.png#lightbox)
-7. 更新完成列表后，单击**完成**按钮并关闭首选项窗口中。
-8. 删除现有版本的 Xamarin.iOS 应用，它尝试从 iOS 设备进行测试。
-9. 返回到 Visual Studio for Mac，生成已清理并尝试在设备上重新运行该应用程序。
+7. 列表完成更新后, 单击 "**完成**" 按钮并关闭 "首选项" 窗口。
+8. 删除你尝试从 iOS 设备进行测试的现有 Xamarin iOS 应用的版本。
+9. 返回 Visual Studio for Mac, 执行干净的生成并尝试在设备上重新运行应用。
 
-您可能必须停止并重启 Visual Studio for Mac，才能看到由 Xcode 加载新预配配置文件。 您可能还需要调整**iOS 捆绑签名**Xamarin.iOS 应用以选择新的预配配置文件的选项。
+你可能必须先停止并重新启动 Visual Studio for Mac, 然后才能查看 Xcode 加载的新预配配置文件。 你可能还需要调整 Xamarin iOS 应用的**IOS 捆绑签名**选项, 以选择新的预配配置文件。
 
 ## <a name="launch-screen-issues"></a>启动屏幕问题
 
-iOS 9 现在强制执行的启动屏幕要求，以便不再可以重用相同的启动映像以支持不同的接口的方向。 请参阅 Apple [UILanchImage 引用](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW28)有关详细信息。
+iOS 9 现在强制实施启动屏幕要求, 这样就不能再重复使用同一个启动映像来支持不同的界面方向。 有关详细信息, 请参阅 Apple 的[UILanchImage 参考](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW28)。
 
-（可选） 可以使用情节提要文件提供应用程序的启动屏幕而不是使用一套 **.png**图像文件。 这是现在 Apple 的首选方法，可以显示启动屏幕。 请参阅我们[统一情节提要简介](~/ios/user-interface/storyboards/unified-storyboards.md)指南以获取详细信息。
+或者, 您可以使用情节提要文件来显示应用程序的启动屏幕, 而不是使用一组 **.png**图像文件。 这是一种显示启动屏幕的 Apple 首选方式。 有关详细信息, 请参阅我们的[统一情节提要指南简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 
-最后，您的应用程序必须使用其启动屏幕情节提要文件和支持全部四个界面方向 （纵向倒置纵向、 横向和横向 Right） 被视为对于滑动通过面板中或在拆分视图模式下运行。 若要了解有关 iOS 9 的新的多任务处理能力的详细信息，请参阅我们[适用于 iPad 的多任务](~/ios/platform/multitasking.md)指南。
+最后, 你的应用程序必须使用情节提要文件来启动屏幕, 并支持所有四种界面方向 (纵向、倒置纵向、横向和横向), 以便在滑动到面板或拆分视图模式下运行。 若要了解有关 iOS 9 的新多任务功能的详细信息, 请参阅我们的[多任务 For iPad](~/ios/platform/multitasking.md)指南。
 
 ## <a name="nsinternalinconsistencyexception-exception"></a>NSInternalInconsistencyException 异常
 
-编译和运行 ios 9 现有 Xamarin.iOS 应用程序时您可能会遇到错误，在窗体中：
+在编译和运行适用于 iOS 9 的现有 Xamarin iOS 应用时, 可能会出现以下格式的错误:
 
-> Objective C 中引发异常。  姓名:NSInternalInconsistencyException 原因：Windows 的应用程序应能够根视图控制器应用程序结束时启动
+> 引发了目标-C 异常。  姓名:NSInternalInconsistencyException 原因:应用程序窗口在应用程序启动结束时应具有根视图控制器
 
-这是错误因为应用 Windows 应能够在应用程序启动末尾根视图控制器和现有的应用不会被引发。
+出现这种错误的原因是应用程序窗口在应用程序启动结束时应具有一个根视图控制器, 而你的现有应用程序不会。
 
-有关于此问题在至少两个可能的解决方法：
+此问题至少有两种可能的解决方法:
 
-1. 更新应用程序以使用情节提要文件，而不是`xib`文件以定义其用户界面。 此其中一个需要很多很多时间，具体取决于您的应用程序的大小和了解如何使用 iOS 设计器 （或 Xcode 的 Interface Builder） 到布局情节提要。 有关详细信息，请参阅我们[统一情节提要简介](~/ios/user-interface/storyboards/unified-storyboards.md)文档。
-2. 安装程序`RootViewController`属性的应用程序窗口中`FinishedLaunching`中的方法`AppDelegate`类，以指向您的应用 UI 中的视图控制器。
+1. 更新应用程序以使用情节提要文件`xib`而不是文件来定义其用户界面。 这种方法需要很长时间, 具体取决于你的应用程序的大小, 以及如何使用 iOS 设计器 (或 Xcode 的 Interface Builder) 来布局情节提要的知识。 有关详细信息, 请参阅我们的[统一情节提要文档简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
+2. 类中方法`RootViewController` `FinishedLaunching`的 "应用" 窗口的 "设置" 属性, 用于指向应用 UI 中的视图控制器。 `AppDelegate`
 
 ## <a name="when-to-initialize-views-and-view-controllers"></a>何时初始化视图和视图控制器
 
-使用 Xamarin.iOS，可以发出视图或视图控制器内的内容公开为托管代码，但这会破坏 iOS 设计时，将调用的构造函数的初始化。
+借助 Xamarin, 可在构造函数中进行查看或视图控制器初始化, 在代码公开到托管代码中时, 将调用这些构造函数, 但会中断 iOS 设计。
 
-一般情况下应不初始化任何可以调用返回 Objective C 代码从构造函数由于无法确定调用时。 这也意味着没有更好的位置 (其他.ctor) 或调用重写 （如 Objective C 不有任何事件），应进行此初始化。
+通常, 不应初始化可从构造函数中调用目标 C 代码的任何内容, 因为无法确定是否要调用它。 这也意味着有更好的位置 (其他 .ctor) 或调用以重写 (因为目标-C 没有事件), 此时应执行此初始化。
 
 ## <a name="related-links"></a>相关链接
 
-- [面向开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
-- [What's New iOS 9.0 中](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [更新你的 Xamarin.iOS 应用到 iOS9 （视频）](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)
+- [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
+- [IOS 9.0 中的新增功能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [将你的 Xamarin iOS 应用程序更新到 iOS9 (视频)](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

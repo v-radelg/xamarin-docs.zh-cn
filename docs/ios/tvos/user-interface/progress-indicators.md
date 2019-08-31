@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/25/2018
-ms.openlocfilehash: 6ab1b4ad5493075e8806190e77f6d234354af9ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab82b98351b95fbdea9c33a9eae7142c7a54fc77
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648975"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200305"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 进度指示器
 
@@ -46,7 +46,7 @@ Apple 对于使用进度条有以下建议:
 若要在 tvOS 应用中处理进度指示器, 最简单的方法是使用 iOS 设计器将其添加到应用的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 在**Solution Pad**中, 双击**主情节提要**文件, 然后将其打开进行编辑。
 
 2. 从 "**工具箱**" 中将**活动指示器**拖放到视图上: 
@@ -72,7 +72,7 @@ Apple 对于使用进度条有以下建议:
 6. 保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 在**解决方案资源管理器**中, 双击**主情节提要**文件, 然后将其打开进行编辑。
 
 2. 从 "**工具箱**" 中将**活动指示器**拖放到视图上: 

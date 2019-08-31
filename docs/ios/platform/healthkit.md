@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 245c406a1b62b454ff9935ebb7cd3531a624aea3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6446bd7ef196fadae25c0e4dc18542d269424d6d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656590"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200283"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin 中的 HealthKit
 

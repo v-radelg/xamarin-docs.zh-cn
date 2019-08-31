@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: f4f063cf7004d35aa93f688e71a917caa7a3e5a8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 622960f73c96209c1a67a08a4f0abe27656331bf
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648949"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200247"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 分段控件
 
@@ -71,7 +71,7 @@ Apple 提出以下有关使用段文本的建议:
 1. 保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 在**解决方案资源管理器**中, 双击该`Main.storyboard`文件, 然后将其打开进行编辑。
 1. 将 "**段" 控件**从 "**工具箱**" 拖放到视图上: 
 
@@ -85,7 +85,7 @@ Apple 提出以下有关使用段文本的建议:
 
     [![](segmented-controls-images/segment04-vs.png "分配名称")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 保存更改。
-    
+
 -----
 
 有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 

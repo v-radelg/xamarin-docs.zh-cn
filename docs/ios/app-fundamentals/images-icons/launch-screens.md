@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 76e9d91b735f2ae5041330d8e290347ae9314487
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 43c9ee599fe96c107bf10996834d9bcf60847603
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654808"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200103"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>为 Xamarin iOS 应用启动屏幕
 
@@ -113,7 +113,7 @@ _本文介绍如何使用单个统一的情节提要, 以任何分辨率和方�
 
 4. 将项目配置为使用**LaunchScreen**作为其启动屏幕情节提要:
 
-    - 在“解决方案资源管理器”  中，双击 **Info.plist** 文件，打开它进行编辑。 
+    - 在“解决方案资源管理器”中，双击 **Info.plist** 文件，打开它进行编辑。 
     - 在 "**视觉对象资产**" 选项卡上, 将 "**启动屏幕**" 设置为**LaunchScreen**。
 
     ![Info.plist 中的启动屏幕选择器](launch-screens-images/launch04-vs.png)
@@ -181,7 +181,7 @@ _本文介绍如何使用单个统一的情节提要, 以任何分辨率和方�
 -----
 
 > [!NOTE]
-> 用作_启动屏幕的_情节提要只能包含简单的内置 UI 元素,**不能**进行任何计算或从自定义类派生。
+> 用作启动屏幕的情节提要只能包含简单的内置 UI 元素,**不能**进行任何计算或从自定义类派生。
 
 有关使用统一情节提要创建启动屏幕的详细信息, 请参阅[统一](~/ios/user-interface/storyboards/unified-storyboards.md)情节提要指南的[动态启动](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens)屏幕部分。
 

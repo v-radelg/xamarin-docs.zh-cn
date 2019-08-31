@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中使用文件系统。 它介绍
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/12/2018
-ms.openlocfilehash: e52f9abb31090f3acc361eb5a3f9ae2e12600b36
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daa9625ccbac3661d3678889d4efd6319e0bd424
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653520"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198129"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin 中的文件系统访问
 
@@ -153,7 +153,7 @@ File.WriteAllText(filename, json);
 
 ### <a name="case-sensitivity"></a>区分大小写
 
-必须了解 iOS 文件系统*区分大小写*。 区分大小写意味着文件和目录名称必须完全**匹配– readme.txt** **和 readme.txt**将被视为不同的文件名。
+必须了解 iOS 文件系统*区分大小写*。 区分大小写意味着文件和目录名称必须完全匹配– readme.txt 和 readme.txt 将被视为不同的文件名。
 
 对于更熟悉 Windows 文件系统 (不*区分大小写*) 的 .net 开发人员而言, 这可能会造成混淆–**文件**、**文件**和**文件**都将引用相同的目录。
 
@@ -292,7 +292,7 @@ iOS 11 引入了**文件**应用程序-适用于 iOS 的文件浏览器, 用户�
 
 Apple 在 iOS 5 中引入了*ICloud 备份*功能。 启用 iCloud 备份后, 应用程序主目录中的所有文件 (不包括通常备份的目录, 例如, 应用程序捆绑包`Caches`、和`tmp`) 会备份到 iCloud 服务器。 此功能在设备丢失、被盗或损坏时为用户提供完整的备份。
 
-由于 iCloud 仅向每个用户提供 5 Gb 的 "可用" 空间, 并避免不必要地使用带宽, 因此 Apple 期望应用程序仅备份用户生成的重要数据。 若要遵守 iOS 数据存储准则, 应通过遵循以下各项来限制备份的数据量:
+由于 iCloud 仅向每个用户提供 5 Gb 的可用空间, 并避免不必要地使用带宽, 因此 Apple 预期应用程序仅备份用户生成的重要数据。 若要遵守 iOS 数据存储准则, 应通过遵循以下各项来限制备份的数据量:
 
 - 仅存储用户生成的数据, 或在文档目录中 (备份了) 无法重新创建的数据。
 - 存储可以在或`Library/Caches` `tmp`中轻松地重新创建或重新下载的任何其他数据 (这是未备份的, 可以是 "已清理")。
@@ -319,7 +319,7 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 ### <a name="configure-an-app-group"></a>配置应用组
 
-通过[应用组](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)配置共享位置，这是在 [iOS 开发中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符和描述文件**部分配置的。 还必须在每个项目的“Entitlements.plist”  中引用此值。
+通过[应用组](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)配置共享位置，这是在 [iOS 开发中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符和描述文件**部分配置的。 还必须在每个项目的“Entitlements.plist”中引用此值。
 
 有关创建和配置应用组的信息, 请参阅[应用组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)指南。
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: d75f46f8b06ef0e743218d5f42d5b2732b6e4158
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: aa8f25af4a394b981fdc7d5dc5a8836b7ff240cc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120974"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200259"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -2506,7 +2506,7 @@ Xamarin iOS 项目经常会动态引用本机符号, 这意味着本机链接器
 - 尝试运行`csharp -e 'System.Net.Dns.GetHostEntry (System.Net.Dns.GetHostName ()).AddressList'` (这应该为你的 IP 地址, 而不是明显的错误)。
 - 尝试运行 "ping \`主机名\`", 它可能会给出更多的信息, 例如:`cannot resolve MyHost.local: Unknown host`
 
-在某些情况下, 这是一个 "本地网络" 问题, 可以通过在中`127.0.0.1   MyHost.local` `/etc/hosts`添加未知主机来解决该问题。
+在某些情况下, 这是一个 "本地网络" 问题, 可以通过在中`127.0.0.1    MyHost.local` `/etc/hosts`添加未知主机来解决该问题。
 
 <a name="MT7002" />
 

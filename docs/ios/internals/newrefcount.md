@@ -1,61 +1,61 @@
 ---
-title: 新引用计数在 Xamarin.iOS 中的系统
-description: 本文档介绍了 Xamarin 的增强型的引用计数系统中，默认情况下启用所有 Xamarin.iOS 应用程序中。
+title: Xamarin 中的新引用计数系统
+description: 本文档介绍 Xamarin 的增强引用计数系统, 默认情况下在所有 Xamarin 应用程序中启用。
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: 8c7b1a88284156cb5d4261f18d5659ed66dfaf64
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 221c3a3bb82b5b46f4afea5ec43fcdd5c00b0556
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037158"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199328"
 ---
-# <a name="new-reference-counting-system-in-xamarinios"></a>新引用计数在 Xamarin.iOS 中的系统
+# <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin 中的新引用计数系统
 
-Xamarin.iOS 9.2.1 引入了增强的引用计数的所有应用程序的系统默认情况下。 它可用于消除也很难跟踪和解决在早期版本的 Xamarin.iOS 的很多内存问题。
+默认情况下, Xamarin 9.2.1 将增强的引用计数系统引入到所有应用程序。 它可用于消除许多在早期版本的 Xamarin 中难以跟踪和修复的内存问题。
 
-## <a name="enabling-the-new-reference-counting-system"></a>启用新引用计数系统
+## <a name="enabling-the-new-reference-counting-system"></a>启用新的引用计数系统
 
-从 Xamarin 9.2.1 开始新引用计数系统已经启用了**所有**默认情况下的应用程序。
+从 Xamarin 9.2.1 开始, 默认情况下, 将为**所有**应用程序启用新的引用计数系统。
 
-如果你正在开发现有应用程序，可以检查.csproj 文件，确保出现的所有`MtouchUseRefCounting`设置为`true`，如下面：
+如果要开发现有应用程序, 可以检查 .csproj 文件, 以确保将的`MtouchUseRefCounting`所有匹配项都设置为`true`, 如下所示:
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-如果设置为`false`你的应用程序将不使用新的工具。
+如果设置为, `false`则应用程序将不使用新工具。
 
-### <a name="using-older-versions-of-xamarin"></a>使用较旧版本的 Xamarin
+### <a name="using-older-versions-of-xamarin"></a>使用早期版本的 Xamarin
 
-Xamarin.iOS 7.2.1 和上述功能增强我们新引用计数系统的预览。
+Xamarin 7.2.1 及更高版本的功能是新的引用计数系统的增强预览版。
 
-**经典 API:**
+**Classic API:**
 
-若要启用此新引用计数系统，请检查**使用引用计数扩展**中找到的复选框**高级**项目的选项卡**iOS 生成选项**如下所示： 
+若要启用此新的引用计数系统, 请选中在项目的**IOS 生成选项**的 "**高级**" 选项卡中找到的 "**使用引用计数扩展**" 复选框, 如下所示: 
 
-[![](newrefcount-images/image1.png "启用新引用计数系统")](newrefcount-images/image1.png#lightbox)
+[![](newrefcount-images/image1.png "启用新的引用计数系统")](newrefcount-images/image1.png#lightbox)
 
-请注意，这些选项中，已删除较新版本的 Visual Studio for mac。
+请注意, 在 Visual Studio for Mac 的较新版本中已删除了这些选项。
 
- **[统一的 API:](~/cross-platform/macios/unified/index.md)**
+ **[Unified API:](~/cross-platform/macios/unified/index.md)**
 
- 新引用计数扩展是所必需的统一 API，因此应该默认情况下启用。 较旧版本的 IDE 可能没有自动检查此值，可能需要添加一个选中它自己。
+ Unified API 需要新的引用计数扩展, 并且应默认启用它。 较早版本的 IDE 可能没有自动检查此值, 您可能必须自行进行检查。
 
-    
+
 > [!IMPORTANT]
-> 由于 MonoTouch 5.2，但却仅适用于早期版本的此功能已被围绕**sgen**作为一个实验性预览版。 此新增强版本现也已可供**Boehm**垃圾回收器。
+> 此功能的早期版本已于 Monotouch.dialog 5.2, 但仅适用于**sgen**作为实验性预览。 这一新的增强版本现在也可用于**Boehm**垃圾回收器。
 
 
-从历史上看发生了两种类型的对象由 Xamarin.iOS： 那些通过保持额外的内存中状态通常是只是一个本机对象 （对等对象） 和那些扩展或合并新功能 （派生对象） 的周围的包装。 以前，可能我们无法提供了具有状态的对等对象 (例如通过添加C#事件处理程序)，但我们让转未引用，然后收集的对象。 这可能导致崩溃更高版本上 (例如如果 Objective C 运行时回调到托管对象)。
+过去, Xamarin 管理了两种对象: 只是围绕本机对象 (对等对象) 的包装的对象, 以及那些扩展或引入了新功能 (派生对象) 的对象-通常通过保留额外的内存中状态。 以前, 我们可以使用状态 (例如, 通过添加C#事件处理程序) 来扩充对等对象, 但我们允许对象处于未引用状态, 然后再收集。 这可能会导致以后发生故障 (例如, 如果目标 C 运行时回调到托管对象中)。
 
-新系统会自动升级到它们存储任何附加信息时由运行时管理的对象的对等对象。
+新系统在存储任何额外信息时, 自动将对等对象升级到由运行时管理的对象。
 
-这解决了这样一个情况中发生的各种故障：
+这解决了这种情况下发生的各种崩溃:
 
 ```csharp
 class MyTableSource : UITableViewSource {
@@ -73,10 +73,10 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-而无需引用计数扩展此代码将会崩溃，因为`cell`变得可回收，，因此其`TouchDown`委托，这将转换为无关联的指针。
+如果没有引用计数扩展, 此代码将崩溃`cell` , 因为成为可回收的, `TouchDown`因此它的委托将转换为无关联的指针。
 
-引用计数扩展可确保托管的对象保持处于活动状态并阻止其集合，提供的本机对象保留的本机代码。
+引用计数扩展可确保托管对象保持活动状态并防止其收集, 前提是本机对象由本机代码保留。
 
-新系统还无需*大多数*私有支持字段绑定-这是默认方法，以使实例保持活动状态中使用。 托管的链接器非常智能，若要删除所有这些*不需要*字段从应用程序使用的新引用计数扩展。
+新系统还消除了对绑定中使用的*大多数*私有支持字段的需求-这是保持实例活动状态的默认方法。 托管链接器非常智能, 可以使用新的引用计数扩展来从应用程序中删除所有不*需要*的字段。
 
-这意味着每个托管的对象实例使用比之前更少的内存。 它还解决了一些支持字段存放已不再需要通过 Objective C 运行时，使其难以回收某些内存的引用的相关的问题。
+这意味着每个托管对象实例使用的内存都比以前更少。 它还解决了相关的问题, 其中某些支持字段将包含在目标 C 运行时不再需要的引用, 因此很难回收某些内存。

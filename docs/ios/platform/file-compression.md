@@ -1,36 +1,36 @@
 ---
-title: Xamarin.iOS 中的文件压缩
-description: 本文档介绍如何在 Xamarin.iOS libcompression API 使用。 它讨论了以放气都，和其他支持的算法。
+title: Xamarin 中的文件压缩
+description: 本文档介绍如何在 Xamarin 中使用 libcompression API。 它讨论了 deflating、因为这样做和支持的不同算法。
 ms.prod: xamarin
 ms.assetid: 94D05DAB-01E8-4C62-9CEF-9D6417EEA8EB
 ms.technology: xamarin-ios
 author: mandel-macaque
 ms.author: mandel
 ms.date: 03/04/2019
-ms.openlocfilehash: f7a1df65047fd8040dd40e9f7f057d6bfe6dea61
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcc63aa4e1926f5502d571bf47c83b0c8ea7e429
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61403026"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199520"
 ---
-# <a name="file-compression-in-xamarinios"></a>Xamarin.iOS 中的文件压缩
+# <a name="file-compression-in-xamarinios"></a>Xamarin 中的文件压缩
 
-面向 iOS 9.0 或 macOS 10.11 及更高版本的 Xamarin 应用程序可以使用_压缩 Framework_压缩 （编码） 和解压缩 （解码） 数据。 Xamarin.iOS 提供了以下 Stream API 此框架。 压缩框架允许开发人员与压缩和解压缩数据，就好像它们是正常流而无需使用回调或委托。
+面向 iOS 9.0 或 macOS 10.11 (和更高版本) 的 Xamarin 应用可以使用_压缩框架_来压缩 (编码) 和解压缩 (解码) 数据。 Xamarin 在流 API 之后提供此框架。 压缩框架允许开发人员与压缩和解压缩数据交互, 就像它们是普通的流, 而无需使用回调或委托。
 
-压缩 framework 提供支持以下算法：
+压缩框架为以下算法提供支持:
 
 * LZ4
-* 原始 LZ4
+* LZ4 Raw
 * Lzfse
 * Lzma
 * Zlib
 
-使用压缩框架允许开发人员执行压缩操作而无需任何第三方库或 Nuget。 这可以减少外部依赖关系，并确保 （只要它们满足最低操作系统要求） 将在所有平台上支持的压缩操作。
+使用压缩框架, 开发人员可以在没有任何第三方库或 Nuget 的情况下执行压缩操作。 这会减少外部依赖关系, 并确保所有平台上都支持压缩操作 (前提是它们满足最低操作系统要求)。
 
 ## <a name="general-file-decompression"></a>常规文件解压缩
 
-压缩框架使用 Xamarin.iOS 和 Xamarin.Mac 流 API。 此 API，则意味着，若要压缩数据，开发人员可以使用其他 IO Api 在.NET 中使用的正常模式。 下面的示例演示如何解压缩压缩 framework，类似于 API 中找到数据`System.IO.Compression.DeflateStream`API:
+压缩框架在 Xamarin 和 Xamarin 中使用流 API。 此 API 意味着, 若要压缩数据, 开发人员可以使用 .NET 中其他 IO Api 中使用的正常模式。 下面的示例演示如何将数据与压缩框架 (类似于`System.IO.Compression.DeflateStream` api 中找到的 api) 解压缩:
 
 ```csharp
 // sample zlib data
@@ -45,11 +45,11 @@ using (var reader = new StreamReader (decompressing))
 }
 ```
 
-`CompressionStream`实现`IDisposable`接口，与其他值一样`System.IO.Streams`，因此开发人员应确保要求一次性释放资源。
+实现接口 (如其他`System.IO.Streams`), 因此开发人员应确保在不再需要资源后将其释放。 `IDisposable` `CompressionStream`
 
 ## <a name="general-file-compression"></a>常规文件压缩
 
-压缩 API 还允许开发人员遵循相同的 API 的数据压缩。 可以使用其中一个提供的算法中所述压缩数据`CompressionAlgorithm`枚举器。
+压缩 API 还允许开发人员压缩相同 API 之后的数据。 可以使用`CompressionAlgorithm`枚举器中声明的提供算法之一来压缩数据。
 
 ```csharp
 // sample method that copies the data from the source stream to the destination stream
@@ -85,4 +85,4 @@ static void CompressExample ()
 
 ## <a name="async-support"></a>异步支持
 
-`CompressionStream`支持通过支持的所有异步操作`System.IO.DeflateStream`，这意味着开发人员可以使用 async 关键字而不会阻塞 UI 线程执行压缩/解压缩操作。
+支持支持的所有异步操作, 这意味着开发人员可以使用 async 关键字来执行压缩/解压缩操作, 而不会阻止 UI 线程。 `System.IO.DeflateStream` `CompressionStream`

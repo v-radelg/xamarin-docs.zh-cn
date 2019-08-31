@@ -1,61 +1,61 @@
 ---
 title: 创建 MonoGame UWP 项目
-description: MonoGame 可以用于创建通用 Windows 平台、 面向多个设备使用一个基本代码和一组内容的游戏和应用程序。
+description: MonoGame 可用于创建通用 Windows 平台的游戏和应用, 面向具有一个基本代码和一组内容的多个设备。
 ms.prod: xamarin
 ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7db73759cb4a1b1a8d7fe40426b03a163c3ebdc4
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 367f44104b0d6049b8d65ab6e3b3f38c703cdb3f
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831063"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198723"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>创建 MonoGame UWP 项目
 
-_MonoGame 可以用于创建通用 Windows 平台、 面向多个设备使用一个基本代码和一组内容的游戏和应用程序。_
+_MonoGame 可用于创建通用 Windows 平台的游戏和应用, 面向具有一个基本代码和一组内容的多个设备。_
 
-本演练介绍 MonoGame 通用 Windows 平台 (UWP) 项目的创建和加载的内容。 UWP 应用可以在所有 Windows 10 设备，包括台式计算机、 平板电脑、 Windows Phone 和 Xbox One 上运行。
+本演练介绍了 MonoGame 通用 Windows 平台 (UWP) 项目的创建和内容加载。 UWP 应用可在所有 Windows 10 设备上运行, 包括桌面、平板电脑、Windows phone 和 Xbox。
 
-本演练将创建一个空的项目，其中显示*青蓝色*背景 （XNA 应用程序的传统的背景色）。
+本演练将创建一个空项目, 其中显示*青的蓝色*背景 (应用程序的传统背景色)。
 
 ## <a name="requirements"></a>要求
 
-开发 MonoGame UWP 应用需要：
+开发 MonoGame UWP 应用需要:
 
 - Windows 10 操作系统
 - 任何版本的 Visual Studio 2017
 - Windows 10 开发人员工具
-- 设置设备到开发人员模式
-- [用于 Visual Studio MonoGame 3.7.1](http://community.monogame.net/t/monogame-3-7-1-release/11173)或更高版本
+- 将设备设置为开发人员模式
+- [MonoGame 3.7.1 For Visual Studio](http://community.monogame.net/t/monogame-3-7-1-release/11173)或更高版本
 
-有关详细信息，请参阅此[页上设置 Windows 10 UWP 开发](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)。
+有关详细信息, 请参阅此页面, 了解如何[针对 Windows 10 UWP 开发进行设置](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)。
 
-可在 Xbox One 的游戏开发零售 Xbox One 硬件上。 开发 PC 和 Xbox One 上需要其他软件。 配置 Xbox One 的游戏开发的信息，请参阅此页上[设置 Xbox One](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)。
+Xbox one 游戏可以在零售 Xbox one 硬件上开发。 开发 PC 和 Xbox 上都需要其他软件。 有关配置 Xbox for 游戏开发的信息, 请参阅[设置 xbox](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)one 的此页。
 
-## <a name="creating-an-empty-template"></a>创建一个空的模板
+## <a name="creating-an-empty-template"></a>创建空模板
 
-一旦安装了所有必需的资源和 Windows 10 计算机上启用了开发人员模式下，我们可以创建新 MonoGame 项目使用 Visual Studio 通过执行以下步骤：
+在 Windows 10 计算机上安装了所有必需的资源并启用了开发人员模式后, 可以按照以下步骤使用 Visual Studio 创建一个新的 MonoGame 项目:
 
-1. 选择**文件** > **新** > **项目...**
-1. 选择**安装** > **模板** > **Visual C#**   >  **MonoGame**类别：
+1. 选择 "**文件** > " "**新建** > **项目 ...** "
+1. 选择 "**已安装** > 的**模板** > "  > **视觉对象C#**  **MonoGame**类别:
 
     ![](uwp-images/image1.png "MonoGame 类别")
 
-1. 选择**MonoGame Windows 10 通用项目**选项：
+1. 选择**MonoGame Windows 10 通用项目**选项:
 
     ![](uwp-images/image2.png "选择 MonoGame Windows 10 通用项目选项")
 
-1. 输入新项目的名称，然后单击**确定**。
-如果 Visual Studio 中单击确定后显示任何错误，请验证安装了 Windows 10 工具和在设备处于开发人员模式。
+1. 输入新项目的名称, 然后单击 **"确定"** 。
+如果在单击 "确定" 后 Visual Studio 显示任何错误, 请验证是否安装了 Windows 10 工具, 以及设备是否处于开发人员模式。
 
-完成 Visual Studio 创建模板后，我们可以运行它以查看运行的空项目：
+Visual Studio 完成创建模板后, 可以运行它来查看运行的空项目:
 
-![](uwp-images/image3.png "完成 Visual Studio 创建模板后，运行它以查看运行的空项目")
+![](uwp-images/image3.png "Visual Studio 完成创建模板后, 运行该模板以查看运行的空项目")
 
-角中的数字提供诊断信息。 此信息可通过删除中的代码中移除`App.xaml.cs`中`DEBUG`块中`OnLaunched`方法：
+角中的数字提供诊断信息。 通过删除`App.xaml.cs` `OnLaunched`方法中的`DEBUG`块中的代码, 可以删除此信息:
 
 
 ```csharp
@@ -72,38 +72,38 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="running-on-xbox-one"></a>在 Xbox One 上运行
 
-UWP 项目可以从同一个项目部署到任意 Windows 10 设备。 设置 Windows 10 开发计算机和 Xbox One 之后, 可通过切换到远程计算机的目标，然后输入 Xbox One 的 IP 地址部署 UWP 应用：
+UWP 项目可从同一项目部署到任何 Windows 10 设备。 设置 Windows 10 开发计算机和 Xbox one 后, 可以通过将目标切换到远程计算机并输入 Xbox One 的 IP 地址来部署 UWP 应用:
 
-![](uwp-images/remote.png "可以通过切换到远程计算机的目标并进入 Xbox 的 IP 地址部署 UWP 应用")
+![](uwp-images/remote.png "可以通过将目标切换到远程计算机并输入 Xbox One 的 IP 地址来部署 UWP 应用")
 
-Xbox One 上的白色边框表示电视的非安全区域。 有关详细信息，请参阅[安全区域部分](#safe-area-on-xbox-one)。
+在 Xbox one 上, 白色边框表示电视的不安全区域。 有关详细信息, 请参阅[安全区域部分](#safe-area-on-xbox-one)。
 
-![](uwp-images/safearea.png "Xbox One 上的白色边框所表示的电视的非安全区域")
+![](uwp-images/safearea.png "在 Xbox one 上, 白色边框表示电视的不安全区域")
 
-### <a name="safe-area-on-xbox-one"></a>在 Xbox One 上的安全区域
+### <a name="safe-area-on-xbox-one"></a>Xbox one 上的安全区域
 
-开发适用于控制台游戏需要考虑为中心的屏幕应包含所有关键的视觉对象 （如 UI 或 HUD） 中的某个区域的安全区域。 安全区域之外的区域不是保证在所有电视上可见，因此，放置在此区域中的视觉对象可能会部分或完全不可见一些显示器上。
+开发控制台游戏需要考虑安全区域, 这是屏幕中心的一个区域, 其中应该包含所有关键的视觉对象 (如 UI 或 HUD)。 不保证安全区域外的区域在所有电视上都可见, 因此放置在此区域中的视觉对象可能在某些显示器上部分或完全不可见。
 
-适用于 Xbox One MonoGame 模板会考虑安全区域，并将其呈现为白色边框。 此区域也会反映在运行时在游戏中`Window.ClientBounds`属性在 Visual Studio 中监视窗口此图中所示。 请注意，客户端边界的高度是 1016，尽管 1920 x 1080 显示分辨率：
+Xbox one 的 MonoGame 模板将考虑安全区域, 并将其呈现为白色边框。 此区域还会在运行时反映在游戏的`Window.ClientBounds`属性中, 如 Visual Studio 中的 "监视" 窗口的图像所示。 请注意, 客户端边界的高度为 1016, 尽管1920x1080 显示分辨率:
 
-![](uwp-images/clientbounds.png "请注意，客户端边界的高度是 1016，尽管 1920 x 1080 显示分辨率")
+![](uwp-images/clientbounds.png "请注意, 客户端边界的高度为 1016, 尽管1920x1080 显示分辨率")
 
-## <a name="referencing-content-in-uwp-projects"></a>在 UWP 项目中引用内容
+## <a name="referencing-content-in-uwp-projects"></a>引用 UWP 项目中的内容
 
-可以引用 MonoGame 项目中的内容，直接从文件或通过[MonoGame 内容管道](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。 小型游戏项目可能受益于从文件加载的简单性。 较大的项目将受益于使用内容管道以优化内容，以减小大小并加载时间。 与 XNA Xbox 360 上不同`System.IO.File`类是 Xbox 一个 UWP 应用上可用。
+MonoGame 项目中的内容可以直接从文件或通过[MonoGame 内容管道](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)进行引用。 小型游戏项目可以从文件加载的简单性中获益。 使用内容管道优化内容以减少大小和加载时间时, 较大的项目将受益。 与 xbox 360 上的`System.IO.File`程序种类不同, 该类可用于 xbox one UWP 应用。
 
-正在加载内容的管道的内容的详细信息，请参阅[内容管道指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
+有关使用内容管道加载内容的详细信息, 请参阅[内容管道指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
 
-### <a name="loading-content-from-file"></a>从文件加载内容
+### <a name="loading-content-from-file"></a>正在从文件加载内容
 
-与不同的是 iOS 和 Android，UWP 项目可以引用相对于可执行文件的文件。 简单的游戏可以使用此技术负载内容而无需修改并生成内容管道项目。
+不同于 iOS 和 Android, UWP 项目可以引用相对于可执行文件的文件。 简单的游戏可以使用此方法加载内容, 而无需修改和生成内容管道项目。
 
-若要加载`Texture2D`文件中：
+`Texture2D`从文件加载:
 
-1. 将.png 文件添加到 UWP 项目中的内容文件夹。 将内容添加到 Content 文件夹是 XNA 和 MonoGame 中的约定。
-1. 右键单击新添加 PNG，然后选择属性。
-1. 更改**复制到输出目录**到**如果较新则复制**。
-1. 将以下代码添加到您的游戏的 Initialize 方法，以加载`Texture2D`:
+1. 将 .png 文件添加到 UWP 项目中的 Content 文件夹。 将内容添加到 Content 文件夹是 MonoGame 中的一种约定。
+1. 右键单击新添加的 PNG, 然后选择 "属性"。
+1. 将 "**复制到输出目录**" 更改为 "**如果较新则复制**"。
+1. 将以下代码添加到游戏的 Initialize 方法, 以加载`Texture2D`:
 
     ```csharp
     Texture2D texture;
@@ -113,8 +113,8 @@ Xbox One 上的白色边框表示电视的非安全区域。 有关详细信息�
     }
     ```
 
-有关使用的详细信息`Texture2D`，请参阅[MonoGame 指南对简介](~/graphics-games/monogame/introduction/index.md)。
+有关使用的`Texture2D`详细信息, 请参阅[简介 MonoGame 指南](~/graphics-games/monogame/introduction/index.md)。
 
 ## <a name="summary"></a>总结
 
-本指南介绍如何加载文件时创建新的 UWP 项目和特定于 UWP 的注意事项。 有兴趣创建完整的 UWP 游戏开发人员可以阅读更多有关在 MonoGame [MonoGame 指南简介](~/graphics-games/monogame/introduction/index.md)。
+本指南介绍了如何在加载文件时创建新的 UWP 项目和 UWP 特定的注意事项。 对创建完整 UWP 游戏感兴趣的开发人员可以在[MonoGame Guide 简介](~/graphics-games/monogame/introduction/index.md)中了解有关 MonoGame 的详细信息。

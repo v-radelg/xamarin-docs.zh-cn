@@ -1,58 +1,58 @@
 ---
-title: 适用于 Xamarin.iOS 的类型注册机构
-description: 本文档介绍了 Xamarin.iOS 类型注册机构，这使得C#到 OBJECTIVE-C 运行时可用的类。
+title: Xamarin 的类型注册机构
+description: 本文档介绍了 Xamarin iOS 类型注册器, 使C#类可供目标-C 运行时使用。
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 83340ce2d5db145c29166d90d3a5180b1767d7ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036363"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199721"
 ---
-# <a name="type-registrar-for-xamarinios"></a>适用于 Xamarin.iOS 的类型注册机构
+# <a name="type-registrar-for-xamarinios"></a>Xamarin 的类型注册机构
 
-本文档介绍使用 Xamarin.iOS 的类型注册系统。
+本文档介绍了 Xamarin 使用的类型注册系统。
 
-## <a name="registration-of-managed-classes-and-methods"></a>注册的托管的类和方法
+## <a name="registration-of-managed-classes-and-methods"></a>托管类和方法的注册
 
-在启动期间，将注册 Xamarin.iOS:
+在启动期间, Xamarin 将注册:
 
-- 类与[[注册]](xref:Foundation.RegisterAttribute)为 Objective C 类的属性。
-- 类与[[类别]](xref:ObjCRuntime.CategoryAttribute)为 Objective C 分类的属性。
-- 与接口[[协议]](xref:Foundation.ProtocolAttribute)作为 Objective C 协议的属性。
-- 具有成员[[导出]](xref:Foundation.ExportAttribute)，使得 Objective C 来对其进行访问。
+- 将[[Register]](xref:Foundation.RegisterAttribute)特性用作目标-C 类的类。
+- 具有[[Category]](xref:ObjCRuntime.CategoryAttribute)特性的类作为目标-C 类别。
+- 使用[[协议]](xref:Foundation.ProtocolAttribute)属性作为目标-C 协议的接口。
+- 带有[[Export]](xref:Foundation.ExportAttribute)的成员, 使得客观-C 可以访问它们。
 
-例如，考虑托管`Main`在 Xamarin.iOS 应用程序中常见的方法：
+例如, 考虑在 Xamarin iOS `Main`应用程序中常见的托管方法:
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
 ```
 
-此代码指示 Objective C 运行时使用名为的类型`AppDelegate`作为应用程序的委托类。 Objective C 运行时能够创建的实例的C#`AppDelegate`类，类必须进行注册。
+此代码告知目标 C 运行时使用称为`AppDelegate`应用程序的委托类的类型。 为了使目标 C 运行时能够创建C# `AppDelegate`类的实例, 必须注册该类。
 
-Xamarin.iOS 自动执行注册，在运行时 （动态注册） 或在编译时 （静态注册）。
+Xamarin 会在运行时 (动态注册) 或在编译时 (静态注册) 自动执行注册。
 
-动态注册使用反射在启动时若要查找所有类和方法，若要注册，将其传递给 Objective C 运行时。 对模拟器生成，默认情况下使用动态注册。
+动态注册在启动时使用反射查找要注册的所有类和方法, 并将它们传递给目标 C 运行时。 默认情况下, 为模拟器生成使用动态注册。
 
-静态注册在编译时检查应用程序使用的程序集。 它确定的类和方法来注册到 OBJECTIVE-C 的并生成一个代码图，它嵌入到你的二进制文件。
-然后，在启动时，它将映射注册到 OBJECTIVE-C 运行时。 静态注册用于设备的生成。
+静态注册在编译时检查应用程序使用的程序集。 它确定要向目标 C 注册的类和方法, 并生成嵌入到二进制文件中的映射。
+然后, 在启动时, 它将向目标 C 运行时注册映射。 静态注册用于设备生成。
 
-### <a name="categories"></a>类别
+### <a name="categories"></a>Categories
 
-从 Xamarin.iOS 8.10，就可以创建使用 Objective C 类别C#语法。
+从 Xamarin 8.10 开始, 可以使用C#语法创建目标为 C 的类别。
 
-若要创建一个类别，请使用`[Category]`属性，指定要扩展的类型。 例如，下面的代码扩展`NSString`:
+若要创建类别, 请使用`[Category]`属性, 并指定要扩展的类型。 例如, 下面的代码扩展`NSString`:
 
 ```csharp
 [Category (typeof (NSString))]
 ```
 
-每个类别的方法有`[Export]`属性，使其可供 Objective C 运行时：
+类别的每个方法都有一个`[Export]`属性, 使其可用于目标 C 运行时:
 
 ```csharp
 [Export ("today")]
@@ -62,7 +62,7 @@ public static string Today ()
 }
 ```
 
-所有托管的扩展方法必须是静态的但就可以创建使用标准的 Objective C 实例方法C#的扩展方法语法：
+所有托管扩展方法必须是静态的, 但可以使用扩展方法的标准C#语法来创建目标 C 实例方法:
 
 ```csharp
 [Export ("toUpper")]
@@ -72,7 +72,7 @@ public static string ToUpper (this NSString self)
 }
 ```
 
-扩展方法的第一个参数是在其调用方法的实例：
+扩展方法的第一个参数是在其上调用方法的实例:
 
 ```csharp
 [Category (typeof (NSString))]
@@ -86,7 +86,7 @@ public static class MyStringCategory
  }
  ```
 
-此示例将添加一个本机`toUpper`实例方法到`NSString`类。 可以从目标 c： 调用此方法
+此示例将向`toUpper` `NSString`类添加本机实例方法。 可以从目标-C 调用此方法:
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -102,7 +102,7 @@ public static class MyViewControllerCategory
 
 ### <a name="protocols"></a>协议
 
-从 Xamarin.iOS 8.10 开始，接口与`[Protocol]`属性将作为协议导出到 OBJECTIVE-C 的：
+从 Xamarin 8.10 开始, 具有属性的`[Protocol]`接口将作为协议导出到目标 C:
 
 ```csharp
 [Protocol ("MyProtocol")]
@@ -120,27 +120,27 @@ class MyClass : IMyProtocol
 }
 ```
 
-此代码将导出`IMyProtocol`作为协议的 Objective C 到名为`MyProtocol`和类名为`MyClass`实现协议。
+此代码将`IMyProtocol`作为名`MyProtocol`为的协议导出到目标 C, 并将`MyClass`一个名为的类作为实现协议的类。
 
-## <a name="new-registration-system"></a>新的注册系统
+## <a name="new-registration-system"></a>新注册系统
 
-从稳定 6.2.6 版本和测试 6.3.4 版中，我们添加了新的静态注册机构。 在 7.2.1 版本中，我们所做的新的注册机构默认值。
+从稳定的6.2.6 版本和 beta 6.3.4 版本开始, 我们添加了一个新的静态注册器。 在7.2.1 版本中, 我们将新的注册机构设为默认值。
 
-此新的注册系统提供了以下新功能：
+此新注册系统提供以下新增功能:
 
-- 编译时检测到的程序员错误：
-    - 正在注册具有相同名称的两个类。
-    - 多个方法导出响应相同的选择器
-- 删除未使用的本机代码：
-    - 新的注册系统将添加在静态库中使用的代码允许本机链接器删除其中的未使用的本机代码，从生成的二进制文件的强引用。 在 Xamarin 的示例绑定上的大多数应用程序会成为至少 300 k 较小。
+- 编程错误的编译时检测:
+    - 两个用相同名称注册的类。
+    - 已导出多个方法来响应同一个选择器
+- 删除未使用的本机代码:
+    - 新的注册系统将添加对静态库中使用的代码的强引用, 这允许本机链接器从生成的二进制文件中去除未使用的本机代码。 在 Xamarin 的示例绑定上, 大多数应用程序的30万个都至少更小。
 
-- 支持的通用子类`NSObject`; 请参阅[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)有关详细信息。 此外新的注册系统会捕获，这以前会导致随机行为，在运行时不支持泛型构造。
+- 支持的泛型子类`NSObject`; 有关详细信息, 请参阅[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)。 此外, 新的注册系统将捕获先前在运行时导致随机行为的不受支持的泛型构造。
 
-### <a name="errors-caught-by-the-new-registrar"></a>错误捕获的新的注册机构
+### <a name="errors-caught-by-the-new-registrar"></a>新注册机构捕获的错误
 
-下面是一些示例捕获到新的注册机构的错误。
+下面是新注册机构捕获的错误的一些示例。
 
-- 在同一个类超过一次导出相同的选择器：
+- 在同一个类中多次导出同一选择器:
 
     ```csharp
     [Register]
@@ -153,7 +153,7 @@ class MyClass : IMyProtocol
     }
     ```
 
-- 导出多个同名的 Objective C 的托管的类：
+- 导出多个具有相同目标 C 名称的托管类:
 
     ```csharp
     [Register ("Class")]
@@ -163,7 +163,7 @@ class MyClass : IMyProtocol
     class YourClass : NSObject {}
     ```
 
-- 导出泛型方法：
+- 导出泛型方法:
 
     ```csharp
     [Register]
@@ -174,61 +174,61 @@ class MyClass : IMyProtocol
     }
     ```
 
-### <a name="limitations-of-the-new-registrar"></a>新的注册机构的限制
+### <a name="limitations-of-the-new-registrar"></a>新注册机构的限制
 
-需要有关新的注册机构的注意一些事项：
+有关新注册机构, 请注意以下事项:
 
-- 某些第三方库必须更新为使用新的注册系统。 请参阅[所需的修改](#required-modifications)下面的更多详细信息。
+- 某些第三方库必须进行更新才能使用新的注册系统。 有关更多详细信息, 请参阅下面[所需的修改](#required-modifications)。
 
-- 短期缺点也是如果该帐户框架使用，必须使用 Clang (这是因为 Apple **accounts.h** Clang 可以仅编译标头)。 添加`--compiler:clang`到其他 mtouch 参数，以使用 Clang，如果使用 Xcode 4.6 或更早版本 （Xamarin.iOS 将自动选择 Clang Xcode 5.0 或更高版本。）
+- 短期缺点也是在使用帐户框架时必须使用 Clang (这是因为 Apple 的**帐户**头只能由 Clang 编译)。 如果`--compiler:clang`使用的是 Xcode 4.6 或更早版本, 请将添加到附加的 mtouch 参数以使用 Clang (Xamarin 会自动选择 Xcode 5.0 或更高版本中的 Clang)。
 
-- 如果 Xcode 4.6 （或更早版本） 为使用 GCC / G + + 如果必须选择导出类型名称包含非 ASCII 字符 （这是因为使用 Xcode 4.6 Clang 附带的版本不支持 Objective C 代码中的非 ASCII 字符，内部标识符）。 添加`--compiler:gcc`到其他 mtouch 参数，以使用 gcc 高级版。
+- 如果使用 Xcode 4.6 (或更低版本), 则如果导出的类型名称包含非 ASCII 字符, 则必须选择 GCC/G + + (这是因为与 Xcode 4.6 一起提供的 Clang 版本不支持在目标 C 代码中的标识符内使用非 ASCII 字符)。 添加`--compiler:gcc`到其他 mtouch 参数以使用 GCC。
 
 ## <a name="selecting-a-registrar"></a>选择注册机构
 
-可以通过将以下选项之一添加到项目中的其他 mtouch 参数选择其他注册机构**iOS 生成**设置：
+可以通过将以下选项之一添加到项目的**IOS 生成**设置中的其他 mtouch 参数, 选择其他注册机构:
 
-- `--registrar:static` – 默认为设备版本
-- `--registrar:dynamic` – 默认对模拟器生成
+- `--registrar:static`–设备生成的默认值
+- `--registrar:dynamic`–模拟器生成的默认值
 
 > [!NOTE]
-> Xamarin 的经典 API 支持其他选项，如`--registrar:legacystatic`和`--registrar:legacydynamic`。 但是，通过统一的 API 不支持这些选项。
+> Xamarin 的 Classic API 支持其他选项`--registrar:legacystatic` , 例如和。 `--registrar:legacydynamic` 但 Unified API 不支持这些选项。
 
-## <a name="shortcomings-in-the-old-registration-system"></a>在旧的注册系统的不足之处
+## <a name="shortcomings-in-the-old-registration-system"></a>旧注册系统中的缺点
 
-旧的注册系统带来以下缺点：
+旧注册系统具有以下缺点:
 
-- Objective C 类和第三方本机库，这意味着我们无法获得本机链接器中，若要删除第三方 （因为所有内容将被删除） 不实际使用的本机代码中的方法不 （本机） 的静态引用时出现。 这是为了增大`-force_load libNative.a`的每个第三方绑定所要做 (或等效`ForceLoad=true`中`[LinkWith]`属性)。
-- 无法导出两个具有相同的 Objective C 名称不显示任何警告的托管的类型。 少见的方案是最终会有两个`AppDelegate`不同的命名空间中的类。 在运行时它完全是应用的随机的哪一个已选择 （事实上，它甚至不重新生成-这使得非常人困惑且令人沮丧的调试体验的运行之间随其而变化）。
-- 无法导出两个具有相同的 Objective C 签名方法。 再次从 OBJECTIVE-C 调用哪一个是随机 （但此问题主要是因为实际上会遇到此 bug 的唯一方法是重写也托管的方法不是常见与上一个）。
-- 已导出的方法集是动态和静态生成之间略有不同。
-- 它不会无法正常工作时导出泛型类 （在运行时执行的确切的泛型实现是随机的有效地导致不确定的行为）。
+- 对于第三方本机库中的目标 C 类和方法, 不存在 (本机) 静态引用, 这意味着我们无法要求本机链接器删除实际使用的第三方本机代码 (因为所有内容都将被删除)。 这是每个第三`-force_load libNative.a`方绑定必须执行的操作 (或`[LinkWith]`属性中的等效`ForceLoad=true`项) 的原因。
+- 您可以导出两个具有相同目标 C 名称的托管类型, 无警告。 在不同的命名空间中, 有两`AppDelegate`个类的情况很少见。 在运行时, 将会完全随机选择哪一种方法 (事实上, 它在不重新生成的应用程序运行之间有所不同, 这是一项非常令困惑、令人沮丧的调试体验)。
+- 您可以导出两个具有相同的目标 C 签名的方法。 但再次重申, 从目标-C 调用的是随机的 (但此问题并不像以前的问题那样常见, 这主要是因为实际遇到此错误的唯一方法是重写不幸托管方法)。
+- 在动态和静态生成之间导出的方法集略有不同。
+- 导出泛型类时, 它不能正常工作 (在运行时执行的确切泛型实现将是随机的, 因而会有效地导致不确定的行为)。
 
 <a name="required-modifications" />
 
-## <a name="new-registrar-required-changes-to-bindings"></a>新的注册机构： 所需绑定到的更改
+## <a name="new-registrar-required-changes-to-bindings"></a>新注册机构: 所需的绑定更改
 
-本部分介绍绑定必须为了使用新的注册机构所做的更改。
+本部分介绍了必须进行的绑定更改才能使用新的注册机构。
 
-### <a name="protocols-must-have-the-protocol-attribute"></a>协议必须具有 [协议] 属性
+### <a name="protocols-must-have-the-protocol-attribute"></a>协议必须具有 [协议] 特性
 
-现在必须具有协议`[Protocol]`属性。 如果不这样做，如将本机链接器错误：
+协议现在必须具有`[Protocol]`属性。 如果不这样做, 则会出现本机链接器错误, 如:
 
 ```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
 ```
 
-### <a name="selectors-must-have-a-valid-number-of-parameters"></a>选择器必须具有有效数量的参数
+### <a name="selectors-must-have-a-valid-number-of-parameters"></a>选择器必须具有有效的参数数量
 
-所有选择器必须正确指示参数的数量。 以前，这些错误被忽略，并且可能会导致运行时的问题。
+所有选择器必须正确指示参数的数目。 以前, 这些错误被忽略, 并可能导致运行时问题。
 
-简单地说，多个冒号必须匹配参数的数目：
+简而言之, 冒号的数目必须与参数的数目匹配:
 
-- 任何参数： `foo`
-- 一个参数： `foo:`
-- 两个参数： `foo:parameterName2:`
+- 无参数:`foo`
+- 一个参数:`foo:`
+- 两个参数:`foo:parameterName2:`
 
-以下是不正确的使用：
+下面是不正确的用法:
 
 ```csharp
 // Invalid: export takes no arguments, but function expects one
@@ -242,14 +242,14 @@ void Display ();
 
 ### <a name="use-isvariadic-parameter-in-export"></a>在导出中使用 IsVariadic 参数
 
-可变参数函数必须使用`IsVariadic`自变量`[Export]`属性：
+可变参数函数必须使用`IsVariadic` `[Export]`属性的参数:
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]
 void VariadicMethod (NSObject first, IntPtr subsequent);
 ```
 
-### <a name="must-link-to-existing-symbols"></a>必须链接到现有的符号
+### <a name="must-link-to-existing-symbols"></a>必须链接到现有符号
 
-就无法将绑定本机库中不存在的类。
-如果已从删除或在本机库中重命名一个类，请确保更新以匹配的绑定。
+不可能绑定本机库中不存在的类。
+如果类已从本机库中删除或重命名, 请确保更新绑定以使其匹配。

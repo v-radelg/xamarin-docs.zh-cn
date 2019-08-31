@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 52160d11c8c17a67a5db92e6a95f94815d54a0a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7735f53d96977041f518a0ee56fb103a449e6cba
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648927"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198198"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 拆分视图控制器
 
@@ -85,7 +85,7 @@ Apple 对于使用拆分视图控制器有以下建议:
     [![](split-views-images/activity04.png "内容布局")](split-views-images/activity04.png#lightbox)
 1. 在 "**属性资源管理器**" 的 " C# **小组件" 选项卡**中指定**名称**, 以便在代码中使用您的 UI 控件。
 1. 保存更改。
-    
+
 -----
 
 有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。

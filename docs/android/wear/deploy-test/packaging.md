@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: bca29089a61ed1f3400458f4b102c61023f47247
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4301022ae665498eaf90ca1e1786afbd6d19094a
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522110"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198392"
 ---
 # <a name="packaging-wear-apps"></a>打包应用程序
 
@@ -63,7 +63,7 @@ app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
 
 - 验证包名称是否匹配。 
 
-- 生成 XML, 并将其添加到手持式项目, 以将其与应用程序关联。 例如: 
+- 生成 XML, 并将其添加到手持式项目, 以将其与应用程序关联。 例如： 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->

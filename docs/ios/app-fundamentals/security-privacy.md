@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9fcd4820b5e22254356250ef2d26714dc32a59f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c818cac3b26e94710a64938a80690b8d4946320
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655212"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200211"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 安全和隐私功能
 
 _本文介绍如何在 iOS 中使用安全和隐私以及它们如何影响 Xamarin iOS 应用。_
 
 Apple 在 iOS 10 (及更高版本) 中对安全和隐私进行了多项改进, 有助于开发人员提高应用程序的安全性并确保最终用户的隐私。 本文介绍如何在 Xamarin iOS 应用程序中实现这些功能。
-    
+
 <a name="General-Enhancements" />
 
 ## <a name="general-enhancements"></a>常规增强功能
@@ -51,9 +51,9 @@ IOS 10 中对安全和隐私进行了以下常规更改:
 - **隐私-健康更新使用说明**(`NSHealthUpdateUsageDescription`)-允许开发人员描述应用要编辑用户的运行状况数据的原因。 有关详细信息, 请参阅 Apple 的[HKHealthStore 类引用](https://developer.apple.com/reference/healthkit/hkhealthstore)。
 - **隐私-HomeKit 使用说明**(`NSHomeKitUsageDescription`)-允许开发人员描述应用要访问用户的 HomeKit 配置数据的原因。
 - **隐私-位置始终使用描述**(`NSLocationAlwaysUsageDescription`)-允许开发人员描述应用希望始终有权访问用户位置的原因。
-- 弃用**隐私-位置使用说明**(`NSLocationUsageDescription`)-允许开发人员描述应用程序要访问用户位置的原因。 *纪录此密钥在 iOS 8 (和更高版本) 中已弃用。请`NSLocationAlwaysUsageDescription`改用`NSLocationWhenInUseUsageDescription`或。*
+- 弃用**隐私-位置使用说明**(`NSLocationUsageDescription`)-允许开发人员描述应用程序要访问用户位置的原因。 *注意：此密钥在 iOS 8 (和更高版本) 中已弃用。请`NSLocationAlwaysUsageDescription`改用`NSLocationWhenInUseUsageDescription`或。*
 - **隐私-使用中的位置使用情况说明**(`NSLocationWhenInUseUsageDescription`)-允许开发人员描述应用在运行时要访问用户位置的原因。
-- 弃用**隐私-媒体库使用说明**-允许开发人员描述应用要访问用户的媒体库的原因。 *纪录此密钥在 iOS 8 (和更高版本) 中已弃用。改`NSAppleMusicUsageDescription`为使用。*
+- 弃用**隐私-媒体库使用说明**-允许开发人员描述应用要访问用户的媒体库的原因。 *注意：此密钥在 iOS 8 (和更高版本) 中已弃用。改`NSAppleMusicUsageDescription`为使用。*
 - **隐私-麦克风使用说明**(`NSMicrophoneUsageDescription`)-允许开发人员描述应用要访问设备麦克风的原因。
 - **隐私-运动使用说明**(`NSMotionUsageDescription`)-允许开发人员描述应用要访问设备的加速感应的原因。
 - **隐私-照片库使用说明**(`NSPhotoLibraryUsageDescription`)-允许开发人员描述应用程序要访问用户照片库的原因。
@@ -94,7 +94,7 @@ IOS 10 中对安全和隐私进行了以下常规更改:
 
 若要设置任何隐私密钥, 请执行以下操作:
 
-1. 在“解决方案资源管理器”  中，双击 **Info.plist** 文件，打开它进行编辑。
+1. 在“解决方案资源管理器”中，双击 **Info.plist** 文件，打开它进行编辑。
 2. 在屏幕底部, 切换到 "**源**" 视图。
 3. 向列表中添加新**项**。
 4. 从下拉列表中, 选择 "隐私密钥" (例如 "**隐私-HomeKit 使用说明**"): 

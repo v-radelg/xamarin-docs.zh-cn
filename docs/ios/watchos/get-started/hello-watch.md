@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/14/2016
-ms.openlocfilehash: 26c418355c83da807d6dfa514e58f9bf1675759f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dba84c32390be8017952206de9e23facd58931fe
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528425"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199035"
 ---
 # <a name="hello-watchos--walkthrough"></a>你好, watchOS –演练
 
@@ -39,7 +39,7 @@ ms.locfileid: "69528425"
 -----
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 双击 Watch 应用中的 "情节提要", 以启动 Xamarin iOS 设计器 (如果在 Mac 上, 还可以右键单击并**打开 > Xcode Interface Builder**)
 
 

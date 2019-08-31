@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3246dcbf58a1b6dda6838b5eb81442fdbc429af5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 616b20872a01b4df6c3f27c636ce7b8ee912414e
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652351"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200338"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 集合视图
 
@@ -59,7 +59,7 @@ ms.locfileid: "68652351"
 - `DequeueReusableCell`-创建或返回给定类型的单元格 (在应用的情节提要中指定)。
 - `DequeueReusableSupplementaryView`-创建或返回给定类型的辅助视图 (如应用的情节提要中所指定)。
 
-在调用这些方法中的任何一种之前, 必须注册用于使用`.xib`集合视图创建单元格视图的类、情节提要或文件。 例如：
+在调用这些方法中的任何一种之前, 必须注册用于使用`.xib`集合视图创建单元格视图的类、情节提要或文件。 例如:
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -142,7 +142,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 1. 向现有视图添加一个图像视图、一个标签和一个按钮, 并将其配置为如下所示: 
 
     [![](collection-views-images/collection02vs.png "配置布局")](collection-views-images/collection02vs.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如: 
+1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如： 
 
     [![](collection-views-images/collection03vs.png "属性资源管理器")](collection-views-images/collection03vs.png#lightbox)
 1. 接下来, 将集合视图控制器拖动到情节提要: 

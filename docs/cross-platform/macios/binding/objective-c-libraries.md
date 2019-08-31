@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
-ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
+ms.openlocfilehash: df90bc764200434e8d546a1ebf61e039498517bb
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169259"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199405"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定目标-C 库
 
@@ -378,23 +378,23 @@ interface UIAccelerometer {
 包含该[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)属性的任何定义实际上将生成三个支持类, 这些类可大大提高你使用协议的方式:
 
 ```csharp
-    // Full method implementation, contains all methods
-    class MyProtocol : IMyProtocol {
-        public void Say (string msg);
-        public void Listen (string msg);
-    }
+// Full method implementation, contains all methods
+class MyProtocol : IMyProtocol {
+    public void Say (string msg);
+    public void Listen (string msg);
+}
 
-    // Interface that contains only the required methods
-    interface IMyProtocol: INativeObject, IDisposable {
-        [Export ("say:")]
-        void Say (string msg);
-    }
+// Interface that contains only the required methods
+interface IMyProtocol: INativeObject, IDisposable {
+    [Export ("say:")]
+    void Say (string msg);
+}
 
-    // Extension methods
-    static class IMyProtocol_Extensions {
-        public static void Optional (this IMyProtocol this, string msg);
-        }
+// Extension methods
+static class IMyProtocol_Extensions {
+    public static void Optional (this IMyProtocol this, string msg);
     }
+}
 ```
 
 **类实现**提供了一个完整的抽象类, 您可以重写的各个方法, 并获得完整的类型安全。  但由于C#不支持多个继承, 因此在某些情况下, 你可能需要具有不同的基类, 但你仍需要实现一个接口, 即
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>绑定目标-C 参数列表
 
-目标-C 支持可变参数参数。 例如：
+目标-C 支持可变参数参数。 例如:
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...

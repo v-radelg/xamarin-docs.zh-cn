@@ -6,12 +6,12 @@ ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6b6a7b8bb2efdd099d7fde6bb5397e6330258bcc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509592"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199390"
 ---
 # <a name="native-types-for-ios-and-macos"></a>IOS 和 macOS 的本机类型
 
@@ -45,9 +45,9 @@ Mac 和 iOS Api 使用32位平台上始终为32位的特定于体系结构的数
 
 当有可能存在数据丢失时, 将提供显式转换运算符 (64 位值存储在32或可能32存储位置)。
 
- `int``nint` `nuint`和均可隐式转换为, 并且`nfloat` 32 位将始终适合32或64位。 `float` `uint`
+`int``nint` `nuint`和均可隐式转换为, 并且`nfloat` 32 位将始终适合32或64位。 `float` `uint`
 
- `nint``long` `ulong`和均可隐式转换为, 并且`double` 32 或64位值将始终适合64位存储。 `nfloat` `nuint`
+`nint``long` `ulong`和均可隐式转换为, 并且`double` 32 或64位值将始终适合64位存储。 `nfloat` `nuint`
 
 `nint`必须使用从、 `nuint`和`nfloat`到`int`和`float`的显式转换, 因为本机类型可能包含64位的存储。 `uint`
 

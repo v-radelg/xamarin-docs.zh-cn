@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7175cfa3b671a1510182b1497c941521170f39a9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e55e6d908bbeb9b4b42ccbcad8121a1b410b79af
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654516"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200129"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的高级消息应用扩展
 
@@ -38,7 +38,7 @@ _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级
 
 此外, iOS 10 中的新增功能, Apple 添加了内嵌应用归属, 使用户能够轻松发现应用。 例如, 如果某个用户从不安装第2个用户的应用发送内容 (例如不干胶标签), 则发送应用的名称将列在消息历史记录中的内容下。 如果用户点击应用程序的名称, 将打开 "消息应用商店", 并在存储中选择应用。
 
-消息应用扩展与开发人员熟悉的现有 iOS 应用类似, 他们将有权访问标准 iOS 应用的所有标准框架和功能。 例如：
+消息应用扩展与开发人员熟悉的现有 iOS 应用类似, 他们将有权访问标准 iOS 应用的所有标准框架和功能。 例如:
 
 - 他们有权访问应用内购买。
 - 他们有权访问 Apple Pay。
@@ -188,7 +188,7 @@ public void SendMessage (MSMessage message)
 
 用户随时可以通过编程方式或手动方式在这两种模式之间切换消息应用扩展, 并且应立即响应视图模式中的任何更改。
 
-请看下面的示例, 该示例在两个不同的视图模式之间处理切换。 每个状态都需要两个不同的视图控制器。 处理精简视图  , 并`AddStickerViewController`将处理展开的视图: `StickerBrowserViewController`
+请看下面的示例, 该示例在两个不同的视图模式之间处理切换。 每个状态都需要两个不同的视图控制器。 处理精简视图 , 并`AddStickerViewController`将处理展开的视图: `StickerBrowserViewController`
 
 ```csharp
 using System;

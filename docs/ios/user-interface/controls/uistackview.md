@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 5519f6e5b1bb0b63ab3169dd8f48f2f87a025ba5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6f9fd193bda16e3b5e048faf5ec7c5eb09b58bcf
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642810"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199142"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin 中的堆栈视图
 
@@ -203,7 +203,7 @@ icon.RemoveFromSuperview();
 
 此外, 还可以指定堆栈视图的**高度**和**宽度**约束。 在这种情况下, 子视图将布局 (调整大小) 以填充由`Distribution`和`Alignment`属性确定的堆栈视图指定的空间。
 
-`true`-   如果属性为, 则将基于第一个或最后一个子视图的基线, 而不是使用 "上"、"下" 或 "中心" Y 位置来布局子视图。 `BaselineRelativeArrangement` 这些是在堆栈视图的内容上计算的, 如下所示:
+`true`- 如果属性为, 则将基于第一个或最后一个子视图的基线, 而不是使用 "上"、"下" 或 "中心" Y 位置来布局子视图。 `BaselineRelativeArrangement` 这些是在堆栈视图的内容上计算的, 如下所示:
 
 - 垂直堆栈视图将返回第一个基线和最后一个基线的第一个子视图。 如果这两个子视图本身都是堆栈视图, 则将使用其第一个或最后一个基线。
 - 水平堆栈视图将为第一个和最后一个基线使用最高的子视图。 如果最高视图也是堆栈视图, 它将使用最高的子视图作为基线。

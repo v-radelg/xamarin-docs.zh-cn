@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 35df6e4ca799a875bcd7db50adbc7a300460885c
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 013e169770fa2e52f89915d1b74c7292a049f87e
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680969"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197816"
 ---
 # <a name="using-the-model-class"></a>使用模型类
 
@@ -44,7 +44,7 @@ MonoGame API 包含一个 `Model` 类，可用于存储从内容文件加载的�
 
 .xnb 文件格式是构建内容（由 [MonoGame 管道工具](http://www.monogame.net/documentation/?page=Pipeline)创建的内容）的标准扩展。 所有构建的内容都有一个源文件（例如我们的模型的源文件是 .fbx 文件）和目标文件（.xnb 文件）。 .fbx 格式是一种常见的3D模型格式，可以由 [Maya](http://www.autodesk.com/products/maya/overview) 和 [Blender](http://www.blender.org/)等应用程序创建。 
 
-          `Model` 类可以通过从含有 3D 几何图形数据的磁盘上加载 .xnb 文件来构造。   这个 .xnb 文件是通过内容项目创建的。 Monogame 模板会自动在 Content 文件夹中包含一个内容项目（扩展名为 .mgcp）。 有关 MonoGame 管道工具的详细讨论，请参阅[内容管道指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
+`Model` 类可以通过从含有 3D 几何图形数据的磁盘上加载 .xnb 文件来构造。   这个 .xnb 文件是通过内容项目创建的。 Monogame 模板会自动在 Content 文件夹中包含一个内容项目（扩展名为 .mgcp）。 有关 MonoGame 管道工具的详细讨论，请参阅[内容管道指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
 
 本指南将略过 MonoGame 管道工具，并使用此处包含的 .XNB 文件。 请注意，.XNB 文件因平台而异，因此请确保在使用的任何平台上使用正确的 XNB 文件。
 
@@ -168,15 +168,15 @@ public class Game1 : Game
 
 ### <a name="model-class"></a>Model 类
 
-          `Model`类是用于从内容文件（例如 .fbx 文件）执行 3D 渲染的核心类。 它包含渲染所需的所有信息，包括 3D 几何体、纹理引用以及负责控制位置、光照和相机参数的 `BasicEffect` 实例。
+`Model`类是用于从内容文件（例如 .fbx 文件）执行 3D 渲染的核心类。 它包含渲染所需的所有信息，包括 3D 几何体、纹理引用以及负责控制位置、光照和相机参数的 `BasicEffect` 实例。
 
-          `Model` 类本身不直接提供位置变量，因为单个模型实例可以在多个不同位置进行渲染，这将在本指南的后面部分中介绍。
+`Model` 类本身不直接提供位置变量，因为单个模型实例可以在多个不同位置进行渲染，这将在本指南的后面部分中介绍。
 
 每个 `Model` 由一个或多个 `ModelMesh` 实例组成，这些实例通过 `Meshes` 属性公开。 虽然可将 `Model` 视为单个游戏对象（例如一个机器人或一辆汽车），但在绘制每个 `ModelMesh` 时可使用不同的 `BasicEffect` 值。 例如，单个网格部件可以表示机器人的腿或汽车上的轮子，可以设定 `BasicEffect` 值，使轮子旋转或腿部移动。 
 
 ### <a name="basiceffect-class"></a>BasicEffect 类
 
-          `BasicEffect`类提供用于控制渲染选项的属性。 要对 `BasicEffect` 进行的第一个修改是调用`EnableDefaultLighting` 方法。 顾名思义, 这会启用默认照明, 这非常适合用于验证`Model`是否按预期方式出现在游戏中。 如果注释掉`EnableDefaultLighting`调用, 就会看到模型只是其纹理, 但没有着色或反光发光:
+`BasicEffect`类提供用于控制渲染选项的属性。 要对 `BasicEffect` 进行的第一个修改是调用`EnableDefaultLighting` 方法。 顾名思义, 这会启用默认照明, 这非常适合用于验证`Model`是否按预期方式出现在游戏中。 如果注释掉`EnableDefaultLighting`调用, 就会看到模型只是其纹理, 但没有着色或反光发光:
 
 ```csharp
 //effect.EnableDefaultLighting ();
@@ -184,7 +184,7 @@ public class Game1 : Game
 
 ![只使用纹理渲染而无底纹或反光效果的模型](part1-images/image9.png "只使用纹理渲染而无底纹或反光效果的模型")
 
-可使用 `World` 属性调整模型的位置、旋转和比例。 上面的代码使用 `Matrix.Identity` 值，这意味着 `Model` 将完全按照 .fbx 文件中指定的方式在游戏中渲染。           [第 3 部分](~/graphics-games/monogame/3d/part3.md)中会更详细地介绍矩阵和 3D 坐标，但在示例中，可以通过更改 `World` 属性来更改 `Model` 的位置，如下所示：
+可使用 `World` 属性调整模型的位置、旋转和比例。 上面的代码使用 `Matrix.Identity` 值，这意味着 `Model` 将完全按照 .fbx 文件中指定的方式在游戏中渲染。 [第 3 部分](~/graphics-games/monogame/3d/part3.md)中会更详细地介绍矩阵和 3D 坐标，但在示例中，可以通过更改 `World` 属性来更改 `Model` 的位置，如下所示：
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:

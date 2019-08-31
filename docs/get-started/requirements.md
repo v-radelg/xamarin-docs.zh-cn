@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: 89afb106320ce77e86a66f2c78bd6e32de8c38f3
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: 33a121c97df435d3423e3e0f525e6a3d32c780ad
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986988"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197469"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 要求
 
@@ -28,7 +28,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 - Android 5.0 (API 21) 或更高版本 ([更多详细信息](#android))
 - Windows 10 通用 Windows 平台（[详细信息](#windows10)）
 
-另外，假设开发人员已熟悉[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
+假定开发人员熟悉[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
 
 ### <a name="additional-platform-support"></a>其他平台支持
 
@@ -49,7 +49,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 “项目选项”>“应用程序”>“应用程序属性”
 
-![Visual Studio 中的 android 生成选项](requirements-images/options-android-vs-sml.png)
+![Visual Studio 中的 Android 生成选项](requirements-images/options-android-vs-sml.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -59,7 +59,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 “生成”>“Android 应用程序”
 
-![选择最小值和目标为你的应用的 Android 版本](requirements-images/options-android-sml.png)
+![选择应用的最低和目标 Android 版本](requirements-images/options-android-sml.png)
 
 -----
 
@@ -69,7 +69,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 ## <a name="mac-system-requirements"></a>Mac 系统要求
 
-可以使用 Visual Studio for Mac 开发 Xamarin.Forms 应用在 macOS High Sierra (10.13) 或更高版本。 若要开发 iOS 应用，我们建议在至少具有 iOS 10 SDK 和安装的 Xcode 9。
+你可以使用 Visual Studio for Mac 在 macOS 高塞拉利昂 (10.13) 或更高版本上开发 Xamarin。 若要开发 iOS 应用, 建议至少安装 iOS 10 SDK 和 Xcode 9。
 
 > [!NOTE]
 >  不能在 macOS 上开发 Windows 应用。
@@ -84,17 +84,17 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 为 UWP 开发 Xamarin.Forms 应用需要：
 
-- Windows 10 （最新版本建议这样做，最小的 Fall Creators Update）
+- Windows 10 (建议使用最新版本, 秋季创建者更新)
 
-- Visual Studio 2019 建议 (Visual Studio 2017 版本 15.8 最小)
+- 建议使用 visual Studio 2019 (Visual Studio 2017 版本15.8 最低版本)
 
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 可以在现有的 Xamarin.Forms 解决方案中随时[添加通用 Windows 平台 (UWP) 应用](~/xamarin-forms/platform/windows/installation/index.md)。
 
-## <a name="deprecated-platforms"></a>不推荐使用的平台
+## <a name="deprecated-platforms"></a>弃用的平台
 
-使用 Xamarin.Forms 3.0 或更高版本时，不支持这些平台：
+使用 Xamarin 3.0 或更高版本时, 不支持这些平台:
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*
