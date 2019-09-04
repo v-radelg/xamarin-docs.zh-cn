@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 97c168460b091b9ada954cacd895a670c31805b2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ada7ce8fc9365ab4133ddf439353e97e640f39d6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655186"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228122"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>绘制弧线的三个方法
 
@@ -22,7 +22,7 @@ _了解如何使用 SkiaSharp 三种不同方式定义弧线_
 
 一段弧线，是椭圆的一条曲线，如该无穷符号的圆角部分的圆周上：
 
-![](arcs-images/arcsample.png "无穷大登录")
+![无穷号](arcs-images/arcsample.png)
 
 尽管该定义的简单起见，没有方法可以定义满足各种需求的弧线绘制函数，因此，在绘制弧线的最佳方式的图形系统之间不一致。出于此原因，`SKPath`类不限制本身只是一种方法。
 
@@ -42,21 +42,21 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 这两种方法开头`SKRect`值，该值定义的位置和大小的椭圆的：
 
-![](arcs-images/anglearcoval.png "开始角度弧线的椭圆")
+![开始圆弧的椭圆](arcs-images/anglearcoval.png)
 
 圆弧属于该椭圆的周长。
 
 `startAngle`参数是以度为单位相对于椭圆的中心从右侧绘制一条横线顺时针角度。 `sweepAngle`自变量是相对于`startAngle`。 以下是`startAngle`和`sweepAngle`分别值 60 度的和 100 度：
 
-![](arcs-images/anglearcangles.png "定义一段弧线，角度角度")
+![定义圆弧的角度](arcs-images/anglearcangles.png)
 
 在开始角度开始圆弧。 其长度所依据的扫描角度。 圆弧以红色的如下所示：
 
-![](arcs-images/anglearchighlight.png "突出显示的角度弧线")
+![突出显示的圆弧](arcs-images/anglearchighlight.png)
 
 添加到与路径曲线`AddArc`或`ArcTo`方法是只是该椭圆的周长的一部分：
 
-![](arcs-images/anglearc.png "本身角度弧线")
+![圆弧本身](arcs-images/anglearc.png)
 
 `startAngle` 或`sweepAngle`参数可以为负数:圆弧对于正值`sweepAngle`为顺时针, 对于负值为逆时针。
 
@@ -103,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 正如您所看到的开始角度和扫描角度可以执行对负值：
 
-[![](arcs-images/anglearc-small.png "三重的角度弧线页屏幕截图")](arcs-images/anglearc-large.png#lightbox "带来三倍的角度弧线页屏幕截图")
+[![直角弧线页面的三向屏幕截图](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
 
 生成一段弧线，此方法是通过算法最简单的并且易于派生的参数化的等式，用于描述弧线。如果知道的大小和位置的椭圆，并开始和扫描角度，起点和终点的圆弧可以使用计算简单三角函数：
 
@@ -208,11 +208,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 一个新`SKPath`为每个饼图扇区中创建对象。 路径都包含一行从中心，则`ArcTo`绘制圆弧和另一个行返回到的中心`Close`调用。 此程序显示"分离"饼图扇区，从而将它们解决所有问题从中心 50 个像素。 该任务需要为每个切片中的扫描角度的中点的方向的矢量：
 
-[![](arcs-images/explodedpiechart-small.png "三重的分离型饼图页屏幕截图")](arcs-images/explodedpiechart-large.png#lightbox "带来三倍的分离型饼图页屏幕截图")
+[![分离型饼图页面的三向屏幕截图](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
 
 若要查看其外观没有"激增"的情况下，只需注释掉`Translate`调用：
 
-[![](arcs-images/explodedpiechartunexploded-small.png "三重而无需爆炸式增长的分离型饼图页屏幕截图")](arcs-images/explodedpiechartunexploded-large.png#lightbox "三重而无需爆炸式增长的分离型饼图页屏幕截图")
+[![不带分解的分离型饼图页面的三向屏幕截图](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
 
 ## <a name="the-tangent-arc"></a>正切弧线
 
@@ -234,31 +234,31 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 - 第一个点参数`ArcTo`方法，称为*角点*
 - 第二个点参数`ArcTo`，称为*目标点*:
 
-![](arcs-images/tangentarcthreepoints.png "开始正切弧线的三个点")
+![开始相切圆弧的三个点](arcs-images/tangentarcthreepoints.png)
 
 这 3 个点定义两个相互连接的直线：
 
-![](arcs-images/tangentarcconnectinglines.png "连接正切弧线的三个点的线条")
+![连接切点的三个点的线条](arcs-images/tangentarcconnectinglines.png)
 
 如果三个点共线&mdash;也就是说，如果它们位于上一条直线&mdash;将绘制任何弧。
 
 `ArcTo`方法还包括`radius`参数。 这将定义圆的半径：
 
-![](arcs-images/tangentarccircle.png "正切弧的圆")
+![反正切圆弧的圆](arcs-images/tangentarccircle.png)
 
 正切弧线的椭圆未通用化。
 
 如果两个行满足在任意角度，该圆形可以插入这些行之间，这样就到这两个行的正切值：
 
-![](arcs-images/tangentarctangentcircle.png "两行之间正切弧线圆形")
+![两行之间的反正切圆弧](arcs-images/tangentarctangentcircle.png)
 
 添加到轮廓线的曲线不触及中指定的点之一`ArcTo`方法。 它包含从当前的点到第一个切点和第二个在切点处，此处以红色显示结束一段弧线直线：
 
-![](arcs-images/tangentarchighlight.png "之间的两行的突出显示切线图弧线")
+![两行之间突出显示的相切圆弧](arcs-images/tangentarchighlight.png)
 
 下面是最后一条直线和添加到轮廓线的弧线：
 
-![](arcs-images/tangentarc.png "之间的两行的突出显示切线图弧线")
+![两行之间突出显示的相切圆弧](arcs-images/tangentarc.png)
 
 可以从第二个切点继续轮廓。
 
@@ -416,7 +416,7 @@ public partial class TangentArcPage : InteractivePage
 
 下面是**正切弧线**运行页面：
 
-[![](arcs-images/tangentarc-small.png "正切值弧线页的三个屏幕截图")](arcs-images/tangentarc-large.png#lightbox "带来三倍的正切值弧线页屏幕截图")
+[![相切弧线页面的三向屏幕截图](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
 正切弧适合于创建圆的角，如圆角矩形。 因为`SKPath`已包括`AddRoundedRect`方法，**舍入 Heptagon**页说明如何使用`ArcTo`用于舍入七边的多边形的边角。 （代码通用化的任何正则多边形中）。
 
@@ -489,9 +489,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-下面是运行的程序：
+下面是正在运行的程序：
 
-[![](arcs-images/roundedheptagon-small.png "舍入 Heptagon 页的三个屏幕截图")](arcs-images/roundedheptagon-large.png#lightbox "带来三倍的舍入 Heptagon 页屏幕截图")
+[![圆形 Heptagon 页面的三向屏幕截图](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
 
 ## <a name="the-elliptical-arc"></a>椭圆弧
 
@@ -507,31 +507,31 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 这些`ArcTo`方法的当前点轮廓线的两个点之间绘制一段弧线和最后一个参数`ArcTo`方法 (`xy`参数或单独`x`和`y`参数):
 
-![](arcs-images/ellipticalarcpoints.png "两个定义椭圆弧的点")
+![定义了椭圆弧的两个点](arcs-images/ellipticalarcpoints.png)
 
 第一个点参数`ArcTo`方法 (`r`，或`rx`和`ry`) 根本不是点，但改为指定的椭圆; 的水平和垂直半径
 
-![](arcs-images/ellipticalarcellipse.png "定义椭圆弧椭圆")
+![定义了椭圆弧的椭圆](arcs-images/ellipticalarcellipse.png)
 
 `xAxisRotate`参数是要旋转该椭圆的顺时针角度数：
 
-![](arcs-images/ellipticalarctiltedellipse.png "定义椭圆弧倾斜的椭圆")
+![定义椭圆弧的倾斜椭圆](arcs-images/ellipticalarctiltedellipse.png)
 
 如果该倾斜的椭圆然后定位，以便它涉及两个点，点由两个不同弧连接：
 
-![](arcs-images/ellipticalarcellipse1.png "第一组椭圆弧形")
+![第一组椭圆弧](arcs-images/ellipticalarcellipse1.png)
 
 可以通过两种方式区分这两个弧线:顶部弧大于下弧形, 而当圆弧从左向右绘制时, 沿顺时针方向绘制顶部弧线, 而底部弧线以逆时针方向绘制。
 
 还有可能以适合另一种方法的两个点之间的椭圆：
 
-![](arcs-images/ellipticalarcellipse2.png "第二组的椭圆弧形")
+![第二组椭圆弧](arcs-images/ellipticalarcellipse2.png)
 
 现在没有的较小弧顺时针旋转，绘制的顶部和底部绘制的较大弧逆时针旋转。
 
 因此可以通过定义总共四种方法中的倾斜椭圆弧连接这两个点：
 
-![](arcs-images/ellipticalarccolors.png "所有四个椭圆弧形")
+![全部四个椭圆弧](arcs-images/ellipticalarccolors.png)
 
 通过四种组合来区分这些四个弧[ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)并[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)枚举的类型参数`ArcTo`方法：
 
@@ -586,21 +586,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 运行此处：
 
-[![](arcs-images/ellipticalarc-small.png "三个椭圆弧页屏幕截图")](arcs-images/ellipticalarc-large.png#lightbox "带来三倍的椭圆弧页屏幕截图")
+[![椭圆弧页面的三向屏幕截图](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
 **弧线无穷大**页使用椭圆弧绘制无穷符号。 无穷大登录基于两个圆圈，分隔 100 个单位 100 个单位的半径：
 
-![](arcs-images/infinitycircles.png "两个圆")
+![两个圆圈](arcs-images/infinitycircles.png)
 
 跨越每个其他的两个行是到两个圆的正切值：
 
-![](arcs-images/infinitycircleslines.png "带有切线的两个圆")
+![带有切线的两个圆圈](arcs-images/infinitycircleslines.png)
 
 无穷符号是这些圈子和两行的部件的组合。 若要使用椭圆弧绘制无穷符号，必须确定其中的两个行是于圆形的正切值的坐标。
 
 构造中的一个圆圈的右矩形：
 
-![](arcs-images/infinitytriangle.png "使用切线和嵌入的圆圈的两个圆")
+![带有切线和嵌入圆的两个圆圈](arcs-images/infinitytriangle.png)
 
 圆的半径为 100 个单位，三角形的斜边是 150 个单位，因此 α 的角度的反正弦值 （反正弦值） 为 100，150，通过或 41.8 度划分。 另一方的三角形的长度为 150 次 41.8 度的余弦或 112，也可以通过勾股定理计算。
 
@@ -612,7 +612,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 四个切点所是用圆半径为 100 点 （0，0） 上绘制居中无穷大登录所需的所有内容：
 
-![](arcs-images/infinitycoordinates.png "使用切线和坐标的两个圆")
+![具有相切线条和坐标的两个圆圈](arcs-images/infinitycoordinates.png)
 
 `PaintSurface`处理程序中的[ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)类定位无穷符号，以便 （0，0） 点位于页上，在中心和缩放屏幕大小的路径：
 
@@ -654,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 该代码使用`Bounds`属性的`SKPath`来确定无穷大正弦值，以使其缩放到画布的大小的尺寸：
 
-[![](arcs-images/arcinfinity-small.png "三重的弧线无穷大页屏幕截图")](arcs-images/arcinfinity-large.png#lightbox "带来三倍的弧线无穷大页屏幕截图")
+[![Arc 无穷页的三向屏幕截图](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
 
 结果看起来有点小，这表明`Bounds`属性的`SKPath`reporting 大于路径的大小。
 
@@ -662,7 +662,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 若要获取更紧密的合适大小，请使用`TightBounds`属性，它不包括的控点。 下面是程序在横向模式下运行，以及使用`TightBounds`属性获取路径边界：
 
-[![](arcs-images/arcinfinitytightbounds-small.png "三重通过紧密界限的弧线无穷大页屏幕截图")](arcs-images/arcinfinitytightbounds-large.png#lightbox "三重通过紧密界限的弧线无穷大页屏幕截图")
+[![具有紧密型边界的 Arc 无穷页的三向屏幕截图](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
 
 尽管弧线和直线之间的连接是数学上平滑，弧线直线的更改可能看起来有点突然发生。 更好的无穷符号在下一篇文章中显示给上[**三种类型的贝塞尔曲线**](beziers.md)。
 

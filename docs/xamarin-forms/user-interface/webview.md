@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: b13ee05f6d0e17287254b7c30c07b5a4a3c70638
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9113ff728c382a26d0f0b5c0a6e40575cb8e776f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198285"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227949"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -20,7 +20,7 @@ ms.locfileid: "70198285"
 
 [`WebView`](xref:Xamarin.Forms.WebView) 是应用程序中显示 web 和 HTML 内容的视图。 与不同`OpenUri`，使用户转到 web 浏览器在设备上，`WebView`显示您的应用程序中的 HTML 内容。
 
-![](webview-images/in-app-browser.png "在应用程序浏览器中")
+![在应用浏览器中](webview-images/in-app-browser.png)
 
 ## <a name="content"></a>内容
 
@@ -105,7 +105,7 @@ htmlSource.Html = @"<html><body>
 browser.Source = htmlSource;
 ```
 
-![](webview-images/html-string.png "WebView 显示 HTML 字符串")
+![显示 HTML 字符串的 Web 视图](webview-images/html-string.png)
 
 在上面的代码，`@`用于将 HTML 标记作为字符串文本，这意味着，将忽略所有常见的转义字符。
 
@@ -147,7 +147,7 @@ body,p,h1 {
 
 以下屏幕截图显示在每个平台上显示本地内容的结果：
 
-![](webview-images/local-content.png "WebView 显示本地内容")
+![显示本地内容的 Web 视图](webview-images/local-content.png)
 
 已加载的第一页，尽管`WebView`一无所知的 HTML 原来所在的位置。 在处理引用本地资源的页面时，这是个问题。 时，可能会执行此操作的示例包括为每个其他页面使本地的页面链接使用的单独的 JavaScript 文件，或一个页面链接到 CSS 样式表时。  
 
@@ -176,11 +176,11 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](webview-images/ios-vs.png "在 iOS 上的本地文件")
+![IOS 上的本地文件](webview-images/ios-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](webview-images/ios-xs.png "在 iOS 上的本地文件")
+![IOS 上的本地文件](webview-images/ios-xs.png)
 
 -----
 
@@ -206,11 +206,11 @@ namespace WorkingWithWebview.iOS
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](webview-images/android-vs.png "在 Android 上的本地文件")
+![Android 上的本地文件](webview-images/android-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](webview-images/android-xs.png "在 Android 上的本地文件")
+![Android 上的本地文件](webview-images/android-xs.png)
 
 -----
 
@@ -328,7 +328,7 @@ public partial class InAppBrowserXaml : ContentPage
 
 就这么简单！
 
-![](webview-images/in-app-browser.png "Web 视图的导航按钮")
+![Web 视图导航按钮](webview-images/in-app-browser.png)
 
 ## <a name="events"></a>事件
 
@@ -383,11 +383,11 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 
 这会导致以下输出 （加载）：
 
-![](webview-images/loading-start.png "WebView 导航事件示例")
+![Web 视图导航事件示例](webview-images/loading-start.png)
 
 已完成的加载：
 
-![](webview-images/loading-end.png "WebView 导航事件示例")
+![Web 视图导航事件示例](webview-images/loading-end.png)
 
 ## <a name="reloading-content"></a>重新加载内容
 

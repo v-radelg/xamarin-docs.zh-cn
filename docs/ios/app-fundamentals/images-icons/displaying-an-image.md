@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120602"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227749"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中显示映像
 
@@ -41,7 +41,7 @@ _本文介绍如何在 Xamarin iOS 应用中包括图像资产, 并通过使用C
 3. 选择新图像集, 将显示编辑器:
 
     ![](displaying-an-image-images/imageset03.png "图像集编辑器")
-4. 在此处, 为每个所需的不同设备和分辨率拖动图像。 
+4. 在此处, 为每个所需的不同设备和分辨率拖动图像。
 5. 在 "**资产" 列表**中双击新图像集的**名称**以对其进行编辑:![](displaying-an-image-images/imageset04.png "编辑新映像集的名称")
 
 使用 iOS 设计器中的**图像集**时, 只需在属性编辑器的下拉列表中选择集的名称即可:
@@ -54,7 +54,7 @@ _本文介绍如何在 Xamarin iOS 应用中包括图像资产, 并通过使用C
 
     ![](displaying-an-image-images/asset5.png "单击加号按钮")
 
-2. 选择 "**添加图像集**", 将显示新图像集的 "图像集编辑器"。 在此处, 为每个所需的不同设备和分辨率拖动图像。 
+2. 选择 "**添加图像集**", 将显示新图像集的 "图像集编辑器"。 在此处, 为每个所需的不同设备和分辨率拖动图像。
 
     ![](displaying-an-image-images/asset7.png "图像集编辑器")
 
@@ -193,7 +193,7 @@ if (MyIcon.Image != null) {
 
 ### <a name="frombundle"></a>FromBundle
 
-此`FromBundle`方法调用是一个同步 (阻塞) 调用, 它具有许多内置的映像加载和管理功能, 例如缓存支持并自动处理各种分辨率的图像文件。  
+此`FromBundle`方法调用是一个同步 (阻塞) 调用, 它具有许多内置的映像加载和管理功能, 例如缓存支持并自动处理各种分辨率的图像文件。
 
 下面的示例演示如何`UITabBarItem` `UITabBar`在上设置的图像:
 
@@ -207,7 +207,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage");
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-对于任何其他图像格式, 请将扩展名包含在该名称中。 例如:
+对于任何其他图像格式, 请将扩展名包含在该名称中。 例如：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");

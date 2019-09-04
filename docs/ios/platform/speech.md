@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 40aa36fa8a89eacd8be7914020c06f3fec75baff
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121290"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227342"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的语音识别
 
@@ -89,8 +89,8 @@ Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语
 - 使用密钥在应用`Info.plist`文件中提供使用说明。`NSSpeechRecognitionUsageDescription` 例如, 照相机应用可能包含以下说明, _"这只允许您通过说" 奶酪 "一词来拍摄照片。_
 - 通过调用`SFSpeechRecognizer.RequestAuthorization`方法来提供一个说明 (在上面的`NSSpeechRecognitionUsageDescription`密钥中提供), 以说明应用希望语音识别在对话框中访问用户并允许他们接受或拒绝的原因。
 - 创建语音识别请求:
-    - 对于磁盘上预先录制的音频, 请使用`SFSpeechURLRecognitionRequest`类。
-    - 对于实时音频 (或内存中的音频), 请`SFSPeechAudioBufferRecognitionRequest`使用类。
+  - 对于磁盘上预先录制的音频, 请使用`SFSpeechURLRecognitionRequest`类。
+  - 对于实时音频 (或内存中的音频), 请`SFSPeechAudioBufferRecognitionRequest`使用类。
 - 将语音识别请求传递到语音识别器 (`SFSpeechRecognizer`) 以开始识别。 应用可以选择性地在返回`SFSpeechRecognitionTask`的上保存来监视和跟踪识别结果。
 
 下面将详细介绍这些步骤。
@@ -105,7 +105,7 @@ Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语
 2. 切换到**源**视图: 
 
     [![](speech-images/speech02.png "源视图")](speech-images/speech02.png#lightbox)
-3. 单击 "**添加新项**", `NSSpeechRecognitionUsageDescription`输入作为 "类型`String` " 的 **属性**, 将 "**用法说明**" 作为**值**。 例如: 
+3. 单击 "**添加新项**", `NSSpeechRecognitionUsageDescription`输入作为 "类型`String` " 的 **属性**, 将 "**用法说明**" 作为**值**。 例如： 
 
     [![](speech-images/speech03.png "添加 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
 4. 如果应用将处理实时音频操作, 还需要麦克风使用说明。 单击 "**添加新项**", `NSMicrophoneUsageDescription`输入作为 "类型`String` " 的 **属性**, 将 "**用法说明**" 作为**值**。 例如: 
@@ -243,7 +243,7 @@ public void RecognizeFile (NSUrl url)
 
 ### <a name="recognizing-live-speech"></a>识别实时语音
 
-如果应用想要识别实时语音, 该过程与识别预先录制的语音的过程非常相似。 例如:
+如果应用想要识别实时语音, 该过程与识别预先录制的语音的过程非常相似。 例如：
 
 ```csharp
 using System;
@@ -380,8 +380,8 @@ RecognitionTask.Cancel ();
 在 iOS 应用中使用语音识别时, Apple 会施加以下限制:
 
 - 语音识别对于所有应用都是免费的, 但其用法并不是无限的:
-    - 单个 iOS 设备的识别数量有限, 每天可执行。
-    - 每日请求将以全局方式限制应用。
+  - 单个 iOS 设备的识别数量有限, 每天可执行。
+  - 每日请求将以全局方式限制应用。
 - 应用必须准备好处理语音识别网络连接和使用速率限制失败。
 - 在用户的 iOS 设备上, 语音识别的电量消耗和高网络流量可能会产生较高的成本, 因此 Apple 将严格的音频持续时间限制为大约一分钟的语音最大值。
 

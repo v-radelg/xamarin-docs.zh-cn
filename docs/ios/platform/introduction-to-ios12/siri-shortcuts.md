@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 4fa15e73575e20541df7ee8f606b01ec6e3d875a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f0927a6d6d5e3b9db6f203f779fbd50a026ce7e8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656723"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226564"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin 中的 Siri 快捷方式
 
@@ -56,7 +56,7 @@ iOS 12 添加了 Siri 快捷方式, 允许所有类型的应用向 Siri 公开�
 
 ## <a name="infoplist-and-entitlementsplist"></a>Info.plist 和 info.plist
 
-在深入 Soup Chef 代码之前, 请先查看其**信息 info.plist** **和**文件。
+在深入 Soup Chef 代码之前, 请先查看其**信息 info.plist**和文件。
 
 ### <a name="infoplist"></a>Info.plist
 
@@ -202,7 +202,7 @@ void HandleUserActivity()
 
 注意下列事项：
 
-- 意向的**类别** **为。** 有各种预定义的类别可用于自定义意向;选择与自定义意向将启用的任务最匹配的项。 由于这是一个 soup 的订购应用程序, **OrderSoupIntent**使用**订单**。
+- 意向的**类别**为。 有各种预定义的类别可用于自定义意向;选择与自定义意向将启用的任务最匹配的项。 由于这是一个 soup 的订购应用程序, **OrderSoupIntent**使用**订单**。
 - **确认**复选框指示 Siri 在执行任务之前是否必须请求确认。 对于 Soup Chef 中的**Order Soup**意向, 此选项是在用户进行购买后启用的。
 - Intentdefinition 文件的**参数**部分定义了与快捷方式相关的参数。 若要设置 soup, Soup Chef 必须知道 soup 的类型、其数量以及任何关联的选项。
 每个参数都具有类型;预定义类型无法表示的参数将设置为**Custom**。
@@ -264,19 +264,19 @@ void HandleUserActivity()
 
 - 将系统配置为使用 Xcode 10 命令行工具:
 
-    > [!WARNING]
-    > 更新选定的命令行工具将影响系统上安装的所有 Xcode 版本。 使用 Soup Chef 示例应用完成后, 请务必将此设置恢复为原始配置。
+  > [!WARNING]
+  > 更新选定的命令行工具将影响系统上安装的所有 Xcode 版本。 使用 Soup Chef 示例应用完成后, 请务必将此设置恢复为原始配置。
 
-    - 在 Xcode 中, 选择 " **Xcode > 首选项" > 位置**, 并将**命令行工具**设置为系统上可用的最新 Xcode 10 安装。
+  - 在 Xcode 中, 选择 " **Xcode > 首选项" > 位置**, 并将**命令行工具**设置为系统上可用的最新 Xcode 10 安装。
 
 - 在终端中, `cd`到**OrderSoupIntentStaticLib**目录。
 
 - 类型`make`, 生成:
 
-    - 静态库**libOrderSoupIntentStaticLib**
-    - 在**bo**输出目录中, C#绑定定义:
-        - **ApiDefinitions.cs**
-        - **StructsAndEnums.cs**
+  - 静态库**libOrderSoupIntentStaticLib**
+  - 在**bo**输出目录中, C#绑定定义:
+    - **ApiDefinitions.cs**
+    - **StructsAndEnums.cs**
 
 依赖于此静态库及其关联的绑定定义的**OrderSoupIntentBindings**项目会自动生成这些项。
 但是, 通过上述过程手动运行将确保它按预期方式生成。
@@ -561,7 +561,7 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 - **confirmationView**, 类型为`ConfirmOrderView`
 
 > [!NOTE]
-> **InvoiceView**和**confirmationView**的接口在**主情节提要**中定义为辅助视图。 Visual Studio for Mac 和 Visual Studio 2017 中的 iOS 设计器不支持查看或编辑辅助视图;为此, 请在 Xcode 的 Interface Builder**中打开**。
+> **InvoiceView**和**confirmationView**的接口在**主情节提要**中定义为辅助视图。 Visual Studio for Mac 和 Visual Studio 2017 中的 iOS 设计器不支持查看或编辑辅助视图;为此, 请在 Xcode 的 Interface Builder 中打开。
 
 `IntentViewController`实现[`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
 接口, 用于在使用 Siri 时提供自定义接口。 此[`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
@@ -645,16 +645,16 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - 创建应用组, 以在 Soup Chef 应用及其扩展之间共享数据。 例如: **com.lookout.enterprise.yourcompanyname. SoupChef**
 
-- 创建三个应用 Id: 一个用于应用本身, 一个用于意向扩展, 另一个用于意向 UI 扩展。 例如：
+- 创建三个应用 Id: 一个用于应用本身, 一个用于意向扩展, 另一个用于意向 UI 扩展。 例如:
 
-    - 应用: **com.lookout.enterprise.yourcompanyname. SoupChef**
-        - 对于此应用程序 ID, 请分配 SiriKit 和**应用组**功能。
+  - 应用: **com.lookout.enterprise.yourcompanyname. SoupChef**
+    - 对于此应用程序 ID, 请分配 SiriKit 和**应用组**功能。
 
-    - 意向扩展: **com.lookout.enterprise.yourcompanyname. SoupChef**
-        - 对于此应用程序 ID, 分配**应用组**功能。
+  - 意向扩展: **com.lookout.enterprise.yourcompanyname. SoupChef**
+    - 对于此应用程序 ID, 分配**应用组**功能。
 
-    - 意向 UI 扩展: **com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
-        - 此应用 ID 不需要特殊功能。
+  - 意向 UI 扩展: **com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
+    - 此应用 ID 不需要特殊功能。
 
 - 创建以上应用 Id 后, 编辑分配给应用的**应用组**功能和意向扩展, 并指定上面创建的特定应用组。
 
@@ -668,16 +668,16 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - 更新解决方案中的各种**info.plist**文件。 将应用、意向扩展和意向 UI 扩展**捆绑标识符**设置为上面定义的应用 id:
 
-    - 应用: **com.lookout.enterprise.yourcompanyname. SoupChef**
-    - 意向扩展: **com.lookout.enterprise.yourcompanyname. SoupChef**
-    - 意向 UI 扩展: **com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
+  - 应用: **com.lookout.enterprise.yourcompanyname. SoupChef**
+  - 意向扩展: **com.lookout.enterprise.yourcompanyname. SoupChef**
+  - 意向 UI 扩展: **com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
 
 - 更新**SoupChef**项目的**info.plist**文件:
-    - 对于 "**应用组**" 功能, 请将组设置为前面创建的新应用组 (在上面的示例中为**com.lookout.enterprise.yourcompanyname. SoupChef**)。
-    - 请确保已启用**SiriKit** 。
+  - 对于 "**应用组**" 功能, 请将组设置为前面创建的新应用组 (在上面的示例中为**com.lookout.enterprise.yourcompanyname. SoupChef**)。
+  - 请确保已启用**SiriKit** 。
 
 - 更新**SoupChefIntents**项目的**info.plist**文件:
-    - 对于 "**应用组**" 功能, 请将组设置为前面创建的新应用组 (在上面的示例中为**com.lookout.enterprise.yourcompanyname. SoupChef**)。
+  - 对于 "**应用组**" 功能, 请将组设置为前面创建的新应用组 (在上面的示例中为**com.lookout.enterprise.yourcompanyname. SoupChef**)。
 
 - 最后, 打开**NSUserDefaultsHelper.cs**。 将变量设置为新应用组的值 (例如, 将其设置为`group.com.yourcompanyname.SoupChef`)。 `AppGroup`
 

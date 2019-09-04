@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 5c12b5a5c0e558403362bd12baddfb8201f40759
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 24ab8f4b988277cbbf1162a08e5641332a58bd81
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642921"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228160"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 标签
 
@@ -48,7 +48,7 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 
 下面的屏幕截图演示`TextDecorations`应用于枚举成员[ `Label` ](xref:Xamarin.Forms.Label)实例：
 
-![](label-images/label-textdecorations.png "具有文本修饰的文本标签")
+![带有文本修饰的标签](label-images/label-textdecorations.png)
 
 > [!NOTE]
 > 此外可应用于的文本修饰[ `Span` ](xref:Xamarin.Forms.Span)实例。 有关详细信息`Span`类，请参阅[格式的文本](#Formatted_Text)。
@@ -91,7 +91,7 @@ public partial class LabelPage : ContentPage
 
 以下屏幕截图显示的设置结果`TextColor`属性：
 
-![](label-images/textcolor.png "标签 TextColor 示例")
+![标签 TextColor 示例](label-images/textcolor.png)
 
 有关颜色的详细信息，请参阅[颜色](~/xamarin-forms/user-interface/colors.md)。
 
@@ -140,7 +140,7 @@ var label =
 
 以下屏幕截图显示的设置结果`MaxLines`属性设置为 2，在文本时足够长，以占用 2 个以上的行：
 
-![](label-images/label-maxlines.png "标签指示 MaxLines 示例")
+![标签 MaxLines 示例](label-images/label-maxlines.png)
 
 <a name="Formatted_Text" />
 
@@ -223,7 +223,7 @@ public class LabelPageCode : ContentPage
 
 以下屏幕截图显示设置的结果`FormattedString`属性设置为三个`Span`实例：
 
-![](label-images/formattedtext.png "标签 FormattedText 示例")
+![标签 FormattedText 示例](label-images/formattedtext.png)
 
 ## <a name="line-height"></a>行高
 
@@ -254,7 +254,7 @@ var label =
 
 以下屏幕截图显示设置的结果[ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight)属性设置为 1.8:
 
-![](label-images/label-lineheight.png "标签 LineHeight 示例")
+![标签 LineHeight 示例](label-images/label-lineheight.png)
 
 下面的 XAML 示例演示了如何设置[ `LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)上的属性[ `Span` ](xref:Xamarin.Forms.Span):
 
@@ -294,7 +294,7 @@ var label = new Label
 
 以下屏幕截图显示设置的结果[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)属性设置为 1.8:
 
-![](label-images/span-lineheight.png "Span LineHeight 示例")
+![Span LineHeight 示例](label-images/span-lineheight.png)
 
 ## <a name="hyperlinks"></a>中超
 

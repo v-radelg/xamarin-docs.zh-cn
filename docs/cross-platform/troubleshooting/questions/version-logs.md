@@ -7,38 +7,38 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119968"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226782"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>在哪里可以找到我的版本信息和日志？
 
 ## <a name="outline"></a>轮廓
 
 - [版本信息](#version-information)
-    - Windows 版本信息
-    - Mac 版本信息
-    - Android SDK Tools, 平台工具, 生成工具
+  - Windows 版本信息
+  - Mac 版本信息
+  - Android SDK Tools, 平台工具, 生成工具
 - [IDE 和安装程序日志](#ide-and-installer-logs)
-    - [Windows 日志](#windows-logs)
-        - Xamarin Studio
-        - 面向 Visual Studio 的 Xamarin
-        - Xamarin 通用安装程序
-        - 单个`.msi`安装程序, 详细日志
-        - Visual Studio 启动, 详细日志
-    - [Mac 日志](#mac-logs)
-        - 生成主机
-    - Visual Studio for Mac
-        - Xamarin Studio
-        - Xamarin 安装程序
+  - [Windows 日志](#windows-logs)
+    - Xamarin Studio
+    - 面向 Visual Studio 的 Xamarin
+    - Xamarin 通用安装程序
+    - 单个`.msi`安装程序, 详细日志
+    - Visual Studio 启动, 详细日志
+  - [Mac 日志](#mac-logs)
+    - 生成主机
+  - Visual Studio for Mac
+    - Xamarin Studio
+    - Xamarin 安装程序
 - [详细生成输出](#verbose-build-output-logs)
 - [适用于 Xamarin 和 Xamarin iOS 应用的调试日志](#debug-logs-for-xamarin-apps)
-    - Android `adb` logcat 日志
-    - iOS 模拟器日志 (在 Mac 上)
-    - iOS 设备日志 (在 Mac 上)
+  - Android `adb` logcat 日志
+  - iOS 模拟器日志 (在 Mac 上)
+  - iOS 设备日志 (在 Mac 上)
 
 ## <a name="a-idversion-information-nameversion-information-version-information"></a><a id="version-information" name="version-information" />版本信息
 

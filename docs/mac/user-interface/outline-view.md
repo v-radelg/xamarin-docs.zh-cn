@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a57363ef0fec4668fe35e1d7198372a543d672e7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3b045d18d66463a1464e446847cb5dbfd531bbf3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655336"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227882"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin 中的大纲视图
 
 _本文介绍如何在 Xamarin. Mac 应用程序中使用大纲视图。它介绍了如何在 Xcode 和 Interface Builder 中创建和维护大纲视图, 以及如何以编程方式使用它们。_
 
-在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同  大纲视图。 由于 Xamarin 与 Xcode 直接集成, 因此可以使用 Xcode 的_Interface Builder_来创建和维护大纲视图 (或者在代码中C#直接创建)。
+在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同大纲视图。 由于 Xamarin 与 Xcode 直接集成, 因此可以使用 Xcode 的_Interface Builder_来创建和维护大纲视图 (或者在代码中C#直接创建)。
 
 大纲视图是一种允许用户展开或折叠分层数据行的表。 与表视图类似, 大纲视图显示一组相关项的数据, 行表示各个项, 列表示这些项的属性。 与表视图不同, 大纲视图中的项不在简单列表中, 它们在层次结构中进行组织, 如硬盘驱动器上的文件和文件夹。
 
@@ -87,11 +87,11 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用大纲视图。它介�
 - **网格颜色**-设置单元格边框颜色。
 - **背景**-设置单元格背景色。
 - **选择**-允许你控制用户如何选择表中的单元格, 如下所示:
-    - **多**-如果`true`为, 则用户可以选择多个行和列。
-    - **列**-如果`true`为, 则用户可以选择列。
-    - **键入 select** -如果`true`为, 则用户可以键入字符来选择行。
-    - **空**-如果`true`为, 则不要求用户选择行或列, 表根本不允许任何选择。
-- 自动**保存-表**格式将自动保存在下面的名称。
+  - **多**-如果`true`为, 则用户可以选择多个行和列。
+  - **列**-如果`true`为, 则用户可以选择列。
+  - **键入 select** -如果`true`为, 则用户可以键入字符来选择行。
+  - **空**-如果`true`为, 则不要求用户选择行或列, 表根本不允许任何选择。
+- 自动保存-表格式将自动保存在下面的名称。
 - **列信息**-如果`true`, 列的顺序和宽度将自动保存。
 - **换行符**-选择单元格如何处理分行符。
 - **截断最后一个可见行**- `true`如果为, 则数据中的单元格将被截断, 而不能容纳在它的边界内。
@@ -115,7 +115,7 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用大纲视图。它介�
 
 还可以通过将列的控点拖到左侧或右侧, 来调整列的大小。
 
-让我们选择表视图中的每一列, 并为第一列  指定标题`Product` `Details`, 并为第二列指定标题。
+让我们选择表视图中的每一列, 并为第一列指定标题`Product` `Details`, 并为第二列指定标题。
 
 在**接口层次结构**中选择`NSTableViewCell`一个表单元视图 (),**属性检查器**中提供以下属性:
 
@@ -157,14 +157,14 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用大纲视图。它介�
 
 对于想要公开的任何大纲视图元素, 此过程是相同的:
 
-1. 切换到 "**助手编辑器**" 并确保已`ViewController.h`选中此文件: 
+1. 切换到 "**助手编辑器**" 并确保已`ViewController.h`选中此文件:
 
     [![](outline-view-images/edit11.png "选择正确的 .h 文件")](outline-view-images/edit11.png#lightbox)
 2. 从**接口层次结构**中选择 "大纲" 视图, 然后单击并拖动到`ViewController.h`该文件。
-3. 为名  `ProductOutline`为的大纲视图创建输出口: 
+3. 为名 `ProductOutline`为的大纲视图创建输出口:
 
     [![](outline-view-images/edit13.png "配置插座")](outline-view-images/edit13.png#lightbox)
-4. 为 tables 列创建**插座**, 并`ProductColumn` `DetailsColumn`调用: 
+4. 为 tables 列创建**插座**, 并`ProductColumn` `DetailsColumn`调用:
 
     [![](outline-view-images/edit14.png "配置插座")](outline-view-images/edit14.png#lightbox)
 5. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
@@ -263,7 +263,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).Products [childIndex];
             }
-                
+
         }
 
         public override bool ItemExpandable (NSOutlineView outlineView, NSObject item)
@@ -273,7 +273,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).IsProductGroup;
             }
-        
+
         }
         #endregion
     }
@@ -298,7 +298,7 @@ namespace MacOutlines
 {
     public class ProductOutlineDelegate : NSOutlineViewDelegate
     {
-        #region Constants 
+        #region Constants
         private const string CellIdentifier = "ProdCell";
         #endregion
 
@@ -578,7 +578,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.StringValue;
-            break; 
+            break;
         }
     };
 
@@ -604,7 +604,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 ## <a name="using-images-in-outline-views"></a>在大纲视图中使用图像
 
-若要`NSOutlineView`在中包含图像作为单元的一部分, 需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式, 以使用`NSTableCellView`而不是典型`NSTextField`的。 例如:
+若要`NSOutlineView`在中包含图像作为单元的一部分, 需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式, 以使用`NSTableCellView`而不是典型`NSTextField`的。 例如：
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -649,7 +649,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.TextField.StringValue;
-            break; 
+            break;
         }
     };
 

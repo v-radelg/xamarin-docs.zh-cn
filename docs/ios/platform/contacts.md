@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fe69e596193aab306a3701ea1ae0792362270557
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8b551a17fc54ec1557cd385b4c91b33720316879
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644683"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225973"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的联系人和 ContactsUI
 
@@ -23,7 +23,7 @@ _本文介绍如何在 Xamarin iOS 应用中使用新的 "联系人" 和 "联系
 这两个新框架包含以下功能:
 
 - [**联系人**](#contacts)-提供对用户的联系人列表数据的访问。
-    由于大多数应用只需要只读访问权限, 因此此框架已针对线程安全只读访问进行了优化。
+  由于大多数应用只需要只读访问权限, 因此此框架已针对线程安全只读访问进行了优化。
 
 - [**ContactsUI**](#contactsui) -提供 XAMARIN ios UI 元素, 用于在 iOS 设备上显示、编辑、选择和创建联系人。
 
@@ -124,7 +124,7 @@ Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterSt
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-对于将在应用程序的 UI 中显示的属性标签, Contact 框架还提供了用于本地化这些字符串的方法。 同样, 这是基于运行应用的 iOS 设备的当前区域设置。 例如：
+对于将在应用程序的 UI 中显示的属性标签, Contact 框架还提供了用于本地化这些字符串的方法。 同样, 这是基于运行应用的 iOS 设备的当前区域设置。 例如:
 
 ```csharp
 // Localized properties
@@ -176,7 +176,7 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 _部分联系人_是指只有部分可用属性从的联系人存储区中提取的联系人。 如果尝试访问先前未提取的属性, 将导致异常。
 
-通过使用`IsKeyAvailable` `CNContact`实例的或`AreKeysAvailable`方法, 可以轻松查看给定联系人是否具有所需的属性。 例如：
+通过使用`IsKeyAvailable` `CNContact`实例的或`AreKeysAvailable`方法, 可以轻松查看给定联系人是否具有所需的属性。 例如:
 
 ```csharp
 // Does the contact contain the requested key?
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> 类的`GetUnifiedContact`和`GetUnifiedContacts`方法  仅返回仅限从提供的提取密钥请求的属性的部分联系人。 `CNContactStore`
+> 类的`GetUnifiedContact`和`GetUnifiedContacts`方法仅返回仅限从提供的提取密钥请求的属性的部分联系人。 `CNContactStore`
 
 ### <a name="unified-contacts"></a>统一联系人
 
@@ -227,7 +227,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 还可用于将多个联系人和组更改缓存到一个操作中, 并将这些修改`CNContactStore`分批。 `CNSaveRequest`
 
-若要更新从提取操作获取的非可变联系人, 您必须首先请求一个可变副本, 然后将其修改并保存回联系人存储区。 例如：
+若要更新从提取操作获取的非可变联系人, 您必须首先请求一个可变副本, 然后将其修改并保存回联系人存储区。 例如:
 
 ```csharp
 // Get mutable copy of contact
@@ -281,7 +281,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 在调用`CNContactPickerViewController`类之前, 您可以定义用户可选择哪些属性并定义谓词来控制联系人属性的显示和选择。
 
-使用从`CNContactPickerDelegate`继承的类的实例, 以响应用户与选取器的交互。 例如:
+使用从`CNContactPickerDelegate`继承的类的实例, 以响应用户与选取器的交互。 例如：
 
 ```csharp
 using System;

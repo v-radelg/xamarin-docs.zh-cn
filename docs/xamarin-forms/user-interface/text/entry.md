@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650265"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227989"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 条目
 
@@ -105,7 +105,7 @@ var entry = new Entry { ... MaxLength = 10 };
 var MyEntry = new Entry { IsPassword = true };
 ```
 
-![](entry-images/password.png "条目 IsPassword 示例")
+![Entry IsPassword 示例](entry-images/password.png)
 
 占位符可能使用的实例，并用`Entry`的配置为密码字段：
 
@@ -121,7 +121,7 @@ var MyEntry = new Entry { IsPassword = true };
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "条目 IsPassword 和占位符的示例")
+![Entry IsPassword 和 Placeholder 示例](entry-images/passwordplaceholder.png)
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>设置光标位置和文本所选内容长度
 
@@ -294,7 +294,7 @@ var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "条目 TextColor 示例")
+![Entry TextColor 示例](entry-images/textcolor.png)
 
 请注意，占位符不是受影响的指定`TextColor`。
 
@@ -311,7 +311,7 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "项的 BackgroundColor 示例")
+![Entry BackgroundColor 示例](entry-images/textbackgroundcolor.png)
 
 请务必确保您选择的背景和文本颜色每个平台上可用，并且变得模糊的任何占位符文本。
 

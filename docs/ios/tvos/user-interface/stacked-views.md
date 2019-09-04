@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be4d10eceb4ddf7da44409815f3e9c08117a06f7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120744"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227216"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆积视图
 
@@ -24,7 +24,7 @@ ms.locfileid: "70120744"
 
 `UIStackView`在 tvOS 应用中使用时, 开发人员可以在 iOS 设计器中的情节提要内定义子视图, 也可以在C#代码中添加和删除子视图。
 
-## <a name="about-stacked-view-controls"></a>关于堆积视图控件 
+## <a name="about-stacked-view-controls"></a>关于堆积视图控件
 
 设计为非呈现容器视图, 因此, 它不像的`UIView`其他子类一样绘制到画布。 `UIStackView` 设置属性 (如`BackgroundColor`或替代`DrawRect` ) 将没有视觉效果。
 
@@ -98,21 +98,21 @@ ms.locfileid: "70120744"
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在**Solution Pad**中, 双击`Main.storyboard`文件并将其打开以进行编辑。
-1. 设计要添加到堆栈视图中的单个元素的布局: 
+1. 设计要添加到堆栈视图中的单个元素的布局:
 
     [![](stacked-views-images/layout01.png "元素布局示例")](stacked-views-images/layout01.png#lightbox)
 1. 向元素添加所需的任何约束, 以确保它们能正确缩放。 将元素添加到堆栈视图后, 此步骤非常重要。
-1. 创建所需数量的副本 (在本例中为四个): 
+1. 创建所需数量的副本 (在本例中为四个):
 
     [![](stacked-views-images/layout02.png "所需的副本数")](stacked-views-images/layout02.png#lightbox)
-1. 将 "**堆栈" 视图**从 "**工具箱**" 拖放到视图上: 
+1. 将 "**堆栈" 视图**从 "**工具箱**" 拖放到视图上:
 
     [![](stacked-views-images/layout03.png "堆栈视图")](stacked-views-images/layout03.png#lightbox)
-1. 选择 "堆栈" 视图, 在 "**小组件" 选项** **Properties Pad**卡中, 选择 "填充" 作为 "**对齐**" 的`25` "**填充**", 为**分布** **均匀填充**, 并输入**间距**: 
+1. 选择 "堆栈" 视图, 在 "**小组件" 选项** **Properties Pad**卡中, 选择 "填充" 作为 "**对齐**" 的`25` "**填充**", 为**分布** **均匀填充**, 并输入**间距**:
 
     [![](stacked-views-images/layout04.png "\"小组件\" 选项卡")](stacked-views-images/layout04.png#lightbox)
 1. 将堆栈视图定位到所需的屏幕上, 并添加约束, 使其保持在所需的位置。
-1. 选择各个元素, 并将其拖到 "堆栈" 视图中: 
+1. 选择各个元素, 并将其拖到 "堆栈" 视图中:
 
     [![](stacked-views-images/layout05.png "堆栈视图中的单个元素")](stacked-views-images/layout05.png#lightbox)
 1. 将调整布局, 并根据上面设置的属性将元素排列在堆栈视图中。
@@ -122,21 +122,21 @@ ms.locfileid: "70120744"
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在**解决方案资源管理器**中, 双击`Main.storyboard`文件并将其打开以进行编辑。
-1. 设计要添加到堆栈视图中的单个元素的布局: 
+1. 设计要添加到堆栈视图中的单个元素的布局:
 
     [![](stacked-views-images/layout01.png "示例元素布局")](stacked-views-images/layout01.png#lightbox)
 1. 向元素添加所需的任何约束, 以确保它们能正确缩放。 将元素添加到堆栈视图后, 此步骤非常重要。
-1. 创建所需数量的副本 (在本例中为四个): 
+1. 创建所需数量的副本 (在本例中为四个):
 
     [![](stacked-views-images/layout02.png "所需的副本数")](stacked-views-images/layout02.png#lightbox)
-1. 将 "**堆栈" 视图**从 "**工具箱**" 拖放到视图上: 
+1. 将 "**堆栈" 视图**从 "**工具箱**" 拖放到视图上:
 
     [![](stacked-views-images/layout03-vs.png "堆栈视图")](stacked-views-images/layout03-vs.png#lightbox)
-1. 选择 "堆栈" 视图, 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中, 选择 "**填充**" `25`进行**对齐**, 按**比例填充** **分布**并输入**间距**: 
+1. 选择 "堆栈" 视图, 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中, 选择 "**填充**" `25`进行**对齐**, 按**比例填充** **分布**并输入**间距**:
 
     [![](stacked-views-images/layout04-vs.png "\"小组件\" 选项卡")](stacked-views-images/layout04-vs.png#lightbox)
 1. 将堆栈视图定位到所需的屏幕上, 并添加约束, 使其保持在所需的位置。
-1. 选择各个元素, 并将其拖到 "堆栈" 视图中: 
+1. 选择各个元素, 并将其拖到 "堆栈" 视图中:
 
     [![](stacked-views-images/layout05-vs.png "堆栈视图中的单个元素")](stacked-views-images/layout05-vs.png#lightbox)
 1. 将调整布局, 并根据上面设置的属性将元素排列在堆栈视图中。
@@ -150,7 +150,7 @@ ms.locfileid: "70120744"
 
 有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
-在我们的示例中, 我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中, 我们将基于当前段隐藏和显示播放机。 例如:
+在我们的示例中, 我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中, 我们将基于当前段隐藏和显示播放机。 例如：
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {

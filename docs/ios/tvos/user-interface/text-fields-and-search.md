@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: cb8520a223a2bc10706c7e5bcebf8fc412d4e64e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b1f4712e87762acb81a366700174db33e0c557bf
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652295"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226687"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>在 Xamarin 中使用 tvOS 文本和搜索字段
 
@@ -30,7 +30,7 @@ ms.locfileid: "68652295"
 
 ## <a name="about-text-and-search-fields"></a>关于文本和搜索字段
 
-如上所述, 如果需要, 你的 tvOS 可以提供一个或多个文本字段, 以使用屏幕 (或可选的蓝牙键盘, 具体取决于用户安装的 tvOS 版本) 从用户那里收集少量文本。 
+如上所述, 如果需要, 你的 tvOS 可以提供一个或多个文本字段, 以使用屏幕 (或可选的蓝牙键盘, 具体取决于用户安装的 tvOS 版本) 从用户那里收集少量文本。
 
 此外, 如果你的应用程序向用户提供大量内容 (如音乐、电影或图片集合), 则可能需要包含一个搜索字段, 该搜索字段允许用户输入少量文本来筛选可用项的列表。
 
@@ -59,7 +59,7 @@ Apple 对于使用文本字段具有以下建议:
 
 [![](text-fields-and-search-images/keyboard01.png "Siri 远程键盘")](text-fields-and-search-images/keyboard01.png#lightbox)
 
-如果当前视图上存在多个文本字段, 将自动显示 "**下一步**" 按钮, 以使用户转到下一个文本字段。 将显示最后一个文本字段的 "**完成**" 按钮, 该字段将结束文本输入并将用户返回到上一屏幕。 
+如果当前视图上存在多个文本字段, 将自动显示 "**下一步**" 按钮, 以使用户转到下一个文本字段。 将显示最后一个文本字段的 "**完成**" 按钮, 该字段将结束文本输入并将用户返回到上一屏幕。
 
 用户随时还可以按 Siri 遥控器上的**菜单**按钮结束文本输入, 并再次返回到上一屏幕。
 
@@ -99,37 +99,37 @@ Apple 提供了以下有关使用搜索字段的建议:
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在**Solution Pad**中, 双击该`Main.storyboard`文件以将其打开以进行编辑。
-1. 将设计图面上的一个或多个**文本字段**拖至视图: 
+1. 将设计图面上的一个或多个**文本字段**拖至视图:
 
     [![](text-fields-and-search-images/text02.png "文本字段")](text-fields-and-search-images/text02.png#lightbox)
-1. 选择**文本字段**, 并在**Properties Pad**的 "**小组件**" 选项卡中为每个名称指定唯一**名称**: 
+1. 选择**文本字段**, 并在**Properties Pad**的 "**小组件**" 选项卡中为每个名称指定唯一**名称**:
 
     [![](text-fields-and-search-images/text03.png "Properties Pad 的 \"小组件\" 选项卡")](text-fields-and-search-images/text03.png#lightbox)
-1. 在 "**文本字段**" 部分中, 可以定义元素, 例如**占位符**提示和默认**值**: 
+1. 在 "**文本字段**" 部分中, 可以定义元素, 例如**占位符**提示和默认**值**:
 
     [![](text-fields-and-search-images/text04.png "文本字段部分")](text-fields-and-search-images/text04.png#lightbox)
-1. 向下滚动以定义**拼写检查**、**大写**和默认**键盘类型**等属性: 
+1. 向下滚动以定义**拼写检查**、**大写**和默认**键盘类型**等属性:
 
-    [![](text-fields-and-search-images/text05.png "拼写检查, 大小写和默认键盘类型")](text-fields-and-search-images/text05.png#lightbox) 
+    [![](text-fields-and-search-images/text05.png "拼写检查, 大小写和默认键盘类型")](text-fields-and-search-images/text05.png#lightbox)
 1. 保存对情节提要所做的更改。
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
-1. 在“解决方案资源管理器”  中，双击 `Main.storyboard` 文件，将其打开进行编辑。
-1. 将设计图面上的一个或多个**文本字段**拖至视图: 
+
+1. 在“解决方案资源管理器”中，双击 `Main.storyboard` 文件，将其打开进行编辑。
+1. 将设计图面上的一个或多个**文本字段**拖至视图:
 
     [![](text-fields-and-search-images/text02-vs.png "文本字段")](text-fields-and-search-images/text02-vs.png#lightbox)
-1. 选择 "**属性资源管理器**" 的 "**小组件**" 选项卡中的**文本字段**, 并为每个名称指定唯一**名称**: 
+1. 选择 "**属性资源管理器**" 的 "**小组件**" 选项卡中的**文本字段**, 并为每个名称指定唯一**名称**:
 
     [![](text-fields-and-search-images/text03-vs.png "\"小组件\" 选项卡")](text-fields-and-search-images/text03-vs.png#lightbox)
-1. 在 "**文本字段**" 部分中, 可以定义元素, 例如**占位符**提示和默认**值**: 
+1. 在 "**文本字段**" 部分中, 可以定义元素, 例如**占位符**提示和默认**值**:
 
     [![](text-fields-and-search-images/text04-vs.png "文本字段部分")](text-fields-and-search-images/text04-vs.png#lightbox)
-1. 向下滚动以定义**拼写检查**、**大写**和默认**键盘类型**等属性: 
+1. 向下滚动以定义**拼写检查**、**大写**和默认**键盘类型**等属性:
 
-    [![](text-fields-and-search-images/text05-vs.png "拼写检查, 大小写和默认键盘类型")](text-fields-and-search-images/text05-vs.png#lightbox) 
+    [![](text-fields-and-search-images/text05-vs.png "拼写检查, 大小写和默认键盘类型")](text-fields-and-search-images/text05-vs.png#lightbox)
 1. 保存对情节提要所做的更改。
-    
+
 -----
 
 在代码中, 可以使用`Text`文本字段的属性来获取或设置该字段的值:
@@ -149,41 +149,41 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 请执行以下操作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 在**Solution Pad**中, 双击该`Main.storyboard`文件以将其打开以进行编辑。
-1. 将新的集合视图控制器拖动到情节提要, 以显示用户的搜索结果: 
+1. 将新的集合视图控制器拖动到情节提要, 以显示用户的搜索结果:
 
     [![](text-fields-and-search-images/search02.png "集合视图控制器")](text-fields-and-search-images/search02.png#lightbox)
-1. 在**Properties Pad**的 "**小组件**" 选项卡`SearchResultsViewController`中, 对**类**和`SearchResults` **情节提要 ID**使用: 
+1. 在**Properties Pad**的 "**小组件**" 选项卡`SearchResultsViewController`中, 对**类**和`SearchResults` **情节提要 ID**使用:
 
     [![](text-fields-and-search-images/search03.png "\"小组件\" 选项卡")](text-fields-and-search-images/search03.png#lightbox)
 1. 选择设计图面上的**单元原型**。
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`ImageCell`中, 为**类**和**标识符**使用`SearchResultCell` : 
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`ImageCell`中, 为**类**和**标识符**使用`SearchResultCell` :
 
     [![](text-fields-and-search-images/search04.png "\"小组件\" 选项卡")](text-fields-and-search-images/search04.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡**中布局** **单元原型**的设计并公开每个元素: 
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中布局**单元原型**的设计并公开每个元素:
 
     [![](text-fields-and-search-images/search05.png "布局单元原型的设计")](text-fields-and-search-images/search05.png#lightbox)
 1. 保存对情节提要所做的更改。
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
-1. 在“解决方案资源管理器”  中，双击 `Main.storyboard` 文件，将其打开进行编辑。
-1. 将新的集合视图控制器拖动到情节提要, 以显示用户的搜索结果: 
+
+1. 在“解决方案资源管理器”中，双击 `Main.storyboard` 文件，将其打开进行编辑。
+1. 将新的集合视图控制器拖动到情节提要, 以显示用户的搜索结果:
 
     [![](text-fields-and-search-images/seach02-vs.png "集合视图控制器")](text-fields-and-search-images/seach02-vs.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`SearchResults`中, 为**类**和**情节提要 ID**使用`SearchResultsViewController` : 
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`SearchResults`中, 为**类**和**情节提要 ID**使用`SearchResultsViewController` :
 
     [![](text-fields-and-search-images/search03-vs.png "\"小组件\" 选项卡")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. 选择设计图面上的**单元原型**。
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`ImageCell`中, 为**类**和**标识符**使用`SearchResultCell` : 
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`ImageCell`中, 为**类**和**标识符**使用`SearchResultCell` :
 
     [![](text-fields-and-search-images/search04-vs.png "\"小组件\" 选项卡")](text-fields-and-search-images/search04-vs.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡**中布局** **单元原型**的设计并公开每个元素: 
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中布局**单元原型**的设计并公开每个元素:
 
     [![](text-fields-and-search-images/search05-vs.png "布局单元原型的设计")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. 保存对情节提要所做的更改。
-    
+
 -----
 
 <a name="Provide-a-Data-Model" />
@@ -192,13 +192,13 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-接下来, 需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中, 右键单击项目名称, 然后选择 "**添加** > " "**新文件 ...** "   常规空类并提供名称 > :  >  
+接下来, 需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中, 右键单击项目名称, 然后选择 "**添加** > " "**新文件 ...** "常规空类并提供名称 > :  > 
 
 [![](text-fields-and-search-images/search06.png "选择空类并提供名称")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-接下来, 需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中, 右键单击项目名称, 然后选择 "**添加** > **新项 ...** "   Apple杂项 > 类并 > 提供名称:  >  
+接下来, 需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中, 右键单击项目名称, 然后选择 "**添加** > **新项 ...** "Apple杂项 > 类并 > 提供名称:  > 
 
 [![](text-fields-and-search-images/search06-vs.png "选择类并提供名称")](text-fields-and-search-images/search06-vs.png#lightbox)
 
@@ -613,7 +613,7 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 ### <a name="presenting-the-search-field"></a>显示搜索字段
 
-可以通过两种主要方式在 tvOS 中向用户显示搜索字段 (及其关联的屏幕键盘和搜索结果): 
+可以通过两种主要方式在 tvOS 中向用户显示搜索字段 (及其关联的屏幕键盘和搜索结果):
 
 - **模式对话框视图**-在当前视图和视图控制器上, 搜索字段可以显示为全屏模式对话框视图。 这通常是为了响应用户单击按钮或其他 UI 元素而完成的。 当用户从搜索结果中选择某项时, 将关闭该对话框。
 - **查看内容**-搜索字段是给定视图的直接组成部分。 例如, 作为选项卡视图控制器中的 "搜索" 选项卡的内容。

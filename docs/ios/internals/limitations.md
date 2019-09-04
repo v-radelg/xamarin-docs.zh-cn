@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527351"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227528"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
@@ -57,11 +57,11 @@ class Foo<T> : UIView {
 
 - 无法获取 System.object。
 - 不支持 System.object。
-- 不支持动态创建类型（没有 Type.GetType（“MyType`1”）），但查找现有类型（例如 Type.GetType（“System.String”）仍有效）。 
+- 不支持动态创建类型（没有 Type.GetType（“MyType`1”）），但查找现有类型（例如 Type.GetType（“System.String”）仍有效）。
 - 在编译时, 必须向运行时注册反向回调。
 
 
- 
+
  <a name="System.Reflection.Emit" />
 
 
@@ -71,7 +71,7 @@ class Foo<T> : UIView {
 
 - 动态语言运行时。
 - 在动态语言运行时之上构建的任何语言。
-- 远程处理的 TransparentProxy 或任何其他操作会导致运行时动态生成代码。 
+- 远程处理的 TransparentProxy 或任何其他操作会导致运行时动态生成代码。
 
 
   > [!IMPORTANT]
@@ -91,7 +91,7 @@ class Foo<T> : UIView {
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
- 
+
  <a name="Reverse_Callbacks" />
 
 
@@ -101,9 +101,9 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 在 Mono 中，这些桥由实时编译器实现。 在使用 iPhone 所需的提前编译器时，则有两个重要限制：
 
-- 必须用[MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)标记所有的回调方法
+- 必须使用 [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute) 标记所有回调方法
 - 方法必须是静态方法，不支持实例方法。
- 
+
 <a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>无远程处理

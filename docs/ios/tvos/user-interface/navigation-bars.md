@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bde37c907d2cad327dd2a72f26ee357a4391c43
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 14fbbd72d3ec80d15d2dcae5938f8df28923ca4c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649043"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226603"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航栏
 
@@ -34,16 +34,16 @@ ms.locfileid: "68649043"
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在**Solution Pad**中, 双击`Main.storyboard` "文件" 并将其打开以进行编辑。
-1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上: 
+1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上:
 
     [![](navigation-bars-images/navbar02.png "导航栏")](navigation-bars-images/navbar02.png#lightbox)
-1. 双击**导航栏**以选择**导航项**。 在**Properties Pad**的 "**小组件**" 选项卡中, 可以设置**标题**: 
+1. 双击**导航栏**以选择**导航项**。 在**Properties Pad**的 "**小组件**" 选项卡中, 可以设置**标题**:
 
     [![](navigation-bars-images/navbar03.png "设置标题")](navigation-bars-images/navbar03.png#lightbox)
-1. 接下来, 可以将一个或多个**条形按钮项**添加到栏的任一端: 
+1. 接下来, 可以将一个或多个**条形按钮项**添加到栏的任一端:
 
     [![](navigation-bars-images/navbar04.png "条形按钮项")](navigation-bars-images/navbar04.png#lightbox)
-1. 最后, 在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作: 
+1. 最后, 在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作:
 
     [![](navigation-bars-images/navbar05.png "条形按钮项操作")](navigation-bars-images/navbar05.png#lightbox)
 1. 保存更改。
@@ -53,16 +53,16 @@ ms.locfileid: "68649043"
 
 
 1. 在**解决方案资源管理器**中, 双击`Main.storyboard` "文件" 并将其打开以进行编辑。
-1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上: 
+1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上:
 
     [![](navigation-bars-images/navbar02-vs.png "导航栏")](navigation-bars-images/navbar02-vs.png#lightbox)
-1. 双击**导航栏**以选择**导航项**。 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中, 您可以设置**标题**: 
+1. 双击**导航栏**以选择**导航项**。 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中, 您可以设置**标题**:
 
     [![](navigation-bars-images/navbar03-vs.png "设置标题")](navigation-bars-images/navbar03-vs.png#lightbox)
-1. 接下来, 可以将一个或多个**条形按钮项**添加到栏的任一端: 
+1. 接下来, 可以将一个或多个**条形按钮项**添加到栏的任一端:
 
     [![](navigation-bars-images/navbar04-vs.png "条形按钮项")](navigation-bars-images/navbar04-vs.png#lightbox)
-1. 最后, 在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作: 
+1. 最后, 在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作:
 
     [![](navigation-bars-images/navbar05-vs.png "条形按钮项操作")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 保存更改。
@@ -126,7 +126,7 @@ namespace MySingleView
 
 只要按钮的`Enabled`属性为`true` , 并且它未被另一个控件或视图所覆盖, 就可以使用 Siri Remote 使其成为焦点项。
 
-有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 
+有关使用情节提要的详细信息, 请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
 <a name="Summary" />
 

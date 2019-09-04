@@ -6,18 +6,18 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f125f8f20d22da4e988440cbaa936771d86a7673
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680972"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227720"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>在 MonoGame 中绘制带有顶点的3D 图形
 
 _MonoGame 支持使用顶点数组来定义3D对象在每个点上的渲染方式。用户可以利用顶点数组创建动态几何体，实现特殊效果，并通过剔除提高渲染效率。_
 
-阅读过[模型渲染指南](~/graphics-games/monogame/3d/part1.md)的用户对于在 MonoGame 中渲染3D模型会比较熟悉。 在处理文件（例如 .fbx）中定义的数据时以及处理静态数据时，`Model` 类是渲染3D图形的一种有效方法。 某些游戏需要在运行时动态定义或操纵3D几何体。 在这些情况下，可以使用顶点数组来定义和渲染几何体。  顶点是3D空间中的点的概括性术语，它是用于定义几何体的有序列表的一部分。 通常，顶点的排序方式基于一系列三角形的定义。
+阅读过[模型渲染指南](~/graphics-games/monogame/3d/part1.md)的用户对于在 MonoGame 中渲染3D模型会比较熟悉。 在处理文件（例如 .fbx）中定义的数据时以及处理静态数据时，`Model` 类是渲染3D图形的一种有效方法。 某些游戏需要在运行时动态定义或操纵3D几何体。 在这些情况下，可以使用顶点数组来定义和渲染几何体。 顶点是3D空间中的点的概括性术语，它是用于定义几何体的有序列表的一部分。 通常，顶点的排序方式基于一系列三角形的定义。
 
 为直观显示如何使用顶点创建 3D 对象，请参考以下球体：
 
@@ -75,7 +75,7 @@ protected override void Draw(GameTime gameTime)
 
 每种类型的名称都表明了它所包含的组件。 例如，`VertexPositionColor`包含位置和颜色的值。 让我们来看看每个组件：
 
-- Position - 所有顶点类型都包含一个`Position`组件。           `Position`值定义了顶点在 3D 空间（X，Y 和 Z）中的位置。
+- Position - 所有顶点类型都包含一个`Position`组件。 `Position`值定义了顶点在 3D 空间（X，Y 和 Z）中的位置。
 - Color - 顶点可以选择性地指定`Color`值以执行自定义着色。
 - Normal - Normal 定义物体表面朝向的方向。 如果使用光照来渲染对象，必须使用 Normal，因为表面所朝向的方向会影响它的光照度。 Normal 通常被指定为*单位矢量* - 长度为 1 的 3D 矢量。
 - Texture – Texture 是指纹理坐标 - 即纹理的哪个部分应显示在给定的顶点。 如果使用纹理渲染3D对象，则必须使用 Texture 值。 纹理坐标是归一化坐标，这意味着值落在 0 和 1 之间。 我们将在本指南后面更详细地介绍纹理坐标。
@@ -85,7 +85,7 @@ protected override void Draw(GameTime gameTime)
 首先，在 Game1 类中添加一个成员：
 
 ```csharp
-VertexPositionTexture[] floorVerts; 
+VertexPositionTexture[] floorVerts;
 ```
 
 接下来，在`Game1.Initialize`中定义顶点。 请注意，本文前面提到的模板不包含`Game1.Initialize`方法，因此需要将整个方法添加到`Game1`中：
@@ -179,7 +179,7 @@ void DrawGround()
             PrimitiveType.TriangleList,
             // The array of verts that we want to render
             floorVerts,
-            // The offset, which is 0 since we want to start 
+            // The offset, which is 0 since we want to start
             // at the beginning of the floorVerts array
             0,
             // The number of triangles to draw
@@ -209,11 +209,11 @@ protected override void Draw (GameTime gameTime)
 
 ### <a name="view-and-projection-properties"></a>View和Projection属性
 
-          `View`和`Projection`属性控制我们查看场景的方式。 后面在重新添加模型渲染代码时，将修改此代码。 具体来说，`View`控制相机的位置和方向，`Projection`控制*视野*（可用于缩放相机）。
+`View`和`Projection`属性控制我们查看场景的方式。 后面在重新添加模型渲染代码时，将修改此代码。 具体来说，`View`控制相机的位置和方向，`Projection`控制*视野*（可用于缩放相机）。
 
 ### <a name="techniques-and-passes"></a>Technique和Pass
 
-一旦为效果指定了属性，便可执行实际渲染。 
+一旦为效果指定了属性，便可执行实际渲染。
 
 我们不会在本演练中更改`CurrentTechnique`属性，但更高级的游戏可具有单个效果，这个效果能够以不同的方式执行绘制（例如应用颜色值的方式）。 每一种渲染模式都可以表示为可在渲染之前指定的 Technique。 此外，每种 Technique 可能需要多个 Pass 才能正确渲染。 如果渲染复杂的视觉对象（如发光表面或毛发），效果可能需要多个 Pass。
 
@@ -231,7 +231,7 @@ protected override void Draw (GameTime gameTime)
 
 ## <a name="rendering-with-a-texture"></a>使用纹理渲染
 
-此时，应用程序渲染出一个白色平面（在透视模式下）。 接下来要为渲染平面时使用的项目添加纹理。 
+此时，应用程序渲染出一个白色平面（在透视模式下）。 接下来要为渲染平面时使用的项目添加纹理。
 
 为简单起见，将 .png 直接添加到项目中，而不是使用 MonoGame Pipeline 工具。 为此，请将[此 .png  文件](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)下载到计算机上。 下载完成后，右键单击解决方案面板中的**内容**文件夹，然后选择**添加”>“添加文件…** 。 如果是在 Android 上操作，则此文件夹位于特定于 Android 的项目中的**资产**文件夹下。 如果在 iOS 上操作，那么此文件夹位于 iOS 项目的根目录中。 导航到保存 **checkerboard.png** 的位置，然后选择此文件。 选择将文件复制到该目录中。
 
@@ -332,7 +332,7 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 如果运行此代码，可以看到平面现在会显示出一个棋盘图案：
@@ -404,7 +404,7 @@ protected override void Draw(GameTime gameTime)
     DrawModel (new Vector3 ( 4, 4, 3));
 
     base.Draw(gameTime);
-} 
+}
 ```
 
 在 `Game1` 中创建一个 `Vector3` 实例来表示相机的位置。 并在 `checkerboardTexture` 声明下添加一个字段：
@@ -413,7 +413,7 @@ protected override void Draw(GameTime gameTime)
 ...
 Texture2D checkerboardTexture;
 // new code:
-Vector3 cameraPosition = new Vector3(0, 10, 10); 
+Vector3 cameraPosition = new Vector3(0, 10, 10);
 ```
 
 接下来，从 `DrawModel` 方法中删除局部变量 `cameraPosition`：
@@ -434,7 +434,7 @@ void DrawModel(Vector3 modelPosition)
             var cameraUpVector = Vector3.UnitZ;
 
             effect.View = Matrix.CreateLookAt (
-                cameraPosition, cameraLookAtVector, cameraUpVector); 
+                cameraPosition, cameraLookAtVector, cameraUpVector);
             ...
 ```
 
@@ -450,7 +450,7 @@ void DrawGround()
 
     effect.View = Matrix.CreateLookAt (
         cameraPosition, cameraLookAtVector, cameraUpVector);
-    ... 
+    ...
 ```
 
 现在，如果运行代码，可以同时看到模型和地面：

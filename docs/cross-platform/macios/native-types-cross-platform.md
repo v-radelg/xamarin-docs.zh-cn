@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 9018c3e3c976ef7623835055ee989dfd86dc25e1
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680210"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226237"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>使用跨平台应用中的本机类型
 
@@ -58,7 +58,7 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 #### <a name="using-duplicate-methods"></a>使用重复方法
 
-采用在上面给出的矩形数据进行转换的库示例。 如果库只包含一种或两种非常简单的方法, 可以选择为 Xamarin 和 Xamarin 创建这些方法的重复版本。 例如:
+采用在上面给出的矩形数据进行转换的库示例。 如果库只包含一种或两种非常简单的方法, 可以选择为 Xamarin 和 Xamarin 创建这些方法的重复版本。 例如：
 
 ```csharp
 using System;

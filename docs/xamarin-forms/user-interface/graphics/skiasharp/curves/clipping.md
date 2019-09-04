@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 8978bd386ec2f2ea0f9960f079ce82750941cfad
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655957"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228254"
 ---
 # <a name="clipping-with-paths-and-regions"></a>按路径和区域进行剪裁
 
@@ -22,7 +22,7 @@ _使用剪辑图形路径指向的特定区域，并创建区域_
 
 此外，有时需要限制对特定区域的图形渲染。 这称为*剪辑*。 您可以使用特殊效果，如通过锁眼看到 monkey 此图像剪辑：
 
-![](clipping-images/clippingsample.png "通过锁眼 monkey")
+![通过 keyhole 的猴子](clipping-images/clippingsample.png)
 
 *剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是, 你不能从区域创建路径, 它们在内部有很大不同:路径由一系列线条和曲线组成, 而区域由一系列水平扫描线定义。
 
@@ -100,7 +100,7 @@ canvas.ClipPath(keyholePath);
 
 `PaintSurface`处理程序然后将重置通过调用转换`ResetMatrix`和绘制位图将扩展到整个屏幕的高度。 此代码假定将位图是方形，这是此特定的位图。 仅在由剪切路径定义的区域中呈现位图：
 
-[![](clipping-images/monkeythroughkeyhole-small.png "通过锁眼页面 Monkey 的三个屏幕截图")](clipping-images/monkeythroughkeyhole-large.png#lightbox "的 Monkey 锁眼页通过三个屏幕截图")
+[![通过 Keyhole 页面的三重屏幕截图](clipping-images/monkeythroughkeyhole-small.png)](clipping-images/monkeythroughkeyhole-large.png#lightbox)
 
 剪切路径是否受转换生效时`ClipPath`调用方法，并不转换生效时图形对象 （如位图） 显示。 剪切路径是使用保存的画布状态的一部分`Save`方法并使用已还原`Restore`方法。
 
@@ -167,7 +167,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 剩下是以下四个圆圈的交集：
 
-[![](clipping-images//fourcircleintersectclip-small.png "三重的四个圆圈相交剪辑页屏幕截图")](clipping-images/fourcircleintersectclip-large.png#lightbox "带来三倍的四个圆圈相交剪辑页屏幕截图")
+[![四个圆圈交叉剪裁页面的三向屏幕截图](clipping-images//fourcircleintersectclip-small.png)](clipping-images/fourcircleintersectclip-large.png#lightbox)
 
 [ `SKClipOperation` ](xref:SkiaSharp.SKClipOperation)枚举具有只有两个成员：
 
@@ -177,13 +177,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如果替换四个`SKClipOperation.Intersect`中的自变量`FourCircleIntersectClipPage`类的`SKClipOperation.Difference`，可以看到如下：
 
-[![](clipping-images//fourcircledifferenceclip-small.png "三个与差值运算的四个圆圈相交剪辑页屏幕截图")](clipping-images/fourcircledifferenceclip-large.png#lightbox "差值运算的四个圆圈相交剪辑页的三个屏幕截图")
+[![这四个圆圈相交于剪裁页面并带有差异操作](clipping-images//fourcircledifferenceclip-small.png)](clipping-images/fourcircledifferenceclip-large.png#lightbox)
 
 已从剪辑区域中删除四个重叠圆圈。
 
 **剪辑操作**页说明了这些只是一对圆圈的两个操作之间的差异。 在左侧的第一个圆圈将添加到与默认剪辑操作的剪辑区域`Intersect`，而在右侧的第二个圆圈将添加到剪辑区域与剪辑操作由文本标签指示：
 
-[![](clipping-images//clipoperations-small.png "三重剪辑操作页屏幕截图")](clipping-images/clipoperations-large.png#lightbox "剪辑操作页面的三个屏幕截图")
+[!["剪辑操作" 页的三个屏幕截图](clipping-images//clipoperations-small.png)](clipping-images/clipoperations-large.png#lightbox)
 
 [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs)类定义了两个`SKPaint`对象作为字段，，然后将屏幕划分为两个矩形区域。 这些方面有所不同，具体取决电话是否是在纵向或横向模式下。 `DisplayClipOp`类，然后显示的文本和调用`ClipPath`使用两个圆的路径来说明每个剪辑操作：
 
@@ -282,7 +282,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 下面的屏幕截图显示了基于六个区域操作的剪辑区域。 左侧的圆圈可以是该区域的`Op`上，调用方法和正确的圆圈可以是传递给该区域`Op`方法：
 
-[![](clipping-images//regionoperations-small.png "区域操作页面的三个屏幕截图")](clipping-images/regionoperations-large.png#lightbox "的区域操作页的三个屏幕截图")
+[!["区域操作" 页的三个屏幕截图](clipping-images//regionoperations-small.png)](clipping-images/regionoperations-large.png#lightbox)
 
 组合这些两个圆的这些所有可能性都？ 考虑为其本身中所示的三个组件组合生成的图像`Difference`， `Intersect`，和`ReverseDifference`操作。 到第三个电源，两个或八个组合的总数。 缺少两个是原始区域 (这会产生不调用`Op`根本) 和完全空白区域。
 
@@ -423,7 +423,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `DrawRegion`调用填充的区域以橙色，虽然`DrawPath`调用中比较的蓝色描边的原始路径：
 
-[![](clipping-images//regionpaint-small.png "三重的区域绘制页的屏幕截图")](clipping-images/regionpaint-large.png#lightbox "的区域绘制页的三个屏幕截图")
+[![区域绘制页面的三向屏幕截图](clipping-images//regionpaint-small.png)](clipping-images/regionpaint-large.png#lightbox)
 
 区域显然是一系列离散的坐标。
 
@@ -509,7 +509,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它真正看上去不像四个-能，但它是一个图像，否则可能很难不经剪辑呈现：
 
-[![](clipping-images//fourleafclover-small.png "三重的四个-能页屏幕截图")](clipping-images/fourleafclover-large.png#lightbox "带来三倍的四个-能页屏幕截图")
+[![四叶三月页面的三向屏幕截图](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 
 
 ## <a name="related-links"></a>相关链接

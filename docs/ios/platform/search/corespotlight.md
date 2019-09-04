@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: c322a329a517f9c655ce7b8dac4aaaaf8c5ef4cc
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 6b89b8e681cf0bd3715e2fb80ca794e594875d8c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889779"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227381"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中通过核心聚焦搜索
 
@@ -51,7 +51,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 ## <a name="restoring-an-item"></a>还原项
 
-当用户通过应用的核心聚焦点击添加到搜索结果的项时, 将`AppDelegate`调用方法`ContinueUserActivity` (此`NSUserActivity`方法还用于)。 例如:
+当用户通过应用的核心聚焦点击添加到搜索结果的项时, 将`AppDelegate`调用方法`ContinueUserActivity` (此`NSUserActivity`方法还用于)。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-接下来, 可以按其域名删除一组索引项。 例如:
+接下来, 可以按其域名删除一组索引项。 例如：
 
 ```csharp
 // Delete by Domain Name

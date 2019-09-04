@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8379b9c9575c5a4f24f6c35c37cf8682e53b78ec
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5c697ebc4621fa8287bd001bcc4b44bb23fc163e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121130"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227251"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>对 Xamarin 应用程序进行沙箱处理
 
@@ -68,24 +68,24 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 让我们执行以下操作来创建示例项目:
 
 1. 开始 Visual Studio for Mac 然后单击 "**新建解决方案"。** 列表中。
-2. 在 "**新建项目**" 对话框中, 选择 " **Mac** > **app** > **Cocoa 应用**": 
+2. 在 "**新建项目**" 对话框中, 选择 " **Mac** > **app** > **Cocoa 应用**":
 
     [![创建新的 Cocoa 应用](sandboxing-images/sample01.png "创建新的 Cocoa 应用")](sandboxing-images/sample01-large.png#lightbox)
-3. 单击 "**下一步**" `MacSandbox`按钮, 输入作为项目名称, 然后单击 "**创建**" 按钮: 
+3. 单击 "**下一步**" `MacSandbox`按钮, 输入作为项目名称, 然后单击 "**创建**" 按钮:
 
     [![输入应用程序名称](sandboxing-images/sample02.png "输入应用程序名称")](sandboxing-images/sample02-large.png#lightbox)
-4. 在**Solution Pad**中, 双击 Xcode 文件以将其打开, 以便在中进行编辑: 
+4. 在**Solution Pad**中, 双击 Xcode 文件以将其打开, 以便在中进行编辑:
 
     [![编辑主情节提要](sandboxing-images/sample03.png "编辑主情节提要")](sandboxing-images/sample03-large.png#lightbox)
-5. 将**Web 视图**拖到窗口上, 调整其大小以填充内容区域, 并将其设置为随窗口一起放大和缩小: 
+5. 将**Web 视图**拖到窗口上, 调整其大小以填充内容区域, 并将其设置为随窗口一起放大和缩小:
 
     [![添加 web 视图](sandboxing-images/sample04.png "添加 web 视图")](sandboxing-images/sample04-large.png#lightbox)
-6. 创建名`webView`为的 web 视图的插座: 
+6. 创建名`webView`为的 web 视图的插座:
 
     [![创建新插座](sandboxing-images/sample05.png "创建新插座")](sandboxing-images/sample05-large.png#lightbox)
 7. 返回 Visual Studio for Mac, 然后双击**Solution Pad**中的**ViewController.cs**文件, 将其打开进行编辑。
 8. 添加以下 using 语句:`using WebKit;`
-9. `ViewDidLoad`使方法类似于以下内容: 
+9. `ViewDidLoad`使方法类似于以下内容:
 
     ```csharp
     public override void AwakeFromNib ()
@@ -109,34 +109,34 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 让我们执行以下操作:
 
-1. 登录到 Apple 开发人员门户: 
+1. 登录到 Apple 开发人员门户:
 
     [![登录 Apple 开发人员门户](sandboxing-images/sign01.png "登录 Apple 开发人员门户")](sandboxing-images/sign01-large.png#lightbox)
-2. 选择**证书, 标识符 & 配置文件**: 
+2. 选择**证书, 标识符 & 配置文件**:
 
     [![选择证书、标识符和配置文件](sandboxing-images/sign02.png "选择证书、标识符和配置文件")](sandboxing-images/sign02-large.png#lightbox)
-3. 在 " **Mac 应用**" 下, 选择 "**标识符**": 
+3. 在 " **Mac 应用**" 下, 选择 "**标识符**":
 
     [![选择标识符](sandboxing-images/sign03.png "选择标识符")](sandboxing-images/sign03-large.png#lightbox)
-4. 为应用程序创建新 ID: 
+4. 为应用程序创建新 ID:
 
     [![创建新的应用 ID](sandboxing-images/sign04.png "创建新的应用 ID")](sandboxing-images/sign04-large.png#lightbox)
-5. 在 "**预配配置文件**" 下, 选择 "**开发**: 
+5. 在 "**预配配置文件**" 下, 选择 "**开发**:
 
     [![选择开发](sandboxing-images/sign05.png "选择开发")](sandboxing-images/sign05-large.png#lightbox)
-6. 创建新的配置文件并选择 " **Mac 应用开发**": 
+6. 创建新的配置文件并选择 " **Mac 应用开发**":
 
     [![创建新的配置文件](sandboxing-images/sign06.png "创建新的配置文件")](sandboxing-images/sign06-large.png#lightbox)
-7. 选择前面创建的应用 ID: 
+7. 选择前面创建的应用 ID:
 
     [![选择应用 ID](sandboxing-images/sign07.png "选择应用 ID")](sandboxing-images/sign07-large.png#lightbox)
-8. 选择此配置文件的开发人员: 
+8. 选择此配置文件的开发人员:
 
     [![添加开发人员](sandboxing-images/sign08.png "添加开发人员")](sandboxing-images/sign08-large.png#lightbox)
-9. 选择此配置文件的计算机: 
+9. 选择此配置文件的计算机:
 
     [![选择允许的计算机](sandboxing-images/sign09.png "选择允许的计算机")](sandboxing-images/sign09-large.png#lightbox)
-10. 为配置文件命名: 
+10. 为配置文件命名:
 
     [![为配置文件命名](sandboxing-images/sign10.png "为配置文件命名")](sandboxing-images/sign10-large.png#lightbox)
 11. 单击 "**完成**" 按钮。
@@ -146,10 +146,10 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 接下来, 需要在开发计算机上加载新的应用 ID 和配置文件。 让我们执行以下操作:
 
-1. 从 " **Xcode** " 菜单中, 启动 Xcode 并选择 "**首选项**": 
+1. 从 " **Xcode** " 菜单中, 启动 Xcode 并选择 "**首选项**":
 
     ![编辑 Xcode 中的帐户](sandboxing-images/sign11.png "编辑 Xcode 中的帐户")
-2. 单击 "**查看详细信息 ...** " 按钮: 
+2. 单击 "**查看详细信息 ...** " 按钮:
 
     ![单击 "查看详细信息" 按钮](sandboxing-images/sign12.png "单击 \"查看详细信息\" 按钮")
 3. 单击 "**刷新**" 按钮 (位于左下角)。
@@ -158,17 +158,17 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 接下来, 需要在 Xamarin Mac 项目中选择新的应用 ID 和预配配置文件。 让我们执行以下操作:
 
 1. 在**Solution Pad**中, 双击**info.plist**文件以将其打开以进行编辑。
-2. 确保**捆绑标识符**与我们之前创建的应用 ID 相匹配 (例如: `com.appracatappra.MacSandbox`): 
+2. 确保**捆绑标识符**与我们之前创建的应用 ID 相匹配 (例如: `com.appracatappra.MacSandbox`):
 
     [![编辑捆绑标识符](sandboxing-images/sign13.png "编辑捆绑标识符")](sandboxing-images/sign13-large.png#lightbox)
-3. 接下来, 双击**info.plist**文件, 并确保**Icloud 密钥值存储**和**icloud 容器**均与我们之前创建的应用 ID 匹配 (例如: `com.appracatappra.MacSandbox`): 
+3. 接下来, 双击**info.plist**文件, 并确保**Icloud 密钥值存储**和**icloud 容器**均与我们之前创建的应用 ID 匹配 (例如: `com.appracatappra.MacSandbox`):
 
     [![编辑 info.plist 文件](sandboxing-images/sign17.png "编辑 info.plist 文件")](sandboxing-images/sign17-large.png#lightbox)
 4. 保存更改。
-5. 在**Solution Pad**中, 双击项目文件以打开其编辑选项:  
+5. 在**Solution Pad**中, 双击项目文件以打开其编辑选项:
 
     ![Editign 解决方案的选项](sandboxing-images/sign14.png "Editign 解决方案的选项")
-6. 选择 " **Mac 签名**", 然后选中 **"对应用程序捆绑进行签名**并**对安装程序包签名"** 。 在 "**预配配置文件**" 下, 选择上面创建的配置文件: 
+6. 选择 " **Mac 签名**", 然后选中 **"对应用程序捆绑进行签名**并**对安装程序包签名"** 。 在 "**预配配置文件**" 下, 选择上面创建的配置文件:
 
     ![设置预配配置文件](sandboxing-images/sign15.png "设置预配配置文件")
 7. 单击 "**完成**" 按钮。
@@ -195,7 +195,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 通过在项目选项中选择一个复选框来启用应用沙盒。 请执行以下操作：
 
 1. 在**Solution Pad**中, 双击**info.plist**文件以将其打开以进行编辑。
-2. 选中 "**启用权利**和**启用应用沙盒**": 
+2. 选中 "**启用权利**和**启用应用沙盒**":
 
     [![编辑权利和启用沙盒](sandboxing-images/sign17.png "编辑权利和启用沙盒")](sandboxing-images/sign17-large.png#lightbox)
 3. 保存更改。
@@ -208,25 +208,25 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 除了资源阻止行为以外, 有三种主要方法可用于判断是否已成功对 Xamarin 应用程序进行沙盒处理:
 
-1. 在 "查找器" 中, 检查`~/Library/Containers/`文件夹的内容-如果应用已进行沙盒处理, 则会有一个名为的文件夹, 如应用的`com.appracatappra.MacSandbox`捆绑包标识符 (示例:): 
+1. 在 "查找器" 中, 检查`~/Library/Containers/`文件夹的内容-如果应用已进行沙盒处理, 则会有一个名为的文件夹, 如应用的`com.appracatappra.MacSandbox`捆绑包标识符 (示例:):
 
     [![打开应用程序的捆绑包](sandboxing-images/sample09.png "打开应用程序的捆绑包")](sandboxing-images/sample09-large.png#lightbox)
 2. 系统在活动监视器中将应用视为沙盒:
-    - 启动活动监视器 (在`/Applications/Utilities`下)。 
+    - 启动活动监视器 (在`/Applications/Utilities`下)。
     - 选择 "**查看** > **列**", 并确保已选中 "**沙盒**" 菜单项。
-    - 确保沙箱列读取`Yes`应用程序: 
+    - 确保沙箱列读取`Yes`应用程序:
 
     [![在活动监视器中检查应用](sandboxing-images/sample10.png "在活动监视器中检查应用")](sandboxing-images/sample10-large.png#lightbox)
 3. 检查应用二进制文件是否已沙箱化:
     - 启动终端应用。
     - 导航到 "应用`bin`程序" 目录。
-    - 发出此命令: `codesign -dvvv --entitlements :- executable_path` (其中`executable_path`是应用程序的路径): 
+    - 发出此命令: `codesign -dvvv --entitlements :- executable_path` (其中`executable_path`是应用程序的路径):
 
     [![在命令行上检查应用](sandboxing-images/sample11.png "在命令行上检查应用")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>调试沙盒应用
 
-调试器通过 TCP 连接到 Xamarin 应用程序, 这意味着在默认情况下启用沙盒时, 它无法连接到应用, 因此, 如果你尝试在未启用适当权限的情况下运行应用, 则会收到错误 *"无法连接到调试器"* . 
+调试器通过 TCP 连接到 Xamarin 应用程序, 这意味着在默认情况下启用沙盒时, 它无法连接到应用, 因此, 如果你尝试在未启用适当权限的情况下运行应用, 则会收到错误 *"无法连接到调试器"* .
 
 [![设置所需选项](sandboxing-images/debug01.png "设置所需选项")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -246,7 +246,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 1. 编译有问题的应用程序并从 Visual Studio for Mac 运行该应用程序。
 2. 打开**控制台**应用程序 (从`/Applications/Utilties/`)。
-3. 选择侧栏中的**所有消息**, `sandbox`并在搜索中输入: 
+3. 选择侧栏中的**所有消息**, `sandbox`并在搜索中输入:
 
     [![控制台中的沙盒处理问题的示例](sandboxing-images/resolve01.png "控制台中的沙盒处理问题的示例")](sandboxing-images/resolve01-large.png#lightbox)
 
@@ -259,7 +259,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 请执行以下操作：
 
 1. 在**Solution Pad**中, 双击**info.plist**文件以将其打开以进行编辑。
-2. 在 "**权利**" 部分下, 选中 "**允许传出网络连接 (客户端)** " 复选框: 
+2. 在 "**权利**" 部分下, 选中 "**允许传出网络连接 (客户端)** " 复选框:
 
     [![编辑权利](sandboxing-images/sign17.png "编辑权利")](sandboxing-images/sign17-large.png#lightbox)
 3. 保存对应用程序所做的更改。
@@ -280,7 +280,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 如前文所述, 未进行沙盒处理的 Xamarin 应用程序被授予了运行该应用程序的用户的完全权限和访问权限。 如果恶意代码受到侵害, 则非保护的应用程序可以充当恶意行为的代理, 其范围可能会造成损害。
 
-通过启用应用程序沙箱, 你可以删除除一组最少的特权之外的所有权限, 然后只需使用你的 Xamarin 应用的权利即可只需重新启用。 
+通过启用应用程序沙箱, 你可以删除除一组最少的特权之外的所有权限, 然后只需使用你的 Xamarin 应用的权利即可只需重新启用。
 
 您可以通过编辑应用程序的**info.plist**文件并检查或从编辑器下拉框中选择所需权限来修改应用程序的应用程序沙箱资源:
 
@@ -356,13 +356,13 @@ _Powerbox_是 macOS 的安全技术, 可与用户进行交互, 以扩展你的�
 - 从 "**最近打开**" 菜单中打开用户选择的文件。
 - 在其他应用程序之间使用 "复制 & 粘贴"。
 - 从以下世界上可读的位置读取文件:
-    - `/bin`
-    - `/sbin`
-    - `/usr/bin`
-    - `/usr/lib`
-    - `/usr/sbin`
-    - `/usr/share`
-    - `/System`
+  - `/bin`
+  - `/sbin`
+  - `/usr/bin`
+  - `/usr/lib`
+  - `/usr/sbin`
+  - `/usr/share`
+  - `/System`
 - 在创建`NSTemporaryDirectory`的目录中读取和写入文件。
 
 默认情况下, 沙盒 Xamarin 应用程序打开或保存的文件将保持可访问状态, 直到应用程序终止 (除非该文件在应用程序退出时仍处于打开状态)。 在下次启动应用程序时, 将通过 macOS Resume 功能自动将打开的文件还原到应用程序的沙盒。
@@ -401,10 +401,10 @@ _Powerbox_是 macOS 的安全技术, 可与用户进行交互, 以扩展你的�
 
 使用安全作用域的书签和持久资源访问时, 有两个 sistine 用例:
 
-- **应用范围书签提供对用户指定的文件或文件夹的持久访问。** 
+- **应用范围书签提供对用户指定的文件或文件夹的持久访问。**
 
     例如, 如果沙盒 Xamarin Mac 应用程序允许使用打开外部文档进行编辑 (使用`NSOpenPanel`), 则应用程序可以创建应用范围的书签, 以便以后可以再次访问同一文件。
-- **文档范围书签提供特定文档对子文件的永久访问权限。** 
+- **文档范围书签提供特定文档对子文件的永久访问权限。**
 
 例如, 一个视频编辑应用程序, 该应用程序创建一个项目文件, 该项目文件可以访问单独的图像、视频剪辑和以后将合并为单个影片的声音文件。
 
@@ -432,7 +432,7 @@ _Powerbox_是 macOS 的安全技术, 可与用户进行交互, 以扩展你的�
 
 ### <a name="the-app-sandbox-and-code-signing"></a>应用沙盒和代码签名
 
-启用应用沙盒并为 Xamarin 应用启用特定要求后 (通过权利), 必须对项目进行代码签名, 才能使沙盒中的沙箱生效。 必须执行代码签名, 因为应用沙盒处理所需的权利已链接到应用的签名。 
+启用应用沙盒并为 Xamarin 应用启用特定要求后 (通过权利), 必须对项目进行代码签名, 才能使沙盒中的沙箱生效。 必须执行代码签名, 因为应用沙盒处理所需的权利已链接到应用的签名。
 
 macOS 强制实施应用容器和其代码签名之间的链接, 在这种情况下, 其他任何应用程序都不能访问该容器, 即使它是哄骗应用捆绑 ID。 此机制的工作方式如下:
 
@@ -529,7 +529,7 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 - **保留对文件系统资源的访问权限**-如果 Xamarin 应用程序依赖于对其容器之外的资源的持久访问, 请使用安全作用域的书签来维护访问权限。
 - **为应用创建登录项**-使用应用沙盒时, 不能使用`LSSharedFileList`创建登录项, 也不能使用`LSRegisterURL`操作启动服务的状态。 使用通过`SMLoginItemSetEnabled`服务管理框架文档中的 "[添加登录项](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)" 一文中所述的函数。
 - **访问用户数据**-如果使用 POSIX 函数 ( `getpwuid`如) 从目录服务获取用户的主目录, 请考虑使用 Cocoa 或 Core `NSHomeDirectory`Foundation 符号 (如)。
-- **访问其他应用的首选项**-由于应用沙箱将路径查找 api 定向到应用的容器, 因此修改首选项会在该容器内发生, 并在不允许访问其他应用首选项。 
+- **访问其他应用的首选项**-由于应用沙箱将路径查找 api 定向到应用的容器, 因此修改首选项会在该容器内发生, 并在不允许访问其他应用首选项。
 - **使用 Web 视图中的 HTML5 嵌入视频**-如果 Xamarin 应用使用 WebKit 播放嵌入式 HTML5 视频, 还必须将应用链接到 AV 基础框架。 否则, 应用沙盒会阻止 CoreMedia 播放这些视频。
 
 ### <a name="applying-required-app-sandbox-entitlements"></a>应用所需的应用沙盒权利
@@ -555,7 +555,7 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 
 ### <a name="implement-a-migration-strategy"></a>实现迁移策略
 
-如果要发布的是以前未进行沙盒处理的 Xamarin Mac 应用程序的新的沙盒版本, 需要确保当前用户具有平滑的升级路径。 
+如果要发布的是以前未进行沙盒处理的 Xamarin Mac 应用程序的新的沙盒版本, 需要确保当前用户具有平滑的升级路径。
 
  有关如何实现容器迁移清单的详细信息, 请阅读 Apple 将[应用迁移到沙盒](https://developer.apple.com/library/prerelease/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/MigratingALegacyApp/MigratingAnAppToASandbox.html#//apple_ref/doc/uid/TP40011183-CH6-SW1)文档。
 

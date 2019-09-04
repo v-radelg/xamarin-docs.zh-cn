@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6a5c06d64a06d8b1a7bcbf32e99905494cd06180
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523196"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225494"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
 
@@ -95,24 +95,24 @@ Xamarin 支持以下系统属性:
 
 - *debug.exe. env*:在应用程序启动过程中 *|* , mono 初始化*之前*要导出的环境变量 ("") 列表。 这允许设置控制 mono 日志记录的环境变量。
 
-    - *说明*：由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
+  - *说明*：由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
 
-    - *说明*：Android 系统属性值的长度不能超过92个字符。
+  - *说明*：Android 系统属性值的长度不能超过92个字符。
 
-    - 示例:
+  - 示例:
 
-      ```
-      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-      ```
+    ```
+    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+    ```
 
 - *调试 mono 日志*:用逗号分隔的 (" *,* ") 组件列表, 这些组件应将其他消息打印到 Android 调试日志。 默认情况下, 不设置任何内容。 组件包括:
 
-    - *全部*:打印所有消息
-    - *gc*:打印 GC 相关的消息。
-    - *gref*:Print (弱、全局) 引用分配和释放消息。
-    - *lref*:打印本地引用分配和释放消息。
+  - *全部*:打印所有消息
+  - *gc*:打印 GC 相关的消息。
+  - *gref*:Print (弱、全局) 引用分配和释放消息。
+  - *lref*:打印本地引用分配和释放消息。
 
-    *注意*: 这些内容*非常*详细。 除非确实需要, 否则不要启用。
+  *注意*: 这些内容*非常*详细。 除非确实需要, 否则不要启用。
 
 - *debug . trace*:允许设置[mono 跟踪](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`设置。
 
@@ -348,14 +348,14 @@ emulator -partition-size 512 -avd MonoDroid
 Android 包名称*必须*包含一个句点 (" *.* ")。 编辑包名称, 使其包含句点。
 
 - 在 Visual Studio 中:
-    - 右键单击项目 > 属性
-    - 单击左侧的 "Android 清单" 选项卡。
-    - 更新 "包名称" 字段。
-        - 如果看到消息&ldquo;"未找到 androidmanifest.xml。 单击以添加一个。&rdquo;, 单击该链接, 然后更新 "包名称" 字段。
+  - 右键单击项目 > 属性
+  - 单击左侧的 "Android 清单" 选项卡。
+  - 更新 "包名称" 字段。
+    - 如果看到消息&ldquo;"未找到 androidmanifest.xml。 单击以添加一个。&rdquo;, 单击该链接, 然后更新 "包名称" 字段。
 - 在 Visual Studio for Mac 中:
-    - 右键单击项目 > 选项。
-    - 导航到 "生成/Android 应用程序" 部分。
-    - 更改包名称字段以包含 "."。
+  - 右键单击项目 > 选项。
+  - 导航到 "生成/Android 应用程序" 部分。
+  - 更改包名称字段以包含 "."。
 
 
 
@@ -690,7 +690,7 @@ E/dalvikvm( 123): VM aborting
 
 - 你的应用程序项目可能不具有对 System.web、node.js 或 Mono. .dll 或 Mono 的引用。 请确保引用这些程序集。
 
-    - 请记住, 动态代码始终会产生费用。 如果需要有效的代码, 请考虑不要使用动态代码。
+  - 请记住, 动态代码始终会产生费用。 如果需要有效的代码, 请考虑不要使用动态代码。
 
 - 在第一个预览版中, 除非应用程序代码显式使用每个程序集中的类型, 否则会排除这些程序集。 有关解决方法, 请参阅以下内容:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 

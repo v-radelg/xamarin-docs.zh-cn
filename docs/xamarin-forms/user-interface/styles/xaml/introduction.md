@@ -1,24 +1,24 @@
 ---
-title: Xamarin.Forms 样式简介
-description: 样式允许可视化元素，以自定义的外观。 样式为特定类型定义和包含该类型上可用的属性的值。
+title: Xamarin 样式简介
+description: 样式允许自定义视觉对象的外观。 样式是针对特定类型定义的, 其中包含可用于该类型的属性的值。
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 9e5fb0196b67e23a034856ee0dd7b9c7d4846b31
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 35f8dad3590c07ceb3c93aa735b8c02d75098498
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971114"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228173"
 ---
-# <a name="introduction-to-xamarinforms-styles"></a>Xamarin.Forms 样式简介
+# <a name="introduction-to-xamarinforms-styles"></a>Xamarin 样式简介
 
-_样式允许可视化元素，以自定义的外观。样式为特定类型定义和包含该类型上可用的属性的值。_
+_样式允许自定义视觉对象的外观。样式是针对特定类型定义的, 其中包含可用于该类型的属性的值。_
 
-Xamarin.Forms 应用程序通常包含多个具有相同的外观的控件。 例如，应用程序可能具有多个[ `Label` ](xref:Xamarin.Forms.Label)实例具有相同的字体选项和布局选项，如下面的 XAML 代码示例中所示：
+Xamarin。窗体应用程序通常包含多个具有相同外观的控件。 例如, 应用程序可能有多个[`Label`](xref:Xamarin.Forms.Label)实例, 这些实例具有相同的字体选项和布局选项, 如下面的 XAML 代码示例所示:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -82,35 +82,35 @@ public class NoStylesPageCS : ContentPage
 }
 ```
 
-每个[ `Label` ](xref:Xamarin.Forms.Label)实例具有相同的属性值，用于控制显示的文本的外观`Label`。 这会导致如以下屏幕截图中所示的外观：
+每[`Label`](xref:Xamarin.Forms.Label)个实例都具有相同的属性值, 用于控制所显示`Label`的文本的外观。 这会导致如以下屏幕截图中所示的外观：
 
-[![](introduction-images/no-styles.png "标签不带样式的外观")](introduction-images/no-styles-large.png#lightbox "标签不带样式的外观")
+[![不带样式的标签外观](introduction-images/no-styles.png)](introduction-images/no-styles-large.png#lightbox)
 
-设置每个控件的外观会重复且容易出错。 相反，一种样式可以创建定义的外观，然后应用于所需的控制。
+设置各个控件的外观可能是重复性的并且容易出错。 相反, 可以创建一个样式来定义外观, 然后将其应用于所需的控件。
 
 ## <a name="create-a-style"></a>创建样式
 
-[ `Style` ](xref:Xamarin.Forms.Style)类进行分组到一个对象，然后可以应用于多个可视元素实例的属性值的集合。 这有助于减少重复性的标记，并允许应用程序外观以更轻松地更改。
+[`Style`](xref:Xamarin.Forms.Style)类将属性值的集合分组到一个对象中, 然后可以将该对象应用于多个视觉元素实例。 这有助于减少重复的标记, 并允许更轻松地更改应用程序的外观。
 
-尽管主要针对基于 XAML 的应用程序设计样式，但它们也可以创建在 C# 中：
+虽然样式主要设计用于基于 XAML 的应用程序, 但也可以在中C#创建它们:
 
-- [`Style`](xref:Xamarin.Forms.Style) 在 XAML 中创建的实例通常定义在[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)分配给[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)控件的集合页上，或设置为[ `Resources` ](xref:Xamarin.Forms.Application.Resources)应用程序的集合。
-- [`Style`](xref:Xamarin.Forms.Style) 在页面的类中，或者可全局访问的类通常定义在 C# 中创建的实例。
+- [`Style`](xref:Xamarin.Forms.Style)通常会在为[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)控件、 [`Resources`](xref:Xamarin.Forms.Application.Resources)页或应用程序集合分配[`Resources`](xref:Xamarin.Forms.VisualElement.Resources)的中定义在 XAML 中创建的实例。
+- [`Style`](xref:Xamarin.Forms.Style)中C#创建的实例通常在页的类中定义, 或在可全局访问的类中定义。
 
 选择在何处定义 [`Style`](xref:Xamarin.Forms.Style) 会影响其应用范围：
 
-- [`Style`](xref:Xamarin.Forms.Style) 在控件级别定义的实例只能应用到控件，及其子级。
-- [`Style`](xref:Xamarin.Forms.Style) 在页面级别定义的实例只能应用到页，及其子级。
-- [`Style`](xref:Xamarin.Forms.Style) 在应用程序级别定义的实例可以应用整个应用程序。
+- [`Style`](xref:Xamarin.Forms.Style)在控件级别定义的实例只能应用于控件及其子级。
+- [`Style`](xref:Xamarin.Forms.Style)在页面级别定义的实例只能应用于页面及其子页面。
+- [`Style`](xref:Xamarin.Forms.Style)可以在应用程序中应用在应用程序级别定义的实例。
 
-每个[ `Style` ](xref:Xamarin.Forms.Style)实例包含一个或多个集合[ `Setter` ](xref:Xamarin.Forms.Setter)对象，每个`Setter`无[ `Property` ](xref:Xamarin.Forms.Setter.Property)和[`Value`](xref:Xamarin.Forms.Setter.Value). `Property`是该样式应用到，该元素的可绑定属性的名称和`Value`是应用于属性的值。
+每[`Style`](xref:Xamarin.Forms.Style)个实例都包含一个或多[`Setter`](xref:Xamarin.Forms.Setter)个对象的集合[`Property`](xref:Xamarin.Forms.Setter.Property) , `Setter`每个对象都[`Value`](xref:Xamarin.Forms.Setter.Value)有一个和一个。 是应用了样式的元素的可绑定属性的名称, `Value`是应用于属性的值。 `Property`
 
-每个[ `Style` ](xref:Xamarin.Forms.Style)实例可以是*显式*，或*隐式*:
+每[`Style`](xref:Xamarin.Forms.Style)个实例可以为*显式*或*隐式*:
 
-- *显式* [ `Style` ](xref:Xamarin.Forms.Style)通过指定定义实例[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)和`x:Key`值，并通过设置目标元素[`Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性设置为`x:Key`引用。 有关详细信息*显式*样式，请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)。
-- *隐式* [ `Style` ](xref:Xamarin.Forms.Style)仅指定定义实例[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)。 `Style`实例将然后会自动应用于该类型的所有元素。 请注意该子类`TargetType`不会自动具有`Style`应用。 有关详细信息*隐式*样式，请参阅[隐式样式](~/xamarin-forms/user-interface/styles/implicit.md)。
+- [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`Style`](xref:Xamarin.Forms.NavigableElement.Style) *显式* [`Style`](xref:Xamarin.Forms.Style)实例是通过指定和`x:Key`值, 并将目标元素的属性设置为引用来定义的。 `x:Key` 有关*显式*样式的详细信息, 请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)。
+- *隐式* [`Style`](xref:Xamarin.Forms.Style)实例是通过仅指定指定的[`TargetType`](xref:Xamarin.Forms.Style.TargetType)来定义的。 然后`Style` , 实例将自动应用于该类型的所有元素。 请注意, 的`TargetType`子类不会自动`Style`应用。 有关*隐式*样式的详细信息, 请参阅[隐式样式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
-创建时[ `Style` ](xref:Xamarin.Forms.Style)，则[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)并总是必需的属性。 下面的代码示例演示*显式*样式 (请注意`x:Key`) 在 XAML 中创建：
+创建[`Style`](xref:Xamarin.Forms.Style)[时`TargetType`](xref:Xamarin.Forms.Style.TargetType) , 始终需要属性。 下面的代码示例演示了在 XAML 中创建的`x:Key`显式样式 (注意):
 
 ```xaml
 <Style x:Key="labelStyle" TargetType="Label">
@@ -120,20 +120,20 @@ public class NoStylesPageCS : ContentPage
 </Style>
 ```
 
-若要将应用`Style`，目标对象必须是[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)相匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性值为`Style`，如以下 XAML 代码示例中所示：
+若要应用`Style`, 目标对象必须[`VisualElement`](xref:Xamarin.Forms.VisualElement)是与的[`TargetType`](xref:Xamarin.Forms.Style.TargetType) `Style`属性值相匹配的, 如下面的 XAML 代码示例所示:
 
 ```xaml
 <Label Text="Demonstrating an explicit style" Style="{StaticResource labelStyle}" />
 ```
 
-样式的视图层次结构中较低级别优先于更高版本定义了。 例如，设置[ `Style` ](xref:Xamarin.Forms.Style) ，用于设置[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)到`Red`在应用程序级别将被重写由设置的页级别样式`Label.TextColor`到`Green`. 同样，将控件级别样式将页级别样式中重写。 此外，如果`Label.TextColor`设置直接上的控件属性，此方法将优先于任何样式。
+样式的视图层次结构中较低级别优先于更高版本定义了。 例如，设置[ `Style` ](xref:Xamarin.Forms.Style) ，用于设置[ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor)到`Red`在应用程序级别将被重写由设置的页级别样式`Label.TextColor`到`Green`. 同样，将控件级别样式将页级别样式中重写。 此外, 如果`Label.TextColor`直接在控件属性上设置, 则这将优先于任何样式。
 
-在本部分中的文章演示并说明如何创建并应用*显式*并*隐式*样式，如何创建全局样式、 样式继承，如何响应在运行时，样式更改以及如何使用 Xamarin.Forms 中包含的内置样式。
+本节中的文章演示并说明如何创建和应用*显式*样式和*隐式*样式, 如何创建全局样式, 样式继承, 如何在运行时响应样式更改, 以及如何使用中包含的内置样式Xamarin。
 
 > [!NOTE]
-> **Styleid 等各是什么？**
+> **什么是 StyleId？**
 >
-> 低于 Xamarin.Forms 2.2 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)属性用于标识用于在 UI 测试中，以及主题引擎如 Pixate 中标识的应用程序中各个元素。 但是，引入了 Xamarin.Forms 2.2 [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)属性，已取代[ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)属性。
+> 在 Xamarin. Forms 2.2 之前, [`StyleId`](xref:Xamarin.Forms.Element.StyleId)属性用于识别应用程序中的单个元素, 用于标识 UI 测试中的标识和主题引擎 (如 Pixate)。 但是, Xamarin 2.2 引入[`AutomationId`](xref:Xamarin.Forms.Element.AutomationId)了属性, 该属性[`StyleId`](xref:Xamarin.Forms.Element.StyleId)取代了属性。
 
 ## <a name="related-links"></a>相关链接
 

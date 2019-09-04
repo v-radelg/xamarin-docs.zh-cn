@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2019
 ms.custom: video
-ms.openlocfilehash: a9b9b2d12193161e0cb4514600381c3a7a38495a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7c0fffbe626a740c15d85b1277c5158a5e564a15
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529315"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228076"
 ---
 # <a name="resource-dictionaries"></a>资源字典
 
@@ -105,9 +105,9 @@ Xamarin.Forms 从 3.0 开始，显式`ResourceDictionary`标记不是必需的�
 </StackLayout>
 ```
 
-第一个[ `Label` ](xref:Xamarin.Forms.Label)实例检索并使用`LabelPageHeadingStyle`中的应用程序级别定义的资源`ResourceDictionary`，与第二个`Label`实例检索和使用`LabelNormalStyle`控制级别中定义的资源`ResourceDictionary`。 同样， [ `Button` ](xref:Xamarin.Forms.Button)实例检索并使用`NormalTextColor`中的应用程序级别定义的资源`ResourceDictionary`，和`MediumBoldText`中的控制级别定义资源`ResourceDictionary`。 这会导致下面的屏幕截图中所示的外观：
+第一个[ `Label` ](xref:Xamarin.Forms.Label)实例检索并使用`LabelPageHeadingStyle`中的应用程序级别定义的资源`ResourceDictionary`，与第二个`Label`实例检索和使用`LabelNormalStyle`控制级别中定义的资源`ResourceDictionary`。 同样， [ `Button` ](xref:Xamarin.Forms.Button)实例检索并使用`NormalTextColor`中的应用程序级别定义的资源`ResourceDictionary`，和`MediumBoldText`中的控制级别定义资源`ResourceDictionary`。 这会导致如以下屏幕截图中所示的外观：
 
-[![](resource-dictionaries-images/screenshots-sml.png "使用 ResourceDictionary 资源")](resource-dictionaries-images/screenshots.png#lightbox "消耗 ResourceDictionary 资源")
+[![使用 ResourceDictionary 资源](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
 
 > [!NOTE]
 > 不应在应用程序级别的资源字典中，这种情况时所需的页面资源将随后在应用程序启动，而不是可以解析包含特定于单个页面的资源。 有关详细信息，请参阅[减小应用程序资源字典大小](~/xamarin-forms/deploy-test/performance.md)。
@@ -142,7 +142,7 @@ Xamarin.Forms 从 3.0 开始，显式`ResourceDictionary`标记不是必需的�
 
 原始`PageBackgroundColor`并`NormalTextColor`的情况下，应用程序级别定义将取代`PageBackgroundColor`和`NormalTextColor`页级别定义的实例。 因此，页面背景颜色变为蓝色，并且页面上的文本将变为黄色，如以下屏幕截图中所示：
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "重写 ResourceDictionary 资源")](resource-dictionaries-images/overridding-screenshots.png#lightbox "重写 ResourceDictionary 资源")
+[![重写 ResourceDictionary 资源](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
 
 但请注意，背景栏[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)仍为黄色，因为[ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)属性设置的值为`PageBackgroundColor`应用程序中定义的资源级别`ResourceDictionary`。
 

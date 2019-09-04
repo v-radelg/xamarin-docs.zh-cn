@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: 29e737e5a6cb6abdae099c0224a2da058c2ea025
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: af0765adb7e059bdc80c0b851b4bdcad8be0e3e4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527730"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227826"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin 中的 CloudKit
 
@@ -55,7 +55,7 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 
 1. 在 Visual Studio for Mac 或 Visual Studio 中打开项目。
 2. 在**解决方案资源管理器**中, 打开**info.plist**文件, 并确保**捆绑标识符**与创建设置过程中创建的**应用 ID**中定义的标识符匹配:
- 
+
     [![](intro-to-cloudkit-images/image26a.png "输入捆绑标识符")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3. 向下滚动到**info.plist**文件的底部, 选择 "**启用后台模式**"、"**位置更新**" 和 "**远程通知**":
@@ -106,7 +106,7 @@ ICloud 数据的容器化还允许 CloudKit 封装用户信息。 通过这种�
 
 容器由应用程序的开发人员通过 WW 门户进行完全管理。 容器的命名空间在所有 Apple 开发人员中都是全局性的, 因此, 对于给定的开发人员和应用程序, 该容器不仅必须是唯一的。
 
-Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示法。 示例:
+Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示法。 示例：
 
 ```csharp
 iCloud.com.company-name.application-name
@@ -471,42 +471,42 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 
 
 1. 匹配名称等于变量中存储的值的记录:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("name = '{0}'", recordName))
     ```
-   
+
 2. 允许匹配基于动态密钥值, 以便在编译时不需要知道该密钥:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("{0} = '{1}'", key, value))
     ```
-    
+
 3. 匹配记录的值大于给定值的记录:
-   
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0}", (NSDate)date))
     ```
 
 4. 记录的位置在给定位置的100米以内的匹配记录:
-    
-    ```
+
+    ```csharp
     var location = new CLLocation(37.783,-122.404);
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
 5. CloudKit 支持标记化搜索。 此调用将创建两个标记, 一个`after`标记用于, `session`另一个用于。 它将返回包含这两个标记的记录:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
-    
+
 6. CloudKit 支持使用运算符联接的`AND`组合谓词。
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-    
+
 
 
 #### <a name="creating-queries"></a>创建查询
@@ -820,40 +820,40 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 请执行以下操作：
 
-1. 在 Visual Studio for Ma 中, 编译应用程序以**发布** > **iOS 设备**: 
+1. 在 Visual Studio for Ma 中, 编译应用程序以**发布** > **iOS 设备**:
 
     [![](intro-to-cloudkit-images/shipping01.png "编译应用程序以发布")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. 在 "**生成**" 菜单中选择 "**存档**": 
+2. 在 "**生成**" 菜单中选择 "**存档**":
 
     [![](intro-to-cloudkit-images/shipping02.png "选择存档")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
-3. 将创建**存档**并显示 Visual Studio for Mac: 
+3. 将创建**存档**并显示 Visual Studio for Mac:
 
     [![](intro-to-cloudkit-images/shipping03.png "将创建并显示存档")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. 启动 **Xcode**。
-5. 从 "**窗口**" 菜单中, 选择 "**管理器**": 
+5. 从 "**窗口**" 菜单中, 选择 "**管理器**":
 
     [![](intro-to-cloudkit-images/shipping04.png "选择组织程序")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. 选择应用程序的存档, 并单击 "**导出 ...** " 按钮: 
+6. 选择应用程序的存档, 并单击 "**导出 ...** " 按钮:
 
     [![](intro-to-cloudkit-images/shipping05.png "应用程序的存档")](intro-to-cloudkit-images/shipping05.png#lightbox)
-    
-7. 选择要导出的方法, 然后单击 "**下一步**" 按钮: 
+
+7. 选择要导出的方法, 然后单击 "**下一步**" 按钮:
 
     [![](intro-to-cloudkit-images/shipping06.png "选择导出方法")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. 从下拉列表中选择**开发团队**, 并单击 "**选择**" 按钮: 
+8. 从下拉列表中选择**开发团队**, 并单击 "**选择**" 按钮:
 
     [![](intro-to-cloudkit-images/shipping07.png "从下拉列表中选择开发团队")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. 从下拉列表中选择 "**生产**", 并单击 "**下一步**" 按钮: 
+9. 从下拉列表中选择 "**生产**", 并单击 "**下一步**" 按钮:
 
     [![](intro-to-cloudkit-images/shipping08.png "从下拉列表中选择 \"生产\"")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. 查看设置并单击 "**导出**" 按钮: 
+10. 查看设置并单击 "**导出**" 按钮:
 
     [![](intro-to-cloudkit-images/shipping09.png "查看设置")](intro-to-cloudkit-images/shipping09.png#lightbox)
 

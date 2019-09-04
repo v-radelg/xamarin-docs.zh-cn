@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199721"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226031"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin 的类型注册机构
 
@@ -129,10 +129,10 @@ class MyClass : IMyProtocol
 此新注册系统提供以下新增功能:
 
 - 编程错误的编译时检测:
-    - 两个用相同名称注册的类。
-    - 已导出多个方法来响应同一个选择器
+  - 两个用相同名称注册的类。
+  - 已导出多个方法来响应同一个选择器
 - 删除未使用的本机代码:
-    - 新的注册系统将添加对静态库中使用的代码的强引用, 这允许本机链接器从生成的二进制文件中去除未使用的本机代码。 在 Xamarin 的示例绑定上, 大多数应用程序的30万个都至少更小。
+  - 新的注册系统将添加对静态库中使用的代码的强引用, 这允许本机链接器从生成的二进制文件中去除未使用的本机代码。 在 Xamarin 的示例绑定上, 大多数应用程序的30万个都至少更小。
 
 - 支持的泛型子类`NSObject`; 有关详细信息, 请参阅[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)。 此外, 新的注册系统将捕获先前在运行时导致随机行为的不受支持的泛型构造。
 
@@ -142,37 +142,37 @@ class MyClass : IMyProtocol
 
 - 在同一个类中多次导出同一选择器:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo:")]
-        void Foo (NSString str);
-        [Export ("foo:")]
-        void Foo (string str)
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo:")]
+      void Foo (NSString str);
+      [Export ("foo:")]
+      void Foo (string str)
+  }
+  ```
 
 - 导出多个具有相同目标 C 名称的托管类:
 
-    ```csharp
-    [Register ("Class")]
-    class MyClass : NSObject {}
+  ```csharp
+  [Register ("Class")]
+  class MyClass : NSObject {}
 
-    [Register ("Class")]
-    class YourClass : NSObject {}
-    ```
+  [Register ("Class")]
+  class YourClass : NSObject {}
+  ```
 
 - 导出泛型方法:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo")]
-        void Foo<T> () {}
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo")]
+      void Foo<T> () {}
+  }
+  ```
 
 ### <a name="limitations-of-the-new-registrar"></a>新注册机构的限制
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642881"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228008"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文本样式
 
@@ -48,7 +48,7 @@ Xamarin.Forms 包含多个[内置](xref:Xamarin.Forms.Device.Styles)样式的常
 label.Style = Device.Styles.TitleStyle;
 ```
 
-![](styles-images/builtinstyles.png "设备样式示例")
+![设备样式示例](styles-images/builtinstyles.png)
 
 <a name="Custom_Styles" />
 
@@ -90,7 +90,7 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 
 请注意资源 （包括所有样式） 定义内`ContentPage.Resources`，这是更熟悉的同级`ContentPage.Content`元素。
 
-![](styles-images/customstyle.png "自定义样式示例")
+![自定义样式示例](styles-images/customstyle.png)
 
 <a name="Applying_Styles" />
 
@@ -137,11 +137,11 @@ label.Style = Device.Styles.TitleStyle;
 
 已禁用：
 
-![](styles-images/pre-access.png "与辅助功能已禁用的设备样式")
+![禁用了辅助功能的设备样式](styles-images/pre-access.png)
 
 已启用:
 
-![](styles-images/post-access.png "具有可访问性启用设备样式")
+![启用了辅助功能的设备样式](styles-images/post-access.png)
 
 若要确保可访问性，请确保在应用中，任何与文本相关样式的基础使用内置样式一致地使用样式。 请参阅[样式](~/xamarin-forms/user-interface/styles/index.md)有关扩展和一般情况下使用样式的详细信息。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 27eff717fd1390f54a177cc7636e7d107b69cd24
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ec7523ac2adc3a6b4ba18a7b8a0fe21749bd7856
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656271"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227408"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin 中的应用搜索增强功能
 
@@ -44,13 +44,13 @@ iOS 10 提供一种机制, 用于计算常见的深层链接到应用的频率, 
 
 通过实现新的[CSSearchQuery](https://developer.apple.com/reference/corespotlight/cssearchquery)类, 应用程序可以提供聚光灯的搜索和匹配规则技术来查找自身内部的内容, 而无需用户离开应用 (类似于邮件、邮件和便笺应用的工作方式)。
 
-通常, 支持`CSSearchQuery`的应用程序不需要维护其自己的单独搜索索引。 
+通常, 支持`CSSearchQuery`的应用程序不需要维护其自己的单独搜索索引。
 
 ## <a name="search-continuation"></a>搜索延续
 
 在 iOS 9 中, Apple 引入了搜索 api (如核心聚焦`NSUserActivity`和 web 标记) 来提供应用程序中的内容的深度, 使用户能够使用聚光灯和 Safari 搜索界面搜索该内容。 有关更多详细信息, 请参阅[新的搜索 api](~/ios/platform/search/index.md)文档。
 
-在 iOS 10 Apple 中, 通过允许用户在聚光灯或 Safari 中开始搜索, 然后在打开应用时继续搜索。 
+在 iOS 10 Apple 中, 通过允许用户在聚光灯或 Safari 中开始搜索, 然后在打开应用时继续搜索。
 
 若要实现此功能, 请编辑应用`Info.plist`的文件, `CoreSpotlightContinuation`添加**布尔**类型的密钥, 并将其值`YES`设置为:
 

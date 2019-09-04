@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c0ee125090a2bb817f09a18c34033a1f8a788569
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528728"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227280"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin 中的 TextKit
 
@@ -29,7 +29,7 @@ TextKit 是一个新的 API, 它提供强大的文本布局和呈现功能。 �
 TextKit 提供了用于将文本存储与布局和显示分离的分层体系结构, 包括以下类:
 
 - `NSTextContainer`–提供坐标系统和用于布局文本的几何图形。
-- `NSLayoutManager`–通过将文本转换为字型来布局文本。 
+- `NSLayoutManager`–通过将文本转换为字型来布局文本。
 - `NSTextStorage`–保存文本数据, 并处理批文本属性更新。 任何批更新都将传递到布局管理器, 以实际处理更改, 如重新计算布局和重绘文本。
 
 
@@ -160,7 +160,7 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 下面的屏幕截图说明了文本布局是如何更改以在绘制路径周围流动的:
 
-<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
+<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")-->
 ![](textkit-images/exclusionpath2.png "此屏幕截图说明文本布局如何更改以在绘制路径周围流动")
 
 请注意, 在这种`AllowsNonContiguousLayout`情况下, 布局管理器的属性设置为 false。 这将导致重新计算文本更改的所有情况的布局。 如果将此值设置为 true, 则可以通过避免完全布局刷新 (尤其是在大文档时) 来提高性能。 但是, 在`AllowsNonContiguousLayout`某些情况下, 将设置为 true 会阻止排除路径更新布局, 例如, 如果在运行时输入文本, 则在设置路径之前没有尾随回车符。

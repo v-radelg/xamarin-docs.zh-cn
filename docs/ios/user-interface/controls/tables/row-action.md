@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 41aabb5e8b6d3eb46a92ee194c6b6b5e3ca51943
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e90e108e6b02055a585129b6412641a726afaab4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655621"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226293"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用行操作
 
@@ -22,7 +22,7 @@ _本指南演示如何为具有 UISwipeActionsConfiguration 或 UITableViewRowAc
 
 iOS 提供了两种方法来对表执行操作`UISwipeActionsConfiguration` : `UITableViewRowAction`和。
 
-`UISwipeActionsConfiguration`是在 iOS 11 中引入的, 用于定义一组操作, 当用户在表视图中的某_一行上 swipes_时, 这些操作应发生。 此行为与本机 Mail 应用程序的行为类似。 
+`UISwipeActionsConfiguration`是在 iOS 11 中引入的, 用于定义一组操作, 当用户在表视图中的某一行上 swipes 时, 这些操作应发生。 此行为与本机 Mail 应用程序的行为类似。
 
 `UITableViewRowAction`类用于定义一个操作, 该操作将在用户在表视图中的某一行上水平 swipes 时进行。
 例如, 编辑表时, 默认情况下, 按行向左轻扫会显示 "**删除**" 按钮。 通过将`UITableViewRowAction`类的多个实例附加`UITableView`到, 可以定义多个自定义操作, 每个操作都具有其自己的文本、格式设置和行为。
@@ -32,7 +32,7 @@ iOS 提供了两种方法来对表执行操作`UISwipeActionsConfiguration` : `U
 
 使用`UISwipeActionsConfiguration`执行轻扫操作需要执行三个步骤:
 
-1. 重`GetLeadingSwipeActionsConfiguration`写和/ `GetTrailingSwipeActionsConfiguration`或方法。 这些方法返回`UISwipeActionsConfiguration`。 
+1. 重`GetLeadingSwipeActionsConfiguration`写和/ `GetTrailingSwipeActionsConfiguration`或方法。 这些方法返回`UISwipeActionsConfiguration`。
 2. 实例化`UISwipeActionsConfiguration`要返回的。 此类采用的`UIContextualAction`数组。
 3. 创建 `UIContextualAction`。
 
@@ -40,7 +40,7 @@ iOS 提供了两种方法来对表执行操作`UISwipeActionsConfiguration` : `U
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1.实现 SwipeActionsConfigurations 方法
 
-`UITableViewController`(以及`UITableViewSource`和`UITableViewDelegate`) 包含两个方法: `GetLeadingSwipeActionsConfiguration`和`GetTrailingSwipeActionsConfiguration`, 用于对表视图行实现一组轻扫操作。 领先的 "轻扫" 操作是指从屏幕的左侧按从右到左的语言, 然后从右到左的语言以从右到左的语言进行的扫。 
+`UITableViewController`(以及`UITableViewSource`和`UITableViewDelegate`) 包含两个方法: `GetLeadingSwipeActionsConfiguration`和`GetTrailingSwipeActionsConfiguration`, 用于对表视图行实现一组轻扫操作。 领先的 "轻扫" 操作是指从屏幕的左侧按从右到左的语言, 然后从右到左的语言以从右到左的语言进行的扫。
 
 下面的示例 (来自[TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)示例) 演示了如何实现领先的刷卡器配置。 从上下文操作创建两个操作,[如下](#create-uicontextualaction)所述。 然后, 将这些操作传递到新初始化[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)的, 后者将用作返回值。
 
@@ -54,11 +54,11 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
     //UISwipeActionsConfiguration
     var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction });
-    
+
     leadingSwipe.PerformsFirstActionWithFullSwipe = false;
-    
+
     return leadingSwipe;
-}  
+}
 ```
 
 <a name="create-uiswipeactionsconfigurations" />
@@ -99,10 +99,10 @@ public UIContextualAction ContextualFlagAction(int row)
                         "Flag",
                         (FlagAction, view, success) => {
                             var alertController = UIAlertController.Create($"Report {words[row]}?", "", UIAlertControllerStyle.Alert);
-                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null)); 
+                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                             alertController.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Destructive, null));
                             PresentViewController(alertController, true, null);
-                            
+
                             success(true);
                         });
 

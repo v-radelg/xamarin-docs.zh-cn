@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 448bc60891a44d8cd5eea0480031d692b4fb5d31
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 65b6f11662cdb8e1814e1146faf70cd01b2c11bc
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657468"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227084"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>结合使用自定义控件和 iOS 设计器
 
@@ -44,7 +44,7 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
     using CoreGraphics;
     using Foundation;
     using UIKit;
-    
+
     namespace ScratchTicket
     {
         [Register("ScratchTicketView"), DesignTimeVisible(true)]
@@ -55,7 +55,7 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
             CGPoint latestPoint;
             bool startNewPath = false;
             UIImage image;
-    
+
             [Export("Image"), Browsable(true)]
             public UIImage Image
             {
@@ -66,18 +66,18 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
                     SetNeedsDisplay();
                 }
             }
-    
+
             public ScratchTicketView(IntPtr p)
                 : base(p)
             {
                 Initialize();
             }
-    
+
             public ScratchTicketView()
             {
                 Initialize();
             }
-    
+
             void Initialize()
             {
                 initialPoint = CGPoint.Empty;
@@ -87,42 +87,42 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
                 path = new CGPath();
                 SetNeedsDisplay();
             }
-    
+
             public override void TouchesBegan(NSSet touches, UIEvent evt)
             {
                 base.TouchesBegan(touches, evt);
-    
+
                 var touch = touches.AnyObject as UITouch;
-    
+
                 if (touch != null)
                 {
                     initialPoint = touch.LocationInView(this);
                 }
             }
-    
+
             public override void TouchesMoved(NSSet touches, UIEvent evt)
             {
                 base.TouchesMoved(touches, evt);
-    
+
                 var touch = touches.AnyObject as UITouch;
-    
+
                 if (touch != null)
                 {
                     latestPoint = touch.LocationInView(this);
                     SetNeedsDisplay();
                 }
             }
-    
+
             public override void TouchesEnded(NSSet touches, UIEvent evt)
             {
                 base.TouchesEnded(touches, evt);
                 startNewPath = true;
             }
-    
+
             public override void Draw(CGRect rect)
             {
                 base.Draw(rect);
-    
+
                 using (var g = UIGraphics.GetCurrentContext())
                 {
                     if (image != null)
@@ -130,13 +130,13 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
                     else
                         g.SetFillColor(UIColor.LightGray.CGColor);
                     g.FillRect(rect);
-    
+
                     if (!initialPoint.IsEmpty)
                     {
                         g.SetLineWidth(20);
                         g.SetBlendMode(CGBlendMode.Clear);
                         UIColor.Clear.SetColor();
-    
+
                         if (path.IsEmpty || startNewPath)
                         {
                             path.AddLines(new CGPoint[] { initialPoint, latestPoint });
@@ -146,9 +146,9 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
                         {
                             path.AddLineToPoint(latestPoint);
                         }
-    
+
                         g.SetLineCap(CGLineCap.Round);
-                        g.AddPath(path);        
+                        g.AddPath(path);
                         g.DrawPath(CGPathDrawingMode.Stroke);
                     }
                 }
@@ -159,7 +159,7 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
 
 
 1. `FillTexture.png`将、 `FillTexture2.png` 和`Monkey.png`文件 (可[从 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)获取) 添加到**Resources**文件夹。
-    
+
 1. 双击该`Main.storyboard`文件以在设计器中将其打开:
 
     [![](ios-designable-controls-walkthrough-images/03new.png "IOS 设计器")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
@@ -174,7 +174,7 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
 
     [![](ios-designable-controls-walkthrough-images/05new.png "将图像视图图像属性设置为猴子。 png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
-    
+
 1. 使用大小类时, 需要约束此图像视图。 单击图像两次, 将其置于约束模式。 让我们通过单击中心固定控点并将其垂直和水平对齐来将其限制到中心:
 
     [![](ios-designable-controls-walkthrough-images/06new.png "对图像进行居中")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
@@ -215,12 +215,12 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
 
 ```csharp
 [Export("Image"), Browsable(true)]
-public UIImage Image 
+public UIImage Image
 {
     get { return image; }
-    set { 
+    set {
             image = value;
-            SetNeedsDisplay ();
+              SetNeedsDisplay ();
         }
 }
 ```
@@ -238,7 +238,7 @@ public override void Draw(CGRect rect)
             g.SetFillColor ((UIColor.FromPatternImage (image).CGColor));
         else
             g.SetFillColor (UIColor.LightGray.CGColor);
-            
+
         g.FillRect(rect);
 
         if (!initialPoint.IsEmpty)
@@ -258,7 +258,7 @@ public override void Draw(CGRect rect)
              }
 
              g.SetLineCap(CGLineCap.Round);
-             g.AddPath(path);       
+             g.AddPath(path);
              g.DrawPath(CGPathDrawingMode.Stroke);
         }
     }

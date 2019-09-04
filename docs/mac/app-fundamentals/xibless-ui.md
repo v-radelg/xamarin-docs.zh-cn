@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 1f49f3c24bc4c89edb005206b953176639214481
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d51e1b20e1409d228db2f38e6c31ad1165897654
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647181"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226891"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>xib-在 Xamarin 中的用户界面设计更少
 
@@ -20,7 +20,7 @@ _本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面, 
 
 ## <a name="overview"></a>概述
 
-在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和* *中工作*的开发人员所使用的相同用户界面元素和工具。 通常, 在创建 Xamarin Mac 应用程序时, 将使用 Xcode 的 Interface Builder, 使用 xib 文件创建和维护应用程序的用户界面。
+在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同用户界面元素和工具。 通常, 在创建 Xamarin Mac 应用程序时, 将使用 Xcode 的 Interface Builder, 使用 xib 文件创建和维护应用程序的用户界面。
 
 你还可以选择直接在代码中C#创建部分或全部 Xamarin 应用程序的 UI。 本文介绍如何在代码中C#创建用户界面和 UI 元素。
 
@@ -35,16 +35,16 @@ _本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面, 
 若要切换到应用程序的 Xibless 窗口, 请执行以下操作:
 
 1. 打开要停止使用`.storyboard`的应用程序或 xib 文件以定义 Visual Studio for Mac 中的用户界面。
-2. 在**Solution Pad**中, 右键单击**mainwindow.xaml**或 xib文件, 然后选择 "**删除**": 
+2. 在**Solution Pad**中, 右键单击**mainwindow.xaml 或 xib**文件, 然后选择 "**删除**":
 
     ![删除主情节提要或窗口](xibless-ui-images/switch01.png "删除主情节提要或窗口")
-3. 从 "**删除" 对话框**中, 单击 "**删除**" 按钮, 从项目中完全删除 xib 或。 
+3. 从 "**删除" 对话框**中, 单击 "**删除**" 按钮, 从项目中完全删除 xib 或。
 
     ![确认删除](xibless-ui-images/switch02.png "确认删除")
 
 现在, 我们需要修改**MainWindow.cs**文件以定义窗口的布局, 并修改**ViewController.cs**或**MainWindowController.cs**文件, 以`MainWindow`创建类的实例, 因为我们不再使用。情节提要或 xib 文件。
 
-将情节提要用于其用户界面的新式 Xamarin 应用程序可能不会自动包括**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**文件。 根据需要, 只需向项目添加C#新的空类 ("**添加** > **新文件 ...** " > 常规空 > **类**) 并将其命名为与缺少的文件相同。 
+将情节提要用于其用户界面的新式 Xamarin 应用程序可能不会自动包括**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**文件。 根据需要, 只需向项目添加C#新的空类 ("**添加** > **新文件 ...** " > 常规空 > **类**) 并将其命名为与缺少的文件相同。
 
 
 ### <a name="defining-the-window-in-code"></a>在代码中定义窗口
@@ -160,7 +160,7 @@ ContentView.AddSubview (ClickMeButton);
 
 最后, `ContentView.AddSubview (ClickMeButton)`方法`NSButton`将添加到内容视图中, 以便在运行应用程序和显示窗口时, 它将显示在屏幕上。
 
-接下来, 会将一个标签添加到窗口, 该窗口将显示已单击`NSButton`的次数: 
+接下来, 会将一个标签添加到窗口, 该窗口将显示已单击`NSButton`的次数:
 
 ```csharp
 ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width - 130, 20)) {
@@ -172,7 +172,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
     StringValue = "Button has not been clicked yet."
 };
 ContentView.AddSubview (ClickMeLabel);
-``` 
+```
 
 由于 macOS 没有特定的_标签_UI 元素, 因此我们添加了一个特殊的样式化、不可`NSTextField`编辑的来充当标签。 就像之前的按钮一样, 大小和位置会考虑 (0, 0) 在窗口的左下角。 属性使用**or**运算符组合两个`NSViewResizingMask`功能。 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` 这会使在垂直调整窗口大小时, 标签将保留在窗口顶部的同一位置, 并在水平调整窗口大小时缩小并放大。
 
@@ -239,20 +239,20 @@ base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
-``` 
+```
 
 提供以下`NSWindowStyle`功能:
 
-- 无**边框-窗口**不包含边框。
+- 无边框-窗口不包含边框。
 - **标题**-该窗口将具有标题栏。
 - **Closable** -该窗口有一个 "关闭" 按钮, 可以关闭。
 - **Miniaturizable** -该窗口有一个 Miniaturize 按钮, 可以最小化。
 - 可**调整大小**-该窗口将具有调整大小按钮并可调整大小。
 - **实用工具**-窗口是一个实用工具样式窗口 (面板)。
-- **DocModal** -如果窗口是一个面板, 它将是文档模式而非系统模式。 
+- **DocModal** -如果窗口是一个面板, 它将是文档模式而非系统模式。
 - **NonactivatingPanel** -如果窗口是一个面板, 则它不会成为主窗口。
 - **TexturedBackground** -该窗口将具有纹理背景。
-- 未**缩放-将**不缩放窗口。
+- 未缩放-将不缩放窗口。
 - **UnifiedTitleAndToolbar** -将联接窗口的标题和工具栏区域。
 - **Hud** -该窗口将显示为一个打印头显示面板。
 - **FullScreenWindow** -该窗口可以进入全屏模式。
@@ -290,16 +290,16 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ## <a name="adding-a-code-only-window"></a>添加仅限代码的窗口
 
-如果只想要将代码添加到现有 Xamarin Mac 应用程序, 请在**Solution Pad**中右键单击该项目, 然后选择 "**添加** > **新文件 ...** "在 "**新建文件**" 对话框   > 中, 选择**包含控制器的 Xamarin Cocoa 窗口**, 如下所示:
+如果只想要将代码添加到现有 Xamarin Mac 应用程序, 请在**Solution Pad**中右键单击该项目, 然后选择 "**添加** > **新文件 ...** "在 "**新建文件**" 对话框 > 中, 选择**包含控制器的 Xamarin Cocoa 窗口**, 如下所示:
 
-![添加新的窗口控制器](xibless-ui-images/add01.png "添加新的窗口控制器") 
+![添加新的窗口控制器](xibless-ui-images/add01.png "添加新的窗口控制器")
 
 就像以前一样, 我们将从项目中删除默认的 xib 文件 (在本例中为**SecondWindow**), 并按照上面的[切换窗口以使用代码](#Switching_a_Window_to_use_Code)部分中所述的步骤, 将窗口的定义覆盖到代码。
 
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>在代码中将 UI 元素添加到窗口
 
-无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口, 有时都可能需要将 UI 元素从代码添加到窗口。 例如：
+无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口, 有时都可能需要将 UI 元素从代码添加到窗口。 例如:
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
@@ -313,7 +313,7 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 
 ## <a name="defining-the-menu-bar-in-code"></a>在代码中定义菜单栏
 
-由于 Xamarin 中的当前限制, 不建议你在代码中创建 Xamarin 应用程序的菜单栏`NSMenuBar`, 而是继续使用 MainMenu 或**xib**文件对其进行定义  。 也就是说, 您可以在代码中C#添加和删除菜单和菜单项。
+由于 Xamarin 中的当前限制, 不建议你在代码中创建 Xamarin 应用程序的菜单栏`NSMenuBar`, 而是继续使用**MainMenu 或 xib**文件对其进行定义 。 也就是说, 您可以在代码中C#添加和删除菜单和菜单项。
 
 例如, 编辑**AppDelegate.cs**文件并使`DidFinishLaunching`方法类似于以下内容:
 

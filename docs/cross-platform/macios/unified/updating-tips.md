@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 2b82de58b9d2f9e8acb8996f484845f9a71b6e80
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 844730d2ace717b951df2d80b2add6d1094fe997
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120309"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226099"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>将代码更新为 Unified API 的提示
 
@@ -59,7 +59,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - `NSDictionary.IntValue`现在返回`nint`, 可以改`Int32Value`为使用。
 
-- `nfloat`和`nint`类型无法标记`const`;  `static readonly nint`是一个合理的替代方法。
+- `nfloat`和`nint`类型无法标记`const`;`static readonly nint`是一个合理的替代方法。
 
 - 通常`MonoTouch.` `MonoTouch.Constants.Version` 在命名`ObjCRuntime.Constants.Version`空间中通常是在命名空间中使用的内容(例如:现在为)。`ObjCRuntime.`
 
@@ -69,10 +69,10 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - 迁移工具不会`[Export]`自动修复使用的手动导出方法, 例如, 在此代码中 snippert 必须手动将返回类型更新为: `nfloat`
 
-    ```csharp
-    [Export("tableView:heightForRowAtIndexPath:")]
-    public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
-    ```
+  ```csharp
+  [Export("tableView:heightForRowAtIndexPath:")]
+  public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
+  ```
 
 - Unified API 不会提供 NSDate 与 .NET DateTime 之间的隐式转换, 因为它不是无损转换。 如果为, 则在`DateTimeKind.Unspecified`强制转换为`DateTime` `NSDate`之前, 阻止将 .net 转换为本地或 UTC 的相关错误。
 
@@ -80,9 +80,9 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - 使用 AVFoundation 类的`VideoSettings`代码应更改为`WeakVideoSettings`使用属性。 这需要一个`Dictionary`, 它可用作设置类的属性, 例如:
 
-    ```csharp
-    vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
-    ```
+  ```csharp
+  vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
+  ```
 
 - NSObject `.ctor(IntPtr)`构造函数已从公共更改为受保护 ([以防不正当使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 

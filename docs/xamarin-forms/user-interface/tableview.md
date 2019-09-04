@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fc3837cd0d69d49b9939b04da667010aac919fe2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 195ed82325ed681f31f9963d5ff0ca0a7fef48ab
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657125"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228136"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
@@ -20,7 +20,7 @@ ms.locfileid: "68657125"
 
 [`TableView`](xref:Xamarin.Forms.TableView)是一个视图, 用于显示数据的可滚动列表或可选择的不共享同一模板的行。 与[ListView](~/xamarin-forms/user-interface/listview/index.md)不同`TableView` , 没有的概念`ItemsSource`, 因此必须手动将项添加为子级。
 
-![](tableview-images/tableview-all-sml.png "TableView 示例")
+![TableView 示例](tableview-images/tableview-all-sml.png)
 
 <a name="Use_Cases" />
 
@@ -106,7 +106,7 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 虽然[`
 
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)还公开`OnChanged`事件, 使您可以对单元格状态的更改做出响应。
 
-![](tableview-images/switch-cell.png "SwitchCell 示例")
+![SwitchCell 示例](tableview-images/switch-cell.png)
 
 <a name="entrycell" />
 
@@ -123,7 +123,7 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 虽然[`
 
 [`EntryCell`](xref:Xamarin.Forms.EntryCell)还公开`Completed`事件, 当用户在编辑文本时在键盘上的 "完成" 按钮上命中时, 将触发该事件。
 
-![](tableview-images/entry-cell.png "EntryCell 示例")
+![EntryCell 示例](tableview-images/entry-cell.png)
 
 <a name="Custom_Cells" />
 
@@ -135,7 +135,7 @@ Xamarin.Forms 提供了内置的单元格，以收集和显示信息。 虽然[`
 
 这是自定义单元格的一个示例：
 
-![](tableview-images/custom-cell.png "自定义单元格示例")
+![自定义单元格示例](tableview-images/custom-cell.png)
 
 下面的示例演示了在上面的屏幕截图[`TableView`](xref:Xamarin.Forms.TableView)中创建的 XAML:
 
@@ -252,11 +252,11 @@ void OnViewCellTapped(object sender, EventArgs e)
 
 以下屏幕截图显示之前在点击后的单元格：
 
-![](tableview-images/cell-beforeresize.png "调整大小前的 ViewCell")
+![调整大小之前的 ViewCell](tableview-images/cell-beforeresize.png)
 
 下面的屏幕截图显示在点击后的单元格：
 
-![](tableview-images/cell-afterresize.png "调整大小后的 ViewCell")
+![调整大小后的 ViewCell](tableview-images/cell-afterresize.png)
 
 > [!IMPORTANT]
 > 如果过度使用此功能，则强可能导致性能下降。

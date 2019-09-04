@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 7c48244e316854b04234ec8dee4eebeb55a4f119
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 05c3816d0cc01beb3ed99994788b58e5f187171a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526383"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225778"
 ---
 # <a name="alternate-resources"></a>备用资源
 
@@ -73,52 +73,52 @@ ms.locfileid: "69526383"
 
 - **屏幕像素密度 (dpi)** &ndash;物理屏幕上给定区域中的像素数。 通常表示为每英寸点数 (dpi)。 可能的值有：
 
-    - `ldpi`&ndash;低密度屏幕。
+  - `ldpi`&ndash;低密度屏幕。
 
-    - `mdpi`&ndash;中等密度屏幕
+  - `mdpi`&ndash;中等密度屏幕
 
-    - `hdpi`&ndash;高密度屏幕
+  - `hdpi`&ndash;高密度屏幕
 
-    - `xhdpi`&ndash;特大高密度屏幕
+  - `xhdpi`&ndash;特大高密度屏幕
 
-    - `nodpi`&ndash;不缩放的资源
+  - `nodpi`&ndash;不缩放的资源
 
-    - `tvdpi`&ndash;在包括和 hdpi 之间的屏幕 API 级别 13 (Android 3.2) 中引入。
+  - `tvdpi`&ndash;在包括和 hdpi 之间的屏幕 API 级别 13 (Android 3.2) 中引入。
 
 - **触摸屏类型**&ndash;指定设备可能具有的触摸屏的类型。 可能的值`notouch`为 (无触摸屏) `stylus` 、(适合触笔的电阻式触摸屏) 和`finger` (触摸屏)。
 
 - **键盘可用性**&ndash;指定可用的键盘类型。 这可能会在应用程序&ndash;的生存期内发生更改, 例如, 当用户打开硬件键盘时。 可能的值有：
 
-    - `keysexposed`&ndash;设备具有可用的键盘。 如果未启用软件键盘, 则仅在打开硬件键盘时使用。
+  - `keysexposed`&ndash;设备具有可用的键盘。 如果未启用软件键盘, 则仅在打开硬件键盘时使用。
 
-    - `keyshidden`&ndash;设备具有硬件键盘, 但它处于隐藏状态且未启用软件键盘。
+  - `keyshidden`&ndash;设备具有硬件键盘, 但它处于隐藏状态且未启用软件键盘。
 
-    - `keyssoft`&ndash;设备已启用软件键盘。
+  - `keyssoft`&ndash;设备已启用软件键盘。
 
 - **主文本输入法**&ndash;用于指定哪些类型的硬件密钥可用于输入。 可能的值有：
 
-    - `nokeys`&ndash;没有用于输入的硬件密钥。
+  - `nokeys`&ndash;没有用于输入的硬件密钥。
 
-    - `qwerty`&ndash;有一个可用的标准键盘。
+  - `qwerty`&ndash;有一个可用的标准键盘。
 
-    - `12key`&ndash;有一个12键的硬件键盘
+  - `12key`&ndash;有一个12键的硬件键盘
 
 
 - **导航键可用性**&ndash;适用于5向或 3-d (定向) 导航可用的时间。 这可能会在应用程序的生存期内发生更改。 可能的值有：
 
-    - `navexposed`&ndash;用户可以使用导航键
+  - `navexposed`&ndash;用户可以使用导航键
 
-    - `navhidden`&ndash;导航键不可用。
+  - `navhidden`&ndash;导航键不可用。
 
 - **主非触摸式导航方法**&ndash;设备上可用的导航类型。 可能的值有：
 
-    - `nonav`&ndash;唯一可用的导航工具是触摸屏
+  - `nonav`&ndash;唯一可用的导航工具是触摸屏
 
-    - `dpad`&ndash;可在导航中使用3-d 面板 (定向)
+  - `dpad`&ndash;可在导航中使用3-d 面板 (定向)
 
-    - `trackball`&ndash;设备具有导航轨迹球
+  - `trackball`&ndash;设备具有导航轨迹球
 
-    - `wheel`&ndash;有一个或多个定向轮可用的不常见方案
+  - `wheel`&ndash;有一个或多个定向轮可用的不常见方案
 
 - **平台版本 (API 级别)** 设备支持的 api 级别, 格式为 v*n*, 其中 N 是目标为的 api 级别。 &ndash; 例如, v11 将以 API 级别 11 (Android 3.0) 设备为目标。
 

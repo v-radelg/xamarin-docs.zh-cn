@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 1b4732e87fb09a4846bfe12b7a476dfef2d6f4f9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9a26532d13b843b812da94739be071c7accac212
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647232"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228190"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的动态样式
 
@@ -82,10 +82,10 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-当`OnButtonClicked`执行事件处理程序时，`searchBarStyle`会之间切换`blueSearchBarStyle`和`greenSearchBarStyle`。 这会导致下面的屏幕截图中所示的外观：
+当`OnButtonClicked`执行事件处理程序时，`searchBarStyle`会之间切换`blueSearchBarStyle`和`greenSearchBarStyle`。 这会导致如以下屏幕截图中所示的外观：
 
-[![](dynamic-images/dynamic-style-blue.png "蓝色动态样式示例")](dynamic-images/dynamic-style-blue-large.png#lightbox "蓝色动态样式示例")
-[![](dynamic-images/dynamic-style-green.png "绿色动态样式示例")](dynamic-images/dynamic-style-green-large.png#lightbox "绿色动态样式示例")
+[![蓝色动态样式示例](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
+[![绿色动态样式示例](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
 下面的代码示例演示如何在 C# 中的等效页：
 
@@ -161,10 +161,10 @@ public class DynamicStylesPageCS : ContentPage
 
 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)实例使用`StaticResource`标记扩展引用[ `Style` ](xref:Xamarin.Forms.Style)名为`tealSearchBarStyle`。 这`Style`设置其他一些属性，并使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)属性来引用`searchBarStyle`。 `DynamicResource`标记扩展不需要，因为`tealSearchBarStyle`不会更改，除`Style`它派生。 因此，`tealSearchBarStyle`维护一个指向`searchBarStyle`和基准的样式更改时更改。
 
-在代码隐藏文件中，该构造函数创建[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有键的项`searchBarStyle`、 每个前面的示例演示动态样式。 当`OnButtonClicked`执行事件处理程序时，`searchBarStyle`会之间切换`blueSearchBarStyle`和`greenSearchBarStyle`。 这会导致下面的屏幕截图中所示的外观：
+在代码隐藏文件中，该构造函数创建[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有键的项`searchBarStyle`、 每个前面的示例演示动态样式。 当`OnButtonClicked`执行事件处理程序时，`searchBarStyle`会之间切换`blueSearchBarStyle`和`greenSearchBarStyle`。 这会导致如以下屏幕截图中所示的外观：
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "蓝色动态样式继承示例")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "蓝色动态样式继承示例")
-[![](dynamic-images/dynamic-style-inheritance-green.png "绿色动态样式继承示例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "绿色动态样式继承示例")
+[![蓝色动态样式继承示例](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
+[![绿色动态样式继承示例](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
 下面的代码示例演示如何在 C# 中的等效页：
 

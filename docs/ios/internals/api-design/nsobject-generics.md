@@ -1,24 +1,24 @@
 ---
-title: 在 Xamarin.iOS NSObject 的通用子类
-description: 本文档介绍如何创建创建 NSObject 的通用子类。 它将检查什么可以并不能完成，讨论了静态注册机构，并且介绍了性能。
+title: Xamarin 中 NSObject 的通用子类
+description: 本文档介绍如何创建 NSObject 的常规子类。 它将检查可以和不能完成的操作, 讨论静态注册器并了解性能。
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4d2ab7a546925e92bb59f626279dcbf9c3c4ab4f
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: 2e84ec85fac933f579f961300d242bafa1f0b838
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157705"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226046"
 ---
-# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin.iOS NSObject 的通用子类
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Xamarin 中 NSObject 的通用子类
 
-## <a name="using-generics-with-nsobjects"></a>将泛型与 NSObjects
+## <a name="using-generics-with-nsobjects"></a>将泛型与 NSObjects 结合使用
 
-可以在类的子类中使用的泛型`NSObject`，例如[UIView](xref:UIKit.UIView):
+可以在的`NSObject`子类中使用泛型, 例如[UIView](xref:UIKit.UIView):
 
 ```csharp
 class Foo<T> : UIView {
@@ -30,17 +30,17 @@ class Foo<T> : UIView {
 }
 ```
 
-由于对象派生子类`NSObject`注册与 Objective C 运行时有有关可能的通用子类具有一些限制`NSObject`类型。
-    
-## <a name="considerations-for-generic-subclasses-of-nsobject"></a>NSObject 的通用子类的注意事项
+由于子类`NSObject`在目标 C 运行时中注册的对象存在一些限制, 因此对于类型的`NSObject`泛型子类可能存在一些限制。
 
-本文档详细介绍中的通用子类的有限支持的限制`NSObjects`。
-    
-### <a name="generic-type-arguments-in-member-signatures"></a>在成员签名中的泛型类型参数
+## <a name="considerations-for-generic-subclasses-of-nsobject"></a>NSObject 的泛型子类注意事项
 
-在公开给 Objective C 的成员签名中的所有泛型类型参数必须具有`NSObject`约束。
+本文档详细介绍对的`NSObjects`泛型子类的有限支持的限制。
 
-**好**:
+### <a name="generic-type-arguments-in-member-signatures"></a>成员签名中的泛型类型参数
+
+公开给目标-C 的成员签名中的所有泛型类型参数都必须`NSObject`具有约束。
+
+**不错**:
 
 ```csharp
 class Generic<T> : NSObject where T: NSObject
@@ -52,7 +52,7 @@ class Generic<T> : NSObject where T: NSObject
 }
 ```
 
-**原因**:泛型类型参数是`NSObject`，因此的选择器签名`myMethod:`可以安全地公开到 Objective C (它将始终为`NSObject`或它的子类)。
+**原因**:泛型类型参数是`NSObject`, 因此的选择器`myMethod:`签名可以安全地公开给目标 C (它将始终是`NSObject`或它的子类)。
 
 **错误**:
 
@@ -66,9 +66,9 @@ class Generic<T> : NSObject
 }
 ```
 
-**原因**： 不能为 Objective C 代码可以调用，因为签名会有所不同的泛型类型的确切类型的导出成员创建的 Objective C 签名`T`。
+**原因**: 无法为目标-c 代码可调用的已导出成员创建目标为 c 的签名, 因为根据泛型类型`T`的具体类型, 签名将有所不同。
 
-**好**:
+**不错**:
 
 ```csharp
 class Generic<T> : NSObject
@@ -82,9 +82,9 @@ class Generic<T> : NSObject
 }
 ```
 
-**原因**： 可以只要它们不会导出的成员签名的一部分不受约束的泛型类型参数。
+**原因**: 只要它们不是导出成员签名的一部分, 就可以具有不受约束的泛型类型参数。
 
-**好**:
+**不错**:
 
 ```csharp
 class Generic<T, U> : NSObject where T: NSObject
@@ -97,14 +97,14 @@ class Generic<T, U> : NSObject where T: NSObject
 }
 ```
 
-**原因**: `T` Objective C 中的参数导出`MyMethod`约束为不可`NSObject`，不受约束的类型`U`不是签名的一部分。
-    
-### <a name="instantiations-of-generic-types-from-objective-c"></a>从 OBJECTIVE-C 的泛型类型的实例化
+**原因**: `T`目标-C 导出`MyMethod`的参数被约束为`NSObject`, 不受约束的类型`U`不是签名的一部分。
 
-不允许从 OBJECTIVE-C 的泛型类型的实例化。 这通常发生在 xib 或情节提要中使用的托管的类型时。
+### <a name="instantiations-of-generic-types-from-objective-c"></a>来自目标的泛型类型的实例化-C
 
-请考虑此类定义中，它提供了一个构造函数采用`IntPtr`(Xamarin.iOS 方式构造的C#从本机 OBJECTIVE-C 的实例对象):
-    
+不允许从目标-C 中实例化泛型类型。 当在 xib 或情节提要中使用托管类型时, 通常会发生这种情况。
+
+请考虑此类定义, 此类定义公开了一个`IntPtr`构造函数, 该构造函数采用 (从C#本机目标-C 实例构造对象的 Xamarin 方式):
+
 ```csharp
 class Generic<T> : NSObject where T : NSObject
 {
@@ -113,12 +113,12 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-上述构造时没有什么问题，在运行时，这将引发异常时如果 Objective C 尝试创建它的一个实例。
+虽然以上构造是正确的, 但在运行时, 如果客观-C 尝试创建它的实例, 这将引发异常。
 
-这是因为 Objective C 的泛型类型，没有概念，它不能指定要创建的确切的泛型类型，会发生情况。
+出现这种情况的原因是, 目标-C 没有泛型类型的概念, 并且无法指定要创建的确切泛型类型。
 
-通过创建一个专门的泛型类型的子类，此问题可得到解决。 例如：
-    
+可以通过创建泛型类型的专用子类来解决此问题。 例如：
+
 ```csharp
 class Generic<T> : NSObject where T : NSObject
 {
@@ -131,13 +131,13 @@ class GenericUIView : Generic<UIView>
 }
 ```
 
-现在没有歧义，类`GenericUIView`可以 xib 或情节提要中使用。
+现在不再存在歧义, 该类`GenericUIView`可用于 xib 或情节提要。
 
 ## <a name="no-support-for-generic-methods"></a>不支持泛型方法
 
 ### <a name="generic-methods-are-not-allowed"></a>不允许使用泛型方法。
 
-下面的代码将编译：
+以下代码将不会编译:
 
 ```csharp
 class MyClass : NSObject
@@ -149,9 +149,9 @@ class MyClass : NSObject
 }
 ```
 
-**原因**:这不允许的因为 Xamarin.iOS 不知道要使用的类型参数的具体类型`T`从 Objective C 调用该方法时。
+**原因**:这是不允许的, 因为在从目标-C 调用方法时, Xamarin 不知道`T`要用于类型参数的类型。
 
-一种替代方法是创建一个专用的方法，并改为导出的：
+另一种方法是创建专用方法, 并改为导出:
 
 ```csharp
 class MyClass : NSObject
@@ -167,11 +167,11 @@ class MyClass : NSObject
 }
 ```
 
-### <a name="no-exported-static-members-allowed"></a>允许任何导出静态成员
+### <a name="no-exported-static-members-allowed"></a>不允许使用导出的静态成员
 
-如果承载的通用子类中，可以不公开到 OBJECTIVE-C 的静态成员`NSObject`。
+如果静态成员承载于的泛型子类`NSObject`中, 则不能将其公开给目标-C。
 
-不支持的方案的示例：
+不受支持的方案示例:
 
 ```csharp
 class Generic<T> : NSObject where T : NSObject
@@ -186,13 +186,13 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**原因：** 就像泛型方法，Xamarin.iOS 运行时需要能够知道使用什么类型的泛型类型参数使用`T`。
+**在于**与泛型方法一样, Xamarin 运行时需要能够知道要用于泛型类型参数`T`的类型。
 
-对实例使用的实例本身的成员 (因为永远不会有一个实例`Generic<T>`，它将始终为`Generic<SomeSpecificClass>`)，但对于静态成员不存在此信息。
+对于实例成员, 将使用实例本身 (因为决不会有实例`Generic<T>`, 它将始终为`Generic<SomeSpecificClass>`), 但对于静态成员, 此信息不存在。
 
-请注意，这适用即使有问题的成员不使用类型参数`T`以任何方式。
+请注意, 即使相关成员不以任何方式使用 type 参数`T` , 此应用也适用。
 
-在这种情况下替代方法是创建一个专用的子类：
+在这种情况下, 另一种方法是创建专用子类:
 
 ```csharp
 class GenericUIView : Generic<UIView>
@@ -219,5 +219,5 @@ class Generic<T> : NSObject where T : NSObject
 
 ## <a name="performance"></a>性能
 
-静态注册机构不能在生成时解决在泛型类型中导出的成员，像通常一样，它必须在运行时查找。 这意味着，调用此方法从 OBJECTIVE-C 是有些慢调用从非泛型类的成员。
+静态注册器在生成时无法解析泛型类型中的导出成员, 这通常是必须在运行时查找。 这意味着从客观-C 调用此类方法略微慢于从非泛型类中调用成员。
 

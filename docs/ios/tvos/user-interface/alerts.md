@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3f1761df5c2b638c5777e6384f4c0c06e9b3071f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: de7c8918ff500cb2353214fd84eaa4c97713493e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657286"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227276"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警报
 
@@ -34,7 +34,7 @@ _本文介绍如何使用 UIAlertController 在 tvOS 中向用户显示警报消
 
 Apple 提供了以下有关使用警报的建议:
 
-- **使用警报**时, 警报会中断用户与应用的流动, 并使用户体验中断, 因此, 只应用于错误通知、应用内购买和破坏性操作等重要情况。 
+- **使用警报**时, 警报会中断用户与应用的流动, 并使用户体验中断, 因此, 只应用于错误通知、应用内购买和破坏性操作等重要情况。
 - **提供了有用的选择**-如果警报向用户提供选项, 您应确保每个选项都提供关键信息并为用户提供有用的操作。
 
 <a name="Alert-Titles-and-Messages" />
@@ -44,7 +44,7 @@ Apple 提供了以下有关使用警报的建议:
 Apple 提供以下建议来演示警报的标题和可选消息:
 
 - **使用 Multiword 标题**-警报的标题应当清楚地了解状况, 同时保持简单。 单个单词标题很少提供足够的信息。
-- 请尽可能**使用不需要消息的描述性标题**, 请考虑使警报的标题具有足够的描述性, 指出不需要可选消息文本。 
+- 请尽可能**使用不需要消息的描述性标题**, 请考虑使警报的标题具有足够的描述性, 指出不需要可选消息文本。
 - 将**消息设置为简短、完整的句子**-如果需要使用可选的消息来使警报点处于最佳位置, 请尽可能简化, 并使其成为具有正确大小写和标点的完整句子。
 
 <a name="Alert-Buttons" />
@@ -70,15 +70,15 @@ const string acceptButtonTitle = "OK";
 const string cancelButtonTitle = "Cancel";
 const string deleteButtonTitle = "Delete";
 ...
-        
+
 var alertController = UIAlertController.Create (title, message, UIAlertControllerStyle.Alert);
 
 // Create the action.
-var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ => 
+var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
-var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ => 
+var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
@@ -97,7 +97,7 @@ UIAlertController.Create (title, message, UIAlertControllerStyle.Alert)
 接下来, 对于我们要在警报中显示的每个按钮, 我们将创建一个操作, 用于定义按钮的标题、样式以及在按下按钮时要执行的操作:
 
 ```csharp
-UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ => 
+UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
     // Do something when the button is pressed
     ...
 );
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-`AddTextField`方法将新的文本字段添加到警报, 然后通过设置属性 (如字段为空时显示的文本)、默认的文本值和键盘类型来配置该文本字段。 例如:
+`AddTextField`方法将新的文本字段添加到警报, 然后通过设置属性 (如字段为空时显示的文本)、默认的文本值和键盘类型来配置该文本字段。 例如：
 
 ```csharp
 // Initialize field
@@ -192,7 +192,7 @@ alert.AddTextField ((textField) => {
 
 ## <a name="alert-view-controller-helper-class"></a>警报视图控制器帮助程序类
 
-由于使用`UIAlertViewController`显示简单的常见警报类型可能会导致很多重复的代码, 因此, 可以使用帮助器类来减少重复的代码量。 例如：
+由于使用`UIAlertViewController`显示简单的常见警报类型可能会导致很多重复的代码, 因此, 可以使用帮助器类来减少重复的代码量。 例如:
 
 ```csharp
 using System;

@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: aee3d81375ab619fa2016a87951cce3e72cdbe47
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 537816213208ed6e71f0986558c9a94a327759e2
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650195"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227902"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>在 Xamarin 中创建自定义控件
 
-在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在*Xcode、* *Swift*和  中工作的开发人员所使用的相同用户控件。 由于 Xamarin 与 Xcode 直接集成, 因此, 可以使用 Xcode 的_Interface Builder_来创建和维护用户控件 (或者可以选择直接在代码中C#创建)。
+在 Xamarin 应用C#程序中使用和 .net 时, 可以访问在 Xcode、 *Swift*和中工作的开发人员所使用的相同用户控件。 由于 Xamarin 与 Xcode 直接集成, 因此, 可以使用 Xcode 的_Interface Builder_来创建和维护用户控件 (或者可以选择直接在代码中C#创建)。
 
 尽管 macOS 提供了大量的内置用户控件, 但有时你可能需要创建自定义控件来提供未现成提供的功能或与自定义 UI 主题 (如游戏界面) 相匹配的功能。
 
@@ -285,7 +285,7 @@ private void Initialize() {
 
 ### <a name="responding-to-state-change-events"></a>响应状态更改事件
 
-当用户更改自定义控件的状态时, 需要一种方法来响应代码中的状态更改 (例如, 在单击自定义按钮时执行操作)。 
+当用户更改自定义控件的状态时, 需要一种方法来响应代码中的状态更改 (例如, 在单击自定义按钮时执行操作)。
 
 若要提供此功能, 请`NSFlipSwitch`编辑类并添加以下代码:
 
@@ -299,7 +299,7 @@ internal void RaiseValueChanged() {
 
     // Perform any action bound to the control from Interface Builder
     // via an Action.
-    if (this.Action !=null) 
+    if (this.Action !=null)
         NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 }
 ## endregion
@@ -320,7 +320,7 @@ private void FlipSwitchState() {
 其次, 由于自定义控件继承`NSControl`自, 因此它自动具有可在 Xcode 的 Interface Builder 中分配的**操作**。 若要在状态更改时调用此**操作**, 请使用以下代码:
 
 ```csharp
-if (this.Action !=null) 
+if (this.Action !=null)
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
@@ -361,7 +361,7 @@ public override void ViewDidLoad ()
         Console.WriteLine("Option Two: {0}", OptionTwo.Value);
     };
 }
-``` 
+```
 
 在这里, 我们将响应`ValueChanged`我们`NSFlipSwitch`在类上定义的事件, 并在用户单击控件时写出当前**值**。
 

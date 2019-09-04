@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7004c4692158be2e51eca93dece349da2a735bab
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 92b16e4a802411c70bef7d5810a161dbdfedfa09
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654397"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227491"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的消息应用扩展基础知识
 
@@ -118,14 +118,14 @@ Apple 建议根据各种不同的彩色背景 (如白色、黑色、红色、黄
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 开始 Visual Studio for Mac。
-2. 打开解决方案以将消息应用扩展添加到。 
-3. 选择 " **iOS** > **扩展** > **iMessage 扩展**", 然后单击 "**下一步**" 按钮: 
+2. 打开解决方案以将消息应用扩展添加到。
+3. 选择 " **iOS** > **扩展** > **iMessage 扩展**", 然后单击 "**下一步**" 按钮:
 
     [![](intro-to-message-app-extensions-images/message01.png "选择 iMessage 扩展")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. 输入**扩展名称**并单击 "**下一步**" 按钮: 
+4. 输入**扩展名称**并单击 "**下一步**" 按钮:
 
     [![](intro-to-message-app-extensions-images/message02.png "输入扩展名称")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. 单击 "**创建**" 按钮以生成扩展: 
+5. 单击 "**创建**" 按钮以生成扩展:
 
     [![](intro-to-message-app-extensions-images/message03.png "单击 \"创建\" 按钮")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -158,7 +158,7 @@ Apple 建议根据各种不同的彩色背景 (如白色、黑色、红色、黄
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在**Solution Pad**中, 右键单击扩展的项目名称, 然后选择 "**添加** > **新文件 ...** " >  **iOS |** AppleWatch > **接口控制器**。
-2. 输入`StickerBrowserViewController`作为**名称**, 然后单击 "**新建**" 按钮: 
+2. 输入`StickerBrowserViewController`作为**名称**, 然后单击 "**新建**" 按钮:
 
     [![](intro-to-message-app-extensions-images/browser01.png "为名称输入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. `StickerBrowserViewController.cs`打开文件进行编辑。
@@ -166,7 +166,7 @@ Apple 建议根据各种不同的彩色背景 (如白色、黑色、红色、黄
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在**解决方案资源管理器**中, 右键单击扩展的项目名称, 然后选择 "**添加** > **新文件 ...** " >  **iOS |** AppleWatch > **接口控制器**。
-2. 输入`StickerBrowserViewController`作为**名称**, 然后单击 "**新建**" 按钮: 
+2. 输入`StickerBrowserViewController`作为**名称**, 然后单击 "**新建**" 按钮:
 
     [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "为名称输入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. `StickerBrowserViewController.cs`打开文件进行编辑。
@@ -537,7 +537,7 @@ namespace MessageExtension
                 MessagesAppViewController.AddStickerToCollection (NewSticker);
             };
             View.AddSubview (doneButton);
-            
+
             ...
         }
         #endregion
@@ -702,7 +702,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
         break;
     }
 }
-``` 
+```
 
 ## <a name="summary"></a>总结
 

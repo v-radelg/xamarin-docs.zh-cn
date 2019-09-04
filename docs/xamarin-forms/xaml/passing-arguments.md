@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 7a6ea06d77b8eb170f4165bfc8cf2fd643d56406
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651665"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228086"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中传递自变量
 
@@ -91,7 +91,7 @@ _本文演示如何使用可用于将参数传递到非默认构造函数，以�
 
 以下屏幕截图显示了每个调用的结果[ `Color` ](xref:Xamarin.Forms.Color)构造函数使用指定的参数值：
 
-![](passing-arguments-images/passing-arguments.png "使用 x： 参数指定的 BoxView.Color")
+![BoxView 指定的 x:Arguments](passing-arguments-images/passing-arguments.png)
 
 <a name="factory_methods" />
 
@@ -141,7 +141,7 @@ _本文演示如何使用可用于将参数传递到非默认构造函数，以�
 
 以下屏幕截图显示了每个调用的结果[ `Color` ](xref:Xamarin.Forms.Color)工厂方法与指定的参数值：
 
-![](passing-arguments-images/factory-methods.png "指定使用 X:factorymethod 和 x： 参数 BoxView.Color")
+![BoxView 通过 x:FactoryMethod 和 x:Arguments 指定的颜色](passing-arguments-images/factory-methods.png)
 
 <a name="generic_type_arguments" />
 

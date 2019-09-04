@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c752f4acf4bf43c138a7b359b94620dae5e8d46e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2137ff95e65c6841b3e525f0c9755e013310c7e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524521"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225591"
 ---
 # <a name="troubleshooting-bindings"></a>绑定疑难解答
 
@@ -51,8 +51,8 @@ _本文总结了生成绑定时可能出现的多种常见错误, 以及可能�
 
 - **具有模糊特征的类**&ndash;模糊类的特征包括:
 
-    - Class 名称中包含 **$** ，即 **$.class**
-    - 类名称完全泄露小写字符, 即**类**      
+  - Class 名称中包含 **$** ，即 **$.class**
+  - 类名称完全泄露小写字符, 即**类**      
 
 - 用于未&ndash;引用库的语句标识未引用的库, 并将这些依赖项添加到具有**ReferenceJar**或的生成操作的 Xamarin 绑定项目 **`import`** **EmbedddedReferenceJar**。
 
@@ -114,19 +114,19 @@ Some.Java 工具无法加载使用代码模糊处理的 JAR 库 (通过工具 (�
 
 - Java 允许从非公共类派生公共类, 但 .NET 不支持此类。 由于绑定生成器不生成非公共类的绑定, 因此无法正确生成派生类 (如)。 若要解决此问题, 请使用**metadata**中的 remove 节点删除这些派生类的元数据条目, 或者修复使非公共类成为公共类的元数据。 尽管后一种解决方案将创建绑定以便生成C#源, 但不应使用非公共类。
 
-    例如：
+  例如：
 
-    ```xml
-    <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
-        name="visibility">public</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
+      name="visibility">public</attr>
+  ```
 
 - 对 Java 库进行模糊处理的工具可能会影响 Xamarin 绑定生成器及其生成C#包装器类的功能。 以下代码片段演示了如何将 unobfuscate 更新为类名:
 
-    ```xml
-    <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
-        name="obfuscated">false</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
+      name="obfuscated">false</attr>
+  ```
 
 ### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>问题：由于C#参数类型不匹配, 生成的源未生成
 
@@ -134,7 +134,7 @@ Some.Java 工具无法加载使用代码模糊处理的 JAR 库 (通过工具 (�
 
 #### <a name="possible-causes"></a>可能的原因:
 
-Xamarin 包含多个映射到C#绑定中的枚举的 Java 字段。 这会导致生成的绑定中出现类型不兼容的情况。 若要解决此问题, 需要修改从绑定生成器创建的方法签名, 以使用枚举。 有关更多信息, 请参阅[更正枚举](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)。
+Xamarin 包含多个映射到C#绑定中的枚举的 Java 字段。 这会导致生成的绑定中出现类型不兼容的情况。 若要解决此问题, 需要修改从绑定生成器创建的方法签名, 以使用枚举。 有关详细信息, 请参阅[更正枚举](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)。
 
 ### <a name="problem-noclassdeffounderror-in-packaging"></a>问题：打包中的 NoClassDefFoundError
 
@@ -142,7 +142,7 @@ Xamarin 包含多个映射到C#绑定中的枚举的 Java 字段。 这会导致
 
 #### <a name="possible-causes"></a>可能的原因:
 
-此错误的最可能原因是需要将必需的 Java 库添加到应用程序项目 ( **.csproj**)。 .不自动解析 JAR 文件。 Java 库绑定并非始终针对目标设备或模拟器中不存在的用户程序集 (如 Google Maps **maps**) 生成。 这不是 Android 库项目支持 (作为库)。JAR 嵌入在库 dll 中。 例如:[Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+此错误的最可能原因是需要将必需的 Java 库添加到应用程序项目 ( **.csproj**)。 .不自动解析 JAR 文件。 Java 库绑定并非始终针对目标设备或模拟器中不存在的用户程序集 (如 Google Maps **maps**) 生成。 这不是 Android 库项目支持 (作为库)。JAR 嵌入在库 dll 中。 例如：[Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
 ### <a name="problem-duplicate-custom-eventargs-types"></a>问题：自定义 EventArgs 类型重复
 
@@ -203,24 +203,24 @@ return type of 'Java.Lang.Object'
 
 - 为`HttpURLConnectionRequestAdapter`添加分部类声明并显式实现`IHttpRequest.Unwrap()`:
 
-    ```csharp
-    namespace Oauth.Signpost.Basic {
-        partial class HttpURLConnectionRequestAdapter {
-            Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
-                return Unwrap();
-            }
-        }
-    }
-    ```
+  ```csharp
+  namespace Oauth.Signpost.Basic {
+      partial class HttpURLConnectionRequestAdapter {
+          Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
+              return Unwrap();
+          }
+      }
+  }
+  ```
 
 - 删除生成C#的代码的协方差。 这涉及到将以下转换添加到**Transforms\Metadata.xml** , 这将导致C#生成的代码具有`Java.Lang.Object`以下返回类型:
 
-    ```xml
-    <attr
-        path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
-        name="managedReturn">Java.Lang.Object
-    </attr>
-    ```
+  ```xml
+  <attr
+      path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
+      name="managedReturn">Java.Lang.Object
+  </attr>
+  ```
 
 ### <a name="problem-name-collisions-on-inner-classes--properties"></a>问题：内部类/属性名称冲突
 

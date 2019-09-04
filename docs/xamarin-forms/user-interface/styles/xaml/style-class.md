@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4a353d64f0e7e29da6c64f93b8554c3661f4d389
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645553"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228125"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin 样式类
 
@@ -203,7 +203,7 @@ Resources = new ResourceDictionary
 
 在此示例中, 第[`BoxView`](xref:Xamarin.Forms.BoxView)一个的样式为行分隔符, 而第三个`BoxView`为循环。 第二`BoxView`个应用了两个样式类, 它为其舍入角并将其旋转45度:
 
-![](style-class-images/boxviews.png "样式类的 BoxViews 样式")
+![样式类的 BoxViews 样式](style-class-images/boxviews.png)
 
 > [!IMPORTANT]
 > 可以将多个样式类应用于控件, 因为[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)该属性的类型`IList<string>`为。 出现这种情况时, 将按升序顺序应用样式类。 因此, 当多个样式类设置相同的属性时, 位于最高列表位置的 style 类中的属性将优先。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 3178c47fbbea66d1e88b3ff48654faff14462f9a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2bb682dcd2218291c8a6332cf0c1ad548c0aa3e2
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526461"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225979"
 ---
 # <a name="ios-app-architecture"></a>iOS 应用程序体系结构
 

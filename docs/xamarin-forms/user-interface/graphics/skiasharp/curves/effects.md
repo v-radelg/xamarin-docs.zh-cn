@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: e0af5188dd34e76b419b4cd5bf8d604fb059b7d3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642754"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228243"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路径效果
 
@@ -22,7 +22,7 @@ _发现允许路径用于进行描边，并填充的不同路径效果_
 
 一个*路径效果*的一个实例[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)使用八个由类定义的静态创建方法之一创建的类。 `SKPathEffect`对象设置为[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)属性[ `SKPaint` ](xref:SkiaSharp.SKPaint)对象的有趣的效果，例如，有多种描画一条线较小的复制路径:
 
-![](effects-images/patheffectsample.png "链接链示例")
+![链接链示例](effects-images/patheffectsample.png)
 
 路径效果使您能够：
 
@@ -51,7 +51,7 @@ public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 
 **经过动画处理的以点分隔的文本**页是类似于**轮廓文本**文章中所述的页面[**集成文本和图形**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)中它将显示通过设置概述文本字符`Style`的属性`SKPaint`对象传递给`SKPaintStyle.Stroke`。 此外，**经过动画处理的以点分隔的文本**使用`SKPathEffect.CreateDash`为提供此概述的以点分隔的外观和程序还进行动画处理`phase`自变量的`SKPathEffect.CreateDash`进行似乎旅行文本周围的点的方法字符。 以下是在横向模式中的页：
 
-[![](effects-images/animateddottedtext-small.png "经过动画处理的以点分隔的文本页的三个屏幕截图")](effects-images/animateddottedtext-large.png#lightbox "带来三倍的经过动画处理的以点分隔的文本页屏幕截图")
+[![动态虚线文本页的三向屏幕截图](effects-images/animateddottedtext-small.png)](effects-images/animateddottedtext-large.png#lightbox)
 
 [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)类首先定义一些常量，并且还重写`OnAppearing`和`OnDisappearing`动画的方法：
 
@@ -159,7 +159,7 @@ public class AnimatedDottedTextPage : ContentPage
 
 **Dot / 短划线 Morph**程序之间进行动画处理的短划线模式本身，以便短划线似乎将划分为点，再次将到窗体短划线组合：
 
-[![](effects-images/dotdashmorph-small.png "三重的点划线 Morph 页屏幕截图")](effects-images/dotdashmorph-large.png#lightbox "带来三倍的点划线 Morph 页屏幕截图")
+[![点划线平滑页面的三向屏幕截图](effects-images/dotdashmorph-small.png)](effects-images/dotdashmorph-large.png#lightbox)
 
 [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)类重写`OnAppearing`并`OnDisappearing`方法就像上一个程序一样，但该类定义`SKPaint`对象作为字段：
 
@@ -398,7 +398,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `PaintSurface`处理程序将创建循环继续本身，并访问选取器来确定哪些的贝塞尔曲线`PathEffect`应该用于绘制它。 三个选项 — `Translate`， `Rotate`，和`Morph`— 从左到右显示：
 
-[![](effects-images/1dpatheffect-small.png "三重的一维路径效果页屏幕截图")](effects-images/1dpatheffect-large.png#lightbox "1d 路径影响页面的三个屏幕截图")
+[![1D 路径效果页面的三向屏幕截图](effects-images/1dpatheffect-small.png)](effects-images/1dpatheffect-large.png#lightbox)
 
 中指定的路径`SKPathEffect.Create1DPath`始终填充方法。 中指定的路径`DrawPath`方法始终为描边，如果`SKPaint`对象都有其`PathEffect`属性设置为 1 D 路径效果。 请注意，`pathPaint`对象没有`Style`设置，它通常默认为`Fill`，但路径为无论描边。
 
@@ -410,7 +410,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 如果`advance`参数小于大小的路径，则复制的路径可以重叠。 这可能导致一些有趣的效果。 **链接链**页显示的重叠圆圈看起来类似于一个链接的链，挂起 catenary 的独特形状中的一系列：
 
-[![](effects-images/linkedchain-small.png "三重的链链接页屏幕截图")](effects-images/linkedchain-large.png#lightbox "带来三倍的链链接页屏幕截图")
+[![链接链页面的三向屏幕截图](effects-images/linkedchain-small.png)](effects-images/linkedchain-large.png#lightbox)
 
 看起来非常接近，将看到这些并不实际圆圈。 链中的每个链接是两个弧，大小调整和定位使它们看起来与相邻的链接进行连接。
 
@@ -418,13 +418,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `y = a · cosh(x / a)`
 
-*Cosh*是双曲余弦值函数。 有关*x*等于 0， *cosh*为零并*y*等于  。 这是 catenary 的中心。 像*余弦*函数， *cosh*称为*甚至*，这意味着， *cosh(–x)* 等于*cosh(x)* ，并增加正或负参数值增加。 这些值描述窗体的 catenary 边的曲线。
+*Cosh*是双曲余弦值函数。 有关*x*等于 0， *cosh*为零并*y*等于。 这是 catenary 的中心。 像*余弦*函数， *cosh*称为*甚至*，这意味着， *cosh(–x)* 等于*cosh(x)* ，并增加正或负参数值增加。 这些值描述窗体的 catenary 边的曲线。
 
-查找适当的值  以适应到手机的页的尺寸 catenary 不是直接计算。 如果*w*并*h*宽度和高度的矩形的最佳值  满足以下公式：
+查找适当的值以适应到手机的页的尺寸 catenary 不是直接计算。 如果*w*并*h*宽度和高度的矩形的最佳值满足以下公式：
 
 `cosh(w / 2 / a) = 1 + h / a`
 
-中的以下方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)类包含该相等性指两个表达式左侧和右侧的等号作为`left`和`right`。 值较小  ，`left`大于`right`; 对于较大的值  ，`left`是小于`right`。 `while`用于限制中的循环上的一个最佳值  :
+中的以下方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)类包含该相等性指两个表达式左侧和右侧的等号作为`left`和`right`。 值较小，`left`大于`right`; 对于较大的值，`left`是小于`right`。 `while`用于限制中的循环上的一个最佳值:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -501,7 +501,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-主要工作`PaintSurface`处理程序是创建 catenary 本身的路径。 确定最佳之后  并将其存储在`optA`变量时，它还需要计算从窗口顶部的偏移量。 然后，它可能会累积一系列`SKPoint`成一个路径中，打开的和绘制并用先前创建的路径值 catenary`SKPaint`对象：
+主要工作`PaintSurface`处理程序是创建 catenary 本身的路径。 确定最佳之后并将其存储在`optA`变量时，它还需要计算从窗口顶部的偏移量。 然后，它可能会累积一系列`SKPoint`成一个路径中，打开的和绘制并用先前创建的路径值 catenary`SKPaint`对象：
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -549,7 +549,7 @@ public class LinkedChainPage : ContentPage
 
 **传送带**页创建类似于曲线的顶部和底部大小调整窗口的尺寸为外型传送带的路径。 该路径使用简单描边`SKPaint`对象 20 像素宽和彩色的灰色，然后能与另一个再次描边`SKPaint`对象`SKPathEffect`对象引用类似于较小范围的路径：
 
-[![](effects-images/conveyorbelt-small.png "三重的传送带页屏幕截图")](effects-images/conveyorbelt-large.png#lightbox "带来三倍的传送带页屏幕截图")
+[![传送带页面的三向屏幕截图](effects-images/conveyorbelt-small.png)](effects-images/conveyorbelt-large.png#lightbox)
 
 （0，0） 存储桶路径的终结点是句柄，因此，在`phase`参数进行动画处理、 存储桶似乎围绕传送带，可能会在底部的水 scooping 和顶部转储一下。
 
@@ -798,7 +798,7 @@ public class HatchFillPage : ContentPage
 
 `PaintSurface`处理程序结束调用来只需绘制圆角的矩形，以便您可以看到红色和蓝色阴影线条与差异：
 
-[![](effects-images/hatchfill-small.png "阴影填充页面的三个屏幕截图")](effects-images/hatchfill-large.png#lightbox "阴影填充页面的三个屏幕截图")
+[!["阴影填充" 页的三向屏幕截图](effects-images/hatchfill-small.png)](effects-images/hatchfill-large.png#lightbox)
 
 Android 屏幕并不真正如下所示:屏幕截图的缩放导致了细的红线和细的空格, 以将其合并到看似更宽的红线和更宽的空间。
 
@@ -852,7 +852,7 @@ public class PathTileFillPage : ContentPage
 
 在中`PaintSurface`处理程序，`SKPathEffect.Create2DPath`调用设置为 64 导致 80 像素方形磁贴以重叠的水平和垂直间距。 幸运的是，该路径类似于填数游戏块，可以很好地结合使用相邻的磁贴：
 
-[![](effects-images/pathtilefill-small.png "路径磁贴填充页面的三个屏幕截图")](effects-images/pathtilefill-large.png#lightbox "路径磁贴填充页面的三个屏幕截图")
+[![路径磁贴填充页的三向屏幕截图](effects-images/pathtilefill-small.png)](effects-images/pathtilefill-large.png#lightbox)
 
 原始的屏幕截图中缩放导致某些扭曲，特别是在 Android 屏幕上。
 
@@ -927,7 +927,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 可以使用这种效果与描画或基于填充`Style`属性的`SKPaint`对象。 运行此处：
 
-[![](effects-images/anotherroundedheptagon-small.png "三重的另一个舍入 Heptagon 页屏幕截图")](effects-images/anotherroundedheptagon-large.png#lightbox "带来三倍的另一个舍入 Heptagon 页屏幕截图")
+[![另一个圆形 Heptagon 页面的三向屏幕截图](effects-images/anotherroundedheptagon-small.png)](effects-images/anotherroundedheptagon-large.png#lightbox)
 
 您将看到此圆角的 heptagon 等同于早期版本的程序。 如果需要更可信的圆角半径真正为 100 而不是 50 中指定`SKPathEffect.CreateCorner`调用时，您可以取消注释最后一条语句在程序就会看到一个 100 radius 圆角上叠加。
 
@@ -946,7 +946,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 
 **抖动试验**页面允许您试验描画矩形中的不同值：
 
-[![](effects-images/jitterexperiment-small.png "三重抖动试验页面的屏幕截图")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
+[![JitterExperiment 页面的三向屏幕截图](effects-images/jitterexperiment-small.png)](effects-images/jitterexperiment-large.png#lightbox)
 
 该程序非常简单。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)文件实例化两个`Slider`元素和一个`SKCanvasView`:
 
@@ -1072,7 +1072,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 此处它在横向模式下运行：
 
-[![](effects-images/jittertext-small.png "三重抖动文本页面的屏幕截图")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
+[![JitterText 页面的三向屏幕截图](effects-images/jittertext-small.png)](effects-images/jittertext-large.png#lightbox)
 
 ## <a name="path-outlining"></a>路径大纲显示
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 只有前两个参数是必需的。 方法访问引用的路径`src`自变量，修改基于中的笔划属性的路径数据`SKPaint`对象 (包括`PathEffect`属性)，然后将结果转换为`dst`路径。 `resScale`参数允许的精度来创建较小的目标路径，减少和`cullRect`参数可以消除外部矩形轮廓。
 
-此方法的一个基本用途根本不涉及路径效果:`SKPaintStyle.Stroke` `PathEffect` `GetFillPath`如果对象的属性设置为, 并且没有其集, 则创建一个路径, 该路径表示源路径的轮廓, 就像它已被  `Style` `SKPaint`绘制属性。
+此方法的一个基本用途根本不涉及路径效果:`SKPaintStyle.Stroke` `PathEffect` `GetFillPath`如果对象的属性设置为, 并且没有其集, 则创建一个路径, 该路径表示源路径的轮廓, 就像它已被 `Style` `SKPaint`绘制属性。
 
 例如，如果`src`路径是一个简单的圆形的半径 500，并`SKPaint`对象指定的笔划宽度为 100，则`dst`路径将成为一个半径为 550 一个半径为 450，另两个同心环。 调用的方法`GetFillPath`因为填充这`dst`路径是相同描画`src`路径。 但您还可以绘制笔画`dst`路径以查看路径轮廓。
 
@@ -1173,11 +1173,11 @@ public partial class TapToOutlineThePathPage : ContentPage
 
 该圆形填充区域和描边按预期的方式：
 
-[![](effects-images/taptooutlinethepathnormal-small.png "正常的点击到轮廓路径页面的三个屏幕截图")](effects-images/taptooutlinethepathnormal-large.png#lightbox "正常的点击到轮廓路径页面的三个屏幕截图")
+[![正常点击以概述路径页面的三向屏幕截图](effects-images/taptooutlinethepathnormal-small.png)](effects-images/taptooutlinethepathnormal-large.png#lightbox)
 
 点击屏幕上，当`outlineThePath`设置为`true`，并`PaintSurface`处理程序将创建全新`SKPath`对象，并将其用作对的调用中的目标路径`GetFillPath`上`redThickStroke`绘制对象。 然后填充区域和描边与该目标路径`redThinStroke`，这会导致在下面的示例：
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "三重的外边框的点击到轮廓路径页屏幕截图")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "外边框的点击到轮廓路径页面的三个屏幕截图")
+[![边框点击以概述 "路径" 页的三向屏幕截图](effects-images/taptooutlinethepathoutlined-small.png)](effects-images/taptooutlinethepathoutlined-large.png#lightbox)
 
 两个红色圆圈清楚地表示原始循环路径的已转换为两个循环分布图。
 
@@ -1241,7 +1241,7 @@ public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner
 
 一个明显的用途`CreateSum`是定义`SKPaint`对象，它使用一条路径的效果，填充路径和描边与另一个路径效果的路径。 了这一点**框架中的猫**示例，显示带圆齿形边缘的范围内的猫数组：
 
-[![](effects-images/catsinframe-small.png "三重猫在框架页屏幕截图")](effects-images/catsinframe-large.png#lightbox "带来三倍的猫在帧页屏幕截图")
+[![框架页中猫的三向屏幕截图](effects-images/catsinframe-small.png)](effects-images/catsinframe-large.png#lightbox)
 
 [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)类首先定义多个字段。 你可能会识别中的第一个字段[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)类派生[ **SVG 路径数据**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)一文。 第二个路径基于行和弧线的帧扇贝模式：
 
@@ -1409,7 +1409,7 @@ public class DashedHatchLinesPage : ContentPage
 
 如您所发现，阴影线不是精确地限制为内部的区域，并在此示例中，它们始终以在整个短划线左侧：
 
-[![](effects-images/dashedhatchlines-small.png "三倍的虚线阴影页屏幕截图")](effects-images/dashedhatchlines-large.png#lightbox "带来三倍的虚线阴影页屏幕截图")
+[![虚线影线线条页面的三向屏幕截图](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 现在，您所见，范围从简单的点和短划线到奇怪的组合路径效果，使用您的想象力，并查看可以创建。
 

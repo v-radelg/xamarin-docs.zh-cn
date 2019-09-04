@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 543a94cbe1c882aba6b005427eb11f52e6a40327
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: badb65ace8d2ab68e102c9be127abe998a602091
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653769"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225851"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>在 Xamarin 中使用核心图形和核心动画
 
@@ -28,18 +28,18 @@ ms.locfileid: "68653769"
 
 
 1. 在`DemoView`中, `CGPath`将变量添加到类, 并在构造函数中对其进行实例化。 还声明了`CGPoint`两个`initialPoint`变量`latestPoint`, 和, 我们将使用这些变量来捕获构造路径时使用的触摸点:
-    
+
     ```csharp
     public class DemoView : UIView
     {
         CGPath path;
         CGPoint initialPoint;
         CGPoint latestPoint;
-    
+
         public DemoView ()
         {
             BackgroundColor = UIColor.White;
-    
+
             path = new CGPath ();
         }
     }
@@ -57,22 +57,22 @@ ms.locfileid: "68653769"
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
-    
+
         base.TouchesBegan (touches, evt);
-    
+
         UITouch touch = touches.AnyObject as UITouch;
-        
+
         if (touch != null) {
             initialPoint = touch.LocationInView (this);
         }
     }
-    
+
     public override void TouchesMoved (NSSet touches, UIEvent evt){
-    
+
         base.TouchesMoved (touches, evt);
-    
+
         UITouch touch = touches.AnyObject as UITouch;
-        
+
         if (touch != null) {
             latestPoint = touch.LocationInView (this);
             SetNeedsDisplay ();
@@ -86,30 +86,30 @@ ms.locfileid: "68653769"
 
     ```csharp
     public override void Draw (CGRect rect){
-    
+
         base.Draw (rect);
-    
+
         if (!initialPoint.IsEmpty) {
-    
+
             //get graphics context
             using(CGContext g = UIGraphics.GetCurrentContext ()){
-                    
+
                 //set up drawing attributes
                 g.SetLineWidth (2);
                 UIColor.Red.SetStroke ();
-    
+
                 //add lines to the touch points
                 if (path.IsEmpty) {
                     path.AddLines (new CGPoint[]{initialPoint, latestPoint});
                 } else {
                     path.AddLineToPoint (latestPoint);
                 }
-            
+
                 //use a dashed line
                 g.SetLineDash (0, new nfloat[] { 5, 2 * (nfloat)Math.PI });
-                                
+
                 //add geometry to graphics context and draw it
-                g.AddPath (path);       
+                g.AddPath (path);
                 g.DrawPath (CGPathDrawingMode.Stroke);
             }
         }
@@ -130,12 +130,12 @@ ms.locfileid: "68653769"
     public class DemoView : UIView
         {
             …
-    
+
             CALayer layer;
-    
+
             public DemoView (){
                 …
-    
+
                 //create layer
                 layer = new CALayer ();
                 layer.Bounds = new CGRect (0, 0, 50, 50);

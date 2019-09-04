@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: aa6db1403a34b7228352e12e1b2f954308db3744
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3f36ef7541ea00e2a08733c9d47d252477da787a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528501"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227058"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自定义控件
 
@@ -98,7 +98,7 @@ public class CustomView : UIView {
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
 public class CustomView : UIView {
-    
+
     [Export ("Counter"), Browsable (true)]
     public int Counter {get; set;}
 
@@ -179,7 +179,8 @@ public class DesignerAwareLabel : UILabel, IComponent {
 
  ![](ios-designable-controls-overview-images/exception-box.png "错误的控件作为红色占位符和异常详细信息")
 
-如果调试符号可用于控件, 则跟踪将包含文件名和行号。 双击堆栈跟踪中的某一行将跳转到源代码中的该行。
+如果调试符号可用于控件, 则跟踪将包含文件名和行号。
+双击堆栈跟踪中的某一行将跳转到源代码中的该行。
 
 如果设计器无法隔离出错的控件, 则会在设计图面顶部显示一条警告消息:
 

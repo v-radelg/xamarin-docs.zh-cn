@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: a1fae280f42f91fce4b4fe28c3f728cf14c7a21c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528899"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228212"
 ---
 # <a name="listview-performance"></a>ListView 性能
 
@@ -173,9 +173,9 @@ public class CustomListView : ListView
 - 避免将深度嵌套的布局层次结构。 使用`AbsoluteLayout`或`Grid`以帮助减少嵌套。
 - 避免特定`LayoutOptions`而不`Fill`（填充是便宜计算）。
 - 避免将置于`ListView`内`ScrollView`原因如下：
-    - `ListView`实现其自己的滚动。
-    - `ListView`不会收到任何手势，因为父对象将处理`ScrollView`。
-    - `ListView`可以提供自定义的页眉和页脚滚动的列表中，有可能，提供的功能元素`ScrollView`所用的。 有关详细信息请参阅[页眉和页脚](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)。
+  - `ListView`实现其自己的滚动。
+  - `ListView`不会收到任何手势，因为父对象将处理`ScrollView`。
+  - `ListView`可以提供自定义的页眉和页脚滚动的列表中，有可能，提供的功能元素`ScrollView`所用的。 有关详细信息请参阅[页眉和页脚](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)。
 - 如果您需要在单元中提供一个非常具体的复杂设计，请考虑自定义呈现器。
 
 `AbsoluteLayout` 有可能执行而无需单个度量值调用的布局。 这样就非常强大的性能。 如果`AbsoluteLayout`不能使用，请考虑[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接传递约束将远远快于使用 API 的表达式。 这是因为表达式 API 使用 JIT，并在 iOS 上的树包含解释，这是速度较慢。 表达式 API 是适用于页面布局，只是要求初始布局和旋转，但在`ListView`，其中在滚动，过程不断地运行会损害性能。

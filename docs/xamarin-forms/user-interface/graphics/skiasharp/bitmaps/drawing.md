@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 68d6cb1df8557b6055feb81b21ed5513592c71c4
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 1e2b50a260ed5f5bbbbfc3c4ba55a33075262f25
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198148"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228101"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>创建并在 SkiaSharp 位图上绘制
 
@@ -24,7 +24,7 @@ ms.locfileid: "70198148"
 SKBitmap bitmap = new SKBitmap(width, height);
 ```
 
-`width`和`height`参数都是整数，指定位图的像素尺寸。 此构造函数创建一个全彩色位图使用每像素 4 个字节： 1 个字节每个为红色、 绿色、 蓝色和 alpha （透明度） 组件。 
+`width`和`height`参数都是整数，指定位图的像素尺寸。 此构造函数创建一个全彩色位图使用每像素 4 个字节： 1 个字节每个为红色、 绿色、 蓝色和 alpha （透明度） 组件。
 
 创建新的位图后，需要获取一些位图的图面上。 您通常做这两种方法之一：
 
@@ -56,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然后可以显示位图。 在更高版本时，该程序可以创建一个新`SKCanvas`相同位图，并在其上绘制的更多基于对象。
 
-**Hello 位图**页面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序写入的文本"Hello，位图 ！" 位图和显示的位图多次。  
+**Hello 位图**页面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序写入的文本"Hello，位图 ！" 位图和显示的位图多次。
 
 构造函数`HelloBitmapPage`首先创建`SKPaint`用于显示文本的对象。 它会确定文本字符串的维度并使用这些维度创建一个位图。 然后，创建`SKCanvas`对象，基于该位图，调用`Clear`，然后调用`DrawText`。 它始终是一个好办法调用`Clear`与新位图因为新创建的位图可能包含随机数据。
 
@@ -88,7 +88,7 @@ public partial class HelloBitmapPage : ContentPage
             }
         }
 
-        // Create SKCanvasView to view result 
+        // Create SKCanvasView to view result
         SKCanvasView canvasView = new SKCanvasView();
         canvasView.PaintSurface += OnCanvasViewPaintSurface;
         Content = canvasView;
@@ -123,7 +123,7 @@ public partial class HelloBitmapPage : ContentPage
 
 以下文档`Clear` `SKCanvas`介绍了这些方法:"替换画布的当前剪辑中的所有像素。 使用 "替换" 一词会显示这些方法的重要特征:的`SKCanvas`所有绘制方法都将内容添加到现有的显示图面。 `Clear`方法_替换为_已有。
 
-`Clear` 存在两个不同的版本： 
+`Clear` 存在两个不同的版本：
 
 - [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))方法替换`SKColor`参数替换该颜色的像素为单位为像素的显示图面。
 
@@ -167,7 +167,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Gray8` &mdash; 每个像素都是表示从黑色到白色的灰影的 8 位
 - `RgbaF16` &mdash; 每个像素都是 64 位，使用红、 绿、 蓝色和 alpha 以 16 位浮点格式
 
-其中每个像素都是 32 像素 （4 字节） 的两个格式通常被称为_全彩色_格式。 从视频时显示自己的时间的其他格式日期的许多都不能够完整的颜色。 限制颜色位图比较适合于这些显示并允许位图，以占用内存较少的空间。 
+其中每个像素都是 32 像素 （4 字节） 的两个格式通常被称为_全彩色_格式。 从视频时显示自己的时间的其他格式日期的许多都不能够完整的颜色。 限制颜色位图比较适合于这些显示并允许位图，以占用内存较少的空间。
 
 如今，编程人员几乎总是使用全彩色位图并不去费神具有其他格式。 例外情况是`RgbaF16`允许更大的颜色分辨率比甚至完整颜色格式的格式。 但是，此格式用于特殊的用途，如医疗图像处理，并且没有太大意义与标准全彩色显示一起使用时。
 
@@ -197,7 +197,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="drawing-on-existing-bitmaps"></a>在现有的位图上绘制
 
-不需要创建新的位图来绘制它。 此外可以绘制现有位图。 
+不需要创建新的位图来绘制它。 此外可以绘制现有位图。
 
 **Monkey 髭**页上使用其构造函数来加载**MonkeyFace.png**映像。 然后，创建`SKCanvas`对象基于该位图，并使用`SKPaint`和`SKPath`要在其上绘制髭对象：
 
@@ -236,7 +236,7 @@ public partial class MonkeyMoustachePage : ContentPage
             }
         }
 
-        // Create SKCanvasView to view result 
+        // Create SKCanvasView to view result
         SKCanvasView canvasView = new SKCanvasView();
         canvasView.PaintSurface += OnCanvasViewPaintSurface;
         Content = canvasView;
@@ -268,7 +268,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ![山地车的攀岩运动员](drawing-images/MountainClimbers.jpg "Mountain 攀岩运动员")
 
-假设从左侧 monkey，若要发布此照片，没有接收到的权限。 一种解决方案是掩盖使用一种称为技术的 monkey 的人脸_pixelization_。 因此不能进行功能所面临的像素为单位将替换块的颜色。 颜色的块通常派生自原始图像通过平均对应于这些块的像素的颜色。 但无需执行此平均计算自己。 它自动发生时将位图复制到较小的像素尺寸。 
+假设从左侧 monkey，若要发布此照片，没有接收到的权限。 一种解决方案是掩盖使用一种称为技术的 monkey 的人脸_pixelization_。 因此不能进行功能所面临的像素为单位将替换块的颜色。 颜色的块通常派生自原始图像通过平均对应于这些块的像素的颜色。 但无需执行此平均计算自己。 它自动发生时将位图复制到较小的像素尺寸。
 
 左的 monkey 的人脸占用大约 72 像素正方形区域使用点 （112，238） 在左上角。 让我们使用其中每个为 8-8 像素正方形的彩色砖块 9 的 9 数组来替代该 72 像素的方形区域。
 
@@ -312,7 +312,7 @@ public class PixelizedImagePage : ContentPage
             canvas.DrawBitmap(originalBitmap, new SKPoint());
 
             // Draw tiny bitmap to cover face
-            canvas.DrawBitmap(faceBitmap, 
+            canvas.DrawBitmap(faceBitmap,
                               new SKRect(112, 238, 184, 310));  // destination
         }
 
@@ -369,7 +369,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
     canvas.RotateDegrees(90);
     canvas.DrawBitmap(bitmap, new SKPoint());
 }
-```                        
+```
 
 而此处是旋转逆时针旋转 90 度的类似函数：
 
@@ -402,7 +402,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-但是，一般情况下，此逻辑将旋转位图的边角裁剪。 更好的方法是计算使用三角函数要包含这些边角旋转位图的大小。 
+但是，一般情况下，此逻辑将旋转位图的边角裁剪。 更好的方法是计算使用三角函数要包含这些边角旋转位图的大小。
 
 中显示此三角函数**位图轮显**页。 XAML 文件实例化`SKCanvasView`和一个`Slider`的范围可以介于 0 到 360 度与`Label`显示当前值：
 
@@ -436,7 +436,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 ```csharp
 public partial class BitmapRotatorPage : ContentPage
 {
-    static readonly SKBitmap originalBitmap = 
+    static readonly SKBitmap originalBitmap =
         BitmapExtensions.LoadBitmapResource(typeof(BitmapRotatorPage),
             "SkiaSharpFormsDemos.Media.Banana.jpg");
 
@@ -514,7 +514,7 @@ public partial class BitmapRotatorPage : ContentPage
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <skia:SKCanvasView x:Name="canvasView"
                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                            PaintSurface="OnCanvasViewPaintSurface" />
@@ -532,7 +532,7 @@ public partial class BitmapRotatorPage : ContentPage
 </ContentPage>
 ```
 
-代码隐藏文件实现在这两个操作`Clicked`按钮处理程序： 
+代码隐藏文件实现在这两个操作`Clicked`按钮处理程序：
 
 ```csharp
 public partial class BitmapFlipperPage : ContentPage
@@ -588,7 +588,7 @@ public partial class BitmapFlipperPage : ContentPage
 }
 ```
 
-垂直翻转通过使用的水平比例因子缩放转换&ndash;1。 缩放的中心是位图的垂直居中。 水平翻转是一种缩放转换使用的垂直比例因子&ndash;1。 
+垂直翻转通过使用的水平比例因子缩放转换&ndash;1。 缩放的中心是位图的垂直居中。 水平翻转是一种缩放转换使用的垂直比例因子&ndash;1。
 
 您可以看到从 monkey 的 shirt 反向时，翻转不旋转相同。 但如右侧 UWP 屏幕截图所示，水平和垂直翻转都是相同旋转 180 度：
 

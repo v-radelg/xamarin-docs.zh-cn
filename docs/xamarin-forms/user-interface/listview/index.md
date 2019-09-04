@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 4aae2a206f07ea6caa7fc0d7530fb9fec05ce5f0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648427"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228019"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
@@ -21,7 +21,7 @@ ms.locfileid: "68648427"
 [`ListView`](xref:Xamarin.Forms.ListView)是用于显示数据列表的视图, 特别是需要滚动的长列表。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个视图, 用于显示使用不同布局规范的数据列表。 它旨在提供更灵活、更高的性能替代方法[`ListView`](xref:Xamarin.Forms.ListView)。 有关详细信息, 请参阅[Xamarin. Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同布局规范显示数据列表的视图。 它旨在提供更灵活、更高的性能替代方法[`ListView`](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>用例
 
@@ -41,8 +41,8 @@ ListView 有多个组件可用于执行每个平台的本机功能。 下面描�
 
 - **[单元格](customizing-cell-appearance.md)** &ndash; ListView 中的数据也会出现在单元格。 每个单元格对应于一行数据。 有内置的单元格可供选择，也可以定义自己的自定义单元格。 内置和自定义单元格可以是在 XAML 或代码中使用或定义。
   - **[内置](customizing-cell-appearance.md#Built_in_Cells)** &ndash;内置的单元格，尤其是 TextCell 和 ImageCell，可以有很高的性能，因为它们对应于每个平台上的本机控件。
-       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;显示文本，并且可选择带有详细信息文本的字符串。 详细信息的文本呈现为与强调文字颜色较小的字体中的第二个行。
-       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;显示文本与图像。 将显示为与左侧图像 TextCell。
+    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;显示文本，并且可选择带有详细信息文本的字符串。 详细信息的文本呈现为与强调文字颜色较小的字体中的第二个行。
+    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;显示文本与图像。 将显示为与左侧图像 TextCell。
   - **[自定义单元格](customizing-cell-appearance.md#customcells)** &ndash;时需要提供复杂的数据，自定义单元格是很好。 例如，自定义视图可用来提供包括专辑和艺术家的歌曲的列表：
 
 ![](images/image-cell-default.png "使用 ImageCells ListView")

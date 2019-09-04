@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b7cd9445ec9f28211037608ab04ffc45bec705c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656180"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227970"
 ---
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文本
 
@@ -34,7 +34,7 @@ Xamarin.Forms 具有用于处理文本的三个主要视图：
 
 `Label`视图用于显示文本。 它可以显示多行文本或单个文本行。 `Label` 可以提供具有多个中内嵌使用的格式设置选项的文本。 标签视图可以包装或截断时它不适合在同一行的文本。
 
-![](images/label.png "标签示例")
+![标签示例](images/label.png)
 
 请参阅[标签](label.md)文章更多详细信息。
 
@@ -46,7 +46,7 @@ Xamarin.Forms 具有用于处理文本的三个主要视图：
 
 `Entry` 用来接受的单行文本输入。 `Entry` 产品/服务控制颜色和字体。 `Entry` 具有密码模式，可以显示占位符文本，直到输入文本。
 
-![](images/entry.png "条目示例")
+![条目示例](images/entry.png)
 
 请参阅[条目](entry.md)文章了解详细信息。
 
@@ -58,7 +58,7 @@ Xamarin.Forms 具有用于处理文本的三个主要视图：
 
 `Editor` 用于接受多行文本输入。 `Editor` 产品/服务控制颜色和字体。
 
-![](images/editor.png "编辑器示例")
+![编辑器示例](images/editor.png)
 
 请参阅[编辑器](editor.md)文章了解详细信息。
 

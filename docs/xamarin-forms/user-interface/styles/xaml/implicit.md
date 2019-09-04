@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 328063fd6924902738722813cfb961e56af5385e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cdbfaafdac8f965adaf4b840b568154e40ef7e10
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644479"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228182"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的隐式样式
 
@@ -51,9 +51,9 @@ _隐式样式是指可供所有控件的相同的目标类型，而无需每个�
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义单个*隐式*样式应用于页面的[ `Entry` ](xref:Xamarin.Forms.Entry)实例。 `Style`用于显示黄色背景，蓝色文本，同时也要设置其他外观选项。 `Style`添加到页面的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)而无需指定`x:Key`属性。 因此，`Style`适用于所有`Entry`隐式实例，因为它们匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性`Style`完全。 但是，`Style`不应用于`CustomEntry`实例，这是子类化`Entry`。 这会导致下面的屏幕截图中所示的外观：
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义单个*隐式*样式应用于页面的[ `Entry` ](xref:Xamarin.Forms.Entry)实例。 `Style`用于显示黄色背景，蓝色文本，同时也要设置其他外观选项。 `Style`添加到页面的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)而无需指定`x:Key`属性。 因此，`Style`适用于所有`Entry`隐式实例，因为它们匹配[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)属性`Style`完全。 但是，`Style`不应用于`CustomEntry`实例，这是子类化`Entry`。 这会导致如以下屏幕截图中所示的外观：
 
-[![](implicit-images/implicit-styles.png "隐式样式示例")](implicit-images/implicit-styles-large.png#lightbox "隐式样式示例")
+[![隐式样式示例](implicit-images/implicit-styles.png)](implicit-images/implicit-styles-large.png#lightbox)
 
 此外，第四个[ `Entry` ](xref:Xamarin.Forms.Entry)重写[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)并[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)属性隐式样式应用到不同`Color`值。
 

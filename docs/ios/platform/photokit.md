@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 5e5cc20e9fbeaf2b00e022ccdbf67286aed6d5ef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3920445c234344fe7f2a1cdd93ed7f4f6405727d
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528814"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226580"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin 中的 PhotoKit
 
@@ -25,13 +25,13 @@ PhotoKit 在它调用模型对象的内容中表示这些资产。 代表照片�
 
 ## <a name="querying-model-data"></a>查询模型数据
 
-使用 PhotoKit 可以轻松地通过各种 fetch 方法来查询模型数据。 例如, 若要检索所有图像, 请调用`PFAsset.Fetch`, `PHAssetMediaType.Image`传递媒体类型。
+使用 PhotoKit 可以轻松地通过各种 fetch 方法来查询模型数据。 例如, 若要检索所有图像, 请调用`PHAsset.Fetch`, `PHAssetMediaType.Image`传递媒体类型。
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-然后`PHFetchResult` , 实例将包含表示图像`PFAsset`的所有实例。 若要获取图像本身, 请使用`PHImageManager` (或缓存`PHCachingImageManager`版本) 通过调用`RequestImageForAsset`来发出对图像的请求。 例如, 以下代码将为中`PHFetchResult`的每个资产检索一个图像, 以便在 "集合" 视图单元格中显示:
+然后`PHFetchResult` , 实例将包含表示图像`PHAsset`的所有实例。 若要获取图像本身, 请使用`PHImageManager` (或缓存`PHCachingImageManager`版本) 通过调用`RequestImageForAsset`来发出对图像的请求。 例如, 以下代码将为中`PHFetchResult`的每个资产检索一个图像, 以便在 "集合" 视图单元格中显示:
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)

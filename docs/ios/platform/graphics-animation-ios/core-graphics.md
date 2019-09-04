@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a5587d5a4ed5201b8f09dfa3b4d2d292abd008d3
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 36b0526f549e0439543d762cd9390b72ce93825f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889846"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225992"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心图形
 
 _本文介绍核心图形 iOS 框架。它演示了如何使用核心图形绘制几何、图像和 Pdf。_
 
-iOS 包括[*核心图形*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)框架以提供低级别的绘图支持。 这些框架可实现 UIKit 中丰富的图形功能。 
+iOS 包括[*核心图形*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)框架以提供低级别的绘图支持。 这些框架可实现 UIKit 中丰富的图形功能。
 
 核心图形是一种低级别的2D 图形框架, 可用于与设备无关的图形。 UIKit 中的所有2D 绘图均使用内部核心图形。
 
@@ -77,7 +77,7 @@ public class TriangleView : UIView
 ```csharp
 //get graphics context
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
-            
+
     //set up drawing attributes
     g.SetLineWidth (10);
     UIColor.Blue.SetFill ();
@@ -88,13 +88,13 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 
     path.AddLines (new CGPoint[]{
     new CGPoint (100, 200),
-    new CGPoint (160, 100), 
+    new CGPoint (160, 100),
     new CGPoint (220, 200)});
 
     path.CloseSubpath ();
 
     //add geometry to graphics context and draw it
-    g.AddPath (path);       
+    g.AddPath (path);
     g.DrawPath (CGPathDrawingMode.FillStroke);
 }
 ```
@@ -113,7 +113,7 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 g.SetLineWidth (10);
 UIColor.Blue.SetFill ();
 UIColor.Red.SetStroke ();
-``` 
+```
 
 获取图形上下文后, 代码会设置一些属性, 以便在绘制时使用, 如上所示。 在这种情况下, 将设置线条宽度、描边和填充颜色。 然后, 任何后续绘制都将使用这些属性, 因为这些属性在图形上下文的状态中进行维护。
 
@@ -124,11 +124,11 @@ var path = new CGPath ();
 
 path.AddLines (new CGPoint[]{
 new CGPoint (100, 200),
-new CGPoint (160, 100), 
+new CGPoint (160, 100),
 new CGPoint (220, 200)});
 
 path.CloseSubpath ();
-``` 
+```
 
 创建路径后, 会将其添加到图形上下文, 以便调用和分别`AddPath`调用`DrawPath`和。
 
@@ -159,9 +159,9 @@ g.Clip ();
 
 // draw a linear gradient
     g.DrawLinearGradient (
-        gradient, 
-        new CGPoint (path.BoundingBox.Left, path.BoundingBox.Top), 
-        new CGPoint (path.BoundingBox.Right, path.BoundingBox.Bottom), 
+        gradient,
+        new CGPoint (path.BoundingBox.Left, path.BoundingBox.Top),
+        new CGPoint (path.BoundingBox.Right, path.BoundingBox.Bottom),
         CGGradientDrawingOptions.DrawsBeforeStartLocation);
     }
 ```
@@ -182,7 +182,7 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 在任何绘图操作之前添加此代码将导致虚线笔划10个单位长, 并在短划线之间添加4个单元间距, 如下所示:
 
  ![](core-graphics-images/02-dashed-stroke.png "在任何绘图操作之前添加此代码会导致虚线笔划")
- 
+
 请注意, 在 Xamarin 中使用 Unified API 时, 数组类型需要是`nfloat`, 并且还需要显式转换为 Math。
 
 <a name="Drawing_Images_and_Text"/>
@@ -214,14 +214,14 @@ public override void Draw (CGRect rect)
 public override void Draw (CGRect rect)
 {
     base.Draw (rect);
-    
+
     using (CGContext g = UIGraphics.GetCurrentContext ()) {
 
         // scale and translate the CTM so the image appears upright
         g.ScaleCTM (1, -1);
         g.TranslateCTM (0, -Bounds.Height);
         g.DrawImage (rect, UIImage.FromFile ("MyImage.png").CGImage);
-}   
+}
 ```
 
 然后, 生成的图像显示为直立的:
@@ -239,7 +239,7 @@ public override void Draw (CGRect rect)
 public override void Draw (RectangleF rect)
 {
     base.Draw (rect);
-    
+
     // image drawing code omitted for brevity ...
 
     // translate the CTM by the font size so it displays on screen
@@ -308,7 +308,7 @@ UIImage DrawTriangle ()
 
         path.AddLines(new CGPoint[]{
             new CGPoint(100,200),
-            new CGPoint(160,100), 
+            new CGPoint(160,100),
             new CGPoint(220,200)});
 
         path.CloseSubpath();
@@ -320,7 +320,7 @@ UIImage DrawTriangle ()
         //get a UIImage from the context
         triangleImage = UIGraphics.GetImageFromCurrentImageContext ();
     }
-    
+
     return triangleImage;
 }
 ```
@@ -358,7 +358,7 @@ public class PDFView : UIView
         //create a CGPDFDocument from file.pdf included in the main bundle
         pdfDoc = CGPDFDocument.FromFile ("file.pdf");
     }
-  
+
      public override void Draw (Rectangle rect)
     {
         ...
@@ -372,21 +372,21 @@ public class PDFView : UIView
 public override void Draw (CGRect rect)
 {
     base.Draw (rect);
-        
+
     //flip the CTM so the PDF will be drawn upright
     using (CGContext g = UIGraphics.GetCurrentContext ()) {
         g.TranslateCTM (0, Bounds.Height);
         g.ScaleCTM (1, -1);
-        
+
         // render the first page of the PDF
         using (CGPDFPage pdfPage = pdfDoc.GetPage (1)) {
-            
+
         //get the affine transform that defines where the PDF is drawn
         CGAffineTransform t = pdfPage.GetDrawingTransform (CGPDFBox.Crop, rect, 0, true);
-        
+
         //concatenate the pdf transform with the CTM for display in the view
         g.ConcatCTM (t);
-        
+
         //draw the pdf page
         g.DrawPDFPage (pdfPage);
         }
@@ -409,14 +409,14 @@ UIGraphics.BeginPDFContext (data, CGRect.Empty, null);
 
 //start a PDF page
 UIGraphics.BeginPDFPage ();
-       
+
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
     g.ScaleCTM (1, -1);
-    g.TranslateCTM (0, -25);      
+    g.TranslateCTM (0, -25);
     g.SelectFont ("Helvetica", 25, CGTextEncoding.MacRoman);
     g.ShowText ("Hello Core Graphics");
     }
-    
+
 //complete a PDF page
 UIGraphics.EndPDFContent ();
 ```

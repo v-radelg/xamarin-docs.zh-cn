@@ -6,12 +6,12 @@ ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
 author: chamons
 ms.author: chhamo
 ms.date: 04/18/2018
-ms.openlocfilehash: 7da163e85b04791c276f9cb14f5b21615b7909fb
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 47efbaa12475f627b5963cb6613c3441a1d96aac
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200158"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227838"
 ---
 # <a name="installing-net-embedding"></a>安装 .NET 嵌入
 
@@ -32,12 +32,12 @@ ms.locfileid: "70200158"
 - 打开终端 (macOS) 或命令提示符 (Windows)
 - 将目录更改为你的解决方案根目录
 - 工具安装在中:
-    - **。/packages/Embeddinator-4000。[VERSION]/tools/objcgen** (目标-C)
-    - **。/packages/Embeddinator-4000。[VERSION]/tools/Embeddinator-4000.exe** (Java/C)
+  - **。/packages/Embeddinator-4000。[VERSION]/tools/objcgen** (目标-C)
+  - **。/packages/Embeddinator-4000。[VERSION]/tools/Embeddinator-4000.exe** (Java/C)
 - 在 macOS 上, 可以直接运行**objcgen** 。
 - 在 Windows 上, 可以直接运行**Embeddinator-4000** 。
 - 在 macOS 上, **Embeddinator-4000**需要运行**mono**:
-    - `mono ./packages/Embeddinator-4000.[VERSION]/tools/Embeddinator-4000.exe`
+  - `mono ./packages/Embeddinator-4000.[VERSION]/tools/Embeddinator-4000.exe`
 
 每个命令调用都需要特定于平台的文档中列出的多个参数。
 
@@ -104,7 +104,7 @@ rm -Rf '${SolutionDir}/output/'
 
 我们实际上会设置相同的内容, 但 Visual Studio 2017 中的菜单略有不同。 Shell 命令也略有不同。
 
-**> 生成事件**"中转到" 项目选项 ", 并将特定于平台的文档中列出的命令输入到"**生成后事件命令行**"框中。 例如:
+**> 生成事件**"中转到" 项目选项 ", 并将特定于平台的文档中列出的命令输入到"**生成后事件命令行**"框中。 例如：
 
 ![Windows 上的 .NET 嵌入](images/visualstudiowindows.png)
  

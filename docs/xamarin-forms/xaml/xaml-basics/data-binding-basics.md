@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655251"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227930"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 数据绑定基础知识
 
@@ -102,7 +102,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 下面是正在运行的程序：
 
-[![](data-binding-basics-images/sliderbinding.png "视图-视图绑定")](data-binding-basics-images/sliderbinding-large.png#lightbox "视图来查看绑定 ")
+[![视图到视图绑定](data-binding-basics-images/sliderbinding.png)](data-binding-basics-images/sliderbinding-large.png#lightbox)
 
 ## <a name="the-binding-mode"></a>绑定模式
 
@@ -201,7 +201,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 但是，对于绑定`Scale`属性是`TwoWay`。 这是因为`Scale`属性具有默认值为 1，并使用`TwoWay`绑定的原因`Slider`初始值设置为 1 而不是 0。 如果该绑定`OneWayToSource`，则`Scale`属性将最初设置为从 0`Slider`默认值。 `Label`会显示，并向用户可能导致一些混淆。
 
- [![](data-binding-basics-images/slidertransforms.png "向后绑定")](data-binding-basics-images/slidertransforms-large.png#lightbox "向后的绑定")
+ [![向后绑定](data-binding-basics-images/slidertransforms.png)](data-binding-basics-images/slidertransforms-large.png#lightbox)
 
  > [!NOTE]
  > [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)类还具有[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)并[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)属性，缩放`VisualElement`x 轴和 y 轴上分别。
@@ -234,7 +234,7 @@ XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColo
 
 结果显示建立的类型的真正项`XamlSamples.NamedColor`:
 
-[![](data-binding-basics-images/listview1.png "绑定到集合")](data-binding-basics-images/listview1-large.png#lightbox "绑定到集合")
+[![绑定到集合](data-binding-basics-images/listview1.png)](data-binding-basics-images/listview1-large.png#lightbox)
 
 它不是太多信息，但`ListView`是可滚动和可选择。
 
@@ -259,7 +259,7 @@ XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColo
 
 `Label`元素设置为`View`属性的`ViewCell`。 (`ViewCell.View`不需要标记，因为`View`属性是 content 属性`ViewCell`。)此标记将显示`FriendlyName`每个属性`NamedColor`对象：
 
-[![](data-binding-basics-images/listview2.png "绑定到集合使用 DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "绑定到使用 DataTemplate 集合")
+[![绑定到具有 System.windows.datatemplate> 的集合](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
 好多了。 现在需要的是项模板的详细信息和实际颜色条理。 若要支持此模板，某些值的对象定义和页面的资源字典中：
 
@@ -396,7 +396,7 @@ namespace XamlSamples
 
 下面是结果：
 
-[![](data-binding-basics-images/listview3.png "绑定到具有 DataTemplate 和转换器的集合")](data-binding-basics-images/listview3-large.png#lightbox "绑定到具有 DataTemplate 和转换器的集合")
+[![绑定到具有 System.windows.datatemplate> 和转换器的集合](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
 `ListView`中处理动态如果执行某些步骤在基础数据，但是仅限中可能出现的更改非常完善。 如果项的集合分配给`ItemsSource`的属性`ListView`在运行时更改 — 的是，如果可以将项添加到或从集合中移除 — 使用`ObservableCollection`这些项的类。 `ObservableCollection` 实现`INotifyCollectionChanged`接口，并`ListView`将安装的处理程序`CollectionChanged`事件。
 

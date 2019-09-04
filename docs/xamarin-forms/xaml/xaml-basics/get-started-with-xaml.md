@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528354"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227966"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -30,15 +30,15 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 
 在 Windows 中，使用 Visual Studio 选择**文件 > 新建 > 项目**菜单中。 在**新的项目**对话框中，选择**Visual C# > 跨平台**在左侧，然后**移动应用 (Xamarin.Forms)** 从中心的列表中。
 
-![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新建项目对话框")
+![“新建项目”对话框](get-started-with-xaml-images/win/newprojectdialog.w157.png)
 
 选择该解决方案的位置，为其提供的名称**XamlSamples** （或所需的任意），然后按**确定**。
 
 在下一个屏幕上，选择**空白应用**模板并 **.NET Standard**代码共享策略：
 
-![](get-started-with-xaml-images/win/newcrossplatformapp.png "新建应用对话框")
+![新建应用程序对话框](get-started-with-xaml-images/win/newcrossplatformapp.png)
 
-按**确定**。
+按“确定”。
 
 在解决方案中创建四个项目： **XamlSamples** .NET Standard 库**XamlSamples.Android**， **XamlSamples.iOS**，和通用 Windows 平台解决方案中， **XamlSamples.UWP**。
 
@@ -46,19 +46,19 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 
 在 Visual Studio for Mac 中，选择**文件 > 新建解决方案**菜单中。 中**新的项目**对话框中，选择**多平台 > 应用**左侧，并**空白窗体应用程序** (*不* **窗体应用**) 从模板列表：
 
-![](get-started-with-xaml-images/mac/newprojectdialog1.png "新建项目对话框 1")
+![新建项目对话框1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
 按**下一步**。
 
 在下一步的对话框中，为项目的命名**XamlSamples** （或所需的任意）。 请确保**使用.NET Standard**单选按钮处于选中状态：
 
-![](get-started-with-xaml-images/mac/newprojectdialog2.png "新建项目对话框 2")
+![新建项目对话框2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
 按**下一步**。
 
 在以下对话框中，可以选择该项目的位置：
 
-![](get-started-with-xaml-images/mac/newprojectdialog3.png "新建项目对话框 3")
+![新项目对话框3](get-started-with-xaml-images/mac/newprojectdialog3.png)
 
 按**创建**
 
@@ -141,7 +141,7 @@ namespace XamlSamples
 
 编译和运行此程序时`Label`元素出现在页面的中心，如 XAML 所示：
 
-[![](get-started-with-xaml-images/xamlsamples.png "默认 Xamarin.Forms 显示")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "默认 Xamarin.Forms 显示")
+[![默认的 Xamarin。窗体显示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 对于更有趣的视觉对象，你只需进行更多有趣的 XAML。
 
@@ -151,13 +151,13 @@ namespace XamlSamples
 
 若要添加其他基于 XAML 的`ContentPage`类到你的项目，选择**XamlSamples** .NET Standard 库项目，然后调用**项目 > 添加新项**菜单项。 在左侧**添加新项**对话框中，选择**Visual C#** 并**Xamarin.Forms**。 从列表中选择**内容页**(不**内容页 (C#)** ，这将创建一个仅限代码的页面，或**内容视图**，这不是一个页面)。 例如，为页面提供一个名称， **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "添加新项对话框")
+!["添加新项" 对话框](get-started-with-xaml-images/win/addnewitemdialog.w157.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要添加其他基于 XAML 的`ContentPage`类到你的项目，选择**XamlSamples** .NET Standard 库项目，然后调用**文件 > 新建文件**菜单项。 左侧**新的文件**对话框中，选择**窗体**左侧，和**窗体 ContentPage Xaml** (不**窗体 ContentPage**、 哪些创建一个仅限代码的页面，或**内容视图**，这不是一个页面)。 例如，为页面提供一个名称， **HelloXamlPage**:
 
-![](get-started-with-xaml-images/mac/newfiledialog.png "新建文件对话框")
+!["新建文件" 对话框](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 
@@ -278,7 +278,7 @@ public MainPage()
 
 设置`Content`属性页的替换设置`Content`XAML 文件中的属性。 在编译和部署此程序的新版本时，在屏幕上会出现一个按钮。 因此按下导航到`HelloXamlPage`。 下面是在 iPhone、 Android 和 UWP 结果页：
 
-[![](get-started-with-xaml-images/helloxaml1.png "旋转标签文本")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "旋转标签文本")
+[![旋转标签文本](get-started-with-xaml-images/helloxaml1.png)](get-started-with-xaml-images/helloxaml1-large.png#lightbox)
 
 您可以导航回`MainPage`使用 **< 返回**在 iOS 上，使用向左的箭头在页的顶部或底部的手机在 Android 上，或在 Windows 10 上的页的顶部使用向左的箭头按钮。
 
@@ -288,7 +288,7 @@ public MainPage()
 
 下面是如下所示：
 
-[![](get-started-with-xaml-images/helloxaml2.png "旋转标签文本使用 Unicode 字符")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "旋转使用 Unicode 字符的标签文本")
+[![带有 Unicode 字符的旋转标签文本](get-started-with-xaml-images/helloxaml2.png)](get-started-with-xaml-images/helloxaml2-large.png#lightbox)
 
 ## <a name="xaml-and-code-interactions"></a>XAML 和代码交互
 
@@ -316,7 +316,7 @@ public MainPage()
 
 此 XAML 文件是语法上完成，而以下是如下所示：
 
-[![](get-started-with-xaml-images/xamlpluscode1.png "页面上的多个控件")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "页面上的多个控件")
+[![页面上的多个控件](get-started-with-xaml-images/xamlpluscode1.png)](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox)
 
 但是，您很可能要考虑此应用程序是在功能上不足之处。 也许`Slider`应该会导致`Label`若要显示的当前值和`Button`可能用于执行一些在程序中操作。
 
@@ -407,7 +407,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 首次运行该程序时`Label`不会显示`Slider`值，因为`ValueChanged`尚未尚未触发事件。 但任何操作`Slider`导致要显示的值：
 
-[![](get-started-with-xaml-images/xamlpluscode2.png "显示滑块值")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "显示滑块值")
+[![显示的滑块值](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
 
 现在为`Button`。 我们来模拟的响应`Clicked`通过显示的警报事件`Text`的按钮。 事件处理程序可以安全地强制转换`sender`自变量`Button`，然后访问其属性：
 

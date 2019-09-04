@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647205"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227996"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的显式样式
 
@@ -64,9 +64,9 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义三个*显式*样式应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性使用`StaticResource`标记扩展。 这会导致下面的屏幕截图中所示的外观：
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义三个*显式*样式应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性使用`StaticResource`标记扩展。 这会导致如以下屏幕截图中所示的外观：
 
-[![](explicit-images/explicit-styles.png "显式样式示例")](explicit-images/explicit-styles-large.png#lightbox "显式样式示例")
+[![显式样式示例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
 此外，最终[ `Label` ](xref:Xamarin.Forms.Label)具有[ `Style` ](xref:Xamarin.Forms.Style)应用于它，但也会覆盖[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)属性设置为不同`Color`值。
 

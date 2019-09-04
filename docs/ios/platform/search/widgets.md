@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f2ac37676dbdfc96c853c9bc679e79c2aae1adb1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71c58baee5e98efcfb38b75ffed2b85c90f8a131
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656237"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227363"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 中的搜索和主屏幕小组件增强功能
 
@@ -57,7 +57,7 @@ Apple 为小组件系统引进了几项增强功能, 以确保小组件在新的
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-IOS 10 中已弃用此项, 应将其替换为[WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)或[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)。 例如:
+IOS 10 中已弃用此项, 应将其替换为[WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)或[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)。 例如：
 
 ```csharp
 // Get Primary Widget Vibrancy Effect
@@ -71,7 +71,7 @@ var vibrancy2 = UIVibrancyEffect.CreateSecondaryVibrancyEffectForNotificationCen
 
 IOS 10 中新增了小组件现在包含[NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)属性, 该属性允许开发人员描述可用内容以及允许用户展开和折叠内容。
 
-首次显示小组件时, 它处于折叠状态。 折叠小组件具有大约两个和半个标准 Io 表行的高度。 开发人员可以请求扩展小组件的大小, 但理想情况下应小于屏幕的高度。 
+首次显示小组件时, 它处于折叠状态。 折叠小组件具有大约两个和半个标准 Io 表行的高度。 开发人员可以请求扩展小组件的大小, 但理想情况下应小于屏幕的高度。
 
 在折叠状态下, 小组件只应显示必需的独立信息。 展开后, 该小组件应显示补充信息以增强折叠状态中显示的主要内容。 例如, 天气应用显示折叠的当前天气状况, 并在展开时添加每小时预测。
 

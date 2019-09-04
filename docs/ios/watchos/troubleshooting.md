@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: 1777bfe627d0dc579169c954f7799348befbf6b8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629662"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227025"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -237,7 +237,7 @@ with an alpha channel. Icons should not have an alpha channel.
 > [!NOTE]
 > 你需要提供的路径适用于*iPhone 应用程序*应用程序文件, 即, 将部署到 iOS 模拟器并包含监视扩展和监视应用的路径。
 
-示例:
+示例：
 
 ```bash
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
@@ -265,7 +265,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 必需。 指定 Xcode (6.2 或更高版本) 的路径。
 
-示例:
+示例：
 
 ```bash
  --sdkroot /Applications/Xcode.app/Contents/Developer/
@@ -283,7 +283,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 **UDID**
 
-示例:
+示例：
 
 ```bash
 --device=:v2:udid=AAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
@@ -291,7 +291,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 **运行时和设备类型**
 
-示例:
+示例：
 
 ```bash
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
