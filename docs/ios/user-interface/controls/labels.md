@@ -1,26 +1,26 @@
 ---
-title: Xamarin.iOS 中的标签
-description: 本文档讨论了如何在 Xamarin.iOS 中使用标签。 它介绍如何以编程方式和使用 iOS 设计器创建标签。
+title: Xamarin 中的标签
+description: 本文档介绍如何在 Xamarin 中使用标签。 本文介绍如何以编程方式和 iOS 设计器创建标签。
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 41cd0eb93cee216311ea42f7ca027a1556b322e6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227789"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227072"
 ---
-# <a name="labels-in-xamarinios"></a>Xamarin.iOS 中的标签
+# <a name="labels-in-xamarinios"></a>Xamarin 中的标签
 
-`UILabel`控件用于显示单个和多行，读取纯文本。 
+`UILabel`控件用于显示单行和多行只读文本。
 
-## <a name="implementing-a-label"></a>实现一个标签
+## <a name="implementing-a-label"></a>实现标签
 
-通过实例化来创建新标签[ `UILabel` ](xref:UIKit.UILabel):
+通过实例化[`UILabel`](xref:UIKit.UILabel)创建新标签:
 
 ```csharp
 UILabel label = new UILabel();
@@ -28,33 +28,33 @@ UILabel label = new UILabel();
 
 ### <a name="labels-and-storyboards"></a>标签和情节提要
 
-使用 iOS 设计器时，还可以将标签添加到你的 UI。 搜索**标签**中**工具箱**并将其拖到视图：
+使用 iOS 设计器时, 还可以向 UI 添加标签。 在 "**工具箱**" 中搜索 "**标签**" 并将其拖到您的视图:
 
-![中的工具箱标签](labels-images/image3.png)
+![工具箱中的标签](labels-images/image3.png)
 
-在属性面板上，可以调整以下属性：
+可以在 "属性" 板上调整以下属性:
 
 ![标签属性面板](labels-images/image2.png)
 
-- **文本上下文**– 纯文本或特性化。 纯文本，可设置[格式设置特性](#Formatting_Text_and_Label)针对整个字符串。 特性化的文本，可设置格式设置为不同的字符或单词在字符串中。
-- **颜色、 字体、 对齐方式**– 可以应用于该标签的格式设置属性。
-- **行**– 设置标签可以跨越的行数。 将此项设置为 0，以允许使用所需的所有行的标签。
-- **行为**– 可设置为已启用或突出显示。 启用是默认设置，已禁用的文本将显示在较浅灰色。 突出显示默认处于禁用状态，并允许标签时用户选择重绘与突出显示状态。
-- **Baselane 和分行符**– 
-    - 基准内确定如何将文本定位如果字体大小不同于指定的一个。
-    - 换行确定如何包装或如果它的长度大于单个行被截断字符串。
-- **自动收缩**– 确定如何调整大小的字体将最小化内一个标签，如有必要。
-- **突出显示，卷影，偏移量**– 允许您设置处于突出显示状态和阴影颜色和阴影偏移量。
+- **文本上下文**-无格式或特性化。 纯文本允许您设置整个字符串的[格式属性](#Formatting_Text_and_Label)。 特性化文本允许您将格式设置设置为字符串中的不同字符或单词。
+- 可应用于标签的**颜色、字体、对齐方式**。
+- **行**–设置标签可跨越的行数。 将此设置为 0, 以允许标签根据需要使用尽可能多的行。
+- **行为**–可设置为 "已启用" 或 "突出显示"。 默认设置为 "已启用", 则禁用的文本将以较浅的灰色颜色显示。 默认情况下, 突出显示处于禁用状态, 并允许在用户选择标签时使用突出显示状态重新绘制标签。
+- **Baselane 和分行符**–
+  - 如果字号不同于指定的字号, 基准内会确定文本的放置方式。
+  - 如果字符串的长度超过单行, 则分行符确定如何将其换行或截断。
+- 自动**收缩**–根据需要确定如何在标签内最大程度地减小字体大小。
+- **突出显示、阴影、偏移量**–允许您设置突出和阴影颜色以及阴影偏移量。
 
-## <a name="truncating-and-wrapping"></a>截断结果和包装
+## <a name="truncating-and-wrapping"></a>截断和包装
 
-有关使用行的信息将在 iOS 中中断，请参阅[截断和文本换行](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text)方案。
+有关在 iOS 中使用分行符的信息, 请参阅 "[截断和折行文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text)" 食谱。
 
 <a name="Formatting_Text_and_Label"/>
 
-## <a name="formatting-text-and-label"></a>设置文本格式和标签
+## <a name="formatting-text-and-label"></a>设置文本和标签的格式
 
-若要设置在标签中使用的字符串的格式可以设置整个字符串的属性的格式设置或可以使用特性化的字符串。 以下示例演示如何实现这些：
+若要设置在标签中使用的字符串的格式, 可以设置整个字符串的格式设置特性, 也可以使用特性化字符串。 下面的示例演示如何实现这些:
 
 ```csharp
 label = new UILabel(){
@@ -74,19 +74,19 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-有关样式文本使用的详细信息`NSAttributedString`是指[文本的样式](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)方案。
+有关使用`NSAttributedString`设置文本样式的详细信息, 请参阅[样式文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)食谱。
 
-默认情况下有标签`Enabled`设置为 true，但是它可以将其设置为禁用以授予用户某些控件处于禁用状态的提示：
+默认情况下, " `Enabled`标签" 设置为 "true", 但可以将其设置为 "已禁用" 以向用户提示某个控件被禁用:
 
 ```csharp
 label.Enabled = false;
 ```
 
-限制屏幕在 iOS 中的以下示例图中所示，此值设置为浅灰色标签：
+这会将标签设置为浅灰色, 如 iOS 中限制屏幕的下面的示例图像中所示:
 
-![在 iOS 中的禁用的按钮](labels-images/image1.png)
+![IOS 中的禁用按钮](labels-images/image1.png)
 
-此外可以向其他效果的标签文本设置突出显示和阴影的文本颜色：
+你还可以将突出显示和阴影文本颜色设置为标签文本, 以了解其他效果:
 
 ```csharp
 label.Highlighted = true;
@@ -96,11 +96,11 @@ label.ShadowColor = UIColor.Black;
 label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ```
 
-这将显示如下文本：
+这会显示如下所示的文本:
 
-![突出显示和设置在文本上的卷影](labels-images/image4.png)
+![文本上的突出显示和阴影设置](labels-images/image4.png)
 
-有关更改 UILabel 的字体的详细信息，请参阅[更改字体](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font)方案。
+有关更改 UILabel 字体的详细信息, 请参阅[更改字体](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font)食谱。
 
 
 

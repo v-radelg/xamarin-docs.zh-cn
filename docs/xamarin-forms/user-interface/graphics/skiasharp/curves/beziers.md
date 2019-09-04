@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646226"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228268"
 ---
 # <a name="three-types-of-bzier-curves"></a>贝塞尔曲线的三种类型
 
@@ -24,7 +24,7 @@ _了解如何使用 SkiaSharp 呈现三次方、 二次，和圆锥贝塞尔曲�
 
 贝塞尔曲线已知非常适合交互设计:它们表现得很&mdash;好, singularities 不会导致曲线变得无限大或难以&mdash;操作, 并且通常具
 
-![](beziers-images/beziersample.png "示例贝塞尔曲线")
+![样本贝塞尔曲线](beziers-images/beziersample.png)
 
 贝塞尔曲线通常定义字符轮廓的基于计算机的字体。
 
@@ -93,7 +93,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 运行此处：
 
-[![](beziers-images/beziercurve-small.png "三重的贝塞尔曲线页屏幕截图")](beziers-images/beziercurve-large.png#lightbox "带来三倍的贝塞尔曲线页屏幕截图")
+[![贝塞尔曲线页面的三向屏幕截图](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
 从数学上，该曲线是三次多项式的次数。 曲线最相交处的三个点的直线。 在开始点，该曲线始终是第一个控制点的切线，然后在相同的方向，一条直线从一开始点。 在终结点，该曲线始终是终结点的切线，然后在相同的方向，一条直线从第二个管理点。
 
@@ -125,7 +125,7 @@ y(t) = (1 – t) ³y₀ + 3t (1 – t) ²y₁ + 3t² (1 – t) y₂ + t³y₃
 
 下图显示了四个点标记为`pto`， `pt1`， `pt2`，和`pt3`定义近似于一个圆弧的贝赛尔曲线 （以红色显示）：
 
-![](beziers-images/bezierarc45.png "圆弧的贝塞尔曲线的近似")
+![具有贝塞尔曲线的圆弧的近似值](beziers-images/bezierarc45.png)
 
 从起点和终点的行控点到都正切值到圆和贝塞尔曲线，并且它们具有的长度*L*。上面提到的第一篇文章指示最佳的贝塞尔曲线近似于一个圆弧时该长度*L*计算如下：
 
@@ -211,13 +211,13 @@ float Magnitude(SKPoint v)
 
 下面是运行使用不同的角度的程序：
 
-[![](beziers-images/beziercirculararc-small.png "三重的贝塞尔圆弧页屏幕截图")](beziers-images/beziercirculararc-large.png#lightbox "带来三倍的贝塞尔圆弧页屏幕截图")
+[![贝塞尔圆弧页面的三向屏幕截图](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
 仔细查看第三个屏幕截图中，并且将看到贝赛尔曲线值得注意的是偏离一个半圆，当角度 180 度，但 iOS 屏幕显示，它看起来非常适合每个季度圆圈可以很好地时表示的角度为 90 度。
 
 四分之一圆面向此类时，则计算两个控制点的坐标是非常简单：
 
-![](beziers-images/bezierarc90.png "每个季度圆形的贝赛尔曲线的近似")
+![贝塞尔曲线的近似值](beziers-images/bezierarc90.png)
 
 如果圆的半径为 100，则*L* 55，并位于要记住的简单号。
 
@@ -293,7 +293,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 基于 sinusoidally 振荡值的插入点`t`。 内插的点然后用于构造一系列的四个已连接的贝塞尔曲线。 下面是运行动画：
 
-[![](beziers-images/squaringthecircle-small.png "Squaring 的三个屏幕截图圆圈页")](beziers-images/squaringthecircle-large.png#lightbox "Squaring 的三个屏幕截图圆形页")
+[![求圆页面](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
 此类动画就不可能无需通过算法灵活，可以呈现为循环弧线和直线的曲线。
 
@@ -342,7 +342,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 下面是无穷符号：
 
-[![](beziers-images/bezierinfinity-small.png "三重的贝塞尔无穷大页屏幕截图")](beziers-images/bezierinfinity-large.png#lightbox "带来三倍的贝塞尔无穷大页屏幕截图")
+[![贝塞尔无穷页的三向屏幕截图](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
 它是比更流畅的中心呈现的无穷符号**弧线无穷大**页上，从[**绘制弧线的三个方法**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)文章。
 
@@ -405,7 +405,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 和此处运行：
 
-[![](beziers-images/quadraticcurve-small.png "三重的二次曲线页屏幕截图")](beziers-images/quadraticcurve-large.png#lightbox "带来三倍的二次曲线页屏幕截图")
+[![二次曲线页面的三向屏幕截图](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
 点线是为在起点和终点，曲线的正切值和满足在控点。
 
@@ -483,7 +483,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 运行此处：
 
-[![](beziers-images/coniccurve-small.png "三个圆锥曲线页屏幕截图")](beziers-images/coniccurve-large.png#lightbox "三个圆锥曲线页屏幕截图")
+[![圆锥曲线页面的三向屏幕截图](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
 正如您所看到的看起来的权重是更高版本时拉取向更多的曲线的控制点。 权重为零，曲线将成为一条直线的起始点从终结点。
 
@@ -491,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 是很容易派生的控点和要使用粗细`ConicTo`方法，以便最多绘制一个圆弧 （但不是包括） 一个半圆。 在下图中，从起点和终点的切线满足在控点。
 
-![](beziers-images/conicarc.png "圆弧的锥形弧呈现")
+![圆弧的圆锥弧线渲染](beziers-images/conicarc.png)
 
 您可以使用三角函数来确定控制点与圆心中心之间的距离:它是圆的半径除以α角度的余弦值。 若要开始和结束点之间绘制一个圆弧，将权重设置为该同一一半角度的余弦。 请注意，是否角是 180 度，然后切线永远不会满足和权重为零。 但对于角度小于 180 度、 数学计算工作正常。
 
@@ -547,7 +547,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 正如您所看到的没有任何视觉区别之间`ConicTo`以红色显示的路径和基础圆圈显示供参考：
 
-[![](beziers-images/coniccirculararc-small.png "三个圆锥圆弧页屏幕截图")](beziers-images/coniccirculararc-large.png#lightbox "三个圆锥圆弧页屏幕截图")
+[![圆锥圆弧页面的三向屏幕截图](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
 但设置为 180 度和数学失败的角度。
 
