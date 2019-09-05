@@ -4,46 +4,46 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: fe267db1f83695b3d0e8f3d828f91e01b56ba8ee
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9d589af6249063add3dc9b085463fde9edd8e449
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61419660"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278438"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>为什么我的 iOS 生成会失败，并显示“在 keychain 中未找到有效的 iPhone 代码签名密钥”？
 
 ## <a name="cause-of-the-error"></a>错误的原因
-此错误消息相关的项目正在寻找代码签名的有效凭据时，会发生，但找不到它们。 代码签名才可进行测试和部署在物理 iOS 设备;以及 Ad hoc 和应用存储的生成。 
+当有问题的项目正在查找有效的代码签名凭据但找不到它们时，会出现此错误消息。 在物理 iOS 设备上进行测试和部署需要进行代码签名;以及即席 & 应用商店版本。 
 
 
 ### <a name="provisioning-devices"></a>预配设备
-如果尚未预配 iOS 设备之前，以下指南将引导您完成完整分步过程：[设备预配指南](~/ios/get-started/installation/device-provisioning/index.md)
+如果之前未预配 iOS 设备，以下指南将引导你完成完整的分步过程：[设备预配指南](~/ios/get-started/installation/device-provisioning/index.md)
 
 
-## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模拟器时的 bug
+## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模拟器时的 Bug
 
 > [!NOTE]
-> 具有最新版本的 Xamarin 中已解决此问题，Visual studio。 但是，如果最新版本的软件会出现此问题，请提出[新 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)与完整的版本控制信息和完整生成日志输出。
+> 此问题已在最新版本的 Xamarin for Visual Studio 中得到解决。 但是，如果该软件的最新版本发生问题，请使用完整的版本信息和完整的生成日志输出来记录[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
 
 
-这会导致 iOS 项目中用于添加 codesign Entitlements.plist 到模拟器生成; 的 Xamarin.Forms 模板 Xamarin.Visual Studio 3.11 中出现 bug有效地阻止使用模拟器进行测试。
+Xamarin 中存在 bug。 Visual Studio 3.11 导致了 Xamarin. Forms 模板中的 iOS 项目，以将 codesign info.plist 添加到模拟器生成;使用模拟器有效地阻止测试。
 
-### <a name="how-to-fix"></a>如何修复错误
-您可以解决此问题通过移除`<CodesignEntitlements>`.csproj 文件中生成的调试中的标志。 你可以按如下所示进行操作：
+### <a name="how-to-fix"></a>如何修复
+可以通过从 .csproj 文件中的调试`<CodesignEntitlements>`生成中删除标志来解决该问题。 你可以按如下所示进行操作：
 
-*警告：.Csproj 文件中的错误会中断你的项目，因此，最好在这种尝试之前备份您的文件。*
+*警告：.Csproj 文件中的错误可能会破坏您的项目，因此在尝试此操作之前，最好先备份您的文件。*
 
-1. 右键单击解决方案窗格中的 iOS 项目，然后选择**卸载项目**
-2. 右键单击项目并选择**编辑 [ProjectName].csproj**
-3. 找到调试 PropertyGroups，它们应首先阅读标志，如下所示：
-   - 调试： `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
-   - 版本： `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
-4. 在每个使用模拟器的生成，删除或注释掉以下属性： `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
-5. 重新加载项目，您应该能够将部署到模拟器。
+1. 在解决方案窗格中右键单击 iOS 项目，然后选择 "**卸载项目**"
+2. 再次右键单击该项目，然后选择 "**编辑 [项目名称] .csproj** "
+3. 找到调试 PropertyGroups，它们应以如下所示的标志开头：
+   - Debug.exe`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
+   - 拆卸`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
+4. 在使用模拟器的每个版本中，删除或注释掉以下属性：`<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
+5. 重载项目，你应该能够部署到模拟器。
 
 ### <a name="next-steps"></a>后续步骤
-获取进一步的帮助，请与我们联系，或如果此问题仍即使利用上述信息，请参阅[了可用于 Xamarin 的支持选项？](~/cross-platform/troubleshooting/support-options.md)有关联系人选项，建议的信息以及如何如果需要，提交新 bug。 
+若要获得更多帮助，请联系我们，或者，如果在使用上述信息后仍出现此问题，请参阅[哪些支持选项可用于 Xamarin？](~/cross-platform/troubleshooting/support-options.md)有关联系人选项、建议的信息，以及如何在需要时记录新 bug. 

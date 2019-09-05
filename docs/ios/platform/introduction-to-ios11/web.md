@@ -1,50 +1,50 @@
 ---
-title: IOS 11 中的易于使用的功能和 Safari 更改
-description: 本文档讨论了易于使用的功能和 iOS 11 中的 Safari 服务框架所做的更改。 它介绍了如何使用 SFSafariViewController 中的更新和 WKWebView 中的新增功能设置样式。
+title: IOS 11 中的 WebKit 和 Safari 更改
+description: 本文档讨论对 iOS 11 中的 WebKit 和 Safari 服务框架所做的更改。 它介绍了如何在 SFSafariViewController 中使用样式更新和 WKWebView 中的新功能。
 ms.prod: xamarin
 ms.assetid: C74B2E94-177C-43D4-8D6C-9B528773C120
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: 5ced73b1f3f5b8207ae1258dcb01a78c94df217d
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268915"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280084"
 ---
-# <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的易于使用的功能和 Safari 更改
+# <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的 WebKit 和 Safari 更改
 
-iOS 11 引入了新版本的 Safari web 浏览器 – Safari 11.0 – 其中包括易于使用的功能与 SafariServices 的变化。 本指南探讨了这些更改。
+iOS 11 引入了新版本的 Safari web 浏览器– Safari 11.0 –其中包括对 WebKit 和 SafariServices 的更改。 本指南将探讨这些更改。
 
 ## <a name="safariservices"></a>SafariServices
 
-`SFSafariViewController` 中引入了 iOS 9 作为一个选项来显示 web 内容或从您的应用程序的用户进行身份验证。 其功能的详细信息可在[Web 视图](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller)指南。
+`SFSafariViewController`是在 iOS 9 中引入的，用于显示 web 内容或对应用程序中的用户进行身份验证。 有关其功能的详细信息，请参阅[Web 视图](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller)指南。
 
-引入了 iOS 11 样式更新到 Safari 视图控制器，为用户提供应用程序和 web 之间更加无缝体验。 例如，在地址栏现在提供 Safari 视图控制器的应用程序内浏览器中，而不是最小化浏览器的感觉的删除。 此外可以自定义配色方案以适应您的应用程序的配色方案，通过设置`preferredBarTintColor`和`PreferredControlTintColor`属性：
+iOS 11 引入了对 Safari 视图控制器的样式更新，使用户能够在应用程序和 web 之间获得更流畅的体验。 例如，删除地址栏现在为 Safari 视图控制器提供应用内浏览器的外观，而不是小型浏览器。 你还可以通过设置`preferredBarTintColor`和`PreferredControlTintColor`属性来自定义颜色方案，使其适合应用的配色方案：
 
 ```csharp
 sfViewController.PreferredControlTintColor = UIColor.White;
 sfViewController.PreferredBarTintColor = UIColor.Purple;
 ```
 
-以下代码片段呈现紫色和白色中的条形图中所示：
+下面的代码段以紫色和白色呈现条形，如下图所示：
 
-![SFSafariViewController 条以紫色和白色呈现](web-images/image1.png)
+![以紫色和白色呈现的 SFSafariViewController 栏](web-images/image1.png)
 
-此外可以通过设置更改显示在 Safari 视图控制器消除按钮`DismissButtonStyle`属性设置为任一`Done`， `Close`，或`Cancel`:
+通过将`DismissButtonStyle`属性设置`Done`为、 `Close`或`Cancel`，还可以更改 Safari 视图控制器中显示的 "解除" 按钮：
 
 ```csharp
 sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.Close;
 ```
 
-![关闭更改按钮文本](web-images/image2.png)
+![消除按钮文本更改](web-images/image2.png)
 
-可以更改此值时`SFSafariViewController`显示。
+在显示时`SFSafariViewController` ，可以更改此值。
 
 
-具体取决于 Safari 视图控制器内显示的内容，可能需要确保，当用户滚动不折叠的菜单栏。 启用此功能通过设置新`BarCollapsedEnabled`属性设置为`false`:
+根据在 Safari 视图控制器内显示的内容，可能需要确保在用户滚动时菜单栏不会折叠。 这可以通过将新`BarCollapsedEnabled`属性设置为来`false`启用：
 
 ```csharp
 var config = new SFSafariViewControllerConfiguration();
@@ -53,28 +53,28 @@ config.BarCollapsingEnabled = false;
 var sfViewController = new SFSafariViewController(url, config);
 ```
 
-![栏折叠已禁用](web-images/image3.png)
+![已禁用条折叠](web-images/image3.png)
 
-Apple 还具有对 iOS 11 中的 Safari 视图控制器中的隐私的更新。 现在，浏览数据，例如 cookie 和本地存储仅存在根据每个应用，而不是跨 Safari 视图控制器的所有实例。 这会使用户浏览活动专用应用程序中。
+Apple 还在 iOS 11 中更新了 Safari 视图控制器中的隐私。 现在，浏览 cookie 和本地存储等数据仅存在于每个应用程序的基础上，而不是在 Safari 视图控制器的所有实例中存在。 这会使用户浏览活动在应用中保持私有。
 
-其他功能如拖放支持 Url，支持`window.open()`还添加了`SFSafariViewController`iOS 11 中。 您可以找到有关中的新功能的详细信息[Apple 的 SFSafariViewController 文档](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)。
+`SFSafariViewController`在 iOS 11 中还添加`window.open()`了其他功能，例如对 url 和支持的拖放支持。 可在[Apple SFSafariViewController 文档](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)中找到有关这些新功能的详细信息。
 
 
 ## <a name="webkit"></a>WebKit
 
-`WKWebView` 是作为 iOS 8 中作为一种方式向用户显示 web 内容的易于使用的功能的一部分引入。 它是比更可自定义`SFSafariViewController`，它允许您创建您自己的导航和用户界面。
+`WKWebView`在 iOS 8 中作为 WebKit 的一部分引入，作为向用户显示 web 内容的一种方式。 它比`SFSafariViewController`更易于自定义，允许您创建自己的导航和用户界面。
 
-Apple 引入了三个主要改进`WKWebView`ios 11: 
+Apple `WKWebView`在 iOS 11 中引入了三项主要改进： 
 
 - 管理 cookie 的功能
 - 内容筛选
 - 自定义资源加载。 
 
-Cookie 管理通过新实现[ `WKHttpCookieStore` ](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)类，以便您可以添加和删除 cookie，若要获取存储在 WKWebView 中的所有 cookie，并要观察的更改将存储的 cookie。
+Cookie 管理通过新[`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)类完成，此类允许你添加和删除 cookie，获取存储在 WKWebView 中的所有 cookie，并观察 cookie 存储区中的更改。
 
-内容筛选，您可以管理你的用户将看到的内容的类型允许您以确保它是安全的系列友好，并且如有必要，仅供选择的用户组。 可通过新实现，这[ `WKContentRuleList` ](https://developer.apple.com/documentation/webkit/wkcontentrulelist)类，通过提供的 JSON 中触发器和操作对。 这些触发器和操作的详细信息可在 Apple[内容阻止规则](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html)指南。
+内容筛选使你能够管理你的用户将看到的内容类型，使你可以确保它是安全的，并且在必要的情况下，仅供一组选择的用户使用。 这是通过新[`WKContentRuleList`](https://developer.apple.com/documentation/webkit/wkcontentrulelist)类实现的，通过提供 JSON 中的触发器和操作对。 有关这些触发器和操作的详细信息，请参阅 Apple 的[内容阻止规则](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html)指南。
 
-iOS 11 现在允许你自定义`WKWebView`自定义资源加载为你的 web 内容。 这通过实现`IWKUrlSchemeHandler`接口，这样就可以处理不是本机 Web 工具包的 URL 方案。 此接口包含必须实现启动和停止方法：
+iOS 11 现在允许你自`WKWebView`定义 web 内容的自定义资源加载。 这是通过`IWKUrlSchemeHandler`接口实现的，它使你能够处理不是本机到 Web 工具包的 URL 方案。 此接口具有必须实现的启动和停止方法：
 
 ```csharp
 public class MyHandler : NSObject, IWKUrlSchemeHandler {
@@ -97,7 +97,7 @@ public class MyHandler : NSObject, IWKUrlSchemeHandler {
 }
 ``` 
 
-一旦已实现该处理程序，使用它来设置`SetUrlSchemeHandler`属性上的`WKWebViewConfiguration`。 然后，将加载使用自定义方案的内容的 URL:
+实现该处理程序后，请使用它来设置`SetUrlSchemeHandler`的`WKWebViewConfiguration`属性。 然后，加载使用自定义方案的某些内容的 URL：
 
 ```csharp
 var config = new WKWebViewConfiguration();

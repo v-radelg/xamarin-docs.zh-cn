@@ -4,26 +4,26 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8805ABEC-48D4-4CCB-A226-3A5B2ECE4BF0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 3dbb4d9132d5d94e4533704730e95002b5aec0be
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 62a63dc5156d1acf9ad6ca15029978131c151726
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832273"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290473"
 ---
 # <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>为何 iOS 9 应用失败，且随附：“System.Exception:无法封送 Objective-C 对象”？
 
-可能会看到此窗体的错误：
+你可能会看到以下格式的错误：
 
-> “System.Exception:无法封送 OBJECTIVE-C 对象...找不到此对象的现有托管的实例...
+> “System.Exception:未能封送目标 C 对象 。找不到此对象的现有托管实例 。
 
-IOS 9 中的 API 更改需要作为基础 API 调用非托管的代码，需要它时，使用回调构造函数。 使用以下行添加到类回调构造函数： 
+IOS 9 中的 API 更改要求在调用非托管代码时使用回调构造函数，因为基础 API 现在需要用到它。 使用以下行将回调构造函数添加到类： 
 
 `public foo (IntPtr handle) : base (handle)` 
 
 ### <a name="next-steps"></a>后续步骤
 
-获取进一步的帮助，请与我们联系，或如果此问题仍即使利用上述信息，请参阅[了可用于 Xamarin 的支持选项？](~/cross-platform/troubleshooting/support-options.md)有关联系人选项，建议的信息以及如何如果需要，提交新 bug。 
+若要获得更多帮助，请联系我们，或者，如果在使用上述信息后仍出现此问题，请参阅[哪些支持选项可用于 Xamarin？](~/cross-platform/troubleshooting/support-options.md)有关联系人选项、建议的信息，以及如何在需要时记录新 bug. 

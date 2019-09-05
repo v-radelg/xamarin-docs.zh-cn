@@ -1,27 +1,27 @@
 ---
 title: 在 Windows 上安装 Xamarin 预览版
-description: 本文档介绍如何使用预览版本通道上 Visual Studio 2019 安装 Xamarin 的预览版本。
+description: 本文档介绍了如何使用预览版本通道在 Visual Studio 2019 上安装 Xamarin 预览版。
 ms.prod: xamarin
 ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2018
-ms.openlocfilehash: 9ce56891eeab73f661a9c22cc047c4d0bcb10337
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 805edf0aba0e45a631bb9e3f7536da3f18dc789d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261050"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277646"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>在 Windows 上安装 Xamarin 预览版
 
-Visual Studio 2019 和 Visual Studio 2017 不支持 alpha、 beta 和稳定版通道与早期版本相同的方式。 相反，其中有两个选项：
+与早期版本一样，visual Studio 2019 和 Visual Studio 2017 不支持 alpha、beta 和稳定通道。 相反，其中有两个选项：
 
 - 发行版 – 等效于 Visual Studio for Mac 中的稳定版通道
 - 预览版 – 等效于 Visual Studio for Mac 中的 Alpha 和 Beta 通道
 
 > [!TIP]
-> 若要尝试预发行功能，您应该[下载 Visual Studio 预览版安装程序](https://visualstudio.microsoft.com/vs/preview/)，其中将提供选项来安装**预览**版本的 Visual Studio 的并行使用的稳定 （发行版）。 什么是 Visual Studio 2019 中的新增功能的详细信息可在[发行说明](https://docs.microsoft.com/visualstudio/releases/2019/release-notes)。
+> 若要尝试预发行功能，你应该[下载 Visual Studio 预览版安装程序，该安装程序](https://visualstudio.microsoft.com/vs/preview/)将提供选项，以与稳定（发布）版本一起安装 Visual Studio 的**预览**版本。 有关 Visual Studio 2019 中新增功能的详细信息，请参阅[发行说明](https://docs.microsoft.com/visualstudio/releases/2019/release-notes)。
 
 Visual Studio 预览版可能包含相应的 Xamarin 预览版功能，包括：
 
@@ -42,4 +42,4 @@ Visual Studio 预览版可能包含相应的 Xamarin 预览版功能，包括：
 
 ### <a name="uninstalling-visual-studio-2019-preview"></a>卸载 Visual Studio 2019 预览版
 
-**Visual Studio 安装程序**还应使用与卸载预览版本的 Visual Studio 2019。 有关详细信息，请参阅[卸载 Xamarin 指南](uninstalling-xamarin.md#uninstallvs2017)。
+**Visual Studio 安装程序**还应该用于卸载 Visual Studio 2019 的预览版本。 有关详细信息，请参阅[卸载 Xamarin 指南](uninstalling-xamarin.md#uninstallvs2017)。

@@ -1,26 +1,26 @@
 ---
 title: xib-在 Xamarin 中的用户界面设计更少
-description: 本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面, 而无需使用 storyboard 文件、xib 文件或 Interface Builder。
+description: 本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面，而无需使用 storyboard 文件、xib 文件或 Interface Builder。
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: d51e1b20e1409d228db2f38e6c31ad1165897654
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 5776855039120b0c856a76a31334420ded2a2d65
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226891"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283329"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>xib-在 Xamarin 中的用户界面设计更少
 
-_本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面, 而无需使用 storyboard 文件、xib 文件或 Interface Builder。_
+_本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面，而无需使用 storyboard 文件、xib 文件或 Interface Builder。_
 
 ## <a name="overview"></a>概述
 
-在 Xamarin Mac C#应用程序中使用和 .net 时, 可以访问在*Xcode 和*中工作的开发人员所使用的相同用户界面元素和工具。 通常, 在创建 Xamarin Mac 应用程序时, 将使用 Xcode 的 Interface Builder, 使用 xib 文件创建和维护应用程序的用户界面。
+在 Xamarin Mac C#应用程序中使用和 .net 时，可以访问在*Xcode 和* *中工作*的开发人员所使用的相同用户界面元素和工具。 通常，在创建 Xamarin Mac 应用程序时，将使用 Xcode 的 Interface Builder，使用 xib 文件创建和维护应用程序的用户界面。
 
 你还可以选择直接在代码中C#创建部分或全部 Xamarin 应用程序的 UI。 本文介绍如何在代码中C#创建用户界面和 UI 元素。
 
@@ -30,26 +30,26 @@ _本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面, 
 
 ## <a name="switching-a-window-to-use-code"></a>切换窗口以使用代码
 
-创建新的 Xamarin Cocoa 应用程序时, 默认情况下会获得一个标准空白窗口。 此窗口是在 Mainwindow.xaml 中定义的, 它是在项目中自动包含的**主情节提要**(或传统上的**xib**) 文件中定义的。 这还包括一个**ViewController.cs**文件, 该文件用于管理应用的主视图 (或同样传统上的**MainWindow.cs**和**MainWindowController.cs**文件)。
+创建新的 Xamarin Cocoa 应用程序时，默认情况下会获得一个标准空白窗口。 此窗口是在 Mainwindow.xaml 中定义的，它是在项目中自动包含的**主情节提要**（或传统上的**xib**）文件中定义的。 这还包括一个**ViewController.cs**文件，该文件用于管理应用的主视图（或同样传统上的**MainWindow.cs**和**MainWindowController.cs**文件）。
 
-若要切换到应用程序的 Xibless 窗口, 请执行以下操作:
+若要切换到应用程序的 Xibless 窗口，请执行以下操作：
 
 1. 打开要停止使用`.storyboard`的应用程序或 xib 文件以定义 Visual Studio for Mac 中的用户界面。
-2. 在**Solution Pad**中, 右键单击**mainwindow.xaml 或 xib**文件, 然后选择 "**删除**":
+2. 在**Solution Pad**中，右键单击**mainwindow.xaml**或 xib文件，然后选择 "**删除**"：
 
     ![删除主情节提要或窗口](xibless-ui-images/switch01.png "删除主情节提要或窗口")
-3. 从 "**删除" 对话框**中, 单击 "**删除**" 按钮, 从项目中完全删除 xib 或。
+3. 从 "**删除" 对话框**中，单击 "**删除**" 按钮，从项目中完全删除 xib 或。
 
     ![确认删除](xibless-ui-images/switch02.png "确认删除")
 
-现在, 我们需要修改**MainWindow.cs**文件以定义窗口的布局, 并修改**ViewController.cs**或**MainWindowController.cs**文件, 以`MainWindow`创建类的实例, 因为我们不再使用。情节提要或 xib 文件。
+现在，我们需要修改**MainWindow.cs**文件以定义窗口的布局，并修改**ViewController.cs**或**MainWindowController.cs**文件，以`MainWindow`创建类的实例，因为我们不再使用。情节提要或 xib 文件。
 
-将情节提要用于其用户界面的新式 Xamarin 应用程序可能不会自动包括**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**文件。 根据需要, 只需向项目添加C#新的空类 ("**添加** > **新文件 ...** " > 常规空 > **类**) 并将其命名为与缺少的文件相同。
+将情节提要用于其用户界面的新式 Xamarin 应用程序可能不会自动包括**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**文件。 根据需要，只需向项目添加C#新的空类（"**添加** > **新文件 ...** " > 常规空 > **类**）并将其命名为与缺少的文件相同。
 
 
 ### <a name="defining-the-window-in-code"></a>在代码中定义窗口
 
-接下来, 编辑**MainWindow.cs**文件并使其类似于以下内容:
+接下来，编辑**MainWindow.cs**文件并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -124,14 +124,14 @@ namespace MacXibless
 
 我们来讨论几个关键元素。
 
-首先, 我们添加了几个_计算属性_, 这些属性的作用类似于插座 (就像是在 xib 文件中创建了该窗口一样):
+首先，我们添加了几个_计算属性_，这些属性的作用类似于插座（就像是在 xib 文件中创建了该窗口一样）：
 
 ```csharp
 public NSButton ClickMeButton { get; set;}
 public NSTextField ClickMeLabel { get ; set;}
 ```
 
-这样, 我们就可以访问要在窗口中显示的 UI 元素。 由于窗口不是从 xib 文件中放大的, 因此我们需要一种方法来对其进行实例化 (如我们稍后将在`MainWindowController`类中)。 这就是这个新的构造函数方法的作用:
+这样，我们就可以访问要在窗口中显示的 UI 元素。 由于窗口不是从 xib 文件中放大的，因此我们需要一种方法来对其进行实例化（如我们稍后将在`MainWindowController`类中）。 这就是这个新的构造函数方法的作用：
 
 ```csharp
 public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore bufferingType, bool deferCreation): base (contentRect, aStyle,bufferingType,deferCreation) {
@@ -139,13 +139,13 @@ public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore buffe
 }
 ```
 
-我们将在这里设计窗口布局, 并放置创建所需用户界面所需的任何 UI 元素。 在可以将任何 UI 元素添加到窗口之前, 它需要一个_内容视图_来包含元素:
+我们将在这里设计窗口布局，并放置创建所需用户界面所需的任何 UI 元素。 在可以将任何 UI 元素添加到窗口之前，它需要一个_内容视图_来包含元素：
 
 ```csharp
 ContentView = new NSView (Frame);
 ```
 
-这将创建一个将填充窗口的内容视图。 现在我们将第一个 UI 元素`NSButton`添加到窗口:
+这将创建一个将填充窗口的内容视图。 现在我们将第一个 UI 元素`NSButton`添加到窗口：
 
 ```csharp
 ClickMeButton = new NSButton (new CGRect (10, Frame.Height-70, 100, 30)){
@@ -154,13 +154,13 @@ ClickMeButton = new NSButton (new CGRect (10, Frame.Height-70, 100, 30)){
 ContentView.AddSubview (ClickMeButton);
 ```
 
-这里要注意的第一点是, 与 iOS 不同, macOS 使用数学表示法来定义其窗口坐标系统。 因此, 原点位于窗口的左下角, 值在窗口的右上角向右和向右边缘增加。 创建新`NSButton`的时, 我们将考虑这一点, 因为我们在屏幕上定义其位置和大小。
+这里要注意的第一点是，与 iOS 不同，macOS 使用数学表示法来定义其窗口坐标系统。 因此，原点位于窗口的左下角，值在窗口的右上角向右和向右边缘增加。 创建新`NSButton`的时，我们将考虑这一点，因为我们在屏幕上定义其位置和大小。
 
-`AutoresizingMask = NSViewResizingMask.MinYMargin`属性指示按钮在垂直调整窗口大小时, 将其保持在窗口顶部的同一位置。 同样, 这是必需的, 因为 (0, 0) 位于窗口的左下角。
+`AutoresizingMask = NSViewResizingMask.MinYMargin`属性指示按钮在垂直调整窗口大小时，将其保持在窗口顶部的同一位置。 同样，这是必需的，因为（0，0）位于窗口的左下角。
 
-最后, `ContentView.AddSubview (ClickMeButton)`方法`NSButton`将添加到内容视图中, 以便在运行应用程序和显示窗口时, 它将显示在屏幕上。
+最后， `ContentView.AddSubview (ClickMeButton)`方法`NSButton`将添加到内容视图中，以便在运行应用程序和显示窗口时，它将显示在屏幕上。
 
-接下来, 会将一个标签添加到窗口, 该窗口将显示已单击`NSButton`的次数:
+接下来，会将一个标签添加到窗口，该窗口将显示已单击`NSButton`的次数：
 
 ```csharp
 ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width - 130, 20)) {
@@ -174,14 +174,14 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
 ContentView.AddSubview (ClickMeLabel);
 ```
 
-由于 macOS 没有特定的_标签_UI 元素, 因此我们添加了一个特殊的样式化、不可`NSTextField`编辑的来充当标签。 就像之前的按钮一样, 大小和位置会考虑 (0, 0) 在窗口的左下角。 属性使用**or**运算符组合两个`NSViewResizingMask`功能。 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` 这会使在垂直调整窗口大小时, 标签将保留在窗口顶部的同一位置, 并在水平调整窗口大小时缩小并放大。
+由于 macOS 没有特定的_标签_UI 元素，因此我们添加了一个特殊的样式化、不可`NSTextField`编辑的来充当标签。 就像之前的按钮一样，大小和位置会考虑（0，0）在窗口的左下角。 属性使用**or**运算符组合两个`NSViewResizingMask`功能。 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` 这会使在垂直调整窗口大小时，标签将保留在窗口顶部的同一位置，并在水平调整窗口大小时缩小并放大。
 
-同样, `ContentView.AddSubview (ClickMeLabel)`方法会`NSTextField`将添加到内容视图中, 以便在应用程序运行和打开窗口时, 它将显示在屏幕上。
+同样， `ContentView.AddSubview (ClickMeLabel)`方法会`NSTextField`将添加到内容视图中，以便在应用程序运行和打开窗口时，它将显示在屏幕上。
 
 
 ### <a name="adjusting-the-window-controller"></a>调整窗口控制器
 
-由于的设计`MainWindow`不再从 storyboard 或 xib 文件加载, 因此我们需要对窗口控制器进行一些调整。 编辑**MainWindowController.cs**文件并使其类似于以下内容:
+由于的设计`MainWindow`不再从 storyboard 或 xib 文件加载，因此我们需要对窗口控制器进行一些调整。 编辑**MainWindowController.cs**文件并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -228,52 +228,52 @@ namespace MacXibless
 
 让我们讨论一下此修改的关键要素。
 
-首先, 我们定义`MainWindow`类的新实例, 并将其分配给基窗口控制器的`Window`属性:
+首先，我们定义`MainWindow`类的新实例，并将其分配给基窗口控制器的`Window`属性：
 
 ```csharp
 CGRect contentRect = new CGRect (0, 0, 1000, 500);
 base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable), NSBackingStore.Buffered, false);
 ```
 
-我们使用`CGRect`定义屏幕窗口的位置。 与窗口的坐标系统一样, 屏幕将 (0, 0) 定义为左下角。 接下来, 使用**Or**运算符来定义窗口的样式, 以合并两个或更多`NSWindowStyle`功能:
+我们使用`CGRect`定义屏幕窗口的位置。 与窗口的坐标系统一样，屏幕将（0，0）定义为左下角。 接下来，使用**Or**运算符来定义窗口的样式，以合并两个或更多`NSWindowStyle`功能：
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
 ```
 
-提供以下`NSWindowStyle`功能:
+提供以下`NSWindowStyle`功能：
 
-- 无边框-窗口不包含边框。
+- 无**边框-窗口**不包含边框。
 - **标题**-该窗口将具有标题栏。
-- **Closable** -该窗口有一个 "关闭" 按钮, 可以关闭。
-- **Miniaturizable** -该窗口有一个 Miniaturize 按钮, 可以最小化。
+- **Closable** -该窗口有一个 "关闭" 按钮，可以关闭。
+- **Miniaturizable** -该窗口有一个 Miniaturize 按钮，可以最小化。
 - 可**调整大小**-该窗口将具有调整大小按钮并可调整大小。
-- **实用工具**-窗口是一个实用工具样式窗口 (面板)。
-- **DocModal** -如果窗口是一个面板, 它将是文档模式而非系统模式。
-- **NonactivatingPanel** -如果窗口是一个面板, 则它不会成为主窗口。
+- **实用工具**-窗口是一个实用工具样式窗口（面板）。
+- **DocModal** -如果窗口是一个面板，它将是文档模式而非系统模式。
+- **NonactivatingPanel** -如果窗口是一个面板，则它不会成为主窗口。
 - **TexturedBackground** -该窗口将具有纹理背景。
-- 未缩放-将不缩放窗口。
+- 未**缩放-将不缩放窗口**。
 - **UnifiedTitleAndToolbar** -将联接窗口的标题和工具栏区域。
 - **Hud** -该窗口将显示为一个打印头显示面板。
 - **FullScreenWindow** -该窗口可以进入全屏模式。
 - **FullSizeContentView** -窗口的内容视图位于标题和工具栏区域后面。
 
-最后两个属性定义窗口的_缓冲类型_, 并且如果窗口的绘制将延迟, 则为。 有关的详细信息`NSWindows`, 请参阅 Apple 的[Windows 简介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)文档。
+最后两个属性定义窗口的_缓冲类型_，并且如果窗口的绘制将延迟，则为。 有关的详细信息`NSWindows`，请参阅 Apple 的[Windows 简介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)文档。
 
-最后, 由于窗口不是从 xib 文件中放大的, 因此我们需要通过调用 windows `AwakeFromNib`方法在**MainWindowController.cs**中模拟它:
+最后，由于窗口不是从 xib 文件中放大的，因此我们需要通过调用 windows `AwakeFromNib`方法在**MainWindowController.cs**中模拟它：
 
 ```csharp
 Window.AwakeFromNib ();
 ```
 
-这将允许你对窗口进行编码, 就像从 xib 或文件加载的标准窗口一样。
+这将允许你对窗口进行编码，就像从 xib 或文件加载的标准窗口一样。
 
 
 ### <a name="displaying-the-window"></a>显示窗口
 
-如果删除了 xib 文件并修改了**MainWindow.cs**和**MainWindowController.cs**文件, 则将使用窗口, 就像使用 xib 文件 Xcode 的 Interface Builder 中创建的任何正常窗口一样。
+如果删除了 xib 文件并修改了**MainWindow.cs**和**MainWindowController.cs**文件，则将使用窗口，就像使用 xib 文件 Xcode 的 Interface Builder 中创建的任何正常窗口一样。
 
-以下操作将创建该窗口及其控制器的新实例, 并在屏幕上显示该窗口:
+以下操作将创建该窗口及其控制器的新实例，并在屏幕上显示该窗口：
 
 ```csharp
 private MainWindowController mainWindowController;
@@ -283,23 +283,23 @@ mainWindowController = new MainWindowController ();
 mainWindowController.Window.MakeKeyAndOrderFront (this);
 ```
 
-此时, 如果应用程序正在运行, 并且单击了几次按钮, 则会显示以下内容:
+此时，如果应用程序正在运行，并且单击了几次按钮，则会显示以下内容：
 
 ![示例应用运行](xibless-ui-images/run01.png "示例应用运行")
 
 
 ## <a name="adding-a-code-only-window"></a>添加仅限代码的窗口
 
-如果只想要将代码添加到现有 Xamarin Mac 应用程序, 请在**Solution Pad**中右键单击该项目, 然后选择 "**添加** > **新文件 ...** "在 "**新建文件**" 对话框 > 中, 选择**包含控制器的 Xamarin Cocoa 窗口**, 如下所示:
+如果只想要将代码添加到现有 Xamarin Mac 应用程序，请在**Solution Pad**中右键单击该项目，然后选择 "**添加** > **新文件 ...** "在 "**新建文件**" 对话框 > 中，选择**包含控制器的 Xamarin Cocoa 窗口**，如下所示：
 
 ![添加新的窗口控制器](xibless-ui-images/add01.png "添加新的窗口控制器")
 
-就像以前一样, 我们将从项目中删除默认的 xib 文件 (在本例中为**SecondWindow**), 并按照上面的[切换窗口以使用代码](#Switching_a_Window_to_use_Code)部分中所述的步骤, 将窗口的定义覆盖到代码。
+就像以前一样，我们将从项目中删除默认的 xib 文件（在本例中为**SecondWindow**），并按照上面的[切换窗口以使用代码](#Switching_a_Window_to_use_Code)部分中所述的步骤，将窗口的定义覆盖到代码。
 
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>在代码中将 UI 元素添加到窗口
 
-无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口, 有时都可能需要将 UI 元素从代码添加到窗口。 例如:
+无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口，有时都可能需要将 UI 元素从代码添加到窗口。 例如:
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
@@ -308,14 +308,14 @@ var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
 MyWindow.ContentView.AddSubview (ClickMeButton);
 ```
 
-上面的代码将创建一个`NSButton`新的, 并将`MyWindow`其添加到窗口实例中以供显示。 可以在 Xcode 中的 Interface Builder 中定义的任何 UI 元素, 也可以在代码中创建, 并将其显示在窗口中。
+上面的代码将创建一个`NSButton`新的，并将`MyWindow`其添加到窗口实例中以供显示。 可以在 Xcode 中的 Interface Builder 中定义的任何 UI 元素，也可以在代码中创建，并将其显示在窗口中。
 
 
 ## <a name="defining-the-menu-bar-in-code"></a>在代码中定义菜单栏
 
-由于 Xamarin 中的当前限制, 不建议你在代码中创建 Xamarin 应用程序的菜单栏`NSMenuBar`, 而是继续使用**MainMenu 或 xib**文件对其进行定义 。 也就是说, 您可以在代码中C#添加和删除菜单和菜单项。
+由于 Xamarin 中的当前限制，不建议你在代码中创建 Xamarin 应用程序的菜单栏`NSMenuBar`，而是继续使用 MainMenu 或**xib**文件对其进行定义 。 也就是说，您可以在代码中C#添加和删除菜单和菜单项。
 
-例如, 编辑**AppDelegate.cs**文件并使`DidFinishLaunching`方法类似于以下内容:
+例如，编辑**AppDelegate.cs**文件并使`DidFinishLaunching`方法类似于以下内容：
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -357,18 +357,18 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-上述代码从代码创建状态栏菜单, 并在启动应用程序时显示它。 有关使用菜单的详细信息, 请参阅我们的[菜单](~/mac/user-interface/menu.md)文档。
+上述代码从代码创建状态栏菜单，并在启动应用程序时显示它。 有关使用菜单的详细信息，请参阅我们的[菜单](~/mac/user-interface/menu.md)文档。
 
 
 ## <a name="summary"></a>总结
 
-本文详细介绍了如何在代码中C#创建 Xamarin 应用程序的用户界面, 而不是使用 Xcode 的 Interface Builder 和 xib 文件。
+本文详细介绍了如何在代码中C#创建 Xamarin 应用程序的用户界面，而不是使用 Xcode 的 Interface Builder 和 xib 文件。
 
 
 
 ## <a name="related-links"></a>相关链接
 
-- [MacXibless (示例)](https://docs.microsoft.com/samples/xamarin/mac-samples/macxibless)
+- [MacXibless （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/macxibless)
 - [Windows](~/mac/user-interface/window.md)
 - [菜单](~/mac/user-interface/menu.md)
 - [macOS 人机界面指南](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

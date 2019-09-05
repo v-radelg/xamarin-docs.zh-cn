@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 5accc38667d9dc565c8bfeae48310561063aab4b
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: 42a5aecf5f13f2f93d9b279ae2171d6fce7ffc88
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64987046"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206212"
 ---
 ||macOS|Windows|
 |---|---|---|

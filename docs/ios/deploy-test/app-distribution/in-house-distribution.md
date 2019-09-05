@@ -4,15 +4,15 @@ description: 本文档简要概述了应用程序作为 Apple Enterprise Develop
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865534"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289887"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的内部分发
 
@@ -22,7 +22,7 @@ _本文档简要概述了应用程序作为 Apple Enterprise Developer Program �
 
 - 无需提交应用程序供 Apple 审核。
 - 可在任意数量的设备上部署一个应用程序
-    - 请务必注意，Apple 清楚表明内部应用程序仅限内部使用。
+  - 请务必注意，Apple 清楚表明内部应用程序仅限内部使用。
 
 还请务必注意 Enterprise Program：
 

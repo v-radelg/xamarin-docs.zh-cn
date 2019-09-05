@@ -4,15 +4,15 @@ description: 本文档提供与 Xamarin.Mac 开发人员相关的文档链接：
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 2e4c2ebea7783fe2400298b03a54e951d89960fe
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: 3b0e9f87505e7537f9c8aeb6f006072feffdbd57
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329944"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278914"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac - 相关文档
 

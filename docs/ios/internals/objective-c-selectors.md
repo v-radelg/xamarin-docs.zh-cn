@@ -1,33 +1,33 @@
 ---
-title: 在 Xamarin.iOS OBJECTIVE-C 选择器
-description: 本文档介绍如何与从 C# 的 OBJECTIVE-C 选择器进行交互。 它介绍了如何调用选择器和执行此操作时必须考虑在内的技术考虑因素。
+title: Xamarin 中的目标-C 选择器
+description: 本文档介绍如何从C#与的目标-C 选择器进行交互。 它介绍了如何调用在执行此操作时必须考虑的选择器和技术注意事项。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/12/2017
-ms.openlocfilehash: 15db59945f482728f760006095e294bc5628c8bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 17b845345175d80237bcfdb171461f2c763c364e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036338"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291854"
 ---
-# <a name="objective-c-selectors-in-xamarinios"></a>在 Xamarin.iOS OBJECTIVE-C 选择器
+# <a name="objective-c-selectors-in-xamarinios"></a>Xamarin 中的目标-C 选择器
 
-Objective C 语言基于*选择器*。 选择器是一条消息，可以发送到一个对象或*类*。 [Xamarin.iOS](~/ios/internals/api-design/index.md)映射实例为实例方法的选择器和类选择器对静态方法。
+目标 C 语言基于*选择器*。 选择器是可以发送到对象或*类*的消息。 [Xamarin](~/ios/internals/api-design/index.md)将实例选择器映射到实例方法，将类选择器映射到静态方法。
 
-与普通 C 函数 (等C++成员函数)，不能直接调用选择器使用[P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)选择器而是发送到 OBJECTIVE-C 类或使用实例的步骤 [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
-函数。
+与普通 C 函数（与成员C++函数类似）不同，不能直接使用[P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)调用选择器，而是使用[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+才能.
 
-Objective C 中的消息有关的详细信息，看一看 Apple[使用对象](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。
+有关目标-C 中的消息的详细信息，请参阅 Apple 使用[对象](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。
 
 ## <a name="example"></a>示例
 
-假设你想要调用 [`sizeWithFont:forWidth:lineBreakMode:`](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont)
-上的选择器[ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring)。
-（从 Apple 的文档） 声明为：
+假设你想要调用[`sizeWithFont:forWidth:lineBreakMode:`](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont)
+选择器[`NSString`](https://developer.apple.com/documentation/foundation/nsstring)。
+声明（来自 Apple 的文档）是：
 
 ```objc
 - (CGSize)sizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
@@ -35,13 +35,13 @@ Objective C 中的消息有关的详细信息，看一看 Apple[使用对象](ht
 
 此 API 具有以下特征：
 
-- 返回类型是`CGSize`统一 api。
-- `font`参数是[UIFont](xref:UIKit.UIFont) (和类型 （间接） 派生自[NSObject](xref:Foundation.NSObject)，并映射到[System.IntPtr](xref:System.IntPtr)。
-- `width`参数， `CGFloat`，映射到`nfloat`。
-- `lineBreakMode`参数， [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)，已在作为 Xamarin.iOS 绑定 [`UILineBreakMode`](xref:UIKit.UILineBreakMode)
-枚举。
+- 返回类型`CGSize`适用于 Unified API。
+- 参数是[UIFont](xref:UIKit.UIFont) （和从 NSObject 派生的类型），并[映射到](xref:System.IntPtr) [。](xref:Foundation.NSObject) `font`
+- 参数将映射到`nfloat`。 `CGFloat` `width`
+- `lineBreakMode`参数[a`UILineBreakMode`](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)已在 Xamarin 中绑定为[`UILineBreakMode`](xref:UIKit.UILineBreakMode)
+枚举.
 
-将它放在一起，`objc_msgSend`声明应匹配：
+将其放在`objc_msgSend`一起，声明应匹配：
 
 ```csharp
 CGSize objc_msgSend(
@@ -53,7 +53,7 @@ CGSize objc_msgSend(
 );
 ```
 
-将其声明，如下所示：
+按如下所示声明：
 
 ```csharp
 [DllImport (Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend")]
@@ -66,7 +66,7 @@ static extern CGSize cgsize_objc_msgSend_IntPtr_float_int (
 );
 ```
 
-若要调用此方法，请使用以下代码：
+若要调用此方法，请使用如下所示的代码：
 
 ```csharp
 NSString target = ...
@@ -84,7 +84,7 @@ CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
 );
 ```
 
-返回的值曾经是大小小于 8 个字节的结构 (如较早`SizeF`切换到统一的 Api 之前，使用)，方式但在设备上崩溃模拟器上运行上面的代码。 若要调用的大小小于 8 位返回值的选择器，声明`objc_msgSend_stret`函数：
+如果返回的值是小于8个字节的结构（例如，切换到统一 api 之前`SizeF`使用过的结构），则上述代码将在模拟器上运行，但在设备上崩溃。 若要调用返回小于8位的值的选择器，请声明`objc_msgSend_stret`函数：
 
 ```csharp
 [DllImport (MonoTouch.Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend_stret")]
@@ -98,7 +98,7 @@ static extern void cgsize_objc_msgSend_stret_IntPtr_float_int (
 );
 ```
 
-若要调用此方法，请使用以下代码：
+若要调用此方法，请使用如下所示的代码：
 
 ```csharp
 NSString      target = ...
@@ -127,46 +127,46 @@ else
     );
 ```
 
-## <a name="invoking-a-selector"></a>调用一个选择器
+## <a name="invoking-a-selector"></a>调用选择器
 
-调用一个选择器包含三个步骤：
+调用选择器有三个步骤：
 
 1. 获取选择器目标。
 2. 获取选择器名称。
-3. 调用`objc_msgSend`使用适当的参数。
+3. 用`objc_msgSend`适当的参数调用。
 
 ### <a name="selector-targets"></a>选择器目标
 
-选择器目标是 OBJECTIVE-C 类或对象实例。 如果目标是一个实例，来自绑定的 Xamarin.iOS 类型，使用[ `ObjCRuntime.INativeObject.Handle` ](xref:ObjCRuntime.INativeObject.Handle)属性。
+选择器目标可以是对象实例或目标-C 类。 如果目标是一个实例并且来自绑定的 Xamarin iOS 类型，请使用[`ObjCRuntime.INativeObject.Handle`](xref:ObjCRuntime.INativeObject.Handle)属性。
 
-如果目标是一个类，使用[ `ObjCRuntime.Class` ](xref:ObjCRuntime.Class)若要获取对类实例的引用，然后使用[ `Class.Handle` ](xref:ObjCRuntime.Class.Handle)属性。
+如果目标是类，请使用[`ObjCRuntime.Class`](xref:ObjCRuntime.Class)获取对类实例的引用，然后[`Class.Handle`](xref:ObjCRuntime.Class.Handle)使用属性。
 
 ### <a name="selector-names"></a>选择器名称
 
-Apple 的文档中列出了选择器名称。 例如， [ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring?language=objc)包括[ `sizeWithFont:` ](https://developer.apple.com/documentation/foundation/nsstring/1619917-sizewithfont?language=objc)并[ `sizeWithFont:forWidth:lineBreakMode:` ](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont?language=objc)选择器。 嵌入和尾随冒号是选择器名称的一部分，不能将其删除。
+选择器名称列在 Apple 文档中。 例如， [`NSString`](https://developer.apple.com/documentation/foundation/nsstring?language=objc)包括[`sizeWithFont:`](https://developer.apple.com/documentation/foundation/nsstring/1619917-sizewithfont?language=objc)和[`sizeWithFont:forWidth:lineBreakMode:`](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont?language=objc)选择器。 嵌入和尾随冒号是选择器名称的一部分，因此不能省略。
 
-选择器名称后，可以创建[ `ObjCRuntime.Selector` ](xref:ObjCRuntime.Selector)为它的实例。
+选择器名称后，可以为它创建一个[`ObjCRuntime.Selector`](xref:ObjCRuntime.Selector)实例。
 
-### <a name="calling-objcmsgsend"></a>Calling objc_msgSend
+### <a name="calling-objc_msgsend"></a>调用 objc_msgSend
 
-`objc_msgSend` 将一条消息 （选择器） 发送到一个对象。 此系列函数采用至少两个必需的参数： 选择器目标 （实例或处理的类）、 本身的选择器和选择器所需的任何参数。 实例，并选择器参数必须为`System.IntPtr`，并且所有其余参数必须匹配的类型选择器要求，例如`nint`有关`int`，或`System.IntPtr`所有`NSObject`-派生类型。 使用 [`NSObject.Handle`](xref:Foundation.NSObject.Handle)
-属性获取`IntPtr`Objective C 类型实例。
+`objc_msgSend`将消息（选择器）发送到对象。 此系列函数至少需要两个必需参数：选择器目标（实例或类句柄）、选择器本身以及选择器所需的任何参数。 实例和选择器参数必须是`System.IntPtr`，所有剩余的参数必须与该选择器所需的类型（ `nint`例如`int`）或`System.IntPtr`所有`NSObject`派生的类型相匹配。 使用[`NSObject.Handle`](xref:Foundation.NSObject.Handle)
+用于获取`IntPtr`目标 C 类型实例的的属性。
 
-没有多个`objc_msgSend`函数：
+存在多`objc_msgSend`个函数：
 
-- 使用[ `objc_msgSend_stret` ](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)为返回结构的选择器。 在 ARM，这包括非枚举的所有返回类型或任何 C 内置类型 (`char`， `short`， `int`， `long`， `float`， `double`)。 此方法需要 x86 （模拟器） 上使用的所有结构大于 8 个字节的大小 (`CGSize`为 8 个字节，但不使用`objc_msgSend_stret`在模拟器中)。 
-- 使用[ `objc_msgSend_fpret` ](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc)返回浮点的选择器仅在 x86 上点值。 此函数不需要在 ARM; 上使用请改用`objc_msgSend`。 
-- 主[objc_msgSend](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)函数用于所有其他选择器。
+- [`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)用于返回结构的选择器。 在 ARM 上，这包括不是枚举的所有返回类型或任何 C 内置类型（`char`、 `int` `long` `short`、、、 `float`、 `double`）。 在 x86 （模拟器）上，此方法需要用于大小超过8个字节的所有结构（`CGSize`为8个字节，不会在模拟器中使用`objc_msgSend_stret` ）。 
+- 仅[`objc_msgSend_fpret`](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc)用于在 x86 上返回浮点值的选择器。 此函数无需在 ARM 上使用;请`objc_msgSend`改用。 
+- Main [objc_msgSend](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)函数用于所有其他选择器。
 
-一旦您决定这`objc_msgSend`需要调用的函数 （模拟器和设备可能每个需要另一种方法），可以使用普通[ `[DllImport]` ](xref:System.Runtime.InteropServices.DllImportAttribute)方法声明为更高版本调用此函数。
+确定需要调用的`objc_msgSend`函数（每个模拟器和设备可能需要不同的方法）后，可以使用普通[`[DllImport]`](xref:System.Runtime.InteropServices.DllImportAttribute)方法声明函数以便以后调用。
 
-一组预制`objc_msgSend`声明可在`ObjCRuntime.Messaging`。
+可以在中`ObjCRuntime.Messaging`找到一组`objc_msgSend`预生成的声明。
 
-## <a name="different-invocations-on-simulator-and-device"></a>在模拟器和设备上不同的调用
+## <a name="different-invocations-on-simulator-and-device"></a>模拟器和设备上的不同调用
 
-Objective C 上文所述，有三种类型的`objc_msgSend`方法： 一个用于常规调用，返回浮点值 (仅限 x86) 的调用，调用返回结构值。 后者包含后缀`_stret`在`ObjCRuntime.Messaging`。
+如上所述，客观-C 具有三种`objc_msgSend`方法：一种用于常规调用，一个用于返回浮点值的调用（仅限 x86），另一个用于返回结构值的调用。 后者在中`ObjCRuntime.Messaging`包含后缀`_stret` 。
 
-如果调用将返回某些结构 （如下所述的规则） 的方法，必须调用的方法的返回值作为第一个参数作为`out`值：
+如果要调用将返回特定结构的方法（如下所述的规则），则必须调用方法，并将返回值作为第一个参数作为`out`值：
 
 ```csharp
 // The following returns a PointF structure:
@@ -174,8 +174,8 @@ PointF ret;
 Messaging.PointF_objc_msgSend_stret_PointF_IntPtr (out ret, this.Handle, selConvertPointFromWindow.Handle, point, window.Handle);
 ```
 
-有关何时使用规则`_stret_`在 x86 和 ARM 上的方法不同。
-如果你想在模拟器和设备上运行您的绑定，添加以下代码：
+在 x86 和 ARM 上，使用`_stret_`方法的规则不同。
+如果希望绑定同时在模拟器和设备上运行，请添加如下所示的代码：
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE)
@@ -190,18 +190,18 @@ else
 }
 ```
 
-### <a name="using-the-objcmsgsendstret-method"></a>使用 objc_msgSend_stret 方法
+### <a name="using-the-objc_msgsend_stret-method"></a>使用 objc_msgSend_stret 方法
 
-为 ARM 生成时，使用 [`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
-任何值类型，不是枚举或任何枚举的基类型 (`int`， `byte`， `short`， `long`， `double`， `float`)。
+为 ARM 生成时，请使用[`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
+对于不是枚举的任何值类型或枚举的任何基类型（`int`、 `short` `long` `byte`、 `double` `float`、、、）。
 
-为 x86 生成时，使用 [`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
-任何值类型，不是枚举或任何枚举的基类型 (`int`， `byte`， `short`， `long`， `double`， `float`) 以及其本机大小大于 8 个字节。
+构建 x86 时，请使用[`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
+对于不是枚举的任何值类型或枚举的任何基类型（`int`、 `short` `long` `byte`、 `double`、、、 `float`），其本机大小大于8字节。
 
-### <a name="creating-your-own-signatures"></a>创建你自己的签名
+### <a name="creating-your-own-signatures"></a>创建自己的签名
 
-以下[要点](https://gist.github.com/rolfbjarne/981b778a99425a6e630c)可用于创建你自己的签名，如果所需。
+如果需要，可以使用以下[gist](https://gist.github.com/rolfbjarne/981b778a99425a6e630c)创建自己的签名。
 
 ## <a name="related-links"></a>相关链接
 
-- [OBJECTIVE-C 选择器](https://developer.xamarin.com/samples/mac-ios/Objective-C/)示例
+- [目标-C 选择器](https://developer.xamarin.com/samples/mac-ios/Objective-C/)示例

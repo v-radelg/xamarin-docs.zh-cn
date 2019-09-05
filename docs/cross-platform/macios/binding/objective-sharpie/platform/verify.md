@@ -1,41 +1,41 @@
 ---
 title: 目标 Sharpie 验证属性
-description: 本文档介绍了生成的目标 Sharpie [验证] 属性。 开发人员，他们应手动验证目标 Sharpie 输出到突出显示 [验证] 属性。
+description: 本文档介绍了客观 Sharpie 生成的 [Verify] 属性。 [Verify] 特性突出显示给开发人员，他们应该在其中手动验证客观 Sharpie 的输出。
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b13164b7125e04b3e92a4ae0c0c0afd428f325af
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977862"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278925"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目标 Sharpie 验证属性
 
-通常会发现，将使用批注绑定生成的目标 Sharpie`[Verify]`属性。 这些属性指示你应_验证_目标 Sharpie 通过比较与原始 C/Objective C 声明 （它将在绑定声明上方的注释中提供） 的绑定未正确的做法。
+你经常会发现，客观 Sharpie 生成的绑定将使用`[Verify]`属性进行批注。 这些属性指示您应该通过将绑定与原始 C/目标-C 声明（将在绑定声明中的注释中提供）进行比较来_验证_目标 Sharpie 是否执行了正确的操作。
 
-验证建议用于_所有_绑定声明，但最有可能_需要_为声明使用批注`[Verify]`属性。 这是因为在许多情况下，没有足够的元数据中原始的本机源代码来推断如何最好地生成一个绑定。 您可能需要引用文档或要做出最佳的绑定决策的标头文件中的代码注释。
+建议对_所有_绑定声明进行验证，但对于使用`[Verify]`特性批注的声明，最有可能_需要_进行验证。 这是因为在许多情况下，原始本机源代码中没有足够的元数据来推断如何最好地生成绑定。 你可能需要在标头文件中引用文档或代码注释以做出最佳的绑定决策。
 
-确认后，绑定是更正或修复它正确，_删除_`[Verify]`从绑定的属性。
+验证绑定正确或已修复后，请从绑定中_删除_该`[Verify]`属性。
 
 > [!IMPORTANT]
-> `[Verify]` 属性导致出现C#编译错误，以便您会被迫验证绑定。 应删除`[Verify]`属性时在您阅读 （并可能更正） 代码。
+> `[Verify]`特性特意导致C#编译错误，因此强制验证绑定。 查看（并可能`[Verify]`更正）代码时，应删除属性。
 
 ## <a name="verify-hints-reference"></a>验证提示引用
 
-提供给特性的提示参数可以是交叉引用与以下文档。 对于任何生成的文档`[Verify]`完成绑定后，将在控制台上也提供属性。
+提供给该属性的提示参数可与下面的文档交叉引用。 绑定完成后， `[Verify]`控制台上还会提供任何生成的属性的文档。
 
-|`[Verify]` 提示|描述|
+|`[Verify]`提示|描述|
 |---|---|
-|InferredFromPreceedingTypedef|此声明的名称通过从常见约定推导立即前面`typedef`原始本机源代码中。 验证推断的名称正确，因为此约定不明确。|
-|ConstantsInterfaceAssociation|没有可靠方法来确定使用哪个 Objective C 接口外部变量声明可能是相关联。 这些实例绑定为`[Field]`到附近的由具体接口以生成更直观的 API，可能消除常量部分接口中的属性完全接口。|
-|MethodToProperty|Objective C 方法被绑定为C#由于约定不采用任何参数和返回值 （非 void 返回） 等属性。 通常这些方法应绑定为属性，以呈现一个更好的 API，但有时出现误报和绑定实际上应该就是一种方法。|
-|StronglyTypedNSArray|一个本机`NSArray*`被绑定为`NSObject[]`。 有可能根据预期通过 API 文档 （例如标头文件中的注释） 设置的绑定中的更具强类型数组或通过检查通过测试的数组内容。 例如，NSArray * 包含仅 NSNumber * 作为绑定 instancescan`NSNumber[]`而不是`NSObject[]`。|
+|InferredFromPreceedingTypedef|此声明的名称是从原始本机源代码的前面紧邻`typedef`的常用约定推断出来的。 验证推断的名称是否正确，因为此约定是不明确的。|
+|ConstantsInterfaceAssociation|没有一种欺骗方法来确定外部变量声明可以关联的目标 C 接口。 这些实例将作为`[Field]`部分接口中的属性绑定到近乎具体的接口以生成更直观的 API，这可能会完全消除 "常量" 接口。|
+|MethodToProperty|由于惯例（如不使用任何参数并C#返回一个值，因此，目标 C 方法被绑定为属性）。 通常，这类方法应作为属性绑定以显示更好 API，但有时会发生误报，并且绑定实际上应为方法。|
+|StronglyTypedNSArray|本机`NSArray*`被绑定为`NSObject[]`。 可以根据通过 API 文档（如标头文件中的注释）或通过测试检查数组内容中的预期设置，更强地在绑定中键入数组。 例如，仅包含 NSNumber * instancescan 的 NSArray * 将绑定为`NSNumber[]` `NSObject[]`而不是。|
 
-你可以快速收到有关提示使用文档`sharpie verify-docs`工具，例如：
+你还可以使用`sharpie verify-docs`工具快速接收提示的文档，例如：
 
 ```csharp
 sharpie verify-docs InferredFromPreceedingTypedef

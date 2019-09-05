@@ -1,55 +1,55 @@
 ---
 title: 绑定 Objective-C
-description: 本文档提供介绍如何创建的各种指南的链接C#绑定到 OBJECTIVE-C 代码，使开发人员能够使用现成的 Xamarin 应用程序中的库。
+description: 本文档提供了一些链接，这些链接指向介绍如何C#创建与目标-C 代码的绑定的各种指南，使开发人员能够在 Xamarin 应用程序中使用现成的库。
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/25/2016
-ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 8975bb899127d0761359bec695cd084f89c12972
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864416"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290563"
 ---
 # <a name="binding-objective-c"></a>绑定 Objective-C
 
-本部分包含了多种文档，其中包括创建绑定到 OBJECTIVE-C 的库，因此它们可以从调用的C#使用 Xamarin.iOS 或 Xamarin.Mac 创建的应用程序。
+本部分包含各种文档，涵盖如何创建到目标 C 库的绑定，因此可以从使用 Xamarin 或 Xamarin C#创建的应用程序中调用它们。
 
 ## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[概述](~/cross-platform/macios/binding/overview.md)
 
-本文档包含一些的绑定发生内部结构。 它是一个高级的文档使用一些技术的信息。
+本文档包含了绑定发生方式的一些内部机制。 这是包含一些技术信息的高级文档。
 
 ## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 
-本文档介绍了用于创建C#绑定的 Objective C Api 和 Objective C 中的惯例如何映射到在.NET 中使用的惯例。
-如果要绑定只是 C Api，你应为此，P/Invoke framework 使用标准.NET 机制。
+本文档介绍了用于创建C#目标-c api 的绑定的过程，以及如何将目标中的惯例映射到 .net 中使用的惯例。
+如果只是绑定 C Api，则应将标准 .NET 机制用于此（P/Invoke 框架）。
 
 ## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[绑定定义参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 
-这是介绍了所有可用来驱动绑定生成进程的绑定作者的属性的参考指南。
+这是描述绑定作者用于驱动绑定生成过程的所有可用属性的参考指南。
 
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[目标 Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-目标 Sharpie 是一个命令行工具来帮助启动绑定的第一次传递。 其工作原理是分析要映射到的公共 API 的本机库的标头文件[绑定定义](~/cross-platform/macios/binding/objective-c-libraries.md)（也可以手动完成该过程）。
+客观 Sharpie 是一个命令行工具，可帮助启动绑定的第一步。 它的工作原理是分析本机库的标头文件，将公共 API 映射到[绑定定义](~/cross-platform/macios/binding/objective-c-libraries.md)（也可以手动执行的过程）。
 
 ## <a name="ios"></a>iOS
 
-[IOS 绑定页](~/ios/platform/binding-objective-c/index.md)链接回这些常用的绑定资源此外到下面的示例。
+除了下面的示例外， [iOS 绑定页](~/ios/platform/binding-objective-c/index.md)还会链接回这些公共绑定资源。
 
-### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[演练：绑定 OBJECTIVE-C 库](~/ios/platform/binding-objective-c/walkthrough.md)
+### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[演练：绑定目标 C 库](~/ios/platform/binding-objective-c/walkthrough.md)
 
-本文提供了创建使用开放源代码的绑定项目的分步演练[InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective C 项目作为示例。 InfColorPicker 库提供了允许用户选择一种颜色根据其 HSB 表示形式，使用户更加友好的颜色选择的可重用视图控制器。 目标 Sharpie 将用于绑定过程中提供帮助。
+本文提供使用开源[InfColorPicker](https://github.com/InfinitApps/InfColorPicker)目标-C 项目作为示例创建绑定项目的分步演练。 InfColorPicker 库提供了一个可重用的视图控制器，该控制器允许用户根据其 HSB 表示形式选择颜色，使颜色选择更易于用户使用。 目标 Sharpie 将用于帮助进行绑定。
 
 ### <a name="binding-sampleshttpsgithubcommonomonotouch-bindings"></a>[绑定示例](https://github.com/mono/monotouch-bindings)
 
-创建新绑定项目时可以用作引用的第三方绑定的集合。
+在创建新的绑定项目时可用作引用的第三方绑定的集合。
 
 ## <a name="mac"></a>Mac
 
-从历史上看[Mac 绑定](~/mac/platform/binding.md)已被大量的手动过程。 目前尚[可下载预览](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)Mac 绑定项目对的支持未来版本的 Visual Studio for mac。
+过去的[Mac 绑定](~/mac/platform/binding.md)是一个非常手动的过程。 目前，有一个[可下载](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)的 Mac 绑定项目支持 Visual Studio for Mac 的未来版本。
 
 ## <a name="related-links"></a>相关链接
 

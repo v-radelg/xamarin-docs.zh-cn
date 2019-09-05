@@ -1,22 +1,22 @@
 ---
 title: Xamarin 的限制
-description: 本文档介绍了 Xamarin 的限制, 并讨论了泛型、NSObjects 的泛型子类、泛型对象中的 P/Invoke 等。
+description: 本文档介绍了 Xamarin 的限制，并讨论了泛型、NSObjects 的泛型子类、泛型对象中的 P/Invoke 等。
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/09/2018
-ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1d6f4dc20a32810bb218ce3aa2281fa1355a584d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227528"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291906"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
-由于使用 Xamarin 的应用程序编译为静态代码, 因此不能使用在运行时需要代码生成的任何功能。
+由于使用 Xamarin 的应用程序编译为静态代码，因此不能使用在运行时需要代码生成的任何功能。
 
 与桌面 Mono 相比，Xamarin.iOS 有以下限制：
 
@@ -29,7 +29,7 @@ ms.locfileid: "70227528"
 
 Mono 的 [Full AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)技术在泛型方面有一些限制，这是因为并非所有可能的泛型实例化都可以在编译时预先确定。 这对于常规的 .NET 或 Mono 运行时来说不是问题，因为代码总是在运行时使用 Just in Time 编译器进行编译。 但这对像 Xamarin.iOS 这样的静态编译器提出了挑战。
 
-开发人员遇到的一些常见问题包括:
+开发人员遇到的一些常见问题包括：
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
@@ -53,12 +53,12 @@ class Foo<T> : UIView {
 
 ## <a name="no-dynamic-code-generation"></a>无动态代码生成
 
-由于 iOS 内核阻止应用程序动态生成代码, 因此, Xamarin 不支持任何形式的动态代码生成。 这些问题包括：
+由于 iOS 内核阻止应用程序动态生成代码，因此，Xamarin 不支持任何形式的动态代码生成。 这些问题包括：
 
 - 无法获取 System.object。
 - 不支持 System.object。
 - 不支持动态创建类型（没有 Type.GetType（“MyType`1”）），但查找现有类型（例如 Type.GetType（“System.String”）仍有效）。
-- 在编译时, 必须向运行时注册反向回调。
+- 在编译时，必须向运行时注册反向回调。
 
 
 
@@ -67,7 +67,7 @@ class Foo<T> : UIView {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-缺少 System.object。 **发出**表示没有依赖于运行时代码生成的代码。 这包括:
+缺少 System.object。 **发出**表示没有依赖于运行时代码生成的代码。 这包括：
 
 - 动态语言运行时。
 - 在动态语言运行时之上构建的任何语言。
@@ -75,7 +75,7 @@ class Foo<T> : UIView {
 
 
   > [!IMPORTANT]
-  > 请不要将 **Reflection.Emit** 与 **Reflection** 混淆。 Reflection.Emit 涉及动态生成代码并将代码即时编译为本机代码。 由于 iOS 的限制 (无 JIT 编译), 这不受支持。
+  > 请不要将 **Reflection.Emit** 与 **Reflection** 混淆。 Reflection.Emit 涉及动态生成代码并将代码即时编译为本机代码。 由于 iOS 的限制（无 JIT 编译），这不受支持。
 
 但整个反射 API（包括 Type.GetType（“someClass”）、列出方法、列出属性、获取属性和值）均可以正常工作。
 
@@ -116,14 +116,14 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="runtime-disabled-features"></a>运行时禁用的功能
 
-Mono 的 iOS 运行时中禁用了以下功能:
+Mono 的 iOS 运行时中禁用了以下功能：
 
 - 探查器
 - Reflection.Emit
 - 反射。保存功能
 - COM 绑定
 - JIT 引擎
-- 元数据验证程序 (因为没有 JIT)
+- 元数据验证程序（因为没有 JIT）
 
 
  <a name=".NET_API_Limitations" />

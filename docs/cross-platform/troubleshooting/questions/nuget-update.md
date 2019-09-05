@@ -3,25 +3,25 @@ title: 如何更新 NuGet？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 40DDE713-DE80-422F-BE34-A732E40C3F81
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 511b80013c13ae0d34f803255d0ed7fd6c09a988
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bb44dc042f60d4d9de87bcb92222689b80a42527
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342053"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288189"
 ---
 # <a name="how-can-i-update-nuget"></a>如何更新 NuGet？
 
-可以下找到 NuGet 更新、 扩展和外接程序**更新**选项卡**NuGet 包管理器**。 下面是详细的导航以了解更新 Visual Studio 中 Mac 和 Visual Studio。 
+NuGet 更新、扩展和外接程序可在**Nuget 包管理器**的 "**更新**" 选项卡中找到。 下面是查找 Visual Studio for Mac & Visual Studio 中的更新的详细导航。 
 
-请注意，将更新*仅*显示这些菜单中如果不具有 NuGet 的最新受支持的版本由 IDE 安装：
+请注意，如果未安装 IDE 的最新支持版本的 NuGet，则*仅*在这些菜单中显示更新：
 
 ## <a name="visual-studio"></a>Visual Studio
-1. 打开**工具 > 扩展和更新 > 更新 > Visual Studio 库**
-2. 选择**Visual Studio [Year] 的 NuGet 包管理器**
+1. 在**Visual Studio 库 > 打开工具 > 扩展和更新 > 更新**
+2. 选择**用于 Visual Studio 的 NuGet 包管理器 [Year]**
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 

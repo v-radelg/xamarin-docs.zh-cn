@@ -1,26 +1,26 @@
 ---
 title: Xamarin 中的 SiriKit
-description: 本文介绍如何在 Xamarin iOS 应用程序中使用 SiriKit, 以提供可在 iOS 设备上使用 Siri 的用户访问的服务。
+description: 本文介绍如何在 Xamarin iOS 应用程序中使用 SiriKit，以提供可在 iOS 设备上使用 Siri 的用户访问的服务。
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0438ea08bbdcbf0ce3c64e15192cbb90cd835b00
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e3ef6dd857760d722fe84f98250b8db9e398ea2e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654018"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287188"
 ---
 # <a name="sirikit-in-xamarinios"></a>Xamarin 中的 SiriKit
 
-_本文介绍如何在 Xamarin iOS 应用程序中使用 SiriKit, 以提供可在 iOS 设备上使用 Siri 的用户访问的服务。_
+_本文介绍如何在 Xamarin iOS 应用程序中使用 SiriKit，以提供可在 iOS 设备上使用 Siri 的用户访问的服务。_
 
-使用 iOS 10 的新功能, SiriKit 允许 iOS 应用提供使用 Siri 的用户可访问的服务, 以及使用应用扩展**和新的**方法和**意向 UI**框架在 iOS 设备上映射应用的服务。
+使用 iOS 10 的新功能，SiriKit 允许 iOS 应用提供使用 Siri 的用户可访问的服务，以及使用应用扩展**和新的**方法和**意向 UI**框架在 iOS 设备上映射应用的服务。
 
-Siri 适用于**域**的概念、相关任务的一组已知操作。 应用使用 Siri 时, 每个交互都必须属于其已知的服务域之一, 如下所示:
+Siri 适用于**域**的概念、相关任务的一组已知操作。 应用使用 Siri 时，每个交互都必须属于其已知的服务域之一，如下所示：
 
 - 音频或视频呼叫。
 - 预订一本。
@@ -29,15 +29,15 @@ Siri 适用于**域**的概念、相关任务的一组已知操作。 应用使�
 - 搜索照片。
 - 发送或接收付款。
 
-当用户发出涉及某个应用扩展服务的 Siri 请求时, SiriKit 将向该扩展发送**意向**对象, 该对象描述用户的请求以及所有支持数据。 然后, 应用扩展会针对给定**意向**生成相应的**响应**对象, 并详细说明扩展如何处理请求。
+当用户发出涉及某个应用扩展服务的 Siri 请求时，SiriKit 将向该扩展发送**意向**对象，该对象描述用户的请求以及所有支持数据。 然后，应用扩展会针对给定**意向**生成相应的**响应**对象，并详细说明扩展如何处理请求。
 
 ## <a name="understanding-sirikit-conceptsiosplatformsirikitunderstanding-sirikitmd"></a>[了解 SiriKit 概念](~/ios/platform/sirikit/understanding-sirikit.md)
 
-本文介绍了在 Xamarin iOS 应用程序中使用 SiriKit 时所需的重要概念。 它介绍了新的方法和意向 UI 扩展点, 以及它们如何与应用和用户词汇表一起使用来打开应用到 Siri。
+本文介绍了在 Xamarin iOS 应用程序中使用 SiriKit 时所需的重要概念。 它介绍了新的方法和意向 UI 扩展点，以及它们如何与应用和用户词汇表一起使用来打开应用到 Siri。
 
 ## <a name="implementing-sirikitiosplatformsirikitimplementing-sirikitmd"></a>[实现 SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)
 
-本文介绍了在 Xamarin iOS 应用程序中实现 SiriKit 支持所需的步骤。 开发人员应在尝试将 SiriKit 支持添加到应用之前, 先阅读下面的 "了解 SiriKit 概念" 指南, 因为已涵盖成功实现所需的关键概念。
+本文介绍了在 Xamarin iOS 应用程序中实现 SiriKit 支持所需的步骤。 开发人员应在尝试将 SiriKit 支持添加到应用之前，先阅读下面的 "了解 SiriKit 概念" 指南，因为已涵盖成功实现所需的关键概念。
 
 
 

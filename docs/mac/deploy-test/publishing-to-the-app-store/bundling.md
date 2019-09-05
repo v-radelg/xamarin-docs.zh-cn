@@ -4,15 +4,15 @@ description: 本文档介绍了如何捆绑 Xamarin.Mac 应用以便发布到 Ma
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3394c0ccaa25ff438bd4435321f05c55990fc674
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122031"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281187"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 捆绑
 
@@ -23,23 +23,23 @@ ms.locfileid: "50122031"
 
 ## <a name="code-signing-options"></a>代码签名选项
 
-更新代码签名和打包选项前，请将“配置”更改为“发布”。 开发人员请务必使用其公司**标识**，并使用先前签名用程序以在 App Store 中发布时所创建的配置文件。
+更新代码签名和打包选项前，请将“配置”  更改为“发布”  。 开发人员请务必使用其公司**标识**，并使用先前签名用程序以在 App Store 中发布时所创建的配置文件。
 
  [![编辑代码签名选项](bundling-images/config02.png "编辑代码签名选项")](bundling-images/config02-large.png#lightbox)
 
-确保已在“Mac 版本”设置中选中用于创建安装程序包的选项：
+确保已在“Mac 版本”  设置中选中用于创建安装程序包的选项：
 
 [![编辑生成选项](bundling-images/config03.png "编辑生成选项")](bundling-images/config03-large.png#lightbox)
 
 ## <a name="build"></a>生成
 
-生成前，请确保已选择“发布”配置。 开发人员构建应用时，系统会提示同时使用两个证书：
+生成前，请确保已选择“发布”  配置。 开发人员构建应用时，系统会提示同时使用两个证书：
 
  ![允许应用使用证书](bundling-images/image62.png "允许应用使用证书")
 
  ![允许应用使用证书](bundling-images/image63.png "允许应用使用证书")
 
-构建应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”查找包文件（在下例中，位于 `bin/x86/AppStore` 目录）。  此包文件包括应用的安装程序，可将其提交到 Apple 以包含在 Mac App Store 中。
+构建应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”  查找包文件（在下例中，位于 `bin/x86/AppStore` 目录）。  此包文件包括应用的安装程序，可将其提交到 Apple 以包含在 Mac App Store 中。
 
  ![在查找器中选择生成包](bundling-images/image64.png "在查找器中选择生成包")
 

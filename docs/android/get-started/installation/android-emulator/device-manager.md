@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 989d0fe1d8fffd74ea5f64ae7bd5a13487d25c0e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 200ee3fdee3274063becec19fbc6d1504e132a88
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525734"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226651"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虚拟设备
 
@@ -47,10 +47,10 @@ ms.locfileid: "69525734"
   请务必在默认位置安装 Android SDK（如果尚未安装的话）：C:\\Program Files (x86)\\Android\\android-sdk。 
 
 - 必须（通过 [Android SDK 管理器](~/android/get-started/installation/android-sdk.md)）安装以下包： 
-    - Android SDK Tools 版本 26.1.1 或更高版本 
-    - Android SDK 平台工具 27.0.1 或更高版本 
-    - Android SDK 生成工具 27.0.3 或更高版本  
-    - Android Emulator 27.2.7 或更高版本  。 
+  - Android SDK Tools 版本 26.1.1 或更高版本 
+  - Android SDK 平台工具 27.0.1 或更高版本 
+  - Android SDK 生成工具 27.0.3 或更高版本  
+  - Android Emulator 27.2.7 或更高版本  。 
 
   这些包应显示为“已安装”状态，如下面的屏幕截图所示  ：
 
@@ -217,9 +217,9 @@ Xamarin Studio 与 Android Device Manager 不兼容。
 - 必须安装 Android SDK（请参阅[设置用于 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md)）。
 
 - 必须（通过 [Android SDK 管理器](~/android/get-started/installation/android-sdk.md)）安装以下包： 
-    - SDK 工具 26.1.1 版或更高版本 
-    - Android SDK 平台工具 28.0.1 或更高版本  
-    - Android SDK 生成工具 26.0.3 或更高版本 
+  - SDK 工具 26.1.1 版或更高版本 
+  - Android SDK 平台工具 28.0.1 或更高版本  
+  - Android SDK 生成工具 26.0.3 或更高版本 
 
   这些包应显示为“已安装”状态，如下面的屏幕截图所示  ：
 

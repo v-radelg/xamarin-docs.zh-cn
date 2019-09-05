@@ -4,15 +4,15 @@ description: 向应用程序添加功能通常需要其他预配设置。 本指
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: ef36e79254a6d07ae6d23de7e86f6a43b2140b09
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 0972b7c6fa686f40ca548f8267f8e514e9244f05
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065523"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286142"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS 中的 iCloud 功能
 

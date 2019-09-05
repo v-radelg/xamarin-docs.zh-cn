@@ -4,21 +4,21 @@ description: 本文档介绍 Xamarin.iOS 链接器，该链接器用于消除 Xa
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 04f92988d4d367abd5e6e864d4450aee2e6c1df2
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 23022351b6ac2da59550be668cb9ed4fe84904dd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233791"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284768"
 ---
 # <a name="linking-xamarinios-apps"></a>链接 Xamarin.iOS 应用
 
-生成应用程序时，Visual Studio for Mac 或 Visual Studio 会调用一个名为 mtouch 的工具，其中包括托管代码的链接器。 它用于从类库中删除应用程序未使用的功能。 目标是缩减应用程序的大小，以使其只附带必须的位。
+生成应用程序时，Visual Studio for Mac 或 Visual Studio 会调用一个名为 mtouch  的工具，其中包括托管代码的链接器。 它用于从类库中删除应用程序未使用的功能。 目标是缩减应用程序的大小，以使其只附带必须的位。
 
-链接器使用静态分析来确定应用程序易于遵循的不同代码路径。 不过其处理有些繁重，因为它必须浏览每个程序集的所有细节，才可确保不会删除任意可发现的细节。 默认情况下，不会在模拟器生成中启用，以在调试过程中加快生成的时间。 但是，由于其生成的应用程序较小，所以它可以加速 AOT 编译并上传到设备，默认情况下，所有“设备(发布)生成”都使用链接器。
+链接器使用静态分析来确定应用程序易于遵循的不同代码路径。 不过其处理有些繁重，因为它必须浏览每个程序集的所有细节，才可确保不会删除任意可发现的细节。 默认情况下，不会在模拟器生成中启用，以在调试过程中加快生成的时间。 但是，由于其生成的应用程序较小，所以它可以加速 AOT 编译并上传到设备，默认情况下，所有“设备(发布)生成”  都使用链接器。
 
 由于链接器是静态工具，它无法标记通过反射调用或已动态实例化的包含类型和方法。 有几个选项可用于解决这一限制。
 
@@ -28,20 +28,20 @@ ms.locfileid: "55233791"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-可以通过“项目选项”中的链接器行为下拉菜单自定义链接过程。 若要访问此下拉菜单，请双击 iOS 项目，并浏览至“iOS 生成”>“链接器选项”，如下所示：
+可以通过“项目选项”  中的链接器行为下拉菜单自定义链接过程。 若要访问此下拉菜单，请双击 iOS 项目，并浏览至“iOS 生成”>“链接器选项”  ，如下所示：
 
 [![](linker-images/image1.png "链接器选项")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-可以通过 Visual Studio 中“项目属性”中的链接器行为下拉菜单自定义链接过程。
+可以通过 Visual Studio 中“项目属性”  中的链接器行为下拉菜单自定义链接过程。
 
 请执行以下操作：
 
-1. 在“解决方案资源管理器”中，右键单击“项目名称”，然后选择“属性”：
+1. 在“解决方案资源管理器”  中，右键单击“项目名称”  ，然后选择“属性”  ：
 
     ![](linker-images/linking01w.png "在“解决方案资源管理器”中，右键单击项目名称，然后选择“属性”")
-2. 在“项目属性”中，选择“iOS 生成”：
+2. 在“项目属性”  中，选择“iOS 生成”  ：
 
     ![](linker-images/linking02w.png "选择“iOS 生成”")
 3. 请按照下面的说明更改链接选项。
@@ -53,9 +53,9 @@ ms.locfileid: "55233791"
 
 ### <a name="dont-link"></a>不链接
 
-禁用链接将确保不修改任何程序集。 出于性能原因，这是 IDE 针对 iOS 模拟器时的默认设置。 对于设备生成，只有当链接器包含阻止应用程序运行的 bug 时，才应将此选项用作解决方法。 如果应用程序仅使用 -nolink，请提交[错误报告](https://github.com/xamarin/xamarin-macios/issues/new)。
+禁用链接将确保不修改任何程序集。 出于性能原因，这是 IDE 针对 iOS 模拟器时的默认设置。 对于设备生成，只有当链接器包含阻止应用程序运行的 bug 时，才应将此选项用作解决方法。 如果应用程序仅使用 -nolink  ，请提交[错误报告](https://github.com/xamarin/xamarin-macios/issues/new)。
 
-使用命令行工具 mtouch 时，它对应于 -nolink 选项。
+使用命令行工具 mtouch 时，它对应于 -nolink 选项  。
 
 <a name="Link_SDK_assemblies_only" />
 
@@ -65,7 +65,7 @@ ms.locfileid: "55233791"
 
 这是最简单的选项，因为它不需要更改任何代码。 与链接所有内容的差异在于，链接器在此模式下无法执行几个优化，因此，这是在链接所有内容需要的工作和最终应用程序大小之间的一个折中。
 
-使用命令行工具 mtouch 时，它对应于 -linksdk 选项。
+使用命令行工具 mtouch 时，它对应于 -linksdk  选项。
 
 <a name="Link_all_assemblies" />
 
@@ -73,7 +73,7 @@ ms.locfileid: "55233791"
 
 链接所有内容时，链接器可以使用其整套优化来尽可能的缩减应用程序的大小。 该选项会修改用户代码，只要代码以链接器的静态分析无法检测到的方式使用功能，代码就可能会中断。 在这种情况下（例如 webservices、反射或序列化），可能需要在应用程序中进行某些调整才能链接所有内容。
 
-使用命令行工具 mtouch 时，它对应于 -linkall 选项。
+使用命令行工具 mtouch  时，它对应于 -linkall  选项。
 
 <a name="Controlling_the_Linker" />
 
@@ -117,7 +117,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 使用命令行工具 mtouch 时，它对应于 `--linkskip` 选项。
 
-使用“链接所有程序集”选项时，如果你想告知链接器跳过整个程序集，请将下面的内容放入在顶级程序集的“其他 mtouch 参数”选项中：
+使用“链接所有程序集”  选项时，如果你想告知链接器跳过整个程序集，请将下面的内容放入在顶级程序集的“其他 mtouch 参数”  选项中：
 
 ```csharp
 --linkskip=NameOfAssemblyToSkipWithoutFileExtension
@@ -129,7 +129,7 @@ public sealed class PreserveAttribute : System.Attribute {
 --linkskip=NameOfFirstAssembly --linkskip=NameOfSecondAssembly
 ```
 
-没有使用此选项的用户界面，但可以在 Visual Studio for Mac 项目选项对话框或 Visual Studio 项目属性窗格中的“其他 mtouch 参数”文本字段内提供。 （例如， --linkskip=mscorlib 不会链接 mscorlib.dll，但会链接解决方案中的其他程序集）。
+没有使用此选项的用户界面，但可以在 Visual Studio for Mac 项目选项对话框或 Visual Studio 项目属性窗格中的“其他 mtouch 参数”  文本字段内提供。 （例如， --linkskip=mscorlib  不会链接 mscorlib.dll，但会链接解决方案中的其他程序集）。
 
 <a name="Disabling_Link_Away" />
 
@@ -137,9 +137,9 @@ public sealed class PreserveAttribute : System.Attribute {
 
 链接器会删除不太可能在设备上使用的代码（例如，不支持或不允许）。 在极少数的情况下，应用程序或库可能会依赖于此（工作或不工作）的代码。 自 Xamarin.iOS 5.0.1 起，可指示链接器跳过此优化。
 
-使用命令行工具 mtouch 时，它对应于 -nolinkaway 选项。
+使用命令行工具 mtouch 时，它对应于 -nolinkaway  选项。
 
-没有使用此选项的用户界面，但可以在 Visual Studio for Mac 项目选项对话框或 Visual Studio 项目属性窗格中的“其他 mtouch 参数”文本字段内提供。 （例如， --nolinkaway 不会删除额外代码（大约 100 kb））。
+没有使用此选项的用户界面，但可以在 Visual Studio for Mac 项目选项对话框或 Visual Studio 项目属性窗格中的“其他 mtouch 参数”  文本字段内提供。 （例如， --nolinkaway  不会删除额外代码（大约 100 kb））。
 
 ### <a name="marking-your-assembly-as-linker-ready"></a>将程序集标记为链接器就绪
 

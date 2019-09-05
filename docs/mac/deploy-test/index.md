@@ -4,15 +4,15 @@ description: 本文档链接到介绍如何部署和测试 Xamarin.Mac 应用的
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/17/2018
-ms.openlocfilehash: d5dc7095812b974944471c84a6240c70257e8140
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 13a6d46a1c9193a91030f2d90c167fb14d7cae7c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121251"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291501"
 ---
 # <a name="deploying-and-testing-xamarinmac-apps"></a>部署和测试 Xamarin.Mac 应用
 

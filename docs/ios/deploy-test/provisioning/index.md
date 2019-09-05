@@ -4,15 +4,15 @@ description: 本文档链接到介绍设备预配、使用功能、使用权利�
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 8b0f0437f40892ada7cfb362f8508c3a20715060
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 6af12373a8704351d77a09ba9a55da3845686828
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113132"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281477"
 ---
 # <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 应用的代码签名和预配
 

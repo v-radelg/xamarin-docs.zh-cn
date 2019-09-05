@@ -4,15 +4,15 @@ description: 本文档为 Objective-C 开发人员介绍 C#。 通过检查协�
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: df477dc0e4708a1d309810b5b8d4f755f3c49afb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: a55d1d9848d3f1378ccbc4a24e1748eb146a6a35
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669812"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291986"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>面向 Objective-C 开发人员的 C# 入门
 
@@ -38,11 +38,11 @@ _Xamarin.iOS 允许用 C# 编写的平台无关的代码跨平台共享。但是
 
 ### <a name="protocols-vs-interfaces"></a>协议与接口
 
-Objective C 和 C# 均为单继承语言。 但是，这两种语言都支持在给定类中实现多个接口。 在 Objective-C 中，这些逻辑接口称为“协议”，而在 C# 中，它们称为“接口”。 在实现智能方面，C# 接口和 Objective-C 协议之间的主要区别是后者可以有可选的方法。 有关详细信息，请参阅[事件、委托和协议](~/ios/app-fundamentals/delegates-protocols-and-events.md)文章。
+Objective C 和 C# 均为单继承语言。 但是，这两种语言都支持在给定类中实现多个接口。 在 Objective-C 中，这些逻辑接口称为“协议”  ，而在 C# 中，它们称为“接口”  。 在实现智能方面，C# 接口和 Objective-C 协议之间的主要区别是后者可以有可选的方法。 有关详细信息，请参阅[事件、委托和协议](~/ios/app-fundamentals/delegates-protocols-and-events.md)文章。
 
 ### <a name="categories-vs-extension-methods"></a>类别与扩展方法
 
-Objective-C 允许将方法添加到你可能没有让实现代码对其使用“类别”的类。 在 C# 中，类似的概念可以通过所谓的*扩展方法*获得。
+Objective-C 允许将方法添加到你可能没有让实现代码对其使用“类别”  的类。 在 C# 中，类似的概念可以通过所谓的*扩展方法*获得。
 
 扩展方法可使你将静态方法添加到类，其中 C# 中的静态方法类似于 Objective-C 中的类方法。 例如，下面的代码将名为 `ScrollToBottom` 的方法添加到 `UITextView` 类，该类又是一个从 UIKit 绑定到 Objective-C `UITextView` 类的托管类：
 
@@ -117,7 +117,7 @@ public string Address {
 
 ### <a name="static-keyword"></a>Static 关键字
 
-static 关键字在 Objective-C 和 C# 之间具有截然不同的含义。 在 Objective-C 中，静态函数用于将函数的作用域限制为当前文件。 但是，在 C# 中，作用域通过 public、private 和 internal 关键字进行维护。
+ static 关键字在 Objective-C 和 C# 之间具有截然不同的含义。 在 Objective-C 中，静态函数用于将函数的作用域限制为当前文件。 但是，在 C# 中，作用域通过  public、  private 和  internal 关键字进行维护。
 
 当 static 关键字应用于 Objective-C 中的变量时，变量会在函数调用之间维护其值。
 
@@ -125,7 +125,7 @@ C# 也具有 static 关键字。 当应用于某个方法时，它会有效地�
 
 ### <a name="nsarray-vs-list-initialization"></a>NSArray 与列表初始化
 
-Objective-C 现在包含用于 `NSArray` 的文本语法，使初始化更加容易。 但是，C# 具有称为 `List` 的更丰富类型，即“泛型”，这意味着列表所包含的类型可以由创建列表的代码提供（如 C++ 中的模板）。 此外，列表还支持自动初始化语法，如下所示：
+Objective-C 现在包含用于 `NSArray` 的文本语法，使初始化更加容易。 但是，C# 具有称为 `List` 的更丰富类型，即“泛型”  ，这意味着列表所包含的类型可以由创建列表的代码提供（如 C++ 中的模板）。 此外，列表还支持自动初始化语法，如下所示：
 
 ```csharp
 MyClass object1 = new MyClass ();
@@ -135,7 +135,7 @@ List<MyClass> myList = new List<MyClass>{ object1, object2 };
 
 ### <a name="blocks-vs-lambda-expressions"></a>块与Lambda 表达式
 
-Objective-C 使用块创建闭包，可以在其中创建函数内联，以便使用其中包含的状态。 通过使用 lambda 表达式，C# 具有类似的概念。 在 C# 中，lambda 表达式通过 `=>` 运算符创建而成，如下所示：
+Objective-C 使用块  创建闭包，可以在其中创建函数内联，以便使用其中包含的状态。 通过使用 lambda 表达式，C# 具有类似的概念。 在 C# 中，lambda 表达式通过 `=>` 运算符创建而成，如下所示：
 
 ```csharp
 (args) => {

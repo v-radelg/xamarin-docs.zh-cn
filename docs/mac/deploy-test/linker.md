@@ -4,15 +4,15 @@ description: 本文档介绍了 Xamarin.Mac 中的链接。 链接是一个功�
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: dd42de4dda4b5d5b09156898fd7a8bab331adf88
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 00d5d5cf9cda38fbfc09fcfe8b4dcb56d00dee5b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865910"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291414"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac 链接器选项
 

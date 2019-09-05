@@ -1,59 +1,59 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
-title: WPF 与。Xamarin.Forms 应用程序生命周期
-description: 本文档会比较的相似之处和 Xamarin.Forms 和 WPF 应用程序的应用程序生命周期之间的差异。 它还会查看可视化树、 图形、 资源和样式。
-author: asb3993
-ms.author: amburns
+title: WPF 与Xamarin.Forms 应用程序生命周期
+description: 本文档比较 Xamarin 和 WPF 应用程序的应用程序生命周期的相似性和差异。 它还查看可视化树、图形、资源和样式。
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 5f157f2bbf36076e542a5f96b912cb1788a99052
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269314"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290378"
 ---
-# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 与。Xamarin.Forms 应用程序生命周期
+# <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 与Xamarin.Forms 应用程序生命周期
 
-Xamarin.Forms 会占用大量的特征之前，尤其是 WPF 基于 XAML 的框架设计指南。 但是，在其他方面它偏差都显著可以是尝试迁移的人员的粘滞点。 本文档尝试确定这些问题的一些，并提供到 Xamarin.Forms 指南在可能到桥 WPF 知识的情况。
+Xamarin 从其前面的基于 XAML 的框架中获取了很多设计指南，尤其是 WPF。 但在其他方面，它会明显偏离，这可能是尝试迁移的用户的一个粘滞点。 本文档将尝试识别其中一些问题，并提供指导以将 WPF 知识桥接到 Xamarin。
 
 ## <a name="app-lifecycle"></a>应用生命周期
 
-WPF 与 Xamarin.Forms 之间的应用程序生命周期是类似的。 同时在外部 （平台） 代码中启动并启动方法调用通过用户界面。 不同之处在于，在然后初始化并创建应用程序的 UI 的特定于平台的程序集中始终启动 Xamarin.Forms。
+WPF 和 Xamarin 之间的应用程序生命周期类似。 在外部（平台）代码中启动并通过方法调用启动 UI。 不同之处在于 Xamarin。 Forms 始终以特定于平台的程序集开头，该程序集将初始化和创建应用程序的 UI。
 
 **WPF**
 
 - `Main method > App > MainWindow`
 
 > [!NOTE]
-> `Main`方法是，默认情况下，自动生成并在代码中不可见。
+> 默认情况下，方法是自动生成的，在代码中不可见。`Main`
 
 **Xamarin.Forms**
 
 - **iOS** &ndash; `Main method > AppDelegate > App > ContentPage`
 - **Android** &ndash; `MainActivity > App > ContentPage`
-- **UWP** &ndash; `Main method > App(UWP) > MainPage(UWP) > App > ContentPage`
+- **UWP**&ndash;`Main method > App(UWP) > MainPage(UWP) > App > ContentPage`
 
 ### <a name="application-class"></a>应用程序类
 
-WPF 与 Xamarin.Forms 具有`Application`创建为单一实例的类。 在大多数情况下，应用将从此类派生以提供自定义应用程序，虽然这并非严格要求在 WPF 中。 两者都公开`Application.Current`属性查找创建的单一实例。
+WPF 和 Xamarin 都具有`Application`创建为单一实例的类。 在大多数情况下，应用将从此类派生以提供自定义应用程序，但在 WPF 中并不是绝对必需的。 这两种`Application.Current`方法都公开一个属性以定位创建的单一实例。
 
-### <a name="global-properties--persistence"></a>全局属性 + 暂留
+### <a name="global-properties--persistence"></a>全局属性 + 持久性
 
-WPF 与 Xamarin.Forms 具有`Application.Properties`字典提供可用于存储应用程序中的任意位置访问的全局应用程序级别对象。 主要区别是 Xamarin.Forms 将会_持久保存_时应用已挂起，但它重新启动时重新加载这些集合中存储任何基元类型。 WPF 自动支持该行为-大多数开发人员而是依赖于独立存储，或利用内置`Settings`支持。
+WPF 和 Xamarin 都有一个可用的`Application.Properties`字典，你可以在其中存储可在应用程序的任何位置访问的全局应用级对象。 主要差别在于，在应用挂起时，Forms 将_保留_存储在集合中的任何基元类型，并在变时重新加载它们。 WPF 不会自动支持该行为-相反，大多数开发人员依赖于独立存储或利用内置`Settings`支持。
 
 ## <a name="defining-pages-and-the-visual-tree"></a>定义页和可视化树
 
-WPF 使用`Window`作为任何顶层可视元素的根元素。 这将在 Windows 世界中，若要显示的信息定义 HWND。 可以创建和显示同时根据需要在 WPF 中的任意多个窗口。
+WPF 使用`Window`作为任何顶级可视元素的根元素。 这会在 Windows 世界中定义一个 HWND 来显示信息。 您可以在 WPF 中同时创建和显示任意数量的窗口。
 
-在 Xamarin.Forms 中，顶层的视觉对象始终定义由平台-例如，在 iOS 上，它是`UIWindow`。 将内容划分为使用这些平台的本机表示形式的 Xamarin.Forms 呈现`Page`类。 每个`Page`在 Xamarin.Forms 中表示唯一"中的页"应用程序，其中仅有一个为可见一次。
+在 Xamarin 中，顶级视觉对象始终由平台定义-例如，在 iOS 上，它`UIWindow`是。 Xamarin. Forms 使用`Page`类将其内容呈现到这些本机平台表示形式中。 每`Page`个 in Xamarin 都表示应用程序中唯一的 "页"，其中一次只显示一个。
 
-这两个 WPFs`Window`和 Xamarin.Forms`Page`包括`Title`属性来影响显示的标题，并且两个具有`Icon`属性来显示特定图标页 (**注意**，标题和图标并不总是在 Xamarin.Forms 中可见）。 此外，您可以更改常见 visual 属性上都如背景色或图像。
+WPFs `Window`和 Xamarin `Page`都包含`Title`用于影响显示`Icon`的标题的属性，并且都具有用于显示页面的特定图标的属性（**请注意**，标题和图标并非总是在 Xamarin 中可见。 此外，您还可以更改这两种属性，如背景色或图像。
 
-从技术上讲可以呈现到两个单独平台视图 (例如定义两个`UIWindow`对象它们具有第二个呈现到外部显示器或 AirPlay)，它需要特定于平台的代码来执行此操作并不直接支持的功能Xamarin.Forms 本身。
+从技术上讲，可以呈现为两个单独的平台视图（例如`UIWindow` ，定义两个对象，并将第二个对象呈现为外部显示或 AirPlay），它需要特定于平台的代码来执行此操作，并且不是的直接支持的功能Xamarin。窗体本身。
 
 ### <a name="views"></a>Views
 
-这两个框架的可视化层次结构是类似的。 WPF 是有点深入由于它对所见即所得的文档的支持。
+这两个框架的视觉层次结构类似。 WPF 更深入，因为它对 WYSIWYG 文档的支持。
 
 **WPF**
 
@@ -77,83 +77,83 @@ BindableObject - base class for all bindable things
 
 ### <a name="view-lifecycle"></a>视图生命周期
 
-Xamarin.Forms 主要面向围绕移动的方案。 在这种情况下，应用程序都_激活_，_挂起_，并_重新激活_当用户与之交互。 这是类似于离开单击`Window`在 WPF 应用程序并且有一组方法和对应的事件可以重写，也可以挂接到要监视此行为。
+Xamarin 的主要目的是围绕移动方案。 因此，当用户与应用程序交互时，应用程序会被_激活_、_挂起_和_重新激活_。 这类似于单击 WPF 应用程序中`Window`的，并有一组方法和相应的事件可以重写或挂钩到监视此行为。
 
-| 用途 | WPF 方法 | Xamarin.Forms 方法 |
+| 用途 | WPF 方法 | Xamarin. Forms 方法 |
 |--- |--- |--- |
-|初始激活|ctor + Window.OnLoaded|ctor + Page.OnStart|
-|所示|Window.IsVisibleChanged|Page.Appearing|
+|初始激活|ctor + OnLoaded|ctor + 页 OnStart|
+|显示|Window.IsVisibleChanged|Page.Appearing|
 |Hidden|Window.IsVisibleChanged|Page.Disappearing|
-|挂起/丢失焦点|Window.OnDeactivated|Page.OnSleep|
-|激活/实际焦点|Window.OnActivated|Page.OnResume|
-|Closed|Window.OnClosing + Window.OnClosed|n/a|
+|暂停/丢失焦点|Window.OnDeactivated|Page.OnSleep|
+|已激活/获得焦点|Window.OnActivated|OnResume|
+|已关闭|OnClosing + OnClosed|n/a|
 
 
-这两个支持显示/隐藏子控件，在 WPF 中它是三种状态属性`IsVisible`（可见、 隐藏和折叠）。 在 Xamarin.Forms 中，它是只是可见还是隐藏通过`IsVisible`属性。
+两者都支持隐藏/显示子控件，在 WPF 中，它是一个三状态属性`IsVisible` （可见、隐藏和折叠）。 在 Xamarin 中，它只是通过`IsVisible`属性可见或隐藏。
 
 ### <a name="layout"></a>布局
 
-页面布局发生同一 2-在阶段中 （度量值/排列） 发生在 WPF 中。 您可以通过重写在 Xamarin.Forms 中的以下方法挂钩到的页面布局`Page`类：
+页面布局发生在 WPF 中发生的同一2遍处理（测量/排列）中。 可以通过重写 Xamarin `Page`类中的以下方法来挂钩到页面布局：
 
 | 方法 | 用途 |
 |--- |--- |
-|OnChildMeasureInvalidated|子项的首选的大小已更改。|
-|OnSizeAllocated|分配页的宽度/高度。|
-|LayoutChanged 事件|布局/页的大小已更改。|
+|OnChildMeasureInvalidated|子元素的首选大小已更改。|
+|OnSizeAllocated|已为页面分配宽度/高度。|
+|LayoutChanged 事件|页面的布局/大小已更改。|
 
-那里没有全局布局事件称为今天，也没有全局`CompositionTarget.Rendering`如下事件： 在 WPF 中找到。
+目前没有调用的全局布局事件，也没有在 WPF 中找到的全局`CompositionTarget.Rendering`事件（如）。
 
-#### <a name="common-layout-properties"></a>常见的布局属性
+#### <a name="common-layout-properties"></a>公共布局属性
 
-WPF 和都支持的 Xamarin.Forms`Margin`到控件元素，周围的间距和`Padding`控制调整间距_内_元素。 此外，大多数 Xamarin.Forms 布局视图具有属性来控制间距 （例如行或列）。
+WPF 和 Xamarin 都支持`Margin`控制元素周围的间距，并`Padding`控制元素_内_的间距。 此外，大多数 Xamarin. Forms 布局视图都有属性来控制间距（例如行或列）。
 
-此外，大多数元素具有属性影响如何在父容器中放置：
+此外，大多数元素都有属性来影响它们在父容器中的定位方式：
 
 | WPF | Xamarin.Forms | 用途 |
 |--- |--- |--- |
-|HorizontalAlignment|HorizontalOptions|左/Center/Right/Stretch 选项|
-|VerticalAlignment|VerticalOptions|顶部/Center/底部/Stretch 选项|
+|HorizontalAlignment|HorizontalOptions|左/居中/右/拉伸选项|
+|VerticalAlignment|VerticalOptions|顶部/中心/底部/拉伸选项|
 
 > [!NOTE]
-> 这些属性的实际的解释取决于父容器。
+> 这些属性的实际解释依赖于父容器。
 
 #### <a name="layout-views"></a>布局视图
 
-WPF 与 Xamarin.Forms 使用布局控件来定位子元素。 在大多数情况下，它们是非常彼此靠近在功能方面。
+WPF 和 Xamarin 均使用布局控件来定位子元素。 在大多数情况下，这些功能在功能方面非常接近。
 
 | WPF | Xamarin.Forms | 布局样式 |
 |--- |--- |--- |
-|StackPanel|StackLayout|从左到右或从上到下无限堆叠|
-|Grid|Grid|表格格式 （行和列）|
+|StackPanel|StackLayout|从左到右或从上到下的无限堆栈|
+|Grid|Grid|表格格式（行和列）|
 |DockPanel|n/a|停靠到窗口边缘|
 |Canvas|AbsoluteLayout|像素/坐标定位|
 |WrapPanel|n/a|包装堆栈|
-|n/a|RelativeLayout|相对的基于规则的定位|
+|n/a|RelativeLayout|相对规则的定位|
 
 > [!NOTE]
-> Xamarin.Forms 不支持`GridSplitter`。
+> Xamarin。窗体不支持`GridSplitter`。
 
-使用这两个平台_附加属性_微调子级。
+这两个平台都使用_附加属性_来微调子级。
 
 ### <a name="rendering"></a>“呈现”
 
-WPF 和 Xamarin.Forms 的呈现机制是全然不同。 在 WPF 中，直接创建的控件内容呈现到屏幕上的像素。 WPF 维护两个对象图 (_树_) 来表示此-_逻辑树_表示控件中的代码或 XAML，定义并_可视化树_表示这是在屏幕发生的实际呈现执行直接通过可视元素 （通过虚拟 draw 方法），或通过 XAML 定义`ControlTemplate`它们可以替换或自定义。 通常情况下，可视化树是更复杂，因为它包含控件、 隐式内容等标签周围的边框等。WPF 还包括一组 Api (`LogicalTreeHelper`和`VisualTreeHelper`) 若要检查这些两个对象图形。
+WPF 和 Xamarin 的呈现机制截然不同。 在 WPF 中，你创建的控件直接将内容呈现给屏幕上的像素。 WPF 维护两个对象图（_树_）来表示这一点-_逻辑树_表示代码或 XAML 中定义的控件，而_可视化树_表示在屏幕上发生的实际呈现直接由视觉对象（通过虚拟绘图方法）或可替换或自定义的 XAML 定义`ControlTemplate` 。 通常，可视化树更复杂，因为它包含控件周围的边框、隐式内容的标签等内容。WPF 包含一组用于检查这`LogicalTreeHelper`两`VisualTreeHelper`个对象关系图的 api （和）。
 
-在 Xamarin.Forms 中，控件中定义`Page`是实际上只是简单的数据对象。 它们类似于逻辑树表示形式，但永远不会呈现在其自己的内容。 相反，它们是_数据模型_这会影响元素的呈现。 实际呈现通过[单独的一套_visual 呈现器_该列映射到每个控件类型](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。 这些呈现器均由特定于平台的 Xamarin.Forms 程序集注册每个特定于平台的项目中。 可以看到列表[此处](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。 Xamarin.Forms 还具有对支持替换或扩展呈现，除了[效果](~/xamarin-forms/app-fundamentals/effects/index.md)这可用于影响基于每个平台的本机呈现。
+在 Xamarin 中，在中`Page`定义的控件实际上只是简单的数据对象。 它们类似于逻辑树表示形式，但绝不会自行呈现内容。 相反，它们是影响元素呈现的_数据模型_。 实际渲染是通过一[组单独的_可视化渲染_器来完成的，这些渲染器会映射到每个控件类型](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。 这些呈现器通过特定于平台的 Xamarin 程序集在每个特定于平台的项目中进行注册。 可在[此处](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)查看列表。 除了替换或扩展呈现器外，Xamarin 还支持可用于影响基于每个平台的本机呈现的[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
-#### <a name="the-logicalvisual-tree"></a>逻辑/Visual 树
+#### <a name="the-logicalvisual-tree"></a>逻辑/可视化树
 
-没有任何公开的 API 以 Xamarin.Forms-中遍历逻辑树，但可以使用反射来获取相同的信息。 例如，[以下是一种方法可可以枚举逻辑子级](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Extensions/ElementExtensions.cs#L108)使用反射。
+没有公开的 API 来遍历 Xamarin 中的逻辑树。窗体-但可以使用反射来获取相同的信息。 例如，[下面是一个可使用反射来枚举逻辑子级的方法](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Extensions/ElementExtensions.cs#L108)。
 
 ## <a name="graphics"></a>图形
 
-Xamarin.Forms 不包括对一个简单的矩形之外的基元的图形系统 (`BoxView`)。 您可以包括第三方库，如下所述[SkiaSharp](~/graphics-games/skiasharp/index.md)若要获取跨平台 2D 绘制或[UrhoSharp](~/graphics-games/urhosharp/index.md) 3d。
+Xamarin 不包括简单矩形（`BoxView`）以外的基元的图形系统。 可以包括第三方库（如[SkiaSharp](~/graphics-games/skiasharp/index.md) ）以获取跨平台2d 绘图，或[UrhoSharp](~/graphics-games/urhosharp/index.md) for 3d。
 
 ## <a name="resources"></a>资源
 
-WPF 和 Xamarin.Forms 都具有资源和资源字典的概念。 可以将放置到任何对象类型`ResourceDictionary`键然后查找它与`{StaticResource}`的内容，不会更改，或`{DynamicResource}`的内容可以在运行时字典中进行更改。 使用情况和机制是相同，但有一个不同之处：Xamarin.Forms 要求您定义`ResourceDictionary`要分配给`Resources`属性而 WPF 预先创建一个并将其分配为您。
+WPF 和 Xamarin 都具有资源和资源字典的概念。 你可以将任何对象类型放入`ResourceDictionary`带有密钥的，然后查找`{StaticResource}`不会更改的对象，或者`{DynamicResource}`在运行时字典中可更改的项。 使用情况和机制是相同的，区别在于：Xamarin 要求您定义要分配`ResourceDictionary` `Resources`给属性的，而 WPF 预先创建一个属性并为您分配它。
 
-有关示例，请参阅以下定义：
+例如，请参阅下面的定义：
 
 **WPF**
 
@@ -175,15 +175,15 @@ WPF 和 Xamarin.Forms 都具有资源和资源字典的概念。 可以将放置
 </ContentPage.Resources>
 ```
 
-如果未定义`ResourceDictionary`，则会生成运行时错误。
+如果未定义`ResourceDictionary`，则将生成运行时错误。
 
 ## <a name="styles"></a>样式
 
-样式也完全支持在 Xamarin.Forms 中，可以是使用主题组成 UI 的 Xamarin.Forms 元素。 它们支持通过触发器 （属性、 事件和数据） 继承`BasedOn`，和值的资源查找。 样式应用于元素或者显式通过`Style`属性，或隐式不提供资源密钥-就像 WPF 一样。
+Xamarin 中也完全支持样式，并可用于为组成 UI 的 Xamarin. Forms 元素设置主题。 它们支持触发器（属性、事件和数据）、继承到`BasedOn`以及值的资源查找。 样式通过`Style`属性显式应用于元素，或通过不提供资源键（就像 WPF 一样）隐式应用。
 
 ### <a name="device-styles"></a>设备样式
 
-WPF 具有一组预定义的属性 (如存储为一组静态类上的静态值`SystemColors`) 的规定系统颜色、 字体和值和资源键的窗体中的指标。 Xamarin.Forms 与此类似，但定义了一组[设备样式](~/xamarin-forms/user-interface/styles/device.md)来表示相同的操作。 这些样式是框架所提供的并将设置为根据运行时环境 （例如辅助功能） 的值。
+WPF 具有一组预定义的属性（以静态值的形式存储在一组静态类`SystemColors`上，如），这些属性以值和资源键的形式指示系统颜色、字体和指标。 Xamarin 类似，但定义一组[设备样式](~/xamarin-forms/user-interface/styles/device.md)来表示相同的内容。 这些样式由框架提供，并根据运行时环境（如辅助功能）设置为值。
 
 **WPF**
 

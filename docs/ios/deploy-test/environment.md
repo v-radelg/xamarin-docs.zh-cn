@@ -4,15 +4,15 @@ description: 本文档介绍如何设置 Xamarin.iOS 应用的临时和永久环
 ms.prod: xamarin
 ms.assetid: 9801644A-89BB-4491-AD28-7F3B97D2CD62
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 52ae48a0cd911cd90d985b830876ec003d073d2a
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3d85fa063580e9619ef433e98f6e6a0e4121ee37
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119291"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289000"
 ---
 # <a name="execution-environment-for-xamarinios-apps"></a>Xamarin.iOS 应用的执行环境
 
@@ -20,7 +20,7 @@ ms.locfileid: "50119291"
 
 ## <a name="temporary-environment-variables"></a>临时环境变量
 
-临时环境变量在“运行”>“常规”部分中的项目“属性”/“选项”窗口中设置。 这些环境变量仅在使用 Visual Studio for Mac 启动应用程序时生效，如果通过在其上点击它手动启动应用，则不会设置环境变量。
+临时环境变量在“运行”>“常规”  部分中的项目“属性”  /“选项”  窗口中设置。 这些环境变量仅在使用 Visual Studio for Mac 启动应用程序时生效，如果通过在其上点击它手动启动应用，则不会设置环境变量。
 
 ## <a name="permanent-environment-variables"></a>永久环境变量
 

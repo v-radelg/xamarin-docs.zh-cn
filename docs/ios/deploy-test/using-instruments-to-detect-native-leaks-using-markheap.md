@@ -4,19 +4,19 @@ description: 本文档介绍了如何使用 Apple 的 Instruments 应用分析�
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: cef817c30dd20840c440cdbbdc8145047ad1fc0e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9492c90274e28f14dee0e8cbcb2aaa1a55de2420
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110786"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282736"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 应用程序
 
-Xcode Instruments 是一种工具，可用于分析设备或模拟器中的 Xamarin.iOS 应用。 Mono 使用其实时模型编译代码，并且 Instruments 也不会解读此类数据，因此难以处理对基于模拟器的应用程序使用 Instruments生成的输出。
+Xcode Instruments 是一种工具，可用于分析设备或模拟器中的 Xamarin.iOS 应用  。 Mono 使用其实时模型编译代码，并且 Instruments 也不会解读此类数据，因此难以处理对基于模拟器的应用程序使用 Instruments生成的输出。
 鉴于此，本指南将集中讨论如何使用开发人员应用解读此文档中的 Instruments 输出。
 
 ## <a name="requirements"></a>要求
@@ -28,17 +28,17 @@ Xcode Instruments 只能在 Mac 上运行。
 选择设备，然后运行 Instruments 应用：
 
 1. 在 Visual Studio for Mac 中打开 Xamarin.iOS 项目。
-2. 选择“调试|iPhone”配置。
+2. 选择“调试|iPhone”  配置。
 3. 将 iOS 设备连接到计算机。
-4. 在“运行”菜单中，选择“上传到设备”。 现在应用程序将生成并上传到该设备。
-5. 在“工具”菜单中，选择“启动 Instruments”。
+4. 在“运行”  菜单中，选择“上传到设备”  。 现在应用程序将生成并上传到该设备。
+5. 在“工具”  菜单中，选择“启动 Instruments”  。
 
 
 此时将打开 Instruments 并显示以下对话：
 
  [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "选择分析模板")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
-单击以选择“分配”模板。 其他模板也有效，但本文仅讨论**分配**分析模板。
+单击以选择“分配”  模板。 其他模板也有效，但本文仅讨论**分配**分析模板。
 
 接下来，使用窗口顶部的菜单选择设备和应用程序：
 
@@ -46,9 +46,9 @@ Xcode Instruments 只能在 Mac 上运行。
 
 在窗口顶部的菜单中选择 iOS 设备，并且应该在其旁边（上面屏幕截图中的 **MemoryDemo**）选择要分析的应用程序。
 
-如果菜单中未列出该设备，请在 Visual Studio for Mac 中查看“控制台”是否有错误消息，当向设备部署该应用时，可能会显示这些错误消息。 另外，请确保已针对部署通过 Xcode 管理器设置设备。
+如果菜单中未列出该设备，请在 Visual Studio for Mac 中查看“控制台”  是否有错误消息，当向设备部署该应用时，可能会显示这些错误消息。 另外，请确保已针对部署通过 Xcode 管理器设置设备。
 
-单击“选择”按钮，随即将显示下一个屏幕：
+单击“选择”  按钮，随即将显示下一个屏幕：
 
 [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "分析接口")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 

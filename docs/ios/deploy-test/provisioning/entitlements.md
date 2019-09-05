@@ -4,15 +4,15 @@ description: 权利是授予应用程序的特殊应用功能和安全性权限�
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/13/2018
-ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121329"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284805"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>在 Xamarin.iOS 中使用权利
 
@@ -96,14 +96,14 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 - 说明  ：以前称为 Passbook，是一款用于存储和管理凭证的应用。 这些凭证可以是信用卡、购物卡、登机牌或票证。
 
-    - **类型标识符**
-        - **键**：com.apple.developer.pass-type-identifiers
-        - **字符串**：`$(TeamIdentifierPrefix)*`
+  - **类型标识符**
+    - **键**：com.apple.developer.pass-type-identifiers
+    - **字符串**：`$(TeamIdentifierPrefix)*`
 
 - **注意**：
-    - 这会使应用允许所有凭证类型。 若要限制应用并仅允许一部分团队凭证类型，请将字符串值设置为 `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
+  - 这会使应用允许所有凭证类型。 若要限制应用并仅允许一部分团队凭证类型，请将字符串值设置为 `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
-    其中，pass.$(CFBundleIdentifier) 是[上文](~/ios/platform/passkit.md)创建的凭证 ID
+  其中，pass.$(CFBundleIdentifier) 是[上文](~/ios/platform/passkit.md)创建的凭证 ID
 
 <a name="icloud" />
 
@@ -111,17 +111,17 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 - **说明**：iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在设备之间共享内容。 开发人员可采用四种方法使用 iCloud 来为用户提供存储方式：键值存储、UIDocument 存储、CoreData 和使用 CloudKit 直接为单个文件和目录提供存储。 有关这些方面的详细信息，请参阅 iCloud 指南简介。
 
-    - **iCloud 文档和 CloudKit**
-        - **键**：com.apple.developer.ubiquity-container-identifiers
-        - **字符串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
-    - **iCloud KeyValue 存储**
-        - **键**：com.apple.developer.ubiquity-kvstore-identifier
-        - **字符串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **iCloud 文档和 CloudKit**
+    - **键**：com.apple.developer.ubiquity-container-identifiers
+    - **字符串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **iCloud KeyValue 存储**
+    - **键**：com.apple.developer.ubiquity-kvstore-identifier
+    - **字符串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 - **注意**：
-    - 通过登录到 developer.apple.com 可找到 `$(TeamIdentifierPrefix)` 字符串，访问“会员中心”>“帐户”>“开发人员帐户摘要”  可获取团队 ID（若是单个开发人员则为个人 ID）。 该字符串是一个含有 10 个字符的字符串（例如 A93A5CM278）。
-    - `$(CFBundleIdentifier)` 字符串以 `iCloud` 开头，在根据[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步骤创建 iCloud 容器时，设置了该字符串。
-    - 为在生成时获得正确的值，可使用和替换 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 占位符。
+  - 通过登录到 developer.apple.com 可找到 `$(TeamIdentifierPrefix)` 字符串，访问“会员中心”>“帐户”>“开发人员帐户摘要”  可获取团队 ID（若是单个开发人员则为个人 ID）。 该字符串是一个含有 10 个字符的字符串（例如 A93A5CM278）。
+  - `$(CFBundleIdentifier)` 字符串以 `iCloud` 开头，在根据[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步骤创建 iCloud 容器时，设置了该字符串。
+  - 为在生成时获得正确的值，可使用和替换 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 占位符。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
@@ -130,16 +130,16 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 - 说明  ：应用组允许不同的应用程序（或一个应用程序及其扩展）访问共享文件存储位置。
 
-    - **键**：com.apple.security.application-groups
-    - **字符串**：group.$(CFBundleIdentifier)
+  - **键**：com.apple.security.application-groups
+  - **字符串**：group.$(CFBundleIdentifier)
 
 <a name="apple-pay" />
 
 ### <a name="apple-pay"></a>Apple Pay
 
 - 说明  ：通过 Apple Pay，用户可以使用 iOS 设备支付实体商品。
-    - **键**：com.apple.developer.in-app-payments
-    - **字符串**：merchant.your.mechantid
+  - **键**：com.apple.developer.in-app-payments
+  - **字符串**：merchant.your.mechantid
 
 ### <a name="push-notifications"></a>推送通知
 
@@ -149,7 +149,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 ### <a name="siri"></a>Siri
 
 - 说明  ：通过 SiriKit，iOS 应用可使用应用扩展、新的 Intents 和 Intents UI 框架来提供可访问 iOS 设备上的 Siri 和 Maps 应用的服务。 有关详细信息，请参阅 SiriKit 指南简介。
-    - **键**：com.apple.developer.siri
+  - **键**：com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>个人 VPN
 
@@ -159,50 +159,50 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 ### <a name="keychain-sharing"></a>Keychain 共享
 
 - 说明  ：通过 Keychain 共享，应用开发人员可将存储在设备密钥链中的密码与同一团队开发的其他应用共享。 通过在字符串中传递密钥链访问组标识符可限制访问权限。
-    - **键**：keychain-access-groups
-    - **字符串**：$(AppIdentifierPrefix) $(CFBundleIdentifier)
+  - **键**：keychain-access-groups
+  - **字符串**：$(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>应用间音频
 
 - 说明  ：通过应用间音频，开发人员可对应用间的音频进行流式处理。
-    - **键**：inter-app-audio
-    - 布尔  ：是
+  - **键**：inter-app-audio
+  - 布尔  ：是
 
 ### <a name="associated-domains"></a>关联的域
 
 - 说明  ：应使用此权利传递应作为通用链接处理的关联域。 可实现通用链接以允许在应用和网站间进行深层链接。 应对应用支持的每个域提供一个条目，每个条目应以 `applinks:` 开头
-    - **键**：com.apple.developer.associated-domains
-    - **字符串**：webcredentials:example.com
+  - **键**：com.apple.developer.associated-domains
+  - **字符串**：webcredentials:example.com
 
 ### <a name="data-protection"></a>数据保护
 
 - 说明  ：启用数据保护将使用内置加密硬件，以加密格式存储应用中所使用的敏感数据。 默认情况下，保护级别设置为完全保护（文件仅在设备未锁定时可访问）。
-    - **键**：com.apple.developer.default-data-protection
-    - 字符串  ：NSFileProtectionComplete
+  - **键**：com.apple.developer.default-data-protection
+  - 字符串  ：NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
 - 说明  ：HomeKit 框架提供了一个平台，用于从一台 iOS 设备上设置、配置和管理所有支持的家庭自动化设备。 有关使用 HomeKit 的详细信息，请参阅 HomeKit 指南简介。
-    - **键**：com.apple.developer.homekit
-    - 布尔  ：是
+  - **键**：com.apple.developer.homekit
+  - 布尔  ：是
 
 ### <a name="healthkit"></a>HealthKit
 
 - 说明  ：HealthKit 是 iOS 8 中引入的一个框架，可为相关健康信息提供集中、协调和安全的数据存储。 有关使用 HealthKit 的详细信息，请参阅 HealthKit 指南简介。
-    - **键**：com.apple.developer.healthkit
-    - 布尔  ：是
+  - **键**：com.apple.developer.healthkit
+  - 布尔  ：是
 
 ### <a name="wireless-accessory-configuration"></a>无线附件配置
 
 - 说明  ：使用无线附件配置可允许应用配置 MFi Wi-Fi 附件
-    - **键**：com.apple.external-accessory.wireless-configuration
-    - 布尔  ：是
+  - **键**：com.apple.external-accessory.wireless-configuration
+  - 布尔  ：是
 
 ### <a name="classkit"></a>ClassKit
 
 - 说明  ：通过 ClassKit，教师可在应用中查看学生在布置的活动中的进度。
-    - **密钥**：com.apple.developer.ClassKit-environment
-    - **字符串**：`development` 或 `production`
+  - **密钥**：com.apple.developer.ClassKit-environment
+  - **字符串**：`development` 或 `production`
 
 ## <a name="summary"></a>总结
 

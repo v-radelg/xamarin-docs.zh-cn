@@ -4,15 +4,15 @@ description: 描述基于 Xamarin 的 Xamarin 上的 tvOS 的内部工作原理�
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 45341418779405e52251eb07576c8e5fa9f09297
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ffcf4d3a491cb6ad865da35d387782b7bd1fca01
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647114"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283576"
 ---
 # <a name="tvos-in-xamarin-internals"></a>Xamarin 中的 tvOS –内部 
 
@@ -22,15 +22,15 @@ Xamarin 为你的 tvOS 应用程序支持的程序集列表。
 
 ## <a name="target-frameworksiostvosinternalsframeworksmd"></a>[目标框架](~/ios/tvos/internals/frameworks.md)
 
-本文介绍了 tvOS 中提供的目标框架 (基类库) 的类型, 以及为 tvOS 应用程序选择特定目标的影响。
+本文介绍了 tvOS 中提供的目标框架（基类库）的类型，以及为 tvOS 应用程序选择特定目标的影响。
 
 ## <a name="related-ios-articles"></a>相关的 iOS 文章
 
-以下文章特定于 iOS, 但与 tvOS 相关, 因为 tvOS 9 是 iOS 9 的子集。
+以下文章特定于 iOS，但与 tvOS 相关，因为 tvOS 9 是 iOS 9 的子集。
 
 ### <a name="unified-apicross-platformmaciosunifiedindexmd"></a>[Unified API](~/cross-platform/macios/unified/index.md)
 
-引入了新的统一 Api, 使 Apple TV 和 iOS 基本代码之间的代码共享变得更简单, 并引入了对64位 Api 和64位编译的支持。  
+引入了新的统一 Api，使 Apple TV 和 iOS 基本代码之间的代码共享变得更简单，并引入了对64位 Api 和64位编译的支持。  
 
 ### <a name="api-designiosinternalsapi-designindexmd"></a>[API 设计](~/ios/internals/api-design/index.md)
 
@@ -38,11 +38,11 @@ Xamarin 为你的 tvOS 应用程序支持的程序集列表。
 
 ### <a name="limitationsiosinternalslimitationsmd"></a>[限制](~/ios/internals/limitations.md)
 
-本部分说明了有关 Xamarin 的缺陷和限制, 其中许多应用于 tvOS。
+本部分说明了有关 Xamarin 的缺陷和限制，其中许多应用于 tvOS。
 
 ### <a name="linkeriosdeploy-testlinkermd"></a>[链接器](~/ios/deploy-test/linker.md)
 
-说明链接器如何工作以确保尽可能小的应用程序包, 以及如何修改其设置和用法。
+说明链接器如何工作以确保尽可能小的应用程序包，以及如何修改其设置和用法。
 
 ### <a name="localization-and-internationalizationiosapp-fundamentalslocalizationindexmd"></a>[本地化和国际化](~/ios/app-fundamentals/localization/index.md)
 

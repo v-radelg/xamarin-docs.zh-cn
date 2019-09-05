@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994420"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289792"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms 控件模板简介
 
@@ -38,7 +38,7 @@ _借助 Xamarin.Forms 控件模板，可在运行时轻松设计或重新设计�
 创建 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 并将其分配给这些类型时，任何现有外观都将替换为 `ControlTemplate` 中定义的外观。 此外，除了使用 `ControlTemplate` 属性设置外观外，还可以使用样式来应用控件模板，以进一步扩展主题功能。
 
 > [!NOTE]
->  *什么是 `TemplatedPage` 和 `TemplatedView` 类型？* `TemplatedPage` 是 `ContentPage` 的基类，是 Xamarin.Forms 提供的最基本的页面类型。 与 `ContentPage` 不同的是，`TemplatedPage` 没有 `Content` 属性。 因此，无法向 `TemplatedPage` 实例直接添加内容， 而是通过设置 `TemplatedPage` 实例的控件模板来添加内容。 同样，`TemplatedView` 是 `ContentView` 的基类。 与 `ContentView` 不同的是，`TemplatedView` 没有 `Content` 属性。 因此，无法向 `TemplatedView` 实例直接添加内容， 而是通过设置 `TemplatedView` 实例的控件模板来添加内容。
+> *什么是 `TemplatedPage` 和 `TemplatedView` 类型？* `TemplatedPage` 是 `ContentPage` 的基类，是 Xamarin.Forms 提供的最基本的页面类型。 与 `ContentPage` 不同的是，`TemplatedPage` 没有 `Content` 属性。 因此，无法向 `TemplatedPage` 实例直接添加内容， 而是通过设置 `TemplatedPage` 实例的控件模板来添加内容。 同样，`TemplatedView` 是 `ContentView` 的基类。 与 `ContentView` 不同的是，`TemplatedView` 没有 `Content` 属性。 因此，无法向 `TemplatedView` 实例直接添加内容， 而是通过设置 `TemplatedView` 实例的控件模板来添加内容。
 
 可以在 XAML 和 C# 中创建控件模板：
 

@@ -4,27 +4,27 @@ description: 本文档链接到介绍如何在 Xamarin iOS 应用程序中使用
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/23/2017
-ms.openlocfilehash: 60bd87adb56e311407280ba98f48d8c3e2160836
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121009"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282990"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>在 Xamarin iOS 应用中处理触控
 
-与其他移动平台一样, iOS 提供多种方法来处理触摸。 它可以支持多点触控 (屏幕上的多点联系) 和复杂的手势。 本指南介绍了一些概念, 以及在 iOS 上实现触摸和手势的 particularities。
+与其他移动平台一样，iOS 提供多种方法来处理触摸。 它可以支持多点触控（屏幕上的多点联系）和复杂的手势。 本指南介绍了一些概念，以及在 iOS 上实现触摸和手势的 particularities。
 
-iOS 在`UITouch`类中封装触控数据, 可通过一`UIResponder`系列方法将其提供给应用程序。 应用程序可以在`UIView`和`UIViewController`的子类中重写这些方法, 这两`UIResponder`个类都继承自。
+iOS 在`UITouch`类中封装触控数据，可通过一`UIResponder`系列方法将其提供给应用程序。 应用程序可以在`UIView`和`UIViewController`的子类中重写这些方法，这两`UIResponder`个类都继承自。
 
-除了捕获触控数据以外, iOS 还提供了一种方法来解释对手势的接触模式。 这些手势识别器可用于解释特定于应用程序的命令, 例如, 旋转图像或打开页面。 iOS 提供了一系列丰富的类, 可使用最少添加的代码处理常见的手势。
+除了捕获触控数据以外，iOS 还提供了一种方法来解释对手势的接触模式。 这些手势识别器可用于解释特定于应用程序的命令，例如，旋转图像或打开页面。 iOS 提供了一系列丰富的类，可使用最少添加的代码处理常见的手势。
 
-触摸和手势识别器之间的选择可能会令人费解。 本指南建议在一般情况下, 应将首选项指定给手势识别器。 手势识别器作为离散类实现, 这可提供更大的问题分离和更好的封装。 这样就可以轻松地在不同视图之间共享逻辑, 从而最大程度地减少编写的代码量。
+触摸和手势识别器之间的选择可能会令人费解。 本指南建议在一般情况下，应将首选项指定给手势识别器。 手势识别器作为离散类实现，这可提供更大的问题分离和更好的封装。 这样就可以轻松地在不同视图之间共享逻辑，从而最大程度地减少编写的代码量。
 
-但是, 有时你需要使用低级别的触摸处理, 甚至跟踪多个手指, 例如创建 finger 式程序。
+但是，有时你需要使用低级别的触摸处理，甚至跟踪多个手指，例如创建 finger 式程序。
 
 ## <a name="sections"></a>部分
 
@@ -32,13 +32,13 @@ iOS 在`UITouch`类中封装触控数据, 可通过一`UIResponder`系列方法�
 - [演练：在 iOS 中使用触控](ios-touch-walkthrough.md)
 - [多点触控跟踪](touch-tracking.md)
 
-本指南介绍了 iOS 中的触控。 若要深入了解如何在 ios 中使用 3D Touch 和 Haptic 反馈 (在 iOS 9 和10中分别引入), 请参阅下面的特定指南:
+本指南介绍了 iOS 中的触控。 若要深入了解如何在 ios 中使用 3D Touch 和 Haptic 反馈（在 iOS 9 和10中分别引入），请参阅下面的特定指南：
 
 - [3D Touch](~/ios/platform/3d-touch.md)
 - [提供 Haptic 反馈](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 触控开始 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
-- [iOS 触摸最终 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
-- [FingerPaint (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)
+- [iOS 触控开始（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
+- [iOS 触摸最终（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [FingerPaint （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

@@ -4,24 +4,24 @@ description: 本文档介绍 Xamarin.iOS 开发人员如何在物理设备上测
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/16/2018
-ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855063"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291437"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 应用的免费预配
 
-免费预配允许 Xamarin.iOS 开发人员将应用部署到 iOS 设备并对其进行测试，无需成为 Apple 开发者计划的一员。
+免费预配允许 Xamarin.iOS 开发人员将应用部署到 iOS 设备并对其进行测试，无需成为 Apple 开发者计划的一员   。
 如果模拟测试有用并且方便实施，请在 iOS 物理设备上测试应用以验证它们在实际内存、存储和网络连接受到约束的情况下正常运行，这一点也至关重要。
 
 使用免费预配将应用部署到设备：
 
-- 使用 Xcode 创建必需的签名标识（开发人员证书和私钥）并预配配置文件（包含显式应用 ID 和已连接的 iOS 设备的 UDID）。
+- 使用 Xcode 创建必需的签名标识  （开发人员证书和私钥）并预配配置文件  （包含显式应用 ID 和已连接的 iOS 设备的 UDID）。
 - 使用在 Visual Studio for Mac 或 Visual Studio 2019 中通过 Xcode 创建的签名标识和预配配置文件部署 Xamarin.iOS 应用程序。
 
 > [!IMPORTANT]
@@ -33,7 +33,7 @@ ms.locfileid: "58855063"
 
 - 正在使用的 Apple ID 不得连接 Apple 开发者计划。
 - Xamarin.iOS 应用必须使用显式应用 ID，而不是通配符应用 ID。
-- Xamarin.iOS 应用中使用的捆绑包标识符必须唯一，且不能曾在其他应用中使用过。 使用免费预配的任何捆绑包标识符都不能再次使用。
+- Xamarin.iOS 应用中使用的捆绑包标识符必须唯一，且不能曾在其他应用中使用过。 使用免费预配的任何捆绑包标识符都不能再次使用  。
 - 如果已分配某应用，将无法通过免费预配对该应用进行部署。
 - 如果应用使用应用程序服务，则需要创建配置文件，如[设备预配](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)指南中详述。 
 
@@ -46,15 +46,15 @@ ms.locfileid: "58855063"
 ### <a name="use-xcode-to-create-a-signing-identity-and-provisioning-profile"></a>使用 Xcode 创建签名标识和预配配置文件
 
 1. 如果没有 Apple ID，请[创建一个](https://appleid.apple.com)。
-2. 打开 Xcode 并浏览到“Xcode”>“首选项”。
-3. 在“帐户”下，使用 **+** 按钮添加现有 Apple ID。 它应类似于下面的屏幕截图：
+2. 打开 Xcode 并浏览到“Xcode”>“首选项”  。
+3. 在“帐户”  下，使用 **+** 按钮添加现有 Apple ID。 它应类似于下面的屏幕截图：
 
     ![Xcode 首选项 - 帐户](free-provisioning-images/launchapp1.png "Xcode Preferences – Accounts")
 
 4. 关闭 Xcode 首选项
 5. 插入要在其中部署应用的 iOS 设备。
-6. 在 Xcode 中创建新项目。 选择“文件”>“新建”>“项目”，然后选择“单一视图应用”。
-7. 在新项目对话框中，将“团队”设置为刚添加的 Apple ID。 在下拉列表中，该内容类似于你的姓名（个人团队）：
+6. 在 Xcode 中创建新项目。 选择“文件”>“新建”>“项目”  ，然后选择“单一视图应用”  。
+7. 在新项目对话框中，将“团队”  设置为刚添加的 Apple ID。 在下拉列表中，该内容类似于你的姓名（个人团队）  ：
 
     ![创建新的应用](free-provisioning-images/launchapp2.png "Create a new app")
 
@@ -62,8 +62,8 @@ ms.locfileid: "58855063"
 
     ![选择 Xcode 生成方案](free-provisioning-images/xcodescheme.png "Select an Xcode build scheme")
 
-9. 在 Xcode 的项目导航器中，选择应用的顶级节点，打开应用的项目设置。
-10. 在“常规”>“标识”下，确保捆绑包标识符完全匹配 Xamarin.iOS 应用的捆绑包标识符。
+9. 在 Xcode 的项目导航器中，选择应用的顶级节点，打开应用的项目设置  。
+10. 在“常规”>“标识”下，确保捆绑包标识符完全匹配 Xamarin.iOS 应用的捆绑包标识符    。
 
     ![设置捆绑包标识符](free-provisioning-images/launchapp5.png "Set a bundle identifier")
 
@@ -71,8 +71,8 @@ ms.locfileid: "58855063"
     > Xcode 将仅为显式应用 ID 创建预配配置文件，并且它必须与 Xamarin.iOS 应用的应用 ID 完全相同。
     > 如果不同，将无法使用免费预配部署 Xamarin.iOS 应用。
 
-11. 在“部署信息”下，确保部署目标与已连接的 iOS 设备上安装的 iOS 版本相同或低于该版本。
-12. 在“签名”下，选择“自动管理签名”，并从下拉列表中选择团队：
+11. 在“部署信息”  下，确保部署目标与已连接的 iOS 设备上安装的 iOS 版本相同或低于该版本。
+12. 在“签名”下，   选择“自动管理签名”，并从下拉列表中选择团队：
 
     ![自动管理签名](free-provisioning-images/launchapp6.png "Automatically manage signing")
 
@@ -90,33 +90,33 @@ ms.locfileid: "58855063"
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 通过 USB 或[以无线方式](~/ios/deploy-test/wireless-deployment.md)将 iOS 设备连接到 Mac 生成主机。
-2. 在 Visual Studio for Mac 的“Solution Pad”中，双击“Info.plist”。
-3. 在“签名”中，选择“手动预配”。
-4. 单击“iOS 捆绑包签名...” 按钮。
-5. 对于“配置”，选择“调试”。
-6. 对于“平台”，选择“iPhone”。
-7. 选择由 Xcode 创建的签名标识。
-8. 选择由 Xcode 创建的预配配置文件。
+2. 在 Visual Studio for Mac 的“Solution Pad”中，双击“Info.plist”   。
+3. 在“签名”中，选择“手动预配”   。
+4. 单击“iOS 捆绑包签名...”  按钮。
+5. 对于“配置”，选择“调试”   。
+6. 对于“平台”，选择“iPhone”   。
+7. 选择由 Xcode 创建的签名标识  。
+8. 选择由 Xcode 创建的预配配置文件  。
 
     ![设置签名标识和预配配置文件](free-provisioning-images/launchapp8.png "Set the signing identity and provisioning profile")
 
     > [!TIP]
     > 如果看不到签名标识或正确的预配配置文件，可能需要重启 Visual Studio for Mac。
 
-9. 单击“确定”保存，并关闭“项目选项”。
+9. 单击“确定”保存，并关闭“项目选项”   。
 10. 选择 iOS 设备并运行应用。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 请确保 Visual Studio 2019 或 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 通过 USB 或[以无线方式](~/ios/deploy-test/wireless-deployment.md)将 iOS 设备连接到 Mac 生成主机。
-3. 在 Visual Studio 2019 或 Visual Studio 2017 的“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目，然后选择“属性”。
-4. 导航至“iOS 捆绑包签名”。
-5. 对于“配置”，选择“调试”。
-6. 对于“平台”，选择“iPhone”。
-7. 选择“手动预配”。
-8. 选择由 Xcode 创建的签名标识。
-9. 选择由 Xcode 创建的预配配置文件。
+3. 在 Visual Studio 2019 或 Visual Studio 2017 的“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目，然后选择“属性”   。
+4. 导航至“iOS 捆绑包签名”  。
+5. 对于“配置”，选择“调试”   。
+6. 对于“平台”，选择“iPhone”   。
+7. 选择“手动预配”  。
+8. 选择由 Xcode 创建的签名标识  。
+9. 选择由 Xcode 创建的预配配置文件  。
     
     ![设置签名标识和预配配置文件](free-provisioning-images/setprofile-w157.png "Set the signing identity and provisioning profile")
 
@@ -130,7 +130,7 @@ ms.locfileid: "58855063"
 
 ## <a name="limitations"></a>限制
 
-Apple 施加了一些限制，限制什么时候、以什么方式才能使用免费预配在 iOS 设备上运行应用程序，确保你只能部署到你自己的设备：
+Apple 施加了一些限制，限制什么时候、以什么方式才能使用免费预配在 iOS 设备上运行应用程序，确保你只能部署到你自己的  设备：
 
 - 还限制了对 iTunes Connect 的访问，因此，未对免费预配应用程序的开发人员提供某些服务（如发布到 App Store 和 TestFlight）。 要通过 Ad Hoc 和 In-House 方式进行分配，需要 Apple 开发人员帐户（企业或个人）。
 - 通过免费预配创建的配置文件一周后过期，签名标识一年后过期。 

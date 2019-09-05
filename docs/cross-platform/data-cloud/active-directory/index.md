@@ -1,36 +1,36 @@
 ---
 title: Microsoft Azure Active Directory
-description: 本文档介绍如何使用 Azure Active Directory 中使用 Xamarin 生成移动应用程序的用户进行身份验证。
+description: 本文档介绍如何使用 Azure Active Directory 在使用 Xamarin 生成的移动应用程序中对用户进行身份验证。
 ms.prod: xamarin
 ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: b9a136c3c5e0e9edff063de5a7eab8e54f52ef92
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c8fa3e6f9e941e0c48570f5d691e7ef83eeffae8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187194"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287640"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
 
 
-Azure Active Directory 允许开发人员安全资源，例如文件、 链接和 Web Api、 Office 365 和员工用于登录到他们的系统或检查其电子邮件的同一个组织帐户的详细信息。
+Azure Active Directory 使开发人员可以使用员工用于登录系统或检查电子邮件的相同组织帐户来保护文件、链接和 Web Api、Office 365 等资源。
 
 ## <a name="getting-started"></a>入门
 
-请按照[入门说明](~/cross-platform/data-cloud/active-directory/get-started/index.md)若要配置 Azure 门户和 Active Directory 身份验证添加到 Xamarin 应用。
+按照入门[说明](~/cross-platform/data-cloud/active-directory/get-started/index.md)配置 Azure 门户并向 Xamarin 应用添加 Active Directory 身份验证。
 
-1. [与 Azure Active Directory 注册](~/cross-platform/data-cloud/active-directory/get-started/register.md)上*windowsazure.com*门户，然后
+1. 在*windowsazure.com*门户中[注册 Azure Active Directory](~/cross-platform/data-cloud/active-directory/get-started/register.md) ，然后
 2. [配置服务](~/cross-platform/data-cloud/active-directory/get-started/configure.md)。
-3. 将以下项之一：
+3. 挂钩以下其中一项：
 
 ## <a name="office-365"></a>Office 365
 
-Active Directory 身份验证添加到应用程序后，您还可以使用凭据与 Office 365 进行交互。
+向应用添加 Active Directory 身份验证后，还可以使用凭据与 Office 365 交互。
 
 ## <a name="graph-api"></a>图形 API
 
-了解如何以访问[图形 API](~/cross-platform/data-cloud/active-directory/graph.md)使用 Xamarin (还介绍了在我们[博客](https://blog.xamarin.com/authenticate-xamarin-mobile-apps-using-azure-active-directory/))。
+了解如何使用 Xamarin 访问[图形 API](~/cross-platform/data-cloud/active-directory/graph.md) （也在[博客](https://blog.xamarin.com/authenticate-xamarin-mobile-apps-using-azure-active-directory/)中介绍）。
 

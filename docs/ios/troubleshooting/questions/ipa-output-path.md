@@ -1,38 +1,38 @@
 ---
-title: 可以更改 IPA 文件的输出路径？
+title: 能否更改 IPA 文件的输出路径？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F5E5DCC6-F7CC-48E2-89E8-709E9C269502
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 8b0686a91f18b41aa8e2e7db071123c0d96723a0
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
+ms.openlocfilehash: b8006b1ffe253ac57c1ab435690c5b378cc709fb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290107"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278668"
 ---
-# <a name="can-i-change-the-output-path-of-the-ipa-file"></a>可以更改 IPA 文件的输出路径？
+# <a name="can-i-change-the-output-path-of-the-ipa-file"></a>能否更改 IPA 文件的输出路径？
 
-## <a name="for-cycle-7-and-higher"></a>周期 7 及更高版本
-是的可以使用自定义的 MSBuild 目标来实现此目的。 最简单的选项可能是复制`.ipa`文件后已生成。
+## <a name="for-cycle-7-and-higher"></a>对于周期7和更高版本
+是的，可以使用自定义的 MSBuild 目标来实现此目的。 最简单的选项可能是在生成`.ipa`文件后对其进行复制。
 
-这些步骤将适用于在 Mac 或 Windows 上使用 MSBuild 生成引擎的任何 iOS 项目。 (注意： 所有 Unified API 项目使用 MSBuild 生成引擎。)
+这些步骤适用于在 Mac 或 Windows 上使用 MSBuild 生成引擎的任何 iOS 项目。 （注意：所有 Unified API 项目都使用 MSBuild 生成引擎。）
 
-1. 打开`.csproj`在文本编辑器中在 iOS 应用项目文件，然后在末尾添加以下行 (在关闭前立即`</Project>`标记):
-    
-    ```
+1. 在文本编辑器中打开 iOS 应用项目的`</Project>` 文件，然后在结尾处添加以下行（紧接在结束标记之前）：`.csproj`
+
+    ```xml
     <PropertyGroup>
-           <CreateIpaDependsOn>
-           $(CreateIpaDependsOn);
-            CopyIpa
-           </CreateIpaDependsOn>
+        <CreateIpaDependsOn>
+        $(CreateIpaDependsOn);
+        CopyIpa
+        </CreateIpaDependsOn>
     </PropertyGroup>
     
     <Target Name="CopyIpa"
-        Condition="'$(OutputType)' == 'Exe'
+            Condition="'$(OutputType)' == 'Exe'
             And '$(ComputedPlatform)' == 'iPhone'
             And '$(BuildIpa)' == 'true'">
         <Copy
@@ -42,31 +42,31 @@ ms.locfileid: "68290107"
     </Target>
     ```
 
-2. 设置为所需的输出文件夹 DestinationFolder。 像往常一样，您可以使用 MSBuild 属性 （如 $(OutputPath)) 中根据需要此参数。
+2. 将 DestinationFolder 设置为所需的输出文件夹。 通常，如果需要，可以在此参数中使用 MSBuild 属性（如 $ （OutputPath））。
 
 ## <a name="notes"></a>说明
-- `CreateIpaDependsOn`属性中定义`Xamarin.iOS.Common.targets`文件，它是 Xamarin.iOS 的一部分。 它的行为如中所述[重写预定义的目标](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)本文的相关部分[如何：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
+- 此`CreateIpaDependsOn` 属性`Xamarin.iOS.Common.targets`在属于 Xamarin 的文件中定义。 它[的行为](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)如本文[如何执行以下操作：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
 
-- 可以使用**移动**任务而非**副本**如果首选的任务。 如果选择选项，并且构建在 Windows 上，您需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>`以避免含糊歧义 XamarinVS 生成任务。
+- 如果愿意，可以使用**移动**任务而不是**复制**任务。 如果选择该选项，并且在 Windows 上进行生成，则需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>` ，以避免与 XamarinVS 生成任务有歧义。
 
-## <a name="for-versions-before-xamarin-studio-6005174--xamarin-for-visual-studio-410530"></a>Xamarin Studio 6.0.0.5174 之前的版本 |Xamarin for Visual Studio 4.1.0.530
+## <a name="for-versions-before-xamarin-studio-6005174--xamarin-for-visual-studio-410530"></a>Xamarin Studio 6.0.0.5174 之前的版本 |适用于 Visual Studio 的 Xamarin 4.1.0.530
 
-是的可以使用自定义的 MSBuild 目标来实现此目的。 最简单的选项可能是复制`.ipa`文件后已生成。
+是的，可以使用自定义的 MSBuild 目标来实现此目的。 最简单的选项可能是在生成`.ipa`文件后对其进行复制。
 
-这些步骤将适用于在 Mac 或 Windows 上使用 MSBuild 生成引擎的任何 iOS 项目。 (注意： 所有 Unified API 项目使用 MSBuild 生成引擎。)
+这些步骤适用于在 Mac 或 Windows 上使用 MSBuild 生成引擎的任何 iOS 项目。 （注意：所有 Unified API 项目都使用 MSBuild 生成引擎。）
 
-1. 打开`.csproj`在文本编辑器中在 iOS 应用项目文件，然后在末尾添加以下行 (在关闭前立即`</Project>`标记)。
+1. 在文本编辑器中打开 iOS 应用项目的`</Project>` 文件，然后在结尾处添加以下行（紧接在结束标记之前）。`.csproj`
 
-    ```csharp
+    ```xml
     <PropertyGroup>
         <CreateIpaDependsOn>
             $(CreateIpaDependsOn);
             CopyIpa
         </CreateIpaDependsOn>
     </PropertyGroup>
-    
+
     <Target Name="CopyIpa"
-        Condition="'$(OutputType)' == 'Exe'
+            Condition="'$(OutputType)' == 'Exe'
             And '$(ComputedPlatform)' == 'iPhone'
             And '$(BuildIpa)' == 'true'">
         <Copy
@@ -76,9 +76,9 @@ ms.locfileid: "68290107"
     </Target>
     ```
 
-2. 设置`DestinationFolder`到所需的输出文件夹。 像往常一样，您可以使用 MSBuild 属性 (如`$(OutputPath)`) 内根据需要此参数。
+2. 将设置`DestinationFolder`为所需的输出文件夹。 通常，如果需要，可以在此参数`$(OutputPath)`中使用 MSBuild 属性（如）。
 
 ## <a name="notes"></a>说明
-- `CreateIpaDependsOn`属性中定义`Xamarin.iOS.Common.targets`文件，它是 Xamarin.iOS 的一部分。 t 的行为如中所述[重写预定义的目标](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)本文的相关部分[如何：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
+- 此`CreateIpaDependsOn` 属性`Xamarin.iOS.Common.targets`在属于 Xamarin 的文件中定义。 t[的行为](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)，如以下文章[如何：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
 
-- 可以使用**移动**任务而非**副本**如果首选的任务。 如果选择选项，并且构建在 Windows 上，您需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>`以避免含糊歧义 XamarinVS 生成任务。
+- 如果愿意，可以使用**移动**任务而不是**复制**任务。 如果选择该选项，并且在 Windows 上进行生成，则需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>` ，以避免与 XamarinVS 生成任务有歧义。

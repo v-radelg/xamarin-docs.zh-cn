@@ -1,44 +1,44 @@
 ---
 title: Xamarin Workbooks
-description: Xamarin 工作簿提供文档和代码非常适合于试验，的 blend 学习，以及创建参考线和教育辅助。
+description: Xamarin Workbooks 提供适用于试验、学习和创建指南和教授指导的文档和代码的混合。
 ms.prod: xamarin
 ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/23/2018
-ms.openlocfilehash: d0aed1b501b86a23d4008ba9618b0e459178ca24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ea065a0eea9be95b0513acd4ee3950efe9a4e53d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61257724"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288095"
 ---
 # <a name="xamarin-workbooks"></a>Xamarin Workbooks
 
-Xamarin 工作簿提供文档和代码非常适合于试验，的 blend 学习，以及创建参考线和教育辅助。
+Xamarin Workbooks 提供适用于试验、学习和创建指南和教授指导的文档和代码的混合。
 
-创建丰富的C#适用于 Android、 iOS、 Mac、 WPF 中，或控制台中和获取即时的实时结果作为您工作簿了解这些 Api。
+创建适用于C# Android、IOS、MAC、WPF 或控制台的丰富工作簿，并在学习这些 api 时获得即时实时结果。
 
-Xamarin Workbooks 是开放源代码软件。 在打开发生在 GitHub 上的开发。 我们邀请感兴趣的用户和开发人员以获取所涉及的项目。
+Xamarin Workbooks 为开源软件。 开发在 GitHub 上的开放环境中进行。 我们邀请感兴趣的用户和开发人员参与项目。
 
-[GitHub 上加入我们吧 ！](https://github.com/Microsoft/workbooks)
+[在 GitHub 上加入我们！](https://github.com/Microsoft/workbooks)
 
-请试一试并告诉我们你的想法，或者，如果您[遇到任何 bug](~/tools/workbooks/install.md#reporting-bugs)。 我们有[论坛](https://forums.xamarin.com/categories/inspector)过 ！
+请试一试，告诉我们你的想法，或者你是否遇到了[任何错误](~/tools/workbooks/install.md#reporting-bugs)。 我们也有[论坛](https://forums.xamarin.com/categories/inspector)！
 
-[![](images/interactive-1.0.0-urho-planet-earth-small.png "示例 UrhoSharp 基于工作簿")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "基于 UrhoSharp 的示例工作簿")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[安装和要求](install.md)
 
-获取工作簿在 Mac 或 Windows 计算机上安装的信息。
+有关如何在 Mac 或 Windows 计算机上安装工作簿的信息。
 
 ## <a name="interactive-workbooksworkbookmd"></a>[交互式工作簿](workbook.md)
 
-如何使用 Xamarin Workbooks 简介。
+介绍如何使用 Xamarin Workbooks。
 
 ## <a name="samples"></a>示例
 
-有各种[示例可在 GitHub 上的工作簿](https://github.com/xamarin/workbooks)。
+GitHub 上提供了各种各样的[示例工作簿](https://github.com/xamarin/workbooks)。
 
 ## <a name="integration-sdksdkindexmd"></a>[集成 SDK](sdk/index.md)
 
-就可以使用自定义数据表示形式和呈现器扩展 Xamarin 工作簿。 使用编写集成C#和 TypeScript/JavaScript。
+可以利用自定义数据表示形式和呈现器来扩展 Xamarin Workbooks。 集成是通过C#和 TypeScript/JavaScript 编写的。

@@ -4,27 +4,27 @@ description: 本部分介绍用于测试应用程序以及如何分发应用程�
 ms.prod: xamarin
 ms.assetid: DA4B4BD7-DC09-4F61-BC07-36727AF52BA2
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e5c15e8f23082060e85f400ee4eef304a34a43a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 12a2acf3310a9df7ef7856dbf2ff8e17241b029e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649074"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279412"
 ---
 # <a name="deploying-and-testing-tvos-apps-in-xamarin"></a>部署和测试 Xamarin 中的 tvOS 应用
 
 ## <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[应用分发](~/ios/tvos/deploy-test/app-distribution/index.md)
 
-本文介绍如何配置、生成和发布 tvOS 应用, 以便通过各种不同的方式进行分发, 包括:
+本文介绍如何配置、生成和发布 tvOS 应用，以便通过各种不同的方式进行分发，包括：
 
 - Apple TV 应用商店分发版。
-- 内部 (企业) 分发。
+- 内部（企业）分发。
 - 即席分发。
 
-如果在将 tvOS 应用提交到 Apple TV 应用商店时遇到问题, 请参阅[故障排除](~/ios/tvos/troubleshooting.md)指南。 它包含一些你可能会遇到的已知问题, 以及如何在 tvOS 中解决这些问题。
+如果在将 tvOS 应用提交到 Apple TV 应用商店时遇到问题，请参阅[故障排除](~/ios/tvos/troubleshooting.md)指南。 它包含一些你可能会遇到的已知问题，以及如何在 tvOS 中解决这些问题。
 
 ## <a name="related-links"></a>相关链接
 

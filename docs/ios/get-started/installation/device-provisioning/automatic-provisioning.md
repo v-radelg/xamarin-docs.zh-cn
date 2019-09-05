@@ -4,16 +4,16 @@ description: Xamarin.iOS 成功安装后，iOS 开发的下一步是 iOS 设备�
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4f5c28c4ad9b673ac50b404e7d34f718366bd11d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: bb8a969a930f2e169d19738ddaafab04a4e8a057
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121455"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287345"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
@@ -101,12 +101,12 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 启用自动签名时，如果发生以下情况，Visual Studio for Mac 会在必要时更新项目：
 
 - iOS 设备插入到 Mac
-    - 这会自动检查设备是否已在 Apple 开发人员门户中注册。 如果没有，则会添加该设备并生成包含该设备的新的预配配置文件。
+  - 这会自动检查设备是否已在 Apple 开发人员门户中注册。 如果没有，则会添加该设备并生成包含该设备的新的预配配置文件。
 - 应用的捆绑 ID 发生更改
-    - 这会更新应用 ID。 创建包含此应用 ID 的新预配配置文件。
+  - 这会更新应用 ID。 创建包含此应用 ID 的新预配配置文件。
 - 一个受支持的功能在 Entitlements.plist 文件中启用。
-    - 此功能将添加到应用 ID，并生成具有更新后的应用 ID 的新预配配置文件。
-    - 当前并非所有功能均受支持。 有关受支持功能的详细信息，请参阅[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
+  - 此功能将添加到应用 ID，并生成具有更新后的应用 ID 的新预配配置文件。
+  - 当前并非所有功能均受支持。 有关受支持功能的详细信息，请参阅[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
 
 ## <a name="wildcard-app-ids"></a>通配符应用 ID
 

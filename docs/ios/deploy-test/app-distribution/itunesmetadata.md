@@ -4,15 +4,15 @@ description: 本文介绍了 iTunesMetadata.plist 文件，该文件用于向 iT
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f632b44e087c0e380ecd81c2af7db3d49c072f7e
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 47b2428ddca47f554fea675a9d2e70374679688f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887748"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281152"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
 
@@ -124,7 +124,7 @@ ms.locfileid: "69887748"
 
 ### <a name="artistname-and-playlistartistname"></a>artistName 和 playlistArtistName
 
-`artistName` 和 `playlistArtistName` 键用于定义创建要在 iTunes 内显示的 iOS 应用程序的公司名称。 示例:
+`artistName` 和 `playlistArtistName` 键用于定义创建要在 iTunes 内显示的 iOS 应用程序的公司名称。 示例：
 
 ```xml
 <key>artistName</key>
@@ -136,7 +136,7 @@ ms.locfileid: "69887748"
 
 ### <a name="bundledisplayname-itemname-and-playlistname"></a>bundleDisplayName、itemName 和 playlistName
 
-`bundleDisplayName`、`itemName` 和 `playlistName` 键用于定义将在 iTunes 中显示的 iOS 应用程序的名称。 示例:
+`bundleDisplayName`、`itemName` 和 `playlistName` 键用于定义将在 iTunes 中显示的 iOS 应用程序的名称。 示例：
 
 ```xml
 <key>bundleDisplayName</key>
@@ -151,7 +151,7 @@ ms.locfileid: "69887748"
 
 ### <a name="bundleshortversionstring-and-bundleversion"></a>bundleShortVersionString 和 bundleVersion
 
-`bundleShortVersionString` 和 `bundleVersion` 键用于定义将在 iTunes 中显示的 iOS 应用程序版本号。 示例:
+`bundleShortVersionString` 和 `bundleVersion` 键用于定义将在 iTunes 中显示的 iOS 应用程序版本号。 示例：
 
 ```xml
 <key>bundleShortVersionString</key>
@@ -162,7 +162,7 @@ ms.locfileid: "69887748"
 
 ### <a name="softwareversionbundleid"></a>softwareVersionBundleId
 
-`softwareVersionBundleId` 键用于指定 iOS 应用程序的程序包 ID。 示例:
+`softwareVersionBundleId` 键用于指定 iOS 应用程序的程序包 ID。 示例：
 
 ```xml
 <key>softwareVersionBundleId</key>
@@ -171,7 +171,7 @@ ms.locfileid: "69887748"
 
 ### <a name="copyright"></a>copyright
 
-`copyright` 键用于定义 iTunes 中显示的版权声明。 示例:
+`copyright` 键用于定义 iTunes 中显示的版权声明。 示例：
 
 ```xml
 <key>copyright</key>
@@ -180,7 +180,7 @@ ms.locfileid: "69887748"
 
 ### <a name="releasedate"></a>releaseDate
 
-`releaseDate` 键用于提供要在 iTunes 中显示的 iOS 应用程序的发布日期。 示例:
+`releaseDate` 键用于提供要在 iTunes 中显示的 iOS 应用程序的发布日期。 示例：
 
 ```xml
 <key>releaseDate</key>
@@ -189,7 +189,7 @@ ms.locfileid: "69887748"
 
 ### <a name="softwareiconneedsshine"></a>softwareIconNeedsShine
 
-`softwareIconNeedsShine` 键用于就 iOS 应用程序图标是否需要对 iOS 6（及先前版本）使用高亮突出显示  通知 iTunes。 示例:
+`softwareIconNeedsShine` 键用于就 iOS 应用程序图标是否需要对 iOS 6（及先前版本）使用高亮突出显示  通知 iTunes。 示例：
 
 ```xml
 <key>softwareIconNeedsShine</key>
@@ -198,7 +198,7 @@ ms.locfileid: "69887748"
 
 ### <a name="gamecenterenabled-and-gamecentereverenabled"></a>gameCenterEnabled 和 gameCenterEverEnabled
 
-`gameCenterEnabled` 和 `gameCenterEverEnabled` 键用于就此 iOS 应用程序是否支持 Apple Game Center 通知 iTunes 。 示例:
+`gameCenterEnabled` 和 `gameCenterEverEnabled` 键用于就此 iOS 应用程序是否支持 Apple Game Center 通知 iTunes 。 示例：
 
 ```xml
 <key>gameCenterEnabled</key>
@@ -209,7 +209,7 @@ ms.locfileid: "69887748"
 
 ### <a name="genre-genreid-and-subgenres"></a>genre、genreId 和 subgenres
 
-`genre` 和 `genreId` 键用于就此 iOS 应用程序属于哪种类型通知 iTunes。 示例:
+`genre` 和 `genreId` 键用于就此 iOS 应用程序属于哪种类型通知 iTunes。 示例：
 
 ```xml
 <key>genre</key>
@@ -218,7 +218,7 @@ ms.locfileid: "69887748"
 <integer>6014</integer>
 ```
 
-`subgenres` 键可选择性地用于进一步定义 iOS 应用程序的子类型（最多两个）。 示例:
+`subgenres` 键可选择性地用于进一步定义 iOS 应用程序的子类型（最多两个）。 示例：
 
 ```xml
 <key>subgenres</key>
@@ -246,7 +246,7 @@ ms.locfileid: "69887748"
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
-`softwareSupportedDeviceIds` 键用于就此 iOS 应用程序支持哪些 iOS 设备通知 iTunes。 示例:
+`softwareSupportedDeviceIds` 键用于就此 iOS 应用程序支持哪些 iOS 设备通知 iTunes。 示例：
 
 ```xml
 <key>softwareSupportedDeviceIds</key>

@@ -5,15 +5,15 @@ zone_pivot_groups: platform-win
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/16/2018
-ms.openlocfilehash: 2f580571e7b871e724ca1a760060a238098e4f44
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 53f244521e4b916078bdcbaa02f1a79a919be0c4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526494"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291305"
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安装 Xamarin.iOS
 
@@ -52,11 +52,12 @@ ms.locfileid: "69526494"
 
     要生成、调试 iOS 应用程序以及对其进行签名以进行分发，Visual Studio 2017 必须能够通过网络访问通过 Apple 开发人员工具 (Xcode) 和 Xamarin.iOS 配置的 Mac 生成主机。
 
-    - [从 Mac App Store 下载和安装 Xcode ](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。 
+    - [从 Mac App Store 下载和安装 Xcode ](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
     - [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)，这同时会安装 Xamarin.iOS。
 
     > [!NOTE]
-    > 如果不想安装 Visual Studio for Mac、Visual Studio 2019，可使用生成 Xamarin.iOS 应用程序所需的软件[自动配置](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) Mac 生成主机。 有关详细信息，请参阅[自动预配 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)。
+    > 如果不想安装 Visual Studio for Mac、Visual Studio 2019，可使用生成 Xamarin.iOS 应用程序所需的软件[自动配置](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) Mac 生成主机。
+    > 有关详细信息，请参阅[自动预配 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)。
 
 3. 与 Mac 配对（将 Visual Studio 2019 连接到 Mac）
 
@@ -72,10 +73,10 @@ ms.locfileid: "69526494"
 若要在 Windows 上使用 Visual Studio 2017 生成 Xamarin.iOS 应用，需要满足以下条件：
 
 - Windows 计算机上需安装 Visual Studio 2017。 可以是物理或虚拟计算机。
-    - [Windows 系统要求](~/cross-platform/get-started/requirements.md#windows-requirements)
-    
-- 使用 Apple 生成工具和 Xamarin.iOS 设置可访问网络的 Mac。 Visual Studio 2017 通过网络连接访问此计算机，以使用 Apple 的生成工具，这些工具是编译本机 iOS 应用程序所必需的。 
-    - [Mac 系统要求](~/cross-platform/get-started/requirements.md#macos-requirements)
+  - [Windows 系统要求](~/cross-platform/get-started/requirements.md#windows-requirements)
+
+- 使用 Apple 生成工具和 Xamarin.iOS 设置可访问网络的 Mac。 Visual Studio 2017 通过网络连接访问此计算机，以使用 Apple 的生成工具，这些工具是编译本机 iOS 应用程序所必需的。
+  - [Mac 系统要求](~/cross-platform/get-started/requirements.md#macos-requirements)
 
 ## <a name="setup"></a>安装
 
@@ -84,14 +85,14 @@ ms.locfileid: "69526494"
 1. 设置 Windows（安装 Visual Studio 2017）
 
     Xamarin.iOS 适用于独立或虚拟计算机上的 Visual Studio 2017 社区版、专业版和企业版。
-    
+
     - [安装 Visual Studio 2017](~/get-started/installation/windows.md)。
 
 2. 设置 Mac（安装 Xcode 和 Visual Studio for Mac）
 
     要生成、调试 iOS 应用程序以及对其进行签名以进行分发，Visual Studio 2017 必须能够通过网络访问通过 Apple 开发人员工具 (Xcode) 和 Xamarin.iOS 配置的 Mac 生成主机。
 
-    - [从 Mac App Store 下载和安装 Xcode ](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。 
+    - [从 Mac App Store 下载和安装 Xcode ](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
     - [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)，这同时会安装 Xamarin.iOS。
 
     > [!NOTE]

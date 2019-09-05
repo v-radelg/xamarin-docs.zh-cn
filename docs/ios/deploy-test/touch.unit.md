@@ -4,15 +4,15 @@ description: 本文档概述了如何对 Xamarin.iOS 应用程序进行单元测
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 6757f25cb54adc464f7e41a1cd59db8cf6c7d22a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 44ced93605ff595fe2fd7f09f88948e5b0e1914c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511713"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282461"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>对 Xamarin.iOS 应用进行单元测试
 
