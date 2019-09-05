@@ -4,33 +4,33 @@ description: 本文档介绍了如何使用 StoreKit Api 销售数字产品和�
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2e429002923d4bfdd2cf5ded4ef1508f8ebf20b8
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 63530595d9892ed99b7eace3d248e1bc0d0b37d4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121501"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288407"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的应用内购买
 
-iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供的一组 Api, 可与 Apple 的服务器通信, 通过其 Apple ID 向用户执行财务交易。 StoreKit Api 主要涉及检索产品信息和执行事务–没有用户界面组件。 实现应用内购买的应用程序必须构建自己的用户界面, 并通过自定义代码跟踪购买的项目, 为用户提供所需的产品或服务。
+iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供的一组 Api，可与 Apple 的服务器通信，通过其 Apple ID 向用户执行财务交易。 StoreKit Api 主要涉及检索产品信息和执行事务–没有用户界面组件。 实现应用内购买的应用程序必须构建自己的用户界面，并通过自定义代码跟踪购买的项目，为用户提供所需的产品或服务。
 
-提供应用内购买功能需要执行许多步骤:
+提供应用内购买功能需要执行许多步骤：
 
 - **配置应用**–必须正确设置应用程序的预配配置文件。
 - **创建产品**–必须在 iTunes Connect 门户中创建产品描述和价格。
 - **实现 StoreKit** –必须根据要销售的产品类型来实现 StoreKit API。
-- **构建用户界面和产品本身**–必须实现产品, 其中包括跟踪每个购买和备份/还原它们的机制 (如果适用)。
+- **构建用户界面和产品本身**–必须实现产品，其中包括跟踪每个购买和备份/还原它们的机制（如果适用）。
 - **监视销售和接收资金**–使用 iTunes Connect 提供的信息来监视销售趋势和跟踪收入。
 
-本文档介绍了如何完成所有这些步骤, 以使用 Xamarin 提供应用内购买。
+本文档介绍了如何完成所有这些步骤，以使用 Xamarin 提供应用内购买。
 
 ## <a name="requirements"></a>要求
 
-若要支持应用内购买, 必须使用 Xcode 7 及更高版本的 Xamarin 5.0 或更高版本。
+若要支持应用内购买，必须使用 Xcode 7 及更高版本的 Xamarin 5.0 或更高版本。
 
 ## <a name="contents"></a>内容
 
@@ -48,7 +48,7 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 ## <a name="summary"></a>总结
 
-本文介绍了应用内购买的概念, 其中概述了如何配置应用程序以利用它并使用 Xamarin 提供的示例。 其中包括:
+本文介绍了应用内购买的概念，其中概述了如何配置应用程序以利用它并使用 Xamarin 提供的示例。 其中包括：
 
 - **IOS 预配门户**–启用应用内购买功能的指导原则。
 - **ITunes Connect** –配置要在应用中销售的产品。
