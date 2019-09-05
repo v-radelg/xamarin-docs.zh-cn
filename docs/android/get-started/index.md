@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: df4c5f1fe4464f3614c1156f095a803f0d265d70
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: af6028c5e4316b1a2e8acde7e4d15e12759c9cb1
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977768"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197522"
 ---
 # <a name="get-started-with-xamarinandroid"></a>Xamarin.Android 入门
 
@@ -28,7 +28,7 @@ ms.locfileid: "64977768"
 
 ## <a name="hello-android-multiscreenandroidget-startedhello-android-multiscreenindexmd"></a>[Hello，Android 多屏幕](~/android/get-started/hello-android-multiscreen/index.md)
 
-在这个由两部分组成的指南中，我们会扩展在“了解 Android”指南中创建的应用程序，以便实现第二个屏幕。 在此过程中，本指南将介绍基本 Android 应用程序构建基块，并随着更好地了解 Android 应用程序结构和功能来使用户深入了解 Android 体系结构。
+在这个由两部分组成的指南中，我们会扩展在“了解 Android”指南中创建的应用程序，以便实现第二个屏幕  。 在此过程中，本指南将介绍基本 Android 应用程序构建基块，并随着更好地了解 Android 应用程序结构和功能来使用户深入了解 Android 体系结构  。
 
 ## <a name="xamarin-for-java-developersandroidget-startedjava-developersmd"></a>[面向 Java 开发人员的 Xamarin](~/android/get-started/java-developers.md)
 
