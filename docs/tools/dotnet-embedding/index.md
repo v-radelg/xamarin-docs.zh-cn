@@ -1,17 +1,17 @@
 ---
 title: .NET 嵌入
-description: .NET 嵌入，现有的.NET 代码 (C#， F#，和其他人) 可供其他编程语言编写的代码。
+description: .Net 嵌入允许使用其他编程语言编写C#的F#代码使用现有的 .net 代码（、和其他）。
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 23233ea8b06e0db580ba99edf2705e3dae5b931f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: af068e5a09cc11eec33508a4f2eb33186168aae6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363397"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290227"
 ---
 # <a name="net-embedding"></a>.NET 嵌入
 
@@ -33,7 +33,7 @@ ms.locfileid: "61363397"
 - [**Java** ](android/index.md) – 将 .NET 映射到惯用 Java API
 - [**C** ](get-started/c.md) – 将 .NET 映射到面向对象的 C API 等
 
-稍后将推出更多语言。
+稍后会提供更多语言。
 
 ## <a name="getting-started"></a>入门
 
@@ -45,4 +45,4 @@ ms.locfileid: "61363397"
 
 ## <a name="related-links"></a>相关链接
 
-- [GitHub 上的 Embeddinator 4000](https://github.com/mono/Embeddinator-4000)
+- [GitHub 上的 Embeddinator-4000](https://github.com/mono/Embeddinator-4000)

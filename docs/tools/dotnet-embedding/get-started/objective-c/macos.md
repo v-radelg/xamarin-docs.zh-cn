@@ -1,17 +1,17 @@
 ---
 title: MacOS 入门
-description: 本文档介绍如何开始使用 macOS 的 .NET 嵌入。 它讨论了要求, 并提供了一个示例应用程序, 用于演示如何绑定托管程序集并在 Xcode 项目中使用生成的输出。
+description: 本文档介绍如何开始使用 macOS 的 .NET 嵌入。 它讨论了要求，并提供了一个示例应用程序，用于演示如何绑定托管程序集并在 Xcode 项目中使用生成的输出。
 ms.prod: xamarin
 ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: ee40a5ef3504e5d274a34ec2d9569026e5d40551
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: e7f1bac95e9e812c0e47b55b85f72f34ba76e68e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199860"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290259"
 ---
 # <a name="getting-started-with-macos"></a>MacOS 入门
 
@@ -21,13 +21,13 @@ ms.locfileid: "70199860"
 
 ## <a name="hello-world"></a>Hello world
 
-首先, 在中C#生成一个简单的 hello world 示例。
+首先，在中C#生成一个简单的 hello world 示例。
 
 ### <a name="create-c-sample"></a>创建C#示例
 
-打开 Visual Studio for Mac, 创建名为 " **hello-从-csharp**" 的新 Mac 类库项目, 并将其保存到 **~/Projects/hello-from-csharp**。
+打开 Visual Studio for Mac，创建名为 " **hello-从-csharp**" 的新 Mac 类库项目，并将其保存到 **~/Projects/hello-from-csharp**。
 
-将**MyClass.cs**文件中的代码替换为以下代码片段:
+将**MyClass.cs**文件中的代码替换为以下代码片段：
 
 ```csharp
 using AppKit;
@@ -44,9 +44,9 @@ public class MyNSView : NSTextView
 
 ### <a name="bind-the-managed-assembly"></a>绑定托管程序集
 
-有了托管程序集后, 可通过调用 .NET 嵌入进行绑定。
+有了托管程序集后，可通过调用 .NET 嵌入进行绑定。
 
-如[安装](~/tools/dotnet-embedding/get-started/install/install.md)指南中所述, 可以在项目中使用自定义 MSBuild 目标来完成生成后步骤, 也可以手动执行此操作:
+如[安装](~/tools/dotnet-embedding/get-started/install/install.md)指南中所述，可以在项目中使用自定义 MSBuild 目标来完成生成后步骤，也可以手动执行此操作：
 
 ```shell
 cd ~/Projects/hello-from-csharp
@@ -59,19 +59,19 @@ objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csha
 
 打开 Xcode 并创建新的 Cocoa 应用程序。 将其命名为 " **hello-从-csharp** " 并选择 "**目标 C** " 语言。
 
-在查找器中打开 **~/Projects/hello-from-csharp/output**目录, 选择 " **hello**-", 将其拖到 "Xcode" 项目, 并将其放置在项目中的 " **hello-csharp** " 文件夹的紧上方。
+在查找器中打开 **~/Projects/hello-from-csharp/output**目录，选择 " **hello**-"，将其拖到 "Xcode" 项目，并将其放置在项目中的 " **hello-csharp** " 文件夹的紧上方。
 
 ![拖放框架](macos-images/hello-from-csharp-mac-drag-drop-framework.png)
 
-请确保在弹出的对话框中选中 "**需要时复制项**", 然后单击 "**完成**"。
+请确保在弹出的对话框中选中 "**需要时复制项**"，然后单击 "**完成**"。
 
 ![根据需要复制项](macos-images/hello-from-csharp-mac-copy-items-if-needed.png)
 
-选择 " **hello-csharp** " 项目, 并导航到 " **hello-csharp** " 目标的 "**常规**" 选项卡。在 "**嵌入的二进制文件**" 部分中, 添加 " **hello-csharp**"。
+选择 " **hello-csharp** " 项目，并导航到 " **hello-csharp** " 目标的 "**常规**" 选项卡。在 "**嵌入的二进制文件**" 部分中，添加 " **hello-csharp**"。
 
 ![嵌入的二进制文件](macos-images/hello-from-csharp-mac-embedded-binaries.png)
 
-打开**ViewController**, 并将内容替换为:
+打开**ViewController**，并将内容替换为：
 
 ```objc
 #import "ViewController.h"
@@ -91,7 +91,7 @@ objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csha
 @end
 ```
 
-最后, 运行 Xcode 项目, 如下所示:
+最后，运行 Xcode 项目，如下所示：
 
 ![在模拟器C#中运行的示例 Hello](macos-images/hello-from-csharp-mac.png)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: 33a121c97df435d3423e3e0f525e6a3d32c780ad
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: a79f22fa96c4c34d2a9704e9aa3be3825895a15b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197469"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291583"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 要求
 
@@ -25,7 +25,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 可对以下操作系统编写 Xamarin.Forms 应用程序：
 
 - iOS 8 或更高版本
-- Android 5.0 (API 21) 或更高版本 ([更多详细信息](#android))
+- Android 5.0 （API 21）或更高版本（[更多详细信息](#android)）
 - Windows 10 通用 Windows 平台（[详细信息](#windows10)）
 
 假定开发人员熟悉[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
@@ -69,10 +69,10 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 ## <a name="mac-system-requirements"></a>Mac 系统要求
 
-你可以使用 Visual Studio for Mac 在 macOS 高塞拉利昂 (10.13) 或更高版本上开发 Xamarin。 若要开发 iOS 应用, 建议至少安装 iOS 10 SDK 和 Xcode 9。
+你可以使用 Visual Studio for Mac 在 macOS 高塞拉利昂（10.13）或更高版本上开发 Xamarin。 若要开发 iOS 应用，建议至少安装 iOS 10 SDK 和 Xcode 9。
 
 > [!NOTE]
->  不能在 macOS 上开发 Windows 应用。
+> 不能在 macOS 上开发 Windows 应用。
 
 ## <a name="windows-system-requirements"></a>Windows 系统要求
 
@@ -84,9 +84,9 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 为 UWP 开发 Xamarin.Forms 应用需要：
 
-- Windows 10 (建议使用最新版本, 秋季创建者更新)
+- Windows 10 （建议使用最新版本，秋季创建者更新）
 
-- 建议使用 visual Studio 2019 (Visual Studio 2017 版本15.8 最低版本)
+- 建议使用 visual Studio 2019 （Visual Studio 2017 版本15.8 最低版本）
 
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
@@ -94,7 +94,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 ## <a name="deprecated-platforms"></a>弃用的平台
 
-使用 Xamarin 3.0 或更高版本时, 不支持这些平台:
+使用 Xamarin 3.0 或更高版本时，不支持这些平台：
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*
