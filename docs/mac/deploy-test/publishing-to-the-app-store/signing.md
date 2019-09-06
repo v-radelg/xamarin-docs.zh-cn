@@ -4,32 +4,32 @@ description: 本文档介绍如何使用开发人员 ID 对 Xamarin.Mac 应用�
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9294080f361d280bcb61ea162320da57f44a2a95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117663"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293050"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用开发人员 ID 对 Xamarin.Mac 应用进行签名
 
-如果开发人员计划直接将应用分发给 macOS 用户，Apple 建议使用开发人员 ID 对应用进行代码签名，以便可在启用“网关守卫”的 macOS 系统上安装此应用。 如果应用未经签名，**网关守卫**会通过警告消息阻止用户安装（在启动时按住 Ctrl 键可跳过此限制）。
+如果开发人员计划直接将应用分发给 macOS 用户，Apple 建议使用开发人员 ID 对应用进行代码签名，以便可在启用“网关守卫”  的 macOS 系统上安装此应用。 如果应用未经签名，**网关守卫**会通过警告消息阻止用户安装（在启动时按住 Ctrl 键可跳过此限制）。
 
 请在 Apple 网站详细阅读[开发者 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)和[在 Mac App Store 外进行分发](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)。
 
 ## <a name="code-signing-options"></a>代码签名选项
 
-若要生成应用以直接（而不通过 Mac App Store）部署给用户，请将“签名设置”设置为使用“开发人员 ID”。 请务必编辑“发布”配置。
+若要生成应用以直接（而不通过 Mac App Store）部署给用户，请将“签名设置”  设置为使用“开发人员 ID”  。 请务必编辑“发布”  配置。
 
  [![](signing-images/config02.png "Mac 签名选项")](signing-images/config02.png#lightbox)
 
 
 ## <a name="build"></a>生成
 
-生成前，请确保选择正确的配置，然后在“Mac 生成”设置中选择创建安装包：
+生成前，请确保选择正确的配置，然后在“Mac 生成”设置  中选择创建安装包：
 
 [![](signing-images/config03.png "生成选项")](signing-images/config03.png#lightbox)
 
@@ -39,7 +39,7 @@ ms.locfileid: "50117663"
 
  [![](signing-images/image58.png "允许密钥链访问")](signing-images/image58.png#lightbox)
 
-生成应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”找到包文件（在 `bin/Release` 目录中）。 此包文件包含应用程序的安装程序，因而可直接将应用程序分发给任何 macOS 用户进行安装。
+生成应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”  找到包文件（在 `bin/Release` 目录中）。 此包文件包含应用程序的安装程序，因而可直接将应用程序分发给任何 macOS 用户进行安装。
 
  [![](signing-images/image59.png "在查找器中选择应用包")](signing-images/image59.png#lightbox)
 

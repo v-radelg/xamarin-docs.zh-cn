@@ -4,19 +4,19 @@ description: 本文档介绍如何使用 iTunes Connect 将 Xamarin.Mac 应用�
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: fa5c8a72a469f1a798cbdcfc63c07860363f6608
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: b0bb58fee1c9eaeee391b3a838b3fa2921e97a57
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109843"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284256"
 ---
 # <a name="upload-to-mac-app-store"></a>上传到 Mac App Store
 
-本指南介绍如何上传 Xamarin.Mac 应用以发布到 Mac App Store。
+ 本指南介绍如何上传 Xamarin.Mac 应用以发布到 Mac App Store。
 
 通过 [iTunes Connect](http://itunesconnect.apple.com/) 提交应用程序供 Mac App Store 审核。
 
@@ -52,9 +52,9 @@ ms.locfileid: "50109843"
 
     [![](uploading-images/image72.png "添加所需的屏幕截图")](uploading-images/image72.png#lightbox) 
 
-    屏幕截图应采用 JPG、TIF 或 PNG 格式，大小为 1280x800、1440x900、2880x1800 或 2560x1600 像素。 按“保存”完成操作。
+    屏幕截图应采用 JPG、TIF 或 PNG 格式，大小为 1280x800、1440x900、2880x1800 或 2560x1600 像素。 按“保存”  完成操作。
 
-5. 应用信息会显示以供审核。 单击“查看详细信息”更改状态： 
+5. 应用信息会显示以供审核。 单击“查看详细信息”  更改状态： 
 
     [![](uploading-images/image73.png "查看应用详细信息")](uploading-images/image73.png#lightbox)
 
@@ -71,15 +71,15 @@ ms.locfileid: "50109843"
     [![](uploading-images/image76.png "接受通知")](uploading-images/image76.png#lightbox)
 
 9. 启动应用程序加载程序，确保使用 Apple ID 进行登录。
-选择“提交应用”继续操作： 
+选择“提交应用”  继续操作： 
 
     [![](uploading-images/image77.png "应用程序加载程序接口")](uploading-images/image77.png#lightbox)
 
-10. 从处于“准备上传二进制文件”状态的应用程序列表中进行选择，然后单击“下一步”： 
+10. 从处于“准备上传二进制文件”  状态的应用程序列表中进行选择，然后单击“下一步”  ： 
 
     [![](uploading-images/image78.png "选择要上传的应用")](uploading-images/image78.png#lightbox)
 
-11. 查看应用程序元数据，然后单击“选择...”查找包文件： 
+11. 查看应用程序元数据，然后单击“选择...”  查找包文件： 
 
     [![](uploading-images/image79.png "审阅应用元数据")](uploading-images/image79.png#lightbox)
 
@@ -87,7 +87,7 @@ ms.locfileid: "50109843"
 
     [![](uploading-images/image80.png "选择要上传的文件")](uploading-images/image80.png#lightbox)
 
-13. 按“发送”： 
+13. 按“发送”  ： 
 
     [![](uploading-images/image81.png "发送应用")](uploading-images/image81.png#lightbox)
 

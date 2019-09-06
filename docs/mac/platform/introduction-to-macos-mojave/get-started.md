@@ -4,15 +4,15 @@ description: 本文档介绍了如何设置以构建具有 Xamarin 的 macOS Moj
 ms.prod: xamarin
 ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 369133f49566625dd677dc077ed8ff6a0bb0b4db
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 64c1ca0bfee5b98b7842bdc44a46bc40cf2012fc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511673"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285464"
 ---
 # <a name="get-started-with-macos-mojave"></a>MacOS Mojave 入门
 
@@ -24,16 +24,16 @@ ms.locfileid: "68511673"
 
 2. **运行 Xcode 10** –在更新和运行 Visual Studio for Mac 之前运行 Xcode 10;它会安装 Xamarin 所需的一些工具。
 
-3. **更新 Visual Studio for Mac** –使用 Visual Studio for Mac 的最新稳定版本, 使用[Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)或更高版本。
+3. **更新 Visual Studio for Mac** –使用 Visual Studio for Mac 的最新稳定版本，使用[Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)或更高版本。
 
-4. _(可选)_ **在 Mac 上安装 MacOS Mojave** –
+4. _（可选）_ **在 Mac 上安装 MacOS Mojave** –
 
    > [!TIP]
-   > 即使你的应用不使用任何新的 macOS Mojave Api, 也请务必使用 macOS Mojave SDK 生成它, 并对其进行测试以确保一切按预期运行。 如果应用程序不调用任何新的 Api, 可以使用 macOS Mojave SDK 重新编译该应用程序并对其进行测试, 而无需升级 Mac 的操作系统。
+   > 即使你的应用不使用任何新的 macOS Mojave Api，也请务必使用 macOS Mojave SDK 生成它，并对其进行测试以确保一切按预期运行。 如果应用程序不调用任何新的 Api，可以使用 macOS Mojave SDK 重新编译该应用程序并对其进行测试，而无需升级 Mac 的操作系统。
    >
-   > 在将 Mac 升级到 macOS Mojave 之前, 生成并测试调用新的 macOS Mojave Api 的 Xamarin 应用程序:
+   > 在将 Mac 升级到 macOS Mojave 之前，生成并测试调用新的 macOS Mojave Api 的 Xamarin 应用程序：
    >
-   > - 阅读[Apple 发行说明](https://developer.apple.com/download/), 了解操作系统更新。
+   > - 阅读[Apple 发行说明](https://developer.apple.com/download/)，了解操作系统更新。
 
 ## <a name="related-links"></a>相关链接
 
