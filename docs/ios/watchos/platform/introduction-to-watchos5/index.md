@@ -1,47 +1,47 @@
 ---
 title: watchOS 5 简介
-description: 本文档提供了一些 watchOS 5 的高级别说明适用于 Xamarin 的 Api。
+description: 本文档简要介绍了适用于 Xamarin 的某些 watchOS 5 Api。
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e873d476e38c91bad0db805d53e2c396f4ffb9dd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61222853"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282043"
 ---
 # <a name="introduction-to-watchos-5"></a>watchOS 5 简介
 
-本文档提供了一些 watchOS 5 的高级别说明 Api。
+本文档提供一些 watchOS 5 Api 的高级说明。
 
-若要开始构建使用 Xamarin 的 watchOS 5 应用程序，请参阅[入门指南](~/ios/platform/introduction-to-ios12/get-started.md)
+若要开始生成 watchOS 5 应用和 Xamarin，请参阅[入门指南](~/ios/platform/introduction-to-ios12/get-started.md)
 
-## <a name="workout-improvements"></a>利用改进
+## <a name="workout-improvements"></a>健身改进
 
-WatchOS 5 中的 Api 健身健身数据收集，将锻炼保存到 HealthKit，自动继续健身后应用程序崩溃，并使用一系列相关的数量数据提供新功能。
+WatchOS 5 中的健身 Api 提供了用于健身数据收集的新功能，将 workouts 保存到 HealthKit，在应用崩溃后自动继续健身，并使用一系列相关的数量数据。
 
-## <a name="siri-shortcuts"></a>使用 Siri 快捷方式
+## <a name="siri-shortcuts"></a>Siri 快捷方式
 
-在 watchOS 5，Siri 手表表盘显示快捷方式的图面上的应用内容和功能提供给用户在方便的时间。 使用 Siri 了解不同时段，以显示相关的快捷方式时最可能要使用。
+在 watchOS 5 中，Siri 监视面显示了在方便的情况下将应用内容和功能呈现给用户的快捷方式。 Siri 随着时间的推移，在最有可能使用时显示相关的快捷方式。
 
 ## <a name="background-audio-mode"></a>背景音频模式
 
-watchOS 5 使第三方应用程序播放音频，在通过 AV Foundation 框架的背景。
+watchOS 5 使第三方应用可以通过 AV 基础框架在后台播放音频。
 
-## <a name="movement-disorder-api"></a>移动障碍 API
+## <a name="movement-disorder-api"></a>移动失序程度 API
 
-移动障碍 API，5，watchOS 中 CoreMotion framework 的一部分允许 watchOS 应用程序监视、 记录和查询 tremor 和 dyskinesia 帕金森病 's 疾病与相关的症状。
+失序程度 API 是 watchOS 5 中 CoreMotion 框架的一部分，它允许 watchOS 应用程序监视、记录和查询 tremor 和 dyskinesia 与 Parkinson 疾病相关的问题。
 
 ## <a name="natural-language-framework"></a>自然语言框架
 
-自然语言框架使应用程序可以执行各种类型的语言分析。 例如，它可用来识别词类并确定所表示的文本块的语言。
+自然语言框架使应用程序可以执行各种类型的语言分析。 例如，它可用于标识词性的各个部分，并确定文本块所代表的语言。
 
 ## <a name="related-links"></a>相关链接
 
-- [watchOS – Apple 开发人员 (Apple)](https://developer.apple.com/watchOS/)
-- [什么是 watchOS (Apple) （视频） 中的新增功能](https://developer.apple.com/videos/play/wwdc2018/206/)
-- [监视 (Apple)](https://www.apple.com/watch/)
+- [watchOS-Apple 开发人员（Apple）](https://developer.apple.com/watchOS/)
+- [WatchOS （Apple）中的新增功能（视频）](https://developer.apple.com/videos/play/wwdc2018/206/)
+- [观看（Apple）](https://www.apple.com/watch/)

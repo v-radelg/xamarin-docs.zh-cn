@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526949"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292575"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中创建自定义布局
 
@@ -74,8 +74,8 @@ _Xamarin.Forms 定义了四个布局的类，这些 StackLayout、 AbsoluteLayou
 1. 重写[ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))方法来调用[ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))布局上的布局的所有子级，并返回请求的大小的方法。 有关详细信息，请参阅[重写 OnMeasure 方法](#onmeasure)。
 1. 重写[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))方法来调用[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))对布局的所有子对象的方法。 未能调用[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))在布局中的每个子方法会导致永远不会接收正确的大小或位置的子并因此子级将不会变得在页上可见。 有关详细信息，请参阅[重写 LayoutChildren 方法](#layoutchildren)。
 
-  > [!NOTE]
->  在枚举中的子级[ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))并[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))替代，请跳过任何子其[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)属性设置为`false`. 这将确保自定义布局不会保留为不可见子级的空间。
+    > [!NOTE]
+    > 在枚举中的子级[ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))并[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))替代，请跳过任何子其[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)属性设置为`false`. 这将确保自定义布局不会保留为不可见子级的空间。
 
 1. [*可选*] 重写[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)方法添加到或从布局中删除子级时收到通知。 有关详细信息，请参阅[重写 InvalidateLayout 方法](#invalidatelayout)。
 1. [*可选*] 重写[ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)方法的一个子级的布局大小更改时收到通知。 有关详细信息，请参阅[重写 OnChildMeasureInvalidated 方法](#onchildmeasureinvalidated)。

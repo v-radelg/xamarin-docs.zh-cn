@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 50bcdcc23d1291071a6045544faad9388755116b
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119006"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225461"
 ---
 # <a name="metadata-and-markdown-template"></a>元数据和 Markdown 模板
 
@@ -145,7 +145,7 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 > 目前，没有查找 UID 的便捷方法。 查找某个 API 的 UID 的最好方法是在此存储库中搜索它：[docascode/coreapi](https://github.com/docascode/coreapi)。 我们正努力实现将来拥有更好的系统。
 
 当 UID 包含特殊字符 \` 或 \# 时，UID 值需要分别使用 HTML 编码为 60% 和 %23，如下面的示例所示：
-- 示例:@System.Threading.Tasks.Task\`1 变为 `@System.Threading.Tasks.Task%601`
+- 示例：@System.Threading.Tasks.Task\`1 变为 `@System.Threading.Tasks.Task%601`
 - 示例：@System.Exception \#ctor 变为 `@System.Exception.%23ctor`
 
 ## <a name="lists"></a>列表
@@ -185,8 +185,8 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 - 这
 - 无序
 - list
-    - Mrs. Peacock
-    - Mr. Green
+  - Mrs. Peacock
+  - Mr. Green
 - 包含
 - 其他
     1. Colonel Mustard

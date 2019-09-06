@@ -1,29 +1,29 @@
 ---
 title: Xamarin 中的动态通知操作按钮
-description: 使用 iOS 12, 通知内容扩展插件可以添加、删除和更新与通知一起显示的操作按钮。 本文档介绍如何对 Xamarin 使用动态通知操作按钮。
+description: 使用 iOS 12，通知内容扩展插件可以添加、删除和更新与通知一起显示的操作按钮。 本文档介绍如何对 Xamarin 使用动态通知操作按钮。
 ms.prod: xamarin
 ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 1a4380e321035b8948f9b40bdce052161025d5f3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5be233e9b07069dc7c9842a3ddd00e7d46d9c22f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652586"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291275"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Xamarin 中的动态通知操作按钮
 
-在 iOS 12 中, 通知可以动态地添加、删除和更新其关联的操作按钮。 此类自定义使用户能够向用户提供直接与通知内容相关的操作以及用户与之交互的操作。
+在 iOS 12 中，通知可以动态地添加、删除和更新其关联的操作按钮。 此类自定义使用户能够向用户提供直接与通知内容相关的操作以及用户与之交互的操作。
 
-## <a name="sample-app-redgreennotifications"></a>示例应用:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>示例应用：RedGreenNotifications
 
-本指南中的代码片段来自[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用程序, 该应用程序演示如何在 ios 12 中使用 Xamarin 来处理通知操作按钮。
+本指南中的代码片段来自[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用程序，该应用程序演示如何在 ios 12 中使用 Xamarin 来处理通知操作按钮。
 
-此示例应用将发送两种类型的本地通知: 红色和绿色。
-在应用程序发送通知后, 使用3D 触控查看其自定义用户界面。 然后, 使用通知的操作按钮来旋转显示的图像。 当图像旋转时, "**重置旋转**" 按钮将显示并在必要时消失。
+此示例应用将发送两种类型的本地通知：红色和绿色。
+在应用程序发送通知后，使用3D 触控查看其自定义用户界面。 然后，使用通知的操作按钮来旋转显示的图像。 当图像旋转时，"**重置旋转**" 按钮将显示并在必要时消失。
 
 本指南中的代码片段来自此示例应用。
 
@@ -32,15 +32,15 @@ ms.locfileid: "68652586"
 通知的类别决定了其默认操作按钮。
 
 在应用程序启动时创建和注册通知类别。
-例如, 在[示例应用程序](#sample-app-redgreennotifications)中, 的`FinishedLaunching`方法`AppDelegate`将执行以下操作:
+例如，在[示例应用程序](#sample-app-redgreennotifications)中，的`FinishedLaunching`方法`AppDelegate`将执行以下操作：
 
-- 为红色通知定义一个类别, 并为绿色通知定义另一个类别
+- 为红色通知定义一个类别，并为绿色通知定义另一个类别
 - 通过调用[`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
 方法`UNUserNotificationCenter`
 - 附加单个[`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 到每个类别
 
-下面的示例代码演示如何工作:
+下面的示例代码演示如何工作：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -74,14 +74,14 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-根据此代码, 任何[`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
-默认情况下, 为 "红色类别" 或 "绿色类别", 将显示 "**旋转20°** " 操作按钮。
+根据此代码，任何[`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
+默认情况下，为 "红色类别" 或 "绿色类别"，将显示 "**旋转20°** " 操作按钮。
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>通知操作按钮的应用内处理
 
 `UNUserNotificationCenter`具有[类型`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)为的属性。`Delegate`
 
-在示例应用中, `AppDelegate`将自身设置为中`FinishedLaunching`的用户通知中心的委托:
+在示例应用中， `AppDelegate`将自身设置为中`FinishedLaunching`的用户通知中心的委托：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -95,8 +95,8 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
         // ...
 ```
 
-然后, `AppDelegate`实现[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
-处理操作按钮点击:
+然后， `AppDelegate`实现[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
+处理操作按钮点击：
 
 ```csharp
 [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -119,7 +119,7 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
         }
 ```
 
-此实现`DidReceiveNotificationResponse`不会处理通知的 "**旋转20°** " 操作按钮。 相反, 通知的内容扩展会处理此按钮。 下一节将进一步讨论通知操作按钮处理。
+此实现`DidReceiveNotificationResponse`不会处理通知的 "**旋转20°** " 操作按钮。 相反，通知的内容扩展会处理此按钮。 下一节将进一步讨论通知操作按钮处理。
 
 ## <a name="action-buttons-in-the-notification-content-extension"></a>通知内容扩展中的操作按钮
 
@@ -128,20 +128,20 @@ public void DidReceiveNotificationResponse(UNUserNotificationCenter center, UNNo
 此视图控制器可以在其`GetNotificationActions`上`SetNotificationActions`使用和方法[`ExtensionContext`](xref:UIKit.UIViewController.ExtensionContext)
 用于访问和修改通知的操作按钮的属性。
 
-在示例应用中, 通知内容扩展的视图控制器仅在响应 "已存在的操作" 按钮时才会修改操作按钮。
+在示例应用中，通知内容扩展的视图控制器仅在响应 "已存在的操作" 按钮时才会修改操作按钮。
 
 > [!NOTE]
-> 通知内容扩展可以在其视图控制器的[`DidReceiveNotificationResponse`](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)方法中进行响应, 并将其声明为[IUNNotificationContentExtension](xref:UserNotificationsUI.IUNNotificationContentExtension)的一部分。
+> 通知内容扩展可以在其视图控制器的[`DidReceiveNotificationResponse`](xref:UserNotificationsUI.UNNotificationContentExtension_Extensions.DidReceiveNotificationResponse*)方法中进行响应，并将其声明为[IUNNotificationContentExtension](xref:UserNotificationsUI.IUNNotificationContentExtension)的一部分。
 >
-> 尽管它与`DidReceiveNotificationResponse` [上述](#in-app-handling-of-notification-action-buttons)方法共享一个名称, 但这是一种不同的方法。
+> 尽管它与`DidReceiveNotificationResponse` [上述](#in-app-handling-of-notification-action-buttons)方法共享一个名称，但这是一种不同的方法。
 >
-> 在通知内容扩展完成对按钮点击的处理后, 可以选择是否告知主应用程序处理相同的按钮点击。 为此, 它必须将适当的[UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption)值传递到其完成处理程序:
+> 在通知内容扩展完成对按钮点击的处理后，可以选择是否告知主应用程序处理相同的按钮点击。 为此，它必须将适当的[UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption)值传递到其完成处理程序：
 >
-> - `Dismiss`指示应消除通知界面, 并且主应用不需要处理按钮点击。
-> - `DismissAndForwardAction`指示应消除通知界面, 并且主应用还应处理按钮点击。
-> - `DoNotDismiss`指示不应消除通知界面, 并且主应用不需要处理按钮点击。
+> - `Dismiss`指示应消除通知界面，并且主应用不需要处理按钮点击。
+> - `DismissAndForwardAction`指示应消除通知界面，并且主应用还应处理按钮点击。
+> - `DoNotDismiss`指示不应消除通知界面，并且主应用不需要处理按钮点击。
 
-内容扩展的`DidReceiveNotificationResponse`方法确定点击了哪个操作按钮, 在通知的接口中旋转图像, 并显示或隐藏 "**重置**操作" 按钮:
+内容扩展的`DidReceiveNotificationResponse`方法确定点击了哪个操作按钮，在通知的接口中旋转图像，并显示或隐藏 "**重置**操作" 按钮：
 
 ```csharp
 [Export("didReceiveNotificationResponse:completionHandler:")]
@@ -184,14 +184,14 @@ public void DidReceiveNotificationResponse(UNNotificationResponse response, Acti
 }
 ```
 
-在这种情况下, 方法`UNNotificationContentExtensionResponseOption.DoNotDismiss`会将传递给它的完成处理程序。 这意味着通知的接口将保持打开状态。
+在这种情况下，方法`UNNotificationContentExtensionResponseOption.DoNotDismiss`会将传递给它的完成处理程序。 这意味着通知的接口将保持打开状态。
 
 ## <a name="related-links"></a>相关链接
 
 - [示例应用– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin 中的用户通知框架](~/ios/platform/user-notifications/index.md)
 - [声明可操作的通知类型](https://developer.apple.com/documentation/usernotifications/declaring_your_actionable_notification_types?language=objc)
-- [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [用户通知中的新增功能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [用户通知中的最佳实践和新增功能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [生成远程通知 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [UserNotifications （Apple）](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [用户通知中的新增功能（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [用户通知中的最佳实践和新增功能（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [生成远程通知（Apple）](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

@@ -1,38 +1,38 @@
 ---
-title: 适用于 Xamarin.Mac 的绑定 Mac 库
-description: 此文档所链接到介绍如何使用 Xamarin.Mac 应用程序，包括目标 Sharpie 和示例代码中的 Objective C 绑定的指南。
+title: 绑定 Xamarin mac 库
+description: 本文档链接到介绍如何在 Xamarin 应用程序（包括客观 Sharpie 和示例代码）中使用目标 C 绑定的指南。
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/13/2017
-ms.openlocfilehash: fde21b2056d56cbf1c4768b287e29f559390f500
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 59ac5a4f9949f1e65e67b9629c43ddb4b822bf43
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032468"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290052"
 ---
-# <a name="binding-mac-libraries-for-xamarinmac"></a>适用于 Xamarin.Mac 的绑定 Mac 库
+# <a name="binding-mac-libraries-for-xamarinmac"></a>绑定 Xamarin mac 库
 
-请遵循以下链接了解有关绑定 OBJECTIVE-C 库上 Xamarin.Mac:
+单击下面的链接可了解如何在 Xamarin 上绑定目标-C 库：
 
-- [**概述**](~/cross-platform/macios/binding/overview.md) -
-  描述绑定的工作原理。
-- [**绑定 OBJECTIVE-C 库**](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  如何将绑定 OBJECTIVE-C 库的 Xamarin 项目中使用的说明。
-- [**键入定义参考指南**](~/cross-platform/macios/binding/binding-types-reference.md) -
-  描述所有可用来驱动绑定生成进程的绑定作者的属性。
+- [**概述**](~/cross-platform/macios/binding/overview.md)-
+  描述绑定的工作方式。
+- [**绑定目标-C 库**](~/cross-platform/macios/binding/objective-c-libraries.md)-
+  有关如何绑定要在 Xamarin 项目中使用的目标 C 库的说明。
+- [**类型定义参考指南**](~/cross-platform/macios/binding/binding-types-reference.md)-
+  介绍可用于绑定的作者用于驱动绑定生成过程的所有属性。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[目标 Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-目标 Sharpie 是一个命令行工具来帮助启动绑定的第一次传递。
-其工作原理是分析要映射到的公共 API 的本机库的标头文件[绑定定义](~/cross-platform/macios/binding/binding-types-reference.md)（否则手动完成该过程）。 目标 Sharpie 不会创建一个绑定本身，但它可以帮助您入门 ！
+客观 Sharpie 是一个命令行工具，可帮助启动绑定的第一步。
+它的工作原理是分析本机库的标头文件，以将公共 API 映射到[绑定定义](~/cross-platform/macios/binding/binding-types-reference.md)（否则手动执行的过程）。 客观 Sharpie 不会自行创建绑定，但可以帮助你入门！
 
 ## <a name="examples"></a>示例
 
-请参阅[XMBindingExample Mac 示例](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample)若要了解如何创建 Mac 绑定使用绑定项目。
+请参阅[XMBindingExample Mac 示例](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample)，了解如何使用绑定项目创建 Mac 绑定。
 
 ## <a name="related-links"></a>相关链接
 

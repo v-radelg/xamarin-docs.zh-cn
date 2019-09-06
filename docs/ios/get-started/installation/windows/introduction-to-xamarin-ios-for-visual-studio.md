@@ -4,15 +4,15 @@ description: 本文档介绍如何使用 Visual Studio 生成和测试 Xamarin i
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: e6f95713fdf3dbe8983c9f51554df7165637fc9a
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 45c7c3a90fa0dedfed8f5f325a96b4c7aa7a5a9e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855128"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292026"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 简介
 
@@ -23,7 +23,7 @@ ms.locfileid: "58855128"
 在 Visual Studio 内部开发 iOS 具有以下优点：
 
 - 为 iOS、Android 和 Windows 应用程序创建跨平台解决方案。
-- 对所有跨平台项目（包括 iOS 源代码）使用常用 Visual Studio 工具（如 Resharper 和 Team Foundation Server）。
+- 对所有跨平台项目（包括 iOS 源代码）使用常用 Visual Studio 工具（如 Resharper  和 Team Foundation Server  ）。
 - 使用熟悉的 IDE，同时利用所有 Apple API 的 Xamarin.iOS 绑定。
 
 ## <a name="requirements-and-installation"></a>要求和安装
@@ -67,7 +67,7 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 下面解释每个项：
 
-- **Mac 代理/连接管理器** - 显示 Xamarin Mac 代理对话框。 正在连接时，此图标显示为橙色；已连接时，显示为绿色。
+- **Mac 代理/连接管理器** - 显示 Xamarin Mac 代理对话框。 正在连接时，此图标显示为橙色  ；已连接时，显示为绿色  。
 - **显示 iOS 模拟器** - 在 Mac 上将 iOS 模拟器窗口放在最前面。
 - **显示生成服务器上的 IPA 文件** - 打开 Mac 上的 Finder，找到应用程序的 IPA 输出文件位置。
 
@@ -75,7 +75,7 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 ### <a name="output-window"></a>输出窗口
 
-“输出”窗格具有多个选项，可以查看这些选项，发现有关生成、部署、连接消息和错误。
+“输出”  窗格具有多个选项，可以查看这些选项，发现有关生成、部署、连接消息和错误。
 
 以下屏幕截图显示可用的输出窗口，这些窗口可能因项目类型而有所不同：
 
@@ -101,33 +101,33 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 ## <a name="ios-project-properties"></a>iOS 项目属性
 
-可通过右键单击项目名称并选择上下文菜单中的“属性”找到 Visual Studio 的项目属性。 这样就可以配置 iOS 应用程序了，如以下屏幕截图所示：
+可通过右键单击项目名称并选择上下文菜单中的“属性”  找到 Visual Studio 的项目属性。 这样就可以配置 iOS 应用程序了，如以下屏幕截图所示：
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "配置 iOS 应用程序")
 
-- iOS 应用程序包签名 - 连接 Mac 以填充代码签名标识和预配配置文件：
+- iOS 应用程序包签名  - 连接 Mac 以填充代码签名标识和预配配置文件：
 
   ![填充代码签名标识和预配配置文件](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png)
 
-- iOS IPA 选项 - IPA 文件将保存到 Mac 文件系统中：
+- iOS IPA 选项  - IPA 文件将保存到 Mac 文件系统中：
 
   ![iOS IPA 选项](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png)
 
-- iOS 运行选项 - 配置其他参数：
+- iOS 运行选项  - 配置其他参数：
 
   ![iOS 运行选项](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png)
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>为 iOS 应用程序创建新的项目
 
-在 Visual Studio 中创建新的 iOS 项目同创建其他项目类型一样。 选择“文件”>“新建项目”会打开如下所示的对话框，描述创建新的 iOS 项目的一些可用项目类型：
+在 Visual Studio 中创建新的 iOS 项目同创建其他项目类型一样。 选择“文件”>“新建项目”  会打开如下所示的对话框，描述创建新的 iOS 项目的一些可用项目类型：
 
 ![创建新项目](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-选择“iOS 应用(Xamarin)”会显示如下所示的模板，用于创建新的 Xamarin.iOS 应用程序：
+选择“iOS 应用(Xamarin)”  会显示如下所示的模板，用于创建新的 Xamarin.iOS 应用程序：
 
 ![选择 iOS 应用的模板](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
-可以在 Visual Studio 中使用 iOS 设计器编辑情节提要和 .xib 文件。 若要创建情节提要，请选择某个情节提要模板。 这会在“解决方案资源管理器”中生成 **Main.storyboard** 文件，如以下屏幕截图所示：
+可以在 Visual Studio 中使用 iOS 设计器编辑情节提要和 .xib 文件。 若要创建情节提要，请选择某个情节提要模板。 这会在“解决方案资源管理器”  中生成 **Main.storyboard** 文件，如以下屏幕截图所示：
 
 ![解决方案资源管理器中的 Main.storyboard 文件](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
@@ -135,7 +135,7 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "iOS 设计器中的 Main.storyboard")
 
-若要向视图添加对象，请使用“工具箱”窗格，将项拖放到设计图面上。 如果尚未添加工具箱，可通过选择“视图”>“工具箱”添加。 可使用“属性”窗格修改对象属性、调整布局，并创建事件，如下所示：
+若要向视图添加对象，请使用“工具箱”  窗格，将项拖放到设计图面上。 如果尚未添加工具箱，可通过选择“视图”>“工具箱”  添加。 可使用“属性”  窗格修改对象属性、调整布局，并创建事件，如下所示：
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "“属性”窗格")
 
@@ -149,9 +149,9 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 Visual Studio 新的“设备日志”工具窗口允许显示 Android 和 iOS 设备的日志。 执行以下任一命令均可显示此窗口：
 
-- “视图”>“其他窗口”>“设备日志”
-- “工具”>“iOS”>“设备日志”
-- “iOS 工具栏”>“设备日志”
+- “视图”>“其他窗口”>“设备日志” 
+- “工具”>“iOS”>“设备日志” 
+- “iOS 工具栏”>“设备日志” 
 
 在工具窗口显示后，用户便可以从“设备”下拉列表中选择物理设备。 选定设备后，日志将自动添加到表中。 在设备之间切换可停止和启动设备日志记录。
 

@@ -1,42 +1,42 @@
 ---
 title: IOS 12 中的通知
-description: 本文档链接到指南描述如何使用 iOS 12 中引入的各种与通知相关功能： 临时通知分组的通知，通知管理、 交互式通知、 动态通知操作按钮和严重警报。
+description: 本文档链接到介绍如何使用 iOS 12：临时通知、分组通知、通知管理、交互式通知、动态通知操作按钮等中引入的各种通知相关功能的指南。和严重警报。
 ms.prod: xamarin
 ms.assetid: 137C719D-6D97-4D5B-9877-F6F35BF85FF0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 8ee42c04c5d79bfd39c34550b5f77427af8f835d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 75a3505294b612789a2e2fc2226e6d6f811f80e9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035106"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291245"
 ---
 # <a name="notifications-in-ios-12"></a>IOS 12 中的通知
 
 ## <a name="critical-alertscritical-alertsmd"></a>[关键警报](critical-alerts.md)
 
-iOS 12 使可能发送严重警报。 严重警报播放声音无论启用请勿打扰，或使用响铃开关处于关闭状态。
+iOS 12 可以发送关键警报。 无论是否启用 "请勿打扰" 或响铃开关关闭，关键警报都将播放声音。
 
 ## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[动态通知操作按钮](dynamic-actions.md)
 
-使用 iOS 12，通知现在可以修改在运行时其操作按钮。
-执行此操作使可能显示更多相关内容的通知以及与它的用户的交互操作。
+对于 iOS 12，通知现在可在运行时修改其操作按钮。
+这样做可以显示与通知内容相关的操作以及用户与之交互的操作。
 
 ## <a name="grouped-notificationsgroupedmd"></a>[分组通知](grouped.md)
 
-为了帮助用户管理他们收到的许多通知，iOS 12 可以通过应用程序或线程分组通知。
+为了帮助用户管理他们接收到的许多通知，iOS 12 可以按应用或线程对通知进行分组。
 
 ## <a name="interactive-notificationsinteractivemd"></a>[交互式通知](interactive.md)
 
-在 iOS 12，通知的自定义用户界面可以包含交互控件。
+在 iOS 12 中，通知的自定义用户界面可以包含交互控件。
 
 ## <a name="notification-managementmanagementmd"></a>[通知管理](management.md)
 
-iOS 12 可以深层链接到应用的通知管理屏幕，使用户更轻松地启用或禁用特定类型的通知。
+iOS 12 可以深层链接到应用的通知管理屏幕，使用户能够更轻松地启用或禁用特定类型的通知。
 
 ## <a name="provisional-notificationsprovisionalmd"></a>[临时通知](provisional.md)
 
-临时通知使应用，而无需用户可以选择显示无人参与的通知。 静默通知不播放声音，并只显示在通知中心。 它们提供用户若要预览通知的应用程序决定是否允许或禁止它们之前，将发送。
+临时通知允许应用显示静默通知，而无需用户选择加入。 安静通知不会播放声音，只会出现在通知中心。 它们提供了一种方法，让用户预览应用发送的通知，并决定是否允许或禁止它们。

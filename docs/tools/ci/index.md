@@ -1,17 +1,17 @@
 ---
 title: Xamarin 持续集成简介
-description: 本文档所链接到指南描述与 Xamarin 持续集成。 链接的内容提供了持续集成的概述，并讨论了应用中心的生成、 TeamCity 和 Jenkins。
+description: 本文档链接到介绍与 Xamarin 持续集成的指南。 链接内容提供持续集成的概述，并讨论 App Center Build、TeamCity 和 Jenkins。
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/23/2018
-ms.openlocfilehash: 073fc5abace2e0cb923394a359437528f703f338
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6e1d90152fa47fef0638c93777f1e7179e97e387
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61371074"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292554"
 ---
 # <a name="continuous-integration-with-xamarin"></a>与 Xamarin 持续集成
 
@@ -29,7 +29,7 @@ ms.locfileid: "61371074"
 
 ### <a name="build-xamarin-apps-with-azure-pipelineshttpsdocsmicrosoftcomazuredevopspipelineslanguagesxamarin"></a>[使用 Azure 管道构建 Xamarin 应用程序](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/)
 
-使用 Azure 管道自动构建面向 Android 和 iOS 的 Xamarin 应用。
+使用 Azure Pipelines 自动生成适用于 Android 和 iOS 的 Xamarin 应用。
 
 ### <a name="build-xamarin-apps-using-app-centerhttpsdocsmicrosoftcomappcenterbuildxamarin"></a>[使用 App Center 构建 Xamarin 应用](https://docs.microsoft.com/appcenter/build/xamarin/)
 
@@ -37,7 +37,7 @@ ms.locfileid: "61371074"
 
 ### <a name="build-xamarin-apps-with-teamcitytoolsciteamcitymd"></a>[使用 TeamCity 构建 Xamarin 应用](~/tools/ci/teamcity.md)
 
-本指南介绍使用 TeamCity 编译移动应用，然后将它们提交到 App Center Test 所涉及的步骤。
+本指南讨论了使用 TeamCity 编译移动应用，并将其提交到 App Center 测试所涉及的步骤。
 
 ### <a name="build-xamarin-apps-with-jenkinstoolscijenkins-walkthroughmd"></a>[使用 Jenkins 构建 Xamarin 应用](~/tools/ci/jenkins-walkthrough.md)
 

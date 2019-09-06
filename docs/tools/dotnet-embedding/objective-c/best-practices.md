@@ -1,35 +1,35 @@
 ---
-title: .NET 嵌入 Objective c 的最佳实践
-description: 本文档介绍了各种与 Objective-c。 使用.NET 嵌入的最佳做法 它讨论公开的托管代码的子集、 公开 chunkier API、 命名和的详细信息。
+title: 针对目标的 .NET 嵌入最佳做法-C
+description: 本文档介绍了在目标 C 中使用 .NET 嵌入的各种最佳实践。 它讨论了公开托管代码子集、公开 chunkier API、命名等。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364072"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285119"
 ---
-# <a name="net-embedding-best-practices-for-objective-c"></a>.NET 嵌入 Objective c 的最佳实践
+# <a name="net-embedding-best-practices-for-objective-c"></a>针对目标的 .NET 嵌入最佳做法-C
 
-这是草稿，可能不同步的功能目前支持该工具。 我们希望本文档将分别发展并最终根据最终的工具，即我们会建议从长远来看最佳方法-无法立即解决方法。
+这是一个草稿，可能不与该工具当前支持的功能同步。 我们希望本文档单独发展，并最终与最终工具匹配，也就是说，我们将建议长期的最佳方法，而不是即时解决方法。
 
-本文档的很大程度也适用于其他受支持的语言。 但是所有提供的示例是在C#和 Objective-c。
+本文档中的大部分内容也适用于其他受支持的语言。 但提供的所有示例都C#在和目标-C 中。
 
-## <a name="exposing-a-subset-of-the-managed-code"></a>公开的托管代码的子集
+## <a name="exposing-a-subset-of-the-managed-code"></a>公开托管代码的子集
 
-生成本机库/框架包含用于调用每个公开的托管 Api 的 Objective C 代码。 你面上的多个 API （公开） 然后较大本机_粘附_库将成为。
+生成的本机库/框架包含目标-C 代码，以调用公开的每个托管 Api。 您表面上的更多 API （使其成为公共的）越大，本机_粘连_库就会变成。
 
-可能会创建一个不同的、 较小程序集，以公开 Api 向本机开发人员只需一个好办法。 该机制还允许您更好地控制可见性，命名，生成的代码的...检查时出错。
+最好创建一个不同的小型程序集，以便仅向本机开发人员公开所需的 Api。 此外观还允许您更好地控制可见性、命名、错误检查 .。。生成的代码的。
 
 ## <a name="exposing-a-chunkier-api"></a>公开 chunkier API
 
-没有从本机转换支付的价格为托管 （和后退）。 在这种情况下，最好公开_而不是琐碎块式_Api，用于本机开发人员，例如
+从本机过渡到托管（和后退）都需要支付价格。 因此，更好的做法是将_块式（而不是_向本机开发人员）公开的 api，例如
 
-**聊天式**
+**聊天**
 
 ```csharp
 public class Person {
@@ -58,17 +58,17 @@ public class Person {
 Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 ```
 
-由于转换次数较小性能是更好的。 它还需要更少的代码生成，因此这会生成较小的本机库也。
+由于转换的数量较小，因此性能将更好。 它还需要生成较少的代码，因此，这也会生成较小的本机库。
 
 ## <a name="naming"></a>命名
 
-命名内容是两种最困难问题之一在计算机科学中，其他人正在缓存失效并关闭-通过-1 的错误。 希望.NET 嵌入可以防止您以外的所有命名。
+命名功能是计算机科学中的两个最难解决的问题之一，另一个则是缓存失效，而不是由1个错误引发。 但愿 .NET 嵌入会使你免受除命名以外的一切的防御。
 
 ### <a name="types"></a>类型
 
-Objective C 不支持命名空间。 一般情况下，其类型都带有前缀 2 （适用于 Apple) 或 3 （适用于第三方） 字符前缀，如`UIView`UIKit 的视图，这表示框架。
+目标-C 不支持命名空间。 一般情况下，其类型以2（对于 Apple）或3（对于第三方）字符前缀为前缀， `UIView`如 UIKit 的视图（表示框架）。
 
-.NET 类型的跳过命名空间不可能因为它可能会带来重复或令人困惑，名称。 这使现有的.NET 类型很长例如
+对于 .NET 类型，不能跳过命名空间，因为它会引入重复或混乱的名称。 这使得现有的 .NET 类型非常长，例如
 
 ```csharp
 namespace Xamarin.Xml.Configuration {
@@ -76,19 +76,19 @@ namespace Xamarin.Xml.Configuration {
 }
 ```
 
-用法如下：
+使用方式类似于：
 
 ```objc
 id reader = [[Xamarin_Xml_Configuration_Reader alloc] init];
 ```
 
-但是，您可以重新公开为类型：
+但是，可以将类型重新公开为：
 
 ```csharp
 public class XAMXmlConfigReader : Xamarin.Xml.Configuration.Reader {}
 ```
 
-使其更多的 Objective C 友好若要使用，例如：
+使其更易于使用，例如：
 
 ```objc
 id reader = [[XAMXmlConfigReader alloc] init];
@@ -96,20 +96,20 @@ id reader = [[XAMXmlConfigReader alloc] init];
 
 ### <a name="methods"></a>方法
 
-更好的.NET 名称可能不是适用于 Objective C API。
+即使是良好的 .NET 名称也可能不适合目标-C API。
 
-Objective C 中的命名约定是不同于.NET （而不是 pascal 大小写，更详细的混合大小写）。
-请阅读[编码指南 Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)。
+目标-C 中的命名约定与 .NET 不同（camel 大小写，而不是 pascal 大小写，更详细）。
+请参阅[Cocoa 的编码指导原则](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)。
 
-Objective C 开发人员的角度来看，方法与从`Get`前缀表示您已经不拥有该实例，即[获取规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
+从目标-C 开发人员的角度来看，带有`Get`前缀的方法隐含您不拥有该实例，即[get 规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
 
-此命名规则具有.NET GC 世界中; 中没有匹配项具有的.NET 方法`Create`前缀将具有相同行为在.NET 中。 但是，对于 Objective C 开发人员，这通常意味着你拥有返回的实例，即[创建规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
+此命名规则在 .NET GC 世界中没有匹配项;带有`Create`前缀的 .net 方法在 .net 中的行为相同。 但对于目标为 C 的开发人员，这通常意味着拥有返回的实例，即[创建规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
 
 ## <a name="exceptions"></a>Exceptions
 
-它是在.NET 中使用广泛错误报告的例外情况很常见。 但是，它们是速度慢且不在 OBJECTIVE-C 完全相同 只要有可能则应从 OBJECTIVE-C 开发人员隐藏它们。
+.NET 中很常见的情况是经常使用异常来报告错误。 但是，它们速度慢，但在目标-C 中并不完全相同。 应尽可能将它们从目标-C 开发人员隐藏。
 
-例如，.NET`Try`模式是更易于从 OBJECTIVE-C 代码使用：
+例如，.net `Try`模式将更易于从目标-C 代码使用：
 
 ```csharp
 public int Parse (string number)
@@ -118,7 +118,7 @@ public int Parse (string number)
 }
 ```
 
-与
+相对
 
 ```csharp
 public bool TryParse (string number, out int value)
@@ -127,18 +127,18 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>内部异常 `init*`
+### <a name="exceptions-inside-init"></a>内部异常`init*`
 
-在.NET 中构造函数必须成功并返回 (_希望_) 有效实例或引发异常。
+在 .NET 中，构造函数必须成功，并返回（_但愿_）有效的实例或引发异常。
 
-与此相反，OBJECTIVE-C 允许`init*`以返回`nil`时，不能创建一个实例。 这是许多 Apple 的框架使用的常见，但不是常规模式。 在某些其他情况下`assert`可以发生这种情况 （并且终止当前进程）。
+与此相反，当无法创建`init*`实例时`nil` ，客观-C 允许返回。 这是许多 Apple 框架中使用的常见（而非一般）模式。 在某些其他情况下`assert` ，可能会发生（和终止当前进程）。
 
-生成器应遵循相同`return nil`模式生成`init*`方法。 如果引发托管的异常，则它将打印 (使用`NSLog`) 和`nil`将返回到调用方。
+生成器对于生成`init*`的方法`return nil`遵循相同的模式。 如果引发了托管异常，则会将其打印（使用`NSLog`），并`nil`将其返回给调用方。
 
 ## <a name="operators"></a>运算符
 
-Objective C 不允许运算符重载为C#值有效，因此这些转换为类选择器。
+客观-C 不允许运算符重载C# ，因此它们转换为类选择器。
 
-["友好"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)命名的方法生成优先运算符重载时找到，并且可以生成易于使用 API。
+在找到运算符重载时，将按照优先顺序生成["友好"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)命名方法，从而可以更轻松地使用 API。
 
-重写了运算符的类`==`和/或`!=`应重写标准的 Equals (Object) 方法。
+重写运算符`==`和/或`!=`的类应同时重写标准 Equals （Object）方法。

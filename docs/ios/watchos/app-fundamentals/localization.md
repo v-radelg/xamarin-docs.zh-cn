@@ -4,15 +4,15 @@ description: 本文档介绍如何本地化使用 Xamarin 生成的 watchOS 应�
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 70555a0e2df3bcdd9c3abe47cf8231145891a826
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 10f240a8e245f24d4b8f646eb972cbe21d28b75c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528417"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289942"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>使用 watchOS 在 Xamarin 中的本地化
 
@@ -125,7 +125,7 @@ displayText.SetText (localizedDisplay);
 
 可以通过两种方式设置用代码填充的映像。
 
-1. 可以通过将`Image`控件的值设置为已存在于手表应用中的映像的字符串名称来更改控件, 例如
+1. 可以通过将`Image`控件的值设置为已存在于手表应用中的映像的字符串名称来更改控件，例如
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
@@ -139,7 +139,7 @@ displayText.SetText (localizedDisplay);
     }
     ```
 
-    请注意, 在引用图像的文件名 **@2x** 时, 无需指定。
+    请注意，在引用图像的文件名 **@2x** 时，无需指定。
 
 第二个方法也是适用于从远程服务器上监视; 呈现下载映像但是在这种情况下您应该确保你下载的映像已正确本地化根据用户的首选项。
 

@@ -1,33 +1,33 @@
 ---
 title: Xamarin 中的注释和叠加
-description: 本文介绍了如何使用地图工具包的批注和叠加功能的分步演练。 它演示如何向应用程序添加映射, 该应用程序在 Xamarin 演化2013会议的位置显示批注和覆盖区。
+description: 本文介绍了如何使用地图工具包的批注和叠加功能的分步演练。 它演示如何向应用程序添加映射，该应用程序在 Xamarin 演化2013会议的位置显示批注和覆盖区。
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: c768003e2737fef191a1afb24b7ac50b28ace9b0
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226276"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286290"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注释和叠加
 
-我们将在本演练中生成的应用程序如下所示:
+我们将在本演练中生成的应用程序如下所示：
 
  [![](ios-maps-walkthrough-images/00-map-overlay.png "示例 MapKit 应用")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
 
 可以在[Maps 演练示例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)中找到已完成的代码。
 
-首先创建一个新的**IOS 空项目**, 并为其提供一个相关名称。 首先, 将代码添加到视图控制器以显示 MapView, 然后为我们的 MapDelegate 和自定义批注创建新类。 为此，请按照以下步骤进行操作：
+首先创建一个新的**IOS 空项目**，并为其提供一个相关名称。 首先，将代码添加到视图控制器以显示 MapView，然后为我们的 MapDelegate 和自定义批注创建新类。 为此，请按照以下步骤进行操作：
 
 ## <a name="viewcontroller"></a>ViewController
 
 
-1. 将以下命名空间添加到`ViewController`:
+1. 将以下命名空间添加到`ViewController`：
 
     ```csharp
     using MapKit;
@@ -36,7 +36,7 @@ ms.locfileid: "70226276"
     using CoreGraphics
     ```
 
-1. 将实例变量`MapDelegate`与实例一起添加到类中。 `MKMapView` 我们`MapDelegate`很快就会创建:
+1. 将实例变量`MapDelegate`与实例一起添加到类中。 `MKMapView` 我们`MapDelegate`很快就会创建：
 
     ```csharp
     public partial class ViewController : UIViewController
@@ -46,7 +46,7 @@ ms.locfileid: "70226276"
         ...
     ```
 
-1. 在控制器的`LoadView`方法中, `MKMapView`添加`View`并将其设置为控制器的属性:
+1. 在控制器的`LoadView`方法中， `MKMapView`添加`View`并将其设置为控制器的属性：
 
     ```csharp
     public override void LoadView ()
@@ -56,9 +56,9 @@ ms.locfileid: "70226276"
     }
     ```
 
-    接下来, 我们将添加代码来初始化 "ViewDidLoad" 方法中的映射。
+    接下来，我们将添加代码来初始化 "ViewDidLoad" 方法中的映射。
 
-1. 在`ViewDidLoad` "添加代码" 中设置地图类型, 显示用户位置, 并允许缩放和平移:
+1. 在`ViewDidLoad` "添加代码" 中设置地图类型，显示用户位置，并允许缩放和平移：
 
     ```csharp
     // change map type, show user location and allow zooming and panning
@@ -69,7 +69,7 @@ ms.locfileid: "70226276"
 
     ```
 
-1. 接下来, 添加代码以居中地图并设置其区域:
+1. 接下来，添加代码以居中地图并设置其区域：
 
     ```csharp
     double lat = 30.2652233534254;
@@ -81,20 +81,20 @@ ms.locfileid: "70226276"
 
     ```
 
-1. 创建的新实例`MapDelegate` , 并将其分配`Delegate`给`MKMapView`的。 同样, 我们`MapDelegate`很快就会 implcodeent:
+1. 创建的新实例`MapDelegate` ，并将其分配`Delegate`给`MKMapView`的。 同样，我们`MapDelegate`很快就会 implcodeent：
 
     ```csharp
     mapDelegate = new MapDelegate ();
     map.Delegate = mapDelegate;
     ```
 
-1. 从 iOS 8 开始, 你应该向你的用户请求授权才能使用其位置, 因此, 让我们将其添加到我们的示例中。 首先, 定义一个`CLLocationManager`类级变量:
+1. 从 iOS 8 开始，你应该向你的用户请求授权才能使用其位置，因此，让我们将其添加到我们的示例中。 首先，定义一个`CLLocationManager`类级变量：
 
     ```csharp
     CLLocationManager locationManager = new CLLocationManager();
     ```
 
-1. `ViewDidLoad`在方法中, 我们想要检查运行应用程序的设备是否使用 iOS 8, 如果是, 我们将在应用程序正在使用时请求授权:
+1. `ViewDidLoad`在方法中，我们想要检查运行应用程序的设备是否使用 iOS 8，如果是，我们将在应用程序正在使用时请求授权：
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
@@ -102,11 +102,11 @@ ms.locfileid: "70226276"
     }
     ```
 
-1. 最后, 我们需要编辑**info.plist**文件, 以通知用户请求其位置的原因。 在**info.plist**的 "**源**" 菜单中, 添加以下项:
+1. 最后，我们需要编辑**info.plist**文件，以通知用户请求其位置的原因。 在**info.plist**的 "**源**" 菜单中，添加以下项：
 
     `NSLocationWhenInUseUsageDescription`
 
-    和字符串:
+    和字符串：
 
     `Maps Walkthrough Docs Sample`。
 
@@ -114,7 +114,7 @@ ms.locfileid: "70226276"
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –自定义批注的类
 
 
-1. 我们将为名`ConferenceAnnotation`为的批注使用自定义类。 将以下类添加到项目中:
+1. 我们将为名`ConferenceAnnotation`为的批注使用自定义类。 将以下类添加到项目中：
 
     ```csharp
     using System;
@@ -152,13 +152,13 @@ ms.locfileid: "70226276"
 
 ## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-添加批注和覆盖
 
-1. 现在, 我们可以将其添加到地图中。`ConferenceAnnotation` 返回的`ViewController`方法, 将批注添加到地图中心坐标: `ViewDidLoad`
+1. 现在，我们可以将其添加到地图中。`ConferenceAnnotation` 返回的`ViewController`方法，将批注添加到地图中心坐标： `ViewDidLoad`
 
     ```csharp
     map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
-1. 我们还想要覆盖宾馆。 添加以下代码, 以`MKPolygon`使用提供的酒店坐标创建, 并通过调用`AddOverlay`将其添加到地图中:
+1. 我们还想要覆盖宾馆。 添加以下代码，以`MKPolygon`使用提供的酒店坐标创建，并通过调用`AddOverlay`将其添加到地图中：
 
     ```csharp
     // add an overlay of the hotel
@@ -179,12 +179,12 @@ ms.locfileid: "70226276"
     map.AddOverlay (hotelOverlay);
     ```
 
-这会完成中`ViewDidLoad`的代码。 现在, 我们需要实现`MapDelegate`类来分别处理创建批注和重叠视图。
+这会完成中`ViewDidLoad`的代码。 现在，我们需要实现`MapDelegate`类来分别处理创建批注和重叠视图。
 
 
 ## <a name="mapdelegate"></a>MapDelegate
 
-1. 创建一个从`MKMapViewDelegate`继承`MapDelegate`的名为的类, `annotationId`并包含一个要用作批注的重复使用标识符的变量:
+1. 创建一个从`MKMapViewDelegate`继承`MapDelegate`的名为的类， `annotationId`并包含一个要用作批注的重复使用标识符的变量：
 
     ```csharp
     class MapDelegate : MKMapViewDelegate
@@ -194,9 +194,9 @@ ms.locfileid: "70226276"
     }
     ```
 
-    这里只有一个批注, 因此不需要重复使用代码, 但最好将其包含在内。
+    这里只有一个批注，因此不需要重复使用代码，但最好将其包含在内。
 
-1. 实现方法, 以便使用本演练中包含`ConferenceAnnotation`的 " **png** " 图像返回的视图: `GetViewForAnnotation`
+1. 实现方法，以便使用本演练中包含`ConferenceAnnotation`的 " **png** " 图像返回的视图： `GetViewForAnnotation`
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -222,14 +222,14 @@ ms.locfileid: "70226276"
     }
     ```
 
-1. 当用户点击批注时, 我们想要显示显示奥斯汀市的图像。 将以下变量添加到图像`MapDelegate`的中, 并将其显示为视图:
+1. 当用户点击批注时，我们想要显示显示奥斯汀市的图像。 将以下变量添加到图像`MapDelegate`的中，并将其显示为视图：
 
     ```csharp
     UIImageView venueView;
     UIImage venueImage;
     ```
 
-1. 接下来, 若要在点击批注时显示图像, 请按`DidSelectAnnotation`如下方式实现方法:
+1. 接下来，若要在点击批注时显示图像，请按`DidSelectAnnotation`如下方式实现方法：
 
     ```csharp
     public override void DidSelectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -249,7 +249,7 @@ ms.locfileid: "70226276"
     }
     ```
 
-1. 若要在用户通过点击地图上的其他位置取消选择批注时隐藏图像, 请按`DidSelectAnnotationView`如下方式实现方法:
+1. 若要在用户通过点击地图上的其他位置取消选择批注时隐藏图像，请按`DidSelectAnnotationView`如下方式实现方法：
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -264,9 +264,9 @@ ms.locfileid: "70226276"
     }
     ```
 
-    现在, 我们已准备好批注代码。 剩下的就是将代码添加到`MapDelegate`以创建酒店覆盖的视图。
+    现在，我们已准备好批注代码。 剩下的就是将代码添加到`MapDelegate`以创建酒店覆盖的视图。
 
-1. 将的`GetViewForOverlay`以下实现添加`MapDelegate`到:
+1. 将的`GetViewForOverlay`以下实现添加`MapDelegate`到：
 
     ```csharp
     public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -280,13 +280,13 @@ ms.locfileid: "70226276"
     }
     ```
 
-运行该应用程序。 现在, 我们有了一个交互式地图, 其中包含自定义批注和覆盖区! 点击 "批注", 将显示 "德克萨斯" 的图像, 如下所示:
+运行该应用程序。 现在，我们有了一个交互式地图，其中包含自定义批注和覆盖区！ 点击 "批注"，将显示 "德克萨斯" 的图像，如下所示：
 
- [![](ios-maps-walkthrough-images/01-map-image.png "点击 \"批注\", 将显示 \"德克萨斯\" 的图像。")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
+ [![](ios-maps-walkthrough-images/01-map-image.png "点击 \"批注\"，将显示 \"德克萨斯\" 的图像。")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
 ## <a name="summary"></a>总结
 
-本文介绍如何将批注添加到地图, 以及如何为指定多边形添加覆盖区。 此外, 我们还演示了如何向批注添加触控支持, 以在地图上对图像进行动画处理。
+本文介绍如何将批注添加到地图，以及如何为指定多边形添加覆盖区。 此外，我们还演示了如何向批注添加触控支持，以在地图上对图像进行动画处理。
 
 
 ## <a name="related-links"></a>相关链接

@@ -1,34 +1,34 @@
 ---
 title: 体系结构概述
-description: 本文档介绍 Xamarin 工作簿，检查交互式代理和交互式客户端如何协同工作的体系结构。
+description: 本文档介绍 Xamarin Workbooks 的体系结构，并检查交互式代理和交互式客户端如何协同工作。
 ms.prod: xamarin
 ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 352e8d0191512184ffd7d82fa0dfa0bc79fa24ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7129d0bedddb272ef87e3d209cb05c2ca0c0acf4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61257420"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285284"
 ---
 # <a name="architecture-overview"></a>体系结构概述
 
-Xamarin Workbooks 功能必须在个相互配合工作的两个主要组件：_代理_并_客户端_。
+Xamarin Workbooks 功能必须彼此结合使用的两个主要组件：_代理_和_客户端_。
 
 ## <a name="interactive-agent"></a>交互式代理
 
-代理组件是在.NET 应用程序的上下文中运行的小型特定于平台的程序集中。
+代理组件是小型平台特定的程序集，在 .NET 应用程序的上下文中运行。
 
-Xamarin 工作簿提供了多个平台，例如 iOS、 Android、 Mac 和 WPF 的预建"空"应用程序。 这些应用程序显式托管代理。
+Xamarin Workbooks 为多个平台（如 iOS、Android、Mac 和 WPF）提供预先生成的 "空" 应用程序。 这些应用程序显式托管代理。
 
-实时检查 (Xamarin Inspector)，过程中的代理注入通过 IDE 调试器到现有应用程序作为常规开发和调试工作流的一部分。
+在实时检查（Xamarin Inspector）期间，代理通过 IDE 调试器注入到现有应用程序中，作为常规开发 & 调试工作流的一部分。
 
 ## <a name="interactive-client"></a>交互式客户端
 
-客户端是承载 web 浏览器图面来显示工作簿/REPL 界面的本机 shell （Cocoa Mac 上的，Windows 上的 WPF）。 从 SDK 的角度看，所有客户端集成 JavaScript 和 CSS 中实现。
+客户端是本机 shell （在 Mac 上为 Cocoa，在 Windows 上为 WPF），它承载了用于演示工作簿/复制接口的 web 浏览器图面。 从 SDK 的角度来看，所有客户端集成都是在 JavaScript 和 CSS 中实现的。
 
-客户端负责 （通过 Roslyn) 到小的程序集编译源代码和通过发送到已连接代理的执行。 执行结果发送回客户端以进行呈现。 每个单元格的工作簿中生成一个程序集引用的程序集的上一个单元格。
+客户端负责将源代码编译为小程序集，并将其发送到连接的代理以执行。 执行结果被发送回客户端进行呈现。 工作簿中的每个单元都生成一个程序集，该程序集引用上一个单元格的程序集。
 
-因为代理可以运行任何类型的.NET 平台上和运行的应用程序中具有访问权限的任何内容，必须格外小心以平台无关的方式序列化结果。
+由于代理可以在任何类型的 .NET 平台上运行并且有权访问正在运行的应用程序中的任何内容，因此必须小心地以与平台无关的方式对结果进行序列化。

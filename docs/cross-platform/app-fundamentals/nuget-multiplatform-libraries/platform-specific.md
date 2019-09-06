@@ -1,68 +1,68 @@
 ---
-title: 创建新的特定于平台的类库项目的 NuGet
-description: 本文档介绍如何创建包含多个平台的特定于平台的代码的单个 NuGet 包。
+title: 为 NuGet 创建新的特定于平台的库项目
+description: 本文档介绍如何创建单个 NuGet 包，其中包含针对多个平台的平台特定代码。
 ms.prod: xamarin
 ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 4be010448d963462ccf06c263ddfad7ba1d9feae
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d3f756b1a551c7b6bcbe48129235d537312edff6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832040"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282138"
 ---
-# <a name="creating-new-platform-specific-library-projects-for-nuget"></a>创建新的特定于平台的类库项目的 NuGet
+# <a name="creating-new-platform-specific-library-projects-for-nuget"></a>为 NuGet 创建新的特定于平台的库项目
 
-面向特定平台，iOS 和 Android 等的多平台库项目最适用于共享的项目。
+面向特定平台（如 iOS 和 Android）的多平台库项目最适用于共享项目。
 
-NuGet 可以包含特定于 iOS 和 Android 的代码，以及公用的.NET 代码。
+NuGet 可以同时包含 iOS 和 Android 特定的代码，以及这两种代码共有的 .NET 代码。
 
-多个程序集创建和生成到一个 NuGet 包。 NuGet 标准会确保包，可以添加到所有支持的项目类型，如 Xamarin.iOS 和 Android 项目。
+创建多个程序集，并将其内置于单个 NuGet 包中。 NuGet 标准确保可以将包添加到所有受支持的项目类型，如 Xamarin 和 Android 项目。
 
 ## <a name="steps-to-create-a-cross-platform-library-nuget"></a>创建跨平台库 NuGet 的步骤
 
-1. 选择**文件 > 新的解决方案**(或右键单击现有的解决方案，然后选择**添加 > 新建项目**)。
+1. 选择 "**文件" > "新建解决方案**" （或者右键单击现有解决方案，然后选择 "**添加 >" 新建项目**"）。
 
-2. 选择**多平台库**从**多平台 > 库**部分：
+2. 从多**平台 > 库**部分中选择多**平台库**：
 
-    [![](platform-specific-images/mulitplatform-library-sml.png "配置适用于单个代码库的多平台库")](platform-specific-images/multiplatform-library.png#lightbox)
+    [![](platform-specific-images/mulitplatform-library-sml.png "为单个基本代码配置多平台库")](platform-specific-images/multiplatform-library.png#lightbox)
 
-3. 输入**名称**并**说明**，然后选择**特定于平台**:
+3. 输入**名称**和**说明**，并选择 "**特定于平台**"：
 
-    [![](platform-specific-images/specific-configure-sml.png "配置适用于 iOS 和 Android 的特定于平台的库")](platform-specific-images/specific-configure.png#lightbox)
+    [![](platform-specific-images/specific-configure-sml.png "为 iOS 和 Android 配置特定于平台的库")](platform-specific-images/specific-configure.png#lightbox)
 
-4. 完成向导。 以下项目添加到解决方案中：
+4. 完成向导。 以下项目将添加到解决方案中：
 
-    - **Android 项目**– （可选） 可以将特定于 Android 的代码添加到此项目。
-    - **iOS 项目**– （可选） 可以将特定于 iOS 的代码添加到此项目。
-    - **NuGet 项目**– 对此项目中添加任何代码。 它引用其他项目，并包含输出的 NuGet 包的元数据配置。
-    - **共享项目**– 应将常见的代码添加到此项目，包括特定于平台的代码`#if`编译器指令。
+    - **Android 项目**–可以选择将特定于 android 的代码添加到此项目中。
+    - **Ios 项目**–可以选择将 ios 特定代码添加到此项目中。
+    - **NuGet 项目**–不向此项目添加任何代码。 它引用其他项目，包含 NuGet 包输出的元数据配置。
+    - **共享项目**–应将公共代码添加到此项目，包括编译器指令内`#if`特定于平台的代码。
 
-5. 右键单击 NuGet 项目并选择**选项**，然后打开**NuGet 包 > 元数据**部分，然后输入[必需的元数据](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（为以及任何可选元数据）：
+5. 右键单击 NuGet 项目，然后选择 "**选项**"，然后打开**nuget 包 "> 元数据**" 部分，并输入[所需的元数据](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)（以及任何可选的元数据）：
 
     [![](platform-specific-images/specific-metadata-sml.png "输入所需的元数据")](platform-specific-images/specific-metadata.png#lightbox)
 
-6. 另外，请在**项目选项**窗口中，打开**引用程序集**部分，并选择共享的库将支持通过"bait 和 switch"PCL 配置文件：
+6. 同时，在 "**项目选项**" 窗口中，打开 "**引用程序集**" 部分，然后选择共享库将通过 "bait 和交换机" 支持的 PCL 配置文件：
 
-    ![](platform-specific-images/specific-reference-assemblies.png "此外在项目选项窗口中，打开引用程序集部分，然后选择共享的库将支持通过 bait 和 switch 的 PCL 配置文件")
+    ![](platform-specific-images/specific-reference-assemblies.png "同时，在 \"项目选项\" 窗口中，打开 \"引用程序集\" 部分，然后选择共享库将通过 bait 和交换机支持的 PCL 配置文件")
 
     > [!NOTE]
-    > "Bait 和 switch"意味着 PCL 程序集将仅包含由 （它不能包含特定于平台的代码） 库公开的 API。 当 NuGet 添加到 Xamarin 项目时，将针对在 PCL 中，编译共享的库，但特定于平台的程序集包含 iOS 或 Android 项目实际使用的代码。
+    > "Bait and switch" 表示 PCL 程序集将仅包含由库公开的 API （不能包含特定于平台的代码）。 将 NuGet 添加到 Xamarin 项目后，将针对 PCL 编译共享库，但特定于平台的程序集包含 iOS 或 Android 项目实际使用的代码。
 
-7. 右键单击项目并选择**创建 NuGet 包**（或生成或部署解决方案） 和 **.nupkg** NuGet 包文件将保存在 **/bin/** 文件夹 (调试或发布，具体取决于配置） 时。
+7. 右键单击该项目，然后选择 "**创建 NuGet 包**（或生成或部署解决方案）"，然后将**nupkg** NuGet 包文件保存在 **/bin/** 文件夹中（调试或发布，具体取决于配置）。
 
-    ![](platform-specific-images/create-nuget-package.png "NuGet 包文件将保存在 bin 文件夹中调试或发布，具体取决于配置")
+    ![](platform-specific-images/create-nuget-package.png "NuGet 包文件将保存在 bin 文件夹中，无论是调试还是发布，具体取决于配置")
 
 
 ## <a name="verifying-the-output"></a>验证输出
 
-NuGet 包还可以 ZIP 文件，因此可以检查生成的包的内部结构。
+NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
 
-所选的以下屏幕截图显示特定于平台的 NuGet 支持 iOS 和 Android，并且有两个引用程序集的内容：
+此屏幕截图显示了支持 iOS 和 Android 的特定于平台的 NuGet 的内容，并选择了两个引用程序集：
 
-![](platform-specific-images/nuget-output.png "NuGet 包中包含文件")
+![](platform-specific-images/nuget-output.png "NuGet 包中包含的文件")
 
 
 ## <a name="related-links"></a>相关链接

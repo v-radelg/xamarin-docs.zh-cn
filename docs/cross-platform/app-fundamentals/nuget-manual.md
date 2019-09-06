@@ -3,38 +3,38 @@ title: 手动为 Xamarin 创建 NuGet 包
 description: 本文档包含有助于构建面向 Xamarin 平台的 NuGet 包的提示。 它介绍了 NuGet 包 Xamarin 配置文件、带有平台依赖项的 PCL Nuget 以及指向各种开源示例的链接。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: cf694b54c8d2cdb33fd480d89d32b439f036ddc5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 88feea4c0a638da99a0316d802f04f08f0fea689
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119449"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289193"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>手动为 Xamarin 创建 NuGet 包
 
 _本页包含有助于构建面向 Xamarin 平台的 NuGet 包的一些提示。_
 
 > [!NOTE]
-> Xamarin Studio 6.2 (和 Visual Studio for Mac) 包括_自动_从 PCL、.NET Standard 或共享项目中生成 NuGet 包的能力。 有关更多详细信息, 请参阅代码共享指南中的多[平台库](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)。
+> Xamarin Studio 6.2 （和 Visual Studio for Mac）包括_自动_从 PCL、.NET Standard 或共享项目中生成 NuGet 包的能力。 有关更多详细信息，请参阅代码共享指南中的多[平台库](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)。
 
 ## <a name="nuget-package-xamarin-profiles"></a>NuGet 包 Xamarin 配置文件
 
-NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nuget.org/create/enforced-package-conventions)讨论如何支持不同的 Microsoft 框架和配置文件, 但不包括 Xamarin 使用的目标框架名称。
+NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nuget.org/create/enforced-package-conventions)讨论如何支持不同的 Microsoft 框架和配置文件，但不包括 Xamarin 使用的目标框架名称。
 
-目前使用的主要 Xamarin 目标框架是:
+目前使用的主要 Xamarin 目标框架是：
 
 - **MonoAndroid** -Xamarin
-- **Xamarin** ios [Unified API](~/cross-platform/macios/unified/index.md) (支持64位)
-- **Xamarin** -xamarin-xamarin 的移动配置文件, 等效于 Xamarin 和 xamarin API surface。
+- **Xamarin** ios [Unified API](~/cross-platform/macios/unified/index.md) （支持64位）
+- **Xamarin** -xamarin-xamarin 的移动配置文件，等效于 Xamarin 和 xamarin API surface。
 
-旧的 iOS [Classic API](~/cross-platform/macios/unified/index.md)还有一个目标:
+旧的 iOS [Classic API](~/cross-platform/macios/unified/index.md)还有一个目标：
 
 - **Monotouch.dialog** -iOS Classic API
 
-以**nuspec**文件为目标, 其内容如下所示:
+以**nuspec**文件为目标，其内容如下所示：
 
 ```xml
 <files>
@@ -47,21 +47,21 @@ NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nug
 
 以上将忽略任何可移植类库。
 
-大多数**nuspec**文件指定目标框架的版本号, 但如果您的程序集适用于该目标框架的所有版本, 它是可选的。 如果你的目标是**lib\MonoAndroid** , 这意味着它适用于任何版本的 Xamarin。
+大多数**nuspec**文件指定目标框架的版本号，但如果您的程序集适用于该目标框架的所有版本，它是可选的。 如果你的目标是**lib\MonoAndroid** ，这意味着它适用于任何版本的 Xamarin。
 
-您可以使用一组不带小数点的数字来指定版本, 也可以使用小数点指定它。 如果不使用小数点, NuGet 将仅提取每个数字, 并在每个数字之间插入一个 ".", 从而将其转换为版本。
+您可以使用一组不带小数点的数字来指定版本，也可以使用小数点指定它。 如果不使用小数点，NuGet 将仅提取每个数字，并在每个数字之间插入一个 "."，从而将其转换为版本。
 
-在上述 "MonoAndroid10" 中, 表示 "Android 1.0"。 这就意味着, 项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 版本1.0 或更高版本。 版本是在项目文件的`<TargetFrameworkVersion>`元素中指定的。
+在上述 "MonoAndroid10" 中，表示 "Android 1.0"。 这就意味着，项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 版本1.0 或更高版本。 版本是在项目文件的`<TargetFrameworkVersion>`元素中指定的。
 
-明确说明:
+明确说明：
 
-- **MonoAndroid403**匹配 Android 4.0.3 和更高版本 (ie API 级别 15)
+- **MonoAndroid403**匹配 Android 4.0.3 和更高版本（ie API 级别15）
 - **IOS10**与 Xamarin 1.0 和更高版本匹配
 - **Xamarin 1.0**还与 Xamarin 1.0 和更高版本匹配
 
 ## <a name="pcl-nugets-with-platform-dependencies"></a>带有平台依赖项的 PCL Nuget
 
-PCL 配置文件限制了可访问的 .NET framework Api, 它们当然无法访问特定于平台的代码。 这些第三方链接介绍了创建使用 PCL 和本机 Api 为 Xamarin 和其他平台提供兼容性的 NuGet 包的不同方法:
+PCL 配置文件限制了可访问的 .NET framework Api，它们当然无法访问特定于平台的代码。 这些第三方链接介绍了创建使用 PCL 和本机 Api 为 Xamarin 和其他平台提供兼容性的 NuGet 包的不同方法：
 
 - [如何使可移植类库适用于你](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
 - [Bait 和交换机 PCL 技巧](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
@@ -71,11 +71,11 @@ PCL 配置文件限制了可访问的 .NET framework Api, 它们当然无法访�
 
 ## <a name="examples"></a>示例
 
-可以引用的一些开源示例:
+可以引用的一些开源示例：
 
-- [**ModernHttpClient**](https://www.nuget.org/packages/modernhttpclient/) –使用系统 .net 编写你的应用程序, 但将此库放入中, 它的速度将大大加快 (查看[源](https://github.com/paulcbetts/ModernHttpClient))。
-- [**Splat**](https://www.nuget.org/packages/Splat/) –一个用于实现跨平台 (查看[源](https://github.com/paulcbetts/Splat)) 的任务的库。
-- [**NGraphics**](https://www.nuget.org/packages/NGraphics/) -用于在 .net 上呈现矢量图形的跨平台库 (查看[源](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec))。
+- [**ModernHttpClient**](https://www.nuget.org/packages/modernhttpclient/) –使用系统 .net 编写你的应用程序，但将此库放入中，它的速度将大大加快（查看[源](https://github.com/paulcbetts/ModernHttpClient)）。
+- [**Splat**](https://www.nuget.org/packages/Splat/) –一个用于实现跨平台（查看[源](https://github.com/paulcbetts/Splat)）的任务的库。
+- [**NGraphics**](https://www.nuget.org/packages/NGraphics/) -用于在 .net 上呈现矢量图形的跨平台库（查看[源](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec)）。
 
 ## <a name="related-links"></a>相关链接
 

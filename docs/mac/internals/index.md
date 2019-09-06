@@ -1,29 +1,29 @@
 ---
-title: 实质上在 Xamarin.Mac 中
-description: 本文档所链接到各种指南描述 Xamarin.Mac 的内部工作机制。 链接的文档讨论领先于实时编译、 Xamarin.Mac 体系结构和 Xamarin.Mac 注册机构。
+title: 在 Xamarin 中的后台
+description: 本文档链接到描述 Xamarin 的内部工作原理的各种指南。 链接文档提前讨论了时间编译、Xamarin 体系结构和 Xamarin 的注册器。
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 872f26febf3abbe4d659773d2bf2d27348c64513
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 51cf479ba07a769f5d7a875bb3f1203caef2ad0b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61033238"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290111"
 ---
-# <a name="under-the-hood-in-xamarinmac"></a>实质上在 Xamarin.Mac 中
+# <a name="under-the-hood-in-xamarinmac"></a>在 Xamarin 中的后台
 
-## <a name="ahead-of-time-compilation-aotaotmd"></a>[继续操作的实时编译 (AOT)](aot.md)
+## <a name="ahead-of-time-compilation-aotaotmd"></a>[预先编译（AOT）](aot.md)
 
-继续操作的预先 (aot) 编译为提高启动性能的功能强大的优化技术。 但是，它还会影响生成时，应用程序大小和程序执行中影响深远的方式，因此很值得了解其工作原理。
+预先（AOT）编译是一种功能强大的优化技术，可提高启动性能。 但是，它还会以深远的方式影响生成时间、应用程序大小和程序执行情况，因此，有必要了解它的工作原理。
 
 ## <a name="mac-architecturearchitecturemd"></a>[Mac 体系结构](architecture.md)
 
-Objective C，包括概念，如编译、 选择器、 注册机构、 应用程序启动和生成器到 Xamarin.Mac 的关系。
+Xamarin 与目标-C 的关系，包括编译、选择器、注册机构、应用程序启动和生成器等概念。
 
-## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin.Mac registrar](registrar.md)
+## <a name="xamarinmac-registrarregistrarmd"></a>[Xamarin Mac 注册机构](registrar.md)
 
-Xamarin.Mac 之间的差距托管的领域和 Cocoa 的运行时，允许托管的类来调用非托管的 Objective C 类，并返回发生事件时调用。 若要执行此"奇妙"所需的工作由注册机构，但有时可以帮助你了解这怎么回事"暗中"。
+Xamarin 将托管世界和 Cocoa 的运行时之间的差距桥梁，使托管类可以调用非托管的目标 C 类，并在发生事件时回调。 执行这种 "神奇" 所需的工作由注册机构处理，但了解 "后台" 的情况有时会很有帮助。

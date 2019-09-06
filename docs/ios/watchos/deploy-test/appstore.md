@@ -1,105 +1,105 @@
 ---
-title: WatchOS 应用部署到应用商店
-description: 本文档介绍如何部署使用到 App Store 的 Xamarin 生成的 watchOS 应用。 它介绍了分发预配配置文件和 iTunes Connect，并还提供了一些故障排除提示。
+title: 将 watchOS 应用部署到 App Store
+description: 本文档介绍如何将用 Xamarin 生成的 watchOS 应用部署到 App Store。 它会查看分发配置文件和 iTunes Connect，还会提供一些故障排除提示。
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 92ad0353268c414a1394e98a7b2d23d23dc4df07
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865968"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285376"
 ---
-# <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS 应用部署到应用商店
+# <a name="deploying-watchos-apps-to-the-app-store"></a>将 watchOS 应用部署到 App Store
 
 > [!IMPORTANT]
-> 请确保查看[Apple Watch 工具包提交指南](https://developer.apple.com/app-store/watch/)，并查看[故障排除](#troubleshooting)部分，了解可能会遇到任何问题。
+> 务必查看[Apple 的 "观看工具包" 提交指南](https://developer.apple.com/app-store/watch/)，并查看[故障排除](#troubleshooting)部分，了解你可能遇到的任何问题。
 
-- 请确保您有：
-  - [**分发预配配置文件**](#provisioning)创建为你的项目。
-  - **部署目标**(`MinimumOSVersion`) 为 iOS 父应用程序设置为**8.2**或更早版本 （不支持 8.3）。
+- 请确保：
+  - 为你的项目创建的[**分发配置文件**](#provisioning)。
+  - IOS 父应用程序`MinimumOSVersion`的**部署目标**（）设置为**8.2**或更早版本（不支持8.3）。
 
-- 在中[ **iTunes Connect**](#iTunes_Connect):
+- 在[**ITunes Connect**](#iTunes_Connect)中：
 
-  - 创建你的 iOS 应用程序条目 (或添加**新版本**向现有应用程序)。
+  - 创建 iOS 应用条目（或将**新版本**添加到现有应用）。
   - 添加监视图标和屏幕截图。
 
-- 然后在[Visual Studio for Mac](#xamarin_studio) （不，目前支持 Visual Studio）：
+- 然后[Visual Studio for Mac](#xamarin_studio) （目前不支持 Visual Studio）：
 
-  - 右键单击 iOS 应用程序并选择**设为启动项目**。
-  - 将更改为**App Store**配置。
+  - 右键单击 "iOS 应用"，然后选择 "**设为启动项目**"。
+  - 更改为**应用商店**配置。
   - 使用**存档**功能创建应用程序存档。
 
 - 最后，切换到[Xcode 6.2 +](#xcode)
 
-  - 转到**窗口 > 管理器**，然后选择**存档**。
-  - 从列表中选择的应用程序和存档。
-  - （可选）**验证...** 存档。
+  - 中转到 **> 组织**程序的窗口，然后选择 "**存档**"。
+  - 从列表中选择应用程序和存档。
+  - 同时**验证 ...** 存档。
   - **提交...** 存档并遵循的步骤将上载到 iTunes 连接用于审查和批准。
 
-阅读下面这些项与相关的特定使用技巧。 请参阅[故障排除](#troubleshooting)部分中如果遇到问题。
+阅读与以下各项相关的特定提示。 如果遇到问题，请参阅[故障排除](#troubleshooting)部分。
 
 <a name="provisioning" />
 
 ## <a name="distribution-provisioning-profiles"></a>分发预配配置文件
 
-生成适用于您需要创建的应用商店部署**分发预配配置文件**为你的解决方案中每个应用程序 ID。
+若要生成应用商店部署，需要为解决方案中的每个应用 ID 创建**分发预配配置文件**。
 
-如果必须是通配符应用 ID*只有一个预配配置文件，将需要*; 但是，如果您有单独的应用 ID 为每个项目都需要预配配置文件为每个应用程序 ID:
+如果你有通配符应用 ID，则*只需要一个配置文件*;但是，如果每个项目都有单独的应用 ID，则每个应用 ID 都需要一个预配配置文件：
 
-![](appstore-images/provisioningprofile-distribution-sml.png "应用商店分发配置文件")
+![](appstore-images/provisioningprofile-distribution-sml.png "App Store 分发配置文件")
 
-一旦您创建所有三个配置文件，它们将显示在列表中。 请记住下载并安装每个 （通过双击它）：
+创建所有三个配置文件后，它们将显示在列表中。 请记住，下载并安装每个（通过双击此项）：
 
-![](appstore-images/provisioningprofiles-sml.png "可用的配置文件的列表")
+![](appstore-images/provisioningprofiles-sml.png "可用配置文件列表")
 
-你可以验证中的预配配置文件**项目选项**通过选择**生成 > iOS 捆绑签名**屏幕，然后选择**AppStore | iPhone**配置。
+可以通过选择 "**生成 > IOS 捆绑签名**" 屏幕并选择 " **AppStore | iPhone** " 配置来验证 "**项目选项**" 中的预配配置文件。
 
-**预配配置文件**列表将显示所有匹配的配置文件-您应该看到已创建此下拉列表中的匹配配置文件。
+"**预配配置文件**" 列表将显示所有匹配的配置文件，你应在此下拉列表中看到已创建的匹配配置文件。
 
 ![](appstore-images/options-selectprofile-sml.png "IOS 捆绑签名对话框")
 
 <a name="iTunes_Connect"/>
 
-## <a name="itunes-connect"></a>在 iTunes Connect
+## <a name="itunes-connect"></a>iTunes 连接
 
-请按照[应用分发概述](~/ios/deploy-test/app-distribution/index.md)，特别是：
+请特别参阅[应用分发概述](~/ios/deploy-test/app-distribution/index.md)：
 
 - [在 iTunes Connect 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [发布到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
-在 iTunes Connect 中配置该应用，别忘了添加的监视图标和屏幕截图：
+在 iTunes Connect 中配置应用时，请不要忘记添加 "监视" 图标和屏幕截图：
 
-![](appstore-images/itunesconnect-watch-sml.png "监视图标和在 iTunes Connect 中的屏幕截图")
+![](appstore-images/itunesconnect-watch-sml.png "ITunes Connect 中的 \"监视\" 图标和屏幕截图")
 
-图标文件应 1024 x 1024 像素，并且将在显示时应用于它的循环掩码。 该图标不应具有 alpha 通道。
+图标文件应为1024x1024 像素，并将在显示时应用圆形掩码。 图标不应具有 alpha 通道。
 
-至少一个屏幕截图是必需的可能会提交最多五个。
-它们应为 312 x 390 像素，并演示中的监视应用。
-42 mm 监视模拟器可用于获取在此大小的屏幕截图。
+至少需要一个屏幕截图，最多可以提交5个屏幕截图。
+它们应为312x390 像素，并演示监视应用的操作。
+可以使用 42mm watch 模拟器以这种大小拍摄屏幕截图。
 
 
 <a name="xamarin_studio" />
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-1. 请确保 iOS 应用程序是启动项目。 如果没有，请右键单击以将其设置：
+1. 确保 iOS 应用是启动项目。 如果不是，请右键单击以设置它：
 
    ![](appstore-images/xs-startup.png "设置启动项目")
 
-2. 选择**AppStore**生成配置：
+2. 选择 " **AppStore**生成配置"：
 
    ![](appstore-images/xs-appstore.png "AppStore 生成配置")
 
-3. 选择**生成 > 存档**菜单项来启动存档过程：
+3. 选择 "**生成 > 存档**" 菜单项以启动存档过程：
 
-   ![](appstore-images/xs-archive.png "生成菜单")
+   ![](appstore-images/xs-archive.png "\"生成\" 菜单")
 
-你还可以选择**视图 > 存档...** 菜单项以查看之前创建的存档。
+你还可以选择 "**查看 > 存档 ...** " 菜单项以查看之前创建的存档。
 
   ![](appstore-images/xs-archives-sml.png "存档视图")
 
@@ -107,36 +107,36 @@ ms.locfileid: "67865968"
 
 ## <a name="xcode"></a>Xcode
 
-Xcode 将自动显示在 Visual Studio for mac。 创建的存档
+Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
-1. 启动 Xcode，然后选择**窗口 > 管理器**:
+1. 启动 Xcode 并选择 " **Window > 组织**程序"：
 
-   ![](appstore-images/xc-organizer.png "窗口菜单")
+   ![](appstore-images/xc-organizer.png "\"窗口\" 菜单")
 
-2. 切换到**存档**选项卡上，选择使用 Visual Studio 创建用于 Mac 的存档：
+2. 切换到 "**存档**" 选项卡，然后选择已创建的存档 Visual Studio for Mac：
 
-   ![](appstore-images/xc-archives.png "存档选项卡")
+   ![](appstore-images/xc-archives.png "\"存档\" 选项卡")
 
-3. 可以选择**验证...** 存档，然后选择**提交...** 将应用上传到 iTunes Connect。
+3. 选择 "**验证**"，然后选择 "**提交 ...** "，将应用上传到 iTunes Connect。
 
-4. （如果你属于多个），请选择开发团队，然后确认提交：
+4. 选择开发团队（如果你属于多个），然后确认提交：
 
-   ![](appstore-images/xc-submit1.png "开发团队部分")
+   ![](appstore-images/xc-submit1.png "\"开发团队\" 部分")
 
-5. 请访问 iTunes Connect 再次以查看已上传二进制文件。 转到您的应用程序配置页，然后选择**预发行版**从顶部菜单中，若要查看**生成**列表：
+5. 再次访问 iTunes Connect，查看上传的二进制文件。 请访问应用的 "配置" 页，然后从顶部菜单中选择 "**预发行**"，查看 "**生成**" 列表：
 
-   [![](appstore-images/itc-prerelease-sml.png "在 iTunes Connect 中应用配置页")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "ITunes Connect 中的 \"应用\" 配置页")](appstore-images/itc-prerelease.png#lightbox)
 
-可在提交以供审核的应用**版本**页。 请参阅[iOS 应用分发概述](~/ios/deploy-test/app-distribution/index.md)有关详细信息。
+然后，你可以在 "**版本**" 页上提交要审批的应用。 有关详细信息，请参阅[iOS 应用分发概述](~/ios/deploy-test/app-distribution/index.md)。
 
 
 ## <a name="troubleshooting"></a>疑难解答
 
-以下是提交到 App Store，以及为解决这些问题可以采取的步骤时可能遇到一些错误。
+下面是在提交到 App Store 时可能会遇到的一些错误，以及解决这些错误的步骤。
 
-### <a name="archive-menu-option-is-not-visible-in-visual-studio-for-mac"></a>存档菜单选项不是 Visual Studio for Mac 中可见
+### <a name="archive-menu-option-is-not-visible-in-visual-studio-for-mac"></a>Visual Studio for Mac 中不显示 "存档" 菜单选项
 
-请按照[上述步骤](#xamarin_studio)配置用于存档解决方案。 如果您不能正确设置启动项目，请确保首先生成配置设置以调试或发布之前尝试更改启动项目。 然后将设置生成配置回**AppStore**。
+按照[上述步骤](#xamarin_studio)配置解决方案以进行存档。 如果无法正确设置启动项目，请确保先将生成配置设置为 "调试" 或 "发布"，然后再尝试更改启动项目。 然后将生成配置重新设置为**AppStore**。
 
 ### <a name="invalid-icon"></a>“无效”图标
 
@@ -146,7 +146,7 @@ contains an icon file '...watchkitextension.appex/WatchApp.app/AppIcon27.5x27.5@
 with an alpha channel. Icons should not have an alpha channel.
 ```
 
-请按照[删除 alpha 通道的说明](~/ios/watchos/troubleshooting.md)从您的图标。
+按照说明从图标中[删除 alpha 通道](~/ios/watchos/troubleshooting.md)。
 
 ### <a name="cfbundleversion-mismatch"></a>CFBundleVersion 不匹配
 
@@ -156,7 +156,7 @@ CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application
 value '1.0' of its containing iOS application `YouriOS.app`.
 ```
 
--IOS 应用、 监视扩展和 Watch 应用-在解决方案中的所有项目应都使用相同的版本号。 编辑每个**Info.plist**文件以使版本号与完全匹配。
+解决方案中的所有项目-iOS 应用、监视扩展和监视应用-应使用相同的版本号。 编辑每个**info.plist**文件，使版本号完全匹配。
 
 ### <a name="missing-icons"></a>缺少图标
 
@@ -165,41 +165,41 @@ Missing Icons. No icons found for watch application '...watchkitextension.appex/
 Please make sure that its Info.plist file includes entries for CFBundleIconFiles.
 ```
 
-按照中的说明[使用图标](~/ios/watchos/app-fundamentals/icons.md)将所有所需的映像添加到监视应用程序项目。
+按照使用[图标](~/ios/watchos/app-fundamentals/icons.md)中的说明将所有所需的映像添加到 "监视应用程序" 项目。
 
-### <a name="missing-icon"></a>缺少图标。
+### <a name="missing-icon"></a>缺少图标
 
 ```csharp
 Missing Icon. The watch application '...watchkitextension.appex/WatchApp.app'
 is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 ```
 
-确保您有最新版本的 Visual Studio for Mac 和，您**AppIcon.appiconset**包含一组完整的映像。 如果你仍看到此错误，查看的源**Contents.json**以确认它包含所有所需图像的一项。 或者，你可确保您使用的最新版本的 Xamarin，一旦删除并重新创建**AppIcon.appiconset**。
+请确保具有最新版本的 Visual Studio for Mac，并且**appicons.appiconset**包含一组完整的映像。 如果仍看到此错误，请查看**内容**的源，以确认它是否包含所有所需映像的条目。 或者，在确保使用最新版本的 Xamarin 后，请删除并重新创建**appicons.appiconset**。
 
 > [!IMPORTANT]
-> 有在 Visual Studio for Mac 的监视图标支持是一个已知的 bug： 需要为 88 x 88 像素的图像 **29x29@3x** 映像 （它应是 87 x 87 像素为单位）。
+> Visual Studio for Mac 的 "监视" 图标支持中有一个已知 bug：它需要 **29x29@3x** 图像的88x88 像素图像（应为87x87 像素）。
 
 
-无法为 Mac-编辑图像资产在 Xcode 中解决此问题在 Visual Studio 中或手动编辑**Contents.json**文件 (以匹配[此示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
+无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件（以与[本示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)匹配）。
 
 
 
-### <a name="invalid-watchkit-support"></a>无效的 WatchKit 支持
+### <a name="invalid-watchkit-support"></a>WatchKit 支持无效
 
 ```csharp
 Invalid WatchKit Support - The bundle contains an invalid implementation of WatchKit.
 The app may have been built or signed with non-compliant or pre-release tools.
 ```
 
-此消息可能出现期间验证和提交，或在自动电子邮件中向 iTunes Connect 显然成功上传后。
+成功上传后，可能会在验证和提交期间出现此消息，或从 iTunes Connect 自动发送电子邮件。
 <!--
 Ensure you are using the latest version of Xcode and Xamarin's tools.
 -->
 > [!IMPORTANT]
-> 您必须**存档**Visual Studio for Mac，然后切换到 Xcode 6.2 + 验证并上传到 iTunes Connect 中的应用。
+> 必须 Visual Studio for Mac 中**存档**应用，然后切换到 Xcode 6.2 +，验证并上传到 iTunes Connect。
 
 
-使用稳定 Xamarin 通道和 Xcode 6.2 +。
+使用稳定的 Xamarin 通道和 Xcode 6.2 +。
 
 
 
@@ -211,9 +211,9 @@ Invalid Provisioning Profile. The provisioning profile included in the bundle
 is invalid. [Missing code-signing certificate.]
 ```
 
-**分发预配配置文件**必须提供用于监视应用解决方案中的所有三个项目： iOS 应用程序、 监视扩展和 Watch 应用中的任一显式 （三个配置文件） 或通过单个通配符配置文件。 检查 iOS 开发人员中心中存在的预配配置文件和已下载并将其添加到你的 mac。
+必须为 "监视应用" 解决方案中的所有三个项目提供**分发预配配置文件**： iOS 应用、监视扩展和监视应用-显式（三个配置文件）或通过单个通配符配置文件。 检查 iOS 开发人员中心中是否存在预配配置文件，以及是否已下载并将其添加到 Mac 中。
 
-### <a name="invalid-code-signing-entitlements"></a>无效的代码签名授权
+### <a name="invalid-code-signing-entitlements"></a>代码签名权利无效
 
 ```csharp
 ITMS-90046: Invalid Code Signing Entitlements. Your application bundle's signature contains
@@ -223,26 +223,26 @@ is not supported. The value should be a string startign with your TEAMID, follow
 by a dot '.' followed by the bundle identifier.
 ```
 
-请确保预配配置文件是在 Apple 开发人员中心，正确设置和已下载并安装它们。 此外检查 Visual Studio 中的 Mac 的属性窗口为每个项目设置。
+确保预配配置文件在 Apple 开发人员中心正确设置，并且已下载并安装这些配置文件。 同时，检查它们是否在每个项目 Visual Studio for Mac 的 "属性" 窗口中设置。
 
-### <a name="invalid-architecture"></a>无效的体系结构
+### <a name="invalid-architecture"></a>体系结构无效
 
 ```csharp
 Invalid architecture: Apps that include an app extension
 and framework must support arm64.
 ```
 
-你只能添加 Watch 应用[Unified API （64 位）](~/cross-platform/macios/unified/index.md) Xamarin.iOS 应用程序。
-右键单击 iOS 应用项目，然后转到**选项 > 生成 > iOS 生成 > 高级选项卡**并确保**支持的体系结构**AppStore iPhone 的配置包括**ARM64** （例如。 **ARMv7 + ARM64**)。
+只能添加监视应用[Unified API （64位）](~/cross-platform/macios/unified/index.md) Xamarin iOS 应用。
+右键单击 iOS 应用程序项目，然后选择 " **> 生成 > IOS 生成 > 高级" 选项卡**，并确保 AppStore 配置**支持的体系结构**包括**ARM64** （例如 **ARMv7 + ARM64**）。
 
-### <a name="this-bundle-is-invalid"></a>此捆绑包是无效的。
+### <a name="this-bundle-is-invalid"></a>此绑定无效。
 
 ```csharp
 ITMS-90068: This bundle is invalid. The value provided for the key
 MinimumOSVersion '8.3' is not acceptable.
 ```
 
-父 iOS 应用程序必须具有设置为"8.2"或更低 MinimumOSVersion。
+你的父 iOS 应用程序必须将 MinimumOSVersion 设置为 "8.2" 或更早版本。
 
 ### <a name="non-public-api-usage"></a>非公共 API 使用情况
 
@@ -251,7 +251,7 @@ Your app contains non-public API usage.
 Please review the errors, and resubmit your application.
 ```
 
-请确保使用最新版本 Xcode 和 Xamarin 的工具。
+确保使用最新版本的 Xcode 和 Xamarin 工具。
 你的代码不应访问任何非公共 Api。
 
 ### <a name="build-error-mt5309"></a>生成错误 MT5309
@@ -260,7 +260,7 @@ Please review the errors, and resubmit your application.
 Error MT5309: Native linking error: clang: error: no such file or directory:
 ```
 
-此错误可能是你拥有重命名从 Xcode 安装的结果**Xcode.app**。 例如，将发生此错误，如果重命名您的安装与**XCode 6.2.app**。
+此错误很可能是由于你已将 Xcode 安装重命名为**Xcode**。 例如，如果将安装重命名为**XCode 6.2**，则会发生此错误。
 
 
 

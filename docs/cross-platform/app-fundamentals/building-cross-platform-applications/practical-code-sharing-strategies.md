@@ -3,15 +3,15 @@ title: 第 5 部分 - 实际代码共享策略
 description: 本文档介绍了实际代码共享方案，例如数据库、 文件访问、 网络操作和异步代码的策略。
 ms.prod: xamarin
 ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e7739642bdb9a10046286035c4aa1a3699bb75b0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9f0a4d0367142be500aeae67041feb8cd3bbca76
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526790"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288790"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 实际代码共享策略
 

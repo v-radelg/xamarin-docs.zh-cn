@@ -3,15 +3,15 @@ title: 如何彻底卸载 Xamarin for Visual Studio？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: e387e398f3a79ea2063457f0c5c6e7469c07ac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4d8396574f02cde4c75fd96c98f79d5ed4080293
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521529"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291063"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>如何彻底卸载 Xamarin for Visual Studio？
 

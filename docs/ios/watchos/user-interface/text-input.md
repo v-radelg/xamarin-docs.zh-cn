@@ -4,36 +4,36 @@ description: 本文档介绍 Xamarin 中的 watchOS 文本输入。 它讨论了
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: f77c48cbec6a672a67808cda4e7b8fe887b492af
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 2d4b77431c6cda1b8a7718b04a35b179ff45e0ba
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200150"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291671"
 ---
 # <a name="working-with-watchos-text-input-in-xamarin"></a>在 Xamarin 中使用 watchOS 文本输入
 
-Apple Watch 不会为用户提供用于输入文本的键盘, 但它确实支持一些便于查看的替代方案:
+Apple Watch 不会为用户提供用于输入文本的键盘，但它确实支持一些便于查看的替代方案：
 
-- 从预定义的文本选项列表中进行选择,
-- Siri 听写,
-- 选择表情符号,
-- 自由曲线字母手写识别 (在 watchOS 3 中引入)。
+- 从预定义的文本选项列表中进行选择，
+- Siri 听写，
+- 选择表情符号，
+- 自由曲线字母手写识别（在 watchOS 3 中引入）。
 
-模拟器目前不支持听写, 但你仍可以测试文本输入控制器的其他选项, 如 "自由曲线", 如下所示:
+模拟器目前不支持听写，但你仍可以测试文本输入控制器的其他选项，如 "自由曲线"，如下所示：
 
 ![](text-input-images/textinput-sml.png "测试自由曲线选项")
 
-接受 watch 应用中的文本输入:
+接受 watch 应用中的文本输入：
 
 1. 创建预定义选项的字符串数组。
-2. 使用`PresentTextInputController`数组调用, 无论是否允许使用表情符号, `Action`以及用户完成时调用的。
-3. 在完成操作中, 测试输入结果并在应用中采取适当的操作 (可能会设置标签的文本值)。
+2. 使用`PresentTextInputController`数组调用，无论是否允许使用表情符号， `Action`以及用户完成时调用的。
+3. 在完成操作中，测试输入结果并在应用中采取适当的操作（可能会设置标签的文本值）。
 
-以下代码片段向用户提供三个预定义选项:
+以下代码片段向用户提供三个预定义选项：
 
 ```csharp
 var suggest = new string[] {"Get groceries", "Buy gas", "Post letter"};
@@ -49,7 +49,7 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 });
 ```
 
-`WKTextInputMode`枚举具有三个值:
+`WKTextInputMode`枚举具有三个值：
 
 - 纯
 - AllowEmoji
@@ -57,7 +57,7 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 
 ## <a name="plain"></a>纯
 
-设置纯模式后, 用户可以选择:
+设置纯模式后，用户可以选择：
 
 - 听写
 - 自由曲线或
@@ -69,20 +69,20 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 
 ## <a name="emoji"></a>表情符号
 
-有两种类型的表情符号:
+有两种类型的表情符号：
 
 - 常规 Unicode 表情符号
 - 动画图像
 
-当用户选择 Unicode 表情符号时, 它将作为字符串返回。
+当用户选择 Unicode 表情符号时，它将作为字符串返回。
 
-如果选择了动画图像表情符号, `result`则在完成处理程序中将`NSData`包含包含表情符号`UIImage`的对象。
+如果选择了动画图像表情符号， `result`则在完成处理程序中将`NSData`包含包含表情符号`UIImage`的对象。
 
 ## <a name="accepting-dictation-only"></a>仅接受听写
 
-在不显示任何建议 (或自由曲线选项) 的情况下, 直接将用户带到听写屏幕:
+在不显示任何建议（或自由曲线选项）的情况下，直接将用户带到听写屏幕：
 
-- 为建议列表传递一个空数组, 并
+- 为建议列表传递一个空数组，并
 - 集`WatchKit.WKTextInputMode.Plain`。
 
 ```csharp
@@ -96,11 +96,11 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 });
 ```
 
-用户讲话时, "监视" 屏幕会显示以下屏幕, 其中包括所理解的文本 (例如 "这是一项测试"):
+用户讲话时，"监视" 屏幕会显示以下屏幕，其中包括所理解的文本（例如 "这是一项测试"）：
 
-![](text-input-images/dictation.png "用户讲话时, \"监视\" 屏幕会显示其内容,")
+![](text-input-images/dictation.png "用户讲话时，\"监视\" 屏幕会显示其内容，")
 
-用户按 "**完成**" 按钮后, 将返回文本。
+用户按 "**完成**" 按钮后，将返回文本。
 
 
 

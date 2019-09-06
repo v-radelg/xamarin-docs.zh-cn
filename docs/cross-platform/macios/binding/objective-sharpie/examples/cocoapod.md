@@ -1,28 +1,28 @@
 ---
-title: 使用 CocoaPods 的真实示例
-description: 本文档演示如何使用目标 Sharpie 自动生成C#绑定中 CocoaPod 的定义。
+title: 使用 CocoaPods 的实际示例
+description: 本文档演示如何使用客观 Sharpie 自动生成 CocoaPod 的C#绑定定义。
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2018
-ms.openlocfilehash: 266f2bca1f4a96242b17080e60c9f43cb956a5fd
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 0f730b1c0a0deacdb84c198cfe4af47308a268cc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977871"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290026"
 ---
-# <a name="real-world-example-using-cocoapods"></a>使用 CocoaPods 的真实示例
+# <a name="real-world-example-using-cocoapods"></a>使用 CocoaPods 的实际示例
 
 > [!NOTE]
 > 此示例使用[AFNetworking CocoaPod](https://cocoapods.org/pods/AFNetworking)。
 
-3.0 版开始中的新增功能目标 Sharpie 支持绑定 CocoaPods，，甚至可以包括一个命令 (`sharpie pod`) 进行下载、 配置和构建 CocoaPods 非常简单。 您应该[熟悉 CocoaPods](https://cocoapods.org)一般情况下再使用此功能。
+版本3.0 中的新增内容，目的 Sharpie 支持绑定 CocoaPods，甚至包含命令（`sharpie pod`），使下载、配置和构建 CocoaPods 非常简单。 在使用此功能之前，您应[熟悉 CocoaPods](https://cocoapods.org) 。
 
 ## <a name="creating-a-binding-for-a-cocoapod"></a>为 CocoaPod 创建绑定
 
-`sharpie pod`命令包含一个全局选项和两个子命令：
+`sharpie pod`命令有一个全局选项和两个子命令：
 
 ```bash
 $ sharpie pod -help
@@ -37,7 +37,7 @@ Available Commands:
   bind         Bind an existing Xamarin C# CocoaPods project
 ```
 
-`init`子命令还具有一些有用的帮助：
+`init`子命令还提供了一些有用的帮助：
 
 ```bash
 $ sharpie pod init -help
@@ -48,7 +48,7 @@ Init Options:
                    it even if one already exists
 ```
 
-多个 CocoaPod 名称和 subspec 名称可以提供给`init`。
+可以向`init`提供多个 CocoaPod 名称和 subspec 名称。
 
 ```bash
 $ sharpie pod init ios AFNetworking
@@ -67,13 +67,13 @@ Sending stats
 ** 🍻 Success! You can now use other `sharpie podn`  commands.
 ```
 
-一旦您 CocoaPod 已设置了，现在可以创建绑定：
+设置 CocoaPod 后，现在可以创建绑定：
 
 ```bash
 $ sharpie pod bind
 ```
 
-这将导致 CocoaPod Xcode 项目正在生成，然后计算以及由目标 Sharpie 进行分析。 大量的控制台输出将会生成，但应导致末尾处的绑定定义：
+这会生成 CocoaPod Xcode 项目，并通过目标 Sharpie 对其进行评估和分析。 将生成大量控制台输出，但应在末尾产生绑定定义：
 
 ```bash
 (... lots of build output ...)
@@ -89,8 +89,8 @@ Done.
 
 ## <a name="next-steps"></a>后续步骤
 
-生成后**ApiDefinitions.cs**并**StructsAndEnums.cs**文件，看一下生成的程序集，若要在应用中使用的以下文档：
+生成**ApiDefinitions.cs**和**StructsAndEnums.cs**文件后，请查看以下文档，生成要在应用中使用的程序集：
 
-- [绑定 OBJECTIVE-C 的概述](~/cross-platform/macios/binding/overview.md)
-- [绑定 OBJECTIVE-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [演练：绑定 iOS OBJECTIVE-C 库](~/ios/platform/binding-objective-c/walkthrough.md)
+- [绑定目标-C 概述](~/cross-platform/macios/binding/overview.md)
+- [绑定目标-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
+- [演练：绑定 iOS 目标-C 库](~/ios/platform/binding-objective-c/walkthrough.md)

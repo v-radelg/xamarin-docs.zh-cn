@@ -3,32 +3,32 @@ title: 已知问题 & 解决方法
 description: 本文档介绍 Xamarin Workbooks 的已知问题和解决方法。 它讨论了 CultureInfo 问题、JSON 问题等。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 3701a2a111c5c18f694def241b1e888fa6f4ce19
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b7b73e214af6a5a45426b4e2d2d7e01a436b379e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120322"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292785"
 ---
 # <a name="known-issues--workarounds"></a>已知问题 & 解决方法
 
 ## <a name="persistence-of-cultureinfo-across-cells"></a>单元格之间的 CultureInfo 持久性
 
-由于`System.Threading.CurrentThread.CurrentCulture` [mono 的实现中的 bug `AppContext.SetSwitch` ][appcontext-bug] , 在基于 mono 的工作簿目标 (Mac、iOS 和 Android) 上, 对工作簿单元格的设置或`System.Globalization.CultureInfo.CurrentCulture`不会保持不变。
+由于`System.Threading.CurrentThread.CurrentCulture` [mono 的实现中的 bug `AppContext.SetSwitch` ][appcontext-bug] ，在基于 mono 的工作簿目标（Mac、iOS 和 Android）上，对工作簿单元格的设置或`System.Globalization.CultureInfo.CurrentCulture`不会保持不变。
 
 ### <a name="workarounds"></a>问题解决
 
-- 设置应用程序-域本地`DefaultThreadCurrentCulture`:
+- 设置应用程序-域本地`DefaultThreadCurrentCulture`：
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-- 或者, 更新为1.2.1 或更高版本的工作簿, 这`System.Threading.CurrentThread.CurrentCulture`将`System.Globalization.CultureInfo.CurrentCulture`重写对和的分配, 以提供所需的行为 (围绕 Mono 错误)。
+- 或者，更新为1.2.1 或更高版本的工作簿，这`System.Threading.CurrentThread.CurrentCulture`将`System.Globalization.CultureInfo.CurrentCulture`重写对和的分配，以提供所需的行为（围绕 Mono 错误）。
 
 ## <a name="unable-to-use-newtonsoftjson"></a>无法使用 Newtonsoft.json
 
@@ -39,13 +39,13 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 
 ### <a name="details"></a>详细信息
 
-Newtonsoft.json 发布了已升级依赖于支持`dynamic`的版本工作簿的依赖项。 工作簿1.3 预览版本中对此进行了说明, 但现在, 我们通过将 Newtonsoft.json 专门固定到9.0.1 版来解决此问题。
+Newtonsoft.json 发布了已升级依赖于支持`dynamic`的版本工作簿的依赖项。 工作簿1.3 预览版本中对此进行了说明，但现在，我们通过将 Newtonsoft.json 专门固定到9.0.1 版来解决此问题。
 
-根据 Newtonsoft.json 10 或更高版本, 仅支持在当前 alpha 通道中的工作簿1.3 中显式启用 NuGet 包。
+根据 Newtonsoft.json 10 或更高版本，仅支持在当前 alpha 通道中的工作簿1.3 中显式启用 NuGet 包。
 
 ## <a name="code-tooltips-are-blank"></a>代码工具提示为空
 
-在用于 Mac 工作簿应用程序的 "Safari/WebKit" 中, 在["摩纳哥编辑器"][monaco-bug]中有一个 bug, 该 bug 会导致不带文本的代码工具提示呈现。
+在用于 Mac 工作簿应用程序的 "Safari/WebKit" 中，在["摩纳哥编辑器"][monaco-bug]中有一个 bug，该 bug 会导致不带文本的代码工具提示呈现。
 
 ![](general-images/monaco-signature-help-bug.png)
 
@@ -60,11 +60,11 @@ Newtonsoft.json 发布了已升级依赖于支持`dynamic`的版本工作簿的�
 
 ## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>工作簿1.3 中缺少 SkiaSharp 呈现器
 
-从工作簿1.3 开始, 我们移除了在工作簿0.99.0 中提供的 SkiaSharp 呈现器, 并使用我们的[SDK](~/tools/workbooks/sdk/index.md)来支持提供呈现器的 SkiaSharp。
+从工作簿1.3 开始，我们移除了在工作簿0.99.0 中提供的 SkiaSharp 呈现器，并使用我们的[SDK](~/tools/workbooks/sdk/index.md)来支持提供呈现器的 SkiaSharp。
 
 ### <a name="workaround"></a>解决方法
 
-- 将 SkiaSharp 更新为 NuGet 中的最新版本。 撰写本文时, 这是1.57.1 的。
+- 将 SkiaSharp 更新为 NuGet 中的最新版本。 撰写本文时，这是1.57.1 的。
 
 ## <a name="related-links"></a>相关链接
 

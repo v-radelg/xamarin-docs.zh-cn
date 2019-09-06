@@ -1,52 +1,52 @@
 ---
 title: .NET 嵌入限制
-description: 本文档介绍.NET 嵌入内容，该工具，您可以使用其他编程语言中的.NET 代码的限制。
+description: 本文档介绍 .NET 嵌入的限制，它是一种工具，可用于在其他编程语言中使用 .NET 代码。
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 7a162d632c98b4e412fa1b7b0c0c40ac945ff09f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cf431d4e3d30ac2ec06bfebc9cebe101411faa1c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945777"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292713"
 ---
 # <a name="net-embedding-limitations"></a>.NET 嵌入限制
 
-本文档介绍了.NET 嵌入的限制，只要有可能，可为他们提供解决方法。
+本文档介绍 .NET 嵌入的限制，并尽可能为其提供解决方法。
 
 ## <a name="general"></a>常规
 
-### <a name="use-more-than-one-embedded-library-in-a-project"></a>使用多个项目中的嵌入的库
+### <a name="use-more-than-one-embedded-library-in-a-project"></a>在一个项目中使用多个嵌入库
 
-不能有两个相同的应用程序中共存的 Mono 运行时。 这意味着不能使用两个不同.NET 嵌入生成的库在同一应用程序。
+同一应用程序中不能有两个共同存在的 Mono 运行时。 这意味着不能在同一个应用程序中使用两个不同的 .NET 嵌入生成的库。
 
-**临时解决方法：** 可以使用生成器创建的单个库中包含多个程序集 （从不同的项目）。
+**临时解决方法：** 您可以使用生成器创建包含多个程序集（来自不同项目）的单个库。
 
-### <a name="subclassing"></a>子类化
+### <a name="subclassing"></a>分类
 
-.NET 嵌入，则可以通过提供随时可用 Api 的目标语言和平台的一组简化 Mono 运行时在应用程序的集成。
+通过为目标语言和平台公开一组现成的 Api，.NET 嵌入可简化应用程序内的 Mono 运行时集成。
 
-但这不是双向集成，例如您能子类的托管类型，并且希望托管的代码回调在本机代码内部，因为您的托管的代码不知道此共存。
+但这并不是双向集成，例如，你不能对托管类型进行子类化并期望托管代码在本机代码中回调，因为托管代码不知道此共存。
 
-具体取决于你的需求，有可能对解决方法部分的此限制例如
+根据你的需要，可以解决此限制的某些部分，例如
 
-* 托管的代码可以在本机代码到 p/invoke。 这需要自定义托管的代码以允许从本机代码; 的自定义
+* 托管代码可以通过 p/invoke 进入本机代码。 这需要自定义托管代码，以允许来自本机代码的自定义;
 
-* 使用 Xamarin.iOS 等产品，并公开的托管的库，将允许 Objective C （在这种情况下） 为子类某些托管 NSObject 子类。
+* 使用类似于 Xamarin 的产品并公开托管库，以允许目标 C （在本例中为）对某些托管的 NSObject 子类进行子类处理。
 
-## <a name="objective-c-generated-code"></a>Objective C 生成的代码
+## <a name="objective-c-generated-code"></a>目标-C 生成的代码
 
-### <a name="nullability"></a>为 null 性
+### <a name="nullability"></a>为
 
-没有任何元数据，以告诉我们是否可以接受空引用的.NET 或为 API。 大多数 Api 将引发`ArgumentNullException`如果不能应对`null`参数。 这是有问题，因为 Objective C 处理的异常是更好地避免使用。
+.NET 中没有元数据，告诉我们对于 API 是否可以接受空引用。 如果大多数 api 无法`ArgumentNullException` `null`处理参数，则会引发此异常。 这会造成问题，因为异常的目标 C 处理会更好地避免。
 
-由于我们不能在标头文件中生成准确的为 null 性批注并想要最大程度减少托管的异常，因此我们默认为非空的参数 (`NS_ASSUME_NONNULL_BEGIN`)，并添加一些特定于，可能精度时，为 null 性批注。
+由于我们不能在标头文件中生成准确的空性注释并希望最大程度地减少托管异常，`NS_ASSUME_NONNULL_BEGIN`因此，在可能的情况下，可以指定可为 null 的注释，并在可能的情况下添加一些特定的。
 
-### <a name="bitcode-ios"></a>Bitcode (iOS)
+### <a name="bitcode-ios"></a>Bitcode （iOS）
 
-目前.NET 嵌入不支持 bitcode ios，可用于某些 Xcode 项目模板。 这会禁用已成功生成链接框架。
+目前，.NET 嵌入不支持 bitcode on iOS，这是针对某些 Xcode 项目模板启用的。 这将必须禁用才能成功链接生成的框架。
 
 ![Bitcode 选项](images/ios-bitcode-option.png)

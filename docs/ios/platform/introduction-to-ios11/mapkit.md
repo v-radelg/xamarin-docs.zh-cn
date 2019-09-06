@@ -1,22 +1,22 @@
 ---
 title: IOS 11 上 MapKit 中的新功能
-description: '本文档介绍 iOS 11 中的新 MapKit 功能: 分组标记、罗盘按钮、缩放视图和用户跟踪按钮。'
+description: 本文档介绍 iOS 11 中的新 MapKit 功能：分组标记、罗盘按钮、缩放视图和用户跟踪按钮。
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 0345a20e20b96e2f219218fc396b11ac508c8add
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c194f2c9f8ea974bf3d6a8798f8a12e246c7d75b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656431"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286682"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 中的新功能
 
-iOS 11 向 MapKit 添加了以下新功能:
+iOS 11 向 MapKit 添加了以下新功能：
 
 - [批注聚类](#clustering)
 - [罗盘按钮](#compass)
@@ -35,7 +35,7 @@ iOS 11 向 MapKit 添加了以下新功能:
 
 Point 批注类表示地图上的每个标记。 可以通过使用`MapView.AddAnnotation()`或从`MapView.AddAnnotations()`数组中单独添加它们。
 
-点批注类没有直观的表示形式, 只需要表示与标记相关的数据 (最重要的`Coordinate`是, 它是地图上的纬度和经度) 和任何自定义属性:
+点批注类没有直观的表示形式，只需要表示与标记相关的数据（最重要的`Coordinate`是，它是地图上的纬度和经度）和任何自定义属性：
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -59,16 +59,16 @@ public class Bike : MKPointAnnotation
 
 ### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2.为单标记创建子类`MKMarkerAnnotationView`
 
-标记批注视图是每个批注的可视化表示形式, 并且使用属性 (例如) 进行样式化。
+标记批注视图是每个批注的可视化表示形式，并且使用属性（例如）进行样式化。
 
 - **MarkerTintColor** –标记的颜色。
 - **GlyphText** –标记中显示的文本。
 - **GlyphImage** -设置显示在标记中的图像。
-- **DisplayPriority** –决定当地图与标记拥挤时, z 顺序 (堆栈行为)。 使用、 `Required` `DefaultHigh`或中的一个。`DefaultLow`
+- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用、 `Required` `DefaultHigh`或中的一个。`DefaultLow`
 
-若要支持自动群集, 还必须设置:
+若要支持自动群集，还必须设置：
 
-- **ClusteringIdentifier** –此控制将哪些标记聚集在一起。 您可以对所有标记使用相同的标识符, 或使用不同的标识符来控制它们组合在一起的方式。
+- **ClusteringIdentifier** –此控制将哪些标记聚集在一起。 您可以对所有标记使用相同的标识符，或使用不同的标识符来控制它们组合在一起的方式。
 
 ```csharp
 [Register("BikeView")]
@@ -106,13 +106,13 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3.`MKAnnotationView`创建以表示标记的分类
 
-尽管表示标记分类的批注视图_可能_是一个简单的图像, 但用户希望应用程序能够提供有关已组合在一起的标记数的视觉提示。
+尽管表示标记分类的批注视图_可能_是一个简单的图像，但用户希望应用程序能够提供有关已组合在一起的标记数的视觉提示。
 
-[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)使用 CoreGraphics 来呈现分类中的标记数, 以及每个标记类型的比例的圆关系图表示形式。
+[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)使用 CoreGraphics 来呈现分类中的标记数，以及每个标记类型的比例的圆关系图表示形式。
 
-还应设置:
+还应设置：
 
-- **DisplayPriority** –决定当地图与标记拥挤时, z 顺序 (堆栈行为)。 使用、 `Required` `DefaultHigh`或中的一个。`DefaultLow`
+- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用、 `Required` `DefaultHigh`或中的一个。`DefaultLow`
 - **CollisionMode** - `Circle`或`Rectangle`。
 
 ```csharp
@@ -181,32 +181,32 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4.注册视图类
 
-当创建地图视图控件并将其添加到视图中时, 注册批注视图类型可启用自动聚类分析行为, 因为地图会放大和缩小:
+当创建地图视图控件并将其添加到视图中时，注册批注视图类型可启用自动聚类分析行为，因为地图会放大和缩小：
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
 MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReuseIdentifier);
 ```
 
-### <a name="5-render-the-map"></a>5.呈现地图!
+### <a name="5-render-the-map"></a>5.呈现地图！
 
-在呈现地图时, 将根据缩放级别对批注标记进行群集或呈现。 当缩放级别更改时, 标记将在群集中进行动画处理。
+在呈现地图时，将根据缩放级别对批注标记进行群集或呈现。 当缩放级别更改时，标记将在群集中进行动画处理。
 
 ![显示地图上的聚集标记的模拟器](mapkit-images/cyclemap-sml.png)
 
-有关用 MapKit 显示数据的详细信息, 请参阅[Maps 部分](~/ios/user-interface/controls/ios-maps/index.md)。
+有关用 MapKit 显示数据的详细信息，请参阅[Maps 部分](~/ios/user-interface/controls/ios-maps/index.md)。
 
 <a name="compass" />
 
 ## <a name="compass-button"></a>罗盘按钮
 
-iOS 11 增加了从地图中弹出罗盘的功能, 并将其呈现在视图中的其他位置。 有关示例, 请参阅[Tandm 示例应用](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)。
+iOS 11 增加了从地图中弹出罗盘的功能，并将其呈现在视图中的其他位置。 有关示例，请参阅[Tandm 示例应用](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)。
 
-创建一个看起来像罗盘的按钮 (当地图方向发生变化时包括实时动画), 并将其呈现在另一个控件上。
+创建一个看起来像罗盘的按钮（当地图方向发生变化时包括实时动画），并将其呈现在另一个控件上。
 
 ![导航栏中的 "罗盘" 按钮](mapkit-images/compass-sml.png)
 
-下面的代码创建一个罗盘按钮, 并将其呈现在导航栏上:
+下面的代码创建一个罗盘按钮，并将其呈现在导航栏上：
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -221,7 +221,7 @@ MapView.ShowsCompass = false; // so we don't have two compasses!
 
 ## <a name="scale-view"></a>缩放视图
 
-使用`MKScaleView.FromMapView()`方法, 将刻度添加到视图中的其他位置, 以便在视图层次结构中的其他位置添加缩放视图的实例。
+使用`MKScaleView.FromMapView()`方法，将刻度添加到视图中的其他位置，以便在视图层次结构中的其他位置添加缩放视图的实例。
 
 ![地图上重叠的缩放视图](mapkit-images/scale-sml.png)
 
@@ -239,7 +239,7 @@ MapView.ShowsScale = false; // so we don't have two scale displays!
 
 ## <a name="user-tracking-button"></a>"用户跟踪" 按钮
 
-"用户跟踪" 按钮将地图中心置于用户当前位置。 `MKUserTrackingButton.FromMapView()`使用方法可获取按钮实例, 应用格式更改, 并将其添加到视图层次结构中的其他位置。
+"用户跟踪" 按钮将地图中心置于用户当前位置。 `MKUserTrackingButton.FromMapView()`使用方法可获取按钮实例，应用格式更改，并将其添加到视图层次结构中的其他位置。
 
 ![映射到地图上的用户位置按钮](mapkit-images/user-location-sml.png)
 
@@ -258,4 +258,4 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 - [MapKit 示例 "Tandm"](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [MapKit (WWDC) 中的新增功能 (视频)](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [MapKit （WWDC）中的新增功能（视频）](https://developer.apple.com/videos/play/wwdc2017/237/)

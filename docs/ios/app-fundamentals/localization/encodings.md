@@ -1,34 +1,34 @@
 ---
 title: Xamarin 中的国际化编码
-description: 本文档介绍了 Xamarin 中的国际化编码, 讨论了可用的编码, 以及如何将它们添加到应用中。
+description: 本文档介绍了 Xamarin 中的国际化编码，讨论了可用的编码，以及如何将它们添加到应用中。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: fee3e4d409302204a218a18b52cf51fc46249e95
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5430407798dd556532b2cacf592439acc7c02be
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290127"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的国际化编码
 
-默认情况下, 并非所有编码都包含在 Xamarin 类库中。
+默认情况下，并非所有编码都包含在 Xamarin 类库中。
 
-为了减小应用程序的大小, Xamarin 不包括任何特定的编码, 并且必须指示 mtouch 包含包含所需编码支持的程序集。
+为了减小应用程序的大小，Xamarin 不包括任何特定的编码，并且必须指示 mtouch 包含包含所需编码支持的程序集。
 
-这是通过在 Visual Studio for Mac 或 Visual Studio 中的 "iOS 生成"/"高级" 窗格中选择额外的编码来完成的:
+这是通过在 Visual Studio for Mac 或 Visual Studio 中的 "iOS 生成"/"高级" 窗格中选择额外的编码来完成的：
 
  [![](encodings-images/00.png "选择额外的编码")](encodings-images/00.png#lightbox)
 
  [![](encodings-images/00a.png "选择额外的编码")](encodings-images/00a.png#lightbox)
 
-您可以选择以下其中一项:
+您可以选择以下其中一项：
 
-- cjk: for Chineese, 日语和韩语
+- cjk： for Chineese，日语和韩语
 - mideast:阿拉伯语、希伯来语、土耳其语和 Latin5。
 - 以外西里尔语、波罗的语、越南语和泰语
 - 极少数EBCDIC 编码和其他罕见代码页

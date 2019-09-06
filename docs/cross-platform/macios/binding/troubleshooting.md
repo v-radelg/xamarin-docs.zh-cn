@@ -1,48 +1,48 @@
 ---
 title: 绑定疑难解答
-description: 本指南介绍了要执行的操作如果无法绑定 OBJECTIVE-C 库。 具体而言，它讨论了缺少绑定，将 null 传递给绑定和报告 bug 时的自变量异常。
+description: 本指南介绍当你难以绑定目标-C 库时应执行的操作。 特别是，在将 null 传递到绑定和报告 bug 时，它将讨论缺少绑定、自变量异常。
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: 686ce3b46f268b650c63cace2a29b9d501a4063c
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 8fd4a11208be1271785a7e02ad8d45db66d6f1fd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977599"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280890"
 ---
 # <a name="binding-troubleshooting"></a>绑定疑难解答
 
-有关故障排除绑定向 macOS （以前称为 OS X） 的一些提示在 Xamarin.Mac 中的 Api。
+用于排查 Xamarin 中的 macOS （以前称为 OS X） Api 的绑定的一些技巧。
 
 ## <a name="missing-bindings"></a>缺少绑定
 
-Xamarin.Mac 涵盖了许多 Apple Api，而有时您可能需要调用一些不具有绑定的 Apple API 尚未。 在其他情况下，您需要调用第三方 C/Objective C 范围外的 Xamarin.Mac 绑定它。
+虽然 Xamarin 覆盖了很多 Apple Api，但有时你可能需要调用一些尚未包含绑定的 Apple API。 在其他情况下，需要在 Xamarin 绑定范围之外调用第三方 C/目标-C。
 
-如果处理的 Apple API，第一步是让 Xamarin 知道，你已达到 API 的部分，我们尚未针对没有覆盖率。 [提交 bug](#reporting-bugs)注意是缺少 API。 我们使用客户的报告来确定哪些 Api 下一步我们工作的优先级。 此外，如果您具有的业务或企业版许可证，并且缺乏一个绑定阻止您的进度，还请遵循的说明[支持](http://xamarin.com/support)来提交票证。 我们不能保证一个绑定，但在某些情况下我们可以避开您工作。
+如果你正在处理 Apple API，则第一步是让 Xamarin 知道，你已遇到了尚未覆盖的 API 的一部分。 [文件](#reporting-bugs)：记录缺少的 API。 我们使用客户的报告来确定我们接下来要处理的 Api 的优先级。 此外，如果你有企业版或企业版许可证，并且缺少绑定来阻止你的进度，还应按照[支持](http://xamarin.com/support)中的说明提交票证。 我们无法保证绑定，但在某些情况下，我们可以帮助你解决这一情况。
 
-缺少绑定的 （如果适用） 通知 Xamarin 下, 一步是要考虑自己绑定。 我们有完整指南[这里](~/cross-platform/macios/binding/overview.md)和一些非官方文档[此处](http://brendanzagaeski.appspot.com/xamarin/0002.html)手动包装 OBJECTIVE-C 绑定。 如果正在调用 C API，则可以使用C#的文档是 P/Invoke 机制[此处](https://www.mono-project.com/docs/advanced/pinvoke/)。
+通知 Xamarin （如果适用）缺少的绑定后，下一步是考虑自己绑定。 我们在[此](~/cross-platform/macios/binding/overview.md)提供了完整的指南，并在[此处](http://brendanzagaeski.appspot.com/xamarin/0002.html)提供了一些非正式文档用于手动包装目标-C 绑定。 如果调用的是 C API，则可以使用C#的 P/Invoke 机制，[此处](https://www.mono-project.com/docs/advanced/pinvoke/)提供了文档。
 
-如果你决定要在绑定上你自己，请注意在绑定中的错误，可以生成各种类型的本机运行时中的有趣崩溃。 具体而言，要非常小心，在签名中的C#中的参数数目和每个自变量的大小的本机签名匹配。 如果不这样做可能会损坏内存和/或堆栈并可能在将来崩溃立即或在某个任意时间点或损坏的数据。
+如果决定自行处理绑定，请注意绑定中的错误可能会在本机运行时中产生各种有趣的故障。 特别要注意的是，中C#的签名与参数数量和每个参数的大小相匹配。 如果不这样做，可能会损坏内存和/或堆栈，并且你可能会立即崩溃，也可能是将来或损坏数据的某个任意点崩溃。
 
-## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>将 null 传递到绑定时的自变量异常
+## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>将 null 传递到绑定时的参数异常
 
-尽管 Xamarin 工作以提供高质量和经过充分测试的绑定适用于 Apple 的 Api，有时错误和错误名单中。 到目前为止最常见的可能会遇到的问题是 API 引发`ArgumentNullException`传递空值时的基础 API 接受`nil`。 通常定义 API 的本机头文件不提供足够的 API 接受 nil 和其中将崩溃将其传递的信息。
+虽然 Xamarin 可以为 Apple Api 提供高质量和良好测试的绑定，但有时也会出现错误和错误。 到目前为止，你可能遇到的最常见问题是在基础 api 接受`ArgumentNullException` `nil`时传入 null 时引发 API。 定义 API 的本机标头文件通常并不提供足够的信息来了解哪些 Api 接受 nil，哪些 Api 在你传递时将会崩溃。
 
-如果遇到一种情况其中传入`null`引发`ArgumentNullException`但认为它应起作用，请执行以下步骤：
+如果你遇到传入的传入`null` `ArgumentNullException`的情况，但你认为它应正常工作，请执行以下步骤：
 
-1. 检查 Apple 文档和/或示例，以看看是否可以找到它接受的证明`nil`。 如果您习惯使用 Objective C，可以编写一个小测试程序，以验证它。
-2. [提交 bug](#reporting-bugs)。
-3. 可以解决该 bug？ 如果可以避免调用的 API `null`，调用周围的简单 null 检查可以轻松解决办法。
-4. 但是，有些 Api 需要传入 null 来关闭或禁用某些功能。 在这些情况下，您可以解决此问题通过将程序集浏览器 (请参阅[查找C#给定选择器成员](~/mac/app-fundamentals/mac-apis.md#finding_selector))，将绑定和 null 检查中删除复制。 请确保要提交 bug （步骤 2） 如果复制的绑定不会接收更新和修补程序，我们使在 Xamarin.Mac、 执行此操作，并且应将此视为短时间内的解决办法。
+1. 请查看 Apple 文档和/或示例，以了解是否可以找到它所接受`nil`的证明。 如果你熟悉客观-C，可以编写一个小型测试程序来验证它。
+2. 提交[bug](#reporting-bugs)。
+3. 能否解决该 bug？ 如果可以避免调用带有`null`的 API，则对调用的简单空检查可以很容易解决。
+4. 但是，某些 Api 需要传入 null 才能关闭或禁用某些功能。 在这些情况下，您可以通过启动程序集浏览器（请参阅[查找给定选择器C#的成员](~/mac/app-fundamentals/mac-apis.md#finding_selector)）、复制绑定以及删除 null 检查来解决该问题。 如果执行此操作，请确保提交 bug （步骤2），因为复制的绑定不会收到在 Xamarin 中进行的更新和修补程序，因此应将这一点视为一项短期解决方法。
 
 <a name="reporting-bugs"/>
 
 ## <a name="reporting-bugs"></a>报告 bug
 
-你的反馈对我们很重要。 如果发现任何问题与 Xamarin.Mac:
+你的反馈对我们非常重要。 如果发现 Xamarin 的任何问题：
 
 - 查看 [Xamarin.Mac 论坛](https://forums.xamarin.com/categories/mac)
 - 搜索[问题存储库](https://github.com/xamarin/xamarin-macios/issues) 

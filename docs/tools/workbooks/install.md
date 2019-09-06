@@ -1,17 +1,17 @@
 ---
 title: 工作簿安装和要求
-description: 本文档介绍如何下载和安装 Xamarin Workbooks, 并讨论支持的平台和系统要求。
+description: 本文档介绍如何下载和安装 Xamarin Workbooks，并讨论支持的平台和系统要求。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: dd1e0838fbd3c3606021ddc996bf94cabc084f77
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5292a052d4f93af9b21cc7cbc51891c99d6f9403
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119996"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285251"
 ---
 # <a name="workbooks-installation-and-requirements"></a>工作簿安装和要求
 
@@ -38,36 +38,36 @@ ms.locfileid: "70119996"
 #### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10.11 或更高版本
-- **Windows** -windows 7 或更高版本 (包含 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本)
+- **Windows** -windows 7 或更高版本（包含 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本）
 
 #### <a name="supported-app-platforms"></a>支持的应用平台
 
 |应用平台|OS 支持|说明|
 |--- |--- |--- |
 |Mac|仅在 Mac 上受支持|
-|iOS|在 Mac 和 Windows 上受支持|需要在 Mac 上安装 Xamarin 11.0 和 Xcode 9.0 或更高版本。 在 Windows 上运行 iOS 工作簿需要运行上述所有的 Mac 生成主机, 以及在 Windows 上安装的[远程 IOS 模拟器](~/tools/ios-simulator/index.md)。|
-|Android|在 Mac 和 Windows 上受支持|必须使用 Google、Visual Studio 或 Xamarin Android 模拟器, 并且虚拟设备 > = 5。0|
+|iOS|在 Mac 和 Windows 上受支持|需要在 Mac 上安装 Xamarin 11.0 和 Xcode 9.0 或更高版本。 在 Windows 上运行 iOS 工作簿需要运行上述所有的 Mac 生成主机，以及在 Windows 上安装的[远程 IOS 模拟器](~/tools/ios-simulator/index.md)。|
+|Android|在 Mac 和 Windows 上受支持|必须使用 Google、Visual Studio 或 Xamarin Android 模拟器，并且虚拟设备 > = 5。0|
 |WPF|仅在 Windows 上受支持|
-|控制台 (.NET Framework)|在 Mac 和 Windows 上受支持|
+|控制台（.NET Framework）|在 Mac 和 Windows 上受支持|
 |控制台 （.NET Core）|在 Mac 和 Windows 上受支持|
 
 
 ## <a name="reporting-bugs"></a>报告 Bug
 
-请[在 GitHub 上报告问题][bugs], 并提供以下信息:
+请[在 GitHub 上报告问题][bugs]，并提供以下信息：
 
 ### <a name="log-files"></a>日志文件
 
-始终附加工作簿客户端日志文件:
+始终附加工作簿客户端日志文件：
 
 - Mac`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4. x 还可以直接从主菜单中选择查找器 (macOS) 或资源管理器 (Windows) 中的日志文件:
+1.4. x 还可以直接从主菜单中选择查找器（macOS）或资源管理器（Windows）中的日志文件：
 
 - **帮助 > 显示日志文件**
 
-#### <a name="log-paths-for-workbooks-13-and-earlier"></a>工作簿1.3 及更早版本的日志路径:
+#### <a name="log-paths-for-workbooks-13-and-earlier"></a>工作簿1.3 及更早版本的日志路径：
 
 - Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
@@ -76,11 +76,11 @@ ms.locfileid: "70119996"
 
 了解有关操作系统和已安装 Xamarin 产品的详细信息非常有用。
 
-从工作簿中的主菜单:
+从工作簿中的主菜单：
 
 - **帮助 > 复制版本信息**
 
-#### <a name="instructions-for-workbooks-13-and-earlier"></a>工作簿1.3 及更早版本的说明:
+#### <a name="instructions-for-workbooks-13-and-earlier"></a>工作簿1.3 及更早版本的说明：
 
 Visual Studio For Mac
 
@@ -94,20 +94,20 @@ Visual Studio
 
 ### <a name="samples"></a>示例
 
-如果您可以附加或链接到您遇到的**工作簿**文件, 则可能有助于更快地解决您的 bug。
+如果您可以附加或链接到您遇到的**工作簿**文件，则可能有助于更快地解决您的 bug。
 
 ### <a name="devices"></a>设备
 
-如果在连接 iOS 或 Android 工作簿时遇到问题, 并且已经检查了[疑难解答页面](~/tools/workbooks/troubleshooting/index.md), 我们需要知道:
+如果在连接 iOS 或 Android 工作簿时遇到问题，并且已经检查了[疑难解答页面](~/tools/workbooks/troubleshooting/index.md)，我们需要知道：
 
 - 要尝试连接到的设备的名称
 - 设备的操作系统版本
 - Android验证是否正在使用 x86 模拟器
 - Android使用哪种仿真器平台？ Google 模拟器？
   Visual Studio Android Emulator？ Xamarin Android Player？
-- Windows 上的 iOS:你已安装了哪个版本的 Xamarin 远程 iOS 模拟器 (检查**控制面板**中的 "**添加/删除程序**")？
-- Windows 上的 iOS:还应提供 Mac 生成主机的平台版本信息
-- 设备是否具有网络连接 (通过 web 浏览器检查)？
+- Windows 上的 iOS：你已安装了哪个版本的 Xamarin 远程 iOS 模拟器（检查**控制面板**中的 "**添加/删除程序**"）？
+- Windows 上的 iOS：还应提供 Mac 生成主机的平台版本信息
+- 设备是否具有网络连接（通过 web 浏览器检查）？
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
@@ -115,35 +115,35 @@ Visual Studio
 
 ### <a name="windows"></a>Windows
 
-根据您获取工作簿的方式, 您可能需要执行两个卸载过程。 请检查这两项以完全卸载软件。
+根据您获取工作簿的方式，您可能需要执行两个卸载过程。 请检查这两项以完全卸载软件。
 
 #### <a name="visual-studio-installer"></a>Visual Studio 安装程序
 
-如果你安装了 Visual Studio 2017, 请打开**Visual Studio 安装程序**, 并在**单个组件**中查找**Xamarin Workbooks**。 如果已选中, 则取消选中它, 然后单击 "**修改**" 以卸载。
+如果你安装了 Visual Studio 2017，请打开**Visual Studio 安装程序**，并在**单个组件**中查找**Xamarin Workbooks**。 如果已选中，则取消选中它，然后单击 "**修改**" 以卸载。
 
 #### <a name="system-uninstall"></a>系统卸载
 
-如果你使用已下载的安装程序自行安装了工作簿, 则需要通过 Windows 10 上的 "**应用 & 功能**" 系统设置 "页上的" 应用 "或通过" 控制面板 "上的" 控制面板 "中的"**添加/删除程序**"将其卸载。
+如果你使用已下载的安装程序自行安装了工作簿，则需要通过 Windows 10 上的 "**应用 & 功能**" 系统设置 "页上的" 应用 "或通过" 控制面板 "上的" 控制面板 "中的"**添加/删除程序**"将其卸载。
 
 > **> 系统 > 应用程序 & 功能启动 > 设置**
 
 ![](install-images/windows-remove.png "&quot;应用&amp;功能中列出的 Xamarin Workbooks&quot;")
 
-**你仍应按照 Visual Studio 安装程序的过程进行操作, 以确保在不知情的情况下不会重新安装工作簿。**
+**你仍应按照 Visual Studio 安装程序的过程进行操作，以确保在不知情的情况下不会重新安装工作簿。**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-从[1.2.2](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/interactive/interactive-1.2.md)开始, 可以通过运行以下内容从终端卸载 Xamarin Workbooks:
+从[1.2.2](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/interactive/interactive-1.2.md)开始，可以通过运行以下内容从终端卸载 Xamarin Workbooks：
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
 ```
 
-卸载程序将详细说明它将删除的文件和目录, 并在继续操作之前要求确认。
+卸载程序将详细说明它将删除的文件和目录，并在继续操作之前要求确认。
 
-对于更高级的方案`uninstall` , 将参数传递给脚本。`-help`
+对于更高级的方案`uninstall` ，将参数传递给脚本。`-help`
 
 对于旧版本，需手动删除以下各项：
 
@@ -154,11 +154,11 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>降级
 
-**/Applications/Xamarin 工作簿的捆绑标识符。应用程序**已`com.xamarin.Inspector`从`com.xamarin.Workbooks`更改为1.4 版本, 因为工作簿和检查器现已完全拆分。
+**/Applications/Xamarin 工作簿的捆绑标识符。应用程序**已`com.xamarin.Inspector`从`com.xamarin.Workbooks`更改为1.4 版本，因为工作簿和检查器现已完全拆分。
 
-由于较旧的安装程序中的 bug, 无法使用1.3.2 或较旧的安装程序降级1.4 或更高版本。
+由于较旧的安装程序中的 bug，无法使用1.3.2 或较旧的安装程序降级1.4 或更高版本。
 
-从1.4 或更高版本降级到1.3.2 或更高版本:
+从1.4 或更高版本降级到1.3.2 或更高版本：
 
 1. [手动卸载工作簿 & 检查器](#uninstall-macos)
 2. 运行1.3.2 或更早`.pkg`版本的安装程序

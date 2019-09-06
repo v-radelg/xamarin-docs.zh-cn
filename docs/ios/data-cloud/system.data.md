@@ -1,44 +1,44 @@
 ---
-title: 在 Xamarin.iOS System.Data
-description: 本文档介绍如何使用 System.Data 和 Mono.Data.Sqlite.dll 访问 SQLite 在 Xamarin.iOS 应用程序中的数据。
+title: Xamarin 中的 system.object
+description: 本文档介绍了如何使用 system.exception 和 Mono 在 Xamarin iOS 应用程序中访问 SQLite 数据。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: e6df2d9d45eb2f898bb3c4957ec7960956a184e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240206"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290119"
 ---
-# <a name="systemdata-in-xamarinios"></a>在 Xamarin.iOS System.Data
+# <a name="systemdata-in-xamarinios"></a>Xamarin 中的 system.object
 
-添加了对支持 Xamarin.iOS 8.10 [System.Data](xref:System.Data)，其中包括`Mono.Data.Sqlite.dll`ADO.NET 提供程序。 支持包括添加以下[程序集](~/cross-platform/internals/available-assemblies.md):
+Xamarin 8.10 添加`Mono.Data.Sqlite.dll` [了对 ADO.NET](xref:System.Data)提供程序的支持。 支持包括添加以下[程序集](~/cross-platform/internals/available-assemblies.md)：
 
--  `System.Data.dll`
--  `System.Data.Service.Client.dll`
--  `System.Transactions.dll`
--  `Mono.Data.Tds.dll`
--  `Mono.Data.Sqlite.dll`
+- `System.Data.dll`
+- `System.Data.Service.Client.dll`
+- `System.Transactions.dll`
+- `Mono.Data.Tds.dll`
+- `Mono.Data.Sqlite.dll`
 
 <a name="Example" />
 
 ## <a name="example"></a>示例
 
-以下程序创建的数据库中`Documents/mydb.db3`，和如果数据库以前没有它填充了示例数据。 然后查询该数据库，将输出写入到与`stderr`。
+以下程序将在中`Documents/mydb.db3`创建一个数据库，如果数据库以前不存在，则使用示例数据填充该数据库。 然后，将查询数据库，并将输出写入到`stderr`中。
 
 ### <a name="add-references"></a>添加引用
 
-首先，右键单击**引用**节点，然后选择**编辑引用...** 然后选择`System.Data`和`Mono.Data.Sqlite`:
+首先，右键单击 "**引用**" 节点，然后选择 "**编辑引用 ...** "，然后`System.Data`选择`Mono.Data.Sqlite`和：
 
 [![](system.data-images/edit-references-sml.png "添加新引用")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>代码示例
 
-下面的代码演示创建表和使用嵌入的 SQL 命令插入行的简单示例：
+下面的代码演示了一个简单的示例，说明如何使用嵌入的 SQL 命令来创建表和插入行：
 
 ```csharp
 using System;
@@ -108,12 +108,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> 上面的代码示例中所述，它是不正确的做法将字符串嵌入 SQL 命令中，因为它使您的代码容易受到[SQL 注入](https://en.wikipedia.org/wiki/SQL_injection)。
+> 如上面的代码示例中所述，在 SQL 命令中嵌入字符串是不好的做法，因为这会使你的代码容易受到[sql 注入](https://en.wikipedia.org/wiki/SQL_injection)攻击。
 
 
 ### <a name="using-command-parameters"></a>使用命令参数
 
-下面的代码演示如何使用命令参数 （即使的文本中包含特殊 SQL 字符，如单撇号） 安全地插入到数据库的用户输入的文本：
+下面的代码演示如何使用命令参数将用户输入的文本安全插入到数据库中（即使文本包含特殊的 SQL 字符，如单撇号）：
 
 ```csharp
 // user input from Textbox control
@@ -132,42 +132,42 @@ using (var addCmd = conn.CreateCommand ()) {
 
 <a name="Missing_Functionality" />
 
-## <a name="missing-functionality"></a>缺少的功能
+## <a name="missing-functionality"></a>缺少功能
 
-这两**System.Data**并**Mono.Data.Sqlite**缺少某些功能。
+**System.web**和**Mono**都缺少某些功能。
 
 <a name="System.Data" />
 
 ### <a name="systemdata"></a>System.Data
 
-功能中缺少**System.Data.dll**组成：
+**System.web**中缺少的功能包含：
 
--  任何内容需要[System.CodeDom](xref:System.CodeDom) （例如 [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
--  XML 配置文件支持 （例如 [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
--   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) （取决于 XML 配置文件支持）
--   [System.Data.OleDb](xref:System.Data.OleDb)
--   [System.Data.Odbc](xref:System.Data.Odbc)
--  `System.EnterpriseServices.dll`依赖项，*删除*从`System.Data.dll`，将导致删除[SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。
+- 需要[system.object 的](xref:System.CodeDom)任何内容（例如 [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) ）
+- XML 配置文件支持（例如 [DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ）。
+- [DbProviderFactories](xref:System.Data.Common.DbProviderFactories) （取决于 XML 配置文件支持）
+- [System.Data.OleDb](xref:System.Data.OleDb)
+- [System.Data.Odbc](xref:System.Data.Odbc)
+- 依赖项已从中`System.Data.dll`移除，导致删除[EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。 `System.EnterpriseServices.dll`
 
 
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
 
-同时， **Mono.Data.Sqlite.dll**不遇到的任何源代码更改，但改为可能是大量的宿主*运行时*发出自`Mono.Data.Sqlite.dll`绑定 SQLite 3.5。 iOS 8，同时，附带 SQLite 3.8.5。 简单地说，一些内容已更改两个版本之间。
+同时， **Mono** . node.js 不会更改源代码，而是在绑定 Sqlite 3.5 后`Mono.Data.Sqlite.dll` ，可能会遇到多个*运行时*问题。 同时，iOS 8 附带 SQLite 3.8.5。 说到，这两个版本之间的某些内容已发生了变化。
 
-较旧 iOS 版本附带的 SQLite 的以下版本：
+旧版本的 iOS 附带以下版本的 SQLite：
 
-- **iOS 7** -版本 3.7.13。
-- **iOS 6** -版本 3.7.13。
-- **iOS 5** -版本 3.7.7。
-- **iOS 4** -版本 3.6.22。
+- **iOS 7** -版本3.7.13。
+- **iOS 6** -版本3.7.13。
+- **iOS 5** -版本3.7.7。
+- **iOS 4** -版本3.6.22。
 
-最常见的问题似乎与数据库架构查询，例如确定在运行时的列存在某一给定的表，如`Mono.Data.Sqlite.SqliteConnection.GetSchema`(重写[DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable`（重写[DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 简单地说，它看起来的任何内容使用[DataTable](xref:System.Data.DataTable)可能无法发挥作用。
+最常见的问题似乎与数据库架构查询相关，例如，在运行时确定给定表中存在哪些列，如`Mono.Data.Sqlite.SqliteConnection.GetSchema` （重写 DbConnection 和[GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` （重写[DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 简而言之，使用[DataTable](xref:System.Data.DataTable)的任何内容似乎都不能正常工作。
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>数据绑定
 
-目前不支持数据绑定。
+此时不支持数据绑定。
 

@@ -4,15 +4,15 @@ description: 本文档概述了 watchOS，描述应用程序生命周期、 用�
 ms.prod: xamarin
 ms.assetid: 99c316d6-6707-40f6-bec9-801d05888759
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 6367ab41be821c5b1add4fface6bd17eb00b763b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 59d02db9fa2787e93ad88e4b6f37e0fef50572a5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121616"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293116"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 简介
 
@@ -29,7 +29,7 @@ WatchOS 应用解决方案有 3 个项目：
 
 在 watchOS 1 应用中，在 iPhone 上运行的扩展中的代码-Apple Watch 实际上是外部显示器。 完全在 Apple Watch 上运行 2 和 3 的 watchOS 应用。 这种差异如下图所示：
 
-[![](intro-to-watchos-images/arch-sml.png "此图显示了 watchOS 1 和 watchOS 2 (及更高版本) 之间的差异")](intro-to-watchos-images/arch.png#lightbox)
+[![](intro-to-watchos-images/arch-sml.png "此图显示了 watchOS 1 和 watchOS 2 （及更高版本）之间的差异")](intro-to-watchos-images/arch.png#lightbox)
 
 无论哪个版本的 watchOS 为目标，在 Visual Studio for Mac 的 Solution Pad 中完整的解决方案将如下所示：
 
@@ -53,8 +53,8 @@ WatchOS 应用解决方案有 3 个项目：
 
 生命周期`WKInterfaceController`对象涉及以下调用：
 
-- [唤醒](xref:WatchKit.WKInterfaceController.Awake*):你应在此方法中执行大多数初始化。
-- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :在监视应用显示给用户之前立即调用。 使用此方法以执行最后一个时刻初始化、 启动动画等。
+- [唤醒](xref:WatchKit.WKInterfaceController.Awake*)：你应在此方法中执行大多数初始化。
+- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) ：在监视应用显示给用户之前立即调用。 使用此方法以执行最后一个时刻初始化、 启动动画等。
 - 此时，Watch 应用会显示并扩展开始响应用户输入，并更新每个应用程序逻辑的监视应用程序的显示。
 - [DidDeactivate](xref:WatchKit.WKInterfaceController.DidDeactivate)后 Watch 应用已由用户已关闭，调用此方法。 此方法返回后，用户界面控件不能修改下一次之前`WillActivate`调用。 如果为 iPhone 连接已断开，则还将调用此方法。
 - 该扩展已被停用后，都无法访问你的程序它。 挂起的异步函数**将不会**调用。 观看工具包扩展可能不会使用后台处理模式。 如果用户重新激活该程序，但未由操作系统终止应用程序，第一种方法调用将`WillActivate`。
@@ -90,10 +90,10 @@ WatchOS 应用解决方案有 3 个项目：
 
 ## <a name="screen-sizes"></a>屏幕大小
 
-Apple Watch 有两种面部尺寸:38mm 和 42mm, 两者的显示比例均为 5:4, 并显示 Retina。 其易于使用的大小为：
+Apple Watch 有两种面部尺寸：38mm 和42mm，两者的显示比例均为5:4，并显示 Retina。 其易于使用的大小为：
 
-- 38mm:136 x 170 逻辑像素 (272 x 340 物理像素)
-- 42mm:156 x 195 逻辑像素 (312 x 390 物理像素)。
+- 38mm:136 x 170 逻辑像素（272 x 340 物理像素）
+- 42mm:156 x 195 逻辑像素（312 x 390 物理像素）。
 
 使用`WKInterfaceDevice.ScreenBounds`确定哪些显示器上监视应用程序是否正在运行。
 

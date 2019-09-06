@@ -1,17 +1,17 @@
 ---
 title: 检查器安装和要求
-description: 本文档介绍如何安装 Xamarin 检查器，并讨论了受支持的操作系统、 Ide 和应用平台。
+description: 本文档介绍如何安装 Xamarin Inspector 并讨论受支持的操作系统、Ide 和应用平台。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61373464"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292300"
 ---
 # <a name="inspector-installation-and-requirements"></a>检查器安装和要求
 
@@ -19,15 +19,15 @@ ms.locfileid: "61373464"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. 下载并安装[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) ，然后选择**使用.NET 的移动开发**工作负荷。
-1. [登录](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)若要启用你的企业订阅。
-1. [检查](~/tools/inspector/inspect.md)你自己的应用 ！
+1. 下载并安装[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) ，并选择 "**采用 .net 的移动开发**" 工作负荷。
+1. [登录](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)以启用你的企业订阅。
+1. [检查](~/tools/inspector/inspect.md)自己的应用！
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 1. 下载并安装[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
-1. [登录](https://docs.microsoft.com/visualstudio/mac/activation)若要启用你的企业订阅。
-1. [检查](~/tools/inspector/inspect.md)你自己的应用 ！
+1. [登录](https://docs.microsoft.com/visualstudio/mac/activation)以启用你的企业订阅。
+1. [检查](~/tools/inspector/inspect.md)自己的应用！
 
 -----
 
@@ -36,60 +36,60 @@ ms.locfileid: "61373464"
 ### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10.11 或更高版本
-- **Windows** -Windows 7 或更高版本 (与 Internet Explorer 11 或更高版本和.NET 4.6.1 或更高版本)
+- **Windows** -windows 7 或更高版本（包含 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本）
 
 ### <a name="supported-ides"></a>支持的 Ide
 
 - Visual Studio for Mac
-- 使用 visual Studio 2017**使用.NET 的移动开发**工作负荷
+- Visual Studio 2017 与 .NET 工作负载的**移动开发**
 
-适用于企业客户提供实时应用检测。
+Live app 检查适用于企业客户。
 
 <a name="supported-platforms" />
 
-### <a name="supported-app-platforms"></a>受支持的应用平台
+### <a name="supported-app-platforms"></a>支持的应用平台
 
-|应用程序平台|IDE 支持|说明|
+|应用平台|IDE 支持|说明|
 |--- |--- |--- |
-|Mac|仅支持在 Visual Studio for Mac|
-|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 支持| 链接器行为必须设置为**不链接**(下**iOS 生成**项目选项) |
-|Android|在 Visual Studio 2017 和 Visual Studio for Mac 支持|必须针对 Android > = 4.0.3，with **fastdev**启用。<br />必须使用 Google、 Visual Studio 或 Xamarin Android 仿真程序。 Android 7 仿真程序可能不允许在此时间的检查。|
-|WPF|仅在 Visual Studio 2017 中支持|
+|Mac|仅 Visual Studio for Mac 中支持|
+|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持| 链接器行为必须设置为 "**不链接**" （在 " **iOS 生成**项目选项" 下） |
+|Android|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持|必须针对 Android > = 4.0.3，并启用**fastdev** 。<br />必须使用 Google、Visual Studio 或 Xamarin Android 仿真程序。 Android 7 仿真程序此时可能不允许检查。|
+|WPF|仅在 Visual Studio 2017 中受支持|
 
 <a name="reporting-bugs" />
 
 ## <a name="reporting-bugs"></a>报告 Bug
 
-应直接通过 Visual Studio 报告 bug:
+应通过 Visual Studio 直接报告 bug：
 
-- **帮助 > 反馈 > 报告问题**
+- **帮助 > 发送反馈 > 报告问题**
 
-请提供所有以下信息：
+请包含以下所有信息：
 
 ### <a name="platform-version-information"></a>平台版本信息
 
-此信息是至关重要的。
+此信息至关重要。
 
 Visual Studio For Mac
 
-- **Visual Studio > 有关 Visual Studio > 显示详细信息 > 复制信息**
-- 粘贴 bug 报告
+- **Visual Studio > 关于 Visual Studio > 显示 > 复制信息的详细信息**
+- 粘贴到 bug 报告中
 
 Visual Studio
 
-- **帮助 > 关于 Visual Studio > 复制信息**
-- 让我们知道你的操作系统版本和是否在运行 32 位或 64 位 Windows。
+- **有关 Visual Studio > 复制信息的帮助 >**
+- 告诉我们你的操作系统版本以及你是在运行32位还是64位 Windows。
 
 ### <a name="log-files"></a>日志文件
 
-始终附加 IDE 和检查器的客户端日志文件。
+始终附加 IDE 和检查器客户端日志文件。
 
 检查器客户端
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4.x 还提供从主菜单中查找工具 (macOS) 或资源管理器 (Windows) 直接选择日志文件的功能：
+1.4. x 还可以直接从主菜单中选择查找器（macOS）或资源管理器（Windows）中的日志文件：
 
 - **帮助 > 显示日志文件**
 
@@ -100,23 +100,23 @@ Visual Studio For Mac
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio 的内容**输出**窗格也可能是信息性。
+- Visual Studio "**输出**" 窗格中的内容可能也有信息。
 
 ### <a name="project-settings"></a>项目设置
 
-如果可以将附加 **.csproj**对于想要检查的项目，它会非常有帮助。 这是比询问有关单个设置更容易。
+如果可以附加要检查的项目的 **.csproj** ，这会非常有用。 这比询问单个设置更容易。
 
-此外请确认您已在调试配置。
+此外，请确认你处于 "调试" 配置中。
 
-### <a name="selected-devices"></a>所选的设备
+### <a name="selected-devices"></a>所选设备
 
-对于 Android 和 iOS，非常重要，我们知道什么设备时你想要检查进行调试。 我们需要知道：
+对于 Android 和 iOS，必须知道要检查的设备，这一点非常重要。 我们需要知道：
 
-- 设备在 IDE 中所示的名称
-- 设备 OS 版本
-- Android:验证使用 x86 仿真程序
-- Android:您是否使用仿真程序平台是什么？ Google 仿真器？ Visual Studio Android 仿真器？ Xamarin Android Player？
-- 正确进行调试的应用显示和函数，在该设备？
-- 设备是否具有网络连接 （通过 web 浏览器的检查）？
+- 显示在 IDE 中的设备名称
+- 设备的操作系统版本
+- Android验证是否正在使用 x86 模拟器
+- Android使用哪种仿真器平台？ Google 模拟器？ Visual Studio Android Emulator？ Xamarin Android Player？
+- 您正在调试的应用程序是否出现并在设备中运行？
+- 设备是否具有网络连接（通过 web 浏览器检查）？
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

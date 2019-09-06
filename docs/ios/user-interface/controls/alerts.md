@@ -4,32 +4,32 @@ description: 本文档介绍如何使用 iOS 8 中引入的 UIAlertController Ap
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: b8ffeb996783d7a3b1a385265b14f37f36126e8f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: ec2a35a33682ec7bda2840cfb4bc6b4908fc65b0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119064"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292387"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中显示警报
 
-从 iOS 8 开始, UIAlertController 已完成替换为 UIActionSheet 和 UIAlertView, 这两者现已弃用。
+从 iOS 8 开始，UIAlertController 已完成替换为 UIActionSheet 和 UIAlertView，这两者现已弃用。
 
-不同于它所替换的类 (UIView 的子类), UIAlertController 是 UIViewController 的子类。
+不同于它所替换的类（UIView 的子类），UIAlertController 是 UIViewController 的子类。
 
-用于`UIAlertControllerStyle`指示要显示的警报的类型。 这些警报类型为:
+用于`UIAlertControllerStyle`指示要显示的警报的类型。 这些警报类型为：
 
 - **UIAlertControllerStyleActionSheet**
-  - IOS 8 之前, 这会是一个 UIActionSheet
+  - IOS 8 之前，这会是一个 UIActionSheet
 - **UIAlertControllerStyleAlert**
   - 预 iOS 8 此项会被 UIAlertView 
 
-创建警报控制器时需要执行三个必要的步骤:
+创建警报控制器时需要执行三个必要的步骤：
 
-- 使用以下内容创建并配置警报:
+- 使用以下内容创建并配置警报：
   - 标题
   - 消息
   - preferredStyle
@@ -38,11 +38,11 @@ ms.locfileid: "70119064"
 - 添加所需的操作
 - 显示视图控制器
 
-最简单的警报包含一个按钮, 如以下屏幕截图所示:
+最简单的警报包含一个按钮，如以下屏幕截图所示：
 
  ![带有一个按钮的警报](alerts-images/alert1.png)
 
-显示简单警报的代码如下所示:
+显示简单警报的代码如下所示：
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,7 +58,7 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-显示包含多个选项的警报的方式类似, 但添加了两个操作。 例如, 以下屏幕截图显示了包含两个按钮的警报:
+显示包含多个选项的警报的方式类似，但添加了两个操作。 例如，以下屏幕截图显示了包含两个按钮的警报：
 
  ![具有两个按钮的警报](alerts-images/alert2.png)
 
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-警报还可以显示操作表, 类似于下面的屏幕截图:
+警报还可以显示操作表，类似于下面的屏幕截图：
 
  ![操作表警报](alerts-images/alert3.png)
 
-将按钮添加到警报, `AddAction`方法如下:
+将按钮添加到警报， `AddAction`方法如下：
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [控件 (示例)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [控件（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

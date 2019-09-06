@@ -3,15 +3,15 @@ title: 卸载 Xamarin
 description: 本文档介绍了如何在 Mac 和 Windows 上卸载 Xamarin。 其中具体介绍了如何卸载 Mono、Xamarin.Android、Xamarin.iOS 和其他工具。
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/08/2017
-ms.openlocfilehash: 97b870d96a2ffc599e010e049554b51b550a7311
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ff40ed55c06df41c418b694d02f7d6e9c1c5316c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521592"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291449"
 ---
 # <a name="uninstalling-xamarin"></a>卸载 Xamarin
 
@@ -228,7 +228,7 @@ Xamarin 在以下各项中受支持：
 
 ### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 和 Visual Studio 2017
 
-使用安装程序应用从 Visual Studio 2019 和 Visual Studio 2017 中卸载 Xamarin:
+使用安装程序应用从 Visual Studio 2019 和 Visual Studio 2017 中卸载 Xamarin：
 
 1. 使用“开始”菜单打开“Visual Studio 安装程序”。
 

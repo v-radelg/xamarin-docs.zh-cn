@@ -1,47 +1,47 @@
 ---
-title: Xamarin.Mac registrar
-description: 本文档介绍了 Xamarin.Mac 注册机构和它动态、 静态的且部分的静态 （混合） 的目的使用情况的配置。
+title: Xamarin Mac 注册机构
+description: 本文档描述了 Xamarin 的注册器及其动态、静态和部分静态（混合）使用配置的用途。
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 21e1a2c6ae5a9ad8b6acf520851ea92a340da887
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032492"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290097"
 ---
-# <a name="xamarinmac-registrar"></a>Xamarin.Mac registrar
+# <a name="xamarinmac-registrar"></a>Xamarin Mac 注册机构
 
-_本文档介绍 Xamarin.Mac 注册机构和其不同的使用配置的用途。_
+_本文档介绍了 Xamarin 和其他使用配置的用途。_
 
 ## <a name="overview"></a>概述
 
-Xamarin.Mac 之间的差距托管 (.NET) 领域和 Cocoa 的运行时，允许托管的类来调用非托管的 Objective C 类，并返回发生事件时调用。 若要执行此"奇妙"所需的工作由注册机构进行处理，并且，一般情况下，从视图中隐藏。
+Xamarin 可以在托管（.NET）和 Cocoa 的运行时之间实现桥梁，使托管类可以调用非托管的目标 C 类，并在发生事件时回调。 执行此 "神奇" 所需的工作由注册机构处理，一般情况下，在视图中隐藏。
 
-没有性能影响的特定于应用程序启动时间，此注册，并且有时可以帮助理解的"暗中"位。
+此注册有性能影响，特别是在应用程序启动时，以及了解 "在幕后" 这一情况下所发生的事情有时会很有帮助。
 
 ## <a name="configurations"></a>配置
 
-从根本上说在启动时注册机构的作业可以分为两个类别：
+从根本上讲，在启动时注册机构的作业可以分为两个类别：
 
-- 对于那些从 NSObject 派生扫描每个托管的类，并收集要向 Objective C 运行时公开的项列表。
-- Objective C 运行时注册此信息。
+- 扫描从 NSObject 派生的每个托管类，并收集要公开给目标 C 运行时的项的列表。
+- 将此信息注册到目标 C 运行时。
 
-随着时间推移，三个其他注册机构配置已创建了以涵盖不同用例。 每个具有不同的生成和运行时间的后果：
+随着时间的推移，将创建三个不同的注册器配置来涵盖不同用例。 每个都有不同的生成和运行时后果：
 
-- **动态注册机构**– 在启动期间，使用.NET 反射来扫描每个已加载的类型，确定相关项的列表，并通知本机运行时。 此选项添加到生成时间为零，但是 （最多在数秒内） 的启动过程中的计算费用非常地昂贵。
-- **静态注册机构**– 生成，期间计算要注册，并生成 Objective C 代码来处理注册项的组。 若要快速注册的所有项的启动期间调用此代码。 将添加到生成，但可以一长段停顿剪切从应用程序启动很长时间。
-- **使用 partial 静态**– 较新的"混合"方法，它提供了大部分这两者的优势。 由于从导出**Xamarin.Mac.dll**是不变，保存一个预计算库来处理其注册中的链接。 使用反射来处理用户库，但为用户库导出要少很多平台绑定这通常是相当快速的类型。 Neglectable 生成时间的影响，并减少，绝大多数动态的"成本"。
+- **动态注册**器–在启动过程中，使用 .net 反射扫描每个加载的类型，确定相关项的列表，并通知本机运行时。 此选项向生成添加了零时间，但在启动期间计算成本非常高（最多秒）。
+- **静态注册**器–在生成过程中，计算要注册的项集，并生成目标-C 代码来处理注册。 此代码在启动过程中调用以快速注册所有项。 添加了一个很长的暂停时间，但可以在应用程序启动时缩短很长时间。
+- **"部分" 静态**-一种较新的 "混合" 方法，这两种方法的优点非常高。 由于**Xamarin**中的导出是常量，因此请保存预计算库来处理其注册，并链接到中的链接。 使用反射来处理用户库，但由于用户库导出的类型的类型更少，平台绑定的类型通常相当简单。 Neglectable 的生成时间会受到影响，并减少众多动态的 "成本"。
 
-部分静态今天是调试配置的默认值和静态是发布配置的默认值。
+"今天的部分静态" 是 "调试" 配置的默认值，"静态" 是发布配置的默认设置。
 
-有一些方案：
+存在以下情况：
 
-- 从 NSObject 派生的类启动后加载插件
-- 动态创建从 NSObject 派生的类实例
+- 启动后加载的、从 NSObject 派生的类的插件
+- 动态创建的类实例，派生自 NSObject
 
-其中，注册机构是无法知道它需要注册在启动某些类型。 `ObjCRuntime.Runtime.RegisterAssembly`提供方法以通知它具有要考虑的其他类型的注册机构。
+注册器无法知道在开始时需要注册某种类型。 提供`ObjCRuntime.Runtime.RegisterAssembly`此方法是为了通知注册机构有其他要考虑的类型。

@@ -1,24 +1,24 @@
 ---
 title: Xamarin 中的交互式通知用户界面
-description: 对于 iOS 12, 可以创建用于本地和远程通知的交互式用户界面。 本指南介绍如何将这些功能与 Xamarin 配合使用。
+description: 对于 iOS 12，可以创建用于本地和远程通知的交互式用户界面。 本指南介绍如何将这些功能与 Xamarin 配合使用。
 ms.prod: xamarin
 ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: bc566cf3744b8d6ec05204153b7c731935f98b8a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 572b369755e37f123fbfdf5850a635e7ada12a9b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652443"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291241"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Xamarin 中的交互式通知用户界面
 
-在 iOS 10 中引入的[通知内容扩展](~/ios/platform/user-notifications/advanced-user-notifications.md)可以为通知创建自定义用户界面。 从 iOS 12 开始, 通知用户界面可包含交互式元素, 如按钮和滑块。
+在 iOS 10 中引入的[通知内容扩展](~/ios/platform/user-notifications/advanced-user-notifications.md)可以为通知创建自定义用户界面。 从 iOS 12 开始，通知用户界面可包含交互式元素，如按钮和滑块。
 
-## <a name="sample-app-redgreennotifications"></a>示例应用:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>示例应用：RedGreenNotifications
 
 [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用包含一个包含交互式用户界面的通知内容扩展。
 
@@ -26,7 +26,7 @@ ms.locfileid: "68652443"
 
 ## <a name="notification-content-extension-infoplist-file"></a>通知内容扩展 info.plist 文件
 
-在示例应用程序中, **RedGreenNotificationsContentExtension**项目中的**info.plist**文件包含以下配置:
+在示例应用程序中， **RedGreenNotificationsContentExtension**项目中的**info.plist**文件包含以下配置：
 
 ```xml
 <!-- ... -->
@@ -56,17 +56,17 @@ ms.locfileid: "68652443"
 <!-- ... -->
 ```
 
-请注意以下功能:
+请注意以下功能：
 
 - `UNNotificationExtensionCategory`数组指定内容扩展处理的通知类别的类型。
-- 为了支持交互式内容, 通知内容扩展会将`UNNotificationExtensionUserInteractionEnabled`密钥设置为。 `true`
+- 为了支持交互式内容，通知内容扩展会将`UNNotificationExtensionUserInteractionEnabled`密钥设置为。 `true`
 - `UNNotificationExtensionInitialContentSizeRatio`键为内容扩展接口指定初始高度/宽度比。
 
 ## <a name="interactive-interface"></a>交互式接口
 
-为通知内容扩展定义接口的 MainInterface 是一个包含单个视图控制器的标准情节提要 **。** 在示例应用中, 视图控制器的类型`NotificationViewController`为, 它包含一个图像视图、三个按钮和一个滑块。 情节提要将这些控件与在**NotificationViewController.cs**中定义的处理程序相关联:
+为通知内容扩展定义接口的 MainInterface 是一个包含单个视图控制器的标准情节提要 **。** 在示例应用中，视图控制器的类型`NotificationViewController`为，它包含一个图像视图、三个按钮和一个滑块。 情节提要将这些控件与在**NotificationViewController.cs**中定义的处理程序相关联：
 
-- "**启动应用**程序" 按钮处理`PerformNotificationDefaultAction`程序对启动`ExtensionContext`应用的操作方法:
+- "**启动应用**程序" 按钮处理`PerformNotificationDefaultAction`程序对启动`ExtensionContext`应用的操作方法：
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ ms.locfileid: "68652443"
     }
     ```
 
-    在应用程序中, 用户通知中心`Delegate` (在示例应用程序`AppDelegate`中) 可以响应`DidReceiveNotificationResponse`方法中的交互:
+    在应用程序中，用户通知中心`Delegate` （在示例应用程序`AppDelegate`中）可以响应`DidReceiveNotificationResponse`方法中的交互：
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ ms.locfileid: "68652443"
             // ...
     ```
 
-- **消除通知**按钮处理程序在`DismissNotificationContentExtension`上`ExtensionContext`调用, 这将关闭通知:
+- **消除通知**按钮处理程序在`DismissNotificationContentExtension`上`ExtensionContext`调用，这将关闭通知：
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)
@@ -96,7 +96,7 @@ ms.locfileid: "68652443"
     }
     ```
 
-- **删除通知**按钮处理程序将关闭通知并将其从通知中心删除:
+- **删除通知**按钮处理程序将关闭通知并将其从通知中心删除：
 
     ```csharp
     partial void HandleRemoveNotificationButtonTap(UIButton sender)
@@ -106,7 +106,7 @@ ms.locfileid: "68652443"
     }
     ```
 
-- 处理滑块上值更改的方法更新在通知的接口中显示的图像的 alpha:
+- 处理滑块上值更改的方法更新在通知的接口中显示的图像的 alpha：
 
     ```csharp
     partial void HandleSliderValueChanged(UISlider sender)
@@ -119,8 +119,8 @@ ms.locfileid: "68652443"
 
 - [示例应用– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin 中的用户通知框架](~/ios/platform/user-notifications/index.md)
-- [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [用户通知中的新增功能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [用户通知中的最佳实践和新增功能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [丰富通知 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/817/)
-- [生成远程通知 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [UserNotifications （Apple）](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [用户通知中的新增功能（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [用户通知中的最佳实践和新增功能（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [丰富通知（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/817/)
+- [生成远程通知（Apple）](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

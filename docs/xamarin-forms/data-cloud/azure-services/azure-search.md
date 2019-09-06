@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2ae78d535edd17d3968d0784194bb7295bb7e889
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652044"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292677"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>用 Azure 搜索和 Xamarin 搜索数据
 
@@ -60,7 +60,7 @@ var searchClient =
 `SearchServiceClient`构造函数重载采用一个搜索服务名称和一个`SearchCredentials`对象作为参数，与`SearchCredentials`对象包装*管理密钥*Azure 搜索服务。 *管理密钥*创建索引所需。
 
 > [!NOTE]
->  单个`SearchServiceClient`实例应使用应用程序中，以避免打开太多连接到 Azure 搜索。
+> 单个`SearchServiceClient`实例应使用应用程序中，以避免打开太多连接到 Azure 搜索。
 
 定义索引`Index`对象，如以下代码示例所示：
 

@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中的 watchOS 父应用程序使�
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 05dfb419834c2eee94f98d023df3a3fe8d6eee90
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 0049d69caabce545b2813dbd2b3905fe96f28fed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198113"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292727"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>使用 watchOS 在 Xamarin 中的父应用程序
 
@@ -26,7 +26,7 @@ ms.locfileid: "70198113"
 
 - 监视扩展可以[共享的存储位置](#storage)父 iPhone 应用的。
 
-- 使用移交将数据从速览或通知传递到 Watch 应用, 并将用户发送到应用中的特定界面控制器。
+- 使用移交将数据从速览或通知传递到 Watch 应用，并将用户发送到应用中的特定界面控制器。
 
 父应用程序有时也称为容器应用。
 

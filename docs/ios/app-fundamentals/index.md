@@ -1,75 +1,75 @@
 ---
-title: Xamarin.iOS 应用程序基础知识
-description: 本文档所链接到各种指南描述概念基础到 Xamarin.iOS 开发，例如应用传输安全时，后台处理，事件，与线程处理。
+title: Xamarin iOS 应用程序基础知识
+description: 本文档链接到各种指南，这些指南描述了针对 Xamarin iOS 开发的基础概念，如应用传输安全、后台处理、事件和线程处理。
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/21/2017
-ms.openlocfilehash: 120bbfe0d5fa91e632fc56ee05431f5555653360
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 59257dafc1d92756feb85046df43de7b9da0cc42
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268593"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290145"
 ---
-# <a name="xamarinios-application-fundamentals"></a>Xamarin.iOS 应用程序基础知识
+# <a name="xamarinios-application-fundamentals"></a>Xamarin iOS 应用程序基础知识
 
-本部分提供有关的更常见的操作任务或概念开发人员需要开发 Xamarin.iOS (以前称为 MonoTouch) 应用程序时应注意的一些指南。
+本部分介绍开发人员在开发 Xamarin iOS （以前称为 Monotouch.dialog）应用程序时需要注意的一些更常见的任务或概念。
 
 ## <a name="accessibilityiosapp-fundamentalsaccessibilitymd"></a>[辅助功能](~/ios/app-fundamentals/accessibility.md)
 
-本文档介绍了各种 Api 和工具，可用来帮助生成尽可能多的用户可以访问的应用程序。
+本文档介绍可用于帮助生成尽可能多的用户访问的应用程序的各种 Api 和工具。
 
 ## <a name="app-transport-securityiosapp-fundamentalsatsmd"></a>[应用传输安全性](~/ios/app-fundamentals/ats.md)
 
-本文将介绍对 iOS 9 应用程序，这意味着你的 Xamarin.iOS 项目的应用传输安全强制实施的安全更改，它将覆盖 ATS 配置选项，以及如果需要，它将介绍如何选择退出的 ATS。 由于默认情况下启用了 ATS，任何不安全的 internet 连接将引发在 iOS 9 应用程序中的异常 （除非已显式允许它）。
+本文将介绍应用传输安全在 iOS 9 应用上强制实施的安全更改，以及这对你的 Xamarin iOS 项目的意义，它将介绍 ATS 配置选项，并将介绍如何选择退出 ATS （如果需要）。 因为默认情况下启用 ATS，所以任何不安全的 internet 连接将在 iOS 9 应用程序中引发异常（除非你显式允许）。
 
 ## <a name="backgroundingiosapp-fundamentalsbackgroundingindexmd"></a>[后台处理](~/ios/app-fundamentals/backgrounding/index.md)
 
-后台处理或后台处理是让应用程序在前台运行另一个应用程序时在后台执行任务的过程。 本指南可作为后台处理在 iOS 中的简介。
+后台处理或后台处理是让应用程序在后台中执行任务的过程。 本指南将介绍 iOS 中的后台处理。
 
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[在代码中创建 iOS 应用程序](~/ios/app-fundamentals/ios-code-only.md)
 
-本文介绍如何完全在代码使用 Visual Studio 和 Visual Studio for mac 中创建 iOS 应用程序 本文介绍了如何从空项目模板开始，通过从 UIKit 创建视图层次结构，在控制器中生成应用程序屏幕。 然后介绍了如何创建可在控制器中加载的自定义视图。
+本文介绍如何使用 Visual Studio 和 Visual Studio for Mac 在代码中完全创建 iOS 应用程序。 本文介绍了如何从空项目模板开始，通过从 UIKit 创建视图层次结构，在控制器中生成应用程序屏幕。 然后介绍了如何创建可在控制器中加载的自定义视图。
 
-## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[异常封送处理](~/ios/platform/exception-marshaling.md)
+## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[异常封送](~/ios/platform/exception-marshaling.md)
 
-介绍如何通过 Objective C 和托管的异常封送处理本机和托管帧之间。
+描述如何在本机和托管帧之间封送目标 C 和托管异常。
 
-## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[事件、 协议和委托](~/ios/app-fundamentals/delegates-protocols-and-events.md)
+## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[事件、协议和委托](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 
-本文提供了用于接收回调并填充数据的用户界面控件的关键 iOS 技术。 这些技术是事件、 协议和委托;本文介绍了什么其中每项功能是和每个从 C# 的使用方式。 它演示了 Xamarin.iOS 如何使用 iOS 控件来公开熟悉.NET 事件，以及如何 Xamarin.iOS OBJECTIVE-C 的概念，例如协议和委托提供支持 （Objective C 委托不应与 C# 委托相混淆）。 本文还提供了显示协议的使用同时作为基础的 Objective C 委托和非委托方案中的示例。
+本文介绍用于接收回叫并使用数据填充用户界面控件的关键 iOS 技术。 这些技术包括事件、协议和委托;本文介绍了每种方法的定义，以及如何使用每种C#方法。 它演示了 Xamarin iOS 如何使用 iOS 控件公开熟悉的 .NET 事件，并说明了 Xamarin iOS 如何为目标 C 概念（如协议和委托）提供支持（不应将目标-C 委托与C#委托混淆）。 本文还提供了一些示例，说明如何将协议同时用作目标-C 委托和非委托方案的基础。
 
 ## <a name="working-with-the-file-systemiosapp-fundamentalsfile-systemmd"></a>[使用文件系统](~/ios/app-fundamentals/file-system.md)
 
-Xamarin.iOS 可以使用相同的 System.IO 类来处理文件和目录在 iOS 中，你将在任何.NET 应用程序。 但是，尽管的熟悉的类和方法，iOS 上的文件可以创建或访问实现一些限制，还提供特殊功能对于某些目录。 本文概述了这些限制和功能，并演示如何在 Xamarin.iOS 应用程序中的文件访问工作原理。
+Xamarin 可以使用相同的 System.IO 类来处理 iOS 中可在任何 .NET 应用程序中使用的文件和目录。 但尽管熟悉的类和方法，iOS 仍对可创建或访问的文件实施一些限制，并为某些目录提供特殊功能。 本文概述了这些限制和功能，并演示了如何在 Xamarin iOS 应用程序中进行文件访问。
 
 ## <a name="working-with-imagesiosapp-fundamentalsimages-iconsindexmd"></a>[使用图像](~/ios/app-fundamentals/images-icons/index.md)
 
-本文介绍如何在 Xamarin.iOS 应用程序支持图像 （如图标，加载图像，等等） 和 （如应用于控件的图像） 的应用程序中的映像中使用的映像。 它还介绍了如何使用 Visual Studio for Mac 将映像，以及如何与代码中的映像进行交互。
+本文介绍如何在 Xamarin 中使用图像，这两种应用程序支持图像（如图标、加载图像等）和应用程序（如应用于控件的图像）中的图像。 还介绍了如何使用 Visual Studio for Mac 来合并图像以及如何通过代码与图像交互。
 
 ## <a name="localizationiosapp-fundamentalslocalizationindexmd"></a>[本地化](~/ios/app-fundamentals/localization/index.md)
 
-本指南介绍了添加到 Xamarin.iOS 应用程序以支持国际化的编码。
+本指南介绍如何向 Xamarin iOS 应用程序添加编码以支持国际化。
 
 ## <a name="working-with-property-listsiosapp-fundamentalsindexmd"></a>[使用属性列表](~/ios/app-fundamentals/index.md)
 
-本文档介绍 Visual Studio for Mac 的图形和高级属性列表 (.plist) 编辑器使用 Info.plist 和 Entitlements.plist。 它阐释了如何设置图标和启动映像的 iOS 应用程序，并演示从指定的应用程序功能 （授权） 在 Visual Studio for mac。
+本文档介绍 Visual Studio for Mac 的图形和高级属性列表（info.plist）编辑器来使用 info.plist 和 info.plist。 它说明了如何设置适用于 iOS 应用程序的图标和启动映像，并演示了如何在 Visual Studio for Mac 中指定应用功能（权利）。
 
 ## <a name="working-with-security-and-privacyiosapp-fundamentalssecurity-privacymd"></a>[使用安全和隐私](~/ios/app-fundamentals/security-privacy.md)
 
-Apple 已与安全和隐私 iOS 10 （及更高版本） 中存在多项增强的功能，可帮助开发人员提高他们的应用的安全性，并确保最终用户的隐私。 本文将介绍 Xamarin.iOS 应用程序中实现这些功能。
+Apple 在 iOS 10 （及更高版本）中对安全和隐私进行了多项改进，有助于开发人员提高应用程序的安全性并确保最终用户的隐私。 本文介绍如何在 Xamarin iOS 应用程序中实现这些功能。
 
 ## <a name="threadingiosapp-fundamentalsthreadingmd"></a>[线程处理](~/ios/app-fundamentals/threading.md)
 
-本文讨论了在 Xamarin.iOS 应用程序中，线程处理，并稍微讨论了.NET 线程池、 响应式应用程序和垃圾回收。
+本文讨论了 Xamarin iOS 应用程序中的线程处理，并对 .NET 线程池、响应式应用程序和垃圾回收进行了讨论。
 
 ## <a name="touchiosapp-fundamentalstouchindexmd"></a>[触控](~/ios/app-fundamentals/touch/index.md)
 
-在许多现有的设备上的触摸屏允许用户快速高效地与设备交互自然和直观的方式。 这种交互不只限于简单触摸检测 – 可以使用手势以及。 例如，捏合缩放手势是一个非常常见的示例 – 例如收缩用户可以放大或缩小的两根手指与屏幕的一部分。本指南探讨了触控和手势在 iOS 中。
+如今的许多设备上的触摸屏允许用户以自然直观的方式快速、高效地与设备交互。 这种交互不只局限于简单的触摸检测，还可以使用手势。 例如，缩小到缩放手势是一种很常见的示例，即通过使用用户可以放大或缩小的两根手指收缩屏幕的一部分。本指南介绍 iOS 中的触摸和手势。
 
 ## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[使用用户默认值](~/ios/app-fundamentals/user-defaults.md)
 
-`NSUserDefaults`类提供一种方法适用于 iOS 的应用和扩展来以编程方式与整个系统的默认系统进行交互。 通过使用默认系统，用户可以配置应用程序的行为或样式设计来满足其首选项 （基于应用的设计）。 例如，若要提供英制的指标的 vs 中的数据或选择一个给定的用户界面主题。
+`NSUserDefaults`类为 iOS 应用和扩展提供了一种以编程方式与系统范围的默认系统交互的方式。 通过使用默认系统，用户可以配置应用的行为或样式以满足其首选项（基于应用的设计）。 例如，若要以指标与英制度量值显示数据，或选择给定的 UI 主题。

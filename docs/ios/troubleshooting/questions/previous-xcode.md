@@ -1,28 +1,28 @@
 ---
-title: 如何下载以前版本的 Xcode？
+title: 如何下载 Xcode 的早期版本？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 76D47B6D-F4E9-4957-B30C-B259A8FB125F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: ad706700001ab07d74f518d50ab389c8590ba131
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 15c4e5898f049ff009fd5cd027bd1579ba52acb9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418645"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292653"
 ---
-# <a name="how-can-i-download-a-previous-version-of-xcode"></a>如何下载以前版本的 Xcode？
+# <a name="how-can-i-download-a-previous-version-of-xcode"></a>如何下载 Xcode 的早期版本？
 
 ## <a name="current-version"></a>当前版本
 
-当前版本的 Xcode 可以访问通过 App store，或[Xcode 下载页](https://developer.apple.com/xcode/downloads/)。
+可以通过应用商店或[Xcode 下载页](https://developer.apple.com/xcode/downloads/)访问 Xcode 的当前版本。
 
 ## <a name="older-versions"></a>旧版本
 
-可以通过登录到找到较旧版本的 Xcode [Apple 开发人员下载页面](https://developer.apple.com/downloads/more/)和搜索的所需的 Xcode 版本。
+通过登录到[Apple 开发者下载页面](https://developer.apple.com/downloads/more/)并搜索所需的 Xcode 版本，可以找到 Xcode 的旧版本。
 
 ## <a name="related-links"></a>相关链接
 - [Xamarin 系统要求](~/cross-platform/get-started/requirements.md)

@@ -4,25 +4,25 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中使用核心聚
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 6b89b8e681cf0bd3715e2fb80ca794e594875d8c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 845257bc11d24865a01a992e99d39ad6c578b42c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227381"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291461"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中通过核心聚焦搜索
 
-核心聚焦是适用于 iOS 9 的新框架, 该框架提供了一个类似数据库的 API, 用于添加、编辑或删除应用中内容的链接。 使用核心聚焦添加的项将在 iOS 设备上的聚焦搜索中提供。
+核心聚焦是适用于 iOS 9 的新框架，该框架提供了一个类似数据库的 API，用于添加、编辑或删除应用中内容的链接。 使用核心聚焦添加的项将在 iOS 设备上的聚焦搜索中提供。
 
-有关可以使用核心聚焦编制索引的内容类型的示例, 请查看 Apple 的邮件、邮件、日历和便笺应用。 它们当前都使用核心聚光灯来提供搜索结果。
+有关可以使用核心聚焦编制索引的内容类型的示例，请查看 Apple 的邮件、邮件、日历和便笺应用。 它们当前都使用核心聚光灯来提供搜索结果。
 
 ## <a name="creating-an-item"></a>创建项
 
-下面是一个示例, 其中创建了一个项, 并使用核心聚光灯为其编制索引:
+下面是一个示例，其中创建了一个项，并使用核心聚光灯为其编制索引：
 
 ```csharp
 using CoreSpotlight;
@@ -45,13 +45,13 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 });
 ```
 
-此信息将在搜索结果中显示如下:
+此信息将在搜索结果中显示如下：
 
 [![](corespotlight-images/corespotlight01.png "核心聚焦搜索结果概述")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>还原项
 
-当用户通过应用的核心聚焦点击添加到搜索结果的项时, 将`AppDelegate`调用方法`ContinueUserActivity` (此`NSUserActivity`方法还用于)。 例如：
+当用户通过应用的核心聚焦点击添加到搜索结果的项时，将`AppDelegate`调用方法`ContinueUserActivity` （此`NSUserActivity`方法还用于）。 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,22 +74,22 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-请注意, 这次我们要检查是否有`ActivityType`的`CSSearchableItem.ActionType`活动。
+请注意，这次我们要检查是否有`ActivityType`的`CSSearchableItem.ActionType`活动。
 
 ## <a name="updating-an-item"></a>更新项
 
-在某些情况下, 我们使用核心聚光灯创建的索引项需要修改, 如需要更改标题或缩略图。 若要进行此更改, 我们使用的方法与最初创建索引时使用的方法相同。
-我们使用与创建`CSSearchableItem`项相同的 ID 创建新的, 并附加一个包含修改后的`CSSearchableItemAttributeSet`属性的新的:
+在某些情况下，我们使用核心聚光灯创建的索引项需要修改，如需要更改标题或缩略图。 若要进行此更改，我们使用的方法与最初创建索引时使用的方法相同。
+我们使用与创建`CSSearchableItem`项相同的 ID 创建新的，并附加一个包含修改后的`CSSearchableItemAttributeSet`属性的新的：
 
 [![](corespotlight-images/corespotlight02.png "更新项概述")](corespotlight-images/corespotlight02.png#lightbox)
 
-将此项写入可搜索索引时, 将用新信息更新现有项。
+将此项写入可搜索索引时，将用新信息更新现有项。
 
 ## <a name="deleting-an-item"></a>删除项
 
-核心聚焦提供多种方法, 用于在不再需要索引项时将其删除。
+核心聚焦提供多种方法，用于在不再需要索引项时将其删除。
 
-首先, 可以按其标识符删除项, 例如:
+首先，可以按其标识符删除项，例如：
 
 ```csharp
 // Delete Items by ID
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-接下来, 可以按其域名删除一组索引项。 例如：
+接下来，可以按其域名删除一组索引项。 例如:
 
 ```csharp
 // Delete by Domain Name
@@ -113,7 +113,7 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteWithDomain(new string[]{"domain-n
 });
 ```
 
-最后, 您可以删除具有以下代码的所有索引项:
+最后，您可以删除具有以下代码的所有索引项：
 
 ```csharp
 // Delete all index items
@@ -127,11 +127,11 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 ## <a name="additional-core-spotlight-features"></a>其他核心聚焦功能
 
-核心聚焦具有以下功能, 可帮助保持索引准确并保持最新状态:
+核心聚焦具有以下功能，可帮助保持索引准确并保持最新状态：
 
-- **批处理更新支持**–如果你的应用程序需要同时创建或修改大组索引, 则可以通过一次调用将整个批处理发送到`Index` `CSSearchableIndex`类的方法。
+- **批处理更新支持**–如果你的应用程序需要同时创建或修改大组索引，则可以通过一次调用将整个批处理发送到`Index` `CSSearchableIndex`类的方法。
 - **响应索引更改**–使用`CSSearchableIndexDelegate`您的应用程序可以响应可搜索索引中的更改和通知。
-- **应用数据保护**–使用数据保护类, 可以对使用核心聚焦添加到可搜索索引的项实施安全性。
+- **应用数据保护**–使用数据保护类，可以对使用核心聚焦添加到可搜索索引的项实施安全性。
 
 
 
