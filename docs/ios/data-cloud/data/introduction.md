@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 71a1b4df1d57d489efd7f3171a8c36aac1017cca
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281718"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767017"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin iOS 应用中的数据存储简介
 
@@ -25,7 +25,6 @@ ms.locfileid: "70281718"
 - **序列化数据文件**–对象可以在文件系统上保存为 XML 或 JSON。 .NET framework 包含用于使对象序列化和反序列化的库。 使用适当的名称来组织数据文件。
 - **数据库**– SQLite 数据库引擎可用，适用于存储需要查询、排序或以其他方式操作的结构化数据。 数据库存储适用于具有多个属性的数据列表。
 - **映像文件**–尽管可以在移动设备上的数据库中存储二进制数据，但建议将它们直接存储在文件系统中。 如果需要，可以将文件名存储在数据库中，以将图像与其他数据相关联。 处理大型映像或大量映像时，最好计划一个缓存策略，以删除不再需要的文件，避免使用用户的所有存储空间。
-
 
 如果数据库是适用于你的应用程序的正确存储机制，则本文档的其余部分将讨论如何在 Xamarin 平台上使用 SQLite。
 
@@ -40,7 +39,6 @@ ms.locfileid: "70281718"
 - 具有现有数据库技能的开发人员可以利用他们的知识来设计数据库和数据访问代码。
 - 可以在移动应用程序中重复使用（整体或部分）已连接应用程序的服务器组件中的数据模型。
 
-
 ## <a name="sqlite-database-engine"></a>SQLite 数据库引擎
 
 SQLite 是一个开源数据库引擎，它已被 Apple 用于其移动平台。 SQLite 数据库引擎内置于 iOS 中，因此开发人员无需再使用它。 SQLite 适用于跨平台移动开发，因为：
@@ -50,13 +48,11 @@ SQLite 是一个开源数据库引擎，它已被 Apple 用于其移动平台。
 - 文件格式易于跨平台使用：无论是32还是64位，以及大或小字节序系统。
 - 它实现了大部分 SQL92 功能标准。
 
-
 因为 SQLite 的设计速度非常小，但使用时有一些注意事项：
 
 - 某些外部联接语法不受支持。
 - 仅支持表重命名和 ADDCOLUMN。 不能对架构执行其他修改。
 - 视图为只读。
-
 
 你可以在网站上了解有关 SQLite 的详细信息- [SQLite.org](http://SQLite.org) -但是，此文档和关联的示例中包含了使用 sqlite 的所有所需信息。 SQLite 数据库引擎内置于所有版本的 iOS。
 尽管本章未涵盖，但也可在 Windows Phone 和 Windows 应用程序上使用 SQLite。
@@ -65,8 +61,6 @@ SQLite 是一个开源数据库引擎，它已被 Apple 用于其移动平台。
 
 SQLite 还可以在 Windows 平台上使用，但本文档中未介绍这些平台。
 有关详细信息，请参阅[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)和[Tasky Pro](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/case_study%3A_tasky)案例研究，并查看[Tim Heuer 的博客](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
-
-
 
 ## <a name="related-links"></a>相关链接
 

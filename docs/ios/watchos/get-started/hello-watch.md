@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293148"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768681"
 ---
 # <a name="hello-watchos--walkthrough"></a>你好，watchOS –演练
 
@@ -42,7 +42,6 @@ ms.locfileid: "70293148"
 
 双击 Watch 应用中的 "情节提要"，以启动 Xamarin iOS 设计器（如果在 Mac 上，还可以右键单击并**打开 > Xcode Interface Builder**）
 
-
 1. 确保 "**工具箱**" 和 "**属性**" 板可见，
 1. 单击以选择接口控制器，
 1. 将接口控制器的标识符和标题设置为**interfaceController**和**Hi 手表**，
@@ -62,7 +61,6 @@ ms.locfileid: "70293148"
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "将接口控制器的标识符和标题设置为 interfaceController 和高手表")
 
 -----
-
 
 创建用户界面：
 
@@ -154,7 +152,6 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 恭喜，你已获得了一个手表应用！
 
 ![](hello-watch-images/running.png "在模拟器中运行的应用")
-
 
 ## <a name="related-links"></a>相关链接
 

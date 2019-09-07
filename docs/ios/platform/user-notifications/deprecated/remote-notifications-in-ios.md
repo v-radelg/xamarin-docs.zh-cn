@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ee2c54f2369682571520370e09d6d39c2cd86fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 31c3c629686d6c7be03b95d7bfe0740599228bbd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290591"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769398"
 ---
 # <a name="push-notifications-in-ios"></a>IOS 中的推送通知
 
@@ -35,7 +35,6 @@ Apple 维护两个 APNS 环境：一个*沙箱*和一个*生产*环境。 沙盒
 - **256 字节消息限制**-通知的整个消息大小不得超过256个字节。
 - **无回执确认**-APNS 不向发送方提供消息将其发送给目标接收方的任何通知。 如果设备无法访问且发送了多个顺序通知，则除了最近的所有通知都将丢失。 仅将最新的通知传送到设备。
 - **每个应用程序都需要一个安全的证书**-必须通过 SSL 来与 APNS 通信。
-
 
 ## <a name="creating-and-using-certificates"></a>创建和使用证书
 
@@ -174,7 +173,6 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 ## <a name="summary"></a>总结
 
 本部分介绍 iOS 中有关推送通知的主要概念。 它介绍了 Apple 推送通知网关服务（APNS）的角色。 然后，它介绍了如何创建和使用对 APNS 至关重要的安全证书。 最后，此文档已讨论了应用程序服务器如何使用*反馈服务*停止跟踪过期的设备令牌。
-
 
 ## <a name="related-links"></a>相关链接
 

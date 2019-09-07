@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: a153c6115605ca2a58df233186fa45d200d8b99f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287300"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768785"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中创建用户界面对象
 
@@ -43,11 +43,11 @@ using UIKit;
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/image2b.png "工具箱面板")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  [![](creating-ui-objects-images/image2b-vs.png "工具箱面板-视觉对象 Studio")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 -----
 
 在设计图面上选择控件时， **Properties Pad**将显示该控件的特性。 在下面的屏幕截图中填充的**小组件 > 标识 > Name** "字段，用作*插座*名称。 这是您可以在中C#引用控件的方式：
@@ -65,7 +65,7 @@ using UIKit;
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/imagexcode.png "情节提要上下文菜单-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](creating-ui-objects-images/imagexcode-vs.png "情节提要上下文菜单-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
@@ -168,8 +168,6 @@ public override void ViewDidLoad () {
 不`designer.cs`应手动编辑该文件– IDE （Visual Studio for Mac 或 Visual Studio）负责使其与情节提要保持同步。
 
 以编程方式向`View`或`ViewController`添加用户界面对象时，你会自行实例化和管理对象引用，因此不需要设计器文件。
-
-
 
 ## <a name="related-links"></a>相关链接
 

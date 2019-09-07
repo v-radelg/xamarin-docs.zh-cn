@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d001c39b2111785911d678bdeb2e83d761fba11
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7596f79119f28997cbcda6e7057e682edfd760b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286998"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756350"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 后台处理及任务
 
@@ -23,7 +23,6 @@ ms.locfileid: "70286998"
 1. **后台安全任务**-在应用程序中，在应用程序中有一项不希望中断的任务应该进入后台。
 1. **DidEnterBackground 任务**-在`DidEnterBackground`应用程序生命周期方法中调用，以帮助进行清理和省电。
 1. **后台传输（ios 7 +）** -一种特殊类型的后台任务，用于在 iOS 7 上执行网络传输。 与常规任务不同，后台传输没有预先确定的时间限制。
-
 
 在 ios 6 和`DidEnterBackground` ios 7 上都可以安全地使用后台安全和任务，但有一些细微的差异。 让我们更详细地调查这两种类型的任务。
 
@@ -47,7 +46,6 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 > [!IMPORTANT]
 > 基于应用程序的需求，可在主线程或后台线程上运行后台安全任务。
 
-
 ## <a name="performing-tasks-during-didenterbackground"></a>在 DidEnterBackground 期间执行任务
 
 除了使长时间运行的任务处于后台安全状态外，注册还可用于在后台放置应用程序时启动任务。 iOS 在*AppDelegate*类中提供了一个名`DidEnterBackground`为的事件方法，该方法可用于保存应用程序状态、保存用户数据以及在应用程序进入后台之前加密敏感内容。 应用程序从该方法返回大约5秒，否则将终止。 因此，可能需要五秒以上时间才能完成的清理任务可以从`DidEnterBackground`方法内部调用。 这些任务必须在单独的线程上调用。
@@ -68,7 +66,6 @@ public override void DidEnterBackground (UIApplication application) {
 
 > [!IMPORTANT]
 > iOS 使用[监视程序机制](https://developer.apple.com/library/ios/qa/qa1693/_index.html)来确保应用程序的 UI 保持响应。 在中`DidEnterBackground`花费太多时间的应用程序将不会在 UI 中响应。 开始例行在后台运行的任务允许`DidEnterBackground`及时返回，使 UI 保持响应状态，阻止监视器终止应用程序。
-
 
 ## <a name="handling-background-task-time-limits"></a>处理后台任务时间限制
 
@@ -133,7 +130,6 @@ IOS 7 中的后台传输主干是新`NSURLSession` API。 `NSURLSession`允许�
 1. 通过网络和设备中断传输内容。
 1. 上传和下载大型文件（*后台传输服务*）。
 
-
 让我们详细了解一下它的工作原理。
 
 ### <a name="nsurlsession-api"></a>NSURLSession API
@@ -157,7 +153,6 @@ else {
 > [!IMPORTANT]
 > 避免从兼容 iOS 6 的代码中的后台更新 UI，因为 iOS 6 不支持后台 UI 更新，并将终止应用程序。
 
-
 该`NSURLSession` API 包括一组丰富的功能，可用于处理身份验证、管理失败的传输和报告客户端-而不是服务器端错误。 它有助于桥接 iOS 7 中引入的任务运行时间中断，并为快速可靠地传输大文件提供支持。 下一节将探讨此第二项功能。
 
 ### <a name="background-transfer-service"></a>后台传输服务
@@ -167,4 +162,3 @@ else {
 使用后台传输服务启动的传输由操作系统管理，并提供 Api 来处理身份验证和错误。 由于传输不受任意时间限制的限制，因此它们可用于上传或下载大型文件、在后台自动更新内容等。 有关如何实现服务的详细信息，请参阅[后台传输演练](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)。
 
 后台传输服务通常与后台提取或远程通知配对，以帮助应用程序在后台刷新内容。 在接下来的两个部分中，我们将介绍如何在 iOS 6 和 iOS 7 上将整个应用程序注册到后台运行。
-

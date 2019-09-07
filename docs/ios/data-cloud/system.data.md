@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290119"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766542"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin 中的 system.object
 
@@ -110,7 +110,6 @@ class Demo {
 > [!IMPORTANT]
 > 如上面的代码示例中所述，在 SQL 命令中嵌入字符串是不好的做法，因为这会使你的代码容易受到[sql 注入](https://en.wikipedia.org/wiki/SQL_injection)攻击。
 
-
 ### <a name="using-command-parameters"></a>使用命令参数
 
 下面的代码演示如何使用命令参数将用户输入的文本安全插入到数据库中（即使文本包含特殊的 SQL 字符，如单撇号）：
@@ -149,7 +148,6 @@ using (var addCmd = conn.CreateCommand ()) {
 - [System.Data.Odbc](xref:System.Data.Odbc)
 - 依赖项已从中`System.Data.dll`移除，导致删除[EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。 `System.EnterpriseServices.dll`
 
-
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
@@ -170,4 +168,3 @@ using (var addCmd = conn.CreateCommand ()) {
 ## <a name="data-binding"></a>数据绑定
 
 此时不支持数据绑定。
-

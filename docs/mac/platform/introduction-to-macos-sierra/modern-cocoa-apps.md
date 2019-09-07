@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4be5670829b2b8c1a5a73f564b4c031b6a26bd54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291472"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769862"
 ---
 # <a name="building-modern-macos-apps"></a>生成新式 macOS 应用
 
@@ -637,7 +637,7 @@ macOS Sierra 为以前版本的操作系统中可用的现有容器视图控件�
 
 ## <a name="table-view-enhancements"></a>表视图增强功能
 
-开发人员应始终使用基于新`NSView`版本的容器视图控件， `NSTableView`例如。 例如：
+开发人员应始终使用基于新`NSView`版本的容器视图控件， `NSTableView`例如。 例如:
 
 ```csharp
 using System;
@@ -836,7 +836,7 @@ public override void ViewDidLoad ()
 
 ，其中和`ImagePosition`是根据`UserInterfaceLayoutDirection`控件的进行设置的。 `Alignment`
 
-macOS Sierra 添加了几个新的便利构造函数`CreateButton` （通过静态方法），该构造函数采用多个参数（如标题、图像和操作），并且将自动正确地进行镜像。 例如：
+macOS Sierra 添加了几个新的便利构造函数`CreateButton` （通过静态方法），该构造函数采用多个参数（如标题、图像和操作），并且将自动正确地进行镜像。 例如:
 
 ```csharp
 var button2 = NSButton.CreateButton (myTitle, myImage, () => {
@@ -908,7 +908,7 @@ Apple 对于使用系统外观具有以下建议：
 - 避免硬编码 UI 结构 dependancies，因为这限制了 UI 的灵活性。
 - 使用C#接口提供一般的数据 dependancies。
 
-作为 Segue 的源的视图控制器，可以重写`PrepareForSegue`方法，并执行所需的任何初始化（例如传递数据），才能执行 Segue 以显示目标视图控制器。 例如:
+作为 Segue 的源的视图控制器，可以重写`PrepareForSegue`方法，并执行所需的任何初始化（例如传递数据），才能执行 Segue 以显示目标视图控制器。 例如：
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -951,8 +951,6 @@ Apple 在 macOS Sierra 中包含了几个面向用户的功能，使开发人员
 ## <a name="summary"></a>总结
 
 本文介绍了一些提示、功能和技术，开发人员可以使用这些技巧在 Xamarin 中构建现代 macOS 应用。
-
-
 
 ## <a name="related-links"></a>相关链接
 

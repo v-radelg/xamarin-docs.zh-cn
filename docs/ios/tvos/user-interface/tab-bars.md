@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df19dcf542bd3a62a696c0d7d533b4e14390336e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283983"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768998"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 选项卡栏控制器
 
@@ -121,7 +121,6 @@ Apple 对于使用选项卡栏有以下建议：
 
 使用的`UITabBar` 属性`UITabBarItems`可将其包含的集合作为零（0）索引数组`Items`来访问。 属性将返回当前选定的选项卡（类别） `UITabBarItem`作为。 `SelectedItem`
 
-
 <a name="Working-with-Tab-Bar-Items" />
 
 ## <a name="working-with-tab-bar-items"></a>使用选项卡栏项
@@ -144,9 +143,6 @@ TabBar.Items [2].BadgeValue = "10";
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用内设计和使用选项卡栏控制器。
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

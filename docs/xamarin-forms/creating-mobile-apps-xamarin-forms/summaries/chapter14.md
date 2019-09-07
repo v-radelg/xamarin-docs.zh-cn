@@ -1,18 +1,18 @@
 ---
 title: 第 14 章的摘要。 绝对布局
-description: 使用 Xamarin.Forms 创建移动应用：第 14 章的摘要。 绝对布局
+description: 用 Xamarin 创建移动应用程序：第 14 章的摘要。 绝对布局
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c489bf244396cf180ed8e1272308048a14b67300
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334262"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771135"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章的摘要。 绝对布局
 
@@ -98,8 +98,6 @@ layoutBounds.Y = (fractionalChildCoordinate.Y / (1-layoutBounds.Height))
 [![点阵时钟的三个屏幕截图](images/ch14fg08-small.png "点阵时钟")](images/ch14fg08-large.png#lightbox "点阵时钟")
 
 [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText)程序之间进行动画处理两个`Label`要在屏幕上弹跳水平和垂直方向的对象。
-
-
 
 ## <a name="related-links"></a>相关链接
 

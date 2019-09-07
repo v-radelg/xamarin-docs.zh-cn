@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 80f332e45d6c46ad49543923e85cbb2eceadb378
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228086"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767600"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中传递自变量
 
@@ -168,7 +168,6 @@ _本文演示如何使用可用于将参数传递到非默认构造函数，以�
 ## <a name="summary"></a>总结
 
 本文演示了使用的 XAML 特性，可用于将参数传递到非默认构造函数，以调用工厂方法，并指定泛型参数的类型。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 8ab832028d4474bbb3c34805b245638695eae75e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2578272dcd38399f23f2aac67503ea4e1b09a027
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291115"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769081"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警报
 
@@ -192,7 +192,7 @@ alert.AddTextField ((textField) => {
 
 ## <a name="alert-view-controller-helper-class"></a>警报视图控制器帮助程序类
 
-由于使用`UIAlertViewController`显示简单的常见警报类型可能会导致很多重复的代码，因此，可以使用帮助器类来减少重复的代码量。 例如：
+由于使用`UIAlertViewController`显示简单的常见警报类型可能会导致很多重复的代码，因此，可以使用帮助器类来减少重复的代码量。 例如:
 
 ```csharp
 using System;
@@ -361,14 +361,11 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 #endregion
 ```
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
 本文介绍`UIAlertController`如何使用将警报消息显示给 tvOS 中的用户。 首先，它展示了如何显示简单的警报并添加按钮。 接下来，该示例演示如何向警报添加文本字段。 最后，它说明了如何使用 helper 类来减少显示警报所需的重复代码量。
-
-
 
 ## <a name="related-links"></a>相关链接
 

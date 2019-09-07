@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f46b60a0567a5486a5c22a6ff36561e976d07b47
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246653cee7917141ddd0f911a7c4d1b21f945360
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292906"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751975"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 兼容性
 
@@ -32,13 +32,10 @@ _即使您不打算直接将 iOS 9 功能添加到您的应用程序，您也应
 
 _即使你不打算立即通过 iOS 9 功能更新应用，我们也建议你重新生成最新版本的 Xamarin，并将其重新提交到 App Store_。
 
-
-
 这将确保你的应用在客户升级后将在 iOS 9 上运行。
 你可以继续支持 iOS 8-通过最新版本重新生成，不会影响应用程序目标版本。
 
 如果在 iOS 9 上测试现有应用时遇到问题，请阅读下面的[提高兼容性](#compat)部分。
-
 
 ### <a name="updating-with-visual-studio"></a>用 Visual Studio 更新
 
@@ -50,7 +47,6 @@ _即使你不打算立即通过 iOS 9 功能更新应用，我们也建议你重
 只需使用最新稳定版本的 Xamarin 重新构建你的应用程序，即可解决这些问题。
 
 同样，组件供应商和 Nuget 作者**无**需提交新的生成即可解决上述两个问题。 但是，如果任何组件或 Nuget 使用`UICollectionView`或加载**Xib**文件中的视图，则*可能*需要更新以解决下面所述的 iOS 9 兼容性问题。
-
 
 <a name="compat" />
 
@@ -74,8 +70,6 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 相关示例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
-
-
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>从 Xib/笔尖加载视图时，UIView 无法使用编码员初始化
 
 **在于**`initWithCoder:`构造函数是从 Interface Builder Xib 文件加载视图时调用的构造函数。 如果此构造函数不是导出的，则非托管代码不能调用我们的托管版本。 之前（例如 在 iOS 8 中） `IntPtr`已调用构造函数来初始化视图。
@@ -92,7 +86,6 @@ public YourClassName (NSCoder coder) : base (coder)
 
 相关示例：[网上](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息：没有名称为的缓存映像 。
 
 日志中的以下信息可能会出现崩溃：
@@ -105,8 +98,6 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 **在于**这是 Apple 的本机链接器中的一个 bug，在这种情况下，会发生这种情况：公共框架公开（JavaScriptCore 是在 iOS 7 中公开的，在这种情况下，它是一个专用框架），该应用的部署目标是在该框架专用时用于 iOS 版本。 在这种情况下，Apple 的链接器将链接到框架的私有版本，而不是公共版本。
 
 **能够**这适用于 iOS 9，但有一种简单的解决方法，你可以在此期间自行应用：仅面向更高版本的项目中的 iOS 版本（在这种情况下，你可以尝试使用 iOS 7）。 其他框架可能会出现类似的问题，例如，WebKit 框架已在 iOS 8 中公开（因此面向 iOS 7 会导致此错误; 应以 iOS 8 为目标，以在应用中使用 WebKit）。
-
-
 
 ## <a name="related-links"></a>相关链接
 

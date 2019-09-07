@@ -6,15 +6,14 @@ ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: c8fa3e6f9e941e0c48570f5d691e7ef83eeffae8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 271d66ef952718654a2e45eb0d3901e2962ae31b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287640"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766269"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
-
 
 Azure Active Directory 使开发人员可以使用员工用于登录系统或检查电子邮件的相同组织帐户来保护文件、链接和 Web Api、Office 365 等资源。
 
@@ -33,4 +32,3 @@ Azure Active Directory 使开发人员可以使用员工用于登录系统或检
 ## <a name="graph-api"></a>图形 API
 
 了解如何使用 Xamarin 访问[图形 API](~/cross-platform/data-cloud/active-directory/graph.md) （也在[博客](https://blog.xamarin.com/authenticate-xamarin-mobile-apps-using-azure-active-directory/)中介绍）。
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2017
-ms.openlocfilehash: 683587e4857ede20096be731b3cfa3b88b3a668d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 25b4e5a564c8dabf4cb44881c25e0a10ade47350
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282521"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767742"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Xamarin 中的自定义文档图标
 
@@ -30,7 +30,7 @@ _本文介绍如何在 Xamarin iOS 应用中包括和管理要用作自定义文
 若要在 Visual Studio for Mac 中分配这些值，请使用`Info.plist`编辑器上 "**高级**" 选项卡下的 "**文档类型**" 部分添加文档类型并向其分配图像图标。 例如，以下是显示 PDF 支持注册的屏幕截图：
 
  [![](custom-document-types-images/18.png "\"Info.plist\" 编辑器的 \"高级\" 选项卡下的 \"文档类型\" 部分")](custom-document-types-images/18.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中分配这些值，请使用中的 "**高级** `Info.plist`" 选项卡下的 "**文档类型**" 部分：
@@ -43,9 +43,7 @@ _本文介绍如何在 Xamarin iOS 应用中包括和管理要用作自定义文
 
 -----
 
-
 有关文档类型的详细信息，请参阅适用于 iOS 的 Apple[统一类型标识符参考](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)和[文档交互编程主题](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 706efdd9cb39db63ab0c7b9cd4404b7b84f4c14b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cb16ad3889453f866f3dc9e66f5bcc8860bd094a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292404"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751986"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 框架更改
 
@@ -55,9 +55,6 @@ CloudKit 框架可简化访问 iCloud 的应用程序的开发。 这包括检�
 
 > [!IMPORTANT]
 > 必须先定义该数据库的架构，然后才能使用 CloudKit JS 从 CloudKit 数据库中访问、呈现或更新内容。
-
-
-
 
 有关详细信息，请参阅以下文档：
 
@@ -261,8 +258,6 @@ Apple 在 iOS 9 中包括对 UIKit Dynamics 的以下更改：
 ### <a name="new-uitextinputassistantitem-class"></a>新的 UITextInputAssistantItem 类
 
 在`UITextInputAssistantItem` _快捷方式栏_中使用 "新建类" 布局栏按钮组。 快捷方式栏是软键盘中提供的一种新区域，用于提供键入的快捷方式。
-
-
 
 ## <a name="related-links"></a>相关链接
 

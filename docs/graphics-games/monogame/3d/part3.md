@@ -1,27 +1,27 @@
 ---
 title: MonoGame 中的三维坐标
-description: 了解3D 坐标系统是开发3D 游戏的一个重要步骤。 MonoGame 提供了许多类, 用于在三维空间中定位、定向和缩放对象。
+description: 了解3D 坐标系统是开发3D 游戏的一个重要步骤。 MonoGame 提供了许多类，用于在三维空间中定位、定向和缩放对象。
 ms.prod: xamarin
 ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 2f5e66ae58f471be62839de17fe4edd12ccef457
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680997"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763999"
 ---
 # <a name="3d-coordinates-in-monogame"></a>MonoGame 中的三维坐标
 
-_了解3D 坐标系统是开发3D 游戏的一个重要步骤。MonoGame 提供了许多类, 用于在三维空间中定位、定向和缩放对象。_
+_了解3D 坐标系统是开发3D 游戏的一个重要步骤。MonoGame 提供了许多类，用于在三维空间中定位、定向和缩放对象。_
 
-开发三维游戏需要了解如何在3D 坐标系中操作对象。 本演练将介绍如何操作视觉对象 (特别是模型)。 我们将在控制模型以创建3D 相机类的概念上进行构建。
+开发三维游戏需要了解如何在3D 坐标系中操作对象。 本演练将介绍如何操作视觉对象（特别是模型）。 我们将在控制模型以创建3D 相机类的概念上进行构建。
 
-所提供的概念源自线性代数, 但我们将采取一种实用的方法, 使没有强数学背景的任何用户都可以在自己的游戏中应用这些概念。
+所提供的概念源自线性代数，但我们将采取一种实用的方法，使没有强数学背景的任何用户都可以在自己的游戏中应用这些概念。
 
-我们将涵盖以下主题:
+我们将涵盖以下主题：
 
 - 创建项目
 - 创建机器人实体
@@ -30,27 +30,25 @@ _了解3D 坐标系统是开发3D 游戏的一个重要步骤。MonoGame 提供�
 - 创建相机实体
 - 移动带输入的相机
 
-完成后, 我们将获得一个项目, 其中包含一个机器人, 可通过触摸输入来控制相机和照相机:
+完成后，我们将获得一个项目，其中包含一个机器人，可通过触摸输入来控制相机和照相机：
 
-![](part3-images/image1.gif "完成后, 应用程序将包含一个自动移动的项目, 该项目可通过触摸输入来控制")
-
+![](part3-images/image1.gif "完成后，应用程序将包含一个自动移动的项目，该项目可通过触摸输入来控制")
 
 ## <a name="creating-a-project"></a>创建项目
 
-本演练重点介绍如何在三维空间中移动对象。 我们将从用于呈现模型和顶点数组的项目开始,[可在此处找到](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)。 下载后, 解压缩并打开项目以确保其运行, 我们应该会看到以下内容:
+本演练重点介绍如何在三维空间中移动对象。 我们将从用于呈现模型和顶点数组的项目开始，[可在此处找到](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)。 下载后，解压缩并打开项目以确保其运行，我们应该会看到以下内容：
 
-![](part3-images/image2.png "下载后, 解压缩并打开该项目以确保其运行并且应显示此视图")
-
+![](part3-images/image2.png "下载后，解压缩并打开该项目以确保其运行并且应显示此视图")
 
 ## <a name="creating-a-robot-entity"></a>创建机器人实体
 
-在开始移动机器人之前, 我们将创建一个`Robot`类以包含用于绘图和移动的逻辑。 游戏开发人员将此逻辑和数据封装称为*实体*。
+在开始移动机器人之前，我们将创建一个`Robot`类以包含用于绘图和移动的逻辑。 游戏开发人员将此逻辑和数据封装称为*实体*。
 
-将新的空类文件添加到**MonoGame3D**可移植类库 (而不是特定于平台的 ModelAndVerts)。 将其命名为**机器人**, 并单击 "**新建**":
+将新的空类文件添加到**MonoGame3D**可移植类库（而不是特定于平台的 ModelAndVerts）。 将其命名为**机器人**，并单击 "**新建**"：
 
 ![](part3-images/image3.png "将其命名为机器人并单击 \"新建\"")
 
-`Robot`修改类, 如下所示:
+`Robot`修改类，如下所示：
 
 ```csharp
 using System;
@@ -95,7 +93,6 @@ namespace MonoGame3D
                     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
                         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
 
-
                 }
 
                 // Now that we've assigned our properties on the effects we can
@@ -107,7 +104,7 @@ namespace MonoGame3D
 }
 ```
 
-代码在中`Game1`本质上与用于绘制`Model`的代码相同。 `Robot` 有关如何加载和绘制的详细介绍, 请参阅[此指南了解如何使用模型。](~/graphics-games/monogame/3d/part1.md) `Model` 现在, 我们可以从中`Model` `Game1`删除所有加载和呈现代码, `Robot`并将其替换为实例:
+代码在中`Game1`本质上与用于绘制`Model`的代码相同。 `Robot` 有关如何加载和绘制的详细介绍，请参阅[此指南了解如何使用模型。](~/graphics-games/monogame/3d/part1.md) `Model` 现在，我们可以从中`Model` `Game1`删除所有加载和呈现代码， `Robot`并将其替换为实例：
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -228,17 +225,17 @@ namespace MonoGame3D
 }
 ```
 
-如果我们运行代码, 我们将有一个只包含一个机器人的场景, 该机器人通常在地面下绘制:
+如果我们运行代码，我们将有一个只包含一个机器人的场景，该机器人通常在地面下绘制：
 
-![](part3-images/image4.png "如果现在运行代码, 应用程序将显示一个场景, 其中只有一个机器人在地面下绘制")
+![](part3-images/image4.png "如果现在运行代码，应用程序将显示一个场景，其中只有一个机器人在地面下绘制")
 
 ## <a name="moving-the-robot"></a>移动机器人
 
-现在我们有了一个`Robot`类, 可以将移动逻辑添加到机器人。 在这种情况下, 我们只会根据游戏时间使机器人进入一个圆圈。 这对于实际游戏来说是一种不切实际的实现, 因为字符通常会响应输入或人工智能, 但它为我们提供了一个环境, 供我们探索3D 定位和旋转。
+现在我们有了一个`Robot`类，可以将移动逻辑添加到机器人。 在这种情况下，我们只会根据游戏时间使机器人进入一个圆圈。 这对于实际游戏来说是一种不切实际的实现，因为字符通常会响应输入或人工智能，但它为我们提供了一个环境，供我们探索3D 定位和旋转。
 
-我们在`Robot`类外部需要的唯一信息是当前游戏时间。 我们将添加一个`Update`方法, 该方法将`GameTime`采用一个参数。 此`GameTime`参数将用于递增角度变量, 我们将用它来确定机器人的最终位置。
+我们在`Robot`类外部需要的唯一信息是当前游戏时间。 我们将添加一个`Update`方法，该方法将`GameTime`采用一个参数。 此`GameTime`参数将用于递增角度变量，我们将用它来确定机器人的最终位置。
 
-首先, 将 "角度" 字段添加到`Robot` " `model`字段" 下面的类:
+首先，将 "角度" 字段添加到`Robot` " `model`字段" 下面的类：
 
 ```csharp
 public class Robot
@@ -250,7 +247,7 @@ public class Robot
     ...
 ```
 
- 现在, 我们可以在`Update`函数中递增此值:
+ 现在，我们可以在`Update`函数中递增此值：
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -260,7 +257,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-我们需要确保`Update`从`Game1.Update`以下内容调用方法:
+我们需要确保`Update`从`Game1.Update`以下内容调用方法：
 
 ```csharp
 protected override void Update(GameTime gameTime)
@@ -270,7 +267,7 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-当然, 此时 angle 字段不会执行任何操作–我们需要编写代码来使用它。 我们将修改`Draw`方法, 以便我们可以使用专用方法计算`Matrix`世界: 
+当然，此时 angle 字段不会执行任何操作–我们需要编写代码来使用它。 我们将修改`Draw`方法，以便我们可以使用专用方法计算`Matrix`世界： 
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -303,7 +300,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 }
 ```
 
-接下来, 我们将`GetWorldMatrix` `Robot`在类中实现方法:
+接下来，我们将`GetWorldMatrix` `Robot`在类中实现方法：
 
 ```csharp
 Matrix GetWorldMatrix()
@@ -325,59 +322,59 @@ Matrix GetWorldMatrix()
 }
 ```
 
-运行此代码的结果会使机器人在圆圈中移动:
+运行此代码的结果会使机器人在圆圈中移动：
 
 ![](part3-images/image5.gif "运行此代码会使机器人在一个圆中移动")
 
 ## <a name="matrix-multiplication"></a>矩阵乘法
 
-上面的代码通过`Matrix` `GetWorldMatrix`在方法中创建来旋转机器人。 `Matrix`结构包含16个可用于转换 (设置位置)、旋转和缩放的浮点值 (设置大小)。 当我们分配`effect.World`属性时, 我们会告诉基础呈现系统如何定位、调整大小和定位我们碰巧要绘制的任何内容 (或顶点`Model`的几何图形)。 
+上面的代码通过`Matrix` `GetWorldMatrix`在方法中创建来旋转机器人。 `Matrix`结构包含16个可用于转换（设置位置）、旋转和缩放的浮点值（设置大小）。 当我们分配`effect.World`属性时，我们会告诉基础呈现系统如何定位、调整大小和定位我们碰巧要绘制的任何内容（或顶点`Model`的几何图形）。 
 
-幸运的是`Matrix` , 该结构包含很多方法, 可简化常见类型的矩阵的创建。 以上代码中的第一个使用是`Matrix.CreateTranslation`。 数学术语*转换*指的是一项操作, 该操作将导致一个点 (或在我们的示例模型中) 从一个位置移到另一个位置, 而无需进行任何其他修改 (如旋转或调整大小)。 函数使用 X、Y 和 Z 值进行转换。 如果我们从上到下查看场景, `CreateTranslation`则方法 (隔离) 将执行以下操作:
+幸运的是`Matrix` ，该结构包含很多方法，可简化常见类型的矩阵的创建。 以上代码中的第一个使用是`Matrix.CreateTranslation`。 数学术语*转换*指的是一项操作，该操作将导致一个点（或在我们的示例模型中）从一个位置移到另一个位置，而无需进行任何其他修改（如旋转或调整大小）。 函数使用 X、Y 和 Z 值进行转换。 如果我们从上到下查看场景， `CreateTranslation`则方法（隔离）将执行以下操作：
 
 ![](part3-images/image6.png "隔离中的 CreateTranslation 方法执行此操作")
 
-我们创建的第二个矩阵是使用`CreateRotationZ`矩阵的轮换矩阵。 这是可用于创建旋转的三种方法之一:
+我们创建的第二个矩阵是使用`CreateRotationZ`矩阵的轮换矩阵。 这是可用于创建旋转的三种方法之一：
 
 - `CreateRotationX`
 - `CreateRoationY`
 - `CreateRotationZ`
 
-每个方法通过旋转给定轴来创建旋转矩阵。 在我们的示例中, 我们将围绕 Z 轴旋转, 这将指向 "向上"。 以下内容可帮助直观显示基于轴的旋转的工作方式:
+每个方法通过旋转给定轴来创建旋转矩阵。 在我们的示例中，我们将围绕 Z 轴旋转，这将指向 "向上"。 以下内容可帮助直观显示基于轴的旋转的工作方式：
 
 ![](part3-images/image7.png "这有助于直观显示基于轴的旋转的工作方式")
 
-我们还`CreateRotationZ`将方法用于 angle 字段, 该字段随着时间的推移而随着时间`Update`的推移而增加。 结果就是, 此`CreateRotationZ`方法会使机器人在时间走时围绕原点进行轨迹。
+我们还`CreateRotationZ`将方法用于 angle 字段，该字段随着时间的推移而随着时间`Update`的推移而增加。 结果就是，此`CreateRotationZ`方法会使机器人在时间走时围绕原点进行轨迹。
 
-最后一行代码将两个矩阵合并为一个矩阵:
+最后一行代码将两个矩阵合并为一个矩阵：
 
 ```csharp
 Matrix combined = translationMatrix * rotationMatrix;
 ```
 
-这称为矩阵乘法, 其工作方式与常规乘法略有不同。 *乘法的交换律*规定, 乘法运算中数字的顺序不会更改结果。 也就是说, 3 * 4 等效于 4 * 3。 矩阵乘法的不同之处在于它不是可交换的。 也就是说, 可以将上述行读为 "应用 translationMatrix 来移动模型, 然后通过应用 rotationMatrix 旋转所有内容"。 可以按如下所示直观显示上述行对位置和旋转的影响:
+这称为矩阵乘法，其工作方式与常规乘法略有不同。 *乘法的交换律*规定，乘法运算中数字的顺序不会更改结果。 也就是说，3 * 4 等效于 4 * 3。 矩阵乘法的不同之处在于它不是可交换的。 也就是说，可以将上述行读为 "应用 translationMatrix 来移动模型，然后通过应用 rotationMatrix 旋转所有内容"。 可以按如下所示直观显示上述行对位置和旋转的影响：
 
 ![](part3-images/image8.png "可视化 pf 以上线条影响位置和旋转的方式")
 
-为了帮助理解矩阵相乘的顺序对结果产生的影响, 请考虑以下各项:
+为了帮助理解矩阵相乘的顺序对结果产生的影响，请考虑以下各项：
 
 ```csharp
 Matrix combined = rotationMatrix * translationMatrix;
 ```
 
-上面的代码首先旋转模型, 然后对模型进行转换:
+上面的代码首先旋转模型，然后对模型进行转换：
 
-![](part3-images/image9.png "上面的代码首先旋转模型, 然后再进行转换")
+![](part3-images/image9.png "上面的代码首先旋转模型，然后再进行转换")
 
-如果我们以反转的乘法运行代码, 就会注意到, 因为旋转首先适用, 它只会影响模型的方向, 模型的位置保持不变。 换句话说, 模型将就地旋转:
+如果我们以反转的乘法运行代码，就会注意到，因为旋转首先适用，它只会影响模型的方向，模型的位置保持不变。 换句话说，模型将就地旋转：
 
 ![](part3-images/image10.gif "模型就地旋转")
 
 ## <a name="creating-the-camera-entity"></a>创建相机实体
 
-实体将包含执行基于输入的移动所需的所有逻辑, 并提供用于`BasicEffect`在类上分配属性的属性。 `Camera`
+实体将包含执行基于输入的移动所需的所有逻辑，并提供用于`BasicEffect`在类上分配属性的属性。 `Camera`
 
-首先, 我们将实现一个静态照相机 (无基于输入的移动), 并将其集成到现有项目中。 将新类添加到**MonoGame3D**可移植类库 (与`Robot.cs`相同的项目) 并将其命名为**相机**。 将此文件的内容替换为以下代码：
+首先，我们将实现一个静态照相机（无基于输入的移动），并将其集成到现有项目中。 将新类添加到**MonoGame3D**可移植类库（与`Robot.cs`相同的项目）并将其命名为**相机**。 将此文件的内容替换为以下代码：
 
 ```csharp
 using System;
@@ -433,9 +430,9 @@ namespace MonoGame3D
 }
 ```
 
-上面的代码非常类似于中`Game1`的代码, `Robot` `BasicEffect`该代码分配了中的矩阵。 
+上面的代码非常类似于中`Game1`的代码， `Robot` `BasicEffect`该代码分配了中的矩阵。 
 
-现在, 我们可以将新`Camera`类集成到现有项目中。 首先, 我们将修改`Robot`类以在其`Draw`方法`Camera`中使用一个实例, 这将消除大量重复的代码。 将`Robot.Draw`方法替换为以下内容:
+现在，我们可以将新`Camera`类集成到现有项目中。 首先，我们将修改`Robot`类以在其`Draw`方法`Camera`中使用一个实例，这将消除大量重复的代码。 将`Robot.Draw`方法替换为以下内容：
 
 ```csharp
 public void Draw(Camera camera)
@@ -457,7 +454,7 @@ public void Draw(Camera camera)
 }
 ```
 
-接下来, 修改`Game1.cs`该文件:
+接下来，修改`Game1.cs`该文件：
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -573,7 +570,7 @@ namespace MonoGame3D
 }
 ```
 
-对以前版本 ( `Game1` `// New camera code`由标识) 的的修改为:
+对以前版本（ `Game1` `// New camera code`由标识）的的修改为：
 
 - `Camera`字段`Game1`
 - `Camera`实例化`Game1.Initialize`
@@ -583,19 +580,19 @@ namespace MonoGame3D
 
 ## <a name="moving-the-camera-with-input"></a>移动带输入的相机
 
-到目前为止, 我们添加了`Camera`一个实体, 但没有执行任何操作来更改运行时行为。 我们将添加允许用户执行以下操作的行为:
+到目前为止，我们添加了`Camera`一个实体，但没有执行任何操作来更改运行时行为。 我们将添加允许用户执行以下操作的行为：
 
-- 触摸屏幕的左侧, 使相机向左旋转
-- 触摸屏幕的右侧, 使相机向右旋转
+- 触摸屏幕的左侧，使相机向左旋转
+- 触摸屏幕的右侧，使相机向右旋转
 - 触摸屏幕中心来向前移动相机
 
 ### <a name="making-lookat-relative"></a>使 lookAt 相对
 
-首先, 我们将更新`Camera`类以包含一个`angle`字段, 该字段将用于`Camera`设置所面向的方向。 目前, 我们`Camera`通过分配给的本地`lookAtVector`来`Vector3.Zero`确定它的方向。 换句话说, 我们`Camera`始终会看一下原点。 如果移动了相机, 则照相机的正面还会变化:
+首先，我们将更新`Camera`类以包含一个`angle`字段，该字段将用于`Camera`设置所面向的方向。 目前，我们`Camera`通过分配给的本地`lookAtVector`来`Vector3.Zero`确定它的方向。 换句话说，我们`Camera`始终会看一下原点。 如果移动了相机，则照相机的正面还会变化：
 
-![](part3-images/image11.gif "如果移动了相机, 则照相机的正面还会改变")
+![](part3-images/image11.gif "如果移动了相机，则照相机的正面还会改变")
 
-我们希望`Camera`无论其位置如何, 都应具有相同的方向, 至少直到我们实现`Camera`用来旋转使用输入的逻辑。 第一次更改是将`lookAtVector`变量调整为基于当前位置, 而不是查看绝对位置:
+我们希望`Camera`无论其位置如何，都应具有相同的方向，至少直到我们实现`Camera`用来旋转使用输入的逻辑。 第一次更改是将`lookAtVector`变量调整为基于当前位置，而不是查看绝对位置：
 
 ```csharp
 public class Camera
@@ -621,17 +618,17 @@ public class Camera
     ...
 ```
 
-这将`Camera`导致实时查看世界。 请注意, 初始值`position`已修改为`(0, 20, 10)` , 因此`Camera`在 X 轴上居中。 运行游戏显示:
+这将`Camera`导致实时查看世界。 请注意，初始值`position`已修改为`(0, 20, 10)` ，因此`Camera`在 X 轴上居中。 运行游戏显示：
 
 ![](part3-images/image12.png "运行游戏显示此视图")
 
 ### <a name="creating-an-angle-variable"></a>创建角度变量
 
-`lookAtVector`变量控制相机正在查看的角度。 目前, 它是固定的, 以便向下查看负 Y 轴, 稍微向下倾斜`-.5f` (从 Z 值开始)。 我们将创建一个`angle`用于`lookAtVector`调整属性的变量。 
+`lookAtVector`变量控制相机正在查看的角度。 目前，它是固定的，以便向下查看负 Y 轴，稍微向下倾斜`-.5f` （从 Z 值开始）。 我们将创建一个`angle`用于`lookAtVector`调整属性的变量。 
 
-在本演练的前面部分中, 我们介绍了可以使用矩阵来旋转对象的绘制方式。 我们还可以使用矩阵来旋转向量, 如`lookAtVector` `Vector3.Transform`使用方法。 
+在本演练的前面部分中，我们介绍了可以使用矩阵来旋转对象的绘制方式。 我们还可以使用矩阵来旋转向量，如`lookAtVector` `Vector3.Transform`使用方法。 
 
-添加一个`angle`字段, 并按`ViewMatrix`如下所示修改属性:
+添加一个`angle`字段，并按`ViewMatrix`如下所示修改属性：
 
 ```csharp
 public class Camera
@@ -664,19 +661,19 @@ public class Camera
 
 ### <a name="reading-input"></a>正在读取输入
 
-现在, 我们的实体可以通过其位置和角度变量进行完全控制,只需根据输入更改它们即可。`Camera`
+现在，我们的实体可以通过其位置和角度变量进行完全控制，只需根据输入更改它们即可。`Camera`
 
-首先, 我们将获取`TouchPanel`状态, 查找用户在屏幕上的接触位置。 有关使用`TouchPanel`类的详细信息, 请参阅[触摸屏 API 参考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)。
+首先，我们将获取`TouchPanel`状态，查找用户在屏幕上的接触位置。 有关使用`TouchPanel`类的详细信息，请参阅[触摸屏 API 参考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)。
 
-如果用户在第三方触摸, 我们将调整`angle`值`Camera`以便向左旋转, 如果用户在第三方触摸, 则会旋转其他方法。 如果用户正在屏幕的第三个屏幕上触摸, 我们将`Camera`向前移动。
+如果用户在第三方触摸，我们将调整`angle`值`Camera`以便向左旋转，如果用户在第三方触摸，则会旋转其他方法。 如果用户正在屏幕的第三个屏幕上触摸，我们将`Camera`向前移动。
 
-首先, 添加一个 using 语句, 以便在`TouchPanel`中`TouchCollection` `Camera.cs`限定和类:
+首先，添加一个 using 语句，以便在`TouchPanel`中`TouchCollection` `Camera.cs`限定和类：
 
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
-接下来, 修改`Update`方法以读取触摸面板并适当地`angle`调整和`position`变量:
+接下来，修改`Update`方法以读取触摸面板并适当地`angle`调整和`position`变量：
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -714,15 +711,15 @@ public void Update(GameTime gameTime)
 }
 ```
 
-现在, `Camera`将响应触摸输入:
+现在， `Camera`将响应触摸输入：
 
-![](part3-images/image1.gif "现在, 照相机会响应触摸输入")
+![](part3-images/image1.gif "现在，照相机会响应触摸输入")
 
-更新方法首先调用`TouchPanel.GetState`, 后者返回一组接触。 尽管`TouchPanel.GetState`可以返回多个触控点, 但对于简单起见, 我们只需考虑第一个点。
+更新方法首先调用`TouchPanel.GetState`，后者返回一组接触。 尽管`TouchPanel.GetState`可以返回多个触控点，但对于简单起见，我们只需考虑第一个点。
 
-如果用户正在触摸屏幕, 则代码将进行检查以确定第一个触摸是位于屏幕的左侧、中间还是右第三。 左和右指根据`angle` `TotalSeconds`值增加或减少变量来旋转相机 (这样, 无论帧速率如何, 游戏的行为相同)。
+如果用户正在触摸屏幕，则代码将进行检查以确定第一个触摸是位于屏幕的左侧、中间还是右第三。 左和右指根据`angle` `TotalSeconds`值增加或减少变量来旋转相机（这样，无论帧速率如何，游戏的行为相同）。
 
-如果用户正在触摸屏幕的第三个屏幕, 则照相机会向前移动。 首先通过获取正向向量来完成此操作, 它最初定义为指向负 Y 轴, 然后由使用`Matrix.CreateRotationZ` `angle`和值创建的矩阵旋转。 最后, `forwardVector`应用到`position`使用`unitsPerSecond`系数。
+如果用户正在触摸屏幕的第三个屏幕，则照相机会向前移动。 首先通过获取正向向量来完成此操作，它最初定义为指向负 Y 轴，然后由使用`Matrix.CreateRotationZ` `angle`和值创建的矩阵旋转。 最后， `forwardVector`应用到`position`使用`unitsPerSecond`系数。
 
 ## <a name="summary"></a>总结
 
@@ -731,4 +728,4 @@ public void Update(GameTime gameTime)
 ## <a name="related-links"></a>相关链接
 
 - [MonoGame API 链接](http://www.monogame.net/documentation/?page=api)
-- [已完成的项目 (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/monogame3dcamera)
+- [已完成的项目（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/monogame3dcamera)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f98cd3110719827d8cfeceef4dc9e73776c79f3f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a004ea539bab264f6a1418826be451ffb7d43d47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292717"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753050"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin 中的 HomeKit
 
@@ -266,7 +266,6 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 > [!IMPORTANT]
 > 上面`AlertView.PresentOKAlert`的示例代码中使用的方法是 HomeKitIntro 应用程序中的一个帮助器类，它可以更轻松地处理 iOS 警报。
-
 
 ## <a name="finding-new-accessories"></a>查找新附件
 
@@ -705,8 +704,6 @@ Apple 已对适用于 iOS 9 的 HomeKit 进行了以下更改和添加：
 ## <a name="summary"></a>总结
 
 本文介绍了 Apple 的 HomeKit home 自动化框架。 其中介绍了如何使用 HomeKit 附件模拟器设置和配置测试设备，以及如何使用 HomeKit 创建一个简单的 Xamarin iOS 应用来发现、使用和控制主自动化设备。
-
-
 
 ## <a name="related-links"></a>相关链接
 

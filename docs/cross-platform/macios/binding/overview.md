@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 3b0e5d12f47ffb46ad009530bcc9c0b373496f63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279795"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765588"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目标-C 绑定概述
 
@@ -37,7 +37,6 @@ _绑定过程工作原理的详细信息_
 
 你可以使用`btouch-native` for Xamarin （或者`bmac-native` ，如果你使用的是 xamarin）来直接生成绑定。 它的工作方式是C#将已手动创建的 API 定义（或使用目标 Sharpie）传递到命令行工具（`btouch-native`适用于 iOS 或`bmac-native` Mac）。
 
-
 调用这些工具的一般语法为：
 
 ```csharp
@@ -51,7 +50,6 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
 上面的命令将在当前目录`cocos2d.dll`中生成文件，并且它将包含可以在项目中使用的完全绑定库。 如果使用绑定项目（[如下](#bindingproject)所述），这是 Visual Studio for Mac 用于创建绑定的工具。
-
 
 <a name="bindingproject" />
 

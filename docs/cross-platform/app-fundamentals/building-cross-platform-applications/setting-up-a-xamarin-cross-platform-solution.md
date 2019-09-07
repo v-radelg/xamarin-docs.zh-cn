@@ -6,30 +6,26 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: f8b8f13f323f404554ca73c3e75c23713e0fbe35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288851"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758143"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第3部分-设置 Xamarin 跨平台解决方案
 
 无论使用何种平台，Xamarin 项目都使用相同的解决方案文件格式（Visual Studio **.sln**文件格式）。 解决方案可以在开发环境中共享，即使无法加载单独的项目（例如 Visual Studio for Mac 中的 Windows 项目）。
 
-
-
 创建新的跨平台应用程序时，第一步是创建一个空白解决方案。 本部分介绍接下来要执行的操作：设置用于生成跨平台移动应用的项目。
 
  <a name="Sharing_Code" />
-
 
 ## <a name="sharing-code"></a>共享代码
 
 有关如何跨平台实现代码共享的详细说明，请参阅[代码共享选项](~/cross-platform/app-fundamentals/code-sharing.md)文档。
 
  <a name="Shared_Asset_Projects" />
-
 
 ### <a name="shared-projects"></a>共享项目
 
@@ -39,7 +35,6 @@ ms.locfileid: "70288851"
 
  <a name="Portable_Class_Libraries" />
 
-
 ### <a name="portable-class-libraries-pcl"></a>可移植类库 (PCL)
 
 在过去，.NET 项目文件（和生成的程序集）的目标是特定的框架版本。 这会阻止项目或程序集被不同框架共享。
@@ -48,17 +43,13 @@ ms.locfileid: "70288851"
 
 可以阅读有关 Xamarin[对可移植类库的支持](~/cross-platform/app-fundamentals/pcl.md)的详细信息，并按照其中的说明查看[TaskyPortable 示例](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)的工作方式。
 
-
 ### <a name="net-standard"></a>.NET Standard
 
 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)项目是在2016中引入的，它提供了跨平台共享代码的简单方法，可生成可跨 Windows、Xamarin 平台（IOS、Android、Mac）和 Linux 使用的程序集。
 
 .NET Standard 库的创建和使用方式类似于 Pcl，只不过每个版本中提供的 Api （1.0 到1.6）都可以更轻松地发现，每个版本都与较低版本号向后兼容。
 
-
-
  <a name="Populating_the_Solution" />
-
 
 ## <a name="populating-the-solution"></a>填充解决方案
 
@@ -68,9 +59,7 @@ Xamarin 方法是将代码分组为两个项目类型：
 - **核心项目**–在一个位置编写可重复使用的代码，以便在不同的平台之间共享。 使用封装原则尽可能隐藏实现细节。
 - **平台特定的应用程序项目**-使用可重用的代码，并尽可能少耦合。 在此级别上添加了特定于平台的功能，这些功能基于核心项目中公开的组件构建。
 
-
  <a name="Core_Project" />
-
 
 ### <a name="core-project"></a>核心项目
 
@@ -83,9 +72,7 @@ Xamarin 方法是将代码分组为两个项目类型：
 - **服务访问层**–用于向应用程序提供云服务的可选层。 包含访问远程网络资源（web 服务、图像下载等）并可能会缓存结果的代码。
 - **业务层**-定义对特定于平台的应用程序公开功能的模型类和外观或管理器类。
 
-
  <a name="Platform-Specific_Application_Projects" />
-
 
 ### <a name="platform-specific-application-projects"></a>特定于平台的应用程序项目
 
@@ -96,9 +83,7 @@ Xamarin 方法是将代码分组为两个项目类型：
 - **应用程序层**–平台特定功能以及业务层对象与用户界面之间的绑定/转换。
 - **用户界面层**–屏幕，自定义用户界面控件，表示验证逻辑。
 
-
 <a name="Example" />
-
 
 ### <a name="example"></a>示例
 
@@ -110,9 +95,7 @@ Xamarin 方法是将代码分组为两个项目类型：
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共享项目包含与每个体系结构层相关的代码（业务、服务、数据和数据访问代码）")
 
-
  <a name="Project_References" />
-
 
 ## <a name="project-references"></a>项目引用
 
@@ -123,16 +106,13 @@ Xamarin 方法是将代码分组为两个项目类型：
 
 ![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "应用程序项目共享项目中的每个引用") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "应用程序项目每个引用共享项目中")
 
-
 案例研究中提供了有关如何构造项目的具体示例。
 
  <a name="Adding_Files" />
 
-
 ## <a name="adding-files"></a>添加文件
 
  <a name="Build_Action" />
-
 
 ### <a name="build-action"></a>生成操作
 
@@ -145,11 +125,9 @@ Xamarin 方法是将代码分组为两个项目类型：
 - **Windows 项目中的 XAML 文件**–生成操作：页面
 - **Xamarin .xaml XAML 文件**–生成操作：EmbeddedResource
 
-
 通常，IDE 将检测文件类型并建议正确的生成操作。
 
  <a name="Case_Sensitivity" />
-
 
 ### <a name="case-sensitivity"></a>区分大小写
 

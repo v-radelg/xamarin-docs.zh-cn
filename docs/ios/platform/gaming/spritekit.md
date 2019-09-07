@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: dfda8b1ec3e7cfbdec3fe313d305d78422487f08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d2466de4891c289f4686c37bc9fe73c24a5a48ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289319"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753054"
 ---
 # <a name="spritekit-in-xamarinios"></a>Xamarin 中的 SpriteKit
 
@@ -26,7 +26,7 @@ SpriteKit 包括一个二维的硬正文物理 API。 每个 sprite 都有一个
 SpriteKit 现在支持从其纹理中派生子画面的物理主体。 这样就可以轻松地实现外观更自然的冲突。
 
 例如，在以下冲突中，请注意香蕉和猴子如何在每个图像的图面上发生冲突：
- 
+
 ![](spritekit-images/image13.png "香蕉和猴子几乎在每个图像表面发生冲突")
 
 SpriteKit 使使用一行代码就能创建这样的物理体。 只需`SKPhysicsBody.Create`调用纹理和大小：子画面即可。PhysicsBody = SKPhysicsBody （sprite。纹理、sprite。大小）;
@@ -44,7 +44,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 调整 alpha 阈值（如这种方式）的效果会微调上一个冲突，以便在与香蕉发生冲突时，猴子会下降：
 
 ![](spritekit-images/image14.png "与香蕉发生冲突时，猴子会下降")
- 
+
 ## <a name="physics-fields"></a>物理字段
 
 SpriteKit 的另一个极佳补充是新的物理领域支持。 利用这些功能，您可以将 vortex 字段、径向重力字段和弹簧字段等一些东西命名为几个。
@@ -86,7 +86,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 这会导致 bananas 有，如字段节点周围的弹簧：
 
 ![](spritekit-images/image15.png "Bananas 有类似于 \"字段\" 节点附近的弹簧")
- 
+
 ## <a name="radial-gravity-field"></a>径向重力字段
 
 添加不同的字段类似。 例如，以下代码将创建一个径向重力字段：

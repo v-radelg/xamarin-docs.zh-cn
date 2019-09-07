@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 1b3c1af480db2c5642ef0b16aed795d2bb43290f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292396"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752013"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 简介
 
@@ -49,7 +49,7 @@ iOS 8 已帮助将 Apple 牢固地植物，而 iOS 设备则通过使用 HomeKit
 下图显示了 HomeKit 附件配置的基本层次结构：
 
 ![](introduction-to-ios8-images/image1.png "此图显示了 HomeKit 附件配置的基本层次结构")
- 
+
 若要开始 HomeKit，开发人员需要确保其预配配置文件已选择 HomeKit 服务。 Apple 还为开发人员提供了用于 Xcode 的 HomeKit 模拟器外接程序。 可在[Apple 开发人员中心](https://developer.apple.com/downloads/index.action)的下`Hardware IO Tools for Xcode`找到此项。 
 
 有关详细信息，请参阅我们的[HomeKit](~/ios/platform/homekit.md)指南。
@@ -71,7 +71,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 在 "**新建项目**" 对话框中**C#**  > ，导航到 " **iOS** > **Unified API** > **扩展**"，如下面的屏幕截图中所示：
 
 ![](introduction-to-ios8-images/image2.png "创建新扩展")
- 
+
 "新建项目" 对话框提供了7个用于创建应用扩展的新项目模板，如下所述。 请注意，许多扩展与 iOS 中的其他新 Api 有关，如文档选取器：
 
 - **操作**-这允许开发人员创建独特的自定义操作按钮，以允许用户执行某些任务
@@ -122,7 +122,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 如果将两个概念一起使用，则结果为 2 x 2 网格，该网格定义可在不同方向上使用的不同可能大小，如下图所示：
 
 ![](introduction-to-ios8-images/image3.png "表示 2 x 2 网格的关系图，该网格定义可在不同方向使用的不同可能大小")
- 
+
 有关大小类的详细信息，请参阅[统一情节提要简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 
 ## <a name="photo-kit"></a>照片工具包
@@ -163,8 +163,6 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 ## <a name="summary"></a>总结
 本文介绍了 iOS 8 中 Apple 引入的一些新功能。
-
-
 
 ## <a name="related-links"></a>相关链接
 

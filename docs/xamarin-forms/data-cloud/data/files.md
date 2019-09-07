@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529235"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760569"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的文件处理
 
@@ -118,7 +118,6 @@ listView.ItemsSource = monkeys;
 - **同步项目** - 编辑每个平台的项目属性，以使用相同程序集名称和默认命名空间。 然后，可以将该值硬编码，作为共享项目中嵌入式资源 ID 的前缀。
 - **#if 编译器指令** - 使用编译器指令设置正确的资源 ID 前缀，并使用该值动态构造正确的资源 ID。
 
-
 说明第二个选项的代码如下所示。 编译器指令用于选择硬编码的资源前缀（通常与引用项目的默认命名空间相同）。 然后，将 `resourcePrefix` 变量与嵌入的资源文件名串联起来，从而创建有效的资源 ID。
 
 ```csharp
@@ -169,4 +168,3 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 - [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 中的文件系统](~/ios/app-fundamentals/file-system.md)
-

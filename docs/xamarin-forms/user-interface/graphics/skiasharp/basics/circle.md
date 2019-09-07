@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 876379a1d515517054d9e0fa2657e8bc10dc749f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888515"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759534"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 绘制一个简单的圆圈
 
@@ -154,10 +154,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 > [!NOTE]
 > `SKPaint`类定义[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)若要启用在图形的呈现抗锯齿。 抗锯齿通常导致直观地平滑边缘，因此您可能需要将此属性设置为`true`中的大多数您`SKPaint`对象。 为了简单起见，此属性是_不_设置中的大多数示例页面。
 
-尽管圆轮廓的宽度指定为25像素&mdash;或圆&mdash;的半径的四分之一, 但它看起来很薄, 但有一个充分的理由:线条宽度的一半被蓝色圆圈遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
+尽管圆轮廓的宽度指定为25像素&mdash;或圆&mdash;的半径的四分之一，但它看起来很薄，但有一个充分的理由：线条宽度的一半被蓝色圆圈遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
 
 中的下一个示例[与 Xamarin.Forms 集成](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文章演示是以可视方式。
-
 
 ## <a name="related-links"></a>相关链接
 

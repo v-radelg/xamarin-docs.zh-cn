@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: eb20c73ab66af5ca07bf2efb31d631d9fa9776dc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 335c385b5be77736f0e19852eb71f2a2329eb9a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287042"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768262"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin 中的布局选项
 
@@ -40,7 +40,6 @@ textfield1.Frame = new RectangleF(15, 277, 79, 27);
 textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
 ```
 
-
 若要测试自动调整设置，请在项目的选项中启用不同的**受支持设备方向**：
 
  [![](layout-options-images/image43a.png "自动调整设置")](layout-options-images/image43a.png#lightbox)
@@ -53,7 +52,6 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin;
 ```
 
-
 我们还可以使用设计器调整控件。 选择如下所示的 "struts" 将使图像保持右对齐状态，而不会被剪裁到视图底部：
 
  [![](layout-options-images/autoresize.png "Autorotation")](layout-options-images/autoresize.png#lightbox)
@@ -63,10 +61,6 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
  [![](layout-options-images/image44a.png "Autorotation")](layout-options-images/image44a.png#lightbox)
 
 请注意，由于`FlexibleWidth`设置的原因，文本视图和文本字段都延伸以保持相同的左右边距。 图像的上边缘和左边距是灵活的，这意味着它将保留下边距和右边距–旋转屏幕时，使图像处于视图中。 复杂布局通常需要在每个可见控件上组合这些设置，以使用户界面保持一致，并防止控件在视图的边界发生更改时（由于旋转或其他调整大小事件）。
-
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

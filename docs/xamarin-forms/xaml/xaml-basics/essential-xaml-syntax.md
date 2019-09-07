@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228058"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772887"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
@@ -85,7 +85,6 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 - `Label` 是*对象元素*。 它是 Xamarin.Forms 对象表示为一个 XML 元素。
 - `Text``VerticalOptions`，`FontAttributes`并`FontSize`是*属性的特性*。 它们是 Xamarin.Forms 属性表示为 XML 属性。
 - 在此最后一段中，`TextColor`变得*property 元素*。 它是 Xamarin.Forms 属性，但它现在是一个 XML 元素。
-
 
 定义的属性元素可能在第一次似乎是违反了 XML 语法，但它不是。 期间必须在 XML 中没有特殊含义。 对 XML 解码器，`Label.TextColor`是只是正常的子元素。
 
@@ -351,7 +350,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，属性必�
 </ContentPage>
 ```
 
-真正的问题是:为什么 XAML 文件中*不*需要这些属性元素？
+真正的问题是：为什么 XAML 文件中*不*需要这些属性元素？
 
 允许在 XAML 中使用 Xamarin.Forms 中定义的元素中被标记了一个属性`ContentProperty`类中的属性。 如果您查找`ContentPage`类在联机的 Xamarin.Forms 文档，您将看到此属性：
 
@@ -524,7 +523,7 @@ if (Device.RuntimePlatform == Device.iOS)
 ```
 
 > [!NOTE]
-> `OnPlatform`标记扩展还可以在 XAML 中用于根据每个平台自定义 UI 外观。 它提供与`OnPlatform`和`On`类相同的功能, 但具有更简洁的表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+> `OnPlatform`标记扩展还可以在 XAML 中用于根据每个平台自定义 UI 外观。 它提供与`OnPlatform`和`On`类相同的功能，但具有更简洁的表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
 
 ## <a name="summary"></a>总结
 

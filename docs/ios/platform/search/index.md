@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: eb88f7c1de12eee59ea4c2a271079e6b96c29b09
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286598"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769491"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin 中搜索 Api
 
@@ -89,8 +89,6 @@ iOS 10 提供了新的方法，可让系统在适当的时间自动向用户提�
 ## <a name="summary"></a>总结
 
 本文介绍了 iOS 9 为 Xamarin iOS 应用提供的新搜索 API 功能。 它涵盖了[NSUserActivity](nsuseractivity.md)、用于索引内容的[核心聚光灯](corespotlight.md)和[Web 标记](web-markup.md)方法。 完成时，只需简短地讨论何时应使用给定的搜索方法和应编制索引的内容类型。
-
-
 
 ## <a name="related-links"></a>相关链接
 

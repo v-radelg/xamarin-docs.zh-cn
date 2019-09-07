@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: de0db40fb678bf88a18c6be42d89644d41583b99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280105"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772714"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Xamarin 中的工具栏
 
@@ -357,7 +357,6 @@ public override void AwakeFromNib ()
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用工具栏和工具栏项。 它介绍了如何在 Xcode 的 Interface Builder 中创建和维护工具栏，某些 UI 控件如何自动使用工具栏项，如何在代码中C#使用工具栏，以及如何启用和禁用工具栏项。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d9174e9b2d6c056c94b405033a25eeb787c92f9f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284148"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768770"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 标记
 
@@ -91,7 +91,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="Root_Element_Syntax" />
 
-
 ## <a name="root-element-syntax"></a>根元素语法
 
 Root 元素包含以下值：
@@ -99,11 +98,9 @@ Root 元素包含以下值：
 - `title`
 - `sections` （可选）
 
-
 根元素可以作为元素出现在节内，以创建嵌套控制器。 在这种情况下，必须`"type"`将额外的属性设置为`"root"`
 
  <a name="url" />
-
 
 ### <a name="url"></a>URL
 
@@ -111,13 +108,11 @@ Root 元素包含以下值：
 
  <a name="group" />
 
-
 ### <a name="group"></a>组
 
 如果设置此设置，则将设置根元素的组名。 组名称用于选取一个摘要，该摘要显示为元素中一个嵌套元素的根元素的值。 这是复选框或单选按钮的值。
 
  <a name="radioselected" />
-
 
 ### <a name="radioselected"></a>radioselected
 
@@ -125,13 +120,11 @@ Root 元素包含以下值：
 
  <a name="title" />
 
-
 ### <a name="title"></a>标题
 
 如果存在，它将是用于 RootElement 的标题。
 
  <a name="type" />
-
 
 ### <a name="type"></a>type
 
@@ -139,13 +132,11 @@ Root 元素包含以下值：
 
  <a name="sections" />
 
-
 ### <a name="sections"></a>节
 
 这是包含各个部分的 Json 数组
 
  <a name="Section_Syntax" />
-
 
 ## <a name="section-syntax"></a>节语法
 
@@ -155,9 +146,7 @@ Root 元素包含以下值：
 - `footer` （可选）
 - `elements` 数组
 
-
  <a name="header" />
-
 
 ### <a name="header"></a>标题
 
@@ -165,13 +154,11 @@ Root 元素包含以下值：
 
  <a name="footer" />
 
-
 ### <a name="footer"></a>尾行
 
 如果存在，则页脚显示在部分的底部。
 
  <a name="elements" />
-
 
 ### <a name="elements"></a>元素
 
@@ -182,11 +169,9 @@ Root 元素包含以下值：
 - `entry`行（常规或密码）
 - `boolean`值（使用开关或图像）
 
-
 字符串元素可用作按钮，方法是提供一个方法，以便在用户点击该单元或附件时进行调用。
 
  <a name="Rendering_Elements" />
-
 
 ## <a name="rendering-elements"></a>呈现元素
 
@@ -230,7 +215,6 @@ Root 元素包含以下值：
 
  <a name="accessory" />
 
-
 ### <a name="accessory"></a>附件
 
 确定要显示在呈现元素中的附件类型，可能的值为：
@@ -239,11 +223,9 @@ Root 元素包含以下值：
 - `detail-disclosure`
 - `disclosure-indicator`
 
-
 如果值不存在，则不显示附件
 
  <a name="background" />
-
 
 ### <a name="background"></a>背景
 
@@ -251,20 +233,17 @@ Root 元素包含以下值：
 
  <a name="caption" />
 
-
 ### <a name="caption"></a>caption
 
 要在呈现元素上显示的主字符串。 可以通过设置`"textcolor"`和`"font"`属性来自定义字体和颜色。 呈现样式由`"style"`属性确定。
 
  <a name="color_and_detailcolor" />
 
-
 ### <a name="color-and-detailcolor"></a>color 和 detailcolor
 
 用于主文本或详细文本的颜色。
 
  <a name="detailfont_and_font" />
-
 
 ### <a name="detailfont-and-font"></a>detailfont 和字体
 
@@ -274,9 +253,7 @@ Root 元素包含以下值：
 - Helvetica
 - "Helvetica-14"
 
-
  <a name="linebreak" />
-
 
 ### <a name="linebreak"></a>linebreak
 
@@ -289,15 +266,13 @@ Root 元素包含以下值：
 - `tail-truncation`
 - `word-wrap`
 
-
 和`character-wrap` `"lines"`均可与属性设置为零的属性一起使用，以将渲染元素变为多行元素。 `word-wrap`
 
  <a name="ontap_and_onaccessorytap" />
 
-
 ### <a name="ontap-and-onaccessorytap"></a>ontap 和 onaccessorytap
 
-这些属性必须指向应用程序中采用对象作为参数的静态方法名称。 使用 FromFile 或 FromJson 方法创建层次结构时，可以传递可选的对象值 JsonDialog。 然后，此对象值将传递给方法。 您可以使用此方法将某个上下文传递给静态方法。 例如：
+这些属性必须指向应用程序中采用对象作为参数的静态方法名称。 使用 FromFile 或 FromJson 方法创建层次结构时，可以传递可选的对象值 JsonDialog。 然后，此对象值将传递给方法。 您可以使用此方法将某个上下文传递给静态方法。 例如:
 
 ```csharp
 class Foo {
@@ -316,13 +291,11 @@ class Foo {
 
  <a name="lines" />
 
-
 ### <a name="lines"></a>文本行
 
 如果此值设置为零，则它会使元素自动调整大小，具体取决于所包含字符串的内容。 为此，您还必须将`"linebreak"`属性设置为`"character-wrap"`或`"word-wrap"`。
 
  <a name="style" />
-
 
 ### <a name="style"></a>样式
 
@@ -334,9 +307,7 @@ class Foo {
 - `"value2"`
 - `"subtitle"`：带有副标题的文本。
 
-
  <a name="subtitle" />
-
 
 ### <a name="subtitle"></a>标题
 
@@ -345,13 +316,11 @@ class Foo {
 
  <a name="textcolor" />
 
-
 ### <a name="textcolor"></a>textcolor
 
 用于文本的颜色。
 
  <a name="value" />
-
 
 ### <a name="value"></a>值
 
@@ -359,10 +328,9 @@ class Foo {
 
  <a name="Boolean_Elements" />
 
-
 ## <a name="boolean-elements"></a>布尔值元素
 
-布尔值元素应将类型设置`"bool"`为，可以包含`"caption"`要显示的， `"value"`并且设置为 true 或 false。 如果设置`"on"`了`"off"`和属性，则假定它们是图像。 相对于应用程序中的当前工作目录解析映像。 如果要引用绑定相关的文件，可以使用`"~"`作为快捷方式来表示应用程序包目录。 例如`"~/favorite.png"` ，将是包含在绑定文件中的最喜爱的 .png。 例如:
+布尔值元素应将类型设置`"bool"`为，可以包含`"caption"`要显示的， `"value"`并且设置为 true 或 false。 如果设置`"on"`了`"off"`和属性，则假定它们是图像。 相对于应用程序中的当前工作目录解析映像。 如果要引用绑定相关的文件，可以使用`"~"`作为快捷方式来表示应用程序包目录。 例如`"~/favorite.png"` ，将是包含在绑定文件中的最喜爱的 .png。 例如：
 
 ```json
 { 
@@ -382,13 +350,11 @@ class Foo {
 
  <a name="type" />
 
-
 ### <a name="type"></a>type
 
 类型可以设置为`"boolean"`或。 `"checkbox"` 如果设置为布尔值，则它将使用 UISlider 或映像（ `"on"`如果`"off"`同时设置了和）。 如果设置为复选框，则将使用 checkbox。 `"group"`属性可用于标记属于特定组的布尔元素。 如果包含根`"group"`的属性为根，则这非常有用，它将使用属于同一组的所有布尔值（或复选框）的计数来汇总结果。
 
  <a name="Entry_Elements" />
-
 
 ## <a name="entry-elements"></a>Entry 元素
 
@@ -423,13 +389,11 @@ class Foo {
 
  <a name="autocorrect" />
 
-
 ### <a name="autocorrect"></a>自动
 
 确定要用于该项的自动更正样式。 可能的值为 true 或 false （或字符串`"yes"`和`"no"`）。
 
  <a name="capitalization" />
-
 
 ### <a name="capitalization"></a>大小写
 
@@ -440,16 +404,13 @@ class Foo {
 - `sentences`
 - `words`
 
-
  <a name="caption" />
-
 
 ### <a name="caption"></a>caption
 
 要用于该项的标题
 
  <a name="keyboard" />
-
 
 ### <a name="keyboard"></a>键盘
 
@@ -465,16 +426,13 @@ class Foo {
 - `twitter`
 - `url`
 
-
  <a name="placeholder" />
-
 
 ### <a name="placeholder"></a>placeholder
 
 当项具有空值时显示的提示文本。
 
  <a name="return-key" />
-
 
 ### <a name="return-key"></a>返回键
 
@@ -492,9 +450,7 @@ class Foo {
 - `send`
 - `yahoo`
 
-
  <a name="value" />
-
 
 ### <a name="value"></a>值
 
@@ -502,14 +458,12 @@ class Foo {
 
  <a name="Radio_Elements" />
 
-
 ## <a name="radio-elements"></a>单选元素
 
 单选元素具有类型`"radio"`。 所选的项由`radioselected`属性在其包含的根元素上选取。
 此外，如果为`"group"`属性设置了值，则此单选按钮属于该组。
 
  <a name="Date_and_Time_Elements" />
-
 
 ## <a name="date-and-time-elements"></a>日期和时间元素
 
@@ -535,7 +489,6 @@ class Foo {
 ```
 
  <a name="Html/Web_Element" />
-
 
 ## <a name="htmlweb-element"></a>Html/Web 元素
 

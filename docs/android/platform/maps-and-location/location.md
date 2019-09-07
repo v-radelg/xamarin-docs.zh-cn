@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61532eb1e31db6a862275180394b2b5ba9b05f8e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280599"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761718"
 ---
 # <a name="location-services-on-android"></a>Android 上的位置服务
 
@@ -75,11 +75,10 @@ else
 
 应用程序必须能够容忍用户不会授予权限（或废除了权限）的情况，并有适当的方式来处理这种情况。 请参阅[权限指南](~/android/app-fundamentals/permissions.md)，以了解有关在 Xamarin 中实施运行时权限检查的更多详细信息。
 
-
 ## <a name="using-the-fused-location-provider"></a>使用带保险丝的位置提供程序
 
 带保险丝的位置提供程序是 Android 应用程序从设备接收位置更新的首选方式，因为它将在运行时有效地选择位置提供程序，以便以电池有效的方式提供最好的位置信息。 例如，在户外浏览的用户会获得最佳位置，并使用 GPS 阅读。 如果用户随后会走到室外，其中 GPS 的工作效果很差（如果根本如此），则已保险丝的位置提供商可能会自动切换到 WiFi，这会使室内工作更好。
- 
+
 带保险丝的位置提供程序 API 提供各种其他工具来提供可识别位置的应用程序，包括地理围栏和活动监视。 在本部分中，我们将重点介绍设置`LocationClient`、建立提供程序和获取用户位置的基本知识。
 
 带保险丝的位置提供程序是[Google Play Services](https://developer.android.com/google/play-services/index.html)的一部分。

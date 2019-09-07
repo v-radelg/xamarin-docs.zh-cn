@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bc2990ef82e1bccd4f9e530eb67265eeae528a9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6fd6484e547f22f1dc7f27578834b5292d6d2d2a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292142"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770009"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin-Mac 故障排除提示
 
@@ -32,7 +32,6 @@ ms.locfileid: "70292142"
 - 如果可能，请提供一个显示问题的小示例程序。 在查找问题的源代码页面上深入更多的时间和精力。
 
 - 知道您对应用程序所做的更改会导致出现问题，从而快速缩小问题的根源。 请注意，如果你最近升级了 Xamarin 的版本，请修整你的应用程序的各个部分以找出导致问题的部分，或测试以前的版本，以了解引入该问题的更改会非常有帮助。
-
 
 ### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>当应用程序崩溃但没有输出时要执行的操作
 

@@ -7,28 +7,25 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 9d589af6249063add3dc9b085463fde9edd8e449
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: aa2f52be4e485fb55a949a0327161bd1c301334c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278438"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769712"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>为什么我的 iOS 生成会失败，并显示“在 keychain 中未找到有效的 iPhone 代码签名密钥”？
 
 ## <a name="cause-of-the-error"></a>错误的原因
 当有问题的项目正在查找有效的代码签名凭据但找不到它们时，会出现此错误消息。 在物理 iOS 设备上进行测试和部署需要进行代码签名;以及即席 & 应用商店版本。 
 
-
 ### <a name="provisioning-devices"></a>预配设备
 如果之前未预配 iOS 设备，以下指南将引导你完成完整的分步过程：[设备预配指南](~/ios/get-started/installation/device-provisioning/index.md)
-
 
 ## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模拟器时的 Bug
 
 > [!NOTE]
 > 此问题已在最新版本的 Xamarin for Visual Studio 中得到解决。 但是，如果该软件的最新版本发生问题，请使用完整的版本信息和完整的生成日志输出来记录[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
 
 Xamarin 中存在 bug。 Visual Studio 3.11 导致了 Xamarin. Forms 模板中的 iOS 项目，以将 codesign info.plist 添加到模拟器生成;使用模拟器有效地阻止测试。
 

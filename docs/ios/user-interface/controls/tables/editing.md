@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90ef335bd3683028d5f9951cdf2ca341158209b9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9960167e2f71531e5ffeaecac94aede5d5ea3340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284202"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768892"
 ---
 # <a name="editing-tables-with-xamarinios"></a>用 Xamarin 编辑表
 
@@ -30,7 +30,6 @@ ms.locfileid: "70284202"
 - **CommitEditingStyle** -表源检测是否重写了此方法，并自动启用了轻扫到删除手势。 方法的实现应`DeleteRows` `UITableView`在上调用以使单元格消失，同时还会从模型中删除基础数据（例如，数组、字典或数据库）。 
 - **CanEditRow** –如果重写 CommitEditingStyle，则假定所有行都是可编辑的。 如果实现了此方法并返回 false （对于某些特定的行，或对于所有行），则将不会在该单元格中使用 "轻扫到删除" 手势。 
 - **TitleForDeleteConfirmation** –（可选）指定 "**删除**" 按钮的文本。 如果未实现此方法，则按钮文本将为 "Delete"。 
-
 
 这些方法在`TableSource`类中实现，如下所示：
 
@@ -61,7 +60,6 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 在此示例中`UITableViewSource` ，已更新，以`List<TableItem>`使用（而不是字符串数组）作为数据源，因为它支持添加和删除集合中的项。
 
-
 ## <a name="edit-mode"></a>编辑模式
 
 当表处于编辑模式时，用户会在每一行上看到一个红色的 "停止" 小组件，在接触时显示 "删除" 按钮。 该表还会显示一个 "句柄" 图标，以指示可以通过拖动行来更改顺序。
@@ -75,7 +73,6 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 - **CanMoveRow** –返回 true 以启用移动 "handle" 或 false 以阻止移动。 
 - **EditingStyleForRow** -当表处于编辑模式时，此方法的返回值将确定该单元格是否显示 "红色删除" 图标或 "绿色添加" 图标。 如果`UITableViewCellEditingStyle.None`行不应为可编辑，则返回。 
 - **MoveRow** –移动行时调用，以便可以修改基础数据结构以匹配表中显示的数据。 
-
 
 前三个方法的实现是相对直接的–除非您希望使用`indexPath`来更改特定行的行为，而只是将整个表的返回值硬编码。
 
@@ -128,7 +125,6 @@ table.SetEditing (true, true);
 table.SetEditing (false, true);
 ```
 
-
 ## <a name="row-insertion-editing-style"></a>行插入编辑样式
 
 表中的行插入是一种不常见的用户界面–标准 iOS 应用中的主要示例是 "**编辑联系人**" 屏幕。 此屏幕截图显示行插入功能的工作方式–在编辑模式下还有一个附加行（单击此项时）会将其他行插入数据中。 完成编辑后，将删除临时 **（添加新的）** 行。
@@ -141,12 +137,10 @@ table.SetEditing (false, true);
 - **CustomizeMoveTarget** -当用户正在移动某个单元时，此可选方法的返回值可以覆盖其位置选择。 这意味着，可以防止它们在某些位置（例如，在 "**添加新**的" 行之后移动任何行） "删除" 单元格。 
 - **CanMoveRow** –返回 true 以启用移动 "handle" 或 false 以阻止移动。 在此示例中，最后一行会隐藏移动 "句柄"，因为它仅用于作为 "插入" 按钮。 
 
-
 我们还添加了两个自定义方法来添加 "insert" 行，然后在不再需要时再次将其删除。 它们是从 "**编辑**" 和 "**完成**" 按钮调用的：
 
 - **WillBeginTableEditing** –当 "**编辑**" 按钮触摸时， `SetEditing`它将调用以在编辑模式下放置表。 这会触发 WillBeginTableEditing 方法，在此方法中，我们将在表的末尾显示 " **（新增）** " 行以充当 "插入按钮"。 
 - **DidFinishTableEditing** –再次调用 "完成" 按钮`SetEditing`以关闭编辑模式。 当不再需要编辑时，示例代码将从表中删除 **（添加新的）** 行。 
-
 
 示例文件**TableEditModeAdd/Code/TableSource**中实现了这些方法重写：
 
@@ -219,7 +213,6 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 ```
 
 不经常使用此行插入 UI 模式，不过，您也可以使用`UITableView.BeginUpdates`和`EndUpdates`方法对任何表中的单元格的插入或删除操作进行动画处理。 使用这些方法的规则`RowsInSection`是在`BeginUpdates`和`EndUpdates`调用之间返回的值之间的差异必须与使用`InsertRows`和`DeleteRows`方法添加/删除的单元格数匹配。 如果基础数据源未更改为与表视图中的插入/删除相匹配，则会发生错误。
-
 
 ## <a name="related-links"></a>相关链接
 

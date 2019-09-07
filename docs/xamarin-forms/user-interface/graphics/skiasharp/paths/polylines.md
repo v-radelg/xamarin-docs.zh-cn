@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: f326a2ef449b7c807be150a002a4afc600d9908d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f635e6e20a4cec9b8cc735bc733b678263cd024a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652707"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759178"
 ---
 # <a name="polylines-and-parametric-equations"></a>折线和参数等式
 
@@ -120,7 +120,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 [![](polylines-images/archimedeanspiral-small.png "三重 Archimedean 螺旋页屏幕截图")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 螺旋页面的三个屏幕截图")
 
 请注意，`SKPath`中创建`using`块。 这`SKPath`消耗的内存比`SKPath`对象中的上一个程序，建议的`using`块是更适合释放任何非托管的资源。
-
 
 ## <a name="related-links"></a>相关链接
 

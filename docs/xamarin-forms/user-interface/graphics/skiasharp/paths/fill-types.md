@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 46442e2377400cb3488f1a9e2fc8d47f27bbacfc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655794"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770508"
 ---
 # <a name="the-path-fill-types"></a>路径填充类型
 
@@ -224,7 +224,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 它是代码的使用最少创建一个有趣图像：
 
 [![](fill-types-images/overlappingcircles-small.png "三个重叠圆圈页屏幕截图")](fill-types-images/overlappingcircles-large.png#lightbox "三个重叠圆圈页屏幕截图")
-
 
 ## <a name="related-links"></a>相关链接
 

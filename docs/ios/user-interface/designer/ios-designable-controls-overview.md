@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e934059f5428780ea19917068503b58961ac5673
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51afbdf79248af6f76426dd0e0c862e506a0a22f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284184"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768771"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自定义控件
 
@@ -41,7 +41,6 @@ Xamarin Designer for iOS 是一种功能强大的工具，可用于可视化应�
 1. 属性具有[ExportAttribute](xref:Foundation.ExportAttribute)以及设置为 True 的[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) 。
 1. 属性类型为数值类型、枚举类型、字符串、布尔值、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)或[UIImage](xref:UIKit.UIImage)。 将来可能会扩展此支持类型的列表。
 
-
 还可以使用[DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)来修饰属性，以指定在属性面板中为其显示的标签。
 
 ## <a name="initialization"></a>初始化
@@ -49,7 +48,6 @@ Xamarin Designer for iOS 是一种功能强大的工具，可用于可视化应�
 对于`UIViewController`子类，你应为依赖于在设计器中创建的视图的代码使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法。
 
 对于`UIView`和其他`NSObject`子类，建议使用[AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法在从布局文件中加载自定义控件后执行自定义控件的初始化。 这是因为在运行控件的构造函数时，不会设置属性面板中设置的任何自定义属性，但在调用之前`AwakeFromNib`将设置这些属性：
-
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -131,7 +129,6 @@ public class CustomView : UIView {
 - 执行方法，并调用该组件的`Initialize`方法。 `AwakeFromNib`
 - 在`Initialize` `Counter`属性的值中，将重置为零（0）。
 
-
 若要修复上述情况，请在其他`Counter`位置（例如在组件的构造函数中）初始化属性，或者不`AwakeFromNib`重写方法`Initialize` ，并在组件不需要进一步初始化的情况下调用当前由其构造函数处理。
 
 ## <a name="design-mode"></a>设计模式
@@ -140,7 +137,6 @@ public class CustomView : UIView {
 
 - 应用捆绑资源在设计模式下不可用。 在通过[UIImage 方法](xref:UIKit.UIImage)加载时，图像可用。
 - 异步操作（如 web 请求）不应在设计模式下执行。 设计图面不支持动画或对控件的 UI 的任何其他异步更新。
-
 
 自定义控件可以实现[IComponent](xref:System.ComponentModel.IComponent) ，并使用[DesignMode](xref:System.ComponentModel.ISite.DesignMode)属性来检查它是否位于设计图面上。 在此示例中，标签会在运行时显示设计图面上的 "设计模式" 和 "运行时"：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 367f0b6a44482762f8609eb959e154c942ff14f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291823"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768490"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>xib 在 Xamarin 中生成代码
 
@@ -72,7 +72,6 @@ Visual Studio for Mac 使用设计器文件位置的项目默认命名空间生�
 
 1. 如果键入`partial`非设计器类部件的类体，Visual Studio for Mac 将提供自动完成所有未实现的分部方法的签名。
 2. 分部方法签名具有应用的属性，可将这些属性公开给目标-C 环境，因此，它们可以作为对应的操作进行处理。
-
 
 如果需要，您可以忽略分部方法，并通过将特性应用于其他方法来实现该操作，也可以让其通过基类。
 

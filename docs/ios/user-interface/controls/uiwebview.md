@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e593a594bbf0fd6398c277d531258f6fded515f1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bc97f14066456a07ee7ce62131985194bbe83811
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282549"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768377"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web 视图
 
@@ -27,9 +27,9 @@ iOS 11 引入了对`WKWebView`和`SFSafariViewController`的新更改。 有关�
 `UIWebView`是 Apple 在您的应用程序中提供 web 内容的传统方法。 它已在 iOS 2.0 中发布，并已在8.0 后弃用。
 
 如果计划支持早于8.0 的 iOS 版本，则必须使用`UIWebView`。 `UIWebView`由于对性能的优化比替代方法更少，因此建议你检查用户的 iOS 版本。 如果8.0 或更高版本，使用下面的其中一个选项将创建更好的用户体验。
- 
+
 若要将 UIWebView 添加到你的 Xamarin iOS 应用，请使用以下代码：
- 
+
 ```
 webView = new UIWebView (View.Bounds);
 View.AddSubview(webView);
@@ -43,7 +43,6 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 [![](uiwebview-images/webview.png "ScalesPagesToFit 的效果")](uiwebview-images/webview.png#lightbox)
 
 有关使用`UIWebView`的详细信息，请参阅以下食谱：
-
 
 - [加载网页](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_a_web_page)
 - [加载本地内容](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
@@ -79,11 +78,11 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 <a name="safariviewcontroller" />
 
 ## <a name="sfsafariviewcontroller"></a>SFSafariViewController
- 
+
  `SFSafariViewController`是从应用提供 web 内容并在 iOS 9 及更高版本中提供的最新方式。 与`UIWebView`或`WKWebView`不同，`SFSafariViewController`是视图控制器，因此不能与其他视图一起使用。 你应以`SFSafariViewController`新的视图控制器形式显示，其方式与显示任何视图控制器的方式相同。
- 
+
  `SFSafariViewController`实质上是一个可以嵌入到应用中的 "小型 safari"。 与 WKWebView 一样，它使用相同的 Nitro Javascript 引擎，还提供了一系列附加的 Safari 功能，如自动填充、读者，以及在移动 Safari 中共享 cookie 和数据的功能。 用户和`SFSafariViewController`之间的交互对你的应用程序不可访问。 您的应用程序将不能访问任何默认的 Safari 功能。
- 
+
 默认情况下，它还实现 "**完成**" 按钮，使用户能够轻松返回到你的应用程序、前进和后退导航按钮，使用户能够在网页堆栈中导航。 此外，它还为用户提供了一个地址栏，使他们可以放心地使用它们。 地址栏不允许用户更改 url。 
 
 这些实现无法更改，因此`SFSafariViewController` ，如果您的应用程序想要在不进行任何自定义的情况下显示网页，则最好将其用作默认浏览器。

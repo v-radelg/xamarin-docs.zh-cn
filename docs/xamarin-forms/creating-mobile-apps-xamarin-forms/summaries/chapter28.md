@@ -1,18 +1,18 @@
 ---
 title: 第 28 章的摘要。 位置和地图
-description: 用 Xamarin 创建移动应用程序:第 28 章的摘要。 位置和地图
+description: 用 Xamarin 创建移动应用程序：第 28 章的摘要。 位置和地图
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c0b60a5064bbcf605f66a7b9dcce5da1f84a015
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511702"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770901"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章的摘要。 位置和地图
 
@@ -234,8 +234,6 @@ IOS 应用程序中使用`Map`需要在 info.plist 文件中的两个行。
 [ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps)程序集还包含[ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder)类[ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))转换方法零或更多可能的地理位置和另一种方法将文本地址[ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) ，它将在另一个方向。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml)文件并[GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs)代码隐藏文件演示此功能。
-
-
 
 ## <a name="related-links"></a>相关链接
 

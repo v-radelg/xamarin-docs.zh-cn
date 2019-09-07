@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: cae0196fc29944ba8ae87fe43d256da090942f3a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 919eff45e11f60db51109904269addeec1038558
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286120"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752879"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>在 Xamarin 中使用核心图形和核心动画
 
@@ -25,7 +25,6 @@ ms.locfileid: "70286120"
 在开始之前，请下载本指南附带的*GraphicsDemo*示例。 可在[此处](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)下载它，它位于**GraphicsWalkthrough**目录中，通过双击来启动名为**GraphicsDemo_starter**的项目，然后打开`DemoView`该类。
 
 ## <a name="drawing-a-path"></a>绘制路径
-
 
 1. 在`DemoView`中， `CGPath`将变量添加到类，并在构造函数中对其进行实例化。 还声明了`CGPoint`两个`initialPoint`变量`latestPoint`，和，我们将使用这些变量来捕获构造路径时使用的触摸点：
 
@@ -179,7 +178,6 @@ ms.locfileid: "70286120"
 ## <a name="summary"></a>总结
 
 本文逐步介绍如何将图形和动画概念相互关联起来。 首先，我们介绍了如何使用核心图形`UIView`在中绘制路径，以响应用户触摸。 然后，我们介绍了如何使用核心动画使图像沿该路径行进。
-
 
 ## <a name="related-links"></a>相关链接
 

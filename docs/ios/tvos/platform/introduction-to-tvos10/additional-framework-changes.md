@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 88039da5faf911386232d2b189b27a2921f8144c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 99ee654b260a3a89b58578d352dd066a41753295
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289577"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769140"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 框架更改
 
@@ -194,8 +194,6 @@ tvOS 10 对核心映像框架进行了以下改进：
 - 异步调用`UIApplication`类的方法现在支持在打开完成后调用的完成处理程序。`OpenURL`
 - 使用新`UICloudSharingController`的和`UICloudSharingControllerDelegate`类启动 CloudKit 共享并修改其属性。
 - 利用预提取的单元， `UICollectionViews`通过新`UICollectionViewDataSourcePrefetching`委托提高滚动体验。
-
-
 
 ## <a name="related-links"></a>相关链接
 

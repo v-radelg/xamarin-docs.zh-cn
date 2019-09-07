@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227930"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767617"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 数据绑定基础知识
 
@@ -22,7 +22,7 @@ _数据绑定使两个用于链接，这样一个导致更改中的其他对象�
 
 ## <a name="data-bindings"></a>数据绑定
 
-数据绑定连接两个对象，调用的属性*源*并*目标*。 在代码中, 需要执行两个步骤:必须`BindingContext`将目标对象的属性设置为源对象, `SetBinding`并且必须在目标对象上调用方法 (通常与`Binding`类结合使用), 以将该对象的属性绑定到源的属性对象.
+数据绑定连接两个对象，调用的属性*源*并*目标*。 在代码中，需要执行两个步骤：必须`BindingContext`将目标对象的属性设置为源对象， `SetBinding`并且必须在目标对象上调用方法（通常与`Binding`类结合使用），以将该对象的属性绑定到源的属性对象.
 
 目标属性必须是可绑定属性，这意味着目标对象必须派生自`BindableObject`。 联机 Xamarin.Forms 文档将指示哪个属性是可绑定属性。 属性`Label`如`Text`与可绑定属性关联`TextProperty`。
 
@@ -114,11 +114,11 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` -值从源传输到目标
 - `OneWayToSource` -值从目标传输到源
 - `TwoWay` -值传输源和目标之间的这两种方式
-- `OneTime`-数据从源到目标进行, 但仅当`BindingContext`发生更改时,
+- `OneTime`-数据从源到目标进行，但仅当`BindingContext`发生更改时，
 
 下面的程序说明的一个常见用途`OneWayToSource`和`TwoWay`绑定模式。 四个`Slider`视图都为了控制`Scale`， `Rotate`， `RotateX`，并`RotateY`属性的`Label`。 首先，它看起来像的这四个属性`Label`应为数据绑定目标，因为每个所设置`Slider`。 但是，`BindingContext`的`Label`可以是只有一个对象，并且有四个不同的滑块。
 
-出于此原因, 所有绑定都以看似向后的方式设置:四个滑块中每个滑块的均设置`Label`为, 并在滑块的`Value`属性上设置绑定。 `BindingContext` 通过使用`OneWayToSource`和`TwoWay`模式下，这些`Value`属性可以设置的源属性，即`Scale`， `Rotate`， `RotateX`，并`RotateY`的属性`Label`:
+出于此原因，所有绑定都以看似向后的方式设置：四个滑块中每个滑块的均设置`Label`为，并在滑块的`Value`属性上设置绑定。 `BindingContext` 通过使用`OneWayToSource`和`TwoWay`模式下，这些`Value`属性可以设置的源属性，即`Scale`， `Rotate`， `RotateX`，并`RotateY`的属性`Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -405,8 +405,6 @@ namespace XamlSamples
 ## <a name="summary"></a>总结
 
 数据绑定提供了用于链接在页面内的两个对象之间或视觉对象之间的属性和基础数据的强大机制。 但在应用程序开始使用数据源时, 常用的应用程序体系结构模式开始显现出来，它作为一种有用的模式。 中对此进行了[第 5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 1cf28f83302d5035652df05aee26a6646df29fc0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f264f210a9228fd213f0c041abb5b26023c796f4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291814"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753272"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin 中的 Apple Pay
 
@@ -81,7 +81,6 @@ IOS 10 中添加了几个新的 Api，它们适用于 iOS 和 watchOS 以支持�
 ### <a name="passkit-framework-enhancements"></a>PassKit 框架增强功能
 
 在 iOS 10 中，已将 PassKit 框架扩展为支持外的`UIKit` Apple Pay，以允许卡颁发商在其应用中提供自己的卡。
-
 
 #### <a name="supporting-apple-pay-outside-of-uikit"></a>UIKit 之外的支持 Apple Pay
 

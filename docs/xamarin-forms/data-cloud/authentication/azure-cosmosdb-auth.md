@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0067a9e576e695a308e4326955b540be2ff46f61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b073e0233fb9c5511593ed80313f402c888c811
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657232"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771016"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库和 Xamarin 对用户进行身份验证
 
@@ -267,7 +267,6 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 ## <a name="summary"></a>总结
 
 本文介绍了如何将访问控制与已分区集合相结合，以便用户只能访问自己的 Xamarin.Forms 应用程序中的文档数据库文档。 用户的标识指定为分区键可确保分区的集合可以只存储为该用户的文档。
-
 
 ## <a name="related-links"></a>相关链接
 

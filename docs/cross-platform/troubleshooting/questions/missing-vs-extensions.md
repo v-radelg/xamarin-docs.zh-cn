@@ -6,12 +6,12 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: c81ef4e07a90f09d6e06d0d1f565febfcaacf922
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 180db6789ab9cc665ad815b943013b117a562709
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288393"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757073"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>安装后缺少 Visual Studio 扩展
 
@@ -44,7 +44,6 @@ ms.locfileid: "70288393"
     `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Xamarin\Xamarin\3.1.228.0`
 
     如果正确安装了扩展（对于版本3.1.228），文件夹中将有60项：
-
 
     ![](missing-vs-extensions-images/folder.png "资源管理器中的 \"Xamarin\3.1.228.0\" 文件夹内容列表")
 

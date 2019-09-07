@@ -7,19 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 10fc13124a1c97cc7534d8cf14b7717b2ddc4fa1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba86567213fe76847459df3df9b4450881e0651e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291042"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769235"
 ---
 # <a name="ipa-file-is-0-bytes"></a>IPA 文件为 0 字节
 
 > [!IMPORTANT]
 > 此问题已在最新版本的 Xamarin 中解决。 但是，如果该软件的最新版本发生问题，请使用完整的版本信息和完整的生成日志输出来记录[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
-
 
 以前版本的 Xamarin 中存在一些已知问题，这些问题可能会导致 Windows 上的 IPA 文件为0字节。 
 
