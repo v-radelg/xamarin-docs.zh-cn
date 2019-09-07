@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 966d7a21da0112383c08e862a357c3c1d4fb9c22
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fb30b07e958bddfcf0e0545ae17b925d7163c38a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289726"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766468"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>为 NuGet 创建新的多平台库
 
@@ -50,7 +50,6 @@ ms.locfileid: "70289726"
 
    ![](single-codebase-images/create-nuget-package.png "NuGet 包文件将保存在 bin 文件夹中，无论是调试还是发布，具体取决于配置")
 
-
 ## <a name="verifying-the-output"></a>验证输出
 
 NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
@@ -75,7 +74,6 @@ NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
 
 转换为共享项目后，请访问**项目选项 > NuGet 包 > 引用程序集**
 "[部分](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)，并确保选择任何所需的配置文件（以便 NuGet 继续与项目兼容它以前在中使用过）。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 6287dca8660c1147455beb22304b7f8637ac7fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292775"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753242"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin 中的嵌入式框架
 
@@ -74,4 +74,3 @@ Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（�
 - `--mono:framework`：将 Mono 运行时作为框架的链接。
 
 将 Mono 运行时链接为框架的一种情况是，即使对于不带扩展的应用程序，也要减小可执行文件大小，以克服 Apple 强制执行的任何大小限制。 作为参考，Mono 运行时为每个体系结构添加大约 1.7 MB （与 Xamarin 8.12 相比，其版本不同，甚至在应用之间有所不同）。 Mono 框架每个体系结构大约增加了 2.3 MB，这意味着，对于没有任何扩展的单体系结构应用程序，使应用程序与 Mono 运行时作为框架进行链接会将可执行文件收缩 ~ 1.7 MB，但会添加 ~ 2.3 MB 框架，从而在大约 0.6 MB 的应用一起或者中。
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ec4b99fd1c8ec28f6b4bbb30695613da6c40d60c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288950"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769048"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 页面控件
 
@@ -35,7 +35,6 @@ Apple 在使用页面控件时具有以下建议：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 1. 在**Solution Pad**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
 1. 从 "**工具箱**" 中将**页面控件**拖放到视图上：
 
@@ -44,14 +43,12 @@ Apple 在使用页面控件时具有以下建议：
 
     [![](page-controls-images/page03.png "\"小组件\" 选项卡")](page-controls-images/page03.png#lightbox)
 1. 接下来，向视图添加控件或笔势，以便在页的集合中向后移动。
-1. 最后，为控件指定**名称**，以便可以在代码中C#对其进行响应。 例如:
+1. 最后，为控件指定**名称**，以便可以在代码中C#对其进行响应。 例如：
 
     [![](page-controls-images/page04.png "命名控件")](page-controls-images/page04.png#lightbox)
 1. 保存更改。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
 1. 从 "**工具箱**" 中将**页面控件**拖放到视图上：
@@ -65,7 +62,6 @@ Apple 在使用页面控件时具有以下建议：
 
     [![](page-controls-images/page04-vs.png "命名控件")](page-controls-images/page04-vs.png#lightbox)
 1. 保存更改。
-
 
 -----
 
@@ -167,8 +163,6 @@ PageView.CurrentPage = PageNumber;
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用内设计和使用页面控件。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 58e57f9406642a3bb0ff108bffa89d77c3f2cebb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4d6144ad48b9e2f263137fb2474bc9eb278d93f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291384"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768974"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 设计器中使用表
 
@@ -28,13 +28,11 @@ ms.locfileid: "70291384"
 
  <a name="Static_Content" />
 
-
 ## <a name="static-content"></a>静态内容
 
 `UITableView`具有静态内容的可以在设计图面上直接设计表。 可以通过更改属性并添加控件，将单元拖到表中并进行自定义。
 
  <a name="Creating_a_Storyboard-driven_app" />
-
 
 ## <a name="creating-a-storyboard-driven-app"></a>创建情节提要驱动的应用
 
@@ -62,7 +60,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 - 其次，通过将对象拖放到视图上来创建 UI
 - 最后，将所需的 UIKit 类添加到每个视图中，并为各个控件提供一个名称，以便可以在代码中引用它们。
 
-
 情节提要完成后，可以添加代码以使一切正常工作。
 
 <a name="Layout_The_View_Controllers" />
@@ -85,7 +82,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 7. 将新的**UITableViewController**更改为**内容：静态单元**。 
 
-
 8. 新的 UITableViewController 必须具有其类名称和标识符集。 在**Properties Pad**中为**类**选择视图控制器并键入_TaskDetailViewController_ –这会在 Solution Pad 中创建新`TaskDetailViewController.cs`的文件。 输入**StoryboardID**作为_详细信息_，如以下示例中所示。 稍后将用于在代码中C#加载此视图：  
 
     [![设置情节提要 ID](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
@@ -93,8 +89,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 9. 情节提要设计图面现在应如下所示（根视图控制器的导航项标题已更改为 "任务板"）：
 
     [![设计图面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
-
-
 
 <a name="Create_the_UI" />
 
@@ -118,7 +112,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 - 在中 **Properties Pad** 下 **栏按钮项** 选择 **标识符：添加** (以使其 *+* 加号按钮)。 
 - 为其指定一个名称，以便可以在以后的代码中识别该名称。 请注意，需要为根视图控制器提供类名（例如**ItemViewController**），以允许您设置条形按钮项的名称。
 
-
 #### <a name="taskdetail-view-controller"></a>TaskDetail 视图控制器
 
 详细信息视图需要更多的工作。 需要将表视图单元拖到视图上，然后用标签、文本视图和按钮填充。 下面的屏幕截图显示完成的 UI，其中包含两个部分。 一个部分包含三个单元格、三个标签、两个文本字段和一个开关，而第二部分包含一个包含两个按钮的单元格：
@@ -136,7 +129,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 选择顶部部分，然后在 "**属性 > 表视图部分**将**行**更改为_3_，如下所示：
 
-
  [![将顶部部分设置为三行](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 对于每个单元，打开**Properties Pad**并设置：
@@ -144,7 +136,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 - **样式**：_自定义_
 - **标识符**：为每个单元选择唯一标识符（例如 "_标题_"、"_说明_"、"_完成_"）。
 - 拖动所需的控件以生成屏幕截图中显示的布局（将**UILabel**、 **UITextField**和**UISwitch**置于正确的单元上，并适当设置标签，即 ie。标题、说明和完成。
-
 
 在第二部分中，将 "**行**" 设置为 " _1_ "，并抓住单元格的底部调整大小控点，使其更高。
 
@@ -165,7 +156,6 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 - **UISwitch** ：_DoneSwitch_
 - **删除 UIButton** ：_DeleteButton_
 - **保存 UIButton** ：_SaveButton_
-
 
 <a name="Adding_Code" />
 
@@ -350,8 +340,6 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 - 创建具有静态内容的表以生成输入窗体。 这包括更改表样式并添加部分、单元格和 UI 控件。 
 - 如何创建 segue 并重写`PrepareForSegue`方法，以通知目标视图其所需的任何参数。 
 - 直接用`Storyboard.InstantiateViewController`方法加载情节提要视图。
-
-
 
 ## <a name="related-links"></a>相关链接
 

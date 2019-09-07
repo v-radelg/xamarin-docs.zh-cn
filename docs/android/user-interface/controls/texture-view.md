@@ -6,23 +6,23 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2017
-ms.openlocfilehash: 799e117e3a4cb6e3071680da90e6432f389c6682
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2857033c5cd69e9696d2ce82feaf8212300da2c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642559"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764803"
 ---
 # <a name="xamarinandroid-textureview"></a>Xamarin TextureView
 
-`TextureView`类是一个视图, 它使用硬件加速2d 呈现来启用视频或 OpenGL 内容流。 例如, 以下屏幕截图显示了`TextureView`从设备相机显示实时源:
+`TextureView`类是一个视图，它使用硬件加速2d 呈现来启用视频或 OpenGL 内容流。 例如，以下屏幕截图显示了`TextureView`从设备相机显示实时源：
 
 [![设备相机中的实时图像的示例屏幕截图](texture-view-images/22-textureviewcamera.png)](texture-view-images/22-textureviewcamera.png#lightbox)
 
-`SurfaceView`与类 (也可用于显示 OpenGL 或视频内容) 不同, TextureView 不会呈现在单独的窗口中。
-因此, `TextureView`可以像任何其他视图一样支持视图转换。 例如, 旋转`TextureView`可以通过设置其`Rotation`属性 (通过设置`Alpha`其属性等) 来实现。
+`SurfaceView`与类（也可用于显示 OpenGL 或视频内容）不同，TextureView 不会呈现在单独的窗口中。
+因此， `TextureView`可以像任何其他视图一样支持视图转换。 例如，旋转`TextureView`可以通过设置其`Rotation`属性（通过设置`Alpha`其属性等）来实现。
 
-因此, 通过, `TextureView`我们现在可以执行一些操作, 例如显示照相机中的实时流并对其进行转换, 如以下代码所示:
+因此，通过， `TextureView`我们现在可以执行一些操作，例如显示照相机中的实时流并对其进行转换，如以下代码所示：
 
 ```csharp
 public class TextureViewActivity : Activity,
@@ -65,16 +65,14 @@ public class TextureViewActivity : Activity,
 }
 ```
 
-上面的代码在活动`TextureView`的`OnCreate`方法中创建一个实例, 并`TextureView`将该活动设置为`SurfaceTextureListener`的。 若为`TextureView.ISurfaceTextureListener` , 则活动实现接口。 `SurfaceTextureListener` 当已准备好使用`OnSurfaceTextAvailable`时, 系统将调用方法。 `SurfaceTexture` 在此方法中, 我们将`SurfaceTexture`采用传入的, 并将其设置为相机的预览纹理。 然后, 可以根据上述示例中所示, 随意执行基于视图的`Rotation`常规操作, 如设置和。 `Alpha` 在设备上运行的生成的应用程序如下所示:
+上面的代码在活动`TextureView`的`OnCreate`方法中创建一个实例，并`TextureView`将该活动设置为`SurfaceTextureListener`的。 若为`TextureView.ISurfaceTextureListener` ，则活动实现接口。 `SurfaceTextureListener` 当已准备好使用`OnSurfaceTextAvailable`时，系统将调用方法。 `SurfaceTexture` 在此方法中，我们将`SurfaceTexture`采用传入的，并将其设置为相机的预览纹理。 然后，可以根据上述示例中所示，随意执行基于视图的`Rotation`常规操作，如设置和。 `Alpha` 在设备上运行的生成的应用程序如下所示：
 
-[![在设备上运行的应用的示例, 显示图像](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
+[![在设备上运行的应用的示例，显示图像](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
-若要使用`TextureView`, 必须启用硬件加速, 默认情况下, 它将在 API 级别14下启用。 此外, 由于本示例使用了照相机, `android.permission.CAMERA`因此必须在**androidmanifest.xml**中设置权限`android.hardware.camera`和功能。
-
-
+若要使用`TextureView`，必须启用硬件加速，默认情况下，它将在 API 级别14下启用。 此外，由于本示例使用了照相机， `android.permission.CAMERA`因此必须在**androidmanifest.xml**中设置权限`android.hardware.camera`和功能。
 
 ## <a name="related-links"></a>相关链接
 
-- [TextureViewDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
+- [TextureViewDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
 - [冰淇淋三明治](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

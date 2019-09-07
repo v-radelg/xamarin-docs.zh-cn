@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: ab5355459f12c8b3cb7fa5f262f015bfd64d3e08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290164"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769995"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin 中的数据绑定和键/值编码
 
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 首先， `[Register("PersonModel")]`属性注册类并将其公开给目标-C。 然后，类需要从`NSObject` （或`NSObject`继承自的子类）继承，这会添加几个允许类 KVC 兼容的基方法。 接下来， `[Export("Name")]`特性`Name`公开属性，并定义稍后用于通过 KVC 和 KVO 技术访问属性的键值。
 
-最后，若要能够以键值方式观察到对属性值的更改，访问器必须在和`WillChangeValue` `DidChangeValue`方法调用中包装其值的更改（指定与`Export`特性相同的键）。  例如:
+最后，若要能够以键值方式观察到对属性值的更改，访问器必须在和`WillChangeValue` `DidChangeValue`方法调用中包装其值的更改（指定与`Export`特性相同的键）。  例如：
 
 ```csharp
 set {
@@ -888,7 +888,6 @@ For more information on working with Collection Views, please see our [Collectio
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用数据绑定和键值编码。 首先，它介绍了如何使用C#键/值编码（KVC）和键-值观察（KVO）向目标-C 公开一个类。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的 UI 元素。 最后，它使用**数组控制器**和**树控制器**展示复杂的数据绑定。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbe1b374b97f64e0c28b2f89ca9f6d510511b74d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282433"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768841"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>适用于 Xamarin 的 Monotouch.dialog 简介
 
@@ -57,7 +57,6 @@ public class Expense
 - **低级别元素 api** –*元素 api*基于创建元素的层次结构树，这些元素表示屏幕及其组件。 元素 API 为开发人员提供了最大的灵活性和控制。 此外，元素 API 通过 JSON 提供对声明性定义的高级支持，这允许实现极其快速的声明，以及从服务器动态地生成 UI。 
 - **高级反射 API** – 也称为 *绑定* *API* 中的类进行批注与用户界面提示，然后 mt。D 自动创建基于对象的屏幕，并提供和内容之间的绑定是显示 （以及根据需要编辑） 在屏幕上，备份的基础对象。 上面的示例演示了反射 API 的用法。 此 API 不提供元素 API 执行的精细控制，但通过基于类属性自动生成元素层次结构，进一步降低了复杂性。 
 
-
 隶书.D 附带了大量内置 UI 元素，用于创建屏幕，但它也能识别自定义元素和高级屏幕布局的需求。 因此，可扩展性是融入 API 的一流功能。 开发人员可以扩展现有元素，或创建新元素，然后无缝集成。
 
 此外，MT。D 中内置了许多常见的 iOS UX 功能，如 "请求刷新" 支持、异步映像加载和搜索支持。
@@ -82,7 +81,6 @@ public class Expense
 - **RootElement**
 - **节**
 - **元素**
-
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
@@ -249,7 +247,6 @@ new StringElement ("Click me", () => {
 - 占位符文本（这是向用户提供提示的灰显文本）。 
 - 文本的值。
 
-
 占位符和值可以为 null。 但标题是必需的。
 
 在任何时候，访问其 Value 属性都可以检索的值`EntryElement`。
@@ -260,7 +257,6 @@ new StringElement ("Click me", () => {
 - 电话
 - URL
 - 电子邮件
-
 
 ### <a name="boolean-element"></a>Boolean 元素
 
@@ -427,7 +423,6 @@ dvc.ReloadComplete ();
 - `FinishSearch`
 - `PerformFilter`
 
-
 系统是可扩展的，因此，如果需要，可以更改此行为。
 
 ### <a name="background-image-loading"></a>正在加载背景图像
@@ -575,7 +570,6 @@ public override Source CreateSizingSource (bool unevenRows)
 ## <a name="summary"></a>总结
 
 本文介绍了有关 Monotouch.dialog 的许多信息。 它讨论了 MT 的基本原理。D 工作，并涵盖了包含 MT 的各种组件。2-d. 它还展示了 MT 支持的各种元素和表自定义。D 并讨论了 MT 的方式。可以通过自定义元素扩展 D。 此外，它还说明了 MT 中的 JSON 支持。D：允许从 JSON 动态创建元素。
-
 
 ## <a name="related-links"></a>相关链接
 

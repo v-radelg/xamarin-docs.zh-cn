@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2091e710352b25167b740e409955787ffec99e1c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286290"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768963"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注释和叠加
 
@@ -25,7 +25,6 @@ ms.locfileid: "70286290"
 首先创建一个新的**IOS 空项目**，并为其提供一个相关名称。 首先，将代码添加到视图控制器以显示 MapView，然后为我们的 MapDelegate 和自定义批注创建新类。 为此，请按照以下步骤进行操作：
 
 ## <a name="viewcontroller"></a>ViewController
-
 
 1. 将以下命名空间添加到`ViewController`：
 
@@ -110,9 +109,7 @@ ms.locfileid: "70286290"
 
     `Maps Walkthrough Docs Sample`。
 
-
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –自定义批注的类
-
 
 1. 我们将为名`ConferenceAnnotation`为的批注使用自定义类。 将以下类添加到项目中：
 
@@ -180,7 +177,6 @@ ms.locfileid: "70286290"
     ```
 
 这会完成中`ViewDidLoad`的代码。 现在，我们需要实现`MapDelegate`类来分别处理创建批注和重叠视图。
-
 
 ## <a name="mapdelegate"></a>MapDelegate
 
@@ -287,7 +283,6 @@ ms.locfileid: "70286290"
 ## <a name="summary"></a>总结
 
 本文介绍如何将批注添加到地图，以及如何为指定多边形添加覆盖区。 此外，我们还演示了如何向批注添加触控支持，以在地图上对图像进行动画处理。
-
 
 ## <a name="related-links"></a>相关链接
 

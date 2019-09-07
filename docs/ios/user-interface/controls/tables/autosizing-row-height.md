@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 00c2284a12d17e0dcd5a89cb0c39c1064665c6d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03d79c93821737afb1f8e1946ebb3b6380d7a527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288444"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768440"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>在 Xamarin 中自动调整行高
 
@@ -108,7 +108,6 @@ public override void ViewWillAppear (bool animated)
 执行此代码后，在运行应用时，每行都将根据单元原型中最后一个标签的高度进行收缩和增长。 例如:
 
 [![](autosizing-row-height-images/table07.png "示例表运行")](autosizing-row-height-images/table07.png#lightbox)
-
 
 ## <a name="related-links"></a>相关链接
 

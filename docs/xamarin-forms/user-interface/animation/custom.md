@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: b195e63bcc88c4d1c659216f99ab698773f73e9e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86fac9dd0c2f9281a0c828ace68fbf77679dce5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656808"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759842"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的自定义动画
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _动画类是所有 Xamarin.Forms 动画，创建一个或多个动画对象 ViewExtensions 类中的扩展方法使用构建基块。本文演示如何使用动画类来创建和取消动画，同步多个动画，并创建不通过现有的动画方法进行动画处理的属性进行动画处理的自定义动画。_
-
 
 在创建时，必须指定多个参数`Animation`对象，包括开始和结束值的属性进行动画处理，并更改属性的值的回调。 `Animation`对象还可以维护一系列子动画，可以运行并同步。 有关详细信息，请参阅[子动画](#child)。
 
@@ -180,7 +179,6 @@ await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ## <a name="summary"></a>总结
 
 本文演示了如何使用[ `Animation` ](xref:Xamarin.Forms.Animation)类来创建和取消动画、 同步多个动画，并创建不由现有动画进行动画处理的属性进行动画处理的自定义动画方法。 `Animation`类是所有 Xamarin.Forms 动画构建基块。
-
 
 ## <a name="related-links"></a>相关链接
 

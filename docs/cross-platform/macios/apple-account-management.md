@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 9629d775b45951279178dffa3600e7cd5073dd38
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290628"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766124"
 ---
 # <a name="apple-account-management"></a>Apple 帐户管理
 
@@ -55,7 +55,7 @@ Apple 帐户管理可在 Visual Studio for Mac、Visual Studio 2019 和 Visual S
     ![fastlane 对话框。](apple-account-management-images/image2.png)
 
 3. 输入你的 Apple ID 和密码，并单击 "**登录**" 按钮。 这会将你的凭据保存在此计算机上的 secure 密钥链中。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)用于安全地处理凭据并将其传递给 Apple 的开发人员门户。
- 
+
 4. 在 "警报" 对话框中选择 "**始终允许**"，以允许 Visual Studio 使用您的凭据：
 
     ![始终允许警报对话框](apple-account-management-images/image4.png)
@@ -81,13 +81,12 @@ Apple 帐户管理可在 Visual Studio for Mac、Visual Studio 2019 和 Visual S
     ![用户名和密码对话框](apple-account-management-images/prov1a.png)
 
 1. 成功添加帐户后，你将看到你的 Apple ID 和你的 Apple ID 所属的任何团队。
- 
+
 1. 选择任意团队并按**查看详细信息 ...** 按钮。 这会显示计算机上安装的所有签名标识和预配配置文件的列表：
 
     ![用户名和密码对话框](apple-account-management-images/prov2.png)
 
 -----
-
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理签名标识和预配配置文件
 

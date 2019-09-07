@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 4b1e232259d7b1816e64298b5c0b8853d8385c20
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283859"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768705"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch 设备上的测试
 
@@ -64,7 +64,6 @@ ms.locfileid: "70283859"
 
 ![](device-images/options-selectprofile.png "预配配置文件列表")
 
-
 <a name="testing" />
 
 ## <a name="testing-on-a-watch-device"></a>监视设备上的测试
@@ -88,7 +87,6 @@ ms.locfileid: "70283859"
 
 8. 如果成功安装了 "监视" 应用，则图标将保留在 "监视" 屏幕上-触控它，开始测试应用！
 
-
 ## <a name="troubleshooting"></a>疑难解答
 
 如果在部署过程中出现错误，请使用**视图 > pad > 设备日志**查看有关错误的详细信息。 下面列出了一些错误及其原因：
@@ -103,11 +101,9 @@ ms.locfileid: "70283859"
 
 这将在将来的版本中得到修复，之后，可以重新启用增量生成以利用更快的生成时间。
 
-
 ### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>在设备上进行调试时，无法启动监视应用
 
 尝试在物理设备上调试监视应用时，仅显示 & 加载 "微调框的图标（最终超时）。 此问题将在将来的版本中得到解决;解决方法是运行发布版本（将不允许调试）。
-
 
 ### <a name="invalid-application-executable-or-application-verification-failed"></a>应用程序可执行文件无效，或者应用程序验证失败
 
@@ -131,8 +127,6 @@ Invalid executable/Application Verification Failed
 
 - 监视应用的**应用 ID**不正确地在开发人员中心中启用了授权（如应用组）。
 
-
-
 ### <a name="install-never-finished"></a>安装从未完成
 
 ```csharp
@@ -142,7 +136,6 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 此错误可能表示 Watch 应用的**info.plist**文件中的键不必要（和无效）。 不应在 Watch 应用中包含用于 iOS 应用或监视扩展的键。
 
 <!--eg. NSLocationAlwaysUsageDescription -->
-
 
 ### <a name="waiting-for-debugger-to-connect"></a>"等待调试器连接"
 
@@ -156,4 +149,3 @@ waiting for debugger to connect
 
 添加到 .csproj 的**Microsoft.** **.csproj**文件会在部署过程中干扰 iOS 扩展的打包。 您可以跟踪[bug](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)。
 一种可能的解决方法是编辑 .csproj 文件，并手动将它们**移到最后一个元素。**
-

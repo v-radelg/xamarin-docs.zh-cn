@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6068dd148bfc3c2a778ca34753374bcecccb55d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280084"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752220"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的 WebKit 和 Safari 更改
 
@@ -43,7 +43,6 @@ sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.C
 
 在显示时`SFSafariViewController` ，可以更改此值。
 
-
 根据在 Safari 视图控制器内显示的内容，可能需要确保在用户滚动时菜单栏不会折叠。 这可以通过将新`BarCollapsedEnabled`属性设置为来`false`启用：
 
 ```csharp
@@ -58,7 +57,6 @@ var sfViewController = new SFSafariViewController(url, config);
 Apple 还在 iOS 11 中更新了 Safari 视图控制器中的隐私。 现在，浏览 cookie 和本地存储等数据仅存在于每个应用程序的基础上，而不是在 Safari 视图控制器的所有实例中存在。 这会使用户浏览活动在应用中保持私有。
 
 `SFSafariViewController`在 iOS 11 中还添加`window.open()`了其他功能，例如对 url 和支持的拖放支持。 可在[Apple SFSafariViewController 文档](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)中找到有关这些新功能的详细信息。
-
 
 ## <a name="webkit"></a>WebKit
 
@@ -106,4 +104,3 @@ config.SetUrlSchemeHandler(new MyHandler(), "xamarin-asset");
 webView = new WKWebView (View.Frame, config);
 webView.LoadRequest (new NSUrlRequest("xamarin-asset://xamarin.com"));
 ```
-

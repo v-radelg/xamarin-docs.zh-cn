@@ -6,12 +6,12 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: conceptdev
 ms.author: crdun
 ms.date: 10/09/2017
-ms.openlocfilehash: 0979a0b65cc3d5b4944dadaf67aaa14cf1b3cf73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287602"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766103"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 和 Xamarin
 
@@ -40,7 +40,6 @@ Xamarin 还提供适用于[iOS](https://www.nuget.org/packages/Xamarin.Azure.Not
 Microsoft 的 Web API 公开了类似于 REST 的接口，适用于 Xamarin 应用程序。
 可以轻松地启动[Azure 网站](https://trywebsites.azurewebsites.net/)并构建基于 WebAPI 的应用程序，以连接到 Xamarin 应用程序。
 
-
 ### <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[Web 服务简介](~/cross-platform/data-cloud/web-services/index.md)
 
 本教程介绍如何将 REST、WCF 和 SOAP web 服务技术与 Xamarin 移动应用程序集成。 它将检查各种服务实现、评估可用的工具和库，并提供用于使用服务数据的示例模式。 最后，它提供了有关使用 Xamarin 移动应用程序创建 RESTful web 服务以供使用的基本概述。
@@ -56,7 +55,6 @@ Microsoft 的 Web API 公开了类似于 REST 的接口，适用于 Xamarin 应�
 
 - [eShop](https://github.com/dotnet-architecture/eShopOnContainers) –电子书[体系结构系列](https://www.microsoft.com/net/learn/architecture)的示例。
 - [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) –版本2016中的 Azure + IoT 示例。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 8ecc0cf0ed1fe77f55044d44ecdfc43d6cb6b448
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b7dfeee92020be2fb40cfdfc5eb1b97d065b97e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289104"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758175"
 ---
 # <a name="localization"></a>本地化
 
@@ -44,7 +44,6 @@ ms.locfileid: "70289104"
 - 数据排序。
 
 无论你的应用面向哪个移动平台，这些提示都有助于你构建高质量的本地化应用程序。
-
 
 ## <a name="design-considerations"></a>设计注意事项
 
@@ -85,7 +84,6 @@ ms.locfileid: "70289104"
 - 图标–某些插图可以是特定于区域性的，你可以通过将图像本地化以反映本地了解来使应用更易于使用。
 - 颜色–某些区域性以不同的方式理解颜色–红色可能表示一个区域中出现警告，但在另一个区域祝您好运。 设计应用程序时，请检查本机扬声器，以确定是否应该构建一种本地化颜色的机制。
 
-
 ### <a name="videos-and-sound"></a>视频和声音
 
 对应用程序进行本地化时，视频和声音提出了特殊的挑战，因为在翻译字符串的过程中相对容易，记录多个 voiceover 音轨或视频剪辑可能既昂贵又困难。
@@ -93,7 +91,6 @@ ms.locfileid: "70289104"
 视频和声音文件的多个副本也可能会显著增加应用程序的大小（尤其是在将其本地化为大量语言或包含大量媒体文件时）。 用户安装应用后，你可能会考虑仅下载所需的语言资产，但这也可能导致网络速度较慢的用户体验。
 
 通常有多种方法可以解决本地化问题–最重要的一点是将它们提前考虑起来，并确保您的应用程序能够对其进行处理。
-
 
 ### <a name="dates-times-numbers-and-currency"></a>日期、时间、数字和货币
 
@@ -144,7 +141,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 - 词干–如果你的搜索是为了搜索类似的单词、word 根和其他搜索优化而构建的，则这些优化是为你支持的所有语言生成的吗？
 - 排序–确保正确地对结果进行排序（请参阅上文）。
 
-
 ### <a name="data-from-external-sources"></a>外部源中的数据
 
 许多应用程序将来自外部数据源的数据从 Twitter 和 RSS 源下载到天气、新闻或股票价格。 当向用户显示此信息时，您需要考虑您可能会向他们显示不相关或不可读的信息。
@@ -157,7 +153,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 这也可能会影响音频轨或视频的外部链接–在设计应用程序时，请务必提前计划源翻译的内容，或者确保用户界面在内容不会在其语言.
 
-
 ### <a name="dont-over-translate"></a>不过度翻译
 
 应用程序中的某些字符串可能不需要翻译，或者要求翻译人员需要特别注意。 示例可能包括：
@@ -169,20 +164,15 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 最后，请确保在某些字符串需要特殊处理时，为转换器提供详细说明。
 
-
 ### <a name="formatted-text"></a>带格式文本
 
 通常情况下，移动应用程序不会出现问题，因为字符串的格式通常不会太丰富。 但是，如果你的应用程序需要格式文本（例如粗体或斜体格式），则确保转换器知道如何输入格式，字符串文件会正确地存储它，并且在显示给用户之前正确设置格式（例如，不要意外允许将为用户提供格式设置代码。
-
-
 
 ## <a name="translation-tips"></a>翻译提示
 
 转换应用程序使用的字符串被视为本地化过程的一部分。 通常，此任务会外包给翻译服务，并由可能不知道你的应用程序或业务的多语言人员执行。
 
 以下提示可帮助你生成更易于正确转换的字符串，从而提高本地化应用的质量。
-
-
 
 ### <a name="localize-complete-strings-not-words"></a>本地化完整的字符串，而不是字词
 
@@ -208,7 +198,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 不建议**这样**做，因为它不一定适用于所有语言，因而翻译人员很难理解每个短段的上下文。 它还会导致重复使用已翻译的字符串，如果它们在不同的上下文中使用（然后进行了更新），则可能会导致问题。
 
-
 ### <a name="allow-for-parameter-re-ordering"></a>允许对参数重新排序
 
 某些编程语言需要额外的语法来指定字符串中参数的顺序，但 .NET 已支持编号占位符的概念，因此
@@ -227,7 +216,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 标记将按预期方式排序。 将字符串发送到转换器时，请确保包含每个占位符所包含内容的说明。
 
-
 ### <a name="use-multiple-strings-for-cardinality"></a>将多个字符串用于基数
 
 避免`"You have {0} message/s."`使用特定字符串来提供每种状态的字符串，以提供更好的用户体验：
@@ -242,7 +230,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 ```
 
 你必须在应用程序中编写代码，以计算正在显示的数字，并选择相应的字符串。 某些平台（包括 iOS 和 Android）具有内置功能，可根据当前语言/区域设置的首选项自动选择最佳复数字符串。
-
 
 ### <a name="allowing-for-gender"></a>允许性别
 
@@ -294,7 +281,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 其中一项已知服务是[LionBridge](http://www.lionbridge.com/)。 大多数专业服务支持所有常见的文件类型，包括字符串、XML、RESX 和 .POT/PO。
 
-
 ## <a name="summary"></a>总结
 
 本文介绍了在对应用进行国际化之前应熟悉的一些概念，并对资源进行本地化，还介绍了如何更改每个平台的语言首选项。
@@ -306,8 +292,6 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 - [Xamarin. Forms](~/xamarin-forms/app-fundamentals/localization/index.md)使用 RESX 文件的跨平台本地化。
 - [Xamarin](~/ios/app-fundamentals/localization/index.md)本地平台本地化。
 - [Xamarin Android](~/android/app-fundamentals/localization.md)本机平台本地化。
-
-
 
 ## <a name="related-links"></a>相关链接
 

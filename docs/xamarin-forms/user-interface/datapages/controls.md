@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2af4bc3bd4dc6ae47f573c58c84aad54f41d42cd
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: e92669d9938b9fe48a1a589e0465acd03f129716
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980819"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759883"
 ---
 # <a name="datapages-controls-reference"></a>DataPages 控件引用
 
 ![](~/media/shared/preview.png "此 API 目前处于预览状态")
 
 > [!IMPORTANT]
-> DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中, 然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
+> DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中，然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
 
 Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
 
-若要在 XAML 中使用这些控件, 请确保已包括命名空间, 例如, `xmlns:pages`请参阅下面的声明:
+若要在 XAML 中使用这些控件，请确保已包括命名空间，例如， `xmlns:pages`请参阅下面的声明：
 
 ```xaml
 <ContentPage
@@ -33,7 +33,7 @@ Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
     x:Class="DataPagesDemo.Detail">
 ```
 
-下面的示例包含`DynamicResource`需要在项目的资源字典中使用的引用。 此外, 还提供了一个示例, 说明如何生成[自定义控件](#custom)
+下面的示例包含`DynamicResource`需要在项目的资源字典中使用的引用。 此外，还提供了一个示例，说明如何生成[自定义控件](#custom)
 
 ## <a name="built-in-controls"></a>内置控件
 
@@ -44,9 +44,9 @@ Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
 
 ### <a name="heroimage"></a>HeroImage
 
-`HeroImage`控件具有四个属性:
+`HeroImage`控件具有四个属性：
 
-* Text
+* 文本
 * 详细信息
 * ImageSource
 * 方面
@@ -67,14 +67,13 @@ Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
 
 ![](controls-images/heroimage-light-ios.png "在 iOS 上 HeroImage 控件") ![](controls-images/heroimage-dark-ios.png "HeroImage 在 iOS 上的控件")
 
-
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem`控件的布局类似于本机 iOS 和 Android 列表或表行, 但也可以用作常规视图。 在下面的示例代码中`StackLayout`, 它显示在内, 但也可用于数据绑定 scolling 列表控件中。
+`ListItem`控件的布局类似于本机 iOS 和 Android 列表或表行，但也可以用作常规视图。 在下面的示例代码中`StackLayout`，它显示在内，但也可用于数据绑定 scolling 列表控件中。
 
-有五个属性:
+有五个属性：
 
 * 标题
 * 详细信息
@@ -92,7 +91,7 @@ Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
     />
 ```
 
-这些屏幕截图`ListItem`在 iOS 和 Android 平台上使用浅色和深色主题显示:
+这些屏幕截图`ListItem`在 iOS 和 Android 平台上使用浅色和深色主题显示：
 
 **Android**
 
@@ -102,18 +101,17 @@ Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
 
 ![](controls-images/listitem-light-ios.png "IOS 上的 \"")有![](controls-images/listitem-dark-ios.png "IOS 上的 \"")有
 
-
 ## <a name="custom-control-example"></a>自定义控件示例
 
 此自定义`CardView`控件的目标是与本机 Android CardView 相似。
 
-它将包含三个属性:
+它将包含三个属性：
 
-* Text
+* 文本
 * 详细信息
 * ImageSource
 
-目标是一个自定义控件, 其外观类似于下面的代码 (请注意, `xmlns:local`需要一个引用当前程序集的自定义):
+目标是一个自定义控件，其外观类似于下面的代码（请注意， `xmlns:local`需要一个引用当前程序集的自定义）：
 
 ```xaml
 <local:CardView
@@ -123,7 +121,7 @@ Xamarin DataPages Nuget 包含多个可以利用数据源绑定的控件。
 />
 ```
 
-它应类似于下面的屏幕截图, 使用的颜色与内置的轻型和深色主题相对应:
+它应类似于下面的屏幕截图，使用的颜色与内置的轻型和深色主题相对应：
 
 **Android**
 
@@ -191,9 +189,9 @@ public class CardView : DataView
 
 #### <a name="2-define-font-layout-and-margins"></a>2.定义字体、布局和边距
 
-控件设计器会将这些值计算为自定义控件的用户界面设计的一部分。 如果需要平台特定的规范, 则`OnPlatform`使用元素。
+控件设计器会将这些值计算为自定义控件的用户界面设计的一部分。 如果需要平台特定的规范，则`OnPlatform`使用元素。
 
-请注意, 某些值是`StaticResource`指, 这些值将在[步骤 5](#5)中定义。
+请注意，某些值是`StaticResource`指，这些值将在[步骤 5](#5)中定义。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -249,7 +247,7 @@ public class CardView : DataView
 
 #### <a name="3-create-styles-for-the-controls-children"></a>3.为控件的子级创建样式
 
-引用定义的所有元素, 以创建将在自定义控件中使用的子元素:
+引用定义的所有元素，以创建将在自定义控件中使用的子元素：
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -281,7 +279,7 @@ public class CardView : DataView
 
 #### <a name="4-create-the-control-layout-template"></a>4.创建控件布局模板
 
-使用上面定义的资源, 在控件模板中显式声明自定义控件的可视化设计:
+使用上面定义的资源，在控件模板中显式声明自定义控件的可视化设计：
 
 ```xml
 <!--- CARDVIEW -->
@@ -308,7 +306,6 @@ public class CardView : DataView
       Style="{ StaticResource CardViewTextStyle }"
     />
 
-
     <!-- CARDVIEW DETAIL -->
     <Label
       Text="{ TemplateBinding Detail }"
@@ -325,7 +322,7 @@ public class CardView : DataView
 
 #### <a name="5-add-the-theme-specific-resources"></a>5.添加特定于主题的资源
 
-由于这是一个自定义控件, 因此请添加与正在使用资源字典的主题匹配的资源:
+由于这是一个自定义控件，因此请添加与正在使用资源字典的主题匹配的资源：
 
 ##### <a name="light-theme-colors"></a>浅色主题颜色
 
@@ -358,7 +355,7 @@ public class CardView : DataView
 
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6.设置 CardView 类的 System.windows.controls.controltemplate>
 
-最后, 确保在C# [步骤 1](#1)中创建的类使用在`Style` `Setter` [步骤 4](#4)中使用元素定义的控件模板。
+最后，确保在C# [步骤 1](#1)中创建的类使用在`Style` `Setter` [步骤 4](#4)中使用元素定义的控件模板。
 
 ```xml
 <Style TargetType="local:CardView">
@@ -372,7 +369,7 @@ public class CardView : DataView
 
 #### <a name="7-add-the-control-to-a-page"></a>7.将控件添加到页面
 
-`CardView`控件现在可以添加到页中。 下面的示例演示了它在中`StackLayout`托管的:
+`CardView`控件现在可以添加到页中。 下面的示例演示了它在中`StackLayout`托管的：
 
 ```xaml
 <StackLayout Spacing="0">

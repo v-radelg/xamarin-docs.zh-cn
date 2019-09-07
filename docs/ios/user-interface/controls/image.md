@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 191d037d12d27e2c6ab475467853023f440c71d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291369"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768980"
 ---
 # <a name="displaying-images-with-xamarinios"></a>用 Xamarin 显示映像
 
@@ -50,7 +50,6 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你
 
 - 存储在应用程序的属性中配置的映像，例如，默认启动映像和应用程序图标。
 - 将其他图像和文件与代码分开存储，使其更易于管理（复制资源目录内容时，会保留子目录）。
-
 
 **资源**目录在库项目中特别有用，因为代码可以假设这些图像将复制到使用应用程序的根目录中，这样就可以更轻松地编写需要图像、声音、视频、XML 或其他文件。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751999"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 简介
 
@@ -67,7 +67,6 @@ Apple 在 iOS 9 中添加了几个新的 Api 和服务，并对现有功能进�
 
 有关详细信息，请参阅[联系人和联系人 UI](~/ios/platform/contacts.md)文档。
 
-
 ## <a name="new-search-apis"></a>新搜索 Api
 
 已在 iOS 9 中展开搜索，以提供更好的新方法来访问 Xamarin iOS 应用内的信息。 使用新的搜索 Api，你可以通过聚焦和 Safari 搜索结果、移交和 Siri 提醒和建议，使你的应用内容可供搜索。 这样，用户就可以快速访问应用中的活动和信息。
@@ -83,7 +82,6 @@ Apple 在 iOS 9 中添加了几个新的 Api 和服务，并对现有功能进�
 通过使用 "堆栈视图" 控件，可大大减少布局用户界面所需的工作量。 基于开发人员定义的属性（如轴、分布、对齐方式和间距）自动管理附加到堆栈视图的所有子视图的布局。
 
 有关详细信息，请参阅[堆栈视图文档简介](~/ios/user-interface/controls/uistackview.md)。
-
 
 ## <a name="collection-view-changes"></a>集合视图更改
 
@@ -145,7 +143,6 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 
 有关详细信息，请参阅我们[对 TOUCH ID](~/ios/platform/touchid.md)文档的介绍。
 
-
 ## <a name="right-to-left-language-support"></a>从右到左语言支持
 
 在 iOS 9 中，通过提供对从右到左语言的完全支持，Apple 使你比以往更轻松地呈现翻转的用户界面。 这包括：
@@ -155,8 +152,6 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 - 能够使用[UIImage](xref:UIKit.UIImage)类的[FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)属性以编程方式翻转图像。
 
 有关详细信息，请参阅 Apple 的[支持从右到左语言](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)文档。
-
-
 
 ## <a name="additional-framework-changes"></a>其他框架更改
 
@@ -205,8 +200,6 @@ Apple 在 iOS 9 中弃用了以下 Api 和函数：
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
-
-
 
 ## <a name="related-links"></a>相关链接
 

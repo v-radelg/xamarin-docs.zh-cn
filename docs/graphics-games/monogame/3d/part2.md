@@ -1,17 +1,17 @@
 ---
 title: 在 MonoGame 中绘制带有顶点的3D 图形
-description: MonoGame 支持使用顶点数组定义三维对象如何基于每个点进行呈现。 用户可以利用顶点数组创建动态几何、实现特殊效果, 并通过精选提高其渲染效率。
+description: MonoGame 支持使用顶点数组定义三维对象如何基于每个点进行呈现。 用户可以利用顶点数组创建动态几何、实现特殊效果，并通过精选提高其渲染效率。
 ms.prod: xamarin
 ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1f2fce14f1839e3d9aff4c68dc0dffc0e8059e6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227720"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766817"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>在 MonoGame 中绘制带有顶点的3D 图形
 
@@ -21,11 +21,11 @@ _MonoGame 支持使用顶点数组来定义3D对象在每个点上的渲染方�
 
 为直观显示如何使用顶点创建 3D 对象，请参考以下球体：
 
-![](part2-images/image1.png "若要直观地显示如何使用顶点创建3D 对象, 请考虑此球")
+![](part2-images/image1.png "若要直观地显示如何使用顶点创建3D 对象，请考虑此球")
 
 如上所示，球体由多个三角形构成。 可查看球体的线框，了解顶点是如何连接构成三角形的。
 
-![](part2-images/image2.png "查看球体的线框, 查看顶点如何连接到形成三角形")
+![](part2-images/image2.png "查看球体的线框，查看顶点如何连接到形成三角形")
 
 本演练将涵盖以下主题：
 
@@ -107,7 +107,7 @@ protected override void Initialize ()
 
 为便于直观显示顶点，请参考下图：
 
-![](part2-images/image6.png "为了帮助可视化顶点的外观, 请考虑此示意图")
+![](part2-images/image6.png "为了帮助可视化顶点的外观，请考虑此示意图")
 
 需依靠此图来直观显示顶点，直到最终实现渲染代码。
 
@@ -117,7 +117,6 @@ protected override void Initialize ()
 
 首先，需要定义一个`BasicEffect`实例，该实例用于保存渲染参数，例如位置和光照。 为此，将一个`BasicEffect`成员添加到下面的`Game1`类，`floorVerts`字段在此定义：
 
-
 ```csharp
 ...
 VertexPositionTexture[] floorVerts;
@@ -125,7 +124,7 @@ VertexPositionTexture[] floorVerts;
 BasicEffect effect;
 ```
 
-接下来, 修改`Initialize`方法以定义效果:
+接下来，修改`Initialize`方法以定义效果：
 
 ```csharp
 protected override void Initialize ()
@@ -146,7 +145,7 @@ protected override void Initialize ()
 }
 ```
 
-现在, 我们可以添加代码来执行绘制操作:
+现在，我们可以添加代码来执行绘制操作：
 
 ```csharp
 void DrawGround()
@@ -168,7 +167,6 @@ void DrawGround()
 
     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
-
 
     foreach (var pass in effect.CurrentTechnique.Passes)
     {
@@ -244,8 +242,7 @@ BasicEffect effect;
 Texture2D checkerboardTexture;
 ```
 
-修改`Game1.LoadContent` , 如下所示:
-
+修改`Game1.LoadContent` ，如下所示：
 
 ```csharp
 protected override void LoadContent()
@@ -306,7 +303,6 @@ void DrawGround()
 
 最后，需要修改 `Game1.Initialize` 方法，在顶点上指定纹理坐标：
 
-
 ```csharp
 protected override void Initialize ()
 {
@@ -349,7 +345,6 @@ MonoGame 使用归一化纹理坐标，即坐标在 0 到 1 之间，而不是 0
 
 可以更改纹理坐标分配，使用单个变量来表示重复次数：
 
-
 ```csharp
 protected override void Initialize ()
 {
@@ -382,7 +377,6 @@ protected override void Initialize ()
 这会使纹理重复 20 次：
 
 ![](part2-images/image10.png "这将导致纹理重复20次")
-
 
 ## <a name="rendering-vertices-with-models"></a>使用模型渲染顶点
 
@@ -463,7 +457,7 @@ void DrawGround()
 Vector3 cameraPosition = new Vector3(15, 10, 10);
 ```
 
-此代码将产生以下结果:
+此代码将产生以下结果：
 
 ![](part2-images/image3.png "此代码会导致此视图")
 
@@ -473,5 +467,5 @@ Vector3 cameraPosition = new Vector3(15, 10, 10);
 
 ## <a name="related-links"></a>相关链接
 
-- [棋盘文件 (示例)](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)
-- [已完成的项目 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)
+- [棋盘文件（示例）](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)
+- [已完成的项目（示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)

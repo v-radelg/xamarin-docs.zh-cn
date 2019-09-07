@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 145c616cc0af8156f10b9db1d3fa36264cecd18b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284320"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768882"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
 
@@ -21,7 +21,6 @@ ms.locfileid: "70284320"
 在 Apple 将情节提要文件格式引入到 iOS 应用程序的 UI 的可视化表示形式之前，开发人员已为每个视图控制器创建 XIB 文件，并在每个视图之间手动设计导航。  使用情节提要，开发人员可以在设计图面上定义视图控制器和它们之间的导航，并使应用程序的用户界面具有所见即所得的编辑。
 
 可以使用 Xamarin iOS 设计器创建、打开和编辑情节提要。 本指南还将演练如何使用设计器来创建情节提要，同时使用C#来编程导航。
-
 
 ## <a name="requirements"></a>要求
 
@@ -77,7 +76,7 @@ ms.locfileid: "70284320"
 ### <a name="adaptive-segue-types"></a>自适应 Segue 类型
 
  iOS 8 引入了[大小类](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)，以允许 iOS 情节提要文件与所有可用的屏幕大小一起使用，使开发人员能够为所有 iOS 设备创建一个 UI。 默认情况下，所有新的 Xamarin iOS 应用程序都将使用大小类。 若要从较旧的项目使用大小类，请参阅[统一情节提要指南简介](~/ios/user-interface/storyboards/unified-storyboards.md)。 
- 
+
 使用大小类的任何应用程序也将使用新的[*自适应 segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小类时，请记住，我们不会直接指定该使用 iPhone 或 iPad。 换句话说，我们创建一个 UI，该 UI 始终外观相同，而不考虑它需要使用的实际空间。 自适应 Segue 通过判断环境，并确定如何以最佳方式呈现内容。 自适应 Segue 如下所示： 
 
 [![](images/adaptivesegue.png "自适应 Segue 下拉列表")](images/adaptivesegue.png#lightbox)
@@ -92,7 +91,6 @@ ms.locfileid: "70284320"
 ### <a name="transferring-data-with-segues"></a>通过 Segue 传输数据
 
 Segue 的好处并不是通过转换来完成的。 它们还可用于管理视图控制器之间的数据传输。 这是通过重写初始`PrepareForSegue`视图控制器上的方法以及自行处理数据实现的。 触发 segue 时（例如，使用按钮按下），应用程序将调用此方法，以便在进行任何导航*之前*准备新的视图控制器。 下面的代码（来自[Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)示例）演示了这一点： 
-
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, 
@@ -252,7 +250,6 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-
 使用设计器创建情节提要时，IDE 将自动在`designer.cs`类的顶部添加[[Register]](xref:Foundation.RegisterAttribute)特性，并传入字符串标识符，该标识符与在上一步中指定的情节提要 ID 完全相同。 这会将链接C#到情节提要中的相关场景。
 
 在某些时候，你可能需要添加一个**未**在设计器中创建的现有类。 在这种情况下，应将此类注册为普通：
@@ -340,7 +337,6 @@ public partial class MainViewController : UIViewController
 3. 单击 Segue 并为其指定*标识符* `SegueToPink`：
 
     [![](images/namesegue.png "单击 Segue 并为其指定标识符 SegueToPink")](images/namesegue.png#lightbox)  
-    
 
 4. 最后，将以下 ShouldPerformSegue 方法添加到`MainViewController`类：
 
@@ -489,8 +485,6 @@ public partial class MainViewController : UIViewController
 ## <a name="summary"></a>总结
 
 本文介绍了情节提要的概念，以及如何在开发 iOS 应用程序时对其有利。 它讨论场景、查看控制器、视图和视图层次结构，以及如何将场景与不同类型的 Segue 链接在一起。  它还探讨了如何从情节提要手动实例化视图控制器，以及如何创建条件 Segue。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 9347a801c939fd715101253c6953eeec840af47d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fc76a642c27b7a2c7f3483911be596f8d6cdd1ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288590"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752862"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的应用内购买基础知识和配置
 
@@ -26,7 +26,6 @@ ms.locfileid: "70288590"
 - **IOS 预配门户**–创建捆绑标识符，并为应用启用应用商店访问。
 - **应用商店工具包**–将代码添加到应用，以显示产品、购买产品和还原交易。
 - **自定义代码**-跟踪客户进行的购买，并提供他们购买的产品或服务。 如果你的产品包含从服务器下载的内容（如书籍和杂志问题），则你可能还需要实施服务器端过程来验证回执。
-
 
 有两个存储包 "服务器环境"：
 
@@ -54,7 +53,6 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 - **IOS 预配门户**–确保你的应用具有有效的应用 ID （不是包含星号 * 的通配符），并且已启用应用采购。
 - **ITunes Connect 应用程序管理**–将产品添加到你的应用程序。
 
-
 ### <a name="apple-developer-account"></a>Apple 开发人员帐户
 
 构建和分发免费应用程序需要在[ITunes Connect](https://itunesconnect.apple.com)中进行极少的配置，但是，若要销售付费应用或应用内购买，要求你向 Apple 提供银行和税务信息。 单击此处显示的主菜单中的 "**协议"、"税款" 和 "银行**"：
@@ -70,7 +68,6 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 ### <a name="ios-provisioning-portal"></a>iOS 预配门户
 
 在**IOS 设置门户**的 "**应用 id** " 部分中设置新应用程序。 若要创建新的应用 ID，请转到[IOS 设置门户的成员中心](https://developer.apple.com/membercenter/index.action)，导航到门户的 "**证书、标识符和配置文件**" 部分，然后单击 " *iOS 应用*" 下的 "**标识符**"。 然后，单击右上方的 "+" 以生成新的应用 ID。
-
 
 用于创建新**应用程序 id**的窗体
 
@@ -114,7 +111,6 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 下面介绍了每个应用内购买产品所需的字段：
 
-
 ### <a name="reference-name"></a>引用名称
 
 不会向用户显示引用名称;它供内部使用，且仅出现在 iTunes Connect 中。
@@ -148,7 +144,6 @@ com.xamarin.storekit.testing.greyscale
 1. **免费订阅**–只能在已启用 Newsstand 的应用中提供，并允许客户访问其所有设备上的订阅内容。 免费订阅永不过期。
 1. **非续订订阅**–应该用于出售对静态内容（例如一个月的照片存档访问权限）的限时访问。
 
-
  *本文档当前仅介绍前两种产品类型（可耗用和不可用）。*
 
  <a name="Price_Tiers" />
@@ -176,10 +171,8 @@ Apple 提供了一个价格矩阵，可帮助你选择所需的货币/价格的�
 在 iTunes Connect 中，可以为任意数量的受支持的语言输入不同的名称和描述文本。 可以通过弹出窗口在中添加/编辑每种语言：
 
  [![](in-app-purchase-basics-and-configuration-images/image12.png "可以通过弹出窗口添加/编辑每种语言")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
-   
-   
-   
- 当你在应用中显示产品信息时，可通过 StoreKit 显示本地化的文本。 还必须本地化货币显示以显示正确的符号和小数点格式，这种格式设置将在此文档的后面部分介绍。
+
+当你在应用中显示产品信息时，可通过 StoreKit 显示本地化的文本。 还必须本地化货币显示以显示正确的符号和小数点格式，这种格式设置将在此文档的后面部分介绍。
 
 ### <a name="app-store-review"></a>App Store 审核
 
@@ -188,10 +181,8 @@ Apple 提供了一个价格矩阵，可帮助你选择所需的货币/价格的�
 第一次在应用中启用应用内购买（无论它是新应用程序还是已将功能添加到现有应用程序）时，还必须选择要随其一起提交的产品。 ITunes Connect 门户将提示你执行此操作，如以下屏幕截图所示：
 
  [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect 门户还会提示你还提交一些产品")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
-   
-   
-   
- 应用程序和应用内购买将一起进行查看，因此它们都将立即获得批准（因此，在没有任何批准的产品的情况下，应用程序不会进入存储区！）。
+
+应用程序和应用内购买将一起进行查看，因此它们都将立即获得批准（因此，在没有任何批准的产品的情况下，应用程序不会进入存储区！）。
 
 在第一版具有应用内购买功能的第一版获得批准后，可以添加更多产品并随时提交以供查看。 你还可以选择随特定应用内购买产品一起提交新版本，并在提示时使用**版本详细信息**页。
 

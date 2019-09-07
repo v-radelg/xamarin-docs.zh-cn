@@ -6,15 +6,14 @@ ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 4d8396574f02cde4c75fd96c98f79d5ed4080293
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1596e7ed7b3f6d71e13f19a64d111873efb7445c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291063"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764939"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>如何彻底卸载 Xamarin for Visual Studio？
-
 
 1. 在 Windows 控制面板中，卸载存在的所有以下项目：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: d6440518149a4fab8e9667a2a41d3df818e2a879
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 7b465391958a6e862bfed9fde8d9da1fdd52bee5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120529"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759755"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -42,7 +42,7 @@ CocosSharp 是一个高效运行时库，其中包括以下功能：
 - 使用类的`CCSprite`图像呈现
 - 使用类的`CCDrawNode`形状呈现
 - 使用类的`CCNode.Schedule`每帧逻辑
-- 内容管理 (使用来加载和卸载资源, 如 .png 文件)`CCTextureCache`
+- 内容管理（使用来加载和卸载资源，如 .png 文件）`CCTextureCache`
 - 使用类的`CCAction`动画
 
 CocosSharp 的主要重点是简化的跨平台 2D 游戏; 创建但是，它也可以是到 Xamarin 窗体应用程序的极好补充。 由于游戏通常需要的高效绘制和视觉对象的精确控制，可以使用 CocosSharp 向非游戏应用程序添加功能强大的可视化和效果。
@@ -93,7 +93,6 @@ CocosSharp.Forms nuget 包包含`CocosSharpView`类，该类用于托管 CocosSh
 CocosSharp 可以托管在任何 Xamarin.Forms 容器。 此示例的此页所使用的页称为`HomePage`。 `HomePage` 拆分了一半的`Grid`显示 Xamarin.Forms 和 CocosSharp 可以呈现方式同时在同一页上。
 
 首先，设置页面，以便它包含`Grid`和两个`Button`实例：
-
 
 ```csharp
 public class HomePage : ContentPage
@@ -147,7 +146,6 @@ public HomePage ()
 
 `CocosSharpView`类用于将 CocosSharp 嵌入到 Xamarin.Forms 应用。 由于`CocosSharpView`继承自[Xamarin.Forms.View](xref:Xamarin.Forms.View)类，它提供熟悉的界面的布局，并可以在布局容器内如[Xamarin.Forms.Grid](xref:Xamarin.Forms.Grid)。 添加一个新`CocosSharpView`项目，方法是完成到`CreateTopHalf`方法：
 
-
 ```csharp
 void CreateTopHalf(Grid grid)
 {
@@ -165,7 +163,6 @@ void CreateTopHalf(Grid grid)
 ```
 
 CocosSharp 初始化不是立即，因此注册事件，以便当`CocosSharpView`已完成创建。 在执行此操作`HandleViewCreated`方法：
-
 
 ```csharp
 void HandleViewCreated (object sender, EventArgs e)
@@ -203,7 +200,6 @@ void HandleViewCreated (object sender, EventArgs e)
 
 最初`GameScene`类将是几乎是空-我们只需将创建它来满足中的引用`HomePage`。 将新类添加到名为.NET Standard 库项目`GameScene`。 它应继承自`CCScene`类，如下所示：
 
-
 ```csharp
 public class GameScene : CCScene
 {
@@ -215,7 +211,6 @@ public class GameScene : CCScene
 ```
 
 既然`GameScene`是定义，我们可以返回到`HomePage`和添加字段：
-
 
 ```csharp
 // Keep the GameScene at class scope
@@ -234,7 +229,6 @@ GameScene gameScene;
 应用当前具有正在运行的 CocosSharp 引擎，显示一个空实例`CCScene`。 接下来，我们将添加视觉对象： 一个圆圈。 `CCDrawNode`类可用于绘制各种几何形状，如中所述[CCDrawNode 指南绘制几何图形](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/ccdrawnode.md)。
 
 添加到一个圆形我们`GameScene`类并将其实例的构造函数中，在下面的代码所示：
-
 
 ```csharp
 public class GameScene : CCScene
@@ -262,7 +256,6 @@ public class GameScene : CCScene
 
 ![](cocossharp-images/image6.png "GameScene 中的圆圈")
 
-
 #### <a name="understanding-designresolution"></a>了解 DesignResolution
 
 现在，将显示一个可视化 CocosSharp 对象，我们可以调查`DesignResolution`属性。
@@ -287,7 +280,6 @@ public class GameScene : CCScene
 
 CocosSharp 可视元素 (如`CCDrawNode`) 继承`CCNode`类。 `CCNode` 提供两个属性用于确定相对于其父对象的位置：`PositionX`和`PositionY`。 我们的代码当前使用这两个属性来定位的中心圆，此代码片段中所示：
 
-
 ```csharp
 circle.PositionX = 20;
 circle.PositionY = 50;
@@ -296,7 +288,6 @@ circle.PositionY = 50;
 请务必注意 CocosSharp 对象位于通过显式位置值，而不是大多数 Xamarin.Forms 视图，可自动定位根据其父布局控件的行为。
 
 我们将添加代码以允许用户单击其中一个由 10 个单位 （不是以像素，因为该圆形绘制 CocosSharp 世界单位空间中） 向左或向右移动该圆圈的两个按钮。 首先，我们将创建两个公共方法中的`GameScene`类：
-
 
 ```csharp
 public void MoveCircleLeft()
@@ -311,7 +302,6 @@ public void MoveCircleRight()
 ```
 
 接下来，我们将添加到中的两个按钮的处理程序`HomePage`以响应的单击。 完成后，我们`CreateBottomHalf`方法包含以下代码：
-
 
 ```csharp
 void CreateBottomHalf(Grid grid)

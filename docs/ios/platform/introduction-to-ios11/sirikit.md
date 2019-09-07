@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: d4fab992121ad6a2b272012f7249df5ed8427513
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286744"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752385"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 中的 SiriKit 更新
 
@@ -210,7 +210,6 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 - "在_MonkeyNotes_中使用苹果、bananas 和 pears 创建杂货列表
 - "Add task WWDC in _MonkeyTodo_"
 
-
 ## <a name="troubleshooting"></a>疑难解答
 
 运行示例或将 SiriKit 添加到你自己的应用程序时可能遇到的一些错误：
@@ -225,7 +224,6 @@ _引发了目标-C 异常。姓名:NSInternalInconsistencyException 原因：在
   [![显示正确设置了权利的项目选项](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
 - （适用于设备部署）应用 ID 已启用 SiriKit 并已下载预配配置文件。
-
 
 ## <a name="related-links"></a>相关链接
 

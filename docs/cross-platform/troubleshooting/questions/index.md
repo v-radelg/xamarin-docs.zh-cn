@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 3b940199a1384540bcc9f7134dabf8b69ac3767e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285013"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765116"
 ---
 # <a name="general-frequently-asked-questions"></a>一般常见问题
 
@@ -42,7 +42,6 @@ NuGet 更新、扩展和外接程序可在**Nuget 包管理器**的 "**更新**"
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[组件保存在计算机的什么位置？](component-storage.md)
 每次将 Xamarin 组件安装到应用项目中时，都会将其放入本指南中列出的两个位置。
 
-
 ## <a name="troubleshooting"></a>疑难解答
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[在哪里可以找到我的版本信息和日志？](version-logs.md)
 本指南详细介绍了在哪里可以找到可用于排查 Xamarin 问题的大多数诊断信息。
@@ -55,4 +54,3 @@ Jenkins 是开源 CI 套件;由于此 Jenkins*本身*直接导致的许多问题
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[调试器需要哪些项目设置？](debugger-settings.md)
 为了使调试器能够按预期工作（命中断点、显示调试日志等），必须同时启用开发人员检测和调试信息显示。 本指南详细介绍了如何查找和激活这些设置。
-

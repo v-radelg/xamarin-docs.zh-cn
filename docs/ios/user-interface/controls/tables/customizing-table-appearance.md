@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 6eb942c0276bda28cb4be14fb31cdf820b9ccd5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e81504b3411674c8f8f92bf9018d617dd1c4bc4c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291361"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768901"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>在 Xamarin 中自定义表的外观
 
@@ -26,7 +26,6 @@ ms.locfileid: "70291361"
 - **副标题**–支持`UIImageView`和副标题。
 - **Value1** -右对齐副标题，支持`UIImageView`。
 - **Value2** –标题右对齐，副标题按左对齐（但不含图像）。
-
 
 这些屏幕截图显示每种样式的显示方式：
 
@@ -57,7 +56,6 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 - **DetailButton** –独立于单元格的其余部分响应触摸，使其能够执行不同的功能来接触单元格本身（例如打开弹出窗口或不属于`UINavigationController`堆栈一部分的新窗口）。
 - **DisclosureIndicator** –通常用于指示触摸单元会打开另一个视图。
 - **DetailDisclosureButton** – `DetailButton`和`DisclosureIndicator`的组合。
-
 
 如下所示：
 
@@ -128,7 +126,6 @@ CellCustomTable 示例实现了一个`UITableViewCell`子类，该子类`UIImage
 - **UpdateCell** –用于设置单元`UITableView.GetCell`格的属性的方法。
 - **LayoutSubviews** –设置 UI 控件的位置。 在示例中，每个单元格都具有相同的布局，但更复杂的单元格（尤其是具有不同大小的单元格）可能需要不同的布局位置，具体取决于所显示的内容。
 
-
 **CellCustomTable > CustomVegeCell.cs**中的完整示例代码如下：
 
 ```csharp
@@ -184,8 +181,6 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
     return cell;
 }
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

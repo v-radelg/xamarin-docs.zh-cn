@@ -1,18 +1,18 @@
 ---
 title: 第 25 章的摘要。 页类型
-description: 使用 Xamarin.Forms 创建移动应用：第 25 章的摘要。 页类型
+description: 用 Xamarin 创建移动应用程序：第 25 章的摘要。 页类型
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b86f2d7216a6344b14fc4d8c538ea68871eda5ae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331796"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760535"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章的摘要。 页类型
 
@@ -111,8 +111,6 @@ Xamarin.Forms 提供的用户界面，用于在母版和详细信息视图之间
 [ **MultiTabbedColor** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors)的示例使用[ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs)类[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)库。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml)文件中设置`DataTemplate`的属性`TabbedPage`为一个可视化树开头`ContentPage`，其中包含绑定到的属性`NamedColor`（包括绑定到`Title`属性)。
 
 但是，这是在 iOS 上有问题。 可以显示只有几个项，并且没有好方法来为他们提供的图标。
-
-
 
 ## <a name="related-links"></a>相关链接
 

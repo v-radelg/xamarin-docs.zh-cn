@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/05/2017
-ms.openlocfilehash: a5dea7358e48ebb1961c1fa3253ad096d041c0cf
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279686"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753086"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin 中的异常封送处理
 
@@ -330,7 +330,6 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 在尝试捕获目标 C 异常时， `objc_msgSend`只会截获对系列函数的 P/invoke。 这意味着，对于另一个 C 函数的 P/Invoke，后者随后会引发任何目标为 C 的异常，仍将会遇到旧的和未定义的行为（将来可能会改进）。
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
-
 
 ## <a name="related-links"></a>相关链接
 

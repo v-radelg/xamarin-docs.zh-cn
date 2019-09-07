@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/26/2018
-ms.openlocfilehash: b3968f211ff5445e8b704bbd7897f4c46ecc2be9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e0bf9ec1553e6638398695157a11242b9885b168
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292594"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768102"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>使用 Xamarin 中的 watchOS 图标
 
@@ -82,7 +82,6 @@ Apple Watch 解决方案需要两组图标：
 
 > [!NOTE]
 > 图标不能有 alpha 通道（如果存在 alpha 通道，应用将在应用商店提交期间被拒绝）。 可以检查 alpha 通道是否存在，并[使用 Mac OS X 上的预览应用](~/ios/watchos/troubleshooting.md#noalpha)删除它。
-
 
 ## <a name="related-links"></a>相关链接
 

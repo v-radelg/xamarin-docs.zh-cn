@@ -7,12 +7,12 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: e44dfd85d9d4480d56ac75d61fd379b04fb8fb12
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6e78e3930ec731bc970ef39ddb7fe7051d62f63a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648624"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770444"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩阵转换
 
@@ -649,7 +649,6 @@ public partial class ShowAffineMatrixPage : ContentPage
 </pre>
 
 值为非零`Persp0`和`Persp1`导致将对象移到二维平面移动其中 Z 等于 1 的转换。 这些对象移回该平面时，会发生什么情况文章中介绍了在[**非仿射转换**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)。
-
 
 ## <a name="related-links"></a>相关链接
 

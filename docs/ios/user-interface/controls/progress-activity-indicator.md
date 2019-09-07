@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
-ms.openlocfilehash: 62dadffbc4b8a5629969203938e4fa0130971664
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283341"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768918"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin 中的进度和活动指示器
 
@@ -46,7 +46,6 @@ Apple 对于使用活动指示器有以下建议：
 
 将属性设置为`true` ，以使活动指示器在调用`StopAnimating()`后消失。 `HidesWhenStopped` 默认情况下， `true`此值设置为。 在任何时候，都可以通过检查`IsAnimating`属性来查看活动指示器是否正在运行其旋转动画。 
 
-
 ### <a name="managing-activity-indicator-appearances"></a>管理活动指示器外观
 
 在`UIActivityIndicatorViewStyle`实例化活动指示器时，可以将枚举作为参数传递。 可以使用它将视觉样式设置为`Gray`、 `White`或`WhiteLarge`，例如：
@@ -77,7 +76,6 @@ Apple 对于使用进度条有以下建议：
 可以在 "属性" 板上调整以下属性：
 
 ![Properties Pad](progress-activity-indicator-images/progress-indicator3.png)
-
 
 ### <a name="managing-progress-bar-behavior"></a>管理进度栏行为
 
@@ -110,6 +108,3 @@ progressBar = new UIProgressView(UIProgressViewStyle.Default)
                 TrackTintColor = UIColor.Magenta
             }; 
 ```
-
-
-

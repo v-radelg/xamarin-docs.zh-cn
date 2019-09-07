@@ -6,12 +6,12 @@ ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: f51c6af9ed38910f44db2c0886c474deafa096d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b28fcea37d991879df0231609d09eeb2eca49505
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289991"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766340"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
@@ -32,12 +32,9 @@ Azure Active Directory 允许开发人员使用员工用于登录系统或检查
 - Web API
 - Office365
 
-
 ## <a name="conclusion"></a>结束语
 
 使用上述步骤，你可以对移动应用进行 Azure Active Directory 身份验证。 利用 Active Directory 身份验证库（ADAL），可以更轻松地处理代码行，同时将大部分代码保持相同，从而使其可在平台之间共享。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 45d9580899ac42dba300086b5d5694c07d177871
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bbba1cbb907e3744677ff6bbe39b97fb62616e33
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287837"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768171"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin 中查看控制器转换
 
@@ -28,7 +28,6 @@ IOS 7 中视图控制器之间的动态过渡是完全可自定义的。 `UIView
 2. 实现`UIViewControllerTransitioningDelegate`以创建 animator 类，该类是的`UIViewControllerAnimatedTransitioning`实例。
 3. 将属性设置为的`UIViewControllerTransitioningDelegate`实例，还会在要显示的控制器上设置。 `TransitioningDelegate`
 4. 显示视图控制器。
-
 
 例如，下面的代码提供了一个类型为`ControllerTwo` `UIViewController`的类的视图控制器：
 
@@ -83,7 +82,6 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 1. `TransitionDuration`–返回动画的持续时间（以秒为单位）。
 1. `AnimateTransition`–执行实际动画。
 
-
 例如，下面的类实现`UIViewControllerAnimatedTransitioning`以对控制器视图的框架进行动画处理：
 
 ```csharp
@@ -129,7 +127,6 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 - **导航控制器**–两个`UICollectionViewController`实例之间的动画转换可以选择在`UINavigationController`管理它们时自动处理。
 - **转换布局**–新`UICollectionViewTransitionLayout`类允许在布局之间进行交互式转换。
 
-
 ### <a name="navigation-controller-transitions"></a>导航控制器转换
 
 在导航控制器中使用时， `UICollectionViewController`包括对控制器间的动画转换的支持。 此支持是内置的，只需几个简单的步骤即可实现：
@@ -138,7 +135,6 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 1. 将的`UICollectionViewController`实例添加到导航控制器堆栈的根。
 1. 创建另`UICollectionViewController`一个，并将`UseLayoutToLayoutNavigtionTransitions`其属性`true`设置为。
 1. 将第二`UICollectionViewController`个推送到导航控制器的堆栈上。
-
 
 下面的代码将名`UICollectionViewController` `ImagesCollectionViewController`为的子类添加到导航控制器堆栈的根目录中，并`UseLayoutToLayoutNavigationTransitions`将属性设置为`false`：
 
@@ -216,7 +212,6 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 1. 在`StartInteractiveTransition`方法的完成处理程序中处理转换完成。
 1. 将手势识别器添加到集合视图。
 
-
 下面的代码实现了一个在缩小手势识别器内的交互式布局转换：
 
 ```csharp
@@ -260,9 +255,6 @@ imagesController.CollectionView.AddGestureRecognizer (pinch);
 ```
 
 当用户 pinches 集合视图时， `TransitionProgress`相对于刻度的刻度设置。 在此实现中，如果用户在转换完成 50% 之前结束了缩小，则取消转换。 否则，转换已完成。
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

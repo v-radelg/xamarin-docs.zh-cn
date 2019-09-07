@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f33e3f4f27afe7e0b98c4a1f71d77c4a1c7195ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73474aaeb138d52536dd8ad5a7dca9be566475af
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289081"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769091"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航栏
 
@@ -48,9 +48,7 @@ ms.locfileid: "70289081"
     [![](navigation-bars-images/navbar05.png "条形按钮项操作")](navigation-bars-images/navbar05.png#lightbox)
 1. 保存更改。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. 在**解决方案资源管理器**中，双击`Main.storyboard` "文件" 并将其打开以进行编辑。
 1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
@@ -66,7 +64,6 @@ ms.locfileid: "70289081"
 
     [![](navigation-bars-images/navbar05-vs.png "条形按钮项操作")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 保存更改。
-
 
 -----
 
@@ -133,8 +130,6 @@ namespace MySingleView
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用程序中设计和使用导航栏。
-
-
 
 ## <a name="related-links"></a>相关链接
 

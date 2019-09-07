@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 97aa8c321362ebccc954a79f99b7bc69b5a0ad63
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 453da8c1b943591c331950ecb433bf0055faf85d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657066"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770364"
 ---
 # <a name="layout-compression"></a>布局压缩
 
@@ -117,7 +117,6 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 ## <a name="summary"></a>总结
 
 布局压缩从可视化树中删除指定的布局，以试图提升页面呈现性能。 这带来的性能优势因页面复杂性、要使用的操作系统版本以及运行应用的设备而异。 不过，在旧设备上实现的性能提升最大。
-
 
 ## <a name="related-links"></a>相关链接
 

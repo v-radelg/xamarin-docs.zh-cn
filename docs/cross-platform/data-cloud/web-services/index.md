@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f914a158135d34b59fa3d1b95972c988a44dd36b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287577"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765987"
 ---
 # <a name="introduction-to-web-services"></a>Web 服务简介
 
@@ -181,7 +181,6 @@ client.GetAsync<CustomersResponse>("",
 
 > [!IMPORTANT]
 > 尽管 ServiceStack 和 RestSharp 之类的工具可以轻松调用和使用 REST 服务，但有时使用不符合标准_DataContract_序列化约定的 XML 或 JSON 是非常简单的。 如有必要，请使用下面讨论的 ServiceStack 库来调用请求并显式处理适当的序列化。
-
 
 <a name="Options_for_consuming_RESTful_data" />
 

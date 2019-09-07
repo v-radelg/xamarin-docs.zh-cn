@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: f972a32f8daf920f2121e5aa56923c0f3a7f808a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a26fdd931f539da990e21166eec361fd1702de9c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299937"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760218"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>《使用 Xamarin.Forms 的企业应用程序模式》电子书
 
@@ -42,7 +42,7 @@ _开发自适应、可维护和可测试的 Xamarin.Forms 企业应用程序的�
 
 ## <a name="communicating-between-loosely-coupled-componentscommunicating-between-loosely-coupled-componentsmd"></a>[松散耦合组件之间的通信](communicating-between-loosely-coupled-components.md)
 
-Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许在对象和类型引用不便于链接的组件之间进行基于消息的通信。 此机制允许发布者和订阅者在无需相互引用的情况下进行通信，帮助减少组件之间的依赖性，同时还允许这些组件接受独立开发和测试。
+Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许在对象和类型引用不便于链接的组件之间进行基于消息的通信。 此机制允许发布者和订阅者在无需相互引用的情况下进行通信，帮助减少组件之间的依赖性，同时还允许这些组件接受独立开发和测试。
 
 ## <a name="navigationnavigationmd"></a>[导航](navigation.md)
 
@@ -54,7 +54,7 @@ Xamarin.Forms 包含对页面导航的支持，通常在逻辑驱动的状态更
 
 任何接受用户输入的应用都应确保输入是有效的。 如果未进行验证，用户提供的数据可能导致应用故障。 验证可强制实施业务规则，并防止攻击者注入恶意数据。
 
-在上下文的模型-视图-视图模型 (MVVM) 模式，视图模型或模型通常需要执行数据验证和信号到视图的任何验证错误，以便用户可以更正它们。
+在 ViewModel （MVVM）模式的上下文中，视图模型或模型通常需要执行数据验证并向视图发出任何验证错误信号，以便用户可以更正这些错误。
 
 ## <a name="configuration-managementconfiguration-managementmd"></a>[配置管理](configuration-management.md)
 
@@ -66,7 +66,7 @@ Xamarin.Forms 包含对页面导航的支持，通常在逻辑驱动的状态更
 
 ## <a name="authentication-and-authorizationauthentication-and-authorizationmd"></a>[身份验证和授权](authentication-and-authorization.md)
 
-可以通过许多方法将身份验证和授权集成到与 ASP.NET MVC Web 应用程序进行通讯的 Xamarin.Forms 应用中， 在这里，与使用 IdentityServer 4 的容器化的标识微服务执行身份验证和授权。 IdentityServer 是一种适用于 ASP.NET Core 的开源 OpenID Connect 和 OAuth 2.0  框架，它与 ASP.NET Core Identity 集成以执行持有者令牌身份验证。
+可以通过许多方法将身份验证和授权集成到与 ASP.NET MVC Web 应用程序进行通讯的 Xamarin.Forms 应用中， 此处，使用 IdentityServer 4 的容器化标识微服务来执行身份验证和授权。 IdentityServer 是一种适用于 ASP.NET Core 的开源 OpenID Connect 和 OAuth 2.0  框架，它与 ASP.NET Core Identity 集成以执行持有者令牌身份验证。
 
 ## <a name="accessing-remote-dataaccessing-remote-datamd"></a>[访问远程数据](accessing-remote-data.md)
 
@@ -78,10 +78,9 @@ Xamarin.Forms 包含对页面导航的支持，通常在逻辑驱动的状态更
 
 ## <a name="feedback"></a>反馈
 
-此项目设有社区网站，可在其中发布问题和提供反馈。 社区网站位于 [GitHub](https://github.com/dotnet-architecture/eShopOnContainers)。 或者，还可将有关该电子书的反馈通过电子邮件发送到 [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)。
-
+此项目设有社区网站，可在其中发布问题和提供反馈。 社区网站位于 [GitHub](https://github.com/dotnet-architecture/eShopOnContainers)。 或者，还可将有关该电子书的反馈通过电子邮件发送到 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)。
 
 ## <a name="related-links"></a>相关链接
 
-- [下载电子书 (2 Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) （示例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下载电子书（2Mb）](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers （GitHub）（示例）](https://github.com/dotnet-architecture/eShopOnContainers)

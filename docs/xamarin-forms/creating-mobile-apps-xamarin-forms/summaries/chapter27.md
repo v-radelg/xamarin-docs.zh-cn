@@ -1,18 +1,18 @@
 ---
 title: 第 27 章的摘要。 自定义呈现器
-description: 用 Xamarin 创建移动应用程序:第 27 章的摘要。 自定义呈现器
+description: 用 Xamarin 创建移动应用程序：第 27 章的摘要。 自定义呈现器
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 985510caa78733d1a53aceb41371839f544daa73
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd4014fa4db4e90596c100d454cf0467512240a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511638"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760495"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章的摘要。 自定义呈现器
 
@@ -113,8 +113,6 @@ UWP [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xama
 呈现器检测到本机控件，更改，然后调用`SetValueFromRenderer`，该引用中定义的可绑定属性`StepSlider`，这将导致更改`StepSlider`激发`ValueChanged`事件。
 
 [ **StepSliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/StepSliderDemo)示例演示了此新的滑块。
-
-
 
 ## <a name="related-links"></a>相关链接
 

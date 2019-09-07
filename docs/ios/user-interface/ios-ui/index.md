@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 106cadc6fef43c06597cf1e3b846bd48cecb6fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287054"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768304"
 ---
 # <a name="user-interfaces-in-ios"></a>iOS 中的用户界面
 
@@ -35,7 +35,3 @@ Apple 将相关功能部分分组到与 Xamarin 命名空间相同的 "框架" �
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[使用 UI 线程](~/ios/user-interface/ios-ui/ui-thread.md)
 
 你的代码只应从主（或 UI）线程对用户界面控件进行更改。 在不同线程（如回调或后台线程）上发生的任何 UI 更新可能无法呈现到屏幕上，甚至可能会导致崩溃。
-
-
-
-

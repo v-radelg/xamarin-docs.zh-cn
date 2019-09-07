@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e129a8c37e6b8780a57636730c072b230354b8b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288372"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758111"
 ---
 # <a name="building-cross-platform-applications-overview"></a>构建跨平台应用程序概述
 
@@ -45,11 +45,9 @@ Xamarin. 在所有平台上均支持窗体项目，并允许你创建可使用 X
 1. 与 Xamarin 项目兼容的[NuGet 包](https://nuget.org)，如[Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)、
 1. 为网络、web 服务、IO 等使用 .NET framework 功能。
 
-
 其中一些组件是在*Tasky*案例研究中实现的。
 
  <a name="Separate_Reusable_Code_into_a_Core_Library" />
-
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>将可重用代码分为核心库
 
@@ -58,7 +56,6 @@ Xamarin. 在所有平台上均支持窗体项目，并允许你创建可使用 X
  ![](overview-images/layers2.png "通过对应用程序体系结构进行分层，然后将平台不可知的核心功能移到可重复使用的核心库中，可以将责任分离的原则")
 
  <a name="Case_Studies" />
-
 
 ## <a name="case-studies"></a>案例研究
 

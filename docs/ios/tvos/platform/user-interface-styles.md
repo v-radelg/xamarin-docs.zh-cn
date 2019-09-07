@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 89756d5b897b39dd0cf45074474189a4a0a8ada8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290682"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769988"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin 中的 tvOS 用户界面样式
 
@@ -102,9 +102,6 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 > [!IMPORTANT]
 > TvOS 10 的 tvOS 早期预览版`UIUserInterfaceStyle` `UITraitCollection`尚不完全支持。 未来版本中将添加完全支持。
 
-
-
-
 <a name="Customizing-Appearance-Based-on-Theme" />
 
 ### <a name="customizing-appearance-based-on-theme"></a>基于主题自定义外观
@@ -131,7 +128,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 
 在开发人员需要根据所选 ui 主题更深入地控制 ui 元素的外观，他们可以重写`TraitCollectionDidChange` `UIView`或`UIViewController`类的方法。
 
-例如：
+例如:
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
@@ -209,8 +206,6 @@ SetOverrideTraitCollection (trait, this);
 ## <a name="summary"></a>总结
 
 本文介绍了 Apple 添加到 tvOS 10 的轻型和深色 UI 主题，以及如何在 tvOS 应用程序中实现它们。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -1,18 +1,18 @@
 ---
 title: 第 20 章的摘要。 异步和文件 I/O
-description: 使用 Xamarin.Forms 创建移动应用：第 20 章的摘要。 异步和文件 I/O
+description: 用 Xamarin 创建移动应用程序：第 20 章的摘要。 异步和文件 I/O
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650468"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771038"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 异步和文件 I/O
 
@@ -166,8 +166,6 @@ Xamarin.iOS 和 Xamarin.Android 库包括 Xamarin 明确针对这两个平台的
 ## <a name="back-to-the-web"></a>返回到 web
 
 [ `WebRequest` ](xref:System.Net.WebRequest)某些示例中使用的类使用旧式异步协议调用的异步编程模型或 APM。 可以将此类转换为使用其中一个的现代点击协议`FromAsync`中的方法[ `TaskFactory` ](xref:System.Threading.Tasks.TaskFactory`1)类。 [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap)示例演示了这。
-
-
 
 ## <a name="related-links"></a>相关链接
 

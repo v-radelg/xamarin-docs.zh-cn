@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 13b19d60569884f244f2ea9c79aaa6989838d0d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290710"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770042"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
 
@@ -45,7 +45,6 @@ ms.locfileid: "70290710"
     [![](extensions-images/extension02.png "系统日志")](extensions-images/extension02.png#lightbox)
 - 如上所述，运行扩展主机应用程序会将其注册到系统。 删除应用程序包，并将其取消注册。 
 - 如果注册了应用扩展的 "游离" 版本，请使用以下命令进行查找（以便可以删除它们）：`plugin kit -mv`
-
 
 <a name="Walkthrough-and-Sample-App" />
 

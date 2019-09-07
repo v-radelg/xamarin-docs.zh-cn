@@ -7,12 +7,12 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 467863dba2f5757e0590ccf64927ae2af292f285
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647392"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770570"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp 中的 SVG 路径数据
 
@@ -361,7 +361,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[**点和短划线**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)文章讨论如何使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)方法来创建一条虚线。 第一个参数是`float`通常包含两个元素的数组:第一个元素是短划线的长度, 第二个元素是短划线之间的间隔。 当`StrokeCap`属性设置为`SKStrokeCap.Round`，然后向上舍入虚线的末端有效地通过短划线的两面上的笔划宽度加长短划线的长度。 因此，将第一个数组元素设置为 0 创建点线。
+[**点和短划线**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)文章讨论如何使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)方法来创建一条虚线。 第一个参数是`float`通常包含两个元素的数组：第一个元素是短划线的长度，第二个元素是短划线之间的间隔。 当`StrokeCap`属性设置为`SKStrokeCap.Round`，然后向上舍入虚线的末端有效地通过短划线的两面上的笔划宽度加长短划线的长度。 因此，将第一个数组元素设置为 0 创建点线。
 
 这些点之间的距离所依据的第二个数组元素。 如稍后您将看到，这两个`SKPaint`对象用于绘制一个半径为 90 个单位的圆圈。 因此，此圆的周长是 180π，这意味着在 60 分钟标记必须出现每 3 π 单位，这是中的第二个值`float`数组中`minuteMarkPaint`。 12 小时标记必须出现每 15π 单位，即在第二个值`float`数组。
 
@@ -428,7 +428,6 @@ public class PrettyAnalogClockPage : ContentPage
 一些特殊的内容是在第二个指针，但是。 因为在更新时钟每隔 16 毫秒`Millisecond`属性的`DateTime`值可能可用于进行动画处理扫描第二个手动而不是一个在离散的跳转，将移动从第二个到第二个。 但此代码不允许可顺畅地移动。 相反，它使用 Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn)并[ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut)动画的缓动函数的一种不同的移动。 这些缓动函数会导致第二个指针以移动方式 jerkier&mdash;只能回滚一个小之前移动，然后稍有，遗憾的过度排除其目标，影响无法重现这些静态的屏幕截图中：
 
 [![](path-data-images/prettyanalogclock-small.png "三倍的非常模拟时钟页屏幕截图")](path-data-images/prettyanalogclock-large.png#lightbox "带来三倍的非常模拟时钟页屏幕截图")
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 12f34e7bc77fd3978ccfdfb57cc95747123c5603
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bc001c048129851a3604752fdfbd45d72d4c3d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657235"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760488"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用标识提供者对用户进行身份验证
 
@@ -263,7 +263,6 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ## <a name="summary"></a>总结
 
 本文介绍了如何使用 Xamarin.Auth 管理 Xamarin.Forms 应用程序中的身份验证过程。 提供了 Xamarin.Auth`OAuth2Authenticator`和`OAuth2Request`Xamarin.Forms 应用程序用于使用 Google、 Microsoft、 Facebook 和 Twitter 等标识提供程序的类。
-
 
 ## <a name="related-links"></a>相关链接
 
