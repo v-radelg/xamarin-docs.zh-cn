@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c81cc7ff176ab4863498a03169a2c6a3711a0ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b505f4a4f7a8f50a6044d01a327eef76a7b1ce3b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525095"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758026"
 ---
 |Property|说明|选项|
 |--- |--- |--- |
@@ -65,4 +65,3 @@ ms.locfileid: "69525095"
 |`skin.name`|外观名称  &ndash; Android 仿真器外观的名称。 外观是定义仿真显示的视觉对象和控件元素的文件集合，描述了 AVD 的窗口在开发计算机上的外观。 外观描述屏幕大小、按钮和整体设计，但不会影响应用的操作。||
 |`skin.path`|外观路径  &ndash; 包含在 skin.name 中指定的仿真器外观文件的目录的路径。此目录包含 hardware.ini 布局文件以及外观显示元素的映像文件。||
 |`skin.dynamic`|外观动态  &ndash; 外观是否为动态的。 如果仿真器是基于指定的宽度和高度构造给定大小的外观，仿真器外观则为动态外观。|否|
-
