@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: 2e4fa5f1fb96077b0237dbeac9074006e761bc09
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 63c8cb285c51d7c10e2109c9d0b7cffbd0fb0898
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655304"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770331"
 ---
 # <a name="layout-options-in-xamarinforms"></a>在 Xamarin.Forms 中的布局选项
 
@@ -155,8 +155,6 @@ Content = new StackLayout
 ## <a name="summary"></a>总结
 
 本文介绍影响每个[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions)结构值对的对齐方式和视图，相对于其父级的扩展。 `Start`， `Center`， `End`，和`Fill`字段用于定义父布局中的视图的对齐方式和`StartAndExpand`， `CenterAndExpand`， `EndAndExpand`，和`FillAndExpand`字段用于定义对齐方式的首选项，并确定是否在视图将占用更多空间，是否在内可用[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/06/2016
-ms.openlocfilehash: 7d4ad4ca7f15e20bed3cd9bb4050c5a0a9cba63a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284168"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768395"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>在 Xamarin 中使用表和单元格
 
@@ -36,11 +36,11 @@ ms.locfileid: "70284168"
  [自定义表的外观](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
  [编辑](~/ios/user-interface/controls/tables/editing.md)
- 
+
  [行操作](~/ios/user-interface/controls/tables/row-action.md)
 
  [在情节提要中创建表](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
- 
+
  [自动调整行高](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 ## <a name="related-links"></a>相关链接

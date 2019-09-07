@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1daf4822dd7debe98aabd58d42cb6ed29f95b90d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228254"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759362"
 ---
 # <a name="clipping-with-paths-and-regions"></a>按路径和区域进行剪裁
 
@@ -24,7 +24,7 @@ _使用剪辑图形路径指向的特定区域，并创建区域_
 
 ![通过 keyhole 的猴子](clipping-images/clippingsample.png)
 
-*剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是, 你不能从区域创建路径, 它们在内部有很大不同:路径由一系列线条和曲线组成, 而区域由一系列水平扫描线定义。
+*剪辑区域*是在其中呈现图形的屏幕区域。 不呈现的剪辑区域之外显示任何内容。 通常由一个矩形来定义剪辑区域或[ `SKPath` ](xref:SkiaSharp.SKPath)对象，但您可以或者定义剪辑区域使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)对象。 这两种对象类型首先似乎相关，因为您可以从路径中创建一个区域。 但是，你不能从区域创建路径，它们在内部有很大不同：路径由一系列线条和曲线组成，而区域由一系列水平扫描线定义。
 
 上面的图像已通过**Monkey 通过锁眼**页。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)类定义使用 SVG 数据的路径，并使用构造函数从程序资源加载位图：
 
@@ -56,7 +56,6 @@ public class MonkeyThroughKeyholePage : ContentPage
 ```
 
 尽管`keyholePath`对象描述的锁眼轮廓，坐标是完全任意的并且反映什么设备设计路径数据时非常方便。 出于此原因，`PaintSurface`处理程序获取此路径和调用的边界`Translate`和`Scale`将路径移动到屏幕的中央，使其几乎作为屏幕高度增加：
-
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -366,7 +365,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 如果每个路径缩短为水平扫描行，如老式清空 tube 电视中的一系列显著简化此作业。 每个扫描行是只需一条水平线起始点和终结点。 例如，10 个像素的半径的圆形可分解为 20 水平扫描行，其中每个圆的左侧部分开始，在右侧的部分结束。 结合使用的任何区域操作的两个圆成为非常简单，因为它是只需检查每个对相应扫描行的开始和结束坐标。
 
-这是一个区域:一系列用于定义区域的水平扫描行。
+这是一个区域：一系列用于定义区域的水平扫描行。
 
 但是，当区域被简化为一系列的扫描行，这些扫描线基于特定的像素尺寸。 严格地说，区域不是向量图形对象。 它是在更接近本质上比为路径的压缩单色位图。 因此，区域不能缩放或旋转不失真，并因此它们不转换时使用的剪辑区域。
 
@@ -510,7 +509,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 它真正看上去不像四个-能，但它是一个图像，否则可能很难不经剪辑呈现：
 
 [![四叶三月页面的三向屏幕截图](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
-
 
 ## <a name="related-links"></a>相关链接
 

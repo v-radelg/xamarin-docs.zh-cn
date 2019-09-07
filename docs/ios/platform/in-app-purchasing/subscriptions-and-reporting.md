@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 7f455d2164573d68db0a9c764f2b2cef5cc6d739
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284042"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752672"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的订阅和报表
 
@@ -28,7 +28,6 @@ ms.locfileid: "70284042"
 - 实现概述
 - 通常，非续订订阅应使用服务器交付的工作流和管理的同类产品来实现。 
 
-
 ## <a name="about-free-subscriptions"></a>关于免费订阅
 
 免费订阅允许开发人员将免费内容放在 Newsstand 应用中（不能用于非 Newsstand 应用）。 免费订阅启动后，它将在用户的所有设备上可用。 免费订阅永不过期;它们仅在卸载应用程序时结束。
@@ -36,7 +35,6 @@ ms.locfileid: "70284042"
 ### <a name="implementation-overview"></a>实现概述
 
 免费订阅的行为与自动可续订订阅非常类似。 在 iTunes Connect 中，应用程序必须有可用于 "购买" 的免费订阅产品。 当用户购买时，应验证免费订阅购买情况，如自动可续订订阅产品。 免费订阅事务可以还原。
-
 
 ## <a name="about-auto-renewable-subscriptions"></a>关于自动可续订订阅
 
@@ -53,7 +51,7 @@ ms.locfileid: "70284042"
 从 iTunes Connect 主页中选择 **"我的应用"** ：   
    
  [![](subscriptions-and-reporting-images/image2.png "选择“我的应用”")](subscriptions-and-reporting-images/image2.png#lightbox)  
- 
+
 选择一个应用程序，并单击 "**应用内购买**" 选项卡：
 
 [![](subscriptions-and-reporting-images/image6.png "单击 \"应用内购买\" 选项卡")](subscriptions-and-reporting-images/image6.png#lightbox)
@@ -63,10 +61,8 @@ ms.locfileid: "70284042"
  [![](subscriptions-and-reporting-images/image40.png "选择 \"查看或生成共享机密\"")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "生成共享机密")](subscriptions-and-reporting-images/image41.png#lightbox)   
-   
-   
-   
- 若要使用共享机密，请将其包含在为自动可续订订阅验证应用内购买回执的 JSON 有效负载中，如下所示：
+
+若要使用共享机密，请将其包含在为自动可续订订阅验证应用内购买回执的 JSON 有效负载中，如下所示：
 
 ```csharp
 {
@@ -95,10 +91,8 @@ ms.locfileid: "70284042"
 #### <a name="restoring-auto-renewable-subscriptions"></a>还原自动可续订订阅
 
 您将获得多个事务，即每次续订订阅时的原始采购交易记录和单独的事务。 你需要跟踪 "开始日期" 和 "条款"，以了解有效性期限。   
-   
-   
-   
- SKPaymentTransaction 对象不包括订阅术语–应为每个术语使用不同的产品 ID，并编写可以从事务的购买日期中推断出订阅时间的代码。
+
+SKPaymentTransaction 对象不包括订阅术语–应为每个术语使用不同的产品 ID，并编写可以从事务的购买日期中推断出订阅时间的代码。
 
 #### <a name="testing-auto-renewal"></a>测试自动续订
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 47055ca61e0be9b5b54e8f5ff23719b64f1101cd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 969d7fc78af9dd10f7ad57f58a6f4f619d0a201a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291707"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769458"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 中的搜索和主屏幕小组件增强功能
 
@@ -50,7 +50,7 @@ Apple 为小组件系统引进了几项增强功能，以确保小组件在新�
 
 ## <a name="working-with-vibrancy"></a>使用活力
 
-活力可确保小组件的文本在显示在小组件光线上时保持清晰，模糊背景（由系统提供）。 在 iOS 10 之前，开发人员将为小组件的活力使用[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) 。 例如：
+活力可确保小组件的文本在显示在小组件光线上时保持清晰，模糊背景（由系统提供）。 在 iOS 10 之前，开发人员将为小组件的活力使用[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) 。 例如:
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
@@ -191,8 +191,6 @@ public void WidgetActiveDisplayModeDidChange (NCWidgetDisplayMode activeDisplayM
 ## <a name="summary"></a>总结
 
 本文介绍了 Apple 在 iOS 10 中对小组件系统的增强功能，并演示了如何在 Xamarin 中实现这些功能。
-
-
 
 ## <a name="related-links"></a>相关链接
 

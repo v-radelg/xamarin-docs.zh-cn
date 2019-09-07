@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 76733d4efd4ce292da2781c97aef963fb68e3974
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ab72034d7b565a31c59d997f03844b6c8c959785
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287873"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768182"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin 中的 UI 线程
 
@@ -40,7 +40,6 @@ InvokeOnMainThread ( () => {
 
  <a name="Background_Thread_Example" />
 
-
 ## <a name="background-thread-example"></a>后台线程示例
 
 下面的示例尝试使用简单线程从后台线程访问用户界面控件`UILabel`（a）：
@@ -64,7 +63,6 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 对于本文档中的其余示例，你不需要使用此方法，但这是一个重要的概念，可以记住应用何时发出网络请求，使用通知中心或其他需要完成处理程序的方法（将在另一个上运行）thread.
 
  <a name="Async_Await_Example" />
-
 
 ## <a name="asyncawait-example"></a>Async/Await 示例
 
@@ -92,7 +90,6 @@ async partial void button2_TouchUpInside (UIButton sender)
 ```
 
 如果异步方法是从后台线程（而不是主 UI 线程）调用的， `InvokeOnMainThread`则仍需要。
-
 
 ## <a name="related-links"></a>相关链接
 

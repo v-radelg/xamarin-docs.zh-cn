@@ -7,31 +7,27 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 9de12f234bb4d18cb7a78f84f72f5e431409dac1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d8267d4def0f7c24c660dfb4d301c111a92bb0b9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283036"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767157"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin 中的线程
 
 在使用异步委托模式或 BeginXXX 方法时，Xamarin iOS 运行时为开发人员提供了对`System.Threading.Thread, System.Threading.ThreadPool`.net 线程 api 的访问，并在使用异步委托模式或方法以及支持任务并行库。
-
-
 
 Xamarin 强烈建议使用[任务并行库](https://msdn.microsoft.com/library/dd460717.aspx)（TPL）来生成应用程序，原因如下：
 - 默认 TPL 计划程序会将任务执行委托给线程池，这反过来会动态增加所需的线程数，同时避免太多线程最终争用 CPU 时间的情况。 
 - 可以更方便地考虑 TPL 任务的操作。 使用一组丰富的 Api，可以轻松地对其进行处理、计划、序列化其执行或启动多项操作。 
 - 它是用新C#的异步语言扩展进行编程的基础。 
 
-
 根据系统上可用的 CPU 内核数、系统负载和应用程序的要求，线程池会根据需要慢慢地增长线程数。 您可以使用此线程池，方法是：在`System.Threading.ThreadPool`中调用方法，或`System.Threading.Tasks.TaskScheduler`使用默认值（*并行框架*的一部分）。
 
 当开发人员需要创建响应式应用程序，并且不希望阻止主 UI 运行循环时，开发人员通常会使用线程。
 
  <a name="Developing_Responsive_Applications" />
-
 
 ## <a name="developing-responsive-applications"></a>开发响应式应用程序
 
@@ -56,7 +52,6 @@ MyThreadedRoutine ()
 
  <a name="Threading_and_Garbage_Collection" />
 
-
 ## <a name="threading-and-garbage-collection"></a>线程和垃圾回收
 
 在执行过程中，目标 C 运行时将创建和释放对象。 如果将对象标记为 "自动释放"，则目标 C 运行时将释放这些对象到线程的当前`NSAutoReleasePool`。 Xamarin 为中的`NSAutoRelease` `System.Threading.ThreadPool`每个线程创建一个池。 此扩展涵盖了在 TaskScheduler 中使用默认的创建的所有线程。
@@ -73,7 +68,6 @@ void MyThreadStart (object arg)
 ```
 
 注意:自 Xamarin 5.2 起，你不必自行`NSAutoReleasePool`提供，因为系统会自动为你提供。
-
 
 ## <a name="related-links"></a>相关链接
 

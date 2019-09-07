@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 4a68526187271c00332548764850783531391c73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08cb1ab2c2a1e75776675ad20da9e3bdfd77be5d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292190"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752816"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概述和检索 Xamarin 中的产品信息
 
 下面的屏幕截图中显示了应用内购买的用户界面。
 在发生任何交易之前，应用程序必须检索产品的价格以及显示的说明。 然后，当用户按 "**购买**" 时，应用程序向 StoreKit 发出请求，该请求管理确认对话框和 Apple ID 登录。 假设事务成功，StoreKit 将通知应用程序代码，该代码必须存储事务结果，并向用户提供对其购买的访问权限。   
 
-   
  [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知应用程序代码，该代码必须存储事务结果并向用户提供对其购买的访问权限")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>类
@@ -37,39 +36,27 @@ ms.locfileid: "70292190"
 - **SKPaymentTransactionObserver** –自定义子类，用于响应 StoreKit 付款队列生成的事件。 
 - **StoreKit 操作是异步**的–启动 SKProductRequest 后，将向队列中添加 SKPayment 后，控件会返回到代码。 StoreKit 在从 Apple 服务器接收数据时，将调用 SKProductsRequestDelegate 或 SKPaymentTransactionObserver 子类上的方法。 
 
-
 下图显示了各种 StoreKit 类之间的关系（必须在应用程序中实现抽象类）：   
-   
-   
-   
+
  [![](store-kit-overview-and-retreiving-product-information-images/image15.png "各种 StoreKit 类之间的关系必须在应用程序中实现")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
-   
-   
-   
- 本文档稍后将详细介绍这些类。
+
+本文档稍后将详细介绍这些类。
 
 ## <a name="testing"></a>正在测试
 
 大多数 StoreKit 操作需要使用实际设备进行测试。 检索产品信息（即 价格&amp;描述）将在模拟器中运行，但采购和还原操作将返回错误（如 FailedTransaction 代码 = 5002 发生未知错误）。
 
 注意:StoreKit 不在 iOS 模拟器中运行。 在 iOS 模拟器中运行应用程序时，如果你的应用程序尝试检索付款队列，StoreKit 将记录一个警告。 必须在实际设备上测试应用商店。   
-   
-   
-   
- 重要提示：不要在 "设置" 应用程序中用测试帐户登录。 你可以使用 "设置" 应用程序来注销任何现有 Apple ID 帐户，然后必须等待*在应用内购买顺序*中出现提示，才能使用测试 Apple id 进行登录。   
-   
-   
-   
+
+重要提示：不要在 "设置" 应用程序中用测试帐户登录。 你可以使用 "设置" 应用程序来注销任何现有 Apple ID 帐户，然后必须等待*在应用内购买顺序*中出现提示，才能使用测试 Apple id 进行登录。   
 
 如果尝试使用测试帐户登录到实际存储，则它会自动转换为实际的 Apple ID。 该帐户将无法再用于测试。
 
 若要测试 StoreKit 代码，必须注销常规 iTunes 测试帐户，并使用链接到测试存储的特殊测试帐户（在 iTunes Connect 中创建）登录。 若要注销当前帐户，请访问 **> iTunes 和 App Store 的设置**，如下所示：
 
  [![](store-kit-overview-and-retreiving-product-information-images/image16.png "若要从当前帐户注销，请访问设置 iTunes 和 App Store")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
- 
+
 然后，在*你的应用中通过 StoreKit 请求时*使用测试帐户登录：
-
-
 
 若要在 iTunes Connect 中创建测试用户，请单击主页上的 "**用户和角色**"。
 
@@ -90,10 +77,8 @@ ms.locfileid: "70292190"
 ## <a name="retrieving-product-information"></a>检索产品信息
 
 销售应用内购买产品的第一步是显示它：从应用商店检索当前价格和说明以供显示。   
-   
-   
-   
- 无论应用销售哪种类型的产品（可使用、不可用或一种类型的订阅），检索产品信息以显示的过程都是相同的。 本文附带的 InAppPurchaseSample 代码包含一个名为*耗材*的项目，该项目演示如何检索要显示的生产信息。 它演示了如何执行以下操作：
+
+无论应用销售哪种类型的产品（可使用、不可用或一种类型的订阅），检索产品信息以显示的过程都是相同的。 本文附带的 InAppPurchaseSample 代码包含一个名为*耗材*的项目，该项目演示如何检索要显示的生产信息。 它演示了如何执行以下操作：
 
 - 创建的`SKProductsRequestDelegate`实现并`ReceivedResponse`实现抽象方法。 示例代码将`InAppPurchaseManager`此类称为。 
 - 请检查 StoreKit 以查看是否允许付款（使用`SKPaymentQueue.CanMakePayments` ）。 
@@ -108,15 +93,10 @@ ms.locfileid: "70292190"
 ### <a name="displaying-product-information-example"></a>显示产品信息示例
 
 [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) *耗材*示例代码演示了如何检索产品信息。 该示例的主屏幕显示从应用商店检索到的两个产品的信息：   
-   
-   
-   
- [![](store-kit-overview-and-retreiving-product-information-images/image23.png "主屏幕显示从应用商店检索到的信息产品")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
-   
-   
-   
- 下面更详细地介绍了用于检索和显示产品信息的示例代码。
 
+ [![](store-kit-overview-and-retreiving-product-information-images/image23.png "主屏幕显示从应用商店检索到的信息产品")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
+
+下面更详细地介绍了用于检索和显示产品信息的示例代码。
 
 #### <a name="viewcontroller-methods"></a>ViewController 方法
 
@@ -151,9 +131,7 @@ priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
 }
 ```
 
-   
-   
- 在`ViewWillAppear`方法的末尾， `RequestProductData`调用方法以启动 StoreKit 请求。 发出此请求后，StoreKit 将与 Apple 的服务器异步联系以获取信息，并将其反馈给你的应用程序。 这是由`SKProductsRequestDelegate`下一部分中所`InAppPurchaseManager`述的子类（）实现的。
+在`ViewWillAppear`方法的末尾， `RequestProductData`调用方法以启动 StoreKit 请求。 发出此请求后，StoreKit 将与 Apple 的服务器异步联系以获取信息，并将其反馈给你的应用程序。 这是由`SKProductsRequestDelegate`下一部分中所`InAppPurchaseManager`述的子类（）实现的。
 
 ```csharp
 iap.RequestProductData(products);
@@ -202,10 +180,8 @@ public void RequestProductData (List<string> productIds)
 ```
 
 iOS 会根据应用程序运行时使用的预配配置文件自动将请求路由到应用商店的 "沙盒" 或 "生产" 版本-因此，在开发或测试应用时，请求将有权访问每个产品在 iTunes Connect 中配置（甚至是尚未通过 Apple 提交或批准的配置）。 当应用程序在生产环境中时，StoreKit 请求将仅返回**已批准**产品的信息。   
-   
-   
-   
- 在`ReceivedResponse` Apple 的服务器响应数据后，将调用重写的方法。 由于这是在后台调用的，因此，代码应分析出有效数据，并使用通知将产品信息发送到针对该通知 "侦听" 的任何 ViewControllers。 下面显示了用于收集有效产品信息并发送通知的代码：
+
+在`ReceivedResponse` Apple 的服务器响应数据后，将调用重写的方法。 由于这是在后台调用的，因此，代码应分析出有效数据，并使用通知将产品信息发送到针对该通知 "侦听" 的任何 ViewControllers。 下面显示了用于收集有效产品信息并发送通知的代码：
 
 ```csharp
 public override void ReceivedResponse (SKProductsRequest request, SKProductsResponse response)
@@ -241,10 +217,8 @@ public override void RequestFailed (SKRequest request, NSError error)
 ## <a name="invalid-products"></a>无效产品
 
 还`SKProductsRequest`可能返回无效产品 id 的列表。 通常由于下列原因之一而返回无效的产品：   
-   
-   
-   
- **产品 ID 已错误键入**–只接受有效的产品 id。   
+
+**产品 ID 已错误键入**–只接受有效的产品 id。   
    
  **产品尚未获得批准**–在测试过程中，所有已清除的产品都应由`SKProductsRequest`返回，但在生产中，只返回已批准的产品。   
    
@@ -294,16 +268,9 @@ buy5Button.SetTitle(String.Format(Buy, product.LocalizedPrice()), UIControlState
 ```
 
 使用两个不同的 iTunes 测试帐户（一个用于美国商店，一个用于日本商店）会生成以下屏幕截图：   
-   
-   
-   
- [![](store-kit-overview-and-retreiving-product-information-images/image25.png "显示语言特定结果的两个不同的 iTunes 测试帐户")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
-   
-   
-   
- 请注意，存储会影响用于产品信息和价格的语言，而设备的语言设置会影响标签和其他本地化内容。   
-   
-   
-   
- 请记住，若要使用其他存储测试帐户，必须在**iTunes 和 App store > 设置**中**注销**，然后重新启动应用程序以使用其他帐户登录。 若要更改设备的语言，请转到 "**设置" > 常规 > 国际 > 语言**。
 
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "显示语言特定结果的两个不同的 iTunes 测试帐户")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
+
+请注意，存储会影响用于产品信息和价格的语言，而设备的语言设置会影响标签和其他本地化内容。   
+
+请记住，若要使用其他存储测试帐户，必须在**iTunes 和 App store > 设置**中**注销**，然后重新启动应用程序以使用其他帐户登录。 若要更改设备的语言，请转到 "**设置" > 常规 > 国际 > 语言**。

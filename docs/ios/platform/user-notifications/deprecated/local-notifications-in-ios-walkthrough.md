@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad0200d083f7b190184f631de51483f4f651d17
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290461"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769757"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>演练-在 Xamarin 中使用本地通知
 
@@ -24,7 +24,6 @@ _本部分介绍如何在 Xamarin iOS 应用程序中使用本地通知。它将
 ## <a name="walkthrough"></a>演练
 
 让我们创建一个简单的应用程序，该应用程序将在操作中显示本地通知。 此应用程序将在其上有一个按钮。 单击该按钮时，它将创建一个本地通知。 经过指定的时间段后，会看到通知出现。
-
 
 1. 在 Visual Studio for Mac 中，创建一个新的单一视图 iOS 解决方案并`Notifications`调用它。
 1. 打开该`Main.storyboard`文件，并将一个按钮拖到视图上。 命名按钮**按钮**，并为其指定标题 "**添加通知**"。 此时，您可能还需要对按钮设置一些[约束](~/ios/user-interface/designer/designer-auto-layout.md)： 
@@ -88,7 +87,6 @@ _本部分介绍如何在 Xamarin iOS 应用程序中使用本地通知。它将
 
 1. 我们需要处理因本地通知而导致通知启动的情况。 `FinishedLaunching` 编辑`AppDelegate`中的方法以包含以下代码片段：
 
-
     ```csharp
     // check for a notification
 
@@ -119,7 +117,6 @@ _本部分介绍如何在 Xamarin iOS 应用程序中使用本地通知。它将
 ## <a name="summary"></a>总结
 
 本演练演示了如何使用各种 API 在 iOS 中创建和发布通知。 它还演示了如何使用徽章更新应用程序图标，以向用户提供一些特定于应用程序的反馈。
-
 
 ## <a name="related-links"></a>相关链接
 

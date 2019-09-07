@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 59ec82c222208ff0e73b0b7b5226d416d3a53398
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 50efd6b37d70fa835436c28c73b3d4f9fc6c7c83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656602"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758094"
 ---
 # <a name="bindable-properties"></a>可绑定属性
 
@@ -221,7 +221,6 @@ public static readonly BindableProperty SizeProperty =
 ## <a name="summary"></a>总结
 
 本文介绍了可绑定属性，并演示了如何创建并使用它们。 可绑定属性是属性的特殊类型，其中 Xamarin.Forms 属性系统跟踪属性的值。
-
 
 ## <a name="related-links"></a>相关链接
 

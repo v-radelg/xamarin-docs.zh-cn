@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 341689e53d6654cb68316c17e2f263062cfc1fd5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ac6ce31ad851e90f7781cffdb3cd3d1d905a8733
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292696"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769772"
 ---
 # <a name="xamarinmac-troubleshooting"></a>Xamarin 的故障排除 
 
@@ -26,4 +26,3 @@ _本部分中的文档涵盖了特定于用 Xamarin 进行故障排除的功能�
 ## <a name="errors-messages-mmpmactroubleshootingmmp-errorsmd"></a>[错误消息（mmp）](~/mac/troubleshooting/mmp-errors.md)
 
 错误参考指南，其中显示了生成 Xamarin Mac 应用程序时可能会遇到的最常见错误。
-

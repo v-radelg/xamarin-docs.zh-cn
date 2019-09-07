@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: bf8efad28c7ec6acfd0e43403e8db14639a3c755
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 125412ec229f07c4515f42e4df7996d90f87a67b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289408"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766556"
 ---
 # <a name="editing-nuget-metadata"></a>编辑 NuGet 元数据
 
@@ -50,7 +50,6 @@ _使用项目选项编辑多平台库的 NuGet 元数据_
 
 > [!NOTE]
 > 如果 NuGet 包在[NuGet.org](https://www.nuget.org)上分发，则建议提供尽可能多的信息。
-
 
 ## <a name="related-links"></a>相关链接
 

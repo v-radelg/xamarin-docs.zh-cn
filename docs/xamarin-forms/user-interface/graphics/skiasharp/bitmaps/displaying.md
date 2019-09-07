@@ -7,12 +7,12 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 5235f00a28a047260a91cb708e26e262cafbad07
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9955b68346c74435a3a141c69d02e1bec5856bd3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200237"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759515"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>显示 SkiaSharp 位图
 
@@ -73,7 +73,7 @@ catch
 
 请注意，`Stream`对象，来自`GetStreamAsync`复制到`MemoryStream`。 Android 不允许`Stream`从`HttpClient`由主线程以外的异步方法中进行处理。 
 
-[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))执行大量工作:传递`Stream`给它的对象引用一个内存块, 其中包含一个通用位图文件格式 (通常为 JPEG、PNG 或 GIF) 中的整个位图。 `Decode`方法必须确定格式，并再到 SkiaSharp 自己内部的位图格式解码的位图文件。
+[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))执行大量工作：传递`Stream`给它的对象引用一个内存块，其中包含一个通用位图文件格式（通常为 JPEG、PNG 或 GIF）中的整个位图。 `Decode`方法必须确定格式，并再到 SkiaSharp 自己内部的位图格式解码的位图文件。
 
 你的代码调用后`SKBitmap.Decode`，它可能会使`CanvasView`以便`PaintSurface`处理程序可以显示新加载的位图。
 
@@ -667,4 +667,3 @@ public partial class ScalingModesPage : ContentPage
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-

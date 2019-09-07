@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa50ae16b69436936f0a7a8a5cf0aeaa54dfedfb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290860"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765672"
 ---
 # <a name="objective-sharpie-release-history"></a>客观 Sharpie 发行历史记录
 
@@ -142,4 +142,3 @@ _建议_对所有绑定声明进行验证，但对于使用`[Verify]`特性批�
 [下载版本1.1。1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
 
 在 2005 2013 年4月的目标 Sharpie 的初始预览后，1.1.1 是1.5 年后的第一个主要发布。 这一版本通常被视为稳定的，可用于各种本机库，这是一个新的 Clang 后端。
-

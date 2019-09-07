@@ -7,15 +7,14 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: c75db8bd29b7a57c46610abdd5e4024938fc9e1b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fec6cef22ddbc47aca0027aa026e0524b38bec4e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280332"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768063"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>在 Xamarin 中使用 watchOS 应用组
-
 
 应用组允许不同的应用程序（或一个应用程序及其扩展）访问共享文件存储位置。 应用组可以用于如下所示的数据：
 
@@ -39,14 +38,11 @@ ms.locfileid: "70280332"
 
 [![](app-groups-images/entitlements-sml.png "配置 info.plist 并输入 ID")](app-groups-images/entitlements.png#lightbox)
 
-
 ### <a name="deployment"></a>部署
 
 请确保在[部署](~/ios/watchos/deploy-test/index.md#App_Groups)设置中正确配置应用组。
 
-
 有关详细信息，请参阅[应用程序组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文档。
-
 
 ## <a name="related-links"></a>相关链接
 

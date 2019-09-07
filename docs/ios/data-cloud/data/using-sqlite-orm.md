@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6711a16ba0035190d10687ef821831559c07b797
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289830"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763134"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>将 SQLite.NET 与 Xamarin 配合使用
 
@@ -136,7 +136,6 @@ public static void DoSomeDataAccess () {
 - **[Ignore]** –使 SQLite.NET 忽略此属性。 这对于类型不能存储在数据库中的属性或无法自动解析的模型集合的属性特别有用。
 - **[Unique]** –确保基础数据库列中的值是唯一的。
 
-
 其中的大多数属性是可选的，SQLite 将使用表名和列名的默认值。 应始终指定整数主键，以便可以对数据高效地执行选择和删除查询。
 
 ## <a name="more-complex-queries"></a>更复杂的查询
@@ -149,7 +148,6 @@ public static void DoSomeDataAccess () {
 - **删除**–使用其主键删除对象。
 - **查询\<T >** -执行返回多行（作为对象）的 SQL 查询。
 - **执行**–当您不希望从 SQL `Query`返回行时（例如插入、更新和删除说明），请使用此方法（而不是）。
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>通过主键获取对象
 

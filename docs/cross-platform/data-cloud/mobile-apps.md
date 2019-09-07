@@ -6,12 +6,12 @@ ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: 093e2ad9cf18abecc4eb1b63690c016e8ed21a0c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: b94bae8fb1b7c990c5b2478a0da143960a0bcc55
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227779"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765964"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure 移动应用
 
@@ -32,18 +32,17 @@ Get started with Notification Hubs http://go.microsoft.com/fwlink/p/?LinkId=3313
 Validate and modify data  http://go.microsoft.com/fwlink/p/?LinkId=331330
 -->
 
-
 这些链接适用于[Azure 移动应用](https://docs.microsoft.com/azure/app-service-mobile/)网站上提供的 Xamarin 文档。
 通过下载[Azure 移动客户端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)向 Xamarin 应用程序添加 azure 功能。
 
 ## <a name="working-with-the-xamarin-azure-component"></a>使用 Xamarin Azure 组件
 
-有关使用[Xamarin 客户端库 (组件)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library)完成各种任务的常规文档, 请参阅 Azure 移动应用。 此页面包含许多示例代码片段, 不包括下面列出的每个演练文章中提供的详细说明和示例。
+有关使用[Xamarin 客户端库（组件）](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library)完成各种任务的常规文档，请参阅 Azure 移动应用。 此页面包含许多示例代码片段，不包括下面列出的每个演练文章中提供的详细说明和示例。
 
 ## <a name="getting-started"></a>入门
 
 本文提供了有关启动和运行第一个 Xamarin Azure 应用程序的分步说明。
-其中介绍了如何在门户中创建新的 Azure 移动应用, 并下载并运行预配置的应用。
+其中介绍了如何在门户中创建新的 Azure 移动应用，并下载并运行预配置的应用。
 
 - [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
 - [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
@@ -74,38 +73,33 @@ A quick example of paging large sets of data using Skip() and Take().
 - [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
 - [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
 
-
 ## <a name="authorize-users-in-scripts"></a>在脚本中授权用户
 
 Javascript 后端的一些示例代码
 
 - [Todo.js](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)
 
-
 ## <a name="get-started-with-push"></a>推送入门
 
-有关在 Apple 和 Google 网站上配置推送通知的完整说明, 然后从 Azure 移动服务向设备发送推送通知。
+有关在 Apple 和 Google 网站上配置推送通知的完整说明，然后从 Azure 移动服务向设备发送推送通知。
 
 - [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
 - [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
 
-
 ## <a name="get-started-with-notification-hubs"></a>通知中心入门
 
-有关在 Apple 和 Google 网站上配置推送通知的完整说明, 请配置 Azure 通知中心, 然后生成到设备的推送通知。
+有关在 Apple 和 Google 网站上配置推送通知的完整说明，请配置 Azure 通知中心，然后生成到设备的推送通知。
 
 - [iOS](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
 - [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
 
-
-
 ## <a name="related-links"></a>相关链接
 
-- [GettingStarted (示例)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GettingStarted)
-- [GetStartedWithData (示例)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithData)
-- [GetStartedWithUsers (示例)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithUsers)
-- [GetStartedWithPush (示例)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithPush)
-- [NotificationHubs (示例)](https://github.com/xamarin/mobile-samples/tree/master/Azure/NotificationHubs)
+- [GettingStarted （示例）](https://github.com/xamarin/mobile-samples/tree/master/Azure/GettingStarted)
+- [GetStartedWithData （示例）](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithData)
+- [GetStartedWithUsers （示例）](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithUsers)
+- [GetStartedWithPush （示例）](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithPush)
+- [NotificationHubs （示例）](https://github.com/xamarin/mobile-samples/tree/master/Azure/NotificationHubs)
 - [Azure 移动客户端](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
 - [Azure 移动应用学习路径](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/)
 

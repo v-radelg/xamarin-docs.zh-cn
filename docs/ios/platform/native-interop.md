@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/28/2016
-ms.openlocfilehash: 75180152c3ed7056102038b9019f8017183c17ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 16e6d66cd41ead7a4d234cf45bb73e53e41aa5eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279945"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769571"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>引用 Xamarin 中的本机库
 
@@ -56,7 +56,6 @@ lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a lib
 
 这将`libMyLibrary.a`创建一个通用（fat）库，适用于所有 iOS 开发目标。
 
-
 ### <a name="missing-required-architecture-i386"></a>缺少所需的体系结构 i386
 
 如果尝试在 iOS 模拟器`does not implement methodSignatureForSelector`中`does not implement doesNotRecognizeSelector`使用目标-C 库时在运行时输出中获取或消息，则可能是因为没有为 i386 体系结构编译库（请参阅[构建通用本机库](#building_native)"部分）。
@@ -80,7 +79,6 @@ lipo -info /full/path/to/libraryname.a
 - 将库导入项目
 - 配置 Xamarin 以链接库
 - 从库中访问方法。
-
 
 若要将**库导入项目**，请从 "解决方案资源管理器" 中选择项目，并按**命令 + 选项 + a**。 导航到 libMyLibrary，并将其添加到项目。 出现提示时，请告知 Visual Studio for Mac 或 Visual Studio 将其复制到项目中。 添加后，在项目中找到 libFoo，右键单击该项目，然后将 "**生成操作**" 设置为 "**无**"。
 
@@ -113,7 +111,6 @@ IOS 上提供两种本机库：
 - 作为操作系统一部分的共享库。
 
 - 随应用程序一起提供的静态库。
-
 
 若要访问其中任何一个中定义的方法，请使用[Mono 的 P/Invoke 功能](https://www.mono-project.com/docs/advanced/pinvoke/)，这是在 .net 中使用的相同技术，这一点大致为：
 
@@ -174,4 +171,3 @@ public static extern double AnimalLibraryVersion();
 由于只能在 iOS 上使用静态库，因此没有要链接的外部共享库，因此 DllImport 特性中的 path 参数需要使用特殊名称`__Internal` （请注意名称开头的双下划线字符），而不是路径名称。
 
 这会强制 DllImport 查找在当前程序中引用的方法的符号，而不是尝试从共享库中加载它。
-

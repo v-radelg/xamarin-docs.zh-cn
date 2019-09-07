@@ -6,19 +6,19 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: de34dcdd194bd3777214d23fded7e5f42ec5141c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287542"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765502"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac 和绑定项目中的本机引用
 
 _本机引用使你能够将本机框架嵌入到 Xamarin 或 Xamarin 或 Xamarin 项目或绑定项目。_
 
 从 iOS 8.0 开始，可以创建一个嵌入框架，以便在 Xcode 中的应用扩展和主应用之间共享代码。 使用本机引用功能，可以在 Xamarin 中使用这些嵌入式框架（使用 Xcode 创建）。
- 
+
 > [!IMPORTANT]
 > 不能从任何类型的 Xamarin 或 Xamarin 项目创建嵌入的框架，本机引用仅允许使用现有的本机（目标-C）框架。
 
@@ -98,4 +98,3 @@ _本机引用使你能够将本机框架嵌入到 Xamarin 或 Xamarin 或 Xamari
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何将本机框架嵌入到 Xamarin 或 Xamarin 应用程序中。
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 06/17/2016
-ms.openlocfilehash: 188bc8a04b62c97e9d6f80669fe50da1bf4d9340
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289554"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770167"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Xamarin 中的常见模式和惯例
 
@@ -54,8 +54,6 @@ Cocoa 中的另一种非常常见的模式是向 UI 元素提供数据并对用�
 目标中的协议可与中C#的接口进行比较，在许多情况下，在类似情况下使用。 例如，在`NSTableView`上述示例中，委托和数据源都是实际的协议。 Xamarin 将这些基类公开为可替代的虚方法。 接口和目标- C# C 协议之间的主要区别在于，协议中的某些方法可能是可选的。 需要查看 API 的文档和/或定义，以确定什么是可选的。
 
 有关详细信息，请参阅我们的[委托、协议和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)文档。
-
-
 
 ## <a name="related-links"></a>相关链接
 

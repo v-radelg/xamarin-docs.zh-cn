@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f92a338b58dfb82ff5d442ed856e246f4a8a5a8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228212"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761846"
 ---
 # <a name="listview-performance"></a>ListView 性能
 
@@ -133,7 +133,7 @@ var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>子类化 ListView 中设置缓存策略
 
-设置`CachingStrategy`子类化，从 XAML 的特性[ `ListView` ](xref:Xamarin.Forms.ListView)不会生成所需的行为，因为没有任何`CachingStrategy`属性`ListView`。 此外, 如果启用了[XAMLC](~/xamarin-forms/xaml/xamlc.md) , 则将生成以下错误消息:**找不到属性、可绑定的属性或 "CachingStrategy" 的事件**
+设置`CachingStrategy`子类化，从 XAML 的特性[ `ListView` ](xref:Xamarin.Forms.ListView)不会生成所需的行为，因为没有任何`CachingStrategy`属性`ListView`。 此外，如果启用了[XAMLC](~/xamarin-forms/xaml/xamlc.md) ，则将生成以下错误消息：**找不到属性、可绑定的属性或 "CachingStrategy" 的事件**
 
 此问题的解决方案是指定构造函数上子类[ `ListView` ](xref:Xamarin.Forms.ListView)接受[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)参数并将其传递到基类：
 
@@ -181,7 +181,6 @@ public class CustomListView : ListView
 `AbsoluteLayout` 有可能执行而无需单个度量值调用的布局。 这样就非常强大的性能。 如果`AbsoluteLayout`不能使用，请考虑[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接传递约束将远远快于使用 API 的表达式。 这是因为表达式 API 使用 JIT，并在 iOS 上的树包含解释，这是速度较慢。 表达式 API 是适用于页面布局，只是要求初始布局和旋转，但在`ListView`，其中在滚动，过程不断地运行会损害性能。
 
 构建自定义呈现器[ `ListView` ](xref:Xamarin.Forms.ListView)或其单元格是一种方法减少的布局计算上滚动性能的影响。 有关详细信息，请参阅[自定义 ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)并[自定义 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。
-
 
 ## <a name="related-links"></a>相关链接
 

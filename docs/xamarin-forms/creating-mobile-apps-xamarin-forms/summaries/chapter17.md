@@ -1,18 +1,18 @@
 ---
 title: 第 17 章的摘要。 控制网格
-description: 使用 Xamarin.Forms 创建移动应用：第 17 章的摘要。 控制网格
+description: 用 Xamarin 创建移动应用程序：第 17 章的摘要。 控制网格
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333702"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760630"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 控制网格
 
@@ -101,8 +101,6 @@ ms.locfileid: "61333702"
 `Grid`有助于构建一个程序来响应方向更改。 [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)示例演示了一种方法，以纵向手机的第二行和面向布局的手机的第二个列之间移动元素。
 
 在程序初始化`Slider`0 到 255，以及使用数据绑定，以十六进制格式显示的滑块的值在范围内的元素。 因为`Slider`点和.NET 格式字符串设置为仅适用于整数的十六进制值为浮动[ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)类[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)库很有帮助。
-
-
 
 ## <a name="related-links"></a>相关链接
 

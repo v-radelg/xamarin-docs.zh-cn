@@ -1,18 +1,18 @@
 ---
 title: 第 19 章的摘要。 集合视图
-description: 使用 Xamarin.Forms 创建移动应用：第 19 章的摘要。 集合视图
+description: 用 Xamarin 创建移动应用程序：第 19 章的摘要。 集合视图
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 795478805b582b956ee491bdfecd84485c1bc30e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bad46bead106304713bae91a7bf752db8080760a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334293"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760611"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章的摘要。 集合视图
 
@@ -113,7 +113,7 @@ Xamarin.Forms 定义了三个视图的保留集合并显示其元素：
 
 ### <a name="grouping-the-listview-items"></a>对 ListView 项进行分组
 
-`ListView` 支持对项进行分组和在这些组之间导航。 `ItemsSource`属性必须设置为集合的集合：该对象的`ItemsSource`设置为必须实现`IEnumerable`，并在集合中的每个项还必须实现`IEnumerable`。 每个组应包括两个属性： 组和三个字母缩写形式的文本说明。
+`ListView` 支持对项进行分组和在这些组之间导航。 必须`ItemsSource`将属性设置为集合的集合：设置为的`ItemsSource`对象必须实现`IEnumerable`，并且集合中的每个项还必须实现`IEnumerable`。 每个组应包括两个属性： 组和三个字母缩写形式的文本说明。
 
 [ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs)类[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)库创建的七个组`NamedColor`对象。 [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList)示例演示如何使用与这些组[ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled)属性`ListView`设置为`true`，和[ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding)并[ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding)属性绑定到每个组中的属性。
 
@@ -225,8 +225,6 @@ Xamarin.Forms 定义了三个视图的保留集合并显示其元素：
 ### <a name="a-tableview-menu"></a>TableView 菜单
 
 另一个用途`TableView`是一个菜单。 [ **MenuCommands** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/MenuCommands)示例演示一个菜单，让您可以将稍有移动`BoxView`在屏幕上四处。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675275"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772936"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet 包将添加到项目：
 
 对于特定于平台的项目 （如 iOS 和 Android） 重复上述步骤。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>演练：向 Xamarin.Forms 应用添加 UrhoSharp
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>演练：向 Xamarin 应用程序添加 UrhoSharp
 
 以下步骤介绍了 Xamarin.Forms UrhoSharp 示例中的代码：
 
@@ -223,7 +223,6 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ## <a name="summary"></a>总结
 
 此页显示了如何使用 UrhoSharp 将三维数据可视化效果添加到 Xamarin.Forms。 读取[UrhoSharp 文档](~/graphics-games/urhosharp/index.md)有关如何生成可以使用如上所示的方法的 Xamarin.Forms 应用中包含的 Urho 场景的详细信息。
-
 
 ## <a name="related-links"></a>相关链接
 

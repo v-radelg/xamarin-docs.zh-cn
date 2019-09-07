@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290638"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769789"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin 中实现 SiriKit
 
@@ -50,7 +50,6 @@ MonkeyChat 保留自己的用户朋友的联系人手册，每个与屏幕名称
 3. **应用**-为应用提供特定于用户的词汇，以帮助 Siri 使用它。 
 
 以下各部分详细介绍了所有这些元素以及将它们包含在应用中的步骤。
-
 
 ## <a name="preparing-the-app"></a>准备应用
 
@@ -156,7 +155,6 @@ namespace MonkeyChat
 若要帮助在这两个选项之间进行选择，请查看是否有任何方法自然属于一起。 例如，进行音频和视频调用的应用可能希望在单个意向扩展中包括这两种方法，因为它们处理类似的任务，可能会提供最多的代码重用。
 
 对于不适合现有组的任何意向或意向组，请在应用的解决方案中创建一个新的意图扩展来包含它们。
-
 
 ### <a name="setting-the-required-entitlements"></a>设置所需的权利
 
@@ -266,7 +264,6 @@ namespace MonkeyChat
 
 当应用程序首次`INPreferences`启动时，调用类的方法。`RequestSiriAuthorization` 编辑类， `FinishedLaunching`使方法如下所示： `AppDelegate.cs`
 
-
 ```csharp
 using Intents;
 ...
@@ -288,7 +285,6 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
             break;
         }
     });
-
 
     return true;
 }
@@ -324,7 +320,7 @@ if (language == "en-US") {
 
 选择要注册为自定义词汇的术语时，仅选择不熟悉该应用的人员可能会误解的字词。 切勿注册常见条款，如 "我的健身" 或 "我的唱片集"。 例如，MonkeyChat 应用将注册与用户的通讯簿中的每个联系人关联的昵称。
 
-此应用通过调用`SetVocabularyStrings` `INVocabulary`类的方法并从主应用传入集合来提供用户特定词汇。`NSOrderedSet` 应用应始终首先调用`RemoveAllVocabularyStrings`方法，以在添加新字词之前删除任何现有术语。 例如：
+此应用通过调用`SetVocabularyStrings` `INVocabulary`类的方法并从主应用传入集合来提供用户特定词汇。`NSOrderedSet` 应用应始终首先调用`RemoveAllVocabularyStrings`方法，以在添加新字词之前删除任何现有术语。 例如:
 
 ```csharp
 using System;
@@ -684,12 +680,11 @@ namespace MonkeyChat
 
 -----
 
-
 有关可用意向域的完整列表，请参阅 Apple 的[意向域参考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)。
 
 ### <a name="configuring-the-main-class"></a>配置主类
 
-接下来，开发人员需要将充当目的扩展的主入口点的主类配置为 Siri。 它必须是符合`INExtension` `IINIntentHandler`委托的的子类。 例如：
+接下来，开发人员需要将充当目的扩展的主入口点的主类配置为 Siri。 它必须是符合`INExtension` `IINIntentHandler`委托的的子类。 例如:
 
 ```csharp
 using System;
@@ -743,7 +738,6 @@ namespace MonkeyChatIntents
 此外，MonkeyChat 还需要消息正文的内容。 如果用户未提供此内容，则 Siri 需要提示用户输入内容。
 
 目的扩展需要妥善处理每个情况。
-
 
 ```csharp
 [Export ("resolveRecipientsForSearchForMessages:withCompletion:")]
@@ -810,7 +804,6 @@ public void ConfirmSendMessage (INSendMessageIntent intent, Action<INSendMessage
 ### <a name="processing-the-intent"></a>处理意向
 
 这是目的扩展实际执行任务以满足用户的请求并将结果传递回 Siri 以便通知用户的点。
-
 
 ```csharp
 public void HandleSendMessage (INSendMessageIntent intent, Action<INSendMessageIntentResponse> completion)
@@ -935,7 +928,7 @@ public void HandleSetMessageAttribute (INSetMessageAttributeIntent intent, Actio
 
 ### <a name="configuring-the-main-class"></a>配置主类
 
-将充当意向 UI 扩展的主入口点的主类配置为 Siri。 它必须是符合`UIViewController` `IINUIHostedViewController`接口的的子类。 例如：
+将充当意向 UI 扩展的主入口点的主类配置为 Siri。 它必须是符合`UIViewController` `IINUIHostedViewController`接口的的子类。 例如:
 
 ```csharp
 using System;
@@ -1064,9 +1057,6 @@ Apple 建议在设计和实现意向 UI 扩展时，开发人员应考虑以下�
 ## <a name="summary"></a>总结
 
 本文介绍了 SiriKit，并演示了如何将其添加到 Xamarin iOS 应用以提供用户可使用 Siri 和 iOS 设备上的地图应用程序访问的服务。
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

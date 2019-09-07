@@ -7,12 +7,12 @@ ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4e8c909ce7dfd9c8f6dccbf2685ff2658931b6a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 74335de66e74f6adc7c9488a1b78c31d36d03f14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656358"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759408"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
 
@@ -139,7 +139,6 @@ paint.Color = SKColors.Blue.WithAlpha((byte)(0xFF * transparency));
 两个字，敦促用户"代码的详细信息"（或可能请求"更多代码"） 之间交替动画：
 
 [![代码更多的代码](transparency-images/CodeMoreCode.png "代码更多的代码")](transparency-images/CodeMoreCode-Large.png#lightbox)
-
 
 在上一篇文章中上[ **SkiaSharp 中的位图基础知识**](bitmaps.md)，了解了如何显示位图使用之一[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap*)方法的`SKCanvas`。 所有`DrawBitmap`方法包括`SKPaint`对象作为最后一个参数。 默认情况下，此参数设置为`null`，可以忽略它。 
 

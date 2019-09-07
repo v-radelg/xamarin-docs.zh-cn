@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291538"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772644"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin 中的 Windows
 
@@ -299,7 +299,7 @@ MyWindow.PerformClose(this);
 1. 它不会尝试引发`WillClose`事件。
 2. 它不会通过暂时突出显示按钮来模拟用户单击 "**关闭**" 按钮。
 
-例如:
+例如：
 
 ```csharp
 MyWindow.Close();
@@ -561,7 +561,7 @@ SetFrame (frame, true);
 
 [![](window-images/resize01.png "标识检查器")](window-images/resize01.png#lightbox)
 
-接下来，编辑自定义窗口控制器类，并`DidResize`监视控制器窗口上的事件，以获得实时大小更改的通知。 例如:
+接下来，编辑自定义窗口控制器类，并`DidResize`监视控制器窗口上的事件，以获得实时大小更改的通知。 例如：
 
 ```csharp
 public override void WindowDidLoad ()
@@ -747,7 +747,6 @@ void OpenDialog (NSObject sender)
 - **样式**-允许调整面板的样式：常规面板（看起来像标准窗口）、实用工具面板（具有更小的标题栏）、HUD 面板（透明且标题栏是背景的一部分）。
 - **非激活**-在面板变成键窗口时确定。
 - **文档模式**-如果文档模式，面板将只浮动在应用程序窗口的上方，否则它将浮动在上方。
-
 
 若要添加新面板，请执行以下操作：
 

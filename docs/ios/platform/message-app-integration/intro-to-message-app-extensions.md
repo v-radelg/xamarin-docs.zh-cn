@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 1d6edb9107c3d6ae04c91ebcf874fb92a7f911b3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280039"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769657"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的消息应用扩展基础知识
 
@@ -337,7 +337,6 @@ namespace MonkeyStickers
         public override void ViewDidLoad ()
         {
             base.ViewDidLoad ();
-
 
             // Create new browser and configure it
             BrowserViewController = new StickerBrowserViewController (MSStickerSize.Regular);
@@ -707,8 +706,6 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 ## <a name="summary"></a>总结
 
 本文涵盖的 Xamarin iOS 解决方案中包含消息应用扩展，该扩展与**Messages**应用集成并向用户提供新功能。 它涉及到使用此扩展发送文本、不干胶标签、媒体文件和交互式消息。
-
-
 
 ## <a name="related-links"></a>相关链接
 

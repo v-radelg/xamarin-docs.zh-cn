@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: aabbbb706d4b6fcd022e30f726696b5d4f46167f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f15d586a0ca209fec088fc48ca975efae4ab8fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279519"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768363"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用行操作
 
@@ -26,7 +26,6 @@ iOS 提供了两种方法来对表执行操作`UISwipeActionsConfiguration` ： 
 
 `UITableViewRowAction`类用于定义一个操作，该操作将在用户在表视图中的某一行上水平 swipes 时进行。
 例如，编辑表时，默认情况下，按行向左轻扫会显示 "**删除**" 按钮。 通过将`UITableViewRowAction`类的多个实例附加`UITableView`到，可以定义多个自定义操作，每个操作都具有其自己的文本、格式设置和行为。
-
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
@@ -43,7 +42,6 @@ iOS 提供了两种方法来对表执行操作`UISwipeActionsConfiguration` ： 
 `UITableViewController`（以及`UITableViewSource`和`UITableViewDelegate`）包含两个方法： `GetLeadingSwipeActionsConfiguration`和`GetTrailingSwipeActionsConfiguration`，用于对表视图行实现一组轻扫操作。 领先的 "轻扫" 操作是指从屏幕的左侧按从右到左的语言，然后从右到左的语言以从右到左的语言进行的扫。
 
 下面的示例（来自[TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)示例）演示了如何实现领先的刷卡器配置。 从上下文操作创建两个操作，[如下](#create-uicontextualaction)所述。 然后，将这些操作传递到新初始化[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)的，后者将用作返回值。
-
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -180,8 +178,6 @@ table.Delegate = tableDelegate;
 [![](row-action-images/action01.png "显示的是 \"高\" 按钮，而不是 \"删除\" 按钮")](row-action-images/action01.png#lightbox)
 
 如果用户点击 " **Hi** " 按钮， `Hello World!`当应用程序在调试模式下运行时，将写出到 Visual Studio for Mac 或 Visual Studio 中的控制台。
-
-
 
 ## <a name="related-links"></a>相关链接
 

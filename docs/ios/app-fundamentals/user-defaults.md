@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 6ff697964cbc057b4a3f905394d147d7c132d79b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4db5718394c3835861f3dfa8b99a4bac70e26981
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281944"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767004"
 ---
 # <a name="working-with-user-defaults-in-xamarinios"></a>在 Xamarin 中使用用户默认值
 
 _本文介绍如何使用 NSUserDefault 在 Xamarin iOS 应用或扩展中保存默认设置。_
-
 
 `NSUserDefaults`类为 iOS 应用和扩展提供了一种以编程方式与系统范围的默认系统交互的方式。 通过使用默认系统，用户可以配置应用的行为或样式以满足其首选项（基于应用的设计）。 例如，若要以指标与英制度量值显示数据，或选择给定的 UI 主题。
 
@@ -129,14 +128,11 @@ plist.SetBool(useHeader, "UseHeader");
 > [!IMPORTANT]
 > 当你的应用程序第`NSUserDefaults`一次执行时，将从应用的用户默认数据库中读取密钥和值，并将它们缓存到内存中，以避免每次需要值时打开和读取数据库。
 
-
-
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
 本文介绍了`NSUserDefaults`类，以及如何使用它提供一组可供最终用户用来配置 Xamarin iOS 应用的选项。 此外，它还介绍了如何使用应用组在扩展及其父应用之间或组中的应用之间进行通信。
-
 
 ## <a name="related-links"></a>相关链接
 

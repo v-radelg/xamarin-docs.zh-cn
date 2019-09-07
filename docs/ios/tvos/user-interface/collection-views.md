@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: c9980dff866a176d4a4a1f1f6bc1bd8c92bd7097
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8fcedd4f7dca4527b37c6b83fbd205014cffcaaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769122"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 集合视图
 
@@ -96,13 +96,12 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    
 1. 在 Visual Studio for Mac 中启动新的**单一视图 TvOS 应用**。
 1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后在 iOS 设计器中将其打开。
 1. 向现有视图添加一个图像视图、一个标签和一个按钮，并将其配置为如下所示： 
 
     [![](collection-views-images/collection02.png "示例布局")](collection-views-images/collection02.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如: 
+1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如： 
 
     [![](collection-views-images/collection03.png "设置名称")](collection-views-images/collection03.png#lightbox)
 1. 接下来，将集合视图控制器拖动到情节提要： 
@@ -132,17 +131,15 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
     [![](collection-views-images/collection11.png "将标识设置为 CityCell")](collection-views-images/collection11.png#lightbox)
 1. 保存更改。
-    
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
 1. 在 Visual Studio 中启动新的**单一视图 TvOS 应用**。
 1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后在 iOS 设计器中将其打开。
 1. 向现有视图添加一个图像视图、一个标签和一个按钮，并将其配置为如下所示： 
 
     [![](collection-views-images/collection02vs.png "配置布局")](collection-views-images/collection02vs.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如： 
+1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如: 
 
     [![](collection-views-images/collection03vs.png "属性资源管理器")](collection-views-images/collection03vs.png#lightbox)
 1. 接下来，将集合视图控制器拖动到情节提要： 
@@ -170,7 +167,6 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
     [![](collection-views-images/collection11vs.png "将标识设置为 CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. 保存更改。
-    
 
 -----
 
@@ -286,7 +282,6 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
 有关导航和焦点的详细信息，请参阅[使用导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
-
 
 <a name="The-Collection-View-Data-Provider" />
 
@@ -469,7 +464,6 @@ public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning 
 ### <a name="the-collection-view-delegate"></a>集合视图委托
 
 接下来，向项目`CityViewDelegate`中添加一个新类，并使其类似于以下内容：
-
 
 ```csharp
 using System;
@@ -684,7 +678,6 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 我们将上一项丢失焦点的 transparence 设置为零（0），而下一项的 transparence 将焦点提高到 100%。 这些转换也会动态显示。
 
-
 ## <a name="configuring-the-collection-view-controller"></a>配置集合视图控制器
 
 现在，我们需要对集合视图执行最终配置，并允许控制器设置定义的属性，以便在用户做出选择后可以关闭集合视图。
@@ -824,14 +817,11 @@ public override void ViewWillAppear (bool animated)
 
 最近添加到 iOS 9 的集合视图的功能是能够轻松地允许对集合中的项进行重新排序。 同样，由于 tvOS 9 是 iOS 9 的子集，因此以相同的方式执行此操作。 有关更多详细信息，请参阅[集合视图更改](~/ios/user-interface/controls/uicollectionview.md)文档。
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用程序中设计和使用集合视图。 首先，它讨论了构成集合视图的所有元素。 接下来，该示例演示如何使用情节提要设计和实现集合视图。 最后提供了有关创建自定义布局和重新排序项的信息的链接。
-
-
 
 ## <a name="related-links"></a>相关链接
 

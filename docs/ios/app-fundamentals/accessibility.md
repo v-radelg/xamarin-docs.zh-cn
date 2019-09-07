@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289521"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766751"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的辅助功能
 
@@ -74,7 +74,6 @@ UIAccessibility.PostNotification (
     someControl);  // someControl gets focus
 ```
 
-
 ## <a name="accessibility-and-localization"></a>辅助功能和本地化
 
 像标签和提示这样的可访问性属性可以像用户界面中的其他文本那样进行本地化。
@@ -122,7 +121,6 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 请按照以下[VoiceOver 说明](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)测试 iOS 设备上的辅助功能。
 
-
 ## <a name="simulator-testing"></a>模拟器测试
 
 在模拟器中测试时，可**访问性检查器**可用于帮助验证辅助功能属性和事件是否正确配置。 在 "**设置**" 应用中打开检查器，方法是导航到 "**常规" > 辅助功能 > 辅助功能检查器**：
@@ -135,8 +133,6 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 ![](accessibility-images/tableview-a11y-sml.png "使用辅助功能检查器")
 
 如果检查器可见，请使用左上角的 "X" 图标来暂时显示和隐藏覆盖区，并启用/禁用辅助功能设置。
-
-
 
 ## <a name="related-links"></a>相关链接
 

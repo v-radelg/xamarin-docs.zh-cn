@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: bcb719451529cd5a9ca829b8693c425d752cc93b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 743e6550f75ff8319ba1c880da7ef43408f0d318
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283226"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768707"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>在 Xamarin 中使用 watchOS 设置
 
@@ -43,7 +43,6 @@ Apple Watch 应用可以使用与 iOS 应用相同的设置功能-"设置" 用�
 
   [![](settings-images/rootplist-sml.png "编辑 Settings-Watch/info.plist")](settings-images/rootplist.png#lightbox)
 
-
 ## <a name="use-settings-in-the-watch-app"></a>在监视应用中使用设置
 
 若要访问用户选择的值，请使用应用`NSUserDefaults`组创建实例，并指定： `NSUserDefaultsType.SuiteName`
@@ -64,8 +63,6 @@ var userName = shared.StringForKey ("name_preference");
 用户将通过其 iPhone 上的新**Apple Watch**应用与设置进行交互。 此应用允许用户显示/隐藏监视上的应用，还可编辑使用 "**设置-watch**" 公开的设置。
 
 ![](settings-images/applewatch-1.png "应用设置的示例") ![](settings-images/applewatch-2.png "示例应用程序设置")
-
-
 
 ## <a name="related-links"></a>相关链接
 

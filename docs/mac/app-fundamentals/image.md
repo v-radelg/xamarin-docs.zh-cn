@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: b014c84a7bb23e723fbfbb7ead5e8dc9d9fdc549
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281708"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770327"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin 中的映像
 
@@ -36,7 +36,6 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用图像和图标。本�
 [![应用的示例运行](image-images/intro01.png "应用的示例运行")](image-images/intro01-large.png#lightbox)
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用图像和图标的基本知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文。
-
 
 ## <a name="adding-images-to-a-xamarinmac-project"></a>向 Xamarin Mac 项目添加图像
 
@@ -101,7 +100,6 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用图像和图标。本�
 
 从这里，你可以使用与默认**assets.xcassets**集合相同的方式来处理该集合。
 
-
 ### <a name="adding-images-to-resources"></a>向资源添加图像
 
 > [!IMPORTANT]
@@ -132,7 +130,6 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用图像和图标。本�
 
 除了标准分辨率版本之外，添加到 Xamarin 应用程序的任何图形资产（图标、自定义控件、自定义光标、自定义图稿等）都需要具有高分辨率版本。 这是必需的，这样，在 Retina 显示已配备的 Mac 计算机上运行应用程序时，应用程序的外观就会很好。
 
-
 ### <a name="adopt-the-2x-naming-convention"></a>@2x采用命名约定
 
 > [!IMPORTANT]
@@ -150,7 +147,6 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用图像和图标。本�
 将图像分配到 Interface Builder 中的 UI 元素时，只需在_ImageName_中选取文件 **。** _文件扩展名_格式（示例：**标记 .png**）。 如果在代码中C#使用图像，则需要在_ImageName_中选取文件 **。** _文件名扩展_格式。
 
 当你在 Mac 上运行 Xamarin 的 Mac 应用程序时， _ImageName_ **。** _文件名扩展_格式图像将在标准分辨率显示时使用，将在 **ImageName@2x.filename-extension** Retina 显示基 mac 上自动选取该图像。
-
 
 ## <a name="using-images-in-interface-builder"></a>在 Interface Builder 中使用图像
 
@@ -345,7 +341,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>使用带有大纲视图的图像
 
-若要`NSOutlineView`在中包含图像作为单元的一部分，需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式，以使用`NSTableCellView`而不是典型`NSTextField`的。 例如:
+若要`NSOutlineView`在中包含图像作为单元的一部分，需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式，以使用`NSTableCellView`而不是典型`NSTextField`的。 例如：
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -444,12 +440,9 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 有关使用大纲视图的详细信息，请参阅[大纲视图](~/mac/user-interface/outline-view.md)文档。
 
-
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用图像和图标。 我们看到了不同的图像类型和用途，如何在 Xcode 的 Interface Builder 中使用图像和图标，以及如何在代码中C#使用图像和图标。
-
-
 
 ## <a name="related-links"></a>相关链接
 

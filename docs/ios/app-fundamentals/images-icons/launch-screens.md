@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18d33dfcef109fd29f32969b9bdd15b8a2dc475a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290253"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764051"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>为 Xamarin iOS 应用启动屏幕
 
@@ -131,7 +131,7 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
     - 若要编辑情节提要文件，Visual Studio 需要与 Mac 生成主机建立活动连接。 有关详细信息，请参阅[连接到 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南。
 
 7. 选择要在 iOS 设计器中预览启动屏幕情节提要的设备和方向。 打开底部工具栏上的 "设备选择" 面板，然后选择 " **IPhone 4S**和**纵向**"： 
- 
+
     ![设备选择工具栏](launch-screens-images/launch07-vs.png)
 
     - 请注意，选择设备和方向仅会改变 iOS 设计器预览设计的方式。 无论在什么情况下进行选择，新添加的约束都将应用于所有设备和方向，除非已使用 "**编辑特征**" 按钮进行指定。 
@@ -196,7 +196,6 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
 接下来，在**解决方案资源管理器**中`Info.plist`双击该文件以将其打开以进行编辑。 在 "**启动" 屏幕**下，选择上面创建的新情节提要文件。
 
 ![](launch-screens-images/storyboard09.png "选择上面创建的新情节提要文件")
-
 
 若要使用新的情节提要作为启动屏幕，请执行以下操作：
 

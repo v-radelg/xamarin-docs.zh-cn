@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: conceptdev
 ms.author: crdun
 ms.date: 04/08/2017
-ms.openlocfilehash: ff40ed55c06df41c418b694d02f7d6e9c1c5316c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a5a9ddfe92bd8f5b743da2c535a93c282542c860
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291449"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756788"
 ---
 # <a name="uninstalling-xamarin"></a>卸载 Xamarin
 
@@ -266,7 +266,6 @@ Xamarin 在以下各项中受支持：
 >
 >解决方法为，运行 Visual Studio 安装程序中的“修复”选项，这会重新安装缺少的组件。
 
-
 ## <a name="uninstalling-older-and-unsupported-products"></a>卸载旧产品和不受支持的产品
 
 <a name="uninstallvs2015"></a>
@@ -361,7 +360,6 @@ rm -rf ~/Library/XamarinStudio-*
 ## <a name="summary"></a>总结
 
 本文介绍了如何通过使用终端命令从 Mac 完全卸载 Xamarin。 本文还介绍了如何通过“程序和功能”选项（适用于 Visual Studio 2015 及更早版本）和使用 Visual Studio 安装程序（适用于 Visual Studio 2017）从 Windows 计算机卸载 Xamarin。
-
 
 ## <a name="related-links"></a>相关链接
 

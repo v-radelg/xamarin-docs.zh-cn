@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd9d93572ac10622345b1dff4145b737baf8aaae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292981"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769014"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>选项卡栏和 Xamarin.iOS 中的选项卡栏控制器
 
@@ -28,7 +28,6 @@ ms.locfileid: "70292981"
 
 - 允许多个控制器添加到它。
 - 通过提供一个选项卡式的用户界面，`UITabBar`类，以允许用户控制器和其视图之间进行切换。 
-
 
 控制器被添加至`UITabBarController`通过其`ViewControllers`属性，它是`UIViewController`数组。 `UITabBarController`本身处理加载正确的控制器并显示其视图基于所选的选项卡。
 
@@ -46,7 +45,6 @@ ms.locfileid: "70292981"
 
  <a name="Creating_the_Application" />
 
-
 ### <a name="creating-the-application"></a>创建应用程序
 
 让我们首先创建一个新的应用程序。
@@ -56,8 +54,6 @@ ms.locfileid: "70292981"
 [![](creating-tabbed-applications-images/newsolution1.png "选择空项目模板")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
 [![](creating-tabbed-applications-images/newsolution2.png "项目 TabbedApplication 命名")](creating-tabbed-applications-images/newsolution2.png#lightbox)
-
-
 
 ### <a name="adding-the-uitabbarcontroller"></a>添加 UITabBarController
 
@@ -72,7 +68,6 @@ ms.locfileid: "70292981"
 1. 设置类的基类`TabController`到`UITabBarController`。 
 1. 创建`UIViewController`实例将添加到`TabController`。 
 1. 添加`UIViewController`实例为数组分配给`ViewControllers`属性的`TabController`。 
-
 
 将以下代码添加到`TabController`类来实现这些步骤：
 
@@ -146,13 +141,11 @@ public partial class AppDelegate : UIApplicationDelegate
 
  <a name="Modifying_TabBarItems" />
 
-
 ### <a name="modifying-tabbaritems"></a>修改 TabBarItems
 
 现在，我们只需运行选项卡上的应用程序，让我们修改`TabBarItem`若要更改的图像和文本显示，以及用于将一个徽章添加到其中一个选项卡。
 
  <a name="Setting_a_System_Item" />
-
 
 #### <a name="setting-a-system-item"></a>设置系统项
 
@@ -167,7 +160,6 @@ tab1.TabBarItem = new UITabBarItem (UITabBarSystemItem.Favorites, 0);
  ![](creating-tabbed-applications-images/04a-tabimage.png "具有一个星型图标的第一个选项卡")
 
  <a name="Setting_the_Title_and_Image" />
-
 
 #### <a name="setting-the-title-and-image"></a>设置标题和图像
 
@@ -201,7 +193,6 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
  <a name="Setting_the_Badge_Value" />
 
-
 #### <a name="setting-the-badge-value"></a>设置徽章值
 
 一个选项卡还可以显示一个徽章。 例如，添加代码以将一个徽章设置第三个选项卡上的以下行：
@@ -222,13 +213,11 @@ tab3.TabBarItem.BadgeValue = null;
 
  <a name="Tabs_in_Non-RootViewController_Scenarios" />
 
-
 ## <a name="tabs-in-non-rootviewcontroller-scenarios"></a>非 RootViewController 方案中的选项卡
 
 在上述示例中，我们介绍了如何使用`UITabBarController`时`RootViewController`的窗口。 在此示例中我们将说明如何使用`UITabBarController`它不是`RootViewController`和创建方式展示了使用情节提要。
 
  <a name="Initial_Screen_Example" />
-
 
 ### <a name="initial-screen-example"></a>初始屏幕示例
 
@@ -237,7 +226,6 @@ tab3.TabBarItem.BadgeValue = null;
 [![](creating-tabbed-applications-images/inital-screen-application.png "此屏幕截图显示了应用程序流")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 首先，此示例中的新应用程序。 同样，我们将使用**iPhone > 应用程序 > 空项目 (C#)** 模板，这一次在命名项目`InitialScreenDemo`。
-
 
 在此示例中，我们需要以保存我们视图控制器情节提要。 若要添加情节提要：
 
@@ -251,7 +239,6 @@ tab3.TabBarItem.BadgeValue = null;
 
 有几个重要步骤中涉及到以前非演示图板文件中，添加情节提要时，请注意[情节提要简介](~/ios/user-interface/storyboards/index.md)指南。 这些是：
 
- 
 1. 添加到你的情节提要的名称**主界面**一部分`Info.plist`:
 
     [![](creating-tabbed-applications-images/project-options.png "设置主要接口为 MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
@@ -276,7 +263,6 @@ Visual Studio for Mac 将自动生成的类和设计器所需的文件，这可�
 
  <a name="Creating_the_UI" />
 
-
 #### <a name="creating-the-ui"></a>创建 UI
 
 接下来，我们将为每个 ViewController 的视图，使用 Xamarin iOS 设计器创建一个简单的用户界面。
@@ -285,7 +271,6 @@ Visual Studio for Mac 将自动生成的类和设计器所需的文件，这可�
 
 - **标签**：`Text` = **逐个**
 - **按钮**：`Title` = **用户执行一些初始操作**
-
 
 我们将控制在我们按钮的可见性`TouchUpInside`事件，并且我们需要在后面的代码中引用它。 让我们来确定其与**名称**`aButton`中属性面板，下面的屏幕截图中所示：
 
@@ -329,7 +314,7 @@ partial void InitialActionCompleted (UIButton sender)
 在我们的情节提要，我们可以使用 segues 设计来处理 TabBarController 和我们的视图控制器之间的转换。 后与初始视图进行交互，我们想要将其加载到 TabBarController 向用户显示。 让我们对此进行设置设计器中。
 
 **按住 Ctrl 键单击**和**拖动**从 TabBarController 的按钮。 鼠标弹起上将显示一个上下文菜单。 我们想要使用模式的 segue。 
- 
+
 若要设置的我们选项卡上，每个**按住 Ctrl 键单击**从一到三种类型，然后选择关系到每个订单中我们视图控制器 TabBarController**选项卡**从上下文菜单，如下图所示：
 
 [![](creating-tabbed-applications-images/context-menu.png "选择此选项卡的关系")](creating-tabbed-applications-images/context-menu.png#lightbox)
@@ -366,7 +351,6 @@ public override void ViewDidLoad ()
 ## <a name="summary"></a>总结
 
 本文介绍如何使用`UITabBarController`应用程序中。 我们介绍了如何将控制器加载到每个选项卡，以及如何在选项卡上设置属性，此类的标题、 图像和徽章。 我们然后检查，使用演示图板，如何加载`UITabBarController`在运行时不时`RootViewController`的窗口。
-
 
 ## <a name="related-links"></a>相关链接
 

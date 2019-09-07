@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277871"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769577"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin 中的 PassKit
 
@@ -74,7 +74,6 @@ Pass 是表示票据、优惠券或卡片的数据集合。 它可能适用于�
 - **存储卡**–向上舍入，如信用卡或借记卡。
 - **优惠券**– perforated 在顶部。
 - **一般**–与存储卡相同，向上舍入。
-
 
 此屏幕截图中显示了五个 pass 类型（按顺序：赠券、通用、商店卡、入职 pass 和事件票证）：
 
@@ -204,10 +203,8 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 1. 使用证书对`manifest.json`文件进行签名，并将结果写入到名`signature`为的文件。
 1. 压缩所有内容，并为结果文件`.pkpass`指定文件扩展名。
 
-
 因为你需要使用私钥对传递进行签名，所以仅应在你控制的安全服务器上执行此过程。 不要分发密钥来尝试在应用程序中生成 pass。
 
- 
 ## <a name="configuration-and-setup"></a>配置和设置
 
 本部分包含的说明可帮助设置预配详细信息并创建第一个阶段。
@@ -229,7 +226,6 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 2. 提供传递的**说明**（名称）和**标识符**（唯一字符串）。 请注意，所有传递类型 id 必须以本示例`pass.`中使用`pass.com.xamarin.coupon.banana`的字符串开头：[![](passkit-images/register.png "提供描述和标识符")](passkit-images/register.png#lightbox)
 
-
 3. 按 "**注册**" 按钮确认传递 ID。
 
 #### <a name="generate-a-certificate"></a>生成证书
@@ -242,13 +238,11 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
     [![](passkit-images/cert-dist.png "选择 \"创建证书\"")](passkit-images/cert-dist.png#lightbox)
 
-
 2. 按照步骤创建证书签名请求（CSR）。
   
 3. 按开发人员门户中的 "**继续**" 按钮，并上传 CSR 以生成证书。
 
 4. 下载证书，并双击它以将其安装在密钥链中。
-
 
 现在，我们已创建了此 Pass 类型 ID 的证书，接下来的部分将介绍如何手动生成 pass。
 
@@ -264,7 +258,6 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 - 计算文件夹中每个文件的 SHA1 哈希，并将其写入到清单 json。
 - 用下载的证书 p12 文件对 manifest 进行签名。
 - 压缩目录的内容，并将其重命名为 pkpass 扩展名。
-
 
 本文的[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)中有一些源文件可用于生成通过。 使用 CreateAPassManually 目录的`CouponBanana.raw`目录中的文件。 存在下列文件：
 
@@ -338,7 +331,6 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 - **Safari** –在单击 "传递 URL" 链接时识别 "传递内容类型"。
 - **其他自定义应用**–接收附件或打开链接的任何应用（社交媒体客户端、邮件读取器等）。
 
-
 此屏幕截图显示了 iOS 6 中的邮件如何识别**电子邮件**附件，并将其**添加**到钱包。
 
  [![](passkit-images/image22.png "此屏幕截图显示了 iOS 6 中的邮件如何识别传递附件")](passkit-images/image22.png#lightbox)
@@ -350,7 +342,6 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 - **文件扩展名**-. pkpass
 - **MIME 类型**-application/vnd.apple.mpegurl/pkpass
 - **UTI** – pkpass
-
 
 管道应用程序的基本操作是检索传递文件并调用 PassKit 的`PKAddPassesViewController` ，以便为用户授予向其钱包添加传递的选项。 此视图控制器的实现将在下一节中介绍的**应用程序**。
 
@@ -383,7 +374,6 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 在 "钱包" 部分下，选择 "**启用钱包**" 选项
 
 ![](passkit-images/image32.png "启用钱包权利")
-
 
 默认选项是应用允许所有传递类型。 但是，可以限制你的应用程序，并且只允许一部分团队传递类型。 若要启用此选择，请选择 "**允许团队传递类型子集**"，然后输入你希望允许的子集的 "传递类型" 标识符。
 

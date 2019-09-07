@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: a48e7bd780783a7b33008a5d86011f5497b042d5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 194f1a260adc49083a8d4365a310447acbcc96f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287975"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769025"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆积视图
 
@@ -74,9 +74,6 @@ ms.locfileid: "70287975"
 
 > [!IMPORTANT]
 > 基线对齐不适用于拉伸或压缩的子视图大小，因为基线将计算到错误的位置。 对于基线对齐，请确保子视图的**高度**与内部内容视图的**高度**匹配。
-
-
-
 
 <a name="Common-Stack-View-Uses" />
 
@@ -150,7 +147,7 @@ ms.locfileid: "70287975"
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
-在我们的示例中，我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中，我们将基于当前段隐藏和显示播放机。 例如：
+在我们的示例中，我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中，我们将基于当前段隐藏和显示播放机。 例如:
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {
@@ -309,8 +306,6 @@ UIView.Animate(0.25, ()=>{
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用内设计和使用堆叠式视图。
-
-
 
 ## <a name="related-links"></a>相关链接
 

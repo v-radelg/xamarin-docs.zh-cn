@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 723f751b93af304c7d70fb1250dbda2f0220e77e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555ee8131c4d18988a7f208154d358a61a9773c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292218"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770599"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin 中的对话框
 
@@ -63,7 +63,6 @@ _工作表_是附加到给定文档窗口的模式对话框，阻止用户在关
 "打开" 对话框为用户提供了在应用程序中查找和打开项的一致方式：
 
 [![](dialog-images/dialog03.png "\"打开\" 对话框")](dialog-images/dialog03.png#lightbox)
-
 
 ### <a name="print-and-page-setup-dialogs"></a>打印和页面设置对话框
 

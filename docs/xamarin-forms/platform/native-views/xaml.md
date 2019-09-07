@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: bf9b630613dcc5c25dac96cad71e54022ead1812
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3c4fa085c9fdf17cdc256d9710c23911bb60d584
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649600"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770644"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的本机视图
 
@@ -38,7 +38,7 @@ _从 iOS、 Android 和通用 Windows 平台的本机视图可以直接引用 Xa
 1. 在 XAML 文件中创建本机视图的实例。
 
 > [!IMPORTANT]
-> 对于任何使用本机视图的 XAML 页, 必须禁用已编译的 XAML。 这可以通过使用`[XamlCompilation(XamlCompilationOptions.Skip)]`特性修饰 XAML 页的代码隐藏类来实现。 有关 XAML 编译的详细信息, 请参阅[Xamarin 中的 XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
+> 对于任何使用本机视图的 XAML 页，必须禁用已编译的 XAML。 这可以通过使用`[XamlCompilation(XamlCompilationOptions.Skip)]`特性修饰 XAML 页的代码隐藏类来实现。 有关 XAML 编译的详细信息，请参阅[Xamarin 中的 XAML 编译](~/xamarin-forms/xaml/xamlc.md)。
 
 若要从代码隐藏文件引用本机视图，必须使用共享资产项目 (SAP)，并使用条件编译指令将特定于平台的代码包装。 有关详细信息请参阅[从代码中引用的本机视图](#native_view_code)。
 
@@ -486,7 +486,6 @@ class MySpinner : Spinner
 ## <a name="summary"></a>总结
 
 本文演示了如何使用 Xamarin.Forms XAML 文件中的本机视图。 上的本机视图，可以设置属性和事件处理程序，它们可以与 Xamarin.Forms 视图进行交互。
-
 
 ## <a name="related-links"></a>相关链接
 

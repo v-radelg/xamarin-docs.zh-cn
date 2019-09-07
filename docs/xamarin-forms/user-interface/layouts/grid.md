@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7a6c737bff6c504fea10fd2e34e4b26249f73aff
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648525"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770388"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 网格
 
@@ -54,7 +54,7 @@ ms.locfileid: "68648525"
 - **绝对**&ndash;调整列和具有特定的固定高度和宽度值的行的大小。 指定为值和`GridUnitType.Absolute`用 C# 或作为`#`XAML，在使用`#`正在所需的值。
 
 > [!NOTE]
-> 默认情况下, 列的宽度值`*`设置为 Xamarin 中的默认值, 这将确保该列填充可用空间。 默认情况下, 行的高度值也`*`设置为。
+> 默认情况下，列的宽度值`*`设置为 Xamarin 中的默认值，这将确保该列填充可用空间。 默认情况下，行的高度值也`*`设置为。
 
 请考虑的应用程序需要三个行和两个列。 底部行必须是完全 200px、 高和最上面一行必须是两次高度都是中间的一行。 左侧的列需要是足够宽，以适应内容，右侧列需要填充剩余的空间。
 
@@ -378,7 +378,6 @@ public CalculatorGridCode ()
   Content = controlGrid;
 }
 ```
-
 
 ## <a name="related-links"></a>相关链接
 

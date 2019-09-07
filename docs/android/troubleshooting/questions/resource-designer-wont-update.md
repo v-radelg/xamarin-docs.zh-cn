@@ -7,31 +7,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
-ms.openlocfilehash: 65f7c6d8a573501ffec4aa1b8eaf28ff1e6479e8
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: c175c533e437736849eac6be1f4a90a783123812
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864223"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757150"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>Android Resource.designer.cs 文件不更新
 
 > [!NOTE]
-> 在 Xamarin Studio 5.1.4 和更高版本中解决此问题。 但是，如果 Visual Studio for Mac 发生问题，请提出[新 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)与完整的版本控制信息和完整生成日志输出。
+> 此问题已在 Xamarin Studio 5.1.4 及更高版本中得到解决。 但是，如果 Visual Studio for Mac 中出现问题，请使用完整的版本信息和完整的生成日志输出来记录[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
 
-在 Xamarin.Studio 5.1 中的 bug 以前通过部分或完全删除.csproj 文件中的 xml 代码损坏.csproj 文件。 这将导致重要部分的 Android 生成系统 （例如，更新 Android Resource.designer.cs） 失败。 截至 5.1.4 稳定版本在年 7 月 15 日，已修复此错误;但在许多情况下的项目文件按下面所述手动修复。
+Xamarin 5.1 以前损坏的 .csproj 文件中的 bug，通过部分或完全删除 .csproj 文件中的 xml 代码。 这会导致 Android 生成系统（如更新 Android Resource.designer.cs）的重要部分失败。 到7月15日的5.1.4 稳定版本，此 bug 已修复;但在许多情况下，必须手动修复项目文件，如下所述。
 
+## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>解决项目文件的两种可能方法
 
-## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>正在修复项目文件的两种可能方法
+**是**
 
-**任一：**
-
-1. 创建一个全新的 Xamarin.Android 应用程序项目，将设置所有项目属性以匹配旧的项目，并添加到项目的所有资源、 源文件、 等。
+1. 创建全新的 Xamarin Android 应用程序项目，将所有项目属性设置为与旧项目匹配，并将所有资源、源文件等添加回项目。
 
    **或**
 
-2. 创建原始项目的.csproj 文件的备份副本，然后在文本编辑器中，将其打开，并从完全生成的.csproj 文件中添加缺少的元素中返回。
+2. 创建原始项目的 .csproj 文件的备份副本，然后在文本编辑器中将其打开，并从完全生成的 .csproj 文件中重新添加回缺少的元素。
 
-### <a name="if-this-does-not-solve-the-problem"></a>如果这没有解决问题
+### <a name="if-this-does-not-solve-the-problem"></a>如果这不能解决问题
 
-与这些元素一起进行实验之后, 您会注意到，之后将其添加回元素和重新生成项目，将更新 Resource.designer.cs 文件，但然后你可能仍需要关闭并重新打开解决方案以获取代码完成功能来识别Resource.designer.cs 中包含的新类型。 
+在试验这些元素后，你可能会注意到，在添加完元素并重新生成项目后，Resource.designer.cs 文件将会更新，但你仍可能需要关闭并重新打开解决方案以使代码完成识别Resource.designer.cs 中包含的新类型。 

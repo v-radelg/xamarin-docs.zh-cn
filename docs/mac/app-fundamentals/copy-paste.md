@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 42ac6c9c729498ad4b70e1e209d63c1ec2e11f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291222"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769936"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin 中复制和粘贴
 
@@ -541,7 +541,7 @@ void PasteImage (NSObject sender)
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-从这里，我们调用`ImageDocument`该窗口的类实例来处理复制和粘贴操作。 例如： 
+从这里，我们调用`ImageDocument`该窗口的类实例来处理复制和粘贴操作。 例如: 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -603,7 +603,7 @@ namespace MacCopyPaste
 同样，我们获取当前的最顶层窗口，并使用`ImageDocument`其类实例来确定所需的图像数据是否存在。 然后， `MenuWillHighlightItem`使用方法根据此状态启用或禁用每个项。
 
 编辑**AppDelegate.cs**文件并使该`DidFinishLaunching`方法如下所示：
- 
+
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
 {
@@ -703,7 +703,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 首先要执行复制操作，只需访问剪贴板，清除任何现有内容，并根据需要写入剪贴板上所需的数据表示形式。
 
-例如：
+例如:
 
 ```csharp
 // Get the standard pasteboard
@@ -1275,8 +1275,6 @@ if (ok) {
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin 应用程序中使用剪贴板，以支持复制和粘贴操作。 首先，它引入了一个简单的示例，帮助你熟悉标准 pasteboards 操作。 接下来详细了解剪贴板以及如何从其读取和写入数据。 最后，它介绍了使用自定义数据类型来支持在应用程序中复制和粘贴复杂数据类型。
-
-
 
 ## <a name="related-links"></a>相关链接
 

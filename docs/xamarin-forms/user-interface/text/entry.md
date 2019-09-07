@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 040d01dceaa6c5dd785d2423c72247ee602b98db
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227989"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767705"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 条目
 
@@ -61,7 +61,7 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 
 ### <a name="preventing-text-entry"></a>防止文本输入
 
-[`Entry`](xref:Xamarin.Forms.Entry)通过`false` `true`将属性 (其默认值) 设置为, 可以防止用户修改中的文本: `IsReadOnly`
+[`Entry`](xref:Xamarin.Forms.Entry)通过`false` `true`将属性（其默认值）设置为，可以防止用户修改中的文本： `IsReadOnly`
 
 ```xaml
 <Entry Text="This is a read-only Entry"
@@ -73,7 +73,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> 属性不会改变的视觉外观[`Entry`](xref:Xamarin.Forms.Entry), 这与还会将`IsEnabled`的`Entry`视觉外观改为灰色的属性不同。 `IsReadonly`
+> 属性不会改变的视觉外观[`Entry`](xref:Xamarin.Forms.Entry)，这与还会将`IsEnabled`的`Entry`视觉外观改为灰色的属性不同。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>输入的长度限制
 
@@ -327,7 +327,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ### <a name="completed"></a>已完成
 
-`Completed`使用事件做出反应的条目的交互完成。 `Completed`当用户通过按键盘上的返回键 (或按 UWP 上的 Tab 键) 以字段结束输入时, 将引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
+`Completed`使用事件做出反应的条目的交互完成。 `Completed`当用户通过按键盘上的返回键（或按 UWP 上的 Tab 键）以字段结束输入时，将引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -377,7 +377,6 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 var entry = new Entry ();
 entry.TextChanged += Entry_TextChanged;
 ```
-
 
 ## <a name="related-links"></a>相关链接
 

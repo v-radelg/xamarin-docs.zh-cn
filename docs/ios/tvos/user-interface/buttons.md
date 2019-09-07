@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/07/2017
-ms.openlocfilehash: aa1dd0b503dd59a89f526fef53d7d7756a3883de
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291112"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769969"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin 中的 tvOS 按钮
 
@@ -63,7 +63,6 @@ Apple 建议你为按钮图标使用简单、高度可识别的图像。 很难�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
 1. 将一个**按钮**从**库**中拖放到视图上： 
 
@@ -82,7 +81,6 @@ Apple 建议你为按钮图标使用简单、高度可识别的图像。 很难�
     [![](buttons-images/storyboard05.png "代码编辑器")](buttons-images/storyboard05.png#lightbox)
 1. 保存对所有文件所做的更改。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
@@ -97,10 +95,7 @@ Apple 建议你为按钮图标使用简单、高度可识别的图像。 很难�
     [![](buttons-images/storyboard03vs.png "\"事件\" 选项卡")](buttons-images/storyboard03vs.png#lightbox)
 1. 保存对所有文件所做的更改。
 
-
-
 编辑视图控制器（示例`ViewController.cs`）文件，并添加以下代码以处理所选的按钮：
-
 
 ```
 
@@ -128,9 +123,6 @@ namespace tvRemote
 
 > [!IMPORTANT]
 > 尽管可以`UIButton`在创建**事件处理程序**时在`TouchUpInside` iOS 设计器中将操作分配给，但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 为 tvOS 用户界面元素创建**操作**时，应始终使用默认**操作类型**。
-
-
-
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
@@ -166,7 +158,7 @@ View.AddSubview (button);
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-然后，设置按钮的标题。 `UIButtons`与大多数`UIKit`控件不同的是，它们具有状态，因此您不能只是更改标题，而必须针对给定`UIControlState`的更改标题。 例如:
+然后，设置按钮的标题。 `UIButtons`与大多数`UIKit`控件不同的是，它们具有状态，因此您不能只是更改标题，而必须针对给定`UIControlState`的更改标题。 例如：
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
@@ -190,9 +182,6 @@ View.AddSubview (button);
 > [!IMPORTANT]
 > 尽管可以将操作（如`TouchUpInside` `UIButton`）分配给，但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 应始终使用**AllEvents**或**PrimaryActionTriggered**等事件。
 
-
-
-
 <a name="Styling-a-Button" />
 
 ## <a name="styling-a-button"></a>设置按钮样式
@@ -203,7 +192,7 @@ tvOS 提供了`UIButton`的多个属性，这些属性可用于提供其标题�
 
 ### <a name="button-titles"></a>按钮标题
 
-如前文所述， `UIButtons`与大多数`UIKit`控件不同，它们具有状态，因此您不能只是更改标题，而是必须针对给定`UIControlState`的更改标题。 例如:
+如前文所述， `UIButtons`与大多数`UIKit`控件不同，它们具有状态，因此您不能只是更改标题，而是必须针对给定`UIControlState`的更改标题。 例如：
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
@@ -262,8 +251,6 @@ button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ## <a name="summary"></a>总结
 
 本文介绍了如何设计和使用 tvOS 应用程序中的按钮。 它演示了如何使用 iOS 设计器中的按钮，以及如何在代码中C#创建按钮。 最后，它演示了如何修改按钮的标题，并更改其样式和外观。
-
-
 
 ## <a name="related-links"></a>相关链接
 

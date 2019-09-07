@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 68ba09ce74f161c728f0a58276a0b0d98fec7d8c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281290"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767779"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin 中的 watchOS 主动建议
 
 _本文介绍如何在 watchOS 3 应用程序中使用前瞻性建议，使系统能够自动向用户显示有用的信息。_
 
-
 新到 watchOS 3 的前瞻性建议为用户提供了新闻方法，使用户能够在适当的时间自动向用户提供有用的信息，从而与 Xamarin iOS 应用程序进行联系。
-
 
 ## <a name="about-proactive-suggestions"></a>关于主动建议
 
@@ -298,8 +296,7 @@ Apple 建议在使用活动时采用以下最佳做法：
 - 处理使用 MapKit `MKDirectionsRequest`对象启动应用程序的情况。
 - 为 watchOS 提供根据用户参与建议应用的能力。
 
-当应用程序使用 MapKit `MKDirectionsRequest`对象启动时，它应自动开始向请求的位置提供用户指示，或提供一个用户界面，使用户能够轻松开始获取行车路线。 例如:
-
+当应用程序使用 MapKit `MKDirectionsRequest`对象启动时，它应自动开始向请求的位置提供用户指示，或提供一个用户界面，使用户能够轻松开始获取行车路线。 例如：
 
 ```csharp
 using System;
@@ -362,7 +359,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 ## <a name="summary"></a>总结
 
 本文介绍了前瞻性建议，并展示了开发人员如何使用它们来驱动到适用于 watchOS 的 Xamarin iOS 应用的流量。 本文介绍了实现前瞻性建议并提供使用准则的步骤。
-
 
 ## <a name="related-links"></a>相关链接
 

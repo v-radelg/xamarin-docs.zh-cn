@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 57908027c6e9215504f410c0f9c989d6fbe3adad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8549e03c96a5e21f7a235064ebd72fc671cf2b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290509"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769284"
 ---
 # <a name="ios-frequently-asked-questions"></a>iOS 常见问题
 
@@ -35,7 +35,6 @@ IOS bug 可能会导致开发人员选项在更新 iOS 版本后消失，但在�
 
 ### <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logssymbolicate-ios-crashmd"></a>[在哪里可以找到符号化 iOS 崩溃日志的 .dSYM 文件？](symbolicate-ios-crash.md)
 本指南介绍 symbolicating iOS 崩溃日志以帮助诊断故障的基本步骤。 它还链接到其他资源，以获得更高级的带符号化技术，& 有关解释 iOS 崩溃日志的信息。
-
 
 ### <a name="how-do-i-set-mono-runtime-environment-variables-for-ios-projects-in-xamarin-studioxs-mono-runtimemd"></a>[如何在 Xamarin Studio 中为 iOS 项目设置 Mono 运行时环境变量？](xs-mono-runtime.md)
 如果需要为 Mono 设置任何运行时环境变量，则可以在 "项目选项" 中设置 **> 运行 > 常规**"页。
@@ -61,7 +60,6 @@ IOS bug 可能会导致开发人员选项在更新 iOS 版本后消失，但在�
 ### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[为何应用提交失败，且随附：“不允许的路径 ( "iTunesMetadata.plist" ) 位于...”？](itunesmetadata-disallowed-paths.md)
 此错误是 Apple 的应用商店验证过程中发生更改的结果。 此特定错误与您已安装的 Xamarin 的特定_版本无关，_ 因此降级_不_会有帮助。 本指南链接到有关如何解决此问题的详细信息。
 
-
 ## <a name="diagnosing-specific-error-messages"></a>诊断特定错误消息
 
 ### <a name="ios-designer-error-with-registerserviceporterror-registerserviceportmd"></a>[含有 RegisterServicePort 的 iOS 设计器错误](error-registerserviceport.md)
@@ -83,8 +81,6 @@ IOS 9 中的 API 更改要求在调用非托管代码时使用回调构造函数
 
 > [!IMPORTANT]
 > 下面的文章适用于最新版本的 Xamarin 中已解决的问题。 但是，如果该软件的最新版本发生问题，请使用完整的版本信息和完整的生成日志输出来记录[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
-
 
 ### <a name="ipa-file-is-0-bytesipa-zero-bytesmd"></a>[IPA 文件为 0 字节](ipa-zero-bytes.md)
 以前版本的 Xamarin 中存在一些已知问题，这些问题可能会导致 Windows 上的 IPA 文件为0字节。

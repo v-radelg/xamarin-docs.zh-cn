@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ca50171e43ef98e5b4e5fbd7bd236f74d35da8f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ae6a4fb45eb53c514c888d671780a5ceaeba6624
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286767"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768610"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 中 Xamarin 的通知
 
@@ -34,7 +34,6 @@ ms.locfileid: "70286767"
 
 ![](notifications-images/notifications-segue.png "通知属性")
 
-
 有两种类型的通知：
 
 - 系统定义的**简短**无滚动静态视图。
@@ -46,7 +45,6 @@ ms.locfileid: "70286767"
 简短介绍 UI 包含只是应用程序图标、 应用程序名称和通知标题字符串。
 
 如果用户不会忽略该通知，系统将自动切换到提供的详细信息的长时间查看通知。
-
 
 ### <a name="long-look-notification-controller"></a>长时间查看通知控制器
 
@@ -63,7 +61,6 @@ ms.locfileid: "70286767"
 动态视图可以显示更多数据，并提供更多交互性。
 
 ![](notifications-images/notification-dynamic.png "动态视图")
-
 
 ## <a name="generating-notifications"></a>生成通知
 
@@ -146,8 +143,6 @@ ms.locfileid: "70286767"
         "customKey": "Use this file to define a testing payload for your notifications. The aps dictionary specifies the category, alert text and title. The WatchKit Simulator Actions array can provide info for one or more action buttons in addition to the standard Dismiss button. Any other top level keys are custom payload. If you have multiple such JSON files in your project, you'll be able to choose between them in when selecting to debug the notification interface of your Watch App."
     }
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

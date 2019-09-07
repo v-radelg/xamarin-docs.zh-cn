@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eb944b062f75ceec8ca8dbe22cde64b0fdd15625
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288658"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752959"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin 中的 HealthKit
 
@@ -43,9 +43,6 @@ ms.locfileid: "70288658"
 > [!IMPORTANT]
 > IOS 8 中引入了运行状况工具包。 目前，运行状况工具包在 iOS 模拟器上不可用，调试需要连接到物理 iOS 设备。
 
-
-
-
 ## <a name="creating-and-provisioning-a-health-kit-app"></a>创建和设置运行状况工具包应用
 在 Xamarin iOS 8 应用程序可以使用 HealthKit API 之前，必须正确配置和预配该 API。 本部分介绍正确设置 Xamarin 应用程序所需的步骤。
 
@@ -66,16 +63,14 @@ ms.locfileid: "70288658"
 创建显式**应用 ID**和适当的**预配配置文件**在 Apple 的[iOS 开发人员中心](https://developer.apple.com/devcenter/ios/index.action)内完成。 
 
 当前**应用 id**列在开发人员中心的 "[证书"、"标识符 & 配置文件](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)" 部分中。 通常，此列表将显示**ID**值`*`，指示**应用 ID** - **名称**可以与任意数量的后缀一起使用。 此类*通配符应用 id*不能与运行状况工具包一起使用。
- 
-若要创建显式 **应用程序 ID**，单击 **+** 在右上角以使你转到按钮 **注册 iOS 应用程序 ID** 页：
 
+若要创建显式 **应用程序 ID**，单击 **+** 在右上角以使你转到按钮 **注册 iOS 应用程序 ID** 页：
 
 [![](healthkit-images/image02.png "在 Apple 开发人员门户中注册应用")](healthkit-images/image02.png#lightbox)
 
 如上图所示，在创建应用程序说明后，请使用 "**显式应用 id** " 部分为应用程序创建 ID。 在 "**应用服务**" 部分中，检查 "**启用服务**" 部分中的**运行状况工具包**。
 
 完成后，请按 "**继续**" 按钮，在帐户中注册**应用 ID** 。 你将返回到 "**证书、标识符和配置文件**" 页。 单击 **预配配置文件** 转到你当前的预配配置文件的列表，然后单击 **+** 按钮在右上角登录以使你转到 **添加 iOS预配配置文件** 页。 选择 " **IOS 应用开发**" 选项，然后单击 "**继续**" 以转到 "**选择应用 ID** " 页。 在此处选择之前指定的显式**应用 ID** ：
-
 
 [![](healthkit-images/image03.png "选择显式应用 ID")](healthkit-images/image03.png#lightbox)
 
@@ -171,7 +166,6 @@ ms.locfileid: "70288658"
 ### <a name="permissions-walkthrough"></a>权限演练
 
 在运行状况工具包预配的项目中， `AppDelegate.cs`打开文件。 请注意文件顶部`HealthKit`使用的语句。
-
 
 下面的代码与运行状况工具包权限相关：
 
@@ -410,11 +404,9 @@ IOS 模拟器不支持运行状况工具包。 必须在运行 iOS 8 的物理�
 
 假设预配已正确设置，你的应用程序将启动。 当它达到其`OnActivated`方法时，它将请求健康工具包授权。 首次遇到此错误时，用户将看到以下对话框：
 
-
 [![](healthkit-images/image12.png "此对话框将显示用户")](healthkit-images/image12.png#lightbox)
 
 启用应用程序以更新心率数据，应用将重新出现。 `ReactToHealthCarePermissions`回调将异步激活。 `HeartRateModel’s`这将导致`StoreData` `HKPermissionsViewController.OnEnabledChanged()` `EnabledChanged`属性更改，这将引发事件，这将导致事件处理程序运行，从而启用按钮。 `Enabled` 下图显示了顺序：
-
 
 [![](healthkit-images/image13.png "此图显示了事件的顺序")](healthkit-images/image13.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291875"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753348"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin 中的新引用计数系统
 
@@ -46,10 +46,8 @@ Xamarin 7.2.1 及更高版本的功能是新的引用计数系统的增强预览
 
  Unified API 需要新的引用计数扩展，并且应默认启用它。 较早版本的 IDE 可能没有自动检查此值，您可能必须自行进行检查。
 
-
 > [!IMPORTANT]
 > 此功能的早期版本已于 Monotouch.dialog 5.2，但仅适用于**sgen**作为实验性预览。 这一新的增强版本现在也可用于**Boehm**垃圾回收器。
-
 
 过去，Xamarin 管理了两种对象：只是围绕本机对象（对等对象）的包装的对象，以及那些扩展或引入了新功能（派生对象）的对象-通常通过保留额外的内存中状态。 以前，我们可以使用状态（例如，通过添加C#事件处理程序）来扩充对等对象，但我们允许对象处于未引用状态，然后再收集。 这可能会导致以后发生故障（例如，如果目标 C 运行时回调到托管对象中）。
 

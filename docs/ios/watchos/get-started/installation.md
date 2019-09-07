@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 12/05/2017
-ms.openlocfilehash: 1bc7ba07676c66c411357b5ad043258fea611d71
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 790e32131822e83f092b352b91b4461392150657
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293126"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768044"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安装和在 Xamarin 中使用 watchOS
 
@@ -47,7 +47,6 @@ Watch 应用包含三个项目：
 
 下载并运行[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例开始。
 从示例的屏幕，可[控件](~/ios/watchos/user-interface/index.md)页。
-
 
 ## <a name="creating-a-new-project"></a>创建新项目
 
@@ -103,7 +102,6 @@ Watch 应用上双击**Interface.storyboard**编辑使用 iOS 设计器。 您�
 
 创建的 segue **Ctrl + 拖动**从到另一个界面控制器上的按钮、 表或界面控制器。
 
-
 ### <a name="using-xcode-on-the-mac"></a>在 Mac 上使用 Xcode
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
@@ -123,7 +121,6 @@ Visual Studio 用户还可以使用 Xcode 切换要直接使用 Mac 生成主机
 
 在您保存情节提要中将自动添加的 Xcode Interface Builder 的输出口和操作创建到C# **。 designer.cs**监视扩展项目中的文件。
 
-
 ### <a name="adding-additional-screens-in-xcode"></a>在 Xcode 中添加其他屏幕
 
 当将其他屏幕 （超出什么模板中包括默认情况下） 添加到使用 Xcode Interface Builder 情节提要**必须手动添加C#代码文件**针对每个新界面控制器。
@@ -132,11 +129,9 @@ Visual Studio 用户还可以使用 Xcode 切换要直接使用 Mac 生成主机
 
 *Xamarin iOS 设计器自动执行此操作，任何手动步骤是必需的。*
 
-
 ## <a name="building"></a>生成
 
 包含的监视应用的项目，生成与其他 iOS 项目一样。 生成过程会导致包含监视扩展 (.appex)，它包含无代码的监视应用程序 (.app) 的 iPhone 应用程序 (.app)。
-
 
 ## <a name="launching"></a>启动
 
@@ -167,7 +162,6 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 请参阅[Apple 的论坛](https://forums.developer.apple.com/thread/7783)有关配置模拟器，如果默认值不起作用的说明。
 
-
 <a name="xcode6" />
 
 ### <a name="xcode-6-and-watchos-1"></a>Xcode 6 和 watchOS 1
@@ -188,23 +182,15 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 请参阅[通知页](~/ios/watchos/platform/notifications.md)信息如何处理代码中的通知。
 
-
 Visual Studio for Mac 可以使用通知启动监视应用_启动模式_通知：
-
-
 
 右键单击监视应用程序项目，然后选择**运行与 > 自定义配置...** :
 
-
 [![](installation-images/runwith-customparams-sml.png "运行自定义配置")](installation-images/runwith-customparams.png#lightbox)
-
 
 这将打开**自定义参数**可以在其中选择的窗口**通知**（并提供 JSON 有效负载），然后按**运行**若要在模拟器中启动监视应用程序：
 
-
 [![](installation-images/runwith-execargs-sml.png "设置通知和有效负载")](installation-images/runwith-execargs.png#lightbox)
-
-
 
 ## <a name="debugging"></a>调试
 
@@ -227,8 +213,6 @@ To test the functionality in your  and
 -->
 
 WatchOS 模板文件 (如`InterfaceController`， `ExtensionDelegate`， `NotificationController`，和`ComplicationController`) 附带已实现其所需的生命周期方法。 添加`Console.WriteLine`调用和读取**应用程序输出**以更好地了解事件生命周期。
-
-
 
 ## <a name="related-links"></a>相关链接
 

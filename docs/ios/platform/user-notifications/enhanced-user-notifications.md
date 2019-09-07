@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: adabf66e008dc2f49d7787d62ebad8aadf263ac7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ec63162a21333d0ff831ded1ab17a3d8bb0efaa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290575"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769375"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin 中的增强用户通知
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>处理前台应用通知
 
-IOS 10 新增，应用程序可以在前台处理通知，并触发通知。 通过提供`UNUserNotificationCenterDelegate`并`WillPresentNotification`实现方法，应用程序可以接管显示通知的责任。 例如:
+IOS 10 新增，应用程序可以在前台处理通知，并触发通知。 通过提供`UNUserNotificationCenterDelegate`并`WillPresentNotification`实现方法，应用程序可以接管显示通知的责任。 例如：
 
 ```csharp
 using System;
@@ -360,7 +360,6 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 若要更新现有通知，只需创建一个新的通知，其中修改了所需的参数（例如，新的触发器时间），并将其请求标识符与需要修改的通知添加到系统中。 示例：
 
-
 ```csharp
 using UserNotifications;
 ...
@@ -442,7 +441,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-对于 "本地通知"， `CategoryIdentifier`请设置`UNMutableNotificationContent`对象的属性。 例如：
+对于 "本地通知"， `CategoryIdentifier`请设置`UNMutableNotificationContent`对象的属性。 例如:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -458,7 +457,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>处理取消操作
 
-如上所述，当用户消除通知时，可以将解除操作发送到应用。 由于这不是标准操作，因此在创建类别时需要设置一个选项。 例如:
+如上所述，当用户消除通知时，可以将解除操作发送到应用。 由于这不是标准操作，因此在创建类别时需要设置一个选项。 例如：
 
 ```csharp
 var categoryID = "message";
@@ -471,7 +470,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>处理操作响应
 
-当用户与上面创建的自定义操作和类别交互时，应用需要满足所请求的任务。 这是通过提供`UNUserNotificationCenterDelegate`并`UserNotificationCenter`实现方法来完成的。 例如：
+当用户与上面创建的自定义操作和类别交互时，应用需要满足所请求的任务。 这是通过提供`UNUserNotificationCenterDelegate`并`UserNotificationCenter`实现方法来完成的。 例如:
 
 ```csharp
 using System;
@@ -561,7 +560,7 @@ namespace MonkeyNotification
 > [!IMPORTANT]
 > 服务扩展的捆绑标识符应与主应用的捆绑标识符匹配，并`.appnameserviceextension`将其附加到末尾。 例如，如果主应用有捆绑标识符`com.xamarin.monkeynotify`，则服务扩展应具有的`com.xamarin.monkeynotify.monkeynotifyserviceextension`捆绑标识符。 向解决方案添加扩展时，应自动设置此设置。 
 
-通知服务扩展中有一个主类，需要对其进行修改以提供所需的功能。 例如:
+通知服务扩展中有一个主类，需要对其进行修改以提供所需的功能。 例如：
 
 ```csharp
 using System;
@@ -664,8 +663,6 @@ namespace myApp {
 ## <a name="summary"></a>总结
 
 本文涵盖了用户通知通过 iOS 10 增强的所有方式。 它提供新的用户通知框架，以及如何在 Xamarin iOS 应用程序或应用程序扩展中使用它。
-
-
 
 ## <a name="related-links"></a>相关链接
 

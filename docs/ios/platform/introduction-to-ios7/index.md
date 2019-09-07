@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69f43df64ccf7de75b00e1a0b3f6e2ececc5bbb3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292015"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752064"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 简介
 
@@ -30,7 +30,6 @@ iOS 7 增强了 UIKit 中的动画支持，使应用程序可以执行以前需�
 
 - `springWithDampingRatio`–一个介于0和1之间的值，其中，振荡为较小的值增加。
 - `initialSpringVelocity`–初始弹簧速度，以每秒的总动画距离的百分比表示。
-
 
 以下代码将在图像视图的中心更改时产生弹簧效果：
 
@@ -104,13 +103,11 @@ API 本质上是声明性的。 可以通过创建对象（称为*行为*）来�
 - `UIPushBehavior`–对动态项应用强制。
 - `UISnapBehavior`–允许动态项与弹簧效果对齐位置。
 
-
 虽然有许多基元，但使用 UIKit Dynamics 向视图中添加基于物理的交互的一般过程在行为上保持一致：
 
 1. 创建动态 animator。
 1. 创建行为。
 1. 向动态 animator 中添加行为。
-
 
 ### <a name="dynamics-example"></a>Dynamics 示例
 
@@ -233,7 +230,6 @@ iOS 7 会在执行后台工作时进行更改。 当任务在后台运行时，i
 - 后台提取–允许应用程序定期更新后台内容。
 - 远程通知-允许应用程序在收到推送通知时更新内容。 通知可以是静默的，也可以是在锁定屏幕上显示横幅。
 - 后台传输服务–允许上传和下载数据（如大型文件），而无需经过固定的时间限制。
-
 
 有关新的多任务功能的更多详细信息，请参阅 Xamarin[后台处理 guide](~/ios/app-fundamentals/backgrounding/index.md)的 iOS 部分。
 

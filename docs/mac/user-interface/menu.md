@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 27eb5679bbc4825ab2bf0e1990b00d97ab207619
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292438"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770989"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin 中的菜单
 
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 即使你的应用程序未使用`NSDocuments`，你仍可以通过`NSDocumentController`将`NSUrl`与文件的位置一起发送到`NoteNewRecentDocumentURL`的方法`SharedDocumentController`，来使用来维护 "**最近打开**" 菜单。
 
-接下来，需要重写`OpenFile`应用委托的方法，以打开用户从 "**最近打开**" 菜单中选择的任何文件。 例如:
+接下来，需要重写`OpenFile`应用委托的方法，以打开用户从 "**最近打开**" 菜单中选择的任何文件。 例如：
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 与预先连接到标准菜单项的内置**第一个响应**程序操作一样，你可以创建新的自定义操作，并将它们连接到 Interface Builder 中的菜单项。
 
-首先，在应用的一个窗口控制器上定义自定义操作。 例如:
+首先，在应用的一个窗口控制器上定义自定义操作。 例如：
 
 ```csharp
 [Action("defineKeyword:")]
@@ -1071,7 +1071,6 @@ public override void DidFinishLaunching (NSNotification notification)
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用菜单和菜单项。 首先，我们检查过应用程序的菜单栏，然后查看创建上下文菜单，接下来我们检查状态栏菜单和自定义停靠菜单。 最后，我们介绍了弹出式菜单和下拉列表。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 72c233dc492fe1c93546121bc9103e666c2127ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65ccbe397093833e3af58d1165bc1dad8287ba5d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286263"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752945"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心图形
 
@@ -28,7 +28,6 @@ iOS 包括[*核心图形*](https://developer.apple.com/library/prerelease/ios/do
 - [在内存或屏幕上绘制图像](#Drawing_Images_and_Text)。
 - 创建和绘制到 PDF。
 - 读取和绘制现有的 PDF。
-
 
 ## <a name="geometric-space"></a>几何空间
 
@@ -276,7 +275,6 @@ public override void Draw (RectangleF rect)
 - 从上下文获取映像
 - 删除上下文
 
-
 不同于`Draw`方法，其中的上下文由视图提供，在这种情况下，您可以通过以下两种方式之一创建上下文：
 
 1. 通过调用`UIGraphics.BeginImageContext` （或`BeginImageContextWithOptions`）
@@ -422,7 +420,6 @@ UIGraphics.EndPDFContent ();
 ```
 
 生成的文本将被绘制到 PDF，后者随后将包含在可以`NSData`保存、上传、通过电子邮件发送等的中。
-
 
 ## <a name="summary"></a>总结
 

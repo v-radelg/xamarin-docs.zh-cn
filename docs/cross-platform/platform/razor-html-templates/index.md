@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: ccad60f749732ae2d0bf8e9852859b13af3a629e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284917"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765348"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 模板构建 HTML 视图
 
@@ -198,7 +198,6 @@ webView.EvaluateJavascript (js);
 - 能够在代码中C#截获导航请求，
 - 从C#代码调用 JavaScript 的能力。
 
-
 下一节介绍 Razor，这使得创建在混合应用程序中使用的 HTML 变得更加容易。
 
 ## <a name="what-is-razor"></a>什么是 Razor？
@@ -235,7 +234,6 @@ Razor 模板文件的文件扩展名为**cshtml** 。 可以通过 "**新建文�
 - IDE 将自动生成模板的分部类（扩展名为 **... 扩展名为...** ）。 您可以查看此代码，但不能对其进行编辑。
  ![RazorView 分部类的名称为 RazorView，以与 # 模板文件名匹配。](images/image6_125x34.png) 此名称用于在代码中C#引用模板。
 - `@using`还可以在 Razor 模板的顶部包含语句以包括其他命名空间。
-
 
 然后，可以通过以下C#代码生成最终的 HTML 输出。 请注意，我们将模型指定为字符串 "Hello World"，该字符串将合并到呈现的模板输出中。
 
@@ -379,8 +377,6 @@ var page = template.GenerateString ();
 - **iOS > 应用 > Web 视图应用程序**
 - **ASP.NET MVC 项目**
 
-
-
 对于 iPhone 和 Android 项目，新的 "**解决方案**" 窗口将如下所示-适用于 Razor 模板化引擎的突出显示的解决方案说明。
 
  ![创建 iPhone 和 Android 解决方案](images/image13_1139x959.png)
@@ -399,7 +395,6 @@ IPhone 和 Android 项目的默认模板解决方案内容如下所示：
 - Razor 模板文件（如**RazorView** ）。
 - Razor 模板中引用的模型类，如**ExampleModel.cs** 。
 - 平台特定的类，该类创建 web 视图并呈现模板，如`MainActivity` Android `iPhoneHybridViewController`和 iOS 上的。
-
 
 以下部分说明了项目的工作方式。
 
@@ -494,7 +489,6 @@ HTML 可以很好地用于原型制作，并显示 web 最适合的内容种类�
 - **RazorTodo** -使用 Razor 模板的完全 HTML 驱动的应用。
 - **RazorNativeTodo** -使用适用于 IOS 和 Android 的本机列表视图控件，但使用 HTML 和 Razor 显示编辑屏幕。
 
-
 这些 Xamarin 应用在 iOS 和 Android 上运行，利用可移植类库（Pcl）来共享公共代码，如数据库和模型类。 Razor**模板**还可以包括在 PCL 中，以便可以轻松地在平台之间共享这些模板。
 
 这两个示例应用都结合了本地平台中的 Twitter 共享和文本到语音 Api，演示了使用 Xamarin 的混合应用程序仍可以访问 HTML Razor 模板驱动视图中的所有基础功能。
@@ -507,7 +501,6 @@ HTML 可以很好地用于原型制作，并显示 web 最适合的内容种类�
 
 - 性能-本机滚动控件使用虚拟化来确保快速平稳滚动，甚至包含非常长的数据列表。
 - 本机体验-可轻松启用特定于平台的 UI 元素，如 iOS 和 Android 中的快速滚动索引支持。
-
 
 使用 Xamarin 构建混合应用程序的一个主要优点是，您可以从完全 HTML 驱动的用户界面（如第一个示例）开始，然后在需要时添加特定于平台的功能（如第二个示例所示）。 IOS 和 Android 上的本机列表屏幕和 HTML Razor 编辑屏幕如下所示。
 

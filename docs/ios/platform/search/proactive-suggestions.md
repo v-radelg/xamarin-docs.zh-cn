@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b79f64f154dbd7dde623d13385f111d3d5a5d3f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291729"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769538"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin 中的主动建议简介
 
@@ -534,7 +534,6 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 当应用程序使用 MapKit `MKDirectionsRequest`对象启动时，它应自动开始向请求的位置提供用户指示，或提供一个用户界面，使用户能够轻松开始获取行车路线。 例如:
 
-
 ```csharp
 using System;
 using Foundation;
@@ -607,7 +606,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
   - 在家中或工作后。 
 
 通过在 iOS 10 中加入简单的 API 调用，开发人员可以为媒体应用程序的用户创建更吸引人的锁屏体验。 使用`MPPlayableContentManager`类管理媒体播放时，将在应用的锁定屏幕上显示完全媒体控件（如音乐应用提供的控件）。
-
 
 ```csharp
 using System;
@@ -682,8 +680,6 @@ namespace MonkeyPlayer
 ## <a name="summary"></a>总结
 
 本文介绍了前瞻性建议，并展示了开发人员如何使用它们来驱动向 Xamarin iOS 应用程序的流量。 本文介绍了实现前瞻性建议并提供使用准则的步骤。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,23 +7,20 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0ea96eb3808daeb9f8764695d1b4b3d432727ff2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292487"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769189"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 应用分发概述
 
 _本文档概述适用于 tvOS 应用的分发技术，并将其用作指向主题中更详细文档的指针。_
 
-
 开发完 tvOS 应用后，软件开发生命周期中的下一步是将应用分发给用户，如下面的关系图中突出显示的部分所示：
 
-
 [![软件开发生命周期概述](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
-
 
 Apple 提供以下方法来分发 tvOS 应用，这些应用由 tvOS 支持：
 
@@ -83,8 +80,6 @@ TvOS 应用可通过 ad hoc 分发进行用户测试，可在**Apple 开发人�
 ## <a name="summary"></a>总结
 
 本文简要概述了适用于 tvOS 应用的分发机制。 它引入了 Apple TV 应用商店、即席部署和内部部署，并提供了更多详细信息的链接。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3e27cffa9e2605c3697536f226fe87fbbf1bfbbd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 47a07959bcfabc0980ccb90f2ae7a489e5e71223
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286883"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756237"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Xamarin 中的后台传输和 NSURLSession
 
@@ -56,12 +56,10 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
 - *DidReceiveChallenge* -在需要授权时调用以请求凭据。
 - *DidBecomeInvalidWithError* -如果变为无效`NSURLSession` ，则调用。
 
-
 后台会话需要更多的专用委托，具体取决于正在运行的任务的类型。 后台会话仅限两种类型的任务：
 
 - *上传任务*-类型`NSUrlSessionUploadTask`的任务使用`NSUrlSessionTaskDelegate`从`NSUrlSessionDelegate`继承的。 此委托提供其他方法来跟踪上传进度、处理 HTTP 重定向等。
 - *下载任务*-类型`NSUrlSessionDownloadTask`的任务使用`NSUrlSessionDownloadDelegate`从`NSUrlSessionTaskDelegate`继承的。 此委托提供了用于上传任务的所有方法，以及用于跟踪下载进度并确定下载任务恢复或完成时间的下载特定方法。
-
 
 下面的代码定义可用于从 URL 下载图像的任务。 我们通过在后台会话上调用`CreateDownloadTask`并传入 URL 请求来开始任务：
 
@@ -96,7 +94,6 @@ public class MySessionDelegate : NSUrlSessionDownloadDelegate
 
 > [!IMPORTANT]
 > 后台会话是在后台线程上启动的，因此，对更新 ui 的任何调用都必须通过调用`InvokeOnMainThread`来在 ui 线程上显式运行，以避免 iOS 终止应用。 
-
 
 ## <a name="handling-transfer-completion"></a>处理传输完成
 
@@ -141,8 +138,6 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 ```
 
 在本演练中，我们介绍了在 iOS 7 中实现后台传输服务的基本步骤。
-
-
 
 ## <a name="related-links"></a>相关链接
 

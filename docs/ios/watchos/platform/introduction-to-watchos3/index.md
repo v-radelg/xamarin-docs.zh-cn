@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/07/2017
-ms.openlocfilehash: 50278eaa6d3518b8de85685c1faf64eabac4531d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b167ddca86148818c534b7a9b0e338f8a4406b15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292206"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767757"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 简介
 
@@ -187,7 +187,6 @@ WatchOS 3 中已弃用以下 Api：
 - UIKit `UILocalNotification`的类已弃用，应该替换为用户通知框架。
 
 有关弃用功能和更改的完整列表，请参阅 Apple 的[watchOS 2.2 到 watchOS 3.0 API 差异](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)文档。
-
 
 ## <a name="related-links"></a>相关链接
 

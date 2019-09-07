@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f770eaf3fcb68c17a7692e5b6433081234951e6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5c147b43caf3018cde8870adb25bb73cb08f53ee
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286381"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768501"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 拆分视图控制器
 
@@ -100,7 +100,7 @@ Apple 对于使用拆分视图控制器有以下建议：
 
 ### <a name="accessing-master-and-detail"></a>访问 Master 和 Detail
 
-如果需要以编程方式访问主视图控制器和详细视图控制器，请`ViewControllers`使用拆分视图控制器的属性。 例如:
+如果需要以编程方式访问主视图控制器和详细视图控制器，请`ViewControllers`使用拆分视图控制器的属性。 例如：
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-在拆分视图控制器中，重写`ViewDidLoad`方法，并将两个视图绑定在一起。 例如:
+在拆分视图控制器中，重写`ViewDidLoad`方法，并将两个视图绑定在一起。 例如：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -171,8 +171,6 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用内设计和使用拆分视图控制器。
-
-
 
 ## <a name="related-links"></a>相关链接
 

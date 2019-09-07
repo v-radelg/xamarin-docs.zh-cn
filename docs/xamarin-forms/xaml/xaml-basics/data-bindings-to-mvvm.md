@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f81a9d232e1702d112e837a80d35403162e3adca
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 116225165b8ee27b896d3de8598f8fbf39400f52
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529340"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767529"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 从数据绑定到 MVVM
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext`是一个非常特殊的属性:在元素`BindingContext`上设置时, 该元素的所有子级都将继承该元素。 这意味着所有子级`StackLayout`具有此相同`BindingContext`，并且它们可以包含简单绑定到该对象的属性。
+`BindingContext`是一个非常特殊的属性：在元素`BindingContext`上设置时，该元素的所有子级都将继承该元素。 这意味着所有子级`StackLayout`具有此相同`BindingContext`，并且它们可以包含简单绑定到该对象的属性。
 
 在中**One-Shot DateTime**程序，两个子级包含到这些属性的绑定`DateTime`值，但两个其他的子级包含似乎缺少绑定路径的绑定。 这意味着`DateTime`本身的值用于`StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>与 Viewmodel 命令
 
-在许多情况下, MVVM 模式被限制为数据项的操作:用户界面对象在 ViewModel 中的视图并行数据对象中。
+在许多情况下，MVVM 模式被限制为数据项的操作：用户界面对象在 ViewModel 中的视图并行数据对象中。
 
 但是，有时视图需要包含触发 ViewModel 中的各种操作的按钮。 但不能包含 ViewModel`Clicked`按钮处理程序，可能会阻塞到特定的用户界面范例 ViewModel 因为。
 
@@ -702,12 +702,11 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin 演化 2016:通过 Xamarin 和 Prism 简化了 MVVM**
+**Xamarin 演化2016：通过 Xamarin 和 Prism 简化了 MVVM**
 
 ## <a name="summary"></a>总结
 
 XAML 是用于在 Xamarin.Forms 应用程序，尤其是在数据绑定中定义的用户界面的强大工具，使用 MVVM。 结果是在代码中的所有后台支持具有的用户界面的干净、 巧妙，且可能可工具化表示形式。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 8cf2eaf381b0e9f87b5d91bccb6f4aa86dc68e4d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efd120e785e55bfa3806cd193bd5f155f35a5e18
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292835"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767728"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -80,14 +80,12 @@ with an alpha channel. Icons should not have an alpha channel.
 
 4. 图标图像现在应传递 Apple 的验证检查。
 
-
 <a name="add" />
 
 ## <a name="manually-adding-interface-controller-files"></a>手动添加接口控制器文件
 
 > [!IMPORTANT]
 > Xamarin 的 WatchKit 支持包括在 iOS 设计器中设计 watch 情节提要（在 Visual Studio for Mac 和 Visual Studio 中），这不需要下述步骤。 只需在 "Visual Studio for Mac 属性" pad 中为接口控制器指定类名称C# ，即可自动创建代码文件。
-
 
 *如果*你使用的是 Xcode Interface Builder，请按照以下步骤为你的手表应用创建新的界面控制器并启用与 Xcode 的同步，以便可以在中C#使用插座和操作：
 
@@ -210,14 +208,12 @@ with an alpha channel. Icons should not have an alpha channel.
 
 你现在可以在中C#引用控件（或实现操作）！
 
-
 <a name="command_line" />
 
 ## <a name="launching-the-watch-app-from-the-command-line"></a>从命令行启动 Watch 应用
 
 > [!IMPORTANT]
 > 默认情况下，你可以在普通应用模式下启动 "监视应用"，也可以使用 Visual Studio for Mac 和 Visual Studio 中的[自定义执行参数](~/ios/watchos/get-started/installation.md#custommodes)**一目了然**或**通知**模式。
-
 
 你还可以使用命令行来控制 iOS 模拟器。 用于启动监视应用的命令行工具是**mtouch**。
 
@@ -243,7 +239,6 @@ with an alpha channel. Icons should not have an alpha channel.
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-
 ## <a name="notification-mode"></a>通知模式
 
 若要测试应用的[**通知**模式](~/ios/watchos/platform/notifications.md) `watchlaunchmode` ，请将参数设置`Notification`为，并提供包含测试通知负载的 JSON 文件的路径。
@@ -255,7 +250,6 @@ with an alpha channel. Icons should not have an alpha channel.
 ```bash
 --watchlaunchmode=Notification --watchnotificationpayload=/path/to/file.json
 ```
-
 
 ## <a name="other-arguments"></a>其他参数
 
@@ -296,8 +290,6 @@ with an alpha channel. Icons should not have an alpha channel.
 ```bash
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 186dab1d48d928426d223c8961ce21846c351107
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 575235569351d0856c7fbffbf38a981ede1a35ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523077"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762443"
 ---
 # <a name="auto-complete-for-xamarinandroid"></a>Xamarin Android 自动完成
 
-`AutoCompleteTextView` 是一个可编辑的文本视图元素，当用户输入时自动显示完成建议。 建议列表显示在下拉菜单中, 用户可以从中选择要替换编辑框内容的项。
+`AutoCompleteTextView` 是一个可编辑的文本视图元素，当用户输入时自动显示完成建议。 建议列表显示在下拉菜单中，用户可以从中选择要替换编辑框内容的项。
 
 ![AutoCompleteTextView 示例](images/auto-complete.png)
 
 ## <a name="overview"></a>概述
 
-若要创建提供自动完成建议的文本输入小组件, 请使用[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+若要创建提供自动完成建议的文本输入小组件，请使用[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 小组件. 通过与小组件关联的字符串集合接收建议[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)。
 
-在本教程中, 你将创建一个[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+在本教程中，你将创建一个[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 提供国家/地区名称建议的小组件。
 
 ```xml
@@ -45,9 +45,8 @@ ms.locfileid: "69523077"
 </LinearLayout>
 ```
 
-[`TextView`](xref:Android.Widget.TextView)是一个标签, 用于引入[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+[`TextView`](xref:Android.Widget.TextView)是一个标签，用于引入[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 小组件.
-
 
 ## <a name="tutorial"></a>教程
 
@@ -67,7 +66,7 @@ ms.locfileid: "69523077"
 </TextView> 
 ```
 
-此文件定义了一个[`TextView`](xref:Android.Widget.TextView)简单的, 将用于建议列表中显示的每一项。
+此文件定义了一个[`TextView`](xref:Android.Widget.TextView)简单的，将用于建议列表中显示的每一项。
 
 打开 **Resources/Layout/Main.axml** 并插入以下代码：
 
@@ -89,7 +88,7 @@ ms.locfileid: "69523077"
 </LinearLayout>
 ```
 
-打开**MainActivity.cs**并插入以下代码:[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+打开**MainActivity.cs**并插入以下代码：[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 付款方式
 
 ```csharp
@@ -107,11 +106,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-内容视图设置为`main.xml`布局后,[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-从布局[`FindViewById`](xref:Android.App.Activity.FindViewById*)捕获小组件。 然后初始化[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)一个新的, 以将`list_item.xml`布局绑定到`COUNTRIES`字符串数组中的每个列表项 (在下一步中定义)。 最后, `SetAdapter()`调用以[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)将与[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-小组件, 以便字符串数组将填充建议列表。
+内容视图设置为`main.xml`布局后，[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+从布局[`FindViewById`](xref:Android.App.Activity.FindViewById*)捕获小组件。 然后初始化[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)一个新的，以将`list_item.xml`布局绑定到`COUNTRIES`字符串数组中的每个列表项（在下一步中定义）。 最后， `SetAdapter()`调用以[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)将与[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件，以便字符串数组将填充建议列表。
 
-`MainActivity`在类中, 添加字符串数组:
+`MainActivity`在类中，添加字符串数组：
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -162,16 +161,14 @@ static string[] COUNTRIES = new string[] {
 这是当用户键入到中时将在下拉列表中提供的建议列表。[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 小组件.
 
-运行该应用程序。 键入内容时, 应会看到如下所示的内容:
+运行该应用程序。 键入内容时，应会看到如下所示的内容：
 
-[![自动完成的屏幕截图示例: 列出包含 "ca" 的名称](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
-
-
+[![自动完成的屏幕截图示例：列出包含 "ca" 的名称](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 ## <a name="more-information"></a>详细信息
 
-请注意, 不建议使用硬编码字符串数组, 因为应用程序代码应侧重于行为, 而不是内容。 应该从代码中外部化应用程序内容 (例如字符串), 以便更轻松地对内容进行修改, 并促进内容的本地化。 在本教程中使用硬编码字符串只是为了简化并专注于[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-小组件. 相反, 应用程序应在 XML 文件中声明此类字符串数组。 可以使用项目`res/values/strings.xml`文件中的`<string-array>`资源完成此操作。 例如：
+请注意，不建议使用硬编码字符串数组，因为应用程序代码应侧重于行为，而不是内容。 应该从代码中外部化应用程序内容（例如字符串），以便更轻松地对内容进行修改，并促进内容的本地化。 在本教程中使用硬编码字符串只是为了简化并专注于[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+小组件. 相反，应用程序应在 XML 文件中声明此类字符串数组。 可以使用项目`res/values/strings.xml`文件中的`<string-array>`资源完成此操作。 例如:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,14 +185,13 @@ static string[] COUNTRIES = new string[] {
 </resources>
 ```
 
-若要将这些资源字符串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)用于, 请替换原始[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
-具有以下内容的构造函数行:
+若要将这些资源字符串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)用于，请替换原始[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+具有以下内容的构造函数行：
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
 var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countries);
 ```
-
 
 ### <a name="references"></a>参考资料
 
@@ -203,4 +199,4 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 - [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
 - [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 
-_此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据[创造性 Commons 2.5 归属许可证](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。本教程基于[Android 自动完成教程 *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)。_
+_此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改，并根据[创造性 Commons 2.5 归属许可证](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。本教程基于[Android 自动完成教程 *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)。_

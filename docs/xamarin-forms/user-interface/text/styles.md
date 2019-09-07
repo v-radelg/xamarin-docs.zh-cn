@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 66d7ae722281d9034cb4cdf1501662a7de396c2d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228008"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770240"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文本样式
 
@@ -144,7 +144,6 @@ label.Style = Device.Styles.TitleStyle;
 ![启用了辅助功能的设备样式](styles-images/post-access.png)
 
 若要确保可访问性，请确保在应用中，任何与文本相关样式的基础使用内置样式一致地使用样式。 请参阅[样式](~/xamarin-forms/user-interface/styles/index.md)有关扩展和一般情况下使用样式的详细信息。
-
 
 ## <a name="related-links"></a>相关链接
 

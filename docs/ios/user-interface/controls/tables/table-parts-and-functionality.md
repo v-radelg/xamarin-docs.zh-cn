@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: edc5ec51499116fc2fabeb03327b32a689dc0c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279331"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768346"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的表部件和功能
 
@@ -67,7 +67,6 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 - 插入新单元（带有动画）。
 
 本文档的其余部分介绍如何通过 Xamarin 实现所有这些 UITableView 功能。
-
 
 ## <a name="classes-overview"></a>类概述
 

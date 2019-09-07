@@ -6,30 +6,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647718"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758319"
 ---
 # <a name="working-with-screen-sizes"></a>使用屏幕大小
 
-Android 磨损设备可以具有矩形或环形显示, 也可以是不同的大小。
+Android 磨损设备可以具有矩形或环形显示，也可以是不同的大小。
 
 ![矩形和圆形磨损显示的屏幕截图](screen-sizes-images/moyeu-wear.png)
 
 ## <a name="identifying-screen-type"></a>标识屏幕类型
 
-磨损支持库提供了一些控件, 可帮助你检测和适应不同的屏幕形状, 例如`WatchViewStub`和`BoxInsetLayout`。
+磨损支持库提供了一些控件，可帮助你检测和适应不同的屏幕形状，例如`WatchViewStub`和`BoxInsetLayout`。
 
-请注意, 一些其他支持库控件 (例如`GridViewPager`)*会自动*检测屏幕形状本身, 不应将其添加为下面所述的控件的子级。
+请注意，一些其他支持库控件（例如`GridViewPager`）*会自动*检测屏幕形状本身，不应将其添加为下面所述的控件的子级。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-请参阅[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)示例, 了解如何检测屏幕类型并为每种类型显示不同的布局。
+请参阅[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)示例，了解如何检测屏幕类型并为每种类型显示不同的布局。
 
-主布局文件包含一个`android.support.wearable.view.WatchViewStub` , 它`app:rectLayout`使用和`app:roundLayout`属性来引用矩形和圆形屏幕的不同布局:
+主布局文件包含一个`android.support.wearable.view.WatchViewStub` ，它`app:rectLayout`使用和`app:roundLayout`属性来引用矩形和圆形屏幕的不同布局：
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -41,32 +41,29 @@ Android 磨损设备可以具有矩形或环形显示, 也可以是不同的大�
   app:roundLayout="@layout/round_layout" />
 ```
 
-对于将在运行时选择的每个样式, 解决方案都包含不同的布局:
+对于将在运行时选择的每个样式，解决方案都包含不同的布局：
 
 !["资源/布局" 下显示的文件](screen-sizes-images/solution.png)
 
-
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
-您还可以创建适应矩形或圆形屏幕的单个视图, 而不是为每个屏幕类型构建不同的布局。
+您还可以创建适应矩形或圆形屏幕的单个视图，而不是为每个屏幕类型构建不同的布局。
 
 此[Google 示例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)演示如何使用`BoxInsetLayout`在矩形和圆形屏幕上使用相同的布局。
 
-
 ## <a name="wear-ui-designer"></a>磨损 UI 设计器
 
-Xamarin Android Designer 支持矩形和圆形屏幕:
+Xamarin Android Designer 支持矩形和圆形屏幕：
 
 ![选择 Xamarin 中的 Android 磨损方形屏幕 Android Designer](screen-sizes-images/design-screen-type.png)
 
-此处显示了矩形样式的设计图面:
+此处显示了矩形样式的设计图面：
 
 ![长方形样式的设计图面](screen-sizes-images/design-rect.png) 
 
-圆形样式中的设计图面如下所示:
+圆形样式中的设计图面如下所示：
 
 ![圆形样式的设计图面](screen-sizes-images/design-round.png)
-
 
 ## <a name="wear-simulator"></a>磨损模拟器
 
@@ -74,15 +71,14 @@ Xamarin Android Designer 支持矩形和圆形屏幕:
 
 ![Google 仿真器管理器中显示的磨损设备定义](screen-sizes-images/emulator-devices.png)
 
-对于矩形屏幕, 模拟器将呈现如下:
+对于矩形屏幕，模拟器将呈现如下：
 
 ![矩形屏幕的仿真程序呈现](screen-sizes-images/recipe-2.png) 
 
-对于圆形屏幕, 它将如下所示:
+对于圆形屏幕，它将如下所示：
 
 ![环形屏幕的仿真程序呈现](screen-sizes-images/recipe-2-round.png)
 
 ## <a name="video"></a>视频
 
 [适用于 Android 的](https://www.youtube.com/watch?v=naf_WbtFAlY) [developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw) 应用程序。
-

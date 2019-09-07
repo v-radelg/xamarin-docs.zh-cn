@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
-ms.openlocfilehash: 06b4764570205a39734d38e3e118b7dc1fa35d18
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2da2af2a57fb0ec737927024d497530c2a3aac5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888737"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759872"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms 字数
 
@@ -52,7 +52,7 @@ ms.locfileid: "69888737"
 
 `WidthRequest`并`HeightRequest`属性将被忽略，如果`BoxView`是*约束*在布局中，用例的布局容器对其自身的大小施加`BoxView`。
 
-一个`BoxView`可以被限制在一个维度和其他不受约束。 例如，如果`BoxView`是垂直的子级`StackLayout`，垂直维度的`BoxView`是不受约束，且其水平维度通常被约束。 但这种水平维度有一些例外:如果将`BoxView`其`HorizontalOptions`属性`LayoutOptions.Fill`设置为以外的内容, 则水平维度也不受约束。 也可能是`StackLayout`本身可以具有不受约束的水平维度，在这种情况下`BoxView`也将水平方向不受约束。
+一个`BoxView`可以被限制在一个维度和其他不受约束。 例如，如果`BoxView`是垂直的子级`StackLayout`，垂直维度的`BoxView`是不受约束，且其水平维度通常被约束。 但这种水平维度有一些例外：如果将`BoxView`其`HorizontalOptions`属性`LayoutOptions.Fill`设置为以外的内容，则水平维度也不受约束。 也可能是`StackLayout`本身可以具有不受约束的水平维度，在这种情况下`BoxView`也将水平方向不受约束。
 
 [ **BasicBoxView** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)示例将显示一英寸的正方形不受约束`BoxView`在其页面的中心：
 
@@ -778,18 +778,17 @@ public partial class MainPage : ContentPage
 }
 ```
 
-第二次处理方式略有不同:应用动画缓动函数是为了使移动看起来不平滑。 在每个时钟周期，第二个指针有点拉取，然后超过其目标。 此小段代码很向移动的真实性。
+第二次处理方式略有不同：应用动画缓动函数是为了使移动看起来不平滑。 在每个时钟周期，第二个指针有点拉取，然后超过其目标。 此小段代码很向移动的真实性。
 
 ## <a name="conclusion"></a>结束语
 
 `BoxView`可能看起来简单在第一次，而是作为你所见，它可以相当灵活多变，并且可以几乎重现的视觉效果通常可以仅使用矢量图形。 有关更复杂的图形，请查阅[Xamarin.Forms 中使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
 
-
 ## <a name="related-links"></a>相关链接
 
 - [基本字数 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 - [文本修饰 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
-- [ListView 颜色 (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
+- [ListView 颜色（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
 - [游戏的生命周期 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
 - [点式时钟 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
 - [字数时钟 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)

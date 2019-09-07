@@ -1,6 +1,6 @@
 ---
 title: 疑难解答
-description: 常见错误情形和如何解决这些问题
+description: 常见错误情况和解决方法
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8
@@ -8,20 +8,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: fbe4fb6fce52636b59a9637ee0150c4c19fcc9da
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 93cab36b21e2fe73a0e6890140b5ebaeb32f7951
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60850430"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760036"
 ---
 # <a name="troubleshooting"></a>疑难解答
 
-_常见错误情形和如何解决这些问题_
+_常见错误情况和解决方法_
 
-## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>错误："找不到的 Xamarin.Forms 版本与兼容..."
+## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>错误："找不到与兼容的 Xamarin 版本。
 
-在出现以下错误，可以**包控制台**窗口更新所有 Nuget 包或 Xamarin.Forms Android 应用程序项目中的 Xamarin.Forms 解决方案时：
+更新 Xamarin 解决方案或 Xamarin 中的所有 Nuget 包时，**包控制台**窗口中可能会出现以下错误：
 
 ```csharp
 Attempting to resolve dependency 'Xamarin.Android.Support.v7.AppCompat (= 23.3.0.0)'.
@@ -32,30 +32,28 @@ Updating 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0' to 'Xamarin.Android.S
 Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.Android.Support.v7.MediaRouter 23.3.0.0'.
 ```
 
-### <a name="what-causes-this-error"></a>什么因素会导致此错误？
+### <a name="what-causes-this-error"></a>导致此错误的原因是什么？
 
-Visual Studio for Mac （或 Visual Studio） 可能指示有可用的 Xamarin.Forms Nuget 包更新*及其所有依赖项*。 在 Xamarin Studio，该解决方案中**包**节点可能如下所示 （版本号可能不同）：
+Visual Studio for Mac （或 Visual Studio）可能指示更新适用于 Xamarin。 Forms Nuget 程序包*及其所有依赖项*。 在 Xamarin Studio 中，解决方案的 "**包**" 节点可能如下所示（版本号可能不同）：
 
-![](images/updates-available.png "Android 项目的包文件夹")
+![](images/updates-available.png "Android 项目包文件夹")
 
-如果你尝试更新可能会发生此错误_所有_包。
+如果尝试更新_所有_包，则可能出现此错误。
 
-这是因为与 Android 项目设置为 Android 6.0 (API 23) 的目标/编译版本或 Xamarin.Forms 上具有硬依赖项的下面*特定*的 Android 版本支持包。 虽然可能会提供这些包的更新的版本，并不一定与之兼容 Xamarin.Forms。
+这是因为 Android 项目设置为 Android 6.0 （API 23）或更低版本的目标/编译版本，因此，在*特定*版本的 android 支持包上，Forms 会很难依赖。 尽管可以使用这些包的更新版本，但 Xamarin 不一定与它们兼容。
 
-在这种情况下应更新_仅_ **Xamarin.Forms**包因为这将确保依赖项保留在兼容版本上。 只要它们不会导致要更新的 Android 支持包，可能还会单独更新已添加到你的项目的其他包。
-
+在这种情况下，应_仅_更新**Xamarin. Forms**包，因为这将确保依赖项保持在兼容的版本上。 你添加到项目中的其他包还可以单独更新，只要它们不会导致 Android 支持包更新。
 
 > [!NOTE]
-> 如果您使用的 Xamarin.Forms 2.3.4 或更高版本**和**Android 项目的目标/编译版本设置为 Android 7.0 (API 24) 或更高版本，则不能再上面提到的硬依赖项适用，并且可能会更新支持独立于 Xamarin.Forms 包的包。
+> 如果你使用的是 Xamarin. Forms 2.3.4 或更高版本，**并且**android 项目的目标/编译版本设置为 android 7.0 （API 24）或更高版本，则上面提到的硬依赖关系将不再适用，你可以独立于Xamarin 包。
 
+### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>能够删除所有包，然后重新添加 Xamarin。 Forms
 
-### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>解决方法：删除所有包，并重新添加 Xamarin.Forms
+如果**支持**包更新为不兼容的版本，最简单的解决方法是：
 
-如果**Xamarin.Android.Support**包已更新为不兼容版本，最简单的解决方法是：
+1. 手动删除 Android 项目中的所有 Nuget 包，然后
+2. 重新添加**Xamarin. Forms**包。
 
-1. 然后手动删除在 Android 项目中，所有 Nuget 包
-2. 重新添加**Xamarin.Forms**包。
-
-这会自动下载*正确*的其他包版本。
+这将自动下载其他包的*正确*版本。
 
 若要查看此过程的视频，请参阅此[论坛帖子](https://forums.xamarin.com/discussion/comment/170012/#Comment_170012)。

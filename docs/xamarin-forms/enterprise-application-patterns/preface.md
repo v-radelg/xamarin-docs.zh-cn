@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 82f1455ff5e5ac06b50664e1d4d533d4964b7a0e
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 4ce04ec5216872cb56424e8847eec357a5b3ac0e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831128"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770743"
 ---
 # <a name="preface-to-enterprise-app-development"></a>《企业应用开发》序言
 
@@ -26,9 +26,9 @@ ms.locfileid: "67831128"
 
 本指南面向已熟悉 Xamarin.Forms 的读者。 有关 Xamarin.Forms 的详细介绍，请参阅[Xamarin.Forms 文档](~/xamarin-forms/index.yml)，和[使用 Xamarin.Forms 创建移动应用](https://aka.ms/xamebook)。
 
-本指南是补充[.NET 微服务：适用于容器化.NET 应用程序体系结构](https://aka.ms/microservicesebook)，其中重点介绍开发和部署容器化微服务。 其他应该阅读的指南包括[《使用 ASP.NET Core 和 Microsoft Azure 架构和开发现代 Web 应用程序》](https://aka.ms/WebAppEbook)、[《Docker容器化应用生命周期与 Microsoft 平台和工具》](https://aka.ms/dockerlifecycleebook)以及[《用于移动应用开发的 Microsoft 平台和工具》](https://aka.ms/MobAppDev/StndPDF)。
+本指南是对[.net 微服务的补充：容器化 .net 应用程序](https://aka.ms/microservicesebook)的体系结构，重点介绍如何开发和部署容器化的微服务。 其他应该阅读的指南包括[《使用 ASP.NET Core 和 Microsoft Azure 架构和开发现代 Web 应用程序》](https://aka.ms/WebAppEbook)、[《Docker容器化应用生命周期与 Microsoft 平台和工具》](https://aka.ms/dockerlifecycleebook)以及[《用于移动应用开发的 Microsoft 平台和工具》](https://aka.ms/MobAppDev/StndPDF)。
 
-## <a name="who-should-use-this-guide"></a>应使用本指南的用户
+## <a name="who-should-use-this-guide"></a>应使用本指南的人员
 
 本指南的主要受众是希望学习如何利用 Xamarin.Froms 架构和实现跨平台企业应用的开发人员和架构师。
 
@@ -40,8 +40,7 @@ ms.locfileid: "67831128"
 
 本指南可随意转发给团队成员，帮助确保他们对使用 Xamarin.Forms 进行跨平台企业应用开发有大致了解。 通过使所有人在使用一组通用术语和基本原则的基础上开展工作，可帮助团队确保构建具有一致的架构模式和做法的应用程序。
 
-
 ## <a name="related-links"></a>相关链接
 
-- [下载电子书 (2 Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) （示例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下载电子书（2Mb）](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers （GitHub）（示例）](https://github.com/dotnet-architecture/eShopOnContainers)

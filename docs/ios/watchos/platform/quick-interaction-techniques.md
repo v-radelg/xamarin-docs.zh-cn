@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a0719dce3b7f5484168dc5679237b01286f5de78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6aa5eede658f13a36220398f92192eefa2473bab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286749"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768592"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速交互技术
 
@@ -98,7 +98,7 @@ watchOS 3 将支持以下四个手势识别器：
 - 某些手势优先于其他笔势类型，如：
   - 滚动
   - Force Touch
- 
+
 ### <a name="digital-crown-rotation"></a>Digital Crown 旋转
 
 开发人员可通过在 watchOS 3 应用中实现 Digital Crown 支持，为用户提供更高的导航速度和精度交互。
@@ -120,7 +120,7 @@ Digital Crown 访问权限由以下元素提供：
 
 #### <a name="rotations-per-second"></a>每秒循环
 
-使用基于物理学的动画时，从 Digital Crown 访问每秒的旋转很有用。 若要访问每秒的旋转，请`CrownSequencer`使用监视扩展`WKInterfaceController`的的属性。 例如:
+使用基于物理学的动画时，从 Digital Crown 访问每秒的旋转很有用。 若要访问每秒的旋转，请`CrownSequencer`使用监视扩展`WKInterfaceController`的的属性。 例如：
 
 ```csharp
 var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
@@ -169,7 +169,6 @@ Apple 将其留给开发人员来确定旋转计数如何与正在更新的 UI �
 旋转增量的`+/-`符号（）表示用户打开 Digital Crown 的方向：
 
 [![](quick-interaction-techniques-images/quick03.png "循环增量的符号表示用户打开 Digital Crown 的方向")](quick-interaction-techniques-images/quick03.png#lightbox)
-
 
 如果用户正在向上滚动，则 WatchKit 将返回正增量，如果向下滚动，则将返回负增量，而不管用户在哪个方向上穿出了手表。
 

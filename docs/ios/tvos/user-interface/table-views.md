@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 28dfdbd7837f87d003e5b949ea3f7421613997f7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10f065d6e7b1cacb217cb510c57707662a196664
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288302"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768571"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 表视图
 
@@ -952,8 +952,6 @@ namespace tvTable
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用程序中设计和使用表视图。 并提供了一个示例，该示例演示如何在拆分视图中使用表视图，这是 tvOS 应用程序中的表视图的典型用法。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b88d6c33671f36d2d4106f45a267322320639c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280631"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765328"
 ---
 # <a name="async-support-overview"></a>异步支持概述
 
@@ -124,7 +124,6 @@ public async Task<int> DownloadHomepage()
 - 返回类型为`Task<int>` ，因此调用代码可以`int`访问在此方法中计算的值。
 - 返回语句`return exampleInt;`是一个整数对象-该方法返回`Task<int>`的事实是语言改进的一部分。
 
-
 ### <a name="calling-an-async-method-1"></a>调用 async 方法1
 
 此按钮单击 "事件处理程序" 可在 Android 示例应用程序中找到，以调用上述方法：
@@ -153,7 +152,6 @@ GetButton.Click += async (sender, e) => {
 - 代码等待 sizeTask 变量。  *这*是方法挂起的位置，并将控制权返回给调用代码，直到异步任务在自己的线程上完成。
 - 当在方法的第一行上创建任务时，不管在该处创建任务，*执行不会暂停。* Await 关键字表示执行暂停的位置。
 - 异步任务完成后，将从 await 行中设置 intResult，并在原始线程上继续执行。
-
 
 ### <a name="calling-an-async-method-2"></a>调用 async 方法2
 
@@ -185,14 +183,11 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 - 与前面`await`的示例不同`DownloadHomepage` ，在对变量（ `intResult` ）的赋值上，直接在该方法上使用的代码用于`Task<int>`引用该任务。  *这*是将控件返回给调用方的位置，直到异步方法在另一个线程上完成。
 - 当异步方法完成并返回时，执行将`await`继续，这意味着返回整数结果，然后在 UI 小组件中呈现。
 
-
 ## <a name="summary"></a>总结
 
 使用 async 和 await 极大地简化了在后台线程上生成长时间运行的操作而不会阻止主线程所需的代码。 它们还可以在任务完成时轻松访问结果。
 
 本文档提供了有关 Xamarin 和 Xamarin 的新语言关键字和示例的概述。
-
-
 
 ## <a name="related-links"></a>相关链接
 

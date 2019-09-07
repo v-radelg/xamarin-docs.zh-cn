@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291690"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766956"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin 中的 watchOS 表控件
 
@@ -39,9 +39,6 @@ WatchOS `WKInterfaceTable`控件比它的 iOS 副本简单得多，但会执行�
 
 设置行控制器的类后，IDE 将在项目中创建相应C#的文件。 将控件（如标签）拖到行上，并为其指定名称，以便可以在代码中引用它们。
 
-
-
-
 ## <a name="create-and-populate-rows"></a>创建和填充行
 
 `SetNumberOfRows`为每行创建行控制器类，使用`Identifier`选择正确的类。 如果为行控制器提供自定义`Identifier`，请将以下代码片段中的**默认值**更改为所用标识符。 当调用并显示该表时`SetNumberOfRows` ，将创建*每一行*的。 `RowController`
@@ -65,7 +62,6 @@ for (var i = 0; i < rows.Count; i++) {
 
 > [!IMPORTANT]
 > 使用`SetNumberOfRows` ，然后通过使用`GetRowController`循环，将整个表发送到手表。 在表的后续视图中，如果需要添加或删除特定的行，请`InsertRowsAt`使用`RemoveRowsAt`和以获得更好的性能。
-
 
 ## <a name="respond-to-taps"></a>响应点击
 
@@ -142,7 +138,6 @@ for (var i = 0; i < rows.Count; i++) {
 }
 ```
 
-
 ## <a name="vertical-detail-paging"></a>垂直详细信息分页
 
 watchOS 3 为表引入了一项新功能：滚动浏览与每行相关的详细信息页，无需返回到表并选择其他行。 详细信息屏幕可以通过向上和向下轻扫，或使用 Digital Crown 进行滚动。
@@ -210,8 +205,6 @@ namespace WatchTables.OnWatchExtension
 ```
 
 然后，可以在代码中引用此处声明的插座和操作，但不应直接编辑**designer.cs**文件。
-
-
 
 ## <a name="related-links"></a>相关链接
 

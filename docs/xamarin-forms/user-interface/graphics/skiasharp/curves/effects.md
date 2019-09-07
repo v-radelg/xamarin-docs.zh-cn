@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 82755a6a87ec0a47c10aac7078beeab6e14c218d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228243"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759384"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路径效果
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-如果您仔细看一下结果，您将看到红色和蓝色阴影线不局限精确于圆角矩形。 （这是很明显的特征基础 Skia 代码。）如果这不满意, 则会为绿色对角影线线显示一种替代方法:圆角矩形用作剪切路径, 在整个页面上绘制阴影线。
+如果您仔细看一下结果，您将看到红色和蓝色阴影线不局限精确于圆角矩形。 （这是很明显的特征基础 Skia 代码。）如果这不满意，则会为绿色对角影线线显示一种替代方法：圆角矩形用作剪切路径，在整个页面上绘制阴影线。
 
 `PaintSurface`处理程序结束调用来只需绘制圆角的矩形，以便您可以看到红色和蓝色阴影线条与差异：
 
 [!["阴影填充" 页的三向屏幕截图](effects-images/hatchfill-small.png)](effects-images/hatchfill-large.png#lightbox)
 
-Android 屏幕并不真正如下所示:屏幕截图的缩放导致了细的红线和细的空格, 以将其合并到看似更宽的红线和更宽的空间。
+Android 屏幕并不真正如下所示：屏幕截图的缩放导致了细的红线和细的空格，以将其合并到看似更宽的红线和更宽的空间。
 
 ## <a name="filling-with-a-path"></a>填充的路径
 
@@ -942,7 +942,6 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 用于描画或填充，可以使用此路径效果。 行分到多个已连接的网段 — 由指定的近似长度`segLength`— 和扩展在不同的方向。 指定的原始行偏离程度`deviation`。
 
 最后一个参数是用于生成使用效果的伪随机序列的种子。 抖动效果看起来稍有不同的不同的种子。 自变量具有默认值为零，这意味着只要您运行该程序，效果都相同。 如果您希望不同抖动，每当重新绘制屏幕时，您可以设置为种子`Millisecond`属性的`DataTime.Now`值 （例如）。
-
 
 **抖动试验**页面允许您试验描画矩形中的不同值：
 
@@ -1086,7 +1085,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 只有前两个参数是必需的。 方法访问引用的路径`src`自变量，修改基于中的笔划属性的路径数据`SKPaint`对象 (包括`PathEffect`属性)，然后将结果转换为`dst`路径。 `resScale`参数允许的精度来创建较小的目标路径，减少和`cullRect`参数可以消除外部矩形轮廓。
 
-此方法的一个基本用途根本不涉及路径效果:`SKPaintStyle.Stroke` `PathEffect` `GetFillPath`如果对象的属性设置为, 并且没有其集, 则创建一个路径, 该路径表示源路径的轮廓, 就像它已被 `Style` `SKPaint`绘制属性。
+此方法的一个基本用途根本不涉及路径效果：`SKPaintStyle.Stroke` `GetFillPath` `PathEffect`如果对象的属性设置为，并且没有其集，则创建一个路径，该路径表示源路径的轮廓，就像它已被`Style` `SKPaint`绘制属性。
 
 例如，如果`src`路径是一个简单的圆形的半径 500，并`SKPaint`对象指定的笔划宽度为 100，则`dst`路径将成为一个半径为 550 一个半径为 450，另两个同心环。 调用的方法`GetFillPath`因为填充这`dst`路径是相同描画`src`路径。 但您还可以绘制笔画`dst`路径以查看路径轮廓。
 
@@ -1412,8 +1411,6 @@ public class DashedHatchLinesPage : ContentPage
 [![虚线影线线条页面的三向屏幕截图](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 现在，您所见，范围从简单的点和短划线到奇怪的组合路径效果，使用您的想象力，并查看可以创建。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b5d1ddc4cf3a6817851d22aba920abb29d9f746f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644802"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767649"
 ---
 # <a name="attached-properties"></a>附加属性
 
@@ -141,7 +141,6 @@ ShadowEffect.SetHasShadow (label, true);
 ## <a name="summary"></a>总结
 
 本文介绍了附加属性，并演示了如何创建并使用它们。 附加的属性是一种特殊的可绑定属性，但附加到其他对象，并可识别在 XAML 中的一个类中定义为包含的类和一个句点分隔的属性名称的属性。
-
 
 ## <a name="related-links"></a>相关链接
 

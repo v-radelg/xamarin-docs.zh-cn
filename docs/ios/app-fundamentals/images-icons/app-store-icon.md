@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/26/2017
-ms.openlocfilehash: b6bf2aa8925e29ed5120de5cc2d3146704259d87
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e0b899e69405874f381c3ab6f9a9200a856d7402
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282408"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767309"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>Xamarin 中的应用商店图标
 
@@ -49,9 +49,6 @@ App Store 中显示的应用图标必须是 1024 x 1024 像素的图像。  Appl
     ![App Store 图标](app-store-icon-images/image2.png)
 
 3. 单击该图标，浏览到 1024 x 1024 像素的图像。 保存资产目录。
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292670"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769444"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交框架
 
@@ -58,7 +58,6 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 - `SetInitialText`–添加要在推文中显示的初始文本。
 - `AddUrl`–将 Url 添加到推文。
 - `AddImage`–将图像添加到推文。
-
 
 初始化后，调用`PresentVIewController`会显示`SLComposeViewController`由创建的视图。 然后，用户可以选择编辑并发送推文，或取消发送。 无论是哪种情况，控制器都应该在中`CompletionHandler`解除，还可以检查结果，以查看推文是已发送还是已取消，如下所示：
 
@@ -302,7 +301,7 @@ request.PerformRequest ((data, response, error) => {
 
 由于社交框架是设计用于访问多个社交网络的统一 API，因此无论使用何种社交网络，代码几乎都是相同的。
 
-例如， `SLComposeViewController`可以完全像之前所示的 Twitter 示例中一样使用，唯一不同的是切换到特定于 Facebook 的设置和选项。 例如:
+例如， `SLComposeViewController`可以完全像之前所示的 Twitter 示例中一样使用，唯一不同的是切换到特定于 Facebook 的设置和选项。 例如：
 
 ```csharp
 using System;
@@ -473,7 +472,6 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 ## <a name="summary"></a>总结
 
 本文演示了如何使用社交框架与 Twitter 和 Facebook 交互。 其中显示了在何处为设备设置中的每个社交网络配置帐户。 还介绍了如何使用`SLComposeViewController`来显示用于发布到社交网络的统一视图。 此外，它还检查`SLRequest`了用于调用每个社交网络 API 的类。
-
 
 ## <a name="related-links"></a>相关链接
 

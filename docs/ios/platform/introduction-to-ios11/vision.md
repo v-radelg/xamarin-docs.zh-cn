@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285740"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752276"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin 中的远景框架
 
@@ -102,7 +102,6 @@ VisionRectangles `OverlayRectangles`示例中的方法有三个函数：
 
 矩形检测通常只是操作链中的第一步（如[此 CoreMLVision 示例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)），其中，将矩形传递到 CoreML 模型来分析手写数字。
 
-
 <a name="faces" />
 
 ## <a name="face-detection"></a>人脸检测
@@ -175,7 +174,6 @@ VisionFaces `OverlayRectangles`示例中的方法有三个函数：
 ### <a name="5-further-processing"></a>5.进一步处理
 
 远景框架包含其他功能来检测面部功能，如眼睛和嘴。 使用类型，它将返回`VNFaceObservation`如上第3步中所示的结果，但`VNFaceLandmark`包含其他数据。 `VNDetectFaceLandmarksRequest`
-
 
 ## <a name="related-links"></a>相关链接
 

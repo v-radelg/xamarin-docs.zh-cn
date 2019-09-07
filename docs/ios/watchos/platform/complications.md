@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/03/2017
-ms.openlocfilehash: 6831fa9a660a55eccd8584dccb1f81ae9953aee5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4d96b9a092dfc534f40e3e62737af2a3a0004f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282333"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768615"
 ---
 # <a name="watchos-complications-in-xamarin"></a>Xamarin 中的 watchOS 复杂性
 
@@ -179,7 +179,6 @@ public class ComplicationController : CLKComplicationDataSource
 }
 ```
 
-
 <a name="templates" />
 
 ## <a name="complication-templates"></a>复杂模板
@@ -234,8 +233,6 @@ public class ComplicationController : CLKComplicationDataSource
 
 对于此复杂样式，只有一个模板： `CLKComplicationTemplateUtilitarianLargeFlat`。
 它在一行上显示单个图像和一些文本。
-
-
 
 ## <a name="related-links"></a>相关链接
 

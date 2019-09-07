@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/01/2017
-ms.openlocfilehash: 4c23caade91a1a46d6b2b9bb2425a5bdead40030
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289236"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752549"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>在 Xamarin 中将 ARKit 与 UrhoSharp 配合使用
 
@@ -114,14 +114,12 @@ ARKit API 非常简单，你可以创建和配置[ARSession](https://developer.a
 
 但是，我们面临着两个问题将这两个世界混合在一起：
 
-
 1. 在 iOS 上，GPU 纹理的分辨率必须是2的幂，但我们将从照相机获取的帧的分辨率不是2的幂，例如：1280x720.
 2. 帧以[YUV](https://en.wikipedia.org/wiki/YUV)格式进行编码，用两个图像亮度和色度表示。
 
 YUV 帧采用两种不同的分辨率。  表示亮度的1280x720 图像（基本上为灰色缩放图像）和色度组件的更小640x360：
 
 ![演示组合 Y 和 UV 组件的图像](urhosharp-images/image3.png)
-
 
 若要使用 OpenGL 来绘制完全彩色图像，必须编写一个小型着色器，使其从纹理槽获取亮度（Y 分量）和色度（UV 平面）。  在 UrhoSharp 中，它们具有名称 "sDiffMap" 和 "sNormalMap"，并将其转换为 RGB 格式：
 
@@ -165,7 +163,6 @@ CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
 我们使用`-row.Z`的是因为 ARKit 使用右手坐标系。
-
 
 ### <a name="plane-detection"></a>平面检测
 
@@ -217,7 +214,6 @@ UrhoSharp[在所有主要的操作系统上运行](~/graphics-games/urhosharp/pl
 HoloLens 是运行它的最令人兴奋的平台之一。   这意味着你可以轻松地在 iOS 和 HoloLens 之间切换，以使用 UrhoSharp 生成令人惊叹的更好的现实应用程序。
 
 可以在[github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo)中找到 MutantDemo 源。
-
 
 ## <a name="related-links"></a>相关链接
 

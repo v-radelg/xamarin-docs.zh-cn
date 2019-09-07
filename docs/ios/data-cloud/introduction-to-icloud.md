@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: 364775ae8e8874d87022b5e45bd23ea29e82382d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292425"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763113"
 ---
 # <a name="using-icloud-with-xamarinios"></a>对 Xamarin 使用 iCloud
 
@@ -63,7 +63,6 @@ IOS 5 中的 iCloud 存储 API 允许应用程序将用户文档和特定于应�
 - **必须使用设备来测试 iCloud** -它在模拟器上不起作用。
 事实上，你确实需要两个或多个具有相同 Apple ID 的设备，以查看 iCloud 的操作。
 
-
 ## <a name="key-value-storage"></a>键-值存储
 
 键-值存储适用于用户可能喜欢跨设备保留的少量数据（如他们在书籍或杂志中查看的最后一页）。 键-值存储不应用于备份数据。
@@ -81,8 +80,6 @@ IOS 5 中的 iCloud 存储 API 允许应用程序将用户文档和特定于应�
 **ICloudKeyValue**示例演示了它的工作原理。 示例代码将为每个设备创建一个名为的密钥：你可以在一台设备上设置此密钥并观看该值传播到其他设备。 它还会创建一个名为 "Shared" 的密钥，该密钥可在任何设备上编辑-如果你同时在多个设备上编辑，iCloud 将决定哪个值 "入选" （对更改使用时间戳）并传播。
 
 此屏幕截图显示了使用中的示例。 从 iCloud 收到更改通知时，它们将打印在屏幕底部的滚动文本视图中，并在输入字段中更新。
-
-
 
  [![](introduction-to-icloud-images/icloud-kv-arrows.png "设备之间的消息流")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
@@ -406,8 +403,6 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
  [![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 文档工作流")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
-
-
 当用户尝试从其设备中删除启用了 iCloud 的应用程序时，也会收到不同的警告，通知他们与该应用程序相关的 iCloud 文档的状态。
 
  [![](introduction-to-icloud-images/icloud-delete1.png "用户尝试从设备中删除已启用 iCloud 的应用程序时的示例对话框")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
@@ -430,8 +425,6 @@ Apple 提供[Ios 数据存储准则](https://developer.apple.com/icloud/document
 键-值存储示例演示了如何使用 iCloud 来存储少量的数据，这与存储 NSUserPreferences 的方式类似。 UIDocument 示例演示了如何通过 iCloud 存储多个设备并跨多个设备进行同步。
 
 最后，它还简要讨论了如何添加 iCloud 备份来影响应用程序的设计。
-
-
 
 ## <a name="related-links"></a>相关链接
 

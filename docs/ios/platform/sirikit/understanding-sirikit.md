@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 797bc4199b79944c7b2b6e9c939e2584bb21246a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292568"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769467"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
 _本文介绍了在 Xamarin iOS 应用程序中使用 SiriKit 时所需的重要概念。_
-
 
 SiriKit 的新功能允许 Xamarin iOS 应用提供用户可使用 Siri 和 iOS 设备上的地图应用程序访问的服务。 此功能在一个或多个使用新的**意图**和**意向 UI**框架的应用扩展中提供。
 
@@ -461,9 +460,6 @@ Apple 建议通过几个步骤来修饰对话接口的设计。 首先，为 Sir
 ## <a name="summary"></a>总结
 
 本文介绍了使用 SiriKit 所需的关键概念，并将其显示为与 Xamarin iOS 应用程序交互，以提供用户可使用 Siri 和 iOS 设备上的地图应用程序访问的服务。
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

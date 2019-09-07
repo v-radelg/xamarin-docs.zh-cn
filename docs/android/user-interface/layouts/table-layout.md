@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 1c477f030dc69394ba601b31d71a772f5037af48
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522306"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758388"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin TableLayout
 
@@ -21,7 +21,7 @@ ms.locfileid: "69522306"
 
 启动名为**HelloTableLayout**的新项目。
 
-打开**Resources/Layout/main.axml**文件, 并插入以下内容:
+打开**Resources/Layout/main.axml**文件，并插入以下内容：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -102,10 +102,10 @@ ms.locfileid: "69522306"
 </TableLayout>
 ```
 
-请注意, 这与 HTML 表的结构类似。 此[`TableLayout`](xref:Android.Widget.TableLayout)
+请注意，这与 HTML 表的结构类似。 此[`TableLayout`](xref:Android.Widget.TableLayout)
 元素类似于 HTML `<table>`元素;[`TableRow`](xref:Android.Widget.TableRow)
-与`<tr>`元素类似, 但对于单元, 可以使用任何类型的[`View`](xref:Android.Views.View)元素。 在此示例中,[`TextView`](xref:Android.Widget.TextView)
-用于每个单元格。 在某些行之间, 还有一个用于绘制水平线的 " [`View`](xref:Android.Views.View)基本"。
+与`<tr>`元素类似，但对于单元，可以使用任何类型的[`View`](xref:Android.Views.View)元素。 在此示例中，[`TextView`](xref:Android.Widget.TextView)
+用于每个单元格。 在某些行之间，还有一个用于绘制水平线的 " [`View`](xref:Android.Views.View)基本"。
 
 请确保**HelloTableLayout**活动在[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 付款方式
@@ -118,13 +118,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main` ) 方法加载的布局文件, 该文件由资源 ID 指定, 表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
+[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main` ）方法加载的布局文件，该文件由资源 ID 指定，表示资源/布局/main.axml 布局文件。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
-运行该应用程序。 应该会看到以下内容:
+运行该应用程序。 应该会看到以下内容：
 
 [![显示多个表行的 TableLayout 应用程序的示例屏幕截图](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
-
-
 
 ## <a name="references"></a>参考资料
 
@@ -132,4 +130,4 @@ protected override void OnCreate (Bundle savedInstanceState)
 - [`TableRow`](xref:Android.Widget.TableRow)
 - [`TextView`](xref:Android.Widget.TextView)
 
-_此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改, 并根据[创造性 Commons 2.5 归属许可证](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。_
+_此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改，并根据[创造性 Commons 2.5 归属许可证](http://creativecommons.org/licenses/by/2.5/)中所述的条款使用。_

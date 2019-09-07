@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: b846d034c31069c02e3c97fba0ac0d68e6df2e23
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 66bea7d2a9660018c7cec9b7bafeadafd5029ed9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292524"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769428"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的语音识别
 
@@ -105,10 +105,10 @@ Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语
 2. 切换到**源**视图： 
 
     [![](speech-images/speech02.png "源视图")](speech-images/speech02.png#lightbox)
-3. 单击 "**添加新项**"， `NSSpeechRecognitionUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如: 
+3. 单击 "**添加新项**"， `NSSpeechRecognitionUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如： 
 
     [![](speech-images/speech03.png "添加 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. 如果应用将处理实时音频操作，还需要麦克风使用说明。 单击 "**添加新项**"， `NSMicrophoneUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如: 
+4. 如果应用将处理实时音频操作，还需要麦克风使用说明。 单击 "**添加新项**"， `NSMicrophoneUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如： 
 
     [![](speech-images/speech04.png "添加 NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
 5. 保存对文件所做的更改。
@@ -128,9 +128,6 @@ Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语
 
 > [!IMPORTANT]
 > 如果未能提供上述`Info.plist`任一项（`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`），则在尝试访问语音识别或实时音频的麦克风时，可能会导致应用失败且不发出警告。
-
-
-
 
 ### <a name="requesting-authorization"></a>请求授权
 
@@ -243,7 +240,7 @@ public void RecognizeFile (NSUrl url)
 
 ### <a name="recognizing-live-speech"></a>识别实时语音
 
-如果应用想要识别实时语音，该过程与识别预先录制的语音的过程非常相似。 例如:
+如果应用想要识别实时语音，该过程与识别预先录制的语音的过程非常相似。 例如：
 
 ```csharp
 using System;
@@ -398,8 +395,6 @@ RecognitionTask.Cancel ();
 ## <a name="summary"></a>总结
 
 本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持连续语音识别和转录语音（从实时或录制的音频流）到文本。 
-
-
 
 ## <a name="related-links"></a>相关链接
 

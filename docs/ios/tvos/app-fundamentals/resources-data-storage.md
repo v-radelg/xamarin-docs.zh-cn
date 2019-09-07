@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: e9c27233e0905435e14505195b7b0e4d3283790b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b50ba09488f1f052f3e41302a42c691089727ff
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283817"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769649"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Xamarin 中的 tvOS 资源和数据存储
 
@@ -36,9 +36,6 @@ _本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储�
 
 > [!IMPORTANT]
 > 尽管你能够根据需要下载其他资产和资源，但 Apple 会警告你使用应用缓存中的所有空间，因为这可能会导致不可预知的结果。
-
-
-
 
 <a name="Managing-Resources" />
 
@@ -75,16 +72,11 @@ _本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储�
 > [!IMPORTANT]
 > 请注意，在应用必须下载按需资源的时间和单个下载的大小之间，应采取适当的平衡。 如果游戏一直中断以下载新内容，或者如果单个下载花费了太长时间，则用户可能会对应用程序造成困扰。
 
-
-
-
 <a name="Summary" />
 
 ## <a name="summary"></a>总结
 
 本文介绍了 tvOS 系统在 tvOS 应用上放置的大小、资源和数据存储限制。 它提供了解决这些限制的选项，并为应用程序创建了极佳的用户体验。
-
-
 
 ## <a name="related-links"></a>相关链接
 

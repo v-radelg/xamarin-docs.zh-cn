@@ -1,18 +1,18 @@
 ---
 title: 第 21 章的摘要。 转换
-description: 使用 Xamarin.Forms 创建移动应用：第 21 章的摘要。 转换
+description: 用 Xamarin 创建移动应用程序：第 21 章的摘要。 转换
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513013"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760583"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章的摘要。 转换
 
@@ -122,8 +122,6 @@ Xamarin.Forms 支持三种基本类型的转换：
 3D 坐标系统权限隐含的 Xamarin.Forms 是惯用左手。 如果您指向左手递增 X 方向的食指协调 （右侧） 和右手食指的不断增加 Y 方向 （向下），然后您增加 Z 坐标 （带屏幕） 的方向中的 thumb 点坐标。
 
 此外，对于任何三个轴，如果增加值的方向中点左侧 thumb 然后手指的曲线指示正旋转角度的旋转的方向。
-
-
 
 ## <a name="related-links"></a>相关链接
 

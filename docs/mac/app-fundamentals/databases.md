@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289122"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769909"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin 中的数据库
 
@@ -2221,8 +2221,6 @@ public override void AwakeFromNib ()
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin 应用程序中使用 SQLite 数据库的数据绑定和键/值编码。 首先，它介绍了如何使用C#键/值编码（KVC）和键-值观察（KVO）向目标-C 公开一个类。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的 UI 元素。 本文还介绍了如何通过 SQLite.NET ORM 使用 SQLite 数据并在表视图中显示这些数据。
-
-
 
 ## <a name="related-links"></a>相关链接
 

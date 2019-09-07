@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 620b89ba4682d65552fa5555c978b7eb5f437714
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db0ea7720f7b65434c5248fb16456441768e25c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290774"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752516"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 框架更改
 
@@ -210,7 +210,6 @@ IOS 10 中对 UIKit 框架进行了以下改进：
 IOS 10 中对 WebKit 框架进行了以下改进：
 
 - 已向`WKWebView`类添加了速览和 pop 支持。 `ShouldPreviewElement`使用方法来确定给定的 web 视图是否应显示预览。
-
 
 ## <a name="related-links"></a>相关链接
 

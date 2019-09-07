@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 35de496d0684473fe3f6bc4ebadddc471b6b0cfe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ac50c665955f9bf234c46b3d4082fb628b61a33d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292884"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770031"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin 错误消息（mmp）
 
@@ -616,7 +616,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 <a name="MM8026" />
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>当动态注册器已链接在一起时，不支持 MM8026： *。
- 
+
 这通常表示 Xamarin 中的 bug，因为如果需要，不应将动态注册器链接在一起。 请提交在 bug [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
- 
+
 可以通过将添加`--optimize=-remove-dynamic-registrar`到项目的 Mac 生成选项中的其他 mmp 参数，强制链接器保留动态注册器。

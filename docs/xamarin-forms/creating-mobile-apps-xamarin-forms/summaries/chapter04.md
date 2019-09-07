@@ -1,18 +1,18 @@
 ---
 title: 第 4 章的摘要。 滚动堆栈
-description: 使用 Xamarin.Forms 创建移动应用：第 4 章的摘要。 滚动堆栈
+description: 用 Xamarin 创建移动应用程序：第 4 章的摘要。 滚动堆栈
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 66e4f52e87a4398dd2e09d2d128f43de9a71a665
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334507"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760844"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 滚动堆栈
 
@@ -110,8 +110,6 @@ ms.locfileid: "61334507"
 此技巧是为了让`ScrollView`的子`StackLayout``VerticalOptions`设置为`FillAndExpand`。 了这一点[ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat)示例。
 
 **BlackCat**示例还演示了如何定义和访问的共享库中嵌入的程序资源。 这还可以实现使用共享资产项目 (SAPs)，但此过程稍微有些棘手，作为[ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)示例演示。
-
-
 
 ## <a name="related-links"></a>相关链接
 

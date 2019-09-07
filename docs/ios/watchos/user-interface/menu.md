@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ac23ae6fe094b8049ac1b3460d327716e4ece
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291674"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766805"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 菜单控件（Force Touch）
 
@@ -28,7 +28,6 @@ ms.locfileid: "70291674"
 强制润色与屏幕上的任何特定元素都不关联;只有一个菜单可以附加到接口控制器，它将显示，而不考虑在屏幕上出现 Force Touch 按下的位置。
 
 可以在一个和四个菜单选项之间显示。
-
 
 ## <a name="adding-a-menu"></a>添加菜单
 
@@ -56,7 +55,6 @@ partial void MenuItemTapped ()
 类似于 iOS 中的选项卡图像，菜单项图像需要一个带有 alpha 通道的不透明模式，该模式允许透过显示背景。
 
 为了获得最佳性能，应将用于菜单的图像添加到 "监视应用程序" 项目（而不是 "监视应用扩展项目"）。
-
 
 ## <a name="changing-the-menu-items"></a>更改菜单项
 
@@ -90,8 +88,6 @@ void MenuItemTapped ()
 可以调用方法以移除所有*以编程方式添加*的菜单项。 `ClearAllMenuItems`
 
 无法清除情节提要中配置的菜单项。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: af7dbad29c156964f154053dac00255b1b32e4ff
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289097"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767217"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Xamarin 中的图像和图标
 
@@ -33,7 +33,6 @@ _本部分包括一系列文章，这些文章介绍如何在 Xamarin iOS 应用
 
 为 iOS 应用程序创建图像资产时，应考虑几个注意事项，以及这些资产将使用的多个位置。 其中每个都影响的是需要多少映像资产，而不是创建这些资产的方式。 以下主题介绍了所需的映像的类型、这些资产在应用程序捆绑包中的包含方式以及如何使用映像资产提供所需的功能：
 
-
 ## <a name="displaying-an-imageiosapp-fundamentalsimages-iconsdisplaying-an-imagemd"></a>[显示图像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)
 
 本文介绍如何在 Xamarin iOS 应用中包括图像资产，并通过使用C#代码或通过将其分配给 IOS 设计器中的控件来显示该图像。
@@ -51,7 +50,6 @@ Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其�
 - `AlternateIconName`-返回当前选定`null`的备用图标的名称，如果使用主图标，则返回。
 - `SetAlternameIconName`-使用此方法将应用的图标切换到给定的替代图标。
 
-
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[启动屏幕](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 本文介绍如何使用一种特殊类型的情节提要为每个 iOS 设备大小和分辨率提供通用启动屏幕。
@@ -59,8 +57,6 @@ Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其�
 ## <a name="custom-document-typesiosapp-fundamentalsimages-iconscustom-document-typesmd"></a>[自定义文档类型](~/ios/app-fundamentals/images-icons/custom-document-types.md)
 
 本文介绍如何在 Xamarin iOS 应用中包括和管理要用作自定义文档类型图标的图像资产。
-
-
 
 ## <a name="related-links"></a>相关链接
 

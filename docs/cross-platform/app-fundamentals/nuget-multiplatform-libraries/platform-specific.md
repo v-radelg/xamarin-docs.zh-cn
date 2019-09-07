@@ -6,12 +6,12 @@ ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: d3f756b1a551c7b6bcbe48129235d537312edff6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73f44acad3e30e4301a69e5f2422cd4dd1a3dbf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282138"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766565"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>为 NuGet 创建新的特定于平台的库项目
 
@@ -55,7 +55,6 @@ NuGet 可以同时包含 iOS 和 Android 特定的代码，以及这两种代码
 
     ![](platform-specific-images/create-nuget-package.png "NuGet 包文件将保存在 bin 文件夹中，无论是调试还是发布，具体取决于配置")
 
-
 ## <a name="verifying-the-output"></a>验证输出
 
 NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
@@ -63,7 +62,6 @@ NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
 此屏幕截图显示了支持 iOS 和 Android 的特定于平台的 NuGet 的内容，并选择了两个引用程序集：
 
 ![](platform-specific-images/nuget-output.png "NuGet 包中包含的文件")
-
 
 ## <a name="related-links"></a>相关链接
 

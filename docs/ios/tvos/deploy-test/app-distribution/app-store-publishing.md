@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282721"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769246"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>发布到 Apple TV App Store
 
@@ -24,7 +24,6 @@ ms.locfileid: "70282721"
 2. 创建分发预配配置文件。
 3. 使用此配置文件构建你的应用程序。
 4. 通过*ITunes Connect*提交你的应用。
-
 
 在本文中，我们将介绍预配、生成和提交 Apple TV 应用商店分发应用所需的所有步骤。
 
@@ -39,7 +38,6 @@ ms.locfileid: "70282721"
 
 1. 请确保应用的说明与应用中包含的功能匹配。
 2. 测试应用不会在正常使用时崩溃。 这包括每个支持的 Apple TV 设备上的使用情况。
-
 
 Apple 还会维护 Apple TV 应用商店提交提示的列表。 可在[在 App Store 上分发](https://developer.apple.com/appstore/resources/submission/tips.html)中阅读这些列表。
 
@@ -121,7 +119,6 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 有关详细说明，请参阅[创建分发配置文件](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#creatingprofile)和[在 Xamarin.iOS 项目中选择分发配置文件](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile)。 同样，这两个文档都是特定于 iOS 的，但使用相同的技术来实现 tvOS 应用。
 
-
 <a name="Setting_the_Build_Configuration_for_your_Application" />
 
 ### <a name="setting-the-build-configuration-for-your-application"></a>设置应用程序的生成配置
@@ -137,7 +134,6 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 5. Apple 还要求 tvOS 应用使用 bitcode。 再次在**发布**配置下，将`--bitcode=asmonly`添加到 "**其他 mtouch 参数**" 框中。
 6. 应检查 "**为 IOS 优化 PNG 图像文件**" 复选框，因为这将有助于进一步降低应用的可交付结果大小。
 7. *不*应启用调试，因为这将为生成增加不必要的大小。
-
 
 <a name="Building_and_Submitting_the_Distributable" />
 
@@ -189,7 +185,6 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 分发生成完成后，即可将 iOS 应用程序提交到 Apple 以供审核，然后在 App Store 上发布。
 
-
 保存后，Visual Studio for Mac 中的存档工作流将自动打开应用程序加载程序`.ipa`：
 
 1. 选择“提交应用”，单击“选择”按钮：
@@ -225,7 +220,6 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 ## <a name="summary"></a>总结
 
 本文介绍了如何配置、生成和提交 Apple TV App Store 发布的应用。 首先，介绍创建并安装分发配置文件所需的步骤。 接下来，本演练逐步介绍如何使用 Visual Studio for Mac 来创建分发版本。 最后，该示例演示了如何使用 iTunes Connect 和 Xcode 存档工具将应用程序提交到 Apple TV App Store。
-
 
 ## <a name="related-links"></a>相关链接
 

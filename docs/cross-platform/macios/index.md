@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b6ac960770320ed100e8b082cabf8240efed070b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10ab9b379344ab6c514eba84f1ef3fd9c7400b73
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290839"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765539"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple 平台（iOS 和 Mac）
 
@@ -31,7 +31,6 @@ IOS 和 Mac 项目的 Unified API 为框架使用相同的命名空间，以便�
 > **经典配置文件弃用：** 由于在 Xamarin 中添加了新的平台，因此我们开始逐渐弃用经典配置文件（monotouch.dialog）的功能。 例如，已删除非 NRC （新引用计数）选项。 始终为所有统一的应用程序启用了 NRC （即，不能使用 NRC），并且没有已知问题。 未来版本将删除使用 Boehm 作为垃圾回收器的选项。 这也是对统一应用程序不可用的选项。 在版本的 10.0 Xamarin 版本2016中，计划完全删除经典支持。
 
 由于本机框架具有`MonoTouch.`或`MonoMac.`命名空间前缀，因此原始（非统一） Xamarin 和 xamarin api 使得代码共享变得更加困难。  我们提供了一些空命名空间，使开发人员可以通过`using`在同一文件中添加引用 MonoMac 和 monotouch.dialog 命名空间的语句来共享代码，但这有点不好。 只能在内部分发的旧版应用中继续使用 Classic API （建议升级到 Unified API）。
-
 
 ### <a name="updating-from-classic-to-the-unified-api"></a>从经典升级到 Unified API
 

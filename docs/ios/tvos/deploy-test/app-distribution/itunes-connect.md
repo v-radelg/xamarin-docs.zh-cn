@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 92f028a632a32392a349c06c0b7ab8e15b308b9f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ef3d25974f61bb1ac763831ab9a1f6b62d11abbe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279521"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769669"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中配置 tvOS 应用
 
 _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应用以 tvOS 特定配置。_
-
 
 除了遵循 iOS 在[ITunes Connect guide 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)所需的配置和设置外，本文档还介绍了在 Apple TV 应用中发布 tvOS 应用程序所需的特定配置。店.
 
@@ -78,8 +77,6 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 ## <a name="summary"></a>总结
 
 本文提供 iTunes Connect 中的 tvOS 特定设置的概述，以便将 tvOS 应用程序发布到 Apple TV 应用商店。
-
-
 
 ## <a name="related-links"></a>相关链接
 

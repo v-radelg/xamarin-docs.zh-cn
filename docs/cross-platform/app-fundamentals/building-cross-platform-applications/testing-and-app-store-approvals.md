@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 049f01d47d303f07edd57c659361d9a123993ede
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288645"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761986"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 测试和应用商店审批
 
@@ -39,7 +39,6 @@ ms.locfileid: "70288645"
 
 - **分发**–管理预配过程（特别适用于 iOS 设备）并将软件的更新版本获取给测试人员。
 - **反馈**–收集有关应用程序使用情况的信息，以及有关可能发生的任何错误的详细信息。
-
 
 有许多服务可帮助解决这些问题，方法是提供内置于应用程序中的基础结构来收集和报告使用情况和错误，同时简化设置过程以帮助注册和管理测试人员及其设备.
 

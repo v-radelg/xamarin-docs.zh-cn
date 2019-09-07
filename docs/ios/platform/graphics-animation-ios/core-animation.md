@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 366932e32443a7284f15f51a7a9a437d4b177438
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 730359824ec5a51a53261fbfc9519ac8560a77f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286242"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753077"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心动画
 
@@ -44,7 +44,6 @@ UIKit 提供了几项功能，使你可以轻松地向应用程序添加动画�
 - 视图间的转换
 - 查看属性动画
 
-
 ### <a name="view-controller-transitions"></a>视图控制器转换
 
  `UIViewController`为在视图控制器间通过`PresentViewController`方法过渡提供内置支持。 使用`PresentViewController`时，可以选择性地对转换为第二个控制器的转换进行动画处理。
@@ -62,7 +61,6 @@ SecondViewController vc2 = new SecondViewController {
 - `CoverVertical`–从屏幕底部向上滑动
 - `CrossDissolve`–旧视图 & 新视图淡出
 - `FlipHorizontal`-从右到左水平翻转。 在消除上，过渡从左向右翻转。
-
 
 若要对转换进行动画`true`处理，请将作为`PresentViewController`第二个参数传递到：
 
@@ -106,7 +104,6 @@ UIKit 支持对`UIView`类的各种属性进行免费动态操作，包括：
 - Alpha
 - Transform
 - 颜色
-
 
 这些动画通过指定传递给静态`NSAction` `UIView.Animate`方法的委托中的属性更改，隐式发生。 例如，下面的代码对的中心点进行了`UIImageView`动画处理：
 
@@ -233,7 +230,7 @@ public override void ViewDidAppear (bool animated)
 下面的屏幕截图显示了一个层，其中包含通过指定路径动画显示的图像：
 
  ![](core-animation-images/12-explicit-animation.png "此屏幕截图显示了一个层，其中包含图像通过指定路径进行动画处理")
- 
+
 ## <a name="summary"></a>总结
 
 本文介绍了通过*核心动画*框架提供的动画功能。 我们检查了核心动画，同时显示了它在 UIKit 中的动画效果，以及如何将其直接用于较低级别的动画控件。

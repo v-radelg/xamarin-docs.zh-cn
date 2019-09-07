@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d1464ca3accf53a9362d00e279ff9e158d7e34d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b829cf3f440b1c94c5232d258c86b6ea4b0f181
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281637"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767514"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的代码中创建 iOS 用户界面
 
@@ -59,16 +59,13 @@ IOS 应用程序的用户界面类似于店面，首先 – 应用程序通常�
 1. **Info.plist** -包含应用程序的配置信息的属性列表文件。
 1. **Entitlements.plist** – 包含有关功能和权限的应用程序的信息的属性列表文件。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS 模板
 
-
 Visual Studio for Mac 不提供一个空的模板。 所有模板都都具有支持情节提要，Apple 建议将它作为创建 UI 的主要方式。 但是，就可以完全在代码中创建你的 UI。
 
 执行以下步骤将引导你完成从应用程序中删除情节提要：
-
 
 1. 使用单一视图应用模板来创建新的 iOS 项目：
 

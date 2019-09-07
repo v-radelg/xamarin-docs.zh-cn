@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: 28a4fc6527a8c6990c47cdbbdc3163fc9350db83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560278"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770268"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout)在一维行 ("堆栈") 中以水平或垂直方式组织视图。 视图中`StackLayout`可以基于使用布局选项布局中的空间大小。 定位取决于视图已添加到的布局和视图的布局选项的顺序。
+[StackLayout](xref:Xamarin.Forms.StackLayout)在一维行（"堆栈"）中以水平或垂直方式组织视图。 视图中`StackLayout`可以基于使用布局选项布局中的空间大小。 定位取决于视图已添加到的布局和视图的布局选项的顺序。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms 布局")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 布局")
 
@@ -219,9 +219,7 @@ Title="StackLayouts">
 
 ![](stack-layout-images/stack.png "复杂 StackLayout")
 
-请注意, `StackLayouts`是嵌套的, 因为在某些情况下, 嵌套布局比呈现同一布局中的所有元素更容易。 另请注意，因为`StackLayout`不支持重叠项，找到的页面不会有布局奇思妙想的一些其他布局页中。
-
-
+请注意， `StackLayouts`是嵌套的，因为在某些情况下，嵌套布局比呈现同一布局中的所有元素更容易。 另请注意，因为`StackLayout`不支持重叠项，找到的页面不会有布局奇思妙想的一些其他布局页中。
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18ce7eb4dcd68596027f739579fd5a4b70497829
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292235"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772710"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin 中的标准控件
 
@@ -93,7 +93,7 @@ macOS （以前称为 Mac OS X）通过 AppKit 框架提供一组标准用户界
 
 [![](standard-controls-images/edit04.png "设置约束")](standard-controls-images/edit04.png#lightbox)
 
-使用 " **Autoresizing** " 框外的**光标** _，将控件_控制到给定的（x，y）位置。 例如: 
+使用 " **Autoresizing** " 框外的**光标** _，将控件_控制到给定的（x，y）位置。 例如： 
 
 [![](standard-controls-images/edit05.png "编辑约束")](standard-controls-images/edit05.png#lightbox)
 
@@ -215,7 +215,6 @@ Control-从 "AppKit" 控件拖动到 " `.h`给定文件"，开始创建**插座*
 
 [![](standard-controls-images/edit13.png "配置插座或操作")](standard-controls-images/edit13.png#lightbox)
 
-
 有关使用**输出口**和**操作**的详细信息，请参阅[Xcode 和 Interface Builder 文档简介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)中的 "[插座和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)" 部分。
 
 <a name="Synchronizing_Changes_with_Xcode" />
@@ -280,7 +279,7 @@ ButtonOutlet.Activated += (sender, e) => {
 };
 ```
 
-对于通过**操作**公开的按钮，将使用在`public partial` Xcode 中选择的名称自动创建一个方法。 若要响应**操作**，请完成在其上定义**操作**的类中的分部方法。 例如：
+对于通过**操作**公开的按钮，将使用在`public partial` Xcode 中选择的名称自动创建一个方法。 若要响应**操作**，请完成在其上定义**操作**的类中的分部方法。 例如:
 
 ```csharp
 partial void ButtonAction (Foundation.NSObject sender) {
@@ -324,7 +323,6 @@ DisclosureButton.Activated += (sender, e) => {
 AppKit 提供了几种类型的复选框和单选按钮组，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[按钮](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)" 部分。 
 
 [![](standard-controls-images/buttons02.png "可用复选框类型的示例")](standard-controls-images/buttons02.png#lightbox)
-
 
 复选框和单选按钮（通过**插座**公开）具有状态（如**开启**和**关闭**），可以`State` `NSCellStateValue`使用属性对枚举进行检查或设置状态。 例如:
 
@@ -542,7 +540,7 @@ LevelIndicator.Activated += (sender, e) => {
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
 ```
 
-显示不确定的和异步的进度指示器。 `StartAnimation`使用方法在显示动画时启动动画。 例如：
+显示不确定的和异步的进度指示器。 `StartAnimation`使用方法在显示动画时启动动画。 例如:
 
 ```csharp
 Indeterminate.StartAnimation (this);
@@ -571,7 +569,7 @@ AppKit 提供了几种类型的文本控件，可用于用户界面设计。 有
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-对于显示或编辑数值的字段，可以使用`IntValue`属性。 例如:
+对于显示或编辑数值的字段，可以使用`IntValue`属性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);
@@ -637,7 +635,6 @@ Segue 是一个瞬态 UI 元素，它提供直接与特定控件或屏幕区域�
 键-值编码（KVC）是一种用于间接访问对象属性的机制，使用键（特殊格式的字符串）来标识属性，而不是通过实例变量或访问器`get/set`方法（）来访问这些属性。 通过在 Xamarin 应用程序中实现符合键值的代码访问器，你可以访问其他 macOS 的功能，例如键-值观察（KVO）、数据绑定、核心数据、Cocoa 绑定和 scriptability。
 
 有关详细信息，请参阅[数据绑定和键-值编码](~/mac/app-fundamentals/databinding.md)文档的[简单数据绑定](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding)部分。
-
 
 <a name="Summary" />
 

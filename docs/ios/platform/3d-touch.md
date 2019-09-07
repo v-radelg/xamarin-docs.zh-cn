@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 46db28dab32f14fa476b9fbb42b788feb669aa74
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3a0737a5a28ced1ec55246d0586d4cfe28363f3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291868"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753452"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin 中的3D 触控简介
 
@@ -66,9 +66,6 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 > [!IMPORTANT]
 > 压力更改将导致`TouchesMoved`引发事件，即使 X/Y 坐标未更改也是如此。 由于这种行为发生了这种更改，因此应为 iOS 应用`TouchesMoved`做好准备，以便更频繁地调用事件，并使 X/Y 坐标与上次`TouchesMoved`调用相同。
-
-
-
 
 有关详细信息，请参阅 Apple 的[TouchCanvas：有效地使用 UITouch，](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)并有效地使用示例应用程序和[UITouch 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)。
 
@@ -210,7 +207,6 @@ public override void ViewDidLoad ()
 
 [![](3d-touch-images/quickactions01.png "\"快速操作\" 菜单示例")](3d-touch-images/quickactions01.png#lightbox)
 
-
 ### <a name="defining-static-quick-actions"></a>定义静态快速操作
 
 如果你的应用程序所需的一个或多个快速操作是静态的，并且无需更改，你可以在应用的`Info.plist`文件中定义它们。 在外部编辑器中编辑此文件并添加以下项：
@@ -282,10 +278,6 @@ public override void ViewDidLoad ()
 
 > [!IMPORTANT]
 > `Info.plist` 无法`Application.ShortcutItems`通过属性访问文件中设置的快速操作快捷方式项。 它们只传递到`HandleShortcutItem`事件处理程序。
-
-
-
-
 
 ### <a name="identifying-quick-action-items"></a>正在识别快速操作项
 
@@ -387,7 +379,6 @@ public override void PerformActionForShortcutItem (UIApplication application, UI
 
 最后，如果你的应用程序已在运行`PerformActionForShortcutItem` ，则会调用方法来处理快速操作项，因此我们需要替代它并在此处`HandleShortcutItem`调用方法。
 
-
 ### <a name="creating-dynamic-quick-action-items"></a>正在创建动态快速操作项
 
 除了在应用`Info.plist`文件中定义静态快速操作项外，还可以快速创建动态动态操作。 若要定义两个新的动态快速操作`AppDelegate.cs` ，请再次编辑文件`FinishedLaunching` ，然后修改方法，使其类似于以下内容：
@@ -446,8 +437,6 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 ## <a name="summary"></a>总结
 
 本文介绍了在 iOS 9 中提供的新 3D Touch Api，适用于 iPhone 6s 和 iPhone 6s Plus。 它涵盖了向应用程序添加压力敏感度。使用速览和 Pop 快速显示当前上下文中的应用内信息，而无需导航;并使用 "快速操作" 提供应用最常用功能的快捷方式。
-
-
 
 ## <a name="related-links"></a>相关链接
 

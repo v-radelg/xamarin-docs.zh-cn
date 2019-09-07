@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 68c87355a2a6a081e0fff741ffe8a4466abb540a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 815eb638b3e394dcfe4b60d716820c610b01f8a1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292606"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769327"
 ---
 # <a name="ios-designer-error-with-registerserviceport"></a>含有 RegisterServicePort 的 iOS 设计器错误
 
@@ -30,4 +30,3 @@ ms.locfileid: "70292606"
 无论以上结果如何，如果该文件存在，则计算机上会出现上述间谍软件/恶意软件问题。  
 
 以下链接包含删除此间谍软件/恶意软件的步骤：[http://www.thesafemac.com/arg-genieo/](http://www.thesafemac.com/arg-genieo/)  
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cf22f070864492e14e1865c1cbbf8cf32e0df29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285763"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753903"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
 
@@ -56,15 +56,11 @@ _本文介绍了如何为现有的目标-C 库（InfColorPicker）创建 Xamarin
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 如上所述，在本演练中，我们将使用 Xcode 命令行工具`make` （ `lipo`具体和）。 命令是一个非常常见的 Unix 实用程序，它通过使用指定如何生成程序的_生成文件_来自动编译可执行程序和库。 `make` 命令是 OS X 命令行实用程序，用于创建多体系结构文件; 它会将多`.a`个文件合并到一个文件中，该文件可由所有硬件体系结构使用。 `lipo`
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 如上所述，在本演练中，我们将使用 Xcode 命令行`make`工具 **（具体取决于和** `lipo`）。 命令是一个非常常见的 Unix 实用工具，它将通过使用_生成文件_指定如何生成程序来自动编译可执行程序和库。 `make` 命令是 OS X 命令行实用程序，用于创建多体系结构文件; 它会将多`.a`个文件合并到一个文件中，该文件可由所有硬件体系结构使用。 `lipo`
-
 
 -----
 
@@ -272,9 +268,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 ![](walkthrough-images/bind03.png "解决方案资源管理器中的解决方案结构")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. 启动 Visual Studio。
 
@@ -336,7 +330,6 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 将 **.** 文件添加到项目中时，Xamarin 会自动将该文件的**生成操作**设置为**ObjcBindingNativeLibrary**，并创建一个名`libInfColorPickerSDK.linkwith.cs`为的特殊文件。
 
-
 此文件包含`LinkWith`属性，该属性告诉 Xamarin iOS 如何处理刚刚添加的静态库。 以下代码片段显示了此文件的内容：
 
 ```csharp
@@ -347,7 +340,6 @@ using ObjCRuntime;
 
 `LinkWith`特性标识项目的静态库和一些重要的链接器标志。
 
-
 接下来需要为 InfColorPicker 项目创建 API 定义。 出于本演练的目的，我们将使用客观 Sharpie 生成文件**ApiDefinition.cs**。
 
 <a name="Using_Objective_Sharpie"/>
@@ -356,15 +348,11 @@ using ObjCRuntime;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 客观 Sharpie 是一个命令行工具（由 Xamarin 提供），可以帮助创建将第三方目标-C 库绑定到C#所需的定义。 在本部分中，我们将使用客观 Sharpie 为 InfColorPicker 项目创建初始**ApiDefinition.cs** 。
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 客观 Sharpie 是一个命令行工具（由 Xamarin 提供），可以帮助创建将第三方目标-C 库绑定到C#所需的定义。 在本部分中，我们将在**Mac 生成主机**上使用客观 Sharpie 为 InfColorPicker 项目创建初始**ApiDefinition.cs** 。
-
 
 -----
 
@@ -466,17 +454,13 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 在上面创建的绑定项目中打开这两个文件。 复制**InfColorPicker.cs**文件的内容并将其粘贴到**ApiDefinition.cs**文件中，将现有`namespace ...`代码块替换为**InfColorPicker.cs**文件的内容（保留`using`语句完整）：
 
 ![](walkthrough-images/os07.png "InfColorPickerControllerDelegate 文件")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 在上面创建的绑定项目中打开这两个文件。 复制**InfColorPicker.cs**文件的内容（从**Mac 生成主机**），并将其粘贴到**ApiDefinition.cs**文件，并将现有`namespace ...`代码块替换为**InfColorPicker.cs**文件的内容（`using`保持语句不变）。
-
 
 -----
 
@@ -503,17 +487,13 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 此时，我们的绑定项目应已完成，可以开始生成。 让我们来构建绑定项目，并确保最终没有错误：
 
 [生成绑定项目并确保没有错误](walkthrough-images/os12.png)
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 此时，我们的绑定项目应已完成，可以开始生成。 让我们来构建绑定项目，并确保最终不会有任何错误。
-
 
 -----
 
@@ -702,7 +682,6 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
 ```
 
 **Update ViewDidLoad** -必须更改`ViewDidLoad` ，使其使用刚刚创建的事件处理程序。 编辑`ViewController`和更改`ViewDidLoad`为类似于以下代码片段：
-
 
 ```csharp
 public override void ViewDidLoad ()

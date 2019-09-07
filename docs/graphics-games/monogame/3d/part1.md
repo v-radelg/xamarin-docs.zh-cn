@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 013e169770fa2e52f89915d1b74c7292a049f87e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197816"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766823"
 ---
 # <a name="using-the-model-class"></a>使用模型类
 
@@ -27,9 +27,9 @@ MonoGame API 包含一个 `Model` 类，可用于存储从内容文件加载的�
 - 绘制3D 模型
 - 绘制多个模型
 
-完成后, 项目将如下所示:
+完成后，项目将如下所示：
 
-![已完成示例, 显示六个机器人](part1-images/image1.png)
+![已完成示例，显示六个机器人](part1-images/image1.png)
 
 ## <a name="creating-an-empty-game-project"></a>创建空游戏项目
 
@@ -38,7 +38,6 @@ MonoGame API 包含一个 `Model` 类，可用于存储从内容文件加载的�
 在继续之前，应验证项目是否打开并正确部署。 一旦部署完成，应会看到一个蓝色屏幕：
 
 ![黑屏蓝游戏屏幕](part1-images/image2.png)
-
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>在游戏项目中包括 XNB
 
@@ -164,7 +163,7 @@ public class Game1 : Game
 
 如果运行此代码，会在屏幕上看此模型：
 
-![屏幕上显示的模型](part1-images/image8.png "如果运行此代码, 模型将显示在屏幕上")
+![屏幕上显示的模型](part1-images/image8.png "如果运行此代码，模型将显示在屏幕上")
 
 ### <a name="model-class"></a>Model 类
 
@@ -176,7 +175,7 @@ public class Game1 : Game
 
 ### <a name="basiceffect-class"></a>BasicEffect 类
 
-`BasicEffect`类提供用于控制渲染选项的属性。 要对 `BasicEffect` 进行的第一个修改是调用`EnableDefaultLighting` 方法。 顾名思义, 这会启用默认照明, 这非常适合用于验证`Model`是否按预期方式出现在游戏中。 如果注释掉`EnableDefaultLighting`调用, 就会看到模型只是其纹理, 但没有着色或反光发光:
+`BasicEffect`类提供用于控制渲染选项的属性。 要对 `BasicEffect` 进行的第一个修改是调用`EnableDefaultLighting` 方法。 顾名思义，这会启用默认照明，这非常适合用于验证`Model`是否按预期方式出现在游戏中。 如果注释掉`EnableDefaultLighting`调用，就会看到模型只是其纹理，但没有着色或反光发光：
 
 ```csharp
 //effect.EnableDefaultLighting ();
@@ -209,8 +208,7 @@ var cameraPosition = new Vector3 (0, 30, 0);
 
 ## <a name="rendering-multiple-models"></a>渲染多个模型
 
-如上所述, 可以多次绘制单个`Model` 。 如上所述，单个 `Model` 可以绘制多次。为简化此过程，可将 `Model` 绘制代码移动到它自己的方法中，该方法将目标模型位置作为参数。 完成后，`Draw` 和 `DrawModel` 方法如下所示：
-
+如上所述，可以多次绘制单个`Model` 。 如上所述，单个 `Model` 可以绘制多次。为简化此过程，可将 `Model` 绘制代码移动到它自己的方法中，该方法将目标模型位置作为参数。 完成后，`Draw` 和 `DrawModel` 方法如下所示：
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -265,4 +263,4 @@ void DrawModel(Vector3 modelPosition)
 
 - [MonoGame 模型参考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Graphics_Model)
 - [Content.zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
-- [已完成的项目 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)
+- [已完成的项目（示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)

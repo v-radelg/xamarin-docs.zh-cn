@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d988be9163c0a6e12735425a139c03d9641fa95c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656787"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772765"
 ---
 # <a name="device-orientation"></a>设备方向
 
@@ -225,7 +225,6 @@ protected override void OnSizeAllocated (double width, double height){
 
 - `outerStack` 将调整为作为水平或垂直方向，以最有效地利用可用空间根据堆栈中显示的图像和控件。
 
-
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
 请考虑以下应用程序，在纵向显示：
@@ -277,7 +276,6 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 - 由于页面布局的方式，不是需要程序代码引入响应能力。
 - `ScrollView`用于允许甚至时屏幕的高度是固定的按钮和图像的高度之和小于为可见的标签。
-
 
 ### <a name="relativelayout"></a>RelativeLayout
 
@@ -471,7 +469,6 @@ protected override void OnSizeAllocated (double width, double height){
 请注意以下事项：
 
 - 页面布局的方式，因此没有方法来更改网格放置控件。
-
 
 ## <a name="related-links"></a>相关链接
 

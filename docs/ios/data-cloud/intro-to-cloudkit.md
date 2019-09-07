@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/11/2016
-ms.openlocfilehash: 09275517a1d081073ab471d1e8c993dc232a4385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 240b3c1547231ebbea568f4d5d10407ec560390b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292447"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763396"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin 中的 CloudKit
 
@@ -48,7 +48,6 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 
 到撰写本文时为止，Apple 最初免费提供 CloudKit，同时提供带宽和存储容量的高限制。 对于具有大型用户群的大型项目或应用程序，Apple 将提供经济实惠的定价比例。
 
-
 ## <a name="enabling-cloudkit-in-a-xamarin-application"></a>在 Xamarin 应用程序中启用 CloudKit
 
 在 Xamarin 应用程序可以利用 CloudKit 框架之前，必须正确预配应用程序，如使用[功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)和使用[权利](~/ios/deploy-test/provisioning/entitlements.md)指南中所述。
@@ -67,7 +66,6 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 7. 确保应用程序的**无处不容器**（如上所创建）。 示例：`iCloud.com.your-company.CloudKitAtlas`
 8. 保存对文件所做的更改。
 
-
 设置好这些设置后，应用程序便可访问 CloudKit Framework Api。
 
 ## <a name="cloudkit-api-overview"></a>CloudKit API 概述
@@ -82,7 +80,6 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 6. **引用**–提供给定数据库内相关记录之间的父子关系。
 7. **资产**–允许将大型非结构化数据的文件上传到 iCloud，并将其与给定记录相关联。
 
-
 ### <a name="containers"></a>容器
 
 在 iOS 设备上运行的给定应用程序始终与该设备上的其他应用程序和服务一起运行。 在客户端设备上，应用程序将以某种方式进行孤立或沙盒处理。 在某些情况下，这是一个文本沙箱，而在其他情况下，应用程序只是在自己的内存空间中运行。
@@ -92,7 +89,6 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 1. **安全性**–一个应用程序不能干扰其他客户端应用程序或操作系统本身。
 1. **稳定性**-如果客户端应用程序发生故障，它将无法排除 OS 的其他应用。
 1. **隐私**–每个客户端应用程序都具有对存储在设备中的个人信息的有限访问权限。
-
 
 CloudKit 旨在提供与上面列出的相同的优点，并将其应用到使用基于云的信息：
 
@@ -179,7 +175,6 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 1. `CKReferences`
 1. `CKAssets`
 
-
 除了单个值类型外，记录还可以包含上述任何一种类型的同类数组。
 
 可以使用以下代码创建新记录，并将其存储在数据库中：
@@ -215,7 +210,6 @@ await CloudManager.SaveAsync (newRecord);
 - 它们是由客户端应用程序创建的。
 - 它们完全规范化并表示记录的特定位置。
 - 通过在外部数据库中将记录的唯一 ID 分配给记录名称，可以使用它们来桥接未存储在 CloudKit 中的本地数据库。
-
 
 开发人员创建新记录时，可以选择传入记录标识符。 如果未指定记录标识符，则会自动创建一个 UUID 并将其分配给记录。
 
@@ -285,13 +279,11 @@ Apple 提供两个不同的 API 集用于处理 CloudKit：
 - **操作 API** –提供 CloudKit 的每个功能。 对于更复杂的应用程序，此 API 提供对 CloudKit 的精细控制。
 - **便利性 API** –提供常见的预配置 CloudKit 功能子集。 它为在 iOS 应用程序中包含 CloudKit 功能提供了一种方便、便捷的访问解决方案。
 
-
 对于大多数 iOS 应用程序而言，便利性 API 通常是最佳选择，而 Apple 建议从它开始。 本部分的其余部分将介绍以下便利 API 主题：
 
 - 保存记录。
 - 提取记录。
 - 更新记录。
-
 
 ### <a name="common-setup-code"></a>常见安装代码
 
@@ -394,7 +386,6 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 1. 调用是异步的，并在调用完成时提供回调例程，不管是成功还是失败。 如果调用失败，则会提供一条错误消息。
 1. CloudKit 不提供本地存储/持久性;仅限传输媒介。 因此，当请求保存记录时，会立即将其发送到 iCloud 服务器。
 
-
 > [!NOTE]
 > 由于移动网络通信的 "有损" 性质，连接持续被丢弃或中断，开发人员在使用 CloudKit 时必须做出的首要考虑因素之一是错误处理。
 
@@ -458,7 +449,6 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 - **客户端视图可以更改**–因为每个用户都有不同的首选项，正在显示的数据切片可以从用户更改为用户，而用户的任何给定切片的单个视图可能不同。
 - **客户端使用查询来重点介绍视点**–查询允许用户查看云中存在的较大数据集的一个小部分。
 
-
 ### <a name="queries"></a>查询
 
 如上所述，查询允许开发人员选择云中存在的较大数据集的一小部分。 查询在 CloudKit 框架中通过`CKQuery`类公开。
@@ -468,7 +458,6 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 #### <a name="supported-predicates"></a>支持的谓词
 
 使用查询`NSPredicates`时，CloudKit 支持以下类型：
-
 
 1. 匹配名称等于变量中存储的值的记录：
 
@@ -506,8 +495,6 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
     ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-
-
 
 #### <a name="creating-queries"></a>创建查询
 
@@ -551,7 +538,6 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 - 它们对于网络通信是不正确的。
 - 它们对于用户体验是不正确的，因为他们看到的信息受到应用程序轮询数据库的频率的限制。 现在，用户会在发生更改时收到推送通知。
 
-
 ### <a name="subscriptions"></a>订阅
 
 当处理大型的、大部分静态数据集时，不应在客户端设备上执行查询，它应该代表客户端在服务器上运行。 查询应在后台运行，并且应在每次保存单个记录后执行，不管是由当前设备还是其他设备触及同一数据库。
@@ -576,7 +562,6 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 3. 第二个设备创建新记录，并将该记录保存到数据库。
 4. 数据库会搜索其订阅列表，以查看新记录是否与其条件匹配。
 5. 如果找到匹配项，则会将推送通知发送到注册了该订阅的设备，该设备的相关信息导致触发该订阅。
-
 
 了解这一点后，我们来看看如何在 Xamarin iOS 8 应用程序中创建订阅。
 
@@ -662,7 +647,6 @@ CloudKit 向开发人员提供以下用户信息：
 - **元数据**–保存和检索有关用户的信息的能力。
 - **隐私**–所有信息都在隐私意识 manor 中得到处理。 除非用户同意，否则不会公开任何内容。
 - **发现**–使用户能够发现使用同一应用程序的朋友。
-
 
 接下来，我们将详细介绍这些主题。
 
@@ -755,12 +739,10 @@ CloudKit 还提供了一种方法，用于通过查询整个通讯簿来发现�
 - **用户电子邮件地址**–用户可以提供电子邮件地址，并可用于发现。
 - **联系簿**–用户的通讯簿可用于发现应用程序的用户，该用户的电子邮件地址与联系人中列出的相同。
 
-
 用户发现将返回以下信息：
 
 - **用户记录 ID** -公共数据库中用户的唯一 ID。
 - **名字和姓氏**，存储在公共数据库中。
-
 
 只会为已选择发现的用户返回此信息。
 
@@ -812,7 +794,6 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 > [!NOTE]
 > IOS 模拟器仅适用于**开发环境**。 当开发人员准备好在**生产环境**中测试应用程序时，需要使用物理 iOS 设备。
-
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>传送启用了 CloudKit 的应用
 
@@ -873,7 +854,6 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 - **ICloud 驱动器**-构建在现有 ICloud 文档 api 之上，并提供一个用于同步文件系统中的非结构化数据的简单 API。 它在 Mac OS X 上提供完全脱机缓存，非常适用于以文档为中心的应用程序。
 - **ICloud 核心数据**-允许在用户的所有设备之间复制数据。 数据是单用户的，非常适合用于保持私有的结构化数据同步。
 - **CloudKit** –提供结构化和批量的公共数据，并能够处理大型数据集和大型非结构化文件。 它与用户的 iCloud 帐户关联，并提供客户端定向数据传输。
-
 
 考虑到这些用例，开发人员应选择正确的 iCloud 技术来提供当前所需的应用程序功能，并为将来的增长提供良好的可伸缩性。
 

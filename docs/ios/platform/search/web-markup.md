@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87037c8c3797c7c305ce2689172bda1babbc26bd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291723"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769482"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>在 Xamarin 中用 Web 标记搜索
 
@@ -63,7 +63,7 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 
 ## <a name="using-twitter-cards"></a>使用 Twitter 卡
 
-可以使用 Twitter 卡提供指向应用内容的深层链接。 例如：
+可以使用 Twitter 卡提供指向应用内容的深层链接。 例如:
 
 ```html
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -131,7 +131,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 有关详细信息，请参阅[开放图形](http://ogp.me)网站。
 
-结构化数据标记的另一种常见格式是架构. org 的微数据格式。 例如:
+结构化数据标记的另一种常见格式是架构. org 的微数据格式。 例如：
 
 ```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -202,8 +202,6 @@ Apple 目前支持 schema.org 中的以下架构类型：
 ```
 
 有关详细信息，请参阅 Apple 的[应用搜索开发人员网站](https://developer.apple.com/ios/search/)。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 722e09cc292bad682a49ee0cba4ff0ca0f39a844
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291643"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770050"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的情节提要简介
 
@@ -111,7 +111,6 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 ## <a name="summary"></a>总结
 
 本文大致介绍了如何在 Xamarin 应用程序中使用情节提要。 我们了解到如何使用情节提要创建新的应用程序，以及如何定义用户界面。 我们还了解了如何使用 segue 在不同窗口和视图状态之间导航。
-
 
 ## <a name="related-links"></a>相关链接
 

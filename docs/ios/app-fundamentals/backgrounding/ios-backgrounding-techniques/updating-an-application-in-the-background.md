@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2e0bb4fc0468f938e7a4403513fe101db2282561
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d5a227f4acdba319eefc91b4991dead5a036eb9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286992"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756328"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>在后台更新 Xamarin iOS 应用
 
@@ -22,7 +22,6 @@ ms.locfileid: "70286992"
 1. *后台提取（iOS 7 +）* -一种临时方法，用于刷新*经常*更新的*非关键*内容。
 1. *远程通知（iOS 7 +）* -接收推送通知的应用程序可以使用通知来触发后台内容刷新。 此方法可用于更新*偶尔*更新的*重要、区分时间*的内容。
 
-
 以下各节介绍了这些选项的基本知识。
 
 ## <a name="region-monitoring-and-significant-location-changes"></a>区域监视和重要位置更改
@@ -31,7 +30,6 @@ iOS 提供两个识别位置的 Api，具有后台处理功能：
 
 1. *区域监视*是指设置具有边界的区域的过程，并在用户进入或退出某个区域时唤醒设备。 区域是循环的，大小可以不同。 当用户跨越区域边界时，设备将唤醒以处理事件，通常是通过触发通知或开始例行停止任务。 区域监视要求 GPS，并增加电池和数据的使用。
 1. *重要的位置更改服务*是一种更简单的节能选项，可用于具有手机网络收发器的设备。 当设备切换单元塔时，侦听重要位置更改的应用程序将收到通知。 此服务可用于唤醒挂起或终止的应用程序，并提供在后台检查新内容的机会。 除非与[后台任务](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md)配对，否则后台活动限制为大约10秒。
-
 
 应用程序不需要使用这些位置`UIBackgroundMode`感知 api 的位置。 由于 iOS 并不跟踪当设备唤醒用户所在位置的更改时可以运行的任务类型，因此这些 Api 提供了一个解决方法，用于在 iOS 6 上的后台更新内容。 请*记住，使用基于位置的 api 触发后台更新会在设备资源上进行绘制，并且可能会使不了解应用程序需要访问其位置的用户感到困惑*。 在尚未使用位置 Api 的应用程序中实现区域监视或对后台处理的重要位置更改时，请使用判断。
 
@@ -76,12 +74,10 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 1. `UIBackgroundFetchResult.NoData`-当对新内容的提取正在进行时调用，但没有可用的内容。
 1. `UIBackgroundFetchResult.Failed`-可用于错误处理，这在提取无法完成时调用。
 
-
 使用后台获取的应用程序可以调用从后台更新 UI。 当用户打开应用时，UI 将是最新的并显示新内容。 此操作还会更新应用程序的应用切换器快照，以便用户可以查看应用程序是否具有新内容。
 
 > [!IMPORTANT]
 > 调用`PerformFetch`后，应用程序将有大约30秒的时间开始下载新内容，并调用完成处理程序块。 如果此操作花费的时间太长，将终止应用程序。 下载媒体或其他大文件时，请考虑将后台提取与_后台传输服务_一起使用。
-
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
@@ -91,13 +87,11 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 1. `BackgroundFetchIntervalMinimum`-让系统根据用户模式、电池寿命、数据使用情况以及其他应用程序的需求来决定获取的频率。
 1. `BackgroundFetchIntervalCustom`-如果你知道应用程序内容的更新频率，你可以在每次提取之后指定 "睡眠" 间隔，在此期间，应用程序将无法获取新内容。 该间隔过后，系统将确定何时提取内容。
 
-
 `BackgroundFetchIntervalMinimum` 和`BackgroundFetchIntervalCustom`都依赖于系统来计划提取。 此间隔是动态的，适应设备需求以及单个用户的习惯。 例如，如果一个用户每隔早上检查一次应用程序，而另一个用户每隔一小时检查一次，则在每次打开应用程序时，iOS 将确保每个用户的内容都是最新的。
 
 应将后台提取用于经常使用非关键内容进行更新的应用程序。 对于具有关键更新的应用程序，应使用远程通知。 远程通知基于后台提取，并共享相同的完成处理程序。 接下来，我们将深入探讨远程通知。
 
  <a name="remote_notifications" />
-
 
 ## <a name="remote-notifications-ios-7-and-greater"></a>远程通知（iOS 7 及更高版本）
 
@@ -135,7 +129,6 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 > [!IMPORTANT]
 > 由于远程通知中的更新机制基于后台提取，因此应用程序必须启动新内容的下载，并在收到通知后的30秒内调用完成处理程序块，否则 iOS 会终止应用程序。 在后台下载媒体或其他大文件时，请考虑将远程通知与_后台传输服务_配对。
 
-
 ### <a name="silent-remote-notifications"></a>无提示远程通知
 
 远程通知是一种简单的方法，通知应用程序的更新并开始获取新内容，但在某些情况下，我们不需要通知用户发生了哪些更改。 例如，如果用户将文件标记为要进行同步，则每次文件更新时都不需要通知它们。 文件同步并不是一种奇怪的事件，也不需要用户立即关注。 用户在打开该文件时，会希望其保持最新状态。
@@ -158,7 +151,6 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 > [!IMPORTANT]
 > Apple 鼓励开发人员在应用程序需要时发送无提示推送通知，并让 APNs 计划其交付。
-
 
 在本部分中，我们介绍了用于在后台刷新内容的各种选项，以运行不适合后台必需类别的任务。 现在，让我们来看看其中的一些 Api 的操作。
 

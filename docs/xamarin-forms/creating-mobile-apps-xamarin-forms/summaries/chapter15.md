@@ -1,18 +1,18 @@
 ---
 title: 第 15 章的摘要。 交互式接口
-description: 使用 Xamarin.Forms 创建移动应用：第 15 章的摘要。 交互式接口
+description: 用 Xamarin 创建移动应用程序：第 15 章的摘要。 交互式接口
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c30f87b9173d2ca4de0b2d91ad13145031e9b0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334961"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760761"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章的摘要。 交互式接口
 
@@ -24,12 +24,12 @@ ms.locfileid: "61334961"
 
 Xamarin.Forms 包含 20 可实例化类派生自`View`但不是`Layout`。 已在上一章节中讨论的这些六个：
 
-- `Label`：[**第 2 章。应用剖析**](chapter02.md)
-- `BoxView`：[**第 3 章。滚动堆栈**](chapter03.md)
-- `Button`：[**第 6 章。按钮单击事件**](chapter06.md)
-- `Image`：[**第 13 章。位图**](chapter13.md)
-- `ActivityIndicator`：[**第 13 章。位图**](chapter13.md)
-- `ProgressBar`：[**第 14 章。AbsoluteLayout**](chapter14.md)
+- `Label`：[**第2章。应用剖析**](chapter02.md)
+- `BoxView`：[**第3章：滚动堆栈**](chapter03.md)
+- `Button`：[**第6章。按钮单击事件**](chapter06.md)
+- `Image`：[**第13章：位图**](chapter13.md)
+- `ActivityIndicator`：[**第13章：位图**](chapter13.md)
+- `ProgressBar`：[**第14章：AbsoluteLayout**](chapter14.md)
 
 这一章中的八个视图有效地允许用户与基本.NET 数据类型进行交互：
 
@@ -44,12 +44,12 @@ Xamarin.Forms 包含 20 可实例化类派生自`View`但不是`Layout`。 已�
 
 以下章节中介绍的剩余的六个视图：
 
-- `WebView`：[**第 16 章。数据绑定**](chapter16.md)
-- `Picker`：[**第 19 章。集合视图**](chapter19.md)
-- `ListView`：[**第 19 章。集合视图**](chapter19.md)
-- `TableView`：[**第 19 章。集合视图**](chapter19.md)
-- `Map`：[**第 28 章。位置和地图**](chapter28.md)
-- `OpenGLView`：不涵盖这本书 （和 Windows 平台不支持） 中
+- `WebView`：[**第16章。数据绑定**](chapter16.md)
+- `Picker`：[**第19章。集合视图**](chapter19.md)
+- `ListView`：[**第19章。集合视图**](chapter19.md)
+- `TableView`：[**第19章。集合视图**](chapter19.md)
+- `Map`：[**第28章。位置和地图**](chapter28.md)
+- `OpenGLView`：本书未涵盖（并且不支持 Windows 平台）
 
 ## <a name="slider-and-stepper"></a>滑块和分档器
 
@@ -94,7 +94,7 @@ Xamarin.Forms 包含 20 可实例化类派生自`View`但不是`Layout`。 已�
 
 - [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 类型的`double`，将初始化为 1
 
-直观地`Stepper`包含两个按钮标记为 **&ndash;** 并 **+**。 按下 **&ndash;** 减少`Value`由`Increment`为最小值`Minimum`。 按下 **+** 增加`Value`由`Increment`最大为`Maximum`。
+直观地`Stepper`包含两个按钮标记为 **&ndash;** 并 **+** 。 按下 **&ndash;** 减少`Value`由`Increment`为最小值`Minimum`。 按下 **+** 增加`Value`由`Increment`最大为`Maximum`。
 
 这可通过演示[ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo)示例。
 
@@ -238,8 +238,6 @@ Xamarin.Forms 定义了三个视图，让用户输入和编辑文本：
 [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer)程序演示了如何使用`TimePicker`计时器指定时间。 只有在将它保存在前台，仅适用于该程序。
 
 **SetTimer**还演示了如何使用[ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String))方法`Page`以显示一个警告框。
-
-
 
 ## <a name="related-links"></a>相关链接
 

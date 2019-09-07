@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 30fcf586a280688834e1ae9af61630c2611964a5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9ad1c63dae312546315406d40858ce24802c6a58
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281824"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769313"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>你好，tvOS 快速入门指南
 
@@ -489,7 +489,6 @@ partial void Clicked (UIButton sender)
 ## <a name="summary"></a>总结
 
 本文提供了一个快速入门，通过创建一个简单的 Hello，tvOS 应用程序来开发用于 Visual Studio for Mac tvOS 的应用程序。 其中介绍了 tvOS 设备预配、接口创建、tvOS 的编码和 tvOS 模拟器上的测试的基础知识。
-
 
 ## <a name="related-links"></a>相关链接
 

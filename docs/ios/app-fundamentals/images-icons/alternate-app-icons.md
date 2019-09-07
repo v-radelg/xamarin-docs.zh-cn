@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b15b39460b40bc2c9f993b3b0d9bca3275ac7644
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d391c57c2c63cd4e371bd97ba455962aa053f9ed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286808"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767347"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的备用应用程序图标
 
@@ -111,7 +111,7 @@ Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其�
 
 在 Xamarin 项目中包含图标映像和正确配置**info.plist**文件后，开发人员可以使用添加到 iOS 10.3 的许多新功能之一来控制应用的图标。
 
-`UIApplication`类的属性允许开发人员查看应用是否支持替换图标。 `SupportsAlternateIcons` 例如:
+`UIApplication`类的属性允许开发人员查看应用是否支持替换图标。 `SupportsAlternateIcons` 例如：
 
 ```csharp
 // Can the app select a different icon?
@@ -126,7 +126,7 @@ AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateI
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-`UIApplication`类的`null`属性允许开发人员获取当前选定的备用应用程序图标的名称，或者，如果应用程序使用主图标，则该属性返回。 `AlternateIconName` 例如：
+`UIApplication`类的`null`属性允许开发人员获取当前选定的备用应用程序图标的名称，或者，如果应用程序使用主图标，则该属性返回。 `AlternateIconName` 例如:
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-`UIApplication`类`SetAlternameIconName`的属性允许开发人员更改应用图标。 传递图标的名称以选择或`null`返回到主图标。 例如:
+`UIApplication`类`SetAlternameIconName`的属性允许开发人员更改应用图标。 传递图标的名称以选择或`null`返回到主图标。 例如：
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)
@@ -169,8 +169,6 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 ## <a name="summary"></a>总结
 
 本文介绍了如何向 Xamarin iOS 项目添加备用应用程序图标并在应用程序中使用它们。
-
-
 
 ## <a name="related-links"></a>相关链接
 

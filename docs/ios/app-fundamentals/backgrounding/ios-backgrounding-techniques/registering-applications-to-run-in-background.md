@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290613"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757692"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>注册 Xamarin iOS 应用程序以在后台运行
 
@@ -31,7 +31,6 @@ ms.locfileid: "70290613"
 - **位置**-使用 GPS 或网络位置数据的应用程序可以在后台发送和接收位置更新。
 - **提取（iOS 7 +）** -注册为后台提取权限的应用程序可以定期检查提供程序的新内容，并在用户返回到应用程序时向其提供更新的内容。
 - **远程通知（iOS 7 +）** -应用程序可以注册以从提供程序接收通知，并在用户打开应用程序之前使用通知启动更新。 通知可以是推送通知的形式，也可以选择以无提示方式唤醒应用程序。
-
 
 可以通过在应用程序的*info.plist*中设置**所需的后台模式**属性来注册应用程序。 应用程序可以根据需要注册任意多个类别：
 

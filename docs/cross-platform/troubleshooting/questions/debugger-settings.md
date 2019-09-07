@@ -6,12 +6,12 @@ ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 1abf166e35688790bb0b059793c8929495eeea02
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 343f8d37d77726d2cdc06a74c44e476af00dde27
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285038"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765149"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>调试器需要哪些项目设置？
 
@@ -32,4 +32,3 @@ ms.locfileid: "70285038"
 3. 每个平台的设置：
     - 请参阅 **> Android build > 调试选项**中的 "生成"。 勾选 "**启用开发人员检测**" 框。
     - 请参阅**生成 > IOS 调试**。 勾选 "**启用调试**" 框。
-

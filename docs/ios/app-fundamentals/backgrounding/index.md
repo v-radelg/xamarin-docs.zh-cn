@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 161fda52002e8bb757db23c9b2a20a6befd132f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5afb87eb3f84e00427072ef6c4e2c19b46de0186
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289344"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766586"
 ---
 # <a name="backgrounding-in-xamarinios"></a>Xamarin 中的后台处理
 
@@ -35,8 +35,6 @@ _后台处理或后台处理是让应用程序在后台中执行任务的过程�
 ## <a name="summary"></a>总结
 
 在本指南中，我们介绍了在 iOS 中进行后台处理的不同方式。 我们介绍了 iOS 应用程序状态并检查了 iOS 应用程序生命周期中的角色后台处理重头戏。 此外，我们还了解了如何在 iOS 中注册各个任务或整个应用程序以后台运行。 最后，通过构建在后台执行更新的应用程序，加强对 iOS 上后台处理的理解。
-
-
 
 ## <a name="related-links"></a>相关链接
 

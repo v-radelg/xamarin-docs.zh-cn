@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: ae909827df5cc8f4ed5192d88ad067a5e69ce5d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 29483ca184786f8f0d2a7d0d9345608542d30e61
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282863"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768860"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合视图
 
@@ -43,7 +43,6 @@ iOS 提供了一个名`UICollectionViewFlowLayout`为的布局类，该布局类
 - `ContentView`–此视图包含单元格显示的内容。 它在屏幕上按最顶层 z 顺序呈现。
 - `SelectedBackgroundView`–单元格内置了对选择的支持。 此视图用于以可视方式表示单元格处于选中状态。 如果选择了单元格， `ContentView`它就会呈现在下面。
 - `BackgroundView`–单元还可以显示背景，它由`BackgroundView`提供。 此视图在`SelectedBackgroundView`下呈现。
-
 
 通过将其`ContentView`设置为`BackgroundView`小于和`SelectedBackgroundView` `BackgroundView` ，`SelectedBackgroundView`可使用来直观显示内容，而在选择单元时将显示，如下所示：
 
@@ -85,7 +84,6 @@ public class AnimalCell : UICollectionViewCell
 
  <a name="Supplementary_Views" />
 
-
 ## <a name="supplementary-views"></a>补充视图
 
 补充视图是显示与的每个部分`UICollectionView`关联的信息的视图。 与单元一样，补充视图是数据驱动的。 如果单元格显示数据源中的项数据，则补充视图将显示部分数据，如书架中的书籍类别或音乐库中的音乐流派。
@@ -117,7 +115,6 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
  <a name="Decoration_Views" />
 
-
 ## <a name="decoration-views"></a>修饰视图
 
 修饰视图是纯可视视图，可以在中`UICollectionView`显示。 与单元和辅助视图不同，它们不是数据驱动的。 它们始终在布局的子类内创建，随后可以更改为内容的布局。 例如，可使用装饰视图呈现一个背景视图，该背景视图滚动到`UICollectionView`中的内容，如下所示：
@@ -136,7 +133,6 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
     }
   }
  ```
-
 
 ## <a name="data-source"></a>“数据源”
 
@@ -188,7 +184,6 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
  <a name="Delegate" />
 
-
 ### <a name="delegate"></a>委托
 
 类使用类型`UICollectionViewDelegate`的委托来支持与中的内容进行`UICollectionView`交互。 `UICollectionView` 这允许控制：
@@ -197,11 +192,9 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 - **单元格突出显示**–确定当前是否正在触及某个单元。
 - **单元菜单**–为响应长按下手势而显示的单元格的菜单。
 
-
 对于数据源， `UICollectionViewController`默认情况下，配置为的委托。 `UICollectionView`
 
  <a name="Cell_HighLighting" />
-
 
 #### <a name="cell-highlighting"></a>单元格突出显示
 
@@ -227,7 +220,6 @@ public override void ItemUnhighlighted (UICollectionView collectionView, NSIndex
 
  <a name="Disabling_Selection" />
 
-
 #### <a name="disabling-selection"></a>禁用所选内容
 
 默认情况下，中`UICollectionView`启用了选择。 若要禁用选择， `ShouldHighlightItem`请重写并返回 false，如下所示：
@@ -245,7 +237,6 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Cell_Menus" />
 
-
 #### <a name="cell-menus"></a>单元菜单
 
 中的`UICollectionView`每个单元格都能够显示允许剪切、复制和粘贴的菜单（可选）。 若要创建单元格上的 "编辑" 菜单：
@@ -254,13 +245,11 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 1. 对于`CanPerformAction`项可以执行的每个操作，重写并返回 true，该操作将是剪切、复制或粘贴。
 1. 重`PerformAction`写以执行 "编辑"、"粘贴" 操作的副本。
 
-
 以下屏幕截图显示了长时间按下某个单元格的菜单：
 
  [![](uicollectionview-images/04a-menu.png "此屏幕截图显示某个单元格长时间按下的菜单")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
-
 
 ## <a name="layout"></a>布局
 
@@ -269,7 +258,6 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Layout_Basics" />
 
-
 ### <a name="layout-basics"></a>布局基础知识
 
 中`UICollectionView`的布局在从`UICollectionViewLayout`继承的类中定义。 布局实现负责为中的`UICollectionView`每个项创建布局特性。 可以通过两种方法创建布局：
@@ -277,9 +265,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 - 使用内置`UICollectionViewFlowLayout` 。
 - 通过从`UICollectionViewLayout`继承来提供自定义布局。
 
-
  <a name="Flow_Layout" />
-
 
 ### <a name="flow-layout"></a>流布局
 
@@ -289,13 +275,11 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 - 创建的`UICollectionViewFlowLayout`实例：
 
-
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
 - 将该实例传递到的`UICollectionView`构造函数：
-
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
@@ -306,7 +290,6 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
  [![](uicollectionview-images/05-layout-orientation.png "方向更改示例")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
-
 
 #### <a name="section-inset"></a>节内边距
 
@@ -323,7 +306,6 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
-
 #### <a name="subclassing-uicollectionviewflowlayout"></a>子类 UICollectionViewFlowLayout
 
 在要直接使用`UICollectionViewFlowLayout`的版本中，还可以将其划分为子类，以进一步自定义行内容的布局。 例如，这可用于创建不将单元格换行到网格中的布局，而是创建一个具有水平滚动效果的行，如下所示：
@@ -336,7 +318,6 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 - 重`ShouldInvalidateLayoutForBoundsChange`写，返回 true，以便在`UICollectionView`更改边界时，将重新计算单元格的布局。 在这种情况下，将使用此代码，以确保在滚动过程中应用应用于 centermost 单元格的转换代码。
 - 重`TargetContentOffset`写以使 centermost 单元与的中心`UICollectionView`对齐，因为滚动将停止。
 - 重`LayoutAttributesForElementsInRect`写以返回的`UICollectionViewLayoutAttributes`数组。 每`UICollectionViewLayoutAttribute`个都包含有关如何对特定项进行布局的信息，包括诸如`Center`其`Size` 、 `ZIndex`和`Transform3D`之类的属性。
-
 
 下面的代码演示此类实现：
 
@@ -409,7 +390,6 @@ namespace SimpleCollectionView
 
  <a name="Custom_Layout" />
 
-
 ### <a name="custom-layout"></a>自定义布局
 
 除了使用`UICollectionViewFlowLayout`之外，还可以通过直接从`UICollectionViewLayout`继承来完全自定义布局。
@@ -420,16 +400,13 @@ namespace SimpleCollectionView
 - `CollectionViewContentSize`–返回用于显示内容的区域的大小。
 - `LayoutAttributesForElementsInRect`–如前面所示的 UICollectionViewFlowLayout 示例所示，此方法用于提供有关如何布局`UICollectionView`每个项的信息。 不过，与不同`UICollectionViewFlowLayout`的是，在创建自定义布局时，您可以选择定位项。
 
-
 例如，可以在循环布局中显示相同的内容，如下所示：
 
  [![](uicollectionview-images/08-circle-layout.png "此处所示的循环自定义布局")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 布局的强大之处在于，从类似网格的布局更改为水平滚动布局，而在此循环布局中，只需要更改提供`UICollectionView`的布局类。 中没有任何`UICollectionView`内容，其委托或数据源代码根本就发生了更改。
 
-
 ## <a name="changes-in-ios-9"></a>IOS 9 中的更改
-
 
 在 iOS 9 中，集合视图（`UICollectionView`）现在支持通过添加新的默认手势识别器和几个新的支持方法将项拖出框中的项进行重新排序。
 
@@ -453,7 +430,7 @@ namespace SimpleCollectionView
 
 在 iOS 9 中，将重新排序添加到集合视图的最快捷方法是使用`UICollectionViewController`。
 集合视图控制器现在具有一个`InstallsStandardGestureForInteractiveMovement`属性，该属性添加一个支持拖动以重新排列集合中的项的标准*笔势识别器*。
-由于默认值为`true`，因此您只需`MoveItem`实现`UICollectionViewDataSource`类的方法来支持拖放。 例如：
+由于默认值为`true`，因此您只需`MoveItem`实现`UICollectionViewDataSource`类的方法来支持拖放。 例如:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -694,7 +671,7 @@ namespace CollectionView
 
 保存对 UI 所做的更改并运行应用。
 如果用户从列表中选择某一项并将其拖动到新位置，则当其他项移出项目的方式时，它们将自动进行动画处理。
-当用户将项放置在新位置时，它会坚持到该位置。 例如:
+当用户将项放置在新位置时，它会坚持到该位置。 例如：
 
 [![](uicollectionview-images/intro01.png "将项拖动到新位置的示例")](uicollectionview-images/intro01.png#lightbox)
 
@@ -1045,7 +1022,6 @@ namespace CollectionView
       var end = unionRects.Count;
       List<UICollectionViewLayoutAttributes> attrs = new List<UICollectionViewLayoutAttributes> ();
 
-
       for (int i = 0; i < end; i++) {
         if (rect.IntersectsWith(unionRects[i])) {
           begin = i * (int)unionSize;
@@ -1235,7 +1211,6 @@ public override void AwakeFromNib ()
 - `GetTargetContentOffset`–用于获取给定集合视图项的偏移量。
 - `GetTargetIndexPathForMove`–为拖动`indexPath`操作获取给定项的。
 - `MoveItem`–移动列表中给定项的顺序。
-
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 

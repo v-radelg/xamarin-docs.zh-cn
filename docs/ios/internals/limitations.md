@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/09/2018
-ms.openlocfilehash: 1d6f4dc20a32810bb218ce3aa2281fa1355a584d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291906"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753328"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
@@ -21,7 +21,6 @@ ms.locfileid: "70291906"
 与桌面 Mono 相比，Xamarin.iOS 有以下限制：
 
  <a name="Limited_Generics_Support" />
-
 
 ## <a name="limited-generics-support"></a>有限的泛型支持
 
@@ -32,7 +31,6 @@ Mono 的 [Full AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)技
 开发人员遇到的一些常见问题包括：
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
-
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>NSObject 的泛型子类受限
 
@@ -47,9 +45,7 @@ class Foo<T> : UIView {
 > [!NOTE]
 > 虽然可以使用 NSObject 的泛型子类，但存在一些限制。 请参阅 [NSObject 的泛型子类](~/ios/internals/api-design/nsobject-generics.md)文档以获取更多信息
 
-
  <a name="No_Dynamic_Code_Generation" />
-
 
 ## <a name="no-dynamic-code-generation"></a>无动态代码生成
 
@@ -60,10 +56,7 @@ class Foo<T> : UIView {
 - 不支持动态创建类型（没有 Type.GetType（“MyType`1”）），但查找现有类型（例如 Type.GetType（“System.String”）仍有效）。
 - 在编译时，必须向运行时注册反向回调。
 
-
-
  <a name="System.Reflection.Emit" />
-
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
@@ -72,7 +65,6 @@ class Foo<T> : UIView {
 - 动态语言运行时。
 - 在动态语言运行时之上构建的任何语言。
 - 远程处理的 TransparentProxy 或任何其他操作会导致运行时动态生成代码。
-
 
   > [!IMPORTANT]
   > 请不要将 **Reflection.Emit** 与 **Reflection** 混淆。 Reflection.Emit 涉及动态生成代码并将代码即时编译为本机代码。 由于 iOS 的限制（无 JIT 编译），这不受支持。
@@ -94,7 +86,6 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
  <a name="Reverse_Callbacks" />
 
-
 ### <a name="reverse-callbacks"></a>反向回调
 
 在标准 Mono 中，可以将 C# 委托实例传递给非托管代码，而不是函数指针。 运行时通常会将这些函数指针转换为允许非托管代码回调到托管代码的小 thunk。
@@ -110,9 +101,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 远程处理堆栈在 Xamarin 上不可用。
 
-
  <a name="Runtime_Disabled_Features" />
-
 
 ## <a name="runtime-disabled-features"></a>运行时禁用的功能
 
@@ -125,14 +114,10 @@ Mono 的 iOS 运行时中禁用了以下功能：
 - JIT 引擎
 - 元数据验证程序（因为没有 JIT）
 
-
  <a name=".NET_API_Limitations" />
-
 
 ## <a name="net-api-limitations"></a>.NET API 限制
 
 公开的 .NET API 是完整框架的一个子集，因为并非所有内容在 iOS 中都是可用的。 请参阅常见问题解答，获取[当前支持的程序集列表](~/cross-platform/internals/available-assemblies.md)。
-
-
 
 特别是，Xamarin.iOS 使用的 API 配置文件不包含 System.Configuration ，因此无法使用外部 XML 文件来配置运行时的行为。

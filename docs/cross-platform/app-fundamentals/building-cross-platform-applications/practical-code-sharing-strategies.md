@@ -6,24 +6,21 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 9f0a4d0367142be500aeae67041feb8cd3bbca76
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce2530c6f9c81c287ff6c51c96fde12f3902cb8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288790"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762089"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 实际代码共享策略
 
 本部分提供有关如何共享代码的常见应用程序方案的示例。
 
-
-
 ## <a name="data-layer"></a>数据层
 
 数据层由存储引擎和方法来读取和写入信息构成。 出于性能、 灵活性和跨平台兼容性 SQLite 数据库引擎被建议 Xamarin 跨平台应用程序。
 它在各种平台包括 Windows、 Android、 iOS 和 mac 上运行
-
 
 ### <a name="sqlite"></a>SQLite
 
@@ -33,10 +30,7 @@ SQLite 是开放源代码数据库实现。 源和文档，请参阅[SQLite.org]
 - **Android** – 内置于操作系统自 Android 2.2 (API 级别 10)。
 - **Windows** – 请参阅[适用于通用 Windows 平台扩展的 SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)。
 
-
 即使使用数据库引擎在所有平台上，来访问数据库的本机方法是不同的。 这两种 iOS 和 Android 提供内置的 Api 从 Xamarin.iOS 或 Xamarin.Android 访问 SQLite 可供使用，但是使用本机 SDK 方法提供不能共享 （而不是可能的 SQL 查询本身，假定它们以字符串形式存储） 的代码. 有关本机数据库功能搜索的详细信息`CoreData`在 iOS 或 Android 的`SQLiteOpenHelper`类; 因为这些选项不是跨平台它们不在本文的讨论范围。
-
-
 
 ### <a name="adonet"></a>ADO.NET
 
@@ -87,8 +81,6 @@ connection.Close ();
 
 很明显会跨不同的方法和类 （此示例中是仅用于演示目的） 拆分 ADO.NET 的实际实现。
 
-
-
 ### <a name="sqlite-net--cross-platform-orm"></a>SQLite NET – 跨平台 ORM
 
 ORM （或对象关系映射程序） 尝试简化在类中建模的数据的存储。 而不是该表创建或选择手动编写 SQL 查询，手动从提取的插入和删除数据类的字段和属性，ORM 额外提供一层会为你的代码。 使用反射来检查您的类结构，ORM 可以自动创建表和列匹配的一个类并生成查询，以读取和写入数据。 这允许应用程序代码，只需发送和检索到的 ORM，负责实质上的所有 SQL 操作的对象实例。
@@ -101,7 +93,6 @@ SQLite NET 功能：
 - 数据库实例都由的子类`SQLiteConnection`，SQLite 的网络库中的主类。
 - 数据可以插入、 查询和删除使用的对象。 任何 SQL 语句不是必需的 （尽管您可以编写 SQL 语句，如果需要）。
 - 可以对返回的 SQLite NET 集合执行基本的 Linq 查询。
-
 
 源代码和 SQLite NET 文档位于[github 上的 SQLite Net](https://github.com/praeclarum/sqlite-net)和已实现了这两个案例研究。 SQLite NET 代码的简单示例 (从*Tasky Pro*案例研究) 如下所示。
 
@@ -135,8 +126,6 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 
 请参阅完整的示例案例研究源代码。
 
-
-
 ## <a name="file-access"></a>文件访问
 
 文件访问是确定以任何应用程序的关键部分。 可能不属于应用程序包含的文件的常见示例：
@@ -144,9 +133,6 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 - SQLite 数据库文件。
 - 用户生成 （文本、 图像、 声音、 视频） 的数据。
 - 下载用于缓存 （映像、 html 或 PDF 文件） 的数据。
-
-
-
 
 ### <a name="systemio-direct-access"></a>System.IO 直接访问权限
 
@@ -174,8 +160,6 @@ Console.WriteLine (System.IO.ReadAllText (filePath));
 
 请参阅 Xamarin.iOS[使用文件系统](~/ios/app-fundamentals/file-system.md)文档的特定于 iOS 的文件系统功能的详细信息。 编写跨平台文件访问代码时，请记住某些文件系统区分大小写，并且具有不同的目录分隔符。 建议的文件名始终使用相同的大小写和`Path.Combine()`方法构造文件或目录路径时。
 
-
-
 ### <a name="windowsstorage-for-windows-8-and-windows-10"></a>对于 Windows 8 和 Windows 10 的 Windows.Storage
 
 *使用 Xamarin.Forms 创建移动应用*[书籍](https://developer.xamarin.com/r/xamarin-forms/book/)
@@ -192,7 +176,6 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 请参阅[书籍章节](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)的更多详细信息。
 
-
 <a name="Isolated_Storage" />
 
 ### <a name="isolated-storage-on-windows-phone-7--8-silverlight"></a>在 Windows Phone 7 和 8 (Silverlight) 上的独立的存储
@@ -205,12 +188,9 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 独立存储 Api 中不可用[的可移植类库](~/cross-platform/app-fundamentals/pcl.md)。 PCL 的一个替代方法是[PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
-
-
 ### <a name="cross-platform-file-access-in-pcls"></a>在 Pcl 中的跨平台文件访问
 
 此外，还有 PCL 兼容 Nuget – [PCLStorage](https://www.nuget.org/packages/PCLStorage/) – Xamarin 支持的平台和最新的 Windows Api 的该功能跨平台文件访问权限。
-
 
 ## <a name="network-operations"></a>网络操作
 
@@ -220,7 +200,6 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 - 下载文档 （例如。 HTML、 PDF)。
 - 上传用户数据 （如照片或文本）。
 - 访问 web 服务或第三方 Api （包括 SOAP、 XML 或 JSON）。
-
 
 .NET Framework 提供几个不同的类，用于访问网络资源： `HttpClient`， `WebClient`，和`HttpWebRequest`。
 
@@ -283,7 +262,6 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
  <a name="Reachability" />
 
-
 ### <a name="reachability"></a>可访问性
 
 在各种从快速的 Wi-fi 网络条件或 4g 连接到不佳的接待和慢速边缘数据链接下运行的移动设备。 因此，它是网络的很好的做法检测网络是否可用，因此，哪些类型是否可用，然后再尝试连接到远程服务器。
@@ -294,9 +272,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 - 如果连接是 3g，应用程序的行为可能有所不同 （例如，Apple 不允许应用程序超过 20 Mb，要下载超过 3g）。 应用程序可以使用此信息来警告用户过多的下载时间检索大型文件时。
 - 即使网络不可用，它是很好的做法启动其他请求之前验证与目标服务器的连接。 这将阻止应用的网络操作超时，重复，并且还允许信息更丰富的错误消息来向用户显示。
 
-
 没有[Xamarin.iOS 示例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (后者基于 Apple[可访问性的示例代码](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 以帮助检测网络可用性。
-
 
 ## <a name="webservices"></a>WebServices
 
@@ -319,7 +295,6 @@ RestSharp 上提供了 Xamarin.iOS 和 Xamarin.Android 示例[github](https://gi
 
  <a name="ServiceStack" />
 
-
 ### <a name="servicestack"></a>ServiceStack
 
 ServiceStack 与 RestSharp，这两个服务器端解决方案来承载 web 服务，以及可以在移动应用程序访问这些服务中实现一个客户端库。
@@ -327,7 +302,6 @@ ServiceStack 与 RestSharp，这两个服务器端解决方案来承载 web 服�
 [ServiceStack 网站](http://servicestack.net/)文档和代码示例说明用途的项目和链接。 示例包括 web 服务，以及可以访问它的各种客户端应用程序的完整服务器端实现。
 
 没有[Xamarin.iOS 示例](http://www.servicestack.net/monotouch/remote-info/)ServiceStack 网站中的代码片段上我们[Web Services 文档](~/cross-platform/data-cloud/web-services/index.md)。
-
 
 ### <a name="wcf"></a>WCF
 
@@ -337,7 +311,6 @@ Xamarin 工具可以帮助您使用一些 Windows Communication Foundation (WCF)
 
  <a name="Threading" />
 
-
 ## <a name="threading"></a>线程
 
 应用程序响应能力非常重要的移动应用程序 – 用户期望应用程序能够加载和快速执行。 冻结屏幕将停止接受用户输入将出现以指示应用程序崩溃，所以一定不能阻塞 UI 线程长时间运行阻塞调用，例如网络请求或缓慢本地操作 （如解压缩文件）。 特别是在启动过程不应包含长时间运行的任务 – 所有移动平台将终止花很长时间加载的应用。
@@ -345,7 +318,6 @@ Xamarin 工具可以帮助您使用一些 Windows Communication Foundation (WCF)
 这意味着您的用户界面应实现进度指示器或快速显示，否则为可用 UI 和异步任务来执行后台操作。 执行后台任务需要的使用的线程，这意味着后台任务需要一种方法要发送回主线程以指示进度或工作已完成。
 
  <a name="Parallel_Task_Library" />
-
 
 ### <a name="parallel-task-library"></a>并行任务库
 
@@ -373,7 +345,6 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
  <a name="Invoking_on_the_UI_Thread" />
 
-
 ### <a name="invoking-on-the-ui-thread"></a>在 UI 线程上调用
 
 对于不使用并行任务库的代码，每个平台都有其自己的语法的封送处理回 UI 线程的操作：
@@ -382,8 +353,6 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 - **Android** – `owner.RunOnUiThread(action)`
 - **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
 - **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
-
-
 
 IOS 和 Android 的语法要求的 'context' 类可用于这意味着该代码需要将此对象传递到需要在 UI 线程上的回调的任何方法。
 
@@ -425,7 +394,6 @@ public class DispatchAdapter : IDispatchOnUIThread {
 Xamarin.Forms 开发人员应使用[ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)常见代码 （共享的项目或 PCL） 中。
 
  <a name="Platform_and_Device_Capabilities_and_Degradation" />
-
 
 ## <a name="platform-and-device-capabilities-and-degradation"></a>平台和设备功能和性能降低
 

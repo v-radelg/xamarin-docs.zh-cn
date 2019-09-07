@@ -1,18 +1,18 @@
 ---
 title: 第 18 章的摘要。 MVVM
-description: 使用 Xamarin.Forms 创建移动应用：第 18 章的摘要。 MVVM
+description: 用 Xamarin 创建移动应用程序：第 18 章的摘要。 MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334505"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771073"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章的摘要。 MVVM
 
@@ -92,8 +92,6 @@ MVVM 适用于数据绑定和数据绑定处理的属性，因此 MVVM 似乎谈
 ## <a name="viewmodels-and-the-application-lifecycle"></a>Viewmodel 和应用程序生命周期
 
 `AdderViewModel`中使用**AddingMachine**示例还定义了两个方法名为`SaveState`和`RestoreState`。 和在其进入睡眠状态时再次启动时，将从应用程序中调用这些方法。
-
-
 
 ## <a name="related-links"></a>相关链接
 

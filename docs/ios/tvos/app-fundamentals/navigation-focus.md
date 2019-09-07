@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b84150c8fdca04a9b21c28d126d221d2a9bc5a3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291574"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769253"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航和焦点
 
 _本文介绍了焦点的概念以及如何使用它来呈现和处理 tvOS 应用程序中的导航。_
-
 
 本文介绍了[焦点](#Focus-and-Selection)的概念以及如何使用它来处理 Xamarin tvOS 应用的用户界面中的[导航](#Navigation)。 我们将检查内置 tvOS 导航控件如何使用焦点、突出显示和选择以提供 Xamarin. tvOS 应用程序的用户界面导航。
 
@@ -125,9 +124,6 @@ playButton.PreferredFocusedView = true;
 > [!IMPORTANT]
 > 如果`SetNeedsUpdateFocus`调用的视图控制器包含当前具有焦点的视图，则调用仅会生效。
 
-
-
-
 <a name="Working-with-Focus-Guides" />
 
 ### <a name="working-with-focus-guides"></a>使用焦点指南
@@ -139,7 +135,7 @@ playButton.PreferredFocusedView = true;
 对于示例，请使用以下 UI 布局：
 
  [![](navigation-focus-images/guide01.png "使用焦点指南示例")](navigation-focus-images/guide01.png#lightbox)
- 
+
 由于 "**详细信息**" 按钮并不在具有 "**购买**" 按钮的水平和垂直网格上，因此用户将无法访问它。 但是，可以使用_重点指南_轻松地纠正这种情况，以便向焦点引擎提供移动提示。 
 
 焦点指南（`UIFocusGuide`）公开了视图的不可见区域，以使其可用于焦点引擎，从而允许将焦点重定向到另一个视图。
@@ -277,9 +273,6 @@ myImageView.AdjustsImageWhenAncestorFocused = true;
 ## <a name="summary"></a>总结
 
 本文介绍了焦点的概念以及如何使用它来处理 Xamarin tvOS 应用的用户界面中的导航。 它将检查内置 tvOS 导航控件如何使用焦点、突出显示和选择以提供导航。 接下来，了解如何通过视差和分层图像使用焦点，为最终用户提供当前导航状态的视觉线索。 最后，它研究了如何使用焦点、重点更新、集中精力和启用视差。
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

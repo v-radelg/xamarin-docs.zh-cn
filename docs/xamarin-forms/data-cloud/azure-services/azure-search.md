@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 2ae78d535edd17d3968d0784194bb7295bb7e889
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ea2c733a9c85662b9286f8e8631b601248dc11de
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292677"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770839"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>用 Azure 搜索和 Xamarin 搜索数据
 
@@ -275,7 +275,6 @@ async Task AzureSuggestions(string text)
 ## <a name="summary"></a>总结
 
 本文演示了如何使用 Microsoft Azure 搜索库可将 Azure 搜索集成到 Xamarin.Forms 应用程序。 Azure 搜索是云服务，提供索引和查询上传的数据的功能。 这会删除基础结构要求和搜索算法复杂性通常与应用程序中实现搜索功能。
-
 
 ## <a name="related-links"></a>相关链接
 

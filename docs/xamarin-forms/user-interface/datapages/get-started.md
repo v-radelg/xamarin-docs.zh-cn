@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e6f26fb96c0a538543c8e0b0574461ea99709631
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c6534067388b59c1e191426011fd0e6b8560348f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119479"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759738"
 ---
 # <a name="getting-started-with-datapages"></a>开始使用 DataPages
 
@@ -21,7 +21,7 @@ ms.locfileid: "70119479"
 ![](~/media/shared/preview.png "此 API 目前处于预览状态")
 
 > [!IMPORTANT]
-> DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中, 然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
+> DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中，然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
 
 若要开始构建使用 DataPages 预览一个简单的数据驱动页面，请执行以下步骤。 在预览中的硬编码样式 （"事件"） 生成此演示使用仅适用于在代码中特定的 JSON 格式。
 
@@ -51,8 +51,7 @@ ms.locfileid: "70119479"
 ```
 
 > [!IMPORTANT]
-> 还应按照以下步骤通过将一些样板代码添加到 iOS `AppDelegate`和 Android `MainActivity`来[加载主题程序集 (见下文)](#loadtheme) 。 这将在将来的预览版的版本中得到改进。
-
+> 还应按照以下步骤通过将一些样板代码添加到 iOS `AppDelegate`和 Android `MainActivity`来[加载主题程序集（见下文）](#loadtheme) 。 这将在将来的预览版的版本中得到改进。
 
 ## <a name="3-add-a-xaml-page"></a>3.添加 XAML 页面
 
@@ -175,9 +174,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
-
-从头开始创建主题的工作要多一些, 但将来的预览版本会使此操作变得更容易。
-
+从头开始创建主题的工作要多一些，但将来的预览版本会使此操作变得更容易。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -206,8 +203,6 @@ var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
 x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

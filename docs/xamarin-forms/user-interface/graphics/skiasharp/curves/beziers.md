@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1cf061f2ff27720ad78567bc26f00d99c5456f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228268"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759421"
 ---
 # <a name="three-types-of-bzier-curves"></a>贝塞尔曲线的三种类型
 
@@ -22,7 +22,7 @@ _了解如何使用 SkiaSharp 呈现三次方、 二次，和圆锥贝塞尔曲�
 
 圣皮埃尔贝塞尔 （1910年 – 1999 年），汽车公司 Renault，计算机辅助设计的汽车正文使用曲线的法语工程师命名贝塞尔曲线。
 
-贝塞尔曲线已知非常适合交互设计:它们表现得很&mdash;好, singularities 不会导致曲线变得无限大或难以&mdash;操作, 并且通常具
+贝塞尔曲线已知非常适合交互设计：它们表现得很&mdash;好，singularities 不会导致曲线变得无限大或难以&mdash;操作，并且通常具
 
 ![样本贝塞尔曲线](beziers-images/beziersample.png)
 
@@ -493,7 +493,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ![圆弧的圆锥弧线渲染](beziers-images/conicarc.png)
 
-您可以使用三角函数来确定控制点与圆心中心之间的距离:它是圆的半径除以α角度的余弦值。 若要开始和结束点之间绘制一个圆弧，将权重设置为该同一一半角度的余弦。 请注意，是否角是 180 度，然后切线永远不会满足和权重为零。 但对于角度小于 180 度、 数学计算工作正常。
+您可以使用三角函数来确定控制点与圆心中心之间的距离：它是圆的半径除以α角度的余弦值。 若要开始和结束点之间绘制一个圆弧，将权重设置为该同一一半角度的余弦。 请注意，是否角是 180 度，然后切线永远不会满足和权重为零。 但对于角度小于 180 度、 数学计算工作正常。
 
 **圆锥圆弧**页说明了这一点。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)文件实例化`Slider`用于选择表示的角度。 `PaintSurface`处理程序中的[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)代码隐藏文件计算的控制点和重量：
 
@@ -552,7 +552,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 但设置为 180 度和数学失败的角度。
 
 遗憾的是这种情况下，`ConicTo`不支持负权重，因为从理论上讲 （基于以下参数方程确定），可以使用另一个调用到完成圆`ConicTo`使用相同的点，但负权重的值。 这将允许创建具有只使用两个整圆`ConicTo`曲线上任意角度之间 （但不是包括） 基于零度和 180 度。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 60bf25d7d88a1772e8b742a336a5faaebdf964fa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1a91b92cc3e82bad02d630dde8ced1d1ba63e3fd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290804"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768477"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的映射
 
@@ -52,7 +52,6 @@ map.MapType = MKMapType.Hybrid;
 
 - 通过挤压手势缩放
 - 通过平移手势平移
-
 
 只需设置`ZoomEnabled` `MKMapView`实例的和`ScrollEnabled`属性即可启用或禁用这些功能，其中，默认值为 true。 例如，若要显示静态映射，只需将相应的属性设置为 false：
 
@@ -100,7 +99,6 @@ map.ShowsUserLocation = true;
 
 - `MKAnnotation`对象，包含有关批注的模型数据，例如批注的标题和位置。
 - `MKAnnotationView` ，其中包含要显示的图像，还可以选择在用户点击批注时显示的标注。
-
 
 Map 工具包使用 iOS 委托模式将批注添加到地图，其中`Delegate`的属性`MKMapView`设置`MKMapViewDelegate`为的实例。 此委托的实现负责为批注返回`MKAnnotationView` 。
 
@@ -183,7 +181,6 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 - 折线-在显示路线时通常会出现这种情况。
 - 圆圈-用于突出显示地图的圆形区域。
 
-
 此外，还可以创建自定义覆盖，以显示具有精细自定义绘图代码的任意几何图形。 例如，天气雷达图非常适合用于自定义覆盖区。
 
 #### <a name="adding-an-overlay"></a>添加覆盖区
@@ -192,7 +189,6 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 - 为覆盖对象创建模型对象并将其添加到`MKMapView`中。
 - 在中`MKMapViewDelegate`为覆盖创建视图。
-
 
 覆盖模型可以是任何`MKShape`子类。 Xamarin 包括`MKShape`多边形、折线和圆圈的子类，分别`MKPolygon`通过、 `MKPolyline`和`MKCircle`类。
 
@@ -231,7 +227,6 @@ iOS 包含带有地图工具包的本地搜索 API，该 API 允许在指定地�
 1. 从创建`MKLocalSearch`对象。 `MKLocalSearchRequest`
 1. 对对象`MKLocalSearch`调用方法。 `Start`
 1. 检索回调`MKLocalSearchResponse`中的对象。
-
 
 本地搜索 API 本身不提供用户界面。 它甚至不需要使用地图。 但是，若要充分利用本地搜索，应用程序需要提供某种方式来指定搜索查询并显示结果。 此外，由于结果将包含位置数据，因此在地图上显示它们通常是有意义的。
 
@@ -279,8 +274,6 @@ NavigationItem.TitleView = searchController.SearchBar;
 这会导致在地图上显示搜索栏，如下所示：
 
  ![](images/07-searchbar.png "在地图上显示的搜索栏")
-
-
 
 ### <a name="displaying-the-search-results"></a>显示搜索结果
 
@@ -351,7 +344,6 @@ public class SearchResultsViewController : UITableViewController
             }
         });
 
-
     }
 }
 ```
@@ -382,7 +374,6 @@ public void Search (string forSearchString)
         }
     });
 
-
 }
 ```
 
@@ -406,8 +397,6 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 
 > [!IMPORTANT]
 > `UISearchController`已在 iOS 8 中实现。 如果希望在此之前支持设备，则需要使用`UISearchDisplayController`。
-
-
 
 ## <a name="summary"></a>总结
 

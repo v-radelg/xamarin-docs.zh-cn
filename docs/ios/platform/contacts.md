@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa2e287775e6669bd8bdf2728d9c676c451af69b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278542"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753288"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的联系人和 ContactsUI
 
@@ -31,9 +31,6 @@ _本文介绍如何在 Xamarin iOS 应用中使用新的 "联系人" 和 "联系
 
 > [!IMPORTANT]
 > Ios 8 `AddressBook` （ `AddressBookUI`及更早）使用的现有和框架已在 ios 9 中弃用，并且应尽快为任何现有`Contacts`的`ContactsUI` Xamarin 应用替换为新的和框架。 新应用应针对新框架编写。
-
-
-
 
 在以下部分中，我们将介绍这些新框架，以及如何在 Xamarin iOS 应用程序中实现它们。
 
@@ -176,7 +173,7 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 _部分联系人_是指只有部分可用属性从的联系人存储区中提取的联系人。 如果尝试访问先前未提取的属性，将导致异常。
 
-通过使用`IsKeyAvailable` `CNContact`实例的或`AreKeysAvailable`方法，可以轻松查看给定联系人是否具有所需的属性。 例如：
+通过使用`IsKeyAvailable` `CNContact`实例的或`AreKeysAvailable`方法，可以轻松查看给定联系人是否具有所需的属性。 例如:
 
 ```csharp
 // Does the contact contain the requested key?
@@ -227,7 +224,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 还可用于将多个联系人和组更改缓存到一个操作中，并将这些修改`CNContactStore`分批。 `CNSaveRequest`
 
-若要更新从提取操作获取的非可变联系人，您必须首先请求一个可变副本，然后将其修改并保存回联系人存储区。 例如：
+若要更新从提取操作获取的非可变联系人，您必须首先请求一个可变副本，然后将其修改并保存回联系人存储区。 例如:
 
 ```csharp
 // Get mutable copy of contact
@@ -281,7 +278,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 在调用`CNContactPickerViewController`类之前，您可以定义用户可选择哪些属性并定义谓词来控制联系人属性的显示和选择。
 
-使用从`CNContactPickerDelegate`继承的类的实例，以响应用户与选取器的交互。 例如：
+使用从`CNContactPickerDelegate`继承的类的实例，以响应用户与选取器的交互。 例如:
 
 ```csharp
 using System;
@@ -359,7 +356,6 @@ PresentViewController(view, true, null);
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin iOS 应用程序中使用联系人和联系人 UI 框架。 首先，它涵盖了 Contact framework 提供的不同类型的对象，以及如何使用它们来创建新联系人或访问现有联系人。 它还检查联系 UI 框架以选择现有联系人并显示联系信息。
-
 
 ## <a name="related-links"></a>相关链接
 

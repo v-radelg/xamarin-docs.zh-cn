@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 7502998e8e8da5e011ef1ec0ab7dcc6e3d892d3d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 05da84949f6613bce24f103df4d86f1bdcd30764
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286057"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768726"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>使用 watchOS 在 Xamarin 中导航
 
@@ -97,7 +97,6 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 ![](navigation-images/paged-1.png "示例的第一页") ![](navigation-images/paged-2.png "示例第二页") ![](navigation-images/paged-5.png "示例第五个页")
 
-
 若要使基于页面的界面监视应用程序的主 UI，请使用`ReloadRootControllers`界面控制器和上下文的数组：
 
 ```csharp
@@ -113,8 +112,6 @@ var controllerNames = new [] { "pageController", "pageController", "pageControll
 var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 PresentController (controllerNames, contexts);
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: f0889ecc428c595509fb23710bf3110c1bacad4e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290293"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770353"
 ---
 # <a name="xib-files-in-xamarinmac"></a>Xamarin 中的 xib 文件
 
@@ -33,11 +33,9 @@ MacOS 使用 xib 文件定义应用程序的用户界面（例如菜单、窗口
 
 你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " `Register` [向目标公开C#类/方法](~/mac/internals/how-it-works.md)" 部分，并说明用于将C#类连接到的和`Export`特性。目标-C 对象和 UI 元素。
 
-
 ## <a name="introduction-to-xcode-and-interface-builder"></a>Xcode 和 Interface Builder 简介
 
 作为 Xcode 的一部分，Apple 已创建名为 Interface Builder 的工具，它允许你在设计器中直观地创建用户界面。 Xamarin 将流畅地与 Interface Builder 集成在一起，使你能够通过目标为 C 的用户所用的工具创建 UI。
-
 
 ### <a name="components-of-xcode"></a>Xcode 组件
 
@@ -47,23 +45,19 @@ MacOS 使用 xib 文件定义应用程序的用户界面（例如菜单、窗口
 
 让我们看一下其中每个 Xcode 部分的作用，以及如何使用它们来创建 Xamarin 应用程序的接口。
 
-
 #### <a name="project-navigation"></a>项目导航
 
 当您打开一个用于在Xcode中进行编辑的.xib文件时，Visual Studio for Mac会在后台创建一个Xcode项目文件，以在其自身与Xcode之间传递更改。 更高版本，当你切换回 Visual Studio for Mac 从 Xcode，对此项目进行任何更改与同步 Xamarin.Mac 项目由 Visual Studio for Mac。
 
 "**项目导航**" 部分用于在组成此_填充码_Xcode 项目的所有文件之间导航。 通常，你只对此列表中的 xib 文件感兴趣，如**MainMenu. xib**和**mainwindow.xaml**。
 
-
 #### <a name="interface-hierarchy"></a>接口层次结构
 
 "**接口层次结构**" 部分可让你轻松访问用户界面的多个关键属性，如其**占位符**和主**窗口**。 你还可以使用此部分访问组成用户界面的各个元素（视图），并通过在层次结构内拖动这些元素来调整其嵌套方式。
 
-
 #### <a name="interface-editor"></a>界面编辑器
 
 "**界面编辑器**" 部分提供了图形化用户界面的图面。 你将从 "**属性" & "实用程序**" 部分的 "**库**" 部分中拖动元素，以创建你的设计。 将用户界面元素（视图）添加到设计图面时，它们将按照它们在 "**界面编辑器**" 中出现的顺序添加到 "**接口层次结构**" 部分。
-
 
 #### <a name="properties--utilities"></a>& 实用工具的属性
 
@@ -93,7 +87,6 @@ MacOS 使用 xib 文件定义应用程序的用户界面（例如菜单、窗口
 ![库检查器的示例](xib-images/xcode06.png "库检查器的示例")
 
 现在你熟悉了 Xcode IDE 和 Interface Builder，接下来让我们看一下如何使用它来创建用户界面。
-
 
 ## <a name="creating-and-maintaining-windows-in-xcode"></a>在 Xcode 中创建和维护窗口
 
@@ -176,7 +169,6 @@ namespace MacXib
 
 [![编辑 mainwindow.xaml. xib](xib-images/edit02.png "编辑 mainwindow.xaml. xib")](xib-images/edit02-large.png#lightbox)
 
-
 ### <a name="standard-window-workflow"></a>标准窗口工作流
 
 对于你在 Xamarin Mac 应用程序中创建和使用的任何窗口，该过程基本上是相同的：
@@ -188,7 +180,6 @@ namespace MacXib
 5. 使用**大小检查器**处理 UI 元素的大小调整。
 6. 通过插座和操作向C#代码公开窗口的 UI 元素。
 7. 保存更改并切换回 Visual Studio for Mac 以便与 Xcode 同步。
-
 
 ### <a name="designing-a-window-layout"></a>设计窗口布局
 
@@ -240,11 +231,9 @@ namespace MacXib
 
 有关在 Xamarin Mac 应用程序中使用 Windows 的详细信息，请参阅我们的[windows](~/mac/user-interface/window.md)文档。
 
-
 ## <a name="exposing-ui-elements-to-c-code"></a>向C#代码公开 UI 元素
 
 在 Interface Builder 中完成用户界面的外观布局后，你将需要公开 UI 的元素，以便可以从代码中C#访问这些元素。 为此，你将使用操作和插座。
-
 
 ### <a name="setting-a-custom-main-window-controller"></a>设置自定义主窗口控制器
 
@@ -266,7 +255,6 @@ namespace MacXib
 
     [![Xcode 中匹配的 .h 文件](xib-images/windowcontroller03.png "Xcode 中匹配的 .h 文件")](xib-images/windowcontroller03-large.png#lightbox)
 
-
 ### <a name="outlets-and-actions"></a>插座和操作
 
 什么是插座和操作？ 在传统的 .NET 用户界面编程中，用户界面中的控件在添加时会自动作为属性公开。 然而在 Mac 中情况则不同，如果仅将控件添加到视图，代码不可对其进行访问。 开发人员必须对代码显式公开 UI。 为此，Apple 提供了两个选项：
@@ -281,7 +269,6 @@ namespace MacXib
 [![Xcode 中的 .h 文件的示例](xib-images/xcode16.png "Xcode 中的 .h 文件的示例")](xib-images/xcode16-large.png#lightbox)
 
 此存根 .h 文件会在创建新`NSWindow`的时反映自动添加到 Xamarin Mac 项目的 MainWindow.designer.cs。 此文件将用于同步 Interface Builder 所做的更改，我们将在其中创建输出口和操作，以便向C#代码公开 UI 元素。
-
 
 #### <a name="adding-an-outlet"></a>添加插座
 
@@ -312,7 +299,6 @@ namespace MacXib
     ![已完成的输出口](xib-images/outlet06.png "已完成的输出口")
 10. 保存对文件所做的更改。
 
-
 #### <a name="adding-an-action"></a>添加操作
 
 接下来，让我们看看如何创建操作，以向C#代码公开用户与 UI 元素的交互。
@@ -335,7 +321,6 @@ namespace MacXib
 6. 保存对文件所做的更改。
 
 在用户界面上连线并向C#代码公开后，切换回 Visual Studio for Mac，并让它同步 Xcode 和 Interface Builder 中的更改。
-
 
 ### <a name="writing-the-code"></a>编写代码
 
@@ -400,7 +385,6 @@ void OpenDialog (NSObject sender)
 
 有关使用菜单的详细信息，请参阅我们的[菜单](~/mac/user-interface/menu.md)文档。
 
-
 ## <a name="synchronizing-changes-with-xcode"></a>与 Xcode 同步更改
 
 切换回 Xcode 的 Visual Studio for Mac 时，在 Xcode 中所做的任何更改都将自动与 Xamarin 项目同步。
@@ -432,7 +416,6 @@ partial void ClickedButton (Foundation.NSObject sender);
 
 > [!IMPORTANT]
 > 在大多数情况下，Visual Studio for Mac将自动查看Xcode中所做的任何更改并将其同步到Xamarin.Mac项目。 如果同步不自动进行，请切换回 Xcode，然后再次切换到 Visual Studio for Mac。 这通常会开始同步周期。
-
 
 ## <a name="adding-a-new-window-to-a-project"></a>向项目添加新窗口
 
@@ -471,7 +454,6 @@ void ShowPreferences (NSObject sender)
 ![运行示例应用](xib-images/new04.png "运行示例应用")
 
 有关在 Xamarin Mac 应用程序中使用 Windows 的详细信息，请参阅我们的[windows](~/mac/user-interface/window.md)文档。
-
 
 ## <a name="adding-a-new-view-to-a-project"></a>向项目添加新视图
 
@@ -575,17 +557,15 @@ private void DisplaySubview(NSViewController controller, SubviewType type) {
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-这将为要显示的新视图创建视图控制器的新实例，设置其类型（由添加到项目中的枚举指定）并使用添加到窗口的`DisplaySubview`类的方法来实际显示视图。 例如：
+这将为要显示的新视图创建视图控制器的新实例，设置其类型（由添加到项目中的枚举指定）并使用添加到窗口的`DisplaySubview`类的方法来实际显示视图。 例如:
 
 [![运行示例应用](xib-images/view04.png "运行示例应用")](xib-images/view04-large.png#lightbox)
 
 有关在 Xamarin 应用程序中使用 Windows 的详细信息，请参阅我们的[窗口](~/mac/user-interface/window.md)和[对话框](~/mac/user-interface/dialog.md)文档。
 
-
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用 xib 文件。 我们看到了不同的类型和使用 xib 文件来创建应用程序的用户界面，如何在 Xcode 的 Interface Builder 中创建和维护 xib 文件以及如何在代码中C#使用 xib 文件。
-
 
 ## <a name="related-links"></a>相关链接
 

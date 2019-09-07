@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 146dc66974f6e0c6e6a8f7bf9f46b570025eaead
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f8dc533d1428d622d9b01b8b8dd879653f78fd56
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280378"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769516"
 ---
 # <a name="request-app-review-in-xamarinios"></a>在 Xamarin 中请求应用评审
 
@@ -68,8 +68,6 @@ namespace iOSTenThree
 ## <a name="summary"></a>总结
 
 本文介绍了 Apple 添加到 iOS 10 的 RequestReview 方法，以及如何在 Xamarin 中实现它。
-
-
 
 ## <a name="related-links"></a>相关链接
 

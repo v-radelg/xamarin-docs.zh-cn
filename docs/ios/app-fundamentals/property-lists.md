@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 35c35e702b7f992e0661630783edd4f00abce5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286793"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767377"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>在 Xamarin 中使用属性列表
 
@@ -32,7 +32,6 @@ Visual Studio for Mac 功能 info.plist 编辑器，使编辑应用属性和功�
 - **高级面板**-"高级" 面板是用于指定支持的文档类型、UTI 和 URL 类型的位置。
 - **源面板**-"源" 面板控制不太常见的属性和应用程序的自定义属性。
 
-
 接下来的三个部分将更详细地研究每个面板的功能。
 
 ## <a name="application-panel"></a>应用程序面板
@@ -46,11 +45,9 @@ Visual Studio for Mac 功能是一种图形界面， `Info.plist`用于编辑应
 1. 图标和启动屏幕
 1. 映射和后台模式
 
-
 下一节将对此进行更详细的介绍。
 
  <a name="iOS_Application_Target" />
-
 
 ### <a name="ios-application-target"></a>iOS 应用程序目标
 
@@ -77,13 +74,9 @@ Visual Studio for Mac 功能是一种图形界面， `Info.plist`用于编辑应
 
  <a name="Icons" />
 
-
 ### <a name="icons-launch-images-and-itunes-artwork"></a>图标、启动图像和 iTunes 图稿
 
 有关如何在 info.plist 文件中使用图标、图像和图稿的信息，请参阅使用[图像](~/ios/app-fundamentals/images-icons/index.md)指南。
-
-
-
 
 ### <a name="maps-integration-and-background-modes"></a>映射集成和后台模式
 
@@ -104,7 +97,6 @@ Visual Studio for Mac 功能是一种图形界面， `Info.plist`用于编辑应
  [![](property-lists-images/image34.png "高级面板")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
-
 
 ## <a name="document-types"></a>文档类型
 
@@ -127,8 +119,6 @@ Visual Studio for Mac 功能是一种图形界面， `Info.plist`用于编辑应
 URL 方案名称（也称为协议）是 URL 的第一部分。 例如， `http://`和`https://`是常用的 URL 方案。 你可以选择为应用程序创建自定义 URL 方案。 自定义 URL 方案用于与其他应用程序来回通信和发送数据。 以下屏幕截图演示了如何创建名`monkeys://`为的新的自定义 URL 方案：
 
  [![](property-lists-images/url.png "自定义 Url")](property-lists-images/url.png#lightbox)
-
-
 
 有关实现自定义 URL 方案的详细信息，请参阅[本指南的 Apple 实现自定义 Url 方案部分](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 
@@ -153,7 +143,6 @@ Visual Studio for Mac 还会检测属性类型，如下所示：
 ## <a name="summary"></a>总结
 
 本文演示了如何使用图形和 info.plist 编辑器来编辑常见的应用配置以及指定图标和启动图像。 它还引入了`Entitlements.plist`用于添加和管理应用功能的。
-
 
 ## <a name="related-links"></a>相关链接
 

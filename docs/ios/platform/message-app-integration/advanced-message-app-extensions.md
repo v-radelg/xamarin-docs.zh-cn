@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4e488f43f966ca8efd58de4d2bb8f16997d1322e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bf6853ef94ff0be5382bab02192070a20884c31e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290946"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769683"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的高级消息应用扩展
 
 _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级方法，该解决方案与 Messages 应用集成并向用户提供新功能。_
-
 
 新的 iOS 10，消息应用扩展与**Messages**应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
 
@@ -55,7 +54,6 @@ _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级
 接收用户可以通过在消息历史记录中点击消息 "冒泡" 来加载创建它的消息应用扩展，来回复交互式消息。 该扩展将以全屏幕启动，并允许用户撰写答复并将其发送回发起方用户。
 
 [![](advanced-message-app-extensions-images/interactive02.png "扩展已启动全屏")](advanced-message-app-extensions-images/interactive02.png#lightbox)
-
 
 下面将详细介绍以下主题：
 
@@ -419,14 +417,13 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 在这两种情况下，当用户点击属于消息应用扩展的消息气泡时，它需要`MSMessage` `SelectedMessage`使用的`MSConversation`属性来获取对的访问权限。
 
-例如：
+例如:
 
 ```csharp
 using System;
 using Foundation;
 using Messages;
 using UIKit;
-
 
 namespace MessageExtension
 {
@@ -605,7 +602,6 @@ public override void DidStartSendingMessage (MSMessage message, MSConversation c
 ## <a name="summary"></a>总结
 
 本文介绍了一些高级技术，适用于在与**Messages**应用集成的 Xamarin iOS 解决方案中使用消息应用扩展，并向用户提供新功能。
-
 
 ## <a name="related-links"></a>相关链接
 

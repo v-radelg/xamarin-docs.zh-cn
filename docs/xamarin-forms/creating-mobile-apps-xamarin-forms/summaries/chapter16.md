@@ -1,18 +1,18 @@
 ---
 title: 第 16 章的摘要。 数据绑定
-description: 使用 Xamarin.Forms 创建移动应用：第 16 章的摘要。 数据绑定
+description: 用 Xamarin 创建移动应用程序：第 16 章的摘要。 数据绑定
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: df3cee3fe71553b63bf4b050cad141b66ad98a06
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334168"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771103"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章的摘要。 数据绑定
 
@@ -138,8 +138,6 @@ ms.locfileid: "61334168"
 相反[ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml)文件包含通过数据绑定控件的视觉对象的所有标记上`Label`元素基于代码隐藏文件中定义的属性。
 
 [ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo)示例演示`NewCheckBox`自定义控件。
-
-
 
 ## <a name="related-links"></a>相关链接
 

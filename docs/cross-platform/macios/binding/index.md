@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: conceptdev
 ms.author: crdun
 ms.date: 01/25/2016
-ms.openlocfilehash: 8975bb899127d0761359bec695cd084f89c12972
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d48245ac6939a7b1a1528a7b42ec4a701f062a95
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290563"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765759"
 ---
 # <a name="binding-objective-c"></a>绑定 Objective-C
 
@@ -29,7 +29,6 @@ ms.locfileid: "70290563"
 ## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[绑定定义参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 
 这是描述绑定作者用于驱动绑定生成过程的所有可用属性的参考指南。
-
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[目标 Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

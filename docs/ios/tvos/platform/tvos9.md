@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290718"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769111"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 简介
 
@@ -175,11 +175,6 @@ Apple TV 主屏幕显示所有已安装的应用，并提供一种方法来访�
 它不会显示静态的顶层图像，而是包含动态行、可设定焦点的项或动态的滚动条带集。 这两种动态样式都允许您突出显示应用程序提供的内容或跳转到其最常用的功能。
 
 有关详细信息，请参阅[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档和 Apple 的[TVServices Framework 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412)，了解有关将顶层扩展添加到应用的详细信息，以提供动态的顶层内容。
-
-
-
-
-
 
 ## <a name="related-links"></a>相关链接
 

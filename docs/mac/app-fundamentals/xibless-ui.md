@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 5776855039120b0c856a76a31334420ded2a2d65
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283329"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770161"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>xib-在 Xamarin 中的用户界面设计更少
 
@@ -45,7 +45,6 @@ _本文介绍如何直接从C#代码创建 Xamarin 应用程序的用户界面�
 现在，我们需要修改**MainWindow.cs**文件以定义窗口的布局，并修改**ViewController.cs**或**MainWindowController.cs**文件，以`MainWindow`创建类的实例，因为我们不再使用。情节提要或 xib 文件。
 
 将情节提要用于其用户界面的新式 Xamarin 应用程序可能不会自动包括**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**文件。 根据需要，只需向项目添加C#新的空类（"**添加** > **新文件 ...** " > 常规空 > **类**）并将其命名为与缺少的文件相同。
-
 
 ### <a name="defining-the-window-in-code"></a>在代码中定义窗口
 
@@ -178,7 +177,6 @@ ContentView.AddSubview (ClickMeLabel);
 
 同样， `ContentView.AddSubview (ClickMeLabel)`方法会`NSTextField`将添加到内容视图中，以便在应用程序运行和打开窗口时，它将显示在屏幕上。
 
-
 ### <a name="adjusting-the-window-controller"></a>调整窗口控制器
 
 由于的设计`MainWindow`不再从 storyboard 或 xib 文件加载，因此我们需要对窗口控制器进行一些调整。 编辑**MainWindowController.cs**文件并使其类似于以下内容：
@@ -268,7 +266,6 @@ Window.AwakeFromNib ();
 
 这将允许你对窗口进行编码，就像从 xib 或文件加载的标准窗口一样。
 
-
 ### <a name="displaying-the-window"></a>显示窗口
 
 如果删除了 xib 文件并修改了**MainWindow.cs**和**MainWindowController.cs**文件，则将使用窗口，就像使用 xib 文件 Xcode 的 Interface Builder 中创建的任何正常窗口一样。
@@ -287,7 +284,6 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ![示例应用运行](xibless-ui-images/run01.png "示例应用运行")
 
-
 ## <a name="adding-a-code-only-window"></a>添加仅限代码的窗口
 
 如果只想要将代码添加到现有 Xamarin Mac 应用程序，请在**Solution Pad**中右键单击该项目，然后选择 "**添加** > **新文件 ...** "在 "**新建文件**" 对话框 > 中，选择**包含控制器的 Xamarin Cocoa 窗口**，如下所示：
@@ -296,10 +292,9 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 就像以前一样，我们将从项目中删除默认的 xib 文件（在本例中为**SecondWindow**），并按照上面的[切换窗口以使用代码](#Switching_a_Window_to_use_Code)部分中所述的步骤，将窗口的定义覆盖到代码。
 
-
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>在代码中将 UI 元素添加到窗口
 
-无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口，有时都可能需要将 UI 元素从代码添加到窗口。 例如:
+无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口，有时都可能需要将 UI 元素从代码添加到窗口。 例如：
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
@@ -309,7 +304,6 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 ```
 
 上面的代码将创建一个`NSButton`新的，并将`MyWindow`其添加到窗口实例中以供显示。 可以在 Xcode 中的 Interface Builder 中定义的任何 UI 元素，也可以在代码中创建，并将其显示在窗口中。
-
 
 ## <a name="defining-the-menu-bar-in-code"></a>在代码中定义菜单栏
 
@@ -359,12 +353,9 @@ public override void DidFinishLaunching (NSNotification notification)
 
 上述代码从代码创建状态栏菜单，并在启动应用程序时显示它。 有关使用菜单的详细信息，请参阅我们的[菜单](~/mac/user-interface/menu.md)文档。
 
-
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何在代码中C#创建 Xamarin 应用程序的用户界面，而不是使用 Xcode 的 Interface Builder 和 xib 文件。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 314b341b7cfb40c62a5d6469ca22d2889f5a8057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9714d78419754413ae5f1d0e5015a418fa8ab884
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291759"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769561"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin 中通过 NSUserActivity 进行搜索
 
@@ -165,8 +165,6 @@ activity.BecomeCurrent();
 - **移交**-由于应用搜索使用与移交`NSUserActivity`相同的机制公开内容、导航和/或功能，因此你可以轻松地允许应用的用户在一个设备上启动活动，并在另一台设备上继续操作。
 - **Siri 建议**-除了 Siri 建议通常做出的标准建议外，还可自动建议应用中的在职。
 - **Siri 智能提醒**-用户将能够要求 Siri 提醒用户应用中的活动。
-
-
 
 ## <a name="related-links"></a>相关链接
 

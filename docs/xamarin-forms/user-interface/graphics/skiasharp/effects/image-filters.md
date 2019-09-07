@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 10b61a7279964e8e1fb76a88be4f253e96b59908
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199196"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770541"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像筛选器
 
@@ -28,7 +28,7 @@ ms.locfileid: "70199196"
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>模糊矢量图形和位图
 
-[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法创建的模糊效果与[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)类中的模糊方法相比具有明显的优势:图像筛选器可以对整个位图进行模糊。 该方法具有以下语法：
+[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法创建的模糊效果与[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)类中的模糊方法相比具有明显的优势：图像筛选器可以对整个位图进行模糊。 该方法具有以下语法：
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -76,7 +76,6 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 ```
 
 代码隐藏文件使用两个`Slider`值调用`SKImageFilter.CreateBlur`为`SKPaint`对象，用于显示文本和位图：
-
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -427,7 +426,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许您选择负 Z 值, 但这只是为了您可以看到发生了什么情况:从概念上讲, 负 Z 坐标使光源指向屏幕。 用于任何其他然后小负值，光照效果将停止工作。
+第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许您选择负 Z 值，但这只是为了您可以看到发生了什么情况：从概念上讲，负 Z 坐标使光源指向屏幕。 用于任何其他然后小负值，光照效果将停止工作。
 
 `surfaceScale`自变量的范围可以介于-1 到 1。 （高或较低的值不会进一步影响。）这些是在 Z 轴相对指示画布图面中的图形对象 （在此情况下，文本字符串） 的偏移量的值。 使用负值引发在画布的图面上面的文本字符串和正值按其下进画布。
 
@@ -439,7 +438,7 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android 屏幕快照具有 Z 值为 0，这意味着向下和向右仅指向光线。 在后台不点亮，照亮的文本字符串的图面并不是。 光只影响非常细微效果的文本的边缘。
 
-[转换转换](../transforms/translate.md)中介绍了一种用于浮凸和阴文文本的替代方法:文本字符串将显示两次, 颜色分别偏移不同的颜色。
+[转换转换](../transforms/translate.md)中介绍了一种用于浮凸和阴文文本的替代方法：文本字符串将显示两次，颜色分别偏移不同的颜色。
 
 ## <a name="related-links"></a>相关链接
 

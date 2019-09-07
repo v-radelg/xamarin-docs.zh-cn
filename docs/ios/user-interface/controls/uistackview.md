@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: a3adbf18e18e4f2a42ed3c89162455040a9fe699
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bde76891b4b01800384ee0579e3fbe14987c5420
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282690"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768391"
 ---
 # <a name="stack-views-in-xamarinios"></a>Xamarin 中的堆栈视图
 
@@ -270,8 +270,6 @@ UIView.Animate(0.25, ()=>{
 
 本文介绍了新`UIStackView`的控件（适用于 iOS 9），可以在 Xamarin iOS 应用中的水平或垂直排列的堆栈中管理一组子视图。
 它首先是一个简单的示例，说明如何使用堆栈视图创建 UI，并已完成堆栈视图及其属性和功能的详细介绍。
-
-
 
 ## <a name="related-links"></a>相关链接
 

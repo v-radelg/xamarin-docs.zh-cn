@@ -6,12 +6,12 @@ ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: bd97406501df155561e0e240607740430dbf4ac3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284591"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758137"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin 应用中的辅助功能
 
@@ -68,8 +68,6 @@ _确保你的应用程序可由最广泛的受众使用_
 ### <a name="localize"></a>Localize
 
 辅助功能说明可以（并且应该）在应用程序支持多种语言的位置本地化。
-
-
 
 ## <a name="related-links"></a>相关链接
 

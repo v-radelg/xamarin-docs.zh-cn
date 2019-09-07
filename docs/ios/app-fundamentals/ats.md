@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2017
-ms.openlocfilehash: dc435f486d0020ab339ebd8f537f749f44493fe0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 039a73b45f93525631635a9a73bf153c7938bc92
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289497"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766667"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的应用传输安全
 
 _应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接。_
 
 本文将介绍应用传输安全在 iOS 9 应用上强制实施的安全更改，以及[这对你的 Xamarin iOS 项目的意义](#xamarinsupport)，它将介绍[ATS 配置选项](#config)，并将介绍如何[选择退出 ATS](#optout)ATS （如果需要）。 因为默认情况下启用 ATS，所以任何不安全的 internet 连接将在 iOS 9 应用程序中引发异常（除非你显式允许）。
-
 
 ## <a name="about-app-transport-security"></a>关于应用传输安全
 
@@ -90,7 +89,6 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 
 ![](ats-images/client01.png "设置 iOS 生成选项")
 
-
 #### <a name="managed-handler"></a>托管处理程序
 
 托管处理程序是完全托管的 HttpClient 处理程序，它与早期版本的 Xamarin 一起提供，是默认处理程序。
@@ -145,7 +143,6 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 由于默认情况下，在为 iOS 9 和 OS X 10.11 （El Capitan）构建的应用中启用了 ATS `NSURLConnection`， `CFURL`因此`NSURLSession` ，使用或的所有连接都将受到 ATS 安全要求。 如果连接不满足这些要求，它们将失败并出现异常。
 
 Apple 还提供了[TLSTool 示例应用](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)，可对其进行编译（或选择性地转码C#到 Xamarin 和）并用于诊断 ATS/TLS 问题。 有关如何解决此问题的信息，请参阅下面的 ATS 部分中的 "选择[退出](#optout)" 部分。
-
 
 <a name="config" />
 
@@ -217,7 +214,6 @@ NSAppTransportSecurity
 
 [![](ats-images/ats01.png "Info.plist 文件的源视图")](ats-images/ats01.png#lightbox)
 
-
 如果你的应用程序需要从非安全站点中加载和显示 web 内容，请将以下内容添加到你的应用程序的**info.plist**文件中，以便在应用程序的其余部分仍启用 Apple 传输安全（ATS）保护时正确加载网页：
 
 ```xml
@@ -245,9 +241,6 @@ NSAppTransportSecurity
 > [!IMPORTANT]
 > 如果你的应用程序需要连接到不安全的网站，则应**始终**使用`NSExceptionDomains`将该域输入为异常，而不是使用完全`NSAllowsArbitraryLoads`关闭 ATS。 `NSAllowsArbitraryLoads` 仅应在极端的紧急情况下使用。
 
-
-
-
 同样，如果切换到安全连接不可用或不实用，_只_应将 ATS 禁用。
 
 <a name="Summary" />
@@ -255,8 +248,6 @@ NSAppTransportSecurity
 ## <a name="summary"></a>总结
 
 本文介绍了应用传输安全（ATS）并介绍了如何通过 internet 进行安全通信。 首先，我们介绍了 ATS 在 iOS 9 上运行的 Xamarin iOS 应用所需的更改。 然后我们介绍了如何控制 ATS 的功能和选项。 最后，我们在 Xamarin iOS 应用中介绍了 ATS。
-
-
 
 ## <a name="related-links"></a>相关链接
 

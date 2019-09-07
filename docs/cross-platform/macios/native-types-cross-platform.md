@@ -6,17 +6,16 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: conceptdev
 ms.author: crdun
 ms.date: 04/07/2016
-ms.openlocfilehash: dde5b2429622c967fa4419700ce8fe9860afbb10
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 273b7f2eb40f1fa8495e0a0e8e18fa947241f389
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290853"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765391"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>使用跨平台应用中的本机类型
 
 _本文介绍如何在跨平台应用程序中使用新的 iOS Unified API 本机类型（nint、nuint、nfloat），该应用程序中的代码与 Android 或 Windows Phone Os 等非 iOS 设备共享。_
-
 
 64类型本机类型适用于 iOS 和 Mac Api。 如果你正在编写在 Android 或 Windows 上运行的共享代码，则需要管理统一类型到你可以共享的常规 .NET 类型的转换。
 
@@ -211,10 +210,9 @@ namespace NativeShared
 
 如果在非 Unified API 设备上编译并`using nfloat = global::System.Single;`运行代码，则会将`nfloat`映射到`Single` ，它将隐式转换为`float` ，以允许使用的前端应用程序调用`CalculateArea`方法，而不会做.
 
-
 #### <a name="using-type-conversions-in-the-front-end-app"></a>在前端应用中使用类型转换
 
-如果你的前端应用程序只对你的共享代码库进行少量调用，另一个解决方案是将库保持不变，并在调用现有例程时在 Xamarin 或 Xamarin 应用程序中执行类型强制转换。 例如:
+如果你的前端应用程序只对你的共享代码库进行少量调用，另一个解决方案是将库保持不变，并在调用现有例程时在 Xamarin 或 Xamarin 应用程序中执行类型强制转换。 例如：
 
 ```csharp
 using NativeShared;
@@ -227,7 +225,6 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 如果使用的应用程序对共享代码库进行数百次调用，则这可能不是一个好的解决方案。
 
 根据应用程序的体系结构，我们可能会使用一个或多个上述解决方案来支持跨平台代码中的本机数据类型（需要时）。
-
 
 ## <a name="xamarinforms-applications"></a>Xamarin. Forms 应用程序
 
@@ -243,8 +240,6 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 ## <a name="summary"></a>总结
 
 在本文中，我们已了解何时在 Unified API 应用程序中使用本机数据类型，以及它们在跨平台上的含义。 我们提供了几种解决方案，可用于在跨平台库中必须使用新的本机数据类型的情况下使用。 此外，我们还了解了如何在 Xamarin 中支持统一 Api 的快速指南。
-
-
 
 ## <a name="related-links"></a>相关链接
 

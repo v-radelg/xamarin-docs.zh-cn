@@ -1,18 +1,18 @@
 ---
 title: 第 24 章的摘要。 页导航
-description: 使用 Xamarin.Forms 创建移动应用：第 24 章的摘要。 页导航
+description: 用 Xamarin 创建移动应用程序：第 24 章的摘要。 页导航
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: ce56c30cd631e87d39c9c5bda101b67252a0762a
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 340aa8c7327ba75986b960d5e0f6bda66c116fc5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926893"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770931"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 页导航
 
@@ -170,8 +170,6 @@ Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)类提供
 ### <a name="something-like-a-real-life-app"></a>类似于实际的应用
 
 [ **NoteTaker** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/NoteTaker)示例还使用`MultiPageRestorableApp`，并允许进行的输入和编辑的便笺中保存的`Properties`字典。
-
-
 
 ## <a name="related-links"></a>相关链接
 

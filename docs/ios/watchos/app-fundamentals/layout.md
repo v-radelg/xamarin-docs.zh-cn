@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 5272921cade2b9dadd24a4c917e6251ac591e178
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292313"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768754"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>使用 watchOS 在 Xamarin 中的布局
 
@@ -34,7 +34,6 @@ ms.locfileid: "70292313"
 
 - 使用[`Menu`控制](~/ios/watchos/user-interface/menu.md)到不经常使用的公开功能，使您的应用程序设计简洁明了。
 
-
 ## <a name="implementation"></a>实现
 
 监视包包括以下控件以帮助您构建极具吸引力的监视应用程序布局：
@@ -55,7 +54,6 @@ ms.locfileid: "70292313"
 
 ![](layout-images/button-attributes.png "提供比例值和偏移量的调整")
 
-
 ### <a name="group"></a>Group
 
 `WKInterfaceGroup` 是可以配置为堆栈的简单布局容器控件垂直或水平。 它包括默认情况下，每个控件之间的间距，但您可以修改的间距 （和内边距） 中**属性**检查器。
@@ -65,7 +63,6 @@ ms.locfileid: "70292313"
 组可以自己可调整大小和定位相对于围绕它们控件和组可以嵌套以创建复杂的布局。
 
 ![](layout-images/group-scene.png "组可以嵌套以创建复杂的布局")
-
 
 ### <a name="separator"></a>Separator
 
@@ -79,8 +76,6 @@ Separator 控件旨在帮助提供在布局中的可视指南。 使用分隔符
 
 没有布局都是不完整`Label`， `Image`， `Button`， `Switch`， `Slider`， `Map`，以及[其他控件](~/ios/watchos/user-interface/index.md)。
 可以使用的布局中定位这些**组**或每个控件上的位置和大小设置。
-
-
 
 ## <a name="related-links"></a>相关链接
 

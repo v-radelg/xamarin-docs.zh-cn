@@ -5,12 +5,12 @@ description: 本文档比较 Xamarin 和 WPF 应用程序的应用程序生命�
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d1c207672baf37c91d39fca1d9f628d85971577
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290378"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765908"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 与Xamarin.Forms 应用程序生命周期
 
@@ -87,7 +87,6 @@ Xamarin 的主要目的是围绕移动方案。 因此，当用户与应用程�
 |暂停/丢失焦点|Window.OnDeactivated|Page.OnSleep|
 |已激活/获得焦点|Window.OnActivated|OnResume|
 |已关闭|OnClosing + OnClosed|n/a|
-
 
 两者都支持隐藏/显示子控件，在 WPF 中，它是一个三状态属性`IsVisible` （可见、隐藏和折叠）。 在 Xamarin 中，它只是通过`IsVisible`属性可见或隐藏。
 

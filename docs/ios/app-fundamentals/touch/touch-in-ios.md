@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 492682b1f7647201f15678a5162281e0a7a916d6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 577bc7af34c463aec65148bd97dc5dd49262d699
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280087"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767088"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Xamarin 中的触摸事件和手势
 
@@ -41,7 +41,6 @@ imgTouchMe.UserInteractionEnabled = true;
 - `TouchesBegan`–当首次触摸屏幕时，将调用此。
 - `TouchesMoved`–当触摸位置随着用户在屏幕上滑动手指时，会调用此方法。
 - `TouchesEnded`或`TouchesCancelled` –`TouchesEnded`在用户的手指从屏幕上提起时调用。  `TouchesCancelled`如果 iOS 取消触摸，则会调用–例如，如果用户从按钮滑开按钮以取消按下。
-
 
 触摸事件在 UIViews 堆栈中以递归方式传播，以检查触控事件是否在视图对象的边界内。 这通常称为_命中测试_。 `UIView`首先在最顶层`UIViewController`调用，然后在视图层次结构中的`UIView`下面和`UIViewControllers`下面调用它们。
 
@@ -126,7 +125,6 @@ Xamarin 将类`UIGestureRecognizer`作为以下内置笔势识别器的基类提
 - *UIRotationGestureRecognizer* –顺时针或逆时针运动旋转两根手指。
 - *UILongPressGestureRecognizer* –按下并保持，有时称为长按下或长时间单击。
 
-
 使用手势识别器的基本模式如下所示：
 
 1. **实例化手势识别器**–首先实例化`UIGestureRecognizer`子类。 实例化的对象将由视图关联，并将在处理视图时进行垃圾收集。 不需要将此视图创建为类级别的变量。
@@ -152,7 +150,6 @@ _tapGesture.Recognizer.CancelsTouchesInView = false;
 1. *离散*–这些手势仅在首次识别时才会激发。
 1. *连续*–只要识别这些手势，它们就会继续激发。
 
-
 笔势识别器存在于以下状态之一：
 
 - *可能*–这是所有手势识别器的初始状态。 这是 State 属性的默认值。
@@ -162,7 +159,6 @@ _tapGesture.Recognizer.CancelsTouchesInView = false;
 - 已*识别*–当手势识别器匹配一组触摸时，将设置状态，并通知订阅者该笔势已完成。
 - 已*结束*–这是可识别状态的别名。
 - *Failed* –当手势识别器不能再与它正在侦听的触控不匹配时，状态将更改为 "已失败"。
-
 
 Xamarin 在`UIGestureRecognizerState`枚举中表示这些值。
 
@@ -178,7 +174,6 @@ gesture.ShouldRecognizeSimultaneously += (UIGestureRecognizer r) => { return tru
 
 1. *ShouldReceiveTouch* –在手势识别器传递触控事件之前，将调用此委托，并提供检查触控并决定手势识别器将处理哪些触摸的机会。
 1. *ShouldBegin* –在识别器尝试将状态从可能更改为其他状态时调用。 如果返回 false，则会强制将手势识别器的状态更改为 "已失败"。
-
 
 您可以使用强类型化`UIGestureRecognizerDelegate`的弱委托重写这些方法，或通过事件处理程序语法进行绑定，如下面的代码段所示：
 
@@ -199,6 +194,5 @@ singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
 1. 子类`UIGestureRecognizer` 。
 1. 重写相应的触摸事件方法。
 1. 通过基类的状态属性来向上冒泡识别状态。
-
 
 [使用 iOS](ios-touch-walkthrough.md)演练中介绍了这种情况的一个实际示例。

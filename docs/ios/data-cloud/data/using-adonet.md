@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3526ee254a3986e1ff59288adeb95a49129b8b60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a9df85a405bc086f86dae73fea615581bf9d28d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290971"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767390"
 ---
 # <a name="using-adonet-with-xamarinios"></a>将 ADO.NET 与 Xamarin 配合使用
 
@@ -37,7 +37,6 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 ## <a name="about-monodatasqlite"></a>关于 Mono. Sqlite
 
 我们将使用`Mono.Data.Sqlite.SqliteConnection`类创建一个空数据库文件，然后对对象进行实例`SqliteCommand`化，这些对象可用于针对数据库执行 SQL 指令。
-
 
 1. **创建空白数据库**-使用有效的`CreateFile` （即可写）文件路径调用方法。 在调用此方法之前，应检查该文件是否已存在，否则将在旧文件的顶部创建新的（空白）数据库，而旧文件中的数据将丢失：
 
@@ -153,7 +152,6 @@ public static string DoSomeDataAccess ()
 - **ExecuteReader** -在行集合应作为`SqlDataReader`返回时使用。
 - **ExecuteScalar** –检索单个值（例如聚合）。
 
-
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
 INSERT、UPDATE 和 DELETE 语句将返回受影响的行数。 所有其他 SQL 语句将返回-1。
@@ -199,7 +197,6 @@ ExecuteReader 方法返回 SqliteDataReader 对象。 除了示例中所示的 R
 - **RowsAffected** –受查询影响的行的计数。
 - **HasRows** –是否返回了任何行。
 
-
 ### <a name="executescalar"></a>EXECUTESCALAR
 
 对于返回单个值（例如聚合）的 SELECT 语句，请使用此语句。
@@ -212,7 +209,6 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 方法的返回类型为`object` –应根据数据库查询强制转换结果。 `ExecuteScalar` 结果可能是来自计数查询的整数，或是单个列 SELECT 查询中的字符串。 请注意，这与返回读取器对象或受影响的行数计数的其他执行方法不同。
-
 
 ## <a name="related-links"></a>相关链接
 

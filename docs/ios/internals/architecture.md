@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d59a295961c25ecfcc99bb54fdc188c957cf3ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291955"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768524"
 ---
 # <a name="ios-app-architecture"></a>iOS 应用程序体系结构
 
@@ -93,7 +93,6 @@ Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前�
 
 在 Xamarin 中使用了两种类型的注册机构–动态和静态：
 
-
 - **动态注册机构**–动态注册机构会在运行时注册程序集中的所有类型。 它通过使用由[目标 C 的运行时 API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)提供的函数来实现此目的。 因此，动态注册器的启动速度较慢，但生成时间更快。 这是 iOS 模拟器的默认设置。 使用动态注册机构时，本机函数（通常为 C）（称为 trampolines）用作方法实现。 它们在不同的体系结构之间有所不同。
 
 - **静态注册机构**–静态注册机构在生成过程中生成目标 C 代码，然后将其编译为静态库并链接到可执行文件。 这样就可以更快地启动，但在生成过程中花费的时间更长。 默认情况下，此设置用于设备生成。 静态注册器还可与 iOS 模拟器结合使用，方法是`--registrar:static`在项目`mtouch`的生成选项中传递作为属性，如下所示：
@@ -114,7 +113,6 @@ Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前�
 所有此启动序列均编译为静态库，然后将其链接到最终的可执行文件，以便您的应用程序了解如何实现基础。
 
 此时，我们的应用程序已启动，Mono 正在运行，我们在托管代码中，我们知道如何调用本机代码并回调。 接下来我们要做的是实际开始添加控件，并使应用程序成为交互的。
-
 
 ## <a name="generator"></a>Generator
 
@@ -165,7 +163,6 @@ public interface UIToolbar : UIBarPositioning {
 - 如果启用了链接，请运行托管链接器，以通过翻录未使用的部分来优化程序集。
 - AOT 编译。
 - 创建一个本机可执行文件，用于输出链接到本机可执行文件中的一系列静态库（每个程序集都有一个），以使本机可执行文件包含启动器代码、注册器代码（如果为静态）和来自 AOT 的所有输出编译程序
-
 
 有关链接器及其使用方式的详细信息，请参阅[链接器](~/ios/deploy-test/linker.md)指南。
 

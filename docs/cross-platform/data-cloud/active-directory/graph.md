@@ -6,12 +6,12 @@ ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 96e0991bb0805e61dfbf91e8479cbf1c9943f212
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fd3d94731f1a2a083be5f0e2f8ab541bc702a521
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287750"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766308"
 ---
 # <a name="accessing-the-graph-api"></a>访问图形 API
 
@@ -27,7 +27,6 @@ ms.locfileid: "70287750"
 
 > [!IMPORTANT]
 > 注意:Azure ADAL 3.0 当前为预览版，最终版本发布之前可能会有重大更改。 
-
 
 ![](graph-images/06.-adal-nuget-package.jpg "将引用添加到 Azure Active Directory 身份验证库（Azure ADAL）")
 
@@ -71,7 +70,6 @@ public static async Task<AuthenticationResult> GetAccessToken
 ### <a name="handle-continuation-for-android"></a>处理 Android 的继续符
 
 身份验证完成后，流应返回到应用。 对于 Android，将通过以下代码来处理它：应将其添加到**MainActivity.cs**：
-
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -118,4 +116,3 @@ request.Headers.Authorization =
 var response = await client.SendAsync(request);
 var content = await response.Content.ReadAsStringAsync();
 ```
-

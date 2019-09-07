@@ -6,12 +6,12 @@ ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 2811297e24aac726ae3c91e5354675499d4b9ddb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f93b741f5f091410a7f045a8e2a8538b3340208e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290075"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766333"
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>步骤 1。 注册应用程序以使用 Azure Active Directory
 
@@ -37,8 +37,6 @@ ms.locfileid: "70290075"
 6. 创建应用后，导航到 "**配置**" 选项卡。记下稍后将在应用程序中使用的**客户端 ID** 。 此外，在此屏幕上，你可以让移动应用程序访问 Active Directory 或添加其他应用程序（如 Web API 或 Office365），一旦身份验证完成，移动应用程序就可以使用这些应用程序。
 
    ![](register-images/05.-configure.jpg "此外，在此屏幕上，你可以让移动应用程序访问 Active Directory 或添加其他应用程序，如 Web API 或 Office365")
-
-
 
 ## <a name="related-links"></a>相关链接
 

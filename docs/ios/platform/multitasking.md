@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f38200e8274a36783ac7bd1aec4b695036f83e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280159"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769635"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中的 iPad 多任务
 
@@ -40,7 +40,6 @@ iOS 9 增加了对在特定 iPad 硬件上同时运行两个应用程序的多�
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
 **IPad 视频的多任务**
-
 
 <a name="Multitasking-QuickStart" />
 
@@ -251,8 +250,6 @@ public void NewEntry() {
 ## <a name="summary"></a>总结
 
 本文介绍了为确保 Xamarin.iOS 应用程序将运行并在 iOS 9 的新多任务能力 iPad 中的正确行为所需的步骤。 此外，它还介绍了如何在应用程序的不太适合的情况下，对应用程序进行多任务处理。
-
-
 
 ## <a name="related-links"></a>相关链接
 

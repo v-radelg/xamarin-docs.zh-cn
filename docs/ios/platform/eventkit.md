@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 638840bafd43961cdce6ebe0fa2fb6cbe8b33e16
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 960be485f6997ed8c861d47181fa89397cff9c0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291525"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753148"
 ---
 # <a name="eventkit-in-xamarinios"></a>Xamarin 中的 EventKit
 
@@ -24,7 +24,6 @@ EventKit 框架提供了一种方法，用于访问日历数据库存储的*日�
 
 - **EventKit 基础知识**-这将通过主要类引入 EventKit 的基本部分，并提供对其使用的了解。 在处理文档的下一部分之前，此部分是必需的。 
 - **常见任务**– "常见任务" 部分旨在作为常见操作（如）的快速参考。枚举日历、创建、保存和检索日历事件和提醒，以及使用内置控制器创建和修改日历事件。 此部分不需要从前台读取，因为它是特定任务的引用。 
-
 
 本指南中的所有任务都在随附示例应用程序中提供：
 
@@ -376,7 +375,6 @@ App.Current.EventStore.FetchReminders (
 ## <a name="summary"></a>总结
 
 本文档概述了 EventKit 框架的重要部分和多个最常见的任务。 不过，EventKit 框架非常大且功能强大，其中包括未在此处引入的功能，例如：批处理更新、配置警报、配置事件的重复周期、注册和侦听日历数据库上的更改。设置现成等。  有关详细信息，请参阅 Apple 的[日历和提醒编程指南](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)。
-
 
 ## <a name="related-links"></a>相关链接
 

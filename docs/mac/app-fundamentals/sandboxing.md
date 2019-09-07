@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290321"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770302"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>对 Xamarin 应用程序进行沙箱处理
 
@@ -562,8 +562,6 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何对 Xamarin 应用程序进行沙箱处理。 首先，我们创建了一个简单的 Xamarin 应用程序，用于显示应用沙盒的基本知识。 接下来，我们演示了如何解决沙盒冲突。 接下来，我们深入探讨了应用程序沙箱，最后介绍了如何设计应用程序沙箱的 Xamarin 应用程序。
-
-
 
 ## <a name="related-links"></a>相关链接
 

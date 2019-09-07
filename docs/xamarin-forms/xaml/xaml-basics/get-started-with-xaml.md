@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227966"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772804"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -102,7 +102,7 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 </ContentPage>
 ```
 
-这两个 XML 命名`xmlns`空间 () 声明引用了 uri、第一个看起来是 Xamarin 网站上的第二个和第二个。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
+这两个 XML 命名`xmlns`空间（）声明引用了 uri、第一个看起来是 Xamarin 网站上的第二个和第二个。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
 
 第一个 XML 命名空间声明意味着在没有任何前缀的 XAML 文件中定义的标记如指在 Xamarin.Forms 中，类`ContentPage`。 第二个命名空间声明定义前缀为`x`。 这使用多个元素和属性的 XAML 中的内部本身和它们支持 XAML 的其他实现。 但是，这些元素和属性是略有不同，具体取决于嵌入在 URI 中的年份。 Xamarin.Forms 支持 2009 XAML 规范，但它不是所有。
 
@@ -203,9 +203,9 @@ namespace XamlSamples
 
 另请注意，`Title`特性已设置的根标记。
 
-此时, 类、属性和 XML 之间的关系应该是显而易见的:Xamarin 类 (如`ContentPage`或`Label`) 作为 XML 元素出现在 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
+此时，类、属性和 XML 之间的关系应该是显而易见的：Xamarin 类（如`ContentPage`或`Label`）作为 XML 元素出现在 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
 
-多个快捷方式存在以便为设置这些属性的值。 某些属性是基本数据类型:例如`Title` , `true`和`Double`属性的类型为,`IsVisible`并且为类型, 并且 (默认情况下, 在此处设置为仅用于说明) 的类型为`Rotation` `String` `Text` `Boolean`.
+多个快捷方式存在以便为设置这些属性的值。 某些属性是基本数据类型：例如`Title` ， `true`和`Double`属性的类型为，`IsVisible`并且为类型，并且（默认情况下，在此处设置为仅用于说明）的类型为`Rotation` `String` `Text` `Boolean`.
 
 `HorizontalTextAlignment`属性属于类型`TextAlignment`，这是一个枚举。 对于任何枚举类型的属性，只需提供有成员名称。
 
@@ -448,8 +448,6 @@ public partial class XamlPlusCodePage : ContentPage {
 ## <a name="summary"></a>总结
 
 使用这个简介中，您已了解到某个类定义，如何影响 XAML 文件和代码文件和 XAML 和代码的文件如何交互。 但是，XAML 还具有其自己独特的语法功能，使其能够以非常灵活的方式使用。 你可以开始浏览这些[第 2 部分。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
-
-
 
 ## <a name="related-links"></a>相关链接
 

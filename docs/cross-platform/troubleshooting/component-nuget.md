@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 7feec9f2fa136b96d81a54e4b2650918c53b5832
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d40555c70072a4c057739b39cc24a4f885f2dc9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281597"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765297"
 ---
 # <a name="updating-component-references-to-nuget"></a>将组件引用更新到 NuGet
 
@@ -141,7 +141,6 @@ NuGet 包将继续在 "**包**" 节点中列出，并且你的应用程序将照
 
 ![更新 NuGet 包](component-nuget-images/nuget-update-sml.png)
 
-
 <a name="replace" />
 
 ## <a name="components-with-nuget-replacements"></a>带有 NuGet 替换的组件
@@ -201,7 +200,6 @@ NuGet 包将添加到你的项目，以及任何依赖项。
 - 调查备用 NuGet 包，或者在组件为开源的情况下查找源代码。
 
 许多组件供应商仍在努力迁移到 NuGet，其他组件（包括商业可用产品）可能正在研究备选交付选项。
-
 
 ## <a name="related-links"></a>相关链接
 - [常用 Xamarin 插件和库的列表](https://github.com/xamarin/XamarinComponents/blob/master/README.md)

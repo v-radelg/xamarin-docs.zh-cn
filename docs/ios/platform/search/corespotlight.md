@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 845257bc11d24865a01a992e99d39ad6c578b42c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00a973e670ff5100a44ba158fe50f134781a97e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291461"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769505"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中通过核心聚焦搜索
 
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-接下来，可以按其域名删除一组索引项。 例如:
+接下来，可以按其域名删除一组索引项。 例如：
 
 ```csharp
 // Delete by Domain Name
@@ -132,8 +132,6 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 - **批处理更新支持**–如果你的应用程序需要同时创建或修改大组索引，则可以通过一次调用将整个批处理发送到`Index` `CSSearchableIndex`类的方法。
 - **响应索引更改**–使用`CSSearchableIndexDelegate`您的应用程序可以响应可搜索索引中的更改和通知。
 - **应用数据保护**–使用数据保护类，可以对使用核心聚焦添加到可搜索索引的项实施安全性。
-
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.assetid: 0bec99a9-ab79-4f10-8d7b-35f9338c0728
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 43e06ec1baccefa6184ca19409cf6646d33408d9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72c4931c8e09ddae18109757fbbb7da6f0d8b31a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277591"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765859"
 ---
 # <a name="xamarin-internals"></a>Xamarin –内部
 
@@ -23,6 +23,3 @@ ms.locfileid: "70277591"
 Xamarin、Xamarin 和 Xamarin 均随附了数十个程序集。 正如 Silverlight 是桌面 .NET 程序集的扩展子集，Xamarin 平台也是多个 Silverlight 和桌面 .NET 程序集的扩展子集。
 
 本指南提供每个平台附带的所有可用程序集的列表，并显示可在每个平台上使用的程序集。
-
-
-

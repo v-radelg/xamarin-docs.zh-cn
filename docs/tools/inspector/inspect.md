@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2ce4b0366e85580b6d9d816bd91f9ced93997b63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2ccf6966e85eddaa10b5651e1b0b48dec9203b28
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291491"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772205"
 ---
 # <a name="inspecting-live-applications"></a>检查实时应用程序
 
@@ -52,4 +52,3 @@ del.Database.AddCustomer (...)
 - 属性网格编辑不适用于 Mac，在 Windows 上仅限于几种数据类型。 使用复制功能进行更强大的编辑。
 - 只要在 IDE 中安装并启用了检查器外接程序，我们就会在应用程序在调试模式下启动时将代码注入到您的应用程序中。 如果你在应用中发现任何异常行为，请尝试禁用或卸载检查器外接程序/扩展，然后重启 IDE 和重新检查。 并请提出[错误](~/tools/inspector/install.md#reporting-bugs)，告诉我们！
 - 如果检查 UI 元素使其不会发生更改，请[告知我们](~/tools/inspector/install.md#reporting-bugs)，因为这可能表示存在 bug。
-

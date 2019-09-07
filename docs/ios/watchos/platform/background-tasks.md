@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2017
-ms.openlocfilehash: b01fbbe813b778d3c2e1cabeba620ed48a46ecac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e0336e65532c4487e3ec8c1984b132544b5b547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287158"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768663"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>Xamarin 中的 watchOS 后台任务
 
@@ -54,7 +54,7 @@ ms.locfileid: "70287158"
 
 Apple 建议在应用完成自行更新过程之前，充分利用此任务（因为它是应用的有限资源）。
 
-系统通过调用`HandleBackgroundTasks` `WKExtensionDelegate`委托的新方法来提供这些任务。 例如:
+系统通过调用`HandleBackgroundTasks` `WKExtensionDelegate`委托的新方法来提供这些任务。 例如：
 
 ```csharp
 using System;
@@ -109,7 +109,6 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 在任务的运行时，应用可以执行任何类型的本地处理，例如更新复杂的时间线或使用`NSUrlSession`获取一些必需的数据。
 
-
 <a name="WKURLSessionRefreshBackgroundTask" />
 
 ### <a name="wkurlsessionrefreshbackgroundtask"></a>WKURLSessionRefreshBackgroundTask
@@ -142,9 +141,6 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 > [!IMPORTANT]
 > 务必在应用收到新数据并`WKSnapshotRefreshBackgroundTask`更新其用户界面之后始终计划，否则，用户将看不到修改后的信息。
-
-
-
 
 此外，当用户从应用程序收到通知并点击该通知以使应用程序进入前台时，快照必须是最新的，因为它也充当启动屏幕：
 
@@ -700,8 +696,6 @@ Apple 提供以下建议：
 ## <a name="summary"></a>总结
 
 本文介绍了 Apple 对 watchOS 的增强功能，以及如何使用它们来使手表应用保持最新状态。 首先，它涵盖了 Apple 添加到 watchOS 3 中的所有新后台任务。 然后，它介绍了后台 API 生命周期，以及如何实现 Xamarin watchOS 应用程序中的后台任务。 最后，它介绍了计划的工作方式，并提供了一些最佳实践。
-
-
 
 ## <a name="related-links"></a>相关链接
 

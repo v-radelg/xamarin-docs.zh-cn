@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: d409787661491a6922434a12157c494851644412
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291633"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768870"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
@@ -25,7 +25,6 @@ ms.locfileid: "70291633"
 - 添加索引
 - 添加页眉和页脚
 
-
 <a name="Subclassing_UITableViewSource" />
 
 ## <a name="subclassing-uitableviewsource"></a>子类 UITableViewSource
@@ -36,7 +35,6 @@ ms.locfileid: "70291633"
 
 - **RowsInSection** –返回[`nint`](~/cross-platform/macios/nativetypes.md)该表应显示的数据的总行数。
 - **GetCell** –为传递`UITableCellView`给方法的相应行索引返回填充了数据的。
-
 
 BasicTable 示例文件**TableSource.cs**的可能实现的`UITableViewSource`最简单实现。 在下面的代码片段中可以看到，它接受要在表中显示的字符串数组，并返回包含每个字符串的默认单元格样式：
 
@@ -139,13 +137,9 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-
 现在用户可以触摸一行，此时将显示一个警报：
 
-
-
  [![](populating-a-table-with-data-images/image4.png "选定的行警报")](populating-a-table-with-data-images/image4.png#lightbox)
-
 
 ## <a name="cell-reuse"></a>单元格重复使用
 
@@ -246,7 +240,6 @@ keys = indexedTableItems.Keys.ToArray ();
 - **RowsInSection** –返回给定节中的行数。
 - **SectionIndexTitles** –返回将用于显示索引的字符串数组。 示例代码返回一个字母数组。
 
-
 示例文件**BasicTableIndex/TableSource**中的更新的方法如下所示：
 
 ```csharp
@@ -266,7 +259,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 索引通常只与纯表样式一起使用。
 
-
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>添加页眉和页脚
@@ -280,7 +272,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 - **TitleForHeader** –返回用作标题的文本
 - **TitleForFooter** –返回要用作页脚的文本。
-
 
 示例文件**BasicTableHeaderFooter/Code/TableSource**中的更新的方法如下所示：
 
@@ -296,7 +287,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 ```
 
 使用`GetViewForHeader` `UITableViewSource`和`GetViewForFooter`方法替代在上，您可以使用 View 对象进一步自定义页眉和页脚的外观。
-
 
 ## <a name="related-links"></a>相关链接
 

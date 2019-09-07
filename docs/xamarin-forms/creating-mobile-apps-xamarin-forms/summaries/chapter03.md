@@ -1,18 +1,18 @@
 ---
 title: 第 3 章的摘要。 深入到文本
-description: 使用 Xamarin.Forms 创建移动应用：第 3 章的摘要。 深入到文本
+description: 用 Xamarin 创建移动应用程序：第 3 章的摘要。 深入到文本
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e37175240825c0fed350589649469c99f1bbf69a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334538"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771229"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章的摘要。 深入到文本
 
@@ -28,7 +28,7 @@ ms.locfileid: "61334538"
 
 当`HorizontalOptions`和`VerticalOptions`属性设置为值而不`LayoutOptions.Fill`，则大小`Label`受呈现的文本，最大大小，其容器使可用于所需的空间`Label`。 `Label`称为*不受约束*并确定其自身的大小。
 
-（注意：条款*约束*并*不受约束*可能违反语感，因为不受约束的视图是通常小于受约束的视图。 此外，这些条款不使用一致地中书籍的章节。）
+（注意：术语 "*约束*" 和 "无*限制*" 可能是比较直观的，因为无约束视图通常小于约束视图。 此外，这些条款不使用一致地中书籍的章节。）
 
 如视图`Label`可以被限制在一个维度和其他不受约束。 一个`Label`将仅文本换行在多个行上如果水平约束。
 
@@ -99,9 +99,9 @@ ms.locfileid: "61334538"
 
 `Color.Default` 用于强制实施平台的配色方案，并因此在不同的平台上的不同上下文中具有不同的含义。 默认情况下将平台的颜色方案：
 
-- iOS:浅色背景上的深文本
-- Android:浅色 （在工作簿） 深色背景上的文本或浅色背景上的深文本 (材料设计通过在 AppCompat**主**的示例代码存储库的分支)
-- UWP:浅色背景上的深文本
+- IOS浅背景上的黑色文本
+- Android深色背景上的浅文本（书籍中的浅文本）或浅色背景上的深色文本（在示例代码存储库的**主**分支中通过 AppCompat 的材料设计）
+- UWP浅背景上的黑色文本
 
 `Color.Accent`值会导致在深色或浅色背景可见的特定于平台的 （和用户有时可选） 颜色。
 
@@ -134,8 +134,6 @@ ms.locfileid: "61334538"
 [![变量的三个屏幕快照格式的段落](images/ch03fg06-small.png "变量格式的标签文本")](images/ch03fg06-large.png#lightbox "变量格式的标签文本")
 
 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)程序使用单个`Label`和`FormattedString`要显示每个平台的已命名的字体大小的所有对象。
-
-
 
 ## <a name="related-links"></a>相关链接
 

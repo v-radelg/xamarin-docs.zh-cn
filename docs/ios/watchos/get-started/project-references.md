@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dcadb5146df39aa4887e28b65078acc9454f3d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292270"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767989"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Xamarin 中的 watchOS 项目引用
 
@@ -32,12 +32,9 @@ WatchOS 解决方案中的三个项目*自动配置*为以特定方式相互引�
 
   ![](project-references-images/catalog-reference2.png "iPhone 应用引用监视应用")
 
-
 - **Watch 应用扩展**未引用任何其他项目
 
   ![](project-references-images/catalog-reference3.png "监视应用扩展未引用其他项目")
-
-
 
 ## <a name="bundle-identifiers"></a>捆绑标识符
 
@@ -76,4 +73,3 @@ WatchOS 解决方案中的三个项目*自动配置*为以特定方式相互引�
 ![](project-references-images/infoplist-watchapp.png "Watch info.plist 文件")
 
 监视应用的部署目标可以不同于监视扩展和 iOS 应用。
-

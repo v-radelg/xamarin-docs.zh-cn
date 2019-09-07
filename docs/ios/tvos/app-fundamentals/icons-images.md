@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f3a0525a42a59edfe08e5b478bf6af801008ef05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7eca637e546324f9282aedcac48dacffa72bf246
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277854"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769275"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 图标和图像
 
@@ -79,9 +79,6 @@ Apple 提供以下建议，用于设计应用程序的启动映像：
 > [!IMPORTANT]
 > 应用的图标需要分层图像，对于其他可[设定焦点的项目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)（例如，上架图像）是可选的。 但是，Apple 建议对可在应用中获得焦点的任何图像使用分层映像。
 
-
-
-
 Apple 为设计分层映像提供以下建议：
 
 - **使背景层不透明**-您的背景层（第1层）**必须**不透明，否则在 Apple TV 上尝试使用分层图像时将会出现错误。 所有其他层都可以包含多个级别的透明度，以增强三维效果。
@@ -145,9 +142,6 @@ Apple 创建了[视差](http://itunespartner.apple.com/assets/downloads/Parallax
 
 > [!IMPORTANT]
 > 应用图标必须作为**分层映像**提供。 有关更多详细信息，请参阅上面的[分层图像](#Layered-Images)部分。
-
-
-
 
 Apple 提供了以下有关创建应用图标的建议：
 

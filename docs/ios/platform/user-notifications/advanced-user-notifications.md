@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: a22e0d6979173ca29596687da8a0b54c6fc565a7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8bca2b47212b9effe637dcd2e116630579609b39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279057"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769420"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin 中的高级用户通知
 
@@ -65,7 +65,7 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 但是，因为即使是在发送小图像时所涉及的大小，但将其附加到远程通知有效负载是不切实际的。 若要处理这种情况，开发人员可以在 iOS 10 中使用新的服务扩展，从另一个源（如 CloudKit 数据存储）下载映像，并将其附加到通知的内容，然后将其显示给用户。
 
-对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如:
+对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如：
 
 ```csharp
 {
@@ -203,7 +203,6 @@ using UIKit;
 using UserNotifications;
 using UserNotificationsUI;
 
-
 namespace MonkeyChatNotifyExtension
 {
     public partial class NotificationViewController : UIViewController, IUNNotificationContentExtension
@@ -308,7 +307,6 @@ using UIKit;
 using UserNotifications;
 using UserNotificationsUI;
 
-
 namespace MonkeyChatNotifyExtension
 {
     public partial class NotificationViewController : UIViewController, IUNNotificationContentExtension
@@ -361,7 +359,7 @@ namespace MonkeyChatNotifyExtension
 
 由于在调用通知内容扩展之前通知系统已在运行，因此，内容区域将以完全大小开始，并在向用户显示时向下动态显示所请求的大小。
 
-若要消除这种影响， `Info.plist`请在文件中编辑扩展， `UNNotificationExtensionInitialContentSizeRatio`并将`NSExtensionAttributes`键的键设置为类型**Number** ，并将值设置为表示所需的比率。 例如:
+若要消除这种影响， `Info.plist`请在文件中编辑扩展， `UNNotificationExtensionInitialContentSizeRatio`并将`NSExtensionAttributes`键的键设置为类型**Number** ，并将值设置为表示所需的比率。 例如：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -453,7 +451,7 @@ namespace MonkeyChatNotifyExtension
 
 通知内容扩展还可以在用户调用其中一个自定义操作时更新他们的 UI，例如，当用户点击 "**接受**自定义操作" 按钮时将日期显示为 "已接受"。 此外，通知内容扩展可以告知系统延迟通知 UI 的消除，以便用户可以在通知关闭之前查看操作的效果。
 
-这是通过实现包含完成处理程序的`DidReceiveNotification`方法的第二个版本来完成的。 例如：
+这是通过实现包含完成处理程序的`DidReceiveNotification`方法的第二个版本来完成的。 例如:
 
 ```csharp
 using System;
@@ -546,7 +544,6 @@ using Foundation;
 using UIKit;
 using UserNotifications;
 using UserNotificationsUI;
-
 
 namespace MonkeyChatNotifyExtension
 {

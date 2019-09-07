@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52ee92eca5fa0b3108b2ef96ef81bfb939e61a6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290757"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752909"
 ---
 # <a name="handoff-in-xamarinios"></a>Xamarin 中的移交
 
@@ -409,7 +409,7 @@ public void PerformHandoff(NSUserActivity activity) {
 completionHandler (new NSObject[]{Tab4});
 ```
 
-对于传递的每个对象`RestoreUserActivityState` ，将调用其方法。 然后，每个对象可以使用`UserInfo`字典中的数据来还原其自己的状态。 例如：
+对于传递的每个对象`RestoreUserActivityState` ，将调用其方法。 然后，每个对象可以使用`UserInfo`字典中的数据来还原其自己的状态。 例如:
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -464,7 +464,7 @@ public override void DidFailToContinueUserActivitiy (UIApplication application, 
 }
 ```
 
-若要对 JSON 文件（ `Content-Type`使其具有正确的`application/pkcs7-mime`）进行签名，请使用**终端**应用和`openssl`命令，其中包含由 iOS 信任的证书颁发机构颁发的证书和密钥（ [https://support.apple.com/kb/ht5012](https://support.apple.com/kb/ht5012)有关列表，请参阅）。 例如：
+若要对 JSON 文件（ `Content-Type`使其具有正确的`application/pkcs7-mime`）进行签名，请使用**终端**应用和`openssl`命令，其中包含由 iOS 信任的证书颁发机构颁发的证书和密钥（ [https://support.apple.com/kb/ht5012](https://support.apple.com/kb/ht5012)有关列表，请参阅）。 例如:
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -626,8 +626,6 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 ## <a name="summary"></a>总结
 
 本文提供了用于在用户的多个 Apple 设备之间继续执行用户活动的移交框架简介。 接下来，它展示了如何在 Xamarin iOS 应用程序中启用和实施移交。 最后，它讨论了不同类型的移交继续功能，并提供了移交最佳实践。
-
-
 
 ## <a name="related-links"></a>相关链接
 

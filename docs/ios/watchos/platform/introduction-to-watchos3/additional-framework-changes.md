@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 34f192938ac583e39232312377142015aa6d3811
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd4bc8dbc02a44807ec197d39349971d8f9cd6f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287553"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768586"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 框架更改
 
 _本文介绍了 watchOS 3 的现有框架的附加、小更改或增强功能。_
 
 除了对 iOS 的重大更改之外，Apple 还在 watchOS 3 中对多个现有框架进行了修改和改进。
-
 
 ## <a name="core-data"></a>核心数据
 
@@ -33,14 +32,12 @@ _本文介绍了 watchOS 3 的现有框架的附加、小更改或增强功能�
 
 有关详细信息，请参阅 Apple 的[核心数据框架参考](https://developer.apple.com/reference/coredata)。
 
-
 ## <a name="core-motion"></a>核心动作
 
 针对观看 OS 3 的核心运动框架进行了以下改进：
 
 - 新的设备运动事件使用加速感应和陀螺仪来提供运动和方向更新。 应用可以注册此更新（速率为100Hz）。
 - 当用户暂停和继续运行时，新的 Pedometer 事件可实现快速实时通知。 使用[CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)注册前台或后台 pedometer 事件。
-
 
 ## <a name="foundation"></a>Foundation
 
@@ -52,7 +49,6 @@ _本文介绍了 watchOS 3 的现有框架的附加、小更改或增强功能�
 - 使用新的[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)类来设置要向最终用户显示的本地化度量值的格式。
 - 使用新的[NSUnit](https://developer.apple.com/reference/foundation/nsunit)和[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)类来表示特定的 UOMs。
 
-
 ## <a name="healthkit"></a>HealthKit
 
 HealthKit 框架对监视操作系统3进行了以下改进：
@@ -60,7 +56,6 @@ HealthKit 框架对监视操作系统3进行了以下改进：
 - 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)类指定`ActivityType`健身的和`LocationType` 。
 - 添加了新的 [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) 和[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)类的`WheelchairUse`方法, 以便使用轮椅相关的运行状况数据。
 - 添加了新的元数据密钥，用于天气类型（ `HKWeatherConditionClear`如`HKWeatherConditionCloudy`和）和`HKWorkoutActivityTypeFlexibility`健身类型（如和`HKWorkoutActivityTypeWheelchairRunPace`）。
-
 
 ## <a name="homekit"></a>HomeKit
 
@@ -70,7 +65,6 @@ HomeKit 框架对监视操作系统3进行了以下改进：
 - 添加了几个新的服务和特性。
 - 添加了更多上下文和配置主要服务和链接服务的附件。
 
-
 ## <a name="passkit"></a>PassKit
 
 PassKit 框架对监视操作系统3进行了以下改进：
@@ -78,14 +72,12 @@ PassKit 框架对监视操作系统3进行了以下改进：
 - 扩展框架，以支持对物理商品和服务的 Apple Watch 进行安全的应用内付款。
 - 现在提供以下类：[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)、 [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)、 [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
-
 ## <a name="uikit"></a>UIKit
 
 UIKit 框架对监视操作系统3进行了以下改进：
 
 - 为了支持标签中的动态类型，文本字段和文本框使用`PreferredFontForTextStyle` `UIFont`类的新方法。
 - 添加`ColorWithDisplayP3`了方法以支持宽色。
-
 
 ## <a name="related-links"></a>相关链接
 
