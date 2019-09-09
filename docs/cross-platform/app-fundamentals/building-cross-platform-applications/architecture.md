@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 7657985ce14633140adb0e63a9817ddd0e48841d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284570"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762106"
 ---
 # <a name="part-2---architecture"></a>第 2 部分 - 体系结构
 
@@ -21,11 +21,9 @@ ms.locfileid: "70284570"
 - **责任分离**–确保每个组件（在体系结构和类级别上）都具有清晰且明确定义的目的。 每个组件只应执行其定义的任务，并通过可供需要使用它的其他类访问的 API 公开此功能。
 - **多态性**–对支持多个实现的接口（或抽象类）的编程意味着可以在平台之间编写和共享核心代码，同时仍与特定于平台的功能进行交互。
 
-
 自然结果是在真实世界上建模的应用程序，或具有单独逻辑层的抽象实体。 将代码分为多个层，使应用程序更易于理解、测试和维护。 建议每个层中的代码在物理上是独立的（在目录中，甚至是针对非常大的应用程序的单独项目中），并以逻辑方式分离（使用命名空间）。
 
  <a name="Typical_Application_Layers" />
-
 
 ## <a name="typical-application-layers"></a>典型的应用程序层
 
@@ -38,11 +36,9 @@ ms.locfileid: "70284570"
 - **应用程序层**–通常特定于平台的代码（通常在平台之间不共享）或特定于应用程序的代码（通常不是可重用的代码）。 很好地测试是否将代码放置在应用程序层与 UI 层之间，以确定类是否有任何实际的显示控件，或（b）是否可以在多个屏幕或设备之间共享（例如 iPhone 和 iPad）。
 - **用户界面（UI）层**–面向用户的层，其中包含屏幕、小组件和管理它们的控制器。
 
-
 应用程序不一定包含所有层–例如，服务访问层不会存在于不访问网络资源的应用程序中。 一个非常简单的应用程序可能会合并数据层和数据访问层，因为操作非常基本。
 
  <a name="Common_Mobile_Software_Patterns" />
-
 
 ## <a name="common-mobile-software-patterns"></a>常见的移动软件模式
 
@@ -54,6 +50,5 @@ ms.locfileid: "70284570"
 - **Singleton** –单一实例模式提供的一种方法是只能存在特定对象的单个实例。 例如，在移动应用程序中使用 SQLite 时，只需要数据库的一个实例。 使用单一实例模式是确保这一点的一种简单方法。
 - **Provider** –梦寐以求的一种模式（类似于策略或基本依赖项注入），用于鼓励跨 SILVERLIGHT、WPF 和 WinForms 应用程序重复使用代码。 共享代码可针对接口或抽象类编写，在使用代码时，将编写和传入特定于平台的具体实现。
 - **Async** –不要与 async 关键字混淆，当需要执行长时间运行的工作时，无需持有 UI 或当前正在处理的工作时，将使用异步模式。 在最简单的形式中，异步模式只描述了在当前线程继续处理并侦听后台进程的响应时，应在另一个线程（或类似的线程抽象，如任务）中启动长时间运行的任务。，然后在返回数据和或状态时更新 UI。
-
 
 将更详细地检查每个模式，因为案例研究中阐释了这些模式的实际使用情况。 维基百科提供对[MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel)、 [MVC](https://en.wikipedia.org/wiki/Model–view–controller)、[外观](https://en.wikipedia.org/wiki/Facade_pattern)、[单一实例](https://en.wikipedia.org/wiki/Singleton_pattern)、[策略](https://en.wikipedia.org/wiki/Strategy_pattern)和[提供程序](https://en.wikipedia.org/wiki/Provider_model)模式（通常为[设计模式](https://en.wikipedia.org/wiki/Design_Patterns)）的更详细说明。

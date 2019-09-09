@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 1e003a80b58f783829f5af3b74801fc3c91c88e9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 769ff7efedca453734b6db2dd2dcb2ad503ba272
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655608"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759801"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 单元格
 
@@ -48,7 +48,7 @@ Xamarin.Forms 支持以下的单元格类型：
 
 |     |     |
 | --- | --- |
-| 包含带有属性的[`Text`](xref:Xamarin.Forms.SwitchCell.Text)文本集, 以及最初使用布尔值[`On`](xref:Xamarin.Forms.SwitchCell.On)属性设置的打开/关闭开关。 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 处理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件时通知`On`属性更改。<br /><br />[API 文档](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 示例](cells-images/SwitchCell.png "SwitchCell 示例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| 包含带有属性的[`Text`](xref:Xamarin.Forms.SwitchCell.Text)文本集，以及最初使用布尔值[`On`](xref:Xamarin.Forms.SwitchCell.On)属性设置的打开/关闭开关。 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 处理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件时通知`On`属性更改。<br /><br />[API 文档](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 示例](cells-images/SwitchCell.png "SwitchCell 示例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="entrycell"></a>EntryCell
@@ -57,7 +57,6 @@ Xamarin.Forms 支持以下的单元格类型：
 | --- | --- |
 | [ `EntryCell` ](xref:Xamarin.Forms.EntryCell)定义[ `Label` ](xref:Xamarin.Forms.EntryCell.Label)属性，用于标识该单元格和单行中的可编辑文本[ `Text` ](xref:Xamarin.Forms.EntryCell.Text)属性。 处理[ `Completed` ](xref:Xamarin.Forms.EntryCell.Completed)事件以在用户已完成的文本输入时得到通知。<br /><br />[API 文档](xref:Xamarin.Forms.EntryCell) / [指南](~/xamarin-forms/user-interface/tableview.md#entrycell) | [![EntryCell 示例](cells-images/EntryCell.png "EntryCell 示例")](cells-images/EntryCell-Large.png#lightbox "EntryCell 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryCellDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryCellDemoPage.xaml) |
 |     |     |
-
 
 ## <a name="related-links"></a>相关链接
 

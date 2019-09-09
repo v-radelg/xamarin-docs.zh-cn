@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: fa44ba260a62a6e0bd036c08c62371734b38d82d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286590"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752328"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的应用商店更改
 
@@ -33,7 +33,6 @@ IOS 应用商店已进行了全面的重新设计，这不仅允许用户有效�
 在 iTunes Connect 中不再管理存储图标（或营销图标），而是必须将其作为[资产目录](~/ios/app-fundamentals/images-icons/app-icons.md)包含在应用二进制文件中，这与应用图标类似。 若要成功提交 iOS 11 应用，必须在资产目录中包含 1024 x 1024 存储图标（PNG 格式）。
 
 应用缩小确保此附加资产目录不会增加应用的大小。
-
 
 ## <a name="in-app-purchases-promoted-in-the-app-store"></a>应用商店中升级的应用内购买
 
@@ -96,7 +95,6 @@ Apple 使得应用程序中购买的应用程序在应用程序存储中更易�
 ![显示自动更新分阶段发布的选项](app-store-changes-images/image6.png)
 
 你的更新可立即在应用商店的 "更新" 选项卡中下载。 分段版本仅适用于选择了自动下载的用户。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: ef9067f3a0694c66d21d6614277e8543aebbc299
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f47ebdd8c1ba220229c6e652af99e8fa3ae2960
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279344"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768816"
 ---
 # <a name="text-input-in-xamarinios"></a>Xamarin 中的文本输入
 
@@ -27,7 +27,6 @@ ms.locfileid: "70279344"
 命名插座并保存情节提要文件后，Visual Studio for Mac 将更新`.designer.cs`分部类，并且可以将引用控件的代码添加C#到类文件中。 每个控件都有其自己的唯一属性和可在C#代码中访问的事件。
 
  <a name="UITextField" />
-
 
 ## <a name="uitextfield"></a>UITextField
 
@@ -46,7 +45,6 @@ ms.locfileid: "70279344"
 - **外观**–控制键盘的外观样式，并将为深色或浅色主题。
 - **返回键**–更改返回键上的标签，以更好地反映要采取的操作。 受支持的值包括 "开始"、"联接"、"下一步"、"路由"
 - **Secure** –标识是否屏蔽输入（例如密码输入）。
-
 
 如果已使用设计`textfield1`器将名为的 UITextField 添加到屏幕，则可以在中C#设置或更改其属性，如下所示：
 
@@ -72,7 +70,6 @@ View.Add(textfield1);
 
  <a name="UITextView" />
 
-
 ## <a name="uitextview"></a>UITextView
 
 `UITextView`控件可用于显示只读文本或接受多行文本输入。 它具有许多与相同的选项`UITextField` （如大小写、更正等）。
@@ -84,7 +81,6 @@ View.Add(textfield1);
 - **行为**-文本是可编辑的还是只读的。
 - **检测**–检测到输入的数据并将其转换为可单击的元素，例如可以触发呼叫的电话号码、成为地图的链接的地址、在 Safari 中打开的 url，或在日历中成为事件的日期和时间。
 
-
 如果已使用设计器将 UITextView 添加到屏幕，则可以设置或更改其属性，如下所示：
 
 ```csharp
@@ -92,8 +88,6 @@ textview1.Text = "Lorem ipsum..."; // lots of text can go here
 textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

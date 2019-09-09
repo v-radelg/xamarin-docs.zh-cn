@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 3fb479321686e4b956fc6ffee90dd5b0b2c16d9c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f54edead87459282ccd6a44225269542fad9d0e4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291181"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769108"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>用 Xamarin 构建的 tvOS 应用疑难解答
 
@@ -80,7 +80,7 @@ Section
 
 你将需要确保你使用的任何第三方静态`.a`（）库是针对 tvOS 库（而不是 iOS 库）构建的，并且它们还包括 bitcode 信息。
 
-对于包含有效 bitcode 的`size`应用或库，将大于1。 在某些情况下，库可以具有 bitcode 标记，但不包含有效的 bitcode。 例如:
+对于包含有效 bitcode 的`size`应用或库，将大于1。 在某些情况下，库可以具有 bitcode 标记，但不包含有效的 bitcode。 例如：
 
 **无效的 Bitcode**
 
@@ -146,7 +146,6 @@ _"仅包含 arm64 切片的应用还必须在 info.plist 的 UIRequiredDeviceCap
 
 如果你要将具有游戏控制器支持的 Xamarin tvOS 应用提交到 Apple TV 应用商店，并且你将收到如下所示的错误消息：
 
-
 _我们发现你最近的 "应用名称" 传递有一个或多个问题。你的交付已成功完成，但你可能希望在下一次传递时更正以下问题：_
 
 _无效的捆绑–支持游戏控制器的应用也必须支持 Apple TV 远程。_
@@ -200,8 +199,6 @@ _目标框架不兼容：。NetPortable，Version = 5v，Profile = Profile78_
 请注意，路径中的配置文件编号必须与 PCL 的配置文件编号匹配。
 
 准备好此文件后，应该能够成功地将 PCL 文件添加到 tvOS 项目。
-
-
 
 ## <a name="related-links"></a>相关链接
 

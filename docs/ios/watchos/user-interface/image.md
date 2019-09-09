@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 18e7873eede87e9bb81c1c0b304bfc87c317c27a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291512"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769961"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin 中的 watchOS 图像控件
 
@@ -32,7 +32,6 @@ ms.locfileid: "70291512"
 
 ![](image-images/asset-watch-sml.png "您可以使用资产目录图像中的 \"手表套件大小 38mm\" 和 \"42mm\" 来指定每个显示大小的不同图像")
 
-
 ## <a name="images-on-the-watch"></a>监视上的图像
 
 显示图像最有效的方法是将*其包含在 "监视应用程序" 项目中*，并使用`SetImage(string imageName)`方法显示这些图像。
@@ -51,7 +50,6 @@ myOtherImageControl.SetImage("Worry");
 ### <a name="background-images"></a>背景图像
 
 对于`SetBackgroundImage (string imageName)` 、`Button`和`Group`类，相同的逻辑也适用。 `InterfaceController` 通过将图像存储在手表应用本身中来实现最佳性能。
-
 
 ## <a name="images-in-the-watch-extension"></a>监视扩展中的图像
 
@@ -74,7 +72,6 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-
 ## <a name="animations"></a>Animations
 
 若要对一组图像进行动画处理，它们应该以相同的前缀开头并且具有数字后缀。
@@ -95,7 +92,6 @@ animatedImage.StartAnimating ();
 ```csharp
 animatedImage.StopAnimating ();
 ```
-
 
 <a name="cache" />
 
@@ -122,12 +118,9 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 您可以使用`WKInterfaceDevice.CurrentDevice.WeakCachedImages`在代码中查询图像缓存的内容。
 
-
 ### <a name="managing-the-cache"></a>管理缓存
 
 大约 20 MB 的缓存大小。 它在应用程序重新启动时保持不变，当填满时，您就有责任使用`RemoveCachedImage`或`RemoveAllCachedImages`对象上的`WKInterfaceDevice.CurrentDevice`方法来清除文件。
-
-
 
 ## <a name="related-links"></a>相关链接
 

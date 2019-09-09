@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290744"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769184"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>适用于 Xamarin 中 tvOS 的 Siri 远程和蓝牙控制器
 
@@ -364,8 +364,6 @@ Apple TV 附带的 Siri 远程可用作受限游戏控制器。 与其他游戏�
 ## <a name="summary"></a>总结
 
 本文介绍了 Apple TV、触控 Surface 手势和 Siri 遥控器随附的新 Siri 遥控器。 接下来，它涉及到使用笔势和情节提要、笔势和代码以及低级别事件。 最后，如果讨论了如何使用游戏控制器。
-
-
 
 ## <a name="related-links"></a>相关链接
 

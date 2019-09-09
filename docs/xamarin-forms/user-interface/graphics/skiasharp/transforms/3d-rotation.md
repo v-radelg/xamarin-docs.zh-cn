@@ -7,12 +7,12 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: c6a600b7ae05df626d4315796c7a5e425639e2f8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 60f09b2e60708df6b1e6b68be7ce0792bc8cd9b0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652788"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759186"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的三维旋转
 
@@ -534,7 +534,6 @@ public class AnimatedRotation3DPage : ContentPage
 此 3D 旋转放在多个 2D 转换将旋转中心移到屏幕上，在中心和缩放的文本字符串的大小，以便它在屏幕的宽度相同：
 
 [![](3d-rotation-images/animatedrotation3d-small.png "经过动画处理的旋转 3D 页面的三个屏幕截图")](3d-rotation-images/animatedrotation3d-large.png#lightbox "带来三倍的经过动画处理的旋转 3D 页屏幕截图")
-
 
 ## <a name="related-links"></a>相关链接
 

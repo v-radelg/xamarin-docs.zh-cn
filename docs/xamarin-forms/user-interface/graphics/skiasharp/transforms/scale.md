@@ -7,12 +7,12 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649278"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770452"
 ---
 # <a name="the-scale-transform"></a>缩放转换
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可能想知道:缩放系数如何影响从`MeasureText`方法返回的`SKPaint`值？ 答案是:完全不需要。 `Scale` 是一种方法的`SKCanvas`。 它不影响与执行任何操作`SKPaint`对象，直到该对象用于呈现在画布上的某些内容。
+您可能想知道：缩放系数如何影响从`MeasureText`方法返回的`SKPaint`值？ 答案是：完全不需要。 `Scale` 是一种方法的`SKCanvas`。 它不影响与执行任何操作`SKPaint`对象，直到该对象用于呈现在画布上的某些内容。
 
 您可以看到，所有内容绘制后`Scale`调用按比例增加：
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "三重各向异性缩放页屏幕截图")](scale-images/anisotropicscaling-large.png#lightbox "各向异性缩放页上的三个屏幕截图")
 
-您可以考虑`Scale`和`Translate`调用的另一种方法是通过反向序列确定效果:`Translate`调用将移动路径, 使其完全可见, 但在画布的左上角。 `Scale`方法然后使该星型相对于左上角更大。
+您可以考虑`Scale`和`Translate`调用的另一种方法是通过反向序列确定效果：`Translate`调用将移动路径，使其完全可见，但在画布的左上角。 `Scale`方法然后使该星型相对于左上角更大。
 
 实际上，它将显示 star 是有点大于画布。 问题在于笔划宽度。 `Bounds`属性的`SKPath`指示坐标维数编码在路径中，并且该程序使用来扩展它。 使用特定的笔划宽度呈现路径时，呈现的路径大于画布。
 
@@ -342,7 +342,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 代码还显示星型 10 次，10%和逐渐将颜色更改由红色变为蓝色，降低缩放每次挑选：
 
 [![](scale-images/isotropicscaling-small.png "三重增益缩放页屏幕截图")](scale-images/isotropicscaling-large.png#lightbox "增益缩放页的三个屏幕截图")
-
 
 ## <a name="related-links"></a>相关链接
 

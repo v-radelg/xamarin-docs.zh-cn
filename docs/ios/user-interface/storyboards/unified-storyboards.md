@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: cf3a3f6638547acf8d22854b6d8a32622c304932
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 07a61eb9d0c16f82d6c367cefc9e3050ca8dfc25
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280865"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768830"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的统一情节提要
 
@@ -31,7 +31,6 @@ iOS 8 包含一种用于创建用户界面（统一情节提要）的全新、�
 - **常规**–这适用于大屏幕大小（如 iPad）或小尺寸的小工具（例如，`UIScrollView`
 - **Compact** –适用于较小的设备（如 iPhone）。 此大小会考虑设备的方向。
 
-
 如果将两个概念一起使用，则结果为 2 x 2 网格，该网格定义可在不同方向上使用的不同可能大小，如下图所示：
 
  [![](unified-storyboards-images/sizeclassgrid.png "2 x 2 网格，用于定义可在常规和紧凑方向中使用的不同可能大小")](unified-storyboards-images/sizeclassgrid.png#lightbox)
@@ -43,7 +42,6 @@ iOS 8 包含一种用于创建用户界面（统一情节提要）的全新、�
 由于大小的原因，iPad 具有适用于这两个方向的**常规**类大小。
 
  [![](unified-storyboards-images/image1.png "iPad 大小类")](unified-storyboards-images/image1.png#lightbox)
-
 
 ### <a name="iphone-size-classes"></a>iPhone 大小类
 
@@ -98,7 +96,6 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 - 视图（ `UIView` ）。
 - 表示控制器（ `UIPresentationController` ）。
 
-
 开发人员使用特性环境返回的特征集合来确定应如何布置用户界面。
 
 所有特征环境都使层次结构如下图所示：
@@ -115,7 +112,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 下面是开发人员在 iPhone 上可能看到的典型特征集合：
 
-|Property|值|
+|属性|值|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
 |`VerticalSizeClass`|规则|
@@ -126,7 +123,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 还可以具有一个特征集合，其中缺少某些值（Apple 将其称为*未指定*）：
 
-|属性|值|
+|Property|值|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
 |`VerticalSizeClass`|未指定|
@@ -234,14 +231,12 @@ iOS 8 提供若干次回调，开发人员可以使用这些回调来参与特�
 - 默认情况下，展开后，拆分视图控制器将使用主视图控制器作为视图。 开发人员可以重写此行为， `GetPrimaryViewControllerForCollapsingSplitViewController`方法是重写的`UISplitViewControllerDelegate`方法，并提供要在折叠状态下显示的任何视图控制器。
 - 辅助视图控制器必须合并到主视图控制器。 通常，开发人员无需在此步骤中执行任何操作;拆分视图控制器包括基于硬件设备的此阶段的自动处理。 但是，在某些特殊情况下，开发人员需要与此更改进行交互。 `UISplitViewControllerDelegate` `CollapseSecondViewController`通过调用的方法，可以在进行折叠时显示母版视图控制器，而不是详细信息视图。
 
-
 ### <a name="expanding-the-split-view-controller"></a>展开拆分视图控制器
 
 现在，让我们详细了解拆分视图控制器从折叠状态扩展后会发生的情况。 同样，需要执行两个阶段：
 
 - 首先，定义新的主视图控制器。 默认情况下，拆分视图控制器将自动从折叠视图使用主视图控制器。 同样，开发人员可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`来重写此行为。
 - 选择主视图控制器后，必须重新创建辅助视图控制器。 同样，拆分视图控制器包括基于硬件设备的此阶段的自动处理。 开发人员可以通过调用`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`来重写此行为。
-
 
 在拆分视图控制器中，主视图控制器通过实现`CollapseSecondViewController`和`SeparateSecondaryViewController`方法`UISplitViewControllerDelegate`，在展开和折叠视图中扮演着一个部分。 `UINavigationController`实现这些方法以自动推送和弹出辅助视图控制器。
 
@@ -254,7 +249,6 @@ Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的�
 - `ShowViewController`–改编以根据其环境显示新的视图控制器。 例如，在中`UINavigationController` ，只需将新视图推送到堆栈上。 在拆分视图控制器中，新的视图控制器将作为新的主视图控制器显示在左侧。 如果没有容器视图控制器，则新视图将显示为模式视图控制器。
 - `ShowDetailViewController`–的工作方式类似`ShowViewController`于，但在拆分视图控制器上实现，用于将详细信息视图替换为传入的新视图控制器。 如果拆分视图控制器已折叠（在 iPhone 应用程序中可能会看到），则调用将被重定向到`ShowViewController`方法，新视图将显示为主视图控制器。 同样，如果不存在容器视图控制器，则新视图将显示为模式视图控制器。
 
-
 这些方法的工作方式是从叶视图控制器开始，遍历视图层次结构，直到找到正确的容器视图控制器来处理新视图的显示。
 
 开发人员可以`ShowViewController`在`ShowDetailViewController`自己`UINavigationController`的自定义视图控制器中实现和，以获得和`UISplitViewController`提供的相同自动化功能。
@@ -265,11 +259,10 @@ Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的�
 
  [![](unified-storyboards-images/gettargetforaction.png "新的 GetTargetForAction 方法")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-此方法将遍历层次结构链，直到找到正确的容器视图控制器。 例如：
+此方法将遍历层次结构链，直到找到正确的容器视图控制器。 例如:
 
 1. 如果调用`ShowViewController`方法，则实现此方法的链中的第一个视图控制器是导航控制器，因此它将用作新视图的父控制器。
 1. 如果已调用方法，则拆分视图控制器是第一个要实现它的视图控制器，因此它将用作父级。 `ShowDetailViewController`
-
 
 `GetTargetForAction`方法的工作方式是：查找实现给定操作的视图控制器，然后询问视图控制器（如果它要接收该操作）。 由于此方法是公共的，因此开发人员可以创建自己的自定义方法，这些方法`ShowViewController`与`ShowDetailViewController`内置和方法相同。
 
@@ -357,7 +350,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>添加过渡动画
 
-自适应照片应用程序中的拆分视图控制器从折叠展开为展开时，会通过重写视图控制器的`WillTransitionToTraitCollection`方法，将动画添加到默认动画。 例如：
+自适应照片应用程序中的拆分视图控制器从折叠展开为展开时，会通过重写视图控制器的`WillTransitionToTraitCollection`方法，将动画添加到默认动画。 例如:
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -690,7 +683,6 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 这是在新的 iphone 6 和 iPhone 6 Plus 设备（以及即将发布的 Apple Watch）中与所有现有 iPhone 和 iPad 设备进行因式分解，这表示`Default.png`启动屏幕图像资产的一系列不同大小、方向和分辨率，必须创建和维护。 此外，这些文件可能会很大，并且会 "膨胀" 可交付结果应用程序捆绑，增加从 iTunes 应用商店下载应用程序所需的时间（可能是因为它无法通过移动电话网络传递）并增加最终用户设备上所需的存储量。
 
 对于 iOS 8，开发人员可在 Xcode 中创建单个原子`.xib`文件，该文件使用自动布局和大小类来创建可用于每个设备、分辨率和方向的*动态启动屏幕*。 这不仅减少了开发人员创建和维护所有必需的图像资产所需的工作量，而且大大减少了应用程序的已安装捆绑的大小。
-
 
 动态启动屏幕具有以下限制和注意事项：
 
