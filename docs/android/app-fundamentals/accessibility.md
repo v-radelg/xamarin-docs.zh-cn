@@ -157,7 +157,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **AXML**
 
-在布局 XML 中辅助属性，如`hint`和`contentDescription`可以设置为字符串标识符：
+在布局 XML 中辅助功能属性，如`hint`和`contentDescription`可以设置为字符串标识符：
 
 ```xml
 <TextView
