@@ -54,7 +54,7 @@ saveButton.ContentDescription = "Save data";
 设置`Hint`在代码中的属性：
 
 ```csharp
-someText.Hint = "Enter some text"; // 在控件没有任何输入时显示 ("读取"该值)
+someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
 ```
 
 **AXML 布局**
