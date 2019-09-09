@@ -54,7 +54,7 @@ saveButton.ContentDescription = "Save data";
 设置`Hint`在代码中的属性：
 
 ```csharp
-someText.Hint = "Enter some text"; // 在控件没有任何输入时显示 ("读取")
+someText.Hint = "Enter some text"; // 在控件没有任何输入时显示 ("读取"该值)
 ```
 
 **AXML 布局**
@@ -174,7 +174,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 ## <a name="testing-accessibility"></a>测试辅助功能
  
-请按照 [这些步骤](https://developer.android.com/training/accessibility/testing.html#how-to) 在 Android 设备上通过触摸启用 TalkBack 和触摸导航，测试辅助功能。
+请按照 [这些步骤](https://developer.android.com/training/accessibility/testing.html#how-to) 在 Android 设备上启用 TalkBack 和触摸导航，测试辅助功能。
 
 如果未在 **设置 > 可访问性** 中出现，可能需要从 Google Play 安装[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)。
 
