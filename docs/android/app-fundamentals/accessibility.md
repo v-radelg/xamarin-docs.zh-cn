@@ -13,21 +13,21 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61018615"
 ---
-# <a name="accessibility-on-android"></a>在 Android 中的辅助功能
+# <a name="accessibility-on-android"></a>Android 中的辅助功能
 
-此页介绍了如何依照 [辅助功能清单](~/cross-platform/app-fundamentals/accessibility.md) 使用 Android 辅助功能 Api 来构建应用程序。
-对于其它平台下的 Api 请参阅 [iOS 辅助功能](~/ios/app-fundamentals/accessibility.md) 和 [OS X 辅助功能](~/mac/app-fundamentals/accessibility.md)。
+本页介绍如何依照 [辅助功能清单](~/cross-platform/app-fundamentals/accessibility.md) 使用 Android 辅助功能 API 来生成应用。
+请参阅 [iOS 辅助功能](~/ios/app-fundamentals/accessibility.md) 和 [OS X 辅助功能](~/mac/app-fundamentals/accessibility.md) 页面，了解其他平台的 API。
 
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-Android 提供 `ContentDescription` 屏幕阅读 Api 用于提供控件用途的辅助性描述。
+Android 提供了 `ContentDescription` 属性，屏幕阅读 API 使用该属性来提供控件用途的辅助性说明。
 
-内容说明可以设置在 C# 或 AXML 布局文件中。
+可以在 C# 或 AXML 布局文件中设置内容说明。
 
 **C#**
 
-可以为代码中任何字符串 （或字符串资源） 设置描述：
+说明可在代码中设置为任何字符串（或字符串资源）：
 
 ```csharp
 saveButton.ContentDescription = "Save data";
@@ -35,7 +35,7 @@ saveButton.ContentDescription = "Save data";
 
 **AXML 布局**
 
-在 XML 中布局使用 `android:contentDescription` 属性：
+在 XML 中，布局使用 `android:contentDescription` 属性：
 
 ```xml
 <ImageButton
@@ -44,10 +44,10 @@ saveButton.ContentDescription = "Save data";
     android:contentDescription="Save data" />
 ```
 
-### <a name="use-hint-for-textview"></a>为 TextView 设置提示
+### <a name="use-hint-for-textview"></a>为 TextView 使用 Hint
 
-对于 `EditText` 和 `TextView` 控件的数据输入，使用`Hint` 属性来提供预期输入内容的说明 (而不是`ContentDescription` )。
-当输入文本后，将 "读取" 文本自身而不是提示。
+对于数据输入的 `EditText` 和 `TextView` 控件，请使用 `Hint` 属性来提供所需输入内容的说明 (而不是 `ContentDescription` )。
+输入文本后，“读取”的是文本本身，而不是提示。
 
 **C#**
 
@@ -74,7 +74,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **C#**
 
-在C#，设置 `LabelFor` 属性内容为控件资源 ID (通常设置某个 label 控件的此属性，使其引用其他输入控件)：
+在 C# 中，将 `LabelFor` 属性设置为此内容描述的控件的资源 ID（通常，此属性在标签上进行设置，并会引用其他输入控件）：
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -96,11 +96,11 @@ tv.LabelFor = Resource.Id.editFirstName;
     android:hint="Enter some text" />
 ```
 
-### <a name="announce-for-accessibility"></a> 辅助功能播报
+### <a name="announce-for-accessibility"></a>发布辅助功能公告
 
-在任何视图控件中使用 `AnnounceForAccessibility` 方法，将在辅助功能启动后，通知用户事件或状态变化。 大多数操作不需要此方法，内置叙述提供了充分的反馈，但应使用额外信息帮助用户。
+在任何视图控件上使用 `AnnounceForAccessibility` 方法，以在启用辅助功能时通知用户事件或状态的更改。在内置旁白提供了充分的反馈的情况下，大多数操作不需要此方法，但应在其他信息对用户有用的情况下使用此方法。
 
-下面的代码显示了简单的示例调用 `AnnounceForAccessibility`:
+下面的代码显示了一个调用 `AnnounceForAccessibility` 的简单示例：
 
 ```csharp
 button.Click += delegate {
@@ -111,11 +111,11 @@ button.Click += delegate {
 
 ## <a name="changing-focus-settings"></a>更改焦点设置
 
-辅助功能导航依赖于控件的焦点，以告知用户可使用哪些操作。 Android 提供 `Focusable` 标记在导航期间可接收焦点的控件的属性。
+辅助功能导航依赖于具有焦点的控件，以帮助用户了解哪些操作可供使用。Android 提供了 Focusable 属性，可以将控件标记为能够专门在导航期间接收焦点。
 
 **C#**
 
-若要防止控件获得焦点的C#，设置 `Focusable` 属性设置为`false`:
+若要防止控件通过 C＃ 获得焦点，请将 `Focusable` 属性设置为 `false`：
 
 ```csharp
 label.Focusable = false;
