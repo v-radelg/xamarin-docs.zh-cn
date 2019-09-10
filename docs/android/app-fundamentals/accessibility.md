@@ -98,7 +98,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 ### <a name="announce-for-accessibility"></a> 辅助功能播报
 
-使用 `AnnounceForAccessibility` 方法在任何视图控件中，在辅助功能启动后，通知用户事件或状态的变化。 大多数操作不需要此方法，内置叙述提供了充分的反馈，但应使用额外信息帮助用户。
+在任何视图控件中使用 `AnnounceForAccessibility` 方法，将在辅助功能启动后，通知用户事件或状态变化。 大多数操作不需要此方法，内置叙述提供了充分的反馈，但应使用额外信息帮助用户。
 
 下面的代码显示了简单的示例调用 `AnnounceForAccessibility`:
 
