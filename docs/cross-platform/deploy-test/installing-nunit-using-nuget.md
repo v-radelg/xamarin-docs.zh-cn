@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 8fc4ca3063e88f17fc1e22ad35667b2086e63e89
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2437a26ae0f9187d3042ef6e6064ddafa808804c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280478"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766010"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>使用 NuGet 安装 NUnit 2.6.4
 
@@ -39,7 +39,6 @@ _本指南介绍了如何使用 NuGet 将 NUnit 3.0 降级到 NUnit 2.6.4。_
 
 以下步骤介绍如何安装 NUnit 2.6.4。
 
-
 1. **打开程序包管理器** - 右键单击“包”  ，然后从弹出菜单中选择“添加包”  ：
 
     [![](installing-nunit-using-nuget-images/add-packages-xs.png "右键单击“包”，然后从弹出菜单中选择“添加包”")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
@@ -47,7 +46,6 @@ _本指南介绍了如何使用 NuGet 将 NUnit 3.0 降级到 NUnit 2.6.4。_
 1. **搜索 `NUnit version:2.6.4`** - Visual Studio for Mac 会卸载 NUnit 3.0（如果必要），然后下载并安装 NUnit 2.6.4。 在“添加包”  对话框右上角处的“搜索”  字段中，输入文本 `nunit version:2.6.4`。 从搜索结果中选择“NUnit”  ，然后单击“添加包”  按钮：
 
     [![](installing-nunit-using-nuget-images/nunit-search-xs.png "从搜索结果中选择“NUnit”，然后单击“添加包”按钮")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
-
 
 可通过在 Solution Pad 中检查 NUnit 包版本号来确认是否安装了 NUnit 2.6.4：
 
@@ -57,13 +55,11 @@ _本指南介绍了如何使用 NuGet 将 NUnit 3.0 降级到 NUnit 2.6.4。_
 
 本指南介绍如何使用包管理器控制台在 Visual Studio for Mac 中将 NUnit 3.0 降级到 NUnit 2.6.4。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>在 Visual Studio 中安装 NUnit 2.6.4
 
 本部分着重介绍如何在 Visual Studio 2015 或更高版本中使用 NuGet 包管理器控制台卸载 NUnit 3.0 和安装 NUnit 2.6.4  。
-
 
 1. **启动 NuGet 程序包管理器控制台** -  **选择“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”** ：
 

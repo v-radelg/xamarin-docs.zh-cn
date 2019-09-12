@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 2080961e2741ea0d0f0316918c55f3c2a194a00a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43dce7fe6d2a4a976879b1f583711d767dcacc7c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289978"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756214"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -22,9 +22,7 @@ Beta 测试是软件开发周期中不可分割的一部分，有许多跨平台
 
 TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [iTunes Connect](https://itunesconnect.apple.com/) 访问。 它当前可用于 iOS 8.0 应用及更高版本。 TestFlight 允许对内部和外部用户进行 beta 测试，并且由于外部用户的 Beta 版应用审核，可在发布到 App Store 时的最终审核中大幅简化该过程。
 
-
 以前，二进制文件在 Visual Studio for Mac 中生成并上传到 TestFlightApp 网站以分发给测试员。 新进程有了大量改进，使用户可在 App Store 中拥有经过充分测试的优质应用。 例如:
-
 
 - 外部测试所需的 Beta 版应用审核可增加最终 App Store 审核的成功几率，因为两者都需要遵守 Apple 相关指南。
 - 上传之前，应用需要在 iTunes Connect 中进行注册。 这可确保配置文件、名称和证书之间完全匹配。
@@ -44,7 +42,6 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 [在 Xcode 中验证内部版本](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)时，可确认分发配置文件中是否包含 Beta 权利，如下所示：
 
 [![](testflight-images/validate-build.png "将应用提交到 Apple")](testflight-images/validate-build.png#lightbox)
-
 
 ## <a name="testflight-workflow"></a>TestFlight 工作流
 
@@ -68,14 +65,11 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
     [![](testflight-images/my-apps.png "选择“我的应用”")](testflight-images/my-apps.png#lightbox)
 
-
 3. 在“我的应用”  屏幕上，单击屏幕左上角的“+”  按钮以添加新的应用。 若拥有 Mac 和 iOS 开发人员帐户，则系统将提示你在此处选择新的应用类型。
 
 将显示“新 iOS 应用”  提交窗口，其中需包含与应用的 Info.plist 中完全相同的信息
 
 若要深入了解如何创建新 iTunes Connect 记录，请参阅[创建 iTunes Connect 记录](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)指南。
-
-
 
 ### <a name="completing-the-new-ios-app-submission-form"></a>完成“新 iOS 应用提交”窗体
 
@@ -91,7 +85,6 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 - **版本** - 正在上传的应用的版本号。 这由开发人员选择。
 - **SKU** - SKU 是应用的唯一 ID，不向用户显示。 可按类似方式将其视为产品 ID。 在以上示例中，我选择了日期和该日期的版本号。
 
-
 ## <a name="upload-your-app"></a>上传应用
 
 创建 iTunes Connect 记录后，即可上传新的版本。 请记住，版本必须具有新的 Beta 权利。
@@ -105,7 +98,6 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
  若要在 Visual Studio for Mac 中生成二进制文件，将需要使用存档  功能。 右键单击项目，然后选择“存档以供发布”  ，如下所示：
 
  [![](testflight-images/new-archive.png "选择“存档以发布”")](testflight-images/new-archive.png#lightbox)
-
 
  有关详细信息，请参阅[生成可分发文件](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)指南。
 
@@ -144,7 +136,6 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
  有关这些步骤的详细信息，请参阅[将应用提交到 Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) 部分。
 
 -----
-
 
 [发布到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)指南更详细地介绍了所有上述步骤，请参阅此指南以更加深入地了解 App Store 提交过程。
 
@@ -217,7 +208,6 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 可在“内部测试员”页的状态列中查看其邀请状态：
 
 [![](testflight-images/status-added.png "邀请状态")](testflight-images/status-added.png#lightbox)
-
 
 ### <a name="external-testers"></a>外部测试员
 

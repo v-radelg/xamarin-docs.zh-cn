@@ -6,16 +6,16 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f22563aeaeb7bec2f87ca7892005f2cfb1c4e84b
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
+ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58870373"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765049"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速计
 
-Accelerometer 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
+Accelerometer  类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
 
 ## <a name="get-started"></a>入门
 
@@ -98,4 +98,3 @@ X 轴水平向右，Y 轴垂直向上，Z 轴从屏幕正面指向外。 在此�
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Accelerometer-XamarinEssentials-API-of-the-Week/player]
 
 [!include[](~/essentials/includes/xamarin-show-essentials.md)]
-

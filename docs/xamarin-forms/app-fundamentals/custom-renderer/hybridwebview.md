@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 0277a5abd4e34d092b231cd42746f9e05c91b8df
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 66e26704f22a73559eef04608726ab3b4a935385
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199950"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771918"
 ---
 # <a name="implementing-a-hybridwebview"></a>实现 HybridWebView
 
@@ -507,7 +507,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>总结
 
 本文已演示了如何为 `HybridWebView` 自定义控件创建自定义呈现器，演示如何增强特定于平台的 Web 控件以允许从 JavaScript 调用 C# 代码。
-
 
 ## <a name="related-links"></a>相关链接
 

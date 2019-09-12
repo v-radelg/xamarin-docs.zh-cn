@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ef3ba27b9056e1de92aabb87f86416b2985d6e1d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525707"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754223"
 ---
 # <a name="android-debug-log"></a>Android 调试日志
 
@@ -29,7 +29,6 @@ ms.locfileid: "69525707"
 > “调试日志”  工具并不适用于 Xamarin Live Player。
 
 “调试日志”  不会显示在设备上独立运行应用时生成的日志消息（即，在从 Visual Studio 断开连接时）。
-
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>从 Visual Studio 访问调试日志
 
@@ -60,13 +59,11 @@ ms.locfileid: "69525707"
 
 - 搜索框 &ndash; 在此框中输入搜索字符串以筛选日志条目子集  。
 
-
 当显示“调试日志”  工具窗口时，使用设备下拉菜单来选择要监视的 Android 设备：
 
 [![设备选择器的位置](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
 
 在选择设备后，“设备日志”工具会从正在运行的应用中自动添加日志条目 &ndash; 这些日志条目显示在日志条目表中  。 在设备之间切换将停止和启动设备日志记录。 请注意，在任何设备显示在设备选择器中之前，必须加载 Android 项目。 如果设备未显示在设备选择器中，请确认它在“启动”  按钮旁边的 Visual Studio 设备下拉列表菜单中可用。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -104,7 +101,6 @@ ms.locfileid: "69525707"
 
 -----
 
-
 ## <a name="accessing-from-the-command-line"></a>从命令行访问
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -129,11 +125,9 @@ $ ./adb logcat
 
 -----
 
-
 如果连接了多个设备，则必须对设备进行显式标识。 例如，adb -d logcat  显示已连接的唯一物理设备的日志，而 adb -e logcat  显示运行中的唯一仿真器的日志。
 
 通过输入 adb  和读取帮助消息，可以找到更多命令。
-
 
 ## <a name="writing-to-the-debug-log"></a>写入调试日志
 

@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 2166cbbb3d15cde1af83b3071a0d83a1e8f51071
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: e5c8e02397e778cf3e71a0c8b4aa544074521cac
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560265"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755940"
 ---
 # <a name="proguard"></a>ProGuard
 
 _Xamarin.Android ProGuard 是一个 Java 类文件压缩器、优化器和预验证器。它会检测和删除未使用的代码，分析和优化字节码。本指南阐释了 ProGuard 的工作原理、如何在项目中启用它，以及如何进行配置。同时提供了几个 ProGuard 配置示例。_
-
 
 ## <a name="overview"></a>概述
 
@@ -36,8 +35,6 @@ ProGuard 使用以下步骤处理输入 APK：
 
 上述每个步骤均*可选*。 Xamarin.Android ProGuard 要使用其中的部分步骤，详见下一节。 
 
-
-
 ## <a name="proguard-in-xamarinandroid"></a>Xamarin.Android 中的 ProGuard
 
 Xamarin.Android ProGuard 配置不会模糊处理 APK。 事实上，无法通过 ProGuard 进行模糊处理（即使使用自定义配置文件）。 因此，Xamarin.Android 的 ProGuard 只执行**压缩**和**优化**步骤： 
@@ -52,8 +49,6 @@ Xamarin.Android ProGuard 配置不会模糊处理 APK。 事实上，无法通�
 
 接下来将说明上述各步骤。
 
-
-
 ### <a name="linker-step"></a>链接器步骤
 
 Xamarin.Android 链接器使用应用程序的静态分析来确定以下内容： 
@@ -66,19 +61,13 @@ Xamarin.Android 链接器使用应用程序的静态分析来确定以下内容�
 
 将始终在 ProGuard 步骤前运行链接器。 因此，链接器可剥因此，链接器可剥离想要 ProGuard 在其上运行的程序集/类型/成员。 （若要详细了解 Xamarin.Android 中的链接，请参阅[在 Android 上链接](~/android/deploy-test/linker.md)。）
 
-
-
 ### <a name="proguard-step"></a>ProGuard 步骤
 
 链接器步骤成功完成后，运行 ProGuard 删除未使用的 Java 字节码。 此步骤用于优化 APK。 
 
-
-
 ## <a name="using-proguard"></a>使用 ProGuard
 
 必须先启用 ProGuard，才可在应用项目中使用它。 接下来，可让 Xamarin.Android 生成过程使用默认的 ProGuard 配置文件，也可自行创建自定义配置文件供 ProGuard 使用。 
-
-
 
 ### <a name="enabling-proguard"></a>启用 ProGuard
 
@@ -150,13 +139,11 @@ Xamarin.Android 链接器使用应用程序的静态分析来确定以下内容�
 
 还可使用 `[Register]` 注释来注册自己的名称，并使用这些名称来自定义 ProGuard 规则。 可为 Adapter、View、BroadcastReceiver、Service、ContentProvider、Activity 和 Fragment 注册名称。 有关使用 `[Register]` 自定义属性的详细信息，请参阅[使用 JNI](~/android/platform/java-integration/working-with-jni.md)。
 
-
 ### <a name="proguard-options"></a>ProGuard 选项
 
 ProGuard 提供了许多选项，可配置实现更精细的操作控制。 [ProGuard 手册](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html)提供了 ProGuard 用法的完整参考文档。 
 
 Xamarin.Android 支持以下 ProGuard 选项： 
-
 
 - [输入/输出选项](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#iooptions)
 
@@ -188,8 +175,6 @@ Xamarin.Android *忽略*以下选项：
 
 - [预验证选项](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
 
-
-
 ## <a name="proguard-and-android-nougat"></a>ProGuard 和 Android Nougat
 
 如果尝试在 Android 7.0 或更高版本上使用 ProGuard，必须下载较新版本的 ProGuard，因为 Android SDK 未提供与 JDK 1.8 兼容的新版本。
@@ -197,8 +182,6 @@ Xamarin.Android *忽略*以下选项：
 可使用此 [NuGet 包](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)安装 `proguard.jar` 的较新版本。 有关更新默认 Android SDK `proguard.jar` 的详细信息，请参阅此[堆栈溢出](https://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706)讨论。
 
 可在 [SourceForge 页面](https://sourceforge.net/projects/proguard/files/)找到所有版本的 ProGuard。 
-
-
 
 ## <a name="example-proguard-configurations"></a>ProGuard 配置示例
 
@@ -271,7 +254,6 @@ public static <fields>;
 
 以下部分介绍了 ProGuard 在Xamarin.Android **发布**生成期间的运行方式。
 
-
 ### <a name="what-command-is-proguard-running"></a>ProGuard 正在运行什么命令？
 
 ProGuard 只是随附 Android SDK 提供的 `.jar`。 因此，它会在命令中被调用： 
@@ -342,16 +324,13 @@ Unknown option '-keep' in line 1 of file 'proguard.cfg'
 
 -----
 
-
 ### <a name="other-issues"></a>其他问题
 
 ProGuard [疑难解答](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html)页面讨论了使用 ProGuard 时可能遇到的常见问题（及解决方案）。
 
-
 ## <a name="summary"></a>总结
 
 本指南阐释了 ProGuard 在 Xamarin.Android 中的工作原理、如何在应用项目中启用它，以及如何进行配置。 提供了示例 ProGuard 配置，并描述了常见问题的解决方案。 有关 ProGuard 工具和 Android 的详细信息，请参阅[压缩代码和资源](https://developer.android.com/tools/help/proguard.html)。 
-
 
 ## <a name="related-links"></a>相关链接
 

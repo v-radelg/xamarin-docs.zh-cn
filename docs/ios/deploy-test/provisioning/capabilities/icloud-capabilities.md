@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 0972b7c6fa686f40ca548f8267f8e514e9244f05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3fd3ec0207ac3ae1e5fcaa7d11d91247cd73666d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286142"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762910"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS 中的 iCloud 功能
 
@@ -92,7 +92,7 @@ iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在�
     ![选择容器屏幕](icloud-capabilities-images/image34.png)
 
 10. 确认容器分配，然后按“分配”  。
- 
+
 现在此应用 ID 可用于生成或再生成新的预配配置文件，正如[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中所述。 
 
 有关使用 iCloud 的详细信息，请参阅以下指南：
@@ -102,7 +102,7 @@ iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在�
 * [文档选取器简介](~/ios/platform/document-picker.md)
 
 ## <a name="next-steps"></a>后续步骤
- 
+
 下表列出了可能需要采取的其他步骤：
 
 * 在应用中使用框架命名空间。

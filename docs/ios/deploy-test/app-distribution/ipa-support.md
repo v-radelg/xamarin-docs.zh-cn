@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 58621701d832660b125d7589762cc033811eb69b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9982f9102166aa6892be0819615f329a65fffbb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281842"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756431"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支持
 
@@ -66,7 +66,6 @@ ms.locfileid: "70281842"
 
 若要生成 IPA，需要创建应用程序发布版本的存档  。 该存档包含应用及其相关标识信息。
 
-
 1. 在 Visual Studio for Mac 中选择“发布 | 设备”  配置： !
 
     ![](ipa-support-images/buildxs01new.png "选择“发布 | 设备”配置")
@@ -79,7 +78,6 @@ ms.locfileid: "70281842"
 
     ![](ipa-support-images/buildxs03new.png "将显示“存档”视图")
 
-
 ### <a name="sign-and-distribute-your-app"></a>签名和分发应用
 
 每次生成用于存档的应用程序时，都会自动打开“存档视图”  ，显示所有已存档的项目（按解决方案分组）。 默认情况下，此视图只显示当前打开的解决方案。 若要查看拥有存档的所有解决方案，请单击“显示所有存档”  选项。
@@ -89,7 +87,6 @@ ms.locfileid: "70281842"
 请注意，对于非 App Store 版本，**iTunesMetadata.plist** 文件和 iTunes 图稿集将自动包含在 IPA 中（如果在存档中找到）。
 
 对应用进行签名并准备分发：
-
 
 1. 选择“签名并分发...”  按钮，如下所示：
 
@@ -111,11 +108,9 @@ ms.locfileid: "70281842"
 
     ![](ipa-support-images/distribute04.png "将 IPA 保存到计算机")
 
-
 ### <a name="building-via-the-command-line-on-mac"></a>（在 Mac 上）通过命令行生成
 
 在某些情况下，如在 CI 环境中，可能需要通过命令行生成 IPA。 为此，请按照以下步骤进行操作：
-
 
 1. 确保已选中“项目选项”>“iOS IPA 选项”>“包含 iTunes 图稿图像”  ，并且已选中“生成 Ad-Hoc/企业包 (IPA)”  ：
 
@@ -251,7 +246,6 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 ## <a name="summary"></a>总结
 
 本文涵盖了为非 App Store 版本准备 Xamarin.iOS 应用程序所需的设置。 介绍了如何创建 IPA 包，以及如何在最终用户的 iOS 设备上安装生成的 iOS 应用程序，用于测试或 In-House 分发。
-
 
 ## <a name="related-links"></a>相关链接
 

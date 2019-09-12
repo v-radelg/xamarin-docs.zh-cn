@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3be55c2149aa58bf6d8462e5c1ff24166078355f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525021"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755901"
 ---
 # <a name="manually-signing-the-apk"></a>对 APK 进行手动签名
-
 
 生成用于发布的应用程序后，应先对 APK 进行签名，然后再进行分发，以便它能够在 Android 设备上运行。 此过程通常在 IDE 中处理，但某些情况下，需要在命令行中手动对 APK 进行签名。 对 APK 进行签名的步骤如下：
 
@@ -27,15 +26,11 @@ ms.locfileid: "69525021"
 
 步骤的顺序至关重要，取决于使用何种工具对 APK 进行签名。 当使用 apksigner 时，务必先使用 zipalign 优化应用程序，然后再通过 apksigner 对其签名。     如需使用 jarsigner 对 APK 进行签名，则需先对 APK 进行签名，然后再运行 zipalign。   
 
-
-
 ## <a name="prerequisites"></a>系统必备
 
 本指南主要介绍使用来自 Android SDK 生成工具 v24.0.3 或更高版本的 apksigner。  假设已生成 APK。
 
 通过早期 Android SDK 生成工具版本生成的应用程序必须使用 jarsigner  ，如下面的[使用 jarsigner 对 APK 进行签名](#Sign_the_APK_with_jarsigner)中所述。
-
-
 
 ## <a name="create-a-private-keystore"></a>创建专用密钥存储
 
@@ -48,8 +43,6 @@ ms.locfileid: "69525021"
 
 请务必保护此密钥存储。 如果丢失，则无法通过 Google Play 发布应用程序更新。
 若要解决密钥存储丢失造成的问题，只能创建新的密钥存储、使用新密钥对 APK 重新签名，然后提交新版应用程序。 然后，必须从 Google Play 中删除旧版应用程序。 同样，如果新的密钥存储被泄露或公开分发，则可能会分发非官方版本或恶意版本的应用程序。
-
-
 
 ### <a name="create-a-new-keystore"></a>创建新的密钥存储
 
@@ -95,7 +88,6 @@ Re-enter new password:
 $ keytool -list -keystore xample.keystore
 ```
 
-
 ## <a name="zipalign-the-apk"></a>使用 Zipalign 优化 APK
 
 在使用 apksigner 对 APK 进行签名之前，首先要使用来自 Android SDK 的 zipalign 工具对文件进行优化。   zipalign 将沿着 4 字节边界重组 APK 中的资源。  这种调整使 Android 可快速加载 APK 中的资源，提高应用程序的性能，并有可能降低内存使用。 Xamarin.Android 将执行运行时检查，确定是否已使用 zipalign 优化 APK。 对 APK 进行 zipalign 优化后，应用程序才会运行。
@@ -105,7 +97,6 @@ $ keytool -list -keystore xample.keystore
 ```shell
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
-
 
 ## <a name="sign-the-apk"></a>对 APK 进行签名
 
@@ -129,7 +120,6 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!NOTE]
 > 根据 [Google 问题 62696222](https://issuetracker.google.com/issues/62696222)，Android SDK 中“缺少”apksigner  。 此问题的解决方案是安装 Android SDK 生成工具 v25.0.3，并使用该版本的 apksigner。   
 
-
 <a name="Sign_the_APK_with_jarsigner" />
 
 ### <a name="sign-the-apk-with-jarsigner"></a>使用 jarsigner 对 APK 进行签名
@@ -147,8 +137,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 
 > [!NOTE]
 > 使用 jarsigner  时，务必首先  对 APK 进行签名，然后再使用 zipalign  。  
-
-
 
 ## <a name="related-links"></a>相关链接
 

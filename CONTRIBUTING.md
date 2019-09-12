@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118914"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751924"
 ---
 # <a name="contributing"></a>参与
 
@@ -32,10 +32,8 @@ ms.locfileid: "70118914"
 
 6. 一旦反馈得到应用且更改看起来不错，维护人员将合并 PR。 它将很快出现在 docs.microsoft.com 上。
 
-
 > [!NOTE]
 > 如果 PR 正在解决现有问题，请将 `Fixes #Issue_Number` 关键字添加到提交消息或 PR 描述中，以便在合并 PR 时自动关闭该问题。 有关详细信息，请参阅[通过提交消息关闭问题](https://help.github.com/articles/closing-issues-via-commit-messages/)。
-
 
 ### <a name="big-changes-or-new-content"></a>重大更改或新增内容
 
@@ -80,5 +78,3 @@ Xamarin 团队将审核 PR，并告知（通过 PR 反馈）更改是否看似�
 
 > [!NOTE]
 > 你或许会注意到某些主题目前并没有遵循此处指定的所有准则和[风格指南](contributing-guidelines/template.md)。 我们正努力实现整个站点的一致性。 
-
-

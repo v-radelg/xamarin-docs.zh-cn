@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: dac059576b8821d218cca44ae1c049010e364cfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 71e509d87dc2a2947821084aea5668055f6f4678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739361"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771494"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
 
@@ -214,7 +214,6 @@ namespace DependencyServiceDemos.Droid
 ## <a name="uwp-implementation"></a>UWP 实现
 
 与 iOS 和 Android 实现不同，用于通用 Windows 平台的照片选取器的实现不需要 `TaskCompletionSource` 类。 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs) 类使用 [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) 类访问照片库。 由于 `FileOpenPicker` 的 `PickSingleFileAsync` 方法本身是异步的，`GetImageStreamAsync` 方法可以简单地将 `await` 与该方法（以及其他异步方法）一起使用，并返回 `Stream` 对象：
-
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]

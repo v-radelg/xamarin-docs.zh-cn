@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e5f494c2f41500b660bf333e7c63f0120536f52a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525415"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753844"
 ---
 # <a name="linking-on-android"></a>在 Android 上链接
 
@@ -25,8 +25,6 @@ Xamarin.Android 应用程序使用链接器  缩减应用程序大小。 链接�
 |在链接的情况下进行发布：|4.2 MB|2.9 MB|
 
 链接导致程序包的大小是 1.2.0 中原始（未链接）程序包大小的 30%，是 4.0.1 中未链接程序包大小的 18%。
-
-
 
 ## <a name="control"></a>控件
 
@@ -50,7 +48,6 @@ public class MyActivity {
 }
 ```
 
-
 ### <a name="linker-behavior"></a>链接器行为
 
 用于控制链接器的主要机制为“项目选项”  对话框中的“链接器行为”  （在 Visual Studio 中为“链接”  ）下拉列表。 有三个选项：
@@ -58,7 +55,6 @@ public class MyActivity {
 1. **不链接**（在 Visual Studio 中为“无”  ）
 1. **链接 SDK 程序集**（仅 SDK 程序集  ）
 1. **链接所有程序集**（SDK 和用户程序集  ）
-
 
 “不链接”  选项会关闭链接器；上述“在不链接的情况下进行发布”应用程序大小示例使用了此行为。 这对排除运行时故障很有用，可了解链接器是否负责。 通常不建议将此设置用于生产版本。
 
@@ -86,7 +82,6 @@ E/mono    (17755):   at LinkerScratch2.Activity1.OnCreate (Android.OS.Bundle bun
 E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (IntPtr jnienv, IntPtr native__this, IntPtr native_savedInstanceState) [0x00000] in <filename unknown>:0
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
-
 
 ### <a name="preserving-code"></a>保留代码
 
@@ -149,8 +144,6 @@ namespace Android.Runtime
 
 在以上示例中，`Preserve` 属性在 `Android.Runtime` 命名空间进行了声明；但是，你可以在任何命名空间使用 `Preserve` 属性，因为链接器会按类型名称查找此属性。
 
-
-
 ### <a name="falseflag"></a>falseflag
 
 如果不能使用 [Preserve] 属性，提供一段代码以便链接器相信该类型被使用通常很有用，但同时需防止代码块在运行时被执行。 若要利用此技术，我们可以执行以下操作：
@@ -173,8 +166,6 @@ class MyActivity {
 }
 ```
 
-
-
 ### <a name="linkskip"></a>linkskip
 
 可以指定根本不应链接一组用户提供的程序集，同时允许使用 [AndroidLinkSkip MSBuild 属性](~/android/deploy-test/building-apps/build-process.md)通过“链接 SDK 程序集”  行为跳过其他用户程序集：
@@ -185,14 +176,11 @@ class MyActivity {
 </PropertyGroup>
 ```
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 可以在包含[自定义链接器配置文件](~/cross-platform/deploy-test/linker.md)的文件上使用 [`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md)
 **生成操作**
 。 要保留需要保留的 `internal` 或 `private` 成员，可能需要自定义链接器配置文件。
-
-
 
 ### <a name="custom-attributes"></a>自定义特性
 
@@ -207,7 +195,6 @@ class MyActivity {
 - System.MonoTODOAttribute
 - System.Xml.MonoFIXAttribute
 
-
 链接程序集时，将从发行版本的所有成员中删除以下自定义属性类型：
 
 - System.Diagnostics.DebuggableAttribute
@@ -219,7 +206,6 @@ class MyActivity {
 - System.Diagnostics.DebuggerStepThroughAttribute
 - System.Diagnostics.DebuggerTypeProxyAttribute
 - System.Diagnostics.DebuggerVisualizerAttribute
-
 
 ## <a name="related-links"></a>相关链接
 

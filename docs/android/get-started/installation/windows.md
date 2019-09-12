@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 32ededcda1fdfc463269c7e4a2db444edab51d22
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 315cb8e58b0b9f29c06e4d0af2b8cf9adffb06e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119765"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758527"
 ---
 # <a name="windows-installation"></a>Windows 安装
 
 _本指南介绍了在 Windows 上安装 Xamarin.Android for Visual Studio 的步骤，并介绍了如何配置 Xamarin.Android 来生成你的第一个 Xamarin.Android 应用程序。_
-
 
 ## <a name="overview"></a>概述
 
@@ -38,7 +37,6 @@ _本指南介绍了在 Windows 上安装 Xamarin.Android for Visual Studio 的�
 
 有关安装与 Windows 上的 Visual Studio 配合使用的 Xamarin 的详细信息，请参阅 [Windows 安装](~/get-started/installation/windows.md)指南。
 
-
 ## <a name="configuration"></a>配置
 
 Xamarin.Android 使用 Java 开发工具包 (JDK) 和 Android SDK 生成应用。 在安装过程中，Visual Studio 安装程序会将这些工具放置在其默认位置，并使用适当的路径配置来配置开发环境。 可单击“工具”>“选项”>“Xamarin”>“Android 设置”查看和更改这些位置  ：
@@ -51,7 +49,6 @@ Xamarin.Android 使用[JDK 8](https://www.oracle.com/technetwork/java/javase/dow
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。
-
 
 ### <a name="android-sdk-manager"></a>Android SDK 管理器
 
@@ -88,13 +85,11 @@ Android 使用多个 Android API 级别设置来确定应用在各种版本的 A
 > [!NOTE]
 > 在早于 Windows 10 的 2018 年 4 月更新的 Windows 版本中，HAXM 与 Hyper-V 不兼容。 在此情况下，需要[禁用 Hyper-V](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) 或使用不具有 x86 优化的较慢的仿真器映像。
 
-
 <a name="device" />
 
 ### <a name="android-device"></a>Android 设备
 
 如果有用于测试的 Android 物理设备，现在可设置设备用于开发。 通过查看[设置设备进行开发](~/android/get-started/installation/set-up-device-for-development.md)配置 Android 设备进行开发，然后将其连接到计算机以运行和调试 Xamarin.Android 应用程序。
-
 
 ## <a name="create-an-application"></a>创建应用程序
 
@@ -108,13 +103,11 @@ Android 使用多个 Android API 级别设置来确定应用在各种版本的 A
 
 就这么简单！ 现在即可使用 Xamarin.Android 创建 Android 应用程序！
 
-
 ## <a name="summary"></a>总结
 
 本文介绍了如何在 Windows 上设置和安装 Xamarin.Android 平台、如何（可选）使用自定义 Java JDK 和 Android SDK 安装位置配置 Visual Studio、如何启动 SDK Manager 安装其他 Android SDK 组件、如何设置 Android 设备或仿真器，以及如何开始构建你的第一个应用程序。
 
 下一步是查看[了解 Android](~/android/get-started/hello-android/index.md) 教程，了解如何创建可用的 Xamarin.Android 应用。
-
 
 ## <a name="related-links"></a>相关链接
 

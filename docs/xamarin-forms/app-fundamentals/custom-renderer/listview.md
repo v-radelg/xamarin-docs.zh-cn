@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 959b2091e88adde5bb3f64c2cdb5d5b0748aa0be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650822"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771934"
 ---
 # <a name="customizing-a-listview"></a>自定义 ListView
 
@@ -563,7 +563,6 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 ## <a name="summary"></a>总结
 
 本文演示了如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。
-
 
 ## <a name="related-links"></a>相关链接
 

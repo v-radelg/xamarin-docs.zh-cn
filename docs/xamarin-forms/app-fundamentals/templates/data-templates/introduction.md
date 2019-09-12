@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 7308222e64d64efdbad218186bb9a6e4dca3b26e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651928"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771281"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 数据模板简介
 
@@ -133,7 +133,6 @@ public class Person
 - 在应用程序级别定义的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可以应用于整个应用程序中的有效控件。
 
 当视图层次结构中的数据模板共享 `x:Key` 属性时，层次较低的数据模板优先于在较高层次定义的数据模板。 例如，应用程序级别的数据模板将被页面级别的数据模板替代，而页面级别的数据模板将被控件级别的数据模板或内联数据模板替代。
-
 
 ## <a name="related-links"></a>相关链接
 

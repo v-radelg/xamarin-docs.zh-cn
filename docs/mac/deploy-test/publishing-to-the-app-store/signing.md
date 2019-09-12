@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 925a110025092ce6efa4e4d5f8e80b640b7f3dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293050"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770091"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用开发人员 ID 对 Xamarin.Mac 应用进行签名
 
@@ -25,7 +25,6 @@ ms.locfileid: "70293050"
 若要生成应用以直接（而不通过 Mac App Store）部署给用户，请将“签名设置”  设置为使用“开发人员 ID”  。 请务必编辑“发布”  配置。
 
  [![](signing-images/config02.png "Mac 签名选项")](signing-images/config02.png#lightbox)
-
 
 ## <a name="build"></a>生成
 

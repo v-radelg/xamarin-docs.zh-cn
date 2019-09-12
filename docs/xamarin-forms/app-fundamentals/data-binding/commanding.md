@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 9c6edddd70fa7a74a72857a94dbed613b5b0d66d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657153"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771628"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令接口
 
@@ -338,7 +338,6 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 当 `NewCommand` 的 `execute` 方法调用 `RefreshCanExecutes` 时，`NewCommand` 属性得到对 `ChangeCanExecute` 的调用，`Button` 调用 `canExecute` 方法，该方法现在返回 `false`，因为 `IsEditing` 的属性现在是 `true`。
 
 新 `PersonViewModel` 对象的 `PropertyChanged` 处理程序调用 `SubmitCommand` 的 `ChangeCanExecute` 方法。 以下是该命令属性的实现方式：
-
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged

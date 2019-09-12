@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 14be0fec50138aed7b2b3e8d48d49cad86abbb2b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119419"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754045"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 环境
 
@@ -41,7 +41,6 @@ Android 系统属性是针对目标设备上的所有进程而设置的。
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android 环境变量
 
 Xamarin.Android 支持 `XA_HTTP_CLIENT_HANDLER_TYPE` 变量，可通过 `adb shell setprop debug.mono.env` 或 `$(AndroidEnvironment)` 生成操作进行设置。
-
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
@@ -100,7 +99,6 @@ Xamarin.Android 支持以下系统属性，可通过 `adb shell setprop` 或 `$(
     请避免。
 - `timing`：输出某些方法计时信息。 这还将创建文件 `.__override__/methods.txt` 和 `.__override__/counters.txt`。
 
-
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` 系统属性的值是一个整数。
@@ -151,13 +149,11 @@ XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
 > 基础 Android 设备必须支持 TLS 1.2。
 Android 5.0 及更高版本支持 TLS 1.2
 
-
 ## <a name="example"></a>示例
 
 ```shell
 ## Comments are lines which start with '#'
 ## Blank lines are ignored.
-
 
 ## Enable GREF messages to `adb logcat`
 debug.mono.log=gref
@@ -165,8 +161,6 @@ debug.mono.log=gref
 ## Clear out a Mono environment variable to decrease logging
 MONO_LOG_LEVEL=
 ```
-
-
 
 ## <a name="related-links"></a>相关链接
 

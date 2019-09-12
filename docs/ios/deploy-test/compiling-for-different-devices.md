@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: e24f450c16e144b313d5f8e3da0221fccdaa145b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd6fac2434c5205acfec10e4830dc72ea42aa340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285419"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756162"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>在 Xamarin.iOS 中针对不同的设备进行编译
 
 可以从项目的“iOS 生成”  属性页上配置可执行文件的生成属性，可通过右键单击项目名称并浏览至 Visual Studio for Mac 中的“选项”>“iOS 生成”  查找，或在 Visual Studio 的“属性”  中查找：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
 
 [![](compiling-for-different-devices-images/image1.png "“项目 iOS 生成”属性页")](compiling-for-different-devices-images/image1.png#lightbox) 
 
@@ -35,7 +34,6 @@ ms.locfileid: "70285419"
 
  <a name="SDK_Options" />
 
-
 ## <a name="sdk-options"></a>SDK 选项
 
 Visual Studio for Mac 允许你配置两个与 SDK 相关的重要属性：用于生成软件的 iOS SDK 版本和部署目标（或所需的最低 iOS 版本）。
@@ -48,13 +46,11 @@ iOS SDK 版本  选项允许你使用不同版本的 Apple 发布的 SDK，这�
 
  <a name="Linking" />
 
-
 ## <a name="linking"></a>链接
 
 查看[链接器](~/ios/deploy-test/linker.md)上的专用页，了解有关链接器帮助你缩小可执行文件的大小的方法，并了解如何有效地使用这种方法。
 
  <a name="Code_Generation_Engine" />
-
 
 ## <a name="code-generation-engine"></a>代码生成引擎
 
@@ -71,7 +67,6 @@ LLVM 优化后端引擎会生成比 Mono 引擎更快、更严格的代码，但
 [![](compiling-for-different-devices-images/image2a.png "启用 LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
-
 
 ## <a name="architecture-support"></a>体系结构支持
 
@@ -114,13 +109,11 @@ LLVM 优化后端引擎会生成比 Mono 引擎更快、更严格的代码，但
 
  <a name="ARM_Thumb_Support" />
 
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2 支持
 
 Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支持，可以缩小可执行文件的大小，但执行时间会变慢。 ARMv7 和 ARMv7s 支持 Thumb。
 
  <a name="Conditional_framwork_useage" />
-
 
 ## <a name="conditional-framework-usage"></a>条件框架使用情况
 
@@ -131,13 +124,9 @@ Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支�
 - 打开“项目选项”  并导航到“iOS 生成”  窗格。
 - 将 `'-gcc_flags "-weak_framework iAd"'` 添加到你想弱链接到的每个配置上的其他选项  ：
 
-
 [![](compiling-for-different-devices-images/image3.png "其他选项")](compiling-for-different-devices-images/image3.png#lightbox)
 
-
 除此以外，你需要防止使用在可能不存在旧版本 iOS 的位置运行旧版本 iOS 的类型。 有几种方法来实现此目的，其中一种是分析 `UIDevice.CurrentDevice.SystemVersion`。
-
-
 
 ## <a name="related-links"></a>相关链接
 

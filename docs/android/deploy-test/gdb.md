@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: bc2c1c26bcb3dcf99a5598b6dccb6aad02513a28
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 0599b2374addf461e59948a1926de06e6e1e746a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197558"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754048"
 ---
 # <a name="gdb"></a>GDB
 
@@ -27,7 +27,6 @@ Xamarin.Android 4.10 通过使用 `_Gdb` MSBuild 目标引入了对使用 `gdb` 
 1. [启用快速部署的调试版本](#Debug_Builds_with_Fast_Deployment)。
 1. [禁用快速部署的调试版本](#Debug_Builds_without_Fast_Deployment)。
 1. [发行版本](#Release_Builds)。
-
 
 出现错误时，请参阅[故障排除](#Troubleshooting)部分。
 
@@ -56,7 +55,6 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 `_Gdb` 目标将启动在你的 `AndroidManifest.xml` 文件中声明的任意启动器活动。 若要显式指定要运行的活动，请使用 `RunActivity` MSBuild 属性。 此时不支持启动服务和其他 Android 构造。
 
 `_Gdb` 目标将创建一个 `gdb-symbols` 目录，并将目标 `/system/lib` 和 `$APPDIR/lib` 目录的内容复制到那里。
-
 
 > [!NOTE]
 > `gdb-symbols` 目录的内容绑定到你部署到的 Android 目标，如果你更改目标，则不会自动替换。 （请注意这个 bug。）如果你更改 Android 目标设备，则需要手动删除此目录。
@@ -107,7 +105,6 @@ GNU gdb (GDB) 7.3.1-gg2
 ...
 (gdb) c
 ```
-
 
 ### <a name="including-gdbserver-in-your-app"></a>将 `gdbserver` 包含在你的应用中
 

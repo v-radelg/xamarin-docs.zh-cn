@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2fcfbfa8a1780a9da4e9bfe187dc99a5172e95f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645375"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771487"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>将效果参数作为附加属性传递
 
@@ -432,7 +432,6 @@ public class LabelShadowEffect : PlatformEffect
 ## <a name="summary"></a>总结
 
 本文演示了如何使用附加属性将参数传递给效果，以及如何在运行时更改参数。 附加属性可用于定义响应运行时属性更改的效果参数。
-
 
 ## <a name="related-links"></a>相关链接
 

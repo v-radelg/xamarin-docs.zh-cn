@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285598"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763209"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的临时分发
 
@@ -44,7 +44,6 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 <a name="createcertificate" />
 
 ## <a name="create-a-distribution-certificate"></a>创建分发证书
-
 
 1. 浏览到 Apple Developer Member Center 的“证书、标识符和描述文件”  部分。
 2. 在“证书”  下选择“生产”  。
@@ -79,7 +78,6 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 ### <a name="create-an-app-id"></a>创建 App ID
 与创建的任何其他设置配置文件一样，需使用应用程序 ID 来确认分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
-
 
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”  部分。 在“标识符”  下选择“应用 ID”  。
 2. 单击“+”  按钮并提供“名称”  ，该名称将在门户中标识它。
@@ -179,7 +177,6 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 ## <a name="summary"></a>总结
 
 本文介绍了 Ad Hoc 分发机制，它用于测试 Xamarin.iOS 应用程序。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 37403b9e33ccd54baac4fd36afbe50504e0380f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528958"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772100"
 ---
 # <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
 
@@ -207,7 +207,6 @@ entry.Behaviors.Clear();
 ## <a name="summary"></a>总结
 
 本文演示如何创建和使用 Xamarin.Forms 行为。 Xamarin.Forms 行为由 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类派生创建而成。
-
 
 ## <a name="related-links"></a>相关链接
 

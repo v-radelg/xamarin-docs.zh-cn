@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650221"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771695"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
 
@@ -680,7 +680,6 @@ public partial class SampleSettingsPage : ContentPage
 其他屏幕截图显示已更改的设置。 尝试使用此页面时，请记住将程序置于休眠状态，或在程序运行的设备或模拟器上终止程序。 从 Visual Studio 调试器终止程序不会导致调用 `App` 类中的 `OnSleep` 替代。
 
 在下一篇文章中，可了解如何指定对 `Label` 的 `Text` 属性设置的数据绑定的[字符串格式](string-formatting.md)  。
-
 
 ## <a name="related-links"></a>相关链接
 

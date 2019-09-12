@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 96a7e6b9587d696479afd084613c79e2b03f956c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2970253ec15ca207b9f69e2b764e0a69f8037938
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292006"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753519"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>面向 Objective-C 开发人员的 Xamarin
 
@@ -30,7 +30,6 @@ Xamarin 针对 iOS 为开发人员提供了一个途径，用于将他们的非�
 
 - [面向 Objective-C 开发人员的 C# 入门](primer.md) - 针对希望转移到 Xamarin 和 C# 语言的 Objective-C 开发人员的快速入门。 
 - [演练：绑定 Objective-C 库](~/ios/platform/binding-objective-c/walkthrough.md) - 在 Xamarin.iOS 应用程序中重复使用现有 Objective-C 代码的逐步演练。 
-
 
 ## <a name="binding-objective-c"></a>绑定 Objective-C
 

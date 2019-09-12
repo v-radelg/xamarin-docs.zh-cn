@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486014"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771453"
 ---
 # <a name="introduction-to-effects"></a>效果简介
 
@@ -58,7 +58,6 @@ Xamarin.Forms [页面、布局和控件](~/xamarin-forms/user-interface/controls
 - [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) – 当效果自 Xamarin.Forms 控件分离时调用。 在每个特定于平台的效果类中，此方法的替代版本是执行任何效果清除的位置，例如取消注册事件处理程序。
 
 此外，`PlatformEffect` 公开了 [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)) 方法，该方法也可以被替代。 当该元素的属性发生更改时，调用此方法。 在每个特定于平台的效果类中，此方法的替代版本是响应 Xamarin.Forms 控件上的可绑定属性更改的位置。 应始终检查已更改的属性，因为可多次调用此替代。
-
 
 ## <a name="related-links"></a>相关链接
 

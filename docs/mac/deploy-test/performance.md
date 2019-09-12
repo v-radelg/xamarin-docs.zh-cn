@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 48e5e71a9d4435852f72eb9be21f2e80cd124bfd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 12a2152424fac4024d8b83adb0c80c2499ec8b1d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291094"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770108"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac 性能
 
@@ -60,7 +60,6 @@ Xamarin.Mac 应用程序类似于 Xamarin.iOS，许多相同的性能建议均�
 只要可能，请使用 [async](~/cross-platform/platform/async.md) 和线程来防止 UI 被阻止。
 
 对于长时间运行的操作，请考虑使用 [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) 或 Apple [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) 中的其他选项来通知用户。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289887"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763056"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的内部分发
 
@@ -94,7 +94,6 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 与创建的其他任何配置文件一样，需要应用 ID 来标识将分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
 
-
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”  部分。 在“标识符”  下选择“应用 ID”  。
 2. 单击“+”  按钮并提供“名称”  ，该名称将在门户中标识它。
 3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：显式  ：com.[DomainName].[AppName] 通配符  ：com.[DomainName].*
@@ -150,13 +149,11 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 若要使用以上任一方式分发应用，必须先创建一个 IPA 文件，如下一节中所述。
 
-
 ### <a name="creating-an-ipa-for-in-house-deployment"></a>创建 IPA 进行 In-House部署
 
 完成预配后，可将应用程序打包到名为 IPA  的文件中。 这是一个 zip 文件，内含应用程序以及其他元数据和图标。 IPA 用于将应用程序本地添加到 iTunes，使其可直接同步到配置文件中的设备。
 
 若要深入了解如何创建 IPA，请参阅 [IPA 支持](~/ios/deploy-test/app-distribution/ipa-support.md)指南。
-
 
 ## <a name="summary"></a>总结
 

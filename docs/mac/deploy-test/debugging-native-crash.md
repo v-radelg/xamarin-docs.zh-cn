@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: bb33d9f85dfc1215e91caa20fab3800645e13111
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282177"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769887"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>调试 Xamarin.Mac 应用中的本机故障
 
@@ -251,4 +251,3 @@ void AddObject ()
 在没有技术原因就陷入困境的情况下，设置基础结构来捕获每个托管/本机边界处的托管异常十分昂贵，还有许多  在很多常规操作中都会发生的转换。 很多操作（尤其是涉及 UI 线程的操作）必须快速结束，否则，应用会不连续，并出现不可接受的性能特征。 很多回调都会执行不太可能出现引发的简单操作，所以，在这些情况下，这一开销昂贵且不必要。
 
 因此，我们不会为你设置这些尝试/捕获。 在代码执行不常用操作（除了返回布尔值或简单的数学外）的地方，你可以尝试自行捕获。 
-

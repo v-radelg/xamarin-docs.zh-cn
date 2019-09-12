@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b3e34022af4e83b172b7ae7cedfb13e95e92beba
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119628"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756122"
 ---
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
@@ -92,7 +92,6 @@ ms.locfileid: "70119628"
 ## <a name="shrink-the-apk"></a>缩小 APK
 
 可通过结合使用 Xamarin.Android 链接器（删除不必要的托管  代码）和 Android SDK 中的 ProGuard  工具（删除未使用的 Java 字节码  ）缩小 Xamarin.Android APK。 生成过程首先使用 Xamarin.Android 链接器以托管代码 (C#) 级别优化应用，然后使用 ProGuard（如已启用）以 Java 字节码级别优化 APK。
-
 
 ### <a name="configure-the-linker"></a>配置链接器
 
@@ -229,7 +228,6 @@ Visual Studio 2017 附带了 Dotfuscator CE。
 
 LLVM 优化编译器  会创建更小更快速的编译代码，并将 AOT 编译的程序集转换为本机代码，但生成时间会变缓慢。 默认情况下，LLVM 编译器处于禁用状态。 要使用 LLVM 编译器，必须首先启用“AOT 编译”选项（在[打包属性](#Set_Packaging_Properties)页面上）  。
 
-
 > [!NOTE]
 > “LLVM 优化编译器”  选项需要企业许可证。  
 
@@ -364,7 +362,6 @@ LLVM 优化编译器  会创建更小更快速的编译代码，并将 AOT 编�
 可从此处选择分发渠道：
 
 - Ad-Hoc  &ndash; 将已签名的 APK 保存到磁盘，以将其旁加载到 Android 设备。 继续查看[对应用包进行签名](~/android/deploy-test/signing/index.md)，了解如何创建 Android 签名标识、为 Android 应用程序创建新的签名证书以及将“临时”版本的应用发布到磁盘&ldquo;&rdquo;。 这是为测试创建 APK 的好方法。
-
 
 - **Google Play** &ndash; 将已签名的 APK 发布到 Google Play。
     继续查看[发布到 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何对 APK 进行签名并将其发布到 Google Play 商店。

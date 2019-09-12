@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ccdf1e3fc0c42f8af8f9219a8b472827048a90dc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e542336cfd3bf1eac50c343a3edfeb0efa414d0c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525226"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753611"
 ---
 # <a name="apk-expansion-files"></a>APK 扩展文件
 
@@ -29,10 +29,8 @@ ms.locfileid: "69525226"
 -  主扩展 &ndash; 此文件是不适合 APK 大小限制的资源和资产的主扩展文件。 主扩展文件应包含应用程序所需的主资产，并且应很少进行更新。
 -  修补扩展 &ndash; 这适用于对主扩展文件进行少量更新。 此文件可更新。 应用程序负责从此文件执行任何必要的修补或更新。
 
-
 上传 APK 的同时必须上传相应扩展文件。
 Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有 APK。 如果有必要更新扩展文件，则必须上传新的 APK，同时更新 `versionCode`。
-
 
 ## <a name="expansion-file-storage"></a>扩展文件存储
 
@@ -41,7 +39,6 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 -  shared-store &ndash; 这是 `Android.OS.Environment.ExternalStorageDirectory` 指定的目录。
 -  package-name &ndash; 这是应用程序 Java 样式的包名称。
 
-
 下载完成后，不应移动、更改、重命名扩展文件或从设备上的位置中删除扩展文件。 否则会导致再次下载扩展文件，这样会删除旧文件。 此外，扩展文件目录应仅包含扩展包文件。
 
 扩展文件未对内容提供任何安全保护 &ndash; 其他应用程序或用户可访问存储在共享存储上的任何文件。
@@ -49,7 +46,6 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 如果需要解压缩扩展文件，则解压缩文件应存储在单独的目录中，例如 `Android.OS.Environment.ExternalStorageDirectory` 中的一个目录。
 
 从扩展文件提取文件的另一方法是直接从扩展文件读取资产或资源。 扩展文件只是可通过合适的 `ContentProvider` 进行使用的 zip 文件。 [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) 包含的程序集 [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip) 中包括了一个允许对某些媒体文件直接进行文件访问的 `ContentProvider`。 如果将媒体文件打包为 zip 文件，媒体播放调用可能直接使用 zip 中的文件而无需解压缩 zip 文件。 添加到 zip 文件时不应压缩媒体文件。 
-
 
 ### <a name="filename-format"></a>文件名格式
 
@@ -65,9 +61,7 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 - `<expansion-version>` &ndash; 这是一个整数，该整数与文件首次关联的 APK 的 `versionCode` 匹配。
 - `<package-name>` &ndash; 这是应用程序的 Java 样式包名称。
 
-
 例如，如果 APK 版本是 21，包名称是 `mono.samples.helloworld`，则主扩展文件应命名为 main.21.mono.samples.helloworld  。
-
 
 ## <a name="download-process"></a>下载过程
 
@@ -81,7 +75,6 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 -  文件名 &ndash; 这是扩展包必须保存到其下的文件名（当前设备上）。
 -  下载 URL &ndash; 用于下载扩展包的 URL。 每次下载所用的 URL 都是唯一的，提供之后很快会过期。
 
-
 执行 LVL 检查后，应用程序应会下载扩展文件，对于下载过程，请考虑到以下几点：
 
 - 设备可能没有足够的空间来存储扩展文件。
@@ -89,8 +82,6 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 - 在后台下载扩展文件以避免阻止用户交互。
 - 在后台进行下载时，应显示进度指示。
 - 下载期间出现的错误可轻松进行处理和恢复。
-
-
 
 ## <a name="architectural-overview"></a>体系结构概述
 
@@ -103,6 +94,5 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 -  下载程序库 &ndash; 该库可减少将扩展文件集成到应用程序所需的工作量。 该库会在后台服务下载扩展文件、显示用户通知、处理网络连接问题、恢复下载以及执行其他任务。
 -  许可验证库 (LVL) &ndash; 该库用于执行和处理对应用程序授权服务的调用。 也可用于执行授权检查，以检查应用程序是否经授权在设备上使用。
 -  APK 扩展 Zip 库（可选）&ndash; 如果扩展文件在 zip 文件中，则该库会作为内容提供程序，允许应用程序直接从 zip 文件读取资源和资产，而无需展开 zip 文件。
-
 
 这些库已经移植到 C#，可用于 Apache 2.0 许可证。 若要将扩展文件快速集成到现有应用程序，可将这些库添加到现有 Xamarin.Android 应用程序。 GitHub 上的 [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) 中提供有相应代码。

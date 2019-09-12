@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 430f4fedc8e988c89826e3ae023fc25b7b798727
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 818b6afef395b081768f8bdd6538d5a8ecbad178
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525348"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753744"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>发布到 Amazon 应用商店
 
@@ -20,7 +20,6 @@ ms.locfileid: "69525348"
 [![“Amazon 应用商店”屏幕](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon 不限制 APK 的大小。 但是，如果 APK 大于 30 MB，则会使用 FTP 进行分发，而不是 Amazon 移动应用分发门户。
-
 
 ## <a name="submitting-apps-binary-info"></a>提交应用：二进制信息
 
@@ -31,8 +30,6 @@ Amazon 不限制 APK 的大小。 但是，如果 APK 大于 30 MB，则会使�
 - **屏幕截图** &ndash; Amazon 需要至少 3 个、最多 10 个屏幕截图。 屏幕截图必须为 1024w x 600h 像素或 800w x 480h 像素。 支持 .png 和 .jpg 两种格式。
 - **促销图像** &ndash; 为在促销位置（如主页）上推出应用程序，可能需要提交促销图像（可选）。 该图像应为横向放置的 .png 或 .jpg 文件，像素为 1024w x 500h。 可能没有任何动画。
 - 可能提供 5 个视频的更新内容。
-
-
 
 ## <a name="approval-process"></a>审批过程
 

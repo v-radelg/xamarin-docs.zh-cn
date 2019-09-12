@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/20/2017
-ms.openlocfilehash: 47b9d76cb0b7b2fc48fe83d291479f7d1ed00eb8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 934cc5124c71f631def0d534420cf75a12ee4079
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525213"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753600"
 ---
 # <a name="google-licensing-services"></a>Google 授权服务
 
@@ -35,7 +35,6 @@ Google 授权安全可靠，每个响应均使用 RSA 键对进行签名，且�
 - Google Play 会提供 Google 帐户等信息以及设备本身的信息（如 IMSI 编号）。 
 
 Google 授权服务还是 APK 扩展文件的关键组件（将在本文档后面讨论）。 APK 扩展文件利用 Google 授权服务获取要下载的扩展文件的 URL。
-
 
 ## <a name="requirements"></a>要求
 

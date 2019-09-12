@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509578"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756720"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
@@ -116,7 +116,6 @@ Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual St
 - **drawable** &ndash; 可绘制目录包含[可绘制资源](https://developer.android.com/guide/topics/resources/drawable-resource.html)，如图像和位图。
 
 - **mipmap** &ndash; mipmap 目录包含适用于不同启动器图标密度的可绘制文件。 在默认模板中，drawable 目录包含应用程序图标文件“Icon.png”  。
-
 
 ::: zone pivot="windows"
 

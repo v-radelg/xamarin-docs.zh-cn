@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 170bd30d65b9f5947bdb9d23d3100a8048f73ac7
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4bbfbaf2b7efc7e1d2f75a7462d6a2559ed7a9c0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864059"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755704"
 ---
 # <a name="hello-android-multiscreen"></a>了解 Android 多屏幕
 
@@ -26,7 +26,6 @@ _本指南由两部分构成，在本指南中，用户将扩展在《了解 And
 ## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[第 2 部分：深入了解](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 在本文档的第二部分，用户将回顾已生成的应用，并讨论体系结构、导航以及此过程中遇到的其他 Android 新概念。
-
 
 ## <a name="related-links"></a>相关链接
 

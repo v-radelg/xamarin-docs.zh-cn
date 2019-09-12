@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: 36069bc20a5341b87d55b60f83466e89f263b2ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646120"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771561"
 ---
 # <a name="application-indexing-and-deep-linking"></a>应用程序索引和深层链接
 
@@ -24,7 +24,6 @@ _应用程序索引使得用了几次之后可能被忘记的应用程序出现�
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
 **Xamarin.Forms 和 Azure 视频的深层链接**
-
 
 Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏览应用程序时发布元数据进行应用程序索引。 然后索引的内容可在 Spotlight 搜索、Google 搜索或 Web 搜索中进行搜索。 点击包含深层链接的搜索结果将触发一个事件，该事件可由应用程序进行处理且通常用于导航到引用自深层链接的页面。
 

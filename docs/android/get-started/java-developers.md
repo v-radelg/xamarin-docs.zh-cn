@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 5edde7cff0867161394270250a8fe622e8e03ee3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dfd6c9d6419f663b1ef474066f7918859d42b3c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524897"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757285"
 ---
 # <a name="xamarin-for-java-developers"></a>面向 Java 开发人员的 Xamarin
 
 _如果你是 Java 开发人员，则可以在 Xamarin 平台上充分利用你的技能和现有代码，同时获得 C# 的代码重用优势。你会发现 C# 语法与 Java 语法非常相似，这两种语言提供非常类似的功能。此外，你会发现 C# 的特有功能，这些功能将帮助你轻松进行开发工作。_
-
 
 ## <a name="overview"></a>概述
 
@@ -61,7 +60,6 @@ Java 和 C# 都被编译为中间语言，在托管执行环境中运行。 C# �
 
 - C# 支持语言集成查询 (LINQ)，这样就可以使用保留的字 `from`、`select` 和 `where`，以便以类似于数据库查询的方式编写针对集合的查询。
 
-
 当然，与本文所讨论的相比，C# 和 Java 之间还有更多的区别。 此外，Java 和 C# 将继续演进（例如，Android 工具链中尚不存在的 Java 8，它支持 C# 样式的 lambda 表达式），因此这些差异会随时间而变化。 本文仅概述了首次使用 Xamarin.Android 的 Java 开发人员当前遇到的最重要的差异。
 
 - [从 Java 到 C# 开发](#fundamentals)介绍了 C# 和 Java 之间的基本区别。
@@ -81,7 +79,6 @@ C# 为 Xamarin.Android 提供了许多主要功能，Java 开发人员当前尚�
 - [异步编程](#async) &ndash; C# 的异步编程功能 (`async`/`await`) 使应用保持响应状态。
     此功能的语言级别支持使异步编程轻松实现，且不容易出错。
 
-
 最后，Xamarin 允许你通过已知的绑定  技术来[利用现有的 Java 资产](#interop)。 你可以通过使用 Xamarin 的自动绑定生成器，从 C# 调用现有的 Java 代码、框架和库。 若要执行此操作，只需在 Java 中创建静态库，并通过绑定将其公开到 C#。
 
 <a name="fundamentals" />
@@ -90,14 +87,11 @@ C# 为 Xamarin.Android 提供了许多主要功能，Java 开发人员当前尚�
 
 以下各节概述了 C# 和 Java; 之间的基本“入门”差异；后面的部分将介绍这些语言之间面向对象的差异。
 
-
-
 ### <a name="libraries-vs-assemblies"></a>库和程序集
 
 Java 通常将相关类打包到 .jar  文件中。 然而，在 C# 和 .NET 中，预编译代码的可重用位将打包到程序集  ，通常打包为 .dll  文件。 程序集是部署 C#/.NET 代码的单位，每个程序集通常与 C# 项目相关联。 程序集包含在运行时实时编译的中间代码 (IL)。
 
 有关程序集的详细信息，请参阅[程序集和全局程序集缓存](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/)主题。
-
 
 ### <a name="packages-vs-namespaces"></a>包和命名空间
 
@@ -108,7 +102,6 @@ namespace WeatherApp
 {
     ...
 ```
-
 
 ### <a name="importing-types"></a>导入类型
 
@@ -142,8 +135,6 @@ using System.Threading.Tasks;
 
 这些语句从 `System`、`Android.App`、`Android.Content` 等命名空间导入功能。
 
-
-
 ### <a name="generics"></a>泛型
 
 Java 和 C# 支持泛型  ，这是允许你在编译时插入不同类型中的占位符。 但是，泛型在 C# 中的工作方式略有不同。 在 Java 中，[类型擦除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)仅在编译时提供类型信息，而不是在运行时。 与此相反，.NET 公共语言运行时 (CLR) 对泛型类型提供显式支持，这意味着 C# 有权在运行时访问类型信息。 在日常 Xamarin.Android 开发中，这一区别的重要性通常不明显，但如果使用的是[反射](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，你将依赖此功能在运行时访问类型信息。
@@ -158,7 +149,6 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 
 有关泛型的更多信息，请参阅[泛型](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)主题。
 请注意，Xamarin.Android 对泛型 C# 类的支持存在一些限制；有关详细信息，请参阅[限制](~/android/internals/limitations.md)。
-
 
 <a name="oopfeatures" />
 
@@ -192,8 +182,6 @@ Java 和 C# 使用非常相似的面向对象的编程惯用语：
 
 - C# 使用 C++ 样式析构函数语法来表示终结器。 该语法不同于 Java 的 `finalize` 方法，但语义大致相同。 （请注意，在 C# 中，析构函数自动调用基类析构函数 &ndash;而在 Java 中则使用对 `super.finalize` 的显式调用。）
 
-
-
 ### <a name="class-inheritance"></a>类继承
 
 要扩展 Java 中的类，可以使用 `extends` 关键字。 要扩展 C# 中的类，可以使用冒号 (`:`) 以指示派生。 例如，在 Xamarin.Android 应用中，通常会看到类似于以下代码段的类派生：
@@ -220,7 +208,6 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 有关 C# 类定义的更多信息，请参阅[类](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes)和[继承](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/inheritance)主题。
 
-
 <a name="properties" />
 
 ### <a name="properties"></a>属性
@@ -244,8 +231,6 @@ rulerView.DrawingCacheEnabled = true;
 对属性的访问权限可以是读/写、只读或只写。 此外，可以使用不同的访问修饰符进行读取和写入。 例如，可以定义一个具有公共读取访问权限和专有写入访问权限的属性。
 
 有关 C# 属性的详细信息，请参阅[属性](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/properties)主题。
-
-
 
 ### <a name="calling-base-class-methods"></a>调用基类方法
 
@@ -280,8 +265,6 @@ public class MainActivity : Activity
 
 在这种情况下，由派生类 (`MainActivity`) 定义的 `OnCreate` 方法调用基类 (`Activity`) 的 `OnCreate` 方法。
 
-
-
 ### <a name="access-modifiers"></a>访问修饰符
 
 Java 和 C# 都支持 `public`、`private` 和 `protected` 访问修饰符。 但是，C# 支持以下两个其他访问修饰符：
@@ -291,8 +274,6 @@ Java 和 C# 都支持 `public`、`private` 和 `protected` 访问修饰符。 �
 - `protected internal` &ndash; 可在定义程序集、定义类和派生类中访问类成员（程序集内部和外部的派生类都具有访问权限）  。
 
 有关 C# 访问修饰符的详细信息，请参阅[访问修饰符](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)主题。
-
-
 
 ### <a name="virtual-and-override-methods"></a>虚拟和重写方法
 
@@ -308,7 +289,6 @@ Java 和 C# 均支持多形性  ，即能够以相同方式处理相关对象。
 - C# 派生类必须使用 `override` 关键字显式指示正在重写虚拟基类方法。
 
 有关 C# 对多形性支持的详细信息，请参阅[多形性](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)主题。
-
 
 <a name="lambdas" />
 
@@ -339,7 +319,6 @@ button.Click += (sender, args) => {
 在此示例中，lambda 表达式代码（在大括号内的代码）递增点击数，并更新 `button` 文本以显示点击数。 此 lambda 表达式在 `button` 对象中注册为点击按钮时要调用的点击事件处理程序。 （下文对事件处理程序进行了更详细的说明。）在此简单示例中，lambda 表达式代码不使用 `sender` 和 `args` 参数，但 lambda 表达式需要这些参数来满足事件注册的方法签名要求。 实质上，C# 编译器将 lambda 表达式转换为一个匿名方法，在发生按钮点击事件时会调用该方法。
 
 有关 C# 和 lambda 表达式的详细信息，请参阅[Lambda 表达式](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)主题。
-
 
 <a name="events" />
 
@@ -389,7 +368,6 @@ startActivityButton.Click += (sender, e) => {
 
 通常，lambda 表达式用于声明 Xamarin.Android 代码中的事件处理程序。 此用于声明事件处理程序的速记方法乍一看可能比较晦涩，但在你写入和读取代码时它将帮你节省大量的时间。 随着熟悉程度的增加，你将习惯于识别此模式（这在 Xamarin.Android 代码中经常出现），可以花更多的时间思考应用程序的业务逻辑，而不需要花太多时间在语法开销上。
 
-
 <a name="async" />
 
 ## <a name="asynchronous-programming"></a>异步编程
@@ -402,7 +380,6 @@ C# 包含对通过 `async` 和 `await` 关键字进行异步编程的语言级�
 在 Xamarin.Android 应用中，`async` 和 `await` 通常用于释放 UI 线程，以便在后台任务中发生长时间运行的操作时，它可以响应用户输入（如点击“取消”  按钮）。
 
 在以下示例中，按钮点击事件处理程序将导致异步操作从 Web 下载映像：
-
 
 ```csharp
 downloadButton.Click += downloadAsync;
@@ -426,7 +403,6 @@ async void downloadAsync(object sender, System.EventArgs e)
 有关 C# 中 `async`/`await` 的说明，请参阅[使用 Async 和 Await 的异步编程](https://docs.microsoft.com/dotnet/csharp/async)主题。
 有关 Xamarin 对异步编程功能的支持的详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
-
 <a name="keywords" />
 
 ## <a name="keyword-differences"></a>关键字差异
@@ -446,7 +422,6 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 |`T...`|[params T](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/params)|指定采用可变数目的参数的方法参数。|
 |`super`|[base](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/base)|用于从派生类中访问父类的成员。|
 |`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|使用锁获取和发布包装代码的关键部分。|
-
 
 此外，还有很多关键字是 C# 所特有的，且在 Java 中没有对应项。 Xamarin.Android 代码通常使用下面的 C# 关键字（读取 Xamarin.Android [示例代码](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android)时，可使用此表作为参考）:
 
@@ -473,9 +448,8 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|封装一组相关变量的值类型。|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|获取对象类型。|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|声明一个隐式类型局部变量。|
-|[值](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|引用客户端代码想要分配到属性的值。|
+|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|引用客户端代码想要分配到属性的值。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|允许在派生类中重写方法。|
-
 
 <a name="interop" />
 
@@ -489,8 +463,6 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 
 有关这些技术的详细信息，请参阅 [Java 集成概述](~/android/platform/java-integration/index.md)。
 
-
-
 ## <a name="for-further-reading"></a>其他阅读材料
 
 MSDN [C# 编程指南](https://docs.microsoft.com/dotnet/csharp/programming-guide/)是开始学习 C# 编程语言的绝佳方式，你可以使用 [C# 参考](https://docs.microsoft.com/dotnet/csharp/language-reference/)查找特定的 C# 语言功能。
@@ -499,12 +471,9 @@ MSDN [C# 编程指南](https://docs.microsoft.com/dotnet/csharp/programming-guid
 
 当你准备好在 C# 中处理第一个 Xamarin.Android 项目时，[Hello，Android](~/android/get-started/hello-android/index.md) 系列可以帮助你生成第一个 Xamarin.Android 应用程序，并进一步加强你对通过 Xamarin 开发 Android 应用程序的基础知识的了解。
 
-
-
 ## <a name="summary"></a>总结
 
 本文从 Java 开发人员的角度提供有关 Xamarin.Android C# 编程环境的简介。 它指出 C# 和 Java 之间的相似之处，同时解释了它们的实际差异。 它介绍了程序集和命名空间，说明如何导入外部类型，并概述了访问修饰符、泛型、类派生、调用基类方法、方法重写以及事件处理方面的区别。 它介绍了在 Java 中不可用的 C# 功能，例如属性、`async`/`await` 异步编程、lambda、C# 委托和 C# 事件处理系统。 它包含一个涵盖重要 C# 关键字的表格，说明如何与现有的 Java 库进行交互操作，并提供用于进一步研究的相关文档链接。
-
 
 ## <a name="related-links"></a>相关链接
 

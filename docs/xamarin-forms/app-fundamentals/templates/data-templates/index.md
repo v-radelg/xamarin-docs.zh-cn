@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 6cb828f59505159c972d40905f22995055f207df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5d130a6644af4e5831263c6de137513c021e0b6a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646848"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760803"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms 数据模板
 
@@ -31,7 +31,6 @@ ms.locfileid: "68646848"
 ## <a name="creating-a-datatemplateselectorselectormd"></a>[创建 DataTemplateSelector](selector.md)
 
 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 可用于在运行时根据数据绑定属性的值来选择 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 如此可将多个 `DataTemplate` 实例应用于同一类型的对象，以自定义特定对象的外观。 本文演示如何创建和使用 `DataTemplateSelector`。
-
 
 ## <a name="related-links"></a>相关链接
 

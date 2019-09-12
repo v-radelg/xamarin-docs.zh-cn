@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 5fda0b78a80a25d122fbc58ef61fbeab22a547a0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978566"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771346"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件
 
@@ -803,7 +803,6 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 ## <a name="summary"></a>总结
 
 本文演示了如何在效果中调用事件，以及如何编写和使用能够实现低级别多点触控处理的效果。
-
 
 ## <a name="related-links"></a>相关链接
 

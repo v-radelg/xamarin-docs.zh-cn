@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650493"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771787"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器
 
@@ -155,7 +155,6 @@ namespace FormsVideoLibrary.Droid
 
 `OnElementChanged` 替代创建 `VideoView` 和 `RelativeLayout`，并为 `VideoView` 设置布局参数，使其在 `RelativeLayout` 中居中。
 
-
 ```csharp
 namespace FormsVideoLibrary.Droid
 {
@@ -284,7 +283,6 @@ namespace FormsVideoLibrary.UWP
 平台中包含的所有视频播放器都支持一组默认传输控件，其中包括用于播放和暂停的按钮，以及用于指示视频的当前位置和用于移动到新位置的定位条。
 
 `VideoPlayer` 类定义名为 `AreTransportControlsEnabled` 的属性，并将默认值设置为 `true`：
-
 
 ```csharp
 namespace FormsVideoLibrary
@@ -463,7 +461,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 还需要另一个属性才能开始播放视频：这是引用视频文件的非常重要的 `Source` 属性。 将在下一篇文章（[播放 Web 视频](web-videos.md)）中介绍 `Source` 属性的实现。
-
 
 ## <a name="related-links"></a>相关链接
 

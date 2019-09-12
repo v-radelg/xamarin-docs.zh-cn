@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: d9e3055130a66fe240bf378ad2f63679e71bec14
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 31dfcc26121b0683db476b0c4be9a420efe5b66f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121143"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771237"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -329,8 +329,6 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 ```
 
 注意：事件触发器上已忽略 `EnterActions` 和 `ExitActions`  。
-
-
 
 ## <a name="related-links"></a>相关链接
 

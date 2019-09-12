@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 87972df2b15a5bc1f6323a6953f809379cae4a50
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ba7148ecabf7f534a953fda3c3d3021abeaa034c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644529"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771568"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式
 
@@ -183,7 +183,6 @@ XAML 文件的下一部分是 `StackLayout`，其中 `BindingContext` 设置为�
 另一种方法更常用：可以编写一个绑定值转换器  ，在后文[**绑定值转换器**](converters.md)中有所描述。
 
 但下一篇文章更详细地探讨了[绑定路径](binding-path.md)并展示了如何使用它来引用子属性和集合中的项  。
-
 
 ## <a name="related-links"></a>相关链接
 

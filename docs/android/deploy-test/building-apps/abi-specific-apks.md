@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: e7c8721254157565461e00657a3ee8a786e3ea00
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 0c3bb547a21457a1666db5fe84560e10e3bb8eb1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225764"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754278"
 ---
 # <a name="building-abi-specific-apks"></a>构建特定于 ABI 的 APK
 
 _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的 APK。_
-
-
 
 ## <a name="overview"></a>概述
 
@@ -27,7 +25,6 @@ _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的
 -  减小 APK 的大小 - Google Play 对 APK 文件强加了 100MB 大小的限制。 创建特定于设备的 APK 可以减小 APK 的大小，因为你只需为应用程序提供一部分资产和资源。
 
 -  支持不同的 CPU 体系结构 - 如果你的应用程序具有特定 CPU 的共享库，则只能分发该 CPU 的共享库。
-
 
 多个 APK 可能会使分发变得复杂 - 这是 Google Play 解决的问题。 Google Play 将确保根据应用程序的版本代码和  AndroidManifest.XML 中包含的其他元数据将正确的 APK 传递到设备。 有关 Google Play 如何支持应用程序多个 APK 的具体详细信息和限制，请查阅[关于多个 APK 支持的 Google 文档](https://developer.android.com/google/play/publishing/multiple-apks.html)。
 
@@ -38,10 +35,7 @@ _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的
 1. 使用上一步中的 AndroidManifest.XML  构建应用程序。
 1. 通过对 APK 进行签名并使用 zipalign 为其优化来准备发布。
 
-
 本指南最后将演示如何使用 [Rake](http://martinfowler.com/articles/rake.html) 编写这些步骤的脚本。
-
-
 
 ### <a name="creating-the-version-code-for-the-apk"></a>为 APK 创建版本代码
 
@@ -68,7 +62,6 @@ Google 为使用七位数版本代码的版本代码推荐了一种特定算法�
 
 [![八位数版本代码格式的图示，用颜色编码](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
-
 Google Play 确保根据 `versionCode` 和 APK 配置将正确的 APK 发送到设备。 将具有最高版本代码的 APK 发送到设备。 例如，应用程序可能有三个 APK，其版本代码如下：
 
 - 11413456 - ABI 是 `armeabi`；针对 API 级别 14；小屏幕到大屏幕；版本号为 456。
@@ -83,18 +76,14 @@ Google Play 确保根据 `versionCode` 和 APK 配置将正确的 APK 发送到�
 - 21423457 - ABI 是 `armeabi-v7a`；针对 API 级别 14；常规 &amp; 大屏幕；版本号为 457。
 - 61923500 - ABI 是 `x86`；针对 API 级别 19；常规 &amp; 大屏幕；版本号为 500。
 
-
 手动维护这些版本代码可能会对开发人员带来沉重的负担。 计算正确的 `android:versionCode` 然后构建 APK 的过程应该是自动执行的。
 本文末尾的演练将举例介绍如何执行此操作。
-
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>创建临时的 AndroidManifest.XML
 
 虽然不是绝对必要，但为每个 ABI 创建临时的 **AndroidManifest.XML** 可以帮助防止由于在 APK 之间泄露信息可能出现的问题。 例如，`android:versionCode` 属性对于每个 APK 都是唯一的，这一点至关重要。
 
 完成此任务的方式取决于所涉及的脚本系统，但通常涉及获取开发过程中使用的 Android 清单副本，修改副本，然后在构建过程中使用修改后的清单。
-
-
 
 ### <a name="compiling-the-apk"></a>编译 APK
 
@@ -120,8 +109,6 @@ Google Play 确保根据 `versionCode` 和 APK 配置将正确的 APK 发送到�
 
 - `<CS_PROJ FILE>` &ndash; 这是 Xamarin.Android 项目的 `.csproj` 文件路径。
 
-
-
 ### <a name="sign-and-zipalign-the-apk"></a>为 APK 签名并使用 Zipalign 为其优化
 
 在通过 Google Play 发布 APK 之前，必须先为其签名。 这可以通过使用属于 Java 开发人员工具包的 `jarsigner` 应用程序来执行。 下面的命令行演示如何在命令行中使用 `jarsigner`：
@@ -136,7 +123,6 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore <PATH/TO/KEYSTO
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-
 ## <a name="automating-apk-creation-with-rake"></a>通过 Rake 自动创建 APK
 
 示例项目 [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) 是一个简单的 Android 项目，演示如何计算 ABI 特定的版本号并为以下所有的 ABI 构建三个独立的 APK：
@@ -144,7 +130,6 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 - armeabi
 - armeabi-v7a
 - x86
-
 
 示例项目中的 [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb) 执行前几节中描述的所有步骤：
 
@@ -157,7 +142,6 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 1. 使用生产密钥存储[为 APK 签名](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66)。
 
 1. 使用 [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) 优化 APK。
-
 
 要构建应用程序的所有 APK，请从命令行运行 `build` Rake 任务：
 
@@ -172,16 +156,12 @@ rake 任务完成后，将有三个包含文件 `xamarin.helloworld.apk` 的 `bi
 
 [![包含 xamarin.helloworld.apk 的平台特定文件夹的位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
-
 > [!NOTE]
 > 本指南中概述的构建过程可以在许多不同的构建系统之一中实现。 尽管我们没有预先编写的示例，但 [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 应该也适用。
-
 
 ## <a name="summary"></a>总结
 
 本指南提供了一些关于如何创建针对指定 ABI 的 Android APK 的建议。 此外，还讨论了创建 `android:versionCodes` 的一种可能的方案，该方案将识别该 APK 所针对的 CPU 体系结构。 演练包括一个使用 Rake 编写脚本的示例项目。
-
-
 
 ## <a name="related-links"></a>相关链接
 

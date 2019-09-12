@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: bd505e97ce4fcca2197f6c7da2de8411931900ab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525379"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753780"
 ---
 # <a name="publishing-independently"></a>独立发布
 
@@ -29,18 +29,14 @@ ms.locfileid: "69525379"
 
 若要下载社区版或深入了解如何购买 Professional 版和 Enterprise 版，请访问 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/)。
 
-
 ## <a name="allow-installation-from-unknown-sources"></a>允许来自未知源的安装
 
 默认情况下，Android 仅允许用户下载和安装来自 Google Play 的应用程序。 若要允许来自非应用商店的安装，用户必须先在设备上启用未知源  设置，才可尝试安装应用程序。 可通过“设置”>“安全”  找到此设置，如下图所示：
 
 [![安全设置屏幕](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
-
 > [!IMPORTANT]
 > 无论是否启用此设置，某些网络提供商可能都会阻止安装来自未知源的应用程序。
-
-
 
 ## <a name="publishing-by-e-mail"></a>通过电子邮件发布
 
@@ -50,11 +46,9 @@ ms.locfileid: "69525379"
 
 尽管通过电子邮件进行分发非常简单，但其在防止盗版或未授权分发方面提供的保护较少。 因此，最好在很少用户接收该应用程序且其肯定不会分发应用程序的情况下采用此方式。
 
-
 ## <a name="publishing-by-web"></a>通过 Web 发布
 
 可通过 Web 服务器分发应用程序。 为此，需将应用程序上传到 Web 服务器，然后向用户提供下载链接。 Android 设备浏览到链接并下载应用程序时，该程序将在下载完成后自动安装。
-
 
 ## <a name="manually-installing-an-apk"></a>手动安装 APK
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c7b31e05a5b9d75559fae14f467312f5abc8fe94
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a261d1fc86fac16cf48575616359b083daebf47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289810"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756542"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 应用分发概述
 
@@ -20,9 +20,7 @@ _本文档概述适用于 Xamarin.iOS 应用程序的分发技巧，并引出有
 
 Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是将应用分发给用户，如下图中突出显示部分所示：
 
-
 [![](images/publishingdiagram.png "iOS 应用开发完成后，下一步是将应用分发给用户，如此图中突出显示部分所示")](images/publishingdiagram.png#lightbox)
-
 
 Apple 提供以下方式分发 iOS 应用程序，它们均受 Xamarin.iOS 支持：
 

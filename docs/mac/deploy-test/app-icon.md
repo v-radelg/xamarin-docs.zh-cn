@@ -7,17 +7,16 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6a4ea3950b9657e4e04c6465cc0a64ac3c1d266c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291560"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770143"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 应用的应用程序图标
 
  本文介绍如何创建 Xamarin.Mac 应用程序图标所需的图像，将图像捆绑到 .icns 文件以及将该图标包含在 Xamarin.Mac 项目中。
-
 
 ## <a name="overview"></a>概述
 
@@ -27,11 +26,9 @@ ms.locfileid: "70291560"
 
 ![AppIcon.appiconset 编辑器](app-icon-images/intro01.png "AppIcon.appiconset 编辑器")
 
-
 ## <a name="application-icon"></a>应用程序图标
 
 一个很好的图标需指明 Xamarin.Mac 应用的主要用途，并指出用户在使用应用时应期待的体验。 每个 macOS 应用都必须包括几种图标大小，以便在 Finder、Dock、Launchpad 和计算机中的其他位置显示。
-
 
 ## <a name="designing-the-icon"></a>设计图标
 
@@ -48,7 +45,6 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 - 不要在图标中使用 Apple 图标的副本。
 
 在设计 Xamarin.Mac 应用的图标之前，请阅读 Apple [OS X 人机界面指南](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[应用图标库](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Gallery.html#//apple_ref/doc/uid/20000957-CH88-SW1)和[设计应用图标](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Designing.html#//apple_ref/doc/uid/20000957-CH87-SW1)部分。
-
 
 ## <a name="required-image-sizes-and-filenames"></a>所需图像大小和文件名
 
@@ -76,7 +72,6 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 有关详细信息，请参阅 Apple 的 [Provide High-Resolution Versions of All App Graphics Resources](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html#//apple_ref/doc/uid/TP40012302-CH7-SW3)（提供所有应用图形资源的高分辨率版本）文档。
 
-
 ## <a name="packaging-the-icon-resources"></a>打包图标资源
 
 设计图标并将其保存为所需的文件大小和名称后，Visual Studio for Mac 就可将其请轻松分配给图像资产，以在 Xamarin.Mac 中使用。
@@ -90,7 +85,6 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
     [![选择图标图像](app-icon-images/intro02.png "选择图标图像")](app-icon-images/intro02-large.png#lightbox)
 3. 保存更改。
-
 
 ## <a name="using-the-icon"></a>使用图标
 
@@ -108,11 +102,9 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 ![macOS 停靠中应用图标的示例](app-icon-images/icon04.png "macOS 停靠中应用图标的示例")
 
-
 ## <a name="summary"></a>总结
 
 本文详细介绍了如何使用创建 macOS 应用图标所需的图像、打包图标以及在 Xamarin.Mac 项目中包含图标。
-
 
 ## <a name="related-links"></a>相关链接
 

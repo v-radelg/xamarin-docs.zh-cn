@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 1163f264fc54a461d8d95854524439589cdc81f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 399f411acd497b9d55ca81f670556430fe5f5503
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646988"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771285"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>创建 Xamarin.Forms DataTemplate
 
@@ -288,7 +288,6 @@ public class WithDataTemplatePageCS : ContentPage
 ## <a name="summary"></a>总结
 
 本文说明了如何以内联方式、根据自定义类型或在 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 中创建数据模板。 如果不需要在其他地方重复使用数据模板，则应使用内联模板。 或者，可将数据模板定义为自定义类型或控件级别、页面级别或应用程序级别资源，从而重复使用数据模板。
-
 
 ## <a name="related-links"></a>相关链接
 

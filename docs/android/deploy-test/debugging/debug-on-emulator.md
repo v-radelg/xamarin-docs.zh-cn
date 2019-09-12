@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 133550bab03c4d2e3826ea59cf231ac3d85f29cc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 761b1a8b2c3fd97ca3f1560b79b042e0fd89da92
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525651"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754188"
 ---
 # <a name="debugging-on-the-android-emulator"></a>在 Android Emulator 上调试
 
@@ -21,7 +21,6 @@ ms.locfileid: "69525651"
 ## <a name="overview"></a>概述
 
 可使用各种配置运行 Android Emulator（作为“使用 .NET 进行移动开发”工作负荷的一部分进行安装）来模拟各种 Android 设备  。 其中的每个配置都创建为虚拟设备  。 本指南介绍如何从 Visual Studio 启动模拟器以及如何在虚拟设备中运行应用。 有关配置 Android Emulator 和创建新的虚拟设备的信息，请参阅 [Android Emulator 设置](~/android/get-started/installation/android-emulator/index.md)。
-
 
 ## <a name="using-a-pre-configured-virtual-device"></a>使用预配置的虚拟设备
 
@@ -65,7 +64,6 @@ Visual Studio for Mac 包含预配置虚拟设备，可在“设备”下拉菜�
 ## <a name="editing-virtual-devices"></a>编辑虚拟设备
 
 若要修改虚拟设备（或创建新的虚拟设备），必须使用 [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)。
-
 
 <a name="launching" />
 
@@ -113,11 +111,9 @@ Visual Studio for Mac 包含预配置虚拟设备，可在“设备”下拉菜�
 
 ![在重启时加载状态](debug-on-emulator-images/loading-state.png)
 
-
 ## <a name="troubleshooting"></a>疑难解答
 
 有关常见模拟器问题的技巧和解决方法，请参阅 [Android Emulator 疑难解答](~/android/get-started/installation/android-emulator/troubleshooting.md)。
-
 
 ## <a name="summary"></a>总结
 

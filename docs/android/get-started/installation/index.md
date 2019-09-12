@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: b9cecc8863cb4e68338d3226c5bf3744b7010e43
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: c561ab94d8cae28ac180c201795f67518aa2d8f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617405"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757979"
 ---
 # <a name="setup-and-installation"></a>设置和安装
 
 这部分的主题介绍了如何在 Windows 和 macOS 上安装和配置 Xamarin.Android 以用于 Visual Studio，如何使用 Android SDK 管理器下载和安装生成和测试应用所需的 Android SDK 工具和组件，如何配置 Android 仿真器以进行调试，以及如何将物理 Android 设备连接到开发计算机以调试和最终对应用进行测试。
-
 
 ## <a name="windows-installationandroidget-startedinstallationwindowsmd"></a>[Windows 安装](~/android/get-started/installation/windows.md)
 

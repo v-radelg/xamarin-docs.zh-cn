@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b5f09413379de13aaf12e8113e8deb0f3c2bf0c3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525457"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753809"
 ---
 # <a name="publishing-an-application"></a>发布应用程序
 
 创建优秀的应用程序后，用户自然希望进行使用。 本部分介绍公开分发使用 Xamarin.Android 创建的应用程序所涉及的步骤，其中销售渠道包括电子邮件、专用 Web 服务器、Google Play 或 Android 版 Amazon 应用商店。
-
 
 ## <a name="overview"></a>概述
 
@@ -36,7 +35,6 @@ Xamarin.Android 应用程序开发的最终步骤是发布应用程序。 发布
 -  通过电子邮件 &ndash; 用户可以从电子邮件安装 Xamarin.Android 应用程序。 在 Android 设备上打开附件时会安装应用程序。
 -  通过应用商店 &ndash; 有多个应用市场可用于分发，例如 [Google Play](http://play.google.com/) 或 [Android 版 Amazon 应用商店](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
 
-
 发布应用程序最常见的方法是通过知名的应用商店，因为它可以提供最广的市场范围和达到最佳的分发控制。 但是，通过应用市场发布应用程序需要进行其他工作。
 
 Xamarin.Android 应用程序可同时通过多个渠道分发。 例如，应用程序可在 Google Play 和 Android 版 Amazon 应用商店上发布，也可从 Web 服务器下载。
@@ -51,7 +49,6 @@ Google Play 无疑是最全面和最受欢迎的 Android 应用程序应用市�
 [![Google Play 屏幕快照](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 这部分演示如何将应用程序与相应的宣传材料上传到 Google Play 等商店。 对 APK 扩展文件进行了解释，从概念上概述了其内容和工作原理。 还对 Google 授权服务进行了说明。 最后，介绍了其他的分发方式，包括使用 HTTP Web 服务器、简单的电子邮件分发以及适用于 Android 的 Amazon 应用商店。
-
 
 ## <a name="related-links"></a>相关链接
 

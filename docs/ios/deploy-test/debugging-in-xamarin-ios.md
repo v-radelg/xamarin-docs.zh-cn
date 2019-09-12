@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a307641b466eae680c8eb43c1b8fff7623195cde
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8a1a110bf1ff021c3280e19dea777180d71dba1a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283097"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763364"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
 _可以使用 Visual Studio for Mac 或 Visual Studio 中的内置调试程序调试 Xamarin.iOS 应用程序。_
 
 需要调试可能与 Xamarin.iOS 项目关联的 C、C++ 或 Objective C 代码时，使用 Visual Studio for Mac 的本机调试支持调试 C# 和其他托管语言代码，然后使用 [LLDB](http://lldb.llvm.org/tutorial.html)。
-
 
 > [!NOTE]
 > 在“调试”模式下编译应用时，Xamarin.iOS 生成的应用不仅速度慢，而且还很大，因为必须检测所有代码行。 发布之前，请确保创建一个“发布”版本。
@@ -49,13 +48,13 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 [![](debugging-in-xamarin-ios-images/image0a.png "断点板")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  如果“Breakpoints pad”未自动显示，可以依次选择“视图”>“调试窗口”>“断点”  调出它
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "断点板")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  如果“Breakpoints pad”未自动显示，可以依次选择择“调试”>“窗口”>“断点”  调出它
- 
+
 -----
 
 开始调试任何应用程序之前，应始终确保配置已设为“调试”  ，因为其中有一套有用的工具，可支持调试（比如断点），使用数据可视化工具以及查看调用堆栈：
@@ -85,8 +84,6 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 -----
 
-
-
 然后通过按“播放”  按钮部署应用程序。
 
 命中断点时，代码会以黄色突出显示：
@@ -105,7 +102,6 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 若要设置条件断点，请访问“断点属性”  窗口。具体有以下两种操作方法：
 
-
 - 若要添加新的条件断点，请右键单击编辑器边缘（即要设置断点的代码行号左侧），再选择“新建断点”：
 
   [![](debugging-in-xamarin-ios-images/image4.png "选择“新建断点”")](debugging-in-xamarin-ios-images/image4.png#lightbox)
@@ -113,7 +109,6 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 - 若要向现有断点添加条件，请右键单击该断点并选择“断点属性”  ，或如下图所示在“断点”  面板中选择“属性”按钮：
 
   [![](debugging-in-xamarin-ios-images/image5.png "断点板")](debugging-in-xamarin-ios-images/image5.png#lightbox)
-
 
 然后可输入想要断点发生的条件：
 
@@ -199,7 +194,6 @@ Xamarin.iOS 使用新的 Mono 软调试器。 与标准 Mono 调试器不同，�
 
 <a name="Accessing_the_Console" />
 
-
 ## <a name="accessing-the-console"></a>访问控制台
 
 崩溃日志和控制台类输出将发送到 iPhone 控制台。 可以通过 Xcode 使用“管理器”，然后从管理器选择设备来访问此控制台。
@@ -212,7 +206,6 @@ Xamarin.iOS 使用新的 Mono 软调试器。 与标准 Mono 调试器不同，�
 
 <a name="Debugging_Mono's_Class_Libraries" />
 
-
 ## <a name="debugging-monos-class-libraries"></a>调试 Mono 类库
 
 Xamarin.iOS 随附用于 Mono 类库的源代码，可使用此代码在调试器中单步执行，查看内部工作原理。
@@ -220,7 +213,6 @@ Xamarin.iOS 随附用于 Mono 类库的源代码，可使用此代码在调试�
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 由于此功能在调试过程中会占用更多内存，因此默认禁用。
-
 
 若要启用此功能，请确保在“Visual Studio for Mac”>“首选项”>“调试程序”  菜单下已取消选择“仅调试项目代码；不单步执行框架代码”  选项，如下图所示：
 
@@ -235,7 +227,6 @@ Xamarin.iOS 随附用于 Mono 类库的源代码，可使用此代码在调试�
 -----
 
 一旦执行此操作，便可以启动应用程序并单步执行 Mono 的任何核心类库。
-
 
 ## <a name="related-links"></a>相关链接
 

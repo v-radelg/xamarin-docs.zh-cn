@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: c0a4766abf8ded591bf348f2c2a7ba2283cdde00
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b2d9d49e37b195dadf3aa89fefb0911e4215d14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290231"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769915"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 应用的预配配置文件
 
@@ -90,7 +90,6 @@ ms.locfileid: "70290231"
 7. 列表中也会显示该配置文件： 
 
     [![](profiles-images/certif26.png "显示已安装的配置文件")](profiles-images/certif26.png#lightbox)
-
 
 如果开发人员更改了应用 ID 所用的功能（例如 启用 iCloud 或推送通知），则需为该应用 ID 重新创建配置文件。
 

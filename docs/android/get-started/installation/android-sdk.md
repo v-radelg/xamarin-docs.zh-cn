@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: da0a441be9cd07af456b1600155151e48d44162c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525108"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758050"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>设置用于 Xamarin.Android 的 Android SDK
 
@@ -50,7 +50,6 @@ Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。
 
- 
 ## <a name="sdk-manager"></a>SDK 管理器 
 
 若要在 Visual Studio 中启动 SDK 管理器，请单击“工具”>“Android”>“Android SDK 管理器”  ：
@@ -62,7 +61,6 @@ Android SDK 管理器会在“Android SDK 和工具”屏幕中打开  。 此�
 [![“平台”选项卡中打开的 Android SDK 管理器的屏幕截图](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 下面的部分将对“Android SDK 和工具”屏幕进行更详细的介绍  。
-
 
 ### <a name="android-sdk-location"></a>Android SDK 位置
 
@@ -78,12 +76,10 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 单击“确定”后，SDK 管理器将管理安装在所选位置的 Android SDK  。
 
-
 ### <a name="tools-tab"></a>“工具”选项卡
 
 “工具”选项卡显示“工具”和“附加程序”的列表    。 使用此选项卡以安装 Android SDK 工具、平台工具和生成工具。
 此外，还可以安装 Android Emulator、低级别调试器 (LLDB)、NDK、HAXM 加速和 Google Play 库。
-
 
 例如，若要下载 Google Android Emulator 包，请单击“Android Emulator”旁的复选标记，然后单击“应用更改”按钮   ：
 
@@ -127,7 +123,6 @@ Android SDK 位置是在“Android SDK 和工具”屏幕的顶部进行配置�
 
 若要切换回平台和工具支持的存储库，请单击“Microsoft (推荐)”  。 这会将包和工具的列表还原到默认选择。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="requirements"></a>要求
@@ -146,11 +141,11 @@ Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。
- 
+
 ## <a name="sdk-manager"></a>SDK 管理器 
 
 若要在 Visual Studio for Mac 中启动 SDK 管理器，请单击“工具”>“SDK 管理器”  ：
- 
+
 [![“Android SDK 管理器”菜单项的位置](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 “Android SDK 管理器”会在“首选项窗口”中打开，此窗口中包含“平台”、“工具”和“位置”这三个选项卡      ：
@@ -158,7 +153,6 @@ Xamarin Android SDK 管理器还需要 Java 开发工具包（此工具包自动
 [![“平台”选项卡中打开的 Android SDK 管理器的屏幕截图](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
 下面的部分将对 Android SDK 管理器的各个选项卡进行介绍。
-
 
 ### <a name="locations-tab"></a>“位置”选项卡
 
@@ -186,7 +180,6 @@ SDK 管理器启动后，它会自动确定每个已安装包的路径，并通�
 [![“许可证接受”屏幕](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 如果接受这些条款和条件，请单击“接受”  。 在窗口底部，有一个进度栏会指示下载和安装进度。 安装完成后，“工具”选项卡将显示已安装所选的工具和附加程序  。
-
 
 ### <a name="platforms-tab"></a>“平台”选项卡
 
@@ -222,11 +215,9 @@ SDK 管理器启动后，它会自动确定每个已安装包的路径，并通�
 
 -----
 
- 
 ## <a name="summary"></a>总结
 
 本指南说明了如何在 Visual Studio 和 Visual Studio for Mac 中安装和使用 Xamarin Android SDK 管理器工具。
-
 
 ## <a name="related-links"></a>相关链接
 

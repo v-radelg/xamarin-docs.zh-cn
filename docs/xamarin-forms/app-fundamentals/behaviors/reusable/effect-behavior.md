@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 38ecd765b1c6bc81054b2c42426b6c15bb99b9d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650990"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772001"
 ---
 # <a name="reusable-effectbehavior"></a>可重用 EffectBehavior
 
@@ -164,7 +164,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="summary"></a>总结
 
 本文演示了如何使用行为向控件添加效果。 `EffectBehavior` 类是可重用的 Xamarin.Forms 自定义行为，当行为附加到控件时，它将 [`Effect`](xref:Xamarin.Forms.Effect) 实例添加到控件，当行为与控件分离时，它将删除 `Effect` 实例。
-
 
 ## <a name="related-links"></a>相关链接
 

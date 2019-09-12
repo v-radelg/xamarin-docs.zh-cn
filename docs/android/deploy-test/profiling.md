@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 44bed11e4d2ccf7baa39734a1b20e49b9ecf5f10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525578"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753981"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 应用
 
@@ -24,14 +24,13 @@ ms.locfileid: "69525578"
 
 本指南介绍了 Xamarin Profiler，并提供了有关如何开始使用 Android Profiler 的详细信息。
 
- 
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Xamarin Profiler 是独立的应用程序，与 Visual Studio 和 Visual Studio for Mac 集成，用于从 IDE 中分析 Xamarin 应用。 有关使用 Xamarin Profiler 的详细信息，请参阅 [Xamarin Profiler](~/tools/profiler/index.md)。
 
 > [!NOTE]
 > 必须订阅 [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) 才能解锁 Windows 版 Visual Studio Enterprise 或 Visual Studio for Mac 中的 Xamarin Profiler 功能。
- 
+
 ## <a name="android-studio-profiler"></a>Android Studio Profiler
 
 Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用 Android Profiler 来衡量使用 Visual Studio 生成的 Xamarin Android 应用的性能 &ndash; 而无需 Visual Studio Enterprise 许可证。 但是，与 Xamarin Profiler 不同，Android Profiler 没有与 Visual Studio 集成，并且只能用于分析已提前生成并导入 Android Profiler 的 Android 应用程序包 (APK)。
@@ -100,7 +99,6 @@ Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用
 15. 如果点击 XamagonXuzzle 上的“随机化”按钮（这会导致其移动和随机化磁贴），可看到 CPU 使用率在应用的随机化间隔期间增加   ：
 
     [![点击“随机化”按钮时的 CPU 使用率](profiling-images/vswin/14-tap-randomize-sml.png)](profiling-images/vswin/14-tap-randomize.png#lightbox)
-
 
 ### <a name="using-the-android-profiler"></a>使用 Android Profiler
 

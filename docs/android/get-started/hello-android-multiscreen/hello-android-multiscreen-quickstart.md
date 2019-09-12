@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: aab10d434461521825fd633369ffa3c6331e905b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d1a4d73242e9701ff9ffcfc58791986bca89a095
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643964"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755852"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>了解 Android 多屏显示：快速入门
 
@@ -215,7 +215,6 @@ translateButton.Click += (sender, e) =>
 “转换历史记录”按钮文本应会更新以反映新的字符串值  ：
 
 [![按钮反映新的字符串值](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
-
 
 在 Design Surface 上选中“转换历史记录”按钮后，在“Properties Pad”中打开“行为”选项卡，然后双击“已启用”复选框以禁用此按钮     。 这将导致按钮在设计图面上颜色变暗：
 

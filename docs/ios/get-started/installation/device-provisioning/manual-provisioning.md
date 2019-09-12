@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/15/2017
-ms.openlocfilehash: 5f56a99e341f58bc06e8bf49305b5527a92f0413
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c190e92c8366644c00e0f03c314d535f43f8046b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289718"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768630"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手动预配
 
@@ -265,7 +265,6 @@ Apple 提供一系列精选的特殊应用服务（亦称为“功能”），�
 
 4. 请确保将生成配置设置为 **iPhone** 或 **iPad**，而不是模拟器。
 5. 在 Visual Studio 中单击“运行”  并查看在设备上运行的应用。
-
 
 -----
 

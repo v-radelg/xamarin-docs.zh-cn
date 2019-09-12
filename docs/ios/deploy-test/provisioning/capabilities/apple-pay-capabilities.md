@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 78270ee181f56f4b82637ed74a10a916d8fa4a77
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9d0ffbd0da99134dfae3e42fe8baf4111c80935f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285453"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762990"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS 中的 Apple Pay 功能
 
@@ -35,7 +35,7 @@ _向应用程序添加功能通常需要其他预配设置。本指南将介绍 
 商户 ID 用于使 Apple Pay 知道你可接受付款，并会传递到 PassKit 的 `PaymentRequest` 方法以及用于 Apple Pay 权利中：
 
 1. 浏览到 [Apple 开发人员中心](https://developer.apple.com/account/)，然后转到“证书、标识符和配置文件”部分： 
- 
+
     ![开发人员中心商户 ID 选择](apple-pay-capabilities-images/image57.png)
 
 2. 在“标识符”  下，选择“商户 ID”  ，然后选择“+”  来创建新的商户 ID：  
@@ -149,7 +149,7 @@ Apple 需要一个证书来加密与交易相关联的敏感数据。 每个创�
 * [Apple Pay 简介](~/ios/platform/apple-pay.md)
 
 ## <a name="next-steps"></a>后续步骤
- 
+
 下表列出了可能需要采取的其他步骤：
 
 * 在应用中使用框架命名空间。

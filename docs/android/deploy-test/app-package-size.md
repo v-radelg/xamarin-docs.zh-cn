@@ -7,22 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6d391bd804e1c59d06d78dd7cffe3f11f9276468
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525789"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754641"
 ---
 # <a name="application-package-size"></a>应用程序包大小
 
 本文将讨论 Xamarin.Android 应用程序包的组成部分，以及可用于在开发的调试和发布阶段进行高效包部署的相关策略。 
 
-
 ## <a name="overview"></a>概述
 
 Xamarin.Android 可使用各种机制来最大程度地减小包的大小，同时保持高效调试和发布部署过程。 在本文中，我们将了解 Xamarin.Android 版本和调试部署工作流，并了解 Xamarin.Android 平台如何确保我们生成和发布小的应用程序包。
-
 
 ## <a name="release-packages"></a>版本包
 
@@ -41,7 +39,6 @@ Xamarin.Android 可使用各种机制来最大程度地减小包的大小，同�
 ![链接之后的 ApiDemo 包大小](app-package-size-images/api-demo-package-size-after-linker.png)
 
 如此处所示，应用程序包大小通常要比应用程序及其依赖项大约要大 2.9 MB。
-
 
 ## <a name="debug-packages"></a>调试包
 
@@ -75,11 +72,9 @@ Android 在复制和安装包方面相对较慢，因此，我们希望包大小
 
 4. 单击“确定”  按钮，以保存所做的更改并关闭“项目选项”对话框。
 
-
 下一次构建应用程序进行调试时，将直接在设备上安装程序集（如果尚未安装），并且会在设备上安装一个较小的应用程序包（不包括程序集）。 这将缩短部署应用程序更改并运行测试所需的时间。
 
 通过持久长时间首次部署共享运行时和共享平台，每次对应用程序进行更改时，都可以快速轻松地部署新版本，以便拥有一个快速更改/部署/运行周期。
-
 
 ## <a name="summary"></a>总结
 

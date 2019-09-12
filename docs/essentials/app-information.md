@@ -6,16 +6,16 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
-ms.openlocfilehash: fa6910c380545527f930f340536f47b548b74b12
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233206"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756995"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:应用信息
 
-AppInfo 类提供应用程序的相关信息。
+AppInfo 类提供应用程序的相关信息  。
 
 ## <a name="get-started"></a>入门
 
@@ -49,7 +49,7 @@ var build = AppInfo.BuildString;
 
 ## <a name="displaying-application-settings"></a>显示应用程序设置
 
-AppInfo 类还可以显示由操作系统为应用程序维护的设置页面：
+AppInfo 类还可以显示由操作系统为应用程序维护的设置页面  ：
 
 ```csharp
 // Display settings page
@@ -64,29 +64,28 @@ AppInfo.ShowSettingsUI();
 
 应用信息提取自 `AndroidManifest.xml` 的以下字段：
 
-- 版本 – `manifest` 节点中的 `android:versionCode`
-- 名称 - `application` 节点中的 `android:label`
-- PackageName：`manifest` 节点中的 `package`
-- VersionString – `application` 节点中的 `android:versionName`
+-  版本 – `manifest` 节点中的 `android:versionCode`
+-  名称 - `application` 节点中的 `android:label`
+-  PackageName：`manifest` 节点中的 `package`
+-  VersionString – `application` 节点中的 `android:versionName`
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 应用信息提取自 `Info.plist` 的以下字段：
 
-- 版本 – `CFBundleVersion`
-- 名称 - `CFBundleDisplayName`如果已设置否则为 `CFBundleName`
-- PackageName：`CFBundleIdentifier`
-- VersionString – `CFBundleShortVersionString`
+-  版本 – `CFBundleVersion`
+-  名称 - `CFBundleDisplayName`如果已设置否则为 `CFBundleName`
+-  PackageName：`CFBundleIdentifier`
+-  VersionString – `CFBundleShortVersionString`
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 应用信息提取自 `Package.appxmanifest` 的以下字段：
 
-- 版本 – 使用 `Identity` 节点上 `Version` 中的 `Build`
-- 名称 - `Properties` 节点上的 `DisplayName`
-- PackageName：`Identity` 节点上的 `Name`
-- VersionString – `Identity` 节点上的 `Version`
-
+-  版本 – 使用 `Identity` 节点上 `Version` 中的 `Build`
+-  名称 - `Properties` 节点上的 `DisplayName`
+-  PackageName：`Identity` 节点上的 `Name`
+-  VersionString – `Identity` 节点上的 `Version`
 
 --------------
 

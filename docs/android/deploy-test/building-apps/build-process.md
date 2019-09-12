@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 84910bd499aa6894d86778a9bc4eb1467f063134
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225734"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754265"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -44,7 +44,6 @@ Xamarin.Android 生成过程负责将所有内容集合在一起：[生成 `Reso
 已知快速部署在阻止 `adb` 同步到目录 `/data/data/@PACKAGE_NAME@/files/.__override__` 的设备上会失败。
 
 快速部署在默认情况下处于启用状态，可以通过将 `$(EmbedAssembliesIntoApk)` 属性设置为 `True` 在调试版本中禁用。
-
 
 ## <a name="msbuild-projects"></a>MSBuild 项目
 
@@ -128,7 +127,6 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
   MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
   ```
-
 
 ### <a name="packaging-properties"></a>打包属性
 
@@ -530,7 +528,6 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   - “西部”  ：包括西部编码，例如欧洲西部 (Mac) \[macintosh, CP10000\]、冰岛语 (Mac) \[x-mac-icelandic, CP10079\]、欧洲中部 (Windows) \[iso-8859-2, CP1250\]、欧洲西部 (Windows) \[iso-8859-1, CP1252\]、希腊语 (Windows) \[iso-8859-7, CP1253\]、欧洲中部 (ISO) \[iso-8859-2, CP28592\]、拉丁语 3 (ISO) \[iso-8859-3, CP28593\]、拉丁语 (ISO) \[iso-8859-7, CP28597\]、拉丁语 9 (ISO) \[iso-8859-15, CP28605\]OEM 美国 \[CP437\]、欧洲西部 (DOS) \[CP850\]、葡萄牙语 (DOS) \[CP860\]、冰岛语 (DOS) \[CP861\]、法国加拿大语 (DOS) \[CP863\] 和日耳曼语 (DOS) \[CP865\]                。
 
-
   ```xml
   <MandroidI18n>West</MandroidI18n>
   ```
@@ -548,7 +545,6 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 -  AndroidClassParser &ndash; 一个字符串属性，用于控制如何分析 `.jar` 文件。 可能的值包括：
 
   - class-parse  ：使用 `class-parse.exe` 直接分析 Java 字节码，而不使用 JVM。 此值处于试验阶段。
-
 
   - jar2xml  ：通过 `jar2xml.jar` 使用 use Java 反射以提取 `.jar` 文件中的类型和成员。
 
@@ -579,7 +575,6 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
     - 用于托管子类的 Java Callable Wrapper 构造函数的 `jmethodID` 缓存。
 
     默认值为 `XAJavaInterop1`。
-
 
 ### <a name="resource-properties"></a>资源属性
 
@@ -680,13 +675,11 @@ Enter key password for keystore.alias
 
  生成操作将[应用于项目中的文件](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)，并控制文件的处理方式。
 
-
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
 生成操作 `AndroidAarLibrary` 应用于直接引用 .aar 文件。 Xamarin 组件最常使用此生成操作。 也就是说，要添加对 .aar 文件的引用，它们是 Google Play 和其他服务正常运行所必需。
 
 包含此生成操作的文件的处理方式类似于库项目中嵌入的资源。 .aar 会被提取到中间目录。 然后，任何资产、资源和 .jar 文件都会被添加到相应项组中。
-
 
 ### <a name="androidboundlayout"></a>AndroidBoundLayout
 
@@ -696,7 +689,6 @@ Enter key password for keystore.alias
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-
 <a name="AndroidEnvironment" />
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
@@ -704,28 +696,23 @@ Enter key password for keystore.alias
 生成操作为 `AndroidEnvironment` 的文件用于[在过程启动期间初始化环境变量和系统属性](~/android/deploy-test/environment.md)。
 `AndroidEnvironment` 生成操作可能会应用于多个文件，并且它们将以特定顺序进行评估（因此，不要在多个文件中指定相同的环境变量或系统属性）。
 
-
 ### <a name="androidfragmenttype"></a>AndroidFragmentType
 
 指定生成布局绑定代码时，要用于所有 `<fragment>` 布局元素的默认完全限定的类型。 该属性默认为标准的 Android `Android.App.Fragment` 类型。
-
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 生成操作为 `AndroidJavaLibrary` 的文件是 Java 归档（`.jar` 文件），它将包含在最终的 Android 程序包中。
 
-
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 生成操作为 `AndroidJavaSource` 的文件是 Java 源代码，将包含在最终的 Android 程序包中。
-
 
 ### <a name="androidlintconfig"></a>AndroidLintConfig
 
 应将“AndroidLintConfig”生成操作与 `AndroidLintEnabled` 生成属性结合使用。 系统将使用此生成操作的文件合并起来并传递给 Android `lint` 工具。 它们应当是包含要启用/禁用哪些测试的信息的 XML 文件。
 
 有关详细信息，请参阅 [lint 文档](https://developer.android.com/studio/write/lint)。
-
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -738,7 +725,6 @@ Enter key password for keystore.alias
 
 通过路径探查，本机库的父目录名称用于指定库的目标 ABI。 因此，如果将 `lib/armeabi-v7a/libfoo.so` 添加到版本中，则 ABI 将被“探查”为 `armeabi-v7a`。
 
-
 #### <a name="item-attribute-name"></a>项属性名称
 
  Abi &ndash; 指定本机库的 ABI。
@@ -750,7 +736,6 @@ Enter key password for keystore.alias
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
-
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -789,18 +774,15 @@ Enter key password for keystore.alias
 </ItemGroup>
 ```
 
-
 ### <a name="content"></a>内容
 
 不支持正常的 `Content` 生成操作（因为我们还未想出如何在没有成本可能昂贵的首次运行步骤的情况下支持它）。
 
 从 Xamarin.Android 5.1 开始，尝试使用 `@(Content)` 生成操作将导致 `XA0101` 警告。
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 生成操作为 LinkDescription  的文件用于[控制链接器行为](~/cross-platform/deploy-test/linker.md)。
-
 
 <a name="ProguardConfiguration" />
 
@@ -809,7 +791,6 @@ Enter key password for keystore.alias
 生成操作为 ProguardConfiguration  的文件包含用于控制 `proguard` 行为的选项。 有关此生成操作的更多信息，请参阅 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
 
 除非 `$(EnableProguard)` MSBuild 属性为 `True`，否则这些文件将被忽略。
-
 
 ## <a name="target-definitions"></a>目标定义
 

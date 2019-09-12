@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9492c90274e28f14dee0e8cbcb2aaa1a55de2420
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 866ebd2a66557cda5372c5bc3d7a909e18c762d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282736"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756092"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 应用程序
 
@@ -32,7 +32,6 @@ Xcode Instruments 只能在 Mac 上运行。
 3. 将 iOS 设备连接到计算机。
 4. 在“运行”  菜单中，选择“上传到设备”  。 现在应用程序将生成并上传到该设备。
 5. 在“工具”  菜单中，选择“启动 Instruments”  。
-
 
 此时将打开 Instruments 并显示以下对话：
 

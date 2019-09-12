@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119117"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760999"
 ---
 # <a name="localization"></a>本地化
 
@@ -77,7 +77,6 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 
 选择 AppResources.resx 文件，并显示 Properties Pad，以查看配置此生成工具的位置   。 下面的截图显示“自定义工具：  ResXFileCodeGenerator”。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-internal-sml.png "AppResources.Resx 的属性窗口")](text-images/vs-resx-internal.png#lightbox)
@@ -90,7 +89,6 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 
 若要使强类型字符串属性为 `public`，必须手动将配置更改为“自定义工具：  PublicResXFileCodeGenerator”，如以下屏幕截图中所示：
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-public-sml.png "AppResources.Resx 的属性窗口")](text-images/vs-resx-public.png#lightbox)
@@ -98,7 +96,6 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](text-images/xs-resx-internal-sml.png "AppResources.Resx 的 Properties Pad")](text-images/xs-resx-internal.png#lightbox)
-
 
 [![](text-images/xs-resx-public-sml.png "AppResources.Resx 的 Properties Pad")](text-images/xs-resx-public.png#lightbox)
 

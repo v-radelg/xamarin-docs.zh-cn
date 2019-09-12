@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 00d5d5cf9cda38fbfc09fcfe8b4dcb56d00dee5b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291414"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770125"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac 链接器选项
 
@@ -53,7 +53,6 @@ ms.locfileid: "70291414"
 
 4. 在未来更新之后，完整目标框架的平台链接才会出现在 IDE 中。 在此之前，请将 `--linkplatform` 添加到“其他 mmp 参数”  。
 5. 单击“确定”  按钮保存更改。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289792"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771264"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms 控件模板简介
 
@@ -51,7 +51,6 @@ _借助 Xamarin.Forms 控件模板，可在运行时轻松设计或重新设计�
 - 在应用程序级别定义的 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 实例可以应用于整个应用程序中的页面。
 
 视图层次结构中层次较低的控件模板优先于在较高层次定义的控件模板。 例如，在页面级别定义的名为 `DarkTheme` 的 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 将优先于在应用程序级别定义的同名模板。 因此，对于定义要应用于应用程序中每个页面的主题的控件模板，应在应用程序级别进行定义。
-
 
 ## <a name="related-links"></a>相关链接
 

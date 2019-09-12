@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f0d51d9aa5cde17498124b74cc35011a6d942fae
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 230fe0f168b5718c2bc91cff6dbdc078b0e6834d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284848"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765929"
 ---
 # <a name="custom-linker-configuration"></a>自定义链接器配置
 
@@ -26,7 +26,6 @@ ms.locfileid: "70284848"
 
 - 对于 Android  ：将生成操作  设置为 LinkDescription 
 - 对于 iOS  ：将生成操作  设置为 LinkDescription 
-
 
 下面的示例显示了 XML 文件的外观：
 
@@ -60,8 +59,6 @@ ms.locfileid: "70284848"
 第二个部分中，对 `My.Own.Assembly.dll` 而言，将确保 `Foo` 类型保留其所有字段（即 `preserve="fields"` 属性）及其所有构造函数（即 IL 中所有名为 `.ctor` 的方法）。 `Bar` 类型将为一个构造函数（接受单个字符串参数）和特定字符串字段 `_blah` 保留特定签名（而不是名称）。
 `My.Own.Namespace` 命名空间将保留其包含的所有类型。
 最后，任何全名（包括命名空间）与通配符模式“My.Other\*”匹配的类型都会保留其所有字段和方法。 可在“type fullname”模式内多次包含通配符 `*`。
-
-
 
 ## <a name="related-links"></a>相关链接
 

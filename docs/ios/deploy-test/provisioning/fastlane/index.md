@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 290c90820bad2d213f8f3a978437a55f7ca6069e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c26d912a4684f6ddbee46ae953ce5cf1a3db67bd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285786"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762723"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Fastlane for iOS 介绍
 
@@ -80,18 +80,15 @@ Fastlane 是一个开源项目，旨在简化 iOS 和 Android 应用混乱冗长
 
 8. 再次运行 `which fastlane`，以确认路径类似 `/Users/[user]/.fastlane/bin`
 
-
 ## <a name="updating-fastlane"></a>更新 Fastlane
 
 Fastlane 是一个非常活跃的开放源代码项目，会定期推出新版本。 当新版本的 Fastlane 可用时，将建议你运行 fastlane 命令的时间：
 
 [![](images/fastlane-image0.png "快速更新提示")](images/fastlane-image0.png#lightbox)
 
-
 若要更新为新版本的 fastlane，请从[此处](https://download.fastlane.tools)下载最新的包并双击安装包来运行它：
 
 [![](images/fastlane-image0a.png "运行安装包")](images/fastlane-image0a.png#lightbox)
-
 
 ## <a name="contents"></a>内容
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d7d6bf128d3814917633bdd69e3c9c54c8d6a20c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 88e1acecdc96af596a0151bbd3f64dc4547d4cce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197503"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753823"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 性能
 
@@ -34,7 +34,6 @@ _可以通过很多方法来提高使用 Xamarin.Android 构建的应用程序�
 - [释放未使用的图像资源](#disposeimages)
 - [避免使用浮点运算](#avoidfloats)
 - [关闭对话框](#dismissdialogs)
-
 
 > [!NOTE]
 > 阅读本文之前，首先应阅读[跨平台性能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中讨论了非平台特定方法，可用于改善使用 Xamarin 平台生成的应用程序的内存使用情况和性能。
@@ -246,7 +245,6 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 有关释放可释放资源的详细信息，请参阅[释放 IDisposable 资源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。  
 
-
 <a name="avoidfloats" />
 
 ## <a name="avoid-floating-point-arithmetic"></a>避免使用浮点运算
@@ -265,7 +263,6 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 ## <a name="summary"></a>总结
 
 本文介绍和讨论了提高使用 Xamarin.Android 构建的应用程序的性能的方法。 这些方法共同可以极大地降低由 CPU 执行的工作量和应用程序占用的内存量。
-
 
 ## <a name="related-links"></a>相关链接
 

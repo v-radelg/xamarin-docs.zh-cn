@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 01e6ae4362c902c0982f7b93cc1f65b003db1020
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283581"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763247"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中配置应用
 
@@ -304,7 +304,6 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 
     [![](itunesconnect-images/review02.png "在 iTunes Connect 中编辑发布信息")](itunesconnect-images/review02.png#lightbox)
 7. 单击屏幕顶部的“保存”  按钮，保存更改。
-
 
 ## <a name="maintaining-pricing-information"></a>维护定价信息
 

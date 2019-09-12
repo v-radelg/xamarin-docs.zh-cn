@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290189"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765949"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
@@ -173,7 +173,6 @@ public class Subscriber : IDisposable
 
 可使用延迟初始化来延迟创建对象，直至首次使用该对象。 此方法主要用于提升性能、避免计算和降低内存需求。
 
-
 出现以下 2 种情况时，建议使用延迟初始化来创建开销很大的对象：
 
 - 应用程序可能不会使用该对象。
@@ -246,8 +245,6 @@ public class FaceDetection
 
 > [!IMPORTANT]
 > `CancellationTokenSource` 类实现 `IDisposable` 接口，因此完成处理 `CancellationTokenSource` 实例后应调用 `CancellationTokenSource.Dispose` 方法。
-
-
 
 有关详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 

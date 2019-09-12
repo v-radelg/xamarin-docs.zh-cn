@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 8ab7f24d69e4f20cb1a732f32d220c85b178deef
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e421e088a582e4d2de1cf830a0978cca9f45c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288720"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762645"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>深入了解 iOS 多屏显示
 
@@ -76,11 +76,9 @@ MVC 完全不考虑数据持久性  和模型的访问权限  。 换言之，MV
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "此图描述了作为卡堆栈的导航")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
-
 - **选择性提供后退按钮** - 将新项目推送到导航堆栈时，标题栏可自动显示后退按钮  ，允许用户向后导航。 按后退按钮弹出导航堆栈中的当前视图控制器，并将先前的内容视图层次结构加载到窗口中  ：  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "此图描述了从堆栈中“弹出”卡的过程")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
-
 
 - **提供标题栏** - 导航控制器的顶部称为标题栏  。 它负责显示视图控制器标题，如下图所示：  
 

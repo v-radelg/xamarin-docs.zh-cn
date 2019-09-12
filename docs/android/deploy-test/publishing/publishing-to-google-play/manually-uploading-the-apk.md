@@ -6,18 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 3852e2a1460cb5659cf5a00dcc17fb9a6e9c26a8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525308"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756073"
 ---
 # <a name="manually-uploading-the-apk"></a>手动上传 APK
 
-
 第一次将 APK 提交到 Google Play（或如果使用 Xamarin.Android 的早期版本）时，必须通过 [Google Play 开发者控制台](https://play.google.com/apps/publish)手动上传 APK。 本指南介绍此过程所需的步骤。 
-
 
 ## <a name="google-play-developer-console"></a>Google Play 开发者控制台
 
@@ -54,13 +52,11 @@ ms.locfileid: "69525308"
 
 上传 APK 后，会将它保存为草稿。 如下文所述，向 Google Play 提供更多详细信息之后才能将其发布。
 
-
 ## <a name="store-listing"></a>应用商店一览
 
 单击“Google Play 开发者控制台”  中的“应用商店一览”  ，输入 Google Play 将向应用程序的潜在用户显示的信息： 
 
 [![“应用商店一览”对话框](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
-
 
 ### <a name="graphics-assets"></a>图形资产
 
@@ -70,7 +66,6 @@ ms.locfileid: "69525308"
 
 在本部分中上传前面已准备好的所有促销资产。 提供有关必须提供哪些促销资产，以及应以何种格式提供它们的指导。
 
-
 ### <a name="categorization"></a>分类
 
 “图形资产”  部分之后是“分类”  部分，选择应用程序类型和类别：
@@ -79,7 +74,6 @@ ms.locfileid: "69525308"
 
 下一部分介绍内容分级。
 
-
 ### <a name="contact-details"></a>联系人详细信息
 
 此页的最后一个部分是“联系人详细信息”  。 此部分用于收集有关应用程序的开发者的联系信息：
@@ -87,7 +81,6 @@ ms.locfileid: "69525308"
 [![“联系人详细信息”部分](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
 可以在“隐私策略”  部分提供应用隐私策略的 URL，如上所示。
-
 
 ## <a name="content-rating"></a>内容分级
 
@@ -111,7 +104,6 @@ Google Play 上的所有应用程序必须根据 Google Play 分级系统进行�
 
 中等成熟度列表中的项的判断具有主观性，这样的话，有可能根据某个准则判断为中等成熟度级别的内容也可能有充分的合理性被判断为高成熟度级别。 
 
-
 ## <a name="pricing-amp-distribution"></a>定价和分发
 
 单击“Google Play 开发者控制台”  中的“定价和分发”  。 如果应用是付费应用，则在此页中设置价格。
@@ -122,13 +114,11 @@ Google Play 不允许将免费应用程序更改为付费应用（但是，可�
 
 [![“报价和分发”对话框](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
-
 ### <a name="manage-countries"></a>管理国家/地区
 
 下一部分，“管理国家/地区”  支持对应用可能会分发到哪些国家/地区进行控制：
 
 [![“管理国家/地区”对话框](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
-
 
 ### <a name="other-information"></a>其他信息
 
@@ -137,7 +127,6 @@ Google Play 不允许将免费应用程序更改为付费应用（但是，可�
 [![“包含广告”部分](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
 此部分之后是可以选择的其他选项，如选择“家庭专用”  和通过 Google Play for Education 分发应用。
-
 
 ### <a name="consent"></a>许可
 
@@ -148,8 +137,6 @@ Google Play 不允许将免费应用程序更改为付费应用（但是，可�
 
 关于发布 Xamarin.Android 应用的信息远远不止本指南中所包含的内容。
 有关在 Google Play 中发布应用的详细信息，请参阅[欢迎使用 Google Play 开发者控制台帮助中心](https://support.google.com/googleplay/android-developer#topic=3450769)。
-
-
 
 ## <a name="google-play-filters"></a>Google Play 筛选器
 

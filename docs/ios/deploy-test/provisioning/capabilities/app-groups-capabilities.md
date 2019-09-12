@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: cf79f586e5b0ff71c109ea9664d3cb7a6aa91a02
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e0c27502c10fe3522d80c6345a847ca424d49f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292363"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762787"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS 中的应用组功能
 
@@ -73,7 +73,7 @@ _向应用程序添加功能通常需要其他预配设置。本指南将介绍�
 12. 对将使用应用组的任何应用（或扩展）重复这些步骤。
 
 ## <a name="next-steps"></a>后续步骤
- 
+
 下表列出了可能需要采取的其他步骤：
 
 * 在应用中使用框架命名空间。

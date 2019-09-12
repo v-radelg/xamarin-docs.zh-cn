@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2017
-ms.openlocfilehash: 5cf57a42092535363071acffe993cd38a91b9805
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 05034989c60868f8bff8164da7da90a7ff8788a3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290996"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763221"
 ---
 # <a name="app-store-distribution"></a>App Store 分发
 
@@ -70,7 +70,6 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 
 3. 将根据你的团队特权生成签名标识（如下所示），或者可能需要等待团队代理或管理员批准：[![](images/generated.png "将生成签名标识并显示一个对话框")](images/generated.png#lightbox)
 
-
 <a name="creatingprofile" />
 
 ## <a name="creating-a-distribution-profile"></a>创建分发配置文件
@@ -81,7 +80,6 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 
 与创建的其他任何配置文件一样，需要应用程序 ID 来标识将分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
 
-
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”  部分。 在“标识符”  下选择“应用 ID”  。
 2. 单击“+”  按钮并提供“名称”  ，该名称将在门户中标识它。
 3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：
@@ -89,7 +87,6 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
     - **Wildcard**:com.[DomainName].*
 4. 选择应用要求的任何[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
 5. 单击“继续”  按钮，按照屏幕上的说明创建新的应用程序 ID。
-
 
 ### <a name="creating-a-provisioning-profile"></a>创建预配配置文件
 
@@ -120,7 +117,6 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
     [![](images/distribute06.png "输入新的分发配置文件的名称")](images/distribute06.png#lightbox)
 
 7. 单击“生成”  按钮，创建新的配置文件并完成该过程。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

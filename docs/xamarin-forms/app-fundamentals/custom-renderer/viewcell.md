@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 6fd952fc929fc11d19d8ceb0153aa8d7702a21a7
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 406d65145017e4c82743bc920ff19696a90afc33
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889229"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771698"
 ---
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
@@ -573,7 +573,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>总结
 
 本文演示了如何为 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件中托管的 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 创建自定义呈现器。 这可防止在 `ListView` 滚动期间重复调用 Xamarin.Forms 布局计算。
-
 
 ## <a name="related-links"></a>相关链接
 

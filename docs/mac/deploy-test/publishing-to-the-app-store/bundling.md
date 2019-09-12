@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281187"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770112"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 捆绑
 
@@ -42,7 +42,6 @@ ms.locfileid: "70281187"
 构建应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”  查找包文件（在下例中，位于 `bin/x86/AppStore` 目录）。  此包文件包括应用的安装程序，可将其提交到 Apple 以包含在 Mac App Store 中。
 
  ![在查找器中选择生成包](bundling-images/image64.png "在查找器中选择生成包")
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650456"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771768"
 ---
 # <a name="binding-video-sources-to-the-player"></a>将视频源绑定到播放器
 
@@ -138,7 +138,6 @@ BindToVideoPlayer.xaml 文件中的 `ListView` 包含这些 `VideoInfo` 对象�
 `VideoPlayer` 的 `Source` 属性绑定到 `ListView`。 绑定的 `Path` 指定为由两个属性所组成的复合路径 `SelectedItem.VideoSource`：`SelectedItem` 是 `ListView` 的属性。 所选项目类型为 `VideoInfo`，它具有 `VideoSource` 属性。
 
 正如第一个“选择 Web 视频”页一样，最初没有从 `ListView` 中选择任何项，因此需要选择一个视频，然后开始播放  。
-
 
 ## <a name="related-links"></a>相关链接
 

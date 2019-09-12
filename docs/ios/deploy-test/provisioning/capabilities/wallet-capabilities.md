@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 8afe9e703d357c246ec46756a87a7337859d5888
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287028"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762730"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 中的钱包功能
 
@@ -54,13 +54,12 @@ Wallet 是一款用于存储和显示条形码和其他内容的应用，允许�
 
 ![使用新创建的应用 ID 创建预配配置文件](wallet-capabilities-images/image20.png)
 
-
 有关使用 Wallet 的详细信息，请参阅以下指南：
 
 * [PassKit 简介](~/ios/platform/passkit.md)
- 
+
 ## <a name="next-steps"></a>后续步骤
- 
+
 下表列出了可能需要采取的其他步骤：
 
 * 在应用中使用框架命名空间。

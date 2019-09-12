@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 3560c365df18f0331d5834de20dbc5585615dbeb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763237"
+---
 |设备|纵向（无状态栏）|纵向（全屏）|横向（无状态栏）|横向（全屏）|
 |---|---|---|---|---|
 |3.5" Retina|640 x 920|640 x 960|960 x 600|960 x 640|
@@ -15,4 +23,3 @@
 |iPad|2048 x 1536 (4:3)|1200 x 900|900 x 1200|
 |iPhone 6|1334 x 750|1334 x 750|750 x 1334|
 |iPhone 6 Plus|2208 x 1242（渲染像素）1920 x 1080（物理像素）|1920 x 1080|1080 x 1920|
-

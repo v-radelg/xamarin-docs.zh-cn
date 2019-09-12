@@ -7,25 +7,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c30beadf7c2de618952bdf0cd5c03e7ceee2845
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e2542a95ce7b62a017161da4fe206b83202c9085
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109700"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754143"
 ---
 # <a name="debug-on-device"></a>在设备上进行调试
 
-本文介绍如何在物理 Android 设备上调试 Xamarin.Android 应用程序。
+本文介绍如何在物理 Android 设备上调试 Xamarin.Android 应用程序。 
 
 ## <a name="debug-on-device-overview"></a>在设备上进行调试概述
 
 可在 Android 设备上使用 Visual Studio for Mac 或 Visual Studio 调试 Xamarin.Android 应用。 在设备上执行调试之前，必须[设置设备进行开发](~/android/get-started/installation/set-up-device-for-development.md)并将其连接到电脑或 Mac。
 
-
 ## <a name="debug-application"></a>调试应用程序
 
-设备连接到计算机后，即可采用与其他任何 Xamarin 产品或 .NET 应用程序相同的方式调试 Xamarin.Android 应用程序。 请务必在 IDE 中选择“调试”配置和外部设备，确保必要的调试符号可用且 IDE 可连接到运行的应用程序： 
+设备连接到计算机后，即可采用与其他任何 Xamarin 产品或 .NET 应用程序相同的方式调试 Xamarin.Android 应用程序。 请务必在 IDE 中选择“调试”  配置和外部设备，确保必要的调试符号可用且 IDE 可连接到运行的应用程序： 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -53,12 +52,9 @@ ms.locfileid: "50109700"
 
 -----
 
-
-
 ## <a name="summary"></a>总结
 
 本文档介绍了如何通过设置断点和选择目标设备来调试 Xamarin.Android 应用程序。
-
 
 ## <a name="related-links"></a>相关链接
 

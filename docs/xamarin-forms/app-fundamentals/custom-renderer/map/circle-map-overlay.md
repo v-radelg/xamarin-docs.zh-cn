@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: db666fc6a547e3fa089475ba5912774c1af3be0d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650749"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771899"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>突出显示地图上的圆形区域
 
@@ -305,7 +305,6 @@ namespace MapOverlay.UWP
 - 通过实例化 `MapPolygon` 对象来创建圆。 将 `Path` 属性设置为包含形状坐标的 `Geopath` 对象，使 `MapPolygon` 类用于在地图上显示多点形状。
 - 通过将多边形添加到 `MapControl.MapElements` 集合中，可在地图上呈现多边形。
 
-
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
 {
@@ -331,7 +330,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 ## <a name="summary"></a>总结
 
 本文介绍了如何向地图添加圆形叠加层，以突出显示地图上的某一圆形区域。
-
 
 ## <a name="related-links"></a>相关链接
 

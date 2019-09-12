@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a6cdd5ccec0d2c60eba18418327fd786201f11b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285635"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753671"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -25,11 +25,9 @@ ms.locfileid: "70285635"
 
 可以通过在 Visual Studio 中浏览到“帮助”&gt;“Xamarin”&gt;“压缩日志”  来查找日志文件。
 
-
 ## <a name="wheres-the-xamarin-build-host-app"></a>Xamarin 生成主机应用在什么位置？
 
 不再需要较旧版本 Xamarin.iOS 中 Xamarin 生成主机。 Visual Studio 现在会自动通过远程登录部署代理并在后台运行它。 没有任何其他应用程序在 Mac 或 Windows 计算机上运行。
-
 
 ## <a name="troubleshooting-remote-login"></a>远程登录疑难解答
 
@@ -64,7 +62,6 @@ ms.locfileid: "70285635"
     例如，在下面的屏幕截图中，帐户名称是“amyb”  ，而不是“Amy Burns”  ：
 
     [![](troubleshooting-images/troubleshooting-image5a.png "从终端应用获取帐户名称")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
-
 
 6. 检查用于 Mac 的 IP 地址是否正确。 可以在 Mac 上依次转到“系统偏好设置”>“共享”>“远程登录”  下，查找 IP 地址。
 
@@ -373,7 +370,6 @@ killall mono
 2. 在按住 Control 的同时单击 **mtbs** 文件夹并选择“移动到回收站”  ：
 
     [![](troubleshooting-images/troubleshooting-image9.png "将 mtbs 文件夹移至“回收站”")](troubleshooting-images/troubleshooting-image9.png#lightbox)
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: 49370813f50e3b5f1a9193c542b9f5f13d65a8e1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f24fdb768cc0c4e12fdc58f6e5386edd0db98527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829955"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753947"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核设备和 Xamarin.Android
 
@@ -79,7 +79,7 @@ Xamarin.Android 5.1 引入了对此体系结构的支持（有关详细信息，
 > [!NOTE]
 > 虽然 Google TV 在 x86 上运行，但不受 Android 的 NDK 支持。
 
-#### <a name="x8664"></a>x86_64
+#### <a name="x86_64"></a>x86_64
 
 这是支持 64 位 x86 指令集（也称为 x64  或 AMD64  ）的 CPU 的 ABI 名称。 Xamarin.Android 5.1 引入了对此体系结构的支持（有关详细信息，请参阅 [64 位运行时支持](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)）。
 
@@ -191,7 +191,6 @@ $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 ```
 
 因此，首先将找到 `.apk` 中的 `armeabi` `libmonodroid.so`，并且将会提取 `armeabi` `libmonodroid.so`，即使 `armeabi-v7a` `libmonodroid.so` 存在并针对目标进行了优化。 这也会导致隐蔽的运行时错误，因为 `armeabi` 不具 SMP 安全性。
-
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>安装本机库：Android 4.0.4 及更高版本
 

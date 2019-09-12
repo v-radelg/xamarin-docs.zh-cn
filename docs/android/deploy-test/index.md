@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: ff2b481fda34bc7a75c88c72a5e30f00c4b70d9d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864215"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754016"
 ---
 # <a name="deployment-and-testing"></a>部署和测试
 
 本部分包含的指南介绍如何测试应用程序、优化应用程序的性能、做好发布准备、使用证书对应用程序进行签名以及将它发布到应用商店。
-
 
 ## <a name="application-package-sizesapp-package-sizemd"></a>[应用程序包大小](app-package-size.md)
 
@@ -62,7 +61,6 @@ ms.locfileid: "67864215"
 ## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[分析 Android 应用](~/android/deploy-test/profiling.md)
 
 本指南介绍如何使用探查器工具来检查 Android 应用的性能和内存使用情况。
-
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[做好应用程序发布准备](~/android/deploy-test/release-prep/index.md)
 

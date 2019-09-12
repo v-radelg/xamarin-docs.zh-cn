@@ -6,28 +6,28 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d5408894a9eda6b782f1f790ed8f1d0bb138a2f3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120157"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756925"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials:电池
 
-Battery  类允许检查设备的电池信息、监视更改，并提供有关设备的节能模式状态的信息，该状态指示设备是否正在低功耗模式下运行。 如果设备的节能模式状态已打开，则应用程序应避免后台处理。
+Battery类允许检查设备的电池信息、监视更改，并提供有关设备的节能模式状态的信息，该状态指示设备是否正在低功耗模式下运行。 如果设备的节能模式状态已打开，则应用程序应避免后台处理。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Battery 功能，需要以下特定于平台的设置  。
+若要访问 Battery 功能，需要以下特定于平台的设置。
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 需要具有 `Battery` 权限，并且必须在 Android 项目中进行配置。 可以通过以下方法添加此权限：
 
-打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加   ：
+打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
@@ -35,13 +35,13 @@ Battery  类允许检查设备的电池信息、监视更改，并提供有关�
 
 或更新 Android 清单：
 
-打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码    。
+打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码。
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“Battery”权限    。 这样会自动更新 AndroidManifest.xml 文件  。
+或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“Battery”权限。 这样会自动更新 AndroidManifest.xml 文件。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -141,7 +141,7 @@ var status = Battery.EnergySaverStatus;
 
 此属性会返回 `EnergySaverStatus` 枚举的成员，可以是 `On`、`Off` 或 `Unknown`。 如果该属性返回 `On`，则应用程序应避免后台处理或可能会消耗大量电力的其他活动。
 
-应用程序还应安装事件处理程序。  Battery 类会公开节能模式状态发生更改时触发的事件：
+应用程序还应安装事件处理程序。 Battery 类会公开节能模式状态发生更改时触发的事件：
 
 ```csharp
 public class EnergySaverTest
@@ -161,7 +161,6 @@ public class EnergySaverTest
 ```
 
 如果节能模式状态更改为 `On`，则应用程序应停止执行后台处理。 如果状态更改为 `Unknown` 或 `Off`，则应用程序可以继续执行后台处理。
-
 
 ## <a name="platform-differences"></a>平台差异
 

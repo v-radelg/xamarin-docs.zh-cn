@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 230c72539388028aaf8f05d200d8779105102644
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225632"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758001"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>通过硬件加速提高仿真器性能 (Hyper-V & HAXM)
 
@@ -86,7 +86,6 @@ systeminfo
 
 [![示例 Systeminfo 输出](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
-
 ### <a name="enabling-hyper-v-acceleration"></a>启用 HYPER-V 加速
 
 若计算机符合上述条件，请执行以下步骤使用 Hyper-V 加速 Android Emulator：
@@ -103,9 +102,7 @@ systeminfo
 
     [![“Android SDK 和工具”对话框](hardware-acceleration-images/win/04-sdk-manager-w158-sml.png)](hardware-acceleration-images/win/04-sdk-manager-w158.png#lightbox)
 
-
 创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像  。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
-
 
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
@@ -141,7 +138,6 @@ systeminfo
 2. 运行 intelhaxm android.exe  ，启动 HAXM 安装程序。 接受安装程序对话框中的默认值：
 
    ![“Intel 硬件加速执行管理器安装程序”窗口](hardware-acceleration-images/win/06-haxm-installer.png)
-
 
 创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像  。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
 
@@ -227,7 +223,6 @@ systeminfo
 ### <a name="installing-haxm"></a>安装 HAXM
 
 可以从 [Intel 硬件加速执行管理器](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager)页获取适用于 macOS 的 HAXM 安装包。 若要下载并安装 HAXM，请按照下列步骤操作：
-
 
 1. 从 Intel 网站下载适用于 macOS 的最新 [HAXM 虚拟化引擎](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager/)安装程序。
 

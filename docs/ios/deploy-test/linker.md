@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 23022351b6ac2da59550be668cb9ed4fe84904dd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2cda4d53ae3f5f5716d53fd8862ca9cf000003e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284768"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762845"
 ---
 # <a name="linking-xamarinios-apps"></a>链接 Xamarin.iOS 应用
 
@@ -49,7 +49,6 @@ ms.locfileid: "70284768"
 -----
 
 如下所述，有三个主要选项：
-
 
 ### <a name="dont-link"></a>不链接
 
@@ -165,7 +164,6 @@ class LinkerSafeAttribute : System.Attribute {}
 ## <a name="custom-linker-configuration"></a>自定义链接器配置
 
 请按照[创建链接器配置文件的说明](~/cross-platform/deploy-test/linker.md)进行操作。
-
 
 ## <a name="related-links"></a>相关链接
 

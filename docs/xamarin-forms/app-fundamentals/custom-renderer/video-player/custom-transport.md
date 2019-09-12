@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650640"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771833"
 ---
 # <a name="custom-video-transport-controls"></a>自定义视频传输控件
 
@@ -656,7 +656,6 @@ namespace VideoPlayerDemos
 [![自定义传输暂停](custom-transport-images/customtransportpaused-small.png "Custom Transport Paused")](custom-transport-images/customtransportpaused-large.png#lightbox "自定义传输暂停")
 
 在生产应用程序中，你可能希望使用自己的位图作为按钮来实现视觉对象一致性。
-
 
 ## <a name="related-links"></a>相关链接
 

@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: 8cec67ec582edad506aecb0945257b9baae3da90
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650352"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771714"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本绑定
 
@@ -328,7 +328,6 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 [![绑定上下文继承](basic-bindings-images/bindingcontextinheritance-small.png "Binding Context Inheritance")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Binding Context Inheritance")
 
 在[下一篇文章](binding-mode.md)中，你将看到“绑定模式”如何更改目标对象和源对象之间的数据流  。
-
 
 ## <a name="related-links"></a>相关链接
 
