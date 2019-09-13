@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 45a85c8ac2f40e92078d46f5765aaf2af1518b77
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 103d4f40a1c368f576276c4cdcbdc585d2a1536a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650742"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771892"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>突出显示地图上的区域
 
@@ -304,7 +304,6 @@ namespace MapOverlay.UWP
 ## <a name="summary"></a>总结
 
 本文介绍如何向地图添加多边形叠加层，以突出显示地图的某一区域。 多边形是内部空间已填充的封闭形状。
-
 
 ## <a name="related-links"></a>相关链接
 

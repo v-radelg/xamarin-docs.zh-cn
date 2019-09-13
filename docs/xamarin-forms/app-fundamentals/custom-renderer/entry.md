@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 2deee2bd7fa07f562bee02409d1a7a19cdac0be9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650852"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772002"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
@@ -212,7 +212,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>总结
 
 本文演示了如何创建 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 控件的自定义控件呈现器，使开发人员能够使用自己特定于平台的呈现替代默认本机呈现。 自定义呈现器提供了用于自定义 Xamarin.Forms 控件外观的一种强大方法。 可使用它们进行细微的样式更改，也可进行复杂的特定于平台的布局和行为自定义。
-
 
 ## <a name="related-links"></a>相关链接
 

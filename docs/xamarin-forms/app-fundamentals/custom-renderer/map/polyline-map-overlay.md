@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 19da0de80819a48259a28b30e003c32923d37378
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: af6e491725ac3dad843238c1adb547ac76a9c9ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650683"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771870"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>突出显示地图上的路线
 
@@ -300,7 +300,6 @@ namespace MapOverlay.UWP
 ## <a name="summary"></a>总结
 
 本文解释了如何向地图添加折线叠加层，如何在地图上显示路线，如何形成所需的任何形状。
-
 
 ## <a name="related-links"></a>相关链接
 

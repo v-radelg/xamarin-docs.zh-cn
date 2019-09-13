@@ -6,19 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755968"
 ---
 # <a name="publishing-to-google-play"></a>发布到 Google Play
 
 尽管有许多应用市场可以分发应用程序，但 Google Play 无疑是世界上最大和访问次数最多的 Android 应用商店。 Google Play 提供单一平台，可用于 Android 应用程序的分发、宣传推广、销售和销售分析。
 
 本部分将介绍一些特定于 Google Play 的主题，例如注册成为发布者、收集资产以便帮助 Google Play 推广和宣传应用程序、Google Play 上的应用程序评分指南以及使用筛选器限定应用程序只部署到某些特定设备。
-
 
 ## <a name="requirements"></a>要求
 
@@ -29,8 +28,6 @@ ms.locfileid: "70119812"
 在 Google Play 上发布的 APK 的最大大小为 100MB。 如果应用程序超出该大小，Google Play 允许通过 APK 扩展文件  交付额外资产。 Android 扩展文件允许 APK 具有 2 个额外文件，每个文件大小最大为 2GB。 Google Play 会免费托管和分发这些文件。 将在另一部分中对扩展文件进行讨论。
 
 Google Play 并非全球可用。 一些区域可能不支持应用程序分发。
-
-
 
 ## <a name="becoming-a-publisher"></a>成为发布者
 
@@ -43,20 +40,15 @@ Google Play 并非全球可用。 一些区域可能不支持应用程序分发�
 1. 通过电子邮件确认验证。
 1. 创建帐户后，便可使用 Google Play 发布应用程序。
 
-
 并非所有的国家/地区都支持 Google Play。 可通过以下链接获取最新的国家/地区列表：
 
 1. [开发者 &amp; 商户注册支持区域](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; 该列表包括支持开发者注册成为商户并销售付费应用程序的所有国家/地区。
 
 1. [支持向 Google Play 用户分发的区域](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; 该列表包括支持分发应用程序的所有国家/地区。
 
-
-
 ### <a name="preparing-promotional-assets"></a>准备促销资产
 
 为在 Google Play 上有效宣传和推广应用程序，Google 允许开发人员提交屏幕截图、图形和视频等促销资产。 Google Play 随后会使用这些资产宣传和推广应用程序。
-
-
 
 #### <a name="launcher-icons"></a>启动器图标
 
@@ -66,7 +58,6 @@ Google Play 并非全球可用。 一些区域可能不支持应用程序分发�
 - **mdpi** (160dpi) &ndash; 48 x 48 px
 - **hdpi** (240dpi) &ndash; 72 x 72 px
 - **xhdpi** (320dpi) &ndash; 96 x 96 px
-
 
 用户在 Google Play 上首先看到的是应用程序的启动器图标，因此请务必使启动器图标具有视觉吸引力和一定意义。
 
@@ -78,8 +69,6 @@ Google Play 并非全球可用。 一些区域可能不支持应用程序分发�
 
 1. 使用 alpha 通道 &ndash; 图标应使用 alpha 通道，并且不应为全帧图像  。
 
-
-
 #### <a name="high-resolution-application-icons"></a>高分辨率应用程序图标
 
 Google Play 上的应用程序需要使用高保真版本的应用程序图标。 其仅供 Google Play 使用，并不会替换应用程序启动器图标。 高分辨率图标的规格为：
@@ -90,8 +79,6 @@ Google Play 上的应用程序需要使用高保真版本的应用程序图标�
 
 [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) 是非常有用的工具，可用于创建合适的启动器图标以及高分辨率应用程序图标。
 
-
-
 #### <a name="screen-shots"></a>屏幕截图
 
 对于每个应用程序，Google Play 需要至少 2 张，最多 8 张屏幕截图。 它们会显示在 Google Play 中的应用程序详细信息页面。
@@ -101,16 +88,12 @@ Google Play 上的应用程序需要使用高保真版本的应用程序图标�
 1. 无 alpha 通道的 24 位 PNG 或 JPG
 1. 320w x 480h、480w x 800h 或 480w x 854h。 会对横向的图像进行裁剪。
 
-
-
 #### <a name="promotional-graphic"></a>促销图
 
 这是 Google Play 使用的可选图像：
 
 1. 规格为 180w x 120h 无 alpha 通道 24 位 PNG 或 JPG。
 1. 图像无边框。
-
-
 
 #### <a name="feature-graphic"></a>特征图形
 
@@ -120,13 +103,9 @@ Google Play 上的应用程序需要使用高保真版本的应用程序图标�
 1. 所有重要内容应在 924x500 大小范围内。 为满足样式要求，可能会裁剪超过此范围的像素。
 1. 此图形可能会按比例缩小：使用较大的文本并简化图形。
 
-
-
 #### <a name="video-link"></a>视频链接
 
 这是一个展示应用程序的 YouTube 视频 URL。 视频长度应在 30 秒到 2 分钟之间，并能展示应用程序的最佳部分。
-
-
 
 ### <a name="publishing-to-google-play"></a>发布到 Google Play
 
@@ -186,7 +165,6 @@ Visual Studio for Mac 采用集成工作流，将应用发布到 Google Play。
 
 -----
 
-
 #### <a name="create-a-google-api-project"></a>创建 Google API 项目
 
 首先，登录 [Google Play 开发者帐户](https://play.google.com/apps/publish)。
@@ -223,7 +201,6 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 [![“下载 JSON”图标](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
 此 JSON 文件包含客户端 ID 和客户端密码，可将其剪切并粘贴到下一步中的“签名和分发”  对话框。
-
 
 #### <a name="register-google-api-access"></a>注册 Google API 访问权限
 
@@ -269,7 +246,6 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 上传完成时，Visual Studio 左下角会显示完成状态：
 
 [![“项目发布已完成”消息](images/vs/11-published-sml.png)](images/vs/11-published.png#lightbox)
-
 
 ### <a name="troubleshooting"></a>疑难解答
 

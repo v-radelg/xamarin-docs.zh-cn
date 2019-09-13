@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: cd29e284c45bfe59633dde924e27d8022e8416ba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645926"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760827"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
@@ -257,7 +257,6 @@ public class DetailPageCS : ContentPage
 ## <a name="summary"></a>总结
 
 本文演示了如何导航到模式页面。 模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。
-
 
 ## <a name="related-links"></a>相关链接
 

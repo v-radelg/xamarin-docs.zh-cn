@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 50bcdcc23d1291071a6045544faad9388755116b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 69682372e2b1ac84db2c6464ac3b05a58645a9e3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225461"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753564"
 ---
 # <a name="metadata-and-markdown-template"></a>元数据和 Markdown 模板
 
@@ -71,8 +71,6 @@ Markdown 使用特殊字符如 \*、\` 和 \# 进行格式化。 如果要在内
 - 不使用小单词 - 不包含 a、and、the、in、or 等。
 - 必须为 Markdown 格式，使用 .md 文件扩展名。
 - 保持文件名简短。 它们是文章 URL 的一部分。
-
-
 
 ## <a name="headings"></a>标题
 
@@ -158,7 +156,6 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 1. Ordered
 1. 列表
 
-
 #### <a name="ordered-list-with-an-embedded-list"></a>包含嵌套列表的有序列表
 
 1. Here
@@ -170,7 +167,6 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 1. ordered
 1. list
 
-
 ### <a name="unordered-lists"></a>无序列表
 
 - 这
@@ -178,7 +174,6 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 - a
 - 无序
 - list
-
 
 ##### <a name="unordered-list-with-an-embedded-list"></a>包含嵌套列表的无序列表
 
@@ -193,7 +188,6 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
     1. Mrs. White
 - 列表
 
-
 ## <a name="horizontal-rule"></a>水平标尺
 
 ---
@@ -207,7 +201,6 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 | 第 1 列为默认对齐方式 | 左对齐     |    $1 |
 
 可以使用 [Markdown 表生成器工具](http://www.tablesgenerator.com/markdown_tables)来更轻松地创建它们。
-
 
 ### <a name="inline-code-blocks-with-language-identifier"></a>具有语言标识符的内联代码块
 
