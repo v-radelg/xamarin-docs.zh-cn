@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: eb1358f039cc5d5a200f929fcc7dfa71ca863d2a
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 77cc414cd9b15f99f95d4a54f7af5ce6f028c41a
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121305"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887444"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 设备类
 
@@ -20,7 +20,7 @@ ms.locfileid: "70121305"
 
 [ `Device` ](xref:Xamarin.Forms.Device)类包含大量属性和方法，以帮助开发人员自定义布局和根据每个平台的功能。
 
-除了使用特定硬件类型和大小的代码的方法和属性以外, `Device`类还包括可用于与后台线程中的 UI 控件交互的方法。 有关详细信息, 请参阅[从后台线程与 UI 交互](#interact-with-the-ui-from-background-threads)。
+除了使用特定硬件类型和大小的代码的方法和属性以外， `Device`类还包括可用于与后台线程中的 UI 控件交互的方法。 有关详细信息，请参阅[从后台线程与 UI 交互](#interact-with-the-ui-from-background-threads)。
 
 ## <a name="providing-platform-specific-values"></a>提供特定于平台的值
 
@@ -114,7 +114,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)值检索[ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)枚举值，该值表示当前正由设备的流方向。 流方向是指页面 UI 元素的浏览方向。 枚举值为：
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 在 XAML 中， [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)值可以通过使用`x:Static`标记扩展：
@@ -182,22 +182,22 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>从后台线程与 UI 交互
 
-大多数操作系统 (包括 iOS、Android 和通用 Windows 平台) 都将单线程模型用于涉及用户界面的代码。 此线程通常称为 "*主线程*" 或 " *UI 线程*"。 此模型的结果是, 所有访问用户界面元素的代码都必须在应用程序的主线程上运行。
+大多数操作系统（包括 iOS、Android 和通用 Windows 平台）都将单线程模型用于涉及用户界面的代码。 此线程通常称为 "*主线程*" 或 " *UI 线程*"。 此模型的结果是，所有访问用户界面元素的代码都必须在应用程序的主线程上运行。
 
-应用程序有时会使用后台线程来执行可能长时间运行的操作, 例如从 web 服务检索数据。 如果后台线程上运行的代码需要访问用户界面元素, 则必须在主线程上运行该代码。
+应用程序有时会使用后台线程来执行可能长时间运行的操作，例如从 web 服务检索数据。 如果后台线程上运行的代码需要访问用户界面元素，则必须在主线程上运行该代码。
 
-此`Device`类包括以下`static`方法, 可用于与背景线程中的用户界面元素进行交互:
+此`Device`类包括以下`static`方法，可用于与背景线程中的用户界面元素进行交互：
 
 | 方法 | 自变量 | 返回 | 用途 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主线程上调用, 而不会等待它完成。 |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | `Func<T>`在主线程上调用, 并等待其完成。 |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | `Action`在主线程上调用, 并等待其完成。 |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | `Func<Task<T>>`在主线程上调用, 并等待其完成。 |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | `Func<Task>`在主线程上调用, 并等待其完成。 |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回主`SynchronizationContext`线程的。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主线程上调用，而不会等待它完成。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主线程上调用 `Func<T>`，并等待其完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 在主线程上调用 `Action`，并等待其完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主线程上调用 `Func<Task<T>>`，并等待其完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主线程上调用 `Func<Task>`，并等待其完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回主线程的 `SynchronizationContext`。 |
 
-下面的代码显示使用`BeginInvokeOnMainThread`方法的示例:
+下面的代码显示使用`BeginInvokeOnMainThread`方法的示例：
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
