@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a2f637677620f9bfb2bd26a5af55fb9fb56a7af9
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768418"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985705"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>用 Xamarin Designer for iOS 自动布局
 
@@ -63,9 +63,23 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
   - 在 "约束编辑模式" 中，此按钮调整约束以匹配元素框架。
   - 在框架编辑模式下，此按钮调整元素框以匹配约束的定义位置。
 
+## <a name="constraints-editing-popover"></a>Segue 编辑约束
+
+使用 "约束编辑器" 弹出窗口，我们可以为选择视图添加和更新多个约束。 可以创建多个间距、纵横比和对齐约束，如将视图与两个视图的左边缘对齐。
+
+若要编辑所选视图的约束，请单击省略号以显示 segue： ![约束编辑 segue](designer-auto-layout-images/constraints-popup.png)
+
+打开约束后，segue 会在视图上显示任何预设约束。 我们可以在右上角选择组合框中的所有**边**，然后选择 "**全部清除**" 将其删除。 
+
+**W**将设置 Width 和**H**来设置 height 约束。 检查**纵横比**时，将在不同的屏幕大小上控制视图的高度和宽度，视图的宽度用作 r 的分子，高度为分母。
+
+![约束间距](designer-auto-layout-images/constraints-spacing.png)
+
+间距约束的四个组合框列出了用于定位约束的相邻视图
+
 ## <a name="surface-based-constraint-editing"></a>基于面的约束编辑
 
-在上一部分中，我们学习了如何使用约束工具栏添加默认约束和删除约束。 若要进行更精细的约束编辑，可以直接在设计图面上与约束交互。 本部分介绍了基于图面的约束编辑的基础知识，其中包括旋转间距控件、拖放区域和使用不同类型的约束。
+若要进行更精细的约束编辑，可以直接在设计图面上与约束交互。 本部分介绍了基于图面的约束编辑的基础知识，其中包括旋转间距控件、拖放区域和使用不同类型的约束。
 
 ### <a name="creating-constraints"></a>创建约束
 
@@ -196,7 +210,7 @@ ViewInfoHeight.Constant = 0;
 
 ### <a name="animating-constraint-changes"></a>对约束更改进行动画处理
 
-除了修改约束属性，还可以使用核心动画对视图约束的更改进行动画处理。 例如:
+除了修改约束属性，还可以使用核心动画对视图约束的更改进行动画处理。 例如：
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");

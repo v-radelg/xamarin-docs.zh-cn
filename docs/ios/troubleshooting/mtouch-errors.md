@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: b8a7353ee67ee0686ad97428222c69dd095ee83a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290428"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985959"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -583,7 +583,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件来构建�
 
 错误消息中提到的程序集具有冲突的生成目标。
 
-例如：
+例如:
 
 ```
   --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
@@ -854,7 +854,7 @@ class Program {
 
 修复此错误的建议方法是升级 Xcode 以获取所需的 SDK。 如果安装了多个版本的 Xcode，或想要在非默认位置使用 Xcode，请确保在 IDE 的首选项中设置正确的 Xcode 位置。
 
-此外，还可以让托管[链接器](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/linker)删除未使用的 api，包括（在大多数情况下）需要指定库的新 api。 但是，如果你的项目需要在比你的 Xcode 提供的 SDK 更高的 SDK 中引入的 Api，这将不起作用。
+此外，还可以让托管[链接器](https://docs.microsoft.com/xamarin/ios/deploy-test/linker)删除未使用的 api，包括（在大多数情况下）需要指定库的新 api。 但是，如果你的项目需要在比你的 Xcode 提供的 SDK 更高的 SDK 中引入的 Api，这将不起作用。
 
 作为最后 straw 的解决方案，请使用较旧版本的 Xamarin，不需要在生成过程中提供这些新的 Sdk。
 

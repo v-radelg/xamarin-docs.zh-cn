@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: pauldipietro
 ms.author: padipi
 ms.date: 09/09/2019
-ms.openlocfilehash: 244582d579780a962dfcb25c1a081d768b42acd3
-ms.sourcegitcommit: e83035c746f165ee6d03f2e9fd0066ee4f20a9fb
+ms.openlocfilehash: 7979f6ed362c580d9cf80f19b3bc0ea7550ca70c
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70908348"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985977"
 ---
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin CarouselView 简介
 
 ![](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是以类似于传送带的方式呈现信息的视图。
-
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)在 Xamarin. Forms 4.3 中提供。 但是，它当前是实验性的，只能通过将以下代码行添加到`AppDelegate` iOS 上的类，或者添加`MainActivity`到 Android 上的类，然后再调用`Forms.Init`：
 
