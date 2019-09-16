@@ -1,52 +1,51 @@
 ---
-title: 使用目标 Sharpie 创建绑定
-description: 本部分提供目标 Sharpie，Xamarin 的命令行工具来自动执行创建绑定到 OBJECTIVE-C 库的过程的简介
+title: 创建具有目标 Sharpie 的绑定
+description: 本部分介绍了客观 Sharpie，Xamarin 的命令行工具，该工具用于自动执行创建到目标 C 库的绑定过程
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: c298d3dc772929a123b6b65b0efe929f023a6563
-ms.sourcegitcommit: 7dbfac5f68c55f40dd726aa1b03cff62082fe711
+ms.openlocfilehash: d5b9fa1edc09b831dbc69ab092dfb5270942e67a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866358"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765713"
 ---
-# <a name="creating-bindings-with-objective-sharpie"></a>使用目标 Sharpie 创建绑定
+# <a name="creating-bindings-with-objective-sharpie"></a>创建具有目标 Sharpie 的绑定
 
-_本部分提供目标 Sharpie，Xamarin 的命令行工具来自动执行创建绑定到 OBJECTIVE-C 库的过程的简介_
+_本部分介绍了客观 Sharpie，Xamarin 的命令行工具，该工具用于自动执行创建到目标 C 库的绑定过程_
 
 - [概述](#overview) & [历史记录](#history)
 - [入门](get-started.md)
 - [工具和命令](tools.md)
 - [功能](platform/index.md)
 - [示例](examples/index.md)
-- [完整的演练](~/ios/platform/binding-objective-c/walkthrough.md)
+- [完整演练](~/ios/platform/binding-objective-c/walkthrough.md)
 - [发布历史记录](releases.md)
 
 ## <a name="overview"></a>概述
 
-目标 Sharpie 是一个命令行工具来帮助启动绑定的第一次传递。
-其工作原理是分析要映射到的公共 API 的本机库的标头文件[绑定定义](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file)（之前已手动执行该过程）。
+客观 Sharpie 是一个命令行工具，可帮助启动绑定的第一步。
+它的工作原理是分析本机库的标头文件，将公共 API 映射到[绑定定义](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file)（以前手动完成的进程）。
 
-目标 Sharpie 使用 Clang 分析标头文件，因此绑定是为确切并尽可能详尽。 这可以极大地减少时间和精力去生成质量绑定。
+客观 Sharpie 使用 Clang 分析标头文件，因此绑定的完全一致。 这可以极大地减少生成质量绑定所要花费的时间和精力。
 
 > [!IMPORTANT]
-> 目标 Sharpie 是经验丰富的 Xamarin 开发人员的高级知识的 Objective C （并扩展到 C） 的工具。 然后再尝试绑定 OBJECTIVE-C 库应具有 solid 了解如何在命令行 （和本机库的工作方式更好地理解） 上生成本机库。
+> 客观 Sharpie 是一款面向经验丰富的 Xamarin 开发人员的工具，具有客观-C （和 extension，C）的高级知识。 在尝试绑定目标 C 库之前，您应该大致了解如何在命令行上生成本机库（并且充分了解本机库的工作方式）。
 
 ## <a name="history"></a>历史记录
 
-我们已发展，目标 Sharpie 在内部使用 Xamarin 在过去三年里。 这就证明了目标 Sharpie 的强大功能，作为 Api Xamarin.iOS 和 Xamarin.Mac 中引入自 iOS 8、 Mac OS X 10.10，和 watchOS 2.0 已完全使用目标 Sharpie 引导。 Xamarin 严重依赖目标 Sharpie 在内部用于构建其自己的产品。
+过去三年，我们一直在 Xamarin 上不断发展并使用目标 Sharpie。 作为证明目标 Sharpie 的强大功能，从 iOS 8、Mac OS X 10.10 和 watchOS 2.0 开始，因为 iOS 8、和在中引入的 Api 与目标 Sharpie 完全相同。 Xamarin 很大程度上依赖于客观 Sharpie 来构建自己的产品。
 
-但是，目标 Sharpie 是一个非常先进的工具，要求精通 Objective C 和 C、 如何在命令行中，使用 clang 编译器和通常如何本机库被放在一起。 由于此高栏中，我们认为具有 GUI 向导设置错误的期望，并在这种情况下，目标 Sharpie 目前仅可用作命令行工具。
+但是，客观 Sharpie 是一个非常高级的工具，它需要对目标-C 和 C 的高级了解、如何在命令行中使用 clang 编译器，以及如何将本机库组合在一起。 由于这是一个较高的条形，因此，我们认为具有 GUI 向导会设置错误的预期，因此，目标 Sharpie 当前仅可用作命令行工具。
 
 ## <a name="related-links"></a>相关链接
 
-- [目标 Sharpie 下载](https://aka.ms/objective-sharpie)
-- [演练：绑定 OBJECTIVE-C 库](~/ios/platform/binding-objective-c/walkthrough.md)
+- [客观 Sharpie 下载](https://aka.ms/objective-sharpie)
+- [演练：绑定目标 C 库](~/ios/platform/binding-objective-c/walkthrough.md)
 - [绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [绑定详细信息](~/cross-platform/macios/binding/overview.md)
 - [绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
 - [面向 Objective-C 开发人员的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
-

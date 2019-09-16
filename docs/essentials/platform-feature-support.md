@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 6175e6ca6c09f1e85302df309fd58b8278aaf90c
-ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
+ms.openlocfilehash: b12606317fd6cbc9a6a0f59364270595f1250abf
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060085"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887338"
 ---
 # <a name="platform-support"></a>平台支持
 
@@ -31,7 +31,7 @@ Xamarin.Essentials 支持以下平台和操作系统：
 
 ## <a name="feature-support"></a>功能支持
 
-Xamarin.Essentials 总是试图为每个平台提供功能，但有时也会受到设备本身的限制。 下面介绍每个平台支持哪些功能的指南。
+Xamarin.Essentials 总是试图为每个平台提供功能，但有时也会受到设备本身的限制。 下面是介绍每个平台支持哪些功能的指南。
 
 图标指南：
 
@@ -74,4 +74,3 @@ Xamarin.Essentials 总是试图为每个平台提供功能，但有时也会受�
 | [单位转换器](unit-converters.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [版本跟踪](version-tracking.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [振动](vibrate.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
-

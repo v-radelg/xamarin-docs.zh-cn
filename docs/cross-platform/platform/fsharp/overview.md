@@ -1,58 +1,56 @@
 ---
-title: 开始使用F#
-description: 本文档介绍如何了解F#并使用它来生成 Xamarin 应用程序使用 Visual Studio 2019 和 Visual Studio for mac。
+title: 入门F#
+description: 本文档介绍了如何使用F# Visual Studio 2019 和 Visual Studio for Mac 学习并使用它来生成 Xamarin 应用程序。
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 074670045a8e0d02b719e4c361b1bf351759f335
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036422"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765455"
 ---
-# <a name="getting-started-with-f35"></a>F # 入门&#35;
+# <a name="getting-started-with-f35"></a>与 F 入门&#35;
 
 ## <a name="requirements"></a>要求
 
-F#是默认包含在 Visual Studio for mac。
+F#默认情况下包含在 Visual Studio for Mac 中。
 
-在 Windows，也必须安装独立F#编译器工具，根据上的说明[FSharp.org 站点](http://fsharp.org/use/windows/)。
+在 Windows 上，必须按照F# [FSharp.org 站点](http://fsharp.org/use/windows/)上的说明安装独立编译器工具。
 
-## <a name="creating-an-f35-project"></a>创建一个 F&#35;项目
+## <a name="creating-an-f35-project"></a>创建 F&#35;项目
 
-创建一个新F#应用程序完成在同一**新建项目**窗口中用于C#。
+在用于的F# C#同一个**新项目**窗口中创建新的应用程序。
 
-在 Visual Studio for Mac 中选择**文件 > 新建解决方案**。 在中**新的项目**对话框中，选择项目模板。 使用模板的右侧的下拉列表选择你想要使用的语言：
+在 Visual Studio for Mac 选择 "**文件" > "新建解决方案**"。 在 "**新建项目**" 对话框中，选择一个项目模板。 使用模板右侧的下拉箭头选择要使用的语言：
 
- [![](overview-images/choosefsharp.png "使用模板的右侧的下拉列表选择你想要使用的语言")](overview-images/choosefsharp.png#lightbox)
+ [![](overview-images/choosefsharp.png "使用模板右侧的下拉箭头选择要使用的语言")](overview-images/choosefsharp.png#lightbox)
 
-选择项目类型，然后单击**下一步**进行命名和创建它。
+选择项目类型，并单击 "**下一步**" 以命名并创建它。
 
-
-你现已准备好开始创建一些极好F#应用程序 ！
+现在，你可以开始创建一些优秀F#的应用程序了！
 
 ## <a name="learning-to-use-f35"></a>学习使用 F&#35;
 
-F#教程，也可以创建从**新的解决方案**对话框在 Visual Studio for mac。 导航到**其他 >.NET >F#教程**，如下图中所述：
+还F#可以从 Visual Studio for Mac 中的 "**新建解决方案**" 对话框中创建教程。 请导航到**其他 > .net F# > 教程**，如下图所示：
 
- [![](overview-images/fsharptutorial.png "导航到其他 /.NET /F#教程")](overview-images/fsharptutorial.png#lightbox)
+ [![](overview-images/fsharptutorial.png "导航到其他/.NET/ F#教程")](overview-images/fsharptutorial.png#lightbox)
 
-这将打开一个新的交互式解决方案。 探索是掌握的语言的基础知识的好办法。
+这将打开一个新的交互式解决方案。 探索这一功能是一种很好的方法，可让手柄使用该语言的基础知识。
 
- [![](overview-images/newtutorial-sml.png "探索是好办法掌握的语言的基础知识")](overview-images/newtutorial.png#lightbox)
+ [![](overview-images/newtutorial-sml.png "探索这一功能是使用该语言的基础知识手柄")](overview-images/newtutorial.png#lightbox)
 
-请查看[示例的列表](~/cross-platform/platform/fsharp/samples.md)以查看F#操作中。
+查看要在操作中查看F# [的示例列表](~/cross-platform/platform/fsharp/samples.md)。
 
 ## <a name="references"></a>参考资料
 
-有很多种联机信息用于获取快速了解F#语言，涵盖所有熟练程度。 下面列出了几个我们的建议：
+有一很多的信息可让你快速了解所有精通，这F#是一种更快的语言。 下面是一些建议：
 
--  [F# 软件基金会](http://fsharp.org)
--  [VisualF#开发门户](http://go.microsoft.com/fwlink/?LinkID=234174)
--  [VisualF#代码库](http://go.microsoft.com/fwlink/?LinkID=124614)
--  [VisualF#编程数学/统计信息](http://go.microsoft.com/fwlink/?LinkId=235173)
--  [VisualF#图表](http://go.microsoft.com/fwlink/?LinkId=235176)
-
+- [F# 软件基金会](http://fsharp.org)
+- [可视化F#开发门户](http://go.microsoft.com/fwlink/?LinkID=234174)
+- [视觉F#对象代码库](http://go.microsoft.com/fwlink/?LinkID=124614)
+- [视觉F#数学/统计编程](http://go.microsoft.com/fwlink/?LinkId=235173)
+- [视觉F#对象图表](http://go.microsoft.com/fwlink/?LinkId=235176)
