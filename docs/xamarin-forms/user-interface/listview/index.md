@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/04/2019
-ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9d7dd98b98c7722d6fcdcb49c10e326732fa9f0b
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770238"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997985"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
@@ -36,6 +36,7 @@ ms.locfileid: "70770238"
 有关将数据绑定到`ListView`实例的详细信息，请参阅[ListView 数据源](~/xamarin-forms/user-interface/listview/data-and-databinding.md)。
 
 ## <a name="components"></a>组件
+
 `ListView`控件具有许多可用于测试每个平台的本机功能的组件。 以下部分定义了这些组件。
 
 ### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[页眉和页脚](customizing-list-appearance.md#headers-and-footers)
@@ -55,7 +56,7 @@ Listview 中的[分组数据的 "listview" 分组数据![](images/grouping-depth
 - [内置单元](customizing-cell-appearance.md#built-in-cells)（如`TextCell`和`ImageCell`）对应于本机控件，尤其是高性能。
   - [`TextCell`](customizing-cell-appearance.md#textcell)显示文本字符串，还可以选择包含详细信息文本。 详细信息的文本呈现为与强调文字颜色较小的字体中的第二个行。
   - [`ImageCell`](customizing-cell-appearance.md#imagecell)显示带有文本的图像。 显示为`TextCell` ，左侧有图像。
-- [自定义单元](customizing-cell-appearance.md#customcells)用于显示复杂数据。 例如，自定义单元可用于显示包含唱片集和艺术家的歌曲列表。
+- [自定义单元](customizing-cell-appearance.md#custom-cells)用于显示复杂数据。 例如，自定义单元可用于显示包含唱片集和艺术家的歌曲列表。
 
 以下屏幕截图显示了`ListView`具有 ImageCell 项的：
 
@@ -64,11 +65,12 @@ Listview 中的[分组数据的 "listview" 分组数据![](images/grouping-depth
 若要详细了解如何在中`ListView`自定义单元，请参阅[自定义 ListView 单元格外观](customizing-cell-appearance.md)。
 
 ## <a name="functionality"></a>功能
+
 `ListView`类支持多种交互样式。
 
 - 通过[请求刷新](interactivity.md#pull-to-refresh)，用户可以请求`ListView`向下移动以刷新内容。
 - [上下文操作](interactivity.md#context-actions)允许开发人员指定单个列表项的自定义操作。 例如，您可以在 iOS 上，实现轻扫操作或长按在 Android 上的操作。
-- [选择](interactivity.md#selectiontaps)允许开发人员将功能附加到列表项的选择和 deselection 事件。
+- [选择](interactivity.md#selection-and-taps)允许开发人员将功能附加到列表项的选择和 deselection 事件。
 
 以下屏幕截图显示了`ListView`具有上下文操作的：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: 48e7f97bf37ec5204ec1798ec1fdd7dfe5954cc5
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: b8a5e8f42c44287a1d60f43784c3e42a9e7fc0ff
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985983"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997972"
 ---
 # <a name="introduction-to-ios-13"></a>iOS 13 简介
 
@@ -48,4 +48,4 @@ iPadOS 是专门使用 iPad 构建的 iOS 扩展。
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin 预览版发行说明](/xamarin/ios/release-notes/12/12.99)
+- [Xamarin 版本3发行说明](/xamarin/ios/release-notes/13/13.0)
