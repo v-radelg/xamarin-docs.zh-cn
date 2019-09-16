@@ -1,62 +1,55 @@
 ---
 title: iOS 6 简介
-description: 本文档所链接到指南描述在 iOS 6 中引入的功能。 集合视图、 PassKit 社交框架，并将所有讨论对 StoreKit 的更改。
+description: 本文档链接到介绍 iOS 6 中引入的功能的指南。 集合视图、PassKit、社交框架，以及对 StoreKit 的更改都进行了讨论。
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f0cfeaa049355c2b524ead748696eafd884a1c54
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: dc8f2c3a11dd283db46fd0a2530fcca435da75f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865691"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752055"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 简介
 
-_iOS 6 包含新技术，用于开发应用程序，它为 Xamarin.iOS 6 带来了多种C#开发人员。_
+_iOS 6 包括多种用于开发应用程序的新技术，即 iOS 6 向C#开发人员提供。_
 
 [![](images/ios6-large.jpg "IOS 6 徽标")](images/ios6-large.jpg#lightbox)
 
-IOS 6 和 Xamarin.iOS 6，开发人员就具有丰富的功能来创建该目标 iPhone 5 的 iOS 应用程序，包括其可供使用。
-本文档列出了一些更令人兴奋的可用的新功能和每个主题的文章的链接。 除了涉及到几个更改的将是非常重要，因为开发人员将移到 iOS 6 和 iPhone 5 的新的分辨率。
-
+使用 iOS 6 和 Xamarin iOS 6，开发人员现在可以使用丰富的功能来创建 iOS 应用程序，其中包括面向 iPhone 5 的应用程序。
+本文档列出了一些更激动人心的新功能，以及每个主题的文章的链接。 此外，它还涉及到几项更改，这些更改在开发人员转向 iOS 6 和新的 iPhone 5 解决方案时很重要。
 
 ## <a name="introduction-to-collection-viewsiosuser-interfacecontrolsuicollectionviewmd"></a>[集合视图简介](~/ios/user-interface/controls/uicollectionview.md)
 
-集合视图允许使用任意布局显示的内容。 这些功能可轻松地创建同时支持自定义布局以及默认情况下，类似于网格的布局。 有关详细信息请参阅，则[集合视图简介](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md)指南。
-
+集合视图允许使用任意布局显示内容。 它们允许轻松地在框中创建类似于网格的布局，同时还支持自定义布局。 有关详细信息，请参阅[集合视图简介](~/ios/user-interface/controls/uicollectionview.md)[](~/ios/user-interface/controls/uicollectionview.md)指南。
 
 ## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[PassKit 简介](~/ios/platform/passkit.md)
 
-PassKit 框架允许应用程序与托管 Passbook 应用中的数字传递进行交互。 有关详细信息请参阅，则[传递工具包指南简介](~/ios/platform/passkit.md)。
-
+PassKit 框架允许应用程序与 Passbook 应用程序中管理的数字传递交互。 有关详细信息，请参阅[Pass 工具包简介指南](~/ios/platform/passkit.md)。
 
 ## <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[EventKit 简介](~/ios/platform/eventkit.md)
 
-EventKit 框架提供了一种日历、 日历事件和提醒日历数据库存储的数据访问方法。 访问对日历和日历事件以来提供 iOS 4，但 iOS 6 现在公开对提醒数据的访问。 有关详细信息，请参阅[我](~/ios/platform/eventkit.md) [ntroduction 到 EventKit](~/ios/platform/eventkit.md)指南。
-
+EventKit 框架提供了一种方法，用于访问日历数据库存储的日历、日历事件和提醒数据。 自 iOS 4 起，对日历和日历事件的访问已可用，但 iOS 6 现在公开对提醒数据的访问。 有关详细信息，请参阅[I](~/ios/platform/eventkit.md) [ntroduction to EventKit](~/ios/platform/eventkit.md) guide。
 
 ## <a name="introduction-to-the-social-frameworkiosplatformsocial-frameworkmd"></a>[社交框架简介](~/ios/platform/social-framework.md)
 
-社交框架将为与社交网络在中国用户包括 Twitter 和 Facebook，以及 SinaWeibo 交互提供一个统一的 API。 有关详细信息请参阅，则[社交 Framework 简介](~/ios/platform/social-framework.md)指南。
-
+社交框架提供了一个统一的 API，用于与中国的用户（包括 Twitter 和 Facebook）以及 SinaWeibo 的社交网络交互。 有关详细信息，请参阅[社交框架简介](~/ios/platform/social-framework.md)指南。
 
 ## <a name="changes-to-storekitchanges-to-storekitmd"></a>[对 StoreKit 的更改](changes-to-storekit.md)
 
-Apple 引入了存储工具包中的两个新功能： 购买和下载 iTunes 或在应用中，从应用商店内容和托管应用内购买内容文件 ！。 有关详细信息请参阅，则[更改为应用商店套件](changes-to-storekit.md)指南。
-
+Apple 在应用商店工具包中引入了两项新功能：从应用中购买和下载 iTunes 或应用商店内容，并托管应用内购买内容文件！。 有关详细信息，请参阅[应用商店工具包](changes-to-storekit.md)指南。
 
 ## <a name="other-changes"></a>其他更改
 
+### <a name="viewwillunload-and-viewdidunload-deprecated"></a>不推荐使用 ViewWillUnload 和 ViewDidUnload
 
-### <a name="viewwillunload-and-viewdidunload-deprecated"></a>ViewWillUnload 和 ViewDidUnload 不推荐使用
+在 iOS `ViewDidUnload` 6 中`UIViewController`不再调用的和方法。`ViewWillUnload` 在以前版本的 iOS 中，应用程序可能已使用这些方法在卸载视图之前保存状态，并分别清理代码。
 
-`ViewWillUnload`并`ViewDidUnload`方法的`UIViewController`不再在 iOS 6 中调用。 在以前版本的 iOS 中，使用这些方法具有已由应用程序分别保存视图卸载之前, 的状态和清理代码。
-
-例如，Visual Studio for Mac 将创建一个名为方法`ReleaseDesignerOutlets`，如下，然后将从调用的所示`ViewDidUnload`:
+例如，Visual Studio for Mac 会创建一个名`ReleaseDesignerOutlets`为的方法（如下所示），然后从`ViewDidUnload`该方法调用：
 
 ```csharp
 void ReleaseDesignerOutlets ()
@@ -68,11 +61,9 @@ void ReleaseDesignerOutlets ()
 }
 ```
 
-但是，在 iOS 6 中，就不再需要调用`ReleaseDesignerOutlets`。   
-   
-   
-   
-清理代码，对于 iOS 6 应用程序应使用`DidReceiveMemoryWarning`。 但是，代码将该调用`Dispose`应谨慎使用和只适用于内存密集型对象如下所示如下：
+但是，在 iOS 6 中，不再需要调用`ReleaseDesignerOutlets`。   
+
+对于清理代码，iOS 6 应用程序应`DidReceiveMemoryWarning`使用。 但是，调用`Dispose`的代码应慎用，只应用于内存密集型对象，如下所示：
 
 ```csharp
 if (myImageView != null){
@@ -83,26 +74,25 @@ if (myImageView != null){
 }
 ```
 
-同样，调用`Dispose`如上所示应很少需要。 在常规的大多数应用程序应执行的操作是删除事件处理程序。
+同样，几乎`Dispose`不需要按上述方式调用。 通常，大多数应用程序都应该删除事件处理程序。
 
-对于保存状态的情况下，应用程序可以执行考虑到这`ViewWillDisappear`并`ViewDidDisappear`而不是`ViewWillUnload`。
+对于保存状态的情况，应用程序可以在和`ViewWillDisappear` `ViewDidDisappear`中执行此， `ViewWillUnload`而不是。
 
+### <a name="iphone-5-resolution"></a>iPhone 5 解决方案
 
-### <a name="iphone-5-resolution"></a>iPhone 5 解析
+iPhone 5 设备有640x1136 的分辨率。 当在 iPhone 5 上运行时，面向以前版本的 iOS 的应用程序将显示为 letterboxed，如下所示：
 
-iPhone 5 设备具有 640 x 1136 分辨率。 针对以前版本的 iOS 的应用程序将显示 letterboxed 上是 iPhone 5，运行时，如下所示：
+ [![](images/01-letterboxed.png "当在 iPhone 5 上运行时，面向以前版本的 iOS 的应用程序将显示为 letterboxed")](images/01-letterboxed.png#lightbox)
 
- [![](images/01-letterboxed.png "针对以前版本的 iOS 的应用程序会出现 letterboxed 是 iPhone 5 上运行时")](images/01-letterboxed.png#lightbox)
+为了使应用程序在 iPhone 5 上全屏显示，只需添加一个名为`Default-568h@2x.png` "640x1136" 的映像。 下面的屏幕截图显示在包含此映像之后运行的应用程序：
 
-为了使应用程序出现全屏幕上 iPhone 5，只需添加名为的映像`Default-568h@2x.png`具有 640 x 1136 的分辨率。 下面的屏幕截图显示了运行后此映像已包含的应用程序：
+ [![](images/02-fullscreen.png "此屏幕截图显示在包含此映像之后运行的应用程序")](images/02-fullscreen.png#lightbox)
 
- [![](images/02-fullscreen.png "此屏幕截图显示了运行后此映像已包含的应用程序")](images/02-fullscreen.png#lightbox)
+### <a name="subclassing-uinavigationbar"></a>子类 UINavigationBar
 
-### <a name="subclassing-uinavigationbar"></a>子类化 UINavigationBar
+在 iOS 6 `UINavigationBar`中可以是子类。 这允许对的外观进行`UINavigationBar`更多的控制。 例如，应用程序可以为添加子视图提供子类，为这些视图添加动画并修改的`UINavigationBar`边界。
 
-在 iOS 6`UINavigationBar`可以子类化。 这样，其他控件的外观和感觉的`UINavigationBar`。 例如，应用程序可以子类化添加子视图，这些视图进行动画处理和修改的边界`UINavigationBar`。
-
-下面的代码演示的子类化示例`UINavigationBar`，它将`UIImageView`:
+下面的代码显示了一个添加了`UINavigationBar` `UIImageView`的子类的示例：
 
 ```csharp
 public class CustomNavBar : UINavigationBar
@@ -122,19 +112,19 @@ public class CustomNavBar : UINavigationBar
 }
 ```
 
-若要添加子类`UINavigationBar`到`UINavigationController`，使用`UINavigationController`采用的类型的构造函数`UINavigationBar`和`UIToolbar`，如下所示：
+若要将子类`UINavigationBar`添加`UINavigationController`到，请使用`UINavigationController`采用`UINavigationBar`和`UIToolbar`类型的构造函数，如下所示：
 
 ```csharp
 navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolbar));
 ```
 
-使用此`UINavigationBar`子类导致图像视图显示如以下屏幕截图中所示：
+使用此`UINavigationBar`子类将导致显示图像视图，如以下屏幕截图所示：
 
- [![](images/03-navbar.png "在此屏幕截图中所示显示图像视图中使用此 UINavigationBar 子类结果")](images/03-navbar.png#lightbox)
+ [![](images/03-navbar.png "使用此 UINavigationBar 子类会导致显示图像视图，如此屏幕截图所示")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>界面方向
 
-在 iOS 之前，6 应用程序可以重写`ShouldAutorotateToInterfaceOrientation`，返回特定控制器支持对于任何方向，返回 true。 例如，下面的代码将用于支持仅纵向：
+在 iOS 6 应用程序可以重`ShouldAutorotateToInterfaceOrientation`写之前，对于支持的特定控制器，返回 true。 例如，以下代码将仅用于支持纵向：
 
 ```csharp
 public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
@@ -143,8 +133,8 @@ public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientat
     }
 ```
 
-在 iOS 6`ShouldAutorotateToInterfaceOrientation`已弃用。
-而是应用程序可以重写`GetSupportedInterfaceOrientations`在根视图控制器，如下所示：
+在 iOS 6 `ShouldAutorotateToInterfaceOrientation`中已弃用。
+相反，应用程序`GetSupportedInterfaceOrientations`可以在根视图控制器上重写，如下所示：
 
 ```csharp
 public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
@@ -153,4 +143,4 @@ public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
     }
 ```
 
-在 iPad 上此值默认为全部四个方向如果`GetSupportedInterfaceOrientation`未实现。 在 iPhone 和 iPod Touch 上，默认值是除之外的所有方向`PortraitUpsideDown`。
+在 iPad 上，如果`GetSupportedInterfaceOrientation`未实现，则默认为全部四个方向。 在 iPhone 和 iPod touch 上，默认值为除之外`PortraitUpsideDown`的所有方向。
