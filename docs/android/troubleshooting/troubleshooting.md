@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b750dd4eebb4e181e3a1d3a33c6505bb58b3848b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a80410ecc3557f00755ebb60ab48781740fa928d
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757082"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021153"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
 
@@ -83,15 +83,17 @@ Xamarin 支持以下系统属性：
 
 - *debug.exe. env*：在应用程序启动过程中 *|* ，mono 初始化*之前*要导出的环境变量（""）列表。 这允许设置控制 mono 日志记录的环境变量。
 
-  - *说明*：由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
+  > [!NOTE]
+  > 由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
 
-  - *说明*：Android 系统属性值的长度不能超过92个字符。
+  > [!NOTE]
+  > Android 系统属性值的长度不能超过92个字符。
 
-  - 示例:
+  示例:
 
-    ```
-    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-    ```
+  ```
+  adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+  ```
 
 - *调试 mono 日志*：用逗号分隔的（" *，* "）组件列表，这些组件应将其他消息打印到 Android 调试日志。 默认情况下，不设置任何内容。 组件包括：
 
@@ -100,7 +102,8 @@ Xamarin 支持以下系统属性：
   - *gref*：Print （弱、全局）引用分配和释放消息。
   - *lref*：打印本地引用分配和释放消息。
 
-  *注意*：这些内容*非常*详细。 除非确实需要，否则不要启用。
+  > [!NOTE]
+  > 这些都*非常*详细。 除非确实需要，否则不要启用。
 
 - *debug . trace*：允许设置[mono 跟踪](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`设置。
 
@@ -176,7 +179,8 @@ Xamarin 使用 Android 全局引用来提供 Java 实例与关联的托管实例
 
 遗憾的是，Android 仿真程序一次只允许2000全局引用。 硬件的最大限制为52000全局引用。 在模拟器上运行应用程序时，下限可能会有问题，因此 *，知道实例的来源*可能会非常有用。
 
- *注意*：全局引用计数是 Xamarin 的内部，并且不（也不能）包含已加载到进程中的其他本机库所执行的全局引用。 将全局引用计数用作估算值。
+> [!NOTE]
+> 全局引用计数是 Xamarin 的内部，并且不（并且不能）包含加载到进程中的其他本机库所执行的全局引用。 将全局引用计数用作估算值。
 
 ```shell
 I/monodroid-gref(12405): +g+ grefc 108 gwrefc 0 obj-handle 0x40517468/L -> new-handle 0x40517468/L from    at Java.Lang.Object.RegisterInstance(IJavaObject instance, IntPtr value, JniHandleOwnership transfer)

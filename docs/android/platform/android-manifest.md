@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: f1cc2f4685354687390866c0922a802591c7c054
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d65f0c8e717e8e8c995209f7dda1e8a44ee621c
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757706"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021113"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 清单
 
@@ -72,12 +72,13 @@ public class MyActivity : Activity
 <activity android:name="awesome.demo.activity" />
 ```
 
-*注意*：只应将`Name`属性用于向后兼容的原因，因为这种重命名可能会导致在运行时的类型查找速度变慢。 如果有需要基于 lowercased 命名空间和类名称的活动的默认类型名称的旧代码，请参阅[Android 可调用包装器命名](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)，了解有关维护兼容性的提示。 
+> [!NOTE]
+> 只应将`Name`属性用于向后兼容性的原因，因为这种重命名可能会减慢运行时的类型查找速度。 如果有需要基于 lowercased 命名空间和类名称的活动的默认类型名称的旧代码，请参阅[Android 可调用包装器命名](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)，了解有关维护兼容性的提示。 
 
 ### <a name="activity-title-bar"></a>活动标题栏
 
 默认情况下，当应用程序运行时，它将为应用程序提供标题栏。 用于此的值为[`/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大多数情况下，此值将与类名称不同。 若要在标题栏上指定应用的标签，请使用[`Label`](xref:Android.App.ActivityAttribute.Label)属性。
-例如: 
+例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -118,7 +119,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>活动图标
 
-默认情况下，将为你的活动提供系统提供的默认启动器图标。 若要使用自定义图标，请先将 **.png**添加到**资源/可绘制**，将其生成操作设置为**AndroidResource**， [`Icon`](xref:Android.App.ActivityAttribute.Icon)然后使用属性指定要使用的图标。 例如: 
+默认情况下，将为你的活动提供系统提供的默认启动器图标。 若要使用自定义图标，请先将 **.png**添加到**资源/可绘制**，将其生成操作设置为**AndroidResource**， [`Icon`](xref:Android.App.ActivityAttribute.Icon)然后使用属性指定要使用的图标。 例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -165,7 +166,7 @@ public class MyActivity : Activity
 Android 清单为您提供了一种描述活动功能的方法。 这是通过[意向](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)完成的，[`[IntentFilter]`](xref:Android.App.IntentFilterAttribute)
 自定义特性。 可以指定适合于活动的操作[`IntentFilter`](xref:Android.App.IntentFilterAttribute#ctor*)
 构造函数，以及适用于[`Categories`](xref:Android.App.IntentFilterAttribute.Categories)
-属性。 必须至少提供一个活动（这就是在构造函数中提供活动的原因）。 `[IntentFilter]`可以多次提供，每次使用都会导致中的一个单独`<intent-filter/>`的元素。 `<activity/>` 例如：
+属性。 必须至少提供一个活动（这就是在构造函数中提供活动的原因）。 `[IntentFilter]`可以多次提供，每次使用都会导致中的一个单独`<intent-filter/>`的元素。 `<activity/>` 例如:
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
