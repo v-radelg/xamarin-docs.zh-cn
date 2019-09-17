@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27adc8aa2ed0fec09fe38b9ea31834ea6e75f845
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752385"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033085"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 中的 SiriKit 更新
 
@@ -147,6 +147,7 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 类必须从`INExtension`继承，并且此示例将处理列表和说明，它还实现`IINNotebookDomainHandling`。
 
 > [!NOTE]
+>
 > - .Net 中有一种约定，其中的接口以大写`I`作为前缀，Xamarin 在从 iOS SDK 绑定协议时要遵守此约定。
 > - Xamarin 还保留来自 iOS 的类型名称，并且 Apple 使用类型名称中的前两个字符来反映类型所属的框架。
 > - 对于框架，类型带有`IN*`前缀（例如`Intents` `INExtension`），但这些_不_是接口。

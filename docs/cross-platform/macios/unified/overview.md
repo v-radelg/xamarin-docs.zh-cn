@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 75177daa2f8bd1faa271940713ff8543db3b97c0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cc27b3162c03f0292d3910f86fac9ed89b117f6f
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287390"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033320"
 ---
 # <a name="unified-api-overview"></a>Unified API 概述
 
@@ -19,6 +19,7 @@ Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码，并支持具�
 
 > [!IMPORTANT]
 > 已不推荐使用 Unified API 之前的 Xamarin Classic API。 
+>
 > - 支持 Classic API （monotouch.dialog）的最新版本的 Xamarin 是 Xamarin 9.10。
 > - Xamarin 仍支持 Classic API，但不再更新。 由于已弃用，因此开发人员应将其应用程序移到 Unified API。
 

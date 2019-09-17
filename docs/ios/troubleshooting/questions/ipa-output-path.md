@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: b8006b1ffe253ac57c1ab435690c5b378cc709fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 030f1ba87dde958aef156731de926427676163dc
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278668"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033487"
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>能否更改 IPA 文件的输出路径？
 
@@ -45,6 +45,7 @@ ms.locfileid: "70278668"
 2. 将 DestinationFolder 设置为所需的输出文件夹。 通常，如果需要，可以在此参数中使用 MSBuild 属性（如 $ （OutputPath））。
 
 ## <a name="notes"></a>说明
+
 - 此`CreateIpaDependsOn` 属性`Xamarin.iOS.Common.targets`在属于 Xamarin 的文件中定义。 它[的行为](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)如本文[如何执行以下操作：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
 
 - 如果愿意，可以使用**移动**任务而不是**复制**任务。 如果选择该选项，并且在 Windows 上进行生成，则需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>` ，以避免与 XamarinVS 生成任务有歧义。
@@ -79,6 +80,7 @@ ms.locfileid: "70278668"
 2. 将设置`DestinationFolder`为所需的输出文件夹。 通常，如果需要，可以在此参数`$(OutputPath)`中使用 MSBuild 属性（如）。
 
 ## <a name="notes"></a>说明
+
 - 此`CreateIpaDependsOn` 属性`Xamarin.iOS.Common.targets`在属于 Xamarin 的文件中定义。 t[的行为](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)，如以下文章[如何：扩展 Visual Studio 生成过程](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)。
 
 - 如果愿意，可以使用**移动**任务而不是**复制**任务。 如果选择该选项，并且在 Windows 上进行生成，则需要使用完全限定的任务名称`<Microsoft.Build.Tasks.Move>` ，以避免与 XamarinVS 生成任务有歧义。
