@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bb85c69b13fa052f33186a3153be266ef87a7925
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277105"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059552"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
@@ -13,6 +13,7 @@ ms.locfileid: "67277105"
 在本教程中，你将了解：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中创建 Xamarin.Forms [`Grid`](xref:Xamarin.Forms.Grid)。
 > - 指定 `Grid` 的列和行。
 > - 涉及 `Grid` 中多列或多行的内容。

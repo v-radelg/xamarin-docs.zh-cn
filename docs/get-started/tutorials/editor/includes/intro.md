@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ab8d29e876b96049cd4cfeb734b33724cba30624
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 4416eddfab4bfcf2b3274054db9bcfc60ed8fdec
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277108"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059558"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
@@ -14,6 +14,7 @@ ms.locfileid: "67277108"
 在本教程中，你将了解：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中创建 Xamarin.Forms [`Editor`](xref:Xamarin.Forms.Editor)。
 > - 响应 `Editor` 中更改的文本。
 > - 自定义 `Editor` 的行为。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9143b65b2e7cb9b85195e3c20695e3034295b2d2
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277111"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059554"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
@@ -15,6 +15,7 @@ ms.locfileid: "67277111"
 在本教程中，你将了解：
 
 > [!div class="checklist"]
+>
 > - 响应应用程序的启动、休眠或恢复。
 > - 在生命周期状态变化的过程中保存数据。
 
