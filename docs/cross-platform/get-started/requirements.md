@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: aea82b5946d12bc75aef18953d61cd88e5329329
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: adedb10f3baf7faa97260ebbc94e3d1802b7d847
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511388"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105948"
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -57,6 +57,7 @@ Visual Studio 2019 和 Visual Studio 2017 安装程序支持自动安装 Xamarin
 [!include[](~/cross-platform/includes/windows-requirements.md)]
 
 > [!NOTE]
+>
 > - 适用于 Visual Studio 的 Xamarin 支持 Visual Studio 2019 或 Visual Studio 2017 版本（Community、Professional 和 Enterprise）。
 > - 必须在 Windows 10 上安装 Visual Studio 2017，才能为通用 Windows 平台 (UWP) 开发 Xamarin.Forms 应用。 建议使用 Visual Studio 2019。
 

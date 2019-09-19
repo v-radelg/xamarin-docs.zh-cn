@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 69682372e2b1ac84db2c6464ac3b05a58645a9e3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8374e90ea6d460a0e0c22763db023654c3008b32
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753564"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105745"
 ---
 # <a name="metadata-and-markdown-template"></a>元数据和 Markdown 模板
 
@@ -65,6 +65,7 @@ Markdown 使用特殊字符如 \*、\` 和 \# 进行格式化。 如果要在内
 ## <a name="file-name"></a>文件名
 
 文件名使用以下规则：
+
 - 只包含小写字母、数字和连字符。
 - 不包括空格或标点字符。 在文件名中使用连字符分隔单词和数字。
 - 使用具体的动作动词，例如 develop、buy、build、troubleshoot。 不使用带 -ing 的单词。
@@ -75,6 +76,7 @@ Markdown 使用特殊字符如 \*、\` 和 \# 进行格式化。 如果要在内
 ## <a name="headings"></a>标题
 
 使用句式单词首字母大写。 以下单词的第一个字母始终为大写：
+
 - 标题的首个单词。
 - 标题中冒号后面的首个单词（例如，“How to: Sort an array”）。
 
@@ -131,6 +133,7 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 链接到 API 时，可以使用从源代码自动生成的 API 的唯一标识符 (UID)。
 
 可以使用以下任一种语法：
+
 1. Markdown 链接：`[link_text](xref:UID)`
 2. 自动链接：`<xref:UID>`
 3. 简写形式： `@UID`
@@ -143,6 +146,7 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 > 目前，没有查找 UID 的便捷方法。 查找某个 API 的 UID 的最好方法是在此存储库中搜索它：[docascode/coreapi](https://github.com/docascode/coreapi)。 我们正努力实现将来拥有更好的系统。
 
 当 UID 包含特殊字符 \` 或 \# 时，UID 值需要分别使用 HTML 编码为 60% 和 %23，如下面的示例所示：
+
 - 示例：@System.Threading.Tasks.Task\`1 变为 `@System.Threading.Tasks.Task%601`
 - 示例：@System.Exception \#ctor 变为 `@System.Exception.%23ctor`
 

@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: b12606317fd6cbc9a6a0f59364270595f1250abf
-ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
+ms.openlocfilehash: 86aa439d306bb861a1d24d93629056f9d3936363
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70887338"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033044"
 ---
 # <a name="platform-support"></a>平台支持
 
@@ -26,6 +26,7 @@ Xamarin.Essentials 支持以下平台和操作系统：
 | UWP | 10.0.16299.0 或更高版本 |
 
 > [!NOTE]
+>
 > * Tizen 受到 Samsung 开发团队的官方支持。
 > * tvOS 和 watchOS 具有有限的 API 覆盖范围，请参阅功能指南获取详细信息。
 

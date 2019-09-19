@@ -1,7 +1,16 @@
+---
+ms.openlocfilehash: 4d045c0025effae4f5e4cd30e03f8776be0c1270
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105750"
+---
 # <a name="voice-and-tone-guidelines"></a>语音和语调准则
 
 开发人员通过阅读你的文档可以了解 Xamarin 的相关知识，他们在日常工作中也要时常参考其中的内容。
 你的目标是创建有用的文档，帮助读者进行学习。 我们的准则帮助你实现目标。 风格指南包含四个建议：
+
 - [使用对话式语气](#use-a-conversational-tone)
 - [以第二人称编写](#write-in-2nd-person)
 - [使用主动语态](#use-active-voice)

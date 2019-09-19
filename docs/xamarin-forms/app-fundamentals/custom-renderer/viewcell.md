@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 406d65145017e4c82743bc920ff19696a90afc33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771698"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998048"
 ---
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
@@ -146,7 +146,7 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件用于显示数据列表，该数据列表通过 [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性填充。 [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) 缓存策略尝试通过回收列表单元最大程度减少 `ListView` 的内存占用并降低其执行速度。 有关更多信息，请参阅[缓存策略](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
+Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件用于显示数据列表，该数据列表通过 [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性填充。 [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) 缓存策略尝试通过回收列表单元最大程度减少 `ListView` 的内存占用并降低其执行速度。 有关更多信息，请参阅[缓存策略](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)。
 
 列表中的每一行都包含三项数据：名称、类别和图像文件名。 列表中每行的布局由通过 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 可绑定属性来引用的 `DataTemplate` 定义。 `DataTemplate` 定义列表中的每行数据将是 `NativeCell`，它通过数据绑定显示其 `Name`、`Category` 和 `ImageFilename` 属性。 有关 `ListView` 控件的详细信息，请参阅 [ListView](~/xamarin-forms/user-interface/listview/index.md)。
 
