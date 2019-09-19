@@ -1,19 +1,20 @@
 ---
-ms.openlocfilehash: ce6714014db66dff3a87e50c73dc77afb962cc5c
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: e05a20149d33eed58918382371e8bc333d4a5f8d
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277107"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107175"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
 - [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
 
-在本教程中，你将了解：
+本教程介绍如何执行下列操作：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中创建 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry)。
 > - 响应 `Entry` 中更改的文本。
 > - 自定义 `Entry` 的行为。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4b89c0ba1b865eecab304e8aebb06bc72568cc97
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 338b03ae5e52b06c6ddc225b418ee2bc7d5e5ffc
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277122"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107182"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
@@ -14,9 +14,10 @@ ms.locfileid: "67277122"
 - [按钮](~/get-started/tutorials/button/index.yml)教程。
 - [输入](~/get-started/tutorials/entry/index.yml)教程。
 
-在本教程中，你将了解：
+本教程介绍如何执行下列操作：
 
 > [!div class="checklist"]
+>
 > - 使用 NuGet 包管理器将 Newtonsoft.Json 添加到 Xamarin.Forms 项目。
 > - 创建 Web 服务类。
 > - 使用 Web 服务类。

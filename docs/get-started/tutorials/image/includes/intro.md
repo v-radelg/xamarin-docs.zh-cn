@@ -1,19 +1,20 @@
 ---
-ms.openlocfilehash: 9bda76a477973bb06eb018abbf4ad53dc3e8c1e7
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 85404d5aceb525a77c98bf2d86ebc4b464f5796f
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277106"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107171"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
 - [生成第一个 Xamarin.Forms 应用](~/get-started/first-app/index.md)快速入门。
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml)教程。
 
-在本教程中，你将了解：
+本教程介绍如何执行下列操作：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中创建 Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image)。
 > - 自定义 `Image` 外观。
 > - 显示每个平台项目的本地图像文件。

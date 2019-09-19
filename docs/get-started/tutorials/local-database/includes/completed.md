@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 07934bfdd924a0b52cbb240124e073c82aeb41ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a0f2e909d4c7003ba1314b848fd01e604d190a1b
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669544"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107179"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
 > [!div class="checklist"]
+>
 > - 使用 NuGet 包管理器将 SQLite.NET 添加到 Xamarin.Forms 项目。
 > - 创建数据访问类。
 > - 使用数据访问类。

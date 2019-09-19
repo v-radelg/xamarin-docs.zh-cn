@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 164befeb08d7cb6691cb037b1f6b7f31c390afea
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 552251490665b673e02eb58c50c643daed9c1aed
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277113"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107174"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
 
@@ -14,9 +14,10 @@ ms.locfileid: "67277113"
 - [标签](~/get-started/tutorials/label/index.yml)教程。
 - [图像](~/get-started/tutorials/image/index.yml)教程。
 
-在本教程中，你将了解：
+本教程介绍如何执行下列操作：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中创建 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView)。
 > - 使用数据填充 `ListView`。
 > - 回应被选中的 `ListView` 项。

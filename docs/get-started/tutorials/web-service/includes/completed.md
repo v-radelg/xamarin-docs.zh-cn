@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 2c9895f36faccb0d0c82b0e7884cc04b8c4273bf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e0f7e89be5de282daf10f941d0f0b8d0175df81a
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669546"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107183"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
 > [!div class="checklist"]
+>
 > - 使用 NuGet 包管理器将 Newtonsoft.Json 添加到 Xamarin.Forms 项目。
 > - 创建 Web 服务类。
 > - 使用 Web 服务类。
