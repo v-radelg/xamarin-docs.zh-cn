@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f2bc6ce6c709f99c744554d80b065e34961904ac
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763113"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105852"
 ---
 # <a name="using-icloud-with-xamarinios"></a>对 Xamarin 使用 iCloud
 
@@ -339,8 +339,7 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 
 ### <a name="displaying-icloud-documents"></a>显示 iCloud 文档
 
-显示 UIDocument 不应与任何其他模型类都不同
-- 属性在 UI 控件中显示，用户可能会编辑这些属性，然后将其写回到模型中。
+显示 UIDocument 不应与任何其他模型类都有任何不同-属性显示在 UI 控件中，用户可能会编辑这些属性，然后将其写回到模型中。
 
 在示例中， **iCloudUIDoc\MonkeyDocumentViewController.cs**在中`UITextView`显示 MonkeyDocument 文本。 `ViewDidLoad`侦听`MonkeyDocument.LoadFromContents`方法中发送的通知。 `LoadFromContents`当 iCloud 包含文件的新数据时，将调用，以便通知指示文档已更新。
 

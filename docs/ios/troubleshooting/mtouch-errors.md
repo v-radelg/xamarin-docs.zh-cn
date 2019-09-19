@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: e001f22759ac70bbf81a10bf5e56790497dab767
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985959"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105978"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -1598,6 +1598,7 @@ Parameter name: instruction
 尝试优化生成的绑定代码时出现意外情况。 错误消息中命名了导致问题的元素。 若要解决此问题，需要在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新问题中提供名为（或包含名为的类型或方法）的程序集，并提供启用了详细级别（即`-v -v -v -v`在**附加的 mtouch 参数**中）的完整生成日志。
 
 最后一个数字`x`将为：
+
 - `0`对于程序集名称，为;
 - `1`对于类型名称，为;
 - `3`对于方法名称，为;
@@ -2349,7 +2350,7 @@ Objectice 类的名称不能包含空格，这意味着`Register`对应托管类
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214:本机链接失败，未定义符号： *。 此符号引用了托管成员 *。 请验证是否引用了所有必需的框架，并链接了本机库。
 
-当托管代码包含对不存在的本机方法的 P/Invoke 时，会报告此错误。 例如:
+当托管代码包含对不存在的本机方法的 P/Invoke 时，会报告此错误。 例如：
 
 ```csharp
 using System.Runtime.InteropServices;

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 29483ca184786f8f0d2a7d0d9345608542d30e61
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 078d5a2d5c05f39a9c6d8d081b08faa7b4b8ec67
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768860"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106111"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合视图
 
@@ -459,6 +459,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 [![](uicollectionview-images/quick04.png "设置集合视图大小")](uicollectionview-images/quick04.png#lightbox)
 
 接下来，编辑默认单元：
+
 - 将背景色更改为蓝色
 - 添加一个标签作为单元的标题
 - 将重复使用标识符设置为**cell**
@@ -671,7 +672,7 @@ namespace CollectionView
 
 保存对 UI 所做的更改并运行应用。
 如果用户从列表中选择某一项并将其拖动到新位置，则当其他项移出项目的方式时，它们将自动进行动画处理。
-当用户将项放置在新位置时，它会坚持到该位置。 例如：
+当用户将项放置在新位置时，它会坚持到该位置。 例如:
 
 [![](uicollectionview-images/intro01.png "将项拖动到新位置的示例")](uicollectionview-images/intro01.png#lightbox)
 

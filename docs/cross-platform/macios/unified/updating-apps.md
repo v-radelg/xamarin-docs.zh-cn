@@ -6,17 +6,18 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 3379b9672b344e8e424f95e273683f4c5e241b71
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280801"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106062"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>将现有应用程序更新到 Unified API
 
 > [!IMPORTANT]
 > 已不推荐使用 Unified API 之前的 Xamarin Classic API。
+>
 > - 支持 Classic API （monotouch.dialog）的最新版本的 Xamarin 是 Xamarin 9.10。
 > - Xamarin 仍支持 Classic API，但不再更新。 由于已弃用，因此开发人员应将其应用程序移到 Unified API。
 

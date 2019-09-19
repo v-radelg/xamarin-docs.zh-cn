@@ -5,12 +5,12 @@ description: 本文档将 WPF 与 Xamarin 进行比较和对比。 它讨论了�
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290411"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106035"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与Xamarin. Forms：相似 & 差异
 
@@ -65,6 +65,7 @@ Xamarin 也支持自定义标记扩展，但实现略有不同。 在 WPF 中，
 ### <a name="defining-bindable-properties"></a>定义可绑定属性
 
 Xamarin 中的可绑定属性的定义与 WPF 相同：
+
 1. 对象必须派生自`BindableObject`。
 2. 必须有声明的类型`BindableProperty`的公共静态字段，才能定义属性的后备存储密钥。
 3. 应有一个公共实例属性包装器，该包装`GetValue`器`SetValue`使用和来检索和更改属性值。

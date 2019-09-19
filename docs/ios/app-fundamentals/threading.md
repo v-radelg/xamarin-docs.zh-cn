@@ -7,18 +7,19 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: d8267d4def0f7c24c660dfb4d301c111a92bb0b9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d3f00f3abd13d2edf8b827a881768fbd54d6379
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767157"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106025"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin 中的线程
 
 在使用异步委托模式或 BeginXXX 方法时，Xamarin iOS 运行时为开发人员提供了对`System.Threading.Thread, System.Threading.ThreadPool`.net 线程 api 的访问，并在使用异步委托模式或方法以及支持任务并行库。
 
 Xamarin 强烈建议使用[任务并行库](https://msdn.microsoft.com/library/dd460717.aspx)（TPL）来生成应用程序，原因如下：
+
 - 默认 TPL 计划程序会将任务执行委托给线程池，这反过来会动态增加所需的线程数，同时避免太多线程最终争用 CPU 时间的情况。 
 - 可以更方便地考虑 TPL 任务的操作。 使用一组丰富的 Api，可以轻松地对其进行处理、计划、序列化其执行或启动多项操作。 
 - 它是用新C#的异步语言扩展进行编程的基础。 

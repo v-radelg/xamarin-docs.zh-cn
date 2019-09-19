@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 7123d7d491bb32a8a506b308cac5ecb6458a1add
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 042878fa8d30acb55de68f63e3491aacb5dbdfb5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754874"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105874"
 ---
 # <a name="creating-android-services"></a>创建 Android 服务
 
@@ -66,6 +66,7 @@ Android 中后台工作的主要机制是_服务_。 Android 服务是一个组�
 * 另一个应用处于前台，并使用应用中的组件，此应用程序将在后台进行。 例如，如果应用程序 A （在前台）绑定到应用程序 B 提供的服务，则会出现这种情况。在前台，应用程序 B 还将被视为前台，而 Android 不会将其终止。
 
 在某些情况下，即使应用处于后台，Android 也会唤醒应用并放宽这些限制几分钟，允许应用执行一些工作：
+
 * 应用收到高优先级 Firebase 云消息。
 * 应用收到广播。 
 * 应用程序接收并执行`PendingIntent`以响应通知。

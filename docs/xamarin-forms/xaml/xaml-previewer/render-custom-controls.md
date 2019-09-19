@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 5b87c631574f159230e1dc23285b9087bcc94255
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 57c0fd540ef42c18462b4f989b21bac5ed05dc04
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767322"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106001"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 预览器中呈现自定义控件
 
@@ -51,6 +51,7 @@ namespace MyProject
 
 ### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>即使有`[DesignTimeVisible(true)]`，自定义控件也不会正确呈现。
 很大程度上依赖于代码隐藏或后端数据的自定义控件并不总是在 XAML 预览器中工作。 你可以尝试：
+
 * 如果[启用设计模式](index.md#detect-design-mode)，则移动控件以使其不初始化
 * 设置[设计时数据](design-time-data.md)以显示后端的虚假数据
 
