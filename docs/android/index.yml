@@ -21,7 +21,7 @@ abstract:
       - href: /visualstudio/
         text: Visual Studio
 sections:
-  - title: 开始操作
+  - title: 入门
     items:
       - type: paragraph
         text: '了解如何使用 Xamarin 和 C# 生成首个 Android 应用。'
@@ -30,7 +30,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 安装
+            text: 设置
             href: ~/android/get-started/installation/index.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
@@ -42,9 +42,9 @@ sections:
             href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-            text: Android Pie
-            href: ~/android/platform/pie.md
-  - title: 参考线
+            text: Android 10
+            href: ~/android/platform/android-10.md
+  - title: 指南
     items:
       - type: list
         style: cards

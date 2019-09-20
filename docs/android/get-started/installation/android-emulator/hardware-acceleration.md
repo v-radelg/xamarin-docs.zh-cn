@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758001"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105899"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>通过硬件加速提高仿真器性能 (Hyper-V & HAXM)
 
@@ -22,19 +22,27 @@ ms.locfileid: "70758001"
 Visual Studio 便于开发人员在无法使用 Android 设备的情况下通过使用 Android Emulator 来测试和调试 Xamarin.Android 应用程序。
 但是，如果硬件加速在运行 Android 仿真器的计算机上不可用，那么它的运行速度太慢。 通过将特殊的 x86 虚拟设备映像与计算机的虚拟化功能结合使用，可以极大地提高 Android Emulator 的性能。
 
+| 方案    | HAXM        | WHPX       | Hypervisor.Framework |
+| ----------- | ----------- | -----------| ----------- |
+| 有 Intel 处理器 | X | X | X |
+| 有 AMD 处理器   |   | X |   |
+| 想支持 Hyper-V |   | X |   |
+| 想支持嵌套虚拟化 |   | 有限 |   |
+| 想使用 Docker 等技术  |   | X | X |
+
 ::: zone pivot="windows"
 
 ## <a name="accelerating-android-emulators-on-windows"></a>在 Windows 上加速 Android Emulator
 
 以下虚拟化技术可用于加速 Android Emulator：
 
-1. **Microsoft 的 Hyper-V 和虚拟机监控程序平台**。
+1. **Microsoft 的 Hyper-V 和 Windows 虚拟机监控程序平台 (WHPX)** 。
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) 是 Windows 的虚拟化功能，使虚拟的计算机系统可以在物理主计算机上运行。
 
 2. **Intel 硬件加速执行管理器 (HAXM)** 。
    HAXM 是运行 Intel CPU 的计算机所用的虚拟化引擎。
 
-为获得最佳性能，建议使用 Hyper-V 加速 Android Emulator。 若你的计算机没有 Hyper-V，则可使用 HAXM。 如果满足以下条件，Android Emulator 将自动使用硬件加速：
+为了在 Windows 上获得最佳体验，建议使用 HAXM 来加速 Android 仿真器。 如果 HAXM 在你的计算机上不可用，则可以使用 Windows 虚拟机监控程序平台 (WHPX)。 如果满足以下条件，Android Emulator 将自动使用硬件加速：
 
 - 硬件加速在开发计算机上可用并已启用。
 
@@ -158,7 +166,7 @@ systeminfo
 2. **Intel 硬件加速执行管理器 (HAXM)** 。
    [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) 是运行 Intel CPU 的计算机所用的虚拟化引擎。
 
-为获得最佳性能，建议使用虚拟机监控程序框架加速 Android Emulator。 如果 Mac 上没有虚拟机监控程序框架，则可以使用 HAXM。 如果满足以下条件，Android Emulator 将自动使用硬件加速：
+建议使用虚拟机监控程序框架来加速 Android 仿真器。 如果 Mac 上没有虚拟机监控程序框架，则可以使用 HAXM。 如果满足以下条件，Android Emulator 将自动使用硬件加速：
 
 - 硬件加速在开发计算机上可用并已启用。
 
@@ -180,7 +188,7 @@ systeminfo
 
 - Mac 的 CPU 必须能够支持虚拟机监控程序框架。
 
-若 Mac 符合这些条件，Android Emulator 将自动使用虚拟机监控程序框架进行加速（即使已安装 HAXM）。 若不确定 Mac 是否支持虚拟机监控程序框架，请参阅[疑难解答](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues)指南，了解验证 Mac 是否支持虚拟机监控程序的方法。
+如果你的 Mac 符合这些条件，Android 仿真器将自动使用虚拟机监控程序框架进行加速。 若不确定 Mac 是否支持虚拟机监控程序框架，请参阅[疑难解答](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues)指南，了解验证 Mac 是否支持虚拟机监控程序的方法。
 
 如果 Mac 不支持虚拟机监控程序框架，可以使用 HAXM 加速 Android Emulator（如下所述）。
 

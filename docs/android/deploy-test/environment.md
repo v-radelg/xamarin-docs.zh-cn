@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754045"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021178"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 环境
 
@@ -93,10 +93,11 @@ Xamarin.Android 支持以下系统属性，可通过 `adb shell setprop` 或 `$(
 - `assembly`：打印 `.apk` 和程序集分析消息。
 - `gc`：输出与 GC 相关的消息。
 - `gref`：输出 JNI 全局引用消息。
-- `lref`：输出 JNI 本地引用消息。  
-    *说明*：这将是真正的垃圾邮件  `adb logcat`。  
-    在 Xamarin.Android 5.1 中，它还会创建 `.__override__/lrefs.txt` 文件，从中获取 gigantic  。  
-    请避免。
+- `lref`：输出 JNI 本地引用消息。
+  > [!NOTE]
+  > 这将是真正的垃圾邮件`adb logcat`* `adb logcat`。
+  > 在 Xamarin.Android 5.1 中，它还会创建 `.__override__/lrefs.txt` 文件，从中获取 gigantic  。
+  > 请避免。
 - `timing`：输出某些方法计时信息。 这还将创建文件 `.__override__/methods.txt` 和 `.__override__/counters.txt`。
 
 ### `debug.mono.max_grefc`
