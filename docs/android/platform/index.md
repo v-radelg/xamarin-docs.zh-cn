@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 40fa2d93b7fd756c284727566e8043f5084bd483
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757478"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119236"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,6 +41,10 @@ Android 3.0 介绍了一些片段，其中展示了如何为在手机和平板�
 ## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
 
 本指南将讨论 Android 6.0 如何支持_应用链接_，这是一种允许移动应用响应网站上的 url 的技术。 本文将讨论如何在 Android 6.0 应用程序中实现应用程序链接，以及如何将网站配置为向移动应用程序授予权限，以处理域的应用程序链接。
+
+## <a name="android-10androidplatformandroid-10md"></a>[Android 10](~/android/platform/android-10.md)
+
+本文概述了 Android 10 中的新增功能，介绍了如何为 Android 10 开发准备 Xamarin，并提供指向示例应用程序的链接，这些示例应用程序演示如何在 Xamarin Android 应用程序中使用 Android Oreo 功能。
 
 ## <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 饼图](~/android/platform/pie.md)
 
