@@ -211,7 +211,7 @@ CollectionView collectionView = new CollectionView
 
 默认情况下, [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)属性设置为`SnapPointsType.None`, 这可确保滚动不会对齐项目, 如以下屏幕截图所示:
 
-不带对齐点的[ ![CollectionView 垂直列表的屏幕截图, 适用于 IOS 和 Android](scrolling-images/snappoints-none.png "CollectionView 垂直列表 (不带对齐点"))](scrolling-images/snappoints-none-large.png#lightbox "不带对齐点的 CollectionView 垂直列表")
+不带对齐点的[ ![CollectionView 垂直列表的屏幕截图, 适用于 IOS 和 Android](scrolling-images/snappoints-none.png "CollectionView 垂直列表 (不带对齐点") ] (scrolling-images/snappoints-none-large.png#lightbox "不带对齐点的 CollectionView 垂直列表")
 
 ### <a name="snap-points-alignment"></a>对齐点对齐
 
