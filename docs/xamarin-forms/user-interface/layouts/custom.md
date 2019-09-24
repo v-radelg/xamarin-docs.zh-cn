@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9442116bf053768fe22d123d1c7e3d146f9b2834
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292575"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198505"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中创建自定义布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin.Forms 定义了四个布局的类，这些 StackLayout、 AbsoluteLayout、 RelativeLayout 和网格中，并且每个不同的方式排列子项。但是，有时有必要来组织页面内容使用 Xamarin.Forms 不提供布局。本文说明如何编写一个自定义布局的类，并演示跨页上，水平排列子项，然后将包装对其他行的后续子级的显示方向区分 WrapLayout 类。_
+_Xamarin 定义五个布局类： StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout，每个都以不同的方式排列其子级。但是，有时有必要来组织页面内容使用 Xamarin.Forms 不提供布局。本文说明如何编写一个自定义布局的类，并演示跨页上，水平排列子项，然后将包装对其他行的后续子级的显示方向区分 WrapLayout 类。_
 
 在 Xamarin.Forms 中，所有布局类都派生自[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)类和约束的泛型类型[ `View` ](xref:Xamarin.Forms.View)及其派生类型。 依次`Layout<T>`类派生自[ `Layout` ](xref:Xamarin.Forms.Layout)类，该类提供用于定位和大小调整子元素的机制。
 
@@ -427,7 +427,7 @@ async Task<ImageList> GetImageListAsync()
 
 - [WrapLayout （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [自定义布局](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
-- [在 Xamarin.Forms 中创建自定义布局 （视频）](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
+- [在 Xamarin.Forms 中创建自定义布局 （视频）](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [布局\<T >](xref:Xamarin.Forms.Layout`1)
 - [布局](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: b7dfeee92020be2fb40cfdfc5eb1b97d065b97e9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e0a6569710ca3ad10f57d7145a97af92574427c
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758175"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198436"
 ---
 # <a name="localization"></a>本地化
 
@@ -224,7 +224,7 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 ```csharp
 "You have no messages."
-"You have 1 messages."
+"You have 1 message."
 "You have 2 messages."
 "You have {0} messages."
 ```

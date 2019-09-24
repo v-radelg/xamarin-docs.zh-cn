@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: f264f210a9228fd213f0c041abb5b26023c796f4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1d9a65ab34cb0c02368f53679d38f1d07ec1f257
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753272"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198554"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin 中的 Apple Pay
 
@@ -43,8 +43,7 @@ Apple Pay 和*应用内购买*（IAP）之间的主要区别在于他们销售�
 
 ## <a name="using-a-payment-processor-platform"></a>使用付款处理器平台
 
-Apple Pay 的基本部分之一是处理付款。 尽管可以自行执行此操作，但它需要大量的加密知识
-- 如 Apple[支付处理指南](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)中所述。
+Apple Pay 的基本部分之一是处理付款。 尽管可以自行执行此操作，但它需要了解有关加密的重要知识，如 Apple[支付处理指南](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)中所述。
 另一方面，支付处理平台会为你处理这些操作，使你能够集中精力构建你的应用程序。
 
 两个选项包括：

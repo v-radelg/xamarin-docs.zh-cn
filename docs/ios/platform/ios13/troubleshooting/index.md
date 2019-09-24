@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2019
-ms.openlocfilehash: d2a2146a0b7345475e2eb93d52fb02387c833224
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: e03990a74ac8477b56b109e26a97b05ad13dba53
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200048"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198459"
 ---
 # <a name="troubleshooting-tips-for-ios-13-and-xamarinios"></a>IOS 13 和 Xamarin 的故障排除提示
 
@@ -20,7 +20,7 @@ ms.locfileid: "70200048"
 
 ## <a name="updating-to-xcode-11-stops-the-simulator-from-launching"></a>更新到 Xcode 11 会使模拟器停止启动
 
-在每次启动模拟器时更新到**Xcode 11 beta 1**后, 将引发以下异常, 且模拟器不会启动。 所有模拟器都会发生这种情况。
+在每次启动模拟器时更新到**Xcode 11 beta 1**后，将引发以下异常，且模拟器不会启动。 所有模拟器都会发生这种情况。
 
 ### <a name="exception"></a>例外
 
@@ -28,24 +28,25 @@ ms.locfileid: "70200048"
 
 ### <a name="workaround"></a>解决方法
 
-在[修复](https://github.com/xamarin/xamarin-macios/issues/6216)之前, 可以遵循以下步骤重新安装旧的模拟器框架, 以允许开发人员继续工作:
+在[修复](https://github.com/xamarin/xamarin-macios/issues/6216)之前，可以遵循以下步骤重新安装旧的模拟器框架，以允许开发人员继续工作：
 
 > [!NOTE]
-> 这些步骤假定你有两个 Xcode 应用程序:
+> 这些步骤假定你有两个 Xcode 应用程序：
+>
 > - **Xcode11-beta1** –无法与模拟器和 Visual Studio for Mac 一起使用的 beta 版本。
 > - **Xcode102** – Xcode 10 的稳定版本。 您也可以调用**Xcode**。
 >
-> 根据你的配置, 更改下面的命令行示例。
+> 根据你的配置，更改下面的命令行示例。
 
-1. 请确保已通过 Xcode 选择 Xcode 11:
+1. 请确保已通过 Xcode 选择 Xcode 11：
 
    `sudo xcode-select -s /Applications/Xcode11-beta1.app/Contents/Developer/`
 
-2. 如果需要, 则首次运行安装工具。
+2. 如果需要，则首次运行安装工具。
 
     `/Applications/Xcode11-beta1.app/Contents/Developer/usr/bin/xcodebuild -runFirstLaunch`
 
-3. 删除以下框架:
+3. 删除以下框架：
 
     `sudo rm -Rf  /Library/Developer/PrivateFrameworks/CoreSimulator.framework/Versions/*`
 
@@ -57,4 +58,4 @@ ms.locfileid: "70200048"
 
    `/Applications/Xcode102.app/Contents/Developer/usr/bin/xcodebuild -runFirstLaunch`
 
-执行这些步骤后, 你应该能够再次使用 iOS 模拟器。
+执行这些步骤后，你应该能够再次使用 iOS 模拟器。

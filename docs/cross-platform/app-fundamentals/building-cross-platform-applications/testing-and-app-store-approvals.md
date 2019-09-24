@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761986"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198432"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 测试和应用商店审批
 
@@ -100,7 +100,7 @@ Apple 和 Microsoft 仅在其平台上操作应用商店：应用商店和 Marke
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>准则不仅仅是 "指南"
 
-Apple 非常著名，严格地遵守其平台的关键优势之一，因为其平台的关键优势之一是一致性（以及可感知的可用性增加）。 Microsoft 已与实现美俏风格用户界面的 Windows 应用程序采取类似的方法。 这两个平台的审批流程都涉及到您的应用程序，使其遵守相关的设计理念。
+Apple 非常著名，严格地遵守其平台的关键优势之一，因为其平台的关键优势之一是一致性（以及可感知的可用性增加）。 Microsoft 为实现[流畅设计系统](https://microsoft.com/design/fluent)的 Windows 应用程序采用了类似的方法。 这两个平台的审批流程都涉及到您的应用程序，使其遵守相关的设计理念。
 
 这并不是说，用户界面创新不受支持，也不鼓励您这样做，但您不应该这样做，否则您的应用程序将被拒绝。
 
