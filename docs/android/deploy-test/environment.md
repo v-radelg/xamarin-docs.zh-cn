@@ -95,7 +95,7 @@ Xamarin.Android 支持以下系统属性，可通过 `adb shell setprop` 或 `$(
 - `gref`：输出 JNI 全局引用消息。
 - `lref`：输出 JNI 本地引用消息。
   > [!NOTE]
-  > 这将是真正的垃圾邮件`adb logcat`* `adb logcat`。
+  > 这将是真正的垃圾邮件`adb logcat` *。*
   > 在 Xamarin.Android 5.1 中，它还会创建 `.__override__/lrefs.txt` 文件，从中获取 gigantic  。
   > 请避免。
 - `timing`：输出某些方法计时信息。 这还将创建文件 `.__override__/methods.txt` 和 `.__override__/counters.txt`。
