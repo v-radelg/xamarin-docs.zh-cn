@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/12/2019
-ms.openlocfilehash: e03990a74ac8477b56b109e26a97b05ad13dba53
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 9a12163b0300a8d523632ad38e1b66a8c44b7aaf
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198459"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206313"
 ---
 # <a name="troubleshooting-tips-for-ios-13-and-xamarinios"></a>IOS 13 和 Xamarin 的故障排除提示
-
-![预览版功能](~/media/shared/preview.png)
 
 ## <a name="updating-to-xcode-11-stops-the-simulator-from-launching"></a>更新到 Xcode 11 会使模拟器停止启动
 

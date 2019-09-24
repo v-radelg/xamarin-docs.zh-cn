@@ -6,17 +6,15 @@ ms.assetid: AB486B2F-6E3B-4E0B-ABB8-58F5804D56D2
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
-ms.date: 07/01/2019
-ms.openlocfilehash: b8a5e8f42c44287a1d60f43784c3e42a9e7fc0ff
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.date: 09/20/2019
+ms.openlocfilehash: b68bb7b3a46be4df3c86af44f646d2dd1eaa6b6f
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70997972"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206345"
 ---
 # <a name="introduction-to-ios-13"></a>iOS 13 简介
-
-![预览版功能](~/media/shared/preview.png)
 
 按照这些[说明开始操作](~/ios/platform/ios13/get-started.md)。
 
@@ -24,27 +22,13 @@ ms.locfileid: "70997972"
 
 iOS 13 引入了一种新的深色模式，使开发人员能够轻松地允许其应用适合于使用。 使用新工具，您可以同时设计应用程序以及浅色和深色主题。
 
-## <a name="sign-in-with-applesign-inmd"></a>[通过 Apple 登录](sign-in.md)
+## <a name="sign-in-with-applesign-inmd"></a>[使用 Apple 登录](sign-in.md)
 
 iOS 13 为使用 Apple 设备登录到应用提供了新的功能，使您能够更自信地确保不会以任何方式盗取或收集个人信息，因为它利用了2FA 和一组有限的提供信息.
 
-## <a name="augmented-reality"></a>扩充的现实
+## <a name="multiple-windows-for-ipadmulti-window-ipadmd"></a>[适用于 iPad 的多个窗口](multi-window-ipad.md)
 
-IOS 13 中增加的现实现在具有更多的功能，包括新的 "人员封闭" 功能，该功能允许应用的 AR 内容遵从用户的状态并相应地四处移动。
-
-## <a name="siri"></a>Siri
-
-Siri 已扩展为允许处理音频内容，并通过快捷方式应用更好地处理快捷方式。
-
-## <a name="machine-learning"></a>机器学习
-
-核心 ML 3 使你可以使用设备的硬件功能轻松地训练 ML 模型。
-
-## <a name="ipados"></a>iPadOS
-
-iPadOS 是专门使用 iPad 构建的 iOS 扩展。
-
-借助 iPadOS，你可以通过新的手势使用 PencilKit 更充分地使用 Apple 铅笔，允许使用多个窗口，并在应用之间拖放各种内容。 iPadOS 还可以允许应用程序提供系统范围的字体。
+iPad 应用现在可以使用多个由各种交互创建的窗口。
 
 ## <a name="related-links"></a>相关链接
 

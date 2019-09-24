@@ -5,12 +5,12 @@ description: Visual Studio for Mac 可用于在适用于 Android 和 iOS 的移�
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: 685d4f5de197c6b3664d63306fa206bea17409e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a10d63e8ed152fae3c9e87cbae7bacb25a0d019c
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766360"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206375"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>结合使用 CC++ /库和 Xamarin
 
@@ -24,7 +24,7 @@ Xamarin 使开发人员能够通过 Visual Studio 创建跨平台的本机移动
 
 本文章概述了此方案的高级方法，并演练了一个简单的示例。
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 
 C/C++被视为一种跨平台语言，但必须格外小心，确保源代码确实跨平台，只使用所有目标编译器都支持的 C/C++ ，同时包含很少或没有有条件包含的平台或编译器特定代码。
 
@@ -132,7 +132,7 @@ extern "C" {
 
 ## <a name="wrapping-the-native-library-stage-2"></a>包装本机库（阶段2）
 
-此阶段需要[上一节](##creating-the-native-libraries-stage-1)中所述的[预编译库](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)。
+此阶段需要[上一节](#creating-the-native-libraries-stage-1)中所述的[预编译库](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)。
 
 ### <a name="creating-the-visual-studio-solution"></a>创建 Visual Studio 解决方案
 
@@ -588,7 +588,7 @@ NuGet 源的最简单形式是本地目录：
 
 1. 将**生成配置**设置为 "**发布**"，并使用**命令 + B**执行生成。
 2. 打开**终端**并将目录更改为包含**nuspec**文件的文件夹。
-3. 在**终端**中，使用[上一步](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)中创建的文件夹，执行用于 **指定 nuspec 文件、版本（例如1.0.0）和 OutputDirectory 的 nuget 包命令，即本地-nuget**。 例如：
+3. 在**终端**中，使用[上一步](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)中创建的文件夹，执行用于 **指定 nuspec 文件、版本（例如1.0.0）和 OutputDirectory 的 nuget 包命令，即本地-nuget**。 例如:
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed

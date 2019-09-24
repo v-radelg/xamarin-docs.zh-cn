@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: d88832dd4fd69019f9905fb779c5572ba9a689eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281026"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206299"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
@@ -22,7 +22,7 @@ ms.locfileid: "70281026"
 
 |  |  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [IOS 13 预览简介](~/ios/platform/ios13/index.md) | 本文档介绍 Xamarin 十三 Preview。|
+| [IOS 13 简介](~/ios/platform/ios13/index.md) | 本文档介绍 Xamarin （iOS）。|
 | [iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md) | 本文档介绍生成 Xamarin iOS 应用程序时可使用的 iOS 12 功能。|
 | [iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md) | 本文档介绍 iOS 11 和 Xcode 9 中的新增功能和更新功能，如 ARKit、Core ML、Core NFC、拖放、MapKit、PDFKit、SiriKit 和视觉。 它链接到介绍如何将这些功能与 Xamarin 一起使用的指南。 |
 | [iOS 10 简介](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 包括几个新的 Api 和服务，可让你开发具有新特性和功能的应用程序。 使用 iOS 10，应用具有新功能，例如扩展地图、消息、手机和 Siri。 本部分演示了如何在 Xamarin iOS 应用程序中利用这些功能的方式。 |
@@ -135,7 +135,7 @@ iOS 10 包括一个新的语音 API，该 API 允许应用程序支持连续语�
 
 ## <a name="wide-coloriosplatformwide-colormd"></a>[广泛的颜色](~/ios/platform/wide-color.md)
 
-iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心图像、金属和 AVFoundation 等框架）中的扩展范围像素格式和宽色域颜色空间的支持。 通过在整个图形堆栈中提供此行为，可进一步减轻对具有宽颜色显示的设备的支持。
+iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心图像、金属和 AVFoundation 等框架）中的扩展范围像素格式和宽色域颜色空间的支持。 通过在整个图形堆栈中提供此行为, 可进一步减轻对具有宽颜色显示的设备的支持。
 
 ## <a name="binding-objective-cbinding-objective-cindexmd"></a>[绑定 Objective-C](binding-objective-c/index.md)
 
