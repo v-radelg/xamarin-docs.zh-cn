@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: bea058a1f275d6f02fe4cbdf70f8e47a11d1cf8e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7aa2cae4c8ca1ef9bb0412a4a62dc619af97b57f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764125"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249765"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 部件和功能
 
@@ -52,7 +52,7 @@ ms.locfileid: "70764125"
 
 <a name="recycling" />
 
-### <a name="how-view-recycling-works"></a>视图回收的工作原理
+## <a name="how-view-recycling-works"></a>视图回收的工作原理
 
 `RecyclerView`不会为数据源中的每个项分配项视图。 相反，它仅分配适合屏幕的项视图数，并在用户滚动时重用这些项布局。 当视图第一次滚动时，它会经历下图所示的回收过程：
 
@@ -73,7 +73,7 @@ ms.locfileid: "70764125"
 
 除项-视图重用外， `RecyclerView`还使用另一个效率优化：查看持有者。 *视图占位符*是缓存视图引用的简单类。 每次适配器增加项布局文件时，它也会创建相应的视图持有者。 视图占位符`FindViewById`用于获取对放大项-布局文件内的视图的引用。 每次回收布局以显示新数据时，这些引用用于将新数据加载到视图中。
 
-### <a name="the-layout-manager"></a>布局管理器
+## <a name="the-layout-manager"></a>布局管理器
 
 布局管理器负责在`RecyclerView`显示中定位项; 它确定表示类型（列表或网格）、方向（项是垂直显示还是水平显示）以及应显示哪些方向项（按正常顺序或按相反的顺序）。 布局管理器还负责计算**RecycleView**显示中每个项的大小和位置。
 
@@ -92,7 +92,7 @@ ms.locfileid: "70764125"
 
 有关布局管理器的详细信息，请参阅[RecyclerView. LayoutManager 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
 
-### <a name="the-view-holder"></a>视图持有者
+## <a name="the-view-holder"></a>视图持有者
 
 视图占位符是您为缓存视图引用定义的类。 适配器使用这些视图引用将每个视图绑定到其内容。 中的`RecyclerView`每个项都有一个关联的视图持有者实例，该实例将缓存该项的视图引用。 若要创建视图持有者，请使用以下步骤来定义一个类，以便保存每个项目的确切视图集：
 
@@ -103,7 +103,7 @@ ms.locfileid: "70764125"
 [基本 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)中提供`ViewHolder`了实现的详细示例。
 有关的详细信息`RecyclerView.ViewHolder`，请参阅[RecyclerView. ViewHolder 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
 
-### <a name="the-adapter"></a>适配器
+## <a name="the-adapter"></a>适配器
 
 `RecyclerView`集成代码的大部分 "繁重" 操作都在适配器中进行。 `RecyclerView`要求你提供从`RecyclerView.Adapter`派生的适配器以访问数据源，并使用数据源中的内容填充每个项。
 由于数据源是特定于应用的，因此你必须实现可了解如何访问数据的适配器功能。 适配器从数据源中提取信息，并将其加载到集合中的`RecyclerView`每个项。
@@ -123,9 +123,9 @@ ms.locfileid: "70764125"
 
 - **`ItemCount`** &ndash;返回数据源中的项数。
 
-布局管理器在定位中的`RecyclerView`项时调用这些方法。 
+布局管理器在定位中的`RecyclerView`项时调用这些方法。
 
-### <a name="notifying-recyclerview-of-data-changes"></a>向 RecyclerView 通知数据更改
+## <a name="notifying-recyclerview-of-data-changes"></a>向 RecyclerView 通知数据更改
 
 `RecyclerView`不会在其数据源的内容更改时自动更新其显示;数据集发生更改`RecyclerView`时，适配器必须发出通知。 数据集可以通过多种方式进行更改;例如，项目中的内容可能会更改，或者可能会更改数据的整体结构。
 `RecyclerView.Adapter`提供了许多方法，您可以调用`RecyclerView`这些方法以最有效的方式响应数据更改：

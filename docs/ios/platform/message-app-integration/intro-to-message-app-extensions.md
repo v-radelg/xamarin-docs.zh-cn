@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769657"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250137"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的消息应用扩展基础知识
 
@@ -115,9 +115,11 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 
 若要创建自定义不干胶标签，请执行以下操作：
 
+<!-- markdownlint-disable MD001 -->
+
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 开始 Visual Studio for Mac。
+1. 启动 Visual Studio for Mac。
 2. 打开解决方案以将消息应用扩展添加到。
 3. 选择 " **iOS** > **扩展** > **iMessage 扩展**"，然后单击 "**下一步**" 按钮：
 

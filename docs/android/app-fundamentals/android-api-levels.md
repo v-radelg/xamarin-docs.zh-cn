@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 6e2e4cd854e60f6147104b6b1361d0ab7b234370
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fba49e21ac75ec1ebb00614f3891bebaa57a3ed5
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755806"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249754"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 级别
 
@@ -33,6 +33,8 @@ Xamarin 公开了三个 Android API 级别项目设置：
 > [!NOTE]
 > 从2018年8月开始，Google Play 控制台将要求新应用的目标 API 级别为26（Android 8.0）或更高。
 从11月2018开始，需要将现有应用作为目标 API 级别26或更高版本。 有关详细信息，请参阅[在 Google Play 中提高应用程序的安全性和性能](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

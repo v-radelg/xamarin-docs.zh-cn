@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 813bb59cf11f35f69620c30e8ba12281df08df75
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a59f824e1d97966d8d0af92bc9bbcc8d80fcfa4d
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754508"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249930"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging 的远程通知
 
@@ -116,7 +116,7 @@ Android 应用程序必须配置有以下权限，然后才能接收来自 Googl
 </manifest>
 ```
 
-在上面的 XML 中，将*YOUR_PACKAGE_NAME*更改为客户端应用程序项目的包名称。 例如， `com.xamarin.gcmexample` 。 
+在上面的 XML 中，将*YOUR_PACKAGE_NAME*更改为客户端应用程序项目的包名称。 例如 `com.xamarin.gcmexample`。 
 
 ### <a name="check-for-google-play-services"></a>检查 Google Play Services
 
@@ -312,7 +312,7 @@ public RegistrationIntentService() : base ("RegistrationIntentService") { }
 
 的核心功能`RegistrationIntentService`位于`OnHandleIntent`方法中。 让我们演练一下此代码，了解它如何向 GCM 注册我们的应用程序。
 
-##### <a name="request-a-registration-token"></a>请求注册令牌
+#### <a name="request-a-registration-token"></a>请求注册令牌
 
 `OnHandleIntent`首先调用 Google 的[GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;)方法，以从 GCM 请求注册令牌。 我们将此代码包装在`lock`中，以防止多个注册方法`lock`同时&ndash;出现的可能性，从而确保按顺序处理这些意向。 如果我们无法获取注册令牌，则会引发异常，并记录一个错误。 如果注册成功， `token`则将设置为我们从 GCM 返回的注册令牌： 
 
@@ -334,7 +334,7 @@ catch (Exception e)
     Log.Debug ...
 ```
 
-##### <a name="forward-the-registration-token-to-the-app-server"></a>将注册令牌转发到应用服务器
+#### <a name="forward-the-registration-token-to-the-app-server"></a>将注册令牌转发到应用服务器
 
 如果我们获取注册令牌（即未引发异常），我们会调用`SendRegistrationToAppServer`将用户的注册令牌与应用程序维护的服务器端帐户（如果有）相关联。 由于此实现依赖于应用服务器的设计，因此在此处提供了一个空方法： 
 
@@ -347,7 +347,7 @@ void SendRegistrationToAppServer (string token)
 
 在某些情况下，应用服务器不需要用户的注册令牌;在这种情况下，可以省略此方法。 向应用服务器发送注册令牌时， `SendRegistrationToAppServer`应维护一个布尔值以指示令牌是否已发送到服务器。 如果此布尔值为 false `SendRegistrationToAppServer` ，则会将令牌发送到&ndash;应用服务器，否则会将令牌发送到以前调用中的应用服务器。 
 
-##### <a name="subscribe-to-the-notification-topic"></a>订阅通知主题
+#### <a name="subscribe-to-the-notification-topic"></a>订阅通知主题
 
 接下来，我们调用`Subscribe`方法，向 GCM 指出我们想要订阅通知主题。 在`Subscribe`中，我们将调用[GcmPubSub](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) API，以将客户端应用订阅到下面`/topics/global`的所有消息：
 
@@ -398,7 +398,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>通过 GCM 测试注册
 
-让我们完全重新生成并运行该应用程序。 如果成功接收到 GCM 的注册令牌，则应在 "输出" 窗口中显示注册令牌。 例如： 
+让我们完全重新生成并运行该应用程序。 如果成功接收到 GCM 的注册令牌，则应在 "输出" 窗口中显示注册令牌。 例如: 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: a56405aaed84be5015e5d58ef9a13ba8e270ea58
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757537"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250049"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>获取 Google Maps API 密钥
 
@@ -28,6 +28,8 @@ ms.locfileid: "70757537"
 
 若要从 Google 请求地图 API 密钥，需要了解用于对应用程序进行签名的密钥存储的 SHA-1 指纹。
 通常，这意味着你必须确定用于调试密钥存储的 SHA-1 指纹，然后为用于对应用程序进行签名的密钥存储的 SHA-1 指纹进行签名。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

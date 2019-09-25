@@ -6,12 +6,12 @@ ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: f3c30e8edc36c6d92b6fac0bd0e199aa26e16993
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 305c0c939d99207e39a469f7e8c5370cc5555d38
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280928"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249977"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>适用于 iOS/macOS 的 HttpClient 和 SSL/TLS 实现选择器
 
@@ -24,7 +24,7 @@ Xamarin、tvOS 和 xamarin 的**HttpClient 实现选择器**控制要使用的`H
 >
 > 为了确保你的应用程序继续使用这些服务器和服务，**你应该使用如下`NSUrlSession`所示的设置来更新 Xamarin 项目，然后重新生成应用并将其重新部署**到用户。
 
-### <a name="selecting-an-httpclient-stack"></a>选择 HttpClient 堆栈
+## <a name="selecting-an-httpclient-stack"></a>选择 HttpClient 堆栈
 
 若要调整`HttpClient`应用使用的，请执行以下操作：
 

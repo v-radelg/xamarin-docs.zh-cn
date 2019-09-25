@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 8bca2b47212b9effe637dcd2e116630579609b39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cd6458b7d27a50744839fff57b4031943193d7f7
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769420"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250106"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin 中的高级用户通知
 
@@ -65,7 +65,7 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 但是，因为即使是在发送小图像时所涉及的大小，但将其附加到远程通知有效负载是不切实际的。 若要处理这种情况，开发人员可以在 iOS 10 中使用新的服务扩展，从另一个源（如 CloudKit 数据存储）下载映像，并将其附加到通知的内容，然后将其显示给用户。
 
-对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如：
+对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如:
 
 ```csharp
 {
@@ -162,6 +162,8 @@ IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附
 ### <a name="adding-a-notification-content-extension"></a>添加通知内容扩展
 
 若要在 Xamarin iOS 应用中实现自定义用户通知 UI，请执行以下操作：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -359,7 +361,7 @@ namespace MonkeyChatNotifyExtension
 
 由于在调用通知内容扩展之前通知系统已在运行，因此，内容区域将以完全大小开始，并在向用户显示时向下动态显示所请求的大小。
 
-若要消除这种影响， `Info.plist`请在文件中编辑扩展， `UNNotificationExtensionInitialContentSizeRatio`并将`NSExtensionAttributes`键的键设置为类型**Number** ，并将值设置为表示所需的比率。 例如：
+若要消除这种影响， `Info.plist`请在文件中编辑扩展， `UNNotificationExtensionInitialContentSizeRatio`并将`NSExtensionAttributes`键的键设置为类型**Number** ，并将值设置为表示所需的比率。 例如:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -525,7 +527,7 @@ namespace myApp {
 }
 ```
 
-通过将`Server.PostEventResponse`处理程序添加到`DidReceiveNotification`通知内容扩展的方法中，该扩展插件*必须*处理所有自定义操作。 扩展还可以通过更改`UNNotificationContentExtensionResponseOption`将自定义操作转发到包含应用程序。 例如：
+通过将`Server.PostEventResponse`处理程序添加到`DidReceiveNotification`通知内容扩展的方法中，该扩展插件*必须*处理所有自定义操作。 扩展还可以通过更改`UNNotificationContentExtensionResponseOption`将自定义操作转发到包含应用程序。 例如:
 
 ```csharp
 // Close Notification

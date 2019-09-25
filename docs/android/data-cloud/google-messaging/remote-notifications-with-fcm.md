@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ece503ee305fc1319e766ee5ad52ad86cee122bc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754676"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249940"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase 云消息传送的远程通知
 
@@ -51,6 +51,8 @@ _本演练逐步说明如何使用 Firebase Cloud 消息传递 Xamarin Android �
 ### <a name="set-the-package-name"></a>设置包名称
 
 在[Firebase Cloud 消息传递](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)中，你为启用了 FCM 的应用指定了包名称。 此包名称还用作与[API 密钥](firebase-cloud-messaging.md#fcm-in-action-api-key)关联的[*应用程序 ID*](./firebase-cloud-messaging.md#fcm-in-action-app-id) 。 将应用配置为使用此包名称：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -762,7 +764,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-若要完全从 FCM 注销设备，请通过对[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法来删除实例 ID。 例如：
+若要完全从 FCM 注销设备，请通过对[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)类调用[DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)方法来删除实例 ID。 例如:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

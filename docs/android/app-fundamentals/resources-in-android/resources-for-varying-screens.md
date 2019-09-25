@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755048"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249665"
 ---
 # <a name="creating-resources-for-varying-screens"></a>为不同屏幕创建资源
 
@@ -50,6 +50,8 @@ Android 会在运行时将绘图扩展到适当大小。
 声明屏幕大小可确保只有受支持的设备才能下载应用程序。 这是通过在**androidmanifest.xml**文件中设置[支持-网屏](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)元素来完成的。 此元素用于指定应用程序支持的屏幕大小。 如果应用程序可以将其布局正确地放置在填充屏幕上，则将给定屏幕视为受支持。 使用此清单元素，应用程序将不会显示在不满足屏幕规范的设备[*Google Play*](https://play.google.com/)中。 但是，应用程序仍将在具有不受支持的屏幕的设备上运行，但这些布局可能看起来比较模糊和像素化。
 
 支持的屏幕 sixes 在解决方案的**属性/androidmanifest.xml**文件中声明：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

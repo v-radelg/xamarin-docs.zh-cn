@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281208"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249776"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究：Tasky
 
@@ -103,11 +103,11 @@ Tasky 便携使用可移植类库策略来共享通用代码。 请参阅[共享
 
  <a name="References" />
 
-### <a name="references"></a>参考资料
+### <a name="references"></a>reference
 
 可移植类库需要在多个平台上可用，每个平台都具有对平台和框架功能的不同级别的支持。 因此，可使用哪些包和框架库存在限制。 例如，Xamarin 不支持 c # `dynamic`关键字，因此可移植类库不能使用依赖于动态代码的任何包，即使此类代码可在 Android 上运行。 Visual Studio for Mac 将会阻止你添加不兼容的包和引用，但你需要考虑一些限制，以免以后出现惊喜。
 
-注意:你会看到你的项目引用了尚未使用的框架库。 这些引用包含为 Xamarin 项目模板的一部分。 在编译应用程序时，链接进程将删除未引用的代码，因此`System.Xml`即使已引用，它也不会包含在最终的应用程序中，因为我们不使用任何 Xml 函数。
+注意：你会看到你的项目引用了尚未使用的框架库。 这些引用包含为 Xamarin 项目模板的一部分。 在编译应用程序时，链接进程将删除未引用的代码，因此`System.Xml`即使已引用，它也不会包含在最终的应用程序中，因为我们不使用任何 Xml 函数。
 
  <a name="Data_Layer_(DL)" />
 
@@ -263,7 +263,7 @@ path>、适用于 Android 的 "/Documents/TaskDB.db3" 或 Windows Phone 的 "Tas
 
  <a name="References" />
 
-### <a name="references"></a>参考资料
+### <a name="references"></a>reference
 
 IOS 应用引用特定于平台的 SDK 库–例如： Xamarin 和 Monotouch.dialog。
 
@@ -367,7 +367,7 @@ Tasky 使用`MonoTouch.Dialog`的反射 API 显示屏幕，因此`UIViewControll
 
  <a name="References" />
 
-### <a name="references"></a>参考资料
+### <a name="references"></a>reference
 
 Android 应用程序项目必须引用特定于平台的 Xamarin 程序集才能访问 Android SDK 中的类。
 
@@ -426,7 +426,7 @@ Android 应用的用户界面层是代码和 XML 标记的组合。
 
  <a name="References" />
 
-### <a name="references"></a>参考资料
+### <a name="references"></a>reference
 
 特定于平台的项目必须引用特定平台特定的库（例如`Microsoft.Phone`和`System.Windows`），以创建有效的 Windows Phone 应用程序。
 
@@ -475,7 +475,7 @@ MainPage 类使用`TaskListViewModel` XAML 的数据绑定功能来显示数据�
 
  <a name="iOS" />
 
-#### <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 应用程序使用 iOS 标准用户界面设计，如定位在导航栏中的 "添加" 按钮和使用内置**加号（+）** 图标。 它还使用默认`UINavigationController`的 "后退" 按钮行为，并支持表中的 "轻扫到删除"。
 
@@ -483,7 +483,7 @@ MainPage 类使用`TaskListViewModel` XAML 的数据绑定功能来显示数据�
 
  <a name="Android" />
 
-#### <a name="android"></a>Android
+### <a name="android"></a>Android
 
 Android 应用使用内置控件，包括需要显示 "刻度" 的行的内置布局。 除了屏幕上的 "后退" 按钮外，还支持硬件/系统返回行为。
 
@@ -491,7 +491,7 @@ Android 应用使用内置控件，包括需要显示 "刻度" 的行的内置�
 
  <a name="Windows_Phone" />
 
-#### <a name="windows-phone"></a>Windows Phone
+### <a name="windows-phone"></a>Windows Phone
 
 Windows Phone 应用使用标准布局，在屏幕底部填充应用栏，而不是在顶部显示导航栏。
 

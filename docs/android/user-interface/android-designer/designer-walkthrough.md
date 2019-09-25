@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761445"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249991"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin. Android Designer
 
@@ -31,6 +31,8 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 ## <a name="walkthrough"></a>演练
 
 本演练的目的是使用 Android Designer 为示例 color browser 应用创建用户界面。 Color browser 应用显示颜色列表、颜色名称及其 RGB 值。 你将了解如何将小组件添加到**Design Surface** ，以及如何以可视化方式对这些小组件进行布局。 之后，你将了解如何在**Design Surface**上以交互方式修改小组件，或使用设计器的 "**属性**" 窗格。 最后，你将了解到在设备或模拟器上运行应用时，设计的外观。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

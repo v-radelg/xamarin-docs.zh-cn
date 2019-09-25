@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 32f809c5b21e56497328ce00bf49a7337ac0270a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772804"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250047"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -25,6 +25,8 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 ## <a name="creating-the-solution"></a>创建解决方案
 
 若要开始编辑第一个 XAML 文件，请使用 Visual Studio 或 Visual Studio for Mac，以创建新的 Xamarin.Forms 解决方案。 （选择下面与你的环境相对应的选项卡。）
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

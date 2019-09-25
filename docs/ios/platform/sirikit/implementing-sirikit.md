@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27bf22403c9411d300e67bfdaef4aa4dfe74f6e0
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769789"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250185"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin 中实现 SiriKit
 
@@ -43,7 +43,7 @@ MonkeyChat 保留自己的用户朋友的联系人手册，每个与屏幕名称
 
 [![](implementing-sirikit-images/elements01.png "用 SiriKit 关系图扩展应用程序")](implementing-sirikit-images/elements01.png#lightbox)
 
-这些问题包括：
+这些方法包括：
 
 1. **意向扩展**-验证用户的响应，确认应用程序可以处理请求，并实际执行任务以满足用户的请求。
 2. **意向 UI 扩展** - *可选*，为 Siri 环境中的响应提供自定义 ui，并可将应用 ui 和品牌加入 Siri，以丰富用户的体验。
@@ -66,6 +66,8 @@ SiriKit 是基于扩展构建的，但是，在将任何扩展添加到应用之
 在示例应用 MonkeyChat 的情况下，数据模型和处理代码（如网络和数据库访问）将移到本机库。
 
 请执行以下操作：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -296,7 +298,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 ### <a name="localization-and-siri"></a>本地化和 Siri
 
-在 iOS 设备上，用户可以选择与系统默认值不同的 Siri 语言。 使用本地化数据时，应用程序将需要使用`SiriLanguageCode` `INPreferences`类的方法从 Siri 获取语言代码。 例如：
+在 iOS 设备上，用户可以选择与系统默认值不同的 Siri 语言。 使用本地化数据时，应用程序将需要使用`SiriLanguageCode` `INPreferences`类的方法从 Siri 获取语言代码。 例如:
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();

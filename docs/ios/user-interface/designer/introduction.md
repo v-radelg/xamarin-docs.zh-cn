@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768927"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250140"
 ---
 # <a name="ios-designer-basics"></a>iOS 设计器基础知识
 
@@ -35,6 +35,8 @@ IOS 设计器可用于 Visual Studio for Mac 和 Visual Studio 2017 及更高版
 使用 iOS 设计器，开发人员可直观地设计应用程序的用户界面。 如情节提要指南[简介](~/ios/user-interface/storyboards/index.md)中所述，storyboard 介绍了构成应用的屏幕（视图控制器）、放置在这些视图控制器上的界面元素（视图）以及应用的整个导航流。 
 
 视图控制器有两部分： iOS 设计器中的可视化表示形式和关联C#类：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
