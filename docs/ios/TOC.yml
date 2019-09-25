@@ -244,7 +244,7 @@
       items:
         - name: 概述
           href: platform/index.md
-        - name: iOS 13 预览版
+        - name: iOS 13
           items:
             - name: iOS 13 简介
               href: platform/ios13/index.md
@@ -254,6 +254,8 @@
               href: platform/ios13/dark-mode.md
             - name: 使用 Apple 登录
               href: platform/ios13/sign-in.md
+            - name: 适用于 iPad 的多个窗口
+              href: platform/ios13/multi-window-ipad.md
             - name: 疑难解答
               href: platform/ios13/troubleshooting/index.md
         - name: iOS 12
