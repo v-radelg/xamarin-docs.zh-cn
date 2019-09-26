@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770161"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>xib-在 Xamarin 中的用户界面设计更少
@@ -294,7 +294,7 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>在代码中将 UI 元素添加到窗口
 
-无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口，有时都可能需要将 UI 元素从代码添加到窗口。 例如：
+无论是在代码中创建窗口还是从情节提要或 xib 文件加载窗口，有时都可能需要将 UI 元素从代码添加到窗口。 例如:
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){

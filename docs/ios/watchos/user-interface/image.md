@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769961"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin 中的 watchOS 图像控件
@@ -72,7 +72,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-## <a name="animations"></a>Animations
+## <a name="animations"></a>动画
 
 若要对一组图像进行动画处理，它们应该以相同的前缀开头并且具有数字后缀。
 

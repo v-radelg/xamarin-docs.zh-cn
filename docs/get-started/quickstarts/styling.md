@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70756759"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>样式跨平台 Xamarin. Forms 应用程序
@@ -26,8 +26,8 @@ ms.locfileid: "70756759"
 
 快速入门演示如何使用 XAML 样式为跨平台 Xamarin 应用程序应用程序进行样式。 最终的应用程序如下所示：
 
-[ ![(styling-images/screenshots1-sml.png "")]备注页](styling-images/screenshots1.png#lightbox "备注页")便笺条目页面(styling-images/screenshots2.png#lightbox "备注输入页") [ ![(styling-images/screenshots2-sml.png " ")]] 
-
+[![](styling-images/screenshots1-sml.png "备注")](styling-images/screenshots1.png#lightbox "备注页")页
+备注[输入(styling-images/screenshots2-sml.png "")页![]](styling-images/screenshots2.png#lightbox "便笺条目页面")
 
 ### <a name="prerequisites"></a>系统必备
 
@@ -318,7 +318,7 @@ ms.locfileid: "70756759"
 
 ## <a name="next-steps"></a>后续步骤
 
-在本快速入门中，你学习了如何：
+在本快速入门中, 你学习了如何:
 
 - 使用 XAML 样式为 Xamarin 应用程序应用样式。
 

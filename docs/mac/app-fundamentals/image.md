@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
 ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770327"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin 中的映像
@@ -341,7 +341,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 ## <a name="using-images-with-outline-views"></a>使用带有大纲视图的图像
 
-若要`NSOutlineView`在中包含图像作为单元的一部分，需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式，以使用`NSTableCellView`而不是典型`NSTextField`的。 例如：
+若要`NSOutlineView`在中包含图像作为单元的一部分，需要更改大纲视图的`NSTableViewDelegate's` `GetView`方法返回数据的方式，以使用`NSTableCellView`而不是典型`NSTextField`的。 例如:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

@@ -1,6 +1,6 @@
 ---
-title: SkiaSharp 独立于平台的示例
-description: 本文档提供了简要介绍了核心 SkiaSharp 概念。 具体而言，它讨论了获取并在 SKCanvas 上绘制。
+title: 独立于平台的 SkiaSharp 示例
+description: 本文档简要介绍了核心 SkiaSharp 的概念。 具体而言，它讨论了如何在 SKCanvas 上获取和绘制。
 ms.prod: xamarin
 ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
@@ -8,21 +8,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
 ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158884"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "64749923"
 ---
-# <a name="skiasharp-platform-independent-examples"></a>SkiaSharp 独立于平台的示例
+# <a name="skiasharp-platform-independent-examples"></a>独立于平台的 SkiaSharp 示例
 
-_这提供了独立于平台的简介 SkiaSharp 背后的概念_
+_这为 SkiaSharp 背后的概念提供了一个与平台无关的简短介绍。_
 
-SkiaSharp 提供了丰富且功能强大 2D 图形 API，可用于呈现到 2D 的缓冲区。  您可以使用这些实现自定义用户界面元素，并可以合并到你的应用程序的 2D 图形。 SkiaSharp 是绑定到的.NET [Skia](https://skia.org)库和继承的功能和此库的能力。
+SkiaSharp 提供了丰富且功能强大的2D 图形 API，可用于呈现为2D 缓冲区。  您可以使用这些内容来实现可合并到您的应用程序中的自定义用户界面元素和二维图形。 SkiaSharp 是一个到[Skia](https://skia.org)库的 .net 绑定，它继承了此库的功能和能力。
 
-库是目前跨平台以[NuGet 包](https://www.nuget.org/packages/SkiaSharp)，您可以通过添加 NuGet 引用将它添加到你的项目。
+库当前以跨平台[NuGet 包](https://www.nuget.org/packages/SkiaSharp)的形式提供，你可以通过添加 NuGet 引用将其添加到你的项目中。
 
-若要绘制，你的代码将创建`SkCanvas`它描述了将执行绘制操作的图面。
+为了进行绘制，你的代码将`SkCanvas`创建一个，它描述了将发生绘图操作的图面。
 
 ## <a name="obtaining-an-skcanvas"></a>获取 SKCanvas
 
@@ -34,15 +34,15 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 }
 ```
 
-## <a name="drawing-on-skcanvas"></a>在 SKCanvas 上绘制
+## <a name="drawing-on-skcanvas"></a>在 SKCanvas 上绘图
 
-`SKCanvas`使用绘制模型在精神上类似于其他绘制模型，您可能熟悉，它使用可选的透明度通道使用的颜色，并可以绘制线条、 弧线、 文本和图像。
+`SKCanvas`使用与您可能熟悉的其他绘图模型相似的绘图模型，它使用带有可选透明度通道的颜色，并且可以绘制线条、弧形、文本和图像。
 
-以下是一些可以使用 SkiaSharp 许多不同的事物。  以下变量示例中`canvas`SKCanvas 类型。
+下面只是使用 SkiaSharp 可以完成的几个不同的操作。  在下面的示例中， `canvas`变量的类型为 SKCanvas。
 
 ### <a name="drawing-xamagon"></a>绘制 Xamagon
 
-此示例中绘制 Xamarin 的 Xamagon 徽标：
+此示例在 Xamagon 中绘制 Xamarin 的徽标：
 
 ```csharp
 // clear the canvas / fill with white
@@ -95,7 +95,7 @@ using (var paint = new SKPaint ()) {
 }
 ```
 
-### <a name="drawing-bitmaps"></a>绘制位图
+### <a name="drawing-bitmaps"></a>绘图位图
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png");
@@ -111,7 +111,7 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-### <a name="drawing-with-image-filters"></a>使用映像筛选器进行绘制
+### <a name="drawing-with-image-filters"></a>用图像筛选器绘制
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png"); // open a stream to an image file
@@ -135,4 +135,4 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>详细信息
 
-有关使用 SkiaSharp 详细信息可在[API 文档](https://docs.microsoft.com/dotnet/api/skiasharp)
+有关使用 SkiaSharp 的详细信息，请参阅[API 文档](https://docs.microsoft.com/dotnet/api/skiasharp)

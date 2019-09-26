@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
 ms.openlocfilehash: 7847148551c20dbcf49bcc263bdc50716a6ef14e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70283174"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 安全和隐私功能
@@ -26,10 +26,10 @@ Apple 在 iOS 10 （及更高版本）中对安全和隐私进行了多项改进
 
 IOS 10 中对安全和隐私进行了以下常规更改：
 
-- Common Data Security 体系结构（CDSA） API 已弃用，应该替换为 SecKey API 以生成非对称密钥。
+- Common Data Security 体系结构 (CDSA) API 已弃用, 应该替换为 SecKey API 以生成非对称密钥。
 - 新`NSAllowsArbitraryLoadsInWebContent`密钥可以添加到应用的**info.plist**文件中，并允许在应用程序的其余部分仍启用 Apple 传输安全（ATS）保护时正确加载网页。 有关详细信息，请参阅我们的[应用传输安全](~/ios/app-fundamentals/ats.md)文档。
-- 由于 iOS 10 和 macOS Sierra 中的新剪贴板允许用户在设备之间进行复制和粘贴，因此已将 API 扩展为允许将剪贴板限制为特定设备，并在给定的时间戳自动清除。 此外，已命名的 pasteboards 不再保留，并且应替换为共享粘贴板容器。
-- 对于所有 SSL/TLS 连接，默认情况下，RC4 对称密码处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，并且建议开发人员尽快使用 SHA-1 和3DES 加密。
+- 由于 iOS 10 和 macOS Sierra 中的新剪贴板允许用户在设备之间进行复制和粘贴, 因此已将 API 扩展为允许将剪贴板限制为特定设备, 并在给定的时间戳自动清除。 此外, 已命名的 pasteboards 不再保留, 并且应替换为共享粘贴板容器。
+- 对于所有 SSL/TLS 连接, 默认情况下, RC4 对称密码处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，并且建议开发人员尽快使用 SHA-1 和3DES 加密。
 
 <a name="Accessing-Private-User-Data" />
 

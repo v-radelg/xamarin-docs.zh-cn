@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68652316"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms 和 Azure 认知服务简介
@@ -52,7 +52,7 @@ _Microsoft 认知服务是一组 Api、 Sdk 和适用于开发人员可以通过
 
 ## <a name="understand-the-application-anatomy"></a>了解应用程序解析
 
-示例应用程序的共享代码项目包含五个主要文件夹:
+示例应用程序的共享代码项目包含五个主要文件夹：
 
 |文件夹|目标|
 |--- |--- |
@@ -62,7 +62,7 @@ _Microsoft 认知服务是一组 Api、 Sdk 和适用于开发人员可以通过
 |Utils|包含`Timer`类，该类用于通过`AuthenticationService`类，以续订时间间隔为 9 分钟的 JWT 访问令牌。|
 |Views|包含应用程序页。|
 
-共享代码项目还包含一些重要文件:
+共享代码项目还包含一些重要文件：
 
 |文件|目标|
 |--- |--- |
@@ -107,7 +107,7 @@ public class TodoItem
 
 ### <a name="platform-project-implementations"></a>平台项目实现
 
-共享`Services`代码项目中的文件夹`IFileHelper`包含`DependencyService`类使用的`IAudioRecorderService`和接口, 这些类用于在平台项目中查找实现接口的类。
+共享`Services`代码项目中的文件夹`IFileHelper`包含`DependencyService`类使用的`IAudioRecorderService`和接口，这些类用于在平台项目中查找实现接口的类。
 
 `IFileHelper`接口由实现`FileHelper`每个平台项目中的类。 此类包含单个方法`GetLocalFilePath`，这会返回存储的 SQLite 数据库的本地文件路径。
 

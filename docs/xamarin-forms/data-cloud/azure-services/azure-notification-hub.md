@@ -8,19 +8,19 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
 ms.openlocfilehash: c4237e9315ccc095abc72fdec24d58ffe1faebdf
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739225"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>通过 Azure 通知中心和 Xamarin 发送和接收推送通知
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
-推送通知将来自后端系统的信息传送到移动应用程序。 Apple、Google 和其他平台都有自己的推送通知服务 (PNS)。 利用 Azure 通知中心, 你可以跨平台集中传递通知, 使后端应用程序能够与单个集线器通信, 这会将通知分发到每个平台特定的 PNS。
+推送通知将来自后端系统的信息传送到移动应用程序。 Apple、Google 和其他平台都有自己的推送通知服务（PNS）。 利用 Azure 通知中心，你可以跨平台集中传递通知，使后端应用程序能够与单个集线器通信，这会将通知分发到每个平台特定的 PNS。
 
-按照以下步骤将 Azure 通知中心集成到移动应用中:
+按照以下步骤将 Azure 通知中心集成到移动应用中：
 
 1. [设置推送 Notification Services 和 Azure 通知中心](#set-up-push-notification-services-and-azure-notification-hub)。
 1. [了解如何使用模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)。
@@ -32,47 +32,47 @@ ms.locfileid: "68739225"
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>设置推送 Notification Services 和 Azure 通知中心
 
-将 Azure 通知中心与 Xamarin 移动应用集成类似于将 Azure 通知中心与 Xamarin 本机应用程序集成。 按照[使用 Azure 通知中心向 Xamarin 推送通知](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)中的 Firebase 控制台步骤设置**FCM 应用程序**。 使用 Xamarin Android 教程完成以下步骤:
+将 Azure 通知中心与 Xamarin 移动应用集成类似于将 Azure 通知中心与 Xamarin 本机应用程序集成。 按照[使用 Azure 通知中心向 Xamarin 推送通知](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)中的 Firebase 控制台步骤设置**FCM 应用程序**。 使用 Xamarin Android 教程完成以下步骤：
 
-1. 定义 Android 包名称 (如`com.xamarin.notifysample`), 该名称在示例中使用。
+1. 定义 Android 包名称（如`com.xamarin.notifysample`），该名称在示例中使用。
 1. 从 Firebase 控制台下载**google-services。** 你将在以后的步骤中将此文件添加到 Android 应用程序。
-1. 创建 Azure 通知中心实例, 并为其指定名称。 本文和示例使用`xdocsnotificationhub`作为中心名称。
-1. 复制 FCM **Server 密钥**, 并将其保存为 Azure 通知中心内**Google (GCM/FCM)** 下的**API 密钥**。
+1. 创建 Azure 通知中心实例，并为其指定名称。 本文和示例使用`xdocsnotificationhub`作为中心名称。
+1. 复制 FCM **Server 密钥**，并将其保存为 Azure 通知中心内**Google （GCM/FCM）** 下的**API 密钥**。
 
-以下屏幕截图显示了 Azure 通知中心中的 Google 平台配置:
+以下屏幕截图显示了 Azure 通知中心中的 Google 平台配置：
 
 ![Azure 通知中心 Google 配置的屏幕截图](azure-notification-hub-images/fcm-notification-hub-config.png "Azure 通知中心 Google 配置")
 
-需要 macOS 计算机才能完成 iOS 设备的设置。 按照[使用 Azure 通知中心向 Xamarin IOS 推送通知](/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started#generate-the-certificate-signing-request-file)中的初始步骤来设置 APNS。 使用 Xamarin iOS 教程完成以下步骤:
+需要 macOS 计算机才能完成 iOS 设备的设置。 按照[使用 Azure 通知中心向 Xamarin IOS 推送通知](/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started#generate-the-certificate-signing-request-file)中的初始步骤来设置 APNS。 使用 Xamarin iOS 教程完成以下步骤：
 
 1. 定义 iOS 捆绑标识符。 本文和示例使用`com.xamarin.notifysample`作为捆绑标识符。
-1. 创建证书签名请求 (CSR) 文件, 并使用它来生成推送通知证书。
-1. 在 Azure 通知中心中的**Apple (APNS)** 下上传推送通知证书。
+1. 创建证书签名请求（CSR）文件，并使用它来生成推送通知证书。
+1. 在 Azure 通知中心中的**Apple （APNS）** 下上传推送通知证书。
 
-以下屏幕截图显示了 Azure 通知中心的 Apple 平台配置:
+以下屏幕截图显示了 Azure 通知中心的 Apple 平台配置：
 
 ![Azure 通知中心 Apple 配置的屏幕截图](azure-notification-hub-images/apns-notification-hub-config.png "Azure 通知中心 Apple 配置")
 
 ## <a name="register-templates-and-tags-with-the-azure-notification-hub"></a>将模板和标记注册到 Azure 通知中心
 
-Azure 通知中心要求移动应用程序向中心注册、定义模板并订阅标记。 注册将平台特定的 PNS 句柄链接到 Azure 通知中心内的标识符。 若要了解有关注册的详细信息, 请参阅[注册管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management)。
+Azure 通知中心要求移动应用程序向中心注册、定义模板并订阅标记。 注册将平台特定的 PNS 句柄链接到 Azure 通知中心内的标识符。 若要了解有关注册的详细信息，请参阅[注册管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management)。
 
-模板允许设备指定参数化消息模板。 可以按每个设备、每个标记自定义传入消息。 若要了解有关模板的详细信息, 请参阅[模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)。
+模板允许设备指定参数化消息模板。 可以按每个设备、每个标记自定义传入消息。 若要了解有关模板的详细信息，请参阅[模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)。
 
-标记可用于订阅消息类别, 如新闻、体育和天气。 为简单起见, 示例应用程序将定义一个默认模板, 其中包含`messageParam`一个名为的参数`default`和一个名为的标记。 在更复杂的系统中, 用户特定标记可用于在设备上向用户发送个性化通知。 若要了解有关标记的详细信息, 请参阅[路由和标记表达式](/azure/notification-hubs/notification-hubs-tags-segment-push-message)。
+标记可用于订阅消息类别，如新闻、体育和天气。 为简单起见，示例应用程序将定义一个默认模板，其中包含`messageParam`一个名为的参数`default`和一个名为的标记。 在更复杂的系统中，用户特定标记可用于在设备上向用户发送个性化通知。 若要了解有关标记的详细信息，请参阅[路由和标记表达式](/azure/notification-hubs/notification-hubs-tags-segment-push-message)。
 
-若要成功接收消息, 每个本机应用程序必须执行以下步骤:
+若要成功接收消息，每个本机应用程序必须执行以下步骤：
 
 1. 从平台 PNS 获取 PNS 句柄或令牌。
 1. 向 Azure 通知中心注册 PNS 句柄。
 1. 指定包含与传出消息相同参数的模板。
 1. 订阅传出消息的目标标记。
 
-在为通知[配置 Android 应用程序](#configure-the-android-application-for-notifications)和[为通知配置 iOS](#configure-ios-for-notifications)部分中的每个平台, 详细介绍了这些步骤。
+在为通知[配置 Android 应用程序](#configure-the-android-application-for-notifications)和[为通知配置 iOS](#configure-ios-for-notifications)部分中的每个平台，详细介绍了这些步骤。
 
 ## <a name="xamarinforms-application-functionality"></a>Xamarin. Forms 应用程序功能
 
-示例 Xamarin 窗体应用程序显示一系列推送通知消息。 这是通过`AddMessage`方法实现的, 该方法将指定的推送通知消息添加到 UI。 此方法还可防止将重复的消息添加到 UI, 并在主线程上运行, 以便可以从任何线程调用它。 下面的代码演示了 `AddMessage` 方法：
+示例 Xamarin 窗体应用程序显示一系列推送通知消息。 这是通过`AddMessage`方法实现的，该方法将指定的推送通知消息添加到 UI。 此方法还可防止将重复的消息添加到 UI，并在主线程上运行，以便可以从任何线程调用它。 下面的代码演示了 `AddMessage` 方法：
 
 ```csharp
 public void AddMessage(string message)
@@ -97,7 +97,7 @@ public void AddMessage(string message)
 }
 ```
 
-该示例应用程序包含一个**AppConstants.cs**文件, 该文件定义了平台项目使用的属性。 此文件需要通过 Azure 通知中心的值进行自定义。 以下代码显示了**AppConstants.cs**文件:
+该示例应用程序包含一个**AppConstants.cs**文件，该文件定义了平台项目使用的属性。 此文件需要通过 Azure 通知中心的值进行自定义。 以下代码显示了**AppConstants.cs**文件：
 
 ```csharp
 public static class AppConstants
@@ -112,36 +112,36 @@ public static class AppConstants
 }
 ```
 
-自定义中`AppConstants`的以下值, 将示例应用程序连接到 Azure 通知中心:
+自定义中`AppConstants`的以下值，将示例应用程序连接到 Azure 通知中心：
 
 * `NotificationHubName`：使用在 Azure 门户中创建的 Azure 通知中心的名称。
 * `ListenConnectionString`：此值位于 Azure 通知中心的 "**访问策略**" 下。
 
-以下屏幕截图显示了这些值在 Azure 门户中的位置:
+以下屏幕截图显示了这些值在 Azure 门户中的位置：
 
 ![Azure 通知中心访问策略的屏幕截图](azure-notification-hub-images/notification-hub-access-policy.png "Azure 通知中心访问策略")
 
 ## <a name="configure-the-android-application-for-notifications"></a>配置 Android 应用程序以获取通知
 
-完成以下步骤以配置 Android 应用程序以接收和处理通知:
+完成以下步骤以配置 Android 应用程序以接收和处理通知：
 
 1. 在 Firebase 控制台中配置 Android**包名称**以匹配包名称。
-1. 安装以下 NuGet 包, 以便与 Google Play Firebase 和 Azure 通知中心进行交互:
+1. 安装以下 NuGet 包，以便与 Google Play Firebase 和 Azure 通知中心进行交互：
     1. GooglePlayServices。
     1. Firebase。
     1. Xamarin.Azure.NotificationHubs.Android.
-1. 将在 FCM 安装过程中下载的`GoogleServicesJson`文件复制到项目中,并将生成操作设置为。`google-services.json`
+1. 将在 FCM 安装过程中下载的`GoogleServicesJson`文件复制到项目中，并将生成操作设置为。`google-services.json`
 1. [配置 androidmanifest.xml 以与 Firebase 进行通信](#configure-android-manifest)。
 1. [使用`FirebaseInstanceIdService`Firebase 和 Azure 通知中心注册应用程序](#register-using-a-custom-firebaseinstanceidservice)。
 1. [使用`FirebaseMessagingService`处理消息](#process-messages-with-a-firebasemessagingservice)。
 1. [向 XAMARIN UI 添加传入通知](#add-incoming-notifications-to-the-xamarinforms-ui)。
 
 > [!NOTE]
-> **GoogleServicesJson**生成操作是**GooglePlayServices** NuGet 包的一部分。 Visual Studio 2019 在启动过程中设置可用的生成操作。 如果看不到**GoogleServicesJson**作为生成操作, 请在安装 NuGet 包后重启 Visual Studio 2019。
+> **GoogleServicesJson**生成操作是**GooglePlayServices** NuGet 包的一部分。 Visual Studio 2019 在启动过程中设置可用的生成操作。 如果看不到**GoogleServicesJson**作为生成操作，请在安装 NuGet 包后重启 Visual Studio 2019。
 
 ### <a name="configure-android-manifest"></a>配置 Android 清单
 
-元素中的元素允许应用程序与 Firebase 进行通信。 `receiver` `application` `uses-permission`元素允许应用处理消息并将其注册到 Azure 通知中心。 完整的**androidmanifest.xml**应类似于以下示例:
+元素中的元素允许应用程序与 Firebase 进行通信。 `receiver` `application` `uses-permission`元素允许应用处理消息并将其注册到 Azure 通知中心。 完整的**androidmanifest.xml**应类似于以下示例：
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
@@ -165,11 +165,11 @@ public static class AppConstants
 
 ### <a name="register-using-a-custom-firebaseinstanceidservice"></a>使用自定义 FirebaseInstanceIdService 注册
 
-Firebase 在 PNS 上颁发唯一标识设备的令牌。 令牌具有较长的生存期, 但偶尔会刷新。 发出或刷新令牌时, 应用程序需要向 Azure 通知中心注册其新令牌。 注册由派生自`FirebaseInstanceIdService`的类的实例进行处理。
+Firebase 在 PNS 上颁发唯一标识设备的令牌。 令牌具有较长的生存期，但偶尔会刷新。 发出或刷新令牌时，应用程序需要向 Azure 通知中心注册其新令牌。 注册由派生自`FirebaseInstanceIdService`的类的实例进行处理。
 
-在示例应用程序中`FirebaseRegistrationService` , 类继承`FirebaseInstanceIdService`自。 此类具有一个`IntentFilter` , 它`com.google.firebase.INSTANCE_ID_EVENT`包含, 允许 Android OS 在令牌由`OnTokenRefresh` Firebase 颁发时自动调用。
+在示例应用程序中`FirebaseRegistrationService` ，类继承`FirebaseInstanceIdService`自。 此类具有一个`IntentFilter` ，它`com.google.firebase.INSTANCE_ID_EVENT`包含，允许 Android OS 在令牌由`OnTokenRefresh` Firebase 颁发时自动调用。
 
-下面的代码演示了示例`FirebaseInstanceIdService`应用程序中的自定义:
+下面的代码演示了示例`FirebaseInstanceIdService`应用程序中的自定义：
 
 ```csharp
 [Service]
@@ -209,13 +209,13 @@ public class FirebaseRegistrationService : FirebaseInstanceIdService
 }
 ```
 
-中的`SendRegistrationToServer`方法使用 Azure 通知中心注册设备,并使用模板订阅标记。`FirebaseRegistrationClass` 该示例应用程序定义了一个名`default`为的标记和一个在**AppConstants.cs**文件`messageParam`中调用单个参数的模板。 有关注册、标记和模板的详细信息, 请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)
+中的`SendRegistrationToServer`方法使用 Azure 通知中心注册设备，并使用模板订阅标记。`FirebaseRegistrationClass` 该示例应用程序定义了一个名`default`为的标记和一个在**AppConstants.cs**文件`messageParam`中调用单个参数的模板。 有关注册、标记和模板的详细信息，请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)
 
 ### <a name="process-messages-with-a-firebasemessagingservice"></a>使用 FirebaseMessagingService 处理消息
 
-传入的消息将路由到`FirebaseMessagingService`实例, 在该实例中, 可以将这些消息转换为本地通知。 示例应用程序中的 Android 项目包含从`FirebaseService` `FirebaseMessagingService`继承的名为的类。 此类具有一个`IntentFilter` , 它`com.google.firebase.MESSAGING_EVENT`包含, 允许 Android OS 在收到推送`OnMessageReceived`通知消息时自动调用。
+传入的消息将路由到`FirebaseMessagingService`实例，在该实例中，可以将这些消息转换为本地通知。 示例应用程序中的 Android 项目包含从`FirebaseService` `FirebaseMessagingService`继承的名为的类。 此类具有一个`IntentFilter` ，它`com.google.firebase.MESSAGING_EVENT`包含，允许 Android OS 在收到推送`OnMessageReceived`通知消息时自动调用。
 
-下面的示例演示了`FirebaseService`示例应用程序的:
+下面的示例演示了`FirebaseService`示例应用程序的：
 
 ```csharp
 [Service]
@@ -276,16 +276,16 @@ public class FirebaseService : FirebaseMessagingService
 }
 ```
 
-使用`SendLocalNotification`方法将传入消息转换为本地通知。 此方法创建一个新`Intent`的, 并将消息内容置于`Intent`中作为`string` `Extra`。 当用户点击本地通知时, 无论应用处于前台还是后台, `MainActivity`都将启动并`Intent`通过对象访问消息内容。
+使用`SendLocalNotification`方法将传入消息转换为本地通知。 此方法创建一个新`Intent`的，并将消息内容置于`Intent`中作为`string` `Extra`。 当用户点击本地通知时，无论应用处于前台还是后台， `MainActivity`都将启动并`Intent`通过对象访问消息内容。
 
-本地通知和`Intent`示例要求用户执行点击通知的操作。 当用户在应用程序状态发生更改之前应采取措施时, 这是理想的做法。 但是, 在某些情况下, 你可能需要访问消息数据而无需用户操作。 前面的示例还`MainPage` `SendMessageToMainPage`通过方法将消息直接发送到当前实例。 在生产环境中, 如果对一种消息类型实现这两种`MainPage`方法, 则当用户点击通知时, 对象将收到重复的消息。
+本地通知和`Intent`示例要求用户执行点击通知的操作。 当用户在应用程序状态发生更改之前应采取措施时，这是理想的做法。 但是，在某些情况下，你可能需要访问消息数据而无需用户操作。 前面的示例还`MainPage` `SendMessageToMainPage`通过方法将消息直接发送到当前实例。 在生产环境中，如果对一种消息类型实现这两种`MainPage`方法，则当用户点击通知时，对象将收到重复的消息。
 
 > [!NOTE]
-> 如果 Android 应用程序在后台或前台运行, 则它将仅接收推送通知。 若要在主`Activity`服务器未运行时接收推送通知, 你必须实现一种服务, 该服务超出了此示例的范围。 有关详细信息, 请参阅[创建 Android 服务](/xamarin/android/app-fundamentals/services/)
+> 如果 Android 应用程序在后台或前台运行，则它将仅接收推送通知。 若要在主`Activity`服务器未运行时接收推送通知，你必须实现一种服务，该服务超出了此示例的范围。 有关详细信息，请参阅[创建 Android 服务](/xamarin/android/app-fundamentals/services/)
 
 ### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>向 Xamarin UI 添加传入通知
 
-类`MainActivity`需要获取处理通知和管理传入消息数据的权限。 以下代码显示了完整`MainActivity`的实现:
+类`MainActivity`需要获取处理通知和管理传入消息数据的权限。 以下代码显示了完整`MainActivity`的实现：
 
 ```csharp
 [Activity(Label = "NotificationHubSample", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
@@ -356,28 +356,28 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
 
-属性将应用程序`LaunchMode`设置为`SingleTop`。 `Activity` 此启动模式告知 Android OS 仅允许此活动的单个实例。 使用此启动模式, 会`Intent`将传入数据路由`OnNewIntent`到方法, 该方法提取消息数据`MainPage` , 并通过`AddMessage`方法将消息数据发送到实例。 如果你的应用程序使用不同的启动模式, 则`Intent`它必须以不同方式处理数据。
+属性将应用程序`LaunchMode`设置为`SingleTop`。 `Activity` 此启动模式告知 Android OS 仅允许此活动的单个实例。 使用此启动模式，会`Intent`将传入数据路由`OnNewIntent`到方法，该方法提取消息数据`MainPage` ，并通过`AddMessage`方法将消息数据发送到实例。 如果你的应用程序使用不同的启动模式，则`Intent`它必须以不同方式处理数据。
 
 方法使用调用`IsPlayServiceAvailable`的帮助器方法来确保设备支持 Google Play 服务。 `OnCreate` 不支持 Google Play 服务的仿真器或设备无法从 Firebase 接收推送通知。
 
 ## <a name="configure-ios-for-notifications"></a>为通知配置 iOS
 
-配置 iOS 应用程序以接收通知的过程如下:
+配置 iOS 应用程序以接收通知的过程如下：
 
-1. 在**info.plist**文件中配置**捆绑标识符**, 使其与预配配置文件中使用的值匹配。
+1. 在**info.plist**文件中配置**捆绑标识符**，使其与预配配置文件中使用的值匹配。
 1. 将 "**启用推送通知**" 选项添加到**info.plist**文件。
 1. 将**NotificationHubs** NuGet 包添加到项目。
 1. [用 APNS 注册通知](#register-for-notifications-with-apns)。
 1. [向 Azure 通知中心注册应用程序并订阅标记](#register-with-azure-notification-hub-and-subscribe-to-tags)。
 1. [向 XAMARIN UI 添加 APNS 通知](#add-apns-notifications-to-xamarinforms-ui)。
 
-以下屏幕截图显示了在 Visual Studio 中的**info.plist**文件中选择的 "**启用推送通知**" 选项:
+以下屏幕截图显示了在 Visual Studio 中的**info.plist**文件中选择的 "**启用推送通知**" 选项：
 
 ![推送通知权限的屏幕截图](azure-notification-hub-images/push-notification-entitlement.png "推送通知权限")
 
 ### <a name="register-for-notifications-with-apns"></a>用 APNS 注册通知
 
-必须`FinishedLaunching`重写**AppDelegate.cs**文件中的方法, 以便注册远程通知。 注册因设备上使用的 iOS 版本的不同而异。 示例应用程序中的 iOS 项目将重`FinishedLaunching`写要调用`RegisterForRemoteNotifications`的方法, 如以下示例中所示:
+必须`FinishedLaunching`重写**AppDelegate.cs**文件中的方法，以便注册远程通知。 注册因设备上使用的 iOS 版本的不同而异。 示例应用程序中的 iOS 项目将重`FinishedLaunching`写要调用`RegisterForRemoteNotifications`的方法，如以下示例中所示：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -425,14 +425,14 @@ void RegisterForRemoteNotifications()
 
 ### <a name="register-with-azure-notification-hub-and-subscribe-to-tags"></a>向 Azure 通知中心注册并订阅标记
 
-当设备在`FinishedLaunching`方法中成功注册远程通知时, iOS 将`RegisteredForRemoteNotifications`调用方法。 应重写此方法, 以执行以下操作:
+当设备在`FinishedLaunching`方法中成功注册远程通知时，iOS 将`RegisteredForRemoteNotifications`调用方法。 应重写此方法，以执行以下操作：
 
 1. 实例化`SBNotificationHub`。
 1. 取消注册任何现有注册。
 1. 将设备注册到通知中心。
 1. 使用模板订阅特定标记。
 
-有关注册设备、模板和标记的详细信息, 请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)。 下面的代码演示如何注册设备和模板:
+有关注册设备、模板和标记的详细信息，请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)。 下面的代码演示如何注册设备和模板：
 
 ```csharp
 public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
@@ -473,11 +473,11 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 ```
 
 > [!NOTE]
-> 在没有网络连接的情况下, 注册远程通知可能会失败。 您可以选择重写`FailedToRegisterForRemoveNotifications`方法来处理注册失败。
+> 在没有网络连接的情况下，注册远程通知可能会失败。 您可以选择重写`FailedToRegisterForRemoveNotifications`方法来处理注册失败。
 
 ### <a name="add-apns-notifications-to-xamarinforms-ui"></a>向 Xamarin UI 添加 APNS 通知
 
-当设备收到远程通知时, iOS 将`ReceivedRemoteNotification`调用方法。 传入消息 JSON 转换`NSDictionary`为对象, `ProcessNotification`方法从字典中提取值并将它们发送`MainPage`到 Xamarin 实例。 `ProcessNotification`重写`ReceivedRemoteNotifications`方法以进行调用, 如以下代码所示:
+当设备收到远程通知时，iOS 将`ReceivedRemoteNotification`调用方法。 传入消息 JSON 转换`NSDictionary`为对象， `ProcessNotification`方法从字典中提取值并将它们发送`MainPage`到 Xamarin 实例。 `ProcessNotification`重写`ReceivedRemoteNotifications`方法以进行调用，如以下代码所示：
 
 ```csharp
 public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
@@ -515,19 +515,19 @@ void ProcessNotification(NSDictionary options, bool fromFinishedLaunching)
 
 ## <a name="test-notifications-in-the-azure-portal"></a>Azure 门户中的测试通知
 
-利用 Azure 通知中心, 你可以检查应用程序是否可以接收测试消息。 通过通知中心的 "**测试发送**" 部分, 可以选择目标平台并发送消息。 如果将**发送到标记表达式**设置`default`为, 则会将消息发送到已注册了`default`标记模板的应用程序。 单击 "**发送**" 按钮将生成一个报表, 其中包含与该消息连接的设备数。 以下屏幕截图显示了 Azure 门户中的 Android 通知测试:
+利用 Azure 通知中心，你可以检查应用程序是否可以接收测试消息。 通过通知中心的 "**测试发送**" 部分，可以选择目标平台并发送消息。 如果将**发送到标记表达式**设置`default`为，则会将消息发送到已注册了`default`标记模板的应用程序。 单击 "**发送**" 按钮将生成一个报表，其中包含与该消息连接的设备数。 以下屏幕截图显示了 Azure 门户中的 Android 通知测试：
 
 ![Azure 通知中心测试消息的屏幕截图](azure-notification-hub-images/azure-notification-hub-test-send.png "Azure 通知中心测试消息")
 
 ### <a name="testing-tips"></a>测试提示
 
-1. 在测试应用程序是否可以接收推送通知时, 必须使用物理设备。 Android 和 iOS 虚拟设备可能未正确配置, 无法接收推送通知。
-1. 示例 Android 应用程序在颁发 Firebase 令牌时注册其令牌和模板。 在测试过程中, 可能需要请求新令牌并向 Azure 通知中心重新注册。 强制执行此方法的最佳方式是清理项目、删除`bin`和`obj`文件夹并从设备中卸载应用程序, 然后重新生成并部署。
-1. 推送通知流的许多部分都以异步方式执行。 这可能会导致未命中断点或按意外顺序命中断点。 使用设备或调试日志记录跟踪执行, 而不中断应用程序流。 使用中`DebugTag` `Constants`指定的筛选 Android 设备日志。
+1. 在测试应用程序是否可以接收推送通知时，必须使用物理设备。 Android 和 iOS 虚拟设备可能未正确配置，无法接收推送通知。
+1. 示例 Android 应用程序在颁发 Firebase 令牌时注册其令牌和模板。 在测试过程中，可能需要请求新令牌并向 Azure 通知中心重新注册。 强制执行此方法的最佳方式是清理项目、删除`bin`和`obj`文件夹并从设备中卸载应用程序，然后重新生成并部署。
+1. 推送通知流的许多部分都以异步方式执行。 这可能会导致未命中断点或按意外顺序命中断点。 使用设备或调试日志记录跟踪执行，而不中断应用程序流。 使用中`DebugTag` `Constants`指定的筛选 Android 设备日志。
 
 ## <a name="create-a-notification-dispatcher"></a>创建通知调度程序
 
-使用 Azure 通知中心, 后端应用程序可以将通知调度到跨平台的设备。 此示例演示了**NotificationDispatcher**控制台应用程序的通知分派。 应用程序包含**DispatcherConstants.cs**文件, 该文件定义以下属性:
+使用 Azure 通知中心，后端应用程序可以将通知调度到跨平台的设备。 此示例演示了**NotificationDispatcher**控制台应用程序的通知分派。 应用程序包含**DispatcherConstants.cs**文件，该文件定义以下属性：
 
 ```csharp
 public static class DispatcherConstants
@@ -538,11 +538,11 @@ public static class DispatcherConstants
 }
 ```
 
-你必须配置**DispatcherConstants.cs**以匹配 Azure 通知中心配置。 `SubscriptionTags`属性的值应与客户端应用程序中使用的值匹配。 `NotificationHubName`属性是 Azure 通知中心实例的名称。 属性是在通知中心**访问策略**中找到的访问密钥。 `FullAccessConnectionString` 以下屏幕截图显示了 Azure 门户中的`NotificationHubName`和`FullAccessConnectionString`属性的位置:
+你必须配置**DispatcherConstants.cs**以匹配 Azure 通知中心配置。 `SubscriptionTags`属性的值应与客户端应用程序中使用的值匹配。 `NotificationHubName`属性是 Azure 通知中心实例的名称。 属性是在通知中心**访问策略**中找到的访问密钥。 `FullAccessConnectionString` 以下屏幕截图显示了 Azure 门户中的`NotificationHubName`和`FullAccessConnectionString`属性的位置：
 
 ![Azure 通知中心名称和 FullAccessConnectionString 的屏幕截图](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中心名称和 FullAccessConnectionString")
 
-控制台应用程序循环遍历每`SubscriptionTags`个值, 并使用`NotificationHubClient`类的实例将通知发送到订阅服务器。 下面的代码演示了控制台应用`Program`程序类:
+控制台应用程序循环遍历每`SubscriptionTags`个值，并使用`NotificationHubClient`类的实例将通知发送到订阅服务器。 下面的代码演示了控制台应用`Program`程序类：
 
 ``` csharp
 class Program
@@ -594,7 +594,7 @@ class Program
 }
 ```
 
-运行示例控制台应用程序时, 可以按空格键来发送消息。 如果客户端应用程序的配置正确, 则运行客户端应用程序的设备应收到编号的通知。
+运行示例控制台应用程序时，可以按空格键来发送消息。 如果客户端应用程序的配置正确，则运行客户端应用程序的设备应收到编号的通知。
 
 ## <a name="related-links"></a>相关链接
 

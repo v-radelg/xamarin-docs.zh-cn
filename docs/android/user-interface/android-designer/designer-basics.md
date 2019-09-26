@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
 ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70761407"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Xamarin. Android Designer 基础知识
@@ -222,7 +222,7 @@ _本主题介绍了 Xamarin. Android Designer 功能，介绍了如何启动设�
 
 Android Designer 支持直接编辑**Design Surface**上的某些属性（这样就无需在属性列表中搜索这些属性）。 可以直接编辑的属性包括文本、边距和大小。
 
-### <a name="text"></a>文本
+### <a name="text"></a>Text
 
 某些小组件（如`Button`和`TextView`）的文本属性可以直接在**Design Surface**上进行编辑。 双击小组件会将其置于编辑模式下，如下所示：
 
@@ -248,7 +248,7 @@ Android Designer 支持直接编辑**Design Surface**上的某些属性（这样
 
 ![标记按钮周围空间的虚线示例](designer-basics-images/vs/16-margins-set.png)
 
-### <a name="size"></a>Size
+### <a name="size"></a>大小
 
 如前文所述，你可以通过单击小组件，然后在其处于选中状态时切换到大小编辑模式。 单击三角控点，将指定维度的大小设置为`wrap_content`：
 
@@ -446,7 +446,7 @@ Design Surface 支持通过多个控件进行缩放，如下所示：
 
 Android Designer 支持直接编辑 Design Surface 上的某些属性（这样就无需在属性列表中搜索这些属性）。 可以直接编辑的属性包括文本、边距和大小。
 
-### <a name="text"></a>文本
+### <a name="text"></a>Text
 
 某些小组件（如`Button`和`TextView`）的文本属性可以直接在 Design Surface 上进行编辑。 双击小组件会将其置于编辑模式下，如下所示：
 
@@ -472,7 +472,7 @@ Android Designer 支持直接编辑 Design Surface 上的某些属性（这样�
 
 [![标记按钮周围空间的虚线示例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
-### <a name="size"></a>Size
+### <a name="size"></a>大小
 
 如前文所述，你可以通过单击小组件，然后在其处于选中状态时切换到大小编辑模式。 单击三角控点，将指定维度的大小设置为`wrap_content`：
 

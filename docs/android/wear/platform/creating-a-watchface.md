@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
 ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70758507"
 ---
 # <a name="creating-a-watch-face"></a>创建表盘
@@ -322,7 +322,7 @@ public override void OnTimeTick()
 如果尚未这样做，请下载[。](creating-a-watchface-images/preview.png)
 将其安装在**资源/绘制/预览 .png**。 请确保将此文件添加到`WatchFace`项目。 此预览图像将在磨损设备上的手表面部选取器中显示给用户。 若要为自己的 "手表面" 创建预览图像，可以在运行时拍摄手表面的屏幕截图。 （有关从磨损设备获取屏幕截图的详细信息，请参阅[拍摄屏幕快照](~/android/wear/deploy-test/debug-on-device.md#screenshots)）。
 
-## <a name="try-it"></a>试试吧！
+## <a name="try-it"></a>试试吧!
 
 构建应用并将其部署到磨损设备。 应该会看到 "应用程序" 屏幕显示为 "之前"。 执行以下操作以启用新的手表脸：
 

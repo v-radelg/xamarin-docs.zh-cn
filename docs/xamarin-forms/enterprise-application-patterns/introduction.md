@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70760226"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企业应用开发简介
@@ -89,7 +89,7 @@ ms.locfileid: "70760226"
 
 本指南重点介绍使用 Xamarin.Forms 构建跨平台企业应用，并以 eShopOnContainers 移动应用为例。 图 1-2 显示了含上述功能的 eShopOnContainers 移动应用页面。
 
-[![](introduction-images/screenshots.png "eShopOnContainers 移动应用")](introduction-images/screenshots-large.png#lightbox "eShopOnContainers 移动应用程序")
+[![](introduction-images/screenshots.png "EShopOnContainers 移动应用")](introduction-images/screenshots-large.png#lightbox "EShopOnContainers 移动应用")
 
 **图 1-2**：EShopOnContainers 移动应用
 
@@ -98,15 +98,15 @@ ms.locfileid: "70760226"
 eShopOnContainers 移动应用程序运用了以下 Xamarin.Forms 功能：
 
 - XAML
-- Controls
+- 控件
 - 绑定
 - Converters
 - 样式
-- Animations
+- 动画
 - 命令
-- Behaviors
+- 行为
 - Triggers
-- Effects
+- 效果
 - 自定义呈现器
 - MessagingCenter
 - 自定义控件
@@ -138,11 +138,11 @@ eShopOnContainers.Core PCL 项目中包含以下文件夹：
 
 |文件夹|描述|
 |--- |--- |
-|Animations|包含可在 XAML 中使用动画的类。|
+|动画|包含可在 XAML 中使用动画的类。|
 |Behaviors|包含公开给视图类的行为。|
-|Controls|包含应用程序使用的自定义控件。|
+|控件|包含应用程序使用的自定义控件。|
 |Converters|包含将自定义逻辑应用于绑定的值转换器。|
-|Effects|包含`EntryLineColorEffect`类，该类用于更改特定`Entry`控件的边框颜色。|
+|效果|包含`EntryLineColorEffect`类，该类用于更改特定`Entry`控件的边框颜色。|
 |Exceptions|包含自定义的`ServiceAuthenticationException`类。|
 |Extensions|包含用于`VisualElement`和`IEnumerable`类的扩展方法。|
 |Helpers|包含应用的帮助程序类。|
@@ -162,7 +162,7 @@ eShopOnContainers.Core PCL 项目中包含以下文件夹：
 
 Xamarin 的跨平台移动应用开发工具和平台为 B2E、B2B 和 B2C 移动客户端应用提供了全面的解决方案，从而能够在所有目标平台 (iOS、Android 和 Windows) 间共享代码，并帮助降低总拥有成本。 应用可共享其用户界面及其应用逻辑代码，同时保留原生平台的外观和感觉。
 
-企业应用开发人员面临着诸多挑战，在开发过程中这些挑战可能会影响应用架构。 因此，需构建出可随时间推移而进行修改或扩展的应用。 要设计出这种适应性十分困难，通常涉及把应用分割为离散、松散耦合的组件，这些组件可轻松地集成到应用中。
+企业应用开发人员面临着诸多挑战，在开发过程中这些挑战可能会影响应用架构。 因此，构建可随时间推移进行修改或扩展的应用则非常重要。 这种适应性的设计可能很困难，通常涉及把应用分区可轻松集成到其他应用中的离散、松散耦合的组件当中。
 
 ## <a name="related-links"></a>相关链接
 

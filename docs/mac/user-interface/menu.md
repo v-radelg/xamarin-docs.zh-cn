@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770989"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin 中的菜单
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 即使你的应用程序未使用`NSDocuments`，你仍可以通过`NSDocumentController`将`NSUrl`与文件的位置一起发送到`NoteNewRecentDocumentURL`的方法`SharedDocumentController`，来使用来维护 "**最近打开**" 菜单。
 
-接下来，需要重写`OpenFile`应用委托的方法，以打开用户从 "**最近打开**" 菜单中选择的任何文件。 例如：
+接下来，需要重写`OpenFile`应用委托的方法，以打开用户从 "**最近打开**" 菜单中选择的任何文件。 例如:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 与预先连接到标准菜单项的内置**第一个响应**程序操作一样，你可以创建新的自定义操作，并将它们连接到 Interface Builder 中的菜单项。
 
-首先，在应用的一个窗口控制器上定义自定义操作。 例如：
+首先，在应用的一个窗口控制器上定义自定义操作。 例如:
 
 ```csharp
 [Action("defineKeyword:")]

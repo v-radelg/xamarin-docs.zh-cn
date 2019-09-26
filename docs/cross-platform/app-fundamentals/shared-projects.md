@@ -1,69 +1,69 @@
 ---
 title: 使用共享项目共享代码
-description: 使用共享项目, 可以编写由多个不同的应用程序项目引用的通用代码。 此代码编译为每个引用项目的一部分, 并且可以包含编译器指令以帮助将平台特定的功能合并到共享代码库中。
+description: 使用共享项目，可以编写由多个不同的应用程序项目引用的通用代码。 此代码作为每个引用项目的一部分进行编译，并且可以包含编译器指令以帮助将特定于平台的功能合并到共享代码库中。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
 ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739058"
 ---
 # <a name="shared-projects-code-sharing"></a>共享项目代码共享
 
-_使用共享项目, 可以编写由多个不同的应用程序项目引用的通用代码。此代码编译为每个引用项目的一部分, 并且可以包含编译器指令以帮助将平台特定的功能合并到共享代码库中。_
+_使用共享项目，可以编写由多个不同的应用程序项目引用的通用代码。此代码编译为每个引用项目的一部分，并且可以包含编译器指令以帮助将平台特定的功能合并到共享代码库中。_
 
-共享项目 (有时也称为共享资产项目) 允许你编写在多个目标项目之间共享的代码, 包括 Xamarin 应用程序。
+共享项目（有时也称为共享资产项目）允许你编写在多个目标项目之间共享的代码，包括 Xamarin 应用程序。
 
-它们支持编译器指令, 以便您可以有条件地包含要编译到引用共享项目的项目子集的平台特定代码。 还提供了 IDE 支持, 可帮助管理编译器指令并直观显示代码在每个应用程序中的外观。
+它们支持编译器指令，以便您可以有条件地包含要编译到引用共享项目的项目子集的平台特定代码。 还提供了 IDE 支持，可帮助管理编译器指令并直观显示代码在每个应用程序中的外观。
 
-如果过去曾经使用文件链接来共享项目中的代码, 则共享项目的工作方式与此类似, 但改进的 IDE 支持更多。
+如果过去曾经使用文件链接来共享项目中的代码，则共享项目的工作方式与此类似，但改进的 IDE 支持更多。
 
 ## <a name="what-is-a-shared-project"></a>什么是共享项目？
 
-与大多数其他项目类型不同的是, 共享项目没有任何输出 (以 DLL 形式表示), 而是将代码编译到引用它的每个项目中。 下图对此进行了说明: 从概念上讲, 将共享项目的整个内容 "复制到" 每个引用项目, 并将其编译为, 就像它是这些内容的一部分一样。
+与大多数其他项目类型不同的是，共享项目没有任何输出（以 DLL 形式表示），而是将代码编译到引用它的每个项目中。 下图对此进行了说明：从概念上讲，将共享项目的整个内容 "复制到" 每个引用项目，并将其编译为，就像它是这些内容的一部分一样。
 
 ![](shared-projects-images/sharedassetproject.png "共享项目体系结构")
 
-共享项目中的代码可以包含编译器指令, 这些指令可用于启用或禁用代码段 (具体取决于使用代码的应用程序项目), 这取决于关系图中的彩色平台框。
+共享项目中的代码可以包含编译器指令，这些指令可用于启用或禁用代码段（具体取决于使用代码的应用程序项目），这取决于关系图中的彩色平台框。
 
-共享项目不会自行编译, 它只是一组可以包含在其他项目中的源代码文件。 当被另一个项目引用时, 该代码将被有效地编译为该项目的*一部分*。 共享的项目不能引用任何其他项目类型 (包括其他共享项目)。
+共享项目不会自行编译，它只是一组可以包含在其他项目中的源代码文件。 当被另一个项目引用时，该代码将被有效地编译为该项目的*一部分*。 共享的项目不能引用任何其他项目类型（包括其他共享项目）。
 
-请注意, Android 应用程序项目无法引用其他 Android 应用程序项目, 例如, Android 单元测试项目无法引用 Android 应用程序项目。 有关此限制的详细信息, 请参阅此[论坛讨论](http://forums.xamarin.com/discussion/comment/98092/)。
+请注意，Android 应用程序项目无法引用其他 Android 应用程序项目，例如，Android 单元测试项目无法引用 Android 应用程序项目。 有关此限制的详细信息，请参阅此[论坛讨论](http://forums.xamarin.com/discussion/comment/98092/)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 演练
 
-本部分介绍如何使用 Visual Studio for Mac 创建和使用共享项目。 有关完整示例, 请参阅 "到[共享项目的示例](#Shared_Project_Example)" 部分。
+本部分介绍如何使用 Visual Studio for Mac 创建和使用共享项目。 有关完整示例，请参阅 "到[共享项目的示例](#Shared_Project_Example)" 部分。
 
 ## <a name="creating-a-shared-project"></a>创建共享项目
 
-若要创建新的共享项目, 请导航到 "**文件" > "新建解决方案 ...** "(或者右键单击现有解决方案, 然后选择 "**添加" > "添加新项目 ...** ":
+若要创建新的共享项目，请导航到 "**文件" > "新建解决方案 ...** "（或者右键单击现有解决方案，然后选择 "**添加" > "添加新项目 ...** "：
 
 [![新建共享项目](shared-projects-images/xs-newsolution-sml.png "新解决方案")](shared-projects-images/xs-newsolution.png#lightbox)
 
-在下一个屏幕上, 选择项目名称, 然后单击 "**创建**"。
+在下一个屏幕上，选择项目名称，然后单击 "**创建**"。
 
 下面显示了一个新的共享项目-注意没有引用或组件节点;共享项目不支持这些。
 
 ![空的共享项目](shared-projects-images/xs-empty.png "空的共享项目")
 
-要使共享项目有用, 需要至少由一个可生成的项目 (例如 iOS 或 Android 应用程序或库, 或 PCL 项目) 引用它。 当共享项目没有引用它时, 不会对其进行编译, 因此语法 (或任何其他) 错误在被其他内容引用之前将不会突出显示。
+要使共享项目有用，需要至少由一个可生成的项目（例如 iOS 或 Android 应用程序或库，或 PCL 项目）引用它。 当共享项目没有引用它时，不会对其进行编译，因此语法（或任何其他）错误在被其他内容引用之前将不会突出显示。
 
 添加对共享项目的引用的方式与引用常规库项目的方式相同。 此屏幕截图显示了引用共享项目的 Xamarin iOS 项目。
 
 ![](shared-projects-images/xs-reference.png "对共享项目的项目引用")
 
-共享项目被另一个库或应用程序引用后, 您可以生成解决方案并查看代码中的任何错误。 如果共享项目被_两个或更多_其他项目引用, 则会在源代码编辑器的左上角显示一个菜单, 其中显示了哪些项目引用此文件。
+共享项目被另一个库或应用程序引用后，您可以生成解决方案并查看代码中的任何错误。 如果共享项目被_两个或更多_其他项目引用，则会在源代码编辑器的左上角显示一个菜单，其中显示了哪些项目引用此文件。
 
 ## <a name="shared-project-options"></a>共享项目选项
 
-右键单击某个共享项目, 然后选择 "**选项**", 设置的设置比其他项目类型少。 由于共享项目不是编译 (独立于它们), 因此不能设置输出或编译器选项、项目配置、程序集签名或自定义命令。 共享项目中的代码将有效地继承这些值。
+右键单击某个共享项目，然后选择 "**选项**"，设置的设置比其他项目类型少。 由于共享项目不是编译（独立于它们），因此不能设置输出或编译器选项、项目配置、程序集签名或自定义命令。 共享项目中的代码将有效地继承这些值。
 
 "**选项**" 屏幕如下所示-"项目**名称**" 和 "**默认命名空间**" 是通常会更改的两个设置。
 
@@ -73,35 +73,35 @@ _使用共享项目, 可以编写由多个不同的应用程序项目引用的�
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio 演练
 
-本部分介绍如何使用 Visual Studio 创建和使用共享项目。 有关完整实现, 请参阅 "到[共享项目的示例](#Shared_Project_Example)" 部分。
+本部分介绍如何使用 Visual Studio 创建和使用共享项目。 有关完整实现，请参阅 "到[共享项目的示例](#Shared_Project_Example)" 部分。
 
 ### <a name="creating-a-shared-project"></a>创建共享项目
 
-若要创建新的共享项目, 请导航到 "**文件** > " "**新建** > **项目**"。
+若要创建新的共享项目，请导航到 "**文件** > " "**新建** > **项目**"。
 
-在 Visual Studio 2019 中, 在 "**创建新项目**" 页面上的搜索框中输入 "**共享**"。 选择**共享项目**模板, 然后选择 "**下一步**"。 输入项目的名称, 然后选择 "**创建**"。
+在 Visual Studio 2019 中，在 "**创建新项目**" 页面上的搜索框中输入 "**共享**"。 选择**共享项目**模板，然后选择 "**下一步**"。 输入项目的名称，然后选择 "**创建**"。
 
-在 Visual Studio 2017 中, 选择 "**共享项目**" 模板, 然后选择项目的名称。
+在 Visual Studio 2017 中，选择 "**共享项目**" 模板，然后选择项目的名称。
 
 ![Visual Studio 2017 中的共享项目模板](shared-projects-images/vs-newsolution.png)
 
-还可以通过右键单击解决方案文件, 然后选择 "**添加 > 新项目**", 将新的共享项目添加到现有解决方案。 新的共享项目如下所示 (添加了类文件后)。 请注意, 没有引用或组件节点;共享项目不支持这些。
+还可以通过右键单击解决方案文件，然后选择 "**添加 > 新项目**"，将新的共享项目添加到现有解决方案。 新的共享项目如下所示（添加了类文件后）。 请注意，没有引用或组件节点;共享项目不支持这些。
 
 ![](shared-projects-images/vs-empty.png "空的共享项目")
 
-要使共享项目有用, 需要至少由一个可生成的项目 (例如 iOS 或 Android 应用程序或库, 或 PCL 项目) 引用它。 当共享项目没有引用它时, 不会对其进行编译, 因此语法 (或任何其他) 错误在被其他内容引用之前将不会突出显示。
+要使共享项目有用，需要至少由一个可生成的项目（例如 iOS 或 Android 应用程序或库，或 PCL 项目）引用它。 当共享项目没有引用它时，不会对其进行编译，因此语法（或任何其他）错误在被其他内容引用之前将不会突出显示。
 
 添加对共享项目的引用的方式与引用常规库项目的方式相同。 此屏幕截图显示了引用共享项目的 Xamarin iOS 项目。
 
 ![](shared-projects-images/vs-reference.png "对共享项目的项目引用")
 
-共享项目被另一个库或应用程序引用后, 您可以生成解决方案并查看代码中的任何错误。 如果共享项目被_两个或更多_其他项目引用, 则源代码编辑器的左上角会出现一个菜单, 查看哪些项目引用了当前代码文件。
+共享项目被另一个库或应用程序引用后，您可以生成解决方案并查看代码中的任何错误。 如果共享项目被_两个或更多_其他项目引用，则源代码编辑器的左上角会出现一个菜单，查看哪些项目引用了当前代码文件。
 
 ### <a name="shared-project-properties"></a>共享项目属性
 
-选择共享项目时, "属性" 面板中的设置比其他项目类型少一些。 由于共享项目不是编译 (独立于它们), 因此不能设置输出或编译器选项、项目配置、程序集签名或自定义命令。 共享项目中的代码将有效地继承这些值。
+选择共享项目时，"属性" 面板中的设置比其他项目类型少一些。 由于共享项目不是编译（独立于它们），因此不能设置输出或编译器选项、项目配置、程序集签名或自定义命令。 共享项目中的代码将有效地继承这些值。
 
-"**属性**" 面板显示在下方,**根命名空间**是唯一可以更改的设置。
+"**属性**" 面板显示在下方，**根命名空间**是唯一可以更改的设置。
 
 ![](shared-projects-images/vs-sharedprojectproperties.png "共享项目属性")
 
@@ -111,9 +111,9 @@ _使用共享项目, 可以编写由多个不同的应用程序项目引用的�
 
 ## <a name="shared-project-example"></a>共享项目示例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)示例使用共享项目来包含 IOS、Android 和 Windows Phone 应用程序使用的通用代码。 `SQLite.cs` 和`TaskRepository.cs`源代码文件都利用编译器指令 (例如 `#if __ANDROID__`) 为每个引用它们的应用程序生成不同的输出。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)示例使用共享项目来包含 IOS、Android 和 Windows Phone 应用程序使用的通用代码。 `SQLite.cs` 和`TaskRepository.cs`源代码文件都利用编译器指令（例如 `#if __ANDROID__`）为每个引用它们的应用程序生成不同的输出。
 
-完整的解决方案结构如下所示 (分别在 Visual Studio for Mac 和 Visual Studio 中):
+完整的解决方案结构如下所示（分别在 Visual Studio for Mac 和 Visual Studio 中）：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -125,18 +125,18 @@ _使用共享项目, 可以编写由多个不同的应用程序项目引用的�
 
 -----
 
-可以从 Visual Studio for Mac 中导航 Windows Phone 项目, 即使该项目类型不支持 Visual Studio for Mac 中的编译。
+可以从 Visual Studio for Mac 中导航 Windows Phone 项目，即使该项目类型不支持 Visual Studio for Mac 中的编译。
 
-正在运行的应用程序如下所示:
+正在运行的应用程序如下所示：
 
 ![](shared-projects-images/example.png "iOS、Android、Windows Phone 示例")
 
 ## <a name="summary"></a>总结
 
-本文档介绍了共享项目的工作原理、如何在 Visual Studio for Mac 和 Visual Studio 中创建和使用它们, 并引入了一个简单的示例应用程序, 该应用程序演示了操作中的共享项目。
+本文档介绍了共享项目的工作原理、如何在 Visual Studio for Mac 和 Visual Studio 中创建和使用它们，并引入了一个简单的示例应用程序，该应用程序演示了操作中的共享项目。
 
 ## <a name="related-links"></a>相关链接
 
 - [Tasky 示例应用](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
-- [可移植类库 (示例)](~/cross-platform/app-fundamentals/pcl.md)
-- [共享代码选项 (示例)](~/cross-platform/app-fundamentals/code-sharing.md)
+- [可移植类库（示例）](~/cross-platform/app-fundamentals/pcl.md)
+- [共享代码选项（示例）](~/cross-platform/app-fundamentals/code-sharing.md)

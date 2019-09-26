@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887912"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
@@ -86,7 +86,7 @@ static class AppConstants
 </Label>
 ```
 
-这可以进一步简化, 但更改会引入一些新语法:它包含将`StaticExtension`类和成员设置置于大括号中。 所生成的表达式将直接为`FontSize`属性：
+这可以进一步简化，但更改会引入一些新语法：它包含将`StaticExtension`类和成员设置置于大括号中。 所生成的表达式将直接为`FontSize`属性：
 
 ```xaml
 <Label Text="Label No. 3"
@@ -143,7 +143,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 下面是示例运行：
 
-[![x： 静态演示](consuming-images/staticdemo-small.png "x： 静态演示")](consuming-images/staticdemo-large.png#lightbox "x： 静态演示")
+[![X:Static 演示](consuming-images/staticdemo-small.png "X:Static 演示")](consuming-images/staticdemo-large.png#lightbox "x:Static 演示")
 
 <a name="reference" />
 
@@ -185,9 +185,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-这两`x:Reference`表达式使用的缩写的形式`ReferenceExtension`类名称，并消除`Name=`表达式的一部分。 在第一个示例中，`x:Reference`标记扩展嵌入在`Binding`标记扩展。 请注意，`Source`和`StringFormat`设置用逗号分隔。 下面是运行的程序：
+这两`x:Reference`表达式使用的缩写的形式`ReferenceExtension`类名称，并消除`Name=`表达式的一部分。 在第一个示例中，`x:Reference`标记扩展嵌入在`Binding`标记扩展。 请注意，`Source`和`StringFormat`设置用逗号分隔。 下面是正在运行的程序：
 
-[![x： 引用演示](consuming-images/referencedemo-small.png "x： 引用演示")](consuming-images/referencedemo-large.png#lightbox "x： 引用演示")
+[![X:Reference 演示](consuming-images/referencedemo-small.png "X:Reference 演示")](consuming-images/referencedemo-large.png#lightbox "x:Reference 演示")
 
 <a name="type" />
 
@@ -242,7 +242,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 下面是在中打开主页**标记扩展**:
 
-[![主页面](consuming-images/mainpage-small.png "主页面")](consuming-images/mainpage-large.png#lightbox "主页面")
+[![主页](consuming-images/mainpage-small.png "主页")](consuming-images/mainpage-large.png#lightbox "主页")
 
 每个`CommandParameter`属性设置为`x:Type`引用了一个其他页面的标记扩展。 `Command`属性绑定到一个名为属性`NavigateCommand`。 此属性定义在`MainPage`代码隐藏文件：
 
@@ -325,7 +325,7 @@ public partial class TypeDemoPage : ContentPage
 
 是该方法时执行`Button`被按下创建的自变量的新实例，设置其`VerticalOptions`属性，并将其添加到`StackLayout`。 这三个`Button`元素然后动态创建的视图与共享页：
 
-[![x： 类型演示](consuming-images/typedemo-small.png "x： 类型演示")](consuming-images/typedemo-large.png#lightbox "x： 类型演示")
+[![X:Type 演示](consuming-images/typedemo-small.png "X:Type 演示")](consuming-images/typedemo-large.png#lightbox "x:Type 演示")
 
 <a name="array" />
 
@@ -382,7 +382,7 @@ public partial class TypeDemoPage : ContentPage
 
 `ViewCell`创建一个简单`BoxView`为每个颜色条目：
 
-[![x： 数组演示](consuming-images/arraydemo-small.png "x： 数组演示")](consuming-images/arraydemo-large.png#lightbox "x： 数组演示")
+[![X:Array 演示](consuming-images/arraydemo-small.png "X:Array 演示")](consuming-images/arraydemo-large.png#lightbox "x:Array 演示")
 
 有几种方法来指定对单个`Color`此数组中的项。 可以使用`x:Static`标记扩展：
 
@@ -453,9 +453,9 @@ public partial class TypeDemoPage : ContentPage
 
 然后你将发现之一`Label`元素，所需的所有属性设置的隐式`Style`除`FontFamily`，想要将默认值。 您可以定义另一个`Style`为此目的，但更简单的方法是只需设置`FontFamily`属性的特定`Label`到`x:Null`，如下所示在中心`Label`。
 
-下面是运行的程序：
+下面是正在运行的程序：
 
-[![x: Null 演示](consuming-images/nulldemo-small.png "x: Null 演示")](consuming-images/nulldemo-large.png#lightbox "x: Null 演示")
+[![X:Null 演示](consuming-images/nulldemo-small.png "X:Null 演示")](consuming-images/nulldemo-large.png#lightbox "x:Null 演示")
 
 请注意，该四个的`Label`元素具有衬线字体，但在中心`Label`具有默认的 sans-serif 字体。
 
@@ -497,7 +497,7 @@ public partial class TypeDemoPage : ContentPage
 
 在此示例中，所有这三个`OnPlatform`表达式使用的缩写的形式`OnPlatformExtension`类名。 这三个`OnPlatform`标记扩展集[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，并且[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)属性[`BoxView` ](xref:Xamarin.Forms.BoxView)为 iOS、 Android 和 UWP 上不同的值。 标记扩展还为未指定，同时消除了在平台上的这些属性提供默认值`Default=`表达式的一部分。 请注意，由逗号分隔的标记扩展属性的设置。
 
-下面是运行的程序：
+下面是正在运行的程序：
 
 [![OnPlatform 演示](consuming-images/onplatformdemo-small.png "OnPlatform 演示")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform 演示")
 
@@ -535,18 +535,18 @@ public partial class TypeDemoPage : ContentPage
 
 在此示例中，所有这三个`OnIdiom`表达式使用的缩写的形式`OnIdiomExtension`类名。 这三个`OnIdiom`标记扩展集[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，并且[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)属性[`BoxView` ](xref:Xamarin.Forms.BoxView)为手机、 平板电脑和桌面的惯用语言在不同的值。 标记扩展还提供默认值为这些属性在未指定，同时消除习惯用语`Default=`表达式的一部分。 请注意，由逗号分隔的标记扩展属性的设置。
 
-下面是运行的程序：
+下面是正在运行的程序：
 
 [![OnIdiom 演示](consuming-images/onidiomdemo-small.png "OnIdiom 演示")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom 演示")
 
 ## <a name="datatemplate-markup-extension"></a>System.windows.datatemplate> 标记扩展
 
-标记扩展允许你将类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)转换为。 `DataTemplate` `DataTemplateExtension`类支持该类, 该类`TypeName`定义类型`string`为的属性, 该属性被设置为要转换`DataTemplate`为的类型的名称。 `TypeName`属性是 content 属性`DataTemplateExtension`。 因此, 对于用大括号表示的 XAML 标记表达式, 可以消除`TypeName=`表达式的一部分。
+标记扩展允许你将类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)转换为。 `DataTemplate` `DataTemplateExtension`类支持该类，该类`TypeName`定义类型`string`为的属性，该属性被设置为要转换`DataTemplate`为的类型的名称。 `TypeName`属性是 content 属性`DataTemplateExtension`。 因此，对于用大括号表示的 XAML 标记表达式，可以消除`TypeName=`表达式的一部分。
 
 > [!NOTE]
 > XAML 分析器允许`DataTemplateExtension`将类缩写为`DataTemplate`。
 
-此标记扩展的典型用法是在 Shell 应用程序中, 如下面的示例中所示:
+此标记扩展的典型用法是在 Shell 应用程序中，如下面的示例中所示：
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -554,40 +554,40 @@ public partial class TypeDemoPage : ContentPage
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-在此示例中`MonkeysPage` , [`ContentPage`](xref:Xamarin.Forms.ContentPage)从[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)转换为, `ShellContent.ContentTemplate`它设置为属性的值。 这可确保`MonkeysPage`仅在导航到页面时创建, 而不是在应用程序启动时创建。
+在此示例中`MonkeysPage` ， [`ContentPage`](xref:Xamarin.Forms.ContentPage)从[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)转换为， `ShellContent.ContentTemplate`它设置为属性的值。 这可确保`MonkeysPage`仅在导航到页面时创建，而不是在应用程序启动时创建。
 
-有关 Shell 应用程序的详细信息, 请参阅[Xamarin。 Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+有关 Shell 应用程序的详细信息，请参阅[Xamarin。 Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
 
 ## <a name="fontimage-markup-extension"></a>FontImage 标记扩展
 
-标记扩展允许你在任何可`ImageSource`显示的视图中显示字体图标。 `FontImage` 它提供与`FontImageSource`类相同的功能, 但具有更简洁的表示形式。
+标记扩展允许你在任何可`ImageSource`显示的视图中显示字体图标。 `FontImage` 它提供与`FontImageSource`类相同的功能，但具有更简洁的表示形式。
 
-类支持`FontImageExtension`标记扩展, 该类定义以下属性: `FontImage`
+类支持`FontImageExtension`标记扩展，该类定义以下属性： `FontImage`
 
-- `FontFamily`类型`string`的, 字体图标所属的字体系列。
-- `Glyph`类型`string`的, 字体图标的 unicode 字符值。
-- `Color`类型`Color`为, 显示字体图标时使用的颜色。
-- `Size`在呈现`double`的字体图标的类型中, 以与设备无关的单位表示的大小。
+- `FontFamily`类型`string`的，字体图标所属的字体系列。
+- `Glyph`类型`string`的，字体图标的 unicode 字符值。
+- `Color`类型`Color`为，显示字体图标时使用的颜色。
+- `Size`在呈现`double`的字体图标的类型中，以与设备无关的单位表示的大小。
 
 > [!NOTE]
 > XAML 分析器允许`FontImageExtension`将类缩写为`FontImage`。
 
 `Glyph`属性是 content 属性`FontImageExtension`。 因此，对于使用大括号表示 XAML 标记表达式，则可以消除`Glyph=`表达式的一部分提供，它是第一个参数。
 
-**FontImage 演示**页显示了如何使用`FontImage`标记扩展:
+**FontImage 演示**页显示了如何使用`FontImage`标记扩展：
 
 ```xaml
 <Image BackgroundColor="#D1D1D1"
        Source="{FontImage &#xf30c;, FontFamily={OnPlatform iOS=Ionicons, Android=ionicons.ttf#}, Size=44}" />
 ```
 
-在此示例中, `FontImageExtension`类名称的缩写形式用于显示 Ionicons 字体系列[`Image`](xref:Xamarin.Forms.Image)中的 XBox 图标。 表达式还使用`OnPlatform`标记扩展在 iOS 和 Android 上`FontFamily`指定不同的属性值。 此外, 还消除`Glyph=`了表达式的部分, 而设置的标记扩展属性则用逗号分隔。 请注意, 当图标的 unicode 字符为`\uf30c`时, 它必须在 XAML 中进行转义, 因此将变为。 `&#xf30c;`
+在此示例中， `FontImageExtension`类名称的缩写形式用于显示 Ionicons 字体系列[`Image`](xref:Xamarin.Forms.Image)中的 XBox 图标。 表达式还使用`OnPlatform`标记扩展在 iOS 和 Android 上`FontFamily`指定不同的属性值。 此外，还消除`Glyph=`了表达式的部分，而设置的标记扩展属性则用逗号分隔。 请注意，当图标的 unicode 字符为`\uf30c`时，它必须在 XAML 中进行转义，因此将变为。 `&#xf30c;`
 
 下面是正在运行的程序：
 
-[ ![FontImage 标记扩展](consuming-images/fontimagedemo.png "FontImage 演示")的屏幕截图](consuming-images/fontimagedemo-large.png#lightbox "FontImage 演示")
+[![FontImage 标记扩展的屏幕截图](consuming-images/fontimagedemo.png "FontImage 演示")](consuming-images/fontimagedemo-large.png#lightbox "FontImage 演示")
 
-有关通过在`FontImageSource`对象中指定字体图标数据来显示字体图标的信息, 请参阅[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
+有关通过在`FontImageSource`对象中指定字体图标数据来显示字体图标的信息，请参阅[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="define-your-own-markup-extensions"></a>定义你自己的标记扩展
 

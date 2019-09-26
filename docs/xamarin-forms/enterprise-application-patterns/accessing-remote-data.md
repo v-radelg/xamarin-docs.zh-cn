@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9c793f4d5f0cda5bff2dedef5e4e5e5bdfca69e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770806"
 ---
 # <a name="accessing-remote-data"></a>访问远程数据
@@ -53,7 +53,7 @@ EShopOnContainers 移动应用使用`HttpClient`类通过 HTTP 发出请求，�
 
 图10-1 显示了从目录微服务读取目录数据以便显示`CatalogView`的类的交互。
 
-[从目录微服务中检索数据![(accessing-remote-data-images/catalogdata.png " ")]](accessing-remote-data-images/catalogdata-large.png#lightbox "从目录微服务中检索数据")
+[![](accessing-remote-data-images/catalogdata.png "从目录微服务中检索数据")](accessing-remote-data-images/catalogdata-large.png#lightbox "从目录微服务中检索数据")
 
 **图 10-1**：从目录微服务中检索数据
 
@@ -158,7 +158,7 @@ public async Task<IActionResult> Items(
 
 图10-2 显示了将显示`BasketView`的购物篮数据发送到购物篮微服务的类的交互。
 
-[将数据发送到购物篮微服务![(accessing-remote-data-images/basketdata.png " ")]]将(accessing-remote-data-images/basketdata-large.png#lightbox "数据发送到购物篮微服务")
+[![](accessing-remote-data-images/basketdata.png "将数据发送到购物篮微服务")](accessing-remote-data-images/basketdata-large.png#lightbox "将数据发送到购物篮微服务")
 
 **图 10-2**：将数据发送到购物篮微服务
 

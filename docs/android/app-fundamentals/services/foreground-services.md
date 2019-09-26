@@ -7,19 +7,19 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
 ms.openlocfilehash: 6f3427641ba4ace3b640fcc970fd33f55087a9c8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68644112"
 ---
 # <a name="foreground-services"></a>前景服务
 
-前台服务是一种特殊类型的绑定服务或已启动的服务。 偶尔, 服务会执行用户必须主动识别的任务, 这些服务称为_前台服务_。 前台服务的一个示例是在驱动或浏览时为用户提供指示的应用。 即使应用程序处于后台, 服务也必须具有足够的资源才能正常工作, 并且用户有一种快速而方便的方法来访问应用程序。 对于 Android 应用程序, 这意味着前台服务应获得比 "常规" 服务更高的优先级, 并且前台服务必须提供`Notification`该服务在运行时所显示的 android。
+前台服务是一种特殊类型的绑定服务或已启动的服务。 偶尔，服务会执行用户必须主动识别的任务，这些服务称为_前台服务_。 前台服务的一个示例是在驱动或浏览时为用户提供指示的应用。 即使应用程序处于后台，服务也必须具有足够的资源才能正常工作，并且用户有一种快速而方便的方法来访问应用程序。 对于 Android 应用程序，这意味着前台服务应获得比 "常规" 服务更高的优先级，并且前台服务必须提供`Notification`该服务在运行时所显示的 android。
 
-若要启动前台服务, 应用程序必须派上通知 Android 启动该服务的意图。 然后, 服务必须将自身注册为 Android 的前台服务。 在 android 8.0 (或更高版本) 上运行的应用程序`Context.StartForegroundService`应使用方法来启动该服务, 而在具有较早版本 Android 的设备上运行的应用程序应使用`Context.StartService`
+若要启动前台服务，应用程序必须派上通知 Android 启动该服务的意图。 然后，服务必须将自身注册为 Android 的前台服务。 在 android 8.0 （或更高版本）上运行的应用程序`Context.StartForegroundService`应使用方法来启动该服务，而在具有较早版本 Android 的设备上运行的应用程序应使用`Context.StartService`
 
-此C#扩展方法是如何启动前台服务的示例。 在 Android 8.0 及更高版本中, `StartForegroundService`它将使用方法, `StartService`否则将使用较旧的方法。
+此C#扩展方法是如何启动前台服务的示例。 在 Android 8.0 及更高版本中， `StartForegroundService`它将使用方法， `StartService`否则将使用较旧的方法。
 
 ```csharp
 public static void StartForegroundServiceCompat<T>(this Context context, Bundle args = null) where T : Service
@@ -43,16 +43,16 @@ public static void StartForegroundServiceCompat<T>(this Context context, Bundle 
 
 ## <a name="registering-as-a-foreground-service"></a>注册为前台服务
 
-前台服务启动后, 它必须通过调用[`StartForeground`](xref:Android.App.Service.StartForeground*)来向 Android 注册自身。 如果服务是通过`Service.StartForegroundService`方法启动的, 但未注册自身, 则 Android 将停止服务并将应用标记为 "无响应"。
+前台服务启动后，它必须通过调用[`StartForeground`](xref:Android.App.Service.StartForeground*)来向 Android 注册自身。 如果服务是通过`Service.StartForegroundService`方法启动的，但未注册自身，则 Android 将停止服务并将应用标记为 "无响应"。
 
-`StartForeground`采用两个参数, 两者都是必需的:
+`StartForeground`采用两个参数，两者都是必需的：
 
-- 在应用程序中唯一的整数值, 用于标识服务。
-- 当服务正在运行时, Android 将在状态栏中显示的对象。`Notification`
+- 在应用程序中唯一的整数值，用于标识服务。
+- 当服务正在运行时，Android 将在状态栏中显示的对象。`Notification`
 
-只要服务正在运行, Android 就会在状态栏中显示通知。 通知至少会向运行该服务的用户提供视觉提示。 理想情况下, 通知应为用户提供应用程序的快捷方式或其他操作按钮, 以控制应用程序。 这种情况的一个示例是音乐播放&ndash;机: 显示的通知可能具有用于暂停/播放音乐、倒带到前一首歌曲或跳转到下一首歌曲的按钮。 
+只要服务正在运行，Android 就会在状态栏中显示通知。 通知至少会向运行该服务的用户提供视觉提示。 理想情况下，通知应为用户提供应用程序的快捷方式或其他操作按钮，以控制应用程序。 这种情况的一个示例是音乐播放&ndash;机：显示的通知可能具有用于暂停/播放音乐、倒带到前一首歌曲或跳转到下一首歌曲的按钮。 
 
-此代码片段是将服务注册为前台服务的示例:   
+此代码片段是将服务注册为前台服务的示例：   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -78,31 +78,31 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-之前的通知将显示类似于以下内容的状态栏通知:
+之前的通知将显示类似于以下内容的状态栏通知：
 
 ![显示状态栏中的通知的图像](foreground-services-images/foreground-services-01.png "显示状态栏中的通知的图像")
 
-此屏幕截图显示通知栏中的扩展通知, 其中包含允许用户控制服务的两个操作:
+此屏幕截图显示通知栏中的扩展通知，其中包含允许用户控制服务的两个操作：
 
 ![显示扩展通知的图像](foreground-services-images/foreground-services-02.png "显示展开通知的图像。")
 
-有关通知的详细信息, 请访问[Android 通知](~/android/app-fundamentals/notifications/index.md)指南的 "[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)" 部分。
+有关通知的详细信息，请访问[Android 通知](~/android/app-fundamentals/notifications/index.md)指南的 "[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)" 部分。
 
 ## <a name="unregistering-as-a-foreground-service"></a>作为前台服务注销
 
-服务可以通过调用方法`StopForeground`将自身作为前台服务来取消列出。 `StopForeground`将不会停止服务, 但会删除通知图标并向 Android 发出信号, 以便在必要时关闭此服务。
+服务可以通过调用方法`StopForeground`将自身作为前台服务来取消列出。 `StopForeground`将不会停止服务，但会删除通知图标并向 Android 发出信号，以便在必要时关闭此服务。
 
-还可以通过传递`true`给方法来删除显示的状态栏通知: 
+还可以通过传递`true`给方法来删除显示的状态栏通知： 
 
 ```csharp
 StopForeground(true);
 ```
 
-如果使用`StopSelf`或`StopService`调用停止服务, 则将删除状态栏通知。
+如果使用`StopSelf`或`StopService`调用停止服务，则将删除状态栏通知。
 
 ## <a name="related-links"></a>相关链接
 
 - [Android.App.Service](xref:Android.App.Service)
 - [Android.App.Service.StartForeground](xref:Android.App.Service.StartForeground*)
 - [本地通知](~/android/app-fundamentals/notifications/local-notifications.md)
-- [ForegroundServiceDemo (示例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-foregroundservicedemo)
+- [ForegroundServiceDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-foregroundservicedemo)

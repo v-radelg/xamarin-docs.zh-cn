@@ -1,6 +1,6 @@
 ---
 title: Xamarin. Forms Web 服务简介
-description: 本指南提供了一个示例, 演示如何与不同的 web 服务通信。 尽管每个 web 服务使用单独的示例应用程序，但它们是功能上类似，并且共享公共类。
+description: 本指南提供了一个示例，演示如何与不同的 web 服务通信。 尽管每个 web 服务使用单独的示例应用程序，但它们是功能上类似，并且共享公共类。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
 ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68656644"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web 服务简介
@@ -38,7 +38,7 @@ _本主题提供的演练演示如何与另一个 web 服务进行通信的 Xama
 
 ## <a name="understand-the-application-anatomy"></a>了解应用程序解析
 
-每个示例应用程序的共享代码项目由三个主要文件夹组成:
+每个示例应用程序的共享代码项目由三个主要文件夹组成：
 
 |文件夹|目标|
 |--- |--- |
@@ -46,7 +46,7 @@ _本主题提供的演练演示如何与另一个 web 服务进行通信的 Xama
 |Models|包含应用程序的数据模型类。 至少，这包括`TodoItem`类，该类使用的应用程序数据的单个项。 该文件夹还可以包含用于对用户数据的其他任何类。|
 |Views|包含应用程序页。 这通常包括`TodoListPage`和`TodoItemPage`类和其他用于进行身份验证的任何类。|
 
-每个应用程序的共享代码项目还包含若干重要文件:
+每个应用程序的共享代码项目还包含若干重要文件：
 
 |文件|目标|
 |--- |--- |
@@ -93,6 +93,6 @@ public class TodoItem
 
 ## <a name="related-links"></a>相关链接
 
-- [.ASMX (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
-- [WCF (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [REST (示例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [.ASMX （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/14/2018
 ms.openlocfilehash: 9eec99ffe244ffdc290050bd54f083ad6582151d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70286388"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin 中的选取器控件
@@ -260,7 +260,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 若要设置`NSDate`的格式， [`NSDateFormatter`](xref:Foundation.NSDateFormatter)请使用。
 
-若要使用`NSDateFormatter`，请调用[`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))其方法。 例如：
+若要使用`NSDateFormatter`，请调用[`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))其方法。 例如:
 
 ```csharp
 var date = NSDate.Now;

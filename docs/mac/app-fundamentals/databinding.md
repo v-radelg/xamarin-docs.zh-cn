@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769995"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin 中的数据绑定和键/值编码
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 首先， `[Register("PersonModel")]`属性注册类并将其公开给目标-C。 然后，类需要从`NSObject` （或`NSObject`继承自的子类）继承，这会添加几个允许类 KVC 兼容的基方法。 接下来， `[Export("Name")]`特性`Name`公开属性，并定义稍后用于通过 KVC 和 KVO 技术访问属性的键值。
 
-最后，若要能够以键值方式观察到对属性值的更改，访问器必须在和`WillChangeValue` `DidChangeValue`方法调用中包装其值的更改（指定与`Export`特性相同的键）。  例如：
+最后，若要能够以键值方式观察到对属性值的更改，访问器必须在和`WillChangeValue` `DidChangeValue`方法调用中包装其值的更改（指定与`Export`特性相同的键）。  例如:
 
 ```csharp
 set {
