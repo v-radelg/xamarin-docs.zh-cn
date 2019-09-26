@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753771"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198545"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>通过“与 Mac 配对”进行 Xamarin.iOS 开发
 
@@ -163,6 +163,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 自 [Visual Studio 2019 版本 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 起，与 Mac 配对后会使用构建 Xamarin.iOS 应用程序所必需的软件来自动预配 Mac：Mono、Xamarin.iOS（软件框架，而不是 Visual Studio for Mac IDE），以及与 Xcode 相关的工具（但不是 Xcode 本身）。
 
 > [!IMPORTANT]
+>
 > - “与 Mac 配对”不能安装 Xcode；必须手动将其安装在 Mac 生成主机上。 它是 Xamarin.iOS 开发所必需的。
 > - 自动预配 Mac 需要在 Mac 上启用远程登录，并且 Windows 计算机必须能够通过网络访问该 Mac。 有关详细信息，请参阅[在 Mac 上启用远程登录](#enable-remote-login-on-the-mac)。
 > - 自动预配 Mac 需要 Mac 上有 3 GB 的可用空间用于安装 Xamarin.iOS。
@@ -185,6 +186,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 > [!IMPORTANT]
 > “与 Mac 配对”不会把 Mac 上的 Xamarin.iOS 从 alpha/beta 版本降级为稳定版本。 如果已安装 Visual Studio for Mac，请设置[发布通道](https://docs.microsoft.com/visualstudio/mac/update)，如下所示：
+>
 > - 如果使用 Visual Studio 2019，选择 Visual Studio for Mac 中的“稳定”更新通道  。
 > - 如果使用 Visual Studio 2019 预览版，选择 Visual Studio for Mac 中的“Alpha”更新通道  。
 

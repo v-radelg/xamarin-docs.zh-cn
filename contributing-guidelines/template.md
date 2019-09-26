@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: 8374e90ea6d460a0e0c22763db023654c3008b32
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105745"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249567"
 ---
 # <a name="metadata-and-markdown-template"></a>元数据和 Markdown 模板
 
@@ -179,7 +179,7 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 - 无序
 - list
 
-##### <a name="unordered-list-with-an-embedded-list"></a>包含嵌套列表的无序列表
+#### <a name="unordered-list-with-an-embedded-list"></a>包含嵌套列表的无序列表
 
 - 这
 - 无序
@@ -210,7 +210,7 @@ ID 是基于标头文本自动生成的。 因此，例如，如果某个唯一�
 
 使用三个反撇号 (\`\`\`) + 语言 ID，将特定于语言的颜色编码应用到代码块。 此处是 [GFM 语言 ID](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs) 的完整列表。
 
-##### <a name="c9839"></a>C&#9839;
+#### <a name="c9839"></a>C&#9839;
 
 ```c#
 using System;

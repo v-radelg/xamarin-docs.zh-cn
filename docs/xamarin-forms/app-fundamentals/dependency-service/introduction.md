@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 3521d3fb632261c880e67f7a8c889881485e313d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198157"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71198513"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 介绍
 
@@ -118,7 +118,7 @@ namespace DependencyServiceDemos.UWP
 ```csharp
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(DeviceOrientationService))]
+[assembly: Dependency(typeof(DependencyServiceDemos.iOS.DeviceOrientationService))]
 namespace DependencyServiceDemos.iOS
 {
     public class DeviceOrientationService : IDeviceOrientationService

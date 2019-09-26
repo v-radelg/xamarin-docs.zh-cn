@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: b3e34022af4e83b172b7ae7cedfb13e95e92beba
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5113255d8776987783ad5e8f023e7b2b30924ea4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756122"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250007"
 ---
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
@@ -40,6 +40,8 @@ ms.locfileid: "70756122"
 ## <a name="specify-the-application-icon"></a>指定应用程序图标
 
 强烈建议每个 Xamarin.Android 应用程序都指定一个应用程序图标。 某些应用程序市场将不允许发布没有图标的 Android 应用程序。 `Application` 特性的 `Icon` 属性用于指定 Xamarin.Android 项目的应用程序图标。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

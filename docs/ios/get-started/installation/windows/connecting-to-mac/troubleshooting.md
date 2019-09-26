@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ae8095ed0ef0ba8d0bfaf8295832bbef006d1627
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753671"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198526"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -33,6 +33,7 @@ ms.locfileid: "70753671"
 
 > [!IMPORTANT]
 > 这些疑难解答步骤主要针对在新系统上进行初始设置的过程中发生的问题。  如果以前在特定环境中已成功使用连接，然后连接突然或间歇性停止工作，则可以（在大多数情况下）直接跳过以检查以下任一情况看是否有帮助： 
+>
 > - 按如下所述[由于现有生成主机进程而导致的错误](#errors)，终止剩余进程。 
 > - 按如下所述[清除中转站、IDB、生成和设计器代理](#clearing)清除代理，然后按如下所述[无法连接到 MacBuildHost。请重试。](#tryagain)使用有线 Internet 连接并通过 IP 地址直接连接。  
 > 如果这些选项都不能解决问题，请按照[步骤 9](#stepnine) 中的说明提交新的 bug 报告。

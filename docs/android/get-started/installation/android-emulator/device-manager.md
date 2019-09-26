@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 60dcbd6f59e622fe5a1272bd2d61540b03e510e4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 682fc5c2241ab3177b12f46dd31d264a4f58b951
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758427"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250097"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虚拟设备
 
@@ -362,6 +362,8 @@ Xamarin Studio 与 Android Device Manager 不兼容。
 ## <a name="troubleshooting"></a>疑难解答
 
 以下各节介绍如何诊断和避开使用 Android Device Manager 配置虚拟设备时可能发生的问题。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

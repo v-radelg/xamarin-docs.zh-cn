@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 43dce7fe6d2a4a976879b1f583711d767dcacc7c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8267c49302a755dcc433345b6a53aa9f2e2c71e6
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756214"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250173"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -90,6 +90,8 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 创建 iTunes Connect 记录后，即可上传新的版本。 请记住，版本必须具有新的 Beta 权利。
 
 首先，在 IDE 中生成[最终可分发文件](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)，然后通过“应用程序加载程序”或 Xcode 中的存档功能[将应用提交到 Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

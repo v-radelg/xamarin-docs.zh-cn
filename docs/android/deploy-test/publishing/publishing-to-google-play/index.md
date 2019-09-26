@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 656b74bce10d30ddd463486c5103d65c6ba5eb97
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755968"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250014"
 ---
 # <a name="publishing-to-google-play"></a>发布到 Google Play
 
@@ -108,6 +108,8 @@ Google Play 上的应用程序需要使用高保真版本的应用程序图标�
 这是一个展示应用程序的 YouTube 视频 URL。 视频长度应在 30 秒到 2 分钟之间，并能展示应用程序的最佳部分。
 
 ### <a name="publishing-to-google-play"></a>发布到 Google Play
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
