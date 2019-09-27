@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 96d2fe0b03ad7067d6fece072742ea2796224f8b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: baf5d7a348c96cc2c43fd909bcc543fbfbfe81ce
+ms.sourcegitcommit: 58b21bf0eda3a7cea91a95b479f499c9d499b6d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250125"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310788"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的图像
 
@@ -274,7 +274,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 默认情况下启用缓存，并将该映像存储 24 小时内的本地。 若要禁用特定的图像的缓存，实例化，如下所示图像源：
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
 ```
 
 若要设置特定缓存期 （例如，5 天） 实例化图像源，如下所示：
