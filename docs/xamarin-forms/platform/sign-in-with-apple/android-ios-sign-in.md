@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 105088b612ffc35d18bdf800b48cc700ce6f4a48
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: df011a6eb72b6eb30af0a197d4be48b0f2494384
+ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206520"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319512"
 ---
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>在 Xamarin 中使用 Apple 的登录。 Forms
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/Redth/Xamarin.AppleSignIn.Sample)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
 
 使用 Apple 登录适用于 iOS 13 上使用第三方身份验证服务的所有新应用程序。 IOS 和 Android 之间的实现细节完全不同。 本指南逐步讲解如何在 Xamarin 中完成此操作。
 
