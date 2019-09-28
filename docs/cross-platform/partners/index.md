@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 09/17/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 1cb4080be2bcb421db1e9db08a18b49ad95c4fb7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 40cfa7925f1617486a83134dd94626a0f11e80f3
+ms.sourcegitcommit: 709072506f0bb6abc1d6046ec15f6bf66b282d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765306"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71344612"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>认证咨询合作伙伴提供移动解决方案
 
@@ -227,13 +227,13 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 |[Datacom](http://www.datacom.co.nz/)|惠灵顿，新西兰;新西兰奥克兰;澳大利亚悉尼|Datacom 设计，构建并运行 IT 系统并处理业务流程。|
 |[Envoy 高级技术](http://www.envoyat.com/)|澳大利亚 Chatswood|Envoy specialises 构建 web 应用程序、移动应用程序和企业应用程序。|
 |[XAM 咨询](http://www.xam-consulting.com/)|澳大利亚宽|XAM 构建企业级应用程序。 Xamarin 和无服务器的20多位专家团队。|
-|[Kloud 解决方案](http://www.kloud.com.au)|墨尔本，澳大利亚|我们已经帮助了许多澳大利亚最大品牌转变其业务、降低成本、简化流程，并通过云计算引入创新的新服务|
+|[Kloud 解决方案](http://www.kloud.com.au)|墨尔本, 澳大利亚|我们已经帮助了许多澳大利亚最大品牌转变其业务、降低成本、简化流程，并通过云计算引入创新的新服务|
 |[标记地铁](http://www.markermetro.com/)|新西兰奥克兰;澳大利亚悉尼|关键客户端体验包括迪士尼 Mobile、索尼、NZTE、Carters Holt Harvey、英英和新西兰。 标记地铁非常自豪，是 Xamarin 合作伙伴。|
-|[Millipede](http://millipede.com.au)|墨尔本，澳大利亚|Millipede 是 WPP 的一部分，这是一家包含8000多人的全球性公司。 我们是一组高度创造性的软件工程师、设计人员和 UX 专家，他们致力于开发从安全的消费银行和企业实用工具应用到移动游戏的更好、更有效的移动解决方案。|
+|[Millipede](http://millipede.com.au)|墨尔本, 澳大利亚|Millipede 是 WPP 的一部分，这是一家包含8000多人的全球性公司。 我们是一组高度创造性的软件工程师、设计人员和 UX 专家，他们致力于开发从安全的消费银行和企业实用工具应用到移动游戏的更好、更有效的移动解决方案。|
 |[Oakton](https://www.oakton.com.au/)|墨尔本，布里斯班城，堪培拉，悉尼，阿德莱德|提供端到端的服务和解决方案，并获得30多年的专业知识，我们将为你简化技术、提高灵活性、改善你的客户和员工的参与，并从技术投资中获得更多好处。|
 |[Obiquitech](http://www.obiquitech.com/)|澳大利亚 AU-NSW|本机应用程序开发。 所有平台。|
 |[Ookitech](http://www.ookitech.com.au)|布里斯班 QLD，澳大利亚|精美设计和技术。 我们开发智能产品来帮助你在此数字时代。|
-|[Orbital8](http://www.orbital8.com.au)|墨尔本，澳大利亚|Orbital8 是为企业、web 和移动平台开发手工构建软件的专家。 我们的重点是提供创新但简单且经济高效的软件解决方案，为我们的客户提供真实的商业价值。 我们自豪地能够解释并预测客户需求，并提供超出其预期的解决方案。 |
+|[Orbital8](http://www.orbital8.com.au)|墨尔本, 澳大利亚|Orbital8 是为企业、web 和移动平台开发手工构建软件的专家。 我们的重点是提供创新但简单且经济高效的软件解决方案，为我们的客户提供真实的商业价值。 我们自豪地能够解释并预测客户需求，并提供超出其预期的解决方案。 |
 |[纯粹的解决方案](http://www.puresolutions-online.com/Home)|澳大利亚 AU-NSW|在其各自的热衷于中，一项专家的专家团队将介绍如何通过业务和技术融合创建最佳解决方案。|
 |[Readify](http://readify.net)|Docklands，VIC 3008 澳大利亚|Readify 已实现全局识别功能，帮助客户构建驱动协作、生产力、业务增长和盈利的软件。 其帮助客户的能力是应用最佳实践软件开发过程和使用精英开发人员的直接结果。 他们通过严格的对等推动的招聘流程来实现此目的，然后继续在其人员的开发中投入投资，确保其技能仍处于行业知识的最前沿。|
 
@@ -277,7 +277,7 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Birdie](http://www.birdie.cl)|圣地亚哥，智利|Birdie 是一个应用开发公司|
+|[Birdie](http://www.birdie.cl)|圣地亚哥, 智利|Birdie 是一个应用开发公司|
 
 ## <a name="china"></a>中国
 
@@ -302,21 +302,21 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Datatech it解决方案有限公司](http://www.datatech.com.cy)|塞浦路斯|Datatech it 解决方案有限公司是企业内容管理、供应链管理和移动解决方案领域中的一种领先的技术解决方案提供商|
+|[Datatech it解决方案有限公司 @ no__t-0|塞浦路斯|Datatech it 解决方案有限公司是企业内容管理、供应链管理和移动解决方案领域中的一种领先的技术解决方案提供商|
 
 ## <a name="czech-republic"></a>捷克共和国
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[DevMasters](http://www.devmasters.cz/)|布拉格，捷克共和国|DevMasters 是一家捷克于解决方案和应用程序开发的捷克语 IT 公司|
+|[DevMasters](http://www.devmasters.cz/)|布拉格, 捷克共和国|DevMasters 是一家捷克于解决方案和应用程序开发的捷克语 IT 公司|
 
 ## <a name="denmark"></a>丹麦
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
 |[应用 Bureauet](https://appbureauet.dk/)|Svendborg，丹麦|App Bureauet 是应用开发公司|
-|[Bluefragments](http://www.bluefragments.com)|哥本哈根，丹麦|Bluefragments 专用于应用开发，是经过认证的 Microsoft 合作伙伴。|
-|[Comet.dk （CometPeople） Ap](http://comet.dk)|哥本哈根，丹麦|Comet 是一家开发房屋，提供将移动应用程序开发到最新的移动平台（如 iPhone、iPad、Android 和 Windows Phone）|
+|[Bluefragments](http://www.bluefragments.com)|哥本哈根, 丹麦|Bluefragments 专用于应用开发，是经过认证的 Microsoft 合作伙伴。|
+|[Comet.dk （CometPeople） Ap](http://comet.dk)|哥本哈根, 丹麦|Comet 是一家开发房屋，提供将移动应用程序开发到最新的移动平台（如 iPhone、iPad、Android 和 Windows Phone）|
 |[Commentor 深色](http://commentor.dk)|Aalborg，丹麦|Commentor，因为2000向丹麦的最大公司提供任务关键型应用程序|
 |[Miracle](https://miracle.dk/)|Ballerup，丹麦|在神奇，我们的目标是将我们的内容用于数字化丹麦。 为此，我们通过从我们的3个位置向私有和公共公司交付最高质量的 IT 解决方案来实现此目的|
 
@@ -398,7 +398,7 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Grape 解决方案](http://grape.hu/)|布达佩斯，匈牙利|Grape 解决方案是一家在2006中建立的动态软件开发公司。 我们主要为本地和国际客户开发自定义业务应用程序。 |
+|[Grape 解决方案](http://grape.hu/)|布达佩斯, 匈牙利|Grape 解决方案是一家在2006中建立的动态软件开发公司。 我们主要为本地和国际客户开发自定义业务应用程序。 |
 
 ## <a name="india"></a>印度
 
@@ -408,11 +408,11 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 |[Greynubo](http://www.greynubo.com/)|新加坡印度 Bengaluru|GreyNubo 由一组已提交的专业人员组成，这些专业人员在 CRM、CPQ、Mobile 与 Salesforce 平台中具有强大基础的情况下具有多年的域体验|
 |[MobMaxime](http://www.mobmaxime.com)|印度 Ahmedabad |我们将与你联系你的产品视觉，并决定是否适合你的项目。 如果需要，我们将向你发送项目估计以供你查看。|
 |[弹出项技术专用限制](http://www.popuptechnologies.com)|孟买|弹出项技术会在5年后弹出，因为之后就是移动设备上的装置。 从总部开始，Popup 技术是一家移动解决方案，公司不断重新发现新技术。 跨所有平台（iOS、Android、Windows、Xamarin、Blackberry、Html5、TIZEN 和渐进 Web 应用）提供超过100多个移动应用的组合。|
-|[Sasken 通信技术限制](http://www.sasken.com)|孟买，印度|Sasken 帮助用户随时随地保持更好的连接。 多个行业（包括自动电子设备、消费电子设备、零售和医疗保健）都可以根据需要以及数据驱动和实时决策来查看与云的连接。 由于通信和媒体处理中的无与伦比的域能力，它们会使用户在行业清单中面临重大挑战。 它们与生态系统中的对应项结合使用，以在连接设备的全新、不断发展的环境中提供分服务。|
-|[ServPRO 技术 Pvt 有限公司](http://www.servpro.in)|孟买，印度|ServPRO，一种代表 "主动服务" 的品牌2009是由 Pushpinder Bhatia 先生成的。 ServPRO 是一家领先的 IT 解决方案和服务提供商，致力于在多个垂直段提供业务关键 & 创新 IT 解决方案，包括 & & GarmentsFMCG/CPG、Bullion、EXIM 以及各种其他行业纵向。|
-|[Taritas Software 解决方案 Pvt。Ltd.](http://www.taritas.com/)|Bengaluru、Karnataka、印度;Jabalpur、Madhya Pradesh、印度|Taritas 是一家软件外包公司，为多个行业提供领先的解决方案。 全面了解软件和应用程序开发结合了离岸的成本优势，使我们能够提供高质量的开发服务，主要是将项目成本降到最低，并使客户端的利润最大化。 我们会按 "首次正确 & 预算" 方法。 |
+|[Sasken 通信技术限制](http://www.sasken.com)|孟买, 印度|Sasken 帮助用户随时随地保持更好的连接。 多个行业（包括自动电子设备、消费电子设备、零售和医疗保健）都可以根据需要以及数据驱动和实时决策来查看与云的连接。 由于通信和媒体处理中的无与伦比的域能力，它们会使用户在行业清单中面临重大挑战。 它们与生态系统中的对应项结合使用，以在连接设备的全新、不断发展的环境中提供分服务。|
+|[ServPRO 技术 Pvt 有限公司](http://www.servpro.in)|孟买, 印度|ServPRO，一种代表 "主动服务" 的品牌2009是由 Pushpinder Bhatia 先生成的。 ServPRO 是一家领先的 IT 解决方案和服务提供商，致力于在多个垂直段提供业务关键 & 创新 IT 解决方案，包括 & & GarmentsFMCG/CPG、Bullion、EXIM 以及各种其他行业纵向。|
+|@no__t 0Taritas Software Pvt。Ltd.](http://www.taritas.com/)|Bengaluru、Karnataka、印度;Jabalpur、Madhya Pradesh、印度|Taritas 是一家软件外包公司，为多个行业提供领先的解决方案。 全面了解软件和应用程序开发结合了离岸的成本优势，使我们能够提供高质量的开发服务，主要是将项目成本降到最低，并使客户端的利润最大化。 我们会按 "首次正确 & 预算" 方法。 |
 |[技术 Mahindra](https://techmahindra.com)|Bengaluru|Tech Mahindra 代表连接世界，提供创新的、以客户为中心的信息技术服务和解决方案，使企业、相关人员和社会™。 我们是一家4400000000美元的公司，有500超过90个国家/地区的117600|
-|[TechAhead Software Pvt。Ltd.](http://www.techaheadcorp.com)|普林斯顿，NJ;印度 Noida|我们正在创建移动性解决方案，以加速工作区数字转换、提高工作效率、强制实施安全性，并使用户能够随时随地进行工作。 开发适用于企业模型和业务目标的最佳移动性解决方案，产生共鸣完美地利用品牌认知、市场渗透、服务集成和客户预期。|
+|@no__t 0TechAhead Software Pvt。Ltd.](http://www.techaheadcorp.com)|普林斯顿，NJ;印度 Noida|我们正在创建移动性解决方案，以加速工作区数字转换、提高工作效率、强制实施安全性，并使用户能够随时随地进行工作。 开发适用于企业模型和业务目标的最佳移动性解决方案，产生共鸣完美地利用品牌认知、市场渗透、服务集成和客户预期。|
 |[遍历树咨询服务](http://www.walkingtree.in/)|印度海得拉巴|遍历树是一种 IT 软件和服务提供商，它能为其技术的热情而公认。 它们充当全球各地客户的产品开发团队或后端工程团队。|
 |[Web Spiders](http://www.webspiders.com)|纽约州纽约市;英国伦敦;新加坡印度|Web Spiders （WS）是一家企业软件公司，使用移动性和人工智能 led Bot 为市场营销和 HR 开发产品，推动 "用户参与"。|
 
@@ -427,10 +427,10 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
 |[Cortis Lentini](http://www.cortislentini.com)|Milan，意大利;罗马，意大利;Bergamo;意大利|Cortis Lentini provices 创新基础结构和技术 oursourcing 服务|
-|[Dataexpert S.r.l.](http://www.dataexpert.it)|Milan，意大利|Dataexpert 是为 IT 服务提供高价值创新、面向服务、便于集成现有技术基础结构、快速且简单的实现的领导者|
+|[Dataexpert S.r.l.](http://www.dataexpert.it)|Milan, 意大利|Dataexpert 是为 IT 服务提供高价值创新、面向服务、便于集成现有技术基础结构、快速且简单的实现的领导者|
 |[工厂](http://www.factorymind.com)|Trento，意大利|Factory 是一项年轻人且动态合作，其中包含一组热衷于开发人员，具有计算机科学、技术和创新。|
-|[第五个 Ingenium](https://fifthingenium.com/)|Milan，意大利|FifthIngenium 是一家专门针对移动应用程序、云解决方案和新兴技术的意大利语 IT 公司|
-|[Gaia S.r.l.](http://www.gaia.is.it/en/)|Milan，意大利|Gaia 是一家体验设计公司，为用户设计的数字生态系统。|
+|[第五个 Ingenium](https://fifthingenium.com/)|Milan, 意大利|FifthIngenium 是一家专门针对移动应用程序、云解决方案和新兴技术的意大利语 IT 公司|
+|[Gaia S.r.l.](http://www.gaia.is.it/en/)|Milan, 意大利|Gaia 是一家体验设计公司，为用户设计的数字生态系统。|
 |[Giuneco s.r.l.](http://www.giuneco.it/)|Florence，意大利|公司的任务是利用新技术（主要与 Microsoft world 相关）来创建高效且高效的解决方案，并注重可用性（UX）和可维护性|
 |[Lemcube](http://www.lemcube.com)|Paese、Treviso、意大利|咨询公司，拥有10年的 Microsoft .Net 经验。 我们的客户是行业、逻辑、维护和移动性。 我们可以针对该作业提供培训和培训。|
 |[Mahiz Srl](http://www.mahiz.it/)|意大利|Artisans 的软件，Mahiz 可帮助公司构建更好的产品，提供20多年的信息技术经验。 他们的任务是消除阻碍软件发展的软件的世界。 |
@@ -448,7 +448,7 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Diatom 企业](http://www.diatomenterprises.com/)|里加，拉脱维亚|开发单独的 Web、移动和桌面系统，将客户端业务 individuality|
+|[Diatom 企业](http://www.diatomenterprises.com/)|里加, 拉脱维亚|开发单独的 Web、移动和桌面系统，将客户端业务 individuality|
 
 ## <a name="liechtenstein"></a>列支敦士登
 
@@ -472,9 +472,9 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Alset](http://alset.com.mx)|墨西哥城，墨西哥|ALSET 是一家专用于信息技术（IT）的公司，有丰富的经验，为行业提供先进、高级、可靠和可靠的解决方案|
+|[Alset](http://alset.com.mx)|墨西哥城, 墨西哥|ALSET 是一家专用于信息技术（IT）的公司，有丰富的经验，为行业提供先进、高级、可靠和可靠的解决方案|
 |[Gigigo 组](http://www.gigigo.com)|墨西哥城，墨西哥;巴西圣地亚哥;西班牙马德里|2004在这些多年来，Gigigo 已成为一种可靠且可靠的数字 ally，可通过其向数字转换的途径定向和伴随大型公司|
-|[InfoTacto](http://infotacto.com)|墨西哥城，墨西哥|我们是一组丰富的专业人员，在风险管理、运行状况、社会保障（退休金计划和社会权益方案）、公共安全、宾馆扇区和计算机技术方面具有丰富的经验。|
+|[InfoTacto](http://infotacto.com)|墨西哥城, 墨西哥|我们是一组丰富的专业人员，在风险管理、运行状况、社会保障（退休金计划和社会权益方案）、公共安全、宾馆扇区和计算机技术方面具有丰富的经验。|
 |[Lisyx 技术 SA de CV](http://www.lisyx.com)|莱昂、Guanajuato|Lisyx 技术是一家咨询公司，侧重于信息技术和业务流程解决方案。 它们在增值业务和 IT 外包服务和解决方案新兴技术中提供咨询服务。|
 |[Migesa](http://www.migesa.com.mx/)|蒙特雷，新 Leon，墨西哥;;墨西哥城，CDMX，墨西哥|在35年的市场中提供，Migesa 是最大信息和通信技术服务和解决方案集成商之一。 我们设计和实现中型和大型公司需求的定制解决方案。|
 |[RAMSCT SC](http://www.ramsct.com )|墨西哥城|Cada empresa a nivel mundial se encuentra actualmente evaluando la mejor manera de utilizar soluciones móviles dentro de su negocio。 Nuestra experiencia en soluciones móviles por más de 10 años nos permite ofrecer soluciones totalmente integradas incluyendo：  |
@@ -488,7 +488,7 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 |[Agile 技术](http://www.agiletz.com)|Dubai，阿拉伯联合酋长国;科威特阿曼巴林卡塔尔Cairo，埃及|Agile 技术是企业 IT 解决方案提供商，提供有关 DevOps、开发和测试服务的咨询、培训和服务。|
 |[CodeValue](http://www.codevalue.net)|Herzliya、以色列;Yokne'am Illit，以色列|CodeValue 是领先的软件公司，提供全套软件服务，使客户能够专注于其核心业务活动|
 |[DCube](http://www.dcube.me/)|利雅得，沙特阿拉伯|DCube 专用于电子媒体的开发，并通过一项使命向 Internet 世界提供最佳体验并使用电子内容|
-|[DigiPresence](http://www.digipresence.net)|Dubai，阿拉伯联合酋长国|Digi 出席提供、安装，并向居住的外部事务国防局（Dubai 及其外国中心）提供技术支持和维护服务。|
+|[DigiPresence](http://www.digipresence.net)|Dubai, 阿拉伯联合酋长国|Digi 出席提供、安装，并向居住的外部事务国防局（Dubai 及其外国中心）提供技术支持和维护服务。|
 |[TechSource LLC](http://www.techsource.ae/)|Dubai-阿拉伯联合酋长国|我们的服务包括应用程序开发和维护、集成解决方案、ERP、CRM 和功能咨询服务。 在过去几年中，我们为中东地区市场领导人提供了重大的性能改进。|
 
 ## <a name="netherlands"></a>荷兰
@@ -534,13 +534,13 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[高级系统技术](http://www.astechoman.com/)|马斯喀特，阿曼|AstechOman 是 IT 解决方案提供商。 |
+|[高级系统技术](http://www.astechoman.com/)|马斯喀特, 阿曼|AstechOman 是 IT 解决方案提供商。 |
 
 ## <a name="philippines"></a>菲律宾
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Haiyan 组 Inc。](http://www.haiyan.com.ph)|马尼拉，菲律宾|适用于 iOS 和 Android 的 Haiyan Group Inc. developes web 和移动应用|
+|[Haiyan 组 Inc。](http://www.haiyan.com.ph)|马尼拉, 菲律宾|适用于 iOS 和 Android 的 Haiyan Group Inc. developes web 和移动应用|
 
 ## <a name="poland"></a>波兰
 
@@ -548,8 +548,8 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 | --- | --- | --- |
 |[Applandeo](http://www.applandeo.com/en/)|Krakow、波兰|Applandeo 是应用和 web 开发公司|
 |[ASSECO 波兰南美洲](https://pl.asseco.com/)|Rzeszów、波兰|Asseco 波兰为经济的所有关键部门的公司和机构开发了技术高级软件解决方案，超过20年|
-|[Billennium](http://billennium.pl/)|华沙，波兰 |Billennium 多年来开发创新性的商业工具和解决方案。|
-|[Edge One 解决方案 Sp-1 o.o。](http://www.edge1s.com)|华沙，波兰 |我们提供高度合格的 IT 顾问的技能和经验。 在我们的产品组合中的每个服务内，我们保证灵活地满足客户的需求和期望|
+|[Billennium](http://billennium.pl/)|华沙, 波兰 |Billennium 多年来开发创新性的商业工具和解决方案。|
+|[Edge One 解决方案 Sp-1 o.o。](http://www.edge1s.com)|华沙, 波兰 |我们提供高度合格的 IT 顾问的技能和经验。 在我们的产品组合中的每个服务内，我们保证灵活地满足客户的需求和期望|
 |[NETBULLS o.o。](http://www.netbulls.io)|Bialystok、波兰|将你的想法推广到市场 skilfully。 不浪费： $ €、time 或托辞。 |
 |[Sii](http://www.sii.pl/en)|华沙，波兰;巴黎，法国;巴塞罗纳马德里;德国，柏林;阿姆斯特丹，荷兰;布鲁塞尔，比利时;卢森堡城，卢森堡;Geneva、瑞士;Marrakesh、摩洛哥;布拉格，Czechia;布加勒斯特，罗马尼亚;加拿大，加拿大，圣地亚哥，圣地亚哥大都市地区，智利;布宜诺斯艾利斯，布宜诺斯艾利斯，阿根廷;Bogotá，波哥大，哥伦比亚;印度|Sii 是在波兰中领先的 IT 服务公司，支持从其概念到成功交付及更高版本的数字转换程序。 我们提供了提供企业和使用者应用的专业知识，使其能够进行设备通信、大数据处理和脱机。|
 
@@ -557,9 +557,9 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[Agap2](http://www.agap2.com)|里斯本，葡萄牙|Agap2 –业界和 IT 行业中的欧洲运营咨询和工程小组专用|
-|[用粗体显示碳](http://www.carbonbybold.com/)|里斯本，葡萄牙|以粗体显示，是一种面向移动咨询服务的品牌，可帮助公司将移动设备集成到其业务战略中。 |
-|[WIG](http://www.wig.pt)|里斯本，葡萄牙|WIG 具有积极、随机和自定义的态度。 它们将客户端视为合作伙伴，并将其问题视为我们的问题。 结果始终为积极、灵活、真实且实用。|
+|[Agap2](http://www.agap2.com)|里斯本, 葡萄牙|Agap2 –业界和 IT 行业中的欧洲运营咨询和工程小组专用|
+|[用粗体显示碳](http://www.carbonbybold.com/)|里斯本, 葡萄牙|以粗体显示，是一种面向移动咨询服务的品牌，可帮助公司将移动设备集成到其业务战略中。 |
+|[WIG](http://www.wig.pt)|里斯本, 葡萄牙|WIG 具有积极、随机和自定义的态度。 它们将客户端视为合作伙伴，并将其问题视为我们的问题。 结果始终为积极、灵活、真实且实用。|
 
 ## <a name="russia"></a>俄罗斯
 
@@ -591,12 +591,12 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
-|[AD 软件系统](http://www.adsoftsystems.co.za)|佛得角，南非|AD Software Systems 提供自定义 Web 和移动开发解决方案。 它们侧重于本机开发，同时还创建了解决方案以允许在所有主要移动平台上最大限度地重复使用|
-|[CodeWrite Pty 有限公司](http://www.codewrite.co.za/)|约翰内斯堡，南非|重点介绍基于移动的应用程序和基于 web 的解决方案、丰富的自定义企业软件应用程序和安全访问控制系统软件集成|
-|[Cyberlogic Pty 有限公司](http://www.cyberlogic.co.za)|佛得角，南非|Cyberlogic 是一种托管服务提供商，具有数据中心的云和托管 IT 服务|
-|[完整堆栈](http://www.fullstack.co.za/)|佛得角，南非|完整堆栈是一家软件公司，提供旨在通过固定价格按时交付质量软件的数据产品和服务，旨在解锁业务价值。|
-|[新的媒体实验室](http://www.newmedialabs.com)|佛得角，南非|我们 specialise 金融服务客户端的安全事务 web 应用程序。 这些订购的系统与我们的客户端企业完全集成，以显著提高效率并使其客户参与。|
-|[范例组](http://www.paradigmgroup.co.za/)|佛得角，南非|范例组是组中的专业软件开发部门。 它们为公司、NGO 和政府组织提供自定义软件开发。|
+|[AD 软件系统](http://www.adsoftsystems.co.za)|佛得角, 南非|AD Software Systems 提供自定义 Web 和移动开发解决方案。 它们侧重于本机开发，同时还创建了解决方案以允许在所有主要移动平台上最大限度地重复使用|
+|[CodeWrite Pty 有限公司](http://www.codewrite.co.za/)|约翰内斯堡, 南非|重点介绍基于移动的应用程序和基于 web 的解决方案、丰富的自定义企业软件应用程序和安全访问控制系统软件集成|
+|[Cyberlogic Pty 有限公司](http://www.cyberlogic.co.za)|佛得角, 南非|Cyberlogic 是一种托管服务提供商，具有数据中心的云和托管 IT 服务|
+|[完整堆栈](http://www.fullstack.co.za/)|佛得角, 南非|完整堆栈是一家软件公司，提供旨在通过固定价格按时交付质量软件的数据产品和服务，旨在解锁业务价值。|
+|[新的媒体实验室](http://www.newmedialabs.com)|佛得角, 南非|我们 specialise 金融服务客户端的安全事务 web 应用程序。 这些订购的系统与我们的客户端企业完全集成，以显著提高效率并使其客户参与。|
+|[范例组](http://www.paradigmgroup.co.za/)|佛得角, 南非|范例组是组中的专业软件开发部门。 它们为公司、NGO 和政府组织提供自定义软件开发。|
 |[Sabersoft 咨询](https://www.sabersoft.co.za/)|南非|企业现在可以获得移动应用程序的回报，以吸引新市场、获得认知、增强服务交付，并最终增加收入。|
 |[相切 IT 解决方案](http://tangentsolutions.co.za/)|南非 |相切解决方案建立在2010，是一种数字转换开发咨询家。 我们专注于开源，并享受快速发展进度和不断变化的技术生态系统。 首先，我们是 Cloud first、DevOps First 和 Mobile。 |
 
@@ -605,6 +605,7 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
 |[DevsDNA](http://www.devsdna.com)|西班牙 Seville|在 DevsDNA，我们相信另一种实现业务和创建软件的方法。 遗憾的是，我们的当代社会缺少透明度、道德、原则和道德性指南针。|
+|[Itequia](https://itequia.com)|西班牙巴塞罗纳|Itequia 开发新式 web 应用程序和自定义软件应用程序。 我们有10多年的经验与领先的大型和中型组织一起使用、构建顶级 internet 网站、实时应用程序、广泛使用的移动应用、关键过程和自动化门户，还有许多其他软件解决方案。|
 |[KutirTech](http://www.kutirtech.com)|西班牙 Malaga  |多年来，我们为大型和小型企业客户构建和支持 web 应用程序和移动应用程序。 我们经常探索和试验同类最佳的工具和技术，并通过适当的工具和技能组合来使企业客户端取得成功。|
 |[Pasiona 咨询](http://www.pasiona.com)|西班牙巴塞罗纳|我们建立在2007的前提上，这是为客户提供创新性的技术解决方案的最佳方式，这是为客户提供创新的技术解决方案的前提。 这就是我们的任务和我们的 raison d'etre。 我们是一家专用于开发每个公司的自定义解决方案的咨询公司，因为每个客户端都不同，并且需要唯一的独家处理。 我们致力于创新、高质量的工作、持续的培训以及人力 teaRegional Premier 的价值|
 |[TalentoMobile](http://www.talentomobile.com/)|西班牙 |我们是数字 natives。 我们通过我们的解决方案和我们的产品，为你的业务流程和客户的连接进行数字化。|
@@ -615,8 +616,8 @@ _由主要位置列出，许多合作伙伴提供跨边框的服务。_
 | 合作伙伴 | 位置 | 描述 |
 | --- | --- | --- |
 |[BITZEAL](http://www.bitzeal.se)|Gothenburg，瑞典|Bitzeal 创建基于 web 的应用程序、电话和 gnome 应用程序和固件|
-|[Conevo IT 咨询 AB](http://www.conevo.se)|斯德哥尔摩，瑞典|Conevo 是一家 IT 咨询公司，通过对客户业务的良好响应能力，以高效且比较简陋的方式创建最佳且最可持续的 IT 解决方案|
-|[进行波浪](http://www.makingwaves.com)|斯德哥尔摩，瑞典|使波浪应用策略、设计和技术服务，以帮助粗体企业转换为成功的数字业务。 对于超过300的技能专家和热情专家，他们是一家创新合作伙伴，提供了成为数字优胜者所需的一切。|
+|[Conevo IT 咨询 AB](http://www.conevo.se)|斯德哥尔摩, 瑞典|Conevo 是一家 IT 咨询公司，通过对客户业务的良好响应能力，以高效且比较简陋的方式创建最佳且最可持续的 IT 解决方案|
+|[进行波浪](http://www.makingwaves.com)|斯德哥尔摩, 瑞典|使波浪应用策略、设计和技术服务，以帮助粗体企业转换为成功的数字业务。 对于超过300的技能专家和热情专家，他们是一家创新合作伙伴，提供了成为数字优胜者所需的一切。|
 
 ## <a name="switzerland"></a>瑞士
 
