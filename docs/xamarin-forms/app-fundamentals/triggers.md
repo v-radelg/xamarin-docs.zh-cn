@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 31dfcc26121b0683db476b0c4be9a420efe5b66f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771237"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198576"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -144,7 +144,7 @@ ms.locfileid: "70771237"
 
 - 替代 `Invoke` 方法 - 每当满足触发器条件时调用该方法。
 
-- 声明触发器时，可选择公开可在 XAML 中设置的属性（例如此示例中的 `Anchor`、`Scale` 和 `Length`）。
+- 声明触发器时，可选择公开能在 XAML 中设置的属性。 相关示例，请参阅随附的示例应用程序中的 `VisualElementPopTriggerAction` 类。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -158,7 +158,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-触发器操作公开的属性可在 XAML 声明中进行设置，如下所示：
+然后，通过 XAML 使用事件触发器：
 
 ```xaml
 <EventTrigger Event="TextChanged">

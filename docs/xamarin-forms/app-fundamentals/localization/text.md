@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b17a1177abafe4e605263664038842863302ac3b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760999"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249691"
 ---
 # <a name="localization"></a>本地化
 
@@ -60,7 +60,7 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 
 选择有意义的名称（如 AppResources）并按“确定”   。
 
-[![添加资源文件](text-images/resx-new-file-sml.png "“新建文件”对话框")](text-images/resx-new-file.png#lightbox "New File Dialog")
+[![添加资源文件](text-images/resx-new-file-sml.png "“新建文件”对话框")](text-images/resx-new-file.png#lightbox "“新建文件”对话框")
 
 两个文件即会添加到项目中：
 
@@ -76,6 +76,8 @@ TodoLocalized 示例包括[共享项目演示](https://github.com/xamarin/xamari
 默认情况下，如果生成对字符串的强类型引用，则它们对程序集将为 `internal`。 这是因为 RESX 文件的默认生成工具将生成具有 `internal` 属性的 .designer.cs 文件  。
 
 选择 AppResources.resx 文件，并显示 Properties Pad，以查看配置此生成工具的位置   。 下面的截图显示“自定义工具：  ResXFileCodeGenerator”。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

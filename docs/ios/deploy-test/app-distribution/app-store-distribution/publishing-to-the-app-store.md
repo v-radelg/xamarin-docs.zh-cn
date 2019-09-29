@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 5d299112da87207f7486247e0ed6f00c35a35fe5
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 9f9504890b12f6a3d8046e98ce537cc0d742f2ed
+ms.sourcegitcommit: 159f250ae7535fca7ab3bc4dc7395dc4cc2af93f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106048"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71278139"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>将 Xamarin.iOS 应用发布到 App Store
 
@@ -180,50 +180,27 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
     ![生成配置和平台选择](publishing-to-the-app-store-images/chooseConfig-m157.png "Build configuration and platform selection")
 
 2. 在“生成”菜单中，选择“存档以供发布”   。
-3. 存档创建完成后，将显示“存档”  视图：
+3. 存档创建完成后，将显示“存档”视图  。 单击“签名并分发...”以打开发布向导  。
 
-    ![存档视图](publishing-to-the-app-store-images/archives-m157.png "Archives view")
+
+    ![显示“存档”视图中“签名并分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-mac.png "Screenshot of the Sign and Distribute button location in the Archives view.")
 
     > [!NOTE]
     > 默认情况下，“存档”视图仅显示打开的解决方案的存档  。 若要查看拥有存档的所有解决方案，请勾选“显示所有存档”复选框  。 最好保留旧的存档，以便在必要时将它们所包含的调试信息用于符号化崩溃报告。
 
-4. 单击“签名并分发...”以打开发布向导  。
-5. 选择“App Store”分发通道  。 单击 **“下一步”** 。
+4. 选择“App Store”分发通道  。 单击 **“下一步”** 。
 
-    ![分发通道选择](publishing-to-the-app-store-images/distChannel-m157.png "Distribution channel selection")
+5. 选择“上传”作为目标  。 单击 **“下一步”** 。
 
 6. 在“预配配置文件”窗口中选择签名标识、应用和预配配置文件  。 单击 **“下一步”** 。
 
-    ![预配配置文件选择](publishing-to-the-app-store-images/provProfileSelect-m157.png "Provisioning profile selection")
+    ![“预配配置文件”向导页面屏幕截图，其中显示了有效的签名标识、应用和预配配置文件选项。](publishing-to-the-app-store-images/provProfileSelect-mac.png "Screenshot of the Provisioning profile wizard page with a valid signing identity, app, and provisioning profile selected.")
 
-7. 验证包的详细信息，再单击“发布”以保存应用的 .ipa 文件  ：
+7. 在“App Store Connect 信息”窗口中，从菜单中选择 Apple ID 用户名，然后输入[应用特定的密码](https://support.apple.com/ht204397)  。 单击 **“下一步”** 。
 
-    ![应用详细信息验证](publishing-to-the-app-store-images/publish-m157.png "App detail verification")
+    ![“App Store Connect 信息”向导页面屏幕截图，其中显示已选择 Apple ID 用户名。](publishing-to-the-app-store-images/connectInfo-mac.png "Screenshot of the App Store Connect information wizard page showing an Apple ID user name selected.")
 
-8. 保存 .ipa 后，即可将应用上传至 iTunes Connect。
-
-    ![准备好进行提交](publishing-to-the-app-store-images/readyToGo-m157.png "Ready for submission")
-
-9. 单击“打开应用程序加载器”并登录（注意，必须为 Apple ID [创建一个特定于应用的密码](https://support.apple.com/ht204397)）  。
-
-    > [!NOTE]
-    > 若要详细了解该工具，请参阅[关于应用程序加载器的 Apple 文档](https://help.apple.com/itc/apploader/#/apdS673accdb)。
-
-10. 选择“提交应用”  ，单击“选择”  按钮：
-
-    ![选择交付应用](publishing-to-the-app-store-images/publishvs01.png "Select Deliver Your App")
-
-11. 选择前面创建的.ipa 文件，单击“确定”按钮  。
-12. 应用加载程序将验证文件：
-
-    ![验证屏幕](publishing-to-the-app-store-images/publishvs02.png "The validation screen")
-
-13. 单击“下一步”  按钮，将按照 App Store 的要求验证应用：
-
-    ![向 App Store 进行验证](publishing-to-the-app-store-images/publishvs03.png "Validating against the App Store")
-
-14. 单击“发送”  按钮，将应用程序发送到 Apple 以供审核。
-15. 文件成功上传后，应用程序加载程序将通知你。
+8. 验证包的详细信息，然后单击“发布”  。 选择一个位置来保存 .ipa 文件后，向导会将应用上传到 App Store Connect。
 
     > [!NOTE]
     > Apple 可能会使用 .ipa 文件中包含的 iTunesMetadata.plist 拒绝应用，导致如下所示的错误  ：
