@@ -1,0 +1,233 @@
+### YamlMime:Hub
+title: Xamarin 文档
+summary: Xamarin 允许你使用 .NET 代码和特定于平台的用户界面生成适用于 Android、iOS 和 macOS 的本机应用。 Xamarin.Forms 允许你使用采用 C# 或 XAML 编写的共享 UI 代码生成本机应用。
+brand: xamarin
+metadata:
+  title: Xamarin 文档
+  description: Xamarin 允许你使用 .NET 代码和特定于平台的用户界面生成适用于 Android、iOS 和 macOS 的本机应用。 Xamarin.Forms 允许你使用采用 C# 或 XAML 编写的共享 UI 代码生成本机应用。
+  ms.topic: hub-page
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 09/26/2019
+  ms.openlocfilehash: c0509abcaaa10263c3f0c4c3d19fd765ded521e1
+  ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71326192"
+highlightedContent:
+  items:
+  - title: 设置和安装
+    itemType: download
+    url: ~/get-started/installation/index.md
+  - title: 什么是 Xamarin？
+    itemType: overview
+    url: ~/get-started/what-is-xamarin.md
+  - title: Xamarin 文档中的新增内容
+    itemType: get-started
+    url: ~/whats-new/index.yml
+  - title: 提高你的移动开发技能
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?roles=developer&products=xamarin
+productDirectory:
+  items:
+  - title: Xamarin.Forms 跨平台
+    imageSrc: https://docs.microsoft.com/media/logos/logo_xamarin.svg
+    links:
+    - url: ~/get-started/what-is-xamarin-forms.md
+      text: 什么是 Xamarin.Forms？
+    - url: ~/get-started/index.yml
+      text: 构建 Android 和 iOS 应用
+    - url: ~/xamarin-forms/xaml/index.yml
+      text: Xamarin.Forms XAML
+    - url: ~/xamarin-forms/index.yml
+      text: 平台文档
+  - title: Android
+    imageSrc: https://docs.microsoft.com/media/logos/logo_android.svg
+    links:
+    - url: ~/android/get-started/hello-android/hello-android-quickstart.md
+      text: 构建 Android 应用
+    - url: ~/android/platform/android-10.md
+      text: Android 10
+    - url: ~/android/index.yml
+      text: 平台文档
+  - title: iOS
+    imageSrc: https://docs.microsoft.com/media/common/i_web-apps.svg
+    links:
+    - url: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
+      text: 构建 iOS 应用
+    - url: ~/ios/platform/ios13/index.md
+      text: iOS 13
+    - url: ~/ios/index.yml
+      text: 平台文档
+  - title: Mac
+    imageSrc: https://docs.microsoft.com/media/common/i_xplat-code.svg
+    links:
+    - url: ~/mac/get-started/hello-mac.md
+      text: 构建 Mac 应用
+    - url: ~/mac/index.yml
+      text: 平台文档
+conceptualContent:
+  title: Xamarin.Forms 入门
+  summary: 在 Windows 和 macOS 上的 Visual Studio 中使用 C# 和 .NET 构建跨平台 Android 和 iOS 应用。
+  items:
+  - title: 生成首个应用
+    links:
+    - text: 文件 > 新建
+      url: ~/get-started/quickstarts/single-page.md
+      itemType: get-started
+    - text: 添加导航
+      url: ~/get-started/quickstarts/multi-page.md
+      itemType: get-started
+    - text: 添加数据库
+      url: ~/get-started/quickstarts/database.md
+      itemType: get-started
+    - text: 设计应用的样式
+      url: ~/get-started/quickstarts/styling.md
+      itemType: get-started
+    footerLink:
+      url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started
+      text: 查找示例
+  - title: 学习教程
+    links:
+    - text: 堆积布局
+      url: ~/get-started/tutorials/stacklayout/index.yml
+      itemType: tutorial
+    - text: 标签
+      url: ~/get-started/tutorials/label/index.yml
+      itemType: tutorial
+    - text: 按钮
+      url: ~/get-started/tutorials/button/index.yml
+      itemType: tutorial
+    - text: 映像
+      url: ~/get-started/tutorials/image/index.yml
+      itemType: tutorial
+    footerLink:
+      url: ~/get-started/tutorials/index.yml
+      text: 另请参阅
+  - title: 运用当前的知识
+    links:
+    - text: .NET 桌面（UWP、WPF、WinForms）
+      itemType: overview
+      url: ~/cross-platform/desktop/index.md
+    - text: Android 和 Java
+      itemType: overview
+      url: ~/android/get-started/java-developers.md
+    - text: iOS 和 Objective-C
+      itemType: overview
+      url: ~/ios/get-started/objective-c-developers/index.md
+    - text: 深入开发指南
+      itemType: get-started
+      url: ~/cross-platform/index.yml
+additionalContent:
+  sections:
+  - title: Xamarin.Forms 常见任务
+    summary: 有关使用 Xamarin.Forms 构建 Android 和 iOS 应用的重要概念
+    items:
+    - title: 了解应用生命周期
+      summary: 了解应用如何启动并转到后台操作。
+      url: ~/xamarin-forms/app-fundamentals/app-lifecycle.md
+    - title: 显示数据列表
+      summary: 使用 ListView 滚动查看并选择数据。
+      url: ~/xamarin-forms/user-interface/listview/index.md
+    - title: 使用 XAML 和数据绑定
+      summary: 使用 MVVM 模式在 UI 中显示数据。
+      url: ~/xamarin-forms/xaml/xaml-basics/index.md
+    - title: 公开平台专属功能
+      summary: 在 Xamarin.Forms 应用中使用 Android 或 iOS 专属功能。
+      url: ~/xamarin-forms/platform/index.yml
+    - title: Xamarin.Essentials
+      summary: 用于通用设备功能的跨平台 API。
+      url: ~/essentials/platform-feature-support.md
+    - title: 访问 REST Web 服务
+      summary: 使用 Git、TFVC 等版本控制技术共享代码。
+      url: ~/xamarin-forms/data-cloud/web-services/rest.md
+    - title: 部署到 Android 和 iOS 设备
+      summary: 上传以测试设备和应用存储。
+      url: ~/xamarin-forms/deploy-test/index.yml
+    - title: 呈现 SkiaSharp 图形
+      summary: 呈现跨平台 2D 矢量图形。
+      url: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
+  - title: 移动开发人员工具
+    items:
+    - title: 适用于 Windows 的 iOS 模拟器
+      summary: 在 Windows 上使用 Visual Studio 与 iOS 模拟器进行交互。
+      url: ~/tools/ios-simulator/index.md
+    - title: 探查器
+      summary: 识别并修复性能问题。
+      url: ~/tools/profiler/index.md
+    - title: .NET 嵌入
+      summary: 允许通过其他编程语言使用现有 .NET 代码。
+      url: ~/tools/dotnet-embedding/index.md
+    - title: MonoGame
+      summary: 使用 C# 构建桌面、移动和控制台游戏。
+      url: ~/graphics-games/monogame/introduction/index.md
+  - title: Xamarin 平台概述
+    items:
+    - title: Xamarin.Forms 跨平台
+      links:
+      - text: 应用基础知识
+        url: ~/xamarin-forms/app-fundamentals/index.yml
+      - text: 用户界面
+        url: ~/xamarin-forms/user-interface/index.yml
+      - text: Xamarin.Forms XAML
+        url: ~/xamarin-forms/xaml/index.yml
+      - text: 平台功能
+        url: ~/xamarin-forms/platform/index.yml
+      - text: Azure 云服务
+        url: ~/xamarin-forms/data-cloud/index.yml
+      - text: 部署和测试
+        url: ~/xamarin-forms/deploy-test/index.yml
+      - text: 高级概念和内部信息
+        url: ~/xamarin-forms/internals/index.yml
+      - text: 示例
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms
+    - title: Android
+      links:
+      - text: 应用基础知识
+        url: ~/android/app-fundamentals/index.md
+      - text: 用户界面
+        url: ~/android/user-interface/index.md
+      - text: 平台功能
+        url: ~/android/platform/index.md
+      - text: Azure 云服务
+        url: ~/android/data-cloud/index.md
+      - text: 部署和测试
+        url: ~/android/deploy-test/index.md
+      - text: 高级概念和内部信息
+        url: ~/android/internals/index.md
+      - text: 示例
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android
+    - title: iOS
+      links:
+      - text: 应用基础知识
+        url: ~/android/app-fundamentals/index.md
+      - text: 用户界面
+        url: ~/android/user-interface/index.md
+      - text: 平台功能
+        url: ~/android/platform/index.md
+      - text: Azure 云服务
+        url: ~/android/data-cloud/index.md
+      - text: 部署和测试
+        url: ~/android/deploy-test/index.md
+      - text: 高级概念和内部信息
+        url: ~/android/internals/index.md
+      - text: 示例
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS
+    - title: Mac
+      links:
+      - text: 应用基础知识
+        url: ~/android/app-fundamentals/index.md
+      - text: 用户界面
+        url: ~/android/user-interface/index.md
+      - text: 平台功能
+        url: ~/android/platform/index.md
+      - text: Azure 云服务
+        url: ~/android/data-cloud/index.md
+      - text: 部署和测试
+        url: ~/android/deploy-test/index.md
+      - text: 高级概念和内部信息
+        url: ~/android/internals/index.md
+      - text: 示例
+        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
+  footer: '[博客](https://devblogs.microsoft.com/xamarin/) - [Twitter](https://twitter.com/xamarinhq) - [堆栈溢出](https://stackoverflow.com/questions/tagged/xamarin) - [开发者社区](https://developercommunity.visualstudio.com/spaces/8/index.html)'
