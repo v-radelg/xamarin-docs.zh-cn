@@ -6,13 +6,13 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: 32f809c5b21e56497328ce00bf49a7337ac0270a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.date: 09/30/2019
+ms.openlocfilehash: a35a3750957073168bca4903e1cef79ed53a3de9
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250047"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679966"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -30,17 +30,19 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Windows 中，使用 Visual Studio 选择**文件 > 新建 > 项目**菜单中。 在**新的项目**对话框中，选择**Visual C# > 跨平台**在左侧，然后**移动应用 (Xamarin.Forms)** 从中心的列表中。
+在 Windows 中，启动 Visual Studio 2019，然后在 "开始" 窗口中单击 "**创建新项目**" 以创建新项目：
 
-![“新建项目”对话框](get-started-with-xaml-images/win/newprojectdialog.w157.png)
+![新建解决方案窗口](get-started-with-xaml-images/win/new-solution-2019.png)
 
-选择该解决方案的位置，为其提供的名称**XamlSamples** （或所需的任意），然后按**确定**。
+在 "新建**项目**" 窗口的 "**项目类型**" 下拉菜单中选择 "**移动**"，选择 "**移动应用（Xamarin）** " 模板，然后单击 "**下一步**" 按钮：
 
-在下一个屏幕上，选择**空白应用**模板并 **.NET Standard**代码共享策略：
+!["新建项目" 窗口](get-started-with-xaml-images/win/new-project-2019.png)
 
-![新建应用程序对话框](get-started-with-xaml-images/win/newcrossplatformapp.png)
+在 "**配置新项目**" 窗口中，将**项目名称**设置为**XamlSamples** （或你喜欢的任何内容），然后单击 "**创建**" 按钮。
 
-按“确定”。
+在 "**新建跨平台应用**" 对话框中，单击 "**空白**"，然后单击 **"确定"** 按钮：
+
+![新建应用程序对话框](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
 在解决方案中创建四个项目： **XamlSamples** .NET Standard 库**XamlSamples.Android**， **XamlSamples.iOS**，和通用 Windows 平台解决方案中， **XamlSamples.UWP**。
 
@@ -151,15 +153,15 @@ namespace XamlSamples
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要添加其他基于 XAML 的`ContentPage`类到你的项目，选择**XamlSamples** .NET Standard 库项目，然后调用**项目 > 添加新项**菜单项。 在左侧**添加新项**对话框中，选择**Visual C#** 并**Xamarin.Forms**。 从列表中选择**内容页**(不**内容页 (C#)** ，这将创建一个仅限代码的页面，或**内容视图**，这不是一个页面)。 例如，为页面提供一个名称， **HelloXamlPage.xaml**:
+若要将其他基于 XAML @no__t 的类添加到项目中，请选择 " **XamlSamples** " .NET Standard 库项目，右键单击，然后选择 "**添加 > 新项 ...** "。在 "**添加新项**" 对话框中，选择 "**可视C#项" > Xamarin. Forms > 内容页**（而不是**内容页（C#）** ，它创建仅限代码的页或**内容视图**，不是页面）。 例如，为页面提供一个名称， **HelloXamlPage**:
 
-!["添加新项" 对话框](get-started-with-xaml-images/win/addnewitemdialog.w157.png)
+!["添加新项" 对话框](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要添加其他基于 XAML 的`ContentPage`类到你的项目，选择**XamlSamples** .NET Standard 库项目，然后调用**文件 > 新建文件**菜单项。 左侧**新的文件**对话框中，选择**窗体**左侧，和**窗体 ContentPage Xaml** (不**窗体 ContentPage**、 哪些创建一个仅限代码的页面，或**内容视图**，这不是一个页面)。 例如，为页面提供一个名称， **HelloXamlPage**:
 
-!["新建文件" 对话框](get-started-with-xaml-images/mac/newfiledialog.png)
+![“新建文件”对话框](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 

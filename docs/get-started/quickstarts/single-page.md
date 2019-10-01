@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "68654999"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679988"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>创建单个页面 Xamarin. Forms 应用程序
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 在本快速入门中，你将学习如何：
 
@@ -32,7 +32,7 @@ ms.locfileid: "68654999"
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2019 （最新版本），安装了包含 .NET 工作负载的**移动开发**。
 - 的C#知识。
@@ -46,7 +46,7 @@ ms.locfileid: "68654999"
 
     ![](single-page-images/vs/new-solution-2019.png "新建项目")
 
-2. 在 "新建**项目**" 窗口的 "**项目类型**" 下拉菜单中选择 "**移动**"，选择 "**移动应用（Xamarin** ）" 模板，然后单击 "**下一步**" 按钮：
+2. 在 "新建**项目**" 窗口的 "**项目类型**" 下拉菜单中选择 "**移动**"，选择 "**移动应用（Xamarin）** " 模板，然后单击 "**下一步**" 按钮：
 
     ![](single-page-images/vs/new-project-2019.png "跨平台项目模板")
 
@@ -186,7 +186,7 @@ ms.locfileid: "68654999"
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2017，以及安装了 .NET 工作负载的**移动开发**。
 - 的C#知识。
@@ -336,7 +336,7 @@ ms.locfileid: "68654999"
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>系统必备
+### <a name="prerequisites"></a>先决条件
 
 - 已安装 iOS 和 Android 平台支持 Visual Studio for Mac （最新版本）。
 - Xcode （最新版本）。
