@@ -96,7 +96,7 @@ watchOS 3 包括之前无法使用的多个现有 Apple framework，如：
 - **AVFoundation** -用于管理和播放音频。
 - **CloudKit** -用于在监视应用和 iCloud 容器之间移动数据。
 - **核心音频**-管理用于表示音频流、复杂缓冲区和时间值的数据类型。
--  **Gamekit** -创建社交游戏。
+- **Gamekit** -创建社交游戏。
 
 <a name="Proactive-Suggestions" />
 
