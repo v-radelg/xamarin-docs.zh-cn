@@ -56,23 +56,23 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/ios/get-started/index.md
             title: 入门
-          - href: ~/ios/app-fundamentals/
+          - href: ~/ios/app-fundamentals/index.md
             html: 生成 iOS 应用需要了解的所有内容，例如使用文件、映像、数据库等。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/ios/app-fundamentals/
+              href: ~/ios/app-fundamentals/index.md
             title: 应用程序基础知识
-          - href: ~/ios/user-interface
+          - href: ~/ios/user-interface/index.md
             html: 了解可在 UIKit 中用于 iOS 的用户界面控件的完整集合。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/ios/user-interface/
+              href: ~/ios/user-interface/index.md
             title: 用户界面
-          - href: ~/ios/platform/
+          - href: ~/ios/platform/index.md
             html: 使用 iOS 平台功能，如 ARKit 和 CoreML 以及 iOS 11 中的其他新功能。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/ios/platform/
+              href: ~/ios/platform/index.md
             title: 平台功能
           - href: ~/essentials/index.md?context=xamarin/ios
             html: 用于移动应用程序的跨平台 API。
@@ -80,35 +80,35 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/ios
             title: Xamarin.Essentials
-          - href: ~/ios/data-cloud/
+          - href: ~/ios/data-cloud/index.md
             html: 本地和远程数据存储和检索，以及其他基于云的服务。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/ios/data-cloud/
+              href: ~/ios/data-cloud/index.md
             title: 数据和云服务
-          - href: ~/ios/deploy-test/
+          - href: ~/ios/deploy-test/index.md
             html: 有关生成应用并将其部署到 App Store 的说明，和事先对其进行测试的提示！
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/ios/deploy-test/
+              href: ~/ios/deploy-test/index.md
             title: 部署和测试
-          - href: ~/ios/internals/
+          - href: ~/ios/internals/index.md
             html: 有关 Xamarin.iOS 工作原理的详细信息。
             image:
               src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/ios/internals/
+              href: ~/ios/internals/index.md
             title: 高级概念和内部机制
-          - href: ~/ios/watchos/
+          - href: ~/ios/watchos/index.md
             html: 生成 Apple Watch 应用！
             image:
               src: ~/media/icons/i_watchos.svg
-              href: ~/ios/watchos/
+              href: ~/ios/watchos/index.md
             title: watchOS
-          - href: ~/ios/tvos/
+          - href: ~/ios/tvos/index.md
             html: 生成 Apple TV 应用！
             image:
               src: ~/media/icons/i_tvos.svg
-              href: ~/ios/tvos/
+              href: ~/ios/tvos/index.md
             title: tvOS
   - title: 参考
     items:

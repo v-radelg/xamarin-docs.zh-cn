@@ -21,7 +21,7 @@ abstract:
       - href: /visualstudio/
         text: Visual Studio
 sections:
-  - title: 入门
+  - title: 开始操作
     items:
       - type: paragraph
         text: '了解如何使用 Xamarin 和 C# 生成首个 Android 应用。'
@@ -30,7 +30,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 设置
+            text: 安装
             href: ~/android/get-started/installation/index.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
@@ -44,7 +44,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
             text: Android 10
             href: ~/android/platform/android-10.md
-  - title: 指南
+  - title: 参考线
     items:
       - type: list
         style: cards
@@ -56,23 +56,23 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/android/get-started/index.md
             title: 入门
-          - href: ~/android/app-fundamentals/
+          - href: ~/android/app-fundamentals/index.md
             html: 生成 Android 应用需要了解的所有内容，例如使用文件、映像、数据库等。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/android/app-fundamentals/
+              href: ~/android/app-fundamentals/index.md
             title: 应用程序基础知识
-          - href: ~/android/user-interface
+          - href: ~/android/user-interface/index.md
             html: 了解适用于Android 的用户界面控件小组件的完整集合。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/android/user-interface/
+              href: ~/android/user-interface/index.md
             title: 用户界面
-          - href: ~/android/platform/
+          - href: ~/android/platform/index.md
             html: 使用 Android 平台功能，例如指纹身份验证和 Android 8.0 Oreo 中的最新功能。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/android/platform/
+              href: ~/android/platform/index.md
             title: 平台功能
           - href: ~/essentials/index.md?context=xamarin/android
             html: 用于移动应用程序的跨平台 API。
@@ -80,29 +80,29 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/android
             title: Xamarin.Essentials
-          - href: ~/android/data-cloud/
+          - href: ~/android/data-cloud/index.md
             html: 本地和远程数据存储和检索，以及其他基于云的服务。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/android/data-cloud/
+              href: ~/android/data-cloud/index.md
             title: 数据和云服务
-          - href: ~/android/deploy-test/
+          - href: ~/android/deploy-test/index.md
             html: 有关生成应用并将其部署到 Google Play 的说明，和事先对其进行测试的提示！
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/android/deploy-test/
+              href: ~/android/deploy-test/index.md
             title: 部署和测试
-          - href: ~/android/internals/
+          - href: ~/android/internals/index.md
             html: 有关 Xamarin.Android 内部机制的其他信息，以及有关本地化和辅助功能等功能的帮助。
             image:
               src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-              href: ~/android/internals/
+              href: ~/android/internals/index.md
             title: 高级概念和内部机制
-          - href: ~/android/wear/
+          - href: ~/android/wear/index.md
             html: 生成适用于Android 穿戴设备的应用。
             image:
               src: ~/media/icons/i_android-wear.svg
-              href: ~/android/wear/
+              href: ~/android/wear/index.md
             title: Android 穿戴设备
   - title: 参考
     items:
