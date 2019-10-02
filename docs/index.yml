@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: c0509abcaaa10263c3f0c4c3d19fd765ded521e1
-  ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+  ms.openlocfilehash: e89b094cddbff742489f070e4745530bc8c7d70b
+  ms.sourcegitcommit: fa0e2ff8dd242c6e2da872179993964c9b8a73b4
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/27/2019
-  ms.locfileid: "71326192"
+  ms.lasthandoff: 10/01/2019
+  ms.locfileid: "71717015"
 highlightedContent:
   items:
   - title: 设置和安装
@@ -201,33 +201,31 @@ additionalContent:
     - title: iOS
       links:
       - text: 应用基础知识
-        url: ~/android/app-fundamentals/index.md
+        url: ~/ios/app-fundamentals/index.md
       - text: 用户界面
-        url: ~/android/user-interface/index.md
+        url: ~/ios/user-interface/index.md
       - text: 平台功能
-        url: ~/android/platform/index.md
+        url: ~/ios/platform/index.md
       - text: Azure 云服务
-        url: ~/android/data-cloud/index.md
+        url: ~/ios/data-cloud/index.md
       - text: 部署和测试
-        url: ~/android/deploy-test/index.md
+        url: ~/ios/deploy-test/index.md
       - text: 高级概念和内部信息
-        url: ~/android/internals/index.md
+        url: ~/ios/internals/index.md
       - text: 示例
         url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS
     - title: Mac
       links:
       - text: 应用基础知识
-        url: ~/android/app-fundamentals/index.md
+        url: ~/mac/app-fundamentals/index.md
       - text: 用户界面
-        url: ~/android/user-interface/index.md
+        url: ~/mac/user-interface/index.md
       - text: 平台功能
-        url: ~/android/platform/index.md
-      - text: Azure 云服务
-        url: ~/android/data-cloud/index.md
+        url: ~/mac/platform/index.md
       - text: 部署和测试
-        url: ~/android/deploy-test/index.md
+        url: ~/mac/deploy-test/index.md
       - text: 高级概念和内部信息
-        url: ~/android/internals/index.md
+        url: ~/mac/internals/index.md
       - text: 示例
         url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
   footer: '[博客](https://devblogs.microsoft.com/xamarin/) - [Twitter](https://twitter.com/xamarinhq) - [堆栈溢出](https://stackoverflow.com/questions/tagged/xamarin) - [开发者社区](https://developercommunity.visualstudio.com/spaces/8/index.html)'
