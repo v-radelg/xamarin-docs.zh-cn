@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/24/2018
-ms.openlocfilehash: 8e06b03e0acb129f1eb0c3c793d0b4a05c11ce2b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eaef454de77387ea2a6732fa00797a6a4f0e3cd1
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282377"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975881"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中显示映像
 
@@ -32,7 +32,7 @@ _本文介绍如何在 Xamarin iOS 应用中包括图像资产，并通过使用
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**解决方案资源管理器**中，双击该`Assets.xcassets`文件以将其打开进行编辑：
+1. 在**解决方案资源管理器**中，双击 @no__t 文件以将其打开进行编辑：
 
     ![](displaying-an-image-images/imageset01.png "解决方案资源管理器中的 assets.xcassets")
 2. 右键单击 "资产"**列表**，然后选择 "**新建映像集**"：
@@ -75,18 +75,18 @@ _本文介绍如何在 Xamarin iOS 应用中包括图像资产，并通过使用
 
 -----
 
-在代码中使用**图像集**时，通过调用`FromBundle` `UIImage`类的方法按名称引用它。 例如：
+在代码中使用**图像集**时，通过调用 @no__t 2 类的 `FromBundle` 方法，按名称引用该图像。 例如：
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> 如果分配给图像集的图像未正确显示，请确保将正确的文件名与`FromBundle`方法（**图像集**，而不是父**资产目录**名称）一起使用。 对于 PNG 图像， `.png`可以省略扩展。 对于其他图像格式，需要扩展（例如 `PurpleMonkey.jpg`）格式模式中出现的位置生成。
+> 如果分配给图像集的图像未正确显示，请确保将正确的文件名与 `FromBundle` 方法（**图像集**，而不是父**资产目录**名称）一起使用。 对于 PNG 图像，可以省略 `.png` 扩展。 对于其他图像格式，需要扩展（例如 `PurpleMonkey.jpg`）格式模式中出现的位置生成。
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>在资产目录中使用矢量图像
 
-从 iOS 8 开始，已添加到**图像集**的特殊**Vector**类，使开发人员能够在卡带中包含**PDF**格式的矢量图像，而不是在不同的分辨率下包含单独的位图文件。 使用此方法可为`@1x`解析提供单个矢量文件（格式为矢量 PDF 文件），文件的`@2x`和`@3x`版本将在编译时生成并包含在应用程序捆绑包中。
+从 iOS 8 开始，特殊**Vector**类已添加到**图像集**，使开发人员能够在卡带中包含**PDF**格式的矢量图像，而不是在不同的分辨率下包含单独的位图文件。 使用此方法可为 `@1x` 解析提供单个矢量文件（格式为矢量 PDF 文件），并且将在编译时生成该文件的 `@2x` 和 `@3x` 版本，并将其包含在应用程序的捆绑包中。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -98,11 +98,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 -----
 
-例如，如果开发人员包括一个`MonkeyIcon.pdf`文件作为资产目录的矢量，并且分辨率为 150 x 150，则在编译后，最终的应用程序捆绑包中将包含以下位图资产：
+例如，如果开发人员包括一个 @no__t 为 150 x 150 的资产目录的矢量作为资产目录的矢量，则在编译后，最终的应用捆绑包中将包含以下位图资产：
 
-- `MonkeyIcon@1x.png`-150 x 150 解决方案。
-- `MonkeyIcon@2x.png`-300 像素 x 300 像素解决方案。
-- `MonkeyIcon@3x.png`-450px x 450px 解决方案。
+- `MonkeyIcon@1x.png`-150 x 150 分辨率。
+- `MonkeyIcon@2x.png`-300 像素 x 300 像素分辨率。
+- `MonkeyIcon@3x.png`-450px x 450px 分辨率。
 
 在资产目录中使用 PDF 矢量图像时，应注意以下事项：
 
@@ -155,17 +155,17 @@ if (MyIcon.Image != null) {
 }
 ```
 
-因为的`RenderMode` `UIImage`属性是`ImageWithRenderingMode`只读的，所以请使用方法，通过所需的呈现模式设置创建映像的新实例。
+由于 @no__t 的 `UIImage` 属性是只读的，因此请使用 `ImageWithRenderingMode` 方法，通过所需的呈现模式设置创建映像的新实例。
 
-有三种可能的`UIImage.RenderMode` `UIImageRenderingMode`通过枚举的设置：
+有三种可能的设置 `UIImage.RenderMode` 通过 @no__t 枚举实现：
 
 - `AlwaysOriginal`-强制将图像呈现为原始源映像文件，而不进行任何更改。
-- `AlwaysTemplate`-通过使用指定`Tint`颜色着色像素来强制将图像呈现为模板图像。
-- `Automatic`-将图像作为模板呈现，或者根据它所使用的环境呈现原始映像。 `UIToolBar`例如，如果在`UINavigationBar` `UITabBar` 、或`UISegmentControl`中使用图像，则会将其视为模板。
+- `AlwaysTemplate`-通过使用指定的 @no__t 1 颜色着色像素，强制将图像呈现为模板图像。
+- `Automatic`-将图像作为模板呈现，或者根据它使用的环境将其呈现为原始。 例如，如果在 `UIToolBar` 中使用图像，`UINavigationBar`，`UITabBar` 或 `UISegmentControl` 将被视为模板。
 
 ## <a name="adding-new-assets-collections"></a>添加新资产集合
 
-使用资产目录中的图像时，有时需要新的集合，而不是将所有应用程序的映像添加到`Assets.xcassets`集合中。 例如，在设计按需资源时。
+使用资产目录中的图像时，可能会有需要新的集合，而不是将所有应用程序的映像添加到 `Assets.xcassets` 的集合中。 例如，在设计按需资源时。
 
 向项目中添加新的资产目录：
 
@@ -185,23 +185,23 @@ if (MyIcon.Image != null) {
 
 -----
 
-在此处，集合的工作方式与自动包含在项目中的默认`Assets.xcassets`集合的方式相同。
+在此处，集合的工作方式与自动包含在项目中的默认 `Assets.xcassets` 集合的方式相同。
 
 ## <a name="using-images-with-controls"></a>在控件中使用图像
 
-除了使用映像支持应用外，iOS 还会使用包含应用控件类型（如选项卡栏、工具栏、导航栏、表格和按钮）的图像。 要使图像显示在控件上，一种简单的方法是将`UIImage`实例分配给控件的`Image`属性。
+除了使用映像支持应用外，iOS 还会使用包含应用控件类型（如选项卡栏、工具栏、导航栏、表格和按钮）的图像。 若要在控件上显示图像，一种简单的方法是将 `UIImage` 实例分配给控件的 @no__t 属性。
 
 ### <a name="frombundle"></a>FromBundle
 
-此`FromBundle`方法调用是一个同步（阻塞）调用，它具有许多内置的映像加载和管理功能，例如缓存支持并自动处理各种分辨率的图像文件。
+@No__t-0 方法调用是一个同步（阻塞）调用，它具有许多内置的映像加载和管理功能，例如缓存支持并自动处理各种分辨率的图像文件。
 
-下面的示例演示如何`UITabBarItem` `UITabBar`在上设置的图像：
+下面的示例演示如何在 @no__t 上设置 @no__t 的图像：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-`MyImage`假设是添加到资产目录中的图像资产的名称。 工作资产目录映像时，只需在`FromBundle`方法中为**PNG**格式的图像指定图像集的名称即可：
+假定 `MyImage` 是添加到资产目录中的图像资产的名称。 工作资产目录映像时，只需在 `FromBundle` 方法中为**PNG**格式的图像指定图像集的名称：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
@@ -217,7 +217,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>在情节提要中显示图像
 
-使用资产目录将图像添加到 Xamarin iOS 项目后，可以使用 iOS 设计器中的`UIImageView`来轻松地在情节提要上显示该图像。 例如，如果已添加以下图像资产：
+使用资产目录将映像添加到 Xamarin iOS 项目后，可以使用 iOS 设计器中的 `UIImageView` 在情节提要上轻松显示该映像。 例如，如果已添加以下图像资产：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -225,7 +225,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 执行以下操作以在情节提要中显示它：
 
-1. 双击 "**解决方案资源管理器**中`Main.storyboard`的文件以将其打开，以便在 iOS 设计器中进行编辑。
+1. 双击**解决方案资源管理器**中的 `Main.storyboard` 文件，将其打开，以便在 IOS 设计器中进行编辑。
 2. 从**工具箱**中选择一个**图像视图**：
 
      ![](displaying-an-image-images/display02.png "从工具箱中选择一个图像视图")
@@ -248,7 +248,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 执行以下操作以在情节提要中显示它：
 
-1. 双击 "**解决方案资源管理器**中`Main.storyboard`的文件以将其打开，以便在 iOS 设计器中进行编辑。
+1. 双击**解决方案资源管理器**中的 `Main.storyboard` 文件，将其打开，以便在 IOS 设计器中进行编辑。
 2. 从**工具箱**中选择一个**图像视图**：
 
      ![](displaying-an-image-images/display02vs.png "从工具箱中选择一个图像视图")
@@ -285,7 +285,7 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-此代码将创建一个`UIImageView`新的，并为其提供初始大小和位置。 然后，它从添加到项目的图像资产中加载图像，并将`UIImageView`添加到父`UIView`项以显示它。
+此代码将创建一个新的 `UIImageView`，并为其提供初始大小和位置。 然后，它从添加到项目的图像资产中加载图像，并将 @no__t 0 添加到父 `UIView` 以显示它。
 
 ## <a name="related-links"></a>相关链接
 
