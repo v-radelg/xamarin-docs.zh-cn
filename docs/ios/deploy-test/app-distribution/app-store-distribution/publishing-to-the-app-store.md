@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 9f9504890b12f6a3d8046e98ce537cc0d742f2ed
-ms.sourcegitcommit: 159f250ae7535fca7ab3bc4dc7395dc4cc2af93f
+ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
+ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71278139"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71811182"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>将 Xamarin.iOS 应用发布到 App Store
 
@@ -121,9 +121,38 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 15. 单击“确定”，保存对项目属性所做的更改  。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
 
-1. 请确保 Visual Studio 2019 或 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. 请确保 Visual Studio 2019 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+2. 在“解决方案资源管理器”  中，右键单击“项目名称”  ，选择“属性”  。
+3. 导航到“iOS 生成”选项卡并将“配置”设置为“发布”，将“平台”设置为“iPhone”      。
+4. 若要使用特定 iOS SDK 进行生成，请从“SDK 版本”列表中进行选择  。 如果不需要，则让此值保持为“默认”  。
+5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 在某些情况下，例如使用一些第三方库时，可能需要将此值设为“不链接”以避免删除所需代码  。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
+6. 选中“优化 PNG 图像”以进一步降低应用程序的大小  。
+7. 不应启用调试，因为这将使生成增加不必要的大小。
+8. 对于 iOS 11，请选择一个支持 ARM64 的设备体系结构  。 若要深入了解适用于 64 位 iOS 设备的生成，请参阅 [32/64 位平台注意事项](~/cross-platform/macios/32-and-64/index.md)文档中的“启用 Xamarin.iOS 应用的 64 位生成”部分  。
+9. 可使用 LLVM 编译器生成更小更快的代码  。 但是此选项会增加编译时间。
+10. 根据应用程序的需要，还可调整所用的“垃圾回收”的类型和“国际化”设置   。
+
+    设置好上述选项后，生成设置应类似如下：
+
+    ![iOS 生成设置](publishing-to-the-app-store-images/build-w157.png "iOS Build settings")
+
+    另请参阅 [iOS 生成机制](~/ios/deploy-test/ios-build-mechanics.md)指南，其中进一步介绍了生成设置。
+
+11. 导航至“iOS 捆绑签名”选项卡  。请确保将“配置”  设置为“发布”  ，将“平台”  设置为“iPhone”  ，并选择“手动预配”  。
+12. 将“签名标识”设置为“分发(自动)”   。
+13. 对于“预配配置文件”，请选择[上面创建的](#create-and-install-an-app-store-provisioning-profile) App Store 预配配置文件  。
+
+    现在，项目的捆绑签名选项应类似如下：
+
+    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS Bundle Signing settings")
+
+14. 保存生成配置并将其关闭。
+
+# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+
+1. 请确保 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 在“解决方案资源管理器”  中，右键单击“项目名称”  ，选择“属性”  。
 3. 导航到“iOS 生成”选项卡并将“配置”设置为“发布”，将“平台”设置为“iPhone”      。
 4. 若要使用特定 iOS SDK 进行生成，请从“SDK 版本”列表中进行选择  。 如果不需要，则让此值保持为“默认”  。
@@ -182,7 +211,6 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 2. 在“生成”菜单中，选择“存档以供发布”   。
 3. 存档创建完成后，将显示“存档”视图  。 单击“签名并分发...”以打开发布向导  。
 
-
     ![显示“存档”视图中“签名并分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-mac.png "Screenshot of the Sign and Distribute button location in the Archives view.")
 
     > [!NOTE]
@@ -209,12 +237,42 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
     >
     > 若要了解如何处理此错误，请参阅 [Xamarin 论坛中的这篇帖子](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
-> Visual Studio 2017 当前不支持 Visual Studio for Mac 中的“存档以供发布”工作流  。
+> Visual Studio 2019 版本 16.3 及更高版本支持发布到 App Store。
 
-1. 请确保 Visual Studio 2019 或 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. 请确保 Visual Studio 2019 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+2. 从“解决方案配置”下拉列表中选择“发布”，并从“解决方案平台”下拉列表中选择“iPhone”     。
+
+    ![Visual Studio 工具栏的屏幕截图，其中显示设置为“发布”的解决方案配置、设置为“iPhone”的解决方案平台以及设置为“设备”的目标。](publishing-to-the-app-store-images/chooseConfig-w157.png "Screenshot of the Visual Studio toolbar showing solution configuration set to release, solution platform set to iPhone, and target set to device.")
+
+3. 从“生成”菜单中选定“存档...”   。这会打开“存档管理器”并开始创建存档  。
+
+4. 创建存档后，请单击“分发...”以打开发布向导  。
+
+    ![显示存档管理器视图中的“分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-win.png "Screenshot of the distribute button location in the archive manager view.")
+
+5. 选择“App Store”分发通道  。
+
+6. 选择签名标识和预配配置文件。 单击“上传到商店”  。
+
+    ![显示有效签名标识和预配配置文件选项的发布向导的屏幕截图。](publishing-to-the-app-store-images/provProfileSelect-win.png "Screenshot of the publishing wizard showing a valid signing identity and provisioning profile selection.")
+
+7. 输入你的 Apple ID 和[特定于应用的密码](https://support.apple.com/ht204397)。 单击“确定”开始将应用上传到 App Store Connect  。
+
+    ![用于输入 Apple ID 和特定于应用的密码的弹出窗口屏幕截图。](publishing-to-the-app-store-images/connectInfo-win.png "Screenshot of the pop up window to enter your Apple ID and app specific password.")
+
+# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+
+> [!NOTE]
+> Visual Studio 2017 不支持 Visual Studio for Mac 和 Visual Studio 2019 中的完整发布工作流。
+>
+> 下面是适用于 Xcode 10 的步骤。
+>
+> 你仍可以按照以下步骤生成 .IPA 文件，但为了使用 Xcode 11 部署到 App Store（iOS 13 支持有此要求），应[使用 Visual Studio for Mac](?tabs=macos#build-and-submit-your-app)。
+
+1. 请确保 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 从 Visual Studio 2017“解决方案配置”下拉列表中选择“发布”，并从“解决方案平台”下拉列表中选择“iPhone”     。
 
     ![生成配置和平台选择](publishing-to-the-app-store-images/chooseConfig-w157.png "Build configuration and platform selection")
@@ -226,6 +284,13 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 4. 若要在 Windows 计算机上找到该 .ipa 文件，请在 Visual Studio 2019 或 Visual Studio 2017 解决方案资源管理器中右键单击 Xamarin.iOS 项目名称，并选择“在文件资源管理器中打开文件夹”   。 然后在刚打开的 Windows 文件资源管理器中导航至 bin/iPhone/Release 子目录   。 该文件应位于此子目录中，除非[自定义了 .ipa 文件输出位置](#customize-the-ipa-location)。
 5. 若要在 Mac 生成主机上查看 .ipa 文件，请在 Visual Studio 2019 或 Visual Studio 2017 解决方案资源管理器（在 Windows 上）中右键单击 Xamarin.iOS 项目名称，并选择“在生成服务器上显示 IPA 文件”   。 这将在 Mac 生成主机上打开一个已选中 .ipa 文件的“查找器”窗口  。
+
+    > [!TIP]
+    >
+    > 仅当使用 Xcode 10 并为 iOS 12 和更早版本生成时，以下步骤才有效。
+    >
+    > 为了使用 Xcode 11 部署到 App Store（针对 iOS 13），应[使用 Visual Studio for Mac](?tabs=macos#build-and-submit-your-app) 生成和上传应用。 “应用程序加载器”不适用于 Xcode 11  。
+
 6. 在 Mac 生成主机上，打开“应用程序加载器”  。 在 Xcode 中，选择“Xcode”>“打开开发人员工具”>“应用程序加载器”  。
 
     > [!NOTE]
@@ -331,4 +396,3 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 - [在 iTunes Connect 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Xamarin.iOS 中的应用程序图标](~/ios/app-fundamentals/images-icons/app-icons.md)
 - [Xamarin.iOS 应用的启动屏幕](~/ios/app-fundamentals/images-icons/launch-screens.md)
-- [应用程序加载程序文档 (Apple)](https://help.apple.com/itc/apploader/#/apdS673accdb)

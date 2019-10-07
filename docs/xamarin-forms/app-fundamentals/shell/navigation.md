@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
+ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888968"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674570"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
 
@@ -211,7 +211,7 @@ bears
 
 `Shell` 类定义 `Navigating` 事件，该事件在即将执行导航时触发，原因可能是编程导航或用户交互。 随附 `Navigating` 事件的 `ShellNavigatingEventArgs` 对象提供以下属性：
 
-| Property | 类型 | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 当前页的 URI。 |
 | `Source` | `ShellNavigationSource` | 发生的导航类型。 |
@@ -226,7 +226,7 @@ bears
 
 `Shell` 类还定义 `Navigated` 事件，该事件在导航完成时触发。 随附 `Navigating` 事件的 `ShellNavigatedEventArgs` 对象提供以下属性：
 
-| Property | 类型 | 说明 |
+| 属性 | 类型 | 说明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 当前页的 URI。 |
 | `Previous`| `ShellNavigationState` | 上一页的 URI。 |
@@ -302,7 +302,7 @@ public partial class ElephantDetailPage : ContentPage
 
 - `Command`属于 `ICommand` 类型，在按下“后退”按钮时执行。
 - `CommandParameter`，属于 `object` 类型，是传递给 `Command` 的参数。
-- `IconOveride`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是用于“后退”按钮的图标。
+- `IconOverride`，属于 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，是用于“后退”按钮的图标。
 - `IsEnabled`，属于 `boolean` 类型，指示是否已启用“后退”按钮。 默认值为 `true`。
 - `TextOverride`，属于 `string` 类型，是用于“后退”按钮的文本。
 
@@ -335,7 +335,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 将 `Command` 属性设置为按下“后退”按钮时执行的 `ICommand`，将 `IconOverride` 属性设置为用于“后退”按钮的图标：
 
-[![iOS 和 Android 上 Shell“后退”按钮图标重写的屏幕截图](navigation-images/back-button.png "Shell“后退”按钮图标重写")](navigation-images/back-button-large.png#lightbox "Shell“后退”按钮图标重写")
+[![iOS 和 Android 上 Shell“后退”按钮图标重写的屏幕截图](navigation-images/back-button.png "Shell back button icon override")](navigation-images/back-button-large.png#lightbox "Shell 后退按钮图标重写")
 
 ## <a name="related-links"></a>相关链接
 
