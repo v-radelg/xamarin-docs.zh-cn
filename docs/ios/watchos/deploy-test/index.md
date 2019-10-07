@@ -74,7 +74,7 @@ ms.locfileid: "70284675"
 
 - 在 Apple 开发人员门户**证书，标识符 & 配置文件**部分配置了**应用组**。
 
-- 已在 iOS 应用和监视扩展的**应用 ID**和 info.plist*中启用***应用**组（并提供**应用组 ID**）。
+- 已在 iOS 应用和监视扩展的**应用 ID**和 info.plist *中启用* **应用**组（并提供**应用组 ID**）。
 
 ### <a name="certificates-identifiers--profiles"></a>证书，标识符 & 配置文件
 
