@@ -19,7 +19,7 @@
 
 * **社区 - 新文章**：如果你是 Xamarin 社区成员并且想要创建新文章，则需要求助工作人员，他们将结合使用公共存储库和专用存储库来帮助你推出该内容。 首先需在存储库中提出 [GitHub 问题](https://github.com/MicrosoftDocs/xamarin-docs/issues)，概述你建议的内容。
 
-* **员工**：如果你是技术撰稿人、项目经理或 Xamarin 产品的产品团队开发人员，并且参与或创作技术文章是你的职责，则应使用专用存储库 (https://github.com/MicrosoftDocs/xamarin-docs-pr)。 如果需要对现有文章进行重大更改、添加或更改图像或贡献新文章，则需对此存储库进行分叉，安装 Git（一种 markdown 编辑器），然后了解一些 git 命令。 有关详细信息，请参阅[内部参与者指南](https://review.docs.microsoft.com/help/contribute/?branch=master)。
+* **员工**：如果你是技术撰稿人、项目经理或 Xamarin 产品的产品团队开发人员，并且参与或创作技术文章是你的职责，则应使用专用存储库 (https://github.com/MicrosoftDocs/xamarin-docs-pr)。 如果需要对现有文章进行重大更改、添加或更改图像或贡献新文章，则需对此存储库进行分叉，安装 Git和一个 markdown 编辑器，然后了解一些 git 命令。 有关详细信息，请参阅[内部参与者指南](https://review.docs.microsoft.com/help/contribute/?branch=master)。
 
 ## <a name="legal-notices"></a>法律声明
 
