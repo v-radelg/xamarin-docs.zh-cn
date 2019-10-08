@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fb3bbda3caee9fdbd490aaea7e119baf470eedd1
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760569"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997169"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的文件处理
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 使用 .NET Standard 库中的代码或使用嵌入式资源，即可实现使用 Xamarin.Forms 处理文件。
 
@@ -58,7 +58,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 示例应用演示了这些操作，其中包括保存和加载文本的页面：
 
-[![保存和加载文本](files-images/saveandload-sml.png "在应用中保存和加载文件")](files-images/saveandload.png#lightbox "Saving and Loading Files in App")
+[![保存和加载文本](files-images/saveandload-sml.png "在应用中保存和加载文件")](files-images/saveandload.png#lightbox "在应用程序中保存和加载文件")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
@@ -68,34 +68,35 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![配置嵌入资源生成操作](files-images/vs-embeddedresource-sml.png "设置 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "Setting EmbeddedResource BuildAction")
+[![配置嵌入资源生成操作](files-images/vs-embeddedresource-sml.png "设置 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "设置 EmbeddedResource BuildAction")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![嵌入在 PCL 中的文本文件，配置嵌入资源生成操作](files-images/xs-embeddedresource-sml.png "设置 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "Setting EmbeddedResource BuildAction")
+[![嵌入到 .net standard 库中的文本文件，配置嵌入资源生成操作](files-images/xs-embeddedresource-sml.png "设置 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "设置 EmbeddedResource BuildAction")
 
 -----
 
-`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件。 默认情况下，资源 ID 是一个文件名，前缀是它所嵌入的项目的默认命名空间 - 在本例中，程序集是“WorkingWithFile”，文件名是“PCLTextResource.txt”，所以资源 ID 是 `WorkingWithFiles.PCLTextResource.txt`。
+`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件。 默认情况下，资源 ID 是以其嵌入的项目的默认命名空间为前缀的文件名，在这种情况下，程序集是**WorkingWithFiles**的，文件名为**LibTextResource**，因此资源 id `WorkingWithFiles.LibTextResource.txt`。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibTextResource.txt");
 string text = "";
-using (var reader = new System.IO.StreamReader (stream)) {
+using (var reader = new System.IO.StreamReader (stream))
+{  
     text = reader.ReadToEnd ();
 }
 ```
 
 然后，可以使用 `text` 变量来显示文本，或者在代码中以其他方式使用它。 [示例应用](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)的屏幕截图显示了在 `Label` 控件中呈现的文本。
 
- [![内嵌在 PCL 中的文本文件](files-images/pcltext-sml.png "内嵌在 PCL 中的文本文件显示在应用中")](files-images/pcltext.png#lightbox "Embedded Text File in PCL Displayed in App")
+ [在(files-images/pcltext-sml.png "应用中显示的 .NET Standard 库中")![嵌入到 .Net Standard library]嵌入文本文件中的文本文件](files-images/pcltext.png#lightbox "应用中显示 .NET Standard 库中的嵌入文本文件")
 
 加载和反序列化 XML 也同样简单。 下面的代码显示了从资源加载和反序列化 XML 文件，然后绑定到 `ListView` 进行显示。 XML 文件包含一个 `Monkey` 对象数组（在示例代码中定义的类）。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
     var serializer = new XmlSerializer(typeof(List<Monkey>));
@@ -105,7 +106,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [![嵌入在 PCL 中的 XML 文件，显示在 ListView 中](files-images/pclxml-sml.png "PCL 中的嵌入 XML 文件，显示在 ListView 中")](files-images/pclxml.png#lightbox "Embedded XML File in PCL Displayed in ListView")
+ [![嵌入到 .net standard 库中的 Xml 文件，显示]在(files-images/pclxml-sml.png "listview 中显示的 .net standard 库中的 ListView 嵌入 Xml 文件")中](files-images/pclxml.png#lightbox "显示在 ListView 中的 .NET standard 库中的嵌入 XML 文件")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -139,9 +140,9 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>组织资源
 
-上面的例子假设该文件已嵌入 .NET Standard 库项目的根目录中，在这种情况下，资源 ID 的形式是“Namespace.Filename.Extension”，如 `WorkingWithFiles.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
+上面的例子假设该文件已嵌入 .NET Standard 库项目的根目录中，在这种情况下，资源 ID 的形式是“Namespace.Filename.Extension”，如 `WorkingWithFiles.LibTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
 
-可以在文件夹中组织嵌入式资源。 当嵌入式资源被放置在一个文件夹中时，文件夹名称就成为资源 ID 的一部分（以句点分隔），因此资源 ID 格式就变成了“Namespace.Folder.Filename.Extension”。 将示例应用中使用的文件放入文件夹“MyFolder”将生成相应的资源 ID `WorkingWithFiles.MyFolder.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
+可以在文件夹中组织嵌入式资源。 当嵌入式资源被放置在一个文件夹中时，文件夹名称就成为资源 ID 的一部分（以句点分隔），因此资源 ID 格式就变成了“Namespace.Folder.Filename.Extension”。 将示例应用中使用的文件放入文件夹“MyFolder”将生成相应的资源 ID `WorkingWithFiles.MyFolder.LibTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
 
 <a name="Debugging_Embedded_Resources" />
 

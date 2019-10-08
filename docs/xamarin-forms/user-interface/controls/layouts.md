@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 294b538b0e73344ffe9109a1e1091bc9b7591f63
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 59c6f9e7ec6c40c938fda2665bbae5685e7de830
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976488"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997214"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
 
@@ -22,7 +22,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 [ `Layout` ](xref:Xamarin.Forms.Layout)并[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)在 Xamarin.Forms 中的类是专用的视图作为视图和其他布局容器的子类型。 `Layout`类本身派生自[ `View` ](views.md)。 一个`Layout`派生类通常包含在 Xamarin.Forms 应用程序中设置的位置和大小的子元素的逻辑。
 
-[![Xamarin.Forms 布局类型](layouts-images/layouts-sml.png "Xamarin.Forms 布局类型")](layouts-images/layouts.png#lightbox "Xamarin.Forms 布局类型")
+[![Xamarin Forms 布局类型](layouts-images/layouts-sml.png "Xamarin. forms 布局类型")](layouts-images/layouts.png#lightbox "Xamarin Forms 布局类型")
 
 派生的类`Layout`可以分为两类：
 
@@ -36,7 +36,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含与设置的一个子[ `Content` ](xref:Xamarin.Forms.ContentView.Content)属性。 `Content`属性可以设置为任意`View`派生类，包括其他`Layout`派生类。 `ContentView` 主要用作结构化元素并用作基类[ `Frame` ](#frame)。<br /><br />[API 文档](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md)/[示例] (https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![ContentView 示例](layouts-images/ContentView.png "ContentView 示例")](layouts-images/ContentView-Large.png#lightbox "ContentView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含与设置的一个子[ `Content` ](xref:Xamarin.Forms.ContentView.Content)属性。 `Content`属性可以设置为任意`View`派生类，包括其他`Layout`派生类。 `ContentView` 主要用作结构化元素并用作基类[ `Frame` ](#frame)。<br /><br />[API 文档](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/) | [![ContentView 示例](layouts-images/ContentView.png "ContentView 示例")](layouts-images/ContentView-Large.png#lightbox "ContentView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
@@ -45,7 +45,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| 类派生自[`ContentView`](#contentView) , 并在其子级周围显示一个边框或框架。 [`Frame`](xref:Xamarin.Forms.Frame) [`Padding`](xref:Xamarin.Forms.Layout.Padding) [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)类的默认值为 20, 还定义、和[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)属性。 `Frame`<br /><br />[API 文档](xref:Xamarin.Forms.Frame) / [指南](~/xamarin-forms/user-interface/layouts/frame.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![帧示例](layouts-images/Frame.png "帧示例")](layouts-images/Frame-Large.png#lightbox "帧示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| [@No__t-1](xref:Xamarin.Forms.Frame)类派生自[`ContentView`](#contentView)并在其子级周围显示一个边框或框架。 @No__t 0 类具有默认的[`Padding`](xref:Xamarin.Forms.Layout.Padding)值20，还定义[`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)和[@no__t 8](xref:Xamarin.Forms.Frame.HasShadow)属性。<br /><br />[API 文档](xref:Xamarin.Forms.Frame) / [指南](~/xamarin-forms/user-interface/layouts/frame.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![框架示例](layouts-images/Frame.png "框架示例")](layouts-images/Frame-Large.png#lightbox "框架示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />
@@ -68,7 +68,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 是模板化中使用的视图的布局管理器[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)标记呈现内容的显示位置。<br /><br />[API 文档](xref:Xamarin.Forms.ContentPresenter) / [指南](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![ContentPresenter 示例](layouts-images/ContentPresenter.png "ContentPresenter 示例")](layouts-images/ContentPresenter.png#lightbox "ContentPresenter 示例") |
+| [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 是模板化中使用的视图的布局管理器[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate)标记呈现内容的显示位置。<br /><br />[API 文档](xref:Xamarin.Forms.ContentPresenter) / [指南](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md) | [![System.windows.controls.contentpresenter> 示例](layouts-images/ContentPresenter.png "system.windows.controls.contentpresenter> 示例")](layouts-images/ContentPresenter.png#lightbox "System.windows.controls.contentpresenter> 示例") |
 |     |     |
 
 ## <a name="layouts-with-multiple-children"></a>使用多个子级的布局
