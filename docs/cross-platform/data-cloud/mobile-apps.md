@@ -6,14 +6,18 @@ ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: b94bae8fb1b7c990c5b2478a0da143960a0bcc55
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d39615f20cdd52bb862d9ee998e9a45bbb6834e
+ms.sourcegitcommit: d116fdcad9f5f0587ce64749cd8d791eee87f8aa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765964"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72246538"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure 移动应用
+
+> [!NOTE]
+> Visual Studio App Center 支持端到端和集成的服务中心到移动应用开发。 开发人员可以使用**生成**、**测试**和**分发**服务来设置持续集成和交付管道。 部署应用后，开发人员可以使用**分析**和**诊断**服务监视应用的状态和使用情况，并使用**推送**服务与用户联系。 开发人员还可以利用**身份**验证来对用户和**数据**服务进行身份验证，以便在云中持久保存和同步应用程序数据。
+> 如果希望将云服务集成到移动应用程序中，请立即注册[App Center](https://appcenter.ms/signup?utm_source=XamarinDocs&utm_medium=Azure&utm_campaign=docs) 。
 
 _Azure 门户文档的示例和代码下载。_
 

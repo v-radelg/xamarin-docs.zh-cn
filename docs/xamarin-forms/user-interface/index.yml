@@ -145,6 +145,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: slider.md
             title: Slider
+          - href: splashscreen.md
+            html: 了解如何创建适合 Xamarin.Forms 应用程序的初始屏幕。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: splashscreen.md
+            title: 初始屏幕
           - href: stepper.md
             html: 了解如何允许用户使用步进器控件从一系列值中选择一个数值。
             image:

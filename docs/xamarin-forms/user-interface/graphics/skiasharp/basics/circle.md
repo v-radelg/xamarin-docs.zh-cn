@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759534"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032580"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 绘制一个简单的圆圈
 
@@ -26,7 +26,7 @@ _了解 SkiaSharp 绘制，包括画布的基础知识和绘制对象_
 
 ![](circle-images/circleexample.png "以红色标出将蓝色圆形")
 
-[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page 类派生自`ContentPage`和包含两个`using`SkiaSharp 命名空间指令：
+[ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page 类派生自`ContentPage`和包含两个`using`SkiaSharp 命名空间指令：
 
 ```csharp
 using SkiaSharp;
@@ -143,7 +143,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 下面是在 iOS、 Android 和通用 Windows 平台上运行的程序：
 
-[![](circle-images/simplecircle-small.png "三个简单的圆圈页屏幕截图")](circle-images/simplecircle-large.png#lightbox "三个简单的圆圈页屏幕截图")
+[![](circle-images/simplecircle-small.png "简单圆形页面的三向屏幕截图")](circle-images/simplecircle-large.png#lightbox "简单圆形页面的三向屏幕截图")
 
 时自行运行该程序，可以打开手机或模拟器侧向若要查看如何重绘图形。 每次需要重绘图形`PaintSurface`再次调用事件处理程序。
 
@@ -154,7 +154,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 > [!NOTE]
 > `SKPaint`类定义[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)若要启用在图形的呈现抗锯齿。 抗锯齿通常导致直观地平滑边缘，因此您可能需要将此属性设置为`true`中的大多数您`SKPaint`对象。 为了简单起见，此属性是_不_设置中的大多数示例页面。
 
-尽管圆轮廓的宽度指定为25像素&mdash;或圆&mdash;的半径的四分之一，但它看起来很薄，但有一个充分的理由：线条宽度的一半被蓝色圆圈遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
+尽管圆轮廓的宽度指定为25个像素 &mdash; 或圆圈半径的四分之一 &mdash; 看上去太棒了，但有一个充分的理由：线条宽度的一半被蓝色圆圈遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
 
 中的下一个示例[与 Xamarin.Forms 集成](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文章演示是以可视方式。
 

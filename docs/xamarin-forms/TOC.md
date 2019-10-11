@@ -200,6 +200,7 @@
 ### [进度栏](user-interface/progressbar.md)
 ### [搜索栏](user-interface/searchbar.md)
 ### [滑块](user-interface/slider.md)
+### [初始屏幕](user-interface/splashscreen.md)
 ### [步进器](user-interface/stepper.md)
 ### [样式](user-interface/styles/index.md)
 #### [使用 XAML 样式设置 Xamarin.Forms 应用的样式](user-interface/styles/xaml/index.md)
