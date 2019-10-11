@@ -253,7 +253,7 @@
 #### [条目游标颜色](platform/ios/entry-cursor-color.md)
 #### [条目字体大小](platform/ios/entry-font-size.md)
 #### [格式设置](platform/ios/formatting.md)
-#### [iPad 模式页面演示样式](platform/ios/ipad-page-presentation-style.md)
+#### [模式页面演示样式](platform/ios/page-presentation-style.md)
 #### [较大页面标题](platform/ios/page-large-title.md)
 #### [ListView 组标头样式](platform/ios/listview-group-header-style.md)
 #### [ListView 行动画](platform/ios/listview-row-animations.md)
