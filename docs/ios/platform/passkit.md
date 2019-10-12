@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec44e32c3eb0d0d436a497ddb14c86af1de8d703
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769577"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273173"
 ---
 # <a name="passkit-in-xamarinios"></a>Xamarin 中的 PassKit
 
@@ -56,7 +56,7 @@ PassKit 不只是 CocoaTouch 内的 API，而是更大的应用、数据和服�
 - **钱包**–存储并显示刀路的 Apple 内置 iOS 应用。 这是为在现实世界中使用而呈现的传递的唯一位置（即显示条形码，同时传递中的所有本地化数据）。
 - **伴生应用**–由 pass 提供商构建的 iOS 6 应用程序，用于扩展其发出的传递的功能，例如，将值添加到存储卡、更改代表的座位或其他特定于业务的功能。 要使 pass 有用，传递应用不是必需的。
 - **你的服务器**-一种安全服务器，可在其中生成传递并对其进行签名以进行分发。 你的附属应用可能会连接到你的服务器，以生成新的 pass 或请求更新现有的阶段。 你可以选择实现钱包为更新通过而调用的 web 服务 API。
-- **Apns 服务器**–您的服务器能够使用 APNS 在给定设备上通知经过更新的钱包。 将通知推送到钱包，然后将联系你的服务器以获取更改的详细信息。 伴生应用不需要为此功能实现 APNS （它们可以侦听`PKPassLibraryDidChangeNotification` ）。
+- **Apns 服务器**–您的服务器能够使用 APNS 在给定设备上通知经过更新的钱包。 将通知推送到钱包，然后将联系你的服务器以获取更改的详细信息。 伴生应用不需要为此功能实现 APNS （它们可以侦听 `PKPassLibraryDidChangeNotification`）。
 - **管道应用**–不直接操作 pass 的应用程序（例如，配套应用程序），但可以通过识别 pass 并允许将其添加到钱包来改善其实用工具。 邮件客户端、社交网络浏览器和其他数据聚合应用程序都可能会遇到要传递的附件或链接。
 
 整个生态系统看起来很复杂，因此，值得注意的是，某些组件是可选的，并且可能会有更简单的 PassKit 实现。
@@ -85,7 +85,7 @@ Pass 是表示票据、优惠券或卡片的数据集合。 它可能适用于�
 
 - **pass. json** –必需。 包含通过的所有信息。
 - **.manifest** –必需。 包含传递中每个文件的 SHA1 哈希（签名文件和此文件除外）。
-- **签名**–必需。 通过使用 iOS 预`manifest.json`配门户中生成的证书对文件进行签名来创建。
+- **签名**–必需。 通过使用 iOS 预配门户中生成的证书对 @no__t 的文件进行签名来创建。
 - **徽标键**–可选。
 - **背景 .png** –可选。
 - **icon .png** –可选。
@@ -101,11 +101,11 @@ JSON 格式是因为通常在服务器上创建传递，这意味着在服务器
 
 - **teamIdentifier** –这会将生成的所有传递链接到应用商店帐户。 此值在 iOS 预配门户中可见。
 - **passTypeIdentifier** -在预配门户中注册，以将刀路组合在一起（如果生成多种类型）。 例如，咖啡店可能会创建商店卡 pass 类型，以允许其客户获得会员信用额度，还可以创建单独的优惠券 pass 类型来创建和分发折扣优惠券。 该咖啡店甚至可能包含实时音乐事件，并针对这些活动发出事件票证传递。
-- **serialNumber** –此`passTypeidentifier`中的唯一字符串。 该值对于钱包是不透明的，但对于在与服务器通信时跟踪特定经历非常重要。
+- **serialNumber** –此 `passTypeidentifier` 中的唯一字符串。 该值对于钱包是不透明的，但对于在与服务器通信时跟踪特定经历非常重要。
 
 每次传递中有大量其他 JSON 密钥，示例如下所示：
 
-``` 
+```
 {
    "passTypeIdentifier":"com.xamarin.passkitdoc.banana",  //Type Identifier (iOS Provisioning Portal)
    "formatVersion":1,                                     //Always 1 (for now)
@@ -178,7 +178,7 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 有两种类型的数据可导致在锁屏界面上显示传递：
 
- **位置**
+ **Location**
 
 在一次中最多可以指定10个位置，例如客户经常访问的商店，或电影院或机场的位置。 客户可以通过配套应用设置这些位置，或者提供商可以通过使用情况数据（如果是使用客户的权限收集的）来确定这些位置。
 
@@ -192,16 +192,16 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 ### <a name="localization"></a>本地化
 
-翻译成多种语言的翻译方式类似于本地化 iOS 应用程序–使用`.lproj`扩展名创建语言特定的目录，并将本地化的元素放置在内部。 应将文本翻译输入到`pass.strings`文件中，而本地化的图像应与在 Pass 根中替换的图像的名称相同。
+翻译成多种语言的方式与本地化 iOS 应用程序类似：使用 `.lproj` 扩展创建语言特定的目录，并将本地化的元素放在内部。 应将文本翻译输入到 @no__t 0 文件中，而本地化的图像应与在 Pass 根中替换的图像的名称相同。
 
 ## <a name="security"></a>安全性
 
 将使用你在 iOS 预配门户中生成的私有证书对传递进行签名。 对通过进行签名的步骤如下：
 
-1. 计算传递目录中每个文件的 SHA1 哈希值（不包括`manifest.json`或`signature`文件，这两者都不应存在于此阶段）。
-1. 编写`manifest.json`为每个文件名的 JSON 键/值列表及其哈希值。
-1. 使用证书对`manifest.json`文件进行签名，并将结果写入到名`signature`为的文件。
-1. 压缩所有内容，并为结果文件`.pkpass`指定文件扩展名。
+1. 计算传递目录中每个文件的 SHA1 哈希（请勿包含 `manifest.json` 或 `signature` 文件，这两个文件都不应存在于此阶段）。
+1. 写入 `manifest.json` 作为每个文件名的 JSON 键/值列表及其哈希值。
+1. 使用证书对 @no__t 0 文件进行签名，并将结果写入名为 @no__t 的文件。
+1. 将所有内容压缩，并为生成的文件指定 @no__t 的文件扩展名。
 
 因为你需要使用私钥对传递进行签名，所以仅应在你控制的安全服务器上执行此过程。 不要分发密钥来尝试在应用程序中生成 pass。
 
@@ -224,7 +224,7 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 1. 在[IOS 设置门户的 "证书、标识符和配置文件" 部分](https://developer.apple.com/account/overview.action)中，导航到 "**标识符**"，然后选择 "**传递类型 id** "。 然后选择 **+** 按钮以创建新的轮次的类型：[![](passkit-images/passid.png "创建新的传递类型")](passkit-images/passid.png#lightbox)
 
-2. 提供传递的**说明**（名称）和**标识符**（唯一字符串）。 请注意，所有传递类型 id 必须以本示例`pass.`中使用`pass.com.xamarin.coupon.banana`的字符串开头：[![](passkit-images/register.png "提供描述和标识符")](passkit-images/register.png#lightbox)
+2. 提供传递的**说明**（名称）和**标识符**（唯一字符串）。 请注意，所有传递类型 Id 必须以字符串开头 `pass.` 在此示例中，我们使用 `pass.com.xamarin.coupon.banana`：[![](passkit-images/register.png "提供描述和标识符")](passkit-images/register.png#lightbox)
 
 3. 按 "**注册**" 按钮确认传递 ID。
 
@@ -259,20 +259,20 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 - 用下载的证书 p12 文件对 manifest 进行签名。
 - 压缩目录的内容，并将其重命名为 pkpass 扩展名。
 
-本文的[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)中有一些源文件可用于生成通过。 使用 CreateAPassManually 目录的`CouponBanana.raw`目录中的文件。 存在下列文件：
+本文的[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)中有一些源文件可用于生成通过。 使用 CreateAPassManually 目录的 `CouponBanana.raw` 目录中的文件。 存在下列文件：
 
  [![](passkit-images/image18.png "存在这些文件")](passkit-images/image18.png#lightbox)
 
-打开 pass. json 并编辑 JSON。 至少必须更新`passTypeIdentifier`和， `teamIdentifer`才能匹配 Apple 开发人员帐户。
+打开 pass. json 并编辑 JSON。 必须至少更新 `passTypeIdentifier` 并 `teamIdentifer` 以匹配你的 Apple 开发人员帐户。
 
-```csharp
+```json
 "passTypeIdentifier" : "pass.com.xamarin.coupon.banana",
 "teamIdentifier" : "?????????",
 ```
 
-然后，必须计算每个文件的哈希值并`manifest.json`创建文件。 完成后，它将如下所示：
+然后，必须计算每个文件的哈希值并创建 @no__t 的文件。 完成后，它将如下所示：
 
-```csharp
+```json
 {
   "icon@2x.png" : "30806547dcc6ee084a90210e2dc042d5d7d92a41",
   "icon.png" : "87e9ffb203beb2cce5de76113f8e9503aeab6ecc",
@@ -286,15 +286,15 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 #### <a name="signing-on-a-mac"></a>在 Mac 上签名
 
-从[Apple 下载](https://developer.apple.com/downloads/index.action?name=Passbook)站点下载**钱包 Seed 支持材料**。 `signpass`使用工具将文件夹转换为通过（这也将计算 SHA1 哈希，并将输出压缩为 pkpass 文件）。
+从[Apple 下载](https://developer.apple.com/downloads/index.action?name=Passbook)站点下载**钱包 Seed 支持材料**。 使用 `signpass` 工具将文件夹转换为通过（这也将计算 SHA1 哈希，并将输出压缩为 pkpass 文件）。
 
 #### <a name="testing"></a>正在测试
 
-如果要检查这些工具的输出（通过将文件名设置为 .zip 并打开它），则会看到以下文件（请注意，添加`manifest.json`和`signature`文件）：
+如果你要检查这些工具的输出（通过将文件名设置为 .zip 并打开它），则会看到以下文件（请注意，添加 `manifest.json` 和 @no__t 1 文件）：
 
  [![](passkit-images/image19.png "检查这些工具的输出")](passkit-images/image19.png#lightbox)
 
-签名后，压缩并重命名该文件（例如， 若`BananaCoupon.pkpass`要），可以将其拖到模拟器中进行测试，或通过电子邮件将其发送给你自己以在真实设备上检索。 应该会看到一个屏幕来**添加**刀路，如下所示：
+签名后，压缩并重命名该文件（例如， 若要 `BananaCoupon.pkpass`），可以将其拖到模拟器中进行测试，或通过电子邮件将其发送给你自己以在真实设备上检索。 应该会看到一个屏幕来**添加**刀路，如下所示：
 
  [![](passkit-images/image20.png "添加 \"传递\" 屏幕")](passkit-images/image20.png#lightbox)
 
@@ -321,7 +321,7 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 - **管道应用程序**-这些操作不会直接操作传递，它们只是加载传递文件并向用户显示将其添加到钱包的选项。 
 
-- **附属应用**-这些应用程序由提供商编写，用于分发刀路，并提供其他功能来浏览或编辑这些应用。 Xamarin iOS 应用程序可以完全访问 PassKit API，以创建和操作 pass。 然后，可以使用`PKAddPassesViewController`将传递添加到钱包。 本文档的相关**应用程序**部分详细介绍了此过程。
+- **附属应用**-这些应用程序由提供商编写，用于分发刀路，并提供其他功能来浏览或编辑这些应用。 Xamarin iOS 应用程序可以完全访问 PassKit API，以创建和操作 pass。 然后，可以使用 `PKAddPassesViewController` 将刀路添加到钱包。 本文档的相关**应用程序**部分详细介绍了此过程。
 
 ### <a name="conduit-applications"></a>管道应用程序
 
@@ -343,7 +343,7 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 - **MIME 类型**-application/vnd.apple.mpegurl/pkpass
 - **UTI** – pkpass
 
-管道应用程序的基本操作是检索传递文件并调用 PassKit 的`PKAddPassesViewController` ，以便为用户授予向其钱包添加传递的选项。 此视图控制器的实现将在下一节中介绍的**应用程序**。
+管道应用程序的基本操作是检索传递文件并调用 PassKit 的 `PKAddPassesViewController`，为用户授予向其钱包添加传递的选项。 此视图控制器的实现将在下一节中介绍的**应用程序**。
 
 不需要针对特定的传递类型 ID 设置管道应用程序，这与伴随应用程序的方式相同。
 
@@ -381,7 +381,7 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 双击**info.plist**文件以打开 XML 源文件。
 
-若要添加钱包权利，请在下拉列表`Passbook Identifiers`中将属性设置为，这将自动设置**类型** `Array`。 然后，将字符串**值**设置为`$(TeamIdentifierPrefix)*`：
+若要添加钱包权利，请将**属性**设置为下拉列表中 `Passbook Identifiers`，这会自动将**类型**设置 `Array`。 然后，将字符串**值**设置为 `$(TeamIdentifierPrefix)*`：
 
 ![](passkit-images/image33.png "启用钱包权利")
 
@@ -389,21 +389,21 @@ ISO-8859-1 编码是最常见的，可检查将读取你的阶段的扫描系统
 
 `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
-其中`pass.$(CFBundleIdentifier)` ，是[上面](~/ios/platform/passkit.md)创建的传递 ID
+其中 `pass.$(CFBundleIdentifier)` 是[上面](~/ios/platform/passkit.md)创建的传递 ID
 
 -----
 
 ### <a name="debugging"></a>调试
 
-如果在部署应用程序时遇到问题，请检查是否正在使用正确的**预配配置文件**，以及`Entitlements.plist`是否在**iPhone 捆绑签名**选项中选择作为**自定义权利**文件。
+如果你在部署应用程序时遇到问题，请检查你是否正在使用正确的**预配配置文件**，以及是否在**iPhone 捆绑签名**选项中选择了 `Entitlements.plist` 作为**自定义的权利**文件。
 
 如果在部署时遇到此错误：
 
-```csharp
+```
 Installation failed: Your code signing/provisioning profiles are not correctly configured (error: 0xe8008016)
 ```
 
-否则， `pass-type-identifiers`权利数组不正确（或与**预配配置文件**不匹配）。 验证 Pass 类型 Id 和你的团队 ID 是否正确。
+那么，@no__t 的权利数组不正确（或与**预配配置文件**不匹配）。 验证 Pass 类型 Id 和你的团队 ID 是否正确。
 
 ## <a name="classes"></a>类
 
@@ -472,7 +472,7 @@ string passInfo =
 
  [![](passkit-images/image30.png "示例中所选优惠券警报")](passkit-images/image30.png#lightbox)
 
-您还可以使用`LocalizedValueForFieldKey()`方法从您设计的 "通过" 中的字段检索数据（因为您将知道应该出现哪些字段）。 示例代码不显示此代码。
+你还可以使用 `LocalizedValueForFieldKey()` 方法从你设计的中的字段检索数据（因为你知道应该存在哪些字段）。 示例代码不显示此代码。
 
 ### <a name="loading-a-pass-from-a-file"></a>从文件加载传递
 
@@ -509,17 +509,17 @@ PKPass 不是可变的，因此不能在代码中更新传递对象。 若要更
 
 必须在服务器上完成传递文件创建，因为必须使用必须保密的证书来对传递进行签名。
 
-生成更新的传递文件后，使用`Replace`方法覆盖设备上的旧数据。
+生成更新的传递文件后，使用 `Replace` 方法覆盖设备上的旧数据。
 
 ### <a name="display-a-pass-for-scanning"></a>显示扫描的通过
 
-如前所述，只有钱包可以显示扫描的通过。 可以使用`OpenUrl`方法显示传递，如下所示：
+如前所述，只有钱包可以显示扫描的通过。 可以使用 `OpenUrl` 方法来显示 Pass，如下所示：
 
  `UIApplication.SharedApplication.OpenUrl (p.PassUrl);`
 
 ### <a name="receiving-notifications-of-changes"></a>接收更改通知
 
-应用程序可以使用`PKPassLibraryDidChangeNotification`侦听对传递库所做的更改。 更改可能是由于触发了后台更新的通知引起的，因此最好在应用程序中侦听。
+应用程序可以使用 `PKPassLibraryDidChangeNotification` 侦听对传递库所做的更改。 更改可能是由于触发了后台更新的通知引起的，因此最好在应用程序中侦听。
 
 ```csharp
 noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidChangeNotification, (not) => {

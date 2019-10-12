@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "70293142"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273124"
 ---
 # <a name="using-team-city-with-xamarin"></a>将团队城市与 Xamarin 配合使用
 
@@ -61,7 +61,7 @@ TeamCity 安装有多个不同的排列。 下面是其中一些部分的列表�
 3. **Xcode** –对 iOS 应用程序进行编译和签名需要 Xcode。
 4. **Xcode 命令行工具**–在[更新 Ruby with rbenv](https://github.com/calabash/calabash-ios/wiki)指南的 "安装" 部分的步骤1中进行了介绍。
 5. **签名身份 & 预配配置文件**–通过 XCode 导入证书和预配配置文件。 有关更多详细信息，请参阅 Apple 有关[导出签名标识和预配配置文件](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)的指南。
-6. **Android 密钥库**–将所需的 Android 密钥库复制到 TeamCity 用户有权访问的目录， `~/Documents/keystores/MyAndroidApp1`即。
+6. **Android 密钥库**–将所需的 Android 密钥库复制到 TeamCity 用户有权访问的目录，即 `~/Documents/keystores/MyAndroidApp1`。
 7. **Calabash** -如果你的应用程序具有使用 Calabash 编写的测试，则这是一个可选步骤。 有关详细信息，请参阅[安装 Calabash ON OS X Mavericks](https://github.com/calabash/calabash-ios/wiki)指南和[更新 Ruby with rbenv](https://github.com/calabash/calabash-ios/wiki)指南。
 
 下图演示了这些组件的所有组件：
@@ -134,7 +134,7 @@ TeamCity 安装有多个不同的排列。 下面是其中一些部分的列表�
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>正在将 Uitest 提交到 Test Cloud
 
-Uitest 是使用`test-cloud.exe`应用程序提交的，如以下代码片段所示：
+Uitest 是使用 `test-cloud.exe` 应用程序提交的，如以下代码片段所示：
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -142,11 +142,11 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 当测试运行时，测试结果将**以名为 NUnit 的 xml 文件**的形式返回。 TeamCity 会在生成日志中显示信息。
 
-有关如何将 Uitest 提交到 Test Cloud 的详细信息，请参阅本指南[了解如何准备 uitest 以进行上传](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/)。
+有关如何将 Uitest 提交到 Test Cloud 的详细信息，请参阅[准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)或[准备 xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>将 Calabash 测试提交到 Test Cloud
 
-Calabash 测试是使用 gem 提交`test-cloud`的，如以下代码片段所示：
+Calabash 测试是使用 `test-cloud` gem 提交的，如以下代码片段所示：
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -167,35 +167,35 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 1. 通过 web 浏览器登录到 TeamCity 开始。 导航到根项目：
 
-    ![导航到根项目](teamcity-images/image2.png "导航到根项目")在根项目下，创建一个新的子项目：
+    ![导航到根]项目，(teamcity-images/image2.png "导航到")根项目下面的根项目，创建一个新的子项目：
 
-    ![导航到根项目下面的根项目，创建一个新的子项目](teamcity-images/image3.png "导航到根项目下面的根项目，创建一个新的子项目")
+    ![导航到根项目下面的根项目，创建一个新的子项目](teamcity-images/image3.png "，导航到根项目下面的根项目，创建一个新的子项目")
 2. 创建子项目后，添加新的生成配置：
 
-    ![创建子项目后，添加新的生成配置](teamcity-images/image5.png "创建子项目后，添加新的生成配置")
+    ![创建子项目后，]在创建子项目后添加新的生成配置(teamcity-images/image5.png "，添加新的生成配置")
 3. 将 VCS 项目附加到生成配置。 此操作通过 "版本控制" 设置屏幕完成：
 
-    ![此操作通过 "版本控制" 设置屏幕来完成](teamcity-images/image6.png "此操作通过 \"版本控制\" 设置屏幕来完成")
+    ![此操作通过 "版本控制设置" 屏幕完成]，(teamcity-images/image6.png "此操作通过 \"版本控制\" 设置屏幕完成")
 
     如果未创建 VCS 项目，你可以选择从下面显示的 "新的 VCS 根" 页中创建一个项目：
 
-    ![如果没有创建 VCS 项目，可以选择从新的 VCS 根页面创建一个](teamcity-images/image7.png "如果没有创建 VCS 项目，可以选择从新的 VCS 根页面创建一个")
+    ![如果未创建 vcs 项目，则可以选择在 "新 Vcs 根" 页中创建一个]，(teamcity-images/image7.png "如果没有创建 vcs 项目，可以选择从 \"新的 vcs 根\" 页创建一个")。
 
     附加 VCS 根后，TeamCity 将签出该项目并尝试自动检测生成步骤。 如果熟悉 TeamCity，则可以选择检测到的生成步骤之一。 现在可以放心地忽略检测到的生成步骤。
 
 4. 接下来，配置生成触发器。 这会在满足特定条件时（例如，当用户将代码提交到存储库时）对生成进行排队。 以下屏幕截图显示了如何添加生成触发器：
 
-    ![此屏幕截图显示了如何添加生成触发器](teamcity-images/image8.png "此屏幕截图显示了如何添加生成触发器")可以在以下屏幕截图中查看配置生成触发器的示例：
+    ![此屏幕截图显示了如何添加生成触发器](teamcity-images/image8.png "此屏幕截图显示了如何添加生成")触发器示例：可以在以下屏幕截图中查看配置生成触发器：
 
-    ![可在此屏幕截图中查看配置生成触发器的示例](teamcity-images/image9.png "可在此屏幕截图中查看配置生成触发器的示例")
+    ![可在此屏幕截图中查看配置生成触发器的示例]。(teamcity-images/image9.png "在此屏幕截图中，可以查看配置生成触发器的示例")
 
 5. 上一部分，参数化生成脚本，并建议将某些值存储为环境变量。 可以通过 "参数" 屏幕将这些变量添加到生成配置中。 如以下屏幕截图所示，为 Test Cloud API 密钥、iOS 设备 ID 和 Android 设备 ID 添加变量：
 
-    ![为 TEST CLOUD API 密钥、iOS 设备 id 和 Android 设备 Id 添加变量](teamcity-images/image11.png "为 TEST CLOUD API 密钥、iOS 设备 id 和 Android 设备 Id 添加变量")
+    ![添加 TEST CLOUD Api 密钥、ios 设备 id 和 Android 设备 id 的变量](teamcity-images/image11.png "添加 Test Cloud API 密钥、ios 设备 Id 和 android 设备 id 的变量")
 
 6. 最后一步是添加一个生成步骤，该步骤将调用生成脚本来编译应用程序，并将应用程序排入队列以便 Test Cloud。 以下屏幕截图是使用 Rakefile 生成应用程序的生成步骤示例：
 
-    ![此屏幕截图是使用 Rakefile 生成应用程序的生成步骤示例](teamcity-images/image12.png "此屏幕截图是使用 Rakefile 生成应用程序的生成步骤示例")
+    ![此屏幕截图是使用 Rakefile 生成应用程序的生成步骤示例。](teamcity-images/image12.png "此屏幕截图是使用 Rakefile 生成应用程序的生成步骤示例")
 
 7. 此时，生成配置已完成。 最好触发生成以确认已正确配置该项目。 实现此目的的一种好方法是提交对存储库的少量不重要的更改。 TeamCity 应检测到提交并启动生成。
 
@@ -209,5 +209,6 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 ## <a name="related-links"></a>相关链接
 
-- [正在准备 Uitest 以及上传](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [正在准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
+- [正在准备 Xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
 - [安装和配置 TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

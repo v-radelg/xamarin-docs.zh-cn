@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 87d99c62f20e6cfd23605d1917a577ac0d95038f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772462"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273109"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板电脑和桌面应用的布局
 
@@ -42,7 +42,7 @@ Xamarin 模板通过将**info.plist > 设备**设置配置为**通用**（这意
 在 iOS 9 之前，所有应用程序都在设备上占用整个屏幕，但有些 Ipad 现在可以执行[拆分屏幕多任务](~/ios/platform/multitasking.md)。
 这意味着，你的应用程序可能会在屏幕的一侧（50% 的宽度）或整个屏幕上只占用一个超薄柱形。
 
-iPad 拆分屏幕示例[ ![(tablet-images/ipad-sml.png " ")]](tablet-images/ipad.png#lightbox "IPad 拆分屏幕示例")
+[![](tablet-images/ipad-sml.png "iPad 拆分屏幕示例")](tablet-images/ipad.png#lightbox "iPad 拆分屏幕示例")
 
 拆分屏幕功能意味着您应该将您的应用程序设计为在最大宽度为320像素的情况下正常工作，或者尽可能多1366像素。
 
@@ -59,7 +59,7 @@ Android 生态系统提供多种受支持的屏幕大小（从小手机到大平
 
 除了运行全屏外，还可以将 Windows 平板电脑和桌面上运行的应用调整为任意尺寸。
 
-Windows 拆分屏幕示例[ ![(tablet-images/splitscreen-sml.png " ")]](tablet-images/splitscreen.png#lightbox "Windows 拆分屏幕示例")
+[![](tablet-images/splitscreen-sml.png "Windows 拆分屏幕示例")](tablet-images/splitscreen.png#lightbox "Windows 拆分屏幕示例")
 
 <a name="optimize" />
 
@@ -69,7 +69,7 @@ Windows 拆分屏幕示例[ ![(tablet-images/splitscreen-sml.png " ")]](tablet-i
 
 ### <a name="deviceidiom"></a>Device.Idiom
 
-可以使用[`Device`](~/xamarin-forms/platform/device.md)类更改应用或用户界面的行为。 `Device.Idiom`使用枚举可以
+可以使用[`Device`](~/xamarin-forms/platform/device.md)类更改应用或用户界面的行为。 使用 `Device.Idiom` 枚举可以
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -84,11 +84,11 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 ### <a name="leveraging-masterdetailpage"></a>利用 MasterDetailPage
 
-适用于更大的屏幕，特别是在 iPad 上，它[`UISplitViewController`](xref:UIKit.UISplitViewController)使用提供本机 iOS 体验。 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)
+[@No__t-1](xref:Xamarin.Forms.MasterDetailPage)非常适合用于更大的屏幕，特别是在 iPad 上，它使用[`UISplitViewController`](xref:UIKit.UISplitViewController)提供本机 iOS 体验。
 
-查看[此 Xamarin 博客文章](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/)，了解如何改编你的用户界面，以便手机使用一个布局，较大的屏幕可以使用另一个`MasterDetailPage`布局。
+查看[此 Xamarin 博客文章](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)，了解如何改编你的用户界面，以便手机使用一个布局，而较大的屏幕可以使用另一个布局（@no__t 为-1）。
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin 博客](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/)
+- [Xamarin 博客](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)
 - [MyShoppe 示例](https://github.com/jamesmontemagno/myshoppe)
