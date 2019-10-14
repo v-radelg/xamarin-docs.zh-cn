@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 偶尔，在更新 Xamarin 后，你将看到类似于下面的错误。 当 NuGet 更新程序未完全从 **.csproj**文件中删除对较旧版本的引用时，会发生这种情况。
 
->你\_的项目 .csproj：错误：此项目引用此计算机上缺少的 NuGet 包。 启用 NuGet 程序包还原以进行下载。  有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105 。 缺少的文件为.。/../packages/Xamarin.Forms.1.2.3.6257/build/portable-win + net45 + wp80 + MonoAndroid10 + MonoTouch10/Xamarin。 （你\_的项目）
+>你\_的项目 .csproj：错误：此项目引用此计算机上缺少的 NuGet 包。 启用 NuGet 程序包还原以进行下载。  有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105 。 缺少的文件为../../packages/Xamarin.Forms.1.2.3.6257/build/portable-win + net45 + wp80 + MonoAndroid10 + MonoTouch10/Xamarin。 （你\_的项目）
 
 若要修复这些错误，请在文本编辑器中打开 **.csproj**文件，并`<Target`查找引用早期版本 Xamarin 的元素，如下面所示的元素。 你应从 **.csproj**文件中手动删除此整个元素，并保存所做的更改。
 
