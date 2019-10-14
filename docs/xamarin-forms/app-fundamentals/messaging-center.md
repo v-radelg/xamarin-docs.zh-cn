@@ -6,19 +6,21 @@ ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2019
-ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
+ms.date: 10/08/2019
+ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
+ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821003"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170966"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 发布-订阅模式是一种消息传递模式，在此模式下，发布者可在无需知道任何接收方（称为订阅方）的情况下发送消息。 同样，订阅方可在不了解任何发布方的情况下侦听特定消息。
+
+.NET 中的事件可实现发布-订阅模式，如果不需要松散耦合（例如控件和包含它的页面），则这些事件是通信层在组件之间最简单直接的方法。 但是，发布服务器和订阅服务器的生存期通过对象引用彼此耦合，而订阅服务器类型必须引用发布服务器类型。 这可能会造成内存管理问题，尤其是在订阅静态或长期对象事件的对象生存期较短时。 如果不删除事件处理程序，则订阅服务器通过在发布服务器中引用它来保持活动状态，这将阻止或延迟订阅服务器的垃圾回收。
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 这种机制允许发布方和订阅方在没有彼此引用的情况下进行通信，这有助于减少它们之间的依赖关系。
 

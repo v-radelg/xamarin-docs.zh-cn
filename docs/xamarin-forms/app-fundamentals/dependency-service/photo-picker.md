@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 71e509d87dc2a2947821084aea5668055f6f4678
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 335fb03cd190752d488f047bdf22f67d72f30c2e
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771494"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032572"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
 
@@ -85,7 +85,7 @@ namespace DependencyServiceDemos.iOS
 
 此时，`GetImageStreamAsync` 方法必须将 `Task<Stream>` 对象返回给调用它的代码。 只有用户已完成与照片库的交互并调用其中一个事件处理程序时，该任务才会完成。 对于这种情况，[`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) 类是必不可少的。 该类提供要从 `GetImageStreamAsync` 方法返回的适当泛型类型的 `Task` 对象，稍后完成任务时该类将收到通知。
 
-用户已选择图片时，将调用 `FinishedPickingMedia` 事件处理程序。 但是，处理程序提供 `UIImage` 对象，而 `Task` 必须返回 .NET `Stream` 对象。 这需要执行两个步骤来完成：首先将 `UIImage` 对象转换为存储在 `NSData` 对象中的内存中的 JPEG 文件，然后将 `NSData` 对象转换为 .NET `Stream` 对象。 通过调用 `TaskCompletionSource` 对象的 `SetResult` 方法，以提供 `Stream` 对象的方式完成任务：
+用户已选择图片时，将调用 `FinishedPickingMedia` 事件处理程序。 但是，处理程序提供 `UIImage` 对象，而 `Task` 必须返回 .NET `Stream` 对象。 这需要执行两个步骤来完成：首先将 `UIImage` 对象转换为存储在 `NSData` 对象中的内存中 PNG 或 JPEG 文件，然后将 `NSData` 对象转换为 .NET `Stream` 对象。 通过调用 `TaskCompletionSource` 对象的 `SetResult` 方法，以提供 `Stream` 对象的方式完成任务：
 
 ```csharp
 namespace DependencyServiceDemos.iOS
@@ -102,7 +102,15 @@ namespace DependencyServiceDemos.iOS
             if (image != null)
             {
                 // Convert UIImage to .NET Stream object
-                NSData data = image.AsJPEG(1);
+                NSData data;
+                if (args.ReferenceUrl.PathExtension.Equals("PNG") || args.ReferenceUrl.PathExtension.Equals("png"))
+                {
+                    data = image.AsPNG();
+                }
+                else
+                {
+                    data = image.AsJPEG(1);
+                }
                 Stream stream = data.AsStream();
 
                 UnregisterEventHandlers();

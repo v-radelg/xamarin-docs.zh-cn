@@ -1,18 +1,18 @@
 ---
 title: 键盘辅助功能
-description: 与使用默认的选项卡序列不同，有时需要通过结合 TabIndex 和 IsTapStop 属性指定选项卡序列来优化 UI 的辅助功能。
+description: 与使用默认的选项卡序列不同，有时需要通过结合 TabIndex 和 IsTabStop 属性指定选项卡序列来优化 UI 的辅助功能。
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: ba29e57008bfea420562d88ab1612c09f4460e85
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651065"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997109"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的键盘辅助功能
 
@@ -121,11 +121,11 @@ ms.locfileid: "68651065"
 
 除了设置控件的 Tab 键顺序之外，可能还需要从 Tab 键顺序中排除控件。 实现此目的的一种方法是将控件的 [`IsEnabled`](xref:Xamarin.Forms.VisualElement) 属性设置为 `false`，因为禁用的控件将从 Tab 键顺序中排除。
 
-但是，即便在未禁用这些控件时，也可能需要从 Tab 键顺序中排除它们。 这可以通过 `VisualElement.IsTapStop` 属性实现，该属性指示 Tab 导航中是否包含 [`VisualElement`](xref:Xamarin.Forms.VisualElement)。 其默认值是 `true`，当它的值是 `false` 时，Tab 导航基础设施将忽略该控件，而不管是否设置了 `TabIndex`。
+但是，即便在未禁用这些控件时，也可能需要从 Tab 键顺序中排除它们。 这可以通过 `VisualElement.IsTabStop` 属性实现，该属性指示 Tab 导航中是否包含 [`VisualElement`](xref:Xamarin.Forms.VisualElement)。 其默认值是 `true`，当它的值是 `false` 时，Tab 导航基础设施将忽略该控件，而不管是否设置了 `TabIndex`。
 
 ## <a name="supported-controls"></a>支持的控件
 
-以下控件支持 `TabIndex` 和 `IsTapStop` 属性，这些控件在一个或多个平台上接受键盘输入：
+以下控件支持 `TabIndex` 和 `IsTabStop` 属性，这些控件在一个或多个平台上接受键盘输入：
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`DatePicker`](xref:Xamarin.Forms.DatePicker)

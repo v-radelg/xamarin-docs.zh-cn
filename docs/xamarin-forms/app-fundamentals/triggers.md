@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198576"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997149"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -278,6 +278,11 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
 
 发生触发器时实现更改的另一方式是通过添加 `EnterActions` 和 `ExitActions` 集合，并指定 `TriggerAction<T>` 实现。
 
+[`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) 集合用于定义将在满足触发条件时调用的 [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) 对象的 `IList`。 [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) 集合用于定义将在不再满足触发条件后调用的 `TriggerAction` 对象的 `IList`。
+
+> [!NOTE]
+> [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) 类将忽略 `EnterActions` 和 `ExitActions` 集合中定义的 [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) 对象。    
+
 可以在触发器中同时提供 `EnterActions` 和 `ExitActions`，以及 `Setter`，但注意，将立即调用 `Setter`（它们不等待 `EnterAction` 或 `ExitAction` 完成）  。 或者，可以在代码中执行所有内容，根本无需使用 `Setter`。
 
 ```xaml
@@ -292,7 +297,7 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
             <Trigger.ExitActions>
                 <local:FadeTriggerAction StartsFrom="1" />
             </Trigger.ExitActions>
-                        <!-- You can use both Enter/Exit and Setter together if required -->
+            <!-- You can use both Enter/Exit and Setter together if required -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -327,8 +332,6 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
-
-注意：事件触发器上已忽略 `EnterActions` 和 `ExitActions`  。
 
 ## <a name="related-links"></a>相关链接
 
