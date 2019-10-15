@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
+ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69887853"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303239"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>将设计时数据与 XAML 预览器结合使用
 
-_某些布局难以直观显示，无需数据。使用这些提示可充分利用 XAML 预览器中的数据密集型页面。_
+@no__t 0Some 布局难以直观显示，无需数据。使用这些提示可以充分利用 XAML 预览器中的数据密集型页面。 _
 
 ## <a name="design-time-data-basics"></a>设计时数据基础
 
@@ -28,7 +28,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-添加命名空间后，可以将其`d:`置于任何属性或控件的前面，以便在 XAML 预览器中显示它。 运行时`d:`未显示的元素。
+添加命名空间后，可以将 `d:` 置于任何属性或控件的前面，以便在 XAML 预览器中显示它。 在运行时不显示 @no__t 为-0 的元素。
 
 例如，可以将文本添加到通常具有绑定数据的标签。
 
@@ -36,17 +36,17 @@ mc:Ignorable="d"
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![使用标签中的文本设计时间数据](xaml-previewer-images/designtimedata-label-sm.png "使用文本标记设计时间数据")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![设计时间数据，其标签中的文本](xaml-previewer-images/designtimedata-label-sm.png "设计时数据带有标签文本")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-在此示例中， `d:Text`如果没有，XAML 预览程序将不会显示标签。 相反，它会显示 "Name！" 其中，标签在运行时将包含实际数据。
+在此示例中，如果没有 `d:Text`，XAML 预览器将不会显示标签的任何内容。 相反，它会显示 "Name！" 其中，标签在运行时将包含实际数据。
 
-可以将与`d:` Xamarin 控件的任何特性一起使用，如颜色、字号和间距。 甚至可以将其添加到控件本身：
+可以将 `d:` 与 Xamarin 控件的任何特性一起使用，如颜色、字号和间距。 甚至可以将其添加到控件本身：
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![使用按钮控件设计时间数据](xaml-previewer-images/designtimedata-controls-sm.png "使用按钮控件设计时间数据")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[使用按钮控件设计时间数据和(xaml-previewer-images/designtimedata-controls-sm.png "按钮控件")![设计时间数据]](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 在此示例中，按钮仅在设计时出现。 使用此方法可为[XAML 预览器不支持的自定义控件](render-custom-controls.md)放置中的占位符。
 
@@ -58,7 +58,7 @@ mc:Ignorable="d"
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 
-[![用图像设计时间数据](xaml-previewer-images/designtimedata-image-sm.png "用配置映像设计时间数据")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![用图像设计时间数据](xaml-previewer-images/designtimedata-image-sm.png "通过配置映像设计时间数据")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview 的设计时数据
 
@@ -84,15 +84,54 @@ Listview 是在移动应用中显示数据的一种常用方式。 但是，如�
 </StackLayout>
 ```
 
-[![使用 ListView 设计时间数据](xaml-previewer-images/designtimedata-itemssource-sm.png "使用 ListView 设计时间数据")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[使用 listview(xaml-previewer-images/designtimedata-itemssource-sm.png "设计时数据和 listview")设计时间![数据]](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-此示例将在 XAML 预览器中显示三个 TextCells 的 ListView。 您可以更改`x:String`为项目中现有的数据模型。
+此示例将在 XAML 预览器中显示三个 TextCells 的 ListView。 可以将 `x:String` 更改为项目中的现有数据模型。
 
-有关更复杂的示例，请参阅[James Montemagno 的 Hanselman 应用程序。](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)
+您还可以创建一个数据对象数组。 例如，可以将 `Monkey` 数据对象的公共属性构建为设计时数据：
+
+```csharp
+namespace Monkeys.Models
+{
+    public class Monkey
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+    }
+}
+```
+
+若要在 XAML 中使用类，则需要在根节点中导入命名空间：
+
+```xaml
+xmlns:models="clr-namespace:Monkeys.Models"
+```
+
+```xaml
+<StackLayout>
+    <ListView ItemsSource="{Binding Items}">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type models:Monkey}">
+                <models:Monkey Name="Baboon" Location="Africa and Asia"/>
+                <models:Monkey Name="Capuchin Monkey" Location="Central and South America"/>
+                <models:Monkey Name="Blue Monkey" Location="Central and East Africa"/>
+            </x:Array>
+        </d:ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Monkey">
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Location}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>
+```
+
+此处的优点是可以绑定到计划使用的实际模型。
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>其他硬编码静态 ViewModel
 
-如果不想将设计时数据添加到各个控件，可以设置模拟数据存储以绑定到页面。 请参阅 James Montemagno 的[博客文章添加设计时数据](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)，了解如何绑定到 XAML 中的静态 ViewModel。
+如果不想将设计时数据添加到各个控件，可以设置模拟数据存储以绑定到页面。 请参阅 James Montemagno 的[博客文章添加设计时数据](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/)，了解如何绑定到 XAML 中的静态 ViewModel。
 
 ## <a name="troubleshooting"></a>疑难解答
 
