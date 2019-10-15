@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: 293fc8e3f8965e3109a0a549897dd23c34c46917
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
-ms.translationtype: HT
+ms.openlocfilehash: df9fa43d2071d273104edafbe6b880a97afb3f96
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198460"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273138"
 ---
 # <a name="android-10-with-xamarin"></a>带有 Xamarin 的 Android 10
 
@@ -78,7 +78,7 @@ Xamarin 10.0 提供对 Android 10 的支持。 有关适用于 Android 10 的 Xa
 
 ### <a name="configure-a-device-or-emulator"></a>配置设备或仿真程序
 
-如果使用的是物理设备，如像素，则可以通过转到手机的设置`System`中的 >  `System update`  >  `Check for update`来下载 Android 10 更新。 如果你想要闪现设备，请参阅在设备上闪烁[出厂映像](https://developers.google.com/android/ota)或[OTA 映像](https://developers.google.com/android/ota)的说明。
+如果你使用的是物理设备，如像素，则可以通过转到你的手机设置中的 `System` @ no__t @ no__t @ no__t @ no__t @，下载 Android 10 更新。 如果你想要闪现设备，请参阅在设备上闪烁[出厂映像](https://developers.google.com/android/images)或[OTA 映像](https://developers.google.com/android/ota)的说明。
 
 如果使用的是仿真程序，请为 API 级别29创建虚拟设备，并选择基于 x86 的映像。 有关使用 Android Device Manager 创建和管理虚拟设备的信息，请参阅[使用 Android Device Manager 管理虚拟设备。](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-emulator/device-manager) 有关使用 Android Emulator 进行测试和调试的信息，请参阅[Android Emulator 上的调试。](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
@@ -88,11 +88,11 @@ Android 10 引入了多种新功能。 其中一些新功能旨在利用最新 A
 
 ## <a name="enhance-your-app-with-android-10-features-and-apis"></a>利用 Android 10 功能和 Api 增强你的应用
 
-接下来，当你准备就绪时，深入了解 Android 10 并了解你可以使用的 [新功能和 api](https://developer.android.com/preview/api-overview.html) 。 下面是一些入门的主要功能。
+接下来，当你准备就绪时，深入了解 Android 10 并了解你可以使用的 [新功能](https://developer.android.com/preview/api-overview.html)@no__t 1）。 下面是一些入门的主要功能。
 
 对于每个应用，建议采用以下功能：
 
-- **深色主题：**  通过添加 [深色主题](https://developer.android.com/preview/features/darktheme) 或启用 " [强制深色](https://developer.android.com/preview/features/darktheme#force_dark)"，确保为启用系统级深色主题的用户提供一致的体验。
+- **深色主题 @no__t：** 通过添加 [深色主题](https://developer.android.com/preview/features/darktheme)@no__t 启用 " [强制深色](https://developer.android.com/preview/features/darktheme#force_dark)"，为启用系统级深色主题的用户提供一致的1Ensure 体验。
 
 ![深色主题](~/android/platform/android-10-images/darktheme.png)
 
@@ -100,28 +100,28 @@ Android 10 引入了多种新功能。 其中一些新功能旨在利用最新 A
 
 ![手势导航](~/android/platform/android-10-images/gesturenavigation.png)
 
-- **针对 foldables 进行优化：**  通过 [优化 foldables](https://developer.android.com/preview/features/foldables)，提供当今创新设备上的无缝、边缘到边缘体验。
+- **针对 foldables 进行优化 @no__t：** 通过 [针对 foldables 进行优化](https://developer.android.com/preview/features/foldables)，对当今创新的设备进行无缝、边缘到边缘的体验。
 
 ![可折叠](~/android/platform/android-10-images/foldable.png)
 
 如果与应用相关，建议使用以下功能：
 
-- **更多交互式通知：**  如果你的通知包括消息，请  [在通知中启用建议的答复和操作](https://developer.android.com/preview/features#smart-suggestions)，以使用户参与，并让他们立即采取措施。
-- **更好的生物识别：**  如果你使用生物识别身份验证，请转到 [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)，这是支持新式设备上指纹身份验证的首选方式。
-- **丰富的录制：**  若要支持字幕或游戏记录，请启用 [音频播放捕获](https://developer.android.com/preview/features/playback-capture)。 这是一个很好的方法，可让用户更方便地访问用户并使应用更易于访问。
-- **更好的编解码器：**  对于媒体应用，请尝试 [AV1](https://en.wikipedia.org/wiki/AV1) 视频流式处理和 [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) 以实现高动态范围视频。 对于语音和音乐流式处理，可以使用 [Opus](http://opus-codec.org/)编码，对于音乐家，可使用 [本机 MIDI API](https://developer.android.com/preview/features/midi) 。
-- **更好的网络 api：**  如果你的应用程序通过 wi-fi 管理 IoT 设备，请尝试新的 [网络连接 api](https://developer.android.com/preview/features#peer2peer) ，获取功能，如配置、下载或打印。
+- **更多交互式通知：** @no__t 1If 通知包括消息、 [在通知中启用建议的答复和操作](https://developer.android.com/preview/features#smart-suggestions) to 与用户联系，让他们立即采取措施。
+- **更好的生物识别：** @no__t 使用生物识别身份验证，请转到 [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)，这是支持新式设备上指纹身份验证的首选方式。
+- **丰富的记录：** @no__t 1To 支持字幕或游戏记录，启用 [音频播放捕获](https://developer.android.com/preview/features/playback-capture)。 这是一个很好的方法，可让用户更方便地访问用户并使应用更易于访问。
+- **更好的编解码器：** @no__t 1For 媒体应用，请尝试 [AV1](https://en.wikipedia.org/wiki/AV1) for 视频流式处理和 [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) for 高动态范围视频。 对于语音和音乐流式处理，可使用 [Opus](http://opus-codec.org/)编码，对于音乐家，可使用 [本机 MIDI API](https://developer.android.com/preview/features/midi) is。
+- **更好的网络 api：** @no__t 1If 应用通过 Wi-fi 管理 IoT 设备，尝试新的 [网络连接 api](https://developer.android.com/preview/features#peer2peer)@no__t 3for 功能，如配置、下载或打印。
 
 这只是 Android 10 中许多新功能和 Api 的一部分。 若要查看所有这些资源，请访问 [适用于开发人员的 Android 10 站点](https://developer.android.com/about/versions/10/highlights)。
 
-## <a name="behavior-changes"></a>行为更改
+## <a name="behavior-changes"></a>行为变更
 
 如果将 "目标 Android 版本" 设置为 "API 级别 29"，即使未实现上述新功能，cann 也会影响应用程序的行为。 以下列表概述了这些更改：
 
 - [为了确保应用稳定性和兼容性，android 平台现在会限制你的应用可在 Android 10 中使用的非 SDK 接口](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions)。
 - [共享内存已更改](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory)。
 - [Android 运行时 &AMP; AOT 正确性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
-- [适用于全屏意向的权限`USE_FULL_SCREEN_INTENT`必须请求](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)。
+- [对于全屏意向，权限必须请求 `USE_FULL_SCREEN_INTENT`](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)。
 - [支持 foldables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables)。
 
 ## <a name="summary"></a>总结
