@@ -101,6 +101,7 @@
 #### [收缩](app-fundamentals/gestures/pinch.md)
 #### [平移](app-fundamentals/gestures/pan.md)
 #### [滑动](app-fundamentals/gestures/swipe.md)
+### [本地通知](app-fundamentals/local-notifications.md)
 ### [本地化](app-fundamentals/localization/index.md)
 #### [字符串和映像本地化](app-fundamentals/localization/text.md)
 #### [从右到左本地化](app-fundamentals/localization/right-to-left.md)
