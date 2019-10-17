@@ -79,6 +79,12 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_form.svg'
               href: gestures/index.md
             title: 笔势
+          - href: local-notifications.md
+            html: 了解如何在 Xamarin.Forms 中发送和接收本地通知。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
+              href: local-notifications.md
+            title: 本地通知
           - href: localization/index.md
             html: 了解如何通过 Xamarin.Forms 开发多语言应用程序。
             image:
