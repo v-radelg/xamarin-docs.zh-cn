@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/28/2016
 ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70288056"
 ---
 # <a name="building-cross-platform-applications"></a>生成跨平台应用程序
@@ -46,7 +46,7 @@ ms.locfileid: "70288056"
 Tasky 是适用于 iOS、Android 和 Windows Phone 的简单待办事项列表应用程序。
 它演示了使用 Xamarin 创建跨平台应用程序的基础知识，并使用了本地 SQLite 数据库。
 
- [ tasky![](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [列表tasky![列表](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
+ [![tasky 列表](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![tasky 列表](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 阅读[Tasky 案例研究](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)。
 
@@ -65,6 +65,6 @@ Tasky 是适用于 iOS、Android 和 Windows Phone 的简单待办事项列表�
 - [共享代码选项](~/cross-platform/app-fundamentals/code-sharing.md)
 - [案例研究：Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky 示例应用（github）](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin 移动应用程序开发：跨平台C#和 Xamarin. Forms 基础（Amazon）](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Xamarin 移动应用程序开发：跨平台C#和 Xamarin 基础知识（Amazon）](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [通过 Greg Shackles C# （O'Reilly）进行的移动开发](http://shop.oreilly.com/product/0636920024002.do)
 - [作者： Scott Olson、John Hunter C# 、Ben Horgen、Kenny Goers （Wrox）中的专业跨平台移动开发](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

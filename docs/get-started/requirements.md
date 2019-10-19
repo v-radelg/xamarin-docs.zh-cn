@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 3d215519a2046c19fb1d9d5dbf7d140ae1452de6
-ms.sourcegitcommit: 841590e3ed1b46473ab84e357e045afa7cfef549
-ms.translationtype: HT
+ms.openlocfilehash: 46a72534fba7a45323a82ad121e5844410472812
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72531799"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584348"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 要求
 
@@ -71,7 +71,7 @@ _Xamarin.Forms 平台和开发系统要求。_
 
 ## <a name="mac-system-requirements"></a>Mac 系统要求
 
-你可以使用 Visual Studio for Mac 在 macOS 高塞拉利昂（10.13）或更高版本上开发 Xamarin。 若要开发 iOS 应用，建议使用最新版本的 Xcode、iOS 和 macOS。
+你可以使用 Visual Studio for Mac 在 macOS 高塞拉利昂（10.13）或更高版本上开发 Xamarin。 若要开发 iOS 应用，建议使用最新版本的 Xcode、iOS 和 macOS。 有关特定版本要求，请参阅最新的[Xamarin 发行说明](/xamarin/ios/release-notes/)。
 
 > [!NOTE]
 > 不能在 macOS 上开发 Windows 应用。
