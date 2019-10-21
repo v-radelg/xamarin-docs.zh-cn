@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771899"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424860"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>突出显示地图上的圆形区域
 
@@ -229,7 +229,6 @@ namespace MapOverlay.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 circle = formsMap.Circle;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -250,7 +249,7 @@ namespace MapOverlay.Droid
 }
 ```
 
-如果自定义呈现器附加到新的 Xamarin.Forms 元素，则`OnElementChanged` 方法调用 `MapView.GetMapAsync` 方法，该方法获取与视图关联的基础 `GoogleMap`。 一旦 `GoogleMap` 实例可用，便调用 `OnMapReady` 方法，在此情况下通过实例化静态 `CircleOptions` 对象（指定圆的中心和以米为单位的圆的半径）来创建圆。 然后，通过调用 `NativeMap.AddCircle` 方法将圆添加到地图中。
+如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法检索自定义圆形数据。 一旦 `GoogleMap` 实例可用，便调用 `OnMapReady` 方法，在此情况下通过实例化静态 `CircleOptions` 对象（指定圆的中心和以米为单位的圆的半径）来创建圆。 然后，通过调用 `NativeMap.AddCircle` 方法将圆添加到地图中。
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>在通用 Windows 平台上创建自定义呈现器
 

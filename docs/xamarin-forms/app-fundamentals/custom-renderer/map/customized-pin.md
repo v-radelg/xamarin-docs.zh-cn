@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8df5b373fccdef93a8ffbc66fd53a94378f47a6e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650831"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424845"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
@@ -24,7 +24,7 @@ ms.locfileid: "68650831"
 
 下图说明了 [`Map`](xref:Xamarin.Forms.Maps.Map) 和实现它的相应本机控件之间的关系：
 
-![](customized-pin-images/map-classes.png "地图控件和实现的本机控件之间的关系")
+![](customized-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
 
 通过在每个平台上为 [`Map`](xref:Xamarin.Forms.Maps.Map) 创建自定义呈现器，可以使用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -142,11 +142,11 @@ public MapPage ()
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](customized-pin-images/solution-structure.png "CustomMap 自定义呈现器项目的职责")
+![](customized-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
 
 `CustomMap` 控件由平台特定的呈现器类呈现，这些类均派生自各平台的 `MapRenderer` 类。 这导致每个 `CustomMap` 控件都使用特定于平台的控件呈现，如下面的屏幕截图所示：
 
-![](customized-pin-images/screenshots.png "每个平台上的 CustomMap")
+![](customized-pin-images/screenshots.png "CustomMap on each Platform")
 
 `MapRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义地图时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CustomMap` 实例的引用。
 
@@ -179,7 +179,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 下面的屏幕截图显示自定义前后的地图：
 
-![](customized-pin-images/map-layout-ios.png "自定义前后的地图控件")
+![](customized-pin-images/map-layout-ios.png "Map Control Before and After Customization")
 
 在 iOS 上，图钉称为“注释”，可以是自定义映像，也可以是不同颜色的系统定义的图钉  。 注释可以选择性地显示标注，以在用户选择注释时作出响应  。 标注显示 `Pin` 实例的 `Label` 和 `Address` 属性，以及可选的左和右附件视图。 上面的屏幕截图中，左附件视图是猴子图像，而右附件视图是“信息”按钮  。
 
@@ -352,7 +352,7 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 
 下面的屏幕截图显示自定义前后的地图：
 
-![](customized-pin-images/map-layout-android.png "自定义前后的地图控件")
+![](customized-pin-images/map-layout-android.png "Map Control Before and After Customization")
 
 在 Android 上，图钉称为“标记”，可以是自定义图像，也可以是不同颜色的系统定义的标记  。 标记可以显示信息窗口，在用户点击标记时作出响应  。 信息窗口显示 `Pin` 实例的 `Label` 和 `Address` 属性，并可以通过自定义包含其他内容。 但是，一次只可以显示一个信息窗口。
 
@@ -383,7 +383,6 @@ namespace CustomRenderer.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 customPins = formsMap.CustomPins;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -399,7 +398,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法调用 `MapView.GetMapAsync` 方法，该方法获取与视图关联的基础 `GoogleMap`。 一旦 `GoogleMap` 实例可用，将调用 `OnMapReady` 替代。 此方法为 `InfoWindowClick` 事件注册事件处理程序，[信息窗口被点击](#Clicking_on_the_Info_Window)时激发该事件，并且仅当呈现器所附加到的元素更改时才取消订阅该事件。 `OnMapReady` 替代还会调用 `SetInfoWindowAdapter` 方法，以指定 `CustomMapRenderer` 类实例将提供自定义信息窗口的方法。
+如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法从控件中检索自定义图钉的列表。 一旦 `GoogleMap` 实例可用，将调用 `OnMapReady` 替代。 此方法为 `InfoWindowClick` 事件注册事件处理程序，[信息窗口被点击](#Clicking_on_the_Info_Window)时激发该事件，并且仅当呈现器所附加到的元素更改时才取消订阅该事件。 `OnMapReady` 替代还会调用 `SetInfoWindowAdapter` 方法，以指定 `CustomMapRenderer` 类实例将提供自定义信息窗口的方法。
 
 `CustomMapRenderer` 类实现 `GoogleMap.IInfoWindowAdapter` 接口以[自定义信息窗口](#Customizing_the_Info_Window)。 此接口指定必须实现以下方法：
 
@@ -511,7 +510,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 下面的屏幕截图显示自定义前后的地图：
 
-![](customized-pin-images/map-layout-uwp.png "自定义前后的地图控件")
+![](customized-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
 
 在 UWP 上，图钉称为“地图图标”，可以是自定义图像，也可以是系统定义的默认图像  。 地图图标可以显示 `UserControl`，在用户点击地图图标时显示。 `UserControl` 可以显示任何内容，包括 `Pin` 实例的 `Label` 和 `Address` 属性。
 
