@@ -8,22 +8,22 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766805"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 菜单控件（Force Touch）
 
 手表工具包提供了一个在 "监视" 应用屏幕上实现时触发菜单的 Force Touch 手势。
 
-![](menu-images/menu.png "显示菜单 Apple Watch")
+![](menu-images/menu.png "Apple Watch showing a menu")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="responding-to-force-touch"></a>响应 Force Touch
 
-如果已经`Menu`为接口控制器实现了，则当用户执行时，将显示菜单 Force Touch。 如果未实现菜单，屏幕会进行短暂的动画处理，不会发生其他操作。
+如果已为接口控制器实现 `Menu`，则当用户执行时，将显示该菜单 Force Touch。 如果未实现菜单，屏幕会进行短暂的动画处理，不会发生其他操作。
 
 强制润色与屏幕上的任何特定元素都不关联;只有一个菜单可以附加到接口控制器，它将显示，而不考虑在屏幕上出现 Force Touch 按下的位置。
 
@@ -31,17 +31,17 @@ ms.locfileid: "70766805"
 
 ## <a name="adding-a-menu"></a>添加菜单
 
-必须在设计时`InterfaceController`向情节提要上的添加。 `Menu` 将菜单控件拖到接口控制器上时，情节提要预览中不会显示任何视觉指示，但会在 "**文档大纲**" 面板中显示该**菜单**：
+必须在设计时向情节提要上的 `InterfaceController` 中添加 `Menu`。 将菜单控件拖到接口控制器上时，情节提要预览中不会显示任何视觉指示，但会在 "**文档大纲**" 面板中显示该**菜单**：
 
-![](menu-images/menu-action.png "在设计时编辑菜单")
+![](menu-images/menu-action.png "Editing a menu at design time")
 
 最多可以向 menu 控件添加四个菜单项。 它们可在**Properties** pad 中进行配置。 可以设置以下属性：
 
 - Title 和
 - 自定义映像，或
-- 系统映像：接受，添加，阻止，拒绝，信息，可能，更多，静音，暂停，播放，重复，恢复，共享，播放，重复，恢复，共享，无序，发言人，垃圾桶。
+- 系统映像： "接受"、"添加"、"阻止"、"拒绝"、"信息"、"更多"、"静音"、"暂停"、"重复"、"继续"、"共享"、"
 
-通过选择 "**属性**" 板的 "事件" 部分，然后键入操作方法的名称来创建。 `Action` 将在代码中创建分部方法，该方法可在接口控制器类中实现，如下所示：
+通过选择 "**属性**" 板的 "**事件**" 部分并键入操作方法的名称来创建 `Action`。 将在代码中创建分部方法，该方法可在接口控制器类中实现，如下所示：
 
 ```csharp
 partial void MenuItemTapped ()
@@ -66,14 +66,14 @@ Menu items added the storyboard can be shown and hidden programmatically.
 
 ### <a name="adding-at-runtime"></a>在运行时添加
 
-尽管*可以*通过编程`Menu`方式更改的`MenuItem`集合，但不能在运行时将添加到接口控制器。
-`AddMenuItem`使用方法，如下所示：
+尽管*可以*通过编程方式更改 `MenuItem`s 的集合，但不能在运行时将 `Menu` 添加到接口控制器。
+使用 `AddMenuItem` 方法，如下所示：
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-Xamarin Watch 工具包 API 当前要求`selector` `AdMenuItem`方法为，此方法应如下所示声明：
+Xamarin Watch 工具包 API 当前要求 `AdMenuItem` 方法的 `selector`，应如下所示：
 
 ```csharp
 [Export("tapped")]
@@ -85,7 +85,7 @@ void MenuItemTapped ()
 
 ### <a name="removing-at-runtime"></a>在运行时删除
 
-可以调用方法以移除所有*以编程方式添加*的菜单项。 `ClearAllMenuItems`
+可以调用 `ClearAllMenuItems` 方法，以删除所有*以编程方式添加*的菜单项。
 
 无法清除情节提要中配置的菜单项。
 

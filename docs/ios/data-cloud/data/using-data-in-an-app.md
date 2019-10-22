@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766848"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 应用中使用数据
@@ -20,13 +20,13 @@ ms.locfileid: "70766848"
 
 添加一些数据后，应用程序屏幕上的应用程序屏幕将如下所示：
 
- ![](using-data-in-an-app-images/image9.png "iOS 示例列表")
+ ![](using-data-in-an-app-images/image9.png "iOS sample list")
 
- ![](using-data-in-an-app-images/image10.png "iOS 示例详细信息")
+ ![](using-data-in-an-app-images/image10.png "iOS sample detail")
 
 IOS 项目如下所示–此部分中所示的代码包含在**Orm**目录中：
 
- ![](using-data-in-an-app-images/image13.png "iOS 项目树")
+ ![](using-data-in-an-app-images/image13.png "iOS project tree")
 
 IOS 中的 ViewControllers 的本机 UI 代码超出了本文档的范围。
 有关 UI 控件的详细信息，请参阅[使用表和单元格的 iOS](~/ios/user-interface/controls/tables/index.md)指南。
@@ -38,7 +38,7 @@ IOS 中的 ViewControllers 的本机 UI 代码超出了本文档的范围。
 - 阅读列表
 - 读取单个记录
 
-`StockDatabase`类中的两个方法是：
+@No__t_0 类中的两个方法是：
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -55,11 +55,11 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS 以不同的`UITableView`形式呈现数据。
+iOS 以不同的方式呈现数据 `UITableView`。
 
 ## <a name="create-and-update"></a>创建和更新
 
-为了简化应用程序代码，提供了一个 save 方法，该方法根据 PrimaryKey 是否已设置，执行插入或更新。 由于属性`Id`是`[PrimaryKey]`用特性标记的，因此不应在代码中对其进行设置。
+为了简化应用程序代码，提供了一个 save 方法，该方法根据 PrimaryKey 是否已设置，执行插入或更新。 由于 `Id` 属性使用 `[PrimaryKey]` 属性进行标记，因此不应在代码中对其进行设置。
 此方法将检测是否之前已保存值（通过检查主键属性），并相应地插入或更新对象：
 
 ```csharp
@@ -81,8 +81,8 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>删除
 
-`Delete<T>` `Stock`与和方法`Update`不同，方法只接受主键值而不接受完整的对象。 `Insert`
-在此示例`Stock`中，将对象传递到方法，但仅将 Id 属性传递`Delete<T>`给方法。
+与 `Insert` 和 `Update` 方法不同，`Delete<T>` 方法只接受主键值而不接受完整的 `Stock` 对象。
+在此示例中，将一个 `Stock` 对象传递到方法中，但仅将 Id 属性传递到 `Delete<T>` 方法。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -103,7 +103,7 @@ public int DeleteStock(Stock stock)
 
 创建与应用程序一起分发的数据库文件时，请注意表和列的命名，以确保它们与代码所需的名称匹配，尤其是在使用 SQLite.NET 时，这会希望名称与C#类和属性匹配（或关联的自定义特性）。
 
-对于 iOS，请在应用程序中包含 sqlite 文件，并确保其标记**为 "生成操作"：内容**。 将代码放入， `FinishedLaunching`以将文件复制到可写目录，*然后*调用任何数据方法。 下面的代码将复制名为**数据**的现有数据库，仅当它尚不存在时。
+对于 iOS，请在应用程序中包含 sqlite 文件，并确保已将其标记为 "**生成操作：内容**"。 将代码放在 `FinishedLaunching` 中，以在调用任何数据方法*之前*将文件复制到可写目录。 下面的代码将复制名为**数据**的现有数据库，仅当它尚不存在时。
 
 ```csharp
 // Copy the database across (if it doesn't exist)

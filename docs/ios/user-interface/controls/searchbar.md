@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
 ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70283349"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin 中的搜索栏

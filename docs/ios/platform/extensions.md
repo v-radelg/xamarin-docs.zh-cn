@@ -9,10 +9,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70290607"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin 中的 iOS 扩展
@@ -21,13 +21,13 @@ ms.locfileid: "70290607"
 
 **在 iOS 视频中创建扩展**
 
-Ios 8 中引入的扩展是专用`UIViewControllers`的，由 ios 在**通知中心**内的标准上下文中提供，作为用户请求的自定义键盘类型以执行专用输入或其他上下文例如，编辑可提供特殊效果筛选器的照片。
+IOS 8 中引入的扩展是由 iOS 在诸如**通知中心**内的标准上下文中提供的专用 `UIViewControllers`，作为用户请求的自定义键盘类型，用于执行特定的输入或其他上下文，如编辑照片，其中扩展可以提供特殊效果筛选器。
 
 所有扩展都与容器应用一起安装（同时使用64位统一 Api 编写两个元素），并从主机应用程序中的特定扩展点激活。 而且，由于它们将用作对现有系统功能的补充，因此它们必须是高性能、精益和稳健。 
 
 ## <a name="extension-points"></a>扩展点
 
-|类型|描述|扩展点|主机应用|
+|键入|描述|扩展点|主机应用|
 |--- |--- |--- |--- |
 |操作|特定媒体类型的专用编辑器或查看器|`com.apple.ui-services`|任意|
 |文档提供程序|允许应用使用远程文档存储|`com.apple.fileprovider-ui`|使用[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)的应用|
@@ -49,9 +49,9 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 - 扩展无法访问设备的照相机或麦克风（尽管可能会访问现有的媒体文件）
 - 扩展无法接收空气丢弃数据（尽管它们可以通过空气丢弃传输数据）
 - [UIActionSheet](xref:UIKit.UIActionSheet)和[UIAlertView](xref:UIKit.UIAlertView)不可用;扩展必须使用[UIAlertController](xref:UIKit.UIAlertController)
-- [UIApplication](xref:UIKit.UIApplication)的多个成员不可用：[UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication), [UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl)), [UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) and [UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
+- [UIApplication](xref:UIKit.UIApplication)的多个成员不可用： [.devicetoken](xref:UIKit.UIApplication.SharedApplication)、 [UIApplication](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))、OpenUrl、UIApplication[和](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) [UIApplication. EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS 在当前扩展上强制实施 16 MB 的内存使用量限制。
-- 默认情况下，键盘扩展没有网络访问权限。 这会影响设备上的调试（模拟器中不会强制使用限制），因为 Xamarin 需要网络访问权限才能进行调试。 可以通过将项目的 info.plist 中的`Requests Open Access`值设置为来`Yes`请求网络访问。 有关键盘扩展限制的详细信息，请参阅 Apple 的[自定义键盘指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)。
+- 默认情况下，键盘扩展没有网络访问权限。 这会影响设备上的调试（模拟器中不会强制使用限制），因为 Xamarin 需要网络访问权限才能进行调试。 可以通过将项目 info.plist 中的 `Requests Open Access` 值设置为 `Yes` 来请求网络访问。 有关键盘扩展限制的详细信息，请参阅 Apple 的[自定义键盘指南](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)。
 
 有关单独的限制，请参阅 Apple 的[应用扩展编程指南](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)。
 
@@ -67,7 +67,7 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 
 扩展可以像提供多个屏幕 UI 的单个[UIViewController](xref:UIKit.UIViewController)或更复杂的扩展一样简单。 当用户遇到_扩展点_（例如共享映像时）时，他们将有机会从为该扩展点注册的扩展中进行选择。 
 
-如果他们选择应用的扩展之一，则会实例`UIViewController`化它并开始正常的视图控制器生命周期。 但是，与普通应用程序不同，该应用程序在用户与之交互后会被挂起但一般不会终止，而是加载、执行并重复终止扩展。
+如果他们选择了应用的一个扩展，则会实例化其 `UIViewController`，并开始正常的视图控制器生命周期。 但是，与普通应用程序不同，该应用程序在用户与之交互后会被挂起但一般不会终止，而是加载、执行并重复终止扩展。
 
 扩展可以通过[NSExtensionContext](xref:Foundation.NSExtensionContext)对象与其主机应用通信。 某些扩展具有接收包含结果的异步回调的操作。 这些回调将在后台线程上执行，扩展必须考虑到这一点;例如，如果要更新用户界面，请使用[InvokeOnMainThread。](xref:Foundation.NSObject.InvokeOnMainThread*) 有关更多详细信息，请参阅下面的[与主机应用通信](#communicating-with-the-host-app)部分。
 
@@ -89,13 +89,13 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 
 此外，该扩展的项目具有以下要求：
 
-- 它必须有一个以其容器应用的捆绑标识符开头的捆绑标识符。 例如，如果容器应用的包标识符`com.myCompany.ContainerApp`为，则该扩展的标识符可能是： `com.myCompany.ContainerApp.MyExtension` 
+- 它必须有一个以其容器应用的捆绑标识符开头的捆绑标识符。 例如，如果容器应用的包标识符为 `com.myCompany.ContainerApp`，则可能 `com.myCompany.ContainerApp.MyExtension` 扩展的标识符： 
 
   ![](extensions-images/bundleidentifiers.png) 
-- 它必须`NSExtensionPointIdentifier`定义密钥，并在其`Info.plist`文件中使用适当的`com.apple.widget-extension`值（例如，对于**今天**通知中心小组件）。
-- 它还必须在其`NSExtensionMainStoryboard` `NSExtensionPrincipalClass` `Info.plist`文件中使用*适当的值定义密钥*或密钥：
-  - 使用 " `NSExtensionMainStoryboard`密钥" 指定显示扩展（减号`.storyboard`）的主 UI 的情节提要的名称。 例如， `Main` `Main.storyboard`对于文件。
-  - `NSExtensionPrincipalClass`使用键指定启动扩展时要初始化的类。 该值必须与的**Register**值`UIViewController`匹配： 
+- 它必须定义密钥 `NSExtensionPointIdentifier`，并在其 `Info.plist` 文件中使用适当的值（例如，"**当前**通知中心" 小组件 `com.apple.widget-extension`）。
+- 它还必须使用*适当的值*在其 `Info.plist` 文件中定义 `NSExtensionMainStoryboard` 密钥或 `NSExtensionPrincipalClass` 密钥：
+  - 使用 `NSExtensionMainStoryboard` 键来指定显示扩展的主 UI 的情节提要的名称（减去 `.storyboard`）。 例如，`Main` `Main.storyboard` 文件。
+  - 使用 `NSExtensionPrincipalClass` 键指定扩展启动时将初始化的类。 该值必须与 `UIViewController` 的**Register**值匹配： 
 
   ![](extensions-images/registerandprincipalclass.png)
 
@@ -108,7 +108,7 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 
 在下面的演练中，你将创建一个示例 "**今日**" 小组件来计算一年中剩余的日期和天数：
 
-[![](extensions-images/carpediemscreenshot-sm.png "计算一年中的日期和剩余天数的示例今日小组件")](extensions-images/carpediemscreenshot.png#lightbox)
+[![](extensions-images/carpediemscreenshot-sm.png "An example Today widget that calculates the day and number of days remaining in the year")](extensions-images/carpediemscreenshot.png#lightbox)
 
 ### <a name="creating-the-solution"></a>创建解决方案
 
@@ -116,26 +116,26 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 
 1. 首先，创建一个新的 iOS、**单一视图应用**项目，然后单击 "**下一步**" 按钮： 
 
-    [![](extensions-images/today01.png "首先，创建一个新的 iOS、单一视图应用项目，然后单击 \"下一步\" 按钮")](extensions-images/today01.png#lightbox)
-2. 调用项目`TodayContainer` ，然后单击 "**下一步**" 按钮： 
+    [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
+2. @No__t_0 调用项目，然后单击 "**下一步**" 按钮： 
 
-    [![](extensions-images/today02.png "调用项目 TodayContainer，并单击 \"下一步\" 按钮")](extensions-images/today02.png#lightbox)
+    [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
 3. 验证**项目名称**和**解决方案**名称，并单击 "**创建**" 按钮以创建解决方案： 
 
-    [![](extensions-images/today03.png "验证项目名称和解决方案名称，并单击 \"创建\" 按钮创建解决方案")](extensions-images/today03.png#lightbox)
+    [![](extensions-images/today03.png "Verify the Project Name and SolutionName and click the Create button to create the solution")](extensions-images/today03.png#lightbox)
 4. 接下来，在 "**解决方案资源管理器**中，右键单击解决方案并从"**今日扩展**"模板添加新的**iOS 扩展**项目： 
 
-    [![](extensions-images/today04.png "接下来，在 \"解决方案资源管理器中，右键单击解决方案并从\" 今日扩展 \"模板添加新的 iOS 扩展项目")](extensions-images/today04.png#lightbox)
-5. 调用项目`DaysRemaining` ，然后单击 "**下一步**" 按钮： 
+    [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
+5. @No__t_0 调用项目，然后单击 "**下一步**" 按钮： 
 
-    [![](extensions-images/today05.png "调用项目 DaysRemaining，并单击 \"下一步\" 按钮")](extensions-images/today05.png#lightbox)
+    [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
 6. 查看项目，然后单击 "**创建**" 按钮以创建它： 
 
-    [![](extensions-images/today06.png "查看项目，并单击 \"创建\" 按钮以创建它")](extensions-images/today06.png#lightbox)
+    [![](extensions-images/today06.png "Review the project and click the Create button to create it")](extensions-images/today06.png#lightbox)
 
 生成的解决方案现在应具有两个项目，如下所示：
 
-[![](extensions-images/today07.png "生成的解决方案现在应具有两个项目，如下所示")](extensions-images/today07.png#lightbox)
+[![](extensions-images/today07.png "The resulting Solution should now have two projects, as shown here")](extensions-images/today07.png#lightbox)
 
 ### <a name="creating-the-extension-user-interface"></a>创建扩展用户界面
 
@@ -145,33 +145,33 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 
 若要使用情节提要生成 UI，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击扩展项目的`Main.storyboard`文件以将其打开进行编辑： 
+1. 在**解决方案资源管理器**中，双击扩展项目的 `Main.storyboard` 文件以将其打开进行编辑： 
 
-    [![](extensions-images/today08.png "双击扩展项目的 \"storyboard\" 文件以将其打开以供编辑")](extensions-images/today08.png#lightbox)
-2. 选择按模板自动添加到 UI 的标签，然后在 "**属性资源管理器**" 的 **"小组件**" 选项卡中为其指定**名称** `TodayMessage` ： 
+    [![](extensions-images/today08.png "Double-click the Extension projects Main.storyboard file to open it for editing")](extensions-images/today08.png#lightbox)
+2. 选择按模板自动添加到 UI 的标签，然后在 "**属性资源管理器**" 的 "**小组件**" 选项卡中为其指定**名称**`TodayMessage`： 
 
-    [![](extensions-images/today09.png "选择按模板自动添加到 UI 的标签，并在属性资源管理器的 \"小组件\" 选项卡中为其指定名称 TodayMessage")](extensions-images/today09.png#lightbox)
+    [![](extensions-images/today09.png "Select the Label that was automatically added to the UI by template and give it the Name TodayMessage in the Widget tab of the Properties Explorer")](extensions-images/today09.png#lightbox)
 3. 保存对情节提要所做的更改。
 
 #### <a name="using-code"></a>使用代码
 
 若要在代码中生成 UI，请执行以下操作： 
 
-1. 在**解决方案资源管理器**中，选择**DaysRemaining**项目，添加一个新类并调用它`CodeBasedViewController`： 
+1. 在**解决方案资源管理器**中，选择 " **DaysRemaining** " 项目，添加一个新类并将其调用 `CodeBasedViewController`： 
 
-    [![](extensions-images/code01.png "Aelect DaysRemaining 项目中，添加一个新类并将其调用 CodeBasedViewController")](extensions-images/code01.png#lightbox)
-2. 同样，在**解决方案资源管理器**中，双击扩展`Info.plist`文件以将其打开进行编辑： 
+    [![](extensions-images/code01.png "Aelect the DaysRemaining project, add a new class and call it CodeBasedViewController")](extensions-images/code01.png#lightbox)
+2. 同样，在**解决方案资源管理器**中，双击扩展的 `Info.plist` 文件以将其打开进行编辑： 
 
-    [![](extensions-images/code02.png "双击 \"Extension info.plist\" 文件以将其打开以供编辑")](extensions-images/code02.png#lightbox)
-3. 选择**源视图**（位于屏幕底部），并打开`NSExtension`节点： 
+    [![](extensions-images/code02.png "Double-click Extensions Info.plist file to open it for editing")](extensions-images/code02.png#lightbox)
+3. 选择 "**源" 视图**（位于屏幕底部），并打开 "`NSExtension`" 节点： 
 
-    [![](extensions-images/code03.png "选择屏幕底部的 \"源\" 视图，然后打开 \"NSExtension\" 节点")](extensions-images/code03.png#lightbox)
-4. 删除密钥并`NSExtensionPrincipalClass`添加具有以下值`CodeBasedViewController`的： `NSExtensionMainStoryboard` 
+    [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
+4. 删除 `NSExtensionMainStoryboard` 项，并添加值 `CodeBasedViewController` 的 `NSExtensionPrincipalClass`： 
 
-    [![](extensions-images/code04.png "删除 NSExtensionMainStoryboard 项并添加值为 CodeBasedViewController 的 NSExtensionPrincipalClass")](extensions-images/code04.png#lightbox)
+    [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
 5. 保存更改。
 
-接下来，编辑`CodeBasedViewController.cs`文件，使其类似于以下内容：
+接下来，编辑 `CodeBasedViewController.cs` 文件，使其类似于以下内容：
 
 ```csharp
 using System;
@@ -207,11 +207,11 @@ namespace DaysRemaining
 }
 ```
 
-请注意，与你`NSExtensionPrincipalClass`为上述指定的值匹配。`[Register("CodeBasedViewController")]`
+请注意，`[Register("CodeBasedViewController")]` 与你为上述 `NSExtensionPrincipalClass` 指定的值相匹配。
 
 ### <a name="coding-the-extension"></a>编码扩展
 
-创建用户界面后，打开`TodayViewController.cs` `CodeBasedViewController.cs`或文件（基于用于创建用户界面的方法），更改**ViewDidLoad**方法并使其类似于以下内容：
+创建用户界面后，打开 `TodayViewController.cs` 或 `CodeBasedViewController.cs` 文件（基于用于创建用户界面的方法），更改**ViewDidLoad**方法并使其类似于以下内容：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -232,15 +232,15 @@ public override void ViewDidLoad ()
 }
 ```
 
-如果使用基于代码的用户界面方法，请将`// Insert code to power extension here...`注释替换为上面的新代码。 在调用基实现（并为基于代码的版本插入标签）后，此代码将执行简单计算以获取一年中的某一天以及剩余多少天。 然后，它将在用户界面设计中`TodayMessage`创建的标签（）中显示消息。
+如果使用基于代码的用户界面方法，请将 `// Insert code to power extension here...` 注释替换为上面的新代码。 在调用基实现（并为基于代码的版本插入标签）后，此代码将执行简单计算以获取一年中的某一天以及剩余多少天。 然后，它将在用户界面设计中创建的标签（`TodayMessage`）中显示消息。
 
-请注意，此过程与编写应用程序的正常过程的相似之处。 扩展与应用`UIViewController`中的视图控制器具有相同的生命周期，只不过扩展没有背景模式，并且在用户使用完毕后不会被挂起。 相反，扩展会根据需要反复初始化和取消分配。
+请注意，此过程与编写应用程序的正常过程的相似之处。 扩展的 `UIViewController` 与应用程序中的视图控制器具有相同的生命周期，只不过扩展没有背景模式，并且在用户使用完后不会被挂起。 相反，扩展会根据需要反复初始化和取消分配。
 
 ### <a name="creating-the-container-app-user-interface"></a>创建容器应用用户界面
 
-对于本演练，容器应用仅用作提供和安装扩展的方法，并不提供自己的功能。 编辑 TodayContainer 的`Main.storyboard`文件并添加一些定义扩展功能的文本，以及如何安装它：
+对于本演练，容器应用仅用作提供和安装扩展的方法，并不提供自己的功能。 编辑 TodayContainer 的 `Main.storyboard` 文件并添加一些定义扩展的函数的文本，以及如何安装它：
 
-[![](extensions-images/today10.png "编辑 TodayContainers 的主情节提要文件，并添加一些定义 Extension 函数的文本以及如何安装它")](extensions-images/today10.png#lightbox)
+[![](extensions-images/today10.png "Edit the TodayContainers Main.storyboard file and add some text defining the Extensions function and how to install it")](extensions-images/today10.png#lightbox)
 
 保存对情节提要所做的更改。
 
@@ -248,25 +248,25 @@ public override void ViewDidLoad ()
 
 若要在 iOS 模拟器中测试扩展，请运行**TodayContainer**应用。 将显示容器的主视图：
 
-[![](extensions-images/run01.png "将显示容器主视图")](extensions-images/run01.png#lightbox)
+[![](extensions-images/run01.png "The containers main view will be displayed")](extensions-images/run01.png#lightbox)
 
 接下来，单击模拟器中的 "**主页**" 按钮，从屏幕顶部向下轻扫，打开**通知中心**，选择 "**今天**" 选项卡，然后单击 "**编辑**" 按钮：
 
-[![](extensions-images/run02.png "点击模拟器中的 \"主页\" 按钮，从屏幕顶部向下轻扫，打开通知中心，选择 \"今天\" 选项卡，然后单击 \"编辑\" 按钮")](extensions-images/run02.png#lightbox)
+[![](extensions-images/run02.png "Hit the Home button in the Simulator, swipe down from the top of the screen to open the Notification Center, select the Today tab and click the Edit button")](extensions-images/run02.png#lightbox)
 
 将**DaysRemaining**扩展添加到 "**今日**" 视图，然后单击 "**完成**" 按钮：
 
-[![](extensions-images/run03.png "将 DaysRemaining 扩展添加到 \"今日\" 视图，然后单击 \"完成\" 按钮")](extensions-images/run03.png#lightbox)
+[![](extensions-images/run03.png "Add the DaysRemaining Extension to the Today view and click the Done button")](extensions-images/run03.png#lightbox)
 
 新小组件将添加到 "**今日**" 视图中，结果将显示：
 
-[![](extensions-images/run04.png "新小组件将添加到 \"今日\" 视图，结果将显示")](extensions-images/run04.png#lightbox)
+[![](extensions-images/run04.png "The new widget will be added to the Today view and the results will be displayed")](extensions-images/run04.png#lightbox)
 
 ## <a name="communicating-with-the-host-app"></a>与宿主应用程序进行通信
 
-前面创建的示例 "今日扩展" 不与其主机应用（"**当前**" 屏幕）通信。 如果已完成, 则它将使用 `TodayViewController`或`CodeBasedViewController`类的 [ExtensionContext](xref:Foundation.NSExtensionContext) 属性。 
+前面创建的示例 "今日扩展" 不与其主机应用（"**当前**" 屏幕）通信。 如果已完成，则它将使用 `TodayViewController` 或 `CodeBasedViewController` 类的[ExtensionContext](xref:Foundation.NSExtensionContext)属性。 
 
-对于将从其主机应用接收数据的扩展，数据以[NSExtensionItem](xref:Foundation.NSExtensionItem)对象数组的形式存储在扩展的`UIViewController` [ExtensionContext 的](xref:Foundation.NSExtensionContext)的[InputItems](xref:Foundation.NSExtensionContext.InputItems)属性中。
+对于将从其主机应用接收数据的扩展，数据以[NSExtensionItem](xref:Foundation.NSExtensionItem)对象数组的形式存储在扩展的 `UIViewController` 的[ExtensionContext](xref:Foundation.NSExtensionContext)的[InputItems](xref:Foundation.NSExtensionContext.InputItems)属性中。
 
 其他扩展，如照片编辑扩展，可以区分用户完成或取消使用情况。 这会通过[ExtensionContext](xref:Foundation.NSExtensionContext)属性的[CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*)和[CancelRequest](xref:Foundation.NSExtensionContext.CancelRequest*)方法发回主机应用。
 
@@ -286,7 +286,7 @@ public override void ViewDidLoad ()
 
 使用扩展时，使用统一类型标识符（UTI）来创建和操作在应用、其他应用和/或服务之间交换的数据。
 
-静态类定义以下与 Apple 的`kUTType...`定义相关的帮助器属性： `MobileCoreServices.UTType`
+@No__t_0 静态类定义以下与 Apple 的 `kUTType...` 定义相关的帮助器属性：
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`
@@ -432,7 +432,7 @@ public override void ViewDidLoad ()
 - `kUTTypeXPCService` - `XPCService`
 - `kUTTypeZipArchive` - `ZipArchive`
 
-请参阅以下示例:
+请参阅以下示例：
 
 ```csharp
 using MobileCoreServices;
