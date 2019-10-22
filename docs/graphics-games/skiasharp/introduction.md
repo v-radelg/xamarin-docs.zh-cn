@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
 ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "64749923"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>独立于平台的 SkiaSharp 示例
@@ -22,7 +22,7 @@ SkiaSharp 提供了丰富且功能强大的2D 图形 API，可用于呈现为2D 
 
 库当前以跨平台[NuGet 包](https://www.nuget.org/packages/SkiaSharp)的形式提供，你可以通过添加 NuGet 引用将其添加到你的项目中。
 
-为了进行绘制，你的代码将`SkCanvas`创建一个，它描述了将发生绘图操作的图面。
+为了进行绘制，你的代码将创建一个 `SkCanvas`，用于描述发生绘图操作的图面。
 
 ## <a name="obtaining-an-skcanvas"></a>获取 SKCanvas
 
@@ -36,9 +36,9 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>在 SKCanvas 上绘图
 
-`SKCanvas`使用与您可能熟悉的其他绘图模型相似的绘图模型，它使用带有可选透明度通道的颜色，并且可以绘制线条、弧形、文本和图像。
+@No__t_0 使用与您可能熟悉的其他绘图模型相似的绘图模型，它使用带有可选透明度通道的颜色，并且可以绘制线条、弧形、文本和图像。
 
-下面只是使用 SkiaSharp 可以完成的几个不同的操作。  在下面的示例中， `canvas`变量的类型为 SKCanvas。
+下面只是使用 SkiaSharp 可以完成的几个不同的操作。  在下面的示例中，变量 `canvas` 的类型为 SKCanvas。
 
 ### <a name="drawing-xamagon"></a>绘制 Xamagon
 
@@ -133,6 +133,6 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 有关使用 SkiaSharp 的详细信息，请参阅[API 文档](https://docs.microsoft.com/dotnet/api/skiasharp)

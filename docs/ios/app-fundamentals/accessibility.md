@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
 ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766751"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的辅助功能
@@ -21,15 +21,15 @@ ms.locfileid: "70766751"
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-iOS 为开发`AccessibilityLabel`人员`AccessibilityHint`提供了和属性，以添加可供 VoiceOver 屏幕阅读器使用的描述性文本，使控件更易于访问。 控件还可以用一个或多个特征进行标记，这些特征在可访问模式下提供其他上下文。
+iOS 提供 `AccessibilityLabel` 和 `AccessibilityHint` 属性，使开发人员能够添加 VoiceOver 屏幕阅读器可使用的描述性文本，使控件更易于访问。 控件还可以用一个或多个特征进行标记，这些特征在可访问模式下提供其他上下文。
 
-某些控件可能不需要访问（例如，文本输入中的标签或纯粹装饰的图像）–提供此`IsAccessibilityElement`功能可在这些情况下禁用辅助功能。
+某些控件可能不需要访问（例如，文本输入中的标签或纯粹装饰的图像）–提供 `IsAccessibilityElement` 以在这些情况下禁用可访问性。
 
 **UI 设计器**
 
 **Properties Pad**包含可访问性部分，允许在 IOS UI 设计器中选择控件时编辑这些设置：
 
-![](accessibility-images/ios-designer-sml.png "辅助功能设置")
+![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
 
 **C#**
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>什么是 AccessibilityIdentifier？
 
-`AccessibilityIdentifier`用于设置唯一键，该键可用于通过 UIAutomation API 引用用户界面元素。
+@No__t_0 用于设置唯一密钥，该密钥可用于通过 UIAutomation API 引用用户界面元素。
 
-的值`AccessibilityIdentifier`永远不会被口述或显示给用户。
+@No__t_0 的值永远不会被口述或显示给用户。
 
 <a name="postnotification" />
 
 ## <a name="postnotification"></a>PostNotification
 
-`UIAccessibility.PostNotification`方法允许事件在直接交互之外（例如，当用户与特定控件交互时）向用户引发。
+@No__t_0 方法允许事件在直接交互之外（例如，当与特定控件交互时）向用户引发。
 
 ### <a name="announcement"></a>公告
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-屏幕布局时使用公告：`LayoutChanged`
+屏幕布局时，将使用 `LayoutChanged` 公告：
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -78,9 +78,9 @@ UIAccessibility.PostNotification (
 
 像标签和提示这样的可访问性属性可以像用户界面中的其他文本那样进行本地化。
 
-**MainStoryboard.strings**
+**Mainstoryboard.storyboard**
 
-如果用户界面在情节提要中布局，则可以采用与其他属性相同的方式为辅助功能属性提供翻译。 在下面的示例中， `UITextField`的`Pqa-aa-ury` **本地化 ID**为，并且在西班牙语中设置了两个可访问性属性：
+如果用户界面在情节提要中布局，则可以采用与其他属性相同的方式为辅助功能属性提供翻译。 在下面的示例中，`UITextField` 的**本地化 ID**为 `Pqa-aa-ury`，而两个可访问性属性是在西班牙语中设置的：
 
 ```csharp
 /* Accessibility */
@@ -90,7 +90,7 @@ UIAccessibility.PostNotification (
 
 此文件将放在西班牙语内容的**lproj**目录中。
 
-**Localizable.strings**
+**可本地化的字符串**
 
 或者，可将翻译添加到本地化内容目录中的可**本地化的字符串**文件中（例如 西班牙语的**lproj** ）：
 
@@ -100,7 +100,7 @@ UIAccessibility.PostNotification (
 "Provide more information" = "escriba más información";
 ```
 
-这些翻译可通过C# `LocalizedString`方法在中使用：
+可以C#通过 `LocalizedString` 方法使用这些翻译：
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -115,7 +115,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 通过导航到**一般 > 辅助功能 > VoiceOver**，在 "**设置**" 应用中启用 VoiceOver：
 
-![](accessibility-images/settings-sml.png "设置语速")
+![](accessibility-images/settings-sml.png "Setting the speaking rate")
 
 **辅助功能**屏幕还提供了 "缩放"、"文本大小"、"颜色 & 对比度" 选项、"语音设置" 和其他配置选项的设置。
 
@@ -125,12 +125,12 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 在模拟器中测试时，可**访问性检查器**可用于帮助验证辅助功能属性和事件是否正确配置。 在 "**设置**" 应用中打开检查器，方法是导航到 "**常规" > 辅助功能 > 辅助功能检查器**：
 
-![](accessibility-images/settings-inspector-sml.png "启用辅助功能检查器")
+![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
 
 启用后，检查器窗口将始终悬停在 iOS 屏幕上。
 下面是在选择表视图行时的输出示例-请注意，**标签**包含提供行内容以及 "完成" 的句子（即勾选标记可见）：
 
-![](accessibility-images/tableview-a11y-sml.png "使用辅助功能检查器")
+![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
 
 如果检查器可见，请使用左上角的 "X" 图标来暂时显示和隐藏覆盖区，并启用/禁用辅助功能设置。
 

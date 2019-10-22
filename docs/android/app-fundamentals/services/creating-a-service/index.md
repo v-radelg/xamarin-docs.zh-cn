@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
 ms.openlocfilehash: 4cec06287963fb607ba2f523c6f47e56c08e655f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70754898"
 ---
 # <a name="creating-a-service"></a>创建服务
@@ -18,7 +18,7 @@ ms.locfileid: "70754898"
 Xamarin Android 服务必须遵守 Android 服务的两个 inviolable 规则：
 
 - 它们必须扩展[`Android.App.Service`](xref:Android.App.Service)。
-- 它们必须用[`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)来修饰。
+- 它们必须用[`Android.App.ServiceAttribute`](xref:Android.App.ServiceAttribute)修饰。
 
 Android 服务的另一要求是必须在**androidmanifest.xml**中注册，并为其指定唯一名称。 Xamarin 会自动在生成时将清单中的服务注册到必需的 XML 属性。
 
@@ -38,7 +38,7 @@ public class DemoService : Service
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-可以通过_导出_服务与其他 Android 应用程序共享该服务。 这是通过在上设置`Exported`属性来完成`ServiceAttribute`的。 导出服务时， `ServiceAttribute.Name`还应将属性设置为为服务提供有意义的公共名称。 此代码段演示如何导出和命名服务：
+可以通过_导出_服务与其他 Android 应用程序共享该服务。 这是通过设置 `ServiceAttribute` 上的 `Exported` 属性来完成的。 导出服务时，还应将 `ServiceAttribute.Name` 属性设置为为服务提供有意义的公共名称。 此代码段演示如何导出和命名服务：
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -54,9 +54,9 @@ public class DemoService : Service
 <service android:exported="true" android:name="com.xamarin.example.DemoService" />
 ```
 
-服务具有自己的生命周期，其中包含在创建服务时调用的回调方法。 所调用的具体方法取决于服务的类型。 已启动的服务必须实现不同于绑定服务的生命周期方法，而混合服务必须为已启动的服务和绑定的服务实现回调方法。 这些方法都是`Service`类的所有成员; 服务的启动方式将确定将调用的生命周期方法。 稍后将更详细地讨论这些生命周期方法。
+服务具有自己的生命周期，其中包含在创建服务时调用的回调方法。 所调用的具体方法取决于服务的类型。 已启动的服务必须实现不同于绑定服务的生命周期方法，而混合服务必须为已启动的服务和绑定的服务实现回调方法。 这些方法都是 `Service` 类的成员;服务的启动方式将确定要调用的生命周期方法。 稍后将更详细地讨论这些生命周期方法。
 
-默认情况下，服务将以与 Android 应用程序相同的进程启动。 可以通过将`ServiceAttribute.IsolatedProcess`属性设置为 true，在其自己的进程中启动服务：
+默认情况下，服务将以与 Android 应用程序相同的进程启动。 通过将 `ServiceAttribute.IsolatedProcess` 属性设置为 true，可以在自己的进程中启动服务：
 
 ```csharp
 [Service(IsolatedProcess=true)]
@@ -73,9 +73,9 @@ public class DemoService : Service
 
 ## <a name="starting-a-service"></a>启动服务
 
-在 Android 中启动服务的最基本方法是调度`Intent` ，其中包含元数据，以帮助标识应启动的服务。 可以使用两种不同的方法来启动服务：
+在 Android 中启动服务的最基本方法是分派一个 `Intent`，其中包含有助于识别应启动的服务的元数据。 可以使用两种不同的方法来启动服务：
 
-- **显式意图**明确的目的将确定应该使用哪种服务来完成给定的操作。 &ndash; 可以将显式意图视为具有特定地址的字母;Android 会将意向路由到显式标识的服务。 此代码片段是使用显式意图启动名`DownloadService`为的服务的一个示例：
+- **明确意向**&ndash;_显式目的_将确定应该使用哪种服务来完成给定的操作。 可以将显式意图视为具有特定地址的字母;Android 会将意向路由到显式标识的服务。 此代码片段是使用显式意图启动名为 `DownloadService` 的服务的一个示例：
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ public class DemoService : Service
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
-- **隐式意向**&ndash;此类意向松散标识用户希望执行的操作，但完成该操作的确切服务是未知的。 可以将隐式意向看作是 "可能关注的人员 ..." 的字母。
+- **隐式意向**&ndash; 这种类型的意向使用户希望执行的操作是不确定的，但完成该操作的确切服务是未知的。 可以将隐式意向看作是 "可能关注的人员 ..." 的字母。
     Android 将检查意图的内容，并确定是否存在与意向匹配的现有服务。
 
     _意向筛选器_用于帮助与已注册的服务匹配隐式目的。 意向筛选器是一个 XML 元素，它将添加到**androidmanifest.xml**中，该元素包含必要的元数据以帮助与具有隐式目的的服务匹配。
@@ -100,13 +100,13 @@ public class DemoService : Service
 > [!IMPORTANT]
 > 从 Android 5.0 （AP 级别21）开始，无法使用隐式意向来启动服务。
 
-在可能的情况下，应用程序应使用显式意向来启动服务。 隐式意向不要求特定服务启动&ndash; ，而是在设备上安装了某个服务的请求来处理请求。 这种不明确的请求会导致错误的服务处理请求，或者不必要地启动其他应用（这会增加设备上资源的压力）。
+在可能的情况下，应用程序应使用显式意向来启动服务。 隐式意向不要求特定服务启动 &ndash; 它是在设备上安装的某些服务的请求来处理请求。 这种不明确的请求会导致错误的服务处理请求，或者不必要地启动其他应用（这会增加设备上资源的压力）。
 
 如何分派意向取决于服务类型，稍后将在特定于每种服务类型的指南中更详细地讨论。
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>为隐式意向创建意向过滤器
 
-若要将服务与隐式意向相关联，Android 应用必须提供一些元数据来标识服务的功能。 此元数据由_意向筛选器_提供。 意向筛选器包含某些信息，如操作或数据类型，这些信息必须在意向中提供以启动服务。 在 Xamarin 中，目的筛选器通过使用[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)修饰服务在**androidmanifest.xml**中注册。 例如，下面的代码添加了一个具有相关操作的`com.xamarin.DemoService`意向筛选器：
+若要将服务与隐式意向相关联，Android 应用必须提供一些元数据来标识服务的功能。 此元数据由_意向筛选器_提供。 意向筛选器包含某些信息，如操作或数据类型，这些信息必须在意向中提供以启动服务。 在 Xamarin 中，在**androidmanifest.xml**中通过使用[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)修饰服务来注册意向筛选器。 例如，下面的代码添加了一个意向筛选器，其中包含 `com.xamarin.DemoService` 的关联操作：
 
 ```csharp
 [Service]
@@ -116,7 +116,7 @@ public class DemoService : Service
 }
 ```
 
-这会导致**androidmanifest.xml**文件&ndash;中包含一个条目，该条目以与以下示例类似的方式打包在应用程序中：
+这会导致**androidmanifest.xml**文件中包含一项，&ndash; 以类似于以下示例的方式打包到应用程序中的条目：
 
 ```xml
 <service android:name="demoservice.DemoService">
@@ -130,7 +130,7 @@ public class DemoService : Service
 
 ## <a name="related-links"></a>相关链接
 
-- [Android.App.Service](xref:Android.App.Service)
-- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
-- [Android.App.Intent](xref:Android.Content.Intent)
-- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)
+- [Android. 服务](xref:Android.App.Service)
+- [ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android. App](xref:Android.Content.Intent)
+- [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

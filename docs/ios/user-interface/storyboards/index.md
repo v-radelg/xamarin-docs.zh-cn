@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70768882"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
@@ -30,7 +30,7 @@ ms.locfileid: "70768882"
 
 情节提要是应用程序中所有屏幕的可视表示形式。 它包含一系列场景，每个场景表示一个*视图控制器*及其*视图*。 这些视图可能包含允许用户与应用程序进行交互的对象和[控件](~/ios/user-interface/controls/index.md)。 此视图和控件（或*子视图*）的集合称为*内容视图层次结构*。 场景由 segue 对象连接，这些对象表示视图控制器之间的转换。 通常通过在初始视图上的对象和连接视图之间创建 segue 来实现此目的。 设计图面上的关系在下图中进行了说明：
 
- [![](images/storyboardsview.png "此图中演示了设计图面上的关系")](images/storyboardsview.png#lightbox)
+ [![](images/storyboardsview.png "The relationships on the design surface are illustrated in this image")](images/storyboardsview.png#lightbox)
 
 如图所示，演示图板会将每个场景布局为已呈现的内容，并说明它们之间的连接。  值得一提的是，当我们谈到 iPhone 上的场景时，可以放心地假定情节提要上的一个*场景*等于设备上的一*屏*内容。 但是，对于 iPad，可以同时出现多个场景–例如，使用 Segue 视图控制器。
 
@@ -38,40 +38,40 @@ ms.locfileid: "70768882"
 
 使用情节提要可以更好地管理事件，特别是在使用 iOS 设计器时。 大多数 UI 控件将在 Properties Pad 中有可能的事件列表。 此事件处理程序可在此处添加并在视图控制器类的分部方法中完成。
 
-情节提要的内容存储为 XML 文件。 在生成时，所有`.storyboard`文件都编译为二进制文件（称为 nibs）。 在运行时，将初始化并实例化这些 nibs 以创建新视图。
+情节提要的内容存储为 XML 文件。 生成时，会将任何 `.storyboard` 文件编译为二进制文件（称为 nibs）。 在运行时，将初始化并实例化这些 nibs 以创建新视图。
 
 ## <a name="segues"></a>Segue
 
 *Segue*或*Segue 对象*用于在 iOS 开发中表示场景间的转换。 若要创建 segue，请按住**Ctrl**键，然后单击-将一个场景拖动到另一个场景。 当我们拖动鼠标时，将显示一个蓝色连接器，指示 segue 在下图中所示的位置：
 
- [![](images/createsegue.png "此时将显示一个蓝色连接器，指示 segue 在此图中的显示位置")](images/createsegue.png#lightbox)
+ [![](images/createsegue.png "A blue connector appears, indicating where the segue will lead as demonstrated in this image")](images/createsegue.png#lightbox)
 
 鼠标悬停时，将显示一个菜单，让我们为 segue 选择操作。 它看起来可能与下图类似： 
 
 **IOS 之前8类和大小类**：
 
-[![](images/segue1.png "无大小类的操作 Segue 下拉列表")](images/segue1.png#lightbox)
+[![](images/segue1.png "The Action Segue dropdown without Size Classes")](images/segue1.png#lightbox)
 
 **使用大小类和自适应 Segue 时**：
 
-[![](images/16new.png "带有大小类的操作 Segue 下拉列表")](images/16new.png#lightbox)
+[![](images/16new.png "The Action Segue dropdown with Size Classes")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > 如果你使用的是适用于 Windows 虚拟机的 VMWare，则在默认情况下，按下右键单击将映射为_右键单击_鼠标按钮。 若要创建 Segue，请通过**首选项** > **键盘 & 鼠标** > **鼠标快捷方式**编辑键盘首选项，并重新映射**辅助按钮**，如下所示：
 > 
-> [![](images/image22.png "键盘和鼠标首选项设置")](images/image22.png#lightbox)
+> [![](images/image22.png "Keyboard and Mouse preference settings")](images/image22.png#lightbox)
 > 
 > 现在应能够在视图控制器之间添加 segue。
 
 存在不同类型的转换，每个转换都控制如何向用户显示新视图控制器，以及如何与情节提要中的其他视图控制器交互。 如下所述。 还可以为 segue 对象划分子类，以实现自定义转换：
 
-- **显示/推送**–推送 segue 将视图控制器添加到导航堆栈。 它假定发起推送的视图控制器与要添加到堆栈中的视图控制器属于同一导航控制器。 这与相同`pushViewController` ，通常在屏幕上的数据之间存在某种关系时使用。 使用 push segue，你可以使用一个导航栏，其中包含向堆栈上的每个视图添加的 "后退" 按钮和标题，从而允许在视图层次结构中向下钻取导航。
-- **Modal** –模式 segue 在项目中的任意两个视图控制器之间创建关系，并在其中显示动画过渡的选项。 进入 "查看" 时，子视图控制器会完全掩盖父视图控制器。 不同于推送 segue，后者将向我们添加一个 "后退" 按钮;使用模式 segue `DismissViewController`时，必须使用模式，才能返回到上一个视图控制器。
-- **Custom** –可以将任意自定义 segue 创建为的子类`UIStoryboardSegue`。
+- **显示/推送**–推送 segue 将视图控制器添加到导航堆栈。 它假定发起推送的视图控制器与要添加到堆栈中的视图控制器属于同一导航控制器。 这与 `pushViewController` 一样，通常在屏幕上的数据之间存在某种关系时使用。 使用 push segue，你可以使用一个导航栏，其中包含向堆栈上的每个视图添加的 "后退" 按钮和标题，从而允许在视图层次结构中向下钻取导航。
+- **Modal** –模式 segue 在项目中的任意两个视图控制器之间创建关系，并在其中显示动画过渡的选项。 进入 "查看" 时，子视图控制器会完全掩盖父视图控制器。 不同于推送 segue，后者将向我们添加一个 "后退" 按钮;使用模式 `DismissViewController` segue 时，必须使用，才能返回到上一个视图控制器。
+- **Custom** –可以 `UIStoryboardSegue` 的子类中创建任何自定义 segue。
 - **展开**–展开 segue 可用于通过推送或模式 segue 导航回来–例如，通过关闭按模式显示的视图控制器。 除此之外，你不仅可以通过一个展开操作来遍历一系列推送和模式 segue，并返回导航层次结构中的多个步骤。 若要了解如何在 iOS 中使用展开 segue，请阅读[创建展开 segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)食谱。
 - **Sourceless** – Sourceless segue 指示包含初始视图控制器的场景，从而显示用户首先看到的视图。 它由如下所示的 segue 表示：  
 
-    [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
+    [![](images/sourcelesssegue.png "A sourceless segue")](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>自适应 Segue 类型
 
@@ -79,7 +79,7 @@ ms.locfileid: "70768882"
 
 使用大小类的任何应用程序也将使用新的[*自适应 segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小类时，请记住，我们不会直接指定该使用 iPhone 或 iPad。 换句话说，我们创建一个 UI，该 UI 始终外观相同，而不考虑它需要使用的实际空间。 自适应 Segue 通过判断环境，并确定如何以最佳方式呈现内容。 自适应 Segue 如下所示： 
 
-[![](images/adaptivesegue.png "自适应 Segue 下拉列表")](images/adaptivesegue.png#lightbox)
+[![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
 
 |Segue|描述|
 |--- |--- |
@@ -90,7 +90,7 @@ ms.locfileid: "70768882"
 
 ### <a name="transferring-data-with-segues"></a>通过 Segue 传输数据
 
-Segue 的好处并不是通过转换来完成的。 它们还可用于管理视图控制器之间的数据传输。 这是通过重写初始`PrepareForSegue`视图控制器上的方法以及自行处理数据实现的。 触发 segue 时（例如，使用按钮按下），应用程序将调用此方法，以便在进行任何导航*之前*准备新的视图控制器。 下面的代码（来自[Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)示例）演示了这一点： 
+Segue 的好处并不是通过转换来完成的。 它们还可用于管理视图控制器之间的数据传输。 这是通过重写初始视图控制器上的 `PrepareForSegue` 方法以及自行处理数据来实现的。 触发 segue 时（例如，使用按钮按下），应用程序将调用此方法，以便在进行任何导航*之前*准备新的视图控制器。 下面的代码（来自[Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)示例）演示了这一点： 
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, 
@@ -107,13 +107,13 @@ NSObject sender)
 }
 ```
 
-在此示例中， `PrepareForSegue`当用户触发 segue 时，将调用方法。 首先，必须创建 "接收" 视图控制器的实例，并将其设置为 segue 的目标视图控制器。 这是通过下面的代码行完成的：
+在此示例中，当用户触发 segue 时，将调用 `PrepareForSegue` 方法。 首先，必须创建 "接收" 视图控制器的实例，并将其设置为 segue 的目标视图控制器。 这是通过下面的代码行完成的：
 
 ```csharp
 var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
-方法现在能够在上`DestinationViewController`设置属性。 在此示例中，我们通过将名`PhoneNumbers`为的`CallHistoryController`列表传递给，并将其分配给同名的对象来利用这一点：
+方法现在能够在 `DestinationViewController` 上设置属性。 在此示例中，我们通过将名为 `PhoneNumbers` 的列表传递给 `CallHistoryController` 并将其分配给同名的对象来利用这一点：
 
 ```csharp
 if (callHistoryController != null) {
@@ -121,7 +121,7 @@ if (callHistoryController != null) {
     }
 ```
 
-转换完成后，用户将看到带有填充列表的`CallHistoryController` 。
+转换完成后，用户将看到带有填充列表的 `CallHistoryController`。
 
 ## <a name="adding-a-storyboard-to-a-non-storyboard-project"></a>将情节提要添加到非情节提要项目
 
@@ -131,15 +131,15 @@ if (callHistoryController != null) {
 
 1. 通过浏览到**文件 > 新文件 > iOS > 情节提要**来创建新的情节提要文件，如下所示： 
     
-    [![](images/new-storyboard-xs.png "\"新建文件\" 对话框")](images/new-storyboard-xs.png#lightbox)
+    [![](images/new-storyboard-xs.png "The new file dialog")](images/new-storyboard-xs.png#lightbox)
 
 2. 将情节提要名称添加到**info.plist**的**Main Interface**节，如下所示：
     
-    [![](images/infoplist.png "Info.plist 编辑器")](images/infoplist.png#lightbox)
+    [![](images/infoplist.png "The Info.plist editor")](images/infoplist.png#lightbox)
     
-    这等效于在应用委托内实例化`FinishedLaunching`方法中的初始视图控制器。 设置此选项后，应用程序将实例化窗口（见下文），加载主情节提要，并将情节提要的初始视图控制器（sourceless Segue）的实例分配为`RootViewController`窗口的属性，然后使屏幕上显示的窗口。
+    这等效于在应用委托内实例化 `FinishedLaunching` 方法中的初始视图控制器。 设置此选项后，应用程序将实例化窗口（见下文），加载主情节提要，并将情节提要的初始视图控制器（sourceless Segue）的实例分配为窗口的 `RootViewController` 属性，然后使屏幕上显示的窗口。
 
-3. 在中`Window` ，用以下代码替换默认方法，以实现窗口属性： `AppDelegate`
+3. 在 `AppDelegate` 中，用以下代码替换默认的 `Window` 方法：
 
     ```csharp
     public override UIWindow Window {
@@ -152,15 +152,15 @@ if (callHistoryController != null) {
 
 1. 右键单击项目以**添加 > 新文件 > iOS > 空情节提要**，如下所示，创建新的情节提要文件。 
     
-    [![](images/new-storyboard-vs.png "\"新建项\" 对话框")](images/new-storyboard-vs.png#lightbox)
+    [![](images/new-storyboard-vs.png "The new item dialog")](images/new-storyboard-vs.png#lightbox)
 
 2. 将情节提要名称添加到 iOS 应用程序的**主界面**部分，如下所示：
     
-    [![](images/ios-app.png "Info.plist 编辑器")](images/ios-app.png#lightbox)
+    [![](images/ios-app.png "The Info.plist editor")](images/ios-app.png#lightbox)
     
-    这等效于在应用委托内实例化`FinishedLaunching`方法中的初始视图控制器。 设置此选项后，应用程序将实例化窗口（见下文），加载主情节提要，并将情节提要的初始视图控制器（sourceless Segue）的实例分配为`RootViewController`窗口的属性，然后使屏幕上显示的窗口。
+    这等效于在应用委托内实例化 `FinishedLaunching` 方法中的初始视图控制器。 设置此选项后，应用程序将实例化窗口（见下文），加载主情节提要，并将情节提要的初始视图控制器（sourceless Segue）的实例分配为窗口的 `RootViewController` 属性，然后使屏幕上显示的窗口。
 
-3. 在中`Window` ，用以下代码替换默认方法，以实现窗口属性： `AppDelegate`
+3. 在 `AppDelegate` 中，用以下代码替换默认的 `Window` 方法：
 
     ```csharp
     public override UIWindow Window {
@@ -179,43 +179,43 @@ if (callHistoryController != null) {
 
 ## <a name="instantiate-storyboards-manually"></a>手动实例化情节提要
 
-情节提要完全替换项目中的单个 XIB 文件，但情节提要中的单个视图控制器仍可使用`Storyboard.InstantiateViewController`实例化。
+情节提要完全替换项目中的单个 XIB 文件，但情节提要中的单个视图控制器仍可使用 `Storyboard.InstantiateViewController` 实例化。
 
 有时，应用程序具有不能使用设计器提供的内置情节提要转换来处理的特殊要求。 例如，如果我们要创建一个从同一按钮启动不同屏幕的应用程序，则根据应用程序的当前状态，我们可能需要手动实例化视图控制器，并为转换编程。
 
 下面的屏幕截图显示了设计图面上的两个视图控制器，它们之间没有任何 segue。 下一部分将逐步讲解如何在代码中设置该转换。
 
- [![](images/viewcontrollerspink.png "此屏幕截图显示了设计图面上的两个视图控制器，它们之间没有 segue")](images/viewcontrollerspink.png#lightbox)
+ [![](images/viewcontrollerspink.png "This screenshot shows two view controllers on the design surface with no segue between them")](images/viewcontrollerspink.png#lightbox)
 
 1. 将_空的 IPhone 情节提要_添加到现有项目项目：
     
-    [![](images/add-storyboard1.png "添加情节提要")](images/add-storyboard1.png#lightbox)
+    [![](images/add-storyboard1.png "Adding storyboard")](images/add-storyboard1.png#lightbox)
 
 2. 双击新创建的情节提要将其打开，然后将新的**导航控制器**添加到设计图面。 由于导航控制器不是 UI，因此默认情况下，它会附带一个根视图控制器，如下图所示：
 
-    [![](images/uinavigationcontroller.png "用 Segue 查看控制器")](images/uinavigationcontroller.png#lightbox)
+    [![](images/uinavigationcontroller.png "View Controllers with Segues")](images/uinavigationcontroller.png#lightbox)
 
-3. 单击底部的黑色栏，选择_视图控制器_。 在设计器的**属性板**中，在 "**标识**" 下，可以指定自定义类以及视图控制器的唯一 ID。 将**类名称**和**情节提要 ID**设置`MainViewController`为。
+3. 单击底部的黑色栏，选择_视图控制器_。 在设计器的**属性板**中，在 "**标识**" 下，可以指定自定义类以及视图控制器的唯一 ID。 将**类名称**和**情节提要 ID**设置为 `MainViewController`。
 
-    [![](images/identitypanelnew.png "指定自定义类")](images/identitypanelnew.png#lightbox)
+    [![](images/identitypanelnew.png "Specify custom class")](images/identitypanelnew.png#lightbox)
 
 4. 稍后，我们需要从情节提要实例化视图控制器，并将使用情节提要 ID 在代码中引用它们。 如果需要还原状态，则将还原 ID 设置为与情节提要 ID 匹配可确保正确地重新创建视图控制器。
 
-5. 目前只有一个视图控制器。 将另一个视图控制器拖动到设计图面上。 在**属性板**的 "标识" 下，将类和情节提要 ID `PinkViewController`设置为，如下所示：
+5. 目前只有一个视图控制器。 将另一个视图控制器拖动到设计图面上。 在**属性板**的 "标识" 下，将类和情节提要 ID 设置为 `PinkViewController`，如下所示：
 
-    [![](images/pinkvcnew.png "属性板")](images/pinkvcnew.png#lightbox)
+    [![](images/pinkvcnew.png "The Property Pad")](images/pinkvcnew.png#lightbox)
     
     IDE 将为视图控制器创建这些自定义类。 可以在**Solution Pad**中查看这些内容，如以下屏幕截图中所示：
     
     [![](images/solution-pad.png "Solution Pad")](images/solution-pad.png#lightbox)
 
-6. 在中`PinkViewController`，通过单击控制器框架中心来选择视图。 在 Properties Pad 的 "视图" 下，将**背景**更改为洋红色：
+6. 在 `PinkViewController` 中，通过单击控制器框架中心来选择视图。 在 Properties Pad 的 "视图" 下，将**背景**更改为洋红色：
     
-    [![](images/pinkcontroller.png "设置背景色")](images/pinkcontroller.png#lightbox)
+    [![](images/pinkcontroller.png "Set Background color")](images/pinkcontroller.png#lightbox)
 
-7. 最后，将 "**工具箱**" 中的按钮拖`MainViewController`到上。 在 Properties Pad 中，为其指定名称`PinkButton`和标题 GoToPink，如下所示：
+7. 最后，将 "**工具箱**" 中的按钮拖到 `MainViewController` 上。 在 Properties Pad 中，为其指定名称 `PinkButton` 和标题 GoToPink，如下所示：
 
-    [![](images/pinkbutton.png "设置按钮名称")](images/pinkbutton.png#lightbox)
+    [![](images/pinkbutton.png "Set Button Name")](images/pinkbutton.png#lightbox)
 
 情节提要已完成，但如果现在部署项目，将看到一个空白屏幕。 这是因为我们仍需要告诉 IDE 使用我们的情节提要，并设置一个根视图控制器以用作第一个视图。 通常可以通过项目选项完成此操作，如上所示。 但在此示例中，我们通过将以下代码添加到**AppDelegate**来实现相同的结果：
 
@@ -240,9 +240,9 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 ```
 
-这是很多代码，但只有几行不熟悉。 首先，通过传入情节提要的名称**mainstoryboard.storyboard**，将情节提要注册到**AppDelegate** 。 接下来，我们告知应用程序通过在情节提要上调用`InstantiateInitialViewController`来从情节提要实例化初始视图控制器，并将该视图控制器设置为应用程序的根视图控制器。 此方法确定用户看到的第一个屏幕，并创建该视图控制器的新实例。
+这是很多代码，但只有几行不熟悉。 首先，通过传入情节提要的名称**mainstoryboard.storyboard**，将情节提要注册到**AppDelegate** 。 接下来，我们告知应用程序通过调用情节提要上的 `InstantiateInitialViewController` 来实例化情节提要中的初始视图控制器，并将该视图控制器设置为应用程序的根视图控制器。 此方法确定用户看到的第一个屏幕，并创建该视图控制器的新实例。
 
-请注意，在 "解决方案" 窗格中，IDE `MainViewcontroller.cs`已创建类， `corresponding designer.cs`并在将类名称添加到步骤4中的 Properties Pad 时使用。 我们可以看到，此类创建了一个包含基类的特殊构造函数：
+请注意，在 "解决方案" 窗格中，IDE 已创建了一个 `MainViewcontroller.cs` 类，并在将类名称添加到步骤4中的 Properties Pad 时 `corresponding designer.cs`。 我们可以看到，此类创建了一个包含基类的特殊构造函数：
 
 ```csharp
 public MainViewController (IntPtr handle) : base (handle) 
@@ -250,7 +250,7 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-使用设计器创建情节提要时，IDE 将自动在`designer.cs`类的顶部添加[[Register]](xref:Foundation.RegisterAttribute)特性，并传入字符串标识符，该标识符与在上一步中指定的情节提要 ID 完全相同。 这会将链接C#到情节提要中的相关场景。
+使用设计器创建情节提要时，IDE 将自动在 `designer.cs` 类的顶部添加[[Register]](xref:Foundation.RegisterAttribute)特性，并传入字符串标识符，该标识符与在上一步中指定的情节提要 ID 完全相同。 这会将链接C#到情节提要中的相关场景。
 
 在某些时候，你可能需要添加一个**未**在设计器中创建的现有类。 在这种情况下，应将此类注册为普通：
 
@@ -268,7 +268,7 @@ public MainViewController (IntPtr handle) : base (handle)
 
 有关注册类和方法的详细信息，请参阅[类型注册](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/)器文档。
 
-此类中的最后一步是将按钮向上绑定到粉红色视图控制器。 我们将`PinkViewController`从情节提要中实例化，然后使用`PushViewController`将推送 segue，如下面的示例代码所示：
+此类中的最后一步是将按钮向上绑定到粉红色视图控制器。 我们将实例化情节提要中的 `PinkViewController`;接下来，我们将使用 `PushViewController` 来计划推送 segue，如下面的示例代码所示：
 
 ```csharp
 public partial class MainViewController : UIViewController
@@ -308,7 +308,7 @@ public partial class MainViewController : UIViewController
 
 运行应用程序将生成一个2屏幕应用程序：
 
-![](images/finishedstoryboard.png "示例应用运行屏幕")
+![](images/finishedstoryboard.png "Sample app run screens")
 
 ## <a name="conditional-segues"></a>条件 Segue
 
@@ -318,27 +318,27 @@ public partial class MainViewController : UIViewController
 
 在开始之前，请先完成上面的步骤 1-8。 在这些步骤中，我们创建了情节提要，开始创建 UI，并告诉我们的应用程序将使用哪种视图控制器作为 RootViewController。
 
-1. 现在，让我们来构建 UI，并向添加列出的`MainViewController`其他视图，使其看起来像下面的屏幕截图中所示：
+1. 现在，让我们来构建 UI，并向 `MainViewController` 中添加列出的其他视图，使其看起来像下面的屏幕截图中所示：
 
     - UITextField
-        - 姓名:PasswordTextField
-        - Placeholder"输入密钥密码"
+        - 名称： PasswordTextField
+        - 占位符： "输入密钥密码"
     - UILabel
-        - 全文条密码错误。 不应传递！
+        - 文本： ' 错误：密码错误。 不应传递！
         - 颜色：红色
-        - 关联居中
-        - 行2
+        - 对齐方式：中心
+        - 行：2
         - 选中 "隐藏" 复选框    
         
-    [![](images/passwordvc.png "轴线")](images/passwordvc.png#lightbox)
+    [![](images/passwordvc.png "Center Lines")](images/passwordvc.png#lightbox)
     
 2. 通过按 Ctrl 并将*PinkButton*拖到*PinkViewController*上，然后选择 "在鼠标上**推送**"，在 "跳到粉红色" 按钮和视图控制器之间创建 Segue。 
 
-3. 单击 Segue 并为其指定*标识符* `SegueToPink`：
+3. 单击 Segue 并为其指定*标识符*`SegueToPink`：
 
-    [![](images/namesegue.png "单击 Segue 并为其指定标识符 SegueToPink")](images/namesegue.png#lightbox)  
+    [![](images/namesegue.png "Click on the Segue and give it the Identifier SegueToPink")](images/namesegue.png#lightbox)  
 
-4. 最后，将以下 ShouldPerformSegue 方法添加到`MainViewController`类：
+4. 最后，将以下 ShouldPerformSegue 方法添加到 `MainViewController` 类：
 
     ```csharp
     public override bool ShouldPerformSegue (string segueIdentifier, NSObject sender)
@@ -358,9 +358,9 @@ public partial class MainViewController : UIViewController
     }
     ```
 
-在此代码中，我们已将 segueIdentifier 与`SegueToPink`我们的 segue 相匹配，因此，我们可以测试一个条件; 在本例中为有效密码。 如果条件返回`true`，则 Segue 将执行，并将`PinkViewController`显示。 如果`false`为，则不会显示新的视图控制器。
+在此代码中，我们已将 segueIdentifier 与我们的 `SegueToPink` segue 相匹配，因此，我们可以测试一个条件;在本例中为有效密码。 如果条件返回 `true`，则 Segue 将执行，并将显示 `PinkViewController`。 如果 `false`，则不会显示新的视图控制器。
 
-可以通过将 segueIdentifier 参数用于 ShouldPerformSegue 方法，将此方法应用于此视图控制器上的任何 Segue。 在这种情况下，我们只有一个 Segue `SegueToPink`标识符–。
+可以通过将 segueIdentifier 参数用于 ShouldPerformSegue 方法，将此方法应用于此视图控制器上的任何 Segue。 在这种情况下，我们只有一个 Segue 标识符– `SegueToPink`。
 
 请参阅演示图板的 "[手册" 演示图板示例](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard)中的条件性解决方案。
 
@@ -378,31 +378,31 @@ public partial class MainViewController : UIViewController
 
 若要添加对外部情节提要的引用，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加** > " "**新文件 ...** " > iOS情节 > **提要**。 输入新情节提要的**名称**，然后单击 "**新建**" 按钮：
+1. 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加** > **新文件 ...**  > **iOS**  > **情节提要**。 输入新情节提要的**名称**，然后单击 "**新建**" 按钮：
     
-    [![](images/ref01.png "\"新建文件\" 对话框")](images/ref01.png#lightbox)
+    [![](images/ref01.png "The New File Dialog")](images/ref01.png#lightbox)
     
 2. 按通常的方式设计新情节提要的幕后布局，并保存所做的更改： 
     
-    [![](images/ref02.png "新场景的布局")](images/ref02.png#lightbox)
+    [![](images/ref02.png "The layout of the new scene")](images/ref02.png#lightbox)
     
 3. 打开要在 iOS 设计器中添加对的引用的情节提要。
 
 4. 将**情节提要引用**从**工具箱**拖动到 Design Surface： 
     
-    [![](images/ref03.png "情节提要引用")](images/ref03.png#lightbox)
+    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
     
 5. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，选择前面创建的**情节提要**的名称： 
 
-    [![](images/ref04.png "\"小组件\" 选项卡")](images/ref04.png#lightbox)
+    [![](images/ref04.png "The Widget tab")](images/ref04.png#lightbox)
     
 6. 在现有场景上，单击鼠标右键单击 UI 小组件（例如按钮），并创建一个新的 Segue 到刚刚创建的**情节提要引用**： 
 
-    [![](images/ref05.png "创建 segue")](images/ref05.png#lightbox) 
+    [![](images/ref05.png "Creating a segue")](images/ref05.png#lightbox) 
     
 7. 从弹出菜单中，选择 "**显示**" 以完成 Segue： 
 
-    [![](images/ref06.png "选择 \"显示\" 以完成 Segue")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox) 
     
 8. 保存对情节提要所做的更改。
 
@@ -418,29 +418,29 @@ public partial class MainViewController : UIViewController
 
 2. 添加新场景并按常规方式设计其布局： 
 
-    [![](images/ref07.png "新的场景布局")](images/ref07.png#lightbox)
+    [![](images/ref07.png "The new scene layout")](images/ref07.png#lightbox)
     
 3. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，输入新场景的视图控制器的**情节提要 ID** ： 
 
-    [![](images/ref08.png "为新的场景视图控制器输入情节提要 ID")](images/ref08.png#lightbox)
+    [![](images/ref08.png "Enter a Storyboard ID for the new Scenes View Controller")](images/ref08.png#lightbox)
     
 4. 打开要在 iOS 设计器中添加对的引用的情节提要。
 
 5. 将**情节提要引用**从**工具箱**拖动到 Design Surface： 
 
-    [![](images/ref03.png "情节提要引用")](images/ref03.png#lightbox)
+    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
     
 6. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，选择你在上面创建的场景的**情节提要**名称和**引用 id** （情节提要 id）： 
 
-    [![](images/ref09.png "\"小组件\" 选项卡")](images/ref09.png#lightbox)
+    [![](images/ref09.png "The Widget tab ")](images/ref09.png#lightbox)
     
 7. 在现有场景上，单击鼠标右键单击 UI 小组件（例如按钮），并创建一个新的 Segue 到刚刚创建的**情节提要引用**： 
 
-    [![](images/ref10.png "创建 segue")](images/ref10.png#lightbox) 
+    [![](images/ref10.png "Creating a segue")](images/ref10.png#lightbox) 
     
 8. 从弹出菜单中，选择 "**显示**" 以完成 Segue： 
 
-    [![](images/ref06.png "选择 \"显示\" 以完成 Segue")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox) 
     
 9. 保存对情节提要所做的更改。
 
@@ -456,27 +456,27 @@ public partial class MainViewController : UIViewController
 
 2. 添加新场景并按常规方式设计其布局： 
 
-    [![](images/ref11.png "新的场景布局")](images/ref11.png#lightbox)
+    [![](images/ref11.png "The new scene layout")](images/ref11.png#lightbox)
 
 3. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，输入新场景的视图控制器的**情节提要 ID** ： 
 
-    [![](images/ref12.png "\"小组件\" 选项卡")](images/ref12.png#lightbox)
+    [![](images/ref12.png "The Widget tab")](images/ref12.png#lightbox)
     
 4. 将**情节提要引用**从**工具箱**拖动到 Design Surface： 
 
-   [![](images/ref03.png "情节提要引用")](images/ref03.png#lightbox)
+   [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
     
 5. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，选择上面创建的场景的**引用 id** （情节提要 id）： 
 
-    [![](images/ref13.png "\"小组件\" 选项卡")](images/ref13.png#lightbox)
+    [![](images/ref13.png "The Widget tab")](images/ref13.png#lightbox)
     
 6. 在现有场景上，单击鼠标右键单击 UI 小组件（例如按钮），并创建一个新的 Segue 到刚刚创建的**情节提要引用**： 
 
-    [![](images/ref14.png "创建 segue")](images/ref14.png#lightbox) 
+    [![](images/ref14.png "Creating a segue")](images/ref14.png#lightbox) 
     
 7. 从弹出菜单中，选择 "**显示**" 以完成 Segue： 
 
-    [![](images/ref06.png "选择 \"显示\" 以完成 Segue")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox) 
     
 8. 保存对情节提要所做的更改。
 

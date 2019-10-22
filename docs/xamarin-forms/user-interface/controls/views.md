@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/11/2019
-ms.openlocfilehash: 0094fbc73e88dc4e84d8bf415db30c17f955ddcc
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
-ms.translationtype: MT
+ms.date: 10/11/2019
+ms.openlocfilehash: 71b917cc6b090d78c9d9bdd7373b9bba74babee9
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "69976607"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697031"
 ---
 # <a name="xamarinforms-views"></a>Xamarin. Forms 视图
 
@@ -63,7 +63,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 
 |     |     |
 | --- | --- |
-| [`Map`](xref:Xamarin.Forms.Maps.Map)显示地图。 必须安装**Xamarin** Nuget 包。 Android 和通用 Windows 平台需要地图授权密钥。<br /><br />[API 文档](xref:Xamarin.Forms.Maps.Map) / [指南](~/xamarin-forms/user-interface/map.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![地图示例](views-images/Map.png "地图示例")](views-images/Map-Large.png#lightbox "地图示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) |
+| [`Map`](xref:Xamarin.Forms.Maps.Map)显示地图。 必须安装**Xamarin** Nuget 包。 Android 和通用 Windows 平台需要地图授权密钥。<br /><br />[API 文档](xref:Xamarin.Forms.Maps.Map) / [指南](~/xamarin-forms/user-interface/map/index.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![地图示例](views-images/Map.png "地图示例")](views-images/Map-Large.png#lightbox "地图示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) |
 |     |     |
 
 ## <a name="views-that-initiate-commands"></a>启动命令的视图
@@ -80,6 +80,13 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 |     |     |
 | --- | --- |
 | `ImageButton` 是显示图像的矩形对象，在按下时激发 `Clicked` 事件。<br /><br /> [指南](~/xamarin-forms/user-interface/imagebutton.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![ImageButton 示例](views-images/ImageButton.png "ImageButton 示例")](views-images/ImageButton-Large.png#lightbox "ImageButton 示例")<br /> 此页的代码  /  具有[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs)的[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs) |
+|     |     |
+
+### <a name="refreshview"></a>RefreshView
+
+|     |     |
+| --- | --- |
+| `RefreshView` 是一种容器控件，为可滚动的内容提供了请求刷新功能。 当触发刷新时，将执行由 `Command` 属性定义的 `ICommand`，而 `IsRefreshing` 属性指示控件的当前状态。<br /><br /> [指南](~/xamarin-forms/user-interface/refreshview.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![RefreshView 示例](views-images/RefreshView.png "RefreshView 示例")](views-images/RefreshView-Large.png#lightbox "RefreshView Example")<br /> 此页的代码  /  具有[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml.cs)的[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RefreshViewDemoPage.cs) |
 |     |     |
 
 ### <a name="searchbar"></a>搜索栏
@@ -176,6 +183,13 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 |     |     |
 
 ## <a name="views-that-display-collections"></a>显示集合的视图
+
+### <a name="carouselview"></a>CarouselView
+
+|     |     |
+| --- | --- |
+| [`CarouselView`](xref:Xamarin.Forms.CarouselView)显示数据项的可滚动列表。 将 `ItemsSource` 属性设置为对象的集合，并将 `ItemTemplate` 属性设置为描述如何设置这些项的格式的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象。 @No__t_0 事件指示当前显示的项已更改，后者作为 `CurrentItem` 属性提供。<br /><br />[指南](~/xamarin-forms/user-interface/carouselview/index.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/) | [![CarouselView 示例](views-images/CarouselView.png "CarouselView 示例")](views-images/CarouselView-Large.png#lightbox "CarouselView 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselViewDemoPage.cs) |
+|     |     |
 
 ### <a name="collectionview"></a>CollectionView
 

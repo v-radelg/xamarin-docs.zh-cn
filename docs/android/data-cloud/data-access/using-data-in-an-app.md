@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
 ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70754457"
 ---
 # <a name="using-data-in-an-app"></a>在应用中使用数据
@@ -23,7 +23,7 @@ ms.locfileid: "70754457"
 
 ![Android 示例详细信息](using-data-in-an-app-images/image12.png "Android 示例详细信息")
 
-Android 项目显示在此部分&ndash;中所示**代码的下方**：
+Android 项目显示在下面 &ndash; 此部分中所示代码包含在**Orm**目录中：
 
 ![Android 项目树](using-data-in-an-app-images/image14.png "Android 项目树")
 
@@ -36,7 +36,7 @@ Android 中的活动的本机 UI 代码超出了本文档的范围。 有关 UI 
 - 阅读列表
 - 读取单个记录
 
-`StockDatabase`类中的两个方法是：
+@No__t_0 类中的两个方法是：
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android 以形式`ListView`呈现数据。
+Android 以 `ListView` 的形式呈现数据。
 
 ## <a name="create-and-update"></a>创建和更新
 
-为了简化应用程序代码，提供了一个 save 方法，该方法根据 PrimaryKey 是否已设置，执行插入或更新。 由于属性`Id`是`[PrimaryKey]`用特性标记的，因此不应在代码中对其进行设置。 此方法将检测是否之前已保存值（通过检查主键属性），并相应地插入或更新对象：
+为了简化应用程序代码，提供了一个 save 方法，该方法根据 PrimaryKey 是否已设置，执行插入或更新。 由于 `Id` 属性使用 `[PrimaryKey]` 属性进行标记，因此不应在代码中对其进行设置。 此方法将检测是否之前已保存值（通过检查主键属性），并相应地插入或更新对象：
 
 ```csharp
 public int SaveStock (Stock item)
@@ -77,7 +77,7 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>删除
 
-`Delete<T>` `Stock`与和方法`Update`不同，方法只接受主键值而不接受完整的对象。 `Insert` 在此示例`Stock`中，将对象传递到方法，但仅将 Id 属性传递`Delete<T>`给方法。
+与 `Insert` 和 `Update` 方法不同，`Delete<T>` 方法只接受主键值而不接受完整的 `Stock` 对象。 在此示例中，将一个 `Stock` 对象传递到方法中，但仅将 Id 属性传递到 `Delete<T>` 方法。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -92,13 +92,13 @@ public int DeleteStock(Stock stock)
 
 某些应用程序附带已填充数据的数据库。 可以在移动应用程序中轻松完成此项工作，方法是：将现有 SQLite 数据库文件与应用程序一起传送，并将其复制到可写目录，然后再访问该文件。 由于 SQLite 是在许多平台上使用的标准文件格式，因此可以使用多种工具来创建 SQLite 数据库文件：
 
-- **SQLite 管理器 Firefox 扩展**&ndash;适用于 Mac 和 Windows，并生成与 iOS 和 Android 兼容的文件。
+- **SQLite 管理器 Firefox 扩展**&ndash; 在 Mac 和 Windows 上工作，并生成与 IOS 和 Android 兼容的文件。
 
-- **命令行**请参阅[www.sqlite.org/sqlite.html。](http://www.sqlite.org/sqlite.html) &ndash;
+- **命令行**&ndash; 参阅[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
 
 创建与应用程序一起分发的数据库文件时，请注意表和列的命名，以确保它们与代码所需的名称匹配，尤其是在使用 SQLite.NET 时，这会希望名称与C#类和属性匹配（或关联的自定义特性）。
 
-若要确保某些代码在 Android 应用中的其他任何位置之前运行，可以将其放在第一个要加载的活动中， `Application`也可以创建在任何活动之前加载的子类。 下面的代码显示了`Application`一个子类，该子类将现有数据库文件**数据**复制到 **/Resources/Raw/** 目录中。
+若要确保某些代码在 Android 应用中的其他任何位置之前运行，可以将其放在第一个要加载的活动中，也可以创建在任何活动之前加载的 `Application` 子类。 下面的代码演示了一个 `Application` 子类，该子类将现有数据库文件**数据**复制到 **/Resources/Raw/** 目录中。
 
 ```csharp
 [Application]

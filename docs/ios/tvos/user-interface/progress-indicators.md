@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70291403"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 进度指示器
@@ -55,7 +55,7 @@ Apple 对于使用进度条有以下建议：
 
 3. 在**Properties Pad**的 "**小组件**" 选项卡中，可以调整活动指示器的多个属性，如其**样式**、**行为**和**名称**： 
 
-    ![活动指示器的 "小组件" 选项卡](progress-indicators-images/activity02.png "活动指示器的 \"小组件\" 选项卡")
+    ![活动指示器的 "小组件" 选项卡](progress-indicators-images/activity02.png "活动指示器的 "小组件" 选项卡")
     
     **名称**确定属性的名称，该属性表示代码中C#的活动指示器。
 
@@ -65,7 +65,7 @@ Apple 对于使用进度条有以下建议：
 
 5. 在**属性资源管理器**的 "**小组件**" 选项卡中，可以调整进度视图的多个属性，例如其**样式**、**进度**（完成百分比）和**名称**： 
 
-    ![进度视图的 "小组件" 选项卡](progress-indicators-images/activity04.png "进度视图的 \"小组件\" 选项卡")
+    ![进度视图的 "小组件" 选项卡](progress-indicators-images/activity04.png "进度视图的 "小组件" 选项卡")
     
     **名称**在代码中C#确定表示进度视图的属性的名称。
 
@@ -77,12 +77,12 @@ Apple 对于使用进度条有以下建议：
 
 2. 从 "**工具箱**" 中将**活动指示器**拖放到视图上： 
 
-    ![活动指示器活动指示器](progress-indicators-images/activity01-vs.png
-    "")
+    ![活动指示器](progress-indicators-images/activity01-vs.png
+    "活动指示器")
 
 3. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，可以调整活动指示器的多个属性，如其**样式**、**行为**和**名称**： 
 
-    ![活动指示器的 "小组件" 选项卡](progress-indicators-images/activity02-vs.png "活动指示器的 \"小组件\" 选项卡")
+    ![活动指示器的 "小组件" 选项卡](progress-indicators-images/activity02-vs.png "活动指示器的 "小组件" 选项卡")
 
     **名称**确定属性的名称，该属性表示代码中C#的活动指示器。
 
@@ -92,7 +92,7 @@ Apple 对于使用进度条有以下建议：
 
 5. 在**属性资源管理器**的 "**小组件**" 选项卡中，可以调整进度视图的多个属性，例如其**样式**、**进度**（完成百分比）和**名称**： 
 
-    ![进度视图的 "小组件" 选项卡](progress-indicators-images/activity04-vs.png "进度视图的 \"小组件\" 选项卡")
+    ![进度视图的 "小组件" 选项卡](progress-indicators-images/activity04-vs.png "进度视图的 "小组件" 选项卡")
     
     **名称**在代码中C#确定表示进度视图的属性的名称。
 
@@ -106,7 +106,7 @@ Apple 对于使用进度条有以下建议：
 
 如上所述，当应用运行不确定长度的长进程时，应显示活动指示器。
 
-在任何时候，都可以通过检查`IsAnimating`活动指示器的属性来查看活动指示器是否已进行动画处理。 如果属性为`true`，则活动指示器在其动画停止后会自动隐藏。 `HidesWhenStopped`
+在任何时候，都可以通过检查活动指示器的 `IsAnimating` 属性来查看其是否具有动画效果。 如果 `true` `HidesWhenStopped` 属性，则活动指示器在其动画停止后会自动隐藏。
 
 你可以使用以下代码来启动动画： 
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 同样，在应用程序执行已知持续时间长的长时间运行的任务时，应使用进度栏。 
 
-`Progress`属性用于将已完成的任务量设置为 0% 到 100% （0.0 到1.0）。 使用属性可设置 "已完成空间量" 栏的颜色`TrackTintColor`和用于设置背景色（未完成数量）的属性。 `ProgressTintColor`
+@No__t_0 属性用于将已完成的任务量设置为0% 到100% （0.0 到1.0）。 使用 "`ProgressTintColor`" 属性可设置 "已完成空间量" 栏的颜色和 "`TrackTintColor`" 属性设置背景色（未完成量）。
 
 ## <a name="summary"></a>总结
 
