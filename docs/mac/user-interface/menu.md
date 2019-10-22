@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770989"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin 中的菜单
@@ -32,7 +32,7 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用菜单。它介绍了�
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用 Cocoa 菜单栏、菜单和菜单项的基本知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文。
 
-你可能想要查看 Xamarin 示例文档的[公开C#类/方法到目标-C](~/mac/internals/how-it-works.md)部分，并说明用于将C#类连接到的`Register`和`Export`特性[。](~/mac/internals/how-it-works.md)目标-C 对象和 UI 元素。
+你可能想要查看[Xamarin](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，它解释了用于将类连接到目标-c 的 `Register` 和 `Export` 属性对象和 UI 元素。
 
 ## <a name="the-applications-menu-bar"></a>应用程序的菜单栏 
 
@@ -72,11 +72,11 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用菜单。它介绍了�
 
 本文后面会介绍如何添加、编辑和删除菜单和项。 现在，我们只想查看哪些菜单和菜单项是默认可用的，以及如何通过一组预定义的插座和操作自动向代码公开这些菜单项（有关详细信息，请参阅我们的[插座和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)文档）。
 
-例如，单击 "**打开**" 菜单项的 " `openDocument:`连接"**检查器**时，可以看到它自动连接到操作： 
+例如，单击 "**打开**" 菜单项的 "**连接" 检查器**时，可以看到它自动连接到 `openDocument:` 操作： 
 
 [![查看附加的操作](menu-images/defaultbar03.png "查看附加的操作")](menu-images/defaultbar03-large.png#lightbox)
 
-如果在 "**接口" 层次结构**中选择**第一个响应**者，并在 "**连接" 检查器**中向下滚动， `openDocument:`则会看到**打开**的菜单项所附加到的操作的定义（以及多个应用程序的其他默认操作不会自动连接到控件）：
+如果在 "**接口" 层次结构**中选择**第一个响应**者，并在 "**连接" 检查器**中向下滚动，则会看到 "**打开**" 菜单项所附加到的 `openDocument:` 操作的定义（以及其他一些应用程序的默认操作，这些操作不会自动连接到控件）：
 
 [![查看所有附加的操作](menu-images/defaultbar04.png "查看所有附加的操作")](menu-images/defaultbar04-large.png#lightbox) 
 
@@ -110,26 +110,26 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用菜单。它介绍了�
 
 请注意，**剪切**、**复制**和**粘贴**项如何自动启用并完全正常运行，无需编写单行代码。 
 
-这是怎么回事？ 请记住，内置的预定义操作将连接到默认菜单项（如上所示），大多数 Cocoa 用户界面元素都是 macOS 的一部分，它们内置了与特定操作（如`copy:`）的挂钩。 因此，在将其添加到窗口、处于活动状态并选定后，会自动启用相应的菜单项或附加到该操作的项。 如果用户选择该菜单项，则将调用并执行内置于 UI 元素中的功能，而无需开发人员干预。
+这是怎么回事？ 请记住，内置的预定义操作将连接到默认菜单项（如上所示），大多数 Cocoa 用户界面元素是 macOS 的一部分，它们内置了与特定操作（如 `copy:`）的挂钩。 因此，在将其添加到窗口、处于活动状态并选定后，会自动启用相应的菜单项或附加到该操作的项。 如果用户选择该菜单项，则将调用并执行内置于 UI 元素中的功能，而无需开发人员干预。
 
 ### <a name="enabling-and-disabling-menus-and-items"></a>启用和禁用菜单和项
 
-默认情况下，每次发生用户事件时`NSMenu` ，都会根据应用程序的上下文自动启用和禁用每个可见的菜单和菜单项。 启用/禁用项的方式有三种：
+默认情况下，每次发生用户事件时，`NSMenu` 会根据应用程序的上下文自动启用和禁用每个可见的菜单和菜单项。 启用/禁用项的方式有三种：
 
-- **自动菜单启用**-如果`NSMenu`可以找到相应的对象来响应项所连接的操作，则会启用菜单项。 例如，上面的文本视图与该`copy:`操作有内置挂钩。
-- **自定义操作和 validateMenuItem：** 对于绑定到[窗口或视图控制器自定义操作](#Working-with-Custom-Window-Actions)的任何菜单项， `validateMenuItem:`可以添加操作并手动启用或禁用菜单项。
-- **启用手动菜单**-手动设置`Enabled`每个`NSMenuItem`的属性，以在菜单中单独启用或禁用每个项。
+- **自动菜单启用**-如果 `NSMenu` 可以找到相应的对象来响应项所连接的操作，则会启用菜单项。 例如，上面带有内置挂钩到 `copy:` 操作的文本视图。
+- **自定义操作和 validateMenuItem：** 对于绑定到[窗口或视图控制器自定义操作](#Working-with-Custom-Window-Actions)的任何菜单项，可以添加 `validateMenuItem:` 操作并手动启用或禁用菜单项。
+- **手动菜单启用**-您手动设置每个 `NSMenuItem` 的 `Enabled` 属性，以便单独启用或禁用菜单中的每一项。
 
-若要选择系统，请设置`AutoEnablesItems`的属性。 `NSMenu` `true`为自动（默认行为），并`false`为手动。 
+若要选择系统，请设置 `NSMenu` 的 `AutoEnablesItems` 属性。 `true` 为 "自动" （默认行为），`false` 为 "手动"。 
 
 > [!IMPORTANT]
-> 如果选择使用手动启用菜单，则不会自动更新菜单项（甚至是由 AppKit 类`NSTextView`控制的菜单项）。 你将负责手动启用和禁用代码中的所有项。
+> 如果选择使用手动启用菜单，则不会自动更新菜单项，即使这些菜单项由 AppKit 类（如 `NSTextView`）控制。 你将负责手动启用和禁用代码中的所有项。
 
 #### <a name="using-validatemenuitem"></a>使用 validateMenuItem
 
-如前所述，对于绑定到[窗口或视图控制器自定义操作](#Working-with-Custom-Window-Actions)的任何菜单项，可以添加`validateMenuItem:`操作并手动启用或禁用菜单项。
+如前所述，对于绑定到[窗口或视图控制器自定义操作](#Working-with-Custom-Window-Actions)的任何菜单项，可以添加 `validateMenuItem:` 操作并手动启用或禁用菜单项。
 
-在下面的示例中， `Tag`将使用属性来决定根据中`NSTextView`选定文本的状态， `validateMenuItem:`操作将启用/禁用的菜单项的类型。 已在每个菜单项 Interface Builder 中设置了属性：`Tag`
+在下面的示例中，`Tag` 属性将用于确定 `validateMenuItem:` 操作根据 `NSTextView` 中所选文本的状态启用/禁用的菜单项的类型。 已为每个菜单项在 Interface Builder 中设置 `Tag` 属性：
 
 ![设置 Tag 属性](menu-images/validate01.png "设置 Tag 属性")
 
@@ -156,7 +156,7 @@ public bool ValidateMenuItem (NSMenuItem item) {
 }
 ```
 
-如果运行此代码，且未在中`NSTextView`选择任何文本，则会禁用两个环绕菜单项（即使它们连接到视图控制器上的操作）：
+如果运行此代码，但在 `NSTextView` 中未选择任何文本，则会禁用两个环绕菜单项（即使它们连接到视图控制器上的操作）：
 
 ![显示禁用的项](menu-images/validate02.png "显示禁用的项")
 
@@ -170,11 +170,11 @@ public bool ValidateMenuItem (NSMenuItem item) {
 
 例如，假设我们希望用户可以使用 "**文件**" 菜单中的 "**打开**" 项来选择文件夹。 由于我们希望它是应用程序范围的函数，而不局限于给定的窗口或 UI 元素，因此，我们将添加代码来处理应用程序委托。
 
-在**Solution Pad**中，双击该`AppDelegate.CS`文件以将其打开进行编辑：
+在**Solution Pad**中，双击 `AppDelegate.CS` 文件以将其打开进行编辑：
 
 ![选择应用程序委托](menu-images/appmenu08.png "选择应用程序委托")
 
-在`DidFinishLaunching`方法下面添加以下代码：
+在 `DidFinishLaunching` 方法下面添加以下代码：
 
 ```csharp
 [Export ("openDocument:")]
@@ -197,7 +197,7 @@ void OpenDialog (NSObject sender)
 
 现在，让我们运行应用程序，然后打开 "**文件**" 菜单： 
 
-!["文件" 菜单](menu-images/appmenu09.png "\"文件\" 菜单")
+!["文件" 菜单](menu-images/appmenu09.png ""文件" 菜单")
 
 请注意，"**打开**" 菜单项现已启用。 如果选择它，将显示 "打开" 对话框：
 
@@ -207,7 +207,7 @@ void OpenDialog (NSObject sender)
 
 ![示例对话框消息](menu-images/appmenu11.png "示例对话框消息")
 
-此处的关键行是`[Export ("openDocument:")]`，它告诉`NSMenu`我们**AppDelegate**有一个方法`void OpenDialog (NSObject sender)`来响应该`openDocument:`操作。 如果你将从上面的内容中记住，默认情况下，"**打开**" 菜单项会自动连接到此操作 Interface Builder：
+此处的关键行是 `[Export ("openDocument:")]` 的，它会告知 `NSMenu` 我们的**AppDelegate**具有响应 `openDocument:` 操作的方法 `void OpenDialog (NSObject sender)`。 如果你将从上面的内容中记住，默认情况下，"**打开**" 菜单项会自动连接到此操作 Interface Builder：
 
 [![查看附加的操作](menu-images/defaultbar03.png "查看附加的操作")](menu-images/defaultbar03-large.png#lightbox)
 
@@ -215,7 +215,7 @@ void OpenDialog (NSObject sender)
 
 ### <a name="working-with-the-open-recent-menu"></a>使用 "最近打开" 菜单
 
-默认情况下，"**文件**" 菜单包含 "**打开的最近**使用的项目"，用于跟踪用户在应用中打开的最后几个文件。 如果创建的`NSDocument`是基于 Xamarin 的 Xamarin 应用，则会自动为您处理此菜单。 对于任何其他类型的 Xamarin. Mac 应用程序，你将负责手动管理和响应此菜单项。
+默认情况下，"**文件**" 菜单包含 "**打开的最近**使用的项目"，用于跟踪用户在应用中打开的最后几个文件。 如果要创建基于 `NSDocument` 的 Xamarin 应用程序，则会自动为您处理此菜单。 对于任何其他类型的 Xamarin. Mac 应用程序，你将负责手动管理和响应此菜单项。
 
 若要手动处理 "**最近打开**的菜单" 菜单，您首先需要通知它已使用以下内容打开或保存了一个新文件：
 
@@ -224,9 +224,9 @@ void OpenDialog (NSObject sender)
 NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 ```
 
-即使你的应用程序未使用`NSDocuments`，你仍可以通过`NSDocumentController`将`NSUrl`与文件的位置一起发送到`NoteNewRecentDocumentURL`的方法`SharedDocumentController`，来使用来维护 "**最近打开**" 菜单。
+即使您的应用程序未使用 `NSDocuments`，仍可通过将 `NSUrl` 与文件位置一起发送到 `SharedDocumentController` 的 `NoteNewRecentDocumentURL` 方法，使用 `NSDocumentController` 来维护 "**最近打开**" 菜单。
 
-接下来，需要重写`OpenFile`应用委托的方法，以打开用户从 "**最近打开**" 菜单中选择的任何文件。 例如:
+接下来，需要重写 app 委托的 `OpenFile` 方法，以打开用户从 "**最近打开**" 菜单中选择的任何文件。 例如:
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -242,15 +242,15 @@ public override bool OpenFile (NSApplication sender, string filename)
 }
 ```
 
-如果`true`可以打开文件，则返回; `false`否则返回，将向用户显示该文件无法打开的内置警告。
+如果可以打开文件，则返回 `true`; 否则返回 `false` 并向用户显示内置警告，指出无法打开文件。
 
-由于从 "**打开最近打开**" 菜单返回的文件名和路径可能包含一个空格，因此，需要在创建`NSUrl`之前正确地转义此字符，否则将会出现错误。 我们通过以下代码来实现此目的：
+由于从 "**最近打开**的菜单" 菜单返回的文件名和路径可能包含一个空格，因此，需要在创建 `NSUrl` 之前正确地转义该字符，否则将出现错误。 我们通过以下代码来实现此目的：
 
 ```csharp
 filename = filename.Replace (" ", "%20");
 ```
 
-最后，我们创建一个`NSUrl`指向该文件的，并使用应用程序委托中的 helper 方法打开一个新窗口，并将文件加载到其中：
+最后，我们创建一个指向该文件的 `NSUrl`，并在 app 委托中使用 helper 方法打开一个新窗口，并将该文件加载到其中：
 
 ```csharp
 var url = new NSUrl ("file://"+filename);
@@ -392,7 +392,7 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 }
 ```
 
-我们设计`ViewController`的类在其`Path`属性中包含文件的路径。 接下来，我们循环遍历应用程序中所有当前打开的窗口。 如果该文件已在一个窗口中打开，则会使用以下内容将其置于所有其他窗口的前端：
+我们将 `ViewController` 类设计为在其 `Path` 属性中保存文件的路径。 接下来，我们循环遍历应用程序中所有当前打开的窗口。 如果该文件已在一个窗口中打开，则会使用以下内容将其置于所有其他窗口的前端：
 
 ```csharp
 NSApplication.SharedApplication.Windows[n].MakeKeyAndOrderFront(this);
@@ -439,7 +439,7 @@ public void defineKeyword (NSObject sender) {
 
 ![特性检查器](menu-images/action01.png "特性检查器")
 
-单击 **+** 底部的按钮 **属性检查器** 添加新的自定义操作：
+单击 "**属性" 检查器**底部的 " **+** " 按钮，添加新的自定义操作：
 
 ![添加新操作](menu-images/action02.png "添加新操作")
 
@@ -447,7 +447,7 @@ public void defineKeyword (NSObject sender) {
 
 ![编辑操作名称](menu-images/action03.png "编辑操作名称")
 
-按住 ctrl 的同时单击菜单项并将其拖至**应用程序场景**下的**第一个响应**程序。 从弹出列表中，选择刚创建的新操作（`defineKeyword:`在本示例中为）：
+按住 ctrl 的同时单击菜单项并将其拖至**应用程序场景**下的**第一个响应**程序。 从弹出列表中，选择刚创建的新操作（在本示例中为 `defineKeyword:`）：
 
 ![附加操作](menu-images/action04.png "附加操作")
 
@@ -469,7 +469,7 @@ public void defineKeyword (NSObject sender) {
 
 对于我们的特定 Xamarin 应用程序，我们不会使用默认的 "**视图**" 菜单，因此我们要将其删除。 在 "**接口层次结构**" 中，选择作为主菜单栏一部分的 "**视图**" 菜单项：
 
-![选择 "视图" 菜单项](menu-images/maint02.png "选择 \"视图\" 菜单项")
+![选择 "视图" 菜单项](menu-images/maint02.png "选择 "视图" 菜单项")
 
 按 delete 或 backspace 删除菜单。 接下来，我们不会使用 "**格式**" 菜单中的所有项，而是希望在子菜单下移动要使用的项。 在 "**接口层次结构**" 中，选择以下菜单项：
 
@@ -477,7 +477,7 @@ public void defineKeyword (NSObject sender) {
 
 将父**菜单**下的项从当前所在的子菜单中拖放：
 
-[将![菜单项拖至父菜单]将(menu-images/maint04.png "菜单项拖至父菜单")](menu-images/maint04-large.png#lightbox)
+[![将菜单项拖至父菜单](menu-images/maint04.png "将菜单项拖至父菜单")](menu-images/maint04-large.png#lightbox)
 
 菜单现在应如下所示：
 
@@ -485,11 +485,11 @@ public void defineKeyword (NSObject sender) {
 
 接下来，将**文本**子菜单从 "**格式**" 菜单中拖出，并将其放在 "**格式**" 菜单和 "**窗口**" 菜单之间的主菜单栏上：
 
-[!["文本" 菜单](menu-images/maint06.png "\"文本\" 菜单")](menu-images/maint06-large.png#lightbox)
+[!["文本" 菜单](menu-images/maint06.png ""文本" 菜单")](menu-images/maint06-large.png#lightbox)
 
 让我们返回 "**格式**" 菜单，并删除**字体**子菜单项。 接下来，选择 "**格式**" 菜单，然后将其重命名为 "Font"：
 
-[!["字体" 菜单](menu-images/maint07.png "\"字体\" 菜单")](menu-images/maint07-large.png#lightbox)
+[!["字体" 菜单](menu-images/maint07.png ""字体" 菜单")](menu-images/maint07-large.png#lightbox)
 
 接下来，让我们创建一个预定义短语的自定义菜单，该菜单将在选中时自动追加到文本视图中的文本上。 在 "**库" 检查器**底部的 "搜索" 框中，键入 "菜单"。 这样，就可以更轻松地查找和使用所有菜单 UI 元素：
 
@@ -535,7 +535,7 @@ public void defineKeyword (NSObject sender) {
     [![已完成的操作](menu-images/maint19.png "已完成的操作")](menu-images/maint19-large.png#lightbox)
 5. 保存对菜单栏所做的更改。
 
-接下来，我们需要为文本视图创建一个插座，以便我们可以从代码调整其内容。 在**助手编辑器**中选择 " `documentText` **ViewController** " 文件，然后创建一个名为的新插座：
+接下来，我们需要为文本视图创建一个插座，以便我们可以从代码调整其内容。 在**助手编辑器**中选择 " **ViewController** " 文件，然后创建一个名为 `documentText` 的新插座：
 
 [![创建输出口](menu-images/maint20.png "创建输出口")](menu-images/maint20-large.png#lightbox)
 
@@ -606,7 +606,7 @@ namespace MacMenus
 }
 ```
 
-这会在`ViewController`类的外部公开文本视图的文本，并在窗口获得或失去焦点时通知应用程序委托。 现在，编辑**AppDelegate.cs**文件并使其类似于以下内容：
+这会在 `ViewController` 类之外公开文本视图的文本，并在窗口获得或失去焦点时通知应用程序委托。 现在，编辑**AppDelegate.cs**文件并使其类似于以下内容：
 
 ```csharp
 using AppKit;
@@ -682,7 +682,7 @@ namespace MacMenus
 }
 ```
 
-这里，我们已创建`AppDelegate`了一个分部类，以便我们可以使用在 Interface Builder 中定义的操作和插座。 我们还将公开`textEditor`以跟踪当前处于焦点的窗口。
+这里，我们将 `AppDelegate` 一个分部类，以便我们可以使用我们在 Interface Builder 中定义的操作和插座。 我们还公开了一个 `textEditor` 来跟踪当前处于焦点的窗口。
 
 以下方法用于处理自定义菜单和菜单项：
 
@@ -773,7 +773,7 @@ namespace AppKit.TextKit.Formatter
 
 #### <a name="adding-menus-and-items"></a>添加菜单和项
 
-定义此类后，以下例程将分析`LanguageFormatCommand`对象的集合，并以递归方式生成新菜单和菜单项，方法是将它们追加到已传入的现有菜单（在 Interface Builder 中创建）的底部：
+定义此类后，以下例程将分析 `LanguageFormatCommand`objects 的集合，并通过将新菜单和菜单项追加到已传入的现有菜单（在 Interface Builder 中创建）的底部，来以递归方式生成它们：
 
 ```csharp
 private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
@@ -805,7 +805,7 @@ private void AssembleMenu(NSMenu menu, List<LanguageFormatCommand> commands) {
 }
 ``` 
 
-对于具有`LanguageFormatCommand`空白`Title`属性的任何对象，此例程会在菜单部分之间创建一个**分隔符菜单项**（窄灰色线条）：
+对于具有空白 `Title` 属性的任何 `LanguageFormatCommand` 对象，此例程在菜单部分之间创建一个**分隔符菜单项**（一条细长的灰色线）：
 
 ```csharp
 menuItem = NSMenuItem.SeparatorItem;
@@ -817,7 +817,7 @@ menuItem = NSMenuItem.SeparatorItem;
 menuItem = new NSMenuItem (command.Title);
 ``` 
 
-如果对象包含子`LanguageFormatCommand`对象，则会创建一个子`AssembleMenu`菜单，并递归调用方法以生成该菜单： `LanguageFormatCommand`
+如果 `LanguageFormatCommand` 对象包含子 `LanguageFormatCommand` 对象，则将创建一个子菜单，并递归调用 `AssembleMenu` 方法以生成该菜单：
 
 ```csharp
 menuItem.Submenu = new NSMenu (command.Title);
@@ -835,7 +835,7 @@ menuItem.Activated += (sender, e) => {
 
 #### <a name="testing-the-menu-creation"></a>测试菜单创建
 
-如果已创建了以下`LanguageFormatCommand`对象集合，则所有上述代码都已准备就绪：
+如果已创建了以下 `LanguageFormatCommand` 对象的集合，则所有上述代码都已准备就绪：
 
 ```csharp
 // Define formatting commands
@@ -865,13 +865,13 @@ FormattingCommands.Add(new LanguageFormatCommand("Image","![](",")"));
 FormattingCommands.Add(new LanguageFormatCommand("Image Link","[![](",")](LinkImageHere)"));
 ```
 
-并且传递到`AssembleMenu`函数的集合（**格式**设置菜单设置为 "基本"），则将创建以下动态菜单和菜单项：
+并且该集合传递到 `AssembleMenu` 函数（将 "**格式**" 菜单设置为 "基本"），则将创建以下动态菜单和菜单项：
 
 ![正在运行的应用中的新菜单项](menu-images/dynamic01.png "正在运行的应用中的新菜单项")
 
 #### <a name="removing-menus-and-items"></a>删除菜单和项
 
-如果需要从应用程序的用户界面删除任何菜单项或菜单项，可以使用`RemoveItemAt` `NSMenu`类的方法，只需为其提供要删除的项的从零开始的索引。
+如果需要从应用程序的用户界面删除任何菜单项或菜单项，则只需为其提供要删除的项的从零开始的索引，即可使用 `NSMenu` 类的 `RemoveItemAt` 方法。
 
 例如，若要删除以上例程创建的菜单和菜单项，可以使用以下代码：
 
@@ -916,13 +916,13 @@ public void UnpopulateFormattingMenu(NSMenu menu) {
     [![设置 segue 类](menu-images/context10.png "设置 segue 类")](menu-images/context10-large.png#lightbox)
 6. 切换回 Visual Studio for Mac 进行同步，然后返回到 Interface Builder。
 7. 切换到 "**助手编辑器**"，然后选择 " **PanelViewController** " 文件。
-8. 为名`propertyDocument`为的**文档**菜单项创建操作： 
+8. 为名为 `propertyDocument` 的**文档**菜单项创建操作： 
 
     [![配置操作](menu-images/context06.png "配置操作")](menu-images/context06-large.png#lightbox)
 9. 为其余菜单项重复创建操作： 
 
     [![必需的操作](menu-images/context07.png "必需的操作")](menu-images/context07-large.png#lightbox)
-10. 最后，为名`propertyLabel`为的**属性标签**创建一个插座： 
+10. 最后，为名为 `propertyLabel` 的**属性标签**创建一个插座： 
 
     [![配置插座](menu-images/context08.png "配置插座")](menu-images/context08-large.png#lightbox)
 11. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
@@ -953,7 +953,7 @@ partial void propertyText (Foundation.NSObject sender) {
 
 状态栏菜单显示状态菜单项的集合，这些项提供与用户的交互或对用户的反馈，如用于反映应用程序状态的菜单或图像。 即使应用程序在后台运行，应用程序的状态栏菜单也处于启用状态和活动状态。 系统范围的状态栏位于应用程序菜单栏的右侧，并且是当前在 macOS 中可用的唯一状态栏。
 
-让我们编辑**AppDelegate.cs**文件，并使该`DidFinishLaunching`方法如下所示：
+让我们编辑**AppDelegate.cs**文件，并使 `DidFinishLaunching` 方法如下所示：
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -992,7 +992,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;`向我们提供对系统范围状态栏的访问权限。 `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);`创建新的状态栏项。 在这里，我们创建一个菜单和多个菜单项，并将菜单附加到刚刚创建的状态栏项。 
+`NSStatusBar statusBar = NSStatusBar.SystemStatusBar;` 允许我们访问系统范围内的状态栏。 `var item = statusBar.CreateStatusItem (NSStatusItemLength.Variable);` 创建新的状态栏项目。 在这里，我们创建一个菜单和多个菜单项，并将菜单附加到刚刚创建的状态栏项。 
 
 如果运行该应用程序，将显示新的状态栏项目。 从菜单中选择一项将更改文本视图中的文本： 
 
@@ -1008,25 +1008,25 @@ public override void DidFinishLaunching (NSNotification notification)
 
 接下来，让我们为应用程序创建自定义停靠菜单：
 
-1. 在 Visual Studio for Mac 中，右键单击应用程序的项目，然后选择 "**添加** > " "**新文件 ...** "在 "新建文件" 对话框中，选择 " **Xamarin** > "**空接口定义**，使用 "DockMenu"**作为名称**，然后单击 "**新建**" 按钮创建新的**xib**文件：
+1. 在 Visual Studio for Mac 中，右键单击应用程序的项目，然后选择 "**添加** > **新文件 ...** "在 "新建文件" 对话框中，选择 " **Xamarin** "  > **空接口定义**，使用 "DockMenu"**作为名称**，然后单击 "**新建**" 按钮以创建新的**DockMenu**文件：
 
     ![添加空界面定义](menu-images/dock02.png "添加空界面定义")
 2. 在**Solution Pad**中，双击**DockMenu xib**文件以将其打开，以便在 Xcode 中进行编辑。 创建具有以下项的新**菜单**：**地址**、**日期**、**问候**和**签名** 
 
     [![布局 UI](menu-images/dock03.png "布局 UI")](menu-images/dock03-large.png#lightbox)
-3. 接下来，让我们将新的菜单项连接到在上面的 "[添加、编辑和删除菜单](#Adding,_Editing_and_Deleting_Menus)" 部分为自定义菜单创建的现有操作。 切换到**连接检查器**，并选择**接口层次结构**中的**第一个响应方**。 向下滚动并找到`phraseAddress:`操作。 将该操作上的圆圈中的线条拖到**Address**菜单项：
+3. 接下来，让我们将新的菜单项连接到在上面的 "[添加、编辑和删除菜单](#Adding,_Editing_and_Deleting_Menus)" 部分为自定义菜单创建的现有操作。 切换到**连接检查器**，并选择**接口层次结构**中的**第一个响应方**。 向下滚动并查找 `phraseAddress:` 操作。 将该操作上的圆圈中的线条拖到**Address**菜单项：
 
     [![拖放操作](menu-images/dock04.png "拖放操作")](menu-images/dock04-large.png#lightbox)
 4. 对附加到相应操作的所有其他菜单项重复操作： 
 
     [![必需的操作](menu-images/dock05.png "必需的操作")](menu-images/dock05-large.png#lightbox)
-5. 接下来，在**接口层次结构**中选择**应用程序**。 在 "**连接检查器**" 中，将线条从`dockMenu`插座上的圆圈拖到刚刚创建的菜单：
+5. 接下来，在**接口层次结构**中选择**应用程序**。 在**连接检查器**中，将线条从 `dockMenu` 插座上的圆圈拖到刚刚创建的菜单：
 
-    [将![网络向上拖动到插座上]将(menu-images/dock06.png "网络向上拖动到插座上")](menu-images/dock06-large.png#lightbox)
+    [![将网络向上拖动到插座上](menu-images/dock06.png "将网络向上拖动到插座上")](menu-images/dock06-large.png#lightbox)
 6. 保存更改并切换回 Visual Studio for Mac 以便与 Xcode 同步。
 7. 双击**info.plist**文件以将其打开进行编辑： 
 
-    [![编辑 Info.plist 文件](menu-images/dock07.png "编辑 Info.plist 文件")](menu-images/dock07-large.png#lightbox)
+    [![编辑 info.plist 文件](menu-images/dock07.png "编辑 info.plist 文件")](menu-images/dock07-large.png#lightbox)
 8. 单击屏幕底部的 "**源**" 选项卡： 
 
     [![选择源视图](menu-images/dock08.png "选择源视图")](menu-images/dock08-large.png#lightbox)
@@ -1051,10 +1051,10 @@ public override void DidFinishLaunching (NSNotification notification)
 1. 编辑 Xcode 中的**主情节提要**文件，并将**弹出按钮**从**库检查器**拖到我们在[上下文菜单](#Contextual_Menus)部分中创建的**面板**窗口： 
 
     [![添加弹出按钮](menu-images/popup01.png "添加弹出按钮")](menu-images/popup01-large.png#lightbox)
-2. 添加新的菜单项，并将弹出项的标题设置为：**地址**、**日期**、**问候**和**签名** 
+2. 添加新的菜单项，并将 Popup 中项的标题设置为： **Address**、 **Date**、**问候语**和**签名** 
 
     [![配置菜单项](menu-images/popup02.png "配置菜单项")](menu-images/popup02-large.png#lightbox)
-3. 接下来，让我们将新的菜单项连接到在上面的[添加、编辑和删除菜单](#Adding,_Editing_and_Deleting_Menus)部分中为自定义菜单创建的现有操作。 切换到**连接检查器**，并选择**接口层次结构**中的**第一个响应方**。 向下滚动并找到`phraseAddress:`操作。 将该操作上的圆圈中的线条拖到**Address**菜单项： 
+3. 接下来，让我们将新的菜单项连接到在上面的[添加、编辑和删除菜单](#Adding,_Editing_and_Deleting_Menus)部分中为自定义菜单创建的现有操作。 切换到**连接检查器**，并选择**接口层次结构**中的**第一个响应方**。 向下滚动并查找 `phraseAddress:` 操作。 将该操作上的圆圈中的线条拖到**Address**菜单项： 
 
     [![拖放操作](menu-images/popup03.png "拖放操作")](menu-images/popup03-large.png#lightbox)
 4. 对附加到相应操作的所有其他菜单项重复操作： 

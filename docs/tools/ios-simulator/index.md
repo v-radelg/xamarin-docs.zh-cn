@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2019
 ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289698"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>适用于 Windows 的远程 iOS 模拟器
@@ -34,7 +34,7 @@ ms.locfileid: "70289698"
 
 - **Home** –模拟 iOS 设备上的 "主页" 按钮。
 - **锁定**–锁定模拟器（轻扫以解锁）。
-- **屏幕快照**–保存模拟器的屏幕截图（存储在**Pictures\Xamarin\iOS 模拟器\\** 中）。
+- **屏幕快照**–保存模拟器的屏幕截图（存储在**Pictures\Xamarin\iOS 模拟器 \\** ）中。
 - [**设置**](#settings)–显示键盘、位置和其他设置。
 - [**其他选项**](#other-options)–提供各种模拟器选项，如旋转、摇动手势和 Touch ID。
 
@@ -69,6 +69,6 @@ Windows 计算机上未听到 iOS 声音。
 
 若要禁用适用于 Windows 的远程 iOS 模拟器，请导航到 "**工具" > 选项 "> Xamarin > IOS 设置**"，并取消选中 "**远程模拟器到 Windows**"。
 
-[用于![使用模拟器的复选框]用于(images/options-sml.png "使用模拟器的复选框")](images/options.png#lightbox)
+[![用于使用模拟器的复选框](images/options-sml.png "用于使用模拟器的复选框")](images/options.png#lightbox)
 
 禁用此选项后，调试将在连接的 Mac 生成主机上打开 iOS 模拟器。

@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70767017"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin iOS 应用中的数据存储简介
 
 ## <a name="when-to-use-a-database"></a>何时使用数据库
 
-虽然移动设备的存储和处理能力正在增加，但手机和平板电脑仍然会滞后于&amp;其桌面便携式计算机的背面。 出于此原因，需要花费一些时间来规划应用的数据存储体系结构，而不是仅仅假设数据库始终是正确的答案。 有多种不同的选项可满足不同的要求，例如：
+虽然移动设备的存储和处理能力增加，但手机和平板电脑仍会在其桌面 &amp; 便携式计算机上保持不变。 出于此原因，需要花费一些时间来规划应用的数据存储体系结构，而不是仅仅假设数据库始终是正确的答案。 有多种不同的选项可满足不同的要求，例如：
 
 - **首选项**– iOS 提供用于存储简单的键值对的内置机制。 如果要存储简单的用户设置或少量数据（如个性化信息），请使用平台的本机功能来存储此类信息。 对于 iOS，还可以利用此数据的 iCloud 同步，这两种数据都适用于具有多个设备的用户的备份和同步。
 - **文本文件**-已下载内容的用户输入或缓存（例如 HTML）可以直接存储在文件系统上。 使用适当的文件命名约定来帮助您组织文件和查找数据。

@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70758137"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin 应用中的辅助功能
@@ -28,7 +28,7 @@ _确保你的应用程序可由最广泛的受众使用_
 - [**Android 辅助功能**](~/android/app-fundamentals/accessibility.md)
 - [**iOS 辅助功能**](~/ios/app-fundamentals/accessibility.md)
 - [**OS X 辅助功能**](~/mac/app-fundamentals/accessibility.md)
-- [**Xamarin.Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [**Xamarin. Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
 
 <a name="checklist" />
 

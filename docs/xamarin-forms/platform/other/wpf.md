@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
 ms.openlocfilehash: 38d9b42b3a29ea46d05a1d1cc4e38641d2445786
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71997173"
 ---
 # <a name="wpf-platform-setup"></a>WPF 平台安装
@@ -42,13 +42,13 @@ Xamarin 目前对 Windows Presentation Foundation （WPF）提供预览版支持
 
 3. 使用**wpf**扩展键入项目的名称，例如**BoxViewClock**。 单击 "**浏览**" 按钮，选择 " **BoxViewClock** " 文件夹，然后按 "**选择文件夹**"。 这会将 WPF 项目放在与解决方案中的其他项目相同的目录中。
 
-    ![添加新的 wpf 项目](wpf-images/add-new-project.png "添加新的 wpf 项目")
+    ![添加新的 WPF 项目](wpf-images/add-new-project.png "添加新的 WPF 项目")
 
     按 "确定" 创建项目。
 
 4. 在**解决方案资源管理器**中，右键单击新的 " **BoxViewClock** " 项目，然后选择 "**管理 NuGet 包**"。 选择 "**浏览**" 选项卡，单击 "**包括预发行**版" 复选框，然后搜索 " **Xamarin**"。
 
-    ![选择 nuget]包(wpf-images/select-nuget-package.png "选择 nuget 包")
+    ![选择 NuGet 包](wpf-images/select-nuget-package.png "选择 NuGet 包")
 
     选择该程序包，然后单击 "**安装**" 按钮。
 
@@ -56,11 +56,11 @@ Xamarin 目前对 Windows Presentation Foundation （WPF）提供预览版支持
 
 6. 在**解决方案资源管理器**中右键单击解决方案名称，然后选择 "**管理解决方案的 NuGet 包**"。 选择 "**更新**" 选项卡和 " **Xamarin** " 包。 选择所有项目，并将其更新到相同的 Xamarin 版本：
 
-    ![更新]nuget 包(wpf-images/update-nuget-package.png "更新 nuget 包")
+    ![更新 NuGet 包](wpf-images/update-nuget-package.png "更新 NuGet 包")
 
 7. 在 WPF 项目中，右键单击 "**引用**"。 在 "**引用管理器**" 对话框中，选择左侧的 "**项目**"，然后选中 " **BoxViewClock** " 项目旁边的复选框：
 
-    ![引用]共享项目(wpf-images/reference-shared-project.png "引用共享项目")
+    ![引用共享项目](wpf-images/reference-shared-project.png "引用共享项目")
 
 8. 编辑 WPF 项目的**mainwindow.xaml**文件。 在 `Window` 标记中，为**Xamarin**程序集和命名空间添加 XML 命名空间声明：
 
@@ -68,7 +68,7 @@ Xamarin 目前对 Windows Presentation Foundation （WPF）提供预览版支持
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    现在，将 `Window` 标记更改为 `wpf:FormsApplicationPage`。 将 @no__t 设置为应用程序的名称，例如**BoxViewClock**。 已完成的 XAML 文件应如下所示：
+    现在，将 `Window` 标记更改为 `wpf:FormsApplicationPage`。 将 `Title` 设置更改为应用程序的名称，例如**BoxViewClock**。 已完成的 XAML 文件应如下所示：
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -93,14 +93,14 @@ Xamarin 目前对 Windows Presentation Foundation （WPF）提供预览版支持
     using Xamarin.Forms.Platform.WPF;
     ```
 
-    将 @no__t 的基类从 `Window` 更改为 `FormsApplicationPage`。 在 `InitializeComponent` 调用之后，添加以下两个语句：
+    将 `MainWindow` 的基类从 `Window` 更改为 `FormsApplicationPage`。 在 `InitializeComponent` 调用之后，添加以下两个语句：
 
     ```csharp
     Forms.Init();
     LoadApplication(new BoxViewClock.App());
     ```
 
-    除了注释和未使用的 `using` 指令以外，完整的**MainWindows.xaml.cs**文件应如下所示：
+    完整的**MainWindows.xaml.cs**文件应如下所示： `using`
 
     ```csharp
     using Xamarin.Forms;
@@ -123,7 +123,7 @@ Xamarin 目前对 Windows Presentation Foundation （WPF）提供预览版支持
 
 10. 在**解决方案资源管理器**中右键单击 WPF 项目，然后选择 "**设为启动项目**"。 按 F5，在 Windows 桌面上通过 Visual Studio 调试器运行程序：
 
-    ![Wpf BoxView 时钟](wpf-images/wpf-boxviewclock.png "wpf BoxView 时钟" )
+    ![WPF BoxView 时钟](wpf-images/wpf-boxviewclock.png "WPF BoxView 时钟" )
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -131,7 +131,7 @@ Xamarin 目前对 Windows Presentation Foundation （WPF）提供预览版支持
 
 可以从代码或 XAML 确定你的 Xamarin 应用程序应用程序在哪个平台上运行。 这使您可以在 WPF 上运行时更改程序特征。 在代码中，将 `Device.RuntimePlatform` 的值与 `Device.WPF` 常量（等于字符串 "WPF"）进行比较。 如果存在匹配项，则应用程序在 WPF 上运行。
 
-在 XAML 中，可以使用 `OnPlatform` 标记选择特定于平台的属性值：
+在 XAML 中，可以使用 `OnPlatform` 标记来选择特定于该平台的属性值：
 
 ```xaml
 <Button.TextColor>

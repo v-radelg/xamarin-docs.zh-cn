@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
 ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "72273109"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板电脑和桌面应用的布局
@@ -42,7 +42,7 @@ Xamarin 模板通过将**info.plist > 设备**设置配置为**通用**（这意
 在 iOS 9 之前，所有应用程序都在设备上占用整个屏幕，但有些 Ipad 现在可以执行[拆分屏幕多任务](~/ios/platform/multitasking.md)。
 这意味着，你的应用程序可能会在屏幕的一侧（50% 的宽度）或整个屏幕上只占用一个超薄柱形。
 
-[![](tablet-images/ipad-sml.png "iPad 拆分屏幕示例")](tablet-images/ipad.png#lightbox "iPad 拆分屏幕示例")
+[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
 
 拆分屏幕功能意味着您应该将您的应用程序设计为在最大宽度为320像素的情况下正常工作，或者尽可能多1366像素。
 
@@ -59,7 +59,7 @@ Android 生态系统提供多种受支持的屏幕大小（从小手机到大平
 
 除了运行全屏外，还可以将 Windows 平板电脑和桌面上运行的应用调整为任意尺寸。
 
-[![](tablet-images/splitscreen-sml.png "Windows 拆分屏幕示例")](tablet-images/splitscreen.png#lightbox "Windows 拆分屏幕示例")
+[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
 <a name="optimize" />
 
@@ -67,7 +67,7 @@ Android 生态系统提供多种受支持的屏幕大小（从小手机到大平
 
 你可以根据手机或平板电脑/桌面设备是否正在使用来调整 Xamarin. Forms 用户界面。 这意味着你可以优化大屏幕设备（如平板电脑和台式计算机）的用户体验。
 
-### <a name="deviceidiom"></a>Device.Idiom
+### <a name="deviceidiom"></a>Device。
 
 可以使用[`Device`](~/xamarin-forms/platform/device.md)类更改应用或用户界面的行为。 使用 `Device.Idiom` 枚举可以
 
@@ -84,9 +84,9 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 ### <a name="leveraging-masterdetailpage"></a>利用 MasterDetailPage
 
-[@No__t-1](xref:Xamarin.Forms.MasterDetailPage)非常适合用于更大的屏幕，特别是在 iPad 上，它使用[`UISplitViewController`](xref:UIKit.UISplitViewController)提供本机 iOS 体验。
+[@No__t_1](xref:Xamarin.Forms.MasterDetailPage)适用于较大的屏幕，特别是在 iPad 上，它使用[`UISplitViewController`](xref:UIKit.UISplitViewController)提供本机 iOS 体验。
 
-查看[此 Xamarin 博客文章](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)，了解如何改编你的用户界面，以便手机使用一个布局，而较大的屏幕可以使用另一个布局（@no__t 为-1）。
+查看[此 Xamarin 博客文章](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)，了解如何改编你的用户界面，以便手机使用一个布局，较大的屏幕可以使用另一个布局（与 `MasterDetailPage` 一起使用）。
 
 ## <a name="related-links"></a>相关链接
 

@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68739179"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本地数据库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程序，如此即可在共享代码中加载和保存对象。本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 读取和写入数据到本地 SQLite 数据库。_
+_Xamarin 使用 SQLite 数据库引擎支持数据库驱动的应用程序，这样就可以在共享代码中加载和保存对象。本文介绍如何使用 SQLite.Net 在本地 SQLite 数据库中读取和写入数据。_
 
 ## <a name="overview"></a>概述
 
@@ -26,7 +26,7 @@ Xamarin.Forms 应用程序可以使用 [SQLite.NET PCL NuGet](https://www.nuget.
 
 随附的[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)是一个简单的待办事项列表应用程序。 以下屏幕截图显示示例在每个平台上的显示方式：
 
-[![Xamarin. Forms 数据库示例屏幕快照](databases-images/todo-list-sml.png "TodoList 首页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList 首页屏幕截图")[ ![Xamarin 数据库示例屏幕]快照(databases-images/todo-list-sml.png "TodoList 首页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList 首页屏幕截图")
+[![Xamarin 数据库示例屏幕快照](databases-images/todo-list-sml.png "TodoList 首页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList 首页屏幕截图") [ ![xamarin. 窗体数据库示例屏幕截图](databases-images/todo-list-sml.png "TodoList 首页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList 首页屏幕截图")
 
 <a name="Using_SQLite_with_PCL" />
 
@@ -34,7 +34,7 @@ Xamarin.Forms 应用程序可以使用 [SQLite.NET PCL NuGet](https://www.nuget.
 
 若要将 SQLite 支持添加到 Xamarin.Forms.NET Standard 库，请使用 NuGet 的搜索功能查找 sqlite-net-pcl 并安装最新包：
 
-![添加 NuGet SQLite.NET PCL 包](databases-images/vs2017-sqlite-pcl-nuget.png "Add NuGet SQLite.NET PCL Package")
+![添加 NuGet SQLite.NET PCL 包](databases-images/vs2017-sqlite-pcl-nuget.png "添加 NuGet SQLite.NET PCL 包")
 
 有多个 NuGet 包名称类似，正确的包具有以下属性：
 

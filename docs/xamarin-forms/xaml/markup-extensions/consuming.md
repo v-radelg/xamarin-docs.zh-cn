@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/18/2019
-ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.date: 09/27/2019
+ms.openlocfilehash: a8698975d2609599e1404fbb9c87c617a54f23d7
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "69887912"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696350"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
 
@@ -32,10 +32,11 @@ XAML 标记扩展允许从多个源设置元素特性，从而帮助提高 XAML 
 
 其他 xaml 实现一直以来已支持其他 xaml 标记扩展，Xamarin 也支持。 其他文章中更全面地描述了这些内容：
 
-- `StaticResource` &ndash; 从资源字典引用对象，如[**资源字典**](~/xamarin-forms/xaml/resource-dictionaries.md)一文中所述。
-- `DynamicResource` &ndash; 响应资源字典中对象的更改，如[**动态样式**](~/xamarin-forms/user-interface/styles/dynamic.md)一文中所述。
-- `Binding` &ndash; 在两个对象的属性之间建立链接，如[**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文中所述。
-- `TemplateBinding` &ndash; 从控件模板执行数据绑定，如[**从控件模板绑定一**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)文中所述。
+- `StaticResource` 引用资源字典中的对象，如[**资源**](~/xamarin-forms/xaml/resource-dictionaries.md)字典一文中所述。
+- `DynamicResource`-响应资源字典中对象的更改，如[**动态样式**](~/xamarin-forms/user-interface/styles/dynamic.md)一文中所述。
+- `Binding`-在两个对象的属性之间建立链接，如[**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文中所述。
+- `TemplateBinding`-从控件模板执行数据绑定，如[**从控件模板绑定一**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)文中所述。
+- `RelativeSource`-设置相对于绑定目标位置的绑定源，如[相关绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)一文中所述。
 
 [@No__t_1](xref:Xamarin.Forms.RelativeLayout)布局会[`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)使用自定义标记扩展。 [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)一文中介绍了此标记扩展。
 
@@ -481,7 +482,7 @@ public partial class TypeDemoPage : ContentPage
 > [!NOTE]
 > XAML 分析器允许将[`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension)类缩写为 `OnPlatform`。
 
-@No__t_0 属性是 `OnPlatformExtension` 的 content 属性。 因此，对于用大括号表示的 XAML 标记表达式，可以消除表达式的 `Default=` 部分，前提是它是第一个参数。
+@No__t_0 属性是 `OnPlatformExtension` 的 content 属性。 因此，对于用大括号表示的 XAML 标记表达式，可以消除表达式的 `Default=` 部分，前提是它是第一个参数。 如果未设置 `Default` 属性，则默认情况下，它将默认为[`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue)属性值，前提是标记扩展以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)为目标。
 
 > [!IMPORTANT]
 > XAML 分析器需要向使用 `OnPlatform` 标记扩展的属性提供正确类型的值。 如果类型转换是必需的，则 `OnPlatform` 标记扩展将尝试使用由 Xamarin 提供的默认转换器执行该转换。 但是，某些类型转换无法由默认转换器执行，在这些情况下，应将 `Converter` 属性设置为 `IValueConverter` 实现。

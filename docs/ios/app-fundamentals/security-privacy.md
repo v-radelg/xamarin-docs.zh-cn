@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
 ms.openlocfilehash: 7847148551c20dbcf49bcc263bdc50716a6ef14e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70283174"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 安全和隐私功能
@@ -26,10 +26,10 @@ Apple 在 iOS 10 （及更高版本）中对安全和隐私进行了多项改进
 
 IOS 10 中对安全和隐私进行了以下常规更改：
 
-- Common Data Security 体系结构 (CDSA) API 已弃用, 应该替换为 SecKey API 以生成非对称密钥。
-- 新`NSAllowsArbitraryLoadsInWebContent`密钥可以添加到应用的**info.plist**文件中，并允许在应用程序的其余部分仍启用 Apple 传输安全（ATS）保护时正确加载网页。 有关详细信息，请参阅我们的[应用传输安全](~/ios/app-fundamentals/ats.md)文档。
-- 由于 iOS 10 和 macOS Sierra 中的新剪贴板允许用户在设备之间进行复制和粘贴, 因此已将 API 扩展为允许将剪贴板限制为特定设备, 并在给定的时间戳自动清除。 此外, 已命名的 pasteboards 不再保留, 并且应替换为共享粘贴板容器。
-- 对于所有 SSL/TLS 连接, 默认情况下, RC4 对称密码处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，并且建议开发人员尽快使用 SHA-1 和3DES 加密。
+- Common Data Security 体系结构（CDSA） API 已弃用，应该替换为 SecKey API 以生成非对称密钥。
+- 可以将新的 `NSAllowsArbitraryLoadsInWebContent` 密钥添加到应用的**info.plist**文件中，并在应用程序的其余部分仍启用 Apple 传输安全（ATS）保护时，使网页正确加载。 有关详细信息，请参阅我们的[应用传输安全](~/ios/app-fundamentals/ats.md)文档。
+- 由于 iOS 10 和 macOS Sierra 中的新剪贴板允许用户在设备之间进行复制和粘贴，因此已将 API 扩展为允许将剪贴板限制为特定设备，并在给定的时间戳自动清除。 此外，已命名的 pasteboards 不再保留，并且应替换为共享粘贴板容器。
+- 对于所有 SSL/TLS 连接，默认情况下，RC4 对称密码处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，并且建议开发人员尽快使用 SHA-1 和3DES 加密。
 
 <a name="Accessing-Private-User-Data" />
 
@@ -44,23 +44,23 @@ IOS 10 中对安全和隐私进行了以下常规更改：
 
 - **隐私-Apple Music 使用说明**（`NSAppleMusicUsageDescription`）-允许开发人员描述应用要访问用户的媒体库的原因。
 - **隐私-蓝牙外围设备使用说明**（`NSBluetoothPeripheralUsageDescription`）-允许开发人员描述应用要在用户设备上访问蓝牙的原因。
-- **隐私-日历使用说明**（`NSCalendarsUsageDescription`）-允许开发人员描述应用程序要访问用户的日历的原因。
-- **隐私-照相机使用说明**（`NSCameraUsageDescription`）-允许开发人员描述应用程序要访问设备照相机的原因。
-- **隐私-联系人使用说明**（`NSContactsUsageDescription`）-允许开发人员描述应用程序要访问用户的联系人的原因。
+- **隐私-日历使用说明**（`NSCalendarsUsageDescription`）-允许开发人员描述应用要访问用户的日历的原因。
+- **隐私-照相机使用说明**（`NSCameraUsageDescription`）-允许开发人员描述应用要访问设备照相机的原因。
+- **隐私-联系人使用说明**（`NSContactsUsageDescription`）-允许开发人员描述应用要访问用户的联系人的原因。
 - **隐私-运行状况共享使用说明**（`NSHealthShareUsageDescription`）-允许开发人员描述应用要访问用户的运行状况数据的原因。 有关详细信息，请参阅 Apple 的[HKHealthStore 类引用](https://developer.apple.com/reference/healthkit/hkhealthstore)。
 - **隐私-健康更新使用说明**（`NSHealthUpdateUsageDescription`）-允许开发人员描述应用要编辑用户的运行状况数据的原因。 有关详细信息，请参阅 Apple 的[HKHealthStore 类引用](https://developer.apple.com/reference/healthkit/hkhealthstore)。
 - **隐私-HomeKit 使用说明**（`NSHomeKitUsageDescription`）-允许开发人员描述应用要访问用户的 HomeKit 配置数据的原因。
-- **隐私-位置始终使用描述**（`NSLocationAlwaysUsageDescription`）-允许开发人员描述应用希望始终有权访问用户位置的原因。
-- 弃用**隐私-位置使用说明**（`NSLocationUsageDescription`）-允许开发人员描述应用程序要访问用户位置的原因。 *注意：此密钥在 iOS 8 （和更高版本）中已弃用。请`NSLocationAlwaysUsageDescription`改用`NSLocationWhenInUseUsageDescription`或。*
-- **隐私-使用中的位置使用情况说明**（`NSLocationWhenInUseUsageDescription`）-允许开发人员描述应用在运行时要访问用户位置的原因。
-- 弃用**隐私-媒体库使用说明**-允许开发人员描述应用要访问用户的媒体库的原因。 *注意：此密钥在 iOS 8 （和更高版本）中已弃用。改`NSAppleMusicUsageDescription`为使用。*
+- **隐私-位置始终使用说明**（`NSLocationAlwaysUsageDescription`）-允许开发人员描述应用希望始终有权访问用户位置的原因。
+- 弃用**隐私-位置使用说明**（`NSLocationUsageDescription`）-允许开发人员描述应用要访问用户位置的原因。 *注意：此密钥已在 iOS 8 （及更高版本）中弃用。请改用 `NSLocationAlwaysUsageDescription` 或 `NSLocationWhenInUseUsageDescription`。*
+- **隐私-位置使用情况说明**（`NSLocationWhenInUseUsageDescription`）-允许开发人员描述应用在运行时要访问用户位置的原因。
+- 弃用**隐私-媒体库使用说明**-允许开发人员描述应用要访问用户的媒体库的原因。 *注意：此密钥已在 iOS 8 （及更高版本）中弃用。改用 `NSAppleMusicUsageDescription`。*
 - **隐私-麦克风使用说明**（`NSMicrophoneUsageDescription`）-允许开发人员描述应用要访问设备麦克风的原因。
 - **隐私-运动使用说明**（`NSMotionUsageDescription`）-允许开发人员描述应用要访问设备的加速感应的原因。
-- **隐私-照片库使用说明**（`NSPhotoLibraryUsageDescription`）-允许开发人员描述应用程序要访问用户照片库的原因。
+- **隐私-照片库使用说明**（`NSPhotoLibraryUsageDescription`）-允许开发人员描述应用要访问用户照片库的原因。
 - **隐私-提醒使用说明**（`NSRemindersUsageDescription`）-允许开发人员描述应用要访问用户提醒的原因。
 - **隐私-Siri 使用说明**（`NSSiriUsageDescription`）-允许开发人员描述应用要将用户数据发送到 Siri 的原因。
 - **隐私-语音识别使用说明**（`NSSpeechRecognitionUsageDescription`）-允许开发人员描述应用要将用户数据发送到 Apple 语音识别服务器的原因。
-- **隐私-电视提供商使用说明**（`NSVideoSubscriberAccountUsageDescription`）-允许开发人员描述应用想要访问用户的电视提供商帐户的原因。
+- **隐私-电视提供商使用说明**（`NSVideoSubscriberAccountUsageDescription`）-允许开发人员描述应用要访问用户的电视提供商帐户的原因。
 
 有关使用**info.plist**密钥的详细信息，请参阅 Apple 的[信息属性列表关键参考](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009248-SW1)。
 
@@ -68,7 +68,7 @@ IOS 10 中对安全和隐私进行了以下常规更改：
 
 ## <a name="setting-privacy-keys"></a>设置隐私密钥
 
-使用以下示例在 iOS 10 （和更高版本）上访问 HomeKit，开发人员需要将`NSHomeKitUsageDescription`密钥添加到应用的**info.plist**文件中，并提供一个字符串来声明应用要访问用户的 HomeKit 数据库的原因。 首次运行应用时，将向用户显示此字符串：
+使用以下示例在 iOS 10 （和更高版本）上访问 HomeKit，开发人员需要将 `NSHomeKitUsageDescription` 密钥添加到应用的**info.plist**文件中，并提供一个字符串来声明应用要访问用户的 HomeKit 数据库的原因。 首次运行应用时，将向用户显示此字符串：
 
 ![NSHomeKitUsageDescription 警报示例](security-privacy-images/info01.png "NSHomeKitUsageDescription 警报示例")
 
@@ -80,15 +80,15 @@ IOS 10 中对安全和隐私进行了以下常规更改：
 2. 从程序列表中选择**通用 Info.plist 编辑器**打开该文件，然后单击 **"确定"** 。
 
     ![选择一般 Info.plist 编辑器](security-privacy-images/InfoEditorSelectionVs.png "选择一般 Info.plist 编辑器")
-3. 单击 **+** 编辑器将新条目添加到列表中的最后一行上的按钮。 这将称为 "自定义属性"，类型设置为`String` ，空值。
+3. 单击编辑器中最后一行的 " **+** " 按钮，将新条目添加到该列表中。 这将称为 "自定义属性"，其类型设置为 "`String`" 和空值。
 4. 单击属性名称，将显示一个下拉列表。
 5. 从下拉列表中，选择 "隐私密钥" （例如 "**隐私-HomeKit 使用说明**"）： 
 
-    ![选择]私钥(security-privacy-images/InfoPListEditorSelectKey.png "选择")私钥
+    ![选择私钥](security-privacy-images/InfoPListEditorSelectKey.png "选择私钥")
 6. 输入 "值" 列中的说明，了解应用要访问给定的功能或用户信息的原因： 
 
-    ![输入描述](security-privacy-images/InfoPListSetValue.png "输入描述")
-7. 保存对文件所做的更改。
+    ![输入描述](security-privacy-images/InfoPListSetValue.png "请输入说明")
+7. 保存对该文件所做的更改。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -99,16 +99,16 @@ IOS 10 中对安全和隐私进行了以下常规更改：
 3. 向列表中添加新**项**。
 4. 从下拉列表中，选择 "隐私密钥" （例如 "**隐私-HomeKit 使用说明**"）： 
 
-    ![选择]私钥(security-privacy-images/info02.png "选择")私钥
+    ![选择私钥](security-privacy-images/info02.png "选择私钥")
 5. 输入应用要访问给定的功能或用户信息的原因说明： 
 
-    ![输入描述](security-privacy-images/info03.png "输入描述")
-6. 保存对文件所做的更改。
+    ![输入描述](security-privacy-images/info03.png "请输入说明")
+6. 保存对该文件所做的更改。
 
 -----
 
 > [!IMPORTANT]
-> 在上面给出的示例中，无法在`NSHomeKitUsageDescription` **info.plist**文件中设置密钥将导致应用程序在运行时以_静默方式失败_（在运行时由系统关闭）而不会出错。
+> 在上面给出的示例中，无法在**info.plist**文件中设置 `NSHomeKitUsageDescription` 键将导致应用程序在运行时以_静默方式失败_（在运行时由系统关闭），且在 iOS 10 （或更高版本）中运行时不会出错。
 
 <a name="Summary" />
 

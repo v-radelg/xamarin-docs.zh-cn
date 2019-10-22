@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70758501"
 ---
 # <a name="introduction-to-android-wear"></a>Android 穿戴设备简介

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 087dcdc7024026e6a3ed3a05baca3b2648053cc8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769950"
 ---
 # <a name="accessibility-on-macos"></a>MacOS 上的辅助功能
@@ -23,7 +23,7 @@ ms.locfileid: "70769950"
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-AppKit 使用`NSAccessibility`协议来公开有助于使用户界面可访问的 api。 这包括一个默认行为，该行为尝试为辅助功能属性设置有意义的值，例如设置`AccessibilityLabel`按钮的。 标签通常是描述控件或视图的单个词或短语。
+AppKit 使用 `NSAccessibility` 协议来公开有助于使用户界面可访问的 Api。 这包括一个默认行为，该行为尝试为辅助功能属性设置有意义的值，例如设置按钮的 `AccessibilityLabel`。 标签通常是描述控件或视图的单个词或短语。
 
 ### <a name="storyboard-files"></a>情节提要文件
 
@@ -34,7 +34,7 @@ Xamarin 使用 Xcode Interface Builder 编辑情节提要文件。
 
 ### <a name="code"></a>代码
 
-Xamarin 目前不公开为`AccessibilityLabel` setter。  添加以下 helper 方法以设置 "辅助功能" 标签：
+Xamarin 目前不会公开为 `AccessibilityLabel` 资源库。  添加以下 helper 方法以设置 "辅助功能" 标签：
 
 ```csharp
 public static class AccessibilityHelper
@@ -55,10 +55,10 @@ public static class AccessibilityHelper
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-`AccessibilityHelp`属性用于说明控件或视图的作用，只应在标签可能无法提供足够的信息时添加。 帮助文本仍应尽可能简短，例如 "删除文档"。
+@No__t_0 属性用于说明控件或视图的作用，只应在标签可能无法提供足够的信息时添加。 帮助文本仍应尽可能简短，例如 "删除文档"。
 
 某些用户界面元素与可访问访问权限（例如，具有其自己的可访问性标签和帮助的输入旁边的标签）无关。
-在这些情况下， `AccessibilityElement = false`请设置，以便屏幕阅读器或其他辅助工具将跳过这些控件或视图。
+在这些情况下，请设置 `AccessibilityElement = false`，以便屏幕阅读器或其他辅助工具将跳过这些控件或视图。
 
 Apple 提供的[辅助功能指导原则](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html)说明了可访问性标签和帮助文本的最佳实践。
 
@@ -76,7 +76,7 @@ macOS 提供可帮助测试辅助功能的**辅助功能检查器**。 该检查
 
 解锁 "设置" 屏幕（如果需要，在左下角），然后勾选**辅助功能检查器**：
 
-![启用辅助功能检查器的 "设置" 屏幕](accessibility-images/accessibility-inspector-2.png "启用辅助功能检查器的 \"设置\" 屏幕")
+![启用辅助功能检查器的 "设置" 屏幕](accessibility-images/accessibility-inspector-2.png "启用辅助功能检查器的 "设置" 屏幕")
 
 启用后，检查器将显示为可以在屏幕上移动的浮动窗口。 下面的屏幕截图显示了在示例 Mac 应用旁边运行的检查器。 当光标移动到窗口上时，检查器将显示每个控件的所有可访问属性：
 

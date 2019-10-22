@@ -1,36 +1,34 @@
 ---
 title: 显示弹出窗口
-description: Xamarin.Forms 提供了两个弹出式用户界面元素：警报和操作表。 本文演示如何使用警报和操作表 Api 来显示对话框, 这些对话框会询问用户简单的问题并指导用户完成任务。
+description: Xamarin 提供三个类似于弹出式窗口的用户界面元素-警报、操作表和提示。 本文演示如何使用警报、操作表和提示 Api 来显示询问用户简单问题的对话框、指导用户完成任务以及显示提示。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 3b6b2ea2d497c9fdce2c323c7f7a793a4186aa4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 09/25/2019
+ms.openlocfilehash: ddf0b96295f7153803db65a1fd741cc5df473730
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656108"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697088"
 ---
 # <a name="display-pop-ups"></a>显示弹出窗口
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-Xamarin.Forms 提供了两个弹出式用户界面元素：警报和操作表。本文演示如何使用警报和操作表 Api 来显示对话框, 这些对话框会询问用户简单的问题并指导用户完成任务。_
-
-显示警报或要求用户做出选择是一个常见的 UI 任务。 Xamarin.Forms 在 [`Page`](xref:Xamarin.Forms.Page) 类上有两个方法可以通过弹出窗口与用户交互：[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)。 在每个平台上使用相应的本机控件呈现。
+显示警报，要求用户进行选择或显示提示是常见的 UI 任务。 Xamarin 在[`Page`](xref:Xamarin.Forms.Page)类上有三种方法，用于通过弹出窗口与用户进行交互： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)和 `DisplayPromptAsync`。 在每个平台上使用相应的本机控件呈现。
 
 ## <a name="display-an-alert"></a>显示警报
 
 所有 Xamarin.Forms 支持的平台都会弹出一个模式，提醒用户或向用户提出简单的问题。 要在 Xamarin.Forms 中显示这些警报，请在任何 [`Page`](xref:Xamarin.Forms.Page) 上使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法。 以下代码行向用户显示一个简单的消息：
 
 ```csharp
-DisplayAlert ("Alert", "You have been alerted", "OK");
+await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "带有按钮的警告对话框")
+![](pop-ups-images/alert.png "Alert Dialog with One Button")
 
 本例不收集用户的信息。 警报以模式显示，一旦用户被解雇，就会继续与应用程序进行交互。
 
@@ -44,7 +42,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![显示警报](pop-ups-images/alert2-sml.png "包含两个按钮的警报对话框")](pop-ups-images/alert2.png#lightbox "Alert Dialog with Two Buttons")
+[![DisplayAlert](pop-ups-images/alert2-sml.png "包含两个按钮的警报对话框")](pop-ups-images/alert2.png#lightbox "包含两个按钮的警报对话框")
 
 ## <a name="guide-users-through-tasks"></a>指导用户完成任务
 
@@ -60,7 +58,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "ActionSheet 对话框")
+![](pop-ups-images/action.png "ActionSheet Dialog")
 
 `destroy` 按钮的呈现方式与其他按钮不同，可以保留 `null` 或指定为第三个字符串参数。 下面的示例使用 `destroy` 按钮：
 
@@ -72,7 +70,45 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "带有销毁按钮的操作表对话框")](pop-ups-images/action2.png#lightbox "Action Sheet Dialog with Destroy Button")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "带有销毁按钮的操作表对话框")](pop-ups-images/action2.png#lightbox "带有销毁按钮的操作表对话框")
+
+## <a name="display-a-prompt"></a>显示提示
+
+若要显示提示，请调用任何[`Page`](xref:Xamarin.Forms.Page)中的 `DisplayPromptAsync`，并将标题和消息作为 `string` 参数传递：
+
+```csharp
+string result = await DisplayPromptAsync("Question 1", "What's your name?");
+```
+
+提示符以模式方式显示：
+
+[![IOS 和 Android 上的模式提示屏幕截图](pop-ups-images/simple-prompt.png "模式提示")](pop-ups-images/simple-prompt-large.png#lightbox "模式提示")
+
+如果点击 "确定" 按钮，则输入的响应将作为 `string` 返回。 如果点击 "取消" 按钮，则返回 `null`。
+
+@No__t_0 方法的完整参数列表为：
+
+- `string` 类型的 `title`，则是要在提示中显示的标题。
+- `message`，类型 `string`，是要在提示符处显示的消息。
+- `string` 类型的 `accept` 是 "接受" 按钮的文本。 这是一个可选参数，其默认值为 "正常"。
+- `string` 类型的 `cancel` 是 "取消" 按钮的文本。 这是一个可选参数，其默认值为 "取消"。
+- `string` 类型的 `placeholder` 是要在提示符处显示的占位符文本。 这是一个可选参数，其默认值为 `null`。
+- `int` 类型的 `maxLength` 是用户响应的最大长度。 这是一个可选参数，其默认值为-1。
+- 类型 `Keyboard` `keyboard`，是用于用户响应的键盘类型。 这是一个可选参数，其默认值为 `Keyboard.Default`。
+
+下面的示例演示如何设置一些可选参数：
+
+```csharp
+string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
+}
+```
+
+此代码会将可输入的字符数限制为2，并显示用户输入的数字键盘：
+
+[![IOS 和 Android 上的模式提示屏幕截图](pop-ups-images/keyboard-prompt.png "模式提示")](pop-ups-images/keyboard-prompt-large.png#lightbox "模式提示")
+
+> [!NOTE]
+> @No__t_0 方法目前仅在 iOS 和 Android 上实现。
 
 ## <a name="related-links"></a>相关链接
 

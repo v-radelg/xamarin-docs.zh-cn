@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770042"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
@@ -38,13 +38,13 @@ ms.locfileid: "70770042"
 
 使用 Xamarin 中的扩展时，以下提示会很有用：
 
-- 因为 Xamarin 目前不支持调试扩展，所以调试体验主要依赖于执行和`printf` like 语句。 但是，扩展在沙盒进程中运行，因此`Console.WriteLine`不会像在其他 Xamarin 应用程序中那样工作。 [ `NSLog`直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)调用会将调试消息输出到系统日志。
-- 任何未捕获的异常都将导致扩展过程崩溃，仅在**系统日志**中提供少量有用的信息。 在重新引发之前， `try/catch` `NSLog`在（异常）块中包装有麻烦的代码可能会很有用。
-- 可以从应用 > 程序**实用工具**下的**控制台**应用程序访问**系统日志**：
+- 因为 Xamarin 目前不支持调试扩展，所以调试体验主要依赖于执行和 `printf` 的语句。 但是，扩展在沙盒进程中运行，因此 `Console.WriteLine` 在其他 Xamarin 应用程序中不起作用。 [直接调用 `NSLog`](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)会将调试消息输出到系统日志。
+- 任何未捕获的异常都将导致扩展过程崩溃，仅在**系统日志**中提供少量有用的信息。 在重新引发之前 `NSLog` 的 `try/catch` （异常）块中包装有麻烦的代码可能会很有用。
+- 可以通过**应用程序** > **实用**程序下的**控制台**应用程序访问**系统日志**：
 
-    [![](extensions-images/extension02.png "系统日志")](extensions-images/extension02.png#lightbox)
+    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - 如上所述，运行扩展主机应用程序会将其注册到系统。 删除应用程序包，并将其取消注册。 
-- 如果注册了应用扩展的 "游离" 版本，请使用以下命令进行查找（以便可以删除它们）：`plugin kit -mv`
+- 如果注册了应用扩展的 "游离" 版本，请使用以下命令进行查找（以便可以删除它们）： `plugin kit -mv`
 
 <a name="Walkthrough-and-Sample-App" />
 

@@ -1,74 +1,78 @@
 ---
 title: Android 平台功能
-description: 本文介绍如何将 Android 特有的功能添加到 Xamarin.Forms 应用程序。
+description: 本文介绍如何将特定于 Android 的功能添加到 Xamarin 应用程序。
 ms.prod: xamarin
 ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/07/2018
-ms.openlocfilehash: dc02fdc8754db4ae97c29ba2a496804b2263abdc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 09/24/2019
+ms.openlocfilehash: 73e838b3a63132230cf594a3461c9d7ee6f302b8
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970732"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696950"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
-开发适用于 Android 的 Xamarin.Forms 应用程序需要 Visual Studio。 [要求页](~/get-started/requirements.md)包含有关系统必备组件的详细信息。
+开发适用于 Android 的 Xamarin 应用程序需要 Visual Studio。 "[要求" 页](~/get-started/requirements.md)包含有关先决条件的详细信息。
 
-## <a name="platform-specifics"></a>平台特定信息
+## <a name="platform-specifics"></a>平台细节
 
-平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。
+平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。
 
-Xamarin.Forms 视图、 页面和 Android 上的布局提供了以下特定于平台的功能：
+以下特定于平台的功能适用于 Xamarin。 Forms 视图、页面和 Android 上的布局：
 
-- 控制 Z 顺序的可视元素来确定绘制顺序。 有关详细信息，请参阅[VisualElement 提升 Android 上](visualelement-elevation.md)。
-- 禁用上受支持的旧颜色模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 有关详细信息，请参阅[VisualElement 旧式颜色模式在 Android 上](legacy-color-mode.md)。
+- 控制视觉对象的 Z 顺序以确定绘制顺序。 有关详细信息，请参阅[Android 上的 VisualElement 提升](visualelement-elevation.md)。
+- 禁用受支持[`VisualElement`](xref:Xamarin.Forms.VisualElement)上的旧版颜色模式。 有关详细信息，请参阅[VisualElement 旧版彩色模式（Android](legacy-color-mode.md)）。
 
-在 Android 上 Xamarin.Forms 视图提供以下特定于平台的功能：
+以下特定于平台的功能适用于适用于 Android 的 Xamarin 窗体视图：
 
-- 使用默认填充边距和阴影的 Android 按钮的值。 有关详细信息，请参阅[填充按钮，并在 Android 上的阴影](button-padding-shadow.md)。
-- 输入的法编辑器为设置选项的软键盘[ `Entry` ](xref:Xamarin.Forms.Entry)。 有关详细信息，请参阅[条目输入法编辑器选项在 Android 上](entry-ime-options.md)。
-- 在启用投影`ImageButton`。 有关详细信息，请参阅[ImageButton 删除阴影的 Android](imagebutton-drop-shadow.md)。
-- 启用快速滚动[ `ListView` ](xref:Xamarin.Forms.ListView)的详细信息，请参阅[ListView 快速滚动在 Android 上](listview-fast-scrolling.md)。
-- 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合的内容。 有关详细信息，请参阅[WebView 混合内容在 Android 上](webview-mixed-content.md)。
-- 启用缩放[ `WebView` ](xref:Xamarin.Forms.WebView)。 有关详细信息，请参阅[在 Android 上的 WebView 缩放](webview-zoom-controls.md)。
+- 使用 Android 按钮的默认填充和阴影值。 有关详细信息，请参阅[Android 上的按钮填充和阴影](button-padding-shadow.md)。
+- 设置用于[`Entry`](xref:Xamarin.Forms.Entry)的软键盘的输入法编辑器选项。 有关详细信息，请参阅[Android 上的条目输入法编辑器选项](entry-ime-options.md)。
+- 启用 `ImageButton` 上的投影。 有关详细信息，请参阅[Android 上的 ImageButton 投影](imagebutton-drop-shadow.md)。
+- 在[`ListView`](xref:Xamarin.Forms.ListView)中启用快速滚动有关详细信息，请参阅[在 Android 上进行 ListView 快速滚动](listview-fast-scrolling.md)。
+- 控制[`WebView`](xref:Xamarin.Forms.WebView)是否可以显示混合内容。 有关详细信息，请参阅[Android 上的 Web 视图混合内容](webview-mixed-content.md)。
+- 启用缩放[`WebView`](xref:Xamarin.Forms.WebView)。 有关详细信息，请参阅[Android 上的 Web 视图缩放](webview-zoom-controls.md)。
 
-在 Android 上 Xamarin.Forms 页面提供以下特定于平台的功能：
+以下特定于平台的功能适用于 Xamarin 上的 Xamarin 表单元格：
 
-- 设置导航栏的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 有关详细信息，请参阅[NavigationPage 条在 Android 上的高度](navigationpage-bar-height.md)。
-- 中的页面中导航时禁用过渡动画[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 有关详细信息，请参阅[TabbedPage 页面过渡动画在 Android 上](tabbedpage-transition-animations.md)。
-- 启用在页面间轻扫[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 有关详细信息，请参阅[TabbedPage 页面在 Android 上轻扫](tabbedpage-page-swiping.md)。
-- 在设置工具栏位置和颜色[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)。 有关详细信息，请参阅[TabbedPage 工具栏位置和颜色在 Android 上的](tabbedpage-toolbar-placement-color.md)。
+- 启用[`ViewCell`](xref:Xamarin.Forms.ViewCell)上下文操作旧版模式，以便在[`ListView`](xref:Xamarin.Forms.ListView)中的选定项发生更改时不会更新上下文操作菜单。 有关详细信息，请参阅[Android 上的 ViewCell 上下文操作](viewcell-context-actions.md)。
 
-以下特定于平台的功能提供适用于 Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application)在 Android 上的类：
+以下特定于平台的功能适用于 Android 上的 Xamarin 窗体页：
 
-- 设置屏幕键盘的操作模式。 有关详细信息，请参阅[在 Android 上的软键盘输入模式](soft-keyboard-input-mode.md)。
-- 禁用[ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)并[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)页生命周期事件上暂停和继续分别使用 AppCompat 的应用程序。 有关详细信息，请参阅[在 Android 上的页面生命周期事件](page-lifecycle-events.md)。
+- 设置[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)上导航栏的高度。 有关详细信息，请参阅[Android 上的 NavigationPage Bar Height](navigationpage-bar-height.md)。
+- 在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)中导航页面时禁用过渡动画。 有关详细信息，请参阅[Android 上的 TabbedPage 页面过渡动画](tabbedpage-transition-animations.md)。
+- 在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)中的页面之间启用轻扫。 有关详细信息，请参阅[Android 上的 TabbedPage Page 轻扫](tabbedpage-page-swiping.md)。
+- 设置[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)上的工具栏位置和颜色。 有关详细信息，请参阅[TabbedPage Toolbar 在 Android 上的位置和颜色](tabbedpage-toolbar-placement-color.md)。
+
+以下特定于平台的功能适用于 Android 上的 Xamarin [`Application`](xref:Xamarin.Forms.Application)类：
+
+- 设置软键盘的操作模式。 有关详细信息，请参阅[Android 上的软键盘输入模式](soft-keyboard-input-mode.md)。
+- 对于使用 AppCompat 的应用程序，禁用[`Disappearing`](xref:Xamarin.Forms.Page.Appearing) ，并分别在 "暂停" 和 "恢复" [`Appearing`](xref:Xamarin.Forms.Page.Appearing)页面生命周期事件。 有关详细信息，请参阅[Android 上的页面生命周期事件](page-lifecycle-events.md)。
 
 ## <a name="platform-support"></a>平台支持
 
-最初，默认 Xamarin.Forms Android 项目使用较旧样式的控件通常在 Android 5.0 之前的呈现。 使用模板生成的应用程序具有`FormsApplicationActivity`作为其主活动的基类。
+默认情况下，默认的 Xamarin. Forms Android 项目使用早于 Android 5.0 之前的常用控件呈现样式。 使用该模板构建的应用程序的主活动的基类 `FormsApplicationActivity`。
 
-## <a name="material-design-via-appcompat"></a>通过 AppCompat 材料设计
+## <a name="material-design-via-appcompat"></a>通过 AppCompat 的材料设计
 
-Xamarin.Forms Android 项目现在使用`FormsAppCompatActivity`作为其主活动的基类。 此类使用**AppCompat**由 Android 实现 Material Design 主题提供的功能。
+Xamarin。窗体 Android 项目现在使用 `FormsAppCompatActivity` 作为其主活动的基类。 此类使用 Android 提供的**AppCompat**功能来实现材料设计主题。
 
-若要添加到 Xamarin.Forms Android 项目的 Material Design 主题，请遵循[AppCompat 的安装说明支持](appcompat-material-design.md)
+若要向 Xamarin Android 项目添加材料设计主题，请按照[AppCompat 支持的安装说明进行](appcompat-material-design.md)操作
 
-下面是**Todo**示例使用默认`FormsApplicationActivity`:
+下面是带有默认 `FormsApplicationActivity` 的**Todo**示例：
 
-[![](images/before-appcompat-sml.png "待办事项示例应用程序而无需 AppCompat")](images/before-appcompat.png#lightbox "没有 AppCompat 的待办事项示例应用程序")
+[![](images/before-appcompat-sml.png "Todo Sample Application Without AppCompat")](images/before-appcompat.png#lightbox "Todo Sample Application Without AppCompat")
 
-这是后升级项目以使用相同的代码和`FormsAppCompatActivity`（和添加其他主题信息）：
+在升级项目以使用 `FormsAppCompatActivity` （并添加其他主题信息）之后，这是同一代码：
 
-[![](images/post-appcompat-sml.png "AppCompat 和主题的待办事项示例应用程序")](images/post-appcompat.png#lightbox "AppCompat 和主题的待办事项示例应用程序")
+[![](images/post-appcompat-sml.png "Todo Sample Application With AppCompat and Theming")](images/post-appcompat.png#lightbox "Todo Sample Application With AppCompat and Theming")
 
 > [!NOTE]
-> 使用时`FormsAppCompatActivity`，则[对于某些 Android 自定义呈现器基类](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)会有所不同。
+> 使用 `FormsAppCompatActivity` 时，[某些 Android 自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)器的基类将有所不同。
 
 ## <a name="related-links"></a>相关链接
 
-- [添加材料设计的支持](appcompat-material-design.md)
+- [添加材料设计支持](appcompat-material-design.md)

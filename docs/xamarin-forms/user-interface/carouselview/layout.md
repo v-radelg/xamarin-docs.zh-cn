@@ -1,122 +1,295 @@
 ---
-title: Xamarin. Forms CarouselView
-description: 默认情况下，CarouselView 会在水平列表中显示其项。 但是，它还可以访问 CollectionView 的相同布局，包括垂直方向。
+title: Xamarin CarouselView 布局
+description: 默认情况下，CarouselView 会水平显示其项。 但是，也可以使用垂直方向。
 ms.prod: xamarin
 ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
 ms.technology: xamarin-forms
-author: pauldipietro
-ms.author: padipi
-ms.date: 09/09/2019
-ms.openlocfilehash: 5bbaeead524089ea604cfd9a9fd7f3a85d04e724
-ms.sourcegitcommit: e83035c746f165ee6d03f2e9fd0066ee4f20a9fb
-ms.translationtype: MT
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/14/2019
+ms.openlocfilehash: 7aa0c5833682518b02fca9fe73a9f69b168e60eb
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70908342"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696964"
 ---
-# <a name="xamarinforms-carouselview-layouts"></a>Xamarin CarouselView 布局
+# <a name="xamarinforms-carouselview-layout"></a>Xamarin CarouselView 布局
 
-![](~/media/shared/preview.png "此 API 当前为预发布版本")
+![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
 
-## <a name="introduction"></a>介绍
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义控件布局的以下属性：
 
-CarouselView 提供的很多布局功能都源自 CollectionView。 可以参考 CollectionView 的[布局文档](../collectionview/layout.md)来了解各种布局的使用情况。
+- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类型的 `LinearItemsLayout` 中，指定要使用的布局。
+- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)类型[`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)，则指定要使用的项度量策略。
+- `int` 类型的 `NumberOfSideItems`，当前项旁可见项的数目。 默认值为 0。
+- `PeekAreaInsets` 类型[`Thickness`](xref:Xamarin.Forms.Thickness)，指定使相邻项部分可见的程度。
 
-## <a name="differences-from-collectionview"></a>与 CollectionView 的差异
+这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着属性可以是数据绑定的目标。
 
-默认情况下，CarouselView 中的项将会水平放置，就像应用程序中的轮播的典型功能一样。
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)会以水平方向显示其项。 屏幕上将显示一项，其中包含滑动手势，导致在项集合中向前和向后导航。 但是，也可以使用垂直方向。 这是因为[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)属性的类型 `LinearItemsLayout`，后者继承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类。 @No__t_0 类定义以下属性：
 
-CarouselView 还提供了一些其他属性：
+- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)，类型为[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)指定添加项时[`CarouselView`](xref:Xamarin.Forms.CarouselView)展开的方向。
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)类型的[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)指定对齐点如何与项对齐。
+- [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)类型的[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)指定滚动时对齐点的行为。
 
-> [!IMPORTANT]
-> CarouselView 的其他属性仍处于开发阶段，此列表尚未完成。
+这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着属性可以是数据绑定的目标。 有关对齐点的详细信息，请参阅[Xamarin CollectionView 滚动](scrolling.md)指南中的 "[对齐点](scrolling.md#snap-points)"。
 
-| API | 函数 |
-|---|---|---|
-| NumberOfSideItems | 设置在当前项的每一侧显示的项数。 默认值为0。
-| PeekAreaInsets | 提供了一种直观地向用户指示 CarouselView 是否有要滚动的其他项，方法是调整当前项旁边的可见性级别。
+[@No__t_1](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举定义以下成员：
 
-## <a name="setting-the-number-of-fully-visible-items"></a>设置完全可见项的数目
+- `Vertical` 指示[`CarouselView`](xref:Xamarin.Forms.CarouselView)在添加项目时将垂直扩展。
+- `Horizontal` 指示[`CarouselView`](xref:Xamarin.Forms.CarouselView)在添加项目时水平展开。
 
-默认情况下，CarouselView 在屏幕上全部显示一项。 用户可以将`NumberOfSideItems`属性设置为允许更多项显示在当前项旁。 请注意，任何设置为`PeekAreaInsets`的值仍将应用。
+@No__t_0 类继承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类，并定义了一个类型 `double` 的 `ItemSpacing` 属性，该属性表示每个项周围的空白区域。 此属性的默认值为0，其值必须始终大于或等于0。 @No__t_0 类还定义静态 `Vertical` 和 `Horizontal` 成员。 这些成员可以分别用来创建垂直或水平列表。 或者，可以创建一个 `LinearItemsLayout` 对象，将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定为一个参数。
+
+> [!NOTE]
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView)使用本机布局引擎来执行布局。
+
+## <a name="horizontal-layout"></a>水平布局
+
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)会水平显示其项。 因此，无需将[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为使用此布局：
 
 ```xaml
-<StackLayout Margin="20">
-    <CarouselView ItemsSource="{Binding Monkeys}" HeightRequest="125" NumberOfSideItems="1">
-        <CarouselView.ItemTemplate>
-            <DataTemplate>
-                <Frame BorderColor="Black">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="1"
-                            Text="{Binding Name}"
-                            FontAttributes="Bold"
-                            FontSize="14"/>
-                        <Label Grid.Row="1"
-                            Grid.Column="1"
-                            Text="{Binding Location}"
-                            FontAttributes="Italic"
-                            FontSize="12"
-                            VerticalOptions="End" />
-                    </Grid>
+<CarouselView ItemsSource="{Binding Monkeys}">
+    <CarouselView.ItemTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="300"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                        <Image Source="{Binding ImageUrl}"
+                               Aspect="AspectFill"
+                               HeightRequest="150"
+                               WidthRequest="150"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Location}"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Details}"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               MaxLines="5"
+                               LineBreakMode="TailTruncation" />
+                    </StackLayout>
                 </Frame>
-            </DataTemplate>
-        </CarouselView.ItemTemplate>
-    </CarouselView>
-</StackLayout>
+            </StackLayout>
+        </DataTemplate>
+    </CarouselView.ItemTemplate>
+</CarouselView>
 ```
 
-[ ![Android](carouselview-images/side-items.png "CarouselView 端项目")的 CarouselView 的屏幕截图](carouselview-images/side-items-large.png#lightbox "CarouselView 端项")
-
-## <a name="making-adjacent-items-partially-visible"></a>使相邻项部分可见
-
-在应用程序中使用 CarouselView 时，通过将`PeekAreaInsets`属性设置为非零值（默认值）来向用户指示 CarouselView 的功能非常有用，在屏幕上部分显示这些值。
+此外，还可以通过将[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为 `LinearItemsLayout` 对象来实现此布局，并指定 `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员作为 `Orientation` 属性值：
 
 ```xaml
-<StackLayout Margin="20">
-  <CarouselView ItemsSource="{Binding Monkeys}" HeightRequest="125" PeekAreaInsets="100">
-      <CarouselView.ItemTemplate>
-          <DataTemplate>
-              <Frame BorderColor="Black">
-                  <Grid>
-                      <Grid.RowDefinitions>
-                          <RowDefinition Height="Auto" />
-                          <RowDefinition Height="Auto" />
-                      </Grid.RowDefinitions>
-                      <Grid.ColumnDefinitions>
-                          <ColumnDefinition Width="Auto" />
-                          <ColumnDefinition Width="Auto" />
-                      </Grid.ColumnDefinitions>
-                      <Label Grid.Column="1"
-                          Text="{Binding Name}"
-                          FontAttributes="Bold"
-                          FontSize="14"/>
-                      <Label Grid.Row="1"
-                          Grid.Column="1"
-                          Text="{Binding Location}"
-                          FontAttributes="Italic"
-                          FontSize="12"
-                          VerticalOptions="End" />
-                  </Grid>
-              </Frame>
-          </DataTemplate>
-      </CarouselView.ItemTemplate>
-  </CarouselView>
-</StackLayout>
+<CarouselView ItemsSource="{Binding Monkeys}">
+    <CarouselView.ItemsLayout>
+        <LinearItemsLayout Orientation="Horizontal" />
+    </CarouselView.ItemsLayout>
+    ...
+</CarouselView>
 ```
 
-[ ![Android](carouselview-images/peek-area-insets.png "CarouselView 端项目")的 CarouselView 的屏幕截图](carouselview-images/peek-area-insets-large.png#lightbox "CarouselView 端项")
+等效 C# 代码如下：
+
+```csharp
+CarouselView carouselView = new CarouselView
+{
+    ...
+    ItemsLayout = LinearItemsLayout.Horizontal
+};
+```
+
+这会导致在添加新项时布局水平增长。
+
+## <a name="vertical-layout"></a>垂直布局
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以通过将[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为 `LinearItemsLayout` 对象，将 `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定为 `Orientation` 属性值，来垂直显示其项：
+
+```xaml
+<CarouselView ItemsSource="{Binding Monkeys}">
+    <CarouselView.ItemsLayout>
+        <LinearItemsLayout Orientation="Vertical" />
+    </CarouselView.ItemsLayout>
+    <CarouselView.ItemTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="300"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                        <Image Source="{Binding ImageUrl}"
+                               Aspect="AspectFill"
+                               HeightRequest="150"
+                               WidthRequest="150"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Location}"
+                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Details}"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               MaxLines="5"
+                               LineBreakMode="TailTruncation" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </DataTemplate>
+    </CarouselView.ItemTemplate>
+</CarouselView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CarouselView carouselView = new CarouselView
+{
+    ...
+    ItemsLayout = LinearItemsLayout.Vertical
+};
+```
+
+这会导致在添加新项时布局垂直增长。
+
+## <a name="partially-visible-adjacent-items"></a>部分可见的相邻项
+
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)一次显示全部项。 但是，可以通过将 `PeekAreaInsets` 属性设置为 `Thickness` 值来更改此行为，此值指定使相邻项部分可见的程度。 这有助于向用户指示有其他要查看的项。 以下 XAML 显示了设置此属性的示例：
+
+```xaml
+<CarouselView ItemsSource="{Binding Monkeys}"
+              PeekAreaInsets="100">
+    ...
+</CarouselView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CarouselView carouselView = new CarouselView
+{
+    ...
+    PeekAreaInsets = new Thickness(100)
+};
+```
+
+结果是在屏幕上部分公开相邻项。
+
+## <a name="fully-visible-adjacent-items"></a>完全可见的相邻项
+
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)每次显示一项。 但是，可以通过将 `NumberOfSideItems` 属性设置为一个整数来更改此行为，该整数表示要显示在当前项旁边的项数。 以下 XAML 显示了设置此属性的示例：
+
+```xaml
+<CarouselView ItemsSource="{Binding Monkeys}"
+              NumberOfSideItems="1">
+    ...
+</CarouselView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CarouselView carouselView = new CarouselView
+{
+    ...
+    NumberOfSideItems = 1
+};
+```
+
+此示例将导致在当前项的每一侧显示一个相邻项。
+
+> [!NOTE]
+> 设置 `NumberOfSideItems` 属性时，仍将应用任何 `PeekAreaInsets` 值。
+
+## <a name="item-spacing"></a>项间距
+
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)中的每一项周围没有任何空白区域。 可以通过在 `CarouselView` 使用的项布局上设置属性来更改此行为。
+
+当[`CarouselView`](xref:Xamarin.Forms.CarouselView)将其[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为一个 `LinearItemsLayout` 对象时，`LinearItemsLayout.ItemSpacing` 属性可设置为表示每个项周围空白空间的 `double` 值：
+
+```xaml
+<CarouselView ItemsSource="{Binding Monkeys}">
+    <CarouselView.ItemsLayout>
+        <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="20" />
+    </CarouselView.ItemsLayout>
+    ...
+</CarouselView>
+```
+
+> [!NOTE]
+> @No__t_0 属性具有一个验证回调集，它可确保属性的值始终大于或等于0。
+
+等效 C# 代码如下：
+
+```csharp
+CarouselView carouselView = new CarouselView
+{
+    ...
+    ItemsLayout = new LinearItemsLayout(ItemsLayoutOrientation.Vertical)
+    {
+        ItemSpacing = 20
+    }
+};
+```
+
+此代码生成垂直布局，每个项周围的间距为20。
+
+## <a name="dynamic-resizing-of-items"></a>动态调整项的大小
+
+[@No__t_1](xref:Xamarin.Forms.CarouselView)中的项可以在运行时通过更改[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中元素的与布局相关的属性，在运行时动态调整大小。 例如，下面的代码示例更改了[`Image`](xref:Xamarin.Forms.Image)对象的[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)和[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)属性以及其父[`Frame`](xref:Xamarin.Forms.Frame)的 `HeightRequest` 属性：
+
+```csharp
+void OnImageTapped(object sender, EventArgs e)
+{
+    Image image = sender as Image;
+    image.HeightRequest = image.WidthRequest = image.HeightRequest.Equals(150) ? 200 : 150;
+    Frame frame = ((Frame)image.Parent.Parent);
+    frame.HeightRequest = frame.HeightRequest.Equals(300) ? 350 : 300;
+}
+```
+
+@No__t_0 事件处理程序将执行，以响应点击的[`Image`](xref:Xamarin.Forms.Image)对象，并更改图像的尺寸（及其父框架），以便更轻松地查看。
+
+## <a name="right-to-left-layout"></a>从右到左布局
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以通过将其[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)属性设置为[`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)，按从右到左的流方向布局其内容。 但是，在理想情况下，应在页面或根布局上设置 `FlowDirection` 属性，这会使页面或根布局中的所有元素响应流方向：
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarouselViewDemos.Views.HorizontalTemplateLayoutRTLPage"
+             Title="Horizontal layout (RTL FlowDirection)"
+             FlowDirection="RightToLeft">    
+    <CarouselView ItemsSource="{Binding Monkeys}">
+        ...
+    </CarouselView>
+</ContentPage>
+```
+
+具有父级的元素的默认[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)为[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)。 因此， [`CarouselView`](xref:Xamarin.Forms.CarouselView)从[`ContentPage`](xref:Xamarin.Forms.ContentPage)继承 `FlowDirection` 属性值。
+
+有关流方向的详细信息，请参阅[从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
-- [CollectionView 布局文档](../collectionview/layout.md)
+- [CarouselView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/)
+- [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
+- [Xamarin CarouselView 滚动](scrolling.md)

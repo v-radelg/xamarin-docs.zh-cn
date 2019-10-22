@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769909"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin 中的数据库
@@ -33,7 +33,7 @@ _本文介绍如何使用键/值编码和键-值观察，以允许在 Xcode 的 
 
 由于我们将使用键/值编码和数据绑定，因此，请先通过[数据绑定和键-值编码](~/mac/app-fundamentals/databinding.md)，因为本文档及其示例应用程序中将介绍核心技术和概念。
 
-你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " `Register` [向目标公开C#类/方法](~/mac/internals/how-it-works.md)" 部分，并说明用于将C#类连接到的和`Export`特性。目标-C 对象和 UI 元素。
+你可能想要查看[Xamarin](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，它解释了用于将类与目标连接起来的 `Register` 和 `Export` 属性对象和 UI 元素。
 
 ## <a name="direct-sqlite-access"></a>直接 SQLite 访问
 
@@ -476,7 +476,7 @@ public bool isManager {
 }
 ```
 
-如果在之前保存了数据，则对**Name**、**职业**或**ismanager.exe**属性所做的任何更改都将发送到数据库（例如，如果该`_conn`变量不`null`存在）。 接下来，让我们看一下为**创建**、**更新**、**加载**和**删除**数据库中的人员而添加的方法。
+如果在之前保存了数据，则对**名称**、**职业**或**ismanager.exe**属性所做的任何更改都将发送到数据库（例如，如果未 `null` `_conn` 变量）。 接下来，让我们看一下为**创建**、**更新**、**加载**和**删除**数据库中的人员而添加的方法。
 
 #### <a name="create-a-new-record"></a>创建新记录
 
@@ -526,19 +526,19 @@ public void Create(SqliteConnection conn) {
 }
 ```
 
-我们使用`SQLiteCommand`在数据库中创建新记录。 我们从`SQLiteConnection` （conn）获取一个新的命令，该命令通过调用`CreateCommand`传递到方法。 接下来，我们将 SQL 指令设置为实际写入新记录，并为实际值提供参数：
+我们使用 `SQLiteCommand` 在数据库中创建新记录。 我们从 `SQLiteConnection` （conn）获取一个新的命令，该命令通过调用 `CreateCommand` 传递到方法中。 接下来，我们将 SQL 指令设置为实际写入新记录，并为实际值提供参数：
 
 ```csharp
 command.CommandText = "INSERT INTO [People] (ID, Name, Occupation, isManager, ManagerID) VALUES (@COL1, @COL2, @COL3, @COL4, @COL5)";
 ```
 
-稍后我们使用`Parameters.AddWithValue` `SQLiteCommand`中的方法设置参数的值。 使用参数，可以确保在将值（如单引号）发送到 SQLite 之前，对这些值进行正确编码。 示例：
+稍后我们使用 `SQLiteCommand` 上的 `Parameters.AddWithValue` 方法设置参数的值。 使用参数，可以确保在将值（如单引号）发送到 SQLite 之前，对这些值进行正确编码。 示例:
 
 ```csharp
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-最后，由于一个人可以是经理，并且拥有一个员工的集合，因此我们将以递归方式调用`Create`这些人的方法将其保存到数据库中：
+最后，由于一个人可以是经理，并且拥有一个员工的集合，因此我们将以递归方式对这些人员调用 `Create` 方法，以将其保存到数据库中：
 
 ```csharp
 // Save children to database as well
@@ -594,13 +594,13 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-与上面的**创建**类似，我们`SQLiteCommand` `SQLiteConnection`从传入的中获取，并将 SQL 设置为更新记录（提供参数）：
+与上面的**创建**类似，我们从传入 `SQLiteConnection` 中获取 `SQLiteCommand`，并将 SQL 设置为更新记录（提供参数）：
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
 ```
 
-我们填写参数值（示例： `command.Parameters.AddWithValue ("@COL1", ID);`），并再次递归调用任何子记录上的更新：
+我们填写参数值（例如： `command.Parameters.AddWithValue ("@COL1", ID);`），并再次递归调用任何子记录上的更新：
 
 ```csharp
 // Save children to database as well
@@ -711,7 +711,7 @@ command.CommandText = "SELECT ID FROM [People] WHERE ManagerID = @COL1";
 command.Parameters.AddWithValue ("@COL1", id);
 ```
 
-最后，我们使用数据读取器来执行查询，并返回记录字段（复制到`PersonModel`类的实例中）：
+最后，我们使用数据读取器来执行查询，并返回记录字段（复制到 `PersonModel` 类的实例中）：
 
 ```csharp
 using (var reader = command.ExecuteReader ()) {
@@ -726,7 +726,7 @@ using (var reader = command.ExecuteReader ()) {
 }
 ```
 
-如果此人是经理，还需要加载其所有员工（再次通过递归调用其`Load`方法）：
+如果此人是经理，还需要加载其所有员工（再次通过递归调用其 `Load` 方法）：
 
 ```csharp
 // Is this a manager?
@@ -798,7 +798,7 @@ command.CommandText = "DELETE FROM [People] WHERE (ID = @COL1 OR ManagerID = @CO
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-删除记录后，将清除`PersonModel`类的当前实例：
+删除记录后，将清除 `PersonModel` 类的当前实例：
 
 ```csharp
 // Empty class
@@ -904,7 +904,7 @@ foreach (var cmd in commands) {
 conn.Close ();
 ```
 
-最后，在应用程序第一次`PersonModel`运行时或数据库丢失时，我们使用数据模型（）为数据库创建一组默认记录：
+最后，我们使用数据模型（`PersonModel`）在应用程序第一次运行时或数据库丢失时，为数据库创建一组默认记录：
 
 ```csharp
 // Build list of employees
@@ -969,13 +969,13 @@ _conn.Close ();
 
 ```
 
-此处，我们使用`PersonModel`类的构造函数重载将人员加载到内存中：
+此处，我们将使用 `PersonModel` 类的构造函数重载，将该人员加载到内存中：
 
 ```csharp
 var person = new PersonModel (_conn, childID);
 ```
 
-我们还将调用数据绑定类以将人员添加到我们的人员`AddPerson (person)`集合，这可确保用户的 UI 识别并显示更改：
+我们还调用数据绑定类以将人员添加到 `AddPerson (person)` 的人员集合，这可确保用户的 UI 识别并显示更改：
 
 ```csharp
 [Export("addObject:")]
@@ -1010,7 +1010,7 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-In SQL 语句中唯一的实际差别（仅加载管理器`command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`），但与上述部分的工作原理相同。
+In SQL 语句中唯一的实际差别（仅加载管理器 `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`），但与上述部分的工作方式相同。
 
 <a name="Databases-and-ComboBoxes" />
 
@@ -1018,7 +1018,7 @@ In SQL 语句中唯一的实际差别（仅加载管理器`command.CommandText =
 
 可将 macOS （如组合框）可用的菜单控件设置为从内部列表（可在 Interface Builder 中预定义或通过代码填充）填充下拉列表，或提供自己的自定义外部数据源。 有关更多详细信息，请参阅[提供菜单控件数据](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data)。
 
-例如，在 Interface Builder 中编辑上述简单绑定示例，添加一个组合框，并使用名为`EmployeeSelector`的插座来公开它：
+例如，在 Interface Builder 中编辑上述简单绑定示例，添加一个组合框，并使用一个名为 `EmployeeSelector` 的插座来公开该示例：
 
 [![公开组合框插座](databases-images/combo01.png "公开组合框插座")](databases-images/combo01-large.png#lightbox)
 
@@ -1030,7 +1030,7 @@ In SQL 语句中唯一的实际差别（仅加载管理器`command.CommandText =
 
 #### <a name="providing-combobox-data"></a>提供 combobox 数据
 
-接下来，将一个名`ComboBoxDataSource`为的新类添加到项目，并使其类似于以下内容：
+接下来，将一个名为 `ComboBoxDataSource` 的新类添加到项目，并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -1399,12 +1399,12 @@ namespace MacDatabase
 }
 ```
 
-在此示例中，我们将创建一个`NSComboBoxDataSource`新的，它可以显示来自任何 SQLite 数据源的组合框项。 首先，我们定义以下属性：
+在此示例中，我们将创建一个新的 `NSComboBoxDataSource`，它可以显示来自任何 SQLite 数据源的组合框项。 首先，我们定义以下属性：
 
-- `Conn`-获取或设置与 SQLite 数据库的连接。
-- `TableName`-获取或设置表名。
-- `IDField`-获取或设置为给定表提供唯一 ID 的字段。 默认值为 `ID`。
-- `DisplayField`-获取或设置下拉列表中显示的字段。
+- `Conn` 获取或设置与 SQLite 数据库的连接。
+- `TableName` 获取或设置表名。
+- `IDField` 获取或设置为给定表提供唯一 ID 的字段。 默认值为 `ID`。
+- `DisplayField` 获取或设置下拉列表中显示的字段。
 - `RecordCount`-获取给定表中的记录数。
 
 创建对象的新实例时，我们传入连接、表名称，还可以选择 "ID" 字段和显示字段：
@@ -1419,7 +1419,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-`GetRecordCount`方法返回给定表中的记录数：
+@No__t_0 方法返回给定表中的记录数：
 
 ```csharp
 private nint GetRecordCount ()
@@ -1461,9 +1461,9 @@ private nint GetRecordCount ()
 }
 ```
 
-只要`TableName`更改了`IDField` 或`DisplayField`属性值，就会调用此方法。
+无论何时更改 `TableName`、`IDField` 或 `DisplayField` 属性值，都将调用此方法。
 
-方法返回给定下拉列表项索引`IDField`处的记录的唯一 ID （）： `IDForIndex` 
+@No__t_0 方法返回给定下拉列表项索引处的记录的唯一 ID （`IDField`）： 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1504,7 +1504,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-方法返回给定下拉列表索引`DisplayField`处的项的值（）： `ValueForIndex`
+@No__t_0 方法返回给定下拉列表索引处的项的值（`DisplayField`）：
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1545,7 +1545,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-方法返回给定值（`DisplayField`）的`IDField`唯一 ID （）： `IDForValue`
+@No__t_0 方法返回给定值（`DisplayField`）的唯一 ID （`IDField`）：
 
 ```csharp
 public string IDForValue (string value)
@@ -1589,7 +1589,7 @@ public string IDForValue (string value)
 }
 ```
 
-更改`ItemCount` `TableName` `IDField`或属性时，将返回列表中的预计算项数：`DisplayField`
+@No__t_0 在更改 `TableName`、`IDField` 或 `DisplayField` 属性时，将返回列表中项目的预计算数量：
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1598,7 +1598,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-方法为给定下拉列表项`DisplayField`索引提供值（）： `ObjectValueForItem`
+@No__t_0 方法提供给定下拉列表项索引的值（`DisplayField`）：
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1639,9 +1639,9 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 }
 ```
 
-请注意，我们将在`LIMIT` SQLite `OFFSET`命令中使用和语句，以限制我们所需的一条记录。
+请注意，我们将使用 SQLite 命令中的 `LIMIT` 和 `OFFSET` 语句，以限制我们所需的一条记录。
 
-方法返回给定的值（`DisplayField`）的下拉项索引： `IndexOfItem`
+@No__t_0 方法返回给定的值（`DisplayField`）的下拉项索引：
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1691,9 +1691,9 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 }
 ```
 
-如果找不到该值， `NSRange.NotFound`则返回值，并在下拉列表中取消选择所有项。
+如果找不到此值，则返回 `NSRange.NotFound` 值并在下拉列表中取消选择所有项。
 
-方法返回部分类型的项的第`DisplayField`一个匹配值（）： `CompletedString`
+@No__t_0 方法返回部分类型的项的第一个匹配值（`DisplayField`）：
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1743,7 +1743,7 @@ public override string CompletedString (NSComboBox comboBox, string uncompletedS
 
 #### <a name="displaying-data-and-responding-to-events"></a>显示数据和响应事件
 
-若要将所有部分组合在一起，请`SubviewSimpleBindingController`编辑，并使其看起来如下所示：
+若要将所有部分组合在一起，请编辑 `SubviewSimpleBindingController` 并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -1858,9 +1858,9 @@ namespace MacDatabase
 }
 ```
 
-属性提供附加到组合框的`ComboBoxDataSource` （上面创建的）的快捷方式。 `DataSource`
+@No__t_0 属性提供了附加到组合框的 `ComboBoxDataSource` （上面创建的）的快捷方式。
 
-`LoadSelectedPerson`方法从数据库中为给定的唯一 ID 加载人员：
+@No__t_0 方法从数据库中为给定的唯一 ID 加载人员：
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1874,13 +1874,13 @@ private void LoadSelectedPerson (string id)
 }
 ```
 
-`AwakeFromNib`在方法重写中，首先附加自定义组合框数据源的实例：
+在 `AwakeFromNib` 方法重写中，首先附加自定义组合框数据源的实例：
 
 ```csharp
 EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
 ```
 
-接下来，我们将通过查找显示的相关数据的相关唯一 ID （`IDField`）来响应用户编辑组合框的文本值，前提是找到该用户：
+接下来，我们将通过查找显示的数据的关联唯一 ID （`IDField`）来响应用户编辑组合框的文本值，前提是找到该用户：
 
 ```csharp
 EmployeeSelector.Changed += (sender, e) => {
@@ -1923,14 +1923,14 @@ SQLite.NET 以 NuGet 包的形式显示在应用程序中。 在可以使用 SQL
 执行以下操作来添加包：
 
 1. 在**Solution Pad**中，右键单击 "**包**" 文件夹，然后选择 "**添加包 ...** "
-2. 在`SQLite.net` **搜索框**中输入，并选择 " **sqlite-net** " 条目：
+2. 在**搜索框**中输入 `SQLite.net`，并选择 " **sqlite-net** " 条目：
 
     [![添加 SQLite NuGet 包](databases-images/nuget01.png "添加 SQLite NuGet 包")](databases-images/nuget01-large.png#lightbox)
 3. 单击 "**添加包**" 按钮完成操作。
 
 ### <a name="creating-the-data-model"></a>创建数据模型
 
-让我们将一个新类添加到项目中，并`OccupationModel`在中调用。 接下来，让我们编辑**OccupationModel.cs**文件并使其类似于以下内容：
+让我们将一个新类添加到项目中，并在 `OccupationModel` 中调用。 接下来，让我们编辑**OccupationModel.cs**文件并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -1966,7 +1966,7 @@ namespace MacDatabase
 }
 ```
 
-首先，我们包含 SQLite.NET （`using Sqlite`），然后公开多个属性，每个属性都会在保存此记录时写入数据库。 作为主键的第一个属性，并将其设置为自动递增，如下所示：
+首先，我们包含 SQLite.NET （`using Sqlite`），然后公开多个属性，每个属性都将在保存此记录时写入数据库。 作为主键的第一个属性，并将其设置为自动递增，如下所示：
 
 ```csharp
 [PrimaryKey, AutoIncrement]
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 ### <a name="adding-a-table-view"></a>添加表视图
 
-例如，我们将在 Xcode 的 Interface builder 中向用户界面添加表视图。 我们将通过插座公开此表格视图（`OccupationTable`），以便我们可以通过C#代码进行访问：
+例如，我们将在 Xcode 的 Interface builder 中向用户界面添加表视图。 我们将通过插座（`OccupationTable`）公开此表格视图，以便我们可以通过C#代码进行访问：
 
 [![公开表格视图输出口](databases-images/table01.png "公开表格视图输出口")](databases-images/table01-large.png#lightbox)
 
@@ -2071,7 +2071,7 @@ conn.Insert (Occupation);
 
 ### <a name="creating-the-table-data-source"></a>创建表数据源
 
-让我们创建一个自定义数据源，以便为我们的表提供数据。 首先，添加一个名`TableORMDatasource`为的新类，使其看起来如下所示：
+让我们创建一个自定义数据源，以便为我们的表提供数据。 首先，添加一个名为 `TableORMDatasource` 的新类，使其看起来如下所示：
 
 ```csharp
 using System;
@@ -2125,11 +2125,11 @@ namespace MacDatabase
 }
 ```
 
-以后创建此类的实例时，我们将传入开放式 SQLite.NET 数据库连接。 方法查询数据库，并将找到的记录复制到内存中（使用`OccupationModel`我们的数据模型）。 `LoadOccupations`
+以后创建此类的实例时，我们将传入开放式 SQLite.NET 数据库连接。 @No__t_0 方法查询数据库，并将找到的记录复制到内存中（使用我们的 `OccupationModel` 数据模型）。
 
 ### <a name="creating-the-table-delegate"></a>创建表委托
 
-我们需要的最终类是一个自定义表委托，用于显示从 SQLite.NET 数据库加载的信息。 让我们在项目中`TableORMDelegate`添加一个新的，并使其看起来如下所示：
+我们需要的最终类是一个自定义表委托，用于显示从 SQLite.NET 数据库加载的信息。 让我们向项目添加一个新的 `TableORMDelegate`，使其看起来像下面这样：
 
 ```csharp
 using System;
@@ -2193,11 +2193,11 @@ namespace MacDatabase
 }
 ```
 
-这里，我们使用数据源的`Occupations`集合（我们从 SQLite.NET 数据库加载） `GetViewForItem`通过方法替代来填充表的列。
+此处，我们使用数据源的 `Occupations` 集合（我们从 SQLite.NET 数据库加载）通过 `GetViewForItem` 方法替代来填充表的列。
 
 ### <a name="populating-the-table"></a>填充表
 
-使用所有片段后，让我们通过重写`AwakeFromNib`方法并使其看起来类似于以下内容来填充表：从 xib 文件中放大。
+完成所有这些部分后，让我们通过重写 `AwakeFromNib` 方法并使其类似于以下内容，来填充表从 xib 文件中放大：
 
 ```csharp
 public override void AwakeFromNib ()

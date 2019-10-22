@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.openlocfilehash: 4deeab1b2792675033372ccfe2bf343c08794955
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "69658027"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696421"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
@@ -25,10 +25,12 @@ Xamarin [`SearchBar`](xref:Xamarin.Forms.SearchBar)是用于启动搜索的用�
 @No__t_0 类定义以下属性：
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)是定义 "取消" 按钮的颜色的 `Color`。
+* `CharacterSpacing` 类型 `double`，是 `SearchBar` 文本的字符之间的间距。
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)是 `FontAttributes` 的枚举值，用于确定 `SearchBar` 字体是粗体、斜体还是两者皆无。
 * [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily)是确定 `SearchBar` 使用的字体系列的 `string`。
 * [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize)可以是 `NamedSize` 枚举值或表示跨平台的特定字体大小的 `double` 值。
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment)是定义查询文本的水平对齐方式的 `TextAlignment` 枚举值。
+* `VerticalTextAlignment` 是定义查询文本的垂直对齐方式的 `TextAlignment` 枚举值。
 * [`Placeholder`](xref:Xamarin.Forms.SearchBar.Placeholder)是一种定义占位符文本的 `string`，如 "Search ..."。
 * [`PlaceholderColor`](xref:Xamarin.Forms.SearchBar.PlaceholderColor)是一种定义占位符文本颜色的 `Color`。
 * [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand)是一种允许将用户操作（如指指点击或单击）绑定到 viewmodel 上定义的命令的 `ICommand`。

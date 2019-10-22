@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70768980"
 ---
 # <a name="displaying-images-with-xamarinios"></a>用 Xamarin 显示映像
@@ -26,7 +26,7 @@ Visual Studio for Mac 还支持名为**资源**的特殊目录，该目录还可
 
 此屏幕截图显示在右键单击文件时显示的**生成操作**选项：
 
- [![](image-images/image30a.png "\"生成操作\" 菜单")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
 
 Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你应该知道这些设置，尤其是在你的项目中移动文件时。
 
@@ -34,15 +34,15 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你
 
 若要将图像文件添加到项目中，请先右键单击该项目，然后选择 "**添加文件 ...** "
 
- [![](image-images/image31a.png "添加文件 .。。下拉菜单")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
 
 选择要包含在标准文件对话框中的图像。 将**BundleResource**映像的默认生成操作–不要覆盖此值，除非有特定的原因。
 
- [![](image-images/image32a.png "\"添加文件\" 对话框")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
 
 该图像将添加到项目中，并可在代码中加载和显示。 此屏幕截图显示了添加到 iOS 应用程序项目的图像：
 
- [![](image-images/image33a.png "项目中的图像")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>什么是资源目录？
 
@@ -59,11 +59,11 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你
 
 在 iOS 设计器中，使用**图像视图**显示图像或动画序列的图像。 工具箱中的**图像视图**图标如下所示：
 
- [![](image-images/image35a.png "工具箱中的 ImageView")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
 
 将 "**图像" 视图**从 "**工具箱**" 拖到视图控制器上。 然后，在 "**图像视图 > 图像**" 下，下拉列表将提供项目中所有可用图像文件的列表。 选择其中任何一个，以将其添加到图像视图。
 
- [![](image-images/image36a.png "工具箱中的 ImageView")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>以编程方式显示图像
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
 ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70752064"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 简介
@@ -22,14 +22,14 @@ iOS 7 是对 iOS 的重大更新。 它引入了一个全新的用户界面设�
 
 ## <a name="uiview-animation-enhancements"></a>UIView 动画增强功能
 
-iOS 7 增强了 UIKit 中的动画支持，使应用程序可以执行以前需要直接放置在核心动画框架中的操作。 例如， `UIView`现在可以执行弹簧动画和关键帧动画，这些动画`CAKeyframeAnimation`先前应用`CALayer`于。
+iOS 7 增强了 UIKit 中的动画支持，使应用程序可以执行以前需要直接放置在核心动画框架中的操作。 例如，`UIView` 现在可以执行弹簧动画和关键帧动画，之前 `CAKeyframeAnimation` 应用于 `CALayer`。
 
 ### <a name="spring-animations"></a>弹簧动画
 
- `UIView`现在支持使用弹簧效果对属性更改进行动画处理。 若要添加此方法，请`AnimateNotify`调用`AnimateNotifyAsync`或方法，并传入弹簧阻尼比率和初始弹簧速度的值，如下所述：
+ `UIView` 现在支持使用弹簧效果对属性更改进行动画处理。 若要添加此项，请调用 `AnimateNotify` 或 `AnimateNotifyAsync` 方法，并传入弹簧阻尼比率和初始弹簧速度的值，如下所述：
 
-- `springWithDampingRatio`–一个介于0和1之间的值，其中，振荡为较小的值增加。
-- `initialSpringVelocity`–初始弹簧速度，以每秒的总动画距离的百分比表示。
+- `springWithDampingRatio`-一个介于0和1之间的值，其中振荡为较小的值增加。
+- `initialSpringVelocity` –初始弹簧速度，以每秒的总动画距离的百分比表示。
 
 以下代码将在图像视图的中心更改时产生弹簧效果：
 
@@ -49,11 +49,11 @@ void AnimateWithSpring ()
 
 这一弹簧效果会使图像视图在向新的中心位置完成动画时出现弹跳，如下所示：
 
- ![](images/spring-animation.png "这一弹簧效果会使图像视图显示为在其将动画完成到新中心位置时弹跳")
+ ![](images/spring-animation.png "This spring effect causes the image view to appear to bounce as it completes its animation to a new center location")
 
 ### <a name="keyframe-animations"></a>关键帧动画
 
-类现在包含用于在上`UIView`创建关键帧动画的方法。`AnimateWithKeyframes` `UIView` 此方法类似于其他`UIView`动画方法，不同之处在于将附加`NSAction`作为参数传递以包含关键帧。 `UIView.AddKeyframeWithRelativeStartTime`在中`NSAction`，通过调用来添加关键帧。
+@No__t_0 类现在包含用于在 `UIView` 上创建关键帧动画的 `AnimateWithKeyframes` 方法。 此方法类似于其他 `UIView` 动画方法，不同之处在于，附加 `NSAction` 作为参数传递以包含关键帧。 在 `NSAction` 中，通过调用 `UIView.AddKeyframeWithRelativeStartTime` 添加关键帧。
 
 例如，以下代码片段将创建一个关键帧动画来对视图中心进行动画处理，并旋转视图：
 
@@ -82,26 +82,26 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-`AddKeyframeWithRelativeStartTime`方法的前两个参数分别指定关键帧的开始时间和持续时间（以占总体动画长度的百分比表示）。 上面的示例将在第一秒中将图像视图动画处理到其新中心，然后在下一秒旋转90度。 由于动画将指定`UIViewKeyframeAnimationOptions.Autoreverse`为一个选项，因此，这两个关键帧也会反向动画。 最后，最后一个值设置为完成处理程序中的初始状态。
+@No__t_0 方法的前两个参数分别指定关键帧的开始时间和持续时间（以占总体动画长度的百分比表示）。 上面的示例将在第一秒中将图像视图动画处理到其新中心，然后在下一秒旋转90度。 由于动画会将 `UIViewKeyframeAnimationOptions.Autoreverse` 指定为一个选项，因此，这两个关键帧也会反向动画。 最后，最后一个值设置为完成处理程序中的初始状态。
 
 下面的屏幕截图演示了通过关键帧的组合动画：
 
- ![](images/keyframes.png "此屏幕快照演示了通过关键帧的组合动画")
+ ![](images/keyframes.png "This screenshots illustrates the combined animation through the keyframes")
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
 UIKit Dynamics 是 UIKit 中一组新的 Api，允许应用程序基于物理学创建动画交互。 UIKit Dynamics 封装了2D 物理学引擎来实现这一点。
 
-API 本质上是声明性的。 可以通过创建对象（称为*行为*）来声明物理学交互的行为方式，以表示物理概念，如重力、碰撞、弹簧等。然后，将这些行为附加到另一个对象，该对象称为*动态 animator*，它封装视图。 动态 animator 需要将声明的物理行为应用于*动态项*-实现`IUIDynamicItem`的项（例如`UIView`）。
+API 本质上是声明性的。 可以通过创建对象（称为*行为*）来声明物理学交互的行为方式，以表示物理概念，如重力、碰撞、弹簧等。然后，将这些行为附加到另一个对象，该对象称为*动态 animator*，它封装视图。 动态 animator 会将声明的物理行为应用于*动态项*（实现 `IUIDynamicItem` 的项），如 `UIView`。
 
 有几种不同的基元行为可用于触发复杂的交互，包括：
 
-- `UIAttachmentBehavior`–附加两个动态项，以便将它们一起移动，或将动态项附加到连接点。
-- `UICollisionBehavior`–允许动态项参与冲突。
-- `UIDynamicItemBehavior`–指定要应用于动态项（如弹性、密度和摩擦）的一组常规属性。
-- `UIGravityBehavior`-对动态项应用重力，使项在 gravitational 方向加速。
-- `UIPushBehavior`–对动态项应用强制。
-- `UISnapBehavior`–允许动态项与弹簧效果对齐位置。
+- `UIAttachmentBehavior` –附加两个动态项，以便将它们一起移动，或将动态项附加到连接点。
+- `UICollisionBehavior` –允许动态项参与冲突。
+- `UIDynamicItemBehavior` –指定要应用于动态项的一组常规属性，如弹性、密度和摩擦。
+- `UIGravityBehavior`-将重力应用于动态项，从而使项在 gravitational 方向加速。
+- `UIPushBehavior` –适用于动态项。
+- `UISnapBehavior` –允许动态项与弹簧效果对齐位置。
 
 虽然有许多基元，但使用 UIKit Dynamics 向视图中添加基于物理的交互的一般过程在行为上保持一致：
 
@@ -111,13 +111,13 @@ API 本质上是声明性的。 可以通过创建对象（称为*行为*）来�
 
 ### <a name="dynamics-example"></a>Dynamics 示例
 
-我们来看一个示例，该示例将重心和冲突边界添加到`UIView`。
+我们来看一个示例，该示例将重心和冲突边界添加到 `UIView`。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
 向图像视图添加重力后，请按照上面所述的3个步骤进行操作。
 
-在此示例中， `ViewDidLoad`我们将在方法中工作。 首先，添加一个`UIImageView`实例，如下所示：
+在此示例中，我们将在 `ViewDidLoad` 方法中工作。 首先，添加一个 `UIImageView` 实例，如下所示：
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -129,21 +129,21 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-这将创建一个在屏幕上边缘中间的图像视图。 若要使映像 "秋季" 使用重力，请创建的实例`UIDynamicAnimator`：
+这将创建一个在屏幕上边缘中间的图像视图。 若要使映像 "秋季"，请创建 `UIDynamicAnimator` 的实例：
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-采用引用`UIView`或的`UICollectionViewLayout`实例，该实例包含将按附加行为进行动画处理的项。 `UIDynamicAnimator`
+@No__t_0 采用引用的实例 `UIView` 或 `UICollectionViewLayout`，其中包含将按附加行为进行动画处理的项。
 
-接下来，创建`UIGravityBehavior`一个实例。 可以传递一个或多个实现的`IUIDynamicItem`对象， `UIView`如下所示：
+接下来，创建 `UIGravityBehavior` 实例。 可以传递一个或多个实现 `IUIDynamicItem` 的对象，如 `UIView`：
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-向传递的是一个数组`IUIDynamicItem`，在此示例中，该数组包含要进行动画处理的单个`UIImageView`实例。
+此行为是通过 `IUIDynamicItem` 数组传递的，在此示例中，该数组包含要进行动画处理的单个 `UIImageView` 实例。
 
 最后，将行为添加到动态 animator：
 
@@ -153,16 +153,16 @@ dynAnimator.AddBehavior (gravity);
 
 这会使图像与重力向下动画，如下所示：
 
-![](images/gravity2.png "")
-![](images/gravity3.png "结束图像位置的")起始图像位置
+![](images/gravity2.png "The starting image location")
+![](images/gravity3.png "The ending image location")
 
-由于屏幕边界没有任何限制，因此图像视图只是底部。 若要约束视图以便图像与屏幕边缘冲突，可以添加`UICollisionBehavior`。 下一节将介绍这一点。
+由于屏幕边界没有任何限制，因此图像视图只是底部。 若要约束视图以便图像与屏幕边缘冲突，可以添加 `UICollisionBehavior`。 下一节将介绍这一点。
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-首先，我们将创建一个`UICollisionBehavior`并将其添加到动态 animator，就像我们`UIGravityBehavior`对进行的操作一样。
+首先，我们将创建一个 `UICollisionBehavior` 并将其添加到动态 animator 中，就像我们为 `UIGravityBehavior` 所做的一样。
 
-修改代码以包括`UICollisionBehavior`：
+修改代码以包括 `UICollisionBehavior`：
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -187,7 +187,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-具有`UICollisionBehavior`一个名`TranslatesReferenceBoundsIntoBoundry`为的属性。 如果将此`true`选项设置为，则会将引用视图的边界用作冲突边界。
+@No__t_0 具有一个名为 `TranslatesReferenceBoundsIntoBoundry` 的属性。 将此设置为 `true` 会导致引用视图的边界用作冲突边界。
 
 现在，当图像与重力向下动画动画时，它会在屏幕底部上弹跳，然后在屏幕上进行静止。
 
@@ -197,9 +197,9 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-我们可以进一步控制正在处理的图像视图的行为，并提供其他行为。 例如，我们可以添加`UIDynamicItemBehavior`来增加弹性，从而使图像视图在与屏幕底部冲突时更多地跳动。
+我们可以进一步控制正在处理的图像视图的行为，并提供其他行为。 例如，可以添加一个 `UIDynamicItemBehavior` 以增加弹性，从而使图像视图在与屏幕底部冲突时更多。
 
-`UIDynamicItemBehavior`添加与其他行为相同的步骤。 首先创建行为：
+添加 `UIDynamicItemBehavior` 执行与其他行为相同的步骤。 首先创建行为：
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {

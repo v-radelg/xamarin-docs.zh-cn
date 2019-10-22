@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "67832548"
 ---
 # <a name="introduction-to-urhosharp"></a>UrhoSharp 简介
@@ -68,7 +68,7 @@ UrhoSharp 可以方便地以[NuGet 包](https://www.nuget.org/)的形式分发�
 
 ## <a name="basic-structure"></a>基本结构
 
-你的`Application`游戏应为类设置子类，这是你将在其中设置游戏（ `Setup`在方法上）和启动游戏（在`Start`方法中）的位置。  然后构造您的主用户界面。  我们将演练一个小示例，其中显示了用于设置三维场景的 Api、一些 UI 元素，并为其附加了简单的行为。
+你的游戏应将 `Application` 类作为子类，这是你将在其中设置游戏（在 `Setup` 方法上）并启动游戏（在 `Start` 方法中）的位置。  然后构造您的主用户界面。  我们将演练一个小示例，其中显示了用于设置三维场景的 Api、一些 UI 元素，并为其附加了简单的行为。
 
 ```csharp
 class MySample : Application {
@@ -135,9 +135,9 @@ class MySample : Application {
 new MySample().Run();
 ```
 
-运行时将调用`Setup`和`Start`方法。  如果重写`Setup` ，则可以配置引擎参数（本示例中不显示）。
+运行时将为您调用 `Setup` 和 `Start` 方法。  如果重写 `Setup` 可以配置引擎参数（在本示例中不显示）。
 
-您必须重`Start`写，因为这将启动您的游戏。  在此方法中，您将加载您的资产，连接事件处理程序，设置您的场景并启动所需的任何操作。  在我们的示例中，我们创建了一些 UI 来向用户显示，并设置了三维场景。
+必须重写 `Start`，因为这将启动你的游戏。  在此方法中，您将加载您的资产，连接事件处理程序，设置您的场景并启动所需的任何操作。  在我们的示例中，我们创建了一些 UI 来向用户显示，并设置了三维场景。
 
 下面的代码段使用 UI 框架来创建文本元素，并将其添加到你的应用程序：
 
@@ -156,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-UI 框架提供了一个非常简单的游戏内用户界面，它可以通过向`UI.Root`节点添加新节点来运行。
+UI 框架提供了一个非常简单的游戏内用户界面，它可以通过向 `UI.Root` 节点添加新节点来工作。
 
 示例的第二部分设置主场景。  这涉及多个步骤：创建三维场景、在屏幕中创建三维框、添加光、照相机和视区。  [主题、节点、组件和照相机](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)部分更详细地探讨了这些内容。
 
-本示例的第三部分将触发几个操作。  操作是说明特定效果的食谱，一旦创建，就可以通过在`RunActionAsync` `Node`上调用方法，按需通过节点执行。
+本示例的第三部分将触发几个操作。  操作是说明特定效果的食谱，一旦创建，就可以通过对 `Node` 调用 `RunActionAsync` 方法，按需通过节点执行。
 
 第一个操作用弹跳效果缩放框，第二个操作将始终旋转框：
 
@@ -169,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-上面显示了我们创建的第一个操作是一个`ScaleTo`操作，这只是一个食谱，指示你要将缩放到一个节点的 scale 属性值。  此操作反过来会绕缓动操作（ `EaseBounceOut`操作）括起来。  缓动操作使操作的线性执行扭曲，应用效果，在这种情况下，它将提供弹跳效果。
+上面显示了我们创建的第一个操作是 `ScaleTo` 操作，这只是一个食谱，指示你要将其缩放到一个节点的 scale 属性值。  此操作反过来会绕缓动操作（`EaseBounceOut` 操作）括起来。  缓动操作使操作的线性执行扭曲，应用效果，在这种情况下，它将提供弹跳效果。
 所以，我们的食谱可以编写为：
 
 ```csharp

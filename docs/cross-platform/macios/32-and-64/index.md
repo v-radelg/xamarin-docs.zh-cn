@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71249792"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位平台注意事项
@@ -21,7 +21,7 @@ ms.locfileid: "71249792"
 
 从2018年1月开始，[提交到 Mac App Store 的新应用必须支持64位](https://developer.apple.com/news/?id=06282017a)，并且现有应用必须由6月2018更新。
 
-Xamarin 的 Classic API （`XamMac.dll`和`monotouch.dll`）仅支持32位应用程序。 但是，新的 xamarin 和 xamarin 应用程序默认使用[Unified API](~/cross-platform/macios/unified/index.md) （`Xamarin.iOS`和`Xamarin.Mac`），因此，在必要时可以同时针对32和64位。
+Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）仅支持32位应用程序。 但是，新的 Xamarin 和 Xamarin 应用程序默认使用[Unified API](~/cross-platform/macios/unified/index.md) （`Xamarin.iOS` 和 `Xamarin.Mac`），因此，在必要时可以同时针对32和64位。
 
 ## <a name="ios"></a>iOS
 
@@ -40,28 +40,28 @@ Xamarin 的 Classic API （`XamMac.dll`和`monotouch.dll`）仅支持32位应用
 
 1. 在**Solution Pad**中，双击应用程序的项目，打开 "**项目选项**" 窗口。
 2. 选择 " **IOS 生成**"。
-3. 对于 iPhone 模拟器，在 "**支持的体系结构**" 下拉列表中，选择 " **\_x86 64** " 或 " **i386 +\_x86 64**"：
+3. 对于 iPhone 模拟器，在 "**支持的体系结构**" 下拉列表中，选择 " **x86 \_64**或" **i386 + x86 \_64**：
 
-   [![将支持的体系结构\_设置为 x86 64 或\_i386 + x86 64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![将支持的体系结构设置为 x86 \_64 或 i386 + x86 \_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. 对于物理设备，请选择可用的**ARM64**组合之一：
 
-   [将![支持的体系结构设置为 ARM64 组合之一]将(Images/Image02.png "支持的体系结构设置为 ARM64 组合之一")](Images/Image02-large.png#lightbox)
+   [![将支持的体系结构设置为 ARM64 组合之一](Images/Image02.png "将支持的体系结构设置为 ARM64 组合之一")](Images/Image02-large.png#lightbox)
 
-5. 单击 **“确定”** 。
+5. 单击“确定”。
 6. 执行干净的生成。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在**解决方案资源管理器**中，右键单击应用的项目，然后选择 "**属性**"。
 2. 选择 " **IOS 生成**"。
-3. 对于 iPhone 模拟器，请将**支持的体系结构**设置为 **\_x86 64**或**i386\_+ x86 64**： 
+3. 对于 iPhone 模拟器，请将**支持的体系结构**设置为**x86 \_64**或**i386 + x86 \_64**： 
 
-   [![将支持的体系结构设置为 x86_64 或\_i386 + x86 64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![将支持的体系结构设置为 x86_64 或 i386 + x86 \_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. 对于物理设备，请选择可用的**ARM64**组合之一：
     
-   [将![支持的体系结构设置为 ARM64 组合之一]将(Images/VS01.png "支持的体系结构设置为 ARM64 组合之一")](Images/VS01-large.png#lightbox)
+   [![将支持的体系结构设置为 ARM64 组合之一](Images/VS01.png "将支持的体系结构设置为 ARM64 组合之一")](Images/VS01-large.png#lightbox)
 
 5. 保存更改。
 6. 执行干净的生成。
@@ -81,7 +81,7 @@ ARMv7s 仅支持 iPhone 5 （或更高版本）中包含的 A6 处理器。 ARMv
 面向32位和64位体系结构的目标会显著增加应用程序的大小。 不过，这样做会允许较新的设备运行优化的代码，同时仍支持较旧的设备。
 
 > [!IMPORTANT]
-> 如果在向 iTunes 应用商店提交 iOS 应用程序时收到以下消息， _则为 "警告 ITMS-9000：缺少64位支持。从2015年2月1日开始，已上传到应用商店的新 iOS 应用必须包括64位支持，并通过 iOS 8 SDK （包括在 Xcode 6 或更高版本中）构建。若要在项目中启用64位，建议使用默认的 Xcode 生成设置 "标准体系结构" 以使用32位和64位代码生成单个二进制文件。 "_ 需要将支持的体系结构切换为可用的**ARM64**组合之一（如上所示），重新编译并重新提交。
+> 如果在向 iTunes 应用商店提交 iOS 应用程序时收到以下消息，则为 _"警告 ITMS-9000：缺少64位支持。从2015年2月1日开始，已上传到应用商店的新 iOS 应用必须包括64位支持，并通过 iOS 8 SDK （包括在 Xcode 6 或更高版本中）构建。若要在项目中启用64位，建议使用默认的 Xcode 生成设置 "标准体系结构" 以使用32位和64位代码生成单个二进制文件。 "_ 需要将支持的体系结构切换为可用的**ARM64**组合之一（如上所示），重新编译并重新提交。
 
 ## <a name="mac"></a>Mac
 
@@ -92,7 +92,7 @@ ARMv7s 仅支持 iPhone 5 （或更高版本）中包含的 A6 处理器。 ARMv
 
 与 iOS 不同，在最新版本的 macOS 中引入的许多新框架仅在64位模式下受支持（CloudKit、EventKit、GameController、Localauthentication.framework、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、社交、以及其他 MapKit）。
 
-Unified API 允许开发人员选择他们想要生成的应用程序类型：32 位或 64 位。
+Unified API 允许开发人员选择他们想要生成的应用程序类型：32位或64位。
 
 **32 位应用程序**将在32位和64位 Mac 计算机上运行，其地址空间限制为32位，并要求所有库都为32位。
 

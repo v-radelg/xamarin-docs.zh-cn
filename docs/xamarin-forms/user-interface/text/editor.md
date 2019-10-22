@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Forms 编辑器
-description: 本文介绍如何使用 Xamarin.Forms 编辑器控件接受的应用程序中的多行文本输入。
+title: Xamarin. 窗体编辑器
+description: 本文介绍如何使用 Xamarin 编辑器控件在应用程序中接受多行文本输入。
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/26/2018
-ms.openlocfilehash: 684bdb21309028e02362dcc6bfd8c91c539430bd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 09/26/2019
+ms.openlocfilehash: 0c610d7bdecc5d3454079be38c7e6ede5f0596e1
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770185"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696806"
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.Forms 编辑器
+# <a name="xamarinforms-editor"></a>Xamarin. 窗体编辑器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _多行文本输入_
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)控件用来接受多行输入。 本文包含以下内容：
+[@No__t_1](xref:Xamarin.Forms.Editor)控件用于接受多行输入。 本文包含以下内容：
 
-- **[自定义](#customization)** &ndash;键盘和颜色选项。
-- **[交互性](#interactivity)** &ndash;可以将侦听的事件，以提供交互性。
+- **[自定义](#customization)** &ndash; 键盘和颜色选项。
+- **[交互](#interactivity)** &ndash; 可侦听以提供交互性的事件。
 
 ## <a name="customization"></a>自定义
 
 ### <a name="setting-and-reading-text"></a>设置和读取文本
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)，如其他文本呈现的视图，公开`Text`属性。 此属性可以用于设置和读取通过显示的文本`Editor`。 下面的示例演示了如何设置`Text`在 XAML 中的属性：
+与其他文本显示视图一样， [`Editor`](xref:Xamarin.Forms.Editor)公开 `Text` 属性。 此属性可用于设置和读取 `Editor` 显示的文本。 下面的示例演示如何在 XAML 中设置 `Text` 属性：
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -41,7 +41,7 @@ _多行文本输入_
 var MyEditor = new Editor { Text = "I am an Editor" };
 ```
 
-若要读取的文本，访问`Text`C# 中的属性：
+若要读取文本，请访问中C#的 `Text` 属性：
 
 ```csharp
 var text = MyEditor.Text;
@@ -49,7 +49,7 @@ var text = MyEditor.Text;
 
 ### <a name="setting-placeholder-text"></a>设置占位符文本
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)可以设置为显示占位符文本，它不存储用户输入时。 这可以通过设置[ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder)属性设置为`string`，并通常用于指示的是适用于的内容类型`Editor`。 此外，通过设置控制的占位符文本颜色[ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor)属性设置为[ `Color` ](xref:Xamarin.Forms.Color):
+[@No__t_1](xref:Xamarin.Forms.Editor)可以设置为在不存储用户输入时显示占位符文本。 这是通过将[`Placeholder`](xref:Xamarin.Forms.Editor.Placeholder)属性设置为 `string` 来实现的，它通常用于指示适用于 `Editor` 的内容类型。 此外，可以通过将[`PlaceholderColor`](xref:Xamarin.Forms.Editor.PlaceholderColor)属性设置为[`Color`](xref:Xamarin.Forms.Color)来控制占位符文本颜色：
 
 ```xaml
 <Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
@@ -61,7 +61,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 
 ### <a name="preventing-text-entry"></a>防止文本输入
 
-[`Editor`](xref:Xamarin.Forms.Editor)通过`false` `true`将属性（其默认值）设置为，可以防止用户修改中的文本： `IsReadOnly`
+可以通过将默认值为 `false` 的 `IsReadOnly` 属性设置为 `true`，阻止用户修改[`Editor`](xref:Xamarin.Forms.Editor)中的文本：
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -73,11 +73,11 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 ```
 
 > [!NOTE]
-> 属性不会改变的视觉外观[`Editor`](xref:Xamarin.Forms.Editor)，这与还会将`IsEnabled`的`Editor`视觉外观改为灰色的属性不同。 `IsReadonly`
+> @No__t_0 属性不会改变[`Editor`](xref:Xamarin.Forms.Editor)的视觉外观，这与同时将 `Editor` 的视觉外观更改为灰色的 `IsEnabled` 属性不同。
 
-### <a name="limiting-input-length"></a>输入的长度限制
+### <a name="limiting-input-length"></a>限制输入长度
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)属性可用于限制所允许的范围的输入的长度[ `Editor` ](xref:Xamarin.Forms.Editor)。 此属性应设置为一个正整数：
+[@No__t_1](xref:Xamarin.Forms.InputView.MaxLength)属性可用于限制[`Editor`](xref:Xamarin.Forms.Editor)允许的输入长度。 应将此属性设置为正整数：
 
 ```xaml
 <Editor ... MaxLength="10" />
@@ -87,14 +87,34 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 var editor = new Editor { ... MaxLength = 10 };
 ```
 
-一个[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)属性值为 0 指示将允许任何输入，并将值`int.MaxValue`，它是默认值， [ `Editor` ](xref:Xamarin.Forms.Editor)，指示是否有任何可能输入的字符数的有效限制。
+如果[`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)属性值为0，则表示不允许任何输入，值为 `int.MaxValue` （这是[`Editor`](xref:Xamarin.Forms.Editor)的默认值）指示对于可输入的字符数没有有效限制。
 
-### <a name="auto-sizing-an-editor"></a>自动调整大小编辑器
+### <a name="character-spacing"></a>字符间距
 
-[ `Editor` ](xref:Xamarin.Forms.Editor)可以对通过设置其内容自动调整大小[ `Editor.AutoSize` ](xref:Xamarin.Forms.Editor.AutoSize)属性设置为[ `TextChanges` ](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)，它是一个值[ `EditoAutoSizeOption` ](xref:Xamarin.Forms.EditorAutoSizeOption)枚举。 此枚举有两个值：
+通过将 `Editor.CharacterSpacing` 属性设置为 `double` 值，可将字符间距应用到[`Editor`](xref:Xamarin.Forms.Editor) ：
 
-- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 指示自动调整大小处于禁用状态，并且是默认值。
-- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 指示启用自动调整大小。
+```xaml
+<Editor ...
+        CharacterSpacing="10" />
+```
+
+等效 C# 代码如下：
+
+```csharp
+Editor editor = new editor { CharacterSpacing = 10 };
+```
+
+结果是[`Editor`](xref:Xamarin.Forms.Editor)显示的文本中的字符间距 `CharacterSpacing` 与设备无关的单位。
+
+> [!NOTE]
+> @No__t_0 属性值将应用于 `Text` 和 `Placeholder` 属性显示的文本。
+
+### <a name="auto-sizing-an-editor"></a>自动调整编辑器大小
+
+可以通过将 " [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) " 属性设置为 " [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)" 来自动调整其内容的[`Editor`](xref:Xamarin.Forms.Editor) ，这是[`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption)枚举的值。 此枚举有两个值：
+
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled)指示禁用自动调整大小，并为默认值。
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)指示启用自动调整大小。
 
 这可以在代码中完成，如下所示：
 
@@ -106,16 +126,16 @@ var editor = new Editor { ... MaxLength = 10 };
 var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOption.TextChanges };
 ```
 
-当启用自动调整大小、 的高度[ `Editor` ](xref:Xamarin.Forms.Editor)用户将其填充文本，并且高度会降低用户删除文本时，将提高。
+启用自动调整大小后，当用户用文本填充它时， [`Editor`](xref:Xamarin.Forms.Editor)的高度将增加，而当用户删除文本时，高度将降低。
 
 > [!NOTE]
-> [ `Editor` ](xref:Xamarin.Forms.Editor)将不自动调整大小 if [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)设置属性。
+> 如果已设置了[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)属性，则[`Editor`](xref:Xamarin.Forms.Editor)不会自动调整大小。
 
 ### <a name="customizing-the-keyboard"></a>自定义键盘
 
-当与用户交互时显示键盘[ `Editor` ](xref:Xamarin.Forms.Editor)可以通过编程方式设置[ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard)属性，因为的以下属性之一[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)类：
+用户与[`Editor`](xref:Xamarin.Forms.Editor)交互时显示的键盘可以通过[`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard)属性以编程方式设置为[`Keyboard`](xref:Xamarin.Forms.Keyboard)类中的以下属性之一：
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – 用于短和表情符号是有用的地方。
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – 用于短信和表情符号有用的地方。
 - [`Default`](xref:Xamarin.Forms.Keyboard.Default) – 默认键盘。
 - [`Email`](xref:Xamarin.Forms.Keyboard.Email) – 输入电子邮件地址时使用。
 - [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – 输入数字时使用。
@@ -124,21 +144,21 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 - [`Text`](xref:Xamarin.Forms.Keyboard.Text) – 输入文本时使用。
 - [`Url`](xref:Xamarin.Forms.Keyboard.Url) – 用于输入文件路径和 Web 地址。
 
-这可以实现在 XAML 中，如下所示：
+这可以通过以下操作在 XAML 中实现：
 
 ```xaml
 <Editor Keyboard="Chat" />
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 var editor = new Editor { Keyboard = Keyboard.Chat };
 ```
 
-可以在中找到的每个键盘示例我们[配方](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存储库。
+每个键盘的示例可在我们的[食谱](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存储库中找到。
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)类还具有[ `Create` ](xref:Xamarin.Forms.Keyboard.Create*)工厂方法，可以用来通过指定的大小写、 拼写检查，并建议行为自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法的参数，并返回自定义的 `Keyboard`。 `KeyboardFlags` 枚举包含以下值：
+[`Keyboard`](xref:Xamarin.Forms.Keyboard) 类还具有 [`Create`](xref:Xamarin.Forms.Keyboard.Create*) 工厂方法，可用于通过指定大小写、拼写检查和建议行为来自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法的参数，并返回自定义的 `Keyboard`。 `KeyboardFlags` 枚举包含以下值：
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – 没有功能添加到键盘。
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – 指示输入的每句话的第一个词的首字母将自动大写。
@@ -163,7 +183,7 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 </Editor>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 var editor = new Editor();
@@ -172,9 +192,9 @@ editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.Capi
 
 ### <a name="enabling-and-disabling-spell-checking"></a>启用和禁用拼写检查
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性控制是否拼写检查已启用。 默认情况下，该属性设置为`true`。 当用户输入文本，指示拼写错误。
+[@No__t_1](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性控制是否启用拼写检查。 默认情况下，属性设置为 `true`。 用户输入文本时，会显示拼写错误。
 
-但是，对于某些文本项方案中，输入用户名，如拼写检查功能提供了负的体验，因此应禁用通过设置[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性设置为`false`:
+但对于某些文本输入方案，如输入用户名，拼写检查会提供消极的体验，因此应通过将[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性设置为 `false` 来禁用：
 
 ```xaml
 <Editor ... IsSpellCheckEnabled="false" />
@@ -185,13 +205,13 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> 当[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性设置为`false`，并自定义键盘未被使用，将禁用本机拼写检查器。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)具有已设置，以禁用拼写检查，如[ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat)，则`IsSpellCheckEnabled`属性将被忽略。 因此，该属性不能用于启用拼写检查`Keyboard`的显式禁用它。
+> 如果[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性设置为 `false`，并且未使用自定义键盘，则将禁用本机拼写检查器。 但是，如果已设置[`Keyboard`](xref:Xamarin.Forms.Keyboard)禁用拼写检查，如[`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat)，则将忽略 `IsSpellCheckEnabled` 属性。 因此，该属性不能用于对显式禁用该属性的 `Keyboard` 启用拼写检查。
 
 ### <a name="enabling-and-disabling-text-prediction"></a>启用和禁用文本预测
 
-`IsTextPredictionEnabled`属性控制是否启用文本预测和自动文本更正。 默认情况下，该属性设置为`true`。 当用户输入文本时，会显示 word 预测。
+@No__t_0 属性控制是否启用文本预测和自动文本更正。 默认情况下，属性设置为 `true`。 当用户输入文本时，将显示 word 预测。
 
-但是，对于某些文本输入方案，例如输入用户名，文本预测和自动文本更正将提供消极的体验，并应通过将`IsTextPredictionEnabled`属性设置为来`false`禁用它：
+但是，对于某些文本输入方案，例如输入用户名，文本预测和自动文本更正将提供消极的体验，并应通过将 `IsTextPredictionEnabled` 属性设置为 `false` 来禁用：
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -202,11 +222,11 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> `false`如果将`IsTextPredictionEnabled`属性设置为，并且未使用自定义键盘，则会禁用文本预测和自动文本更正。 但是，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已设置该禁用文本预测`IsTextPredictionEnabled`属性将被忽略。 因此，该属性不能用于启用文本预测`Keyboard`的显式禁用它。
+> 如果将 `IsTextPredictionEnabled` 属性设置为 `false`，并且未使用自定义键盘，则会禁用文本预测和自动文本更正。 但是，如果已设置了禁用文本预测的[`Keyboard`](xref:Xamarin.Forms.Keyboard) ，则将忽略 `IsTextPredictionEnabled` 属性。 因此，该属性不能用于对显式禁用它的 `Keyboard` 启用文本预测。
 
 ### <a name="colors"></a>颜色
 
-`Editor` 可以设置为使用自定义背景色通过`BackgroundColor`属性。 特别注意有必要确保将每个平台上可用的颜色。 因为每个平台都有不同的文本颜色的默认值，可能需要设置每个平台的自定义背景颜色。 请参阅[使用平台调整](~/xamarin-forms/platform/device.md)有关优化每个平台的 UI 的详细信息。
+可以通过 `BackgroundColor` 属性将 `Editor` 设置为使用自定义背景色。 需要特别注意，以确保每个平台的颜色都可用。 由于每个平台都有不同的文本颜色默认设置，因此可能需要为每个平台设置自定义背景色。 有关优化每个平台的 UI 的详细信息，请参阅[使用平台](~/xamarin-forms/platform/device.md)调整程序。
 
 在 C# 中：
 
@@ -225,7 +245,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-在 XAML:
+在 XAML 中：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -248,23 +268,23 @@ public partial class EditorPage : ContentPage
 </ContentPage>
 ```
 
-![](editor-images/textbackgroundcolor.png "使用 BackgroundColor 示例编辑器")
+![](editor-images/textbackgroundcolor.png "Editor with BackgroundColor Example")
 
-请确保你选择的背景和文本颜色为每个平台上可用，且变得模糊的任何占位符文本。
+请确保选择的背景和文本颜色在每个平台上都可用，而不会遮盖任何占位符文本。
 
 ## <a name="interactivity"></a>交互性
 
 `Editor` 公开两个事件：
 
-- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash;文本在编辑器中更改时引发。 更改之前和之后提供的文本。
-- [已完成](xref:Xamarin.Forms.Editor.Completed)&ndash;用户已结束输入通过键盘上按 return 键时引发。
+- 当文本在编辑器中发生更改时， [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash; 引发。 在更改前后提供文本。
+- [完成](xref:Xamarin.Forms.Editor.Completed)&ndash; 在用户通过按键盘上的 return 键结束输入时引发。
 
 > [!NOTE]
-> 从其[`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)继承的[`VisualElement`类](xref:Xamarin.Forms.VisualElement) [`Entry`](xref:Xamarin.Forms.Entry)也具有和事件。
+> [@No__t_3](xref:Xamarin.Forms.Entry)从中继承的[`VisualElement`](xref:Xamarin.Forms.VisualElement)类也具有[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)和[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用来与的交互完成做出反应`Editor`。 `Completed`如果用户通过输入键盘上的 return 键（或按 UWP 上的 Tab 键）来结束输入，则会引发。 该事件的处理程序是一个泛型事件处理程序，使发件人和`EventArgs`:
+@No__t_0 事件用于响应与 `Editor` 交互的完成。 如果用户通过输入键盘上的 return 键（或按 UWP 上的 Tab 键）来结束输入，则会引发 `Completed`。 事件的处理程序是一个泛型事件处理程序，用于获取发送方和 `EventArgs`：
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -273,7 +293,7 @@ void EditorCompleted (object sender, EventArgs e)
 }
 ```
 
-可以在代码和 XAML 中订阅的已完成的事件：
+已完成的事件可以在代码和 XAML 中订阅：
 
 在 C# 中：
 
@@ -292,7 +312,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-在 XAML:
+在 XAML 中：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -310,9 +330,9 @@ Title="Editor Demo">
 
 ### <a name="textchanged"></a>TextChanged
 
-`TextChanged`事件用于对字段的内容中更改做出反应。
+@No__t_0 事件用于响应字段内容的更改。
 
-`TextChanged` 时引发`Text`的`Editor`更改。 为事件处理程序将执行的实例`TextChangedEventArgs`。 `TextChangedEventArgs` 提供对旧的和新值的访问`Editor``Text`通过`OldTextValue`和`NewTextValue`属性：
+当 `Editor` 的 `Text` 更改时，将引发 `TextChanged`。 事件的处理程序采用 `TextChangedEventArgs` 的实例。 `TextChangedEventArgs` 通过 `OldTextValue` 和 `NewTextValue` 属性提供对 `Editor` `Text` 的新旧值的访问权限：
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -322,7 +342,7 @@ void EditorTextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-可以在代码和 XAML 中订阅的已完成的事件：
+已完成的事件可以在代码和 XAML 中订阅：
 
 在代码中：
 
@@ -341,7 +361,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-在 XAML:
+在 XAML 中：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -359,5 +379,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文本（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [编辑器 API](xref:Xamarin.Forms.Editor)
