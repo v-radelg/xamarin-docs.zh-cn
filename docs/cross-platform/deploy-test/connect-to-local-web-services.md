@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: a29cc650d9aa3976b6fd7aaaa82e233317684335
-ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
+ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
+ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72426571"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72526821"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>从 iOS 模拟器和 Android 模拟器连接到本地 Web 服务
 
@@ -27,7 +27,7 @@ ms.locfileid: "72426571"
 但是，若要使在 iOS 模拟器或 Android 模拟器上运行的应用程序能够使用通过 HTTP 公开的本地 Web 服务，还需要执行额外的步骤。 对于此方案，流程如下：
 
 1. 在你的计算机上创建一个自签名的开发证书。 有关详细信息，请参阅[创建开发证书](#create-a-development-certificate)。
-1. 配置项目，以便将托管 `HttpClient` 网络堆栈用于调试版本。 有关详细信息，请参阅[配置项目](#configure-your-project)。
+1. 配置项目，以便将合适的 `HttpClient` 网络堆栈用于调试版本。 有关详细信息，请参阅[配置项目](#configure-your-project)。
 1. 指定本地计算机的地址。 有关详细信息，请参阅[指定本地计算机地址](#specify-the-local-machine-address)。
 1. 绕过本地开发证书安全检查。 有关详细信息，请参阅[绕过证书安全检查](#bypass-the-certificate-security-check)。
 
@@ -66,7 +66,7 @@ dotnet dev-certs https --help
 
 ### <a name="android"></a>Android
 
-在 Android 上运行的 Xamarin 应用程序可以使用托管 `HttpClientHandler` 网络堆栈，或使用本机 `AndroidClientHandler` 网络堆栈。 默认情况下，新 Android 平台项目使用 `AndroidClientHandler` 网络堆栈，以支持 TLS 1.2，并使用本机 API，以便提高性能并减小可执行文件大小。 有关 Android 网络堆栈的详细信息，请参阅 [Android 的 HttpClient 堆栈和 SSL/TLS 实现选择器](~/android/app-fundamentals/http-stack.md)。
+在 Android 上运行的 Xamarin 应用程序可以使用托管 `HttpClient` 网络堆栈，或使用本机 `AndroidClientHandler` 网络堆栈。 默认情况下，新 Android 平台项目使用 `AndroidClientHandler` 网络堆栈，以支持 TLS 1.2，并使用本机 API，以便提高性能并减小可执行文件大小。 有关 Android 网络堆栈的详细信息，请参阅 [Android 的 HttpClient 堆栈和 SSL/TLS 实现选择器](~/android/app-fundamentals/http-stack.md)。
 
 ## <a name="specify-the-local-machine-address"></a>指定本地计算机地址
 
