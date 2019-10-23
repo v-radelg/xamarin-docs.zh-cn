@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 80688c0796a112bcb444a15cd96a6b176b8c16e0
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67559979"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72715228"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -15,7 +15,7 @@ ms.locfileid: "67559979"
     > [!IMPORTANT]
     > 本教程中的 C# 和 XAML 片段要求将解决方案命名为 StackLayoutTutorial  。 使用不同的名称会导致：将本教程中的代码复制到解决方案中时出现生成错误。
 
-    有关创建的 .NET Standard 库的详细信息，请参阅 [Xamarin.Forms 快速入门的深入探讨](~/get-started/first-app/index.md)中的 [Xamarin.Forms 应用程序剖析](~/get-started/first-app/index.md)。
+    有关创建的 .NET Standard 库的详细信息，请参阅 [Xamarin.Forms 快速入门的深入探讨](~/get-started/quickstarts/deepdive.md)中的 [Xamarin.Forms 应用程序剖析](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application)。
 
 1. 在“解决方案资源管理器”的 StackLayoutTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
@@ -39,7 +39,7 @@ ms.locfileid: "67559979"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
 
-    [![iOS 和 Android 上 StackLayout 中子元素视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "StackLayout containing Label instances")
+    [![iOS 和 Android 上 StackLayout 中子视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含标签实例的 StackLayout")
 
     有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
 
@@ -76,7 +76,7 @@ ms.locfileid: "67559979"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
 
-    [![iOS 和 Android 上 StackLayout 中子元素视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "StackLayout containing Label instances")
+    [![iOS 和 Android 上 StackLayout 中子视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含标签实例的 StackLayout")
 
     有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
 

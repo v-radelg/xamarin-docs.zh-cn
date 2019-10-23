@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: 2019-10.md
+            html: 2019 年 10 月 Xamarin 文档中的新增内容：已发布的 Xamarin.Forms 4.3 和其他更新。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_article.svg'
+              href: 2019-10.md
+            title: 2019 年 10 月
           - href: 2019-08.md
             html: 2019 年 8 月 Xamarin 文档中的新增内容：Xamarin.Forms 4.2 发布、用户界面更新及其他更新。
             image:

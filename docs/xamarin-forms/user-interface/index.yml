@@ -43,6 +43,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: button.md
             title: Button
+          - href: carouselview/index.md
+            html: 了解如何使用 CarouselView 在线性传送视图中呈现数据。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CarouselView
           - href: checkbox.md
             html: 了解如何使用 CheckBox 设置布尔值。
             image:
@@ -74,7 +80,7 @@ sections:
               href: datepicker.md
             title: DatePicker
           - href: pop-ups.md
-            html: 了解如何显示向用户询问简单问题和引导用户执行任务的对话框。
+            html: 了解如何显示向用户提出简单问题，引导用户完成任务和显示提示的对话框。
             image:
               src: ~/media/icons/i_user-interface.svg
               href: pop-ups.md
@@ -109,11 +115,11 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: listview/index.md
             title: ListView
-          - href: map.md
+          - href: map/index.md
             html: 了解如何使用地图控件（包括所需的平台配置），以及如何使用图钉在地图上做标记。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: map.md
+              href: map/index.md
             title: 映射
           - href: menuitem.md
             html: 了解如何使用 MenuItem 类向 ListView 单元格的上下文菜单添加项。
@@ -133,6 +139,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: progressbar.md
             title: ProgressBar
+          - href: refreshview.md
+            html: 了解如何使用 RefreshView 为可滚动内容提供对刷新功能的拉取。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: refreshview.md
+            title: RefreshView
           - href: searchbar.md
             html: 了解如何使用搜索栏控件开始搜索。
             image:
