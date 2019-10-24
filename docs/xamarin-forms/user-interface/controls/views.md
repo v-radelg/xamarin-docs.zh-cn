@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/11/2019
-ms.openlocfilehash: 71b917cc6b090d78c9d9bdd7373b9bba74babee9
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: HT
+ms.openlocfilehash: bc46d9ee083cca7eacc354846eec6e582070bb9e
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697031"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749833"
 ---
 # <a name="xamarinforms-views"></a>Xamarin. Forms 视图
 
@@ -93,7 +93,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 
 |     |     |
 | --- | --- |
-| [`SearchBar`](xref:Xamarin.Forms.SearchBar)显示用户键入文本字符串的区域，以及指示应用程序执行搜索的按钮（或键盘键）。 [@No__t_1](xref:Xamarin.Forms.SearchBar.Text)属性提供对文本的访问， [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)事件指示已按下该按钮。<br /><br />[API 文档](xref:Xamarin.Forms.SearchBar) / [指南](~/xamarin-forms/user-interface/searchbar.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SearchBar) | [![SearchBar 示例](views-images/SearchBar.png "SearchBar 示例")](views-images/SearchBar-Large.png#lightbox "SearchBar 示例")<br /> 此页的代码  /  具有[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs)的[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) |
+| [`SearchBar`](xref:Xamarin.Forms.SearchBar)显示用户键入文本字符串的区域，以及指示应用程序执行搜索的按钮（或键盘键）。 [@No__t_1](xref:Xamarin.Forms.SearchBar.Text)属性提供对文本的访问， [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)事件指示已按下该按钮。<br /><br />[API 文档](xref:Xamarin.Forms.SearchBar) / [指南](~/xamarin-forms/user-interface/searchbar.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/) | [![SearchBar 示例](views-images/SearchBar.png "SearchBar 示例")](views-images/SearchBar-Large.png#lightbox "SearchBar 示例")<br /> 此页的代码  /  具有[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs)的[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>设置值的视图
@@ -123,7 +123,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 
 |     |     |
 | --- | --- |
-| [`Switch`](xref:Xamarin.Forms.Switch)采用 "开/关" 开关的形式，以允许用户选择一个布尔值。 [@No__t_1](xref:Xamarin.Forms.Switch.IsToggled)属性是开关的状态，在状态更改时，将激发[`Toggled`](xref:Xamarin.Forms.Switch.Toggled)事件。<br /><br />[API 文档](xref:Xamarin.Forms.Switch) / [指南](~/xamarin-forms/user-interface/switch.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SwitchDemos) | [![Switch 示例](views-images/Switch.png "Switch 示例")](views-images/Switch-Large.png#lightbox "Switch 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) |
+| [`Switch`](xref:Xamarin.Forms.Switch)采用 "开/关" 开关的形式，以允许用户选择一个布尔值。 [@No__t_1](xref:Xamarin.Forms.Switch.IsToggled)属性是开关的状态，在状态更改时，将激发[`Toggled`](xref:Xamarin.Forms.Switch.Toggled)事件。<br /><br />[API 文档](xref:Xamarin.Forms.Switch) / [指南](~/xamarin-forms/user-interface/switch.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/) | [![Switch 示例](views-images/Switch.png "Switch 示例")](views-images/Switch-Large.png#lightbox "Switch 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
@@ -170,7 +170,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 
 |     |     |
 | --- | --- |
-| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)使用动画来表明，应用程序参与了长时间的活动，而不提供任何进度指示。 [@No__t_1](xref:Xamarin.Forms.ActivityIndicator.IsRunning)属性控制动画。<br /><br />如果活动的进度已知，请改用[`ProgressBar`](#progressbar) 。<br /><br />[API 文档](xref:Xamarin.Forms.ActivityIndicator) / [指南](~/xamarin-forms/user-interface/activityindicator.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ActivityIndicatorDemos) | [![ActivityIndicator 示例](views-images/ActivityIndicator.png "ActivityIndicator 示例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) |
+| [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)使用动画来表明，应用程序参与了长时间的活动，而不提供任何进度指示。 [@No__t_1](xref:Xamarin.Forms.ActivityIndicator.IsRunning)属性控制动画。<br /><br />如果活动的进度已知，请改用[`ProgressBar`](#progressbar) 。<br /><br />[API 文档](xref:Xamarin.Forms.ActivityIndicator) / [指南](~/xamarin-forms/user-interface/activityindicator.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/) | [![ActivityIndicator 示例](views-images/ActivityIndicator.png "ActivityIndicator 示例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs) |
 |     |     |
 
 <a name="progressbar" />
@@ -179,7 +179,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 
 |     |     |
 | --- | --- |
-| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)使用动画来显示应用程序正在经历漫长的活动。 将[`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)属性设置为介于0和1之间的值，以指示进度。<br /><br />如果活动的进度未知，请改用[`ActivityIndicator`](#activityindicator) 。<br /><br />[API 文档](xref:Xamarin.Forms.ProgressBar) / [指南](~/xamarin-forms/user-interface/progressbar.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ProgressBarDemos) | [![ProgressBar 示例](views-images/ProgressBar.png "ProgressBar 示例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar 示例")<br />此页的代码  /  具有[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs)的[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) |
+| [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)使用动画来显示应用程序正在经历漫长的活动。 将[`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)属性设置为介于0和1之间的值，以指示进度。<br /><br />如果活动的进度未知，请改用[`ActivityIndicator`](#activityindicator) 。<br /><br />[API 文档](xref:Xamarin.Forms.ProgressBar) / [指南](~/xamarin-forms/user-interface/progressbar.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/) | [![ProgressBar 示例](views-images/ProgressBar.png "ProgressBar 示例")](views-images/ProgressBar-Large.png#lightbox "ProgressBar 示例")<br />此页的代码  /  具有[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml.cs)的[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ProgressBarDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ProgressBarDemoPage.cs) |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>显示集合的视图
@@ -188,14 +188,14 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 
 |     |     |
 | --- | --- |
-| [`CarouselView`](xref:Xamarin.Forms.CarouselView)显示数据项的可滚动列表。 将 `ItemsSource` 属性设置为对象的集合，并将 `ItemTemplate` 属性设置为描述如何设置这些项的格式的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象。 @No__t_0 事件指示当前显示的项已更改，后者作为 `CurrentItem` 属性提供。<br /><br />[指南](~/xamarin-forms/user-interface/carouselview/index.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CarouselViewDemos/) | [![CarouselView 示例](views-images/CarouselView.png "CarouselView 示例")](views-images/CarouselView-Large.png#lightbox "CarouselView 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselViewDemoPage.cs) |
+| [`CarouselView`](xref:Xamarin.Forms.CarouselView)显示数据项的可滚动列表。 将 `ItemsSource` 属性设置为对象的集合，并将 `ItemTemplate` 属性设置为描述如何设置这些项的格式的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象。 @No__t_0 事件指示当前显示的项已更改，后者作为 `CurrentItem` 属性提供。<br /><br />[指南](~/xamarin-forms/user-interface/carouselview/index.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/) | [![CarouselView 示例](views-images/CarouselView.png "CarouselView 示例")](views-images/CarouselView-Large.png#lightbox "CarouselView 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselViewDemoPage.cs) |
 |     |     |
 
 ### <a name="collectionview"></a>CollectionView
 
 |     |     |
 | --- | --- |
-| [`CollectionView`](xref:Xamarin.Forms.CollectionView)将使用不同的布局规范显示可选择数据项的可滚动列表。 它旨在为[`ListView`](xref:Xamarin.Forms.ListView)提供更灵活、更高性能的替代方法。 将 `ItemsSource` 属性设置为对象的集合，并将 `ItemTemplate` 属性设置为描述如何设置这些项的格式的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象。 @No__t_0 事件指示已进行了选择，该选项可作为 `SelectedItem` 属性提供。<br /><br />[指南](~/xamarin-forms/user-interface/collectionview/index.md) / [示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/) | [![CollectionView 示例](views-images/CollectionView.png "CollectionView 示例")](views-images/CollectionView-Large.png#lightbox "CollectionView 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) |
+| [`CollectionView`](xref:Xamarin.Forms.CollectionView)将使用不同的布局规范显示可选择数据项的可滚动列表。 它旨在为[`ListView`](xref:Xamarin.Forms.ListView)提供更灵活、更高性能的替代方法。 将 `ItemsSource` 属性设置为对象的集合，并将 `ItemTemplate` 属性设置为描述如何设置这些项的格式的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象。 @No__t_0 事件指示已进行了选择，该选项可作为 `SelectedItem` 属性提供。<br /><br />[指南](~/xamarin-forms/user-interface/collectionview/index.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/) | [![CollectionView 示例](views-images/CollectionView.png "CollectionView 示例")](views-images/CollectionView-Large.png#lightbox "CollectionView 示例")<br />此页的代码  / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CollectionViewDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CollectionViewDemoPage.cs) |
 |     |     |
 
 <a name="listView" />
