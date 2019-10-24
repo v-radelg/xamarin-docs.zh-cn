@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 1fe2611e26d357d910cc85800355b42d11e1104b
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424860"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697184"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>突出显示地图上的圆形区域
 
@@ -33,7 +33,7 @@ ms.locfileid: "72424860"
 1. 通过在每个平台上为地图创建自定义呈现器来[自定义](#Customizing_the_Map)地图。
 
 > [!NOTE]
-> 必须在使用前对 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 进行初始化和配置。 有关详细信息，请参阅 [`Maps Control`](~/xamarin-forms/user-interface/map.md)
+> 必须在使用前对 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 进行初始化和配置。 有关详细信息，请参阅 [`Maps Control`](~/xamarin-forms/user-interface/map/index.md)
 
 有关使用自定义呈现器自定义地图的信息，请参阅[自定义图钉](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
 

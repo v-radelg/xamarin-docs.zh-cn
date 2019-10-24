@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 98def647c38f69ec4f942a06e2187841c4e04459
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424845"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697171"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
@@ -35,7 +35,7 @@ ms.locfileid: "72424845"
 现在将依次讨论每个项，以实现 `CustomMap` 呈现器，该呈现器显示具有自定义图钉的本机地图和每个平台上图钉数据的自定义视图。
 
 > [!NOTE]
-> 必须在使用前对 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 进行初始化和配置。 有关详细信息，请参阅 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
+> 必须在使用前对 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 进行初始化和配置。 有关详细信息，请参阅 [`Maps Control`](~/xamarin-forms/user-interface/map/index.md)。
 
 <a name="Creating_the_Custom_Map" />
 
@@ -654,7 +654,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [地图控件](~/xamarin-forms/user-interface/map.md)
+- [地图控件](~/xamarin-forms/user-interface/map/index.md)
 - [iOS 地图](~/ios/user-interface/controls/ios-maps/index.md)
 - [地图 API](~/android/platform/maps-and-location/maps/maps-api.md)
 - [自定义的图钉（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

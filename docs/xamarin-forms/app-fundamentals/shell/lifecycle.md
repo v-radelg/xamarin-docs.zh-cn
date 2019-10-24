@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/25/2019
-ms.openlocfilehash: c008cc29d2ceae073459766597040af653329d71
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2ed51763b5866c15e91d88a6a1a58c7285fb5973
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69893953"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749771"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命周期
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Shell 应用程序遵循 Xamarin.Forms 生命周期，当页面将出现在屏幕上时，将引发 `Appearing` 事件，当页面将从屏幕上消失时，将引发 `Disappearing` 事件。 这些事件会传播到页面，可以通过重写页面上的 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 或 [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) 方法进行处理。
 
@@ -39,6 +39,6 @@ Shell 应用程序遵循 Xamarin.Forms 生命周期，当页面将出现在屏�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms 应用生命周期](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
 - [Xamarin.Forms 模式页面](~/xamarin-forms/app-fundamentals/navigation/modal.md)
