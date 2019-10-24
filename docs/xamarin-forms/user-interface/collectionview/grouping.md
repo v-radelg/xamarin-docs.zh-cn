@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/17/2019
-ms.openlocfilehash: 0df3b082d6a3a4ebd64627082b2ac56dd0836e81
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: HT
+ms.openlocfilehash: 3a0fe7159e6af24d58e49dea4166d012605c9985
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696768"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749807"
 ---
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin CollectionView 分组
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 经常滚动列表中的大型数据集可能会变得难以使用。 在这种情况下，将数据组织成组可以更轻松地导航数据，从而改善用户体验。
 
@@ -249,5 +249,5 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+- [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
