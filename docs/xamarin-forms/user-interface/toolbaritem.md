@@ -7,52 +7,54 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: b361bc988b66d38fc33ceb866a2c5ec83153f8d0
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 0812347e85b0ccb6aa0bbb16649a89bb4d961c9b
+ms.sourcegitcommit: a14edebf00f3e0f8944e59042ca7aa5c42173e30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200014"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72780357"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
-Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)类是可以添加`Page`到对象的`ToolbarItems`集合中的一种特殊类型的按钮。 每`ToolbarItem`个对象都将作为一个按钮显示在应用程序的导航栏中。 一个`ToolbarItem`实例可以有一个图标, 并显示为主菜单项或辅助菜单项。 类继承自[`MenuItem`。](xref:Xamarin.Forms.MenuItem) `ToolbarItem`
+Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)类是一种特殊类型的按钮，可将其添加到 `Page` 对象的 `ToolbarItems` 集合。 每个 `ToolbarItem` 对象将作为按钮显示在应用程序的导航栏中。 @No__t_0 实例可以有一个图标，并显示为主菜单项或辅助菜单项。 @No__t_0 类继承自[`MenuItem`](xref:Xamarin.Forms.MenuItem)。
 
-以下屏幕截图显示`ToolbarItem` iOS 和 Android 上导航栏中的对象:
+以下屏幕截图显示了 iOS 和 Android 上导航栏中 `ToolbarItem` 对象：
 
 !["Android 和 iOS 上的 ToolbarItem 演示屏幕截图"](toolbaritem-images/toolbaritem-device-screenshot.png "Android 和 iOS 上的 ToolbarItem 演示屏幕截图")
 
-`ToolbarItem`类定义以下属性:
+@No__t_0 类定义以下属性：
 
-* [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)是一个`ToolbarItemOrder`枚举值, 它确定`ToolbarItem`实例是在主菜单还是辅助菜单中显示。
-* [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)`Page`确定对象的`ToolbarItems`集合中项的显示顺序的值。`integer`
+* [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)是 `ToolbarItemOrder` 的枚举值，用于确定 `ToolbarItem` 实例是否显示在主菜单或辅助菜单中。
+* [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)是一个 `integer` 值，该值确定 `Page` 对象的 `ToolbarItems` 集合中项的显示顺序。
 
-类继承`MenuItem`类中通常使用的以下属性: `ToolbarItem`
+@No__t_0 类继承了 `MenuItem` 类中通常使用的以下属性：
 
-* [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一个`ICommand` , 它允许将用户操作 (如指指单击或单击) 绑定到在 viewmodel 上定义的命令。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)指定应传递到的`Command`参数的。 `object`
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)确定对象上显示图标的值。`ImageSource` `ToolbarItem`
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)`string`确定对象`ToolbarItem`上显示文本的。
+* [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一种允许将用户操作（如指指点击或单击）绑定到 viewmodel 上定义的命令的 `ICommand`。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是指定应传递到 `Command` 的参数的 `object`。
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)是确定 `ToolbarItem` 对象上显示图标的 `ImageSource` 值。
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text)是确定 `ToolbarItem` 对象上的显示文本的 `string`。
 
-这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的`ToolbarItem` , 因此, 实例可以是数据绑定的目标。
+这些属性由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持，因此 `ToolbarItem` 实例可以是数据绑定的目标。
 
 > [!NOTE]
-> 从[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)对象创建工具栏的另一种方法是[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)将附加属性设置为包含多个视图的布局类。 有关详细信息, 请参阅[在导航栏中显示视图](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)。
+> 从[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)对象创建工具栏的另一种方法是将[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)附加属性设置为包含多个视图的布局类。 有关详细信息，请参阅[在导航栏中显示视图](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)。
 
 ## <a name="create-a-toolbaritem"></a>创建 ToolbarItem
 
-`ToolbarItem`对象可以在 XAML 中进行实例化。 `Text` 和`IconImageSource`属性可以设置为确定按钮在导航栏中的显示方式。 下面的示例演示如何`ToolbarItem`使用一些公共属性集来实例化:
+@No__t_0 对象可以在 XAML 中实例化。 可以设置 `Text` 和 `IconImageSource` 属性，以确定按钮在导航栏中的显示方式。 下面的示例演示如何使用一些公共属性集来实例化 `ToolbarItem`，并将其添加到 `ContentPage` 的 `ToolbarItems` 集合：
 
 ```xaml
-<ToolbarItem Text="Example Item"
-             IconImageSource="example_icon.png"
-             Order="Primary"
-             Priority="0" />
+<ContentPage.ToolbarItems>
+    <ToolbarItem Text="Example Item"
+                 IconImageSource="example_icon.png"
+                 Order="Primary"
+                 Priority="0" />
+</ContentPage.ToolbarItems>
 ```
 
-此示例将生成一个`ToolbarItem`对象, 该对象具有文本、图标并首先出现在主导航栏区域中。 也可以在代码中创建, 并将其添加`ToolbarItems`到集合中: `ToolbarItem`
+此示例将生成一个包含文本、一个图标并且在主导航栏区域中首先出现的 `ToolbarItem` 对象。 也可以在代码中创建 `ToolbarItem`，并将其添加到 `ToolbarItems` 集合：
 
 ```csharp
 ToolbarItem item = new ToolbarItem
@@ -67,28 +69,28 @@ ToolbarItem item = new ToolbarItem
 this.ToolbarItems.Add(item);
 ```
 
-由表示`string`的文件 ( `IconImageSource`作为属性提供) 必须存在于每个平台项目中。
+每个平台项目中必须存在由 `string` 表示的文件（作为 `IconImageSource` 属性提供）。
 
 > [!NOTE]
-> 每个平台上的图像资产的处理方式不同。 `ImageSource`可以来自源, 包括本地文件或嵌入的资源、URI 或流。 有关设置 xamarin 中的`IconImageSource`属性和图像的详细信息, 请参阅[xamarin 中的图像](~/xamarin-forms/user-interface/images.md)。
+> 每个平台上的图像资产的处理方式不同。 @No__t_0 可以来自源，包括本地文件或嵌入的资源、URI 或流。 有关在 Xamarin. Forms 中设置 `IconImageSource` 属性和图像的详细信息，请参阅[xamarin 中的图像](~/xamarin-forms/user-interface/images.md)。
 
 ## <a name="define-button-behavior"></a>定义按钮行为
 
-`ToolbarItem`类`Clicked`从类`MenuItem`继承事件。 可以将事件处理程序附加到`Clicked`事件, 以响应在 XAML 中按`ToolbarItem`下或单击实例:
+@No__t_0 类继承 `MenuItem` 类中的 `Clicked` 事件。 事件处理程序可以附加到 `Clicked` 事件，以响应 `ToolbarItem` XAML 中的实例：
 
 ```xaml
 <ToolbarItem ...
              Clicked="OnItemClicked" />
 ```
 
-事件处理程序也可以在代码中附加:
+事件处理程序也可以在代码中附加：
 
 ```csharp
 ToolbarItem item = new ToolbarItem { ... }
 item.Clicked += OnItemClicked;
 ```
 
-前面的示例引用`OnItemClicked`了事件处理程序。 下面的代码演示实现示例:
+前面的示例引用 `OnItemClicked` 事件处理程序。 下面的代码演示实现示例：
 
 ```csharp
 void OnItemClicked(object sender, EventArgs e)
@@ -98,22 +100,22 @@ void OnItemClicked(object sender, EventArgs e)
 }
 ```
 
-`ToolbarItem`对象还可以使用`Command`和`CommandParameter`属性来响应用户输入, 而无需使用事件处理程序。 有关`ICommand` interface 和 MVVM 数据绑定的详细信息, 请参阅[Xamarin。窗体 MenuItem MVVM 行为](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm)。
+`ToolbarItem` 对象还可以使用 `Command` 和 `CommandParameter` 属性来响应用户输入，而无需使用事件处理程序。 有关 `ICommand` 接口和 MVVM 数据绑定的详细信息，请参阅[Xamarin。窗体 MENUITEM MVVM 行为](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm)。
 
 ## <a name="primary-and-secondary-menus"></a>主菜单和辅助菜单
 
-枚举具有`Default` 、`Primary`和值`Secondary` 。 `ToolbarItemOrder`
+@No__t_0 枚举具有 `Default`、`Primary` 和 `Secondary` 值。
 
-当属性设置为`Primary`时, 该`ToolbarItem`对象将显示在所有平台上的主导航栏中。 `Order` `ToolbarItem`对象优先于页面标题, 这将被截断以为项目腾出空间。 以下屏幕截图显示`ToolbarItem` iOS 和 Android 上主菜单中的对象:
+@No__t_0 属性设置为 `Primary` 时，`ToolbarItem` 对象将显示在所有平台上的主导航栏中。 `ToolbarItem` 对象优先于页面标题，这将被截断以为项目腾出空间。 以下屏幕截图显示 iOS 和 Android 上主菜单中的 `ToolbarItem` 对象：
 
 !["ToolbarItem 主菜单屏幕快照 Android 和 iOS"](toolbaritem-images/toolbaritem-primary-menu.png "Android 和 iOS 上的 ToolbarItem 主菜单屏幕截图")
 
-当属性设置为`Secondary`时, 行为因平台而异。 `Order` 在 UWP 和 Android 上, `Secondary` "项" 菜单显示为三个点, 可以点击或单击它们以显示垂直列表中的项。 在 iOS 上, `Secondary` "项目" 菜单显示在导航栏下面作为水平列表。 以下屏幕截图显示了 iOS 和 Android 上的辅助菜单:
+@No__t_0 属性设置为 `Secondary` 时，行为因平台而异。 在 UWP 和 Android 上，"`Secondary` 项" 菜单显示为三个点，可以点击或单击这些点来显示垂直列表中的项。 在 iOS 上，"`Secondary` 项" 菜单显示在导航栏下面作为水平列表。 以下屏幕截图显示了 iOS 和 Android 上的辅助菜单：
 
 !["ToolbarItem 辅助菜单屏幕快照 Android 和 iOS"](toolbaritem-images/toolbaritem-secondary-menu.png "Android 和 iOS 上的 ToolbarItem 辅助菜单屏幕截图")
 
 > [!WARNING]
-> `Order`属性设置为`ToolbarItem` 的对象中的图标行为在平台`Secondary`上不一致。 避免在辅助`IconImageSource`菜单中显示的项上设置属性。
+> @No__t_1 属性设置为 `Secondary` 的 `ToolbarItem` 对象中的图标行为在平台之间不一致。 避免在辅助菜单中显示的项上设置 "`IconImageSource`" 属性。
 
 ## <a name="related-links"></a>相关链接
 
