@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/20/2019
-ms.openlocfilehash: b45a7af917e9147f519056ee5a9e5d06da51113a
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 42c00a060e0477aff4ea02f6213fa751b2adf4dd
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697661"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810494"
 ---
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin。窗体映射多边形和折线
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[![ "iOS 和 Android 上的多边形和折线演示"](polygons-images/polygon-app-cropped.png)](polygons-images/polygon-app.png#lightbox)
+[!["iOS 和 Android 上的多边形和折线演示"](polygons-images/polygon-app-cropped.png)](polygons-images/polygon-app.png#lightbox)
 
 `Polygon` 和 `Polyline` 元素使您能够突出显示地图上的特定区域。 @No__t_0 是一种包含笔划和填充颜色的完全封闭的形状。 @No__t_0 是不完全包围某个区域的行。
 
@@ -40,9 +40,41 @@ ms.locfileid: "72697661"
 
 ## <a name="create-a-polygon"></a>创建多边形
 
-通过实例化对象并将其添加到地图的 `MapElements` 集合，可以将 `Polygon` 对象添加到地图中：
+通过实例化对象并将其添加到地图的 `MapElements` 集合，可以将 `Polygon` 对象添加到地图中。 这可以通过以下操作在 XAML 中实现：
+
+```xaml
+<ContentPage ...
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+     <maps:Map>
+         <maps:Map.MapElements>
+             <maps:Polygon StrokeColor="#FF9900"
+                           StrokeWidth="8"
+                           FillColor="#88FF9900">
+                 <maps:Polygon.Geopath>
+                     <maps:Position>
+                         <x:Arguments>
+                             <x:Double>47.6368678</x:Double>
+                             <x:Double>-122.137305</x:Double>
+                         </x:Arguments>
+                     </maps:Position>
+                     ...
+                 </maps:Polygon.Geopath>
+             </maps:Polygon>
+         </maps:Map.MapElements>
+     </maps:Map>
+</ContentPage>
+```
+
+等效 C# 代码如下：
 
 ```csharp
+using Xamarin.Forms.Maps;
+// ...
+Map map = new Map
+{
+  // ...
+};
+
 // instantiate a polygon
 Polygon polygon = new Polygon
 {
@@ -61,32 +93,10 @@ Polygon polygon = new Polygon
         new Position(47.6384943, -122.1361248),
         new Position(47.6372943, -122.1376912)
     }
-}
+};
 
 // add the polygon to the map's MapElements collection
 map.MapElements.Add(polygon);
-```
-
-还可以在 XAML 中创建 `Polygon`：
-
-```xaml
-<maps:Map x:Name="map">
-    <maps:Map.MapElements>
-        <maps:Polygon StrokeColor="#FF9900"
-                      StrokeWidth="8"
-                      FillColor="#88FF9900">
-            <maps:Polygon.Geopath>
-                <maps:Position>
-                    <x:Arguments>
-                        <x:Double>47.6368678</x:Double>
-                        <x:Double>-122.137305</x:Double>
-                    </x:Arguments>
-                </maps:Position>
-                ...
-            </maps:Polygon.Geopath>
-        </maps:Polygon>
-    </maps:Map.MapElements>
-</maps:Map>
 ```
 
 指定 `StrokeColor` 和 `StrokeWidth` 属性以自定义多边形的轮廓。 @No__t_0 属性值与 `StrokeColor` 属性值相匹配，但指定了 alpha 值以使其透明，从而使基础地图可以通过形状可见。 @No__t_0 属性包含定义多边形点的地理坐标的 `Position` 对象的列表。 将 `Polygon` 对象添加到 `Map` 的 `MapElements` 集合后，该对象将呈现在该映射上。
@@ -96,9 +106,37 @@ map.MapElements.Add(polygon);
 
 ## <a name="create-a-polyline"></a>创建折线
 
-通过实例化对象并将其添加到地图的 `MapElements` 集合，可以将 `Polyline` 对象添加到地图中：
+通过实例化对象并将其添加到地图的 `MapElements` 集合，可以将 `Polyline` 对象添加到地图中。 这可以通过以下操作在 XAML 中实现：
+
+```xaml
+<ContentPage ...
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+     <maps:Map>
+         <maps:Map.MapElements>
+             <maps:Polyline StrokeColor="Blue"
+                            StrokeWidth="12">
+                 <maps:Polyline.Geopath>
+                     <maps:Position>
+                         <x:Arguments>
+                             <x:Double>47.6381401</x:Double>
+                             <x:Double>-122.1317367</x:Double>
+                         </x:Arguments>
+                     </maps:Position>
+                     ...
+                 </maps:Polyline.Geopath>
+             </maps:Polyline>
+         </maps:Map.MapElements>
+     </maps:Map>
+</ContentPage>
+```
 
 ```csharp
+using Xamarin.Forms.Maps;
+// ...
+Map map = new Map
+{
+  // ...
+};
 // instantiate a polyline
 Polyline polyline = new Polyline
 {
@@ -123,30 +161,8 @@ Polyline polyline = new Polyline
 map.MapElements.Add(polyline);
 ```
 
-还可以在 XAML 中创建 `Polyline`：
-
-```xaml
-<maps:Map x:Name="map">
-    <maps:Map.MapElements>
-        <maps:Polyline StrokeColor="Blue"
-                       StrokeWidth="12">
-            <maps:Polyline.Geopath>
-                <maps:Position>
-                    <x:Arguments>
-                        <x:Double>47.6381401</x:Double>
-                        <x:Double>-122.1317367</x:Double>
-                    </x:Arguments>
-                </maps:Position>
-                ...
-            </maps:Polyline.Geopath>
-        </maps:Polyline>
-    </maps:Map.MapElements>
-</maps:Map>
-```
-
 指定 `StrokeColor` 和 `StrokeWidth` 属性以自定义该行。 @No__t_0 属性包含定义折线点的地理坐标的 `Position` 对象的列表。 将 `Polyline` 对象添加到 `Map` 的 `MapElements` 集合后，该对象将呈现在该映射上。
 
 ## <a name="related-links"></a>相关链接
 
-- [示例映射项目](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin. Forms 地图](~/xamarin-forms/user-interface/map/index.md)
+- [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
