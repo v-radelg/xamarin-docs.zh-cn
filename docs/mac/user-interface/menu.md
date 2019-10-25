@@ -197,7 +197,7 @@ void OpenDialog (NSObject sender)
 
 现在，让我们运行应用程序，然后打开 "**文件**" 菜单： 
 
-!["文件" 菜单](menu-images/appmenu09.png ""文件" 菜单")
+![文件 菜单](menu-images/appmenu09.png "文件 菜单")
 
 请注意，"**打开**" 菜单项现已启用。 如果选择它，将显示 "打开" 对话框：
 
@@ -469,7 +469,7 @@ public void defineKeyword (NSObject sender) {
 
 对于我们的特定 Xamarin 应用程序，我们不会使用默认的 "**视图**" 菜单，因此我们要将其删除。 在 "**接口层次结构**" 中，选择作为主菜单栏一部分的 "**视图**" 菜单项：
 
-![选择 "视图" 菜单项](menu-images/maint02.png "选择 "视图" 菜单项")
+![选择 视图 菜单项](menu-images/maint02.png "选择 视图 菜单项")
 
 按 delete 或 backspace 删除菜单。 接下来，我们不会使用 "**格式**" 菜单中的所有项，而是希望在子菜单下移动要使用的项。 在 "**接口层次结构**" 中，选择以下菜单项：
 
@@ -485,11 +485,11 @@ public void defineKeyword (NSObject sender) {
 
 接下来，将**文本**子菜单从 "**格式**" 菜单中拖出，并将其放在 "**格式**" 菜单和 "**窗口**" 菜单之间的主菜单栏上：
 
-[!["文本" 菜单](menu-images/maint06.png ""文本" 菜单")](menu-images/maint06-large.png#lightbox)
+[![文本 菜单](menu-images/maint06.png "文本 菜单")](menu-images/maint06-large.png#lightbox)
 
 让我们返回 "**格式**" 菜单，并删除**字体**子菜单项。 接下来，选择 "**格式**" 菜单，然后将其重命名为 "Font"：
 
-[!["字体" 菜单](menu-images/maint07.png ""字体" 菜单")](menu-images/maint07-large.png#lightbox)
+[![字体 菜单](menu-images/maint07.png "字体 菜单")](menu-images/maint07-large.png#lightbox)
 
 接下来，让我们创建一个预定义短语的自定义菜单，该菜单将在选中时自动追加到文本视图中的文本上。 在 "**库" 检查器**底部的 "搜索" 框中，键入 "菜单"。 这样，就可以更轻松地查找和使用所有菜单 UI 元素：
 

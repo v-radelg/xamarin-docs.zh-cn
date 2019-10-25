@@ -64,7 +64,7 @@ Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 xamarin 版本3.
 
 在 iOS、Android 和通用 Windows 平台上运行的页面如下：
 
-[!["简单堆栈" 页](flex-layout-images/SimpleStack.png ""简单堆栈" 页")](flex-layout-images/SimpleStack-Large.png#lightbox)
+[![简单堆栈 页](flex-layout-images/SimpleStack.png "简单堆栈 页")](flex-layout-images/SimpleStack-Large.png#lightbox)
 
 **SimpleStackPage**文件中显示了 `FlexLayout` 的三个属性：
 
@@ -263,7 +263,7 @@ XAML 文件中的第一个 `FlexLayout` 具有垂直主轴，并包含三个子�
 
 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例中的 "**目录项**" 页与["CSS 弹性布局" 对话框规范第1.1 节中的示例 1](http://www.w3.org/TR/css-flexbox-1/#overview)类似，不同之处在于它显示一系列水平滚动的图片和三个猴的说明。:
 
-[!["目录项" 页](flex-layout-images/CatalogItems.png ""目录项" 页")](flex-layout-images/CatalogItems-Large.png#lightbox)
+[![目录项 页](flex-layout-images/CatalogItems.png "目录项 页")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
 这三个猴中的每一项都是一个 `Frame` 中包含的 `FlexLayout`，它是一个明确的高度和宽度，也是更大 `FlexLayout` 的子级。 在此 XAML 文件中，在样式中指定 `FlexLayout` 子级的大多数属性，但其中一个属性是隐式样式：
 
@@ -388,7 +388,7 @@ XAML 文件中的第一个 `FlexLayout` 具有垂直主轴，并包含三个子�
 
 当程序启动时，五个 `Picker` 视图显示这五个 `FlexLayout` 属性的默认值。 位于屏幕底部的 `FlexLayout` 包含三个子元素：
 
-[!["试验" 页：默认值](flex-layout-images/ExperimentDefault.png ""试验" 页-默认")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![试验 页：默认值](flex-layout-images/ExperimentDefault.png "试验 页-默认")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 每个 `Label` 视图都有一个灰色背景，其中显示了分配给 `FlexLayout` 内的 `Label` 的空间。 @No__t_0 的背景为 Alice 蓝色。 它占据页面的整个底部，但左侧和右侧有一个小边距。
 
@@ -423,7 +423,7 @@ XAML 文件中的第一个 `FlexLayout` 具有垂直主轴，并包含三个子�
 
 从左到右，这些屏幕显示了12个子项的 `NoWrap`、`Wrap` 和 `Reverse` 选项：
 
-[!["试验" 页：换行](flex-layout-images/ExperimentWrap.png "试验页换行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![试验 页：换行](flex-layout-images/ExperimentWrap.png "试验页换行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 如果将 `Wrap` 属性设置为 "`NoWrap` 并且主轴受到约束（如在此程序中），并且主轴的宽度或高度不足以容纳所有子级，则 `FlexLayout` 会尝试使项目变小，如 iOS 屏幕截图所示。 可以通过[`Shrink`](#shrink)附加的可绑定属性控制项的 shrinkness。
 
@@ -459,7 +459,7 @@ XAML 文件中的第一个 `FlexLayout` 具有垂直主轴，并包含三个子�
 
 这是两个属性中的一个（另一个是[`AlignContent`](#align-content)），指示子轴上的子项的对齐方式。 在每行中，子元素将被拉伸（如前面的屏幕截图中所示），或与每个项的开始、中心或结束对齐，如以下三个屏幕截图所示：
 
-[!["试验" 页：对齐项](flex-layout-images/ExperimentAlignItems.png "试验页对齐项")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![试验 页：对齐项](flex-layout-images/ExperimentAlignItems.png "试验页对齐项")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 在 iOS 屏幕截图中，所有子项的顶部均为对齐。 在 Android 屏幕截图中，项基于最高子级垂直居中。 在 UWP 屏幕截图中，所有项的底部均为对齐。
 
@@ -481,11 +481,11 @@ XAML 文件中的第一个 `FlexLayout` 具有垂直主轴，并包含三个子�
 
 与 `AlignItems` 一样，"`AlignContent`" 属性还可对齐跨轴上的子级，但会影响整行或整列：
 
-[!["试验" 页：对齐内容](flex-layout-images/ExperimentAlignContent.png "试验页-对齐内容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![试验 页：对齐内容](flex-layout-images/ExperimentAlignContent.png "试验页-对齐内容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 在 iOS 屏幕截图中，这两行位于顶部;在 Android 屏幕截图中，它们位于中心;并在 UWP 屏幕截图中看到它们。 还可以通过多种方式分隔行：
 
-[!["试验" 页：对齐内容2](flex-layout-images/ExperimentAlignContent2.png "试验页-对齐内容2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![试验 页：对齐内容2](flex-layout-images/ExperimentAlignContent2.png "试验页-对齐内容2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 当只有一个行或列时，`AlignContent` 不起作用。
 
@@ -573,7 +573,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例的 "**基本实验**" 页允许您试验 `Basis` 属性。 页面将显示包含5个 `Label` 元素的已包装列以及背景色和前景色。 通过两个 `Slider` 元素，你可以为第二个和第四个 `Label` 指定 `Basis` 值：
 
-[!["基本实验" 页](flex-layout-images/BasisExperiment.png ""基本实验" 页")](flex-layout-images/BasisExperiment-Large.png#lightbox)
+[![基本实验 页](flex-layout-images/BasisExperiment.png "基本实验 页")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
 左侧的 iOS 屏幕截图显示了两个 `Label` 元素，这些元素在与设备无关的单位中获得高度。 Android 屏幕显示它们的高度是 `FlexLayout` 总高度的一小部分。 如果 `Basis` 设置为100%，则子级为 `FlexLayout` 的高度，并将换到下一列并占用该列的整个高度，如 UWP 屏幕截图所示：显示为一行中的五个子项，但实际上它们是按5列排列的。
 
@@ -585,7 +585,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 在 "**增长实验**" 页中，`Label` 交替颜色的五个元素排列在一列中，两个 `Slider` 元素使您可以调整第二个和第四个 `Label` 的 `Grow` 属性。 最左侧的 iOS 屏幕截图显示默认 `Grow` 值为0的属性：
 
-[!["增长实验" 页](flex-layout-images/GrowExperiment.png ""增长实验" 页")](flex-layout-images/GrowExperiment-Large.png#lightbox)
+[![增长实验 页](flex-layout-images/GrowExperiment.png "增长实验 页")](flex-layout-images/GrowExperiment-Large.png#lightbox)
 
 如果为任何一个子级指定了正 `Grow` 值，则该子级将占用所有剩余空间，如 Android 屏幕截图所示。 此空间还可以在两个或多个子级中分配。 在 UWP 屏幕截图中，第二个 `Label` 的 `Grow` 属性设置为0.5，而第四个 `Label` 的 `Grow` 属性为1.5，这将为第四个 `Label` 提供与第二个 `Label` 最多的剩余空间的三倍。
 
@@ -601,7 +601,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 "**收缩试验**" 页将创建一个 `FlexLayout`，其中包含5个 `Label` 子级，其中的行需要比 `FlexLayout` 宽度更多的空间。 左侧的 iOS 屏幕截图显示默认值为1的所有 `Label` 元素：
 
-[!["收缩试验" 页](flex-layout-images/ShrinkExperiment.png ""收缩试验" 页")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
+[![收缩试验 页](flex-layout-images/ShrinkExperiment.png "收缩试验 页")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
 在 Android 屏幕截图中，第二个 `Label` 的 `Shrink` 值设置为0，`Label` 以其完整宽度显示。 此外，第四个 `Label` 给定 `Shrink` 大于1的值，并且它已收缩。 UWP 屏幕截图显示给定 `Shrink` 值为0的 `Label` 元素，以使其在可能的情况下显示为其完整大小。
 
@@ -611,7 +611,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 你可以使用 Xamarin. Forms 3.0 中引入的[CSS 样式](~/xamarin-forms/user-interface/styles/css/index.md)功能与 `FlexLayout`。 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例的 " **CSS 目录项**" 页复制 "**目录项**" 页的布局，但包含许多样式的 css 样式表：
 
-[!["CSS 目录项" 页](flex-layout-images/CssCatalogItems.png ""CSS 目录项" 页")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
+[![CSS 目录项 页](flex-layout-images/CssCatalogItems.png "CSS 目录项 页")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
 原始**CatalogItemsPage**文件的 `Resources` 部分中有5个 `Style` 定义，其中包含15个 `Setter` 对象。 在**CssCatalogItemsPage**文件中，已减少到两个仅包含四个 `Setter` 对象的 `Style` 定义。 以下样式对 Xamarin CSS 样式功能当前不支持的属性的 CSS 样式表进行了补充：
 
