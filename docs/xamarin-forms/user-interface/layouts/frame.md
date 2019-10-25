@@ -22,7 +22,7 @@ Xamarin [`Frame`](xref:Xamarin.Forms.Frame)类是一种布局，用于使用可�
 
 以下屏幕截图显示了 iOS 和 Android 上 `Frame` 控件：
 
-[![ "iOS 和 Android 上的框架示例"](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS 和 Android 上的框架示例")
+[![iOS 和 Android 上的框架示例](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS 和 Android 上的框架示例")
 
 @No__t_0 类定义以下属性：
 
@@ -84,7 +84,7 @@ Frame frame = new Frame
 
 将 `Frame` 对象与 `Layout` 对象（如 `StackLayout` 对象）结合使用，可以创建更复杂的 UI。 以下屏幕截图显示了使用 `Frame` 对象创建的示例卡：
 
-[![ "使用框架创建的卡片的屏幕截图"](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "使用框架创建的卡片的屏幕截图")
+[![使用框架创建的卡片的屏幕截图](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "使用框架创建的卡片的屏幕截图")
 
 下面的 XAML 演示如何创建具有 `Frame` 类的卡片：
 
