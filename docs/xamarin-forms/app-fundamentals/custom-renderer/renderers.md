@@ -6,13 +6,13 @@ ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/11/2019
-ms.openlocfilehash: 014ee5ae312e2dc4e8cf662a790d5fbe4b880f0f
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.date: 10/11/2019
+ms.openlocfilehash: cf9c5d7aa018a6d12a6c4788dc1e8114088d056c
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513036"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697132"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>呈现器基类和本机控件
 
@@ -73,8 +73,9 @@ ms.locfileid: "67513036"
 |[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS 和 Android), BoxViewRenderer (UWP)|UIView|ViewGroup||矩形|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Button|AppCompatButton|Button|
+|[`CarouselView`](xref:Xamarin.Forms.CarouselView)|CarouselViewRenderer|UICollectionView||RecyclerView|ListViewBase|
 |`CheckBox`|CheckBoxRenderer|UIButton||AppCompatCheckBox|CheckBox|
-|[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView||
+|[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView|ListViewBase|
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||文本框|
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||文本框|
@@ -85,6 +86,7 @@ ms.locfileid: "67513036"
 |[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MapView||MapControl|
 |[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|组合框|
 |[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
+|`RefreshView`|RefreshViewRenderer|UIView||SwipeRefreshLayout|RefreshContainer|
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
 |[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||Slider|
 |[`Stepper`](xref:Xamarin.Forms.Stepper)|StepperRenderer|UIStepper|LinearLayout||控件|

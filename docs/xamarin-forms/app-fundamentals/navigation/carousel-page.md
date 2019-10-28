@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a243acc0273931c963a586fbfda29586623b612e
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889171"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696446"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms Carousel Page
 
@@ -20,17 +20,20 @@ ms.locfileid: "69889171"
 
 _Xamarin.Forms CarouselPage 页就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。 
 
+> [!IMPORTANT]
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView) 取代了 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)并提供一个可供用户轻扫浏览一系列项的可滚动布局。 有关 `CarouselView` 的详细信息，请参阅 [Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md)。
+
 以下屏幕截图显示每个平台上的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
-![](carousel-page-images/thirdpage.png "CarouselPage 第三项")
+![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
 
 每个平台上的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 布局完全相同。 可以通过从右向左轻扫的方式在集合中向前浏览页面，也可以通过从左向右轻扫的方式在集合中向后浏览页面。 以下屏幕截图显示 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 实例中的第一页：
 
-![](carousel-page-images/firstpage.png "CarouselPage 第一项")
+![](carousel-page-images/firstpage.png "CarouselPage First Item")
 
 从右向左轻扫以移动到第二个页面，如以下屏幕截图中所示：
 
-![](carousel-page-images/secondpage.png "CarouselPage 第二项")
+![](carousel-page-images/secondpage.png "CarouselPage Second Item")
 
 再次从右向左轻扫会移动到第三个页面上，而从左向右轻扫则返回到前一页面。
 
@@ -40,11 +43,6 @@ _Xamarin.Forms CarouselPage 页就像一个库，用户可从一侧轻扫到另�
 如果 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 嵌入到 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 页，则 [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) 属性应设置为 `false`，以防止 `CarouselPage` 和 `MasterDetailPage` 之间的手势冲突。
 
 有关 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 的详细信息，请参阅 Charles Petzold 所著的 Xamarin.Forms 书籍的[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)。
-
-<!--
-> [!NOTE]
-> The [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](xref:Xamarin.Forms.CarouselView) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
--->
 
 ## <a name="create-a-carouselpage"></a>创建 CarouselPage
 

@@ -6,13 +6,13 @@ ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: dd1dc9b679a46dc082de1fe9b3c5f10b6757c0d8
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.date: 09/20/2019
+ms.openlocfilehash: 3e63a580bbdb1c220d44b100725cdc8ce387b405
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "68739285"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696516"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms Shell 简介
 
@@ -28,7 +28,15 @@ Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数
 此外，Shell 应用程序还因提高了呈现速度和减少了内存消耗而受益。
 
 > [!IMPORTANT]
-> Xamarin.Forms Shell 仅适用于 iOS 和 Android。 现有的 iOS 和 Android 应用程序可以采用 Shell，立即获益于导航、性能和扩展性方面的改进。
+> 现有的应用程序可以采用 Shell，立即获益于导航、性能和扩展性方面的改进。
+
+## <a name="platform-support"></a>平台支持
+
+Xamarin.Forms Shell 在 iOS 和 Android 上完全可用，但在通用 Windows 平台 (UWP) 上仅部分可用。 此外，Shell 当前在 UWP 上处于实验性阶段，只有在调用 `Forms.Init` 之前，将以下代码行添加到 UWP 项目的 `App` 类后才可使用：
+
+```csharp
+global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
+```
 
 ## <a name="shell-navigation-experience"></a>Shell 导航体验
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771264"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms 控件模板简介
@@ -26,7 +26,7 @@ _借助 Xamarin.Forms 控件模板，可在运行时轻松设计或重新设计�
 
 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 指定页面或视图的外观，包含根布局，并在该布局内包含用于实现模板的控件。 通常情况下，`ControlTemplate` 将利用 [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 来标记页面或视图要显示的内容的显示位置。 然后，使用 `ControlTemplate` 的页面或视图将定义 `ContentPresenter` 要显示的内容。 下图演示了包含多个控件的页面的 `ControlTemplate`，其中包括由蓝色矩形标记的 `ContentPresenter`：
 
-![](introduction-images/control-template.png "页面的控件模板")
+![](introduction-images/control-template.png "Control Template for a Page")
 
 可通过设置以下类型的 `ControlTemplate` 属性，向这些类型应用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate)：
 

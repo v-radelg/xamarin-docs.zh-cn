@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771883"
 ---
 # <a name="introduction-to-custom-renderers"></a>自定义呈现器简介
 
-“自定义呈现器为自定义 Xamarin.Forms 控件的外观和行为提供了一种功能强大的方法。可使用它们进行细微的样式更改，也可进行复杂的特定于平台的布局和行为自定义。本文介绍了自定义呈现器，并概述了创建自定义呈现器的过程。”_
+“自定义呈现器为自定义 Xamarin.Forms 控件的外观和行为提供了一种功能强大的方法。可使用它们进行细微的样式更改，也可进行复杂的特定于平台的布局和行为自定义。本文介绍了自定义呈现器，并概述了创建自定义呈现器的过程。” 
 
 Xamarin.Forms [页、布局和控件](~/xamarin-forms/user-interface/controls/index.md)提供常见的 API，用于描述跨平台的移动用户界面。 通过 `Renderer` 类可以在每个平台上以不同方式呈现每个页面、布局和控件，反过来又可以创建本机控件（对应于 Xamarin.Forms 表示），在屏幕上排列该控件，并添加共享代码中指定的行为。
 
@@ -56,7 +56,7 @@ public class MyEntry : Entry
 
 然后在每个平台上呈现背景为灰色的 `MyEntry` 自定义控件，如以下屏幕截图中所示：
 
-![](introduction-images/screenshots.png "每个平台上的 MyEntry 自定义控件")
+![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
 
 仅通过将控件子类化即可完成对每个平台上的控件背景色的更改。 但是，由于无法利用特定于平台的增强和自定义，这种技术的用途有限。 必要时，必须实现自定义呈现器。
 

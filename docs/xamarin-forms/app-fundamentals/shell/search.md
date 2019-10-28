@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: 9e3acf1c5b101f021b0071947e91f0c9fc3dafcb
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 09/25/2019
+ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739250"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695938"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms Shell 搜索
 
@@ -24,7 +24,7 @@ Xamarin.Forms Shell 包含 `SearchHandler` 类提供的集成搜索功能。 将
 
 将查询输入到搜索框时，`Query` 属性将更新，每次更新时均将执行 `OnQueryChanged` 方法。 可以重写此方法来使用数据填充搜索建议区：
 
-[![iOS 和 Android 上的 Shell SearchHandler 搜索结果的屏幕截图](search-images/search-suggestions.png "Shell SearchHandler 搜索结果")](search-images/search-suggestions-large.png#lightbox "Shell SearchHandler 搜索结果")
+[![iOS 和 Android 上的 Shell SearchHandler 中搜索结果的屏幕截图](search-images/search-suggestions.png "Shell SearchHandler 搜索结果")](search-images/search-suggestions-large.png#lightbox "Shell SearchHandler 搜索结果")
 
 然后，从搜索建议区选择一个结果后，将执行 `OnItemSelected` 方法。 可以重写此方法来相应地进行响应，例如通过导航到详细信息页。
 
@@ -99,15 +99,15 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 将 `ShowsResults` 属性设置为 `true`，这样当用户输入搜索查询时即可显示搜索建议：
 
-[![iOS 和 Android 上的 Shell SearchHandler 搜索结果的屏幕截图](search-images/search-results.png "Shell SearchHandler 搜索结果")](search-images/search-results-large.png#lightbox "Shell SearchHandler 搜索结果")
+[![iOS 和 Android 上的 Shell SearchHandler 中搜索结果的屏幕截图](search-images/search-results.png "Shell SearchHandler 搜索结果")](search-images/search-results-large.png#lightbox "Shell SearchHandler 搜索结果")
 
 搜索查询更改时，将更新搜索建议区：
 
-[![iOS 和 Android 上的 Shell SearchHandler 搜索结果的屏幕截图](search-images/search-results-change.png "Shell SearchHandler 搜索结果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler 搜索结果")
+[![iOS 和 Android 上的 Shell SearchHandler 中搜索结果的屏幕截图](search-images/search-results-change.png "Shell SearchHandler 搜索结果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler 搜索结果")
 
 选择某个搜索结果后，将导航到 `MonkeyDetailPage`，并显示已选定猴子的相关数据：
 
-[![iOS 和 Android 上的猴子详细信息的屏幕截图](search-images/detailpage.png "猴子详细信息")](search-images/detailpage-large.png#lightbox "猴子详细信息")
+[![iOS 和 Android 上的猴子详情的屏幕截图](search-images/detailpage.png "猴子详情")](search-images/detailpage-large.png#lightbox "猴子详情")
 
 ## <a name="define-search-results-item-appearance"></a>定义搜索结果项外观
 
@@ -172,7 +172,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 下面的屏幕截图显示建议区内各个项模板化后的结果：
 
-[![iOS 和 Android 上的 Shell SearchHandler 模板化后的搜索结果的屏幕截图](search-images/search-results-template.png "Shell SearchHandler 模板化后的搜索结果")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler 模板化后的搜索结果")
+[![iOS 和 Android 上的 Shell SearchHandler 中模板化搜索结果的屏幕截图](search-images/search-results-template.png "Shell SearchHandler 模板化搜索结果")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler 模板化搜索结果")
 
 有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
@@ -211,12 +211,14 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 - `BackgroundColor`，属于 `Color` 类型，是搜索框文本的背景颜色。
 - `CancelButtonColor`，属于 `Color` 类型，是取消按钮的颜色。
+- `CharacterSpacing`，属于 `double` 类型，是 `SearchHandler` 文本字符之间的间距。
 - `FontAttributes`，属于 `FontAttributes` 类型，用于指示搜索框文本是斜体还是粗体。
 - `FontFamily`，属于 `string` 类型，是用于搜索框文本的字体系列。
 - `FontSize`，属于 `double` 类型，是搜索框文本的大小。
 - `HorizontalTextAlignment`，属于 `TextAlignment` 类型，是搜索框文本的水平对齐方式。
 - `PlaceholderColor`，属于 `Color` 类型，是搜索框文本的占位符颜色。
 - `TextColor`，属于 `Color` 类型，是搜索框文本的颜色。
+- `VerticalTextAlignment`，属于 `TextAlignment` 类型，是搜索框文本的垂直对齐方式。
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler 键盘
 

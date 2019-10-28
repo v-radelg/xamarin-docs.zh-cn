@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656982"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678840"
 ---
 # <a name="right-to-left-localization"></a>从右到左本地化
 
@@ -32,7 +32,7 @@ ms.locfileid: "68656982"
 
 在一个元素上将 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性设置为 [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 通常会将对齐方式设置为向右，阅读顺序设置为从右到左，控件布局设置为从右到左流动：
 
-[![使用阿拉伯语且流动方向为从右到左的 TodoItemPage](rtl-images/TodoItemPage-Arabic.png "使用阿拉伯语且流动方向为从右到左的 TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "使用阿拉伯语且流动方向为从右到左的 TodoItemPage")
+[![阿拉伯语的 TodoItemPage，采用从右到左的流动方向](rtl-images/TodoItemPage-Arabic.png "阿拉伯语的 TodoItemPage，采用从右到左的流动方向")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "阿拉伯语的 TodoItemPage，采用从右到左的流动方向")
 
 > [!TIP]
 > 在初始布局上，应该只设置 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性。 运行时更改此值会导致影响性能的成本高昂的布局过程。
@@ -72,7 +72,7 @@ this.FlowDirection = Device.FlowDirection;
 </array>
 ```
 
-![Info.plist 支持语言](rtl-images/ios-locales.png "Info.plist supported languages")
+![Info.plist 支持的语言](rtl-images/ios-locales.png "Info.plist 支持的语言")
 
 有关详细信息，请参阅[ iOS 中的本地化基础知识](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)。
 
@@ -145,6 +145,46 @@ Xamarin.Forms 从右到左本地化当前有许多限制：
 - [`Editor`](xref:Xamarin.Forms.Editor) 文本对齐方式由设备区域设置控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性控制。
 - [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 子级不继承 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性。
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) 文本对齐方式由设备区域设置控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性控制。
+
+## <a name="force-right-to-left-layout"></a>强制使用从右到左的布局
+
+通过修改相应的平台项目，可以强制 Xamarin.iOS 和 Xamarin.Android 应用程序始终使用从右到左的布局，而不考虑设备设置。
+
+### <a name="ios"></a>iOS
+
+通过修改 AppDelegate 类，可以强制 Xamarin iOS 应用程序始终使用从右到左的布局，如下所示  ：
+
+1. 将 `IntPtr_objc_msgSend` 函数声明为 `AppDelegate` 类中的第一行：
+
+   ```csharp
+   [System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
+   internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
+   ```
+
+1. 从 `FinshedLaunching` 方法返回之前，从 `FinishedLaunching` 方法调用 `IntPtr_objc_msgSend` 函数：
+
+   ```csharp
+   bool result = base.FinishedLaunching(app, options);
+
+   ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
+   IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, UISemanticContentAttribute.ForceRightToLeft);
+
+   return result;
+   ```
+
+如果应用程序始终需要从右到左的布局，则此方法非常有用，而且无需设置 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性。
+
+有关 `IntrPtr_objc_msgSend` 方法的详细信息，请参阅 [Xamarin.iOS 中的 Objective-C 选择器](~/ios/internals/objective-c-selectors.md)。
+
+### <a name="android"></a>Android
+
+要强制 Xamarin Android 应用程序始终使用从右到左的布局，可修改 MainActivity 类，使其包含以下行  ：
+
+```csharp
+Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
+```
+
+如果应用程序始终需要从右到左的布局，则此方法非常有用，而且无需设置 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性。
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University 的从右至左的语言支持
 

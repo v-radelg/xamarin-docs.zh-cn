@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
 ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71198513"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 介绍
@@ -29,7 +29,7 @@ ms.locfileid: "71198513"
 
 下图说明了如何在 Xamarin.Forms 应用程序中调用本机平台功能：
 
-![使用 DependencyService 类执行服务定位概述](introduction-images/dependency-service.png "DependencyService 服务定位")
+![使用 Xamarin.Forms DependencyService 类执行服务定位概述](introduction-images/dependency-service.png "DependencyService 服务定位")
 
 ## <a name="create-an-interface"></a>创建接口
 
