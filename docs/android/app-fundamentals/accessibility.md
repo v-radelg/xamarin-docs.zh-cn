@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70755672"
 ---
 # <a name="accessibility-on-android"></a>Android 中的辅助功能
@@ -20,7 +20,7 @@ ms.locfileid: "70755672"
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-Android 提供一个`ContentDescription`属性，该属性由屏幕读取 api 用来提供控件用途的辅助性说明。
+Android 提供一个 `ContentDescription` 属性，该属性由屏幕读取 Api 用来提供控件用途的辅助性说明。
 
 可以在C#或 main.axml 布局文件中设置内容说明。
 
@@ -34,7 +34,7 @@ saveButton.ContentDescription = "Save data";
 
 **MAIN.AXML 布局**
 
-在 XML 布局中使用`android:contentDescription`属性：
+在 XML 布局中使用 `android:contentDescription` 特性：
 
 ```xml
 <ImageButton
@@ -45,12 +45,12 @@ saveButton.ContentDescription = "Save data";
 
 ### <a name="use-hint-for-textview"></a>使用 TextView 的提示
 
-对于`EditText` `TextView` 数据输入`ContentDescription`的和控件，请使用属性来提供所需输入的说明（而不是）。`Hint`
+对于用于数据输入的 `EditText` 和 `TextView` 控件，请使用 `Hint` 属性来提供所需输入的说明（而不是 `ContentDescription`）。
 输入某些文本后，文本本身将是 "读取"，而不是提示。
 
 **C#**
 
-在代码中设置属性：`Hint`
+在代码中设置 `Hint` 属性：
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -58,7 +58,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **MAIN.AXML 布局**
 
-在 XML 布局文件中， `android:hint`使用属性：
+在 XML 布局文件中使用 `android:hint` 特性：
 
 ```xml
 <EditText
@@ -68,7 +68,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>Html.labelfor 链接带标签的输入字段
 
-若要将标签与数据输入控件关联，请使用`LabelFor`属性
+若要将标签与数据输入控件关联，请使用 `LabelFor` 属性
 
 **C#**
 
@@ -82,7 +82,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **MAIN.AXML 布局**
 
-在布局 XML 中， `android:labelFor`使用属性引用另一个控件的标识符：
+在布局 XML 中，使用 `android:labelFor` 属性来引用另一个控件的标识符：
 
 ```xml
 <TextView
@@ -96,9 +96,9 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 ### <a name="announce-for-accessibility"></a>可访问性公告
 
-对任何视图控件使用方法可在启用辅助功能时向用户传达事件或状态更改。`AnnounceForAccessibility` 此方法对于大多数操作都是必需的，其中内置旁白提供了足够的反馈，但应在其他信息对用户有用时使用。
+对任何视图控件使用 `AnnounceForAccessibility` 方法，以便在启用辅助功能时向用户传达事件或状态更改。 此方法对于大多数操作都是必需的，其中内置旁白提供了足够的反馈，但应在其他信息对用户有用时使用。
 
-下面的代码演示了一个简单的`AnnounceForAccessibility`示例调用：
+下面的代码演示了一个简单的示例调用 `AnnounceForAccessibility`：
 
 ```csharp
 button.Click += delegate {
@@ -109,11 +109,11 @@ button.Click += delegate {
 
 ## <a name="changing-focus-settings"></a>更改焦点设置
 
-可访问的导航依赖于具有焦点的控件来帮助用户了解可用的操作。 Android 提供了`Focusable`一个属性，该属性可将控件标记为在导航过程中能够获得焦点。
+可访问的导航依赖于具有焦点的控件来帮助用户了解可用的操作。 Android 提供了一个 `Focusable` 属性，该属性可以在导航过程中将控件标记为能够接收焦点。
 
 **C#**
 
-若要防止控件获得焦点C#，请将`Focusable`属性设置为： `false`
+若要防止控件获得焦点C#，请将`Focusable`属性设置为`false`：
 
 ```csharp
 label.Focusable = false;
@@ -121,13 +121,13 @@ label.Focusable = false;
 
 **MAIN.AXML 布局**
 
-在布局 XML 文件中设置`android:focusable`属性：
+在 "布局 XML 文件" 中，设置 `android:focusable` 特性：
 
 ```xml
 <android:focusable="false" />
 ```
 
-你还可以通过在布局 main.axml 中`nextFocusDown`设置`nextFocusLeft`的`nextFocusRight`、 `nextFocusUp` 、、特性来控制焦点顺序。 使用这些属性可以确保用户可以通过屏幕上的控件轻松地导航。
+还可以通过 `nextFocusDown`、`nextFocusLeft`、`nextFocusRight``nextFocusUp` 特性来控制焦点顺序，通常在布局 MAIN.AXML 中设置。 使用这些属性可以确保用户可以通过屏幕上的控件轻松地导航。
 
 ## <a name="accessibility-and-localization"></a>辅助功能和本地化
 
@@ -145,16 +145,16 @@ label.Focusable = false;
 
 **C#**
 
-不要在代码中使用字符串，而是使用以下代码从字符串文件中`Resources.GetText`查找转换后的值：
+使用 `Resources.GetText`从字符串文件中查找翻译后的值，而不是在代码中使用字符串：
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
 saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 ```
 
-**AXML**
+**MAIN.AXML**
 
-在布局 XML 可访问性`hint`属性`contentDescription` （如和）中，可以将设置为字符串标识符：
+在布局 XML 可访问性属性（如 `hint` 和 `contentDescription`）中，可以将设置为字符串标识符：
 
 ```xml
 <TextView
