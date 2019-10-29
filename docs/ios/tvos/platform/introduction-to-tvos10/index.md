@@ -4,15 +4,15 @@ description: 本文介绍了 tvOS 10 for Xamarin tvOS 开发人员提供的所�
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8c338f8a5b2f1d41b1ea0f61778a1c14eb84ce08
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 02fda984d65bb89ac3dc8a4ae5e15e2c61ec7d90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769159"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030613"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 简介
 
@@ -38,7 +38,7 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 
 Apple 在 tvOS 10 中对安全和隐私进行了多项改进，有助于开发人员提高应用程序的安全性并确保最终用户的隐私。
 
-因此，在 watchOS 3 （或更高版本）上运行的应用程序必须通过在其`Info.plist`文件中输入一个或多个特定于隐私的密钥来访问特定功能或用户信息，并向用户说明应用希望获取访问权限的原因。
+因此，在 watchOS 3 （或更高版本）上运行的应用程序必须通过在其 `Info.plist` 文件中输入一个或多个特定于隐私的密钥，向用户说明应用希望获取访问权限的原因，以静态方式声明其意图以访问特定功能或用户信息。
 
 由于 tvOS 10 与 iOS 10 共享这些更改，请参阅我们的 iOS 10[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)指南以获取详细信息。
 
@@ -52,12 +52,12 @@ Apple 在 tvOS 10 中对安全和隐私进行了多项改进，有助于开发�
 
 tvOS 10 在整个系统（包括核心图形、核心图像、金属和 AVFoundation 等框架）中扩展了对扩展范围像素格式和宽色域颜色空间的支持。 通过在整个图形堆栈中提供此行为，可进一步减轻对具有宽颜色显示的设备的支持。
 
-此外， `UIKit`已将修改为在新的扩展**sRGB** colorspace 中工作，从而可以更轻松地混合使用宽颜色 gamuts 的颜色，而不会显著降低性能。
+此外，`UIKit` 已修改为可在新的扩展**sRGB** colorspace 中工作，这样可以更轻松地混合宽颜色 gamuts 中的颜色，而不会显著降低性能。
 
 当使用宽色时，Apple 提供以下最佳做法：
 
-- `UIColor`现在使用 sRGB 颜色空间，并且不再将值`0.0`夹具到 to `1.0`范围。 如果应用依赖于以前的夹具行为，则需要对 tvOS 10 进行修改。
-- 如果应用执行的`UIImages`自定义呈现，则使用新的[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定扩展范围或标准范围格式的使用。
+- `UIColor` 现在使用 sRGB 颜色空间，并且将不再向 `0.0` 的 `1.0` 范围中的值赋值。 如果应用依赖于以前的夹具行为，则需要对 tvOS 10 进行修改。
+- 如果应用执行 `UIImages`的自定义呈现，则使用新的[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定扩展范围或标准范围格式的使用。
 - 使用低级别 API （如核心图形或金属图）来提供图像处理时，应用应使用支持16位浮点值的扩展范围颜色空间和像素格式。 如果需要，应用必须手动固定颜色分量值。
 - 核心图形、核心图像和金属绩效着色器都提供了在两个颜色空间之间进行转换的新方法。
 
