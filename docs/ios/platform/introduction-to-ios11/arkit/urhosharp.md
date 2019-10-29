@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中设置 ARKit 应用程序，然
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/01/2017
-ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 67ee62fe18385f3a79f4afcb26299990f4666763
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752549"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032240"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>在 Xamarin 中将 ARKit 与 UrhoSharp 配合使用
 
@@ -36,26 +36,26 @@ ms.locfileid: "70752549"
 
 ### <a name="ios-application-launch"></a>iOS 应用程序启动
 
-你的 iOS 应用程序需要创建和启动你的3d 内容，你可以通过创建实现的子类`Urho.Application`并通过`Start`重写方法来提供安装代码来实现此目的。  这是在其中填充了数据的场景，事件处理程序是设置等。
+你的 iOS 应用程序需要创建和启动你的3D 内容。为此，可以创建一个实现 `Urho.Application` 的子类，并通过重写 `Start` 方法来提供安装代码。  这是在其中填充了数据的场景，事件处理程序是设置等。
 
-我们引入了一个`Urho.ArkitApp`类，子类`Urho.Application`及其`Start`方法执行繁重的工作。   你需要对现有的 Urho 应用程序进行的所有操作都是将基类更改为类型`Urho.ArkitApp` ，并且你的应用程序将在世界上运行 Urho 场景。
+我们引入了一个 `Urho.ArkitApp` 类，子类 `Urho.Application` 及其 `Start` 方法执行繁重的工作。   你需要对现有的 Urho 应用程序进行的所有操作都是将基类更改为类型 `Urho.ArkitApp`，而你的应用程序将在世界中运行 Urho 场景。
 
 ### <a name="the-arkitapp-class"></a>ArkitApp 类
 
 此类提供一组方便的默认值，这两种默认情况下，场景都包含一些关键对象，以及由操作系统传递的 ARKit 事件的处理。
 
-此设置在`Start`虚拟方法中进行。   当你对子类重写此方法时，需要确保使用`base.Start()`你自己的实现与你的父项链接。
+设置在 `Start` 虚方法中进行。   当你对子类重写此方法时，需要确保通过在你自己的实现上使用 `base.Start()` 链接到你的父项。
 
-方法`Start`设置场景、视区、照相机和方向光，并将其作为公共属性的表面显示：
+`Start` 方法设置场景、视区、照相机和方向光，并将其作为公共属性的表面显示：
 
-- 用于`Scene`保存对象的。
-- 带有阴影`Light`的方向，其位置`LightNode`通过属性提供
-- 一个`Camera` ，其组件在 ARKit 将更新传递到应用程序时更新，
-- 显示`ViewPort`结果的。
+- 用于保存对象的 `Scene`。
+- 带有阴影的方向 `Light`，其位置通过 `LightNode` 属性提供
+- 一个 `Camera`，其组件在 ARKit 将更新传递到应用程序时进行更新并
+- 显示结果 `ViewPort`。
 
 ### <a name="your-code"></a>你的代码
 
-然后，需要为`ArkitApp`类划分子类并重`Start`写方法。   你的方法应执行的第一件事是`ArkitApp.Start`通过调用`base.Start()`链接到。  然后，可以使用 ArkitApp 设置的任何属性将对象添加到场景中，自定义要处理的光源、阴影或事件。
+然后需要对 `ArkitApp` 类进行子类化，并重写 `Start` 方法。   你的方法应执行的第一件事是通过调用 `base.Start()`链接到 `ArkitApp.Start`。  然后，可以使用 ArkitApp 设置的任何属性将对象添加到场景中，自定义要处理的光源、阴影或事件。
 
 ARKit/UrhoSharp 示例使用纹理加载动画字符并播放动画，并提供以下实现：
 
@@ -102,19 +102,19 @@ ARKit API 非常简单，你可以创建和配置[ARSession](https://developer.a
 
 我们将使用我们的3D 内容将相机提供的图像组合到一起，并调整 UrhoSharp 中的相机，使其与设备位置和位置的可能性相匹配。
 
-下图显示了`ArkitApp`类中发生的情况：
+下图显示了 `ArkitApp` 类中发生的情况：
 
-[![ArkitApp 中的类和屏幕的关系图](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
+[ArkitApp 中的类和屏幕的![关系图](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>呈现框架
 
 这种思路很简单，只需要将相机中的视频与三维图形组合在一起即可生成合并的图像。     我们将按顺序获取这些捕获的映像，并将此输入与 Urho 场景混合使用。
 
-要执行此操作，最简单的方法是`RenderPathCommand`将插入到`RenderPath`主。  这是一组用于绘制单个帧的命令。  此命令将用传递给它的任何纹理填充视区。    我们在第一帧上进行了此设置，实际定义是在此时加载的第一个**ARRenderPath**文件中完成的。
+执行此操作的最简单方法是在主 `RenderPath`中插入 `RenderPathCommand`。  这是一组用于绘制单个帧的命令。  此命令将用传递给它的任何纹理填充视区。    我们在第一帧上进行了此设置，实际定义是在此时加载的第一个**ARRenderPath**文件中完成的。
 
 但是，我们面临着两个问题将这两个世界混合在一起：
 
-1. 在 iOS 上，GPU 纹理的分辨率必须是2的幂，但我们将从照相机获取的帧的分辨率不是2的幂，例如：1280x720.
+1. 在 iOS 上，GPU 纹理的分辨率必须是2的幂，但我们将从照相机获取的帧的分辨率不是2的幂，例如：1280x720。
 2. 帧以[YUV](https://en.wikipedia.org/wiki/YUV)格式进行编码，用两个图像亮度和色度表示。
 
 YUV 帧采用两种不同的分辨率。  表示亮度的1280x720 图像（基本上为灰色缩放图像）和色度组件的更小640x360：
@@ -151,7 +151,7 @@ cameraUVtexture.SetAddressMode(TextureCoordinate.V, TextureAddressMode.Clamp);
 
 ### <a name="adjusting-the-camera"></a>调整照相机
 
-这些`ARFrame`对象还包含估计的设备位置。  现在，我们需要移动游戏摄像机 ARFrame-在 ARKit 之前，跟踪设备方向（滚动、螺距和偏航）并在视频上渲染固定的全息影像并不是一个大的
+`ARFrame` 对象还包含估计的设备位置。  现在，我们需要移动游戏摄像机 ARFrame-在 ARKit 之前，跟踪设备方向（滚动、螺距和偏航）并在视频上渲染固定的全息影像并不是一个大的
 
 出现这种情况的原因是，内置传感器（如陀螺仪）无法跟踪移动，只能加速。  ARKit 分析每个帧并提取要跟踪的功能点，从而能够为我们生成包含移动和旋转数据的准确的转换矩阵。
 
@@ -162,7 +162,7 @@ var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-我们使用`-row.Z`的是因为 ARKit 使用右手坐标系。
+我们使用 `-row.Z`，因为 ARKit 使用右手坐标系。
 
 ### <a name="plane-detection"></a>平面检测
 

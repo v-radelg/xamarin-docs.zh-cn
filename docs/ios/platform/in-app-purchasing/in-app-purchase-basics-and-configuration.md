@@ -4,21 +4,21 @@ description: 本文档介绍了 Xamarin 中的应用内购买，并讨论了有�
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: fc76a642c27b7a2c7f3483911be596f8d6cdd1ce
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 786afa6967731fb1bd508fa3c835b980639eb282
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752862"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032382"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的应用内购买基础知识和配置
 
 实现应用内购买要求应用程序在设备上使用 StoreKit API。 StoreKit 管理与 Apple iTunes 服务器的所有通信，以获取产品信息和执行事务。 必须为应用内购买配置配置文件，并且必须在 iTunes Connect 中输入产品信息。
 
- [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit 管理与 Apple 的所有通信，如此图所示")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit manages all communication with Apple’s as shown in this chart")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 使用应用商店提供应用内购买需要以下设置和配置：
 
@@ -45,7 +45,7 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 ## <a name="configuration"></a>配置
 
-编写任何应用内购买代码之前，必须在 iTunes Connect （ [itunesconnect.apple.com](http://itunesconnect.apple.com)）和 IOS 预配门户（ [developer.apple.com/iOS](https://developer.apple.com/iOS)）中执行一些设置工作。
+编写任何应用内购买代码之前，必须在 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）和 IOS 预配门户（ [developer.apple.com/iOS](https://developer.apple.com/iOS)）中执行一些设置工作。
 
 编写任何代码之前，应完成这三个步骤：
 
@@ -57,11 +57,11 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 构建和分发免费应用程序需要在[ITunes Connect](https://itunesconnect.apple.com)中进行极少的配置，但是，若要销售付费应用或应用内购买，要求你向 Apple 提供银行和税务信息。 单击此处显示的主菜单中的 "**协议"、"税款" 和 "银行**"：
 
- [![](in-app-purchase-basics-and-configuration-images/image2.png "单击主菜单中的协议、税款和银行")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "Click on Agreements, Tax and Banking from the main menu")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 开发人员帐户应具有有效的**IOS 付费应用程序**合同，如以下屏幕截图所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image3.png "开发人员帐户应具有有效的 iOS 付费应用程序协定")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "Your Developer Account should have an iOS Paid Applications contract in effect")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 你将无法测试任何 StoreKit 功能，除非 Apple 处理你的**合同、税务和银行信息，** 否则代码**中的 StoreKit**调用将失败。
 
@@ -73,7 +73,7 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
  如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image4.png "用于创建新应用程序 Id 的窗体")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "The form for creating new App IDs")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 输入适用于*说明*的内容，以便可以轻松地在列表中标识此应用 ID。 对于 "*应用 ID 前缀*"，请选择 "团队 id"。
 
@@ -88,7 +88,7 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 请注意，**在 "应用内购买**" 将自动在服务列表中启用：
 
- [![](in-app-purchase-basics-and-configuration-images/image5.png "应用内购买将在服务列表中自动启用")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "In-App Purchase will be automatically enabled in the Services list")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>预配配置文件
 
@@ -98,11 +98,11 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 在 iTunes Connect 中单击 **"我的应用**" 以创建或编辑 iOS 应用程序条目。 应用程序概述页如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image6.png "应用程序概述页")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "The application overview page")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 单击 "**应用内购买**"，创建或编辑要销售的产品。 此屏幕截图显示已添加几个产品的示例应用：
 
- [![](in-app-purchase-basics-and-configuration-images/image7.png "已添加几个产品的示例应用")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "The sample app with several products already added")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 添加新产品的过程有两个步骤：
 
@@ -154,13 +154,13 @@ com.xamarin.storekit.testing.greyscale
 
 Apple 提供了一个价格矩阵，可帮助你选择所需的货币/价格的正确层。 价格矩阵（2012年8月）的摘选如下所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image10.png "2012年8月的价格矩阵摘录")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-撰写本文时（2013年6月），有87层（从 USD 0.99 到 USD 999.99）。 定价矩阵显示了你的客户将支付的价格，还显示了你将从 Apple 获得的金额–这少于 30% 的费用，还需要收集的任何当地税（请注意，美国和加拿大卖方收到 99c p 的70c 的示例产品，而澳大利亚卖方只收到63c，因为在销售&amp;价格上征收了 "货物服务税"。
+撰写本文时（2013年6月），有87层（从 USD 0.99 到 USD 999.99）。 定价矩阵显示了你的客户将支付的价格，还显示了你将从 Apple 获得的金额–这少于30% 的费用，还需要收集的任何当地税（请注意，美国和加拿大卖方收到 99c p 的70c 的示例产品，而澳大利亚卖方只收到63c，因为 "货物 &amp; 服务税" 按销售价格收费）。
 
 您可以随时更新您的产品的定价，包括计划在将来的日期生效的价格变化。 此屏幕截图显示了如何添加未来的价格变化–价格在9月的第1层临时更改为第3层：
 
- [![](in-app-purchase-basics-and-configuration-images/image11.png "未来的价格变化，其中价格将从第1层暂时更改为第3个月的第3个月")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "A future-dated price change where the price is being temporarily changed from tier 1 to tier 3 for the month of September only")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>免费产品不受支持
 
@@ -170,7 +170,7 @@ Apple 提供了一个价格矩阵，可帮助你选择所需的货币/价格的�
 
 在 iTunes Connect 中，可以为任意数量的受支持的语言输入不同的名称和描述文本。 可以通过弹出窗口在中添加/编辑每种语言：
 
- [![](in-app-purchase-basics-and-configuration-images/image12.png "可以通过弹出窗口添加/编辑每种语言")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "Each language can be added/edited in via a popup")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
 
 当你在应用中显示产品信息时，可通过 StoreKit 显示本地化的文本。 还必须本地化货币显示以显示正确的符号和小数点格式，这种格式设置将在此文档的后面部分介绍。
 
@@ -180,7 +180,7 @@ Apple 提供了一个价格矩阵，可帮助你选择所需的货币/价格的�
 
 第一次在应用中启用应用内购买（无论它是新应用程序还是已将功能添加到现有应用程序）时，还必须选择要随其一起提交的产品。 ITunes Connect 门户将提示你执行此操作，如以下屏幕截图所示：
 
- [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect 门户还会提示你还提交一些产品")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "The iTunes Connect portal will prompt you to submit some products as well")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
 
 应用程序和应用内购买将一起进行查看，因此它们都将立即获得批准（因此，在没有任何批准的产品的情况下，应用程序不会进入存储区！）。
 

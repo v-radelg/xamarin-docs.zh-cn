@@ -3,15 +3,15 @@ title: .NET 嵌入限制
 description: 本文档介绍 .NET 嵌入的限制，它是一种工具，可用于在其他编程语言中使用 .NET 代码。
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: cf431d4e3d30ac2ec06bfebc9cebe101411faa1c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292713"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029746"
 ---
 # <a name="net-embedding-limitations"></a>.NET 嵌入限制
 
@@ -23,7 +23,7 @@ ms.locfileid: "70292713"
 
 同一应用程序中不能有两个共同存在的 Mono 运行时。 这意味着不能在同一个应用程序中使用两个不同的 .NET 嵌入生成的库。
 
-**临时解决方法：** 您可以使用生成器创建包含多个程序集（来自不同项目）的单个库。
+**解决方法：** 您可以使用生成器创建包含多个程序集（来自不同项目）的单个库。
 
 ### <a name="subclassing"></a>分类
 
@@ -41,9 +41,9 @@ ms.locfileid: "70292713"
 
 ### <a name="nullability"></a>为
 
-.NET 中没有元数据，告诉我们对于 API 是否可以接受空引用。 如果大多数 api 无法`ArgumentNullException` `null`处理参数，则会引发此异常。 这会造成问题，因为异常的目标 C 处理会更好地避免。
+.NET 中没有元数据，告诉我们对于 API 是否可以接受空引用。 如果大多数 Api 无法处理 `null` 参数，则会引发 `ArgumentNullException`。 这会造成问题，因为异常的目标 C 处理会更好地避免。
 
-由于我们不能在标头文件中生成准确的空性注释并希望最大程度地减少托管异常，`NS_ASSUME_NONNULL_BEGIN`因此，在可能的情况下，可以指定可为 null 的注释，并在可能的情况下添加一些特定的。
+由于我们不能在标头文件中生成准确的空性注释并希望最大程度地减少托管异常，因此，在可能的情况下，可以为`NS_ASSUME_NONNULL_BEGIN`可为 null 的注释添加一些特定的。
 
 ### <a name="bitcode-ios"></a>Bitcode （iOS）
 

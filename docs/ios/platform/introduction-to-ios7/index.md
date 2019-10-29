@@ -4,15 +4,15 @@ description: 本文介绍了 iOS 7 中引入的主要新 Api，包括查看控�
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b405643096699e1d965f485bdc590afa178881d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70752064"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031820"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 简介
 
@@ -53,7 +53,7 @@ void AnimateWithSpring ()
 
 ### <a name="keyframe-animations"></a>关键帧动画
 
-@No__t_0 类现在包含用于在 `UIView` 上创建关键帧动画的 `AnimateWithKeyframes` 方法。 此方法类似于其他 `UIView` 动画方法，不同之处在于，附加 `NSAction` 作为参数传递以包含关键帧。 在 `NSAction` 中，通过调用 `UIView.AddKeyframeWithRelativeStartTime` 添加关键帧。
+`UIView` 类现在包含用于在 `UIView`上创建关键帧动画的 `AnimateWithKeyframes` 方法。 此方法类似于其他 `UIView` 动画方法，不同之处在于，附加 `NSAction` 作为参数传递以包含关键帧。 在 `NSAction` 中，通过调用 `UIView.AddKeyframeWithRelativeStartTime` 添加关键帧。
 
 例如，以下代码片段将创建一个关键帧动画来对视图中心进行动画处理，并旋转视图：
 
@@ -82,7 +82,7 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-@No__t_0 方法的前两个参数分别指定关键帧的开始时间和持续时间（以占总体动画长度的百分比表示）。 上面的示例将在第一秒中将图像视图动画处理到其新中心，然后在下一秒旋转90度。 由于动画会将 `UIViewKeyframeAnimationOptions.Autoreverse` 指定为一个选项，因此，这两个关键帧也会反向动画。 最后，最后一个值设置为完成处理程序中的初始状态。
+`AddKeyframeWithRelativeStartTime` 方法的前两个参数分别指定关键帧的开始时间和持续时间（以占总体动画长度的百分比表示）。 上面的示例将在第一秒中将图像视图动画处理到其新中心，然后在下一秒旋转90度。 由于动画会将 `UIViewKeyframeAnimationOptions.Autoreverse` 指定为一个选项，因此，这两个关键帧也会反向动画。 最后，最后一个值设置为完成处理程序中的初始状态。
 
 下面的屏幕截图演示了通过关键帧的组合动画：
 
@@ -135,7 +135,7 @@ View.AddSubview (imageView);
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-@No__t_0 采用引用的实例 `UIView` 或 `UICollectionViewLayout`，其中包含将按附加行为进行动画处理的项。
+`UIDynamicAnimator` 采用引用的实例 `UIView` 或 `UICollectionViewLayout`，其中包含将按附加行为进行动画处理的项。
 
 接下来，创建 `UIGravityBehavior` 实例。 可以传递一个或多个实现 `IUIDynamicItem` 的对象，如 `UIView`：
 
@@ -187,7 +187,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-@No__t_0 具有一个名为 `TranslatesReferenceBoundsIntoBoundry` 的属性。 将此设置为 `true` 会导致引用视图的边界用作冲突边界。
+`UICollisionBehavior` 具有一个名为 `TranslatesReferenceBoundsIntoBoundry`的属性。 将此设置为 `true` 会导致引用视图的边界用作冲突边界。
 
 现在，当图像与重力向下动画动画时，它会在屏幕底部上弹跳，然后在屏幕上进行静止。
 

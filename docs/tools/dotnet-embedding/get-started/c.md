@@ -3,15 +3,15 @@ title: C 入门
 description: 本文档介绍如何在 C 应用程序中使用 .NET 嵌入嵌入 .NET 代码。 本文介绍了如何在 Visual Studio 2019 和 Visual Studio for Mac 中使用 .NET 嵌入。
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/19/2018
-ms.openlocfilehash: 1dc68a709f8e1f864961bbe87af112b648b0dd2a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9660eccd3e14a6c4ecad901064650fe1e25458f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278738"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029783"
 ---
 # <a name="getting-started-with-c"></a>C 入门
 
@@ -71,7 +71,7 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-由于已`--compile`将标志传递给工具，.net 嵌入操作还应将输出文件编译为共享库，可在生成的文件、macOS 上的**libmanaged 和 .dylib**文件（上的文件）和 Windows 上的**托管 .dll**中查找。
+由于 `--compile` 标志传递到该工具，因此 .NET 嵌入操作还应将输出文件编译为共享库，您可以在生成的文件、 **macOS 上的 .dylib 文件和 Windows**上的**libmanaged**文件中找到这些文件。
 
 若要使用共享库，可以包含托管的 **.h** c 头文件，该文件提供与各自的托管库 api 对应的 C 声明，并与前面提到的编译共享库链接。
 

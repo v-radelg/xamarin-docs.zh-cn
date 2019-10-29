@@ -4,15 +4,15 @@ description: 本文档链接到介绍适用于 Xamarin 开发人员的各种用�
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: f1168378104fd40fa7de78297f1f683d0caa0afa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f5303cd63c6ff1433b56b3f47b67d3925b1d1e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283124"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032782"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin 中的 macOS 用户界面控件
 
@@ -22,7 +22,7 @@ _本文链接到描述各种 macOS UI 控件的指南。_
 
 下面列出的指南提供了有关在 Xamarin 应用程序中使用 macOS UI 元素的详细信息。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在每篇文章。
 
-你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " `Register` [公开C#类/方法到目标-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) " 部分，因为它说明了用于连接C#类的和`Export`属性目标-C 对象和 UI 元素。
+你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 "[向目标的C#公开类/方法](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)" 部分，因为它说明了用于将你C#的类连接到的`Register`和`Export`属性目标-C 对象和 UI 元素。
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
@@ -66,7 +66,7 @@ _本文链接到描述各种 macOS UI 控件的指南。_
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[创建自定义控件](~/mac/user-interface/custom-controls.md)
 
-本文介绍如何创建自定义用户界面控件（继承`NSControl`自）、绘制控件的自定义接口以及创建可用于 Xcode 的 Interface Builder 的自定义操作。
+本文介绍如何创建自定义用户界面控件（通过继承 `NSControl`）、绘制控件的自定义界面以及创建可用于 Xcode 的 Interface Builder 的自定义操作。
 
 ## <a name="mac-samples-gallery"></a>Mac 示例库
 

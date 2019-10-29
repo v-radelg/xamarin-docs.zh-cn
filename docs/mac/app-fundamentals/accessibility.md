@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 应用程序中使用 macOS 辅助
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 087dcdc7024026e6a3ed3a05baca3b2648053cc8
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 3f3b9c84fad0bce8939187fcd0c91d18314ce8ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769950"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032643"
 ---
 # <a name="accessibility-on-macos"></a>MacOS 上的辅助功能
 
@@ -55,7 +55,7 @@ public static class AccessibilityHelper
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-@No__t_0 属性用于说明控件或视图的作用，只应在标签可能无法提供足够的信息时添加。 帮助文本仍应尽可能简短，例如 "删除文档"。
+`AccessibilityHelp` 属性用于说明控件或视图的作用，只应在标签可能无法提供足够的信息时添加。 帮助文本仍应尽可能简短，例如 "删除文档"。
 
 某些用户界面元素与可访问访问权限（例如，具有其自己的可访问性标签和帮助的输入旁边的标签）无关。
 在这些情况下，请设置 `AccessibilityElement = false`，以便屏幕阅读器或其他辅助工具将跳过这些控件或视图。

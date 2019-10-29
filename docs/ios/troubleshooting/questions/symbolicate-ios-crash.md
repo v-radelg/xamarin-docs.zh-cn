@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/09/2018
-ms.openlocfilehash: cc681e94187530c5442ad4fb12557017b92b2bb4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 418a0196849099da03983085aca9ceed2077207b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769218"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030922"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>在哪里可以找到符号化 iOS 崩溃日志的 .dSYM 文件？
 
@@ -20,17 +20,17 @@ ms.locfileid: "70769218"
 
 - 如果已启用特定于设备的生成，则可在以下目录中找到 dSYM：
 
-    **&lt;项目目录&gt;/bin/&lt;平台&gt;配置/device-builds/设备&gt;&lt;&gt; /&lt;- &lt;os-版本&gt;/**
+    **&lt;项目目录&gt;/bin/&lt;平台&gt;/&lt;&gt;&lt;&gt;-&lt;&gt;/**
 
     例如:
   
-    **TestApp/bin/iPhone/Release/device-builds/iphone8.4-11.3.1/**
+    **TestApp/bin/iPhone/Release/device-build/iphone 8.4-11.3.1/**
 
 - 如果尚未启用特定于设备的生成，则可在以下目录中找到 dSYM：
 
-    **&lt;项目目录&gt;/bin/&lt;平台&gt;配置/&lt;&gt;/**
+    **&lt;项目目录&gt;/bin/&lt;平台&gt;/&lt;配置&gt;/**
 
-    例如：
+    例如:
 
     **TestApp/bin/iPhone/Release/**
 

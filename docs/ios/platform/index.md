@@ -4,15 +4,15 @@ description: 本文档链接到各种指南，这些指南介绍了不同版本�
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206299"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032278"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
@@ -41,7 +41,7 @@ IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone U
 
 ## <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[联系人和 ContactsUI](~/ios/platform/contacts.md)
 
-随着 ios 9 的引入，Apple 发布了两个新框架， `Contacts`以及`ContactsUI`替换 iOS 8 及更早版本使用的现有通讯簿和通讯簿 UI 框架。
+引入 iOS 9 后，Apple 发布了两个新框架（`Contacts` 和 `ContactsUI`），用来替换 iOS 8 及更早版本使用的现有通讯簿和通讯簿 UI 框架。
 
 ## <a name="document-pickeriosplatformdocument-pickermd"></a>[文档选取器](~/ios/platform/document-picker.md)
 
@@ -53,7 +53,7 @@ iOS 中内置了两个日历相关的应用程序：日历应用程序和提醒�
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS 扩展](~/ios/platform/extensions.md)
 
-Ios 8 中引入的扩展是专用`UIViewControllers`的，由 ios 在**通知中心**内的标准上下文中提供，作为用户请求的自定义键盘类型以执行专用输入或其他上下文例如，编辑可提供特殊效果筛选器的照片。
+IOS 8 中引入的扩展是由 iOS 在诸如**通知中心**内的标准上下文中提供的专用 `UIViewControllers`，作为用户请求的自定义键盘类型，用于执行特定的输入或其他上下文，如编辑照片，其中扩展可以提供特殊效果筛选器。
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS 中的图形和动画](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -85,7 +85,7 @@ Apple 在 iOS 9 中对游戏 Api 做出了多项技术改进，使 Xamarin iOS �
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[适用于 iPad 的多任务](~/ios/platform/multitasking.md)
 
-iOS 9 增加了对在特定 iPad 硬件上同时运行两个应用程序的多任务支持。 通过以下功能支持 iPad 的多任务："滑过"、"拆分" 视图 & 图片。
+iOS 9 增加了对在特定 iPad 硬件上同时运行两个应用程序的多任务支持。 通过以下功能支持 iPad 的多任务： "滑过"、"拆分" 视图 & 图片中的图片。
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 
@@ -99,7 +99,7 @@ Passbook 是适用于 Iphone 和 iPod 的应用，适用于 iOS 6。 它存储�
 
 ## <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[请求应用评审](~/ios/platform/request-app-review.md)
 
-新到 ios 10.3，该`RequestReview()`方法允许 iOS 应用要求用户对其进行评级或查看。 在用户已从应用商店安装的装运应用中调用此方法时，iOS 10 将处理开发人员的整个评级和审核过程。 由于此过程由应用商店策略控制，因此可能会显示警报，也可能不显示。
+新的 iOS 10.3，`RequestReview()` 方法允许 iOS 应用要求用户对其进行评级或查看。 在用户已从应用商店安装的装运应用中调用此方法时，iOS 10 将处理开发人员的整个评级和审核过程。 由于此过程由应用商店策略控制，因此可能会显示警报，也可能不显示。
 
 ## <a name="search-apisiosplatformsearchindexmd"></a>[搜索 API](~/ios/platform/search/index.md)
 
@@ -135,7 +135,7 @@ iOS 10 包括一个新的语音 API，该 API 允许应用程序支持连续语�
 
 ## <a name="wide-coloriosplatformwide-colormd"></a>[广泛的颜色](~/ios/platform/wide-color.md)
 
-iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心图像、金属和 AVFoundation 等框架）中的扩展范围像素格式和宽色域颜色空间的支持。 通过在整个图形堆栈中提供此行为, 可进一步减轻对具有宽颜色显示的设备的支持。
+iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心图像、金属和 AVFoundation 等框架）中的扩展范围像素格式和宽色域颜色空间的支持。 通过在整个图形堆栈中提供此行为，可进一步减轻对具有宽颜色显示的设备的支持。
 
 ## <a name="binding-objective-cbinding-objective-cindexmd"></a>[绑定 Objective-C](binding-objective-c/index.md)
 
@@ -143,7 +143,7 @@ iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心�
 
 ## <a name="referencing-native-librariesnative-interopmd"></a>[引用本机库](native-interop.md)
 
-Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。
+Xamarin 支持与本机 C 库和目标 C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。
 
 ## <a name="embedded-frameworksembedded-frameworksmd"></a>[嵌入式框架](embedded-frameworks.md)
 

@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 0cf44a05f8b40a07dcc099d5789171f4a234a0c2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70290607"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032571"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin 中的 iOS 扩展
 
@@ -117,7 +117,7 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 1. 首先，创建一个新的 iOS、**单一视图应用**项目，然后单击 "**下一步**" 按钮： 
 
     [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
-2. @No__t_0 调用项目，然后单击 "**下一步**" 按钮： 
+2. `TodayContainer` 调用项目，然后单击 "**下一步**" 按钮： 
 
     [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
 3. 验证**项目名称**和**解决方案**名称，并单击 "**创建**" 按钮以创建解决方案： 
@@ -126,7 +126,7 @@ IOS 10 中添加了[其他扩展点](~/ios/platform/introduction-to-ios10/index.
 4. 接下来，在 "**解决方案资源管理器**中，右键单击解决方案并从"**今日扩展**"模板添加新的**iOS 扩展**项目： 
 
     [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
-5. @No__t_0 调用项目，然后单击 "**下一步**" 按钮： 
+5. `DaysRemaining` 调用项目，然后单击 "**下一步**" 按钮： 
 
     [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
 6. 查看项目，然后单击 "**创建**" 按钮以创建它： 
@@ -286,7 +286,7 @@ public override void ViewDidLoad ()
 
 使用扩展时，使用统一类型标识符（UTI）来创建和操作在应用、其他应用和/或服务之间交换的数据。
 
-@No__t_0 静态类定义以下与 Apple 的 `kUTType...` 定义相关的帮助器属性：
+`MobileCoreServices.UTType` 静态类定义以下与 Apple 的 `kUTType...` 定义相关的帮助器属性：
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`

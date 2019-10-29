@@ -4,15 +4,15 @@ description: 本文档介绍 Apple 对 iOS 10 中的小组件的增强功能，�
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 969d7fc78af9dd10f7ad57f58a6f4f619d0a201a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca6ccce934b32fa0d7e48cd8f295d9acefe6e121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769458"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031510"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 中的搜索和主屏幕小组件增强功能
 
@@ -24,7 +24,7 @@ Apple 为小组件系统引进了几项增强功能，以确保小组件在新�
 
 小组件可高度自定义，并且可能包含诸如文本、图像、按钮等的 UI 元素。此外，开发人员还可以进一步自定义小组件的布局。
 
-[![](widgets-images/widgets01.png "示例小组件")](widgets-images/widgets01.png#lightbox)
+[![](widgets-images/widgets01.png "Example widgets")](widgets-images/widgets01.png#lightbox)
 
 用户可以通过两个主要位置来查看应用的小组件并与之进行交互：
 

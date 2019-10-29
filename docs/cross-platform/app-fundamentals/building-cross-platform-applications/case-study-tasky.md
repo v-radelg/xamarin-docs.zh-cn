@@ -3,15 +3,15 @@ title: 跨平台应用案例研究： Tasky
 description: 本文档介绍如何设计 Tasky 可移植示例应用程序并将其构建为跨平台的移动应用程序。 它讨论了应用的要求、接口、数据模型、核心功能、实现等。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249776"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030338"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究： Tasky
 
@@ -95,7 +95,7 @@ Tasky 便携使用可移植类库策略来共享通用代码。 请参阅[共享
 
 ![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
 
-下图显示按层分组的类。 @No__t_0 类是来自 Sqlite 网络包的样板代码。 类的其余部分是 Tasky 的自定义代码。 @No__t_0 和 `TaskItem` 类表示向特定于平台的应用程序公开的 API。
+下图显示按层分组的类。 `SQLiteConnection` 类是来自 Sqlite 网络包的样板代码。 类的其余部分是 Tasky 的自定义代码。 `TaskItemManager` 和 `TaskItem` 类表示向特定于平台的应用程序公开的 API。
 
  [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
 
@@ -115,9 +115,9 @@ Tasky 便携使用可移植类库策略来共享通用代码。 请参阅[共享
 
 数据层包含对数据进行物理存储的代码-无论是数据库、平面文件还是其他机制。 Tasky 数据层由两部分组成： SQLite 网络库和添加到连接的自定义代码。
 
-Tasky 依赖于 Sqlite 网络 nuget 包（由 Frank Kreuger 发布）来嵌入提供对象关系映射（ORM）数据库接口的 SQLite 网络代码。 @No__t_0 类继承自 `SQLiteConnection` 并添加了所需的创建、读取、更新、删除（CRUD）方法，以便将数据读取和写入 SQLite。 它是可在其他项目中重复使用的泛型 CRUD 方法的简单样板实现。
+Tasky 依赖于 Sqlite 网络 nuget 包（由 Frank Kreuger 发布）来嵌入提供对象关系映射（ORM）数据库接口的 SQLite 网络代码。 `TaskItemDatabase` 类继承自 `SQLiteConnection` 并添加了所需的创建、读取、更新、删除（CRUD）方法，以便将数据读取和写入 SQLite。 它是可在其他项目中重复使用的泛型 CRUD 方法的简单样板实现。
 
-@No__t_0 是一种单独的，可确保对同一实例进行所有访问。 锁定用于阻止从多个线程进行并发访问。
+`TaskItemDatabase` 是一种单独的，可确保对同一实例进行所有访问。 锁定用于阻止从多个线程进行并发访问。
 
  <a name="SQLite_on_WIndows_Phone" />
 
@@ -188,7 +188,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 ### <a name="data-access-layer-dal"></a>数据访问层（DAL）
 
-@No__t_0 类使用强类型 API 封装数据存储机制，该 API 允许创建、删除、检索和更新 `TaskItem` 对象。
+`TaskItemRepository` 类使用强类型 API 封装数据存储机制，该 API 允许创建、删除、检索和更新 `TaskItem` 对象。
 
  <a name="Using_Conditional_Compilation" />
 
@@ -241,7 +241,7 @@ path>/Documents/TaskDB.db3" 或 "TaskDB" （对于 Windows Phone 为 "db3"）。
 
 ### <a name="api-for-platform-specific-code"></a>用于平台特定代码的 API
 
-编写通用代码后，必须生成用户界面以收集和显示由其公开的数据。 @No__t_0 类实现了外观模式，为应用程序代码提供访问的简单 API。
+编写通用代码后，必须生成用户界面以收集和显示由其公开的数据。 `TaskItemManager` 类实现了外观模式，为应用程序代码提供访问的简单 API。
 
 在每个特定于平台的项目中编写的代码通常与该设备的本机 SDK 紧密耦合，只使用由 `TaskItemManager` 定义的 API 访问通用代码。 这包括它公开的方法和业务类，如 `TaskItem`。
 
@@ -283,7 +283,7 @@ IOS 应用引用特定于平台的 SDK 库–例如： Xamarin 和 Monotouch.dia
 - **EditingSource** –此类用于将任务列表绑定到用户界面。 由于 `MonoTouch.Dialog` 用于任务列表，因此我们需要实现此帮助程序以启用 `UITableView` 中的 "轻扫到删除" 功能。 刷删除在 iOS 上很常见，但不能在 Android 或 Windows Phone 上进行，因此，iOS 特定项目是实现它的唯一项目。
 - **TaskDialog** –此类用于将单个任务绑定到 UI。 它使用 `MonoTouch.Dialog` 反射 API 来 "包装" `TaskItem` 对象，该类包含正确的特性，以允许正确设置输入屏幕的格式。
 
-@No__t_0 类使用 `MonoTouch.Dialog` 属性基于类的属性创建屏幕。 该类如下所示：
+`TaskDialog` 类使用 `MonoTouch.Dialog` 属性基于类的属性创建屏幕。 该类如下所示：
 
 ```csharp
 public class TaskDialog {

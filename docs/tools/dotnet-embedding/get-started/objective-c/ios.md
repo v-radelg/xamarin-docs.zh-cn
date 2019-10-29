@@ -3,15 +3,15 @@ title: IOS 入门
 description: 本文档介绍如何开始使用 iOS 的 .NET 嵌入。 它讨论了要求，并提供了一个示例应用程序，用于演示如何绑定托管程序集并使用 Xcode 项目中的输出。
 ms.prod: xamarin
 ms.assetid: D5453695-69C9-44BC-B226-5B86950956E2
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d5bde89ed90e55724fbc25fc473e265affa9ce2f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5697d20077b746d9d33db985111c2d04908d5d01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292947"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029761"
 ---
 # <a name="getting-started-with-ios"></a>IOS 入门
 

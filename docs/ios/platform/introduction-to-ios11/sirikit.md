@@ -4,15 +4,15 @@ description: 本文档介绍如何使用 iOS 11 中的 SiriKit。 特别是，�
 ms.prod: xamarin
 ms.assetid: 8F75300B-B591-42ED-9D17-001992A5C381
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/07/2017
-ms.openlocfilehash: 27adc8aa2ed0fec09fe38b9ea31834ea6e75f845
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: ce4514059b2d0713cdf1e0a4a9956ab38aae7604
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033085"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032152"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 中的 SiriKit 更新
 
@@ -45,7 +45,7 @@ IOS 11 中的 SiriKit 添加了以下新的和更新的目的域：
 - 具有 "标题" 和 "完成" 状态。
 - 选择性地包含截止时间和位置。
 
-**说明**
+**注意**
 
 - 具有 "标题" 和 "内容" 字段。
 
@@ -66,12 +66,12 @@ IOS 11 中的 SiriKit 添加了以下新的和更新的目的域：
 
 通过这些可选方法，你的代码可以执行验证、选择默认值或请求用户的其他信息。
 
-例如，对于`IINCreateTaskListIntent`接口，所需的方法为`HandleCreateTaskList`。 有四种可选方法可以更好地控制 Siri 交互：
+例如，对于 `IINCreateTaskListIntent` 接口，`HandleCreateTaskList`所需的方法。 有四种可选方法可以更好地控制 Siri 交互：
 
-- `ResolveTitle`–验证标题、设置默认标题（如果适用）或指示数据不是必需的。
-- `ResolveTaskTitles`–验证用户所说的任务列表。
-- `ResolveGroupName`–验证组名称、选择默认组或通知数据不是必需的。
-- `ConfirmCreateTaskList`–验证你的代码是否可以执行请求的操作，但不执行该操作（只有`Handle*`方法应修改数据）。
+- `ResolveTitle` –验证标题、设置默认标题（如果适用）或指示数据不是必需的。
+- `ResolveTaskTitles` –验证用户所说的任务列表。
+- `ResolveGroupName` –验证组名称、选择默认组或通知数据不是必需的。
+- `ConfirmCreateTaskList` –验证你的代码是否可以执行所请求的操作，但不执行该操作（只有 `Handle*` 方法应修改数据）。
 
 ### <a name="handle-the-intent"></a>处理意向
 
@@ -87,19 +87,19 @@ IOS 11 中的 SiriKit 添加了以下新的和更新的目的域：
   - `HandleAppendToNote`
   - `HandleSearchForNotebookItems`
 
-每个方法都传递了特定意向类型，该类型包含 Siri 从用户的请求中分析的所有信息（可能在`Resolve*`和`Confirm*`方法中进行了更新）。
+每个方法都传递了特定意向类型，该类型包含 Siri 从用户的请求中分析的所有信息（可能在 `Resolve*` 和 `Confirm*` 方法中更新）。
 您的应用程序必须分析提供的数据，然后执行某些操作来存储或处理数据，并返回一个 Siri，并向用户显示结果。
 
 ### <a name="response-codes"></a>响应代码
 
-必需`Handle*`的和可选`Confirm*`的方法通过对其传递到完成处理程序的对象设置值来指示响应代码。 响应来自`INCreateTaskListIntentResponseCode`枚举：
+必需的 `Handle*` 和可选的 `Confirm*` 方法通过对其传递到完成处理程序的对象设置值来指示响应代码。 响应来自 `INCreateTaskListIntentResponseCode` 枚举：
 
-- `Ready`–在确认阶段（即从`Confirm*`方法，而不是`Handle*`从方法）返回。
-- `InProgress`–用于长时间运行的任务（例如网络/服务器操作）。
-- `Success`–使用成功操作的详细信息（仅从`Handle*`方法）进行响应。
-- `Failure`-表示发生了错误，无法完成操作。
-- `RequiringAppLaunch`–无法通过意向进行处理，但可能会在应用程序中进行操作。
-- `Unspecified`–不要使用：向用户显示错误消息。
+- `Ready` –在确认阶段（即从 `Confirm*` 方法返回，而不是从 `Handle*` 方法返回）。
+- `InProgress` –用于长时间运行的任务（例如网络/服务器操作）。
+- `Success` –使用成功操作的详细信息（仅从 `Handle*` 方法）进行响应。
+- `Failure` –表示发生了错误，无法完成操作。
+- `RequiringAppLaunch` –无法通过意向进行处理，但可能会在应用中进行操作。
+- `Unspecified` –不要使用：向用户显示错误消息。
 
 在 Apple 的[SiriKit 列表和说明文档](https://developer.apple.com/documentation/sirikit/lists_and_notes)中了解有关这些方法和响应的详细信息。
 
@@ -111,7 +111,7 @@ IOS 11 中的 SiriKit 添加了以下新的和更新的目的域：
 
 1. **Info.plist**中的**SiriKit** 。
 2. 将**隐私– Siri 使用描述**密钥添加到**info.plist**，并将消息添加到客户。
-3. 在应用中调用方法，以提示用户允许Siri交互。`INPreferences.RequestSiriAuthorization`
+3. 调用应用中的 `INPreferences.RequestSiriAuthorization` 方法，以提示用户允许 Siri 交互。
 4. 将 SiriKit 添加到开发人员门户中的应用 ID，然后重新创建预配配置文件以包括新的权利。
 
 然后，将新的扩展项目添加到应用以处理 Siri 请求：
@@ -124,7 +124,7 @@ IOS 11 中的 SiriKit 添加了以下新的和更新的目的域：
 
 #### <a name="configure-the-intenthandler"></a>配置 IntentHandler
 
-类是 Siri 请求的入口点–每个意向都传递`GetHandler`给方法，该方法返回可处理请求的对象。 `IntentHandler`
+`IntentHandler` 类是 Siri 请求的入口点–每个意向传递到 `GetHandler` 方法，该方法返回可处理请求的对象。
 
 下面的代码演示了一个简单的实现：
 
@@ -144,22 +144,22 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 }
 ```
 
-类必须从`INExtension`继承，并且此示例将处理列表和说明，它还实现`IINNotebookDomainHandling`。
+类必须从 `INExtension`继承，因为该示例将处理列表和 notes 方法，还实现 `IINNotebookDomainHandling`。
 
 > [!NOTE]
 >
-> - .Net 中有一种约定，其中的接口以大写`I`作为前缀，Xamarin 在从 iOS SDK 绑定协议时要遵守此约定。
+> - .NET 中有一个用于以大写 `I`为前缀的约定，Xamarin 会在从 iOS SDK 绑定协议时遵守此约定。
 > - Xamarin 还保留来自 iOS 的类型名称，并且 Apple 使用类型名称中的前两个字符来反映类型所属的框架。
-> - 对于框架，类型带有`IN*`前缀（例如`Intents` `INExtension`），但这些_不_是接口。
-> - 它还遵循了这两个协议（成为C#中的接口）， `I`其中包括两个`IINAddTasksIntentHandling`，如。
+> - 对于 `Intents` 框架，类型以 `IN*` 为前缀（例如 `INExtension`），但这些_不_是接口。
+> - 它还遵循了这两个`I`s 的C#协议（成为中的接口），如`IINAddTasksIntentHandling`。
 
 #### <a name="handling-intents"></a>处理意向
 
 每个意向（添加任务、设置任务属性等）都在类似于下面所示的方法中实现。 方法应执行三个主要功能：
 
-1. **处理意向**– Siri 分析的数据在特定于意向类型的`intent`对象中可用。 您的应用程序可能已使用可选`Resolve*`方法验证了该数据。
+1. **处理意向**– Siri 分析的数据在特定于意向类型的 `intent` 对象中可用。 您的应用程序可能已使用可选 `Resolve*` 方法验证了该数据。
 2. **验证和更新数据存储**-将数据保存到文件系统（使用应用程序组，以便主 iOS 应用程序也可以访问它）或通过网络请求。
-3. **提供响应**–使用`completion`处理程序将响应发送回 Siri，以便对用户进行读取/显示：
+3. **提供响应**–使用 `completion` 处理程序将响应发送回 Siri，以便对用户进行读取/显示：
 
 ```csharp
 public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateTaskListIntentResponse> completion)
@@ -174,10 +174,10 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 }
 ```
 
-`null`请注意，作为第二个参数传递到响应–这是用户活动参数，如果未提供，则将使用默认值。
-只要你的 iOS 应用通过`NSUserActivityTypes` **info.plist**中的密钥支持，你就可以设置自定义活动类型。 然后，你可以在打开应用时处理此案例，并执行特定操作（如打开相关视图控制器并从 Siri 操作加载数据）。
+请注意，`null` 将作为第二个参数传递到响应–这是用户活动参数，如果未提供，则将使用默认值。
+只要你的 iOS 应用通过**info.plist**中的 `NSUserActivityTypes` 项支持，即可设置自定义活动类型。 然后，你可以在打开应用时处理此案例，并执行特定操作（如打开相关视图控制器并从 Siri 操作加载数据）。
 
-该示例还 hardcodes 了`Success`结果，但在实际情况下，应添加正确的错误报告。
+该示例还 hardcodes 了 `Success` 结果，但在实际情况下，应添加正确的错误报告。
 
 ### <a name="test-phrases"></a>测试短语
 
@@ -217,12 +217,12 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 
 ### <a name="nsinternalinconsistencyexception"></a>NSInternalInconsistencyException
 
-_引发了目标-C 异常。姓名:NSInternalInconsistencyException 原因：在 INPreferences 中使用类 <：应用中的 0x60400082ff00 > 需要 siri 权限。是否在 Xcode 项目中启用了 Siri 功能？_
+_引发了目标-C 异常。 名称： NSInternalInconsistencyException 原因：从应用中使用类 < INPreferences： 0x60400082ff00 > 需要权限 siri。是否在 Xcode 项目中启用了 Siri 功能？_
 
 - **Info.plist**中的 SiriKit 为勾选。
 - **Info.plist**在项目选项中配置， **> 生成 > iOS 捆绑签名**。
 
-  [![显示正确设置了权利的项目选项](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
+  [显示正确设置了权利的![项目选项](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
 - （适用于设备部署）应用 ID 已启用 SiriKit 并已下载预配配置文件。
 

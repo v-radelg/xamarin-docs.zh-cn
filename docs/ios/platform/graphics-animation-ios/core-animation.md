@@ -4,15 +4,15 @@ description: 本文将介绍核心动画框架，其中展示了它如何在 UIK
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 730359824ec5a51a53261fbfc9519ac8560a77f5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60bab56440fc7227e14d31875a8b6108cd1a86f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753077"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032484"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心动画
 
@@ -46,9 +46,9 @@ UIKit 提供了几项功能，使你可以轻松地向应用程序添加动画�
 
 ### <a name="view-controller-transitions"></a>视图控制器转换
 
- `UIViewController`为在视图控制器间通过`PresentViewController`方法过渡提供内置支持。 使用`PresentViewController`时，可以选择性地对转换为第二个控制器的转换进行动画处理。
+ `UIViewController` 通过 `PresentViewController` 方法为视图控制器之间的转换提供内置支持。 使用 `PresentViewController`时，可以选择性地对转换为第二个控制器的转换进行动画处理。
 
-例如，假设有一个具有两个控制器的应用程序，在该应用程序中触摸`PresentViewController`第一个控制器中的一个按钮以显示第二个控制器。 若要控制用于显示第二个控制器的转换动画，只需按[`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle)如下所示设置其属性：
+例如，假设有一个具有两个控制器的应用程序，在该应用程序中，按第一个控制器中的按钮会调用 `PresentViewController` 以显示第二个控制器。 若要控制用于显示第二个控制器的转换动画，只需设置其[`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle)属性，如下所示：
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -56,27 +56,27 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-在这种情况`PartialCurl`下，将使用动画，尽管有几个动画可用，包括：
+在这种情况下，将使用 `PartialCurl` 的动画，尽管还有其他一些可用的动画，其中包括：
 
-- `CoverVertical`–从屏幕底部向上滑动
-- `CrossDissolve`–旧视图 & 新视图淡出
+- `CoverVertical` –从屏幕底部向上滑动
+- `CrossDissolve` –旧视图在新视图被淡化 & 淡出
 - `FlipHorizontal`-从右到左水平翻转。 在消除上，过渡从左向右翻转。
 
-若要对转换进行动画`true`处理，请将作为`PresentViewController`第二个参数传递到：
+若要对转换进行动画处理，请将 `true` 作为第二个自变量传递 `PresentViewController`：
 
 ```csharp
 PresentViewController (vc2, true, null);
 ```
 
-以下屏幕截图显示了`PartialCurl`这种情况下的转换：
+以下屏幕截图显示了 `PartialCurl` 情况下转换的样子：
 
- ![](core-animation-images/06-view-transitions.png "此屏幕截图显示了 PartialCurl 转换")
+ ![](core-animation-images/06-view-transitions.png "This screenshot shows the PartialCurl transition")
 
 ### <a name="view-transitions"></a>查看过渡
 
 除了控制器间的转换以外，UIKit 还支持在视图之间对转换进行动画处理，以交换另一个视图的视图。
 
-例如，假设有一个控制器`UIImageView`，其中的点击应显示第二个。 `UIImageView` 若要动画处理视图的 superview 以转换为第二个图像视图，就像调用`UIView.Transition`一样简单， `toView` `fromView`如以下所示：
+例如，假设有一个控制器用于 `UIImageView`，其中点击该图像应显示第二个 `UIImageView`。 若要动画处理视图的 superview 以转换为第二个图像视图，只需要调用 `UIView.Transition`，并向其传递 `toView` 和 `fromView` 如下所示：
 
 ```csharp
 UIView.Transition (
@@ -88,15 +88,15 @@ UIView.Transition (
   completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition`还采用一个`duration`参数来控制动画运行的时间， [`options`](xref:UIKit.UIViewAnimationOptions)并指定要使用的动画和缓动函数。 此外，还可以指定在动画完成时要调用的完成处理程序。
+`UIView.Transition` 还采用 `duration` 参数来控制动画运行的时间，并使用[`options`](xref:UIKit.UIViewAnimationOptions)来指定要使用的动画和缓动函数。 此外，还可以指定在动画完成时要调用的完成处理程序。
 
-下面的屏幕截图显示使用时`TransitionFlipFromTop`图像视图之间的动画转换：
+以下屏幕截图显示了使用 `TransitionFlipFromTop` 时，图像视图之间的动画转换：
 
- ![](core-animation-images/07-animated-transition.png "此屏幕截图显示使用 TransitionFlipFromTop 时图像视图之间的动画转换")
+ ![](core-animation-images/07-animated-transition.png "This screenshot shows the animated transition between the image views when TransitionFlipFromTop is used")
 
 ### <a name="view-property-animations"></a>查看属性动画
 
-UIKit 支持对`UIView`类的各种属性进行免费动态操作，包括：
+UIKit 支持对 `UIView` 类的各种属性进行免费动态处理，包括：
 
 - Frame
 - 汇编
@@ -105,7 +105,7 @@ UIKit 支持对`UIView`类的各种属性进行免费动态操作，包括：
 - Transform
 - 颜色
 
-这些动画通过指定传递给静态`NSAction` `UIView.Animate`方法的委托中的属性更改，隐式发生。 例如，下面的代码对的中心点进行了`UIImageView`动画处理：
+通过指定传递给静态 `UIView.Animate` 方法的 `NSAction` 委托中的属性更改，隐式地发生这些动画。 例如，下面的代码对 `UIImageView`的中心点进行了动画处理：
 
 ```csharp
 pt = imgView.Center;
@@ -125,27 +125,27 @@ UIView.Animate (
 
 这会使图像在屏幕的顶部来回进行动画处理，如下所示：
 
- ![](core-animation-images/08-animate-center.png "图像作为输出在屏幕的顶部来回进行动画处理")
+ ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
 
-与`Transition`方法一样， `Animate`允许设置持续时间和缓动函数。 此示例还使用了`UIViewAnimationOptions.Autoreverse`选项，该选项会使动画从值动画返回到第一个值。 但是，此代码还会在`Center`完成处理程序中将设置回其初始值。 当动画在一段时间内插值属性值时，属性的实际模型值始终是已设置的最终值。 在此示例中，值是 superview 右侧附近的一个点。 如果不将`Center`设置为初始点（动画完成的原因是由于正在设置该`Autoreverse`点），则在动画完成后，图像会与右侧对齐，如下所示：
+与 `Transition` 方法一样，`Animate` 允许设置持续时间和缓动函数。 此示例还使用了 `UIViewAnimationOptions.Autoreverse` 选项，该选项会使动画从值动画返回到第一个选项。 但是，代码还会将 `Center` 设置回其在完成处理程序中的初始值。 当动画在一段时间内插值属性值时，属性的实际模型值始终是已设置的最终值。 在此示例中，值是 superview 右侧附近的一个点。 如果不将 `Center` 设置为初始点（动画完成的原因是由于正在设置 `Autoreverse`，则在动画完成后，图像将会与右侧对齐，如下所示：
 
- ![](core-animation-images/09-animation-complete.png "如果不将中心设置为初始点，则在动画完成后，图像会靠后靠右对齐。")
+ ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
 
 ## <a name="using-core-animation"></a>使用核心动画
 
- `UIView`动画允许多种功能，如果可能，则应使用动画。 如前文所述，UIView 动画使用核心动画框架。 但是，某些操作不能使用`UIView`动画完成，如对不能使用视图进行动画处理的附加属性进行动画处理，或沿非线性路径插值。 在需要更精细控制的情况下，也可以直接使用核心动画。
+ `UIView` 动画允许多种功能，应尽可能使用（如果可能）。 如前文所述，UIView 动画使用核心动画框架。 但是，某些事情无法用 `UIView` 动画完成，如对不能使用视图进行动画处理的附加属性进行动画处理，或沿非线性路径插值。 在需要更精细控制的情况下，也可以直接使用核心动画。
 
 ### <a name="layers"></a>层面
 
-使用核心动画时，动画通过类型`CALayer`为的*层*发生。 层在概念上类似于视图，其中有一个层层次结构，与视图层次结构非常类似。 实际上，层返回视图，视图添加了对用户交互的支持。 您可以通过视图的`Layer`属性访问任何视图的层。 事实上，在的`Draw` `UIView`方法中使用的上下文实际上是从层创建的。 在内部，将支持`UIView`层的委托设置为视图本身，这是调用。 `Draw` 因此`UIView`，当绘制到时，实际上就是绘制到它的层。
+使用核心动画时，动画通过类型 `CALayer`的*层*发生。 层在概念上类似于视图，其中有一个层层次结构，与视图层次结构非常类似。 实际上，层返回视图，视图添加了对用户交互的支持。 您可以通过视图的 `Layer` 属性访问任何视图的层。 事实上，`UIView` 的 `Draw` 方法中使用的上下文实际上是从层创建的。 在内部，支持 `UIView` 的层将其委托设置为视图本身，这是调用 `Draw`的。 因此，当绘制到 `UIView`时，实际上会绘制到它的层。
 
 层动画可以是隐式的，也可以是显式的。 隐式动画是声明性的。 只需声明应更改的层属性，动画就会正常运行。 另一方面，显式动画是通过添加到层的动画类创建的。 显式动画允许对动画的创建方式进行额外的控制。 以下部分深入探讨隐式和显式动画。
 
 ### <a name="implicit-animations"></a>隐式动画
 
-对层的属性进行动画处理的一种方法是通过隐式动画。 `UIView`动画创建隐式动画。 不过，也可以直接针对层创建隐式动画。
+对层的属性进行动画处理的一种方法是通过隐式动画。 `UIView` 动画创建隐式动画。 不过，也可以直接针对层创建隐式动画。
 
-例如，下面的代码`Contents`从图像设置一个层，设置边框宽度和颜色，并将该层添加为视图层的子层：
+例如，下面的代码从图像设置一个层的 `Contents`，设置边框宽度和颜色，并将该层添加为视图层的子层：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -164,7 +164,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-若要为该层添加隐式动画，只需在中`CATransaction`包装属性更改即可。 这允许使用视图动画（如`BorderWidth`和`BorderColor` ）对不动画处理的属性进行动画处理，如下所示：
+若要为该层添加隐式动画，只需在 `CATransaction`中包装属性更改即可。 这样，就可以使用视图动画（如 `BorderWidth` 和 `BorderColor`）来对不动画处理的属性进行动画处理，如下所示：
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -180,21 +180,21 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-此代码还对层的`Position`进行了动画处理，该层的定位点位置是从 superlayer 坐标的左上方测量的。 层的定位点是该层坐标系统内的规范化点。
+此代码还对层的 `Position`进行了动画处理，该层的定位点位置是从 superlayer 坐标的左上方测量的。 层的定位点是该层坐标系统内的规范化点。
 
 下图显示了位置和定位点：
 
- ![](core-animation-images/10-postion-anchorpt.png "下图显示了位置和定位点")
+ ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
 
-运行该示例时， `Position` `BorderWidth`和`BorderColor`会进行动画处理，如以下屏幕截图所示：
+运行该示例时，`Position`、`BorderWidth` 和 `BorderColor` 进行动画处理，如以下屏幕截图所示：
 
- ![](core-animation-images/11-implicit-animation.png "运行该示例时，位置、BorderWidth 和边框会按如下所示进行动画处理")
+ ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
 
 ### <a name="explicit-animations"></a>显式动画
 
-除了隐式动画以外，核心动画还包含各种从`CAAnimation`继承的类，这些类可让你封装动画，然后将其显式添加到层。 它们允许对动画进行更精细的控制，如修改动画的起始值、组合动画并指定关键帧以允许非线性路径。
+除了隐式动画以外，核心动画还包含各种从 `CAAnimation` 继承的类，这些类可让您封装动画，然后将这些动画显式添加到层。 它们允许对动画进行更精细的控制，如修改动画的起始值、组合动画并指定关键帧以允许非线性路径。
 
-下面的代码演示了一个显式动画的示例，该`CAKeyframeAnimation`示例为前面显示的层（在 "隐式动画" 部分中）使用：
+下面的代码演示了一个使用 `CAKeyframeAnimation` 的显式动画的示例（在 "隐式动画" 部分中）：
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -225,11 +225,11 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-此代码通过创建`Position`用于定义关键帧动画的路径来更改层的。 请注意，该层`Position`的从动画设置为的`Position`最终值。 如果不这样做，该层会突然返回到`Position`动画之前，因为动画仅更改表示值而不更改实际模型值。 通过将模型值设置为动画中的最终值，该层会停留在动画的末尾。
+此代码通过创建用于定义关键帧动画的路径来更改层的 `Position`。 请注意，该层的 `Position` 设置为动画 `Position` 的最终值。 如果没有这样做，该层会突然返回到动画前面的 `Position`，因为动画仅更改表示值而不更改实际模型值。 通过将模型值设置为动画中的最终值，该层会停留在动画的末尾。
 
 下面的屏幕截图显示了一个层，其中包含通过指定路径动画显示的图像：
 
- ![](core-animation-images/12-explicit-animation.png "此屏幕截图显示了一个层，其中包含图像通过指定路径进行动画处理")
+ ![](core-animation-images/12-explicit-animation.png "This screenshot shows the layer containing the image animating through the specified path")
 
 ## <a name="summary"></a>总结
 

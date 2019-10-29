@@ -4,15 +4,15 @@ description: 本文档提供了 tvOS 12 中新增和更新功能的概述，其�
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f5028fe6ae7ee726ffd94d7908a089ce3bdcb385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 94fea1786497d04602ea6cf06d875206cf69eb3e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287955"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030553"
 ---
 # <a name="introduction-to-tvos-12"></a>tvOS 12 简介
 
@@ -26,11 +26,11 @@ tvOS 12 包括 TVUIKit，这是一组 Api，使 tvOS 开发人员可以使用常
 
 ## <a name="password-autofill"></a>密码自动填充
 
-使用 tvOS 12，用户可以通过点击一次来使用其 iOS 设备登录到 tvOS 应用程序。 这可以通过`UITextContentType`使用的组合来指定用户名和密码字段、关联的域以建立 iOS 应用与 tvOS 应用之间的关系，以及选择在用户提供用户名和密码。
+使用 tvOS 12，用户可以通过点击一次来使用其 iOS 设备登录到 tvOS 应用程序。 这是通过结合使用 `UITextContentType` 用法来指定用户名和密码字段、关联的域以建立 iOS 应用与 tvOS 应用之间的关系，以及首选焦点环境来选择要在用户之后接收焦点的项提供用户名和密码。
 
 ## <a name="focus-engine-enhancements"></a>重点引擎增强功能
 
-tvOS 12 允许所有应用（无论如何呈现）与焦点引擎交互。 通过用户与 Siri 远程进行交互，可以在任何应用程序中使用焦点引擎来选择项目、提示可能的焦点更改和自然更新焦点。 在自定义应用程序中通过 UIKit 的`IUIFocusItemContainer`接口`UIFocusMovementHint` 、类、 `IUIFocusItemScrollableContainer`接口以及其他相关的类和方法启用了此功能。
+tvOS 12 允许所有应用（无论如何呈现）与焦点引擎交互。 通过用户与 Siri 远程进行交互，可以在任何应用程序中使用焦点引擎来选择项目、提示可能的焦点更改和自然更新焦点。 在自定义应用程序中通过 UIKit 的 `IUIFocusItemContainer` 接口、`UIFocusMovementHint` 类、`IUIFocusItemScrollableContainer` 接口以及其他相关的类和方法启用了此功能。
 
 ## <a name="vision-framework"></a>远景框架
 

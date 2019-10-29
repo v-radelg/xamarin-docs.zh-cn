@@ -4,15 +4,15 @@ description: 本文档链接到描述 Xamarin 的内部工作原理的各种指�
 ms.prod: xamarin
 ms.assetid: 84974D75-0CCE-4455-AA38-00DE68AE33B6
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 51cf479ba07a769f5d7a875bb3f1203caef2ad0b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c13f8db60d296b8fa684e1d6861ba5caf38a7680
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290111"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029937"
 ---
 # <a name="under-the-hood-in-xamarinmac"></a>在 Xamarin 中的后台
 

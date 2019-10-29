@@ -4,15 +4,15 @@ description: 本文档介绍如何在使用 Xamarin 生成的 tvOS 应用中处�
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 9d346dc52437b5c079d499e142036e94cfaef65d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70291403"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030431"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 进度指示器
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 同样，在应用程序执行已知持续时间长的长时间运行的任务时，应使用进度栏。 
 
-@No__t_0 属性用于将已完成的任务量设置为0% 到100% （0.0 到1.0）。 使用 "`ProgressTintColor`" 属性可设置 "已完成空间量" 栏的颜色和 "`TrackTintColor`" 属性设置背景色（未完成量）。
+`Progress` 属性用于将已完成的任务量设置为0% 到100% （0.0 到1.0）。 使用 "`ProgressTintColor`" 属性可设置 "已完成空间量" 栏的颜色和 "`TrackTintColor`" 属性设置背景色（未完成量）。
 
 ## <a name="summary"></a>总结
 

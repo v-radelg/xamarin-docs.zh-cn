@@ -4,15 +4,15 @@ description: 本文档链接到描述各种 tvOS 版本中包含的功能的文�
 ms.prod: xamarin
 ms.assetid: FB705CAD-B43C-4374-B139-92AB81185429
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 187e761948a560a96257ffa0ac84415d862a629d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd7e2b0a195cd7d5c053d175bf813b12b88b46e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283518"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030642"
 ---
 # <a name="tvos-platform-features"></a>tvOS 平台功能
 
@@ -41,7 +41,7 @@ ms.locfileid: "70283518"
 ## <a name="related-links"></a>相关链接
 
 - [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
-- [tvOS (Apple)](https://developer.apple.com/tvos/)
+- [tvOS （Apple）](https://developer.apple.com/tvos/)
 - [tvOS 人体学接口指南（Apple）](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [适用于 tvOS 的应用编程指南（Apple）](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
 - [用 Xamarin 构建 tvOS 应用程序（视频）](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

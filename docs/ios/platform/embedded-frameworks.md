@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中与嵌入框架
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753242"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032538"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin 中的嵌入式框架
 
@@ -38,13 +38,13 @@ Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（�
 
 右键单击 "项目" 并浏览以添加本机引用
 
-![](embedded-frameworks-images/xam-native-refs.png "选择 \"添加本机引用 Visual Studio for Mac")
+![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 右键单击 "项目" 并浏览以添加本机引用
 
-![](embedded-frameworks-images/vs-native-refs.png "选择 \"在 Visual Studio 中添加本机引用\"")
+![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
 
 -----
 
@@ -70,7 +70,7 @@ Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（�
 
 应用开发人员可以重写此行为，方法是将以下内容作为附加的 mtouch 参数添加到项目的 iOS 生成选项中：
 
-- `--mono:static`：以静态方式链接到 Mono 运行时。
+- `--mono:static`：静态链接到 Mono 运行时。
 - `--mono:framework`：将 Mono 运行时作为框架的链接。
 
 将 Mono 运行时链接为框架的一种情况是，即使对于不带扩展的应用程序，也要减小可执行文件大小，以克服 Apple 强制执行的任何大小限制。 作为参考，Mono 运行时为每个体系结构添加大约 1.7 MB （与 Xamarin 8.12 相比，其版本不同，甚至在应用之间有所不同）。 Mono 框架每个体系结构大约增加了 2.3 MB，这意味着，对于没有任何扩展的单体系结构应用程序，使应用程序与 Mono 运行时作为框架进行链接会将可执行文件收缩 ~ 1.7 MB，但会添加 ~ 2.3 MB 框架，从而在大约 0.6 MB 的应用一起或者中。

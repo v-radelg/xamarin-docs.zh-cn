@@ -3,15 +3,15 @@ title: 适用于 Xamarin 的 Xamarin Live Player
 description: 本文档讨论了 Xamarin 的 Xamarin Live Player，描述了安装、Xamarin Live Player 应用、用于 Xamarin Live Player、限制和故障排除的示例。
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 02a4f5970e1c94385316c80b53d8262f47db6c60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d5f3fb2a793f658334555aae3328e69134b2666a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278835"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029670"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>适用于 Xamarin 的 Xamarin Live Player
 
@@ -27,7 +27,7 @@ ms.locfileid: "70278835"
 
 ## <a name="how-xamarin-live-player-worked"></a>Xamarin Live Player 的工作方式
 
-[![Xamarin Live Player：代码，扫描，测试](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
+[![Xamarin Live Player：代码、扫描、测试](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. 启用 "**首选项**" 中的*Xamarin Live Player* ，然后从 "**设备**" 列表中选择你的设备。
 2. 管理实时播放器设备以扫描 QR 码，将设备与 Visual Studio 配对。

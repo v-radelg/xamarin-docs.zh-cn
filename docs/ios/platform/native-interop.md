@@ -4,19 +4,19 @@ description: 本文档介绍如何将本机 C 库链接到 Xamarin iOS 应用程
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/28/2016
-ms.openlocfilehash: 16e6d66cd41ead7a4d234cf45bb73e53e41aa5eb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8b882430d5d7d02e444acd00cfdacfc7b29a42b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769571"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031627"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>引用 Xamarin 中的本机库
 
-Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。 有关为目标 C 库执行相同操作的详细信息，请参阅我们的[绑定目标-c 类型](~/ios/platform/binding-objective-c/index.md)文档。
+Xamarin 支持与本机 C 库和目标 C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。 有关为目标 C 库执行相同操作的详细信息，请参阅我们的[绑定目标-c 类型](~/ios/platform/binding-objective-c/index.md)文档。
 
 <a name="building_native" />
 
@@ -30,7 +30,7 @@ Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphonesimulator -arch i386 -configuration Release clean build
 ```
 
-这将导致下面`MyProject.xcodeproj/build/Release-iphonesimulator/`的本机静态库。 将库存档文件（libMyLibrary）复制（或移动）到不安全的位置以供以后使用，并为其提供唯一名称（如**libMyLibrary**），以便它不会与将在下一次生成的同一库的 arm64 和 armv7 版本冲突。
+这将导致本机静态库 `MyProject.xcodeproj/build/Release-iphonesimulator/`下。 将库存档文件（libMyLibrary）复制（或移动）到不安全的位置以供以后使用，并为其提供唯一名称（如**libMyLibrary**），以便它不会与将在下一次生成的同一库的 arm64 和 armv7 版本冲突。
 
 若要生成本机库的 ARM64 版本，请运行以下命令：
 
@@ -38,7 +38,7 @@ Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何
 /Developer/usr/bin/xcodebuild -project MyProject.xcodeproj -target MyLibrary -sdk iphoneos -arch arm64 -configuration Release clean build
 ```
 
-这次，生成的本机库将位于中`MyProject.xcodeproj/build/Release-iphoneos/`。 再次将此文件复制（或移动）到一个安全的位置，将其重命名为类似于**libMyLibrary-arm64**的内容，这样就不会发生冲突。
+这次，生成的本机库将位于 `MyProject.xcodeproj/build/Release-iphoneos/`。 再次将此文件复制（或移动）到一个安全的位置，将其重命名为类似于**libMyLibrary-arm64**的内容，这样就不会发生冲突。
 
 现在生成库的 ARMv7 版本：
 
@@ -48,17 +48,17 @@ Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何
 
 将生成的库文件复制（或移动）到同一位置，并将库的其他两个版本重命名为 " **libMyLibrary-armv7**"。
 
-若要创建通用二进制文件，可以使用如下`lipo`所示的工具：
+若要创建通用二进制文件，可以使用 `lipo` 工具，如下所示：
 
 ```bash
 lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a libMyLibrary-armv7.a
 ```
 
-这将`libMyLibrary.a`创建一个通用（fat）库，适用于所有 iOS 开发目标。
+这会创建 `libMyLibrary.a`，它将是适用于所有 iOS 开发目标的通用（fat）库。
 
 ### <a name="missing-required-architecture-i386"></a>缺少所需的体系结构 i386
 
-如果尝试在 iOS 模拟器`does not implement methodSignatureForSelector`中`does not implement doesNotRecognizeSelector`使用目标-C 库时在运行时输出中获取或消息，则可能是因为没有为 i386 体系结构编译库（请参阅[构建通用本机库](#building_native)"部分）。
+如果尝试在 iOS 模拟器中使用目标-C 库时在运行时输出中收到 `does not implement methodSignatureForSelector` 或 `does not implement doesNotRecognizeSelector` 消息，则可能没有为 i386 体系结构编译库（请参阅[构建通用本机库](#building_native)部分）。
 
 若要检查给定库支持的体系结构，请在终端中使用以下命令：
 
@@ -66,7 +66,7 @@ lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a lib
 lipo -info /full/path/to/libraryname.a
 ```
 
-其中`/full/path/to/`是所使用的库的完整路径， `libraryname.a`是相关库的名称。
+其中 `/full/path/to/` 是所使用的库的完整路径，`libraryname.a` 是相关库的名称。
 
 如果你有源到库，如果你想要在 iOS 模拟器上测试你的应用，则还需要对其进行编译并将其绑定到 i386 体系结构。
 
@@ -90,7 +90,7 @@ lipo -info /full/path/to/libraryname.a
 
 上面的示例将链接**libMyLibrary**
 
-可以使用`-gcc_flags`指定要传递到用于执行可执行文件的最终链接的 GCC 编译器的任何命令行参数集。 例如，此命令行还引用了 CFNetwork 框架：
+你可以使用 `-gcc_flags` 来指定要传递给用于执行可执行文件的最终链接的 GCC 编译器的任何命令行参数集。 例如，此命令行还引用了 CFNetwork 框架：
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -lSystemLibrary -framework CFNetwork -force_load ${ProjectDir}/libMyLibrary.a"
@@ -119,7 +119,7 @@ IOS 上提供两种本机库：
 - 确定其所在的库
 - 编写适当的 P/Invoke 声明
 
-使用 P/Invoke 时，需要指定要链接的库的路径。 使用 iOS 共享库时，可以对路径进行硬编码，也可以使用我们在中`Constants`定义的便利常量，这些常量应涵盖 iOS 共享库。
+使用 P/Invoke 时，需要指定要链接的库的路径。 使用 iOS 共享库时，可以硬编码路径，也可以使用我们在 `Constants`中定义的便利常量，这些常量应涵盖 iOS 共享库。
 
 例如，如果你想要从 Apple 的 UIKit 库中调用 UIRectFrameUsingBlendMode 方法，该方法在 C 中具有此签名：
 
@@ -140,11 +140,11 @@ UIKitLibrary 只是一个定义为 "/System/Library/Frameworks/UIKit.framework/U
 
 ### <a name="accessing-c-dylibs"></a>访问 C Dylib
 
-如果你需要在 Xamarin iOS 应用程序中使用 C .dylib，则在调用该`DllImport`属性之前需要进行一些额外的设置。
+如果需要在 Xamarin iOS 应用程序中使用 C .Dylib，则需要进行一些额外的设置，才能调用 `DllImport` 特性。
 
-例如，如果我们有`Animal.dylib` `Animal_Version`一个方法，我们将在应用程序中调用该方法，则需要在尝试使用库之前通知 Xamarin。
+例如，如果我们有一个 `Animal.dylib` 的 `Animal_Version` 方法，我们将在应用程序中调用该方法，则需要在尝试使用库之前通知 Xamarin。
 
-为此，请编辑`Main.CS`文件，使其类似于以下内容：
+为此，请编辑 `Main.CS` 文件，使其类似于以下内容：
 
 ```csharp
 static void Main (string[] args)
@@ -157,7 +157,7 @@ static void Main (string[] args)
 }
 ```
 
-其中`/full/path/to/`是所使用的 .dylib 的完整路径。 在此代码准备就绪后，我们可以链接到`Animal_Version`方法，如下所示：
+其中 `/full/path/to/` 是所使用的 .Dylib 的完整路径。 在此代码准备就绪后，我们可以链接到 `Animal_Version` 方法，如下所示：
 
 ```csharp
 [DllImport("Animal.dylib", EntryPoint="Animal_Version")]
@@ -168,6 +168,6 @@ public static extern double AnimalLibraryVersion();
 
 ### <a name="static-libraries"></a>静态库
 
-由于只能在 iOS 上使用静态库，因此没有要链接的外部共享库，因此 DllImport 特性中的 path 参数需要使用特殊名称`__Internal` （请注意名称开头的双下划线字符），而不是路径名称。
+由于只能在 iOS 上使用静态库，因此没有要链接的外部共享库，因此 DllImport 特性中的 path 参数需要使用特殊名称 `__Internal` （请注意名称开头的双下划线字符），而不是路径名。
 
 这会强制 DllImport 查找在当前程序中引用的方法的符号，而不是尝试从共享库中加载它。

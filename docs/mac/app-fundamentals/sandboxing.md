@@ -4,15 +4,15 @@ description: 本文介绍如何对应用商店上的发布进行沙箱处理。 
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 02059c43d26c2e685abd685231fe5faf3d7a6bfe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770302"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030117"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>对 Xamarin 应用程序进行沙箱处理
 
@@ -475,7 +475,7 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 2. 键入 `asctl container acl list -bundle <container-name>`。
 3. 按**enter**执行该命令。
 
-@No__t_0 通常是 Xamarin 应用程序的捆绑标识符。
+`<container-name>` 通常是 Xamarin 应用程序的捆绑标识符。
 
 ## <a name="designing-a-xamarinmac-app-for-the-app-sandbox"></a>设计应用程序沙箱的 Xamarin 应用程序
 

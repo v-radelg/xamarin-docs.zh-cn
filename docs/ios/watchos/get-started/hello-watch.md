@@ -4,15 +4,15 @@ description: 本文档提供使用 Xamarin 构建简单的 watchOS 应用程序�
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768681"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032766"
 ---
 # <a name="hello-watchos--walkthrough"></a>你好，watchOS –演练
 
@@ -24,17 +24,17 @@ ms.locfileid: "70768681"
 
 检查[引用是否正确](~/ios/watchos/get-started/project-references.md)：父应用程序具有对扩展的引用，并且该扩展包含对该监视应用的引用。
 
-确认你的\*捆绑标识符是否遵循. watchkitextension \*. watchkitapp 约定，以及你的扩展的 info.plist 文件是否将其**WKApp 捆绑 ID**值设置为你的监视应用的捆绑标识符。
+确认你的捆绑标识符是否遵循 \*\*watchkitapp 约定，以及你的扩展的 info.plist 文件是否将其**WKApp 捆绑 ID**值设置为你的监视应用的捆绑标识符。
 
 你现在应该能够运行你的监视应用程序，但由于你的 Watch 应用中的情节提要文件为空白，因此你无法判断。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](hello-watch-images/projectstructure.png "解决方案资源管理器")
+![](hello-watch-images/projectstructure.png "The Solution Explorer")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](hello-watch-images/vs-projectstructure.png "解决方案资源管理器")
+![](hello-watch-images/vs-projectstructure.png "The Solution Explorer")
 
 -----
 
@@ -47,7 +47,7 @@ ms.locfileid: "70768681"
 1. 将接口控制器的标识符和标题设置为**interfaceController**和**Hi 手表**，
 1. 验证**类**是否设置为**InterfaceController**
 
-    ![](hello-watch-images/interfacecontrollerattributes.png "将接口控制器的标识符和标题设置为 interfaceController 和高手表")
+    ![](hello-watch-images/interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -58,7 +58,7 @@ ms.locfileid: "70768681"
 1. 单击接口控制器;与
 1. 将接口控制器的标识符和标题设置为**interfaceController**和**Hi**。
 
-    ![](hello-watch-images/vs-interfacecontrollerattributes.png "将接口控制器的标识符和标题设置为 interfaceController 和高手表")
+    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
 -----
 
@@ -70,24 +70,24 @@ ms.locfileid: "70768681"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](hello-watch-images/draganddrop.png "设置控件的文本和属性，如下所示")
+![](hello-watch-images/draganddrop.png "Set the text and attributes of the controls as shown")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](hello-watch-images/vs-draganddrop.png "设置控件的文本和属性，如下所示")
+![](hello-watch-images/vs-draganddrop.png "Set the text and attributes of the controls as shown")
 
 -----
 
-1. 在 "**属性**" 面板中设置每个控件的**名称**。 在此示例中，我们`myButton`使用`myLabel`了和。
+1. 在 "**属性**" 面板中设置每个控件的**名称**。 在此示例中，我们使用 `myButton` 和 `myLabel`。
 
 1. 选择情节提要上的按钮，并依次单击 "**属性**" 面板的 "**事件**" 列表、
 
-1. 通过键入`OnButtonPress`并按**enter**创建新**操作**。
+1. 键入 `OnButtonPress` 并按**enter**创建新**操作**。
   该操作将显示在列表中，并会在中C#自动创建分部方法。
 
-![](hello-watch-images/buttonaction.png "添加到按钮的 OnButtonPress 操作")
+![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-保存情节提要后，将用控件名称和操作更新**InterfaceController.designer.cs** 。 如果在更新文件后打开此文件，则可以看到如何`RegisterAttribute`对应于控制器，以及 UI 控件如何对应于标记有的C# `OutletAttribute`实例变量，以及如何将操作映射到用`ActionAttribute`来标记的分部方法:
+保存情节提要后，将用控件名称和操作更新**InterfaceController.designer.cs** 。 如果在更新文件后打开此文件，则可以看到 `RegisterAttribute` 如何对应于控制器，以及 UI 控件如何对应于标记有C#`OutletAttribute`的实例变量，以及如何将操作映射到用`ActionAttribute`标记的分部方法:
 
 ```csharp
 // WARNING
@@ -136,7 +136,7 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 }
 ```
 
-此代码应相当透明：每次调用函数`clickCount` `OnButtonPress`时，实例变量都会递增。 的文本`myLabel`将更改以反映此计数;`myLabel`当然，是在 XCode 中创建的插座之一的名称。 `partial`函数是与指定的操作名称关联的函数的实现。
+此代码应相当透明：每次调用函数 `OnButtonPress` 时，实例变量 `clickCount` 都将递增。 `myLabel` 的文本将更改以反映此计数;当然，`myLabel`是在 XCode 中创建的插座之一的名称。 `partial` 函数是与指定的操作名称关联的函数的实现。
 
 如果它还不是启动项目，
 
@@ -146,15 +146,15 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 
 1. 按 "**调试**" 按钮触发生成和模拟器启动。
 
-    [![](hello-watch-images/readytodebug-sml.png "Visual Studio 接口元素")](hello-watch-images/readytodebug.png#lightbox)
+    [![](hello-watch-images/readytodebug-sml.png "The Visual Studio interface elements")](hello-watch-images/readytodebug.png#lightbox)
 
 当模拟器启动时，按按钮以递增标签。
 恭喜，你已获得了一个手表应用！
 
-![](hello-watch-images/running.png "在模拟器中运行的应用")
+![](hello-watch-images/running.png "The app running in the Simulator")
 
 ## <a name="related-links"></a>相关链接
 
 - [入门（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
 - [设置和安装](~/ios/watchos/get-started/installation.md)
-- [第一个 Watch 应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [第一次观看应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)

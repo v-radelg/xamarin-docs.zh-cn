@@ -4,15 +4,15 @@ description: 本文档介绍了如何使用 iOS 11 中引入的 Api 在 Xamarin 
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752434"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032194"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin 中的 Core NFC
 
@@ -63,20 +63,20 @@ IOS 设备中的 NFC 标记读取器支持所有 NFC 标记类型1到5，其中�
 
 创建新的**应用 ID** ，并确保**NFC 标记读取**服务为勾选：
 
-[![已选择 NFC 标记的开发人员门户新应用 ID 页面](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![开发人员门户新建应用 ID "页，其中包含所选的 NFC 标记](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
 然后，你应该为此应用 ID 创建新的预配配置文件，然后将其下载并安装到你的开发 Mac 上。
 
 ## <a name="reading-a-tag"></a>读取标记
 
-配置项目后，将添加`using CoreNFC;`到文件顶部，并按照以下三个步骤来实现 NFC 标记读取功能：
+配置项目后，将 `using CoreNFC;` 添加到文件顶部，然后执行以下三个步骤来实现 NFC 标记读取功能：
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1.实施`INFCNdefReaderSessionDelegate`
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1. 实现 `INFCNdefReaderSessionDelegate`
 
 接口具有两个要实现的方法：
 
-- `DidDetect`–当标记成功读取时调用。
-- `DidInvalidate`–当发生错误或达到60秒超时时调用。
+- `DidDetect` –当标记成功读取时调用。
+- `DidInvalidate` –当发生错误或达到60秒超时时调用。
 
 #### <a name="diddetect"></a>DidDetect
 
@@ -96,7 +96,7 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-如果会话允许多个标记读取，则可以多次调用此方法（并且可以传入消息的数组）。 这是使用`Start`方法的第三个参数设置的（在[步骤 2](#step2)中介绍）。
+如果会话允许多个标记读取，则可以多次调用此方法（并且可以传入消息的数组）。 这是使用 `Start` 方法的第三个参数设置的（在[步骤 2](#step2)中介绍）。
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
@@ -125,7 +125,7 @@ public void DidInvalidate(NFCNdefReaderSession session, NSError error)
 
 <a name="step2" />
 
-### <a name="2-start-an-nfcndefreadersession"></a>2.启动`NFCNdefReaderSession`
+### <a name="2-start-an-nfcndefreadersession"></a>2. 启动 `NFCNdefReaderSession`
 
 扫描应以用户请求开始，如按钮按下。
 下面的代码创建并启动一个扫描会话：
@@ -135,25 +135,25 @@ Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-`NFCNdefReaderSession`构造函数的参数如下所示：
+`NFCNdefReaderSession` 构造函数的参数如下所示：
 
-- `delegate`–的`INFCNdefReaderSessionDelegate`实现。 在示例代码中，委托是在表视图控制器中实现的，因此`this`用作委托参数。
-- `queue`–处理回调的队列。 它可以是`null`，在这种情况下，请务必`DispatchQueue.MainQueue`在更新用户界面控件（如示例中所示）时使用。
-- `invalidateAfterFirstRead`–扫描`true`在第一次成功扫描之后停止`false` ; 扫描将继续，返回多个结果，直到取消扫描或达到60秒超时。
+- `delegate` – `INFCNdefReaderSessionDelegate`的实现。 在示例代码中，委托是在表视图控制器中实现的，因此 `this` 用作委托参数。
+- `queue` –处理回调的队列。 它可以 `null`，在这种情况下，请务必在更新用户界面控件时使用 `DispatchQueue.MainQueue` （如示例中所示）。
+- `invalidateAfterFirstRead` –当 `true`时，扫描将在第一次成功扫描后停止;如果 `false` 扫描将继续，并返回多个结果，直到取消扫描或达到60秒超时。
 
-### <a name="3-cancel-the-scanning-session"></a>3.取消扫描会话
+### <a name="3-cancel-the-scanning-session"></a>3. 取消扫描会话
 
 用户可以通过用户界面中系统提供的按钮取消扫描会话：
 
 ![扫描时的 "取消" 按钮](corenfc-images/scan-cancel-sml.png)
 
-应用可以通过调用`InvalidateSession`方法以编程方式取消扫描：
+应用可以通过调用 `InvalidateSession` 方法以编程方式取消扫描：
 
 ```csharp
 Session.InvalidateSession();
 ```
 
-在这两种情况下， `DidInvalidate`将调用委托的方法。
+在这两种情况下，都将调用委托的 `DidInvalidate` 方法。
 
 ## <a name="summary"></a>总结
 

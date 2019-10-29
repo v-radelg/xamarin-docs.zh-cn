@@ -4,15 +4,15 @@ description: 本文介绍如何使用键/值编码和键-值观察，以允许�
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a22eca56dcec46e11a67633a8403b57580ed0546
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769909"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032615"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin 中的数据库
 
@@ -25,7 +25,7 @@ _本文介绍如何使用键/值编码和键-值观察，以允许在 Xcode 的 
 在本文中，我们将介绍两种访问 SQLite 数据的方法：
 
 1. **直接访问**-通过直接访问 SQLite 数据库，我们可以将数据库中的数据用于键值编码，并使用在 Xcode 的 Interface Builder 中创建的 UI 元素进行数据绑定。 通过在 Xamarin 应用程序中使用键/值编码和数据绑定技术，可以极大地减少需要编写和维护的代码量，以填充和处理 UI 元素。 您还可以从您的前端用户界面（_模型-视图-控制器_）进一步分离您的备份数据（_数据模型_），从而更易于维护，更灵活的应用程序设计。
-2. **SQLITE.NET ORM** -通过使用开源[SQLite.NET](http://www.sqlite.org)对象关系管理器（ORM），我们可以极大地减少在 SQLite 数据库中读取和写入数据所需的代码量。 然后，可以使用此数据填充某个用户界面项，如表视图。
+2. **SQLITE.NET ORM** -通过使用开源[SQLite.NET](https://www.sqlite.org)对象关系管理器（ORM），我们可以极大地减少在 SQLite 数据库中读取和写入数据所需的代码量。 然后，可以使用此数据填充某个用户界面项，如表视图。
 
 [![正在运行的应用的示例](databases-images/intro01.png "正在运行的应用的示例")](databases-images/intro01-large.png#lightbox)
 
@@ -476,7 +476,7 @@ public bool isManager {
 }
 ```
 
-如果在之前保存了数据，则对**名称**、**职业**或**ismanager.exe**属性所做的任何更改都将发送到数据库（例如，如果未 `null` `_conn` 变量）。 接下来，让我们看一下为**创建**、**更新**、**加载**和**删除**数据库中的人员而添加的方法。
+如果在之前保存了数据，则对**名称**、**职业**或**ismanager.exe**属性所做的任何更改都将发送到数据库（例如，如果未 `null``_conn` 变量）。 接下来，让我们看一下为**创建**、**更新**、**加载**和**删除**数据库中的人员而添加的方法。
 
 #### <a name="create-a-new-record"></a>创建新记录
 
@@ -1419,7 +1419,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-@No__t_0 方法返回给定表中的记录数：
+`GetRecordCount` 方法返回给定表中的记录数：
 
 ```csharp
 private nint GetRecordCount ()
@@ -1463,7 +1463,7 @@ private nint GetRecordCount ()
 
 无论何时更改 `TableName`、`IDField` 或 `DisplayField` 属性值，都将调用此方法。
 
-@No__t_0 方法返回给定下拉列表项索引处的记录的唯一 ID （`IDField`）： 
+`IDForIndex` 方法返回给定下拉列表项索引处的记录的唯一 ID （`IDField`）： 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1504,7 +1504,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-@No__t_0 方法返回给定下拉列表索引处的项的值（`DisplayField`）：
+`ValueForIndex` 方法返回给定下拉列表索引处的项的值（`DisplayField`）：
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1545,7 +1545,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-@No__t_0 方法返回给定值（`DisplayField`）的唯一 ID （`IDField`）：
+`IDForValue` 方法返回给定值（`DisplayField`）的唯一 ID （`IDField`）：
 
 ```csharp
 public string IDForValue (string value)
@@ -1589,7 +1589,7 @@ public string IDForValue (string value)
 }
 ```
 
-@No__t_0 在更改 `TableName`、`IDField` 或 `DisplayField` 属性时，将返回列表中项目的预计算数量：
+`ItemCount` 在更改 `TableName`、`IDField` 或 `DisplayField` 属性时，将返回列表中项目的预计算数量：
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1598,7 +1598,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-@No__t_0 方法提供给定下拉列表项索引的值（`DisplayField`）：
+`ObjectValueForItem` 方法提供给定下拉列表项索引的值（`DisplayField`）：
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1641,7 +1641,7 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 
 请注意，我们将使用 SQLite 命令中的 `LIMIT` 和 `OFFSET` 语句，以限制我们所需的一条记录。
 
-@No__t_0 方法返回给定的值（`DisplayField`）的下拉项索引：
+`IndexOfItem` 方法返回给定的值（`DisplayField`）的下拉项索引：
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1693,7 +1693,7 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 
 如果找不到此值，则返回 `NSRange.NotFound` 值并在下拉列表中取消选择所有项。
 
-@No__t_0 方法返回部分类型的项的第一个匹配值（`DisplayField`）：
+`CompletedString` 方法返回部分类型的项的第一个匹配值（`DisplayField`）：
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1858,9 +1858,9 @@ namespace MacDatabase
 }
 ```
 
-@No__t_0 属性提供了附加到组合框的 `ComboBoxDataSource` （上面创建的）的快捷方式。
+`DataSource` 属性提供了附加到组合框的 `ComboBoxDataSource` （上面创建的）的快捷方式。
 
-@No__t_0 方法从数据库中为给定的唯一 ID 加载人员：
+`LoadSelectedPerson` 方法从数据库中为给定的唯一 ID 加载人员：
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1910,7 +1910,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 ## <a name="sqlitenet-orm"></a>SQLite.NET ORM
 
-如上所述，通过使用开源[SQLite.NET](http://www.sqlite.org)对象关系管理器（ORM），我们可以极大地减少读取和写入 SQLite 数据库的数据所需的代码量。 这可能不是在绑定数据时要执行的最佳路由，因为对象上存在键值编码和数据绑定的几个要求。
+如上所述，通过使用开源[SQLite.NET](https://www.sqlite.org)对象关系管理器（ORM），我们可以极大地减少读取和写入 SQLite 数据库的数据所需的代码量。 这可能不是在绑定数据时要执行的最佳路由，因为对象上存在键值编码和数据绑定的几个要求。
 
 根据 SQLite.Net 网站， _"SQLite 是实现自包含的无服务器的零配置 SQL 数据库引擎的软件库。SQLite 是世界上最广泛部署的数据库引擎。SQLite 的源代码位于公共域中。 "_
 
@@ -2125,7 +2125,7 @@ namespace MacDatabase
 }
 ```
 
-以后创建此类的实例时，我们将传入开放式 SQLite.NET 数据库连接。 @No__t_0 方法查询数据库，并将找到的记录复制到内存中（使用我们的 `OccupationModel` 数据模型）。
+以后创建此类的实例时，我们将传入开放式 SQLite.NET 数据库连接。 `LoadOccupations` 方法查询数据库，并将找到的记录复制到内存中（使用我们的 `OccupationModel` 数据模型）。
 
 ### <a name="creating-the-table-delegate"></a>创建表委托
 

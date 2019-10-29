@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中使用本机和
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/05/2017
-ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca3d4dfcd773a4f236ffbfd715cb53b514f6e2a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753086"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032525"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin 中的异常封送处理
 
@@ -32,7 +32,7 @@ _Xamarin 包含可帮助响应异常的新事件，特别是在本机代码中�
 
 用于 Xamarin 或 Xamarin 的典型示例是当本机 API 引发目标 C 异常时，如果堆栈展开进程到达托管帧，则必须以某种方式处理目标 C 异常。
 
-默认操作是不执行任何操作。 对于上述示例，这意味着允许目标-C 运行时展开托管的帧。 这是有问题的，因为目标-C 运行时不知道如何展开托管帧;例如，它不会执行`catch`该`finally`帧中的任何或子句。
+默认操作是不执行任何操作。 对于上述示例，这意味着允许目标-C 运行时展开托管的帧。 这是有问题的，因为目标-C 运行时不知道如何展开托管帧;例如，它不会执行该帧中的任何 `catch` 或 `finally` 子句。
 
 ### <a name="broken-code"></a>中断的代码
 
@@ -61,7 +61,7 @@ NSInvalidArgumentException *** setObjectForKey: key cannot be nil
 6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 ```
 
-框架0-3 是本机帧，而目标-C 运行时中的 stack 展开器_可以_展开这些帧。 具体而言，它将执行任何目标 C `@catch`或`@finally`子句。
+框架0-3 是本机帧，而目标-C 运行时中的 stack 展开器_可以_展开这些帧。 具体而言，它将执行任何目标 `@catch` 或 `@finally` 子句。
 
 但是，目标-C stack 展开器_不_能正确地展开托管帧（框架4-6），因为这些帧将展开，但不会执行托管异常逻辑。
 
@@ -78,19 +78,19 @@ try {
 }
 ```
 
-这是因为目标-C stack 展开器不知道托管`catch`子句，也不`finally`会执行子句。
+这是因为目标-C stack 展开器不知道托管的 `catch` 子句，也不会执行 `finally` 子句。
 
-当上面的_代码示例生效时，_ 这是因为，客观-c 有一种方法可以通知出现未处理的目标- [`NSSetUncaughtExceptionHandler`][2]C 异常，即，xamarin 和 xamarin 使用，此时将尝试转换任何目标 c 异常托管异常。
+当上面的_代码示例生效时，_ 这是因为，客观-c 有一种方法收到未经处理的客观-C 异常， [`NSSetUncaughtExceptionHandler`][2]，其中的 Xamarin 和 xamarin 使用，此时尝试转换任何目标-c托管异常的异常。
 
 ## <a name="scenarios"></a>方案
 
 ### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>方案 1-使用托管 catch 处理程序捕获目标为 C 的异常
 
-在下面的方案中，可以使用托管`catch`处理程序来捕获目标 C 异常：
+在下面的方案中，可以使用托管的 `catch` 处理程序来捕获目标 C 异常：
 
 1. 引发目标 C 异常。
-2. 目标 C 运行时将遍历堆栈（但不展开堆栈），并查找可处理异常的`@catch`本机处理程序。
-3. 目标-C 运行时找不到`@catch`任何处理程序`NSGetUncaughtExceptionHandler`，调用，并调用由 Xamarin/xamarin 安装的处理程序。
+2. 目标 C 运行时将遍历堆栈（但不展开堆栈），并查找可处理异常的本机 `@catch` 处理程序。
+3. 目标-C 运行时找不到任何 `@catch` 处理程序，调用 `NSGetUncaughtExceptionHandler`，并调用 Xamarin/Xamarin 安装的处理程序。
 4. Xamarin/Xamarin. Mac 的处理程序会将目标 C 异常转换为托管异常，并引发异常。 由于目标-C 运行时未展开堆栈（仅遍历堆栈），因此当前帧与引发目标 C 异常的帧相同。
 
 这里出现了另一个问题，因为 Mono 运行时不知道如何正确展开目标 C 帧。
@@ -111,7 +111,7 @@ try {
 10 TestApp                  ExceptionMarshaling.Exceptions.ThrowObjectiveCException () [0x00013]
 ```
 
-此处，唯一的托管帧是框架8-10，但托管异常在帧0中引发。 这意味着 mono 运行时必须展开本机帧0-7，这会导致与上述问题等效的问题：尽管 Mono 运行时将展开本机帧，但不会执行任何目标 C `@catch`或子句`@finally`.
+此处，唯一的托管帧是框架8-10，但托管异常在帧0中引发。 这意味着 Mono 运行时必须展开本机帧0-7，这会导致与上述问题等效的问题：尽管 Mono 运行时将展开本机帧，但不会执行任何 `@catch` 或 `@finally` 子句。
 
 代码示例：
 
@@ -127,9 +127,9 @@ try {
 }
 ```
 
-不会执行子句，因为展开此帧的 Mono 运行时并不知道它。 `@finally`
+不会执行 `@finally` 子句，因为展开此帧的 Mono 运行时并不知道它。
 
-这种情况的一种变化是在托管代码中引发托管异常，然后在本机帧中展开以转到第`catch`一个托管子句：
+这种情况的一种变化是在托管代码中引发托管异常，然后在本机帧中展开以转到第一个托管的 `catch` 子句：
 
 ```csharp
 class AppDelegate : UIApplicationDelegate {
@@ -148,7 +148,7 @@ class AppDelegate : UIApplicationDelegate {
 }
 ```
 
-托管`UIApplication:Main`方法将调用本机`UIApplicationMain`方法，然后在最终调用托管`AppDelegate:FinishedLaunching`方法之前，iOS 将执行大量的本机代码执行，当托管异常时，堆栈上仍有大量本机帧出
+托管的 `UIApplication:Main` 方法将调用本机 `UIApplicationMain` 方法，然后在最终调用托管的 `AppDelegate:FinishedLaunching` 方法之前，iOS 将执行大量的本机代码，在引发托管异常时，堆栈上仍有大量的本机帧:
 
 ```
  0: TestApp                 ExceptionMarshaling.IOS.AppDelegate:FinishedLaunching (UIKit.UIApplication,Foundation.NSDictionary)
@@ -184,15 +184,15 @@ class AppDelegate : UIApplicationDelegate {
 30: TestApp                 ExceptionMarshaling.IOS.Application:Main (string[])
 ```
 
-帧0-1 和27-30 是托管的，而它们之间的所有这些都是本机。 如果通过这些帧展开 Mono，则不会执行`@catch`目标`@finally` C 或子句。
+帧0-1 和27-30 是托管的，而它们之间的所有这些都是本机。 如果通过这些帧展开 Mono，则不会执行目标为 C 的 `@catch` 或 `@finally` 子句。
 
 ### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>方案 2-无法捕捉目标 C 异常
 
-在下面的方案中，_无法_使用托管`catch`处理程序捕获 o c o o o o o o o o o o o o o o o o o o o o o o o o o o o，
+在下面的方案中，_无法_使用托管的 `catch` 处理程序捕获 o c o o o o o o o o o o o o o o o o o o o o o o o o o o 异常
 
 1. 引发目标 C 异常。
-2. 目标 C 运行时将遍历堆栈（但不展开堆栈），并查找可处理异常的`@catch`本机处理程序。
-3. 目标 C 运行时查找`@catch`处理程序，展开堆栈，并开始`@catch`执行处理程序。
+2. 目标 C 运行时将遍历堆栈（但不展开堆栈），并查找可处理异常的本机 `@catch` 处理程序。
+3. 目标 C 运行时查找 `@catch` 处理程序，展开堆栈，并开始执行 `@catch` 处理程序。
 
 这种情况通常出现在 Xamarin iOS 应用程序中，因为在主线程上通常会出现如下代码：
 
@@ -213,7 +213,7 @@ void UIApplicationMain ()
 
 这意味着，在主线程上绝不会真正导致未处理的目标 C 异常，因此永远不会调用将 o o o o o o o o o o o C o o o o o o o o o o o o
 
-在早期 macOS 版本上调试 Xamarin 应用程序时，这一点也很常见，因为在早期版本上，由于检查调试器中的大部分 UI 对象将尝试获取与执行平台上不存在的选择器相对应的属性（因为 Xamarin 支持更高的 macOS 版本）。 调用此类选择器将`NSInvalidArgumentException`引发（不可识别的选择器发送到 ... "），这最终会导致进程崩溃。
+在早期 macOS 版本上调试 Xamarin 应用程序时，这一点也很常见，因为在早期版本上，由于检查调试器中的大部分 UI 对象将尝试获取与执行平台上不存在的选择器相对应的属性（因为 Xamarin 支持更高的 macOS 版本）。 调用此类选择器将引发 `NSInvalidArgumentException` （"发送到 ..." 的未识别选择器），这最终会导致进程崩溃。
 
 总而言之，使目标 C 运行时或 Mono 运行时展开帧无法进行处理可能导致未定义的行为，例如，崩溃、内存泄漏和其他类型的不可预测（mis）行为。
 
@@ -259,25 +259,25 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 
 ## <a name="events"></a>事件
 
-截获异常后，将引发两个新事件： `Runtime.MarshalManagedException`和。 `Runtime.MarshalObjectiveCException`
+截获异常后，将引发两个新事件： `Runtime.MarshalManagedException` 和 `Runtime.MarshalObjectiveCException`。
 
-这两个事件都`EventArgs`被传递一个对象，该对象包含引发的原始`Exception`异常（属性）和`ExceptionMode`一个用于定义应如何封送处理异常的属性。
+这两个事件均被传递 `EventArgs` 对象，该对象包含引发的原始异常（`Exception` 属性）和一个 `ExceptionMode` 属性，用于定义应如何封送异常。
 
-可以在事件处理程序中更改属性，以根据处理程序中执行的任何自定义处理更改行为。`ExceptionMode` 一个示例是在发生特定异常时中止进程。
+可以在事件处理程序中更改 `ExceptionMode` 属性，以根据处理程序中执行的任何自定义处理更改行为。 一个示例是在发生特定异常时中止进程。
 
-`ExceptionMode`更改属性将应用于单个事件，而不会影响将来截获的任何异常。
+更改 `ExceptionMode` 属性适用于单个事件，而不会影响将来截获的任何异常。
 
 可用的模式如下：
 
-- `Default`：默认值因平台而异。 如果 GC `ThrowObjectiveCException`处于协作模式（watchOS） `UnwindNativeCode` ，则为; 否则为（iOS/watchOS/macOS）。 将来可能会更改默认值。
+- `Default`：默认值因平台而异。 如果 GC 处于协作模式（watchOS），则 `ThrowObjectiveCException`; 否则 `UnwindNativeCode` （iOS/watchOS/macOS）。 将来可能会更改默认值。
 - `UnwindNativeCode`：这是以前的（未定义）行为。 如果在协作模式（这是 watchOS 上的唯一选项，这是 watchOS 上的唯一选项）中使用 GC，则此选项不可用，但它是所有其他平台的默认选项。
 - `ThrowObjectiveCException`：将托管异常转换为目标 C 异常，并引发目标 C 异常。 这是 watchOS 上的默认值。
 - `Abort`：中止进程。
-- `Disable`：禁用异常拦截，因此在事件处理程序中设置此值并不合理，但一旦引发事件，则无法将其禁用。 在任何情况下，如果设置，它将表现`UnwindNativeCode`为。
+- `Disable`：禁用异常截获，因此在事件处理程序中设置此值并不合理，但一旦引发事件，则无法将其禁用。 在任何情况下，如果设置，它将表现为 `UnwindNativeCode`。
 
 对于向托管代码封送目标为 C 的异常，可以使用以下模式：
 
-- `Default`：默认值因平台而异。 如果 GC `ThrowManagedException`处于协作模式（watchOS） `UnwindManagedCode` ，则为; 否则为（iOS/tvOS/macOS）。 将来可能会更改默认值。
+- `Default`：默认值因平台而异。 如果 GC 处于协作模式（watchOS），则 `ThrowManagedException`; 否则 `UnwindManagedCode` （iOS/tvOS/macOS）。 将来可能会更改默认值。
 - `UnwindManagedCode`：这是以前的（未定义）行为。 如果在协作模式（这是 watchOS 上的唯一有效 GC 模式，这是 watchOS 上的无效选项）中使用 GC，则此选项不可用，但它是所有其他平台的默认选项。
 - `ThrowManagedException`：将目标为 C 的异常转换为托管异常，并引发托管异常。 这是 watchOS 上的默认值。
 - `Abort`：中止进程。
@@ -321,13 +321,13 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
   - `abort`
   - `disable`
 
-除了之外`ExceptionMode` `MarshalManagedException` `MarshalObjectiveCException` ，这些值与传递给和事件的值相同。 `disable`
+除了 `disable`之外，这些值与传递到 `MarshalManagedException` 和 `MarshalObjectiveCException` 事件的 `ExceptionMode` 值相同。
 
-选项将主要禁用拦截，但当不添加任何执行开销时，我们仍会截获异常。 `disable` 对于这些异常，仍会引发封送处理事件，默认模式为执行平台的默认模式。
+`disable` 选项将_主要_禁用截获，但当不添加任何执行开销时，我们仍会截获异常。 对于这些异常，仍会引发封送处理事件，默认模式为执行平台的默认模式。
 
 ## <a name="limitations"></a>限制
 
-在尝试捕获目标 C 异常时， `objc_msgSend`只会截获对系列函数的 P/invoke。 这意味着，对于另一个 C 函数的 P/Invoke，后者随后会引发任何目标为 C 的异常，仍将会遇到旧的和未定义的行为（将来可能会改进）。
+在尝试捕获目标 C 异常时，只会截获对 `objc_msgSend` 系列函数的 P/Invoke。 这意味着，对于另一个 C 函数的 P/Invoke，后者随后会引发任何目标为 C 的异常，仍将会遇到旧的和未定义的行为（将来可能会改进）。
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 

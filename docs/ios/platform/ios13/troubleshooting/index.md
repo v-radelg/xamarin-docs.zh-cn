@@ -4,15 +4,15 @@ description: 本部分包含与 iOS 13 相关的 Xamarin 功能的疑难解答�
 ms.prod: xamarin
 ms.assetid: 00DE8C33-1407-45C0-A0C7-32AF1E490034
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/12/2019
-ms.openlocfilehash: 9a12163b0300a8d523632ad38e1b66a8c44b7aaf
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: 6ccd0a100e2a1f01d33fee481df85d976d2191a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206313"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031703"
 ---
 # <a name="troubleshooting-tips-for-ios-13-and-xamarinios"></a>IOS 13 和 Xamarin 的故障排除提示
 

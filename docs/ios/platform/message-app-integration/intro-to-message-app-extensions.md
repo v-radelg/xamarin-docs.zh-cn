@@ -4,15 +4,15 @@ description: 本文介绍如何在与 Messages 应用集成的 Xamarin iOS 解�
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 51a89533390eb1be8c1f36e0121229fb5a942279
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250137"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031664"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的消息应用扩展基础知识
 
@@ -87,7 +87,7 @@ Apple 设计的不干胶标签是一种新的 iMessage 用户进行通信的方�
 - 图像不能小于100x100 点，或大于 206 x 206 磅。
 
 > [!IMPORTANT]
-> 应始终在 300 x 300 到 618 `@3x` x 618 像素范围内的分辨率提供不干胶标签图像。 系统将在运行时根据`@2x`需要`@1x`自动生成和版本。
+> 应始终在 300 x 300 到 618 x 618 像素范围内的 `@3x` 分辨率提供不干胶标签图像。 系统将在运行时根据需要自动生成 `@2x` 和 `@1x` 版本。
 
 Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、黄色和多色）和照片对标签图像资产进行测试，以确保它们在所有可能的情况下都能发挥最好的效果。
 
@@ -123,13 +123,13 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 2. 打开解决方案以将消息应用扩展添加到。
 3. 选择 " **iOS** > **扩展** > **iMessage 扩展**"，然后单击 "**下一步**" 按钮：
 
-    [![](intro-to-message-app-extensions-images/message01.png "选择 iMessage 扩展")](intro-to-message-app-extensions-images/message01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message01.png "Select iMessage Extension")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. 输入**扩展名称**并单击 "**下一步**" 按钮：
 
-    [![](intro-to-message-app-extensions-images/message02.png "输入扩展名称")](intro-to-message-app-extensions-images/message02.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message02.png "Enter an Extension Name")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. 单击 "**创建**" 按钮以生成扩展：
 
-    [![](intro-to-message-app-extensions-images/message03.png "单击 \"创建\" 按钮")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message03.png "Click the Create button")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -143,13 +143,13 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 
 -----
 
-默认情况下， `MessagesViewController.cs`该文件将添加到解决方案中。 这是扩展插件的主要入口点，它继承自`MSMessageAppViewController`类。
+默认情况下，`MessagesViewController.cs` 文件将添加到解决方案中。 这是扩展插件的主入口点，它继承自 `MSMessageAppViewController` 类。
 
 消息框架提供用于向用户显示可用不干胶标签的类：
 
-- `MSStickerBrowserViewController`-控制将显示不干胶标签的视图。 它还符合`IMSStickerBrowserViewDataSource`接口以返回给定浏览器索引的不干胶标签和不干胶标签。
-- `MSStickerBrowserView`-可用不干胶标签显示在此视图中。
-- `MSStickerSize`-决定浏览器视图中显示的不干胶标签网格的单个单元大小。
+- `MSStickerBrowserViewController`-控制将显示不干胶标签的视图。 它还符合 `IMSStickerBrowserViewDataSource` 接口以返回给定浏览器索引的不干胶标签和不干胶标签。
+- `MSStickerBrowserView`-此视图显示可用不干胶标签。
+- `MSStickerSize`-决定浏览器视图中显示的不干胶标签网格的单个单元格大小。
 
 ### <a name="creating-a-custom-sticker-browser"></a>创建自定义标签浏览器
 
@@ -159,23 +159,23 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，右键单击扩展的项目名称，然后选择 "**添加** > **新文件 ...** " >  **iOS |** AppleWatch > **接口控制器**。
-2. 输入`StickerBrowserViewController`作为**名称**，然后单击 "**新建**" 按钮：
+1. 在**Solution Pad**中，右键单击扩展的项目名称，然后选择 "**添加** > **新文件 ...** " > **iOS |**  > **接口控制器**Apple Watch。
+2. 输入**名称**`StickerBrowserViewController`，并单击 "**新建**" 按钮：
 
-    [![](intro-to-message-app-extensions-images/browser01.png "为名称输入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
-3. `StickerBrowserViewController.cs`打开文件进行编辑。
+    [![](intro-to-message-app-extensions-images/browser01.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+3. 打开 `StickerBrowserViewController.cs` 文件以进行编辑。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，右键单击扩展的项目名称，然后选择 "**添加** > **新文件 ...** " >  **iOS |** AppleWatch > **接口控制器**。
-2. 输入`StickerBrowserViewController`作为**名称**，然后单击 "**新建**" 按钮：
+1. 在**解决方案资源管理器**中，右键单击扩展的项目名称，然后选择 "**添加** > **新文件 ...** " > **iOS |**  > **接口控制器**Apple Watch。
+2. 输入**名称**`StickerBrowserViewController`，并单击 "**新建**" 按钮：
 
-    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "为名称输入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
-3. `StickerBrowserViewController.cs`打开文件进行编辑。
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
+3. 打开 `StickerBrowserViewController.cs` 文件以进行编辑。
 
 -----
 
-`StickerBrowserViewController.cs`如下所示：
+将 `StickerBrowserViewController.cs` 如下所示：
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MonkeyStickers
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-和重写`MSStickerBrowserViewController`类的两个方法，以便为浏览器提供此数据存储区中的数据：
+和重写 `MSStickerBrowserViewController` 类的两个方法，以便为浏览器提供此数据存储中的数据：
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -284,7 +284,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-方法从扩展的捆绑包获取图像资产的路径，并使用它从此资产中创建的`MSSticker`新实例，并将其添加到集合中： `CreateSticker`
+`CreateSticker` 方法从扩展的捆绑包中获取图像资产的路径，并使用它从此资产创建 `MSSticker` 的新实例，并将其添加到集合中：
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -311,9 +311,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-`ViewDidLoad`从调用`LoadSticker`方法，从命名图像资产（包括在应用的捆绑包中）创建不干胶标签，并将其添加到不干胶标签集合。
+从 `ViewDidLoad` 中调用 `LoadSticker` 方法，以便从命名图像资产（包含在应用的捆绑包中）创建不干胶标签，并将其添加到不干胶标签集合。
 
-若要实现自定义的不干胶标签， `MessagesViewController.cs`请编辑文件，使其类似于以下内容：
+若要实现自定义的不干胶标签，请编辑 `MessagesViewController.cs` 文件，使其类似于以下内容：
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ namespace MonkeyStickers
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-在`ViewDidLoad`方法中，它将实例化并配置一个新浏览器：
+在 `ViewDidLoad` 方法中，它将实例化并配置一个新浏览器：
 
 ```csharp
 // Create new browser and configure it
@@ -388,12 +388,12 @@ View.AddSubview (BrowserViewController.View);
 
 使用上述方法，扩展可支持不依赖于标准不干胶标签浏览器方法的不干胶标签选择。 此外，可以在两种不同的视图模式间切换不干胶标签：
 
-- **Compact** -这是默认模式，其中标签视图占据消息视图的底部 25%。
+- **Compact** -这是默认模式，其中标签视图占据消息视图的底部25%。
 - 已**展开**-标签视图将填充整个消息视图。
 
 此标签视图可以通过编程方式或由用户手动切换。
 
-请看下面的示例，该示例在两个不同的视图模式之间处理切换。 每个状态都需要两个不同的视图控制器。 处理精简视图，如下所示： `StickerBrowserViewController`
+请看下面的示例，该示例在两个不同的视图模式之间处理切换。 每个状态都需要两个不同的视图控制器。 `StickerBrowserViewController` 处理**精简**视图，如下所示：
 
 ```csharp
 using System;
@@ -494,7 +494,7 @@ namespace MessageExtension
 }
 ```
 
-将处理展开的标签视图，如下所示： `AddStickerViewController`
+`AddStickerViewController` 将处理**展开**的标签视图，如下所示：
 
 ```csharp
 using System;
@@ -546,7 +546,7 @@ namespace MessageExtension
 }
 ```
 
-`MessageViewController`实现这些视图控制器以驱动请求的状态：
+`MessageViewController` 实现这些视图控制器来驱动请求的状态：
 
 ```csharp
 using System;
@@ -666,7 +666,7 @@ namespace MessageExtension
 }
 ```
 
-当用户请求向其可用集合添加新不干胶标签时，会将一个`AddStickerViewController`新的显示为可见控制器，而不干胶标签将进入**展开**的视图：
+当用户请求向其可用集合添加新标签时，会将一个新的 `AddStickerViewController` 变成可见控制器，而不干胶标签将进入**展开**视图：
 
 ```csharp
 // Switch to expanded view mode
@@ -686,7 +686,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-重`DidTransition`写方法以处理两种模式间的切换：
+重写 `DidTransition` 方法，以处理两个模式间的切换：
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)

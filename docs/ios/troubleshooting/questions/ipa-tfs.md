@@ -4,19 +4,19 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9c7b7e598f66d930b5e16ef19b8bc108d8b6701a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4493b1a0d06e2f44ee9a11a250395f058baa0548
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291060"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031025"
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>如何将 IPA 输出文件复制到 TFS 放置文件夹？
 
-在文本编辑器中打开 iOS 应用项目的`</Project>` 文件，然后在结尾处添加以下行（紧接在结束标记之前）：`.csproj`
+在文本编辑器中打开 iOS 应用项目的 `.csproj` 文件，然后在结尾处添加以下行（紧靠在结束 `</Project>` 标记之前）：
 
 ```xml
 <PropertyGroup>
@@ -38,17 +38,17 @@ ms.locfileid: "70291060"
 </Target>
 ```
 
-## <a name="notes"></a>说明
+## <a name="notes"></a>注意
 
-- 这与[我在能否更改 IPA 文件的输出路径](~/ios/troubleshooting/questions/ipa-output-path.md)时所讨论的一般方法相同？。 需要将两个重要的要点`$(TF_BUILD_BINARIESDIRECTORY)`设置为目标文件夹并添加一个额外的条件， `CopyIpa`以便仅为 TFS 生成运行。
+- 这与[我在能否更改 IPA 文件的输出路径](~/ios/troubleshooting/questions/ipa-output-path.md)时所讨论的一般方法相同？。 将 `$(TF_BUILD_BINARIESDIRECTORY)` 设置为目标文件夹并添加一个额外条件，使 `CopyIpa` 只为 TFS 生成运行，这两个要点。
 
-- 有关详细说明， `TF_BUILD_BINARIESDIRECTORY`请参阅[预定义的生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
+- 有关 `TF_BUILD_BINARIESDIRECTORY` 的说明，请参阅[预定义的生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
 
 ## <a name="additional-references"></a>其他参考
 
 - [有关安装 TFS 以与 Xamarin 一起使用的文档](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)
-- [Azure DevOps 生成任务：Xamarin.Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
-- [Azure DevOps 生成任务：Xamarin.iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
+- [Azure DevOps 生成任务： Xamarin Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
+- [Azure DevOps 生成任务： Xamarin. iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>后续步骤
 

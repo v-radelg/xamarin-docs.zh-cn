@@ -4,21 +4,21 @@ description: 本文档介绍如何在使用 Xamarin 生成的 tvOS 应用中使�
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 559944e5ae168fd3b45c4d25a86705c5032b2e04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769969"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030493"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin 中的 tvOS 按钮
 
-使用`UIButton`类的实例在 tvOS 窗口中创建可获得焦点的可选择按钮。 当用户选择一个按钮时，它将向目标对象发送一个操作消息，以允许你的 tvOS 应用响应用户的输入。
+使用 `UIButton` 类的实例在 tvOS 窗口中创建可获得焦点的可选择按钮。 当用户选择一个按钮时，它将向目标对象发送一个操作消息，以允许你的 tvOS 应用响应用户的输入。
 
-[![](buttons-images/buttons01.png "示例按钮")](buttons-images/buttons01.png#lightbox)
+[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
 
 若要详细了解如何使用 Siri 遥控器并进行导航，请参阅使用[导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
@@ -28,7 +28,7 @@ ms.locfileid: "70769969"
 
 在 tvOS 中，按钮用于特定于应用程序的操作，并且可能包含标题、图标或两者。 当用户使用[Siri 远程](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)浏览应用程序的用户界面时，焦点将移到给定按钮，使其更改文本和背景色。 阴影还适用于添加三维效果的按钮，使其看起来比用户界面的其余部分更高。
 
-[![](buttons-images/buttons01.png "示例按钮")](buttons-images/buttons01.png#lightbox)
+[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
 
 Apple 对于使用按钮有以下建议：
 
@@ -63,39 +63,39 @@ Apple 建议你为按钮图标使用简单、高度可识别的图像。 很难�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
+1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
 1. 将一个**按钮**从**库**中拖放到视图上： 
 
-    [![](buttons-images/storyboard01.png "按钮")](buttons-images/storyboard01.png#lightbox)
+    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
 1. 在 "**属性资源管理器**" 中，您可以调整按钮的几个属性，例如其**标题**和**文本颜色**： 
 
-    [![](buttons-images/storyboard02.png "按钮属性")](buttons-images/storyboard02.png#lightbox)
-1. 接下来，切换到 "**事件" 选项卡**，然后将**事件**连接到**按钮**，并`ButtonPressed`将其调用： 
+    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+1. 接下来，切换到 "**事件" 选项卡**并将**事件**连接到**按钮**，并将其调用 `ButtonPressed`： 
 
-    [![](buttons-images/storyboard03.png "\"事件\" 选项卡")](buttons-images/storyboard03.png#lightbox)
-1. 你将自动切换到该`ViewController.cs`视图，你可以在其中使用**向上**和**向下**箭头键将新操作放置在代码中： 
+    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+1. 系统会自动切换到 "`ViewController.cs`" 视图，在该视图中，可以使用**向上**和**向下**箭头键在代码中放置新操作： 
 
-    [![](buttons-images/storyboard04.png "在代码中放置新操作")](buttons-images/storyboard04.png#lightbox)
+    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
 1. 按**enter**选择位置： 
 
-    [![](buttons-images/storyboard05.png "代码编辑器")](buttons-images/storyboard05.png#lightbox)
+    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
 1. 保存对所有文件所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
+1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
 1. 将一个**按钮**从**库**中拖放到视图上： 
 
-    [![](buttons-images/storyboard01vs.png "按钮")](buttons-images/storyboard01vs.png#lightbox)
+    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
 1. 在 "**属性资源管理器**" 中，您可以调整按钮的几个属性，例如其**标题**和**文本颜色**： 
 
-    [![](buttons-images/storyboard02vs.png "属性资源管理器")](buttons-images/storyboard02vs.png#lightbox)
-1. 接下来，切换到 "**事件" 选项卡**，然后将**事件**连接到**按钮**，并`ButtonPressed`将其调用： 
+    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+1. 接下来，切换到 "**事件" 选项卡**并将**事件**连接到**按钮**，并将其调用 `ButtonPressed`： 
 
-    [![](buttons-images/storyboard03vs.png "\"事件\" 选项卡")](buttons-images/storyboard03vs.png#lightbox)
+    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
 1. 保存对所有文件所做的更改。
 
-编辑视图控制器（示例`ViewController.cs`）文件，并添加以下代码以处理所选的按钮：
+编辑视图控制器（示例 `ViewController.cs`）文件，并添加以下代码以处理所选的按钮：
 
 ```
 
@@ -119,10 +119,10 @@ namespace tvRemote
 
 -----
 
-只要按钮的`Enabled`属性为`true` ，并且它未被另一个控件或视图所覆盖，就可以使用 Siri Remote 使其成为焦点项。 如果用户选择该按钮并单击触摸面，则将执行`ButtonPressed`上面定义的操作。
+只要 `true` 按钮的 `Enabled` 属性，且该属性未被另一个控件或视图所覆盖，就可以使用 Siri Remote 使其成为焦点项。 如果用户选择该按钮并单击触摸面，则将执行上面定义的 `ButtonPressed` 操作。
 
 > [!IMPORTANT]
-> 尽管可以`UIButton`在创建**事件处理程序**时在`TouchUpInside` iOS 设计器中将操作分配给，但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 为 tvOS 用户界面元素创建**操作**时，应始终使用默认**操作类型**。
+> 尽管可以在创建**事件处理程序**时在 IOS 设计器中将 `TouchUpInside` 分配到 `UIButton`，但永远不会调用该操作，因为 Apple TV 没有触摸屏或支持触控事件。 为 tvOS 用户界面元素创建**操作**时，应始终使用默认**操作类型**。
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
@@ -130,7 +130,7 @@ namespace tvRemote
 
 ## <a name="buttons-and-code"></a>按钮和代码
 
-或者， `UIButton`可以在代码中创建C# ，并将其添加到 tvOS 应用的视图中。 例如:
+或者，可以在代码中创建 `UIButton` C# ，并将其添加到 tvOS 应用的视图中。 例如:
 
 ```csharp
 var button = new UIButton(UIButtonType.System);
@@ -143,7 +143,7 @@ button.AllEvents += (sender, e) => {
 View.AddSubview (button);
 ```
 
-当你在代码中`UIButton`创建新的时，请`UIButtonType`将其指定为以下内容之一：
+在代码中创建新的 `UIButton` 时，请将其 `UIButtonType` 指定为以下内容之一：
 
 - **系统**-这是 tvOS 提供的标准类型按钮，是最常使用的类型。
 - **DetailDisclosure** -显示用于隐藏或显示详细信息的 "关闭" 按钮类型。
@@ -152,19 +152,19 @@ View.AddSubview (button);
 - **AddContact** -将按钮显示为 "添加联系人" 按钮。
 - **自定义**-允许你自定义按钮的多个特性。
 
-接下来，定义按钮的屏幕大小和位置。 示例：
+接下来，定义按钮的屏幕大小和位置。 示例:
 
 ```csharp
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-然后，设置按钮的标题。 `UIButtons`与大多数`UIKit`控件不同的是，它们具有状态，因此您不能只是更改标题，而必须针对给定`UIControlState`的更改标题。 例如：
+然后，设置按钮的标题。 `UIButtons` 不同于大多数 `UIKit` 控件，因为它们具有状态，因此您不能只是更改标题，而必须针对给定的 `UIControlState`进行更改。 例如:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-接下来，使用`AllEvents`事件查看用户单击了该按钮的时间。 示例：
+接下来，使用 `AllEvents` 事件来查看用户单击了该按钮的时间。 示例:
 
 ```csharp
 button.AllEvents += (sender, e) => {
@@ -180,31 +180,31 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> 尽管可以将操作（如`TouchUpInside` `UIButton`）分配给，但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 应始终使用**AllEvents**或**PrimaryActionTriggered**等事件。
+> 虽然可以将 `TouchUpInside` 操作（如）分配给 `UIButton`，但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 应始终使用**AllEvents**或**PrimaryActionTriggered**等事件。
 
 <a name="Styling-a-Button" />
 
 ## <a name="styling-a-button"></a>设置按钮样式
 
-tvOS 提供了`UIButton`的多个属性，这些属性可用于提供其标题，并将其样式用于背景色和图像等。
+tvOS 提供 `UIButton` 的多个属性，这些属性可用于提供其标题并使用背景色和图像之类的样式。
 
 <a name="Button-Titles" />
 
 ### <a name="button-titles"></a>按钮标题
 
-如前文所述， `UIButtons`与大多数`UIKit`控件不同，它们具有状态，因此您不能只是更改标题，而是必须针对给定`UIControlState`的更改标题。 例如：
+如前文所述，`UIButtons` 不同于大多数 `UIKit` 控件，因为它们具有状态，因此您不能只是更改标题，而是必须针对给定的 `UIControlState`进行更改。 例如:
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
 ```
 
-您可以使用`SetTitleColor`方法设置按钮的标题颜色。 例如:
+您可以使用 `SetTitleColor` 方法设置按钮的标题颜色。 例如:
 
 ```csharp
 button.SetTitleColor (UIColor.White, UIControlState.Normal);
 ```
 
-您可以使用`SetTitleShadowColor`调整标题的阴影。 例如:
+您可以使用 `SetTitleShadowColor`调整标题的阴影。 例如:
 
 ```csharp
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
@@ -228,15 +228,15 @@ myButton.SetAttributedTitle (highlightedAttributedTitle, UIControlState.Highligh
 
 ### <a name="button-images"></a>按钮图像
 
-`UIButton`可以有附加的图像，并可以使用图像作为其背景。
+`UIButton` 可以附加一个图像，并可以使用图像作为其背景。
 
-若要为给定`UIControlState`的设置按钮的背景图像，请使用以下代码：
+若要为给定 `UIControlState`设置按钮的背景图像，请使用以下代码：
 
 ```csharp
 button.SetBackgroundImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ```
 
-将属性设置为`true` ，以在按钮突出显示时将图像绘制为较浅（这是默认值）。 `AdjustsImageWhenHiglighted` 将属性设置为`true` ，以在禁用按钮时将图像绘制为较暗（这是默认值）。 `AdjustsImageWhenDisabled`
+将 `AdjustsImageWhenHiglighted` 属性设置为 "`true` 可在按钮突出显示时将图像绘制为较浅（这是默认值）。 将 `AdjustsImageWhenDisabled` 属性设置为 "`true` 以便在按钮被禁用时将图像绘制为较暗（这是默认值）。
 
 若要设置按钮上显示的图像，请使用以下代码：
 
@@ -244,7 +244,7 @@ button.SetBackgroundImage(UIImage.FromFile("my image.png"), UIControlState.Norma
 button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ```
 
-`TintColor`使用属性可以设置应用于标题和按钮图像的颜色色调。 对于`Custom`类型的按钮，此属性不起作用，你必须自行实现该`TintColor`行为。
+使用 "`TintColor`" 属性可设置应用于标题和按钮图像的颜色色调。 对于 `Custom` 类型的按钮，此属性不起作用，你必须自行实现 `TintColor` 行为。
 
 <a name="Summary" />
 

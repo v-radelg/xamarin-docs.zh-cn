@@ -3,15 +3,15 @@ title: Xamarin Live Player 应用
 description: 本文档介绍 Xamarin Live Player 的应用程序，该应用程序可用于预览实时在设备上进行的代码更改。 它讨论了安装、示例、日志、设置、管理设备等。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: d4cf596d70be746e85f21bace3e5ddf662076e6d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1d3adfad3b9d2a64990ff11f81bf3a1a39825bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772317"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029660"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 应用
 
@@ -39,7 +39,7 @@ ms.locfileid: "70772317"
 
 按下应用程序底部的信息按钮 **（i）** 显示 "**选项**" 菜单：
 
-[!["选项" 菜单的屏幕截图](player-images/options-sml.png)](player-images/options.png#lightbox)
+["选项" 菜单的![屏幕快照](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>日志
 
@@ -51,7 +51,7 @@ ms.locfileid: "70772317"
 - 版本信息。
 - 发送反馈。
 
-[![设置的屏幕截图](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![设置的屏幕快照](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>管理设备
 

@@ -4,15 +4,15 @@ description: 本文档介绍如何使用 Xamarin 处理临时通知。 IOS 12 �
 ms.prod: xamarin
 ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: d321e8061d3091abeaa3cff6a6af9172c981cb60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7d9fe2a651d8d75d8dd9d8c0dd1225350a58373d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291201"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031890"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Xamarin 中的临时通知
 
@@ -20,14 +20,14 @@ ms.locfileid: "70291201"
 
 在通知中心，用户可以指定应用应停止提供临时通知、继续向其传递暂时或开始更突出地交付。
 
-## <a name="sample-app-redgreennotifications"></a>示例应用：RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>示例应用： RedGreenNotifications
 
 查看发送临时通知的[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用。
 
 ## <a name="sending-provisional-notifications"></a>发送临时通知
 
-若要发送临时通知， `UNAuthorizationOptions.Provisional`请提供作为选项[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
-`UNUserNotificationCenter`方法：
+若要发送临时通知，请提供 `UNAuthorizationOptions.Provisional` 作为[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)的选项
+`UNUserNotificationCenter`的方法：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,7 +41,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-如果用户将临时通知升级为显著交付，则`UNAuthorizationOptions`传递给`RequestAuthorization`的值将确定新的通知传递设置（在上述代码中`UNAuthorizationOptions.Alert` ， `UNAuthorizationOptions.Sound`和）。
+如果用户将临时通知升级为显著交付，则传递给 `RequestAuthorization` 的 `UNAuthorizationOptions` 值将确定新的通知传递设置（在上述代码中，`UNAuthorizationOptions.Alert` 和 `UNAuthorizationOptions.Sound`）。
 
 ## <a name="related-links"></a>相关链接
 

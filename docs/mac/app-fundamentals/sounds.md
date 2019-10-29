@@ -4,23 +4,23 @@ description: 本文档介绍如何在 Xamarin for Mac 应用中使用 Avaudiopla
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: b4a5ead3e3c02fbdd2ae5486a6ac637defeb5abd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18043a88a129d48a1cad3b9ee15b6989d50ad126
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283307"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030047"
 ---
 # <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>在 Xamarin 中通过 Avaudioplayer 播放声音播放声音
 
 ## <a name="about-the-avaudioplayer"></a>关于 Avaudioplayer 播放声音
 
-`AVAudioPlayer`类用于从内存或文件播放音频数据。 Apple 建议使用此类在应用程序中播放音频，除非要进行网络流式处理或需要低延迟音频 i/o。
+`AVAudioPlayer` 类用于从内存或文件播放音频数据。 Apple 建议使用此类在应用程序中播放音频，除非要进行网络流式处理或需要低延迟音频 i/o。
 
-您可以使用`AVAudioPlayer`类来执行以下操作：
+您可以使用 `AVAudioPlayer` 类来执行以下操作：
 
 - 播放带有可选循环的任何持续时间的声音。
 - 通过可选同步，同时播放多个声音。
@@ -28,7 +28,7 @@ ms.locfileid: "70283307"
 - 支持功能，如快进或倒带。
 - 获取播放级别计数数据。
 
-`AVAudioPlayer`支持使用 iOS、tvOS 和 macOS 提供的任何音频格式的声音，如 aif、.wav 或 mp3。
+`AVAudioPlayer` 支持 tvOS 和 macOS 之类的任何音频格式的声音，如 aif、.wav 或 mp3。
 
 ## <a name="playing-sounds-in-macos"></a>在 macOS 中播放声音
 

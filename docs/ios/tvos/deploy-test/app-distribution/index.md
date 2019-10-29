@@ -4,15 +4,15 @@ description: 本文档概述适用于 tvOS 应用的分发技术，并将其用�
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d8c9d6fe36b457a000e96d1ad8990debad8ac915
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769189"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030751"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 应用分发概述
 

@@ -4,15 +4,15 @@ description: 本文档介绍如何创建链接回 Xamarin iOS 应用的基于 we
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3d5db2f060b59fc689bea99141342b0447ac8933
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769482"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031517"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>在 Xamarin 中用 Web 标记搜索
 
@@ -20,12 +20,12 @@ ms.locfileid: "70769482"
 
 如果你的 iOS 应用已经支持移动深层链接，并且你的网站提供了指向应用中内容的深层链接，Apple 的_Applebot_ web 爬网程序将为此内容编制索引，并自动将其添加到其云索引中：
 
-[![](web-markup-images/webmarkup01.png "云索引概述")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "Cloud Index overview")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 如果用户点击其中一个结果（并且已安装应用），则会将其转到应用中的内容：
 
-[![](web-markup-images/webmarkup02.png "从搜索结果中的网站进行深层链接")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "Deep linking from a website in search results")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>启用 Web 内容索引
 
@@ -71,7 +71,7 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-有关详细信息，请参阅 Twitter 的[Twitter 卡协议](http://dev.twitter.com/cards/mobile)文档。
+有关详细信息，请参阅 Twitter 的[Twitter 卡协议](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)文档。
 
 ## <a name="using-facebook-app-links"></a>使用 Facebook 应用链接
 
@@ -83,11 +83,11 @@ Apple 会在聚焦搜索和 Safari 搜索结果中显示这些结果。
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-有关详细信息，请参阅 Facebook 的[应用链接](http://applinks.org)文档。
+有关详细信息，请参阅 Facebook 的[应用链接](https://developers.facebook.com/docs/applinks)文档。
 
 ## <a name="opening-deep-links"></a>打开深层链接
 
-需要在 Xamarin iOS 应用中添加对打开和显示深层链接的支持。 编辑**AppDelegate.cs**文件并重写`OpenURL`方法以处理自定义 URL 格式。 例如:
+需要在 Xamarin iOS 应用中添加对打开和显示深层链接的支持。 编辑**AppDelegate.cs**文件并重写 `OpenURL` 方法，以处理自定义 URL 格式。 例如:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,7 +113,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-在上面的代码中，我们将查找包含`/appname`的 URL，并将的`query`值（`123`在此示例中）传递到应用程序中的自定义视图控制器，以便向用户显示请求的内容。
+在上面的代码中，我们将查找包含 `/appname` 的 URL，并将 `query` （在本示例中为`123`）的值传递到应用程序中的自定义视图控制器，以便向用户显示请求的内容。
 
 ## <a name="providing-rich-results-with-structured-data"></a>通过结构化数据提供丰富的结果
 
@@ -129,9 +129,9 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-有关详细信息，请参阅[开放图形](http://ogp.me)网站。
+有关详细信息，请参阅[开放图形](https://ogp.me)网站。
 
-结构化数据标记的另一种常见格式是架构. org 的微数据格式。 例如：
+结构化数据标记的另一种常见格式是架构. org 的微数据格式。 例如:
 
 ```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -152,7 +152,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 下面显示了网站中的元数据的示例，该示例向最终用户提供丰富的搜索结果：
 
-[![](web-markup-images/deeplink01.png "通过结构化数据标记丰富的搜索结果")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "Rich search results via Structured Data Markup")](web-markup-images/deeplink01.png#lightbox)
 
 Apple 目前支持 schema.org 中的以下架构类型：
 
@@ -165,7 +165,7 @@ Apple 目前支持 schema.org 中的以下架构类型：
 - 食谱
 - SearchAction
 
-有关这些方案类型的详细信息，请参阅[schema.org](http://schema.org)。
+有关这些方案类型的详细信息，请参阅[schema.org](https://schema.org)。
 
 ## <a name="providing-actions-with-structured-data"></a>提供结构化数据的操作
 
@@ -207,5 +207,5 @@ Apple 目前支持 schema.org 中的以下架构类型：
 
 - [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [应用搜索编程指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

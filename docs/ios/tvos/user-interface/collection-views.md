@@ -4,21 +4,21 @@ description: 本文档介绍如何在使用 Xamarin 生成的 tvOS 应用中使�
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8fcedd4f7dca4527b37c6b83fbd205014cffcaaf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: be0208accfdc287f93cf635a22c6409cd03483e9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769122"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030504"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 集合视图
 
 集合视图允许使用任意布局显示一组内容。 使用内置支持，可以轻松创建类似于网格的类似或线性布局，同时还支持自定义布局。
 
-[![](collection-views-images/collection01.png "示例集合视图")](collection-views-images/collection01.png#lightbox)
+[![](collection-views-images/collection01.png "Sample collection view")](collection-views-images/collection01.png#lightbox)
 
 集合视图使用委托和数据源维护项的集合，以提供用户交互和集合内容。 由于集合视图基于独立于视图本身的布局子系统，因此提供不同布局可以轻松地即时更改集合视图数据的显示方式。
 
@@ -26,11 +26,11 @@ ms.locfileid: "70769122"
 
 ## <a name="about-collection-views"></a>关于集合视图
 
-如上所述，集合视图（`UICollectionView`）管理有序的项集合，并显示具有可自定义布局的项。 集合视图的工作方式类似于表视图（`UITableView`），只不过它们可以使用布局来提供多个只显示在单个列中的项。
+如上所述，集合视图（`UICollectionView`）管理有序的项集合，并显示具有可自定义布局的项。 集合视图的工作方式类似于表视图（`UITableView`），只不过它们可以使用布局来提供多个只包含在单个列中的项。
 
-使用 tvOS 中的集合视图时，应用负责使用数据源（`UICollectionViewDataSource`）提供与集合关联的数据。 可以选择组织集合视图数据并将其显示到不同的组（节）中。
+使用 tvOS 中的集合视图时，应用负责使用数据源（`UICollectionViewDataSource`）来提供与集合关联的数据。 可以选择组织集合视图数据并将其显示到不同的组（节）中。
 
-"集合" 视图使用单元格（`UICollectionViewCell`）在屏幕上显示各个项，该单元格提供集合中给定信息（如图像和标题）的表示形式。
+集合视图使用单元格（`UICollectionViewCell`）显示屏幕上的各个项，该单元格提供集合中给定信息（如图像及其标题）的表示形式。
 
 或者，可以将补充视图添加到集合视图的演示中，以用作节和单元格的页眉和页脚。 集合视图的布局负责定义这些视图的位置以及单个单元。
 
@@ -40,7 +40,7 @@ ms.locfileid: "70769122"
 
 ## <a name="collection-view-layouts"></a>集合视图布局
 
-集合视图的一项重要功能是其所呈现的数据与其布局之间的分离。 集合视图布局（`UICollectionViewLayout`）负责在集合视图的屏幕演示文稿中提供单元的组织和位置（以及任何补充视图）。
+集合视图的一项重要功能是其所呈现的数据与其布局之间的分离。 集合视图布局（`UICollectionViewLayout`）负责在集合视图的屏幕演示中提供组织和单元格的位置（以及任何补充视图）。
 
 单个单元格由集合视图从其附加数据源创建，然后按给定的集合视图布局进行排列和显示。
 
@@ -59,7 +59,7 @@ ms.locfileid: "70769122"
 - `DequeueReusableCell`-创建或返回给定类型的单元格（在应用的情节提要中指定）。
 - `DequeueReusableSupplementaryView`-创建或返回给定类型的辅助视图（如应用的情节提要中所指定）。
 
-在调用这些方法中的任何一种之前，必须注册用于使用`.xib`集合视图创建单元格视图的类、情节提要或文件。 例如:
+在调用这些方法中的任何一种之前，必须注册用于使用集合视图创建单元格视图的类、情节提要或 `.xib` 文件。 例如:
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -70,7 +70,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 }
 ```
 
-其中`typeof(CityCollectionViewCell)`提供支持视图的类，并`CityViewDatasource.CardCellId`提供在取消对单元格（或视图）的排队时使用的 ID。
+其中 `typeof(CityCollectionViewCell)` 提供支持视图的类，`CityViewDatasource.CardCellId` 提供在取消对单元格（或视图）的排队时使用的 ID。
 
 取消对单元格的排队后，您可以对其进行配置，使其包含它所表示的项的数据，并返回到要显示的集合视图。
 
@@ -78,13 +78,13 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
 ## <a name="about-collection-view-controllers"></a>关于集合视图控制器
 
-集合视图控制器（`UICollectionViewController`）是一个专用视图控制器（`UIViewController`），它提供以下行为：
+集合视图控制器（`UICollectionViewController`）是一个专门的视图控制器（`UIViewController`），提供以下行为：
 
-- 它负责从其情节提要或`.xib`文件加载集合视图，并实例化视图。 如果在代码中创建，它将自动创建一个新的、未配置的集合视图。
-- 加载集合视图后，控制器会尝试从情节提要或`.xib`文件加载其数据源和委托。 如果没有可用的，它会将其自身设置为源。
+- 它负责从其情节提要或 `.xib` 文件加载集合视图，并实例化视图。 如果在代码中创建，它将自动创建一个新的、未配置的集合视图。
+- 加载集合视图后，控制器会尝试从情节提要或 `.xib` 文件加载其数据源和委托。 如果没有可用的，它会将其自身设置为源。
 - 确保在第一次显示集合视图之前加载数据，并重新加载并清除每个后续显示的选择。
 
-此外，集合视图控制器还提供可重写的方法，这些方法可用于管理集合视图（ `AwakeFromNib`例如和`ViewWillDisplay`）的生命周期。
+此外，集合视图控制器还提供可重写的方法，这些方法可用于管理集合视图（如 `AwakeFromNib` 和 `ViewWillDisplay`）的生命周期。
 
 <a name="Collection-Views-and-Storyboards" />
 
@@ -97,80 +97,80 @@ public CityCollectionView (IntPtr handle) : base (handle)
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中启动新的**单一视图 TvOS 应用**。
-1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后在 iOS 设计器中将其打开。
+1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后在 IOS 设计器中将其打开。
 1. 向现有视图添加一个图像视图、一个标签和一个按钮，并将其配置为如下所示： 
 
-    [![](collection-views-images/collection02.png "示例布局")](collection-views-images/collection02.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如： 
+    [![](collection-views-images/collection02.png "Sample layout")](collection-views-images/collection02.png#lightbox)
+1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如: 
 
-    [![](collection-views-images/collection03.png "设置名称")](collection-views-images/collection03.png#lightbox)
+    [![](collection-views-images/collection03.png "Setting the name")](collection-views-images/collection03.png#lightbox)
 1. 接下来，将集合视图控制器拖动到情节提要： 
 
-    [![](collection-views-images/collection04.png "集合视图控制器")](collection-views-images/collection04.png#lightbox)
+    [![](collection-views-images/collection04.png "A Collection View Controller")](collection-views-images/collection04.png#lightbox)
 1. Control-从按钮拖动到集合视图控制器，然后从弹出窗口中选择 "**推送**"： 
 
-    [![](collection-views-images/collection05.png "从弹出窗口中选择 \"推送\"")](collection-views-images/collection05.png#lightbox)
+    [![](collection-views-images/collection05.png "Select Push from the popup")](collection-views-images/collection05.png#lightbox)
 1. 当应用运行时，这将使集合视图在用户单击按钮时显示。
 1. 选择集合视图，并在 "**属性资源管理器**" 的 "**布局" 选项卡**中输入以下值： 
 
-    [![](collection-views-images/collection06.png "属性资源管理器")](collection-views-images/collection06.png#lightbox)
+    [![](collection-views-images/collection06.png "The Properties Explorer")](collection-views-images/collection06.png#lightbox)
 1. 这会控制单个单元格的大小和集合视图的单元格与外边缘之间的边框。
-1. 选择集合视图控制器，并在 " `CityCollectionViewController` **小组件" 选项卡**中将其类设置为： 
+1. 选择集合视图控制器，并将其类设置为 "**小组件" 选项卡**中 `CityCollectionViewController`： 
 
-    [![](collection-views-images/collection07.png "将类设置为 CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
-1. 选择集合视图，并在 " `CityCollectionView` **小组件" 选项卡**中将其类设置为： 
+    [![](collection-views-images/collection07.png "Set the class to CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
+1. 选择集合视图，并将其类设置为 "**小组件" 选项卡**中 `CityCollectionView`： 
 
-    [![](collection-views-images/collection08.png "将类设置为 CityCollectionView")](collection-views-images/collection08.png#lightbox)
-1. 选择集合视图单元，并在 " `CityCollectionViewCell` **小组件" 选项卡**中将其类设置为： 
+    [![](collection-views-images/collection08.png "Set the class to CityCollectionView")](collection-views-images/collection08.png#lightbox)
+1. 选择 "集合" 视图单元，并将其类设置为 "**小组件" 选项卡**中 `CityCollectionViewCell`： 
 
-    [![](collection-views-images/collection09.png "将类设置为 CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
-1. 在 "**小组件" 选项卡**中， `Flow`确保**布局**为，**滚动方向** `Vertical`为 "集合" 视图： 
+    [![](collection-views-images/collection09.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
+1. 在 "**小组件" 选项卡**中，确保 `Flow`**布局**，并为集合视图 `Vertical`**滚动方向**： 
 
-    [![](collection-views-images/collection10.png "\"小组件\" 选项卡")](collection-views-images/collection10.png#lightbox)
-1. 选择集合视图单元并在 "**小组件" 选项卡**中将其**标识**设置为`CityCell` ： 
+    [![](collection-views-images/collection10.png "The Widget Tab")](collection-views-images/collection10.png#lightbox)
+1. 在 "**小组件" 选项卡**中选择 "集合" 视图单元并将其**标识**设置为 `CityCell`： 
 
-    [![](collection-views-images/collection11.png "将标识设置为 CityCell")](collection-views-images/collection11.png#lightbox)
+    [![](collection-views-images/collection11.png "Set the Identity to CityCell")](collection-views-images/collection11.png#lightbox)
 1. 保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio 中启动新的**单一视图 TvOS 应用**。
-1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后在 iOS 设计器中将其打开。
+1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后在 IOS 设计器中将其打开。
 1. 向现有视图添加一个图像视图、一个标签和一个按钮，并将其配置为如下所示： 
 
-    [![](collection-views-images/collection02vs.png "配置布局")](collection-views-images/collection02vs.png#lightbox)
+    [![](collection-views-images/collection02vs.png "Configure the layout")](collection-views-images/collection02vs.png#lightbox)
 1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中为图像视图和标签指定一个**名称**。 例如: 
 
-    [![](collection-views-images/collection03vs.png "属性资源管理器")](collection-views-images/collection03vs.png#lightbox)
+    [![](collection-views-images/collection03vs.png "The Properties Explorer")](collection-views-images/collection03vs.png#lightbox)
 1. 接下来，将集合视图控制器拖动到情节提要： 
 
-    [![](collection-views-images/collection04vs.png "集合视图控制器")](collection-views-images/collection04vs.png#lightbox)
+    [![](collection-views-images/collection04vs.png "A Collection View Controller")](collection-views-images/collection04vs.png#lightbox)
 1. Control-从按钮拖动到集合视图控制器，然后从弹出窗口中选择 "**推送**"： 
 
-    [![](collection-views-images/collection05vs.png "从弹出窗口中选择 \"推送\"")](collection-views-images/collection05vs.png#lightbox)
+    [![](collection-views-images/collection05vs.png "Select Push from the popup")](collection-views-images/collection05vs.png#lightbox)
 1. 当应用运行时，这将使集合视图在用户单击按钮时显示。
 1. 选择 "集合" 视图，并在 "**属性资源管理器**" 的 "**布局" 选项卡**中，将**宽度**输入为_361_ ，**高度**为_256_ 
 1. 这会控制单个单元格的大小和集合视图的单元格与外边缘之间的边框。
-1. 选择集合视图控制器，并在 " `CityCollectionViewController` **小组件" 选项卡**中将其类设置为： 
+1. 选择集合视图控制器，并将其类设置为 "**小组件" 选项卡**中 `CityCollectionViewController`： 
 
-    [![](collection-views-images/collection07vs.png "将类设置为 CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
-1. 选择集合视图，并在 " `CityCollectionView` **小组件" 选项卡**中将其类设置为： 
+    [![](collection-views-images/collection07vs.png "Set the class to CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
+1. 选择集合视图，并将其类设置为 "**小组件" 选项卡**中 `CityCollectionView`： 
 
-    [![](collection-views-images/collection08vs.png "将类设置为 CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
-1. 选择集合视图单元，并在 " `CityCollectionViewCell` **小组件" 选项卡**中将其类设置为： 
+    [![](collection-views-images/collection08vs.png "Set the class to CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
+1. 选择 "集合" 视图单元，并将其类设置为 "**小组件" 选项卡**中 `CityCollectionViewCell`： 
 
-    [![](collection-views-images/collection09vs.png "将类设置为 CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
-1. 在 "**小组件" 选项卡**中， `Flow`确保**布局**为，**滚动方向** `Vertical`为 "集合" 视图： 
+    [![](collection-views-images/collection09vs.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
+1. 在 "**小组件" 选项卡**中，确保 `Flow`**布局**，并为集合视图 `Vertical`**滚动方向**： 
 
-    [![](collection-views-images/collection10vs.png "\"小组件\" 选项卡")](collection-views-images/collection10vs.png#lightbox)
-1. 选择集合视图单元并在 "**小组件" 选项卡**中将其**标识**设置为`CityCell` ： 
+    [![](collection-views-images/collection10vs.png "Tthe Widget Tab")](collection-views-images/collection10vs.png#lightbox)
+1. 在 "**小组件" 选项卡**中选择 "集合" 视图单元并将其**标识**设置为 `CityCell`： 
 
-    [![](collection-views-images/collection11vs.png "将标识设置为 CityCell")](collection-views-images/collection11vs.png#lightbox)
+    [![](collection-views-images/collection11vs.png "Set the Identity to CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. 保存更改。
 
 -----
 
-如果选择`Custom`了 "集合" 视图的**布局**，则可以指定自定义布局。 Apple 提供了一个内置`UICollectionViewFlowLayout`的， `UICollectionViewDelegateFlowLayout`可以在基于网格的布局中轻松地呈现数据（ `flow`这些数据由布局样式使用）。 
+如果为集合视图的**布局**选择 `Custom`，则可以指定自定义布局。 Apple 提供内置 `UICollectionViewFlowLayout` 和 `UICollectionViewDelegateFlowLayout`，可以在基于网格的布局中轻松地呈现数据（这些数据由 `flow` 布局样式使用）。 
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
@@ -186,7 +186,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
 首先，我们将为数据创建一个模型，其中包含要显示的图像的文件名、标题和允许选择城市的标志。
 
-创建一个`CityInfo`类，使其看起来像下面这样：
+创建一个 `CityInfo` 类并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -216,7 +216,7 @@ namespace tvCollection
 
 ### <a name="the-collection-view-cell"></a>集合视图单元格
 
-现在，我们需要定义每个单元格的数据显示方式。 `CityCollectionViewCell.cs`编辑文件（自动从情节提要文件创建），并使其看起来如下所示：
+现在，我们需要定义每个单元格的数据显示方式。 编辑 `CityCollectionViewCell.cs` 文件（自动从情节提要文件创建），并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -289,7 +289,7 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 
 创建数据模型并定义单元布局后，让我们为集合视图创建数据源。 数据源不仅负责提供支持数据，而且还会取消排队单元格以在屏幕上显示单个单元。
 
-创建一个`CityViewDatasource`类，使其看起来像下面这样：
+创建一个 `CityViewDatasource` 类并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -382,7 +382,7 @@ namespace tvCollection
 }
 ```
 
-让我们详细了解此类。 首先，我们从`UICollectionViewDataSource`继承，并提供单元 ID （在 iOS 设计器中分配）的快捷方式：
+让我们详细了解此类。 首先，我们从 `UICollectionViewDataSource` 继承，并提供单元 ID （在 iOS 设计器中分配）的快捷方式：
 
 ```csharp
 public static NSString CardCellId = new NSString ("CityCell");
@@ -406,7 +406,7 @@ public void PopulateCities() {
 }
 ```
 
-然后，重写`NumberOfSections`方法，并返回集合视图具有的部分（项组）数。 在这种情况下，只有一个：
+然后，重写 `NumberOfSections` 方法，并返回集合视图具有的部分（项组）数。 在这种情况下，只有一个：
 
 ```csharp
 public override nint NumberOfSections (UICollectionView collectionView)
@@ -439,7 +439,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-获取`CityCollectionViewCell`类型的集合视图单元后，将使用给定的项来填充它。
+获取 `CityCollectionViewCell` 类型的集合视图单元格后，将使用给定的项来填充它。
 
 <a name="Responding-to-User-Events" />
 
@@ -451,7 +451,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ### <a name="the-app-delegate"></a>应用委托
 
-我们需要一种方法将当前所选项从集合视图关联回调用视图。 我们将在上`AppDelegate`使用自定义属性。 `AppDelegate.cs`编辑文件并添加以下代码：
+我们需要一种方法将当前所选项从集合视图关联回调用视图。 我们将在 `AppDelegate`上使用自定义属性。 编辑 `AppDelegate.cs` 文件，并添加以下代码：
 
 ```csharp
 public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning Circle", true);
@@ -463,7 +463,7 @@ public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning 
 
 ### <a name="the-collection-view-delegate"></a>集合视图委托
 
-接下来，向项目`CityViewDelegate`中添加一个新类，并使其类似于以下内容：
+接下来，将新的 `CityViewDelegate` 类添加到项目，并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -517,7 +517,7 @@ namespace tvCollection
 }
 ```
 
-让我们进一步了解一下此类。 首先，我们从`UICollectionViewDelegateFlowLayout`继承。 从此类而不`UICollectionViewDelegate`是继承的原因是我们使用的是内置`UICollectionViewFlowLayout`的来显示项，而不是自定义布局类型。
+让我们进一步了解一下此类。 首先，我们继承自 `UICollectionViewDelegateFlowLayout`。 从此类（而不是 `UICollectionViewDelegate`）继承的原因是我们使用内置 `UICollectionViewFlowLayout` 来显示项，而不是自定义布局类型。
 
 接下来，使用以下代码返回各个项的大小：
 
@@ -542,7 +542,7 @@ public override bool CanFocusItem (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-我们检查一段给定的后备数据是否将其`CanSelect`标志设置为`true`并返回该值。 有关导航和焦点的详细信息，请参阅[使用导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
+我们检查一段给定的后备数据是否将其 `CanSelect` 标志设置为 `true` 并返回该值。 有关导航和焦点的详细信息，请参阅[使用导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
 最后，使用以下代码响应用户选择项：
 
@@ -557,13 +557,13 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-此处，我们将`SelectedCity`的属性`AppDelegate`设置为用户选择的项，并关闭集合视图控制器，返回到名为 us 的视图。 我们尚未定义集合`ParentController`视图的属性，接下来我们将执行此操作。
+此处，我们将 `AppDelegate` 的 "`SelectedCity`" 属性设置为用户选择的项，然后关闭集合视图控制器，返回到名为 "us" 的视图。 我们尚未定义集合视图的 `ParentController` 属性，接下来我们将执行此操作。
 
 <a name="Configuring-the-Collection-View" />
 
 ## <a name="configuring-the-collection-view"></a>配置集合视图
 
-现在，我们需要编辑集合视图，并分配数据源和委托。 `CityCollectionView.cs`编辑文件（在我们的情节提要中自动为我们创建），并使其类似于以下内容：
+现在，我们需要编辑集合视图，并分配数据源和委托。 编辑 `CityCollectionView.cs` 文件（在我们的情节提要中自动为我们创建），并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -625,7 +625,7 @@ namespace tvCollection
 }
 ```
 
-首先，我们提供访问`AppDelegate`以下内容的快捷方式： 
+首先，我们提供访问 `AppDelegate`的快捷方式： 
 
 ```csharp
 public static AppDelegate App {
@@ -676,13 +676,13 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-我们将上一项丢失焦点的 transparence 设置为零（0），而下一项的 transparence 将焦点提高到 100%。 这些转换也会动态显示。
+我们将上一项丢失焦点的 transparence 设置为零（0），而下一项的 transparence 将焦点提高到100%。 这些转换也会动态显示。
 
 ## <a name="configuring-the-collection-view-controller"></a>配置集合视图控制器
 
 现在，我们需要对集合视图执行最终配置，并允许控制器设置定义的属性，以便在用户做出选择后可以关闭集合视图。
 
-`CityCollectionViewController.cs`编辑文件（从情节提要自动创建），并使其类似于以下内容：
+编辑 `CityCollectionViewController.cs` 文件（从情节提要自动创建），并使其类似于以下内容：
 
 ```csharp
 // This file has been autogenerated from a class added in the UI designer.
@@ -726,7 +726,7 @@ namespace tvCollection
 
 现在，我们已将所有部分组合在一起来填充和控制我们的集合视图，我们需要在主视图中进行最后的编辑，将所有内容整合在一起。
 
-`ViewController.cs`编辑文件（从情节提要自动创建），并使其类似于以下内容：
+编辑 `ViewController.cs` 文件（从情节提要自动创建），并使其类似于以下内容：
 
 ```csharp
 using System;
@@ -777,7 +777,7 @@ namespace MySingleView
 }
 ```
 
-下面的代码最初显示的`SelectedCity`属性`AppDelegate`中的选定项，并在用户从集合视图中进行选择时将其重新显示：
+下面的代码最初显示 `AppDelegate` 的 `SelectedCity` 属性中的选定项，并在用户从集合视图中进行选择时将其重新显示：
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -797,17 +797,17 @@ public override void ViewWillAppear (bool animated)
 
 完成所有操作后，如果你构建并运行应用程序，主视图将显示为默认城市：
 
-[![](collection-views-images/run01.png "主屏幕")](collection-views-images/run01.png#lightbox)
+[![](collection-views-images/run01.png "The main screen")](collection-views-images/run01.png#lightbox)
 
 如果用户单击 "**选择视图**" 按钮，将显示集合视图：
 
-[![](collection-views-images/run02.png "集合视图")](collection-views-images/run02.png#lightbox)
+[![](collection-views-images/run02.png "The collection view")](collection-views-images/run02.png#lightbox)
 
-将其`CanSelect`属性设置为`false`的任何城市都将显示为灰色，用户将无法对其设置焦点。 当用户突出显示某个项（使其处于焦点上）时，将显示标题，并可使用视差效果个很微妙倾斜三维图像。
+`CanSelect` 属性设置为 "`false`" 的任何城市都将显示为灰色，用户将无法对其设置焦点。 当用户突出显示某个项（使其处于焦点上）时，将显示标题，并可使用视差效果个很微妙倾斜三维图像。
 
 当用户单击 "选择" 图像时，将关闭 "集合" 视图，并使用新图像重新显示主视图：
 
-[![](collection-views-images/run03.png "主屏幕上的新图像")](collection-views-images/run03.png#lightbox)
+[![](collection-views-images/run03.png "A new image on the home screen")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 

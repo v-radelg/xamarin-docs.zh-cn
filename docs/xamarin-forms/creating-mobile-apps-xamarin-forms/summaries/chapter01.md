@@ -1,97 +1,97 @@
 ---
-title: 第 1 章的摘要。 Xamarin.Forms 如何组合？
-description: 使用 Xamarin.Forms 创建移动应用：第 1 章的摘要。 Xamarin.Forms 如何组合？
+title: 第1章摘要： 如何调整 Xamarin 形式？
+description: 用 Xamarin 创建移动应用：第1章的摘要。 如何调整 Xamarin 形式？
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 58d3b3ae067913a85c3ada5f5b35e64511523ff8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6dfa473bdfb4c1dd88ca833dbf5011a0bbdec42a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334586"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032884"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章的摘要。 Xamarin.Forms 如何组合？
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第1章摘要： 如何调整 Xamarin 形式？
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
 
 > [!NOTE]
-> 此页上的说明表明其中 Xamarin.Forms 已脱离一书中介绍的内容的区域。
+> 此页上的说明指出了 Xamarin 在书籍中提供的材料中分离的区域。
 
-在编程中最令人不快的作业中的一个移植的代码库从一个平台，尤其是如果该平台涉及不同的编程语言。 倾向于时移植代码对其进行重构，但如果这两个平台必须同时维护，然后两个代码库之间的差异会使将来维护更加困难。
+编程中最令人不愉快的作业之一是将基本代码从一个平台移植到另一个平台，尤其是在该平台涉及到不同的编程语言时。 同时移植代码以重构代码，但如果两个平台都必须并行维护，则这两个代码库之间的差异会使将来的维护变得更加困难。
 
 ## <a name="cross-platform-mobile-development"></a>跨平台移动开发
 
-面向移动平台时，此问题很常见。 目前，存在两个主要的移动平台、 Iphone 和 Ipad 运行 iOS 操作系统，并在各种手机和平板电脑运行 Android 操作系统的 Apple 系列。 另一个重要的一个平台是 Microsoft 的通用 Windows 平台 (UWP)，它允许单个程序以面向这两个 Windows 10。
+在面向移动平台时，此问题很常见。 目前，有两个主要的移动平台，即 Iphone 和 Ipad 的 Apple 系列运行 iOS 操作系统，以及在各种手机和平板电脑上运行的 Android 操作系统。 另一个重要的平台是 Microsoft 的通用 Windows 平台（UWP），它允许单个程序针对 Windows 10。
 
-想要面向这些平台的软件供应商必须处理不同的用户界面模式、 三个不同的开发环境、 三个不同的编程接口，并&mdash;可能是最滑雪&mdash;三个不同的编程语言：适用于 iPhone 和 iPad，Java for Android、 objective C 和C#为 Windows。
+希望以这些平台为目标的软件供应商必须处理不同的用户界面模式、三个不同的开发环境和三个不同的编程接口，并&mdash;可能是大多数 awkwardly&mdash;三个不同编程语言：适用于 iPhone 和 iPad 的目标-C，适用于 Android 的C# Java，适用于 Windows。
 
-## <a name="the-c-and-net-solution"></a>C# 和.NET 解决方案
+## <a name="the-c-and-net-solution"></a>C#和 .net 解决方案
 
-尽管 Objective C、 Java 和 C# 所有派生自 C 编程语言，但它们已演变成将通过非常不同的路径。 C# 是一种语言最新和已成熟方式非常有用。 此外，C# 是密切相关与名为.NET、 数学、 调试、 反射、 集合、 全球化、 文件 I/O、 网络、 安全性、 线程、 web 服务、 数据处理和 XML 提供支持整个编程基础结构和读取和写入的 JSON。
+尽管目标为 C、Java 和C#都是从 C 编程语言派生的，但它们已由非常不同的路径发展。 C#是这些语言中的最新版本，并且已经以非常有用的方式成熟。 此外， C#与称为 .net 的整个编程基础结构密切相关，这为数学、调试、反射、集合、全球化、文件 i/o、网络、安全性、线程、web 服务、数据处理提供支持。和 XML 和 JSON 的读取和写入。
 
-当前，Xamarin 提供了工具来面向本机 Mac、 iOS 和 Android Api 使用 C# 和.NET。 这些工具称为 Xamarin.Mac 和 Xamarin.iOS、 Xamarin.Android，统称为 Xamarin 平台。 这些是库和 express 与.NET 惯例这些平台的本机 Api 的绑定。
+Xamarin 目前提供使用C#和 .net 面向本机 Mac、IOS 和 Android api 的工具。 这些工具称为 Xamarin、Xamarin 和 Xamarin （统称为 Xamarin 平台）。 这些是用 .NET 惯例表示这些平台的本机 Api 的库和绑定。
 
-开发人员可以使用 Xamarin 平台在 C# 中编写的应用程序，该目标 Mac、 iOS 或 Android。 但当目标多个平台，可以很有意义分享一些在目标平台的代码。 这涉及到将分成依赖于平台的代码 （通常涉及用户界面），并独立于平台的代码，通常需要只是基本的.NET framework 的程序。 此独立于平台的代码也可以驻留在可移植类库 (PCL) 或共享的项目，通常称为共享资产项目或 SAP。
-
-> [!NOTE]
-> .NET Standard 库已替换为可移植类库。 本书中的所有示例代码已都转换为使用.NET 标准库。
-
-## <a name="introducing-xamarinforms"></a>Xamarin.Forms 简介
-
-当目标多个移动平台，Xamarin.Forms 允许更多代码共享。 编写用于 Xamarin.Forms 的单个程序可以针对这些平台：
-
-- 适用于 iPhone、 iPad 和 iPod touch 运行的程序的 iOS
-- 在 Android 手机和平板电脑上运行的程序的 android
-- 面向 Windows 10 通用 Windows 平台
+开发人员可以使用 Xamarin 平台写入目标 Mac、 C# IOS 或 Android 中的应用程序。 但在面向多个平台时，在目标平台之间共享某些代码非常有意义。 这涉及到将程序分离到平台相关代码（通常涉及用户界面）和独立于平台的代码中，这通常只需要基本的 .NET framework。 此独立于平台的代码既可以位于可移植类库（PCL）中，也可以驻留在共享项目中，通常称为共享资产项目或 SAP。
 
 > [!NOTE]
-> Xamarin.Forms 不再支持 Windows 8.1、 Windows Phone 8.1 或 Windows 10 移动版，但在 Windows 10 桌面版上运行的 Xamarin.Forms 应用程序。 此外，还有支持预览版[Mac](~/xamarin-forms/platform/other/mac.md)， [WPF](~/xamarin-forms/platform/other/wpf.md)， [GTK #](~/xamarin-forms/platform/other/gtk.md)，以及[Tizen](~/xamarin-forms/platform/other/tizen.md)平台。
+> 可移植类库已替换为 .NET Standard 库。 书籍中的所有示例代码都已转换为使用 .NET standard 库。
 
-一个库或 SAP 中存在的 Xamarin.Forms 程序大容量。 每个平台包括调入此共享代码的小型应用程序存根。
+## <a name="introducing-xamarinforms"></a>引入 Xamarin. Forms
 
-Xamarin.Forms Api 将映射到每个平台上的本机控件，以便每个平台维护其特征的外观和感觉：
+面向多个移动平台时，Xamarin 允许进行更多代码共享。 为 Xamarin 编写的单个程序。表单可以面向以下平台：
 
-[![平台共享的视觉对象的三个屏幕截图](images/ch01fg03-small.png "每个平台上的 Xamarin.Forms 控件")](images/ch01fg03-large.png#lightbox "每个平台上的 Xamarin.Forms 控件")
+- 在 iPhone、iPad 和 iPod touch 上运行的程序的 iOS
+- Android （适用于 Android 手机和平板电脑上运行的程序）
+- 面向 Windows 10 的通用 Windows 平台
 
-从左到右的屏幕截图显示在 iPhone 和 Android 手机：
+> [!NOTE]
+> Xamarin 不再支持 Windows 8.1、Windows Phone 8.1 或 Windows 10 移动版，但 Xamarin. 窗体应用程序在 Windows 10 桌面上运行。 此外，还提供对[Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)和[Tizen](~/xamarin-forms/platform/other/tizen.md)平台的预览支持。
 
-每个屏幕上的页面包含 Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label)用于显示文本， [ `Button` ](xref:Xamarin.Forms.Button)适用于启动操作， [ `Switch` ](xref:Xamarin.Forms.Switch)为选择开/关值和一个[ `Slider` ](xref:Xamarin.Forms.Slider)用于指定连续范围内的值。 所有这四个视图都是的子级[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)上[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)。
+库或 SAP 中存在大量 Xamarin 程序。 每个平台都包含调用此共享代码的小型应用程序存根。
 
-此外附加到该网页是多个包含一个 Xamarin.Forms 工具栏[ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem)对象。 这些是显示为图标的 iOS 和 Android 屏幕顶部和底部的 Windows 10 移动版屏幕。
+Xamarin Api 映射到每个平台上的本机控件，使每个平台保持其特征外观：
 
-Xamarin.Forms 还支持 XAML、 Extensible Application Markup Language 由 Microsoft 开发的用于多个应用程序平台。 如上所示的程序的所有视觉对象中所示在 XAML 中定义[ **PlatformVisuals** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals)示例。
+[![平台视觉对象共享的三向屏幕截图](images/ch01fg03-small.png "每个平台上的 Xamarin 控件")](images/ch01fg03-large.png#lightbox "每个平台上的 Xamarin 控件")
 
-Xamarin.Forms 程序可以确定哪些平台运行，并相应地执行不同的代码。 更有效地，开发人员可以编写面向的各种平台的自定义代码，并从 Xamarin.Forms 程序独立于平台的方式运行该代码。 开发人员还可以通过编写为每个平台的呈现器中创建其他控件。
+从左到右的屏幕截图显示 iPhone 和 Android 手机：
 
-Xamarin.Forms 是一个不错的解决方案用于业务线应用程序，或用于原型制作或进行快速概念证明演示，而是不太适合用于需要矢量图形或复杂的触摸交互的应用程序。
+在每个屏幕上，页面都包含一个 Xamarin。窗体[`Label`](xref:Xamarin.Forms.Label)用于显示文本、用于启动操作的[`Button`](xref:Xamarin.Forms.Button) 、用于选择打开/关闭值的[`Switch`](xref:Xamarin.Forms.Switch) ，以及用于指定连续范围内的值的[`Slider`](xref:Xamarin.Forms.Slider). 这四个视图都是[`ContentPage`](xref:Xamarin.Forms.ContentPage)上的[`StackLayout`](xref:Xamarin.Forms.StackLayout)的子视图。
 
-## <a name="your-development-environment"></a>在开发环境
+还附加到页面是一个 Xamarin. Forms 工具栏，其中包含多个[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)对象。 这些图标在 iOS 和 Android 屏幕顶部以及 Windows 10 移动版屏幕的底部显示为图标。
 
-根据想要面向的平台和哪些计算机需要使用取决于你的开发环境。
+Xamarin 还支持 XAML，这是在 Microsoft 为多个应用程序平台开发的 Extensible Application Markup Language。 上述程序的所有视觉对象都在 XAML 中定义，如[**PlatformVisuals**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals)示例中所示。
 
-如果想要面向 iOS，则需要 Xcode 和 Xamarin 平台安装的 Mac。 还支持 Android 需要安装 Java 和所需的 Sdk。 您可以指定 iOS 和 Android 使用 Visual Studio for mac。
+Xamarin 程序可以确定运行它的平台，并相应地执行不同的代码。 更有效的是，开发人员可以编写各种平台的自定义代码，并以独立于平台的方式从 Xamarin 程序运行该代码。 开发人员还可以通过为每个平台编写呈现器来创建其他控件。
 
-安装 Visual Studio 可以在 PC 上面向 iOS、 Android 和 Windows 的所有平台。 但是，面向从 Visual Studio iOS 仍需要 Xcode 和 Xamarin 平台安装的 Mac。
+虽然 Xamarin 对于业务线应用程序而言是一个不错的解决方案，或用于创建原型或进行概念证明演示，但对于需要矢量图形或复杂触摸交互的应用程序而言，这种方法不太理想。
 
-你可以测试连接了 USB 到计算机，其中一个实际设备或模拟器上的程序。
+## <a name="your-development-environment"></a>你的开发环境
+
+你的开发环境取决于你想要使用的平台以及要使用的计算机。
+
+如果要面向 iOS，则需要一个 Mac with Xcode 和 Xamarin 平台。 同时支持 Android 需要安装 Java 和所需的 Sdk。 然后，可以使用 Visual Studio for Mac 以 iOS 和 Android 为目标。
+
+安装 Visual Studio 后，你将能够在你的 PC 上面向 iOS、Android 和所有 Windows 平台。 但是，面向 iOS 的 Visual Studio 仍需要具有 Xcode 的 Mac 和安装的 Xamarin 平台。
+
+可以在通过 USB 连接到计算机的实际设备上或在模拟器上测试程序。
 
 ## <a name="installation"></a>安装
 
-之前创建和生成 Xamarin.Forms 应用程序，您应尝试创建单独生成 iOS 应用程序、 Android 应用程序和一个 UWP 应用程序，具体取决于你希望目标和开发环境的平台。
+创建和生成 Xamarin 应用程序应用程序之前，应尝试单独创建和生成 iOS 应用程序、Android 应用程序和 UWP 应用程序，具体取决于要面向的平台和开发环境。
 
-Xamarin 和 Microsoft web 站点包含有关如何执行此操作的信息：
+Xamarin 和 Microsoft 网站包含有关如何执行此操作的信息：
 
 - [IOS 入门](~/ios/get-started/index.md)
 - [Android 入门](~/android/get-started/index.md)
-- [Windows 开发人员中心](http://dev.windows.com)
+- [Windows 开发人员中心](https://dev.windows.com)
 
-一次可以创建和运行这些各个平台的项目，您应该没有什么问题，创建并运行 Xamarin.Forms 应用程序。
+为这些单独的平台创建和运行项目后，在创建和运行 Xamarin. Forms 应用程序时，应该没有问题。
 
 ## <a name="related-links"></a>相关链接
 
-- [第 1 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
-- [第 1 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+- [第1章完整文本（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
+- [第1章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)

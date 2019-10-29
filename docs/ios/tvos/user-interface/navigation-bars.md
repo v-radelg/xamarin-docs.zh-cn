@@ -4,23 +4,23 @@ description: 本文档介绍如何在使用 Xamarin 生成的 tvOS 应用中使�
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 73474aaeb138d52536dd8ad5a7dca9be566475af
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa376385b000b83a41fdcdc7a4d3c8bf1553f0a7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769091"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030479"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航栏
 
 可以将导航栏添加到视图顶部，以显示标题和可选导航栏按钮。 通常，当用户从主页（如表视图、集合或菜单）导航到显示所选项的详细信息的子视图时使用它们。
 
-[![](navigation-bars-images/navbar01.png "示例导航栏")](navigation-bars-images/navbar01.png#lightbox)
+[![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
 
-除了在中心显示的标题外，导航栏还可以在条形图的左侧和右侧包含一个或多个导航`UIBarButtonItem`栏按钮（）。
+除了在中心显示的标题外，导航栏还可以在栏的左侧和右侧包含一个或多个导航栏按钮（`UIBarButtonItem`）。
 
 > [!IMPORTANT]
 > 默认情况下，导航栏是完全透明的。 应注意确保导航栏的内容可在其下方的内容中保持可读。 例如，当表视图或集合中的内容在其下滚动时。
@@ -33,44 +33,44 @@ ms.locfileid: "70769091"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击`Main.storyboard` "文件" 并将其打开以进行编辑。
+1. 在**Solution Pad**中，双击 "`Main.storyboard` 文件"，然后将其打开进行编辑。
 1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
 
-    [![](navigation-bars-images/navbar02.png "导航栏")](navigation-bars-images/navbar02.png#lightbox)
+    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
 1. 双击**导航栏**以选择**导航项**。 在**Properties Pad**的 "**小组件**" 选项卡中，可以设置**标题**：
 
-    [![](navigation-bars-images/navbar03.png "设置标题")](navigation-bars-images/navbar03.png#lightbox)
+    [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
 1. 接下来，可以将一个或多个**条形按钮项**添加到栏的任一端：
 
-    [![](navigation-bars-images/navbar04.png "条形按钮项")](navigation-bars-images/navbar04.png#lightbox)
+    [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
 1. 最后，在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作：
 
-    [![](navigation-bars-images/navbar05.png "条形按钮项操作")](navigation-bars-images/navbar05.png#lightbox)
+    [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
 1. 保存更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击`Main.storyboard` "文件" 并将其打开以进行编辑。
+1. 在**解决方案资源管理器**中，双击 "`Main.storyboard` 文件"，然后将其打开进行编辑。
 1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
 
-    [![](navigation-bars-images/navbar02-vs.png "导航栏")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. 双击**导航栏**以选择**导航项**。 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，您可以设置**标题**：
 
-    [![](navigation-bars-images/navbar03-vs.png "设置标题")](navigation-bars-images/navbar03-vs.png#lightbox)
+    [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 接下来，可以将一个或多个**条形按钮项**添加到栏的任一端：
 
-    [![](navigation-bars-images/navbar04-vs.png "条形按钮项")](navigation-bars-images/navbar04-vs.png#lightbox)
+    [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最后，在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作：
 
-    [![](navigation-bars-images/navbar05-vs.png "条形按钮项操作")](navigation-bars-images/navbar05-vs.png#lightbox)
+    [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 保存更改。
 
 -----
 
 > [!IMPORTANT]
-> 尽管可以在 iOS 设计器中将事件`TouchUpInside` （例如 UIButton）分配给 UI 元素（例如，如），但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 创建 tvOS 用户界面元素`Primary Action`的事件处理程序时，应始终使用事件。
+> 尽管可以在 iOS 设计器中将 `TouchUpInside` 事件分配给 UI 元素（例如 UIButton），但绝不会调用此类事件，因为 Apple TV 没有触摸屏或支持触控事件。 创建 tvOS 用户界面元素的事件处理程序时，应始终使用 `Primary Action` 事件。
 
-下面的代码提供了三个不同 BarButtonItems 上的事件处理程序`ShowFirstHotel`的`ShowSecondHotel`示例： `ShowThirdHotel`、和。 单击每个项目时，背景图像`HotelImage`将更改。 此操作在视图控制器（示例`ViewController.cs`）文件中进行编辑：
+以下代码提供了三个不同 BarButtonItems 上的事件处理程序的示例： `ShowFirstHotel`、`ShowSecondHotel`和 `ShowThirdHotel`。 单击每个项目时，将更改背景图像 `HotelImage`。 此操作在视图控制器（示例 `ViewController.cs`）文件中进行编辑：
 
 ```csharp
 using System;
@@ -121,7 +121,7 @@ namespace MySingleView
 }
 ```
 
-只要按钮的`Enabled`属性为`true` ，并且它未被另一个控件或视图所覆盖，就可以使用 Siri Remote 使其成为焦点项。
+只要 `true` 按钮的 `Enabled` 属性，且该属性未被另一个控件或视图所覆盖，就可以使用 Siri Remote 使其成为焦点项。
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 

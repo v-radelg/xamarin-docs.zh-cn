@@ -3,15 +3,15 @@ title: 第 2 部分 - 体系结构
 description: 本文档介绍了有助于构建跨平台应用程序的体系结构模式。 它讨论了典型的应用程序层（数据层、数据访问层等）以及常见的移动软件模式（MVVM、MVC 等）
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 84a06e23ec7125892701762ab5bad7b86a8faf90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762106"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030261"
 ---
 # <a name="part-2---architecture"></a>第 2 部分 - 体系结构
 
@@ -46,7 +46,7 @@ ms.locfileid: "70762106"
 
 - **Model、View、ViewModel （MVVM）** –模型-视图-ViewModel 模式适用于支持数据绑定的框架，如 Xamarin。 它已由启用了 XAML 的 Sdk 那时推广，如 Windows Presentation Foundation （WPF）和 Silverlight;其中，ViewModel 是通过数据绑定和命令在数据（模型）和用户界面（视图）之间进行的。
 - "**模型"、"视图"、"控制器" （mvc）** -一种常见且经常被误解的模式，这是在生成用户界面时最常使用 MVC，并为 UI 屏幕（视图）的实际定义和处理交互的引擎提供分离（控制器）和填充它的数据（模型）。 模型实际上是一个完全可选的部分，因此理解此模式的核心位于视图和控制器中。 MVC 是适用于 iOS 应用程序的常用方法。
-- **业务外观**-也称为经理模式，为复杂工作提供了一个简化的入门点。 例如，在任务跟踪应用程序中，您可能有一个`TaskManager`具有`GetAllTasks()` 、 `GetTask(taskID)` `SaveTask (task)` 、等方法的类。`TaskManager`类提供对实际保存/检索任务对象的内部工作原理的外观。
+- **业务外观**-也称为经理模式，为复杂工作提供了一个简化的入门点。 例如，在任务跟踪应用程序中，您可能有一个 `TaskManager` 类，该类具有 `GetAllTasks()`、`GetTask(taskID)`、`SaveTask (task)` 等方法。`TaskManager` 类提供了实际保存/检索任务对象的内部工作原理的外观。
 - **Singleton** –单一实例模式提供的一种方法是只能存在特定对象的单个实例。 例如，在移动应用程序中使用 SQLite 时，只需要数据库的一个实例。 使用单一实例模式是确保这一点的一种简单方法。
 - **Provider** –梦寐以求的一种模式（类似于策略或基本依赖项注入），用于鼓励跨 SILVERLIGHT、WPF 和 WinForms 应用程序重复使用代码。 共享代码可针对接口或抽象类编写，在使用代码时，将编写和传入特定于平台的具体实现。
 - **Async** –不要与 async 关键字混淆，当需要执行长时间运行的工作时，无需持有 UI 或当前正在处理的工作时，将使用异步模式。 在最简单的形式中，异步模式只描述了在当前线程继续处理并侦听后台进程的响应时，应在另一个线程（或类似的线程抽象，如任务）中启动长时间运行的任务。，然后在返回数据和或状态时更新 UI。

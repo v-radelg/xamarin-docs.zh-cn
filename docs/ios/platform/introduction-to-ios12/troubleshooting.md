@@ -4,15 +4,15 @@ description: 本文介绍了在开发 Xamarin iOS 应用程序时可用于故障
 ms.prod: xamarin
 ms.assetid: 24397498-2688-4575-A572-F1B19B1B4EA5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: 6d4303ebcd77ad5234b4750b46bbd0c84ffc5356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbed65ce39e9298d397051740737aa164fadbc0b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291751"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031853"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>排查通过 Xamarin 进行的 iOS 12 开发
 
@@ -23,7 +23,6 @@ ms.locfileid: "70291751"
 检查以下资源以了解已知问题：
 
 - 发行说明
-  - [Xamarin 版本](http://releases.xamarin.com/)博客
   - Xamarin 的[发行说明](https://docs.microsoft.com/xamarin/ios/release-notes/)存档
   - Visual Studio for Mac （[稳定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-relnotes)、[预览](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-preview-relnotes)）
   - Visual Studio 2017 （[稳定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)、[预览版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-preview-relnotes)）
@@ -40,5 +39,5 @@ ms.locfileid: "70291751"
 
 若要讨论如何实现 Xamarin 中特定的 iOS 12 功能的问题，请查看：
 
-- [Xamarin 论坛](http://forums.xamarin.com/categories/ios)
-- [堆栈溢出](https://stackoverflow.com/search?tab=newest&q=xamarin)
+- [Xamarin 论坛](https://forums.xamarin.com/categories/ios)
+- [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=xamarin)

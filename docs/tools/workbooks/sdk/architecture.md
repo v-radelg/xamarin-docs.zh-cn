@@ -3,15 +3,15 @@ title: 体系结构概述
 description: 本文档介绍 Xamarin Workbooks 的体系结构，并检查交互式代理和交互式客户端如何协同工作。
 ms.prod: xamarin
 ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 7129d0bedddb272ef87e3d209cb05c2ca0c0acf4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b3f2613e315bc05fedfb5b2fa70d11c2874ba65
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285284"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029622"
 ---
 # <a name="architecture-overview"></a>体系结构概述
 

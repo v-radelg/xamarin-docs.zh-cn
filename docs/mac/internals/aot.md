@@ -4,15 +4,15 @@ description: 本文档预先介绍了 Xamarin 中的编译时间。 它将 AOT �
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 6797428596fddb0361fb307240bf8237a1e8554d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: dac98ba74f389bec9016e52fa7a3f2f34ec71f0a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769835"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029967"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin 预编译
 

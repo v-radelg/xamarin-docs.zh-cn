@@ -4,15 +4,15 @@ description: 本文档探讨了 iOS 11 中的应用商店更改。 它讨论了�
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752328"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032137"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的应用商店更改
 
@@ -50,7 +50,7 @@ Apple 使得应用程序中购买的应用程序在应用程序存储中更易�
 
 ![ITune Connect 中的应用商店提升部分](app-store-changes-images/image4.png)
 
-还需要将`ShouldAddStorePayment`方法添加到应用中的`SKPaymentTransactionObserver`协议。
+还需要在应用程序中将 `ShouldAddStorePayment` 方法添加到 `SKPaymentTransactionObserver` 协议。
 
 有关应用内购买促销的详细信息，请参阅 Apple[升级应用内购买](https://developer.apple.com/app-store/promoting-in-app-purchases/)页。
 

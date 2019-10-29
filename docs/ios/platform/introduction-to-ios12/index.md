@@ -4,15 +4,15 @@ description: 本文档提供了有关 Xamarin 预览版提供C#绑定的某些 I
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/08/2018
-ms.openlocfilehash: b3f3db32e87d83ea4e076d439df3342e5ca2ed50
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 39d954626bc9e789446e7f1deac67e2e0fca51c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284638"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032006"
 ---
 # <a name="introduction-to-ios-12"></a>iOS 12 简介
 
@@ -56,7 +56,7 @@ iOS 12 使用户和开发人员可以更轻松地处理密码：
 
 - 密码自动填充和自动强密码使你可以在注册并登录到应用程序时，在 iOS 应用程序中自动生成、存储和使用强密码。
 - 安全代码自动填充使你可以使用基于短信的身份验证代码，而无需手动剪切和粘贴或记忆。
-- `ASWebAuthenticationSession`类简化了使用联合身份验证服务的过程。
+- `ASWebAuthenticationSession` 类简化了使用联合身份验证服务的过程。
 - 自动填充凭据提供程序扩展使第三方密码应用程序可以提供用户名和密码以登录字段。
 
 ## <a name="healthkit-updates"></a>HealthKit 更新
@@ -69,7 +69,7 @@ iOS 11.3 引入了[运行状况记录](https://www.apple.com/healthcare/health-r
 
 ## <a name="network-framework"></a>网络框架
 
-网络框架是 iOS 应用程序中常用`URLSession`的 api 基础的网络堆栈，现作为独立框架提供，使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
+网络框架是 iOS 应用程序中常用的 `URLSession` Api 基础的网络堆栈，现作为独立框架提供，使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
 
 ## <a name="carplay"></a>CarPlay
 
@@ -80,4 +80,4 @@ iOS 11.3 引入了[运行状况记录](https://www.apple.com/healthcare/health-r
 对于 iOS 12，Apple 已弃用：
 
 - OpenGL ES，[鼓励开发人员](https://developer.apple.com/ios/whats-new/)采用金。
-- [`UIWebView`](xref:UIKit.UIWebView)，而不[是`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
+- [`UIWebView`](xref:UIKit.UIWebView)，而不[是 `WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。

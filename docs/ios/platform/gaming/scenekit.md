@@ -4,15 +4,15 @@ description: 本文档介绍了 SceneKit，这是一个三维场景图形 API，
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: d6e6ff02fef3d2919e9716dc8a456aabd9533820
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5279effa83a8784f6d475188e67a535f7b5e1262
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292803"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032503"
 ---
 # <a name="scenekit-in-xamarinios"></a>Xamarin 中的 SceneKit
 
@@ -20,13 +20,13 @@ SceneKit 是一个3D 场景图形 API，可简化使用三维图形的操作。 
 
 SceneKit 非常容易使用。 它是一种声明性 API，负责呈现。 只需设置场景、向其添加属性，SceneKit 将处理场景的渲染。
 
-若要使用 SceneKit，请使用`SCNScene`类创建场景关系图。 场景包含节点的层次结构，由的实例`SCNNode`表示，用于定义三维空间中的位置。 每个节点都具有影响其外观的各种属性，如几何、照明和材料，如下图所示：
+若要使用 SceneKit，请使用 `SCNScene` 类创建场景图。 场景包含节点的层次结构，由 `SCNNode`的实例表示，用于定义三维空间中的位置。 每个节点都具有影响其外观的各种属性，如几何、照明和材料，如下图所示：
 
-![](scenekit-images/image7.png "SceneKit 层次结构")
+![](scenekit-images/image7.png "The SceneKit hierarchy")
 
 ## <a name="create-a-scene"></a>创建场景
 
-若要使场景显示在屏幕上，可`SCNView`通过将其分配给视图的场景属性，将其添加到中。 此外，如果对场景进行了任何更改， `SCNView`则会自行更新以显示所做的更改。
+若要使场景显示在屏幕上，可通过将其分配给视图的场景属性，将其添加到 `SCNView`。 此外，如果对场景进行了任何更改，`SCNView` 会自行更新以显示所做的更改。
 
 ```csharp
 scene = SCNScene.Create ();
@@ -45,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>添加光
 
-此时，球不会显示任何内容，因为场景中没有光源。 将`SCNLight`实例附加到节点会在 SceneKit 中创建光线。 有多种类型的光源，涵盖各种形式的定向光照和环境照明。 例如，下面的代码在球一侧创建全向光源：
+此时，球不会显示任何内容，因为场景中没有光源。 将 `SCNLight` 实例附加到节点会在 SceneKit 中创建光线。 有多种类型的光源，涵盖各种形式的定向光照和环境照明。 例如，下面的代码在球一侧创建全向光源：
 
 ```csharp
 // omnidirectional light
@@ -72,7 +72,7 @@ scene.RootNode.AddChildNode (ambientLightNode);
 
 灯就地亮起后，球现在就会显示在场景中。
 
-![](scenekit-images/image8.png "球在亮起时显示在场景中")
+![](scenekit-images/image8.png "The sphere is visible in the scene when lit")
 
 ## <a name="adding-a-camera"></a>添加照相机
 
@@ -95,13 +95,13 @@ scene.RootNode.AddChildNode (cameraNode);
 
 照相机就绪后，用户可以看到整个球：
 
-![](scenekit-images/image9.png "整个球体对用户可见")
+![](scenekit-images/image9.png "The entire sphere is visible to the user")
 
 还可以将其他灯光添加到场景中。 下面是几个全向光源的外观：
 
-![](scenekit-images/image10.png "带有几个全向光源的球")
+![](scenekit-images/image10.png "The sphere with a few more omnidirectional lights")
 
-此外，通过设置`sceneView.AllowsCameraControl = true`，用户可以使用触摸手势更改视图的点。
+此外，通过设置 `sceneView.AllowsCameraControl = true`，用户可以使用触摸笔势更改视图的点。
 
 ### <a name="materials"></a>资料
 
@@ -115,11 +115,11 @@ sphere.Materials = new SCNMaterial[] { material };
 
 这会将图像分层到节点上，如下所示：
 
-![](scenekit-images/image11.png "将图像分层到球体上")
+![](scenekit-images/image11.png "Layering the image onto the sphere")
 
 还可以将材料设置为响应其他类型的照明。 例如，对象可以变为发亮，并将其反射内容设置为显示反射反射，从而导致表面上出现一个明亮的点，如下所示：
 
-![](scenekit-images/image12.png "对象通过反射反射变为发亮，导致表面上出现亮点")
+![](scenekit-images/image12.png "The object made shiny with specular reflection, resulting in a bright spot on the surface")
 
 材料非常灵活，只需很少的代码即可实现。 例如，不是将图像设置为漫射内容，而是将其设置为反射内容。
 
@@ -131,7 +131,7 @@ material.Reflective.Contents = UIImage.FromFile ("monkey.png");
 
 ### <a name="animation"></a>动画
 
-SceneKit 适用于动画。 你可以创建隐式或显式动画，甚至可以从核心动画层树呈现场景。 创建隐式动画时，SceneKit 提供了其自己的转换`SCNTransaction`类。
+SceneKit 适用于动画。 你可以创建隐式或显式动画，甚至可以从核心动画层树呈现场景。 创建隐式动画时，SceneKit 提供了其自己的转换类 `SCNTransaction`。
 
 下面是旋转球的示例：
 
@@ -142,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-不过，您可以像旋转一样进行动画处理。 SceneKit 的许多属性都是动画处理。 例如，下面的代码对材料的`Shininess`进行了动画处理，以提高反射反射。
+不过，您可以像旋转一样进行动画处理。 SceneKit 的许多属性都是动画处理。 例如，下面的代码对材料的 `Shininess` 进行动画处理以提高反射反射。
 
 ```csharp
 SCNTransaction.Begin ();

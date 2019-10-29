@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: efd120e785e55bfa3806cd193bd5f155f35a5e18
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767728"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032729"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -36,18 +36,18 @@ ms.locfileid: "70767728"
 <a name="deploy" />
 
 - 较早版本的 Visual Studio for Mac 错误地将**AppleCompanionSettings**图标之一显示为88x88 像素;如果尝试提交到 App Store，则会导致**缺少图标错误**。
-    此图标应为 87 x 87 像素 (29 单位 **@3x** Retina 屏幕)。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件（以与[本示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)匹配）。
+    此图标应为87x87 像素（ **@3x** Retina 屏幕的29个单位）。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件（以与[本示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)匹配）。
 
 - 如果未[正确设置](~/ios/watchos/get-started/project-references.md)监视扩展项目的**Info.plist > WKApp 捆绑 Id**与 WATCH 应用的**捆绑 id**相匹配，则调试器将无法连接，并且 Visual Studio for Mac 将等待消息 *"等待调试程序连接 "* 。
 
-- 在**通知**模式下支持调试，但可能不可靠。 重试有时会起作用。 确认监视应用的**info.plist** `WKCompanionAppBundleIdentifier`设置为与 iOS 父/容器应用（即 iPhone 上运行的应用程序）的捆绑标识符相匹配。
+- 在**通知**模式下支持调试，但可能不可靠。 重试有时会起作用。 确认监视应用的**info.plist** `WKCompanionAppBundleIdentifier` 设置为与 iOS 父/容器应用（即 iPhone 上运行的应用程序）的捆绑标识符相匹配。
 
 - iOS 设计器不显示用于速览或通知界面控制器的入口点箭头。
 
-- 不能将两`WKNotificationControllers`个添加到情节提要。
-    解决方法：情节`notificationCategory`提要 XML 中的元素始终以相同`id`的方式插入。 若要解决此问题，你可以添加两个（或多个）通知控制器，在文本编辑器中打开情节提要文件，然后`id`手动将元素更改为唯一。
+- 不能将两个 `WKNotificationControllers` 添加到情节提要。
+    解决方法： storyboard XML 中的 `notificationCategory` 元素始终以相同的 `id`插入。 若要解决此问题，你可以添加两个（或多个）通知控制器，在文本编辑器中打开情节提要文件，然后手动将 `id` 元素更改为唯一。
 
-    [![](troubleshooting-images/duplicate-id-sml.png "在文本编辑器中打开情节提要文件，并手动将 id 元素更改为唯一")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - 尝试启动应用程序时，可能会看到错误 "尚未生成应用程序"。 如果启动项目设置为监视扩展项目，则会在**清除**后出现这种情况。
     解决方法是选择 "**生成" > "全部重新生成**"，然后重新启动应用。
@@ -74,7 +74,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 2. 如果出现 alpha 通道，则显示的对话框将包括**alpha**复选框。
 
-    ![](troubleshooting-images/remove-alpha-sml.png "如果存在 alpha 通道，则显示的对话框将包括 Alpha 复选框")
+    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
 
 3. *Untick* " **Alpha** " 复选框，并将文件**保存**到正确的位置。
 
@@ -91,15 +91,15 @@ with an alpha channel. Icons should not have an alpha channel.
 
 1. 在 Xcode 中打开 "监视" 应用的**界面。情节提要** **Interface Builder**。
 
-    ![](troubleshooting-images/add-6.png "在 Xcode 中打开情节提要 Interface Builder")
+    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
 
-2. 将新`InterfaceController`的拖到情节提要：
+2. 将新 `InterfaceController` 拖动到情节提要上：
 
-    ![](troubleshooting-images/add-1.png "InterfaceController")
+    ![](troubleshooting-images/add-1.png "A InterfaceController")
 
 3. 你现在可以将控件拖到接口控制器上（例如 标签和按钮），但你仍无法创建插座或操作，因为不存在 **.h**头文件。 以下步骤将导致创建所需的 **.h**头文件。
 
-    ![](troubleshooting-images/add-2.png "布局中的按钮")
+    ![](troubleshooting-images/add-2.png "A button in the layout")
 
 4. 关闭情节提要并返回到 Visual Studio for Mac。 在 " C# **监视应用扩展**" 项目中创建新文件**MyInterfaceController.cs** （或任何所需的名称）（而不是情节提要的 "监视" 应用本身）。 添加下面的代码（更新命名空间、classname 和构造函数名称）：
 
@@ -137,7 +137,7 @@ with an alpha channel. Icons should not have an alpha channel.
     }
     ```
 
-5. 在 " C# **监视应用扩展**" 项目中创建另一个新文件**MyInterfaceController.designer.cs** ，并添加以下代码。 请确保更新命名空间、classname 和`Register`属性：
+5. 在 " C# **监视应用扩展**" 项目中创建另一个新文件**MyInterfaceController.designer.cs** ，并添加以下代码。 请确保更新命名空间、classname 和 `Register` 属性：
 
     ```csharp
     using Foundation;
@@ -158,34 +158,34 @@ with an alpha channel. Icons should not have an alpha channel.
     > [!TIP]
     > 您可以选择将此文件作为第一个文件的子节点，方法是将其拖到 Visual Studio for Mac C# Solution Pad 的其他文件中。 它将如下所示：
 
-    ![](troubleshooting-images/add-5.png "解决方案板")
+    ![](troubleshooting-images/add-5.png "The Solution pad")
 
-6. 选择 "**生成" > "生成所有**"，以便 Xcode 同步将识别使用的`Register`新类（通过属性）。
+6. 选择 "**生成" > "生成所有**"，以便 Xcode 同步将识别使用的新类（通过 `Register` 属性）。
 
 7. 右键单击 "监视应用情节提要" 文件并选择 "**打开方式" > Xcode "Interface Builder**，重新打开情节提要：
 
-    ![](troubleshooting-images/add-6.png "在 Interface Builder 中打开情节提要")
+    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController`。
+8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController`
     如果一切都正常工作，则它应自动显示在**类：** 下拉列表中，你可以从该下拉列表中选择它。
 
-    ![](troubleshooting-images/add-4.png "设置自定义类")
+    ![](troubleshooting-images/add-4.png "Setting a custom class")
 
 9. 选择 Xcode 中的 "**助手编辑器**" 视图（具有两个重叠圆圈的图标），以便您可以并排查看情节提要和代码：
 
-    ![](troubleshooting-images/add-7.png "助手编辑器工具栏项")
+    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
 
     当焦点位于 "代码" 窗格中时，请确保查看的是 **.h**头文件，如果不在痕迹导航栏中右键单击并选择正确的文件（**MyInterfaceController**）
 
-    ![](troubleshooting-images/add-8.png "选择 MyInterfaceController")
+    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
 
 10. 你现在可以通过**Ctrl +** 从情节提要拖到 **.h**头文件来创建输出口和操作。
 
-    ![](troubleshooting-images/add-9.png "创建输出口和操作")
+    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
 
     当你放开拖动时，系统将提示你选择是创建输出口还是使用操作，并选择其名称：
 
-    ![](troubleshooting-images/add-a.png "\"输出口\" 和 \"操作\" 对话框")
+    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
 
 11. 保存情节提要更改并关闭 Xcode 后，将返回 Visual Studio for Mac。 它将检测头文件更改，并自动将代码添加到**designer.cs**文件中：
 
@@ -224,7 +224,7 @@ with an alpha channel. Icons should not have an alpha channel.
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-你需要更新以反映你的应用程序`launchsimwatch`的参数：
+需要更新以反映应用 `launchsimwatch`的参数：
 
 ### <a name="--launchsimwatch"></a>--launchsimwatch
 
@@ -233,7 +233,7 @@ with an alpha channel. Icons should not have an alpha channel.
 > [!NOTE]
 > 你需要提供的路径适用于*iPhone 应用程序*应用程序文件，即，将部署到 iOS 模拟器并包含监视扩展和监视应用的路径。
 
-示例：
+示例:
 
 ```bash
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
@@ -241,7 +241,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 ## <a name="notification-mode"></a>通知模式
 
-若要测试应用的[**通知**模式](~/ios/watchos/platform/notifications.md) `watchlaunchmode` ，请将参数设置`Notification`为，并提供包含测试通知负载的 JSON 文件的路径。
+若要测试应用的[**通知**模式](~/ios/watchos/platform/notifications.md)，请将 `watchlaunchmode` 参数设置为 `Notification`，并提供包含测试通知负载的 JSON 文件的路径。
 
 负载参数对于通知模式是*必需*的。
 
@@ -257,9 +257,9 @@ with an alpha channel. Icons should not have an alpha channel.
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必需。 指定 Xcode （6.2 或更高版本）的路径。
+必须的。 指定 Xcode （6.2 或更高版本）的路径。
 
-示例：
+示例:
 
 ```bash
  --sdkroot /Applications/Xcode.app/Contents/Developer/
@@ -277,7 +277,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 **UDID**
 
-示例：
+示例:
 
 ```bash
 --device=:v2:udid=AAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
@@ -285,7 +285,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 **运行时和设备类型**
 
-示例：
+示例:
 
 ```bash
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6

@@ -4,15 +4,15 @@ description: 对于 iOS 8，Apple 已为激发和感到满意开发人员提供�
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752013"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031809"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 简介
 
@@ -48,9 +48,9 @@ iOS 8 已帮助将 Apple 牢固地植物，而 iOS 设备则通过使用 HomeKit
 
 下图显示了 HomeKit 附件配置的基本层次结构：
 
-![](introduction-to-ios8-images/image1.png "此图显示了 HomeKit 附件配置的基本层次结构")
+![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-若要开始 HomeKit，开发人员需要确保其预配配置文件已选择 HomeKit 服务。 Apple 还为开发人员提供了用于 Xcode 的 HomeKit 模拟器外接程序。 可在[Apple 开发人员中心](https://developer.apple.com/downloads/index.action)的下`Hardware IO Tools for Xcode`找到此项。 
+若要开始 HomeKit，开发人员需要确保其预配配置文件已选择 HomeKit 服务。 Apple 还为开发人员提供了用于 Xcode 的 HomeKit 模拟器外接程序。 可在[Apple 开发人员中心](https://developer.apple.com/downloads/index.action)的 `Hardware IO Tools for Xcode`下找到此项。 
 
 有关详细信息，请参阅我们的[HomeKit](~/ios/platform/homekit.md)指南。
 
@@ -68,9 +68,9 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 
 创建应用扩展的第一步是定义正确的扩展点，这对于确保正确 Api 的行为和可用性非常重要。 若要在 Visual Studio for Mac 中创建应用扩展，请将新项目添加到解决方案中，将其添加到现有应用程序。
 
-在 "**新建项目**" 对话框中**C#**  > ，导航到 " **iOS** > **Unified API** > **扩展**"，如下面的屏幕截图中所示：
+在 "**新建项目**" 对话框中**C#** ，导航到 > **iOS** > **Unified API** > **扩展**，如以下屏幕截图中所示：
 
-![](introduction-to-ios8-images/image2.png "创建新扩展")
+![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
 "新建项目" 对话框提供了7个用于创建应用扩展的新项目模板，如下所述。 请注意，许多扩展与 iOS 中的其他新 Api 有关，如文档选取器：
 
@@ -91,7 +91,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 
 首先，它通过使用新的密钥链访问控制列表（Acl）来帮助现有的密钥链服务。 用户指纹的身份验证成功后，可以使用密钥链数据解除锁定。
 
-其次，Localauthentication.framework 提供了两种方法来对应用程序进行本地身份验证。 开发人员应`CanEvaluatePolicy`使用来确定设备是否能够接受 Touch ID，然后再`EvaluatePolicy`开始身份验证操作。
+其次，Localauthentication.framework 提供了两种方法来对应用程序进行本地身份验证。 开发人员应使用 `CanEvaluatePolicy` 来确定设备是否能够接受 Touch ID，然后 `EvaluatePolicy` 启动身份验证操作。
 
 有关 Touch ID 并了解如何将其集成到 Xamarin iOS 应用程序的详细信息，请参阅[TouchID 指南简介](~/ios/platform/touchid.md)。
 
@@ -112,7 +112,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 ## <a name="unified-storyboards"></a>统一的情节提要
 iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用的机制。 使用单个情节提要来涵盖所有不同的硬件屏幕大小，可以在真正的 "设计一次，使用多个" 样式创建快速、响应性视图。
 
-在 iOS8 之前，开发人员`UIInterfaceOrientation`用来区分纵向模式和横向模式， `UIInterfaceIdiom`并区分 iOS 设备。 在 iOS8 中，不再需要为 iPhone 和 iPad 设备创建单独的情节提要，方向和设备是使用*大小类*确定的。
+在 iOS8 之前，开发人员使用 `UIInterfaceOrientation` 来区分纵向模式和横向模式，并 `UIInterfaceIdiom` 来区分 iOS 设备。 在 iOS8 中，不再需要为 iPhone 和 iPad 设备创建单独的情节提要，方向和设备是使用*大小类*确定的。
 
 每个设备都是由大小类在垂直轴和水平轴中定义的，在 iOS 8 中有两种类型的大小类：
 
@@ -121,7 +121,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 如果将两个概念一起使用，则结果为 2 x 2 网格，该网格定义可在不同方向上使用的不同可能大小，如下图所示：
 
-![](introduction-to-ios8-images/image3.png "表示 2 x 2 网格的关系图，该网格定义可在不同方向使用的不同可能大小")
+![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
 
 有关大小类的详细信息，请参阅[统一情节提要简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 

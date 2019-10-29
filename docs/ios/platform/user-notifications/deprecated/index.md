@@ -4,15 +4,15 @@ description: 本文档介绍了已弃用的 iOS 通知技术，以支持 iOS 10 
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: 899d3e33e4722194a53b75eace1f5b03ee07eb40
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de9a46587a5d1de6f12dd54122b27e53694cdeb8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282371"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031394"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin 中不推荐使用的通知技术
 
@@ -21,7 +21,7 @@ ms.locfileid: "70282371"
 > [!IMPORTANT]
 > 本部分中的信息适用于 iOS 9 及更早版本。 对于 iOS 10 及更高版本，请参阅[用户通知框架指南](~/ios/platform/user-notifications/index.md)，以支持 ios 设备上的本地和远程通知。
 
-## <a name="sections"></a>部分
+## <a name="sections"></a>各节内容
 
 <a name="Local Notifications In iOS" />
 

@@ -1,18 +1,18 @@
 ---
 title: macOS 平台功能
-description: 本文档链接到描述重要 macOS 和 Xamarin 平台功能的指南：OpenTK、演示图板、扩展等。
+description: 本文档链接到描述重要 macOS 和 Xamarin 的功能的指南： OpenTK、情节提要、扩展等。
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 9587548becf840a06c0cbf198c0afe716a7156a2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 174ab8493203268cefb6eb638c77c6c96c38c0c0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284455"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029884"
 ---
 # <a name="macos-platform-features"></a>macOS 平台功能
 

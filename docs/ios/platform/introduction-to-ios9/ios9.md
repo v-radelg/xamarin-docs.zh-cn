@@ -4,15 +4,15 @@ description: 即使您不打算直接将 iOS 9 功能添加到您的应用程序
 ms.prod: xamarin
 ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 246653cee7917141ddd0f911a7c4d1b21f945360
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cbea7686c2ec96492f9531e1ff30d1686db1a4c0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751975"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031763"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 兼容性
 
@@ -23,7 +23,7 @@ _即使您不打算直接将 iOS 9 功能添加到您的应用程序，您也应
 
 当第一个 iOS 9 测试版显示时，我们发现了两个版本的 Xamarin，它们表现为较旧的应用无法在 iOS 9 上启动。
 
-这两个问题（如[我们的论坛中的详细信息](http://forums.xamarin.com/discussion/comment/131529/#Comment_131529)）是：
+这两个问题（如[我们的论坛中的详细信息](https://forums.xamarin.com/discussion/comment/131529/#Comment_131529)）是：
 
 - IOS 8 或更早版本的应用生成无法在32位设备（包括用[Unified API](~/cross-platform/macios/unified/index.md)构建的应用）上启动。
 - 未指定具有完整路径的 P/Invoke 失败。
@@ -46,7 +46,7 @@ _即使你不打算立即通过 iOS 9 功能更新应用，我们也建议你重
 **不**需要等待使用的任何组件或 nuget 的新版本来解决上述两个问题。
 只需使用最新稳定版本的 Xamarin 重新构建你的应用程序，即可解决这些问题。
 
-同样，组件供应商和 Nuget 作者**无**需提交新的生成即可解决上述两个问题。 但是，如果任何组件或 Nuget 使用`UICollectionView`或加载**Xib**文件中的视图，则*可能*需要更新以解决下面所述的 iOS 9 兼容性问题。
+同样，组件供应商和 Nuget 作者**无**需提交新的生成即可解决上述两个问题。 但是，如果任何组件或 Nuget 使用**Xib**文件中的 `UICollectionView` 或加载视图，则*可能*需要更新以解决下面所述的 iOS 9 兼容性问题。
 
 <a name="compat" />
 
@@ -56,9 +56,9 @@ _即使你不打算立即通过 iOS 9 功能更新应用，我们也建议你重
 
 ### <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell ContentView 在构造函数中为 null
 
-**在于**在 ios 9 中`initWithFrame:` ，构造函数现在是必需的，因为 iOS 9 中的行为更改为[UICollectionView 文档状态](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果为指定标识符注册了一个类，并且必须创建新的单元格，则该单元格现在通过调用其`initWithFrame:`方法进行初始化。
+**原因：** 在 iOS 9 中，UICollectionView 构造函数现在是必需 `initWithFrame:` 的，因为 iOS 9 中的行为更改为[文档状态](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)。 如果为指定标识符注册了一个类，并且必须创建新的单元格，则该单元格现在通过调用其 `initWithFrame:` 方法进行初始化。
 
-**能够**添加如下`initWithFrame:`所示的构造函数：
+**修复：** 添加 `initWithFrame:` 构造函数，如下所示：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -68,13 +68,13 @@ public YourCellClassName (CGRect frame) : base (frame)
 }
 ```
 
-相关示例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
+相关示例： [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>从 Xib/笔尖加载视图时，UIView 无法使用编码员初始化
 
-**在于**`initWithCoder:`构造函数是从 Interface Builder Xib 文件加载视图时调用的构造函数。 如果此构造函数不是导出的，则非托管代码不能调用我们的托管版本。 之前（例如 在 iOS 8 中） `IntPtr`已调用构造函数来初始化视图。
+**原因：** `initWithCoder:` 构造函数是从 Interface Builder Xib 文件加载视图时调用的构造函数。 如果此构造函数不是导出的，则非托管代码不能调用我们的托管版本。 之前（例如 在 iOS 8 中）调用了 `IntPtr` 构造函数来初始化视图。
 
-**能够**创建和导出此`initWithCoder:`构造函数，如下所示：
+**修复：** 创建和导出 `initWithCoder:` 构造函数，如下所示：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -84,7 +84,7 @@ public YourClassName (NSCoder coder) : base (coder)
 }
 ```
 
-相关示例：[网上](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
+相关示例：[聊天](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 消息：没有名称为的缓存映像 。
 
@@ -95,9 +95,9 @@ Dyld Error Message:
 Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore)
 ```
 
-**在于**这是 Apple 的本机链接器中的一个 bug，在这种情况下，会发生这种情况：公共框架公开（JavaScriptCore 是在 iOS 7 中公开的，在这种情况下，它是一个专用框架），该应用的部署目标是在该框架专用时用于 iOS 版本。 在这种情况下，Apple 的链接器将链接到框架的私有版本，而不是公共版本。
+**原因：** 这是 Apple 的本机链接器中的一个 bug，在这种情况下，会发生这种情况：公共框架公开（JavaScriptCore 是在 iOS 7 中公开的，在这种情况下，它是一个专用框架），该应用的部署目标是在该框架专用时用于 iOS 版本。 在这种情况下，Apple 的链接器将链接到框架的私有版本，而不是公共版本。
 
-**能够**这适用于 iOS 9，但有一种简单的解决方法，你可以在此期间自行应用：仅面向更高版本的项目中的 iOS 版本（在这种情况下，你可以尝试使用 iOS 7）。 其他框架可能会出现类似的问题，例如，WebKit 框架已在 iOS 8 中公开（因此面向 iOS 7 会导致此错误; 应以 iOS 8 为目标，以在应用中使用 WebKit）。
+**修复：** 这适用于 iOS 9，但有一种简单的解决方法，你可以在此期间自行应用：仅面向更高版本的项目中的 iOS 版本（在这种情况下，你可以尝试使用 iOS 7）。 其他框架可能会出现类似的问题，例如，WebKit 框架已在 iOS 8 中公开（因此面向 iOS 7 会导致此错误; 应以 iOS 8 为目标，以在应用中使用 WebKit）。
 
 ## <a name="related-links"></a>相关链接
 

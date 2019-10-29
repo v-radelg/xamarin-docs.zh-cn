@@ -4,15 +4,15 @@ description: 本文档介绍如何将应用发布到 Apple TV App Store。 本�
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f49fa08e5d9b2ad76fc069b415d6ea5b899b2bf7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769246"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030791"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>发布到 Apple TV App Store
 
@@ -80,7 +80,7 @@ Apple 提供一系列特殊应用程序服务（也称为权利），可以在�
 3. 滚动到屏幕底部，选择 tvOS 应用程序所需的任何**应用服务**。
 4. 单击“继续”按钮，并按照屏幕上的说明创建新的应用程序 ID。
 
-除了在定义应用 ID 时选择并配置所需的应用程序服务之外，还需要通过编辑`Info.plist`和`Entitlements.plist`文件来配置 tvOS 项目中的应用 ID 和权利。
+除了在定义应用 ID 时选择并配置所需的应用程序服务之外，还需要通过编辑 `Info.plist` 和 `Entitlements.plist` 文件在 tvOS 项目中配置应用程序 ID 和权利。
 
 Visual Studio for Mac 中执行以下操作：
 
@@ -97,7 +97,7 @@ Visual Studio for Mac 中执行以下操作：
 
 ### <a name="setting-the-apps-icons-launch-image-and-top-shelf-image"></a>设置应用图标、启动图像和顶架图像
 
-要使 Apple 接受 tvOS 应用以将其包含在 Apple TV 应用商店中，它需要对其运行的所有 Apple TV 设备使用正确的图标、启动和顶架图像。 需要将编译`Assets.car`的所需的图像资产添加到文件中，并将其包含在 tvOS 应用的捆绑包中，然后将其上传到 iTunes Connect。
+要使 Apple 接受 tvOS 应用以将其包含在 Apple TV 应用商店中，它需要对其运行的所有 Apple TV 设备使用正确的图标、启动和顶架图像。 需要添加所需的图像资产，这些资源将编译到 `Assets.car` 文件中，并在上传到 iTunes Connect 之前包含在 tvOS 应用的包中。
 
 有关详细说明，请参阅[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
 
@@ -110,7 +110,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 使用 Apple 的基于 Web 的 iOS 预配门户的预配包含以下步骤：
 
 1. 选择“预配” > “分发”。
-2. 单击 **+** 按钮，然后选择你想要为创建的分发配置文件的类型**Apple TV App Store**。
+2. 单击 " **+** " 按钮，然后选择要创建为**Apple TV 应用商店**的分发配置文件的类型。
 3. 从要为其创建分发配置文件的下拉列表中，选择“应用程序 ID”。
 4. 选择对应用程序进行签名所需的证书。
 5. 为新的**分发配置文件**输入**名称**，并生成配置文件。
@@ -128,10 +128,10 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 请执行以下操作：
 
 1. 右键单击 "**解决方案资源管理器**" 和 "选择"**选项**中的**项目名称**以将其打开以进行编辑。
-2. 如果要以 tvOS 的特定版本为目标，请在 "**生成** > **iOS SDK 版本**" 下选择该版本。 对于 tvOS 支持的预览版本，请将此值设置为 "**默认**值"。
+2. 如果以特定版本的 tvOS 为目标，请在 " **TvOS Build** > **iOS SDK 版本**" 下选择该版本。 对于 tvOS 支持的预览版本，请将此值设置为 "**默认**值"。
 3. 链接可以减少未使用的方法、属性、类等，从而减少应用程序的可分发的总大小，并且在大多数情况下，只应将其保留为默认值**Link FRAMEWORK SDK**。 在某些情况下，例如使用某些特定第三方库时，可能会强制将此值设置为“不链接”，防止删除需要的元素。
 4. 若要交付 tvOS 应用，需要使用 LLVM 优化编译器。 确保在 "**发布**" 配置下选中 "**使用 LLVM 优化编译器**" 框。
-5. Apple 还要求 tvOS 应用使用 bitcode。 再次在**发布**配置下，将`--bitcode=asmonly`添加到 "**其他 mtouch 参数**" 框中。
+5. Apple 还要求 tvOS 应用使用 bitcode。 再次在**发布**配置下，将 `--bitcode=asmonly` 添加到 "**其他 mtouch 参数**" 框中。
 6. 应检查 "**为 IOS 优化 PNG 图像文件**" 复选框，因为这将有助于进一步降低应用的可交付结果大小。
 7. *不*应启用调试，因为这将为生成增加不必要的大小。
 
@@ -145,13 +145,13 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 1. 在 Visual Studio for Mac 中选择“发布 | 设备”配置：
 
-    ![](app-store-publishing-images/buildxs01new.png "选择 \"发布\" 配置")
+    ![](app-store-publishing-images/buildxs01new.png "Select the Release configuration")
 2. 在“生成”菜单中，选择“存档以供发布”：
 
-    [![](app-store-publishing-images/buildxs02new.png "选择“存档以发布”")](app-store-publishing-images/buildxs02new.png#lightbox)
+    [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. 存档创建完成后，将显示“存档”视图：
 
-    [![](app-store-publishing-images/buildxs03new.png "存档视图")](app-store-publishing-images/buildxs03new.png#lightbox)
+    [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
 
 ### <a name="sign-and-distribute-your-app"></a>签名和分发应用
 
@@ -163,19 +163,19 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 1. 选择 "**签名并分发 ...** "，如下所示：
 
-    [![](app-store-publishing-images/buildxs04new.png "，选择 \"theSign\"，然后选择 \"分发 ...\"")](app-store-publishing-images/buildxs04new.png#lightbox)
+    [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. 这将打开发布向导。 选择“App Store”分发频道以创建包，再打开应用加载程序：
 
-    [![](app-store-publishing-images/distribute01.png "选择应用商店分发通道")](app-store-publishing-images/distribute01.png#lightbox)
+    [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
 3. 在 "预配配置文件" 屏幕上，选择签名标识和对应的配置文件，或者用其他标识重新签名：
 
-    [![](app-store-publishing-images/distribute02.png "选择签名标识和对应的配置文件")](app-store-publishing-images/distribute02.png#lightbox)
+    [![](app-store-publishing-images/distribute02.png "Select the signing identity and corresponding provisioning profile")](app-store-publishing-images/distribute02.png#lightbox)
 4. 验证包的详细信息，再单击“发布”以保存 `.ipa` 包：
 
-    [![](app-store-publishing-images/distribute03.png "验证包的详细信息")](app-store-publishing-images/distribute03.png#lightbox)
+    [![](app-store-publishing-images/distribute03.png "Verify the details of the package")](app-store-publishing-images/distribute03.png#lightbox)
 5. 保存 `.ipa` 后，应用即可通过应用加载程序上传到 iTunes Connect：
 
-    [![](app-store-publishing-images/distribute04.png "已通过应用程序加载程序上传到 iTunes Connect")](app-store-publishing-images/distribute04.png#lightbox)
+    [![](app-store-publishing-images/distribute04.png "Uploaded to iTunes Connect via the Application Loader")](app-store-publishing-images/distribute04.png#lightbox)
 
 创建分发生成并将其存档后，现可将应用程序提交到 iTunes Connect。
 
@@ -185,19 +185,19 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 分发生成完成后，即可将 iOS 应用程序提交到 Apple 以供审核，然后在 App Store 上发布。
 
-保存后，Visual Studio for Mac 中的存档工作流将自动打开应用程序加载程序`.ipa`：
+保存 `.ipa`后，Visual Studio for Mac 中的存档工作流将自动打开应用程序加载程序：
 
 1. 选择“提交应用”，单击“选择”按钮：
 
-    [![](app-store-publishing-images/publishvs01.png "选择“提交应用”")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![](app-store-publishing-images/publishvs01.png "Select Deliver Your App")](app-store-publishing-images/publishvs01.png#lightbox)
 
 2. 选择前面创建的 zip 或 IPA 文件，单击“确定”按钮。
 3. 应用加载程序将验证文件：
 
-    [![](app-store-publishing-images/publishvs02.png "应用程序加载程序验证屏幕")](app-store-publishing-images/publishvs02.png#lightbox)
+    [![](app-store-publishing-images/publishvs02.png "The Application Loader validation screen")](app-store-publishing-images/publishvs02.png#lightbox)
 4. 单击“下一步”按钮，将按照 App Store 的要求验证应用：
 
-    [![](app-store-publishing-images/publishvs03.png "要针对应用商店验证的应用程序")](app-store-publishing-images/publishvs03.png#lightbox)
+    [![](app-store-publishing-images/publishvs03.png "The application being validated against the App Store")](app-store-publishing-images/publishvs03.png#lightbox)
 5. 单击“发送”按钮，将应用程序发送到 Apple 以供审核。
 6. 文件成功上传后，应用程序加载程序将通知你。
 
@@ -207,7 +207,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 如果重新登录到 iTunes Connect，并从可用应用列表中选择应用，iTunes Connect 中的状态现在应显示为 "正在**等待审核**" （它可能会在处理过程中暂时读取 "**上载接收**"）：
 
-[![](app-store-publishing-images/image21.png "ITunes Connect 中的状态显示正在等待审阅")](app-store-publishing-images/image21.png#lightbox)
+[![](app-store-publishing-images/image21.png "The status in iTunes Connect showing Waiting for Review")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 

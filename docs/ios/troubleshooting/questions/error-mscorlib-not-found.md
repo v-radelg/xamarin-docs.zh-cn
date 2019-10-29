@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 1027E16C-2C14-4BB5-AAAB-342F3E28E22E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: a1c6c5357c62d0421376930ea04c4755fae59d04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1ca6aa8c08d51b91f6a31407328f8949062bbede
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769343"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031166"
 ---
 # <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>运行时错误：找不到或无法加载程序集 mscorlib.dll
 
@@ -22,4 +22,4 @@ ms.locfileid: "70769343"
 <Warning>: Service exited with abnormal code: 1
 ```
 
-如果在创建 IPA 的 `.monotouch-32`过程中`.monotouch-64`缺少`.xcarchive`隐藏的和文件夹，则会出现此问题，并触发运行时错误。
+如果在创建签名/IPA 的 `.xcarchive` 中缺少*隐藏*的 `.monotouch-32` 和 `.monotouch-64` 文件夹，则会出现此问题，并触发运行时错误。

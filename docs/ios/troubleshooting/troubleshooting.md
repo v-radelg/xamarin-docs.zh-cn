@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769698"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030884"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示 
 
@@ -21,9 +21,9 @@ ms.locfileid: "70769698"
 
 发生此错误的原因是与 Visual Studio 不兼容。
 
-- **Visual Studio 2017 Update 1**（版本15.1 或更低版本）仅与**ValueTuple NuGet 4.3.0** （或更早版本）兼容。
+- **Visual Studio 2017 Update 1** （版本15.1 或更低版本）仅与**ValueTuple NuGet 4.3.0** （或更早版本）兼容。
 
-- **Visual Studio 2017 Update 2**（版本15.2 或更高版本）仅与**ValueTuple NuGet 4.3.1**或更高版本兼容。
+- **Visual Studio 2017 Update 2** （版本15.2 或更高版本）仅与**ValueTuple NuGet 4.3.1**或更高版本兼容。
 
 请选择与你的 Visual Studio 2017 安装相对应的正确 ValueTuple NuGet。
 
@@ -45,7 +45,7 @@ ms.locfileid: "70769698"
 
 此成员可能已被链接器删除，因此在运行时不存在于程序集中。  有多种解决方案：
 
-- 向成员添加属性。 [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)  这会阻止链接器删除它。
+- 向成员添加[`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)特性。  这会阻止链接器删除它。
 - 调用[**mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)时，请使用 **-nolink**或 **-linksdkonly**选项：
   - **-nolink**禁用所有链接。
   - **-linksdkonly**将仅链接 xamarin 提供的程序集（如**xamarin**），同时保留用户创建的程序集中的所有类型（即应用项目）。
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-对于添加到`NAME_OF_YOUR_XIB_FILE.designer.xib.cs`文件中 Visual Studio for Mac 的任何 XIB 文件，将自动 Visual Studio for Mac 生成上述定义。
+对于添加到 `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` 文件中 Visual Studio for Mac 的任何 XIB 文件，将自动 Visual Studio for Mac 生成上述定义。
 
 此外，包含上述代码的类型必须是[NSObject](xref:Foundation.NSObject)的子类。  如果包含类型在命名空间中，则它还应具有一个[[Register]](xref:Foundation.RegisterAttribute)特性，该特性提供不带命名空间的类型名称（因为 Interface Builder 不支持类型中的命名空间）：
 
@@ -110,13 +110,13 @@ public partial class MyImageView : UIView {
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>类型 {Foo} 不包含的定义，并且`GetNativeField`找不到类型`GetNativeField`为 {Foo} 的扩展方法
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>类型 {Foo} 不包含 `GetNativeField` 的定义，并且找不到类型为 {Foo} 的扩展方法 `GetNativeField`
 
 如果在设计器生成的文件（*. xib.designer.cs）中出现此错误，则表示以下两种情况之一：
 
  **1）缺少分部类或基类**
 
-设计器生成的分部类在用户代码中必须有对应的分部类`NSObject`，这些类通常`UIViewController`是从的某些子类继承而来。 确保为该类型提供了该错误的类。
+设计器生成的分部类在用户代码中必须具有相应的分部类，这些类从 `NSObject`的某些子类继承，通常 `UIViewController`。 确保为该类型提供了该错误的类。
 
  **2）更改了默认命名空间**
 
@@ -124,7 +124,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 命名空间设置可在 "项目选项" 对话框中找到。 默认命名空间位于 "**常规-> 主设置**" 部分中。 如果为空，则将项目名称用作默认值。 可以在**源代码-> .Net 命名策略**"部分中找到更高级的命名空间设置。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>针对操作的警告：从未使用私有方法 "Foo"。 (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>操作警告：从未使用私有方法 "Foo"。 CS0169
 
 接口生成器文件的操作在运行时通过反射连接到小组件，因此应该出现此警告。
 
@@ -142,9 +142,9 @@ public Bar (IntPtr handle) : base (handle) { }
 1. 使用 Mac OS X Leopard （10.5）
 1. 在模拟器中运行应用。
 
-问题在于单声道是指 OS X `libsqlite3.dylib`，而不是 iPhoneSimulator 的`libsqlite3.dylib`文件。 您的应用程序*将*在设备上运行，而不是模拟器。
+问题在于单声道是指 OS X `libsqlite3.dylib`，而不是 iPhoneSimulator 的 `libsqlite3.dylib` 文件。 您的应用程序*将*在设备上运行，而不是模拟器。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>部署到设备失败，出现系统异常：AMDeviceInstallApplication 返回了3892346901
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>部署到设备失败，出现系统错误。异常： AMDeviceInstallApplication 返回3892346901
 
 此错误表示证书/捆绑 id 的代码签名配置与设备上安装的预配配置文件不匹配。  确认在项目选项中选择了适当的证书-> iPhone 捆绑签名，以及在项目选项-> iPhone 应用程序中指定的正确的捆绑 id
 
@@ -152,7 +152,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 确保使用最新版本的 Visual Studio for Mac 和 Xamarin
 
-如果问题仍然存在，请提交[bug](http://monodevelop.com/Developers#Reporting_Bugs)，附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{timestamp} .log**，并附加**组件-{TIMESTAMP} .log**日志文件。
+如果问题仍然存在，请提交[bug](https://monodevelop.com/Developers#Reporting_Bugs)，附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **AndroidTools-{timestamp} .log**，并附加**组件-{TIMESTAMP} .log**日志文件。
 
 如果所有其他操作都失败，可以尝试删除代码完成缓存，以便重新生成它：
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 这意味着你要将使用 thumb 代码编译的静态库链接到你的项目中。 从 iPhone SDK 版本3.1 （在撰写本文时，或更高版本），Apple 在使用 Thumb 代码（静态库）链接非 Thumb 代码（Xamarin）时在其链接器中引入了 bug。你将需要与静态库的非 Thumb 版本链接，以减轻此问题。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException:尝试 JIT 编译方法（托管到托管的包装） Foo []： get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：尝试 JIT 编译方法（托管到托管的包装） Foo []： ICollection'1. get_Count （）
 
 [] 后缀指示你或类库正在通过泛型集合（如 IEnumerable < >、ICollection < > 或 IList < > 调用数组中的方法。 作为一种解决方法，你可以通过自行调用方法，并确保在触发异常的调用之前执行此代码，从而显式强制 AOT 编译器包含此类方法。 在这种情况下，可以编写：
 
@@ -280,9 +280,9 @@ IMT Thunk trampolines 的默认数目为128。 请尝试增加此数量，直到
 
 Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号的分发证书。 请更新到 Visual Studio for Mac 2.2.1。
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>返回 "AFCFileRefWrite" 错误：1 "上传
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>上传期间出现错误 "AFCFileRefWrite 返回： 1"
 
-将应用上传到设备时，可能会收到错误 "AFCFileRefWrite 返回：1". 如果你有一个长度为零的文件，则可能会发生这种情况。
+将应用上传到设备时，可能会收到错误 "AFCFileRefWrite 返回： 1"。 如果你有一个长度为零的文件，则可能会发生这种情况。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>错误 "mtouch 失败，无输出"
 
@@ -309,13 +309,13 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 
 （由 Ed Anuff 提供）
 
-请执行以下步骤：
+请执行这些步骤：
 
 - 将 iPhone Build 中的 SDK 版本更改为3.2 或 iTunes connect 将在上传时拒绝它，因为它看到使用小于3.2 的 SDK 版本生成的 iPad 兼容的应用
 - 为项目创建自定义 info.plist，并在其中将 MinimumOSVersion 显式设置为3.0。   这将覆盖 Xamarin 设置的 MinimumOSVersion 3.2 值。   如果未执行此操作，应用将无法在 iPhone 上运行。
 - 重新生成、压缩并上传到 iTunes connect。
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未经处理的异常：“System.Exception:未能找到选择器 someSelector：在 {type} 上
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未处理的异常： someSelector：在 {type} 上找不到选择器
 
 此异常由以下三种情况之一引起：
 
@@ -368,7 +368,7 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 
 这意味着你已安装 XCode 4。   在 XCode 4 中，删除了工具 ibtool 后，就不能再使用独立工具编辑 XIB 文件。
 
-如果要使用 Interface Builder，请从 Apple 网站上安装[XCode 系列 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
+如果要使用 Interface Builder，请从 Apple 网站上安装[XCode 系列 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>"无法为 mime 类型创建显示绑定： application/vnd.apple.mpegurl. apple-interface-builder"
 
@@ -394,13 +394,13 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 当应用程序名称包含 "." 时，可能会发生这种情况。的名称。
 这在 CFBundleExecutable 中被禁止作为可执行文件名称，即使它可以在许多其他情况（如设备）中运行。
 
- \* "此值不应包含名称上的任何扩展名"。-[https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* "此值不应包含名称上的任何扩展名"。- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>错误：双击 xib 文件时，不支持 "自定义属性类型 0x43"
 
 这是由于未正确设置环境变量时尝试打开 xib 文件引起的。 Visual Studio for Mac/Xamarin 的正常使用情况下不会发生这种情况，并且从/Applications 重新打开 Visual Studio for Mac 应能解决该问题。
 
-尝试更新软件时出现此错误消息，请发送电子邮件至 *support@xamarin.com*
+尝试更新软件时出现此错误消息，请发送电子邮件 *support@xamarin.com*
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>应用程序在模拟器上运行，但在设备上失败
 
@@ -410,6 +410,6 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：没有可用于编码437的数据
 
-在 Xamarin iOS 应用中包括第三方库时，可能会出现 "NotSupportedException：尝试编译和运行应用程序时，没有可用于编码437的数据。 例如，库（如`Ionic.Zip.ZipFile`）可能会在操作过程中引发此异常。
+当在你的 Xamarin iOS 应用中包括第三方库时，尝试编译和运行该应用时，你可能会收到 "NotSupportedException：无数据可用于编码 437" 形式的错误。 例如，在操作过程中，库（如 `Ionic.Zip.ZipFile`）可能会引发此异常。
 
-若要解决此情况，可以打开 Xamarin 项目的选项，转到**iOS 生成** > **国际化**并检查**西**国际化。
+为此，可以打开 Xamarin 项目的选项，转到 " **Ios 生成** > **国际化**" 并查看 "**西部**" 国际化。

@@ -4,15 +4,15 @@ description: 本文介绍如何使用粘贴板在 Xamarin 应用程序中提供�
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 446006b89b82a1f5070a45d7e296e0563d74dbe4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769936"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032627"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin 中复制和粘贴
 
@@ -643,7 +643,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ### <a name="what-is-a-pasteboard"></a>什么是剪贴板？
 
-@No__t_0 类提供一种标准化机制，用于在应用程序之间或在给定应用程序之间交换信息。 粘贴板的主要功能用于处理复制和粘贴操作：
+`NSPasteboard` 类提供一种标准化机制，用于在应用程序之间或在给定应用程序之间交换信息。 粘贴板的主要功能用于处理复制和粘贴操作：
 
 1. 当用户在应用中选择某一项并使用**剪切**或**复制**菜单项时，会将所选项的一个或多个表示形式放置在粘贴板上。
 2. 当用户使用 "**粘贴**" 菜单项（位于同一个应用程序或另一个应用程序中）时，它可以处理的数据的版本将从粘贴板复制并添加到应用中。
@@ -1133,7 +1133,7 @@ if (ok) {
 
 有时，你可能需要将自定义项写入到不保证自定义类创建的外接程序，或者你想要根据需要提供公共格式的数据。 对于这些情况，可以使用 `NSPasteboardItem`。
 
-@No__t_0 提供对写入到粘贴到剪贴板的数据的精细控制，并设计为进行临时访问，则在将其写入粘贴到剪贴板后，应将其释放。
+`NSPasteboardItem` 提供对写入到粘贴到剪贴板的数据的精细控制，并设计为进行临时访问，则在将其写入粘贴到剪贴板后，应将其释放。
 
 #### <a name="writing-data"></a>写入数据
 

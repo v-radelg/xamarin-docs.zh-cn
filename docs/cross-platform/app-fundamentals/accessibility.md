@@ -3,15 +3,15 @@ title: Xamarin 应用中的辅助功能
 description: 本文档提供了创建辅助性应用程序的各种提示。 例如，它包括有关大字体、高对比度、自描述接口等的建议。
 ms.prod: xamarin
 ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 23ef499005994c33586e1918ac3b2a9d28640d04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758137"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030279"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin 应用中的辅助功能
 
@@ -19,7 +19,7 @@ _确保你的应用程序可由最广泛的受众使用_
 
 可访问性指的是设计应用程序用户界面的概念，这些应用程序用户界面可正常运行操作系统显示和输入辅助功能，例如大类型、高对比度、放大、屏幕阅读（文本到语音转换）、视觉或 haptic 反馈提示，以及替代输入法。
 
-桌面和移动平台（如 iOS、Android 和 Windows）提供了内置的 Api，可帮助开发人员构建可访问的应用，如[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)和[Apple 的 VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)。
+桌面和移动平台（如 iOS、Android 和 Windows）提供了内置的 Api，可帮助开发人员构建可访问的应用，如[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)和[Apple 的 VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)。
 
 ## <a name="platform-specific-apis"></a>平台特定的 Api
 
@@ -34,7 +34,7 @@ _确保你的应用程序可由最广泛的受众使用_
 
 ## <a name="accessibility-checklist"></a>辅助功能清单
 
-按照这些提示操作，确保你的应用程序可供最广泛的受众访问。 有关其他信息，请查看[Android 辅助功能测试清单](https://developer.android.com/training/accessibility/testing.html)和[Apple 的辅助功能页面](http://www.apple.com/accessibility/)。
+按照这些提示操作，确保你的应用程序可供最广泛的受众访问。 有关其他信息，请查看[Android 辅助功能测试清单](https://developer.android.com/training/accessibility/testing.html)和[Apple 的辅助功能页面](https://www.apple.com/accessibility/)。
 
 ### <a name="support-large-fonts-and-high-contrast"></a>支持大字体和高对比度
 

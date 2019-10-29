@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 386C9030-8865-48DE-8AF7-42909C7055E9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: 870efc15bd7995aa193f775016bdb507554dca47
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: f83297f75e0c5ccf334c76fcf76748405fcd63dd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033477"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030983"
 ---
 # <a name="can-i-use-a-mac-vm-with-xamarin"></a>是否可以通过 Xamarin 使用 Mac VM？ 
 
@@ -25,4 +25,4 @@ ms.locfileid: "71033477"
 ### <a name="see-also"></a>请参阅
 
 - [Apple 法律](https://www.apple.com/legal/)
-- [OS X Yosemite 的软件许可协议](http://images.apple.com/legal/sla/docs/OSX10103.pdf)
+- [OS X Yosemite 的软件许可协议](https://images.apple.com/legal/sla/docs/OSX10103.pdf)

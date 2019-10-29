@@ -4,15 +4,15 @@ description: 本文介绍了 iOS 10 中引入的用户通知框架。 它讨论�
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 0ec63162a21333d0ff831ded1ab17a3d8bb0efaa
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 92d62e7ea53893089131a127bf9f2d808c6252b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769375"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031356"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin 中的增强用户通知
 
@@ -84,7 +84,7 @@ IOS 应用提供了两种类型的远程通知：
 
 ### <a name="about-the-existing-notifications-api"></a>关于现有通知 API
 
-在 ios 10 之前，ios 应用将使用`UIApplication`向系统注册通知并计划应如何触发通知（按时间或位置）。
+在 iOS 10 之前，iOS 应用将使用 `UIApplication` 向系统注册通知，并安排应如何触发通知（按时间或位置）。
 
 开发人员在使用现有通知 API 时可能会遇到几个问题：
 
@@ -94,7 +94,7 @@ IOS 应用提供了两种类型的远程通知：
 
 ### <a name="about-the-new-user-notification-framework"></a>关于新用户通知框架
 
-对于 iOS 10，Apple 引入了新的用户通知框架，这会替换上面`UIApplication`提到的现有方法。
+对于 iOS 10，Apple 引入了新的用户通知框架，这会替换上面所述的现有 `UIApplication` 方法。
 
 用户通知框架提供以下内容：
 
@@ -127,7 +127,7 @@ IOS 应用提供了两种类型的远程通知：
 
 此外，必须为本地和远程通知请求和设置这些批准级别。
 
-在应用启动后，应立即请求通知权限， `FinishedLaunching`方法是将以下代码添加到的`AppDelegate`方法，并设置所需的通知类型`UNAuthorizationOptions`（）：
+在启动应用程序后，应立即请求通知权限，方法是将以下代码添加到 `AppDelegate` 的 `FinishedLaunching` 方法，并设置所需的通知类型（`UNAuthorizationOptions`）：
 
 ```csharp
 using UserNotifications;
@@ -157,38 +157,38 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 
 IOS 10 的新手，开发人员必须在开发或生产环境中通知操作系统环境推送通知的运行情况。 如果未提供此信息，则可能会导致应用在提交到 iTune App Store 时被拒绝，其中包含类似于以下内容的通知：
 
-> 缺少推送通知权限-你的应用包括适用于 Apple 推送通知服务的 API，但`aps-environment`该应用的签名中缺少该权限。
+> 缺少推送通知权限-应用包括适用于 Apple 推送通知服务的 API，但该应用的签名中缺少 `aps-environment` 的授权。
 
 若要提供所需的权限，请执行以下操作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击 " **Solution Pad**中`Entitlements.plist`的文件以将其打开以进行编辑。
+1. 双击**Solution Pad**中的 `Entitlements.plist` 文件，将其打开进行编辑。
 2. 切换到**源**视图： 
 
-    [![](enhanced-user-notifications-images/setup01.png "源视图")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. 单击 **+** 按钮以添加新的密钥。
-4. 为`aps-environment` **属性**输入，将**类型保留** `String`为，并为**值**输入`production` `development`或： 
+    [![](enhanced-user-notifications-images/setup01.png "The Source view")](enhanced-user-notifications-images/setup01.png#lightbox)
+3. 单击 " **+** " 按钮以添加新密钥。
+4. 输入**属性**`aps-environment`，将**类型**保留为 "`String`"，并为**值**输入 `development` 或 `production`： 
 
-    [![](enhanced-user-notifications-images/setup02.png "Ap-环境属性")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. 保存对文件所做的更改。
+    [![](enhanced-user-notifications-images/setup02.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
+5. 保存对该文件所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 双击 "**解决方案资源管理器**中`Entitlements.plist`的文件以将其打开以进行编辑。
-2. 单击 **+** 按钮以添加新的密钥。
-3. 为`aps-environment` **属性**输入，将**类型保留** `String`为，并为**值**输入`production` `development`或： 
+1. 双击**解决方案资源管理器**中的 `Entitlements.plist` 文件，将其打开进行编辑。
+2. 单击 " **+** " 按钮以添加新密钥。
+3. 输入**属性**`aps-environment`，将**类型**保留为 "`String`"，并为**值**输入 `development` 或 `production`： 
 
-    [![](enhanced-user-notifications-images/setup02w.png "Ap-环境属性")](enhanced-user-notifications-images/setup02.png#lightbox)
-4. 保存对文件所做的更改。
+    [![](enhanced-user-notifications-images/setup02w.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
+4. 保存对该文件所做的更改。
 
 -----
 
 ### <a name="registering-for-remote-notifications"></a>注册远程通知
 
-如果应用将发送和接收远程通知，则仍需使用现有`UIApplication` API 进行_令牌注册_。 此注册要求设备具有实时网络连接访问 Apn，这将生成将发送到应用的必要令牌。 应用程序需要将此令牌转发给开发人员的服务器端应用程序，以注册远程通知：
+如果应用将发送和接收远程通知，则仍需使用现有 `UIApplication` API 进行_令牌注册_。 此注册要求设备具有实时网络连接访问 Apn，这将生成将发送到应用的必要令牌。 应用程序需要将此令牌转发给开发人员的服务器端应用程序，以注册远程通知：
 
-[![](enhanced-user-notifications-images/token01.png "令牌注册概述")](enhanced-user-notifications-images/token01.png#lightbox)
+[![](enhanced-user-notifications-images/token01.png "Token Registration overview")](enhanced-user-notifications-images/token01.png#lightbox)
 
 使用以下代码初始化所需注册：
 
@@ -198,7 +198,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 发送远程通知时，需要将发送到开发人员服务器端应用的令牌作为通知有效负载的一部分包括在从服务器发送到 APNs 的通知有效负载中：
 
-[![](enhanced-user-notifications-images/token02.png "作为通知负载的一部分包含的令牌")](enhanced-user-notifications-images/token02.png#lightbox)
+[![](enhanced-user-notifications-images/token02.png "The token included as part of the Notification Payload")](enhanced-user-notifications-images/token02.png#lightbox)
 
 令牌充当密钥，该密钥将通知和用于打开或响应通知的应用程序联系在一起。
 
@@ -246,7 +246,7 @@ content.Badge = 1;
 - **日历日期**-允许将本地通知计划在特定日期和时间。
 - **基于位置**-允许在 iOS 设备进入或离开特定地理位置或处于对任何蓝牙信号的邻近性时计划本地通知。
 
-当本地通知准备就绪时，应用程序需要调用`Add` `UNUserNotificationCenter`对象的方法以将其显示计划给用户。 对于远程通知，服务器端应用程序将通知负载发送到 Apn，然后将数据包发送到用户的设备。
+当本地通知准备就绪时，应用程序需要调用 `UNUserNotificationCenter` 对象的 `Add` 方法，以将其显示计划给用户。 对于远程通知，服务器端应用程序将通知负载发送到 Apn，然后将数据包发送到用户的设备。
 
 将所有部分组合在一起，示例本地通知可能如下所示：
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>处理前台应用通知
 
-IOS 10 新增，应用程序可以在前台处理通知，并触发通知。 通过提供`UNUserNotificationCenterDelegate`并`WillPresentNotification`实现方法，应用程序可以接管显示通知的责任。 例如：
+IOS 10 新增，应用程序可以在前台处理通知，并触发通知。 通过提供 `UNUserNotificationCenterDelegate` 和实现 `WillPresentNotification` 方法，应用程序可以接管显示通知的责任。 例如:
 
 ```csharp
 using System;
@@ -305,15 +305,15 @@ namespace MonkeyNotification
 }
 ```
 
-此代码只是将的内容`UNNotification`写入到应用程序输出，并请求系统显示通知的标准警报。 
+此代码只是将 `UNNotification` 的内容写出到应用程序输出，并请求系统显示通知的标准警报。 
 
-如果应用程序希望在前台显示通知，但不使用系统默认值，请将其传递`None`到完成处理程序。 示例：
+如果应用程序希望在前台显示通知，而不使用系统默认值，请将 `None` 传递到完成处理程序。 示例:
 
 ```csharp
 completionHandler (UNNotificationPresentationOptions.None);
 ```
 
-将此代码放入后，打开`AppDelegate.cs`文件进行编辑，并`FinishedLaunching`将方法更改为如下所示：
+将此代码放入后，打开 `AppDelegate.cs` 文件进行编辑，并将 `FinishedLaunching` 方法更改为如下所示：
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -330,13 +330,13 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-此代码会将上面的`UNUserNotificationCenterDelegate`自定义附加到当前`UNUserNotificationCenter`的，以便应用程序可以在活动时和前台处理通知。
+此代码将上述自定义 `UNUserNotificationCenterDelegate` 附加到当前 `UNUserNotificationCenter`，因此应用程序可以在活动时和前台处理通知。
 
 ## <a name="notification-management"></a>通知管理
 
 使用 iOS 10 的新功能，通知管理提供对挂起和传递的通知的访问，并添加删除、更新或升级这些通知的功能。
 
-通知管理的一个重要部分是在系统创建和计划通知时分配给通知的_请求标识符_。 对于远程通知，通过 HTTP 请求标头中`apps-collapse-id`的新字段分配。
+通知管理的一个重要部分是在系统创建和计划通知时分配给通知的_请求标识符_。 对于远程通知，通过 HTTP 请求标头中的 "新 `apps-collapse-id`" 字段分配。
 
 请求标识符用于选择应用想要对其执行通知管理的通知。
 
@@ -358,7 +358,7 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 ### <a name="updating-an-existing-notification"></a>更新现有通知
 
-若要更新现有通知，只需创建一个新的通知，其中修改了所需的参数（例如，新的触发器时间），并将其请求标识符与需要修改的通知添加到系统中。 示例：
+若要更新现有通知，只需创建一个新的通知，其中修改了所需的参数（例如，新的触发器时间），并将其请求标识符与需要修改的通知添加到系统中。 示例:
 
 ```csharp
 using UserNotifications;
@@ -420,17 +420,17 @@ var categories = new UNNotificationCategory [] { category };
 UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotificationCategory>(categories)); 
 ```
 
-创建新`UNNotificationAction`的时，将为其分配唯一的 ID 和将出现在按钮上的标题。 默认情况下，该操作将创建为后台操作，但可以提供选项来调整操作的行为（例如，将其设置为前景操作）。
+创建新的 `UNNotificationAction`时，将为其分配唯一的 ID 和将出现在按钮上的标题。 默认情况下，该操作将创建为后台操作，但可以提供选项来调整操作的行为（例如，将其设置为前景操作）。
 
-创建的每个操作都需要与一个类别关联。 创建新`UNNotificationCategory`的时，将为其分配唯一 ID、它可以执行的操作的列表、意向 id 列表，以提供有关该类别中的操作意向的详细信息，以及一些用于控制类别行为的选项。
+创建的每个操作都需要与一个类别关联。 创建新的 `UNNotificationCategory`时，将为其分配唯一 ID、它可以执行的操作列表、意向 Id 列表，以提供有关该类别中的操作意向的详细信息，以及一些用于控制类别行为的选项。
 
-最后，使用`SetNotificationCategories`方法向系统注册所有类别。
+最后，所有类别都使用 `SetNotificationCategories` 方法注册到系统中。
 
 ### <a name="presenting-custom-actions"></a>显示自定义操作
 
 在系统中创建并注册一组自定义操作和类别后，可以通过本地或远程通知显示它们。
 
-对于远程通知，请`category`在与上面创建的类别之一匹配的远程通知负载中设置。 例如:
+对于远程通知，请在远程通知负载中设置与上面创建的类别之一匹配的 `category`。 例如:
 
 ```csharp
 {
@@ -441,7 +441,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-对于 "本地通知"， `CategoryIdentifier`请设置`UNMutableNotificationContent`对象的属性。 例如:
+对于 "本地通知"，请设置 `UNMutableNotificationContent` 对象的 `CategoryIdentifier` 属性。 例如:
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -457,7 +457,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>处理取消操作
 
-如上所述，当用户消除通知时，可以将解除操作发送到应用。 由于这不是标准操作，因此在创建类别时需要设置一个选项。 例如：
+如上所述，当用户消除通知时，可以将解除操作发送到应用。 由于这不是标准操作，因此在创建类别时需要设置一个选项。 例如:
 
 ```csharp
 var categoryID = "message";
@@ -470,7 +470,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>处理操作响应
 
-当用户与上面创建的自定义操作和类别交互时，应用需要满足所请求的任务。 这是通过提供`UNUserNotificationCenterDelegate`并`UserNotificationCenter`实现方法来完成的。 例如:
+当用户与上面创建的自定义操作和类别交互时，应用需要满足所请求的任务。 这是通过提供 `UNUserNotificationCenterDelegate` 并实现 `UserNotificationCenter` 方法来完成的。 例如:
 
 ```csharp
 using System;
@@ -508,9 +508,9 @@ namespace MonkeyNotification
 }
 ```
 
-传入`UNNotificationResponse`的类具有一个`ActionIdentifier`属性，该属性可以是默认操作或取消操作。 使用`response.Notification.Request.Identifier`测试任何自定义操作。
+传入的 `UNNotificationResponse` 类具有一个 `ActionIdentifier` 属性，该属性可以是默认操作或取消操作。 使用 `response.Notification.Request.Identifier` 测试任何自定义操作。
 
-`UserText`属性保存任何用户文本输入值。 `Notification`属性保存发起通知，其中包含包含触发器和通知内容的请求。 应用程序可以根据触发器的类型决定是本地还是远程通知。
+`UserText` 属性保留任何用户文本输入值。 `Notification` 属性保存发起通知，其中包含包含触发器和通知内容的请求。 应用程序可以根据触发器的类型决定是本地还是远程通知。
 
 > [!NOTE]
 > iOS 12 使自定义通知 UI 可以在运行时修改其操作按钮。 有关详细信息，请参阅[动态通知操作按钮](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md)文档。
@@ -519,7 +519,7 @@ namespace MonkeyNotification
 
 使用远程通知时，_服务扩展_提供了一种在通知有效负载内启用端对端加密的方式。 服务扩展是在后台运行的非用户界面扩展（在 iOS 10 中提供），其主要目的是增加或替换通知的可见内容，然后将其提供给用户。 
 
-[![](enhanced-user-notifications-images/extension01.png "服务扩展概述")](enhanced-user-notifications-images/extension01.png#lightbox)
+[![](enhanced-user-notifications-images/extension01.png "Service Extension overview")](enhanced-user-notifications-images/extension01.png#lightbox)
 
 服务扩展旨在快速运行，并且仅给系统执行一小段时间。 如果服务扩展未能在分配的时间内完成其任务，则将调用回退方法。 如果回退失败，将向用户显示原始通知内容。
 
@@ -535,16 +535,16 @@ namespace MonkeyNotification
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中打开应用的解决方案。
-2. 在**Solution Pad**中右键单击解决方案名称，然后选择 "**添加** > " "**添加新项目**"。
+2. 在**Solution Pad**中右键单击解决方案名称，然后选择 "**添加** > "**添加新项目**"。
 3. 选择 " **iOS** > **扩展** > **通知服务扩展**"，然后单击 "**下一步**" 按钮： 
 
-    [![](enhanced-user-notifications-images/extension02.png "选择通知服务扩展")](enhanced-user-notifications-images/extension02.png#lightbox)
+    [![](enhanced-user-notifications-images/extension02.png "Select Notification Service Extensions")](enhanced-user-notifications-images/extension02.png#lightbox)
 4. 输入扩展的**名称**，然后单击 "**下一步**" 按钮： 
 
-    [![](enhanced-user-notifications-images/extension03.png "输入扩展的名称")](enhanced-user-notifications-images/extension03.png#lightbox)
+    [![](enhanced-user-notifications-images/extension03.png "Enter a Name for the extension")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. 如果需要，请调整**项目名称**和/或**解决方案名称**，并单击 "**创建**" 按钮： 
 
-    [![](enhanced-user-notifications-images/extension04.png "调整项目名称和/或解决方案名称")](enhanced-user-notifications-images/extension04.png#lightbox) 
+    [![](enhanced-user-notifications-images/extension04.png "Adjust the Project Name and/or Solution Name")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -552,15 +552,15 @@ namespace MonkeyNotification
 2. 在**解决方案资源管理器**中右键单击解决方案名称，然后选择 "**添加 >" 新建项目 ...** "。
 3. 选择**Visual C# > IOS 扩展 > 通知服务扩展**：
 
-    [![](enhanced-user-notifications-images/extension01.w157-sml.png "选择通知服务扩展")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
+    [![](enhanced-user-notifications-images/extension01.w157-sml.png "Select Notification Service Extensions")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
 4. 输入扩展的**名称**，然后单击 **"确定"** 按钮。
 
 -----
 
 > [!IMPORTANT]
-> 服务扩展的捆绑标识符应与主应用的捆绑标识符匹配，并`.appnameserviceextension`将其附加到末尾。 例如，如果主应用有捆绑标识符`com.xamarin.monkeynotify`，则服务扩展应具有的`com.xamarin.monkeynotify.monkeynotifyserviceextension`捆绑标识符。 向解决方案添加扩展时，应自动设置此设置。 
+> 服务扩展的捆绑标识符应与主应用的捆绑标识符匹配，并将 `.appnameserviceextension` 追加到末尾。 例如，如果主应用具有 `com.xamarin.monkeynotify`的捆绑标识符，则服务扩展应具有 `com.xamarin.monkeynotify.monkeynotifyserviceextension`的捆绑标识符。 向解决方案添加扩展时，应自动设置此设置。 
 
-通知服务扩展中有一个主类，需要对其进行修改以提供所需的功能。 例如：
+通知服务扩展中有一个主类，需要对其进行修改以提供所需的功能。 例如:
 
 ```csharp
 using System;
@@ -609,9 +609,9 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-第一种方法`DidReceiveNotificationRequest`将`request`通过对象传递通知标识符以及通知内容。 需要调用传入`contentHandler`的以向用户显示通知。
+第一种方法 `DidReceiveNotificationRequest`将通过 `request` 对象传递通知标识符以及通知内容。 需要调用传入的 `contentHandler` 以向用户显示通知。
 
-第二种方法`TimeWillExpire`将在即将为服务扩展处理请求的时间即将用完之前调用。 如果服务扩展未能`contentHandler`在分配的时间内调用，则会向用户显示原始内容。
+第二种方法（`TimeWillExpire`）将在即将为服务扩展处理请求的时间之前被调用。 如果服务扩展未能在分配的时间内调用 `contentHandler`，则会向用户显示原始内容。
 
 ### <a name="triggering-a-service-extension"></a>触发服务扩展
 
@@ -627,7 +627,7 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-新`mutable-content`密钥指定需要启动服务扩展以更新远程通知内容。 在`encrypted-content`向用户提供服务扩展之前，密钥包含服务扩展可以解密的加密数据。
+新的 `mutable-content` 键指定需要启动服务扩展以更新远程通知内容。 `encrypted-content` 项包含服务扩展在向用户显示之前可以解密的加密数据。
 
 请查看以下示例服务扩展：
 
@@ -658,7 +658,7 @@ namespace myApp {
 }
 ```
 
-此代码从`encrypted-content`密钥解密加密内容，创建新`UNMutableNotificationContent`的，将`Body` `contentHandler`属性设置为已解密的内容，并使用向用户显示通知。
+此代码从 `encrypted-content` 密钥解密加密内容，创建新 `UNMutableNotificationContent`，将 `Body` 属性设置为解密内容，并使用 `contentHandler` 向用户显示通知。
 
 ## <a name="summary"></a>总结
 

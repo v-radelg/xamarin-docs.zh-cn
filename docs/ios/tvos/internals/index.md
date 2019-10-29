@@ -4,15 +4,15 @@ description: 描述基于 Xamarin 的 Xamarin 上的 tvOS 的内部工作原理�
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ffcf4d3a491cb6ad865da35d387782b7bd1fca01
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4712b7b75e735da047d7f44f7c6c47f42b9ad7a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283576"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030663"
 ---
 # <a name="tvos-in-xamarin-internals"></a>Xamarin 中的 tvOS –内部 
 
@@ -54,11 +54,11 @@ Xamarin 为你的 tvOS 应用程序支持的程序集列表。
 
 ### <a name="linking-native-librariesiosplatformnative-interopmd"></a>[链接本机库](~/ios/platform/native-interop.md)
 
-Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。 有关执行相同的 Objective-C 库的信息，请参阅&nbsp;[绑定 Objective-C 类型](~/ios/platform/binding-objective-c/index.md)&nbsp;文档。
+Xamarin 支持与本机 C 库和目标 C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。 有关为目标 C 库执行相同操作的详细信息，请参阅&nbsp;文档中的&nbsp;[绑定目标-C 类型](~/ios/platform/binding-objective-c/index.md)。
 
-## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C 的选择器](~/ios/internals/objective-c-selectors.md)
+## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目标-C 选择器](~/ios/internals/objective-c-selectors.md)
 
-说明并且直接调用 Objective-C 的选择器 （方法） 的使用情况。
+直接调用目标 C 选择器（方法）的说明和使用情况。
 
 ### <a name="systemdataiosdata-cloudsystemdatamd"></a>[System.Data](~/ios/data-cloud/system.data.md)
 
@@ -70,7 +70,7 @@ Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何
 
 ### <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB 代码生成](~/ios/internals/xib-code-generation.md)
 
-Visual Studio for Mac如何与Xcode的Interface Builder集成以允许您使用Interface Builder来设计UI。
+Visual Studio for Mac 如何与 Xcode 的 Interface Builder 集成，以便你可以使用 Interface Builder 来设计 UI。
 
 ## <a name="related-links"></a>相关链接
 

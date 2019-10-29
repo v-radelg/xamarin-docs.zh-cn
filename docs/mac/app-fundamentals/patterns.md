@@ -4,15 +4,15 @@ description: 本文档介绍生成 Xamarin Mac 应用时使用的常见设计模
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/17/2016
-ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b508cc12f468e5b9dfef91718585f61bfd633816
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770167"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030061"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Xamarin 中的常见模式和惯例
 
@@ -37,21 +37,21 @@ ms.locfileid: "70770167"
 
 ## <a name="data-source--delegate--subclassing"></a>数据源/委托/子类
 
-Cocoa 中的另一种非常常见的模式是向 UI 元素提供数据并对用户交互做出反应。 `NSTableView`作为示例，您需要以某种方式提供每个行的数据，一组表示该行的 UI 元素，一组用于对用户交互做出反应的行为，还可能有一定数量的自定义。 数据源和委托模式使您能够处理大多数情况，而无需在自己`NSTableView`的子类中进行分类。
+Cocoa 中的另一种非常常见的模式是向 UI 元素提供数据并对用户交互做出反应。 使用 `NSTableView` 作为示例，您需要以某种方式为每一行提供数据，一组表示该行的 UI 元素，这是一组用于对用户交互做出反应的行为，还可能有一定数量的自定义。 数据源和委托模式使您能够处理大多数情况，而无需在自己的子类 `NSTableView`。
 
-- 为属性分配自定义子类的`NSTableViewDataSource`实例，该实例被调用以使用数据填充表（通过`GetRowCount`和`GetObjectValue`）。 `DataSource`
+- 为 `DataSource` 属性分配 `NSTableViewDataSource` 的自定义子类实例，该实例称为，使用数据填充表（通过 `GetRowCount` 和 `GetObjectValue`）。
 
-- `MouseDownInHeaderOfTableColumn` `DidClickTableColumn` `GetViewForItem` `NSTableViewDelegate`为属性分配了自定义子类的实例，该实例提供给定模型对象的视图（通过、等）。 `Delegate`
+- 为 `Delegate` 属性分配了自定义子类的实例 `NSTableViewDelegate` 该子类提供给定模型对象的视图（通过 `GetViewForItem`）并处理 UI 交互（通过 `DidClickTableColumn`、`MouseDownInHeaderOfTableColumn`等）。
 
 在某些情况下，你将需要以委托或数据源中给定的挂钩之外的方式自定义控件，并且可以直接为视图划分子类。 但请注意，在许多情况下，重写默认行为会要求你自行处理所有该行为（自定义选择行为可能要求你自行实现所有选择行为）。
 
-在 Xamarin 中，某些 api （例如`UITableView` ）已通过实现委托和数据源的属性进行了扩展（`UITableViewSource`）。 这是为了解决一个C#类只能有一个基类的常见限制，而我们通过基类来完成了我们的协议的呈现。
+在 Xamarin 中，某些 Api （如 `UITableView`）已使用实现委托和数据源的属性（`UITableViewSource`）进行了扩展。 这是为了解决一个C#类只能有一个基类的常见限制，而我们通过基类来完成了我们的协议的呈现。
 
 有关在 Xamarin Mac 应用程序中使用表视图的详细信息，请参阅我们的[表视图](~/mac/user-interface/table-view.md)文档。
 
 ## <a name="protocols"></a>协议
 
-目标中的协议可与中C#的接口进行比较，在许多情况下，在类似情况下使用。 例如，在`NSTableView`上述示例中，委托和数据源都是实际的协议。 Xamarin 将这些基类公开为可替代的虚方法。 接口和目标- C# C 协议之间的主要区别在于，协议中的某些方法可能是可选的。 需要查看 API 的文档和/或定义，以确定什么是可选的。
+目标中的协议可与中C#的接口进行比较，在许多情况下，在类似情况下使用。 例如，上面的 `NSTableView` 示例中，委托和数据源都是实际的协议。 Xamarin 将这些基类公开为可替代的虚方法。 接口和目标- C# C 协议之间的主要区别在于，协议中的某些方法可能是可选的。 需要查看 API 的文档和/或定义，以确定什么是可选的。
 
 有关详细信息，请参阅我们的[委托、协议和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)文档。
 
@@ -60,4 +60,4 @@ Cocoa 中的另一种非常常见的模式是向 UI 元素提供数据并对用�
 - [表视图](~/mac/user-interface/table-view.md)
 - [使用 windows](~/mac/user-interface/window.md)
 - [委托、协议和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-- [Model-View-Controller](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)
+- [模型-视图-控制器](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Model-View-Controller/Model-View-Controller.html)

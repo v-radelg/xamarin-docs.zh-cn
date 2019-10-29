@@ -4,15 +4,15 @@ description: 本文介绍 iOS 9 提供的新游戏增强功能，这些增强功
 ms.prod: xamarin
 ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: b1fa8cd69a2255d462066be88ad7ef695b71076e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fd79153520036ae49fd6fd9abe652e2c7459b30d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753111"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032504"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>Xamarin 中的 iOS 游戏 Api
 
@@ -21,7 +21,7 @@ _本文介绍 iOS 9 提供的新游戏增强功能，这些增强功能可用于
 Apple 在 iOS 9 中对游戏 Api 做出了多项技术改进，使 Xamarin iOS 应用中的游戏图形和音频更容易实现。
 其中包括通过高级框架的轻松开发，并利用 iOS 设备 GPU 的强大功能提高速度和图形性能。
 
-[![](images/flocking01.png "运行群的应用的示例")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "An example of an app running flocking")](images/flocking01.png#lightbox)
 
 这包括 GameplayKit、ReplayKit、Model i/o、MetalKit 和金属绩效着色器，以及金属、SceneKit 和 SpriteKit 的新增功能和增强功能。
 
@@ -56,7 +56,7 @@ Pathfinding 是游戏的 AI 元素在游戏板上查找其方式的功能。
 
 请看下面的地图：
 
-[![](images/gkpathfindpath.png "Pathfinding 映射示例")](images/gkpathfindpath.png#lightbox)
+[![](images/gkpathfindpath.png "An example pathfinding map")](images/gkpathfindpath.png#lightbox)
 
 使用 pathfinding， C#此代码可通过以下方式查找：
 
@@ -145,7 +145,7 @@ protected Func<GKRuleSystem, bool> mod(int m)
 }
 ```
 
-根据一组给定的规则（`GKRule`）和一组已知的输入，专家系统（`GKRuleSystem`）将创建可预测的输出（`fizzbuzz`在上面的示例中）。
+根据一组给定的规则（`GKRule`）和一组已知的输入，专家系统（`GKRuleSystem`）将创建可预测的输出（在上面的示例中为`fizzbuzz`）。
 
 ### <a name="flocking"></a>群
 
@@ -365,15 +365,15 @@ public override void ViewWillLayoutSubviews ()
 
 运行时，"Boids" 这一小动画的 _""_ 将围绕指尖 flock：
 
-[![](images/flocking01.png "轻微的动画 Boids 将围绕指尖 flock")](images/flocking01.png#lightbox)
+[![](images/flocking01.png "The little animated Boids will flock around the finger taps")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>其他 Apple 示例
 
 除了上面提供的示例，Apple 还提供了以下可转码C#和 Xamarin 的示例应用：
 
-- [FourInARow:为对手 AI 使用 GameplayKit Minmax 战略家](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
-- [AgentsCatalog:在 GameplayKit 中使用代理系统](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
-- [DemoBots:使用 SpriteKit 和 GameplayKit 生成跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
+- [FourInARow：对对手 AI 使用 GameplayKit Minmax 战略家](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
+- [AgentsCatalog：在 GameplayKit 中使用代理系统](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
+- [DemoBots：使用 SpriteKit 和 GameplayKit 构建跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
 ## <a name="metal"></a>Metal
 
@@ -404,9 +404,9 @@ MetalKit 框架提供了一组实用工具类和功能，可减少在 iOS 应用
 
 金属性能着色器框架提供一组常见着色器，例如：
 
-- **高斯模糊**(`MPSImageGaussianBlur`)
-- **Sobel 边缘检测**(`MPSImageSobel`)
-- **图像直方图**(`MPSImageHistogram`)
+- **高斯模糊**（`MPSImageGaussianBlur`）
+- **Sobel Edge 检测**（`MPSImageSobel`）
+- **图像直方图**（`MPSImageHistogram`）
 
 有关详细信息，请参阅 Apple 的[金属着色语言指南](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)。
 
@@ -427,7 +427,7 @@ Apple 的模型 i/o 框架可深入了解3D 资产（如模型及其相关资源
 
 Apple 的 new ReplayKit framework 使你可以轻松地将游戏录制的记录添加到 iOS 游戏，并允许用户在应用中快速轻松地编辑和共享此视频。
 
-有关详细信息，请参阅 Apple 的[社交 ReplayKit 和 Game Center 视频](https://developer.apple.com/videos/wwdc/2015/?id=605)及其[DemoBots：使用 SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)示例应用构建跨平台游戏。
+有关详细信息，请参阅 Apple[使用 ReplayKit 和 Game Center 视频](https://developer.apple.com/videos/wwdc/2015/?id=605)及其[DemoBots：使用 SpriteKit 和 GameplayKit 示例应用构建跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)。
 
 ## <a name="scenekit"></a>SceneKit
 
@@ -440,10 +440,10 @@ Apple 的 new ReplayKit framework 使你可以轻松地将游戏录制的记录�
 Apple 向 SceneKit for iOS 9 添加了以下新功能：
 
 - Xcode 现在提供了一个场景编辑器，通过它可以直接从 Xcode 内编辑场景来快速生成游戏和交互式3D 应用。
-- `SCNView` 和`SCNSceneRenderer`类可用于启用金属渲染（在支持的 iOS 设备上）。
-- `SCNAudioPlayer` 和`SCNNode`类可用于添加可自动跟踪到 iOS 应用程序的播放机位置的空间音频效果。
+- `SCNView` 和 `SCNSceneRenderer` 类可用于启用金属渲染（在支持的 iOS 设备上）。
+- `SCNAudioPlayer` 和 `SCNNode` 类可用于添加可自动跟踪到 iOS 应用程序的播放机位置的空间音频效果。
 
-有关详细信息，请参阅我们的[SceneKit 文档](~/ios/platform/introduction-to-ios8.md#scenekit)和 Apple 的[SceneKit 框架参考](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox：使用 Xcode 场景编辑器](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)示例项目构建 SceneKit 游戏。
+有关详细信息，请参阅[SceneKit 文档](~/ios/platform/introduction-to-ios8.md#scenekit)和 Apple [SceneKit Framework 参考](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox：使用 Xcode 场景编辑器示例项目构建 SceneKit 游戏](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)。
 
 ## <a name="spritekit"></a>SpriteKit
 
@@ -455,12 +455,12 @@ Apple 向 SceneKit for iOS 9 添加了以下新功能：
 
 Apple 向 SpriteKit for iOS 9 添加了以下新功能：
 
-- 空间音频效果，可自动跟踪播放机与`SKAudioNode`类的位置。
+- 空间音频效果，可自动跟踪播放机与 `SKAudioNode` 类的位置。
 - Xcode 现在使用场景编辑器和操作编辑器来实现2D 游戏和应用创建。
 - 支持新的相机节点（`SKCameraNode`）对象的轻松滚动游戏。
 - 在支持金属的 iOS 设备上，SpriteKit 会自动将其用于渲染，即使您已使用自定义 OpenGL ES 着色器也是如此。
 
-有关详细信息，请参阅[SpriteKit 文档](~/ios/platform/introduction-to-ios8.md#spritekit)Apple 的[SpriteKit 框架参考](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots：使用 SpriteKit 和 GameplayKit](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)示例应用构建跨平台游戏。
+有关详细信息，请参阅[SpriteKit 文档](~/ios/platform/introduction-to-ios8.md#spritekit)Apple [SpriteKit Framework 参考](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots：使用 SpriteKit 和 GameplayKit 示例应用构建跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)。
 
 ## <a name="summary"></a>总结
 
@@ -471,4 +471,4 @@ Apple 向 SpriteKit for iOS 9 添加了以下新功能：
 
 - [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

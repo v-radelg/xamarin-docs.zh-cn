@@ -1,19 +1,19 @@
 ---
-title: Xamarin 持续集成简介
+title: 与 Xamarin 持续集成简介
 description: 本文档介绍与 Xamarin 的持续集成。 它讨论了版本控制和各种持续集成环境。
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/19/2017
-ms.openlocfilehash: d335a107d1520db3c76ee602d38adcb129f122b0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2862f05f2d183c9345d2b92268ddf2101cc2492e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293095"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029806"
 ---
-# <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin 持续集成简介
+# <a name="introduction-to-continuous-integration-with-xamarin"></a>与 Xamarin 持续集成简介
 
 _持续集成是一种软件工程实践，在项目的版本控制存储库中，当开发人员添加或更改代码时，自动生成将编译并选择性地测试应用。本文将讨论持续集成的一般概念，以及一些可用于与 Xamarin 项目进行持续集成的选项。_
 
@@ -32,13 +32,13 @@ _持续集成是一种软件工程实践，在项目的版本控制存储库中�
 
 下图说明了此过程：
 
-[![](intro-to-ci-images/intro01-small.png "此图说明了此过程")](intro-to-ci-images/intro01.png#lightbox)
+[![](intro-to-ci-images/intro01-small.png "This diagram illustrates this process")](intro-to-ci-images/intro01.png#lightbox)
 
 移动应用为持续集成带来了独特的挑战。 应用可能需要仅在物理设备上可用的传感器，如 GPS 或相机。 此外，模拟器或仿真程序只是硬件的近似值，可能会隐藏或掩盖问题。 最终，需要在真实硬件上测试移动应用，以确保它真正可供客户使用。
 
 [App Center 测试](https://docs.microsoft.com/appcenter/test-cloud)通过直接在数百台物理设备上测试应用来解决此特定问题。 开发人员编写自动化的验收测试，以实现功能强大的 UI 测试。 将这些测试上传到 App Center 后，CI 服务器就可以将它们作为 CI 过程的一部分自动运行，如下图所示：
 
-[![](intro-to-ci-images/intro02-small.png "将这些测试上传到 App Center 后，CI 服务器就可以将它们作为 CI 过程的一部分自动运行，如下图所示")](intro-to-ci-images/intro02.png#lightbox)
+[![](intro-to-ci-images/intro02-small.png "Once these tests are uploaded to App Center, the CI server can run them automatically as part of a CI process as shown in this diagram")](intro-to-ci-images/intro02.png#lightbox)
 
 ## <a name="components-of-continuous-integration"></a>持续集成的组件
 
@@ -65,15 +65,15 @@ TFS 和 Azure DevOps 与 Visual Studio 紧密集成，使开发人员能够轻�
 
 #### <a name="git"></a>Git
 
-[Git](http://git-scm.com)是一个受欢迎的开源版本控制解决方案，最初开发它是为了管理 Linux 内核的源代码。 它是一种非常快速灵活的系统，最常用于各种规模的软件项目。 它可以轻松地从具有不良 Internet 访问的单一开发人员到全球范围内的大型团队进行缩放。 Git 还可使分支非常简单，进而鼓励并行开发流，同时降低风险。
+[Git](https://git-scm.com)是一个受欢迎的开源版本控制解决方案，最初开发它是为了管理 Linux 内核的源代码。 它是一种非常快速灵活的系统，最常用于各种规模的软件项目。 它可以轻松地从具有不良 Internet 访问的单一开发人员到全球范围内的大型团队进行缩放。 Git 还可使分支非常简单，进而鼓励并行开发流，同时降低风险。
 
-Git 可以通过 web 浏览器或在 Linux、Mac OSX 和 Windows 上运行的[GUI 客户端](http://git-scm.com/downloads/guis)完全运行。 它可用于公共存储库;专用存储库需要[付费计划](https://github.com/pricing)。
+Git 可以通过 web 浏览器或在 Linux、Mac OSX 和 Windows 上运行的[GUI 客户端](https://git-scm.com/downloads/guis)完全运行。 它可用于公共存储库;专用存储库需要[付费计划](https://github.com/pricing)。
 
-当前版本的 Visual Studio for Windows 和 Mac 为 Git 提供本机支持。 Microsoft 为早期版本的 Visual Studio 提供了[适用于 Git 的可下载扩展](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)。 如上所述，Azure DevOps 和 TFS 可以使用 Git 进行版本控制而不是 TFVC。
+当前版本的 Visual Studio for Windows 和 Mac 为 Git 提供本机支持。 Microsoft 为早期版本的 Visual Studio 提供了[适用于 Git 的可下载扩展](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)。 如上所述，Azure DevOps 和 TFS 可以使用 Git 进行版本控制而不是 TFVC。
 
 #### <a name="subversion"></a>Subversion
 
-[Subversion](http://subversion.apache.org)（SVN）是自2000以来使用的常用开源版本控制系统。 SVN 在所有新式版本的 OS X、Windows、FreeBSD、Linux 和 Unix 上运行。 Visual Studio for Mac 具有对 SVN 的本机支持。 有第三方扩展将 SVN 支持引入 Visual Studio。
+[Subversion](https://subversion.apache.org) （SVN）是自2000以来使用的常用开源版本控制系统。 SVN 在所有新式版本的 OS X、Windows、FreeBSD、Linux 和 Unix 上运行。 Visual Studio for Mac 具有对 SVN 的本机支持。 有第三方扩展将 SVN 支持引入 Visual Studio。
 
 ### <a name="continuous-integration-environments"></a>持续集成环境
 
@@ -97,7 +97,7 @@ Git 可以通过 web 浏览器或在 Linux、Mac OSX 和 Windows 上运行的[GU
 
 下图说明了此拓扑：
 
-[![](intro-to-ci-images/intro03-small.png "此图说明了此拓扑")](intro-to-ci-images/intro03.png#lightbox)
+[![](intro-to-ci-images/intro03-small.png "This diagram illustrates this topography")](intro-to-ci-images/intro03.png#lightbox)
 
 还可以将本地 TFS 服务器链接到 Azure DevOps 项目，以便将 Azure DevOps 构建委托给本地服务器。 有关详细信息，请参阅[生成和发布代理](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)。
 
@@ -105,13 +105,13 @@ Git 可以通过 web 浏览器或在 Linux、Mac OSX 和 Windows 上运行的[GU
 
 如果使用 Jenkins 生成应用，则可以将代码存储在 Azure DevOps 或 Team Foundation Server 中，并继续为 CI 生成使用 Jenkins。 当你将代码推送到你的团队项目的 Git 存储库或将代码签入 TFVC 时，可以触发 Jenkins 生成。 有关详细信息，请参阅[Jenkins With Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)。
 
-[![](intro-to-ci-images/intro04-small.png "如果使用 Jenkins 生成应用，则可以将代码存储在 Azure DevOps 或 Team Foundation Server 中，并继续对 CI 生成使用 Jenkins")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "If you use Jenkins to build your apps, you can store your code in Azure DevOps or Team Foundation Server and continue to use Jenkins for your CI builds")](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git 和 Jenkins
 
 另一种常见的 CI 环境可以是完整的操作系统 X。 此方案涉及使用 Git 进行源代码控制，并使用 Jenkins 生成服务器。 这两个在安装 Visual Studio for Mac 的单个 Mac OS X 计算机上运行。 这非常类似于上一节中讨论的 Azure DevOps + Jenkins 环境：
 
-[![](intro-to-ci-images/intro05-small.png "这非常类似于上一节中讨论的 Azure DevOps + Jenkins 环境")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "This is very similar to the Azure DevOps + Jenkins environment discussed in the previous section")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **[Microsoft 不支持](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)Jenkins。**

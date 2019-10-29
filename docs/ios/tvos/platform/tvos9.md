@@ -4,15 +4,15 @@ description: 本文介绍了 tvOS 9 for Xamarin tvOS 开发人员提供的所有
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769111"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030534"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 简介
 
@@ -75,7 +75,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 
 ### <a name="siri-remote"></a>Siri 远程
 
-根据区域，提供的 Apple TV 遥控器将进入两种配置：Siri 远程或 Apple TV 远程。
+根据区域，提供的 Apple TV 遥控器将进入两种配置： Siri 远程或 Apple TV 远程。
 
 当前在以下国家/地区提供 Siri 远程：
 
@@ -90,7 +90,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 
 所有其他国家/地区将收到使用 "搜索" 按钮替换 "Siri" 按钮的 Apple TV 遥控器，该搜索按钮显示带有文本输入的默认搜索屏幕：
 
-[![](tvos9-images/remote02.png "Siri 远程")](tvos9-images/remote02.png#lightbox)
+[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
 
 有关详细信息，请参阅我们的[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
@@ -154,7 +154,7 @@ Apple TV 应用的最大大小为200MB，可以使用点播资源下载其他2GB
 
 Apple TV 主屏幕显示所有已安装的应用，并提供一种方法来访问用户首选项：
 
-[![](tvos9-images/home01.png "主屏幕")](tvos9-images/home01.png#lightbox)
+[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
 
 用户使用 Siri 远程浏览应用图标的网格，并使用焦点来选择应用并启动应用。 在应用程序图标上，你第一次机会让你的潜在用户印象非常好，并应一目了然地传达你的应用程序的用途。
 
@@ -168,9 +168,9 @@ Apple TV 主屏幕显示所有已安装的应用，并提供一种方法来访�
 
 如果用户将 tvOS 应用放置在 Apple TV 主屏幕上的最上面一行，则当用户选择应用程序时，将显示一个大型的顶部图像。 此图像应突出显示应用的功能，或提供指向其内容的直接链接。
 
-[![](tvos9-images/topshelf01.png "顶部货位")](tvos9-images/topshelf01.png#lightbox)
+[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-顶部货位图像可以作为单个静态`.png`或`.lsr`文件提供，也可以在运行时动态创建为可设定焦点的单个行。
+可以将顶架图像作为单个静态 `.png` 或 `.lsr` 文件提供，也可以在运行时动态创建为可设定焦点的单个行。
 
 它不会显示静态的顶层图像，而是包含动态行、可设定焦点的项或动态的滚动条带集。 这两种动态样式都允许您突出显示应用程序提供的内容或跳转到其最常用的功能。
 

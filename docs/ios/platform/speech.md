@@ -4,15 +4,15 @@ description: 本文介绍了新的语音 API，并演示了如何在 Xamarin iOS
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 66bea7d2a9660018c7cec9b7bafeadafd5029ed9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 015be44f60dbf8cd2d70badd7c9edaf4e5a1d2a4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769428"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031456"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的语音识别
 
@@ -33,13 +33,13 @@ Apple 在 iOS 10 中的新增功能发布了语音识别 API，该 API 允许 iO
 
 语音识别在 iOS 应用程序中实现，方法是获取实时或预先录制的音频（采用 API 支持的任何一种语言），并将其传递给语音识别器，这会返回明文形式的字词。
 
-[![](speech-images/speech01.png "语音识别的工作方式")](speech-images/speech01.png#lightbox)
+[![](speech-images/speech01.png "How Speech Recognition Works")](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>键盘听写
 
 当大多数用户在 iOS 设备上考虑语音识别时，他们会想到内置的 Siri 语音助手，该助手是在 iOS 5 中与 iPhone 4S 一起发布的键盘听写。
 
-支持 TextKit （如`UITextField`或`UITextArea`）的任何 interface 元素都支持键盘听写，并由用户在 iOS 虚拟键盘中单击 "听写" 按钮（直接位于空格键左侧）激活。
+支持 TextKit 的任何 interface 元素（例如 `UITextField` 或 `UITextArea`）都支持键盘听写，并由用户在 iOS 虚拟键盘中单击 "听写" 按钮（直接位于空格键左侧）激活。
 
 Apple 已经发布了以下键盘听写统计信息（从2011开始收集）：
 
@@ -66,68 +66,68 @@ Apple 在 iOS 10 中的新增功能，它提供了语音识别 API，使 iOS 应
 
 语音识别 API 提供的结果以透明方式自定义到各个用户，而应用程序无需收集或访问任何私有用户数据。
 
-语音识别 API 在用户讲话时以近乎实时的方式向调用应用程序提供结果，并且提供有关翻译结果的详细信息，而不仅仅是文本。 这些问题包括：
+语音识别 API 在用户讲话时以近乎实时的方式向调用应用程序提供结果，并且提供有关翻译结果的详细信息，而不仅仅是文本。 这些方法包括：
 
 - 用户所说的内容的多个解释。
 - 单个翻译的置信度。
 - 计时信息。
 
-如上面所述，是通过实时源，或从预记录源和中的任何 50 多个语言和区域语言，支持的 iOS 10 可以提供适用于转换的音频。
+如上所述，转换音频可以通过实时源，也可以从预录制的源以及 iOS 10 支持的任何一种50语言和方言提供。
 
 语音识别 API 可用于运行 iOS 10 的任何 iOS 设备上，并且在大多数情况下，需要实时 internet 连接，因为在 Apple 的服务器上进行大量的翻译。 也就是说，一些较新的 iOS 设备支持特定语言的 always on、设备上翻译。
 
 Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语言。 应用应使用此 API，而不是直接测试 internet 连接本身。
 
-正如上面的键盘听写部分所述，语音识别需要通过 internet 在 Apple 服务器上传输和临时存储数据，因此，应用程序_必须_通过包括`SFSpeechRecognizer.RequestAuthorization`其`NSSpeechRecognitionUsageDescription` 文件中的键，`Info.plist`并调用方法。 
+正如上面的键盘听写部分所述，语音识别需要通过 internet 在 Apple 服务器上传输和临时存储数据，因此，应用程序_必须_通过包括`NSSpeechRecognitionUsageDescription` 项在其 `Info.plist` 文件中，并调用 `SFSpeechRecognizer.RequestAuthorization` 方法。 
 
-基于用于语音识别的音频源，可能需要对应用`Info.plist`文件进行其他更改。 有关详细信息，请参阅[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)文档。
+基于用于语音识别的音频源，可能需要对应用的 `Info.plist` 文件进行其他更改。 有关详细信息，请参阅[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)文档。
 
 ## <a name="adopting-speech-recognition-in-an-app"></a>在应用中采用语音识别
 
 开发人员必须执行四个主要步骤，才能在 iOS 应用中采用语音识别：
 
-- 使用密钥在应用`Info.plist`文件中提供使用说明。`NSSpeechRecognitionUsageDescription` 例如，照相机应用可能包含以下说明， _"这只允许您通过说" 奶酪 "一词来拍摄照片。_
-- 通过调用`SFSpeechRecognizer.RequestAuthorization`方法来提供一个说明（在上面的`NSSpeechRecognitionUsageDescription`密钥中提供），以说明应用希望语音识别在对话框中访问用户并允许他们接受或拒绝的原因。
+- 使用 `NSSpeechRecognitionUsageDescription` 密钥在应用的 `Info.plist` 文件中提供使用说明。 例如，照相机应用可能包含以下说明， _"这只允许您通过说" 奶酪 "一词来拍摄照片。_
+- 通过调用 `SFSpeechRecognizer.RequestAuthorization` 方法来提供一个说明（在上面的 `NSSpeechRecognitionUsageDescription` 关键字中提供），以使应用程序希望语音识别在对话框中访问用户并允许他们接受或拒绝。
 - 创建语音识别请求：
-  - 对于磁盘上预先录制的音频，请使用`SFSpeechURLRecognitionRequest`类。
-  - 对于实时音频（或内存中的音频），请`SFSPeechAudioBufferRecognitionRequest`使用类。
-- 将语音识别请求传递到语音识别器（`SFSpeechRecognizer`）以开始识别。 应用可以选择性地在返回`SFSpeechRecognitionTask`的上保存来监视和跟踪识别结果。
+  - 对于磁盘上预先录制的音频，请使用 `SFSpeechURLRecognitionRequest` 类。
+  - 对于实时音频（或内存中的音频），请使用 `SFSPeechAudioBufferRecognitionRequest` 类。
+- 将语音识别请求传递到语音识别器（`SFSpeechRecognizer`）开始识别。 应用可以选择性地按住返回的 `SFSpeechRecognitionTask` 来监视和跟踪识别结果。
 
 下面将详细介绍这些步骤。
 
 ### <a name="providing-a-usage-description"></a>提供使用说明
 
-若要`NSSpeechRecognitionUsageDescription` `Info.plist`在文件中提供所需的密钥，请执行以下操作：
+若要在 `Info.plist` 文件中提供所需的 `NSSpeechRecognitionUsageDescription` 项，请执行以下操作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击该`Info.plist`文件将其打开以进行编辑。
+1. 双击 `Info.plist` 文件，将其打开以进行编辑。
 2. 切换到**源**视图： 
 
-    [![](speech-images/speech02.png "源视图")](speech-images/speech02.png#lightbox)
-3. 单击 "**添加新项**"， `NSSpeechRecognitionUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如： 
+    [![](speech-images/speech02.png "The Source view")](speech-images/speech02.png#lightbox)
+3. 单击 "**添加新条目**"，为 "**属性**" 输入 `NSSpeechRecognitionUsageDescription`，`String` "**类型**" 和 "**用法说明**" 作为**值**。 例如: 
 
-    [![](speech-images/speech03.png "添加 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. 如果应用将处理实时音频操作，还需要麦克风使用说明。 单击 "**添加新项**"， `NSMicrophoneUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如： 
+    [![](speech-images/speech03.png "Adding NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
+4. 如果应用将处理实时音频操作，还需要麦克风使用说明。 单击 "**添加新条目**"，为 "**属性**" 输入 `NSMicrophoneUsageDescription`，`String` "**类型**" 和 "**用法说明**" 作为**值**。 例如: 
 
-    [![](speech-images/speech04.png "添加 NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
-5. 保存对文件所做的更改。
+    [![](speech-images/speech04.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
+5. 保存对该文件所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 双击该`Info.plist`文件将其打开以进行编辑。
-2. 单击 "**添加新项**"， `NSSpeechRecognitionUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如: 
+1. 双击 `Info.plist` 文件，将其打开以进行编辑。
+2. 单击 "**添加新条目**"，为 "**属性**" 输入 `NSSpeechRecognitionUsageDescription`，`String` "**类型**" 和 "**用法说明**" 作为**值**。 例如: 
 
-    [![](speech-images/speech03w.png "添加 NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-3. 如果应用将处理实时音频操作，还需要麦克风使用说明。 单击 "**添加新项**"， `NSMicrophoneUsageDescription`输入作为 "类型`String` " 的 **属性**，将 "**用法说明**" 作为**值**。 例如: 
+    [![](speech-images/speech03w.png "Adding NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
+3. 如果应用将处理实时音频操作，还需要麦克风使用说明。 单击 "**添加新条目**"，为 "**属性**" 输入 `NSMicrophoneUsageDescription`，`String` "**类型**" 和 "**用法说明**" 作为**值**。 例如: 
 
-    [![](speech-images/speech04w.png "添加 NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
-4. 保存对文件所做的更改。
+    [![](speech-images/speech04w.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
+4. 保存对该文件所做的更改。
 
 -----
 
 > [!IMPORTANT]
-> 如果未能提供上述`Info.plist`任一项（`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`），则在尝试访问语音识别或实时音频的麦克风时，可能会导致应用失败且不发出警告。
+> 如果未能提供上述任一 `Info.plist` 密钥（`NSSpeechRecognitionUsageDescription` 或 `NSMicrophoneUsageDescription`），则在尝试访问语音识别或实时音频的麦克风时，可能会导致应用失败且不发出警告。
 
 ### <a name="requesting-authorization"></a>请求授权
 
@@ -178,9 +178,9 @@ namespace MonkeyTalk
 }
 ```
 
-`SFSpeechRecognizer` `NSSpeechRecognitionUsageDescription`类的`Info.plist`方法将请求用户提供的权限，以使用开发人员在文件的键中提供的原因来访问语音识别。 `RequestAuthorization`
+`SFSpeechRecognizer` 类的 `RequestAuthorization` 方法将请求用户提供的权限，以使用开发人员在 `Info.plist` 文件的 `NSSpeechRecognitionUsageDescription` 键中提供的原因来访问语音识别。
 
-结果将返回`RequestAuthorization`到方法的回调例程，该例程可用于根据用户的权限执行操作。 `SFSpeechRecognizerAuthorizationStatus` 
+`SFSpeechRecognizerAuthorizationStatus` 结果返回到 `RequestAuthorization` 方法的回调例程，该例程可用于根据用户的权限执行操作。 
 
 > [!IMPORTANT]
 > Apple 建议等待，直到用户在应用中启动了要求语音识别的操作，然后才能请求该权限。
@@ -230,17 +230,17 @@ public void RecognizeFile (NSUrl url)
 }
 ```
 
-首先详细查看此代码，它会尝试创建语音识别器（`SFSpeechRecognizer`）。 如果语音识别不支持默认语言，则返回`null` ，并且函数将退出。
+首先详细查看此代码，它会尝试创建语音识别器（`SFSpeechRecognizer`）。 如果语音识别不支持默认语言，则将返回 `null` 并且函数将退出。
 
-如果语音识别器适用于默认语言，则应用将检查其当前是否可用于识别（使用`Available`属性）。 例如，如果设备没有活动的 internet 连接，则识别可能不可用。
+如果语音识别器可用于默认语言，则应用将检查其当前是否可用于使用 `Available` 属性进行识别。 例如，如果设备没有活动的 internet 连接，则识别可能不可用。
 
-`SFSpeechUrlRecognitionRequest` 是`NSUrl`从 iOS 设备上的预处理文件位置创建的，并将其传递给语音识别器以使用回调例程进行处理。
+`SFSpeechUrlRecognitionRequest` 是从 iOS 设备上的预录制文件的 `NSUrl` 位置创建的，它将移交给语音识别器以使用回调例程进行处理。
 
-调用回调时，如果`NSError`不`null`存在必须处理的错误，则为。 由于语音识别是以增量方式完成的，因此回调例程可能会被调用多次`SFSpeechRecognitionResult.Final` ，因此，将对属性进行测试，以查看翻译是否完整以及是否写出了转换`BestTranscription`的最佳版本（）。
+调用回调时，如果 `NSError` 没有 `null` 则表明必须处理错误。 由于语音识别是以增量方式完成的，因此可能会多次调用回调例程，以便测试 `SFSpeechRecognitionResult.Final` 属性，以确定转换是否完整以及是否编写最佳版本的翻译（`BestTranscription`）。
 
 ### <a name="recognizing-live-speech"></a>识别实时语音
 
-如果应用想要识别实时语音，该过程与识别预先录制的语音的过程非常相似。 例如：
+如果应用想要识别实时语音，该过程与识别预先录制的语音的过程非常相似。 例如:
 
 ```csharp
 using System;
@@ -317,7 +317,7 @@ private SFSpeechAudioBufferRecognitionRequest LiveSpeechRequest = new SFSpeechAu
 private SFSpeechRecognitionTask RecognitionTask;
 ```
 
-它使用 AV 基础来记录将传递给的`SFSpeechAudioBufferRecognitionRequest`音频，以处理识别请求：
+它使用 AV 基础来记录将传递到 `SFSpeechAudioBufferRecognitionRequest` 以处理识别请求的音频：
 
 ```csharp
 var node = AudioEngine.InputNode;
@@ -367,10 +367,10 @@ AudioEngine.Stop ();
 RecognitionTask.Cancel ();
 ```
 
-如果用户取消转换以`RecognitionTask.Cancel`释放内存和设备的处理器，则必须调用此方法。
+如果用户取消转换以释放内存和设备的处理器，则必须调用 `RecognitionTask.Cancel`。
 
 > [!IMPORTANT]
-> 如果无法提供`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`键，则在尝试访问语音识别或实时音频的麦克风（`var node = AudioEngine.InputNode;`）时，应用程序将无法正常运行。 `Info.plist` 有关详细信息，请参阅上面的 "**提供使用说明**" 部分。
+> 如果无法提供 `NSSpeechRecognitionUsageDescription` 或 `NSMicrophoneUsageDescription` `Info.plist` 的密钥，则在尝试访问语音识别或实时音频的麦克风（`var node = AudioEngine.InputNode;`）时，可能会导致应用失败且不发出警告。 有关详细信息，请参阅上面的 "**提供使用说明**" 部分。
 
 ## <a name="speech-recognition-limits"></a>语音识别限制
 

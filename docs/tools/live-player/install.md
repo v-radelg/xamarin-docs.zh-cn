@@ -3,15 +3,15 @@ title: Xamarin Live Player Visual Studio 配置
 description: 本文档介绍如何使用 Xamarin Live Player 对正在运行的应用程序进行实时编辑。
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 94f1d36bf97aab7eabb57e6f2712c9850b390ab1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3dfe63cf3cf87a99d15879a0d4791248fa06f195
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290487"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029676"
 ---
 # <a name="xamarin-live-player-visual-studio-configuration"></a>Xamarin Live Player Visual Studio 配置
 

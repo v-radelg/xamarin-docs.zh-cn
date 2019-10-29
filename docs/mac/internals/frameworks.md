@@ -4,15 +4,15 @@ description: 本文档列出了使用 Xamarin 开发 Mac 应用程序时可使�
 ms.prod: xamarin
 ms.assetid: E8108E77-13FE-2EC2-83FF-AFE0408D3EE6
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: a95288000f73f69be56dee990a2a37b9b4dbcd98
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: be765e5b8f8137a2ec3f9cffa7d97b45482b3eab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770082"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029959"
 ---
 # <a name="xamarinmac-frameworks"></a>Xamarin Framework
 
@@ -22,7 +22,7 @@ Xamarin 支持以下 macOS 框架：
 - 快速
 - 帐户
 - AVKit
-- AddressBook 
+- 通讯簿 
 - AppKit 
 - AudioToolbox 
 - AudioUnit 
@@ -44,10 +44,10 @@ Xamarin 支持以下 macOS 框架：
 - CFNetwork
 - Darwin 
 - Foundation 
-- GameKit 
+- Gamekit\ 
 - ImageIO 
 - ImageKit 
-- LocalAuthentication
+- Localauthentication.framework
 - MapKit
 - MediaAccessibility
 - ObjCRuntime 
@@ -59,7 +59,7 @@ Xamarin 支持以下 macOS 框架：
 - QuickLook 
 - SceneKit 
 - ScriptingBridge 
-- 安全性 
+- 安全 
 - StoreKit 
 - VideoToolbox
 - WebKit

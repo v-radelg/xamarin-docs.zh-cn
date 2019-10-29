@@ -4,21 +4,21 @@ description: 本文介绍了适用于 Xamarin 的 iOS 开发人员提供的所�
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751999"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031785"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 简介
 
 _本文介绍了适用于 Xamarin 的 iOS 开发人员提供的所有新的和修改的 Api 和功能。_
 
-![](images/ios9-sml.png "IOS 9 徽标")
+![](images/ios9-sml.png "The iOS 9 logo")
 
 Apple 在 iOS 9 中添加了几个新的 Api 和服务，并对现有功能进行了很多增强。
 
@@ -50,7 +50,7 @@ Apple 在 iOS 9 中添加了几个新的 Api 和服务，并对现有功能进�
 
 通过以下功能支持 iPad 的多任务：
 
-- **滑过**-允许用户在滑出面板中临时运行第二个 iOS 应用（根据语言方向在屏幕的右侧或左侧），该面板大约包含当前正在运行的主要应用程序的 25%。 滑过只能在 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4上使用。
+- **滑过**-允许用户在滑出面板中临时运行第二个 iOS 应用（根据语言方向在屏幕的右侧或左侧），该面板大约包含当前正在运行的主要应用程序的25%。 滑过只能在 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4上使用。
 - **拆分视图**-在受支持的 ipad 硬件上（ipad Air 2、ipad 迷你4和 ipad Pro），用户可以选择第二个应用，并在拆分屏幕模式下并行运行当前正在运行的应用程序。 用户可以控制每个应用占用的主屏幕的百分比。
 - **图片：对于**播放视频内容的应用，视频现在可以在可移动且可调整大小的窗口中播放，该窗口将浮动在当前运行在 iOS 设备上的其他应用。 用户可以完全控制此窗口的大小和位置。 图片中的图片仅在 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4上可用。
 
@@ -121,7 +121,7 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 
 - **新的音频设备扩展点**–使用此扩展点来提供音频效果、乐器、声音生成器等，以便在其他音频设备主机应用（如 GarageBand）中使用。 此扩展点还允许你在应用商店中销售_音频单位_（音频插件）。
 - **新索引维护扩展点**-使用此扩展点来支持应用程序数据的重新索引，而无需重新启动应用程序。
-- **新网络扩展点**（这需要 Apple 的特殊权限）：
+- **新网络扩展点**（需要 Apple 的特殊权限）：
   - **应用代理提供程序扩展**-使用此扩展点实现自定义透明客户端网络代理。
   - **筛选数据提供程序/筛选器控件提供程序扩展**-使用这些扩展点来实现设备上的动态网络内容筛选。
   - **数据包隧道提供程序扩展**-使用此扩展点实现自定义 VPN 隧道协议客户端。
@@ -137,9 +137,9 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 
 - 修改指纹数据库时使密钥链项无效的新 Touch ID 约束。
 - 允许只使用 Touch ID 或密码创建访问控制列表项的新约束。
-- 一个新的身份验证上下文，可用于调用独立于`SecItem`调用的身份验证。
+- 一个新的身份验证上下文，用于调用与 `SecItem` 调用分开的身份验证。
 - 应用提供的密钥链项加密的访问控制列表熵（使用应用程序密码选项）。
-- 支持在安全 enclave 内生成和使用密钥（通过`kSecAttrTokenIDSecureEnclave`属性）。
+- 支持在安全 enclave 内生成和使用密钥（通过 `kSecAttrTokenIDSecureEnclave` 属性）。
 
 有关详细信息，请参阅我们[对 TOUCH ID](~/ios/platform/touchid.md)文档的介绍。
 
@@ -177,8 +177,8 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 Apple 在 iOS 9 中弃用了以下 Api 和函数：
 
 - **通讯簿 & 通讯簿 ui** -这些 api 已被联系人和联系人 UI 框架取代。 有关详细信息，请参阅[联系人和联系人 UI](~/ios/platform/contacts.md)文档。
-- **CBCentralManager** - `RetrievePeripherals` 类`CBCentralManager`的`RetrieveConnectedPeripherals`和方法已在 iOS 9 中被删除。 调用这些方法将导致应用在配对附件或应用启动时崩溃。
-- **FetchAllChanges** `FetchAllChanges` -`CKFetchRecordChangesOperation`已对类进行了折旧，并将在 iOS 9 中将其删除。
+- **CBCentralManager** -已在 iOS 9 中删除了 `CBCentralManager` 类的 `RetrievePeripherals` 和 `RetrieveConnectedPeripherals` 方法。 调用这些方法将导致应用在配对附件或应用启动时崩溃。
+- **FetchAllChanges** -`CKFetchRecordChangesOperation` 类的 `FetchAllChanges` 已进行了折旧，并将在 iOS 9 中删除。
 - **Media Player** -Media Player 框架已在 iOS 9 中弃用。 请改用 AVKit 或 AV Foundation Api。
 
 有关特定 API 弃用功能的完整列表，请参阅 Apple 的[iOS 9.0 API 差异](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)文档。
@@ -193,7 +193,7 @@ Apple 在 iOS 9 中弃用了以下 Api 和函数：
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 另外，请查看这些示例的 iOS 部分（随附 Mac OS X 版本！）：

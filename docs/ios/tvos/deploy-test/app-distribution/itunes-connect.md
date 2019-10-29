@@ -4,15 +4,15 @@ description: 本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect �
 ms.prod: xamarin
 ms.assetid: 86C7C5BD-C97D-4F1D-B611-A7694557BFDF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ef3d25974f61bb1ac763831ab9a1f6b62d11abbe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 01ab48f68656dcabdf2a6cfc286dfcd8850454f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769669"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030764"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中配置 tvOS 应用
 
@@ -38,11 +38,11 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 完成上述所有步骤后，打开应用的 iTunes Connect 记录，并选择使用左侧栏添加 tvOS 支持：
 
-[![](itunes-connect-images/connect01.png "使用左侧侧栏添加 tvOS 支持")](itunes-connect-images/connect01.png#lightbox)
+[![](itunes-connect-images/connect01.png "Add tvOS support using the left hand sidebar")](itunes-connect-images/connect01.png#lightbox)
 
 然后，tvOS 特定的信息屏幕将可用于给定 iTunes Connect 记录：
 
-[![](itunes-connect-images/connect02.png "\"TvOS 特定信息\" 屏幕")](itunes-connect-images/connect02.png#lightbox)
+[![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -50,7 +50,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 在左侧边栏中，选择 " **1.0 TVOS 应用准备提交**" 部分：
 
-[![](itunes-connect-images/connect03.png "tvOS 版本信息")](itunes-connect-images/connect03.png#lightbox)
+[![](itunes-connect-images/connect03.png "tvOS Version Information")](itunes-connect-images/connect03.png#lightbox)
 
 在此屏幕上提供以下信息：
 
@@ -62,7 +62,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 输入所需信息后，请单击屏幕右上角的 "**保存**" 按钮以保存更改：
 
-[![](itunes-connect-images/connect04.png "tvOS 版本信息已准备好提交")](itunes-connect-images/connect04.png#lightbox)
+[![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -70,7 +70,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 最终准备好将 tvOS 应用提交到 Apple TV App Store 进行查看时，请返回到应用的 iTunes Connect 记录，并单击屏幕右上角的 "**提交以审阅**" 按钮：
 
-[![](itunes-connect-images/connect05.png "提交以供审阅")](itunes-connect-images/connect05.png#lightbox)
+[![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 

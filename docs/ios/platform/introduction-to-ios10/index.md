@@ -4,15 +4,15 @@ description: 本文介绍适用于 Xamarin iOS 开发人员的 iOS 10 中的所�
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 465c8df864669ad47acd47ae380574e247a0acd6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292869"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032226"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 简介
 
@@ -26,15 +26,15 @@ Apple 在 iOS 10 中添加了几个新的 Api 和服务，并对现有功能进�
 
 ## <a name="adapting-to-the-true-tone-display"></a>适应真正的音调显示
 
-Apple 的真正语气显示技术使用 iOS 设备中的环境光线传感器来动态调整显示器的颜色和强度，使其与当前照明条件相匹配。 iOS 10 提供了新的[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)密钥，可将其添加到应用`Info.plist`文件中，并控制真正的色调应用标准颜色变化的方式。 
+Apple 的真正语气显示技术使用 iOS 设备中的环境光线传感器来动态调整显示器的颜色和强度，使其与当前照明条件相匹配。 iOS 10 提供了新的[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)密钥，可将其添加到应用的 `Info.plist` 文件中，并控制 True 声调应用标准颜色转换的方式。 
 
 可用值如下：
 
-- `UIWhitePointAdaptivityStyleStandard`**默认**-使用标准白点 adaptivity。
+- `UIWhitePointAdaptivityStyleStandard`**默认值**-使用标准的 adaptivity。
 - `UIWhitePointAdaptivityStyleReading`-用于读取重点应用。
-- `UIWhitePointAdaptivityStyleGame`-用于以游戏为中心的应用程序。
-- `UIWhitePointAdaptivityStyleVideo`-用于面向视频的应用程序。
-- `UIWhitePointAdaptivityStylePhoto`-适用于以摄影为中心的应用，其中颜色保真度比环境白点调整更重要。
+- `UIWhitePointAdaptivityStyleGame`-用于以游戏为中心的应用。
+- `UIWhitePointAdaptivityStyleVideo`-用于面向视频的应用。
+- `UIWhitePointAdaptivityStylePhoto`-适用于在颜色保真度比环境白点调整更重要的图片聚焦应用。
 
 ## <a name="app-extensions"></a>应用扩展
 
@@ -49,8 +49,8 @@ Apple 在 iOS 10 中提供了几个新的应用扩展点：
 
 此外，第三方键盘应用扩展具有以下增强功能：
 
-- `UITextDocumentProxy`类的新`DocumentInputMode`属性可以确定文档的输入语言，并允许键盘扩展与该语言对齐。
-- 新`HandleInputModeList`方法使键盘扩展可以显示系统的键盘选取器菜单，以响应被攻入的地球键。
+- `UITextDocumentProxy` 类的新 `DocumentInputMode` 属性可以确定文档的输入语言，并允许键盘扩展与该语言对齐。
+- 新的 `HandleInputModeList` 方法使键盘扩展可以显示系统的键盘选取器菜单，以响应被攻入的地球键。
 
 有关详细信息，请参阅[扩展简介](~/ios/platform/extensions.md)、[消息应用集成](~/ios/platform/message-app-integration/index.md)、[前瞻性建议](~/ios/platform/search/proactive-suggestions.md)简介、 [SiriKit 简介](~/ios/platform/sirikit/index.md)[和 Apple](~/ios/platform/user-notifications/index.md) [应用扩展编程指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)。
 
@@ -59,7 +59,7 @@ Apple 在 iOS 10 中提供了几个新的应用扩展点：
 IOS 10 中的核心聚焦为应用搜索提供了多项增强功能，例如：
 
 - **众包深层链接的热门程度（带有差异隐私）** -提供一种在搜索结果中升级深层链接的应用内容的方法。
-- **应用内搜索**-使用新`CSSearchQuery`类提供应用内聚焦搜索功能，类似于邮件、邮件和便笺应用的工作方式。
+- **应用内搜索**-使用新的 `CSSearchQuery` 类提供应用内聚焦搜索功能，类似于邮件、邮件和便笺应用的工作方式。
 - **搜索延续**-允许用户在聚焦或 Safari 中开始搜索，然后打开应用并继续搜索。
 - **验证结果的可视化效果**-Apple 的[应用搜索 API 验证工具](https://search.developer.apple.com/appsearch-validation-tool)现在会在执行测试时显示网站标记和深层链接的可视表示形式。
 - **消息应用程序映像共享**-允许使用常用的应用程序内映像在消息中共享（通过消息应用扩展），以便在聚焦搜索中显示。
@@ -72,7 +72,7 @@ Apple 已在 iOS 10 中对 Apple Pay 进行了多项改进，使用户能够从�
 
 IOS 10 中添加了几个新的 Api，它们适用于 iOS 和 watchOS 以支持动态支付网络和新的沙箱测试环境。
 
-此外，PassKit 框架已扩展为支持外的`UIKit` Apple Pay，并允许卡颁发商在其应用中提供其卡。
+此外，PassKit 框架已扩展为支持 `UIKit` 之外的 Apple Pay，并允许卡颁发商在其应用中提供其卡。
 
 若要了解详细信息，请参阅我们的[Apple Pay 增强](~/ios/platform/apple-pay.md)指南。
 
@@ -80,9 +80,9 @@ IOS 10 中添加了几个新的 Api，它们适用于 iOS 和 watchOS 以支持�
 
 Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其图标：
 
-- `ApplicationIconBadgeNumber`-获取或设置 Springboard 中应用程序图标的徽章。
-- `SupportsAlternateIcons`-如果`true`应用程序具有一组备用图标，则为。
-- `AlternateIconName`-返回当前选定`null`的备用图标的名称，如果使用主图标，则返回。
+- `ApplicationIconBadgeNumber` 获取或设置 Springboard 中应用程序图标的徽章。
+- `SupportsAlternateIcons`-如果 `true` 应用程序具有一组备用图标。
+- `AlternateIconName`-返回当前选定的备用图标的名称，如果使用主图标，则为 `null`。
 - `SetAlternameIconName`-使用此方法将应用的图标切换到给定的替代图标。
 
 若要了解详细信息，请参阅我们的[备用应用图标](~/ios/app-fundamentals/images-icons/alternate-app-icons.md)指南。
@@ -112,7 +112,7 @@ iOS 10 允许在 Xamarin iOS 解决方案中包含消息应用扩展，该扩展
 
 在 iPhone 7 和 iPhone 7 Plus 上，Apple 包含了新的 haptics 响应，这些响应提供了用于以物理方式吸引用户的其他方式。 使用新的 tactile 反馈选项，使用户注意并强化其操作。
 
-几个内置 UI 元素已经提供了 haptic 的反馈，如选取器、开关和滑杆。 iOS 10 现在添加了使用`UIFeedbackGenerator`类的具体子类以编程方式触发 haptics 的功能。
+几个内置 UI 元素已经提供了 haptic 的反馈，如选取器、开关和滑杆。 iOS 10 现在添加了使用 `UIFeedbackGenerator` 类的具体子类以编程方式触发 haptics 的功能。
 
 若要了解详细信息，请参阅我们[提供的 Haptic 反馈](~/ios/user-interface/ios-ui/haptic-feedback.md)指南。
 
@@ -133,7 +133,7 @@ iOS 10 提供了新的方法，可让系统在适当的时间自动向用户提�
 
 ## <a name="request-app-review"></a>请求应用评审
 
-新到 ios 10.3，该`RequestReview()`方法允许 iOS 应用要求用户对其进行评级或查看。 尽管此方法可以在用户体验中有意义的任何位置调用，但是审核过程由应用商店策略控制和处理。 因此，此方法可能会也可能不会显示警报，并且决不会为响应用户操作（如点击按钮）而调用。
+新的 iOS 10.3，`RequestReview()` 方法允许 iOS 应用要求用户对其进行评级或查看。 尽管此方法可以在用户体验中有意义的任何位置调用，但是审核过程由应用商店策略控制和处理。 因此，此方法可能会也可能不会显示警报，并且决不会为响应用户操作（如点击按钮）而调用。
 
 若要了解详细信息，请参阅[请求应用审阅](~/ios/platform/request-app-review.md)指南。
 
@@ -141,7 +141,7 @@ iOS 10 提供了新的方法，可让系统在适当的时间自动向用户提�
 
 Apple 在 iOS 10 中对安全和隐私进行了多项改进，有助于开发人员提高应用程序的安全性并确保最终用户的隐私。
 
-因此，在 iOS 10 （或更高版本）上运行的应用程序必须通过在其`Info.plist`文件中输入一个或多个特定于隐私的密钥，向用户说明应用希望获取访问权限的原因，以静态方式声明其意图以访问特定功能或用户信息。
+因此，在 iOS 10 （或更高版本）上运行的应用程序必须通过在其 `Info.plist` 文件中输入一个或多个特定于隐私的密钥，向用户说明应用希望获取访问权限的原因，以静态方式声明其意图以访问特定功能或用户信息。
 
 若要了解详细信息，请参阅[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)指南。
 
@@ -168,7 +168,7 @@ SiriKit 支持以下服务域：
 
 iOS 10 包括一个新的语音 API，该 API 允许应用程序支持连续语音识别和转录语音（从实时或录制的音频流）到文本。
 
-由于语音识别需要在 Apple 服务器上传输和临时存储数据，因此应用程序_必须_通过在其`NSSpeechRecognitionUsageDescription` `Info.plist`文件中包含密钥并调用`SFSpeechRecognizer.RequestAutorization`方法。
+由于语音识别需要在 Apple 服务器上传输和临时存储数据，因此应用程序_必须_通过将 `NSSpeechRecognitionUsageDescription` 密钥包含在其 `Info.plist` 文件中并调用来请求用户的权限来执行识别 `SFSpeechRecognizer.RequestAutorization`付款方式.
 
 若要了解详细信息，请参阅[语音识别指南简介](~/ios/platform/speech.md)。
 
@@ -194,9 +194,9 @@ iOS 10 在整个系统（包括核心图形、核心图像、金属和 AVFoundat
 
 当使用宽色时，Apple 提供以下最佳做法：
 
-- [UIColor](xref:UIKit.UIColor)现在使用 sRGB 颜色空间，并且不再将值`0.0`夹具到 to `1.0`范围。 如果应用依赖于以前的夹具行为，则需要为 iOS 10 进行修改。
-- 在 iPad Pro 上执行自定义`UIView`绘图时，将为 sRGB 颜色空间配置绘图环境。
-- 如果应用执行的`UIImages`自定义呈现，则使用新的[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定扩展范围或标准范围格式的使用。
+- [UIColor](xref:UIKit.UIColor)现在使用 sRGB 颜色空间，并且不再将值夹具到 `0.0` 到 `1.0` 范围。 如果应用依赖于以前的夹具行为，则需要为 iOS 10 进行修改。
+- 在 iPad Pro 上执行自定义 `UIView` 绘图时，将为 sRGB 颜色空间配置绘图环境。
+- 如果应用执行 `UIImages`的自定义呈现，则使用新的[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)类指定扩展范围或标准范围格式的使用。
 - 当使用低级别 API （如核心图形或金属图）来提供图像处理时，开发人员应使用支持16位浮点值的扩展范围颜色空间和像素格式。 如果需要，开发人员必须手动固定颜色分量值。
 - 核心图形、核心图像和金属绩效着色器都提供了在两个颜色空间之间进行转换的新方法。
 
@@ -218,14 +218,14 @@ Apple 为小组件系统引进了几项增强功能，以确保小组件在新�
 
 IOS 10 中已弃用以下 Api：
 
-- CloudKit for iOS `CKDiscoverUserInfosOperation` 10 `CKFetchRecordChangesOperation`中已弃用`CKDiscoveredUserInfo`、和类。 `CKDiscoverAllContactsOperation` 改用[CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)、 [CKUserIdentity](xref:CloudKit.CKUserIdentity)和[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation)类（支持记录共享）。
+- `CKDiscoverAllContactsOperation`、`CKDiscoveredUserInfo`、`CKDiscoverUserInfosOperation` 和 `CKFetchRecordChangesOperation` 类在 iOS 10 的 CloudKit 中已被弃用。 改用[CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation)、 [CKUserIdentity](xref:CloudKit.CKUserIdentity)和[CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation)类（支持记录共享）。
 - 已不推荐使用几个[CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) api （例如，基于区域和基于查询的订阅）。 改用[CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription)和[CKQuerySubscription](xref:CloudKit.CKQuerySubscription) api。
 - 与普遍内容相关的[NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator)符号已被弃用。
-- `ADBannerView`、`ADInterstitialAd` 和 [UIViewController ](xref:UIKit.UIViewController)类中的相关符号已被弃用。
+- [UIViewController](xref:UIKit.UIViewController)类中的 `ADBannerView`、`ADInterstitialAd` 和相关符号已被弃用。
 - 与浮点值相关的[SKUniform](https://developer.apple.com/reference/spritekit/skuniform)符号已被弃用。
-- UIKit `UILocalNotification`的`UIMutableUserNotificationAction`、、 `UIMutableUserNotificationCategory` 、和`UIUserNotificationSettings`类已被弃用。 `UIUserNotificationCategory` `UIUserNotificationAction` 请改用[用户通知](#user-notifications)框架。
-- `HandleActionForLocalNotification` 、`HandleActionForRemoteNotification`和WatchKit方法已弃用`DidReceiveRemoteNotification` 。 `DidReceiveLocalNotification` 请改用`DidReceiveNotification`和方法。 `HandleActionForNotification`
-- 已不`DidReceiveRemoteNotification`推荐使用[WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)的和方法。`DidReceiveLocalNotification` 创建实现适当方法的[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate)实例，并将其分配给`Delegate` [UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)对象的属性。
+- UIKit 的 `UILocalNotification`、`UIMutableUserNotificationAction`、`UIMutableUserNotificationCategory`、`UIUserNotificationAction`、`UIUserNotificationCategory` 和 `UIUserNotificationSettings` 类已被弃用。 请改用[用户通知](#user-notifications)框架。
+- `HandleActionForLocalNotification`、`HandleActionForRemoteNotification`、`DidReceiveLocalNotification` 和 `DidReceiveRemoteNotification` WatchKit 方法已弃用。 改用 `HandleActionForNotification` 和 `DidReceiveNotification` 方法。
+- [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)的 `DidReceiveLocalNotification` 和 `DidReceiveRemoteNotification` 方法已弃用。 创建一个[UNUserNotificationCenterDelegate](https://developer.apple.com/reference/usernotifications/unusernotificationcenterdelegate)实例，用于实现适当的方法，并将其分配给[UNUserNotificationCenter](https://developer.apple.com/reference/usernotifications/unusernotificationcenter)对象的 `Delegate` 属性。
 - **Game Center 应用**已弃用，并已从 iOS 中删除。 如果应用使用 Gamekit\，它_必须_提供其自己的接口以显示 gamekit\ 功能，如排行榜等。
 
 有关弃用功能的完整列表，请参阅 Apple 的[ios 9.3 到 iOS 10.0 API 差异](https://developer.apple.com/library/prerelease/content/releasenotes/General/iOS10APIDiffs/index.html)文档。

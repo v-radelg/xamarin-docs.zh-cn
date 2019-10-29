@@ -4,15 +4,15 @@ description: 本文档介绍如何设置，以通过 Xamarin 构建 iOS 13、iPa
 ms.prod: xamarin
 ms.assetid: 97414545-85D2-433C-9246-63B6763F488A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/01/2019
-ms.openlocfilehash: ed9eb5dc80935c8401f5bd8c9be1c301af3480f5
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: 1ab713636e51023653260963378f45637e793d05
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975762"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031742"
 ---
 # <a name="get-started-with-ios-13"></a>IOS 13 入门
 

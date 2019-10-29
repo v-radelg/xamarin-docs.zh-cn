@@ -4,15 +4,15 @@ description: 本文档介绍如何设置以构建具有 Xamarin 的 iOS 12、tvO
 ms.prod: xamarin
 ms.assetid: 6C0F0133-1A5F-408B-8BCA-BDCA313A55C2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/19/2018
-ms.openlocfilehash: 480e7c1d5ff0aa7335b3f45d8e05f276bc5be208
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1db249a9e07f178461bcb052508d08f54ecea121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287019"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032016"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>IOS 12、tvOS 12 和 watchOS 5 入门
 

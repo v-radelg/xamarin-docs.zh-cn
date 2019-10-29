@@ -4,15 +4,15 @@ description: 本文介绍如何使用 iOS 9 提供的新应用搜索 Api，以�
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769491"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031567"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin 中搜索 Api
 
@@ -22,7 +22,7 @@ _本文介绍如何使用 iOS 9 提供的应用搜索 Api，以允许用户在 X
 
 此外，新的搜索 Api 使您可以更轻松地在应用程序中集成搜索，而无需事先搜索实现。 因此，Apple 声称，通常需要几个小时才能使用应用搜索来统一搜索 iOS 9 应用的内容。
 
-[![](images/intro01.png "使用应用搜索可全面搜索的 iOS 9 应用内容示例")](images/intro01.png#lightbox)
+[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
 
 应用搜索由三个单独的 Api 组成：
 
@@ -64,7 +64,7 @@ Apple 提供以下建议，其中包含在你的应用中为提供搜索索引�
 IOS 10 中的核心聚焦为应用搜索提供了多项增强功能，例如：
 
 - **众包深层链接的热门程度（带有差异隐私）** -提供一种在搜索结果中升级深层链接的应用内容的方法。
-- **应用内搜索**-使用新`CSSearchQuery`类提供应用内聚焦搜索功能，类似于邮件、邮件和便笺应用的工作方式。
+- **应用内搜索**-使用新的 `CSSearchQuery` 类提供应用内聚焦搜索功能，类似于邮件、邮件和便笺应用的工作方式。
 - **搜索延续**-允许用户在聚焦或 Safari 中开始搜索，然后打开应用并继续搜索。
 - **验证结果的可视化效果**-Apple 的[应用搜索 API 验证工具](https://search.developer.apple.com/appsearch-validation-tool)现在会在执行测试时显示网站标记和深层链接的可视表示形式。
 - **消息应用程序映像共享**-允许使用常用的应用程序内映像在消息中共享（通过消息应用扩展），以便在聚焦搜索中显示。
@@ -94,5 +94,5 @@ iOS 10 提供了新的方法，可让系统在适当的时间自动向用户提�
 
 - [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [应用搜索编程指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: f6576f1e7a0ed4aa27a40c7610b42e942c7923b4
-ms.sourcegitcommit: fbccdade677a805d842ec054e44bed3d01356e93
+ms.openlocfilehash: 90b0e0f3802ce766decb802c9406d72b5966360e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798629"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032805"
 ---
 # <a name="listview-appearance"></a>ListView 外观
 
@@ -341,5 +341,5 @@ void OnImageTapped (object sender, EventArgs args)
 - [分组（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 - [自定义呈现器视图（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 - [动态调整行的大小（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
-- [1.4 发行说明](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 发行说明](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)
+- [1.4 发行说明](https://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
+- [1.3 发行说明](https://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: e95d7a01b2743db119f7982db1f9ed34bc4d02a9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e61aaa6a2071797f905bf7398576f2045a46faea
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769625"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030697"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Xamarin 中的 tvOS 简介
 
@@ -36,7 +36,7 @@ Apple TV 平台面向开发人员，使他们能够创建丰富的沉浸式应�
 - [TvOS 11 简介](~/ios/tvos/platform/introduction-to-tvos11.md)-本文介绍 tvOS 11 中适用于 tvOS 开发人员的新增功能。
 - [TvOS 10 简介](~/ios/tvos/platform/introduction-to-tvos10/index.md)-本文介绍了 tvOS 10 中所有新的和修改的 api，以及 tvOS 开发人员提供的功能。
 - [TvOS 9 简介](~/ios/tvos/platform/tvos9.md)-本文介绍了 tvOS 9 中所有适用于 Xamarin tvOS 开发人员的新的和修改的 api 和功能。 
-- [Hello，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)– 本指南介绍了创建第一个Xamarin.tvOS应用程序的过程，并介绍了开发工具链，包括Visual Studio for Mac，Xcode和Interface Builder。 它还介绍了将 UI 控件公开给代码的插座和操作，最后还介绍了如何生成、运行和测试 tvOS 应用程序。
+- [你好，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)–本指南介绍了如何创建你的第一个 tvOS 应用程序，并在此过程中引入了开发工具链，其中包括 Visual Studio for Mac、Xcode 和 Interface Builder。 它还介绍了将 UI 控件公开给代码的插座和操作，最后还介绍了如何生成、运行和测试 tvOS 应用程序。
 - [使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)-本文介绍如何在 tvOS 应用内设计和处理图标和图像。
 - [使用导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)–本文介绍了焦点的概念以及如何使用它来呈现和处理 tvOS 应用内部的导航。
 - [资源和数据存储](~/ios/tvos/app-fundamentals/resources-data-storage.md)-本文介绍如何在 tvOS 应用中处理资源和永久性数据存储。
@@ -64,7 +64,7 @@ Apple TV 平台面向开发人员，使他们能够创建丰富的沉浸式应�
 
 此外，Apple 提供了以下示例应用，这些应用可与C# Xamarin 对 tvOS 应用的支持转码：
 
-- [DemoBots:使用 SpriteKit 和 GameplayKit 生成跨平台游戏](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
+- [DemoBots：使用 SpriteKit 和 GameplayKit 构建跨平台游戏](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
 
 ## <a name="known-issues-and-troubleshooting"></a>已知问题和故障排除
 

@@ -4,15 +4,15 @@ description: 本指南介绍如何实现适用于 Android 磨损1.0 的自定义
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2018
-ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 38123e2b1ef20144606bcc77ad33af572aa3707a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758507"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030383"
 ---
 # <a name="creating-a-watch-face"></a>创建表盘
 
@@ -186,7 +186,7 @@ namespace WatchFace
 
 ### <a name="implement-the-engine-oncreate-method"></a>实现 Engine OnCreate 方法
 
-@No__t_0 方法初始化手表面。 将以下字段添加到 `MyWatchFaceEngine`：
+`OnCreate` 方法初始化手表面。 将以下字段添加到 `MyWatchFaceEngine`：
 
 ```csharp
 Paint hoursPaint;
@@ -223,11 +223,11 @@ public override void OnCreate(ISurfaceHolder holder)
 
 有关这些和其他手表样式选项的详细信息，请参阅 Android [WatchFaceStyle](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API 文档。
 
-@No__t_0 完成后，`OnCreate` 实例化 `Paint` 对象（`hoursPaint`），并将其颜色设置为白色，将其文本大小设置为48像素（必须以像素为单位指定[TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29) ）。
+`SetWatchFaceStyle` 完成后，`OnCreate` 实例化 `Paint` 对象（`hoursPaint`），并将其颜色设置为白色，将其文本大小设置为48像素（必须以像素为单位指定[TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29) ）。
 
 ### <a name="implement-the-engine-ondraw-method"></a>实现引擎 OnDraw 方法
 
-@No__t_0 方法或许是最重要的 `CanvasWatchFaceService.Engine` 方法 &ndash; 它是实际绘制观看人脸元素（例如数字和时钟面部指针）的方法。
+`OnDraw` 方法或许是最重要的 `CanvasWatchFaceService.Engine` 方法 &ndash; 它是实际绘制观看人脸元素（例如数字和时钟面部指针）的方法。
 在下面的示例中，它在手表面上绘制一个时间字符串。
 将以下方法添加到 `MyWatchFaceEngine`：
 
@@ -256,7 +256,7 @@ public override void OnTimeTick()
 }
 ```
 
-@No__t_0 的这一实现只需调用 `Invalidate`。 @No__t_0 方法计划 `OnDraw` 重绘手表面。
+`OnTimeTick` 的这一实现只需调用 `Invalidate`。 `Invalidate` 方法计划 `OnDraw` 重绘手表面。
 
 有关 `OnTimeTick` 方法的详细信息，请参阅 Android [onTimeTick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) API 文档。
 
@@ -433,7 +433,7 @@ public class TimeZoneReceiver: BroadcastReceiver
 }
 ```
 
-@No__t_0 和 `UnregisterTimezoneReceiver` 方法由 `OnVisibilityChanged` 方法调用。
+`RegisterTimezoneReceiver` 和 `UnregisterTimezoneReceiver` 方法由 `OnVisibilityChanged` 方法调用。
 当 watch 面的可见性状态更改为隐藏时，将调用 `UnregisterTimezoneReceiver`。 当监视面再次可见时，将调用 `RegisterTimezoneReceiver` （请参阅 `OnVisibilityChanged` 方法）。
 
 Engine `RegisterTimezoneReceiver` 方法为此时区接收器的 `Receive` 事件声明处理程序;当跨越时区时，此处理程序使用新时间更新 `time` 对象：
@@ -453,7 +453,7 @@ IntentFilter filter = new IntentFilter(Intent.ActionTimezoneChanged);
 Application.Context.RegisterReceiver (timeZoneReceiver, filter);
 ```
 
-@No__t_0 方法将注销时区接收方：
+`UnregisterTimezoneReceiver` 方法将注销时区接收方：
 
 ```csharp
 Application.Context.UnregisterReceiver (timeZoneReceiver);

@@ -4,15 +4,15 @@ description: 本文档介绍如何将关键警报与 Xamarin 一起使用。 IOS
 ms.prod: xamarin
 ms.assetid: 75742257-081D-44F4-B49E-FB807DF85262
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 54a214215f77b66f6a4b134dcb8d27b26c44fb6c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43b810b95e4da2927030617e68c0ade824a0beaa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291296"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031980"
 ---
 # <a name="critical-alerts-in-xamarinios"></a>Xamarin 中的严重警报
 
@@ -28,8 +28,8 @@ ms.locfileid: "70291296"
 
 应用的通知授权请求会提示用户允许或禁止应用的通知。 如果通知授权请求要求提供发送关键警报的权限，则该应用程序还会使用户有机会选择使用关键警报。
 
-以下代码通过传递适当的来请求发送关键警报和标准通知和声音的权限[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
-[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)值：
+以下代码通过传递适当的[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)请求权限以发送关键警报和标准通知和声音。
+要[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)的值：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,12 +46,12 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 ## <a name="local-critical-alerts"></a>本地关键警报
 
 若要发送本地关键警报，请创建[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-并将其`Sound`属性设置为：
+并将其 `Sound` 属性设置为：
 
 - `UNNotificationSound.DefaultCriticalSound`，它使用默认的关键通知声音。
-- `UNNotificationSound.GetCriticalSound`，它允许您指定与应用程序和卷捆绑在一起的自定义声音。
+- `UNNotificationSound.GetCriticalSound`，它允许指定与应用和卷捆绑在一起的自定义声音。
 
-然后， `UNNotificationRequest`从通知内容创建，并将其添加到通知中心：
+然后，从通知内容创建 `UNNotificationRequest`，并将其添加到通知中心：
 
 ```csharp
 var content = new UNMutableNotificationContent()

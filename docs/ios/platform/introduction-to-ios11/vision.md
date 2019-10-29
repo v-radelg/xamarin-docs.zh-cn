@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中使用 iOS 11 远景框架。 �
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b58e7b1fffed3253d9765401d52f16b751db134d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752276"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032068"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin 中的远景框架
 
@@ -37,18 +37,18 @@ ms.locfileid: "70752276"
 
 [VisionRects 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)演示如何处理图像并在其上绘制检测到的矩形。
 
-### <a name="1-initialize-the-vision-request"></a>1.初始化远景请求
+### <a name="1-initialize-the-vision-request"></a>1. 初始化远景请求
 
-在`ViewDidLoad`中，创建`VNDetectRectanglesRequest`一个引用`HandleRectangles`将在每个请求结束时调用的方法的：
+在 `ViewDidLoad`中，创建一个引用 `HandleRectangles` 方法的 `VNDetectRectanglesRequest`，将在每个请求结束时调用该方法：
 
-还应设置属性，否则将默认为1，并且仅返回一个结果。 `MaximumObservations`
+还应设置 `MaximumObservations` 属性，否则将默认为1，并且仅返回一个结果。
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 RectangleRequest.MaximumObservations = 10;
 ```
 
-### <a name="2-start-the-vision-processing"></a>2.开始视觉处理
+### <a name="2-start-the-vision-processing"></a>2. 启动视觉处理
 
 下面的代码开始处理请求。 在**VisionRects**示例中，此代码在用户选择了图像后运行：
 
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-此处理程序将`ciImage`传递到在步骤`VNDetectRectanglesRequest` 1 中创建的远景框架。
+此处理程序将 `ciImage` 传递给在步骤1中创建的远景框架 `VNDetectRectanglesRequest`。
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3.处理视觉处理的结果
+### <a name="3-handle-the-results-of-vision-processing"></a>3. 处理视觉处理的结果
 
-完成矩形检测后，框架将执行`HandleRectangles`方法，摘要如下所示：
+完成矩形检测后，框架将执行 `HandleRectangles` 方法，摘要如下所示：
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -86,9 +86,9 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4.显示结果
+### <a name="4-display-the-results"></a>4. 显示结果
 
-VisionRectangles `OverlayRectangles`示例中的方法有三个函数：
+**VisionRectangles**示例中的 `OverlayRectangles` 方法包含三个函数：
 
 - 渲染源图像，
 - 绘制一个矩形以指示每个的检测位置，并
@@ -98,7 +98,7 @@ VisionRectangles `OverlayRectangles`示例中的方法有三个函数：
 
 ![检测到包含三个矩形的照片](vision-images/found-rectangles-phone-sml.png)
 
-### <a name="5-further-processing"></a>5.进一步处理
+### <a name="5-further-processing"></a>5. 进一步处理
 
 矩形检测通常只是操作链中的第一步（如[此 CoreMLVision 示例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)），其中，将矩形传递到 CoreML 模型来分析手写数字。
 
@@ -108,15 +108,15 @@ VisionRectangles `OverlayRectangles`示例中的方法有三个函数：
 
 [VisionFaces 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)使用不同的远景请求类，与**VisionRectangles**示例的工作方式类似。
 
-### <a name="1-initialize-the-vision-request"></a>1.初始化远景请求
+### <a name="1-initialize-the-vision-request"></a>1. 初始化远景请求
 
-在`ViewDidLoad`中，创建`VNDetectFaceRectanglesRequest`一个引用`HandleRectangles`将在每个请求结束时调用的方法的。
+在 `ViewDidLoad`中，创建一个引用 `HandleRectangles` 方法的 `VNDetectFaceRectanglesRequest`，将在每个请求结束时调用该方法。
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 ```
 
-### <a name="2-start-the-vision-processing"></a>2.开始视觉处理
+### <a name="2-start-the-vision-processing"></a>2. 启动视觉处理
 
 下面的代码开始处理请求。 在**VisionFaces**示例中，此代码在用户选择了图像后运行：
 
@@ -128,11 +128,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-此处理程序将`ciImage`传递到在步骤`VNDetectFaceRectanglesRequest` 1 中创建的远景框架。
+此处理程序将 `ciImage` 传递给在步骤1中创建的远景框架 `VNDetectFaceRectanglesRequest`。
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3.处理视觉处理的结果
+### <a name="3-handle-the-results-of-vision-processing"></a>3. 处理视觉处理的结果
 
-面部检测完成后，处理程序将执行`HandleRectangles`方法，该方法执行错误处理并显示检测到的人脸的边界，并`OverlayRectangles`调用来绘制原始图片上的边框：
+面部检测完成后，处理程序将执行 `HandleRectangles` 方法，该方法执行错误处理并显示检测到的人脸的边界，并调用 `OverlayRectangles` 来绘制原始图片上的边框：
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -159,9 +159,9 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4.显示结果
+### <a name="4-display-the-results"></a>4. 显示结果
 
-VisionFaces `OverlayRectangles`示例中的方法有三个函数：
+**VisionFaces**示例中的 `OverlayRectangles` 方法包含三个函数：
 
 - 渲染源图像，
 - 为检测到的每个面部绘制一个矩形，并
@@ -171,9 +171,9 @@ VisionFaces `OverlayRectangles`示例中的方法有三个函数：
 
 ![检测到两个面部的照片](vision-images/found-faces-phone-sml.png)
 
-### <a name="5-further-processing"></a>5.进一步处理
+### <a name="5-further-processing"></a>5. 进一步处理
 
-远景框架包含其他功能来检测面部功能，如眼睛和嘴。 使用类型，它将返回`VNFaceObservation`如上第3步中所示的结果，但`VNFaceLandmark`包含其他数据。 `VNDetectFaceLandmarksRequest`
+远景框架包含其他功能来检测面部功能，如眼睛和嘴。 使用 `VNDetectFaceLandmarksRequest` 类型，它将返回如上步骤3所示的 `VNFaceObservation` 结果，但使用其他 `VNFaceLandmark` 数据。
 
 ## <a name="related-links"></a>相关链接
 
