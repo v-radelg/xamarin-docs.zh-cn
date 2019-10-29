@@ -3,15 +3,15 @@ title: Xamarin 中的编程语言支持
 description: 本文档介绍 Xamarin 支持的各种编程语言。 它讨论C# F#了、可移植的视觉 Basic.NET 和 Razor 模板。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/18/2018
-ms.openlocfilehash: 95c63d446f961738ad71242671d632620316b879
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db963a38322e809d1aa82c02fbb9ae5cc4a650fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290904"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014622"
 ---
 # <a name="programming-language-support-in-xamarin"></a>Xamarin 中的编程语言支持
 
@@ -23,7 +23,7 @@ ms.locfileid: "70290904"
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 语言功能](~/cross-platform/platform/csharp-six.md)
 
-最新版本的C#语言–版本 6-继续演化语言以降低样本，提高清晰度和一致性。 更清晰的初始化语法、在块`await`中`catch/finally`使用的能力，以及 null 条件`?`运算符特别有用。
+最新版本的C#语言–版本 6-继续演化语言以降低样本，提高清晰度和一致性。 更清晰的初始化语法，使用 `catch/finally` 块中 `await` 的功能和 null 条件 `?` 运算符特别有用。
 
 ## <a name="ffsharpindexmd"></a>[F#](fsharp/index.md)
 

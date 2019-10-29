@@ -3,15 +3,15 @@ title: 使用 Razor 模板构建 HTML 视图
 description: " 在跨平台的方式下，使用全屏网页呈现 HTML 可能是一种简单而有效的格式，尤其是在您已经具有网站项目的 HTML、JavaScript 和 CSS 的情况下。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/24/2018
-ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5f1b1345f9abbf891cfbea6e45a8ed2abd7c0dac
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765348"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014605"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 模板构建 HTML 视图
 
@@ -41,7 +41,7 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-有关使用 UIWebView 控件的详细信息，请参阅[IOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)食谱。
+有关使用 UIWebView 控件的详细信息，请参阅[IOS UIWebView](https://github.com/xamarin/docs-archive/tree/master/Recipes/ios/content_controls/web_view)食谱。
 
 ### <a name="android"></a>Android
 
@@ -58,7 +58,7 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-有关使用 "Web 视图" 控件的详细信息，请参阅[Android Web 视图](http://docs.xamarin.com/recipes/android/controls/webview/)食谱。
+有关使用 "Web 视图" 控件的详细信息，请参阅[Android Web 视图](https://github.com/xamarin/docs-archive/tree/master/Recipes/android/controls/webview)食谱。
 
 ### <a name="specifying-the-base-directory"></a>指定基目录
 
@@ -80,13 +80,13 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-指定基目录， `NSBundle.MainBundle.BundleUrl`其指的是应用程序安装到的目录。 **资源**文件夹中的所有文件都复制到此位置，如此处所示的**样式 .css**文件：
+基本目录被指定为 `NSBundle.MainBundle.BundleUrl`，这是指在其中安装应用程序的目录。 **资源**文件夹中的所有文件都复制到此位置，如此处所示的**样式 .css**文件：
 
  ![iPhoneHybrid 解决方案](images/image1_240x163.png)
 
 所有静态内容文件的生成操作应为**BundleResource**：
 
- ![iOS 项目生成操作：BundleResource](images/image2_250x131.png)
+ ![iOS 项目生成操作： BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
@@ -102,7 +102,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
 所有静态内容文件的生成操作都应为**AndroidAsset**。
 
- ![Android 项目生成操作：AndroidAsset](images/image4_250x71.png)
+ ![Android 项目生成操作： AndroidAsset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>从C# HTML 和 JavaScript 调用
 
@@ -167,9 +167,9 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>从 C 调用 JavaScript\#
+### <a name="calling-javascript-from-c"></a>从 C\# 调用 JavaScript
 
-除了告诉 web 视图加载新的 HTML 页面外， C#代码还可以在当前显示的页面中运行 JavaScript。 可以使用C#字符串并执行整个 javascript 代码块，也可以通过`script`标记将方法调用创建到页面上已有的 javascript。
+除了告诉 web 视图加载新的 HTML 页面外， C#代码还可以在当前显示的页面中运行 JavaScript。 可以使用C#字符串并执行整个 javascript 代码块，也可以通过`script`标记将方法调用创建到页面上已提供的 JavaScript。
 
 #### <a name="android"></a>Android
 
@@ -227,13 +227,13 @@ Razor 模板文件的文件扩展名为**cshtml** 。 可以通过 "**新建文�
 
 请注意与常规 HTML 文件的以下差异：
 
-- 符号在 Razor 模板中具有特殊含义–它表示C#要计算以下表达式。 `@`
-- `@model`指令始终显示为 Razor 模板文件的第一行。
-- `@model`指令后面应跟有一个类型。 在此示例中，一个简单的字符串将传递给模板，但这可以是任何自定义类。
-- 在`@Model`整个模板中引用时，它会在生成时提供对传递给模板的对象的引用（在本示例中，它是一个字符串）。
+- `@` 符号在 Razor 模板中具有特殊含义–它表示C#要计算以下表达式。
+- `@model` 指令始终显示为 Razor 模板文件的第一行。
+- `@model` 指令后面应跟有一个类型。 在此示例中，一个简单的字符串将传递给模板，但这可以是任何自定义类。
+- 在整个模板中引用 `@Model` 时，它会在生成时提供对传递给模板的对象的引用（在本示例中，它是一个字符串）。
 - IDE 将自动生成模板的分部类（扩展名为 **... 扩展名为...** ）。 您可以查看此代码，但不能对其进行编辑。
- ![RazorView 分部类的名称为 RazorView，以与 # 模板文件名匹配。](images/image6_125x34.png) 此名称用于在代码中C#引用模板。
-- `@using`还可以在 Razor 模板的顶部包含语句以包括其他命名空间。
+ ![RazorView](images/image6_125x34.png) 分部类名为 RazorView，以匹配. # 模板文件名。 此名称用于在代码中C#引用模板。
+- 还可以将 `@using` 语句包含在 Razor 模板的顶部，以包括其他命名空间。
 
 然后，可以通过以下C#代码生成最终的 HTML 输出。 请注意，我们将模型指定为字符串 "Hello World"，该字符串将合并到呈现的模板输出中。
 
@@ -313,13 +313,13 @@ var page = template.GenerateString ();
 </html>
 ```
 
-您可以通过使用C# `@()`代码将代码括起来来编写复杂的单行表达式（如设置年龄格式）。
+您可以通过将代码与 `@()`C#包围在一起来编写复杂的单行表达式（例如设置年龄格式）。
 
-可以C#通过使用`@{}`来编写多个语句。
+可以C#通过将多个语句与 `@{}`包围来编写。
 
 #### <a name="if-else-statements"></a>Else 语句
 
-可以用表示代码分支， `@if`如此模板示例中所示。
+代码分支可以用 `@if` 表示，如此模板示例中所示。
 
 ```html
 @model Monkey
@@ -340,7 +340,7 @@ var page = template.GenerateString ();
 
 #### <a name="loops"></a>循环
 
-也可以添加`foreach`循环构造，如。 前缀可用于循环变量（ `@food`在本例中为），以 HTML 格式呈现。 `@`
+还可以添加循环构造，如 `foreach`。 `@` 前缀可用于循环变量（在本例中为 `@food`）以 HTML 格式呈现。
 
 ```html
 @model Monkey
@@ -394,7 +394,7 @@ IPhone 和 Android 项目的默认模板解决方案内容如下所示：
 - 静态内容，如**样式 .css**文件。
 - Razor 模板文件（如**RazorView** ）。
 - Razor 模板中引用的模型类，如**ExampleModel.cs** 。
-- 平台特定的类，该类创建 web 视图并呈现模板，如`MainActivity` Android `iPhoneHybridViewController`和 iOS 上的。
+- 平台特定的类，该类创建 web 视图并呈现模板，例如 Android 上的 `MainActivity` 和 iOS 上的 `iPhoneHybridViewController`。
 
 以下部分说明了项目的工作方式。
 
@@ -416,7 +416,7 @@ IPhone 和 Android 项目的默认模板解决方案内容如下所示：
 
 #### <a name="rendering-the-template"></a>呈现模板
 
-对模板`GenerateString`调用会将 HTML 呈现为可在 web 视图中显示的。 如果模板使用模型，则应在呈现之前提供。 此图说明了呈现的工作方式，而不是在运行时由 web 视图解析静态资源，使用提供的基目录查找指定的文件。
+对模板调用 `GenerateString` 可在 web 视图中呈现 HTML 以便显示。 如果模板使用模型，则应在呈现之前提供。 此图说明了呈现的工作方式，而不是在运行时由 web 视图解析静态资源，使用提供的基目录查找指定的文件。
 
  ![Razor 流程图](images/image12_700x421.png)
 
@@ -430,7 +430,7 @@ IPhone 和 Android 项目的默认模板解决方案内容如下所示：
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-JavaScript 函数读取 HTML 窗体中的所有值，并设置 web 视图`location.href`的： `InvokeCSharpWithFormValues`
+`InvokeCSharpWithFormValues` JavaScript 函数读取 HTML 窗体中的所有值，并设置 web 视图的 `location.href`：
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
@@ -456,19 +456,19 @@ var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-`UpdateLabel`在此示例中，对 textbox 参数执行最小数量的字符串操作（在C#字符串前面加上 "说"），然后回调到 web 视图。
+在此示例中 `UpdateLabel` 对 textbox 参数执行最少量的字符串操作（在字符串前面C#加上 "说"），然后回调到 web 视图。
 
 处理 URL 后，方法将中止导航，以便 web 视图不会尝试完成导航到自定义 URL。
 
-#### <a name="manipulating-the-template-from-c"></a>从 C 操作模板\#
+#### <a name="manipulating-the-template-from-c"></a>从 C\# 操作模板
 
-通过在 web 视图中调用 JavaScript， C#可以从与呈现的 HTML web 视图进行通信。 在 iOS 上，此操作通过对`EvaluateJavascript` UIWebView 调用：
+通过在 web 视图中调用 JavaScript， C#可以从与呈现的 HTML web 视图进行通信。 在 iOS 上，这是通过对 UIWebView 调用 `EvaluateJavascript` 来完成的：
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-在 Android 上，可以通过使用`"javascript:"` url 方案将 javascript 作为 url 加载来在 web 视图中调用 javascript：
+在 Android 上，可以通过使用 `"javascript:"` URL 方案将 JavaScript 作为 URL 加载来在 web 视图中调用 JavaScript：
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
@@ -517,5 +517,5 @@ HTML 可以很好地用于原型制作，并显示 web 最适合的内容种类�
 ### <a name="related-links"></a>相关链接
 
 - [RazorTodo 示例](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
-- [MVC 3-Razor 视图引擎（Microsoft）](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [使用 Razor 语法的 ASP.NET Web 编程简介（Microsoft）](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [MVC 3-Razor 视图引擎（Microsoft）](https://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
+- [使用 Razor 语法的 ASP.NET Web 编程简介（Microsoft）](https://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

@@ -4,15 +4,15 @@ description: 本文介绍如何在 Xamarin. Mac 应用程序中使用警报。 �
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 6fa442926fc2a54325713caf9764b37b530a345d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2ef8e81390b5d64971aa3883a05da9fb8795a416
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769847"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001533"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin 中的警报
 
@@ -22,7 +22,7 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用警报。它介绍了�
 
 警报是一种特殊类型的对话框，在出现严重问题（如错误）或警告（例如，准备删除文件）时出现。 由于警报是一个对话框，因此它还需要用户响应才能关闭。
 
-[![](alert-images/alert06.png "示例警报")](alert-images/alert06.png#lightbox)
+[![](alert-images/alert06.png "An example alert")](alert-images/alert06.png#lightbox)
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用警报的基本知识。 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 上面的代码将显示一个警报，其中的应用程序图标叠加在警告图标、标题、警告消息和单个 **"确定"** 按钮上：
 
-[![](alert-images/alert01.png "带有 \"确定\" 按钮的警报")](alert-images/alert01.png#lightbox)
+[![](alert-images/alert01.png "An alert with a OK button")](alert-images/alert01.png#lightbox)
 
 Apple 提供了几个可用于自定义警报的属性：
 
@@ -71,10 +71,10 @@ Apple 提供了几个可用于自定义警报的属性：
 - **MessageText** -这是警报的主要消息或标题，应该快速定义用户的情况。
 - **InformativeText** -这是警报的正文，你应清楚地定义情况并向用户显示可行的选项。
 - **图标**-允许向用户显示自定义图标。
-- HelpAnchor & **ShowsHelp** -允许将警报绑定到应用程序 HelpBook，并显示警报的帮助。
+- **HelpAnchor** & **ShowsHelp** -允许将警报绑定到应用程序 HelpBook，并显示警报的帮助。
 - **按钮**-默认情况下，警报只包含 **"确定"** 按钮，但 "**按钮**" 集合允许您根据需要添加更多选项。
-- **ShowsSuppressionButton** -如果`true`显示复选框，用户可以使用此复选框来取消警报，以便在触发警报时的后续事件发生。
-- **AccessoryView** -允许将另一个子视图附加到警报以提供额外的信息，例如添加用于数据输入的**文本字段**。 如果设置了新的**AccessoryView**或修改现有的，则需要调用`Layout()`方法以调整警报的可见布局。
+- **ShowsSuppressionButton** -如果 `true` 显示一个复选框，用户可以使用该复选框禁止显示警报，以便以后出现触发该警报的事件。
+- **AccessoryView** -允许将另一个子视图附加到警报以提供额外的信息，例如添加用于数据输入的**文本字段**。 如果设置了新的**AccessoryView**或修改现有的，则需要调用 `Layout()` 方法来调整警报的可见布局。
 
 <a name="Displaying_an_Alert" />
 
@@ -93,7 +93,7 @@ alert.RunModal ();
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert02.png "简单警报")](alert-images/alert02.png#lightbox)
+[![](alert-images/alert02.png "A simple alert")](alert-images/alert02.png#lightbox)
 
 下面的代码显示与工作表相同的警报：
 
@@ -108,7 +108,7 @@ alert.BeginSheet (this);
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert03.png "显示为工作表的警报")](alert-images/alert03.png#lightbox)
+[![](alert-images/alert03.png "An alert displayed as a sheet")](alert-images/alert03.png#lightbox)
 
 <a name="Working_with_Alert_Buttons" />
 
@@ -136,7 +136,7 @@ var result = alert.RunModal ();
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert04.png "带有三个按钮选项的警报")](alert-images/alert04.png#lightbox)
+[![](alert-images/alert04.png "An alert with three button options")](alert-images/alert04.png#lightbox)
 
 下面是与工作表相同的警报的代码：
 
@@ -156,7 +156,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert05.png "显示为工作表的三个按钮警报")](alert-images/alert05.png#lightbox)
+[![](alert-images/alert05.png "A three button alert displayed as a sheet")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > 永远不要将三个以上的按钮添加到警报。
@@ -165,7 +165,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 ## <a name="showing-the-suppress-button"></a>显示 "取消" 按钮
 
-如果警报的`ShowSuppressButton`属性为`true`，则该警报会显示一个复选框，用户可以使用该复选框来取消警报，以便在触发警报时的后续事件中出现。 下面的代码使用 "取消" 按钮显示一个自由浮动的警报：
+如果 `true`警报的 `ShowSuppressButton` 属性，则该警报会显示一个复选框，用户可以使用该复选框来取消警报，以便在触发警报时的后续事件发生。 下面的代码使用 "取消" 按钮显示一个自由浮动的警报：
 
 ```csharp
 var alert = new NSAlert () {
@@ -181,11 +181,11 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-如果的`alert.SuppressionButton.State`值为`NSCellStateValue.On`，则用户已选中 "取消隐藏" 复选框，否则它们不存在。
+如果 `NSCellStateValue.On``alert.SuppressionButton.State` 的值，则用户已选中 "取消选中" 复选框，否则他们未选中。
 
 如果代码正在运行，将显示以下内容：
 
-[![](alert-images/alert06.png "带有 \"取消\" 按钮的警报")](alert-images/alert06.png#lightbox)
+[![](alert-images/alert06.png "An alert with a suppress button")](alert-images/alert06.png#lightbox)
 
 下面是与工作表相同的警报的代码：
 
@@ -206,13 +206,13 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert07.png "带有 \"取消\" 按钮显示为工作表的警报")](alert-images/alert07.png#lightbox)
+[![](alert-images/alert07.png "An alert with a suppress button display as a sheet")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
 ## <a name="adding-a-custom-subview"></a>添加自定义子视图
 
-警报有一个`AccessoryView`属性，该属性可用于进一步自定义警报，并为用户输入添加类似于**文本字段**的内容。 下面的代码使用已添加的文本输入字段创建一个自由浮动的警报：
+警报具有 `AccessoryView` 属性，该属性可用于进一步自定义警报，并为用户输入添加类似于**文本字段**的内容。 下面的代码使用已添加的文本输入字段创建一个自由浮动的警报：
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -232,11 +232,11 @@ var result = alert.RunModal ();
 Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.SuppressionButton.State == NSCellStateValue.On);
 ```
 
-此处`var input = new NSTextField (new CGRect (0, 0, 300, 20));`的关键行用于创建将添加警报的新**文本字段**。 `alert.AccessoryView = input;`这会将**文本字段**附加到警报，并调用`Layout()`方法，这是调整警报大小以适应新的子视图所必需的。
+此处的关键行是 `var input = new NSTextField (new CGRect (0, 0, 300, 20));`，这会创建一个新的**文本字段**来添加警报。 `alert.AccessoryView = input;`，它将**文本字段**附加到警报，并调用 `Layout()` 方法，这是调整警报大小以适应新的子视图所需的。
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert08.png "如果运行此代码，将显示以下")](alert-images/alert08.png#lightbox)
+[![](alert-images/alert08.png "If we run the code, the following will be displayed")](alert-images/alert08.png#lightbox)
 
 下面是与工作表相同的警报：
 
@@ -261,7 +261,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert09.png "带有自定义视图的警报")](alert-images/alert09.png#lightbox)
+[![](alert-images/alert09.png "An alert with a custom view")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 

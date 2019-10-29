@@ -3,63 +3,63 @@ title: 自定义 ListView 的外观
 ms.prod: xamarin
 ms.assetid: B09AD282-2C4F-D71E-6806-9B1EF05C2CD4
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2018
-ms.openlocfilehash: 2787e814d330bf8262ba05e38c7827211e07fd72
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 48b23a1dce66f13efd3ad598cd61684e64e2b03c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764263"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028906"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>使用 Xamarin 自定义 ListView 的外观
 
-ListView 的外观由正在显示的行的布局决定。 若要更改的外观`ListView`，请使用不同的行布局。
+ListView 的外观由正在显示的行的布局决定。 若要更改 `ListView`的外观，请使用不同的行布局。
 
 ## <a name="built-in-row-views"></a>内置行视图
 
 有十二个可使用**Android**引用的内置视图：
 
-- **TestListItem**&ndash;具有最小格式的单行文本。
+- **TestListItem** &ndash; 具有最小格式的单行文本。
 
-- **SimpleListItem1**&ndash;单行文本。
+- **SimpleListItem1** &ndash; 单行文本。
 
-- **SimpleListItem2**&ndash;两行文本。
+- **SimpleListItem2** &ndash; 两行文本。
 
-- **SimpleSelectableListItem**&ndash;支持单个或多个项选择（在 API 级别11中添加）的单行文本。
+- **SimpleSelectableListItem** &ndash; 支持单个或多个项选择（在 API 级别11中添加）的单行文本。
 
-- **SimpleListItemActivated1**&ndash;类似于 SimpleListItem1，但背景色指示何时选择行（在 API 级别11中添加）。
+- **SimpleListItemActivated1** &ndash; 类似于 SimpleListItem1，但背景色指示何时选择行（在 API 级别11中添加）。
 
-- **SimpleListItemActivated2**&ndash;类似于 SimpleListItem2，但背景色指示何时选择行（在 API 级别11中添加）。
+- **SimpleListItemActivated2** &ndash; 类似于 SimpleListItem2，但背景色指示何时选择行（在 API 级别11中添加）。
 
-- **SimpleListItemChecked**&ndash;显示复选标记以指示选择。
+- **SimpleListItemChecked** &ndash; 显示复选标记以指示选择。
 
-- **SimpleListItemMultipleChoice**&ndash;显示复选框以指示多选选择。
+- **SimpleListItemMultipleChoice** &ndash; 显示复选框以指示多选选择。
 
-- **SimpleListItemSingleChoice**&ndash;显示单选按钮以指示互斥的选择。
+- **SimpleListItemSingleChoice** &ndash; 显示单选按钮以指示互斥的选择。
 
-- **TwoLineListItem**&ndash;两行文本。
+- **TwoLineListItem** &ndash; 两行文本。
 
-- **ActivityListItem**&ndash;带图像的单行文本。
+- **ActivityListItem**使用图像 &ndash; 单行文本。
 
-- **SimpleExpandableListItem**&ndash;按类别对行进行分组，并且每个组都可以展开或折叠。
+- **SimpleExpandableListItem** &ndash; 按类别对行进行分组，并且每个组都可以展开或折叠。
 
 每个内置行视图都具有与之关联的内置样式。 这些屏幕截图显示每个视图的显示方式：
 
-[![TestListItem、SimpleSelectableListItem、SimpleListitem1 和 SimpleListItem2 的屏幕截图](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
+[TestListItem、SimpleSelectableListItem、SimpleListitem1 和 SimpleListItem2 的![屏幕快照](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![SimpleListItemActivated1、SimpleListItemActivated2、SimpleListItemChecked 和 SimpleListItemMultipleChecked 的屏幕截图](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
+[SimpleListItemActivated1、SimpleListItemActivated2、SimpleListItemChecked 和 SimpleListItemMultipleChecked 的![屏幕快照](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![SimpleListItemSingleChoice、TwoLineListItem、ActivityListItem 和 SimpleExpandableListItem 的屏幕截图](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
+[SimpleListItemSingleChoice、TwoLineListItem、ActivityListItem 和 SimpleExpandableListItem 的![屏幕快照](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
-**BuiltInViews/HomeScreenAdapter**示例文件（在**BuiltInViews**解决方案中）包含生成无法展开的列表项屏幕的代码。 视图在方法中设置， `GetView`如下所示：
+**BuiltInViews/HomeScreenAdapter**示例文件（在**BuiltInViews**解决方案中）包含生成无法展开的列表项屏幕的代码。 视图在 `GetView` 方法中设置，如下所示：
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
 ```
 
-然后，可以通过引用标准控件`Text1`标识符， `Text2`并`Icon`在（不设置视图不包含`Android.Resource.Id`的属性，否则将引发异常）下设置视图的属性：
+然后，可以通过引用标准控件标识符 `Text1`、`Text2` 和 `Icon` 在 `Android.Resource.Id` 下设置视图的属性（不要设置视图不包含的属性，否则将引发异常）：
 
 ```csharp
 view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Heading;
@@ -67,47 +67,47 @@ view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = item.SubHeading;
 view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(item.ImageResourceId); // only use with ActivityListItem
 ```
 
-**BuiltInExpandableViews/ExpandableScreenAdapter**示例文件（在**BuiltInViews**解决方案中）包含生成 SimpleExpandableListItem 屏幕的代码。 在`GetGroupView`方法中设置组视图，如下所示：
+**BuiltInExpandableViews/ExpandableScreenAdapter**示例文件（在**BuiltInViews**解决方案中）包含生成 SimpleExpandableListItem 屏幕的代码。 组视图在 `GetGroupView` 方法中设置，如下所示：
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem1, null);
 ```
 
-在`GetChildView`方法中设置子视图，如下所示：
+在 `GetChildView` 方法中设置子视图，如下所示：
 
 ```csharp
 view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem2, null);
 ```
 
-然后，可以通过引用标准`Text1`和`Text2`控制标识符来设置组视图和子视图的属性，如上所示。 SimpleExpandableListItem 屏幕快照（如上所示）提供单行组视图（SimpleExpandableListItem1）和两行子视图（SimpleExpandableListItem2）的示例。 另外，可以为两行（SimpleExpandableListItem2）配置组视图，并且可以为一个行（SimpleExpandableListItem1）配置子视图，也可以为两个组视图和子视图都具有相同的行数。 
+然后，可以通过引用标准 `Text1` 和 `Text2` 控制标识符来设置组视图和子视图的属性，如上所示。 SimpleExpandableListItem 屏幕快照（如上所示）提供单行组视图（SimpleExpandableListItem1）和两行子视图（SimpleExpandableListItem2）的示例。 另外，可以为两行（SimpleExpandableListItem2）配置组视图，并且可以为一个行（SimpleExpandableListItem1）配置子视图，也可以为两个组视图和子视图都具有相同的行数。 
 
 ## <a name="accessories"></a>附属
 
 行可以在视图右侧添加附件，以指示选择状态：
 
-- **SimpleListItemChecked**&ndash;创建一个选择列表，其中包含一个检查作为指示器。
+- **SimpleListItemChecked** &ndash; 创建一个选择列表，其中包含检查作为指示器。
 
-- **SimpleListItemSingleChoice**&ndash;创建单选按钮类型列表，其中只能有一个选择。
+- **SimpleListItemSingleChoice** &ndash; 创建单选按钮类型列表，其中只能进行一项选择。
 
-- **SimpleListItemMultipleChoice**&ndash;创建 checkbox 类型列表，其中有多个选项可供选择。
+- **SimpleListItemMultipleChoice** &ndash; 创建 checkbox 类型列表，其中有多个选项可供选择。
 
 以下屏幕以各自的顺序说明上述附件：
 
-[![带有附件的 SimpleListItemChecked、SimpleListItemSingleChoice 和 SimpleListItemMultipleChoice 屏幕截图](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
+[SimpleListItemChecked、SimpleListItemSingleChoice 和 SimpleListItemMultipleChoice 的![屏幕快照](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
-若要显示其中一个附件，请将所需的布局资源 ID 传递到适配器，然后手动设置所需行的选择状态。 下面这行代码演示了如何`Adapter`使用下列布局之一创建和分配：
+若要显示其中一个附件，请将所需的布局资源 ID 传递到适配器，然后手动设置所需行的选择状态。 下面这行代码演示了如何使用下列布局之一创建和分配 `Adapter`：
 
 ```csharp
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-`ListView`本身支持不同的选择模式，而不考虑显示的附件。 若要避免混淆， `Single`请将选择`SingleChoice`模式与附件`Checked`以及`Multiple` `MultipleChoice`样式的或模式结合使用。 选择模式由`ChoiceMode`的`ListView`属性控制。
+无论显示哪种附件，`ListView` 本身都支持不同的选择模式。 为避免混淆，请将 `Single` 选择模式与 `SingleChoice` 附件和 `Checked` 或具有 `MultipleChoice` 样式的 `Multiple` 模式结合使用。 选择模式由 `ListView`的 `ChoiceMode` 属性控制。
 
 ### <a name="handling-api-level"></a>处理 API 级别
 
 早期版本的 Xamarin 已将枚举实现为整数属性。 最新版本引入了正确的 .NET 枚举类型，这使得发现可能的选项变得更加容易。
 
-根据目标的 API 级别， `ChoiceMode`是整数或枚举。 如果要以 Gingerbread API 为目标，示例文件**AccessoryViews/HomeScreen 中**有一个块注释掉：
+根据目标的 API 级别，`ChoiceMode` 是整数或枚举。 如果要以 Gingerbread API 为目标，示例文件**AccessoryViews/HomeScreen 中**有一个块注释掉：
 
 ```csharp
 // For targeting Gingerbread the ChoiceMode is an int, otherwise it is an
@@ -128,20 +128,20 @@ lv.ChoiceMode = 1; // Single
 
 ### <a name="selecting-items-programmatically"></a>以编程方式选择项
 
-手动设置 "选定的项" 是通过`SetItemChecked`方法完成的（可以为多个选择多次调用它）：
+手动设置 "选定" 的项是通过 `SetItemChecked` 方法完成的（可以为多个选择多次调用它）：
 
 ```csharp
 // Set the initially checked row ("Fruits")
 lv.SetItemChecked(1, true);
 ```
 
-此代码还需要检测不同于多个选择的单项选择。 若要确定在 "模式" `Single` `CheckedItemPosition`中选择了哪个行，请使用 integer 属性：
+此代码还需要检测不同于多个选择的单项选择。 若要确定在 `Single` 模式下选择了哪个行，请使用 `CheckedItemPosition` 整数属性：
 
 ```csharp
 FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPosition
 ```
 
-若要确定在模式中`Multiple`选择了哪些行，需要遍历。 `CheckedItemPositions` `SparseBooleanArray` 稀疏数组类似于只包含值已更改的项的字典，因此你必须遍历整个数组，查找`true`值以了解列表中所选的内容，如以下代码段所示：
+若要确定在 `Multiple` 模式下选择哪些行，需要遍历 `CheckedItemPositions` `SparseBooleanArray`。 稀疏数组类似于只包含值已更改的项的字典，因此您必须遍历整个数组，查找 `true` 值以了解在列表中选择的内容，如下面的代码段所示:
 
 ```csharp
 var sparseArray = FindViewById<ListView>(Android.Resource.Id.List).CheckedItemPositions;
@@ -158,23 +158,23 @@ Console.WriteLine();
 
 此示例与前面的示例在多种方面有所不同：
 
-- 继承自`Activity` ，而`ListActivity`不是。 你可以为任何`ListView`自定义行，但其他控件也可以包含`Activity`在布局中（例如标题、按钮或其他用户界面元素）。 此示例在`ListView`上添加一个标题，以说明。
+- 继承自 `Activity`，而不是 `ListActivity`。 您可以为任何 `ListView` 自定义行，但其他控件也可以包含在 `Activity` 布局中（例如标题、按钮或其他用户界面元素）。 此示例在 `ListView` 的上方添加标题以说明。
 
-- 需要屏幕的 MAIN.AXML 布局文件;在前面的示例中`ListActivity` ，不需要布局文件。 此 main.axml 包含一个`ListView`控件声明。
+- 需要屏幕的 MAIN.AXML 布局文件;在前面的示例中，`ListActivity` 不需要布局文件。 此 MAIN.AXML 包含 `ListView` 控件声明。
 
 - 需要使用 MAIN.AXML 布局文件来呈现每一行。 此 MAIN.AXML 文件包含具有自定义字体和颜色设置的文本和图像控件。
 
 - 使用可选的自定义选择器 XML 文件来设置选定行的外观。
 
-- `Adapter` 实现`GetView`从重写中返回自定义布局。
+- `Adapter` 实现从 `GetView` 重写返回自定义布局。
 
-- `ItemClick`必须以不同的方式声明（将事件处理程序`ListView.ItemClick`附加到，而`OnListItemClick`不`ListActivity`是中的重写）。
+- 必须以不同的方式声明 `ItemClick` （事件处理程序附加到 `ListView.ItemClick`，而不是 `ListActivity`中的重写 `OnListItemClick`）。
 
 下面将详细介绍这些更改，从创建活动的视图和自定义行视图开始，然后覆盖对适配器和活动的修改以呈现这些更改。
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>向活动布局添加 ListView
 
-由于`HomeScreen`不能再从`ListActivity`其继承默认视图，因此必须为 HomeScreen 的视图创建布局 main.axml 文件。 在此示例中，视图将具有标题（使用`TextView`） `ListView`和以显示数据。 此布局在**资源/layout/HomeScreen**文件中定义，如下所示：
+由于 `HomeScreen` 不再继承自 `ListActivity` 它没有默认视图，因此必须为 HomeScreen 的视图创建布局 MAIN.AXML 文件。 在此示例中，视图将具有标题（使用 `TextView`）和 `ListView` 来显示数据。 此布局在**资源/layout/HomeScreen**文件中定义，如下所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -200,7 +200,7 @@ Console.WriteLine();
 </LinearLayout>
 ```
 
-使用`Activity`自定义布局（而不`ListActivity`是）的好处在于，能够将其他控件添加到屏幕，如本示例中的标题`TextView` 。
+将 `Activity` 与自定义布局（而不是 `ListActivity`）结合使用的好处在于，能够将其他控件添加到屏幕，如本示例中的标题 `TextView`。
 
 ### <a name="creating-a-custom-row-layout"></a>创建自定义行布局
 
@@ -249,7 +249,7 @@ Console.WriteLine();
 
 ### <a name="referencing-a-custom-row-view"></a>引用自定义行视图
 
-自定义适配器示例的实现在中`HomeScreenAdapter.cs`。 密钥方法是`GetView`使用资源 ID `Resource.Layout.CustomView`加载自定义 main.axml 的位置，然后在视图中的每个控件上设置属性，然后再将其返回。 将显示完整的适配器类：
+自定义适配器示例的实现处于 `HomeScreenAdapter.cs`。 密钥方法 `GetView`，其中使用资源 ID `Resource.Layout.CustomView`在其中加载自定义 MAIN.AXML，然后在返回视图中的每个控件之前设置属性。 将显示完整的适配器类：
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<TableItem> {
@@ -289,13 +289,13 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>引用活动中的自定义 ListView
 
-由于该类现在继承自`Activity`， `ListView`因此在类中声明字段以保存对 main.axml 中声明的控件的引用： `HomeScreen`
+由于 `HomeScreen` 类现在继承自 `Activity`，因此在类中声明了 `ListView` 字段，以便保存对 MAIN.AXML 中声明的控件的引用：
 
 ```csharp
 ListView listView;
 ```
 
-然后，类必须使用`SetContentView`方法加载活动的自定义布局 main.axml。 然后，它可以在`ListView`布局中找到该控件，然后创建并分配适配器并分配单击处理程序。 OnCreate 方法的代码如下所示：
+然后，类必须使用 `SetContentView` 方法加载活动的自定义布局 MAIN.AXML。 然后，它可以在布局中找到 `ListView` 控件，然后创建并分配适配器并分配单击处理程序。 OnCreate 方法的代码如下所示：
 
 ```csharp
 SetContentView(Resource.Layout.HomeScreen); // loads the HomeScreen.axml as this activity's view
@@ -306,7 +306,7 @@ listView.Adapter = new HomeScreenAdapter(this, tableItems);
 listView.ItemClick += OnListItemClick;  // to be defined
 ```
 
-最后必须`ItemClick`定义该处理程序; 在这种情况下，它`Toast`只显示一条消息：
+最后，必须定义 `ItemClick` 处理程序;在这种情况下，它只显示 `Toast` 消息：
 
 ```csharp
 void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -319,7 +319,7 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 生成的屏幕如下所示：
 
-[![生成的 CustomRowView 的屏幕截图](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
+[生成的 CustomRowView 的![屏幕快照](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 ### <a name="customizing-the-row-selector-color"></a>自定义行选择器颜色
 
@@ -357,13 +357,13 @@ android:background="#FFDAFF7F"
 android:background="@drawable/CustomSelector"
 ```
 
-选定的行和相应`Toast`的消息现在如下所示：
+选定的行和相应的 `Toast` 消息现在如下所示：
 
-[![选定行显示为橙色，并显示 Toast 消息显示所选行的名称](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
+[用橙色![选定行，并显示带有所选行名称的 Toast 消息](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>防止自定义布局闪烁
 
-Android 尝试通过缓存布局信息来`ListView`提高滚动性能。 如果有数据的长滚动列表，还应在活动的`android:cacheColorHint` main.axml 定义（ `ListView`与自定义行布局的背景相同的颜色值）上设置属性。 如果无法包括此提示，则可能会导致 "闪烁"，因为用户滚动使用自定义行背景色的列表。
+Android 尝试通过缓存布局信息来改善 `ListView` 滚动性能。 如果有数据的长滚动列表，还应在活动的 MAIN.AXML 定义（与自定义行布局的背景相同的颜色值）上设置 `ListView` 声明上的 `android:cacheColorHint` 属性。 如果无法包括此提示，则可能会导致 "闪烁"，因为用户滚动使用自定义行背景色的列表。
 
 ## <a name="related-links"></a>相关链接
 
