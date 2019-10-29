@@ -3,30 +3,30 @@ title: 调试集成
 description: 本文档介绍如何在 Windows 和 Mac 上调试代理端和客户端 Xamarin Workbooks 集成。
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: fbb5673a70328ad6edde78af1b35d2801fe65ca8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3030bf907d1ddbb02884f997f178b55950b442d4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283929"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018823"
 ---
 # <a name="debugging-integrations"></a>调试集成
 
 ## <a name="debugging-agent-side-integrations"></a>调试代理端集成
 
-调试代理端集成的最佳方式是使用中`Log` `Xamarin.Interactive.Logging`类提供的日志记录方法。
+调试代理端集成的最佳方式是使用 `Xamarin.Interactive.Logging`中 `Log` 类提供的日志记录方法。
 
 在 macOS 上，日志消息显示在日志查看器菜单（**窗口 > 日志查看器**）和客户端日志中。 在 Windows 上，消息只显示在客户端日志中，因为没有日志查看器。
 
 客户端日志位于 macOS 和 Windows 上的以下位置：
 
-- Mac`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac： `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-需要注意的一点是，在开发过程中通过常用`#r`机制加载集成时，集成程序集将被选取为工作簿的_依赖项_，并在不使用绝对路径的情况下将其打包。 这可能会导致更改显示为不会传播，就好像重新生成集成无关。
+需要注意的一点是，在开发过程中通过通常的 `#r` 机制加载集成时，集成程序集将被选取为工作簿的_依赖项_，并在不使用绝对路径的情况下将其打包。 这可能会导致更改显示为不会传播，就好像重新生成集成无关。
 
 ## <a name="debugging-client-side-integrations"></a>调试客户端集成
 

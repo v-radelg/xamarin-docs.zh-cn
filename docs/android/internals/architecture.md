@@ -3,15 +3,15 @@ title: 体系结构
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe0903eca5c907fc104728ca0ad7c676a45a5180
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756697"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027914"
 ---
 # <a name="architecture"></a>体系结构
 
@@ -22,7 +22,7 @@ Xamarin Android 应用程序在 Mono 执行环境中运行。
 
 在 Android 上, 大多数系统功能 (如音频、图形、OpenGL 和电话服务) 都不能直接用于本机应用程序, 它们只能通过驻留在某个[Java](xref:Java.Lang). * 命名空间或 Android 中的 Android 运行时 Java api 公开。 [Android](xref:Android). * 命名空间。 该体系结构大致如下所示：
 
-[![内核上方和 .NET/Java + 绑定之上的 Mono 和 ART 示意图](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
+[在内核上方和 .NET/Java + 绑定之上的 Mono 和 ART![关系图](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Xamarin Android 开发人员通过调入已知的 .NET Api （适用于低级别访问）或使用 Android 命名空间中公开的类（可为公开的 Java Api 提供桥梁）访问操作系统中的各种功能。Android 运行时。
 
@@ -56,7 +56,7 @@ Xamarin Android 应用程序还包含*android*可调用包装，以允许 androi
 
 全局引用可以通过在托管可调用包装上调用[.java （）](xref:Java.Lang.Object.Dispose)来进行显式释放。 这将删除 Java 实例与托管实例之间的映射，并允许收集 Java 实例。 如果从托管代码重新访问 Java 实例，将为其创建新的托管可调用包装器。
 
-如果在线程之间不小心共享了实例，则在释放托管的可调用包装器时必须小心谨慎，因为释放实例会影响任何其他线程的引用。 为了获得最大安全性`Dispose()` ，只是通过`new` *或*从你*知道*的方法分配了新实例而不是缓存实例的实例，这可能会导致意外的实例共享线程.
+如果在线程之间不小心共享了实例，则在释放托管的可调用包装器时必须小心谨慎，因为释放实例会影响任何其他线程的引用。 为获得最大安全性，只 `Dispose()` 通过 `new`*或*从你*知道*的方法分配新实例而不是缓存实例的实例，这可能会导致线程之间发生意外的实例共享。
 
 ## <a name="managed-callable-wrapper-subclasses"></a>托管的可调用包装器子类
 
@@ -92,11 +92,11 @@ Xamarin Android 应用程序还包含*android*可调用包装，以允许 androi
 
 4. *TextView*构造函数调用*monodroid （）* 。
 
-5. *monodroid* （）*调用 LogTextBox （），这*将调用 apidemo *（）* ，这[会调用（）。&lt;TextView&gt; （handle，JniHandleOwnership. DoNotTransfer）](xref:Java.Lang.Object.GetObject*) 。
+5. *monodroid* （ *）调用 LogTextBox （），* 后者调用 apidemo （），后者将调用 LogTextBox *（）* ，这会调用[&lt;TextView&gt; （handle，JniHandleOwnership. DoNotTransfer）](xref:Java.Lang.Object.GetObject*) 。
 
-6. *TextView&gt;（）检查是否已存在一个对应的句柄实例。&lt;* C# 如果有，则返回。 在这种情况下，不存在，因此*对象&lt;node.js&gt;t （）* 必须创建一个。
+6. *TextView&gt;（）的*将检查是否已存在一个对应C#的*句柄*实例。&lt; 如果有，则返回。 在这种情况下，不存在，因此*Object&lt;t&gt;（）* 必须创建一个。
 
-7. *对象。 GetObject&lt;T&gt;（）* 查找*LogTextBox （IntPtr，JniHandleOwneship）* 构造函数，调用它，创建*句柄*和创建的实例之间的映射，并返回创建的实例。
+7. *对象。 GetObject&lt;t&gt;（）* 查找*LogTextBox （IntPtr，JniHandleOwneship）* 构造函数，调用它，创建*句柄*和创建的实例之间的映射，并返回创建的实例。
 
 8. *TextView. n_GetDefaultMovementMethod （）* 调用*LogTextBox*属性 getter。
 
@@ -165,8 +165,8 @@ I/mono-stdout( 2993): [Managed: Value=]
 
 ## <a name="application-startup"></a>应用程序启动
 
-启动活动、服务等时，Android 将首先检查是否已有运行的进程来承载活动/服务/等。如果不存在这样的进程，则将创建一个新进程，读取[androidmanifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) ，并加载并实例化[/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)特性中指定的类型。 接下来， [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)属性值指定的所有类型都将被实例化并调用其[ContentProvider. attachInfo% 28）](xref:Android.Content.ContentProvider.AttachInfo*)方法。 通过添加 mono 在此中进行 Xamarin 挂钩 *。* 在生成过程中将*ContentProvider* mono.monoruntimeprovider 到 androidmanifest.xml。 *Mono。Mono.monoruntimeprovider. attachInfo （）* 方法负责将 Mono 运行时加载到进程中。
+启动活动、服务等时，Android 将首先检查是否已有运行的进程来承载活动/服务/等。如果不存在这样的进程，则将创建一个新进程，读取[androidmanifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) ，并且加载并实例化在[/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)特性中指定的类型。 接下来，将实例化[/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)特性值指定的所有类型，并调用其[attachInfo %28）](xref:Android.Content.ContentProvider.AttachInfo*)方法。 通过添加 mono 在此中进行 Xamarin 挂钩 *。* 在生成过程中将*ContentProvider* mono.monoruntimeprovider 到 androidmanifest.xml。 *Mono。Mono.monoruntimeprovider. attachInfo （）* 方法负责将 Mono 运行时加载到进程中。
 在此点之前使用 Mono 的任何尝试都将失败。 （*注意*：这就是为什么在可以初始化 Mono 之前创建应用程序实例时，[应用](xref:Android.App.Application)程序实例需要提供[（IntPtr，JniHandleOwnership）构造函数](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)的类型。
 
-完成进程初始化后， `AndroidManifest.xml`将参考以查找活动/服务的类名称/等。 例如， [ /manifest/application/activity/@android:name属性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)用于确定要加载的活动的名称。 对于活动，此类型必须继承 " [android](xref:Android.App.Activity)"。
+完成进程初始化后，请参考 `AndroidManifest.xml` 来查找活动/服务的类名称，等等。 例如， [/manifest/application/activity/@android:name 特性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)用于确定要加载的活动的名称。 对于活动，此类型必须继承 " [android](xref:Android.App.Activity)"。
 指定的类型通过[forName （）](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String))加载（这要求类型为 Java 类型，因此是 Android 可调用包装），然后实例化。 创建 Android 可调用包装器实例将触发创建相应C#类型的实例。 Android 随后将调用[onCreate （捆绑）](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) ，这会导致调用相应的[onCreate （绑定）](xref:Android.App.Activity.OnCreate*) ，并且您已对争用进行了准备。

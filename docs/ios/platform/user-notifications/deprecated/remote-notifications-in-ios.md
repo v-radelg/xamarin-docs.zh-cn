@@ -4,15 +4,15 @@ description: 本文档介绍如何在 iOS 9 及更早版本中使用推送通知
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 31c3c629686d6c7be03b95d7bfe0740599228bbd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 468d0e16a3bd5745a243b2d7c09e642e3aeffd1d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769398"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031368"
 ---
 # <a name="push-notifications-in-ios"></a>IOS 中的推送通知
 
@@ -26,7 +26,7 @@ IOS 中的推送通知中心是*Apple 推送通知网关服务（APNS）* 。 �
 
 远程通知本身是 JSON 格式的字符串, 遵循 [IOS 开发人员文档](https://developer.apple.com/devcenter/ios/index.action)中的[本地和推送通知编程指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)中的 "[通知负载](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1)"部分中指定的格式和协议.
 
-Apple 维护两个 APNS 环境：一个*沙箱*和一个*生产*环境。 沙盒环境适用于在开发阶段进行测试，可在 TCP 端口2195中`gateway.sandbox.push.apple.com`找到。 生产环境应在已部署的应用程序中使用，并且可在 TCP 端口2195中`gateway.push.apple.com`找到。
+Apple 维护两个 APNS 环境：一个*沙箱*和一个*生产*环境。 沙盒环境适用于在开发阶段进行测试，可在 TCP 端口2195上的 `gateway.sandbox.push.apple.com` 找到。 生产环境应在已部署的应用程序中使用，并且可在 TCP 端口 2195 `gateway.push.apple.com` 上找到。
 
 ## <a name="requirements"></a>要求
 
@@ -42,37 +42,37 @@ Apple 维护两个 APNS 环境：一个*沙箱*和一个*生产*环境。 沙盒
 
 1. 若要创建证书，请在 Apple 网站上的 iOS 预配门户上，如以下屏幕截图所示（请注意左侧的 "应用 Id" 菜单项）：
 
-    [![](remote-notifications-in-ios-images/image5new.png "Apple 网站上的 iOS 预配门户")](remote-notifications-in-ios-images/image5new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image5new.png "The iOS Provisioning Portal on Apples website")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2. 接下来，导航到应用 ID 部分，并创建新的应用 ID，如以下屏幕截图所示：
 
-    [![](remote-notifications-in-ios-images/image6new.png "导航到 \"应用 Id\" 部分，并创建新的应用 ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image6new.png "Navigate to the App IDs section and create a new app ID")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3. 当您单击 **+** 按钮，可以输入说明和捆绑包标识符的应用程序 ID，如下面的屏幕截图中所示：
 
-    [![](remote-notifications-in-ios-images/image7new.png "输入应用 ID 的描述和捆绑标识符")](remote-notifications-in-ios-images/image7new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image7new.png "Enter the description and a Bundle Identifier for the app ID")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
-4. 请确保选择 "**显式应用 ID** "，并且包标识符不以`*`结尾。 这将创建适用于多个应用程序的标识符，并且推送通知证书必须适用于单个应用程序。
+4. 请确保选择 "**显式应用 ID** "，并且包标识符不会以 `*` 结尾。 这将创建适用于多个应用程序的标识符，并且推送通知证书必须适用于单个应用程序。
 
 5. 在 "应用服务" 下，选择**推送通知**：
 
-    [![](remote-notifications-in-ios-images/image8new.png "选择推送通知")](remote-notifications-in-ios-images/image8new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image8new.png "Select Push Notifications")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 6. 并按 "**提交**" 确认新应用 ID 的注册：
 
-    [![](remote-notifications-in-ios-images/image9new.png "确认新的应用 ID 注册")](remote-notifications-in-ios-images/image9new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image9new.png "Confirm registration of the new App ID")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-7. 接下来，必须为应用 ID 创建证书。 在左侧导航栏中，浏览到 "**证书" >** "， `+`然后选择按钮，如以下屏幕截图所示：
+7. 接下来，必须为应用 ID 创建证书。 在左侧导航栏中，浏览到 "**证书" > "所有**"，然后选择 "`+`" 按钮，如以下屏幕截图所示：
 
-    [![](remote-notifications-in-ios-images/image10new.png "为应用 ID 创建证书")](remote-notifications-in-ios-images/image8.png#lightbox)
+    [![](remote-notifications-in-ios-images/image10new.png "Create the certificate for the app ID")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 8. 选择是要使用开发证书还是使用生产证书：
 
-    [![](remote-notifications-in-ios-images/image11new.png "选择开发或生产证书")](remote-notifications-in-ios-images/image11new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11new.png "Select a Development or Production certificate")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 9. 然后选择刚刚创建的新应用 ID：
 
-    [![](remote-notifications-in-ios-images/image12new.png "选择刚创建的新应用 ID")](remote-notifications-in-ios-images/image12new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image12new.png "Select the new App ID just created")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 10. 这会显示一些说明，指导你完成使用 Mac 上的**密钥链 Access**应用程序创建*证书签名请求*的过程。
 
@@ -81,10 +81,10 @@ Apple 维护两个 APNS 环境：一个*沙箱*和一个*生产*环境。 沙盒
 12. 若要创建开发预配配置文件，请导航到 "**预配配置文件**" 部分，并使用刚刚创建的应用 Id 执行创建该配置文件的步骤。
 
 13. 创建预配配置文件后，打开**Xcode 管理器**并进行刷新。 如果创建的预配配置文件未出现，则可能需要从 iOS 预配门户下载配置文件并手动导入它。 下面的屏幕截图显示了一个添加了预配配置文件的组织程序的示例：  
-    [![](remote-notifications-in-ios-images/image13new.png "此屏幕截图显示添加了预配配置文件的组织程序的示例")](remote-notifications-in-ios-images/image13new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image13new.png "This screen shot shows an example of the Organizer with the provision profile added")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 14. 此时，我们需要将 Xamarin 项目配置为使用这个新创建的预配配置文件。 这是在 " **IOS 捆绑签名**" 选项卡下的 "**项目选项**" 对话框中完成的，如以下屏幕截图所示：  
-    [![](remote-notifications-in-ios-images/image11.png "将 Xamarin iOS 项目配置为使用这个新创建的预配配置文件")](remote-notifications-in-ios-images/image11.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11.png "Configure the Xamarin.iOS project to use this newly created provisioning profile")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 此时，应用程序配置为使用推送通知。 但是，证书仍需要几个步骤。 此证书采用的是 DER 格式，该格式与需要个人信息交换（PKCS12）证书的 PushSharp 不兼容。 若要转换证书，使其可供 PushSharp 使用，请执行以下最终步骤：
 
@@ -101,9 +101,9 @@ Apple 维护两个 APNS 环境：一个*沙箱*和一个*生产*环境。 沙盒
 
 理论上，每次 iOS 应用程序将自身注册到 APNS 时，设备令牌可能会发生更改，但实际上不会发生这种情况。 作为一种优化方法，应用程序可以缓存最新的设备令牌，并仅在更改后更新应用程序服务器。 下图说明了注册和获取设备令牌的过程：
 
- ![](remote-notifications-in-ios-images/image12.png "此图说明了注册和获取设备令牌的过程")
+ ![](remote-notifications-in-ios-images/image12.png "This diagram illustrates the process of registration and obtaining a device token")
 
-在应用程序委托类的`FinishedLaunching`方法中，通过在当前`UIApplication`对象上调用`RegisterForRemoteNotificationTypes`来处理 APNS 注册。 当 iOS 应用程序注册 APNS 时，它还必须指定要接收的远程通知的类型。 这些远程通知类型在枚举`UIRemoteNotificationType`中声明。 以下代码片段举例说明了 iOS 应用程序如何注册来接收远程警报和徽章通知：
+在应用程序委托类的 `FinishedLaunching` 方法中，通过在当前 `UIApplication` 对象上调用 `RegisterForRemoteNotificationTypes` 来处理 APNS 注册。 当 iOS 应用程序注册 APNS 时，它还必须指定要接收的远程通知的类型。 这些远程通知类型在枚举 `UIRemoteNotificationType`中声明。 以下代码片段举例说明了 iOS 应用程序如何注册来接收远程警报和徽章通知：
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -119,7 +119,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
 }
 ```
 
-APNS 注册请求发生在后台-收到响应时，iOS 将调用`RegisteredForRemoteNotifications` `AppDelegate`类中的方法，并传递已注册的设备令牌。 标记将包含在`NSData`对象中。 以下代码片段演示了如何检索 APNS 提供的设备令牌：
+APNS 注册请求发生在后台-收到响应时，iOS 将调用 `AppDelegate` 类中 `RegisteredForRemoteNotifications` 的方法，并传递已注册的设备令牌。 令牌将包含在 `NSData` 对象中。 以下代码片段演示了如何检索 APNS 提供的设备令牌：
 
 ```csharp
 public override void RegisteredForRemoteNotifications (
@@ -145,7 +145,7 @@ UIApplication application, NSData deviceToken)
 }
 ```
 
-如果注册由于某种原因（例如，设备未连接到 Internet）而失败，则 iOS 将对应用程序`FailedToRegisterForRemoteNotifications`委托类调用。 下面的代码段演示如何向用户显示警报，通知他们注册失败：
+如果注册由于某种原因（例如设备未连接到 Internet）而失败，则 iOS 将对应用程序委托类调用 `FailedToRegisterForRemoteNotifications`。 下面的代码段演示如何向用户显示警报，通知他们注册失败：
 
 ```csharp
 public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
@@ -164,7 +164,7 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 
 > 410-主题的设备令牌不再处于活动状态。
 
-此外，响应正文`timestamp`中将出现一个新的 JSON 数据密钥：
+此外，新的 `timestamp` JSON 数据密钥将在响应正文中：
 
 > 如果： status 标头中的值为410，则此项的值是上次确认该主题的设备令牌不再有效的时间。
 >
@@ -178,5 +178,5 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 
 - [通知-演示本地和远程通知（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)
 - [面向开发人员的本地和推送通知](https://developer.apple.com/notifications/)
-- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
-- [UIRemoteNotificationType](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIRemoteNotificationType)
+- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
+- [UIRemoteNotificationType](https://docs.microsoft.com/dotnet/api/uikit.UIRemoteNotificationType)

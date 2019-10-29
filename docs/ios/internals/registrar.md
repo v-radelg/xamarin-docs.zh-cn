@@ -4,15 +4,15 @@ description: 本文档介绍了 Xamarin iOS 类型注册器，使C#类可供目�
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: 0d8e16c2a651df293b13e7f7586d5a643caa1c9c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f38c49ce9334a5659f0a8b5dd03e3bae8863cf5a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291832"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022269"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin 的类型注册机构
 
@@ -27,13 +27,13 @@ ms.locfileid: "70291832"
 - 使用[[协议]](xref:Foundation.ProtocolAttribute)属性作为目标-C 协议的接口。
 - 带有[[Export]](xref:Foundation.ExportAttribute)的成员，使得客观-C 可以访问它们。
 
-例如，考虑在 Xamarin iOS `Main`应用程序中常见的托管方法：
+例如，考虑在 Xamarin iOS 应用程序中常见的托管 `Main` 方法：
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
 ```
 
-此代码告知目标 C 运行时使用称为`AppDelegate`应用程序的委托类的类型。 为了使目标 C 运行时能够创建C# `AppDelegate`类的实例，必须注册该类。
+此代码告知目标 C 运行时将名为 `AppDelegate` 的类型作为应用程序的委托类使用。 为了使目标 C 运行时能够创建C#`AppDelegate`类的实例，必须注册该类。
 
 Xamarin 会在运行时（动态注册）或在编译时（静态注册）自动执行注册。
 
@@ -46,13 +46,13 @@ Xamarin 会在运行时（动态注册）或在编译时（静态注册）自动
 
 从 Xamarin 8.10 开始，可以使用C#语法创建目标为 C 的类别。
 
-若要创建类别，请使用`[Category]`属性，并指定要扩展的类型。 例如，下面的代码扩展`NSString`：
+若要创建类别，请使用 `[Category]` 特性并指定要扩展的类型。 例如，以下代码将扩展 `NSString`：
 
 ```csharp
 [Category (typeof (NSString))]
 ```
 
-类别的每个方法都有一个`[Export]`属性，使其可用于目标 C 运行时：
+类别的每个方法都有一个 `[Export]` 属性，使其可用于目标 C 运行时：
 
 ```csharp
 [Export ("today")]
@@ -86,7 +86,7 @@ public static class MyStringCategory
  }
  ```
 
-此示例将向`toUpper` `NSString`类添加本机实例方法。 可以从目标-C 调用此方法：
+此示例将向 `NSString` 类添加本机 `toUpper` 实例方法。 可以从目标-C 调用此方法：
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -102,7 +102,7 @@ public static class MyViewControllerCategory
 
 ### <a name="protocols"></a>协议
 
-从 Xamarin 8.10 开始，具有属性的`[Protocol]`接口将作为协议导出到目标 C：
+从 Xamarin 8.10 开始，具有 `[Protocol]` 属性的接口将作为协议导出到目标 C：
 
 ```csharp
 [Protocol ("MyProtocol")]
@@ -120,7 +120,7 @@ class MyClass : IMyProtocol
 }
 ```
 
-此代码将`IMyProtocol`作为名`MyProtocol`为的协议导出到目标 C，并将`MyClass`一个名为的类作为实现协议的类。
+此代码以称为 `MyProtocol` 的协议和一个实现协议的 `MyClass` 类的形式导出 `IMyProtocol`。
 
 ## <a name="new-registration-system"></a>新注册系统
 
@@ -134,7 +134,7 @@ class MyClass : IMyProtocol
 - 删除未使用的本机代码：
   - 新的注册系统将添加对静态库中使用的代码的强引用，这允许本机链接器从生成的二进制文件中去除未使用的本机代码。 在 Xamarin 的示例绑定上，大多数应用程序的30万个都至少更小。
 
-- 支持的泛型子类`NSObject`; 有关详细信息，请参阅[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)。 此外，新的注册系统将捕获先前在运行时导致随机行为的不受支持的泛型构造。
+- 支持 `NSObject`的泛型子类;有关详细信息，请参阅[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)。 此外，新的注册系统将捕获先前在运行时导致随机行为的不受支持的泛型构造。
 
 ### <a name="errors-caught-by-the-new-registrar"></a>新注册机构捕获的错误
 
@@ -180,26 +180,26 @@ class MyClass : IMyProtocol
 
 - 某些第三方库必须进行更新才能使用新的注册系统。 有关更多详细信息，请参阅下面[所需的修改](#required-modifications)。
 
-- 短期缺点也是在使用帐户框架时必须使用 Clang （这是因为 Apple 的**帐户**头只能由 Clang 编译）。 如果`--compiler:clang`使用的是 Xcode 4.6 或更早版本，请将添加到附加的 mtouch 参数以使用 Clang （Xamarin 会自动选择 Xcode 5.0 或更高版本中的 Clang）。
+- 短期缺点也是在使用帐户框架时必须使用 Clang （这是因为 Apple 的**帐户**头只能由 Clang 编译）。 如果使用的是 Xcode 4.6 或更早版本，请将 `--compiler:clang` 添加到附加的 mtouch 参数，以使用 Clang （Xamarin 将在 Xcode 5.0 或更高版本中自动选择 Clang。）
 
-- 如果使用 Xcode 4.6 （或更低版本），则如果导出的类型名称包含非 ASCII 字符，则必须选择 GCC/G + + （这是因为与 Xcode 4.6 一起提供的 Clang 版本不支持在目标 C 代码中的标识符内使用非 ASCII 字符）。 添加`--compiler:gcc`到其他 mtouch 参数以使用 GCC。
+- 如果使用 Xcode 4.6 （或更低版本），则如果导出的类型名称包含非 ASCII 字符，则必须选择 GCC/G + + （这是因为与 Xcode 4.6 一起提供的 Clang 版本不支持在目标 C 代码中的标识符内使用非 ASCII 字符）。 将 `--compiler:gcc` 添加到要使用 GCC 的其他 mtouch 参数。
 
 ## <a name="selecting-a-registrar"></a>选择注册机构
 
 可以通过将以下选项之一添加到项目的**IOS 生成**设置中的其他 mtouch 参数，选择其他注册机构：
 
-- `--registrar:static`–设备生成的默认值
-- `--registrar:dynamic`–模拟器生成的默认值
+- `--registrar:static` –设备生成的默认值
+- `--registrar:dynamic` –模拟器生成的默认值
 
 > [!NOTE]
-> Xamarin 的 Classic API 支持其他选项`--registrar:legacystatic` ，例如和。 `--registrar:legacydynamic` 但 Unified API 不支持这些选项。
+> Xamarin 的 Classic API 支持其他选项，例如 `--registrar:legacystatic` 和 `--registrar:legacydynamic`。 但 Unified API 不支持这些选项。
 
 ## <a name="shortcomings-in-the-old-registration-system"></a>旧注册系统中的缺点
 
 旧注册系统具有以下缺点：
 
-- 对于第三方本机库中的目标 C 类和方法，不存在（本机）静态引用，这意味着我们无法要求本机链接器删除实际使用的第三方本机代码（因为所有内容都将被删除）。 这是每个第三`-force_load libNative.a`方绑定必须执行的操作（或`[LinkWith]`属性中的等效`ForceLoad=true`项）的原因。
-- 您可以导出两个具有相同目标 C 名称的托管类型，无警告。 在不同的命名空间中，有两`AppDelegate`个类的情况很少见。 在运行时，将会完全随机选择哪一种方法（事实上，它在不重新生成的应用程序运行之间有所不同，这是一项非常令困惑、令人沮丧的调试体验）。
+- 对于第三方本机库中的目标 C 类和方法，不存在（本机）静态引用，这意味着我们无法要求本机链接器删除实际使用的第三方本机代码（因为所有内容都将被删除）。 这是每个第三方绑定需要执行的 `-force_load libNative.a` 的原因（或 `[LinkWith]` 特性中的等效 `ForceLoad=true`）。
+- 您可以导出两个具有相同目标 C 名称的托管类型，无警告。 一种罕见的方案是在不同的命名空间中提供两个 `AppDelegate` 类。 在运行时，将会完全随机选择哪一种方法（事实上，它在不重新生成的应用程序运行之间有所不同，这是一项非常令困惑、令人沮丧的调试体验）。
 - 您可以导出两个具有相同的目标 C 签名的方法。 但再次重申，从目标-C 调用的是随机的（但此问题并不像以前的问题那样常见，这主要是因为实际遇到此错误的唯一方法是重写不幸托管方法）。
 - 在动态和静态生成之间导出的方法集略有不同。
 - 导出泛型类时，它不能正常工作（在运行时执行的确切泛型实现将是随机的，因而会有效地导致不确定的行为）。
@@ -212,7 +212,7 @@ class MyClass : IMyProtocol
 
 ### <a name="protocols-must-have-the-protocol-attribute"></a>协议必须具有 [协议] 特性
 
-协议现在必须具有`[Protocol]`属性。 如果不这样做，则会出现本机链接器错误，如：
+协议现在必须具有 `[Protocol]` 特性。 如果不这样做，则会出现本机链接器错误，如：
 
 ```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
@@ -224,9 +224,9 @@ Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", reference
 
 简而言之，冒号的数目必须与参数的数目匹配：
 
-- 无参数：`foo`
-- 一个参数：`foo:`
-- 两个参数：`foo:parameterName2:`
+- 无参数： `foo`
+- 一个参数： `foo:`
+- 两个参数： `foo:parameterName2:`
 
 下面是不正确的用法：
 
@@ -242,7 +242,7 @@ void Display ();
 
 ### <a name="use-isvariadic-parameter-in-export"></a>在导出中使用 IsVariadic 参数
 
-可变参数函数必须使用`IsVariadic` `[Export]`属性的参数：
+可变参数函数必须使用 `[Export]` 属性的 `IsVariadic` 参数：
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]

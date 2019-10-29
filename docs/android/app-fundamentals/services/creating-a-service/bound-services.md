@@ -4,15 +4,15 @@ description: 绑定服务是一项 Android 服务，提供客户端-服务器接
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/04/2018
-ms.openlocfilehash: 584f523446584192cfa882697c0f76865ce78a10
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a3b0e8499d208f209de481163a236e5241c83ee6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754926"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024997"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin 中的绑定服务
 

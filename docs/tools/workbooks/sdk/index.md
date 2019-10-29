@@ -3,15 +3,15 @@ title: Xamarin Workbooks SDK 入门
 description: 本文档介绍如何开始使用 Xamarin Workbooks SDK，该 SDK 可用于开发 Xamarin Workbooks 的集成。
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 8e3dc65f9f615ff893f3526d53d99da25045c794
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4a9e9113f83dd89b622de3e1f74f458efd4f07f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283970"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018689"
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Xamarin Workbooks SDK 入门
 
@@ -19,7 +19,7 @@ ms.locfileid: "70283970"
 
 ## <a name="general-overview"></a>一般概述
 
-Xamarin Workbooks 集成是小型库，使用[ `Xamarin.Workbooks.Integrations` NuGet][nuget] SDK 与 Xamarin Workbooks 和检查器代理集成，提供增强的体验。
+Xamarin Workbooks 集成是小型库，它们使用[`Xamarin.Workbooks.Integrations` NuGet][nuget] SDK 与 Xamarin Workbooks 和检查器代理集成，以提供更好的体验。
 
 开发集成入门有3个主要步骤-我们将在此概述这些步骤。
 
@@ -41,7 +41,7 @@ Xamarin Workbooks 集成是小型库，使用[ `Xamarin.Workbooks.Integrations` 
 
 -----
 
-创建库项目后，通过 nuget 包管理器添加对`Xamarin.Workbooks.Integration` nuget 库的引用。
+创建库项目后，通过 NuGet 包管理器添加对 `Xamarin.Workbooks.Integration` NuGet 库的引用。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -57,7 +57,7 @@ Xamarin Workbooks 集成是小型库，使用[ `Xamarin.Workbooks.Integrations` 
 
 ## <a name="building-an-integration"></a>构建集成
 
-我们将构建一个简单的集成。 我们非常喜欢绿色，因此，我们会将绿色添加为每个对象的表示形式。 首先，创建一个名`SampleIntegration`为的新类，并使它实现我们`IAgentIntegration`的接口：
+我们将构建一个简单的集成。 我们非常喜欢绿色，因此，我们会将绿色添加为每个对象的表示形式。 首先，创建一个名为 `SampleIntegration`的新类，并使其实现 `IAgentIntegration` 接口：
 
 ```csharp
 using Xamarin.Interactive;
@@ -70,7 +70,7 @@ public class SampleIntegration : IAgentIntegration
 }
 ```
 
-我们要做的就是为每个绿色颜色的对象添加[表示形式](~/tools/workbooks/sdk/representations.md)。 我们将使用表示提供程序来实现此目的。 提供程序从`RepresentationProvider`类继承-对于我们而言，只需重写`ProvideRepresentations`：
+我们要做的就是为每个绿色颜色的对象添加[表示形式](~/tools/workbooks/sdk/representations.md)。 我们将使用表示提供程序来实现此目的。 提供程序继承自 `RepresentationProvider` 类-对于我们而言，只需重写 `ProvideRepresentations`：
 
 ```csharp
 using Xamarin.Interactive.Representations;
@@ -85,10 +85,10 @@ class SampleRepresentationProvider : RepresentationProvider
 }
 ```
 
-我们将在我们`Color`的 SDK 中返回一个预建表示法类型。
-你会注意到，此处的返回类型是`IEnumerable<object>` &mdash;一个表示提供程序可能会为对象返回很多表示形式！ 为每个对象调用所有表示器提供程序，因此，不要对要传递给您的对象进行任何假设，这一点很重要。
+我们将在我们的 SDK 中返回 `Color`，这是一个预生成的表示形式。
+你会注意到，此处的返回类型是 `IEnumerable<object>`&mdash;一种表示提供程序可能会为对象返回很多表示形式！ 为每个对象调用所有表示器提供程序，因此，不要对要传递给您的对象进行任何假设，这一点很重要。
 
-最后一步是将我们的提供商实际注册到代理，并告诉工作簿找到集成类型的位置。 若要注册提供程序，请将以下代码`IntegrateWith`添加到前面`SampleIntegration`创建的类中的方法：
+最后一步是将我们的提供商实际注册到代理，并告诉工作簿找到集成类型的位置。 若要注册提供程序，请将以下代码添加到前面创建的 `SampleIntegration` 类中的 `IntegrateWith` 方法：
 
 ```csharp
 agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
@@ -100,7 +100,7 @@ agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
 [assembly: AgentIntegration (typeof (SampleIntegration))]
 ````
 
-在开发过程中，你可能会发现更方便`AddProvider`的方法`RepresentationManager`是使用上的重载，以允许你注册一个简单的回调以在工作簿内提供表示形式`RepresentationProvider` ，然后将该代码迁移到你的实现一次您已经完成了。 [`OxyPlot`][oxyplot] 呈现`PlotModel`的示例可能如下所示：
+在开发过程中，您可能会发现更方便地在 `RepresentationManager` 上使用 `AddProvider` 重载，使您可以注册一个简单的回调以在工作簿内提供表示形式，然后在完成后将该代码移到 `RepresentationProvider` 实现中。 渲染[`OxyPlot`][oxyplot] `PlotModel` 的示例如下所示：
 
 ```csharp
 InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
@@ -111,7 +111,7 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 ```
 
 > [!NOTE]
-> 借助这些 api，你可以快速启动和运行，但我们不建议仅使用这些集成，只需使用&mdash;这些方法，只需对客户端处理你的类型的方式提供极小的控制。
+> 通过这些 Api，你可以快速启动和运行，但我们不建议仅使用这些集成来提供整个集成&mdash;它们只提供对客户端处理方式的控制。
 
 注册表示形式后，你的集成便已准备就绪，可供发运！
 
@@ -119,7 +119,7 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 
 若要交付集成，你需要将其添加到 NuGet 包。
 可以将其与现有库的 NuGet 一起提供，或者，如果要创建新的包，则可以使用此 nuspec 文件作为起点。
-需要填写与集成相关的部分。 最重要的部分是，集成的所有文件必须位于包根的`xamarin.interactive`目录中。 这使我们可以轻松地找到集成的所有相关文件，无论你使用的是现有包还是创建新包。
+需要填写与集成相关的部分。 最重要的部分是，集成的所有文件必须位于包根目录的 `xamarin.interactive` 目录中。 这使我们可以轻松地找到集成的所有相关文件，无论你使用的是现有包还是创建新包。
 
 ```xml
 <?xml version="1.0"?>
@@ -147,15 +147,15 @@ nuget pack MyIntegration.nuspec
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![具有集成的工作簿](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
+[![集成的工作簿](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![具有集成的工作簿](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
+[![集成的工作簿](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 
-请注意，您看不`#r`到任何指令或任何内容来初始化集成，工作簿已在幕后完成所有工作。
+请注意，你看不到任何 `#r` 指令或任何内容来初始化集成，工作簿已在幕后完成所有这些操作！
 
 ## <a name="next-steps"></a>后续步骤
 

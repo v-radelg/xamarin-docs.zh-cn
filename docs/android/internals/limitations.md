@@ -3,15 +3,15 @@ title: Xamarin 和单色运行时中的桌面差异
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 7f98f2f75a106ad3a9f62256a7145ac746c4b1c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8fe0e3a9adedb161c527ccdf6d6c3a7cd06a1d86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757789"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027840"
 ---
 # <a name="limitations"></a>限制
 
@@ -25,16 +25,16 @@ ms.locfileid: "70757789"
 
 ## <a name="limited-java-generation-support"></a>有限的 Java 生成支持
 
-为了使 Java 代码调用托管代码，需要生成[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)。 *默认情况*下，Android 可调用包装只包含（特定）声明的构造函数和方法，这些方法重写虚拟 Java 方法[`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)（即它具有）或实现 Java 接口方法（ `Attribute`接口同样具有）。
+为了使 Java 代码调用托管代码，需要生成[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)。 *默认情况*下，Android 可调用包装只包含（特定）声明的构造函数和方法，这些方法重写虚拟 Java 方法（即它具有[`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)）或实现 Java 接口方法（接口同样具有 `Attribute`）。
   
-在4.1 版本之前，不能声明其他方法。 在4.1 版本中， [ `Export`和`ExportField`自定义属性可用于在 Android 可调用包装器中声明 Java 方法和字段](~/android/platform/java-integration/working-with-jni.md)。
+在4.1 版本之前，不能声明其他方法。 在4.1 版本中， [`Export` 和 `ExportField` 自定义属性可用于在 Android 可调用包装器中声明 Java 方法和字段](~/android/platform/java-integration/working-with-jni.md)。
 
 ### <a name="missing-constructors"></a>缺少构造函数
 
-除非使用，否则[`ExportAttribute`](xref:Java.Interop.ExportAttribute)构造函数会比较棘手。 生成 Android 可调用包装器构造函数的算法是：
+除非使用[`ExportAttribute`](xref:Java.Interop.ExportAttribute) ，否则构造函数会比较棘手。 生成 Android 可调用包装器构造函数的算法是：
 
 1. 对于所有参数类型，都有一个 Java 映射
-2. 基类声明相同的构造函数&ndash; ，这是必需的，因为 Android 可调用包装器*必须*调用相应的基类构造函数; 不能使用任何默认参数（因为没有简单的方法来确定哪些值应在 Java 中使用）。
+2. 基类声明相同的构造函数 &ndash; 这是必需的，因为 Android 可调用包装器*必须*调用相应的基类构造函数;不能使用任何默认参数（因为没有简单的方法来确定应在 Java 中使用的值）。
 
 例如，请考虑以下类：
 
@@ -47,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-虽然这看起来完全合乎逻辑，*版本中*生成的 Android 可调用包装将不包含默认构造函数。 因此，如果尝试启动此服务（例如[`Context.StartService`](xref:Android.Content.Context.StartService*)），则会失败：
+虽然这看起来完全合乎逻辑，*版本中*生成的 Android 可调用包装将不包含默认构造函数。 因此，如果您尝试启动此服务（例如[`Context.StartService`](xref:Android.Content.Context.StartService*)，它将会失败：
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -70,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-解决方法是声明默认构造函数，使用将`ExportAttribute`其修饰，并[`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)设置： 
+解决方法是声明默认构造函数，使用 `ExportAttribute`修饰该构造函数，并设置[`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)： 
 
 ```csharp
 [Service]
@@ -88,7 +88,7 @@ class MyIntentService : IntentService {
 
 仅C#部分支持泛型类。 存在以下限制：
 
-- 泛型类型不能使用`[Export]`或`[ExportField`]。 如果尝试这样做，将会`XA4207`生成错误。
+- 泛型类型不能使用 `[Export]` 或 `[ExportField`]。 如果尝试这样做，将生成 `XA4207` 错误。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -101,7 +101,7 @@ class MyIntentService : IntentService {
     }
     ```
 
-- 泛型方法不能使用`[Export]`或`[ExportField]`：
+- 泛型方法不能使用 `[Export]` 或 `[ExportField]`：
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -116,7 +116,7 @@ class MyIntentService : IntentService {
     }
     ```
 
-- `[ExportField]`不能用于返回`void`的方法：
+- `[ExportField]` 不能用于返回 `void`的方法：
 
     ```csharp
     public class Example : Java.Lang.Object

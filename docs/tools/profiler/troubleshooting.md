@@ -3,15 +3,15 @@ title: Xamarin Profiler 疑难解答
 description: 本文档提供与 Xamarin Profiler 相关的疑难解答信息。 它介绍与日志记录和诊断、IDE 和其他主题相关的问题。
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: c6a05e332bf0c08f8c7ea328c2793f7d0bf00fb7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285702"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019217"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler 疑难解答
 
@@ -25,9 +25,9 @@ ms.locfileid: "70285702"
 
 ### <a name="getting-log-outputs"></a>获取日志输出
 
-将保存到`~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`。
+在 Mac 日志上保存到 `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`。
 
-在 Windows 上，当你`%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log`提交问题时，它们将保存到，并包括最新的日志。
+在 Windows 上，这些会保存到 `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` 请在每次提交问题时包含最新的日志。
 
 我们将在此期间添加更多日志记录，因此，此输出会随着时间的推移而变得更加有用。
 
@@ -37,17 +37,17 @@ ms.locfileid: "70285702"
 
 **.Mlpd**文件是 mono 运行时探查器的压缩输出。 Xamarin Profiler GUI 从 **.mlpd**读取数据并为用户显示该数据。 **.mlpd**文件对 Xamarin 有用，因为它们可帮助工程师诊断探查器可能会遇到的数据问题。
 
-当前会话的 **.mlpd**将自动保存在 Mac 的`/tmp`目录中，并且可通过时间戳进行标识。 如果启用日志记录，则第一个输出将是 **.mlpd**文件的路径。 **.Mlpd**文件通常会保存在目录中，从 ~/var/folders。
+当前会话的 **.mlpd**将自动保存在 Mac 的 `/tmp` 目录中，并可通过时间戳进行标识。 如果启用日志记录，则第一个输出将是 **.mlpd**文件的路径。 **.Mlpd**文件通常会保存在目录中，从 ~/var/folders。
 
 还可以通过选择 " **File > 另存为 ...** " 来保存当前会话的 **.mlpd** 从探查器菜单：
 
 **Visual Studio for Mac**：
 
-![](troubleshooting-images/image17.png "正在 Visual Studio for Mac 中保存 .mlpd 文件")
+![](troubleshooting-images/image17.png "Saving .mlpd file in Visual Studio for Mac")
 
 **Visual Studio**：
 
-![](troubleshooting-images/image17-vs.png "在 Visual Studio 中保存 .mlpd 文件")
+![](troubleshooting-images/image17-vs.png "Saving .mlpd file in Visual Studio")
 
 请务必注意， **.mlpd**包含很多信息，文件大小会很大。
 
@@ -73,13 +73,13 @@ ms.locfileid: "70285702"
 
 如果在 Visual Studio 中使用探查器时遇到此错误框：
 
-![](troubleshooting-images/error.png "在 Visual Studio 中使用探查器时出现错误框")
+![](troubleshooting-images/error.png "Error box when using the profiler in Visual Studio")
 
 这通常是由于无法启动到模拟器/仿真器。 尝试正常运行应用程序，修复它提供的问题，然后再次尝试使用探查器。
 
 #### <a name="to-watch-a-specific-thread"></a>监视特定线程
 
-如果你有一个想要专门观看的线程，最好将该线程命名为开始创建`ThreadName`的位置， `0x0`而不是。 例如，若要将线程名称设置`UI`为，可以使用以下代码：
+如果你有一个想要专门观看的线程，最好将该线程命名为开始创建的位置，以获取 `ThreadName` 而不是 `0x0`。 例如，若要将线程名称设置为 `UI`，可以使用以下代码：
 
 ```csharp
 RunOnUiThread (() => {

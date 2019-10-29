@@ -4,15 +4,15 @@ description: 本主题介绍 .NET 基类库（BCL）中的 Monotouch.dialog API 
 ms.prod: xamarin
 ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 4f6043190087d34ccaa4a63fcc801843194273ad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4157e73379be2adc7c92b8cdbc05c4cc4489daec
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291882"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022324"
 ---
 # <a name="ios-advanced-concepts-and-internals"></a>iOS 高级概念和内部机制
 
@@ -37,9 +37,9 @@ _本主题介绍 .NET 基类库（BCL）中的 Monotouch.dialog API 设计、程
 
 Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前（AOT）编译将代码编译C#为 ARM 汇编语言。 本指南以较低的级别探究 Xamarin
 
-## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C 的选择器](~/ios/internals/objective-c-selectors.md)
+## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目标-C 选择器](~/ios/internals/objective-c-selectors.md)
 
-说明并且直接调用 Objective-C 的选择器 （方法） 的使用情况。
+直接调用目标 C 选择器（方法）的说明和使用情况。
 
 ## <a name="limitationslimitationsmd"></a>[限制](limitations.md)
 

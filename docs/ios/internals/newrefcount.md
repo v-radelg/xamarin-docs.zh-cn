@@ -4,15 +4,15 @@ description: 本文档介绍 Xamarin 的增强引用计数系统，默认情况�
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753348"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022305"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin 中的新引用计数系统
 
@@ -22,13 +22,13 @@ ms.locfileid: "70753348"
 
 从 Xamarin 9.2.1 开始，默认情况下，将为**所有**应用程序启用新的引用计数系统。
 
-如果要开发现有应用程序，可以检查 .csproj 文件，以确保将的`MtouchUseRefCounting`所有匹配项都设置为`true`，如下所示：
+如果你正在开发现有应用程序，则可以查看 .csproj 文件，以确保 `MtouchUseRefCounting` 的所有匹配项都设置为 `true`，如下所示：
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-如果设置为， `false`则应用程序将不使用新工具。
+如果将其设置为 `false` 你的应用程序将不使用新工具。
 
 ### <a name="using-older-versions-of-xamarin"></a>使用早期版本的 Xamarin
 
@@ -38,7 +38,7 @@ Xamarin 7.2.1 及更高版本的功能是新的引用计数系统的增强预览
 
 若要启用此新的引用计数系统，请选中在项目的**IOS 生成选项**的 "**高级**" 选项卡中找到的 "**使用引用计数扩展**" 复选框，如下所示： 
 
-[![](newrefcount-images/image1.png "启用新的引用计数系统")](newrefcount-images/image1.png#lightbox)
+[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
 
 请注意，在 Visual Studio for Mac 的较新版本中已删除了这些选项。
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-如果没有引用计数扩展，此代码将崩溃`cell` ，因为成为可回收的， `TouchDown`因此它的委托将转换为无关联的指针。
+如果没有引用计数扩展，此代码将崩溃，因为 `cell` 成为可回收的，因此它的 `TouchDown` 委托将转换为无关联的指针。
 
 引用计数扩展可确保托管对象保持活动状态并防止其收集，前提是本机对象由本机代码保留。
 

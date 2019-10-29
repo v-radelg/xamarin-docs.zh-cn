@@ -3,32 +3,32 @@ title: 已知问题 & 解决方法
 description: 本文档介绍 Xamarin Workbooks 的已知问题和解决方法。 它讨论了 CultureInfo 问题、JSON 问题等。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: b7b73e214af6a5a45426b4e2d2d7e01a436b379e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7b9f93c2d6339ba1fd26b27742ecfc0f438c5de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292785"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018162"
 ---
 # <a name="known-issues--workarounds"></a>已知问题 & 解决方法
 
 ## <a name="persistence-of-cultureinfo-across-cells"></a>单元格之间的 CultureInfo 持久性
 
-由于`System.Threading.CurrentThread.CurrentCulture` [mono 的实现中的 bug `AppContext.SetSwitch` ][appcontext-bug] ，在基于 mono 的工作簿目标（Mac、iOS 和 Android）上，对工作簿单元格的设置或`System.Globalization.CultureInfo.CurrentCulture`不会保持不变。
+由于[mono 的 `AppContext.SetSwitch`实现中的 bug][appcontext-bug] ，设置 `System.Threading.CurrentThread.CurrentCulture` 或 `System.Globalization.CultureInfo.CurrentCulture` 不会保留在基于 Mono 的工作簿目标上的工作簿单元格（Mac、IOS 和 Android）上。
 
 ### <a name="workarounds"></a>问题解决
 
-- 设置应用程序-域本地`DefaultThreadCurrentCulture`：
+- 设置应用程序-域本地 `DefaultThreadCurrentCulture`：
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-- 或者，更新为1.2.1 或更高版本的工作簿，这`System.Threading.CurrentThread.CurrentCulture`将`System.Globalization.CultureInfo.CurrentCulture`重写对和的分配，以提供所需的行为（围绕 Mono 错误）。
+- 或者，更新为1.2.1 或更高版本的工作簿，这会重写对 `System.Threading.CurrentThread.CurrentCulture` 和 `System.Globalization.CultureInfo.CurrentCulture` 的分配，以提供所需的行为（围绕 Mono bug）。
 
 ## <a name="unable-to-use-newtonsoftjson"></a>无法使用 Newtonsoft.json
 
@@ -39,7 +39,7 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 
 ### <a name="details"></a>详细信息
 
-Newtonsoft.json 发布了已升级依赖于支持`dynamic`的版本工作簿的依赖项。 工作簿1.3 预览版本中对此进行了说明，但现在，我们通过将 Newtonsoft.json 专门固定到9.0.1 版来解决此问题。
+Newtonsoft.json 发布了已升级的依赖项，它与支持 `dynamic`的工作簿版本发生冲突。 工作簿1.3 预览版本中对此进行了说明，但现在，我们通过将 Newtonsoft.json 专门固定到9.0.1 版来解决此问题。
 
 根据 Newtonsoft.json 10 或更高版本，仅支持在当前 alpha 通道中的工作簿1.3 中显式启用 NuGet 包。
 
