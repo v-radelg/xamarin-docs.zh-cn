@@ -3,15 +3,15 @@ title: 手动为 Xamarin 创建 NuGet 包
 description: 本文档包含有助于构建面向 Xamarin 平台的 NuGet 包的提示。 它介绍了 NuGet 包 Xamarin 配置文件、带有平台依赖项的 PCL Nuget 以及指向各种开源示例的链接。
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 88feea4c0a638da99a0316d802f04f08f0fea689
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289193"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016768"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>手动为 Xamarin 创建 NuGet 包
 
@@ -51,7 +51,7 @@ NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nug
 
 您可以使用一组不带小数点的数字来指定版本，也可以使用小数点指定它。 如果不使用小数点，NuGet 将仅提取每个数字，并在每个数字之间插入一个 "."，从而将其转换为版本。
 
-在上述 "MonoAndroid10" 中，表示 "Android 1.0"。 这就意味着，项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 版本1.0 或更高版本。 版本是在项目文件的`<TargetFrameworkVersion>`元素中指定的。
+在上述 "MonoAndroid10" 中，表示 "Android 1.0"。 这就意味着，项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 版本1.0 或更高版本。 版本是在项目文件中的 `<TargetFrameworkVersion>` 元素中指定的。
 
 明确说明：
 
@@ -63,11 +63,11 @@ NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nug
 
 PCL 配置文件限制了可访问的 .NET framework Api，它们当然无法访问特定于平台的代码。 这些第三方链接介绍了创建使用 PCL 和本机 Api 为 Xamarin 和其他平台提供兼容性的 NuGet 包的不同方法：
 
-- [如何使可移植类库适用于你](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
-- [Bait 和交换机 PCL 技巧](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
-- [创建适用于 Xamarin 的 NuGet PCL](http://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
+- [如何使可移植类库适用于你](https://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
+- [Bait 和交换机 PCL 技巧](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
+- [创建适用于 Xamarin 的 NuGet PCL](https://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
 
-此外部[的 PCL 配置文件列表及其 NuGet 目标名称](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)也是一个有用的参考。
+此外部[的 PCL 配置文件列表及其 NuGet 目标名称](https://portablelibraryprofiles.stephencleary.com)也是一个有用的参考。
 
 ## <a name="examples"></a>示例
 

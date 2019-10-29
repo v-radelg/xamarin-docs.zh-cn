@@ -4,15 +4,15 @@ description: 本文档提供了 macOS Mojave 中新增和更新功能的概述�
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2878d1bea3590b8c3a7aabfebef8a0f2cca67551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c296e32fd0d1491c83ea3cb16e0921c0f0c5f12
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292960"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017047"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave 简介
 
@@ -38,7 +38,7 @@ ms.locfileid: "70292960"
 
 ## <a name="network-framework"></a>网络框架
 
-网络框架是 iOS 应用程序中常用`URLSession`的 api 基础的网络堆栈，现作为独立框架提供，使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
+网络框架是 iOS 应用程序中常用的 `URLSession` Api 基础的网络堆栈，现作为独立框架提供，使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
 
 ## <a name="deprecations"></a>弃用功能
 

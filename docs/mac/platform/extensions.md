@@ -4,15 +4,15 @@ description: 本文档介绍 Xamarin for Finder、Share 和今日扩展的支持
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 9a9dbb63b78b00a9bcac9d7833530da02890afc6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770042"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017301"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
 

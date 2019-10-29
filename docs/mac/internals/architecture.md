@@ -4,15 +4,15 @@ description: 本指南将在较低级别探索 Xamarin 和与其在目标-C 之�
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51900adb1dd15675e584671f3b06ad6d7572f47d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287774"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017553"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin 体系结构
 
@@ -62,7 +62,7 @@ Xamarin 应用程序在 Mono 执行环境中运行，并使用 Xamarin 的编译
 
 如上所述，注册机构是向目标-C 公开托管代码的代码。 它通过创建从 NSObject 派生的每个托管类的列表来实现此操作：
 
-- 对于未包装现有目标-c 类的所有类，它将创建一个新的目标-c 类，其中目标为 c 的成员镜像具有`[Export]`属性的所有托管成员。
+- 对于未包装现有目标-C 类的所有类，它将创建一个新的目标 C 类，其中包含目标-C 成员，其中包含一个 `[Export]` 属性的所有托管成员。
 - 在每个目标– C 成员的实现中，会自动添加代码以调用镜像托管成员。
 
 下面的伪代码演示了如何执行此操作的示例：
@@ -92,7 +92,7 @@ class MyViewController : UIViewController{
 @end
 ```
 
-托管代码可包含特性`[Register]`和`[Export]`，注册器使用这些特性来了解需要向目标-C 公开对象。 [Register] 特性用于指定生成的目标 C 类的名称，以防默认生成的名称不合适。 派生自 NSObject 的所有类都将自动注册到目标 C。 必需的 [Export] 特性包含一个字符串，该字符串是在生成的目标 C 类中使用的选择器。
+托管代码可以包含属性，`[Register]` 和 `[Export]`，注册机构使用该属性来了解需要向目标-C 公开对象。 [Register] 特性用于指定生成的目标 C 类的名称，以防默认生成的名称不合适。 派生自 NSObject 的所有类都将自动注册到目标 C。 必需的 [Export] 特性包含一个字符串，该字符串是在生成的目标 C 类中使用的选择器。
 
 Xamarin 中使用了两种类型的注册机构–动态和静态：
 
@@ -136,9 +136,9 @@ public interface NSBox {
 }
 ```
 
-在 Xamarin 中调用`bmac`的生成器使用这些定义文件，并使用 .net 工具将其编译为临时程序集。 但是，此临时程序集不能用于调用目标 C 代码。 然后，生成器将读取临时程序集， C#并生成可在运行时使用的代码。 例如，如果将随机属性添加到 .cs 文件中，则该属性不会显示在输出的代码中。 生成器并不知道它，因此`bmac` ，在临时程序集中找不到它的输出。
+在 Xamarin 中称为 `bmac` 的生成器采用这些定义文件，并使用 .NET 工具将其编译为临时程序集。 但是，此临时程序集不能用于调用目标 C 代码。 然后，生成器将读取临时程序集， C#并生成可在运行时使用的代码。 例如，如果将随机属性添加到 .cs 文件中，则该属性不会显示在输出的代码中。 生成器并不知道这一点，因此 `bmac` 不知道要将其输出到临时程序集中。
 
-创建 Xamarin 后，包装`mmp`器会将所有组件捆绑在一起。
+创建 Xamarin 后，包装器 `mmp`会将所有组件捆绑在一起。
 
 从较高层次来看，通过执行以下任务实现此操作：
 
@@ -147,7 +147,7 @@ public interface NSBox {
 - 如果启用了链接，请运行托管链接器以通过删除未使用的部分来优化程序集。
 - 创建启动器应用程序，如果在静态模式下，则在启动器代码中进行链接将与注册器代码一起讨论。
 
-然后，此操作将作为用户生成过程的一部分运行，该过程将用户代码编译到一个程序集中，该程序集用于`mmp`引用
+然后，此操作将作为用户生成过程的一部分来运行，该过程将用户代码编译为一个程序集，该程序集引用的 Xamarin .dll 并运行 `mmp` 以使其成为包
 
 有关链接器及其使用方式的详细信息，请参阅 iOS[链接器](~/ios/deploy-test/linker.md)指南。
 

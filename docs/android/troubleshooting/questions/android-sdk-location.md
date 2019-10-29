@@ -4,29 +4,29 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6A9DE6E9-3E27-4DD2-87D2-34E95E5D401C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/16/2017
-ms.openlocfilehash: c004fb7717f78750e7ac1e8dc1856a32ba808638
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8685be4bb1cc45ff04dc8d9f7d8e64e7b1483b60
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227659"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027028"
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>可以在哪里设置 Android SDK 位置？
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中，导航到**工具 > 选项 > Xamarin > Android 设置**可以查看和设置 Android SDK 位置：
+在 Visual Studio 中，导航到 "**工具" > "> Xamarin > Android 设置" 选项**以查看和设置 Android SDK 位置：
 
-[![在首选项中的示例位置选项卡](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
+[首选项中的![示例位置选项卡](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
 每个路径的默认位置如下所示：
 
 - Java 开发工具包位置： 
 
-    **C:\\程序文件\\Java\\jdk1.8.0_131**
+    **C：\\程序文件\\Java\\jdk 1.8.0 _131**
 
 - Android SDK 位置： 
 
@@ -34,18 +34,18 @@ ms.locfileid: "61227659"
 
 - Android NDK 位置： 
 
-    **C:\\ProgramData\\Microsoft\\AndroidNDK64\\android-ndk-r13b**
+    **C：\\ProgramData\\Microsoft\\AndroidNDK64\\android-r13b**
 
-请注意，NDK 版本号可能不同。 而不是，如**android ndk r13b**，它可能是早期版本，如**android ndk r10e**。
+请注意，NDK 的版本号可能会有所不同。 例如，它可以是较早的版本，如**android-r10e**，而不是**r13b**。
 
-若要设置 Android SDK 位置，请输入到 Android SDK 目录的完整路径**Android SDK 位置**框。 可以导航到在文件资源管理器中的 Android SDK 位置、 将路径从地址栏中，复制并粘贴到此路径**Android SDK 位置**框。
-例如，如果你的 Android SDK 位置位于**c:\\用户\\用户名\\AppData\\本地\\Android\\Sdk**，清除中的旧路径**Android SDK 位置**中，粘贴该路径中，单击**确定**。
+若要设置 Android SDK 位置，请在 " **Android SDK 位置**" 框中输入 Android SDK 目录的完整路径。 您可以在文件资源管理器中导航到 Android SDK 位置，从地址栏复制路径，然后将此路径粘贴到**Android SDK 位置**框中。
+例如，如果你的 Android SDK 位置是**C：\\用户\\用户名\\AppData\\本地\\Android\\SDK**，请清除 " **Android SDK 位置**" 框中的旧路径，粘贴到此路径中，然后单击 **"确定"** 。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中，导航到**首选项 > 项目 > SDK 位置 > Android**。 在中**Android**页上，单击**位置**选项卡可以查看和设置 SDK 位置：
+在 Visual Studio for Mac 中，导航到 "**首选项" > 项目 > SDK 位置 > Android**"。 在**Android**页面中，单击 "**位置**" 选项卡以查看和设置 SDK 位置：
 
-[![在首选项中的示例位置选项卡](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
+[首选项中的![示例位置选项卡](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 每个路径的默认位置如下所示：
 
@@ -57,12 +57,12 @@ ms.locfileid: "61227659"
 
     **~/Library/Developer/Xamarin/android-ndk/android-ndk-r14b**
 
-- Java SDK (JDK) 位置： 
+- Java SDK （JDK）位置： 
 
     **/usr**
 
-请注意，NDK 版本号可能不同。 而不是，如**android ndk r14b**，它可能是早期版本，如**android ndk r10e**。
+请注意，NDK 的版本号可能会有所不同。 例如，它可以是较早的版本，如**android-r10e**，而不是**r14b**。
 
-若要设置 Android SDK 位置，请输入到 Android SDK 目录的完整路径**Android SDK 位置**框。 您可以选择 Android SDK 文件夹中查找工具中，按**CTRL +&#8984;+ I**若要查看文件夹信息，请单击并拖动右侧的路径**位置：**，复制，然后将其粘贴到**Android SDK位置**框中**位置**选项卡。例如，如果你的 Android SDK 位置位于 **~/Library/Developer/Android/Sdk**，清除中的旧路径**Android SDK 位置**中，粘贴该路径中，单击**确定**.
+若要设置 Android SDK 位置，请在 " **Android SDK 位置**" 框中输入 Android SDK 目录的完整路径。 您可以在查找器中选择 "Android SDK" 文件夹 **，按&#8984;CTRL + + I**以查看文件夹信息，单击并拖动**Where：** ，copy，然后将其粘贴到 "**位置**" 选项卡的 " **Android SDK 位置**" 框中。例如，如果 Android SDK 位置位于 **~/Library/Developer/Android/Sdk**，请在 " **Android SDK 位置**" 框中清除旧路径，粘贴到此路径中，然后单击 **"确定"** 。
 
 -----

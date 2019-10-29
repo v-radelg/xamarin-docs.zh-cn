@@ -2,15 +2,15 @@
 ms.assetid: 814857C5-D54E-469F-97ED-EE1CAA0156BB
 title: 桌面应用程序移植指南
 description: 简单说明了如何将现有的 Windows 窗体或 WPF 应用程序分离，以创建跨平台应用程序，以便在 macOS、iOS、Android 和 UWP/Windows 10 上运行。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 2a678c2b1880cb69b1bece85ed558309aa611a62
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 181034a4936b2da010a2fcd280ded1a3419d43ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290335"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016451"
 ---
 # <a name="desktop-app-porting-guidance"></a>桌面应用程序移植指南
 

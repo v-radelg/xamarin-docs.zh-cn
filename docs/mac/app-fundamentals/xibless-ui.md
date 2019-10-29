@@ -4,15 +4,15 @@ description: 本文介绍如何直接从C#代码创建 Xamarin 应用程序的�
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b189f80e2875e1e025128fee372e732f3ef28f22
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770161"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021713"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>xib-在 Xamarin 中的用户界面设计更少
 
@@ -173,7 +173,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
 ContentView.AddSubview (ClickMeLabel);
 ```
 
-由于 macOS 没有特定的_标签_UI 元素，因此我们添加了一个特殊的样式化、不可编辑的 `NSTextField`，以用作标签。 就像之前的按钮一样，大小和位置会考虑（0，0）在窗口的左下角。 @No__t_0 属性使用**or**运算符将两个 `NSViewResizingMask` 功能组合在一起。 这会使在垂直调整窗口大小时，标签将保留在窗口顶部的同一位置，并在水平调整窗口大小时缩小并放大。
+由于 macOS 没有特定的_标签_UI 元素，因此我们添加了一个特殊的样式化、不可编辑的 `NSTextField`，以用作标签。 就像之前的按钮一样，大小和位置会考虑（0，0）在窗口的左下角。 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` 属性使用**or**运算符将两个 `NSViewResizingMask` 功能组合在一起。 这会使在垂直调整窗口大小时，标签将保留在窗口顶部的同一位置，并在水平调整窗口大小时缩小并放大。
 
 同样，`ContentView.AddSubview (ClickMeLabel)` 方法将 `NSTextField` 添加到内容视图中，以便在应用程序运行和打开窗口时，它将显示在屏幕上。
 

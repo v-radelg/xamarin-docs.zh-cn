@@ -4,15 +4,15 @@ description: 如何在 Android 设备（或仿真程序）上测试你的应用�
 ms.prod: xamarin
 ms.assetid: 3D8E5A97-F719-4E8C-B777-108DFF20C91F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: b56e7c595dab8e3a2de8a5335499575e1e6e16ba
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 774e21349a3a937dc609386119d522654b539563
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758304"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028658"
 ---
 # <a name="deployment-and-testing"></a>部署和测试
 

@@ -3,15 +3,15 @@ title: 使用 ContentProvider
 ms.prod: xamarin
 ms.assetid: 251F7557-328D-0132-F39D-595920A28B87
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 5948d4b5db53db97c4e76cb7568c109b5faf90fe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c99b3d64f4f5033240c086af8677d31485a44f01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762198"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028923"
 ---
 # <a name="using-a-contentprovider-with-xamarinandroid"></a>将 ContentProvider 与 Xamarin 配合使用
 

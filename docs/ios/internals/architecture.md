@@ -4,15 +4,15 @@ description: 本文档以较低的级别描述 Xamarin，并讨论本机和托�
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e5dbc04e52aea4307716c343df5757d0fe012b74
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768524"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022391"
 ---
 # <a name="ios-app-architecture"></a>iOS 应用程序体系结构
 
@@ -20,7 +20,7 @@ Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前�
 
 下图显示了此体系结构的基本概述：
 
-[![](architecture-images/ios-arch-small.png "此图显示提前（AOT）编译结构的基本概述")](architecture-images/ios-arch.png#lightbox)
+[![](architecture-images/ios-arch-small.png "This diagram shows a basic overview of the Ahead of Time (AOT) compilation architecture")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>本机代码和托管代码：说明
 
@@ -35,7 +35,7 @@ Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前�
 但是，iOS 上存在安全限制，由 Apple 设置，这不允许在设备上执行动态生成的代码。
 为了确保我们遵守这些安全协议，Xamarin 改为使用提前（AOT）编译器来编译托管代码。 这将生成本机 iOS 二进制文件，还可以选择使用 LLVM for 设备进行优化，这些二进制文件可以部署在 Apple 基于 ARM 的处理器上。 下面说明了如何将这一组合在一起的大致示意图：
 
-[![](architecture-images/aot.png "大致了解如何结合此组合")](architecture-images/aot-large.png#lightbox)
+[![](architecture-images/aot.png "A rough diagram of how this fits together")](architecture-images/aot-large.png#lightbox)
 
 使用 AOT 有多种限制，这在[限制](~/ios/internals/limitations.md)指南中进行了详细介绍。 它还通过缩短启动时间和各种性能优化，对 JIT 进行了大量改进。
 
@@ -52,7 +52,7 @@ Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前�
 
 如上所述，注册机构是向目标-C 公开托管代码的代码。 它通过创建从 NSObject 派生的每个托管类的列表来实现此操作：
 
-- 对于未包装现有目标-c 类的所有类，它将创建一个新的目标 c 类，其中目标为 c 的成员镜像具有 [`Export`] 特性的所有托管成员。
+- 对于未包装现有目标-C 类的所有类，它将创建一个新的目标-c 类，其中目标为 c 的成员镜像具有 [`Export`] 特性的所有托管成员。
 
 - 在每个目标– C 成员的实现中，会自动添加代码以调用镜像托管成员。
 
@@ -87,28 +87,28 @@ Xamarin iOS 应用程序在 Mono 执行环境中运行，并使用完全提前�
 
 ```
 
-托管代码可包含特性`[Register]`和`[Export]`，注册器使用这些特性来了解需要向目标-C 公开对象。
-如果`[Register]`默认生成的名称不合适，则使用属性指定生成的目标 C 类的名称。 派生自 NSObject 的所有类都将自动注册到目标 C。
-必需`[Export]`的属性包含一个字符串，该字符串是在生成的目标 C 类中使用的选择器。
+托管代码可以包含属性，`[Register]` 和 `[Export]`，注册机构使用该属性来了解需要向目标-C 公开对象。
+如果默认生成的名称不合适，则使用 `[Register]` 特性来指定生成的目标 C 类的名称。 派生自 NSObject 的所有类都将自动注册到目标 C。
+必需的 `[Export]` 属性包含一个字符串，该字符串是在生成的目标 C 类中使用的选择器。
 
 在 Xamarin 中使用了两种类型的注册机构–动态和静态：
 
 - **动态注册机构**–动态注册机构会在运行时注册程序集中的所有类型。 它通过使用由[目标 C 的运行时 API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)提供的函数来实现此目的。 因此，动态注册器的启动速度较慢，但生成时间更快。 这是 iOS 模拟器的默认设置。 使用动态注册机构时，本机函数（通常为 C）（称为 trampolines）用作方法实现。 它们在不同的体系结构之间有所不同。
 
-- **静态注册机构**–静态注册机构在生成过程中生成目标 C 代码，然后将其编译为静态库并链接到可执行文件。 这样就可以更快地启动，但在生成过程中花费的时间更长。 默认情况下，此设置用于设备生成。 静态注册器还可与 iOS 模拟器结合使用，方法是`--registrar:static`在项目`mtouch`的生成选项中传递作为属性，如下所示：
+- **静态注册机构**–静态注册机构在生成过程中生成目标 C 代码，然后将其编译为静态库并链接到可执行文件。 这样就可以更快地启动，但在生成过程中花费的时间更长。 默认情况下，此设置用于设备生成。 静态注册器还可与 iOS 模拟器结合使用，方法是将 `--registrar:static` 作为 `mtouch` 特性传递到项目的生成选项中，如下所示：
 
-    [![](architecture-images/image1.png "设置其他 mtouch 参数")](architecture-images/image1.png#lightbox)
+    [![](architecture-images/image1.png "Setting Additional mtouch arguments")](architecture-images/image1.png#lightbox)
 
 有关 Xamarin 使用的 iOS 类型注册系统的详细信息，请参阅[类型注册](~/ios/internals/registrar.md)指南。
 
 ## <a name="application-launch"></a>应用程序启动
 
-所有 Xamarin iOS 可执行文件的入口点均由名`xamarin_main`为的函数提供，该函数可初始化 mono。
+所有 Xamarin iOS 可执行文件的入口点由称为 `xamarin_main`的函数提供，该函数可初始化 mono。
 
 根据项目类型，将执行以下操作：
 
-- 对于常规的 iOS 和 tvOS 应用程序，将调用 Xamarin 应用提供的托管 Main 方法。 然后，此托管 Main 方法`UIApplication.Main`会调用，这是目标 C 的入口点。 UIApplication 是目标 C `UIApplicationMain`方法的绑定。
-- 对于扩展，由 Apple 库提供 `NSExtensionMain`的本机`NSExtensionmain`函数（或 WatchOS 扩展）由调用。 由于这些项目是类库而不是可执行项目，因此不需要执行托管的主要方法。
+- 对于常规的 iOS 和 tvOS 应用程序，将调用 Xamarin 应用提供的托管 Main 方法。 然后，此托管 Main 方法会调用 `UIApplication.Main`，这是目标 C 的入口点。 UIApplication 是目标 `UIApplicationMain` 方法的绑定。
+- 对于扩展，将调用 Apple 库提供的本机函数- `NSExtensionMain` 或（WatchOS 扩展的`NSExtensionmain`）。 由于这些项目是类库而不是可执行项目，因此不需要执行托管的主要方法。
 
 所有此启动序列均编译为静态库，然后将其链接到最终的可执行文件，以便您的应用程序了解如何实现基础。
 
@@ -151,8 +151,8 @@ public interface UIToolbar : UIBarPositioning {
 }
 ```
 
-在 Xamarin 中调用[`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)的生成器使用这些定义文件，并使用 .net 工具将[其编译为临时程序集](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)。 但是，此临时程序集不能用于调用目标 C 代码。 然后，生成器将读取临时程序集， C#并生成可在运行时使用的代码。
-例如，如果将随机属性添加到 .cs 文件中，则该属性不会显示在输出的代码中。 生成器并不知道它，因此`btouch`无法在临时程序集中查找它。
+在 Xamarin 中称为[`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)的生成器使用这些定义文件，并使用 .net 工具将[其编译为临时程序集](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)。 但是，此临时程序集不能用于调用目标 C 代码。 然后，生成器将读取临时程序集， C#并生成可在运行时使用的代码。
+例如，如果将随机属性添加到 .cs 文件中，则该属性不会显示在输出的代码中。 生成器并不知道它，因此 `btouch` 不知道要将其输出到临时程序集中。
 
 创建 Xamarin .dll 后，mtouch 会将所有组件捆绑在一起。
 
@@ -174,6 +174,6 @@ public interface UIToolbar : UIBarPositioning {
 
 - [限制](~/ios/internals/limitations.md)
 - [绑定 Objective-C](~/cross-platform/macios/binding/overview.md)
-- [Objective-C 的选择器](~/ios/internals/objective-c-selectors.md)
+- [目标-C 选择器](~/ios/internals/objective-c-selectors.md)
 - [类型注册机构](~/ios/internals/registrar.md)
 - [链接器](~/ios/deploy-test/linker.md)

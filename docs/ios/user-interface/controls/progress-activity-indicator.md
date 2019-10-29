@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中使用进度和活动指示器�
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76e1ee54a5e1b729fdcb0b0a2c1f278703b2b4d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768918"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021960"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin 中的进度和活动指示器
 
@@ -32,7 +32,7 @@ Apple 对于使用活动指示器有以下建议：
 
 ### <a name="implementing-an-activity-indicator"></a>实现活动指示器
 
-活动指示器通过[`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView)类实现以指示`UIActivity`正在进行。
+活动指示器通过[`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView)类实现，以指示 `UIActivity` 正在进行。
 
 ### <a name="activity-indicators-and-storyboards"></a>活动指示器和情节提要
 
@@ -42,19 +42,19 @@ Apple 对于使用活动指示器有以下建议：
 
 ### <a name="managing-activity-indicator-behavior"></a>管理活动指示器行为
 
-`StartAnimating()`使用和`StopAnimating()`方法可以启动和停止活动指示器动画。
+使用 `StartAnimating()` 和 `StopAnimating()` 方法可以启动和停止活动指示器动画。
 
-将属性设置为`true` ，以使活动指示器在调用`StopAnimating()`后消失。 `HidesWhenStopped` 默认情况下， `true`此值设置为。 在任何时候，都可以通过检查`IsAnimating`属性来查看活动指示器是否正在运行其旋转动画。 
+将 `HidesWhenStopped` 属性设置为 `true`，以使活动指示器在 `StopAnimating()` 调用后消失。 默认情况下，此值设置为 `true`。 在任何时候，都可以通过检查 `IsAnimating` 属性来查看活动指示器是否正在运行其旋转动画。 
 
 ### <a name="managing-activity-indicator-appearances"></a>管理活动指示器外观
 
-在`UIActivityIndicatorViewStyle`实例化活动指示器时，可以将枚举作为参数传递。 可以使用它将视觉样式设置为`Gray`、 `White`或`WhiteLarge`，例如：
+在实例化活动指示器时，可以将 `UIActivityIndicatorViewStyle` 枚举作为参数进行传递。 可以使用它将视觉样式设置为 `Gray`、`White`或 `WhiteLarge`，例如：
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-可以`UIActivityIndicatorViewStyle` 通过`Color`设置属性来重写提供的颜色。
+您可以通过设置 `Color` 属性来覆盖 `UIActivityIndicatorViewStyle` 提供的颜色。
 
 ## <a name="progress-bar"></a>进度栏
 
@@ -67,7 +67,7 @@ Apple 对于使用进度条有以下建议：
 
 ### <a name="implementing-an-progress-bar"></a>实现进度栏
 
-通过实例化[`UIProgressView`](xref:UIKit.UIProgressView)
+通过实例化[`UIProgressView`](xref:UIKit.UIProgressView)创建一个进度栏。
 
 ### <a name="progress-bars-and-storyboards"></a>进度栏和情节提要
 
@@ -79,13 +79,13 @@ Apple 对于使用进度条有以下建议：
 
 ### <a name="managing-progress-bar-behavior"></a>管理进度栏行为
 
-通过使用`Progress`属性，可以最初设置条形的进度：
+可以通过使用 "`Progress`" 属性开始设置条形的进度：
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-可以通过使用`SetProgress`方法调整进度，并在需要对更改进行动画处理时传递布尔声明。
+可以使用 `SetProgress` 方法调整进度，并在需要对更改进行动画处理时传递布尔声明。
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
@@ -95,7 +95,7 @@ ProgressBar.SetProgress(1.0f, true);
 
 ### <a name="managing-progress-bar-appearance"></a>管理进度栏外观
 
-与活动指示器类似，在实例`UIProgressViewStyle`化进度栏时，可以将枚举作为参数传递。
+与活动指示器类似，在实例化进度栏时，可以将 `UIProgressViewStyle` 枚举作为参数进行传递。
 
 可以使用以下属性调整进度和跟踪图像及色调颜色：
 

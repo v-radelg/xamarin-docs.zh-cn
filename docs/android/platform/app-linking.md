@@ -4,15 +4,15 @@ description: 本指南将讨论 Android 6.0 如何支持应用链接，这是一
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: d65e8fabff88489571bba9d03379ff605a6ed0fe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757730"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027751"
 ---
 # <a name="app-linking-in-android"></a>Android 中的应用链接
 
@@ -20,17 +20,17 @@ _本指南将讨论 Android 6.0 如何支持应用链接，这是一种允许移
 
 ## <a name="app-linking-overview"></a>应用链接概述
 
-移动应用程序在许多情况下不再&ndash;出现在接收器中，它们是业务的重要组成部分及其网站。 企业可以无缝地连接其 web 平台和移动应用程序，并提供了一个网站上的链接，可启动移动应用程序并在移动应用程序中显示相关内容。 *应用链接*（也称为 "*深层链接*"）是一种允许移动设备响应 uri 并启动与该 uri 对应的移动应用程序的方法。
+移动应用程序在多个情况下不再处于活动 &ndash;，在许多情况下，它们是企业的重要组成部分及其网站。 企业可以无缝地连接其 web 平台和移动应用程序，并提供了一个网站上的链接，可启动移动应用程序并在移动应用程序中显示相关内容。 *应用链接*（也称为 "*深层链接*"）是一种允许移动设备响应 uri 并启动与该 uri 对应的移动应用程序的方法。
 
-当用户单击移动浏览器中的链接时，android 会通过*意向系统* &ndash;处理应用链接，移动浏览器将分派 Android 将委托给已注册应用程序的意图。 例如，单击烹饪网站上的链接将打开与该网站关联的移动应用，并向用户显示特定食谱。 如果注册了多个应用程序来处理该意向，则 Android 会引发所谓*歧义消除对话框*，该对话框会询问用户哪个应用程序选择应处理此目的的应用程序，例如：
+Android 通过*意向系统*处理应用链接 &ndash; 当用户单击移动浏览器中的链接时，移动浏览器将分派 Android 将委托给已注册应用程序的意图。 例如，单击烹饪网站上的链接将打开与该网站关联的移动应用，并向用户显示特定食谱。 如果注册了多个应用程序来处理该意向，则 Android 会引发所谓*歧义消除对话框*，该对话框会询问用户哪个应用程序选择应处理此目的的应用程序，例如：
 
 ![消除歧义对话框的示例屏幕截图](app-linking-images/01-disambiguation-dialog.png)
 
-Android 6.0 通过使用自动链接处理改善了这一点。 Android 可以自动将应用程序注册为 URI &ndash;的默认处理程序，应用程序将自动启动并直接导航到相关活动。 Android 6.0 如何决定处理 URI 单击取决于以下条件：
+Android 6.0 通过使用自动链接处理改善了这一点。 Android 可能会自动将应用程序注册为 URI 的默认处理程序，&ndash; 应用将自动启动并直接导航到相关活动。 Android 6.0 如何决定处理 URI 单击取决于以下条件：
 
-1. **现有应用已与 URI 关联**&ndash;用户可能已将现有应用与 URI 相关联。 在这种情况下，Android 将继续使用该应用程序。
-2. **没有与该 URI 关联的现有应用程序，但安装了支持的应用**&ndash;在此方案中，用户未指定现有应用程序，因此 Android 将使用安装的支持应用程序来处理请求。
-3. **没有与该 URI 关联的现有应用程序，但安装了许多支持应用**&ndash;由于存在多个支持 uri 的应用程序，因此将显示消除歧义对话框，用户必须选择将处理 uri 的应用。
+1. **现有应用已与 uri 相关联**&ndash; 用户可能已将现有应用与 uri 相关联。 在这种情况下，Android 将继续使用该应用程序。
+2. **没有与该 URI 关联的现有应用程序，但支持的应用已安装**&ndash; 在此方案中，用户未指定现有应用，因此 Android 将使用安装的支持应用程序来处理请求。
+3. **没有与该 uri 关联的现有应用程序，但许多支持性应用**程序 &ndash; 安装，因为有多个应用程序支持该 uri，将显示消除歧义对话框，用户必须选择将处理该 uri 的应用程序。
 
 如果用户没有安装支持 URI 的应用程序，并且随后安装了一个应用程序，则在验证与该 URI 关联的网站的关联后，Android 会将该应用程序设置为 URI 的默认处理程序。
 
@@ -46,8 +46,8 @@ Android 6.0 通过使用自动链接处理改善了这一点。 Android 可以�
 
 设置应用-Android 6.0 中的链接涉及两个主要步骤：
 
-1. **为网站 URI 添加一个或多个意向筛选器**&ndash;意向筛选器指南 Android 在如何处理 URL 中单击移动浏览器。
-2. **发布*数字资产链接 JSON*文件网站** &ndash;上的文件这是一个文件，该文件已上传到网站，Android 使用它来验证移动应用与网站域之间的关系。 如果没有此设置，Android 将无法安装应用作为 URI 的默认句柄;用户必须手动完成此操作。
+1. **添加网站 URI 的一个或多个意向筛选器**的 &ndash; 意向筛选器指南 Android 在如何处理 URL 中单击移动浏览器。
+2. **在网站上发布*数字资产链接 JSON*文件**&ndash; 此文件是上传到网站的文件，Android 使用它来验证移动应用与网站域之间的关系。 如果没有此设置，Android 将无法安装应用作为 URI 的默认句柄;用户必须手动完成此操作。
 
 <a name="configure-intent-filter" />
 
@@ -55,14 +55,14 @@ Android 6.0 通过使用自动链接处理改善了这一点。 Android 可以�
 
 需要配置一个意向筛选器，将 URI （或可能为的一组 uri）从网站映射到 Android 应用程序中的活动。 在 Xamarin 中，此关系是通过使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)的活动装饰建立的。 目的筛选器必须声明以下信息：
 
-- **`Intent.ActionView`** &ndash;这将注册意向筛选器以响应查看信息的请求
-- **`Categories`** &ndash;  意向的筛选器应注册同时 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 为了能够正确处理 web URI。
-- **`DataScheme`** 目的筛选器必须声明`http`和/或`https`。 &ndash; 这是两个有效的方案。
-- **`DataHost`** &ndash;这是 uri 将源自的域。
-- **`DataPathPrefix`** &ndash;这是网站上的资源的可选路径。
-- **`AutoVerify`** &ndash; 特性告诉Android验证应用程序与`autoVerify`网站之间的关系。 下面将对此进行更详细的讨论。
+- **`Intent.ActionView`** &ndash; 这将注册意向筛选器，以响应查看信息的请求
+- **`Categories`** &ndash; 目的筛选器应注册 **[CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ，以便能够正确地处理 web URI。
+- **`DataScheme`** &ndash; 目的筛选器必须声明 `http` 和/或 `https`。 这是两个有效的方案。
+- **`DataHost`** &ndash; 此域是 uri 将源自的域。
+- **`DataPathPrefix`** &ndash; 这是网站上的资源的可选路径。
+- `autoVerify` 特性 &ndash; **`AutoVerify`** 指示 Android 验证应用程序与网站之间的关系。 下面将对此进行更详细的讨论。
 
-下面的示例演示如何使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)处理来自`https://www.recipe-app.com/recipes`和的`http://www.recipe-app.com/recipes`链接：
+下面的示例演示如何使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)处理来自 `https://www.recipe-app.com/recipes` 和 `http://www.recipe-app.com/recipes`的链接：
 
 ```csharp
 [IntentFilter(new [] { Intent.ActionView },
@@ -84,15 +84,15 @@ public class RecipeActivity : Activity
 Android 6.0 应用链接要求在将应用程序设置为 URI 的默认处理程序之前，Android 验证应用程序与网站之间的关联。 首次安装应用程序时，将发生此验证。 *数字资产链接*文件是一个 JSON 文件，该文件由相关的 webdomain 托管。
 
 > [!NOTE]
-> 特性必须由意向筛选器&ndash;设置，否则 Android 不会执行验证。 `android:autoVerify`
+> `android:autoVerify` 属性必须由意向筛选器设置 &ndash; 否则 Android 不会执行验证。
 
-该文件由域的网站管理员放置在该位置 **https://domain/.well-known/assetlinks.json** 。
+该文件由域的网站管理员放置 **https://domain/.well-known/assetlinks.json** 位置。
 
 数字资产文件包含 Android 验证关联所需的元数据。 **Assetlinks**文件具有以下键-值对：
 
-- `namespace`&ndash; Android 应用程序的命名空间。
-- `package_name`&ndash; Android 应用程序的包名称（在应用程序清单中声明）。
-- `sha256_cert_fingerprints`&ndash;已签名应用程序的 SHA256 指纹。 有关如何获取应用程序的 SHA1 指纹的详细信息，请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)指南。
+- `namespace` &ndash; Android 应用程序的命名空间。
+- `package_name` &ndash; Android 应用程序的包名称（在应用程序清单中声明）。
+- 已签署应用程序 `sha256_cert_fingerprints` &ndash; SHA256 指纹。 有关如何获取应用程序的 SHA1 指纹的详细信息，请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)指南。
 
 以下代码片段是**assetlinks**的一个示例，其中列出了单个应用程序：
 
@@ -173,9 +173,9 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    - **`Package`** &ndash;应用程序的包名称。
-    - **`Domain`** &ndash;将由应用程序处理其 web 链接的域（由空格分隔）
-    - **`Status`** &ndash;这是应用程序的当前链接处理状态。 如果值为 "**始终**"，则表示`android:autoVerify=true`应用程序已声明并通过了系统验证。 后跟一个十六进制数字，表示该首选项的 Android 系统记录。
+    - **`Package`** &ndash; 应用程序的包名称。
+    - **`Domain`** &ndash; 将由应用程序处理其 Web 链接的域（由空格分隔）
+    - **`Status`** &ndash; 这是应用的当前链接处理状态。 如果值为 "**始终**"，则表示应用程序已 `android:autoVerify=true` 声明并通过了系统验证。 后跟一个十六进制数字，表示该首选项的 Android 系统记录。
 
     例如:
 
@@ -196,6 +196,6 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 
 - [查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)
 - [活动和意向](https://university.xamarin.com/classes#4)
-- [AppLinks](http://applinks.org/)
+- [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Google 数字资产链接](https://developers.google.com/digital-asset-links/)
 - [语句列表生成器和测试人员](https://developers.google.com/digital-asset-links/tools/generator)

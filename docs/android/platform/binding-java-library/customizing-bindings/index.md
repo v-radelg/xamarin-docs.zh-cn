@@ -4,15 +4,15 @@ description: 可以通过编辑控制绑定过程的元数据来自定义 Xamari
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 37e91070ea10defedbeebdbb06220fabbd2554fc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04f3720d8684129476c955819390e91330a7800a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756645"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020644"
 ---
 # <a name="customizing-bindings"></a>自定义绑定
 
@@ -24,7 +24,7 @@ Xamarin 会自动执行许多绑定过程;但是，在某些情况下，需要�
 
 - 解决由于缺少类型、模糊类型、重复名称、类可见性问题以及无法由 Xamarin Android 工具解决的其他情况导致的生成错误。 
 
-- 更改 Xamarin 使用的映射，将 android API 绑定到C#中的不同类型（例如，许多开发人员更喜欢将 Java `int`常量映射到C# `enum`常量）。
+- 更改 Xamarin 使用的映射，将 Android API 绑定到中C#的不同类型（例如，许多开发人员更喜欢将 Java `int`常量映射到C#`enum`常量）。
 
 - 删除不需要绑定的未使用的类型。 
 

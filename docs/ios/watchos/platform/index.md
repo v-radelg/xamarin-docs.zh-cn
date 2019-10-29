@@ -4,15 +4,15 @@ description: 本文档链接到各种指南，这些指南介绍了 watchOS 平�
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2b987992bcb3dd4d2575a46e21a2302ed78d8d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e571132b5f1e30bececb8302f2dacfcd908ad42e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282286"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028297"
 ---
 # <a name="watchos-platform-features"></a>watchOS 平台功能
 
@@ -46,7 +46,7 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 ## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[主动建议](~/ios/watchos/platform/proactive-suggestions.md)
 
-watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为支持此功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)现在包含`MapItem`属性，该属性使应用程序能够提供位置信息供其他应用以后使用。
+watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为了支持此功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)包含 `MapItem` 属性，该属性使应用程序能够提供位置信息供其他应用稍后使用。
 
 ## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[快速交互技术](~/ios/watchos/platform/quick-interaction-techniques.md)
 
@@ -54,4 +54,4 @@ watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为支
 
 ## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[健身应用增强功能](~/ios/watchos/platform/workout-apps.md)
 
-新到 watchOS 3，健身相关应用可以在 Apple Watch 的后台运行。 若要启用此功能（并获取对 HealthKit 数据的访问权限），应用必须`WKBackgroundModes` `Info.plist`在文件中包含具有值`workout-processing`的密钥。
+新到 watchOS 3，健身相关应用可以在 Apple Watch 的后台运行。 若要启用此功能（并获取对 HealthKit 数据的访问权限），应用必须在 `Info.plist` 文件中包含值为 `workout-processing`的 `WKBackgroundModes` 项。

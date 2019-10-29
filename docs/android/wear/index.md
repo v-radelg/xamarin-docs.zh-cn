@@ -4,15 +4,15 @@ description: 生成适用于 Android 可穿戴设备的应用。
 ms.prod: xamarin
 ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2018
-ms.openlocfilehash: 5768a8fb402304d399e619ddb111aea24d975daf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 63fb9c3b1484026cb390a8a475c711562dfd0771
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758335"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028594"
 ---
 # <a name="android-wear"></a>Android 穿戴设备
 
@@ -61,9 +61,9 @@ Android 开发人员网站提供了有关关键损耗 Api 的详细信息，如[
 
 |描述|屏幕快照|
 |--- |--- |
-|[Android L](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/)等等&ndash; Android L 开发者预览版引入了一个很多的新 api，使开发人员能够利用这些 api，其中包含一些内容设计、通知和新的动画。|![演示的视频屏幕截图](images/video-android-l.png)|
-|[C#在我的耳和眼睛中：Google 玻璃和 Android 磨损](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;可穿戴计算可能与将来（或检查器小部分）类似，但很多人现在都在使用未来！ C#开发人员了解到这一点，并且已经掌握了用于充分利用可穿戴设备功能的工具和技能（从2014演变为）。|![演示的视频屏幕截图](images/video-eyes-ears.png)|
-|[Xamarin 中的新增功能](https://www.youtube.com/watch?v=Gpqc2XZIQfU)&ndash; Android L、android 磨损、android 电视机、android 自动、材料设计和艺术; 这对你作为 Xamarin 开发人员意味着什么2014呢？|![演示的视频屏幕截图](Images/video-whats-new.png)|
+|[Android l，更多](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/)&ndash; Android l 开发者预览版引入了很多的新 api，使开发人员可以利用，包括材料设计、通知和新动画等。|![演示的视频屏幕截图](images/video-android-l.png)|
+|[在我的耳中以及我的眼睛中： Google 玻璃和 Android 磨损&ndash;可穿戴计算可能与未来（或检查工具小剧集）类似，但很多人现在已经欢迎使用！ C# ](https://www.youtube.com/watch?v=80H8tXByZQc) C#开发人员了解到这一点，并且已经掌握了用于充分利用可穿戴设备功能的工具和技能（从2014演变为）。|![演示的视频屏幕截图](images/video-eyes-ears.png)|
+|[Xamarin 中的新增功能](https://www.youtube.com/watch?v=Gpqc2XZIQfU)&ndash; android L、android 磨损、android 电视机、android 自动、材料设计和艺术;这对你作为 Xamarin 开发人员意味着什么？from 演化为2014。|![演示的视频屏幕截图](Images/video-whats-new.png)|
 
 <!--
 

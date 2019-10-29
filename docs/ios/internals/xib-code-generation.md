@@ -4,15 +4,15 @@ description: 本文档介绍了 Xamarin iOS 如何生成代码以将 xib 文件�
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768490"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022243"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>xib 在 Xamarin 中生成代码
 
@@ -33,7 +33,7 @@ Apple Interface Builder 工具（"IB"）可用于直观地设计用户界面。 
 
 ## <a name="generating-code"></a>生成代码
 
-对于具有 "生成操作"*页*的任何 **{0}xib**文件，如果 **{0}** 项目中也存在 xib.designer.cs 文件，Visual Studio for Mac 将在设计器文件中为其所有用户类生成分部类可在**xib**文件中找到，其中包含所有操作的插座和分部方法的属性。 仅当存在此文件时，才会启用代码生成。
+对于具有 "生成操作"*页*的任何 **{0}xib**文件，如果项目中也存在 **{0}xib.designer.cs**文件，Visual Studio for Mac 将在设计器文件中为它可以在的所有用户类中生成分部类**xib**文件，其中包含所有操作的插座和分部方法的属性。 仅当存在此文件时，才会启用代码生成。
 
 当**xib**文件更改并 Visual Studio for Mac 重新获得焦点时，将自动更新该设计器文件。 不应手动修改设计器文件，因为下次 Visual Studio for Mac 更新文件时将覆盖更改。
 
@@ -41,7 +41,7 @@ Apple Interface Builder 工具（"IB"）可用于直观地设计用户界面。 
 
 Visual Studio for Mac 使用设计器文件位置的项目默认命名空间生成设计器类，以使其与普通 .NET 项目 namespacing 保持一致。 设计器文件的命名空间由项目的 "默认命名空间" 及其 ".NET 命名策略" 设置驱动。 请注意，如果项目的默认命名空间发生更改，MD 将重新生成新命名空间中的类，因此你可能会发现分部类不再匹配。
 
-为了使此类可由目标-C 运行时发现，Visual Studio for Mac 向`[Register (name)]`类应用特性。 虽然 Xamarin 自动注册`NSObject`派生类，但它使用完全限定的 .net 名称。 Visual Studio for Mac 应用的特性重写此，以确保每个类都注册到**xib**文件中使用的名称。 如果在 IB 中使用自定义类，而不使用 Visual Studio for Mac 生成设计器文件，则可能需要手动应用此类，以使托管类与预期的目标 C 类名称匹配。
+为了使此类可由目标-C 运行时发现，Visual Studio for Mac 将 `[Register (name)]` 特性应用于类。 虽然 Xamarin 会自动注册 `NSObject`派生的类，但它使用完全限定的 .NET 名称。 Visual Studio for Mac 应用的特性重写此，以确保每个类都注册到**xib**文件中使用的名称。 如果在 IB 中使用自定义类，而不使用 Visual Studio for Mac 生成设计器文件，则可能需要手动应用此类，以使托管类与预期的目标 C 类名称匹配。
 
 不能在多个 xib 中定义类 **。**
 
@@ -51,7 +51,7 @@ Visual Studio for Mac 使用设计器文件位置的项目默认命名空间生�
 
 导致这种情况的原因是需要灵活性。 例如，多个代码隐藏类可以为公共托管抽象类提供子类，此类将类划分为通过 IB 划分子类。
 
-将其放在 **{0}xib.designer.cs**设计器文件旁边的 **{0}xib.cs**文件中。
+将其放在 xib.designer.cs 设计器文件 **{0}** 旁边的 **{0}xib.cs**文件中。
 
 <a name="generated" />
 
@@ -63,19 +63,19 @@ Visual Studio for Mac 使用设计器文件位置的项目默认命名空间生�
 
 设计器类包含与自定义类上定义的所有插座相对应的属性。 这些是属性的一个事实是，用于启用延迟绑定的 Xamarin 到目标 C 桥的实现细节。 应将它们视为等效于私有字段，以便仅用于代码隐藏类。 如果要使它们成为公共的，请将访问器属性添加到非设计器类部件，就像对任何其他私有字段一样。
 
-如果将插座属性定义为具有类型`id` （相当于`NSObject`），则设计器代码生成器当前根据连接到该插座的对象确定最强的可能类型，以方便使用。
+如果将插座属性定义为具有一种类型的 `id` （等效于 `NSObject`），则设计器代码生成器当前根据连接到该插座的对象确定最强的可能类型。
 但是，在将来的版本中可能不支持这种情况，因此，建议您在定义自定义类时明确地键入插座。
 
 ### <a name="action-properties"></a>操作属性
 
 设计器类包含与自定义类上定义的所有操作对应的分部方法。 这些是没有实现的方法。 分部方法的目的是双重的：
 
-1. 如果键入`partial`非设计器类部件的类体，Visual Studio for Mac 将提供自动完成所有未实现的分部方法的签名。
+1. 如果在非设计器类部件的类体中键入 `partial`，Visual Studio for Mac 将自动完成所有未实现的分部方法的签名。
 2. 分部方法签名具有应用的属性，可将这些属性公开给目标-C 环境，因此，它们可以作为对应的操作进行处理。
 
 如果需要，您可以忽略分部方法，并通过将特性应用于其他方法来实现该操作，也可以让其通过基类。
 
-如果将操作定义为具有发送方类型`id` （相当于`NSObject`），则设计器代码生成器当前根据连接到该操作的对象确定最强的可能类型。 但是，在将来的版本中可能不支持这种情况，因此，建议您在定义自定义类时显式地键入操作。
+如果将操作定义为具有 `id` 的发送方类型（相当于 `NSObject`），则设计器代码生成器当前根据连接到该操作的对象确定最强的可能类型。 但是，在将来的版本中可能不支持这种情况，因此，建议您在定义自定义类时显式地键入操作。
 
 请注意，只为C#创建这些分部方法，因为 CodeDOM 不支持分部方法，因此不会为其他语言生成这些方法。
 

@@ -4,15 +4,15 @@ description: Android 4.4 （KitKat）为用户和开发人员提供了 cornucopi
 ms.prod: xamarin
 ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 6f3df1c7c4664f4138e0f399419ac95e15231916
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757519"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027231"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -22,13 +22,13 @@ _Android 4.4 （KitKat）为用户和开发人员提供了 cornucopia 功能。�
 
 Android 4.4 （API 级别19）（也称为 "KitKat"）在后期2013发布。 KitKat 提供了各种新的功能和改进，包括：
 
-- [用户体验](#user_experience)&ndash;使用转换框架、半透明状态和导航栏以及全屏沉浸模式的简单动画有助于为用户带来更好的体验。
+- [用户体验](#user_experience)&ndash; 使用转换框架的简单动画、半透明状态和导航栏以及全屏沉浸式模式，有助于为用户带来更好的体验。
 
-- [用户内容](#user_content)&ndash;使用存储访问框架简化了用户文件管理; 打印图片、网站和其他内容更易于打印 api。
+- [用户内容](#user_content)&ndash; 使用存储访问框架简化的用户文件管理;打印图片、网站和其他内容更易于打印 Api。
 
-- [硬件](#hardware)使用基于 nfc 主机的卡仿真将任何应用转换为 nfc 卡; `SensorManager`使用运行低功耗传感器。 &ndash;
+- [硬件](#hardware)&ndash; 使用基于 NFC 的 Nfc 卡仿真将任何应用转换为 nfc 卡;用 `SensorManager` 运行低功耗传感器。
 
-- [开发人员工具](#developer_tools)&ndash; Android Debug Bridge 客户端使用的 Screencast 应用程序，可作为 Android SDK 的一部分。
+- [开发人员工具](#developer_tools)&ndash; 与 Android Debug Bridge 客户端进行操作的 Screencast 应用程序，可在 Android SDK 中使用。
 
 本指南提供有关将现有 Xamarin Android 应用程序迁移到 KitKat 的指导，以及针对 Xamarin 开发人员的 KitKat 的高级概述。
 
@@ -57,7 +57,7 @@ if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat) {
 ### <a name="alarm-batching"></a>警报批处理
 
 Android 使用警报服务在指定时间在后台唤醒应用。 KitKat 通过批处理警报来更进一步地执行此操作，以保持电源。 这意味着，KitKat 倾向于在同一时间间隔内对注册为唤醒的多个应用程序进行分组，而不是在精确的时间内对每个应用进行分组，并同时唤醒它们。
-若要告知 Android 在指定时间间隔内唤醒应用，请在`SetWindow` [`AlarmManager`](xref:Android.App.AlarmManager)上调用，并传入应用程序唤醒之前可以经过的最小和最大时间（以毫秒为单位）以及要在唤醒时执行的操作。
+若要告知 Android 在指定的时间间隔内唤醒应用，请对[`AlarmManager`](xref:Android.App.AlarmManager)调用 `SetWindow`，并传入应用唤醒之前可以经过的最小和最大时间（以毫秒为单位）以及要在唤醒时执行的操作。
 下面的代码提供了一个应用程序示例，该应用程序需要在每半小时到一小时的时间从设置窗口的时间唤醒：
 
 ```csharp
@@ -65,37 +65,37 @@ AlarmManager alarmManager = (AlarmManager)GetSystemService(AlarmService);
 alarmManager.SetWindow (AlarmType.Rtc, AlarmManager.IntervalHalfHour, AlarmManager.IntervalHour, pendingIntent);
 ```
 
-若要在精确的时间继续唤醒应用，请`SetExact`使用，并在应用应唤醒的确切时间内进行传递，并执行以下操作：
+若要在精确的时间内继续唤醒应用，请使用 `SetExact`，并传入应用应唤醒的确切时间和要执行的操作：
 
 ```csharp
 alarmManager.SetExact (AlarmType.Rtc, AlarmManager.IntervalDay, pendingIntent);
 ```
 
-KitKat 不再允许您设置精确的重复警报。 使用的应用程序[`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*)
+KitKat 不再允许您设置精确的重复警报。 使用[`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*)的应用程序
 并且需要精确的警报，现在需要手动触发每个警报。
 
 ### <a name="external-storage"></a>外部存储
 
-外部存储现在划分为两种类型-应用程序的唯一存储空间，以及由多个应用程序共享的数据。 在外部存储上读取和写入应用的特定位置不需要特殊权限。 与共享存储上的数据交互现在需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限。 这两种类型可以分类为：
+外部存储现在划分为两种类型-应用程序的唯一存储空间，以及由多个应用程序共享的数据。 在外部存储上读取和写入应用的特定位置不需要特殊权限。 与共享存储上的数据交互现在需要 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 权限。 这两种类型可以分类为：
 
-- 如果是通过调用方法`Context`获取文件或目录路径，例如：[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+- 如果是通过对 `Context` 调用方法获取文件或目录路径，例如[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
   或[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
   - 您的应用程序不需要额外的权限。
 
-- 如果是通过访问属性或对`Environment`调用方法来获取文件或目录路径，例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+- 如果是通过访问属性或调用 `Environment` 上的方法来获取文件或目录路径，如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
   或[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
-  ，应用需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限。
+  ，应用需要 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 权限。
 
 > [!NOTE]
-> `WRITE_EXTERNAL_STORAGE``READ_EXTERNAL_STORAGE`表示权限，因此只需设置一个权限。
+> `WRITE_EXTERNAL_STORAGE` 表示 `READ_EXTERNAL_STORAGE` 权限，因此只需设置一个权限。
 
 ### <a name="sms-consolidation"></a>SMS 合并
 
-KitKat 通过聚合用户选择的一个默认应用程序中的所有 SMS 内容来简化用户的消息传递。 开发人员负责将应用程序设置为默认的消息传递应用程序，并在代码中以及在应用程序未选中的情况下正常工作。 有关将 SMS 应用转换为 KitKat 的详细信息，请参阅从 Google[获取 Sms 应用准备好 KitKat](http://android-developers.blogspot.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html)指南。
+KitKat 通过聚合用户选择的一个默认应用程序中的所有 SMS 内容来简化用户的消息传递。 开发人员负责将应用程序设置为默认的消息传递应用程序，并在代码中以及在应用程序未选中的情况下正常工作。 有关将 SMS 应用转换为 KitKat 的详细信息，请参阅从 Google[获取 Sms 应用准备好 KitKat](https://android-developers.blogspot.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html)指南。
 
 ### <a name="webview-apps"></a>Web 视图应用
 
-[Web 视图](xref:Android.Webkit.WebView)在 KitKat 中获取了功能改进。 最大的变化增加了将内容加载到中`WebView`的安全性。 尽管面向较早的`WebView` API 版本的大多数应用程序应该按预期方式工作，但强烈建议测试使用类的应用程序。 有关受影响的 Web 视图 Api 的详细信息，请参阅[android 4.4 文档中的 Android 迁移到 Web 视图](https://developer.android.com/guide/webapps/migrating.html)。
+[Web 视图](xref:Android.Webkit.WebView)在 KitKat 中获取了功能改进。 最大的变化增加了将内容加载到 `WebView`的安全性。 尽管面向较早的 API 版本的大多数应用程序应该按预期方式工作，但强烈建议测试使用 `WebView` 类的应用程序。 有关受影响的 Web 视图 Api 的详细信息，请参阅[android 4.4 文档中的 Android 迁移到 Web 视图](https://developer.android.com/guide/webapps/migrating.html)。
 
 <a name="user_experience" />
 
@@ -110,7 +110,7 @@ KitKat 附带了几个新的 Api 来增强用户体验，其中包括用于处�
 #### <a name="simple-property-animation"></a>简单属性动画
 
 新的 Android 转换库简化了属性动画的隐藏代码。 利用框架，可以通过最少的代码执行简单动画。 例如，下面的代码示例使用[`TransitionManager.BeginDelayedTransition`](xref:Android.Transitions.TransitionManager.BeginDelayedTransition*)
-若要动态显示和隐藏`TextView`：
+若要动态显示和隐藏 `TextView`：
 
 ```csharp
 using Android.Transitions;
@@ -147,15 +147,15 @@ public class MainActivity : Activity
 }
 ```
 
-上面的示例使用转换框架在更改属性值之间创建自动的默认过渡。 由于动画是通过一行代码来处理的，因此可以通过将`BeginDelayedTransition`调用包装在系统版本检查中，轻松使此与早期版本的 Android 兼容。 有关详细信息，请参阅将[应用迁移到 KitKat](#Migrating_Your_App_to_KitKat)部分。
+上面的示例使用转换框架在更改属性值之间创建自动的默认过渡。 由于动画是通过一行代码来处理的，因此可以通过将 `BeginDelayedTransition` 调用包装在系统版本检查中，轻松使此与早期版本的 Android 兼容。 有关详细信息，请参阅将[应用迁移到 KitKat](#Migrating_Your_App_to_KitKat)部分。
 
 下面的屏幕截图显示了在动画之前的应用程序：
 
-[![动画开始之前的应用屏幕截图](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
+[动画开始之前![应用屏幕截图](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
 下面的屏幕截图显示了动画后面的应用程序：
 
-[![动画完成后的应用屏幕截图](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[动画完成后![应用屏幕快照](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 在下一节中介绍了如何更好地控制后台转换。
 
@@ -163,11 +163,11 @@ public class MainActivity : Activity
 
 [场景](xref:Android.Transitions.Scene)作为转换框架的一部分引入，使开发人员可以更好地控制动画。 场景在 UI 中创建动态区域：为容器中的 XML 内容指定容器和多个版本或 "场景"，Android 会执行其余工作以对场景之间的转换进行动画处理。 Android 场景允许您使用最小的开发端来构建复杂的动画。
 
-承载动态内容的静态 UI 元素称为*容器*或*场景基*。 下面的示例使用 Android Designer 来创建一个名`RelativeLayout` `container`为的：
+承载动态内容的静态 UI 元素称为*容器*或*场景基*。 下面的示例使用 Android Designer 创建名为 `container`的 `RelativeLayout`：
 
-[![使用 Android Designer 创建 RelativeLayout 容器](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
+[使用 Android Designer 创建 RelativeLayout 容器的![](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
-示例布局还定义了下面的一个`sceneButton`名为`container`的按钮。 此按钮将触发转换。
+示例布局还定义了一个名为 `sceneButton` `container`下面的按钮。 此按钮将触发转换。
 
 容器内的动态内容需要两个新的 Android 布局。 这些布局仅指定容器*中*的代码。
 下面的示例代码定义了一个名为*Scene1*的布局，其中分别包含两个文本字段 "工具包" 和 "katt"，另一个名为*Scene2*的布局包含反转的相同文本字段。 XML 如下所示：
@@ -214,9 +214,9 @@ public class MainActivity : Activity
 </merge>
 ```
 
-上面的示例使用`merge`来缩短视图代码，并简化视图层次结构。 可在[此处](http://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)阅读有关`merge`布局的详细信息。
+上面的示例使用 `merge` 使视图代码更短，并简化视图层次结构。 可在[此处](https://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)阅读有关 `merge` 布局的详细信息。
 
-场景是通过调用[`Scene.GetSceneForLayout`](xref:Android.Transitions.Scene.GetSceneForLayout*)、传入容器对象、场景布局文件的资源 ID 和当前`Context`的来创建的，如下面的代码示例所示：
+通过调用[`Scene.GetSceneForLayout`](xref:Android.Transitions.Scene.GetSceneForLayout*)、传入容器对象、场景布局文件的资源 ID 以及当前 `Context`来创建场景，如以下代码示例所示：
 
 ```csharp
 RelativeLayout container = FindViewById<RelativeLayout> (Resource.Id.container);
@@ -241,20 +241,20 @@ sceneButton.Click += (o, e) => {
 
 下面的屏幕截图说明了动画前面的场景：
 
-[![动画启动之前的应用程序屏幕截图](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[动画启动前应用的![屏幕截图](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 下面的屏幕截图演示动画后面的场景：
 
-[![动画完成后应用的屏幕截图](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
+[动画完成后应用的![屏幕快照](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 > [!NOTE]
-> Android 转换库中有一个[已知 bug](https://code.google.com/p/android/issues/detail?id=62450) ，该 bug 导致使用`GetSceneForLayout`创建的场景在用户第二次导航活动时中断。 [此处](http://www.doubleencore.com/2013/11/new-transitions-framework/)介绍了 java 解决方法。
+> Android 转换库中有一个[已知 bug](https://code.google.com/p/android/issues/detail?id=62450) ，该 bug 会导致使用 `GetSceneForLayout` 创建的场景在用户第二次导航活动时中断。 [此处](http://www.doubleencore.com/2013/11/new-transitions-framework/)介绍了 java 解决方法。
 
 ##### <a name="custom-transitions-in-scenes"></a>场景中的自定义转换
 
-自定义转换可以在下`transition` `Resources`目录的 xml 资源文件中定义，如以下屏幕截图所示：
+自定义转换可以在 `Resources`下的 `transition` 目录中的 xml 资源文件中定义，如以下屏幕截图所示：
 
-[![资源/转换目录下转换 .xml 文件的位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
+[资源/转换目录下转换 .xml 文件的![位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
 下面的代码示例定义一个转换，该转换将在5秒内进行动画处理，并使用[超过内插](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html)程序：
 
@@ -271,7 +271,7 @@ sceneButton.Click += (o, e) => {
 Transition transition = TransitionInflater.From(this).InflateTransition(Resource.Transition.transition);
 ```
 
-然后，将新的转换添加到`Go`开始动画的调用：
+然后，将新的转换添加到开始动画的 `Go` 调用：
 
 ```csharp
 TransitionManager.Go (scene1, transition);
@@ -281,11 +281,11 @@ TransitionManager.Go (scene1, transition);
 
 KitKat 使你可以更好地控制具有可选半透明状态和导航栏的应用的主题。 你可以在用于定义 Android 主题的同一 XML 文件中更改系统 UI 元素的半透明度。 KitKat 引入了以下属性：
 
-- `windowTranslucentStatus`-如果设置为 true，则使顶部状态栏成为半透明的。
+- `windowTranslucentStatus`-设置为 true 时，使顶部状态栏为半透明。
 
 - `windowTranslucentNavigation`-设置为 true 时，使底部导航栏半透明。
 
-- `fitsSystemWindows`-默认情况下，将顶部或底部栏设置为 "transcluent" 可在透明 UI 元素下移动内容。 如果将此属性`true`设置为，则可以使用一种简单的方法来防止内容与半透明系统 UI 元素重叠。
+- `fitsSystemWindows`：默认情况下，将顶部或底部栏设置为 transcluent。 将此属性设置为 `true` 是防止内容与半透明系统 UI 元素重叠的一种简单方法。
 
 下面的代码定义了一个带有半透明状态和导航栏的主题：
 
@@ -318,18 +318,18 @@ KitKat 使你可以更好地控制具有可选半透明状态和导航栏的应�
 
 存储访问框架（SAF）是一种新的方法，使用户能够与存储的内容（例如图像、视频和文档）进行交互。 KitKat 将打开一个新的 UI，使用户能够在一个聚合位置访问其数据，而不是向用户显示用于选择应用程序来处理内容的对话框。 选择内容后，用户将返回到请求内容的应用程序，并且应用程序体验会照常继续。
 
-此更改需要对开发人员执行两个操作：首先，需要将提供商提供的内容的应用更新为请求内容的新方法。 其次，将数据写入到`ContentProvider`需要修改以使用新框架的应用程序。 这两种方案都依赖于新的[`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
+此更改需要对开发人员执行两个操作：首先，需要将提供商提供的内容的应用更新为请求内容的新方法。 其次，需要将数据写入 `ContentProvider` 的应用程序修改为使用新框架。 这两种方案都依赖于新的[`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
 API。
 
 #### <a name="documentsprovider"></a>DocumentsProvider
 
-在 KitKat 中，与`ContentProviders` `DocumentsProvider`类进行了抽象。 这意味着，只要可通过`DocumentsProvider` API 访问数据，SAF 就不会关心数据的物理位置。 本地提供程序、云服务和外部存储设备均使用相同的接口，并以相同的方式进行处理，为用户和开发人员提供一个位置以便与用户的内容交互。
+在 KitKat 中，与 `DocumentsProvider` 类 `ContentProviders` 的交互是抽象的。 这意味着，只要可通过 `DocumentsProvider` API 访问数据，SAF 就不会关心数据的物理位置。 本地提供程序、云服务和外部存储设备均使用相同的接口，并以相同的方式进行处理，为用户和开发人员提供一个位置以便与用户的内容交互。
 
 本部分介绍如何使用存储访问框架加载和保存内容。
 
 #### <a name="request-content-from-a-provider"></a>从提供程序请求内容
 
-我们可以告诉 KitKat，我们想要使用 SAF UI 通过`ActionOpenDocument`意向选取内容，这表示我们想要连接到设备可用的所有内容提供商。 您可以通过指定`CategoryOpenable`向此目的添加一些筛选，这意味着只会返回可以打开的内容（即可访问的内容）。 KitKat 还允许通过`MimeType`筛选内容。 例如，以下代码通过指定图像`MimeType`来筛选图像结果：
+我们可以告诉 KitKat，我们想要使用 SAF UI `ActionOpenDocument` 意向选取内容，这表示要连接到设备可用的所有内容提供商。 您可以通过指定 `CategoryOpenable`来向此目的添加一些筛选，这意味着只会返回可打开的内容（例如，可访问的内容）。 KitKat 还允许通过 `MimeType`筛选内容。 例如，以下代码通过指定图像 `MimeType`来筛选图像结果：
 
 ```csharp
 Intent intent = new Intent (Intent.ActionOpenDocument);
@@ -338,11 +338,11 @@ intent.SetType ("image/*");
 StartActivityForResult (intent, save_request_code);
 ```
 
-调用`StartActivityForResult`会启动 SAF UI，用户可以通过浏览该 UI 来选择图像：
+调用 `StartActivityForResult` 会启动 SAF UI，用户可以通过浏览该 UI 来选择图像：
 
-[![使用存储访问框架浏览映像的应用的示例屏幕截图](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[使用存储访问框架浏览到图像![应用的示例屏幕截图](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
-用户选择了一个图像后， `OnActivityResult`将`Android.Net.Uri`返回所选文件的。 下面的代码示例显示用户的图像选择：
+用户选择了图像后，`OnActivityResult` 返回所选文件的 `Android.Net.Uri`。 下面的代码示例显示用户的图像选择：
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -358,7 +358,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 #### <a name="write-content-to-a-provider"></a>将内容写入提供程序
 
-除了从 SAF UI 加载内容外，KitKat 还允许你将内容保存到任何`ContentProvider` `DocumentProvider`实现 API 的。 保存内容将`Intent`与一起`ActionCreateDocument`使用：
+除了从 SAF UI 加载内容外，KitKat 还允许你将内容保存到实现 `DocumentProvider` API 的任何 `ContentProvider`。 保存内容将 `Intent` 与 `ActionCreateDocument`：
 
 ```csharp
 Intent intentCreate = new Intent (Intent.ActionCreateDocument);
@@ -370,9 +370,9 @@ StartActivityForResult (intentCreate, write_request_code);
 
 上面的代码示例加载 SAF UI，让用户更改文件名，并选择一个目录来容纳新文件：
 
-[![用户将文件名更改为下载目录中的 NewDoc 的屏幕截图](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
+[用户![屏幕截图，将文件名更改为下载目录中的 NewDoc](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
-当用户按 "**保存**" `OnActivityResult`时，将`Android.Net.Uri`传递新创建的文件的，该文件可通过`data.Data`访问。 Uri 可用于将数据流式传输到新文件中：
+当用户按 "**保存**" 时，`OnActivityResult` 会传递到新创建的文件的 `Android.Net.Uri`，该文件可通过 `data.Data`进行访问。 Uri 可用于将数据流式传输到新文件中：
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -389,35 +389,35 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 }
 ```
 
-请注意，[`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*)
-`System.IO.Stream`返回，因此可使用 .net 编写整个流式处理过程。
+请注意， [`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*)
+返回 `System.IO.Stream`，因此可以使用 .NET 编写整个流式处理过程。
 
 有关使用存储访问框架加载、创建和编辑内容的详细信息，请参阅[存储访问框架的 Android 文档](https://developer.android.com/guide/topics/providers/document-provider.html)。
 
 ### <a name="printing"></a>打印
 
-随着[打印服务](xref:Android.PrintServices)和的引入， `PrintManager`KitKat 中的打印内容已简化。 KitKat 也是第一个 API 版本，使用[Google Cloud 打印应用程序](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)完全利用[Google 的云打印服务 api](https://developers.google.com/cloud-print/) 。
+打印内容在 KitKat 中进行了简化，同时引入了[打印服务](xref:Android.PrintServices)和 `PrintManager`。 KitKat 也是第一个 API 版本，使用[Google Cloud 打印应用程序](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)完全利用[Google 的云打印服务 api](https://developers.google.com/cloud-print/) 。
 当 KitKat 附带的大多数设备首次连接到 WiFi 时，会自动下载 Google Cloud 打印应用和[HP 打印服务插件](https://play.google.com/store/apps/details?id=com.hp.android.printservice)。 用户可以通过导航到 "**设置" > 系统 > 打印**来检查其设备的打印设置：
 
-[![打印设置屏幕的示例屏幕截图](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
+[打印设置屏幕的![示例屏幕截图](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 > [!NOTE]
 > 尽管打印 Api 设置为在默认情况下使用 Google Cloud 打印，但 Android 仍允许开发人员使用新 Api 准备打印内容，并将其发送给其他应用程序以处理打印。
 
 #### <a name="printing-html-content"></a>打印 HTML 内容
 
-KitKat 自动为 web [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) `WebView.CreatePrintDocumentAdapter`视图创建一个。 打印 web 内容是在等待 HTML 内容加载[`WebViewClient`](xref:Android.Webkit.WebViewClient)并使活动知道在 "选项" 菜单中提供 "打印" 选项的情况下协调的一项工作，并使活动知道在 "选项" 菜单中提供 "打印" 选项，并使活动等待用户选择 "打印" 选项并调用`Print`在`PrintManager`上。 本部分介绍了打印屏幕 HTML 内容所需的基本设置。
+KitKat 会自动为具有 `WebView.CreatePrintDocumentAdapter`的 web 视图创建[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) 。 打印 web 内容是在[`WebViewClient`](xref:Android.Webkit.WebViewClient)等待加载 HTML 内容并使活动知道在 "选项" 菜单中提供 "打印" 选项和活动（等待用户选择 "打印" 选项，然后是 c`PrintManager`上的 alls `Print`。 本部分介绍了打印屏幕 HTML 内容所需的基本设置。
 
 请注意，加载和打印 web 内容需要 Internet 权限：
 
-[![在应用选项中设置 Internet 权限](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
+[在应用选项中![设置 Internet 权限](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
 ##### <a name="print-menu-item"></a>打印菜单项
 
 "打印" 选项通常会出现在活动的 "[选项" 菜单](https://developer.android.com/guide/topics/ui/menus.html#options-menu)中。
 "选项" 菜单允许用户对活动执行操作。 它位于屏幕的右上角，如下所示：
 
-[![屏幕右上角显示的 "打印" 菜单项的示例屏幕截图](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[屏幕右上角显示的 "打印" 菜单项![示例屏幕截图](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 可以在 "*资源*" 下的*菜单*目录中定义其他菜单项。 下面的代码定义了一个名为[Print](xref:Android.Print.PrintManager)的示例菜单项：
 
@@ -430,9 +430,9 @@ KitKat 自动为 web [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAd
 </menu>
 ```
 
-与活动中的 "选项" 菜单的交互会`OnCreateOptionsMenu`通过`OnOptionsItemSelected`和方法进行。
-`OnCreateOptionsMenu`是在*菜单*资源目录中添加新菜单项（例如 "打印" 选项）的位置。
-`OnOptionsItemSelected`侦听用户从菜单中选择 "打印" 选项，然后开始打印：
+与活动中的 "选项" 菜单的交互通过 `OnCreateOptionsMenu` 和 `OnOptionsItemSelected` 方法进行。
+`OnCreateOptionsMenu` 是从*菜单*资源目录中添加新菜单项（例如 "打印" 选项）的位置。
+`OnOptionsItemSelected` 侦听用户从菜单中选择 "打印" 选项，然后开始打印：
 
 ```csharp
 bool dataLoaded;
@@ -456,11 +456,11 @@ public override bool OnOptionsItemSelected (IMenuItem item)
 }
 ```
 
-上面的代码还定义了一个名`dataLoaded`为的变量，用于跟踪 HTML 内容的状态。 加载所有内容时，会将此变量设置为true，以便活动知道将"打印"菜单项添加到"选项"菜单。`WebViewClient`
+上面的代码还定义了一个名为 `dataLoaded` 的变量来跟踪 HTML 内容的状态。 在加载所有内容后，`WebViewClient` 会将此变量设置为 true，以便活动知道将 "打印" 菜单项添加到 "选项" 菜单。
 
 ##### <a name="webviewclient"></a>WebViewClient
 
-的工作`WebViewClient`是确保在打印选项显示在菜单`WebView`中之前完全加载中的数据， `OnPageFinished`这与方法相同。 `OnPageFinished`侦听 web 内容以完成加载，并通知活动通过以下方式`InvalidateOptionsMenu`重新创建其选项菜单：
+`WebViewClient` 的工作是确保 `WebView` 中的数据完全加载，然后在菜单中显示 "打印" 选项，该选项与 `OnPageFinished` 方法相同。 `OnPageFinished` 侦听 web 内容完成加载，并通知活动通过 `InvalidateOptionsMenu`重新创建其选项菜单：
 
 ```csharp
 class MyWebViewClient : WebViewClient
@@ -480,11 +480,11 @@ class MyWebViewClient : WebViewClient
 }
 ```
 
-`OnPageFinished`还会将`dataLoaded`值设置`true`为， `OnCreateOptionsMenu`因此可以通过 "打印" 选项就地重新创建菜单。
+`OnPageFinished` 还将 `dataLoaded` 值设置为 `true`，因此 `OnCreateOptionsMenu` 可以通过 "打印" 选项就地重新创建菜单。
 
 ##### <a name="printmanager"></a>PrintManager
 
-下面的代码示例将打印的内容`WebView`：
+下面的代码示例打印 `WebView`的内容：
 
 ```csharp
 void PrintPage ()
@@ -495,45 +495,45 @@ void PrintPage ()
 }
 ```
 
-`Print`采用作为参数：打印作业的名称（此示例中为 "MyWebPage"）、[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
+`Print` 采用作为参数：打印作业的名称（此示例中为 "MyWebPage"）、 [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
 它从内容生成打印文档，并[`PrintAttributes`](xref:Android.Print.PrintAttributes)
-（`null`在上面的示例中）。 您可以指定`PrintAttributes`以帮助对打印页上的内容进行布局，不过，默认属性应处理大多数方案。
+（在上面的示例中为 `null`）。 您可以指定 `PrintAttributes` 以帮助在打印页上布局内容，尽管默认特性应能处理大多数方案。
 
-调用`Print`会加载打印 UI，其中列出了打印作业的选项。 UI 使用户能够选择将 HTML 内容打印或保存到 PDF，如以下屏幕截图所示：
+调用 `Print` 会加载打印 UI，其中列出了打印作业的选项。 UI 使用户能够选择将 HTML 内容打印或保存到 PDF，如以下屏幕截图所示：
 
-[![显示 "打印" 菜单的 PrintHtmlActivity 屏幕截图](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
+[显示 "打印" 菜单的 PrintHtmlActivity 的![屏幕快照](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[![显示 "另存为 PDF" 菜单的 PrintHtmlActivity 屏幕截图](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
+[显示 "另存为 PDF" 菜单的 PrintHtmlActivity 的屏幕截图![](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
 ## <a name="hardware"></a>硬件
 
-KitKat 添加了几个 Api 来容纳新的设备功能。 最值得注意的是，这是基于主机的卡仿真和`SensorManager`新的。
+KitKat 添加了几个 Api 来容纳新的设备功能。 其中最值得注意的是基于主机的卡仿真和新的 `SensorManager`。
 
 ### <a name="host-based-card-emulation-in-nfc"></a>NFC 中基于主机的卡仿真
 
-基于主机的卡仿真（HCE）允许应用程序的行为类似于 NFC 卡或 NFC 卡读卡器，而无需依赖于电信公司的专有安全元素。 设置 HCE 之前，请确保设备`PackageManager.HasSystemFeature`上的 HCE 可用：
+基于主机的卡仿真（HCE）允许应用程序的行为类似于 NFC 卡或 NFC 卡读卡器，而无需依赖于电信公司的专有安全元素。 设置 HCE 之前，请确保 HCE 在设备上可用，并 `PackageManager.HasSystemFeature`：
 
 ```csharp
 bool hceSupport = PackageManager.HasSystemFeature(PackageManager.FeatureNfcHostCardEmulation);
 ```
 
-HCE 要求将 HCE 功能和`Nfc`权限都注册到应用程序的： `AndroidManifest.xml`
+HCE 要求将 HCE 功能和 `Nfc` 权限都注册到应用程序的 `AndroidManifest.xml`中：
 
 ```xml
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[![在应用选项中设置 NFC 权限](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
+[在应用选项中设置 NFC 权限![](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
-若要工作，HCE 必须能够在后台运行，并且在用户进行 NFC 事务时必须启动，即使使用 HCE 的应用程序未运行也是如此。 可以通过将`Service`HCE 代码编写为来实现此目的。 HCE 服务实现了`HostApduService`接口，该接口实现以下方法：
+若要工作，HCE 必须能够在后台运行，并且在用户进行 NFC 事务时必须启动，即使使用 HCE 的应用程序未运行也是如此。 可以通过将 HCE 代码作为 `Service`写入来实现此目的。 HCE 服务实现 `HostApduService` 接口，该接口实现以下方法：
 
 - *ProcessCommandApdu* -应用程序协议数据单元（APDU）是 NFC 读取器和 HCE 服务之间发送的内容。 此方法从读取器使用 ADPU，并返回响应中的数据单位。
 
-- *OnDeactivated* - `HostAdpuService`当 HCE 服务不再与 NFC 读取器通信时，将停用。
+- *OnDeactivated* -当 HCE 服务不再与 NFC 读取器通信时，将停用该 `HostAdpuService`。
 
-还需要在应用程序清单中注册 HCE 服务，并使用适当的权限、意向筛选器和元数据对其进行修饰。 下面的代码是`HostApduService` `Service`使用属性注册到 Android 清单的示例（有关属性的详细信息，请参阅使用[android 清单](~/android/platform/android-manifest.md)的 Xamarin 指南）：
+还需要在应用程序清单中注册 HCE 服务，并使用适当的权限、意向筛选器和元数据对其进行修饰。 下面的代码是使用 `Service` 属性注册到 Android 清单的 `HostApduService` 的示例（有关属性的详细信息，请参阅使用[Android 清单](~/android/platform/android-manifest.md)指南的 Xamarin）：
 
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
@@ -555,7 +555,7 @@ class HceService : HostApduService
 }
 ```
 
-上述服务为 NFC 读取器提供了一种与应用程序交互的方式，但 NFC 读取器仍无法知道此服务是否正在模拟其需要扫描的 NFC 卡。 为帮助 NFC 读取器识别服务，可以为服务分配一个唯一的*应用程序 ID （辅助）* 。 我们在使用`MetaData`属性注册的 xml 资源文件中指定辅助工具以及 HCE 服务的其他元数据（请参阅上面的代码示例）。 此资源文件指定一个或多个辅助筛选器-以十六进制格式表示的、与一个或多个 NFC 读取器设备的帮助相对应的唯一标识符字符串。
+上述服务为 NFC 读取器提供了一种与应用程序交互的方式，但 NFC 读取器仍无法知道此服务是否正在模拟其需要扫描的 NFC 卡。 为帮助 NFC 读取器识别服务，可以为服务分配一个唯一的*应用程序 ID （辅助）* 。 我们在使用 `MetaData` 特性注册的 xml 资源文件中指定辅助工具以及 HCE 服务的其他元数据（请参阅上面的代码示例）。 此资源文件指定一个或多个辅助筛选器-以十六进制格式表示的、与一个或多个 NFC 读取器设备的帮助相对应的唯一标识符字符串。
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -577,8 +577,8 @@ class HceService : HostApduService
 
 ### <a name="sensors"></a>传感器
 
-通过 KitKat，可以通过[`SensorManager`](xref:Android.Hardware.SensorManager)访问设备传感器。
-`SensorManager`允许操作系统将传感器信息按批次传递给应用程序，从而保留电池寿命。
+KitKat 通过[`SensorManager`](xref:Android.Hardware.SensorManager)提供对设备传感器的访问。
+该 `SensorManager` 允许 OS 以批处理方式将传感器信息传送给应用程序，从而保留电池寿命。
 
 KitKat 还附带了两种新的传感器类型，用于跟踪用户的步骤。 这些是基于加速感应，并包括：
 
@@ -588,9 +588,9 @@ KitKat 还附带了两种新的传感器类型，用于跟踪用户的步骤。 
 
 下面的屏幕截图描述了操作中的步骤计数器：
 
-[![显示步骤计数器的 SensorsActivity 应用程序的屏幕截图](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
+[显示步骤计数器的 SensorsActivity 应用的![屏幕快照](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
-可以`SensorManager`通过调用`GetSystemService(SensorService)`并将结果`SensorManager`强制转换为来创建。 若要使用步骤计数器，请`GetDefaultSensor` `SensorManager`对调用。 你可以注册传感器，并侦听步骤计数中的更改，并提供[`ISensorEventListener`](xref:Android.Hardware.ISensorEventListener)
+可以通过调用 `GetSystemService(SensorService)` 并将结果转换为 `SensorManager`来创建 `SensorManager`。 若要使用步骤计数器，请对 `SensorManager`调用 `GetDefaultSensor`。 你可以注册传感器，并通过[`ISensorEventListener`](xref:Android.Hardware.ISensorEventListener)的帮助来侦听步骤计数中的更改
 接口，如下面的代码示例所示：
 
 ```csharp
@@ -622,9 +622,9 @@ public class MainActivity : Activity, ISensorEventListener
 }
 ```
 
-`OnSensorChanged`如果在应用程序处于前台时进行升级，则会调用。 如果应用程序进入后台，或者设备处于睡眠状态， `OnSensorChanged`则将不会调用; 但是，在调用之前`UnregisterListener` ，将继续对这些步骤进行计数。
+如果在应用程序处于前台时更新步骤，将调用 `OnSensorChanged`。 如果应用程序进入后台，或者设备处于睡眠状态，则不会调用 `OnSensorChanged`;但是，在调用 `UnregisterListener` 之前，将继续对这些步骤进行计数。
 
-请记住，每个*注册传感器的应用程序的步骤计数值都是累积*的。 这意味着，即使你卸载并重新安装应用程序，并在应用`count`程序启动时将变量初始化为0，由传感器报告的值仍将保留在注册传感器时执行的总步骤数，无论你的应用程序或另一个。 您可以通过`UnregisterListener` `SensorManager`在上调用来阻止您的应用程序添加到步骤计数器，如以下代码所示：
+请记住，每个*注册传感器的应用程序的步骤计数值都是累积*的。 这意味着即使你卸载并重新安装应用程序，并在应用程序启动时初始化 0 `count` 变量，传感器报告的值仍将保留在该传感器注册时执行的总步骤数，无论你的应用程序或另一个。 可以通过对 `SensorManager`调用 `UnregisterListener` 来防止应用程序添加到步骤计数器，如以下代码所示：
 
 ```csharp
 protected override void OnPause()
@@ -637,7 +637,7 @@ protected override void OnPause()
 重新启动设备会将步骤计数重置为0。 您的应用程序将需要额外的代码，以确保它报告的应用程序的准确计数，而不考虑使用传感器的其他应用程序或设备的状态。
 
 > [!NOTE]
-> 尽管步骤检测和计数的 API 随附了 KitKat，但并不是所有手机都与传感器 outfitted。 可以通过运行`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`查看传感器是否可用，或检查以确保返回的`GetDefaultSensor`值不`null`是。
+> 尽管步骤检测和计数的 API 随附了 KitKat，但并不是所有手机都与传感器 outfitted。 可以通过运行 `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`来检查传感器是否可用，或检查以确保 `GetDefaultSensor` 的返回值不是 `null`的。
 
 <a name="developer_tools" />
 
@@ -668,34 +668,34 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 - *使用全屏*-KitKat 引入了一种新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))，用于浏览内容、玩游戏，以及运行可从全屏体验中获益的其他应用程序。
 
-- *自定义通知*-获取有关系统通知的其他详细信息[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
-  . 这使你能够以不同的方式在应用程序中显示信息。
+- *自定义通知*-获取有关具有[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)的系统通知的更多详细信息
+  方法。 这使你能够以不同的方式在应用程序中显示信息。
 
 - *镜像可绘制资源*-可绘制资源具有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
   此属性告知系统为需要翻转以实现从左到右布局的图像创建镜像版本。
 
-- *暂停动画*-暂停和恢复用[`Animator`](xref:Android.Animation.Animator)
+- *暂停动画*-暂停和恢复用[`Animator`](xref:Android.Animation.Animator)创建的动画
   类的新实例。
 
-- *阅读动态更改文本*-表示 UI 的部分，这些部分以新[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+- *阅读动态更改文本*-表示 UI 的部分，这些部分以新的文本作为 "实时区域" 进行动态更新[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
   特性，以便在辅助功能模式下自动读取新文本。
 
 - *增强音频体验*-使跟踪与[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
-  ，查找音频流的峰值和 RMS，其中包含[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
+  ，使用[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)查找音频流的峰值和 RMS
   类，并从[音频时间戳](xref:Android.Media.AudioTimestamp)获取信息以帮助进行音频视频同步。
 
-- *同步 ContentResolver 自定义间隔*-KitKat 将一些可变性添加到同步请求的执行时间。 通过调用`ContentResolver.RequestSync`并传入在`SyncRequest`自定义时间或间隔同步。 `ContentResolver`
+- *同步 ContentResolver 自定义间隔*-KitKat 将一些可变性添加到同步请求的执行时间。 通过调用 `ContentResolver.RequestSync` 并传入 `SyncRequest`，在自定义时间或间隔同步 `ContentResolver`。
 
-- *区分控制器*-在 KitKat 中，为控制器分配唯一的整数标识符，可通过设备的`ControllerNumber`属性进行访问。 这样就可以更轻松地在游戏中区分玩家。
+- *区分控制器*-在 KitKat 中，为控制器分配唯一的整数标识符，可通过设备的 `ControllerNumber` 属性进行访问。 这样就可以更轻松地在游戏中区分玩家。
 
-- *远程控制*-对硬件和软件端进行一些更改，KitKat 允许你使用 IR 发送器将设备 outfitted 启用到远程控制`ConsumerIrService`，并使用新的[`RemoteController`](xref:Android.Media.RemoteController)
+- *远程控制*-对硬件和软件端进行一些更改，KitKat 允许使用 `ConsumerIrService`将设备 OUTFITTED 与 IR 发送器一起启用到远程控制，并使用新的[`RemoteController`](xref:Android.Media.RemoteController)与外围设备交互
   Api.
 
 有关上述 API 更改的详细信息，请参阅 Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)概述。
 
 ## <a name="summary"></a>总结
 
-本文介绍了 Android 4.4 中提供的一些新 Api （API 级别19），并介绍了将应用程序转换为 KitKat 时的最佳做法。 它概述了影响用户体验的 Api 的更改，其中包括*转换框架*和*主题*的新选项。 接下来，它引入了*存储访问框架*和`DocumentsProvider`类以及新的*打印 api*。 它探讨了*基于 NFC 主机的智能卡仿真*以及如何使用*低能耗传感器*，其中包括两个新传感器，用于跟踪用户的步骤。 最后，它演示了如何使用*屏幕录制*来捕获应用程序的实时演示，并提供了 KitKat API 更改和添加的详细列表。
+本文介绍了 Android 4.4 中提供的一些新 Api （API 级别19），并介绍了将应用程序转换为 KitKat 时的最佳做法。 它概述了影响用户体验的 Api 的更改，其中包括*转换框架*和*主题*的新选项。 接下来，它引入了*存储访问框架*和 `DocumentsProvider` 类以及新的*打印 api*。 它探讨了*基于 NFC 主机的智能卡仿真*以及如何使用*低能耗传感器*，其中包括两个新传感器，用于跟踪用户的步骤。 最后，它演示了如何使用*屏幕录制*来捕获应用程序的实时演示，并提供了 KitKat API 更改和添加的详细列表。
 
 ## <a name="related-links"></a>相关链接
 

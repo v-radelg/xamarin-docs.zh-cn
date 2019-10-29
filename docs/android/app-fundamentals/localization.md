@@ -4,15 +4,15 @@ description: 本文档介绍 Android SDK 的本地化功能，以及如何使用
 ms.prod: xamarin
 ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 08d12a58b4a0d8a8f757df965bd9dfb73f1639b1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ae97297b81d33c4b9f814d4b3639984b05ce3d72
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755372"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021658"
 ---
 # <a name="android-localization"></a>Android 本地化
 
@@ -26,7 +26,7 @@ _本文档介绍 Android SDK 的本地化功能，以及如何使用 Xamarin 访
 
 用户在 "设置" 中选择语言 **> 语言 & 输入**。 此选择控制所显示的语言和所使用的区域设置（例如 对于日期和数字格式）。
 
-当前区域设置可以通过当前上下文`Resources`进行查询：
+可以通过当前上下文的 `Resources`查询当前区域设置：
 
 ```csharp
 var lang = Resources.Configuration.Locale; // eg. "es_ES"
@@ -36,19 +36,19 @@ var lang = Resources.Configuration.Locale; // eg. "es_ES"
 
 常见示例包括：
 
-- `en_US`对于英语（美国）
-- `es_ES`西班牙语（西班牙）
-- `ja_JP`对于日语（日本）
-- `zh_CN`适用于中文（中国）
-- `zh_TW`中文（台湾）
-- `pt_PT`对于葡萄牙语（葡萄牙）
-- `pt_BR`对于葡萄牙语（巴西）
+- `en_US` （美国）
+- 西班牙语 `es_ES` （西班牙）
+- 日语 `ja_JP` （日本）
+- 中文（中国） `zh_CN`
+- 中文（台湾） `zh_TW`
+- `pt_PT` 葡萄牙语（葡萄牙）
+- `pt_BR` 葡萄牙语（巴西）
 
 ### <a name="locale_changed"></a>LOCALE_CHANGED
 
-当用户`android.intent.action.LOCALE_CHANGED`更改其语言选择时，Android 会生成。
+Android 在用户更改其语言选择时生成 `android.intent.action.LOCALE_CHANGED`。
 
-活动可以通过设置`android:configChanges`活动的属性来选择处理此操作，如下所示：
+活动可以通过设置活动的 `android:configChanges` 特性来选择处理此操作，如下所示：
 
 ```csharp
 [Activity (Label = "@string/app_name", MainLauncher = true, Icon="@drawable/launcher",
@@ -63,9 +63,9 @@ Android 的本地化策略包含以下关键部分：
 
 - 要包含本地化的字符串、图像和其他资源的资源文件夹。
 
-- `GetText`方法，用于在代码中检索本地化字符串
+- 用于在代码中检索本地化字符串的 `GetText` 方法
 
-- `@string/id`在 MAIN.AXML 文件中，用于自动将本地化的字符串置于布局中。
+- `@string/id` MAIN.AXML 文件中，用于自动将本地化的字符串置于布局中。
 
 ### <a name="resource-folders"></a>资源文件夹
 
@@ -81,21 +81,21 @@ Android 应用程序管理资源文件夹中的大部分内容，例如：
 ![多个区域性标识符的资源/绘制和资源/值文件夹的屏幕截图](localization-images/resources.png)
 
 > [!NOTE]
-> 如果需要指定`es`仅有两个字符的顶级语言，则必须指定完整的区域设置，目录名称格式要求使用短划线和小写**r**来分隔两部分，例如**rBR**或**zh-chs-rCN**。 将此与代码中返回的值（例如， `pt_BR`）格式模式中出现的位置生成。 这两个值与 .net `CultureInfo`类使用的值不同，后者仅包含一条破折号（例如 `pt-BR`）格式模式中出现的位置生成。 跨 Xamarin 平台工作时，请记住这些差异。
+> 指定顶级语言（例如 `es`）时，只需要两个字符。但是，在指定完整区域设置时，目录名称格式需要使用短划线和小写**r**来分隔两部分，例如， **rBR**或**zh-chs-rCN**。 将此与代码中返回的值（例如， `pt_BR`) 格式模式中出现的位置匹配。 这两个值与 .NET `CultureInfo` 类使用的值不同，后者仅包含一条破折号（例如 `pt-BR`) 格式模式中出现的位置匹配。 跨 Xamarin 平台工作时，请记住这些差异。
 
 #### <a name="stringsxml-file-format"></a>String .xml 文件格式
 
 本地化**值**目录（例如 **值-es**或**values-rBR**）应包含一个名为**Strings**的文件，该文件将包含该区域设置的已翻译文本。
 
-每个可转换字符串都是一个 XML 元素，其资源 ID 指定`name`为属性，并将转换后的字符串作为值：
+每个可转换字符串都是一个 XML 元素，其资源 ID 指定为 `name` 特性，并将转换后的字符串作为值：
 
 ```xml
 <string name="app_name">TaskyL10n</string>
 ```
 
-需要根据普通 XML 规则进行转义，并且`name`必须是有效的 Android 资源 ID （不含空格或短划线）。 下面是示例的默认（英语）字符串文件的示例：
+需要根据普通 XML 规则进行转义，并且 `name` 必须是有效的 Android 资源 ID （不含空格或短划线）。 下面是示例的默认（英语）字符串文件的示例：
 
-**values/Strings.xml**
+**values/Strings .xml**
 
 ```xml
 <resources>
@@ -110,7 +110,7 @@ Android 应用程序管理资源文件夹中的大部分内容，例如：
 
 西班牙语目录**值-es**包含一个文件，该文件具有相同的名称（**string .xml**），其中包含以下翻译：
 
-**values-es/Strings.xml**
+**values-es/Strings**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -130,7 +130,7 @@ Android 应用程序管理资源文件夹中的大部分内容，例如：
 
 ### <a name="axml-layout-files"></a>MAIN.AXML 布局文件
 
-若要在布局文件中引用本地化字符串， `@string/id`请使用语法。 示例中的此 XML 代码片段`text`显示了使用本地化资源 id 设置的属性（已省略某些其他属性）：
+若要在布局文件中引用本地化字符串，请使用 `@string/id` 语法。 示例中的此 XML 代码片段显示了使用本地化资源 Id 设置的 `text` 属性（省略了某些其他属性）：
 
 ```xml
 <TextView
@@ -145,7 +145,7 @@ Android 应用程序管理资源文件夹中的大部分内容，例如：
 
 ### <a name="gettext-method"></a>GetText 方法
 
-若要在代码中检索已转换的`GetText`字符串，请使用方法并传递资源 ID：
+若要在代码中检索已转换的字符串，请使用 `GetText` 方法并传递资源 ID：
 
 ```csharp
 var cancelText = Resources.GetText (Resource.String.taskcancel);
@@ -174,14 +174,14 @@ var cancelText = Resources.GetText (Resource.String.taskcancel);
  </plurals>
 ```
 
-若要呈现完整的字符串， `GetQuantityString`请使用方法，传递要显示的资源 ID 和值（传递两次）。 Android 使用第二个参数来确定要使用*的* `quantity`字符串，第三个参数是实际替换为字符串的值（两者都是必需的）。
+若要呈现完整的字符串，请使用 `GetQuantityString` 方法，传递要显示的资源 ID 和值（传递两次）。 Android 使用第二个参数来确定要使用*的*`quantity` 字符串，第三个参数是实际替换为字符串的值（两者都是必需的）。
 
 ```csharp
 var translated = Resources.GetQuantityString (
                     Resource.Plurals.numberOfTasks, taskcount, taskcount);`
 ```
 
-有效`quantity`的开关包括：
+有效 `quantity` 开关为：
 
 - 零
 - one
@@ -190,9 +190,9 @@ var translated = Resources.GetQuantityString (
 - many
 - 其他
 
-[Android 文档](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)中更详细地介绍了这些内容。如果给定语言不需要 "特殊" 处理，则将忽略`quantity`这些字符串（例如，英语仅使用`one`和`other`; 指定`zero`字符串将不会产生任何影响，不会使用）。
+[Android 文档](https://developer.android.com/guide/topics/resources/string-resource.html#Plurals)中更详细地介绍了这些内容。如果某个给定语言不需要 "特殊" 处理，则将忽略这些 `quantity` 字符串（例如，英语仅使用 `one` 和 `other`; 指定 `zero` 字符串将不会产生任何影响，将不会使用它）。
 
-### <a name="images"></a>映像
+### <a name="images"></a>图像
 
 本地化的图像与字符串文件遵循相同的规则：应用程序中引用的所有映像都应放置在可**绘制**目录中，因此存在回退。
 
@@ -206,13 +206,13 @@ var translated = Resources.GetQuantityString (
 
 还可以提供其他类型的特定于语言的其他类型的资源，包括布局、动画和原始文件。 这意味着你可以为一个或多个目标语言提供特定的屏幕布局，例如，你可以创建专门用于德语的布局，以允许使用非常长的文本标签。
 
-如果你设置了应用程序设置`android:supportsRtl="true"`，Android 4.2 引入了对[从右到左（RTL）语言](http://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)的支持。 资源限定符`"ldrtl"`可以包含在目录名称中，以包含专为 RTL 显示而设计的自定义布局。
+如果你将应用程序设置 `android:supportsRtl="true"`设置，Android 4.2 会引入对[从右向左（RTL）语言](https://android-developers.blogspot.fr/2013/03/native-rtl-support-in-android-42.html)的支持。 可以将资源限定符 `"ldrtl"` 包含在目录名称中，以包含专为 RTL 显示而设计的自定义布局。
 
 有关资源目录命名和回退的详细信息，请参阅 Android 文档，[提供备用资源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 ### <a name="app-name"></a>应用名称
 
-`@string/id`在`MainLauncher`活动中使用中的可以轻松地本地化应用程序名称：
+通过在 `MainLauncher` 活动中使用 `@string/id`，可以轻松地本地化应用程序名称：
 
 ```csharp
 [Activity (Label = "@string/app_name", MainLauncher = true, Icon="@drawable/launcher",
@@ -221,17 +221,17 @@ var translated = Resources.GetQuantityString (
 
 ### <a name="right-to-left-rtl-languages"></a>从右到左（RTL）语言
 
-Android 4.2 及更高版本提供对 RTL 布局的完全支持，如[本机 RTL 支持博客](http://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html)中所述。
+Android 4.2 及更高版本提供对 RTL 布局的完全支持，如[本机 RTL 支持博客](https://android-developers.blogspot.dk/2013/03/native-rtl-support-in-android-42.html)中所述。
 
-使用 Android 4.2 （API 级别17）和更高版本时，可以使用`start`和`end`而不是`left`和`right` （例如`android:paddingStart`）来指定对齐值。 还有新的 api （如`LayoutDirection` `TextDirection`、和`TextAlignment` ）可帮助生成适应 RTL 读取器的屏幕。
+使用 Android 4.2 （API 级别17）和更高版本时，可以使用 `start` 和 `end` 而不是 `left` 和 `right` （例如 `android:paddingStart`）来指定对齐值。 还有新的 Api，如 `LayoutDirection`、`TextDirection`和 `TextAlignment`，有助于构建适合 RTL 读取器的屏幕。
 
 以下屏幕截图显示了阿拉伯语中的[本地化的**Tasky**示例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)：
 
-[![阿拉伯语中的 Tasky 应用程序的屏幕截图](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
+[阿拉伯语中 Tasky 应用程序的![屏幕截图](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 下一屏幕截图显示了希伯来语中的[本地化的**Tasky**示例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)：
 
-[![希伯来语 Tasky 应用程序的屏幕截图](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
+[希伯来语![Tasky 应用程序的屏幕截图](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 使用**字符串 .xml**文件对 RTL 文本进行本地化，其方式与 LTR 文本相同。
 

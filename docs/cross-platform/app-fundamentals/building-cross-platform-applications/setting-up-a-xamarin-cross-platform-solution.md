@@ -3,15 +3,15 @@ title: 第3部分-设置 Xamarin 跨平台解决方案
 description: 本文档介绍如何在 Xamarin 中设置跨平台解决方案。 它讨论了各种代码共享策略，如共享项目和 .NET Standard。
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 843887282c9a5af671d46699ae2f601fd32902e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758143"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016875"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第3部分-设置 Xamarin 跨平台解决方案
 
@@ -63,7 +63,7 @@ Xamarin 方法是将代码分组为两个项目类型：
 
 ### <a name="core-project"></a>核心项目
 
-共享代码项目只应引用可在所有平台上使用的程序集– ie。常见框架命名空间， `System`如`System.Core` 、 `System.Xml`和。
+共享代码项目只应引用可在所有平台上使用的程序集– ie。常见框架命名空间，如 `System`、`System.Core` 和 `System.Xml`。
 
 共享项目应尽可能多地实现非 UI 功能，其中可能包括以下各层：
 
@@ -89,11 +89,11 @@ Xamarin 方法是将代码分组为两个项目类型：
 
 此图说明了应用程序体系结构：
 
- [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此图说明了应用程序体系结构")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "The application architecture is illustrated in this diagram")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 此屏幕截图显示了使用共享核心项目、iOS 和 Android 应用程序项目设置的解决方案。 共享项目包含与每个体系结构层（业务、服务、数据和数据访问代码）相关的代码：
 
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共享项目包含与每个体系结构层相关的代码（业务、服务、数据和数据访问代码）")
+ ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "The Shared Project contains code relating to each of the architectural layers (Business, Service, Data and Data Access code)")
 
  <a name="Project_References" />
 
@@ -104,7 +104,7 @@ Xamarin 方法是将代码分组为两个项目类型：
 
 应用程序将项目每个引用共享项目，并包含向用户提供功能所需的用户界面代码，如以下屏幕截图所示：
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "应用程序项目共享项目中的每个引用") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "应用程序项目每个引用共享项目中")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "应用程序项目每个引用共享项目") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "应用程序项目每个引用共享项目")
 
 案例研究中提供了有关如何构造项目的具体示例。
 
@@ -118,12 +118,12 @@ Xamarin 方法是将代码分组为两个项目类型：
 
 为某些文件类型设置正确的生成操作非常重要。 此列表显示了针对某些常见文件类型的生成操作：
 
-- **所有C#文件**–生成操作：Compile
+- **所有C#文件**–生成操作：编译
 - **Xamarin 中的映像 & Windows** –生成操作：内容
-- **Xamarin 中的 XIB 和情节提要文件**–生成操作：InterfaceDefinition
-- **Android 中的图像和 main.axml 布局**–生成操作：AndroidResource
-- **Windows 项目中的 XAML 文件**–生成操作：页面
-- **Xamarin .xaml XAML 文件**–生成操作：EmbeddedResource
+- **Xamarin 中的 XIB 和情节提要文件**–生成操作： InterfaceDefinition
+- **Android 中的图像和 main.axml 布局**–生成操作： AndroidResource
+- **Windows 项目中的 XAML 文件**–生成操作：页
+- **Xamarin. FORMS XAML 文件**–生成操作： EmbeddedResource
 
 通常，IDE 将检测文件类型并建议正确的生成操作。
 

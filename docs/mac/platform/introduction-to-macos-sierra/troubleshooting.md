@@ -4,15 +4,15 @@ description: 本文档提供了几个用于在 Xamarin 应用程序中处理 mac
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/22/2016
-ms.openlocfilehash: 51276a7682599c6480c637fac385992feaf06e49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4e7f7169e4c7ec0ec2947e17b1434179f47488f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278900"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017026"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin macOS Sierra 疑难解答
 
@@ -28,7 +28,7 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 - [核心映像](#CoreImage)
 - [通知](#Notifications)
 - [NSUserActivity](#NSUserActivity)
-- [Safari](#Safari)
+- [免费](#Safari)
 
 <a name="App-Store" />
 
@@ -51,16 +51,16 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 
 已知问题：
 
-- `NSObject.ValueForKey` 调用`null`将会导致异常。
-- 在`NSURLSession` TLS `NSURLConnection`握手期间，和都不能再用于`http://` url。
-- 如果应用在`ViewWillLayoutSubviews`或`LayoutSubviews`方法中修改 superview 的几何，则它们可能会挂起。
+- 调用 `NSObject.ValueForKey` 将 `null` 会导致异常。
+- 在 `http://` Url 的 TLS 握手期间，`NSURLSession` 和 `NSURLConnection` 不再有 RC4 密码套件。
+- 如果应用在 `ViewWillLayoutSubviews` 或 `LayoutSubviews` 方法中修改 superview 的几何，应用可能会挂起。
 - 对于所有 SSL/TLS 连接，默认情况下，RC4 对称密码处于禁用状态。 此外，安全传输 API 不再支持 SSLv3，建议应用程序尽快停止使用 SHA-1 和3DES 加密。
 
 <a name="CFNetwork-HTTP-Protocol" />
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP 协议
 
-类的`HTTPBodyStream`属性`NSURLConnection` `NSURLSession`必须设置为未打开的流，因为现在完全强制实施此要求。 `NSMutableURLRequest`
+`NSMutableURLRequest` 类的 `HTTPBodyStream` 属性必须设置为未打开的流，因为 `NSURLConnection` 和 `NSURLSession` 现在严格强制实施此要求。
 
 <a name="CloudKit" />
 
@@ -72,7 +72,7 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 
 ## <a name="core-image"></a>核心映像
 
-`CIImageProcessor` API 现在支持任意输入图像计数。 `CIImageProcessor`将删除 macOS Sierra beta 1 中包含的 API。
+`CIImageProcessor` API 现在支持任意输入图像计数。 将删除 macOS Sierra beta 1 中包含 `CIImageProcessor` API。
 
 <a name="Notifications" />
 
@@ -84,13 +84,13 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-在提交操作之后， `UserInfo` `NSUserActivity`对象的属性可能为空。 将对象`BecomeCurrent`显式调用`NSUserActivity`为当前解决方法。
+在提交操作之后，`NSUserActivity` 对象的 `UserInfo` 属性可能为空。 将 `BecomeCurrent` `NSUserActivity` 对象显式调用为当前解决方法。
 
 <a name="Safari" />
 
 ## <a name="safari"></a>Safari
 
-WebGeolocation 要求使用安全（`https://`） URL 来处理 iOS 10 和 macOS Sierra，以防止恶意使用位置数据。
+WebGeolocation 要求在 iOS 10 和 macOS Sierra 上都使用安全（`https://`） URL，以防止恶意使用位置数据。
 
 ## <a name="related-links"></a>相关链接
 

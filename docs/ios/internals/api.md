@@ -4,22 +4,22 @@ description: 此文档链接到 Xamarin API 参考文档、描述 Xamarin API �
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 3b95710f7e847cd8b6dd8357512cb253e5582884
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9d3f4388601c1bdf38f0446b4fa58cdf79b20612
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291936"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022375"
 ---
 # <a name="xamarinios-api-overview"></a>Xamarin iOS API 概述
 
-Xamarin.iOS 公开了 C#/CIL 到 CocoaTouch API 的绑定，并且还提供了对 ECMA CIL API 和各种其他 .NET API 的访问权限。
+Xamarin 公开了对 CocoaTouch C#API 的/CIL 绑定，还提供对 ECMA CIL api 和各种其他 .net api 的访问。
 
- **API 参考**：API 参考可在[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)上找到，从本机 iPhone API 的 API 绑定的[Xamarin 参考](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)中开始，或在 .net API 上的文档中转到[基类库节点](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)。
+ **Api 参考**： api 参考在[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)上提供，可从适用于本机 iPhone api 的 API 绑定的[Xamarin 参考](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)，或 "中转到[基类库" 节点](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)获取文档.NET API。
 
- **API 设计**：[Xamarin.iOS API 设计](~/ios/internals/api-design/index.md)文档中介绍了 CIL/Objective-C 绑定的 API 设计，其中描述了我们如何从 CocoaTouch 绑定 Objective-C 和 C API 并将其公开给 C＃/CIL 世界。
+ **API 设计**：适用于 CIL/目标-C 绑定的 api 设计在[Xamarin API 设计](~/ios/internals/api-design/index.md)文档中进行了介绍，并介绍了如何从 CocoaTouch 绑定目标 c 和 C api，并将其公开到C#/CIL 世界。
 
- 程序集:请查看我们的[已绑定程序集列表](~/cross-platform/internals/available-assemblies.md)，获取有关 C＃/CIL/ECMA 中哪些 API 可用于 Xamarin.iOS 的详细参考。
+ **程序集**：检查[绑定程序集列表](~/cross-platform/internals/available-assemblies.md)，详细了解/CIL/ECMA 中C#的哪些 api 可在 Xamarin 上使用。

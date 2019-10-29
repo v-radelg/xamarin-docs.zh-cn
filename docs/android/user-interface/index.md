@@ -4,15 +4,15 @@ description: 为 Xamarin Android 应用创建用户界面
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 405fb0e30881ee64514d3984842ac820d5663382
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a881629c63ea2991b8ea4673811311076fcaabe9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764486"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028991"
 ---
 # <a name="user-interface"></a>用户界面
 
@@ -37,7 +37,7 @@ Android 应用程序需要一些时间才能启动，特别是在设备上首次
 ## <a name="layoutsandroiduser-interfacelayoutsindexmd"></a>[布局](~/android/user-interface/layouts/index.md)
 
 布局用于定义用户界面的视觉对象结构。
-布局（如`ListView`和`RecyclerView` ）是 Android 应用程序的最基本的构建基块。 通常，布局会使用`Adapter`来充当从布局到用于填充布局中数据项的基础数据的桥。 本部分介绍如何使用`LinearLayout` `TableLayout`、 `RelativeLayout` `RecyclerView`、、和`GridView`等布局。
+布局（如 `ListView` 和 `RecyclerView`）是 Android 应用程序的最基本的构建基块。 通常，布局会使用 `Adapter` 作为从布局到用于填充布局中数据项的基础数据的桥。 本部分介绍如何使用 `LinearLayout`、`RelativeLayout`、`TableLayout`、`RecyclerView`和 `GridView`等布局。
 
 ## <a name="controlsandroiduser-interfacecontrolsindexmd"></a>[控件](~/android/user-interface/controls/index.md)
 

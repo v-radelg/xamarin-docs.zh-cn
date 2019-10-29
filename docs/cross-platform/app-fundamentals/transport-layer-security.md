@@ -3,15 +3,15 @@ title: 传输层安全性（TLS）1。2
 description: 本文档介绍如何为 Xamarin、Xamarin 和 Xamarin Mac 项目启用 TLS 1.2。 它演示了如何在 Visual Studio 2019 和 Visual Studio for Mac 中执行此操作。
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: 6175725ae3eea805680b4da81aa0458aa3f8a68c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8999efc3e954f4917e6c91a1e325d16e41c48b19
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280356"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016687"
 ---
 # <a name="transport-layer-security-tls-12"></a>传输层安全性（TLS）1。2
 
@@ -35,7 +35,7 @@ ms.locfileid: "70280356"
 
 这些设置可在 "**项目属性 > Android 选项**" 中找到，然后单击 "**高级**" 按钮：
 
-[![在 Visual Studio 中配置 HttpClient 和 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[在 Visual Studio 中![配置 HttpClient 和 TLS](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -53,7 +53,7 @@ ms.locfileid: "70280356"
 
 此设置可在 " **IOS 生成" > "项目属性**" 中找到：
 
-[![在 Visual Studio 中配置 HttpClient 和 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[在 Visual Studio 中![配置 HttpClient 和 TLS](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -80,7 +80,7 @@ ms.locfileid: "70280356"
 
 ### <a name="httpclient-implementation"></a>HttpClient 实现
 
-Xamarin 开发人员始终能够使用其代码中的本机网络类，但还有一个选项可确定`HttpClient`类使用哪些网络堆栈。 这会提供一个熟悉的 .NET API，该 API 具有本机平台的速度和安全优势。
+Xamarin 开发人员始终能够使用其代码中的本机网络类，但还有一个选项决定 `HttpClient` 类使用哪些网络堆栈。 这会提供一个熟悉的 .NET API，该 API 具有本机平台的速度和安全优势。
 
 选项为：
 
@@ -89,7 +89,7 @@ Xamarin 开发人员始终能够使用其代码中的本机网络类，但还有
 
 托管堆栈提供与现有 .NET 代码的最高级别的兼容性，但它可能会变慢并导致更大的可执行文件大小。
 
-本机选项可以更快地获得更好的安全性（包括 TLS 1.2），但可能不提供`HttpClient`类的所有功能和选项。
+本机选项可以更快地获得更好的安全性（包括 TLS 1.2），但可能不提供 `HttpClient` 类的所有功能和选项。
 
 ### <a name="ssltls-implementation-android"></a>SSL/TLS 实现（Android）
 
@@ -126,14 +126,14 @@ Android 项目选项还允许选择要支持的 SSL/TLS 实现：
 - [Mono 4.8 发行说明-TLS 1.2 支持](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
 - [BoringSSL](https://boringssl.googlesource.com/boringssl/)
 - [说明了 HttpClient、HttpClientHandler 和 WebRequestHandler](https://blogs.msdn.microsoft.com/henrikn/2012/08/07/httpclient-httpclienthandler-and-webrequesthandler-explained/)
-- [System.Net.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
-- [System.Net.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(v=vs.118).aspx)
-- [System.Net.HttpMessageHandler](https://msdn.microsoft.com/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
-- [System.Net.HttpWebRequest](https://msdn.microsoft.com/library/system.net.httpwebrequest(v=vs.110).aspx)
-- [System.Net.WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
-- [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
-- [java.net.URLConnection](https://developer.android.com/reference/java/net/URLConnection.html)
-- [Foundation.CFNetwork](xref:CoreFoundation.CFNetwork)
-- [Foundation.NSUrlConnection](xref:Foundation.NSUrlConnection)
-- [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
+- [系统 .Net. HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
+- [系统 .Net. HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(v=vs.118).aspx)
+- [系统 .Net. HttpMessageHandler](https://msdn.microsoft.com/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
+- [系统 .Net. HttpWebRequest](https://msdn.microsoft.com/library/system.net.httpwebrequest(v=vs.110).aspx)
+- [系统 .Net. WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
+- [系统 .Net. WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
+- [URLConnection](https://developer.android.com/reference/java/net/URLConnection.html)
+- [CFNetwork](xref:CoreFoundation.CFNetwork)
+- [NSUrlConnection](xref:Foundation.NSUrlConnection)
+- [系统 .Net. WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [HTTP 客户端（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/httpclient/)

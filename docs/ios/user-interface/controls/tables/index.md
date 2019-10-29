@@ -4,15 +4,15 @@ description: 本文档链接到各种指南，这些指南介绍如何在 Xamari
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/06/2016
-ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7f5af84a8dfb9f774822e28e50cf8bbca9acf94b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768395"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021894"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>在 Xamarin 中使用表和单元格
 
@@ -22,14 +22,14 @@ ms.locfileid: "70768395"
 
 这些文章全面介绍了如何使用表，其中包括：
 
-- **表部分**–介绍和解释`UITableView`控件的可视元素。 
+- **表部分**–介绍并说明 `UITableView` 控件的可视元素。 
 - **在表中显示数据**-演示如何创建和填充表，如何使用不同的表和单元格样式，并通过回收单元对象避免出现内存问题。 
 - **高级用法**–生成自定义单元，并使用 UITableView 类的编辑功能。 
 - **直观地创建表**–使用 Xamarin Designer for iOS 创建包含情节提要的表驱动接口。 
 
 ## <a name="contents"></a>内容
 
- [表部件&amp;功能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
+ [表部件 &amp; 功能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
  [使用数据填充表](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 

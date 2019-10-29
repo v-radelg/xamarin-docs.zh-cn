@@ -4,15 +4,15 @@ description: 本文档链接到各种指南，这些指南介绍如何使用 Xam
 ms.prod: xamarin
 ms.assetid: BB938008-C013-4A1D-8229-FEEE94F83BBD
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: a82bba575031fa7b7c0011ee639e66aec4862179
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d7f693d1c91316290bb7f562a904ef3d5735bc42
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767946"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021731"
 ---
 # <a name="getting-started-with-watchos-in-xamarin"></a>Xamarin 中的 watchOS 入门
 

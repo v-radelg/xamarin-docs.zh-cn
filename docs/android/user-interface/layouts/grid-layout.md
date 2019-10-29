@@ -3,21 +3,21 @@ title: GridLayout
 ms.prod: xamarin
 ms.assetid: B69A4BF5-9CFB-443A-9F7B-062D1E498F61
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: bd05596ce8c6f8acb81b3ca68c6393a0be47768a
-ms.sourcegitcommit: cb13fadbaa6d19dea94b9005bda20c2efd1b8039
+ms.openlocfilehash: 4b6fcfc3120c3ef09556f3466295f4bee35fad0c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72541912"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029010"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin GridLayout
 
-@No__t_0 是一种新的 `ViewGroup` 子类，它支持在二维网格中布局视图，类似于 HTML 表，如下所示：
+`GridLayout` 是一种新的 `ViewGroup` 子类，它支持在二维网格中布局视图，类似于 HTML 表，如下所示：
 
- [显示四个单元的 ![Cropped GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [显示四个单元格![剪裁 GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
  `GridLayout` 适用于平面视图层次结构，其中，子视图通过指定它们应位于的行和列来设置其在网格中的位置。 这样一来， *GridLayout*就可以在网格中定位视图，而无需任何中间视图提供表结构，如在 TableLayout 中使用的表行中所示。 通过维护平面层次结构， *GridLayout*能够更快地布局其子视图。 我们来看一个示例，说明此概念在代码中的实际含义。
 
@@ -49,11 +49,11 @@ ms.locfileid: "72541912"
 
 布局将调整行和列的大小，以便单元格可以容纳其内容，如下图所示：
 
- [显示左侧两个单元格的布局 ![Diagram 在右侧小于](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [显示左侧两个单元格的布局![关系图](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
 在应用程序中运行时，这会导致以下用户界面：
 
- [显示四个单元的 GridLayoutDemo 应用的 ![Screenshot](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [显示四个单元格的 GridLayoutDemo 应用程序的![屏幕截图](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 ## <a name="specifying-orientation"></a>指定方向
 
@@ -71,15 +71,15 @@ ms.locfileid: "72541912"
 
 现在，`GridLayout` 会将每列中的单元格从上到下，而不是从左到右定位，如下所示：
 
- [![Diagram 阐释单元格在垂直方向的定位方式](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [阐释单元格如何在垂直方向上定位的![关系图](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
 这会在运行时生成以下用户界面：
 
- [单元格置于垂直方向的 GridLayoutDemo ![Screenshot](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
+ [![屏幕截图，其中单元格位于垂直方向](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
 ### <a name="specifying-explicit-position"></a>指定显式位置
 
-如果要在 `GridLayout` 中显式控制子视图的位置，则可以设置其 `layout_row` 和 `layout_column` 属性。 例如，以下 XML 将导致第一个屏幕截图中显示的布局（如上所示），而不考虑方向。
+如果要在 `GridLayout`中显式控制子视图的位置，则可以设置其 `layout_row` 和 `layout_column` 属性。 例如，以下 XML 将导致第一个屏幕截图中显示的布局（如上所示），而不考虑方向。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -165,13 +165,13 @@ ms.locfileid: "72541912"
 
 此 XML 在 `GridLayout` 中创建间距，如下所示：
 
- [GridLayoutDemo 的 ![Screenshot 用间距来演示较大的单元格](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
+ [GridLayoutDemo 的![屏幕截图，用间距演示更大的单元格](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
 使用新 `Space` 视图的好处在于，它允许间距，而不需要我们在每个子视图上设置属性。
 
 ### <a name="spanning-columns-and-rows"></a>跨列和行
 
-@No__t_0 还支持跨多个列和行的单元格。 例如，假设我们向 `GridLayout` 添加另一个包含按钮的行，如下所示：
+`GridLayout` 还支持跨多个列和行的单元格。 例如，假设我们向 `GridLayout` 添加另一个包含按钮的行，如下所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -216,7 +216,7 @@ ms.locfileid: "72541912"
 
 这将导致 `GridLayout` 的第一列拉伸以容纳按钮的大小，如以下所示：
 
-[只有第一列的 GridLayoutDemo 和按钮的 ![Screenshot](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
+[仅包含第一列的按钮![GridLayoutDemo 屏幕截图](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
 若要保留延伸的第一列，可以通过设置按钮来跨两个列，如下所示：
 
@@ -231,10 +231,10 @@ ms.locfileid: "72541912"
 
 执行此操作会生成与之前所述布局类似的 `TextViews` 布局，并将按钮添加到 `GridLayout` 底部，如下所示：
 
- [通过按钮跨越两列的 GridLayoutDemo ![Screenshot](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
+ [通过按钮跨越两列![GridLayoutDemo 屏幕快照](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 ## <a name="related-links"></a>相关链接
 
 - [GridLayoutDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)
-- [冰淇淋三明治](http://www.android.com/about/ice-cream-sandwich/)
+- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

@@ -4,15 +4,15 @@ description: 本文档介绍了如何部署使用 Xamarin 生成的 watchOS 应�
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768705"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028357"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch 设备上的测试
 
@@ -26,21 +26,21 @@ ms.locfileid: "70768705"
 
 ## <a name="devices"></a>设备
 
-在实际 iPhone 或 iPad 上测试 iOS 应用始终需要在开发人员中心注册设备。 设备列表如下所示 (单击加号 **+** 以添加新设备):
+在实际 iPhone 或 iPad 上测试 iOS 应用始终需要在开发人员中心注册设备。 设备列表如下所示（单击加号 **+** 以添加新设备）：
 
-![](device-images/devices-sml.png "设备列表如下所示")
+![](device-images/devices-sml.png "The device list looks like this")
 
 监视没有什么不同-你现在需要在将应用部署到 Apple Watch 设备之前添加它。 使用**Xcode**查找监视的 UDID （**Windows > 设备**列表）。 当配对电话连接时，还会显示该手表的信息：
 
-[![](device-images/xcode-devices-sml.png "配对的手表信息")](device-images/xcode-devices.png#lightbox)
+[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
 
 知道手表的 UDID 后，将其添加到开发人员中心内的设备列表：
 
-![](device-images/devices-watch-sml.png "设备列表中的手表 UDID")
+![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
 
 添加监视设备后，请确保在创建的任何新的或现有的开发或即席预配配置文件中选择该设备：
 
-![](device-images/devices-provisioning.png "可用设备列表")
+![](device-images/devices-provisioning.png "Available device list")
 
 别忘了编辑现有的预配配置文件以进行下载并重新安装！
 
@@ -52,17 +52,17 @@ ms.locfileid: "70768705"
 
 如果你有通配符应用 ID，则*只需要一个配置文件*;但是，如果每个项目都有单独的应用 ID，则每个应用 ID 都需要一个预配配置文件：
 
-![](device-images/provisioningprofile-development.png "开发预配配置文件")
+![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
 
 创建所有三个配置文件后，它们将显示在列表中。 请记住下载并安装每个：
 
-![](device-images/provisioningprofiles.png "可用的开发预配配置文件")
+![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
 可以通过选择 "**生成" > "IOS 捆绑签名**" 屏幕，然后选择 "**发布**" 或 "**调试 iPhone** " 配置来验证 "**项目选项**" 中的预配配置文件。
 
 "**预配配置文件**" 列表将显示所有匹配的配置文件，你应在此下拉列表中看到已创建的匹配配置文件：
 
-![](device-images/options-selectprofile.png "预配配置文件列表")
+![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
 <a name="testing" />
 
@@ -91,13 +91,13 @@ ms.locfileid: "70768705"
 
 如果在部署过程中出现错误，请使用**视图 > pad > 设备日志**查看有关错误的详细信息。 下面列出了一些错误及其原因：
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>错误 MT3001：无法对程序集进行 AOT
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>错误 MT3001：无法对程序集进行 AOT 操作
 
 在调试模式下生成以部署到 Apple Watch 设备时，可能会出现这种情况。
 
 若要*暂时*解决此问题，请在 "监视扩展**项目选项" > 生成 > watchOS 生成**"窗口中禁用**增量生成**：
 
-[![](device-images/disable-incremental-sml.png "\"增量生成\" 复选框")](device-images/disable-incremental.png#lightbox)
+[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
 
 这将在将来的版本中得到修复，之后，可以重新启用增量生成以利用更快的生成时间。
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "应用程序可执行的警报无效")
+![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
 
 如果在应用尝试安装后这些消息出现*在 "监视" 屏幕上*，可能会出现以下几个问题：
 
@@ -120,7 +120,7 @@ Invalid executable/Application Verification Failed
 
 - 用于测试的开发预配配置文件未包含监视设备;或者，在将手表添加到预配配置文件后，不会重新下载并重新安装它们。 按照说明[正确配置预配配置文件](#profiles)。
 
-- 如果**iOS 设备日志**包含`The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` "监视应用的信息"，则**info.plist**具有错误的**MinimumOSVersion**值。
+- 如果**IOS 设备日志**包含 `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` 则 Watch 应用的**info.plist**具有错误的**MinimumOSVersion**值。
   这应该是**8.2** -如果你已安装 Xcode 6.3，你可能需要手动编辑要插入的源，并将其设置为8.2。
 
 - 手表应用的**info.plist**不正确地启用了权利（如应用组）。

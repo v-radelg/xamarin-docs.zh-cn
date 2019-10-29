@@ -4,15 +4,15 @@ description: 通常，Android 应用程序中的所有组件都将在同一进�
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 5429f260399602b7ef15e8263bc74cb8ae940f4f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: fda5ed3b2a26166e23d4a796219758853d0aace7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754890"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024538"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在远程进程中运行 Android 服务
 
@@ -39,7 +39,7 @@ _通常，Android 应用程序中的所有组件都将在同一进程中运行�
 
 跨进程边界的需求会带来额外的复杂性：通信是单向的（客户端到服务器），而客户端不能直接对服务类调用方法。 请记住，当服务运行与客户端相同的进程时，Android 提供了一个 `IBinder` 对象，这可能允许双向通信。 如果服务在其自己的进程中运行，则不会出现这种情况。 客户端通过 `Android.OS.Messenger` 类的帮助与远程服务进行通信。
 
-当客户端请求与远程服务绑定时，Android 将调用 `Service.OnBind` 生命周期方法，该方法将返回 `Messenger` 封装的内部 `IBinder` 对象。 @No__t_0 是 Android SDK 提供的特殊 `IBinder` 实现的精简包装器。 @No__t_0 负责处理两个不同进程之间的通信。 开发人员不关心了有关序列化消息、跨进程边界封送消息，然后在客户端上反序列化消息的详细信息。 此工作由 `Messenger` 对象处理。 此图显示了当客户端启动到进程外服务的绑定时所涉及的客户端 Android 组件：
+当客户端请求与远程服务绑定时，Android 将调用 `Service.OnBind` 生命周期方法，该方法将返回 `Messenger` 封装的内部 `IBinder` 对象。 `Messenger` 是 Android SDK 提供的特殊 `IBinder` 实现的精简包装器。 `Messenger` 负责处理两个不同进程之间的通信。 开发人员不关心了有关序列化消息、跨进程边界封送消息，然后在客户端上反序列化消息的详细信息。 此工作由 `Messenger` 对象处理。 此图显示了当客户端启动到进程外服务的绑定时所涉及的客户端 Android 组件：
 
 ![显示客户端绑定到服务的步骤和组件的关系图](out-of-process-services-images/ipc-01.png "显示客户端绑定到服务的步骤和组件的关系图。")
 
@@ -47,9 +47,9 @@ _通常，Android 应用程序中的所有组件都将在同一进程中运行�
 
 ![显示服务通过远程客户端绑定到的步骤和组件的关系图](out-of-process-services-images/ipc-02.png "此图显示了服务通过远程客户端绑定到时所经历的步骤和组件。")
 
-当服务接收到 `Message` 时，它会在 `Android.OS.Handler` 的实例中处理。 服务将实现其自己的 `Handler` 子类，该子类必须重写 `HandleMessage` 方法。 此方法由 `Messenger` 调用，并以参数的形式接收 `Message`。 @No__t_0 将检查 `Message` 的元数据，并使用该信息对服务调用方法。
+当服务接收到 `Message` 时，它会在 `Android.OS.Handler` 的实例中处理。 服务将实现其自己的 `Handler` 子类，该子类必须重写 `HandleMessage` 方法。 此方法由 `Messenger` 调用，并以参数的形式接收 `Message`。 `Handler` 将检查 `Message` 的元数据，并使用该信息对服务调用方法。
 
-当客户端创建 `Message` 对象并使用 `Messenger.Send` 方法将它调度到服务时，将发生单向通信。 `Messenger.Send` 会将序列化数据的 `Message` 并交给 Android，这会将该消息路由到整个进程边界和服务。  服务承载的 `Messenger` 将从传入数据创建 `Message` 对象。 此 `Message` 放置在队列中，其中的消息一次提交到 `Handler` 中。 @No__t_0 将检查 `Message` 中包含的元数据，并在 `Service` 上调用相应的方法。 下图说明了这些各个概念的操作：
+当客户端创建 `Message` 对象并使用 `Messenger.Send` 方法将它调度到服务时，将发生单向通信。 `Messenger.Send` 会将序列化数据的 `Message` 并交给 Android，这会将该消息路由到整个进程边界和服务。  服务承载的 `Messenger` 将从传入数据创建 `Message` 对象。 此 `Message` 放置在队列中，其中的消息一次提交到 `Handler` 中。 `Handler` 将检查 `Message` 中包含的元数据，并在 `Service`上调用相应的方法。 下图说明了这些各个概念的操作：
 
 ![显示如何在进程之间传递消息的关系图](out-of-process-services-images/ipc-03.png "显示进程之间消息传递方式的关系图。")
 
@@ -129,7 +129,7 @@ _通常，Android 应用程序中的所有组件都将在同一进程中运行�
 
 ### <a name="implementing-a-handler"></a>实现处理程序
 
-若要处理客户端请求，服务必须实现 `Handler` 并重写 `HandleMessage` methodThis 是方法采用一个 `Message` 实例，该实例封装来自客户端的方法调用，并将调用转换为服务将调用的某个操作或任务对. @No__t_0 对象公开一个名为 `What` 的属性，该属性是一个整数值，这是在客户端和服务之间共享的，并与服务为客户端执行的某些任务相关。
+若要处理客户端请求，服务必须实现 `Handler` 并重写 `HandleMessage` methodThis 是方法采用一个 `Message` 实例，该实例封装来自客户端的方法调用，并将调用转换为服务将调用的某个操作或任务对. `Message` 对象公开一个名为 `What` 的属性，该属性是一个整数值，这是在客户端和服务之间共享的，并与服务为客户端执行的某些任务相关。
 
 下面的示例应用程序中的代码片段演示了一个 `HandleMessage` 的示例。 在此示例中，客户端可以请求服务的两个操作：
 
@@ -168,7 +168,7 @@ public class TimestampRequestHandler : Android.OS.Handler
 
 ### <a name="instantiating-the-messenger"></a>实例化 Messenger
 
-如前文所述，反序列化 `Message` 对象和调用 `Handler.HandleMessage` 是 `Messenger` 对象的责任。 @No__t_0 类还提供了一个 `IBinder` 对象，客户端将使用该对象将消息发送到服务。  
+如前文所述，反序列化 `Message` 对象和调用 `Handler.HandleMessage` 是 `Messenger` 对象的责任。 `Messenger` 类还提供了一个 `IBinder` 对象，客户端将使用该对象将消息发送到服务。  
 
 当服务启动时，它将实例化 `Messenger` 并注入 `Handler`。 在服务的 `OnCreate` 方法中，可以执行此初始化。 此代码片段是初始化自己的 `Handler` 和 `Messenger` 的服务的一个示例：
 
@@ -294,9 +294,9 @@ catch (RemoteException ex)
 }
 ```
 
-@No__t_0 方法有多种不同的形式。 前面的示例使用[`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)。 因为这是对进程外服务的异步请求，服务没有响应，因此将 `Handler` 设置为 `null`。 @No__t_0 的第二个参数将存储在 `Message` 对象的 `.What` 属性中。 服务进程中的代码使用 `.What` 属性来调用服务上的方法。
+`Message.Obtain` 方法有多种不同的形式。 前面的示例使用[`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)。 因为这是对进程外服务的异步请求，服务没有响应，因此将 `Handler` 设置为 `null`。 `Int32 what`的第二个参数将存储在 `Message` 对象的 `.What` 属性中。 服务进程中的代码使用 `.What` 属性来调用服务上的方法。
 
-@No__t_0 类还公开了其他两个属性，这些属性可用于接收方： `Arg1` 和 `Arg2`。 这两个属性是整数值，可能在客户端和服务之间有一些特别同意的值。 例如，`Arg1` 可以保存客户 ID，`Arg2` 可能包含该客户的采购订单号。 创建 `Message` 时，可以使用[`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](xref:Android.OS.Message.Obtain)设置这两个属性。 填充这两个值的另一种方法是，在创建后直接在 `Message` 对象上设置 `.Arg` 和 `.Arg2` 属性。
+`Message` 类还公开了其他两个属性，这些属性可用于接收方： `Arg1` 和 `Arg2`。 这两个属性是整数值，可能在客户端和服务之间有一些特别同意的值。 例如，`Arg1` 可以保存客户 ID，`Arg2` 可能包含该客户的采购订单号。 创建 `Message` 时，可以使用[`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](xref:Android.OS.Message.Obtain)设置这两个属性。 填充这两个值的另一种方法是，在创建后直接在 `Message` 对象上设置 `.Arg` 和 `.Arg2` 属性。
 
 ### <a name="passing-additional-values-to-the-service"></a>向服务传递其他值
 
@@ -414,9 +414,9 @@ Android 提供四种不同的权限级别：
 
 若要使用自定义权限，则在客户端显式请求该权限时，此服务将声明该权限。
 
-若要在服务 APK 中创建权限，请将 `permission` 元素添加到**androidmanifest.xml**中的 `manifest` 元素。 此权限必须设置 `name`、`protectionLevel` 和 `label` 属性。 @No__t_0 特性必须设置为唯一标识该权限的字符串。 该名称将显示在**Android 设置**的 "**应用信息**" 视图中（如下一节所示）。
+若要在服务 APK 中创建权限，请将 `permission` 元素添加到**androidmanifest.xml**中的 `manifest` 元素。 此权限必须设置 `name`、`protectionLevel` 和 `label` 属性。 `name` 特性必须设置为唯一标识该权限的字符串。 该名称将显示在**Android 设置**的 "**应用信息**" 视图中（如下一节所示）。
 
-@No__t_0 特性必须设置为上面所述的四个字符串值之一。  @No__t_0 和 `description` 必须引用字符串资源，并用于向用户提供用户友好名称和说明。
+`protectionLevel` 特性必须设置为上面所述的四个字符串值之一。  `label` 和 `description` 必须引用字符串资源，并用于向用户提供用户友好名称和说明。
 
 此代码片段是在包含服务的 APK 的**androidmanifest.xml**中声明自定义 `permission` 属性的示例：
 
@@ -469,7 +469,7 @@ Android 提供四种不同的权限级别：
 
 若要查看应用程序的权限，请打开 "Android 设置" 应用，然后选择 "**应用**"。 在列表中找到并选择该应用程序。 在 "**应用信息**" 屏幕上，点击 "**权限**"，这将显示授予应用的所有权限：
 
-[从 Android 设备 ![Screenshots，其中显示了如何查找授予应用程序的权限](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[从 Android 设备![屏幕截图，其中显示了如何查找授予应用程序的权限](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>总结
 

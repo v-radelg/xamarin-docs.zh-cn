@@ -4,15 +4,15 @@ description: 如何开始使用 Xamarin 开发适用于 Android 的应用 Nougat
 ms.prod: xamarin
 ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/02/2018
-ms.openlocfilehash: 128982abdee7a0fea8df79f7b7b9ecd6a290775a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6274c75abf229268070d495ced662724f5c16627
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761248"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027087"
 ---
 # <a name="nougat-features"></a>Nougat 功能
 
@@ -24,18 +24,18 @@ _如何开始使用 Xamarin 开发适用于 Android 的应用 Nougat。_
 
 [Android Nougat](https://developer.android.com/about/versions/nougat/android-7.0.html)是 Google 对 Android 6.0 Marshmallow 的跟踪。 Xamarin android 在 Xamarin Android 7.0 及更高版本中提供对**android 7、Windows 绑定**的支持。 Android Nougat 为如下所述的 Nougat 功能添加了许多新 Api;使用 Xamarin 7.0 时，这些 Api 可供 Xamarin Android 应用使用。
 
-[![Android 平板电脑和运行 Android 的手机的 Nougat](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
+[![的 Android 平板电脑和手机的 Nougat](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
 有关 Android 7、windows Api 的详细信息，请参阅[android 7.1 For 开发人员](https://developer.android.com/preview/api-overview.html)。
 有关已知的 Xamarin 7.0 问题的列表，请参阅[发行说明](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_7/xamarin.android_7.0/index.md)。
 
 Android Nougat 为 Xamarin Android 开发人员提供了许多新功能。 这些功能包括：
 
-- **多窗口支持**&ndash;这种增强功能使得用户可以一次在屏幕上打开两个应用。
+- &ndash; 此增强功能的**多窗口支持**使用户能够同时在屏幕上打开两个应用。
 
-- **通知增强功能**Android Nougat 中经过重新设计的通知系统包括*直接答复*功能，该功能允许用户直接从通知 UI 中快速响应短信。 &ndash; 此外，如果你的应用程序为收到的消息创建了通知，则在收到多条消息时，新的*捆绑通知*功能可以将通知一起作为一个组进行捆绑。
+- Android Nougat 中重新设计的通知系统 &ndash; 的**通知增强**功能包括*直接答复*功能，该功能允许用户通过通知 UI 直接响应短信。 此外，如果你的应用程序为收到的消息创建了通知，则在收到多条消息时，新的*捆绑通知*功能可以将通知一起作为一个组进行捆绑。
 
-- **数据保护程序**&ndash;此功能是一项新的系统服务，可帮助减少应用程序使用的手机网络数据; 它使用户能够控制应用使用手机网络数据的方式。
+- &ndash; 此功能的**数据保护程序**是一种新的系统服务，可帮助减少应用程序使用的手机网络数据;它使用户能够控制应用使用手机网络数据的方式。
 
 此外，Android Nougat 还为应用开发人员带来了许多其他的增强功能，如新的网络安全配置功能、Doze、关键证明、新快速设置 Api、多区域设置支持、ICU4J Api、Web 视图增强功能对 Java 8 语言功能的访问，其作用域为目录访问，自定义指针 API，平台 VR 支持，虚拟文件和后台处理优化。
 
@@ -45,13 +45,13 @@ Android Nougat 为 Xamarin Android 开发人员提供了许多新功能。 这�
 
 若要在基于 Xamarin 的应用中使用新的 Android Nougat 功能，需要满足以下要求：
 
-- **Visual Studio 或 Visual Studio for Mac**&ndash;如果你使用的是 Visual Studio，则需要4.2.0.628 或更高版本的 Visual Studio Tools for Xamarin。 如果使用 Visual Studio for Mac，则需要 Visual Studio for Mac 版本6.1.0 或更高版本。
+- **Visual studio 或 Visual Studio for Mac** &ndash; 如果使用的是 visual studio，则需要用于 Xamarin 的 Visual Studio Tools 版本4.2.0.628 或更高版本。 如果使用 Visual Studio for Mac，则需要 Visual Studio for Mac 版本6.1.0 或更高版本。
 
-- 必须安装和配置**Xamarin** xamarin7.0或更高版本，并且必须安装VisualStudio或VisualStudioforMac。&ndash;
+- **Xamarin** &ndash; xamarin 7.0 或更高版本必须安装并配置 Visual Studio 或 Visual Studio for Mac。
 
 - **Android SDK** Android SDK 7.0 （API 24）或更高版本必须通过 Android SDK 管理器进行安装。
 
-- **Java 开发人员工具包**Xamarin Android 7.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本，前提是你要针对 API 级别24或更高版本进行开发（JDK 8 还支持早于24的 api 级别）。 &ndash; 如果使用的是自定义控件或窗体预览器，则需要使用64位版本的 JDK 8。
+- **Java 开发人员工具包**&ndash; Xamarin Android 7.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本（如果要针对 api 级别24或更高版本进行开发）（JDK 8 也支持早于24的 api 级别）。 如果使用的是自定义控件或窗体预览器，则需要使用64位版本的 JDK 8。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支持 JDK 9。
@@ -80,7 +80,7 @@ Android Nougat 为 Xamarin Android 开发人员提供了许多新功能。 这�
 
 若要使用 Xamarin Android 7.0 创建项目，必须首先使用 Android SDK 管理器安装**SDK 平台 Android N （API 24）** 或更高版本。 还必须安装最新**Android SDK Tools**：
 
-1. 启动 Android SDK 管理器（在 Visual Studio for Mac 中，在 Visual Studio 中使用**工具 > 打开 Android SDK&hellip;管理器**; 在 Visual Studio 中，使用**工具 > Android > Android SDK Manager**）。
+1. 启动 Android SDK 管理器（在 Visual Studio for Mac 中，在 Visual Studio 中使用**工具 > 打开 Android SDK 管理器&hellip;** ; 在 Visual Studio 中，请使用**工具 > Android > Android SDK Manager**）。
 
 2. 安装**Android 7.0 （API 24）** 或更高版本：
 
@@ -94,7 +94,7 @@ Android Nougat 为 Xamarin Android 开发人员提供了许多新功能。 这�
 
 4. 验证是否为 JDK 1.8 配置了**Java 开发工具包位置**：
 
-    [![在 "工具选项" 下配置 JDK 8 路径](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
+    [在 "工具选项" 下配置 JDK 8 路径![](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
     若要在 Visual Studio 中查看此设置，请单击 "**工具" > 选项 "> Xamarin > Android 设置**"。 在 Visual Studio for Mac 中，单击 "**首选项" > 项目 > SDK 位置 > Android**"。
 
@@ -111,8 +111,8 @@ Android Nougat 为 Xamarin Android 开发人员提供了许多新功能。 这�
 
 如果使用的是仿真程序，请使用以下设置启动 Android AVD Manager 并创建新设备：
 
-- 设备:结点5X、结点6、结点周一至、结点播放机、结点9或像素 C。
-- 目标:Android 7.0-API 级别24
+- 设备：结点5、结点6、结点周一至、结点播放机、结点9或像素 C。
+- 目标： Android 7.0-API 级别24
 - ABI： x86 或 x86\_64
 
 例如，此虚拟设备配置为模拟结点6：
@@ -132,9 +132,9 @@ Android Nougat 引入了多种新特性和功能，如多窗口支持、通知�
 多窗口模式使用户能够一次打开两个应用程序，并提供完全的多任务支持。 这些应用可在拆分屏幕模式下并行运行（横向）或上单（纵向）。
 用户可以在应用之间拖动分隔线以调整其大小，并且可以在应用之间剪切和粘贴内容。 当在多窗口模式下显示两个应用时，所选活动将继续运行，同时未选定的活动将暂停，但仍可见。 多窗口模式不会修改 Android 活动生命周期。
 
-[![纵向和横向模式下在多窗口模式下运行的示例应用](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
+[![在纵向和横向模式下在多窗口模式下运行的示例应用](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-你可以配置 Xamarin Android 应用程序的活动如何支持多窗口模式。 例如，你可以配置属性，以便在多窗口模式下设置应用的最小大小和默认高度和宽度。 您可以使用新`Activity.IsInMultiWindowMode`属性来确定您的活动是否处于多窗口模式下。 例如：
+你可以配置 Xamarin Android 应用程序的活动如何支持多窗口模式。 例如，你可以配置属性，以便在多窗口模式下设置应用的最小大小和默认高度和宽度。 你可以使用 "新建 `Activity.IsInMultiWindowMode`" 属性来确定你的活动是否处于多窗口模式下。 例如:
 
 ```csharp
 if (!IsInMultiWindowMode) {
@@ -157,10 +157,10 @@ Android Nougat 引入了重新设计的通知系统。 它具有新的直接答�
 当用户收到传入消息的通知时，Android Nougat 可以在通知中回复消息（而不是打开消息传递应用程序来发送答复）。
 利用这种内嵌答复功能，用户可以直接在通知界面中快速响应短信或短信：
 
-[![带有内联直接答复字段的通知屏幕截图](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png#lightbox)
+[使用内联直接答复字段的通知![屏幕快照](nougat-images/notifications-inline-reply-sml.png)](nougat-images/notifications-inline-reply.png#lightbox)
 
 若要在应用中支持此功能，必须通过[RemoteInput](xref:Android.App.RemoteInput)对象向应用添加*内联答复操作*，以便用户可以直接从通知 UI 中通过文本进行回复。
-例如，下面的代码生成`RemoteInput`用于接收文本输入的，为答复操作生成挂起意向，并创建远程输入启用的操作：
+例如，下面的代码生成用于接收文本输入的 `RemoteInput`，为答复操作生成挂起意向，并创建远程输入启用的操作：
 
 ```csharp
 // Build a RemoteInput for receiving text input:
@@ -198,7 +198,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
 Android Nougat 可以将通知消息组合在一起（例如，按消息主题），并显示组而不是每个单独的消息。
 此*捆绑式通知*功能使用户能够在一次操作中消除或存档一组通知。 用户可以向下滑动以展开通知绑定，以详细查看每个通知：
 
-[![绑定通知的屏幕截图示例](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png#lightbox)
+[绑定通知的![屏幕截图示例](nougat-images/bundled-notifications-sml.png)](nougat-images/bundled-notifications.png#lightbox)
 
 为了支持捆绑式通知，应用程序可以使用[SetGroup](xref:Android.App.Notification.Builder.SetGroup*)方法来捆绑类似的通知。 有关 Android N 中捆绑的通知组的详细信息，请参阅 Android[捆绑通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#bundle)主题。
 
@@ -215,10 +215,10 @@ Android Nougat 使你可以通过系统通知标头、操作和可展开布局�
 ### <a name="app-shortcuts"></a>应用快捷方式
 
 Android 7.1 引入了*应用快捷*功能，使用户可以使用应用快速启动常见或推荐的任务。
-为了激活快捷方式的菜单，用户长时间按下一个或多&ndash;个菜单的应用图标时，会显示一个快速振动。
+若要激活快捷方式的菜单，用户可长时间按应用图标，然后再按一次 &ndash; 菜单将显示一个快速振动。
 释放按下会导致菜单保持：
 
-[![用于消息应用的应用快捷菜单的示例屏幕](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
+[消息应用的应用快捷菜单![示例屏幕](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
 
 此功能仅适用于 API 级别25或更高版本。
 有关 Android 7.1 中新应用快捷功能的详细信息，请参阅 Android[应用快捷方式](https://developer.android.com/guide/topics/ui/shortcuts.html)主题。
@@ -229,11 +229,11 @@ Android 7.1 引入了*应用快捷*功能，使用户可以使用应用快速启
 
 - [MultiWindowPlayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground)演示如何使用 Android Nougat 中提供的多窗口 API。 您可以将示例应用程序切换为多窗口模式，以查看它如何影响应用程序的生命周期和行为。
 
-- [消息服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)是一种使用`NotificationCompatManager`发送通知的简单服务。 它还使用`RemoteInput`对象扩展通知，以允许 Android Nougat 设备直接从通知中回复文本，而无需打开应用。
+- [消息服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)是一种使用 `NotificationCompatManager`发送通知的简单服务。 它还使用 `RemoteInput` 对象扩展通知，以允许 Android Nougat 设备直接从通知中通过文本进行回复，而不必打开应用。
 
-- [活动通知](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications)演示了如何使用`NotificationManager` API 告诉你应用程序当前正在显示的通知数。
+- [活动通知](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications)演示了如何使用 `NotificationManager` API 告诉你应用程序当前正在显示的通知数。
 
-- [作用域的目录访问](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess)演示如何使用限定作用域的目录访问 API 轻松访问特定的目录。 这是必须在清单中定义`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`权限的替代方法。
+- [作用域的目录访问](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess)演示如何使用限定作用域的目录访问 API 轻松访问特定的目录。 这是必须在清单中定义 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 权限的替代方法。
 
 - [直接启动](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)说明如何将数据存储在设备加密存储中，该存储始终可用，同时在输入任何用户凭据（PIN/模式/密码）前后启动设备。
 

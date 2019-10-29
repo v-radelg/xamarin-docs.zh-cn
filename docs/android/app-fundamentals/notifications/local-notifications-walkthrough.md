@@ -4,15 +4,15 @@ description: 本演练演示如何在 Xamarin Android 应用程序中使用本�
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/16/2018
-ms.openlocfilehash: caef124228ab4ec4356b10c0559d2abe33d1531f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6d48d650b0900e71b7d3d4d5e1ff1ac919dcb948
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755268"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025552"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>演练-在 Xamarin 中使用本地通知
 
@@ -49,15 +49,15 @@ _本演练演示如何在 Xamarin Android 应用程序中使用本地通知。�
 
 ### <a name="add-the-androidsupportv4-nuget-package"></a>添加 Android. Support NuGet 包
 
-在本演练中，我们将`NotificationCompat.Builder`使用来构建我们的本地通知。 如[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)中所述，我们必须在项目中包含[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet 才能使用`NotificationCompat.Builder`。
+在本演练中，我们将使用 `NotificationCompat.Builder` 来构建我们的本地通知。 如[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)中所述，我们必须在项目中包含[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet 才能使用 `NotificationCompat.Builder`。
 
-接下来，让我们编辑**MainActivity.cs** ，并添加`using`以下语句，以便代码中`Android.Support.V4.App`的类型可以使用：
+接下来，编辑**MainActivity.cs**并添加以下 `using` 语句，使 `Android.Support.V4.App` 中的类型可用于我们的代码：
 
 ```csharp
 using Android.Support.V4.App;
 ```
 
-此外，还必须让编译器清楚地说，我们使用`Android.Support.V4.App`的`TaskStackBuilder`是版本，而不`Android.App`是版本。 添加以下`using`语句以解决任何歧义：
+此外，我们必须清楚地表明编译器使用 `TaskStackBuilder` 的 `Android.Support.V4.App` 版本，而不是 `Android.App` 版本。 添加以下 `using` 语句以解决任何歧义：
 
 ```csharp
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
@@ -65,7 +65,7 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 
 ### <a name="create-the-notification-channel"></a>创建通知通道
 
-接下来，将创建一个`MainActivity`通知通道的方法添加到中（如有必要）：
+接下来，将一个方法添加到将创建通知通道的 `MainActivity` （如有必要）：
 
 ```csharp
 void CreateNotificationChannel()
@@ -90,7 +90,7 @@ void CreateNotificationChannel()
 }
 ```
 
-`OnCreate`更新方法以调用此新方法：
+更新 `OnCreate` 方法以调用此新方法：
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -104,7 +104,7 @@ protected override void OnCreate(Bundle bundle)
 
 ### <a name="define-the-notification-id"></a>定义通知 ID
 
-我们需要提供通知和通知通道的唯一 ID。 让我们编辑**MainActivity.cs** ，并将以下静态实例变量添加到`MainActivity`类：
+我们需要提供通知和通知通道的唯一 ID。 让我们编辑**MainActivity.cs** ，并将以下静态实例变量添加到 `MainActivity` 类：
 
 ```csharp
 static readonly int NOTIFICATION_ID = 1000;
@@ -114,7 +114,7 @@ internal static readonly string COUNT_KEY = "count";
 
 ### <a name="add-code-to-generate-the-notification"></a>添加代码以生成通知
 
-接下来，需要为按钮`Click`事件创建新的事件处理程序。 将以下方法添加到 `MainActivity`：
+接下来，需要为按钮 `Click` 事件创建新的事件处理程序。 将以下方法添加到 `MainActivity`：
 
 ```csharp
 void ButtonOnClick(object sender, EventArgs eventArgs)
@@ -155,7 +155,7 @@ void ButtonOnClick(object sender, EventArgs eventArgs)
 }
 ```
 
-MainActivity `OnCreate`的方法必须进行调用以创建通知通道，并`ButtonOnClick`将方法分配给`Click`按钮的事件（替换模板提供的委托事件处理程序）：
+MainActivity 的 `OnCreate` 方法必须进行调用以创建通知通道，并将 `ButtonOnClick` 方法分配给按钮的 `Click` 事件（替换模板提供的委托事件处理程序）：
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -229,7 +229,7 @@ namespace LocalNotifications
 
 ### <a name="add-a-notification-icon"></a>添加通知图标
 
-最后，添加一个小图标，该图标将在启动通知时出现在通知区域中。 您可以将[此图标](local-notifications-walkthrough-images/ic-stat-button-click.png)复制到您的项目或创建您自己的自定义图标。 将图标文件命名**为\_"ic\_\_" 状态按钮单击 "png** " 并将其复制到**资源/可绘制**文件夹。 请记住，使用 "**添加 > 现有项 ...** " 将此图标文件包含在项目中。
+最后，添加一个小图标，该图标将在启动通知时出现在通知区域中。 您可以将[此图标](local-notifications-walkthrough-images/ic-stat-button-click.png)复制到您的项目或创建您自己的自定义图标。 将该图标文件命名为**ic\_stat\_按钮\_单击 "png** " 并将其复制到**资源/可绘制**文件夹。 请记住，使用 "**添加 > 现有项 ...** " 将此图标文件包含在项目中。
 
 ### <a name="run-the-application"></a>运行此应用程序
 
@@ -239,13 +239,13 @@ namespace LocalNotifications
 
 单击该按钮时，应会看到通知区域显示了通知的小图标：
 
-[![显示通知图标](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
+[显示![通知图标](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 如果向下轻扫并公开通知抽屉，应会看到通知：
 
 [![通知消息](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
-当你单击该通知时，它应会消失，而我们的其他活动&ndash;的外观应与以下屏幕截图类似：
+当你单击该通知时，它应会消失，而其他活动应会启动 &ndash; 如以下屏幕截图所示：
 
 [![第二个活动屏幕快照](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
@@ -253,7 +253,7 @@ namespace LocalNotifications
 
 ## <a name="summary"></a>总结
 
-此演练用于`NotificationCompat.Builder`创建和显示通知。 其中显示了一个基本示例，说明如何启动第二个活动，作为响应用户与通知的交互的方式，并演示了从第一个活动到第二个活动的数据传输。
+本演练使用 `NotificationCompat.Builder` 创建和显示通知。 其中显示了一个基本示例，说明如何启动第二个活动，作为响应用户与通知的交互的方式，并演示了从第一个活动到第二个活动的数据传输。
 
 ## <a name="related-links"></a>相关链接
 
@@ -261,5 +261,5 @@ namespace LocalNotifications
 - [Android Oreo 通知通道](https://blog.xamarin.com/android-oreo-notification-channels/)
 - [提醒](xref:Android.App.Notification)
 - [NotificationManager](xref:Android.App.NotificationManager)
-- [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
+- [Notificationcompat.builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
 - [PendingIntent](xref:Android.App.PendingIntent)

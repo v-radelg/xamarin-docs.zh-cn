@@ -3,15 +3,15 @@ title: 应用程序用户界面本地化
 description: 本文档介绍国际化和本地化的跨平台概念，并调查它们对应用程序设计的影响。
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9e0a6569710ca3ad10f57d7145a97af92574427c
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198436"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016792"
 ---
 # <a name="localization"></a>本地化
 
@@ -59,13 +59,13 @@ ms.locfileid: "71198436"
 
 将 iOS 主屏幕上几项的字符串长度与英语、德语和日语进行比较：
 
-[![](localization-images/language-compare-sml.png "德语和日语字符串长度")](localization-images/language-compare.png#lightbox)
+[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
 
 请注意，英语（8个字符）的**设置**需要德语转换的13个字符，但在日语中只需要2个字符。
 
 当标签长度相差很大时，显示标签和输入字段并行的布局很难使用。 通常，标签在字段上方显示的布局更易于本地化，因为屏幕的整个宽度都可用于标签和输入。
 
-一般规则是，如果要生成固定布局（特别是并排元素），则允许的宽度至少为 50%，大于你的英语字符串需要的标签和文本。 这并不能解决每个问题，但会提供一个在许多情况下都可以使用的缓冲区。
+一般规则是，如果要生成固定布局（特别是并排元素），则允许的宽度至少为50%，大于你的英语字符串需要的标签和文本。 这并不能解决每个问题，但会提供一个在许多情况下都可以使用的缓冲区。
 
 ### <a name="input-validation"></a>输入验证
 
@@ -218,7 +218,7 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 ### <a name="use-multiple-strings-for-cardinality"></a>将多个字符串用于基数
 
-避免`"You have {0} message/s."`使用特定字符串来提供每种状态的字符串，以提供更好的用户体验：
+避免 `"You have {0} message/s."` 使用特定字符串来提供每种状态的字符串，以提供更好的用户体验：
 
 **不错**：
 
@@ -235,7 +235,7 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 基于拉丁语的语言有时会根据使用者的性别使用不同的词。 如果你的应用知道性别，你应该允许翻译的字符串反映这一点。
 
-还有一个更明显的例子，甚至是在英语中，其中字符串指的是特定的用户或应用程序的用户。 例如，某些站点显示类似于`"Bob commented on his post"`这样的消息，因此你需要用于二元、女性和非二元或未知性别的字符串：
+还有一个更明显的例子，甚至是在英语中，其中字符串指的是特定的用户或应用程序的用户。 例如，某些站点显示诸如 `"Bob commented on his post"` 之类的消息，因此你需要用于二元、女性和非二元或未知性别的字符串：
 
 **不错**：
 
@@ -271,7 +271,7 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 出于测试目的，您可以使用多种在线翻译工具之一，在开发过程中将一些本地化文本包含在您的应用程序中：
 
 - [必应翻译](https://www.bing.com/translator/)
-- [Google 翻译](http://translate.google.com/)
+- [Google 翻译](https://translate.google.com/)
 
 还有很多其他功能可用。 通常情况下，机器翻译质量不会被视为足以释放应用程序，而无需先通过专业翻译人员或本机发言人进行评审和测试。
 
@@ -279,7 +279,7 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 还提供了一些专业翻译服务，它们将使用您的字符串并将其分发给自己的翻译员，为您提供了一种费用的翻译。
 
-其中一项已知服务是[LionBridge](http://www.lionbridge.com/)。 大多数专业服务支持所有常见的文件类型，包括字符串、XML、RESX 和 .POT/PO。
+其中一项已知服务是[LionBridge](https://www.lionbridge.com/)。 大多数专业服务支持所有常见的文件类型，包括字符串、XML、RESX 和 .POT/PO。
 
 ## <a name="summary"></a>总结
 

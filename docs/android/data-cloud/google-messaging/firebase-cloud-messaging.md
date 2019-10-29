@@ -4,15 +4,15 @@ description: Firebase Cloud 消息传递（FCM）是一种便于在移动应用�
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: ab42e190f5348de13610955f1175eb01531a280a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c97c931445122cbaa613b87e3778f4dc9e92f4d0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754541"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023658"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase 云消息传送
 
@@ -38,16 +38,16 @@ Firebase 云消息传送（FCM）是一项跨平台服务，用于处理服务�
 
 FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这些凭据通过 FCM 授权消息事务：
 
-- <a name="fcm-in-action-sender-id"></a>**发件人 ID***发件人 ID*是在创建 Firebase 项目时分配的唯一数值。 &ndash; 发件人 ID 用于标识可以向客户端应用程序发送消息的每个应用程序服务器。 发件人 ID 也是你的项目编号;注册项目时，可以从 Firebase 控制台获取发件人 ID。 发件人 ID 的一个示例`496915549731`是。
+- <a name="fcm-in-action-sender-id"></a>**发件人 id &ndash;** *发送方 id*是在创建 Firebase 项目时分配的唯一数值。 发件人 ID 用于标识可以向客户端应用程序发送消息的每个应用程序服务器。 发件人 ID 也是你的项目编号;注册项目时，可以从 Firebase 控制台获取发件人 ID。 `496915549731`的发送方 ID 的示例。
 
-- <a name="fcm-in-action-api-key"></a>**API 密钥**API 密钥使应用服务器可以访问 Firebase 服务; &ndash;FCM 使用此密钥对应用服务器进行身份验证。 此凭据也称为*服务器密钥*或*Web API 密钥*。 API 密钥的一个示例是`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`。
+- <a name="fcm-in-action-api-key"></a>**Api 密钥 &ndash;** *api 密钥*向应用服务器授予 Firebase services 的访问权限;FCM 使用此密钥对应用服务器进行身份验证。 此凭据也称为*服务器密钥*或*Web API 密钥*。 `AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`API 密钥的示例。
 
-- <a name="fcm-in-action-app-id"></a>**应用 ID**&ndash;注册从 FCM 接收消息的客户端应用的标识（独立于任何给定设备）。 应用 ID 的一个示例是`1:415712510732:android:0e1eb7a661af2460`。
+- <a name="fcm-in-action-app-id"></a>**应用 ID** &ndash; 注册为接收来自 FCM 的消息的客户端应用（独立于任何给定设备）的标识。 `1:415712510732:android:0e1eb7a661af2460`应用 ID 的示例。
 
-- <a name="fcm-in-action-registration-token"></a>**注册令牌**注册令牌（也称为*实例 ID*）是给定设备上客户端应用的 FCM 标识。 &ndash; 当应用程序在运行时首次&ndash;注册 FCM 时，会在运行时生成注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行），以接收来自 FCM 的消息。
-    注册令牌的一个示例是`fkBQTHxKKhs:AP91bHuEedxM4xFAUn0z ... JKZS` （非常长的字符串）。
+- <a name="fcm-in-action-registration-token"></a>**注册令牌 &ndash;** 注册*令牌（也*称为*实例 ID*）是给定设备上客户端应用的 FCM 标识。 注册令牌是在运行时生成的 &ndash; 应用程序在设备上运行时首次注册 FCM 时接收注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行），以接收来自 FCM 的消息。
+    注册令牌的示例 `fkBQTHxKKhs:AP91bHuEedxM4xFAUn0z ... JKZS` （非常长的字符串）。
 
-[设置 Firebase 云消息传送](#setup_fcm)（本指南稍后将提供有关创建项目和生成这些凭据的详细说明。 在[Firebase 控制台](https://console.firebase.google.com/)中创建新项目时，会创建&ndash;一个名为**google-services**的凭据文件，将此文件添加到你的 Xamarin Android 项目，如[使用 FCM 的远程通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)中所述。
+[设置 Firebase 云消息传送](#setup_fcm)（稍后在本指南中）提供了有关创建项目和生成这些凭据的详细说明。 当你在[Firebase 控制台](https://console.firebase.google.com/)中创建新项目时 **，将创建一个名为**FCM 的凭据文件 &ndash; 将此文件添加到你的 Xamarin Android 项目，如[使用的远程通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)中所述。
 
 以下部分说明了当客户端应用程序通过 FCM 与应用程序服务器通信时，如何使用这些凭据。
 
@@ -93,7 +93,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 *主题消息传递*使应用服务器能够将消息发送到多个已选择特定主题的设备。 还可以通过 Firebase 控制台通知 GUI 撰写和发送主题消息。 FCM 处理主题消息到已订阅客户端的路由和传递。 此功能可用于天气警报、股票报价和新闻等消息。
 
-[![主题消息示意图](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
+[![主题消息传递关系图](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
 在主题消息（在客户端应用程序获取注册令牌后，如前文所述）中使用以下步骤：
 
@@ -113,7 +113,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 1. 用 Google 帐户（即 Gmail 地址）登录到[Firebase 控制台](https://console.firebase.google.com/)，并单击 "**创建新项目**"：
 
-    [!["新建项目" 按钮](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
+    [![创建新项目 "按钮](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
     如果已有项目，请单击 "**导入 Google 项目**"。
 

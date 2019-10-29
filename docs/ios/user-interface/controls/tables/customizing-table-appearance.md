@@ -4,34 +4,34 @@ description: 本文档介绍如何在 Xamarin 中自定义表的外观。 它讨
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e81504b3411674c8f8f92bf9018d617dd1c4bc4c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7b4042d9090823fbeff89face7c00e5753666c97
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768901"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021910"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>在 Xamarin 中自定义表的外观
 
-若要更改表的外观，最简单的方法是使用不同的单元格样式。 在`UITableViewSource`的`GetCell`方法中创建每个单元格时，可以更改所使用的单元格样式。
+若要更改表的外观，最简单的方法是使用不同的单元格样式。 在 `UITableViewSource`的 `GetCell` 方法中创建每个单元格时，可以更改所使用的单元格样式。
 
 ## <a name="cell-styles"></a>单元格样式
 
 有四种内置样式：
 
-- **默认**–支持`UIImageView`。
-- **副标题**–支持`UIImageView`和副标题。
-- **Value1** -右对齐副标题，支持`UIImageView`。
+- **默认**-支持 `UIImageView`。
+- **副标题**–支持 `UIImageView` 和副标题。
+- **Value1** -右对齐副标题，支持 `UIImageView`。
 - **Value2** –标题右对齐，副标题按左对齐（但不含图像）。
 
 这些屏幕截图显示每种样式的显示方式：
 
- [![](customizing-table-appearance-images/image7.png "这些屏幕截图显示每种样式的显示方式")](customizing-table-appearance-images/image7.png#lightbox)
+ [![](customizing-table-appearance-images/image7.png "These screenshots show how each style appears")](customizing-table-appearance-images/image7.png#lightbox)
 
-示例**CellDefaultTable**包含用于生成这些屏幕的代码。 单元格样式在`UITableViewCell`构造函数中设置，如下所示：
+示例**CellDefaultTable**包含用于生成这些屏幕的代码。 单元格样式在 `UITableViewCell` 构造函数中设置，如下所示：
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -53,15 +53,15 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 单元格可以将以下附件添加到视图右侧：
 
 - **复选标记**-可用于指示表中的多个选择。
-- **DetailButton** –独立于单元格的其余部分响应触摸，使其能够执行不同的功能来接触单元格本身（例如打开弹出窗口或不属于`UINavigationController`堆栈一部分的新窗口）。
+- **DetailButton** –独立于单元格的其余部分响应触摸，使其能够执行不同的功能来接触单元格（例如，打开不属于 `UINavigationController` 堆栈的弹出窗口或新窗口）。
 - **DisclosureIndicator** –通常用于指示触摸单元会打开另一个视图。
-- **DetailDisclosureButton** – `DetailButton`和`DisclosureIndicator`的组合。
+- **DetailDisclosureButton** – `DetailButton` 和 `DisclosureIndicator`的组合。
 
 如下所示：
 
- [![](customizing-table-appearance-images/image8.png "示例附件")](customizing-table-appearance-images/image8.png#lightbox)
+ [![](customizing-table-appearance-images/image8.png "Sample Accessories")](customizing-table-appearance-images/image8.png#lightbox)
 
-若要显示这些附件之一，可以`Accessory` `GetCell`在方法中设置属性：
+若要显示这些附件之一，可以在 `GetCell` 方法中设置 `Accessory` 属性：
 
 ```csharp
 cell.Accessory = UITableViewCellAccessory.Checkmark;
@@ -70,7 +70,7 @@ cell.Accessory = UITableViewCellAccessory.Checkmark;
 //cell.Accessory = UITableViewCellAccessory.None; // to clear the accessory
 ```
 
-`DetailButton`显示或`DetailDisclosureButton`时，还应重写`AccessoryButtonTapped` ，以便在接触时执行某种操作。
+显示 `DetailButton` 或 `DetailDisclosureButton` 时，还应覆盖 `AccessoryButtonTapped`，以便在接触时执行某种操作。
 
 ```csharp
 public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
@@ -116,14 +116,14 @@ TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 
 若要更改表的视觉样式，需要提供自定义单元格以使其显示。 自定义单元格可以具有不同的颜色和控件布局。
 
-CellCustomTable 示例实现了一个`UITableViewCell`子类，该子类`UIImage`使用不同的`UILabel`字体和颜色来定义的自定义布局。 生成的单元格如下所示：
+CellCustomTable 示例实现了一个 `UITableViewCell` 子类，该子类定义了 `UILabel`s 的自定义布局以及不同字体和颜色的 `UIImage`。 生成的单元格如下所示：
 
- [![](customizing-table-appearance-images/image9.png "自定义单元布局")](customizing-table-appearance-images/image9.png#lightbox)
+ [![](customizing-table-appearance-images/image9.png "Custom Cell Layouts")](customizing-table-appearance-images/image9.png#lightbox)
 
 自定义单元格类只包含三种方法：
 
 - **构造函数**–创建 UI 控件并设置自定义样式属性（例如 字体、大小和颜色）。
-- **UpdateCell** –用于设置单元`UITableView.GetCell`格的属性的方法。
+- **UpdateCell** –用于设置单元格属性的 `UITableView.GetCell` 方法。
 - **LayoutSubviews** –设置 UI 控件的位置。 在示例中，每个单元格都具有相同的布局，但更复杂的单元格（尤其是具有不同大小的单元格）可能需要不同的布局位置，具体取决于所显示的内容。
 
 **CellCustomTable > CustomVegeCell.cs**中的完整示例代码如下：
@@ -167,7 +167,7 @@ public class CustomVegeCell : UITableViewCell  {
 }
 ```
 
-需要修改的`UITableViewSource` 方法以创建自定义单元格：`GetCell`
+需要修改 `UITableViewSource` 的 `GetCell` 方法，以创建自定义单元格：
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)

@@ -3,15 +3,15 @@ title: 已通过 Xamarin 启动服务
 ms.prod: xamarin
 ms.assetid: 8CC3A850-4CD2-4F93-98EE-AF3470794000
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b7bed0fc6dba1d9f80524ac3429b7fdcb751ab9
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: f5b5f8cf224c18852a0a0e7e4f591b49905ba026
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70755062"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024762"
 ---
 # <a name="started-services-with-xamarinandroid"></a>已通过 Xamarin 启动服务
 
@@ -45,13 +45,13 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 最后，第三个参数是一个整数值，它对于标识请求的应用程序是唯一的。 有可能多个调用方可以调用同一个服务对象。 此值用于关联请求以停止具有给定请求的服务来启动服务。 在[停止服务](#Stopping_the_Service)部分中将对此进行更详细的讨论。 
 
-如果服务由于资源限制而终止，则服务将返回值 `StartCommandResult` 作为对 Android 的建议。 @No__t_0 有三个可能的值：
+如果服务由于资源限制而终止，则服务将返回值 `StartCommandResult` 作为对 Android 的建议。 `StartCommandResult`有三个可能的值：
 
 - **[StartCommandResult. NotSticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash; 此值告知 Android 不需要重新启动已终止的服务。 作为示例，请考虑在应用中为库生成缩略图的服务。 如果服务已终止，则在下次运行应用程序时，可以重新创建缩略图，这并不重要，&ndash; 缩略图重新创建。
 - **[StartCommandResult](xref:Android.App.StartCommandResult.Sticky)** &ndash; 这会告诉 Android 重新启动该服务，但不会传递启动该服务的上一意向。 如果没有要处理的挂起意向，则将为意向参数提供 `null`。 这种情况的一个示例可能是音乐播放器应用;该服务将重新启动以播放音乐，但会播放最后一首歌曲。
 - **[StartCommandResult. RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; 此值将告知 Android 重新启动服务并重新传递最后一个 `Intent`。 这是一个为应用程序下载数据文件的服务。 如果服务已终止，则仍需要下载数据文件。 通过返回 `StartCommandResult.RedeliverIntent`，当 Android 重新启动服务时，它还会将意图（包含要下载的文件的 URL）提供给该服务。 这将允许下载重新启动或恢复（具体取决于代码的确切实现）。
 
-@No__t_0 &ndash; `StartCommandResult.ContinuationMask` 具有第四个值。 此值由 `OnStartCommand` 返回，它描述 Android 将如何继续已终止的服务。 此值通常不用于启动服务。
+`StartCommandResult` &ndash; `StartCommandResult.ContinuationMask`具有第四个值。 此值由 `OnStartCommand` 返回，它描述 Android 将如何继续已终止的服务。 此值通常不用于启动服务。
 
 此图显示了已启动服务的关键生命周期事件： 
 
@@ -77,7 +77,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 ### <a name="using-startid-to-stop-a-service"></a>使用 startId 停止服务
 
-多个调用方可以请求启动服务。 如果有未完成的启动请求，则该服务可以使用传递到 `OnStartCommand` 中的 `startId` 来防止服务过早停止。 @No__t_0 将对应于对 `StartService` 的最新调用，并将在每次调用时递增。 因此，如果对 `StartService` 的后续请求尚未产生对 `OnStartCommand` 的调用，则该服务可以调用 `StopSelfResult`，并向其传递 `startId` 接收的最新值（而不是仅仅调用 `StopSelf`）。 如果对 `StartService` 的调用尚未导致相应的 `OnStartCommand` 调用，则系统将不会停止服务，因为 `StopSelf` 调用中使用的 `startId` 与最新的 `StartService` 调用不对应。
+多个调用方可以请求启动服务。 如果有未完成的启动请求，则该服务可以使用传递到 `OnStartCommand` 中的 `startId` 来防止服务过早停止。 `startId` 将对应于对 `StartService`的最新调用，并将在每次调用时递增。 因此，如果对 `StartService` 的后续请求尚未产生对 `OnStartCommand` 的调用，则该服务可以调用 `StopSelfResult`，并向其传递 `startId` 接收的最新值（而不是仅仅调用 `StopSelf`）。 如果对 `StartService` 的调用尚未导致相应的 `OnStartCommand` 调用，则系统将不会停止服务，因为 `StopSelf` 调用中使用的 `startId` 与最新的 `StartService` 调用不对应。
 
 ## <a name="related-links"></a>相关链接
 

@@ -4,15 +4,15 @@ description: 本文介绍适用于 Xamarin 开发人员的 watchOS 3 中提供�
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: b167ddca86148818c534b7a9b0e338f8a4406b15
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5ff315270646389d67b505eef04c1aa11d0029c1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767757"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028268"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 简介
 
@@ -102,7 +102,7 @@ watchOS 3 包括之前无法使用的多个现有 Apple framework，如：
 
 ## <a name="proactive-suggestions"></a>主动建议
 
-watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为支持此功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)现在包含`MapItem`属性，该属性使应用程序能够提供位置信息供其他应用以后使用。
+watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为了支持此功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)包含 `MapItem` 属性，该属性使应用程序能够提供位置信息供其他应用稍后使用。
 
 若要了解详细信息，请参阅[前瞻性建议指南简介](~/ios/watchos/platform/proactive-suggestions.md)。
 
@@ -112,7 +112,7 @@ watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为支
 
 Apple 在 watchOS 3 中对安全和隐私进行了多项改进，有助于开发人员提高应用程序的安全性并确保最终用户的隐私。
 
-因此，在 watchOS 3 （或更高版本）上运行的应用程序必须通过在其`Info.plist`文件中输入一个或多个特定于隐私的密钥来访问特定功能或用户信息，并向用户说明应用希望获取访问权限的原因。
+因此，在 watchOS 3 （或更高版本）上运行的应用程序必须通过在其 `Info.plist` 文件中输入一个或多个特定于隐私的密钥，向用户说明应用希望获取访问权限的原因，以静态方式声明其意图以访问特定功能或用户信息。
 
 由于 watchOS 3 与 iOS 10 共享这些更改，请参阅我们的 iOS 10[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)指南以获取详细信息。
 
@@ -138,7 +138,7 @@ WatchOS 3 中引入的用户通知框架支持向 Apple Watch 传递本地和远
 
 ## <a name="watch-connectivity-framework-enhancements"></a>观看连接框架增强功能
 
-[WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession) 类的新`HasContentPending`属性指示会话已在后台接收需要处理的数据。 `RemainingComplicationUserInfoTransfers`属性可返回 iOS 应用程序更新其 watchOS 的剩余时间。
+[WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession)类的新 `HasContentPending` 属性指示会话已在后台接收需要处理的数据。 和 `RemainingComplicationUserInfoTransfers` 属性返回 iOS 应用程序可更新其 watchOS 的剩余时间。
 
 若要了解详细信息，请参阅我们的[背景任务](~/ios/watchos/platform/background-tasks.md)指南。
 
@@ -149,9 +149,9 @@ WatchOS 3 中引入的用户通知框架支持向 Apple Watch 传递本地和远
 watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 - 应用程序可以使用新的[WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer)类获取 Digital Crown 的状态，并在用户使用[WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate)类旋转王冠时接收更新。
-- [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)类现在包含`ApplicationState`方法和[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)常量，应用可使用该常量来跟踪应用程序的运行时状态。 `WKExtension`还提供了两个可用于计划后台任务的新方法。
-- [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)现在包括新`ApplicationWillEnterForeground`的和`HandleBackgroundTasks`方法`ApplicationDidEnterBackground` ，用于监视应用状态中的更改并处理后台任务更新。
-- 添加了新的[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)类，以便为监视应用提供以下类型的手势识别：[WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)和[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
+- [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)类现在包括 `ApplicationState` 方法和[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)常数，应用程序可以使用该方法来跟踪应用程序的运行时状态。 `WKExtension` 还提供了两个可用于计划后台任务的新方法。
+- [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)现在包含新 `ApplicationWillEnterForeground`、`ApplicationDidEnterBackground` 和 `HandleBackgroundTasks` 方法来监视应用状态中的更改并处理后台任务更新。
+- 添加了一个新的[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)类，以向 watch 应用提供以下类型的手势识别： [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)和[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
 - 新的[WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera)类为所有 HomeKit 连接的 IP 照相机提供一个接口。
 - 新的[WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie)类允许应用显示电影 "海报"，它在用户点击它时由正在运行的电影替换。
 - 新的[WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton)类允许应用在其用户界面中显示一个 Apple Pay 按钮，该按钮将在点击时启动付款请求。
@@ -164,7 +164,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 ## <a name="workout-app-enhancements"></a>测验应用增强功能
 
-新到 watchOS 3，健身相关应用可以在 Apple Watch 的后台运行。 若要启用此功能（并获取对 HealthKit 数据的访问权限），应用必须`WKBackgroundModes` `Info.plist`在文件中包含具有值`workout-processing`的密钥。
+新到 watchOS 3，健身相关应用可以在 Apple Watch 的后台运行。 若要启用此功能（并获取对 HealthKit 数据的访问权限），应用必须在 `Info.plist` 文件中包含值为 `workout-processing`的 `WKBackgroundModes` 项。
 
 此外，开发人员现在可以从配对的 iPhone 上的 iOS 应用程序版本启动 watchOS 健身应用。
 
@@ -184,7 +184,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 WatchOS 3 中已弃用以下 Api：
 
-- UIKit `UILocalNotification`的类已弃用，应该替换为用户通知框架。
+- UIKit 的 `UILocalNotification` 类已被弃用，应替换为用户通知框架。
 
 有关弃用功能和更改的完整列表，请参阅 Apple 的[watchOS 2.2 到 watchOS 3.0 API 差异](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)文档。
 

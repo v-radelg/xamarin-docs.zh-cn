@@ -4,15 +4,15 @@ description: 本文逐步讲解为你的计算机和设备准备 Android 磨损�
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 190e38e525288dbc2b7f6bd9e785c723c80c6271
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 83ec214ae1838959355e99322ce5a809ead004fa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762227"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028728"
 ---
 # <a name="setup-and-installation"></a>设置和安装
 
@@ -22,13 +22,13 @@ _本文逐步讲解为你的计算机和设备准备 Android 磨损开发所需�
 
 若要创建基于 Xamarin 的 Android 应用，需要满足以下要求：
 
-- **Visual Studio 或 Visual Studio for Mac**&ndash;需要 Visual Studio 2017 社区或更高版本。
+- 需要 visual **studio 或 Visual Studio for Mac** &ndash; visual Studio 2017 社区或更高版本。
 
-- 必须安装和配置**Xamarin** xamarin4.17或更高版本，并且必须安装VisualStudio或VisualStudioforMac。&ndash;
+- **Xamarin** &ndash; xamarin 4.17 或更高版本必须安装并配置 Visual Studio 或 Visual Studio for Mac。
 
 - **Android SDK** Android SDK 5.0.1 （API 21）或更高版本必须通过 Android SDK 管理器进行安装。
 
-- **Java 开发人员工具包**Xamarin Android 开发需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （如果要针对 api 级别24或更高版本进行开发）（jdk 1.8 还支持早于24的 api 级别）。 &ndash;
+- **Java 开发人员工具包**&ndash; Xamarin Android 开发需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （如果要针对 api 级别24或更高版本进行开发）（jdk 1.8 还支持早于24的 api 级别）。
 
 如果要专门针对 API 级别23或更早版本进行开发，可以继续使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
@@ -65,7 +65,7 @@ _本文逐步讲解为你的计算机和设备准备 Android 磨损开发所需�
 - Android 4.4 W （API20）或
 - Android 5.0.1 （API21）或更高版本。
 
-如果尚未安装最新的 sdk 和工具，请下载所需的 sdk 工具*和*api 位（可能需要滚动一点来查找&ndash; api 选择，如下所示）： 
+如果尚未安装最新的 SDK 和工具，请下载所需的 SDK 工具*和*API 位（可能需要滚动一点来查找它们 &ndash; 如下所示）： 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

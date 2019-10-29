@@ -4,21 +4,21 @@ description: 本文档介绍如何在使用 Xamarin 生成的 tvOS 应用中使�
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: df19dcf542bd3a62a696c0d7d533b4e14390336e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a4adc692680c0556a3cfb07b1a9f45963a81d199
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768998"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022124"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 选项卡栏控制器
 
 对于许多类型的 tvOS 应用，主导航显示为在屏幕顶部运行的选项卡栏。 用户 swipes 可能的类别列表和更改下方的内容区域，以反映用户的选择。
 
-[![](tab-bars-images/tab01.png "示例选项卡栏")](tab-bars-images/tab01.png#lightbox)
+[![](tab-bars-images/tab01.png "Sample Tab Bar")](tab-bars-images/tab01.png#lightbox)
 
 默认情况下，选项卡栏是透明的，并且始终显示在屏幕的顶部。 当焦点位于焦点上方时，选项卡栏将覆盖屏幕的前140像素，但当焦点移到下方的内容区域时，它将迅速滑出。
 
@@ -26,7 +26,7 @@ ms.locfileid: "70768998"
 
 ## <a name="tab-bars-in-tvos"></a>TvOS 中的选项卡栏
 
-的`UITabViewController`工作方式类似，在 tvOS 上的工作方式与在 iOS 中的作用类似，但有以下主要区别：
+`UITabViewController` 的工作方式类似，并且在 tvOS 上的作用与在 iOS 中的作用类似，但有以下主要区别：
 
 - 不同于 iOS 上显示在屏幕底部的选项卡栏，tvOS 中的选项卡栏占用屏幕的顶部140像素，默认情况下为半透明。
 - 当焦点离开下面的内容区域的选项卡栏时，选项卡栏将快速滑出屏幕的顶部并隐藏。 用户可以点击 "菜单" 按钮一次，或在[Siri 遥控器](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)上向上轻扫以显示选项卡栏。
@@ -62,22 +62,22 @@ Apple 对于使用选项卡栏有以下建议：
 
 1. 启动新的 tvOS 应用，并选择**tvOS** > **应用** > **选项卡式应用**： 
 
-    [![](tab-bars-images/tab02.png "选择选项卡式应用")](tab-bars-images/tab02.png#lightbox)
+    [![](tab-bars-images/tab02.png "Select Tabbed App")](tab-bars-images/tab02.png#lightbox)
 1. 按照所有提示创建新的 tvOS 解决方案。
-1. 在**Solution Pad**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
+1. 在**Solution Pad**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
 1. 若要更改给定类别的**图标**或**标题**，请在**文档大纲**中选择**视图控制器**的**选项卡项**：
 
-    [![](tab-bars-images/tab03a.png "文档大纲中视图控制器的选项卡项")](tab-bars-images/tab03a.png#lightbox)
+    [![](tab-bars-images/tab03a.png "The Tab Bar Item for the View Controller in the Document Outline")](tab-bars-images/tab03a.png#lightbox)
 1. 然后在**属性资源管理器**的 "**小组件" 选项卡**中设置所需的属性： 
 
-    [![](tab-bars-images/tab03.png "\"小组件\" 选项卡")](tab-bars-images/tab03.png#lightbox)
+    [![](tab-bars-images/tab03.png "The Widget Tab")](tab-bars-images/tab03.png#lightbox)
 1. 若要添加新类别（选项卡），请将**视图控制器**拖放到设计图面上： 
 
-    [![](tab-bars-images/tab04.png "视图控制器")](tab-bars-images/tab04.png#lightbox)
+    [![](tab-bars-images/tab04.png "A View Controller")](tab-bars-images/tab04.png#lightbox)
 1. 按住 ctrl 并从**选项卡视图控制器**拖动到新的**视图控制器**。
 1. 从弹出窗口中选择 "**查看控制器**"，将新视图添加为选项卡（类别）： 
 
-    [![](tab-bars-images/tab05.png "选择选项卡")](tab-bars-images/tab05.png#lightbox)
+    [![](tab-bars-images/tab05.png "Select Tab")](tab-bars-images/tab05.png#lightbox)
 1. 通过在 iOS 设计器中添加 UI 元素，以常规方式为每个 Caterogies 内容区域设计 UI 布局。
 1. 公开任何所需的事件，以便在代码中C#使用您的 UI 控件。
 1. 命名要在代码中C#公开的任何 UI 控件。
@@ -87,22 +87,22 @@ Apple 对于使用选项卡栏有以下建议：
 
 1. 启动新的 tvOS 应用，并选择**tvOS** > **应用** > **选项卡式应用**： 
 
-    [![](tab-bars-images/tab02vs.png "选择选项卡式应用")](tab-bars-images/tab02vs.png#lightbox)
+    [![](tab-bars-images/tab02vs.png "Select Tabbed App")](tab-bars-images/tab02vs.png#lightbox)
 1. 按照所有提示创建新的 tvOS 解决方案。
-1. 在**解决方案资源管理器**中，双击该`Main.storyboard`文件，然后将其打开进行编辑。
+1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
 1. 若要更改给定类别的**图标**或**标题**，请在**文档大纲**中选择**视图控制器**的**选项卡项**：
 
-    [![](tab-bars-images/tab03avs.png "文档大纲中的视图控制器")](tab-bars-images/tab03avs.png#lightbox)
+    [![](tab-bars-images/tab03avs.png "The View Controller in the Document Outline")](tab-bars-images/tab03avs.png#lightbox)
 1. 然后在**属性资源管理器**的 "**小组件" 选项卡**中设置所需的属性： 
 
-    [![](tab-bars-images/tab03vs.png "\"小组件\" 选项卡")](tab-bars-images/tab03vs.png#lightbox)
+    [![](tab-bars-images/tab03vs.png "The Widget Tab")](tab-bars-images/tab03vs.png#lightbox)
 1. 若要添加新类别（选项卡），请将 "**视图控制器**" 从 "**工具箱**" 拖放到设计图面上： 
 
-    [![](tab-bars-images/tab04vs.png "视图控制器")](tab-bars-images/tab04vs.png#lightbox)
+    [![](tab-bars-images/tab04vs.png "A View Controller")](tab-bars-images/tab04vs.png#lightbox)
 1. 按住 ctrl 并从**选项卡视图控制器**拖动到新的**视图控制器**。
 1. 从弹出窗口中选择 "**查看控制器**"，将新视图添加为选项卡（类别）： 
 
-    [![](tab-bars-images/tab05vs.png "选择选项卡")](tab-bars-images/tab05vs.png#lightbox)
+    [![](tab-bars-images/tab05vs.png "Select Tab")](tab-bars-images/tab05vs.png#lightbox)
 1. 通过在 iOS 设计器中添加 UI 元素，以常规方式为每个 Caterogies 内容区域设计 UI 布局。
 1. 公开任何所需的事件，以便在代码中C#使用您的 UI 控件。
 1. 命名要在代码中C#公开的任何 UI 控件。
@@ -111,7 +111,7 @@ Apple 对于使用选项卡栏有以下建议：
 -----
 
 > [!IMPORTANT]
-> 尽管可以在 iOS 设计器中将事件`TouchUpInside` （例如`UIButton`）分配给 UI 元素（例如），但永远不会调用它，因为 Apple TV 没有触摸屏或支持触控事件。 创建 tvOS 用户界面元素`Primary Action`的事件处理程序时，应始终使用事件。
+> 尽管可以在 iOS 设计器中将 `TouchUpInside` 事件（如 `UIButton`）分配给 UI 元素，但绝不会调用此类事件，因为 Apple TV 没有触摸屏或支持触控事件。 创建 tvOS 用户界面元素的事件处理程序时，应始终使用 `Primary Action` 事件。
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 
 
@@ -119,7 +119,7 @@ Apple 对于使用选项卡栏有以下建议：
 
 ## <a name="working-with-tab-bars"></a>使用选项卡栏
 
-使用的`UITabBar` 属性`UITabBarItems`可将其包含的集合作为零（0）索引数组`Items`来访问。 属性将返回当前选定的选项卡（类别） `UITabBarItem`作为。 `SelectedItem`
+使用 `UITabBar` 的 `Items` 属性可访问其包含为零（0）索引数组的 `UITabBarItems` 的集合。 `SelectedItem` 属性将返回当前选定的选项卡（类别）作为 `UITabBarItem`。
 
 <a name="Working-with-Tab-Bar-Items" />
 
@@ -134,9 +134,9 @@ TabBar.Items [2].BadgeValue = "10";
 
 这会在运行时生成以下结果：
 
-[![](tab-bars-images/tab06.png "带有徽章的选项卡项")](tab-bars-images/tab06.png#lightbox)
+[![](tab-bars-images/tab06.png "A Tab Bar Item with badge")](tab-bars-images/tab06.png#lightbox)
 
-使用的`Title` `UITabBarItem`属性可`Image`更改标题和属性以更改图标。
+使用 `UITabBarItem` 的 `Title` 属性更改标题，并使用 `Image` 属性更改图标。
 
 <a name="Summary" />
 

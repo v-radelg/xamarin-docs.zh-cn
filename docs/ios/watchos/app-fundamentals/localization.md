@@ -1,76 +1,76 @@
 ---
-title: 使用 watchOS 在 Xamarin 中的本地化
-description: 本文档介绍如何本地化使用 Xamarin 生成的 watchOS 应用。 它讨论了 watch 应用，监视扩展，在代码中，字符串情节提要文本、 测试和的详细信息。
+title: 在 Xamarin 中使用 watchOS 本地化
+description: 本文档介绍如何本地化用 Xamarin 生成的 watchOS 应用。 本文介绍了如何监视应用、监视扩展、代码中的字符串、情节提要文本、测试等内容。
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 008858f987a5a3f83b518b98a0647ac5a68b0672
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 82b739697705ac4c90390a36405d755a5f523159
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768743"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028403"
 ---
-# <a name="working-with-watchos-localization-in-xamarin"></a>使用 watchOS 在 Xamarin 中的本地化
+# <a name="working-with-watchos-localization-in-xamarin"></a>在 Xamarin 中使用 watchOS 本地化
 
-_调整 watchOS 应用程序以通过多种语言_
+_针对多种语言调整 watchOS 应用_
 
-![](localization-images/both-languages-sml.png "Apple Watch 显示本地化的内容")
+![](localization-images/both-languages-sml.png "Apple Watch displaying localized content")
 
-watchOS 应用已本地化使用标准 iOS 方法：
+watchOS 应用使用标准 iOS 方法进行本地化：
 
-- 使用**本地化 ID**情节提要元素
-- **.strings**情节提要，与关联的文件和
-- **Localizable.strings**文件使用在代码中的文本。
+- 使用情节提要元素上的**本地化 ID** ，
+- 与情节提要关联的**字符串**文件和
+- 代码中使用的文本的可**本地化的字符串**文件。
 
-默认的情节提要和资源中的位置**Base**目录中，和特定于语言的翻译和其他资源存储在 **.lproj**目录。
-iOS 和监视 OS 自动将使用用户的语言选择加载正确的字符串和资源。
+默认情节提要和资源位于**基**目录中，特定于语言的翻译和其他资源存储在**lproj**目录中。
+iOS 和监视 OS 会自动使用用户的语言选择来加载正确的字符串和资源。
 
-因为 Apple Watch 应用有两个部分-监视应用和监视扩展的两个位置，具体取决于如何使用所需资源的已本地化字符串。
+由于 Apple Watch 应用有两部分-"监视" 应用和 "监视" 扩展-在两个位置需要本地化的字符串资源，具体取决于它们的使用方式。
 
-本地化的文本和资源将被*不同*中监视应用和监视扩展。
+已本地化的文本和资源将在 "监视" 应用和 "监视" 扩展中*有所不同*。
 
-## <a name="watch-app"></a>Watch 应用
+## <a name="watch-app"></a>观看应用
 
-Watch 应用包含描述应用程序的用户界面的情节提要。 任何控件 (如`Label`并`Image`)，具有支持本地化**本地化 ID**。
+Watch 应用包含描述应用用户界面的情节提要。 支持本地化的任何控件（如 `Label` 和 `Image`）都具有**本地化 ID**。
 
-每个特定于语言的 **.lproj**目录应包含 **.strings**提供翻译的每个元素的文件 (使用**本地化 ID**)，以及图像引用的情节提要。
+每个语言特定的**lproj**目录都应包含**字符串**文件，每个元素都具有翻译（使用**本地化 ID**）以及情节提要引用的图像。
 
 ## <a name="watch-extension"></a>监视扩展
 
-监视扩展是运行应用程序代码。 从代码将向用户显示任何文本需要本地化的扩展中并不在 watch 应用。
+"监视扩展" 是应用代码的运行位置。 从代码向用户显示的任何文本都需要在扩展中进行本地化，而不是在 watch 应用中进行本地化。
 
-扩展还应包含特定于语言的 **.lproj**目录，但 **.strings**文件只需要在代码中使用的文本翻译。
+扩展还应包含特定于语言的**lproj**目录，但**字符串**文件只要求翻译代码中使用的文本。
 
 ## <a name="globalizing-the-watch-solution"></a>全球化监视解决方案
 
-全球化是对应用程序的可本地化的过程。
-对于这意味着设计演示图板记住的不同文本长度与监视应用程序，确保每个屏幕布局调整相应地显示具体取决于什么文本。 此外需要确保可以使用转换监视扩展代码中引用的任何字符串`LocalizedString`方法。
+全球化是使应用程序可本地化的过程。
+对于 "监视应用"，这意味着在设计情节提要时要记住不同的文本长度，确保每个屏幕布局根据显示的文本进行适当的调整。 还需要确保可以使用 `LocalizedString` 方法转换监视扩展代码中引用的任何字符串。
 
-### <a name="watch-app"></a>Watch 应用
+### <a name="watch-app"></a>观看应用
 
-默认情况下监视应用程序未配置用于本地化。 需要移动默认情节提要文件，并创建你的翻译一些其他目录：
+默认情况下，不会为监视应用配置本地化。 需要移动默认情节提要文件，并为翻译创建其他目录：
 
-1. 创建**Base.lproj**目录并将其转移**Interface.storyboard**到其中。
+1. 创建**lproj**目录，并将其移动**到其中。**
 
-2. 为要支持的每种语言 **\<> 创建 lproj**目录。
+2. 为要支持的每种语言创建 **\<> 语言的 lproj**目录。
 
-3. **.Lproj**目录应包含**Interface.strings**文本文件 （文件名应与 storboard 的名称）。 您可以根据需要将需要本地化这些目录中的任何映像。
+3. **Lproj**目录应包含**Interface**文本文件（filename 应与 storboard 的名称匹配）。 您可以选择将需要本地化的任何图像放入这些目录。
 
-（仅英语和西班牙语语言已添加文件） 进行这些更改后，监视应用程序项目如下所示：
+进行这些更改后，"监视" 应用项目将如下所示（仅添加英语和西班牙语语言文件）：
 
-  ![](localization-images/watchapp-solution.png "监视应用程序项目与英语和西班牙语语言文件")
+  ![](localization-images/watchapp-solution.png "The watch app project with English and Spanish language files")
 
 #### <a name="storyboard-text"></a>情节提要文本
 
-当您编辑情节提要时，选择每个元素，并请注意**本地化 ID**中显示**属性**板：
+编辑情节提要时，请选择每个元素，并注意 "**属性**板" 中显示的**本地化 ID** ：
 
-  [![](localization-images/storyboard-sml.png "在属性面板中显示的本地化 ID")](localization-images/storyboard.png#lightbox)
+  [![](localization-images/storyboard-sml.png "The Localization ID that appears in the Properties pad")](localization-images/storyboard.png#lightbox)
 
-中**Base.lproj**文件夹中，创建键 / 值对，如下所示，该密钥通过形成**本地化 ID**并在控件中的属性名称的已加入由圆点 (`.`)。
+在**lproj**文件夹中，创建如下所示的键值对，其中的键由**本地化 ID**和控件上的属性名称构成，由点（`.`）进行联接。
 
 ```csharp
 "AgC-eL-Hgc.title" = "WatchL10nEN"; // interface controller title
@@ -81,29 +81,29 @@ Watch 应用包含描述应用程序的用户界面的情节提要。 任何控�
 "39.text" = "Second screen";
 ```
 
-请注意，在此示例中，**本地化 ID**可以是简单的数字字符串 （例如。 "0"、"1"等) 或更复杂的字符串 （如"AgC-eL-Hgc")。 `Label` 控件具有`Text`属性和`Button`具有`Title`属性，它们已本地化的值设置的方式反映是确保使用小写字母的属性名称，如上面的示例中所示。
+请注意，在此示例中，**本地化 ID**可以是简单数字字符串（例如 "0"、"1" 等）或更复杂的字符串（如 "AgC-Hgc"）。 `Label` 控件具有 `Text` 属性，`Button`s 具有 `Title` 属性，该属性将在其本地化值的设置方式中反映出来-请务必使用上面的示例中所示的小写属性名称。
 
-情节提要的手表上呈现时，正确的值将自动提取并显示根据用户选择的语言。
+当在手表上呈现情节提要时，将根据用户选择的语言自动提取并显示正确的值。
 
 #### <a name="storyboard-images"></a>情节提要图像
 
-该示例解决方案还包括 **gradient@2x.png** 每个语言文件夹中的映像。 此映像可以是不同的每种语言 （例如。 它可能会有嵌入的文本需要转换，或使用本地化插图）。
+示例解决方案还包括每个语言文件夹中的 **gradient@2x.png** 图像。 对于每种语言，此映像可能有所不同（例如 它可能包含需要翻译的嵌入文本，或使用本地化的插图）。
 
-只需设置的映像**图像**情节提要和正确的映像中的属性将根据用户选择的语言手表上呈现。
+只需在情节提要中设置图像的**image**属性，正确的图像就会根据用户选择的语言呈现在手表上。
 
-![](localization-images/storyboard-image.png "在情节提要中设置图像映像属性")
+![](localization-images/storyboard-image.png "Set the images Image property in the storyboard")
 
-注意： 因为所有 Apple Watch 都具有 Retina 显示，只有 **@2x** 映像的版本是必需的。 不需要指定 **@2x** 情节提要中。
+注意：由于所有 Apple watch 都显示 Retina，因此只需要映像的 **@2x** 版本。 不需要在情节提要中指定 **@2x** 。
 
 ### <a name="watch-extension"></a>监视扩展
 
-监视扩展需要类似的目录结构，以支持本地化，但是没有任何情节提要。 在扩展中的本地化的字符串只包括引用的C#代码。
+监视扩展需要类似的目录结构来支持本地化，但没有情节提要。 扩展中的本地化字符串只是C#代码引用的字符串。
 
-![](localization-images/watchextension-solution.png "监视扩展目录结构，以支持本地化")
+![](localization-images/watchextension-solution.png "The watch extension directory structure to support localization")
 
-#### <a name="strings-in-code"></a>在代码中的字符串
+#### <a name="strings-in-code"></a>代码中的字符串
 
-**Localizable.strings**文件具有与是否使用演示图板关联略有不同的结构。 在这种情况下，我们可以选择"密钥"的任何字符串;Apple 的建议是使用一个键，它反映了将以默认语言显示的实际文本：
+可**本地化的字符串**文件具有略微不同于与情节提要关联的结构。 在这种情况下，我们可以选择任何 "密钥" 字符串;Apple 建议使用一个密钥来反映将以默认语言显示的实际文本：
 
 ```csharp
 "Breakfast time" = "Breakfast time!"; // morning
@@ -112,7 +112,7 @@ Watch 应用包含描述应用程序的用户界面的情节提要。 任何控�
 "Bed time" = "Bed time!"; // night
 ```
 
-`NSBundle.MainBundle.LocalizedString`方法用于将字符串解析为其已翻译的对应项，如下面的代码中所示。
+`NSBundle.MainBundle.LocalizedString` 方法用于将字符串解析为其转换的对应项，如以下代码所示。
 
 ```csharp
 var display = "Breakfast time";
@@ -121,17 +121,17 @@ var localizedDisplay =
 displayText.SetText (localizedDisplay);
 ```
 
-#### <a name="images-in-code"></a>在代码中的图像
+#### <a name="images-in-code"></a>代码中的图像
 
-可以通过两种方式设置用代码填充的映像。
+可以通过两种方式设置通过代码填充的图像。
 
-1. 可以通过将`Image`控件的值设置为已存在于手表应用中的映像的字符串名称来更改控件，例如
+1. 可以通过将 `Image` 控件的值设置为已存在于 Watch 应用中的映像的字符串名称来更改该控件，例如
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
     ```
 
-2. 您可以将图像从扩展中移动到监视使用`FromBundle`，应用会自动选择适合用户的语言选择的图像。 示例解决方案中没有图像 **language@2x.png** 在每个语言文件夹，并显示在`DetailController`使用以下代码：
+2. 你可以使用 `FromBundle` 将图像从扩展移动到手表，应用将自动为用户的语言选择选择正确的映像。 在示例解决方案中，每个语言文件夹中 **language@2x.png** 有一个映像，并且使用以下代码在 `DetailController` 上显示它：
 
     ```csharp
     using (var image = UIImage.FromBundle ("language")) {
@@ -139,27 +139,27 @@ displayText.SetText (localizedDisplay);
     }
     ```
 
-    请注意，在引用图像的文件名 **@2x** 时，无需指定。
+    请注意，在引用图像的文件名时，无需指定 **@2x** 。
 
-第二个方法也是适用于从远程服务器上监视; 呈现下载映像但是在这种情况下您应该确保你下载的映像已正确本地化根据用户的首选项。
+第二种方法也适用于从远程服务器下载要在手表上呈现的映像的情况;但在这种情况下，应确保根据用户的偏好正确地本地化下载的映像。
 
 ## <a name="localization"></a>本地化
 
-一旦你已配置你的解决方案，翻译人员将需要处理你 **.strings**文件和你想要支持每种语言的映像。
+配置解决方案后，翻译人员需要为要支持的每种语言处理**字符串**文件和映像。
 
-您可以创建任意多个 **.lproj**作为你的目录需要 （一个用于每个受支持的语言）。 它们被命名为使用语言代码，如**en**， **es**， **de**，**日本**， **PT**，等等。 （对于英语西班牙语、 德语、 日语和葡萄牙语 （巴西） 分别)。
+你可以根据需要创建任意数量的**lproj**目录（每种支持的语言都有一个）。 它们使用语言代码（如**en**、 **es**、 **de**、 **ja**、 **pt-BR**等）进行命名，分别用于英语、西班牙语、德语、日语和葡萄牙语（巴西）。
 
-附加的示例使用 （计算机生成） 翻译来演示如何 watchOS 应用程序进行本地化。
+附加示例使用（计算机生成的）翻译演示如何本地化 watchOS 应用。
 
-### <a name="watch-app"></a>Watch 应用
+### <a name="watch-app"></a>观看应用
 
-使用这些值将监视应用的情节提要中定义的用户界面。 *键*值是每个情节提要控件的组合**本地化 ID**和要转换的属性。
+这些值用于转换在手表应用的情节提要中定义的用户界面。 *键值*是每个情节提要控件的**本地化 ID**和要翻译的属性的组合。
 
-建议添加注释，以便翻译人员知道转换应为包含的文件的原始文本。
+建议将包含原始文本的注释添加到文件中，以使翻译人员知道转换内容。
 
-#### <a name="eslprojinterfacestrings"></a>es.lproj/Interface.strings
+#### <a name="eslprojinterfacestrings"></a>lproj/Interface
 
-下面显示了情节提要 （机器翻译） 西班牙语语言字符串。 最好将注释添加到每个行，因为很难知道**本地化 ID**否则指：
+下面显示了情节提要的（机器翻译的）西班牙语语言字符串。 向每一行添加注释会很有帮助，因为很难知道**本地化 ID**所引用的内容：
 
 ```csharp
 "AgC-eL-Hgc.title" = "Spanish"; // app screen heading
@@ -172,11 +172,11 @@ displayText.SetText (localizedDisplay);
 
 ### <a name="watch-extension"></a>监视扩展
 
-在代码中使用这些值将转换之前向用户显示的信息。 *密钥*时，他们在编写的代码中，选择由开发人员，并且通常包含要转换的实际字符串。
+在代码中使用这些值来转换信息，然后将信息显示给用户。 当开发人员在编写代码时选择该*密钥*，通常包含要翻译的实际字符串。
 
-#### <a name="eslprojlocalizablestrings-file"></a>es.lproj/Localizable.strings 文件
+#### <a name="eslprojlocalizablestrings-file"></a>lproj/可本地化的字符串文件
 
-（机器翻译） Spansish 语言字符串：
+（机器翻译的） Spansish 语言字符串：
 
 ```csharp
 "Breakfast time" = "la hora del desayuno"; // morning
@@ -187,19 +187,19 @@ displayText.SetText (localizedDisplay);
 
 ## <a name="testing"></a>正在测试
 
-要更改语言首选项的方法而异的模拟器和物理设备。
+更改语言首选项的方法在模拟器和物理设备之间有所不同。
 
 ### <a name="simulator"></a>模拟器
 
-在模拟器中，选择要使用 iOS 进行测试的语言**设置**应用 （模拟器主屏幕中的灰色齿轮图标）。
+在模拟器上，选择要使用 iOS "**设置**" 应用测试的语言（模拟器主屏幕中的灰色齿轮图标）。
 
-  ![](localization-images/sim-settings-sml.png "IOS 设置应用程序本地化设置")
+  ![](localization-images/sim-settings-sml.png "The iOS Settings app Localization settings")
 
 ### <a name="watch-device"></a>监视设备
 
-当测试监视时，更改手表的语言**Apple Watch**配对的 iPhone 上的应用。
+使用 "监视" 进行测试时，请在配对的 iPhone 上更改**Apple Watch**应用中的手表语言。
 
-  ![](localization-images/phone-settings-sml.png "更改配对的 iPhone 上的 Apple Watch 应用中监视的语言")
+  ![](localization-images/phone-settings-sml.png "Change the watch's language in the Apple Watch app on the paired iPhone")
 
 ## <a name="related-links"></a>相关链接
 

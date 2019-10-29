@@ -4,15 +4,15 @@ description: 引入 Google 的 Android 磨损后，在开发强大的 Android �
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 3b1d27b1489cb71d4bd1922c2de993567ddf36bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758501"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028611"
 ---
 # <a name="introduction-to-android-wear"></a>Android 穿戴设备简介
 
@@ -44,7 +44,7 @@ Android 磨损具有与 Android 手持应用不同的用户界面模式。 第�
 
 ### <a name="user-interface"></a>用户界面
 
-磨损的主导航模式是垂直排列的一系列纸牌。 其中每个卡都可以具有在同一行中分层的相关操作。 @No__t_0 类提供此功能;它遵循与 `ListView` 相同的适配器概念。 您通常将 `GridViewPager` 与 `FragmentGridPagerAdaptor` （或 `GridPagerAdaptor`）关联，使您可以将每个行和列单元格表示为 `Fragment`： 
+磨损的主导航模式是垂直排列的一系列纸牌。 其中每个卡都可以具有在同一行中分层的相关操作。 `GridViewPager` 类提供此功能;它遵循与 `ListView`相同的适配器概念。 您通常将 `GridViewPager` 与 `FragmentGridPagerAdaptor` （或 `GridPagerAdaptor`）关联，使您可以将每个行和列单元格表示为 `Fragment`： 
 
 [![磨损导航](intro-to-wear-images/2d-picker-sml.png "磨损导航")](intro-to-wear-images/2d-picker.png#lightbox)
 
@@ -152,17 +152,17 @@ Android 磨损2.0 应用可独立于手持应用工作。 例如，这意味着�
 下面是可以运行 Android 磨损的设备的一些示例：
 
 - [Motorola 360](https://moto360.motorola.com/)
-- [LG G Watch](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-- [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
-- [Samsung 齿轮](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-- [索尼 SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-- [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+- [LG G Watch](https://www.lg.com/us/smart-watches/lg-W100-g-watch)
+- [LG G Watch R](https://www.lg.com/us/smartwatch/g-watch-r)
+- [Samsung 齿轮](https://www.samsung.com/global/microsite/gear/gearlive_design.html)
+- [索尼 SmartWatch 3](https://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+- [ASUS ZenWatch](https://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 ## <a name="further-reading"></a>其他阅读材料
 
 查看 Google 的 Android 磨损文档：
 
-- [关于 Android 磨损](http://www.android.com/wear/)
+- [关于 Android 磨损](https://www.android.com/wear/)
 - [Android 应用程序设计](https://developer.android.com/design/wear/index.html)
 - [可穿戴库](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 - [Android 磨损2。0](https://developer.android.com/wear/preview/index.html)

@@ -4,15 +4,15 @@ description: 本文介绍了如何在 Xamarin 应用程序中使用情节提要�
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770050"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026137"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的情节提要简介
 
@@ -20,7 +20,7 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 利用情节提要，你可以为 Xamarin 应用程序开发一个用户界面，该用户界面不仅包括窗口定义和控件，而且还包含不同窗口（通过 segue）和视图状态之间的链接。
 
-[![](images/intro01.png "Xcode 中的示例 UI")](images/intro01.png#lightbox)
+[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
 
 本文将介绍如何使用情节提要定义 Xamarin 应用程序的用户界面。
 
@@ -36,11 +36,11 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 如上所述，情节提要将给定应用的所有 UI 定义为细分为其_视图控制器_的功能概述。 在 Xcode 的 Interface Builder 中，其中每个控制器都位于其自身的_场景_中。
 
-[![](images/intro02.png "示例视图控制器")](images/intro02.png#lightbox)
+[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
 
 每个场景表示给定的视图和视图控制器对，其中包含一组用于连接 UI 中的每个场景的线条（称为 Segue），从而显示其关系。 某些 Segue 定义了一个视图控制器如何包含一个或多个子视图或视图控制器。 其他 Segue，定义视图控制器之间的转换（例如显示 segue 或对话框）。 
 
-[![](images/intro03.png "示例 segue")](images/intro03.png#lightbox)
+[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
 
 要注意的最重要的一点是，每个 Segue 表示应用 UI 的给定元素之间某种形式的数据流。
 
@@ -50,11 +50,11 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 视图控制器定义 Mac 应用内的给定信息视图与提供该信息的数据模型之间的关系。 情节提要中的每个顶层场景都代表 Xamarin 应用程序代码中的一个视图控制器。
 
-[![](images/intro04.png "示例单视图控制器")](images/intro04.png#lightbox)
+[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
 
 通过这种方式，每个视图控制器都是一种独立的、可重复使用的信息的可视化表示形式（视图）和逻辑，用于显示和控制该信息。
 
-在给定场景中，您可以执行通常由单个`.xib`文件处理的所有操作： 
+在给定场景中，您可以执行通常由单个 `.xib` 文件处理的所有操作： 
 
 - 放置子视图和控件（如按钮和文本框）。
 - 定义元素位置和自动布局约束。
@@ -70,7 +70,7 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 对于 macOS 的倾向，在某些情况下，使用_演示 segue_ ，如模式窗口、工作表视图和 Popovers。
 
-使用 presentation segue 时，可以重写`PrepareForSegue`用于显示的父视图控制器的方法来初始化和变量，并向显示的视图控制器提供任何数据。
+使用 Presentation Segue 时，可以重写父视图控制器的 `PrepareForSegue` 方法以进行演示，以便初始化和变量并向所提供的视图控制器提供任何数据。
 
 <a name="Design-and-Run-Times" />
 

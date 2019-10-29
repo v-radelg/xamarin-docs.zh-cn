@@ -3,15 +3,15 @@ title: Xamarin Profiler
 description: 本指南将探讨 Xamarin Profiler 的主要功能。 它查看探查器、分析和使用的时间，以及用于分析 Xamarin 应用程序的标准工作流。
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: b567985fcfd9e133587c5c285e17d21465fda659
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250078"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019399"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -55,11 +55,11 @@ Xamarin Profiler 为开发人员提供了一种方法，用于分析 Visual Stud
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-目前，Xamarin Profiler 可用于测试 Mac 上的 Xamarin、Xamarin 和 Xamarin 应用程序（通过 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio for Mac 启动之外，它还可用作独立的应用程序，以检查从`.mlpd` [mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和文件。
+目前，Xamarin Profiler 可用于测试 Mac 上的 Xamarin、Xamarin 和 Xamarin 应用程序（通过 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio for Mac 启动之外，它还可用作独立的应用程序来检查从[mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和 `.mlpd` 文件。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-目前，Xamarin Profiler 可用于在 Windows 上测试 Xamarin Android 应用（通过 Visual Studio 和 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio 启动以外，它还可以用作独立的应用程序，以检查从`.mlpd` [mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和文件。
+目前，Xamarin Profiler 可用于在 Windows 上测试 Xamarin Android 应用（通过 Visual Studio 和 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio 启动以外，它还可用作独立的应用程序，用于检查从[mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和 `.mlpd` 文件。
 
 -----
 
@@ -186,11 +186,11 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Visual Studio for Mac 中的探查器部分](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[Visual Studio for Mac 中的![探查器部分](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Visual Studio 中的探查器部分](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[Visual Studio 中的![探查器部分](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -198,7 +198,7 @@ Xamarin Profiler 由五个部分组成，如下所示：
 - **检测列表**–此列表列出为分析会话加载的所有仪器。
 - **绘图图**–这些图表水平与检测列表中的相关乐器相关。 可以使用滑块（在时间探查器下显示）来更改刻度。
 - **检测详细信息区域**-包含当前乐器的选定视图显示的数据。 在下面的部分中，我们将更详细地介绍这些视图。
-- **检查器视图**–其中包含可由分段控件选择的部分。 这些部分依赖于所选乐器，并包括：配置设置、统计信息、堆栈跟踪信息和根的路径。
+- **检查器视图**–其中包含可由分段控件选择的部分。 这些部分依赖于所选检测，其中包括：配置设置、统计信息、堆栈跟踪信息和根的路径。
 
 ### <a name="allocations"></a>分摊
 
@@ -222,11 +222,11 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![分配选项卡](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [![分配 "选项卡](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![分配选项卡](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [![分配 "选项卡](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![快照选项卡](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [![快照 "选项卡](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![快照选项卡](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [![快照 "选项卡](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 

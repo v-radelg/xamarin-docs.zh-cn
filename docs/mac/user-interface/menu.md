@@ -4,15 +4,15 @@ description: 本文介绍如何在 Xamarin. Mac 应用程序中使用菜单。 �
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 7cca5be2ea13deb17b27e5452df389a998c6eb09
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770989"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026170"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin 中的菜单
 
@@ -197,7 +197,7 @@ void OpenDialog (NSObject sender)
 
 现在，让我们运行应用程序，然后打开 "**文件**" 菜单： 
 
-![文件 菜单](menu-images/appmenu09.png "文件 菜单")
+!["文件" 菜单](menu-images/appmenu09.png ""文件" 菜单")
 
 请注意，"**打开**" 菜单项现已启用。 如果选择它，将显示 "打开" 对话框：
 
@@ -207,7 +207,7 @@ void OpenDialog (NSObject sender)
 
 ![示例对话框消息](menu-images/appmenu11.png "示例对话框消息")
 
-此处的关键行是 `[Export ("openDocument:")]` 的，它会告知 `NSMenu` 我们的**AppDelegate**具有响应 `openDocument:` 操作的方法 `void OpenDialog (NSObject sender)`。 如果你将从上面的内容中记住，默认情况下，"**打开**" 菜单项会自动连接到此操作 Interface Builder：
+此处的关键行是 `[Export ("openDocument:")]`的，它会告知 `NSMenu` 我们的**AppDelegate**具有响应 `openDocument:` 操作的方法 `void OpenDialog (NSObject sender)`。 如果你将从上面的内容中记住，默认情况下，"**打开**" 菜单项会自动连接到此操作 Interface Builder：
 
 [![查看附加的操作](menu-images/defaultbar03.png "查看附加的操作")](menu-images/defaultbar03-large.png#lightbox)
 
@@ -469,7 +469,7 @@ public void defineKeyword (NSObject sender) {
 
 对于我们的特定 Xamarin 应用程序，我们不会使用默认的 "**视图**" 菜单，因此我们要将其删除。 在 "**接口层次结构**" 中，选择作为主菜单栏一部分的 "**视图**" 菜单项：
 
-![选择 视图 菜单项](menu-images/maint02.png "选择 视图 菜单项")
+![选择 "视图" 菜单项](menu-images/maint02.png "选择 "视图" 菜单项")
 
 按 delete 或 backspace 删除菜单。 接下来，我们不会使用 "**格式**" 菜单中的所有项，而是希望在子菜单下移动要使用的项。 在 "**接口层次结构**" 中，选择以下菜单项：
 
@@ -485,11 +485,11 @@ public void defineKeyword (NSObject sender) {
 
 接下来，将**文本**子菜单从 "**格式**" 菜单中拖出，并将其放在 "**格式**" 菜单和 "**窗口**" 菜单之间的主菜单栏上：
 
-[![文本 菜单](menu-images/maint06.png "文本 菜单")](menu-images/maint06-large.png#lightbox)
+[!["文本" 菜单](menu-images/maint06.png ""文本" 菜单")](menu-images/maint06-large.png#lightbox)
 
 让我们返回 "**格式**" 菜单，并删除**字体**子菜单项。 接下来，选择 "**格式**" 菜单，然后将其重命名为 "Font"：
 
-[![字体 菜单](menu-images/maint07.png "字体 菜单")](menu-images/maint07-large.png#lightbox)
+[!["字体" 菜单](menu-images/maint07.png ""字体" 菜单")](menu-images/maint07-large.png#lightbox)
 
 接下来，让我们创建一个预定义短语的自定义菜单，该菜单将在选中时自动追加到文本视图中的文本上。 在 "**库" 检查器**底部的 "搜索" 框中，键入 "菜单"。 这样，就可以更轻松地查找和使用所有菜单 UI 元素：
 

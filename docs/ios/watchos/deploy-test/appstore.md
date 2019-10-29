@@ -4,15 +4,15 @@ description: 本文档介绍如何将用 Xamarin 生成的 watchOS 应用部署�
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 7b80573a728e1868254b5a89254ebc385b3baa12
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bbf580007f4d149501efe424f0e36178a49f6aa5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768078"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028374"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>将 watchOS 应用部署到 App Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "70768078"
 
 - 请确保：
   - 为你的项目创建的[**分发配置文件**](#provisioning)。
-  - IOS 父应用程序`MinimumOSVersion`的**部署目标**（）设置为**8.2**或更早版本（不支持8.3）。
+  - IOS 父应用程序的**部署目标**（`MinimumOSVersion`）已设置为**8.2**或更早版本（不支持8.3）。
 
 - 在[**ITunes Connect**](#iTunes_Connect)中：
 
@@ -39,7 +39,7 @@ ms.locfileid: "70768078"
   - 中转到 **> 组织**程序的窗口，然后选择 "**存档**"。
   - 从列表中选择应用程序和存档。
   - 同时**验证 ...** 存档。
-  - **提交...** 存档并遵循的步骤将上载到 iTunes 连接用于审查和批准。
+  - **提交 ...** 存档并按照步骤上传到 iTunes Connect 进行审阅和批准。
 
 阅读与以下各项相关的特定提示。 如果遇到问题，请参阅[故障排除](#troubleshooting)部分。
 
@@ -51,17 +51,17 @@ ms.locfileid: "70768078"
 
 如果你有通配符应用 ID，则*只需要一个配置文件*;但是，如果每个项目都有单独的应用 ID，则每个应用 ID 都需要一个预配配置文件：
 
-![](appstore-images/provisioningprofile-distribution-sml.png "App Store 分发配置文件")
+![](appstore-images/provisioningprofile-distribution-sml.png "The App Store Distribution profile")
 
 创建所有三个配置文件后，它们将显示在列表中。 请记住，下载并安装每个（通过双击此项）：
 
-![](appstore-images/provisioningprofiles-sml.png "可用配置文件列表")
+![](appstore-images/provisioningprofiles-sml.png "The list of available profiles")
 
 可以通过选择 "**生成 > IOS 捆绑签名**" 屏幕并选择 " **AppStore | iPhone** " 配置来验证 "**项目选项**" 中的预配配置文件。
 
 "**预配配置文件**" 列表将显示所有匹配的配置文件，你应在此下拉列表中看到已创建的匹配配置文件。
 
-![](appstore-images/options-selectprofile-sml.png "IOS 捆绑签名对话框")
+![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
 
 <a name="iTunes_Connect"/>
 
@@ -74,7 +74,7 @@ ms.locfileid: "70768078"
 
 在 iTunes Connect 中配置应用时，请不要忘记添加 "监视" 图标和屏幕截图：
 
-![](appstore-images/itunesconnect-watch-sml.png "ITunes Connect 中的 \"监视\" 图标和屏幕截图")
+![](appstore-images/itunesconnect-watch-sml.png "The Watch icon and screenshots in iTunes Connect")
 
 图标文件应为1024x1024 像素，并将在显示时应用圆形掩码。 图标不应具有 alpha 通道。
 
@@ -88,19 +88,19 @@ ms.locfileid: "70768078"
 
 1. 确保 iOS 应用是启动项目。 如果不是，请右键单击以设置它：
 
-   ![](appstore-images/xs-startup.png "设置启动项目")
+   ![](appstore-images/xs-startup.png "Setting the startup project")
 
 2. 选择 " **AppStore**生成配置"：
 
-   ![](appstore-images/xs-appstore.png "AppStore 生成配置")
+   ![](appstore-images/xs-appstore.png "The AppStore build configuration")
 
 3. 选择 "**生成 > 存档**" 菜单项以启动存档过程：
 
-   ![](appstore-images/xs-archive.png "\"生成\" 菜单")
+   ![](appstore-images/xs-archive.png "The Build menu")
 
 你还可以选择 "**查看 > 存档 ...** " 菜单项以查看之前创建的存档。
 
-  ![](appstore-images/xs-archives-sml.png "存档视图")
+  ![](appstore-images/xs-archives-sml.png "The Archives view")
 
 <a name="xcode" />
 
@@ -110,21 +110,21 @@ Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
 1. 启动 Xcode 并选择 " **Window > 组织**程序"：
 
-   ![](appstore-images/xc-organizer.png "\"窗口\" 菜单")
+   ![](appstore-images/xc-organizer.png "The Window menu")
 
 2. 切换到 "**存档**" 选项卡，然后选择已创建的存档 Visual Studio for Mac：
 
-   ![](appstore-images/xc-archives.png "\"存档\" 选项卡")
+   ![](appstore-images/xc-archives.png "The Archives tab")
 
 3. 选择 "**验证**"，然后选择 "**提交 ...** "，将应用上传到 iTunes Connect。
 
 4. 选择开发团队（如果你属于多个），然后确认提交：
 
-   ![](appstore-images/xc-submit1.png "\"开发团队\" 部分")
+   ![](appstore-images/xc-submit1.png "The development team section")
 
 5. 再次访问 iTunes Connect，查看上传的二进制文件。 请访问应用的 "配置" 页，然后从顶部菜单中选择 "**预发行**"，查看 "**生成**" 列表：
 
-   [![](appstore-images/itc-prerelease-sml.png "ITunes Connect 中的 \"应用\" 配置页")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "The apps configuration page in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 然后，你可以在 "**版本**" 页上提交要审批的应用。 有关详细信息，请参阅[iOS 应用分发概述](~/ios/deploy-test/app-distribution/index.md)。
 

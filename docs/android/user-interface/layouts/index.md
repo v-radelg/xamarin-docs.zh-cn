@@ -4,15 +4,15 @@ description: 定义 Xamarin Android 应用的视觉对象结构
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/18/2017
-ms.openlocfilehash: 60752760415bd416d339cc2a3729075b4fca0d32
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f15aeff8590cf6d82168fd3e39ba6f78d649d2ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764465"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028967"
 ---
 # <a name="xamarinandroid-layouts"></a>Xamarin Android 布局
 
@@ -34,7 +34,7 @@ ms.locfileid: "70764465"
 
     ![示例 Recycler 视图](images/recycler-view.png)
 
-- [ListView](~/android/user-interface/layouts/list-view/index.md)是创建可滚动项列表的视图组。 列表项自动使用列表适配器插入列表中。 `ListView`是 Android 应用程序的重要 UI 组件，因为它可用于从菜单选项的简短列表到长列表的联系人或 internet 收藏夹。 它提供了一种简单的方法来显示可使用内置样式或广泛自定义的行的滚动列表。 ListView 实例需要适配器，以便将其与行视图中包含的数据一起馈送。
+- [ListView](~/android/user-interface/layouts/list-view/index.md)是创建可滚动项列表的视图组。 列表项自动使用列表适配器插入列表中。 `ListView` 是 Android 应用程序的重要 UI 组件，因为它可用于从菜单选项的简短列表到长列表的联系人或 internet 收藏夹。 它提供了一种简单的方法来显示可使用内置样式或广泛自定义的行的滚动列表。 ListView 实例需要适配器，以便将其与行视图中包含的数据一起馈送。
 
     ![示例列表视图](images/list-view.png)
 

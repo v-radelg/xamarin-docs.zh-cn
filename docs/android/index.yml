@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.Android
 metadata:
   description: Xamarin.Android 为 .NET 开发人员提供了完整的 Android SDK。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/27/2018
   ms.topic: landing-page
   ms.technology: xamarin-android

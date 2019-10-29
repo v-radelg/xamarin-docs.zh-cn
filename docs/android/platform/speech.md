@@ -4,15 +4,15 @@ description: 本文介绍使用非常强大的 Android. 语音命名空间的基
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/02/2018
-ms.openlocfilehash: 14cce06399b804ba8fd982a40347fb3146b281c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757413"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019758"
 ---
 # <a name="android-speech"></a>Android 语音
 
@@ -24,7 +24,7 @@ _本文介绍使用非常强大的 Android. 语音命名空间的基本知识。
 
 例如，在移动电话上，使用此夹具时，用户需要一种手动操作设备的方式。 不同 Android 外形规格的很多（如 Android 磨损）以及能够使用 Android 设备（如平板电脑和便笺垫）的不断扩大的包含在很大的 TTS 应用程序上。
 
-Google 向开发人员提供了一组丰富的 Api，这些 Api 位于 Android. Speech 命名空间中，涵盖使设备 "语音识别" （如为盲设计的软件）的大多数实例。  命名空间包括允许文本转换为语音`Android.Speech.Tts`的工具、控制用于执行转换的引擎，以及允许将语音转换为文本的一`RecognizerIntent`系列。
+Google 向开发人员提供了一组丰富的 Api，这些 Api 位于 Android. Speech 命名空间中，涵盖使设备 "语音识别" （如为盲设计的软件）的大多数实例。  命名空间包含的工具允许通过 `Android.Speech.Tts`将文本转换为语音，并控制用于执行转换的引擎，以及允许将语音转换为文本的多个 `RecognizerIntent`。
 
 虽然设备可供理解，但根据所使用的硬件存在一些限制。 设备在每种语言中都能成功解释每个语言的内容。
 
@@ -32,7 +32,7 @@ Google 向开发人员提供了一组丰富的 Api，这些 Api 位于 Android. 
 
 除了具有麦克风和扬声器的设备之外，本指南没有特殊要求。
 
-用于解释语音的 Android 设备的核心是使用`Intent`与相应`OnActivityResult`的。
+用于解释语音的 Android 设备的核心是使用具有相应 `OnActivityResult`的 `Intent`。
 但这一点很重要，那就是认识到语音不理解，但解释为文本。 差别很重要。
 
 ### <a name="the-difference-between-understanding-and-interpreting"></a>理解与解释之间的区别
@@ -69,7 +69,7 @@ if (rec != "android.hardware.microphone")
 
 ### <a name="creating-the-intent"></a>创建意向
 
-语音系统的目的是使用一种特定类型的意向`RecognizerIntent`。 此方法控制大量参数，包括无提示等待多长时间，直到记录被视为覆盖为止、识别和输出的任何其他语言以及要在`Intent`的模式对话框中包含的任何文本作为说明。 在此代码段`VOICE`中， `readonly int`是用于中`OnActivityResult`的识别的。
+语音系统的意图使用称为 `RecognizerIntent`的特定意向。 此方法控制大量参数，包括在记录被视为之前要等待的持续时间、要识别和输出的任何其他语言以及要在 `Intent`模式对话框中包含的任何文本作为说明。 在此代码段中，`VOICE` 是用于在 `OnActivityResult`中进行识别的 `readonly int`。
 
 ```csharp
 var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
@@ -85,11 +85,11 @@ StartActivityForResult(voiceIntent, VOICE);
 
 ### <a name="conversion-of-the-speech"></a>语音转换
 
-将在`Intent`中传递从语音解释的文本，该文本在活动完成并且通过`GetStringArrayListExtra(RecognizerIntent.ExtraResults)`访问时返回。 这会返回一个`IList<string>`，该索引可以根据调用方意向中所请求的语言数（ `RecognizerIntent.ExtraMaxResults`在中指定）来使用和显示索引。 不过，对于任何列表，都需要进行检查以确保存在要显示的数据。
+将在 `Intent`中传递从语音解释的文本，该文本在活动完成并且通过 `GetStringArrayListExtra(RecognizerIntent.ExtraResults)`访问时返回。 这会返回一个 `IList<string>`，该索引可用于使用和显示索引，具体取决于调用方意向中所请求的语言数（在 `RecognizerIntent.ExtraMaxResults`中指定）。 不过，对于任何列表，都需要进行检查以确保存在要显示的数据。
 
-在侦听的返回值`StartActivityForResult`时`OnActivityResult` ，必须提供方法。
+侦听 `StartActivityForResult`的返回值时，必须提供 `OnActivityResult` 方法。
 
-在下面的示例中`textBox` ，是`TextBox`用于输出所听写内容的。 它可以同样用于将文本传递到某种形式的解释器，并通过它将文本和分支与应用程序的其他部分进行比较。
+在下面的示例中，`textBox` 是用于输出所听写内容的 `TextBox`。 它可以同样用于将文本传递到某种形式的解释器，并通过它将文本和分支与应用程序的其他部分进行比较。
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultVal, Intent data)
@@ -131,13 +131,13 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 ### <a name="step-1---instantiating-texttospeech"></a>步骤 1-实例化 TextToSpeech
 
-`TextToSpeech`最多可使用3个参数，第三个参数是必需的，第三`AppContext`个`IOnInitListener`参数`engine`是可选的（、、）。 侦听器用于绑定到服务，并测试引擎是否有任何可用的 Android 文本到语音引擎。 设备至少会有 Google 自己的引擎。
+`TextToSpeech` 最多可能需要3个参数，第三个参数是可选的（`AppContext`、`IOnInitListener``engine`）。 侦听器用于绑定到服务，并测试引擎是否有任何可用的 Android 文本到语音引擎。 设备至少会有 Google 自己的引擎。
 
 ### <a name="step-2---finding-the-languages-available"></a>步骤 2-查找可用的语言
 
-类包含一个名`GetAvailableLocales()`为的有用方法。 `Java.Util.Locale` 然后，可以根据安装的语言对此语音引擎支持的语言列表进行测试。
+`Java.Util.Locale` 类包含一个名为 `GetAvailableLocales()`的有用方法。 然后，可以根据安装的语言对此语音引擎支持的语言列表进行测试。
 
-生成 "理解的" 语言的列表是一件简单的事情。 始终会出现默认语言（用户首次设置其设备时设置的语言），因此在此示例`List<string>`中，将 "默认" 设置为第一个参数，并根据的结果`textToSpeech.IsLanguageAvailable(locale)`填充列表的其余部分。
+生成 "理解的" 语言的列表是一件简单的事情。 始终会出现默认语言（用户首次设置其设备时设置的语言），因此在此示例中，`List<string>` 的第一个参数为 "Default"，则根据 `textToSpeech.IsLanguageAvailable(locale)`的结果，将填充列表的其余部分。
 
 ```csharp
 var langAvailable = new List<string>{ "Default" };
@@ -162,19 +162,19 @@ langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
 此代码调用[TextToSpeech](xref:Android.Speech.Tts.TextToSpeech.IsLanguageAvailable*)来测试给定区域设置的语言包是否已存在于设备上。
-此方法返回一个[LanguageAvailableResult](xref:Android.Speech.Tts.LanguageAvailableResult)，该方法指示通过的区域设置的语言是否可用。 如果`LanguageAvailableResult`指示语言为`NotSupported`，则表示该语言没有可用的语音包（甚至对于下载）。 如果`LanguageAvailableResult`设置为`MissingData`，则可以下载新的语言包，如下面的步骤4所述。
+此方法返回一个[LanguageAvailableResult](xref:Android.Speech.Tts.LanguageAvailableResult)，该方法指示通过的区域设置的语言是否可用。 如果 `LanguageAvailableResult` 指示语言 `NotSupported`，则表明该语言没有可用的语音包（甚至出于下载）。 如果 `LanguageAvailableResult` 设置为 `MissingData`，则可以按照下面的步骤4中的说明下载新语言包。
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>步骤 3-设置速度和间距
 
-Android 允许用户通过更改`SpeechRate`与`Pitch` （语音的速度和音调）来更改语音声音。 这从0到1，对于这两个，"正常" 语音为1。
+Android 允许用户通过更改 `SpeechRate` 和 `Pitch` （语音的速度和音调）来更改语音声音。 这从0到1，对于这两个，"正常" 语音为1。
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>步骤 4-测试和加载新语言
 
-下载新语言是使用`Intent`执行的。 此意图的结果将导致调用[OnActivityResult](xref:Android.App.Activity.OnActivityResult*)方法。 与语音到文本示例（使用[RecognizerIntent](xref:Android.Speech.RecognizerIntent) `PutExtra`作为的`Intent`参数）不同，测试和加载`Intent`是`Action`基于的：
+下载新语言是通过使用 `Intent`来执行的。 此意图的结果将导致调用[OnActivityResult](xref:Android.App.Activity.OnActivityResult*)方法。 与语音到文本示例（使用[RecognizerIntent](xref:Android.Speech.RecognizerIntent)作为 `Intent`的 `PutExtra` 参数）不同，测试和加载 `Intent`是基于 `Action`的：
 
-- [TextToSpeech 在](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData)平台`TextToSpeech`引擎中启动一个活动，以验证设备上的语言资源的正确&ndash;安装和可用性。
+- [TextToSpeech](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) &ndash; 从平台 `TextToSpeech` 引擎启动一个活动，以验证设备上语言资源的正确安装和可用性。
 
-- [TextToSpeech.Engine.ActionInstallTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionInstallTtsData) &ndash; 启动一个活动, 该活动会提示用户下载所需的语言。
+- [TextToSpeech](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionInstallTtsData) &ndash; 启动一个活动，该活动会提示用户下载所需的语言。
 
 下面的代码示例演示如何使用这些操作来测试语言资源并下载一种新语言：
 
@@ -194,9 +194,9 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 }
 ```
 
-`TextToSpeech.Engine.ActionCheckTtsData`测试语言资源的可用性。 `OnActivityResult`此测试完成时将调用。 如果需要下载语言资源，请`OnActivityResult`触发`TextToSpeech.Engine.ActionInstallTtsData`操作以启动允许用户下载所需语言的活动。 请注意， `OnActivityResult`此实现不`Result`检查代码，因为在这个简化的示例中，已确定需要下载语言包。
+`TextToSpeech.Engine.ActionCheckTtsData` 测试语言资源的可用性。 此测试完成后，将调用 `OnActivityResult`。 如果需要下载语言资源，`OnActivityResult` 会触发 `TextToSpeech.Engine.ActionInstallTtsData` 操作，以启动允许用户下载所需语言的活动。 请注意，此 `OnActivityResult` 实现不检查 `Result` 的代码，因为在这个简化的示例中，已确定需要下载语言包。
 
-此`TextToSpeech.Engine.ActionInstallTtsData`操作会使**Google TTS 语音数据**活动显示给用户，以便选择要下载的语言：
+`TextToSpeech.Engine.ActionInstallTtsData` 操作将导致向用户显示**GOOGLE TTS 语音数据**活动，以选择要下载的语言：
 
 ![Google TTS 语音数据活动](speech-images/01-google-tts-voice-data.png)
 
@@ -208,9 +208,9 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>步骤 5-IOnInitListener
 
-要使活动能够将文本转换为语音，必须实现接口方法`OnInit` （这是为`TextToSpeech`类的实例化指定的第二个参数）。 这会初始化侦听器并测试结果。
+要使活动能够将文本转换为语音，必须实现接口方法 `OnInit` （这是为 `TextToSpeech` 类的实例化指定的第二个参数）。 这会初始化侦听器并测试结果。
 
-侦听器应至少测试`OperationResult.Success`和。 `OperationResult.Failure`
+侦听器应至少测试 `OperationResult.Success` 和 `OperationResult.Failure`。
 下面的示例演示了这一点：
 
 ```csharp
@@ -231,7 +231,7 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [Xamarin. Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
 - [文本转语音（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
 - [语音到文本（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
 - [Android. 语音命名空间](xref:Android.Speech)

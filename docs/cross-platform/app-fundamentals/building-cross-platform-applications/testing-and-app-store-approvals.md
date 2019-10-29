@@ -3,15 +3,15 @@ title: 第 6 部分 - 测试和应用商店审批
 description: 本文档介绍如何在设备上测试跨平台应用程序，如何管理测试用例，自动执行测试，运行单元测试，以及如何完成应用提交过程。
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198432"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016844"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 测试和应用商店审批
 
@@ -56,9 +56,9 @@ Xamarin 包括一个名为 Touch 的单元测试框架，该框架遵循 JUnit/N
 
 有关编写测试和运行 Touch 的详细信息，请参阅我们[的对 Xamarin iOS 文档的单元测试](~/ios/deploy-test/touch.unit.md)。
 
-### <a name="andrunit"></a>Andr.Unit
+### <a name="andrunit"></a>Andr
 
-有一个面向 Touch 的开源等效项，它称为 Andr。 可以从[github](https://github.com/spouliot/Andr.Unit)下载该工具，并在[ @spouliot博客](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)上阅读有关该工具的信息。
+有一个面向 Touch 的开源等效项，它称为 Andr。 可以从[github](https://github.com/spouliot/Andr.Unit)下载该工具，并在[@spouliot的博客](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)上阅读有关该工具的信息。
 
 ## <a name="app-store-approvals"></a>App Store 审批
 
@@ -129,7 +129,7 @@ Windows 开发人员应同样小心;常见错误是无法根据 Microsoft 的指
 
 在应用程序的元数据中投入大量精力作为开发和测试。 在元数据中，应用程序确实会被 infringements，因此，有必要花时间获得正确的时间。
 
-### <a name="app-stores-not-for-everyone"></a>应用商店：并非适用于所有人
+### <a name="app-stores-not-for-everyone"></a>应用商店：不适用于所有人
 
 每个平台上的商店的主要重点是使用者分布，这就是尽可能多的客户。 但并不是所有的应用程序都以使用者为目标，而是需要向员工、供应商或客户提供有限限制的内部和 extranet 式应用程序的基础。 这些应用程序不是 "销售"，不需要审批，因为开发人员控制向一组已关闭的用户分发。
 对此类部署的支持因平台而异。

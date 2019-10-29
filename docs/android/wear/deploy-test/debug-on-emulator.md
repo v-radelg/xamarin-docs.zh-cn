@@ -4,15 +4,15 @@ description: 这些文章介绍了如何在模拟器上调试 Xamarin 应用程�
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: f085aaffbedb2965222b98a22cf6a4bb2393642b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca0a6884c05686bded25a2e515456ab192002a24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764040"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028687"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>在模拟器上调试 Android 磨损
 
@@ -28,7 +28,7 @@ _这些文章介绍了如何在模拟器上调试 Xamarin 应用程序应用程�
 
 创建磨损虚拟设备时，请选择 Android 磨损设备配置文件（例如**Android 磨损方形**）。 为了提高性能，请使用以下示例中所示的磨损**x86** CPU/ABI：
 
-[![磨损虚拟设备配置示例](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
+[![示例磨损虚拟设备配置](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 ## <a name="launch-the-wear-virtual-device"></a>启动磨损虚拟设备 
 

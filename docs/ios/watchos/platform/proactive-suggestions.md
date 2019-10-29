@@ -4,15 +4,15 @@ description: 本文介绍如何在 watchOS 3 应用程序中使用前瞻性建�
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8dc2150dbd07d05d037aa0e0917f49d467f6f1ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767779"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028199"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin 中的 watchOS 主动建议
 
@@ -22,17 +22,17 @@ _本文介绍如何在 watchOS 3 应用程序中使用前瞻性建议，使系�
 
 ## <a name="about-proactive-suggestions"></a>关于主动建议
 
-WatchOS 3 中`NSUserActivity`的新增功能包含`MapItem`一个属性，该属性允许应用程序提供可在其他上下文中使用的位置信息。 例如，如果显示 "酒店" 的应用查看并提供`MapItem`一个位置，则在用户切换到地图应用时，他们只是在其上查看的旅馆位置可用。
+WatchOS 3 中的新增功能 `NSUserActivity` 包含一个 `MapItem` 属性，该属性允许应用程序提供可在其他上下文中使用的位置信息。 例如，如果显示的应用程序审阅并提供 `MapItem` 位置，则在用户切换到 Maps 应用程序时，将提供他们只是查看的旅馆的位置。
 
-应用使用`NSUserActivity`、MapKit、Media Player 和 UIKit 等技术集合向系统公开此功能。 此外，通过提供对应用程序的主动建议支持，它会免费获得更深入的 Siri 集成。
+应用程序使用 `NSUserActivity`、MapKit、Media Player 和 UIKit 等技术集合向系统公开此功能。 此外，通过提供对应用程序的主动建议支持，它会免费获得更深入的 Siri 集成。
 
 ## <a name="location-based-suggestions"></a>基于位置的建议
 
-WatchOS 3 的`NSUserActivity`新手，该类包含一个`MapItem`属性，该属性允许开发人员提供可在其他上下文中使用的位置信息。 例如，如果应用显示餐馆评论，开发人员可将`MapItem`属性设置为用户在应用中查看的餐馆的位置。 如果用户切换到 Maps 应用，则餐馆的位置会自动可用。
+WatchOS 3 中 `NSUserActivity` 的新功能包括一个 `MapItem` 属性，该属性允许开发人员提供可在其他上下文中使用的位置信息。 例如，如果应用显示餐馆评论，开发人员可以将 `MapItem` 属性设置为用户在应用中查看的餐馆的位置。 如果用户切换到 Maps 应用，则餐馆的位置会自动可用。
 
-如果应用支持应用搜索，则可以使用`CSSearchableItemAttributesSet`类的新地址组件来指定用户可能想要访问的位置。 通过设置`MapItem`属性，其他属性会自动填充。
+如果应用支持应用搜索，则可以使用 `CSSearchableItemAttributesSet` 类的新地址组件来指定用户可能想要访问的位置。 通过设置 `MapItem` 属性，其他属性会自动填充。
 
-除了设置 address 组件属性`Latitude`的`Longitude`和以外，还建议应用还提供`NamedLocation`和`PhoneNumbers`属性，因此 Siri 可以启动对该位置的调用。
+除了设置 address 组件属性的 `Latitude` 和 `Longitude` 以外，还建议应用提供 `NamedLocation` 和 `PhoneNumbers` 属性，因此 Siri 可以启动对该位置的调用。
 
 ## <a name="contextual-siri-reminders"></a>上下文 Siri 提醒
 
@@ -49,29 +49,29 @@ WatchOS 3 的`NSUserActivity`新手，该类包含一个`MapItem`属性，该属
 
 在应用程序中，通过实现以下内容来支持和：
 
-- IOS 10 `NSUserActivity`中的**上下文 Siri 提醒**已扩展为允许 Siri 快速提醒查看当前在应用程序中查看的内容。
-- **位置建议**-iOS 10 增强`NSUserActivity`了捕获在应用内查看的位置，并在整个系统的多个位置中进行升级。
-- **上下文 Siri**  -  请求`NSUserActivity`为在应用内提供的信息提供上下文以 Siri，以便用户可以在应用内从应用程序中获取或调用 Siri。
+- **上下文 Siri 提醒**-在 iOS 10 中，`NSUserActivity` 已扩展为允许 Siri 快速提醒查看当前在应用程序中查看的内容。
+- **位置建议**-iOS 10 增强了 `NSUserActivity` 来捕获在应用内查看的位置，并在整个系统的多个位置中进行升级。
+- **上下文 Siri 请求** - `NSUserActivity` 为在应用内提供的信息提供上下文以 Siri，使用户可以从应用内访问 Siri。
 
-所有这些功能都有一个共同之处，它们都使用`NSUserActivity`一种窗体或其他功能来提供其功能。 
+所有这些功能都有一个共同之处，它们都使用同一形式的 `NSUserActivity`，以提供其功能。 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-如上所述， `NSUserActivity`帮助系统了解用户当前在屏幕上使用的信息。 `NSUserActivity`是一种轻型状态缓存机制，用于在用户浏览应用时捕获用户的活动。 例如，查看餐馆应用：
+如上所述，`NSUserActivity` 帮助系统了解用户当前在屏幕上使用的信息。 `NSUserActivity` 是一种轻型状态缓存机制，用于在用户浏览应用时捕获用户的活动。 例如，查看餐馆应用：
 
-[![](proactive-suggestions-images/activity02.png "餐馆应用")](proactive-suggestions-images/activity02.png#lightbox)
+[![](proactive-suggestions-images/activity02.png "The restaurant app")](proactive-suggestions-images/activity02.png#lightbox)
 
 具有以下交互：
 
-1. 用户使用应用时，会创建一个， `NSUserActivity`以便在以后重新创建该应用的状态。
+1. 用户使用应用时，将创建一个 `NSUserActivity` 以后重新创建应用的状态。
 2. 如果用户搜索餐馆，则会遵循相同的创建活动模式。
 3. 再次查看结果时。 在最后一种情况下，用户正在查看某个位置，在 iOS 10 中，系统更了解某些概念（如位置或通信交互）。
 
 仔细查看最后一个屏幕：
 
-[![](proactive-suggestions-images/activity03.png "NSUserActivity 有效负载")](proactive-suggestions-images/activity03.png#lightbox)
+[![](proactive-suggestions-images/activity03.png "The NSUserActivity payload")](proactive-suggestions-images/activity03.png#lightbox)
 
-此时，该应用程序正在`NSUserActivity`创建，并且已填充了信息以便以后重新创建状态。 该应用程序还包含某些元数据，如位置的名称和地址。 创建此活动后，应用程序会让 iOS 知道它代表用户的当前状态。
+此时，该应用正在创建 `NSUserActivity`，并填充了信息以在以后重新创建该状态。 该应用程序还包含某些元数据，如位置的名称和地址。 创建此活动后，应用程序会让 iOS 知道它代表用户的当前状态。
 
 然后，该应用会确定是否会通过无线方式播发活动，并将其保存为位置建议的临时值，或添加到设备聚焦索引以在搜索结果中显示。
 
@@ -79,7 +79,7 @@ WatchOS 3 的`NSUserActivity`新手，该类包含一个`MapItem`属性，该属
 
 ### <a name="creating-an-activity"></a>创建活动
 
-创建活动之前，需要创建一个活动类型标识符来识别它。 活动类型标识符是添加到`NSUserActivityTypes` `Info.plist`应用文件（用于唯一标识给定用户活动类型）数组的短字符串。 对于应用程序支持的每个活动，数组中将有一个条目，并将其公开给应用搜索。 有关更多详细信息，请参阅[创建活动类型标识符引用](~/ios/platform/search/nsuseractivity.md)。
+创建活动之前，需要创建一个活动类型标识符来识别它。 活动类型标识符是添加到用于唯一标识给定用户活动类型的应用 `Info.plist` 文件 `NSUserActivityTypes` 数组中的短字符串。 对于应用程序支持的每个活动，数组中将有一个条目，并将其公开给应用搜索。 有关更多详细信息，请参阅[创建活动类型标识符引用](~/ios/platform/search/nsuseractivity.md)。
 
 查看活动示例：
 
@@ -130,7 +130,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>还原活动
 
-若要对应用程序点击搜索结果（`NSUserActivity`），请编辑**AppDelegate.cs** `ContinueUserActivity`文件并重写方法。 例如:
+若要响应用户点击应用的搜索结果（`NSUserActivity`），请编辑**AppDelegate.cs**文件并重写 `ContinueUserActivity` 方法。 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -147,7 +147,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-确保这与上面创建的活动具有相同`com.xamarin.platform`的活动类型标识符（）。 应用使用存储在中`NSUserActivity`的信息将状态还原回用户离开的位置。
+确保这与上面创建的活动具有相同的活动类型标识符（`com.xamarin.platform`）。 应用使用存储在 `NSUserActivity` 中的信息将状态还原到用户离开的位置。
 
 ### <a name="benefits-of-creating-an-activity"></a>创建活动的好处
 
@@ -164,18 +164,18 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 ### <a name="location-based-suggestions"></a>基于位置的建议 
 
-请看上方餐馆搜索应用的示例。 如果它已经实现`NSUserActivity`并正确填充了所有的元数据和属性，则用户将能够执行以下操作：
+请看上方餐馆搜索应用的示例。 如果已实现 `NSUserActivity` 并正确填充了所有的元数据和属性，则用户将能够执行以下操作：
 
 1. 在应用程序中查找要与朋友见面的餐厅。
 2. 如果用户切换到 Maps 应用，则会自动将餐馆的地址建议为目标。
-3. 这也适用于第三方应用（支持`NSUserActivity`），因此，用户可以切换到 "应用商店" 应用，并自动将餐馆的地址作为目标提供。
+3. 这也适用于第三方应用（支持 `NSUserActivity`），因此用户可以切换到 "应用商店" 应用，并将餐馆的地址自动作为目标提供。
 4. 它还向 Siri 提供上下文，因此用户可以在餐馆应用中调用 Siri，并请求 *"获取行车路线 ..."* 和 Siri 将向用户正在查看的餐厅提供行车路线。
 
 上述所有功能都有一个共同之处，它们都表示建议最初来自何处。 在上述示例中，它是虚构的餐馆评论应用。
 
 watchOS 3 已得到了增强，可通过对现有框架进行几项小型修改和添加操作来为应用程序启用此功能：
 
-- `NSUserActivity`具有用于捕获在应用内查看的位置信息的附加字段。
+- `NSUserActivity` 包含用于捕获在应用内查看的位置信息的附加字段。
 - 已对 MapKit 和 CoreSpotlight 进行了几项添加以捕获位置。
 - 位置感知功能已添加到系统中的 Siri、Maps、多任务和其他应用。
 
@@ -211,7 +211,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 activity.BecomeCurrent();
 ```
 
-如果应用使用的是 MapKit，则只需要将当前地图`MKMapItem`添加到活动即可：
+如果应用使用的是 MapKit，则只需要将当前 `MKMapItem` 地图添加到活动中即可：
 
 ```csharp
 // Save MKMapItem location
@@ -278,7 +278,7 @@ attributes.SupportsNavigation = true;
 
 Apple 建议在使用活动时采用以下最佳做法：
 
-- `NeedsSave`用于迟缓负载更新。
+- 将 `NeedsSave` 用于迟缓负载更新。
 - 确保保持对当前活动的强引用。
 - 仅传输包含足够信息的小负载以还原状态。
 - 请确保活动类型标识符是唯一的，并使用反向 DNS 表示法指定它们进行描述性。 
@@ -289,14 +289,14 @@ Apple 建议在使用活动时采用以下最佳做法：
 
 ## <a name="routing-apps-and-locations-suggestions"></a>路由应用和位置建议
 
-本部分将直接查看路由应用中的使用位置建议。 为了使路由应用添加此功能，开发人员将利用现有`MKDirectionsRequest`框架，如下所示：
+本部分将直接查看路由应用中的使用位置建议。 为了使路由应用添加此功能，开发人员将利用现有 `MKDirectionsRequest` 框架，如下所示：
 
 - 在多任务中升级应用程序。
 - 将应用注册为路由应用。
-- 处理使用 MapKit `MKDirectionsRequest`对象启动应用程序的情况。
+- 使用 MapKit `MKDirectionsRequest` 对象处理启动应用。
 - 为 watchOS 提供根据用户参与建议应用的能力。
 
-当应用程序使用 MapKit `MKDirectionsRequest`对象启动时，它应自动开始向请求的位置提供用户指示，或提供一个用户界面，使用户能够轻松开始获取行车路线。 例如：
+当使用 MapKit `MKDirectionsRequest` 对象启动应用时，它应自动开始向请求的位置提供用户指示，或者提供一个 UI，使用户能够轻松开始获取行车路线。 例如:
 
 ```csharp
 using System;
@@ -339,7 +339,7 @@ namespace MonkeyChat
 if (MKDirectionsRequest.IsDirectionsRequestUrl(url)) {
 ```
 
-如果是，则它`MKDirectionsRequest`从 URL 创建：
+如果是，则它从 URL 创建 `MKDirectionsRequest`：
 
 ```csharp
 var request = new MKDirectionsRequest(url);

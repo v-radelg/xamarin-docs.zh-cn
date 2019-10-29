@@ -3,21 +3,21 @@ title: Microsoft Azure 和 Xamarin
 description: 本文档链接到有关 Visual Studio for Mac、Azure 移动应用、Active Directory 身份验证和 WebAPI 中的连接的服务的文档。
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/09/2017
-ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 273a1a8fec4cf40893ff94fef4b1394065a8547b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766103"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016612"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 和 Xamarin
 
-[![](images/evolve-mikej-azure-sml.png "Azure 应用 Services 功能易于添加到 Xamarin 应用，包括云数据存储和跨平台推送通知")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure App Services features are easy to add to Xamarin apps, including cloud data storage and cross-platform push notifications")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-[Evolve 2016：使用 Azure 和 Xamarin 开发已连接的应用](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[演化2016：使用 Azure 和 Xamarin 开发已连接的应用](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Visual Studio for Mac 中连接的服务
 
@@ -35,7 +35,7 @@ Xamarin 还提供适用于[iOS](https://www.nuget.org/packages/Xamarin.Azure.Not
 [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md)可用于通过[Xamarin. Auth 组件](https://www.nuget.org/packages/Xamarin.Auth/)登录 xamarin 应用中的用户。
 然后，应用程序可以访问其他服务，如 Office 365。
 
-## <a name="webapi"></a>WebAPI
+## <a name="webapi"></a>webAPI
 
 Microsoft 的 Web API 公开了类似于 REST 的接口，适用于 Xamarin 应用程序。
 可以轻松地启动[Azure 网站](https://trywebsites.azurewebsites.net/)并构建基于 WebAPI 的应用程序，以连接到 Xamarin 应用程序。
@@ -58,6 +58,6 @@ Microsoft 的 Web API 公开了类似于 REST 的接口，适用于 Xamarin 应�
 
 ## <a name="related-links"></a>相关链接
 
-- [Azure PCL 示例（按@paulbatum）（示例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
+- [Azure PCL 示例（通过 @paulbatum）（示例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
 - [Azure 门户](https://azure.microsoft.com/)
 - [适用于 Xamarin 的移动客户端（NuGet）](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

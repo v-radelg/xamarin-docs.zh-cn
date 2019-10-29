@@ -3,15 +3,15 @@ title: Microsoft Azure 移动应用
 description: 本文档链接到介绍如何构建连接到 Azure 的 Xamarin 应用的指南。 其中讨论了如何使用 Xamarin Azure 组件、用户和推送通知。
 ms.prod: xamarin
 ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/02/2017
-ms.openlocfilehash: 7d39615f20cdd52bb862d9ee998e9a45bbb6834e
-ms.sourcegitcommit: d116fdcad9f5f0587ce64749cd8d791eee87f8aa
+ms.openlocfilehash: 84517e4961dc3ad728b6cc352e9fb992d9e8b5bf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72246538"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016596"
 ---
 # <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure 移动应用
 
@@ -28,12 +28,12 @@ as https://developer xamarin com/guides/cross-platform/data-cloud/mobile-service
 A redirect has been put in place to /mobile-apps/ HOWEVER the /Resources/ .ZIP files are still located in /mobile-services/ so that the following permalinks don't break
 
 The ZIPs in /Resources/ are also referenced by inbound links
-Getting Started http://go.microsoft.com/fwlink/p/?LinkId=331359
-Get started with data http://go.microsoft.com/fwlink/p/?LinkId=331302
-Get started with push http://go.microsoft.com/fwlink/p/?LinkId=331303
-Get started with authentication http://go.microsoft.com/fwlink/p/?LinkId=331328
-Get started with Notification Hubs http://go.microsoft.com/fwlink/p/?LinkId=331329
-Validate and modify data  http://go.microsoft.com/fwlink/p/?LinkId=331330
+Getting Started https://go.microsoft.com/fwlink/p/?LinkId=331359
+Get started with data https://go.microsoft.com/fwlink/p/?LinkId=331302
+Get started with push https://go.microsoft.com/fwlink/p/?LinkId=331303
+Get started with authentication https://go.microsoft.com/fwlink/p/?LinkId=331328
+Get started with Notification Hubs https://go.microsoft.com/fwlink/p/?LinkId=331329
+Validate and modify data  https://go.microsoft.com/fwlink/p/?LinkId=331330
 -->
 
 这些链接适用于[Azure 移动应用](https://docs.microsoft.com/azure/app-service-mobile/)网站上提供的 Xamarin 文档。
@@ -48,8 +48,8 @@ Validate and modify data  http://go.microsoft.com/fwlink/p/?LinkId=331330
 本文提供了有关启动和运行第一个 Xamarin Azure 应用程序的分步说明。
 其中介绍了如何在门户中创建新的 Azure 移动应用，并下载并运行预配置的应用。
 
-- [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
-- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
+- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
+- [Outlook Web Access (OWA)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
 - [Xamarin.Forms](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started)
 
 <!--
@@ -74,28 +74,28 @@ A quick example of paging large sets of data using Skip() and Take().
 
 提供使用 Azure 移动服务配置和编码登录屏幕的完整说明。 支持的身份验证提供程序包括 Microsoft、Google、Facebook 和 Twitter。
 
-- [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
-- [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
+- [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
+- [Outlook Web Access (OWA)](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
 
 ## <a name="authorize-users-in-scripts"></a>在脚本中授权用户
 
 Javascript 后端的一些示例代码
 
-- [Todo.js](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)
+- [Todo](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)
 
 ## <a name="get-started-with-push"></a>推送入门
 
 有关在 Apple 和 Google 网站上配置推送通知的完整说明，然后从 Azure 移动服务向设备发送推送通知。
 
-- [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
-- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
+- [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
+- [Outlook Web Access (OWA)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
 
 ## <a name="get-started-with-notification-hubs"></a>通知中心入门
 
 有关在 Apple 和 Google 网站上配置推送通知的完整说明，请配置 Azure 通知中心，然后生成到设备的推送通知。
 
-- [iOS](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
-- [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
+- [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
+- [Outlook Web Access (OWA)](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
 
 ## <a name="related-links"></a>相关链接
 

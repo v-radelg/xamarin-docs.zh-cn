@@ -4,15 +4,15 @@ description: 如何设置屏幕锁定并在 Android 设备或模拟器上注册�
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f52be16a81f3c8047997e1f4a88e13f6b940db14
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c0290dfa3b4aa301a07a589f78577899e8282158
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756422"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027597"
 ---
 # <a name="enrolling-a-fingerprint"></a>注册指纹
 
@@ -46,7 +46,7 @@ Android Debug Bridge （ADB）的使用需要熟悉命令提示符，并且**ADB
 
 4. 在该处，按照顺序向设备添加指纹：
 
-    [![向设备添加指纹的屏幕截图序列](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
+    [用于向设备添加指纹的屏幕截图![序列](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
 5. 在最后一个屏幕中，系统会提示你将手指置于指纹扫描器上： 
 
@@ -56,13 +56,13 @@ Android Debug Bridge （ADB）的使用需要熟悉命令提示符，并且**ADB
 
 ### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>模拟模拟器上的指纹扫描
 
-在 Android 模拟器上，可以使用 Android Debug Bridge 来模拟指纹扫描。 在操作系统上，在 Windows 上启动终端会话启动命令提示符或 Powershell 会话并运行`adb`：
+在 Android 模拟器上，可以使用 Android Debug Bridge 来模拟指纹扫描。 在操作系统上，在 Windows 上启动终端会话启动命令提示符或 Powershell 会话并运行 `adb`：
 
 ```shell
 $ adb -e emu finger touch 1
 ```
 
-值**1**是已 "扫描" 的手指的_finger\_id_ 。 它是为每个虚拟指纹分配的唯一整数。 以后当应用程序运行时，你可以在每次模拟器提示你提供指纹时运行此相同的 ADB 命令，你可以运行`adb`命令并向其传递_finger\_id_以模拟指纹扫描。
+值**1**为 "已扫描" 手指 _\_id_ 。 它是为每个虚拟指纹分配的唯一整数。 以后当应用程序运行时，你可以在每次模拟器提示你提供指纹时运行此相同的 ADB 命令，你可以运行 `adb` 命令并向其传递_finger\_id_以模拟指纹扫描。
 
 指纹扫描完成后，Android 会通知你已添加指纹：  
 

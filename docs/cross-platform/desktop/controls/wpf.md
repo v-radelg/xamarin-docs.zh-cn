@@ -2,15 +2,15 @@
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: WPF 与 Xamarin：相似性 & 差异
 description: 本文档将 WPF 与 Xamarin 进行比较和对比。 它讨论了控制模板、XAML、绑定基础结构、数据模板、System.windows.controls.itemscontrol>、UserControl、导航和 URL 导航。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 798839457a418d457bac83e6e20397722423dbac
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71106035"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016489"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与 Xamarin：相似性 & 差异
 
@@ -52,7 +52,7 @@ Xamarin 支持通过标记扩展扩展 XAML，与 WPF 非常类似。 它具有�
 此外，它还包括 XAML 2009 规范 `{x:Reference}` 和 `{TemplateBinding}` 标记扩展，该扩展可用于 Xamarin 所支持的 `ControlTemplate` 专用版。
 
 > [!WARNING]
-> @No__t_0 支持不相同-即使它具有相同的名称。
+> `ControlTemplate` 支持不相同-即使它具有相同的名称。
 
 Xamarin 也支持自定义标记扩展，但实现略有不同。 在 WPF 中，必须派生自 `MarkupExtension` 抽象基类。 在 Xamarin 中，它被替换为接口 `IMarkupExtension` 或 `IMarkupExtension<T>` 更灵活。
 
@@ -116,7 +116,7 @@ Text={Binding RelativeSource={RelativeSource otherControl}, Path=Text}
 Text={Binding Source={x:Reference otherControl}, Path=Text}
 ```
 
-@No__t_0 功能可以使用相同的功能。 但是，不支持按类型（`{RelativeSource FindAncestor}`）查找上级。
+`{RelativeSource Self}` 功能可以使用相同的功能。 但是，不支持按类型（`{RelativeSource FindAncestor}`）查找上级。
 
 #### <a name="binding-context"></a>绑定上下文
 
@@ -149,7 +149,7 @@ Xamarin. Forms 绑定完全支持这两个接口。 与许多基于 XAML 的框�
 
 此外，它们与 WPF 对应项并不完全相同。
 
-1. @No__t_0 的根元素必须_始终_是 `ViewCell` 对象。
+1. `DataTemplate` 的根元素必须_始终_是 `ViewCell` 对象。
 2. 数据模板完全支持数据触发器，但必须包括一个 `DataType` 属性，该属性指示与触发器关联的属性的类型。
 3. `DataTemplateSelector` 也受支持，但派生自 `DataTemplate`，因此只是直接分配到 `ItemTemplate` 属性（与 `ItemTemplateSelector` 在 WPF 中）。
 
@@ -174,7 +174,7 @@ WPF 包含很少使用的 `NavigationService`，可用于提供类似于浏览�
 |制表符|TabbedPage|
 |向左或向右轻扫|CarouselView|
 
-@No__t_0 是最常用的方法，并且每个页面都有一个 `Navigation` 属性，该属性可用于在导航堆栈中进行推送或弹出页面。 这是最接近于 WPF 中的 `NavigationService` 的。
+`NavigationPage` 是最常用的方法，并且每个页面都有一个 `Navigation` 属性，该属性可用于在导航堆栈中进行推送或弹出页面。 这是最接近于 WPF 中的 `NavigationService` 的。
 
 ### <a name="url-navigation"></a>URL 导航
 

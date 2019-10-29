@@ -3,15 +3,15 @@ title: Android 上的数据存储简介
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2017
-ms.openlocfilehash: 69d5222bb6c50870d0c42bea6ff71236e3d1580c
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 21e3421125e6fd918a379c5501a44c15620f5d94
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754555"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023781"
 ---
 # <a name="introduction"></a>简介
 
@@ -53,13 +53,13 @@ SQLite 是 Google 为其移动平台采用的开源数据库引擎。 SQLite 数
 - 仅支持表重命名和 ADDCOLUMN。 不能对架构执行其他修改。
 - 视图为只读。
 
-你可以在网站上了解有关 SQLite 的详细信息- [SQLite.org](http://SQLite.org) -但是，此文档和关联的示例中包含了使用 sqlite 的所有所需信息。 自 Android 2 以来，Android 中已支持 SQLite 数据库引擎。
+你可以在网站上了解有关 SQLite 的详细信息- [SQLite.org](https://SQLite.org) -但是，此文档和关联的示例中包含了使用 sqlite 的所有所需信息。 自 Android 2 以来，Android 中已支持 SQLite 数据库引擎。
 尽管本章未涵盖，但也可在 Windows Phone 和 Windows 应用程序上使用 SQLite。
 
 ## <a name="windows-and-windows-phone"></a>Windows 和 Windows Phone
 
 SQLite 还可以在 Windows 平台上使用，但本文档中未介绍这些平台。
-有关详细信息，请参阅[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)和[Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究，并查看[Tim Heuer 的博客](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
+有关详细信息，请参阅[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)和[Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究，并查看[Tim Heuer 的博客](https://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
 
 ## <a name="related-links"></a>相关链接
 

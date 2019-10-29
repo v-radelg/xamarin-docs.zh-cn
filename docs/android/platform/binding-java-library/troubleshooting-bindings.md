@@ -4,15 +4,15 @@ description: 本文总结了生成绑定时可能出现的多种常见错误，�
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: dfbcb1a6f502d6d7a5b03dc03278fc21e57806bf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2eea51764e0e0f13c1a1a91db664872a67420d33
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756611"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020558"
 ---
 # <a name="troubleshooting-bindings"></a>绑定疑难解答
 
@@ -25,11 +25,11 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 
 绑定现有 Android 库时，需要记住以下几点：
 
-- **库的外部依赖项**Android 库所需的任何 Java 依赖项都必须包含在 Xamarin 项目中作为**ReferenceJar**或**EmbeddedReferenceJar。** &ndash;
+- **库的外部依赖项**&ndash; android 库所需的任何 Java 依赖项都必须包含在 Xamarin 项目中作为**ReferenceJar**或**EmbeddedReferenceJar**。
 
-- **Android 库针对的 ANDROID API 级别**&ndash;无法 "降级" android API 级别; 请确保 Xamarin 绑定项目的目标是相同的 API 级别（或更高版本）作为 android 库。
+- Android**库针对 ANDROID api 级别**&ndash; 不能 "降级" android api 级别;确保 Xamarin 绑定项目的目标 API 级别（或更高版本）为 Android 库。
 
-- **用于打包 android 库的 ANDROID JDK 版本**&ndash;如果 Android 库是使用不同于 Xamarin 使用的 JDK 版本生成的，则可能会发生绑定错误。 如果可能，请使用安装 Xamarin 所用的同一版本的 JDK 重新编译 Android 库。
+- 如果 Android 库是使用不同于 Xamarin 所用版本的 JDK 生成的，则在使用不同版本的 JDK 生成 android 库时，可能会出现**用于打包 android 库的 ANDROID JDK 版本**&ndash; 绑定错误。 如果可能，请使用安装 Xamarin 所用的同一版本的 JDK 重新编译 Android 库。
 
 对绑定 Xamarin 类库的问题进行故障排除的第一步是启用[诊断 MSBuild 输出](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)。
 启用诊断输出后，重新生成 Xamarin 绑定项目并检查生成日志，查找有关问题原因的线索。
@@ -41,18 +41,18 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 检查 Java 类的类和方法可提供有价值的信息，以帮助绑定库。
 [JD](http://jd.benow.ca/)是一种图形实用工具，可以显示 JAR 中包含的**类**文件中的 Java 源代码。 它可以作为独立的应用程序运行，也可以作为 IntelliJ 或 Eclipse 的插件运行。
 
-若要反编译 Android 库，请打开 **。** 带有 Java 反编译程序的 JAR 文件。 如果库为，则为 **。AAR**文件，需要从存档文件中提取文件**类 .jar。** 下面是使用 JD 分析[毕加索](http://square.github.io/picasso/)JAR 的示例屏幕截图：
+若要反编译 Android 库，请打开 **。** 带有 Java 反编译程序的 JAR 文件。 如果库为，则为 **。AAR**文件，需要从存档文件中提取文件**类 .jar。** 下面是使用 JD 分析[毕加索](https://square.github.io/picasso/)JAR 的示例屏幕截图：
 
 ![使用 Java 反编译程序分析 picasso-2.5。2](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
 
 反编译 Android 库后，请检查源代码。 一般而言，查找：
 
-- **具有模糊特征的类**&ndash;模糊类的特征包括：
+- 模糊类的特征 &ndash; 特性的**类**包括：
 
-  - Class 名称中包含 **$** ，即 **$.class**
+  - 类名称包含一个 **$** ，即 **$. 类**
   - 类名称完全泄露小写字符，即**类**      
 
-- 用于未&ndash;引用库的语句标识未引用的库，并将这些依赖项添加到具有**ReferenceJar**或的生成操作的 Xamarin 绑定项目 **`import`** **EmbedddedReferenceJar**。
+- **`import` 未引用库的语句**&ndash; 识别未引用的库，并将这些依赖项添加到具有**ReferenceJar**或**EmbedddedReferenceJar 生成操作**的 Xamarin 类绑定项目.
 
 > [!NOTE]
 > 反编译根据本地法律或发布 Java 库的许可证，可能禁止 Java 库或遵守法律限制。 如有必要，请先登记法律专业人员的服务，再尝试反编译 Java 库并检查源代码。
@@ -69,7 +69,7 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 
 本节将列出一些常见错误消息或在尝试绑定 Android 库时出现的症状。
 
-### <a name="problem-java-version-mismatch"></a>问题：Java 版本不匹配
+### <a name="problem-java-version-mismatch"></a>问题： Java 版本不匹配
 
 有时不会生成类型，或发生意外的崩溃，因为你使用的是较新版本的 Java 或更早版本的 Java （与库的编译内容相比）。 使用你的 Xamarin 项目所使用的同一版本的 JDK 重新编译 Android 库。
 
@@ -79,7 +79,7 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 
 #### <a name="possible-causes"></a>可能的原因：
 
-请确保 "生成操作" 设置为`EmbeddedJar`。 由于有多个生成操作。`InputJar`JAR 文件（如`EmbeddedJar` `ReferenceJar` 、和`EmbeddedReferenceJar`），绑定生成器无法自动推测默认情况下使用哪一个。 有关生成操作的详细信息，请参阅[生成操作](~/android/platform/binding-java-library/index.md)。
+请确保将生成操作设置为 `EmbeddedJar`。 由于有多个生成操作。JAR 文件（例如 `InputJar`、`EmbeddedJar`、`ReferenceJar` 和 `EmbeddedReferenceJar`），绑定生成器将无法自动推测默认使用哪一个。 有关生成操作的详细信息，请参阅[生成操作](~/android/platform/binding-java-library/index.md)。
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>问题：绑定工具无法加载。JAR 库
 
@@ -105,7 +105,7 @@ Some.Java 工具无法加载使用代码模糊处理的 JAR 库（通过工具�
 
 - Java 允许从非公共类派生公共类，但 .NET 不支持此类。 由于绑定生成器不生成非公共类的绑定，因此无法正确生成派生类（如）。 若要解决此问题，请使用**metadata**中的 remove 节点删除这些派生类的元数据条目，或者修复使非公共类成为公共类的元数据。 尽管后一种解决方案将创建绑定以便生成C#源，但不应使用非公共类。
 
-  例如：
+  例如:
 
   ```xml
   <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
@@ -129,13 +129,13 @@ Xamarin 包含多个映射到C#绑定中的枚举的 Java 字段。 这会导致
 
 ### <a name="problem-noclassdeffounderror-in-packaging"></a>问题：打包中的 NoClassDefFoundError
 
-`java.lang.NoClassDefFoundError`在打包步骤中引发。
+打包步骤中会引发 `java.lang.NoClassDefFoundError`。
 
 #### <a name="possible-causes"></a>可能的原因：
 
-此错误的最可能原因是需要将必需的 Java 库添加到应用程序项目（ **.csproj**）。 .不自动解析 JAR 文件。 Java 库绑定并非始终针对目标设备或模拟器中不存在的用户程序集（如 Google Maps **maps**）生成。 这不是 Android 库项目支持（作为库）。JAR 嵌入在库 dll 中。 例如:[Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
+此错误的最可能原因是需要将必需的 Java 库添加到应用程序项目（ **.csproj**）。 .不自动解析 JAR 文件。 Java 库绑定并非始终针对目标设备或模拟器中不存在的用户程序集（如 Google Maps **maps**）生成。 这不是 Android 库项目支持（作为库）。JAR 嵌入在库 dll 中。 例如： [Bug 4288](https://bugzilla.xamarin.com/show_bug.cgi?id=4288)
 
-### <a name="problem-duplicate-custom-eventargs-types"></a>问题：自定义 EventArgs 类型重复
+### <a name="problem-duplicate-custom-eventargs-types"></a>问题：重复的自定义 EventArgs 类型
 
 由于自定义 EventArgs 类型重复，生成失败。 出现如下错误：
 
@@ -145,7 +145,7 @@ error CS0102: The type `Com.Google.Ads.Mediation.DismissScreenEventArgs' already
 
 #### <a name="possible-causes"></a>可能的原因：
 
-这是因为来自多个接口 "侦听器" 类型的事件类型之间存在某种冲突，这些类型共享具有相同名称的方法。 例如，如果下面的示例中所示的两个 Java 接口，生成器将`DismissScreenEventArgs` `MediationBannerListener`为和`MediationInterstitialListener`创建，从而导致错误。
+这是因为来自多个接口 "侦听器" 类型的事件类型之间存在某种冲突，这些类型共享具有相同名称的方法。 例如，如果在下面的示例中显示了两个 Java 接口，生成器将为 `MediationBannerListener` 和 `MediationInterstitialListener`创建 `DismissScreenEventArgs`，从而导致错误。
 
 ```java
 // Java:
@@ -157,7 +157,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-这是设计使然，以避免事件参数类型上的冗长名称。 若要避免这些冲突，需要进行某些元数据转换。 编辑[**Transforms\Metadata.xml**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) ，并在`argsType`其中一个接口（或接口方法）上添加属性：
+这是设计使然，以避免事件参数类型上的冗长名称。 若要避免这些冲突，需要进行某些元数据转换。 编辑[**Transforms\Metadata.xml**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) ，并在其中一个接口（或接口方法）上添加 `argsType` 特性：
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -190,9 +190,9 @@ return type of 'Java.Lang.Object'
 
 #### <a name="possible-causes"></a>可能的原因：
 
-这是与具有协变返回类型的绑定 Java 方法一起发生的问题。 在此示例中，方法`Oauth.Signpost.Http.IHttpRequest.UnWrap()`需要返回。 `Java.Lang.Object` 但是，该方法`Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()`具有返回`HttpURLConnection`类型。 可以通过两种方法解决此问题：
+这是与具有协变返回类型的绑定 Java 方法一起发生的问题。 在此示例中，方法 `Oauth.Signpost.Http.IHttpRequest.UnWrap()` 需要返回 `Java.Lang.Object`。 但是，`Oauth.Signpost.Basic.HttpURLConnectionRequestAdapter.UnWrap()` 方法的返回类型为 `HttpURLConnection`。 可以通过两种方法解决此问题：
 
-- 为`HttpURLConnectionRequestAdapter`添加分部类声明并显式实现`IHttpRequest.Unwrap()`：
+- 为 `HttpURLConnectionRequestAdapter` 添加分部类声明并显式实现 `IHttpRequest.Unwrap()`：
 
   ```csharp
   namespace Oauth.Signpost.Basic {
@@ -204,7 +204,7 @@ return type of 'Java.Lang.Object'
   }
   ```
 
-- 删除生成C#的代码的协方差。 这涉及到将以下转换添加到**Transforms\Metadata.xml** ，这将导致C#生成的代码具有`Java.Lang.Object`以下返回类型：
+- 删除生成C#的代码的协方差。 这涉及到将以下转换添加到**Transforms\Metadata.xml** ，这将导致C#生成的代码具有`Java.Lang.Object`的返回类型：
 
   ```xml
   <attr
@@ -217,7 +217,7 @@ return type of 'Java.Lang.Object'
 
 继承对象的可见性冲突。
 
-在 Java 中，不要求派生类具有与其父级相同的可见性。 Java 只是帮你解决问题。 在C#中，这必须是显式的，因此，你需要确保层次结构中的所有类都具有适当的可见性。 下面的示例演示如何将 Java 包名称从`com.evernote.android.job`更改为： `Evernote.AndroidJob`
+在 Java 中，不要求派生类具有与其父级相同的可见性。 Java 只是帮你解决问题。 在C#中，这必须是显式的，因此，你需要确保层次结构中的所有类都具有适当的可见性。 下面的示例演示如何将 Java 包名称从 `com.evernote.android.job` 更改为 `Evernote.AndroidJob`：
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -227,11 +227,11 @@ return type of 'Java.Lang.Object'
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>问题：答 **：此绑定**所需的库未加载
+### <a name="problem-a-so-library-required-by-the-binding-is-not-loading"></a>问题 **：答：此绑定**所需的库未加载
 
-某些绑定项目可能还依赖于中的功能 **。因此**库。 Xamarin Android 可能不会自动加载 **. 因此**就会自动加载。 当执行包装的 Java 代码时，Xamarin 将无法进行 JNI 调用和错误消息_UnsatisfiedLinkError：找不到本机方法_ ：应用程序的 logcat 中将显示该方法。
+某些绑定项目可能还依赖于中的功能 **。因此**库。 Xamarin Android 可能不会自动加载 **. 因此**就会自动加载。 当执行了所包装的 Java 代码时，Xamarin 将无法进行 JNI 调用，并且错误消息_UnsatisfiedLinkError：找不到本机方法：_ 将显示在对应用程序的 logcat 中。
 
-解决此问题的方法是，通过调用 `Java.Lang.JavaSystem.LoadLibrary`手动加载。 例如，假设 Xamarin Android 项目具有共享库**libpocketsphinx_jni。因此**，在绑定项目中包含**EmbeddedNativeLibrary**的生成操作（在使用共享库之前执行）将加载 **。因此**库：
+解决此问题的方法是，通过调用 `Java.Lang.JavaSystem.LoadLibrary`来手动加载 **。** 例如，假设 Xamarin Android 项目具有共享库**libpocketsphinx_jni。因此**，在绑定项目中包含**EmbeddedNativeLibrary**的生成操作（在使用共享库之前执行）将加载 **。因此**库：
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
@@ -247,4 +247,4 @@ Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [启用诊断输出](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
 - [适用于 Android 开发人员的 Xamarin](~/android/get-started/java-developers.md)
-- [JD-GUI](http://jd.benow.ca/)
+- [JD](http://jd.benow.ca/)

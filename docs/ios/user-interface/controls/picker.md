@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中设计和使用
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/14/2018
-ms.openlocfilehash: 9eec99ffe244ffdc290050bd54f083ad6582151d
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: ac96363378e91c60956d28352535733c7e954e6a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70286388"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021998"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin 中的选取器控件
 
@@ -59,7 +59,7 @@ public override void ViewDidLoad()
 }
 ```
 
-[@No__t_1](xref:UIKit.UIPickerViewModel)基类实现了两个接口， [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
+[`UIPickerViewModel`](xref:UIKit.UIPickerViewModel)基类实现了两个接口， [`IUIPickerDataSource`](xref:UIKit.IUIPickerViewDataSource)
 和[`IUIPickerViewDelegate`](xref:UIKit.IUIPickerViewDelegate)，它声明了用于指定选取器的数据以及它如何处理交互的各种方法：
 
 ```csharp
@@ -183,7 +183,7 @@ datePickerView.MaximumDate = NSDate.Now;
 
 #### <a name="minute-interval"></a>分钟间隔
 
-[@No__t_1](xref:UIKit.UIDatePicker.MinuteInterval)属性设置选取器显示分钟数的时间间隔：
+[`MinuteInterval`](xref:UIKit.UIDatePicker.MinuteInterval)属性设置选取器显示分钟数的时间间隔：
 
 ```csharp
 datePickerView.MinuteInterval = 10;
@@ -246,7 +246,7 @@ datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 
 !["UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
 
-@No__t_0 属性以 `UIDatePickerMode.CountDownTimer` 模式捕获日期选取器的值。 例如，要将倒计时值添加到当前日期：
+`CountDownDuration` 属性以 `UIDatePickerMode.CountDownTimer` 模式捕获日期选取器的值。 例如，要将倒计时值添加到当前日期：
 
 ```csharp
 var currentTime = NSDate.Now;
@@ -273,7 +273,7 @@ var formattedDate = formatter.ToString(d);
 
 ##### <a name="dateformat"></a>DateFormat
 
-@No__t_2 的[`DateFormat`](xref:Foundation.NSDateFormatter.DateFormat)属性（字符串）允许可自定义的日期格式规范：
+`NSDateFormatter` 的[`DateFormat`](xref:Foundation.NSDateFormatter.DateFormat)属性（字符串）允许可自定义的日期格式规范：
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
@@ -282,7 +282,7 @@ dateFormat.DateFormat = "yyyy-MM-dd";
 
 ##### <a name="timestyle"></a>TimeStyle
 
-[@No__t_1](xref:Foundation.NSDateFormatter.TimeStyle)属性（`NSDateFormatter` [`NSDateFormatterStyle`](xref:Foundation.NSDateFormatterStyle)指定基于预先确定样式的时间格式设置：
+[`TimeStyle`](xref:Foundation.NSDateFormatter.TimeStyle)属性（`NSDateFormatter` [`NSDateFormatterStyle`](xref:Foundation.NSDateFormatterStyle)指定基于预先确定样式的时间格式设置：
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
@@ -298,7 +298,7 @@ timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 
 ##### <a name="datestyle"></a>DateStyle
 
-@No__t_3 的[`DateStyle`](xref:Foundation.NSDateFormatter.DateStyle)属性（`NSDateFormatterStyle`）基于预定义的样式指定日期格式：
+`NSDateFormatter` 的[`DateStyle`](xref:Foundation.NSDateFormatter.DateStyle)属性（`NSDateFormatterStyle`）基于预定义的样式指定日期格式：
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();

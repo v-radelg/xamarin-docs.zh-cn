@@ -4,15 +4,15 @@ description: 本文档描述了 Xamarin 的注册器及其动态、静态和部�
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 991d9b2d911b5aa4ac07225fd1df34877451df49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290097"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017309"
 ---
 # <a name="xamarinmac-registrar"></a>Xamarin Mac 注册机构
 
@@ -44,4 +44,4 @@ Xamarin 可以在托管（.NET）和 Cocoa 的运行时之间实现桥梁，使�
 - 启动后加载的、从 NSObject 派生的类的插件
 - 动态创建的类实例，派生自 NSObject
 
-注册器无法知道在开始时需要注册某种类型。 提供`ObjCRuntime.Runtime.RegisterAssembly`此方法是为了通知注册机构有其他要考虑的类型。
+注册器无法知道在开始时需要注册某种类型。 提供 `ObjCRuntime.Runtime.RegisterAssembly` 方法，以通知注册机构有其他要考虑的类型。

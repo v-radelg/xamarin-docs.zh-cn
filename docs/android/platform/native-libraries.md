@@ -3,15 +3,15 @@ title: 使用本机库
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: fad17bdda9566eeabcbe173c19c4d951bed630a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ef9e0415d7d1e5fe75be70e0ccf6e06a5eaf332
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761284"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027058"
 ---
 # <a name="using-native-libraries"></a>使用本机库
 
@@ -25,9 +25,9 @@ Xamarin 支持通过标准 PInvoke 机制使用本机库。 你还可以将不�
 可以通过两种方法完成：
 
 1. 路径 "窃听"
-1. 通过使用`AndroidNativeLibrary/Abi`项目文件中的元素
+1. 通过使用项目文件中的 `AndroidNativeLibrary/Abi` 元素
 
-通过路径探查，本机库的父目录名称用于指定库的目标 ABI。 因此，如果将添加`lib/armeabi/libfoo.so`到项目，则 ABI 将为 "探查`armeabi`"。
+通过路径探查，本机库的父目录名称用于指定库的目标 ABI。 因此，如果你将 `lib/armeabi/libfoo.so` 添加到项目中，则 ABI 将为 "探查" `armeabi`。
 
 或者，你可以编辑项目文件以显式指定要使用的 ABI：
 

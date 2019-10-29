@@ -3,15 +3,15 @@ title: 访问图形 API
 description: 本文档介绍如何向使用 Xamarin 生成的移动应用程序添加 Azure Active Directory 身份验证。
 ms.prod: xamarin
 ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fd3d94731f1a2a083be5f0e2f8ab541bc702a521
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ccfc082f86d0a0c6f8d29a477101edb72f9c92f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766308"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016630"
 ---
 # <a name="accessing-the-graph-api"></a>访问图形 API
 
@@ -26,9 +26,9 @@ ms.locfileid: "70766308"
 请确保选择 "**显示预发行包**" 以包含此包，因为它仍处于预览阶段。
 
 > [!IMPORTANT]
-> 注意:Azure ADAL 3.0 当前为预览版，最终版本发布之前可能会有重大更改。 
+> 注意： Azure ADAL 3.0 当前为预览版，最终版本发布之前可能会有重大更改。 
 
-![](graph-images/06.-adal-nuget-package.jpg "将引用添加到 Azure Active Directory 身份验证库（Azure ADAL）")
+![](graph-images/06.-adal-nuget-package.jpg "Add a reference to Azure Active Directory Authentication Library (Azure ADAL)")
 
 在您的应用程序中，您现在需要添加身份验证流所需的以下类级别的变量。
 
@@ -45,11 +45,11 @@ public static string graphApiVersion = "2013-11-08";
 AuthenticationResult authResult = null;
 ```
 
-此处需要注意的一点是`commonAuthority`。 当身份验证终结点`common`为时，你的应用将成为**多租户**，这意味着任何用户都可以使用其 Active Directory 凭据的登录名。 进行身份验证后，该用户将在自己 Active Directory 的上下文中工作，即，他们将看到与他 Active Directory 相关的详细信息。
+此处需要注意的一点是 `commonAuthority`。 当 `common`身份验证终结点时，你的应用将成为**多租户**，这意味着任何用户都可以使用其 Active Directory 凭据的登录名。 进行身份验证后，该用户将在自己 Active Directory 的上下文中工作，即，他们将看到与他 Active Directory 相关的详细信息。
 
 ### <a name="write-method-to-acquire-access-token"></a>用于获取访问令牌的写入方法
 
-以下代码（适用于 Android）将启动身份验证，完成后，将结果`authResult`分配到。 Ios 和 Windows Phone 实现略微不同：第二个参数（`Activity`）在 iOS 上不同，在 Windows Phone 上不存在。
+以下代码（适用于 Android）将启动身份验证，完成后，将结果分配给 `authResult`。 IOS 和 Windows Phone 实现略有不同： iOS 上的第二个参数（`Activity`）不同，Windows Phone 上缺少第二个参数。
 
 ```csharp
 public static async Task<AuthenticationResult> GetAccessToken
@@ -63,9 +63,9 @@ public static async Task<AuthenticationResult> GetAccessToken
 }  
 ```
 
-在上面的代码中， `AuthenticationContext`负责 commonAuthority 的身份验证。 它有一个`AcquireTokenAsync`方法，该方法将参数作为需要访问的资源，在本例中`graphResourceUri` `clientId`为、和`returnUri`。 身份验证完成`returnUri`后，应用将返回到。 对于所有平台，此代码将保持不变，但是，最后一个参数`AuthorizationParameters`将在不同的平台上不同，并负责管理身份验证流。
+在上面的代码中，`AuthenticationContext` 负责通过 commonAuthority 进行身份验证。 它具有 `AcquireTokenAsync` 方法，该方法将参数作为需要访问的资源，在本例中，`graphResourceUri`、`clientId`和 `returnUri`。 身份验证完成后，应用将返回到 `returnUri`。 所有平台的此代码都将保持不变，但最后一个参数 `AuthorizationParameters`在不同的平台上将有所不同，并负责管理身份验证流。
 
-对于 Android 或 iOS，我们将`this` `AuthorizationParameters(this)`参数传递给以共享上下文，而在 Windows 中，不将任何参数作为新`AuthorizationParameters()`的传递。
+对于 Android 或 iOS，我们将 `this` 参数传递到 `AuthorizationParameters(this)`，以便共享上下文，而在 Windows 中，不将任何参数作为新的 `AuthorizationParameters()`传递。
 
 ### <a name="handle-continuation-for-android"></a>处理 Android 的继续符
 
@@ -81,7 +81,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ### <a name="handle-continuation-for-windows-phone"></a>处理 Windows Phone 的继续符
 
-对于 Windows Phone 用以下`OnActivated`代码修改**App.xaml.cs**文件中的方法：
+对于 Windows Phone 修改**App.xaml.cs**文件中包含以下代码的 `OnActivated` 方法：
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args)
@@ -99,11 +99,11 @@ protected override void OnActivated(IActivatedEventArgs args)
 现在，如果你运行该应用程序，你应该会看到一个身份验证对话框。
 身份验证成功后，它将要求你拥有访问资源的权限（在我们的示例中图形 API）：
 
-![](graph-images/08.-authentication-flow.jpg "身份验证成功后，它将要求你的权限访问我们的示例中的资源图形 API")
+![](graph-images/08.-authentication-flow.jpg "Upon successful authentication, it will ask your permissions to access the resources in our case Graph API")
 
-如果身份验证成功，并且您已授权该应用程序访问资源，则应该获取`AccessToken`并`RefreshToken`组合入`authResult`。 这些令牌是进一步的 API 调用所必需的，并且是在幕后 Azure Active Directory 的授权。
+如果身份验证成功，并且您已授权应用程序访问资源，则应在 `authResult`获取 `AccessToken` 和 `RefreshToken` 组合。 这些令牌是进一步的 API 调用所必需的，并且是在幕后 Azure Active Directory 的授权。
 
-![](graph-images/07.-access-token-for-authentication.jpg "这些令牌是进一步的 API 调用所必需的，用于在幕后 Azure Active Directory 进行授权")
+![](graph-images/07.-access-token-for-authentication.jpg "These tokens are   required for further API calls and for authorization with Azure Active Directory behind the scenes")
 
 例如，以下代码允许你从 Active Directory 获取用户列表。 你可以将 Web API URL 替换为受 Azure AD 保护的 Web API。
 

@@ -4,17 +4,17 @@ summary: Xamarin 公开了完整的 macOS SDK，让 .NET 开发人员能够使�
 metadata:
   title: Xamarin.Mac
   description: Xamarin 公开了完整的 macOS SDK，让 .NET 开发人员能够使用 C# 构建本机 Mac 应用程序。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 08/27/2019
   ms.topic: landing-page
   ms.technology: xamarin-mac
-  ms.openlocfilehash: 14411712cbb1e72e279749ce23b587584aea9be6
-  ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+  ms.openlocfilehash: c5db1f5865a2532dfc9372834bb2315f96607338
+  ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/06/2019
-  ms.locfileid: "70770063"
+  ms.lasthandoff: 10/29/2019
+  ms.locfileid: "73017700"
 landingContent:
 - title: 入门
   linkLists:

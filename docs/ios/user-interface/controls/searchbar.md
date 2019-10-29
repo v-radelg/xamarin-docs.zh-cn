@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中使用搜索栏。 本文讨论
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 8b129e0e70bf3ded787094d1b1f740e73a8cbca1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70283349"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021982"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin 中的搜索栏
 
@@ -88,7 +88,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
   - 显示搜索结果/书签按钮–在搜索栏上显示搜索结果或书签图标
   - 显示 "取消" 按钮–允许用户退出搜索功能。 建议选择此选项。
   - 显示范围栏–这允许用户限制其搜索范围。 例如，当你在音乐应用程序中搜索时，用户可以选择是否要搜索特定歌曲或艺术家 Apple Music 或其库。 若要显示各种选项，请将标题数组添加到**ScopeBarTitles**属性。
-  ![Search 条形范围标题 ](searchbar-images/image4.png)
+  ![搜索栏范围标题](searchbar-images/image4.png)
 
 - **文本行为**-这些选项用于处理键入时用户输入的格式。 大小写将设置每个单词或句子的开头，或将每个字符设置为大写。 更正和拼写检查提示用户键入时，会提示用户输入拼写建议。
 - **键盘**–控制为输入显示的键盘样式，并因此可以在键盘上使用哪些键。 这包括数字板、手机 Pad、电子邮件和其他选项。

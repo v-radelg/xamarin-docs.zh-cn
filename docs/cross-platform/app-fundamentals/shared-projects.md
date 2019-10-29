@@ -3,15 +3,15 @@ title: 使用共享项目共享代码
 description: 使用共享项目，可以编写由多个不同的应用程序项目引用的通用代码。 此代码作为每个引用项目的一部分进行编译，并且可以包含编译器指令以帮助将特定于平台的功能合并到共享代码库中。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739058"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016699"
 ---
 # <a name="shared-projects-code-sharing"></a>共享项目代码共享
 
@@ -33,7 +33,7 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 共享项目不会自行编译，它只是一组可以包含在其他项目中的源代码文件。 当被另一个项目引用时，该代码将被有效地编译为该项目的*一部分*。 共享的项目不能引用任何其他项目类型（包括其他共享项目）。
 
-请注意，Android 应用程序项目无法引用其他 Android 应用程序项目，例如，Android 单元测试项目无法引用 Android 应用程序项目。 有关此限制的详细信息，请参阅此[论坛讨论](http://forums.xamarin.com/discussion/comment/98092/)。
+请注意，Android 应用程序项目无法引用其他 Android 应用程序项目，例如，Android 单元测试项目无法引用 Android 应用程序项目。 有关此限制的详细信息，请参阅此[论坛讨论](https://forums.xamarin.com/discussion/comment/98092/)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -111,7 +111,7 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 ## <a name="shared-project-example"></a>共享项目示例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)示例使用共享项目来包含 IOS、Android 和 Windows Phone 应用程序使用的通用代码。 @No__t_0 和 `TaskRepository.cs` 源代码文件都利用编译器指令（例如 `#if __ANDROID__`）为每个引用它们的应用程序生成不同的输出。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)示例使用共享项目来包含 IOS、Android 和 Windows Phone 应用程序使用的通用代码。 `SQLite.cs` 和 `TaskRepository.cs` 源代码文件都利用编译器指令（例如 `#if __ANDROID__`）为每个引用它们的应用程序生成不同的输出。
 
 完整的解决方案结构如下所示（分别在 Visual Studio for Mac 和 Visual Studio 中）：
 

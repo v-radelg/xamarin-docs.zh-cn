@@ -4,19 +4,19 @@ description: 大多数应用程序都需要在本地将数据保存在设备上�
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 2343603199661ea39b1f0af172ce0ccf48a2cd66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9906e617b7072ebf7b1213a7278d117dc4f560ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754587"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023863"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin Android 数据访问
 
-_大多数应用程序都需要在本地将数据保存在设备上。除非数据量完全小，否则这通常需要应用程序中的数据库和数据层来管理数据库访问。Android 具有 SQLite 数据库引擎 "内置"，Xamarin 的平台简化了存储和检索数据的访问。本文档说明如何以跨平台的方式访问 SQLite 数据库。_
+_大多数应用程序都需要在本地将数据保存在设备上。除非数据量完全小，否则这通常需要应用程序中的数据库和数据层来管理数据库访问。 Android 具有 SQLite 数据库引擎 "内置"，Xamarin 的平台简化了存储和检索数据的访问。本文档说明如何以跨平台的方式访问 SQLite 数据库。_
 
 ## <a name="data-access-overview"></a>数据访问概述
 
@@ -29,9 +29,9 @@ Xamarin 支持数据库访问 Api，例如：
 
 本节中的大部分代码都是完全跨平台的，将在 iOS 或 Android 上运行，而无需修改。 讨论了两个示例应用：
 
-- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)&ndash;简单的数据操作将结果写入文本显示控件;
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; 简单数据操作将结果写入文本显示控件;
 
-- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)&ndash;将数据操作集成到一个小型工作应用程序中，该应用程序可列出和编辑简单的数据结构。
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; 将数据操作集成到一个小型工作应用程序中，该应用程序列出并编辑了简单的数据结构。
 
 这两个示例解决方案都包含 iOS 和 Android 示例应用程序项目。
 

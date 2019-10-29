@@ -4,15 +4,15 @@ description: 本文是 Android Designer 的演练。 它演示了如何为小颜
 ms.prod: xamarin
 ms.assetid: 70FF2F9A-71BD-317E-C881-A44D82DF1BD8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: df83bdfcc847b07754a349060c9be1613efd0b08
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249991"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029526"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin. Android Designer
 
@@ -36,16 +36,16 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-### <a name="creating-a-new-project"></a>创建新的项目
+### <a name="creating-a-new-project"></a>创建新项目
 
-第一步是创建新的 Xamarin Android 项目。 启动 visual Studio，单击 "**新建项目 ...** "，然后选择**Visual\# C > android > android 应用（Xamarin）** "模板。
+第一步是创建新的 Xamarin Android 项目。 启动 Visual Studio，单击 "**新建项目 ...** "，然后选择 " **Visual C"\# > Android > Android 应用（Xamarin）** "模板。
 将新应用命名为**DesignerWalkthrough** ，然后单击 **"确定"** 。
 
 [![Android 空白应用](designer-walkthrough-images/vs/01-android-app-w158-sml.png)](designer-walkthrough-images/vs/01-android-app-w158.png#lightbox)
 
 在 "**新建 Android 应用**" 对话框中，选择 "**空白应用**"，然后单击 **"确定"** ：
 
-[![选择 Android 空白应用模板](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
+[选择 Android 空白应用模板![](designer-walkthrough-images/vs/02-blank-app-w158-sml.png)](designer-walkthrough-images/vs/02-blank-app-w158.png#lightbox)
 
 ### <a name="adding-a-layout"></a>添加布局
 
@@ -53,7 +53,7 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 [![新布局](designer-walkthrough-images/vs/03-new-layout-w158-sml.png)](designer-walkthrough-images/vs/03-new-layout-w158.png#lightbox)
 
-新的**list_item**布局将显示在设计器中。 请注意，在左窗格&ndash;中*Design Surface*显示**list_item**的两个窗格，而其 XML 源显示在右窗格中。 可以通过单击以下两个窗格之间的 "**交换窗格**" 图标来交换 " **Design Surface** " 和 "**源**" 窗格的位置：
+新的**list_item**布局将显示在设计器中。 请注意，在左窗格中显示**list_item**的*Design Surface* &ndash; 显示两个窗格，而其 XML 源显示在右窗格中。 可以通过单击以下两个窗格之间的 "**交换窗格**" 图标来交换 " **Design Surface** " 和 "**源**" 窗格的位置：
 
 [![设计器视图](designer-walkthrough-images/vs/04-designer-view-w158-sml.png)](designer-walkthrough-images/vs/04-designer-view-w158.png#lightbox)
 
@@ -61,35 +61,35 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 [![文档大纲](designer-walkthrough-images/vs/06-document-outline-w158-sml.png)](designer-walkthrough-images/vs/06-document-outline-w158.png#lightbox)
 
-下一步是在此`LinearLayout`中创建颜色浏览器应用程序的用户界面。
+下一步是在此 `LinearLayout`中创建颜色浏览器应用的用户界面。
 
 ### <a name="creating-the-list-item-user-interface"></a>创建列表项用户界面
 
-如果未显示 "**工具箱**" 窗格，请单击左侧的 "**工具箱**" 选项卡。 在 "**工具箱**" 中，向下滚动到 "**图像 & Media** " 部分，并进一步向`ImageView`下滚动，直到找到：
+如果未显示 "**工具箱**" 窗格，请单击左侧的 "**工具箱**" 选项卡。 在 "**工具箱**" 中，向下滚动到 "**图像 & Media** " 部分，并进一步向下滚动，直到找到 `ImageView`：
 
 [![找到 ImageView](designer-walkthrough-images/vs/07-locate-imageview-w158-sml.png)](designer-walkthrough-images/vs/07-locate-imageview-w158.png#lightbox)
 
-或者，你可以在搜索栏中输入*ImageView*以查找`ImageView`：
+或者，你可以在搜索栏中输入*ImageView*以查找 `ImageView`：
 
 [![ImageView 搜索](designer-walkthrough-images/vs/08-imageview-search-w158-sml.png)](designer-walkthrough-images/vs/08-imageview-search-w158.png#lightbox)
 
-将此`ImageView`拖动到 Design Surface （这`ImageView`将用于在颜色浏览器应用中显示颜色样本）：
+将此 `ImageView` 拖动到 Design Surface （此 `ImageView` 用于在颜色浏览器应用中显示颜色样本）：
 
-[![画布上的 ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-w158-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas-w158.png#lightbox)
+[在画布上![ImageView](designer-walkthrough-images/vs/09-imageview-on-canvas-w158-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas-w158.png#lightbox)
 
-接下来，将`LinearLayout (Vertical)`小组件从**工具箱**拖到设计器中。 请注意，蓝色轮廓指示添加`LinearLayout`的的边界。 **文档大纲**显示它是的子级`LinearLayout`，位于： `imageView1 (ImageView)`
+接下来，将 "`LinearLayout (Vertical)`" 小组件从 "**工具箱**" 拖到设计器中。 请注意，蓝色的轮廓指示添加的 `LinearLayout`的边界。 **文档大纲**显示它是 `LinearLayout`的子，位于 `imageView1 (ImageView)`下：
 
-[![蓝色轮廓](designer-walkthrough-images/vs/10-blue-outline-w158-sml.png)](designer-walkthrough-images/vs/10-blue-outline-w158.png#lightbox)
+[![蓝轮廓](designer-walkthrough-images/vs/10-blue-outline-w158-sml.png)](designer-walkthrough-images/vs/10-blue-outline-w158.png#lightbox)
 
-当你`ImageView`在设计器中选择时，蓝色轮廓会移动到`ImageView`外侧。 此外，所选内容将移动`imageView1 (ImageView)`到**文档大纲**中：
+当您在设计器中选择 `ImageView` 时，蓝色轮廓将移动以包围 `ImageView`。 此外，所选内容将移动到**文档大纲**中 `imageView1 (ImageView)`：
 
 [![选择 ImageView](designer-walkthrough-images/vs/11-select-imageview-w158-sml.png)](designer-walkthrough-images/vs/11-select-imageview-w158.png#lightbox)
 
-接下来，将`Text (Large)`小组件从**工具箱**拖到新添加`LinearLayout`的中。 请注意，设计器使用绿色突出显示来指示将插入新小组件的位置：
+接下来，将 "`Text (Large)`" 小组件从 "**工具箱**" 拖到新添加的 `LinearLayout`中。 请注意，设计器使用绿色突出显示来指示将插入新小组件的位置：
 
 [![绿色突出显示](designer-walkthrough-images/vs/12-green-highlight-w158-sml.png)](designer-walkthrough-images/vs/12-green-highlight-w158.png#lightbox)
 
-接下来，在`Text (Small)` `Text (Large)`小组件下面添加小组件：
+接下来，将 `Text (Small)` 小组件添加到 `Text (Large)` 小组件下面：
 
 [![添加小文本小组件](designer-walkthrough-images/vs/13-add-small-text-w158-sml.png)](designer-walkthrough-images/vs/13-add-small-text-w158.png#lightbox)
 
@@ -97,61 +97,61 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 [![设计器布局](designer-walkthrough-images/vs/14-raw-layout-w158-sml.png)](designer-walkthrough-images/vs/14-raw-layout-w158.png#lightbox)
 
-如果两个`textView`小组件不在`linearLayout1`内部，您可以将其`linearLayout1`拖放到**文档大纲**中，并将其放置在前面的屏幕截图中显示的`linearLayout1`位置（在下缩进）。
+如果两个 `textView` 小组件不在 `linearLayout1`中，则可以将其拖动到**文档大纲**中的 `linearLayout1`，并将其放置在前面的屏幕快照中（缩进 `linearLayout1`下）。
 
 ### <a name="arranging-the-user-interface"></a>排列用户界面
 
-下一步是修改 UI，使其显示`ImageView`在左侧，将两个`TextView`小组件堆叠`ImageView`到右侧。
+下一步是修改 UI 以显示左侧的 `ImageView`，并将两个 `TextView` 小组件堆叠到 `ImageView`右侧。
 
 1. 选择 `ImageView`。
 
 2. 在**属性窗口**的 "搜索" 框中输入*width* ，并找到 "**布局宽度**"。
 
-3. 将**布局宽度**设置更改为`wrap_content`：
+3. 将**布局宽度**设置更改为 `wrap_content`：
 
 ![设置环绕内容](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
-更改此`Width`设置的另一种方法是单击小组件右侧的三角形，以将其宽度设置切换为`wrap_content`：
+更改 `Width` 设置的另一种方法是单击小组件右侧的三角形，以将其宽度设置切换为 `wrap_content`：
 
 ![拖动以设置宽度](designer-walkthrough-images/vs/15b-width-arrow-w158.png)
 
-再次单击该三角形会将`Width`设置返回`match_parent`到。 接下来，请在 "**文档大纲**" 窗格中选择`LinearLayout`根：
+再次单击该三角形将返回 `Width` 设置为 `match_parent`。 接下来，请在 "**文档大纲**" 窗格中选择根 `LinearLayout`：
 
 [![选择根 LinearLayout](designer-walkthrough-images/vs/16-root-linearlayout-w158-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout-w158.png#lightbox)
 
-选择`LinearLayout`根后，返回到 "**属性**" 窗格，在 "搜索" 框中输入 "*方向*"，然后找到 "**方向**" 设置。 更改**方向** `horizontal`：
+选择根 `LinearLayout` 后，返回到 "**属性**" 窗格，在 "搜索" 框中输入 "*方向*"，然后找到 "**方向**" 设置。 更改**方向**`horizontal`：
 
 ![选择横向方向](designer-walkthrough-images/vs/17-horizontal-orientation-w158.png)
 
 此时，设计器图面应类似于以下屏幕截图。
-请注意， `TextView`已将小组件移动到右侧： `ImageView`
+请注意，`TextView` 小组件已移动到 `ImageView`右侧：
 
 [![设计器布局](designer-walkthrough-images/vs/18-designer-layout-w158-sml.png)](designer-walkthrough-images/vs/18-designer-layout-w158.png#lightbox)
 
 ### <a name="modifying-the-spacing"></a>修改间距
 
-下一步是在 UI 中修改填充和边距设置，以便在小组件之间提供更多空间。 `ImageView`在设计图面上选择。 在 "**属性**" 窗格的`min` "搜索" 框中输入。 输入`70dp` **最小高度**和`50dp` **最小宽度**：
+下一步是在 UI 中修改填充和边距设置，以便在小组件之间提供更多空间。 在设计图面上选择 `ImageView`。 在 "**属性**" 窗格中，在 "搜索" 框中输入 `min`。 输入最**小高度**和 `50dp` `70dp`**最小宽度**：
 
 [![设置高度和宽度](designer-walkthrough-images/vs/18b-set-height-width-sml.png)](designer-walkthrough-images/vs/18b-set-height-width.png#lightbox)
 
-在 "**属性**" 窗格中`padding` ，在搜索框中输入`10dp` ，然后输入进行**填充**。 这些`minHeight`设置和`padding`设置将在的`ImageView`所有边周围添加边距，并将其垂直 elongate。 `minWidth` 请注意，在输入这些值时，布局 XML 会发生更改：
+在 "**属性**" 窗格中，在 "搜索" 框中输入 `padding`，然后输入 `10dp` 进行**填充**。 这些 `minHeight`、`minWidth` 和 `padding` 设置在 `ImageView` 的两侧周围添加填充，并将其垂直 elongate。 请注意，在输入这些值时，布局 XML 会发生更改：
 
 [![设置填充](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
 可以通过将值分别输入到**空白边距**、**左边距**、**右**填充和**填充顶部**字段，来独立设置下、左、右和上填充设置。
-例如，将 "**左填充**" 字段设置`5dp`为，并将 "**下**边距"、"**右填充**" `10dp`和 "**填充顶部**" 字段设置为：
+例如，将 "**左边距**" 字段设置为 "`5dp`"，并将 "**下**边距"、"**右填充**" 和 "**填充前**" 字段设置为 `10dp`：
 
 [![自定义填充设置](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
 
-接下来，调整包含两个`LinearLayout` `TextView`小组件的小组件的位置。 在**文档大纲**中，选择`linearLayout1`。 在 "**属性**" 窗口中`margin` ，在 "搜索" 框中输入。 将**布局边距下**边距、**左边距边距**和**布局边距靠上**设置为`5dp`。 将**布局边距**设置为`0dp`从右到：
+接下来，调整包含两个 `TextView` 小组件 `LinearLayout` 小组件的位置。 在**文档大纲**中，选择 "`linearLayout1`"。 在 "**属性**" 窗口中，在 "搜索" 框中输入 `margin`。 将**布局边距下**边距、**左边距边距**和**布局边距靠上**设置为 `5dp`。 将**布局边距设置为从右**到 `0dp`：
 
 [![设置边距](designer-walkthrough-images/vs/21-margins-w158-sml.png)](designer-walkthrough-images/vs/21-margins-w158.png#lightbox)
 
 ### <a name="removing-the-default-image"></a>删除默认图像
 
-`ImageView`由于正在用于显示颜色（而不是图像），因此下一步是删除模板添加的默认图像源。
+由于 `ImageView` 用于显示颜色（而不是图像），因此下一步是删除模板添加的默认图像源。
 
-1. 在设计**器图面**上选择。 `ImageView`
+1. 选择**设计器图面**上的 `ImageView`。
 
 2. 在 "**属性**" 中，在搜索框中输入*src* 。
 
@@ -159,21 +159,21 @@ _本文是 Android Designer 的演练。它演示了如何为小颜色浏览器�
 
 [![清除 ImageView src 设置](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
-这会`android:src="@android:drawable/ic_menu_gallery"`从源 XML 中删除该的`ImageView`。
+这会从源 XML 中删除该 `ImageView`的 `android:src="@android:drawable/ic_menu_gallery"`。
 
 ### <a name="adding-a-listview-container"></a>添加 ListView 容器
 
-定义**list_item**布局后，下一步是将添加`ListView`到主布局。 这`ListView`将包含**list_item**的列表。 
+定义**list_item**布局后，下一步是将 `ListView` 添加到主布局。 此 `ListView` 将包含**list_item**的列表。 
 
-在**解决方案资源管理器**中，打开**Resources/layout/activity_main. main.axml**。 在 "**工具箱**" 中， `ListView`找到小组件，并将其拖放到**Design Surface**上。 设计`ListView`器中的将为空，只不过选中它时轮廓边框的蓝色线除外。 您可以查看**文档大纲**来验证是否已正确添加**ListView** ：
+在**解决方案资源管理器**中，打开**Resources/layout/activity_main. main.axml**。 在 "**工具箱**" 中，找到 "`ListView`" 小组件，并将其拖到 " **Design Surface**"。 设计器中的 `ListView` 将为空，只不过选中它时轮廓边框的蓝色线除外。 您可以查看**文档大纲**来验证是否已正确添加**ListView** ：
 
-[![新建 ListView](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
+[![新 ListView](designer-walkthrough-images/vs/23-new-listview-w158-sml.png)](designer-walkthrough-images/vs/23-new-listview-w158.png#lightbox)
 
-默认情况下， `ListView`的`Id`值`@+id/listView1`为。
-在`listView1` **文档大纲**中仍处于选中状态时，打开 "**属性**" 窗格，单击 "**排列**方式"，然后选择 "**类别**"。
-打开**Main**，找到**Id**属性，将其值更改为`@+id/myListView`：
+默认情况下，为 `ListView` 提供 `@+id/listView1`的 `Id` 值。
+如果仍在**文档大纲**中选择 `listView1`，请打开 "**属性**" 窗格，单击 "**排列**方式"，然后选择 "**类别**"。
+打开**Main**，找到**Id**属性，将其值更改为 `@+id/myListView`：
 
-[![将 id 重命名为 myListView](designer-walkthrough-images/vs/24-change-id-w158-sml.png)](designer-walkthrough-images/vs/24-change-id-w158.png#lightbox)
+[将 id![重命名为 myListView](designer-walkthrough-images/vs/24-change-id-w158-sml.png)](designer-walkthrough-images/vs/24-change-id-w158.png#lightbox)
 
 此时，用户界面已准备就绪，可供使用。
 
@@ -275,7 +275,7 @@ namespace DesignerWalkthrough
 
 ```
 
-此代码使用自定义`ListView`适配器加载颜色信息，并在刚创建的 UI 中显示此数据。 若要使此示例简短，请在列表中对颜色信息进行硬编码，但可以修改适配器以从数据源中提取颜色信息或动态计算颜色信息。 有关`ListView`适配器的详细信息，请参阅[ListView](~/android/user-interface/layouts/list-view/index.md)。
+此代码使用自定义 `ListView` 适配器加载颜色信息，并在刚创建的 UI 中显示此数据。 若要使此示例简短，请在列表中对颜色信息进行硬编码，但可以修改适配器以从数据源中提取颜色信息或动态计算颜色信息。 有关 `ListView` 适配器的详细信息，请参阅[ListView](~/android/user-interface/layouts/list-view/index.md)。
 
 生成并运行应用程序。 以下屏幕截图举例说明了如何在设备上运行应用程序：
 
@@ -283,7 +283,7 @@ namespace DesignerWalkthrough
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-### <a name="creating-a-new-project"></a>创建新的项目
+### <a name="creating-a-new-project"></a>创建新项目
 
 第一步是创建新的 Xamarin Android 项目。
 
@@ -317,105 +317,105 @@ namespace DesignerWalkthrough
 
 ### <a name="creating-the-list-item-user-interface"></a>创建列表项用户界面
 
-单击屏幕底部的 "**设计器**" 选项卡以返回到**设计器图面**。 在右侧的 "**工具箱**" 窗格中，向下滚动到 "**图像 & Media** " `ImageView`部分，找到：
+单击屏幕底部的 "**设计器**" 选项卡以返回到**设计器图面**。 在右侧的 "**工具箱**" 窗格中，向下滚动到 "**图像 & Media** " 部分并找到 `ImageView`：
 
 [![找到 ImageView](designer-walkthrough-images/xs/06-locate-imageview-m75-sml.png)](designer-walkthrough-images/xs/06-locate-imageview-m75.png#lightbox)
 
-或者，你可以在搜索栏中输入*ImageView*以查找`ImageView`：
+或者，你可以在搜索栏中输入*ImageView*以查找 `ImageView`：
 
 [![ImageView 搜索](designer-walkthrough-images/xs/07-imageview-search-m75-sml.png)](designer-walkthrough-images/xs/07-imageview-search-m75.png#lightbox)
 
-将此`ImageView`拖动到**Design Surface** （这`ImageView`将用于在颜色浏览器应用中显示颜色样本）：
+将此 `ImageView` 拖动到**Design Surface** （此 `ImageView` 用于在颜色浏览器应用中显示颜色样本）：
 
-[![画布上的 ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
+[在画布上![ImageView](designer-walkthrough-images/xs/08-imageview-on-canvas-m75-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas-m75.png#lightbox)
 
-接下来，将`LinearLayout (Vertical)`小组件从**工具箱**拖动到**Design Surface**中。 请注意，蓝色轮廓指示添加`LinearLayout`的的边界。 **文档大纲**显示它是的子级`LinearLayout`，如下`imageView1 (ImageView)`所示：
+接下来，将 "`LinearLayout (Vertical)`" 小组件从 "**工具箱**" 拖动到**Design Surface**中。 请注意，蓝色的轮廓指示添加的 `LinearLayout`的边界。 **文档大纲**显示它是 `LinearLayout`的子级，位于 `imageView1 (ImageView)`下面：
 
-[![蓝色轮廓](designer-walkthrough-images/xs/10-blue-outline-m75-sml.png)](designer-walkthrough-images/xs/10-blue-outline-m75.png#lightbox)
+[![蓝轮廓](designer-walkthrough-images/xs/10-blue-outline-m75-sml.png)](designer-walkthrough-images/xs/10-blue-outline-m75.png#lightbox)
 
-当你`ImageView`在设计器中选择时，蓝色轮廓会移动到`ImageView`外侧。 此外，所选内容将移动`imageView1 (ImageView)`到**文档大纲**中：
+当您在设计器中选择 `ImageView` 时，蓝色轮廓将移动以包围 `ImageView`。 此外，所选内容将移动到**文档大纲**中 `imageView1 (ImageView)`：
 
 [![选择 ImageView](designer-walkthrough-images/xs/11-select-imageview-m75-sml.png)](designer-walkthrough-images/xs/11-select-imageview-m75.png#lightbox)
 
-接下来，将`Text (Large)`小组件从**工具箱**拖到新添加`LinearLayout`的中。 请注意，当您将鼠标拖动到**Design Surface**上时，它会突出显示新小组件的插入位置。
-小组件应位于中`linearLayout1` ，如下所示： `Text (Large)`
+接下来，将 "`Text (Large)`" 小组件从 "**工具箱**" 拖到新添加的 `LinearLayout`中。 请注意，当您将鼠标拖动到**Design Surface**上时，它会突出显示新小组件的插入位置。
+`Text (Large)` 小组件应位于 `linearLayout1` 中，如下所示：
 
 [![添加大文本小组件](designer-walkthrough-images/xs/12-green-highlight-m75-sml.png)](designer-walkthrough-images/xs/12-green-highlight-m75.png#lightbox)
 
-接下来，在`Text (Small)` `Text (Large)`小组件下面添加小组件。 此时， **Design Surface**应类似于以下屏幕截图：
+接下来，将 `Text (Small)` 小组件添加到 `Text (Large)` 小组件下。 此时， **Design Surface**应类似于以下屏幕截图：
 
 [![添加小文本小组件](designer-walkthrough-images/xs/13-add-small-text-m75-sml.png)](designer-walkthrough-images/xs/13-add-small-text-m75.png#lightbox)
 
-如果两个`textView`小组件不在`linearLayout1`内部，您可以将其`linearLayout1`拖放到**文档大纲**中，并将其放置在前面的屏幕截图中显示的位置`linearLayout1`（在下缩进）。
+如果两个 `textView` 小组件不在 `linearLayout1`中，则可以将其拖动到**文档大纲**中的 `linearLayout1`，并将其放置在前面的屏幕截图中显示的位置（在 `linearLayout1`下缩进）。
 
 ### <a name="arranging-the-user-interface"></a>排列用户界面
 
-下一步是修改 UI，使其显示`ImageView`在左侧，将两个`TextView`小组件堆叠`ImageView`到右侧。
+下一步是修改 UI 以显示左侧的 `ImageView`，并将两个 `TextView` 小组件堆叠到 `ImageView`右侧。
 
-1. 选定后，请单击 "属性" 选项卡。 `ImageView`
+1. 选择 `ImageView` 后，请单击 "**属性**" 选项卡。
 
 2. 在 "**属性**" 选项卡下，单击 "**布局**"。
 
-3. 向下滚动到**ViewGroup** ，并`Width`将设置`wrap_content`更改为：
+3. 向下滚动到 " **ViewGroup** "，将 "`Width`" 设置更改为 "`wrap_content`：
 
 [![设置环绕内容](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
-更改此`Width`设置的另一种方法是单击小组件右侧的三角形，以将其宽度设置切换为`wrap_content`：
+更改 `Width` 设置的另一种方法是单击小组件右侧的三角形，以将其宽度设置切换为 `wrap_content`：
 
 [![拖动以设置宽度](designer-walkthrough-images/xs/16-width-arrow-m75-sml.png)](designer-walkthrough-images/xs/16-width-arrow-m75.png#lightbox)
 
-再次单击该三角形会将`Width`设置返回`match_parent`到。 接下来，请在 "**文档大纲**" 窗格中选择`LinearLayout`根：
+再次单击该三角形将返回 `Width` 设置为 `match_parent`。 接下来，请在 "**文档大纲**" 窗格中选择根 `LinearLayout`：
 
 [![选择根 LinearLayout](designer-walkthrough-images/xs/17-root-linearlayout-m75-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout-m75.png#lightbox)
 
-选择根`LinearLayout`后，返回到 "**属性**" 选项卡，然后单击 "**小组件**"。 将设置更改为`horizontal` ，如下所示。 `Orientation` 此时， **Design Surface**应类似于以下屏幕截图。 请注意， `TextView`已将小组件移动到右侧： `ImageView`
+选择根 `LinearLayout` 后，返回到 "**属性**" 选项卡，然后单击 "**小组件**"。 将 `Orientation` 设置更改为 "`horizontal`，如下所示。 此时， **Design Surface**应类似于以下屏幕截图。 请注意，`TextView` 小组件已移动到 `ImageView`右侧：
 
-[![选择横向方向](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
+[![选择水平方向](designer-walkthrough-images/xs/18-horizontal-orientation-m75-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation-m75.png#lightbox)
 
 ### <a name="modifying-the-spacing"></a>修改间距
 
-下一步是修改 UI 中的 "填充" 和 "边距" 设置，以便在小组件之间提供更多空间。 选择，然后单击 "**属性**" 下的 "布局" 选项卡。 `ImageView` `50dp` `Padding`将更改为，`Min Height` 将更改`10dp`为，并将更改为。 `70dp` `Min Width`
-这会在的`ImageView`所有边周围应用填充，并将其垂直 elongates：
+下一步是修改 UI 中的 "填充" 和 "边距" 设置，以便在小组件之间提供更多空间。 选择 "`ImageView`"，然后单击 "**属性**" 下的 "**布局**" 选项卡。 将 `Min Width` 更改为 `50dp`、要 `70dp`的 `Min Height` 和 `Padding`。
+这会对 `ImageView` 的两侧进行填充，并将其垂直 elongates：
 
 [![设置填充](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
 
-可以通过分别`Top`在、 `Right`、 `Bottom`和`Left`填充字段中输入值，来单独设置上、右、下和左填充设置。 `Left`例如，将填充值设置为`5dp` ，并`Top`将、 `Right`和`Bottom`填充值设置为`10dp`。 请注意， `Padding`设置将更改为这些值的逗号分隔列表：
+可以通过分别输入值到 `Top`、`Right`、`Bottom`和 `Left` 填充字段，单独设置上、右、下和左填充设置。 例如，将 `Left` 填充值设置为 `5dp`，将 `Top`、`Right`和 `Bottom` 填充值设置为 `10dp`。 请注意，`Padding` 设置将更改为以下值的逗号分隔列表：
 
 [![自定义填充设置](designer-walkthrough-images/xs/21-custom-padding-m75-sml.png)](designer-walkthrough-images/xs/21-custom-padding-m75.png#lightbox)
 
-接下来，调整包含两个`LinearLayout` `TextView`小组件的小组件的位置。 在**文档大纲**中，选择`linearLayout1`。 在 "**属性**" 窗格中，选择 "**布局**" 选项卡。向下滚动到 " **ViewGroup** " 部分， `Left`并分别`Right`将、 `Bottom` `Top`、和`5dp`边距设置`0dp`为、 `5dp` `5dp`、和：
+接下来，调整包含两个 `TextView` 小组件 `LinearLayout` 小组件的位置。 在**文档大纲**中，选择 "`linearLayout1`"。 在 "**属性**" 窗格中，选择 "**布局**" 选项卡。向下滚动到 " **ViewGroup** " 部分，并分别将 `Left`、`Top`、`Right`和 `Bottom` 边距设置为 `5dp`、`5dp`、`0dp`和 `5dp`:
 
 [![设置边距](designer-walkthrough-images/xs/22-margins-m75-sml.png)](designer-walkthrough-images/xs/22-margins-m75.png#lightbox)
 
 ### <a name="removing-the-default-image"></a>删除默认图像
 
-`ImageView`由于正在用于显示颜色（而不是图像），因此下一步是删除模板添加的默认图像源。
+由于 `ImageView` 用于显示颜色（而不是图像），因此下一步是删除模板添加的默认图像源。
 
 1. 选择 `ImageView`。
 
 2. 单击 "**属性**" 下的 "**小组件**" 选项卡。
 
-3. 清除该`Src`设置，使其为空：
+3. 清除 "`Src`" 设置，使其为空：
 
 [![清除 ImageView src 设置](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 
-这会`android:src="@android:drawable/ic_menu_gallery"`从源 XML 中删除该的`ImageView`。
+这会从源 XML 中删除该 `ImageView`的 `android:src="@android:drawable/ic_menu_gallery"`。
 
 ### <a name="adding-a-listview-container"></a>添加 ListView 容器
 
-定义**list_item**布局后，下一步是将添加`ListView`到主布局。 这`ListView`将包含**list_item**的列表。 
+定义**list_item**布局后，下一步是将 `ListView` 添加到主布局。 此 `ListView` 将包含**list_item**的列表。 
 
 在**解决方案资源管理器**中，打开**Resources/layout/main.axml**。
-`Button`单击小组件（如果有）并将其删除。 在 "**工具箱**" 中， `ListView`找到小组件，并将其拖放到**Design Surface**上。
-设计`ListView`器中的将为空，只不过选中它时轮廓边框的蓝色线除外。 您可以查看**文档大纲**来验证是否已正确添加**ListView** ：
+单击 "`Button`" 小组件（如果有）并将其删除。 在 "**工具箱**" 中，找到 "`ListView`" 小组件，并将其拖到 " **Design Surface**"。
+设计器中的 `ListView` 将为空，只不过选中它时轮廓边框的蓝色线除外。 您可以查看**文档大纲**来验证是否已正确添加**ListView** ：
 
-[![新建 ListView](designer-walkthrough-images/xs/24-new-listview-m75-sml.png)](designer-walkthrough-images/xs/24-new-listview-m75.png#lightbox)
+[![新 ListView](designer-walkthrough-images/xs/24-new-listview-m75-sml.png)](designer-walkthrough-images/xs/24-new-listview-m75.png#lightbox)
 
-默认情况下， `ListView`的`Id`值`@+id/listView1`为。
-在`listView1` **文档大纲**中仍处于选中状态时，打开 "**属性**" 窗格，单击 "**排列**方式"，然后选择 "**类别**"。
-打开**Main**，找到**Id**属性，将其值更改为`@+id/myListView`：
+默认情况下，为 `ListView` 提供 `@+id/listView1`的 `Id` 值。
+如果仍在**文档大纲**中选择 `listView1`，请打开 "**属性**" 窗格，单击 "**排列**方式"，然后选择 "**类别**"。
+打开**Main**，找到**Id**属性，将其值更改为 `@+id/myListView`：
 
-[![将 id 重命名为 myListView](designer-walkthrough-images/xs/25-change-id-m75-sml.png)](designer-walkthrough-images/xs/25-change-id-m75.png#lightbox)
+[将 id![重命名为 myListView](designer-walkthrough-images/xs/25-change-id-m75-sml.png)](designer-walkthrough-images/xs/25-change-id-m75.png#lightbox)
 
 此时，用户界面已准备就绪，可供使用。
 
@@ -515,7 +515,7 @@ namespace DesignerWalkthrough
 }
 ```
 
-此代码使用自定义`ListView`适配器加载颜色信息，并在刚创建的 UI 中显示此数据。 若要使此示例简短，请在列表中对颜色信息进行硬编码，但可以修改适配器以从数据源中提取颜色信息或动态计算颜色信息。 有关`ListView`适配器的详细信息，请参阅[ListView](~/android/user-interface/layouts/list-view/index.md)。
+此代码使用自定义 `ListView` 适配器加载颜色信息，并在刚创建的 UI 中显示此数据。 若要使此示例简短，请在列表中对颜色信息进行硬编码，但可以修改适配器以从数据源中提取颜色信息或动态计算颜色信息。 有关 `ListView` 适配器的详细信息，请参阅[ListView](~/android/user-interface/layouts/list-view/index.md)。
 
 生成并运行应用程序。 以下屏幕截图举例说明了如何在设备上运行应用程序：
 

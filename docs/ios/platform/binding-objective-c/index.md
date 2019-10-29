@@ -5,26 +5,26 @@ ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61d1adfc997b34302f1f89f56653af906ca90135
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291791"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022226"
 ---
 # <a name="binding-ios-libraries"></a>绑定 iOS 库
 
 请单击以下链接了解有关 Xamarin 和 Xamarin 的绑定目标 C 库和 CocoaPods：
 
 - [**概述**](~/cross-platform/macios/binding/overview.md)-
-  描述绑定的工作方式。
-- [**绑定目标-C 库**](~/cross-platform/macios/binding/objective-c-libraries.md)-
-  有关如何绑定要在 Xamarin 项目中使用的目标 C 库的说明。
+  说明绑定的工作原理。
+- [**绑定目标-c 库**](~/cross-platform/macios/binding/objective-c-libraries.md)-
+  有关如何绑定要在 Xamarin 项目中使用的目标-c 库的说明。
 - [**类型定义参考指南**](~/cross-platform/macios/binding/binding-types-reference.md)-
-  介绍可用于绑定的作者用于驱动绑定生成过程的所有属性。
+  介绍了绑定作者用于驱动绑定生成过程的所有可用属性。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[目标 Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

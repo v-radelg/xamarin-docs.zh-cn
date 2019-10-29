@@ -4,15 +4,15 @@ description: 本文档链接到介绍适用于 Xamarin iOS 开发人员的各种
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289539"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022047"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin 中的用户界面控件
 
@@ -28,7 +28,7 @@ UIButton 类用于表示 iOS 屏幕中各种不同的按钮样式。 本部分�
 
 ## <a name="collection-viewsuicollectionviewmd"></a>[集合视图](uicollectionview.md)
 
-`UICollectionView`类中提供的集合视图是 iOS 6 中的一种新概念，使用布局引入屏幕上的多个项。 将数据`UICollectionView`提供给以创建项并与这些项进行交互的模式遵循的是 iOS 开发中通常使用的相同委托和数据源模式。
+`UICollectionView` 类中提供的集合视图是 iOS 6 中的一种新概念，使用布局引入屏幕上的多个项。 向 `UICollectionView` 提供数据以创建项以及与这些项进行交互的模式遵循的是在 iOS 开发中经常使用的相同委托和数据源模式。
 
 ## <a name="imagesimagemd"></a>[图像](image.md)
 
@@ -36,7 +36,7 @@ UIButton 类用于表示 iOS 屏幕中各种不同的按钮样式。 本部分�
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[手动相机控件](intro-to-manual-camera-controls.md)
 
-手动相机控制（由 iOS 8 中`AVFoundation Framework`的提供）允许移动应用程序完全控制 ios 设备的照相机。 这一精细的控制级别可用于创建专业级相机应用程序，并通过在拍摄静止图像或视频的同时调整照相机的参数来提供艺术家组合。
+手动相机控制（由 iOS 8 中的 `AVFoundation Framework` 提供）允许移动应用程序完全控制 iOS 设备的照相机。 这一精细的控制级别可用于创建专业级相机应用程序，并通过在拍摄静止图像或视频的同时调整照相机的参数来提供艺术家组合。
 
 ## <a name="mapsios-mapsindexmd"></a>[地图](ios-maps/index.md)
 
@@ -44,7 +44,7 @@ UIButton 类用于表示 iOS 屏幕中各种不同的按钮样式。 本部分�
 
 ## <a name="labelslabelsmd"></a>[标签](labels.md)
 
-`UILabel`控件用于显示单行和多行只读文本。
+`UILabel` 控件用于显示单行和多行只读文本。
 
 ## <a name="pickers-and-date-pickerspickermd"></a>[选取器和日期选取器](picker.md)
 
@@ -62,7 +62,7 @@ UISearchBar 用于在值列表中进行搜索。
 
 ## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[滑块、开关和分段控件](slider-switch-segmented-controls.md)
 
-使用滑块控件，可以在范围中简单选择数字值。 iOS 使用`UISwitch`作为可通过其他平台上的单选按钮表示的布尔输入。 分段控件是一种允许用户与少量选项交互的组织方式。
+使用滑块控件，可以在范围中简单选择数字值。 iOS 将 `UISwitch` 用作可通过其他平台上的单选按钮表示的布尔输入。 分段控件是一种允许用户与少量选项交互的组织方式。
 
 ## <a name="stack-viewuistackviewmd"></a>[堆栈视图](uistackview.md)
 
@@ -74,7 +74,7 @@ UISearchBar 用于在值列表中进行搜索。
 
 ## <a name="text-inputtext-inputmd"></a>[文本输入](text-input.md)
 
-接受用户文本输入的目的是实现`UITextField`单行输入，并将 UITextView 用于多行可编辑文本。 您可以将其中任一控件拖动到屏幕上，然后双击以设置初始文本。
+接受用户文本输入是通过用于单行输入的 `UITextField` 和多行可编辑文本的 UITextView 来完成的。 您可以将其中任一控件拖动到屏幕上，然后双击以设置初始文本。
 
 ## <a name="tab-bars-and-tab-bar-controllerscreating-tabbed-applicationsmd"></a>[选项卡栏和选项卡栏控制器](creating-tabbed-applications.md)
 
@@ -82,7 +82,7 @@ UISearchBar 用于在值列表中进行搜索。
 
 ## <a name="web-viewsuiwebviewmd"></a>[Web 视图](uiwebview.md)
 
-在本文中，我们将探讨 Apple 提供的三个 Web 视图中的每`UIWebView`个`WKWebview`视图： `SFSafariViewController`、、和，它们之间的相似性和差异，以及如何使用它们。
+在本文中，我们将探讨 Apple 提供的三个 Web 视图（`UIWebView`、`WKWebview`和 `SFSafariViewController`，它们之间的相似性和差异，以及如何使用它们。
 
 ## <a name="related-links"></a>相关链接
 

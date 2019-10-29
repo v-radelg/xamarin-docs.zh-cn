@@ -3,19 +3,19 @@ title: 第 4 部分 - 处理多个平台
 description: 本文档介绍如何根据平台或功能处理应用程序的分歧。 它讨论了屏幕大小、导航的形式、触摸和手势、推送通知和接口模式，如列表和选项卡。
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fb01d0ca56365fa95aa563ca99394dea39dc7d31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555723e689a9ba076ee34d49b93cf7141e542832
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288886"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016892"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>第 4 部分 - 处理多个平台
 
-## <a name="handling-platform-divergence-amp-features"></a>处理平台分歧&amp;功能
+## <a name="handling-platform-divergence-amp-features"></a>处理平台分歧 &amp; 功能
 
 分歧并不只是一个 "跨平台" 问题;"相同" 平台上的设备具有不同的功能（特别是可用的各种 Android 设备）。 最明显的基本功能是屏幕大小，但其他设备属性可能会有所不同，并且需要应用程序检查某些功能，并根据其存在（或缺少）的行为。
 
@@ -108,7 +108,7 @@ ms.locfileid: "70288886"
 
 在某些情况下，您的共享代码仍需要在每个平台上以不同方式工作，这可能会访问行为不同的类或功能。 条件编译最适用于共享资产项目，其中在定义了不同符号的多个项目中引用了同一个源文件。
 
-Xamarin 项目始终定义`__MOBILE__`适用于 iOS 和 Android 应用程序项目的情况（请注意，这两个符号上的双下划线预修复和后修复方法相同）。
+Xamarin 项目始终定义 `__MOBILE__` 这对于 iOS 和 Android 应用程序项目均为 true （请注意，这两个符号上的双下划线预修复和后修复方法相同）。
 
 ```csharp
 #if __MOBILE__
@@ -118,7 +118,7 @@ Xamarin 项目始终定义`__MOBILE__`适用于 iOS 和 Android 应用程序项�
 
 #### <a name="ios"></a>iOS
 
-Xamarin 定义`__IOS__`可用于检测 iOS 设备的。
+Xamarin 定义可用于检测 iOS 设备 `__IOS__`。
 
 ```csharp
 #if __IOS__
@@ -148,7 +148,7 @@ Xamarin 定义`__IOS__`可用于检测 iOS 设备的。
 #endif
 ```
 
-每个 API 版本还定义了一个新的编译器指令，因此，如果针对的是较新的 Api，则此类代码将允许你添加功能。 每个 API 级别都包含 "较低" 级别的符号。 此功能对于支持多个平台并不真正有用;通常， `__ANDROID__`符号就足够了。
+每个 API 版本还定义了一个新的编译器指令，因此，如果针对的是较新的 Api，则此类代码将允许你添加功能。 每个 API 级别都包含 "较低" 级别的符号。 此功能对于支持多个平台并不真正有用;通常 `__ANDROID__` 符号就足够了。
 
 ```csharp
 #if __ANDROID_11__
@@ -158,7 +158,7 @@ Xamarin 定义`__IOS__`可用于检测 iOS 设备的。
 
 #### <a name="mac"></a>Mac
 
-目前没有内置的 Xamarin 符号，但你可以在 Mac 应用项目选项中添加自己的，> 在 "**定义符号**" 框中**生成 > 编译器**，或编辑 **.csproj**文件并添加（例如`__MAC__`）
+目前没有内置的 Xamarin 符号，但你可以在 Mac 应用项目选项中添加自己的，> 在 "**定义符号**" 框中**生成 > 编译器**，或编辑 **.csproj**文件并添加（例如 `__MAC__`）
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -179,11 +179,11 @@ Xamarin 定义`__IOS__`可用于检测 iOS 设备的。
 条件编译的一个简单的案例研究示例是设置 SQLite 数据库文件的文件位置。 对于指定文件位置，这三个平台有略微不同的要求：
 
 - **iOS** – Apple 首选非用户数据放置在特定位置（库目录），但此目录没有系统常量。 需要特定于平台的代码来生成正确的路径。
-- **Android** –返回`Environment.SpecialFolder.Personal`的系统路径是存储数据库文件的可接受的位置。
+- **Android** – `Environment.SpecialFolder.Personal` 返回的系统路径是存储数据库文件的可接受位置。
 - **Windows Phone** –独立存储机制不允许指定完整路径，只允许指定相对路径和文件名。
-- **通用 Windows 平台**–使用`Windows.Storage` api。
+- **通用 Windows 平台**–使用 `Windows.Storage` api。
 
-下面的代码使用条件编译来确保对于`DatabaseFilePath`每个平台都是正确的：
+下面的代码使用条件编译来确保每个平台的 `DatabaseFilePath` 都是正确的：
 
 ```csharp
 public static string DatabaseFilePath {

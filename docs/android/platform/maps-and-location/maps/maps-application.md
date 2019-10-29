@@ -4,21 +4,21 @@ description: 如何从你的 Xamarin Android 应用程序中启动内置的地�
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b950326eb5a124d5040caa0044309630a2a53d38
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7b74f564f2b6e9613874a774258a7e999002e61a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761676"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027081"
 ---
 # <a name="launching-the-maps-application"></a>启动 Maps 应用程序
 
 在 Xamarin 中使用地图的最简单方法是利用如下所示的内置地图应用程序：
 
-[![内置 Google Maps 应用的示例屏幕截图](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
+[内置 Google Maps 应用的![示例屏幕截图](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 使用 maps 应用程序时，地图不会成为应用程序的一部分。 相反，你的应用程序将启动 maps 应用程序并将映射加载到外部。 下一节将介绍如何使用 Xamarin 启动类似于上面的映射。
 
@@ -38,17 +38,17 @@ StartActivity (mapIntent);
 
 上面的代码使用了 geo 方案来创建 URI。 此 URI 方案支持多种格式，如下所示：
 
-- `geo:latitude,longitude`&ndash;打开以 lat/lon 为中心的地图应用程序。 
+- `geo:latitude,longitude` &ndash; 会打开以 lat/lon 为中心的地图应用程序。 
 
-- `geo:latitude,longitude?z=zoom`&ndash;打开以 lat/lon 为中心的地图应用程序，并将其缩放到指定的级别。 缩放级别的范围可以为1到23：1显示整个地球，23是最接近的缩放级别。
+- `geo:latitude,longitude?z=zoom` &ndash; 会打开以 lat/lon 为中心的地图应用程序，并将其缩放到指定的级别。 缩放级别范围从1到 23: 1 显示整个地球，23是最接近的缩放级别。
 
-- `geo:0,0?q=my+street+address`&ndash;打开地图应用程序到街道地址的位置。 
+- `geo:0,0?q=my+street+address` &ndash; 会将地图应用程序打开到街道地址的位置。 
 
-- `geo:0,0?q=business+near+city`&ndash;打开 maps 应用程序并显示带批注的搜索结果。 
+- `geo:0,0?q=business+near+city` &ndash; 打开 maps 应用程序并显示带批注的搜索结果。 
 
-采用查询（即街道地址或搜索词）的 URI 版本使用 Google 的 geocoder 服务检索随后显示在地图上的位置。 例如，URI `geo:0,0?q=coop+Cambridge`会生成如下所示的映射：
+采用查询（即街道地址或搜索词）的 URI 版本使用 Google 的 geocoder 服务检索随后显示在地图上的位置。 例如，URI `geo:0,0?q=coop+Cambridge` 会生成如下所示的映射：
 
-[![使用搜索词显示 Google Maps 的示例屏幕截图](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
+[使用搜索词![显示 Google Maps 的示例屏幕截图](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 有关地理 URI 方案的详细信息，请参阅[在地图上显示位置](https://developer.android.com/guide/components/intents-common.html#Maps)。
 
@@ -56,9 +56,9 @@ StartActivity (mapIntent);
 
 除了地域方案，Android 还支持从意向加载街道视图。 从 Xamarin 启动的街道视图应用程序的示例如下所示：
 
-[![街道视图的示例屏幕截图](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+[街道视图的![示例屏幕截图](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
-若要启动街道视图，只需使用`google.streetview` URI 方案，如以下代码所示：
+若要启动街道视图，只需使用 `google.streetview` URI 方案，如以下代码所示：
 
 ```csharp
 var streetViewUri = Android.Net.Uri.Parse (
@@ -75,16 +75,16 @@ google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 
 如您所见，有几个支持的参数，如下所示：
 
-- `lat`&ndash;要在街道视图中显示的位置的纬度。
+- `lat` &ndash; 要在街道视图中显示的位置的纬度。
 
-- `lng`&ndash;要在街道视图中显示的位置的经度。
+- `lng` &ndash; 要在街道视图中显示的位置的经度。
 
-- `pitch`&ndash;街道视图全景的角度，以度为单位从中心测量，以度为单位，90度为垂直朝下，-90 度为直线。
+- `pitch` 街道视图全景的 &ndash; 角度，以度为单位从中心测量，以度为单位，90度为垂直朝下，-90 度为直线。
 
-- `yaw`&ndash;街道视图全景的中心视图，以顺时针度为单位进行测量。
+- "街道视图" 全景 `yaw` &ndash; 中心，以度为单位从北计量。
 
-- `zoom`&ndash;街道视图全景图的缩放乘数，其中，1.0 = 正常缩放，2.0 = 放大2，3.0 = 放大4x，等等。
+- `zoom` 街道视图全景的 &ndash; 缩放乘数，其中 1.0 = 正常缩放，2.0 = 放大2，3.0 = 放大4x，等等。
 
-- `mz`&ndash;从街道视图转到地图应用程序时将使用的地图缩放级别。
+- `mz` &ndash; 从街道视图转到地图应用程序时将使用的地图缩放级别。
 
 使用内置地图应用程序或街道视图是快速添加映射支持的简单方法。 但是，Android 地图 API 提供更好的控制映射体验。

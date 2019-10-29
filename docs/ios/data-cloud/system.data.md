@@ -4,19 +4,19 @@ description: 本文档介绍了如何使用 system.exception 和 Mono 在 Xamari
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4f5f6adf99306754fa7b2aa49855fe228e740d7e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766542"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016935"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin 中的 system.object
 
-Xamarin 8.10 添加`Mono.Data.Sqlite.dll` [了对 ADO.NET](xref:System.Data)提供程序的支持。 支持包括添加以下[程序集](~/cross-platform/internals/available-assemblies.md)：
+Xamarin 8.10 添加了对[系统](xref:System.Data)的支持，包括 `Mono.Data.Sqlite.dll` ADO.NET 提供程序。 支持包括添加以下[程序集](~/cross-platform/internals/available-assemblies.md)：
 
 - `System.Data.dll`
 - `System.Data.Service.Client.dll`
@@ -28,13 +28,13 @@ Xamarin 8.10 添加`Mono.Data.Sqlite.dll` [了对 ADO.NET](xref:System.Data)提�
 
 ## <a name="example"></a>示例
 
-以下程序将在中`Documents/mydb.db3`创建一个数据库，如果数据库以前不存在，则使用示例数据填充该数据库。 然后，将查询数据库，并将输出写入到`stderr`中。
+以下程序在 `Documents/mydb.db3`中创建一个数据库，如果数据库以前不存在，则使用示例数据填充该数据库。 然后，将查询数据库，并将输出写入到 `stderr`。
 
 ### <a name="add-references"></a>添加引用
 
-首先，右键单击 "**引用**" 节点，然后选择 "**编辑引用 ...** "，然后`System.Data`选择`Mono.Data.Sqlite`和：
+首先，右键单击 "**引用**" 节点，然后选择 "**编辑引用 ...** "，然后选择 "`System.Data`" 和 "`Mono.Data.Sqlite`"：
 
-[![](system.data-images/edit-references-sml.png "添加新引用")](system.data-images/edit-references.png#lightbox)
+[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>代码示例
 
@@ -144,15 +144,15 @@ using (var addCmd = conn.CreateCommand ()) {
 - 需要[system.object 的](xref:System.CodeDom)任何内容（例如 [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) ）
 - XML 配置文件支持（例如 [DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ）。
 - [DbProviderFactories](xref:System.Data.Common.DbProviderFactories) （取决于 XML 配置文件支持）
-- [System.Data.OleDb](xref:System.Data.OleDb)
-- [System.Data.Odbc](xref:System.Data.Odbc)
-- 依赖项已从中`System.Data.dll`移除，导致删除[EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。 `System.EnterpriseServices.dll`
+- [System.object](xref:System.Data.OleDb)
+- [System.object](xref:System.Data.Odbc)
+- `System.EnterpriseServices.dll` 依赖项已从 `System.Data.dll` 中*删除*，导致删除[EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。
 
 <a name="Mono.Data.Sqlite" />
 
-### <a name="monodatasqlite"></a>Mono.Data.Sqlite
+### <a name="monodatasqlite"></a>Mono. 数据 Sqlite
 
-同时， **Mono** . node.js 不会更改源代码，而是在绑定 Sqlite 3.5 后`Mono.Data.Sqlite.dll` ，可能会遇到多个*运行时*问题。 同时，iOS 8 附带 SQLite 3.8.5。 说到，这两个版本之间的某些内容已发生了变化。
+同时， **Mono** . node.js 不会更改源代码，而是由于 `Mono.Data.Sqlite.dll` 绑定 Sqlite 3.5，因此可能会导致许多*运行时*问题。 同时，iOS 8 附带 SQLite 3.8.5。 说到，这两个版本之间的某些内容已发生了变化。
 
 旧版本的 iOS 附带以下版本的 SQLite：
 
@@ -161,7 +161,7 @@ using (var addCmd = conn.CreateCommand ()) {
 - **iOS 5** -版本3.7.7。
 - **iOS 4** -版本3.6.22。
 
-最常见的问题似乎与数据库架构查询相关，例如，在运行时确定给定表中存在哪些列，如`Mono.Data.Sqlite.SqliteConnection.GetSchema` （重写 DbConnection 和[GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` （重写[DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 简而言之，使用[DataTable](xref:System.Data.DataTable)的任何内容似乎都不能正常工作。
+最常见的问题似乎与数据库架构查询相关，例如，在运行时确定给定表中存在哪些列，如 `Mono.Data.Sqlite.SqliteConnection.GetSchema` （重写[GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和 `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` （重写[DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 简而言之，使用[DataTable](xref:System.Data.DataTable)的任何内容似乎都不能正常工作。
 
 <a name="Data_Binding" />
 

@@ -4,21 +4,21 @@ description: Android 应用程序需要一些时间才能启动，特别是在�
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 4633811b2c0b001ab220f5fedaf116b1b269344a
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032548"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028716"
 ---
 # <a name="splash-screen"></a>初始屏幕
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
 
-@no__t 0An Android 应用程序需要一些时间才能启动，特别是在设备上首次启动应用程序时。初始屏幕可能会显示用户的启动进度或指示品牌。 _
+_Android 应用程序需要一些时间才能启动，特别是在设备上首次启动应用程序时。初始屏幕可能会显示用户的启动进度或指示品牌。_
 
 ## <a name="overview"></a>概述
 
@@ -32,7 +32,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 
 3. 向应用程序添加一个新活动，该活动将用作上一步骤中创建的主题定义的初始屏幕。
 
-[![Example Xamarin 徽标初始屏幕，后跟应用屏幕](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
+[![示例 Xamarin 徽标初始屏幕，后面跟有应用屏幕](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
 ## <a name="requirements"></a>要求
 
@@ -67,7 +67,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 </layer-list>
 ```
 
-此 `layer-list` 使初始映像按 @no__t 资源指定的背景色居中。 示例应用程序在**资源/值/color .xml**文件中定义此颜色：
+此 `layer-list` 以 `@color/splash_background` 资源所指定的背景色为初始图像居中。 示例应用程序在**资源/值/color .xml**文件中定义此颜色：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,7 +81,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 
 ### <a name="implementing-a-theme"></a>实现主题
 
-若要为初始屏幕活动创建自定义主题，请编辑（或添加）文件**值/样式 .xml** ，并为初始屏幕创建新的 `style` 元素。 下面显示了一个示例**值/样式 .xml**文件，其中包含名为**MyTheme**的 @no__t 1：
+若要为初始屏幕活动创建自定义主题，请编辑（或添加）文件**值/样式 .xml** ，并为初始屏幕创建新的 `style` 元素。 下面显示了一个示例**值/样式 .xml**文件，其中包含一个名为**MyTheme**的 `style`：
 
 ```xml
 <resources>
@@ -101,7 +101,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 </resources>
 ```
 
-**MyTheme**是非常 spartan 的 &ndash; 它声明了窗口背景，从窗口中显式删除了标题栏，并将其声明为全屏。 如果要创建在活动增加第一个布局之前模拟应用 UI 的初始屏幕，可以在样式定义中使用 `windowContentOverlay` 而不是 `windowBackground`。 在这种情况下，还必须修改**splash_screen**可绘制，使其显示 UI 的仿真。
+**MyTheme**是非常 spartan 的 &ndash; 它声明了窗口背景，从窗口中显式删除了标题栏，并将其声明为全屏。 如果要创建在活动增加第一个布局之前模拟应用 UI 的初始屏幕，可以使用 `windowContentOverlay`，而不是在样式定义中 `windowBackground`。 在这种情况下，还必须修改**splash_screen**可绘制，使其显示 UI 的仿真。
 
 ### <a name="create-a-splash-activity"></a>创建初始活动
 
@@ -138,7 +138,7 @@ public class SplashActivity : AppCompatActivity
 }
 ```
 
-`SplashActivity` 显式使用上一节中创建的主题，替代应用程序的默认主题。
+`SplashActivity` 显式使用在上一部分中创建的主题，替代应用程序的默认主题。
 不需要在 `OnCreate` 中加载布局，因为主题将可绘制的作为背景声明。
 
 必须设置 `NoHistory=true` 属性，以便从后端堆栈中删除活动。 若要阻止 "后退" 按钮取消启动进程，还可以重写 `OnBackPressed` 并使其不执行任何操作：
@@ -147,9 +147,9 @@ public class SplashActivity : AppCompatActivity
 public override void OnBackPressed() { }
 ```
 
-在 `OnResume` 中以异步方式执行启动工作。 这是必需的，以便启动工作不会减慢启动屏幕或延迟启动屏幕的外观。 工作完成后，`SplashActivity` 会启动 `MainActivity`，用户可以开始与应用进行交互。
+在 `OnResume`中以异步方式执行启动工作。 这是必需的，以便启动工作不会减慢启动屏幕或延迟启动屏幕的外观。 工作完成后，`SplashActivity` 将启动 `MainActivity`，用户可以开始与应用进行交互。
 
-这一新 `SplashActivity` 将设置为应用程序的启动程序活动，方法是将 @no__t 属性设置为 `true`。 由于 @no__t 现在是启动器活动，因此你必须编辑 `MainActivity.cs`，并从 @no__t 中删除 @no__t 2 属性：
+此新 `SplashActivity` 将设置为应用程序的启动程序活动，方法是将 `MainLauncher` 属性设置为 "`true`"。 由于 `SplashActivity` 现在是启动器活动，因此你必须编辑 `MainActivity.cs`并从 `MainActivity`中删除 `MainLauncher` 属性：
 
 ```csharp
 [Activity(Label = "@string/ApplicationName")]
@@ -188,7 +188,7 @@ public class MainActivity : AppCompatActivity
 
 4. 将文件**colors .xml**和**style .xml**添加到**值-土地**（可从现有的**值/颜色 .xml**和**值/样式 .xml**文件进行复制和修改）。
 
-5. 修改**values-land/style .xml** ，使其对 `windowBackground` 使用的可绘制的横向版本。 在此示例中，使用了**splash_screen_land** ：
+5. 修改**values-land/style .xml** ，使其使用用于 `windowBackground`的可绘制的横向版本。 在此示例中，使用了**splash_screen_land** ：
 
     ```xml
     <resources>
@@ -221,9 +221,9 @@ public class MainActivity : AppCompatActivity
 
 7. 重新生成并运行应用。 在仍显示初始屏幕时，将设备旋转到横向模式。 初始屏幕更改为横向版本：
 
-    [将初始屏幕 @no__t 为横向模式的1Rotation](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [将初始屏幕旋转为横向模式![](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
-请注意，使用横向模式初始屏幕并不总是提供无缝体验。 默认情况下，Android 在纵向模式下启动应用并将其转换为横向模式，即使设备已处于横向模式下也是如此。 因此，如果在设备处于横向模式时启动该应用，则设备会短暂显示纵向初始屏幕，然后在屏幕上将旋转从纵向变为横向初始屏幕。 遗憾的是，即使在初始活动的标志中指定了 @no__t 0，这一最初的纵向到横向转换仍会发生。 解决此限制的最佳方式是创建一个在纵向和横向模式下均正确呈现的单一初始屏幕图像。
+请注意，使用横向模式初始屏幕并不总是提供无缝体验。 默认情况下，Android 在纵向模式下启动应用并将其转换为横向模式，即使设备已处于横向模式下也是如此。 因此，如果在设备处于横向模式时启动该应用，则设备会短暂显示纵向初始屏幕，然后在屏幕上将旋转从纵向变为横向初始屏幕。 遗憾的是，即使在初始活动的标志中指定了 `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape`，这一最初的纵向到横向转换仍会发生。 解决此限制的最佳方式是创建一个在纵向和横向模式下均正确呈现的单一初始屏幕图像。
 
 ## <a name="summary"></a>总结
 

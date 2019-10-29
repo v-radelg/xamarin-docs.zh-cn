@@ -4,15 +4,15 @@ description: 本指南探讨了如何设置用于 Apple Pay 的 Xamarin iOS 环�
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 1d9a65ab34cb0c02368f53679d38f1d07ec1f257
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 87f81f96e51b6744e37a80819c3c88d1abb644f1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198554"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022237"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin 中的 Apple Pay
 
@@ -39,7 +39,7 @@ Apple Pay 和*应用内购买*（IAP）之间的主要区别在于他们销售�
 
 所使用的框架也是主要差异;[PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)用于 Apple Pay， [StoreKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)为 IAP 提供框架 API。
 
-使用 Apple Pay，Apple[指出](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf)它 "[不] 对用户、商家或开发人员使用 Apple Pay 付款" 进行收费。 相比之下，每个事务的 IAP 的费用为 30%。 而且，使用 Apple Pay，事务根本不会通过 Apple，而是通过付款平台。
+使用 Apple Pay，Apple[指出](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf)它 "[不] 对用户、商家或开发人员使用 Apple Pay 付款" 进行收费。 相比之下，每个事务的 IAP 的费用为30%。 而且，使用 Apple Pay，事务根本不会通过 Apple，而是通过付款平台。
 
 ## <a name="using-a-payment-processor-platform"></a>使用付款处理器平台
 
@@ -79,7 +79,7 @@ IOS 10 中添加了几个新的 Api，它们适用于 iOS 和 watchOS 以支持�
 
 ### <a name="passkit-framework-enhancements"></a>PassKit 框架增强功能
 
-在 iOS 10 中，已将 PassKit 框架扩展为支持外的`UIKit` Apple Pay，以允许卡颁发商在其应用中提供自己的卡。
+在 iOS 10 中，已将 PassKit 框架扩展为支持 `UIKit` 之外的 Apple Pay，并允许卡颁发商在其应用中提供自己的卡。
 
 #### <a name="supporting-apple-pay-outside-of-uikit"></a>UIKit 之外的支持 Apple Pay
 
@@ -87,15 +87,15 @@ IOS 10 中添加了几个新的 Api，它们适用于 iOS 和 watchOS 以支持�
 
 #### <a name="presenting-issuer-cards-from-within-apps"></a>在应用内展示颁发者卡
 
-使用 iOS 10，PassKit 框架中已添加了新功能，使卡颁发商可以在自己的应用中提供其卡。 开发人员可以将`PKPaymentButtonTypeInStore` UIButton 添加到应用程序的用户界面，该界面将显示卡片 Apple Pay 按钮。
+使用 iOS 10，PassKit 框架中已添加了新功能，使卡颁发商可以在自己的应用中提供其卡。 开发人员可以将 `PKPaymentButtonTypeInStore` UIButton 添加到应用程序的用户界面，该界面将显示卡片 Apple Pay 按钮。
 
-还可以使用[PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary)类的方法以编程方式显示卡。`PresentPaymentPass`
+[PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary)类的 `PresentPaymentPass` 方法还可用于以编程方式显示卡。
 
 ### <a name="new-payment-network-support"></a>新的付款网络支持
 
 IOS 10 的新功能，应用程序可在无需修改、重新编译应用程序并将其重新提交到应用商店时，自动支持新的付款网络。
 
-`PKPaymentNetwork`类的新的[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)方法允许应用程序在运行时发现用户设备上的可用网络。 此外， [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)属性已展开，以将付款提供程序的名称作为参数。 使用这些方法，应用程序可以自动支持支付提供商支持的任何网络。
+使用 `PKPaymentNetwork` 类的新的[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)方法，应用程序可以发现运行时用户设备上的可用网络。 此外， [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)属性已展开，以将付款提供程序的名称作为参数。 使用这些方法，应用程序可以自动支持支付提供商支持的任何网络。
 
 有关详细信息，请参阅我们的[Apple Pay 配置](~/ios/platform/apple-pay.md)和 Apple [Apple Pay 指南](https://developer.apple.com/apple-pay/)。
 

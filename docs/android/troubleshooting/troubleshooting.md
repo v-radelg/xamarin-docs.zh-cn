@@ -4,22 +4,22 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: a80410ecc3557f00755ebb60ab48781740fa928d
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: ec5c6e4c4c47995e78c1819007a8fa5660873bd2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021153"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026593"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
 
 ## <a name="getting-diagnostic-information"></a>获取诊断信息
 
 在追踪各种 bug 时，Xamarin 有一些需要注意的地方。
-这些问题包括：
+这些方法包括：
 
 1. 诊断 MSBuild 输出。
 2. 设备部署日志。
@@ -54,15 +54,15 @@ ms.locfileid: "71021153"
 
 若要在 Visual Studio 中启用设备部署日志记录：
 
-1. **工具 > 选项 。** >
+1. **工具 > 选项 ...** >
 2. 在左侧树视图中，选择 " **Xamarin > Android 设置**"
 3. 在右侧面板中，启用 [X] "**调试日志记录" （将 monodroid 写入桌面）** 复选框。
 4. 日志消息将写入桌面上的 monodroid 文件。
 
-Visual Studio for Mac 始终写入设备部署日志。 找到这些方法稍微难些;每日创建一个*AndroidUtils*日志文件，部署发生的时间为，例如：**AndroidTools-2012-10-24 _12-35-45. 日志**。
+Visual Studio for Mac 始终写入设备部署日志。 找到这些方法稍微难些;每日创建一个*AndroidUtils*日志文件，部署发生的时间为，例如： **AndroidTools-2012-10-24 _12-35-45**。
 
-- 在 Windows 上，将日志文件写入`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
-- 在 OS X 上，将日志文件写入`$HOME/Library/Logs/XamarinStudio-{VERSION}`。
+- 在 Windows 上，日志文件将写入 `%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
+- 在 OS X 上，将日志文件写入 `$HOME/Library/Logs/XamarinStudio-{VERSION}`。
 
 ## <a name="android-debug-log-output"></a>Android 调试日志输出
 
@@ -79,12 +79,12 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Xamarin 支持以下系统属性：
 
-- *调试 mono*：如果非空字符串，则它等效于`*mono-debug*`。
+- *debug. debug*：如果为非空字符串，则它等效于 `*mono-debug*`。
 
-- *debug.exe. env*：在应用程序启动过程中 *|* ，mono 初始化*之前*要导出的环境变量（""）列表。 这允许设置控制 mono 日志记录的环境变量。
+- *debug.exe. env*：在初始化 mono*之前*，要在应用程序启动过程中导出的环境变量（" *|* "）列表。 这允许设置控制 mono 日志记录的环境变量。
 
   > [!NOTE]
-  > 由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
+  > 由于值是 " *|* " 分隔的，因此值必须具有额外的引号，因为 \`*adb shell*\` 命令将删除一组引号。
 
   > [!NOTE]
   > Android 系统属性值的长度不能超过92个字符。
@@ -95,24 +95,24 @@ Xamarin 支持以下系统属性：
   adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
   ```
 
-- *调试 mono 日志*：用逗号分隔的（" *，* "）组件列表，这些组件应将其他消息打印到 Android 调试日志。 默认情况下，不设置任何内容。 组件包括：
+- *调试 mono. 日志*：以逗号分隔的（" *，* "）组件列表，这些组件应将其他消息打印到 Android 调试日志。 默认情况下，不设置任何内容。 组件包括：
 
   - *全部*：打印所有消息
-  - *gc*：打印 GC 相关的消息。
-  - *gref*：Print （弱、全局）引用分配和释放消息。
-  - *lref*：打印本地引用分配和释放消息。
+  - *gc*：打印与 gc 相关的消息。
+  - *gref*： Print （弱，global）引用分配和释放消息。
+  - *lref*：打印本地引用分配和解除分配消息。
 
   > [!NOTE]
   > 这些都*非常*详细。 除非确实需要，否则不要启用。
 
-- *debug . trace*：允许设置[mono 跟踪](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`设置。
+- *debug . trace*：允许将[mono 跟踪](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE` 设置。
 
-## <a name="deleting-bin-and-obj"></a>删除`bin`和`obj`
+## <a name="deleting-bin-and-obj"></a>删除 `bin` 和 `obj`
 
 在过去的某个情况下，Xamarin 曾遇到过，如：
 
 - 遇到异常生成或运行时错误。
-- 你`Clean` `bin` `obj` 、 `Rebuild`或手动删除你的和目录。
+- `Clean`、`Rebuild`或手动删除 `bin` 和 `obj` 目录。
 - 问题消失。
 
 由于这些问题会影响开发人员的工作效率，因此我们非常重视这些问题。
@@ -123,7 +123,7 @@ Xamarin 支持以下系统属性：
 1. 保存当前的生成日志。 再次尝试生成，并记录[诊断生成日志](#diagnostic-msbuild-output)。
 1. 提交[bug 报告][bug]。
 
-删除`bin` 和`obj`目录之前，请将它们压缩并保存，以便以后在需要时进行诊断。 您可能只是`Clean`您的 Xamarin Android 应用程序项目，才能让一切恢复正常工作。
+删除 `bin` 和 `obj` 目录之前，请先将其压缩，然后将其保存，以便以后在需要时进行诊断。 你可能只是 `Clean` 你的 Xamarin Android 应用程序项目，才能使工作恢复正常。
 
 [bug]: https://github.com/xamarin/xamarin-android/wiki/Submitting-Bugs,-Feature-Requests,-and-Pull-Requests
 
@@ -131,9 +131,9 @@ Xamarin 支持以下系统属性：
 
 发生此错误的原因是与 Visual Studio 不兼容。
 
-- **Visual Studio 2017 Update 1**（版本15.1 或更低版本）仅与**ValueTuple NuGet 4.3.0** （或更早版本）兼容。
+- **Visual Studio 2017 Update 1** （版本15.1 或更低版本）仅与**ValueTuple NuGet 4.3.0** （或更早版本）兼容。
 
-- **Visual Studio 2017 Update 2**（版本15.2 或更高版本）仅与**ValueTuple NuGet 4.3.1** （或更高版本）兼容。
+- **Visual Studio 2017 Update 2** （版本15.2 或更高版本）仅与**ValueTuple NuGet 4.3.1** （或更高版本）兼容。
 
 请选择与你的 Visual Studio 2017 安装相对应的正确 ValueTuple NuGet。
 
@@ -147,7 +147,7 @@ Gc 消息是在 GC 执行时生成的，它提供有关垃圾回收的工作量�
 I/monodroid-gc(12331): GC cleanup summary: 81 objects tested - resurrecting 21.
 ```
 
-可以通过将`MONO_LOG_LEVEL`环境变量设置为来`debug`生成其他 GC 信息（如计时信息）：
+可以通过将 `MONO_LOG_LEVEL` 环境变量设置为 `debug`来生成其他 GC 信息（如计时信息）：
 
 ```shell
 adb shell setprop debug.mono.env MONO_LOG_LEVEL=debug
@@ -161,11 +161,11 @@ D/Mono (15723): GC_MINOR: (Nursery full) pause 2.01ms, total 287.45ms, bridge 22
 D/Mono ( 2073): GC_MAJOR: (user request) pause 2.17ms, total 2.47ms, bridge 28.77 major 576K/576K los 0K/16K
 ```
 
-在消息中， `num-objects`是此`num_hash_entries`传递正在考虑的桥对象的数量，是此桥代码调用期间处理的对象数。 `GC_BRIDGE`
+在 `GC_BRIDGE` 消息中，`num-objects` 是此传递正在考虑的桥对象的数目，`num_hash_entries` 是在此调用 bridge 代码期间处理的对象数。
 
-`total` `bridge`在和消息`GC_MAJOR`中，是指处于暂停状态的时间量（没有线程正在执行），而是桥处理代码（用于处理 Java VM）所花费的时间。 `GC_MINOR` 发生桥处理时，世界*不*会暂停。
+在 "`GC_MINOR`" 和 "`GC_MAJOR`" 消息中，`total` 是暂停世界的时间量（没有线程正在执行），而 `bridge` 是桥处理代码（处理 Java VM）所用的时间。 发生桥处理时，世界*不*会暂停。
 
- *通常*，的值`num_hash_entries`越大，收集所需的时间`bridge`就越长，收集`total`时间越大，收集的时间越大。
+ *通常情况*下，`num_hash_entries`的值越大，`bridge` 收集所需的时间就越长，而收集的 `total` 时间越大。
 
 ## <a name="global-reference-messages"></a>全局引用消息
 
@@ -209,7 +209,7 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 - 弱全局引用创建：这是以 *+ w +* 开头的行。
 - 弱全局引用析构：这是以 *-w*开头的行。
 
-在所有消息中， *grefc*值是 xamarin 创建的全局引用计数，而*Grefwc*值是 xamarin 创建的弱全局引用的计数。 *句柄*或*obj 句柄*值为 JNI 句柄值，而 */* "" 后面的字符是句柄值的类型： */l*用于本地引用， */g*用于全局引用， */w*用于弱全局引用。
+在所有消息中， *grefc*值是 xamarin 创建的全局引用计数，而*Grefwc*值是 xamarin 创建的弱全局引用的计数。 *句柄*或*obj 句柄*值为 JNI 句柄值，而 " */* " 后面的字符是句柄值的类型： */l*用于本地引用， */g*表示全局引用， */w*表示弱全局参考.
 
 作为 GC 过程的一部分，全局引用（+ g +）将转换为弱全局引用（导致 + w + 和-g-），然后将启动 Java 端 GC，然后检查弱全局引用以查看是否收集了该全局引用。 如果它仍处于活动状态，则将围绕弱引用（+ g +，-w-）创建一个新的 gref，否则弱引用将被销毁（-w）。
 
@@ -250,11 +250,11 @@ I/monodroid-gref(27679): -w- grefc 1914 gwrefc 296 handle 0xde68f95f/W from take
 
 ### <a name="querying-programmatically"></a>以编程方式查询
 
-可以通过查询`JniRuntime`对象来查询 GREF 和 WREF 计数。
+可以通过查询 `JniRuntime` 对象来查询 GREF 和 WREF 计数。
 
 `Java.Interop.JniRuntime.CurrentRuntime.GlobalReferenceCount`-全局引用计数
 
-`Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount`-弱引用计数
+`Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount` 弱引用计数
 
 ## <a name="android-debug-logs"></a>Android 调试日志
 
@@ -279,7 +279,7 @@ Xamarin 支持多个设备 Abi： *armeabi*、 *armeabi*和*x86*。 可以在**�
 Google 提供了2个适用于 Windows 的 Android SDK 下载。
 如果选择 .exe 安装程序，它将写入注册表项，告诉 Xamarin 安装它的位置。 如果选择 .zip 文件并自行解压缩，则 Xamarin 不知道在何处查找 SDK。 可以通过转到 "**工具" > 选项 "> xamarin > Android" 设置**，告诉 Xamarin Visual Studio 中的 SDK：
 
-[![Xamarin Android 设置中的 Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[Xamarin Android 设置中的![Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 ## <a name="ide-does-not-display-target-device"></a>IDE 不显示目标设备
 
@@ -306,13 +306,13 @@ HTC 同步软件可能会阻止**adb 启动服务器**正常工作。 如果**ad
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid 或 aresgen 已退出，代码为1
 
-若要帮助调试此问题，请转到 Visual Studio 并更改 MSBuild 详细级别。为此，请选择：**工具 > > 项目**和解决方案的选项 **> 生成**和**运行 > MSBuild 项目生成输出详细级别**，并将此值设置为 "**正常**"。
+若要帮助你调试此问题，请转到 Visual Studio 并更改 MSBuild 详细级别。为此，请选择 "**工具" > 选项 > 项目**和**解决方案 > 生成**并**运行 > MSBuild 项目生成输出详细级别**并设置此值为**正常值**。
 
 重新生成并检查 Visual Studio 的输出窗格，该窗格应该包含完整的错误。
 
 ## <a name="there-is-not-enough-storage-space-on-the-device-to-deploy-the-package"></a>设备上没有足够的存储空间来部署包
 
-如果未从 Visual Studio 中启动模拟器，则会发生这种情况。 在 Visual Studio 外部启动仿真程序时，需要传递`-partition-size 512`选项，例如
+如果未从 Visual Studio 中启动模拟器，则会发生这种情况。 在 Visual Studio 外部启动模拟器时，需要传递 `-partition-size 512` 的选项，例如
 
 ```shell
 emulator -partition-size 512 -avd MonoDroid
@@ -320,7 +320,7 @@ emulator -partition-size 512 -avd MonoDroid
 
 请确保使用正确的模拟器名称，即[配置模拟器时使用的名称](~/android/get-started/installation/windows.md#device)。
 
-## <a name="install_failed_invalid_apk-when-installing-a-package"></a>安装\_包\_时\_安装失败的 APK 无效
+## <a name="install_failed_invalid_apk-when-installing-a-package"></a>安装包时，安装\_失败\_\_APK 无效
 
 Android 包名称*必须*包含一个句点（" *.* "）。 编辑包名称，使其包含句点。
 
@@ -328,24 +328,24 @@ Android 包名称*必须*包含一个句点（" *.* "）。 编辑包名称，�
   - 右键单击项目 > 属性
   - 单击左侧的 "Android 清单" 选项卡。
   - 更新 "包名称" 字段。
-    - 如果看到消息&ldquo;"未找到 androidmanifest.xml。 单击以添加一个。&rdquo;，单击该链接，然后更新 "包名称" 字段。
+    - 如果看到消息 &ldquo;找不到 Androidmanifest.xml。 单击以添加一个。&rdquo;中，单击该链接，然后更新 "包名称" 字段。
 - 在 Visual Studio for Mac 中：
   - 右键单击项目 > 选项。
   - 导航到 "生成/Android 应用程序" 部分。
   - 更改包名称字段以包含 "."。
 
-## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>安装\_包\_时安装\_失败缺少\_共享库
+## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>安装包时，安装\_失败\_缺少\_共享\_库
 
 此上下文中的 "共享库"*不*是本机共享库（*libfoo.so*）文件;它是必须单独安装在目标设备上的库，如 Google Maps。
 
-Android 包指定`<uses-library/>`元素需要哪些共享库。 如果目标设备上没有*必需*的库（例如`//uses-library/@android:required` ，为*true*，这是默认值），则包安装将失败，并显示 "*缺少\_\_共享\_的安装失败"\_库*。
+Android 包指定 `<uses-library/>` 元素需要哪些共享库。 如果目标设备上不存在*所需*的库（例如 `//uses-library/@android:required` 为*true*，这是默认值），则包安装将失败，*安装\_失败\_缺少\_共享\_库*。
 
-若要确定所需的共享库，请查看*生成*
-的**androidmanifest.xml**文件（如 **.obj\\调试\\android\\androidmanifest.xml**）并查找`<uses-library/>`元素。 `<uses-library/>`可以在项目的 **\\属性 androidmanifest.xml**文件中手动添加元素，并通过[UsesLibraryAttribute 自定义特性](xref:Android.App.UsesLibraryAttribute)添加元素。
+若要确定所需的共享库，请查看*生成*的
+**androidmanifest.xml**文件（如 **.obj\\调试\\android\\androidmanifest.xml**）并查找 `<uses-library/>` 元素。 `<uses-library/>` 元素可以在项目**属性\\androidmanifest.xml**文件和[UsesLibraryAttribute 自定义属性](xref:Android.App.UsesLibraryAttribute)中手动添加。
 
-例如，将程序集引用添加到*GoogleMaps*将为 Google Maps 共享库隐式添加一个`<uses-library/>` 。
+例如，将程序集引用添加到*GoogleMaps*将为 Google Maps 共享库隐式添加 `<uses-library/>`。
 
-## <a name="install_failed_update_incompatible-when-installing-a-package"></a>安装\_包\_时\_安装失败的更新不兼容
+## <a name="install_failed_update_incompatible-when-installing-a-package"></a>安装包时，安装\_失败\_更新\_不兼容
 
 Android 包有三个要求：
 
@@ -359,7 +359,7 @@ Android 包有三个要求：
 2. 更改签名密钥，例如用作发布应用（或因为你不喜欢默认提供的调试签名密钥）
 3. 安装应用程序时无需先将其删除，例如调试 > 在 Visual Studio 中启动而不调试
 
-发生这种情况时，程序包安装将失败，\_并\_出现\_"安装失败的更新不兼容错误"，因为在签名密钥执行时包名称未更改。 [Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)还将包含类似于以下内容的消息：
+发生这种情况时，程序包安装将失败，安装\_失败\_更新\_不兼容的错误，因为在签名密钥时包名称不会更改。 [Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)还将包含类似于以下内容的消息：
 
 ```shell
 E/PackageManager(  146): Package [PackageName] signatures do not match the previously installed version; ignoring!
@@ -367,10 +367,10 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 
 若要修复此错误，请在重新安装之前从设备中完全删除应用程序。
 
-## <a name="install_failed_uid_changed-when-installing-a-package"></a>安装\_包\_时\_安装失败的 UID 已更改
+## <a name="install_failed_uid_changed-when-installing-a-package"></a>安装包时\_安装失败\_UID\_更改
 
 安装 Android 包时，会向其分配*用户 id* （UID）。
-*有时*，出于目前未知的原因，在安装已安装的应用程序时，安装将失败`INSTALL_FAILED_UID_CHANGED`，并出现以下错误：
+*有时*，出于目前未知的原因，在安装已安装的应用程序时，安装会失败，并 `INSTALL_FAILED_UID_CHANGED`：
 
 ```shell
 ERROR [2015-03-23 11:19:01Z]: ANDROID: Deployment failed
@@ -381,13 +381,13 @@ Mono.AndroidTools.InstallFailedException: Failure [INSTALL_FAILED_UID_CHANGED]
    at System.Threading.Tasks.Task.Execute()
 ```
 
-若要解决此问题，请通过从 Android 目标的 GUI 安装应用或使用`adb`以下内容来*完全卸载*Android 包：
+若要解决此问题，请通过从 Android 目标的 GUI 或使用 `adb`*完全卸载*Android 包：
 
 ```shell
 $ adb uninstall @PACKAGE_NAME@
 ```
 
-**不要使用**，因为这将保留应用程序数据，从而在目标设备上保留冲突的 UID。 `adb uninstall -k`
+**不要使用**`adb uninstall -k`，因为这样将*保留*应用程序数据，从而在目标设备上保留冲突的 UID。
 
 ## <a name="release-apps-fail-to-launch-on-device"></a>无法在设备上启动发布应用
 
@@ -406,7 +406,7 @@ E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:36
 1. Apk 不提供目标设备支持的 ABI。
     例如，apk 仅包含 armeabi-armeabi-v7a 二进制文件，而目标设备仅支持 armeabi。
 
-2. [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果是这种情况，请卸载该应用程序，将其置于手指上，然后重新安装该应用程序。
+2. [Android bug](https://code.google.com/p/android/issues/detail?id=21670)。 如果是这种情况，请卸载该应用程序，将其置于手指上，然后重新安装该应用程序。
 
 若要修复此问题，请编辑项目选项/属性，并[将所需 ABI 的支持添加到支持的 abi 列表](~/android/app-fundamentals/cpu-architectures.md)中。 若要确定需要添加的 ABI，请针对目标设备运行以下 adb 命令：
 
@@ -423,9 +423,9 @@ $ adb shell getprop | grep ro.product.cpu
 [ro.product.cpu.abi]: [armeabi-v7a]
 ```
 
-## <a name="the-outpath-property-is-not-set-for-project-ldquomyappcsprojrdquo"></a>没有为项目&ldquo;MyApp. .csproj 设置 OutPath 属性&rdquo;
+## <a name="the-outpath-property-is-not-set-for-project-ldquomyappcsprojrdquo"></a>OutPath 属性未设置为 project &ldquo;MyApp&rdquo;
 
-这通常意味着您具有 HP 计算机，环境变量&ldquo;平台&rdquo;已设置为类似于 MCD 或 HPD 的内容。 这与&ldquo;通常设置为任何 CPU&rdquo;或&ldquo;x86&rdquo;的 MSBuild 平台属性冲突。 您将需要从您的计算机中删除此环境变量，然后 MSBuild 才能工作：
+这通常意味着您具有 HP 计算机，并且环境变量 &ldquo;平台&rdquo; 已设置为 MCD 或 HPD 等内容。 这与 MSBuild 平台属性冲突，该属性通常设置为 &ldquo;任何 CPU&rdquo; 或 &ldquo;x86&rdquo;。 您将需要从您的计算机中删除此环境变量，然后 MSBuild 才能工作：
 
 - 控制面板 > 系统 > 高级 > 环境变量
 
@@ -433,7 +433,7 @@ $ adb shell getprop | grep ro.product.cpu
 
 ## <a name="javalangclasscastexception-monoandroidruntimejavaobject-cannot-be-cast-to"></a>ClassCastException： JavaObject 不能强制转换为 ... 的类型。
 
-Xamarin 4.x 未能正确地正确封送嵌套的泛型类型。 例如，请考虑以下 C\#代码，使用[SimpleExpandableListAdapter](xref:Android.Widget.SimpleExpandableListAdapter)：
+Xamarin 4.x 未能正确地正确封送嵌套的泛型类型。 例如，请考虑以下 C\# 使用[SimpleExpandableListAdapter](xref:Android.Widget.SimpleExpandableListAdapter)的代码：
 
 ```csharp
 // BAD CODE; DO NOT USE
@@ -464,7 +464,7 @@ mAdapter = new SimpleExpandableListAdapter (
 );
 ```
 
-问题在于，Xamarin 未能正确地封送嵌套的泛型类型。 `List<IDictionary<string, object>>` 将被封送到  [java.lang.ArrrayList](xref:Java.Util.ArrayList), 但`ArrayList`包含`mono.android.runtime.JavaObject`实例 (引用`Dictionary<string, object>`实例), 而不是实现 [java.util.Map](xref:Java.Util.IMap) 的内容。 导致以下异常:
+问题在于，Xamarin 未能正确地封送嵌套的泛型类型。 `List<IDictionary<string, object>>` 将被封送到[ArrrayList](xref:Java.Util.ArrayList)，但 `ArrayList` 包含 `mono.android.runtime.JavaObject` 实例（引用 `Dictionary<string, object>` 实例），而不是实现[util](xref:Java.Util.IMap)的实例，导致以下内容异常
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -478,7 +478,7 @@ E/AndroidRuntime( 2991):        at android.widget.ListView.fillFromTop(ListView.
 E/AndroidRuntime( 2991):        at android.widget.ListView.layoutChildren(ListView.java:1622)
 ```
 
-解决方法是使用提供的[Java 集合类型](~/android/internals/api-design.md)，而不`System.Collections.Generic`是&ldquo;内部&rdquo;类型的类型。 这会在封送实例时产生相应的 Java 类型。 （下面的代码比需要的代码更复杂，目的是减少 gref 的生存期。 如果不担心 gref 的生存期， `s/List/JavaList/g` `s/Dictionary/JavaDictionary/g`则可以将其简化为通过更改原始代码。
+解决方法是使用提供的[Java 集合类型](~/android/internals/api-design.md)，而不是 &ldquo;内部&rdquo; 类型的 `System.Collections.Generic` 类型。 这会在封送实例时产生相应的 Java 类型。 （下面的代码比需要的代码更复杂，目的是减少 gref 的生存期。 如果 gref 的生存期不是一个担心，可以通过 `s/List/JavaList/g` 和 `s/Dictionary/JavaDictionary/g` 来简化对原始代码的更改。
 
 ```csharp
 // insert good code here
@@ -515,7 +515,7 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 
 ## <a name="unexpected-nullreferenceexceptions"></a>意外的 NullReferenceExceptions
 
-偶尔， [android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)会提到 NullReferenceExceptions 不&ldquo;能发生的&rdquo;问题，也不会在应用程序停止前立即从 Mono for Android 运行时代码发出：
+偶尔， [Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)会提及 &ldquo;不会发生的 NullReferenceExceptions、&rdquo; 或来自 Android 运行时代码的 Mono，然后应用才会停止：
 
 ```shell
 E/mono(15202): Unhandled Exception: System.NullReferenceException: Object reference not set to an instance of an object
@@ -535,7 +535,7 @@ E/mono    ( 4176): at Android.Runtime.JNIEnv.NewString (string)
 E/mono    ( 4176): at Android.Util.Log.Info (string,string)
 ```
 
-当 Android 运行时决定中止进程时，可能会发生这种情况，这种情况可能发生在多种原因中，包括达到目标的 GREF 限制&ldquo;或&rdquo; JNI 的操作。
+当 Android 运行时决定中止进程时，可能会发生这种情况，这种情况可能会出于多种原因而发生，包括达到目标的 GREF 限制或执行某些 &ldquo;错误&rdquo; 与 JNI 的操作。
 
 若要查看是否属于这种情况，请查看 Android 调试日志，查找来自进程的消息，如下所示：
 
@@ -625,15 +625,15 @@ E/dalvikvm(  602): Excessive JNI global references (2001)
 E/dalvikvm(  602): VM aborting
 ```
 
-在上面的示例中（顺便说一下，它来自[bug 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)），问题在于 Android 太多。正在创建点实例;有关此特定错误的修复的列表，请参阅[注释\#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2) 。
+在上面的示例中（顺便说一下，它来自[bug 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)），问题在于 Android 太多。正在创建点实例;请参阅[comment \#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2)以获取此特定错误的修补程序列表。
 
-通常，一种有用的解决方案是查找哪个类型的实例分配&ndash;的实例太多。在上述转储&ndash;中，找到它们在源代码中的创建位置，并相应地处置它们（以便Java-对象生存期已缩短。 这并不总是合适（\#685215 是多线程的，因此，普通解决方案可避免 Dispose 调用），但这是第一个需要考虑的事项。
+通常，一种有用的解决方案是查找哪个类型的实例分配的实例过多 &ndash; Android. &ndash; 在上述转储中，然后查找在源代码中创建它们的位置，并相应地对其进行处置（使其 Java 对象生存期为缩短）。 这并不总是合适（\#685215 是多线程的，因此，普通解决方案可避免 Dispose 调用），但这是要考虑的第一件事。
 
 可以启用[GREF 日志记录](~/android/troubleshooting/index.md)，以查看 GREFs 的创建时间和存在的时间。
 
 ## <a name="abort-due-to-jni-type-mismatch"></a>由于 JNI 类型不匹配而中止
 
-如果你手动滚动 JNI 代码，则类型可能无法正确匹配，例如，如果你尝试对不实现`java.lang.Runnable.run` `java.lang.Runnable`的类型调用，则可能不正确。 发生这种情况时，Android 调试日志中将出现类似于以下内容的消息：
+如果你手动滚动 JNI 代码，则类型可能无法正确匹配，例如，如果你尝试对未实现 `java.lang.Runnable`的类型调用 `java.lang.Runnable.run`。 发生这种情况时，Android 调试日志中将出现类似于以下内容的消息：
 
 ```shell
 W/dalvikvm( 123): JNI WARNING: can't call Ljava/Type;;.method on instance of Lanother/java/Type;
@@ -646,7 +646,7 @@ E/dalvikvm( 123): VM aborting
 
 ### <a name="dynamic-code-does-not-compile"></a>动态代码不编译
 
-若要在\#你的应用程序或库中使用 C 动态，你必须将 system.web、node.js 和 Mono 添加到你的项目中。
+若要在应用程序或库中使用 C\# 动态，必须在项目中添加 System.web、System.web 和 Mono。
 
 ### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>在发布版本中，在运行时动态代码会发生 MissingMethodException。
 
@@ -654,7 +654,7 @@ E/dalvikvm( 123): VM aborting
 
   - 请记住，动态代码始终会产生费用。 如果需要有效的代码，请考虑不要使用动态代码。
 
-- 在第一个预览版中，除非应用程序代码显式使用每个程序集中的类型，否则会排除这些程序集。 有关解决方法，请参阅以下内容：[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+- 在第一个预览版中，除非应用程序代码显式使用每个程序集中的类型，否则会排除这些程序集。 有关解决方法，请参阅以下内容： [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>X86 设备上通过 AOT + LLVM 崩溃生成的项目
 

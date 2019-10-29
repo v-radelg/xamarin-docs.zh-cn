@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2018
-ms.openlocfilehash: bd0f2a7704e5d666f6b32d4ccc489e069ec6ade6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d48767ea29c5f610e02fade20ae92c5e085cc9be
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757252"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026965"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>应安装哪些 Android SDK 包？
 
@@ -50,4 +50,4 @@ ms.locfileid: "70757252"
 通常不需要进行 Android SDK 额外的工作，但请注意，这可能是必需的，因为它们可能是必需的，具体取决于使用情况。
 
 ## <a name="further-reading"></a>其他阅读材料
-以下指南介绍了这些选项，并详细介绍了 SDK 管理器提供的不同包：[Android SDK 管理器安装指南](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
+以下指南介绍了这些选项，并详细介绍了 SDK 管理器中可用的不同包： [Android SDK 管理器安装指南](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)

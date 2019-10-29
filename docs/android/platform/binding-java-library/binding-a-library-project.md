@@ -4,15 +4,15 @@ description: 本演练介绍如何使用 Xamarin android 项目模板来绑定 E
 ms.prod: xamarin
 ms.assetid: CEE90F8A-164B-4155-813A-7537A665A7E7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 78b70ce70292e589aee4a1dbe56f3765552ece7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2ac402bf423c9f3fe136d1ba31622d915d2e2eef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757717"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027730"
 ---
 # <a name="binding-an-eclipse-library-project"></a>绑定 Eclipse 库项目
 
@@ -29,7 +29,7 @@ Android 库项目不同于常规 Android 项目，因为它们不会编译到 AP
 
 若要在 Xamarin Android Java 绑定项目中使用 Android 库项目，首先需要在 Eclipse 中生成 Android 库项目。 下面的屏幕截图显示了编译后一个 Android 库项目的示例： 
 
-[![Eclipse 中的示例库项目](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
+[Eclipse 中的![示例库项目](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
 
 请注意，已将 Android 库项目中的源代码编译为临时代码。名为**android-mapviewballoons**的 JAR 文件，并且资源已复制到**bin/res/捕获**文件夹。 
 
@@ -39,7 +39,7 @@ Android 库项目不同于常规 Android 项目，因为它们不会编译到 AP
 
 此.然后，将 ZIP 文件添加到 Xamarin Java 绑定项目，如以下屏幕截图所示：
 
-[![压缩添加到 Java 绑定项目](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
+[![Zip 已添加到 Java 绑定项目](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
 
 请注意，的生成操作。ZIP 文件已自动设置为**LibraryProjectZip**。
 

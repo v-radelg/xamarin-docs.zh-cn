@@ -4,15 +4,15 @@ description: 本文介绍了 Xamarin. Android Designer 的功能。 它介绍了
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 176037db501c2577775bdfb817fea01f16a02242
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8793dafe5bc44999cb884621d0c41956674b05e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761645"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029393"
 ---
 # <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
@@ -35,7 +35,7 @@ Xamarin 支持基于 XML 文件的声明性样式的用户界面设计，并支�
 8. 如何处理在使用备用视图时可能出现的冲突。 
 9. 如何使用材料设计工具构建符合规范标准的应用。
 
-## <a name="sections"></a>部分
+## <a name="sections"></a>各节内容
 
  [使用 Android Designer](~/android/user-interface/android-designer/designer-walkthrough.md)
 

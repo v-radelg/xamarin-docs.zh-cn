@@ -4,19 +4,19 @@ description: 本文档介绍如何在 Xamarin 中使用标签。 本文介绍如
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 275acd02e6cece0842344d8e5833c23af1014a0f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768952"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022022"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin 中的标签
 
-`UILabel`控件用于显示单行和多行只读文本。
+`UILabel` 控件用于显示单行和多行只读文本。
 
 ## <a name="implementing-a-label"></a>实现标签
 
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-有关使用`NSAttributedString`设置文本样式的详细信息，请参阅[样式文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)食谱。
+有关使用 `NSAttributedString` 设置文本样式的详细信息，请参阅[样式文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)食谱。
 
-默认情况下，" `Enabled`标签" 设置为 "true"，但可以将其设置为 "已禁用" 以向用户提示某个控件被禁用：
+默认情况下，标签将 `Enabled` 设置为 true，但也可以将其设置为 "禁用"，以向用户提示某个控件被禁用：
 
 ```csharp
 label.Enabled = false;

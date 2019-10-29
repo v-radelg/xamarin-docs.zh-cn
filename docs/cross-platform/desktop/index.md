@@ -2,15 +2,15 @@
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: 面向桌面开发人员的跨平台
 description: 本文档链接到介绍适用于 WPF 和 Windows 窗体开发人员的 Xamarin. Forms 的各种指南。 链接的内容探讨了应用程序生命周期、UI 控件、移植指南和示例。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e4c14b3f6458180c6da9f123cab5aad406091667
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dad7548ab576f03ab2e7e3fca94f0ab45918367e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290367"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016454"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>面向桌面开发人员的跨平台
 
@@ -34,4 +34,4 @@ ms.locfileid: "70290367"
 
 ## <a name="learn-more"></a>了解更多信息
 
-创建移动应用电子书[ ![](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)企业应用[程序模式![电子书](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)
+[![创建移动应用电子书](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [![企业应用程序模式电子书](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)

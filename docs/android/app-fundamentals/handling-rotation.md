@@ -4,15 +4,15 @@ description: 本主题介绍如何处理 Xamarin 中的设备方向更改。 其
 ms.prod: xamarin
 ms.assetid: 6D33ADF7-ED81-0256-479D-D9E3787A76B0
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 98acabec7132730304bf5e8b81e99f2727b6d50e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3277dd5eb7600500a5f60b2bbb13621aa237a235
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755574"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019274"
 ---
 # <a name="handling-rotation"></a>处理旋转
 
@@ -24,18 +24,18 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 
 本指南将探讨以下方向主题：
 
-- **声明性布局旋转**&ndash;如何使用 Android 资源系统构建方向感知应用程序，包括如何为特定方向加载布局和绘图。
+- **声明性布局旋转**&ndash; 如何使用 Android 资源系统来生成可感知方向的应用程序，包括如何加载布局和特定方向的绘图。
 
-- **编程布局旋转**&ndash;如何以编程方式添加控件，以及如何手动处理方向更改。
+- **编程布局旋转**&ndash; 如何以编程方式添加控件，以及如何手动处理方向更改。
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>用布局以声明方式处理旋转
 
 通过在遵循命名约定的文件夹中包含文件，Android 会在方向更改时自动加载相应的文件。
 这包括对以下内容的支持：
 
-- *布局资源*&ndash;指定为每个方向放大的布局文件。
+- *布局资源*&ndash; 指定为每个方向放大的布局文件。
 
-- *绘制资源*&ndash;指定为每个方向加载的绘图。
+- 可*绘制资源*&ndash; 指定为每个方向加载的绘图。
 
 ### <a name="layout-resources"></a>布局资源
 
@@ -43,7 +43,7 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 
 [![默认项目模板结构](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
-此项目将在**资源/布局**文件夹中创建一个**main.axml**文件。 调用活动的`OnCreate`方法时，它会增加 main.axml 中定义的视图 **，** 该视图将声明一个按钮，如下图所示：
+此项目将在**资源/布局**文件夹中创建一个**main.axml**文件。 调用活动的 `OnCreate` 方法时，它会增加 main.axml 中定义的视图 **，** 该视图将声明一个按钮，如下图所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,13 +59,13 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 </LinearLayout>
 ```
 
-如果设备旋转到横向方向，则会再次调用该`OnCreate`活动的方法，并且将对**main.axml**文件进行膨胀，如以下屏幕截图所示：
+如果设备旋转到横向方向，则会再次调用活动的 `OnCreate` 方法，并对**main.axml**文件进行膨胀，如以下屏幕截图所示：
 
-[![同一屏幕，但在横向方向上](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
+[![相同的屏幕，但在横向方向上](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
 
 #### <a name="orientation-specific-layouts"></a>特定于方向的布局
 
-除了布局文件夹（默认为纵向，还可以通过包含名为`layout-land`的文件夹显式命名*布局端口*），应用程序可以在不更改任何代码的情况下，定义它所需的视图。
+除了布局文件夹（默认为纵向，还可以通过包含名为 `layout-land`的文件夹显式命名*布局端口*），应用程序可在无需任何代码更改的情况下，定义其所需的视图。
 
 假设**main.axml**文件包含以下 XML：
 
@@ -81,7 +81,7 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 </RelativeLayout>
 ```
 
-如果将包含附加的**main.axml**文件的名为 layout 的文件夹添加到项目中，则在横向的情况下，因为这样做布局现在会导致 Android 加载新添加的**main.axml。** 请考虑包含以下代码的**main.axml**文件的横向版本（为了简单起见，此 XML 类似于默认的纵向版本代码，但在中`TextView`使用了不同的字符串）：
+如果将包含附加的**main.axml**文件的名为 layout 的文件夹添加到项目中，则在横向的情况下，因为这样做布局现在会导致 Android 加载新添加的**main.axml。** 请考虑包含以下代码的**main.axml**文件的横向版本（为了简单起见，此 XML 类似于默认的纵向版本代码，但在 `TextView`中使用了不同的字符串）：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 
 旋转时，Android 将可绘制资源视为布局资源。 在这种情况下，系统将分别从**资源/** 每个 "绘图" 和 "**资源"-土地**文件夹中获取。
 
-例如，假设项目在**资源/可绘制**文件夹中包含一个名为 "猴子" 的映像，其中的可绘制从`ImageView` XML 引用，如下所示：
+例如，假设项目在**资源/可绘制**文件夹中包含一个名为 "猴子" 的映像，其中的可绘制从 XML 中的 `ImageView` 引用，如下所示：
 
 ```xml
 <ImageView
@@ -116,7 +116,7 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 
 接下来，我们将假定不同版本的**猴子。 png**包含在**资源/可绘制-土地**下。 与布局文件类似，当设备旋转时，为给定方向进行的可绘制更改，如下所示：
 
-[![不同版本的猴子，以纵向和横向模式显示](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
+[![不同版本的猴子，以纵向模式和横向模式显示](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
 ## <a name="handling-rotation-programmatically"></a>以编程方式处理旋转
 
@@ -133,7 +133,7 @@ _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了�
 - 将控件添加到布局。
 - 将布局设置为内容视图。
 
-例如，假设有一个用户界面，其中包含`TextView`一个添加到的`RelativeLayout`控件，如下面的代码所示。
+例如，假设有一个用户界面，该用户界面由添加到 `RelativeLayout`的单个 `TextView` 控件组成，如下面的代码所示。
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -162,13 +162,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-此代码创建`RelativeLayout`类的实例并设置其`LayoutParameters`属性。 `LayoutParams`类是 Android 方法，它封装了控件如何以一种可重用的方式放置。 创建布局的实例后，可以创建控件并将其添加到其中。 控件也具有`LayoutParameters`，如本示例`TextView`中的。 创建后，将其添加`RelativeLayout`到，并将设置`RelativeLayout`为内容视图`TextView` 会导致应用程序显示如下`TextView`所示的：
+此代码创建 `RelativeLayout` 类的实例并设置其 `LayoutParameters` 属性。 `LayoutParams` 类是 Android 方法，它封装了如何以可重用的方式定位控件。 创建布局的实例后，可以创建控件并将其添加到其中。 控件也具有 `LayoutParameters`，如本示例中的 `TextView`。 创建 `TextView` 后，将其添加到 `RelativeLayout` 并将 `RelativeLayout` 设置为内容视图会导致应用程序显示 `TextView`，如下所示：
 
-[![显示在纵向和横向模式下的递增计数器按钮](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
+[纵向和横向模式下显示![递增计数器按钮](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
 
 ### <a name="detecting-orientation-in-code"></a>在代码中检测方向
 
-如果应用程序在调用时尝试为每个方向加载不同的`OnCreate`用户界面（这将在每次设备旋转时出现），则它必须检测方向，然后加载所需的用户界面代码。 Android 具有一个名为的`WindowManager`类，可用于`WindowManager.DefaultDisplay.Rotation`通过属性确定当前设备旋转，如下所示：
+如果应用程序在调用 `OnCreate` 时尝试为每个方向加载不同的用户界面（这将在每次设备旋转时出现），则它必须检测方向，然后加载所需的用户界面代码。 Android 具有称为 `WindowManager`的类，可用于通过 `WindowManager.DefaultDisplay.Rotation` 属性确定当前设备旋转，如下所示：
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -208,19 +208,19 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-此代码将设置`TextView`为从屏幕左上角定位到100像素，当旋转到横向时，将自动动态显示为新的布局，如下所示：
+此代码会将 `TextView` 设置为从屏幕左上角定位到100像素，在旋转到横向时，会自动以新布局为动画显示，如下所示：
 
-[![跨纵向模式和横向模式保留视图状态](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
+[跨纵向模式和横向模式保留![的视图状态](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
 
 ### <a name="preventing-activity-restart"></a>阻止活动重新启动
 
-除了处理中`OnCreate`的所有内容外，应用程序还可以通过在中`ActivityAttribute`设置`ConfigurationChanges`来防止在方向更改时重新启动活动，如下所示：
+除了处理 `OnCreate`中的所有内容外，应用程序还可以通过在 `ActivityAttribute` 设置 `ConfigurationChanges` 来防止在方向更改时重新启动活动，如下所示：
 
 ```csharp
 [Activity (Label = "CodeLayoutActivity", ConfigurationChanges=Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
 ```
 
-现在设备旋转后，不会重新启动活动。 为了在此情况下手动处理方向更改，活动可以重写`OnConfigurationChanged`方法并从传入的`Configuration`对象确定方向，如以下活动的新实现所示：
+现在设备旋转后，不会重新启动活动。 为了在此情况下手动处理方向更改，活动可以重写 `OnConfigurationChanged` 方法，并确定传入的 `Configuration` 对象的方向，如以下活动的新实现所示：
 
 ```csharp
 [Activity (Label = "CodeLayoutActivity", ConfigurationChanges=Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
@@ -271,7 +271,7 @@ public class CodeLayoutActivity : Activity
 }
 ```
 
-此时， `TextView's`将为横向和纵向初始化布局参数。 类变量与`TextView`本身一起保存参数，因为在方向更改时不会重新创建活动。 代码仍在`surfaceOrientartion`中`OnCreate`使用来设置的`TextView`初始布局。 然后， `OnConfigurationChanged`处理所有后续的布局更改。
+此处，将为横向和纵向初始化 `TextView's` 布局参数。 类变量与 `TextView` 本身一起保存参数，因为在方向更改时将不会重新创建活动。 代码仍使用 `OnCreate` 中的 `surfaceOrientartion` 来设置 `TextView`的初始布局。 之后 `OnConfigurationChanged` 处理所有后续的布局更改。
 
 当我们运行应用程序时，Android 会在设备轮换发生时加载用户界面更改，且不会重新启动该活动。
 
@@ -279,7 +279,7 @@ public class CodeLayoutActivity : Activity
 
 如果在 XML 中定义布局，还可以阻止设备旋转引起的活动重启。 例如，如果我们想要防止活动重启（可能出于性能原因），则我们可以使用这种方法，而不需要为不同方向加载新的资源。
 
-为此，我们将遵循与编程布局一起使用的相同过程。 只需`ConfigurationChanges`在中`ActivityAttribute`进行设置，就像前面`CodeLayoutActivity`所述。 需要为方向更改运行的任何代码都可以在`OnConfigurationChanged`方法中再次实现。
+为此，我们将遵循与编程布局一起使用的相同过程。 只需在 `ActivityAttribute`中设置 `ConfigurationChanges`，就像先前在 `CodeLayoutActivity` 中所做的那样。 任何需要针对方向更改运行的代码都可以在 `OnConfigurationChanged` 方法中再次实现。
 
 ## <a name="maintaining-state-during-orientation-changes"></a>在方向更改期间保持状态
 
@@ -296,4 +296,4 @@ public class CodeLayoutActivity : Activity
 - [旋转演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-rotationdemo)
 - [活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [处理运行时更改](https://developer.android.com/guide/topics/resources/runtime-changes.html)
-- [快速更改屏幕方向](http://android-developers.blogspot.com/2009/02/faster-screen-orientation-change.html)
+- [快速更改屏幕方向](https://android-developers.blogspot.com/2009/02/faster-screen-orientation-change.html)

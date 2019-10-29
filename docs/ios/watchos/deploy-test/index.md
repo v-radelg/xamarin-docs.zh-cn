@@ -4,15 +4,15 @@ description: 本文档介绍了如何部署和测试用 Xamarin 构建的 watchO
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: af6d32808e2847c99c4f8a2d90e7dc2d3955ae03
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284675"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028342"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>部署和测试 Xamarin 的 watchOS 应用
 
@@ -60,7 +60,7 @@ ms.locfileid: "70284675"
 
 ### <a name="wildcard-app-id"></a>通配符应用 ID
 
-或者，你可以创建与所有三个项目（如`com.xamarin.*`）匹配的通配符**应用 ID** 。
+或者，你可以创建一个与所有三个项目（如 `com.xamarin.*`）匹配的通配符**应用 ID** 。
 
 请注意，某些功能不能用于通配符应用 ID （例如推送通知）。 如果你的应用需要这些功能，则应创建显式应用 Id。
 
@@ -78,7 +78,7 @@ ms.locfileid: "70284675"
 
 ### <a name="certificates-identifiers--profiles"></a>证书，标识符 & 配置文件
 
-若要使用应用组，请在 "**应用组**" 屏幕中创建一个条目。 在下面的示例中，使用与应用 id 相同的反向 DNS 样式来命名组，但需要使用`group.`前缀（必需）：
+若要使用应用组，请在 "**应用组**" 屏幕中创建一个条目。 在下面的示例中，使用与应用 Id 相同的反向 DNS 样式来命名组，但使用 `group.` 前缀（必需）：
 
 ![标识符](images/appgroups-new-sml.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "70284675"
 - iOS 应用项目
 - 监视扩展项目
 
-.![Info.plist 编辑器](images/entitlements-plist-sml.png)
+方法。![Info.plist 编辑器](images/entitlements-plist-sml.png)
 
 不要在 "监视应用项目"**中启用权利**。 不需要在监视本身上启用它。
 

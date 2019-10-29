@@ -4,15 +4,15 @@ description: 创建第一个 Android 应用并在磨损模拟器或设备上运�
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/10/2018
-ms.openlocfilehash: ce82f10fdb8159d2007d490747329c1a3b5aeecd
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 0fe08856c70d8a23fb768a5b94b933addd42714b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250070"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028667"
 ---
 # <a name="hello-wear"></a>你好，穿戴设备
 
@@ -24,7 +24,7 @@ _创建第一个 Android 应用并在磨损模拟器或设备上运行它。本�
 
 按照以下步骤创建你的第一个 Xamarin 应用：
 
-### <a name="1-create-a-new-android-project"></a>1.创建新的 Android 项目
+### <a name="1-create-a-new-android-project"></a>1. 创建新的 Android 项目
 
 创建新的**Android 应用程序**：
 
@@ -42,13 +42,13 @@ _创建第一个 Android 应用并在磨损模拟器或设备上运行它。本�
 
 此模板自动包括**Xamarin Android 可穿戴库**NuGet （和依赖项），以便你可以访问特定于特定的小组件。 如果看不到磨损模板，请查看[安装和设置](~/android/wear/get-started/installation.md)指南，确认是否已安装受支持的 Android SDK。 
 
-### <a name="2-choose-the-correct-target-framework"></a>2.选择正确的**目标框架**
+### <a name="2-choose-the-correct-target-framework"></a>2. 选择正确的**目标框架**
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 确保 "**最小 android 目标**" 设置为 " **Android 5.0 （棒糖）** 或更高版本"： 
 
-[![在 Visual Studio 中将目标框架设置为 Android 5。0](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
+[将目标框架设置为 Visual Studio 中的 Android 5.0![](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -60,9 +60,9 @@ _创建第一个 Android 应用并在磨损模拟器或设备上运行它。本�
 
 有关设置目标框架的详细信息，请参阅[了解 ANDROID API 级别](~/android/app-fundamentals/android-api-levels.md)。
 
-### <a name="3-edit-the-mainaxml-layout"></a>3.编辑**main.axml**布局
+### <a name="3-edit-the-mainaxml-layout"></a>3. 编辑**main.axml**布局
 
-配置布局以包含`TextView`示例的`Button`和： 
+配置布局以包含示例的 `TextView` 和 `Button`： 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ android:layout_height="match_parent">
 </FrameLayout>
 ```
 
-### <a name="4-edit-the-mainactivitycs-source"></a>4.编辑**MainActivity.cs**源
+### <a name="4-edit-the-mainactivitycs-source"></a>4. 编辑**MainActivity.cs**源
 
 添加代码以递增计数器，并在每次单击按钮时显示它： 
 
@@ -129,7 +129,7 @@ public class MainActivity : Activity
 }
 ```
 
-### <a name="5-setup-an-emulator-or-device"></a>5.设置模拟器或设备
+### <a name="5-setup-an-emulator-or-device"></a>5. 设置模拟器或设备
 
 下一步是设置模拟器或设备以部署和运行应用。 如果你尚不熟悉部署和运行 Xamarin Android 应用程序的一般过程，请参阅[Android 快速入门](~/android/get-started/hello-android/hello-android-quickstart.md)。
 
@@ -137,7 +137,7 @@ public class MainActivity : Activity
 
 如果有 Android 磨损设备，如 Android 磨损 Smartwatch，则可以在设备上运行应用，而不是使用模拟器。 有关在磨损设备上进行调试的详细信息，请参阅[在磨损设备上调试](~/android/wear/deploy-test/debug-on-device.md)。
 
-### <a name="6-run-the-android-wear-app"></a>6.运行 Android 应用程序
+### <a name="6-run-the-android-wear-app"></a>6. 运行 Android 应用程序
 
 Android 磨损设备应该出现在设备下拉菜单中。 在开始调试之前，请务必选择正确的 Android 磨损设备或 AVD。 选择设备后，单击 "播放" 按钮，将应用部署到模拟器或设备。
 
@@ -159,11 +159,11 @@ Android 磨损设备应该出现在设备下拉菜单中。 在开始调试之�
 
 应用成功部署后，磨损设备的屏幕应显示如下所示的屏幕：
 
-[![磨损应用的初始屏幕](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
+[应用程序初始屏幕![](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 点击 "**单击我！** " 按钮，查看每次点击的计数增量：
 
-[![单击3次后磨损应用的屏幕截图](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
+[单击3次后![磨损应用程序的屏幕截图](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 ## <a name="next-steps"></a>后续步骤
 

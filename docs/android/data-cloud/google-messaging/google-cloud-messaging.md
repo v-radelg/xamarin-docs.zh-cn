@@ -4,15 +4,15 @@ description: Google Cloud Messaging （GCM）是一种有助于在移动应用�
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: fef12ab6dc2c42f97e5a2725f58ba4392c21762f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754489"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023707"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -43,17 +43,17 @@ Google Cloud Messaging （GCM）是一种服务，用于处理服务器应用程
 
 GCM 使用以下凭据来识别应用服务器和客户端应用，并使用这些凭据通过 GCM 授权消息事务：
 
-- **API 密钥**API 密钥可让应用服务器访问 Google services; &ndash;GCM 使用此密钥对你的应用服务器进行身份验证。
+- **Api 密钥 &ndash;** *api 密钥*可让应用服务器访问 Google services;GCM 使用此密钥对你的应用服务器进行身份验证。
     在可以使用 GCM 服务之前，必须先通过创建*项目*从[Google DEVELOPER Console](https://console.developers.google.com/)获取 API 密钥。 应确保 API 密钥的安全;有关保护 API 密钥的详细信息，请参阅[安全使用 api 密钥的最佳实践](https://support.google.com/cloud/answer/6310037?hl=en)。
 
-- **发件人 ID**发件*人 ID*向客户端应用&ndash;授予应用服务器，它是一个唯一的编号，用于标识允许向客户端应用程序发送消息的应用程序服务器。 &ndash;
+- **发件人 id &ndash;** *发送方 id*向你的客户端应用授予应用服务器 &ndash; 它是一个唯一的编号，用于标识允许向客户端应用程序发送消息的应用程序服务器。
     发件人 ID 也是你的项目编号;注册项目时，从 Google 开发人员控制台获取发件人 ID。
 
-- **注册令牌**注册令牌是给定设备上的客户端应用的 GCM 标识。 &ndash; 注册令牌是在运行时&ndash;生成的，应用程序在设备上运行时首次注册 GCM 时接收注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行）以从 GCM 接收消息。
+- **注册令牌 &ndash;** *注册令牌*是给定设备上客户端应用的 GCM 标识。 注册令牌是在运行时生成的 &ndash; 应用程序在设备上运行时首次注册 GCM 时接收注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行）以从 GCM 接收消息。
 
-- **应用程序 ID**&ndash;注册从 GCM 接收消息的客户端应用（独立于任何给定设备）的标识。 在 Android 上，应用程序 ID 是在**androidmanifest.xml**中记录的包名称，如`com.xamarin.gcmexample`。
+- **应用程序 ID** &ndash; 注册为从 GCM 接收消息的客户端应用（独立于任何给定设备）的标识。 在 Android 上，应用程序 ID 是在**androidmanifest.xml**中记录的包名称，如 `com.xamarin.gcmexample`。
 
-[设置 Google Cloud Messaging](#settingup)（本指南稍后将提供有关创建项目和生成这些凭据的详细说明。
+[设置 Google Cloud Messaging](#settingup) （本指南稍后将提供有关创建项目和生成这些凭据的详细说明。
 
 以下部分说明了当客户端应用通过 GCM 与应用服务器通信时，如何使用这些凭据。
 
@@ -106,7 +106,7 @@ Google[注册的客户端应用程序](https://developers.google.com/cloud-messa
 
 如果客户端应用程序连接到支持[XMPP](https://developers.google.com/cloud-messaging/ccs)的服务器，它可以将消息发送回应用程序服务器，如下图所示：
 
-[![上游消息处理关系图](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
+[![上游消息传送关系图](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
 1. 客户端应用程序将消息发送到 GCM XMPP 连接服务器。
 
@@ -134,7 +134,7 @@ Google 的[上游消息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 2. 接下来，输入应用的包名称（在此示例中，包名为**gcmexample**），然后单击 "**继续" 以选择并配置服务**：
 
-    [![输入包名称](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
+    [输入包名称![](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     请注意，此包名称也是应用的应用程序 ID。
 
@@ -148,16 +148,16 @@ Google 的[上游消息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 5. 将为您的应用程序生成一个**服务器 API 密钥**和一个**发送程序 ID** 。 记录这些值，然后单击 "**关闭**"：
 
-    [![显示的服务器 API 密钥和发件人 ID](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
+    [显示![服务器 API 密钥和发件人 ID](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
-    保护 API 密钥&ndash; ，而不打算公开使用。 如果 API 密钥已泄露，则未经授权的服务器可能会将消息发布到客户端应用程序。
+    保护 API 密钥，&ndash; 不打算公开使用。 如果 API 密钥已泄露，则未经授权的服务器可能会将消息发布到客户端应用程序。
     [安全使用 api 密钥的最佳实践](https://support.google.com/cloud/answer/6310037?hl=en)提供了用于保护 API 密钥的有用指导原则。
 
 ### <a name="view-your-project-settings"></a>查看项目设置
 
 你可以随时通过登录到[Google Cloud Console](https://console.cloud.google.com/)并选择你的项目来查看你的项目设置。 例如，你可以通过在页面顶部的下拉菜单中选择你的项目来查看**发送方 ID** （在本示例中，项目称为**XamarinGCM**）。 发件人 ID 是此屏幕截图中所示的项目编号（此处的发件人 ID 为**9349932736**）：
 
-[![查看发送方 ID](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
+[查看发送方 ID![](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 若要查看**api 密钥**，请单击 " **api 管理器**"，然后单击 "**凭据**"：
 

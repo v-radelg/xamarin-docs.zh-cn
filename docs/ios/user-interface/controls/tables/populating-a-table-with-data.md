@@ -4,19 +4,19 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中填充包含数
 ms.prod: xamarin
 ms.assetid: 6FE64DDF-1029-EB9B-6EEC-1C7DFDFDF3AF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d926e206e4bba04629163cfc3d63b51a5f2f840d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768870"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021875"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
-若要将行添加`UITableView`到中，需要`UITableViewSource`实现子类并重写表视图调用以填充自身的方法。
+若要将行添加到 `UITableView` 需要实现 `UITableViewSource` 子类并重写表视图调用以填充自身的方法。
 
 本指南涵盖：
 
@@ -29,14 +29,14 @@ ms.locfileid: "70768870"
 
 ## <a name="subclassing-uitableviewsource"></a>子类 UITableViewSource
 
-子类分配给每个`UITableView`。 `UITableViewSource` "表" 视图查询源类以确定如何呈现自身（例如，需要多少行以及每行的高度（如果不同于默认值）。 最重要的是，源提供每个填充了数据的单元格。
+`UITableViewSource` 子类分配给每个 `UITableView`。 "表" 视图查询源类以确定如何呈现自身（例如，需要多少行以及每行的高度（如果不同于默认值）。 最重要的是，源提供每个填充了数据的单元格。
 
 要使表显示数据，只需要两个必需的方法：
 
-- **RowsInSection** –返回[`nint`](~/cross-platform/macios/nativetypes.md)该表应显示的数据的总行数。
-- **GetCell** –为传递`UITableCellView`给方法的相应行索引返回填充了数据的。
+- **RowsInSection** –返回表应显示的数据的总行数[`nint`](~/cross-platform/macios/nativetypes.md)计数。
+- **GetCell** –返回使用传递给方法的相应行索引的数据填充的 `UITableCellView`。
 
-BasicTable 示例文件**TableSource.cs**的可能实现的`UITableViewSource`最简单实现。 在下面的代码片段中可以看到，它接受要在表中显示的字符串数组，并返回包含每个字符串的默认单元格样式：
+BasicTable 示例文件**TableSource.cs** `UITableViewSource`的最简单实现。 在下面的代码片段中可以看到，它接受要在表中显示的字符串数组，并返回包含每个字符串的默认单元格样式：
 
 ```csharp
 public class TableSource : UITableViewSource {
@@ -70,9 +70,9 @@ public class TableSource : UITableViewSource {
 }
 ```
 
-`UITableViewSource`可以使用任何数据结构，从简单字符串数组（如本示例所示）到 < > 或其他集合的列表。 `UITableViewSource`方法的实现将表与基础数据结构隔离开来。
+`UITableViewSource` 可以使用任何数据结构，从简单字符串数组（如本示例所示）到 < > 或其他集合的列表。 `UITableViewSource` 方法的实现将表与基础数据结构隔离开来。
 
-若要使用此子类，请创建一个字符串数组来构造源，然后将其分配给`UITableView`实例：
+若要使用此子类，请创建一个字符串数组来构造源，然后将其分配给 `UITableView`的实例：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -87,9 +87,9 @@ public override void ViewDidLoad ()
 
 生成的表如下所示：
 
- [![](populating-a-table-with-data-images/image3.png "运行的示例表")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![](populating-a-table-with-data-images/image3.png "Sample table running")](populating-a-table-with-data-images/image3.png#lightbox)
 
-大多数表使用户能够通过触摸行来选择它，并执行一些其他操作（例如播放歌曲、调用联系人或显示其他屏幕）。 若要实现此目的，需要执行一些操作。 首先，让我们创建一个 AlertController，通过向`RowSelected`方法中添加以下内容，在用户单击行时显示一条消息：
+大多数表使用户能够通过触摸行来选择它，并执行一些其他操作（例如播放歌曲、调用联系人或显示其他屏幕）。 若要实现此目的，需要执行一些操作。 首先，让我们创建一个 AlertController，通过将以下内容添加到 `RowSelected` 方法，在用户单击该行时显示一条消息：
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -119,13 +119,13 @@ public TableSource (string[] items, HomeScreen owner)
 }
 ```
 
-修改创建 UITableViewSource 类的 ViewDidLoad 方法以传递`this`引用：
+修改创建 UITableViewSource 类的 ViewDidLoad 方法，以传递 `this` 引用：
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
 
-最后，返回到`RowSelected`方法，对缓存的字段调用： `PresentViewController`
+最后，返回 `RowSelected` 方法，对缓存的字段调用 `PresentViewController`：
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -139,13 +139,13 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 现在用户可以触摸一行，此时将显示一个警报：
 
- [![](populating-a-table-with-data-images/image4.png "选定的行警报")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![](populating-a-table-with-data-images/image4.png "The row selected alert")](populating-a-table-with-data-images/image4.png#lightbox)
 
 ## <a name="cell-reuse"></a>单元格重复使用
 
-在此示例中，只有六个项目，因此不需要重新使用单元。 但是，在显示几百行或数千行时，如果一次只在屏幕上容纳几个对象， `UITableViewCell`则会浪费内存来创建数百或数千个对象。
+在此示例中，只有六个项目，因此不需要重新使用单元。 但是，在显示几百行或数千行时，如果一次只在屏幕上容纳几个 `UITableViewCell` 对象，则可能会浪费内存来创建数百个或数千个的对象。
 
-若要避免这种情况，当单元格从屏幕上消失时，其视图将放置在队列中以供重复使用。 当用户滚动时，表将调用`GetCell`以请求显示新视图–若要重用现有单元（当前未显示），只需`DequeueReusableCell`调用方法。 如果某个单元格可用于重用，则将返回，否则将返回 null，并且你的代码必须创建新的单元格实例。
+若要避免这种情况，当单元格从屏幕上消失时，其视图将放置在队列中以供重复使用。 当用户滚动时，表将调用 `GetCell` 以请求显示新视图–若要重用现有单元（当前未显示），只需调用 `DequeueReusableCell` 方法。 如果某个单元格可用于重用，则将返回，否则将返回 null，并且你的代码必须创建新的单元格实例。
 
 该示例中的代码片段演示了模式：
 
@@ -157,13 +157,13 @@ if (cell == null)
     cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 ```
 
-为不同类型的单元格有效地创建单独的队列。`cellIdentifier` 在此示例中，所有单元格都具有相同的外观，因此只使用一个硬编码标识符。 如果有不同类型的单元格，则每个单元格都有不同的标识符字符串，它们都是实例化的，并且从重复使用队列请求它们时。
+`cellIdentifier` 为不同类型的单元格有效地创建单独的队列。 在此示例中，所有单元格都具有相同的外观，因此只使用一个硬编码标识符。 如果有不同类型的单元格，则每个单元格都有不同的标识符字符串，它们都是实例化的，并且从重复使用队列请求它们时。
 
 ### <a name="cell-reuse-in-ios-6"></a>IOS 6 + 中的单元重用
 
 iOS 6 添加了一种单元重用模式，这与集合视图简介类似。 虽然对于向后兼容仍支持上面所示的现有重用模式，但这种新模式更可取，因为它不再需要对单元格进行 null 检查。
 
-使用新模式，应用程序通过调用`RegisterClassForCellReuse`或`RegisterNibForCellReuse`在控制器的构造函数中调用，来注册要使用的 cell 类或 xib。 然后，在取消排队`GetCell`方法中的单元格时，只需调用`DequeueReusableCell`传递您为 cell 类或 xib 和索引路径注册的标识符。
+使用新模式，应用程序通过在控制器的构造函数中调用 `RegisterClassForCellReuse` 或 `RegisterNibForCellReuse` 来注册要使用的 cell 类或 xib。 然后，当取消排队 `GetCell` 中的单元格时，只需调用 `DequeueReusableCell` 传递您为 cell 类或 xib 和索引路径注册的标识符。
 
 例如，以下代码在 UITableViewController 中注册自定义单元类：
 
@@ -180,7 +180,7 @@ public class MyTableViewController : UITableViewController
 }
 ```
 
-注册 MyCell 类后，可以在的`GetCell` `UITableViewSource`方法中取消对单元的排队，无需执行额外的 null 检查，如下所示：
+注册 MyCell 类后，可以在 `UITableViewSource` 的 `GetCell` 方法中取消对单元的排队，无需执行额外的 null 检查，如下所示：
 
 ```csharp
 class MyTableSource : UITableViewSource
@@ -198,7 +198,7 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-请注意，在使用带有自定义单元类的新的重复使用模式时，需要实现采用`IntPtr`的构造函数，如下面的代码段所示，否则，目标 C 将无法构造 cell 类的实例：
+请注意，在使用带有自定义单元类的新的重复使用模式时，需要实现采用 `IntPtr`的构造函数（如下面的代码段所示），否则，目标 C 将无法构造 cell 类的实例：
 
 ```csharp
 public class MyCell : UITableViewCell
@@ -218,9 +218,9 @@ public class MyCell : UITableViewCell
 
 索引可帮助用户滚动长列表（通常按字母顺序排序），尽管你可以按所需的任何条件进行索引。 **BasicTableIndex**示例从文件中加载更长的项列表，以演示索引。 索引中的每一项对应于表的 "section"。
 
- [![](populating-a-table-with-data-images/image5.png "索引显示")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![](populating-a-table-with-data-images/image5.png "The Index display")](populating-a-table-with-data-images/image5.png#lightbox)
 
-若要支持 "节"，需要对表后面的数据进行分组，因此，BasicTableIndex 示例使用`Dictionary<>`每个项的第一个字母作为字典键，从字符串数组创建一个。
+若要支持 "节"，需要对表后面的数据进行分组，因此，BasicTableIndex 示例使用每个项的第一个字母作为字典键，从字符串数组创建 `Dictionary<>`：
 
 ```csharp
 indexedTableItems = new Dictionary<string, List<string>>();
@@ -234,7 +234,7 @@ foreach (var t in items) {
 keys = indexedTableItems.Keys.ToArray ();
 ```
 
-然后`UITableViewSource` ，子类需要添加或修改以下方法来`Dictionary<>`使用：
+然后，`UITableViewSource` 子类需要添加或修改以下方法以使用 `Dictionary<>`：
 
 - **NumberOfSections** –此方法是可选的，默认情况下，该表假设有一个部分。 显示索引时，此方法应返回索引中项的数目（例如，如果索引包含英文字母表中的所有字母，则为26）。
 - **RowsInSection** –返回给定节中的行数。
@@ -263,12 +263,12 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 ## <a name="adding-headers-and-footers"></a>添加页眉和页脚
 
-可以使用页眉和页脚直观地对表中的行进行分组。 所需的数据结构非常类似于添加索引– `Dictionary<>`工作非常好。 此示例将按住类型对蔬菜分组，而不是使用字母对单元进行分组。
+可以使用页眉和页脚直观地对表中的行进行分组。 所需的数据结构非常类似于添加索引– `Dictionary<>` 的工作非常好。 此示例将按住类型对蔬菜分组，而不是使用字母对单元进行分组。
 输出如下所示：
 
- [![](populating-a-table-with-data-images/image6.png "示例页眉和页脚")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![](populating-a-table-with-data-images/image6.png "Sample Headers and Footers")](populating-a-table-with-data-images/image6.png#lightbox)
 
-若要显示页眉和页脚`UITableViewSource` ，子类需要以下附加方法：
+若要显示页眉和页脚 `UITableViewSource` 子类需要以下附加方法：
 
 - **TitleForHeader** –返回用作标题的文本
 - **TitleForFooter** –返回要用作页脚的文本。
@@ -286,7 +286,7 @@ public override string TitleForFooter (UITableView tableView, nint section)
 }
 ```
 
-使用`GetViewForHeader` `UITableViewSource`和`GetViewForFooter`方法替代在上，您可以使用 View 对象进一步自定义页眉和页脚的外观。
+您可以使用视图对象进一步自定义页眉和页脚的外观，使用 `GetViewForHeader` 和 `GetViewForFooter` 方法重写 `UITableViewSource`上。
 
 ## <a name="related-links"></a>相关链接
 

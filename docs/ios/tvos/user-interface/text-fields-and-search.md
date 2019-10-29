@@ -4,25 +4,25 @@ description: 本文档介绍如何在使用 Xamarin 生成的 tvOS 应用中处�
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 71efb000b3f78283863193e0cc1db5dc45100c0a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: cfe747d89b3ccbff390326c915dc1311e40a60fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250164"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022169"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>在 Xamarin 中使用 tvOS 文本和搜索字段
 
 需要时，你的 Xamarin tvOS 应用可以使用文本字段和屏幕键盘从用户（例如用户 Id 和密码）中请求少量文本：
 
-[![](text-fields-and-search-images/intro01.png "示例搜索字段")](text-fields-and-search-images/intro01.png#lightbox)
+[![](text-fields-and-search-images/intro01.png "Sample Search Field")](text-fields-and-search-images/intro01.png#lightbox)
 
 你可以选择使用搜索字段提供应用内容的关键字搜索功能：
 
-[![](text-fields-and-search-images/intro02.png "示例搜索结果")](text-fields-and-search-images/intro02.png#lightbox)
+[![](text-fields-and-search-images/intro02.png "Sample Search Results")](text-fields-and-search-images/intro02.png#lightbox)
 
 本文档将介绍在 tvOS 应用中使用文本和搜索字段的详细信息。
 
@@ -40,7 +40,7 @@ ms.locfileid: "71250164"
 
 在 tvOS 中，文本字段显示为固定高度的圆角输入框，当用户单击它时，将显示屏幕键盘：
 
-[![](text-fields-and-search-images/text01.png "TvOS 中的文本字段")](text-fields-and-search-images/text01.png#lightbox)
+[![](text-fields-and-search-images/text01.png "Text Fields In tvOS")](text-fields-and-search-images/text01.png#lightbox)
 
 当用户将[焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)移到给定的文本字段时，它将增大并显示一个深阴影。 设计用户界面时，需要记住这一点，因为文本字段在处于焦点时可能会与其他 UI 元素重叠。
 
@@ -57,7 +57,7 @@ Apple 对于使用文本字段具有以下建议：
 
 只要用户在用户界面中单击某个文本字段，就会显示线性屏幕键盘。 用户使用[Siri 遥控器](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)上的触摸表面从键盘中选择单个字母并输入所需的信息：
 
-[![](text-fields-and-search-images/keyboard01.png "Siri 远程键盘")](text-fields-and-search-images/keyboard01.png#lightbox)
+[![](text-fields-and-search-images/keyboard01.png "The Siri Remote keyboard")](text-fields-and-search-images/keyboard01.png#lightbox)
 
 如果当前视图上存在多个文本字段，将自动显示 "**下一步**" 按钮，以使用户转到下一个文本字段。 将显示最后一个文本字段的 "**完成**" 按钮，该字段将结束文本输入并将用户返回到上一屏幕。
 
@@ -76,7 +76,7 @@ Apple 提供了以下有关使用屏幕键盘的建议：
 
 搜索字段提供了一个专用屏幕，其中提供了一个文本字段和屏幕键盘，使用户能够筛选出键盘下显示的项的集合：
 
-[![](text-fields-and-search-images/search01.png "示例搜索结果")](text-fields-and-search-images/search01.png#lightbox)
+[![](text-fields-and-search-images/search01.png "Sample search results")](text-fields-and-search-images/search01.png#lightbox)
 
 当用户在搜索字段中输入字母时，以下结果会自动反映搜索结果。 用户随时都可以将焦点移动到结果，并选择其中一项。
 
@@ -100,19 +100,19 @@ Apple 提供了以下有关使用搜索字段的建议：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击该`Main.storyboard`文件以将其打开以进行编辑。
+1. 在**Solution Pad**中，双击 `Main.storyboard` 文件以将其打开进行编辑。
 1. 将设计图面上的一个或多个**文本字段**拖至视图：
 
-    [![](text-fields-and-search-images/text02.png "文本字段")](text-fields-and-search-images/text02.png#lightbox)
+    [![](text-fields-and-search-images/text02.png "A Text Field")](text-fields-and-search-images/text02.png#lightbox)
 1. 选择**文本字段**，并在**Properties Pad**的 "**小组件**" 选项卡中为每个名称指定唯一**名称**：
 
-    [![](text-fields-and-search-images/text03.png "Properties Pad 的 \"小组件\" 选项卡")](text-fields-and-search-images/text03.png#lightbox)
+    [![](text-fields-and-search-images/text03.png "The Widget tab of the Properties Pad")](text-fields-and-search-images/text03.png#lightbox)
 1. 在 "**文本字段**" 部分中，可以定义元素，例如**占位符**提示和默认**值**：
 
-    [![](text-fields-and-search-images/text04.png "文本字段部分")](text-fields-and-search-images/text04.png#lightbox)
+    [![](text-fields-and-search-images/text04.png "The Text Field section")](text-fields-and-search-images/text04.png#lightbox)
 1. 向下滚动以定义**拼写检查**、**大写**和默认**键盘类型**等属性：
 
-    [![](text-fields-and-search-images/text05.png "拼写检查，大小写和默认键盘类型")](text-fields-and-search-images/text05.png#lightbox)
+    [![](text-fields-and-search-images/text05.png "Spell Checking, Capitalization and the default Keyboard Type")](text-fields-and-search-images/text05.png#lightbox)
 1. 保存对情节提要所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -120,27 +120,27 @@ Apple 提供了以下有关使用搜索字段的建议：
 1. 在“解决方案资源管理器”中，双击 `Main.storyboard` 文件，将其打开进行编辑。
 1. 将设计图面上的一个或多个**文本字段**拖至视图：
 
-    [![](text-fields-and-search-images/text02-vs.png "文本字段")](text-fields-and-search-images/text02-vs.png#lightbox)
+    [![](text-fields-and-search-images/text02-vs.png "A Text Field")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. 选择 "**属性资源管理器**" 的 "**小组件**" 选项卡中的**文本字段**，并为每个名称指定唯一**名称**：
 
-    [![](text-fields-and-search-images/text03-vs.png "\"小组件\" 选项卡")](text-fields-and-search-images/text03-vs.png#lightbox)
+    [![](text-fields-and-search-images/text03-vs.png "The Widget tab")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. 在 "**文本字段**" 部分中，可以定义元素，例如**占位符**提示和默认**值**：
 
-    [![](text-fields-and-search-images/text04-vs.png "文本字段部分")](text-fields-and-search-images/text04-vs.png#lightbox)
+    [![](text-fields-and-search-images/text04-vs.png "The Text Field section")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. 向下滚动以定义**拼写检查**、**大写**和默认**键盘类型**等属性：
 
-    [![](text-fields-and-search-images/text05-vs.png "拼写检查，大小写和默认键盘类型")](text-fields-and-search-images/text05-vs.png#lightbox)
+    [![](text-fields-and-search-images/text05-vs.png "Spell Checking, Capitalization and the default Keyboard Type")](text-fields-and-search-images/text05-vs.png#lightbox)
 1. 保存对情节提要所做的更改。
 
 -----
 
-在代码中，可以使用`Text`文本字段的属性来获取或设置该字段的值：
+在代码中，可以使用文本字段的 `Text` 属性来获取或设置该字段的值：
 
 ```csharp
 Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 ```
 
-您可以选择使用`Started`和`Ended`文本字段事件来响应文本输入的开始和结束。
+您可以选择使用 "`Started`" 和 "`Ended` 文本" 字段事件来响应文本输入的开始和结束。
 
 <a name="Working-with-Search-Fields" />
 
@@ -152,20 +152,20 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击该`Main.storyboard`文件以将其打开以进行编辑。
+1. 在**Solution Pad**中，双击 `Main.storyboard` 文件以将其打开进行编辑。
 1. 将新的集合视图控制器拖动到情节提要，以显示用户的搜索结果：
 
-    [![](text-fields-and-search-images/search02.png "集合视图控制器")](text-fields-and-search-images/search02.png#lightbox)
-1. 在**Properties Pad**的 "**小组件**" 选项卡`SearchResultsViewController`中，对**类**和`SearchResults` **情节提要 ID**使用：
+    [![](text-fields-and-search-images/search02.png "A Collection View Controller")](text-fields-and-search-images/search02.png#lightbox)
+1. 在**Properties Pad**的 "**小组件**" 选项卡中，将 `SearchResultsViewController` 用于**情节提要 ID**的**类**和 `SearchResults`：
 
-    [![](text-fields-and-search-images/search03.png "\"小组件\" 选项卡")](text-fields-and-search-images/search03.png#lightbox)
+    [![](text-fields-and-search-images/search03.png "The Widget tab")](text-fields-and-search-images/search03.png#lightbox)
 1. 选择设计图面上的**单元原型**。
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`ImageCell`中，为**类**和**标识符**使用`SearchResultCell` ：
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，对**类**使用 `SearchResultCell`，为**标识符**使用 `ImageCell`：
 
-    [![](text-fields-and-search-images/search04.png "\"小组件\" 选项卡")](text-fields-and-search-images/search04.png#lightbox)
+    [![](text-fields-and-search-images/search04.png "The Widget tab")](text-fields-and-search-images/search04.png#lightbox)
 1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡**中布局** **单元原型**的设计并公开每个元素：
 
-    [![](text-fields-and-search-images/search05.png "布局单元原型的设计")](text-fields-and-search-images/search05.png#lightbox)
+    [![](text-fields-and-search-images/search05.png "Layout the design of the Cell Prototype")](text-fields-and-search-images/search05.png#lightbox)
 1. 保存对情节提要所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -173,17 +173,17 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 1. 在“解决方案资源管理器”中，双击 `Main.storyboard` 文件，将其打开进行编辑。
 1. 将新的集合视图控制器拖动到情节提要，以显示用户的搜索结果：
 
-    [![](text-fields-and-search-images/seach02-vs.png "集合视图控制器")](text-fields-and-search-images/seach02-vs.png#lightbox)
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`SearchResults`中，为**类**和**情节提要 ID**使用`SearchResultsViewController` ：
+    [![](text-fields-and-search-images/seach02-vs.png "A Collection View Controller")](text-fields-and-search-images/seach02-vs.png#lightbox)
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，将 `SearchResultsViewController` 用于 `SearchResults`**情节提要 ID**的**类**和：
 
-    [![](text-fields-and-search-images/search03-vs.png "\"小组件\" 选项卡")](text-fields-and-search-images/search03-vs.png#lightbox)
+    [![](text-fields-and-search-images/search03-vs.png "The Widget tab")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. 选择设计图面上的**单元原型**。
-1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡`ImageCell`中，为**类**和**标识符**使用`SearchResultCell` ：
+1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，对**类**使用 `SearchResultCell`，为**标识符**使用 `ImageCell`：
 
-    [![](text-fields-and-search-images/search04-vs.png "\"小组件\" 选项卡")](text-fields-and-search-images/search04-vs.png#lightbox)
+    [![](text-fields-and-search-images/search04-vs.png "The Widget tab")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. 在 "**属性资源管理器**" 的 "**小组件**" 选项卡**中布局** **单元原型**的设计并公开每个元素：
 
-    [![](text-fields-and-search-images/search05-vs.png "布局单元原型的设计")](text-fields-and-search-images/search05-vs.png#lightbox)
+    [![](text-fields-and-search-images/search05-vs.png "Layout the design of the Cell Prototype")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. 保存对情节提要所做的更改。
 
 -----
@@ -194,15 +194,15 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-接下来，需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加** > " "**新文件 ...** "常规空类并提供名称 > ：  > 
+接下来，需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加** > **新文件 ...**  > **常规** > **空类**并提供**名称**：
 
-[![](text-fields-and-search-images/search06.png "选择空类并提供名称")](text-fields-and-search-images/search06.png#lightbox)
+[![](text-fields-and-search-images/search06.png "Select Empty Class and provide a Name")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-接下来，需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加** > **新项 ...** "Apple杂项 > 类并 > 提供名称：  > 
+接下来，需要提供一个类作为用户将搜索的结果的数据模型。 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加** > **新项 ...**  > **Apple** > **杂项** > **类**并提供**名称**：
 
-[![](text-fields-and-search-images/search06-vs.png "选择类并提供名称")](text-fields-and-search-images/search06-vs.png#lightbox)
+[![](text-fields-and-search-images/search06-vs.png "Select Class and provide a Name")](text-fields-and-search-images/search06-vs.png#lightbox)
 
 -----
 
@@ -239,7 +239,7 @@ namespace tvText
 
 ### <a name="the-collection-view-cell"></a>集合视图单元格
 
-数据模型到位后，编辑**原型单元**（`SearchResultViewCell.cs`），使其看起来如下所示：
+数据模型到位后，编辑**原型单元**（`SearchResultViewCell.cs`），并使其看起来如下所示：
 
 ```csharp
 using Foundation;
@@ -293,7 +293,7 @@ namespace tvText
 }
 ```
 
-每`UpdateUI`次更新属性时，该方法将用于显示命名 UI 元素中`PictureInfo`的**PictureInformation**项（属性）的各个字段。 例如，图像和与图片关联的标题。
+每次更新属性时，`UpdateUI` 方法将用于显示命名 UI 元素中**PictureInformation**项（`PictureInfo` 属性）的各个字段。 例如，图像和与图片关联的标题。
 
 <a name="The-Collection-View-Controller" />
 
@@ -451,7 +451,7 @@ namespace tvText
 }
 ```
 
-首先， `IUISearchResultsUpdating`将接口添加到类，以处理用户正在更新的搜索控制器筛选器：
+首先，将 `IUISearchResultsUpdating` 接口添加到类，以处理用户正在更新的搜索控制器筛选器：
 
 ```csharp
 public partial class SearchResultsViewController : UICollectionViewController , IUISearchResultsUpdating
@@ -481,7 +481,7 @@ public string SearchFilter {
 }
 ```
 
-`SearchFilter`更改时，会更新匹配项的列表，并重新加载集合视图的内容。 `FindPictures`例程负责查找与新搜索词匹配的项：
+更改 `SearchFilter` 时，会更新匹配项列表，并重新加载集合视图的内容。 `FindPictures` 例程负责查找与新搜索词匹配的项：
 
 ```csharp
 private void FindPictures ()
@@ -502,7 +502,7 @@ private void FindPictures ()
 }
 ```
 
-当用户更改搜索`SearchFilter`控制器中的筛选器时，将更新的值（这将更新结果集合视图）：
+当用户更改搜索控制器中的筛选器时，将更新 `SearchFilter` 的值（这将更新结果集合视图）：
 
 ```csharp
 public void UpdateSearchResultsForSearchController (UISearchController searchController)
@@ -512,7 +512,7 @@ public void UpdateSearchResultsForSearchController (UISearchController searchCon
 }
 ```
 
-此`PopulatePictures`方法最初填充可用项的集合：
+`PopulatePictures` 方法最初会填充可用项的集合：
 
 ```csharp
 private void PopulatePictures ()
@@ -528,7 +528,7 @@ private void PopulatePictures ()
 
 就本示例来说，当收集视图控制器加载时，将在内存中创建所有示例数据。 在实际应用中，这些数据可能会从数据库或 web 服务中读取，并且仅在需要时才能从 overrunning Apple TV 的有限内存中继续进行。
 
-`NumberOfSections` 和`GetItemsCount`方法提供匹配项的数目：
+`NumberOfSections` 和 `GetItemsCount` 方法提供匹配项的数目：
 
 ```csharp
 public override nint NumberOfSections (UICollectionView collectionView)
@@ -544,7 +544,7 @@ public override nint GetItemsCount (UICollectionView collectionView, nint sectio
 }
 ```
 
-方法返回集合视图中每个项的新**原型单元**（基于在情节提要中定义的`CellID` ）： `GetCell`
+`GetCell` 方法将根据集合视图中的每一项返回一个新的**原型单元格**（基于在情节提要中定义的 `CellID`）：
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -555,7 +555,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-在`WillDisplayCell`显示单元格之前调用方法，以便可以对其进行配置：
+在显示单元格之前调用 `WillDisplayCell` 方法，以便可以对其进行配置：
 
 ```csharp
 public override void WillDisplayCell (UICollectionView collectionView, UICollectionViewCell cell, NSIndexPath indexPath)
@@ -571,7 +571,7 @@ public override void WillDisplayCell (UICollectionView collectionView, UICollect
 }
 ```
 
-当用户突出显示 "结果" 集合视图中的项时，方法向用户提供视觉反馈：`DidUpdateFocus`
+当用户突出显示 "结果" 集合视图中的项时，`DidUpdateFocus` 方法为用户提供视觉反馈：
 
 ```csharp
 public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
@@ -592,7 +592,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-最后，该`ItemSelected`方法处理在 "结果" 集合视图中选择项（在 Siri 遥控器上单击触摸图面）的用户：
+最后，`ItemSelected` 方法处理用户选择项（在 "结果" 集合视图中单击 "Siri 远程" 的触摸表面）：
 
 ```csharp
 public override void ItemSelected (UICollectionView collectionView, NSIndexPath indexPath)
@@ -607,7 +607,7 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-如果搜索字段作为模式对话框视图显示（在调用它的视图顶部），请使用`DismissViewController`方法在用户选择项时关闭搜索视图。 在此示例中，"搜索" 字段显示为 "选项卡视图" 选项卡的内容，因此不会在此处解除。
+如果搜索字段作为模式对话框视图显示（在调用它的视图顶部），则使用 `DismissViewController` 方法可在用户选择项时消除搜索视图。 在此示例中，"搜索" 字段显示为 "选项卡视图" 选项卡的内容，因此不会在此处解除。
 
 有关集合视图的详细信息，请参阅[使用集合视图](~/ios/tvos/user-interface/collection-views.md)文档。
 
@@ -704,7 +704,7 @@ namespace tvText
 public const string SearchResultsID = "SearchResults";
 ```
 
-接下来， `ShowSearchController`该方法创建一个新的搜索视图集合控制器并显示它需要的内容：
+接下来，`ShowSearchController` 方法创建一个新的搜索视图集合控制器并显示它需要的内容：
 
 ```csharp
 public void ShowSearchController ()
@@ -736,16 +736,16 @@ public void ShowSearchController ()
 }
 ```
 
-在上述方法中，一旦`SearchResultsViewController`从情节提要中实例化，就会创建一个新`UISearchController`的，用于向用户显示搜索字段和屏幕键盘。 此键盘下将显示搜索结果集合（ `SearchResultsViewController`由定义）。
+在上述方法中，一旦从情节提要中实例化了 `SearchResultsViewController`，就会创建一个新的 `UISearchController` 以向用户显示搜索字段和屏幕键盘。 "搜索结果" 集合（由 `SearchResultsViewController`定义）将显示在此键盘上。
 
-接下来， `SearchBar`将配置为包含**占位符**提示等信息。 这为用户提供了要进行的搜索类型的相关信息。
+接下来，将 `SearchBar` 配置为包含**占位符**提示等信息。 这为用户提供了要进行的搜索类型的相关信息。
 
 然后，通过以下两种方式之一向用户显示搜索字段：
 
-- **模式对话框视图**- `PresentViewController`调用方法以在现有视图上显示搜索全屏。
-- **查看内容**- `UISearchContainerViewController`创建包含搜索控制器的。 将`UINavigationController`创建一个以包含搜索容器，然后将导航控制器添加到视图控制器`AddChildViewController (navController)`，并将显示`View.Add (navController.View)`视图。
+- **模式对话框视图**-调用 `PresentViewController` 方法，以便在整个现有视图上显示搜索。
+- **查看内容**-创建 `UISearchContainerViewController` 以包含搜索控制器。 创建 `UINavigationController` 以包含搜索容器，然后将导航控制器添加到视图控制器 `AddChildViewController (navController)`，并 `View.Add (navController.View)`提供的视图。
 
-最后，根据表示类型， `ViewDidLoad`或`ViewDidAppear`方法将调用`ShowSearchController`方法来向用户显示搜索：
+最后，根据表示类型，`ViewDidLoad` 或 `ViewDidAppear` 方法将调用 `ShowSearchController` 方法来向用户显示搜索：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -770,11 +770,11 @@ public override void ViewDidAppear (bool animated)
 
 当应用运行时，如果用户选择了 "搜索" 选项卡，则会向用户显示完全未筛选的项目列表：
 
-[![](text-fields-and-search-images/intro02.png "默认搜索结果")](text-fields-and-search-images/intro02.png#lightbox)
+[![](text-fields-and-search-images/intro02.png "Default search results")](text-fields-and-search-images/intro02.png#lightbox)
 
 当用户开始输入搜索词时，将按该术语筛选结果列表并自动更新：
 
-[![](text-fields-and-search-images/intro03.png "筛选的搜索结果")](text-fields-and-search-images/intro03.png#lightbox)
+[![](text-fields-and-search-images/intro03.png "Filtered search results")](text-fields-and-search-images/intro03.png#lightbox)
 
 用户随时可以在搜索结果中将焦点切换到某个项目，然后单击 Siri 遥控器的触摸面以将其选中。
 

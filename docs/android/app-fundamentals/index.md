@@ -4,15 +4,15 @@ description: 核心应用程序概念
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af7ba83b9026a91028f4ffa9894d564d5ff13eb8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: eb581d68f3b7e57975b6979fe1005b1fac411ec8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755305"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019220"
 ---
 # <a name="xamarinandroid-application-fundamentals"></a>Xamarin Android 应用程序基础知识
 
@@ -62,7 +62,7 @@ Xamarin 支持多个 CPU 体系结构，包括32位和64位设备。 本文介�
 
 本文介绍如何处理 Xamarin 中的设备方向更改。 其中介绍了如何使用 Android 资源系统自动为特定设备方向加载资源，以及如何以编程方式处理方向更改。 然后介绍在设备旋转时用于维护状态的技术。
 
-## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android Audio](~/android/app-fundamentals/android-audio.md)
+## <a name="android-audioandroidapp-fundamentalsandroid-audiomd"></a>[Android 音频](~/android/app-fundamentals/android-audio.md)
 
 Android OS 为多媒体提供了广泛的支持，包括音频和视频。 本指南重点介绍 Android 中的音频，并介绍如何使用内置的音频播放器和录像机类以及低级音频 API 播放和录制音频。 还介绍了如何使用其他应用程序广播的音频事件，使开发人员能够构建表现良好的应用程序。
 
