@@ -4,15 +4,15 @@ description: 本文档介绍了 Xamarin 中的国际化编码，讨论了可用�
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c8e82f9261601db48ec48092a5f3f81394a86eec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d204aeac18fc08bf6eb2221b6f64ecbbded8121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763406"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009993"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的国际化编码
 
@@ -22,17 +22,17 @@ ms.locfileid: "70763406"
 
 这是通过在 Visual Studio for Mac 或 Visual Studio 中的 "iOS 生成"/"高级" 窗格中选择额外的编码来完成的：
 
- [![](encodings-images/00.png "选择额外的编码")](encodings-images/00.png#lightbox)
+ [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "选择额外的编码")](encodings-images/00a.png#lightbox)
+ [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
 
 您可以选择以下其中一项：
 
 - cjk： for Chineese，日语和韩语
-- mideast:阿拉伯语、希伯来语、土耳其语和 Latin5。
-- 以外西里尔语、波罗的语、越南语和泰语
-- 极少数EBCDIC 编码和其他罕见代码页
-- 西部拉丁语言、复活节和西欧
+- mideast：阿拉伯语、希伯来语、土耳其语和 Latin5。
+- 其他：西里尔语、波罗的语、越南语、乌克兰语和泰语
+- 罕见： EBCDIC 编码和其他罕见代码页
+- 西部：拉丁语语言、复活节和西欧
 - 全部
 
  <a name="cjk" />

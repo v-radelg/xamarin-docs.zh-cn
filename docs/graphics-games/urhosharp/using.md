@@ -1,35 +1,35 @@
 ---
-title: 使用 UrhoSharp 生成 3D 游戏
-description: 本文档提供 UrhoSharp，的概述介绍场景、 组件、 形状、 照相机、 操作、 用户输入、 声音、 和的详细信息。
+title: 使用 UrhoSharp 构建三维游戏
+description: 本文档提供 UrhoSharp 的概述，介绍场景、组件、形状、照相机、操作、用户输入、声音等。
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7307f7dcfcc6b5e2576ce4b425879ae05c5a6056
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: cb4e524977b53f1a17552298c509d43ccf460f08
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832675"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011654"
 ---
-# <a name="using-urhosharp-to-build-a-3d-game"></a>使用 UrhoSharp 生成 3D 游戏
+# <a name="using-urhosharp-to-build-a-3d-game"></a>使用 UrhoSharp 构建三维游戏
 
-编写你的首个游戏之前，你想要掌握基础知识： 如何设置您的场景，如何加载的资源 （包含您的作品） 以及如何创建简单交互为您的游戏。
+编写您的第一个游戏之前，您需要了解熟悉的基础知识：如何设置场景，如何加载资源（这包含您的图稿）以及如何为您的游戏创建简单交互。
 
 <a name="scenenodescomponentsandcameras"/>
 
-## <a name="scenes-nodes-components-and-cameras"></a>场景、 节点、 组件和照相机
+## <a name="scenes-nodes-components-and-cameras"></a>场景、节点、组件和照相机
 
-场景模型可以描述为基于组件的场景图。 场景包含节点的层次结构场景，从根节点，还表示整个场景开始。 每个`Node`具有三维转换 （位置、 旋转和缩放）、 名称、 ID 以及任意数量的组件。  组件将节点变为现实，它们会使添加可视表示形式 (`StaticModel`)，它们可以发出声音 (`SoundSource`)，它们可以提供冲突边界，依此类推。
+场景模型可以描述为基于组件的场景图。 场景包含场景节点的层次结构，从根节点开始，后者也表示整个场景。 每个 `Node` 都有一个三维转换（位置、旋转和缩放）、名称、ID 和任意数量的组件。  组件使某个节点成为生存期，它们可以添加一个直观的表示形式（`StaticModel`），可以发出声音（`SoundSource`），它们可以提供冲突边界等等。
 
-您可以创建您的场景和安装程序节点上使用[Urho 编辑器](#urhoeditor)，或可以在 C# 代码中执行操作。  本文档中我们将探讨设置各项使用的代码，因为它们说明了使内容显示在屏幕上所需的元素
+您可以使用[Urho 编辑器](#urhoeditor)创建场景和安装节点，也可以从C#代码中执行操作。  在本文档中，我们将探讨如何使用代码进行设置，因为它们阐释了在屏幕上显示内容所需的元素
 
-除了设置您的场景，你需要设置`Camera`，这是向用户将获取显示的内容由什么决定。
+除了设置场景外，还需要设置 `Camera`，这决定了将向用户显示的内容。
 
-### <a name="setting-up-your-scene"></a>设置您的场景
+### <a name="setting-up-your-scene"></a>设置场景
 
-通常要创建此窗体启动方法：
+你通常会创建以下形式的启动方法：
 
 ```csharp
 var scene = new Scene ();
@@ -51,9 +51,9 @@ planeObject.Model = ResourceCache.GetModel ("Models/Plane.mdl");
 planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 ```
 
-### <a name="components"></a>组件
+### <a name="components"></a>组件数
 
-呈现三维对象，声音播放、 物理和脚本化的逻辑更新情况下全都启用为节点创建不同的组件，通过调用`CreateComponent<T>()`。  例如，安装程序节点和浅组件如下：
+通过调用 `CreateComponent<T>()`，可以通过在节点中创建不同的组件，来呈现3D 对象、声音播放、物理学和脚本化逻辑更新。  例如，设置节点和光源组件，如下所示：
 
 ```csharp
 // Create a directional light to the world so that we can see something. The
@@ -65,30 +65,30 @@ var lightNode = scene.CreateChild("DirectionalLight");
 lightNode.SetDirection (new Vector3(0.6f, -1.0f, 0.8f));
 ```
 
-我们已创建了具有该名称节点上方"`DirectionalLight`"并为它，但仅限于设置方向。  现在，我们可以将上面的节点转换 light 发出的节点，通过将附加`Light`组件，使用`CreateComponent`:
+我们创建了一个名为 "`DirectionalLight`" 的节点，并为其设置了一个方向，但没有其他任何内容。  现在，可以通过向 `CreateComponent`中附加 `Light` 组件，将上述节点转换为一个发光节点：
 
 ```csharp
 var light = lightNode.CreateComponent<Light>();
 ```
 
-创建到组件`Scene`本身具有特殊的角色： 若要实现场景级功能。 它们应在所有其他组件之前创建，并且包括以下各项：
+在 `Scene` 中创建的组件具有特殊的角色：用于实现场景范围内的功能。 它们应在所有其他组件之前创建，并包括以下各项：
 
- `Octree`： 实现空间分区，并加速可见性查询。 而无需此 3D 不可以呈现的对象。
- `PhysicsWorld`： 实现物理模拟。 如物理组件`RigidBody`或`CollisionShape`可以不正常而无需这的工作。
- `DebugRenderer`： 实现调试 geometry 呈现。
+ `Octree`：实现空间分区和加速可见性查询。 不能呈现此三维对象。
+ `PhysicsWorld`：实现物理学模拟。 如果没有此功能，物理组件（如 `RigidBody` 或 `CollisionShape`）可能无法正常运行。
+ `DebugRenderer`：实现调试几何呈现。
 
-等普通组件`Light`，`Camera`或 `StaticModel`
-不应直接创建`Scene`，但而不是为子节点。
+`Light`、`Camera` 或 `StaticModel` 等普通组件
+不应直接在 `Scene`中创建，而应创建为子节点。
 
-库附带了各种可以附加到节点将转换为现实的组件： 用户可见的元素 （模型）、 声音、 刚体、 冲突形状、 照相机、 光源、 粒子发射器和其他更多。
+该库附带了各种组件，您可以将这些组件附加到您的节点以使它们能够使用：用户可见的元素（模型）、声音、刚性体、冲突形状、照相机、光源、粒子发射器等。
 
 ### <a name="shapes"></a>形状
 
-为方便起见，各种形状都可用作简单 Urho.Shapes 命名空间中的节点。  其中包括框、 球体、 圆锥、 圆柱形和平面。
+为方便起见，可将各种形状作为 Urho 命名空间中的简单节点提供。  其中包括框、球、圆锥、圆柱和飞机。
 
 ### <a name="camera-and-viewport"></a>照相机和视区
 
-就像光，相机是组件，因此将需要将该组件附加到一个节点，如下：
+与光一样，照相机是组件，因此需要将组件附加到节点，如下所示：
 
 ```csharp
 var CameraNode = scene.CreateChild ("camera");
@@ -96,72 +96,72 @@ camera = CameraNode.CreateComponent<Camera>();
 CameraNode.Position = new Vector3 (0, 5, 0);
 ```
 
-与此，创建相机、 并已放置在 3D 世界中的照相机下, 一步是告知`Application`，这你想要使用的照相机，这是使用以下代码：
+这样一来，您已经创建了一个摄像机，并将该照相机置于3D 世界，下一步就是通知 `Application` 这是您要使用的摄像机，这是使用以下代码完成的：
 
 ```csharp
 Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 ```
 
-和现在，应能够看到创建的结果。
+现在，您应该可以看到创建的结果。
 
-### <a name="identification-and-scene-hierarchy"></a>标识和场景的层次结构
+### <a name="identification-and-scene-hierarchy"></a>标识和场景层次结构
 
-与节点不同组件没有名称;在同一节点内的组件仅由其类型和在该节点的组件列表中，按创建顺序填充该索引，例如，可以检索`Light`组件共`lightNode`上面对象如下：
+与节点不同，组件没有名称;同一节点内的组件仅按其类型进行标识，在节点的 "组件" 列表中按创建顺序进行索引，例如，您可以按如下所示检索 `lightNode` 对象的 `Light` 组件：
 
 ```csharp
 var myLight = lightNode.GetComponent<Light>();
 ```
 
-此外可以通过检索来获取所有组件的列表`Components`属性返回`IList<Component>`，可以使用。
+你还可以获取所有组件的列表，方法是检索 `Components` 属性，该属性将返回可使用的 `IList<Component>`。
 
-在创建时，节点和组件将获取场景全局整数 Id。 它们可以从场景查询，通过使用函数`GetNode(uint id)`和`GetComponent(uint id)`。 这是比例如执行递归名称基于场景的节点查询快得多。
+创建时，节点和组件均获取场景全局整数 Id。 可以通过使用 `GetNode(uint id)` 和 `GetComponent(uint id)`的函数从场景中查询它们。 这比执行基于名称的递归场景节点查询更快。
 
-不存在的实体或游戏对象; 内置概念而是由编程人员决定节点层次结构，并在哪些节点将任何已编写脚本的逻辑。 通常情况下，作为根节点的子级创建免费移动三维世界中的对象。 可以使用或不使用的名称，可以创建节点`CreateChild`。 不强制执行节点名称的唯一性。
+没有实体或游戏对象的内置概念;相反，程序员需要确定节点层次结构，而在哪个节点中放置任何脚本化的逻辑。 通常，会将三维世界中的自由移动对象创建为根节点的子对象。 使用 `CreateChild`，可以使用或不使用名称创建节点。 不强制使用节点名称的唯一性。
 
-只要某些层次结构的组合，它是建议 （并且确实有必要，因为组件不具有其自己的 3D 转换） 来创建一个子节点。
+每次有层次结构组合时，建议（事实上，因为组件没有自己的3D 转换）来创建子节点。
 
-例如如果字符已持有手中的一个对象，该对象应具有其自己的节点，将父级设置为该字符的手的骨骼 (还`Node`)。  例外情况是物理`CollisionShape`，可以是 offsetted 和旋转单独与节点相关。
+例如，如果某个字符的手中包含一个对象，则该对象应具有其自己的节点，该节点将是该字符的手形骨骼（也是 `Node`）的父级。  物理 `CollisionShape`是物理的，它可以 offsetted，并与节点进行单独旋转。
 
-请注意，`Scene`的拥有转换有意忽略作为一种优化，计算派生的世界转换的子节点时，因此更改都无效，它应保留原样 （在 origin，没有旋转，无需进行扩展的位置。）
+请注意，在计算子节点的世界派生转换时，`Scene`的自己的转换被忽略为优化，因此更改它不起作用，应保持不变（位置不变，无旋转，无缩放）。
 
-`Scene` 可以自由地重新设定节点。 与此相反组件始终属于它们附加到，并不能移动的节点之间的节点。 节点和组件提供`Remove`函数来实现此目的而无需经历父级。 删除节点后，在调用该函数后不是安全组件有问题的节点上的任何操作。
+`Scene` 节点可以自由地重定父级。 相反，组件始终属于它们附加到的节点，无法在节点之间移动。 节点和组件都提供 `Remove` 函数来完成此工作，而无需通过父节点。 删除节点后，在调用该函数后，不会对所涉及的节点或组件进行任何操作。
 
-还有可能创建`Node`，不属于一个场景。 这是有用例如带相机的场景可能加载或保存，因为移动然后照相机将不会实际场景，以及保存和加载场景时不会被破坏。 但请注意，创建到未连接的节点，geometry、 物理或脚本组件，然后将其移到一个场景更高版本将导致这些组件无法正常工作。
+还可以创建不属于场景的 `Node`。 这种情况很有用，例如，在可能加载或保存的场景中移动照相机时，照相机不会与实际场景一起保存，并且在加载场景时不会被销毁。 但是，请注意，将 geometry、物理学或 script 组件创建到未附加的节点，然后将其移动到场景中会导致这些组件无法正常工作。
 
 ### <a name="scene-updates"></a>场景更新
 
-启用其更新场景 （默认值） 将自动更新每个主循环迭代上。  应用程序的`SceneUpdate`在其上调用事件处理程序。
+启用了更新的场景（默认值）将在每个主循环迭代中自动更新。  将对应用程序的 `SceneUpdate` 事件处理程序进行调用。
 
-节点和组件可以通过禁用从场景更新中排除，请参阅`Enabled`。  行为取决于特定的组件，但如禁用可绘制组件也将使其不可见的而禁用声音源组件使静音。 如果禁用了节点，其所有组件将被视为为禁用，而不考虑其自己的启用/禁用状态。
+可以通过禁用场景更新来排除节点和组件，请参阅 `Enabled`。  行为取决于特定的组件，但例如，禁用可绘制组件还会使其不可见，同时禁用静音的声音源组件。 如果某个节点处于禁用状态，则它的所有组件都将被视为禁用，而不考虑它们各自的启用/禁用状态。
 
-## <a name="adding-behavior-to-your-components"></a>将行为添加到你的组件
+## <a name="adding-behavior-to-your-components"></a>向组件添加行为
 
-构建您的游戏的最佳方法是使自己封装的执行组件或您的游戏的元素的组件。  这样，该功能自包含从用来显示它，其行为的资产。
+构建游戏的最佳方式是构建自己的组件，将参与者或元素封装到游戏中。  这使得功能自行包含在用于显示其行为的资产中。
 
-将行为添加到组件的最简单的方法是使用操作，它们是可以进行排队并加上 C# 异步编程的说明。  这允许您为非常高的级别的组件的行为，并使其更容易理解发生了什么情况。
+向组件添加行为的最简单方法是使用操作，这些操作是可以进行排队并将其与C#异步编程结合使用的说明。  这允许组件的行为非常高，并使其更易于理解发生的情况。
 
-或者，可以控制完全会发生什么情况组件通过更新 （在基于框架的行为部分中讨论） 每个帧上您组件的属性。
+或者，您可以通过更新每个帧上的组件属性（在基于帧的行为部分中讨论）来精确控制您的组件所发生的情况。
 
 ### <a name="actions"></a>操作
 
-可以将行为添加到节点非常轻松地使用操作。  操作可以更改各种节点属性和执行通过一段时间，或重复这些与给定的动画曲线次数。
+可以很轻松地使用操作将行为添加到节点。  操作可以更改各种节点属性并在一段时间内执行这些属性，也可以使用给定的动画曲线多次重复执行操作。
 
-例如，假设您的场景上的"云"节点，淡化如下：
+例如，请考虑场景中的 "云" 节点，可以像下面这样淡化：
 
 ```csharp
 await cloud.RunActionsAsync (new FadeOut (duration: 3))
 ```
 
-操作是不可变对象，以便您可以重复使用用于驱动不同的对象的操作。
+操作是不可变对象，可用于对驱动不同对象重复使用该操作。
 
-一个常用方法是创建执行反向操作的操作：
+常见的用法是创建执行反向操作的操作：
 
 ```csharp
 var gotoExit = new MoveTo (duration: 3, position: exitLocation);
 var return = gotoExit.Reverse ();
 ```
 
-三秒内，下面的示例将为您淡对象。  您还可以运行一个操作，例如，您无法先将移云，再然后将其隐藏：
+下面的示例将在3秒的时间段内淡化对象。  你还可以在另一个操作之后运行一个操作，例如，你可以先移动云，然后隐藏它：
 
 ```csharp
 await cloud.RunActionsAsync (
@@ -169,7 +169,7 @@ await cloud.RunActionsAsync (
     new FadeOut (duration: 3));
 ```
 
-如果你想要在同一时间发生这两个操作，可使用并行操作，并提供所有所需的操作同时进行的：
+如果希望同时执行这两项操作，可以使用并行操作，并提供要并行执行的所有操作：
 
 ```csharp
   await cloud.RunActionsAsync (
@@ -178,29 +178,29 @@ await cloud.RunActionsAsync (
       new FadeOut (duration: 3)));
 ```
 
-在上面的示例在云中将移动，并同时淡出。
+在上面的示例中，云将同时移动和淡出。
 
-你会注意到使用这些C# `await`，该编辑器可以以线性方式考虑你想要实现的行为。
+你会注意到这些是使用C#`await`，这使你可以线性地考虑你要实现的行为。
 
 ### <a name="basic-actions"></a>基本操作
 
-以下是在 UrhoSharp 中受支持的操作：
+这些是 UrhoSharp 中支持的操作：
 
-- 移动节点： `MoveTo`， `MoveBy`， `Place`， `BezierTo`， `BezierBy`， `JumpTo`， `JumpBy`
-- 旋转节点： `RotateTo`， `RotateBy`
-- 缩放节点： `ScaleTo`， `ScaleBy`
-- 淡出节点： `FadeIn`， `FadeTo`， `FadeOut`， `Hide`， `Blink`
-- 色调： `TintTo`， `TintBy`
-- Instants: `Hide`， `Show`， `Place`， `RemoveSelf`， `ToggleVisibility`
-- 循环： `Repeat`， `RepeatForever`， `ReverseTime`
+- 移动节点： `MoveTo`、`MoveBy`、`Place`、`BezierTo`、`BezierBy`、`JumpTo`、`JumpBy`
+- 旋转节点： `RotateTo`、`RotateBy`
+- 缩放节点： `ScaleTo`、`ScaleBy`
+- 褪色节点： `FadeIn`、`FadeTo`、`FadeOut`、`Hide`、`Blink`
+- 淡色： `TintTo`、`TintBy`
+- 时刻： `Hide`、`Show`、`Place`、`RemoveSelf`、`ToggleVisibility`
+- 循环： `Repeat`、`RepeatForever``ReverseTime`
 
-其他高级的功能包括的组合`Spawn`和`Sequence`操作。
+其他高级功能包括 `Spawn` 和 `Sequence` 操作的组合。
 
-### <a name="easing---controlling-the-speed-of-your-actions"></a>缓动-控制你的操作的速度
+### <a name="easing---controlling-the-speed-of-your-actions"></a>缓动-控制操作的速度
 
-缓动是一种方法，将定向的方式，动画将展开，并且它可使动画起来更加得心应手。  默认情况下你的操作会有线性的行为，例如`MoveTo`操作者必须非常机器人的移动。  可以包装你的操作转换为一个缓动操作来改变此行为，例如，一个用于将缓慢启动移动、 加速并缓慢到达末尾 (`EasyInOut`)。
+缓动是一种指示动画将展开的方式的方法，它可以让你的动画更加愉快。  默认情况下，你的操作将具有线性行为，例如，`MoveTo` 操作会产生非常的机器人运动。  你可以将操作打包为缓动操作，以更改行为，例如，一种会慢慢地开始移动、加速和缓慢到达结束（`EasyInOut`）的行为。
 
-执行此操作通过包装现有的操作转换为一个缓动操作，例如：
+为此，可将现有操作包装到缓动操作中，例如：
 
 ```csharp
 await cloud.RunActionAsync (
@@ -208,16 +208,16 @@ await cloud.RunActionAsync (
      new MoveTo (duration: 3, position: new Vector (0,0,15)), rate:1))
 ```
 
-有许多缓动模式下, 图显示了各种缓动类型以及它们的行为在它们正在控制的时间段内从开始到结束的对象的值：
+有很多缓动模式，下图显示了各种缓动类型及其在一段时间内（从开始到完成）所控制的对象的值的行为：
 
-![缓动模式](using-images/easing.png "此图表显示了各种缓动类型以及它们的行为上它们正在控制的时间段内的对象的值")
+![缓动模式](using-images/easing.png "此图显示了各种缓动类型及其在一段时间内控制的对象的值的行为")
 
 ### <a name="using-actions-and-async-code"></a>使用操作和异步代码
 
-在你`Component`子类，应引入的异步方法，准备组件行为并为其驱动器的功能。
-然后将调用此方法使用 C#`await`关键字的程序，另一部分中任一你`Application.Start`方法或为了响应你的应用程序中的用户或情景点。
+在 `Component` 子类中，应引入一个异步方法，该方法可准备组件行为并为其提供功能。
+然后，可以使用程序的其他部分C# （`Application.Start`方法或响应应用程序中的用户或情景点）中的`await`关键字调用此方法。
 
-例如：
+例如:
 
 ```csharp
 class Robot : Component {
@@ -265,13 +265,13 @@ class Robot : Component {
 }
 ```
 
-在`Launch`上述三个操作方法是否已启动： 机器人发送到场景中时，此操作会剩下 0.6 秒内更改节点的位置。  由于这是一个异步选项，这将是同时发生的下一个指令，这是调用作为到`MoveRandomly`。  此方法将更改以并行方式对随机位置机器人的位置。  这通过执行两个复合的操作，移动到新位置，并返回到原始位置并重复此操作，只要机器人保持活动状态。  并且，若要使事情更有趣，机器人将保留排除同时。  排除才会启动每个 0.1 秒。
+在上面的 `Launch` 方法中，启动了三个操作：机器人进入场景，此操作将在0.6 秒的时间段内改变节点的位置。  由于这是一个异步选项，因此，这将同时作为下一个指令调用 `MoveRandomly`。  此方法会将机器人的位置并行改变为随机位置。  这是通过执行两个复合操作来实现的，即，移动到一个新位置并返回到原始位置，并重复执行此操作，只要机器人保持活动状态。  为了使事情更有趣，自动机将继续进行诊断。  每隔0.1 秒开始拍摄一次。
 
-### <a name="frame-based-behavior-programming"></a>基于框架的行为编程
+### <a name="frame-based-behavior-programming"></a>基于帧的行为编程
 
-如果你想要控制而不是使用操作按逐个框架组件的行为，就像是重写`OnUpdate`方法在`Component`子类。  此方法会调用一次每帧，并仅当 ReceiveSceneUpdates 属性设置为 true，则调用。
+如果只想按帧控制组件的行为，而不是使用操作，则需要重写 `Component` 子类的 `OnUpdate` 方法。  此方法每个帧调用一次，并且仅当您将 ReceiveSceneUpdates 属性设置为 true 时才会调用。
 
-以下示例演示如何创建`Rotator`组件，然后附加到一个节点，这会导致要旋转的节点：
+下面演示了如何创建 `Rotator` 组件，该组件随后附加到节点，这会使节点旋转：
 
 ```csharp
 class Rotator : Component {
@@ -291,7 +291,7 @@ class Rotator : Component {
 }
 ```
 
-而这是到的节点，您就会附加此组件：
+这就是将此组件附加到节点的方法：
 
 ```csharp
 Node boxNode = new Node();
@@ -301,9 +301,9 @@ boxNode.AddComponent (rotator);
 
 ### <a name="combining-styles"></a>组合样式
 
-可用于异步/操作基于模型编程很多非常适合的编程中，即发即弃样式的行为，但可以还精细调整组件的行为还在每个帧上运行一些更新代码。
+您可以使用基于异步/操作的模型来对很大的行为进行编程，这非常适合于编程的暂时的样式，但您也可以对组件的行为进行微调，同时在每个帧上运行一些更新代码。
 
-例如，在 SamplyGame 演示使用这一是在`Enemy`类将编码的基本行为使用操作，但它还确保该组件通过设置的节点的方向朝向用户点`Node.LookAt`:
+例如，在 SamplyGame 演示中，此方法在 `Enemy` 类中用于对基本行为使用操作进行编码，但它还通过使用 `Node.LookAt`设置节点的方向来确保组件指向用户：
 
 ```csharp
     protected override void OnUpdate(SceneUpdateEventArgs args)
@@ -318,13 +318,13 @@ boxNode.AddComponent (rotator);
 
 ## <a name="loading-and-saving-scenes"></a>加载和保存场景
 
-可以加载和保存为 XML 格式; 场景请参阅函数`LoadXml`和`SaveXML`。 加载一个场景时，先删除它 （子节点和组件） 中的所有现有内容。 节点和标记为临时使用的组件`Temporary`属性将不会保存。 序列化程序处理的所有内置组件和属性，但它不是智能，它能够处理自定义属性和组件子类中定义的字段。 但是它提供用于这两个虚拟方法：
+可以采用 XML 格式加载和保存场景;请参阅函数 `LoadXml` 和 `SaveXML`。 加载场景后，将首先删除其中的所有现有内容（子节点和组件）。 将不保存标记为带有 `Temporary` 属性的临时节点和组件。 序列化程序处理所有内置组件和属性，但它并不是足够智能地处理在组件子类中定义的自定义属性和字段。 但它为此提供了两个虚拟方法：
 
- `OnSerialize` 可以在其中您注册您自定义序列化状态
+ `OnSerialize`，你可以在其中注册用于序列化的自定义状态
 
- `OnDeserialized` 您可从中获取已保存的自定义状态。
+ `OnDeserialized`，你可以在其中获取已保存的自定义状态。
 
-通常情况下，自定义组件将如下所示：
+通常，自定义组件如下所示：
 
 ```csharp
 class MyComponent : Component {
@@ -355,15 +355,15 @@ class MyComponent : Component {
 }
 ```
 
-### <a name="object-prefabs"></a>对象预设
+### <a name="object-prefabs"></a>对象 prototyping
 
-只需加载或保存整个场景不具有足够的灵活性游戏的新对象需要动态创建。 但是，创建复杂的对象和在代码中设置其属性也将单调乏味。 出于此原因，还有可能要保存的场景节点及其子节点、 组件和属性包括。 作为一个组可以更高版本可以方便地加载这些功能。  此类已保存的对象通常称为预设。 有三种方法可以实现此操作：
+仅加载或保存整个场景对于需要动态创建新对象的游戏而言不够灵活。 另一方面，创建复杂对象并在代码中设置其属性也是一种单调乏味的。 出于此原因，还可以保存包含其子节点、组件和属性的场景节点。 稍后可以以组的形式方便地加载这些。  此类保存的对象通常称为 prefab。 有三种方法可以实现此操作：
 
-- 在代码中通过调用`Node.SaveXml`在节点上
-- 在编辑器中，通过在层次结构窗口中选择节点，然后选择"另存为节点"从"文件"菜单。
-- 使用中的"节点"命令`AssetImporter`，这将保存场景节点层次结构和所有模型中的输入资产 （例如都包含。 Collada 文件）
+- 在代码中通过调用节点上的 `Node.SaveXml`
+- 在编辑器中，通过在 "层次结构" 窗口中选择节点，然后从 "文件" 菜单中选择 "将节点另存为"。
+- 使用 `AssetImporter`中的 "node" 命令，该命令将保存场景节点层次结构和输入资产中包含的任何模型（例如 Collada 文件）
 
-若要实例化到场景的已保存的节点，请调用`InstantiateXml`。 节点将创建为场景的子级，但此后可以自由地父级。 位置和旋转放置节点需要指定。 下面的代码演示如何实例化预设`Ninja.xm`到场景中使用所需的位置和旋转：
+若要将已保存的节点实例化到场景中，请调用 `InstantiateXml`。 该节点将创建为场景的子节点，但可以在之后自由重定父级。 需要指定放置节点的位置和旋转。 下面的代码演示如何使用所需的位置和旋转，将 prefab `Ninja.xm` 实例化到场景：
 
 ```csharp
 var prefabPath = Path.Combine (FileSystem.ProgramDir,"Data/Objects/Ninja.xml");
@@ -376,11 +376,11 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 
 ## <a name="events"></a>事件
 
-UrhoObjects 引发的事件数，这些生成它们的各种类显示为 C# 事件。  除了 C#-基于的事件模型中，还有可能要使用`SubscribeToXXX`方法，您可以订阅并将其保存订阅标记更高版本可用于取消订阅。  区别在于，前者将允许多个调用方可以订阅，而第二个仅允许一个，但可实现更好的 lambda 式方法要使用并尚，允许订阅的方式方便地删除。  它们是互斥的。
+UrhoObjects 引发多个事件，这些事件在生成它们C#的各种类上呈现为事件。  除了基于的C#事件模型之外，还可以使用`SubscribeToXXX`方法，该方法将允许您订阅和保留以后可用于取消订阅的订阅令牌。  不同之处在于前者允许多个调用方订阅，而第二个调用方只允许使用一个，但允许使用更好 lambda 样式的方法，并允许轻松删除订阅。  它们是互斥的。
 
-当你订阅事件时，必须提供采用相应的事件参数的自变量的方法。
+订阅事件时，必须提供一个方法，该方法采用带有相应事件参数的自变量。
 
-例如，这是你订阅了鼠标按钮按下事件的方式：
+例如，这是你订阅鼠标按钮按下事件的方式：
 
 ```csharp
 public void override Start ()
@@ -394,7 +394,7 @@ void HandleMouseButtonDown(MouseButtonDownEventArgs args)
 }
 ```
 
-使用 lambda 样式：
+采用 lambda 样式：
 
 ```csharp
 public void override Start ()
@@ -405,7 +405,7 @@ public void override Start ()
 }
 ```
 
-有时会想要停止接收通知的事件，在这些情况下，将保存返回值调用`SubscribeTo`方法，并调用其上的取消订阅方法：
+有时，您需要停止接收事件的通知，在这种情况下，请从对 `SubscribeTo` 方法的调用中保存返回值，并对其调用取消订阅方法：
 
 ```csharp
 Subscription mouseSub;
@@ -419,11 +419,11 @@ public void override Start ()
 }
 ```
 
-事件处理程序接收的参数是一个将特定于每个事件，并包含事件负载的强类型化的事件参数类。
+事件处理程序接收的参数是一个强类型事件参数类，它将特定于每个事件并包含事件负载。
 
 ## <a name="responding-to-user-input"></a>响应用户输入
 
-您可以订阅各种事件，如键击下通过订阅事件，并对传递的输入的响应：
+您可以订阅各种事件，例如，通过订阅事件，并响应要传递的输入：
 
 ```csharp
 Start ()
@@ -438,7 +438,7 @@ void HandleKeyDown (KeyDownEventArgs arg)
 }
 ```
 
-但在许多情况下，您希望场景更新处理程序时它们正在更新，并相应地更新你的代码检查的键的当前状态。  例如，以下可用于更新基于键盘输入的照相机位置：
+但在许多情况下，你希望场景更新处理程序在更新时检查密钥的当前状态，并相应地更新代码。  例如，可以使用以下内容根据键盘输入来更新相机位置：
 
 ```csharp
 protected override void OnUpdate(float timeStep)
@@ -459,63 +459,63 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-## <a name="resources-assets"></a>资源 （资产）
+## <a name="resources-assets"></a>资源（资产）
 
-资源包括 UrhoSharp 过程初始化或运行时从大容量存储中加载的大多数问题：
+资源包括在初始化或运行时从大容量存储加载的 UrhoSharp 中的大部分内容：
 
-- `Animation` -用于主干动画
-- `Image` -表示不同的图形格式存储的图像
-- `Model` -三维模型
-- `Material` -用于呈现模型的材料。
-- `ParticleEffect`- [介绍](http://urho3d.github.io/documentation/1.4/_particles.html)粒子发射器的工作原理，请参阅"[粒子](#particles)"下面。
-- `Shader` -自定义着色器
-- `Sound` -声音播放，请参阅"[声音](#sound)"下面。
-- `Technique` -材料呈现技术
-- `Texture2D` -2D 纹理
-- `Texture3D` -3D 纹理
-- `TextureCube` -多维数据集纹理
+- `Animation`-用于框架式动画
+- `Image`-表示以多种图形格式存储的图像
+- `Model`-三维模型
+- 用于呈现模型的 `Material` 材料。
+- `ParticleEffect`- [介绍](https://urho3d.github.io/documentation/1.4/_particles.html)了粒子发射器的工作原理，请参阅下面的 "[粒子](#particles)"。
+- `Shader` 自定义着色器
+- `Sound`-播放声音，请参阅下面的 "[声音](#sound)"。
+- `Technique`-材料呈现技术
+- `Texture2D`-2D 纹理
+- `Texture3D`-3D 纹理
+- `TextureCube` 多维数据集纹理
 - `XmlFile`
 
-托管和加载`ResourceCache`子系统 (可用作`Application.ResourceCache`)。
+它们由 `ResourceCache` 子系统管理和加载（作为 `Application.ResourceCache`提供）。
 
-资源本身进行标识其文件路径，相对于已注册的资源目录或包文件。 默认情况下，该引擎注册的资源目录`Data`并`CoreData`，或包`Data.pak`和`CoreData.pak`如果它们存在。
+资源本身由其文件路径（相对于已注册的资源目录或包文件）进行标识。 默认情况下，引擎将 `Data` 和 `CoreData`中注册资源目录，否则包 `Data.pak` 并 `CoreData.pak` （如果存在）。
 
-如果加载资源失败，将记录错误并返回空引用。
+如果加载资源失败，则将记录错误并返回空引用。
 
-下面的示例演示从资源缓存提取资源的典型方式。  在这种情况下，用户界面元素的纹理，这将使用`ResourceCache`属性从`Application`类。
+下面的示例演示从资源缓存提取资源的典型方法。  在这种情况下，UI 元素的纹理使用 `Application` 类中的 `ResourceCache` 属性。
 
 ```csharp
 healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"));
 ```
 
-可手动创建和存储到资源缓存，因为如果返回了从磁盘中加载资源。
+还可以手动创建资源并将其存储到资源缓存，就好像它们已从磁盘中加载一样。
 
-内存预算可以设置每种资源类型： 如果资源占用较多的内存超过了允许，最旧的资源将会删除缓存中如果不使用了。 默认情况下内存预算设置为不受限制。
+可按资源类型设置内存预算：如果资源消耗的内存超过允许的内存量，则将从缓存中删除最旧的资源（如果不再使用）。 默认情况下，内存预算设置为 "无限制"。
 
-### <a name="bringing-3d-models-and-images"></a>将三维模型和映像
+### <a name="bringing-3d-models-and-images"></a>引入3D 模型和图像
 
-Urho3D 尝试使用现有的文件格式，只要有可能，并定义自定义文件格式仅在绝对必要时如模型 (.mdl) 和动画 (.ani)。 对于这些类型的资产，Urho 提供了一个转换器- [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html)这可以使用许多流行的 3D 格式，例如 fbx、 dae、 3ds，和 obj，等等。
+Urho3D 尝试尽可能使用现有文件格式，并仅在绝对必要的情况下定义自定义文件格式（对于模型（mdl）和动画（ani））。 对于这些类型的资产，Urho 提供了[AssetImporter](https://urho3d.github.io/documentation/1.4/_tools.html) ，它可以使用多种流行的3d 格式，如 fbx、dae、3ds 和 obj 等。
 
-此外，还有一个便捷外接程序的 Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) ，可以导出格式适用于 Urho3D Blender 资产。
+还有一个用于 Blender [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender)的便利外接程序，可将 Blender 资产导出为适用于 Urho3D 的格式。
 
 ### <a name="background-loading-of-resources"></a>资源的后台加载
 
-通常情况下，请求使用的一个资源时`ResourceCache`的`Get`方法，它们是在主线程，这可能会花几秒钟时间进行所有必要的步骤中立即加载 （从磁盘加载文件、 分析数据，如有必要将上载到 GPU) 并因此可能会导致帧速率下降。
+通常，当使用 `ResourceCache`的 `Get` 方法之一请求资源时，这些资源会立即加载到主线程中，所有必需的步骤（从磁盘加载文件、分析数据、根据需要上传到 GPU）可能需要几毫秒的时间。因此，以帧速率为下降。
 
-如果您知道提前所需的资源，可以将它们加载在后台线程通过调用请求`BackgroundLoadResource`。 您可以通过使用订阅资源后台加载事件`SubscribeToResourceBackgroundLoaded`方法。 它将告诉加载实际是否成功或失败。 根据资源，仅加载过程的一部分可能会移到后台线程，例如分页装订的 GPU 上传步骤始终需要在主线程中发生。 请注意，是否调用资源加载的资源将排队，等待后台加载的方法之一时，主线程将挂起之前其加载已完成。
+如果事先知道所需的资源，可以通过调用 `BackgroundLoadResource`，请求将其加载到后台线程中。 您可以使用 `SubscribeToResourceBackgroundLoaded` 方法订阅资源后台加载的事件。 它会告知加载是成功还是失败。 根据资源的不同，只能将加载过程的一部分移动到后台线程，例如完成 GPU 上载步骤始终需要在主线程中发生。 请注意，如果为排队等待后台加载的资源调用某个资源加载方法，主线程将停止，直到其加载完成。
 
-异步加载功能的场景`LoadAsync`和`LoadAsyncXML`还首先继续场景内容加载的资源提供了背景负载选项。 此外可用于仅加载的资源而无需修改场景中，通过指定`LoadMode.ResourcesOnly`。 这样就可以准备快速实例化的场景或对象的预设文件。
+异步场景加载功能 `LoadAsync` 和 `LoadAsyncXML` 在继续加载场景内容之前，可以选择后台加载资源。 通过指定 `LoadMode.ResourcesOnly`，它还可用于仅加载资源而无需修改场景。 这允许准备场景或对象 prefab 文件以实现快速实例化。
 
-最后上花费的最大时间 （以毫秒为单位） 每个帧完成加载的资源可以通过设置配置的背景`FinishBackgroundResourcesMs`属性上的`ResourceCache`。
+最后，可以通过设置 `ResourceCache`上的 "`FinishBackgroundResourcesMs`" 属性来配置完成后台加载资源上每个帧所用的最长时间（以毫秒为单位）。
 
 <a name="sound"/>
 
-## <a name="sound"></a>声音
+## <a name="sound"></a>段
 
-声音是玩游戏的一个重要部分和 UrhoSharp framework 提供了一种方法在游戏中播放声音。  通过将附加播放声音 `SoundSource`
-组件`Node`，然后播放从你的资源的命名的文件。
+声音是玩游戏的重要组成部分，UrhoSharp 框架提供了一种在游戏中播放声音的方法。  通过附加 `SoundSource` 播放声音
+组件到 `Node` 然后从资源播放指定的文件。
 
-这是如何执行操作：
+这就是它的执行方式：
 
 ```csharp
 var explosionNode = Scene.CreateChild();
@@ -529,11 +529,11 @@ soundSource.AutoRemove = true;
 
 ## <a name="particles"></a>粒子
 
-粒子提供一种将一些简单且成本低廉的效果添加到你的应用程序的简单方法。  可以使用存储在 PEX 格式中的粒子使用之类的工具[ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/)。
+粒子提供了一种简单的方法，可向应用程序添加一些简单、廉价的效果。  使用[http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/)之类的工具，可以使用 PEX 格式存储的粒子。
 
-粒子是组件，可以添加到节点。  您需要调用节点的`CreateComponent<ParticleEmitter2D>`从资源缓存加载方法以创建粒子，然后通过将影响属性设置为 2D 效果配置粒子。
+粒子是可以添加到节点中的组件。  需要调用节点的 `CreateComponent<ParticleEmitter2D>` 方法来创建粒子，然后通过将 "效果" 属性设置为从资源缓存加载的2D 效果来配置粒子。
 
-例如，你可以让组件能够显示抵达时呈现爆炸式增长为某些粒子上调用此方法：
+例如，您可以对组件调用此方法，以显示某些粒子在达到时呈现为分解：
 
 ```csharp
 public async void Explode (Component target)
@@ -552,27 +552,27 @@ public async void Explode (Component target)
 }
 ```
 
-上面的代码将创建附加到当前组件的爆炸式增长节点，在此爆炸式增长节点内，我们创建 2D 粒子发射器并设置效果属性来配置它。  我们运行两个操作、 一个缩放为更小的节点，另一个 0.5 秒将它留在此大小。  然后我们会删除爆炸式增长，同时从屏幕中删除粒子效果。
+上面的代码将创建一个附加到当前组件的分解节点。在此分解节点中，我们将创建一个2D 粒子发射器，并通过设置效果属性来对其进行配置。  我们运行了两个操作，一个将节点缩放到较小的节点，另一个操作的大小为0.5 秒。  然后删除分解，这也会从屏幕中删除粒子效果。
 
-上述粒子如下所示使用球体纹理时：
+使用球体纹理时，上述粒子如下所示：
 
-![用球体纹理粒子](using-images/image-1.png "使用球体纹理时，上述粒子呈现此类")
+![带有球体纹理的粒子](using-images/image-1.png "使用球体纹理时，上面的粒子呈现如下")
 
-而这是它看起来如果使用块状纹理：
+如果你使用 blocky 纹理，这就是：
 
-![与框纹理粒子](using-images/image-2.png "，这是它看起来如果使用块状纹理")
+![带有 box 纹理的粒子](using-images/image-2.png "这就是使用 blocky 纹理时的样子")
 
-## <a name="multi-threading-support"></a>多线程处理支持
+## <a name="multi-threading-support"></a>多线程支持
 
-UrhoSharp 是一个线程的库。  这意味着您不应尝试调用方法中 UrhoSharp 从后台线程，或风险会损坏应用程序状态，并使你的应用程序可能崩溃。
+UrhoSharp 是一个线程库。  这意味着，不应尝试从后台线程调用 UrhoSharp 中的方法，也不应会损坏应用程序状态，并可能导致应用程序崩溃。
 
-如果你想要在后台运行一些代码，然后更新 Urho 组件上的主要用户界面，则可以使用 `Application.InvokeOnMain(Action)`
-方法。  此外，你可以的使用 C# await 和.NET 任务 Api，以确保在适当的线程上执行的代码。
+如果要在后台运行某些代码，然后在主 UI 上更新 Urho 组件，则可以使用 `Application.InvokeOnMain(Action)`
+方法。  此外，还可以使用C# await 和 .Net 任务 api 来确保在适当的线程上执行代码。
 
 ## <a name="urhoeditor"></a>UrhoEditor
 
-您可以从你的平台下载 Urho 编辑器[Urho 网站](http://urho3d.github.io/)，转到下载，然后选择最新版本。
+你可以从[Urho 网站](http://urho3d.github.io/)下载适用于你的平台的 Urho 编辑器，请参阅下载并选择最新版本。
 
 ## <a name="copyrights"></a>版权
 
-本文档包含从 Xamarin Inc 的原始内容，但从 Urho3D 项目的开放源代码文档广泛地绘制，包含 Cocos2D 项目中的屏幕快照。
+此文档包含来自 Xamarin Inc. 的原始内容，但会广泛地从 Urho3D 项目的开源文档中进行绘制，并包含 Cocos2d 为后盾项目的屏幕截图。

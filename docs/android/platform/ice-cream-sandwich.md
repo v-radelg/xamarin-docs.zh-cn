@@ -4,15 +4,15 @@ description: 本文介绍了使用 Android 4 API 冰淇淋三明治的应用程�
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 382315f755102d7111db1a5c0f71d43bdea97a10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761463"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020188"
 ---
 # <a name="ice-cream-sandwich-features"></a>冰淇淋三明治功能
 
@@ -22,10 +22,10 @@ _本文介绍了使用 Android 4 API 冰淇淋三明治的应用程序开发人�
 
 Android OS 版本4.0 （API 级别14）表示 Android 操作系统的主要重新处理，并包括许多重要更改和升级，其中包括：
 
-- **已更新的用户界面**–当开发人员创建应用程序用户界面时，多个新的 UI 功能使开发人员能够更强大的功能。 这些新功能包括： `GridLayout` 、 `PopupMenu` 、 `Switch`小组件和`TextureView` 。 
+- **已更新的用户界面**–当开发人员创建应用程序用户界面时，多个新的 UI 功能使开发人员能够更强大的功能。 这些新功能包括： `GridLayout`、`PopupMenu`、`Switch` 小组件和 `TextureView`。 
 - **更好的硬件加速**–二维渲染现在适用于所有 Android 控件的 GPU。 此外，默认情况下，在为 Android 4.0 开发的所有应用程序中启用硬件加速。 
 - **新的数据 api** -对以前未正式访问的数据有新的访问权限，如日历数据和设备所有者的用户配置文件。 
-- **应用数据共享**–在`ShareActionProvider`应用程序和设备之间共享数据现在比以往更容易通过技术（例如），这使你可以轻松地从操作栏创建共享操作，将*Android 横梁*用于*近乎现场通信（NFC）* ，使其能够在彼此接近的设备之间共享数据。 
+- **应用数据共享**–在应用程序和设备之间共享数据现在比以往更容易通过 `ShareActionProvider` 技术，这使你可以轻松地从操作栏创建共享操作，并使用*Android 横梁*来进行*近现场通信（NFC）* ，使其能够在彼此接近的设备之间共享数据。 
 
 在本文中，我们将探讨对 Android 4.0 API 的这些功能和其他更改，我们将介绍如何将每项功能与 Xamarin 一起使用。
 
@@ -38,7 +38,7 @@ Android 4 提供多种新的用户界面技术，其中包括：
 - **[TextureView](~/android/user-interface/controls/texture-view.md)** –启用视图中的视频和 OpenGL 内容。 
 - **[导航栏](~/android/user-interface/controls/navigation-bar.md)** -包含用于后退、home 和多任务的虚拟按钮。 
 
-另外，还增强了其他 UI 元素，如`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`现在更易于使用的和选项卡，它们具有更精美的外观。
+此外，还增强了其他 UI 元素，如 `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`（现在更易于使用）和选项卡，它们具有更精美的外观。
 
 ## <a name="sharing-features"></a>共享功能
 

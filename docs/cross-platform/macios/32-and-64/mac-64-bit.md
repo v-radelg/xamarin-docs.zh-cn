@@ -3,15 +3,15 @@ title: 将 Xamarin Mac 统一应用程序更新到64位
 description: 本指南介绍如何将 Xamarin 应用程序更新为面向64位。 它还提供了进行此更改时可能遇到的错误种类的示例。
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/22/2018
-ms.openlocfilehash: 5539bab417c5efc0064cd1753cb74c7524463ee5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 1ae807869e44ad035d2681cf777af0e66ced8255
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70765912"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016323"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>将 Xamarin Mac 统一应用程序更新到64位
 
@@ -25,7 +25,7 @@ ms.locfileid: "70765912"
 
    ![项目的上下文菜单](mac-64-bit-images/1-contextual_menu-vsmac.png "项目的上下文菜单")
 
-2. 选择 " **Mac 生成**" 并将**支持的体系结构**设置为**x86 \_64**：
+2. 选择 " **Mac 生成**" 并将**支持的体系结构**设置为**x86\_64**：
 
    [![将支持的体系结构设置为 x86_64](mac-64-bit-images/2-project_options-vsmac.png "将支持的体系结构设置为 x86_64")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 
@@ -46,7 +46,7 @@ file was built for i386 which is not the architecture being linked (x86_64):
 PATH/ThirdPartyLibrary.framework/ThirdPartyLibrary 
 ```
 
-@No__t_0 返回 `IntPtr.Zero` 而不是预期的句柄，则在运行时可能会出现此错误。
+`dlopen` 返回 `IntPtr.Zero` 而不是预期的句柄，则在运行时可能会出现此错误。
 
 #### <a name="example-error-resulting-from-a-statically-linked-third-party-dependency-that-does-not-target-64-bit"></a>由于静态链接的第三方依赖项（不以64位为目标）导致的示例错误：
 

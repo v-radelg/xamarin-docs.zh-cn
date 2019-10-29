@@ -3,15 +3,15 @@ title: Apple 帐户管理
 description: 本文档介绍如何在 Visual Studio for Mac 和 Visual Studio 2019 中使用 Apple 帐户管理功能。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766124"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016347"
 ---
 # <a name="apple-account-management"></a>Apple 帐户管理
 
@@ -39,7 +39,7 @@ Apple 帐户管理可在 Visual Studio for Mac、Visual Studio 2019 和 Visual S
 
 - 确保已连接到 internet。 这是因为，fastlane 直接与 Apple 开发人员门户进行通信。
 - 请确保已[安装 fastlane 工具](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)。
-- 确保你具有中[https://download.fastlane.tools](https://download.fastlane.tools)的最新 fastlane 工具。
+- 确保具有[https://download.fastlane.tools](https://download.fastlane.tools)的最新 fastlane 工具。
 - 在开始之前，请确保接受[开发人员门户](https://developer.apple.com/account/)中的任何用户许可协议。
 
 ## <a name="adding-an-apple-developer-account"></a>添加 Apple 开发人员帐户
@@ -50,7 +50,7 @@ Apple 帐户管理可在 Visual Studio for Mac、Visual Studio 2019 和 Visual S
 
     ![Apple 开发人员帐户选项](apple-account-management-images/image1.png)
 
-2. 按 **+** 按钮以显示登录对话框中，如下所示： 
+2. 按下 " **+** " 按钮以显示 "登录" 对话框，如下所示： 
 
     ![fastlane 对话框。](apple-account-management-images/image2.png)
 
@@ -144,7 +144,7 @@ Apple 帐户管理可在 Visual Studio for Mac、Visual Studio 2019 和 Visual S
 
 ### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>如果在帐户中遇到日志记录问题，请尝试以下操作：
 
-- 打开密钥链应用程序，在 "类别" 下选择 "*密码*"。 `deliver.`搜索并删除所有条目。
+- 打开密钥链应用程序，在 "类别" 下选择 "*密码*"。 搜索 `deliver.`，并删除所有条目。
 
 ### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>添加帐户时出错。 请使用特定于应用程序的密码登录 "
 

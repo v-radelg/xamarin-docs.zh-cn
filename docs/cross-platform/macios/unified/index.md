@@ -3,15 +3,15 @@ title: 适用于 Xamarin 和 Xamarin 的 Unified API
 description: 本文档链接到描述 Xamarin 的 Unified API 的各种指南。 链接内容提供 Unified API 的概述，并讨论如何迁移现有项目。
 ms.prod: xamarin
 ms.assetid: 14311617-1BC2-42CC-AF3F-9F97733EE2D0
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2018
-ms.openlocfilehash: 858f0c67b8c36f6cb2669086efec5f6ac1b4ddcb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2081b383ae47d6b17922c2d83df934b36ad33bd8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765323"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015160"
 ---
 # <a name="unified-api-for-xamarinios-and-xamarinmac"></a>适用于 Xamarin 和 Xamarin 的 Unified API
 

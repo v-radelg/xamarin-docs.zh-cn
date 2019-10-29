@@ -3,15 +3,15 @@ title: 针对目标的 .NET 嵌入最佳做法-C
 description: 本文档介绍了在目标 C 中使用 .NET 嵌入的各种最佳实践。 它讨论了公开托管代码子集、公开 chunkier API、命名等。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2f632e3218d817aa0162a63ea81c61ca18c52b93
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285119"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006787"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>针对目标的 .NET 嵌入最佳做法-C
 
@@ -66,7 +66,7 @@ Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 
 ### <a name="types"></a>类型
 
-目标-C 不支持命名空间。 一般情况下，其类型以2（对于 Apple）或3（对于第三方）字符前缀为前缀， `UIView`如 UIKit 的视图（表示框架）。
+目标-C 不支持命名空间。 通常，其类型带有2（表示 Apple）或3（对于第三方）字符前缀（如 UIKit 的视图 `UIView`，它表示框架）。
 
 对于 .NET 类型，不能跳过命名空间，因为它会引入重复或混乱的名称。 这使得现有的 .NET 类型非常长，例如
 
@@ -101,15 +101,15 @@ id reader = [[XAMXmlConfigReader alloc] init];
 目标-C 中的命名约定与 .NET 不同（camel 大小写，而不是 pascal 大小写，更详细）。
 请参阅[Cocoa 的编码指导原则](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)。
 
-从目标-C 开发人员的角度来看，带有`Get`前缀的方法隐含您不拥有该实例，即[get 规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
+从目标-C 开发人员的角度来看，具有 `Get` 前缀的方法意味着您不拥有该实例，即[get 规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
 
-此命名规则在 .NET GC 世界中没有匹配项;带有`Create`前缀的 .net 方法在 .net 中的行为相同。 但对于目标为 C 的开发人员，这通常意味着拥有返回的实例，即[创建规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
+此命名规则在 .NET GC 世界中没有匹配项;使用 `Create` 前缀的 .NET 方法在 .NET 中的行为相同。 但对于目标为 C 的开发人员，这通常意味着拥有返回的实例，即[创建规则](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
 
-## <a name="exceptions"></a>Exceptions
+## <a name="exceptions"></a>异常
 
 .NET 中很常见的情况是经常使用异常来报告错误。 但是，它们速度慢，但在目标-C 中并不完全相同。 应尽可能将它们从目标-C 开发人员隐藏。
 
-例如，.net `Try`模式将更易于从目标-C 代码使用：
+例如，.NET `Try` 模式从目标-C 代码更容易使用：
 
 ```csharp
 public int Parse (string number)
@@ -127,13 +127,13 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>内部异常`init*`
+### <a name="exceptions-inside-init"></a>`init*` 中的异常
 
 在 .NET 中，构造函数必须成功，并返回（_但愿_）有效的实例或引发异常。
 
-与此相反，当无法创建`init*`实例时`nil` ，客观-C 允许返回。 这是许多 Apple 框架中使用的常见（而非一般）模式。 在某些其他情况下`assert` ，可能会发生（和终止当前进程）。
+与此相反，目标-C 允许 `init*` 在无法创建实例时返回 `nil`。 这是许多 Apple 框架中使用的常见（而非一般）模式。 在某些其他情况下，可能会发生 `assert` （和终止当前进程）。
 
-生成器对于生成`init*`的方法`return nil`遵循相同的模式。 如果引发了托管异常，则会将其打印（使用`NSLog`），并`nil`将其返回给调用方。
+生成器对于生成的 `init*` 方法遵循相同的 `return nil` 模式。 如果引发了托管异常，则会将其打印（使用 `NSLog`），并 `nil` 将返回到调用方。
 
 ## <a name="operators"></a>运算符
 
@@ -141,4 +141,4 @@ public bool TryParse (string number, out int value)
 
 在找到运算符重载时，将按照优先顺序生成["友好"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)命名方法，从而可以更轻松地使用 API。
 
-重写运算符`==`和/或`!=`的类应同时重写标准 Equals （Object）方法。
+重写运算符 `==` 和/或 `!=` 的类应同时重写标准 Equals （Object）方法。

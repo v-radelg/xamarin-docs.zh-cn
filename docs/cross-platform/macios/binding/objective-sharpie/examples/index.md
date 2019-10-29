@@ -3,15 +3,15 @@ title: 目标 Sharpie 示例
 description: 本文档链接到各种指南，这些指南介绍如何使用客观 Sharpie 工具，该工具用于自动执行创建C#到目标 C 代码的绑定过程。
 ms.prod: xamarin
 ms.assetid: 1ACB0935-6D5F-4A5F-BE28-08DA1B675F0E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: b2b595187ec8d011f45e26ea5139c253beb5c453
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 653b2a4397ce92b5b7501149258f172dd3d69e81
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290696"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016236"
 ---
 # <a name="objective-sharpie-examples"></a>目标 Sharpie 示例
 

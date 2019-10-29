@@ -3,15 +3,15 @@ title: 为不同屏幕创建资源
 ms.prod: xamarin
 ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/28/2018
-ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: cbd392dcae173eb3baf0fb8f0c3c4ec7c0da23a1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249665"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025118"
 ---
 # <a name="creating-resources-for-varying-screens"></a>为不同屏幕创建资源
 
@@ -21,19 +21,19 @@ Android 本身在许多不同的设备上运行，每个设备的分辨率、屏
 
 需要理解几个术语和概念，以支持多个屏幕。
 
-- **屏幕大小**&ndash;用于显示应用程序的物理空间量
+- **屏幕大小**&ndash; 用于显示应用程序的物理空间量
 
-- **屏幕密度**&ndash;屏幕上任何给定区域的像素数。 典型度量单位是每英寸点数（dpi）。
+- **屏幕密度**&ndash; 屏幕上任何给定区域中的像素数。 典型度量单位是每英寸点数（dpi）。
 
-- **解决方法**&ndash;屏幕上的总像素数。 开发应用程序时，解决方法并不像屏幕大小和密度那么重要。
+- **分辨率**&ndash; 屏幕上的总像素数。 开发应用程序时，解决方法并不像屏幕大小和密度那么重要。
 
-- **与密度无关的像素（dp）** &ndash;用于实现布局独立于密度设计的虚拟度量单位。 此公式用于将 dp 转换为屏幕像素：
+- 与**密度无关的像素（dp）** &ndash; 虚拟度量单位，以允许独立于密度设计布局。 此公式用于将 dp 转换为屏幕像素：
 
-    px &equals; dp &times; dpi 160&divide;
+    px &equals; dp &times; dpi &divide; 160
 
-- **方向**&ndash;当屏幕的宽度大于高度时，屏幕的方向被视为横向。 相反，当屏幕的高度大于宽度时，纵向方向就是。 在用户旋转设备时，在应用程序的生存期内，方向可能会改变。
+- 当屏幕的方向超出高度时，其**方向 &ndash; 被**视为横向。 相反，当屏幕的高度大于宽度时，纵向方向就是。 在用户旋转设备时，在应用程序的生存期内，方向可能会改变。
 
-请注意，这些概念中的前三个概念是&ndash;相互关联的，增加分辨率而不增加密度将增加屏幕大小。 但是，如果同时增加了密度和分辨率，则屏幕大小会保持不变。 屏幕大小、密度和分辨率之间的这种关系会使屏幕支持速度变得更加复杂。
+请注意，这些概念中的前三个概念是相互关联的 &ndash; 增加分辨率而不增加密度将增加屏幕大小。 但是，如果同时增加了密度和分辨率，则屏幕大小会保持不变。 屏幕大小、密度和分辨率之间的这种关系会使屏幕支持速度变得更加复杂。
 
 为帮助应对这种复杂性，Android 框架倾向于对屏幕布局使用与*密度无关的像素（dp）* 。 通过使用密度独立像素，用户可在具有不同密度的屏幕上向用户显示相同的物理大小。
 
@@ -106,13 +106,13 @@ Android 会在运行时将绘图扩展到适当大小。
 
 - **典型电话**&ndash; 320 dp：典型电话
 
-- **5 个 "绘图板/" tweener "设备**&ndash; 480 dp：例如 Samsung 注释
+- **5 个 "绘图板/" tweener "设备**&ndash; 480 dp：例如 Samsung Note
 
-- **7**600 dp：例如 Barnes &amp; Noble Nook &ndash;
+- **7 个 "tablet** &ndash; 600 dp：例如，Barnes &amp; Noble Nook
 
-- **10 个 "平板电脑**&ndash; 720 dp：例如 Motorola Xoom
+- **10 个 "tablet** &ndash; 720 Dp： Motorola Xoom
 
-对于面向最多为12（Android 3.1）的 API 级别的应用程序，这些布局应在使用限定符**小型**/**普通**/**大型**/**加大**的目录中，作为大多数设备中提供的各种屏幕大小。 例如，在下图中，有四种不同屏幕大小的备用资源：
+对于面向最多为12（Android 3.1）的 API 级别的应用程序，这些布局应在使用限定符**小规模**/**常规**/**大型**/**加大**的目录中进行，作为各个屏幕的归纳大多数设备中的可用大小。 例如，在下图中，有四种不同屏幕大小的备用资源：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -163,7 +163,7 @@ API 级别13和更高版本中更新的屏幕大小限定符的优先级高于 A
 
 创建各种密度的位图可能有点枯燥。 因此，Google 创建了一个联机实用工具，可减少创建这些称为[**Android 资产工作室**](https://romannurik.github.io/AndroidAssetStudio/)的位图所涉及的一些麻烦。
 
-[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
+[![Android 资产工作室](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 此网站通过提供一个图像帮助创建面向四个常见屏幕密度的位图。 然后，Android 资产工作室将创建包含某些自定义项的位图，并允许将它们下载为 zip 文件。
 
@@ -171,14 +171,14 @@ API 级别13和更高版本中更新的屏幕大小限定符的优先级高于 A
 
 Android 在非常惊人数量的设备上运行，屏幕大小和屏幕密度的组合似乎非常大。 以下提示可帮助最大限度地减少支持各种设备所需的工作量：
 
-- **仅针对所需的内容进行设计和开发**&ndash;这里有很多不同的设备，但有些设备存在极少的外形因素，可能需要大量精力来设计和开发。 "[**屏幕大小" 和 "密度**](https://developer.android.com/resources/dashboard/screens.html)" 仪表板是 Google 提供的一页，提供有关屏幕大小/屏幕密度矩阵细目的数据。 此细目提供了有关如何在支持屏幕上进行开发工作的见解。
+- **仅针对所需的内容进行设计和开发**&ndash; 有许多不同的设备可供使用，但某些设备存在一些极少的外形因素，这些因素可能会对进行设计和开发工作。 "[**屏幕大小" 和 "密度**](https://developer.android.com/resources/dashboard/screens.html)" 仪表板是 Google 提供的一页，提供有关屏幕大小/屏幕密度矩阵细目的数据。 此细目提供了有关如何在支持屏幕上进行开发工作的见解。
 
 - **使用 DPs 而不是像素**-当屏幕密度发生变化时，像素会变得很麻烦。 不要将像素值硬编码。 避免将像素用于 dp （与密度无关的像素）。
 
-- **避免**[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)只要有可能&ndash; ，它会在 API 级别3（Android 1.5）中弃用，并将产生脆弱布局。 
-   不应使用此方法。 相反，尝试使用更灵活的布局小组件，例如[**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)或新的[**GridLayout**](xref:Android.Widget.GridLayout)。
+- 尽可能**避免**使用[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) **
+  &ndash;** 在 API 级别3（Android 1.5）中弃用，并将导致脆弱布局。 不应使用此方法。 相反，尝试使用更灵活的布局小组件，例如[**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)或新的[**GridLayout**](xref:Android.Widget.GridLayout)。
 
-- **选取一个布局方向作为默认布局**例如，将资源置于布局中并将纵向资源置于布局端口，而不是提供备用资源布局-土地和布局端口。 &ndash;
+- **选择一种布局方向作为默认**&ndash; 例如，而不是提供备用资源**布局-土地**和**布局端口**，将资源用于**布局**，将纵向资源置于**布局-端口**。
 
 - **使用 LayoutParams 作为高度和宽度**-在 XML 布局文件中定义 UI 元素时，使用**wrap_content**和**fill_parent**值的 Android 应用程序将获得更多成功，确保不同设备上的外观与使用像素或密度无关的单位。 这些维度值会使 Android 根据需要缩放位图资源。 出于此原因，在指定 UI 元素的边距和填充时，最好保留与密度无关的单位。
 

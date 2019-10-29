@@ -4,15 +4,15 @@ description: 如何开始使用 Xamarin 开发适用于 Android 9 的应用。
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 6475cd0f27e41321902b57dd28f59bfb250e0c8f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757453"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019877"
 ---
 # <a name="android-pie-features"></a>Android 饼图功能
 
@@ -30,14 +30,14 @@ Xamarin 9.0 支持 Android 饼图。 有关适用于 Android 的 Xamarin Android
 
 以下列表是在基于 Xamarin 的应用中使用 Android 饼图功能所必需的：
 
-- **Visual Studio**&ndash;建议使用 Visual Studio 2019。
+- 建议使用**Visual studio** &ndash; visual studio 2019。
     如果你使用的是 Visual Studio 2017，则在 Windows update 上，Visual Studio 2017 版本15.8 或更高版本。 在 macOS 上，更新为适用于 Mac 版本7.6 或更高版本的 Visual Studio 2017。
 
-- 需要随 Visual Studio 一起安装**xamarin** xamarin9.0.0.17或更高版本（在采用.net工作负载的移动开发过程中，将自动安装xamarin）。&ndash;
+- **Xamarin** &ndash; xamarin 9.0.0.17 或更高版本必须随 Visual Studio 一起安装（在采用 .net 工作负载的**移动开发**过程中，将自动安装 xamarin）。
 
-- **Java 开发人员工具包** &ndash; Xamarin Android 9.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (或者你可以尝试预览 Microsoft 的 [OpenJDK](~/android/get-started/installation/openjdk.md) 发行版)。 在采用 .NET 工作负载的**移动开发**过程中，将自动安装 JDK8。
+- **Java 开发人员工具包**&ndash; Xamarin Android 9.0 开发需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （或者，你可以尝试预览 Microsoft [OpenJDK](~/android/get-started/installation/openjdk.md)的版本）。 在采用 .NET 工作负载的**移动开发**过程中，将自动安装 JDK8。
 
-- **Android SDK**&ndash;必须通过 Android SDK 管理器安装 Android SDK API 28 或更高版本。
+- 必须通过 Android SDK 管理器安装**Android SDK** &ndash; Android SDK API 28 或更高版本。
 
 ## <a name="getting-started"></a>入门
 
@@ -67,11 +67,11 @@ Xamarin 9.0 支持 Android 饼图。 有关适用于 Android 的 Xamarin Android
 
 2. 在右下角，单击齿轮图标，并选择 "**存储库 > Google （不支持）** "：
 
-    [![将存储库设置为 Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [将存储库设置为 Google![](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. 安装**Android 饼图**SDK 包，这些包在 "**平台**" 选项卡中作为**Android SDK 平台 28**列出（有关使用 SDK 管理器的详细信息，请参阅[Android SDK 安装](~/android/get-started/installation/android-sdk.md)）：
 
-    [![安装 Android 饼图包](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [安装 Android 饼图![](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. 如果使用的是模拟器，请创建支持**API 级别 28**的虚拟设备。 有关创建虚拟设备的详细信息，请参阅[用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)。
 
@@ -92,13 +92,13 @@ Xamarin 9.0 支持 Android 饼图。 有关适用于 Android 的 Xamarin Android
 
 Android 饼图引入了多种新功能。 其中一些新功能旨在利用最新 Android 设备提供的新硬件功能，而其他功能旨在进一步增强 Android 用户体验：
 
-- **显示切除支持**提供 api，以便在更高版本的 Android 设备上查找页面顶部的切除位置和形状。 &ndash;
+- **显示切除支持**&ndash; 提供 api，以便在更高版本的 Android 设备上查找页面顶部的_切除_位置和形状。
 
-- **通知增强功能**通知消息现在可以显示图像，而使用新`Person`的类来简化会话参与者。 &ndash;
+- **通知增强**&ndash; 通知消息现在可以显示图像，而新的 `Person` 类用于简化会话参与者。
 
-- **室内定位**&ndash;适用于 wifi 往返时间协议的平台支持，使应用可以使用 wifi 设备在室内设置中进行导航。
+- **室内定位**对 WiFi 往返时间协议 &ndash; 平台支持，这使得应用可以使用 wifi 设备在室内设置中进行导航。
 
-- **多相机支持**&ndash;提供了一项功能，可同时从多个物理照相机（如双面和双回摄像机）访问流。
+- **多相机支持**&ndash; 提供从多个物理照相机（如双面和双回相机）同时访问流的功能。
 
 以下各节重点介绍了这些功能，并提供了简短的代码示例，帮助你在应用程序中开始使用它们。
 
@@ -107,15 +107,15 @@ Android 饼图引入了多种新功能。 其中一些新功能旨在利用最�
 许多具有边缘到边缘屏幕的较新 Android 设备在相机和发言人显示的顶部都有一个*显示切除*（或 "凹槽"）。
 以下屏幕截图提供了一个剪切块示例：
 
-[![模拟切口的 Android 模拟器](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[模拟切口的![Android 仿真程序](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
 为了管理应用程序窗口在带有显示切除的设备上显示其内容的方式，Android 饼图添加了一个新的[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)窗口布局特性。 此属性可设置为以下值之一：
 
-- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;该窗口不能与裁剪区域重叠。
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; 该窗口不能与裁剪区域重叠。
 
-- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;允许该窗口扩展到剪切区域中，只显示在屏幕的短边上。 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; 允许该窗口扩展到剪切区域，而只显示在屏幕的短边。 
 
-- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;如果在系统栏中包含切口，则允许该窗口扩展到剪切区。
+- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; 如果在系统栏中包含切口，则允许该窗口扩展到切除区域。
 
 例如，若要防止应用窗口与剪切区域重叠，请将布局剪切模式设置为 "*从不*"： 
 
@@ -124,14 +124,14 @@ Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-下面的示例提供了这些裁剪模式的示例。 左侧的第一个屏幕截图是应用处于非全屏模式。 在中心屏幕截图中，应用程序将进入全屏， `LayoutInDisplayCutoutMode`并将`LayoutInDisplayCutoutModeShortEdges`设置为。 请注意，应用程序的白色背景延伸到了显示切除区：
+下面的示例提供了这些裁剪模式的示例。 左侧的第一个屏幕截图是应用处于非全屏模式。 在中心屏幕截图中，应用程序将进入全屏，`LayoutInDisplayCutoutMode` 设置为 `LayoutInDisplayCutoutModeShortEdges`。 请注意，应用程序的白色背景延伸到了显示切除区：
 
 [![示例在模拟器中显示切除模式](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
-在最后的屏幕截图（右侧）中，将`LayoutInDisplayCutoutMode`设置为`LayoutInDisplayCutoutModeShortNever` ，然后将其全屏显示。
+在最后的屏幕截图（右侧）中，`LayoutInDisplayCutoutMode` 设置为 `LayoutInDisplayCutoutModeShortNever`，然后进入全屏。
 请注意，不允许应用程序的白色背景延伸到显示切除区域中。
 
-如果需要有关设备上的切除区域的详细信息，可以使用新的[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)类。 `DisplayCutout`表示不能用于显示内容的显示区域。 您可以使用此信息检索切口的位置和形状，以便您的应用程序不会尝试在此非功能区中显示内容。
+如果需要有关设备上的切除区域的详细信息，可以使用新的[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)类。 `DisplayCutout` 表示不能用于显示内容的显示区域。 您可以使用此信息检索切口的位置和形状，以便您的应用程序不会尝试在此非功能区中显示内容。
 
 有关 Android P 中新的切除功能的详细信息，请参阅[显示切除支持](https://developer.android.com/about/versions/pie/android-9.0#cutout)。
 
@@ -149,11 +149,11 @@ Android 饼图引入了以下增强功能来改善消息传递体验：
 
 下面的示例演示如何使用新 Api 生成包含图像的通知。 在下面的屏幕截图中，将发布文本通知，并在其后面跟有嵌入图像的通知。 当扩展通知（如右侧所示）时，将显示第一条通知的文本，并扩大第二个通知中嵌入的图像：
 
-[![带图像的示例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[带图像的![示例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-下面的示例演示如何在 Android 饼图通知中包括图像，并演示如何使用新`Person`类：
+下面的示例演示如何在 Android 饼图通知中包括图像，并演示如何使用新的 `Person` 类：
 
-1. 创建表示发送方的对象。`Person` 例如，发件人的名称和图标包括在`fromPerson`：
+1. 创建表示发送方的 `Person` 对象。 例如，发送方的名称和图标包含在 `fromPerson`中：
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -163,7 +163,7 @@ Android 饼图引入了以下增强功能来改善消息传递体验：
         .Build();
     ```
 
-2. 创建一个`Notification.MessagingStyle.Message` ，其中包含要发送的图像，并将该图像传递到新的[MessagingStyle](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)方法。
+2. 创建一个包含要发送的映像的 `Notification.MessagingStyle.Message`，并将该图像传递到新的[MessagingStyle](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)方法。
    例如:
 
     ```csharp
@@ -173,14 +173,14 @@ Android 饼图引入了以下增强功能来改善消息传递体验：
             .SetData("image/", imageUri);
     ```
 
-3. 将消息添加到`Notification.MessagingStyle`对象。 例如:
+3. 将消息添加到 `Notification.MessagingStyle` 的对象。 例如:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. 将此样式插入通知生成器。 例如：
+4. 将此样式插入通知生成器。 例如:
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -204,7 +204,7 @@ Android 饼图引入了以下增强功能来改善消息传递体验：
 
 Android 饼图提供对 IEEE 802.11 mc （也称为 Wifi 往返_时间_或_wifi RTT_）的支持，使应用能够检测到一个或多个 wi-fi 接入点的距离。 使用此信息，你的应用程序可以利用*室内定位*，精确到2米。 在为 IEEE 801.11 mc 提供硬件支持的 Android 设备上，你的应用可以提供导航功能，如智能设备的基于位置的控制，或者通过应用商店实现的 turn 说明：
 
-[![使用 WiFi RTT 的室内导航示例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[使用 WiFi RTT 的室内导航![示例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新的[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)类和几个帮助器类提供测量 wi-fi 设备距离的方法。 有关 Android P 中引入的室内定位 Api 的详细信息，请参阅[android .net。](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)
 
@@ -223,7 +223,7 @@ Android 饼图还包含一个新的[SessionConfiguration](https://developer.andr
 
 - 新的[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)类，可用于绘制和显示动画图像。
 
-- 替换`BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)类。 `ImageDecoder`可用于对进行解码`AnimatedImageDrawable`。
+- 替换 `BitmapFactory`的新的[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)类。 `ImageDecoder` 可用于对 `AnimatedImageDrawable`解码。
 
 - 支持 HDR （高动态范围）视频和 HEIF （高效率图像文件格式）图像。
 
@@ -231,7 +231,7 @@ Android 饼图还包含一个新的[SessionConfiguration](https://developer.andr
 
 有关最新 Android 饼图功能的详细信息，请参阅[android 9 功能和 api](https://developer.android.com/about/versions/pie/android-9.0)。
 
-## <a name="behavior-changes"></a>行为更改
+## <a name="behavior-changes"></a>行为变更
 
 如果将 "目标 Android 版本" 设置为 "API 级别 28"，则即使未实现上述新功能，也可能会影响应用的行为。 以下列表概述了这些更改：
 
@@ -245,7 +245,7 @@ Android 饼图还包含一个新的[SessionConfiguration](https://developer.andr
 
 ## <a name="sample-code"></a>示例代码
 
-[AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)是适用于 android 的 Xamarin 示例应用，用于演示如何设置显示裁剪模式，如何使用新`Person`类，以及如何发送包含图像的通知。
+[AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)是适用于 Android 的 Xamarin 示例应用程序，它演示了如何设置显示裁剪模式，如何使用新的 `Person` 类，以及如何发送包含图像的通知。
 
 ## <a name="summary"></a>总结
 

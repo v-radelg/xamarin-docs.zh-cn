@@ -3,15 +3,15 @@ title: 使用 Xcode 项目的实际示例
 description: 本文档介绍了如何使用 Xcode 项目作为客观 Sharpie 的直接输入，简化了将绑定创建C#到目标 C 代码的过程。
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: e460994994c1383f29028be7b13cec216f2d12f7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 16191b7ee5bae353a438340d6099d39a296bffd0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290651"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016228"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>使用 Xcode 项目的实际示例
 

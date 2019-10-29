@@ -4,15 +4,15 @@ description: 本文档介绍了 iOS 中的辅助功能，并讨论了可用于�
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766751"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011305"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的辅助功能
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>什么是 AccessibilityIdentifier？
 
-@No__t_0 用于设置唯一密钥，该密钥可用于通过 UIAutomation API 引用用户界面元素。
+`AccessibilityIdentifier` 用于设置唯一密钥，该密钥可用于通过 UIAutomation API 引用用户界面元素。
 
-@No__t_0 的值永远不会被口述或显示给用户。
+`AccessibilityIdentifier` 的值永远不会被口述或显示给用户。
 
 <a name="postnotification" />
 
 ## <a name="postnotification"></a>PostNotification
 
-@No__t_0 方法允许事件在直接交互之外（例如，当与特定控件交互时）向用户引发。
+`UIAccessibility.PostNotification` 方法允许事件在直接交互之外（例如，当与特定控件交互时）向用户引发。
 
 ### <a name="announcement"></a>公告
 
@@ -138,4 +138,4 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 - [跨平台辅助功能](~/cross-platform/app-fundamentals/accessibility.md)
 - [iOS 辅助功能（Apple）](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
-- [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)
+- [iOS VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)

@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 909594fe86c9718d9922470d7fca36155e33aed3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766823"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005240"
 ---
 # <a name="using-the-model-class"></a>使用模型类
 
@@ -41,9 +41,9 @@ MonoGame API 包括一个 `Model` 类，该类可用于存储从内容文件加�
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>将 XNBs 包含在游戏项目中
 
-Xnb 文件格式是生成内容（已由[MonoGame 管道工具](http://www.monogame.net/documentation/?page=Pipeline)创建的内容）的标准扩展。 所有生成的内容都有源文件（在我们的模型中为 fbx 文件）和目标文件（xnb 文件）。 Fbx 格式是可由应用程序（如[Maya](http://www.autodesk.com/products/maya/overview)和[Blender](http://www.blender.org/)）创建的常见三维模型格式。 
+Xnb 文件格式是生成内容（已由[MonoGame 管道工具](http://www.monogame.net/documentation/?page=Pipeline)创建的内容）的标准扩展。 所有生成的内容都有源文件（在我们的模型中为 fbx 文件）和目标文件（xnb 文件）。 Fbx 格式是可由应用程序（如[Maya](https://www.autodesk.com/products/maya/overview)和[Blender](https://www.blender.org/)）创建的常见三维模型格式。 
 
-@No__t_0 类可通过从包含3D 几何数据的磁盘加载 xnb 文件来构造。   此 xnb 文件是通过内容项目创建的。 Monogame 模板会自动在内容文件夹中添加内容项目（扩展名为 mgcp）。 有关 MonoGame 管道工具的详细讨论，请参阅[内容管道指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
+`Model` 类可通过从包含3D 几何数据的磁盘加载 xnb 文件来构造。   此 xnb 文件是通过内容项目创建的。 Monogame 模板会自动在内容文件夹中添加内容项目（扩展名为 mgcp）。 有关 MonoGame 管道工具的详细讨论，请参阅[内容管道指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
 
 在本指南中，我们将跳过使用 MonoGame 管道工具，并使用。此处包含 XNB 文件。 请注意，。XNB 文件在每个平台上都不同，因此，请务必为你使用的任何平台使用正确的 XNB 文件集。
 
@@ -167,15 +167,15 @@ public class Game1 : Game
 
 ### <a name="model-class"></a>模型类
 
-@No__t_0 类是用于从内容文件（如 fbx 文件）执行三维呈现的核心类。 它包含呈现所需的所有信息，包括3D 几何、纹理引用以及控制定位、照明和照相机值 `BasicEffect` 实例。
+`Model` 类是用于从内容文件（如 fbx 文件）执行三维呈现的核心类。 它包含呈现所需的所有信息，包括3D 几何、纹理引用以及控制定位、照明和照相机值 `BasicEffect` 实例。
 
-@No__t_0 类本身不会直接具有用于定位的变量，因为在多个位置可以呈现单个模型实例，因为我们将在本指南的后面部分进行演示。
+`Model` 类本身不会直接具有用于定位的变量，因为在多个位置可以呈现单个模型实例，因为我们将在本指南的后面部分进行演示。
 
 每个 `Model` 都由一个或多个 `ModelMesh` 实例组成，它们通过 `Meshes` 属性公开。 尽管我们可能会将 `Model` 视为单个游戏对象（如机器人或汽车），但每个 `ModelMesh` 都可以用不同的 `BasicEffect` 值进行绘制。 例如，单个网格部分可以表示机器人的腿或汽车上的滚轮，我们可以分配 `BasicEffect` 值以使轮旋转或支线移动。 
 
 ### <a name="basiceffect-class"></a>BasicEffect 类
 
-@No__t_0 类提供用于控制呈现选项的属性。 我们对 `BasicEffect` 进行的第一次修改是调用 `EnableDefaultLighting` 方法。 顾名思义，这会启用默认照明，这非常适合用于验证 `Model` 在游戏中显示为预期的情况。 如果注释掉 `EnableDefaultLighting` 调用，就会看到模型只是其纹理，但没有着色或反光：
+`BasicEffect` 类提供用于控制呈现选项的属性。 我们对 `BasicEffect` 进行的第一次修改是调用 `EnableDefaultLighting` 方法。 顾名思义，这会启用默认照明，这非常适合用于验证 `Model` 在游戏中显示为预期的情况。 如果注释掉 `EnableDefaultLighting` 调用，就会看到模型只是其纹理，但没有着色或反光：
 
 ```csharp
 //effect.EnableDefaultLighting ();
@@ -183,7 +183,7 @@ public class Game1 : Game
 
 ![仅以其纹理呈现的模型，但不带明暗度或镜面光亮](part1-images/image9.png "仅以其纹理呈现的模型，但不带明暗度或镜面光亮")
 
-@No__t_0 属性可用于调整模型的位置、旋转和缩放。 上面的代码使用 `Matrix.Identity` 值，这意味着 `Model` 将与 fbx 文件中指定的内容完全相同。 在[第3部分](~/graphics-games/monogame/3d/part3.md)中将更详细地介绍矩阵和3d 坐标，但作为示例，我们可以通过更改 `World` 属性来更改 `Model` 的位置，如下所示：
+`World` 属性可用于调整模型的位置、旋转和缩放。 上面的代码使用 `Matrix.Identity` 值，这意味着 `Model` 将与 fbx 文件中指定的内容完全相同。 在[第3部分](~/graphics-games/monogame/3d/part3.md)中将更详细地介绍矩阵和3d 坐标，但作为示例，我们可以通过更改 `World` 属性来更改 `Model` 的位置，如下所示：
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -195,7 +195,7 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 ![此代码会导致对象被3个世界单位向上移动](part1-images/image10.png "此代码会导致对象被3个世界单位向上移动")
 
-@No__t_0 上分配的最后两个属性 `View` 和 `Projection`。 我们将在[第3部分](~/graphics-games/monogame/3d/part3.md)介绍3d 相机，但作为示例，我们可以通过更改本地 `cameraPosition` 变量来修改相机的位置：
+`BasicEffect` 上分配的最后两个属性 `View` 和 `Projection`。 我们将在[第3部分](~/graphics-games/monogame/3d/part3.md)介绍3d 相机，但作为示例，我们可以通过更改本地 `cameraPosition` 变量来修改相机的位置：
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back

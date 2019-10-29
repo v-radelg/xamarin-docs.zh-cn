@@ -3,15 +3,15 @@ title: 目标-C 绑定概述
 description: 本文档概述了创建C#目标 C 代码的绑定的不同方法，包括命令行绑定、绑定项目和目标 Sharpie。 还介绍了绑定的工作原理。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765588"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015870"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目标-C 绑定概述
 
@@ -19,7 +19,7 @@ _绑定过程工作原理的详细信息_
 
 绑定与 Xamarin 一起使用的目标-C 库的过程分为三个步骤：
 
-1. 编写C# "API 定义" 来说明如何在 .net 中公开本机 API，以及如何将其映射到基础目标-C。 这是C#使用标准构造（如`interface`和各种绑定**属性**）完成的（请参阅这个简单的[示例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
+1. 编写C# "API 定义" 来说明如何在 .net 中公开本机 API，以及如何将其映射到基础目标-C。 这是使用标准C#构造（如 `interface`和各种绑定**属性**）完成的（请参阅这个简单的[示例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
 
 2. 在中C#编写 "API 定义" 后，可对其进行编译以生成 "绑定" 程序集。 这可以在[**命令行**](#commandline)上或在 Visual Studio for Mac 或 Visual Studio 中使用[**绑定项目**](#bindingproject)完成。
 
@@ -35,7 +35,7 @@ _绑定过程工作原理的详细信息_
 
 ## <a name="command-line-bindings"></a>命令行绑定
 
-你可以使用`btouch-native` for Xamarin （或者`bmac-native` ，如果你使用的是 xamarin）来直接生成绑定。 它的工作方式是C#将已手动创建的 API 定义（或使用目标 Sharpie）传递到命令行工具（`btouch-native`适用于 iOS 或`bmac-native` Mac）。
+你可以使用 Xamarin 的 `btouch-native` （如果你使用的是 Xamarin，则 `bmac-native`）来直接生成绑定。 它的工作方式是C#将你手动创建的 API 定义（或使用客观 Sharpie）传递到命令行工具（适用于 iOS 的`btouch-native`或 Mac 的`bmac-native`）。
 
 调用这些工具的一般语法为：
 
@@ -49,7 +49,7 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-上面的命令将在当前目录`cocos2d.dll`中生成文件，并且它将包含可以在项目中使用的完全绑定库。 如果使用绑定项目（[如下](#bindingproject)所述），这是 Visual Studio for Mac 用于创建绑定的工具。
+上面的命令将在当前目录中生成 `cocos2d.dll` 文件，并且它将包含可以在项目中使用的完全绑定库。 如果使用绑定项目（[如下](#bindingproject)所述），这是 Visual Studio for Mac 用于创建绑定的工具。
 
 <a name="bindingproject" />
 
@@ -75,7 +75,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 首先，查找要绑定的类型。 为了方便讨论，我们将绑定[NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)类型（已在[NSEnumerator](xref:Foundation.NSEnumerator)中绑定）; 下面的实现仅用于示例。
 
-其次，我们需要创建C#类型。 我们可能想要将其放入命名空间;由于目标-c 不支持命名空间，因此需要使用`[Register]`属性来更改 Xamarin 将向目标 C 运行时注册的类型名称。 该C#类型还必须从[NSObject](xref:Foundation.NSObject)继承：
+其次，我们需要创建C#类型。 我们可能想要将其放入命名空间;由于目标-C 不支持命名空间，因此需要使用 `[Register]` 特性来更改 Xamarin 将向目标 C 运行时注册的类型名称。 该C#类型还必须从[NSObject](xref:Foundation.NSObject)继承：
 
 ```csharp
 namespace Example.Binding {
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-第四，你的类型将需要提供构造函数。 您*必须*将构造函数调用链接到基类构造函数。 `[Export]`特性允许目标为 C 的代码调用具有指定选择器名称的构造函数：
+第四，你的类型将需要提供构造函数。 您*必须*将构造函数调用链接到基类构造函数。 `[Export]` 特性允许目标 C 代码调用具有指定选择器名称的构造函数：
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-第五，为步骤3中声明的每个选择器提供方法。 这些对象将`objc_msgSend()`使用来调用本机对象的选择器。 请注意， [GetNSObject （）](xref:ObjCRuntime.Runtime.GetNSObject*)的使用将转换`IntPtr`为适当`NSObject`类型的（子）类型。 如果要从目标-C 代码调用方法，则成员*必须*是**虚拟**的。
+第五，为步骤3中声明的每个选择器提供方法。 这些将使用 `objc_msgSend()` 来调用本机对象的选择器。 请注意， [GetNSObject （）](xref:ObjCRuntime.Runtime.GetNSObject*)用于将 `IntPtr` 转换为适当类型的 `NSObject` （子）类型。 如果要从目标-C 代码调用方法，则成员*必须*是**虚拟**的。
 
 ```csharp
 [Export("nextObject")]

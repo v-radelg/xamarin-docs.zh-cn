@@ -3,15 +3,15 @@ title: 如何降级 NuGet 包？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: daa8159dd7cac1f727904ca5de08908fd3ca1af9
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 0c70859845915a821bb83b0f9d29528634b1a5de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105673"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013613"
 ---
 # <a name="how-do-i-downgrade-a-nuget-package"></a>如何降级 NuGet 包？
 
@@ -25,7 +25,7 @@ ms.locfileid: "71105673"
 
     > 安装包 [PackageName]-版本 [版本菜单选项卡]
 
-你还可以从包的 NuGet 页面复制/粘贴准确的命令。 Xamarin 的示例：[https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
+你还可以从包的 NuGet 页面复制/粘贴准确的命令。 Xamarin 的示例： [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -45,4 +45,4 @@ ms.locfileid: "71105673"
     `Xamarin.Forms version:1.4`
 
 > [!NOTE]
-> 如果在版本号 & 之间`version:`添加一个空格，则搜索的行为就好像未指定任何版本一样。
+> 如果在版本号 & `version:` 之间添加一个空格，则搜索的行为就好像未指定任何版本一样。

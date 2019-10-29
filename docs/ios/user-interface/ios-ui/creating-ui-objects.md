@@ -4,19 +4,19 @@ description: 本文档概述了如何在 Xamarin 中创建用户界面。 它讨
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 204bf087a51132fdd204990c3b92453ecce96a53
-ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
+ms.openlocfilehash: 58a1fd68dda2216a62fe6f30cf61d6d2ec7d40d5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72426574"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003673"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中创建用户界面对象
 
-Apple 将相关功能部分分组到与 Xamarin 命名空间相同的 "框架" 中。 @no__t 为包含适用于 iOS 的所有用户界面控件的命名空间。
+Apple 将相关功能部分分组到与 Xamarin 命名空间相同的 "框架" 中。 `UIKit` 是包含适用于 iOS 的所有用户界面控件的命名空间。
 
 只要代码需要引用用户界面控件（如标签或按钮），请记住包含以下 using 语句：
 
@@ -88,18 +88,18 @@ using UIKit;
 
 有关 Xcode Interface Builder 如何与 Visual Studio for Mac 集成的详细信息，请参阅[Xib 代码生成](~/ios/internals/xib-code-generation.md#generated)文档。
 
-## <a name="using-c"></a>使用 C @ no__t-0
+## <a name="using-c"></a>使用 C\#
 
 如果你决定以编程方式使用C#创建用户界面对象（例如，在视图或视图控制器中），请执行以下步骤：
 
-- 为用户界面对象声明类级别的字段。 在 @no__t 中创建控件本身一次（例如）。 然后，可以在视图控制器的整个生命周期方法中引用该对象（例如
+- 为用户界面对象声明类级别的字段。 在 `ViewDidLoad` 示例中，创建一次控件本身。 然后，可以在视图控制器的整个生命周期方法中引用该对象（例如
 `ViewWillAppear`) 格式模式中出现的位置匹配。
-- 创建一个 `CGRect`，它定义控件的框架（屏幕上的 X 和 Y 坐标以及其宽度和高度）。 你需要确保为此提供 @no__t 的指令。
+- 创建一个 `CGRect`，它定义控件的框架（屏幕上的 X 和 Y 坐标以及其宽度和高度）。 你需要确保为此提供 `using CoreGraphics` 指令。
 - 调用构造函数来创建和分配控件。
 - 设置任何属性或事件处理程序。
 - 调用 `Add()` 将控件添加到视图层次结构。
 
-下面是一个简单的示例，说明如何使用C#在视图控制器中创建 @no__t：
+下面是在视图控制器中创建 `UILabel` 的简单示例，使用C#：
 
 ```csharp
 UILabel label1;
@@ -120,9 +120,9 @@ public override void ViewDidLoad () {
 
  [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
 
-@No__t-0 文件用于*你的代码*。 这是实现 `View` 生命周期方法（如 `ViewDidLoad` 和 `ViewWillAppear`）的位置，并且可以添加自己的属性、字段和方法。
+`ControlsViewController.cs` 文件适用于你的*代码*。 这是实现 `View` 生命周期方法（如 `ViewDidLoad` 和 `ViewWillAppear`）的位置，并且可以添加自己的属性、字段和方法。
 
-@No__t 生成的代码包含一个分部类。 在 Visual Studio for Mac 中的设计图面上命名控件，或在 Xcode 中创建一个插座或操作时，会将相应的属性或分部方法添加到设计器（designer.cs）文件中。 下面的代码演示了一个为两个按钮和一个文本视图生成的代码示例，其中其中一个按钮也有一个 @no__t 的事件。
+`ControlsViewController.designer.cs` 生成包含分部类的代码。 在 Visual Studio for Mac 中的设计图面上命名控件，或在 Xcode 中创建一个插座或操作时，会将相应的属性或分部方法添加到设计器（designer.cs）文件中。 下面的代码演示了一个为两个按钮和一个文本视图生成的代码示例，其中其中一个按钮也有一个 `TouchUpInside` 事件。
 
 利用分部类的这些元素，你的代码可以引用控件并响应设计图面上声明的操作：
 
@@ -165,7 +165,7 @@ public override void ViewDidLoad () {
 }
 ```
 
-不应手动编辑 @no__t 0 文件– IDE （Visual Studio for Mac 或 Visual Studio）负责使其与情节提要保持同步。
+不应手动编辑 `designer.cs` 文件– IDE （Visual Studio for Mac 或 Visual Studio）负责使其与情节提要保持同步。
 
 以编程方式将用户界面对象添加到 `View` 或 `ViewController` 时，你会自行实例化和管理对象引用，因此不需要设计器文件。
 

@@ -5,40 +5,40 @@ ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: conceptdev
-ms.author: crdun
-ms.openlocfilehash: c7deda17a7a4936f000fbfce285b3dc3932795e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+author: davidortinau
+ms.author: daortin
+ms.openlocfilehash: ad2386d912dba28041c02c4fb4a8046d341a85ed
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292283"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002269"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>使用 JSON 在 Xamarin 中创建用户界面
 
 _Monotouch.dialog （MT。D）包含通过 JSON 数据对动态 UI 生成的支持。在本教程中，我们将演练如何使用 JSONElement 从 JSON 创建用户界面，该用户界面既可以包含在应用程序中，也可以从远程 Url 加载。_
 
-隶书.D 支持创建 JSON 中声明的用户界面。 使用 JSON，MT 声明元素。D 将自动为您创建关联的元素。 可以从本地文件、已分析`JsonObject`的实例甚至远程 Url 加载 JSON。
+隶书.D 支持创建 JSON 中声明的用户界面。 使用 JSON，MT 声明元素。D 将自动为您创建关联的元素。 可以从本地文件、分析的 `JsonObject` 实例或甚至远程 Url 加载 JSON。
 
 隶书.D 支持在使用 JSON 时元素 API 中可用的各种功能。 例如，以下屏幕截图中的应用程序使用 JSON 完全声明：
 
-[![](json-element-walkthrough-images/01-load-from-file.png "例如，此屏幕截图中的应用程序完全声明使用 JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [![](json-element-walkthrough-images/01-load-from-file.png "例如，此屏幕截图中的应用程序完全使用声明JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "例如，使用 JSON 完全声明了此屏幕截图中的应用程序")](json-element-walkthrough-images/01-load-from-file.png#lightbox)[![](json-element-walkthrough-images/01-load-from-file.png "例如，使用 JSON 完全声明了此屏幕截图中的应用程序")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 让我们从[元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教程中重新访问该示例，演示如何使用 JSON 添加任务详细信息屏幕。
 
 ## <a name="setting-up-mtd"></a>设置 MT。2-d
 
-隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后，根据`using MonoTouch.Dialog`需要在源代码中添加语句。
+隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后，根据需要将 `using MonoTouch.Dialog` 语句添加到源代码中。
 
 ## <a name="json-walkthrough"></a>JSON 演练
 
 本演练的示例允许创建任务。 在第一个屏幕上选择任务时，将显示详细信息屏幕，如下所示：
 
- [![](json-element-walkthrough-images/03-task-list.png "在第一个屏幕上选择任务时，将显示详细信息屏幕，如图所示")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![](json-element-walkthrough-images/03-task-list.png "When a task is selected on the first screen, a detail screen is presented as shown")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>创建 JSON
 
-在此示例中，我们将从名为`task.json`的项目中的文件加载 JSON。 隶书.D 要求 JSON 符合镜像元素 API 的语法。 与从代码使用元素 API 一样，使用 JSON 时，我们会在添加元素的部分中声明部分。 若要在 JSON 中声明节和元素，请分别使用字符串 "sections" 和 "元素" 作为键。 对于每个元素，将使用`type`键设置关联的元素类型。 每个其他元素属性都设置为属性名称作为键。
+在此示例中，我们将从名为 `task.json`的项目中的文件加载 JSON。 隶书.D 要求 JSON 符合镜像元素 API 的语法。 与从代码使用元素 API 一样，使用 JSON 时，我们会在添加元素的部分中声明部分。 若要在 JSON 中声明节和元素，请分别使用字符串 "sections" 和 "元素" 作为键。 对于每个元素，将使用 `type` 键设置关联的元素类型。 每个其他元素属性都设置为属性名称作为键。
 
 例如，下面的 JSON 描述了任务详细信息的部分和元素：
 
@@ -69,7 +69,7 @@ _Monotouch.dialog （MT。D）包含通过 JSON 数据对动态 UI 生成的支�
 
 ## <a name="loading-the-json-in-code"></a>在代码中加载 JSON
 
-定义 JSON 后，需要将其加载到 MT。D 使用`JsonElement`类。 假设使用我们在上面创建的 JSON 创建的文件已添加到该项目，其名称为示例 json，并给定内容的生成操作， `JsonElement`则加载非常简单，只需要调用以下代码行：
+定义 JSON 后，需要将其加载到 MT。D 使用 `JsonElement` 类。 假设使用我们在上面创建的 JSON 创建的文件已添加到名为 sample 的项目，并给定内容的生成操作，则加载该 `JsonElement` 就像调用以下代码行一样简单：
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
@@ -121,7 +121,7 @@ _addButton.Clicked += (sender, e) => {
 
 ## <a name="loading-json-from-a-url"></a>从 url 加载 JSON
 
-隶书.D 还支持通过将 Url 直接传递到的`JsonElement`构造函数，从外部 Url 动态地加载 JSON。 隶书.当你在屏幕之间导航时，D 将按需扩展 JSON 中声明的层次结构。 例如，假设下面的一个 JSON 文件位于本地 web 服务器的根目录下：
+隶书.D 还支持通过将 Url 直接传递到 `JsonElement`的构造函数，从外部 Url 动态加载 JSON。 隶书.当你在屏幕之间导航时，D 将按需扩展 JSON 中声明的层次结构。 例如，假设下面的一个 JSON 文件位于本地 web 服务器的根目录下：
 
 ```json
 {
@@ -147,7 +147,7 @@ _addButton.Clicked += (sender, e) => {
 }
 ```
 
-我们可以使用来加载此`JsonElement` ，如以下代码所示：
+我们可以使用 `JsonElement` 进行加载，如以下代码所示：
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -159,7 +159,7 @@ _rootElement = new RootElement ("Json Example") {
 
 在运行时，MT 将检索并分析文件。D 当用户导航到第二个视图时，如以下屏幕截图中所示：
 
- [![](json-element-walkthrough-images/04-json-web-example.png "此文件将由 MT 检索和分析。D 当用户导航到第二个视图时")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![](json-element-walkthrough-images/04-json-web-example.png "The file will be retrieved and parsed by MT.D when the user navigates to the second view")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>总结
 

@@ -3,15 +3,15 @@ title: 创建具有目标 Sharpie 的绑定
 description: 本部分介绍了客观 Sharpie，Xamarin 的命令行工具，该工具用于自动执行创建到目标 C 库的绑定过程
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: d5b9fa1edc09b831dbc69ab092dfb5270942e67a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4d6ab6cf48c5c365a4d8d05ef108a4d3a5d16134
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765713"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016183"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>创建具有目标 Sharpie 的绑定
 

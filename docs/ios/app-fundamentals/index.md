@@ -4,15 +4,15 @@ description: 本文档链接到各种指南，这些指南描述了针对 Xamari
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2017
-ms.openlocfilehash: 59257dafc1d92756feb85046df43de7b9da0cc42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ccdde29183645b93831b7261909714f9baf3fa4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290145"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010027"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin iOS 应用程序基础知识
 
@@ -72,4 +72,4 @@ Apple 在 iOS 10 （及更高版本）中对安全和隐私进行了多项改进
 
 ## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[使用用户默认值](~/ios/app-fundamentals/user-defaults.md)
 
-`NSUserDefaults`类为 iOS 应用和扩展提供了一种以编程方式与系统范围的默认系统交互的方式。 通过使用默认系统，用户可以配置应用的行为或样式以满足其首选项（基于应用的设计）。 例如，若要以指标与英制度量值显示数据，或选择给定的 UI 主题。
+使用 `NSUserDefaults` 类，可以通过编程方式将 iOS 应用和扩展与系统范围的默认系统交互。 通过使用默认系统，用户可以配置应用的行为或样式以满足其首选项（基于应用的设计）。 例如，若要以指标与英制度量值显示数据，或选择给定的 UI 主题。

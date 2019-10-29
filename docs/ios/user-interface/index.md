@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中生成用户界
 ms.prod: xamarin
 ms.assetid: 2B3E45FA-C30F-D708-0E8F-3EE02BD1A867
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2017
-ms.openlocfilehash: 6715c075c2686eec023948b070a3b49dea779470
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8e52dbce6abd30633ffffa22e24d471fef0500ee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287120"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003553"
 ---
 # <a name="building-user-interfaces-with-xamarinios"></a>用 Xamarin 构建用户界面
 

@@ -4,15 +4,15 @@ description: 本文档介绍查找 Xamarin 版本信息和日志的位置。 诊
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: f2d9921795d2a788a6646aad36712a0691c07d50
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 68de58f499788d803aa0af6c68f20e2265b1d6b5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291178"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013177"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>在哪里可以找到我的版本信息和日志？
 
@@ -25,9 +25,9 @@ ms.locfileid: "70291178"
 - [IDE 和安装程序日志](#ide-and-installer-logs)
   - [Windows 日志](#windows-logs)
     - Xamarin Studio
-    - 面向 Visual Studio 的 Xamarin
+    - Xamarin for Visual Studio
     - Xamarin 通用安装程序
-    - 单个`.msi`安装程序，详细日志
+    - 单个 `.msi` 安装程序，详细日志
     - Visual Studio 启动，详细日志
   - [Mac 日志](#mac-logs)
     - 生成主机
@@ -78,29 +78,29 @@ ms.locfileid: "70291178"
 
 ### <a name="a-idwindows-logs-namewindows-logs-windows-logs"></a><a id="windows-logs" name="windows-logs" />Windows 日志
 
-#### <a name="a-idwindows-logs-xamarin-vs-namewindows-logs-xamarin-vs--visual-studio-tools-for-xamarin"></a><a id="windows-logs-xamarin-vs" name="windows-logs-xamarin-vs" />适用于 Xamarin 的 Visual Studio Tools
+#### <a name="a-idwindows-logs-xamarin-vs-namewindows-logs-xamarin-vs--visual-studio-tools-for-xamarin"></a>Xamarin 的 <a id="windows-logs-xamarin-vs" name="windows-logs-xamarin-vs" /> Visual Studio Tools
 
 `%LOCALAPPDATA%\Xamarin\Logs`
 
-#### <a name="a-idvs-2017-namevs-2017--visual-studio-2017"></a><a id="vs-2017" name="vs-2017" />Visual Studio 2017
+#### <a name="a-idvs-2017-namevs-2017--visual-studio-2017"></a><a id="vs-2017" name="vs-2017" /> Visual Studio 2017
 
 [如何获取 Visual Studio 安装日志](https://docs.microsoft.com/visualstudio/install/troubleshooting-installation-issues#how-to-get-the-visual-studio-installation-logs)
 
 #### <a name="a-idvs-2015-namevs-2015--visual-studio-2015"></a><a id="vs-2015" name="vs-2015" /> Visual Studio 2015
 
-#### <a name="a-idwindows-universal-installer-namewindows-universal-installer--xamarin-universal-installer"></a><a id="windows-universal-installer" name="windows-universal-installer" />Xamarin "通用" 安装程序
+#### <a name="a-idwindows-universal-installer-namewindows-universal-installer--xamarin-universal-installer"></a><a id="windows-universal-installer" name="windows-universal-installer" /> Xamarin "通用" 安装程序
 
 `%LOCALAPPDATA%\Xamarin\Universal`
 
-这是`XamarinInstaller.exe`安装程序中的日志。
+这些是 `XamarinInstaller.exe` 安装程序中的日志。
 
-#### <a name="a-idindividual-msi-installers-verbose-logs-nameindividual-msi-installers-verbose-logs-individual-msi-installers-verbose-logs"></a><a id="individual-msi-installers-verbose-logs" name="individual-msi-installers-verbose-logs" />单个`.msi`安装程序，详细日志
+#### <a name="a-idindividual-msi-installers-verbose-logs-nameindividual-msi-installers-verbose-logs-individual-msi-installers-verbose-logs"></a><a id="individual-msi-installers-verbose-logs" name="individual-msi-installers-verbose-logs" />单个 `.msi` 安装程序，详细日志
 
 ```csharp
 msiexec /i Xamarin.msi /l*vx "%USERPROFILE%\Desktop\Xamarin.log"
 ```
 
-对[命令行选项](https://msdn.microsoft.com/library/aa367988.aspx)
+参考：[命令行选项](https://msdn.microsoft.com/library/aa367988.aspx)
 
 #### <a name="a-idvisual-studio-startup-verbose-logs-namevisual-studio-startup-verbose-logs-visual-studio-startup-verbose-logs"></a><a id="visual-studio-startup-verbose-logs" name="visual-studio-startup-verbose-logs" />Visual Studio 启动，详细日志
 
@@ -116,13 +116,13 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 #### <a name="a-idmac-logs-visual-studio-namemac-logs-visual-studio-visual-studio-for-mac"></a><a id="mac-logs-visual-studio" name="mac-logs-visual-studio" />Visual Studio for Mac
 
-`~/Library/Logs/VisualStudio/7.0`（此数字可能因您使用的版本而异）
+`~/Library/Logs/VisualStudio/7.0` （此数字可能因您使用的版本而异）
 
 此文件夹还可以通过 "帮助-> 打开日志目录" 打开。
 
 #### <a name="a-idmac-logs-xamarin-studio-namemac-logs-xamarin-studio-xamarin-studio"></a><a id="mac-logs-xamarin-studio" name="mac-logs-xamarin-studio" />Xamarin Studio
 
-`~/Library/Logs/XamarinStudio-6.0`（此数字可能因您使用的版本而异）
+`~/Library/Logs/XamarinStudio-6.0` （此数字可能因您使用的版本而异）
 
 此文件夹还可以通过 "帮助-> 打开日志目录" 打开。
 
@@ -130,7 +130,7 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 `~/Library/Logs/XamarinInstaller/Universal`
 
-这是`XamarinInstaller.dmg`安装程序中的日志。
+这些是 `XamarinInstaller.dmg` 安装程序中的日志。
 
 #### <a name="a-idmac-build-host-namemac-build-host-xamarin-build-host"></a><a id="mac-build-host" name="mac-build-host" />Xamarin 生成主机
 
@@ -140,15 +140,15 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 1. 启用[诊断 MSBuild 输出](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)。
 
-2. 对于 ios 应用，还可以通过在 " `-v -v -v -v` **项目属性" > "ios 生成" > 常规 "（选项卡 >）上添加其他选项 > 其他 mtouch 参数**来启用**详细的 mtouch 输出**。
+2. 对于 iOS 应用，还可以通过在 "项目属性" 下添加 `-v -v -v -v` 来启用**详细的 mtouch 输出** **> IOS Build > 常规（选项卡） > 其他选项 > 附加的参数**。
 
 3. 清除并重新生成项目。
 
 4. 将 IDE 的生成输出复制并粘贴到文本文件中。
-     - Visual Studio （Windows）：**查看 > 输出 > 显示其输出：构造**
-     - Visual Studio for Mac：**查看 > 填充 > 错误 > 生成输出（选项卡）**
+     - Visual Studio （Windows）：**查看 > 输出 > 显示以下输出：生成**
+     - Visual Studio for Mac： **View > pad > 错误 > 生成输出（选项卡）**
 
-## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />适用于 Xamarin 和 Xamarin iOS 应用的调试日志
+## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a>适用于 Xamarin 和 Xamarin iOS 应用的 <a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />调试日志
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -158,33 +158,33 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 ### <a name="visual-studio"></a>Visual Studio
 
-**查看 > 输出 > 显示其输出：Debug.exe**
+**查看 > 输出 > 显示输出：调试**
 
 ### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat 日志
 
-运行该`adb`命令后，从桌面附加回**android_logcat**文件。 这些说明假定你只连接了一个设备。
+运行 `adb` 命令后，从桌面附加回**android_logcat**文件。 这些说明假定你只连接了一个设备。
 
 另请参阅 " [Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)" 页。
 
 #### <a name="visual-studio"></a>Visual Studio
 
 1. **Tools > Android > 启动 Android Adb 命令提示符**
-2. 清理日志：`adb logcat -c`
+2. 清理日志： `adb logcat -c`
 3. 再现问题。
-4. 输出日志：`adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
+4. 输出日志： `adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 1. **工具 > 打开 Android SDK 命令提示符**
-2. 清理日志：`adb logcat -c`
+2. 清理日志： `adb logcat -c`
 3. 再现问题。
-4. 输出日志：`adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
+4. 输出日志： `adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />iOS 模拟器日志（在 Mac 上）
 
 - 若要访问系统日志，请选择 "调试" > 在 iOS 模拟器应用中**打开 "系统日志 ...** "。
 
-- 若要从模拟器查看故障报告，请打开 Console 并导航到`~/Library/Logs > DiagnosticReports`。
+- 若要从模拟器查看故障报告，请打开 "Console" 并导航到 `~/Library/Logs > DiagnosticReports`。
 
 ### <a name="a-idios-device-logs-nameios-device-logs-ios-device-logs-on-mac"></a><a id="ios-device-logs" name="ios-device-logs" />iOS 设备日志（在 Mac 上）
 

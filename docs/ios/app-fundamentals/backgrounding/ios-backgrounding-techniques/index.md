@@ -4,15 +4,15 @@ description: 本文档链接到介绍 iOS 中各种后台处理技术的指南�
 ms.prod: xamarin
 ms.assetid: 011A8D48-1CDC-486A-A2B0-C4946118E7A9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: a21ce124e20a421be40d41af5f066e611152317b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a81d6a651ee980b444da19341a89206afa8c4375
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281114"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010816"
 ---
 # <a name="ios-backgrounding-techniques"></a>iOS 后台处理技术
 

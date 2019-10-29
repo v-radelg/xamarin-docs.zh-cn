@@ -5,14 +5,14 @@ ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: conceptdev
-ms.author: crdun
-ms.openlocfilehash: d9174e9b2d6c056c94b405033a25eeb787c92f9f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+author: davidortinau
+ms.author: daortin
+ms.openlocfilehash: 84698ab769156726982c4d5a38d5f284bdc30328
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768770"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002228"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 标记
 
@@ -77,9 +77,9 @@ ms.locfileid: "70768770"
 
 上述标记生成以下 UI：
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "给定标记创建的 UI")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "The UI created by the given markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
-树中的每个元素都可以包含`"id"`属性。 可以在运行时使用 JsonElement 索引器引用单个节或元素。 如：
+树中的每个元素都可以包含属性 `"id"`。 可以在运行时使用 JsonElement 索引器引用单个节或元素。 如：
 
 ```csharp
 var jsonElement = JsonElement.FromFile ("demo.json");
@@ -98,13 +98,13 @@ Root 元素包含以下值：
 - `title`
 - `sections` （可选）
 
-根元素可以作为元素出现在节内，以创建嵌套控制器。 在这种情况下，必须`"type"`将额外的属性设置为`"root"`
+根元素可以作为元素出现在节内，以创建嵌套控制器。 在这种情况下，必须将额外的属性 `"type"` 设置为 `"root"`
 
  <a name="url" />
 
 ### <a name="url"></a>URL
 
-如果设置`"url"`了属性，则如果用户点击此 RootElement，则代码将从指定的 url 请求文件，并将显示新信息的内容。 可以使用此功能，根据用户点击的内容，从服务器扩展用户界面。
+如果设置了 `"url"` 属性，则如果用户点击此 RootElement，则代码将从指定的 url 请求文件，并将显示新信息的内容。 可以使用此功能，根据用户点击的内容，从服务器扩展用户界面。
 
  <a name="group" />
 
@@ -126,9 +126,9 @@ Root 元素包含以下值：
 
  <a name="type" />
 
-### <a name="type"></a>type
+### <a name="type"></a>类型
 
-当此部分出现`"root"`在节（用于嵌套控制器）时，必须设置为。
+当此部分出现在节（用于嵌套控制器）时，必须设置为 `"root"`。
 
  <a name="sections" />
 
@@ -162,12 +162,12 @@ Root 元素包含以下值：
 
 ### <a name="elements"></a>元素
 
-这是元素数组。 每个元素必须至少包含一个键， `"type"`该键用于标识要创建的元素的类型。
-某些元素共享某些常见的属性，例如`"caption"`和`"value"`。 下面列出了受支持的元素：
+这是元素数组。 每个元素必须至少包含一个键，即用于标识要创建的元素类型的 `"type"` 键。
+某些元素共享某些常见属性，如 `"caption"` 和 `"value"`。 下面列出了受支持的元素：
 
-- `string`元素（带有和不带样式）
-- `entry`行（常规或密码）
-- `boolean`值（使用开关或图像）
+- `string` 元素（具有和不带样式）
+- `entry` 行（常规或密码）
+- `boolean` 值（使用开关或图像）
 
 字符串元素可用作按钮，方法是提供一个方法，以便在用户点击该单元或附件时进行调用。
 
@@ -184,7 +184,7 @@ Root 元素包含以下值：
 }
 ```
 
-这会显示一个简单的字符串，其中包含所有默认值：字体、背景、文本颜色和修饰。 通过设置`"ontap"`属性`"onaccessorytap"`或属性，可以将操作挂钩到这些元素，并使它们的行为与按钮类似：
+这会显示一个简单的字符串，其中包含所有默认值：字体、背景、文本颜色和修饰。 通过设置 "`"ontap"`" 属性或 "`"onaccessorytap"`" 属性，可以将操作挂钩到这些元素，并使它们的行为与按钮类似：
 
 ```json
 {
@@ -194,7 +194,7 @@ Root 元素包含以下值：
 }
 ```
 
-以上将调用类 "PhotoLibrary" 中的 "ShowPhotos" 方法。 `"onaccessorytap"`与类似，但仅当用户点击附件而不是点击该单元时，才会调用它。 若要启用此设置，还必须设置附件：
+以上将调用类 "PhotoLibrary" 中的 "ShowPhotos" 方法。 `"onaccessorytap"` 类似，但仅当用户点击附件而不是点击该单元时，才会调用它。 若要启用此设置，还必须设置附件：
 
 ```json
 {
@@ -206,7 +206,7 @@ Root 元素包含以下值：
 }
 ```
 
-呈现元素可以同时显示两个字符串，一个是标题，另一个是值。 如何呈现这些字符串取决于样式，可使用`"style"`属性对其进行设置。 默认值将在左侧显示标题，在右侧显示值。 有关更多详细信息，请参阅 style 部分。 颜色是使用 "#" 符号后跟十六进制数字（表示红色、绿色、蓝色和 alpha 值的值）进行编码的。 内容可以采用表示 RGB 或 RGBA 值的缩写形式（3或4个十六进制数字）进行编码。 或表示 RGB 或 RGBA 值的长格式（6或8位数字）。 Short 版本是两次写入同一十六进制数字的简写形式。 因此，"#1bc" 常量看作为 red = 0x11，绿 = 0xbb，blue = 0xcc。 如果 alpha 值不存在，则颜色不透明。 示例如下：
+呈现元素可以同时显示两个字符串，一个是标题，另一个是值。 如何呈现这些字符串取决于样式，您可以使用 `"style"` 属性对此进行设置。 默认值将在左侧显示标题，在右侧显示值。 有关更多详细信息，请参阅 style 部分。 颜色是使用 "#" 符号后跟十六进制数字（表示红色、绿色、蓝色和 alpha 值的值）进行编码的。 内容可以采用表示 RGB 或 RGBA 值的缩写形式（3或4个十六进制数字）进行编码。 或表示 RGB 或 RGBA 值的长格式（6或8位数字）。 Short 版本是两次写入同一十六进制数字的简写形式。 因此，"#1bc" 常量看作为 red = 0x11，绿 = 0xbb，blue = 0xcc。 如果 alpha 值不存在，则颜色不透明。 示例如下：
 
 ```json
 "background": "#f00"
@@ -235,7 +235,7 @@ Root 元素包含以下值：
 
 ### <a name="caption"></a>caption
 
-要在呈现元素上显示的主字符串。 可以通过设置`"textcolor"`和`"font"`属性来自定义字体和颜色。 呈现样式由`"style"`属性确定。
+要在呈现元素上显示的主字符串。 可以通过设置 "`"textcolor"`" 和 "`"font"`" 属性自定义字体和颜色。 呈现样式由 `"style"` 属性确定。
 
  <a name="color_and_detailcolor" />
 
@@ -266,7 +266,7 @@ Root 元素包含以下值：
 - `tail-truncation`
 - `word-wrap`
 
-和`character-wrap` `"lines"`均可与属性设置为零的属性一起使用，以将渲染元素变为多行元素。 `word-wrap`
+`character-wrap` 和 `word-wrap` 均可与设置为零的 `"lines"` 属性一起使用，以将渲染元素变为多行元素。
 
  <a name="ontap_and_onaccessorytap" />
 
@@ -293,7 +293,7 @@ class Foo {
 
 ### <a name="lines"></a>文本行
 
-如果此值设置为零，则它会使元素自动调整大小，具体取决于所包含字符串的内容。 为此，您还必须将`"linebreak"`属性设置为`"character-wrap"`或`"word-wrap"`。
+如果此值设置为零，则它会使元素自动调整大小，具体取决于所包含字符串的内容。 为此，还必须将 `"linebreak"` 属性设置为 `"character-wrap"` 或 `"word-wrap"`。
 
  <a name="style" />
 
@@ -311,7 +311,7 @@ class Foo {
 
 ### <a name="subtitle"></a>标题
 
-要用于副标题的值。 这是将样式设置为`"subtitle"`并`"value"`将属性设置为字符串的快捷方式。
+要用于副标题的值。 这是将样式设置为 `"subtitle"` 并将 `"value"` 属性设置为字符串的快捷方式。
 这会同时使用单个条目。
 
  <a name="textcolor" />
@@ -324,13 +324,13 @@ class Foo {
 
 ### <a name="value"></a>值
 
-要在呈现元素上显示的辅助值。 此`"style"`设置会影响此的布局。 可以通过设置`"detailfont"`和`"detailcolor"`自定义字体和颜色。
+要在呈现元素上显示的辅助值。 此的布局受 `"style"` 设置影响。 可以通过设置 `"detailfont"` 和 `"detailcolor"`自定义字体和颜色。
 
  <a name="Boolean_Elements" />
 
 ## <a name="boolean-elements"></a>布尔值元素
 
-布尔值元素应将类型设置`"bool"`为，可以包含`"caption"`要显示的， `"value"`并且设置为 true 或 false。 如果设置`"on"`了`"off"`和属性，则假定它们是图像。 相对于应用程序中的当前工作目录解析映像。 如果要引用绑定相关的文件，可以使用`"~"`作为快捷方式来表示应用程序包目录。 例如`"~/favorite.png"` ，将是包含在绑定文件中的最喜爱的 .png。 例如：
+布尔值元素应将类型设置为 `"bool"`，可以包含要显示的 `"caption"` 并且 `"value"` 设置为 true 或 false。 如果设置了 "`"on"`" 和 "`"off"`" 属性，则假定它们是图像。 相对于应用程序中的当前工作目录解析映像。 如果要引用绑定相关文件，可以使用 `"~"` 作为表示应用程序捆绑目录的快捷方式。 例如 `"~/favorite.png"` 将是绑定文件中包含的最喜爱的 .png。 例如:
 
 ```json
 { 
@@ -350,15 +350,15 @@ class Foo {
 
  <a name="type" />
 
-### <a name="type"></a>type
+### <a name="type"></a>类型
 
-类型可以设置为`"boolean"`或。 `"checkbox"` 如果设置为布尔值，则它将使用 UISlider 或映像（ `"on"`如果`"off"`同时设置了和）。 如果设置为复选框，则将使用 checkbox。 `"group"`属性可用于标记属于特定组的布尔元素。 如果包含根`"group"`的属性为根，则这非常有用，它将使用属于同一组的所有布尔值（或复选框）的计数来汇总结果。
+类型可以设置为 `"boolean"` 或 `"checkbox"`。 如果设置为布尔值，则它将使用 UISlider 或图像（如果同时设置了 `"on"` 和 `"off"`）。 如果设置为复选框，则将使用 checkbox。 `"group"` 属性可用于标记属于特定组的布尔元素。 如果包含根还有 `"group"` 属性作为根，则这很有用，因为根将使用属于同一组的所有布尔值（或复选框）的计数来汇总结果。
 
  <a name="Entry_Elements" />
 
 ## <a name="entry-elements"></a>Entry 元素
 
-使用条目元素可允许用户输入数据。 条目元素的类型为`"entry"`或。 `"password"` 将属性设置为要在右侧显示的文本， `"value"`并将设置为初始值以将项设置为。 `"caption"` `"placeholder"`用于向用户显示空条目的提示（显示为灰色）。 下面是一些可能的恶意活动：
+使用条目元素可允许用户输入数据。 条目元素的类型为 `"entry"` 或 `"password"`。 `"caption"` 属性设置为要在右侧显示的文本，而 `"value"` 设置为初始值以将该项设置为。 `"placeholder"` 用于向用户显示空条目的提示（显示为灰色）。 下面是一些可能的恶意活动：
 
 ```json
 {
@@ -391,7 +391,7 @@ class Foo {
 
 ### <a name="autocorrect"></a>自动
 
-确定要用于该项的自动更正样式。 可能的值为 true 或 false （或字符串`"yes"`和`"no"`）。
+确定要用于该项的自动更正样式。 可能的值为 true 或 false （或字符串 `"yes"` 和 `"no"`）。
 
  <a name="capitalization" />
 
@@ -428,7 +428,7 @@ class Foo {
 
  <a name="placeholder" />
 
-### <a name="placeholder"></a>placeholder
+### <a name="placeholder"></a>Placeholder
 
 当项具有空值时显示的提示文本。
 
@@ -460,14 +460,14 @@ class Foo {
 
 ## <a name="radio-elements"></a>单选元素
 
-单选元素具有类型`"radio"`。 所选的项由`radioselected`属性在其包含的根元素上选取。
-此外，如果为`"group"`属性设置了值，则此单选按钮属于该组。
+单选元素具有类型 `"radio"`。 所选的项由其包含根元素上的 `radioselected` 属性选取。
+此外，如果为 `"group"` 属性设置了值，则该单选按钮属于该组。
 
  <a name="Date_and_Time_Elements" />
 
 ## <a name="date-and-time-elements"></a>日期和时间元素
 
-元素类型`"datetime"` `"date"`和用于呈现带有时间、日期或时间的日期。`"time"` 这些元素采用标题和值作为参数。 可以使用 .NET DateTime. Parse 函数支持的任何格式来写入值。 示例：
+元素类型 `"datetime"`、`"date"` 和 `"time"` 用于呈现包含时间、日期或时间的日期。 这些元素采用标题和值作为参数。 可以使用 .NET DateTime. Parse 函数支持的任何格式来写入值。 示例:
 
 ```json
 "header": "Dates and Times",
@@ -492,7 +492,7 @@ class Foo {
 
 ## <a name="htmlweb-element"></a>Html/Web 元素
 
-你可以创建一个单元格，当点击它将嵌入使用该`"html"`类型呈现指定 URL （本地或远程）的内容的 UIWebView。 此元素的唯一两个属性是`"caption"`和`"url"`：
+你可以创建一个单元格，在点击此方法时，将嵌入使用 `"html"` 类型呈现指定 URL （本地或远程）的内容的 UIWebView。 此元素的两个属性仅 `"caption"` 和 `"url"`：
 
 ```json
 {

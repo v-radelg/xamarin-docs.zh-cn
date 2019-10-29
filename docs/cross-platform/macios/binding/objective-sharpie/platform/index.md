@@ -3,15 +3,15 @@ title: 客观 Sharpie 功能
 description: 本文档链接到帮助描述目标 Sharpie、使用方法和生成的输出的各种指南。
 ms.prod: xamarin
 ms.assetid: 9A17A2C6-AFFD-41E2-BE9B-9BC1AA57E1E1
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: dfbfd443b06518bccbf3b71fcc27acac0bca7481
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40f73a3f069c762266704d710080c324aa731ecf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016177"
 ---
 # <a name="objective-sharpie-features"></a>客观 Sharpie 功能
 
@@ -24,8 +24,8 @@ ms.locfileid: "70279099"
 ## <a name="native-frameworksnative-frameworksmd"></a>[**本机框架**](native-frameworks.md)
 
 某些库是作为框架而不是作为源分发的。
-目标 Sharpie 允许将这些库与`-framework`选项一起使用。
+目标 Sharpie 允许将这些库与 `-framework` 选项一起使用。
 
-## <a name="verifyverifymd"></a>[**Verify**](verify.md)
+## <a name="verifyverifymd"></a>[ **}** ](verify.md)
 
-客观 Sharpie 将`Verify`属性添加到需要手动检查和更新生成的绑定的信号。 
+客观 Sharpie 将 `Verify` 特性添加到需要手动检查和更新生成的绑定的信号。 

@@ -3,15 +3,15 @@ title: 一般常见问题
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0e49ef8fa0bf00d5ed41f3411393ffaf4891c1b8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765116"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013996"
 ---
 # <a name="general-frequently-asked-questions"></a>一般常见问题
 
@@ -23,8 +23,8 @@ ms.locfileid: "70765116"
 ### <a name="pcl-reflection-apipcl-reflectionmd"></a>[PCL 反射 API](pcl-reflection.md)
 Microsoft 开发了新的反射 API，可在可移植类库中使用。 如果要将一些现有的反射代码移到 PCL，则它可能不起作用。
 
-### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL 案例研究：如何解决与 Microsoft TPL 数据流 NuGet 包有关的问题。](pcl-case-study.md)
-Xamarin 和 Xamarin 不会实现它们允许作为引用的每个 PCL 配置文件的 100%。 为了在 Visual Studio for Mac、Visual Studio 和 NuGet 包管理器中提供切实可行的便利，Xamarin 项目允许使用几个只具有不完整实现的配置文件。 例如，xamarin 和 xamarin 目前都不包括`System.Diagnostics.Tracing` PCL 命名空间中的类型的完整实现。 若要解决此情况，可以切换应用程序项目，以引用 TPL 数据流库的 net45 + win8 + wp8 + wpa81 版本。
+### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL 案例研究：如何解决与 Microsoft TPL 数据流 NuGet 包的 System.Diagnostics.Tracing 相关的问题？](pcl-case-study.md)
+Xamarin 和 Xamarin 不会实现它们允许作为引用的每个 PCL 配置文件的100%。 为了在 Visual Studio for Mac、Visual Studio 和 NuGet 包管理器中提供切实可行的便利，Xamarin 项目允许使用几个只具有不完整实现的配置文件。 例如，Xamarin 和 Xamarin 目前都不包括 `System.Diagnostics.Tracing` PCL 命名空间中的类型的完整实现。 若要解决此情况，可以切换应用程序项目，以引用 TPL 数据流库的 net45 + win8 + wp8 + wpa81 版本。
 
 ## <a name="nuget-packages--xamarin-components"></a>& Xamarin 组件的 NuGet 包
 ### <a name="how-can-i-update-nugetnuget-updatemd"></a>[如何更新 NuGet？](nuget-update.md)

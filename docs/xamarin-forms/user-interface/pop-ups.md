@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
-ms.openlocfilehash: ddf0b96295f7153803db65a1fd741cc5df473730
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 83aca8c9e64ffb01eb9773c17b42333f73c1aab5
+ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697088"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72971253"
 ---
 # <a name="display-pop-ups"></a>显示弹出窗口
 
@@ -86,7 +86,7 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 如果点击 "确定" 按钮，则输入的响应将作为 `string` 返回。 如果点击 "取消" 按钮，则返回 `null`。
 
-@No__t_0 方法的完整参数列表为：
+`DisplayPromptAsync` 方法的完整参数列表为：
 
 - `string` 类型的 `title`，则是要在提示中显示的标题。
 - `message`，类型 `string`，是要在提示符处显示的消息。
@@ -100,7 +100,6 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 ```csharp
 string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
-}
 ```
 
 此代码会将可输入的字符数限制为2，并显示用户输入的数字键盘：
@@ -108,7 +107,7 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLengt
 [![IOS 和 Android 上的模式提示屏幕截图](pop-ups-images/keyboard-prompt.png "模式提示")](pop-ups-images/keyboard-prompt-large.png#lightbox "模式提示")
 
 > [!NOTE]
-> @No__t_0 方法目前仅在 iOS 和 Android 上实现。
+> `DisplayPromptAsync` 方法目前仅在 iOS 和 Android 上实现。
 
 ## <a name="related-links"></a>相关链接
 

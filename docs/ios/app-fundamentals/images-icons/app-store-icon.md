@@ -4,15 +4,15 @@ description: 本文档介绍如何使用资产目录来管理 Xamarin iOS 应用
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/26/2017
-ms.openlocfilehash: e0b899e69405874f381c3ab6f9a9200a856d7402
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 62253adafcd028f459e8ca0cc11a8eb3e54d52c3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767309"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004188"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>Xamarin 中的应用商店图标
 
@@ -25,7 +25,7 @@ Apple 建议在设计应用程序图标时遵照以下准则：
 - 确保图标适合应用程序。
 - 创建与应用程序的设计一致的简单图标。
 - 图标中避免使用文字。
-- 从整体思考：单个应用图标用于所有商店区域。
+- 整体思考：单个应用图标用于商店的所有区域。
 
 App Store 中显示的应用图标必须是 1024 x 1024 像素的图像。  Apple 已声明，资产目录中的应用存储图标不能是透明的，也不能包含 alpha 通道。
 

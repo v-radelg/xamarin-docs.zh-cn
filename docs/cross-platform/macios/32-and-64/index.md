@@ -3,15 +3,15 @@ title: 32/64 位平台注意事项
 description: 本文档介绍面向 Xamarin 或 Xamarin 应用程序的32位和64位体系结构时需要注意的各种注意事项。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249792"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016334"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位平台注意事项
 
@@ -40,9 +40,9 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）仅支持32位应�
 
 1. 在**Solution Pad**中，双击应用程序的项目，打开 "**项目选项**" 窗口。
 2. 选择 " **IOS 生成**"。
-3. 对于 iPhone 模拟器，在 "**支持的体系结构**" 下拉列表中，选择 " **x86 \_64**或" **i386 + x86 \_64**：
+3. 对于 iPhone 模拟器，请在 "**支持的体系结构**" 下拉列表中，选择 " **x86\_64** " 或 " **i386 + x86\_64**"：
 
-   [![将支持的体系结构设置为 x86 \_64 或 i386 + x86 \_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![将支持的体系结构设置为 x86\_64 或 i386 + x86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. 对于物理设备，请选择可用的**ARM64**组合之一：
 
@@ -55,9 +55,9 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）仅支持32位应�
 
 1. 在**解决方案资源管理器**中，右键单击应用的项目，然后选择 "**属性**"。
 2. 选择 " **IOS 生成**"。
-3. 对于 iPhone 模拟器，请将**支持的体系结构**设置为**x86 \_64**或**i386 + x86 \_64**： 
+3. 对于 iPhone 模拟器，请将**支持的体系结构**设置为**x86\_64**或**i386 + x86\_64**： 
 
-   [![将支持的体系结构设置为 x86_64 或 i386 + x86 \_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![将支持的体系结构设置为 x86_64 或 i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. 对于物理设备，请选择可用的**ARM64**组合之一：
     

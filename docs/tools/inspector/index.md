@@ -3,15 +3,15 @@ title: Xamarin Inspector
 description: 本文档链接到介绍如何安装和使用 Xamarin Inspector 来浏览和调试应用程序的指南。
 ms.prod: xamarin
 ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: b89a39329754d375ee69d677eb8088c2eeac662f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4bb374fb776375af344b47d85c720fcd5759a290
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772252"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006447"
 ---
 # <a name="xamarin-inspector"></a>Xamarin Inspector
 
@@ -19,7 +19,7 @@ ms.locfileid: "70772252"
 
 Live app 检查适用于企业客户。 如果遇到[任何错误](~/tools/inspector/install.md#reporting-bugs)，请告知我们。 我们也有[论坛](https://forums.xamarin.com/categories/inspector)！
 
-[![](images/interactive-1.0.0-bike-inspect-3d-small.png "适用于企业客户的实时应用检查")](images/interactive-1.0.0-bike-inspect-3d.png#lightbox)
+[![](images/interactive-1.0.0-bike-inspect-3d-small.png "Live app inspection is available for enterprise customers")](images/interactive-1.0.0-bike-inspect-3d.png#lightbox)
 
 ## <a name="installation-and-requirementstoolsinspectorinstallmd"></a>[安装和要求](~/tools/inspector/install.md)
 

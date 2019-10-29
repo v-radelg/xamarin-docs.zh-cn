@@ -4,15 +4,15 @@ description: 本文档介绍了 DataAccess_Adv 示例，该示例演示如何在
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 060e4b8e7856e0024e6d236652c2b04c1da16f66
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766848"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008252"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 应用中使用数据
 
@@ -38,7 +38,7 @@ IOS 中的 ViewControllers 的本机 UI 代码超出了本文档的范围。
 - 阅读列表
 - 读取单个记录
 
-@No__t_0 类中的两个方法是：
+`StockDatabase` 类中的两个方法是：
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -99,7 +99,7 @@ public int DeleteStock(Stock stock)
 可以在移动应用程序中轻松完成此项工作，方法是：将现有 SQLite 数据库文件与应用程序一起传送，并将其复制到可写目录，然后再访问该文件。 由于 SQLite 是在许多平台上使用的标准文件格式，因此可以使用多种工具来创建 SQLite 数据库文件：
 
 - **SQLite 管理器 Firefox 扩展**–适用于 Mac 和 Windows，并生成与 IOS 和 Android 兼容的文件。
-- **命令行**–请参阅[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
+- **命令行**–请参阅[www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) 。
 
 创建与应用程序一起分发的数据库文件时，请注意表和列的命名，以确保它们与代码所需的名称匹配，尤其是在使用 SQLite.NET 时，这会希望名称与C#类和属性匹配（或关联的自定义特性）。
 

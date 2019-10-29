@@ -4,15 +4,15 @@ description: 本文档链接到介绍如何在 Xamarin iOS 应用程序中生成
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 325898b3c934e25ae1610a3437f787476dcd22cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768304"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003330"
 ---
 # <a name="user-interfaces-in-ios"></a>iOS 中的用户界面
 
@@ -22,11 +22,11 @@ iOS 允许使用 UIAppearance Api 为用户界面控件的多个视觉对象属�
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[创建用户界面对象](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple 将相关功能部分分组到与 Xamarin 命名空间相同的 "框架" 中。 `UIKit`命名空间，包含适用于 iOS 的所有用户界面控件。
+Apple 将相关功能部分分组到与 Xamarin 命名空间相同的 "框架" 中。 `UIKit` 是包含适用于 iOS 的所有用户界面控件的命名空间。
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[布局选项](~/ios/user-interface/ios-ui/layout-options.md)
 
-调整视图的大小或旋转时，有两种不同的机制来控制布局：自动调整和自动版式。
+调整视图的大小或旋转时，有两种不同的机制来控制布局：自动调整和自动调整。
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[提供 Haptic 反馈](~/ios/user-interface/ios-ui/haptic-feedback.md)
 

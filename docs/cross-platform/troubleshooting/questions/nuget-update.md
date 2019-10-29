@@ -3,15 +3,15 @@ title: 如何更新 NuGet？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 40DDE713-DE80-422F-BE34-A732E40C3F81
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 753afbda38a79cdc472a9b635a2354c6b9934617
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: 96e5343dbd17f14000f7ce407576e664f8971fa8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033372"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013589"
 ---
 # <a name="how-can-i-update-nuget"></a>如何更新 NuGet？
 

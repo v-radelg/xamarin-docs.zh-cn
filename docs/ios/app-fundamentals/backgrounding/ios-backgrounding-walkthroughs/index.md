@@ -4,15 +4,15 @@ description: 本文档链接到演示如何在 backgrounded 应用程序中使�
 ms.prod: xamarin
 ms.assetid: D4937080-7865-48C0-8FE5-310E90229BC3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 340f5d614b268a68460c749c4844784fdc8cacf8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cda1284854572779d22d3942ef4ee577cba5ff1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286875"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004608"
 ---
 # <a name="ios-backgrounding-walkthroughs"></a>iOS 后台处理演练
 
@@ -22,4 +22,4 @@ ms.locfileid: "70286875"
 
 ## <a name="walkthrough---using-background-transfer-service-and-nsurlsessioniosapp-fundamentalsbackgroundingios-backgrounding-walkthroughsbackground-transfer-walkthroughmd"></a>[演练 - 使用后台传输服务和 NSURLSession](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)
 
-在本演练中，我们使用后台传输服务和`NSURLSession` API 开始下载当应用程序处于后台时继续下载的大型映像。
+在本演练中，我们使用后台传输服务和 `NSURLSession` API 开始下载当应用程序处于后台时继续下载的大型映像。

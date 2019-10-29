@@ -3,15 +3,15 @@ title: 组件保存在计算机的什么位置？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5EBB49EE-39E5-428B-866F-9FC1BB215B31
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 7725dbff994ffcef9734ad07c6b506064d9c5b2b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9447cf903c8789078e66082e720eeecfa7bb3e0d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285054"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014241"
 ---
 # <a name="where-are-the-components-stored-on-my-machine"></a>组件保存在计算机的什么位置？
 
@@ -21,6 +21,6 @@ ms.locfileid: "70285054"
 
 2. 副本还存储在下列位置：
     - Windows：`%LocalAppData%\Xamarin\Cache\Components`
-    - Mac`~/Library/Caches/Xamarin/Components`
+    - Mac： `~/Library/Caches/Xamarin/Components`
 
 因此，若要彻底删除系统中的组件，请从项目/解决方案中将其删除，并从上面的缓存文件夹中将其删除。

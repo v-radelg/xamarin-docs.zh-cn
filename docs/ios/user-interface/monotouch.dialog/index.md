@@ -5,20 +5,20 @@ ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: conceptdev
-ms.author: crdun
-ms.openlocfilehash: cbe1b374b97f64e0c28b2f89ca9f6d510511b74d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+author: davidortinau
+ms.author: daortin
+ms.openlocfilehash: 68f8349fd6c8f90b36fb5edb2838dfec352a5800
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768841"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002570"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>适用于 Xamarin 的 Monotouch.dialog 简介
 
 Monotouch.dialog，称为 MT。D 对于 short，是一种快速 UI 开发工具包，使开发人员能够使用信息而不是创建视图控制器、表等的麻烦来构建应用程序屏幕和导航。因此，它可显著简化 UI 开发和代码缩减。 例如，请看下面的屏幕截图：
 
- [![](images/image1.png "例如，请看下面的屏幕快照")](images/image1.png#lightbox)
+ [![](images/image1.png "For example, consider this screenshot")](images/image1.png#lightbox)
 
 以下代码用于定义此整个屏幕：
 
@@ -55,7 +55,7 @@ public class Expense
 隶书.D 通过将所有这些代码封装到用于创建表的泛型 API 中来简化此过程。 然后，它在该 API 的顶层提供了一个抽象，它允许使用声明性对象绑定语法，使其变得更加简单。 在这种情况下，MT 提供两个 Api。2-d
 
 - **低级别元素 api** –*元素 api*基于创建元素的层次结构树，这些元素表示屏幕及其组件。 元素 API 为开发人员提供了最大的灵活性和控制。 此外，元素 API 通过 JSON 提供对声明性定义的高级支持，这允许实现极其快速的声明，以及从服务器动态地生成 UI。 
-- **高级反射 API** – 也称为 *绑定* *API* 中的类进行批注与用户界面提示，然后 mt。D 自动创建基于对象的屏幕，并提供和内容之间的绑定是显示 （以及根据需要编辑） 在屏幕上，备份的基础对象。 上面的示例演示了反射 API 的用法。 此 API 不提供元素 API 执行的精细控制，但通过基于类属性自动生成元素层次结构，进一步降低了复杂性。 
+- **高级别反射 api** （也称为*绑定*  *api* ），其中的类用 UI 提示和 MT 进行批注。D 基于对象自动创建屏幕，并在屏幕上显示的内容（以及（可选）以及支持的基础对象之间提供绑定。 上面的示例演示了反射 API 的用法。 此 API 不提供元素 API 执行的精细控制，但通过基于类属性自动生成元素层次结构，进一步降低了复杂性。 
 
 隶书.D 附带了大量内置 UI 元素，用于创建屏幕，但它也能识别自定义元素和高级屏幕布局的需求。 因此，可扩展性是融入 API 的一流功能。 开发人员可以扩展现有元素，或创建新元素，然后无缝集成。
 
@@ -69,7 +69,7 @@ public class Expense
 
 ## <a name="setting-up-mtd"></a>设置 MT。2-d
 
-隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后，根据`using MonoTouch.Dialog`需要在源代码中添加语句。
+隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后，根据需要将 `using MonoTouch.Dialog` 语句添加到源代码中。
 
 ## <a name="understanding-the-pieces-of-mtd"></a>了解 MT 的各个部分。2-d
 
@@ -79,12 +79,12 @@ public class Expense
 
 - **DialogViewController**
 - **RootElement**
-- **节**
+- **Section**
 - **元素**
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
-*DialogViewController*（简称*DVC* ）继承自`UITableViewController` ，因此表示包含表的屏幕。 DVCs 可以像常规 UITableViewController 一样推送到导航控制器上。
+*DialogViewController*（简称*DVC* ）继承自 `UITableViewController`，因此表示包含表的屏幕。 DVCs 可以像常规 UITableViewController 一样推送到导航控制器上。
 
 ### <a name="rootelement"></a>RootElement
 
@@ -94,13 +94,13 @@ public class Expense
 
 节是表中的一组单元。 与普通的表部分一样，它可以有可能是文本的页眉和页脚，甚至是自定义视图，如以下屏幕截图所示：
 
- [![](images/image2.png "与普通的表部分一样，它可以选择性地具有页眉和页脚（既可以是文本，也可以是自定义视图），如以下屏幕截图所示")](images/image2.png#lightbox)
+ [![](images/image2.png "As with a normal table section, it can optionally have a header and footer that can either be text, or even custom views, as in this screenshot")](images/image2.png#lightbox)
 
 ### <a name="element"></a>元素
 
 元素表示表中的实际单元。 隶书.D 打包了各种元素，这些元素表示不同的数据类型或不同的输入。 例如，以下屏幕截图演示了一些可用元素：
 
- [![](images/image3.png "例如，此屏幕截图演示一些可用元素")](images/image3.png#lightbox)
+ [![](images/image3.png "For example, this screenshots illustrate a few of the available elements")](images/image3.png#lightbox)
 
 ## <a name="more-on-sections-and-rootelements"></a>有关节和 RootElements 的详细信息
 
@@ -112,9 +112,9 @@ public class Expense
 
 如果使用节/元素值初始化 RootElement，则此值用于查找将提供配置摘要的子元素，该配置将呈现在显示内容的右侧。 例如，下面的屏幕截图在左侧显示一个表，其中包含右侧的详细信息屏幕标题 "甜品" 以及所选沙漠的值。
 
- [![](images/image4.png "此屏幕截图显示了一个表在左侧使用包含的详细信息屏幕，在右侧，餐后甜点，以及所选沙漠值标题的单元格")](images/image4.png#lightbox) [![](images/image5.png "这下面的屏幕截图与包含的详细信息屏幕，在右侧，餐后甜点，以及所选沙漠值标题的单元格上左侧显示一个表")](images/image5.png#lightbox)
+ [![](images/image4.png "此屏幕截图在左侧显示一个表，其中包含右甜品的详细信息屏幕标题以及所选沙漠的值。")](images/image4.png#lightbox)[![](images/image5.png "下面的屏幕截图在左侧显示一个表，其中包含右甜品的详细信息屏幕标题以及所选沙漠的值。")](images/image5.png#lightbox)
 
-此外，还可以在部分中使用根元素来触发加载新的嵌套配置页，如上所示。 在此模式下使用时，将在部分中呈现时使用提供的标题，并将其用作子页的标题。 例如：
+此外，还可以在部分中使用根元素来触发加载新的嵌套配置页，如上所示。 在此模式下使用时，将在部分中呈现时使用提供的标题，并将其用作子页的标题。 例如:
 
 ```csharp
 var root = new RootElement ("Meals") {
@@ -139,7 +139,7 @@ var root = new RootElement ("Meals") {
 
 如果你使用组实例（而不是 RadioGroup）创建 RootElement，则在某一节中显示的 RootElement 的汇总值将是与该组具有相同键的所有 BooleanElements 和 CheckboxElements 的累计计数。
 
-### <a name="sections"></a>部分
+### <a name="sections"></a>各节内容
 
 节用于对屏幕中的元素进行分组，它们是 RootElement 的唯一直接子项。 节可以包含任何标准元素，包括 new RootElements。
 
@@ -163,7 +163,7 @@ var section = new Section (header);
 
 #### <a name="handling-nsaction"></a>处理 NSAction
 
-隶书.D 将曲面`NSAction`作为处理回调的委托。
+隶书.D 将 `NSAction` 用作处理回调的委托。
 例如，假设您想要为 MT 创建的表格单元处理触控事件。2-d. 使用 MT 创建元素时。D. 只需提供一个回调函数，如下所示：
 
 ```csharp
@@ -174,7 +174,7 @@ new Section () {
 
 #### <a name="retrieving-element-value"></a>正在检索元素值
 
-与`Element.Value`属性结合后，回调可以检索其他元素中设置的值。 例如，考虑以下代码：
+与 `Element.Value` 属性结合后，回调可以检索在其他元素中设置的值。 例如，考虑以下代码：
 
 ```csharp
 var element = new EntryElement (task.Name, "Enter task description", task.Description);
@@ -190,9 +190,9 @@ var taskElement = new RootElement (task.Name) {
 
 此代码将创建一个 UI，如下所示。 有关此示例的完整演练，请参阅[元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教程。
 
- [![](images/image6.png "与 Element 属性结合在一起，回调可以检索在其他元素中设置的值")](images/image6.png#lightbox)
+ [![](images/image6.png "Combined with the Element.Value property, the callback can retrieve the value set in other elements")](images/image6.png#lightbox)
 
-当用户按下下表单元时，将执行匿名函数中的代码，并将此`element`实例中的值写入 Visual Studio for Mac 中的**应用程序输出**板。
+当用户按下下表单元时，将执行匿名函数中的代码，并将值从 `element` 实例写入 Visual Studio for Mac 中的**应用程序输出**板。
 
 ## <a name="built-in-elements"></a>内置元素
 
@@ -203,17 +203,17 @@ var taskElement = new RootElement (task.Name) {
 
 ### <a name="working-with-element-values"></a>使用元素值
 
-用于捕获用户输入的元素公开公共`Value`属性，该属性随时都保存元素的当前值。 当用户使用该应用程序时，它会自动更新。
+用于捕获用户输入的元素公开公共 `Value` 属性，该属性随时都保留元素的当前值。 当用户使用该应用程序时，它会自动更新。
 
 这是 Monotouch.dialog 中所有元素的行为，但用户创建的元素不需要此行为。
 
 ### <a name="string-element"></a>String 元素
 
-在`StringElement`表单元的左侧显示一个标题，并显示单元格右侧的字符串值。
+`StringElement` 在表单元格的左侧显示一个标题，并显示单元格右侧的字符串值。
 
- [![](images/image7.png "StringElement 在表格单元的左侧显示标题，在单元格右侧显示字符串值")](images/image7.png#lightbox)
+ [![](images/image7.png "A StringElement shows a caption on the left side of a table cell and the string value on the right side of the cell")](images/image7.png#lightbox)
 
-若要使用`StringElement`作为按钮，请提供委托。
+若要将 `StringElement` 用作按钮，请提供一个委托。
 
 ```csharp
 new StringElement ("Click me", () => { 
@@ -221,25 +221,25 @@ new StringElement ("Click me", () => {
 });
 ```
 
- [![](images/image8.png "若要将 StringElement 用作按钮，请提供委托")](images/image8.png#lightbox)
+ [![](images/image8.png "To use a StringElement as a button, provide a delegate")](images/image8.png#lightbox)
 
 ### <a name="styled-string-element"></a>带样式的字符串元素
 
-`StyledStringElement`允许使用内置表格单元样式或自定义格式来显示字符串。
+`StyledStringElement` 允许使用内置表格单元样式或自定义格式来显示字符串。
 
- [![](images/image9.png "StyledStringElement 允许使用内置表格单元样式或自定义格式显示字符串")](images/image9.png#lightbox)
+ [![](images/image9.png "A StyledStringElement allows strings to be presented using either built-in table cell styles or with custom formatting")](images/image9.png#lightbox)
 
-`StyledStringElement`类派生自，但允许开发人员自定义一些属性，如字体、文本颜色、背景单元颜色、换行模式、要显示的行数，以及是否`StringElement`应显示附件。
+`StyledStringElement` 类派生自 `StringElement`，但允许开发人员自定义一些属性，如字体、文本颜色、背景单元颜色、换行模式、要显示的行数，以及是否应显示附件。
 
 ### <a name="multiline-element"></a>多行元素
 
- [![](images/image10.png "多行元素")](images/image10.png#lightbox)
+ [![](images/image10.png "Multiline Element")](images/image10.png#lightbox)
 
 ### <a name="entry-element"></a>Entry 元素
 
-`EntryElement`正如名称所示，用于获取用户输入。 它支持常规字符串或密码（其中隐藏了个字符）。
+如名称所示，`EntryElement`用于获取用户输入。 它支持常规字符串或密码（其中隐藏了个字符）。
 
- [![](images/image11.png "EntryElement 用于获取用户输入")](images/image11.png#lightbox)
+ [![](images/image11.png "The EntryElement is used to get user input")](images/image11.png#lightbox)
 
 它初始化为三个值：
 
@@ -249,9 +249,9 @@ new StringElement ("Click me", () => {
 
 占位符和值可以为 null。 但标题是必需的。
 
-在任何时候，访问其 Value 属性都可以检索的值`EntryElement`。
+随时访问其 Value 属性可以检索 `EntryElement`的值。
 
-此外， `KeyboardType`还可以在创建时将属性设置为数据输入所需的键盘类型样式。 此操作可用于使用`UIKeyboardType`如下所示的值配置键盘：
+此外，可以在创建时将 `KeyboardType` 属性设置为数据输入所需的键盘类型样式。 这可用于使用下面列出的 `UIKeyboardType` 的值来配置键盘：
 
 - Numeric
 - 电话
@@ -260,90 +260,90 @@ new StringElement ("Click me", () => {
 
 ### <a name="boolean-element"></a>Boolean 元素
 
- [![](images/image12.png "Boolean 元素")](images/image12.png#lightbox)
+ [![](images/image12.png "Boolean Element")](images/image12.png#lightbox)
 
 ### <a name="checkbox-element"></a>Checkbox 元素
 
- [![](images/image13.png "Checkbox 元素")](images/image13.png#lightbox)
+ [![](images/image13.png "Checkbox Element")](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>单选元素
 
-需要在中`RootElement`指定。 `RadioGroup` `RadioElement`
+`RadioElement` 要求在 `RootElement`中指定 `RadioGroup`。
 
 ```csharp
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 ```
 
- [![](images/image14.png "RadioElement 需要在 RootElement 中指定 RadioGroup")](images/image14.png#lightbox)
+ [![](images/image14.png "A RadioElement requires a RadioGroup to be specified in the RootElement")](images/image14.png#lightbox)
 
- `RootElements`还用于协调收音机元素。 `RadioElement`成员可以跨多个部分（例如，实现类似于响铃音选择器的内容，并将自定义铃声与系统铃声分隔开）。 "摘要" 视图将显示当前选中的单选元素。 为此，请使用组`RootElement`构造函数创建，如下所示：
+ `RootElements` 还用于协调收音机元素。 `RadioElement` 成员可以跨多个部分（例如，实现类似于响铃音选择器的内容，并将自定义铃声与系统铃声分隔开）。 "摘要" 视图将显示当前选中的单选元素。 为此，请使用组构造函数创建 `RootElement`，如下所示：
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
 ```
 
-中`RadioGroup`组的名称用于显示包含页中的选定值（如果有）和值（在本例中为零）是第一个选定项的索引。
+`RadioGroup` 中的组名称用于显示 "包含" 页中的选定值（如果有）和值（在本例中为零）是第一个选定项的索引。
 
 ### <a name="badge-element"></a>徽章元素
 
- [![](images/image15.png "徽章元素")](images/image15.png#lightbox)
+ [![](images/image15.png "Badge Element")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Float 元素
 
- [![](images/image16.png "Float 元素")](images/image16.png#lightbox)
+ [![](images/image16.png "Float Element")](images/image16.png#lightbox)
 
 ### <a name="activity-element"></a>活动元素
 
- [![](images/image17.png "活动元素")](images/image17.png#lightbox)
+ [![](images/image17.png "Activity Element")](images/image17.png#lightbox)
 
 ### <a name="date-element"></a>Date 元素
 
- ![](images/image18.png "Date 元素")
+ ![](images/image18.png "Date Element")
 
 选择对应于 DateElement 的单元格时，将显示日期选取器，如下所示：
 
- [![](images/image19.png "选择对应于 DateElement 的单元格时，将显示日期选取器，如下所示")](images/image19.png#lightbox)
+ [![](images/image19.png "When the cell corresponding to the DateElement is selected, a date picker is presented as shown")](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>时间元素
 
- [![](images/image20.png "时间元素")](images/image20.png#lightbox)
+ [![](images/image20.png "Time Element")](images/image20.png#lightbox)
 
 如果选择对应于 TimeElement 的单元格，则会显示时间选取器，如下所示：
 
- [![](images/image21.png "如果选择对应于 TimeElement 的单元格，则会显示时间选取器，如下所示")](images/image21.png#lightbox)
+ [![](images/image21.png "When the cell corresponding to the TimeElement is selected, a time picker is presented as shown")](images/image21.png#lightbox)
 
 ### <a name="datetime-element"></a>DateTime 元素
 
- [![](images/image22.png "DateTime 元素")](images/image22.png#lightbox)
+ [![](images/image22.png "DateTime Element")](images/image22.png#lightbox)
 
 选择对应于 DateTimeElement 的单元格时，将显示日期时间选取器，如下所示：
 
- [![](images/image23.png "选择对应于 DateTimeElement 的单元格时，将显示日期时间选取器")](images/image23.png#lightbox)
+ [![](images/image23.png "When the cell corresponding to the DateTimeElement is selected, a datetime picker is presented as shown")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML 元素
 
- [![](images/image24.png "HTML 元素")](images/image24.png#lightbox)
+ [![](images/image24.png "HTML Element")](images/image24.png#lightbox)
 
-在表单元中`Caption` 显示其属性的值。`HTMLElement` 选择 Whe 后， `Url`将在`UIWebView`控件中加载分配给该元素的，如下所示：
+`HTMLElement` 在表单元格中显示其 `Caption` 属性的值。 选择 Whe 后，分配给元素的 `Url` 将加载到 `UIWebView` 的控件中，如下所示：
 
- [![](images/image25.png "选择 Whe 时，将在 UIWebView 控件中加载分配给该元素的 Url，如下所示")](images/image25.png#lightbox)
+ [![](images/image25.png "Whe selected, the Url assigned to the element is loaded in a UIWebView control as shown below")](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>Message 元素
 
- [![](images/image26.png "Message 元素")](images/image26.png#lightbox)
+ [![](images/image26.png "Message Element")](images/image26.png#lightbox)
 
 ### <a name="load-more-element"></a>加载更多元素
 
 使用此元素可允许用户在列表中加载更多项。 您可以自定义标准和加载标题以及字体和文本颜色。
-指示器开始进行动画处理，当用户点击单元格时，将显示加载标题，并执行传入构造函数的`NSAction`。 `UIActivity` 完成中的`NSAction`代码后`UIActivity` ，指示器将停止动画并再次显示正常标题。
+`UIActivity` 指示器开始进行动画处理，当用户点击该单元格时，将显示加载标题，然后执行传入构造函数的 `NSAction`。 在 `NSAction` 中的代码完成后，`UIActivity` 指示器将停止动画，并再次显示正常标题。
 
 ### <a name="uiview-element"></a>UIView 元素
 
-此外，可以`UIViewElement`使用`UIView`来显示任何自定义。
+此外，还可以使用 `UIViewElement`显示任何自定义 `UIView`。
 
 ### <a name="owner-drawn-element"></a>所有者描述的元素
 
-此元素必须是子类，因为它是抽象类。 应该重写`Height(RectangleF bounds)`方法，应在该方法中返回元素的高度， `Draw(RectangleF bounds, CGContext context, UIView view)`以及在给定边界内使用上下文和视图参数执行所有自定义绘图的方法。 此元素执行的是子类 a `UIView`的繁重提升，并将其放在要返回的单元中，只需实现两个简单的重写。 可以在`DemoOwnerDrawnElement.cs`文件的示例应用中查看更好的示例实现。
+此元素必须是子类，因为它是抽象类。 应该重写 `Height(RectangleF bounds)` 方法，应在该方法中返回元素的高度，以及在给定边界内使用上下文和视图参数进行所有自定义绘图的 `Draw(RectangleF bounds, CGContext context, UIView view)`。 此元素执行大量 `UIView`的子类化，并将其放在要返回的单元中，只需实现两个简单的重写。 可以在 `DemoOwnerDrawnElement.cs` 文件的示例应用中查看更好的示例实现。
 
 下面是实现类的一个非常简单的示例：
 
@@ -375,15 +375,15 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 
 ### <a name="json-element"></a>JSON 元素
 
-是的一个`RootElement`子类，它扩展了`RootElement`以便能够从本地或远程 url 加载嵌套子元素的内容。 `JsonElement`
+`JsonElement` 是一种 `RootElement` 的子类，它扩展了 `RootElement`，以便从本地或远程 url 加载嵌套子元素的内容。
 
-`JsonElement` 是可在两种形式`RootElement`中实例化的。 一个版本创建`RootElement`将按需加载内容的。 这些是通过使用在末尾`JsonElement`使用额外自变量的构造函数创建的，从其加载内容的 url：
+`JsonElement` 是可在两种形式中实例化的 `RootElement`。 一个版本创建将按需加载内容的 `RootElement`。 这些方法是使用 `JsonElement` 构造函数创建的，这些构造函数在末尾使用额外的自变量，从其加载内容的 url：
 
 ```csharp
 var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
-另一种形式将从本地文件或已分析的现有`System.Json.JsonObject`创建数据：
+另一种形式将从本地文件或已分析的现有 `System.Json.JsonObject` 创建数据：
 
 ```csharp
 var je = JsonElement.FromFile ("json.sample");
@@ -391,23 +391,23 @@ using (var reader = File.OpenRead ("json.sample"))
     return JsonElement.FromJson (JsonObject.Load (reader) as JsonObject, arg);
 ```
 
-有关将 JSON 与 MT 一起使用的详细信息。D. 参阅[JSON 元素演练](http://docs.xamarin.com/guides/ios/user_interface/monotouch.dialog/json_element_walkthrough)教程。
+有关将 JSON 与 MT 一起使用的详细信息。D. 参阅[JSON 元素演练](https://docs.microsoft.com/xamarin/ios/user-interface/monotouch.dialog/json-element-walkthrough)教程。
 
 ## <a name="other-features"></a>其他功能
 
 ### <a name="pull-to-refresh-support"></a>请求刷新支持
 
- *拉取到* *Refresh*是最初在*Tweetie2*应用中找到的视觉效果，在许多应用程序中，这会成为一种流行的效果。
+ *请求* *刷新*是最初在*Tweetie2*应用中找到的视觉效果，在许多应用程序中，这会成为一种流行的效果。
 
-若要向对话添加自动请求刷新支持，只需执行以下两项操作：挂钩事件处理程序，以便在用户提取数据时得到通知，并在加载数据后通知`DialogViewController`其默认状态。
+若要向对话添加自动请求刷新支持，只需执行以下两项操作：挂钩事件处理程序，以便在用户提取数据时得到通知，并在数据加载到其默认状态时通知 `DialogViewController`。
 
-将通知挂钩很简单;只需连接到`RefreshRequested` `DialogViewController`上的事件，如下所示：
+将通知挂钩很简单;只需连接到 `DialogViewController`上的 `RefreshRequested` 事件，如下所示：
 
 ```csharp
 dvc.RefreshRequested += OnUserRequestedRefresh;
 ```
 
-然后，在您`OnUserRequestedRefresh`的方法中，将对某些数据加载进行排队，请求从 net 请求某些数据，或旋转线程以计算数据。 加载数据后，必须通知`DialogViewController`新数据所在，并将视图还原到其默认状态，方法是调用： `ReloadComplete`
+然后，在您的方法 `OnUserRequestedRefresh`上，您可以将一些数据加载排队，从 net 请求某些数据，或旋转线程以计算数据。 加载数据后，必须将新数据通知 `DialogViewController`，并将该视图还原为其默认状态，方法是调用 `ReloadComplete`：
 
 ```csharp
 dvc.ReloadComplete ();
@@ -415,9 +415,9 @@ dvc.ReloadComplete ();
 
 ### <a name="search-support"></a>搜索支持
 
-若要支持搜索，请`EnableSearch` `DialogViewController`在上设置属性。 还可以将`SearchPlaceholder`属性设置为在搜索栏中用作水印文本。
+若要支持搜索，请设置 `DialogViewController`上的 `EnableSearch` 属性。 您还可以将 `SearchPlaceholder` 属性设置为在搜索栏中用作水印文本。
 
-搜索将在用户键入时更改视图的内容。 它会搜索可见字段并向用户显示这些字段。 `DialogViewController`公开了三种方法，以编程方式启动、终止或触发针对结果的新筛选器操作。 下面列出了这些方法：
+搜索将在用户键入时更改视图的内容。 它会搜索可见字段并向用户显示这些字段。 `DialogViewController` 公开了三种方法，以编程方式启动、终止或触发针对结果的新筛选器操作。 下面列出了这些方法：
 
 - `StartSearch`
 - `FinishSearch`
@@ -431,9 +431,9 @@ Monotouch.dialog 包含[TweetStation](https://github.com/migueldeicaza/TweetStat
 
 它还会限制传出的网络连接数。
 
-在`ImageLoader`类中实现了图像加载程序，你只需`DefaultRequestImage`调用方法，你将需要提供要加载的映像的 Uri，以及在映像 ha 时将调用的`IImageUpdated`接口实例。已加载。
+图像加载程序在 `ImageLoader` 类中实现，你只需调用 `DefaultRequestImage` 方法，你将需要提供要加载的映像的 Uri，以及将在映像时调用的 `IImageUpdated` 接口的实例。已加载。
 
-例如，以下代码将图像从 Url 加载到中`BadgeElement`：
+例如，以下代码将图像从 Url 加载到 `BadgeElement`中：
 
 ```csharp
 string uriString = "http://some-server.com/some image url";
@@ -449,7 +449,7 @@ ImageLoader 类公开了一个清除方法，当你想要释放当前缓存在�
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>使用 LINQ 创建元素层次结构
 
-通过使用 LINQ 和C#的初始化语法，linq 可用于创建元素层次结构。 例如，下面的代码从某些字符串数组创建一个屏幕，并通过传递到每个`StringElement`的匿名函数来处理单元格选择：
+通过使用 LINQ 和C#的初始化语法，linq 可用于创建元素层次结构。 例如，下面的代码从某些字符串数组创建一个屏幕，并通过传入每个 `StringElement`的匿名函数来处理单元格选择：
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {
@@ -491,14 +491,14 @@ void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path
 bool Matches (string text);
 ```
 
-如果元素的大小可以是可变的，则需要实现`IElementSizing`接口，该接口包含一个方法：
+如果元素的大小可以是可变的，则需要实现 `IElementSizing` 接口，该接口包含一个方法：
 
 ```csharp
 // Returns the height for the cell at indexPath.Section, indexPath.Row
 float GetHeight (UITableView tableView, NSIndexPath indexPath);
 ```
 
-如果你打算通过调用`GetCell` `base.GetCell(tv)`并自定义返回的单元格来实现方法，则还`CellKey`需要重写属性以返回将对你的元素唯一的键，如下所示：
+如果你计划通过调用 `base.GetCell(tv)` 并自定义返回的单元来实现 `GetCell` 方法，则还需要重写 `CellKey` 属性，以返回将对你的元素唯一的键，如下所示：
 
 ```csharp
 static NSString MyKey = new NSString ("MyKey");
@@ -509,15 +509,15 @@ protected override NSString CellKey {
 }
 ```
 
-这适用于大多数元素，但不适`StringElement`用于和， `StyledStringElement`因为它们对各种呈现方案使用自己的键集。 必须复制这些类中的代码。
+这适用于大多数元素，但不适用于 `StringElement` 和 `StyledStringElement`，因为它们对各种呈现方案使用自己的键集。 必须复制这些类中的代码。
 
 ### <a name="dialogviewcontrollers-dvcs"></a>DialogViewControllers （DVCs）
 
-反射和元素 API 使用相同`DialogViewController`的。 有时你需要自定义视图的外观`UITableViewController` ，或者你可能想要使用的某些功能超出了 ui 的基本创建功能。
+反射和元素 API 使用相同的 `DialogViewController`。 有时，您需要自定义视图的外观，或者您可能想要使用 `UITableViewController` 的某些功能，这些功能超出了 Ui 的基本创建。
 
-只是的`UITableViewController`子类，你可以采用与自定义`UITableViewController`相同的方式对其进行自定义。 `DialogViewController`
+`DialogViewController` 只是 `UITableViewController` 的子类，你可以采用与自定义 `UITableViewController`相同的方式对其进行自定义。
 
-例如，如果要将列表样式更改为`Grouped`或`Plain`，则可以通过在创建控制器时更改属性来设置此值，如下所示：
+例如，如果要将列表样式更改为 `Grouped` 或 `Plain`，则可以通过在创建控制器时更改属性来设置此值，如下所示：
 
 ```csharp
 var myController = new DialogViewController (root, true) {
@@ -525,7 +525,7 @@ var myController = new DialogViewController (root, true) {
 }
 ```
 
-对于更高级的自定义`DialogViewController`设置，如设置其背景，你会将它划分为子类并重写适当的方法，如以下示例中所示：
+若要对 `DialogViewController`进行更高级的自定义操作（例如设置其背景），请将其划分为子类并重写适当的方法，如以下示例中所示：
 
 ```csharp
 class SpiffyDialogViewController : DialogViewController {
@@ -547,25 +547,25 @@ class SpiffyDialogViewController : DialogViewController {
 }
 ```
 
-另一个自定义点是中`DialogViewController`的以下虚拟方法：
+另一个自定义点是 `DialogViewController`中的以下虚拟方法：
 
 ```csharp
 public override Source CreateSizingSource (bool unevenRows)
 ```
 
-如果单元格大小相等，则`DialogViewController.Source`此方法应返回的子类; 如果单元格不相等，则返回的子类。 `DialogViewController.SizingSource`
+如果单元格大小相等，则此方法应返回 `DialogViewController.Source` 的子类; 如果单元不均匀，则返回 `DialogViewController.SizingSource` 的子类。
 
-您可以使用此替代来捕获任何`UITableViewSource`方法。 例如， [TweetStation](https://github.com/migueldeicaza/TweetStation)使用它来跟踪用户滚动到顶部的时间，并相应地更新未读推文的数量。
+您可以使用此替代来捕获任何 `UITableViewSource` 方法。 例如， [TweetStation](https://github.com/migueldeicaza/TweetStation)使用它来跟踪用户滚动到顶部的时间，并相应地更新未读推文的数量。
 
 ## <a name="validation"></a>验证
 
 元素不会自行提供验证，因为这种模型非常适合于网页和桌面应用程序，也不会直接映射到 iPhone 交互模型。
 
-如果要进行数据验证，则应在用户使用输入的数据触发操作时执行此操作。 例如，在顶部工具栏上的 "完成" 或 "**下一步**" 按钮，或者某些`StringElement`按钮用于**执行**下一阶段。
+如果要进行数据验证，则应在用户使用输入的数据触发操作时执行此操作。 例如，在顶部工具栏上的 "**完成**" 或 "**下一步**" 按钮，或者某些 `StringElement` 用作按钮以切换到下一阶段。
 
 在这种情况下，你将执行基本输入验证，并且可能更复杂的验证，例如检查与服务器的用户/密码组合的有效性。
 
-如何将错误通知用户是特定于应用程序的。 您可以弹出`UIAlertView`或显示提示。
+如何将错误通知用户是特定于应用程序的。 可以弹出 `UIAlertView` 或显示提示。
 
 ## <a name="summary"></a>总结
 

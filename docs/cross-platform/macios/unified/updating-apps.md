@@ -3,15 +3,15 @@ title: 将现有应用程序更新到 Unified API
 description: 本文档链接到介绍如何将 Xamarin 应用程序更新到 Unified API 的各种指南。 它讨论了 Xamarin iOS 应用程序和 Xamarin 应用程序。 Xamarin、Forms 应用、跨平台应用中的本机类型和绑定项目。
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: d4904688302ac7f17c6326249ff08315d929e23c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106062"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015011"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>将现有应用程序更新到 Unified API
 

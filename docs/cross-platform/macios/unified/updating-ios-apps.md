@@ -3,15 +3,15 @@ title: 正在更新现有的 iOS 应用
 description: 本文档介绍将 Xamarin iOS 应用程序从 Classic API 更新到 Unified API 时必须遵循的步骤。
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74efef96a15a950122041eb52dc09835bb8940b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b531bd095781c80c5f3418725d57f8f6bbb06fd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279554"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015028"
 ---
 # <a name="updating-existing-ios-apps"></a>正在更新现有的 iOS 应用
 
@@ -31,13 +31,13 @@ Xamarin 为 Visual Studio for Mac 和 Visual Studio 提供了工具来自动执�
 
 ## <a name="automated-updating"></a>自动更新
 
-解决这些警告后，请在 Visual Studio for Mac 或 Visual Studio 中选择现有的 iOS 项目，然后从 "**项目**" 菜单中选择 "**迁移到 Xamarin" Unified API** 。 例如：
+解决这些警告后，请在 Visual Studio for Mac 或 Visual Studio 中选择现有的 iOS 项目，然后从 "**项目**" 菜单中选择 "**迁移到 Xamarin" Unified API** 。 例如:
 
-![](updating-ios-apps-images/beta-tool1.png "从 \"项目\" 菜单中选择 \"迁移到 Xamarin iOS Unified API")
+![](updating-ios-apps-images/beta-tool1.png "Choose Migrate to Xamarin.iOS Unified API from the Project menu")
 
 你将需要在自动迁移运行之前同意此警告（显然，你应该确保在此艾德公司上着手之前具有备份/源代码管理）：
 
-![](updating-ios-apps-images/beta-tool2.png "在自动迁移运行之前同意此警告")
+![](updating-ios-apps-images/beta-tool2.png "Agree to this warning before the automated migration will run")
 
 该工具主要自动执行下面提供的 "**手动更新**" 一节中所述的所有步骤，这是将现有 Xamarin 项目转换到 Unified API 的建议方法。
 
@@ -45,51 +45,51 @@ Xamarin 为 Visual Studio for Mac 和 Visual Studio 提供了工具来自动执�
 
 同样，在修复警告后，请按照以下步骤手动更新 Xamarin iOS 应用以使用新 Unified API：
 
-### <a name="1-update-project-type--build-target"></a>1.更新项目类型 & 生成目标
+### <a name="1-update-project-type--build-target"></a>1. 更新项目类型 & 生成目标
 
-将 **.csproj**文件中的项目风格从`6BC8ED88-2882-458C-8E55-DFD12B67127B`更改为。 `FEACFBD2-3405-455C-9665-78FE426C6842` 在文本编辑器中编辑 **.csproj**文件，并按如下所示替换`<ProjectTypeGuids>`元素中的第一项：
+将 **.csproj**文件中的项目风格从 `6BC8ED88-2882-458C-8E55-DFD12B67127B` 更改为 `FEACFBD2-3405-455C-9665-78FE426C6842`。 在文本编辑器中编辑 **.csproj**文件，并按如下所示替换 `<ProjectTypeGuids>` 元素中的第一项：
 
-![](updating-ios-apps-images/csproj.png "在文本编辑器中编辑 .csproj 文件，并按如下所示替换 ProjectTypeGuids 元素中的第一项")
+![](updating-ios-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
 
-按照如下所示，将`Xamarin.MonoTouch.CSharp.targets`包含的导入元素更改为： `Xamarin.iOS.CSharp.targets`
+将包含 `Xamarin.MonoTouch.CSharp.targets` 的**Import**元素更改 `Xamarin.iOS.CSharp.targets`，如下所示：
 
-![](updating-ios-apps-images/csproj2.png "按如下所示将包含 Monotouch.dialog 的 Import 元素更改为 Xamarin。")
+![](updating-ios-apps-images/csproj2.png "Change the Import element that contains Xamarin.MonoTouch.CSharp.targets to Xamarin.iOS.CSharp.targets as shown")
 
-### <a name="2-update-project-references"></a>2.更新项目引用
+### <a name="2-update-project-references"></a>2. 更新项目引用
 
 展开 "iOS 应用程序" 项目的 "**引用**" 节点。 它最初将显示类似于此屏幕截图的 * **monotouch.dialog**引用（因为我们只是更改了项目类型）：
 
-![](updating-ios-apps-images/references.png "它最初将显示类似于此屏幕截图的 monotouch.dialog 引用，因为项目类型已更改")
+![](updating-ios-apps-images/references.png "It will initially show a broken- monotouch reference similar to this screenshot because the project type changed")
 
 右键单击 iOS 应用程序项目以**编辑引用**，然后单击 " **monotouch.dialog** " 引用并使用红色 "X" 按钮将其删除。
 
-![](updating-ios-apps-images/references-delete-monotouch-sml.png "右键单击 iOS 应用程序项目以编辑引用，然后单击 \"monotouch.dialog\" 引用并使用红色 X 按钮删除它")
+![](updating-ios-apps-images/references-delete-monotouch-sml.png "Right-click on the iOS application project to Edit References, then click on the monotouch reference and delete it using the red X button")
 
 现在滚动到引用列表的末尾，并勾选**Xamarin**程序集。
 
-![](updating-ios-apps-images/references-add-xamarinios-sml.png "现在滚动到引用列表的末尾，并勾选 Xamarin 程序集")
+![](updating-ios-apps-images/references-add-xamarinios-sml.png "Now scroll to the end of the references list and tick the Xamarin.iOS assembly")
 
 按 **"确定"** 以保存项目引用更改。
 
-### <a name="3-remove-monotouch-from-namespaces"></a>3.从命名空间中删除 Monotouch.dialog
+### <a name="3-remove-monotouch-from-namespaces"></a>3. 从命名空间中删除 Monotouch.dialog
 
-从语句中的命名空间中`using`删除 monotouch.dialog 前缀，或者在类的完全限定的位置（例如 `MonoTouch.UIKit`变成了`UIKit`）。
+从 `using` 语句的命名空间中删除**monotouch.dialog**前缀，或者在类的完全限定的任何位置（例如 `MonoTouch.UIKit` 将变成 `UIKit`）。
 
-### <a name="4-remap-types"></a>4.重新映射类型
+### <a name="4-remap-types"></a>4. 重新映射类型
 
-引入了[本机类型](~/cross-platform/macios/nativetypes.md)，这将替换以前使用的某些类型，如的实例`System.Drawing.RectangleF` `CoreGraphics.CGRect` （例如）。 可以在[本机类型](~/cross-platform/macios/nativetypes.md)页上找到类型的完整列表。
+引入了[本机类型](~/cross-platform/macios/nativetypes.md)，这些类型将替换以前使用的某些类型，如使用 `CoreGraphics.CGRect` `System.Drawing.RectangleF` 的实例。 可以在[本机类型](~/cross-platform/macios/nativetypes.md)页上找到类型的完整列表。
 
-### <a name="5-fix-method-overrides"></a>5.修复方法替代
+### <a name="5-fix-method-overrides"></a>5. 修复方法替代
 
-某些`UIKit`方法已将其签名更改为使用新的[本机类型](~/cross-platform/macios/nativetypes.md)（如`nint`）。 如果自定义子类重写这些方法，则签名将不再匹配，并将导致错误。 通过更改子类以匹配使用本机类型的新签名来修复这些方法重写。
+某些 `UIKit` 方法已将其签名更改为使用新的[本机类型](~/cross-platform/macios/nativetypes.md)（如 `nint`）。 如果自定义子类重写这些方法，则签名将不再匹配，并将导致错误。 通过更改子类以匹配使用本机类型的新签名来修复这些方法重写。
 
-示例包括`public override int NumberOfSections (UITableView tableView)` `nint`：更改以`nint`返回和更改中的`public override int RowsInSection (UITableView tableView, int section)`返回类型和参数类型。
+例如，更改 `public override int NumberOfSections (UITableView tableView)` 以返回 `nint` 并将 `public override int RowsInSection (UITableView tableView, int section)` 中的返回类型和参数类型更改为 `nint`。
 
 ## <a name="considerations"></a>注意事项
 
 如果将现有的 Xamarin iOS 项目从 Classic API 转换为新 Unified API （如果该应用依赖于一个或多个组件或 NuGet 包），则应考虑以下注意事项。
 
-### <a name="components"></a>组件
+### <a name="components"></a>组件数
 
 还需要将应用程序中包含的任何组件更新为 Unified API，否则在尝试编译时将会出现冲突。 对于包含的任何组件，请将当前版本替换为支持 Unified API 的 Xamarin 组件存储中的新版本，并执行干净的生成。 尚未由作者转换的任何组件将在组件存储区中显示仅限32位的警告。
 

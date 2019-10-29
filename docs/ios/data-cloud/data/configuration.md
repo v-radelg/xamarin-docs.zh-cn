@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中确定 SQLite �
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 7b60c8f306ad815cd3292cc94bd80f87b49df547
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9140b98511aae5e24ee8aaf069668a793221c1a7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767001"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009051"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>在 Xamarin 中配置 SQLite
 

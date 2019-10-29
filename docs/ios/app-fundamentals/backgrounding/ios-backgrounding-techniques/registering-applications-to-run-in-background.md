@@ -4,15 +4,15 @@ description: 本文档介绍如何注册 Xamarin iOS 应用程序以在后台运
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 61b7926f28253acbcc45bc204c466d76a00c72b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757692"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010835"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>注册 Xamarin iOS 应用程序以在后台运行
 
@@ -34,15 +34,15 @@ ms.locfileid: "70757692"
 
 可以通过在应用程序的*info.plist*中设置**所需的后台模式**属性来注册应用程序。 应用程序可以根据需要注册任意多个类别：
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "设置背景模式")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Setting the background modes")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 有关为后台位置更新注册应用程序的分步指南，请参阅[后台位置演练](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)。
 
 ## <a name="application-does-not-run-in-background-property"></a>应用程序未在后台属性中运行
 
-可以在*info.plist*中设置的另一个属性是*应用程序不会在后台运行*，也`UIApplicationExitsOnSuspend`不能在属性中运行：
+可以在*info.plist*中设置的另一个属性是，*应用程序不在后台运行*，或者 `UIApplicationExitsOnSuspend` 属性：
 
- [![](registering-applications-to-run-in-background-images/plist.png "禁用后台运行")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "Disabling Background Running")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 这与在 iOS 7 + 中将后台应用刷新设置设置为 off 完全相同，只是它只能在开发人员端进行更改，适用于 iOS 4 及更高版本。 在进入后台后，应用程序将立即挂起，并且将无法进行任何处理。
 

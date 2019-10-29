@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/06/2018
-ms.openlocfilehash: 31e4073df70ced0cc9729c6dc292500264ad7fce
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 56430f8c4988c16a31f9806b0ffb8b6355d6340b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249957"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019997"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -29,11 +29,11 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 在基于 Xamarin 的应用中使用 Android Oreo 功能时需要以下各项：
 
-- **Visual Studio**&ndash;如果使用的是 Windows，则需要 Visual Studio 版本15.5 或更高版本。  如果你使用的是 Mac，Visual Studio for Mac 版本7.2.0 是必需的。
+- **Visual studio** &ndash; 如果你使用的是 Windows，则需要 visual studio 版本15.5 或更高版本。  如果你使用的是 Mac，Visual Studio for Mac 版本7.2.0 是必需的。
 
-- 必须通过 Visual Studio 安装和配置**Xamarin** xamarin8.0或更高版本。&ndash;
+- **Xamarin** &ndash; xamarin 8.0 或更高版本必须安装并配置 Visual Studio。
 
-- **Android SDK**&ndash;必须通过 Android SDK 管理器安装 Android SDK 8.0 （API 26）或更高版本。
+- Android SDK 8.0 （API 26）或更高版本的**Android SDK** &ndash; 必须通过 Android SDK 管理器进行安装。
 
 ## <a name="getting-started"></a>入门
 
@@ -87,7 +87,7 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 3. 安装**Android SDK Tools 26.0.2**或更高版本、 **Android SDK 平台工具 26.0.0**或更高版本，以及**Android SDK 生成工具 26.0.0** （或更高版本）：
 
-    [![选择 Android SDK 管理器中 Android SDK Tools 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
+    [在 Android SDK 管理器中选择 Android SDK Tools 26![](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -99,7 +99,7 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 3. 安装**Android SDK Tools 26.0.2**或更高版本、 **Android SDK 平台工具 26.0.0**或更高版本，以及**Android SDK 生成工具 26.0.0** （或更高版本）：
 
-    [![选择 SDK 管理器中 Android SDK Tools 26](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
+    [在 SDK 管理器中选择 Android SDK Tools 26![](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
@@ -123,7 +123,7 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 -----
 
-显示此消息是因为 Google 不再提供支持 API 26.0 和更高版本的独立 GUI AVD 管理器。 对于 android 8.0 Oreo，必须使用 Xamarin Android Emulator 管理器或命令行`avdmanager`工具创建适用于 android Oreo 的虚拟设备。
+显示此消息是因为 Google 不再提供支持 API 26.0 和更高版本的独立 GUI AVD 管理器。 对于 Android 8.0 Oreo，必须使用 Xamarin Android Emulator 管理器或命令行 `avdmanager` 工具创建适用于 Android Oreo 的虚拟设备。
 
 若要使用 Android Device Manager 来创建和管理虚拟设备，请参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)。
 若要创建不包含 Android Device Manager 的虚拟设备，请按照下一部分中的步骤进行操作。
@@ -134,13 +134,13 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 打开命令提示符窗口，并将`JAVA_HOME`设置为 Java SDK 在计算机上的位置。 对于典型的 Xamarin 安装，你可以使用以下命令：
+1. 打开 "命令提示符" 窗口，将 `JAVA_HOME` 设置为计算机上 Java SDK 的位置。 对于典型的 Xamarin 安装，你可以使用以下命令：
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2. 将 Android SDK `bin`文件夹的位置添加`PATH`到。
+2. 将 Android SDK `bin` 文件夹的位置添加到 `PATH`。
     对于典型的 Xamarin 安装，你可以使用以下命令：
 
     ```cmd
@@ -157,7 +157,7 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 **Avdmanager**创建虚拟设备后，该设备将包含在设备下拉菜单中：
 
-[![新 AVD 已添加到设备下拉菜单](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
+[![新的 AVD 添加到设备下拉菜单](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -177,7 +177,7 @@ _如何开始使用 Xamarin 开发适用于 Android 的最新版本的应用。_
 
 使用**avdmanager**创建虚拟设备后，该设备将包含在设备下拉菜单中：
 
-[![新 AVD 已添加到设备下拉菜单](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
+[![新的 AVD 添加到设备下拉菜单](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -200,9 +200,9 @@ Android Oreo 引入了各种新特性和功能，如通知通道、通知徽章�
 
 通知徽章是显示在应用程序图标上方的小点，如以下屏幕截图所示：
 
-[![应用图标上的示例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[应用图标上的![示例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
-这些点表示应用程序中与该应用程序图标&ndash;关联的一个或多个通知通道有新的通知。这些是用户尚未解除或操作的通知。 用户可以长时间按一个图标，浏览与通知徽章关联的通知，从 appeaars 的长时间菜单关闭或操作通知。
+这些点表示应用程序中与该应用程序图标关联的一个或多个通知通道有新的通知 &ndash; 这些是用户尚未解除或操作的通知。 用户可以长时间按一个图标，浏览与通知徽章关联的通知，从 appeaars 的长时间菜单关闭或操作通知。
 
 有关锁屏通知的详细信息，请参阅 Android 开发人员[通知徽章](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges)主题。
 
@@ -214,9 +214,9 @@ Android Oreo*在 XML 中*引入了字体，这使你可以将自定义字体作�
 
 2. 将字体文件（如 **.ttf**和**otf**文件）复制到**资源/字体**。 
 
-3. 如有必要，请重命名每个字体文件，使其遵守 Android 文件命名约定（即，在文件名中只使用小写*a-z*、 *0-9*和下划线）。 例如，可以将字体文件`Pacifico-Regular.ttf`重命名为类似`pacifico.ttf`的内容。
+3. 如有必要，请重命名每个字体文件，使其遵守 Android 文件命名约定（即，在文件名中只使用小写*a-z*、 *0-9*和下划线）。 例如，可以将字体文件 `Pacifico-Regular.ttf` 重命名为类似 `pacifico.ttf`。
 
-4. 在布局 XML 中使用新`android:fontFamily`属性应用自定义字体。 例如，下面`TextView`的声明使用添加的**pacifico. .ttf**字体资源：
+4. 使用布局 XML 中的新 `android:fontFamily` 属性应用自定义字体。 例如，以下 `TextView` 声明使用了添加的**pacifico. .ttf**字体资源：
 
    ```xml
    <TextView
@@ -232,7 +232,7 @@ Android Oreo*在 XML 中*引入了字体，这使你可以将自定义字体作�
 
 从 Android Oreo 开始，应用可以从提供程序请求字体，而不是将其绑定到 APK。 仅在需要时才从网络下载字体。 此功能可减少 APK 大小、节省电话内存和移动电话数据。 你还可以在 Android API 版本14及更高版本上使用此功能，方法是安装 Android 支持库26包。
 
-当应用需要字体时，可以创建`FontsRequest`对象（指定要下载的字体），然后将其传递`FontsContract`给方法以下载字体。 以下步骤更详细地介绍了字体下载过程：
+当应用需要字体时，可以创建 `FontsRequest` 对象（指定要下载的字体），然后将其传递给 `FontsContract` 方法以下载字体。 以下步骤更详细地介绍了字体下载过程：
 
 1. 实例化[FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html)对象。 
 
@@ -244,7 +244,7 @@ Android Oreo*在 XML 中*引入了字体，这使你可以将自定义字体作�
 
 5. 调用[FontsContract. RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback))方法可从字体提供程序检索字体。 
 
-当你调用`RequestFonts`方法时，它首先会检查是否在本地缓存了该字体（从以前对的`RequestFont`调用）。 如果未缓存此`OnTypeFaceRetrieved`方法，它将调用字体提供程序，以异步方式检索字体，然后通过调用方法将结果传递回应用程序。
+调用 `RequestFonts` 方法时，它首先检查是否在本地缓存了该字体（从以前对 `RequestFont`的调用）。 如果未缓存此方法，它将调用字体提供程序，以异步方式检索字体，然后通过调用 `OnTypeFaceRetrieved` 方法将结果传递回应用程序。
 
 [可下载字体](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)示例演示如何使用 Android Oreo 中引入的可下载字体功能。 
 
@@ -268,11 +268,11 @@ Android Oreo 使活动可以在图片内（PIP）模式下启动，从而覆盖�
 android:supportsPictureInPicture
 ```
 
-若要指定活动处于 PIP 模式时的行为方式，请使用新的[PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html)对象。 `PictureInPictureParams`表示一组参数，这些参数用于初始化和更新 PIP 模式下的活动（例如活动的首选纵横比）。 Android Oreo `Activity`中添加了以下新 PIP 方法：
+若要指定活动处于 PIP 模式时的行为方式，请使用新的[PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html)对象。 `PictureInPictureParams` 表示一组参数，这些参数用于在 PIP 模式下初始化和更新活动（例如活动的首选纵横比）。 已将以下新 PIP 方法添加到 Android Oreo 中的 `Activity`：
 
-- [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29)&ndash;将活动置于 PIP 模式下。 活动位于屏幕的角上，而屏幕的其余部分则由屏幕上的前一个活动填充。
+- [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; 将活动置于 PIP 模式下。 活动位于屏幕的角上，而屏幕的其余部分则由屏幕上的前一个活动填充。
 
-- [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;更新活动的 PIP 配置设置（例如，纵横比的更改）。
+- [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; 更新活动的 PIP 配置设置（例如，纵横比的更改）。
 
 [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)示例演示了在 Oreo 中引入的手持式设备的图画（PiP）模式的基本用法。 此示例播放一个视频，在显示模式或其他活动之间来回切换时，该视频无间断地继续。
 
@@ -288,9 +288,9 @@ Android Oreo 包括各种系统和 API 行为更改，这些更改可能会影�
 
 为了改进用户体验，Android Oreo 对应用在后台运行时可以执行的操作施加限制。 例如，如果用户正在观看视频或玩游戏，在后台运行的应用可能会影响在前台运行的视频密集型应用程序的性能。 因此，Android Oreo 在不直接与用户交互的应用上施加以下限制：
 
-1. **后台服务限制**&ndash;当应用在后台运行时，它有几分钟的时间，仍允许创建和使用服务。 在该窗口结束时，Android 会停止应用的后台服务，并将其视为_空闲状态_。
+1. **后台服务限制**&ndash; 当应用在后台运行时，它有几分钟的时间，仍允许创建和使用服务。 在该窗口结束时，Android 会停止应用的后台服务，并将其视为_空闲状态_。
 
-2. **广播限制**&ndash; Android 7.0 （API 25）对应用注册接收的广播施加限制。 Android Oreo 使得这些限制更严格。 例如，Android Oreo 应用程序无法再为其清单中的隐式广播注册广播接收器。
+2. Android 7.0 （API 25） &ndash; 的**广播限制**对应用注册接收的广播施加限制。 Android Oreo 使得这些限制更严格。 例如，Android Oreo 应用程序无法再为其清单中的隐式广播注册广播接收器。
 
 有关新的后台执行限制的详细信息，请参阅 Android 开发人员[后台执行限制](https://developer.android.com/about/versions/oreo/background.html)主题。
 
@@ -300,7 +300,7 @@ Android Oreo 包括各种系统和 API 行为更改，这些更改可能会影�
 
 - Android Oreo 弃用设置单个通知的优先级。 而是在创建通知通道时设置建议的重要性级别。 你分配给通知通道的重要性级别适用于你向其发送的所有通知消息。
 
-- 对于面向 Android Oreo 的应用`PendingIntent.GetService()` ，由于在后台启动的服务的新限制，因此不起作用。 如果你面向的是 Android Oreo，则应该改用[PendingIntent。](xref:Android.App.PendingIntent.GetBroadcast*)  
+- 对于面向 Android Oreo 的应用，`PendingIntent.GetService()` 不起作用，因为在后台启动的服务的新限制。 如果你面向的是 Android Oreo，则应该改用[PendingIntent。](xref:Android.App.PendingIntent.GetBroadcast*)  
 
 ## <a name="sample-code"></a>代码示例
 
@@ -316,7 +316,7 @@ Android Oreo 包括各种系统和 API 行为更改，这些更改可能会影�
 
 - [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)演示 EmojiCompat 支持库的使用情况。 您可以使用此库来防止您的应用程序将缺少的表情符号字符显示为 "tofu" 字符。
 
-- [位置更新挂起意向](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)说明位置 API 的使用情况，以获取有关使用`PendingIntent`的设备位置的更新。
+- [位置更新挂起意向](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)说明位置 API 的使用情况，以获取有关使用 `PendingIntent`设备的位置的更新。
 
 - [位置更新前景服务](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)演示了如何使用定位 API，通过绑定和启动的前台服务获取有关设备位置的更新。
 

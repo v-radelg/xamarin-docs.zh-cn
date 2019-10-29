@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/26/2019
-ms.openlocfilehash: 6ea8195d422da3c64175b164c5fbf2885eb234ab
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 10/28/2019
+ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696371"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980876"
 ---
 # <a name="xamarinforms-label"></a>Xamarin 标签
 
@@ -20,7 +20,7 @@ ms.locfileid: "72696371"
 
 _在 Xamarin. Forms 中显示文本_
 
-" [@No__t_1](xref:Xamarin.Forms.Label) " 视图用于显示文本（单行和多行）。 标签可以具有文本修饰、彩色文本和使用自定义字体（系列、大小和选项）。
+" [`Label`](xref:Xamarin.Forms.Label) " 视图用于显示文本（单行和多行）。 标签可以具有文本修饰、彩色文本和使用自定义字体（系列、大小和选项）。
 
 ## <a name="text-decorations"></a>文本修饰
 
@@ -69,32 +69,6 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 ```
 
 结果是[`Label`](xref:Xamarin.Forms.Label)显示的文本中的字符间距 `CharacterSpacing` 与设备无关的单位。
-
-## <a name="padding"></a>填充
-
-填充表示元素及其子元素之间的空间，用于将元素与其自身内容分离。 可以通过将 `Label.Padding` 属性设置为[`Thickness`](xref:Xamarin.Forms.Thickness)值，将填充应用到[`Label`](xref:Xamarin.Forms.Label)实例：
-
-```xaml
-<Label Text="Padded text"
-       Padding="20" />
-```
-
-等效 C# 代码如下：
-
-```csharp
-Label label = new Label
-{
-    Text = "Padded text",
-    Padding = new Thickness(20)
-};
-```
-
-> [!IMPORTANT]
-> 在 iOS 上，当创建设置 `Padding` 属性的[`Label`](xref:Xamarin.Forms.Label)时，将应用填充，并且可以在以后更新填充值。 但是，如果创建的 `Label` 不设置 `Padding` 属性，稍后尝试设置该属性将不起作用。
->
-> 在 Android 和通用 Windows 平台上，可以在创建 `Label` 或更高版本时指定 `Padding` 属性值。
-
-有关填充的详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
 ## <a name="colors"></a>颜色
 
@@ -185,10 +159,9 @@ var label =
 
 ![标签 MaxLines 示例](label-images/label-maxlines.png)
 
-
 ## <a name="display-html"></a>显示 HTML
 
-[@No__t_1](xref:Xamarin.Forms.Label)类具有一个 `TextType` 属性，该属性确定 `Label` 实例是否应显示纯文本或 HTML 文本。 应将此属性设置为 `TextType` 枚举的成员之一：
+[`Label`](xref:Xamarin.Forms.Label)类具有一个 `TextType` 属性，该属性确定 `Label` 实例是否应显示纯文本或 HTML 文本。 应将此属性设置为 `TextType` 枚举的成员之一：
 
 - `Text` 指示 `Label` 将显示纯文本，并且是 `Label.TextType` 属性的默认值。
 - `Html` 指示 `Label` 将显示 HTML 文本。
@@ -239,7 +212,7 @@ Label label = new Label
 
 标签公开一个[`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)属性，该属性允许在同一视图中显示具有多种字体和颜色的文本。
 
-@No__t_0 属性的类型[`FormattedString`](xref:Xamarin.Forms.FormattedString)，它包含一个或多个[`Span`](xref:Xamarin.Forms.Span)实例，通过[`Spans`](xref:Xamarin.Forms.FormattedString.Spans)属性进行设置。 以下 `Span` 属性可用于设置视觉外观：
+`FormattedText` 属性的类型[`FormattedString`](xref:Xamarin.Forms.FormattedString)，它包含一个或多个[`Span`](xref:Xamarin.Forms.Span)实例，通过[`Spans`](xref:Xamarin.Forms.FormattedString.Spans)属性进行设置。 以下 `Span` 属性可用于设置视觉外观：
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) –跨度背景的颜色。
 - `CharacterSpacing` 类型 `double`，是 `Span` 文本的字符之间的间距。
@@ -254,7 +227,7 @@ Label label = new Label
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) –范围中文本的颜色。
 - `TextDecorations`-要应用于范围中的文本的修饰。 有关详细信息，请参阅[文本修饰](#text-decorations)。
 
-[@No__t_1](xref:Xamarin.Forms.Span.BackgroundColor)、 [`Text`](xref:Xamarin.Forms.Span.Text)和[`Text`](xref:Xamarin.Forms.Span.Text)可绑定属性的默认绑定模式为[`OneWay`](xref:Xamarin.Forms.BindingMode)。 有关此绑定模式的详细信息，请参阅[绑定模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中[的默认绑定模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)。
+[`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)、 [`Text`](xref:Xamarin.Forms.Span.Text)和[`Text`](xref:Xamarin.Forms.Span.Text)可绑定属性的默认绑定模式为[`OneWay`](xref:Xamarin.Forms.BindingMode)。 有关此绑定模式的详细信息，请参阅[绑定模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中[的默认绑定模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)。
 
 此外， [`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)属性可以用于定义将响应[`Span`](xref:Xamarin.Forms.Span)上的手势的笔势识别器的集合。
 
@@ -391,9 +364,51 @@ var label = new Label
 
 ![Span LineHeight 示例](label-images/span-lineheight.png)
 
+## <a name="padding"></a>填充
+
+填充表示元素及其子元素之间的空间，用于将元素与其自身内容分离。 可以通过将 `Label.Padding` 属性设置为[`Thickness`](xref:Xamarin.Forms.Thickness)值，将填充应用到[`Label`](xref:Xamarin.Forms.Label)实例：
+
+```xaml
+<Label Padding="10">
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="Lorem ipsum" />
+            <Span Text="dolor sit amet." />
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
+```
+
+等效 C# 代码如下：
+
+```csharp
+FormattedString formattedString = new FormattedString();
+formattedString.Spans.Add(new Span
+{
+  Text = "Lorem ipsum"
+});
+formattedString.Spans.Add(new Span
+{
+  Text = "dolor sit amet."
+});
+Label label = new Label
+{
+    FormattedText = formattedString,
+    Padding = new Thickness(20)
+};
+```
+
+> [!IMPORTANT]
+> 在 iOS 上，当创建设置 `Padding` 属性的[`Label`](xref:Xamarin.Forms.Label)时，将应用填充，并且可以在以后更新填充值。 但是，如果创建的 `Label` 不设置 `Padding` 属性，稍后尝试设置该属性将不起作用。
+>
+> 在 Android 和通用 Windows 平台上，可以在创建 `Label` 或更高版本时指定 `Padding` 属性值。
+
+有关填充的详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
+
+
 ## <a name="hyperlinks"></a>中超
 
-[@No__t_1](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)实例显示的文本可以通过以下方法转换为超链接：
+[`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)实例显示的文本可以通过以下方法转换为超链接：
 
 1. 设置[`Label`](xref:Xamarin.Forms.Label)或[`Span`](xref:Xamarin.Forms.Span)的 "`TextColor`" 和 "`TextDecoration`" 属性。
 1. 将[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)添加到[`Label`](xref:Xamarin.Forms.Label)或[`Span`](xref:Xamarin.Forms.Span)的[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)集合，其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)属性绑定到 0，其[2](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)属性包含要打开的 URL。
@@ -443,7 +458,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-@No__t_0 执行 `Launcher.OpenAsync` 方法，并将[`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)属性值作为参数传递。 @No__t_0 方法由 Xamarin 提供，并在 web 浏览器中打开该 URL。 因此，整体效果是，当在页面上点击超链接时，将显示一个 web 浏览器，并导航到与该超链接关联的 URL。
+`TapCommand` 执行 `Launcher.OpenAsync` 方法，并将[`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)属性值作为参数传递。 `Launcher.OpenAsync` 方法由 Xamarin 提供，并在 web 浏览器中打开该 URL。 因此，整体效果是，当在页面上点击超链接时，将显示一个 web 浏览器，并导航到与该超链接关联的 URL。
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>创建可重用的超链接类
 
@@ -476,7 +491,7 @@ public class HyperlinkSpan : Span
 }
 ```
 
-@No__t_0 类定义 `Url` 属性和关联的[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)，并且构造函数会设置超链接的外观，以及在点击超链接时将响应的[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。 点击 `HyperlinkSpan` 时，`TapGestureRecognizer` 将通过执行 `Launcher.OpenAsync` 方法，在 web 浏览器中打开 `Url` 属性指定的 URL 来做出响应。
+`HyperlinkSpan` 类定义 `Url` 属性和关联的[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)，并且构造函数会设置超链接的外观，以及在点击超链接时将响应的[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。 点击 `HyperlinkSpan` 时，`TapGestureRecognizer` 将通过执行 `Launcher.OpenAsync` 方法，在 web 浏览器中打开 `Url` 属性指定的 URL 来做出响应。
 
 可以通过将类的实例添加到 XAML 来使用 `HyperlinkSpan` 类：
 

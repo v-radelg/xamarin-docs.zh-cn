@@ -4,31 +4,31 @@ description: 本文档介绍如何在 Xamarin iOS 应用程序中使用 ADO.NET 
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: a9df85a405bc086f86dae73fea615581bf9d28d0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: db26de8deed9945c6fff2d49f7d12de03fbe38df
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767390"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008241"
 ---
 # <a name="using-adonet-with-xamarinios"></a>将 ADO.NET 与 Xamarin 配合使用
 
-Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用熟悉的类似 ADO.NET 的语法公开。 使用这些 api 要求编写由 SQLite 处理的 SQL 语句，如`CREATE TABLE` `INSERT`和`SELECT`语句。
+Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用熟悉的类似 ADO.NET 的语法公开。 使用这些 Api 需要编写由 SQLite 处理的 SQL 语句，如 `CREATE TABLE`、`INSERT` 和 `SELECT` 语句。
 
 ## <a name="assembly-references"></a>程序集引用
 
-若要通过 ADO.NET 使用访问 SQLite，你`System.Data`必须`Mono.Data.Sqlite`添加和引用 iOS 项目，如下所示（有关 Visual Studio for Mac 和 Visual Studio 中的示例）：
+若要通过 ADO.NET 使用访问 SQLite，你必须将 `System.Data` 和 `Mono.Data.Sqlite` 引用添加到你的 iOS 项目，如下所示（Visual Studio for Mac 和 Visual Studio 中的示例）：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- ![](using-adonet-images/image4.png "Visual Studio for Mac 中的程序集引用")
+ ![](using-adonet-images/image4.png "Assembly References in Visual Studio for Mac")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  ![](using-adonet-images/image6.png "Visual Studio 中的程序集引用")
+  ![](using-adonet-images/image6.png "Assembly References in Visual Studio")
 
 -----
 
@@ -36,16 +36,16 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 
 ## <a name="about-monodatasqlite"></a>关于 Mono. Sqlite
 
-我们将使用`Mono.Data.Sqlite.SqliteConnection`类创建一个空数据库文件，然后对对象进行实例`SqliteCommand`化，这些对象可用于针对数据库执行 SQL 指令。
+我们将使用 `Mono.Data.Sqlite.SqliteConnection` 类创建一个空数据库文件，然后实例化可用于对数据库执行 SQL 指令的 `SqliteCommand` 对象。
 
-1. **创建空白数据库**-使用有效的`CreateFile` （即可写）文件路径调用方法。 在调用此方法之前，应检查该文件是否已存在，否则将在旧文件的顶部创建新的（空白）数据库，而旧文件中的数据将丢失：
+1. **创建空白数据库**-使用有效的（即可写）文件路径调用 `CreateFile` 方法。 在调用此方法之前，应检查该文件是否已存在，否则将在旧文件的顶部创建新的（空白）数据库，而旧文件中的数据将丢失：
 
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
-    > 应`dbPath`按照本文档前面所述的规则来确定该变量。
+    > 应按照本文档前面讨论的规则来确定 `dbPath` 变量。
 
-2. **创建数据库连接**-创建 SQLite 数据库文件后，可以创建连接对象来访问数据。 使用的连接字符串`Data Source=file_path`构造连接，如下所示：
+2. **创建数据库连接**-创建 SQLite 数据库文件后，可以创建连接对象来访问数据。 连接是使用采用 `Data Source=file_path`形式的连接字符串构造的，如下所示：
 
     ```csharp
     var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -71,7 +71,7 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 
 在 iOS 上运行时，此文档的*DataAccess_Basic*示例代码如下所示：
 
- ![](using-adonet-images/image9.png "iOS ADO.NET 示例")
+ ![](using-adonet-images/image9.png "iOS ADO.NET sample")
 
 下面的代码演示了如何执行简单的 SQLite 操作并在应用程序的主窗口中以文本形式显示结果。
 
@@ -149,7 +149,7 @@ public static string DoSomeDataAccess ()
 由于 SQLite 允许对数据运行任意 SQL 命令，因此你可以执行所需的任何 CREATE、INSERT、UPDATE、DELETE 或 SELECT 语句。 可以在 Sqlite 网站上阅读 SQLite 支持的 SQL 命令。 在 SqliteCommand 对象上使用以下三种方法之一运行 SQL 语句：
 
 - **ExecuteNonQuery** –通常用于表创建或数据插入。 某些运算的返回值为受影响的行数，否则为-1。
-- **ExecuteReader** -在行集合应作为`SqlDataReader`返回时使用。
+- **ExecuteReader** -在行集合应作为 `SqlDataReader` 返回时使用。
 - **ExecuteScalar** –检索单个值（例如聚合）。
 
 ### <a name="executenonquery"></a>EXECUTENONQUERY
@@ -208,7 +208,7 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-方法的返回类型为`object` –应根据数据库查询强制转换结果。 `ExecuteScalar` 结果可能是来自计数查询的整数，或是单个列 SELECT 查询中的字符串。 请注意，这与返回读取器对象或受影响的行数计数的其他执行方法不同。
+`ExecuteScalar` 方法的返回类型为 `object` –应根据数据库查询强制转换结果。 结果可能是来自计数查询的整数，或是单个列 SELECT 查询中的字符串。 请注意，这与返回读取器对象或受影响的行数计数的其他执行方法不同。
 
 ## <a name="related-links"></a>相关链接
 

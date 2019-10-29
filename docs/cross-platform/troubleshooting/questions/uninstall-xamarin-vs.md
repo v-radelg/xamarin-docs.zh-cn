@@ -3,15 +3,15 @@ title: 如何彻底卸载 Xamarin for Visual Studio？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 1596e7ed7b3f6d71e13f19a64d111873efb7445c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ed0171c2b6bd98e5b29ec100d0235131d36acb05
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764939"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013344"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>如何彻底卸载 Xamarin for Visual Studio？
 
@@ -21,7 +21,7 @@ ms.locfileid: "70764939"
     - Xamarin for Windows
     - Xamarin.Android
     - Xamarin.iOS
-    - 面向 Visual Studio 的 Xamarin
+    - Xamarin for Visual Studio
 
 2. 在资源管理器中，删除 Xamarin Visual Studio 扩展文件夹中的任何保留文件（所有版本，包括 _Program Files_ 和 _Program Files (x86)_ ）：
 
@@ -35,7 +35,7 @@ ms.locfileid: "70764939"
 
     - “未正确加载'XamarinShellPackage'包”
 
-    - “无法打开项目文件... 缺少项目子类型”
+    - “无法打开项目文件...。 缺少项目子类型”
 
     - “对象引用未设置为某个对象的实例。  在 Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize() 上”
 

@@ -3,26 +3,26 @@ title: 使用 Android 资产
 ms.prod: xamarin
 ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: e3b7ccf74773e5a391b8f133ccc241ca0e18bfcb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9c8db5ad7bcb012befb2fa8dcd1ecd13fa355a55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755161"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025432"
 ---
 # <a name="using-android-assets"></a>使用 Android 资产
 
 _资产_提供了一种在应用程序中包含文本、xml、字体、音乐和视频等任意文件的方法。 如果尝试将这些文件作为 "资源" 包含，则 Android 会将它们处理到其资源系统中，你将无法获取原始数据。 如果要访问无需访问的数据，则可以采用以下方法之一。
 
 添加到你的项目的资产将与可使用[AssetManager](xref:Android.Content.Res.AssetManager)从你的应用程序中读取的文件系统类似。
-在此简单演示中，我们将向项目中添加一个文本文件资产，使用`AssetManager`将其读取，并在 TextView 中显示它。
+在此简单演示中，我们将向项目添加一个文本文件资产，使用 `AssetManager`读取该文件，并在 TextView 中显示它。
 
 ## <a name="add-asset-to-project"></a>向项目添加资产
 
-资产位于项目的`Assets`文件夹中。 向此文件夹中添加名`read_asset.txt`为的新文本文件。 在其中放置一些文本，如 "我来自资产！"。
+资产位于项目的 `Assets` 文件夹中。 向此文件夹中添加名为 "`read_asset.txt`" 的新文本文件。 在其中放置一些文本，如 "我来自资产！"。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -42,7 +42,7 @@ Visual Studio for Mac 应将此文件的**生成操作**设置为**AndroidAsset*
 
 ## <a name="reading-assets"></a>读取资产
 
-使用[AssetManager](xref:Android.Content.Res.AssetManager)读取资产。 的实例`AssetManager`可通过访问上`Android.Content.Context`的[资产](xref:Android.Content.Context.Assets)属性（例如活动）来使用。
+使用[AssetManager](xref:Android.Content.Res.AssetManager)读取资产。 `AssetManager` 的实例可以通过访问 `Android.Content.Context`上的[资产](xref:Android.Content.Context.Assets)属性（例如活动）来获取。
 在下面的代码中，我们将打开我们的**read_asset**资产，读取内容并使用 TextView 将其显示。
 
 ```csharp
@@ -76,4 +76,4 @@ protected override void OnCreate (Bundle bundle)
 ## <a name="related-links"></a>相关链接
 
 - [AssetManager](xref:Android.Content.Res.AssetManager)
-- [上下文](xref:Android.Content.Context)
+- [快捷](xref:Android.Content.Context)

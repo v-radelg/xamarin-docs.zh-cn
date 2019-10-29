@@ -1,38 +1,38 @@
 ---
-title: 在 Xamarin.iOS 中的代码中创建 iOS 用户界面
-description: 本文档介绍如何使用代码以生成 Xamarin.iOS 应用程序的用户界面。 它讨论了构建视图层次结构中，处理旋转、 和的详细信息视图控制器。
+title: 在 Xamarin 中的代码中创建 iOS 用户界面
+description: 本文档介绍了如何使用代码构建 Xamarin iOS 应用的用户界面。 其中讨论了视图控制器、构建视图层次结构、处理旋转等。
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 4b829cf3f440b1c94c5232d258c86b6ea4b0f181
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 42a2694239fdd55efa91b7fa30be8a10cafb4cc5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767514"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010326"
 ---
-# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的代码中创建 iOS 用户界面
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin 中的代码中创建 iOS 用户界面
 
-IOS 应用程序的用户界面类似于店面，首先 – 应用程序通常只获取一个窗口，但它可以填满窗口使用如许多对象需要以及根据什么应用程序可以更改对象和排列方式要显示的。 此情形中的对象（用户看到的内容）称为视图。 若要生成的应用程序中的单个屏幕，视图相互堆叠在内容视图层次结构中，并由单个视图控制器管理层次结构。 具有多个屏幕的应用程序具有多个内容视图层次结构（各自具有自己的视图控制器），应用程序会将视图置于窗口中以基于用户所处的屏幕创建不同的内容视图层次结构。
+IOS 应用程序的用户界面类似于店面–应用程序通常会获得一个窗口，但它可以使用所需的任意数量的对象填充窗口，并且可以根据应用程序要显示的内容更改对象和排列方式。 此情形中的对象（用户看到的内容）称为视图。 若要在应用程序中生成单个屏幕，视图在内容视图层次结构中彼此层叠，而层次结构由单一视图控制器管理。 具有多个屏幕的应用程序具有多个内容视图层次结构（各自具有自己的视图控制器），应用程序会将视图置于窗口中以基于用户所处的屏幕创建不同的内容视图层次结构。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面：
 
-[![](ios-code-only-images/image9.png "此图描述了窗口、 视图、 子视图和视图控制器之间的关系")](ios-code-only-images/image9.png#lightbox)
+[![](ios-code-only-images/image9.png "This diagram illustrates the relationships between the Window, Views, Subviews, and View Controller")](ios-code-only-images/image9.png#lightbox)
 
-可以使用构造这些视图层次结构[适用于 iOS 的 Xamarin 设计器](~/ios/user-interface/designer/index.md)在 Visual Studio 中，但是最好有基本的了解了如何完全在代码中处理。 本文将指导完成一些基本的点来启动和运行仅限代码的用户界面开发。
+可以使用 Visual Studio 中的[Xamarin Designer for iOS](~/ios/user-interface/designer/index.md)来构造这些视图层次结构，但最好是了解如何完全使用代码。 本文介绍了一些基本要点，以便启动并运行仅限代码的用户界面开发。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面：
 
-[![](ios-code-only-images/image9.png "此图描述了窗口、 视图、 子视图和视图控制器之间的关系")](ios-code-only-images/image9.png#lightbox)
+[![](ios-code-only-images/image9.png "This diagram illustrates the relationships between the Window, Views, Subviews, and View Controller")](ios-code-only-images/image9.png#lightbox)
 
-可以使用构造这些视图层次结构[适用于 iOS 的 Xamarin 设计器](~/ios/user-interface/designer/index.md)在 Visual Studio for Mac，但是最好有基本的了解了如何完全在代码中处理。 本文将指导完成一些基本的点来启动和运行仅限代码的用户界面开发。
+可以使用 Visual Studio for Mac 中的[Xamarin Designer for iOS](~/ios/user-interface/designer/index.md)来构造这些视图层次结构，但最好是了解如何完全使用代码。 本文介绍了一些基本要点，以便启动并运行仅限代码的用户界面开发。
 
 -----
 
@@ -42,45 +42,45 @@ IOS 应用程序的用户界面类似于店面，首先 – 应用程序通常�
 
 ## <a name="ios-blank-project-template"></a>iOS 空白项目模板
 
-首先，创建 Visual Studio 中使用的 iOS 项目**文件 > 新建项目 > Visual C# > iPhone 和 iPad > iOS 应用 (Xamarin)** 项目，如下所示：
+首先，在 Visual Studio 中创建一个 iOS 项目，使用**文件 > 新项目 > C# Visual > iPhone & IPad > IOS 应用（Xamarin）** 项目，如下所示：
 
-[![新建项目对话框](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
+[!["新建项目" 对话框](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-然后选择**空白应用**项目模板：
+然后选择 "**空白应用程序**" 项目模板：
 
-[![选择模板对话框](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
+[!["选择模板" 对话框](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
-空项目模板将 4 个文件添加到项目：
+空项目模板将4个文件添加到项目中：
 
 [![项目文件](ios-code-only-images/empty-project.w157-sml.png "项目文件")](ios-code-only-images/empty-project.w157.png#lightbox)
 
-1. **AppDelegate.cs** -包含`UIApplicationDelegate`子类， `AppDelegate` ，用于处理从 iOS 应用程序事件。 在中创建应用程序窗口`AppDelegate`的`FinishedLaunching`方法。
-1. **Main.cs** -包含应用程序指定的类的入口点为`AppDelegate`。
-1. **Info.plist** -包含应用程序的配置信息的属性列表文件。
-1. **Entitlements.plist** – 包含有关功能和权限的应用程序的信息的属性列表文件。
+1. **AppDelegate.cs** -包含一个 `UIApplicationDelegate` 子类 `AppDelegate`，该子类用于处理来自 iOS 的应用程序事件。 应用程序窗口是在 `AppDelegate`的 `FinishedLaunching` 方法中创建的。
+1. **Main.cs** -包含应用程序的入口点，用于指定 `AppDelegate` 的类。
+1. **Info.plist** -包含应用程序配置信息的属性列表文件。
+1. **Info.plist** –属性列表文件，其中包含有关应用程序的功能和权限的信息。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS 模板
 
-Visual Studio for Mac 不提供一个空的模板。 所有模板都都具有支持情节提要，Apple 建议将它作为创建 UI 的主要方式。 但是，就可以完全在代码中创建你的 UI。
+Visual Studio for Mac 不提供空模板。 所有模板都附带了情节提要支持，Apple 建议使用这种方法创建 UI。 但是，可以完全通过代码创建 UI。
 
-执行以下步骤将引导你完成从应用程序中删除情节提要：
+以下步骤将指导你完成从应用程序中删除情节提要的步骤：
 
-1. 使用单一视图应用模板来创建新的 iOS 项目：
+1. 使用 "单一视图应用程序" 模板创建新的 iOS 项目：
 
-    [![](ios-code-only-images/single-view-app.png "使用单一视图应用模板")](ios-code-only-images/single-view-app.png#lightbox)
+    [![](ios-code-only-images/single-view-app.png "Use the Single View App template")](ios-code-only-images/single-view-app.png#lightbox)
 
-1. 删除`Main.Storyboard`和`ViewController.cs`文件。 不要**不**删除`LaunchScreen.Storyboard`。 应删除视图控制器，因为它是在情节提要中创建的视图控制器的隐藏代码：
-1. 请务必选择**删除**从弹出的对话框：
+1. 删除 `Main.Storyboard` 和 `ViewController.cs` 文件。 请勿**删除 `LaunchScreen.Storyboard`** 。 应删除视图控制器，因为它是在情节提要中创建的视图控制器的隐藏代码：
+1. 请确保从弹出对话框中选择 "**删除**"：
 
-    [![](ios-code-only-images/delete.png "从弹出对话框中选择删除")](ios-code-only-images/delete.png#lightbox)
+    [![](ios-code-only-images/delete.png "Select Delete from the pop-up dialog")](ios-code-only-images/delete.png#lightbox)
 
-1. 在 Info.plist 中，删除内部信息**部署信息 > 主界面**选项：
+1. 在 info.plist 中，删除 "**部署信息" > Main Interface** "选项中的信息：
 
-    [![](ios-code-only-images/main-interface.png "删除主界面选项内的信息")](ios-code-only-images/main-interface.png#lightbox)
+    [![](ios-code-only-images/main-interface.png "Delete the information inside the Main Interface option")](ios-code-only-images/main-interface.png#lightbox)
 
-1. 最后，将以下代码添加到你`FinishedLaunching`AppDelegate 类中的方法：
+1. 最后，将以下代码添加到 AppDelegate 类中的 `FinishedLaunching` 方法：
 
     ```csharp
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -95,13 +95,13 @@ Visual Studio for Mac 不提供一个空的模板。 所有模板都都具有支
     }
     ```
 
-已添加到代码`FinishedLaunching`上述，步骤 5 中的方法是最少量的代码创建一个窗口，以在 iOS 应用程序所必需的。
+在上面的步骤5中添加到 `FinishedLaunching` 方法的代码是为你的 iOS 应用程序创建窗口所需的最小代码量。
 
 -----
 
-使用生成 iOS 应用程序[MVC 模式](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)。 从窗口的根视图控制器创建应用程序显示的第一个屏幕。 请参阅[Hello，iOS 多屏显示](~/ios/get-started/hello-ios-multiscreen/index.md)指导有关 MVC 的详细信息模式本身。
+iOS 应用程序是使用[MVC 模式](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)生成的。 应用程序显示的第一个屏幕是从窗口的根视图控制器创建的。 有关 MVC 模式本身的详细信息，请参阅[Hello，IOS 多屏显示](~/ios/get-started/hello-ios-multiscreen/index.md)指南。
 
-实现`AppDelegate`添加的模板创建应用程序窗口的其中只有一个每个 iOS 应用程序，并使其显示与下面的代码：
+模板添加的 `AppDelegate` 的实现将创建应用程序窗口，其中每个 iOS 应用程序都只有一个应用程序窗口，并使其与以下代码一起显示：
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -125,11 +125,11 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-如果要运行此应用程序现在，很可能会得到消息，指出引发的异常`Application windows are expected to have a root view controller at the end of application launch`。 让我们添加一个控制器，并使其应用程序的根视图控制器。
+如果你现在要运行此应用程序，则可能会遇到引发的异常，指出 `Application windows are expected to have a root view controller at the end of application launch`。 让我们添加一个控制器并将其设置为应用的根视图控制器。
 
 ## <a name="adding-a-controller"></a>添加控制器
 
-您的应用程序可以包含多个视图控制器，但它需要有一个根视图控制器，以控制所有视图控制器。  将控制器添加到窗口中，通过创建`UIViewController`实例并将其设置为`Window.RootViewController`属性：
+您的应用程序可以包含多个视图控制器，但它需要一个根视图控制器来控制所有视图控制器。  通过创建 `UIViewController` 实例并将其设置为 `Window.RootViewController` 属性，将控制器添加到窗口：
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -160,11 +160,11 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-每个控制器都有关联的视图，可从访问`View`属性。 上面的代码中更改视图的`BackgroundColor`属性设置为`UIColor.LightGray`，以便将会显示，如下所示：
+每个控制器都具有关联的视图，该视图可从 `View` 属性访问。 上面的代码将视图的 `BackgroundColor` 属性更改为 "`UIColor.LightGray`，以便它可见，如下所示：
 
- [![](ios-code-only-images/image1.png "该视图的背景是可见的浅灰色")](ios-code-only-images/image1.png#lightbox)
+ [![](ios-code-only-images/image1.png "The View's background is a visible light gray")](ios-code-only-images/image1.png#lightbox)
 
-我们无法设置任何`UIViewController`作为子类`RootViewController`以这种方式，包括从 UIKit，以及我们自己编写的控制器。 例如，下面的代码添加`UINavigationController`作为`RootViewController`:
+我们也可以采用这种方式将任何 `UIViewController` 子类设置为 `RootViewController`，包括 UIKit 中的控制器以及我们自己编写的控制器。 例如，下面的代码添加了一个 `UINavigationController` 作为 `RootViewController`：
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -198,27 +198,27 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-这会生成嵌套在导航控制器，如下所示的控制器：
+这会生成嵌套在导航控制器中的控制器，如下所示：
 
- [![](ios-code-only-images/image2.png "在控制器嵌套在导航控制器")](ios-code-only-images/image2.png#lightbox)
+ [![](ios-code-only-images/image2.png "The controller nested within the navigation controller")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>创建视图控制器
 
-现在，我们已了解如何添加控制器作为`RootViewController`的窗口，让我们了解如何在代码中创建自定义视图控制器。
+现在，我们已了解如何将控制器添加为窗口的 `RootViewController`，接下来让我们看看如何在代码中创建自定义视图控制器。
 
-添加新的类名为`CustomViewController`，如下所示：
+添加一个名为 `CustomViewController` 的新类，如下所示：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](ios-code-only-images/customviewcontroller.w157-sml.png "添加新的类名为 CustomViewController")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
+[![](ios-code-only-images/customviewcontroller.w157-sml.png "Add a new class named CustomViewController")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](ios-code-only-images/new-file.png "添加新的类名为 CustomViewController")](ios-code-only-images/new-file.png#lightbox)
+[![](ios-code-only-images/new-file.png "Add a new class named CustomViewController")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
-类应继承自`UIViewController`，后者位于`UIKit`命名空间，如所示：
+类应从 `UIKit` 命名空间中的 `UIViewController`继承，如下所示：
 
 ```csharp
 using System;
@@ -234,9 +234,9 @@ namespace CodeOnlyDemo
 
 ## <a name="initializing-the-view"></a>初始化视图
 
-`UIViewController` 包含一个名为方法`ViewDidLoad`视图控制器首次加载到内存时调用。 这是视图的更好地进行初始化，例如，设置它的属性。
+`UIViewController` 包含一个名为 `ViewDidLoad` 的方法，当视图控制器首次加载到内存中时将调用此方法。 这是对视图进行初始化的适当位置，如设置其属性。
 
-例如，以下代码将添加一个按钮和一个事件处理程序以新视图控制器推送到导航堆栈时按下按钮：
+例如，下面的代码将添加一个按钮和一个事件处理程序，以便在按下按钮时将新视图控制器推送到导航堆栈上：
 
 ```csharp
 using System;
@@ -276,7 +276,7 @@ namespace CodyOnlyDemo
 }
 ```
 
-若要加载此控制器中您的应用程序，并演示的简单导航，请创建的新实例`CustomViewController`。 创建新的导航控制器、 传入视图控制器实例并将新的导航控制器设置为窗口的`RootViewController`在`AppDelegate`像以前一样：
+若要在应用程序中加载此控制器并演示简单导航，请创建 `CustomViewController`的新实例。 创建一个新的导航控制器，传入视图控制器实例，并将新的导航控制器设置为 `AppDelegate` 中的窗口 `RootViewController`，如下所示：
 
 ```csharp
 var cvc = new CustomViewController ();
@@ -286,27 +286,27 @@ var navController = new UINavigationController (cvc);
 Window.RootViewController = navController;
 ```
 
-现在应用程序加载时，`CustomViewController`内导航控制器加载：
+现在，当应用程序加载时，`CustomViewController` 会加载到导航控制器中：
 
- [![](ios-code-only-images/customvc.png "内部导航控制器加载 CustomViewController")](ios-code-only-images/customvc.png#lightbox)
+ [![](ios-code-only-images/customvc.png "The CustomViewController is loaded inside a navigation controller")](ios-code-only-images/customvc.png#lightbox)
 
-单击按钮，将_推送_到导航堆栈上新的视图控制器：
+单击该按钮将新视图控制器_推送_到导航堆栈：
 
-[![](ios-code-only-images/customvca.png "新视图控制器推送到导航堆栈上")](ios-code-only-images/customvca.png#lightbox)
+[![](ios-code-only-images/customvca.png "A new View Controller pushed onto the navigation stack")](ios-code-only-images/customvca.png#lightbox)
 
-## <a name="building-the-view-hierarchy"></a>生成的视图层次结构
+## <a name="building-the-view-hierarchy"></a>构建视图层次结构
 
-在上面的示例中，我们开始在代码中创建用户界面，通过将一个按钮添加到视图控制器。
+在上面的示例中，我们开始通过向视图控制器添加一个按钮，在代码中创建用户界面。
 
-iOS 用户界面由视图层次结构组成。 其他视图，例如标签、 按钮、 滑块等添加为子视图的某些父视图。
+iOS 用户界面由视图层次结构组成。 其他视图（如标签、按钮、滑块等）作为某些父视图的子视图添加。
 
-例如，让我们编辑`CustomViewController`来创建用户可以在其中输入用户名和密码登录屏幕。 屏幕将由两个文本字段和一个按钮组成。
+例如，让我们编辑 `CustomViewController`，以创建登录屏幕，用户可以在其中输入用户名和密码。 屏幕将包含两个文本字段和一个按钮。
 
 ### <a name="adding-the-text-fields"></a>添加文本字段
 
-首先，删除的按钮和事件处理程序中添加了[初始化视图](#initializing-the-view)部分。 
+首先，删除在 "[初始化视图](#initializing-the-view)" 部分中添加的按钮和事件处理程序。 
 
-添加一个用于用户名的控件通过创建并初始化`UITextField`然后将它添加到视图层次结构，如下所示：
+通过创建和初始化 `UITextField` 然后将其添加到视图层次结构中，为用户名添加一个控件，如下所示：
 
 ```csharp
 class CustomViewController : UIViewController
@@ -334,13 +334,13 @@ class CustomViewController : UIViewController
 }
 ```
 
-当我们创建`UITextField`，我们将设置`Frame`属性来定义其位置和大小。 在 iOS 中的 0，0 坐标是在右侧 + x 左上角和 + 向下的 y。 设置后`Frame`以及几个其他属性，我们调用`View.AddSubview`以添加`UITextField`到视图层次结构。 这使得`usernameField`的子视图`UIView`实例的`View`属性引用。 其 z-顺序高于其父视图，使其显示在屏幕上的父视图的前面添加子视图。
+创建 `UITextField`时，将设置 `Frame` 属性以定义其位置和大小。 在 iOS 中，0，0坐标位于左上角，+ x 向右，+ y 向下。 将 `Frame` 与另外几个属性一起设置后，调用 `View.AddSubview` 将 `UITextField` 添加到视图层次结构中。 这会使 `usernameField` `View` 属性引用的 `UIView` 实例的子视图。 使用比其父视图更高的 z 顺序添加子视图，因此它显示在屏幕上的父视图之前。
 
-使用应用程序`UITextField`包含如下所示：
+包含 `UITextField` 的应用程序如下所示：
 
- [![](ios-code-only-images/image4.png "具有包含 UITextField 的应用程序")](ios-code-only-images/image4.png#lightbox)
+ [![](ios-code-only-images/image4.png "The application with the UITextField included")](ios-code-only-images/image4.png#lightbox)
 
-我们可以添加`UITextField`对于类似的方式中的密码，但这次我们把`SecureTextEntry`属性设置为 true，如下所示：
+可以采用类似的方式为密码添加 `UITextField`，这种情况下，只会将 `SecureTextEntry` 属性设置为 true，如下所示：
 
 ```csharp
 public class CustomViewController : UIViewController
@@ -364,15 +364,15 @@ public class CustomViewController : UIViewController
 
 ```
 
-设置`SecureTextEntry = true`隐藏中输入的文本`UITextField`用户，如下所示：
+设置 `SecureTextEntry = true` 将隐藏用户在 `UITextField` 中输入的文本，如下所示：
 
- [![](ios-code-only-images/image4a.png "设置 SecureTextEntry true 隐藏用户输入的文本")](ios-code-only-images/image4a.png#lightbox)
+ [![](ios-code-only-images/image4a.png "Setting SecureTextEntry true hides the text entered by the user")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>添加按钮
 
-接下来，我们将添加一个按钮，以便用户可以提交的用户名和密码。 通过将它作为参数传递到父视图的按钮添加到类似于任何其他控件的视图层次结构`AddSubview`再次方法。
+接下来，我们将添加一个按钮，以便用户可以提交用户名和密码。 该按钮将添加到视图层次结构中，就像任何其他控件一样，方法是将其作为自变量传递给父视图的 `AddSubview` 方法。
 
-以下代码添加的按钮，并注册的事件处理程序`TouchUpInside`事件：
+下面的代码将添加按钮并注册 `TouchUpInside` 事件的事件处理程序：
 
 ```csharp
 var submitButton = UIButton.FromType (UIButtonType.RoundedRect);
@@ -387,29 +387,29 @@ submitButton.TouchUpInside += (sender, e) => {
 View.AddSubview(submitButton);
 ```
 
-与此位置中，登录屏幕现在显示如下所示：
+这样，登录屏幕就会如下所示：
 
- [![](ios-code-only-images/image5.png "登录屏幕")](ios-code-only-images/image5.png#lightbox)
+ [![](ios-code-only-images/image5.png "The login screen")](ios-code-only-images/image5.png#lightbox)
 
-与在以前版本的 iOS、 默认按钮背景是透明的。 更改按钮的`BackgroundColor`属性更改此：
+不同于以前版本的 iOS，默认按钮背景是透明的。 更改按钮的 `BackgroundColor` 属性将更改：
 
 ```csharp
 submitButton.BackgroundColor = UIColor.White;
 ```
 
-这将导致方形按钮，而不是典型的舍入有边的按钮。 若要获取的圆角的边缘，请使用以下代码片段：
+这将导致方形按钮而不是典型的圆角边缘按钮。 若要获取舍入边缘，请使用以下代码片段：
 
 ```csharp
 submitButton.Layer.CornerRadius = 5f;
 ```
 
-这些更改，该视图将如下所示：
+进行这些更改后，视图将如下所示：
 
-[![](ios-code-only-images/image6.png "视图的示例运行")](ios-code-only-images/image6.png#lightbox)
+[![](ios-code-only-images/image6.png "An example run of the view")](ios-code-only-images/image6.png#lightbox)
 
-## <a name="adding-multiple-views-to-the-view-hierarchy"></a>将多个视图添加到的视图层次结构
+## <a name="adding-multiple-views-to-the-view-hierarchy"></a>向视图层次结构添加多个视图
 
-iOS 提供的工具，使用到的视图层次结构中添加多个视图`AddSubviews`。
+iOS 提供一项功能，可通过使用 `AddSubviews`向视图层次结构添加多个视图。
 
 ```csharp
 View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
@@ -417,7 +417,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>添加按钮功能
 
-单击按钮时，用户希望发生这种情况的内容。 例如，会显示一个警告或导航执行到另一个屏幕。
+单击某个按钮后，用户将会希望发生某些情况。 例如，将显示一个警报，或在另一个屏幕上执行导航。
 
 让我们添加一些代码，将第二个视图控制器推送到导航堆栈上。
 
@@ -428,7 +428,7 @@ var loginVC = new UIViewController () { Title = "Login Success!"};
 loginVC.View.BackgroundColor = UIColor.Purple;
 ```
 
-然后，将功能添加到`TouchUpInside`事件：
+然后，将该功能添加到 `TouchUpInside` 事件：
 
 ```csharp
 submitButton.TouchUpInside += (sender, e) => {
@@ -436,15 +436,15 @@ submitButton.TouchUpInside += (sender, e) => {
             };
 ```
 
-在导航窗格如下所示：
+导航如下所示：
 
-[![](ios-code-only-images/navigation.png "在导航窗格是在此图中所示")](ios-code-only-images/navigation.png#lightbox)
+[![](ios-code-only-images/navigation.png "The navigation is illustrated in this chart")](ios-code-only-images/navigation.png#lightbox)
 
-请注意，默认情况下，当使用导航控制器，iOS 赋予应用程序导航栏和后退按钮，可用于向后移动到堆栈。
+请注意，默认情况下，当你使用导航控制器时，iOS 将为应用程序提供导航栏和 "后退" 按钮，以允许你通过堆栈向后移动。
 
-## <a name="iterating-through-the-view-hierarchy"></a>循环访问的视图层次结构
+## <a name="iterating-through-the-view-hierarchy"></a>遍历视图层次结构
 
-就可以循环访问子视图层次结构并找出任何特定视图。 例如，若要查找每个`UIButton`，并为该按钮提供一个不同`BackgroundColor`，可以使用以下代码片段
+可以循环访问子视图层次结构并选择任何特定的视图。 例如，若要查找每个 `UIButton` 并为该按钮提供不同的 `BackgroundColor`，可以使用以下代码片段
 
 ```csharp
 foreach(var subview in View.Subviews)
@@ -457,31 +457,31 @@ foreach(var subview in View.Subviews)
 }
 ```
 
-此操作，但是不起作用的循环访问视图是否`UIView`如所有视图将都会返回不会成为`UIView`与对象添加到父视图本身继承`UIView`。
+但是，如果要循环访问的视图是 `UIView`，则这种情况将不起作用，因为当添加到父视图的对象本身继承 `UIView`时，所有视图都将返回为 `UIView`。
 
 ## <a name="handling-rotation"></a>处理旋转
 
-如果在用户旋转设备为横向，控件不调整大小相应地，如以下屏幕截图所示：
+如果用户将设备旋转到横向，控件不会相应地调整大小，如以下屏幕截图所示：
 
-[![](ios-code-only-images/image7.png "如果在用户旋转设备为横向，控件是否未相应地调整大小")](ios-code-only-images/image7.png#lightbox)
+[![](ios-code-only-images/image7.png "If the user rotates the device to landscape, the controls do not resize appropriately")](ios-code-only-images/image7.png#lightbox)
 
-若要解决此问题的一种方法是通过设置`AutoresizingMask`上每个视图的属性。 在这种情况下，我们希望水平拉伸的控件，因此我们将设置每个`AutoresizingMask`。 以下示例适用于`usernameField`，但相同需要应用于视图层次结构中每个小工具。
+解决此问题的一种方法是设置每个视图的 `AutoresizingMask` 属性。 在这种情况下，我们希望控件水平拉伸，因此，我们将设置每个 `AutoresizingMask`。 下面的示例针对的是 `usernameField`，但需要将相同的应用于视图层次结构中的每个小工具。
 
 ```csharp
 usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 ```
 
-现在当我们旋转设备或模拟器，所有内容拉伸以填充附加空间，如下所示：
+现在，当我们旋转设备或模拟器时，所有内容都会拉伸以填充额外的空间，如下所示：
 
-[![](ios-code-only-images/image8.png "所有控件都拉伸以填充更多空间")](ios-code-only-images/image8.png#lightbox)
+[![](ios-code-only-images/image8.png "All the controls stretch to fill the additional space")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>创建自定义视图
 
-除了使用属于的 UIKit 控件，还可以使用自定义视图。 可以通过继承创建自定义视图`UIView`并重写`Draw`。 让我们来创建自定义视图，并将其添加到视图层次结构，以演示。
+除了使用 UIKit 包含的控件以外，还可以使用自定义视图。 可以通过继承 `UIView` 和重写 `Draw`来创建自定义视图。 让我们创建一个自定义视图，并将其添加到视图层次结构中以演示。
 
 ### <a name="inheriting-from-uiview"></a>从 UIView 继承
 
-我们需要做的第一件事是创建自定义视图的类。 我们将使用执行此类情况的操作**类**在 Visual Studio 中添加一个名为的空类模板`CircleView`。 类的基类应设置为`UIView`，后者我们回想一下位于`UIKit`命名空间。 我们还需要`System.Drawing`命名空间。 其他各种`System.*`命名空间不会使用在此示例中，因此可以删除它们。
+我们需要做的第一件事就是为自定义视图创建一个类。 我们将使用 Visual Studio 中的**类**模板来添加名为 `CircleView`的空类。 应将基类设置为 "`UIView`"，我们回忆这是 `UIKit` 命名空间中。 还需要 `System.Drawing` 命名空间。 在此示例中不会使用其他各种 `System.*` 命名空间，因此可以随意将其删除。
 
 类应如下所示：
 
@@ -496,11 +496,11 @@ namespace CodeOnlyDemo
 }
 ```
 
-### <a name="drawing-in-a-uiview"></a>UIView 中绘制
+### <a name="drawing-in-a-uiview"></a>在 UIView 中绘制
 
-每个`UIView`具有`Draw`需要绘制时由系统调用的方法。 `Draw` 应永远不会直接调用。 它是由系统调用，在运行的循环处理过程。 第一次循环运行后视图添加到视图层次结构，其`Draw`调用方法。 对后续调用`Draw`出现在视图标记为无需通过调用绘制`SetNeedsDisplay`或`SetNeedsDisplayInRect`在视图上。
+每个 `UIView` 都有一个 `Draw` 方法，该方法在需要绘制时由系统调用。 永远不应直接调用 `Draw`。 它由系统在运行循环处理期间调用。 在将视图添加到视图层次结构之后，第一次通过运行循环时，将调用其 `Draw` 方法。 当视图被标记为需要通过在视图上调用 `SetNeedsDisplay` 或 `SetNeedsDisplayInRect` 进行绘制时，对 `Draw` 的后续调用。
 
-可以通过将此类中被重写的代码添加到我们的视图添加绘制代码`Draw`方法，如下所示：
+可以通过在重写的 `Draw` 方法中添加此类代码，将绘图代码添加到视图中，如下所示：
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -526,7 +526,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-由于`CircleView`是`UIView`，我们还可以设置`UIView`属性。 例如，我们可以设置`BackgroundColor`构造函数中：
+由于 `CircleView` 是 `UIView`，因此还可以设置 `UIView` 属性。 例如，可以在构造函数中设置 `BackgroundColor`：
 
 ```csharp
 public CircleView()
@@ -535,15 +535,15 @@ public CircleView()
 }
 ```
 
-若要使用`CircleView`我们刚刚创建，我们可以或者将其添加作为子视图到视图层次结构中现有的控制器，如我们一样`UILabels`和`UIButton`更早版本，或者我们可以将其加载为新的控制器的视图。 让我们执行后一操作。
+若要使用我们刚刚创建的 `CircleView`，可以在现有控制器中将它作为子视图添加到视图层次结构中，就像我们前面的 `UILabels` 和 `UIButton` 一样，或者我们可以将其作为新控制器的视图进行加载。 接下来。
 
-### <a name="loading-a-view"></a>正在加载视图
+### <a name="loading-a-view"></a>加载视图
 
- `UIViewController` 具有一个名为方法`LoadView`调用由控制器来创建其视图。 这是更好地创建一个视图并将其分配给控制器的`View`属性。
+ `UIViewController` 具有一个名为 `LoadView` 的方法，控制器调用此方法来创建其视图。 这是创建视图并将其分配给控制器的 `View` 属性的适当位置。
 
-首先，我们需要一个控制器，因此，创建新的空类命名为`CircleController`。
+首先，我们需要一个控制器，因此请创建一个名为 `CircleController`的新的空类。
 
-在中`CircleController`添加以下代码以设置`View`到`CircleView`(不应调用`base`实现重写中的):
+在 `CircleController` 添加以下代码以将 `View` 设置为 `CircleView` （不应在重写中调用 `base` 实现）：
 
 ```csharp
 using UIKit;
@@ -563,7 +563,7 @@ namespace CodeOnlyDemo
 }
 ```
 
-最后，我们需要在运行时提供的控制器。 让我们执行此操作通过提交按钮，我们添加了前面部分中，按如下所示添加事件处理程序：
+最后，我们需要在运行时显示控制器。 为此，我们在前面添加的 "提交" 按钮上添加一个事件处理程序，如下所示：
 
 ```csharp
 submitButton.TouchUpInside += delegate
@@ -576,54 +576,54 @@ submitButton.TouchUpInside += delegate
 };
 ```
 
-现在，当我们运行该应用程序，并点击提交按钮，将显示具有一个圆形的新视图：
+现在，运行应用程序并点击 "提交" 按钮时，会显示带有圆圈的新视图：
 
-[![](ios-code-only-images/circles.png "显示与某一圆形的新视图")](ios-code-only-images/circles.png#lightbox)
+[![](ios-code-only-images/circles.png "The new view with a circle is displayed")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>创建启动屏幕
 
-一个[启动屏幕](~/ios/app-fundamentals/images-icons/launch-screens.md)作为一种方式向其可以响应用户显示您的应用程序启动时显示。 由于您的应用程序加载时显示启动屏幕，它无法创建在代码中这是因为应用程序仍在加载到内存中。
+当你的应用程序启动时，将显示[启动屏幕](~/ios/app-fundamentals/images-icons/launch-screens.md)，以便向用户显示它的响应能力。 由于在加载应用时显示启动屏幕，因此无法在代码中创建该屏幕，因为应用程序仍会加载到内存中。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中创建一个 iOS 项目时，为你的.xib 文件，可在窗体中提供了启动屏幕**资源**内你的项目文件夹中。
+当你在 Visual Studio 中创建 iOS 项目时，将以 xib 文件的形式提供一个启动屏幕，可以在项目中的**资源**文件夹中找到该文件。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-当您在 for Mac 在 Visual Studio 中创建一个 iOS 项目时，会为您的情节提要文件形式提供启动屏幕。
+在 Visual Studio for Mac 中创建 iOS 项目时，将以情节提要文件的形式提供启动屏幕。
 
 -----
 
-这可以通过双单击它并在 iOS 设计器中打开进行编辑。
+可以通过双击它并在 iOS 设计器中打开它来编辑此项。
 
-Apple 建议.xib 或情节提要文件用于应用程序面向 iOS 8 或更高版本，当启动 iOS 设计器中的任一文件时，您将使用大小类和自动布局以适应你的布局，以便它看起来没问题，并显示正确，所有设备大小。 静态启动图像可以除了.xib 或情节提要，用于允许对面向早期版本的应用程序的支持。
+Apple 建议为面向 iOS 8 或更高版本的应用程序使用 xib 或情节提要文件，当你在 iOS 设计器中启动任一文件时，你将使用大小类和自动布局调整布局，使其看起来正确并正确地显示所有设备小时. 除了 xib 或情节提要以外，还可以使用静态启动映像，以支持面向更早版本的应用程序。
 
 有关创建启动屏幕的详细信息，请参阅以下文档：
 
-- [创建使用.xib 的启动屏幕](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
-- [管理使用演示图板启动屏幕](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [使用 xib 创建启动屏幕](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
+- [用情节提要管理启动屏幕](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> 截至 iOS 9，Apple 建议情节提要应作为创建启动屏幕的主要方法。
+> 在 iOS 9 中，Apple 建议使用情节提要作为创建启动屏幕的主要方法。
 
-### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>创建的启动映像的预 iOS 8 的应用程序
+### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>为 iOS 8 之前的应用程序创建启动映像
 
-如果应用程序的所有面向 iOS 8 之前的版本不同，静态图像可以使用除.xib 或情节提要启动屏幕。
+如果应用程序面向 iOS 8 之前的版本，则除了 xib 或情节提要启动屏幕之外，还可以使用静态图像。
 
-可以将设置此静态图像，在 Info.plist 文件中，或在应用程序中 （适用于 iOS 7) 资产目录。 您需要为你的应用程序可以运行每个设备大小 （320x480、 640 x 960 640 x 1136） 提供单独的映像。 启动屏幕大小的详细信息，请查看[启动屏幕图像](~/ios/app-fundamentals/images-icons/launch-screens.md)指南。
+可以在 info.plist 文件中设置此静态图像，也可以在应用程序中将其设置为资产目录（对于 iOS 7）。 需要为应用程序可以运行的每个设备大小（320x480、640x960、640x1136）提供单独的映像。 有关启动屏幕大小的详细信息，请查看[启动屏幕图像](~/ios/app-fundamentals/images-icons/launch-screens.md)指南。
 
 > [!IMPORTANT]
-> 如果你的应用程序没有启动屏幕，你可能会注意到，它并不完全适合屏幕的大小。 如果是这样，您应确保至少，包含名为 640 x 1136 映像`Default-568@2x.png`向你的 Info.plist。
+> 如果你的应用程序没有启动屏幕，你可能会注意到它不完全适合屏幕。 如果是这种情况，则应确保至少包含一个名为 `Default-568@2x.png` info.plist 的640x1136 映像。
 
 ## <a name="summary"></a>总结
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-本文讨论了如何开发以编程方式在 Visual Studio 中的 iOS 应用程序。 我们介绍了如何构建一个项目的空项目模板，讨论了如何创建并将根视图控制器添加到窗口。 然后，我们介绍了如何使用控件从 UIKit 创建视图层次结构控制器中的开发应用程序屏幕。 接下来，我们探讨如何使视图布局相应地在不同的方向和我们已了解如何创建自定义视图通过子类化`UIView`，以及如何加载的视图控制器中。 最后，我们探讨了如何将启动屏幕添加到应用程序。
+本文介绍了如何在 Visual Studio 中以编程方式开发 iOS 应用程序。 我们介绍了如何根据空项目模板构建项目，讨论了如何创建根视图控制器并将其添加到窗口中。 接下来，我们演示了如何使用 UIKit 中的控件在控制器中创建视图层次结构，以开发应用程序屏幕。 接下来，我们探讨了如何使视图在不同的方向上正确布局，并了解了如何创建自定义视图（通过对 `UIView`进行子类化，以及如何在控制器中加载视图）。 最后，我们探讨了如何将启动屏幕添加到应用程序。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-本文讨论了如何开发 iOS 应用程序以编程方式在 Visual Studio for mac。 我们了解了如何生成的项目从一个视图模板，讨论了如何创建并将根视图控制器添加到窗口。 然后，我们介绍了如何使用控件从 UIKit 创建视图层次结构控制器中的开发应用程序屏幕。 接下来，我们探讨如何使视图布局相应地在不同的方向和我们已了解如何创建自定义视图通过子类化`UIView`，以及如何加载的视图控制器中。 最后，我们探讨了如何将启动屏幕添加到应用程序。
+本文介绍了如何以编程方式在 Visual Studio for Mac 中开发 iOS 应用程序。 我们介绍了如何根据单个视图模板构建项目，讨论了如何创建根视图控制器并将其添加到窗口中。 接下来，我们演示了如何使用 UIKit 中的控件在控制器中创建视图层次结构，以开发应用程序屏幕。 接下来，我们探讨了如何使视图在不同的方向上正确布局，并了解了如何创建自定义视图（通过对 `UIView`进行子类化，以及如何在控制器中加载视图）。 最后，我们探讨了如何将启动屏幕添加到应用程序。
 
 -----
 

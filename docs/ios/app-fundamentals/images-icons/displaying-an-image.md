@@ -4,15 +4,15 @@ description: 本文介绍如何在 Xamarin iOS 应用中包括图像资产，并
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: eaef454de77387ea2a6732fa00797a6a4f0e3cd1
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: cda45f01dae2dc17c2517a7f013acacde7906a4b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975881"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004484"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中显示映像
 
@@ -32,31 +32,31 @@ _本文介绍如何在 Xamarin iOS 应用中包括图像资产，并通过使用
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**解决方案资源管理器**中，双击 @no__t 文件以将其打开进行编辑：
+1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 文件以将其打开进行编辑：
 
-    ![](displaying-an-image-images/imageset01.png "解决方案资源管理器中的 assets.xcassets")
+    ![](displaying-an-image-images/imageset01.png "The Assets.xcassets in the Solution Explorer")
 2. 右键单击 "资产"**列表**，然后选择 "**新建映像集**"：
 
-    ![](displaying-an-image-images/imageset02.png "添加新图像集")
+    ![](displaying-an-image-images/imageset02.png "Adding a New Image Set")
 3. 选择新图像集，将显示编辑器：
 
-    ![](displaying-an-image-images/imageset03.png "图像集编辑器")
+    ![](displaying-an-image-images/imageset03.png "The Image Set editor")
 4. 在此处，为每个所需的不同设备和分辨率拖动图像。
 5. 在 "**资产" 列表**中双击新图像集的**名称**以对其进行编辑：![](displaying-an-image-images/imageset04.png "编辑新映像集的名称")
 
 使用 iOS 设计器中的**图像集**时，只需在属性编辑器的下拉列表中选择集的名称即可：
 
-![](displaying-an-image-images/imageset06.png "从下拉列表中选择图像集的名称")
+![](displaying-an-image-images/imageset06.png "Select an image set's name from the dropdown list")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 从 "**解决方案资源管理器**打开" 资产目录 "，然后在左上角，单击**加号**按钮：
 
-    ![](displaying-an-image-images/asset5.png "单击加号按钮")
+    ![](displaying-an-image-images/asset5.png "Click the Plus button")
 
 2. 选择 "**添加图像集**"，将显示新图像集的 "图像集编辑器"。 在此处，为每个所需的不同设备和分辨率拖动图像。
 
-    ![](displaying-an-image-images/asset7.png "图像集编辑器")
+    ![](displaying-an-image-images/asset7.png "The image set editor")
 
 ### <a name="renaming-an-image-set"></a>重命名图像集
 
@@ -64,41 +64,41 @@ _本文介绍如何在 Xamarin iOS 应用中包括图像资产，并通过使用
 
 1. 在**解决方案资源管理器**中，双击**资产目录**文件以将其打开进行编辑：
 
-    ![](displaying-an-image-images/rename01.png "解决方案资源管理器中的资产目录")
+    ![](displaying-an-image-images/rename01.png "The Asset Catalog in the Solution Explorer")
 2. 选择要重命名的**图像集**：
 
-    ![](displaying-an-image-images/rename02.png "选择要重命名的图像集")
+    ![](displaying-an-image-images/rename02.png "Select the Image Set to rename")
 3. 在 "**属性资源管理器**" 中，滚动到底部，然后选择 "**名称**" （在 "**杂项**" 部分下）：
 
-    ![](displaying-an-image-images/rename03.png "在 \"杂项\" 部分下选择名称")
+    ![](displaying-an-image-images/rename03.png "Select Name under the Misc section")
 4. 为**映像集**输入新**名称**，并保存所做的更改。
 
 -----
 
-在代码中使用**图像集**时，通过调用 @no__t 2 类的 `FromBundle` 方法，按名称引用该图像。 例如：
+如果在代码中使用**图像集**，请通过调用 `UIImage` 类的 `FromBundle` 方法，按名称引用它。 例如：
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> 如果分配给图像集的图像未正确显示，请确保将正确的文件名与 `FromBundle` 方法（**图像集**，而不是父**资产目录**名称）一起使用。 对于 PNG 图像，可以省略 `.png` 扩展。 对于其他图像格式，需要扩展（例如 `PurpleMonkey.jpg`）格式模式中出现的位置生成。
+> 如果分配给图像集的图像未正确显示，请确保将正确的文件名与 `FromBundle` 方法（**图像集**，而不是父**资产目录**名称）一起使用。 对于 PNG 图像，可以省略 `.png` 扩展。 对于其他图像格式，需要扩展（例如 `PurpleMonkey.jpg`) 格式模式中出现的位置匹配。
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>在资产目录中使用矢量图像
 
-从 iOS 8 开始，特殊**Vector**类已添加到**图像集**，使开发人员能够在卡带中包含**PDF**格式的矢量图像，而不是在不同的分辨率下包含单独的位图文件。 使用此方法可为 `@1x` 解析提供单个矢量文件（格式为矢量 PDF 文件），并且将在编译时生成该文件的 `@2x` 和 `@3x` 版本，并将其包含在应用程序的捆绑包中。
+从 iOS 8 开始，特殊**Vector**类已添加到**图像集**，使开发人员能够在卡带中包含**PDF**格式的矢量图像，而不是在不同的分辨率下包含单独的位图文件。 使用此方法可为 `@1x` 分辨率提供单个矢量文件（格式为矢量 PDF 文件），并且将在编译时生成该文件的 `@2x` 和 `@3x` 版本，并将其包含在应用程序的捆绑包中。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](displaying-an-image-images/imageset05.png "资产目录编辑器中的矢量图像")
+![](displaying-an-image-images/imageset05.png "Vector Images in the Asset Catalogs editor")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](displaying-an-image-images/asset8.png "资产目录编辑器中的矢量图像")
+![](displaying-an-image-images/asset8.png "Vector Images in the Asset Catalogs editor")
 
 -----
 
-例如，如果开发人员包括一个 @no__t 为 150 x 150 的资产目录的矢量作为资产目录的矢量，则在编译后，最终的应用捆绑包中将包含以下位图资产：
+例如，如果开发人员包括一个 `MonkeyIcon.pdf` 文件作为资产目录的向量，并且分辨率为 150 x 150，则在编译后，最终的应用捆绑包中将包含以下位图资产：
 
 - `MonkeyIcon@1x.png`-150 x 150 分辨率。
 - `MonkeyIcon@2x.png`-300 像素 x 300 像素分辨率。
@@ -118,11 +118,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](displaying-an-image-images/templateimage01.png "呈现模式设置为模板映像")](displaying-an-image-images/templateimage01.png#lightbox)
+[![](displaying-an-image-images/templateimage01.png "The Render Mode set to Template Image")](displaying-an-image-images/templateimage01.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](displaying-an-image-images/templateimage01vs.png "呈现模式设置为模板")](displaying-an-image-images/templateimage01vs.png#lightbox)
+[![](displaying-an-image-images/templateimage01vs.png "The Render Mode set to Template")](displaying-an-image-images/templateimage01vs.png#lightbox)
 
 -----
 
@@ -130,11 +130,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](displaying-an-image-images/templateimage03.png "设置色调以为图像着色")](displaying-an-image-images/templateimage03.png#lightbox)
+[![](displaying-an-image-images/templateimage03.png "Set the Tint to colorize the image")](displaying-an-image-images/templateimage03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](displaying-an-image-images/templateimage03vs.png "设置色调以为图像着色")](displaying-an-image-images/templateimage03vs.png#lightbox)
+[![](displaying-an-image-images/templateimage03vs.png "Set the Tint to colorize the image")](displaying-an-image-images/templateimage03vs.png#lightbox)
 
 -----
 
@@ -155,17 +155,17 @@ if (MyIcon.Image != null) {
 }
 ```
 
-由于 @no__t 的 `UIImage` 属性是只读的，因此请使用 `ImageWithRenderingMode` 方法，通过所需的呈现模式设置创建映像的新实例。
+由于 `UIImage` 的 `RenderMode` 属性是只读的，因此请使用 `ImageWithRenderingMode` 方法，通过所需的呈现模式设置创建映像的新实例。
 
-有三种可能的设置 `UIImage.RenderMode` 通过 @no__t 枚举实现：
+有三种可能的通过 `UIImageRenderingMode` 枚举 `UIImage.RenderMode` 设置：
 
 - `AlwaysOriginal`-强制将图像呈现为原始源映像文件，而不进行任何更改。
-- `AlwaysTemplate`-通过使用指定的 @no__t 1 颜色着色像素，强制将图像呈现为模板图像。
-- `Automatic`-将图像作为模板呈现，或者根据它使用的环境将其呈现为原始。 例如，如果在 `UIToolBar` 中使用图像，`UINavigationBar`，`UITabBar` 或 `UISegmentControl` 将被视为模板。
+- `AlwaysTemplate`-通过使用指定的 `Tint` 颜色着色像素来强制将图像呈现为模板图像。
+- `Automatic`-将图像作为模板呈现，或者根据它使用的环境将其呈现为原始。 例如，如果在 `UIToolBar`中使用图像，`UINavigationBar`、`UITabBar` 或 `UISegmentControl` 它将被视为模板。
 
 ## <a name="adding-new-assets-collections"></a>添加新资产集合
 
-使用资产目录中的图像时，可能会有需要新的集合，而不是将所有应用程序的映像添加到 `Assets.xcassets` 的集合中。 例如，在设计按需资源时。
+使用资产目录中的图像时，可能需要新的集合，而不是将所有应用程序的映像添加到 `Assets.xcassets` 集合。 例如，在设计按需资源时。
 
 向项目中添加新的资产目录：
 
@@ -174,40 +174,40 @@ if (MyIcon.Image != null) {
 1. 右键单击 "**解决方案资源管理器**中的**项目名称**，然后选择"**添加** > **新文件 ...** "
 2. 选择 " **iOS** > **资产目录**"，输入集合的**名称**，然后单击 "**新建**" 按钮：
 
-    ![](displaying-an-image-images/asset01.png "创建新的资产目录")
+    ![](displaying-an-image-images/asset01.png "Creating a new Asset Catalog")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在解决方案资源管理器中，右键单击 "**资产目录**" 文件夹，然后选择 "**添加 > 新资产目录**"。
 2. 为其命名，然后单击 "**添加**"：
 
-    ![](displaying-an-image-images/asset1.png "创建新的资产目录")
+    ![](displaying-an-image-images/asset1.png "Creating a new Asset Catalog")
 
 -----
 
-在此处，集合的工作方式与自动包含在项目中的默认 `Assets.xcassets` 集合的方式相同。
+在此处，集合的工作方式与自动包含在项目中的默认 `Assets.xcassets` 集合相同。
 
 ## <a name="using-images-with-controls"></a>在控件中使用图像
 
-除了使用映像支持应用外，iOS 还会使用包含应用控件类型（如选项卡栏、工具栏、导航栏、表格和按钮）的图像。 若要在控件上显示图像，一种简单的方法是将 `UIImage` 实例分配给控件的 @no__t 属性。
+除了使用映像支持应用外，iOS 还会使用包含应用控件类型（如选项卡栏、工具栏、导航栏、表格和按钮）的图像。 要使图像显示在控件上，一种简单的方法是将 `UIImage` 实例分配给控件的 `Image` 属性。
 
 ### <a name="frombundle"></a>FromBundle
 
-@No__t-0 方法调用是一个同步（阻塞）调用，它具有许多内置的映像加载和管理功能，例如缓存支持并自动处理各种分辨率的图像文件。
+`FromBundle` 方法调用是一个同步（阻塞）调用，它具有许多内置的映像加载和管理功能，例如缓存支持并自动处理各种分辨率的图像文件。
 
-下面的示例演示如何在 @no__t 上设置 @no__t 的图像：
-
-```csharp
-TabBarItem.Image = UIImage.FromBundle ("MyImage");
-```
-
-假定 `MyImage` 是添加到资产目录中的图像资产的名称。 工作资产目录映像时，只需在 `FromBundle` 方法中为**PNG**格式的图像指定图像集的名称：
+下面的示例演示如何设置 `UITabBar`上的 `UITabBarItem` 的图像：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-对于任何其他图像格式，请将扩展名包含在该名称中。 例如：
+假定 `MyImage` 是添加到资产目录中的图像资产的名称。 工作资产目录映像时，只需为**PNG**格式的图像指定 `FromBundle` 方法中的图像集的名称：
+
+```csharp
+TabBarItem.Image = UIImage.FromBundle ("MyImage");
+```
+
+对于任何其他图像格式，请将扩展名包含在该名称中。 例如:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
@@ -217,51 +217,51 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>在情节提要中显示图像
 
-使用资产目录将映像添加到 Xamarin iOS 项目后，可以使用 iOS 设计器中的 `UIImageView` 在情节提要上轻松显示该映像。 例如，如果已添加以下图像资产：
+使用资产目录将映像添加到 Xamarin iOS 项目后，可以使用 iOS 设计器中的 `UIImageView` 轻松地在情节提要中显示该图像。 例如，如果已添加以下图像资产：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](displaying-an-image-images/display01.png "添加了示例图像资产")
+![](displaying-an-image-images/display01.png "A sample Image Asset has been added")
 
 执行以下操作以在情节提要中显示它：
 
 1. 双击**解决方案资源管理器**中的 `Main.storyboard` 文件，将其打开，以便在 IOS 设计器中进行编辑。
 2. 从**工具箱**中选择一个**图像视图**：
 
-     ![](displaying-an-image-images/display02.png "从工具箱中选择一个图像视图")
+     ![](displaying-an-image-images/display02.png "Select an Image View from the Toolbox")
 3. 将图像视图拖动到设计图面上，并根据需要调整其位置和大小：
 
-    ![](displaying-an-image-images/display03.png "Design Surface 上的新图像视图")
+    ![](displaying-an-image-images/display03.png "A new Image View on the Design Surface")
 4. 在**属性资源管理器**的 "**小组件**" 部分中，选择要显示的所需**图像**资产：
 
-    ![](displaying-an-image-images/display04.png "选择要显示的所需图像资产")
+    ![](displaying-an-image-images/display04.png "Select the desired Image asset to be displayed")
 5. 在 "**视图**" 部分中，使用**模式**来控制调整**图像视图**大小时如何调整图像的大小。
 6. 选中 "**图像" 视图**后，再次单击以添加**约束**：
 
-    ![](displaying-an-image-images/display05.png "添加约束")
+    ![](displaying-an-image-images/display05.png "Adding Constraints")
 7. 将**图像视图**的每个边缘上的 "T" 形控点拖到屏幕的相应侧，以将图像 "固定" 到侧面。 这样，当调整屏幕大小时，**图像视图**就会缩小和增大。
 8. 保存对情节提要所做的更改。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](displaying-an-image-images/display01vs.png "添加了示例图像资产")
+![](displaying-an-image-images/display01vs.png "A sample Image Asset has been added")
 
 执行以下操作以在情节提要中显示它：
 
 1. 双击**解决方案资源管理器**中的 `Main.storyboard` 文件，将其打开，以便在 IOS 设计器中进行编辑。
 2. 从**工具箱**中选择一个**图像视图**：
 
-     ![](displaying-an-image-images/display02vs.png "从工具箱中选择一个图像视图")
+     ![](displaying-an-image-images/display02vs.png "Select an Image View from the Toolbox")
 3. 将图像视图拖动到设计图面上，并根据需要调整其位置和大小：
 
-    ![](displaying-an-image-images/display03vs.png "Design Surface 上的新图像视图")
+    ![](displaying-an-image-images/display03vs.png "A new Image View on the Design Surface")
 4. 在**属性资源管理器**的 "**小组件**" 部分中，选择要显示的所需**图像**资产：
 
-    ![](displaying-an-image-images/display04vs.png "选择要显示的所需图像资产")
+    ![](displaying-an-image-images/display04vs.png "Select the desired Image asset to be displayed")
 5. 在 "**视图**" 部分中，使用**模式**来控制调整**图像视图**大小时如何调整图像的大小。
 6. 选中 "**图像" 视图**后，再次单击以添加**约束**：
 
-    ![](displaying-an-image-images/display05vs.png "添加约束")
+    ![](displaying-an-image-images/display05vs.png "Adding Constraints")
 7. 将**图像视图**的每个边缘上的 "T" 形控点拖到屏幕的相应侧，以将图像 "固定" 到侧面。 这样，当调整屏幕大小时，**图像视图**就会缩小和增大。
 8. 保存对情节提要所做的更改。
 
@@ -285,7 +285,7 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-此代码将创建一个新的 `UIImageView`，并为其提供初始大小和位置。 然后，它从添加到项目的图像资产中加载图像，并将 @no__t 0 添加到父 `UIView` 以显示它。
+此代码将创建一个新的 `UIImageView`，并为其提供初始大小和位置。 然后，它从添加到项目的图像资产中加载图像，并将 `UIImageView` 添加到父 `UIView` 以显示它。
 
 ## <a name="related-links"></a>相关链接
 

@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 6fd6484e547f22f1dc7f27578834b5292d6d2d2a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770009"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001611"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin-Mac 故障排除提示
 
@@ -47,20 +47,20 @@ ms.locfileid: "70770009"
 调试这些程序可能会令人沮丧，因为查找必要的信息可能会很困难。 下面是一些可帮助的方法：
 
 - 确保**info.plist**中列出的 macOS 版本与计算机上当前安装的 macOS 版本相同。
-- 检查堆栈跟踪的 Visual Studio for Mac 应用 -> **程序输出** -> ，或从可能描述输出的 Cocoa 以红色输出。
+- 检查堆栈跟踪的 Visual Studio for Mac 应用程序输出（**查看** -> **Pad** -> **应用程序输出**），或从可能描述输出的 Cocoa 中以红色输出。
 - 从命令行运行应用程序，并使用以下命令查看输出（在**终端**应用中）：
 
-  `MyApp.app/Contents/MacOS/MyApp`（其中`MyApp`是应用程序的名称）
+  `MyApp.app/Contents/MacOS/MyApp` （其中，`MyApp` 是应用程序的名称）
 - 可以通过在命令行上将 "MONO_LOG_LEVEL" 添加到命令来增加输出，例如：
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
 - 您可以将本机调试器（`lldb`）附加到您的进程，以查看是否提供了更多信息（这需要付费许可证）。 例如，执行以下操作：
 
-  1. 在`lldb MyApp.app/Contents/MacOS/MyApp`终端中输入。
-  2. 在`run`终端中输入。
-  3. 在`c`终端中输入。
+  1. 在终端中输入 `lldb MyApp.app/Contents/MacOS/MyApp`。
+  2. 在终端中输入 `run`。
+  3. 在终端中输入 `c`。
   4. 完成调试后退出。
-- 最后一种`Main`方法是，在`NSApplication.Init`方法中调用（或在需要时在其他位置）时，可以将文本写入已知位置中的文件，以跟踪正在运行的启动步骤。
+- 最后一种方法是，在 `Main` 方法（或根据需要在其他位置）调用 `NSApplication.Init` 之前，您可以将文本写入已知位置中的文件，以跟踪正在运行的启动步骤。
 
 ## <a name="known-issues"></a>已知问题
 
@@ -72,13 +72,13 @@ ms.locfileid: "70770009"
 
 [![编辑权利](troubleshooting-images/debug01.png "编辑权利")](troubleshooting-images/debug01-large.png#lightbox)
 
-"**允许传出网络连接（客户端）** " 权限是调试程序所必需的，启用此项将允许正常调试。 由于你无法在不进行调试的情况下进行`CompileEntitlements`调试， `msbuild`因此我们已将目标更新为，以将该权限自动添加到仅针对调试版本进行沙盒处理的任何应用的权利。 发布版本应使用未修改的权利文件中指定的权利。
+"**允许传出网络连接（客户端）** " 权限是调试程序所必需的，启用此项将允许正常调试。 由于不能对其进行调试，因此我们更新了 `msbuild` 的 `CompileEntitlements` 目标，以将该权限自动添加到仅针对调试版本进行沙盒处理的任何应用的权利。 发布版本应使用未修改的权利文件中指定的权利。
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：没有可用于编码437的数据
 
-在 Xamarin 应用中包括第三方库时，可能会出现 "NotSupportedException：尝试编译和运行应用程序时，没有可用于编码437的数据。 例如，库（如`Ionic.Zip.ZipFile`）可能会在操作过程中引发此异常。
+如果在 Xamarin 应用程序中包含第三方库，则在尝试编译和运行该应用程序时，可能会出现 "NotSupportedException：无数据可用于编码 437" 形式的错误。 例如，在操作过程中，库（如 `Ionic.Zip.ZipFile`）可能会引发此异常。
 
-为此，可以打开 Xamarin 项目的选项，转到 " **mac 生成** > **国际化**" 并查看 "**西部**" 国际化：
+为此，可以打开 Xamarin 项目的选项，转到 " **Mac 构建** > **国际化**" 并查看 "**西部**" 国际化：
 
 [![编辑生成选项](troubleshooting-images/issue01.png "编辑生成选项")](troubleshooting-images/issue01-large.png#lightbox)
 
@@ -102,17 +102,17 @@ Visual Studio for Mac 的最新版本已从**info.plist**编辑器中删除了 "
 
 [![编辑权利](troubleshooting-images/entitlements02.png "编辑权利")](troubleshooting-images/entitlements02-large.png#lightbox)
 
-对于现有的 Xamarin Mac 项目，你将需要手动创建**info.plist**文件，方法是在**Solution Pad**中右键单击该项目，然后选择 "**添加** > **新文件 ...** "。接下来，选择 " **Xamarin** > "**空属性列表**：
+对于现有的 Xamarin Mac 项目，你将需要手动创建**info.plist**文件，方法是在**Solution Pad**中右键单击该项目，然后选择 "**添加** > **新文件 ...** "。接下来，选择 " **Xamarin** " > **空属性列表**：
 
 ![添加新属性列表](troubleshooting-images/entitlements03.png "添加新属性列表")
 
-输入`Entitlements`作为名称，然后单击 "**新建**" 按钮。 如果你的项目以前包含了一个权利文件，则系统会提示你将其添加到项目，而不是创建新文件：
+输入名称的 `Entitlements`，然后单击 "**新建**" 按钮。 如果你的项目以前包含了一个权利文件，则系统会提示你将其添加到项目，而不是创建新文件：
 
 [![验证文件的覆盖](troubleshooting-images/entitlements04.png "验证文件的覆盖")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="community-support-on-the-forums"></a>论坛上的社区支持
 
-使用 Xamarin 产品的开发人员社区非常惊人，很多人都可以访问我们的[Xamarin 论坛](http://forums.xamarin.com/categories/mac)，分享体验和专业知识。 此外，Xamarin 工程师会定期访问论坛来帮助。
+使用 Xamarin 产品的开发人员社区非常惊人，很多人都可以访问我们的[Xamarin 论坛](https://forums.xamarin.com/categories/mac)，分享体验和专业知识。 此外，Xamarin 工程师会定期访问论坛来帮助。
 
 <a name="filing-a-bug"/>
 

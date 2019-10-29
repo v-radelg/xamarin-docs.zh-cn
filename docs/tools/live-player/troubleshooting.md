@@ -3,15 +3,15 @@ title: 疑难解答 Xamarin Live Player
 description: 本文档介绍 Xamarin Live Player 和潜在修补程序的已知问题。 它讨论了连接问题、配置问题等。
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 04a377bad42ff680247759036327035d61757b42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d51241bee5f4ddc06032006071fa8296be37f2fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290168"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005945"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>疑难解答 Xamarin Live Player
 
@@ -74,7 +74,7 @@ Live Player 不适用于 iOS。
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE 中的 "尝试部署时出错" 消息
 
-**"IOException：无法从传输连接中读取数据：对非阻止套接字的操作将会阻止 "**
+**"IOException：无法从传输连接中读取数据：对非阻止套接字的操作将会阻止"**
 
 当运行 Xamarin Live Player 的移动设备与运行 Visual Studio 的计算机不在同一网络中时，通常会出现此错误。连接到以前已成功配对的设备时通常会发生这种情况。
 
@@ -87,7 +87,7 @@ Live Player 不适用于 iOS。
 
 如果无法通过 Wi-fi 连接到设备，可以尝试通过配置文件手动配置设备，步骤如下：
 
-**步骤 1：打开配置文件**
+**步骤1：打开配置文件**
 
 转到你的应用程序数据文件夹：
 
@@ -96,23 +96,23 @@ Live Player 不适用于 iOS。
 
 在此文件夹中，如果**PlayerDeviceList**不存在，则需要创建一个。
 
-**步骤 2：获取 IP 地址**
+**步骤2：获取 IP 地址**
 
 在 Xamarin Live Player 应用中，请参阅**关于 > 连接测试 > 开始连接测试**。
 
 记下 IP 地址，配置设备时需要列出的 IP 地址。
 
-**步骤 3：获取配对代码**
+**步骤3：获取配对代码**
 
 在 Xamarin Live Player 依次点击**配对**或**配对**，然后**手动按 enter**。 将显示一个数字代码，你将需要更新配置文件。
 
-**步骤 4：生成 GUID**
+**步骤4：生成 GUID**
 
-转到： https://www.guidgenerator.com/online-guid-generator.aspx 和生成新 guid，并确保大写上。
+请参阅： https://www.guidgenerator.com/online-guid-generator.aspx 并生成新的 guid，并确保大写为 on。
 
-**步骤 5：配置设备**
+**步骤5：配置设备**
 
-在 Visual Studio 或 Visual Studio Code 等编辑器中打开**PlayerDeviceList** 。 你需要在此文件中手动配置你的设备。 默认情况下，该文件应包含以下空`Devices` XML 元素：
+在 Visual Studio 或 Visual Studio Code 等编辑器中打开**PlayerDeviceList** 。 你需要在此文件中手动配置你的设备。 默认情况下，该文件应包含以下空的 `Devices` XML 元素：
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -154,7 +154,7 @@ Live Player 不适用于 iOS。
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs："Resource. Layout" 不包含 "Main" 的定义
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs：" 不包含 "Main" 的定义
 
 对于 MAIN.AXML 文件中定义了用户界面的 Android 项目，会发生此错误。
 Xamarin Live Player 当前不支持 MAIN.AXML 文件。

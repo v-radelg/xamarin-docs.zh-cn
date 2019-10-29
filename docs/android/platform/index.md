@@ -4,15 +4,15 @@ description: 本部分中的文档涵盖特定于 Android 的功能。 在这里
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
-ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
+ms.openlocfilehash: a0b8b80499854d485b8420adb580c22a74933443
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119236"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020163"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -38,7 +38,7 @@ Android 横梁是 Android 4 中一种新的近乎现场通信（NFC）技术，�
 
 Android 3.0 介绍了一些片段，其中展示了如何为在手机和平板电脑上找到的多种不同屏幕大小支持更灵活的设计。 本文介绍如何使用片段来开发 Xamarin Android 应用程序，并介绍如何支持 Android 3.0 （API 级别11）设备上的片段。
 
-## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
+## <a name="app-linkingandroidplatformapp-linkingmd"></a>[应用链接](~/android/platform/app-linking.md)
 
 本指南将讨论 Android 6.0 如何支持_应用链接_，这是一种允许移动应用响应网站上的 url 的技术。 本文将讨论如何在 Android 6.0 应用程序中实现应用程序链接，以及如何将网站配置为向移动应用程序授予权限，以处理域的应用程序链接。
 

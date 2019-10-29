@@ -1,58 +1,58 @@
 ---
 title: UrhoSharp-3D/2D 引擎
-description: UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程序使用几何图形、 材料、 光源和照相机的动画 3D 和 2D 场景。
+description: UrhoSharp 是一种跨平台的高级3D 和2D 引擎，可用于为应用程序创建使用几何、材料、光源和照相机的动画3D 和2D 场景。
 ms.prod: xamarin
 ms.assetid: E6C5B86C-3756-49DF-843B-0B3D981E1C01
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 06f1372d712f23078d120be824a01627d657d0a1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 10cdec5755a5fa45989396ce53da15233553a88f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832567"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005079"
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp-3D/2D 引擎
 
-_UrhoSharp 是一个跨平台高级 3D 和 2D 引擎，可用于创建应用程序使用几何图形、 材料、 光源和照相机的动画 3D 和 2D 场景。_
+_UrhoSharp 是一个跨平台的高级3D 和2D 引擎，可用于为应用程序创建使用几何、材料、光源和照相机的动画3D 和2D 场景。_
 
-![示例 UrhoSharp 游戏](images/video.gif)
+![UrhoSharp 游戏示例](images/video.gif)
 
-作为一个 NuGet 包，可以在 Visual Studio 或 Visual Studio for Mac 安装，可用于面向以下平台的任何分发 UrhoSharp:Android、 MacOS、 iOS、 tvOS 和 Windows。
+UrhoSharp 作为 NuGet 包分发，可安装在 Visual Studio 或 Visual Studio for Mac 上，可用于面向以下任何平台： Android、MacOS、iOS、tvOS 和 Windows。
 
-## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[简介 UrhoSharp](~/graphics-games/urhosharp/introduction.md)
+## <a name="introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[UrhoSharp 简介](~/graphics-games/urhosharp/introduction.md)
 
-本文提供了 UrhoSharp 和三维可视化效果和简单的 3D 游戏中使用其功能的高级概述。
+本文提供 UrhoSharp 的高级概述，以及它在简单的3D 游戏中使用的功能。
 
 ## <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[使用 UrhoSharp](~/graphics-games/urhosharp/using.md)
 
-本文档中我们介绍了将用于构建游戏或创建你的应用程序的 3D 可视化效果的 UrhoSharp 的核心概念。
+在本文档中，我们将介绍用于构建游戏或为应用程序创建三维可视化效果的 UrhoSharp 的核心概念。
 
-## <a name="urho-and-your-platformgraphics-gamesurhosharpplatformindexmd"></a>[Urho 和你的平台](~/graphics-games/urhosharp/platform/index.md)
+## <a name="urho-and-your-platformgraphics-gamesurhosharpplatformindexmd"></a>[Urho 和平台](~/graphics-games/urhosharp/platform/index.md)
 
-这些指南介绍 Urho 的安装程序说明了每个目标平台上，并说明方法将 Urho 集成到现有的 Android 和 iOS 应用程序。
+这些指南介绍了每个目标平台上的 Urho 的安装说明，并介绍了将 Urho 与现有 Android 和 iOS 应用程序集成的方法。
 
 ## <a name="programming-urhosharp-with-fgraphics-gamesurhosharpfsharpmd"></a>[使用 F# 编程 UrhoSharp](~/graphics-games/urhosharp/fsharp.md)
 
-本指南介绍如何通过创建简单"Hello，World ！" UrhoSharp 解决方案使用F#和 Visual Studio for mac。
+本指南演示如何创建简单的 "Hello，World！" 使用F#和 Visual Studio for Mac UrhoSharp 解决方案。
 
 ## <a name="samples"></a>示例
 
-我们创建了[GitHub 上的示例](https://github.com/xamarin/urho-samples)演示如何使用 UrhoSharp。
+我们已[在 GitHub 上](https://github.com/xamarin/urho-samples)创建了演示如何使用 UrhoSharp 的示例。
 
-- **FeatureSamples**显示了 40 多个展示 Urho 的特定功能的各个示例。
+- **FeatureSamples**显示了40多个单独的样本，其中展示了 Urho 的特定功能。
 
 - **SamplyGame**是 Shooty Skies 游戏的示例实现。
 
-- **FormsSample**展示了如何在 Xamarin.Forms 应用程序中使用 UrhoSharp。
+- **FormsSample**展示了如何在 Xamarin 中使用 UrhoSharp。
 
-所有示例都运行在 Android、 iOS、 Mac 和 Windows。
+所有示例都在 Android、iOS、Mac 和 Windows 上运行。
 
 ## <a name="copyright"></a>Copyright
 
-本文档包含从 Xamarin Inc 的原始内容，但从 Urho3D 项目的开放源代码文档广泛地绘制，包含 Cocos2D 项目中的屏幕快照。
+此文档包含来自 Xamarin Inc. 的原始内容，但会广泛地从 Urho3D 项目的开源文档中进行绘制，并包含 Cocos2d 为后盾项目的屏幕截图。
 
 ## <a name="license"></a>许可证
 
-有可用在 UrhoSharp 许可证 [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
+[https://github.com/xamarin/urho/blob/master/LICENSE](https://github.com/xamarin/urho/blob/master/LICENSE)提供 UrhoSharp 许可证

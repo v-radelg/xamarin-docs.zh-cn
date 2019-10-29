@@ -4,15 +4,15 @@ description: 本文档介绍了在 Xamarin iOS 应用程序中存储数据的各
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eefe57abd4ebf4986411a1d717aebd131ebf408f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70767017"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008335"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin iOS 应用中的数据存储简介
 
@@ -54,13 +54,13 @@ SQLite 是一个开源数据库引擎，它已被 Apple 用于其移动平台。
 - 仅支持表重命名和 ADDCOLUMN。 不能对架构执行其他修改。
 - 视图为只读。
 
-你可以在网站上了解有关 SQLite 的详细信息- [SQLite.org](http://SQLite.org) -但是，此文档和关联的示例中包含了使用 sqlite 的所有所需信息。 SQLite 数据库引擎内置于所有版本的 iOS。
+你可以在网站上了解有关 SQLite 的详细信息- [SQLite.org](https://SQLite.org) -但是，此文档和关联的示例中包含了使用 sqlite 的所有所需信息。 SQLite 数据库引擎内置于所有版本的 iOS。
 尽管本章未涵盖，但也可在 Windows Phone 和 Windows 应用程序上使用 SQLite。
 
 ## <a name="windows-and-windows-phone"></a>Windows 和 Windows Phone
 
 SQLite 还可以在 Windows 平台上使用，但本文档中未介绍这些平台。
-有关详细信息，请参阅[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)和[Tasky Pro](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/case_study%3A_tasky)案例研究，并查看[Tim Heuer 的博客](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
+阅读[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究中的详细信息，查看[Tim Heuer 的博客](https://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
 
 ## <a name="related-links"></a>相关链接
 

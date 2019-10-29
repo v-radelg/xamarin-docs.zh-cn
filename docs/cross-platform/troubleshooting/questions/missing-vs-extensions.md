@@ -3,15 +3,15 @@ title: 安装后缺少 Visual Studio 扩展
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 180db6789ab9cc665ad815b943013b117a562709
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6cd5acb529d617c72d8c9e1bd642a831f90b2e8c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757073"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013748"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>安装后缺少 Visual Studio 扩展
 
@@ -21,7 +21,7 @@ ms.locfileid: "70757073"
 
 另请参阅[Windows 要求](~/cross-platform/get-started/requirements.md#windows-requirements)。
 
-## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>可能的修复1：更改安装以确保安装了 Visual Studio 扩展
+## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>可能的修复方法1：更改安装以确保安装了 Visual Studio 扩展
 
 在某些情况下，Xamarin 安装程序可能会自动取消选中 Visual Studio 扩展的安装选项。 如果这是问题的原因，则使用安装程序的“更改”命令安装缺少的 Visual Studio 扩展。 例如，安装 Visual Studio 2013 的扩展：
 
@@ -33,11 +33,11 @@ ms.locfileid: "70757073"
 
 4. 请确保将 " **Xamarin for Visual Studio 2013** " 选项设置为 "安装"：
 
-    ![](missing-vs-extensions-images/installer.png "启用 Xamarin for Visual Studio 2013 安装选项")
+    ![](missing-vs-extensions-images/installer.png "Enable Xamarin for Visual Studio 2013 installation option")
 
 5. 继续执行安装程序向导的其余部分。
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的解决方法2：要求 Visual Studio 重新设置扩展
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修复 2：要求 Visual Studio 重新安装扩展
 
 1. 检查 Xamarin 扩展是否已复制到 Visual Studio 扩展文件夹中：
 
@@ -45,13 +45,13 @@ ms.locfileid: "70757073"
 
     如果正确安装了扩展（对于版本3.1.228），文件夹中将有60项：
 
-    ![](missing-vs-extensions-images/folder.png "资源管理器中的 \"Xamarin\3.1.228.0\" 文件夹内容列表")
+    ![](missing-vs-extensions-images/folder.png "List of 'Xamarin\3.1.228.0' folder contents in Explorer")
 
 2. 确认此文件夹看起来正确之后，让 Visual Studio 尝试重新安装扩展：
 
     `"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe" /setup`
 
-## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能的解决方法3：尝试全新重新安装 Xamarin
+## <a name="possible-fix-3-try-a-fresh-reinstall-of-xamarin"></a>可能的修复 3：尝试完全重新安装 Xamarin
 
 1. 在 Windows 控制面板中，卸载存在的所有以下项目：
 
@@ -63,7 +63,7 @@ ms.locfileid: "70757073"
 
     * Xamarin.iOS
 
-    * 面向 Visual Studio 的 Xamarin
+    * Xamarin for Visual Studio
 
 2. 在资源管理器中，删除 Xamarin Visual Studio 扩展文件夹中的任何保留文件（所有版本，包括 **Program Files** 和 **Program Files (x86)** ）：
 
@@ -77,11 +77,11 @@ ms.locfileid: "70757073"
 
 5. 查找此键：
 
-    _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
+    _HKEY\_本地\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
 6. 查找并删除与此模式匹配的所有项：
 
-    _C:\Program Files\*\Microsoft Visual Studio 1\*. 0 \ Common7\IDE\Extensions\Xamarin_
+    _C:\Program 文件\*\Microsoft Visual Studio 1\*. 0 \ Common7\IDE\Extensions\Xamarin_
 
 7. 查找此键：
 
@@ -95,7 +95,7 @@ ms.locfileid: "70757073"
 
 10. 从[visualstudio.com](https://visualstudio.com/xamarin)重新安装 Xamarin 的当前稳定版本。
 
-## <a name="possible-fix-4-repair-visual-studio-installation"></a>可能的修复4：修复 Visual Studio 安装
+## <a name="possible-fix-4-repair-visual-studio-installation"></a>可能的修复 4：修复 Visual Studio 安装
 
 1. 打开 Windows 的“程序和功能”控制面板。
 

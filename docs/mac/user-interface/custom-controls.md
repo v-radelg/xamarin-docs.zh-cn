@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中生成自定义控件。 它演
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 24e4113f0437c626ba93f12c1124407c472fef8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 15a117ce2b0ccc84d73909eac183eeb6ea109711
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284941"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025612"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>在 Xamarin 中创建自定义控件
 
@@ -20,11 +20,11 @@ ms.locfileid: "70284941"
 
 尽管 macOS 提供了大量的内置用户控件，但有时你可能需要创建自定义控件来提供未现成提供的功能或与自定义 UI 主题（如游戏界面）相匹配的功能。
 
-[![](custom-controls-images/intro01.png "自定义 UI 控件的示例")](custom-controls-images/intro01.png#lightbox)
+[![](custom-controls-images/intro01.png "Example of a custom UI control")](custom-controls-images/intro01.png#lightbox)
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中创建可重用自定义用户界面控件的基本知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文。
 
-你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " `Register` [公开C#类/方法到目标-C](~/mac/internals/how-it-works.md) " 部分，并说明用于将C#类连接到的和`Export`命令目标-C 对象和 UI 元素。
+你可能想要查看[Xamarin](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，并说明用于将类连接到目标的`Register`和`Export`命令-c对象和 UI 元素。
 
 <a name="Introduction-to-Outline-Views" />
 
@@ -32,9 +32,9 @@ ms.locfileid: "70284941"
 
 如上所述，有时需要创建可重用的自定义用户界面控件，为 Xamarin 应用程序的 UI 提供独特的功能或创建自定义 UI 主题（如游戏界面）。
 
-在这些情况下，你可以轻松继承`NSControl`并创建可通过C#代码或通过 Xcode 的 Interface Builder 添加到应用 UI 中的自定义工具。 通过继承`NSControl`自定义控件，将自动获得内置用户界面控件具有的所有标准功能（ `NSButton`如）。
+在这些情况下，可以从 `NSControl` 中轻松继承，并创建可通过C#代码或通过 Xcode 的 Interface Builder 添加到应用 UI 中的自定义工具。 通过从继承 `NSControl` 自定义控件将自动具有内置用户界面控件具有的所有标准功能（如 `NSButton`）。
 
-如果您的自定义用户界面控件只显示信息（如自定义图表和图形工具），则您可能希望`NSView`从`NSControl`而不是继承。
+如果自定义用户界面控件只显示信息（如自定义图表和图形工具），则可能需要从 `NSView` 而不是 `NSControl`继承。
 
 无论使用哪个基类，创建自定义控件的基本步骤都是相同的。
 
@@ -44,13 +44,13 @@ ms.locfileid: "70284941"
 
 ## <a name="building-the-custom-control"></a>生成自定义控件
 
-由于我们创建的自定义控件将响应用户输入（鼠标左键单击），因此我们将从`NSControl`继承。 通过这种方式，自定义控件将自动拥有内置用户界面控件具有的所有标准功能，并像标准 macOS 控件一样做出响应。
+由于我们创建的自定义控件将响应用户输入（鼠标左键单击），因此我们将继承 `NSControl`。 通过这种方式，自定义控件将自动拥有内置用户界面控件具有的所有标准功能，并像标准 macOS 控件一样做出响应。
 
-在 Visual Studio for Mac 中，打开要为其创建自定义用户界面控件（或创建一个新的 Xamarin）的 Xamarin。 添加新类并调用它`NSFlipSwitch`：
+在 Visual Studio for Mac 中，打开要为其创建自定义用户界面控件（或创建一个新的 Xamarin）的 Xamarin。 添加新类并将其调用 `NSFlipSwitch`：
 
-[![](custom-controls-images/custom01.png "添加新类")](custom-controls-images/custom01.png#lightbox)
+[![](custom-controls-images/custom01.png "Adding a new class")](custom-controls-images/custom01.png#lightbox)
 
-接下来，编辑`NSFlipSwitch.cs`类，使其类似于以下内容：
+接下来，编辑 `NSFlipSwitch.cs` 类，使其类似于以下内容：
 
 ```csharp
 using Foundation;
@@ -126,7 +126,7 @@ namespace MacCustomControl
 }
 ```
 
-首先要注意的是，我们要从`NSControl`继承，并使用**Register**命令向目标 C 和 Xcode 的 Interface Builder 公开此类：
+要注意的有关自定义类的第一件事是，我们从 `NSControl` 继承，并使用**Register**命令向目标 C 和 Xcode 的 Interface Builder 公开此类：
 
 ```csharp
 [Register("NSFlipSwitch")]
@@ -139,7 +139,7 @@ public class NSFlipSwitch : NSControl
 
 ### <a name="tracking-the-controls-state"></a>跟踪控件的状态
 
-由于自定义控件是一个交换机，因此我们需要一种方法来跟踪开关的开/关状态。 我们在中`NSFlipSwitch`处理以下代码：
+由于自定义控件是一个交换机，因此我们需要一种方法来跟踪开关的开/关状态。 在 `NSFlipSwitch`中，我们将处理以下代码：
 
 ```csharp
 private bool _value = false;
@@ -155,7 +155,7 @@ public bool Value {
 }
 ```
 
-交换机的状态发生更改时，我们需要一种方法来更新 UI。 为此，请强制控件使用`NeedsDisplay = true`重绘其 UI。
+交换机的状态发生更改时，我们需要一种方法来更新 UI。 为此，请强制控件使用 `NeedsDisplay = true`重绘其 UI。
 
 如果我们的控件需要多个打开/关闭状态（例如，具有3个位置的多状态交换机），我们可以使用**枚举**来跟踪状态。 对于我们的示例，简单的**布尔**值将执行此操作。
 
@@ -183,7 +183,7 @@ private void Initialize() {
 }
 ```
 
-此方法从控件的每个构造函数中调用，以确保正确配置控件。 例如：
+此方法从控件的每个构造函数中调用，以确保正确配置控件。 例如:
 
 ```csharp
 public NSFlipSwitch (IntPtr handle) : base (handle)
@@ -193,7 +193,7 @@ public NSFlipSwitch (IntPtr handle) : base (handle)
 }
 ```
 
-接下来，需要重写`DrawRect`方法，并添加核心图形例程来绘制控件：
+接下来，需要重写 `DrawRect` 方法，并添加核心图形例程来绘制控件：
 
 ```csharp
 public override void DrawRect (CGRect dirtyRect)
@@ -206,13 +206,13 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-当控件的状态发生更改时，我们将调整控件的可视化表示形式（例如，从 **"开"** 改为 "**关闭**"）。 状态发生更改时，可以使用`NeedsDisplay = true`命令强制控件重绘新状态。
+当控件的状态发生更改时，我们将调整控件的可视化表示形式（例如，从 **"开"** 改为 "**关闭**"）。 状态发生更改时，可以使用 `NeedsDisplay = true` 命令强制控件重绘新状态。
 
 <a name="Responding-to-User-Input" />
 
 ### <a name="responding-to-user-input"></a>响应用户输入
 
-可以通过两种基本方式将用户输入添加到自定义控件：**重写鼠标处理例程**或**笔势识别**器。 使用哪种方法，将基于控件所需的功能。
+可以通过两种基本方式将用户输入添加到自定义控件：**覆盖鼠标处理例程**或**笔势识别**器。 使用哪种方法，将基于控件所需的功能。
 
 > [!IMPORTANT]
 > 对于您创建的任何自定义控件，都应使用**Override 方法**_或_**笔势识别**器，但不能同时使用这两种方法互相冲突。
@@ -221,7 +221,7 @@ public override void DrawRect (CGRect dirtyRect)
 
 #### <a name="handling-user-input-with-override-methods"></a>用 Override 方法处理用户输入
 
-继承自`NSControl` （或`NSView`）的对象具有多个用于处理鼠标或键盘输入的重写方法。 对于我们的示例控件，我们希望在用户用鼠标左键单击控件时，**在打开**和**关闭**之间切换切换状态。 我们可以向`NSFlipSwitch`类添加以下重写方法来处理此操作：
+继承自 `NSControl` （或 `NSView`）的对象具有多个用于处理鼠标或键盘输入的重写方法。 对于我们的示例控件，我们希望在用户用鼠标左键单击控件时，**在打开**和**关闭**之间切换切换状态。 我们可以将以下重写方法添加到 `NSFlipSwitch` 类来处理这种情况：
 
 ```csharp
 #region Mouse Handling Methods
@@ -253,13 +253,13 @@ public override void MouseMoved (NSEvent theEvent)
 ## endregion
 ```
 
-在上面的代码中，我们调用`FlipSwitchState`方法（在上面定义）来翻转`MouseDown`方法中的开关状态。 这也会强制重新绘制控件以反映当前状态。
+在上面的代码中，我们调用 `FlipSwitchState` 方法（在上面定义）来翻转 `MouseDown` 方法中的开关状态。 这也会强制重新绘制控件以反映当前状态。
 
 <a name="Handling-User-Input-with-Gesture-Recognizers" />
 
 #### <a name="handling-user-input-with-gesture-recognizers"></a>用手势识别器处理用户输入
 
-（可选）可以使用笔势识别器来处理与控件交互的用户。 删除上面添加的替代，编辑`Initialize`方法，使其看起来如下所示：
+（可选）可以使用笔势识别器来处理与控件交互的用户。 删除上面添加的替代，编辑 `Initialize` 方法，使其看起来如下所示：
 
 ```csharp
 private void Initialize() {
@@ -277,7 +277,7 @@ private void Initialize() {
 }
 ```
 
-在这里，我们将创建一个`NSClickGestureRecognizer`新的并`FlipSwitchState`调用方法，以便在用户使用鼠标左键单击时更改开关的状态。 `AddGestureRecognizer (click)`方法将笔势识别器添加到控件。
+在这里，我们将创建一个新的 `NSClickGestureRecognizer`，并调用我们的 `FlipSwitchState` 方法，以便在用户使用鼠标左键单击它时更改开关的状态。 `AddGestureRecognizer (click)` 方法将笔势识别器添加到控件。
 
 同样，我们使用哪种方法取决于我们使用我们的自定义控件所要完成的工作。 如果需要对用户交互使用低级别访问权限，请使用重写方法。 如果需要预定义的功能（如鼠标单击），请使用手势识别器。
 
@@ -287,7 +287,7 @@ private void Initialize() {
 
 当用户更改自定义控件的状态时，需要一种方法来响应代码中的状态更改（例如，在单击自定义按钮时执行操作）。
 
-若要提供此功能，请`NSFlipSwitch`编辑类并添加以下代码：
+若要提供此功能，请编辑 `NSFlipSwitch` 类并添加以下代码：
 
 ```csharp
 #region Events
@@ -305,7 +305,7 @@ internal void RaiseValueChanged() {
 ## endregion
 ```
 
-接下来，编辑`FlipSwitchState`方法并使其类似于以下内容：
+接下来，编辑 `FlipSwitchState` 方法，使其类似于以下内容：
 
 ```csharp
 private void FlipSwitchState() {
@@ -315,9 +315,9 @@ private void FlipSwitchState() {
 }
 ```
 
-首先，我们提供了`ValueChanged`一个事件，我们可以在代码中C#将处理程序添加到，以便在用户更改开关状态时执行操作。
+首先，我们提供 `ValueChanged` 事件，我们可以在代码中C#将处理程序添加到，以便在用户更改开关状态时执行操作。
 
-其次，由于自定义控件继承`NSControl`自，因此它自动具有可在 Xcode 的 Interface Builder 中分配的**操作**。 若要在状态更改时调用此**操作**，请使用以下代码：
+其次，由于自定义控件继承自 `NSControl`，因此它自动具有可在 Xcode 的 Interface Builder 中分配的**操作**。 若要在状态更改时调用此**操作**，请使用以下代码：
 
 ```csharp
 if (this.Action !=null)
@@ -332,23 +332,23 @@ if (this.Action !=null)
 
 自定义控件完全定义后，可以使用C#代码或 Xcode 的 Interface Builder 将其添加到 Xamarin 应用程序的 UI 中。
 
-若要使用 Interface Builder 添加控件，请先执行 Xamarin. Mac 项目的干净生成，然后双击该`Main.storyboard`文件以在 Interface Builder 进行编辑的情况下将其打开：
+若要使用 Interface Builder 添加控件，请先执行 Xamarin 的 Xamarin 项目的干净生成，然后双击 `Main.storyboard` 文件以在 Interface Builder 进行编辑的情况下将其打开：
 
-[![](custom-controls-images/custom02.png "在 Xcode 中编辑情节提要")](custom-controls-images/custom02.png#lightbox)
+[![](custom-controls-images/custom02.png "Editing the storyboard in Xcode")](custom-controls-images/custom02.png#lightbox)
 
-接下来，将`Custom View`拖入用户界面设计：
+接下来，将 `Custom View` 拖动到用户界面设计：
 
-[![](custom-controls-images/custom03.png "从库中选择自定义视图")](custom-controls-images/custom03.png#lightbox)
+[![](custom-controls-images/custom03.png "Selecting a Custom View from the Library")](custom-controls-images/custom03.png#lightbox)
 
-在 "自定义视图" 仍处于选中状态的情况下，切换到**标识检查器**并将视图的**类**更改为`NSFlipSwitch`：
+在 "自定义" 视图仍处于选定状态的情况下，切换到**标识检查器**并将视图的**类**更改为 `NSFlipSwitch`：
 
-[![](custom-controls-images/custom04.png "设置视图的类")](custom-controls-images/custom04.png#lightbox)
+[![](custom-controls-images/custom04.png "Setting the View's class")](custom-controls-images/custom04.png#lightbox)
 
-切换到**助手编辑器**并为自定义控件创建一个**插座**（确保将`ViewController.h`其绑定到文件而不是`.m`文件中）：
+切换到**助手编辑器**并为自定义控件创建一个**插座**（确保将其绑定到 `ViewController.h` 文件而不是 `.m` 文件）：
 
-[![](custom-controls-images/custom05.png "配置新插座")](custom-controls-images/custom05.png#lightbox)
+[![](custom-controls-images/custom05.png "Configuring a new Outlet")](custom-controls-images/custom05.png#lightbox)
 
-保存所做的更改，返回 Visual Studio for Mac，并允许更改同步。编辑文件并`ViewDidLoad`使方法如下所示： `ViewController.cs`
+保存所做的更改，返回 Visual Studio for Mac，并允许更改同步。编辑 `ViewController.cs` 文件，使 `ViewDidLoad` 方法类似于以下内容：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -363,13 +363,13 @@ public override void ViewDidLoad ()
 }
 ```
 
-在这里，我们将响应`ValueChanged`我们`NSFlipSwitch`在类上定义的事件，并在用户单击控件时写出当前**值**。
+在这里，我们将响应我们在 `NSFlipSwitch` 类上定义的 `ValueChanged` 事件，并在用户单击控件时写出当前**值**。
 
 根据需要，我们可以返回到 Interface Builder 并定义控件上的**操作**：
 
-[![](custom-controls-images/custom06.png "配置新操作")](custom-controls-images/custom06.png#lightbox)
+[![](custom-controls-images/custom06.png "Configuring a new Action")](custom-controls-images/custom06.png#lightbox)
 
-同样，编辑`ViewController.cs`文件并添加以下方法：
+同样，编辑 `ViewController.cs` 文件并添加以下方法：
 
 ```csharp
 partial void OptionTwoFlipped (Foundation.NSObject sender) {

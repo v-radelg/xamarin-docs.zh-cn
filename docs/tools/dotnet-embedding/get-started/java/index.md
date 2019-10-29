@@ -3,15 +3,15 @@ title: Java 入门
 description: 本文档介绍如何开始在 Java 中使用 .NET 嵌入。 它讨论了系统要求、安装和受支持的平台。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 09ea33724c2b1184654ce7768ea1cb2525b62c28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278407"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007367"
 ---
 # <a name="getting-started-with-java"></a>Java 入门
 
@@ -59,7 +59,7 @@ nuget install Embeddinator-4000
 
 Java 当前为 macOS、Windows 和 Android 的预览状态。
 
-通过将`--platform=<platform>`命令行自变量传递到 .net 嵌入工具来选择平台。 当前`macOS`支持`Windows`、和`Android` 。
+平台是通过将 `--platform=<platform>` 命令行参数传递给 .NET 嵌入工具来选择的。 目前支持 `macOS`、`Windows`和 `Android`。
 
 ### <a name="macos-and-windows"></a>macOS 和 Windows
 

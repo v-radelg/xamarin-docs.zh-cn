@@ -3,15 +3,15 @@ title: Apple 平台（iOS 和 Mac）
 description: 本文档介绍与 Xamarin 和 Xamarin 开发相关的各种主题：代码共享、Unified API、绑定目标-C 库、本机引用、本机类型等。
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 10ab9b379344ab6c514eba84f1ef3fd9c7400b73
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76e883ba42ed898188a646a8a43cf1e3f123a7eb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765539"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015602"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple 平台（iOS 和 Mac）
 
@@ -30,7 +30,7 @@ IOS 和 Mac 项目的 Unified API 为框架使用相同的命名空间，以便�
 > [!NOTE]
 > **经典配置文件弃用：** 由于在 Xamarin 中添加了新的平台，因此我们开始逐渐弃用经典配置文件（monotouch.dialog）的功能。 例如，已删除非 NRC （新引用计数）选项。 始终为所有统一的应用程序启用了 NRC （即，不能使用 NRC），并且没有已知问题。 未来版本将删除使用 Boehm 作为垃圾回收器的选项。 这也是对统一应用程序不可用的选项。 在版本的 10.0 Xamarin 版本2016中，计划完全删除经典支持。
 
-由于本机框架具有`MonoTouch.`或`MonoMac.`命名空间前缀，因此原始（非统一） Xamarin 和 xamarin api 使得代码共享变得更加困难。  我们提供了一些空命名空间，使开发人员可以通过`using`在同一文件中添加引用 MonoMac 和 monotouch.dialog 命名空间的语句来共享代码，但这有点不好。 只能在内部分发的旧版应用中继续使用 Classic API （建议升级到 Unified API）。
+由于本机框架有 `MonoTouch.` 或 `MonoMac.` 命名空间前缀，导致代码共享的原始（非统一） Xamarin 和 Xamarin Api 变得更加困难。  我们提供了一些空命名空间，使开发人员可以通过添加在同一文件中同时引用 MonoMac 和 Monotouch.dialog 命名空间的 `using` 语句来共享代码，但这有点不好。 只能在内部分发的旧版应用中继续使用 Classic API （建议升级到 Unified API）。
 
 ### <a name="updating-from-classic-to-the-unified-api"></a>从经典升级到 Unified API
 
@@ -56,11 +56,11 @@ Xamarin 使你可以通过绑定将本机库引入你的应用程序。 本部�
 
 ## <a name="working-with-native-types-in-cross-platform-appsnative-types-cross-platformmd"></a>[使用跨平台应用中的本机类型](native-types-cross-platform.md)
 
-本文介绍如何在跨平台应用程序中使用新`nint`的`nuint`iOS `nfloat`Unified API 本机类型（、、），该应用程序中的代码与 Android 或 Windows Phone 操作系统等非 iOS 设备共享。
+本文介绍如何在跨平台应用程序中使用新的 iOS Unified API 本机类型（`nint`、`nuint``nfloat`），该应用程序中的代码与 Android 或 Windows Phone Os 等非 iOS 设备共享。
 它可让你深入了解本机类型的使用情况，并为新类型必须与跨平台代码一起使用的情况提供多种可能的解决方案。
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient 堆栈和 SSL/TLS 实现选择器](http-stack.md)
 
-新的 HttpClient Stack 选择器控制要在 Xamarin、tvOS 和 Xamarin 应用中使用的 HttpClient 实现。 现在，你可以切换到使用 iOS、tvOS 或 os X 本机传输（`NSUrlSession`或`CFNetwork`取决于 OS）的实现。
+新的 HttpClient Stack 选择器控制要在 Xamarin、tvOS 和 Xamarin 应用中使用的 HttpClient 实现。 你现在可以切换到使用 iOS、tvOS 或 OS X 本机传输（`NSUrlSession` 或 `CFNetwork` 具体取决于 OS）的实现。
 
-SSL （安全套接字层）及其后续版本 TLS （传输层安全性）通过`System.Net.Security.SslStream`提供对 HTTP 和其他网络连接的支持。 新的 SSL/TLS 实现生成选项在 Mono 的 TLS 堆栈和在 Mac 和 iOS 中提供的 Apple TLS 堆栈提供支持的选项之间切换。
+SSL （安全套接字层）及其后续版本（传输层安全性）通过 `System.Net.Security.SslStream`提供对 HTTP 和其他网络连接的支持。 新的 SSL/TLS 实现生成选项在 Mono 的 TLS 堆栈和在 Mac 和 iOS 中提供的 Apple TLS 堆栈提供支持的选项之间切换。

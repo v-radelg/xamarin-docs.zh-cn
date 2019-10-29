@@ -4,15 +4,15 @@ description: 本文档介绍 watchOS 应用程序所需的各种图标，以及�
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/26/2018
-ms.openlocfilehash: e0bf9ec1553e6638398695157a11242b9885b168
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8c5b8d0417fb7fd1069d2bf6fa5d9887d569453
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768102"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001562"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>使用 Xamarin 中的 watchOS 图标
 
@@ -42,7 +42,7 @@ Apple Watch 解决方案需要两组图标：
 
 " [Apple Watch 设置" 应用](~/ios/watchos/app-fundamentals/settings.md)中的 "监视" 应用旁边显示的字符串在**iOS 应用的 info.plist**中配置。
 
-确认你的**info.plist**具有`CFBundleName`密钥和值（注意：这不同于`CFBundleDisplayName`，你可以同时拥有两者）：
+确认你的**info.plist**具有 `CFBundleName` 键和值（注意：这不同于 `CFBundleDisplayName`，你可以同时拥有两者）：
 
 ```xml
 <key>CFBundleName</key>
@@ -55,21 +55,21 @@ Apple Watch 解决方案需要两组图标：
 
 1. 右键单击 "监视" 应用项目，然后选择 "**文件" > "添加 > 新建文件 ..."> iOS > 资产目录**将资产目录添加到项目。
 
-    ![](icons-images/newasset.png "向项目添加资产目录")
+    ![](icons-images/newasset.png "Add an asset catalog to the project")
 
 2. 双击**appicons.appiconset/内容 json**文件
 
-    ![](icons-images/xcassets-iconset-sml.png "AppIcon 内容")
+    ![](icons-images/xcassets-iconset-sml.png "The AppIcon contents")
 
 3. 添加所有 watchOS 图像，如以下屏幕截图所示：
 
-    [![](icons-images/appicons-sml.png "添加所有 watchOS 映像，如以下屏幕截图所示")](icons-images/appicons.png#lightbox)
+    [![](icons-images/appicons-sml.png "Add all the watchOS images, as shown in this screenshot")](icons-images/appicons.png#lightbox)
 
     请参阅 Apple 的所需大小的[图标准则](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（还会在屏幕上显示维度）。 请记住，这些图标会自动裁剪，以在圆形中呈现。
 
     图标列表应类似于：
 
-    ![](icons-images/xcassets-complete-sml.png "解决方案资源管理器中的图标列表")
+    ![](icons-images/xcassets-complete-sml.png "The icon list in the Solution Explorer")
 
 4. 若要确保在应用中包含资产目录，请将以下键和值添加到**Watch 应用的信息中。 info.plist**：
 

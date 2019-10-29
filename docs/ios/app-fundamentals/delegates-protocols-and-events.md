@@ -4,15 +4,15 @@ description: 本文档介绍如何在 Xamarin 中使用事件、协议和委托�
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/17/2017
-ms.openlocfilehash: d42263733c7fa793713738be4b389eaa4850f38b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b63d5dcd8ac1a82c1f120cc5a690985557f7e68f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68649362"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004396"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin 中的事件、协议和委托
 
@@ -52,7 +52,7 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-前面的代码在 UIViewController 的 `ViewDidLoad` 方法中连接。 @No__t_0 变量引用一个按钮，你可以在 iOS 设计器中或使用代码添加该按钮。 下图显示了已在 iOS 设计器中添加的按钮：
+前面的代码在 UIViewController 的 `ViewDidLoad` 方法中连接。 `aButton` 变量引用一个按钮，你可以在 iOS 设计器中或使用代码添加该按钮。 下图显示了已在 iOS 设计器中添加的按钮：
 
 [![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "A button added in iOS Designer")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
@@ -225,9 +225,9 @@ var sampleCoordinate =
 map.AddAnnotation (new SampleMapAnnotation (sampleCoordinate));
 ```
 
-此处的地图变量是 `MKMapView` 的实例，它是表示地图本身的类。 @No__t_0 将使用从 `SampleMapAnnotation` 实例派生的 `Coordinate` 数据将批注视图定位到地图上。
+此处的地图变量是 `MKMapView` 的实例，它是表示地图本身的类。 `MKMapView` 将使用从 `SampleMapAnnotation` 实例派生的 `Coordinate` 数据将批注视图定位到地图上。
 
-@No__t_0 协议跨实现该协议的任何对象提供一组已知功能，无需使用者（在本例中为 map）需要了解有关实现的详细信息。 这简化了将各种可能的批注添加到地图中的工作。
+`MKAnnotation` 协议跨实现该协议的任何对象提供一组已知功能，无需使用者（在本例中为 map）需要了解有关实现的详细信息。 这简化了将各种可能的批注添加到地图中的工作。
 
 ### <a name="protocols-deep-dive"></a>深层协议
 
@@ -272,7 +272,7 @@ iOS 使用目标-C 委托实现委托模式，在该模式中，一个对象将�
 
 支持委托的类通过公开委托属性来实现此目的，实现委托的类将分配给该属性。 为委托实现的方法将取决于特定委托采用的协议。 对于 `UITableView` 方法，你可以实现 `UITableViewDelegate` 协议，对于 `UIAccelerometer` 方法，你应为要公开委托的所有 iOS 中的任何其他类实现 `UIAccelerometerDelegate`。
 
-我们在前面的示例中看到的 `MKMapView` 类还具有一个名为 Delegate 的属性，该属性将在各种事件发生后调用。 @No__t_0 的委托的类型为 `MKMapViewDelegate`。
+我们在前面的示例中看到的 `MKMapView` 类还具有一个名为 Delegate 的属性，该属性将在各种事件发生后调用。 `MKMapView` 的委托的类型为 `MKMapViewDelegate`。
 你将在示例中稍后使用此方法来响应选中的批注，但首先我们讨论强委托和弱委托之间的区别。
 
 ### <a name="strong-delegates-vs-weak-delegates"></a>强委托与弱委托
@@ -282,7 +282,7 @@ iOS 使用目标-C 委托实现委托模式，在该模式中，一个对象将�
 
 ### <a name="example-using-a-delegate-with-xamarinios"></a>将委托与 Xamarin 一起使用的示例
 
-若要在我们的示例中执行代码以响应用户点击批注，可以 `MKMapViewDelegate` 子类，并将实例分配给 `MKMapView` 的 `Delegate` 属性。 @No__t_0 协议仅包含可选方法。
+若要在我们的示例中执行代码以响应用户点击批注，可以 `MKMapViewDelegate` 子类，并将实例分配给 `MKMapView` 的 `Delegate` 属性。 `MKMapViewDelegate` 协议仅包含可选方法。
 因此，所有方法都是在 Xamarin `MKMapViewDelegate` 类中绑定到此协议的虚拟。 当用户选择某一批注时，`MKMapView` 实例将向其委托发送 `mapView:didSelectAnnotationView:` 消息。 若要在 Xamarin 中处理此情况，需要重写 MKMapViewDelegate 子类中的 `DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)` 方法，如下所示：
 
 ```csharp
@@ -361,7 +361,7 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 
 委托用于 iOS 中的回调，与 .NET 使用事件的方式类似。 为了使 iOS Api 和它们使用目标-C 委托看起来更像 .NET，Xamarin，在 iOS 中使用委托的许多地方都公开了 .NET 事件。
 
-例如，在早期的实现中，还可以使用 .NET 事件在 Xamarin 中实现对选定批注的 `MKMapViewDelegate` 响应。 在这种情况下，将在 `MKMapView` 中定义事件，并将其称为 `DidSelectAnnotationView`。 它将具有类型 `MKMapViewAnnotationEventsArgs` 的 `EventArgs` 子类。 @No__t_1 的 `View` 属性会为你提供一个对批注视图的引用，你可以在该视图中继续使用之前介绍的相同实现，如下所示：
+例如，在早期的实现中，还可以使用 .NET 事件在 Xamarin 中实现对选定批注的 `MKMapViewDelegate` 响应。 在这种情况下，将在 `MKMapView` 中定义事件，并将其称为 `DidSelectAnnotationView`。 它将具有类型 `MKMapViewAnnotationEventsArgs` 的 `EventArgs` 子类。 `MKMapViewAnnotationEventsArgs` 的 `View` 属性会为你提供一个对批注视图的引用，你可以在该视图中继续使用之前介绍的相同实现，如下所示：
 
 ```csharp
 map.DidSelectAnnotationView += (s,e) => {

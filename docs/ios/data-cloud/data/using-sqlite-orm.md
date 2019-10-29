@@ -4,15 +4,15 @@ description: SQLite.NET PCL NuGet 库为 Xamarin iOS 应用提供了简单的数
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763134"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008166"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>将 SQLite.NET 与 Xamarin 配合使用
 
@@ -26,9 +26,9 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 若要在 Xamarin 应用中包括 SQLite.NET 库，请将以下 NuGet 包添加到项目中：
 
 - **包名称：** sqlite 网络-pcl
-- **创建者：** Frank A. Krueger
+- **作者：** Frank Krueger
 - **ID：** sqlite net pcl
-- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Url：** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 包](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 包")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -69,7 +69,7 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 
 在 iOS 上运行时，此文档的*DataAccess_Basic*示例代码如下所示。 此代码演示如何执行简单的 SQLite.NET 操作并在应用程序的主窗口中以文本形式显示结果。
 
-**iOS**
+**Android**
 
  [![iOS SQLite.NET 示例](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
@@ -85,7 +85,7 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 using SQLite; // from the github SQLite.cs class
 ```
 
-这要求您已将 SQLite 添加到项目中[，如下所示。](#Usage) 请注意，SQLite 数据库表是通过将属性添加到类（ `Stock`类）而不是 CREATE TABLE 命令来定义的。
+这要求您已将 SQLite 添加到项目中[，如下所示。](#Usage) 请注意，通过将属性添加到类（`Stock` 类）而不是 CREATE TABLE 命令来定义 SQLite 数据库表。
 
 ```csharp
 [Table("Items")]
@@ -122,7 +122,7 @@ public static void DoSomeDataAccess () {
 }
 ```
 
-如果在`[Table]`未指定表名称参数的情况下使用属性，则会导致基础数据库表具有与类相同的名称（在本例中为 "Stock"）。 如果直接针对数据库编写 SQL 查询，而不是使用 ORM 数据访问方法，则实际的表名非常重要。 同样， `[Column("_id")]`特性是可选的，如果不存在，则会将列添加到与类中的属性同名的表中。
+如果在未指定表名称参数的情况下使用 `[Table]` 属性，则会导致基础数据库表具有与类相同的名称（在本例中为 "Stock"）。 如果直接针对数据库编写 SQL 查询，而不是使用 ORM 数据访问方法，则实际的表名非常重要。 同样，`[Column("_id")]` 属性是可选的，如果不存在，列将添加到与类中的属性同名的表中。
 
 ## <a name="sqlite-attributes"></a>SQLite 特性
 
@@ -130,7 +130,7 @@ public static void DoSomeDataAccess () {
 
 - **[PrimaryKey]** –此特性可应用于整数属性，以强制其成为基础表的主键。 不支持组合主键。
 - **[自动增量]** –此特性将导致插入到数据库中的每个新对象的整数属性值为自动增量
-- **[Column （name）]** –提供可选`name`的参数将重写基础数据库列的名称（与属性相同）的默认值。
+- **[Column （name）]** –提供可选 `name` 参数将重写基础数据库列的名称（与属性相同）的默认值。
 - **[表（名称）]** –标记该类，使其能够存储在基础 SQLite 表中。 指定可选的 name 参数将重写基础数据库表名称（与类名相同）的默认值。
 - **[MaxLength （值）]** –当尝试插入数据库时，限制文本属性的长度。 在插入对象之前，使用代码应进行验证，因为在尝试执行数据库插入或更新操作时，仅 "选中" 此属性。
 - **[Ignore]** –使 SQLite.NET 忽略此属性。 这对于类型不能存储在数据库中的属性或无法自动解析的模型集合的属性特别有用。
@@ -140,14 +140,14 @@ public static void DoSomeDataAccess () {
 
 ## <a name="more-complex-queries"></a>更复杂的查询
 
-上`SQLiteConnection`的以下方法可用于执行其他数据操作：
+`SQLiteConnection` 上的以下方法可用于执行其他数据操作：
 
 - **Insert** –将新的对象添加到数据库。
-- **>\<获取**–尝试使用主键检索对象。
-- **表\<T >** –返回表中的所有对象。
+- **获取\<t >** –尝试使用主键检索对象。
+- **表\<t >** –返回表中的所有对象。
 - **删除**–使用其主键删除对象。
-- **查询\<T >** -执行返回多行（作为对象）的 SQL 查询。
-- **执行**–当您不希望从 SQL `Query`返回行时（例如插入、更新和删除说明），请使用此方法（而不是）。
+- **查询\<t >** -执行返回多行（作为对象）的 SQL 查询。
+- **执行**–当您不希望从 SQL 返回行时（例如插入、更新和删除说明），请使用此方法（而不是 `Query`）。
 
 ### <a name="getting-an-object-by-the-primary-key"></a>通过主键获取对象
 
@@ -190,13 +190,13 @@ foreach (var s in stocksStartingWithA) {
 var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 ```
 
-你可以检查`rowcount`以确认受影响的行数（在此示例中已删除）。
+您可以检查 `rowcount` 以确认受影响的行数（在此示例中已删除）。
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>将 SQLite.NET 用于多个线程
 
-SQLite 支持三种不同的线程模式：*单线程*、*多线程*和*序列化*。 如果要从多个线程访问数据库，而不受任何限制，则可以将 SQLite 配置为使用**序列化**的线程模式。 在应用程序的早期设置此模式很重要（例如，在`OnCreate`方法的开头）。
+SQLite 支持三个不同的线程模式：*单线程*、*多线程*和*序列化*。 如果要从多个线程访问数据库，而不受任何限制，则可以将 SQLite 配置为使用**序列化**的线程模式。 在应用程序的早期设置此模式很重要（例如，在 `OnCreate` 方法的开头）。
 
-若要更改线程模式，请`SqliteConnection.SetConfig` `Mono.Data.Sqlite`在命名空间中调用。 例如，下面这行代码将为**序列化**模式配置 SQLite：
+若要更改线程模式，请在 `Mono.Data.Sqlite` 命名空间中调用 `SqliteConnection.SetConfig`。 例如，下面这行代码将为**序列化**模式配置 SQLite：
 
 ```csharp
 using Mono.Data.Sqlite;

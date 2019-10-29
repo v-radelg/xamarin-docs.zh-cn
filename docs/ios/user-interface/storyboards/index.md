@@ -4,15 +4,15 @@ description: 本文档介绍了 Xamarin 中的情节提要。 其中介绍了如
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 494ac624ac4a77c592f358b68aec4429551a49a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70768882"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002433"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
 
@@ -266,7 +266,7 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-有关注册类和方法的详细信息，请参阅[类型注册](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/)器文档。
+有关注册类和方法的详细信息，请参阅[类型注册](https://docs.microsoft.com/xamarin/ios/internals/registrar)器文档。
 
 此类中的最后一步是将按钮向上绑定到粉红色视图控制器。 我们将实例化情节提要中的 `PinkViewController`;接下来，我们将使用 `PushViewController` 来计划推送 segue，如下面的示例代码所示：
 

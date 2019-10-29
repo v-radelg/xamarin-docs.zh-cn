@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: d20e27fdbb1f62c2aebb7122d7f0c042b3ac9085
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: cbc3bceffacd9669c1e2e667faadc2939fd4aa1f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71997185"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005930"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平台设置
 
@@ -26,7 +26,7 @@ Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用�
 在开始之前，请创建新的 Xamarin. Forms 解决方案，或使用现有的 Xamarin Forms 解决方案，例如[**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)。
 
 > [!NOTE]
-> 尽管本文重点介绍如何将 GTK # 应用添加到 VS2017 和 Visual Studio for Mac 中的 Xamarin 解决方案，但也可以在适用于 Linux 的[MonoDevelop](http://www.monodevelop.com/)中执行此应用。
+> 尽管本文重点介绍如何将 GTK # 应用添加到 VS2017 和 Visual Studio for Mac 中的 Xamarin 解决方案，但也可以在适用于 Linux 的[MonoDevelop](https://www.monodevelop.com/)中执行此应用。
 
 ## <a name="adding-a-gtk-app"></a>添加 GTK # 应用
 

@@ -4,15 +4,15 @@ description: 如何获取 Google Maps API 密钥以便向应用添加地图功�
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: bf0a099546b2d5610a639cbf9af4c7676d10bef9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250049"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020050"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>获取 Google Maps API 密钥
 
@@ -35,7 +35,7 @@ ms.locfileid: "71250049"
 
 默认情况下，可在以下位置找到用于对 Xamarin Android 应用程序的调试版本进行签名的密钥存储：
 
-**C：\\Users\\[USERNAME]\\AppData\\Local\\XamarinMono\\for Android\\debug.exe**
+**C：\\用户\\[USERNAME]\\AppData\\本地\\Xamarin\\适用于 Android 的 Mono\\**
 
 可通过从 JDK 运行 `keytool` 命令来获取有关密钥存储的信息。 此工具通常在 Java bin 目录中找到：
 
@@ -49,7 +49,7 @@ ms.locfileid: "71250049"
 
 可通过从 JDK 运行 `keytool` 命令来获取有关密钥存储的信息。 此工具通常在 Java bin 目录中找到：
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
+**/System/library/java/javavirtualmachines/version .jdk [VERSION]。 jdk/目录/Home/bin/keytool**
 
 -----
 
@@ -80,7 +80,7 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 ### <a name="production-keys"></a>生产密钥
 
 将应用部署到 Google Play 时，必须[使用私钥](~/android/deploy-test/signing/index.md)对其进行签名。
-`keytool`需要使用私钥详细信息运行，并使用生成的 sha-1 指纹来创建生产的 Google Maps API 密钥。 请记住，在部署之前，请用正确的 Google Maps API 密钥更新**androidmanifest.xml**文件。
+需要使用私钥详细信息运行 `keytool`，并使用生成的 SHA-1 指纹来创建生产的 Google Maps API 密钥。 请记住，在部署之前，请用正确的 Google Maps API 密钥更新**androidmanifest.xml**文件。
 
 ### <a name="keytool-output"></a>Keytool 输出
 
@@ -115,7 +115,7 @@ Certificate fingerprints:
 
 2. 如果创建了新项目，请在显示的 "**新建项目**" 对话框中输入项目名称。 此对话框将根据你的项目名称制造唯一的项目 ID。 接下来，单击 "**创建**" 按钮，如以下示例中所示：
 
-   [![新项目命名为 XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
+   [![名为 XamarinMapsDemo 的新项目](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
 3. 一分钟后，将创建项目，并转到项目的 "**仪表板**" 页。 在该处单击 "**启用 API 和服务**"：
 
@@ -145,23 +145,23 @@ Certificate fingerprints:
 
 4. 将 "**名称**" 字段从**API 密钥 1**更改为一个名称，该名称将帮助你记住密钥的用途（在本示例中使用**XamarinMapsDemoKey** ）。 接下来，单击 " **Android 应用**" 单选按钮：
 
-   [![选择 "凭据" 页面上的 Android 应用](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
+   [![在 "凭据" 页上选择 Android 应用](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
 5. 若要添加 SHA-1 指纹，请单击 " **+ 添加包名称和指纹**"：
 
-   [![单击 "添加包名称和指纹"](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
+   [![单击添加包名称和指纹](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
-6. 输入应用的包名称，然后输入 sha-1 证书指纹（如本指南前面所`keytool`述，通过获取）。 在下面的示例中，输入的包`XamarinMapsDemo`名称，后跟从**debug.exe**获取的 sha-1 证书指纹：
+6. 输入应用的包名称，然后输入 SHA-1 证书指纹（可通过 `keytool` 获取，如本指南前面所述）。 在以下示例中，输入了 `XamarinMapsDemo` 的包名称，后跟从**debug.exe**获取的 sha-1 证书指纹：
 
-   [![输入的包名称为 ".com"。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
+   [输入![包名称为 ".com"。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. 请注意，为了使 APK 来访问 Google 地图，您必须包括 sha-1 指纹，包使用对 APK 进行签名每个密钥存储 （调试和发布） 的名称。 例如，如果一台计算机用于调试和生成发布 APK 的另一台计算机，您应包括 sha-1 证书指纹从第一台计算机的调试密钥存储和从的发布密钥存储的 sha-1 证书指纹第二台计算机。 单击 " **+ 添加包名称和指纹**" 添加另一个指纹和包名称，如以下示例中所示：
+7. 请注意，为了让你的 APK 访问 Google Maps，你必须为每个用于签署 APK 的密钥存储（调试和发布）包含 SHA-1 指纹和包名称。 例如，如果你使用一台计算机进行调试，将另一台计算机用于生成发布 APK，则应在第一台计算机的调试密钥存储中包含 SHA-1 证书指纹，并在 release 密钥存储中包含 SHA-1 证书指纹第二台计算机。 单击 " **+ 添加包名称和指纹**" 添加另一个指纹和包名称，如以下示例中所示：
 
-   [![添加另一个指纹会创建另一个 SHA-1 证书](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
+   [添加另一个指纹![会创建另一个 SHA-1 证书](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. 单击“保存”按钮保存更改。 接下来，返回到 API 密钥列表。 如果你有以前创建的其他 API 密钥，则它们也会在此处列出。 在此示例中，只列出了一个 API 密钥（在前面的步骤中创建）：
 
-   [!["API 密钥" 列表中显示 XamarinMapsDemoKey](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
+   [![XamarinMapsDemoKey 显示在 API 密钥列表中](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 ## <a name="connect-the-project-to-a-billable-account"></a>将项目连接到计费帐户
 
@@ -177,7 +177,7 @@ Certificate fingerprints:
 
 ## <a name="adding-the-key-to-your-project"></a>向项目添加密钥
 
-最后，将此 API 密钥添加到 Xamarin 应用的**androidmanifest.xml**文件。 在下面的示例中`YOUR_API_KEY` ，将替换为在前面的步骤中生成的 API 密钥：
+最后，将此 API 密钥添加到 Xamarin 应用的**androidmanifest.xml**文件。 在下面的示例中，`YOUR_API_KEY` 将替换为在前面的步骤中生成的 API 密钥：
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -196,4 +196,4 @@ Certificate fingerprints:
 
 - [Google Api 控制台](https://code.google.com/apis/console/)
 - [Google Maps API 密钥](https://developers.google.com/maps/documentation/android/start#the_google_maps_api_key)
-- [keytool](http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)
+- [keytool](https://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)

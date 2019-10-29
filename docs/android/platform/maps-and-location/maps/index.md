@@ -4,15 +4,15 @@ description: 本文介绍如何将 maps 和 location 与 Xamarin 一起使用。
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 194f82757b0b4cb5e148e06d4303dc0d22afb9b3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d877f415bb96024bb41edc2be9aec108ae248e88
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761711"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020030"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何将 Google Maps 和 Location 与 Xamarin 配合使用
 
@@ -31,8 +31,8 @@ _本文介绍如何将 maps 和 location 与 Xamarin 一起使用。其中包括
 
 ## <a name="related-links"></a>相关链接
 
-- [MapsAndLocationDemo_v3 (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
+- [MapsAndLocationDemo_v3 （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
 - [活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [意向列表：在 Android 设备上调用 Google 应用程序](https://developer.android.com/guide/appendix/g-app-intents.html)
+- [意向列表：调用 Android 设备上的 Google 应用程序](https://developer.android.com/guide/appendix/g-app-intents.html)
 - [位置和地图](https://developer.android.com/guide/topics/location/index.html)

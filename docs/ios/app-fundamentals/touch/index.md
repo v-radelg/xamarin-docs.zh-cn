@@ -4,21 +4,21 @@ description: 本文档链接到介绍如何在 Xamarin iOS 应用程序中使用
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282990"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009363"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>在 Xamarin iOS 应用中处理触控
 
 与其他移动平台一样，iOS 提供多种方法来处理触摸。 它可以支持多点触控（屏幕上的多点联系）和复杂的手势。 本指南介绍了一些概念，以及在 iOS 上实现触摸和手势的 particularities。
 
-iOS 在`UITouch`类中封装触控数据，可通过一`UIResponder`系列方法将其提供给应用程序。 应用程序可以在`UIView`和`UIViewController`的子类中重写这些方法，这两`UIResponder`个类都继承自。
+iOS 在 `UITouch` 类中封装触控数据，可通过一系列 `UIResponder` 方法将其提供给应用程序。 应用程序可以在 `UIView` 和 `UIViewController`的子类中重写这些方法，这两种方法都继承自 `UIResponder`。
 
 除了捕获触控数据以外，iOS 还提供了一种方法来解释对手势的接触模式。 这些手势识别器可用于解释特定于应用程序的命令，例如，旋转图像或打开页面。 iOS 提供了一系列丰富的类，可使用最少添加的代码处理常见的手势。
 
@@ -26,7 +26,7 @@ iOS 在`UITouch`类中封装触控数据，可通过一`UIResponder`系列方法
 
 但是，有时你需要使用低级别的触摸处理，甚至跟踪多个手指，例如创建 finger 式程序。
 
-## <a name="sections"></a>部分
+## <a name="sections"></a>各节内容
 
 - [iOS 中的触控](touch-in-ios.md)
 - [演练：在 iOS 中使用触控](ios-touch-walkthrough.md)

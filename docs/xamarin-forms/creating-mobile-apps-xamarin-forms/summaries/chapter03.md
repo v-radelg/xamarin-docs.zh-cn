@@ -1,72 +1,72 @@
 ---
-title: 第 3 章的摘要。 深入到文本
-description: 用 Xamarin 创建移动应用程序：第 3 章的摘要。 深入到文本
+title: 第3章摘要： 深入到文本
+description: 用 Xamarin 创建移动应用：第3章的摘要。 深入到文本
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: e37175240825c0fed350589649469c99f1bbf69a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 69415b59bbd376330454302981e3216c236a16bb
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771229"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980922"
 ---
-# <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章的摘要。 深入到文本
+# <a name="summary-of-chapter-3-deeper-into-text"></a>第3章摘要： 深入到文本
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
 
-本章探讨[ `Label` ](xref:Xamarin.Forms.Label)更为深入，包括颜色、 字体和格式设置中的视图。
+本章更深入地探讨了[`Label`](xref:Xamarin.Forms.Label)视图，包括颜色、字体和格式设置。
 
 ## <a name="wrapping-paragraphs"></a>包装段落
 
-当[ `Text` ](xref:Xamarin.Forms.Label.Text)的属性`Label`包含长文本`Label`会自动将其包装到多个行所示[ **Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles)示例。 可以嵌入 Unicode 代码 \u2014 为长破折号，如或C#字符，如 '\r' 中断到新行。
+当 `Label` 的[`Text`](xref:Xamarin.Forms.Label.Text)属性包含长文本时，`Label` 会自动将其包装到[**Baskervilles**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles)示例所示的多个行。 你可以嵌入 Unicode 代码（如 "\u2014"）作为全身破折号，或C#使用 "\r" 之类的字符来换行。
 
-当[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)和[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)的属性`Label`设置为`LayoutOptions.Fill`，则的总体大小`Label`受到空间，其容器使可用。 `Label`称为*约束*。 大小`Label`是其容器的大小。
+当 `Label` 的[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)和[`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions)属性设置为 `LayoutOptions.Fill`时，`Label` 的总体大小受其容器可用空间的控制。 `Label` 被视为*受限制*。 `Label` 的大小为其容器的大小。
 
-当`HorizontalOptions`和`VerticalOptions`属性设置为值而不`LayoutOptions.Fill`，则大小`Label`受呈现的文本，最大大小，其容器使可用于所需的空间`Label`。 `Label`称为*不受约束*并确定其自身的大小。
+如果 `HorizontalOptions` 和 `VerticalOptions` 属性设置为除 `LayoutOptions.Fill`以外的值，则 `Label` 的大小由呈现文本所需的空间来控制，最大大小为其容器可用于 `Label`的大小。 `Label` 被认为是不受*限制*的，它会确定其大小。
 
-（注意：术语 "*约束*" 和 "无*限制*" 可能是比较直观的，因为无约束视图通常小于约束视图。 此外，这些条款不使用一致地中书籍的章节。）
+（注意：*约束*和不受*约束的*术语可能会比较直观，因为无约束视图通常小于约束视图。 此外，本书籍的早期章节中并不一致地使用这些术语。）
 
-如视图`Label`可以被限制在一个维度和其他不受约束。 一个`Label`将仅文本换行在多个行上如果水平约束。
+`Label` 的视图可以在一个维度中受到约束，而在另一个维度中不受约束。 `Label` 将仅在多行上环绕文本（如果它水平约束）。
 
-如果`Label`是约束，它可能占用多得多的空间比所需的文本。 文本可以定位的整个区域内`Label`。 设置[ `HorizontalTextAlignment` ](xref:Xamarin.Forms.Label.HorizontalTextAlignment)属性绑定到的成员[ `TextAlignment` ](xref:Xamarin.Forms.TextAlignment)枚举 ([`Start`](xref:Xamarin.Forms.TextAlignment.Start)， [ `Center` ](xref:Xamarin.Forms.TextAlignment.Center)，或[ `End` ](xref:Xamarin.Forms.TextAlignment.Center)) 来控制的段的所有行的对齐方式。 默认值是`Start`和左对齐的文本。
+如果 `Label` 受到约束，则它可能比文本所需的空间要大得多。 文本可以位于 `Label`的整个区域内。 将[`HorizontalTextAlignment`](xref:Xamarin.Forms.Label.HorizontalTextAlignment)属性设置为[`TextAlignment`](xref:Xamarin.Forms.TextAlignment)枚举的成员（[`Start`](xref:Xamarin.Forms.TextAlignment.Start)、 [`Center`](xref:Xamarin.Forms.TextAlignment.Center)或[`End`](xref:Xamarin.Forms.TextAlignment.Center)），以控制段落中所有行的对齐方式。 默认值为 `Start`，并将文本左对齐。
 
-设置[ `VerticalTextAlignment` ](xref:Xamarin.Forms.Label.VerticalTextAlignment)属性绑定到的成员`TextAlignment`枚举放置在顶部、 中心或占用的区域的底部文本`Label`。
+将[`VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment)属性设置为 `TextAlignment` 枚举的成员，以将文本置于 `Label`占用的区域的顶部、中间或底部。
 
-设置[ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode)属性绑定到的成员[ `LineBreakMode` ](xref:Xamarin.Forms.LineBreakMode)枚举 ([`WordWrap`](xref:Xamarin.Forms.LineBreakMode.WordWrap)， [ `CharacterWrap` ](xref:Xamarin.Forms.LineBreakMode.CharacterWrap)， [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap)， [ `HeadTruncation` ](xref:Xamarin.Forms.LineBreakMode.HeadTruncation)， [ `MiddleTruncation` ](xref:Xamarin.Forms.LineBreakMode.MiddleTruncation)，或[ `TailTruncation` ](xref:Xamarin.Forms.LineBreakMode.TailTruncation)) 到控制如何多行输入一个分段符，或将被截断。
+将[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性设置为[`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)枚举的成员（[`WordWrap`](xref:Xamarin.Forms.LineBreakMode.WordWrap)、 [`CharacterWrap`](xref:Xamarin.Forms.LineBreakMode.CharacterWrap)、 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode.HeadTruncation)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode.MiddleTruncation)或[`TailTruncation`](xref:Xamarin.Forms.LineBreakMode.TailTruncation)），以控制多个段落换行或被截断的行。
 
 ## <a name="text-and-background-colors"></a>文本和背景色
 
-设置[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)并[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)属性的`Label`到[ `Color` ](xref:Xamarin.Forms.Color)值控制的文本和背景颜色。
+将 `Label` 的[`TextColor`](xref:Xamarin.Forms.Label.TextColor)和[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)属性设置为[`Color`](xref:Xamarin.Forms.Color)值，以控制文本和背景的颜色。
 
-`BackgroundColor`适用于占用的整个区域的背景`Label`。 具体取决于`HorizontalOptions`和`VerticalOptions`属性、 大小可能远远大于所显示的文本区域。 可以使用颜色来试验的各种值`HorizontalOptions`， `VerticalOptions`， `HorizontalExeAlignment`，和`VerticalTextAlignment`若要查看它们如何影响大小和位置`Label`，大小和位置中的文本和`Label`。
+`BackgroundColor` 适用于 `Label`所占用的整个区域的背景。 根据 `HorizontalOptions` 和 `VerticalOptions` 属性，该大小可能会远远大于显示文本所需的区域。 您可以使用颜色来试验 `HorizontalOptions`、`VerticalOptions`、`HorizontalExeAlignment`和 `VerticalTextAlignment` 的各个值，以了解它们如何影响 `Label`的大小和位置以及文本在 `Label`中的大小和位置。
 
 ## <a name="the-color-structure"></a>颜色结构
 
-[ `Color` ](xref:Xamarin.Forms.Color)结构允许您指定的颜色以红-绿-蓝 (RGB) 值或色调-饱和度-亮度 (HSL) 的值，或使用的颜色名称。 Alpha 通道也是可用于指示透明度。
+利用[`Color`](xref:Xamarin.Forms.Color)结构，可以将颜色指定为红-绿蓝（RGB）值，或使用颜色名称指定颜色。 Alpha 通道还可用于指示透明度。
 
-使用`Color`构造函数来指定：
+使用 `Color` 构造函数指定：
 
 - [灰色阴影](xref:Xamarin.Forms.Color.%23ctor(System.Double))
 - [RGB 值](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double))
 - [具有透明度的 RGB 值](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double,System.Double))
 
-参数是`double`值范围从 0 到 1。
+参数 `double` 值，范围从0到1。
 
-此外可以使用多个静态方法来创建`Color`值：
+你还可以使用多种静态方法来创建 `Color` 值：
 
-- [`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) 有关`double`RGB 值从 0 到 1
-- [`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Int32,System.Int32,System.Int32)) 对于从 0 到 255 之间的整数 RGB 值
-- [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Double,System.Double,System.Double,System.Double)) 有关`double`透明度的 RGB 值
-- [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) 对于具有透明度整数 RGB 值
-- [`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) 有关`double`透明度 HSL 值
-- [`Color.FromUint`](xref:Xamarin.Forms.Color.FromUint(System.UInt32)) 有关`uint`值计算方式为 (B + 256 * (G + 256 * (R + 256 * 一个)))
-- [`Color.FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) 有关`string`的十六进制数字构成，采用格式"#AARRGGBB"或"#RRGGBB"或"#ARGB"或"#RGB"，其中每个字母对应于十六进制数字的 alpha、 红色、 绿色和蓝色通道。 此方法是主要用于 XAML 颜色转换，如中所述[第 7 章、 XAML 与代码](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md)。
+- 从0到 1 `double` RGB 值的[`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double))
+- [`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Int32,System.Int32,System.Int32)) 0 到255之间的整数 RGB 值
+- 为具有透明度 `double` RGB 值[`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Double,System.Double,System.Double,System.Double))
+- [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32))具有透明度的整数 RGB 值
+- 用透明度 `double` HSL 值的[`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))
+- [`Color.FromUint`](xref:Xamarin.Forms.Color.FromUint(System.UInt32))计算为（B + 256 \* （G + 256 \* （R + 256 \* a））的 `uint` 值）
+- [`Color.FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String))以 "#AARRGGBB"、"#RRGGBB" 或 "#ARGB" 或 "#RGB" 格式表示的十六进制数字的 `string` 格式，其中每个字母对应于 alpha、红色、绿色和蓝色通道的十六进制数字。 此方法主要用于 XAML 颜色转换[，如第7章、xaml 与代码](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md)中所述。
 
-创建之后，`Color`值是固定不变。 可以从下列属性获得的颜色特征：
+创建后，`Color` 值是不可变的。 可从以下属性获取颜色特征：
 
 - [`R`](xref:Xamarin.Forms.Color.R)
 - [`G`](xref:Xamarin.Forms.Color.G)
@@ -76,15 +76,15 @@ ms.locfileid: "70771229"
 - [`Saturation`](xref:Xamarin.Forms.Color.Saturation)
 - [`Luminosity`](xref:Xamarin.Forms.Color.Luminosity)
 
-这些是所有`double`值范围从 0 到 1。
+这些都是介于0到1之间的所有 `double` 值。
 
-`Color` 此外定义了 240 公共静态只读字段的常用颜色。 在编写此书时，仅 17 常用颜色都不可用。
+`Color` 还为常见颜色定义240的公共静态只读字段。 撰写本书时，只有17个常见颜色可用。
 
-另一个的公共静态只读字段设置为零的所有颜色通道与定义的颜色：
+其他公共静态只读字段定义了将所有颜色通道设置为零的颜色：
 
 - [`Color.Transparent`](xref:Xamarin.Forms.Color.Transparent)
 
-多个实例方法允许修改现有的颜色来创建新颜色：
+多个实例方法允许修改现有颜色以创建新颜色：
 
 - [`AddLuminosity`](xref:Xamarin.Forms.Color.AddLuminosity(System.Double))
 - [`MultiplyAlpha`](xref:Xamarin.Forms.Color.MultiplyAlpha(System.Double))
@@ -94,51 +94,51 @@ ms.locfileid: "70771229"
 
 最后，两个静态只读属性定义特殊颜色值：
 
-- [`Color.Default`](xref:Xamarin.Forms.Color.Default)所有频道都设置为&ndash;1
+- [`Color.Default`](xref:Xamarin.Forms.Color.Default)，所有通道均设置为 &ndash;1
 - [`Color.Accent`](xref:Xamarin.Forms.Color.Accent)
 
-`Color.Default` 用于强制实施平台的配色方案，并因此在不同的平台上的不同上下文中具有不同的含义。 默认情况下将平台的颜色方案：
+`Color.Default` 旨在强制实施平台的配色方案，因此在不同平台上的不同上下文中具有不同的含义。 默认情况下，平台配色方案为：
 
-- IOS浅背景上的黑色文本
-- Android深色背景上的浅文本（书籍中的浅文本）或浅色背景上的深色文本（在示例代码存储库的**主**分支中通过 AppCompat 的材料设计）
-- UWP浅背景上的黑色文本
+- iOS：浅背景上的黑色文本
+- Android：深色背景上的浅文本（书籍中的浅文本）或浅色背景上的深色文本（在示例代码存储库的**主**分支中通过 AppCompat 的材料设计）
+- UWP：浅背景上的黑色文本
 
-`Color.Accent`值会导致在深色或浅色背景可见的特定于平台的 （和用户有时可选） 颜色。
+`Color.Accent` 值将导致平台特定的颜色（有时是用户可选择的）颜色在深色或浅色背景上可见。
 
 ## <a name="changing-the-application-color-scheme"></a>更改应用程序配色方案
 
-各种平台都具有默认配色方案，如上面的列表中所示。
+各种平台都有默认的配色方案，如以上列表中所示。
 
-如果以 Android 为目标，就可以通过指定浅色主题 Android.Manifest.xml 文件中或通过切换到深上浅方案[添加 AppCompat 和材料设计](~/xamarin-forms/platform/android/appcompat-material-design.md)。
+以 Android 为目标时，可以通过在 AppCompat 文件中指定浅色主题，或通过[添加和材料设计](~/xamarin-forms/platform/android/appcompat-material-design.md)来切换到暗色方案。
 
-对于 Windows 平台中，颜色主题通常选择用户，但您可以添加`RequestedTheme`属性设置为`Light`或`Dark`平台的 App.xaml 文件中。 默认情况下，在 UWP 项目的 App.xaml 文件包含`RequestedTheme`属性设置为`Light`。
+对于 Windows 平台，用户通常选择颜色主题，但你可以将 `RequestedTheme` 属性集添加到平台的 App.config 文件中的 `Light` 或 `Dark`。 默认情况下，UWP 项目中的 App.config 文件包含一个设置为 `Light``RequestedTheme` 特性。
 
-## <a name="font-sizes-and-attributes"></a>字体大小和属性
+## <a name="font-sizes-and-attributes"></a>字号和属性
 
-设置[ `FontFamily` ](xref:Xamarin.Forms.Label.FontFamily)属性的`Label`到一个字符串，如"Times Roman"选择字体系列。 但是，您需要指定在特定平台支持的字体系列和平台是在这方面不一致。
+将 `Label` 的[`FontFamily`](xref:Xamarin.Forms.Label.FontFamily)属性设置为字符串（如 "罗马罗马"）以选择字体系列。 但是，您需要指定特定平台支持的字体系列，而这些平台在这方面是不一致的。
 
-设置[ `FontSize` ](xref:Xamarin.Forms.Label.FontSize)的属性`Label`到`double`用于指定字体的大致高度。 请参阅[第 5 章处理大小](chapter05.md)，有关详细信息以智能方式选择字体大小。
+将 `Label` 的[`FontSize`](xref:Xamarin.Forms.Label.FontSize)属性设置为用于指定字体的大致高度的 `double`。 有关智能选择字体大小的详细信息，请参阅[第5章，处理大小](chapter05.md)。
 
-或者，你可以获取多个预设依赖于平台的字体大小之一。 静态[ `Device.GetNamedSize` ](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))方法并[重载](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))两者都返回`double`适合于平台的字体大小值基于成员[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)枚举 ([`Default`](xref:Xamarin.Forms.NamedSize.Default)， [ `Micro` ](xref:Xamarin.Forms.NamedSize.Micro)， [ `Small` ](xref:Xamarin.Forms.NamedSize.Small)， [ `Medium` ](xref:Xamarin.Forms.NamedSize.Medium)， 并[ `Large` ](xref:Xamarin.Forms.NamedSize.Large))。 从返回的值`Medium`成员不一定是相同`Default`。 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)示例使用这些命名大小显示文本。
+还可以获取几个预设平台相关字体大小之一。 静态[`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type))方法和[重载](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))都返回适合于平台的 `double` 字体大小值（基于[`NamedSize`](xref:Xamarin.Forms.NamedSize)枚举的成员）（[`Default`](xref:Xamarin.Forms.NamedSize.Default)、 [`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、 [`Small`](xref:Xamarin.Forms.NamedSize.Small)、 [`Medium`](xref:Xamarin.Forms.NamedSize.Medium)和[`Large`](xref:Xamarin.Forms.NamedSize.Large)）。 从 `Medium` 成员返回的值不一定与 `Default`相同。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)示例以这些命名大小显示文本。
 
-设置[ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes)的属性`Label`给这些成员[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)枚举[ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold)， [ `Italic`](xref:Xamarin.Forms.FontAttributes.Italic)，或[ `None` ](xref:Xamarin.Forms.FontAttributes.None)。 你可以组合`Bold`并`Italic`成员C#按位 OR 运算符。
+将 `Label` 的[`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)属性设置为这些[`FontAttributes`](xref:Xamarin.Forms.FontAttributes)枚举、 [`Bold`](xref:Xamarin.Forms.FontAttributes.Bold)、 [`Italic`](xref:Xamarin.Forms.FontAttributes.Italic)或[`None`](xref:Xamarin.Forms.FontAttributes.None)的成员。 可以将C# `Bold` 和 `Italic` 成员与按位 or 运算符组合在一起。
 
 ## <a name="formatted-text"></a>带格式文本
 
-中的所有示例到目前为止，整个文本都显示`Label`统一已设置格式。 若要改变在文本字符串中的格式设置，未设置`Text`属性的`Label`。 与此相反，设置[ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText)类型的对象的属性[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)。
+到目前为止，所有示例中，由 `Label` 显示的整个文本已进行统一格式设置。 若要更改文本字符串中的格式，请不要设置 `Label`的 `Text` 属性。 相反，请将[`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)属性设置为[`FormattedString`](xref:Xamarin.Forms.FormattedString)类型的对象。
 
-`FormattedString` 具有[ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)属性是一系列[ `Span` ](xref:Xamarin.Forms.Span)对象。 每个`Span`对象都有其自身[ `Text` ](xref:Xamarin.Forms.Span.Text)， [ `FontFamily` ](xref:Xamarin.Forms.Span.FontFamily)， [ `FontSize` ](xref:Xamarin.Forms.Span.FontSize)， [ `FontAttributes` ](xref:Xamarin.Forms.Span.FontAttributes)， [ `ForegroundColor` ](xref:Xamarin.Forms.Span.ForegroundColor)，并[ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor)属性。
+`FormattedString` 具有一个[`Spans`](xref:Xamarin.Forms.FormattedString.Spans)属性，该属性是[`Span`](xref:Xamarin.Forms.Span)对象的集合。 每个 `Span` 对象都有其自己的[`Text`](xref:Xamarin.Forms.Span.Text)、 [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily)、 [`FontSize`](xref:Xamarin.Forms.Span.FontSize)、 [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes)、 [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor)和[`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)属性。
 
-[ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText)示例演示如何使用`FormattedText`对于单行文本、 属性和[ **VariableFormattedParagraph**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara)说明整个段落，该方法，如下所示：
+[**VariableFormattedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText)示例演示如何对单个文本行使用 `FormattedText` 属性， [**VariableFormattedParagraph**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara)演示整个段落的技术，如下所示：
 
-[![变量的三个屏幕快照格式的段落](images/ch03fg06-small.png "变量格式的标签文本")](images/ch03fg06-large.png#lightbox "变量格式的标签文本")
+[![可变格式段落的三向屏幕截图](images/ch03fg06-small.png "可变格式标签文本")](images/ch03fg06-large.png#lightbox "可变格式标签文本")
 
-[ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)程序使用单个`Label`和`FormattedString`要显示每个平台的已命名的字体大小的所有对象。
+[**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)程序使用单个 `Label` 和 `FormattedString` 对象来显示每个平台的所有命名字体大小。
 
 ## <a name="related-links"></a>相关链接
 
-- [第 3 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
-- [第 3 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [第 3 章F#示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [第3章全文（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
+- [第3章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
+- [第 3 F#章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
 - [标签](~/xamarin-forms/user-interface/text/label.md)
-- [处理颜色](~/xamarin-forms/user-interface/colors.md)
+- [使用颜色](~/xamarin-forms/user-interface/colors.md)

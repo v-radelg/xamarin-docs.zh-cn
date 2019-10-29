@@ -4,15 +4,15 @@ description: 本文档介绍如何将组件引用替换为 NuGet 包，以便在
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e9bd54523fa46625e9a9e6e46247b92987f3d427
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106079"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014346"
 ---
 # <a name="updating-component-references-to-nuget"></a>将组件引用更新到 NuGet
 
@@ -41,7 +41,7 @@ ms.locfileid: "71106079"
 
 2. 再次右键单击卸载的项目，然后选择 "**编辑 {你的项目名称}. .csproj**"。
 
-3. 查找文件`XamarinComponentReference`中的任何引用。 其外观应类似于以下示例：
+3. 查找要 `XamarinComponentReference`的文件中的任何引用。 其外观应类似于以下示例：
 
     ```xml
     <ItemGroup>
@@ -60,7 +60,7 @@ ms.locfileid: "71106079"
     </ItemGroup>
     ```
 
-4. 删除对`XamarinComponentReference`的引用，并保存该文件。 在上面的示例中，可以安全地删除整个`ItemGroup`。
+4. 删除对 `XamarinComponentReference` 的引用并保存该文件。 在上面的示例中，可以安全地删除整个 `ItemGroup`。
 
 5. 保存该文件后，右键单击项目名称，然后选择 "**重新加载项目**"。
 
@@ -76,7 +76,7 @@ ms.locfileid: "71106079"
 
 1. 打开 .csproj 文件。 为此，请右键单击项目名称，然后选择 "**工具" > "编辑文件**"。
 
-2. 查找文件`XamarinComponentReference`中的任何引用。 其外观应类似于以下示例：
+2. 查找要 `XamarinComponentReference`的文件中的任何引用。 其外观应类似于以下示例：
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ ms.locfileid: "71106079"
     </ItemGroup>
     ```
 
-3. 删除对`XamarinComponentReference`的引用，并保存该文件。 在上面的示例中，可以安全地删除整个`ItemGroup`
+3. 删除对 `XamarinComponentReference` 的引用并保存该文件。 在上面的示例中，可以安全地删除整个 `ItemGroup`
 
 4. 为解决方案中的每个项目重复上述步骤。
 
@@ -159,8 +159,8 @@ _它可能包含 NuGet 依赖项，但可以忽略这些依赖项。_
 
 例如，你可以通过搜索来查找常见的**sqlite 网络-pcl**包：
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–产品名称。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作者的个人资料。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) –产品名称。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) –作者的个人资料。
 
 ### <a name="updating-the-solution"></a>更新解决方案
 
