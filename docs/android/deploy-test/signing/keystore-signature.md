@@ -3,15 +3,15 @@ title: 查找密钥存储的签名
 ms.prod: xamarin
 ms.assetid: 1b511fec-e6f6-453e-89c8-810aafb02b77
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 6cada2c7426cc50723321d77e21852a92fe64d63
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 49d67db46416584248a9b15db606538f5ebfba79
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755800"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021007"
 ---
 # <a name="finding-your-keystores-signature"></a>查找密钥存储的签名
 

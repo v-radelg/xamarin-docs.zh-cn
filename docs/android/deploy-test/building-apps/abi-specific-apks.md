@@ -4,15 +4,15 @@ description: 本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0c3bb547a21457a1666db5fe84560e10e3bb8eb1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754278"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028139"
 ---
 # <a name="building-abi-specific-apks"></a>构建特定于 ABI 的 APK
 
@@ -35,7 +35,7 @@ _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的
 1. 使用上一步中的 AndroidManifest.XML  构建应用程序。
 1. 通过对 APK 进行签名并使用 zipalign 为其优化来准备发布。
 
-本指南最后将演示如何使用 [Rake](http://martinfowler.com/articles/rake.html) 编写这些步骤的脚本。
+本指南最后将演示如何使用 [Rake](https://martinfowler.com/articles/rake.html) 编写这些步骤的脚本。
 
 ### <a name="creating-the-version-code-for-the-apk"></a>为 APK 创建版本代码
 
@@ -157,7 +157,7 @@ rake 任务完成后，将有三个包含文件 `xamarin.helloworld.apk` 的 `bi
 [![包含 xamarin.helloworld.apk 的平台特定文件夹的位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> 本指南中概述的构建过程可以在许多不同的构建系统之一中实现。 尽管我们没有预先编写的示例，但 [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](http://fsharp.github.io/FAKE/) 应该也适用。
+> 本指南中概述的构建过程可以在许多不同的构建系统之一中实现。 尽管我们没有预先编写的示例，但 [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](https://fsharp.github.io/FAKE/) 应该也适用。
 
 ## <a name="summary"></a>总结
 

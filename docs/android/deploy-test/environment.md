@@ -3,15 +3,15 @@ title: Xamarin.Android 环境
 ms.prod: xamarin
 ms.assetid: 67BFD4E1-276C-4B9F-9BD8-A5218D2BD529
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021178"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028075"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 环境
 

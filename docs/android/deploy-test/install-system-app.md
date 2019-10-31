@@ -4,15 +4,15 @@ description: 本指南将讨论系统应用和用户应用之间的区别，以�
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754006"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028057"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>将 Xamarin.Android 安装为系统应用
 

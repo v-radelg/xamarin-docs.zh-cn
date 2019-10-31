@@ -4,15 +4,15 @@ description: 本文介绍如何在物理 Android 设备上调试 Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 153D3746-A27F-198B-48FE-D219C0133A79
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e2542a95ce7b62a017161da4fe206b83202c9085
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e697459b20a481b1d2bada69677647ad4fbd3023
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754143"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021592"
 ---
 # <a name="debug-on-device"></a>在设备上进行调试
 

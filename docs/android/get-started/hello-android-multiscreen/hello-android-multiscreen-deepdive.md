@@ -1,27 +1,27 @@
 ---
-title: Hello，Android 多屏幕：深入了解
+title: 了解 Android 多屏显示：深入了解
 description: 在这个两部分的指南中，会扩展基本 Phoneword 应用程序（在“Hello，Android”指南中创建）以便处理第二个屏幕。 在此过程中，引入了基本 Android 应用程序构建基块。 对 Android 体系结构的更深入了解包括在内，以帮助你更好地了解 Android 应用程序结构和功能。
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3eee66032a33e66d3a6a22ca43cb931fbd59888f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122980"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020982"
 ---
-# <a name="hello-android-multiscreen-deep-dive"></a>Hello，Android 多屏幕：深入了解
+# <a name="hello-android-multiscreen-deep-dive"></a>了解 Android 多屏显示：深入了解
 
 _在这个两部分的指南中，会扩展基本 Phoneword 应用程序（在“Hello，Android”指南中创建）以便处理第二个屏幕。在此过程中，引入了基本 Android 应用程序构建基块。包括对 Android 体系结构的更深入了解，以帮助你更好地了解 Android 应用程序结构和功能。_
 
 在 [Hello，Android 多屏幕快速入门](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)中，你生成并运行了第一个多屏幕 Xamarin.Android 应用程序。
 
-本指南将探讨更高级的 Android 体系结构。 说明了具有意向的 Android 导航，并探讨了 Android 硬件导航选项。 剖析了对 Phoneword 应用添加的新功能，同时你会对应用程序与操作系统和其他应用程序之间的关系形成更全面的观点。
+本指南将探讨更高级的 Android 体系结构。 说明了具有意向  的 Android 导航，并探讨了 Android 硬件导航选项。 剖析了对 Phoneword 应用添加的新功能，同时你会对应用程序与操作系统和其他应用程序之间的关系形成更全面的观点。
 
 ## <a name="android-architecture-basics"></a>Android 体系结构基础知识
 
@@ -29,7 +29,7 @@ _在这个两部分的指南中，会扩展基本 Phoneword 应用程序（在�
 
 ### <a name="android-application-building-blocks"></a>Android 应用程序构建基块
 
-Android 应用程序由特殊 Android 类的集合组成，这些类称为应用程序块，与任何数量的应用资源（图像、主题、帮助程序类等）捆绑在一起。&ndash; 这些类通过称为 Android 清单的 XML 文件进行协调。
+Android 应用程序由特殊 Android 类的集合组成，这些类称为应用程序块  ，与任何数量的应用资源（图像、主题、帮助程序类等）捆绑在一起。&ndash; 这些类通过称为 Android 清单  的 XML 文件进行协调。
 
 应用程序块组成 Android 应用程序的主干，因为它们使你可以执行使用常规类通常无法完成的操作。 两个最重要的块是_活动_ 和_服务_：
 
@@ -41,10 +41,10 @@ Android 应用程序可能不会使用所有类型的块，通常具有一种类
 
 ### <a name="intents"></a>意向
 
-Android 应用程序中的另一个基本概念是意向。
-Android 围绕最小特权原则进行设计 &ndash; 应用程序只能访问它们正常工作所需的块，它们对组成操作系统或其他应用程序的块具有有限的访问权限。 同样，块是松散耦合的 &ndash; 它们设计为对其他块（甚至是属于同一应用程序的块）知之甚少且仅有有限的访问权限。
+Android 应用程序中的另一个基本概念是意向  。
+Android 围绕最小特权原则  进行设计 &ndash; 应用程序只能访问它们正常工作所需的块，它们对组成操作系统或其他应用程序的块具有有限的访问权限。 同样，块是松散耦合  的 &ndash; 它们设计为对其他块（甚至是属于同一应用程序的块）知之甚少且仅有有限的访问权限。
 
-为了进行通信，应用程序块会来回发送异步消息（称为意向）。 意向包含有关接收块的信息，有时还包含一些数据。 从一个应用组件发送的意向会触发某个事件在其他应用组件中发生，从而将两个应用组件绑定在一起并允许它们进行通信。 通过来回发送意向，你可以使块来协调复杂操作（如启动相机应用以进行拍摄和保存、收集位置的信息或从一个屏幕导航到下一个屏幕）。
+为了进行通信，应用程序块会来回发送异步消息（称为意向  ）。 意向包含有关接收块的信息，有时还包含一些数据。 从一个应用组件发送的意向会触发某个事件在其他应用组件中发生，从而将两个应用组件绑定在一起并允许它们进行通信。 通过来回发送意向，你可以使块来协调复杂操作（如启动相机应用以进行拍摄和保存、收集位置的信息或从一个屏幕导航到下一个屏幕）。
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 
@@ -58,7 +58,7 @@ Android 围绕最小特权原则进行设计 &ndash; 应用程序只能访问它
 
 ### <a name="launching-a-second-activity-with-an-intent"></a>使用意向启动第二个活动
 
-在 Phoneword 应用程序中，意向用于启动第二个屏幕（活动）。 首先创建一个意向，传入当前上下文（`this`，用于引用当前**上下文**）以及你所查找的应用程序块的类型 (`TranslationHistoryActivity`)：
+在 Phoneword 应用程序中，意向用于启动第二个屏幕（活动）。 首先创建一个意向，传入当前上下文  （`this`，用于引用当前**上下文**）以及你所查找的应用程序块的类型 (`TranslationHistoryActivity`)：
 
 ```csharp
 Intent intent = new Intent(this, typeof(TranslationHistoryActivity));

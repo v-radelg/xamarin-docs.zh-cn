@@ -3,15 +3,15 @@ title: 跨平台性能
 description: 本文档介绍的各种技术可用于提高移动应用程序的性能。 其中讨论了 Profiler、IDisposable 资源、弱引用，SGen 垃圾回收器、大小缩减技术等。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765949"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016530"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
@@ -331,7 +331,7 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 - 缩小应用程序的托管代码。 通过对每个程序集启用链接器可实现此目的（对于 iOS 项目，选择“链接所有”  ；对于 Android 项目，选择“链接所有程序集”  ）。
 
 对于每个 ABI，Android 应用也能拆分为单独的 APK（“体系结构”）。
-通过此博客文章详细了解：[如何减小 Android 应用大小](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)。
+通过此博客文章详细了解：[如何减小 Android 应用大小](https://montemagno.com/how-to-keep-your-android-app-size-down/)。
 
 <a name="optimizeimages" />
 

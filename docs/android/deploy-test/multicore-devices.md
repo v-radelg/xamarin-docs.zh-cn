@@ -4,15 +4,15 @@ description: Android 可以在几种不同的计算机体系结构上运行。 �
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: f24fdb768cc0c4e12fdc58f6e5386edd0db98527
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1141b96151df0adda755b7c6d60019c18825cc76
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753947"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028019"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核设备和 Xamarin.Android
 
@@ -140,7 +140,7 @@ lib/armeabi-v7a/libtwo.so
 $APP/lib/libtwo.so # from the armeabi-v7a directory in the apk
 ```
 
-换而言之，没有安装 `libone.so`。 这将导致出现问题，因为对于在运行时要加载的应用程序 `libone.so` 不存在。 此行为是意外发生，已被记录为 bug 并重新归类为“[按预期方式工作](http://code.google.com/p/android/issues/detail?id=9089)”。
+换而言之，没有安装 `libone.so`。 这将导致出现问题，因为对于在运行时要加载的应用程序 `libone.so` 不存在。 此行为是意外发生，已被记录为 bug 并重新归类为“[按预期方式工作](https://code.google.com/p/android/issues/detail?id=9089)”。
 
 因此，针对 4.0 之前的 Android 版本，有必要为应用程序将支持的每个  ABI 提供所有  本机库，即 `.apk` 应包含：
 
@@ -174,7 +174,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-遗憾的是，此行为依赖于顺序，如以下文档所述 - [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](http://code.google.com/p/android/issues/detail?id=25321)。
+遗憾的是，此行为依赖于顺序，如以下文档所述 - [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](https://code.google.com/p/android/issues/detail?id=25321)。
 
 本机库“按顺序”（例如，通过解压缩列出的顺序）进行处理，并提取*第一个匹配项*。 由于 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，并且首先列出 `armeabi`，它是提取的 `armeabi` 版本，*不是*  `armeabi-v7a` 版本：
 
@@ -255,5 +255,5 @@ Xamarin.Android 当前不支持 `mips`。
 
 - [ARM 体系结构的 ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
-- [问题 9089：Nexus One - 如果 armeabi-v7a 中至少有一个库，则不会加载来自 armeabi 的任何本机库](http://code.google.com/p/android/issues/detail?id=9089)
-- [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](http://code.google.com/p/android/issues/detail?id=25321)
+- [问题 9089：Nexus One - 如果 armeabi-v7a 中至少有一个库，则不会加载来自 armeabi 的任何本机库](https://code.google.com/p/android/issues/detail?id=9089)
+- [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](https://code.google.com/p/android/issues/detail?id=25321)

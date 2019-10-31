@@ -3,15 +3,15 @@ title: 手动上传 APK
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756073"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021252"
 ---
 # <a name="manually-uploading-the-apk"></a>手动上传 APK
 
@@ -88,7 +88,7 @@ ms.locfileid: "70756073"
 
 [![“内容分级”部分](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
-Google Play 上的所有应用程序必须根据 Google Play 分级系统进行分级。 除内容分级以外，所有应用程序还必须遵守 Google 的[开发者内容政策](http://www.android.com/us/developer-content-policy.html)。
+Google Play 上的所有应用程序必须根据 Google Play 分级系统进行分级。 除内容分级以外，所有应用程序还必须遵守 Google 的[开发者内容政策](https://www.android.com/us/developer-content-policy.html)。
 
 下表列出了 Google Play 分级系统中的四个级别，并提供有关可能要求或强制分级的功能或内容的一些指导： 
 
@@ -131,7 +131,7 @@ Google Play 不允许将免费应用程序更改为付费应用（但是，可�
 ### <a name="consent"></a>许可
 
 “定价和分发”  页面的底部是“许可”  部分。
-这是必需的部分，用于声明应用程序满足 [Android 内容准则](http://www.android.com/market/terms/developer-content-policy.html#hl=us)，并确认应用程序受美国出口法律显示：
+这是必需的部分，用于声明应用程序满足 [Android 内容准则](https://www.android.com/market/terms/developer-content-policy.html#hl=us)，并确认应用程序受美国出口法律显示：
 
 [![“许可”部分](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 

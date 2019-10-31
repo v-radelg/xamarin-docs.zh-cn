@@ -3,15 +3,15 @@ title: 发布应用程序
 ms.prod: xamarin
 ms.assetid: 51E19000-040A-2B74-C462-EC57C617085C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753809"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021381"
 ---
 # <a name="publishing-an-application"></a>发布应用程序
 
@@ -33,7 +33,7 @@ Xamarin.Android 应用程序开发的最终步骤是发布应用程序。 发布
 
 -  通过网站 &ndash; Xamarin.Android 应用程序可通过在网站下载获得，用户可在网站中单击链接安装应用程序。
 -  通过电子邮件 &ndash; 用户可以从电子邮件安装 Xamarin.Android 应用程序。 在 Android 设备上打开附件时会安装应用程序。
--  通过应用商店 &ndash; 有多个应用市场可用于分发，例如 [Google Play](http://play.google.com/) 或 [Android 版 Amazon 应用商店](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
+-  通过应用商店 &ndash; 有多个应用市场可用于分发，例如 [Google Play](https://play.google.com/) 或 [Android 版 Amazon 应用商店](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
 
 发布应用程序最常见的方法是通过知名的应用商店，因为它可以提供最广的市场范围和达到最佳的分发控制。 但是，通过应用市场发布应用程序需要进行其他工作。
 

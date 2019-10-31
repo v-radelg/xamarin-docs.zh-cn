@@ -4,16 +4,16 @@ description: Xamarin.iOS 成功安装后，iOS 开发的下一步是 iOS 设备�
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: bb8a969a930f2e169d19738ddaafab04a4e8a057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c65a8d4cf47fdec582b46370b6a8dbc1ddd55a1e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287345"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022786"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 

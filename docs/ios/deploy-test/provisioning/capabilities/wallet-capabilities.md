@@ -4,15 +4,15 @@ description: 向应用程序添加功能通常需要其他预配设置。 本指
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 658184203c81079af9b4946c4da18dfb98381b0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762730"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028557"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 中的钱包功能
 
