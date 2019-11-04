@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cc499902058e7b20b00e65e0c6541b8d137804a7
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028716"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425498"
 ---
 # <a name="splash-screen"></a>初始屏幕
 
@@ -67,7 +67,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 </layer-list>
 ```
 
-此 `layer-list` 以 `@color/splash_background` 资源所指定的背景色为初始图像居中。 示例应用程序在**资源/值/color .xml**文件中定义此颜色：
+此 `layer-list` 以 `@color/splash_background` 资源所指定的背景色为初始图像居中。 示例应用程序在**资源/值/颜色 .xml**文件中定义此颜色：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -221,7 +221,7 @@ public class MainActivity : AppCompatActivity
 
 7. 重新生成并运行应用。 在仍显示初始屏幕时，将设备旋转到横向模式。 初始屏幕更改为横向版本：
 
-    [将初始屏幕旋转为横向模式![](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [将初始屏幕旋转为横向模式 ![](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
 请注意，使用横向模式初始屏幕并不总是提供无缝体验。 默认情况下，Android 在纵向模式下启动应用并将其转换为横向模式，即使设备已处于横向模式下也是如此。 因此，如果在设备处于横向模式时启动该应用，则设备会短暂显示纵向初始屏幕，然后在屏幕上将旋转从纵向变为横向初始屏幕。 遗憾的是，即使在初始活动的标志中指定了 `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape`，这一最初的纵向到横向转换仍会发生。 解决此限制的最佳方式是创建一个在纵向和横向模式下均正确呈现的单一初始屏幕图像。
 

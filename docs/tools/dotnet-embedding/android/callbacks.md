@@ -2,15 +2,15 @@
 title: Android 上的回调
 ms.prod: xamarin
 ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: bfe12d84510707ff6e81aae2b5b20be7e9cacd59
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293054"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007291"
 ---
 # <a name="callbacks-on-android"></a>Android 上的回调
 
@@ -24,7 +24,7 @@ ms.locfileid: "70293054"
 
 ## <a name="abstract-classes"></a>抽象类
 
-这是最简单的回调路由，因此，如果你只`abstract`是尝试在最简单的形式下操作，则建议使用。
+这是最简单的回调路由，因此，如果你只是想要在最简单的形式使用回拨，则建议使用 `abstract`。
 
 让我们从一个C#类开始，我们希望 Java 实现：
 
@@ -43,11 +43,11 @@ public abstract class AbstractClass : Java.Lang.Object
 
 下面是执行此操作的详细信息：
 
-- `[Register]`在 Java 中生成良好的包名称--你将在不使用它的情况下获取自动生成的包名称。
-- 将`Java.Lang.Object`信号子类化到 .net 嵌入，以通过 Xamarin 的 Java 生成器运行类。
+- `[Register]` 在 Java 中生成良好的包名称--你将在不使用它的情况下获取自动生成的包名称。
+- 子类化 `Java.Lang.Object` 向 .NET 嵌入发出的信号通过 Xamarin 的 Java 生成器运行类。
 - 空构造函数：将从 Java 代码使用。
-- `(IntPtr, JniHandleOwnership)`构造函数： Xamarin Android 将使用它来创建C#等效的 Java 对象。
-- `[Export]`通知 Xamarin 向 Java 公开方法。 由于 Java 世界喜欢使用小写方法，因此还可以更改方法名称。
+- `(IntPtr, JniHandleOwnership)` 构造函数： Xamarin Android 将使用它来创建C#等效的 Java 对象。
+- `[Export]` 信号 Xamarin 向 Java 公开方法。 由于 Java 世界喜欢使用小写方法，因此还可以更改方法名称。
 
 接下来，我们将C#创建一个方法来测试方案：
 
@@ -63,7 +63,7 @@ public class JavaCallbacks : Java.Lang.Object
 }
 ```
 
-`JavaCallbacks`可以是用于测试此的`Java.Lang.Object`任何类，前提是它是。
+只要 `Java.Lang.Object`，`JavaCallbacks` 就可以是用于测试此情况的任何类。
 
 现在，请在 .NET 程序集上运行 .NET 嵌入以生成 AAR。 有关详细信息，请参阅[入门指南](~/tools/dotnet-embedding/get-started/java/android.md)。
 
@@ -86,10 +86,10 @@ public void abstractCallback() throws Throwable {
 
 我们：
 
-- 使用匿名类型在 Java 中实现`AbstractClass`
-- 确保实例从 Java 返回`"Java"`
-- 确保实例返回`"Java"`C#
-- 添加`throws Throwable`，因为C#构造函数当前标记有`throws`
+- 使用匿名类型在 Java 中实现 `AbstractClass`
+- 确保实例从 Java 返回 `"Java"`
+- 确保实例返回 `"Java"`C#
+- 添加了 `throws Throwable`， C#因为构造函数当前标记有 `throws`
 
 如果我们按原样运行此单元测试，则会失败并出现如下错误：
 
@@ -97,11 +97,11 @@ public void abstractCallback() throws Throwable {
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-此处缺少的`Invoker`是类型。 这是将调用转发`AbstractClass` C#到 Java 的子类。 C#如果 Java 对象进入世界并且等效C#类型是抽象的，则 Xamarin 会自动查找具有后缀C# `Invoker`的类型以便在代码中C#使用。
+此处缺少的是 `Invoker` 类型。 这是将调用转发C#到 Java 的 `AbstractClass` 的子类。 如果C# Java 对象进入世界并且等效C#类型是抽象的，则 Xamarin 会自动查找具有后缀的C#类型`Invoker`在代码中C#使用。
 
-对于 Java 绑定项目， `Invoker` Xamarin 使用这种模式。
+对于 Java 绑定项目，Xamarin 使用这种 `Invoker` 模式。
 
-下面是实现的`AbstractClassInvoker`：
+下面是 `AbstractClassInvoker`的实现：
 
 ```csharp
 class AbstractClassInvoker : AbstractClass
@@ -146,13 +146,13 @@ class AbstractClassInvoker : AbstractClass
 
 这里有相当多的一点，我们：
 
-- 添加了包含子类的后缀`Invoker`的类`AbstractClass`
-- 添加`class_ref`了以保存对C#类的子类的 JNI 引用
-- 添加`id_gettext`了以保存对 Java `getText`方法的 JNI 引用
-- `(IntPtr, JniHandleOwnership)`包含构造函数
-- 实现`ThresholdType` 并`ThresholdClass`要求使用 Xamarin 的详细信息`Invoker`
-- `GetText`需要用适当的 JNI `getText`签名查找 Java 方法并调用它
-- `Dispose`只需清除对的引用`class_ref`
+- 添加了子类 `Invoker` 的类 `AbstractClass`
+- 添加了 `class_ref` 以保存对C#类的子类的 Java 类的 JNI 引用
+- 添加了 `id_gettext` 以保存对 Java `getText` 方法的 JNI 引用
+- 包含 `(IntPtr, JniHandleOwnership)` 构造函数
+- 已实现 `ThresholdType` 和 `ThresholdClass`，以要求 Xamarin 了解有关 `Invoker` 的详细信息
+- `GetText` 需要在 Java `getText` 方法中查找适当的 JNI 签名并将其调用
+- 只需清除对 `class_ref` 的引用 `Dispose`
 
 添加此类并生成新的 AAR 后，我们的单元测试通过。 如您所见，这种回调模式并不*理想*，但可行。
 
@@ -173,7 +173,7 @@ public interface IJavaCallback : IJavaObject
 }
 ```
 
-`IJavaObject`向 .net 嵌入发出信号，指出这是一个 Xamarin Android 接口，否则这与`abstract`类完全相同。
+`IJavaObject` 信号发送到 .NET，这是一个 Xamarin Android 接口，否则这与 `abstract` 类完全相同。
 
 由于 Xamarin 目前不会为此接口生成 Java 代码，因此请将以下 Java 添加到C#项目：
 
@@ -185,9 +185,9 @@ public interface IJavaCallback {
 }
 ```
 
-你可以在任何位置放置该文件，但请确保将其生成操作`AndroidJavaSource`设置为。 这将向 .NET 嵌入发出信号，以便将其复制到适当的目录以编译到 AAR 文件中。
+你可以在任何位置放置该文件，但请确保将其生成操作设置为 `AndroidJavaSource`。 这将向 .NET 嵌入发出信号，以便将其复制到适当的目录以编译到 AAR 文件中。
 
-接下来， `Invoker`实现将完全相同：
+接下来，`Invoker` 实现将完全相同：
 
 ```csharp
 class IJavaCallbackInvoker : Java.Lang.Object, IJavaCallback
@@ -250,7 +250,7 @@ public void interfaceCallback() {
 
 ## <a name="virtual-methods"></a>虚方法
 
-`virtual`在 Java 中重写是可行的，但并不是很好的体验。
+在 Java 中替代 `virtual` 是可能的，但不是很好的体验。
 
 假设您具有以下C#类：
 
@@ -267,26 +267,26 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-如果你按`abstract`以上类示例操作，则除了一种详细信息之外，它还可以工作：_Xamarin 不查找`Invoker`_ 。
+如果遵循上面的 `abstract` 类示例，则除了一种详细信息外，它还可以工作：_Xamarin 不查找 `Invoker`_ 。
 
-若要解决此问题， C#请将`abstract`类修改为：
+若要解决此问题， C#请修改要`abstract`的类：
 
 ```csharp
 public abstract class VirtualClass : Java.Lang.Object
 ```
 
-这并不理想，但这种情况可行。 Xamarin 将选取`VirtualClassInvoker` ，Java 可对方法使用`@Override` 。
+这并不理想，但这种情况可行。 Xamarin 会选取 `VirtualClassInvoker`，Java 可以在方法上使用 `@Override`。
 
 ## <a name="callbacks-in-the-future"></a>将来的回调
 
 我们可以通过几种方式来改进这些方案：
 
-1. `throws Throwable`此C# [PR](https://github.com/xamarin/java.interop/pull/170)上已修复构造函数。
+1. 此 [PR](https://github.com/xamarin/java.interop/pull/170) C#上`throws Throwable`已修复构造函数。
 1. 在 Xamarin 中创建 Java 生成器支持接口。
-    - 这样就无需添加包含生成操作的`AndroidJavaSource`Java 源文件。
-1. 为 Xamarin 创建一个`Invoker`用于虚拟类的加载方法。
-    - 这无需在我们`virtual`的示例`abstract`中标记该类。
-1. 自动`Invoker`生成 .net 嵌入类
+    - 这无需添加具有 `AndroidJavaSource`的生成操作的 Java 源文件。
+1. 为 Xamarin 加载用于虚拟类的 `Invoker`。
+    - 这无需在 `virtual` 示例 `abstract`中标记该类。
+1. 自动生成用于 .NET 嵌入的 `Invoker` 类
     - 这会比较复杂，但可行。 对于 Java 绑定项目，Xamarin 已经执行了类似于此的操作。
 
 这里有很多工作要做，但这些 .NET 嵌入功能的增强功能是可行的。

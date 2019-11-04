@@ -6,12 +6,12 @@ ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: dad1b7173e302931455887fdaa4730347f0e5e55
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 48519431a65fba0cdc61062021ad86fb53854ef3
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015005"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425466"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>更新现有的 Xamarin Forms 应用
 
@@ -196,14 +196,14 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 偶尔，在更新 Xamarin 后，你将看到类似于下面的错误。 当 NuGet 更新程序未完全从 **.csproj**文件中删除对较旧版本的引用时，会发生这种情况。
 
->你的\_项目 .csproj：错误：此项目引用了此计算机上缺少的 NuGet 包。 启用 NuGet 程序包还原以进行下载。  有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105 。 缺少的文件为../../packages/Xamarin.Forms.1.2.3.6257/build/portable-win + net45 + wp80 + MonoAndroid10 + MonoTouch10/Xamarin。 （您的\_项目）
+>你的\_项目 .csproj：错误：此项目引用了此计算机上缺少的 NuGet 包。 启用 NuGet 程序包还原以进行下载。  有关更多信息，请参见 https://go.microsoft.com/fwlink/?LinkID=322105 。 缺少的文件为.。/../packages/Xamarin.Forms.1.2.3.6257/build/portable-win + net45 + wp80 + MonoAndroid10 + MonoTouch10/Xamarin。 （您的\_项目）
 
 若要修复这些错误，请在文本编辑器中打开 **.csproj**文件，然后查找引用早期版本 Xamarin 的 `<Target` 元素，如下面所示的元素。 你应从 **.csproj**文件中手动删除此整个元素，并保存所做的更改。
 
 ```csharp
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see https://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
   </Target>

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: a2fb0ba2036dfe34e85c7bebab6ecb55cd868ad5
-ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
+ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810498"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425563"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin Map 引脚
 
@@ -44,10 +44,7 @@ Xamarin [`Map`](xref:Xamarin.Forms.Maps.Map)控件允许将位置标记[`Pin`](x
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
      <maps:Map x:Name="map"
                IsShowingUser="True"
-               MoveToLastRegionOnLayoutChange="False"
-               HeightRequest="100"                  
-               WidthRequest="960"
-               VerticalOptions="FillAndExpand">
+               MoveToLastRegionOnLayoutChange="False">
          <x:Arguments>
              <maps:MapSpan>
                  <x:Arguments>
@@ -80,10 +77,7 @@ Xamarin [`Map`](xref:Xamarin.Forms.Maps.Map)控件允许将位置标记[`Pin`](x
 </ContentPage>
 ```
 
-此 XAML 创建一个[`Map`](xref:Xamarin.Forms.Maps.Map)对象，该对象显示由[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)对象指定的区域。 `MapSpan` 对象以由[`Position`](xref:Xamarin.Forms.Maps.Position)对象表示的纬度和经度为中心，该对象扩展了0.01 的纬度和经度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)对象将添加到[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合，并在 `Map` 的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)属性指定的位置绘制该对象。 有关将 XAML 中的参数传递给缺少默认构造函数的对象的信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
-
-> [!NOTE]
-> [`Position`](xref:Xamarin.Forms.Maps.Position)结构定义只读[`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)和[`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)属性，两者都是 `double`类型。 当通过其构造函数创建 `Position` 对象时，纬度值将为-90.0 和90.0 之间的限制，而经度值将为限制-180.0 和180.0 之间。
+此 XAML 创建一个[`Map`](xref:Xamarin.Forms.Maps.Map)对象，该对象显示由[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)对象指定的区域。 `MapSpan` 对象以由[`Position`](xref:Xamarin.Forms.Maps.Position)对象表示的纬度和经度为中心，该对象扩展了0.01 的纬度和经度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)对象将添加到[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合，并在 `Map` 的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)属性指定的位置绘制该对象。 有关[`Position`](xref:Xamarin.Forms.Maps.Position)结构的信息，请参阅[地图位置和距离](position-distance.md)。 有关将 XAML 中的参数传递给缺少默认构造函数的对象的信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
 等效 C# 代码如下：
 
@@ -119,7 +113,7 @@ map.Pins.Add(pin);
 
 点击地图上的其他位置会关闭信息窗口。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)类定义 `MarkerClicked` 事件，该事件在点击 `Pin` 时激发。 不需要处理此事件以显示信息窗口。 相反，应仅在需要通知已点击特定 pin 时才处理此事件。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)类定义 `MarkerClicked` 事件，该事件在点击 `Pin` 时激发。 不需要处理此事件以显示信息窗口。 相反，当需要通知已点击特定 pin 时，应处理此事件。
 
 [`Pin`](xref:Xamarin.Forms.Maps.Pin)类还定义了在点击信息窗口时触发的 `InfoWindowClicked` 事件。 当需要通知已点击特定信息窗口时，应处理此事件。
 
@@ -190,7 +184,6 @@ wharfPin.InfoWindowClicked += async (s, args) =>
     <Grid>
         ...
         <maps:Map x:Name="map"
-                  MoveToLastRegionOnLayoutChange="false"
                   ItemsSource="{Binding Locations}">
             <maps:Map.ItemTemplate>
                 <DataTemplate>
@@ -211,11 +204,11 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 
 以下屏幕截图显示了使用数据绑定显示[`Pin`](xref:Xamarin.Forms.Maps.Pin)集合的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
 
-[![在 iOS 和 Android 上带有数据绑定插针的地图屏幕截图](map-images/pins-itemssource.png "具有数据绑定插针的映射")](map-images/pins-itemssource-large.png#lightbox "具有数据绑定插针的映射")
+[![在 iOS 和 Android 上带有数据绑定插针的地图屏幕截图](pins-images/pins-itemsource.png "具有数据绑定插针的映射")](pins-images/pins-itemsource-large.png#lightbox "具有数据绑定插针的映射")
 
 ### <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 
-@No__t_0 集合中每个项的外观都可以根据项值在运行时选择，方法是将 `ItemTemplateSelector` 属性设置为[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)：
+`IEnumerable` 集合中每个项的外观都可以根据项值在运行时选择，方法是将 `ItemTemplateSelector` 属性设置为[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)：
 
 ```xaml
 <ContentPage ...
@@ -265,7 +258,7 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 类定义设置为不同数据模板 `DefaultTemplate` 和 `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)属性。 @No__t_0 方法返回 `XamarinTemplate`，在点击 `Pin` 时将 "Xamarin" 显示为标签，而当项具有包含 "旧金山" 的地址时。 当项没有包含 "旧金山" 的地址时，`OnSelectTemplate` 方法返回 `DefaultTemplate`。
+`MapItemTemplateSelector` 类定义设置为不同数据模板 `DefaultTemplate` 和 `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)属性。 `OnSelectTemplate` 方法返回 `XamarinTemplate`，在点击 `Pin` 时将 "Xamarin" 显示为标签，而当项具有包含 "旧金山" 的地址时。 当项没有包含 "旧金山" 的地址时，`OnSelectTemplate` 方法返回 `DefaultTemplate`。
 
 有关数据模板选择器的详细信息，请参阅[创建 Xamarin。窗体并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 

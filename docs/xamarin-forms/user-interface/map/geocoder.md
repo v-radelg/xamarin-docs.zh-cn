@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/22/2019
-ms.openlocfilehash: ce1f6751c0381ed41058784fbea3ebedefbdac6d
-ms.sourcegitcommit: e4c23187874488ff55794d0e81a9bba30d2c2cd6
+ms.openlocfilehash: 9a20618fea0091979c2ea862f417dccec565b218
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72778792"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425608"
 ---
 # <a name="xamarinforms-map-geocoding"></a>Xamarin. Forms Map 地理编码
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-Xamarin. Maps 提供[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)类，该类在存储于[`Position`](xref:Xamarin.Forms.Maps.Position)对象中的字符串地址和纬度和经度坐标之间进行转换。
+[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空间提供了一个[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)类，该类在[`Position`](xref:Xamarin.Forms.Maps.Position)对象中存储的字符串地址和纬度和经度坐标之间进行转换。 有关[`Position`](xref:Xamarin.Forms.Maps.Position)结构的详细信息，请参阅[地图位置和距离](position-distance.md)。
 
 ## <a name="geocode-an-address"></a>地理编码地址
 
@@ -34,7 +34,7 @@ Position position = approximateLocations.FirstOrDefault();
 string coordinates = $"{position.Latitude}, {position.Longitude}";
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*)方法采用表示该地址的 `string` 参数，并以异步方式返回可能表示该地址的[`Position`](xref:Xamarin.Forms.Maps.Position)对象的集合。
+[`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync*)方法采用表示该地址的 `string` 参数，并以异步方式返回可能表示该地址的[`Position`](xref:Xamarin.Forms.Maps.Position)对象的集合。
 
 ## <a name="reverse-geocode-an-address"></a>反向地理编码地址
 
@@ -50,9 +50,10 @@ IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAs
 string address = possibleAddresses.FirstOrDefault();
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*)方法采用由纬度和经度坐标组成的[`Position`](xref:Xamarin.Forms.Maps.Position)参数，并以异步方式返回表示位置附近地址的字符串集合。
+[`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync*)方法采用由纬度和经度坐标组成的[`Position`](xref:Xamarin.Forms.Maps.Position)参数，并以异步方式返回表示位置附近地址的字符串集合。
 
 ## <a name="related-links"></a>相关链接
 
 - [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Xamarin。窗体地图位置和距离](position-distance.md)
 - [Geocoder API](xref:Xamarin.Forms.Maps.Geocoder)
