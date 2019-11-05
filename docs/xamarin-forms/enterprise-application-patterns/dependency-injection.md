@@ -6,13 +6,13 @@ ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: 975b32610b4b496e329c5c5a29b79efd2874d8cf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/04/2019
+ms.openlocfilehash: 08fb22627ab6b40c94c17d94321ed0bac60beedd
+ms.sourcegitcommit: 9dd0b076ab4ecdbbd1b029d2e0d67d900e1c4494
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029503"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567893"
 ---
 # <a name="dependency-injection"></a>依赖关系注入
 
@@ -57,9 +57,9 @@ public class ProfileViewModel : ViewModelBase
 
 在使用 MVVM 的 Xamarin 窗体应用的上下文中，依赖关系注入容器通常用于注册和解析视图模型，并用于注册服务并将其注入查看模型中。
 
-有许多依赖关系注入容器可用，eShopOnContainers 移动应用使用 Autofac 管理应用中的视图模型和服务类的实例化。 Autofac 有助于构建松散耦合的应用程序，并提供了依赖关系注入容器中常见的所有功能，包括用于注册类型映射和对象实例、解析对象、管理对象生存期和注入依赖对象到它解析的对象的构造函数。 有关 Autofac 的详细信息，请参阅 readthedocs.io 上的[Autofac](https://autofac.readthedocs.io/en/latest/index.html) 。
+有许多依赖关系注入容器可用，eShopOnContainers 移动应用使用 TinyIoC 管理应用中的视图模型和服务类的实例化。 TinyIoC 是在评估多个不同的容器后选择的，并且在与大多数常见容器进行比较时，它们的性能优于移动平台。 它有助于构建松散耦合的应用程序，并提供了依赖关系注入容器中常见的所有功能，包括用于注册类型映射、解析对象、管理对象生存期以及将依赖对象注入到其中的方法它解析的对象的构造函数。 有关 TinyIoC 的详细信息，请参阅 github.com 上的[TinyIoC](https://github.com/grumpydev/TinyIoC/wiki) 。
 
-在 Autofac 中，`IContainer` 接口提供了依赖关系注入容器。 图3-1 显示了使用此容器时的依赖项，这将实例化 `IOrderService` 对象并将其插入 `ProfileViewModel` 类中。
+在 TinyIoC 中，`TinyIoCContainer` 类型提供了依赖关系注入容器。 图3-1 显示了使用此容器时的依赖项，这将实例化 `IOrderService` 对象并将其插入 `ProfileViewModel` 类中。
 
 ![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
 
@@ -87,60 +87,33 @@ public class ProfileViewModel : ViewModelBase
 > [!TIP]
 > 依赖关系注入容器并非始终适合。 依赖关系注入会引入额外的复杂性和要求，这些要求可能不适用于小型应用程序。 如果某个类没有任何依赖项，或者它不是其他类型的依赖项，则将其放在容器中可能并不合理。 此外，如果类具有一组不属于类型的整数依赖项，并且永远不会发生更改，则将其放在容器中可能没有意义。
 
-需要依赖关系注入的类型的注册应在应用的单个方法中执行，此方法应在应用生命周期中及早调用，以确保应用知道其类之间的依赖关系。 在 eShopOnContainers 移动应用中，这是由 `ViewModelLocator` 类执行的，该类生成 `IContainer` 对象，是应用中的唯一包含对该对象的引用的类。 下面的代码示例演示了 eShopOnContainers 移动应用如何声明 `ViewModelLocator` 类中的 `IContainer` 对象：
+需要依赖关系注入的类型的注册应在应用的单个方法中执行，此方法应在应用生命周期中及早调用，以确保应用知道其类之间的依赖关系。 在 eShopOnContainers 移动应用中，这是由 `ViewModelLocator` 类执行的，该类生成 `TinyIoCContainer` 对象，是应用中的唯一包含对该对象的引用的类。 下面的代码示例演示了 eShopOnContainers 移动应用如何声明 `ViewModelLocator` 类中的 `TinyIoCContainer` 对象：
 
 ```csharp
-private static IContainer _container;
+private static TinyIoCContainer _container;
 ```
 
-在 `ViewModelLocator` 类的 `RegisterDependencies` 方法中注册类型和实例。 这是通过首先创建 `ContainerBuilder` 实例实现的，如以下代码示例所示：
+类型是在 `ViewModelLocator` 构造函数中注册的。 这是通过首先创建 `TinyIoCContainer` 实例实现的，如以下代码示例所示：
 
 ```csharp
-var builder = new ContainerBuilder();
+_container = new TinyIoCContainer();
 ```
 
-然后向 `ContainerBuilder` 对象注册类型和实例，下面的代码示例演示类型注册的最常见形式：
+然后，将用 `TinyIoCContainer` 对象注册类型，下面的代码示例演示类型注册的最常见形式：
 
 ```csharp
-builder.RegisterType<RequestProvider>().As<IRequestProvider>();
+_container.Register<IRequestProvider, RequestProvider>();
 ```
 
-此处所示的 `RegisterType` 方法将接口类型映射到具体类型。 它会告知容器在实例化一个需要通过构造函数注入 `IRequestProvider` 的对象时，实例化一个 `RequestProvider` 对象。
+此处所示的 `Register` 方法将接口类型映射到具体类型。 默认情况下，每个接口注册都配置为单一实例，以便每个依赖对象都接收相同的共享实例。 因此，容器中将只存在一个 `RequestProvider` 实例，该容器由需要通过构造函数注入 `IRequestProvider` 的对象共享。
 
 也可以直接注册具体类型，无需从接口类型进行映射，如下面的代码示例所示：
 
 ```csharp
-builder.RegisterType<ProfileViewModel>();
+_container.Register<ProfileViewModel>();
 ```
 
-解析 `ProfileViewModel` 类型时，容器将注入其所需的依赖项。
-
-Autofac 还允许实例注册，其中容器负责维护对某个类型的单独实例的引用。 例如，下面的代码示例演示当 `ProfileViewModel` 实例需要 `IOrderService` 实例时，eShopOnContainers 移动应用如何注册具体类型以供使用：
-
-```csharp
-builder.RegisterType<OrderService>().As<IOrderService>().SingleInstance();
-```
-
-此处所示的 `RegisterType` 方法将接口类型映射到具体类型。 `SingleInstance` 方法配置注册，使每个依赖对象收到同一个共享实例。 因此，容器中将只存在一个 `OrderService` 实例，该容器由需要通过构造函数注入 `IOrderService` 的对象共享。
-
-还可以通过 `RegisterInstance` 方法执行实例注册，如以下代码示例中所示：
-
-```csharp
-builder.RegisterInstance(new OrderMockService()).As<IOrderService>();
-```
-
-此处所示的 `RegisterInstance` 方法创建新的 `OrderMockService` 实例，并将其注册到容器中。 因此，容器中只存在一个 `OrderMockService` 实例，该容器由需要通过构造函数注入 `IOrderService` 的对象共享。
-
-在类型和实例注册之后，必须生成 `IContainer` 对象，如下面的代码示例所示：
-
-```csharp
-_container = builder.Build();
-```
-
-对 `ContainerBuilder` 实例调用 `Build` 方法将生成一个包含已进行的注册的新的依赖项注入容器。
-
-> [!TIP]
-> 将 `IContainer` 视为不可变。 尽管 Autofac 提供了 `Update` 方法来更新现有容器中的注册，但应尽可能避免调用此方法。 在创建容器后对其进行修改时，尤其是在使用容器的情况下。 有关详细信息，请参阅在 readthedocs.io 上[将容器视为不可变](https://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)。
+默认情况下，每个具体的类注册都配置为多实例，以便每个依赖对象收到一个新实例。 因此，解析 `ProfileViewModel` 时，将创建一个新实例，并且容器将注入其所需的依赖项。
 
 <a name="resolution" />
 
@@ -154,21 +127,21 @@ _container = builder.Build();
 1. 如果该类型已注册为单一实例，则容器返回单一实例。 如果这是第一次调用该类型的，则容器会根据需要创建它，并保持对它的引用。
 1. 如果该类型尚未注册为单一实例，则容器返回一个新的实例，并且不保留对该实例的引用。
 
-下面的代码示例演示了如何解决之前向 Autofac 注册的 `RequestProvider` 类型：
+下面的代码示例演示了如何解决之前向 TinyIoC 注册的 `RequestProvider` 类型：
 
 ```csharp
-var requestProvider = _container.Resolve<IRequestProvider>();
+var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-在此示例中，要求 Autofac 解析 `IRequestProvider` 类型和任何依赖项的具体类型。 通常，当需要特定类型的实例时，将调用 `Resolve` 方法。 有关控制已解析对象的生存期的信息，请参阅[管理已解析对象的生存期](#managing_the_lifetime_of_resolved_objects)。
+在此示例中，要求 TinyIoC 解析 `IRequestProvider` 类型和任何依赖项的具体类型。 通常，当需要特定类型的实例时，将调用 `Resolve` 方法。 有关控制已解析对象的生存期的信息，请参阅[管理已解析对象的生存期](#managing_the_lifetime_of_resolved_objects)。
 
 下面的代码示例演示了 eShopOnContainers 移动应用如何实例化视图模型类型及其依赖项：
 
 ```csharp
-var viewModel = _container.Resolve(viewModelType);
+var viewModel = _container.Resolve(viewModelType);
 ```
 
-在此示例中，要求 Autofac 解析请求的视图模型的视图模型类型，并且该容器还将解析任何依赖项。 解析 `ProfileViewModel` 类型时，要解析的依赖项是 `IOrderService` 对象。 因此，Autofac 首先构造 `OrderService` 对象，然后将其传递给 `ProfileViewModel` 类的构造函数。 有关 eShopOnContainers mobile 应用如何构造视图模型并将其与视图相关联的详细信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+在此示例中，要求 TinyIoC 解析请求的视图模型的视图模型类型，并且该容器还将解析任何依赖项。 解析 `ProfileViewModel` 类型时，要解析的依赖项是一个 `ISettingsService` 对象和一个 `IOrderService` 对象。 由于在注册 `SettingsService` 和 `OrderService` 类时使用了接口注册，因此 TinyIoC 返回 `SettingsService` 和 `OrderService` 类的单独实例，然后将它们传递给 `ProfileViewModel` 类的构造函数。 有关 eShopOnContainers mobile 应用如何构造视图模型并将其与视图相关联的详细信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
 
 > [!NOTE]
 > 使用容器来注册和解析类型会影响性能，因为容器使用反射来创建每个类型，特别是在应用中为每个页面导航重构依赖关系的情况。 如果存在许多或深度依赖关系，则创建成本会显著增加。
@@ -177,26 +150,24 @@ var viewModel = _container.Resolve(viewModelType);
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>管理已解析对象的生存期
 
-注册类型后，Autofac 的默认行为是在每次解析类型时或者在依赖项机制将实例注入到其他类时，创建已注册类型的新实例。 在这种情况下，容器不会保存对已解析的对象的引用。 但是，在注册实例时，Autofac 的默认行为是将该对象的生存期作为单一实例进行管理。 因此，当容器处于范围内时，实例将保留在范围中，当容器超出范围并进行垃圾回收时，或者当代码显式释放容器时，实例将被释放。
+使用具体的类注册注册类型后，TinyIoC 的默认行为是在每次解析类型时或者在依赖项机制将实例注入到其他类时，创建已注册类型的新实例。 在这种情况下，容器不会保存对已解析的对象的引用。 但是，在使用接口注册注册类型时，TinyIoC 的默认行为是将该对象的生存期作为单一实例进行管理。 因此，当容器处于范围内时，实例将保留在范围中，当容器超出范围并进行垃圾回收时，或者当代码显式释放容器时，实例将被释放。
 
-Autofac 实例作用域可用于指定 Autofac 从注册类型创建的对象的单一实例行为。 Autofac 实例作用域管理容器实例化的对象生存期。 `RegisterType` 方法的默认实例作用域是 `InstancePerDependency` 范围。 但 `SingleInstance` 范围可与 `RegisterType` 方法一起使用，以便容器在调用 `Resolve` 方法时创建或返回类型的单一实例。 下面的代码示例显示了如何指示 Autofac 创建 `NavigationService` 类的单一实例：
+可以使用熟知的 `AsSingleton` 和 `AsMultiInstance` API 方法来重写默认的 TinyIoC 注册行为。 例如，`AsSingleton` 方法可与 `Register` 方法一起使用，以便容器在调用 `Resolve` 方法时创建或返回类型的单一实例。 下面的代码示例显示了如何指示 TinyIoC 创建 `LoginViewModel` 类的单一实例：
 
 ```csharp
-builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
+_container.Register<LoginViewModel>().AsSingleton();
 ```
 
-第一次解析 `INavigationService` 接口时，容器将创建新的 `NavigationService` 对象并维护对它的引用。 在 `INavigationService` 接口的任何后续解决方法中，容器将返回对先前创建的 `NavigationService` 对象的引用。
+第一次解析 `LoginViewModel` 类型时，容器将创建新的 `LoginViewModel` 对象并维护对它的引用。 在 `LoginViewModel`的任何后续解决方案中，容器将返回对之前创建的 `LoginViewModel` 对象的引用。
 
 > [!NOTE]
-> SingleInstance 范围在释放容器时释放已创建的对象。
+> 注册为单一实例的类型会在容器被释放时释放。
 
-Autofac 包括附加的实例作用域。 有关详细信息，请参阅 readthedocs.io 上的[实例作用域](https://autofac.readthedocs.io/en/latest/lifetime/instance-scope.html)。
-
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 依赖关系注入允许从依赖于这些类型的代码分离具体类型。 它通常使用容器来保存接口与抽象类型之间的注册和映射列表，以及实现或扩展这些类型的具体类型。
 
-Autofac 有助于构建松散耦合的应用程序，并提供了依赖关系注入容器中常见的所有功能，包括用于注册类型映射和对象实例、解析对象、管理对象生存期和注入依赖对象到它解析的对象的构造函数。
+TinyIoC 是一种轻型容器，与大多数常见容器相比，它在移动平台上具有优异的性能。 它有助于构建松散耦合的应用程序，并提供了依赖关系注入容器中常见的所有功能，包括用于注册类型映射、解析对象、管理对象生存期以及将依赖对象注入到其中的方法它解析的对象的构造函数。
 
 ## <a name="related-links"></a>相关链接
 
