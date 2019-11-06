@@ -4,15 +4,15 @@ description: 本文档为 Objective-C 开发人员介绍 C#。 通过检查协�
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: a55d1d9848d3f1378ccbc4a24e1748eb146a6a35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b84d959ce7976fc51cbdfee99cbceec560e8e8e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291986"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022432"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>面向 Objective-C 开发人员的 C# 入门
 
@@ -58,7 +58,7 @@ public static class UITextViewExtensions
 
 然后，当在代码中创建 `UITextView` 的实例时，该方法将出现在自动完成列表中，如下所示：
 
- ![](primer-images/01-extensionmethodintellisense.png "自动完成列表中可用的方法")
+ ![](primer-images/01-extensionmethodintellisense.png "The method available in the autocomplete")
 
 当调用扩展方法时，实例将传递给参数，如本示例中的 `textView`。
 

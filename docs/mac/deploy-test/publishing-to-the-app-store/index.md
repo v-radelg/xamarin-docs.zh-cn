@@ -4,15 +4,15 @@ description: 本文档介绍如何使用 Visual Studio for Mac 部署 Xamarin.Ma
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 84a35389276fed031f6bea116c1e4f37a63469a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60f51be5ffad67d839edd42b7826b0c57c46eb8a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769873"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030000"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>将 Xamarin.Mac 应用发布到 Mac App Store
 

@@ -4,15 +4,15 @@ description: 本文介绍如何配置 Visual Studio 2019 以进行 Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: b3910bd096f2a8dd301a9ba6e200028d3121c8df
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279228"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022536"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>配置 Visual Studio 以进行 iOS 开发
 
@@ -42,7 +42,7 @@ Visual Studio 2019 或 Visual Studio 2017 必须使用 Mac 生成主机上安装
 
 如果未显示该工具栏，打开 Visual Studio 2019 或 Visual Studio 2017 中的“视图”菜单，并选择“工具栏”>“iOS”   ：
 
-![启用 iOS 工具栏](config-options-images/ios-toolbar-enable.png "Enabling the iOS toolbar")
+![启用 iOS 工具栏](config-options-images/ios-toolbar-enable.png "启用 iOS 工具栏")
 
 ## <a name="solution-platforms-drop-down-menu"></a>解决方案平台下拉菜单
 
@@ -54,8 +54,8 @@ Visual Studio 2019 或 Visual Studio 2017 必须使用 Mac 生成主机上安装
 - 选择“添加或删除按钮”  
 - 确保已选中“解决方案平台”项  ：
 
-![启用解决方案平台下拉菜单](config-options-images/solution-platforms-enable.png "Enabling the Solution Platforms drop-down menu")
+![启用“解决方案平台”下拉菜单](config-options-images/solution-platforms-enable.png "启用“解决方案平台”下拉菜单")
 
 现打开 iOS 项目后，标准工具栏和 iOS 工具栏应如以下屏幕截图所示   ：
 
-![标准工具栏和 iOS 工具栏](config-options-images/toolbars.png "Standard and iOS toolbars")
+![标准和 iOS 工具栏](config-options-images/toolbars.png "标准和 iOS 工具栏")

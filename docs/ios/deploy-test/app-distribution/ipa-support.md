@@ -4,15 +4,15 @@ description: 本文介绍如何创建可通过 Ad Hoc 分发用来部署应用�
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b9982f9102166aa6892be0819615f329a65fffbb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756431"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030425"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支持
 
@@ -60,7 +60,7 @@ ms.locfileid: "70756431"
 
 在开始针对跨平台解决方案创建 IPA 之前，确保已选择 iOS 项目作为启动项目：
 
-![](ipa-support-images/setasstartup.png "已选择 iOS 项目作为启动项目")
+![](ipa-support-images/setasstartup.png "Selected the iOS project as the startup project")
 
 ### <a name="build-your-archive"></a>生成存档
 
@@ -68,15 +68,15 @@ ms.locfileid: "70756431"
 
 1. 在 Visual Studio for Mac 中选择“发布 | 设备”  配置： !
 
-    ![](ipa-support-images/buildxs01new.png "选择“发布 | 设备”配置")
+    ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
 
 1. 在“生成”  菜单中，选择“存档以供发布”  ：
 
-    ![](ipa-support-images/buildxs02new.png "选择“存档以供发布”")
+    ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
 
 1. 存档创建完成后，将显示“存档”  视图：
 
-    ![](ipa-support-images/buildxs03new.png "将显示“存档”视图")
+    ![](ipa-support-images/buildxs03new.png "The Archives view will be displayed")
 
 ### <a name="sign-and-distribute-your-app"></a>签名和分发应用
 
@@ -90,23 +90,23 @@ ms.locfileid: "70756431"
 
 1. 选择“签名并分发...”  按钮，如下所示：
 
-    ![](ipa-support-images/buildxs04new.png "选择“签名和分发...”")
+    ![](ipa-support-images/buildxs04new.png "Select Sign and Distribute...")
 
 1. 这将打开发布向导。 选择 **Ad-Hoc** 或“企业”  (In-House) 分发渠道来创建包：
 
-    ![](ipa-support-images/distribute01.png "选择“临时”或“企业内部”分发")
+    ![](ipa-support-images/distribute01.png "Select the Ad-Hoc or Enterprise In-House distribution")
 
 1. 在“配置文件”屏幕上，选择签名标识和对应的配置文件，或使用其他标识重新签名：
 
-    ![](ipa-support-images/distribute02.png "选择签名标识和相应的预配配置文件")
+    ![](ipa-support-images/distribute02.png "Select the signing identity and corresponding provisioning profile")
 
 1. 验证包的详细信息，然后单击“发布”  ：
 
-    ![](ipa-support-images/distribute03.png "验证包的详细信息")
+    ![](ipa-support-images/distribute03.png "Verify the package details")
 
 1. 最后，将 IPA 保存到计算机：
 
-    ![](ipa-support-images/distribute04.png "将 IPA 保存到计算机")
+    ![](ipa-support-images/distribute04.png "Save the IPA to the computer")
 
 ### <a name="building-via-the-command-line-on-mac"></a>（在 Mac 上）通过命令行生成
 
@@ -114,7 +114,7 @@ ms.locfileid: "70756431"
 
 1. 确保已选中“项目选项”>“iOS IPA 选项”>“包含 iTunes 图稿图像”  ，并且已选中“生成 Ad-Hoc/企业包 (IPA)”  ：
 
-    ![](ipa-support-images/imagexs04.png "添加 iTunesArtwork 图像并选中“生成临时/企业包 IPA”")
+    ![](ipa-support-images/imagexs04.png "Include iTunesArtwork images and Build ad-hoc/enterprise package IPA is checked")
 
     如果愿意，可转而在文本编辑器中编辑 **.csproj** 文件，并向将用于生成应用的配置的 `PropertyGroup` 手动添加两个对应属性：
 
@@ -125,7 +125,7 @@ ms.locfileid: "70756431"
 
 1. 如果要包含可选的 **iTunesMetadata.plist** 文件，请单击“...”  选项，从列表选择它，然后单击“确定”  按钮：
 
-     ![](ipa-support-images/imagexs03.png "从列表中选择 iTunesMetadata.plist")
+     ![](ipa-support-images/imagexs03.png "Select iTunesMetadata.plist from the list")
 
 1. 直接调用 msbuild  并在命令行上传递此属性：
 
@@ -139,29 +139,29 @@ ms.locfileid: "70756431"
 
 1. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目名称，选择“属性”  将其打开进行编辑：
 
-    ![](ipa-support-images/imagevs01.png "选择“属性”")
+    ![](ipa-support-images/imagevs01.png "Select Properties")
 
 2. 选择“iOS IPA 选项”  ，然后从“配置”  下拉列表选择“Ad-Hoc”  ：
 
-    ![](ipa-support-images/imagevs02.png "从“配置”下拉列表选择“临时”")
+    ![](ipa-support-images/imagevs02.png "Select Ad-Hoc from the Configuration dropdown list")
 
     > [!NOTE]
     > Ad-Hoc 配置可能不适用于较新的 Xamarin.iOS 项目。 如果不可用，请选择“发布”  配置。
 
 3. 如果要包含可选 **iTunesMetadata.plist** 文件，请单击“...”  选项，从列表中选择它，然后单击“打开”  按钮：
 
-    ![](ipa-support-images/imagevs03.png "从列表中选择 iTunesMetadata.plist")
+    ![](ipa-support-images/imagevs03.png "Select iTunesMetadata.plist from the list")
 
 4. 可选择指定 IPA 的**包名称**，若未指定，则将使用与 Xamarin.iOS 项目相同的名称。
 5. 保存对“项目属性”所做的更改。
 6. 如果可用，从“生成配置”  下拉列表选择“Ad Hoc”  。 否则，选择“发布”  ：
 
-    ![](ipa-support-images/imagevs05.png "从“生成配置”下拉列表选择“临时”")
+    ![](ipa-support-images/imagevs05.png "Select Ad Hoc from the Build Configuration dropdown")
 
 7. 生成项目以创建 IPA 包。
 8. IPA 将在“Bin”>“iOS 设备”>“Ad Hoc”（或 Release）  文件夹中生成：
 
-    ![](ipa-support-images/imagevs06.png "文件资源管理器中的 IPA")
+    ![](ipa-support-images/imagevs06.png "The IPA in the file explorer")
 
 -----
 
@@ -231,11 +231,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- ![](ipa-support-images/installxs01.png "“我的应用”部分中的新 iOS 应用程序")
+ ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
- ![](ipa-support-images/installvs01.png "“我的应用”部分中的新 iOS 应用程序")
+ ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 
 -----
 

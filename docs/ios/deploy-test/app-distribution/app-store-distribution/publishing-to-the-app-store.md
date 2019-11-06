@@ -4,15 +4,15 @@ description: 本文档介绍了如何配置、生成和发布 Xamarin.iOS 应用
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
-ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
+ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811182"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026634"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>将 Xamarin.iOS 应用发布到 App Store
 
@@ -106,7 +106,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
     设置好上述选项后，生成设置应类似如下：
 
-    ![iOS 生成设置](publishing-to-the-app-store-images/build-m157.png "iOS Build settings")
+    ![iOS 生成设置](publishing-to-the-app-store-images/build-m157.png "iOS 生成设置")
 
     另请参阅 [iOS 生成机制](~/ios/deploy-test/ios-build-mechanics.md)指南，其中进一步介绍了生成设置。
 
@@ -136,7 +136,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
     设置好上述选项后，生成设置应类似如下：
 
-    ![iOS 生成设置](publishing-to-the-app-store-images/build-w157.png "iOS Build settings")
+    ![iOS 生成设置](publishing-to-the-app-store-images/build-w157.png "iOS 生成设置")
 
     另请参阅 [iOS 生成机制](~/ios/deploy-test/ios-build-mechanics.md)指南，其中进一步介绍了生成设置。
 
@@ -146,7 +146,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
     现在，项目的捆绑签名选项应类似如下：
 
-    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS Bundle Signing settings")
+    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 捆绑签名设置")
 
 14. 保存生成配置并将其关闭。
 
@@ -165,7 +165,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
     设置好上述选项后，生成设置应类似如下：
 
-    ![iOS 生成设置](publishing-to-the-app-store-images/build-w157.png "iOS Build settings")
+    ![iOS 生成设置](publishing-to-the-app-store-images/build-w157.png "iOS 生成设置")
 
     另请参阅 [iOS 生成机制](~/ios/deploy-test/ios-build-mechanics.md)指南，其中进一步介绍了生成设置。
 
@@ -175,7 +175,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
     现在，项目的捆绑签名选项应类似如下：
 
-    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS Bundle Signing settings")
+    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS 捆绑签名设置")
 
 14. 导航到“iOS IPA 选项”选项卡  。
 15. 请确保将“配置”设置为“发布”，并将“平台”设置为“iPhone”     。
@@ -186,7 +186,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 17. 若要指定一个与 Xamarin.iOS 项目名称不同的 .ipa 文件名，请在“包名称”字段中输入这个名称  。
 
-    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS Bundle Signing settings")
+    ![iOS 捆绑签名设置](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS 捆绑签名设置")
 
 18. 保存生成配置并将其关闭。
 
@@ -206,12 +206,12 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 1. 在 Visual Studio for Mac 中，选择“发布”生成配置和一个作为生成目标的设备（不是模拟器）  。
 
-    ![生成配置和平台选择](publishing-to-the-app-store-images/chooseConfig-m157.png "Build configuration and platform selection")
+    ![生成配置和平台选择](publishing-to-the-app-store-images/chooseConfig-m157.png "生成配置和平台选择")
 
 2. 在“生成”菜单中，选择“存档以供发布”   。
 3. 存档创建完成后，将显示“存档”视图  。 单击“签名并分发...”以打开发布向导  。
 
-    ![显示“存档”视图中“签名并分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-mac.png "Screenshot of the Sign and Distribute button location in the Archives view.")
+    ![“存档”视图中“签名和分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-mac.png "“存档”视图中“签名和分发”按钮位置的屏幕截图。")
 
     > [!NOTE]
     > 默认情况下，“存档”视图仅显示打开的解决方案的存档  。 若要查看拥有存档的所有解决方案，请勾选“显示所有存档”复选框  。 最好保留旧的存档，以便在必要时将它们所包含的调试信息用于符号化崩溃报告。
@@ -222,11 +222,11 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 6. 在“预配配置文件”窗口中选择签名标识、应用和预配配置文件  。 单击 **“下一步”** 。
 
-    ![“预配配置文件”向导页面屏幕截图，其中显示了有效的签名标识、应用和预配配置文件选项。](publishing-to-the-app-store-images/provProfileSelect-mac.png "Screenshot of the Provisioning profile wizard page with a valid signing identity, app, and provisioning profile selected.")
+    ![“预配配置文件”向导页面的屏幕截图，其中显示有效的签名标识、应用和预配配置文件选择。](publishing-to-the-app-store-images/provProfileSelect-mac.png "“预配配置文件”向导页面的屏幕截图，其中已选中有效的签名标识、应用和预配配置文件。")
 
 7. 在“App Store Connect 信息”窗口中，从菜单中选择 Apple ID 用户名，然后输入[应用特定的密码](https://support.apple.com/ht204397)  。 单击 **“下一步”** 。
 
-    ![“App Store Connect 信息”向导页面屏幕截图，其中显示已选择 Apple ID 用户名。](publishing-to-the-app-store-images/connectInfo-mac.png "Screenshot of the App Store Connect information wizard page showing an Apple ID user name selected.")
+    ![“App Store Connect”信息向导页面的屏幕截图，其中显示了所选的 Apple ID 用户名。](publishing-to-the-app-store-images/connectInfo-mac.png "“App Store Connect”信息向导页面的屏幕截图，其中显示了所选的 Apple ID 用户名。")
 
 8. 验证包的详细信息，然后单击“发布”  。 选择一个位置来保存 .ipa 文件后，向导会将应用上传到 App Store Connect。
 
@@ -245,23 +245,23 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 1. 请确保 Visual Studio 2019 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 从“解决方案配置”下拉列表中选择“发布”，并从“解决方案平台”下拉列表中选择“iPhone”     。
 
-    ![Visual Studio 工具栏的屏幕截图，其中显示设置为“发布”的解决方案配置、设置为“iPhone”的解决方案平台以及设置为“设备”的目标。](publishing-to-the-app-store-images/chooseConfig-w157.png "Screenshot of the Visual Studio toolbar showing solution configuration set to release, solution platform set to iPhone, and target set to device.")
+    ![Visual Studio 工具栏的屏幕快照，其中显示“解决方案配置”设置为“发布”，“解决方案平台”设置为“iPhone”，“目标”设置为“设备”。](publishing-to-the-app-store-images/chooseConfig-w157.png "Visual Studio 工具栏的屏幕快照，其中显示“解决方案配置”设置为“发布”，“解决方案平台”设置为“iPhone”，“目标”设置为“设备”。")
 
 3. 从“生成”菜单中选定“存档...”   。这会打开“存档管理器”并开始创建存档  。
 
 4. 创建存档后，请单击“分发...”以打开发布向导  。
 
-    ![显示存档管理器视图中的“分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-win.png "Screenshot of the distribute button location in the archive manager view.")
+    ![“存档管理器”视图中“分发”按钮位置的屏幕截图。](publishing-to-the-app-store-images/archives-win.png "“存档管理器”视图中“分发”按钮位置的屏幕截图。")
 
 5. 选择“App Store”分发通道  。
 
 6. 选择签名标识和预配配置文件。 单击“上传到商店”  。
 
-    ![显示有效签名标识和预配配置文件选项的发布向导的屏幕截图。](publishing-to-the-app-store-images/provProfileSelect-win.png "Screenshot of the publishing wizard showing a valid signing identity and provisioning profile selection.")
+    ![“发布”向导的屏幕截图，其中显示有效的签名标识和预配配置文件选择。](publishing-to-the-app-store-images/provProfileSelect-win.png "“发布”向导的屏幕截图，其中显示有效的签名标识和预配配置文件选择。")
 
 7. 输入你的 Apple ID 和[特定于应用的密码](https://support.apple.com/ht204397)。 单击“确定”开始将应用上传到 App Store Connect  。
 
-    ![用于输入 Apple ID 和特定于应用的密码的弹出窗口屏幕截图。](publishing-to-the-app-store-images/connectInfo-win.png "Screenshot of the pop up window to enter your Apple ID and app specific password.")
+    ![输入 Apple ID 和应用专用密码的弹出窗口的屏幕截图。](publishing-to-the-app-store-images/connectInfo-win.png "输入 Apple ID 和应用专用密码的弹出窗口的屏幕截图。")
 
 # <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
@@ -275,7 +275,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 1. 请确保 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 从 Visual Studio 2017“解决方案配置”下拉列表中选择“发布”，并从“解决方案平台”下拉列表中选择“iPhone”     。
 
-    ![生成配置和平台选择](publishing-to-the-app-store-images/chooseConfig-w157.png "Build configuration and platform selection")
+    ![生成配置和平台选择](publishing-to-the-app-store-images/chooseConfig-w157.png "生成配置和平台选择")
 
 3. 生成项目。 这将创建一份 .ipa 文件。
 
@@ -299,16 +299,16 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 7. 登录至应用程序加载器（注意，必须为 Apple ID [创建一个特定于应用的密码](https://support.apple.com/ht204397)）。
 8. 选择“提交应用”  ，单击“选择”  按钮：
 
-    ![选择交付应用](publishing-to-the-app-store-images/publishvs01.png "Select Deliver Your App")
+    ![选择“提交应用”](publishing-to-the-app-store-images/publishvs01.png "选择“提交应用”")
 
 9. 选择前面创建的.ipa 文件，然后单击“确定”  。
 10. 应用加载程序将验证文件：
 
-    ![验证屏幕](publishing-to-the-app-store-images/publishvs02.png "The validation screen")
+    ![“验证”屏幕](publishing-to-the-app-store-images/publishvs02.png "“验证”屏幕")
 
 11. 单击“下一步”  按钮，将按照 App Store 的要求验证应用：
 
-    ![向 App Store 进行验证](publishing-to-the-app-store-images/publishvs03.png "Validating against the App Store")
+    ![对 App Store 进行验证](publishing-to-the-app-store-images/publishvs03.png "对 App Store 进行验证")
 
 12. 单击“发送”  按钮，将应用程序发送到 Apple 以供审核。
 13. 文件成功上传后，应用程序加载程序将通知你。
@@ -326,7 +326,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 若要查看应用提交的状态，请登录至 iTunes Connect 并选择应用。 初始状态应该为“等待审核”，不过在被处理时可能会暂时地显示为“上传已接收”   。
 
-![等待审核](publishing-to-the-app-store-images/image21.png "Waiting For Review")
+![正在等待审阅](publishing-to-the-app-store-images/image21.png "正在等待审阅")
 
 ## <a name="tips-and-tricks"></a>提示和技巧
 

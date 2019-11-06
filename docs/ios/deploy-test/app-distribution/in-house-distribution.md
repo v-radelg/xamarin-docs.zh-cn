@@ -4,15 +4,15 @@ description: 本文档简要概述了应用程序作为 Apple Enterprise Develop
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763056"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026548"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的内部分发
 
@@ -56,15 +56,15 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 3. 单击“+”  按钮创建新证书。
 4. 在“生产”  标题下，选择“In-House 和 Ad Hoc”  ：
 
-   [![](in-house-distribution-images/createcertmanually01.png "选择“内部”和“临时”")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. 单击“继续”，并按说明通过密钥链访问创建证书签名请求：
 
-   [![](in-house-distribution-images/createcertmanually02.png "通过 Keychain Access 创建证书签名请求")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. 按指示创建 CSR 后，单击“继续”并将 CSR 上传到 Member Center：
 
-   [![](in-house-distribution-images/createcertmanually03.png "将 CSR 上传到 Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. 单击“生成”创建证书。
 8. 下载已完成的证书，并双击该文件进行安装。
@@ -74,15 +74,15 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 1. 选择团队，再单击“查看详细信息”  ：
 
-   [![](in-house-distribution-images/selectteam.png "选择团队")](in-house-distribution-images/selectteam.png#lightbox)
+   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
 
 2. 然后，单击“iOS 分发证书”  旁边的“创建”  按钮：
 
-   [![](in-house-distribution-images/selectcert.png "创建“iOS 分发证书”")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
 
 3. 接下来，单击加号 (+) 按钮，然后选择“iOS App Store”   ：
 
-   [![](in-house-distribution-images/selectcert.png "选择“iOS App Store”")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile" />
 
@@ -104,23 +104,23 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 1. 返回 Apple 预配门户，选择“预配”   > “分发”  ：
 
-   [![](in-house-distribution-images/distribute01.png "选择“预配”>“分发”")](in-house-distribution-images/distribute01.png#lightbox)
+   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
 
 2. 单击“+”  按钮，选择要创建为“In-House”  的分发配置文件类型：
 
-   [![](in-house-distribution-images/distribute02.png "创建内部分发配置文件")](in-house-distribution-images/distribute02.png#lightbox)
+   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
 
 3. 单击“继续”  按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
 
-   [![](in-house-distribution-images/distribute03.png "从下拉列表选择“App ID”")](in-house-distribution-images/distribute03.png#lightbox)
+   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
 
 4. 单击“继续”  按钮，然后选择签名应用程序时所需的分发证书：
 
-   [![](in-house-distribution-images/distribute04.png "选择签名应用程序时所需的分发证书")](in-house-distribution-images/distribute04.png#lightbox)
+   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
 
 5. 单击“继续”  按钮，为新的分发配置文件输入“名称”  ：
 
-   [![](in-house-distribution-images/distribute06.png "输入新的分发配置文件的名称")](in-house-distribution-images/distribute06.png#lightbox)
+   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
 
 6. 单击“生成”  按钮，创建新的配置文件并完成该过程。
 
@@ -138,7 +138,7 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 ## <a name="distributing-your-app-in-house"></a>实现应用的 In-House 分发
 
-在 Apple Developer Enterprise Program 中，被许可方是负责分发应用程序的人员，其需遵循 Apple 设置的[指南](http://adcdownload.apple.com/Documentation/License_Agreements__Apple_Developer_Enterprise_Program/Apple_Developer_Program_Enterprise_Agreement_20150608.pdf)。
+在 Apple Developer Enterprise Program 中，被许可方是负责分发应用程序的人员，其需遵循 Apple 设置的[指南](https://developer.apple.com/programs/enterprise/)。
 
 可使用各种不同的方法安全地分发应用，例如：
 

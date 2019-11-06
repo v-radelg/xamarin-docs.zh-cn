@@ -4,15 +4,15 @@ description: 本文档概述了如何对 Xamarin.iOS 应用程序进行单元测
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 44ced93605ff595fe2fd7f09f88948e5b0e1914c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282461"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028446"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>对 Xamarin.iOS 应用进行单元测试
 
@@ -23,11 +23,11 @@ ms.locfileid: "70282461"
 
 若要为项目创建单元测试框架，只需向解决方案添加“iOS 单元测试项目”  类型的项目。 为此，请右键单击解决方案，然后选择“添加”>“添加新项目”  。 从列表中选择“iOS”>“测试”>“统一 API”>“iOS 单元测试项目”  （可选择 C# 或 F#）。
 
-![](touch.unit-images/00.png "选择 C# 或 F#")
+![](touch.unit-images/00.png "Choose either C# or F#")
 
 上述操作将创建一个包含基本运行程序，并引用新 MonoTouch.NUnitLite 程序集的基本项目，项目如下所示：
 
-![](touch.unit-images/01.png "解决方案资源管理器中的项目")
+![](touch.unit-images/01.png "The project in the Solution Explorer")
 
 `AppDelegate.cs` 类包含测试运行程序，如下所示：
 
@@ -105,10 +105,10 @@ namespace Fixtures {
 
 通过测试运行程序，可查看已注册的测试，并单独选择可执行的测试。
 
-[![](touch.unit-images/02-sml.png "已注册测试的列表")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "单个文本")](touch.unit-images/03.png#lightbox) 
+[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "运行结果")](touch.unit-images/04.png#lightbox)
+[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
 
 从嵌套视图中选择测试装置可运行单个测试装置，或选择“全部运行”运行所有测试。 如果运行默认测试，则应包含三个测试（一个通过、一个失败，一个已忽略）。 报表如下所示，你可以直接向下钻取失败测试并找出有关失败的详细信息：
 
@@ -118,7 +118,7 @@ namespace Fixtures {
 
 ## <a name="writing-new-tests"></a>编写新测试
 
-NUnitLite 是 [Touch.Unit](https://github.com/xamarin/Touch.Unit) 项目的 NUnit 修改版本。 它是一个用于 .NET 的轻量级测试框架，以 [NUnit](http://nunit.com/) 中的概念为基础，并提供其中的部分功能。
+NUnitLite 是 [Touch.Unit](https://github.com/xamarin/Touch.Unit) 项目的 NUnit 修改版本。 它是一个用于 .NET 的轻量级测试框架，以 [NUnit](https://nunit.com/) 中的概念为基础，并提供其中的部分功能。
 该框架使用的资源极少并可在资源受限的平台（例如嵌入式开发和移动开发所用的平台）上运行。 Xamarin.iOS 中为你提供了 NUnitLite API。 对于此单元测试模板所提供的基本主干，主入口点应为 [Assert 类](xref:NUnit.Framework.Assert)方法。
 
 除 assert 类方法外，还会在 NUnitLite 包含的以下命名空间上拆分单元测试功能：

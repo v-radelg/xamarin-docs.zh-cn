@@ -6,21 +6,21 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: d58a18a1957fa7515e6ad260eff95f5a33e64c1e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c89a3616bfa239ba919ae9750082bcef48c9f890
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291147"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023370"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello，iOS 多屏显示 – 快速入门
 
 本部分演练将向 Phoneword 应用程序添加第二个屏幕，将显示使用该应用进行呼叫的电话号码历史记录。 最终的应用程序将拥有第二个屏幕，可显示呼叫历史记录，如下面的屏幕截图所示：
 
-[![](hello-ios-multiscreen-quickstart-images/00.png "最终的应用程序将拥有第二个屏幕，可显示呼叫历史记录，如此屏幕快照所示")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
+[![](hello-ios-multiscreen-quickstart-images/00.png "The final application will have a second screen that displays the call history, as illustrated by this screenshot")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 随附的[深度分析](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)将回顾已生成的程序，并讨论体系结构、导航和此过程中遇到的其他新的 iOS 概念。
 
@@ -38,56 +38,56 @@ ms.locfileid: "70291147"
 
 2. 从 **Solution Pad** 打开 **Main.storyboard** 文件：
 
-    ![](hello-ios-multiscreen-quickstart-images/02new.png "iOS 设计器中的 Main.storyboard")
+    ![](hello-ios-multiscreen-quickstart-images/02new.png "The Main.storyboard in the iOS Designer")
 
 3. 将“工具箱”中的“导航控制器”拖动到设计图面（可能需将其缩小以适应设计图面的所有大小！）   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/03new.png "将“导航控制器”从“工具箱”拖动到设计图面上")
+    ![](hello-ios-multiscreen-quickstart-images/03new.png "Drag a navigation controller from the Toolbox onto the design surface")
 
 4. 将 sourceless segue（即单个视图控制器左侧的灰色箭头）拖动到“导航控制器”，以更改应用程序的起点   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/04new.png "将“Sourceless Segue”拖到“导航控制器”，更改应用程序的起点")
+    ![](hello-ios-multiscreen-quickstart-images/04new.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
 
 5. 单击底部栏选择现有的“根视图控制器”，按“删除”将其从设计图面删除   。
 然后，将 Phoneword 场景移动到“导航控制器”旁   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/05new.png "将 Phoneword 场景移动到“导航控制器”旁")
+    ![](hello-ios-multiscreen-quickstart-images/05new.png "Move the Phoneword scene next to the navigation controller")
 
 6. 将“ViewController”设为“导航控制器”的“根视图控制器”   。 按下 Ctrl 键，并在“导航控制器”内单击   。 此时应出现一条蓝色线条。 然后，仍然按住“Ctrl”不放，从“导航控制器”拖动到“Phoneword”场景，然后松开    。 这称为“按住 Ctrl 键拖动”  ：
 
-    ![](hello-ios-multiscreen-quickstart-images/06.png "从“导航控制器”拖动到 Phoneword 场景，然后松开")
+    ![](hello-ios-multiscreen-quickstart-images/06.png "Drag from the navigation controller to the Phoneword scene and release")
 
 7. 在弹出窗口中，将关系设置为**根**：
 
-    ![](hello-ios-multiscreen-quickstart-images/07new.png "将关系设置为“根”")
+    ![](hello-ios-multiscreen-quickstart-images/07new.png "Setting the relationship to Root")
 
     ViewController 现在是导航控制器的根视图控制器   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/08.png "现在，ViewController 是导航控制器的根视图控制器")
+    ![](hello-ios-multiscreen-quickstart-images/08.png "The ViewController is now the navigation controllers Root view controller")
 
 8. 双击 **Phoneword** 屏幕的“标题”  栏，然后将**标题**更改为 **Phoneword**：
 
-    ![](hello-ios-multiscreen-quickstart-images/09.png "将标题更改为“Phoneword”")
+    ![](hello-ios-multiscreen-quickstart-images/09.png "Change the Title to 'Phoneword'")
 
 9. 从“工具箱”  拖动某个**按钮**，将其置于“呼叫按钮”  下。 拖动图柄，使新的**按钮**与“呼叫按钮”  宽度相同：
 
-    ![](hello-ios-multiscreen-quickstart-images/10new.png "将新按钮的宽度设置为与“呼叫按钮”相同")
+    ![](hello-ios-multiscreen-quickstart-images/10new.png "Make the new Button the same width as the Call Button")
 
 10. 在 Properties Pad  中，将按钮“名称”  更改为“CallHistoryButton”  ，并将“标题”  更改为“呼叫历史记录”  ：
 
-    ![](hello-ios-multiscreen-quickstart-images/11new.png "将“按钮”的“名称”更改为 CallHistoryButton，并将“标题”更改为“呼叫历史记录”")
+    ![](hello-ios-multiscreen-quickstart-images/11new.png "Change the Name of the Button to CallHistoryButton and change the Title to Call History")
 
 11. 创建“呼叫历史记录”  屏幕。 在“工具箱”中，将表格视图控制器拖到设计图面上   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/12new.png "将“表格视图控制器”拖到设计图面上")
+    ![](hello-ios-multiscreen-quickstart-images/12new.png "Drag a table view controller onto the design surface")
 
 12. 接下来，单击“场景”底部的黑色栏选择“表格视图控制器”  。 在 Properties Pad 中，将表格视图控制器的类更改为 `CallHistoryController`，并按“Enter”    ：
 
-    ![](hello-ios-multiscreen-quickstart-images/13new.png "将 Table View Controllers 类更改为 CallHistoryController")
+    ![](hello-ios-multiscreen-quickstart-images/13new.png "Change the table view controllers class to CallHistoryController")
 
     iOS 设计器将生成一个名为 `CallHistoryController` 的自定义后备类，以管理屏幕的“内容视图层次结构”。 **CallHistoryController.cs** 文件将在 **Solution Pad** 中出现：
 
-    ![](hello-ios-multiscreen-quickstart-images/14new.png "Solution Pad 中的 CallHistoryController.cs 文件")
+    ![](hello-ios-multiscreen-quickstart-images/14new.png "The CallHistoryController.cs file in the Solution Pad")
 
 13. 双击 **CallHistoryController.cs** 文件即可将其打开，并将内容替换为以下代码：
     
@@ -144,17 +144,17 @@ ms.locfileid: "70291147"
 14. 创建 Phoneword 场景和呼叫历史记录场景之间的 Segue（转换）    。
   在“Phoneword 场景”中，选择“呼叫历史记录按钮”，然后按住 Ctrl 拖动，从“按钮”拖动到“呼叫历史记录”场景     ：
 
-    ![](hello-ios-multiscreen-quickstart-images/15.png "按住 Ctrl，从“按钮”拖动到“呼叫历史记录”场景")
+    ![](hello-ios-multiscreen-quickstart-images/15.png "Ctrl-drag from the Button to the Call History scene")
 
     从“操作 Segue”  弹出框，选择“显示” 
 
     iOS 设计器将在两个场景之间添加 Segue：
 
-    ![](hello-ios-multiscreen-quickstart-images/17new.png "两个场景之间的 Segue")
+    ![](hello-ios-multiscreen-quickstart-images/17new.png "The Segue between the two scenes")
 
 15. 在 Properties Pad 中，选择“场景”底部的黑色栏并将“视图控制器标题”更改为“呼叫历史记录”，向“表格视图控制器”添加“标题”      ：
 
-    ![](hello-ios-multiscreen-quickstart-images/18new.png "在 Properties Pad 中将“视图控制器”标题更改为“呼叫历史记录”")
+    ![](hello-ios-multiscreen-quickstart-images/18new.png "Change the view controller title to Call History in the Properties Pad")
 
 16. 应用程序运行时，“呼叫历史记录按钮”将打开“呼叫历史记录”屏幕，但表格视图将为空，因为没有代码来记录并显示电话号码   。
 
@@ -264,7 +264,7 @@ ms.locfileid: "70291147"
 
 18. 在 **iOS 模拟器**内按“启动”  按钮，启动该应用程序：
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "在 iOS 模拟器内按“启动”按钮启动该应用程序")
+    ![](hello-ios-multiscreen-quickstart-images/19.png "Press the Start button to launch the application inside the iOS Simulator")
 
 恭喜，你已完成第一个多屏 Xamarin.iOS 应用程序！
 
@@ -279,54 +279,54 @@ ms.locfileid: "70291147"
 
 2. 从编辑用户界面开始。 从“解决方案资源管理器”  打开 **Main.storyboard** 文件，确保“查看方式”  已设为 iPhone 6  ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image1.png "iOS 设计器中的 Main.storyboard")
+    ![](hello-ios-multiscreen-quickstart-images/image1.png "The Main.storyboard in the iOS Designer")
 
 3. 将“导航控制器”从“工具箱”拖动到设计图面上   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image2.png "将“导航控制器”从“工具箱”拖动到设计图面上")
+    ![](hello-ios-multiscreen-quickstart-images/image2.png "Drag a navigation controller from the Toolbox onto the design surface")
 
 4. 将“Sourceless Segue”（即“Phoneword”场景左侧的灰色箭头）从“Phoneword”场景拖动到“导航控制器”，以更改应用程序的起点     ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image3.png "将“Sourceless Segue”拖到“导航控制器”，更改应用程序的起点")
+    ![](hello-ios-multiscreen-quickstart-images/image3.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
 
 5. 单击黑色栏选择“根视图控制器”，按“删除”将其从设计图面删除   。
   然后，将 Phoneword 场景移动到“导航控制器”旁   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image4.png "将 Phoneword 场景移动到“导航控制器”旁")
+    ![](hello-ios-multiscreen-quickstart-images/image4.png "Move the Phoneword scene next to the navigation controller")
 
 6. 将“ViewController”设为“导航控制器”的“根视图控制器”  。 按“Ctrl”键，并在“导航控制器”内单击   。 此时应出现一条蓝色线条。 然后，仍然按住“Ctrl”不放，从“导航控制器”拖动到“Phoneword”场景，然后松开    。 这称为“按住 Ctrl 键拖动”  ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image5.png "从“导航控制器”拖动到 Phoneword 场景，然后松开")
+    ![](hello-ios-multiscreen-quickstart-images/image5.png "Drag from the navigation controller to the Phoneword scene and release")
 
 7. 在弹出窗口中，将关系设置为**根**：
 
-    ![](hello-ios-multiscreen-quickstart-images/image6.png "将关系设置为“根”")
+    ![](hello-ios-multiscreen-quickstart-images/image6.png "Set the relationship to Root")
 
     现在，“ViewController”是导航控制器的根视图控制器   。
 
 8. 双击 **Phoneword** 屏幕的“标题”  栏，然后将**标题**更改为 **Phoneword**：
 
-    ![](hello-ios-multiscreen-quickstart-images/image7.png "将标题更改为“Phoneword”")
+    ![](hello-ios-multiscreen-quickstart-images/image7.png "Change the Title to Phoneword")
 
 9. 从“工具箱”  拖动某个**按钮**，将其置于“呼叫按钮”  下。 拖动图柄，使新的**按钮**与“呼叫按钮”  宽度相同：
 
-    ![](hello-ios-multiscreen-quickstart-images/image8.png "将新按钮的宽度设置为与“呼叫按钮”相同")
+    ![](hello-ios-multiscreen-quickstart-images/image8.png "Make the new Button the same width as the Call Button")
 
 10. 在“属性资源管理器”  中，将**按钮**的**名称**更改为 `CallHistoryButton`，并将**标题**更改为**呼叫历史记录**：
 
-    ![](hello-ios-multiscreen-quickstart-images/image9.png "将按钮的名称更改为 CallHistoryButton，并将“标题”更改为“呼叫历史记录”")
+    ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
 
 11. 创建“呼叫历史记录”  屏幕。 在“工具箱”中，将表格视图控制器拖到设计图面上   ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image10.png "将“表格视图控制器”拖到设计图面上")
+    ![](hello-ios-multiscreen-quickstart-images/image10.png "Drag a table view controller onto the design surface")
 
 12. 单击“场景”底部的黑色栏，选择“表格视图控制器”  。 在“属性资源管理器”中，将表格视图控制器的类更改为 `CallHistoryController`，并按“Enter”    ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image11.png "将 Table View Controllers 类更改为 CallHistoryController")
+    ![](hello-ios-multiscreen-quickstart-images/image11.png "Change the table view controllers class to CallHistoryController")
 
     iOS 设计器将生成一个名为 `CallHistoryController` 的自定义后备类，以管理屏幕的“内容视图层次结构”。 **CallHistoryController.cs** 文件将在**解决方案资源管理器**中出现：
 
-    ![](hello-ios-multiscreen-quickstart-images/image12.png "解决方案资源管理器中的 CallHistoryController.cs 文件")
+    ![](hello-ios-multiscreen-quickstart-images/image12.png "The CallHistoryController.cs file in the Solution Explorer")
 
 13. 双击 **CallHistoryController.cs** 文件即可将其打开，并将内容替换为以下代码：
 
@@ -384,19 +384,19 @@ ms.locfileid: "70291147"
 14. 创建 Phoneword 场景和呼叫历史记录场景之间的 Segue（转换）    。
   在“Phoneword 场景”中，选择“呼叫历史记录按钮”，然后“按住 Ctrl 拖动”，从“按钮”拖动到“呼叫历史记录”场景      ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image13.png "按住 Ctrl，从“按钮”拖动到“呼叫历史记录”场景")
+    ![](hello-ios-multiscreen-quickstart-images/image13.png "Ctrl-drag from the Button to the Call History scene")
 
     从“操作 Segue”  弹出框，选择“显示”  ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image14.png "选择“显示”作为 segue 类型")
+    ![](hello-ios-multiscreen-quickstart-images/image14.png "Select Show as the segue type")
 
     iOS 设计器将在两个场景之间添加 Segue：
 
-    ![](hello-ios-multiscreen-quickstart-images/image15.png "两个场景之间的 Segue")
+    ![](hello-ios-multiscreen-quickstart-images/image15.png "The Segue between the two scenes")
 
 15. 在“属性资源管理器”中，选择“场景”底部的黑色栏并将“视图控制器”>“标题”更改为呼叫历史记录，向“表格视图控制器”添加标题      ：
 
-    ![](hello-ios-multiscreen-quickstart-images/image16.png "将“视图控制器”标题更改为“呼叫历史记录”")
+    ![](hello-ios-multiscreen-quickstart-images/image16.png "Change the view controller Title to Call History")
 
 16. 应用程序运行时，“呼叫历史记录按钮”将打开“呼叫历史记录”屏幕，但表格视图将为空，因为没有代码来记录并显示电话号码   。
 
@@ -507,7 +507,7 @@ ms.locfileid: "70291147"
 
 18. 在 **iOS 模拟器**内按“启动”  按钮，启动该应用程序：
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "示例应用的第一个屏幕")
+    ![](hello-ios-multiscreen-quickstart-images/19.png "The first screen of the sample app")
 
 恭喜，你已完成第一个多屏 Xamarin.iOS 应用程序！
 

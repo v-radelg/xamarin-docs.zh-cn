@@ -4,15 +4,15 @@ description: 本文档介绍 Xamarin.iOS 开发人员如何在物理设备上测
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/16/2018
-ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291437"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022759"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 应用的免费预配
 
@@ -49,23 +49,23 @@ ms.locfileid: "70291437"
 2. 打开 Xcode 并浏览到“Xcode”>“首选项”  。
 3. 在“帐户”  下，使用 **+** 按钮添加现有 Apple ID。 它应类似于下面的屏幕截图：
 
-    ![Xcode 首选项 - 帐户](free-provisioning-images/launchapp1.png "Xcode Preferences – Accounts")
+    ![Xcode 首选项 - 帐户](free-provisioning-images/launchapp1.png "Xcode 首选项 - 帐户")
 
 4. 关闭 Xcode 首选项
 5. 插入要在其中部署应用的 iOS 设备。
 6. 在 Xcode 中创建新项目。 选择“文件”>“新建”>“项目”  ，然后选择“单一视图应用”  。
 7. 在新项目对话框中，将“团队”  设置为刚添加的 Apple ID。 在下拉列表中，该内容类似于你的姓名（个人团队）  ：
 
-    ![创建新的应用](free-provisioning-images/launchapp2.png "Create a new app")
+    ![创建新应用](free-provisioning-images/launchapp2.png "创建新应用")
 
 8. 创建新项目后，选择以 iOS 设备（而不是模拟器）为目标的 Xcode 生成方案。
 
-    ![选择 Xcode 生成方案](free-provisioning-images/xcodescheme.png "Select an Xcode build scheme")
+    ![选择 Xcode 生成方案](free-provisioning-images/xcodescheme.png "选择 Xcode 生成方案")
 
 9. 在 Xcode 的项目导航器中，选择应用的顶级节点，打开应用的项目设置  。
 10. 在“常规”>“标识”下，确保捆绑包标识符完全匹配 Xamarin.iOS 应用的捆绑包标识符    。
 
-    ![设置捆绑包标识符](free-provisioning-images/launchapp5.png "Set a bundle identifier")
+    ![设置捆绑标识符](free-provisioning-images/launchapp5.png "设置捆绑标识符")
 
     > [!IMPORTANT]
     > Xcode 将仅为显式应用 ID 创建预配配置文件，并且它必须与 Xamarin.iOS 应用的应用 ID 完全相同。
@@ -74,11 +74,11 @@ ms.locfileid: "70291437"
 11. 在“部署信息”  下，确保部署目标与已连接的 iOS 设备上安装的 iOS 版本相同或低于该版本。
 12. 在“签名”下，   选择“自动管理签名”，并从下拉列表中选择团队：
 
-    ![自动管理签名](free-provisioning-images/launchapp6.png "Automatically manage signing")
+    ![自动管理签名](free-provisioning-images/launchapp6.png "自动管理签名")
 
     Xcode 将自动生成预配配置文件和签名标识。 可通过单击预配配置文件旁的信息图标查看该文件：
 
-    ![查看预配配置文件](free-provisioning-images/launchapp7.png "View the provisioning profile")
+    ![查看预配配置文件](free-provisioning-images/launchapp7.png "查看预配配置文件")
 
     > [!TIP]
     > 如果 Xcode 尝试生成预配配置文件时失败，请确保该 Xcode 当前所选的生成方案面向连接的 iOS 设备而不是模拟器。
@@ -98,7 +98,7 @@ ms.locfileid: "70291437"
 7. 选择由 Xcode 创建的签名标识  。
 8. 选择由 Xcode 创建的预配配置文件  。
 
-    ![设置签名标识和预配配置文件](free-provisioning-images/launchapp8.png "Set the signing identity and provisioning profile")
+    ![设置签名标识和预配配置文件](free-provisioning-images/launchapp8.png "设置签名标识和预配配置文件")
 
     > [!TIP]
     > 如果看不到签名标识或正确的预配配置文件，可能需要重启 Visual Studio for Mac。
@@ -118,7 +118,7 @@ ms.locfileid: "70291437"
 8. 选择由 Xcode 创建的签名标识  。
 9. 选择由 Xcode 创建的预配配置文件  。
     
-    ![设置签名标识和预配配置文件](free-provisioning-images/setprofile-w157.png "Set the signing identity and provisioning profile")
+    ![设置签名标识和预配配置文件](free-provisioning-images/setprofile-w157.png "设置签名标识和预配配置文件")
 
     > [!TIP]
     > Xcode 创建此签名标识和预配配置文件并将其存储在 Mac 生成主机上。 由于 Visual Studio 2019 或 Visual Studio 2017 已与 Mac 生成主机[配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，因此可访问该标识和配置文件。 如果未列出，建议重启 Visual Studio 2019 或 Visual Studio 2017。

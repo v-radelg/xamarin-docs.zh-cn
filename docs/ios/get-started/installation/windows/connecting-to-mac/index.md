@@ -4,15 +4,15 @@ description: 本指南介绍如何使用“与 Mac 配对”将 Visual Studio 20
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: b8020ae8539e12640cde0d565ccbd2eb0c01fc30
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198545"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022499"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>通过“与 Mac 配对”进行 Xamarin.iOS 开发
 
@@ -58,7 +58,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
 2. 选中“服务”列表中的“远程登录”   。
 
-    ![启用远程登录](images/sharing.png "Enabling Remote Login")
+    ![启用远程登录](images/sharing.png "启用远程登录")
 
     确保“远程登录”配置为“允许所有用户”访问，或确保 Mac 用户名或组包含在允许用户列表中  。
 
@@ -78,13 +78,13 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
     - 使用“与 Mac 配对”按钮 iOS 工具栏  ：
 
-      ![突出显示了“与 Mac 配对”按钮的 iOS 工具栏](images/ios-toolbar.png "The iOS toolbar, with the Pair to Mac button highlighted")
+      ![iOS 工具栏，其中突出显示了“与 Mac 配对”按钮](images/ios-toolbar.png "iOS 工具栏，其中突出显示了“与 Mac 配对”按钮")
 
     - 或者，选择“工具”>“iOS”>“与 Mac 配对”  。
 
     - “与 Mac 配对”对话框显示所有之前连接的和当前可用的 Mac 生成主机的列表  ：
 
-      ![与 Mac 配对](images/pairtomac.png "The Pair to Mac dialog")
+      ![“与 Mac 配对”对话框](images/pairtomac.png "“与 Mac 配对”对话框")
 
 3. 选择列表中的 Mac。 单击“连接”  。
 
@@ -92,7 +92,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
     - 第一次连接到某特定 Mac 时，会提示为该计算机输入用户名和密码：
 
-      ![为 Mac 输入用户名和密码](images/auth.png "Entering a username and password for the Mac")
+      ![为 Mac 输入用户名和密码](images/auth.png "为 Mac 输入用户名和密码")
 
       > [!TIP]
       > 登录时，使用系统用户名而不是全名。
@@ -107,14 +107,14 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
     - Visual Studio 2019 连接到 Mac 时，“与 Mac 配对”对话框中该 Mac 的项会显示一个图标，指示当前已连接该设备  ：
 
-      ![已连接的 Mac](images/connected.png "A connected Mac")
+      ![已连接的 Mac](images/connected.png "已连接的 Mac")
 
       一次只能连接一个 Mac。
 
       > [!TIP]
       > 右键单击“与 Mac 配对”列表中的任意 Mac 会打开上下文菜单，可在菜单中选择“连接...”、“忘记此 Mac”或“断开连接”     ：
       >
-      > ![“与 Mac 配对”上下文菜单](images/contextmenu.png "The Pair to Mac context menus")
+      > ![“与 Mac 配对”上下文菜单](images/contextmenu.png "“与 Mac 配对”上下文菜单")
       >
       > 如果选择“忘记此 Mac”，系统将忘记所选 Mac 的凭据  。 若要重新连接到此 Mac，将需要重新输入用户名和密码。
 
@@ -130,7 +130,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
     - 在 Mac 上打开“系统首选项”>“共享”>“远程登录”  ：
 
-      [![“系统首选项”>“共享”中的 Mac 的 IP 地址](images/sharing-ipaddress.png "The Mac's IP address in System Preferences > Sharing")](images/sharing.png#lightbox)
+      [![“系统首选项”>“共享”中的 Mac IP 地址](images/sharing-ipaddress.png "“系统首选项”>“共享”中的 Mac IP 地址")](images/sharing.png#lightbox)
 
     - 或者，使用命令行。 在终端，发出此命令：
 
@@ -143,15 +143,15 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
 2. 在 Visual Studio 2019 的“与 Mac 配对”对话框中，选择“添加 Mac...”   ：
 
-    [![“与 Mac 配对”对话框中的“添加 Mac”按钮](images/addtomac.png "The Add Mac button in the Pair to Mac dialog")](images/addtomac-large.png#lightbox)
+    [![“与 Mac 配对”对话框中的“添加 Mac”按钮](images/addtomac.png "“与 Mac 配对”对话框中的“添加 Mac”按钮")](images/addtomac-large.png#lightbox)
 
 3. 输入 Mac 的 IP 地址并单击“添加”  ：
 
-    ![输入 Mac 的 IP 地址](images/enteripaddress.png "Entering the Mac's IP address")
+    ![输入 Mac 的 IP 地址](images/enteripaddress.png "输入 Mac 的 IP 地址")
 
 4. 为 Mac 输入用户名和密码：
 
-    ![输入用户名和密码](images/auth.png "Entering a username and password")
+    ![输入用户名和密码](images/auth.png "输入用户名和密码")
 
    > [!TIP]
    > 登录时，使用系统用户名而不是全名。
@@ -178,7 +178,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ||安装检查|下载|安装
 |---|---|---|---|
-|Mono|[![缺少 Mono 安装](images/mono-missing.png "Missing Mono installation")](images/mono-missing-large.png#lightbox)|[![下载 Mono](images/mono-downloading.png "Downloading Mono")](images/mono-downloading-large.png#lightbox)|[![安装 Mono](images/mono-installing.png "Installing Mono")](images/mono-installing-large.png#lightbox)|
+|Mono|[![缺失 Mono 安装](images/mono-missing.png "缺失 Mono 安装")](images/mono-missing-large.png#lightbox)|[![下载 Mono](images/mono-downloading.png "下载 Mono")](images/mono-downloading-large.png#lightbox)|[![安装 Mono](images/mono-installing.png "安装 Mono")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -194,7 +194,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ||安装检查|下载|安装
 |---|---|---|---|
-|Xamarin.iOS|[![缺少 Xamarin.iOS 安装](images/xamios-missing.png "Missing Xamarin.iOS installation")](images/xamios-missing-large.png#lightbox)|[![下载 Xamarin.iOS](images/xamios-downloading.png "Downloading Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安装 Xamarin.iOS](images/xamios-installing.png "Installing Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+|Xamarin.iOS|[![缺失 Xamarin.iOS 安装](images/xamios-missing.png "缺失 Xamarin.iOS 安装")](images/xamios-missing-large.png#lightbox)|[![下载 Xamarin.iOS](images/xamios-downloading.png "下载 Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安装 Xamarin.iOS](images/xamios-installing.png "安装 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode 工具和许可证
 
@@ -202,7 +202,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ||安装检查|许可证接受|
 |---|---|---|
-|Xcode|[![缺少 Xcode 安装](images/xcode-missing.png "Missing Xcode installation")](images/xcode-missing-large.png#lightbox)|[![Xcode 许可证](images/xcode-license.png "Xcode license")](images/xcode-license-large.png#lightbox)|
+|Xcode|[![缺失 Xcode 安装](images/xcode-missing.png "缺失 Xcode 安装")](images/xcode-missing-large.png#lightbox)|[![Xcode 许可证](images/xcode-license.png "Xcode 许可证")](images/xcode-license-large.png#lightbox)|
 
 此外，“与 Mac 配对”会安装或更新使用 Xcode 分发的各种包。 例如:
 

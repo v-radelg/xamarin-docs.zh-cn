@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/30/2019
-ms.openlocfilehash: 24879b1ffcac97acdba27c32a22e43bfb6e80459
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
+ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749775"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72959141"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms 相对绑定
 

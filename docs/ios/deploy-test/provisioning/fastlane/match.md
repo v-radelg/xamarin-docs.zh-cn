@@ -4,15 +4,15 @@ description: 本文档介绍了 fastlane 的 match 命令，该命令用于创�
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8991ddc55069fad8c5f023f35ece0926f0f7e5b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08fdcafe33e4b9b2aa6b5595c732718878be33f2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285727"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028516"
 ---
 # <a name="fastlane-for-ios---match"></a>Fastlane for iOS - Match
 
@@ -59,15 +59,15 @@ fastlane match init
 
 出现提示时，请输入 GIT 存储库的 URL：
 
- [![](match-images/fastlane-image7.png "输入 git 存储库的 URL")](match-images/fastlane-image7.png#lightbox)
+ [![](match-images/fastlane-image7.png "Enter the URL of the git repo")](match-images/fastlane-image7.png#lightbox)
 
 然后可以找到此 URL，通过单击 github.com 上的“克隆或下载”  按钮可复制此 URL，如下所示：
 
-[![](match-images/fastlane-image6.png "github.com 上的“克隆”或“下载”按钮下的 URL")](match-images/fastlane-image6.png#lightbox)
+[![](match-images/fastlane-image6.png "The URL under the Clone or Download button on github.com")](match-images/fastlane-image6.png#lightbox)
 
 初始化项目将创建 Matchfile 文本文件，该文件可以进行编辑，从而将环境变量传递给 Match 工具。 Matchfile 示例如下所示：
 
-[![](match-images/fastlane-image8.png "matchfile 示例")](match-images/fastlane-image8.png#lightbox)
+[![](match-images/fastlane-image8.png "A matchfile example")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -93,7 +93,7 @@ fastlane match development
 - 附带基本说明的自述文件
 - match 版本
 
-[![](match-images/fastlane-image9.png "git 存储库中的项目结构")](match-images/fastlane-image9.png#lightbox)
+[![](match-images/fastlane-image9.png "The project structure in the git repo")](match-images/fastlane-image9.png#lightbox)
 
 预配配置文件安装在 `~/Library/MobileDevice/Provisioning Profiles` 中。 证书和私钥直接安装在密钥链中。
 

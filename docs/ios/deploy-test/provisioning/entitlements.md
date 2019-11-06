@@ -4,15 +4,15 @@ description: 权利是授予应用程序的特殊应用功能和安全性权限�
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/13/2018
-ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43bde3a31a79728548e72ea1d34977f1a131f282
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284805"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028540"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>在 Xamarin.iOS 中使用权利
 
@@ -44,12 +44,12 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 1. 在“解决方案资源管理器”  中，双击“Info.plist”  文件，将其打开进行编辑。
 2. 在“iOS 应用程序目标”  部分，填写应用程序的名称并输入定义应用 ID 时创建的“捆绑标识符”  ：
 
-    ![](entitlements-images/servicexs01.png "输入捆绑标识符")
+    ![](entitlements-images/servicexs01.png "Enter a Bundle Identifier")
 
 3. 保存对“Info.plist”  文件的更改。
 4. 在“解决方案资源管理器”  中，双击“Entitlements.plist”  文件，将其打开进行编辑：
 
-    ![](entitlements-images/servicexs02.png "编辑权利")
+    ![](entitlements-images/servicexs02.png "Editing the Entitlements")
 
 5. 选择并配置 Xamarin.iOS 应用程序所需的任何权利，使其匹配创建应用 ID 时定义的设置。
 6. 保存对“Entitlements.plist”  文件的更改。
@@ -61,12 +61,12 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 1. 在“解决方案资源管理器”  中，右键单击“Info.plist”  ，选择“打开方式…”  和“属性列表编辑器”  文件将其打开以进行编辑。
 2. 在“iOS 应用程序目标”  部分，填写应用程序的名称并输入定义应用 ID 时创建的“捆绑标识符”  ：
 
-    ![](entitlements-images/servicevs01.png "设置捆绑标识符")
+    ![](entitlements-images/servicevs01.png "Setting the Bundle Identifier")
 
 3. 保存对“Info.plist”  文件的更改。
 4. 在**解决方案资源管理器**中，右键单击“Entitlements.plist”  文件，选择“打开方式…”  和“属性列表编辑器”  将其打开以进行编辑：
 
-    ![](entitlements-images/servicevs02.png "编辑权利")
+    ![](entitlements-images/servicevs02.png "Editing the Entitlements")
 
     或者，双击“Entitlements.plist”  文件，打开 XML 源编辑器，从而可以设置权利属性和键值，详细信息如下方的[权利键引用](#entitlement-key-reference)部分所述。
 

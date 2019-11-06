@@ -4,15 +4,15 @@ description: 本文档介绍 Xamarin.iOS 链接器，该链接器用于消除 Xa
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 2cda4d53ae3f5f5716d53fd8862ca9cf000003e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762845"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030223"
 ---
 # <a name="linking-xamarinios-apps"></a>链接 Xamarin.iOS 应用
 
@@ -30,7 +30,7 @@ ms.locfileid: "70762845"
 
 可以通过“项目选项”  中的链接器行为下拉菜单自定义链接过程。 若要访问此下拉菜单，请双击 iOS 项目，并浏览至“iOS 生成”>“链接器选项”  ，如下所示：
 
-[![](linker-images/image1.png "链接器选项")](linker-images/image1.png#lightbox)
+[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ ms.locfileid: "70762845"
 
 1. 在“解决方案资源管理器”  中，右键单击“项目名称”  ，然后选择“属性”  ：
 
-    ![](linker-images/linking01w.png "在“解决方案资源管理器”中，右键单击项目名称，然后选择“属性”")
+    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. 在“项目属性”  中，选择“iOS 生成”  ：
 
-    ![](linker-images/linking02w.png "选择“iOS 生成”")
+    ![](linker-images/linking02w.png "Select IOS Build")
 3. 请按照下面的说明更改链接选项。
 
 -----

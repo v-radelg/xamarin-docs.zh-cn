@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f29001d00a8071c213641d0337f1e8f307ca8afa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0fa6c05b3aa90f1d1875b9169350b197d882d863
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281761"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023267"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -30,7 +30,7 @@ Visual Studio for Mac 是将来自 Visual Studio 和 XCode 的功能结合在一
 
 Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法   。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目  。 初始解决方案如下所示：
 
-![](hello-ios-deepdive-images/image30.png "初始解决方案的屏幕快照")
+![](hello-ios-deepdive-images/image30.png "A screenshot of the initial solution")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -41,7 +41,7 @@ Visual Studio 是 Microsoft 提供的强大 IDE。 它采用完全集成的可�
 
 Visual Studio 将代码组织为解决方案和项目。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目  。 初始解决方案如下所示：
 
-![](hello-ios-deepdive-images/vs-image30.png "初始解决方案的屏幕快照")
+![](hello-ios-deepdive-images/vs-image30.png "A screenshot of the initial solution")
 
 ::: zone-end
 
@@ -51,14 +51,14 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 左侧是解决方案板，它包含与解决方案关联的目录结构和所有文件  ：
 
-![](hello-ios-deepdive-images/image31.png "解决方案板，包含与解决方案关联的目录结构和所有文件")
+![](hello-ios-deepdive-images/image31.png "The solution Pad, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 右侧是解决方案窗格，它包含与解决方案关联的目录结构和所有文件  ：
 
-![](hello-ios-deepdive-images/vs-image31.png "解决方案窗格，包含与解决方案关联的目录结构和所有文件")
+![](hello-ios-deepdive-images/vs-image31.png "The solution Pane, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 
@@ -81,7 +81,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 此部分会研究下图中所示的关系：
 
-[![](hello-ios-deepdive-images/image32.png "此图说明体系结构和应用基础知识的关系")](hello-ios-deepdive-images/image32.png#lightbox)
+[![](hello-ios-deepdive-images/image32.png "The Architecture and App Fundamentals relationships are illustrated in this diagram")](hello-ios-deepdive-images/image32.png#lightbox)
 
 ### <a name="main-method"></a>Main 方法
 
@@ -146,28 +146,28 @@ iOS 设计器是一种用于在 Xamarin 中构建用户界面的可视化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image33.png "iOS 设计器接口")
+![](hello-ios-deepdive-images/image33.png "iOS Designer Interface")
 
 Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和关系的文件。 情节提要中的应用程序屏幕表示形式称为_场景_。 每个场景都表示一个视图控制器以及它管理的视图堆栈（内容视图层次结构）。 通过模板新建“单一视图应用程序”项目后，Visual Studio for Mac 会自动生成一个名为 `Main.storyboard` 的 Storyboard 文件，并使用一个场景进行填充，如下面的屏幕截图所示  ：
 
-![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac 自动生成名为 Main.storyboard 的情节提要文件，并使用单个场景对其进行填充")
+![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
 可以选择 Storyboard 屏幕底部的黑色条，以便选择场景的视图控制器。 视图控制器是 `UIViewController` 类的实例，该类包含内容视图层次结构的支持代码。 可以在“Properties Pad”中查看和设置此视图控制器的属性，如下面的屏幕截图所示  ：
 
-![](hello-ios-deepdive-images/image35.png "“属性”窗格")
+![](hello-ios-deepdive-images/image35.png "The Properties Pane")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image33.png "iOS 设计器接口")
+![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
 
 Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和关系的文件。 情节提要中的应用程序屏幕表示形式称为_场景_。 每个场景都表示一个视图控制器以及它管理的视图堆栈（内容视图层次结构）。 通过模板新建“单视图应用”项目后，Visual Studio 会自动生成名为 `Main.storyboard` 的 Storyboard 文件，并使用一个场景进行填充，如下面的屏幕截图所示  ：
 
-![](hello-ios-deepdive-images/vs-image34.png "Visual Studio 自动生成名为 Main.storyboard 的情节提要文件，并使用单个场景对其进行填充")
+![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
 可以选择 Storyboard 屏幕底部栏，以便选择场景的视图控制器。 视图控制器是 `UIViewController` 类的实例，该类包含内容视图层次结构的支持代码。 可以在“属性窗格”中查看和设置此视图控制器的属性，如下面的屏幕截图所示  ：
 
-![](hello-ios-deepdive-images/vs-image35.png "“属性”窗格")
+![](hello-ios-deepdive-images/vs-image35.png "The Properties Pane")
 
 ::: zone-end
 
@@ -175,7 +175,7 @@ Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和�
 
 场景左侧是一个具有标志图标的灰色箭头，如下面的屏幕截图所示：
 
- [![](hello-ios-deepdive-images/image37.png "包含标记图标的灰色箭头")](hello-ios-deepdive-images/image37.png#lightbox)
+ [![](hello-ios-deepdive-images/image37.png "A gray arrow with a flag icon")](hello-ios-deepdive-images/image37.png#lightbox)
 
 该灰色箭头表示情节提要转换，称为 Segue（发音为“seg-way”）  。 由于此 Segue 没有源，因此它称为无源 Segue  。 无源 Segue 指向其视图在应用程序启动时加载到应用程序窗口的第一个场景。 场景及其中的视图会是用户在应用加载时看到的第一个内容。
 
@@ -183,12 +183,12 @@ Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image38.png "可将其他视图从工具箱拖动到设计曲面上的主视图中")
+![](hello-ios-deepdive-images/image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image38.png "可将其他视图从工具箱拖动到设计曲面上的主视图中")
+![](hello-ios-deepdive-images/vs-image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
 
 ::: zone-end
 
@@ -196,12 +196,12 @@ Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image39.png "“文档大纲”板")
+![](hello-ios-deepdive-images/image39.png "The Document Outline pad")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image39.png "“文档大纲”板")
+![](hello-ios-deepdive-images/vs-image39.png "The Document Outline pad")
 
 ::: zone-end
 
@@ -209,12 +209,12 @@ Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image40.png "图中突出显示了子视图")
+![](hello-ios-deepdive-images/image40.png "The Subviews are highlighted in the diagram")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image40.png "图中突出显示了子视图")
+![](hello-ios-deepdive-images/vs-image40.png "The Subviews are highlighted in the diagram")
 
 ::: zone-end
 
@@ -224,24 +224,24 @@ Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和�
 
 “内容视图层次结构”是由单个视图控制器管理的视图和子视图的堆栈，如下图所示  ：
 
- [![](hello-ios-deepdive-images/image41.png "内容视图层次结构")](hello-ios-deepdive-images/image41.png#lightbox)
+ [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
 
 我们可以通过在“属性板”  的“视图”部分中暂时将根视图的背景色更改为黄色，使 `ViewController` 的内容视图层次结构可以更方便地进行查看，如下面的屏幕截图所示：
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image42.png "在“属性”板的“视图”部分，将根视图的背景色更改为黄色")
+![](hello-ios-deepdive-images/image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image42.png "在“属性”板的“视图”部分，将根视图的背景色更改为黄色")
+![](hello-ios-deepdive-images/vs-image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
 
 ::: zone-end
 
 下图显示了窗口、视图、子视图与视图控制器之间的关系，它们向设备屏幕提供了用户界面：
 
-[![](hello-ios-deepdive-images/image43.png "窗口、视图、子视图和视图控制器之间的关系")](hello-ios-deepdive-images/image43.png#lightbox)
+[![](hello-ios-deepdive-images/image43.png "The relationships between the Window, Views, Subviews, and view controller")](hello-ios-deepdive-images/image43.png#lightbox)
 
 在下一部分中，讨论如何在代码中使用视图，并学习使用视图控制器和视图生命周期为用户交互进行编程。
 
@@ -255,22 +255,22 @@ Storyboard  是包含应用屏幕的可视化设计以及屏幕切换效果和�
 
 视图控制器在 Storyboard 中的场景底部以条状呈现。 选择视图控制器可以在“Properties Pad”中查看其属性  ：
 
-![](hello-ios-deepdive-images/image44.png "选择视图控制器可以在“属性”窗格中查看其属性")
+![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
 可以在“Properties Pad”的“标识”部分中编辑“类”属性，设置此场景表示的内容视图层次结构的自定义视图控制器类    。 例如，我们的“Phoneword”应用将 `ViewController` 设置为第一屏的视图控制器，如下面的屏幕截图所示  ：
 
-![](hello-ios-deepdive-images/image45new.png "Phoneword 应用程序将 ViewController 设置为视图控制器")
+![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 视图控制器在 Storyboard 中的场景底部以条状呈现。 选择视图控制器可以在“属性”窗格中查看其属性  ：
 
-![](hello-ios-deepdive-images/vs-image44.png "选择视图控制器可以在“属性”窗格中查看其属性")
+![](hello-ios-deepdive-images/vs-image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
 可以在“属性窗格”的“标识”部分中编辑“类”属性，设置此场景表示的内容视图层次结构的自定义视图控制器类    。 例如，我们的“Phoneword”应用将 `ViewController` 设置为第一屏的视图控制器，如下面的屏幕截图所示  ：
 
-![](hello-ios-deepdive-images/vs-image45.png "Phoneword 应用程序将 ViewController 设置为视图控制器")
+![](hello-ios-deepdive-images/vs-image45.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 
@@ -313,7 +313,7 @@ public partial class ViewController : UIViewController
 接下来探讨其工作原理。
 在 `Phoneword_iOS` 项目中，向内容视图层次结构添加一个名为 `TranslateButton` 的按钮：
 
-[![](hello-ios-deepdive-images/image1.png "名为 TranslateButton 的按钮添加到内容视图层次结构")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "A button was added called TranslateButton to the Content View Hierarchy")](hello-ios-deepdive-images/image1.png#lightbox)
 
 在“属性板”  中将“名称”  分配给“按钮”  控件时，iOS 设计器会自动将它映射到 **ViewController.designer.cs** 中的控件，从而使 `TranslateButton` 在 `ViewController` 类中可用。 控件会首先在视图生命周期的 `ViewDidLoad` 阶段中可用，因此此生命周期方法用于响应用户的触摸：
 
@@ -420,18 +420,18 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image46new.png "按开始/播放")
+![](hello-ios-deepdive-images/image46new.png "Pressing Start/Play")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image46.png "按开始/播放")
+![](hello-ios-deepdive-images/vs-image46.png "Pressing Start/Play")
 
 ::: zone-end
 
 应用会部署到 iOS 设备：
 
-[![](hello-ios-deepdive-images/image1.png "应用将部署到 iOS 设备并运行")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "The app will deploy to the iOS device and run")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>生成自定义图标和启动图像
 
@@ -439,17 +439,17 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 
 ::: zone pivot="macos"
 
-- [Sketch](https://www.sketchapp.com")  - Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 在应用商店中提供了 Sketch 3。 还可以免费试用 [Sketch 工具](http://bohemiancoding.com/sketch/tool/)。
-- [**Pixelmator**](http://www.pixelmator.com/) – 适用于 Mac 的通用图像编辑应用（成本大约为 30 美元）。
-- [**Glyphish**](http://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
-- [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
+- [Sketch](https://www.sketchapp.com")  - Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 在应用商店中提供了 Sketch 3。 还可以免费试用 [Sketch 工具](https://bohemiancoding.com/sketch/tool/)。
+- [**Pixelmator**](https://www.pixelmator.com/) – 适用于 Mac 的通用图像编辑应用（成本大约为 30 美元）。
+- [**Glyphish**](https://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
+- [**Fiverr**](https://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
 
 ::: zone-end
 ::: zone pivot="windows"
 
 - Visual Studio – 可以用于直接在 IDE 中为应用创建简单图标集。
-- [**Glyphish**](http://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
-- [**Fiverr**](http://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
+- [**Glyphish**](https://www.glyphish.com/) – 可下载和购买的高质量预生成图标集。
+- [**Fiverr**](https://www.fiverr.com/) – 从各种设计器中进行选择以便为你创建图标集（从 5 美元开始）。 可以漫无目标，不过如果需要动态设计的图标，则是一个好资源
 
 ::: zone-end
 

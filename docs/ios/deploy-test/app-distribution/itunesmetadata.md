@@ -4,15 +4,15 @@ description: 本文介绍了 iTunesMetadata.plist 文件，该文件用于向 iT
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 47b2428ddca47f554fea675a9d2e70374679688f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281152"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026507"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
 
@@ -242,7 +242,7 @@ ms.locfileid: "70281152"
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-有关详细信息，请参阅 Apple 的 [Genre IDs Appendix](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html)（类型 ID 附录）文档。
+有关详细信息，请参阅 Apple 的 [Genre IDs Appendix](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html)（类型 ID 附录）文档。
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
@@ -302,26 +302,26 @@ ms.locfileid: "70281152"
 1. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “新文件...” 
 2. 在“新文件”对话框中，依次选择“iOS”   > “属性列表”  ：
 
-    ![](itunesmetadata-images/image01.png "选择 iOS 属性列表")
+    ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. 对“名称”  输入 `iTunesMetadata`，然后单击“新建”  按钮。
 4. 在“解决方案资源管理器”  中，双击打开 `iTunesMetadata.plist` 文件进行编辑：
 
-    ![](itunesmetadata-images/image02.png "iTunesMetadata.plist 编辑器")
+    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
 5. 单击绿色的“+”  新建条目，再输入“`UIRequiredDeviceCapabilities`”作为键名称：
 
-    ![](itunesmetadata-images/image03.png "创建新条目并输入 UIRequiredDeviceCapabilities 作为键名称")
+    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. 单击“字符串”  值类型，再从弹出列表中选择“字典”  ：
 
-    ![](itunesmetadata-images/image04.png "从弹出列表中选择字典")
+    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
 7. 单击属性名左侧的折叠图标，以显示字典条目：
 
-    ![](itunesmetadata-images/image05.png "显示字典条目")
+    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
 8. 依次单击“添加新条目”  文本和绿色的“+”  ，向字典添加条目：
 
-    ![](itunesmetadata-images/image06.png "向字典添加一个条目")
+    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
 9. 输入“`armv7`”作为键名称，选择“布尔”  类型，再输入“Yes”  作为值：
 
-    ![](itunesmetadata-images/image07.png "输入“armv7”作为键名称，选择“布尔”类型，并输入“Yes”作为值")
+    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
 10. 重复上述步骤，直到已使用所有必需键/值对填充 `iTunesMetadata.plist` 文件（有关详细信息，请参阅上方的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)部分）。
 
 11. 保存对 plist 文件的更改。

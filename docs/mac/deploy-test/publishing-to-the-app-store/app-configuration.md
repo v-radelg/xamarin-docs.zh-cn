@@ -4,15 +4,15 @@ description: 本文档介绍了如何配置 Xamarin.Mac 应用以进行发布。
 ms.prod: xamarin
 ms.assetid: fea66a34-1581-4cd6-b714-3fbff215a542
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 6134cbfabb342750ec68b676dd06388f4fb8f035
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 545c1cef26d3bbf85b490492347f4f63b42269a9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283030"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021688"
 ---
 # <a name="mac-app-configuration"></a>Mac 应用配置
 
@@ -24,11 +24,11 @@ ms.locfileid: "70283030"
 
 若要更改 Xamarin.Mac 应用的应用程序设置，请在“解决方案板”  中双击“Info.plist”  文件：
 
-![选择 Info.plist 文件](app-configuration-images/config04.png "选择 Info.plist 文件")
+![选择 info.plist 文件](app-configuration-images/config04.png "选择 info.plist 文件")
 
 随即显示该应用的可用选项：
 
- [![编辑 Info.plist 文件](app-configuration-images/config01.png "编辑 Info.plist 文件")](app-configuration-images/config01-large.png#lightbox)
+ [![编辑 info.plist 文件](app-configuration-images/config01.png "编辑 info.plist 文件")](app-configuration-images/config01-large.png#lightbox)
 
 运行通过 Xamarin.Mac 创建的 Mac 应用程序具有以下系统要求：
 
@@ -53,4 +53,4 @@ ms.locfileid: "70283030"
 - [安装](/visualstudio/mac/installation/)
 - [Hello，Mac 示例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
-- [开发者 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)

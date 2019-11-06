@@ -4,15 +4,15 @@ description: 本文介绍如何创建 Xamarin.Mac 应用程序图标所需的图
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770143"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021705"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 应用的应用程序图标
 
@@ -100,7 +100,7 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 运行应用时，将在停靠中显示新图标：
 
-![macOS 停靠中应用图标的示例](app-icon-images/icon04.png "macOS 停靠中应用图标的示例")
+![macOS Dock 中应用图标的示例](app-icon-images/icon04.png "macOS Dock 中应用图标的示例")
 
 ## <a name="summary"></a>总结
 

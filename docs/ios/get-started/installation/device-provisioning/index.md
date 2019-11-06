@@ -4,15 +4,15 @@ description: 本文档介绍如何预配设备，以便将该设备用于测试�
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 7ee3d7d9b2ce074174b676225ec934279ceb5a86
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292630"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022703"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>针对 Xamarin.iOS 的设备预配
 
@@ -20,7 +20,7 @@ ms.locfileid: "70292630"
 
 下图突出显示部分展示了进行 iOS 设置所需的步骤：
 
-[![](images/provisioningdiagram.png "此图突出显示部分展示了进行 iOS 设置所需的步骤")](images/provisioningdiagram.png#lightbox)
+[![](images/provisioningdiagram.png "The highlighted sections in this image show the steps required to get set up for iOS provisioning")](images/provisioningdiagram.png#lightbox)
 
 接着，下一步是分发应用程序。 有关部署的详细信息，请访问[应用分发](~/ios/deploy-test/app-distribution/index.md)指南。
 

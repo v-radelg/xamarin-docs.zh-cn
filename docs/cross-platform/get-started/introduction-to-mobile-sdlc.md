@@ -3,15 +3,15 @@ title: 移动软件开发生命周期
 description: 本文介绍了移动软件开发生命周期，以及 UX 设计、UI 设计、开发、稳定、分发等。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 4e2af0d1746ef1321db39d97a86af2b4bd769c69
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526692"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016400"
 ---
 # <a name="mobile-software-development-lifecycle"></a>移动软件开发生命周期
 
@@ -72,7 +72,7 @@ ms.locfileid: "69526692"
 
 UX 通常通过线框或模型使用众多[设计工具包](https://docs.microsoft.com/windows/uwp/design/downloads/)之一来实现。 通过 UX 原型可以设计 UX，而不必担心实际 UI 设计：
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX 通常通过线框或模型使用 Balsamiq 等工具来实现")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 创建 UX 原型时，需要考虑应用所面向的各种平台的界面指南，这一点十分重要。 应用应在每种平台上都“轻松自如”。 每种平台的正式设计指南有：
 
@@ -84,11 +84,11 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 此外，硬件本身也会决定 UX 决策。 例如，iOS 设备没有物理返回  按钮，因此引入了导航控制器工具：
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS 设备没有物理返回按钮，因此引入了导航控制器工具")
+ ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
 
 而且，外形规格也会影响 UX 决策。 平板电脑具有大得多的空间，因此可以显示更多信息。 通常，在手机上需要多个屏幕的内容对于平板电脑会压缩到一个屏幕中：
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "通常，在手机上需要多个屏幕的内容在平板电脑上会压缩到一个屏幕中")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 由于存在各种外形规格，因此你还可能要面向中型外形规格（介于手机与平板电脑之间的某种外形规格）。
 
@@ -98,7 +98,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 与 UX 一样，务必要了解每种平台都具有自己的设计语言，因此设计良好的应用程序在每种平台上的外观可能仍有所不同：
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "设计良好的应用程序在每种平台上的外观可能仍有所不同")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>开发
 
@@ -146,10 +146,10 @@ Android 使用此信息来帮助在 Android OS 内运行的应用程序和组件
 
 这样，开发人员便可以将可能更大但更复杂的分发渠道用于其应用程序。 [Google Play](https://play.google.com/store?hl=en) 是 Google 的官方应用商店，不过还有许多其他应用商店。 几个常见应用商店有：
 
-1. [AppBrain](http://www.appbrain.com/)
-1. [适用于 Android 的 Amazon 应用商店](http://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
-1. [Handango](http://www.handango.com/)
-1. [GetJar](http://www.getjar.com/)
+1. [AppBrain](https://www.appbrain.com/)
+1. [适用于 Android 的 Amazon 应用商店](https://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
+1. [Handango](https://www.handango.com/)
+1. [GetJar](https://www.getjar.com/)
 
 #### <a name="uwp"></a>UWP
 

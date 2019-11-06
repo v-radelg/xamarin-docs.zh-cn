@@ -3,15 +3,15 @@ title: 多进程调试
 description: 本文档介绍如何使用 Visual Studio for Mac 调试同时运行的多个进程。 例如，可以使用此功能同时调试移动应用程序和 Web 服务项目。
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: db5d2dfcf96cdc1a89c0ecb2192b86f564e584ed
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fb96dab2d9979a365964d4993d9c7fc7fee299f5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290439"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016551"
 ---
 # <a name="multi-process-debugging"></a>多进程调试
 
@@ -33,28 +33,28 @@ ms.locfileid: "70290439"
 
 若要在 Visual Studio for Mac 中启动和调试多个进程，必须创建一个解决方案配置  。 解决方案配置将描述通过单击“启动”  按钮或按 ⌘↩ (**Cmd-Enter**) 启动调试会话时，应包括解决方案中的什么项目。 以下屏幕截图是 Visual Studio for Mac 中具有多个解决方案配置的一个解决方案示例：
 
-![](multi-process-debugging-images/mpd01-xs.png "具有多个解决方案配置的一个解决方案")
+![](multi-process-debugging-images/mpd01-xs.png "A solution with multiple solution configurations")
 
 ### <a name="parts-of-the-debug-toolbar"></a>调试工具栏的各个部分
 
 已将调试工具栏更改为允许通过弹出菜单选择解决方案配置。 此屏幕截图显示调试工具栏的各个部分：
 
-![](multi-process-debugging-images/mpd02-xs.png "调试工具栏的各个部分")
+![](multi-process-debugging-images/mpd02-xs.png "The parts of the debug toolbar")
 
 1. **解决方案配置** - 可以通过在调试工具栏中单击“解决方案配置”并从弹出菜单中选择配置以设置解决方案配置：
 
-    ![](multi-process-debugging-images/mpd03-xs.png "具有解决方案配置的一个弹出框示例")
+    ![](multi-process-debugging-images/mpd03-xs.png "A sample popup with solution configurations")
 
 2. **生成目标** - 它标识项目的生成目标。 这与 Visual Studio for Mac 的早期版本相同。
 3. **设备目标** - 它选择解决方案将在其上运行的设备。 可以针对每个项目标识单独的设备或仿真器：
 
-    ![](multi-process-debugging-images/mpd04-xs.png "显示用于项目的设备的弹出框")
+    ![](multi-process-debugging-images/mpd04-xs.png "Popup showing the devices for a project")
 
 ### <a name="multiple-debug-pads"></a>多个 Debug Pad
 
 启动多个解决方案配置时，某些 Visual Studio for Mac 的 Pad 将显示多次，一次对应一个进程。 例如，下面的屏幕截图显示了正在运行两个项目的一个解决方案的两个“应用程序输出”  Pad：
 
-![](multi-process-debugging-images/mpd05-xs.png "一个解决方案配置的 Output Pad")
+![](multi-process-debugging-images/mpd05-xs.png "Output Pad for a solution configuration")
 
 ### <a name="multiple-processes-and-the-_active-thread_"></a>多个进程和活动线程 
 
@@ -64,7 +64,7 @@ ms.locfileid: "70290439"
 
 “Thread Pad”  将显示正在解决方案配置中接受检查的所有进程和线程的信息，并提供有关活动线程内容的视觉提示：
 
-![](multi-process-debugging-images/mpd06-xs.png "一个解决方案配置的 Thread Pad")
+![](multi-process-debugging-images/mpd06-xs.png "Thread pad for a solution configuration")
 
 线程将按承载它们的进程进行分组。 活动线程的项目名称和 ID 将显示为加粗文本，并且指向右侧的箭头将显示在活动线程旁边的槽中。 在上面的屏幕截图中，“进程 ID 48703”  中的“线程 #1”  (**FirstProject**) 为活动线程。
 
@@ -74,7 +74,7 @@ ms.locfileid: "70290439"
 
 当两个（或多个）项目都具有断点时，Visual Studio for Mac 将暂停这两个进程。 仅可以在活动线程中**单步执行 (Step Over)** 代码。 在范围更改使调试器可以从活动线程中切换焦点之前，另一个进程将处于暂停状态。 有关示例，请查看下面显示正在调试两个项目的 Visual Studio for Mac 屏幕截图：
 
-![](multi-process-debugging-images/mpd09-xs.png  "正在调试两个项目的 Visual Studio for Mac")
+![](multi-process-debugging-images/mpd09-xs.png  "Visual Studio for Mac debugging two projects")
 
 在此屏幕截图中，每个解决方案都具有自己的断点。 启动调试时，将在 **SecondProject** 中 `MainClass` 的**第 10 行**上遇到第一个断点。 由于两个项目都有断点，因此这两个进程都将被暂停。 遇到断点后，“单步执行 (Step Over)”  的每次调用都将导致 Visual Studio for Mac 在活动线程中单步执行代码。
 
@@ -88,11 +88,11 @@ ms.locfileid: "70290439"
 
 可以通过右键单击进程并从上下文菜单中选择“暂停”  或“继续”  以暂停或继续运行进程：
 
-![](multi-process-debugging-images/mpd08-xs.png "Thread pad 中的“暂停”或“继续”")
+![](multi-process-debugging-images/mpd08-xs.png "Pause or resume in the Thread pad")
 
 调试工具栏的外观会根据正在调试的项目的状态发生变化。 运行多个项目时，在至少有一个运行的项目和一个暂停的项目的情况下，调试工具栏则将同时显示“暂停”  和“继续”  按钮：
 
-![](multi-process-debugging-images/mpd07-xs.png  "调试工具栏")
+![](multi-process-debugging-images/mpd07-xs.png  "Debug toolbar")
 
 在“调试工具栏”  中单击“暂停”  按钮将暂停所有正在调试的进程，而单击“继续”  按钮将使所有暂停的进程继续运行。
 
@@ -100,7 +100,7 @@ ms.locfileid: "70290439"
 
 在 Visual Studio for Mac 启动了第一个项目后，还可以调试第二个项目。 在第一个项目启动后，在“Solution Pad”  中，*右键单击  项目，然后选择“启动调试项”  ：
 
-![](multi-process-debugging-images/mpd13-xs.png  "启动调试项")
+![](multi-process-debugging-images/mpd13-xs.png  "Start Debugging Item")
 
 ## <a name="creating-a-solution-configuration"></a>创建解决方案配置
 
@@ -110,15 +110,15 @@ ms.locfileid: "70290439"
 
 1. 在 Visual Studio for Mac 中打开“解决方案选项”  对话框，然后选择“运行”>“配置”  ：
 
-    ![](multi-process-debugging-images/mpd10-xs.png "“解决方案选项”对话框中的解决方案配置")
+    ![](multi-process-debugging-images/mpd10-xs.png "Solution Configuration in the Solution Options dialog")
 
 2. 单击“新建”  按钮，输入新解决方案配置的名称，然后单击“创建”  。 新的解决方案配置将显示在“配置”  窗口中：
 
-    ![](multi-process-debugging-images/mpd11-xs.png  "为新的解决方案配置命名")
+    ![](multi-process-debugging-images/mpd11-xs.png  "Naming a new solution configuration")
 
 3. 在配置列表中选择新的运行配置。 “解决方案选项”  对话框将显示解决方案中的每个项目。 勾选启动调试会话时应启动的每个项目：
 
-    ![](multi-process-debugging-images/mpd12-xs.png "选择要启动的项目")
+    ![](multi-process-debugging-images/mpd12-xs.png "Selecting the project to start")
 
 **MultipleProjects** 解决方案配置现在将显示在“调试工具栏”  中，使开发人员可以同时调试两个项目。
 

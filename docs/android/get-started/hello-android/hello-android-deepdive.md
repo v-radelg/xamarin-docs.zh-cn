@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756720"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028009"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
@@ -161,11 +161,11 @@ Android 应用程序不具有单一入口点；也就是说，应用程序中没
 
 activity_main.axml 是应用程序中第一个屏幕的用户界面布局文件  。 .axml 指示这是 Android 设计器文件（AXML 表示 *Android XML*。 名称 Main  对 Android 而言是任意的 &ndash; 可将布局文件命名为其他名称。 在 IDE 中打开 activity_main.axml 时，会显示名为“Android Designer”的 Android 布局文件的可视编辑器   ：
 
-[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
+[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android 设计器")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 在 **Phoneword** 应用中，**TranslateButton** 的 ID 设置为 `@+id/TranslateButton`：
 
-[![TranslateButton ID 设置](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton id setting")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
+[![TranslateButton ID 设置](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton ID 设置")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -188,7 +188,7 @@ Main.axml 是应用程序中第一个屏幕的用户界面布局文件  。 .axm
 
 ::: zone pivot="windows"
 
-[![设计器源视图](hello-android-deepdive-images/vs/05-source-view-sml.png "Designer source view")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
+[![设计器源视图](hello-android-deepdive-images/vs/05-source-view-sml.png "设计器源视图")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -332,7 +332,7 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 
 配置设备后，可通过插入设备，从“选择设备”  对话框中将其选中，然后启动应用程序，对设备进行部署：
 
-![选择调试设备](hello-android-deepdive-images/vs/06-select-device.png "Select debug device")
+![选择调试设备](hello-android-deepdive-images/vs/06-select-device.png "选择调试设备")
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -357,7 +357,7 @@ Android 设备具有不同的屏幕大小和分辨率，不是所有图像都能
 
 ::: zone pivot="windows"
 
-![mipmap 文件夹](hello-android-deepdive-images/vs/07-mipmap-folders.png "mipmap 文件夹")
+![Mipmap 文件夹](hello-android-deepdive-images/vs/07-mipmap-folders.png "Mipmap 文件夹")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -376,26 +376,26 @@ Android 根据合适的密度选择图标：
 
 ::: zone pivot="windows"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器生成器，针对所有类型 Android 图标，带有其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器生成器，针对所有类型 Android 图标，带有其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
 
 - Visual Studio &ndash; 可以用于直接在 IDE 中为应用创建简单图标集。
 
-- [Glyphish](http://www.glyphish.com/) &ndash; 可免费下载和购买的高质量预生成图标集。
+- [Glyphish](https://www.glyphish.com/) &ndash; 可免费下载和购买的高质量预生成图标集。
 
-- [Fiverr](http://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便为你创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
+- [Fiverr](https://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便为你创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器生成器，针对所有类型 Android 图标，带有其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器生成器，针对所有类型 Android 图标，带有其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 App Store 提供 Sketch 3，价格约 80 美元。 还可以免费试用 [Sketch 工具](http://bohemiancoding.com/sketch/tool/)。
+- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 App Store 提供 Sketch 3，价格约 80 美元。 还可以免费试用 [Sketch 工具](https://bohemiancoding.com/sketch/tool/)。
 
-- [Pixelmator](http://www.pixelmator.com/) &ndash; 适用于 Mac 的通用图像编辑应用（价格约 30 美元）。
+- [Pixelmator](https://www.pixelmator.com/) &ndash; 适用于 Mac 的通用图像编辑应用（价格约 30 美元）。
 
-- [Glyphish](http://www.glyphish.com/) &ndash; 可免费下载和购买的高质量预生成图标集。
+- [Glyphish](https://www.glyphish.com/) &ndash; 可免费下载和购买的高质量预生成图标集。
 
-- [Fiverr](http://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便为你创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
+- [Fiverr](https://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便为你创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
 
 ::: zone-end
 

@@ -4,15 +4,15 @@ description: 本文档介绍了可用于针对不同设备自定义 Xamarin.iOS 
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: dd6fac2434c5205acfec10e4830dc72ea42aa340
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 30415bd2df14cdc13f94a020475acf471b25c6ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756162"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030376"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>在 Xamarin.iOS 中针对不同的设备进行编译
 
@@ -20,11 +20,11 @@ ms.locfileid: "70756162"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](compiling-for-different-devices-images/image1.png "“项目 iOS 生成”属性页")](compiling-for-different-devices-images/image1.png#lightbox) 
+[![](compiling-for-different-devices-images/image1.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](compiling-for-different-devices-images/image1a.png "“项目 iOS 生成”属性页")](compiling-for-different-devices-images/image1a.png#lightbox)
+[![](compiling-for-different-devices-images/image1a.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 
@@ -62,9 +62,9 @@ LLVM 优化后端引擎会生成比 Mono 引擎更快、更严格的代码，但
 
 你可以在 Visual Studio for Mac 或 Visual Studio 的 iOS 生成选项中启用它们。
 
-[![](compiling-for-different-devices-images/image2.png "启用 LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
+[![](compiling-for-different-devices-images/image2.png "Enabling LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
 
-[![](compiling-for-different-devices-images/image2a.png "启用 LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
+[![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
 
@@ -124,7 +124,7 @@ Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支�
 - 打开“项目选项”  并导航到“iOS 生成”  窗格。
 - 将 `'-gcc_flags "-weak_framework iAd"'` 添加到你想弱链接到的每个配置上的其他选项  ：
 
-[![](compiling-for-different-devices-images/image3.png "其他选项")](compiling-for-different-devices-images/image3.png#lightbox)
+[![](compiling-for-different-devices-images/image3.png "Additional Options")](compiling-for-different-devices-images/image3.png#lightbox)
 
 除此以外，你需要防止使用在可能不存在旧版本 iOS 的位置运行旧版本 iOS 的类型。 有几种方法来实现此目的，其中一种是分析 `UIDevice.CurrentDevice.SystemVersion`。
 

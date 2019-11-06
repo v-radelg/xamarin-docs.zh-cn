@@ -4,15 +4,15 @@ description: 本文介绍在 iTunes Connect 中设置和维护 Xamarin.iOS 应�
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 01e6ae4362c902c0982f7b93cc1f65b003db1020
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763247"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026684"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中配置应用
 
@@ -40,7 +40,7 @@ iTunes Connect 可以用于以下任务：
 
 iTunes Connect 的**协议、税款和银行**部分提供有关 iTunes 开发人员付款和税款代扣所需的财务信息，以及跟踪你与 Apple 签订的任何协议的状态。 在 App Store 上发布（免费或付费）iOS 应用程序之前，需具备适当的协议，并且同意对现有协议所做的任何修改。
 
-[![](itunesconnect-images/agreement01.png "管理协议、税款和银行")](itunesconnect-images/agreement01.png#lightbox)
+[![](itunesconnect-images/agreement01.png "Managing Agreements, Tax and Banking")](itunesconnect-images/agreement01.png#lightbox)
 
 从这里，可以：
 
@@ -63,13 +63,13 @@ iTunes Connect 的**协议、税款和银行**部分提供有关 iTunes 开发�
 
 1. 单击“我的应用”  ：
 
-    [![](itunesconnect-images/add01.png "单击“我的应用”")](itunesconnect-images/add01.png#lightbox)
+    [![](itunesconnect-images/add01.png "Click on My Apps")](itunesconnect-images/add01.png#lightbox)
 2. 单击左上角的“+”  ，再选择“新建 iOS 应用”  ：
 
-    [![](itunesconnect-images/add02.png "添加“新建 iOS 应用”")](itunesconnect-images/add02.png#lightbox)
+    [![](itunesconnect-images/add02.png "Adding a New iOS App")](itunesconnect-images/add02.png#lightbox)
 3. iTunes Connect 将显示“新建 iOS 应用”  对话框：
 
-    [![](itunesconnect-images/add03.png "“新建 iOS 应用”对话框")](itunesconnect-images/add03.png#lightbox)
+    [![](itunesconnect-images/add03.png "The New iOS App dialog")](itunesconnect-images/add03.png#lightbox)
 4. 输入应用程序在 App Store 中显示的**名称**和**版本号**。
 5. 选择“主要语言”  。
 6. 输入 **SKU** 号，它是用于跟踪应用程序的唯一固定标识符。 它不会对最终用户显示，应用创建后，_无法_对它进行更改。
@@ -78,7 +78,7 @@ iTunes Connect 的**协议、税款和银行**部分提供有关 iTunes 开发�
 
 新应用程序将在 iTunes Connect 中创建，你可填写必需信息，例如说明、定价、类别、评级等：
 
-[![](itunesconnect-images/add04.png "新的应用程序将在 iTunes Connect 中创建")](itunesconnect-images/add04.png#lightbox)
+[![](itunesconnect-images/add04.png "The new application will be created in iTunes Connect")](itunesconnect-images/add04.png#lightbox)
 
 <a name="managing" />
 
@@ -112,7 +112,7 @@ Apple 要求提供应用程序支持的每种屏幕大小和分辨率的屏幕�
 4. 滚动到“屏幕快照”  部分。
 5. 选择“图像大小”  ，再拖入相应图像（每个屏幕大小最多 5 张）：
 
-    [![](itunesconnect-images/screenshot01.png "选择“图像大小”并拖入所需图像")](itunesconnect-images/screenshot01.png#lightbox)
+    [![](itunesconnect-images/screenshot01.png "Select the Image Size and drag in the required images")](itunesconnect-images/screenshot01.png#lightbox)
 6. 为所有所需的屏幕大小重复此操作。
 7. 单击屏幕顶部的“保存”  按钮，保存更改。
 
@@ -185,7 +185,7 @@ Apple 要求开发人员提供其网站的链接，用于支持用户可能遇�
 4. 滚动到“名称”  部分。
 5. 填写所有必填信息：
 
-    [![](itunesconnect-images/name01.png "在 iTunes Connect 中编辑“名称”、“说明”、“新增功能”、“关键字”和“URL”")](itunesconnect-images/name01.png#lightbox)
+    [![](itunesconnect-images/name01.png "Editing Name, Description, What's New, Keywords and URLs in iTunes Connect")](itunesconnect-images/name01.png#lightbox)
 6. 单击屏幕顶部的“保存”  按钮，保存更改。
 
 > [!IMPORTANT]
@@ -250,10 +250,10 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 4. 滚动到“常规应用信息”  部分。
 5. 填写所有必填信息：
 
-    [![](itunesconnect-images/general01.png "在 iTunes Connect 中编辑“常规应用信息”")](itunesconnect-images/general01.png#lightbox)
+    [![](itunesconnect-images/general01.png "Editing General App Information in iTunes Connect")](itunesconnect-images/general01.png#lightbox)
 6. 单击“评级”  旁边的“编辑”  按钮，设置评级信息：
 
-    [![](itunesconnect-images/general02.png "编辑评级")](itunesconnect-images/general02.png#lightbox)
+    [![](itunesconnect-images/general02.png "Editing the Rating")](itunesconnect-images/general02.png#lightbox)
 7. 单击屏幕顶部的“保存”  按钮，保存更改。
 
 > [!NOTE]
@@ -276,14 +276,14 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 5. 将“Game Center”  部分旁的开关切换到“开”  的位置。
 6. 填写所有必填信息：
 
-    [![](itunesconnect-images/gamecenter01.png "在 iTunes Connect 中编辑 Game Center 信息")](itunesconnect-images/gamecenter01.png#lightbox)
+    [![](itunesconnect-images/gamecenter01.png "Editing Game Center Information in iTunes Connect")](itunesconnect-images/gamecenter01.png#lightbox)
 7. 单击屏幕顶部的“保存”  按钮，保存更改。
 
 使用“Game Center”  选项卡激活 Game Center，并维护此应用的任何可用**排名**或**成绩**：
 
-[![](itunesconnect-images/gamecenter02.png "激活 Game Center")](itunesconnect-images/gamecenter02.png#lightbox)
+[![](itunesconnect-images/gamecenter02.png "Activate Game Center")](itunesconnect-images/gamecenter02.png#lightbox)
 
-[![](itunesconnect-images/gamecenter03.png "维护此应用程序的所有可用“排行榜”或“成绩”")](itunesconnect-images/gamecenter03.png#lightbox)
+[![](itunesconnect-images/gamecenter03.png "Maintain any available Leaderboards or Achievements for this application")](itunesconnect-images/gamecenter03.png#lightbox)
 
 ## <a name="maintaining-app-review-information"></a>维护应用审核信息
 
@@ -299,17 +299,17 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 4. 滚动到“应用审核信息”  部分。
 5. 填写所有必填信息：
 
-    [![](itunesconnect-images/review01.png "在 iTunes Connect 中编辑应用审核信息")](itunesconnect-images/review01.png#lightbox)
+    [![](itunesconnect-images/review01.png "Editing App Review Information in iTunes Connect")](itunesconnect-images/review01.png#lightbox)
 6. 选择希望如何将成功审核的应用发布到 App Store：
 
-    [![](itunesconnect-images/review02.png "在 iTunes Connect 中编辑发布信息")](itunesconnect-images/review02.png#lightbox)
+    [![](itunesconnect-images/review02.png "Editing release information in iTunes Connect")](itunesconnect-images/review02.png#lightbox)
 7. 单击屏幕顶部的“保存”  按钮，保存更改。
 
 ## <a name="maintaining-pricing-information"></a>维护定价信息
 
 如果计划发布付费应用程序，需要通过选择 Apple 的一个可用定价层设置售价和给定价格的生效日期。 例如，截至编写本文时，**第 1 层**定价如下所示：
 
-[![](itunesconnect-images/price01.png "维护定价信息")](itunesconnect-images/price01.png#lightbox)
+[![](itunesconnect-images/price01.png "Maintaining Pricing Information")](itunesconnect-images/price01.png#lightbox)
 
 ### <a name="educational-discount"></a>教育优惠
 
@@ -319,7 +319,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 
 设置为“自定义企业到企业应用程序”  的应用程序仅面向 iTunes Connect 中指定的**批量购买计划**客户，并且仅在适用区域中可用（例如，美国的批量购买计划客户必须使用美国的 App Store 批量购买计划商业版）。
 
-自定义企业到企业应用程序不面向教育机构或普通 App Store 客户。 若要深入了解 *App Store 批量购买计划商业版*，请访问 Apple 的[常见问题解答](http://vpp.itunes.apple.com/faq)页面。 若要深入了解客户如何注册**批量购买计划**，请访问 Apple 的[部署计划](http://enroll.vpp.itunes.apple.com)页面。
+自定义企业到企业应用程序不面向教育机构或普通 App Store 客户。 若要深入了解 *App Store 批量购买计划商业版*，请访问 Apple 的[常见问题解答](https://vpp.itunes.apple.com/faq)页面。 若要深入了解客户如何注册**批量购买计划**，请访问 Apple 的[部署计划](https://enroll.vpp.itunes.apple.com)页面。
 
 ### <a name="editing-pricing-information-in-itunes-connect"></a>在 iTunes Connect 中编辑定价信息
 
@@ -329,7 +329,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 2. 单击应用程序的**图标**。
 3. 选择“定价”  选项卡：
 
-    [![](itunesconnect-images/price02.png "在 iTunes Connect 中编辑定价信息")](itunesconnect-images/price02.png#lightbox)
+    [![](itunesconnect-images/price02.png "Editing Pricing Information in iTunes Connect")](itunesconnect-images/price02.png#lightbox)
 4. 选择“可用日期”  。
 5. 从“价格层”  下拉列表中，选择所需的价格。
 6. （可选）启用“教育折扣”  。
@@ -342,7 +342,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 
 如果计划销售应用程序中的虚拟应用内产品（例如，新的游戏级别或应用程序功能），请使用此部分创建并维护这些购买项。
 
-[![](itunesconnect-images/inapp01.png "维护应用内购买信息")](itunesconnect-images/inapp01.png#lightbox)
+[![](itunesconnect-images/inapp01.png "Maintaining In-App Purchase Information")](itunesconnect-images/inapp01.png#lightbox)
 
 若要深入了解如何在 Xamarin.iOS 应用程序中使用应用内购买，请参阅[应用内购买](~/ios/platform/in-app-purchasing/index.md)文档。
 
@@ -350,7 +350,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 
 应用程序发布到 App Store 之后，购买或免费下载应用程序的用户可撰写应用的评论，并评定星级。 使用此部分查看这些评论。 例如:
 
-[![](itunesconnect-images/reviews01.png "查看应用程序评论")](itunesconnect-images/reviews01.png#lightbox)
+[![](itunesconnect-images/reviews01.png "Viewing Application Reviews")](itunesconnect-images/reviews01.png#lightbox)
 
 ## <a name="summary"></a>总结
 

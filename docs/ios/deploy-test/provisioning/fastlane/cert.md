@@ -4,15 +4,15 @@ description: 本文档介绍了 fastlane，该工具可自动完成 iOS 应用�
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8e98a8e0314d8cb5ace4d17fdc62eb2ec75ca336
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba0348ff0cf6dc394f67b3c5779fd49eb852673f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292465"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028526"
 ---
 # <a name="fastlane-for-ios--cert"></a>Fastlane for iOS – Cert
 
@@ -65,7 +65,7 @@ fastlane cert --development
 
 Cert 将提示输入 Apple ID 和密码，因此请立即输入：
 
-[![](cert-images/fastlane-image1.png "Cert 将提示输入 Apple ID 和密码")](cert-images/fastlane-image1.png#lightbox)
+[![](cert-images/fastlane-image1.png "cert will prompt for your Apple ID and password")](cert-images/fastlane-image1.png#lightbox)
 
 > [!IMPORTANT]
 > 首次输入密码时，密码会保存到本地 macOS 密钥链。 或者，如果不希望在密钥链中存储密码，也可以使用环境变量来存储用户名和密码，或者可以使用 `export fastlane_DONT_STORE_PASSWORD=1`。 有关使用 Fastlane 管理凭据的详细信息，请参阅 Fastlane 的[凭据管理器指南](https://github.com/fastlane/fastlane/blob/master/credentials_manager/README.md)。
@@ -78,7 +78,7 @@ fastlane cert -u myemailadress@domain.com
 
 如果 Apple ID 关联多个团队，此处将显示这些团队。 选择你想要使用的团队所对应的数字：
 
-[![](cert-images/fastlane-image2.png "选择想要使用的团队")](cert-images/fastlane-image2.png#lightbox)
+[![](cert-images/fastlane-image2.png "Select the team that you wish to use")](cert-images/fastlane-image2.png#lightbox)
 
 通过使用以下标志也可以传递团队 ID：
 

@@ -4,15 +4,15 @@ description: 本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: a39c40bb6f63427f1a4aeedea10e90aef4df91e8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 59c3372350caf3939a4e40ba2999ffb490d4a1f7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770259"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030082"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac 中的证书和标识符
 
@@ -22,19 +22,19 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 
 请访问 [Apple 开发人员成员中心](https://developer.apple.com)，配置用于开发的 Mac。 主菜单如下所示：
 
-[![Apple 开发人员成员中心](certificates-identifiers-images/devcenter01.png "Apple 开发人员成员中心")](certificates-identifiers-images/devcenter01-large.png#lightbox)
+[![Apple Developer Member Center](certificates-identifiers-images/devcenter01.png "Apple Developer Member Center")](certificates-identifiers-images/devcenter01-large.png#lightbox)
 
 单击“证书、标识符和描述文件”  链接：
 
-[![选择证书、标识符和配置文件](certificates-identifiers-images/devcenter02.png "选择证书、标识符和配置文件")](certificates-identifiers-images/devcenter02-large.png#lightbox)
+[![选择“证书、标识符和配置文件”](certificates-identifiers-images/devcenter02.png "选择“证书、标识符和配置文件”")](certificates-identifiers-images/devcenter02-large.png#lightbox)
 
 接着，单击“Mac 应用”  部分下的“证书链接”  ：
 
-[![“选择证书”链接](certificates-identifiers-images/devcenter03.png "“选择证书”链接")](certificates-identifiers-images/devcenter03-large.png#lightbox)
+[![选择“证书”链接](certificates-identifiers-images/devcenter03.png "选择“证书”链接")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
 单击“所有”  链接，然后单击 **+** 按钮：
 
-[![选择全部并添加新项](certificates-identifiers-images/certif01.png "选择全部并添加新项")](certificates-identifiers-images/certif01-large.png#lightbox)
+[![选择“所有”并添加新项](certificates-identifiers-images/certif01.png "选择“所有”并添加新项")](certificates-identifiers-images/certif01-large.png#lightbox)
 
 如果需要，从此处下载“中间证书”  （全球开发人员关系证书颁发机构和开发人员 ID 证书颁发机构）。 但是，这些应由 Xcode 自动为开发人员设置。
 
@@ -63,7 +63,7 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 
 某些“应用程序服务”  可能需要进一步配置（例如，iCloud）。 如果是这种情况，选择刚创建的新应用程序 ID 并单击“编辑”  按钮：
 
-[![编辑新应用 ID](certificates-identifiers-images/devcenter07.png "编辑新应用 ID")](certificates-identifiers-images/devcenter07-large.png#lightbox)
+[![编辑新的应用 ID](certificates-identifiers-images/devcenter07.png "编辑新的应用 ID")](certificates-identifiers-images/devcenter07-large.png#lightbox)
 
 若要配置 iCloud 服务，单击“编辑”  按钮：
 
@@ -83,13 +83,13 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 
 输入要添加的计算机的“名称”  和“UUID”  ，然后单击“继续”  按钮。 检查信息，然后单击“注册”  按钮：
 
-[![输入新计算机信息](certificates-identifiers-images/devcenter11.png "输入新计算机信息")](certificates-identifiers-images/devcenter11-large.png#lightbox)
+[![输入新计算机的信息](certificates-identifiers-images/devcenter11.png "输入新计算机的信息")](certificates-identifiers-images/devcenter11-large.png#lightbox)
 
 ### <a name="create-certificates"></a>创建证书
 
 使用“证书”部分创建用于对 Mac 应用程序进行签名的不同类型的证书：
 
-[![创建新证书](certificates-identifiers-images/certif01.png "创建新证书")](certificates-identifiers-images/certif01-large.png#lightbox)
+[![创建新的证书](certificates-identifiers-images/certif01.png "创建新证书")](certificates-identifiers-images/certif01-large.png#lightbox)
 
 证书有三大类型：
 
@@ -187,7 +187,7 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
     [![如何创建证书](certificates-identifiers-images/certif09.png "如何创建证书")](certificates-identifiers-images/certif09-large.png#lightbox)
 5. 选择描述性“公用名” - 例如使名称中包含文本“Developer ID Application”  ：
 
-    ![输入证书名称](certificates-identifiers-images/image33.png "输入证书名称")
+    ![输入证书的名称](certificates-identifiers-images/image33.png "输入证书的名称")
 6. 证书请求文件（扩展名 `.certSigningRequest`）本地保存在 Mac 上。 请记住其保存位置（默认位置是桌面）：
 
     [![上传证书](certificates-identifiers-images/certif10.png "上传证书")](certificates-identifiers-images/certif10-large.png#lightbox)
@@ -216,4 +216,4 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 - [安装](/visualstudio/mac/installation/)
 - [Hello，Mac 示例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
-- [开发者 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)

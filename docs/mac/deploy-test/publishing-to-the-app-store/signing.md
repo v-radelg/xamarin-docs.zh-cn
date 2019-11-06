@@ -4,15 +4,15 @@ description: 本文档介绍如何使用开发人员 ID 对 Xamarin.Mac 应用�
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 925a110025092ce6efa4e4d5f8e80b640b7f3dd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: eb8df9f7088c4954ed48ce8c7c145334004207cd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770091"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017937"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用开发人员 ID 对 Xamarin.Mac 应用进行签名
 
@@ -24,23 +24,23 @@ ms.locfileid: "70770091"
 
 若要生成应用以直接（而不通过 Mac App Store）部署给用户，请将“签名设置”  设置为使用“开发人员 ID”  。 请务必编辑“发布”  配置。
 
- [![](signing-images/config02.png "Mac 签名选项")](signing-images/config02.png#lightbox)
+ [![](signing-images/config02.png "The Mac Signing options")](signing-images/config02.png#lightbox)
 
 ## <a name="build"></a>生成
 
 生成前，请确保选择正确的配置，然后在“Mac 生成”设置  中选择创建安装包：
 
-[![](signing-images/config03.png "生成选项")](signing-images/config03.png#lightbox)
+[![](signing-images/config03.png "The build options")](signing-images/config03.png#lightbox)
 
 生成应用时，会提示开发人员同时使用这两个证书：
 
- [![](signing-images/image57.png "允许密钥链访问")](signing-images/image57.png#lightbox)
+ [![](signing-images/image57.png "Allowing keychain access")](signing-images/image57.png#lightbox)
 
- [![](signing-images/image58.png "允许密钥链访问")](signing-images/image58.png#lightbox)
+ [![](signing-images/image58.png "Allowing keychain access")](signing-images/image58.png#lightbox)
 
 生成应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”  找到包文件（在 `bin/Release` 目录中）。 此包文件包含应用程序的安装程序，因而可直接将应用程序分发给任何 macOS 用户进行安装。
 
- [![](signing-images/image59.png "在查找器中选择应用包")](signing-images/image59.png#lightbox)
+ [![](signing-images/image59.png "Selecting the app package in Finder")](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>相关链接
 

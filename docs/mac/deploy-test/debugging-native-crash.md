@@ -4,15 +4,15 @@ description: 本文档描述了如何调试在 Objective-C 运行时中生成的
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bc5a151323414e867b919035b0c5705234faebf9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769887"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021668"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>调试 Xamarin.Mac 应用中的本机故障
 
@@ -183,7 +183,7 @@ new System.Threading.Thread (() =>
 
 下一步是向 Xamarin 报告问题，从而修复绑定以便将来发布。 如果你是商业或企业许可证持有者，请打开票证，位于： 
 
-[http://xamarin.com/support](http://xamarin.com/support)
+[visualstudio.microsoft.com/vs/support/](https://visualstudio.microsoft.com/vs/support/)
 
 或者，请搜索现有问题：
 

@@ -4,15 +4,15 @@ description: 本文档介绍了 fastlane 的 sigh 命令，该命令用于创建
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9506d80ab10ce70938f95371a52bf28bda33d42d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762636"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028497"
 ---
 # <a name="fastlane-for-ios-sigh"></a>Fastlane for iOS – Sigh
 
@@ -64,7 +64,7 @@ fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
 
 其中，`com.company.appname` 是应用的捆绑 ID，在 Xamarin.iOS 应用程序的 Info.plist 文件中可找到此捆绑 ID，如下所示：
 
-[![](sigh-images/fastlane-image5.png "Xamarin.iOS 应用程序的 Info.plist 文件")](sigh-images/fastlane-image5.png#lightbox)
+[![](sigh-images/fastlane-image5.png "The Info.plist file of the Xamarin.iOS application")](sigh-images/fastlane-image5.png#lightbox)
 
 唯一的应用程序 ID 必须是反向 DNS 样式字符串。 创建此 ID 后，请记录下来，因为稍后在本指南中使用 sigh 时需要使用它。
 
@@ -111,7 +111,7 @@ fastlane 提示时，请输入你的 Apple ID 用户名。 如果首次使用 fa
 
 如果 Apple ID 关联多个团队，此处将显示这些团队。 选择你想要使用的团队所对应的数字：
 
-[![](sigh-images/fastlane-image2.png "选择想要使用的团队")](sigh-images/fastlane-image2.png#lightbox)
+[![](sigh-images/fastlane-image2.png "Select the team that you wish to use")](sigh-images/fastlane-image2.png#lightbox)
 
 通过使用以下方式也可以将团队 ID 传递到 CLI：
 
@@ -127,7 +127,7 @@ fastlane sigh -l 2TU993NY9J
 
 如果浏览开发人员中心，则可以查看新创建的预配配置文件，如下所示：
 
-[![](sigh-images/fastlane-image10.png "查看新创建的预配配置文件")](sigh-images/fastlane-image10.png#lightbox)
+[![](sigh-images/fastlane-image10.png "View the newly created provisioning profile")](sigh-images/fastlane-image10.png#lightbox)
 
 默认情况下，sigh 将在当前文件夹中存储预配配置文件。 若要更改输出目录，请编辑 `output_path`，或执行以下操作：
 

@@ -6,21 +6,21 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 5508636905acbb513aec4c6e065e9296293310d3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5dcc37730008e6e39b96128bc1368f022daa2d06
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768679"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022997"
 ---
 # <a name="hello-ios--quickstart"></a>Hello，iOS - 快速入门
 
 本指南介绍如何创建一个应用程序，它将用户输入的字母数字电话号码转换为数字电话号码，然后呼叫该号码。 最终应用程序如下所示：
 
- [![](hello-ios-quickstart-images/image1.png "Hello.iOS 快速入门应用")](hello-ios-quickstart-images/image1.png#lightbox)
+ [![](hello-ios-quickstart-images/image1.png "The Hello.iOS Quickstart app")](hello-ios-quickstart-images/image1.png#lightbox)
 
 ## <a name="requirements"></a>要求
 
@@ -58,80 +58,80 @@ Xamarin.iOS 适用于以下设置：
 
 1. 从“应用程序”文件夹或 Spotlight 启动 Visual Studio for Mac   ：
 
-    ![](hello-ios-quickstart-images/image2new.png "“启动”屏幕")
+    ![](hello-ios-quickstart-images/image2new.png "The Launch screen")
 
     在“启动屏幕”中，单击“新项目...”  以创建新的 Xamarin.iOS 解决方案：
 
-    ![](hello-ios-quickstart-images/image3new.png "iOS 解决方案")
+    ![](hello-ios-quickstart-images/image3new.png "iOS solution")
 
 2. 从“新建解决方案”对话框  中，选择“iOS”>“应用”>“单视图应用程序”  模板，确保选择了 C#。 单击“下一步”  ：
 
-    ![](hello-ios-quickstart-images/image4new.png "选择“单视图应用程序”")
+    ![](hello-ios-quickstart-images/image4new.png "Choose Single View Application")
 
 3. 配置应用。 为其提供名称  `Phoneword_iOS`，并使其他项保留为默认值。 单击“下一步”  ：
 
-    ![](hello-ios-quickstart-images/image5new.png "输入应用名称")
+    ![](hello-ios-quickstart-images/image5new.png "Enter the app name")
 
 4. 将项目和解决方案名称保留为原样。 在此处选择项目的位置，或将它保留为默认值：
 
-    ![](hello-ios-quickstart-images/image6new.png "选择项目的位置")
+    ![](hello-ios-quickstart-images/image6new.png "Choose the location of the project")
 
 5. 单击“创建”制定解决方案   。
 
 6. 通过在“解决方案板”  中双击 **Main.storyboard** 文件来打开它。 这提供了一种直观创建 UI 的方法：
 
-    ![](hello-ios-quickstart-images/image7new.png "iOS 设计器")
+    ![](hello-ios-quickstart-images/image7new.png "The iOS Designer")
 
     注意，默认情况下会启用“大小类”  。 请参阅[统一情节提要](~/ios/user-interface/storyboards/unified-storyboards.md)指南以了解有关它们的详细信息。
 
 7. 在“Toolbox Pad”  中，向搜索栏键入“标签”并将一个“标签”  拖动到设计图面上（中央区域）：
 
-    ![](hello-ios-quickstart-images/image8new.png "将“标签”拖动到中心区域的设计图面上")
+    ![](hello-ios-quickstart-images/image8new.png "Drag a Label onto the design surface the area in the center")
 
     > [!NOTE]
     > 可以通过导航到“视图”>“面板”  ，随时打开“Properties Pad”  或“工具箱”  。
 
 8. 抓取拖动控件  的图柄（控件周围的圆圈）并使标签更宽：
 
-    ![](hello-ios-quickstart-images/image9.png "增加标签宽度")
+    ![](hello-ios-quickstart-images/image9.png "Make the label wider")
 
 9. 在设计图面上选择了“标签”  的情况下，使用“属性板”  将“标签”  的“文本”  属性更改为“Enter a Phoneword:”
 
-    ![](hello-ios-quickstart-images/image10.png "将标签设为“输入 Phoneword”")
+    ![](hello-ios-quickstart-images/image10.png "Set the label to Enter a Phoneword")
 
 10. 在工具箱内搜索“文本字段”，将一个“文本字段”  从“工具箱”  拖动到设计图面上，并将它放置在“标签”  下方。 调整宽度，直到“文本字段”  的宽度与“标签”  相同：
 
-    ![](hello-ios-quickstart-images/image12new.png "将“文本字段”宽度设置为与“标签”相同")
+    ![](hello-ios-quickstart-images/image12new.png "Make the Text Field the same width as the Label")
 
 11. 在设计图面上选择了“文本字段”  的情况下，在“Properties Pad”  的“标识”部分中将“文本字段”  的“名称”  属性更改为 `PhoneNumberText`，并将“文本”  属性更改为“1-855-XAMARIN”：
 
-    ![](hello-ios-quickstart-images/image13new.png "将“标题”属性更改为 1-855-XAMARIN")
+    ![](hello-ios-quickstart-images/image13new.png "Change the Title property to 1-855-XAMARIN")
 
 12. 将一个“按钮”  从“工具箱”  拖动到设计图面上，并将它放置在“文本字段”  下方。 调整宽度，以便“按钮”  与“文本字段”  和“标签”  一样宽：
 
-    ![](hello-ios-quickstart-images/image14new.png "调整宽度以便“按钮”的宽度与“文本字段”和“标签”相同")
+    ![](hello-ios-quickstart-images/image14new.png "Adjust the width so the Button is as wide as the Text Field and Label")
 
 13. 在设计图面上选择了“按钮”  的情况下，在“属性板”  的“标识”  部分中将“名称”  属性更改为 `TranslateButton`。 将“标题”  属性更改为“Translate”：
 
-    ![](hello-ios-quickstart-images/image15new.png "将“标题”属性更改为“Translate”")
+    ![](hello-ios-quickstart-images/image15new.png "Change the Title property to Translate")
 
 14. 重复上面的两个步骤，将一个“按钮”  从“工具箱”  拖动到设计图面上，并将它放置第一个“按钮”  下方。 调整宽度，以便该“按钮”  与第一个“按钮”  一样宽：
 
-    ![](hello-ios-quickstart-images/image16new.png "调整宽度，使该按钮宽度与第一个按钮相同")
+    ![](hello-ios-quickstart-images/image16new.png "Adjust the width so the Button is as wide as the first Button")
 
 15. 在设计图面上选择了第二个“按钮”  的情况下，在“属性板”  的“标识”  部分中将“名称”  属性更改为 `CallButton`。 将“标题”  属性更改为“Call”：
 
-    ![](hello-ios-quickstart-images/image17new.png "将“标题”属性更改为“Call”")
+    ![](hello-ios-quickstart-images/image17new.png "Change the Title property to Call")
 
     通过导航到“文件”>“保存”  或通过按 **⌘ + s** 来保存更改。
 
 16. 需要将一些逻辑添加到应用，以便将电话号码为字母数字转换为数字。 右键单击“Solution Pad”  中的“Phoneword_iOS”  ，再依次选择“添加”>“新文件…”  或按“⌘ + n”  ，向项目添加新文件：
 
-    ![](hello-ios-quickstart-images/image18.png "向项目添加一个新文件")
+    ![](hello-ios-quickstart-images/image18.png "Add a new file to the Project")
 
 17. 在“新建文件”  对话框中，选择“常规”>“空类”  ，将新文件命名为 `PhoneTranslator`：
 
-    ![](hello-ios-quickstart-images/image19.png "选择 Empty 类，将新的文件命名为“PhoneTranslator”")
+    ![](hello-ios-quickstart-images/image19.png "Select Empty Class and name the new file PhoneTranslator")
 
 18. 这会为我们创建新的空 C# 类。 删除所有模板代码并替换为以下代码：
 
@@ -201,7 +201,7 @@ Xamarin.iOS 适用于以下设置：
 
 19. 添加代码以关联用户界面。 若要执行此操作，请在“解决方案板”  中双击 **ViewController.cs**以打开它：
 
-    ![](hello-ios-quickstart-images/image20new.png "添加代码，关联用户界面")
+    ![](hello-ios-quickstart-images/image20new.png "Add code to wire up the user interface")
 
 20. 首先关联 `TranslateButton`。 在 **ViewController** 类中，找到 `ViewDidLoad` 方法并在 `base.ViewDidLoad()` 调用下方添加以下代码：
 
@@ -248,24 +248,24 @@ Xamarin.iOS 适用于以下设置：
 
 22. 保存更改，然后通过选择“生成”>“全部生成”  或按 **⌘ + B** 来生成应用程序。如果应用程序进行了编译，则成功消息会出现在 IDE 顶部：
 
-    ![](hello-ios-quickstart-images/image21.png "成功消息将出现在 IDE 顶部")
+    ![](hello-ios-quickstart-images/image21.png "A success message will appear at the top of the IDE")
 
     如果发生错误，则完成前面的步骤并更正任何错误，直到应用程序成功生成。
 
 23. 最后，在 **iOS 模拟器**中测试应用程序。 在 IDE 左上角，从第一个下拉菜单中选择“调试”，并从第二个下拉菜单中选择“iPhone XR iOS 12.0”（或其他可用的模拟器），然后按“启动”（类似于“播放”按钮的三角形按钮）    ：
 
-    ![](hello-ios-quickstart-images/image27.png "选择模拟器，然后按启动")
+    ![](hello-ios-quickstart-images/image27.png "Select a simulator and press start")
 
     > [!NOTE]
     > 目前，Apple 可能要求拥有开发证书或签名标识才能为设备或模拟器生成代码  。 请按照[设备预配指南](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)中的步骤执行此设置。
 
 24. 这会在 iOS 模拟器中启动应用程序：
 
-    ![](hello-ios-quickstart-images/image28.png "应用程序在 iOS 模拟器中运行")
+    ![](hello-ios-quickstart-images/image28.png "The application running inside the iOS Simulator")
 
     iOS 模拟器不支持电话呼叫；相反，在尝试拨打电话时，将会看到警报对话框：
 
-    ![](hello-ios-quickstart-images/image29.png "尝试拨打电话时的警报对话框")
+    ![](hello-ios-quickstart-images/image29.png "The alert dialog when trying to place a call")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -282,15 +282,15 @@ Xamarin.iOS 适用于以下设置：
 
 1. 从“开始”  菜单启动 Visual Studio：
 
-    ![](hello-ios-quickstart-images/image001-.png "“启动”屏幕")
+    ![](hello-ios-quickstart-images/image001-.png "The Start screen")
 
     通过选择“文件”>“新建”>“项目...”>“Visual C#”>“iPhone 和 iPad”>“iOS 应用(Xamarin)”，创建新的 Xamarin.iOS 解决方案  ：
 
-    ![选择“iOS 应用(Xamarin)”项目类型](hello-ios-quickstart-images/image002.w157.png "Select iOS App (Xamarin) project type")
+    ![选择“iOS 应用 (Xamarin)”项目类型](hello-ios-quickstart-images/image002.w157.png "选择“iOS 应用 (Xamarin)”项目类型")
 
     在接下来出现的对话框中，选择“单视图应用”模板，然后按“确定”创建项目   ：
 
-    ![选择“单视图”项目模板](hello-ios-quickstart-images/image002-2.w157.png "Select Single View project template")
+    ![选择“单一视图”项目模版](hello-ios-quickstart-images/image002-2.w157.png "选择“单一视图”项目模版")
 
 1. 确认工具栏中的 Xamarin Mac 代理图标为绿色。
 
@@ -300,56 +300,56 @@ Xamarin.iOS 适用于以下设置：
 
 1. 通过在“解决方案资源管理器”  中双击 iOS 设计器中的 **Main.storyboard** 文件来打开它：
 
-    ![](hello-ios-quickstart-images/vs-image7.png "iOS 设计器")
+    ![](hello-ios-quickstart-images/vs-image7.png "The iOS Designer")
 
 1. 打开“工具箱”  选项卡，向搜索栏中输入“标签”并将一个“标签”  拖动到设计图面上（中央区域）：
 
-    ![](hello-ios-quickstart-images/vs-image8.png "将“标签”拖动到中心区域的设计图面上")
+    ![](hello-ios-quickstart-images/vs-image8.png "Drag a Label onto the design surface the area in the center")
 
 1. 接下来，抓取“拖动控件”  的图柄，并拉宽标签：
 
-    ![](hello-ios-quickstart-images/vs-image9.png "增加标签宽度")
+    ![](hello-ios-quickstart-images/vs-image9.png "Make the label wider")
 
 1. 在设计图面上选择了“标签”  的情况下，使用“属性窗口”  将“标签”  的“文本”  属性更改为“Enter a Phoneword:”
 
-    ![](hello-ios-quickstart-images/vs-image10.png "将“标签”的“文本”属性更改为“Enter a Phoneword”")
+    ![](hello-ios-quickstart-images/vs-image10.png "Change the Text property of the Label to `Enter a Phoneword`")
 
     > [!NOTE]
     > 可以通过导航到“视图”  菜单，随时打开“属性”  或“工具箱”  。
 
 1. 在工具箱内搜索“文本字段”，将一个“文本字段”  从“工具箱”  拖动到设计图面上，并将它放置在“标签”  下方。 调整宽度，直到“文本字段”  的宽度与“标签”  相同：
 
-    ![](hello-ios-quickstart-images/vs-image12.png "调整宽度以便“文本字段”的宽度与“标签”相同")
+    ![](hello-ios-quickstart-images/vs-image12.png "Adjust the width until the Text Field is the same width as the Label")
 
 1. 在设计图面上选择了“文本字段”  的情况下，在“属性”  的“标识”部分中将“文本字段”  的“名称”  属性更改为 `PhoneNumberText`，并将“文本”  属性更改为“1-855-XAMARIN”：
 
-    ![](hello-ios-quickstart-images/vs-image13.png "将“文本”属性更改为 1-855-XAMARIN")
+    ![](hello-ios-quickstart-images/vs-image13.png "Change the Text property to 1-855-XAMARIN")
 
 1. 将一个“按钮”  从“工具箱”  拖动到设计图面上，并将它放置在“文本字段”  下方。 调整宽度，以便“按钮”  与“文本字段”  和“标签”  一样宽：
 
-    ![](hello-ios-quickstart-images/vs-image14.png "调整宽度以便“按钮”的宽度与“文本字段”和“标签”相同")
+    ![](hello-ios-quickstart-images/vs-image14.png "Adjust the width so the Button is as wide as the Text Field and Label")
 
 1. 在设计图面上选择了“按钮”  的情况下，在“属性”  的“标识”  部分中将“名称”  属性更改为 `TranslateButton`。 将“标题”  属性更改为“Translate”：
 
-    ![](hello-ios-quickstart-images/vs-image15.png "将“标题”属性更改为“Translate”")
+    ![](hello-ios-quickstart-images/vs-image15.png "Change the Title property to Translate")
 
 1. 重复前面的两个步骤，将一个“按钮”  从“工具箱”  拖动到设计图面上，并将它放置第一个“按钮”  下方。 调整宽度，以便该“按钮”  与第一个“按钮”  一样宽：
 
-    ![](hello-ios-quickstart-images/vs-image16.png "调整宽度，使该按钮宽度与第一个按钮相同")
+    ![](hello-ios-quickstart-images/vs-image16.png "Adjust the width so the Button is as wide as the first Button")
 
 1. 在设计图面上选择了第二个“按钮”  的情况下，在“属性”  的“标识”  部分中将“名称”  属性更改为 `CallButton`。 将“标题”  属性更改为“Call”：
 
-    ![](hello-ios-quickstart-images/vs-image17.png "将“标题”属性更改为“Call”")
+    ![](hello-ios-quickstart-images/vs-image17.png "Change the Title property to Call")
 
     通过导航到“文件”>“保存”  或通过按 **Ctrl + s** 来保存更改。
 
 1. 添加一些代码，以将电话号码从字母数字转换为数字。 若要执行此操作，请首先通过在“解决方案资源管理器”  中右键单击“Phoneword”  项目，然后选择“添加”>“新建项…”  或按 **Ctrl + Shift + A**，向项目添加新文件：
 
-    ![](hello-ios-quickstart-images/vs-image18.png "添加一些代码以将电话号码从字母数字转换为数字")
+    ![](hello-ios-quickstart-images/vs-image18.png "Add some code to translate phone numbers from alphanumeric to numeric")
 
 1. 在“添加新项”对话框（右键单击项目，选择“添加”>“新建项...”）中，选择“Apple”>“类”，然后将新文件命名为 `PhoneTranslator`   ：
 
-    ![](hello-ios-quickstart-images/vs-image19.w157.png "添加名为“PhoneTranslator”的新类")
+    ![](hello-ios-quickstart-images/vs-image19.w157.png "Add a new class named PhoneTranslator")
 
     > [!IMPORTANT]
     > 请确保选择在图标中包含 C# 的“类”模板。 否则，可能无法引用此新类。
@@ -422,7 +422,7 @@ Xamarin.iOS 适用于以下设置：
 
 1. 在“解决方案资源管理器”  中双击 **ViewController.cs** 以打开它，以便可以添加逻辑以处于与按钮进行的交互：
 
-    ![](hello-ios-quickstart-images/vs-image20.png "添加逻辑以处理与按钮之间的交互")
+    ![](hello-ios-quickstart-images/vs-image20.png "Logic added to handle interactions with the buttons")
 
 1. 首先关联 `TranslateButton`。 在 **ViewController** 类中，找到 `ViewDidLoad` 方法。 在 `ViewDidLoad` 中的 `base.ViewDidLoad()` 调用下添加以下按钮代码：
 
@@ -470,21 +470,21 @@ Xamarin.iOS 适用于以下设置：
 
 1. 保存更改，然后通过选择“生成”>“生成解决方案”  或按 **Ctrl + Shift + B** 来生成应用程序。如果应用程序进行了编译，则成功消息会出现在 IDE 底部：
 
-    ![](hello-ios-quickstart-images/vs-image21.png "成功消息将出现在 IDE 底部")
+    ![](hello-ios-quickstart-images/vs-image21.png "A success message will appear at the bottom of the IDE")
 
     如果发生错误，则完成前面的步骤并更正任何错误，直到应用程序成功生成。
 
 1. 最后，在“远程 iOS 模拟器”  中测试应用程序。 在 IDE 工具栏中，从下拉菜单中选择“调试”  和“iPhone 8 Plus iOS x.x”  ，然后按“启动”  （类似于“播放”按钮的绿色三角形）：
 
-    ![](hello-ios-quickstart-images/vs-image27.png "按“启动”")
+    ![](hello-ios-quickstart-images/vs-image27.png "Press Start")
 
 1. 这会在 iOS 模拟器中启动应用程序：
 
-    ![](hello-ios-quickstart-images/vs-image28.png "应用程序在 iOS 模拟器中运行")
+    ![](hello-ios-quickstart-images/vs-image28.png "The application running inside the iOS Simulator")
 
     iOS 模拟器不支持电话呼叫；相反，在尝试拨打电话时，将会看到警报对话框：
 
-    ![](hello-ios-quickstart-images/vs-image29.png "尝试拨打电话时会显示警报对话框")
+    ![](hello-ios-quickstart-images/vs-image29.png "An alert dialog will display when trying to place a call")
 
 ::: zone-end
 

@@ -4,15 +4,15 @@ description: 本指南介绍如何对应用进行计时，以及如何使用可�
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 58bf8325a0fab17411dd7a4f857fdad8bdc6b016
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756262"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026371"
 ---
 # <a name="ios-build-mechanics"></a>iOS 生成机制
 
@@ -32,7 +32,7 @@ ms.locfileid: "70756262"
 
 1. 单击“Visual Studio for Mac”>“首选项…” 
 2. 在左侧树视图中，选择“项目”>“生成” 
-3. 在右侧面板中，将“日志详细级别”下拉列表设置为“诊断”  ：[![](ios-build-mechanics-images/image2.png "设置日志详细级别")](ios-build-mechanics-images/image2.png#lightbox)
+3. 在右侧面板中，将“日志详细级别”下拉列表设置为“诊断”  ：[![](ios-build-mechanics-images/image2.png "设置日志详细程度")](ios-build-mechanics-images/image2.png#lightbox)
 4. 单击“确定” 
 5. 重启 Visual Studio for Mac
 6. 清除并重新生成包
@@ -44,7 +44,7 @@ ms.locfileid: "70756262"
 
 1. 单击“工具”>“选项…” 
 2. 在左侧树视图中，选择“项目和解决方案”>“生成并运行” 
-3. 在右侧面板中，将“MSBuild 生成输出详细级别”下拉列表设置为“诊断”   ：[![](ios-build-mechanics-images/image2-vs.png "设置 MSBuild 生成输出详细级别")](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. 在右侧面板中，将“MSBuild 生成输出详细程度”下拉列表设置为“诊断”   ：[![](ios-build-mechanics-images/image2-vs.png "设置 MSBuild 生成输出详细程度")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. 单击“确定” 
 5. 清除并重新生成包。
 6. 诊断输出将显示在“输出”面板中。
@@ -97,7 +97,7 @@ Apple 提供用于 iOS 开发的模拟器，通过创建限制较少的代码运
 
 下面的屏幕截图演示了如何在 iOS 选项中设置模拟器的这些选项：
 
-[![](ios-build-mechanics-images/image3.png "设置选项")](ios-build-mechanics-images/image3.png#lightbox)
+[![](ios-build-mechanics-images/image3.png "Setting the options")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>设备技巧
 
@@ -148,7 +148,7 @@ Apple 提供用于 iOS 开发的模拟器，通过创建限制较少的代码运
 
 下面的屏幕截图演示了如何在 iOS 选项中设置模拟器的这些选项：
 
-[![](ios-build-mechanics-images/image4.png "设置选项")](ios-build-mechanics-images/image4.png#lightbox)
+[![](ios-build-mechanics-images/image4.png "Setting the options")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>使用链接器
 
