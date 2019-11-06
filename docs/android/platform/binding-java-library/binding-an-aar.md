@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 516d8ebfd8e0dabbdbba9737ae8b35627c649380
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
+ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027762"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618534"
 ---
 # <a name="binding-an-aar"></a>绑定 .AAR
 
@@ -31,7 +31,7 @@ _本演练提供了从 Android 创建 Xamarin Android Java 绑定库的分步说
 在本指南中，我们将逐步介绍为单一的绑定库创建基础知识。AAR 文件。 有关一般情况下的 Java 库绑定概述（带有基本的代码示例），请参阅[绑定 Java 库](~/android/platform/binding-java-library/index.md)。
 
 > [!IMPORTANT]
-> 绑定项目只能包含一个。AAR 文件。 如果为。AAR 依赖关系。AAR，则这些依赖项应包含在其自己的绑定项目中，然后引用这些依赖项。 请参阅[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
+> 绑定项目只能包含一个。AAR 文件。 如果为。AAR 依赖于其他。AAR，则这些依赖项应包含在其自己的绑定项目中，然后引用这些依赖项。 请参阅[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
 
 ## <a name="walkthrough"></a>演练
 
@@ -90,7 +90,7 @@ public class TextCounter
 
 4. 验证**textanalyzer aar**文件是否已成功添加到项目中：
 
-    [添加了 textanalyzer aar 文件![](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
+    [添加了 textanalyzer aar 文件 ![](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
 5. 将**textanalyzer**的生成操作设置为 "`LibraryProjectZip`"。 在 Visual Studio for Mac 中，右键单击 " **aar** " 以设置生成操作。 在 Visual Studio 中，可在 "**属性**" 窗格中设置生成操作：
 
@@ -122,7 +122,7 @@ public class TextCounter
 
 4. 打开**BindingTest**项目的 "**引用**" 节点，验证是否存在**AarBinding**引用：
 
-    ["引用" 下列出![AarBinding](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
+    ["引用" 下列出 ![AarBinding](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
 若要查看绑定库项目的内容，可以双击该引用以在**对象浏览器**中打开它。 您可以查看 `Com.Xamarin.Textcounter` 命名空间的映射内容（从 Java `com.xamarin.textanalyzezr` 包映射），并且您可以查看 `TextCounter` 类的成员：
 
@@ -248,7 +248,7 @@ namespace BindingTest
 
 编译并运行**BindingTest**项目。 此应用将开始，并在左侧显示屏幕截图（`EditText` 用一些文本进行初始化，但你可以点击它进行更改）。 点击 "**计数元音**" 时，toast 将显示元音的数目，如下所示：
 
-[运行 BindingTest 的![屏幕快照](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
+[运行 BindingTest 的 ![屏幕快照](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
 尝试点击**COUNT 辅音**按钮。 此外，您还可以修改文本行并再次点击这些按钮以测试不同的元音和辅音计数。
 
@@ -286,7 +286,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 编译并运行**BindingTest**项目。 点击 "**辅音**" 时，应用将启动并在左侧 &ndash; 显示屏幕截图，结果显示在右侧：
 
-[显示辅音计数的![BindingTest](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
+[显示辅音计数的 ![BindingTest](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 祝贺你！ 已成功绑定 Java 库。AAR!
 
