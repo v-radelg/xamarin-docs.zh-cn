@@ -4,15 +4,15 @@ description: 本文档介绍如何使用 Visual Studio 生成和测试 Xamarin i
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 45c7c3a90fa0dedfed8f5f325a96b4c7aa7a5a9e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292026"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022479"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 简介
 
@@ -32,7 +32,7 @@ ms.locfileid: "70292026"
 
 可从众多配置选项中选择最适合开发需求的选项。 以下列出了这些选项：
 
-- 使用 Mac 作为主要的开发计算机，并运行安装了 Visual Studio 的 Windows 虚拟机。 建议使用 VM 软件，如 [Parallels](http://www.parallels.com/products/desktop/) 或 [VMWare](http://www.vmware.com/products/fusion/)。
+- 使用 Mac 作为主要的开发计算机，并运行安装了 Visual Studio 的 Windows 虚拟机。 建议使用 VM 软件，如 [Parallels](https://www.parallels.com/products/desktop/) 或 [VMWare](https://www.vmware.com/products/fusion/)。
 - 将 Mac 当做生成主机使用。 在这种情况下，需连接到与 Windows 计算机所处的同一网络上，该计算机已安装[必备](~/get-started/installation/windows.md#installation)工具。
 
 对于每种情况，都应遵循以下步骤：
@@ -53,7 +53,7 @@ Xamarin iOS for Visual Studio 将项添加到标准工具栏和新的 iOS 工具
 
 与 Xamarin iOS 开发相关的控件用红线圈出：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "与 Xamarin iOS 开发相关的控件已用红线圈出")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
+[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
 
 - **开始** - 开始在选定平台上调试或运行应用。 Mac 必须已连接（可查看 iOS 工具栏中的状态指示器）。
 - **解决方案配置** - 允许选择要使用的配置（例如，调试和发布）。
@@ -63,7 +63,7 @@ Xamarin iOS for Visual Studio 将项添加到标准工具栏和新的 iOS 工具
 
 iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS 工具栏")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 下面解释每个项：
 
@@ -79,31 +79,31 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 以下屏幕截图显示可用的输出窗口，这些窗口可能因项目类型而有所不同：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "可用输出窗口")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** - 此项包含仅与 Xamarin 相关的信息，如与 Mac 的连接情况和激活状态。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "仅与 Xamarin 相关的信息，如与 Mac 的连接情况和激活状态")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 诊断** - 此窗格显示 Xamarin 项目的更多详细信息，如与 Android 的交互。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "有关 Xamarin 项目的详细信息")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 仍可以在“输出”视图中选择其他默认 Visual Studio 输出窗格（如“调试”和“生成”），以便调试输出和 MSBuild 输出：
 
 - **调试**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "调试输出")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **生成**与**生成顺序**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 输出")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS 项目属性
 
 可通过右键单击项目名称并选择上下文菜单中的“属性”  找到 Visual Studio 的项目属性。 这样就可以配置 iOS 应用程序了，如以下屏幕截图所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "配置 iOS 应用程序")
+![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
 
 - iOS 应用程序包签名  - 连接 Mac 以填充代码签名标识和预配配置文件：
 
@@ -133,11 +133,11 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 若要开始创建或编辑情节提要，请双击 `Main.storyboard` 将其在 iOS 设计器中打开：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "iOS 设计器中的 Main.storyboard")
+![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
 
 若要向视图添加对象，请使用“工具箱”  窗格，将项拖放到设计图面上。 如果尚未添加工具箱，可通过选择“视图”>“工具箱”  添加。 可使用“属性”  窗格修改对象属性、调整布局，并创建事件，如下所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "“属性”窗格")
+![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
 
  有关使用 iOS 设计器的详细信息，请参阅[设计器](~/ios/user-interface/designer/index.md)指南。
 
@@ -163,7 +163,7 @@ Visual Studio 新的“设备日志”工具窗口允许显示 Android 和 iOS �
 
 可以在应用程序中的任意位置设置断点，将信号发送到调试器以暂停程序执行。 若要在 Visual Studio 中设置断点，请在想要中断的代码行号旁边，单击编辑器的空白区：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "设置调试点")
+![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
 
 开始调试，并使用模拟器或设备将应用程序导航到断点。 命中断点时，将突出显示此行并启用 Visual Studio 的正常调试行为：你可以进入、结束或跳出代码，检查局部变量，或使用即时窗口。
 
