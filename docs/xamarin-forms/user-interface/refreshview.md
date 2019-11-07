@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: b53c58a5e859bf7752855c3954666a062261599d
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
+ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697739"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73649299"
 ---
 # <a name="xamarinforms-refreshview"></a>Xamarin. Forms RefreshView
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
-@No__t_0 是一个容器控件，该控件为可滚动的内容提供请求刷新功能。 因此，`RefreshView` 的子级必须是可滚动的控件，如[`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)或[`ListView`](xref:Xamarin.Forms.ListView)。
+`RefreshView` 是一个容器控件，该控件为可滚动的内容提供请求刷新功能。 因此，`RefreshView` 的子级必须是可滚动的控件，如[`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)或[`ListView`](xref:Xamarin.Forms.ListView)。
 
 `RefreshView` 定义以下属性：
 
@@ -68,9 +68,9 @@ scrollView.Content = flexLayout;
 refreshView.Content = scrollView;
 ```
 
-在此示例中，`RefreshView` 向刷新功能提供对其子为[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)的[`ScrollView`](xref:Xamarin.Forms.ScrollView)的请求。 @No__t_0 使用可绑定布局，通过绑定到项集合来生成其内容，并使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)设置每个项的外观。 有关可绑定布局的详细信息，请参阅[Xamarin 中的可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)。
+在此示例中，`RefreshView` 向刷新功能提供对其子为[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)的[`ScrollView`](xref:Xamarin.Forms.ScrollView)的请求。 `FlexLayout` 使用可绑定布局，通过绑定到项集合来生成其内容，并使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)设置每个项的外观。 有关可绑定布局的详细信息，请参阅[Xamarin 中的可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)。
 
-@No__t_0 属性的值指示 `RefreshView` 的当前状态。 用户触发刷新时，此属性会自动转换为 `true`。 刷新完成后，应将属性重置为 `false`。
+`RefreshView.IsRefreshing` 属性的值指示 `RefreshView`的当前状态。 用户触发刷新时，此属性会自动转换为 `true`。 刷新完成后，应将属性重置为 `false`。
 
 当用户启动刷新时，将执行 `Command` 属性定义的 `ICommand`，该属性应刷新正在显示的项。 刷新发生时，会显示刷新可视化效果，其中包含动画进度圆：
 
@@ -105,6 +105,6 @@ refreshView.Content = scrollView;
 
 ## <a name="related-links"></a>相关链接
 
-- [RefreshView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+- [RefreshView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [Xamarin 中的可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [RefreshView 拉取方向平台特定](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

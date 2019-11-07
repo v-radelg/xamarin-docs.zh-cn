@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/31/2019
-ms.openlocfilehash: dd451ae1acd233c1d3de675357bb172f25716f59
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.date: 11/06/2019
+ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426287"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662343"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin。窗体映射初始化和配置
 
@@ -43,6 +43,8 @@ Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ```
+
+有关 UWP 所需的身份验证令牌的信息，请参阅[通用 Windows 平台](#universal-windows-platform)。
 
 添加 NuGet 包并在每个应用程序中调用初始化方法后，可以在共享代码项目中使用 `Xamarin.Forms.Maps` Api。
 
@@ -244,6 +246,20 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
       <DeviceCapability Name="location"/>
     </Capabilities>
     ```
+
+#### <a name="release-builds"></a>发布版本
+
+UWP 发布版本使用 .NET 本机编译将应用程序直接编译为本机代码。 但是，这种情况的结果是，UWP 上的[`Map`](xref:Xamarin.Forms.Maps.Map)控件的呈现器可能与可执行文件链接。 为此，可以在**App.xaml.cs**中使用 `Forms.Init` 方法的 UWP 特定重载：
+
+```csharp
+var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };
+Xamarin.Forms.Forms.Init(e, assembliesToInclude);
+```
+
+此代码将 `Xamarin.Forms.Maps.UWP.MapRenderer` 类所驻留的程序集传递到 `Forms.Init` 方法。 这可确保 .NET 本机编译过程不会将程序集链接到可执行文件。
+
+> [!IMPORTANT]
+> 如果不这样做，将导致在运行发布版本时[`Map`](xref:Xamarin.Forms.Maps.Map)控件不显示。
 
 ## <a name="related-links"></a>相关链接
 

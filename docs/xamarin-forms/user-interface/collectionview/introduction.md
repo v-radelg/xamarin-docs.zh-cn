@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 274a2a99445a77a2b8c1f68e823c753bc16b673a
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696673"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662312"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin CollectionView 简介
 
@@ -35,8 +35,9 @@ ms.locfileid: "72696673"
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持单个和多个选择。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)没有单元的概念。 相反，数据模板用于定义列表中每个数据项的外观。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)自动利用基础本机控件提供的虚拟化。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView)减少[`ListView`](xref:Xamarin.Forms.ListView)的 API 图面。 [@No__t_1](xref:Xamarin.Forms.ListView)中的许多属性和事件不在 `CollectionView` 中。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)减少[`ListView`](xref:Xamarin.Forms.ListView)的 API 图面。 [`ListView`](xref:Xamarin.Forms.ListView)中的许多属性和事件不在 `CollectionView`中。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含内置分隔符。
+- 如果[`CollectionView`](xref:Xamarin.Forms.CollectionView)的[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)更新为 UI 线程，则会引发异常。
 
 ## <a name="move-from-listview-to-collectionview"></a>从 ListView 移到 CollectionView
 
@@ -54,7 +55,7 @@ ms.locfileid: "72696673"
 | 页眉和页脚 | `Header`、 `HeaderElement`、 `HeaderTemplate`、 `Footer`、 `FooterElement`、 `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过 "`Header`"、"`Footer`"、"`HeaderTemplate`" 和 "`FooterTemplate`" 属性来显示通过列表中的项滚动的页眉和页脚。 有关详细信息，请参阅[页眉和页脚](layout.md#headers-and-footers)。 |
 | 分组 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)通过将其 `IsGrouped` 属性设置为 `true`，来显示正确分组的数据。 可以通过将 `GroupHeaderTemplate` 和 `GroupFooterTemplate` 属性设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象来自定义组头和组尾。 有关详细信息，请参阅[Xamarin CollectionView 分组](grouping.md)。 |
 | 请求刷新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 通过将[`CollectionView`](xref:Xamarin.Forms.CollectionView)设置为 `RefreshView` 的子级，支持拉取到刷新功能。 有关详细信息，请参阅[请求刷新](populate-data.md#pull-to-refresh)。 |
-| 上下文操作 | `ContextActions` | @No__t_0 中当前不支持上下文操作，但会在将来的版本中添加。 |
+| 上下文操作 | `ContextActions` | `CollectionView`中当前不支持上下文操作，但会在将来的版本中添加。 |
 | 滚动 | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)定义 `ScrollTo` 方法，这些方法会将项滚动到视图中。 有关详细信息，请参阅[滚动](scrolling.md)。 |
 
 ## <a name="related-links"></a>相关链接

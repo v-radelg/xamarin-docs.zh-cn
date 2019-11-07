@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 5afdaa9afa4c5ced39498a1cb45de07fe4bf4195
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696709"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662330"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin CollectionView 数据
 
@@ -69,12 +69,15 @@ collectionView.ItemsSource = new string[]
 };
 ```
 
-> [!IMPORTANT]
-> 如果需要在基础集合中添加、删除或更改项时刷新[`CollectionView`](xref:Xamarin.Forms.CollectionView) ，则基础集合应为发送属性更改通知的 `IEnumerable` 集合，如 `ObservableCollection`。
+> [!WARNING]
+> 如果[`CollectionView`](xref:Xamarin.Forms.CollectionView)的[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)更新为 UI 线程，则会引发异常。
 
 默认情况下， [`CollectionView`](xref:Xamarin.Forms.CollectionView)按垂直列表显示项，如以下屏幕截图所示：
 
 [![在 iOS 和 Android 上包含文本项的 CollectionView 的屏幕截图](populate-data-images/text.png "CollectionView 中的文本项")](populate-data-images/text-large.png#lightbox "CollectionView 中的文本项")
+
+> [!IMPORTANT]
+> 如果需要在基础集合中添加、删除或更改项时刷新[`CollectionView`](xref:Xamarin.Forms.CollectionView) ，则基础集合应为发送属性更改通知的 `IEnumerable` 集合，如 `ObservableCollection`。
 
 有关如何更改[`CollectionView`](xref:Xamarin.Forms.CollectionView)布局的信息，请参阅[Xamarin CollectionView 布局](layout.md)。 若要了解如何在 `CollectionView` 中定义每个项的外观，请参阅[定义项外观](#define-item-appearance)。
 
@@ -170,7 +173,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素定义列表中每一项的外观。 在此示例中，`DataTemplate` 中的布局由[`Grid`](xref:Xamarin.Forms.Grid)管理。 @No__t_0 包含[`Image`](xref:Xamarin.Forms.Image)对象和两个[`Label`](xref:Xamarin.Forms.Label)对象，这些对象都绑定到 `Monkey` 类的属性：
+在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素定义列表中每一项的外观。 在此示例中，`DataTemplate` 中的布局由[`Grid`](xref:Xamarin.Forms.Grid)管理。 `Grid` 包含[`Image`](xref:Xamarin.Forms.Image)对象和两个[`Label`](xref:Xamarin.Forms.Label)对象，这些对象都绑定到 `Monkey` 类的属性：
 
 ```csharp
 public class Monkey
@@ -224,7 +227,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为 `MonkeyDataTemplateSelector` 对象。 下面的示例演示了 `MonkeyDataTemplateSelector` 类：
+[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)属性设置为 `MonkeyDataTemplateSelector` 对象。 下面的示例演示了 `MonkeyDataTemplateSelector` 类：
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -239,7 +242,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 类定义设置为不同数据模板 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)属性。 @No__t_0 重写将返回 `AmericanMonkey` 模板，该模板将在猴子名称包含 "北美洲" 时显示猴子名称和位置。 当猴子名称中不包含 "美洲" 时，"`OnSelectTemplate` 重写将返回 `OtherMonkey` 模板，该模板将在银中显示猴子名称和位置：
+`MonkeyDataTemplateSelector` 类定义设置为不同数据模板 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)属性。 `OnSelectTemplate` 重写将返回 `AmericanMonkey` 模板，该模板将在猴子名称包含 "北美洲" 时显示猴子名称和位置。 当猴子名称中不包含 "美洲" 时，"`OnSelectTemplate` 重写将返回 `OtherMonkey` 模板，该模板将在银中显示猴子名称和位置：
 
 [![IOS 和 Android 上的 CollectionView 运行时项模板选择屏幕截图](populate-data-images/datatemplateselector.png "CollectionView 中的运行时项模板选择")](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView 中的运行时项模板选择")
 
@@ -250,7 +253,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 ## <a name="pull-to-refresh"></a>请求刷新
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)支持通过 `RefreshView` 拉取到刷新功能，这样就可以通过下拉项列表来刷新要显示的数据。 @No__t_0 是一种容器控件，该控件提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将 `CollectionView` 设置为 `RefreshView` 的子项来实现对该的拉取：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)支持通过 `RefreshView` 拉取到刷新功能，这样就可以通过下拉项列表来刷新要显示的数据。 `RefreshView` 是一种容器控件，该控件提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将 `CollectionView` 设置为 `RefreshView` 的子项来实现对该的拉取：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -283,7 +286,7 @@ refreshView.Content = collectionView;
 
 [![IOS 和 Android 上的 CollectionView 请求刷新的屏幕截图](populate-data-images/pull-to-refresh.png "CollectionView 请求刷新")](populate-data-images/pull-to-refresh-large.png#lightbox "CollectionView 请求刷新")
 
-@No__t_0 属性的值指示 `RefreshView` 的当前状态。 用户触发刷新时，此属性会自动转换为 `true`。 刷新完成后，应将属性重置为 `false`。
+`RefreshView.IsRefreshing` 属性的值指示 `RefreshView`的当前状态。 用户触发刷新时，此属性会自动转换为 `true`。 刷新完成后，应将属性重置为 `false`。
 
 有关 `RefreshView` 的详细信息，请参阅[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
 
@@ -299,7 +302,7 @@ refreshView.Content = collectionView;
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)还定义了一个 `RemainingItemsThresholdReached` 事件，当 `CollectionView` 滚动到足够多的 `RemainingItemsThreshold` 项尚未显示时，将触发该事件。 可以处理此事件以加载更多项。 此外，当激发 `RemainingItemsThresholdReached` 事件时，将执行 `RemainingItemsThresholdReachedCommand`，从而使增量数据加载在 viewmodel 中进行。
 
-@No__t_0 属性的默认值为-1，表示将永远不会激发 `RemainingItemsThresholdReached` 事件。 当属性值为0时，当显示[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最后一项时，将激发 `RemainingItemsThresholdReached` 事件。 对于大于0的值，当 `ItemsSource` 包含尚未滚动到的项数时，将激发 `RemainingItemsThresholdReached` 事件。
+`RemainingItemsThreshold` 属性的默认值为-1，表示将永远不会激发 `RemainingItemsThresholdReached` 事件。 当属性值为0时，当显示[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最后一项时，将激发 `RemainingItemsThresholdReached` 事件。 对于大于0的值，当 `ItemsSource` 包含尚未滚动到的项数时，将激发 `RemainingItemsThresholdReached` 事件。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)验证 `RemainingItemsThreshold` 属性，使其值始终大于或等于-1。
