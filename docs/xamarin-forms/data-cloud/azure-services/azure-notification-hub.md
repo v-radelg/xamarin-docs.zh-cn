@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
-ms.openlocfilehash: c4237e9315ccc095abc72fdec24d58ffe1faebdf
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eafa5c8af8d93138ec6e2b9e2f25549d7ed006b0
+ms.sourcegitcommit: bfe4327ef2e89dab095641860256eadb349ca62c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739225"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73849834"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>通过 Azure 通知中心和 Xamarin 发送和接收推送通知
 
-[示例 ](~/media/shared/download.png)Download ![Download 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
 推送通知将来自后端系统的信息传送到移动应用程序。 Apple、Google 和其他平台都有自己的推送通知服务（PNS）。 利用 Azure 通知中心，你可以跨平台集中传递通知，使后端应用程序能够与单个集线器通信，这会将通知分发到每个平台特定的 PNS。
 
@@ -141,7 +141,7 @@ public static class AppConstants
 
 ### <a name="configure-android-manifest"></a>配置 Android 清单
 
-@No__t_1 元素中的 `receiver` 元素使应用能够与 Firebase 通信。 @No__t_0 元素允许应用处理消息，并将其注册到 Azure 通知中心。 完整的**androidmanifest.xml**应类似于以下示例：
+`application` 元素中的 `receiver` 元素使应用能够与 Firebase 通信。 `uses-permission` 元素允许应用处理消息，并将其注册到 Azure 通知中心。 完整的**androidmanifest.xml**应类似于以下示例：
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
@@ -167,7 +167,7 @@ public static class AppConstants
 
 Firebase 在 PNS 上颁发唯一标识设备的令牌。 令牌具有较长的生存期，但偶尔会刷新。 发出或刷新令牌时，应用程序需要向 Azure 通知中心注册其新令牌。 注册由派生自 `FirebaseInstanceIdService` 的类的实例进行处理。
 
-在示例应用程序中，`FirebaseRegistrationService` 类继承自 `FirebaseInstanceIdService`。 此类具有一个包含 `com.google.firebase.INSTANCE_ID_EVENT` 的 `IntentFilter`，它允许 Android OS 在 Firebase 颁发令牌时自动调用 `OnTokenRefresh`。
+在示例应用程序中，`FirebaseRegistrationService` 类继承自 `FirebaseInstanceIdService`。 此类具有一个包含 `com.google.firebase.INSTANCE_ID_EVENT`的 `IntentFilter`，它允许 Android OS 在 Firebase 颁发令牌时自动调用 `OnTokenRefresh`。
 
 以下代码显示示例应用程序中的自定义 `FirebaseInstanceIdService`：
 
@@ -209,11 +209,11 @@ public class FirebaseRegistrationService : FirebaseInstanceIdService
 }
 ```
 
-@No__t_1 中的 `SendRegistrationToServer` 方法将设备注册到 Azure 通知中心，并使用模板订阅标记。 示例应用程序定义了一个名为 `default` 的标记和一个在**AppConstants.cs**文件中名为 `messageParam` 的参数。 有关注册、标记和模板的详细信息，请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)
+`FirebaseRegistrationClass` 中的 `SendRegistrationToServer` 方法将设备注册到 Azure 通知中心，并使用模板订阅标记。 示例应用程序定义了一个名为 `default` 的标记和一个在**AppConstants.cs**文件中名为 `messageParam` 的参数。 有关注册、标记和模板的详细信息，请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)
 
 ### <a name="process-messages-with-a-firebasemessagingservice"></a>使用 FirebaseMessagingService 处理消息
 
-传入的消息将路由到 `FirebaseMessagingService` 实例，可在其中将这些消息转换为本地通知。 示例应用程序中的 Android 项目包含从 `FirebaseMessagingService` 继承的名为 `FirebaseService` 的类。 此类具有一个包含 `com.google.firebase.MESSAGING_EVENT` 的 `IntentFilter`，它允许 Android OS 在收到推送通知消息时自动调用 `OnMessageReceived`。
+传入的消息将路由到 `FirebaseMessagingService` 实例，可在其中将这些消息转换为本地通知。 示例应用程序中的 Android 项目包含从 `FirebaseMessagingService` 继承的名为 `FirebaseService` 的类。 此类具有一个包含 `com.google.firebase.MESSAGING_EVENT`的 `IntentFilter`，它允许 Android OS 在收到推送通知消息时自动调用 `OnMessageReceived`。
 
 下面的示例演示示例应用程序的 `FirebaseService`：
 
@@ -285,7 +285,7 @@ public class FirebaseService : FirebaseMessagingService
 
 ### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>向 Xamarin UI 添加传入通知
 
-@No__t_0 类需要获取处理通知和管理传入消息数据的权限。 下面的代码演示完整的 `MainActivity` 实现：
+`MainActivity` 类需要获取处理通知和管理传入消息数据的权限。 下面的代码演示完整的 `MainActivity` 实现：
 
 ```csharp
 [Activity(Label = "NotificationHubSample", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
@@ -301,7 +301,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
         global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
         LoadApplication(new App());
 
-        if (IsPlayServiceAvailable() == false)
+        if (!IsPlayServiceAvailable())
         {
             throw new Exception("This device does not have Google Play Services and cannot receive push notifications.");
         }
@@ -356,9 +356,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
 
-@No__t_0 属性将应用程序 `LaunchMode` 设置为 `SingleTop`。 此启动模式告知 Android OS 仅允许此活动的单个实例。 使用此启动模式，传入的 `Intent` 数据将路由到 `OnNewIntent` 方法，该方法提取消息数据并通过 `AddMessage` 方法将其发送到 `MainPage` 实例。 如果你的应用程序使用不同的启动模式，则它必须以不同方式处理 `Intent` 数据。
+`Activity` 属性将应用程序 `LaunchMode` 设置为 `SingleTop`。 此启动模式告知 Android OS 仅允许此活动的单个实例。 使用此启动模式，传入的 `Intent` 数据将路由到 `OnNewIntent` 方法，该方法提取消息数据并通过 `AddMessage` 方法将其发送到 `MainPage` 实例。 如果你的应用程序使用不同的启动模式，则它必须以不同方式处理 `Intent` 数据。
 
-@No__t_0 方法使用名为 `IsPlayServiceAvailable` 的帮助器方法来确保设备支持 Google Play 服务。 不支持 Google Play 服务的仿真器或设备无法从 Firebase 接收推送通知。
+`OnCreate` 方法使用名为 `IsPlayServiceAvailable` 的帮助器方法来确保设备支持 Google Play 服务。 不支持 Google Play 服务的仿真器或设备无法从 Firebase 接收推送通知。
 
 ## <a name="configure-ios-for-notifications"></a>为通知配置 iOS
 
@@ -538,7 +538,7 @@ public static class DispatcherConstants
 }
 ```
 
-你必须配置**DispatcherConstants.cs**以匹配 Azure 通知中心配置。 @No__t_0 属性的值应与客户端应用程序中使用的值匹配。 @No__t_0 属性是 Azure 通知中心实例的名称。 @No__t_0 属性是在通知中心**访问策略**中找到的访问密钥。 以下屏幕截图显示了 Azure 门户中 `NotificationHubName` 和 `FullAccessConnectionString` 属性的位置：
+你必须配置**DispatcherConstants.cs**以匹配 Azure 通知中心配置。 `SubscriptionTags` 属性的值应与客户端应用程序中使用的值匹配。 `NotificationHubName` 属性是 Azure 通知中心实例的名称。 `FullAccessConnectionString` 属性是在通知中心**访问策略**中找到的访问密钥。 以下屏幕截图显示了 Azure 门户中 `NotificationHubName` 和 `FullAccessConnectionString` 属性的位置：
 
 ![Azure 通知中心名称和 FullAccessConnectionString 的屏幕截图](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中心名称和 FullAccessConnectionString")
 

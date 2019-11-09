@@ -6,13 +6,13 @@ ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2017
-ms.openlocfilehash: 3c167b025b41bd4fc7c8c93bdb2f825c9daa540c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/07/2019
+ms.openlocfilehash: 83fbad8a9bbb9afef5ee80705fe9e86e51284e7d
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032847"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842984"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用标识提供者对用户进行身份验证
 
@@ -259,6 +259,16 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ```
 
 `FindAccountsForService` 方法返回 `Account` 对象的 `IEnumerable` 集合，并将集合中的第一项设置为匹配的帐户。
+
+## <a name="troubleshooting"></a>疑难解答
+
+- 在 Android 上，如果在身份验证后关闭浏览器时收到 toast 通知，并且想要停止 toast 通知，请在初始化 Xamarin 之后将以下代码添加到 Android 项目中：
+
+```csharp
+Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
+```
+
+- 在 Android 上，如果浏览器未自动关闭，则一个暂时的解决方法是将 Xamarin. authentication 包降级到版本1.5.0.3。 然后，将[PCL 加密 v 2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147)添加到 Android 项目。
 
 ## <a name="summary"></a>总结
 
