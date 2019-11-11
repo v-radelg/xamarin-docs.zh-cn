@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: c65a8d4cf47fdec582b46370b6a8dbc1ddd55a1e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bdc8366e75455755cbb2f533b6707f72e33436e2
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022786"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425577"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
