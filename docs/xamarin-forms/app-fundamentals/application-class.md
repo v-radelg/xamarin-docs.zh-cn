@@ -4,15 +4,16 @@ description: 本文说明默认 App 类的功能，其中包括一个可设置�
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
+ms.custom: video
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 85e420933cfeffd00f686b0eea537cd0ad2f4ca5
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971220"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842972"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms App 类
 
@@ -26,7 +27,7 @@ ms.locfileid: "65971220"
 
 根据选择的模板，可以通过以下两种方式之一定义 `App` 类：
 
-* **C#**，或
+* **C#** ，或
 * **XAML 和 C#**
 
 若要使用 XAML 创建 **App** 类，必须使用 XAML **App** 类和关联的代码隐藏替换默认的 **App** 类，如以下代码示例所示：
@@ -218,6 +219,12 @@ public sealed partial class MainPage
  }
 ```
 
-请注意，必须从 UWP 项目中的 App.xaml.cs 调用 `Forms.Init()`。
+请注意，必须从 UWP 项目中的 App.xaml.cs  调用 `Forms.Init()`。
 
 有关详细信息，请参阅[安装 Windows 项目](~/xamarin-forms/platform/windows/installation/index.md)，其中包括将 UWP 项目添加到现有的不面向 UWP 的 Xamarin.Forms 解决方案的步骤。
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/Xamarin-Solution-Architecture-4-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
