@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: 6cece2c7cad401a9dc6f14b689c5c9e5ab757df5
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: fdee070021b22f82cb69571f0fa2f396831b14e6
+ms.sourcegitcommit: 6781967baeed4fe2c58f070476e7c21d01c25c30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696885"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74052807"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表（CSS）设置 Xamarin 格式的 Xamarin 应用程序
 
@@ -105,7 +105,7 @@ stacklayout>image {
 </Application>
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)属性将样式表指定为相对于封闭 XAML 文件位置的 URI，如果 uri 以 `/` 开头，则将相对于项目根指定样式表。
+[`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)属性将样式表指定为相对于封闭 XAML 文件位置的 URI，如果 uri 以 `/`开头，则将相对于项目根指定样式表。
 
 > [!WARNING]
 > 如果 CSS 文件的生成操作未设置为**EmbeddedResource**，则该文件将无法加载。
@@ -148,7 +148,7 @@ public partial class MyPage : ContentPage
 }
 ```
 
-@No__t_0 方法的参数是已读取样式表的 `TextReader`。
+`StyleSheet.FromReader` 方法的参数是已读取样式表的 `TextReader`。
 
 ## <a name="selecting-elements-and-applying-properties"></a>选择元素和应用属性
 
@@ -169,7 +169,7 @@ stacklayout {
 此选择器标识页面上使用样式表的任何[`StackLayout`](xref:Xamarin.Forms.StackLayout)元素，并将其边距设置为统一的宽度20。
 
 > [!NOTE]
-> @No__t_0 选择器不标识指定类型的子类。
+> `element` 选择器不标识指定类型的子类。
 
 ### <a name="selecting-elements-by-base-class"></a>按基类选择元素
 
@@ -184,7 +184,7 @@ stacklayout {
 此选择器标识使用样式表的任何[`ContentPage`](xref:Xamarin.Forms.ContentPage)元素，并将其背景色设置为 `lightgray`。
 
 > [!NOTE]
-> @No__t_0 选择器特定于 Xamarin，不属于 CSS 规范。
+> `^base` 选择器特定于 Xamarin，不属于 CSS 规范。
 
 ### <a name="selecting-an-element-by-name"></a>按名称选择元素
 
@@ -282,7 +282,7 @@ listview image {
 ```
 
 > [!NOTE]
-> @No__t_0 选择器不需要子元素成为父元素的_直接_子级–子元素可能具有不同的父元素。 如果祖先是指定的第一个元素，则会发生选择。
+> `element element` 选择器不需要子元素成为父元素的_直接_子级–子元素可能具有不同的父元素。 如果祖先是指定的第一个元素，则会发生选择。
 
 ### <a name="selecting-direct-child-elements"></a>选择直接子元素
 
@@ -313,7 +313,7 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> @No__t_0 选择器要求子元素是父级的_直接_子级。
+> `element>element` 选择器要求子元素是父级的_直接_子级。
 
 ## <a name="selector-reference"></a>选择器引用
 
@@ -352,7 +352,7 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 
 |Property|适用对象|值|示例|
 |---|---|---|---|
-|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| 0 1 2 3 4 5 6 7 8 9 0 1 2 |`align-content: space-between;`|
+|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| 0 1 2 |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| 0 1 2 3 4|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_颜色_\| `initial` |`background-color: springgreen;`|
@@ -372,7 +372,7 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_双_\| `initial` |`min-height: 250;`|
-|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| 0 1 2 3 4 5 6 7 8 9 0|`justify-content: flex-end;`|
+|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`line-height`|`Label`，`Span`|_双_\| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_厚度_\| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_厚度_\| `initial` |`margin-left: 3;`|
@@ -409,6 +409,8 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 - 速记属性，如 `font` 和 `border`。
 
 此外，没有 `inherit` 的值，因此不支持继承。 因此，您不能这样做，例如，在布局上设置 `font-size` 属性，并期望布局中的所有[`Label`](xref:Xamarin.Forms.Label)实例继承值。 一个例外情况是 `direction` 属性，该属性的默认值为 `inherit`。
+
+面向 `Span` 元素具有一个已知问题，即元素和名称（使用 `#` 符号）阻止跨越成为 CSS 样式的目标。 `Span` 元素派生自 `GestureElement`，后者没有 `StyleClass` 属性，因此它不支持 CSS 类目标。 有关详细信息，请参阅[无法将 CSS 样式应用于跨控件](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
 
 ### <a name="xamarinforms-specific-properties"></a>Xamarin 特定于窗体的属性
 
