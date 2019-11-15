@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
+ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004142"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062857"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -39,7 +39,7 @@ ms.locfileid: "71004142"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
 
-    [![在 iOS 和 Android 上响应项选择和点击的 ListView 的屏幕截图](../images/item-selection.png "ListView 项选择")](../images/item-selection-large.png#lightbox "ListView item selection")
+    [![在 iOS 和 Android 上响应项选择和点击的 ListView 的屏幕截图](../images/item-selection.png "ListView 项选择")](../images/item-selection-large.png#lightbox "ListView 项选择")
 
     在两个事件处理程序中设置断点，然后点击 [`ListView`](xref:Xamarin.Forms.ListView) 中的项。 请注意，只有在 [`ListView`](xref:Xamarin.Forms.ListView) 中选择了新项时才会触发 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，而每次点击一个项时将触发 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件。
 
@@ -78,8 +78,8 @@ ms.locfileid: "71004142"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
 
-    [![在 iOS 和 Android 上响应项选择和点击的 ListView 的屏幕截图](../images/item-selection.png "ListView 项选择")](../images/item-selection-large.png#lightbox "ListView item selection")
+    [![在 iOS 和 Android 上响应项选择和点击的 ListView 的屏幕截图](../images/item-selection.png "ListView 项选择")](../images/item-selection-large.png#lightbox "ListView 项选择")
 
     在两个事件处理程序中设置断点，然后点击 [`ListView`](xref:Xamarin.Forms.ListView) 中的项。 请注意，只有在 [`ListView`](xref:Xamarin.Forms.ListView) 中选择了新项时才会触发 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，而每次点击一个项时将触发 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件。
 
-    有关项选择和点击的详细信息，请参阅 [选择和点击](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and
+    有关项选择和点击的详细信息，请参阅[选择和点击](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps)
