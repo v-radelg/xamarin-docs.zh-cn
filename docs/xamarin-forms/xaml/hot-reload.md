@@ -35,9 +35,9 @@ Xamarin.Forms | 4.1 或更高版本
 
 使用 XAML 热重载不需要额外的安装或设置。 它内置于 Visual Studio 中，并可在 IDE 设置中启用。 启用后，可以通过在模拟器、模拟器或物理设备上调试应用，开始使用 XAML 热重载。 目前，XAML 热重载仅适用于在 iOS 或 Android 上调试时的工作。
 
-在 Windows 上，可以通过选中 "在 @no__t**工具**上**启用 Xamarin 热重载**" 复选框来启用 XAML 热重载 **。 @no__t-** 4**Xamarin** > **热重载**。
+在 Windows 上，可以通过选中 "在 > **工具**上**启用 xamarin 热重载**" 复选框来启用 XAML 热重载 **， > ** **Xamarin** > "**热重载**"。
 
-在 Mac 上，可以通过选中 "在**Visual Studio**中**启用 Xamarin 热重载**" 复选框来启用 XAML 热重载。 @no__t**首选项** >  个**项目**上  > **Xamarin 热重载**。
+在 Mac 上，可以通过选中 "在**Visual Studio**上**启用 Xamarin 热重载**" 复选框来启用 XAML 热重载 > **首选项** > **项目** > **Xamarin 热重载**。
 
 ## <a name="resilient-reloading"></a>复原重装
 
@@ -56,7 +56,7 @@ Xamarin.Forms | 4.1 或更高版本
 
 如果你是个人预览版的一部分，则在 Visual Studio 更新时，你的 XAML 热重载扩展将自动更新。 如果你选择不更新 Visual Studio，你可以继续使用当前版本的 XAML 热重载，但你不会通过专用预览扩展源接收任何进一步的更新。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 - 如果 XAML 热重载未能初始化：
   - 更新 Xamarin. Forms 版本。
@@ -65,4 +65,4 @@ Xamarin.Forms | 4.1 或更高版本
 - 如果保存 XAML 文件后没有任何反应，请确保在 IDE 中启用了热重载。
 - 如果是在物理 iPhone 上进行调试，而应用程序无响应，请检查是否已启用解释器。 若要启用它，请将 **--解释**器添加到 iOS 生成设置中的 "**其他 mtouch 参数**" 字段。
 
-若要报告 bug，请使用**帮助** > **发送反馈**@no__t 上的反馈工具在 Windows**上报告问题**菜单，以及**帮助** >  报告 Mac 上**的问题**菜单。
+若要报告 bug，请使用**帮助** > **发送反馈** > 在 Windows 上**报告问题**菜单，以及**帮助** > 报告 Mac 上**的问题**菜单。

@@ -16,7 +16,7 @@ ms.locfileid: "70772936"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 
 ## <a name="what-is-urhosharp"></a>什么是 UrhoSharp？
 
@@ -33,7 +33,7 @@ ms.locfileid: "70772936"
 然后再使用 UrhoSharp，开发人员需要将 UrhoSharp Nuget 包添加到他们的解决方案。 本指南假定一个 Xamarin.Forms 项目，与 iOS、 Android 和.NET Standard 类库项目。 .NET Standard 库项目中; 将写入的所有代码但 UrhoSharp Nuget 必须也添加到 iOS 和 Android 项目。
 
 UrhoSharp.Forms Nuget 程序包中包含的所有创建 UrhoSharp 对象所需对象。 UrhoSharp.Forms nuget 包包含`UrhoSurface`类，该类用于托管 UrhoSharp 在 Xamarin.Forms 中。
-若要开始，请右键单击**包**在.NET Standard 库项目中，选择文件夹**添加包...** .输入搜索词**UrhoSharp.Forms**，选择**适用于 Xamarin.Forms 的 UrhoSharp**，然后单击**添加包**。
+若要开始，请右键单击 .NET Standard 库项目中的 "**包**" 文件夹，然后选择 "**添加包 ...** "。输入搜索词**UrhoSharp**，**为 Xamarin 选择 UrhoSharp**，然后单击 "**添加包**"。
 
 [![](urhosharp-images/add-package-sml.png "添加包对话框")](urhosharp-images/add-package.png#lightbox "添加包对话框")
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet 包将添加到项目：
 
 对于特定于平台的项目 （如 iOS 和 Android） 重复上述步骤。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>演练：向 Xamarin 应用程序添加 UrhoSharp
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>演练： 向 Xamarin.Forms 应用添加 UrhoSharp
 
 以下步骤介绍了 Xamarin.Forms UrhoSharp 示例中的代码：
 
@@ -57,7 +57,7 @@ UrhoSharp.Forms NuGet 包将添加到项目：
 
 <a name="1"/>
 
-### <a name="1-create-a-xamarin-forms-page"></a>1.创建 Xamarin 窗体页
+### <a name="1-create-a-xamarin-forms-page"></a>1. 创建 Xamarin 窗体页
 
 下面的代码显示了 Xamarin.Forms 页面`UrhoPage`添加 Urho 相关的所有代码之前：
 
@@ -89,7 +89,7 @@ public class UrhoPage : ContentPage
 
 <a name="2"/>
 
-### <a name="2-add-the-urhosurface"></a>2.添加 UrhoSurface
+### <a name="2-add-the-urhosurface"></a>2. 添加 UrhoSurface
 
 UrhoSharp 可以托管在`ContentPage`其他 Xamarin.Forms 控件一样。
 所示的代码段`UrhoSurface`添加到 Xamarin.Forms 页面：
@@ -122,7 +122,7 @@ public class UrhoPage : ContentPage
 
 <a name="3"/>
 
-### <a name="3-build-a-urho-application"></a>3.生成 Urho 应用程序
+### <a name="3-build-a-urho-application"></a>3. 生成 Urho 应用程序
 
 请参阅`Charts`的此示例中使用 Urho 3D 图形的实现。 基本代码大纲显示下面-请注意，此类实现`Urho.Application`到不同`Xamarin.Forms.Application`类中实现**App.cs**。
 
@@ -151,7 +151,7 @@ namespace FormsSample
 
 <a name="4"/>
 
-### <a name="4-add-the-charts-class-to-the-urhosurface"></a>4.将图表类添加到 UrhoSurface
+### <a name="4-add-the-charts-class-to-the-urhosurface"></a>4. 将图表类添加到 UrhoSurface
 
 使用`UrhoSurface.Show<T>`泛型方法添加到 Xamarin.Forms 页面 Urho 应用程序。 下面的代码段演示创建所需的附加代码`Charts`类：
 
@@ -171,7 +171,7 @@ public class UrhoPage : ContentPage
 
 <a name="5"/>
 
-### <a name="5-interacting-with-urhosharp"></a>5.交互使用 UrhoSharp
+### <a name="5-interacting-with-urhosharp"></a>5. 与 UrhoSharp 交互
 
 该示例允许图表条来选择和修改。 `Charts`类公开`Bars`和`SelectedBar`若要启用这种交互。
 
@@ -220,7 +220,7 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 
 在动画[页面顶部](#what-is-urhosharp)显示运行的示例。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 此页显示了如何使用 UrhoSharp 将三维数据可视化效果添加到 Xamarin.Forms。 读取[UrhoSharp 文档](~/graphics-games/urhosharp/index.md)有关如何生成可以使用如上所示的方法的 Xamarin.Forms 应用中包含的 Urho 场景的详细信息。
 

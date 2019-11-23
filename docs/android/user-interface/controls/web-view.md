@@ -20,7 +20,7 @@ ms.locfileid: "73029023"
 
 创建名为**HelloWebView**的新项目。
 
-打开**Resources/Layout/main.axml**并插入以下内容：
+打开 **Resources/Layout/Main.axml** 并插入以下代码：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -93,11 +93,11 @@ protected override void OnCreate (Bundle bundle)
 ```
 
 这会将成员[`WebView`](xref:Android.Webkit.WebView)与[`Activity`](xref:Android.App.Activity)布局中的成员进行初始化，并为[`WebView`](xref:Android.Webkit.WebView) [`JavaScriptEnabled`](xref:Android.Webkit.WebSettings.JavaScriptEnabled)
-`= true` 启用 Javascript （请参阅[从 JavaScript 食谱调用 C\#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)有关如何从 JavaScript 调用 C\# 函数的信息）。 最后，将加载一个初始网页，其中包含[`LoadUrl(String)`](xref:Android.Webkit.WebView)。
+`= true` 启用 JavaScript （有关如何从 javascript 调用 c\# 函数的信息，请参阅[从 javascript 食谱调用 c\#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) ）。 最后，将加载一个初始网页，其中包含[`LoadUrl(String)`](xref:Android.Webkit.WebView)。
 
 生成并运行应用。 应会看到一个简单的网页查看器应用，如以下屏幕截图所示：
 
-[显示 Web 视图的应用的![示例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
+[显示 Web 视图的应用的 ![示例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 若要处理 "**后退**" 按钮按键，请添加以下 using 语句：
 
@@ -124,7 +124,7 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 
 再次运行该应用程序。 现在应可以跟踪链接，并在页面历史记录中导航回来：
 
-[操作中 "后退" 按钮的![示例屏幕截图](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
+[操作中 "后退" 按钮的 ![示例屏幕截图](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 *此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改，并根据*
 [*创造性 Commons 2.5 归属许可证*](https://creativecommons.org/licenses/by/2.5/)中所述的术语使用。
@@ -132,5 +132,5 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 ## <a name="related-links"></a>相关链接
 
 - [从 JavaScript 调用 C#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
-- [Webkit](xref:Android.Webkit.WebView)
+- [Android.Webkit.WebView](xref:Android.Webkit.WebView)
 - [KeyEvent](xref:Android.Webkit.WebView)

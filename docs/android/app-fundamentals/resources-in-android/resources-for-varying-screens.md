@@ -112,7 +112,7 @@ Android 会在运行时将绘图扩展到适当大小。
 
 - **10 个 "tablet** &ndash; 720 Dp： Motorola Xoom
 
-对于面向最多为12（Android 3.1）的 API 级别的应用程序，这些布局应在使用限定符**小规模**/**常规**/**大型**/**加大**的目录中进行，作为各个屏幕的归纳大多数设备中的可用大小。 例如，在下图中，有四种不同屏幕大小的备用资源：
+对于面向最多为12（Android 3.1）的 API 级别的应用程序，这些布局应在使用限定符**小规模**/**常规**/**大型**/**加大**的目录中，这是大多数设备中提供的各种屏幕大小的泛化。 例如，在下图中，有四种不同屏幕大小的备用资源：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -163,7 +163,7 @@ API 级别13和更高版本中更新的屏幕大小限定符的优先级高于 A
 
 创建各种密度的位图可能有点枯燥。 因此，Google 创建了一个联机实用工具，可减少创建这些称为[**Android 资产工作室**](https://romannurik.github.io/AndroidAssetStudio/)的位图所涉及的一些麻烦。
 
-[![Android 资产工作室](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
+[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 此网站通过提供一个图像帮助创建面向四个常见屏幕密度的位图。 然后，Android 资产工作室将创建包含某些自定义项的位图，并允许将它们下载为 zip 文件。
 
@@ -178,9 +178,9 @@ Android 在非常惊人数量的设备上运行，屏幕大小和屏幕密度的
 - 尽可能**避免**使用[AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) **
   &ndash;** 在 API 级别3（Android 1.5）中弃用，并将导致脆弱布局。 不应使用此方法。 相反，尝试使用更灵活的布局小组件，例如[**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)或新的[**GridLayout**](xref:Android.Widget.GridLayout)。
 
-- **选择一种布局方向作为默认**&ndash; 例如，而不是提供备用资源**布局-土地**和**布局端口**，将资源用于**布局**，将纵向资源置于**布局-端口**。
+- **选择一种布局方向作为默认**&ndash; 例如，而不是提供备用资源**布局-土地**和**布局端口**，将资源用于**布局**，将纵向资源置于**布局端口**。
 
-- **使用 LayoutParams 作为高度和宽度**-在 XML 布局文件中定义 UI 元素时，使用**wrap_content**和**fill_parent**值的 Android 应用程序将获得更多成功，确保不同设备上的外观与使用像素或密度无关的单位。 这些维度值会使 Android 根据需要缩放位图资源。 出于此原因，在指定 UI 元素的边距和填充时，最好保留与密度无关的单位。
+- **使用 LayoutParams 作为高度和宽度**-在 XML 布局文件中定义 UI 元素时，使用**wrap_content**和**fill_parent**值的 Android 应用程序将更成功地确保与使用像素或密度无关的设备相比，在不同设备上获得正确的外观。 这些维度值会使 Android 根据需要缩放位图资源。 出于此原因，在指定 UI 元素的边距和填充时，最好保留与密度无关的单位。
 
 ## <a name="testing-multiple-screens"></a>测试多个屏幕
 

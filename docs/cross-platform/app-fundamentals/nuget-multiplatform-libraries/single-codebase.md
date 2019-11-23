@@ -73,7 +73,7 @@ NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 转换为共享项目后，请访问**项目选项 > NuGet 包 > 引用程序集**"
-[部分](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)，并确保已选择任何所需的配置文件（以便 NuGet 继续与它所处的项目兼容以前在中使用）。
+[部分](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)，并确保已选择任何所需的配置文件（以便 NuGet 继续与之前用于的项目兼容）。
 
 ## <a name="related-links"></a>相关链接
 

@@ -28,8 +28,8 @@ _Tizen .NET 允许开发 Tizen 应用程序以在 Samsung 设备上运行，包�
 
 ## <a name="documentation"></a>文档
 
-- [Xamarin. forms 文档](~/xamarin-forms/index.yml)&ndash; 如何构建具有C#和 Xamarin 的跨平台应用程序。
-- [**developer.tizen.org**](https://developer.tizen.org/development) @no__t 的文档和视频可帮助你构建和部署 tizen 应用程序。
+- [Xamarin. forms 文档](~/xamarin-forms/index.yml)&ndash; 如何生成具有C#和 Xamarin 的跨平台应用程序。
+- [**developer.tizen.org**](https://developer.tizen.org/development) &ndash; 文档和视频，帮助你构建和部署 tizen 应用程序。
 
 ## <a name="samples"></a>示例
 

@@ -119,7 +119,7 @@ ms.locfileid: "73025724"
 
 <a name="MM0071" />
 
-#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071：未知平台： *。 这通常表示 Xamarin 中的 bug;请使用测试用例在 https://bugzilla.xamarin.com 提交 bug 报告。
+#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071：未知平台： *。 这通常表示 Xamarin.Mac; 中的 bug在一个 bug 报告，请记录 https://bugzilla.xamarin.com 与测试用例。
 
 这通常表示 Xamarin 中的 bug;请使用测试用例在[https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)提交 bug 报告。
 
@@ -172,7 +172,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件，以利�
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099： {0}内部错误。 请使用测试用例（ https://bugzilla.xamarin.com) ）来提交 bug 报告。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099： {0}内部错误。 请提交 bug 报告与测试用例 ( https://bugzilla.xamarin.com)。
 
 <a name="MM0114" />
 
@@ -338,7 +338,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009：由 {0}引用。{1} @ no__t_2_\* 此消息与 MM2006 \*相关\*
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009：由 {0}引用。{1}\*\* 此消息与 MM2006 \*相关 \*
 
 <a name="MM2010" />
 
@@ -350,7 +350,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012：仅显示 {1} "引用者" {0} 的第一个。 \*\* 与 2009 \*相关的消息\*
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012：仅显示 {1} "引用者" {0} 的第一个。 \*\* 与 2009 \*相关的消息 \*
 
 <a name="MM2013" />
 
@@ -358,7 +358,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014： Xamarin Extension 不支持链接。 将忽略链接请求。 \*\* 此消息在 XM 3.6 + \*中已过时\*
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014： Xamarin Extension 不支持链接。 将忽略链接请求。 \*\* 此消息在 XM 3.6 + \*中已过时 \*
 
 <!-- 2015 used by mtouch -->
 
@@ -392,7 +392,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 链接器无法处理混合模式程序集。
 
-有关混合模式程序集的详细信息，请参阅 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 。
+请参阅 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 为混合模式程序集的详细信息。
 
 <a name="MM2106" />
 
@@ -517,11 +517,11 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 <a name="MM5204" />
 
-#### <a name="mm5204-invalid-architecture-x86_64-is-only-supported-on-non-classic-profiles"></a>MM5204：结构无效。 x86_64 仅在非经典配置文件上受支持。
+#### <a name="mm5204-invalid-architecture-x86_64-is-only-supported-on-non-classic-profiles"></a>MM5204：结构无效。 仅在非经典配置文件上支持 x86_64。
 
 <a name="MM5205" />
 
-#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x86_64-when---profilemobile"></a>MM5205：体系结构 "{0}" 无效。 有效的体系结构为 i386 和 x86_64 （when--profile = mobile）。
+#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x86_64-when---profilemobile"></a>MM5205：体系结构 "{0}" 无效。 有效的体系结构为 i386 和 x86_64 （当--profile = mobile 时）。
 
 <a name="MM5218" />
 
@@ -609,7 +609,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 #### <a name="mm8025-failed-to-compute-the-token-reference-for-the-type-typeassemblyqualifiedname-because-reasons"></a>MM8025：无法计算类型 "{type" 的令牌引用。AssemblyQualifiedName} "，因为 {原因}
 
-这表明 Xamarin 中的 bug。 请在[https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)提交 bug。
+这表明 Xamarin 中的 bug。 请提交在 bug [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)。
 
 一种可能的解决方法是禁用 `register-protocols` 优化，方法是将 `--optimize:-register-protocols` 作为附加的 mmp 参数传递到项目的 Mac 生成选项中。
 
@@ -617,6 +617,6 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>当动态注册器已链接在一起时，不支持 MM8026： *。
 
-这通常表示 Xamarin 中的 bug，因为如果需要，不应将动态注册器链接在一起。 请在[https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)提交 bug。
+这通常表示 Xamarin 中的 bug，因为如果需要，不应将动态注册器链接在一起。 请提交在 bug [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
 
 可以通过将 `--optimize=-remove-dynamic-registrar` 添加到项目的 Mac 生成选项中的其他 mmp 参数，强制链接器保留动态注册器。

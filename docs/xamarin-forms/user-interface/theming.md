@@ -29,8 +29,8 @@ Xamarin。窗体应用程序可以使用 `DynamicResource` 标记扩展在运行
 
 以下屏幕截图显示主题页面，其中包含使用浅色主题的 iOS 应用程序和使用深色主题的 Android 应用程序：
 
-在 ios 和 Android 上的主题应用的详细信息页的[![ios 和 android 
- 屏幕截图上的主题应用的主页屏幕截图](theming-images/main-page-both-themes.png "主题应用的主页")](theming-images/main-page-both-themes-large.png#lightbox "主题应用的主页")[![](theming-images/detail-page-both-themes.png "主题应用的详细信息页")](theming-images/detail-page-both-themes-large.png#lightbox "主题应用的详细信息页")
+在 ios 和 Android 上的主题应用的详细信息页的[![ios 和 android
+屏幕截图上的主题应用的主页屏幕截图](theming-images/main-page-both-themes.png "主题应用的主页")](theming-images/main-page-both-themes-large.png#lightbox "主题应用的主页") [ ![](theming-images/detail-page-both-themes.png "主题应用的详细信息页")](theming-images/detail-page-both-themes-large.png#lightbox "主题应用的详细信息页")
 
 ## <a name="define-themes"></a>定义主题
 
@@ -73,7 +73,7 @@ Xamarin。窗体应用程序可以使用 `DynamicResource` 标记扩展在运行
 每个[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)包含定义其各自主题[`Color`](xref:Xamarin.Forms.Color)资源，每个 `ResourceDictionary` 使用相同的键值。 有关资源字典的详细信息，请参阅[资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
 
 > [!IMPORTANT]
-> 每个 `ResourceDictionary` 都需要代码隐藏文件，这将调用 `InitializeComponent` 方法。 这是必需的，以便可以在运行时创建表示所选主题的 CLR 对象。
+> 每个 `ResourceDictionary`都需要代码隐藏文件，这将调用 `InitializeComponent` 方法。 这是必需的，以便可以在运行时创建表示所选主题的 CLR 对象。
 
 ## <a name="set-a-default-theme"></a>设置默认主题
 
@@ -183,7 +183,7 @@ Xamarin。窗体应用程序可以使用 `DynamicResource` 标记扩展在运行
 当在运行时选择主题时，应用程序应执行以下操作：
 
 1. 从应用程序中删除当前主题。 这是通过清除应用程序级别的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)的[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)属性来实现的。
-2. 加载选定的主题。 为此，可将所选主题的实例添加到应用程序级 `ResourceDictionary` 的 `MergedDictionaries` 属性。
+2. 加载选定的主题。 为此，可将所选主题的实例添加到应用程序级 `ResourceDictionary`的 `MergedDictionaries` 属性。
 
 使用 `DynamicResource` 标记扩展设置属性的任何[`VisualElement`](xref:Xamarin.Forms.VisualElement)对象将应用新的主题值。 出现这种情况的原因是 `DynamicResource` 标记扩展维护了字典键的链接。 因此，当替换与键关联的值时，所做的更改将应用于 `VisualElement` 的对象。
 

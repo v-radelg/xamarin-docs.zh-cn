@@ -16,7 +16,7 @@ ms.locfileid: "73022351"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin 和 Xamarin 中的 NSString
 
-Xamarin 和 Xamarin 的设计都调用使用 API 来公开本机 .NET 字符串类型（`string`），以便为中C#的字符串操作和其他 .net 编程语言公开字符串，并将字符串公开为 API 公开的数据类型，而不是 数据类型 `NSString`。
+Xamarin 和 Xamarin 的设计都调用使用 API 来公开本机 .NET 字符串类型（`string`），以便为中C#的字符串操作和其他 .net 编程语言公开字符串，并将字符串公开为 API 公开的数据类型，而不是 `NSString` 的数据类型。
 
 这意味着开发人员无需保留用于在特殊类型（`Foundation.NSString`）中调用 Xamarin & Xamarin API （统一）的字符串，而是可以继续使用 Mono 的 `System.String` 执行所有操作，并在每次Xamarin 或 Xamarin 需要字符串，API 绑定负责封送处理信息。
 
@@ -36,7 +36,7 @@ class UILabel {
 
 在后台，此属性的实现将C#字符串封送到`NSString`中，并以与目标 C 相同的方式调用`objc_msgSend`方法。
 
-有少量的第三方目标 C Api 不使用 `NSString`，而是使用 C 字符串（"*char*"）。 在这些情况下，你仍可以使用C#字符串数据类型，但你必须使用[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)属性来通知绑定生成器，不应将此字符串作为`NSString`封送，而应改为 C 字符串。
+有少量的第三方目标 C Api 不使用 `NSString`，而是使用 C 字符串（"*char*"）。 在这些情况下，你仍可以使用C#字符串数据类型，但你必须使用[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)属性来通知绑定生成器，不应将此字符串作为 `NSString`封送，而应改为 C 字符串。
 
  <a name="Exceptions_to_the_Rule" />
 

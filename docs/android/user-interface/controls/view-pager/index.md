@@ -53,13 +53,13 @@ _ViewPager 是一个布局管理器，可用于实现 gestural 导航。Gestural
 
 `ViewPager` 是一种布局管理器，它一次显示一个 `View`的集合。 其工作是检测用户的轻扫手势，并根据需要导航到下一个或上一个视图。 例如，下面的屏幕快照演示了一个 `ViewPager` 在响应用户手势时，将从一个图像过渡到下一个图像： 
 
-[显示视图之间转换的特写 TreePager 应用程序![](images/02-transition-sml.png)](images/02-transition.png#lightbox)
+[显示视图之间转换的特写 TreePager 应用程序 ![](images/02-transition-sml.png)](images/02-transition.png#lightbox)
 
 ### <a name="adapter"></a>适配器
 
 `ViewPager` 从*适配器*提取其数据。 适配器的作业是创建 `ViewPager`显示的 `View`，并根据需要提供这些凭据。 下图说明了 &ndash; 适配器创建和填充 `View`的这一概念，并将其提供给 `ViewPager`。 当 `ViewPager` 检测到用户的轻扫手势时，它会要求适配器提供要显示的相应 `View`： 
 
-[阐释适配器如何将图像和名称连接到 ViewPager 的![关系图](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
+[阐释适配器如何将图像和名称连接到 ViewPager 的 ![关系图](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
 
 在此特定示例中，每个 `View` 在传递到 `ViewPager`之前都是从树映像和树名称构造的。 
 
@@ -67,9 +67,9 @@ _ViewPager 是一个布局管理器，可用于实现 gestural 导航。Gestural
 
 `ViewPager` 可用于显示大型数据集（例如，图像库可能包含数百个图像）。 为了帮助用户导航大型数据集，`ViewPager` 通常附带一个显示字符串的*页导航指示器*。 字符串可能是图像标题、标题或只是当前视图在数据集中的位置。 
 
-可以通过两种视图为你生成此导航信息： `PagerTabStrip` 和 `PagerTitleStrip.` 每个都在 `ViewPager`的顶部显示一个字符串，每个视图从 `ViewPager`的适配器中提取其数据，以使其始终与当前显示的 @no__t_ 保持同步4_ . 它们之间的区别在于 `PagerTabStrip` 包含 "当前" 字符串的可视指示器，而 `PagerTitleStrip` 不能（如以下屏幕截图中所示）： 
+可以通过两种视图为你生成此导航信息： `PagerTabStrip` 和 `PagerTitleStrip.` 每个视图都在 `ViewPager`的顶部显示一个字符串，每个视图从 `ViewPager`的适配器中提取其数据，以使其始终与当前显示的 `View`保持同步。 它们之间的区别在于 `PagerTabStrip` 包含 "当前" 字符串的可视指示器，而 `PagerTitleStrip` 不能（如以下屏幕截图中所示）： 
 
-[通过 PagerTitleStrip 和 PagerTabStrip![TreePager 应用程序的屏幕快照](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
+[通过 PagerTitleStrip 和 PagerTabStrip ![TreePager 应用程序的屏幕快照](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
 
 本指南演示了如何 immplement `ViewPager`、适配器和指标应用组件，并将它们集成以支持 gestural 导航。 
 

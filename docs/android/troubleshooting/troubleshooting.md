@@ -19,7 +19,7 @@ ms.locfileid: "73026593"
 ## <a name="getting-diagnostic-information"></a>获取诊断信息
 
 在追踪各种 bug 时，Xamarin 有一些需要注意的地方。
-这些方法包括：
+其中包括:
 
 1. 诊断 MSBuild 输出。
 2. 设备部署日志。
@@ -84,12 +84,12 @@ Xamarin 支持以下系统属性：
 - *debug.exe. env*：在初始化 mono*之前*，要在应用程序启动过程中导出的环境变量（" *|* "）列表。 这允许设置控制 mono 日志记录的环境变量。
 
   > [!NOTE]
-  > 由于值是 " *|* " 分隔的，因此值必须具有额外的引号，因为 \`*adb shell*\` 命令将删除一组引号。
+  > 由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
 
   > [!NOTE]
   > Android 系统属性值的长度不能超过92个字符。
 
-  示例:
+  例如：
 
   ```
   adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
@@ -209,7 +209,7 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 - 弱全局引用创建：这是以 *+ w +* 开头的行。
 - 弱全局引用析构：这是以 *-w*开头的行。
 
-在所有消息中， *grefc*值是 xamarin 创建的全局引用计数，而*Grefwc*值是 xamarin 创建的弱全局引用的计数。 *句柄*或*obj 句柄*值为 JNI 句柄值，而 " */* " 后面的字符是句柄值的类型： */l*用于本地引用， */g*表示全局引用， */w*表示弱全局参考.
+在所有消息中， *grefc*值是 xamarin 创建的全局引用计数，而*Grefwc*值是 xamarin 创建的弱全局引用的计数。 *句柄*或*obj 句柄*值为 JNI 句柄值，而 " */* " 后面的字符是句柄值的类型： */l*用于本地引用， */g*表示全局引用， */w*表示弱全局引用。
 
 作为 GC 过程的一部分，全局引用（+ g +）将转换为弱全局引用（导致 + w + 和-g-），然后将启动 Java 端 GC，然后检查弱全局引用以查看是否收集了该全局引用。 如果它仍处于活动状态，则将围绕弱引用（+ g +，-w-）创建一个新的 gref，否则弱引用将被销毁（-w）。
 
@@ -279,7 +279,7 @@ Xamarin 支持多个设备 Abi： *armeabi*、 *armeabi*和*x86*。 可以在**�
 Google 提供了2个适用于 Windows 的 Android SDK 下载。
 如果选择 .exe 安装程序，它将写入注册表项，告诉 Xamarin 安装它的位置。 如果选择 .zip 文件并自行解压缩，则 Xamarin 不知道在何处查找 SDK。 可以通过转到 "**工具" > 选项 "> xamarin > Android" 设置**，告诉 Xamarin Visual Studio 中的 SDK：
 
-[Xamarin Android 设置中的![Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[Xamarin Android 设置中的 ![Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 ## <a name="ide-does-not-display-target-device"></a>IDE 不显示目标设备
 
@@ -306,7 +306,7 @@ HTC 同步软件可能会阻止**adb 启动服务器**正常工作。 如果**ad
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid 或 aresgen 已退出，代码为1
 
-若要帮助你调试此问题，请转到 Visual Studio 并更改 MSBuild 详细级别。为此，请选择 "**工具" > 选项 > 项目**和**解决方案 > 生成**并**运行 > MSBuild 项目生成输出详细级别**并设置此值为**正常值**。
+若要帮助你调试此问题，请转到 Visual Studio 并更改 MSBuild 详细级别。为此，请选择 "**工具" > 选项 "> 项目**和**解决方案" > 生成**并**运行 > MSBuild 项目生成输出详细级别**，并将此值设置为 "**正常**"。
 
 重新生成并检查 Visual Studio 的输出窗格，该窗格应该包含完整的错误。
 
@@ -464,7 +464,7 @@ mAdapter = new SimpleExpandableListAdapter (
 );
 ```
 
-问题在于，Xamarin 未能正确地封送嵌套的泛型类型。 `List<IDictionary<string, object>>` 将被封送到[ArrrayList](xref:Java.Util.ArrayList)，但 `ArrayList` 包含 `mono.android.runtime.JavaObject` 实例（引用 `Dictionary<string, object>` 实例），而不是实现[util](xref:Java.Util.IMap)的实例，导致以下内容异常
+问题在于，Xamarin 未能正确地封送嵌套的泛型类型。 `List<IDictionary<string, object>>` 将被封送到  [java.lang.ArrrayList](xref:Java.Util.ArrayList), 但`ArrayList`包含`mono.android.runtime.JavaObject`实例 (引用`Dictionary<string, object>`实例), 而不是实现 [java.util.Map](xref:Java.Util.IMap) 的内容。 导致以下异常:
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -627,7 +627,7 @@ E/dalvikvm(  602): VM aborting
 
 在上面的示例中（顺便说一下，它来自[bug 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)），问题在于 Android 太多。正在创建点实例;请参阅[comment \#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2)以获取此特定错误的修补程序列表。
 
-通常，一种有用的解决方案是查找哪个类型的实例分配的实例过多 &ndash; Android. &ndash; 在上述转储中，然后查找在源代码中创建它们的位置，并相应地对其进行处置（使其 Java 对象生存期为缩短）。 这并不总是合适（\#685215 是多线程的，因此，普通解决方案可避免 Dispose 调用），但这是要考虑的第一件事。
+通常，一种有用的解决方案是查找哪个类型的实例分配的实例过多 &ndash; Android. &ndash; 在上述转储中，然后查找在源代码中创建它们的位置，并对它们进行相应的处理（以便缩短其 Java 对象生存期）。 这并不总是合适（\#685215 是多线程的，因此，普通解决方案可避免 Dispose 调用），但这是要考虑的第一件事。
 
 可以启用[GREF 日志记录](~/android/troubleshooting/index.md)，以查看 GREFs 的创建时间和存在的时间。
 

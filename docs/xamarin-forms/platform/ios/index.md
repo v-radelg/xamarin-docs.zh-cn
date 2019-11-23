@@ -33,8 +33,8 @@ ms.locfileid: "72170947"
 - 设置[`Cell`](xref:Xamarin.Forms.Cell)背景色。 有关详细信息，请参阅[iOS 上的单元格背景色](cell-background-color.md)。
 - 确保输入的文本适合[ `Entry` ](xref:Xamarin.Forms.Entry)通过调整字体大小。 有关详细信息，请参阅[iOS 上的输入字体大小](entry-font-size.md)。
 - 在中设置的游标颜色[ `Entry` ](xref:Xamarin.Forms.Entry)。 有关详细信息，请参阅[iOS 上的入口游标颜色](entry-cursor-color.md)。
-- 控制在滚动期间[@no__t 1](xref:Xamarin.Forms.ListView)标头单元格是否浮动。 有关详细信息，请参阅[iOS 上的 ListView 组标头样式](listview-group-header-style.md)。
-- 控制在更新[@no__t 1](xref:Xamarin.Forms.ListView)项集合时是否禁用行动画。 有关详细信息，请参阅[在 iOS 上 ListView 行动画](listview-row-animations.md)。
+- 控制是否[`ListView`](xref:Xamarin.Forms.ListView)标题单元在滚动过程中浮动。 有关详细信息，请参阅[iOS 上的 ListView 组标头样式](listview-group-header-style.md)。
+- 控制在更新[`ListView`](xref:Xamarin.Forms.ListView)项集合时是否禁用行动画。 有关详细信息，请参阅[在 iOS 上 ListView 行动画](listview-row-animations.md)。
 - 设置分隔符样式[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[iOS 上的 ListView 分隔符样式](listview-separator-style.md)。
 - 控制当项选择发生在[ `Picker` ](xref:Xamarin.Forms.Picker)。 有关详细信息，请参阅[iOS 上的选取器项目选择](picker-selection.md)。
 - 启用[ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)属性可以通过点击对一个位置上设置[ `Slider` ](xref:Xamarin.Forms.Slider)栏中，而不是按无需将`Slider`thumb。 有关详细信息，请参阅[滚动条上](slider-thumb.md)的滚动条。
@@ -54,7 +54,7 @@ ms.locfileid: "72170947"
 
 - 控制是否[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)处理触摸手势或将其传递给其内容。 有关详细信息，请参阅[ScrollView 内容涉及 iOS](scrollview-content-touches.md)。
 
-以下特定于平台的功能在 iOS 上为 Xamarin [`Application`](xref:Xamarin.Forms.Application)类提供：
+在 iOS 上，为 Xamarin [`Application`](xref:Xamarin.Forms.Application)类提供以下特定于平台的功能：
 
 - 禁用命名字体大小的辅助功能缩放。 有关详细信息，请参阅[iOS 上命名字体大小的辅助功能缩放](named-font-size-scaling.md)。
 - 启用控件的布局和呈现要在主线程上执行更新。 有关详细信息，请参阅[iOS 上的主线程控制更新](main-thread-updates-ui.md)。
@@ -64,7 +64,7 @@ ms.locfileid: "72170947"
 
 Xamarin 可以设置跨平台用户界面样式和颜色，但也可以使用 iOS 项目中的平台 Api 来设置 iOS 主题。
 
-[阅读](formatting.md)有关使用 IOS 特定 api 设置用户界面格式的详细信息，如**info.plist**配置和 `UIAppearance` api。
+[阅读](formatting.md)有关使用 IOS 特定 api 设置用户界面格式的详细信息，如**info.plist**配置和 `UIAppearance` API。
 
 ![](images/status-white-sml.png "iOS 主题")
 

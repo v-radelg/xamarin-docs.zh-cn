@@ -168,7 +168,7 @@ AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录，并
 执行以下操作来修改应用程序的 `AppDelegate` 并添加所需的代码：
 
 1. 双击解决方案资源管理器中的 `AppDelegate.cs` 文件，将其打开进行编辑。
-1. 将以下 using 语句添加到文件顶部：
+1. 将下列 using 语句添加到文件顶部：
 
     ```csharp
     using System;
@@ -264,7 +264,7 @@ AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录，并
     }
     ```
 
-1. 保存对该文件所做的更改。
+1. 保存对文件所做的更改。
 
 完成此代码后，可以轻松实现手动照相机控制来进行试验和测试。
 
@@ -330,11 +330,11 @@ iOS 7 及更早版本，通过 `FocusMode`属性提供现有焦点控件，如�
 
 为了实现上述功能，已将 `AVCaptureDevice` 类修改为包含一个只读 `LensPosition` 属性，该属性用于获取相机镜头的当前位置。
 
-若要手动控制镜头位置，捕获设备必须处于锁定的焦点模式。 示例:
+若要手动控制镜头位置，捕获设备必须处于锁定的焦点模式。 例如：
 
  `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
 
-捕获设备的 `SetFocusModeLocked` 方法用于调整照相机镜头的位置。 在更改生效时，可以提供可选的回调例程来获取通知。 示例:
+捕获设备的 `SetFocusModeLocked` 方法用于调整照相机镜头的位置。 在更改生效时，可以提供可选的回调例程来获取通知。 例如：
 
 ```csharp
 ThisApp.CaptureDevice.LockForConfiguration(out Error);
@@ -1117,7 +1117,7 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 实现了两个新类来处理设置：
 
 - `AVCaptureAutoExposureBracketedStillImageSettings` –它有一个属性，`ExposureTargetBias`用于设置自动曝光支架的偏差。
-- `AVCaptureManual` @ no__t_1_ –它有两个属性，`ExposureDuration` 和 `ISO`，用于为手动曝光支架设置快门速度和 ISO。
+- `AVCaptureManual``ExposureBracketedStillImageSettings`-它具有两个属性，`ExposureDuration` 和 `ISO`，用于为手动曝光支架设置快门速度和 ISO。
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>用括号括起来的捕获控件
 
@@ -1315,7 +1315,7 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 
 上面的代码演示了如何在 iOS 8 中配置和采用自动曝光包含的捕获。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本文中，我们介绍了 iOS 8 提供的新手动摄像头控制，并介绍了其功能及其工作原理的基础知识。 我们提供了手动重点、手动曝光和人工白平衡的示例。 最后，我们提供了一个示例，其中使用前面讨论过的手动照相机控件
 

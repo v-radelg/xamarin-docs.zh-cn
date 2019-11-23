@@ -16,7 +16,7 @@ ms.locfileid: "71679966"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内容和一起使用C#代码隐藏文件。_
 
@@ -106,7 +106,7 @@ _XAML 在 Xamarin.Forms 应用程序中，主要用于定义页面的可视内�
 </ContentPage>
 ```
 
-这两个 XML 命名`xmlns`空间（）声明引用了 uri、第一个看起来是 Xamarin 网站上的第二个和第二个。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
+这两个 XML 命名空间（`xmlns`）声明引用了 Uri、第一个看起来是 Xamarin 网站上的第二个和第二个。 不去费神检查哪些这些 Uri 指向。 不存在。 它们是只需通过 Xamarin 和 Microsoft 所拥有的 Uri 和他们基本上充当版本标识符。
 
 第一个 XML 命名空间声明意味着在没有任何前缀的 XAML 文件中定义的标记如指在 Xamarin.Forms 中，类`ContentPage`。 第二个命名空间声明定义前缀为`x`。 这使用多个元素和属性的 XAML 中的内部本身和它们支持 XAML 的其他实现。 但是，这些元素和属性是略有不同，具体取决于嵌入在 URI 中的年份。 Xamarin.Forms 支持 2009 XAML 规范，但它不是所有。
 
@@ -145,7 +145,7 @@ namespace XamlSamples
 
 编译和运行此程序时`Label`元素出现在页面的中心，如 XAML 所示：
 
-[![默认的 Xamarin。窗体显示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
+[![默认 Xamarin。窗体显示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 对于更有趣的视觉对象，你只需进行更多有趣的 XAML。
 
@@ -153,7 +153,7 @@ namespace XamlSamples
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要将其他基于 XAML @no__t 的类添加到项目中，请选择 " **XamlSamples** " .NET Standard 库项目，右键单击，然后选择 "**添加 > 新项 ...** "。在 "**添加新项**" 对话框中，选择 "**可视C#项" > Xamarin. Forms > 内容页**（而不是**内容页（C#）** ，它创建仅限代码的页或**内容视图**，不是页面）。 例如，为页面提供一个名称， **HelloXamlPage**:
+若要将其他基于 XAML 的 `ContentPage` 类添加到项目中，请选择 " **XamlSamples** " .NET Standard 库项目，右键单击，然后选择 "**添加 > 新项 ...** "。在 "**添加新项**" 对话框中，选择 "**可视C#项" > Xamarin. Forms > 内容页**（而不是**内容页（C#）** ，它创建仅限代码的页或**内容视图**，不是页面）。 例如，为页面提供一个名称， **HelloXamlPage**:
 
 !["添加新项" 对话框](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
@@ -207,9 +207,9 @@ namespace XamlSamples
 
 另请注意，`Title`特性已设置的根标记。
 
-此时，类、属性和 XML 之间的关系应该是显而易见的：Xamarin 类（如`ContentPage`或`Label`）作为 XML 元素出现在 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
+在此期间，类、 属性和 XML 之间的关系应该很明显： Xamarin.Forms 类 (如`ContentPage`或`Label`) 出现在 XML 元素 XAML 文件中。 该类的属性，包括`Title`上`ContentPage`和七个属性的`Label`— 通常显示为 XML 属性。
 
-多个快捷方式存在以便为设置这些属性的值。 某些属性是基本数据类型：例如`Title` ， `true`和`Double`属性的类型为，`IsVisible`并且为类型，并且（默认情况下，在此处设置为仅用于说明）的类型为`Rotation` `String` `Text` `Boolean`.
+多个快捷方式存在以便为设置这些属性的值。 有些属性是基本数据类型： 例如，`Title`和`Text`属性属于类型`String`，`Rotation`的类型`Double`，和`IsVisible`(这是`true`默认情况下，仅为此处设置图） 的类型是`Boolean`。
 
 `HorizontalTextAlignment`属性属于类型`TextAlignment`，这是一个枚举。 对于任何枚举类型的属性，只需提供有成员名称。
 
@@ -324,7 +324,7 @@ public MainPage()
 
 但是，您很可能要考虑此应用程序是在功能上不足之处。 也许`Slider`应该会导致`Label`若要显示的当前值和`Button`可能用于执行一些在程序中操作。
 
-正如您将看到在[第 4 部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)，显示的作业`Slider`值使用`Label`包含数据绑定可以完全在 XAML 中处理。 但首先看到的代码解决方案很有用。 即便如此，处理`Button`单击绝对需要的代码。 这意味着的代码隐藏文件`XamlPlusCodePage`必须包含的处理程序`ValueChanged`的事件`Slider`并且`Clicked`的事件`Button`。 让我们添加它们：
+如[第4部分所示。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)：使用 `Label` 显示 `Slider` 值的作业可以通过数据绑定完全在 XAML 中进行处理。 但首先看到的代码解决方案很有用。 即便如此，处理`Button`单击绝对需要的代码。 这意味着的代码隐藏文件`XamlPlusCodePage`必须包含的处理程序`ValueChanged`的事件`Slider`并且`Clicked`的事件`Button`。 让我们添加它们：
 
 ```csharp
 namespace XamlSamples
@@ -411,7 +411,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 首次运行该程序时`Label`不会显示`Slider`值，因为`ValueChanged`尚未尚未触发事件。 但任何操作`Slider`导致要显示的值：
 
-[![显示的滑块值](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
+[显示 ![滑块值](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
 
 现在为`Button`。 我们来模拟的响应`Clicked`通过显示的警报事件`Text`的按钮。 事件处理程序可以安全地强制转换`sender`自变量`Button`，然后访问其属性：
 
@@ -449,14 +449,14 @@ public partial class XamlPlusCodePage : ContentPage {
 
 可以自由。 它是您的页面，并且 XAML 是仅用于生成其内容的工具。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-使用这个简介中，您已了解到某个类定义，如何影响 XAML 文件和代码文件和 XAML 和代码的文件如何交互。 但是，XAML 还具有其自己独特的语法功能，使其能够以非常灵活的方式使用。 你可以开始浏览这些[第 2 部分。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
+使用这个简介中，您已了解到某个类定义，如何影响 XAML 文件和代码文件和 XAML 和代码的文件如何交互。 但是，XAML 还具有其自己独特的语法功能，使其能够以非常灵活的方式使用。 你可以在第2部分中开始浏览这些项[。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [第 2 部分：基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [第 3 部分：XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第 4 部分：数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [第 5 部分：从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [第2部分。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第3部分。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第4部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [第5部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

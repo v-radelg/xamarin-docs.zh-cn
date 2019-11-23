@@ -21,7 +21,7 @@ ms.locfileid: "73029165"
 
 在本教程的第一部分中，你将创建一个简单的微调小组件，用于显示行星列表。 选择了地球后，toast 消息会显示所选项目：
 
-[HelloSpinner 应用的![示例屏幕截图](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[HelloSpinner 应用的 ![示例屏幕截图](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 启动名为**HelloSpinner**的新项目。
 
@@ -190,7 +190,7 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 运行应用程序;toast 应如下所示：
 
-[显示温度的行星选择的![示例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
+[显示温度的行星选择的 ![示例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
 
 ## <a name="resources"></a>资源
 

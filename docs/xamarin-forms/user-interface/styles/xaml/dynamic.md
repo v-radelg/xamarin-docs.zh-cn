@@ -17,9 +17,9 @@ ms.locfileid: "70228190"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的动态样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_样式，不要响应属性更改和应用程序的持续时间内保持不变。例如，分配到可视元素，如果其中一个 Setter 实例修改、 删除或添加新的资源库实例的一种样式后, 所做的更改不会应用到可视元素。但是，应用程序可以响应在运行时动态样式更改通过使用动态资源。_
+_样式不会对属性更改做出响应，并在应用程序持续时间内保持不变。例如，在将样式分配给视觉对象后，如果修改、删除或添加了新的 Setter 实例，则不会将更改应用于可视元素。但是，应用程序可以使用动态资源在运行时动态响应样式更改。_
 
 `DynamicResource`标记扩展是类似于`StaticResource`都使用字典键提取从值中的标记扩展[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 然而，尽管`StaticResource`执行单个字典查找，`DynamicResource`维护字典键的链接。 因此，如果替换与键关联的字典条目，更改将应用到可视元素。 这样，在应用程序中进行的运行时样式更改。
 
