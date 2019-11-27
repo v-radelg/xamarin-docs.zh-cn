@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: 9f490bec121481d9f3f661913d8aefcef999bb4a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c9a0eee2779aa392cb2049b5518b6f30b7f05abc
+ms.sourcegitcommit: 58a08133496df53a639a82a7f672724220c57fd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016973"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540398"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin 中的广播接收器
 
@@ -29,7 +29,7 @@ Android 标识广播的两种类型：
 
 广播接收器是 `BroadcastReceiver` 类型的子类，必须重写[`OnReceive`](xref:Android.Content.BroadcastReceiver.OnReceive*)方法。 Android 将在主线程上执行 `OnReceive`，因此应将此方法设计为快速执行。 在 `OnReceive` 中生成线程时应格外小心，因为在方法完成时，Android 可能会终止进程。 如果广播接收方必须执行长时间运行的工作，则建议使用 `JobScheduler` 或_Firebase 作业调度_程序来计划_作业_。 使用作业计划工作将在单独的指南中讨论。
 
-使用_意向筛选器_注册广播接收器，以便 Android 可以正确路由消息。 可以在运行时指定意向筛选器（这有时称为_上下文注册的接收方_或_动态注册_），也可以在 Android 清单中静态定义（由_清单注册的接收方_）。 Xamarin 提供了一个C#用于静态注册意向筛选器的属性`IntentFilterAttribute`（本指南稍后将对此进行更详细的讨论）。 从 Android 8.0 开始，应用程序无法静态注册隐式广播。
+使用_意向筛选器_注册广播接收器，以便 Android 可以正确路由消息。 可以在运行时指定意向筛选器（这有时称为_上下文注册的接收方_或_动态注册_），也可以在 Android 清单中静态定义（由_清单注册的接收方_）。 Xamarin 提供了一个C#用于静态注册意向筛选器的属性 `IntentFilterAttribute`（本指南稍后将对此进行更详细的讨论）。 从 Android 8.0 开始，应用程序无法静态注册隐式广播。
 
 清单注册的接收方和上下文注册的接收方之间的主要区别在于，上下文注册的接收方将仅在应用程序运行时响应广播，而清单注册的接收方可以响应即使应用程序未运行也进行广播。  
 
@@ -112,19 +112,19 @@ public class MainActivity: Activity
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-        receiver = new MySampleBroadcastReceiver()
+        receiver = new MySampleBroadcastReceiver();
 
         // Code omitted for clarity
     }
 
-    protected override OnResume() 
+    protected override void OnResume() 
     {
         base.OnResume();
         RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
         // Code omitted for clarity
     }
 
-    protected override OnPause() 
+    protected override void OnPause() 
     {
         UnregisterReceiver(receiver);
         // Code omitted for clarity
