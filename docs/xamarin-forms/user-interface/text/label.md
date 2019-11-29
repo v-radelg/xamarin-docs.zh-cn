@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
-ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
-ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
+ms.openlocfilehash: d47146c90635084a4974cfa0c7dcb142ac918788
+ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980876"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74556180"
 ---
 # <a name="xamarinforms-label"></a>Xamarin 标签
 
@@ -76,7 +76,7 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 
 需要特别注意，以确保每个平台的颜色都可用。 由于每个平台对于文本和背景色都具有不同的默认值，因此，需要小心选取每个平台的默认值。
 
-下面的 XAML 示例设置 `Label` 的文本颜色：
+下面的 XAML 示例设置 `Label`的文本颜色：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -114,7 +114,7 @@ public partial class LabelPage : ContentPage
 
 ## <a name="fonts"></a>字体
 
-有关在 `Label` 上指定字体的详细信息，请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)。
+有关在 `Label`上指定字体的详细信息，请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)。
 
 <a name="Truncation_and_Wrapping" />
 
@@ -133,8 +133,9 @@ public partial class LabelPage : ContentPage
 
 可以通过将 `Label.MaxLines` 属性设置为 `int` 值来指定[`Label`](xref:Xamarin.Forms.Label)显示的行数：
 
-- 当 `MaxLines` 为0时，`Label` 会考虑[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性的值，使其只显示一行（可能已截断）或包含所有文本的所有行。
-- 如果 `MaxLines` 为1，则结果与将[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性设置为[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)或[0](xref:Xamarin.Forms.LineBreakMode)完全相同。 但是，`Label` 将遵循省略号的位置（如果适用）的[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性的值。
+- 如果 `MaxLines` 为-1 （默认值），则 `Label` 会考虑[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性的值，以便只显示一行、可能被截断或包含所有文本的所有行。
+- 当 `MaxLines` 为0时，将不显示 `Label`。
+- 如果 `MaxLines` 为1，则结果与将[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性设置为[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)或[`TailTruncation`](xref:Xamarin.Forms.LineBreakMode)完全相同。 但是，`Label` 将遵循省略号的位置（如果适用）的[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性的值。
 - 当 `MaxLines` 大于1时，`Label` 将显示到指定的行数，同时遵循省略号的位置（如果适用）的[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性的值。 但是，如果将[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)属性设置为[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)，则将 `MaxLines` 属性设置为大于1的值将不起作用。
 
 下面的 XAML 示例演示如何设置[`Label`](xref:Xamarin.Forms.Label)上的 `MaxLines` 属性：
@@ -215,7 +216,7 @@ Label label = new Label
 `FormattedText` 属性的类型[`FormattedString`](xref:Xamarin.Forms.FormattedString)，它包含一个或多个[`Span`](xref:Xamarin.Forms.Span)实例，通过[`Spans`](xref:Xamarin.Forms.FormattedString.Spans)属性进行设置。 以下 `Span` 属性可用于设置视觉外观：
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) –跨度背景的颜色。
-- `CharacterSpacing` 类型 `double`，是 `Span` 文本的字符之间的间距。
+- `CharacterSpacing`，属于 `double` 类型，是 `Span` 文本字符之间的间距。
 - [`Font`](xref:Xamarin.Forms.Span.Font) –跨度中的文本的字体。
 - [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) –跨度中的文本的字体属性。
 - [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) –范围中的文本的字体所属的字体系列。
@@ -405,15 +406,14 @@ Label label = new Label
 
 有关填充的详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
-
 ## <a name="hyperlinks"></a>中超
 
 [`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)实例显示的文本可以通过以下方法转换为超链接：
 
 1. 设置[`Label`](xref:Xamarin.Forms.Label)或[`Span`](xref:Xamarin.Forms.Span)的 "`TextColor`" 和 "`TextDecoration`" 属性。
-1. 将[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)添加到[`Label`](xref:Xamarin.Forms.Label)或[`Span`](xref:Xamarin.Forms.Span)的[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)集合，其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)属性绑定到 0，其[2](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)属性包含要打开的 URL。
+1. 将[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)添加到[`Label`](xref:Xamarin.Forms.Label)或[`Span`](xref:Xamarin.Forms.Span)的[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)集合，其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)属性绑定到 `ICommand`，其[`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)属性包含要打开的 URL。
 1. 定义将由[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)执行的 `ICommand`。
-1. 编写 `ICommand` 将执行的代码。
+1. 编写 `ICommand`将执行的代码。
 
 以下从 "[超链接演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)" 示例获取的代码示例显示了从多个[`Span`](xref:Xamarin.Forms.Span)实例设置内容的[`Label`](xref:Xamarin.Forms.Label) ：
 
