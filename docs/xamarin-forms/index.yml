@@ -1,118 +1,232 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Xamarin.Forms
+### YamlMime:Hub
+title: Xamarin.Forms 文档
+summary: 通过 Xamarin.Forms，可使用面向 Android 和 iOS 等的移动设备、平板电脑和桌面形式规格的 .NET 跨平台 UI 工具包构建本机应用。
+brand: xamarin
 metadata:
-  description: Xamarin.Forms 为 .NET 开发人员提供一个完整的跨平台 UI 工具包，用于生成移动应用、平板电脑应用和桌面应用。
-  author: conceptdev
-  ms.author: crdun
-  ms.date: 04/22/2019
-  ms.topic: landing-page
-  ms.technology: xamarin-forms
-abstract:
-  description: 'Xamarin.Forms 为 .NET 开发人员提供一个完整的跨平台 UI 工具包。 在 Visual Studio 中使用 C# 生成完全本机的 Android、iOS 和通用 Windows 平台应用。'
-  menu:
+  title: Xamarin.Forms 文档
+  description: 通过 Xamarin.Forms，可使用面向 Android 和 iOS 等的移动设备、平板电脑和桌面形式规格的 .NET 跨平台 UI 工具包构建本机应用。
+  ms.topic: hub-page
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 11/06/2019
+  ms.openlocfilehash: a5289c5b1935ec133b0f823a7fbebe307a8606a6
+  ms.sourcegitcommit: 2dea02d0c7497cd5a5cbdce5a26ae33540d78dcc
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 11/27/2019
+  ms.locfileid: "74550086"
+highlightedContent:
+  items:
+  - title: 什么是 Xamarin.Forms？
+    itemType: overview
+    url: ~/get-started/what-is-xamarin-forms.md
+  - title: 查找示例
+    itemType: download
+    url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms
+  - title: 新增功能
+    itemType: whats-new
+    url: ~/whats-new/index.yml
+  - title: 提高你的移动开发技能
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?roles=developer&products=xamarin
+productDirectory:
+  title: 入门
+  summary: 了解如何在 Windows 和 macOS 上的 Visual Studio 中使用 C# 和 .NET 构建跨平台 Android 和 iOS 应用程序。
+  items:
+  - title: 入门
+    imageSrc: https://docs.microsoft.com//media/common/i_get-started.svg
+    links:
+    - url: ~/get-started/requirements.md
+      text: 要求
+    - url: ~/get-started/installation/index.md
+      text: 安装
+    - url: ~/get-started/first-app/index.md
+      text: 生成首个应用
+  - title: 查看教程
+    imageSrc: https://docs.microsoft.com//media/common/i_overview.svg
+    links:
+    - url: ~/get-started/tutorials/stacklayout/index.yml
+      text: 堆积布局
+    - url: ~/get-started/tutorials/label/index.yml
+      text: 标签
+    - url: ~/get-started/tutorials/button/index.yml
+      text: 按钮
+    - url: ~/get-started/tutorials/image/index.yml
+      text: 映像
+    - url: ~/get-started/tutorials/index.yml
+      text: 所有 Xamarin.Forms 教程
+  - title: 构建完整应用
+    imageSrc: https://docs.microsoft.com//media/common/i_mobile-app-developement.svg
+    links:
+    - url: ~/get-started/quickstarts/single-page.md
+      text: 文件 > 新建
+    - url: ~/get-started/quickstarts/multi-page.md
+      text: 添加导航
+    - url: ~/get-started/quickstarts/database.md
+      text: 添加数据库
+    - url: ~/get-started/quickstarts/styling.md
+      text: 设计应用的样式
+  - title: 运用当前的知识
+    imageSrc: https://docs.microsoft.com//media/common/i_library.svg
+    links:
+    - url: ~/cross-platform/desktop/index.md
+      text: .NET 桌面（UWP、WPF、WinForms）
+    - url: ~/android/get-started/java-developers.md
+      text: Android 和 Java
+    - url: ~/ios/get-started/objective-c-developers/index.md
+      text: iOS 和 Objective-C
+    - url: ~/cross-platform/index.yml
+      text: 深入开发指南
+conceptualContent:
+  title: Xamarin.Forms 指南
+  items:
+  - title: 应用程序基础知识
+    links:
+    - text: 数据绑定
+      url: ~/xamarin-forms/app-fundamentals/data-binding/index.md
+      itemType: concept
+    - text: DependencyService
+      url: ~/xamarin-forms/app-fundamentals/dependency-service/index.md
+      itemType: concept
+    - text: 导航
+      url: ~/xamarin-forms/app-fundamentals/navigation/index.md
+      itemType: concept
+    - text: shell
+      url: ~/xamarin-forms/app-fundamentals/shell/index.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/app-fundamentals/index.yml
+      text: 另请参阅
+  - title: 用户界面
+    links:
+    - text: CollectionView
+      url: ~/xamarin-forms/user-interface/collectionview/introduction.md
+      itemType: concept
+    - text: 选择布局
+      url: ~/xamarin-forms/user-interface/layouts/choose-layout.md
+      itemType: concept
+    - text: 控件引用
+      url: ~/xamarin-forms/user-interface/controls/index.md
+      itemType: concept
+    - text: 材料视觉对象
+      url: ~/xamarin-forms/user-interface/visual/material-visual.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/user-interface/index.yml
+      text: 另请参阅
+  - title: Xamarin.Forms XAML
+    links:
+    - text: XAML 基础
+      url: ~/xamarin-forms/xaml/xaml-basics/index.md
+      itemType: concept
+    - text: XAML 热重载
+      url: ~/xamarin-forms/xaml/hot-reload.md
+      itemType: concept
+    - text: XAML 标记扩展
+      url: ~/xamarin-forms/xaml/markup-extensions/index.md
+      itemType: concept
+    - text: XAML 预览程序
+      url: ~/xamarin-forms/xaml/xaml-previewer/index.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/xaml/index.yml
+      text: 另请参阅
+  - title: 平台功能
+    links:
+    - text: Android 平台 - 详细信息
+      url: ~/xamarin-forms/platform/android/index.md
+      itemType: concept
+    - text: 设备分类
+      url: ~/xamarin-forms/platform/device.md
+      itemType: concept
+    - text: iOS 平台 - 详细信息
+      url: ~/xamarin-forms/platform/ios/index.md
+      itemType: concept
+    - text: 本机视图
+      url: ~/xamarin-forms/platform/native-views/xaml.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/platform/index.yml
+      text: 另请参阅
+  - title: Xamarin.Essentials
+    links:
+    - text: 开始操作
+      url: ~/essentials/get-started.md
+      itemType: get-started
+    - text: 平台支持
+      url: ~/essentials/platform-feature-support.md
+      itemType: get-started
+    - text: 疑难解答
+      url: ~/essentials/troubleshooting.md
+      itemType: overview
+    - text: Xamarin.Essentials 命名空间
+      url: https://docs.microsoft.com/dotnet/api/xamarin.essentials?view=xamarin-essentials
+      itemType: reference
+    footerLink:
+      url: ~/essentials/index.md?context=xamarin/xamarin-forms
+      text: 另请参阅
+  - title: 数据和 Azure 云服务
+    links:
+    - text: 文件处理
+      url: ~/xamarin-forms/data-cloud/data/files.md
+      itemType: concept
+    - text: 本地数据库
+      url: ~/xamarin-forms/data-cloud/data/databases.md
+      itemType: concept
+    - text: 使用基于 REST 的 Web 服务
+      url: ~/xamarin-forms/data-cloud/web-services/rest.md
+      itemType: concept
+    - text: 使用 Azure Active Directory B2C 进行身份验证
+      url: ~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/data-cloud/index.yml
+      text: 另请参阅
+  - title: 部署和测试
+    links:
+    - text: 使用 Visual Studio App Center 自动执行测试
+      url: /appcenter/test-cloud/
+      itemType: concept
+    - text: 提高应用性能
+      url: ~/xamarin-forms/deploy-test/performance.md
+      itemType: concept
+    - text: 发布 iOS 应用程序
+      url: ~/ios/deploy-test/app-distribution/index.md
+      itemType: concept
+    - text: 发布 Android 应用程序
+      url: ~/android/deploy-test/publishing/index.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/deploy-test/index.yml
+      text: 另请参阅
+  - title: 高级概念和内部机制
+    links:
+    - text: 控件类层次结构
+      url: ~/xamarin-forms/internals/class-hierarchy.md
+      itemType: concept
+    - text: 依赖项解析
+      url: ~/xamarin-forms/internals/dependency-resolution.md
+      itemType: concept
+    - text: 快速呈现器
+      url: ~/xamarin-forms/internals/fast-renderers.md
+      itemType: concept
+    - text: 源链接
+      url: ~/xamarin-forms/internals/sourcelink.md
+      itemType: concept
+    footerLink:
+      url: ~/xamarin-forms/internals/index.yml
+      text: 另请参阅
+additionalContent:
+  sections:
+  - title: 图书
     items:
-      - href: ~/xamarin-forms/samples/
-        text: Xamarin.Forms 示例
-      - href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
-        text: 发行说明
-      - href: /visualstudio/
-        text: Visual Studio
-sections:
-  - title: 开始操作
-    items:
-      - type: paragraph
-        text: '了解如何使用 Xamarin 和 C#，针对 Android 和 iOS 生成首个 Xamarin.Forms 应用。'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 安装
-            href: ~/get-started/requirements.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            text: 首个应用
-            href: ~/get-started/first-app/index.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 应用快速入门
-            href: ~/get-started/quickstarts/single-page.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 多页快速入门
-            href: ~/get-started/quickstarts/multi-page.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 本地数据库快速入门
-            href: ~/get-started/quickstarts/database.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 样式设置快速入门
-            href: ~/get-started/quickstarts/styling.md
-  - title: 参考线
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/xamarin-forms/app-fundamentals/index.yml
-            html: 开发 Xamarin.Forms 应用所需要了解的一切内容，例如导航、手势、数据绑定等。
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/xamarin-forms/app-fundamentals/index.yml
-            title: 应用程序基础知识
-          - href: ~/xamarin-forms/user-interface/index.yml
-            html: 了解在 Xamarin.Forms XAML 中可用 的用户界面控件的完整集合。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: ~/xamarin-forms/user-interface/index.yml
-            title: 用户界面
-          - href: ~/xamarin-forms/xaml/index.yml
-            html: 以声明方式生成用户界面并在移动平台和桌面平台之间共享。
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: ~/xamarin-forms/xaml/index.yml
-            title: XAML
-          - href: ~/xamarin-forms/platform/index.yml
-            html: 使用 Xamarin.Forms 平台功能，例如自定义呈现器，以及每个版本的其他重要功能。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/xamarin-forms/platform/index.yml
-            title: 平台功能
-          - href: ~/essentials/index.md?context=xamarin/xamarin-forms
-            html: 用于文件访问、设备信息，硬件功能等常见任务的跨平台 API。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
-              href: ~/essentials/index.md?context=xamarin/xamarin-forms
-            title: Xamarin.Essentials
-          - href: ~/xamarin-forms/data-cloud/index.yml
-            html: 本地和远程数据存储及检索，以及其他 Azure 基于云的服务。
-            image:
-              src: ~/media/icons/i_data-cloud.svg
-              href: ~/xamarin-forms/data-cloud/index.yml
-            title: 数据和 Azure 云服务
-          - href: ~/xamarin-forms/deploy-test/index.yml
-            html: 有关生成和部署应用的说明，和事先对其进行测试的提示！
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/xamarin-forms/deploy-test/index.yml
-            title: 部署和测试
-          - href: ~/xamarin-forms/internals/index.yml
-            html: 有关 Xamarin.Forms 内部机制的其他信息，以及有关本地化和辅助功能等功能的帮助。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/xamarin-forms/internals/index.yml
-            title: 高级概念和内部机制
-  - title: 参考
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: API
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-forms">Xamarin.Forms API 文档</a></p>'
-          - title: 示例
-            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms">Xamarin.Forms 示例</a></p>'
-          - title: 图书
-            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">创建移动应用电子图书</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns/index.md">企业应用程序模式电子图书</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">电子图书：Xamarin.Forms 中的 SkiaSharp Graphics</a></p>
+    - title: 创建移动应用
+      summary: 本电子书可指导你学习如何编写 Xamarin.Forms 应用程序。
+      url: ~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md
+    - title: 企业应用程序模式
+      summary: 本电子书是关于开发自适应、可维护和可测试的 Xamarin.Forms 企业应用程序的体系结构指南。
+      url: ~/xamarin-forms/enterprise-application-patterns/index.md
+    - title: Xamarin.Forms 中的 SkiaSharp Graphics
+      summary: 本电子书可指导你在 Xamarin.Forms 应用程序中绘制 2D 矢量图、位图和文本。
+      url: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
+  footer: '[博客](https://devblogs.microsoft.com/xamarin/) - [Twitter](https://twitter.com/xamarinhq) - [Stack Overflow](https://stackoverflow.com/questions/tagged/xamarin) - [开发者社区](https://developercommunity.visualstudio.com/spaces/8/index.html) - [发行说明](https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/)'
