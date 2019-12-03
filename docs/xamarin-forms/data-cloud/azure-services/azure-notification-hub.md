@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
-ms.openlocfilehash: eafa5c8af8d93138ec6e2b9e2f25549d7ed006b0
-ms.sourcegitcommit: bfe4327ef2e89dab095641860256eadb349ca62c
+ms.openlocfilehash: 28abc7f4fa608091cfc7f4c64d4fcabfd9755c2b
+ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73849834"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681348"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>通过 Azure 通知中心和 Xamarin 发送和接收推送通知
 
@@ -59,7 +59,7 @@ Azure 通知中心要求移动应用程序向中心注册、定义模板并订�
 
 模板允许设备指定参数化消息模板。 可以按每个设备、每个标记自定义传入消息。 若要了解有关模板的详细信息，请参阅[模板](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)。
 
-标记可用于订阅消息类别，如新闻、体育和天气。 为简单起见，示例应用程序将定义一个默认模板，其中包含一个名为 `messageParam` 的参数和一个名为 `default` 的标记。 在更复杂的系统中，用户特定标记可用于在设备上向用户发送个性化通知。 若要了解有关标记的详细信息，请参阅[路由和标记表达式](/azure/notification-hubs/notification-hubs-tags-segment-push-message)。
+标记可用于订阅消息类别，如新闻、体育和天气。 为简单起见，示例应用程序将定义一个默认模板，其中包含一个名为 `messageParam` 的参数和一个名为 `default`的标记。 在更复杂的系统中，用户特定标记可用于在设备上向用户发送个性化通知。 若要了解有关标记的详细信息，请参阅[路由和标记表达式](/azure/notification-hubs/notification-hubs-tags-segment-push-message)。
 
 若要成功接收消息，每个本机应用程序必须执行以下步骤：
 
@@ -132,8 +132,7 @@ public static class AppConstants
     1. Xamarin. NotificationHubs。
 1. 将在 FCM 安装过程中下载的 `google-services.json` 文件复制到项目中，并将生成操作设置为 `GoogleServicesJson`。
 1. [配置 androidmanifest.xml 以与 Firebase 进行通信](#configure-android-manifest)。
-1. [使用 `FirebaseInstanceIdService` 向 Firebase 和 Azure 通知中心注册应用程序](#register-using-a-custom-firebaseinstanceidservice)。
-1. [使用 `FirebaseMessagingService` 处理消息](#process-messages-with-a-firebasemessagingservice)。
+1. [重写 FirebaseMessagingService 以处理消息](#override-firebasemessagingservice-to-handle-messages)。
 1. [向 XAMARIN UI 添加传入通知](#add-incoming-notifications-to-the-xamarinforms-ui)。
 
 > [!NOTE]
@@ -163,120 +162,109 @@ public static class AppConstants
 </manifest>
 ```
 
-### <a name="register-using-a-custom-firebaseinstanceidservice"></a>使用自定义 FirebaseInstanceIdService 注册
+### <a name="override-firebasemessagingservice-to-handle-messages"></a>重写 FirebaseMessagingService 以处理消息
 
-Firebase 在 PNS 上颁发唯一标识设备的令牌。 令牌具有较长的生存期，但偶尔会刷新。 发出或刷新令牌时，应用程序需要向 Azure 通知中心注册其新令牌。 注册由派生自 `FirebaseInstanceIdService` 的类的实例进行处理。
-
-在示例应用程序中，`FirebaseRegistrationService` 类继承自 `FirebaseInstanceIdService`。 此类具有一个包含 `com.google.firebase.INSTANCE_ID_EVENT`的 `IntentFilter`，它允许 Android OS 在 Firebase 颁发令牌时自动调用 `OnTokenRefresh`。
-
-以下代码显示示例应用程序中的自定义 `FirebaseInstanceIdService`：
-
-```csharp
-[Service]
-[IntentFilter(new [] { "com.google.firebase.INSTANCE_ID_EVENT"})]
-public class FirebaseRegistrationService : FirebaseInstanceIdService
-{
-    public override void OnTokenRefresh()
-    {
-        string token = FirebaseInstanceId.Instance.Token;
-
-        // NOTE: logging the token is not recommended in production but during
-        // development it is useful to test messages directly from Firebase
-        Log.Info(AppConstants.DebugTag, $"Token received: {token}");
-
-        SendRegistrationToServer(token);
-    }
-
-    void SendRegistrationToServer(string token)
-    {
-        try
-        {
-            NotificationHub hub = new NotificationHub(AppConstants.NotificationHubName, AppConstants.ListenConnectionString, this);
-
-            // register device with Azure Notification Hub using the token from FCM
-            Registration reg = hub.Register(token, AppConstants.SubscriptionTags);
-
-            // subscribe to the SubscriptionTags list with a simple template.
-            string pnsHandle = reg.PNSHandle;
-            var cats = string.Join(", ", reg.Tags);
-            var temp = hub.RegisterTemplate(pnsHandle, "defaultTemplate", AppConstants.FCMTemplateBody, AppConstants.SubscriptionTags);
-        }
-        catch (Exception e)
-        {
-            Log.Error(AppConstants.DebugTag, $"Error registering device: {e.Message}");
-        }
-    }
-}
-```
-
-`FirebaseRegistrationClass` 中的 `SendRegistrationToServer` 方法将设备注册到 Azure 通知中心，并使用模板订阅标记。 示例应用程序定义了一个名为 `default` 的标记和一个在**AppConstants.cs**文件中名为 `messageParam` 的参数。 有关注册、标记和模板的详细信息，请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)
-
-### <a name="process-messages-with-a-firebasemessagingservice"></a>使用 FirebaseMessagingService 处理消息
-
-传入的消息将路由到 `FirebaseMessagingService` 实例，可在其中将这些消息转换为本地通知。 示例应用程序中的 Android 项目包含从 `FirebaseMessagingService` 继承的名为 `FirebaseService` 的类。 此类具有一个包含 `com.google.firebase.MESSAGING_EVENT`的 `IntentFilter`，它允许 Android OS 在收到推送通知消息时自动调用 `OnMessageReceived`。
-
-下面的示例演示示例应用程序的 `FirebaseService`：
+若要注册 Firebase 并处理消息，请将 `FirebaseMessagingService` 类的子类。 示例应用程序定义了一个子类 `FirebaseMessagingService``FirebaseService` 类。 此类标记有 `IntentFilter` 特性，其中包括 `com.google.firebase.MESSAGING_EVENT` 筛选器。 此筛选器允许 Android 将传入消息传递给此类以进行处理：
 
 ```csharp
 [Service]
 [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
 public class FirebaseService : FirebaseMessagingService
 {
-    public override void OnMessageReceived(RemoteMessage message)
+    // ...
+}
+
+```
+
+当应用程序启动时，Firebase SDK 将从 Firebase 服务器自动请求一个唯一标记标识符。 成功请求后，将对 `FirebaseService` 类调用 `OnNewToken` 方法。 示例项目将重写此方法，并将令牌注册到 Azure 通知中心：
+
+```csharp
+public override void OnNewToken(string token)
+{
+    // NOTE: save token instance locally, or log if desired
+
+    SendRegistrationToServer(token);
+}
+
+void SendRegistrationToServer(string token)
+{
+    try
     {
-        base.OnMessageReceived(message);
-        string messageBody = string.Empty;
+        NotificationHub hub = new NotificationHub(AppConstants.NotificationHubName, AppConstants.ListenConnectionString, this);
 
-        if (message.GetNotification() != null)
-        {
-            messageBody = message.GetNotification().Body;
-        }
+        // register device with Azure Notification Hub using the token from FCM
+        Registration registration = hub.Register(token, AppConstants.SubscriptionTags);
 
-        // NOTE: test messages sent via the Azure portal will be received here
-        else
-        {
-            messageBody = message.Data.Values.First();
-        }
-
-        // convert the incoming message to a local notification
-        SendLocalNotification(messageBody);
-
-        // send the incoming message directly to the MainPage
-        SendMessageToMainPage(messageBody);
+        // subscribe to the SubscriptionTags list with a simple template.
+        string pnsHandle = registration.PNSHandle;
+        TemplateRegistration templateReg = hub.RegisterTemplate(pnsHandle, "defaultTemplate", AppConstants.FCMTemplateBody, AppConstants.SubscriptionTags);
     }
-
-    void SendLocalNotification(string body)
+    catch (Exception e)
     {
-        var intent = new Intent(this, typeof(MainActivity));
-        intent.AddFlags(ActivityFlags.ClearTop);
-        intent.PutExtra("message", body);
-        var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
-
-        var notificationBuilder = new NotificationCompat.Builder(this)
-            .SetContentTitle("XamarinNotify Message")
-            .SetSmallIcon(Resource.Drawable.ic_launcher)
-            .SetContentText(body)
-            .SetAutoCancel(true)
-            .SetShowWhen(false)
-            .SetContentIntent(pendingIntent);
-
-        if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
-        {
-            notificationBuilder.SetChannelId(AppConstants.NotificationChannelName);
-        }
-
-        var notificationManager = NotificationManager.FromContext(this);
-        notificationManager.Notify(0, notificationBuilder.Build());
-    }
-
-    void SendMessageToMainPage(string body)
-    {
-        (App.Current.MainPage as MainPage)?.AddMessage(body);
+        Log.Error(AppConstants.DebugTag, $"Error registering device: {e.Message}");
     }
 }
 ```
 
-使用 `SendLocalNotification` 方法将传入消息转换为本地通知。 此方法创建一个新 `Intent`，并将消息内容以 `string` `Extra` 的形式放置在 `Intent` 中。 当用户点击本地通知时，无论应用处于前台还是后台，都将启动 `MainActivity` 并通过 `Intent` 对象访问消息内容。
+`SendRegistrationToServer` 方法将设备注册到 Azure 通知中心，并使用模板订阅标记。 示例应用程序定义了一个名为 `default` 的标记和一个在**AppConstants.cs**文件中名为 `messageParam` 的参数。 有关注册、标记和模板的详细信息，请参阅[在 Azure 通知中心注册模板和标记](#register-templates-and-tags-with-the-azure-notification-hub)。
+
+接收到消息时，将对 `FirebaseService` 类调用 `OnMessageReceived` 方法：
+
+```csharp
+public override void OnMessageReceived(RemoteMessage message)
+{
+    base.OnMessageReceived(message);
+    string messageBody = string.Empty;
+
+    if (message.GetNotification() != null)
+    {
+        messageBody = message.GetNotification().Body;
+    }
+
+    // NOTE: test messages sent via the Azure portal will be received here
+    else
+    {
+        messageBody = message.Data.Values.First();
+    }
+
+    // convert the incoming message to a local notification
+    SendLocalNotification(messageBody);
+
+    // send the incoming message directly to the MainPage
+    SendMessageToMainPage(messageBody);
+}
+
+void SendLocalNotification(string body)
+{
+    var intent = new Intent(this, typeof(MainActivity));
+    intent.AddFlags(ActivityFlags.ClearTop);
+    intent.PutExtra("message", body);
+    var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
+
+    var notificationBuilder = new NotificationCompat.Builder(this)
+        .SetContentTitle("XamarinNotify Message")
+        .SetSmallIcon(Resource.Drawable.ic_launcher)
+        .SetContentText(body)
+        .SetAutoCancel(true)
+        .SetShowWhen(false)
+        .SetContentIntent(pendingIntent);
+
+    if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
+    {
+        notificationBuilder.SetChannelId(AppConstants.NotificationChannelName);
+    }
+
+    var notificationManager = NotificationManager.FromContext(this);
+    notificationManager.Notify(0, notificationBuilder.Build());
+}
+
+void SendMessageToMainPage(string body)
+{
+    (App.Current.MainPage as MainPage)?.AddMessage(body);
+}
+```
+
+使用 `SendLocalNotification` 方法将传入消息转换为本地通知。 此方法创建一个新 `Intent`，并将消息内容以 `string` `Extra`的形式放置在 `Intent` 中。 当用户点击本地通知时，无论应用处于前台还是后台，都将启动 `MainActivity` 并通过 `Intent` 对象访问消息内容。
 
 本地通知和 `Intent` 示例要求用户执行点击通知的操作。 当用户在应用程序状态发生更改之前应采取措施时，这是理想的做法。 但是，在某些情况下，你可能需要访问消息数据而无需用户操作。 前面的示例还将消息直接发送到具有 `SendMessageToMainPage` 方法的当前 `MainPage` 实例。 在生产环境中，如果对一种消息类型实现这两种方法，则当用户点击该通知时，`MainPage` 对象将收到重复的消息。
 
@@ -440,7 +428,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
     Hub = new SBNotificationHub(AppConstants.ListenConnectionString, AppConstants.NotificationHubName);
 
     // update registration with Azure Notification Hub
-    Hub.UnregisterAllAsync(deviceToken, (error) =>
+    Hub.UnregisterAll(deviceToken, (error) =>
     {
         if (error != null)
         {
@@ -449,7 +437,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
         }
 
         var tags = new NSSet(AppConstants.SubscriptionTags.ToArray());
-        Hub.RegisterNativeAsync(deviceToken, tags, (errorCallback) =>
+        Hub.RegisterNative(deviceToken, tags, (errorCallback) =>
         {
             if (errorCallback != null)
             {
@@ -458,7 +446,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
         });
 
         var templateExpiration = DateTime.Now.AddDays(120).ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
-        Hub.RegisterTemplateAsync(deviceToken, "defaultTemplate", AppConstants.APNTemplateBody, templateExpiration, tags, (errorCallback) =>
+        Hub.RegisterTemplate(deviceToken, "defaultTemplate", AppConstants.APNTemplateBody, templateExpiration, tags, (errorCallback) =>
         {
             if (errorCallback != null)
             {
@@ -523,7 +511,7 @@ void ProcessNotification(NSDictionary options, bool fromFinishedLaunching)
 
 1. 在测试应用程序是否可以接收推送通知时，必须使用物理设备。 Android 和 iOS 虚拟设备可能未正确配置，无法接收推送通知。
 1. 示例 Android 应用程序在颁发 Firebase 令牌时注册其令牌和模板。 在测试过程中，可能需要请求新令牌并向 Azure 通知中心重新注册。 强制执行此方法的最佳方式是清理项目、删除 `bin` 和 `obj` 文件夹，并从设备中卸载应用程序，然后重新生成并部署。
-1. 推送通知流的许多部分都以异步方式执行。 这可能会导致未命中断点或按意外顺序命中断点。 使用设备或调试日志记录跟踪执行，而不中断应用程序流。 使用 `Constants` 中指定的 `DebugTag` 筛选 Android 设备日志。
+1. 推送通知流的许多部分都以异步方式执行。 这可能会导致未命中断点或按意外顺序命中断点。 使用设备或调试日志记录跟踪执行，而不中断应用程序流。 使用 `Constants`中指定的 `DebugTag` 筛选 Android 设备日志。
 
 ## <a name="create-a-notification-dispatcher"></a>创建通知调度程序
 
