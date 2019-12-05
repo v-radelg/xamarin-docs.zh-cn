@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: 入门
+    - name: 开始操作
       href: get-started/index.md
       expanded: true
       items:
@@ -189,7 +189,7 @@
               items:
                 - name: 使用 ActionBar 的导航选项卡
                   href: user-interface/layouts/tab-layout/with-action-bar.md
-        - name: 控制
+        - name: 控件
           href: user-interface/controls/index.md
           items:
             - name: ActionBar
@@ -207,7 +207,7 @@
                   href: user-interface/controls/buttons/check-box.md
                 - name: 自定义按钮
                   href: user-interface/controls/buttons/custom-button.md
-            - name: 日历
+            - name: Calendar
               href: user-interface/controls/calendar.md
             - name: CardView
               href: user-interface/controls/card-view.md
@@ -230,11 +230,11 @@
               href: user-interface/controls/ratingbar.md
             - name: Spinner
               href: user-interface/controls/spinner.md
-            - name: Switch
+            - name: 开关
               href: user-interface/controls/switch.md
             - name: TextureView
               href: user-interface/controls/texture-view.md
-            - name: 工具栏
+            - name: Toolbar
               href: user-interface/controls/tool-bar/index.md
               items:
                 - name: 替换操作栏
@@ -283,7 +283,7 @@
           href: platform/android-job-scheduler.md
         - name: Firebase 作业调度程序
           href: platform/firebase-job-dispatcher.md
-        - name: Fragments
+        - name: 片段
           href: platform/fragments/index.md
           items:
             - name: 实现片段
@@ -335,7 +335,7 @@
           items:
             - name: 位置
               href: platform/maps-and-location/location.md
-            - name: 地图
+            - name: 映射
               href: platform/maps-and-location/maps/index.md
               items:
                 - name: 地图应用程序
@@ -398,7 +398,7 @@
           href: ~/essentials/color-converters.md?context=xamarin/android
         - name: 指南针
           href: ~/essentials/compass.md?context=xamarin/android
-        - name: 连接
+        - name: 连接性
           href: ~/essentials/connectivity.md?context=xamarin/android
         - name: 检测抖动
           href: ~/essentials/detect-shake.md?context=xamarin/android
@@ -424,7 +424,7 @@
           href: ~/essentials/magnetometer.md?context=xamarin/android
         - name: 主线程
           href: ~/essentials/main-thread.md?context=xamarin/android
-        - name: 地图
+        - name: 映射
           href: ~/essentials/maps.md?context=xamarin/android
         - name: 打开浏览器
           href: ~/essentials/open-browser.md?context=xamarin/android
@@ -442,7 +442,7 @@
           href: ~/essentials/share.md?context=xamarin/android
         - name: SMS
           href: ~/essentials/sms.md?context=xamarin/android
-        - name: 文本转语音
+        - name: 文本到语音转换
           href: ~/essentials/text-to-speech.md?context=xamarin/android
         - name: 单位转换器
           href: ~/essentials/unit-converters.md?context=xamarin/android
@@ -463,9 +463,9 @@
             - name: 入门
               href: ~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android
               items:
-                - name: 步骤 1。 注册
+                - name: 步骤 1。 寄存器
                   href: ~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android
-                - name: 步骤 2. 配置
+                - name: 步骤 2。 配置
                   href: ~/cross-platform/data-cloud/active-directory/get-started/configure.md?context=xamarin/android
             - name: 访问图形 API
               href: ~/cross-platform/data-cloud/active-directory/graph.md?context=xamarin/android
@@ -619,12 +619,12 @@
           href: troubleshooting/resolving-library-installation-errors.md
         - name: 对 Android SDK 工具的更改
           href: troubleshooting/sdk-cli-tooling-changes.md
-        - name: Xamarin.Android 错误参考
-          href: troubleshooting/errors.md
+        - name: Xamarin.Android 错误和警告参考
+          href: /xamarin/android/errors-and-warnings/
     - name: Wear
       href: wear/index.md
       items:
-        - name: 入门
+        - name: 开始操作
           href: wear/get-started/index.md
           items:
             - name: Android 穿戴设备简介
@@ -636,7 +636,7 @@
         - name: 用户界面
           href: wear/user-interface/index.md
           items:
-            - name: 控制
+            - name: 控件
               href: wear/user-interface/controls/index.md
               items:
                 - name: GridViewPager
