@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: cc499902058e7b20b00e65e0c6541b8d137804a7
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: c8363adf479f0880bfbdf6a047d495da4b849395
+ms.sourcegitcommit: a2ec4aef8457eab4310cde2a41485931263ce16b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425498"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902260"
 ---
 # <a name="splash-screen"></a>初始屏幕
 
@@ -34,7 +34,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 
 [![示例 Xamarin 徽标初始屏幕，后面跟有应用屏幕](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 本指南假定应用程序面向 Android API 级别21或更高版本。 该应用程序还必须具有添加到项目中的**xamarin** . **AppCompat 和 v7.** NuGet 包。
 
@@ -50,7 +50,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 
 初始屏幕将在初始屏幕活动的背景中显示 XML 可绘制的。 需要使用位图图像（如 PNG 或 JPG）来显示图像。
 
-示例应用程序定义了一个名为**splash_screen 的**。 此可绘制方式使用[层列表](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)在应用程序中居中显示初始屏幕图像，如以下 xml 所示：
+示例应用程序定义了一个名为**splash_screen**的 "绘制"。 此可绘制方式使用[层列表](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)在应用程序中居中显示初始屏幕图像，如以下 xml 所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -88,7 +88,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
   <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
   </style>
 
-    <style name="MyTheme" parent="MyTheme.Base">
+  <style name="MyTheme" parent="MyTheme.Base">
   </style>
 
   <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
@@ -101,7 +101,7 @@ Android 应用程序需要一些时间才能启动，特别是在第一次在设
 </resources>
 ```
 
-**MyTheme**是非常 spartan 的 &ndash; 它声明了窗口背景，从窗口中显式删除了标题栏，并将其声明为全屏。 如果要创建在活动增加第一个布局之前模拟应用 UI 的初始屏幕，可以使用 `windowContentOverlay`，而不是在样式定义中 `windowBackground`。 在这种情况下，还必须修改**splash_screen**可绘制，使其显示 UI 的仿真。
+**MyTheme**是非常 spartan 的 &ndash; 它声明了窗口背景，从窗口中显式删除了标题栏，并将其声明为全屏。 如果要创建在活动增加第一个布局之前模拟应用 UI 的初始屏幕，可以使用 `windowContentOverlay`，而不是在样式定义中 `windowBackground`。 在这种情况下，你还必须修改**splash_screen 的 xml**可绘制，使其显示 UI 的仿真。
 
 ### <a name="create-a-splash-activity"></a>创建初始活动
 
@@ -165,9 +165,9 @@ public class MainActivity : AppCompatActivity
 
 若要为横向模式添加初始屏幕，请使用以下步骤：
 
-1. 在 "**资源/可绘制**的文件夹" 中，添加要使用的初始屏幕映像的横向版本。 在此示例中， **splash_logo_land**是上面示例中使用的徽标的横向版本（它使用的是白色的，而不是蓝色）。
+1. 在 "**资源/可绘制**的文件夹" 中，添加要使用的初始屏幕映像的横向版本。 在此示例中， **splash_logo_land**为在上述示例中使用的徽标的横向版本（使用白色的字母而不是蓝色）。
 
-2. 在 "**资源/可绘制**文件夹" 中，创建前面定义的 `layer-list` 可绘制的横向版本（例如**splash_screen_land**）。 在此文件中，将位图路径设置为初始屏幕图像的横向版本。 在下面的示例中， **splash_screen_land**使用**splash_logo_land**：
+2. 在 "**资源/可绘制**文件夹" 中，创建前面定义的 `layer-list` 可绘制的横向版本（例如， **splash_screen_land .xml**）。 在此文件中，将位图路径设置为初始屏幕图像的横向版本。 在下面的示例中， **splash_screen_land**使用**splash_logo_land .png**：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -188,7 +188,7 @@ public class MainActivity : AppCompatActivity
 
 4. 将文件**colors .xml**和**style .xml**添加到**值-土地**（可从现有的**值/颜色 .xml**和**值/样式 .xml**文件进行复制和修改）。
 
-5. 修改**values-land/style .xml** ，使其使用用于 `windowBackground`的可绘制的横向版本。 在此示例中，使用了**splash_screen_land** ：
+5. 修改**values-land/style .xml** ，使其使用用于 `windowBackground`的可绘制的横向版本。 在此示例中，使用**splash_screen_land** ：
 
     ```xml
     <resources>
