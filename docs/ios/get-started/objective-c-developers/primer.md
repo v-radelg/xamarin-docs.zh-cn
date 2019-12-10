@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 8b84d959ce7976fc51cbdfee99cbceec560e8e8e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6b2753b0f1a7389d62866e5c8003b439a283e5b5
+ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022432"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74536517"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>面向 Objective-C 开发人员的 C# 入门
 
 _Xamarin.iOS 允许用 C# 编写的平台无关的代码跨平台共享。但是，现有 iOS 应用程序可能想要利用已创建的 Objective-C 代码。本文面向希望转移到 Xamarin 和 C# 语言的 Objective-C 开发人员提供一个快速入门。_
 
-用 Objective-C 开发的 iOS 和 OS X 应用程序可以在不需要特定于平台代码的位置利用 C# 从 Xamarin 受益，从而允许在非 Apple 设备上使用此类代码。 然后，可通过跨平台的方式使用诸如 Web 服务、JSON 和 XML 解析，以及自定义算法之类的内容。
+用 Objective-C 开发的 iOS 和 macOS 应用程序可在无需平台专属代码的位置利用 C# 从 Xamarin 中受益，从而允许在非 Apple 设备上使用此类代码。 然后，可通过跨平台的方式使用诸如 Web 服务、JSON 和 XML 解析，以及自定义算法之类的内容。
 
 若要在维护现有 Objective-C 资产的同时利用 Xamarin，前者可以用 Xamarin 中的技术（称为绑定）向 C# 公开，该技术可将 Objective-C 代码展示给托管的 C# 环境。 另外，如果需要，代码也可以逐行移植到 C# 中。 但是，不管采用何种方法，无论是绑定还是移植，均需要对 Objective-C 和 C# 有所了解，才能使用 Xamarin.iOS 有效地利用现有 Objective-C 代码。
 
@@ -64,7 +64,7 @@ public static class UITextViewExtensions
 
 ### <a name="frameworks-vs-assemblies"></a>框架与程序集
 
-Objective-C 将相关类打包在称为框架的特定目录中。 但是，在 C# 和 .NET 中，程序集用于提供预编译代码的可重用位。 在 iOS 以外的环境中，程序集将包含在运行时实时 (JIT) 编译的中间语言代码 (IL)。 但是，Apple 不允许在 iOS 应用程序中使用 JIT。 因此，针对使用 Xamarin 的 iOS 的 C# 代码是提前编译 (AOT) 代码，生成单个 Unix 可执行文件以及包含在应用程序捆绑包中的元数据文件。
+Objective-C 将相关类打包在称为框架的特定目录中。 但是，在 C# 和 .NET 中，程序集用于提供预编译代码的可重用位。 在 iOS 以外的环境中，程序集将包含在运行时实时 (JIT) 编译的中间语言代码 (IL)。 但是，Apple 不允许在 App Store 上发布的 iOS 应用程序中执行 JIT 编译的代码。 因此，针对使用 Xamarin 的 iOS 的 C# 代码是提前编译 (AOT) 代码，生成单个 Unix 可执行文件以及包含在应用程序捆绑包中的元数据文件。
 
 ### <a name="selectors-vs-named-parameters"></a>选择器与命名的参数
 

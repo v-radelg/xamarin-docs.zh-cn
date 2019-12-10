@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
+ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889205"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74451805"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -20,7 +20,7 @@ ms.locfileid: "69889205"
 
 浮出控件是 Shell 应用程序的根菜单，可通过图标或从屏幕一侧轻扫进行访问。 浮出控件由可选标头、浮出控件项和可选菜单项组成：
 
-![Shell 附注浮出控件的屏幕截图](flyout-images/flyout-annotated.png "附注浮出控件")
+![Shell 附注浮出控件的屏幕截图](flyout-images/flyout-annotated.png "批注浮出控件")
 
 如果需要，可以通过 `Shell.FlyoutBackgroundColor` 可绑定属性将浮出控件的背景色设置为 [`Color`](xref:Xamarin.Forms.Color)。 还可以从级联样式表 (CSS) 设置此属性。 有关详细信息，请参阅 [Xamarin.Forms Shell 特定属性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)。
 
@@ -193,7 +193,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 在此示例中，只能通过浮出控件项访问每个 [`ContentPage`](xref:Xamarin.Forms.ContentPage)：
 
-[![iOS 和 Android 上带浮出控件项的 Shell 两页应用程序的屏幕截图](flyout-images/two-page-app-flyout.png "带浮出控件项的 Shell 两页应用程序")](flyout-images/two-page-app-flyout-large.png#lightbox "带浮出控件项的 Shell 两页应用程序")
+[![iOS 和 Android 上显示了浮出控件项的 Shell 双页应用屏幕截图](flyout-images/two-page-app-flyout.png "显示了浮出控件项的 Shell 双页应用")](flyout-images/two-page-app-flyout-large.png#lightbox "显示了浮出控件项的 Shell 双页应用")
 
 > [!NOTE]
 > 当浮出控件标头不存在时，浮出控件项会显示在浮出控件顶部。 否则，它们显示在浮出控件标头下方。
@@ -300,7 +300,7 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 这将生成以下浮出控件项：
 
-[![iOS 和 Android 上包含 FlyoutItem 对象的浮出控件的屏幕截图](flyout-images/flyout-reduced.png "包含 FlyoutItem 对象的 Shell 浮出控件")](flyout-images/flyout-reduced-large.png#lightbox "包含 FlyoutItem 对象的 Shell 浮出控件")
+[![iOS 和 Android 上包含 FlyoutItem 对象的浮出控件屏幕截图](flyout-images/flyout-reduced.png "包含 FlyoutItem 对象的 Shell 浮出控件")](flyout-images/flyout-reduced-large.png#lightbox "包含 FlyoutItem 对象的 Shell 浮出控件")
 
 ## <a name="define-flyoutitem-appearance"></a>定义 FlyoutItem 外观
 
@@ -331,10 +331,73 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 此示例以斜体显示每个 `FlyoutItem` 对象的标题：
 
-[![iOS 和 Android 上的模板化 FlyoutItem 对象的屏幕截图](flyout-images/flyoutitem-templated.png "Shell 模板化 FlyoutItem 对象")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell 模板化 FlyoutItem 对象")
+[![iOS 和 Android 上模板化的 FlyoutItem 对象的屏幕截图](flyout-images/flyoutitem-templated.png "Shell 模板化的 FlyoutItem 对象")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell 模板化的 FlyoutItem 对象")
+
+
+`Shell.ItemTemplate` 是一个附加属性，因此可将不同的模板附加到特定的 `FlyoutItem` 对象。
 
 > [!NOTE]
 > Shell 向 `ItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 提供 `Title` 和 `FlyoutIcon` 属性。
+
+
+### <a name="default-template-for-flyoutitems-and-menuitems"></a>FlyoutItem 和 MenuItem 的默认模板
+Shell 在内部使用下列模板进行其默认实现。 如果你只想对现有布局进行一些细微调整，这是一个很棒的起点。 这还演示了浮出控件项的可视状态管理器功能。 该模板也可用于 MenuItem
+
+```xaml
+<DataTemplate x:Key="FlyoutTemplates">
+    <Grid HeightRequest="{x:OnPlatform Android=50}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                    </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding FlyoutIcon}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
+            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        </Image>
+        <Label VerticalOptions="Center"
+                Text="{Binding Title}"
+                FontSize="{x:OnPlatform Android=14, iOS=Small}"
+                FontAttributes="Bold" Grid.Column="1">
+            <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="#D2000000" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.TextColor>
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20, 0, 0, 0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.Margin>
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="sans-serif-medium" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+    </Grid>
+</DataTemplate>
+```
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem Tab 键顺序
 
@@ -403,7 +466,7 @@ Shell.Current.CurrentItem = aboutItem;
 
 此代码将向浮出控件添加两个 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 对象，显示在所有浮出控件项之下：
 
-[![iOS 和 Android 上包含 MenuItem 对象的浮出控件的屏幕截图](flyout-images/flyout.png "包含 MenuItem 对象的 Shell 浮出控件")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 对象的 Shell 浮出控件")
+[![iOS 和 Android 上包含 MenuItem 对象的浮出控件屏幕截图](flyout-images/flyout.png "包含 MenuItem 对象的 Shell 浮出控件")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 对象的 Shell 浮出控件")
 
 第一个 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 对象执行名为 `RandomPageCommand` 的 `ICommand`，这将导航到应用程序中的随机页面。 第二个 `MenuItem` 对象执行名为 `HelpCommand` 的 `ICommand`，这将在 Web 浏览器中打开由 `CommandParameter` 属性指定的 URL。
 
@@ -446,10 +509,10 @@ Shell.Current.CurrentItem = aboutItem;
 
 此示例会将 Shell 级别的 `MenuItemTemplate` 附加到每个 `MenuItem` 对象，以斜体显示每个 `MenuItem` 对象的标题：
 
-[![iOS 和 Android 上的模板化 MenuItem 对象的屏幕截图](flyout-images/menuitem-templated.png "Shell 模板化 MenuItem 对象")](flyout-images/menuitem-templated-large.png#lightbox "Shell 模板化 MenuItem 对象")
+[![iOS 和 Android 上模板化的 MenuItem 对象的屏幕截图](flyout-images/menuitem-templated.png "Shell 模板化的 MenuItem 对象")](flyout-images/menuitem-templated-large.png#lightbox "Shell 模板化的 MenuItem 对象")
 
 > [!NOTE]
-> Shell 向 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 提供 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 属性。
+> Shell 向 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 提供 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 属性。 你也可使用 `Title` 代替 `Text` 并使用 `Icon` 代替 `IconImageSource`，这样便可对菜单项和浮出控件项重复使用相同的模板
 
 因为 `Shell.MenuItemTemplate` 是一个附加属性，所以可以将不同的模板附加到特定的 `MenuItem` 对象：
 
@@ -488,6 +551,10 @@ Shell.Current.CurrentItem = aboutItem;
     </MenuItem>
 </Shell>
 ```
+
+
+> [!NOTE]
+> 用于 [浮出控件项](#default-template-for-flyoutitems-and-menuitems) 的模板也可用于菜单项。
 
 此示例会将 Shell 级别的 `MenuItemTemplate` 附加到第一个 `MenuItem` 对象，并将内联的 `MenuItemTemplate` 附加到第二个 `MenuItem`。
 

@@ -6,17 +6,17 @@ ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.date: 12/03/2019
+ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978125"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74824239"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自定义呈现器
 
-Xamarin.Forms 使用目标平台的本机控件呈现用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留了相应的界面外观。自定义呈现器允许开发人员重写此过程，自定义每个平台上 Xamarin.Forms 控件的外观和行为。
+Xamarin.Forms 使用目标平台的本机控件呈现用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留了相应的界面外观。  自定义呈现器允许开发人员重写此过程，自定义每个平台上 Xamarin.Forms 控件的外观和行为。
 
 ## <a name="introduction-to-custom-renderersintroductionmd"></a>[自定义呈现器简介](introduction.md)
 
@@ -46,18 +46,14 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 视图以垂直列表的
 
 Xamarin.Forms [`ViewCell`](xref:Xamarin.Forms.ViewCell) 单元包含开发人员定义的视图，可将该单元添加到 [`ListView`](xref:Xamarin.Forms.ListView) 或者 [`TableView`](xref:Xamarin.Forms.TableView) 中。 本文演示如何为 Xamarin.Forms `ListView` 控件中托管的 `ViewCell` 创建自定义呈现器。 这可防止在 `ListView` 滚动期间重复调用 Xamarin.Forms 布局计算。
 
+## <a name="customizing-a-webviewhybridwebviewmd"></a>[自定义 WebView](hybridwebview.md)
+
+Xamarin.Forms [`WebView`](xref:Xamarin.Forms.WebView) 是在应用中显示 Web 和 HTML 内容的视图。 本文介绍如何创建一个扩展 `WebView` 以允许从 JavaScript 调用 C# 代码的自定义呈现器。
+
 ## <a name="implementing-a-viewviewmd"></a>[实现视图](view.md)
 
 Xamarin.Forms 自定义用户界面控件应派生自 [`View`](xref:Xamarin.Forms.View) 类，该类用于在屏幕上放置布局和控件。 本文演示如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。
 
-## <a name="implementing-a-hybridwebviewhybridwebviewmd"></a>[实现 HybridWebView](hybridwebview.md)
-
-本文演示如何为 `HybridWebView` 自定义控件创建自定义呈现器，演示如何增强特定于平台的 Web 控件以允许从 JavaScript 调用 C# 代码。
-
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[实现视频播放器](video-player/index.md)
 
 本文介绍如何编写呈现器以实现自定义 `VideoPlayer` 控件，该控件可播放 Web 视频、作为应用程序资源嵌入的视频或用户设备的视频库中存储的视频。 本文演示了多种技巧，包括实现方法和只读可绑定属性。
-
-## <a name="related-links"></a>相关链接
-
-- [效果](~/xamarin-forms/app-fundamentals/effects/index.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/11/2019
-ms.openlocfilehash: cf9c5d7aa018a6d12a6c4788dc1e8114088d056c
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: a11bbbc40cd209f90d03817fc81f58bd5661bd23
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697132"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823885"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>呈现器基类和本机控件
 
@@ -93,7 +93,7 @@ ms.locfileid: "72697132"
 |[`Switch`](xref:Xamarin.Forms.Switch)|SwitchRenderer|UISwitch|开关|SwitchCompat|ToggleSwitch|
 |[`TableView`](xref:Xamarin.Forms.TableView)|TableViewRenderer|UITableView|ListView||ListView|
 |[`TimePicker`](xref:Xamarin.Forms.TimePicker)|TimePickerRenderer|UITextField|EditText||TimePicker|
-|[`WebView`](xref:Xamarin.Forms.WebView)|WebViewRenderer|UIWebView|WebView||WebView|
+|[`WebView`](xref:Xamarin.Forms.WebView)|WkWebViewRenderer (iOS)、WebViewRenderer（Android 和 UWP）|WkWebView|WebView||WebView|
 
 ## <a name="cells"></a>单元
 

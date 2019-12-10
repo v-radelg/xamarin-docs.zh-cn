@@ -6,13 +6,13 @@ ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2019
-ms.openlocfilehash: 0841cb0cbe97644f3bb53105887f3adadf9bf6c5
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
+ms.date: 11/27/2019
+ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
+ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68820940"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681335"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>提高 Xamarin.Forms 应用性能
 
@@ -43,7 +43,7 @@ XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言
 
 ## <a name="reduce-unnecessary-bindings"></a>减少不需要的绑定
 
-不要将绑定用于可以方便地进行静态设置的内容。 绑定无需绑定的数据不会带来优势，因为绑定并不经济高效。 例如，设置 `Button.Text = "Accept"` 的开销要低于将 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 绑定到值为“Accept”的 ViewModel `string` 属性。
+不要将绑定用于可以方便地进行静态设置的内容。 绑定无需绑定的数据不会带来优势，因为绑定并不经济高效。 例如，设置 `Button.Text = "Accept"` 的开销要低于将 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 绑定到值为“Accept”值的 viewmodel `string` 属性。
 
 ## <a name="use-fast-renderers"></a>使用快速呈现器
 
@@ -157,6 +157,41 @@ XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言
 - 不要比需要更频繁地更新任何 [`Label`](xref:Xamarin.Forms.Label) 实例，因为标签大小的更改可能会导致重新计算整个屏幕布局。
 - 除非需要，否则不要设置 [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) 属性。
 - 尽可能将任何 [`Label`](xref:Xamarin.Forms.Label) 实例的 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) 都设置为 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)。
+
+## <a name="use-asynchronous-programming"></a>使用异步编程
+
+通过使用异步编程，可增强应用程序的总体响应能力，而且通常可避免性能瓶颈。 在 .NET 中，[基于任务的异步模式 (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap) 是异步操作的推荐设计模式。 但是，如果 TAP 使用不当，则可能会导致应用程序性能不佳。 因此，在使用 TAP 时，应遵循以下准则。
+
+### <a name="fundamentals"></a>基础知识
+
+- 了解由 `TaskStatus` 枚举表示的任务生命周期。 有关详细信息，请参阅 [TaskStatus 的含义](https://devblogs.microsoft.com/pfxteam/the-meaning-of-taskstatus/)和[任务状态](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap#task-status)。
+- 使用 `Task.WhenAll` 方法异步地等待多个异步操作完成，而不是使用 `await` 单独等待一系列异步操作。 有关详细信息，请参阅 [Task.WhenAll](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)。
+- 使用 `Task.WhenAny` 方法异步地等待多个异步操作中的一个操作完成。 有关详细信息，请参阅 [Task.WhenAny](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)。
+- 使用 `Task.Delay` 方法生成在指定时间后完成的 `Task` 对象。 对于轮询数据和将用户输入的处理延迟预定时间之类的场景，这非常有用。 有关详细信息，请参阅 [Task.Delay](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskdelay)。
+- 使用 `Task.Run` 方法对线程池执行密集型同步 CPU 操作。 此方法是 `TaskFactory.StartNew` 方法的快捷方式，其中设置的参数最佳。 有关详细信息，请参阅 [Task.Run](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskrun)。
+- 避免尝试创建异步构造函数。 请改用生命周期事件或单独的初始化逻辑，以使用 `await` 正确处理任何初始化。 有关详细信息，请参阅 blog.stephencleary.com 上的 [Async 构造函数](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html)。
+- 使用惰性任务模式，避免在应用程序启动过程中等待异步操作完成。 有关详细信息，请参阅 [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/)。
+- 通过创建 `TaskCompletionSource<T>` 对象，为不使用 TAP 的现有异步操作创建任务包装器。 这些对象获得 `Task` 可编程性的优点，并使你能够控制关联 `Task` 的生存期和完成。 有关详细信息，请参阅 [TaskCompletionSource 的性质](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/)。
+asynchronous-mvvm-applications-commands）。
+- 当无需处理异步操作的结果时，返回 `Task` 对象，而不是返回等待的 `Task` 对象。 由于执行的上下文切换较少，因此性能更高。
+- 在数据可用时处理数据，或在你有多个必须以异步方式彼此通信的操作等场景下，使用任务并行库 (TPL) 数据流库。 有关详细信息，请参阅[数据流（任务并行库）](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)。
+
+### <a name="ui"></a>UI
+
+- 调用 API 的异步版本（若可用）。 这将保持 UI 线程通畅，从而有助于提升用户对应用程序的体验。
+- 使用 UI 线程上异步操作中的数据更新 UI 元素，以避免引发异常。 但是，对 `ListView.ItemsSource` 属性的更新将自动被封送到该 UI 线程。 要了解如何确定代码是否在 UI 线程上运行，请参阅 [Xamarin.Essentials:MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)。
+
+    > [!IMPORTANT]
+    > 通过数据绑定更新的控件属性都将自动被封送到该 UI 线程。
+
+### <a name="error-handling"></a>错误处理
+
+- 了解异步异常处理。 由异步运行的用户代码引发的未处理异常会传播回调用线程（某些情况除外）。 有关详细信息，请参阅[异常处理（任务并行库）](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library)。
+- 不要创建 `async void` 方法，而是创建 `async Task` 方法。 这些方法更便于实现错误处理、可组合性和可测试性。 此指导原则的例外情况是异步事件处理程序，这类处理程序必须返回 `void`。 有关详细信息，请参阅[避免 Async Void](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#avoid-async-void)。
+- 请勿通过调用 `Task.Wait`、`Task.Result` 或 `GetAwaiter().GetResult` 方法将阻止代码和异步代码混杂在一起，因为它们会导致死锁的发生。 但是，如果必须违反此准则，则首选的方法是调用 `GetAwaiter().GetResult` 方法，因为它将保留任务异常。 有关详细信息，请参阅[始终使用 Async](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#async-all-the-way) 和 [.NET 4.5 中的任务异常处理](https://devblogs.microsoft.com/pfxteam/task-exception-handling-in-net-4-5/)。
+- 尽可能使用 `ConfigureAwait` 方法创建无上下文的代码。 无上下文的代码对于移动应用程序而言性能更佳具，是一种可在使用部分异步代码库时避免死锁的方法。 有关详细信息，请参阅[配置上下文](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#configure-context)。
+- 使用“延续任务”来实现一些功能，例如处理上一个异步操作引发的异常以及在延续开始前或运行时取消延续  。 有关详细信息，请参阅[使用延续任务链接任务](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks)。
+- 从 `ICommand` 中调用异步操作时，使用异步 `ICommand` 实现。 这确保了异步命令逻辑中的任何异常都可得到处理。 有关详细信息，请参阅[异步编程：针对异步 MVVM 应用程序的模式：命令](/archive/msdn-magazine/2014/april/async-programming-patterns-for-asynchronous-mvvm-applications-commands)。
 
 ## <a name="choose-a-dependency-injection-container-carefully"></a>仔细选择依赖关系注入容器
 
