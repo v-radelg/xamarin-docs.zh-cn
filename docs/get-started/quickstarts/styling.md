@@ -11,7 +11,7 @@ ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
 ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 10/21/2019
 ms.locfileid: "70756759"
@@ -180,7 +180,7 @@ ms.locfileid: "70756759"
 
 1. 启动 Visual Studio for Mac 并打开 "注释" 项目。
 
-2. 在**Solution Pad**的 "**注释**" 项目中，双击 " **app.config** " 以打开它。 然后，将现有代码替换为以下代码：
+2. 在**Solution Pad**的 "**注释**" 项目中，双击 " **App.xaml** " 以打开它。 然后，将现有代码替换为以下代码：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>

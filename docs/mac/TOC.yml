@@ -27,7 +27,7 @@
           href: app-fundamentals/xib.md
         - name: 没有 .storyboard/.xib 的用户界面设计
           href: app-fundamentals/xibless-ui.md
-        - name: 图像
+        - name: 映像
           href: app-fundamentals/image.md
         - name: 数据绑定和键值编码
           href: app-fundamentals/databinding.md
@@ -162,7 +162,7 @@
                   href: ~/cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin/mac
                 - name: 工具和命令
                   href: ~/cross-platform/macios/binding/objective-sharpie/tools.md?context=xamarin/mac
-                - name: 功能
+                - name: 特征
                   href: ~/cross-platform/macios/binding/objective-sharpie/platform/index.md?context=xamarin/mac
                   items:
                     - name: ApiDefinitions 和 StructsAndEnums
@@ -224,4 +224,4 @@
     - name: 发行说明
       href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
     - name: 示例
-      href: samples/index.yml
+      href: samples/index.md
