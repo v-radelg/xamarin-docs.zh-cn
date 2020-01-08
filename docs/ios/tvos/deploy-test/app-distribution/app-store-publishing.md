@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f49fa08e5d9b2ad76fc069b415d6ea5b899b2bf7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a3d0962eb8253ca72b6afce77036e02a7aa59b94
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030791"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607888"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>发布到 Apple TV App Store
 
@@ -47,7 +47,7 @@ Apple 还会维护 Apple TV 应用商店提交提示的列表。 可在[在 App 
 
 [ITunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa)是一套基于 web 的工具，用于在 Apple TV 应用商店上管理 tvOS 应用。 你的 Xamarin tvOS 应用需要在 iTunes Connect 中正确设置和配置，然后才能提交到 Apple 进行审核并最终在 Apple TV 应用商店中发布以供销售或免费应用。
 
-请执行以下操作：
+请执行下列操作：
 
 1. 验证 iTunes Connect 的**协议、税款和银行**部分中是否具备恰当的最新协议，以便发布免费或付费的 iOS 应用程序。
 2. 为应用程序创建新的**ITunes Connect 记录**，并指定其**显示名称**（如 Apple TV 应用商店中所示）。
@@ -91,7 +91,7 @@ Visual Studio for Mac 中执行以下操作：
 5. 选择并配置 tvOS 应用所需的权利，使其与定义应用 ID 时执行的设置匹配。
 6. 保存对 `Entitlements.plist` 文件所做的更改。
 
-有关详细说明，请参阅[为应用程序服务进行预配](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)文档。 虽然本文档是针对 iOS 编写的，但也可以使用相同的步骤来设置 tvOS 应用。
+有关详细说明，请参阅[为应用程序服务进行预配](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)文档。 虽然本文档是针对 iOS 编写的，但也可以使用相同的步骤来设置 tvOS 应用。
 
 <a name="Setting_the_Apps_Icons_and_Launch_Screens" />
 
@@ -110,7 +110,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 使用 Apple 的基于 Web 的 iOS 预配门户的预配包含以下步骤：
 
 1. 选择“预配” > “分发”。
-2. 单击 " **+** " 按钮，然后选择要创建为**Apple TV 应用商店**的分发配置文件的类型。
+2. 单击 **+** 按钮，然后选择你想要为创建的分发配置文件的类型**Apple TV App Store**。
 3. 从要为其创建分发配置文件的下拉列表中，选择“应用程序 ID”。
 4. 选择对应用程序进行签名所需的证书。
 5. 为新的**分发配置文件**输入**名称**，并生成配置文件。
@@ -125,7 +125,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 默认情况下，当你创建新的 tvOS 应用时，将自动为**调试**和**发布**部署创建_生成配置_。 在执行要提交到 Apple 的应用的最终版本之前，需要对基本**版本**配置进行一些修改。
 
-请执行以下操作：
+请执行下列操作：
 
 1. 右键单击 "**解决方案资源管理器**" 和 "选择"**选项**中的**项目名称**以将其打开以进行编辑。
 2. 如果以特定版本的 tvOS 为目标，请在 " **TvOS Build** > **iOS SDK 版本**" 下选择该版本。 对于 tvOS 支持的预览版本，请将此值设置为 "**默认**值"。
@@ -211,13 +211,13 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 <a name="Troubleshooting" />
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 如果在将 tvOS 应用提交到 Apple TV 应用商店时遇到问题，请参阅[故障排除](~/ios/tvos/troubleshooting.md)指南。 它包含一些你可能会遇到的已知问题，以及如何在 tvOS 中解决这些问题。
 
 <a name="Summary" />
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何配置、生成和提交 Apple TV App Store 发布的应用。 首先，介绍创建并安装分发配置文件所需的步骤。 接下来，本演练逐步介绍如何使用 Visual Studio for Mac 来创建分发版本。 最后，该示例演示了如何使用 iTunes Connect 和 Xcode 存档工具将应用程序提交到 Apple TV App Store。
 

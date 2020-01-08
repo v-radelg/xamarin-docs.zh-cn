@@ -1,5 +1,5 @@
 ---
-title: 附加属性
+title: 附加屬性
 description: 本文介绍了附加属性，并演示如何创建并使用它们。
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
@@ -7,20 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: b5d1ddc4cf3a6817851d22aba920abb29d9f746f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 78dd2d3a63cd0e2b6ab1e6876dd82f49f5580f0b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767649"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489968"
 ---
-# <a name="attached-properties"></a>附加属性
+# <a name="attached-properties"></a>附加屬性
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
-_附加的属性是特殊类型的一个类中定义，但附加到其他对象的可绑定属性和可识别为属性的 XAML 中包含的类和属性名称之间以句点分隔。本文介绍了附加属性，并演示如何创建并使用它们。_
-
-## <a name="overview"></a>概述
 
 附加属性启用要为其自己的类未定义的属性分配值的对象。 例如，子元素可使用附加属性，以通知其父元素它们将在用户界面中显示。 [ `Grid` ](xref:Xamarin.Forms.Grid)控件允许的行和子级通过设置指定的列`Grid.Row`和`Grid.Column`附加属性。 `Grid.Row` 并`Grid.Column`是附加的属性，因为它们的子级的元素上设置`Grid`，而不是在`Grid`本身。
 
@@ -31,14 +28,14 @@ _附加的属性是特殊类型的一个类中定义，但附加到其他对象�
 
 可绑定属性的详细信息，请参阅[可绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
 
-## <a name="creating-and-consuming-an-attached-property"></a>创建和使用附加的属性
+## <a name="create-an-attached-property"></a>创建附加属性
 
 创建附加的属性的过程如下所示：
 
 1. 创建[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)具有的一个实例[ `CreateAttached` ](xref:Xamarin.Forms.BindableProperty.CreateAttached*)方法重载。
 1. 提供`static` `Get` *PropertyName*并`Set` *PropertyName*方法访问器作为附加属性。
 
-### <a name="creating-a-property"></a>创建属性
+### <a name="create-a-property"></a>创建属性
 
 在创建时使用的附加的属性在其他类型中，创建属性的类不需要派生自[ `BindableObject` ](xref:Xamarin.Forms.BindableObject)。 但是，*目标*访问器的属性应是的或派生自， [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)。
 
@@ -53,9 +50,9 @@ public static readonly BindableProperty HasShadowProperty =
 
 这将创建一个名为的附加的属性`HasShadow`，类型的`bool`。 该属性归`ShadowEffect`类，并具有默认值为`false`。 附加属性的命名约定是附加的属性标识符中指定属性名称必须匹配`CreateAttached`方法，使用"属性"追加到它。 因此，在上面的示例中，附加的属性标识符是`HasShadowProperty`。
 
-有关创建可绑定属性，包括可以在创建期间，指定的参数的详细信息请参阅[创建和使用可绑定属性](~/xamarin-forms/xaml/bindable-properties.md#consuming-bindable-property)。
+有关创建可绑定属性的详细信息，包括在创建过程中可以指定的参数，请参阅[创建可绑定属性](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property)。
 
-### <a name="creating-accessors"></a>创建访问器
+### <a name="create-accessors"></a>创建访问器
 
 静态`Get` *PropertyName*并`Set` *PropertyName*方法都是必需的因为附加属性的访问器，否则将无法使用属性系统附加的属性。 `Get` *PropertyName*访问器应符合以下签名：
 
@@ -89,7 +86,7 @@ public static void SetHasShadow (BindableObject view, bool value)
 }
 ```
 
-### <a name="consuming-an-attached-property"></a>使用附加的属性
+### <a name="consume-an-attached-property"></a>使用附加属性
 
 一旦创建附加的属性后，可以从 XAML 或代码使用它。 在 XAML，这被通过使用命名空间声明，该值指示公共语言运行时 (CLR) 命名空间名称和 （可选） 程序集名称声明具有前缀的命名空间。 有关详细信息，请参阅[XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)。
 
@@ -114,7 +111,7 @@ var label = new Label { Text = "Label Shadow Effect" };
 ShadowEffect.SetHasShadow (label, true);
 ```
 
-### <a name="consuming-an-attached-property-with-a-style"></a>使用附加的属性的方式
+### <a name="consume-an-attached-property-with-a-style"></a>使用带有样式的附加属性
 
 由样式之前，还可以将附加的属性添加到控件。 以下 XAML 代码示例所示*显式*使用的样式`HasShadow`附加属性，可以应用于[ `Label` ](xref:Xamarin.Forms.Label)控件：
 
@@ -126,7 +123,7 @@ ShadowEffect.SetHasShadow (label, true);
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style)可应用于[ `Label` ](xref:Xamarin.Forms.Label)通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性设置为`Style`实例使用`StaticResource`标记扩展，如下面的代码示例中所示：
+[`Style`](xref:Xamarin.Forms.Style) 可通过使用 `StaticResource` 标记扩展将 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 属性设置为 `Style` 实例来应用于 [`Label`](xref:Xamarin.Forms.Label)，如以下代码示例所示：
 
 ```xaml
 <Label Text="Label Shadow Effect" Style="{StaticResource ShadowEffectStyle}" />
@@ -134,18 +131,14 @@ ShadowEffect.SetHasShadow (label, true);
 
 有关样式的详细信息，请参阅[样式](~/xamarin-forms/user-interface/styles/index.md)。
 
-## <a name="advanced-scenarios"></a>高级的方案
+## <a name="advanced-scenarios"></a>高级方案
 
-在创建附加的属性时，有大量可选参数，可设置为启用高级附加的属性的方案。 这包括检测属性更改、 验证属性值，以及将强制转换属性值。 有关详细信息，请参阅[高级方案](~/xamarin-forms/xaml/bindable-properties.md#advanced)。
-
-## <a name="summary"></a>总结
-
-本文介绍了附加属性，并演示了如何创建并使用它们。 附加的属性是一种特殊的可绑定属性，但附加到其他对象，并可识别在 XAML 中的一个类中定义为包含的类和一个句点分隔的属性名称的属性。
+在创建附加的属性时，有大量可选参数，可设置为启用高级附加的属性的方案。 这包括检测属性更改、 验证属性值，以及将强制转换属性值。 有关详细信息，请参阅[高级方案](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios)。
 
 ## <a name="related-links"></a>相关链接
 
 - [可绑定属性](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)
-- [阴影效果 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
-- [BindableProperty](xref:Xamarin.Forms.BindableProperty)
-- [BindableObject](xref:Xamarin.Forms.BindableObject)
+- [阴影效果（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+- [BindableProperty API](xref:Xamarin.Forms.BindableProperty)
+- [Msds-bindableobject API](xref:Xamarin.Forms.BindableObject)

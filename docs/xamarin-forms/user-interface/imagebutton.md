@@ -6,17 +6,17 @@ ms.assetid: B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/19/2018
-ms.openlocfilehash: 90d860cb6429025672a058e22e76f029872d3b34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 12/04/2019
+ms.openlocfilehash: 7c6647a0299b5ece3caaaa1d322ec1a0efac3557
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657177"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490085"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton 显示图像和响应点击或单击，将定向的应用程序来执行特定任务。_
 
@@ -56,6 +56,9 @@ _ImageButton 显示图像和响应点击或单击，将定向的应用程序来�
 [![基本 ImageButton](imagebutton-images/BasicImageButton.png "基本 ImageButton")](imagebutton-images/BasicImageButton-Large.png#lightbox "基本 ImageButton")
 
 默认情况下`ImageButton`都是矩形状，但可以通过使用进行舍入的 it 角`CornerRadius`属性。 有关详细信息`ImageButton`外观，请参阅[ImageButton 外观](#imagebutton-appearance)。
+
+> [!NOTE]
+> 虽然 `ImageButton` 可以加载动态 GIF，但它只显示 GIF 的第一帧。
 
 下面的示例演示如何创建在功能上等效于上一个 XAML 示例，但完全在页C#:
 
@@ -144,7 +147,7 @@ public partial class ImageButtonDemoPage : ContentPage
 
 此特定`Clicked`处理程序递增计数器，并显示中的计数器值[ `Label` ](xref:Xamarin.Forms.Label):
 
-[![单击此基本 ImageButton](imagebutton-images/ImageButton.png "基本 ImageButton 单击")](imagebutton-images/ImageButton-Large.png#lightbox "基本 ImageButton 单击")
+[![基本 ImageButton 单击](imagebutton-images/ImageButton.png "基本 ImageButton 单击")](imagebutton-images/ImageButton-Large.png#lightbox "基本 ImageButton 单击")
 
 下面的示例演示如何创建在功能上等效于上一个 XAML 示例，但完全在页C#:
 

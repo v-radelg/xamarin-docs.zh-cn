@@ -6,13 +6,13 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: c04b5250bcdc575adc5aaff73901347e1e476b07
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662312"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489331"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin CollectionView 简介
 
@@ -47,15 +47,15 @@ ms.locfileid: "73662312"
 |---|---|---|
 | 数据 | `ItemsSource` | 通过设置 `ItemsSource` 属性，使用数据填充[`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 有关详细信息，请参阅[使用数据填充 CollectionView](populate-data.md#populate-a-collectionview-with-data)。 |
 | 项外观 | `ItemTemplate` | 可以通过将 `ItemTemplate` 属性设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)来定义[`CollectionView`](xref:Xamarin.Forms.CollectionView)中每个项的外观。 有关详细信息，请参阅[定义项外观](populate-data.md#define-item-appearance)。 |
-| 单元 | `TextCell`中， `ImageCell`中， `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)没有单元的概念。 相反，数据模板用于定义列表中每个数据项的外观。 |
-| 行分隔符 | `SeparatorColor`，`SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含内置分隔符。 如果需要，可在项模板中提供这些项。 |
-| 选择 | `SelectionMode`，`SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持单个和多个选择。 有关详细信息，请参阅[Xamarin CollectionView 选择](selection.md)。 |
-| 行高 | `HasUnevenRows`，`RowHeight` | 在 `CollectionView` 中，每个项的行高由 `ItemSizingStrategy` 属性确定。 有关详细信息，请参阅[项大小调整](layout.md#item-sizing)。|
+| 单元格 | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)没有单元的概念，因此没有公开指示器的概念。 相反，数据模板用于定义列表中每个数据项的外观。 |
+| 行分隔符 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含内置分隔符。 如果需要，可在项模板中提供这些项。 |
+| 选择 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持单个和多个选择。 有关详细信息，请参阅[Xamarin CollectionView 选择](selection.md)。 |
+| 行高 | `HasUnevenRows`, `RowHeight` | 在 `CollectionView`中，每个项的行高由 `ItemSizingStrategy` 属性确定。 有关详细信息，请参阅[项大小调整](layout.md#item-sizing)。|
 | 缓存 | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)自动使用基础本机控件提供的虚拟化。 |
 | 页眉和页脚 | `Header`、 `HeaderElement`、 `HeaderTemplate`、 `Footer`、 `FooterElement`、 `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过 "`Header`"、"`Footer`"、"`HeaderTemplate`" 和 "`FooterTemplate`" 属性来显示通过列表中的项滚动的页眉和页脚。 有关详细信息，请参阅[页眉和页脚](layout.md#headers-and-footers)。 |
 | 分组 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)通过将其 `IsGrouped` 属性设置为 `true`，来显示正确分组的数据。 可以通过将 `GroupHeaderTemplate` 和 `GroupFooterTemplate` 属性设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象来自定义组头和组尾。 有关详细信息，请参阅[Xamarin CollectionView 分组](grouping.md)。 |
-| 请求刷新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 通过将[`CollectionView`](xref:Xamarin.Forms.CollectionView)设置为 `RefreshView` 的子级，支持拉取到刷新功能。 有关详细信息，请参阅[请求刷新](populate-data.md#pull-to-refresh)。 |
-| 上下文操作 | `ContextActions` | `CollectionView`中当前不支持上下文操作，但会在将来的版本中添加。 |
+| 下拉以刷新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 通过将[`CollectionView`](xref:Xamarin.Forms.CollectionView)设置为 `RefreshView`的子级，支持拉取到刷新功能。 有关详细信息，请参阅[请求刷新](populate-data.md#pull-to-refresh)。 |
+| 上下文菜单项 | `ContextActions` | 通过将 `SwipeView` 设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中的根视图来支持上下文菜单项，该视图定义[`CollectionView`](xref:Xamarin.Forms.CollectionView)中每项数据的外观。 有关详细信息，请参阅[上下文菜单](populate-data.md#context-menus)。 |
 | 滚动 | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)定义 `ScrollTo` 方法，这些方法会将项滚动到视图中。 有关详细信息，请参阅[滚动](scrolling.md)。 |
 
 ## <a name="related-links"></a>相关链接

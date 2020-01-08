@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a18572b0f28cb8d6c699d0bbd062bdb067471a34
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 13abfa9789cee32ed2c7cd2401c1402d9c7c3886
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770884"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489773"
 ---
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>在 Xamarin 中使用 Azure Cosmos DB 文档数据库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 
-_Azure Cosmos DB 文档数据库是提供低延迟访问产品/服务面向需要无缝缩放和全局复制的应用程序的快速、 高度可用、 可缩放数据库服务的 JSON 文档的 NoSQL 数据库。此文章介绍了如何使用 Azure Cosmos DB.NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序。_
+_Azure Cosmos DB 文档数据库是一种 NoSQL 数据库，可提供对 JSON 文档的低延迟访问，为需要无缝缩放和全局复制的应用程序提供快速、高度可用、可缩放的数据库服务。本文介绍如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin 应用程序中。_
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
@@ -36,6 +36,9 @@ Azure Cosmos DB 文档数据库可能包含零个或多个文档集合。 每个
 本文中，以及随附的示例应用程序，演示其中这些任务存储在 Azure Cosmos DB 文档数据库中的待办事项列表应用程序。 有关示例应用程序的详细信息，请参阅[了解示例](~/xamarin-forms/data-cloud/web-services/introduction.md)。
 
 有关 Azure Cosmos DB 的详细信息，请参阅[Azure Cosmos DB 文档](/azure/cosmos-db/)。
+
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
 ## <a name="setup"></a>安装
 
@@ -223,7 +226,7 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 `DeleteDatabaseAsync`方法指定`Uri`参数表示要删除的数据库。 请注意，调用此方法也会删除存储在数据库中，文档集合和文档集合中存储的文档。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用 Azure Cosmos DB.NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序。 Azure Cosmos DB 文档数据库是提供低延迟访问产品/服务面向需要无缝缩放和全局复制的应用程序的快速、 高度可用、 可缩放数据库服务的 JSON 文档的 NoSQL 数据库。
 

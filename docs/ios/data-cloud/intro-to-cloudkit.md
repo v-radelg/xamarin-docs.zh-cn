@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 01c8df7cc17c71cd2ddd55e7ed1f5a8e21617604
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 29ccb919f68a45212bff3b66b4bc3fbdebd24faf
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030463"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663455"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin 中的 CloudKit
 
@@ -23,7 +23,7 @@ CloudKit 框架可简化访问 iCloud 的应用程序的开发。 这包括检�
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 若要完成本文中所述的步骤，需要满足以下要求：
 
@@ -33,9 +33,9 @@ CloudKit 框架可简化访问 iCloud 的应用程序的开发。 这包括检�
 
 ## <a name="what-is-cloudkit"></a>什么是 CloudKit？
 
-CloudKit 是向开发人员授予对 iCloud 服务器的访问权限的一种方法。 它为 iCloud 驱动器和 iCloud 照片库提供基础。 Mac OS X 和 Apple iOS 设备都支持 CloudKit。
+CloudKit 是向开发人员授予对 iCloud 服务器的访问权限的一种方法。 它为 iCloud 驱动器和 iCloud 照片库提供基础。 MacOS 和 iOS 设备都支持 CloudKit。
 
- [![](intro-to-cloudkit-images/image1.png "How CloudKit is supported on both Mac OS X and Apple iOS Devices")](intro-to-cloudkit-images/image1.png#lightbox)
+[![如何在 macOS 和 iOS 设备上支持 CloudKit](intro-to-cloudkit-images/image1.png)](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit 使用 iCloud 帐户基础结构。 如果用户登录到该设备上的 iCloud 帐户，CloudKit 将使用其 ID 来标识该用户。 如果没有可用的帐户，则将提供受限的只读访问权限。
 
@@ -52,21 +52,22 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 
 在 Xamarin 应用程序可以利用 CloudKit 框架之前，必须正确预配应用程序，如使用[功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)和使用[权利](~/ios/deploy-test/provisioning/entitlements.md)指南中所述。
 
+若要访问 CloudKit， **info.plist**文件必须包含**Enable iCloud**、**键值存储**和**CloudKit**权限。
+
+### <a name="sample-app"></a>示例应用
+
+[CloudKitAtlas 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)演示如何将 CloudKit 与 Xamarin 配合使用。 下面的步骤演示了如何配置示例–除了需要对 CloudKit 的要求以外，它还需要其他设置：
+
 1. 在 Visual Studio for Mac 或 Visual Studio 中打开项目。
-2. 在**解决方案资源管理器**中，打开**info.plist**文件，并确保**捆绑标识符**与创建设置过程中创建的**应用 ID**中定义的标识符匹配：
-
-    [![](intro-to-cloudkit-images/image26a.png "Enter the Bundle Identifier")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
-
-3. 向下滚动到**info.plist**文件的底部，选择 "**启用后台模式**"、"**位置更新**" 和 "**远程通知**"：
-
-    [![](intro-to-cloudkit-images/image27a.png "Select Enabled Background Modes, Location Updates and Remote Notifications")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
+2. 在**解决方案资源管理器**中，打开**info.plist**文件，并确保**捆绑标识符**与在设置设置过程中创建的**应用 ID**中定义的标识符相匹配。
+3. 向下滚动到**info.plist**文件的底部，选择 "**启用后台模式**"、"**位置更新**" 和 "**远程通知**"。
 4. 右键单击解决方案中的 iOS 项目，然后选择 "**选项**"。
 5. 选择 " **IOS 捆绑签名**"，选择上面创建的**开发人员标识**和**预配配置文件**。
-6. 确保**info.plist**包括**启用 iCloud** 、**键值存储**和**CloudKit** 。
-7. 确保应用程序的**无处不容器**（如上所创建）。 示例：`iCloud.com.your-company.CloudKitAtlas`
-8. 保存对该文件所做的更改。
+6. 确保**info.plist**包括**启用 iCloud**、**键值存储**和**CloudKit**。
+7. 请确保应用程序存在**无处不容器**。 示例：`iCloud.com.your-company.CloudKitAtlas`
+8. 保存对文件所做的更改。
 
-设置好这些设置后，应用程序便可访问 CloudKit Framework Api。
+设置好这些设置后，示例应用现已准备好访问 CloudKit Framework Api 以及后台、位置和通知服务。
 
 ## <a name="cloudkit-api-overview"></a>CloudKit API 概述
 
@@ -102,11 +103,7 @@ ICloud 数据的容器化还允许 CloudKit 封装用户信息。 通过这种�
 
 容器由应用程序的开发人员通过 WW 门户进行完全管理。 容器的命名空间在所有 Apple 开发人员中都是全局性的，因此，对于给定的开发人员和应用程序，该容器不仅必须是唯一的。
 
-Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示法。 示例:
-
-```csharp
-iCloud.com.company-name.application-name
-```
+Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示法。 示例：`iCloud.com.company-name.application-name`
 
 默认情况下，容器默认绑定到给定应用程序，可以在应用程序之间共享。 因此，多个应用程序可以协调单个容器。 单个应用程序也可以与多个容器进行通信。
 
@@ -130,11 +127,11 @@ CloudKit 的主要功能之一是使用应用程序的数据模型和将模型�
 
 ```csharp
 using CloudKit;
-...
+//...
 
 public CKDatabase PublicDatabase { get; set; }
 public CKDatabase PrivateDatabase { get; set; }
-...
+//...
 
 // Get the default public and private databases for
 // the application
@@ -147,9 +144,9 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 ||公共数据库|私有数据库|
 |---|--- |--- |
 |**数据类型**|共享数据|当前用户的数据|
-|**限制**|考虑开发人员的配额|在用户的配额中考虑|
+|**配额**|考虑开发人员的配额|在用户的配额中考虑|
 |**默认权限**|世界可读性|用户可读|
-|**编辑权限**|iCloud 仪表板角色通过记录类级别|不可用|
+|**编辑权限**|iCloud 仪表板角色通过记录类级别|不适用|
 
 ### <a name="records"></a>记录
 
@@ -181,10 +178,10 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 ```csharp
 using CloudKit;
-...
+//...
 
 private const string ReferenceItemRecordName = "ReferenceItems";
-...
+//...
 
 var newRecord = new CKRecord (ReferenceItemRecordName);
 newRecord ["name"] = (NSString)nameTextField.Text;
@@ -221,7 +218,7 @@ await CloudManager.SaveAsync (newRecord);
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>reference
+### <a name="references"></a>引用
 
 引用在给定的数据库中提供相关记录之间的关系：
 
@@ -302,13 +299,10 @@ namespace CloudKitAtlas
     [Register ("AppDelegate")]
     public partial class AppDelegate : UIApplicationDelegate
     {
-        #region Computed Properties
         public override UIWindow Window { get; set;}
         public CKDatabase PublicDatabase { get; set; }
         public CKDatabase PrivateDatabase { get; set; }
-        #endregion
 
-        #region Override Methods
         public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
         {
             application.RegisterForRemoteNotifications ();
@@ -335,7 +329,6 @@ namespace CloudKitAtlas
         {
             Console.WriteLine ("Push received");
         }
-        #endregion
     }
 }
 ```
@@ -346,13 +339,11 @@ namespace CloudKitAtlas
 
 ```csharp
 using CloudKit;
-...
+//...
 
-#region Computed Properties
 public AppDelegate ThisApp {
     get { return (AppDelegate)UIApplication.SharedApplication.Delegate; }
 }
-#endregion
 ```
 
 这将添加访问 `AppDelegate` 的快捷方式，并访问上面创建的公共和私有数据库快捷方式。
@@ -635,7 +626,7 @@ public override void ReceivedRemoteNotification (UIApplication application, NSDi
 
 正如本文开头所述，CloudKit 是在现有 iCloud 基础结构的基础上构建的。 以下部分将详细介绍如何使用 CloudKit API 向开发人员公开帐户。
 
-### <a name="authentication"></a>身份验证
+### <a name="authentication"></a>身份验证 （可能为英文网页）
 
 处理用户帐户时，首先要考虑的是身份验证。 CloudKit 支持通过设备上的当前登录 iCloud 用户进行身份验证。 身份验证发生在幕后，并由 iOS 进行处理。 这样，开发人员就不必担心实现身份验证的详细信息。 它们只会测试用户是否已登录。
 
@@ -650,7 +641,7 @@ CloudKit 向开发人员提供以下用户信息：
 
 接下来，我们将详细介绍这些主题。
 
-#### <a name="identity"></a>标识
+#### <a name="identity"></a>身份
 
 如上所述，CloudKit 为应用程序提供了一种唯一标识给定用户的方法：
 
@@ -750,7 +741,7 @@ CloudKit 还提供了一种方法，用于通过查询整个通讯簿来发现�
 
 ```csharp
 public CKDiscoveredUserInfo UserInfo { get; set; }
-...
+//...
 
 // Get the user's metadata
 CKContainer.DefaultContainer.DiscoverUserInfo(UserID, (info, e) => {
@@ -799,7 +790,7 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 在装运使用 CloudKit 的应用程序之前，需要将它配置为面向**生产 CloudKit 环境**，否则 Apple 将拒绝该应用程序。
 
-请执行以下操作：
+请执行下列操作：
 
 1. 在 Visual Studio for Ma 中，编译用于**Release** > **iOS 设备**的应用程序：
 
@@ -857,12 +848,12 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 考虑到这些用例，开发人员应选择正确的 iCloud 技术来提供当前所需的应用程序功能，并为将来的增长提供良好的可伸缩性。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 CloudKit API 的简介。 它演示了如何预配和配置 Xamarin iOS 应用程序以使用 CloudKit。 它已涵盖 CloudKit 便利性 API 的功能。 它演示了如何使用查询和订阅为可缩放性设计 CloudKit 启用的应用程序。 最后，它显示了通过 CloudKit 向应用程序公开的用户帐户信息。
 
 ## <a name="related-links"></a>相关链接
 
+- [CloudKit （Apple）](https://developer.apple.com/icloud/cloudkit/)
 - [CloudKitAtlas （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)
-- [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)
 - [创建预配配置文件](~/ios/get-started/installation/device-provisioning/index.md)

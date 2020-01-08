@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 658bb65c9f9dea2c68b782736de02d95df368dd3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 97c582ada0951f530885359112c3c7adfacc3502
+ms.sourcegitcommit: bdb8ad7337931adf2ea45b10c2af81ecc4aad26a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024856"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75500234"
 ---
 # <a name="creating-a-service"></a>创建服务
 
@@ -38,7 +38,7 @@ public class DemoService : Service
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-可以通过_导出_服务与其他 Android 应用程序共享该服务。 这是通过设置 `ServiceAttribute` 上的 `Exported` 属性来完成的。 导出服务时，还应将 `ServiceAttribute.Name` 属性设置为为服务提供有意义的公共名称。 此代码段演示如何导出和命名服务：
+可以通过_导出_服务与其他 Android 应用程序共享该服务。 这是通过设置 `ServiceAttribute`上的 `Exported` 属性来完成的。 导出服务时，还应将 `ServiceAttribute.Name` 属性设置为为服务提供有意义的公共名称。 此代码段演示如何导出和命名服务：
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -75,7 +75,7 @@ public class DemoService : Service
 
 在 Android 中启动服务的最基本方法是分派一个 `Intent`，其中包含有助于识别应启动的服务的元数据。 可以使用两种不同的方法来启动服务：
 
-- **明确意向**&ndash;_显式目的_将确定应该使用哪种服务来完成给定的操作。 可以将显式意图视为具有特定地址的字母;Android 会将意向路由到显式标识的服务。 此代码片段是使用显式意图启动名为 `DownloadService` 的服务的一个示例：
+- **明确意向**&ndash;_显式目的_将确定应该使用哪种服务来完成给定的操作。 可以将显式意图视为具有特定地址的字母;Android 会将意向路由到显式标识的服务。 此代码片段是使用显式意图启动名为 `DownloadService`的服务的一个示例：
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ public class DemoService : Service
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
-- **隐式意向**&ndash; 这种类型的意向使用户希望执行的操作是不确定的，但完成该操作的确切服务是未知的。 可以将隐式意向看作是 "可能关注的人员 ..." 的字母。
+- **隐式意向**&ndash; 这种类型的意向松散标识用户希望执行的操作类型，但完成该操作的确切服务是未知的。 可以将隐式意向看作是 "可能关注的人员 ..." 的字母。
     Android 将检查意图的内容，并确定是否存在与意向匹配的现有服务。
 
     _意向筛选器_用于帮助与已注册的服务匹配隐式目的。 意向筛选器是一个 XML 元素，它将添加到**androidmanifest.xml**中，该元素包含必要的元数据以帮助与具有隐式目的的服务匹配。
@@ -106,7 +106,7 @@ public class DemoService : Service
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>为隐式意向创建意向过滤器
 
-若要将服务与隐式意向相关联，Android 应用必须提供一些元数据来标识服务的功能。 此元数据由_意向筛选器_提供。 意向筛选器包含某些信息，如操作或数据类型，这些信息必须在意向中提供以启动服务。 在 Xamarin 中，在**androidmanifest.xml**中通过使用[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)修饰服务来注册意向筛选器。 例如，下面的代码添加了一个意向筛选器，其中包含 `com.xamarin.DemoService` 的关联操作：
+若要将服务与隐式意向相关联，Android 应用必须提供一些元数据来标识服务的功能。 此元数据由_意向筛选器_提供。 意向筛选器包含某些信息，如操作或数据类型，这些信息必须在意向中提供以启动服务。 在 Xamarin 中，在**androidmanifest.xml**中通过使用[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)修饰服务来注册意向筛选器。 例如，下面的代码添加了一个意向筛选器，其中包含 `com.xamarin.DemoService`的关联操作：
 
 ```csharp
 [Service]
@@ -130,7 +130,7 @@ public class DemoService : Service
 
 ## <a name="related-links"></a>相关链接
 
-- [Android. 服务](xref:Android.App.Service)
-- [ServiceAttribute](xref:Android.App.ServiceAttribute)
-- [Android. App](xref:Android.Content.Intent)
-- [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android.App.Intent](xref:Android.Content.Intent)
+- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

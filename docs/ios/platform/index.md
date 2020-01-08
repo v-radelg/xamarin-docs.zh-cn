@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78f8c8d1340c6bb1063e59ad03485d8b9b807c58
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032278"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488993"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
@@ -53,7 +53,7 @@ iOS 中内置了两个日历相关的应用程序：日历应用程序和提醒�
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS 扩展](~/ios/platform/extensions.md)
 
-IOS 8 中引入的扩展是由 iOS 在诸如**通知中心**内的标准上下文中提供的专用 `UIViewControllers`，作为用户请求的自定义键盘类型，用于执行特定的输入或其他上下文，如编辑照片，其中扩展可以提供特殊效果筛选器。
+IOS 8 中引入的扩展是由 iOS 在诸如**通知中心**内的标准上下文中提供的专用 `UIViewControllers`，这是由用户请求的自定义键盘类型来执行专用输入或其他上下文（例如编辑照片，其中扩展可提供特殊效果筛选器）。
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS 中的图形和动画](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -125,9 +125,9 @@ iOS 10 包括一个新的语音 API，该 API 允许应用程序支持连续语�
 
 本文将介绍如何使用新的 3D Touch Api 向在新的 iPhone 6s 和 iPhone 6s Plus 设备上运行的 Xamarin 应用程序添加压力敏感度。
 
-## <a name="touch-idiosplatformtouchidmd"></a>[Touch ID](~/ios/platform/touchid.md)
+## <a name="touch-id-and-face-id-with-xamariniosiosplatformtouch-id-face-idmd"></a>[具有 Xamarin 的 Touch ID 和人脸 ID](~/ios/platform/touch-id-face-id.md)
 
-在 iOS 7 中引入了 Touch ID 作为对用户进行身份验证的方法-类似于密码。 但是，仅限使用应用商店解锁设备，使用 iTunes 并仅对 iCloud 密钥链进行身份验证。
+Touch ID 和人脸 ID 是自 iOS 8 以后可用的生物识别身份验证系统。 本文和示例介绍了如何将 Touch ID 和面部 ID 与 Xamarin 一起使用。
 
 ## <a name="user-notificationsiosplatformuser-notificationsindexmd"></a>[用户通知](~/ios/platform/user-notifications/index.md)
 
@@ -143,7 +143,7 @@ iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心�
 
 ## <a name="referencing-native-librariesnative-interopmd"></a>[引用本机库](native-interop.md)
 
-Xamarin 支持与本机 C 库和目标 C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。
+Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。
 
 ## <a name="embedded-frameworksembedded-frameworksmd"></a>[嵌入式框架](embedded-frameworks.md)
 

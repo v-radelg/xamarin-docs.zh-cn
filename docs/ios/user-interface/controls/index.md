@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a4bf0b89a9ab336bf47ddcd104760211d912f423
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022047"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663429"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin 中的用户界面控件
 
@@ -80,9 +80,9 @@ UISearchBar 用于在值列表中进行搜索。
 
 使用选项卡导航 UI 的 iOS 应用程序是使用 UITabBarController 类生成的。 本文介绍如何设置包含多个控制器和视图的选项卡式应用程序。 接下来，我们将检查如何加载不是根控制器的 UITabBarController，例如登录屏幕之后。
 
-## <a name="web-viewsuiwebviewmd"></a>[Web 视图](uiwebview.md)
+## <a name="web-viewswebviewmd"></a>[Web 视图](webview.md)
 
-在本文中，我们将探讨 Apple 提供的三个 Web 视图（`UIWebView`、`WKWebview`和 `SFSafariViewController`，它们之间的相似性和差异，以及如何使用它们。
+在本文中，我们将探讨 Apple 提供的 web 视图–`WKWebview` 和 `SFSafariViewController`–它们之间的相似性和差异，以及如何使用它们。
 
 ## <a name="related-links"></a>相关链接
 

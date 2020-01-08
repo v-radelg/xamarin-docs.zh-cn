@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f64b57e73b69b3111087ca1352f5fb9536f855e5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029378"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488954"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>适用于 Xamarin 的 ActionBar
 
@@ -85,11 +85,11 @@ this.ActionBar.AddTab (tab);
 
 例如，下面是一个操作栏屏幕截图，其中包含一个用于共享图像的菜单项（取自[ShareActionProvider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)示例）。 当用户点击操作栏上的菜单项时，ShareActionProvider 会加载该应用程序以处理与 `ShareActionProvider`相关联的意向。 在此示例中，以前使用过消息应用程序，因此它显示在操作栏。
 
-[操作栏中的消息应用程序图标![屏幕截图](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
+[操作栏中的消息应用程序图标 ![屏幕截图](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 当用户单击操作栏中的项时，将启动包含共享映像的消息应用，如下所示：
 
-[显示猴子映像的消息应用的![屏幕截图](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
+[显示猴子映像的消息应用的 ![屏幕截图](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
 ### <a name="specifying-the-action-provider-class"></a>指定操作提供程序类
 
@@ -142,5 +142,3 @@ Intent CreateIntent ()
 
 - [Hello 选项卡 ICS （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [ShareActionProvider 演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

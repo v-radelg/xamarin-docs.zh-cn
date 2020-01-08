@@ -6,13 +6,13 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/22/2019
-ms.openlocfilehash: c90cfc297914b585403ae84e7dbac11fd6e02836
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.date: 12/11/2019
+ms.openlocfilehash: 5d0e289ddeb7eabef6d96c8882c772c704c54b34
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170947"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489721"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>Xamarin 中的 iOS 平台功能
 
@@ -38,6 +38,7 @@ ms.locfileid: "72170947"
 - 设置分隔符样式[ `ListView` ](xref:Xamarin.Forms.ListView)。 有关详细信息，请参阅[iOS 上的 ListView 分隔符样式](listview-separator-style.md)。
 - 控制当项选择发生在[ `Picker` ](xref:Xamarin.Forms.Picker)。 有关详细信息，请参阅[iOS 上的选取器项目选择](picker-selection.md)。
 - 启用[ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)属性可以通过点击对一个位置上设置[ `Slider` ](xref:Xamarin.Forms.Slider)栏中，而不是按无需将`Slider`thumb。 有关详细信息，请参阅[滚动条上](slider-thumb.md)的滚动条。
+- 控制在打开 `SwipeView`时使用的转换。 有关详细信息，请参阅[SwipeView 滑动过渡模式](swipeview-swipetransitionmode.md)。
 
 以下特定于平台的功能适用于 iOS 上的 Xamarin 窗体页：
 
@@ -66,7 +67,7 @@ Xamarin 可以设置跨平台用户界面样式和颜色，但也可以使用 iO
 
 [阅读](formatting.md)有关使用 IOS 特定 api 设置用户界面格式的详细信息，如**info.plist**配置和 `UIAppearance` API。
 
-![](images/status-white-sml.png "iOS 主题")
+![](images/status-white-sml.png "iOS Theming")
 
 ## <a name="other-ios-features"></a>其他 iOS 功能
 

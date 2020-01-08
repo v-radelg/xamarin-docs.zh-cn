@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bf0a099546b2d5610a639cbf9af4c7676d10bef9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 371876d087c7027d4cfe2d2d9ada8b0dbedb5dd5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020050"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488967"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>获取 Google Maps API 密钥
 
@@ -39,7 +39,7 @@ ms.locfileid: "73020050"
 
 可通过从 JDK 运行 `keytool` 命令来获取有关密钥存储的信息。 此工具通常在 Java bin 目录中找到：
 
-**C：\\Program Files （x86）\\Java\\jdk [版本]\\bin\\keytool**
+**C：\\程序文件\\Android\\jdk\\microsoft_dist_openjdk_ [版本]\\bin\\keytool**
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -49,7 +49,7 @@ ms.locfileid: "73020050"
 
 可通过从 JDK 运行 `keytool` 命令来获取有关密钥存储的信息。 此工具通常在 Java bin 目录中找到：
 
-**/System/library/java/javavirtualmachines/version .jdk [VERSION]。 jdk/目录/Home/bin/keytool**
+**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
 
 -----
 
@@ -153,11 +153,11 @@ Certificate fingerprints:
 
 6. 输入应用的包名称，然后输入 SHA-1 证书指纹（可通过 `keytool` 获取，如本指南前面所述）。 在以下示例中，输入了 `XamarinMapsDemo` 的包名称，后跟从**debug.exe**获取的 sha-1 证书指纹：
 
-   [输入![包名称为 ".com"。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
+   [输入 ![包名称为 ".com"。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. 请注意，为了让你的 APK 访问 Google Maps，你必须为每个用于签署 APK 的密钥存储（调试和发布）包含 SHA-1 指纹和包名称。 例如，如果你使用一台计算机进行调试，将另一台计算机用于生成发布 APK，则应在第一台计算机的调试密钥存储中包含 SHA-1 证书指纹，并在 release 密钥存储中包含 SHA-1 证书指纹第二台计算机。 单击 " **+ 添加包名称和指纹**" 添加另一个指纹和包名称，如以下示例中所示：
+7. 请注意，为了使 APK 来访问 Google 地图，您必须包括 sha-1 指纹，包使用对 APK 进行签名每个密钥存储 （调试和发布） 的名称。 例如，如果一台计算机用于调试和生成发布 APK 的另一台计算机，您应包括 sha-1 证书指纹从第一台计算机的调试密钥存储和从的发布密钥存储的 sha-1 证书指纹第二台计算机。 单击 " **+ 添加包名称和指纹**" 添加另一个指纹和包名称，如以下示例中所示：
 
-   [添加另一个指纹![会创建另一个 SHA-1 证书](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
+   [添加另一个指纹 ![会创建另一个 SHA-1 证书](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. 单击“保存”按钮保存更改。 接下来，返回到 API 密钥列表。 如果你有以前创建的其他 API 密钥，则它们也会在此处列出。 在此示例中，只列出了一个 API 密钥（在前面的步骤中创建）：
 

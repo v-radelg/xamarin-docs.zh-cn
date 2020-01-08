@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 7b073e0233fb9c5511593ed80313f402c888c811
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 64209f905ba07f7efc7368b8f054dfc3ae606af2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771016"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489981"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库和 Xamarin 对用户进行身份验证
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
-_Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服务器和分区，同时支持无限的存储和吞吐量。本文介绍如何将访问控制与已分区集合相结合，以便用户只能访问自己的 Xamarin.Forms 应用程序中的文档。_
+_Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个服务器和分区，同时支持无限制的存储和吞吐量。本文介绍如何结合使用访问控制和分区集合，使用户只能在 Xamarin. Forms 应用程序中访问自己的文档。_
 
 ## <a name="overview"></a>概述
 
@@ -33,7 +33,7 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 
 请求的典型方法，生成，并将资源令牌传递到移动应用程序是使用资源令牌代理。 下图显示了示例应用程序如何使用资源令牌代理来管理对文档数据库数据的访问的高级概述：
 
-![](azure-cosmosdb-auth-images/documentdb-authentication.png "文档数据库身份验证过程")
+![](azure-cosmosdb-auth-images/documentdb-authentication.png "Document Database Authentication Process")
 
 资源令牌代理是托管在 Azure 应用服务拥有 Cosmos DB 帐户的主密钥的中间层 Web API 服务。 示例应用程序使用资源令牌代理来管理对文档数据库数据的访问，如下所示：
 
@@ -57,6 +57,9 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 1. 创建 Facebook 应用程序来执行身份验证。 有关详细信息，请参阅[Facebook 应用程序配置](#facebook_configuration)。
 1. 配置 Azure 应用服务来执行与 Facebook 的简单身份验证。 有关详细信息，请参阅[Azure 应用服务身份验证配置](#app_service_authentication_configuration)。
 1. 配置 Xamarin.Forms 示例应用程序与 Azure 应用服务和 Cosmos DB 进行通信。 有关详细信息，请参阅[Xamarin.Forms 应用程序配置](#forms_application_configuration)。
+
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
 <a name="cosmosdb_configuration" />
 
@@ -83,7 +86,7 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 
     下面的屏幕截图演示了此配置：
 
-    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "应用服务 Web 应用设置")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "应用服务 Web 应用设置")
+    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service Web App Settings")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service Web App Settings")
 
 1. 将资源令牌中转站解决方案发布到 Azure 应用服务 web 应用。
 
@@ -102,7 +105,7 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 
   下面的屏幕截图演示了此配置：
 
-  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook 登录 OAuth 设置")
+  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook Login OAuth Settings")
 
 有关详细信息，请参阅[向 Facebook 注册应用程序](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)。
 
@@ -119,7 +122,7 @@ _Azure Cosmos DB 文档数据库支持已分区的集合，它可以跨多个服
 
     下面的屏幕截图演示了此配置：
 
-    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "应用服务 Web 应用身份验证设置")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "应用服务 Web 应用身份验证设置")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
 
 应用服务 web 应用还应配置为与 Facebook 应用启用身份验证流进行通信。 这可以通过选择 Facebook 标识提供程序，并输入**应用程序 ID**和**应用程序密码**Facebook 开发人员中心上的 Facebook 应用程序设置中的值。 有关详细信息，请参阅[到你的应用程序添加 Facebook 信息](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
 
@@ -148,7 +151,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 这会导致用于在 Azure 应用服务和 Facebook，Facebook 登录页面将显示之间启动一个 OAuth 身份验证流程：
 
-![](azure-cosmosdb-auth-images/login.png "Facebook 登录")
+![](azure-cosmosdb-auth-images/login.png "Facebook Login")
 
 可以通过按取消该登录名**取消**按钮在 iOS 上或按**回**在 Android 上，在这种情况下用户一直处于未经身份验证和标识提供程序用户界面是按钮从屏幕上删除。
 
@@ -205,7 +208,7 @@ auth.Completed += async (sender, e) =>
 }
 ```
 
-`WebRedirectAuthenticator.Completed`事件处理程序读取的响应`resourcetoken`API 并提取资源标记和用户 id。资源令牌作为参数传递`DocumentClient`构造函数，它封装终结点、 凭据和用来访问 Cosmos DB 连接策略，用于配置和执行针对 Cosmos DB 的请求。 资源令牌与直接访问资源，每个请求一起发送，并指示授予对经过身份验证的用户的已分区集合的读/写访问。
+`WebRedirectAuthenticator.Completed` 事件处理程序从 `resourcetoken` API 读取响应并提取资源令牌和用户 id。然后，资源令牌作为参数传递给 `DocumentClient` 构造函数，该构造函数封装用于访问 Cosmos DB 的终结点、凭据和连接策略，并用于针对 Cosmos DB 配置和执行请求。 资源令牌与直接访问资源，每个请求一起发送，并指示授予对经过身份验证的用户的已分区集合的读/写访问。
 
 ## <a name="retrieving-documents"></a>检索文档
 
@@ -264,7 +267,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 有关文档集合中删除文档的详细信息，请参阅[文档集合中删除文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何将访问控制与已分区集合相结合，以便用户只能访问自己的 Xamarin.Forms 应用程序中的文档数据库文档。 用户的标识指定为分区键可确保分区的集合可以只存储为该用户的文档。
 

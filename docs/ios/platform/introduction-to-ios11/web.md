@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/12/2017
-ms.openlocfilehash: ef9577aad756ae67ac9fed685d7e40faea33c316
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c52ac3c0f06d58ab5fff8228ca3bdf722056b5b6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032055"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663442"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的 WebKit 和 Safari 更改
 
@@ -20,7 +20,7 @@ iOS 11 引入了新版本的 Safari web 浏览器– Safari 11.0 –其中包括
 
 ## <a name="safariservices"></a>SafariServices
 
-在 iOS 9 中引入 `SFSafariViewController` 作为显示 web 内容或从应用对用户进行身份验证的选项。 有关其功能的详细信息，请参阅[Web 视图](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller)指南。
+在 iOS 9 中引入 `SFSafariViewController` 作为显示 web 内容或从应用对用户进行身份验证的选项。 有关其功能的详细信息，请参阅[Web 视图](~/ios/user-interface/controls/webview.md#sfsafariviewcontroller)指南。
 
 iOS 11 引入了对 Safari 视图控制器的样式更新，使用户能够在应用程序和 web 之间获得更流畅的体验。 例如，删除地址栏现在为 Safari 视图控制器提供应用内浏览器的外观，而不是小型浏览器。 还可以通过设置 "`preferredBarTintColor`" 和 "`PreferredControlTintColor`" 属性，自定义颜色方案，使其适合应用的配色方案：
 
@@ -66,7 +66,7 @@ Apple 在 iOS 11 中引入了三项 `WKWebView` 的主要改进：
 
 - 管理 cookie 的功能
 - 内容筛选
-- 自定义资源加载。 
+- 自定义资源加载
 
 Cookie 管理通过新的[`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)类完成，此类允许你添加和删除 cookie，获取存储在 WKWebView 中的所有 cookie，并观察 cookie 存储区中的更改。
 

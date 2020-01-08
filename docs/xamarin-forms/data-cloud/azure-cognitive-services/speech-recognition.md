@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 97997a527647ae972eadff47da8c1321d5d55daa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eca079972f4e46c0cf60c4749658ff9a7fe1791b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655456"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489799"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>使用 Microsoft 语音 API 的语音识别
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Microsoft 语音 API 是基于云的 API，提供了用于处理口述的语言的算法。本文介绍如何使用 Microsoft 语音识别 REST API 将音频转换为 Xamarin.Forms 应用程序中的文本。_
+_Microsoft Speech API 是一种基于云的 API，它提供用于处理口述语言的算法。本文介绍如何使用 Microsoft 语音识别 REST API 将音频转换为 Xamarin 应用程序中的文本。_
 
 ## <a name="overview"></a>概述
 
@@ -29,11 +29,14 @@ Microsoft 语音 API 有两个组件：
 
 本文重点介绍执行通过 REST API 的语音识别。 客户端和服务库支持返回部分结果，REST API 只能返回单个识别结果，而无需任何部分结果。
 
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
+
 若要使用 Microsoft 语音 API，必须获取 API 密钥。 这可以通过 Azure 获得[门户](https://portal.azure.com/)。 有关详细信息，请参阅[Azure 门户中创建认知服务帐户](/azure/cognitive-services/cognitive-services-apis-create-account)。
 
 有关 Microsoft 语音 API 的详细信息，请参阅[Microsoft 语音 API 文档](/azure/cognitive-services/speech/home/)。
 
-## <a name="authentication"></a>身份验证
+## <a name="authentication"></a>身份验证 （可能为英文网页）
 
 Microsoft 语音 REST API 对所做的每个请求需要一个 JSON Web 令牌 (JWT) 访问令牌，可以从在认知服务令牌服务获取`https://api.cognitive.microsoft.com/sts/v1.0/issueToken`。 可以通过向令牌服务中，发出 POST 请求来获取令牌指定`Ocp-Apim-Subscription-Key`标题，其中包含作为其值的 API 密钥。
 
@@ -114,7 +117,7 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-通过执行的主要配置`GenerateRequestUri`方法是设置的音频内容的区域设置。 有关支持的区域设置的列表, 请参阅[支持的语言](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)。
+通过执行的主要配置`GenerateRequestUri`方法是设置的音频内容的区域设置。 有关支持的区域设置的列表，请参阅[支持的语言](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/)。
 
 ### <a name="sending-the-request"></a>发送请求
 
@@ -161,9 +164,9 @@ API 响应以 JSON 格式返回已识别的文本包含在与`name`标记。 以
 
 在示例应用程序，则 JSON 响应反序列化为`SpeechResult`实例，与结果返回到调用方法以显示，如以下屏幕截图中所示：
 
-![](speech-recognition-images/speech-recognition.png "语音识别")
+![](speech-recognition-images/speech-recognition.png "Speech Recognition")
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用 Microsoft 语音 REST API 将音频转换为 Xamarin.Forms 应用程序中的文本。 除了执行语音识别，Microsoft 语音 API 还可以将文本转换成口语。
 

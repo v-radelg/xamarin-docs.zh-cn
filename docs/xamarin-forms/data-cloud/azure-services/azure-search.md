@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: ea2c733a9c85662b9286f8e8631b601248dc11de
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cd5aaac0f41ee6e4afd79397a77635e66abad219
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770839"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489786"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>用 Azure 搜索和 Xamarin 搜索数据
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
-_Azure 搜索是云服务，提供索引和查询上传的数据的功能。这会删除基础结构要求和搜索算法复杂性通常与应用程序中实现搜索功能。本文演示如何使用 Microsoft Azure 搜索库可将 Azure 搜索集成到 Xamarin.Forms 应用程序。_
+_Azure 搜索是一种云服务，可为上载的数据提供索引和查询功能。这消除了传统上与在应用程序中实现搜索功能相关的基础结构要求和搜索算法复杂性。本文演示如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin 应用程序中。_
 
 ## <a name="overview"></a>概述
 
@@ -37,6 +37,9 @@ _Azure 搜索是云服务，提供索引和查询上传的数据的功能。这�
 搜索查询和筛选器查询可以单独或一起使用。 筛选器查询一起使用时，对整个索引中，首先应用，然后搜索查询执行筛选器查询的结果。
 
 Azure 搜索还支持基于搜索输入检索建议。 有关详细信息，请参阅[建议查询](#suggestions)。
+
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
 ## <a name="setup"></a>安装
 
@@ -216,7 +219,7 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 `SearchAsync`方法将返回`DocumentSearchResult`对象，其中包含查询结果。 此对象枚举，与每个`Document`对象创建为`Monkey`对象，并添加到`Monkeys``ObservableCollection`进行显示。 以下屏幕截图显示搜索查询返回的结果从 Azure 搜索：
 
-![](azure-search-images/search.png "搜索结果")
+![](azure-search-images/search.png "Search Results")
 
 有关搜索和筛选的详细信息，请参阅[查询 Azure 搜索索引使用.NET SDK](/azure/search/search-query-dotnet/)。
 
@@ -268,11 +271,11 @@ async Task AzureSuggestions(string text)
 
 `SuggestAsync`方法将返回`DocumentSuggestResult`对象，其中包含查询结果。 此对象枚举，与每个`Document`对象创建为`Monkey`对象，并添加到`Monkeys``ObservableCollection`进行显示。 以下屏幕截图显示从 Azure 搜索返回的建议结果：
 
-![](azure-search-images/suggest.png "建议结果")
+![](azure-search-images/suggest.png "Suggestion Results")
 
 请注意，在示例应用程序，`SuggestAsync`用户完成输入搜索词时，才会调用方法。 但是，它还可用来通过执行在每个按键上支持自动补全搜索查询。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文演示了如何使用 Microsoft Azure 搜索库可将 Azure 搜索集成到 Xamarin.Forms 应用程序。 Azure 搜索是云服务，提供索引和查询上传的数据的功能。 这会删除基础结构要求和搜索算法复杂性通常与应用程序中实现搜索功能。
 

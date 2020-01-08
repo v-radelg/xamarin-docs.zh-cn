@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031809"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489201"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 简介
 
 _对于 iOS 8，Apple 已为激发和感到满意开发人员提供了很多的新框架和 Api。在本指南中，我们将介绍这些新的 Api，并了解 iOS 8 对开发人员和用户的好处。_
 
-iOS 7 直观地更改了用户和开发人员所期望的整个 iOS 用户界面，从第一个 iPhone 操作系统开始。 IOS 8 通过为开发人员提供很多框架，使用户能够从 iPhone 直接控制其生活的几乎每个方面。 例如，可以使用*HealthKit*分析运行状况和适用性，密码 Sal 使用*localauthentication.framework*进行生物识别身份验证，*应用扩展*在第三方应用之间打开通信通道，以及*HomeKit*使你能够将你的房子变成未来。 
+iOS 7 直观地更改了用户和开发人员所期望的整个 iOS 用户界面，从第一个 iPhone 操作系统开始。 IOS 8 通过为开发人员提供很多框架，使用户能够从 iPhone 直接控制其生活的几乎每个方面。 例如，可以使用*HealthKit*分析运行状况和适用性、密码 Sal 使用*localauthentication.framework*的生物识别身份验证、*应用扩展*在第三方应用之间打开通信通道和*HomeKit* ，使你能够将你的房子变成未来。 
 
 如果 iOS 7 与令用户有关，则 iOS 8 侧重于令开发人员，其中包含一系列这些好吃新工具。 
 
@@ -26,7 +26,7 @@ iOS 7 直观地更改了用户和开发人员所期望的整个 iOS 用户界面
 
 此外，iOS 8 中已弃用了几个 Api，本文档末尾详细介绍了这些 Api。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 在 Visual Studio for Mac 中创建 iOS 8 应用需要以下各项：
 
@@ -93,7 +93,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 
 其次，Localauthentication.framework 提供了两种方法来对应用程序进行本地身份验证。 开发人员应使用 `CanEvaluatePolicy` 来确定设备是否能够接受 Touch ID，然后 `EvaluatePolicy` 启动身份验证操作。
 
-有关 Touch ID 并了解如何将其集成到 Xamarin iOS 应用程序的详细信息，请参阅[TouchID 指南简介](~/ios/platform/touchid.md)。
+有关 Touch ID 并了解如何将其集成到 Xamarin iOS 应用程序的详细信息，请参阅[xamarin 指南中的 TOUCH id 和人脸 id](~/ios/platform/touch-id-face-id.md) 。
 
 ### <a name="document-picker"></a>文档选取器
 
@@ -161,7 +161,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** –此项已由 UISearchController 在 iOS8 中替换。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 本文介绍了 iOS 8 中 Apple 引入的一些新功能。
 
 ## <a name="related-links"></a>相关链接
@@ -172,5 +172,5 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 - [文档选取器简介](~/ios/platform/document-picker.md)
 - [HealthKit 简介](~/ios/platform/healthkit.md)
 - [手动照相机控件简介](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
-- [TouchID 简介](~/ios/platform/touchid.md)
+- [具有 Xamarin 的 Touch ID 和人脸 ID](~/ios/platform/touch-id-face-id.md)
 - [统一情节提要简介](~/ios/user-interface/storyboards/unified-storyboards.md)

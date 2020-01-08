@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: 4b3bf1fcc6be7713c87b16ef9ec083189793b324
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e9f910804f3da9d173206d51c59e1d7ddd9b90a6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008060"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663507"
 ---
 # <a name="data-and-cloud-services-in-xamarinios-apps"></a>Xamarin iOS 应用中的数据和云服务
 
@@ -22,7 +22,7 @@ ms.locfileid: "73008060"
 
 ## <a name="icloudiosdata-cloudintroduction-to-icloudmd"></a>[iCloud](~/ios/data-cloud/introduction-to-icloud.md)
 
-IOS 5 中的 iCloud 存储 API 允许应用程序将用户文档和特定于应用程序的数据保存到一个中心位置，并从用户的所有设备访问这些项。
+ICloud 存储 API 允许应用程序将用户文档和特定于应用程序的数据保存到一个中心位置，并从用户的所有设备访问这些项。
 
 ## <a name="cloudkitiosdata-cloudintro-to-cloudkitmd"></a>[CloudKit](~/ios/data-cloud/intro-to-cloudkit.md)
 
