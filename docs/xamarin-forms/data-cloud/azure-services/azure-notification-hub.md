@@ -6,13 +6,13 @@ ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 05/23/2019
-ms.openlocfilehash: 28abc7f4fa608091cfc7f4c64d4fcabfd9755c2b
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.date: 11/27/2019
+ms.openlocfilehash: 0152a61dabe4068892cb6b5aa5b535ab88d2ff95
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681348"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487446"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>通过 Azure 通知中心和 Xamarin 发送和接收推送通知
 
@@ -29,6 +29,9 @@ ms.locfileid: "74681348"
 1. [为推送通知配置本机 iOS 项目](#configure-ios-for-notifications)。
 1. [使用 Azure 通知中心测试通知](#test-notifications-in-the-azure-portal)。
 1. [创建用于发送通知的后端应用程序](#create-a-notification-dispatcher)。
+
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>设置推送 Notification Services 和 Azure 通知中心
 
@@ -129,7 +132,7 @@ public static class AppConstants
 1. 安装以下 NuGet 包，以便与 Google Play Firebase 和 Azure 通知中心进行交互：
     1. GooglePlayServices。
     1. Firebase。
-    1. Xamarin. NotificationHubs。
+    1. Xamarin.Azure.NotificationHubs.Android.
 1. 将在 FCM 安装过程中下载的 `google-services.json` 文件复制到项目中，并将生成操作设置为 `GoogleServicesJson`。
 1. [配置 androidmanifest.xml 以与 Firebase 进行通信](#configure-android-manifest)。
 1. [重写 FirebaseMessagingService 以处理消息](#override-firebasemessagingservice-to-handle-messages)。

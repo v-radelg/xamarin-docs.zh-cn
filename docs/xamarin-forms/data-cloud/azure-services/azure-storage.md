@@ -1,24 +1,24 @@
 ---
 title: 通过 Xamarin 在 Azure 存储中存储和访问数据
-description: Azure 存储是一种可缩放的云存储解决方案，可以用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin 在 Azure 存储中存储文本和二进制数据, 以及如何访问数据。
+description: Azure 存储是一种可缩放的云存储解决方案，可以用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649712"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487316"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>通过 Xamarin 在 Azure 存储中存储和访问数据
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Azure 存储是一种可缩放的云存储解决方案，可以用于存储非结构化和结构化数据。本文演示如何使用 Xamarin.Forms 来在 Azure 存储中存储文本和二进制数据以及如何访问数据。_
+_Azure 存储是一种可缩放的云存储解决方案，可用于存储非结构化和结构化数据。本文演示如何使用 Xamarin 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。_
 
 Azure 存储提供了四个存储服务：
 
@@ -36,17 +36,20 @@ Azure 存储提供了四个存储服务：
 
 有关 Azure 存储的详细信息，请参阅[存储空间简介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
 
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
+
 ## <a name="introduction-to-blob-storage"></a>Blob 存储简介
 
 Blob 存储包含三个组件，如下图中所示：
 
-![](azure-storage-images/blob-storage.png "Blob 存储概念")
+![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
 
 到 Azure 存储的所有访问都都通过存储帐户。 存储帐户可以包含无限的数量的容器，和一个容器可以存储无限的数量的 blob，直至达到存储帐户的容量极限。
 
 Blob 是任何类型和大小的文件。 Azure 存储支持三种不同的 blob 类型：
 
-- 块 blob 进行了优化的流式处理和存储云对象，并且十分适合用于存储备份、 媒体文件和文档等。块 blob 可以是最多为 195 Gb。
+- 块 blob 经过优化，可用于流式传输和存储云对象，并且是用于存储备份、媒体文件、文档等的一个不错选择。块 blob 的大小最大可为195Gb。
 - 追加 blob 类似于块 blob，但进行了优化的追加操作，例如日志记录。 追加 blob 可以是最多为 195 Gb。
 - 页 blob 针对频繁的读/写操作进行了优化，并且通常用于存储虚拟机和其磁盘。 页 blob 可以达 1 Tb 的大小。
 
@@ -57,7 +60,7 @@ Blob 是上传到 Azure 存储，从 Azure 存储下载的字节流的形式。 
 
 Azure 存储中存储每个对象具有唯一的 URL 地址。 存储帐户名称构成该地址和子域和域名名称窗体的组合的子域*终结点*的存储帐户。 例如，如果名为你的存储帐户*mystorageaccount*，存储帐户的默认 blob 终结点是`https://mystorageaccount.blob.core.windows.net`。
 
-将存储帐户中的对象的位置附加到终结点可生成用于访问存储帐户中的某个对象的 URL。 例如，blob 地址将具有格式`https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`。
+用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。 例如，blob 地址将具有格式`https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`。
 
 ## <a name="setup"></a>安装
 
@@ -70,7 +73,7 @@ Azure 存储中存储每个对象具有唯一的 URL 地址。 存储帐户名�
 
 <a name="connecting" />
 
-## <a name="connecting-to-azure-storage"></a>连接到 Azure 存储
+## <a name="connecting-to-azure-storage"></a>连接到 Azure 存储空间
 
 针对存储帐户资源发出的每个请求必须进行身份验证。 尽管 blob 可以配置为支持匿名身份验证，有两个应用程序可以使用存储帐户进行身份验证的主要方法：
 
@@ -122,7 +125,7 @@ DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAcc
 
 ## <a name="creating-a-container"></a>创建容器
 
-`GetContainer`方法用于检索到的命名容器，然后从容器中检索 blob，或将 blob 添加到容器使用的引用。 下面的代码示例演示`GetContainer`方法：
+`GetContainer`方法用于检索到的命名容器，然后从容器中检索 blob，或将 blob 添加到容器使用的引用。 下面的代码示例说明 `GetContainer` 方法：
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -264,4 +267,4 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 - [存储简介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [如何通过 Xamarin 使用 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [使用共享的访问签名 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure 存储 (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Windows Azure 存储（NuGet）](https://www.nuget.org/packages/WindowsAzure.Storage/)

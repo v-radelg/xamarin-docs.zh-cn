@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 609ee17b6f2fd392c612277de8bbf59f8780f7d9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020389"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487771"
 ---
 # <a name="creating-a-cryptoobject"></a>创建 CryptoObject
 
@@ -57,7 +57,7 @@ public class CryptoObjectHelper
         Cipher cipher = Cipher.GetInstance(TRANSFORMATION);
         try
         {
-            cipher.Init(CipherMode.EncryptMode | CipherMode.DecryptMode, key);
+            cipher.Init(CipherMode.EncryptMode, key);
         } catch(KeyPermanentlyInvalidatedException e)
         {
             _keystore.DeleteEntry(KEY_NAME);
@@ -132,7 +132,7 @@ public class CryptoObjectHelper
 
 ## <a name="using-the-cryptoobjecthelper"></a>使用 CryptoObjectHelper
 
-现在，示例代码已封装了许多用于在 `CryptoObjectHelper` 类中创建 `CryptoWrapper` 的逻辑，接下来让我们重新访问本指南开头的代码，并使用 `CryptoObjectHelper` 创建密码并启动指纹扫描器: 
+现在，示例代码已封装了许多用于创建 `CryptoWrapper` 到 `CryptoObjectHelper` 类的逻辑，接下来让我们重新访问本指南开头的代码，并使用 `CryptoObjectHelper` 创建密码并启动指纹扫描器： 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -162,7 +162,7 @@ protected void FingerPrintAuthenticationExample()
 - [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
 - [KeyGenerator](xref:Javax.Crypto.KeyGenerator)
 - [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
 - [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
 - [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)

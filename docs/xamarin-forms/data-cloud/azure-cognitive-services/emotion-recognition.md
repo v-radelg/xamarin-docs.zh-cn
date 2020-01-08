@@ -7,28 +7,33 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 4dedcb0869c1e965679812239b1de09f07efa875
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869397"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487615"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用人脸 API 感知情感识别
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-人脸 API 可以执行情感检测, 在基于人为普通人的可感知批注的面部表达式中检测愤怒、蔑视、厌恶、恐惧、幸福、中性、悲伤和惊喜。 但是, 请务必注意, 单独的面部表达式可能不一定表示用户的内部状态。
+人脸 API 可以执行情感检测，在基于人为普通人的可感知批注的面部表达式中检测愤怒、蔑视、厌恶、恐惧、幸福、中性、悲伤和惊喜。 但是，请务必注意，单独的面部表达式可能不一定表示用户的内部状态。
 
-除了为面部表达式返回情感结果外, 人脸 API 还可以返回检测到的人脸的边界框。 请注意，必须获取 API 密钥以使用人脸 API。 这可以获得[试用认知服务](https://azure.microsoft.com/try/cognitive-services/?api=face-api)。
+除了为面部表达式返回情感结果外，人脸 API 还可以返回检测到的人脸的边界框。
 
 通过客户端库，并通过 REST API，可以执行情感识别。 本文重点介绍对执行通过 REST API 的情感识别。 有关 REST API 的详细信息，请参阅[人脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
 人脸 API 还可用于识别在视频中，人员的面部表情，并可以返回其情感概况。 有关详细信息，请参阅[如何实时分析视频](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)。
 
+> [!NOTE]
+> 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
+
+必须获取 API 密钥才能使用人脸 API。 这可以获得[试用认知服务](https://azure.microsoft.com/try/cognitive-services/?api=face-api)。
+
 有关人脸 API 的详细信息，请参阅[人脸 API](/azure/cognitive-services/face/overview/)。
 
-## <a name="authentication"></a>身份验证
+## <a name="authentication"></a>身份验证 （可能为英文网页）
 
 每个请求都会到人脸 API 需要 API 密钥，应将指定的值为`Ocp-Apim-Subscription-Key`标头。 下面的代码示例演示如何添加到的 API 密钥`Ocp-Apim-Subscription-Key`请求标头：
 
@@ -170,7 +175,7 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 
 下面的屏幕截图显示了示例应用程序中的情感识别过程的结果：
 
-![](emotion-recognition-images/emotion-recognition.png "表情识别")
+![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
 
 ## <a name="related-links"></a>相关链接
 
