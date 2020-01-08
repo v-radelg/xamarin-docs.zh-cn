@@ -6,16 +6,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: c58787a051bfc965cb7493138ed6114ac23ed04d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: acf8824c7a575bca37301a409bdf6d5f42cca622
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024848"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488057"
 ---
 # <a name="intent-services-in-xamarinandroid"></a>Xamarin 中的意向服务
-
-## <a name="intent-services-overview"></a>意向服务概述
 
 已启动和绑定的服务都在主线程上运行，这意味着，若要使性能保持平稳，服务需要以异步方式执行工作。 解决此问题的最简单方法之一是使用_辅助队列处理器模式_，在该模式下，要完成的工作放置在由单个线程维护的队列中。
 
@@ -57,8 +55,7 @@ public class DemoIntentService: IntentService
 Intent downloadIntent = new Intent(this, typeof(DemoIntentService));
 
 // This is just one example of passing some values to an IntentService via the Intent:
-downloadIntent.Put
-("file_to_download", "http://www.somewhere.com/file/to/download.zip");
+downloadIntent.PutPutExtra("file_to_download", "http://www.somewhere.com/file/to/download.zip");
 
 StartService(downloadIntent);
 ```

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 625826e729a6b4153396286361730d6a2b878dca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010461"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488317"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>演练-Xamarin 中的背景位置
 
@@ -80,7 +80,7 @@ ms.locfileid: "73010461"
     > [!IMPORTANT]
     > iOS 8 （及更高版本）也需要**info.plist**文件中的条目，以将用户显示为授权请求的一部分。
 
-1. 使用将在请求位置数据访问的警报中向用户显示的字符串添加密钥 `NSLocationAlwaysUsageDescription` 或 `NSLocationWhenInUseUsageDescription`。
+1. 为应用程序所需的权限类型（`NSLocationAlwaysUsageDescription`、`NSLocationWhenInUseUsageDescription`和/或 `NSLocationAlwaysAndWhenInUseUsageDescription`）添加**info.plist**键–将向用户显示一个字符串，该字符串请求位置数据访问。
 
 1. iOS 9 要求使用 `AllowsBackgroundLocationUpdates` 时， **info.plist**包含值为 `location`的键 `UIBackgroundModes`。 如果已完成本演练的步骤2，则该操作应已在 info.plist 文件中。
 

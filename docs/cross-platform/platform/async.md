@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: ae84dadf4c405f7f8075cedc0f16ca845fea6fdb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8978dbce97948d02d520b788d024fb50f4884635
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014905"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488876"
 ---
 # <a name="async-support-overview"></a>异步支持概述
 
@@ -31,7 +31,7 @@ Xamarin 的异步支持构建在 Mono 3.0 基础之上，并将 API 配置文件
 
 Xamarin 的异步支持构建在 Mono 3.0 基础之上，并将 API 配置文件从升级为移动友好版本的 Silverlight，作为 .NET 4.5 的移动友好版本。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 C#5功能需要在 Xamarin 6.4 和 Xamarin 4.8 中包含的 Mono 3.0。 系统将提示您升级 Mono、Xamarin、Xamarin 和 Xamarin，以利用它。
 
@@ -45,7 +45,7 @@ C#5功能需要在 Xamarin 6.4 和 Xamarin 4.8 中包含的 Mono 3.0。 系统�
 
 `async` 关键字放置在方法声明（或 lambda 或匿名方法）中，以指示它包含可异步运行的代码，即 ie。不阻止调用方的线程。
 
-标记为 `async` 的方法应包含至少一个 await 表达式或语句。 如果方法中不存在任何 `await`，则该方法将同步运行（与没有 `async` 修饰符的情况相同）。 这也会导致编译器警告（而不是错误）。
+标记为 `async` 的方法应包含至少一个 await 表达式或语句。 如果方法中不存在 `await` 语句，则它将以同步方式运行（与没有 `async` 修饰符的情况相同）。 这也会导致编译器警告（而不是错误）。
 
 ### <a name="return-types"></a>返回类型
 
@@ -180,10 +180,10 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 一些重要事项：
 
 - 方法标记为 `async`，但返回 `void`。 通常仅对事件处理程序执行此操作（否则，你将返回 `Task` 或 `Task<TResult>`）。
-- 与前面的示例不同，在对变量（`intResult`）的赋值上直接对 `DownloadHomepage` 方法进行的代码 `await`，而在前面的示例中，我们使用了中间 `Task<int>` 变量来引用该任务。  *这*是将控件返回给调用方的位置，直到异步方法在另一个线程上完成。
+- `DownloadHomepage` 方法上的 `await` 关键字会直接分配给一个变量（`intResult`），这与前面的示例不同，我们使用了中间 `Task<int>` 变量来引用该任务。  *这*是将控件返回给调用方的位置，直到异步方法在另一个线程上完成。
 - 当异步方法完成并返回时，执行将在 `await` 恢复，这意味着将返回整数结果，并呈现在 UI 小组件中。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 使用 async 和 await 极大地简化了在后台线程上生成长时间运行的操作而不会阻止主线程所需的代码。 它们还可以在任务完成时轻松访问结果。
 

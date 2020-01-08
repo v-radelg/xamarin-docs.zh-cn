@@ -7,22 +7,22 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: 571ddae0757691cd7fee301076f0b1310749531d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 98809dca503d03d3d592161608fa9a6fa0e5d394
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657459"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488343"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中手指绘画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用手指在画布上绘制。_
 
 `SKPath`可以持续更新并显示对象。 此功能允许以进行交互式绘图，如程序中使用手指绘制的路径。
 
-![](finger-paint-images/fingerpaintsample.png "在手指绘画练习")
+![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
 
 在 Xamarin.Forms 中的触摸支持不允许跟踪各手指在屏幕上，因此已开发 Xamarin.Forms 触控跟踪效果以提供更多点触控支持。 这种效果本文所述[**效果从调用事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。 示例程序[**触控跟踪效果演示**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)包括使用 SkiaSharp，包括一个手指绘制程序的两个页面。
 
@@ -53,7 +53,7 @@ _使用手指在画布上绘制。_
 
 附加`TouchEffect`直接向`SKCanvasView`不所有平台都工作。
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)代码分离文件定义了两个集合用于存储`SKPath`对象，以及`SKPaint`对象用于呈现这些路径：
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml.cs)代码分离文件定义了两个集合用于存储`SKPath`对象，以及`SKPaint`对象用于呈现这些路径：
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -165,7 +165,7 @@ public partial class FingerPaintPage : ContentPage
 
 手指绘画仅受到您的才能：
 
-[![](finger-paint-images/fingerpaint-small.png "手指绘制页的三个屏幕截图")](finger-paint-images/fingerpaint-large.png#lightbox "的手指绘制页的三个屏幕截图")
+[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
 
 现在已了解如何绘制的线条以及如何定义使用参数化的等式的曲线。 在后面的部分[ **SkiaSharp 曲线和路径**](../curves/index.md)介绍了各种类型的曲线的`SKPath`支持。 但有用的先决条件是探讨[ **SkiaSharp 转换**](../transforms/index.md)。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1781503d214b959d31223cbe8f55fd6afa0fef44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eeee9b7d694d9380c653fb87c24171bcaf79389d
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019280"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655276"
 ---
 # <a name="android-graphics-and-animation"></a>Android 图形和动画
 
@@ -47,7 +47,7 @@ Android 提供两个用于创建2D 图形的不同 API。 一种是高级声明�
 
 所有这些框架都是可行的选项，但在可能的情况下，应该为属性动画提供首选项，因为它是一个更灵活的 API。 属性动画允许将动画逻辑封装在不同的类中，使代码共享变得更简单，并简化代码维护。
 
-## <a name="accessibility"></a>辅助功能
+## <a name="accessibility"></a>可访问性
 
 图形和动画有助于使 Android 应用更引人注目且有趣但是，请务必记住，某些交互是通过阅读器、备用输入设备或辅助缩放发生的。
 此外，某些交互可能发生，但没有音频功能。
@@ -82,7 +82,7 @@ Android 定义了几种不同类型的 "绘制资源"：
 
 - [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash; 这非常类似于*StateListDrawable* ，因为它会根据特定条件显示图像。 但是，与*StateListDrawable*不同， *LevelListDrawable*会根据整数值显示图像。 *LevelListDrawable*的一个示例就是显示 WiFi 信号的强度。 当 WiFi 信号的强度改变时，显示的可绘制将相应更改。
 
-- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash; 其名称意味着，这些绘图提供了缩放和剪裁功能。 *ScaleDrawable*将缩放其他可绘制的，而*ClipDrawable*将剪裁另一个可绘制的。
+- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash; 顾名思义 , 这些绘图提供了缩放和剪裁功能。 *ScaleDrawable*将缩放其他可绘制的，而*ClipDrawable*将剪裁另一个可绘制的。
 
 - [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash; 此可绘制的将应用于其他可绘制资源的两侧。 当视图需要的背景小于视图的实际边界时，可使用此方法。
 
@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 若要查看它的外观，请运行*AnimationsDemo*项目，然后从主菜单中选择形状可绘制项。 应该会看到类似于以下屏幕截图的内容：
 
-![使用自定义背景的 Textview，使用渐变和圆角进行绘制](graphics-and-animation-images/image1.png)
+[使用自定义背景 ![Textview，使用渐变和圆角进行绘制](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 若要详细了解如何绘制资源的 XML 元素和语法，请参阅[Google 文档](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
 
@@ -162,17 +162,17 @@ Canvas canvas = new Canvas(b);
 
 获取 `Canvas` 对象的另一种方法是，提供该[视图](xref:Android.Views.View)基类的[OnDraw](xref:Android.Views.View.OnDraw*)回调方法。 Android 在确定视图需要自行绘制并传入 `Canvas` 对象以使视图能够使用时，将调用此方法。
 
-Canvas 类公开方法，以编程方式提供绘制指令。 例如:
+Canvas 类公开方法，以编程方式提供绘制指令。 例如：
 
-- [DrawPaint](xref:Android.Graphics.Canvas.DrawPaint*) &ndash; 用指定的绘制填充整个画布的位图。
+- [Canvas.DrawPaint](xref:Android.Graphics.Canvas.DrawPaint*) &ndash; 用指定的 paint 填充整个画布的位图。
 
-- [DrawPath](xref:Android.Graphics.Canvas.DrawPath*) &ndash; 使用指定的绘制绘制指定的几何形状。
+- [Canvas.DrawPath](xref:Android.Graphics.Canvas.DrawPath*) &ndash; 使用指定的绘制绘制指定的几何形状。
 
-- [DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash; 用指定的颜色在画布上绘制文本。 文本在位置 `x,y` 绘制。
+- [Canvas.DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash; 用指定的颜色在画布上绘制文本。 文本在位置 `x,y` 绘制。
 
 #### <a name="drawing-with-the-canvas-api"></a>用画布 API 绘制
 
-让我们看一个操作中画布 API 的示例。 下面的代码段演示如何绘制视图：
+下面是一个操作中画布 API 的示例。 下面的代码段演示如何绘制视图：
 
 ```csharp
 public class MyView : View
@@ -201,7 +201,7 @@ public class MyView : View
 
 上面的代码首先创建一个红色的 paint 和一个绿色的 paint 对象。 它使用红色填充画布的内容，然后指示画布绘制一个绿色矩形，该矩形是画布宽度的25%。 这一示例可通过本文源代码附带 `AnimationsDemo` 项目来查看。 通过启动应用程序并从主菜单中选择 "绘制项"，应显示类似于下面的屏幕：
 
-![带有红色画图和绿色画图对象的屏幕](graphics-and-animation-images/image3.png)
+[带有红色画图和绿色画图对象的 ![屏幕](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>动画
 
@@ -417,7 +417,7 @@ protected override void OnCreate(Bundle bundle)
 
 此时，我们已介绍 Android 应用程序中提供的动画 Api 的基础知识。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了许多新概念和 API，有助于将一些图形添加到 Android 应用程序。 首先，它讨论了各种2D 图形 API，并演示了 Android 如何允许应用程序使用 Canvas 对象直接在屏幕上进行绘制。 我们还看到了一些替代方法，允许使用 XML 文件以声明方式创建图形。 接下来，我们讨论了用于在 Android 中创建动画的新 API 和新 API。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031785"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488941"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 简介
 
@@ -141,7 +141,7 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 - 应用提供的密钥链项加密的访问控制列表熵（使用应用程序密码选项）。
 - 支持在安全 enclave 内生成和使用密钥（通过 `kSecAttrTokenIDSecureEnclave` 属性）。
 
-有关详细信息，请参阅我们[对 TOUCH ID](~/ios/platform/touchid.md)文档的介绍。
+有关详细信息，请参阅[Xamarin 中的 TOUCH id 和人脸 id](~/ios/platform/touch-id-face-id.md)。
 
 ## <a name="right-to-left-language-support"></a>从右到左语言支持
 
@@ -193,7 +193,7 @@ Apple 在 iOS 9 中弃用了以下 Api 和函数：
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 另外，请查看这些示例的 iOS 部分（随附 Mac OS X 版本！）：

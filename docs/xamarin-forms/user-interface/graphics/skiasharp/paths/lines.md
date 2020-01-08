@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: cc62ca4656a845a261c56424aa1ea1331c994994
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759209"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545599"
 ---
 # <a name="lines-and-stroke-caps"></a>线和笔划大写字母
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 绘制具有不同笔画顶端行_
 
 SkiaSharp，呈现单行是非常不同于呈现一系列相互连接的直线。 即使绘制单个线条，但是，它通常是需要为特定的笔划宽度的线条。 由于这些行变得更广，行尾的外观也变得重要。 名为行尾的外观*笔划 cap*:
 
-![](lines-images/strokecapsexample.png "三个笔画 caps 选项")
+![](lines-images/strokecapsexample.png "The three stroke caps options")
 
 用于绘制单个线条`SKCanvas`定义一种简单[ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint))方法的参数指示的起始和结束的包含的行坐标`SKPaint`对象：
 
@@ -30,7 +30,7 @@ SkiaSharp，呈现单行是非常不同于呈现一系列相互连接的直线�
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-默认情况下[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)属性的新实例化`SKPaint`对象是 0，它具有为粗细中呈现的一个像素行 1 的值相同的效果。 这会显示非常细小手机，等的高分辨率设备上可能需要设置`StrokeWidth`到更大的值。 但一旦您开始绘制可调整大小的粗细的线条，就会引发另一个问题：如何呈现这些粗线条的开头和结尾？
+默认情况下[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)属性的新实例化`SKPaint`对象是 0，它具有为粗细中呈现的一个像素行 1 的值相同的效果。 这会显示非常细小手机，等的高分辨率设备上可能需要设置`StrokeWidth`到更大的值。 但后，开始画可调整大小的粗细的线，将引发另一个问题： 应开始和结束这些粗线条呈现方式？
 
 调用的开始和结束的行的外观*线帽*，或者在 Skia，*笔划 cap*。 在此上下文中的"cap"一词是指一种类型的 hat&mdash;位于行尾的内容。 您设置[ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap)的属性`SKPaint`对象的以下成员之一[ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap)枚举：
 
@@ -94,7 +94,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 每个成员的`SKStrokeCap`枚举，该处理程序绘制两个行，另一个笔画粗细设置为 50 个像素，另一行具有两个像素的笔画粗细定位在顶部上使用。 此第二行用于说明的几何开始和结束的独立于线条粗细和笔划上限的行：
 
-[![](lines-images/strokecaps-small.png "三重的笔划大写字母页屏幕截图")](lines-images/strokecaps-large.png#lightbox "带来三倍的笔划大写字母页屏幕截图")
+[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
 
 正如您所看到的`Square`和`Round`笔划大写字母有效地通过一半笔划宽度在行开头和结尾处再次扩展行的长度。 需要确定呈现的图形对象的维度时，此扩展变得重要。
 
@@ -228,13 +228,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 屏幕截图显示了各种`Picker`选择：
 
-[![](lines-images/multiplelines-small.png "三重的多个行页的屏幕截图")](lines-images/multiplelines-large.png#lightbox "的多个行页的三个屏幕截图")
+[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
 
 在左侧显示了 iPhone 如何`SKPointMode.Points`枚举成员会导致`DrawPoints`要呈现的每个中点`SKPoint`线帽是否为一个方框数组`Butt`或`Square`。 线帽是否呈现圆圈`Round`。
 
-当你改为使用`SKPointMode.Lines`，在中心，在 Android 屏幕上所示`DrawPoints`方法的每个对之间绘制一条线`SKPoint`值，在这种情况下使用指定的线帽， `Round`。
+Android 屏幕快照显示 `SKPointMode.Lines`的结果。 在这种情况下，`DrawPoints` 方法使用指定的线帽在每对 `SKPoint` 值之间绘制一条线，在这种情况下，`Round`。
 
-UWP 的屏幕截图显示的结果`SKPointMode.Polygon`值。 在数组中，在连续点之间绘制一条线，但如果您非常仔细查看，您将看到这些行未连接。 每个这些单独的行开始和结束的指定的线帽。 如果您选择`Round`顶端行可能看起来连接，但它们实际上未连接。
+改为使用 `SKPointMode.Polygon`时，将在数组中的连续点之间绘制一条线，但如果你看起来非常紧密，就会看到这些行没有连接。 每个这些单独的行开始和结束的指定的线帽。 如果您选择`Round`顶端行可能看起来连接，但它们实际上未连接。
 
 行是否已连接或未连接是使用的图形路径的一个重要方面。
 

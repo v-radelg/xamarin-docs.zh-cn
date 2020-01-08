@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 62560d97a2e85a6045e419f0c0602a375f5a2a75
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da00eef7c08f7025239d15e60e6ec42416a36089
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027887"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487836"
 ---
 # <a name="garbage-collection"></a>垃圾回收
 
@@ -34,15 +34,15 @@ Xamarin 使用 Mono 的[简单代垃圾回收器](https://www.mono-project.com/d
 - **托管对象**：*不*从[.java](xref:Java.Lang.Object)派生的类型，例如[system.object](xref:System.String)。 
     它们通常由 GC 收集。 
 
-- **Java 对象**：位于 Android 运行时 VM 内但不会向 Mono VM 公开的 Java 类型。 这些都是镗孔的，不会进一步讨论。 它们通常由 Android 运行时 VM 收集。 
+- **Java 对象**：存在于 Android 运行时 vm 内但未公开给 Mono vm 的 java 类型。 这些都是镗孔的，不会进一步讨论。 它们通常由 Android 运行时 VM 收集。 
 
 - **对等对象**：实现[IJavaObject](xref:Android.Runtime.IJavaObject) [的类型（如所有](xref:Java.Lang.Object) [java.lang.throwable](xref:Java.Lang.Throwable)子类）。 这些类型的实例具有两个 "halfs"*托管对等*方和*本机对等节点*。 托管对等是C#类的实例。 本机对等是 Android 运行时 VM 内 Java 类的实例， C# [IJavaObject](xref:Android.Runtime.IJavaObject.Handle)属性包含对本机对等方的 JNI 全局引用。 
 
 本机对等机有两种类型：
 
-- **框架对等**："正常" Java 类型，不知道 Xamarin 的任何内容，例如  [android. Context](xref:Android.Content.Context)。
+- **框架对等**： "Normal" Java 类型，它不知道 Xamarin 中的任何内容，例如  [android. Context](xref:Android.Content.Context)。
 
-- **用户对等**： 为应用程序中出现的每个 .Java 子类生成时生成的[Android 可调用包装](~/android/platform/java-integration/working-with-jni.md)。
+- **用户对等**：在生成时为应用程序中出现的每个 .java 子类生成的[Android 可调用包装](~/android/platform/java-integration/working-with-jni.md)。
 
 Xamarin Android 进程中有两个虚拟机，有两种类型的垃圾回收：
 
@@ -71,7 +71,7 @@ Mono 集合就是有趣之处。 通常收集托管的对象。 通过执行以�
 
 ## <a name="automatic-collections"></a>自动集合
 
-从[Release 4.1.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/mono_for_android_4/mono_for_android_4.1.0/index.md)开始，当超过 gref 阈值时，Xamarin 会自动执行完全 GC。 此阈值为该平台的已知最大 grefs 的90%：1800 grefs （2000 max）和 46800 grefs on 硬件（最大52000）。 *注意：* Xamarin 只计算[JNIEnv](xref:Android.Runtime.JNIEnv)创建的 grefs，并不知道在该过程中创建的任何其他 grefs。 这*只*是一种试探法。 
+从[Release 4.1.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/mono_for_android_4/mono_for_android_4.1.0/index.md)开始，当超过 gref 阈值时，Xamarin 会自动执行完全 GC。 此阈值为 grefs 的平台： 1800 grefs （2000 max）和 46800 grefs on 硬件（最大52000）90%。 *注意：* Xamarin 只计算[JNIEnv](xref:Android.Runtime.JNIEnv)创建的 grefs，并不知道在该过程中创建的任何其他 grefs。 这*只*是一种试探法。 
 
 当执行自动收集时，会将类似于以下内容的消息输出到调试日志：
 
@@ -108,13 +108,15 @@ GC 桥在 Mono 垃圾回收过程中起作用，并确定哪些对等对象需�
 
 - **启用桥记帐**-桥核算将显示桥接过程中涉及的每个对象所指向的对象的平均成本。 如果按大小对此信息进行排序，则会提供有关保留最大数量的额外对象的提示。 
 
-若要指定应用程序应使用哪个 `GC_BRIDGE` 选项，请将 `bridge-implementation=old`、`bridge-implementation=new` 或 `bridge-implementation=tarjan` 传递到 `MONO_GC_PARAMS` 环境变量，例如： 
+默认设置为**Tarjan**。 如果发现回归，可能会发现需要将此选项设置为 "**旧**"。 此外，如果**Tarjan**不能提高性能，则可以选择使用更稳定的**旧**选项。
+
+若要指定应用程序应使用哪个 `GC_BRIDGE` 选项，请将 `bridge-implementation=old`、`bridge-implementation=new` 或 `bridge-implementation=tarjan` 传递到 `MONO_GC_PARAMS` 环境变量。 为此，可通过将新文件添加到项目，**生成操作**为 `AndroidEnvironment`。 例如： 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-默认设置为**Tarjan**。 如果发现回归，可能会发现需要将此选项设置为 "**旧**"。 此外，如果**Tarjan**不能提高性能，则可以选择使用更稳定的**旧**选项。 
+有关详细信息，请参阅 [配置](#configuration)。
 
 <a name="Helping_the_GC" />
 
@@ -127,7 +129,7 @@ MONO_GC_PARAMS=bridge-implementation=tarjan
 GC 有一个不完整的进程视图，当内存不足时可能不会运行，因为 GC 不知道内存不足。 
 
 例如， [.java](xref:Java.Lang.Object)类型或派生类型的实例的大小至少为20个字节（如有更改，恕不另行通知，等等）。 
-[托管的可调用包装](~/android/internals/architecture.md)器不会添加其他实例成员，因此，当你具有引用内存的 10mb Blob 的[android. Bitmap](xref:Android.Graphics.Bitmap)实例时，Xamarin 的 gc 将无法知道 &ndash; GC 将看到一个20字节的对象，并将无法确定它是否链接到了 Android 运行时分配的对象，这些对象的内存保持为10MB。 
+[托管的可调用包装](~/android/internals/architecture.md)器不会添加其他实例成员，因此，当你具有引用内存的 10mb Blob 的[android. Bitmap](xref:Android.Graphics.Bitmap)实例时，Xamarin 的 gc 将无法知道 &ndash; GC 将看到一个20字节的对象，并且将无法确定该对象是否已链接到保存10mb 内存的 Android 运行时分配的对象。 
 
 经常需要帮助 GC。 遗憾的是， *GC。AddMemoryPressure （）* 和*GC。不支持 RemoveMemoryPressure （）* ，因此如果你*知道*刚刚释放了一个大型 Java 分配的对象图，则可能需要手动调用[GC。收集（）](xref:System.GC.Collect)以提示 GC 释放 Java 端内存，或者可以显式释放 *.java*子类，从而中断托管可调用包装器和 Java 实例之间的映射。 例如，请参阅[Bug 1084](https://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
 
@@ -138,7 +140,7 @@ GC 有一个不完整的进程视图，当内存不足时可能不会运行，�
 
 #### <a name="sharing-between-multiple-threads"></a>在多个线程之间共享
 
-如果可以在多个线程之间共享*Java 或托管*实例，*则不应将其 `Dispose()`d* **。** 例如， [`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
+如果可以在多个线程之间共享*Java 或托管*实例，*则不应将其 `Dispose()`d* **。** 例如 [`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
 可能返回*缓存的实例*。 如果多个线程提供相同的参数，则它们将获得*相同*的实例。 因此，从一个线程 `Dispose()`的 `Typeface` 实例的 ing 可能会使其他线程失效，这可能会导致 `JNIEnv.CallVoidMethod()` 中的 `ArgumentException`秒，因为该实例是从另一个线程释放的。 
 
 #### <a name="disposing-bound-java-types"></a>释放绑定的 Java 类型
@@ -185,7 +187,7 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-这种情况通常在第一次释放对象导致成员变为 null 时出现，然后在此 null 成员上进行后续访问尝试会导致引发异常。 具体而言，对象的 `Handle` （它将托管实例链接到其基础 Java 实例）在第一个 dispose 上失效，但托管代码仍尝试访问此基础 Java 实例，即使该实例不再可用（请参阅[托管的可调用包装](~/android/internals/architecture.md#Managed_Callable_Wrappers)器，详细了解 Java 实例与托管实例之间的映射。 
+这种情况通常在第一次释放对象导致成员变为 null 时出现，然后在此 null 成员上进行后续访问尝试会导致引发异常。 具体而言，对象的 `Handle` （它将托管实例链接到其基础 Java 实例）在第一个 dispose 上失效，但托管代码仍尝试访问此基础 Java 实例（即使它不再可用）（有关 Java 实例与托管实例之间的映射的详细信息，请参阅托管的可[调用包装](~/android/internals/architecture.md#Managed_Callable_Wrappers)器）。 
 
 避免此异常的一个好方法是在 `Dispose` 方法中显式验证托管实例和基础 Java 实例之间的映射是否仍然有效;也就是说，查看对象的 `Handle` 在访问其成员之前是否为 null （`IntPtr.Zero`）。 例如，下面的 `Dispose` 方法访问 `childViews` 对象： 
 
@@ -317,7 +319,7 @@ class BetterActivity : Activity {
 
 - 在重写的[OnLowMemory （）](xref:Android.App.Activity.OnLowMemory)方法内。 
 
-## <a name="diagnostics"></a>诊断
+## <a name="diagnostics"></a>Diagnostics
 
 若要跟踪创建和销毁全局引用的时间, 可以将 [debug.mono.log](~/android/troubleshooting/index.md) 系统属性设置为包含 [*gref*](~/android/troubleshooting/index.md) 和/或 [*gc*](~/android/troubleshooting/index.md) 
 
@@ -334,9 +336,9 @@ class BetterActivity : Activity {
 
 - `evacuation-threshold` = *阈值*：设置疏散阈值（以百分比表示）。 该值必须是0到100范围内的整数。 默认值为66。 如果集合的扫描阶段发现特定堆块类型的占用量小于此百分比，它将在下一个主要集合中为该块类型执行复制集合，从而将占用量降低到100%。 值0会关闭疏散。 
 
--  = *桥实现*`bridge-implementation`：这将设置 GC Bridge 选项以帮助解决 GC 性能问题。 有三个可能的值： *old* 、 *new* 、 *tarjan*。
+- `bridge-implementation` = *桥实现*：这将设置 gc bridge 选项以帮助解决 GC 性能问题。 有三个可能的值： *old* 、 *new* 、 *tarjan*。
 
-- `bridge-require-precise-merge`：Tarjan 桥包含一种优化，在极少数情况下，它可能会导致对象在第一次变为垃圾后被回收。 如果包括此选项，则将禁用此优化，从而使 Gc 更可预测但可能更慢。
+- `bridge-require-precise-merge`： Tarjan 桥包含一种优化，在极少数情况下，它会导致对象在第一次变为垃圾后被回收。 如果包括此选项，则将禁用此优化，从而使 Gc 更可预测但可能更慢。
 
 例如，若要将 GC 配置为使堆大小限制为128MB，请将一个新文件添加到项目中，并将 `AndroidEnvironment` 的**生成操作**添加到内容： 
 

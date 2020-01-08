@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
-ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
+ms.openlocfilehash: d94f18d00ebf6eeec5f33343b5c0f985ba2a6ea8
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884119"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655402"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>适用于 Xamarin 的 XAML 热重载（预览）
 
@@ -20,6 +20,8 @@ XAML 热重载将插入现有的工作流，以提高工作效率并节省时间
 
 > [!NOTE]
 > 如果要编写 WPF 或 UWP 应用，请参阅[适用于 UWP 和 WPF 的 XAML 热重载](/visualstudio/debugger/xaml-hot-reload)。
+>
+> 适用于 Xamarin 的 XAML 热重载。 _forms 当前不适_用于 Xamarin. 窗体 UWP 项目。
 
 ## <a name="system-requirements"></a>系统需求
 
@@ -49,6 +51,7 @@ Xamarin.Forms | 4.1 或更高版本
 - 通过使用 `x:Name` 值将控件分配给另一个字段或属性而创建的任何引用都不会重新加载。
 - 在**AppShell**中更新 Shell 应用程序的可视层次结构可能会导致应用程序的状态保持有问题。 重新生成应用程序以继续重新加载。
 - XAML 热重载无法重新C#加载代码，包括事件处理程序、自定义控件、页代码隐藏以及其他类。
+- 不适_用于其他_Xamarin。支持窗体的平台（如 mac OS 或 UWP）。
 
 ## <a name="migrate-from-the-private-preview"></a>从个人预览版迁移
 

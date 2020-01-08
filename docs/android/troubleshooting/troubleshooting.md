@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: ec5c6e4c4c47995e78c1819007a8fa5660873bd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026593"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488928"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
 
 ## <a name="getting-diagnostic-information"></a>获取诊断信息
 
 在追踪各种 bug 时，Xamarin 有一些需要注意的地方。
-其中包括:
+这些方法包括：
 
 1. 诊断 MSBuild 输出。
 2. 设备部署日志。
@@ -84,12 +84,12 @@ Xamarin 支持以下系统属性：
 - *debug.exe. env*：在初始化 mono*之前*，要在应用程序启动过程中导出的环境变量（" *|* "）列表。 这允许设置控制 mono 日志记录的环境变量。
 
   > [!NOTE]
-  > 由于值是 *|* 的隔离，该值必须包含额外级别的用引号括起来，作为\`*adb shell*\`命令将删除引号引起来的一组。
+  > 由于值是 " *|* " 分隔的，因此值必须具有额外的引号，因为 \`*adb shell*\` 命令将删除一组引号。
 
   > [!NOTE]
   > Android 系统属性值的长度不能超过92个字符。
 
-  例如：
+  示例：
 
   ```
   adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
@@ -662,7 +662,7 @@ E/dalvikvm( 123): VM aborting
 
 ```shell
 Assertion: should not be reached at /Users/.../external/mono/mono/mini/tramp-x86.c:124
-Fatal signal 6 (SIGABRT), code -6 in tid 4051 (amarin.bug56111)
+Fatal signal 6 (SIGABRT), code -6 in tid 4051 (Xamarin.bug56111)
 ```
 
-这是[56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)中报告的已知问题。 解决方法是禁用 LLVM。
+这是一个已知问题–解决方法是禁用 LLVM。

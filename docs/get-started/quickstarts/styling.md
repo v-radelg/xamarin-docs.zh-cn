@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: HT
+ms.openlocfilehash: a7e1cdd59b463c38be1a49e962112cb893eed50f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70756759"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488863"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>样式跨平台 Xamarin. Forms 应用程序
 
@@ -29,7 +29,7 @@ ms.locfileid: "70756759"
 [![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
 [![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>先决条件
 
 在尝试此快速入门之前，应成功完成[以前的快速入门](database.md)。 或者，下载[前面的快速入门示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)，并将其用作本快速入门的起点。
 
@@ -39,7 +39,7 @@ ms.locfileid: "70756759"
 
 1. 启动 Visual Studio 并打开 Notes 解决方案。
 
-2. 在**解决方案资源管理器**的 "**注释**" 项目中，双击 " **App.xaml** " 以将其打开。 然后，将现有代码替换为以下代码：
+2. 在**解决方案资源管理器**的 "**注释**" 项目中，双击 " **app.config** " 以将其打开。 然后，将现有代码替换为以下代码：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -116,7 +116,7 @@ ms.locfileid: "70756759"
     </ContentPage>
     ```
 
-    此代码将[`ListView`](xref:Xamarin.Forms.ListView)的隐式样式添加到页面级别的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中，并将 `ListView.Margin` 属性设置为应用程序级 `ResourceDictionary` 中定义的值。 请注意，`ListView` 隐式样式已添加到页面级 `ResourceDictionary`，因为它仅由 `NotesPage` 使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
+    此代码将[`ListView`](xref:Xamarin.Forms.ListView)的隐式样式添加到页面级别的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中，并将 `ListView.Margin` 属性设置为应用程序级 `ResourceDictionary`中定义的值。 请注意，`ListView` 隐式样式已添加到页面级 `ResourceDictionary`，因为它仅由 `NotesPage`使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
 
     通过按**CTRL + S**保存对**NotesPage**所做的更改，并关闭该文件。
 
@@ -141,7 +141,7 @@ ms.locfileid: "70756759"
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="BackgroundColor" Value="LightGray" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="CornerRadius" Value="5" />
             </Style>
         </ContentPage.Resources>
 
@@ -165,13 +165,13 @@ ms.locfileid: "70756759"
     </ContentPage>
     ```
 
-    此代码将[`Editor`](xref:Xamarin.Forms.Editor)和[`Button`](xref:Xamarin.Forms.Button)视图的隐式样式添加到页面级[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，并将 `StackLayout.Margin` 属性设置为应用程序级 `ResourceDictionary` 中定义的值。 请注意，`Editor` 和 `Button` 隐式样式已添加到页级 `ResourceDictionary`，因为它们仅由 `NoteEntryPage` 使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
+    此代码将[`Editor`](xref:Xamarin.Forms.Editor)和[`Button`](xref:Xamarin.Forms.Button)视图的隐式样式添加到页面级[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，并将 `StackLayout.Margin` 属性设置为应用程序级 `ResourceDictionary`中定义的值。 请注意，`Editor` 和 `Button` 隐式样式已添加到页级 `ResourceDictionary`，因为它们仅由 `NoteEntryPage`使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
 
     通过按**CTRL + S**保存对**NoteEntryPage**所做的更改，并关闭该文件。
 
 5. 在每个平台上生成并运行项目。 有关详细信息，请参阅[生成快速入门](single-page.md#building-the-quickstart)。
 
-    在**NotesPage**上，按 " **+** " 按钮，导航到**NoteEntryPage**并输入备注。 在每个页面上，观察样式在以前的快速入门中的变化方式。
+    上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页面上，观察样式在以前的快速入门中的变化方式。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -180,7 +180,7 @@ ms.locfileid: "70756759"
 
 1. 启动 Visual Studio for Mac 并打开 "注释" 项目。
 
-2. 在**Solution Pad**的 "**注释**" 项目中，双击 " **App.xaml** " 以打开它。 然后，将现有代码替换为以下代码：
+2. 在**Solution Pad**的 "**注释**" 项目中，双击 " **app.config** " 以打开它。 然后，将现有代码替换为以下代码：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -257,7 +257,7 @@ ms.locfileid: "70756759"
     </ContentPage>
     ```
 
-    此代码将[`ListView`](xref:Xamarin.Forms.ListView)的隐式样式添加到页面级别的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中，并将 `ListView.Margin` 属性设置为应用程序级 `ResourceDictionary` 中定义的值。 请注意，`ListView` 隐式样式已添加到页面级 `ResourceDictionary`，因为它仅由 `NotesPage` 使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
+    此代码将[`ListView`](xref:Xamarin.Forms.ListView)的隐式样式添加到页面级别的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中，并将 `ListView.Margin` 属性设置为应用程序级 `ResourceDictionary`中定义的值。 请注意，`ListView` 隐式样式已添加到页面级 `ResourceDictionary`，因为它仅由 `NotesPage`使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
 
     通过选择 "**文件" > "保存**" （或按 **&#8984; + S**）来保存对**NotesPage**的更改，并关闭该文件。
 
@@ -282,7 +282,7 @@ ms.locfileid: "70756759"
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="BackgroundColor" Value="LightGray" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="CornerRadius" Value="5" />
             </Style>
         </ContentPage.Resources>
 
@@ -306,26 +306,26 @@ ms.locfileid: "70756759"
     </ContentPage>
     ```
 
-    此代码将[`Editor`](xref:Xamarin.Forms.Editor)和[`Button`](xref:Xamarin.Forms.Button)视图的隐式样式添加到页面级[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，并将 `StackLayout.Margin` 属性设置为应用程序级 `ResourceDictionary` 中定义的值。 请注意，`Editor` 和 `Button` 隐式样式已添加到页级 `ResourceDictionary`，因为它们仅由 `NoteEntryPage` 使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
+    此代码将[`Editor`](xref:Xamarin.Forms.Editor)和[`Button`](xref:Xamarin.Forms.Button)视图的隐式样式添加到页面级[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，并将 `StackLayout.Margin` 属性设置为应用程序级 `ResourceDictionary`中定义的值。 请注意，`Editor` 和 `Button` 隐式样式已添加到页级 `ResourceDictionary`，因为它们仅由 `NoteEntryPage`使用。 有关 XAML 样式的详细信息，请参阅 Xamarin 中的[样式设置](deepdive.md#styling)[深入探讨](deepdive.md)。
 
     通过选择 "**文件" > "保存**" （或按 **&#8984; + S**）来保存对**NoteEntryPage**的更改，并关闭该文件。
 
 5. 在每个平台上生成并运行项目。 有关详细信息，请参阅[生成快速入门](single-page.md#building-the-quickstart)。
 
-    在**NotesPage**上，按 " **+** " 按钮，导航到**NoteEntryPage**并输入备注。 在每个页面上，观察样式在以前的快速入门中的变化方式。
+    上**NotesPage**按 **+** 按钮导航到**NoteEntryPage**和输入的说明。 在每个页面上，观察样式在以前的快速入门中的变化方式。
 
 ::: zone-end
 
 ## <a name="next-steps"></a>后续步骤
 
-在本快速入门中，你学习了如何：
+在此快速入门中，读者学习了如何：
 
 - 使用 XAML 样式为 Xamarin 应用程序应用样式。
 
 若要了解有关使用 Xamarin 进行应用程序开发的基础知识的详细信息，请继续深入了解快速入门教程。
 
 > [!div class="nextstepaction"]
-> [下一页](deepdive.md)
+> [下一部分](deepdive.md)
 
 ## <a name="related-links"></a>相关链接
 

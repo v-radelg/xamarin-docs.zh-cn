@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770508"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545564"
 ---
 # <a name="the-path-fill-types"></a>路径填充类型
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _发现不同的效果可能使用 SkiaSharp 路径填充类型_
 
 在路径中的两个分布图可以重叠，并构成了单个轮廓的行可以重叠。 可能可以填充任何封闭的区域，但可能不想要填充所有封闭的区域。 以下是一个示例：
 
-![](fill-types-images/filltypeexample.png "五个指向部分星级 filles")
+![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
 你可以这样的一些控制。 填充算法受[ `SKFillType` ](xref:SkiaSharp.SKPath.FillType)的属性`SKPath`，它设置为的成员[ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType)枚举：
 
@@ -170,9 +170,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 通常情况下，路径填充类型应影响仅填充并不是笔画，但两个`Inverse`模式影响的填充和笔画。 对填充的两个`Inverse`类型填充区域 oppositely，以便在星型之外的区域填充。 用于描边，这两个`Inverse`类型颜色笔画以外的所有内容。 使用这些反向填充类型会产生一些奇怪的效果，如 iOS 屏幕截图中所示：
 
-[![](fill-types-images/fivepointedstar-small.png "三重 Five-Pointed 星型页屏幕截图")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed 星型页面的三个屏幕截图")
+[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
-Android 和 UWP 的屏幕截图显示了典型的奇偶而曲折效果，但笔划和填充的顺序也会影响结果。
+Android 屏幕快照显示了典型的偶数和缠绕效果，但笔划和填充的顺序也会影响结果。
 
 缠绕算法是依赖于绘制行的方向。 通常当你要创建一个路径，您可以控制该方向按你指定的行来自一个点到另一个。 但是，`SKPath`类还定义了方法，如`AddRect`和`AddCircle`绘制整个分布图。 若要控制如何绘制这些对象，方法包括类型的参数[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)，其中包含两个成员：
 
@@ -223,7 +223,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它是代码的使用最少创建一个有趣图像：
 
-[![](fill-types-images/overlappingcircles-small.png "三个重叠圆圈页屏幕截图")](fill-types-images/overlappingcircles-large.png#lightbox "三个重叠圆圈页屏幕截图")
+[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
 ## <a name="related-links"></a>相关链接
 

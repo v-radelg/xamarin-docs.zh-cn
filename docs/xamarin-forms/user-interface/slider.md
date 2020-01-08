@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ddb25a1f01f91b627fc0c370f7f21e2a797b72cb
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656252"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545577"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms 滑块
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _使用滑块选择从一系列连续值。_
 
@@ -39,7 +39,7 @@ Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可以由用户选择操
 
 [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)对象，它附带`ValueChanged`事件具有两个属性，这两个类型`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)并[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 次激发事件时，值`NewValue`等同于`Value`属性的`Slider`对象。
 
-`Slider`还定义`DragStarted`和`DragCompleted`事件, 这些事件在拖动操作的开始和结束时激发。 与事件不同`DragStarted` , 和`DragCompleted`事件仅通过用户操作`Slider`触发。 [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) 当事件触发`DragStartedCommand`时, 将执行类型`ICommand`为的。 `DragStarted` 同样, 当引发`DragCompleted`事件`DragCompletedCommand`时, 将执行类型`ICommand`为的。
+`Slider` 还定义在拖动操作开始和结束时激发的 `DragStarted` 和 `DragCompleted` 事件。 与[`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged)事件不同，`DragStarted` 和 `DragCompleted` 事件仅通过用户操作 `Slider`进行触发。 当引发 `DragStarted` 事件时，将执行 `ICommand`类型的 `DragStartedCommand`。 同样，在引发 `DragCompleted` 事件时，将执行类型为 `ICommand`的 `DragCompletedCommand`。
 
 > [!WARNING]
 > 不使用的不受约束的水平布局选项`Center`， `Start`，或`End`与`Slider`。 在 Android 和 UWP，`Slider`折叠到栏的长度为零，并在 iOS 上，在栏是非常短。 保留默认值`HorizontalOptions`设置为`Fill`，且不使用的宽度`Auto`放置时`Slider`中`Grid`布局。
@@ -109,7 +109,7 @@ public class BasicSliderCodePage : ContentPage
 
 `Slider`初始化为具有`Maximum`360 属性。 `ValueChanged`处理程序`Slider`使用`Value`的属性`slider`对象，以设置`Rotation`属性的第一个`Label`，并使用`String.Format`方法替换`NewValue`属性若要设置的事件参数`Text`属性的第二个`Label`。 这两种方法来获取当前值的`Slider`是可互换的。
 
-下面是在 iOS、 Android 和通用 Windows 平台 (UWP) 上运行的设备的程序：
+下面是在 iOS 和 Android 设备上运行的程序：
 
 [![基本滑块代码](slider-images/BasicSliderCode.png "基本滑块代码")](slider-images/BasicSliderCode-Large.png#lightbox)
 
@@ -205,7 +205,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`属性的第一个`Label`绑定到`Value`的属性`Slider`，如是`Text`第二个属性`Label`与`StringFormat`规范。 基本的 "**滑块绑定**" 页的工作方式与前两个页面的工作方式略有不同:第一次显示页面时, 第`Label`二个显示带有值的文本字符串。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发`ValueChanged`通过从类构造函数调用的事件处理程序的事件。
+`Rotation`属性的第一个`Label`绑定到`Value`的属性`Slider`，如是`Text`第二个属性`Label`与`StringFormat`规范。 **基本滑块绑定**页上函数有点以不同的方式从两个前面的页： 首先显示的页面时，第二个`Label`显示的文本字符串的值。 这是使用数据绑定的优点。 若要显示不带数据绑定的文本，您需要专门初始化`Text`的属性`Label`或模拟的激发`ValueChanged`通过从类构造函数调用的事件处理程序的事件。
 
 <a name="precautions" />
 
@@ -295,11 +295,11 @@ Android 的实现`Slider`在 Android 上基于[ `SeekBar` ](xref:Android.Widget.
 
 UWP 实现`Slider`基于 UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)控件。 `StepFrequency`属性的 UWP`Slider`设置为的差异`Maximum`和`Minimum`属性除以 10，但不能大于 1。
 
-例如，对于默认范围为 0 到 1`StepFrequency`属性设置为 0.1。 作为`Slider`操作，`Value`属性被限制到 0，0.1、 0.2、 0.3、 0.4、 0.5、 0.6，0.7，0.8、 0.9，且 1.0。 (这是中的最后一页中显而易见[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)示例。)时之间的差异`Maximum`并`Minimum`属性为 10 或更高，则`StepFrequency`设置为 1，和`Value`属性具有整数值。
+例如，对于默认范围为 0 到 1`StepFrequency`属性设置为 0.1。 作为`Slider`操作，`Value`属性被限制到 0，0.1、 0.2、 0.3、 0.4、 0.5、 0.6，0.7，0.8、 0.9，且 1.0。 （ [**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)示例的最后一页中有明显的。）如果 `Maximum` 和 `Minimum` 属性之间的差异为10或更大，则 `StepFrequency` 设置为1，并且 `Value` 属性包含整数值。
 
 ### <a name="the-stepslider-solution"></a>StepSlider 解决方案
 
-更灵活`StepSlider`中所述[第 27 章。自定义呈现器](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)一书*使用 Xamarin.Forms 创建移动应用*。 `StepSlider`类似于`Slider`，但添加`Steps`属性指定值之间的数`Minimum`和`Maximum`。
+第27章中讨论了更为广泛的 `StepSlider` [。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)*创建具有 Xamarin 的移动应用*的书籍的自定义呈现器。 `StepSlider`类似于`Slider`，但添加`Steps`属性指定值之间的数`Minimum`和`Maximum`。
 
 ## <a name="sliders-for-color-selection"></a>滑块的颜色选择
 
@@ -505,7 +505,7 @@ Viewmodel 并`INotifyPropertyChanged`一文中讨论了接口[数据绑定](~/xa
 
 [![HSL 颜色滑块](slider-images/HslColorSliders.png "HSL 颜色滑块")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat`组件的`Binding`标记扩展设置为"F2"的格式以显示两个小数位。 (在文章中讨论数据绑定中的格式设置字符串[字符串格式设置](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)。)但是，UWP 版本的程序仅限于值为 0、 0.1、 0.2...0.9 以及 1.0。 这是 UWP 的实现的直接结果`Slider`上文所述的部分中[平台实现差异](#implementations)。
+`StringFormat`组件的`Binding`标记扩展设置为"F2"的格式以显示两个小数位。 （[字符串](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)格式设置中讨论了数据绑定中的字符串格式设置。）但是，程序的 UWP 版本限制为值0、0.1、0.2 和 .。。0.9 和1.0。 这是 UWP 的实现的直接结果`Slider`上文所述的部分中[平台实现差异](#implementations)。
 
 ## <a name="related-links"></a>相关链接
 

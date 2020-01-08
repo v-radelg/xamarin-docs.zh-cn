@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 289d47a700762caa8e41baef23818be6c684c61a
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: e8f3d8af7aab2a7a73787021f114470726d74b72
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998068"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488083"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 单元格
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms 单元格可以添加到 Listview 和 TableViews。_
 
 一个*单元格*是一个专用的元素，用于在表中的项，描述了应如何呈现列表中的每个项。 [ `Cell` ](xref:Xamarin.Forms.Cell)类派生自[ `Element` ](xref:Xamarin.Forms.Element)，从其[ `VisualElement` ](xref:Xamarin.Forms.Element)也派生。 单元格本身不是可视元素;而是用于创建可视元素的模板。
 
-`Cell` 使用专用于[ `ListView` ](views.md#listView)并[ `TableView` ](views.md#tableView)控件。 若要了解如何使用和自定义单元格，请参阅[ `ListView` ](~/xamarin-forms/user-interface/listview/index.md)并[ `TableView` ](~/xamarin-forms/user-interface/tableview.md)文档。
+`Cell` 使用专用于[ `ListView` ](views.md#listview)并[ `TableView` ](views.md#tableview)控件。 若要了解如何使用和自定义单元格，请参阅[ `ListView` ](~/xamarin-forms/user-interface/listview/index.md)并[ `TableView` ](~/xamarin-forms/user-interface/tableview.md)文档。
 
 ## <a name="cells"></a>单元格
 
@@ -48,7 +48,7 @@ Xamarin.Forms 支持以下的单元格类型：
 
 |     |     |
 | --- | --- |
-| 包含带有属性的[`Text`](xref:Xamarin.Forms.SwitchCell.Text)文本集，以及最初使用布尔值[`On`](xref:Xamarin.Forms.SwitchCell.On)属性设置的打开/关闭开关。 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 处理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件时通知`On`属性更改。<br /><br />[API 文档](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 示例](cells-images/SwitchCell.png "SwitchCell 示例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
+| [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)包含具有[`Text`](xref:Xamarin.Forms.SwitchCell.Text)属性的文本集，以及最初使用布尔[`On`](xref:Xamarin.Forms.SwitchCell.On)属性设置的打开/关闭开关。 处理[ `OnChanged` ](xref:Xamarin.Forms.SwitchCell.OnChanged)事件时通知`On`属性更改。<br /><br />[API 文档](xref:Xamarin.Forms.SwitchCell) / [指南](~/xamarin-forms/user-interface/tableview.md#switchcell) | [![SwitchCell 示例](cells-images/SwitchCell.png "SwitchCell 示例")](cells-images/SwitchCell-Large.png#lightbox "SwitchCell 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchCellDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="entrycell"></a>EntryCell

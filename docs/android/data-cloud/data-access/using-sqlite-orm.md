@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 96f084dc49a5558767b162eee59eff722f247904
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ff59213a730b74b916b993c48a6f5f779149a6f9
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023670"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488070"
 ---
 # <a name="using-sqlitenet-with-android"></a>结合使用 SQLite.NET 和 Android
 
@@ -23,7 +23,7 @@ Xamarin 推荐的 SQLite.NET 库是一个非常基本的 ORM，可让你轻松�
 - **包名称：** sqlite 网络-pcl
 - **作者：** Frank Krueger
 - **ID：** sqlite net pcl
-- **Url：** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 包](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 包")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -60,7 +60,7 @@ Xamarin 推荐的 SQLite.NET 库是一个非常基本的 ORM，可让你轻松�
 
 ## <a name="basic-data-access-sample"></a>基本数据访问示例
 
-在 Android 上运行时，此文档的*DataAccess_Basic*示例代码如下所示。 此代码演示如何执行简单的 SQLite.NET 操作并在应用程序的主窗口中以文本形式显示结果。
+在 Android 上运行时，此文档的*DataAccess_Basic*示例代码将如下所示。 此代码演示如何执行简单的 SQLite.NET 操作并在应用程序的主窗口中以文本形式显示结果。
 
 **Outlook Web Access (OWA)**
 
@@ -128,9 +128,9 @@ public static void DoSomeDataAccess () {
 
 - **[自动增量]** &ndash; 此属性将导致插入到数据库中的每个新对象的整数属性值为自动增量
 
-- **[Column （name）]** &ndash; 提供可选的 `name` 参数将重写基础数据库列的名称（与属性相同）的默认值。
+- **[Column （name）]** &ndash; `name` 参数设置基础数据库列的名称。
 
-- **[表（名称）]** &ndash; 将类标记为能够存储在基础 SQLite 表中。 指定可选的 name 参数将重写基础数据库表名称（与类名相同）的默认值。
+- **[表（名称）]** &ndash; 将类标记为能够存储在指定名称的基础 SQLite 表中。
 
 - **[MaxLength （值）]** 在尝试执行数据库插入时，&ndash; 限制文本属性的长度。 在插入对象之前，使用代码应进行验证，因为在尝试执行数据库插入或更新操作时，仅 "选中" 此属性。
 
@@ -139,9 +139,9 @@ public static void DoSomeDataAccess () {
 
 - **[Unique]** &ndash; 确保基础数据库列中的值是唯一的。
 
-其中的大多数属性是可选的，SQLite 将使用表名和列名的默认值。 应始终指定整数主键，以便可以对数据高效地执行选择和删除查询。
+其中的大多数属性是可选的。 应始终指定整数主键，以便可以对数据高效地执行选择和删除查询。
 
-## <a name="more-complex-queries"></a>更复杂的查询
+## <a name="more-complex-queries"></a>更多复杂查询
 
 `SQLiteConnection` 上的以下方法可用于执行其他数据操作：
 

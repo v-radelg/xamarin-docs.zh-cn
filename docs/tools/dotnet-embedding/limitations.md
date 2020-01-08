@@ -6,18 +6,18 @@ ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a8b63638861e8d44deb4ea72959d7461190f7713
+ms.sourcegitcommit: 6266ef043ae0289f174e901f204f2a280a53c071
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029746"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545801"
 ---
 # <a name="net-embedding-limitations"></a>.NET 嵌入限制
 
 本文档介绍 .NET 嵌入的限制，并尽可能为其提供解决方法。
 
-## <a name="general"></a>常规
+## <a name="general"></a>“常规”
 
 ### <a name="use-more-than-one-embedded-library-in-a-project"></a>在一个项目中使用多个嵌入库
 
@@ -39,7 +39,7 @@ ms.locfileid: "73029746"
 
 ## <a name="objective-c-generated-code"></a>目标-C 生成的代码
 
-### <a name="nullability"></a>为
+### <a name="nullability"></a>可空性
 
 .NET 中没有元数据，告诉我们对于 API 是否可以接受空引用。 如果大多数 Api 无法处理 `null` 参数，则会引发 `ArgumentNullException`。 这会造成问题，因为异常的目标 C 处理会更好地避免。
 
@@ -48,5 +48,11 @@ ms.locfileid: "73029746"
 ### <a name="bitcode-ios"></a>Bitcode （iOS）
 
 目前，.NET 嵌入不支持 bitcode on iOS，这是针对某些 Xcode 项目模板启用的。 这将必须禁用才能成功链接生成的框架。
+
+* 对于 iOS，bitcode 是将应用提交到 Apple 的 AppStore 时可选的。 Xamarin 不支持 iOS，因为生成的 bitcode 是 "内联程序集"。 这不会对 iOS 平台提供任何好处，因为它不能优化服务器端，但会使二进制文件更大，生成时间更长。
+
+* 对于 tvOS 和 watchOS，需要 bitcode 将应用提交到 Apple 的 AppStore。 Xamarin 支持 tvOS 上的 bitcode （作为 "内联程序集"）和 watchOS （作为 "LLVM/IR"）来满足此要求。
+
+* 对于 macOS，当前不需要 bitcode 支持，也不支持 Xamarin。
 
 ![Bitcode 选项](images/ios-bitcode-option.png)

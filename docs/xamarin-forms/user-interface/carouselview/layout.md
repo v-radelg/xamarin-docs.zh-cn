@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: 051bbc1732dc1b074d27080f74621a57a80aaaa4
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.openlocfilehash: 0149a66fedd98a94f1c9d96bf8e7e57715d1b90b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749823"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488252"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin CarouselView 布局
 
@@ -22,14 +22,12 @@ ms.locfileid: "72749823"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)定义控件布局的以下属性：
 
-- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类型的 `LinearItemsLayout` 中，指定要使用的布局。
-- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)类型[`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)，则指定要使用的项度量策略。
-- `int` 类型的 `NumberOfSideItems`，当前项旁可见项的数目。 默认值为 0。
-- `PeekAreaInsets` 类型[`Thickness`](xref:Xamarin.Forms.Thickness)，指定使相邻项部分可见的程度。
+- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类型的 `LinearItemsLayout`中，指定要使用的布局。
+- `PeekAreaInsets`类型[`Thickness`](xref:Xamarin.Forms.Thickness)，指定使相邻项部分可见的程度。
 
 这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着属性可以是数据绑定的目标。
 
-默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)会以水平方向显示其项。 屏幕上将显示一项，其中包含滑动手势，导致在项集合中向前和向后导航。 但是，也可以使用垂直方向。 这是因为[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)属性的类型 `LinearItemsLayout`，后者继承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类。 @No__t_0 类定义以下属性：
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)会以水平方向显示其项。 屏幕上将显示一项，其中包含滑动手势，导致在项集合中向前和向后导航。 但是，也可以使用垂直方向。 这是因为[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)属性的类型 `LinearItemsLayout`，后者继承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类。 `ItemsLayout` 类定义以下属性：
 
 - [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)，类型为[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)指定添加项时[`CarouselView`](xref:Xamarin.Forms.CarouselView)展开的方向。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)类型的[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)指定对齐点如何与项对齐。
@@ -37,12 +35,12 @@ ms.locfileid: "72749823"
 
 这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着属性可以是数据绑定的目标。 有关对齐点的详细信息，请参阅[Xamarin CollectionView 滚动](scrolling.md)指南中的 "[对齐点](scrolling.md#snap-points)"。
 
-[@No__t_1](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举定义以下成员：
+[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举定义以下成员：
 
 - `Vertical` 指示[`CarouselView`](xref:Xamarin.Forms.CarouselView)在添加项目时将垂直扩展。
 - `Horizontal` 指示[`CarouselView`](xref:Xamarin.Forms.CarouselView)在添加项目时水平展开。
 
-@No__t_0 类继承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类，并定义了一个类型 `double` 的 `ItemSpacing` 属性，该属性表示每个项周围的空白区域。 此属性的默认值为0，其值必须始终大于或等于0。 @No__t_0 类还定义静态 `Vertical` 和 `Horizontal` 成员。 这些成员可以分别用来创建垂直或水平列表。 或者，可以创建一个 `LinearItemsLayout` 对象，将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定为一个参数。
+`LinearItemsLayout` 类继承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类，并定义了一个类型 `double`的 `ItemSpacing` 属性，该属性表示每个项周围的空白区域。 此属性的默认值为0，其值必须始终大于或等于0。 `LinearItemsLayout` 类还定义静态 `Vertical` 和 `Horizontal` 成员。 这些成员可以分别用来创建垂直或水平列表。 或者，可以创建一个 `LinearItemsLayout` 对象，将[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举成员指定为一个参数。
 
 > [!NOTE]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView)使用本机布局引擎来执行布局。
@@ -192,35 +190,9 @@ CarouselView carouselView = new CarouselView
 
 结果是在屏幕上部分公开相邻项。
 
-## <a name="fully-visible-adjacent-items"></a>完全可见的相邻项
-
-默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)每次显示一项。 但是，可以通过将 `NumberOfSideItems` 属性设置为一个整数来更改此行为，该整数表示要显示在当前项旁边的项数。 以下 XAML 显示了设置此属性的示例：
-
-```xaml
-<CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
-    ...
-</CarouselView>
-```
-
-等效 C# 代码如下：
-
-```csharp
-CarouselView carouselView = new CarouselView
-{
-    ...
-    NumberOfSideItems = 1
-};
-```
-
-此示例将导致在当前项的每一侧显示一个相邻项。
-
-> [!NOTE]
-> 设置 `NumberOfSideItems` 属性时，仍将应用任何 `PeekAreaInsets` 值。
-
 ## <a name="item-spacing"></a>项间距
 
-默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)中的每一项周围没有任何空白区域。 可以通过在 `CarouselView` 使用的项布局上设置属性来更改此行为。
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView)中的每一项周围没有任何空白区域。 可以通过在 `CarouselView`使用的项布局上设置属性来更改此行为。
 
 当[`CarouselView`](xref:Xamarin.Forms.CarouselView)将其[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)属性设置为一个 `LinearItemsLayout` 对象时，`LinearItemsLayout.ItemSpacing` 属性可设置为表示每个项周围空白空间的 `double` 值：
 
@@ -235,7 +207,7 @@ CarouselView carouselView = new CarouselView
 ```
 
 > [!NOTE]
-> @No__t_0 属性具有一个验证回调集，它可确保属性的值始终大于或等于0。
+> `LinearItemsLayout.ItemSpacing` 属性具有一个验证回调集，它可确保属性的值始终大于或等于0。
 
 等效 C# 代码如下：
 
@@ -254,7 +226,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="dynamic-resizing-of-items"></a>动态调整项的大小
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)中的项可以在运行时通过更改[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中元素的与布局相关的属性，在运行时动态调整大小。 例如，下面的代码示例更改了[`Image`](xref:Xamarin.Forms.Image)对象的[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)和[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)属性以及其父[`Frame`](xref:Xamarin.Forms.Frame)的 `HeightRequest` 属性：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)中的项可以在运行时通过更改[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中元素的与布局相关的属性，在运行时动态调整大小。 例如，下面的代码示例更改了[`Image`](xref:Xamarin.Forms.Image)对象的[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)和[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)属性以及其父[`Frame`](xref:Xamarin.Forms.Frame)的 `HeightRequest` 属性：
 
 ```csharp
 void OnImageTapped(object sender, EventArgs e)
@@ -266,7 +238,7 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-@No__t_0 事件处理程序将执行，以响应点击的[`Image`](xref:Xamarin.Forms.Image)对象，并更改图像的尺寸（及其父框架），以便更轻松地查看。
+`OnImageTapped` 事件处理程序将执行，以响应点击的[`Image`](xref:Xamarin.Forms.Image)对象，并更改图像的尺寸（及其父框架），以便更轻松地查看。
 
 ## <a name="right-to-left-layout"></a>从右到左布局
 

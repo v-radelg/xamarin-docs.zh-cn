@@ -7,16 +7,27 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 82cff753e7569c2642c467db692c2d2d84347df0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: def34efd1fd48cc0e7dd802a6d3e843be1e156a4
+ms.sourcegitcommit: 5ddb107b0a56bef8a16fce5bc6846f9673b3b22e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031608"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75558802"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin 中的 PhotoKit
 
-PhotoKit 是一个新的框架，它允许应用程序查询系统映像库并创建自定义用户界面来查看和修改其内容。 它包括多种类，这些类表示图像和视频资产，以及资产（如影集和文件夹）的集合。
+[![下载示例](~/media/shared/download.png) 下载代码示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+
+PhotoKit 是一个框架，它允许应用程序查询系统映像库并创建自定义用户界面来查看和修改其内容。 它包括多种类，这些类表示图像和视频资产，以及资产（如影集和文件夹）的集合。
+
+## <a name="permissions"></a>权限
+
+在你的应用程序可以访问照片库之前，会向用户显示权限对话框。 你必须在**info.plist**文件中提供说明性文本，以说明你的应用程序如何使用照片库，例如：
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Applies filters to photos and updates the original image</string>
+```
 
 ## <a name="model-objects"></a>模型对象
 
@@ -55,7 +66,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ## <a name="saving-changes-to-the-photo-library"></a>保存对照片库所做的更改
 
-这就是处理查询和读取数据的方法。 你还可以将更改写入库。 由于多个感兴趣的应用程序能够与系统照片库进行交互，因此你可以注册一个观察者，以便使用 PhotoLibraryObserver 通知更改。 然后，当发生更改时，应用程序可以相应地进行更新。 例如，下面是一个简单的实现，用于重载上面的集合视图：
+这就是处理查询和读取数据的方法。 你还可以将更改写入库。 由于多个感兴趣的应用程序能够与系统照片库进行交互，因此你可以注册一个观察者，以便使用 `PhotoLibraryObserver`向其通知更改。 然后，当发生更改时，应用程序可以相应地进行更新。 例如，下面是一个简单的实现，用于重载上面的集合视图：
 
 ```csharp
 class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
@@ -70,26 +81,25 @@ class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
     public override void PhotoLibraryDidChange (PHChange changeInstance)
     {
         DispatchQueue.MainQueue.DispatchAsync (() => {
-        var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
-        controller.fetchResults = changes.FetchResultAfterChanges;
-        controller.CollectionView.ReloadData ();
+            var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
+            controller.fetchResults = changes.FetchResultAfterChanges;
+            controller.CollectionView.ReloadData ();
         });
     }
 }
 ```
 
-若要实际从你的应用程序中写回更改，你需要创建一个更改请求。 每个模型类都具有关联的更改请求类。 例如，若要更改 PHAsset，请创建一个 PHAssetChangeRequest。 执行写回照片库并发送到观察者的更改的步骤如下：
+若要实际从你的应用程序中写回更改，你需要创建一个更改请求。 每个模型类都具有关联的更改请求类。 例如，若要更改 `PHAsset`，请创建 `PHAssetChangeRequest`。 执行写回照片库并发送到观察者的更改的步骤如下：
 
-- 执行编辑操作。
-- 将筛选的图像数据保存到 PHContentEditingOutput 实例。
-- 发出更改请求，以发布编辑输出中的更改。
+1. 执行编辑操作。
+2. 将筛选的图像数据保存到 `PHContentEditingOutput` 的实例。
+3. 发出更改请求，以从编辑输出发布更改。
 
 下面是一个示例，该示例将更改写入到应用核心映像 noir 筛选器的映像：
 
 ```csharp
 void ApplyNoirFilter (object sender, EventArgs e)
 {
-
     Asset.RequestContentEditingInput (new PHContentEditingInputRequestOptions (), (input, options) => {
 
         // perform the editing operation, which applies a noir filter in this case
@@ -123,8 +133,8 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 当用户选择该按钮时，将应用筛选器：
 
-![](photokit-images/image5.png "An example of the filter being applied")
+![两个示例，在应用筛选器前后显示照片](photokit-images/image5.png)
 
-而且，由于 PHPhotoLibraryChangeObserver，当用户向后导航时，该更改将反映在 "集合" 视图中：
+由于 `PHPhotoLibraryChangeObserver`，当用户导航回来时，此更改将反映在 "集合" 视图中：
 
-![](photokit-images/image6.png "The change is reflected in the collection view when the user navigates back")
+![显示已修改照片的照片集合视图](photokit-images/image6.png)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb0981fea906a474d39834a52f0a8bfdf496ca1e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008166"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488408"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>将 SQLite.NET 与 Xamarin 配合使用
 
@@ -21,14 +21,14 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 
 <a name="Usage"/>
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>用量
 
 若要在 Xamarin 应用中包括 SQLite.NET 库，请将以下 NuGet 包添加到项目中：
 
 - **包名称：** sqlite 网络-pcl
 - **作者：** Frank Krueger
 - **ID：** sqlite net pcl
-- **Url：** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 包](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 包")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -67,7 +67,7 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 
 ## <a name="basic-data-access-sample"></a>基本数据访问示例
 
-在 iOS 上运行时，此文档的*DataAccess_Basic*示例代码如下所示。 此代码演示如何执行简单的 SQLite.NET 操作并在应用程序的主窗口中以文本形式显示结果。
+在 iOS 上运行时，此文档的*DataAccess_Basic*示例代码将如下所示。 此代码演示如何执行简单的 SQLite.NET 操作并在应用程序的主窗口中以文本形式显示结果。
 
 **Android**
 
@@ -130,15 +130,15 @@ public static void DoSomeDataAccess () {
 
 - **[PrimaryKey]** –此特性可应用于整数属性，以强制其成为基础表的主键。 不支持组合主键。
 - **[自动增量]** –此特性将导致插入到数据库中的每个新对象的整数属性值为自动增量
-- **[Column （name）]** –提供可选 `name` 参数将重写基础数据库列的名称（与属性相同）的默认值。
-- **[表（名称）]** –标记该类，使其能够存储在基础 SQLite 表中。 指定可选的 name 参数将重写基础数据库表名称（与类名相同）的默认值。
+- **[Column （name）]** &ndash; `name` 参数设置基础数据库列的名称。
+- **[表（名称）]** –标记该类，使其能够存储在具有指定名称的基础 SQLite 表中。
 - **[MaxLength （值）]** –当尝试插入数据库时，限制文本属性的长度。 在插入对象之前，使用代码应进行验证，因为在尝试执行数据库插入或更新操作时，仅 "选中" 此属性。
 - **[Ignore]** –使 SQLite.NET 忽略此属性。 这对于类型不能存储在数据库中的属性或无法自动解析的模型集合的属性特别有用。
 - **[Unique]** –确保基础数据库列中的值是唯一的。
 
-其中的大多数属性是可选的，SQLite 将使用表名和列名的默认值。 应始终指定整数主键，以便可以对数据高效地执行选择和删除查询。
+其中的大多数属性是可选的。 应始终指定整数主键，以便可以对数据高效地执行选择和删除查询。
 
-## <a name="more-complex-queries"></a>更复杂的查询
+## <a name="more-complex-queries"></a>更多复杂查询
 
 `SQLiteConnection` 上的以下方法可用于执行其他数据操作：
 

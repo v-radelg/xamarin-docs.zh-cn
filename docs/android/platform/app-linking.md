@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027751"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487823"
 ---
 # <a name="app-linking-in-android"></a>Android 中的应用链接
 
@@ -36,7 +36,7 @@ Android 6.0 通过使用自动链接处理改善了这一点。 Android 可能�
 
 本指南将讨论如何配置 Android 6.0 应用程序以及如何创建和发布 "数字资产链接" 文件，以支持 Android 6.0 中的应用程序链接。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 本指南需要 Xamarin 6.1 和面向 Android 6.0 （API 级别23）或更高版本的应用程序。
 
@@ -56,7 +56,7 @@ Android 6.0 通过使用自动链接处理改善了这一点。 Android 可能�
 需要配置一个意向筛选器，将 URI （或可能为的一组 uri）从网站映射到 Android 应用程序中的活动。 在 Xamarin 中，此关系是通过使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)的活动装饰建立的。 目的筛选器必须声明以下信息：
 
 - **`Intent.ActionView`** &ndash; 这将注册意向筛选器，以响应查看信息的请求
-- **`Categories`** &ndash; 目的筛选器应注册 **[CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ，以便能够正确地处理 web URI。
+- **`Categories`** &ndash;  意向的筛选器应注册同时 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 为了能够正确处理 web URI。
 - **`DataScheme`** &ndash; 目的筛选器必须声明 `http` 和/或 `https`。 这是两个有效的方案。
 - **`DataHost`** &ndash; 此域是 uri 将源自的域。
 - **`DataPathPrefix`** &ndash; 这是网站上的资源的可选路径。
@@ -167,7 +167,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2. 显示在给定设备上安装的应用程序的现有链接处理策略。 以下命令将为设备上的每个用户转储一个链接策略列表，其中包含以下信息。 在命令提示符处，键入下列命令：
+2. 显示在给定设备上安装的应用程序的现有链接处理策略。 以下命令将为设备上的每个用户转储一个链接策略列表，其中包含以下信息。 在命令提示符下，键入以下命令：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -177,7 +177,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     - **`Domain`** &ndash; 将由应用程序处理其 Web 链接的域（由空格分隔）
     - **`Status`** &ndash; 这是应用的当前链接处理状态。 如果值为 "**始终**"，则表示应用程序已 `android:autoVerify=true` 声明并通过了系统验证。 后跟一个十六进制数字，表示该首选项的 Android 系统记录。
 
-    例如:
+    例如：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -188,14 +188,13 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南讨论了应用链接在 Android 6.0 中的工作原理。 然后，它介绍了如何配置 Android 6.0 应用程序以支持和响应应用程序链接。 还介绍了如何在 Android 应用程序中测试应用程序链接。
 
 ## <a name="related-links"></a>相关链接
 
 - [查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)
-- [活动和意向](https://university.xamarin.com/classes#4)
 - [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Google 数字资产链接](https://developers.google.com/digital-asset-links/)
 - [语句列表生成器和测试人员](https://developers.google.com/digital-asset-links/tools/generator)

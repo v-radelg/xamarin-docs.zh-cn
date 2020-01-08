@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: davidortinau
 ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7764d63991ec636043982509319e7097ef2091b
+ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016279"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663243"
 ---
 # <a name="binding-objective-c"></a>绑定 Objective-C
 
@@ -48,7 +48,9 @@ ms.locfileid: "73016279"
 
 ## <a name="mac"></a>Mac
 
-过去的[Mac 绑定](~/mac/platform/binding.md)是一个非常手动的过程。 目前，有一个[可下载](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)的 Mac 绑定项目支持 Visual Studio for Mac 的未来版本。
+遵循[Mac 绑定](~/mac/platform/binding.md)说明绑定 macOS 库。 你可以从 "**新建项目**" 窗口中创建新的**Mac 绑定库**：
+
+["![文件" "新建 mac 绑定项目" 对话框](images/new-bindings-library-sml.png)](images/new-bindings-library.png#lightbox)
 
 ## <a name="related-links"></a>相关链接
 

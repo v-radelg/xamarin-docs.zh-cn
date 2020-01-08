@@ -6,13 +6,13 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: 9442f7878d9290946fabb7bfc5dee77a828228c7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662330"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488163"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin CollectionView 数据
 
@@ -20,7 +20,7 @@ ms.locfileid: "73662330"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)包括以下属性，这些属性定义要显示的数据及其外观：
 
-- `IEnumerable` 类型[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中，指定要显示的项的集合，默认值为 "`null`"。
+- `IEnumerable`类型[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中，指定要显示的项的集合，默认值为 "`null`"。
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，指定要应用于要显示的项集合中的每个项的模板。
 
 这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着属性可以是数据绑定的目标。
@@ -32,7 +32,7 @@ ms.locfileid: "73662330"
 
 ## <a name="populate-a-collectionview-with-data"></a>使用数据填充 CollectionView
 
-通过将数据的[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)属性设置为实现 `IEnumerable` 的任何集合，使用数据填充[`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 可以通过从字符串数组中初始化 `ItemsSource` 属性，在 XAML 中添加项：
+通过将数据的[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)属性设置为实现 `IEnumerable`的任何集合，使用数据填充[`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 可以通过从字符串数组中初始化 `ItemsSource` 属性，在 XAML 中添加项：
 
 ```xaml
 <CollectionView>
@@ -79,7 +79,7 @@ collectionView.ItemsSource = new string[]
 > [!IMPORTANT]
 > 如果需要在基础集合中添加、删除或更改项时刷新[`CollectionView`](xref:Xamarin.Forms.CollectionView) ，则基础集合应为发送属性更改通知的 `IEnumerable` 集合，如 `ObservableCollection`。
 
-有关如何更改[`CollectionView`](xref:Xamarin.Forms.CollectionView)布局的信息，请参阅[Xamarin CollectionView 布局](layout.md)。 若要了解如何在 `CollectionView` 中定义每个项的外观，请参阅[定义项外观](#define-item-appearance)。
+有关如何更改[`CollectionView`](xref:Xamarin.Forms.CollectionView)布局的信息，请参阅[Xamarin CollectionView 布局](layout.md)。 若要了解如何在 `CollectionView`中定义每个项的外观，请参阅[定义项外观](#define-item-appearance)。
 
 ### <a name="data-binding"></a>数据绑定
 
@@ -251,9 +251,88 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 > [!IMPORTANT]
 > 使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)时，切勿将[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)对象的根元素设置为 `ViewCell`。 这将导致引发异常，因为 `CollectionView` 没有单元的概念。
 
-## <a name="pull-to-refresh"></a>请求刷新
+## <a name="context-menus"></a>上下文菜单
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)支持通过 `RefreshView` 拉取到刷新功能，这样就可以通过下拉项列表来刷新要显示的数据。 `RefreshView` 是一种容器控件，该控件提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将 `CollectionView` 设置为 `RefreshView` 的子项来实现对该的拉取：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)通过 `SwipeView`为数据项支持上下文菜单，这将显示带滑动手势的上下文菜单。 `SwipeView` 是一个容器控件，该控件环绕内容项，并为该项内容提供上下文菜单项。 因此，通过创建一个 `SwipeView` 来为 `CollectionView` 实现上下文菜单，该用于定义 `SwipeView` 所环绕的内容，以及通过轻扫手势显示的上下文菜单项。 这是通过将 `SwipeView` 设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中的根视图来实现的，该视图定义 `CollectionView`中每项数据的外观：
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Favorite"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.FavoriteCommand}"
+                                   CommandParameter="{Binding}" />
+                        <SwipeItem Text="Delete"
+                                   IconImageSource="delete.png"
+                                   BackgroundColor="LightPink"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"
+                                   CommandParameter="{Binding}" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid BackgroundColor="White"
+                      Padding="10">
+                    <!-- Define item appearance -->
+                </Grid>
+            </SwipeView>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+等效 C# 代码如下：
+
+```csharp
+CollectionView collectionView = new CollectionView();
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+
+collectionView.ItemTemplate = new DataTemplate(() =>
+{
+    // Define item appearance
+    Grid grid = new Grid { Padding = 10, BackgroundColor = Color.White };
+    // ...
+
+    SwipeView swipeView = new SwipeView();
+    SwipeItem favoriteSwipeItem = new SwipeItem
+    {
+        Text = "Favorite",
+        IconImageSource = "favorite.png",
+        BackgroundColor = Color.LightGreen
+    };
+    favoriteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.FavoriteCommand", source: collectionView));
+    favoriteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    SwipeItem deleteSwipeItem = new SwipeItem
+    {
+        Text = "Delete",
+        IconImageSource = "delete.png",
+        BackgroundColor = Color.LightPink
+    };
+    deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: collectionView));
+    deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    swipeView.LeftItems = new SwipeItems { favoriteSwipeItem, deleteSwipeItem };
+    swipeView.Content = grid;    
+    return swipeView;
+});
+```
+
+在此示例中，`SwipeView` 内容是一个[`Grid`](xref:Xamarin.Forms.Grid) ，用于定义[`CollectionView`](xref:Xamarin.Forms.CollectionView)中每个项的外观。 滑动项用于对 `SwipeView` 内容执行操作，并在控件从左侧重击时显示：
+
+[![IOS 和 Android 上的 CollectionView 上下文菜单项的屏幕截图](populate-data-images/swipeview.png "带有 SwipeView 上下文菜单项的 CollectionView")](populate-data-images/swipeview-large.png#lightbox "带有 SwipeView 上下文菜单项的 CollectionView")
+
+`SwipeView` 支持四个不同的轻扫方向，并通过向其添加 `SwipeItems` 对象的方向 `SwipeItems` 集合定义滑动方向。 默认情况下，当用户点击一项时，将执行一项刷卡器项。 此外，在执行了一项刷卡器后，将会隐藏该滑动项，并重新显示 `SwipeView` 内容。 不过，这些行为可以更改。
+
+有关 `SwipeView` 控件的详细信息，请参阅[SwipeView](~/xamarin-forms/user-interface/swipeview.md)。
+
+## <a name="pull-to-refresh"></a>下拉以刷新
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)支持通过 `RefreshView`拉取到刷新功能，这样就可以通过下拉项列表来刷新要显示的数据。 `RefreshView` 是一种容器控件，该控件提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将 `CollectionView` 设置为 `RefreshView`的子项来实现对该的拉取：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -288,7 +367,7 @@ refreshView.Content = collectionView;
 
 `RefreshView.IsRefreshing` 属性的值指示 `RefreshView`的当前状态。 用户触发刷新时，此属性会自动转换为 `true`。 刷新完成后，应将属性重置为 `false`。
 
-有关 `RefreshView` 的详细信息，请参阅[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
+有关 `RefreshView`的详细信息，请参阅[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
 
 ## <a name="load-data-incrementally"></a>以增量方式加载数据
 
@@ -297,7 +376,7 @@ refreshView.Content = collectionView;
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定义以下属性来控制数据的增量加载：
 
 - `RemainingItemsThreshold`，类型 `int`，将在其中激发 `RemainingItemsThresholdReached` 事件的列表中尚未显示的项的阈值。
-- `ICommand` 类型的 `RemainingItemsThresholdReachedCommand`，在达到 `RemainingItemsThreshold` 时执行。
+- `ICommand`类型的 `RemainingItemsThresholdReachedCommand`，在达到 `RemainingItemsThreshold` 时执行。
 - `RemainingItemsThresholdReachedCommandParameter`，属于 `object` 类型，是传递给 `RemainingItemsThresholdReachedCommand` 的参数。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)还定义了一个 `RemainingItemsThresholdReached` 事件，当 `CollectionView` 滚动到足够多的 `RemainingItemsThreshold` 项尚未显示时，将触发该事件。 可以处理此事件以加载更多项。 此外，当激发 `RemainingItemsThresholdReached` 事件时，将执行 `RemainingItemsThresholdReachedCommand`，从而使增量数据加载在 viewmodel 中进行。
@@ -344,6 +423,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 
 - [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
+- [Xamarin. Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md)
 - [Xamarin. 窗体数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin. Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [创建 Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

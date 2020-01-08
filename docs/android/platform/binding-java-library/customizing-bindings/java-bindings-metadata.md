@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 1f06601b2b419141b4bd44677826df4e64a831fc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020570"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487784"
 ---
 # <a name="java-bindings-metadata"></a>Java 绑定元数据
 
@@ -20,7 +20,7 @@ _C#Xamarin 中的代码通过绑定调用 Java 库，绑定是一种机制，用
 
 ## <a name="overview"></a>概述
 
-Xamarin Android **Java 绑定库**尝试自动完成在绑定现有 Android 库所需的大部分工作，并提供了有时称为_绑定生成器_的工具的帮助。 绑定 Java 库时，Xamarin 将检查 Java 类并生成所有要绑定的包、类型和成员的列表。 此 Api 列表存储在一个 XML 文件中，该文件可在 "**发布**版本" **\{project directory} \obj\Release\api.xml** "中找到，也可在 **\{project Directory}" \obj\Debug\api.xml**用于**调试**版本。
+Xamarin Android **Java 绑定库**尝试自动完成在绑定现有 Android 库所需的大部分工作，并提供了有时称为_绑定生成器_的工具的帮助。 绑定 Java 库时，Xamarin 将检查 Java 类并生成所有要绑定的包、类型和成员的列表。 Api 的此列表存储在一个 XML 文件，请参阅 **\{项目 directory}\obj\Release\api.xml** 有关 **发布** 生成而在 **\{项目directory}\obj\Debug\api.xml** 有关 **调试** 生成。
 
 ![在 obj/Debug 文件夹中的 api .xml 文件的位置](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
@@ -56,9 +56,9 @@ Xamarin Android **Java 绑定库**尝试自动完成在绑定现有 Android 库�
 
 - **MetaData** &ndash; 允许对最终 API 进行更改，如更改生成的绑定的命名空间。 
 
-- **EnumFields** &ndash; 包含 Java `int` 常量和C#`enums`之间的映射。 
+- **EnumFields** &ndash; 包含 Java `int` 常量和C# `enums` 之间的映射。 
 
-- **EnumMethods** &ndash; 允许更改方法参数，并从 Java `int` 常数返回到C#`enums`的类型。 
+- **EnumMethods** &ndash; 允许更改方法参数，并从 Java `int` 常数返回到C# `enums` 的类型。 
 
 **元数据 .xml**文件是这些文件的最多导入，因为它允许对绑定进行一般用途的更改，例如：
 
@@ -101,13 +101,13 @@ Xamarin Android **Java 绑定库**尝试自动完成在绑定现有 Android 库�
 
 下面列出了 Java API 的一些常用 XPath 元素：
 
-- `interface` &ndash; 用于查找 Java 接口。 例如 `/interface[@name='AuthListener']`。
+- `interface` &ndash; 用于查找 Java 接口。 例如，`/interface[@name='AuthListener']`
 
-- 用于查找类 `class` &ndash;。 例如 `/class[@name='MapView']`。
+- 用于查找类 `class` &ndash;。 例如，`/class[@name='MapView']`
 
-- 用于在 Java 类或接口上查找方法 `method` &ndash;。 例如 `/class[@name='MapView']/method[@name='setTitleSource']`。
+- 用于在 Java 类或接口上查找方法 `method` &ndash;。 例如，`/class[@name='MapView']/method[@name='setTitleSource']`
 
-- `parameter` &ndash; 确定方法的参数。 例如 `/parameter[@name='p0']`
+- `parameter` &ndash; 确定方法的参数。 例如，`/parameter[@name='p0']`
 
 ### <a name="adding-types"></a>添加类型
 
@@ -162,7 +162,7 @@ public class NewName : Java.Lang.Object { ... }
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>重命名 `EventArg` 包装类
 
-当 Xamarin 绑定生成器标识_侦听器类型_的 `onXXX` setter 方法时，将生成一个C#事件和`EventArgs`子类，以支持基于 Java 的侦听器模式的 .net flavoured API。 例如，请考虑以下 Java 类和方法：
+当 Xamarin 绑定生成器标识_侦听器类型_的 `onXXX` setter 方法时，将生成一个C#事件和 `EventArgs` 子类，以支持基于 Java 的侦听器模式的 .net flavoured API。 例如，请考虑以下 Java 类和方法：
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
@@ -174,7 +174,7 @@ Xamarin 会将前缀 `on` 从 setter 方法中删除，而改用 `2DSignNextManu
 NavigationManager.2DSignNextManueverEventArgs
 ```
 
-这不是合法C#的类名。 若要更正此问题，绑定作者必须使用 `argsType` 属性，并为`EventArgs`子类C#提供有效名称：
+这不是合法C#的类名。 若要更正此问题，绑定作者必须使用 `argsType` 属性，并为 `EventArgs` 子类C#提供有效名称：
 
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
@@ -191,7 +191,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 此属性位于 setter 方法上，用于命名将为支持 Java 侦听器而生成的 `EventArg` 子类。 稍后在本指南的 "[重命名 EventArg 包装](#Renaming_EventArg_Wrapper_Classes)器" 一节中对此进行了详细介绍。
 
-### <a name="eventname"></a>名
+### <a name="eventname"></a>eventName
 
 指定事件的名称。 如果为空，它将禁止生成事件。
 标题[重命名 EventArg 包装类](#Renaming_EventArg_Wrapper_Classes)部分对此进行了详细介绍。
@@ -216,7 +216,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` 用于更改方法的返回类型。 在某些情况下，绑定生成器将错误地推断 Java 方法的返回类型，这将导致编译时错误。 在这种情况下，一种可能的解决方案是更改方法的返回类型。
 
-例如，绑定生成器认为 `de.neom.neoreadersdk.resolution.compareTo()` 的 Java 方法应返回 `int`，导致错误消息**错误 CS0535： "DE。Neom "不实现接口成员" Neoreadersdk （CompareTo （.Java.） "** 中的。 下面的代码片段演示如何将生成C#的方法的参数类型从`DE.Neom.Neoreadersdk.Resolution`更改为 `Java.Lang.Object`： 
+例如，绑定生成器认为 `de.neom.neoreadersdk.resolution.compareTo()` 的 Java 方法应返回 `int` 并采用 `Object` 作为参数，导致错误消息**错误 CS0535： "DE。Neom "不实现接口成员" Neoreadersdk （CompareTo （.Java.） "** 中的。 下面的代码片段演示如何将生成C#的方法的第一个参数类型从 `DE.Neom.Neoreadersdk.Resolution` 更改为 `Java.Lang.Object`： 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -241,7 +241,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 对 Java 库进行模糊处理的工具可能会影响 Xamarin 绑定生成器及其生成C#包装器类的功能。 模糊类的特征包括： 
 
-- 类名称包含一个 **$** ，即 **$. 类**
+- Class 名称中包含 **$** ，即 **$.class**
 - 类名称完全泄露小写字符，即**类**
 
 此代码片段举例说明如何生成 "未经过模糊处理" C#类型：
@@ -271,7 +271,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="sender"></a>sender
 
-当方法映射到事件时，指定方法的哪个参数应为 `sender` 参数。 该值可以是 `true` 或 `false`。 例如:
+当方法映射到事件时，指定方法的哪个参数应为 `sender` 参数。 该值可以是 `true` 或 `false`。 例如：
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -283,7 +283,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="visibility"></a>可见性
 
-此属性用于更改类、方法或属性的可见性。 例如，可能有必要升级 `protected` Java 方法，使其对应C#的包装程序`public`：
+此属性用于更改类、方法或属性的可见性。 例如，可能有必要升级 `protected` Java 方法，使其对应C#的包装程序 `public`：
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -299,7 +299,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="defining-an-enum-using-enumfieldsxml"></a>使用 EnumFields 定义枚举
 
-**EnumFields**文件包含 Java `int` 常量和C#`enums`之间的映射。 让我们以下面的示例为例C# ，为一组`int`常量创建枚举： 
+**EnumFields**文件包含 Java `int` 常量和C# `enums`之间的映射。 让我们以下面的示例为例C# ，为一组 `int` 常量创建枚举： 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -309,11 +309,11 @@ NavigationManager.2DSignNextManueverEventArgs
 </mapping>
 ```
 
-在这里，我们已将 Java 类 `SKRealReachSettings`，并C#在命名空间`Skobbler.Ngx.Map.RealReach`中定义了一个名为`SKMeasurementUnit`的枚举。 `field` 条目定义 Java 常量的名称（示例 `UNIT_SECOND`）、枚举条目的名称（示例 `Second`）和两个实体（例如 `0`）表示的整数值。 
+在这里，我们已将 Java 类 `SKRealReachSettings`，并C#在命名空间 `Skobbler.Ngx.Map.RealReach`中定义了一个名为 `SKMeasurementUnit` 的枚举。 `field` 条目定义 Java 常量的名称（示例 `UNIT_SECOND`）、枚举条目的名称（示例 `Second`）和两个实体（例如 `0`）表示的整数值。 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>使用 EnumMethods 定义 Getter/Setter 方法
 
-**EnumMethods**文件允许更改方法参数，并从 Java `int` 常数返回到C#`enums`的类型。 换句话说，它将C#枚举（在**EnumFields**文件中定义）的读取和写入映射到 Java `int`常量`get`和`set`方法。
+**EnumMethods**文件允许更改方法参数，并从 Java `int` 常数返回到C# `enums`的类型。 换句话说，它将C#枚举（在**EnumFields**文件中定义）的读取和写入映射到 Java `int` 常量 `get` 和 `set` 方法。
 
 根据上面定义的 `SKRealReachSettings` 枚举，下面的**EnumMethods**文件将为此枚举定义 getter/setter：
 
@@ -332,7 +332,7 @@ NavigationManager.2DSignNextManueverEventArgs
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文讨论了如何使用元数据从*Google* *AOSP 格式*转换 API 定义。 在使用*Metadata*覆盖了可能的更改后，它将检查在重命名成员时遇到的限制，并显示受支持的 xml 特性的列表，描述每个特性的使用时间。
 
