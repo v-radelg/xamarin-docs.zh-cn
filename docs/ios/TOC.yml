@@ -226,7 +226,7 @@
             - name: 文本输入
               href: user-interface/controls/text-input.md
             - name: Web 视图
-              href: user-interface/controls/uiwebview.md
+              href: user-interface/controls/webview.md
         - name: 编程布局约束
           href: user-interface/programmatic-layout-constraints.md
         - name: MonoTouch.Dialog
@@ -453,8 +453,8 @@
           href: platform/textkit.md
         - name: 3D Touch
           href: platform/3d-touch.md
-        - name: Touch ID
-          href: platform/touchid.md
+        - name: Touch ID 和 Face ID
+          href: platform/touch-id-face-id.md
         - name: 用户通知框架
           items:
             - name: 概述
@@ -1112,4 +1112,4 @@
     - name: 发行说明
       href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
     - name: 示例
-      href: samples/index.yml
+      href: samples/index.md

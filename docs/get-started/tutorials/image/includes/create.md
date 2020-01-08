@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: df2fa04deafc4438798593d3f25b85ec17363996
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: a51a00c8cfcd0b12787ecd3cd1eb986bb8f596c0
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277114"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490664"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ ms.locfileid: "67277114"
     </ContentPage>
     ```
 
-    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Image`](xref:Xamarin.Forms.Image) 组成。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性指定要通过 URI 显示的图像。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性是 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，使用它可以从文件、URI 或资源中获取图像。 有关详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[显示图像](~/xamarin-forms/user-interface/images.md#displaying-images)。
+    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Image`](xref:Xamarin.Forms.Image) 组成。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性指定要通过 URI 显示的图像。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性是 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，使用它可以从文件、URI 或资源中获取图像。 有关详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[显示图像](~/xamarin-forms/user-interface/images.md#display-images)。
 
     [`HeightRequest`](xref:Xamarin.Forms.VisualElement) 属性指定 `Image` 的高度（与设备无关的单位）。
 
@@ -40,7 +40,7 @@ ms.locfileid: "67277114"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
 
-    [![iOS 和 Android 上图像的屏幕截图](../images/create-image.png "显示图像的图像视图")] (../images/create-image-large.png#lightbox "Image view displaying a image")
+    [![iOS 和 Android 上的图像的屏幕截图](../images/create-image.png "显示图像的图像视图")](../images/create-image-large.png#lightbox "显示图像的图像视图")
 
     > [!NOTE]
     > [`Image`](xref:Xamarin.Forms.Image) 视图自动将下载的图像缓存 24 小时。 有关详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[下载的图像的缓存](~/xamarin-forms/user-interface/images.md#downloaded-image-caching)。
@@ -70,7 +70,7 @@ ms.locfileid: "67277114"
     </ContentPage>
     ```
 
-    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Image`](xref:Xamarin.Forms.Image) 组成。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性指定要通过 URI 显示的图像。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性是 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，使用它可以从文件、URI 或资源中获取图像。 有关详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[显示图像](~/xamarin-forms/user-interface/images.md#displaying-images)。
+    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Image`](xref:Xamarin.Forms.Image) 组成。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性指定要通过 URI 显示的图像。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) 属性是 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 类型，使用它可以从文件、URI 或资源中获取图像。 有关详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[显示图像](~/xamarin-forms/user-interface/images.md#display-images)。
 
     [`HeightRequest`](xref:Xamarin.Forms.VisualElement) 属性指定 `Image` 的高度（与设备无关的单位）。
 
@@ -79,7 +79,7 @@ ms.locfileid: "67277114"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
 
-    [![iOS 和 Android 上图像的屏幕截图](../images/create-image.png "显示图像的图像视图")] (../images/create-image-large.png#lightbox "Image view displaying a image")
+    [![iOS 和 Android 上的图像的屏幕截图](../images/create-image.png "显示图像的图像视图")](../images/create-image-large.png#lightbox "显示图像的图像视图")
 
     > [!NOTE]
     > [`Image`](xref:Xamarin.Forms.Image) 视图自动将下载的图像缓存 24 小时。 有关详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[下载的图像的缓存](~/xamarin-forms/user-interface/images.md#downloaded-image-caching)。

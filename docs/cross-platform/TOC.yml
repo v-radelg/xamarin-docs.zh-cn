@@ -26,7 +26,7 @@
               href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
             - name: 第 5 部分 - 实际代码共享策略
               href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
-            - name: 第 6 部分 - 测试和应用商店审批
+            - name: 第 6 部分 - 测试和 App Store 审批
               href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
             - name: 案例研究：Tasky
               href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
@@ -88,6 +88,8 @@
         - name: 性能
           href: deploy-test/memory-perf-best-practices.md
           items:
+            - name: Xamarin.Forms 性能
+              href: ~/xamarin-forms/deploy-test/performance.md?context=xamarin/cross-platform
             - name: Android 性能
               href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
             - name: iOS 性能
@@ -111,7 +113,7 @@
         - name: 多进程调试
           href: deploy-test/multi-process-debugging.md
     - name: 桌面开发人员
-      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers'
+      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP developers'
       href: desktop/index.md
       items:
         - name: 应用生命周期比较
@@ -171,4 +173,4 @@
         - name: 更新对 NuGet 的组件引用
           href: troubleshooting/component-nuget.md
     - name: 示例
-      href: samples/index.yml
+      href: samples/index.md

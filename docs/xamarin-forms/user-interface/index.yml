@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 08/07/2019
+  ms.date: 12/11/2019
 abstract:
   description: 了解如何使用 Xamarin.Forms 创建用户界面。
 sections:
@@ -103,11 +103,17 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: imagebutton.md
             title: ImageButton
-          - href: layouts/index.md
+          - href: indicatorview.md
+            html: 了解如何使用 IndicatorView 控件显示表示 CarouselView 中的项目数和当前位置的指示器。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: indicatorview.md
+            title: IndicatorView
+          - href: layouts/index.yml
             html: 了解如何使用 Xamarin.Forms 中的布局控件和功能来整理内容
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: layouts/index.md
+              href: layouts/index.yml
             title: 布局
           - href: listview/index.md
             html: 了解如何使用 ListView 控件来呈现数据列表。
@@ -175,6 +181,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: styles/index.md
             title: 样式
+          - href: swipeview.md
+            html: 了解如何使用 SwipeView 提供通过轻扫手势显示的上下文菜单项。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: swipeview.md
+            title: SwipeView
           - href: switch.md
             html: 了解如何通过开关设置布尔值。
             image:
