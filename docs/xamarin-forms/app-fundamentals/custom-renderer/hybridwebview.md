@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/03/2019
-ms.openlocfilehash: e3c042a82a9870e68c94741ae4bdfaa728a40cb0
-ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
+ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823932"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487004"
 ---
-# <a name="customizing-a-hybridwebview"></a>自定义 HybridWebView
+# <a name="customizing-a-webview"></a>自定义 WebView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
@@ -28,9 +28,9 @@ Xamarin.Forms `WebView` 是在应用中显示 Web 和 HTML 内容的视图。  �
 
 通过在每个平台上为 [`WebView`](xref:Xamarin.Forms.WebView) 创建自定义呈现器，可使用呈现过程来实现平台自定义。 执行此操作的过程如下：
 
-1. [创建](#create-the-hybridwebview) `HybridWebView`自定义控件。
+1. [创建](#create-the-hybridwebview)`HybridWebView`自定义控件。
 1. [使用](#consume-the-hybridwebview) Xamarin.Forms 中的 `HybridWebView`。
-1. 在每个平台上为 `HybridWebView` [创建](#create-the-custom-renderer-on-each-platform)自定义呈现器。
+1. 在每个平台上为 `HybridWebView`[创建](#create-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在，依次讨论每个项目以实现 `HybridWebView` 呈现器，该呈现器可增强 Xamarin.Forms [`WebView`](xref:Xamarin.Forms.WebView) 以允许从 JavaScript 调用 C# 代码。 `HybridWebView` 实例将用于显示要求用户输入其名称的 HTML 页。 然后，当用户单击 HTML 按钮，JavaScript 函数将调用 C# `Action` 显示一个包含用户名称的弹出项。
 

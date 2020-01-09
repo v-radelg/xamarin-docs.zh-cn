@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 74e258eeca78260fbfe3811e1dc6d8051e68e5f2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030257"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607914"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的临时分发
 
@@ -84,7 +84,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：
     - **显式**：`com.[DomainName].[AppName]`
     - **通配符**：`com.[DomainName].*`
-4. 选择应用要求的任意[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
+4. 选择应用要求的任意[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)。
 5. 单击“继续”  按钮，并按照屏幕上的说明创建新的应用 ID。
 
 拥有创建分发配置文件所需的必要组件后，请按照下面的步骤进行创建：

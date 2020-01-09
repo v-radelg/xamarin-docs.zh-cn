@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 78df4a7f4c90cd6459216f1f65dd09e0daae19f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026705"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607927"
 ---
 # <a name="app-store-distribution"></a>App Store 分发
 
@@ -85,7 +85,7 @@ Xamarin.iOS 应用开发完成后，软件开发生命周期中的下一步是�
 3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：
     - **Explicit**: com.[DomainName].[AppName]
     - **Wildcard**:com.[DomainName].*
-4. 选择应用要求的任何[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
+4. 选择应用要求的任何[应用服务](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)。
 5. 单击“继续”  按钮，按照屏幕上的说明创建新的应用程序 ID。
 
 ### <a name="creating-a-provisioning-profile"></a>创建预配配置文件
