@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4d28b80b32ff0d20afbe643d9c000f301a8ea582
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
+ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027810"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75667034"
 ---
 # <a name="android-job-scheduler"></a>Android 作业计划程序
 
@@ -33,7 +33,7 @@ Android 提供以下 Api，可帮助在后台执行工作，但其本身并不�
 有效地执行后台工作（有时称为_后台作业_或_作业_）有两个主要功能：
 
 1. **智能地计划工作**&ndash; 重要的是，当应用程序在后台执行工作时，这一点非常重要。 理想情况下，应用程序不应要求运行作业。 相反，应用程序应指定在作业可以运行时必须满足的条件，然后使用满足条件时将执行工作的操作系统计划该作业。 这允许 Android 运行作业，以确保设备上的最高效率。 例如，可能会批处理网络请求同时运行全部，以充分利用网络所涉及的开销。
-2. **封装工作**&ndash; 用于执行后台工作的代码应封装在独立于用户界面的离散组件中，如果无法完成某些任务的工作，则可以相对容易地重新安排这些工作在于.
+2. **封装工作**&ndash; 用于执行后台工作的代码应封装在独立于用户界面的离散组件中，如果工作由于某种原因而无法完成，则可以相对容易地重新计划。
 
 Android 作业计划程序是一种内置于 Android 操作系统的框架，可提供 Fluent API 来简化计划后台工作。  Android 作业计划程序包含以下类型：
 
@@ -43,7 +43,7 @@ Android 作业计划程序是一种内置于 Android 操作系统的框架，可
 
 若要计划使用 Android 作业计划程序，Xamarin Android 应用程序必须将扩展 `JobService` 类的类中的代码封装。 `JobService` 具有三种可在作业的生存期内调用的生命周期方法：
 
-- **Bool OnStartJob （JobParameters parameters）** &ndash; 此方法由 `JobScheduler` 调用以执行工作，并在应用程序的主线程上运行。 `JobService` 需要以异步方式执行工作，并在剩余工作时 `true`，或在完成工作时 `false`。
+- **Bool OnStartJob （JobParameters parameters）** &ndash; 此方法由 `JobScheduler` 调用以执行工作，并在应用程序的主线程上运行。 `JobService` 需要以异步方式执行工作，并在剩余工作时返回 `true`，或在完成工作时返回 `false`。
     
     当 `JobScheduler` 调用此方法时，它将在作业期间请求并保留 Android 中的 wakelock。 当作业完成时，`JobService` 通过调用 `JobFinished` 方法（如下所述）来告知此事实的 `JobScheduler`。
 
@@ -55,7 +55,7 @@ Android 作业计划程序是一种内置于 Android 操作系统的框架，可
 
 本指南将详细讨论如何实现 `JobService` 类并使用 `JobScheduler`进行安排。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 Android 作业计划程序需要 Android API 级别21（Android 5.0）或更高版本。 
 
@@ -135,7 +135,7 @@ var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 
 Android 作业计划程序的一项强大功能是能够控制作业的运行时间或在什么条件下运行作业。 下表介绍 `JobInfo.Builder` 上的一些方法，这些方法允许应用程序在作业运行时影响：  
 
-|  方法 | 说明   |
+|  方法 | 描述   |
 |---|---|
 | `SetMinimumLatency`  | 指定在运行作业之前应观察的延迟（以毫秒为单位）。 |
 | `SetOverridingDeadline`  | 声明作业在此时间之前必须运行（以毫秒为单位）。 |
@@ -148,7 +148,7 @@ Android 作业计划程序的一项强大功能是能够控制作业的运行时
 
 `SetBackoffCriteria` 提供了有关 `JobScheduler` 在尝试再次运行作业之前应等待的时间的一些指导。 回退条件有两个部分：延迟（以毫秒为单位，默认值为30秒）和应使用的后端类型（有时称为 "_回退策略_" 或 "_重试策略_"）。 这两个策略封装在 `Android.App.Job.BackoffPolicy` 枚举中：
 
-- `BackoffPolicy.Exponential` &ndash; 指数回退策略会在每次发生故障后以指数方式增加初始回退值。 第一次作业失败时，库将等待在重新计划作业之前指定的初始间隔–示例30秒。 第二次作业失败时，库将等待至少60秒，然后再尝试运行作业。 第三次尝试失败后，库将等待120秒，依此类推。 这是默认值。
+- `BackoffPolicy.Exponential` &ndash; 指数回退策略会在每次发生故障后以指数方式增加初始回退值。 第一次作业失败时，库将等待在重新计划作业之前指定的初始间隔–示例30秒。 第二次作业失败时，库将等待至少60秒，然后再尝试运行作业。 第三次尝试失败后，库将等待120秒，依此类推。 此为默认值。
 - `BackoffPolicy.Linear` &ndash; 此策略是一种线性回退，应将作业重新安排为按设置的时间间隔运行（直到成功）。 线性回退最适用于必须尽快完成的工作，或者用于快速解决自身问题的问题。 
 
 有关创建 `JobInfo` 对象的更多详细信息，请参阅[Google 的有关 `JobInfo.Builder` 类的文档](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html)。
@@ -214,7 +214,7 @@ jobScheduler.CancelAll();
 jobScheduler.Cancel(1)
 ```
   
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南讨论了如何使用 Android 作业计划程序在后台智能地执行工作。 本指南讨论了如何封装要作为 `JobService` 执行的工作，以及如何使用 `JobScheduler` 来计划工作、使用 `JobTrigger` 指定条件以及如何使用 `RetryStrategy`处理失败。
 
