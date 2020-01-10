@@ -7,18 +7,18 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2e19fd37270d3c96cb175d30dc786a95a01c3fcf
+ms.sourcegitcommit: 2ed3d1c933fce4ce332128f125acb2f23f9e0f1a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032194"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75753012"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin 中的 Core NFC
 
 _使用 iOS 11 读取近现场通信（NFC）标记_
 
-CoreNFC 是 iOS 11 中的一个新框架，可用于访问_近现场通信_（NFC）广播以从应用内部读取标记。 它适用于 iPhone 7、7 +、8、8 Plus 和 X。
+CoreNFC 是 iOS 11 中的一个新框架，可用于访问_近现场通信_（NFC）广播以从应用内部读取标记。 CoreNFC 在 iPhone 7 上，iPhone 7 Plus，iPhone 8，iPhone 8 Plus，iPhone X，iPhone XS，和 iPhone 11 模型（虽然 iPhone 6 和 iPhone 6 Plus 型号具有 NFC 支付功能，但不支持 CoreNFC）。
 
 IOS 设备中的 NFC 标记读取器支持所有 NFC 标记类型1到5，其中包含_Nfc 数据交换格式_（NDEF）信息。
 
@@ -155,7 +155,7 @@ Session.InvalidateSession();
 
 在这两种情况下，都将调用委托的 `DidInvalidate` 方法。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 CoreNFC 使应用能够从 NFC 标记读取数据。 它支持读取各种标记格式（NDEF 类型1到5），但不支持写入或格式设置。
 
