@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5965b3f78bfc086b1cc6030a02f1cabafaae29d3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016741"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728208"
 ---
 # <a name="editing-nuget-metadata"></a>编辑 NuGet 元数据
 
@@ -21,13 +21,13 @@ _使用项目选项编辑多平台库的 NuGet 元数据_
 
 **Metadata**节配置[ **nuspec** NuGet 包清单文件](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file)中使用的值。
 
-## <a name="required-information"></a>必需信息
+## <a name="required-information"></a>必需的信息
 
 "**常规**" 选项卡包含四个字段，必须输入这些字段才能生成 NuGet 包：
 
 [![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
 
-- **ID** –包标识符，在 Nuget.org （或包将分发到的任何位置）中应该是唯一的。 遵循本[指南](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，只使用在 URL 中有效的字符（无空格，并避免使用大多数特殊字符）。
+- **ID** –包标识符，在 NuGet.org （或包将分发到的任何位置）中应该是唯一的。 遵循本[指南](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，只使用在 URL 中有效的字符（无空格，并避免使用大多数特殊字符）。
 - **版本**–选择与[NuGet 的版本控制规则](https://docs.microsoft.com/nuget/create-packages/dependency-versions)一致的版本号。
 - **作者**–以逗号分隔的名称列表。
 - **说明**–用户选择包时所显示的包功能的概述。

@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: davidortinau
 ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 0e49ef8fa0bf00d5ed41f3411393ffaf4891c1b8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 30827292e59c70395fce17bb520f48b2f19c7d1e
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013996"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728171"
 ---
 # <a name="general-frequently-asked-questions"></a>一般常见问题
 
@@ -33,7 +33,7 @@ NuGet 更新、扩展和外接程序可在**Nuget 包管理器**的 "**更新**"
 ### <a name="how-do-i-downgrade-a-nuget-packagenuget-package-downgrademd"></a>[如何降级 NuGet 包？](nuget-package-downgrade.md)
 & Visual Studio 的 Visual Studio for Mac 都具有用于选择旧版本包和自动安装包的功能;与更新包的工作方式类似。
 
-### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[在更新 Nuget 包后出现缺失包错误](nuget-packages-missing.md)
+### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[更新 NuGet 包后缺少包错误](nuget-packages-missing.md)
 此问题主要在 Xamarin. Forms 示例应用解决方案上进行报告，但对于使用 NuGet 包的任何项目，可能会发生此问题。
 
 ### <a name="unifying-google-play-services-components-and-nugetgps-components-nugetmd"></a>[统一 Google Play Services 组件和 NuGet](gps-components-nuget.md)
@@ -42,7 +42,7 @@ NuGet 更新、扩展和外接程序可在**Nuget 包管理器**的 "**更新**"
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[组件保存在计算机的什么位置？](component-storage.md)
 每次将 Xamarin 组件安装到应用项目中时，都会将其放入本指南中列出的两个位置。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[在哪里可以找到我的版本信息和日志？](version-logs.md)
 本指南详细介绍了在哪里可以找到可用于排查 Xamarin 问题的大多数诊断信息。
 

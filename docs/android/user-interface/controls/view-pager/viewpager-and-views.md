@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 65a613f229f04a4ab01ca73a9c53c026add49f84
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029046"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728143"
 ---
 # <a name="viewpager-with-views"></a>带视图的 ViewPager
 
@@ -28,7 +28,7 @@ _ViewPager 是一个布局管理器，可用于实现 gestural 导航。Gestural
 
 创建名为**TreePager**的新 Android 项目（有关创建新 android 项目的详细信息，请参阅[Hello、Android](~/android/get-started/hello-android/hello-android-quickstart.md) ）。 接下来，启动 NuGet 包管理器。 （有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)）。 查找并安装**Android 支持库 v4**： 
 
-[在 NuGet 包管理器中选择的支持 v4 Nuget![屏幕截图](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
+[在 NuGet 包管理器中选择的支持 v4 NuGet ![屏幕截图](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 这也会安装**Android 支持库 v4**reaquired 的任何其他包。
 
@@ -91,7 +91,7 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-此代码执行以下操作：
+此代码将执行以下操作：
 
 1. 设置**main.axml**布局资源中的视图。
 
@@ -101,7 +101,7 @@ protected override void OnCreate(Bundle bundle)
 
 生成并运行此代码时，应会看到类似于以下屏幕截图的显示： 
 
-[显示空 ViewPager 应用程序的![屏幕快照](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
+[显示空 ViewPager 应用程序的 ![屏幕快照](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
 
 此时，`ViewPager` 为空，因为它缺少用于访问**TreeCatalog**中的内容的适配器。 在下一部分中，将创建一个**PagerAdapter**以将 `ViewPager` 连接到**TreeCatalog**。 
 
@@ -207,7 +207,7 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 }
 ```
 
-此代码执行以下操作：
+此代码将执行以下操作：
 
 1. 实例化一个新的 `ImageView`，以显示指定位置的树图像。 应用的 `MainActivity` 是将传递到 `ImageView` 构造函数的上下文。
 
@@ -234,17 +234,17 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 }
 ```
 
-此代码执行以下操作：
+此代码将执行以下操作：
 
 1. 将传递的容器 `View` 转换为 `ViewPager` 引用。
 
-2. 将传递的 Java 对象（`view`）强制转换C#为`View`（`view as View`）;
+2. 将传递的 Java 对象（`view`）强制转换C#为 `View` （`view as View`）;
 
 3. 从 `ViewPager`中删除视图。 
 
 ### <a name="implement-isviewfromobject"></a>实现 IsViewFromObject
 
-当用户向左和向右滑动内容页时，`ViewPager` 调用 `IsViewFromObject` 来验证给定位置处的子 `View` 是否与该同一位置的适配器对象相关联（因此，适配器的对象称为*对象键*）). 对于相对简单的应用程序，关联是适配器的对象密钥的标识 &ndash; 之一，该实例是以前通过 `InstantiateItem`返回到 `ViewPager` 的视图。 但对于其他应用程序，对象键可能是与 `ViewPager` 在该位置显示的子视图关联的其他特定于适配器的类实例。 只有适配器知道传递的视图和对象键是否关联。 
+当用户在内容页中向左和向右滑动时，`ViewPager` 调用 `IsViewFromObject` 来验证给定位置处的子 `View` 是否与同一位置的适配器对象相关联（因此，适配器的对象称为*对象键*）。 对于相对简单的应用程序，关联是适配器的对象密钥的标识 &ndash; 之一，该实例是以前通过 `InstantiateItem`返回到 `ViewPager` 的视图。 但对于其他应用程序，对象键可能是与 `ViewPager` 在该位置显示的子视图关联的其他特定于适配器的类实例。 只有适配器知道传递的视图和对象键是否关联。 
 
 若要正常运行 `PagerAdapter`，必须实现 `IsViewFromObject`。 如果 `IsViewFromObject` 返回给定位置 `false`，`ViewPager` 将不会在该位置显示视图。 在 `TreePager` 应用中，`InstantiateItem` 返回的对象键*是*树的页面 `View`，因此该代码只需要检查标识（即，对象键和视图为一个和相同的）。 将 `IsViewFromObject` 替换为以下代码： 
 
@@ -267,7 +267,7 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 核心实现现已完成 &ndash; 生成并运行应用。 屏幕上会显示树目录的第一个图像，如接下来的屏幕截图中所示。 向左轻扫可查看更多树视图，并向右轻扫可在树目录中向后移动： 
 
-[TreePager 应用的![屏幕截图通过树图像进行轻量](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
+[TreePager 应用的 ![屏幕截图通过树图像进行轻量](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 ## <a name="add-a-pager-indicator"></a>添加寻呼指示器
 
@@ -319,11 +319,11 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 `PagerTitleStrip` 与 `PagerTabStrip` 非常类似，只是 `PagerTabStrip` 为当前选定的选项卡添加下划线。您可以将 `PagerTabStrip` 替换为上述布局中的 `PagerTitleStrip`，并再次运行应用程序以查看其外观 `PagerTitleStrip`： 
 
-[从文本中删除下划线的![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
+[从文本中删除下划线的 ![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 请注意，当您转换为 `PagerTitleStrip`时，下划线会被删除。 
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本演练提供了如何在不使用 `Fragment`的情况下生成基于基本 `ViewPager`的应用的分步示例。 它提供了一个示例数据源，其中包含图像和标题字符串、用于显示图像的 `ViewPager` 布局以及将 `ViewPager` 连接到数据源的 `PagerAdapter` 子类。 为了帮助用户浏览数据集，包含了说明如何添加 `PagerTabStrip` 或 `PagerTitleStrip` 以显示每个页面顶部的图像标题的说明。 
 

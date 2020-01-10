@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a94baa66c1ca18762efccd980264170648c232fa
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030338"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728286"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究： Tasky
 
@@ -25,7 +25,7 @@ ms.locfileid: "73030338"
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>要求
+### <a name="requirements"></a>需求
 
 设计应用程序的第一步是确定所需的功能。 这些可能是高级目标或详细用例。 Tasky 具有直接的功能性要求：
 
@@ -103,7 +103,7 @@ Tasky 便携使用可移植类库策略来共享通用代码。 请参阅[共享
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>引用
 
 可移植类库需要在多个平台上可用，每个平台都具有对平台和框架功能的不同级别的支持。 因此，可使用哪些包和框架库存在限制。 例如，Xamarin 不支持 c # `dynamic` 关键字，因此可移植类库不能使用依赖于动态代码的任何包，即使此类代码可在 Android 上运行。 Visual Studio for Mac 将会阻止你添加不兼容的包和引用，但你需要考虑一些限制，以免以后出现惊喜。
 
@@ -115,7 +115,7 @@ Tasky 便携使用可移植类库策略来共享通用代码。 请参阅[共享
 
 数据层包含对数据进行物理存储的代码-无论是数据库、平面文件还是其他机制。 Tasky 数据层由两部分组成： SQLite 网络库和添加到连接的自定义代码。
 
-Tasky 依赖于 Sqlite 网络 nuget 包（由 Frank Kreuger 发布）来嵌入提供对象关系映射（ORM）数据库接口的 SQLite 网络代码。 `TaskItemDatabase` 类继承自 `SQLiteConnection` 并添加了所需的创建、读取、更新、删除（CRUD）方法，以便将数据读取和写入 SQLite。 它是可在其他项目中重复使用的泛型 CRUD 方法的简单样板实现。
+Tasky 依赖于 Sqlite 网络 NuGet 包（由 Frank Kreuger 发布）来嵌入提供对象关系映射（ORM）数据库接口的 SQLite 网络代码。 `TaskItemDatabase` 类继承自 `SQLiteConnection` 并添加了所需的创建、读取、更新、删除（CRUD）方法，以便将数据读取和写入 SQLite。 它是可在其他项目中重复使用的泛型 CRUD 方法的简单样板实现。
 
 `TaskItemDatabase` 是一种单独的，可确保对同一实例进行所有访问。 锁定用于阻止从多个线程进行并发访问。
 
@@ -186,7 +186,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
  <a name="Data_Access_Layer_(DAL)" />
 
-### <a name="data-access-layer-dal"></a>数据访问层（DAL）
+### <a name="data-access-layer-dal"></a>数据访问层 (DAL)
 
 `TaskItemRepository` 类使用强类型 API 封装数据存储机制，该 API 允许创建、删除、检索和更新 `TaskItem` 对象。
 
@@ -227,7 +227,7 @@ path>/Documents/TaskDB.db3" 或 "TaskDB" （对于 Windows Phone 为 "db3"）。
 ### <a name="business-layer-bl"></a>业务层（BL）
 
 业务层实现了模型类和用于管理它们的外观。
-在 Tasky 中，模型是 `TaskItem` 类，`TaskItemManager` 实现外观模式来提供用于管理 `TaskItems` 的 API。
+在 Tasky 中，模型是 `TaskItem` 类，`TaskItemManager` 实现外观模式来提供用于管理 `TaskItems`的 API。
 
  <a name="Façade" />
 
@@ -243,7 +243,7 @@ path>/Documents/TaskDB.db3" 或 "TaskDB" （对于 Windows Phone 为 "db3"）。
 
 编写通用代码后，必须生成用户界面以收集和显示由其公开的数据。 `TaskItemManager` 类实现了外观模式，为应用程序代码提供访问的简单 API。
 
-在每个特定于平台的项目中编写的代码通常与该设备的本机 SDK 紧密耦合，只使用由 `TaskItemManager` 定义的 API 访问通用代码。 这包括它公开的方法和业务类，如 `TaskItem`。
+在每个特定于平台的项目中编写的代码通常与该设备的本机 SDK 紧密耦合，只使用由 `TaskItemManager`定义的 API 访问通用代码。 这包括它公开的方法和业务类，如 `TaskItem`。
 
 映像不在平台之间共享，而是单独添加到每个项目。 这一点非常重要，因为每个平台以不同的文件名、目录和分辨率来处理映像。
 
@@ -263,7 +263,7 @@ path>/Documents/TaskDB.db3" 或 "TaskDB" （对于 Windows Phone 为 "db3"）。
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>引用
 
 IOS 应用引用特定于平台的 SDK 库–例如： Xamarin 和 Monotouch.dialog。
 
@@ -341,7 +341,7 @@ public class TaskDialog {
 
 任务详细信息是允许编辑或删除任务的输入屏幕。
 
-Tasky 使用 `MonoTouch.Dialog` 的反射 API 显示屏幕，因此没有 `UIViewController` 实现。 相反，`HomeScreen` 类使用应用程序层中的 `TaskDialog` 类实例化并显示 `DialogViewController`。
+Tasky 使用 `MonoTouch.Dialog`的反射 API 显示屏幕，因此没有 `UIViewController` 实现。 相反，`HomeScreen` 类使用应用程序层中的 `TaskDialog` 类实例化并显示 `DialogViewController`。
 
 此屏幕截图显示了一个空屏幕，其中演示了在 "**名称**" 和 "**注释**" 字段中设置水印文本的 `Entry` 属性：
 
@@ -367,7 +367,7 @@ Tasky 使用 `MonoTouch.Dialog` 的反射 API 显示屏幕，因此没有 `UIVie
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>引用
 
 Android 应用程序项目必须引用特定于平台的 Xamarin 程序集才能访问 Android SDK 中的类。
 
@@ -381,11 +381,11 @@ Android 应用程序项目必须引用特定于平台的 Xamarin 程序集才能
 
 与前面所述的 iOS 版本类似，Android 版本中的应用程序层包含特定于平台的类，需要将核心公开的对象 "绑定" 到 UI。
 
- **TaskListAdapter** –若要显示对象的列表 \<T > 需要实现适配器以在 `ListView` 中显示自定义对象。 适配器控制列表中的每个项使用哪个布局-在这种情况下，代码使用 Android 内置布局 `SimpleListItemChecked`。
+ **TaskListAdapter** –若要显示\<t > 对象的列表，需要实现适配器以在 `ListView`中显示自定义对象。 适配器控制列表中的每个项使用哪个布局-在这种情况下，代码使用 Android 内置布局 `SimpleListItemChecked`。
 
  <a name="User_Interface_(UI)" />
 
-### <a name="user-interface-ui"></a>用户界面（UI）
+### <a name="user-interface-ui"></a>用户界面 (UI)
 
 Android 应用的用户界面层是代码和 XML 标记的组合。
 
@@ -426,7 +426,7 @@ Android 应用的用户界面层是代码和 XML 标记的组合。
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>引用
 
 特定于平台的项目必须引用所需的特定于平台的库（如 `Microsoft.Phone` 和 `System.Windows`），以创建有效的 Windows Phone 应用程序。
 
@@ -448,7 +448,7 @@ Viewmodel 将数据从 PCL （`TaskItemManager`）中换行，并以可以由 Si
 
  <a name="User_Interface_(UI)" />
 
-### <a name="user-interface-ui"></a>用户界面（UI）
+### <a name="user-interface-ui"></a>用户界面 (UI)
 
 XAML 具有唯一的数据绑定功能，该功能可在标记中声明，并减少显示对象所需的代码量：
 
@@ -499,7 +499,7 @@ Windows Phone 应用使用标准布局，在屏幕底部填充应用栏，而不
 
  <a name="Summary" />
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文档提供了有关如何将分层应用程序设计原则应用于简单应用程序的详细说明，以方便在三个移动平台之间重复使用代码： iOS、Android 和 Windows Phone。
 

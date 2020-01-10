@@ -6,12 +6,12 @@ ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 author: davidortinau
 ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 100ef7ffd7e05db0ed8b2af6b9990fc3a0ac1fa9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0b2fd92eb9157b561708eafe10d341381fa21543
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014151"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728195"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>统一 Google Play 服务组件和 NuGet
 
@@ -59,6 +59,6 @@ Google 实际上只为 Google Play Services 附带了两个 .jar 文件：
 - Google Play Services （JellyBean）
 - Google Play Services （KitKat）
 
-现有_Google Play Services （ICS）_ 组件/Nuget 已重命名为 " _Google Play Services_ ，并将一直保持最新状态。 应更新引用其中一个已禁用/Delisted 包的所有项目，以使用此包。
+现有_Google Play Services （ICS）_ 组件/NuGet 已重命名为 " _Google Play Services_ ，并将一直保持最新状态。 应更新引用其中一个已禁用/Delisted 包的所有项目，以使用此包。
 
 禁用的组件仍然存在，并且应对它们仍在中引用的项目是可恢复的，以避免中断它们。 同样，delisted NuGet 包仍然存在并且可以还原。 它们不会不断更新。

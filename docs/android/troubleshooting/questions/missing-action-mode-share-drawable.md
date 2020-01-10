@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 4e544368d8fe2ab6316f9d3c79ff392f2bd83f09
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e688bd27d1116b2a77a12ccd6da29ea582053581
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026803"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728104"
 ---
 # <a name="androidsupportv7appcompat---no-resource-found-that-matches-the-given-name-attr-androidactionmodesharedrawable"></a>Android.Support.v7.AppCompat - 未找到与给定名称匹配的资源：属性“android:actionModeShareDrawable”
 
@@ -20,7 +20,7 @@ ms.locfileid: "73026803"
 
 2. 请确保在编译应用程序时将 compileSdkVersion 设置为21。 也可以选择将 targetSdkVersion 设置为21。
 
-3. 如果需要以前的版本，如 API 19，请下载 Nuget 页面上的相应版本：
+3. 如果需要以前的版本，如 API 19，请下载 NuGet 页面上的相应版本：
 
 [https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 

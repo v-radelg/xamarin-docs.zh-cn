@@ -8,12 +8,12 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: 9fb085313e994adc486833bb25e893659aa33b4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032759"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728338"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live 重载（预览版）
 
@@ -22,7 +22,7 @@ ms.locfileid: "73032759"
 
 Xamarin Live 重载使你能够**更改 XAML 并查看它们的实时，无需进行其他编译和部署**。 对 XAML 所做的任何更改将在保存时重新部署，并反映在部署目标上。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 * [Visual Studio 2017 版本15.7 或更高版本](https://visualstudio.microsoft.com/vs/)，附带 .net 工作负载的**移动开发**。
 * [Xamarin 3.0.0 或更高](https://www.nuget.org/packages/Xamarin.Forms/)版本。
@@ -105,7 +105,7 @@ public partial class App : Application
 
 ### <a name="does-it-require-debugging-the-app"></a>是否需要调试应用？ 
 
-否。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
+No。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
 
 ## <a name="limitations"></a>限制
 
@@ -121,21 +121,21 @@ public partial class App : Application
 * 包含 AutomationId 的元素可能会导致重新加载失败。
 * 在调试 UWP 的同时编辑 XAML 可能会导致运行时崩溃。 解决方法：使用 "**开始执行（不调试）" （Ctrl + F5）** 而不是 "**启动调试" （F5）** 。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 ### <a name="error-codes"></a>错误代码
 
 * **XLR001**：*当前项目引用了 "LiveReload" NuGet 包版本 "[version]"，但 Xamarin Live 重载扩展需要版本 "[version]"。*
 
-  为了允许实时重载功能的快速迭代和演化，nuget 包和 Visual Studio 扩展必须完全匹配。 将 nuget 包更新为已安装的相同版本的扩展。
+  为了允许实时重载功能的快速迭代和演化，NuGet 包和 Visual Studio 扩展必须完全匹配。 将 NuGet 包更新为已安装的相同版本的扩展。
 
 * **XLR002**：在*从命令行生成时，实时重载至少需要 "MqttHostname" 属性。或者，将 "EnableLiveReload" 设置为 "false" 以禁用该功能。*
 
   在从命令行生成（或在持续集成中）时，实时重载所需的属性不可用，因此必须显式提供。 
 
-* **XLR003**：*实时重新加载 nuget 包需要安装 Xamarin Live 重装 Visual Studio 扩展。*
+* **XLR003**：*实时重新加载 NuGet 包需要安装 Xamarin Live 重装 Visual Studio 扩展。*
 
-  尝试生成一个项目，该项目引用实时重载 nuget 包，但未安装视觉对象扩展。  
+  尝试生成一个项目，该项目引用实时重载 NuGet 包，但未安装视觉对象扩展。  
 
 * *加载程序集时出现异常： System.io.filenotfoundexception：无法加载程序集 "Xamarin. Reload.sql，Version = 0.3.27.0，Culture = 中立，PublicKeyToken ="。*
 
@@ -143,7 +143,7 @@ public partial class App : Application
 
 ### <a name="app-doesnt-connect"></a>应用未连接
 
-构建应用程序时，"工具" 中的信息 **> 选项 > Xamarin > 实时重载**（主机名、端口和加密密钥）嵌入在应用程序中，以便在 `LiveReload.Init()` 运行时，无需对与的连接进行配对或配置成功.
+构建应用程序时，"工具" 中的信息 **> 选项 > Xamarin > 实时重载**（主机名、端口和加密密钥）嵌入在应用程序中，因此，当 `LiveReload.Init()` 运行时，无需配对或配置即可成功连接。
 
 除了一般的网络问题（防火墙、不同网络上的设备），应用可能无法成功连接 IDE 的主要原因是它的配置与 Visual Studio 中的不同。 出现这种情况的原因可能是：
 
@@ -160,9 +160,9 @@ public partial class App : Application
 1. 删除文件夹**C:\Program Files （x86） \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** （注意：请将 "Enterprise" 替换为已安装的版本，将 "Preview" 替换为 "2017" （如果已安装到稳定的 VS）
 2. 打开该 Visual Studio 的**开发人员命令提示符**并运行 `devenv /updateconfiguration`。 
 
-## <a name="tips--tricks"></a>技巧 & 技巧
+## <a name="tips--tricks"></a>提示和技巧
 
-* 只要实时重载设置不会更改（包括加密密钥，如关闭**自动生成的加密密钥**）并从同一台计算机生成，则在初始部署后无需生成并部署应用，除非你更改代码或依赖项。 你可以重新启动以前部署的应用，它将连接到所使用的最后一个主机。
+* 只要实时重载设置不会更改（包括加密密钥，例如关闭**自动生成的加密密钥**）并从同一台计算机进行生成，则在初始部署后无需生成并部署应用，除非更改代码或依赖项。 你可以重新启动以前部署的应用，它将连接到所使用的最后一个主机。
 
 * 对于可以连接到同一个 Visual Studio 会话的设备有多少限制。 你可以根据需要在任意数量的设备/模拟器中部署和启动应用程序，以查看同时处理所有这些应用程序的实时加载。
 
@@ -170,7 +170,7 @@ public partial class App : Application
 
 ## <a name="live-reload-server"></a>实时重载服务器
 
-在从正在运行的应用程序到你的计算机的连接的情况下（例如，在**工具 > > > 选项**中通过使用 `localhost` 或 `127.0.0.1` 来表示）不可能（即防火墙、不同网络），你可以配置远程服务器IDE 和应用都将连接到。
+在从正在运行的应用程序到你的计算机的连接的情况下（例如，在**工具 > > > 选项**中使用 `localhost` 或 `127.0.0.1` 来表示）不可能（即防火墙、不同网络），你可以改为配置远程服务器，这两个 IDE 和应用都将连接到。
 
 实时重新加载使用标准[MQTT 协议](https://mqtt.org/)来交换消息，因而可与[第三方服务器](https://github.com/mqtt/mqtt.github.io/wiki/servers)通信。 甚至可以使用[公共服务器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)（也称为*代理*）。 已使用 `broker.hivemq.com` 和 `iot.eclipse.org` 主机名以及[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)提供的服务测试了实时重载。 你还可以在云中部署你自己的 MQTT 服务器，如[Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)。
 

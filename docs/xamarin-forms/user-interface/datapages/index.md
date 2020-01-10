@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1dc62066b71842e1d3b07495912fa35a549c0f1e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759687"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727935"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms DataPages
 
-![](~/media/shared/preview.png "此 API 目前处于预览状态")
+![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
 > DataPages 要求使用 Xamarin. Forms 主题引用来呈现。 这涉及到将[xamarin. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget 包安装到项目中，然后将其后跟[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[xamarin. 暗体](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)nuget 包。
@@ -27,23 +27,23 @@ DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预�
 
 若要查看演化的主题演示如何工作，请查看[入门指南](get-started.md)。
 
-[![](images/demo-sml.png "DataPages 示例应用程序")](images/demo.png#lightbox "DataPages 示例应用程序")
+[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 数据源和关联的数据页使开发人员能够快速轻松地使用受支持的数据源，并使用可使用主题自定义的内置 UI 基架对其进行呈现。
 
-通过包括**Xamarin** DataPages Nuget 包，将其添加到 xamarin 应用程序应用程序。
+通过包括**Xamarin** DataPages NuGet 包，将其添加到 xamarin 应用程序应用程序。
 
-### <a name="data-sources"></a>Data Sources
+### <a name="data-sources"></a>数据源
 
 预览版有一些可供使用的预生成数据源：
 
 * **JsonDataSource**
-* **AzureDataSource**（单独的 Nuget）
-* **AzureEasyTableDataSource**（单独的 Nuget）
+* **AzureDataSource** （单独 NuGet）
+* **AzureEasyTableDataSource** （单独 NuGet）
 
-有关使用`JsonDataSource`的示例，请参阅[入门指南](get-started.md)。
+有关使用 `JsonDataSource`的示例，请参阅[入门指南](get-started.md)。
 
 ### <a name="pages--controls"></a>页面 & 控件
 
@@ -59,15 +59,15 @@ DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预�
 
 有关示例，请参阅[DataPages 控件参考](controls.md)。
 
-### <a name="under-the-hood"></a>在后台
+### <a name="under-the-hood"></a>揭秘
 
-Xamarin. Forms 数据源遵从`IDataSource`接口。
+Xamarin. Forms 数据源符合 `IDataSource` 接口。
 
 Xamarin 基础结构通过以下属性与数据源进行交互：
 
-* `Data`–可显示的数据项的只读列表。
-* `IsLoading`–一个布尔值，该值指示数据是否已加载并可用于呈现。
-* `[key]`–用于检索元素的索引器。
+* `Data` –可显示的数据项的只读列表。
+* `IsLoading` –一个布尔值，该值指示数据是否已加载并可用于呈现。
+* `[key]` –用于检索元素的索引器。
 
-有两种方法`MaskKey` `UnmaskKey`可用于隐藏（或显示）数据项属性（即 阻止其呈现）。
+可以使用两种方法 `MaskKey` 和 `UnmaskKey` 来隐藏（或显示）数据项属性（即 阻止其呈现）。
 键对应于数据项对象的命名属性。

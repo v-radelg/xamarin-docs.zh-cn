@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005448"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728325"
 ---
 # <a name="adding-appcompat-and-material-design"></a>添加 AppCompat 和材料设计
 
@@ -27,7 +27,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 ### <a name="1-update-xamarinforms"></a>1. 更新 Xamarin. Forms
 
-确保解决方案使用的是 Xamarin. Forms 2.0 或更高版本。 如果需要，请将 Xamarin Nuget 包更新为2.0。
+确保解决方案使用的是 Xamarin. Forms 2.0 或更高版本。 如果需要，请将 Xamarin NuGet 包更新为2.0。
 
 ### <a name="2-check-android-version"></a>2. 检查 Android 版本
 
@@ -39,7 +39,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在 Android 项目中创建以下三个文件，并粘贴以下内容。 Google 提供了[样式指南](https://www.google.com/design/spec/style/color.html#color-color-palette)和[调色板生成器](https://www.materialpalette.com/)，可帮助你为指定的配色方案选择一个替代配色方案。
 
-**资源/值/颜色 .xml**
+**Resources/values/colors.xml**
 
 ```xml
 <resources>
@@ -50,7 +50,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-**资源/值/样式 .xml**
+**Resources/values/style.xml**
 
 ```xml
 <resources>
@@ -68,7 +68,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在 Android 棒糖和更高版本上运行时，必须在**v21**文件夹中包含附加样式，以应用特定属性。
 
-**Resources/values-v21/style .xml**
+**Resources/values-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,7 +84,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 若要确保使用这一新的主题信息，请在**androidmanifest.xml**文件中添加 "主题"，方法是添加 `android:theme="@style/MyTheme"` （保留 XML 的其余部分）。
 
-**Properties/Androidmanifest.xml**
+**Properties/AndroidManifest.xml**
 
 ```xml
 ...
@@ -97,7 +97,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在**资源/布局**目录中创建**选项卡栏 main.axml**和**main.axml**文件，并粘贴以下内容：
 
-**Resources/layout/选项卡栏. main.axml**
+**Resources/layout/Tabbar.axml**
 
 ```xml
 <android.support.design.widget.TabLayout
@@ -116,7 +116,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 已设置选项卡的几个属性，包括选项卡的重心到 `fill` 和模式 `fixed`。
 如果有很多选项卡，你可能想要将此选项卡切换到可滚动-通过 Android [TabLayout 文档](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)阅读，以了解详细信息。
 
-**资源/布局/工具栏. main.axml**
+**Resources/layout/Toolbar.axml**
 
 ```xml
 <android.support.v7.widget.Toolbar

@@ -6,12 +6,12 @@ ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 16b8f303555bc2f45516c3c060c0d2482f9c4954
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016768"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728221"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>手动为 Xamarin 创建 NuGet 包
 
@@ -53,7 +53,7 @@ NuGet 网站[支持多个 .NET Framework 版本和配置文件](https://docs.nug
 
 在上述 "MonoAndroid10" 中，表示 "Android 1.0"。 这就意味着，项目的[目标框架](~/android/app-fundamentals/android-api-levels.md)需要 MonoAndroid 版本1.0 或更高版本。 版本是在项目文件中的 `<TargetFrameworkVersion>` 元素中指定的。
 
-明确说明：
+具体公式：
 
 - **MonoAndroid403**匹配 Android 4.0.3 和更高版本（ie API 级别15）
 - **IOS10**与 Xamarin 1.0 和更高版本匹配
@@ -79,5 +79,5 @@ PCL 配置文件限制了可访问的 .NET framework Api，它们当然无法访
 
 ## <a name="related-links"></a>相关链接
 
-- [Nugetizer-3000 自动创建 Nuget](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
+- [Nugetizer-3000 自动创建 NuGet](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
 - [在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

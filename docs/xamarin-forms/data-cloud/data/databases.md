@@ -4,123 +4,289 @@ description: Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/21/2018
-ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739179"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728273"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本地数据库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-_Xamarin 使用 SQLite 数据库引擎支持数据库驱动的应用程序，这样就可以在共享代码中加载和保存对象。本文介绍如何使用 SQLite.Net 在本地 SQLite 数据库中读取和写入数据。_
+SQLite 数据库引擎允许 Xamarin 应用程序加载和保存共享代码中的数据对象。 示例应用程序使用 SQLite 数据库表存储 todo 项。 本文介绍如何使用共享代码中的 SQLite.Net 在本地数据库中存储和检索信息。
 
-## <a name="overview"></a>概述
+[在 iOS 和 Android 上 ![Todolist 应用程序的屏幕截图](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 应用")
 
-Xamarin.Forms 应用程序可以使用 [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) 包通过引用 NuGet 中提供的 `SQLite` 类将数据库操作融入共享代码。 可在 Xamarin.Forms 解决方案的 .NET Standard 库项目中定义数据库操作。
+按照以下步骤将 SQLite.NET 集成到移动应用：
 
-随附的[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)是一个简单的待办事项列表应用程序。 以下屏幕截图显示示例在每个平台上的显示方式：
+1. [安装 NuGet 包](#install-the-sqlite-nuget-package)。
+1. [配置常量](#configure-app-constants)。
+1. [创建数据库访问类](#create-a-database-access-class)。
+1. [访问 Xamarin 中的数据](#access-data-in-xamarinforms)。
+1. [高级配置](#advanced-configuration)。
 
-[![Xamarin 数据库示例屏幕快照](databases-images/todo-list-sml.png "TodoList 首页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList 首页屏幕截图") [ ![xamarin. 窗体数据库示例屏幕截图](databases-images/todo-list-sml.png "TodoList 首页屏幕截图")](databases-images/todo-list.png#lightbox "TodoList 首页屏幕截图")
+## <a name="install-the-sqlite-nuget-package"></a>安装 SQLite NuGet 包
 
-<a name="Using_SQLite_with_PCL" />
+使用 NuGet 包管理器搜索**sqlite 网络 pcl** ，并将最新版本添加到共享代码项目。
 
-## <a name="using-sqlite"></a>使用 SQLite
-
-若要将 SQLite 支持添加到 Xamarin.Forms.NET Standard 库，请使用 NuGet 的搜索功能查找 sqlite-net-pcl 并安装最新包：
-
-![添加 NuGet SQLite.NET PCL 包](databases-images/vs2017-sqlite-pcl-nuget.png "添加 NuGet SQLite.NET PCL 包")
-
-有多个 NuGet 包名称类似，正确的包具有以下属性：
+许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
 
 - **创建者：** Frank A. Krueger
-- **ID：** sqlite net pcl
-- **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **ID：** sqlite 网络-pcl
+- **NuGet 链接：** [sqlite 网络-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
 > 不管包名称，即便在 .NET Standard 项目中也使用 sqlite-net-pcl NuGet 包。
 
-添加引用后，将属性添加到 `App` 类，该类返回用于存储数据库的本地文件路径：
+## <a name="configure-app-constants"></a>配置应用常数
+
+该示例项目包含一个**Constants.cs**文件，该文件提供了常见的配置数据：
 
 ```csharp
-static TodoItemDatabase database;
+public static class Constants
+{
+    public const string DatabaseFilename = "TodoSQLite.db3";
 
+    public const SQLite.SQLiteOpenFlags Flags =
+        // open the database in read/write mode
+        SQLite.SQLiteOpenFlags.ReadWrite |
+        // create the database if it doesn't exist
+        SQLite.SQLiteOpenFlags.Create |
+        // enable multi-threaded database access
+        SQLite.SQLiteOpenFlags.SharedCache;
+
+    public static string DatabasePath
+    {
+        get
+        {
+            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            return Path.Combine(basePath, DatabaseFilename);
+        }
+    }
+}
+```
+
+常量文件指定用于初始化数据库连接的默认 `SQLiteOpenFlag` 枚举值。 `SQLiteOpenFlag` 枚举支持以下值：
+
+- `Create`：连接将自动创建数据库文件（如果该文件不存在）。
+- `FullMutex`：连接在序列化线程模式下打开。
+- `NoMutex`：连接在多线程模式下打开。
+- `PrivateCache`：连接将不会参与共享缓存（即使已启用）。
+- `ReadWrite`：连接可以读取和写入数据。
+- `SharedCache`：如果已启用共享缓存，则连接将参与共享缓存。
+- `ProtectionComplete`：当设备被锁定时，文件已加密且不可访问。
+- `ProtectionCompleteUnlessOpen`：在打开文件之前对其进行加密，但即使用户锁定设备，也可对其进行访问。
+- `ProtectionCompleteUntilFirstUserAuthentication`：在用户已启动并解锁设备之前，对文件进行加密。
+- `ProtectionNone`：数据库文件未加密。
+
+根据数据库的使用方式，可能需要指定不同的标志。 有关 `SQLiteOpenFlags`的详细信息，请参阅 sqlite.org 上[的打开新的数据库连接](https://www.sqlite.org/c3ref/open.html)。
+
+## <a name="create-a-database-access-class"></a>创建数据库访问类
+
+数据库包装类从应用程序的其余部分对数据访问层进行抽象化。 此类集中了查询逻辑，并简化了数据库初始化的管理，从而更容易在应用程序增长时重构或扩展数据操作。 Todo 应用出于此目的定义了一个 `TodoItemDatabase` 类。
+
+### <a name="lazy-initialization"></a>延迟初始化
+
+`TodoItemDatabase` 使用 .NET `Lazy` 类在第一次访问数据库之前延迟数据库的初始化。 使用延迟初始化可防止数据库加载进程延迟应用程序启动。 有关详细信息，请参阅[懒惰&lt;t&gt; 类](https://docs.microsoft.com/dotnet/api/system.lazy-1)。
+
+```csharp
+public class TodoItemDatabase
+{
+    static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
+    {
+        return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+    });
+
+    static SQLiteAsyncConnection Database => lazyInitializer.Value;
+    static bool initialized = false;
+
+    public TodoItemDatabase()
+    {
+        InitializeAsync().SafeFireAndForget(false);
+    }
+
+    async Task InitializeAsync()
+    {
+        if (!initialized)
+        {
+            if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
+            {
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
+                initialized = true;
+            }
+        }
+    }
+
+    //...
+}
+```
+
+数据库连接是一个静态字段，可确保在应用程序的生存期内使用单个数据库连接。 使用持久性静态连接比在单个应用会话期间多次打开和关闭连接提供了更好的性能。
+
+`InitializeAsync` 方法负责检查是否存在用于存储 `TodoItem` 对象的表。 如果表不存在，此方法会自动创建该表。
+
+### <a name="the-safefireandforget-extension-method"></a>SafeFireAndForget 扩展方法
+
+实例化 `TodoItemDatabase` 类时，它必须初始化数据库连接，这是一个异步过程。 但是：
+
+- 类构造函数不能是异步的。
+- 未等待的异步方法不会引发异常。
+- 使用 `Wait` 方法会阻止线程_并_吞并异常。
+
+为了启动异步初始化，请避免阻止执行，并有机会捕获异常，示例应用程序使用名为 `SafeFireAndForget`的扩展方法。 `SafeFireAndForget` 扩展方法向 `Task` 类提供附加功能：
+
+```csharp
+public static class TaskExtensions
+{
+    // NOTE: Async void is intentional here. This provides a way
+    // to call an async method from the constructor while
+    // communicating intent to fire and forget, and allow
+    // handling of exceptions
+    public static async void SafeFireAndForget(this Task task,
+        bool returnToCallingContext,
+        Action<Exception> onException = null)
+    {
+        try
+        {
+            await task.ConfigureAwait(returnToCallingContext);
+        }
+
+        // if the provided action is not null, catch and
+        // pass the thrown exception
+        catch (Exception ex) when (onException != null)
+        {
+            onException(ex);
+        }
+    }
+}
+```
+
+`SafeFireAndForget` 方法等待提供的 `Task` 对象的异步执行，并允许附加在引发异常时调用的 `Action`。
+
+有关详细信息，请参阅[基于任务的异步模式（单击）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)。
+
+### <a name="data-manipulation-methods"></a>数据操作方法
+
+`TodoItemDatabase` 类包括用于四种类型的数据操作的方法：创建、读取、编辑和删除。 SQLite.NET 库提供了一个简单的对象关系映射（ORM），可用于存储和检索对象，而无需编写 SQL 语句。
+
+```csharp
+public static class TodoItemDatabase {
+
+    // ...
+
+    public Task<List<TodoItem>> GetItemsAsync()
+    {
+        return Database.Table<TodoItem>().ToListAsync();
+    }
+
+    public Task<List<TodoItem>> GetItemsNotDoneAsync()
+    {
+        // SQL queries are also possible
+        return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+    }
+
+    public Task<TodoItem> GetItemAsync(int id)
+    {
+        return Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+    }
+
+    public Task<int> SaveItemAsync(TodoItem item)
+    {
+        if (item.ID != 0)
+        {
+            return Database.UpdateAsync(item);
+        }
+        else
+        {
+            return Database.InsertAsync(item);
+        }
+    }
+
+    public Task<int> DeleteItemAsync(TodoItem item)
+    {
+        return Database.DeleteAsync(item);
+    }
+}
+```
+
+## <a name="access-data-in-xamarinforms"></a>访问 Xamarin 中的数据
+
+Xamarin `App` 类公开 `TodoItemDatabase` 类的实例：
+
+```csharp
 public static TodoItemDatabase Database
 {
-  get
-  {
-    if (database == null)
+    get
     {
-      database = new TodoItemDatabase(
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+        if (database == null)
+        {
+            database = new TodoItemDatabase();
+        }
+        return database;
     }
-    return database;
-  }
 }
 ```
 
-`TodoItemDatabase` 构造函数，以参数形式采用数据库文件的路径，如下所示：
+此属性允许 Xamarin 组件在 `Database` 实例上调用数据检索和操作方法以响应用户交互。 例如：
 
 ```csharp
-public TodoItemDatabase(string dbPath)
+var saveButton = new Button { Text = "Save" };
+saveButton.Clicked += async (sender, e) =>
 {
-  database = new SQLiteAsyncConnection(dbPath);
-  database.CreateTableAsync<TodoItem>().Wait();
-}
+    var todoItem = (TodoItem)BindingContext;
+    await App.Database.SaveItemAsync(todoItem);
+    await Navigation.PopAsync();
+};
 ```
 
-以单一实例的形式公开数据库的优势是，所创建的单一数据库连接在应用程序运行时保持打开状态，因此避免了每次执行数据库操作时打开和关闭数据库文件所产生的费用。
+## <a name="advanced-configuration"></a>高级配置
 
-`TodoItemDatabase` 类的其余部分包含跨平台运行的 SQLite 查询。 示例查询代码如下所示（可在[通过 Xamarin.iOS 使用 SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) 中找到更多详细信息）。
+SQLite 提供了一个功能强大的 API，该 API 的功能多于本文和示例应用中介绍的功能。 以下各节介绍了对于可伸缩性很重要的功能。
+
+有关详细信息，请参阅 sqlite.org 上的[SQLite 文档](https://www.sqlite.org/docs.html)。
+
+### <a name="write-ahead-logging"></a>预写日志记录
+
+默认情况下，SQLite 使用传统的 rollback 日志。 未更改的数据库内容的副本将写入单独的回滚文件中，然后将这些更改直接写入数据库文件。 删除回滚日志时进行提交。
+
+预写日志记录（WAL）首先将更改写入单独的 WAL 文件中。 在 WAL 模式下，COMMIT 是一个特殊记录，附加到 WAL 文件，这允许在单个 WAL 文件中发生多个事务。 在名为 "_检查点_" 的特殊操作中，WAL 文件将合并回数据库文件。
+
+对于本地数据库，WAL 可能会更快，因为读取器和编写器彼此之间不会相互阻止，这允许进行读写操作。 但是，WAL 模式不允许更改_页面大小_、向数据库添加其他文件关联以及添加额外的_检查点_操作。
+
+若要在 SQLite.NET 中启用 WAL，请对 `SQLiteAsyncConnection` 实例调用 `EnableWriteAheadLoggingAsync` 方法：
 
 ```csharp
-public Task<List<TodoItem>> GetItemsAsync()
-{
-  return database.Table<TodoItem>().ToListAsync();
-}
-
-public Task<List<TodoItem>> GetItemsNotDoneAsync()
-{
-  return database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-}
-
-public Task<TodoItem> GetItemAsync(int id)
-{
-  return database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-}
-
-public Task<int> SaveItemAsync(TodoItem item)
-{
-  if (item.ID != 0)
-  {
-    return database.UpdateAsync(item);
-  }
-  else {
-    return database.InsertAsync(item);
-  }
-}
-
-public Task<int> DeleteItemAsync(TodoItem item)
-{
-  return database.DeleteAsync(item);
-}
+await Database.EnableWriteAheadLoggingAsync();
 ```
 
-> [!NOTE]
-> 使用异步 SQLite.Net API 的优势是，数据库操作将移到后台线程。 此外，无需编写其他并发处理代码，因为 API 将负责处理它。
+有关详细信息，请参阅 sqlite.org 上的[SQLite 预写日志记录](https://www.sqlite.org/wal.html)。
 
-## <a name="summary"></a>总结
+### <a name="copying-a-database"></a>复制数据库
 
-Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程序，如此即可在共享代码中加载和保存对象。
+在以下几种情况下，可能需要复制 SQLite 数据库：
 
-本文重点关注如何使用 Xamarin.Forms 访问 SQLite 数据库。 有关使用 SQLite.Net 本身的详细信息，请参阅 [Android 上的 SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) 或 [iOS 上的 SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) 文档。
+- 数据库附带了你的应用程序，但必须将其复制或移动到移动设备上的可写存储中。
+- 你需要创建数据库的备份或副本。
+- 需要对数据库文件进行版本、移动或重命名。
+
+通常，移动、重命名或复制数据库文件与其他任何文件类型的过程相同，但有一些其他注意事项：
+
+- 在尝试移动数据库文件之前，应关闭所有数据库连接。
+- 如果使用[预写日志记录](#write-ahead-logging)，SQLite 将创建共享内存访问（. 具有 shm）文件和（写入日志）（wal）文件。 请确保也将任何更改应用于这些文件。
+
+有关详细信息，请参阅[Xamarin 中的文件处理](~/xamarin-forms/data-cloud/data/files.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [待办事项示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
-- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Todo 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+- [SQLite.NET NuGet 包](https://www.nuget.org/packages/sqlite-net-pcl/)
+- [SQLite 文档](https://www.sqlite.org/docs.html)
+- [将 SQLite 用于 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
+- [将 SQLite 与 iOS 配合使用](~/ios/data-cloud/data/using-sqlite-orm.md)
+- [基于任务的异步模式（点击）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [迟缓<T> 类](https://docs.microsoft.com//api/system.lazy-1)

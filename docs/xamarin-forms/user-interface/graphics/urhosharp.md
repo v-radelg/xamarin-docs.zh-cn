@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60c647a9a09ebffa5a9d50c799c09cf0dbf2e4ac
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772936"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728002"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -25,21 +25,21 @@ ms.locfileid: "70772936"
 可以使用 UrhoSharp 来呈现在 Xamarin.Forms 应用程序中的图形。
 这[示例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)演示了如何使用 UrhoSharp 构造交互式 3D 图表：
 
-![](urhosharp-images/ios-animation.gif "在 iOS 上 UrhoSharp 三维的交互式图表")
-![](urhosharp-images/android-animation.gif "UrhoSharp 三维在 Android 上的交互式图表")
+![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
+![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
 
-## <a name="adding-the-urhosharp-nuget-packages"></a>添加 UrhoSharp Nuget 包
+## <a name="adding-the-urhosharp-nuget-packages"></a>添加 UrhoSharp NuGet 包
 
-然后再使用 UrhoSharp，开发人员需要将 UrhoSharp Nuget 包添加到他们的解决方案。 本指南假定一个 Xamarin.Forms 项目，与 iOS、 Android 和.NET Standard 类库项目。 .NET Standard 库项目中; 将写入的所有代码但 UrhoSharp Nuget 必须也添加到 iOS 和 Android 项目。
+使用 UrhoSharp 之前，开发人员需要将 UrhoSharp NuGet 包添加到其解决方案。 本指南假定一个 Xamarin.Forms 项目，与 iOS、 Android 和.NET Standard 类库项目。 所有代码都将写入 .NET Standard 库项目中;但是，还必须将 UrhoSharp NuGet 添加到 iOS 和 Android 项目。
 
-UrhoSharp.Forms Nuget 程序包中包含的所有创建 UrhoSharp 对象所需对象。 UrhoSharp.Forms nuget 包包含`UrhoSurface`类，该类用于托管 UrhoSharp 在 Xamarin.Forms 中。
+UrhoSharp NuGet 包包含创建 UrhoSharp 对象所需的所有对象。 UrhoSharp NuGet 包包含用于在 Xamarin 中承载 UrhoSharp 的 `UrhoSurface` 类。
 若要开始，请右键单击 .NET Standard 库项目中的 "**包**" 文件夹，然后选择 "**添加包 ...** "。输入搜索词**UrhoSharp**，**为 Xamarin 选择 UrhoSharp**，然后单击 "**添加包**"。
 
-[![](urhosharp-images/add-package-sml.png "添加包对话框")](urhosharp-images/add-package.png#lightbox "添加包对话框")
+[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
 
 UrhoSharp.Forms NuGet 包将添加到项目：
 
-![](urhosharp-images/packages.png "包文件夹")
+![](urhosharp-images/packages.png "Packages Folder")
 
 对于特定于平台的项目 （如 iOS 和 Android） 重复上述步骤。
 

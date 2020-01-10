@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014346"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728247"
 ---
 # <a name="updating-component-references-to-nuget"></a>将组件引用更新到 NuGet
 
@@ -37,11 +37,11 @@ ms.locfileid: "73014346"
 
 从项目中删除组件：
 
-1. 打开 **.csproj**文件。 为此，请右键单击项目名称，然后选择 "**卸载项目**"。 
+1. 打开 **.csproj** 文件。 为此，请右键单击项目名称，然后选择 "**卸载项目**"。 
 
 2. 再次右键单击卸载的项目，然后选择 "**编辑 {你的项目名称}. .csproj**"。
 
-3. 查找要 `XamarinComponentReference`的文件中的任何引用。 其外观应类似于以下示例：
+3. 查找要 `XamarinComponentReference`的文件中的任何引用。 它应看似以下示例：
 
     ```xml
     <ItemGroup>
@@ -76,7 +76,7 @@ ms.locfileid: "73014346"
 
 1. 打开 .csproj 文件。 为此，请右键单击项目名称，然后选择 "**工具" > "编辑文件**"。
 
-2. 查找要 `XamarinComponentReference`的文件中的任何引用。 其外观应类似于以下示例：
+2. 查找要 `XamarinComponentReference`的文件中的任何引用。 它应看似以下示例：
 
     ```xml
     <ItemGroup>
@@ -137,7 +137,7 @@ ms.locfileid: "73014346"
 
 ![删除组件](component-nuget-images/delete-component-sml.png)
 
-NuGet 包将继续在 "**包**" 节点中列出，并且你的应用程序将照常编译和运行。 将来，将通过**Nuget**更新功能执行对此包的更新：
+NuGet 包将继续在 "**包**" 节点中列出，并且你的应用程序将照常编译和运行。 将来，将通过**NuGet**更新功能执行对此包的更新：
 
 ![更新 NuGet 包](component-nuget-images/nuget-update-sml.png)
 
