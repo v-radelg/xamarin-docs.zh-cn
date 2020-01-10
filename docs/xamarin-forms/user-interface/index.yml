@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms 用户界面
+summary: 了解如何使用 Xamarin.Forms 创建用户界面。
 metadata:
   title: Xamarin.Forms 用户界面
   description: 了解如何使用 Xamarin.Forms 创建用户界面。
@@ -9,235 +9,177 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 12/11/2019
-abstract:
-  description: 了解如何使用 Xamarin.Forms 创建用户界面。
-sections:
-  - title: null
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: activityindicator.md
-            html: 了解如何使用 ActivityIndicator 告知用户应用程序在参与耗时较长的活动，而不提供任何进度指示。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: activityindicator.md
-            title: ActivityIndicator
-          - href: animation/index.md
-            html: 了解如何在 Xamarin.Forms 中创建动画。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: animation/index.md
-            title: 动画
-          - href: boxview.md
-            html: 了解如何使用 BoxView 创建彩色矩形。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: boxview.md
-            title: BoxView
-          - href: button.md
-            html: 了解如何通过按钮指示应用程序执行特定任务。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: button.md
-            title: Button
-          - href: carouselview/index.md
-            html: 了解如何使用 CarouselView 在线性传送视图中呈现数据。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: collectionview/index.md
-            title: CarouselView
-          - href: checkbox.md
-            html: 了解如何使用 CheckBox 设置布尔值。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: checkbox.md
-            title: CheckBox
-          - href: collectionview/index.md
-            html: 了解如何使用 CollectionView 显示使用不同布局规范的数据的列表。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: collectionview/index.md
-            title: CollectionView
-          - href: colors.md
-            html: 了解如何使用 Color 类跨平台定义和使用颜色。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: colors.md
-            title: 颜色
-          - href: controls/index.md
-            html: 了解可在 Xamarin.Forms 中使用的页面、布局、视图和单元格。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: controls/index.md
-            title: 控件引用
-          - href: datepicker.md
-            html: 了解如何使用 DatePicker 允许选择指定范围内的日期。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: datepicker.md
-            title: DatePicker
-          - href: pop-ups.md
-            html: 了解如何显示向用户提出简单问题，引导用户完成任务和显示提示的对话框。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: pop-ups.md
-            title: 显示弹出窗口
-          - href: graphics/skiasharp/index.md
-            html: 了解如何使用 SkiaSharp 将图形与 Xamarin.Forms 应用程序相结合。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: graphics/skiasharp/index.md
-            title: 使用 SkiaSharp 处理图形
-          - href: images.md
-            html: 了解如何使用映像控件来显示映像。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: images.md
-            title: 映像
-          - href: imagebutton.md
-            html: 了解如何使用 ImageButton 按钮来显示映像和响应指示应用程序执行特定任务的点击操作。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: imagebutton.md
-            title: ImageButton
-          - href: indicatorview.md
-            html: 了解如何使用 IndicatorView 控件显示表示 CarouselView 中的项目数和当前位置的指示器。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: indicatorview.md
-            title: IndicatorView
-          - href: layouts/index.yml
-            html: 了解如何使用 Xamarin.Forms 中的布局控件和功能来整理内容
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: layouts/index.yml
-            title: 布局
-          - href: listview/index.md
-            html: 了解如何使用 ListView 控件来呈现数据列表。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: listview/index.md
-            title: ListView
-          - href: map/index.md
-            html: 了解如何使用地图控件（包括所需的平台配置），以及如何使用图钉在地图上做标记。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: map/index.md
-            title: 映射
-          - href: menuitem.md
-            html: 了解如何使用 MenuItem 类向 ListView 单元格的上下文菜单添加项。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: menuitem.md
-            title: MenuItem
-          - href: picker/index.md
-            html: 了解如何使用选取器控件从数据列表中选择文本项。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: picker/index.md
-            title: 选取器
-          - href: progressbar.md
-            html: 了解如何使用 ProgressBar 来表示应用程序正在执行耗时较长的活动。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: progressbar.md
-            title: ProgressBar
-          - href: refreshview.md
-            html: 了解如何使用 RefreshView 为可滚动内容提供对刷新功能的拉取。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: refreshview.md
-            title: RefreshView
-          - href: searchbar.md
-            html: 了解如何使用搜索栏控件开始搜索。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: searchbar.md
-            title: 搜索栏
-          - href: slider.md
-            html: 了解如何允许用户使用滑块控件从连续范围内选择一个数值。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: slider.md
-            title: Slider
-          - href: splashscreen.md
-            html: 了解如何创建适合 Xamarin.Forms 应用程序的初始屏幕。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: splashscreen.md
-            title: 初始屏幕
-          - href: stepper.md
-            html: 了解如何允许用户使用步进器控件从一系列值中选择一个数值。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: stepper.md
-            title: 步进器
-          - href: styles/index.md
-            html: 了解如何使用 XAML 样式和级联样式表 (CSS) 设置用户界面的样式。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: styles/index.md
-            title: 样式
-          - href: swipeview.md
-            html: 了解如何使用 SwipeView 提供通过轻扫手势显示的上下文菜单项。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: swipeview.md
-            title: SwipeView
-          - href: switch.md
-            html: 了解如何通过开关设置布尔值。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: switch.md
-            title: 开关
-          - href: tableview.md
-            html: 了解如何使用 TableView 显示可滚动查看的数据或选项列表（其中各行不共享同一模板）。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: tableview.md
-            title: TableView
-          - href: text/index.md
-            html: 了解用于显示和接收文本的 Xamarin.Forms 控件。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: text/index.md
-            title: Text
-          - href: theming.md
-            html: 了解如何为 Xamarin 应用程序创建主题以及如何在运行时更改主题。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: theming.md
-            title: 主题设置
-          - href: timepicker.md
-            html: 了解如何使用 TimePicker 来允许选择时间。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: timepicker.md
-            title: TimePicker
-          - href: toolbaritem.md
-            html: 了解如何使用 ToolbarItem 向导航栏添加按钮。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: toolbaritem.md
-            title: ToolbarItem
-          - href: visual/index.md
-            html: 了解如何使用 Xamarin.Forms 材料视觉对象创建在 iOS 和 Android 上呈现效果相同或大致相同的应用程序。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: visual/index.md
-            title: 视觉对象
-          - href: visual-state-manager.md
-            html: 了解如何定义用户界面的可视状态，以及如何使用 VisualStateManager 类激活状态。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: visual-state-manager.md
-            title: 可视状态管理器
-          - href: webview.md
-            html: 了解如何在 Xamarin.Forms 应用程序中显示 HTML 和 Web 内容。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: webview.md
-            title: WebView
+  ms.date: 12/30/2019
+  ms.openlocfilehash: 2a62ff0c3d94d47870b9b112b86091c534ed6ff8
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679605"
+landingContent:
+- title: 控件引用
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 概述
+      url: controls/index.md
+    - text: Pages
+      url: controls/pages.md
+    - text: 布局
+      url: controls/layouts.md
+    - text: 视图
+      url: controls/views.md
+    - text: 单元
+      url: controls/cells.md
+    - text: 常用属性、方法和事件
+      url: controls/common-properties.md
+    - text: 第三方控件
+      url: controls/thirdparty.md
+- title: 用于演示的视图
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: BoxView
+      url: boxview.md
+    - text: 图像
+      url: images.md
+    - text: Label
+      url: text/label.md
+    - text: 映射
+      url: map/index.md
+    - text: WebView
+      url: webview.md
+- title: 启动命令的视图
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Button
+      url: button.md
+    - text: ImageButton
+      url: imagebutton.md
+    - text: RefreshView
+      url: refreshview.md
+    - text: 搜索栏
+      url: searchbar.md
+    - text: SwipeView
+      url: swipeview.md
+- title: 设置值的视图
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: CheckBox
+      url: checkbox.md
+    - text: DatePicker
+      url: datepicker.md
+    - text: Slider
+      url: slider.md
+    - text: 步进器
+      url: stepper.md
+    - text: 开关
+      url: switch.md
+    - text: TimePicker
+      url: timepicker.md
+- title: 用于编辑文本的视图
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 编辑器
+      url: text/editor.md
+    - text: 条目
+      url: text/entry.md
+- title: 指示活动的视图
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ActivityIndicator
+      url: activityindicator.md
+    - text: ProgressBar
+      url: progressbar.md
+- title: 显示集合的视图
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: CarouselView
+      url: carouselview/index.md
+    - text: CollectionView
+      url: collectionview/index.md
+    - text: IndicatorView
+      url: indicatorview.md
+    - text: ListView
+      url: listview/index.md
+    - text: 选取器
+      url: picker/index.md
+    - text: TableView
+      url: tableview.md
+- title: 其他控件
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: MenuItem
+      url: menuitem.md
+    - text: ToolbarItem
+      url: toolbaritem.md
+- title: 用户界面概念
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 动画
+      url: animation/index.md
+    - text: 颜色
+      url: colors.md
+    - text: 显示弹出窗口
+      url: pop-ups.md
+    - text: 字体
+      url: text/fonts.md
+    - text: 使用 SkiaSharp 处理图形
+      url: graphics/skiasharp/index.md
+    - text: 初始屏幕
+      url: splashscreen.md
+    - text: 样式
+      url: styles/index.md
+    - text: 主题设置
+      url: theming.md
+    - text: 视觉对象
+      url: visual/index.md
+    - text: 可视状态管理器
+      url: visual-state-manager.md
+- title: 布局
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 选择布局
+      url: layouts/choose-layout.md
+    - text: AbsoluteLayout
+      url: layouts/absolute-layout.md
+    - text: ContentView
+      url: layouts/contentview.md
+    - text: FlexLayout
+      url: layouts/flex-layout.md
+    - text: Frame
+      url: layouts/frame.md
+    - text: Grid
+      url: layouts/grid.md
+    - text: RelativeLayout
+      url: layouts/relative-layout.md
+    - text: ScrollView
+      url: layouts/scroll-view.md
+    - text: StackLayout
+      url: layouts/stack-layout.md
+- title: 布局概念
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 可绑定的布局
+      url: layouts/bindable-layouts.md
+    - text: 自定义布局
+      url: layouts/custom.md
+    - text: 设备方向
+      url: layouts/device-orientation.md
+    - text: LayoutOptions
+      url: layouts/layout-options.md
+    - text: 布局压缩
+      url: layouts/layout-compression.md
+    - text: 边距和填充
+      url: layouts/margin-and-padding.md
+    - text: 平板电脑和桌面布局
+      url: layouts/tablet.md

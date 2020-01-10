@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms 应用程序基础知识
+summary: 了解使用 Xamarin.Forms 开发移动应用程序的基础知识。
 metadata:
   title: Xamarin.Forms 应用程序基础知识
   description: 了解使用 Xamarin.Forms 开发移动应用程序的基础知识。
@@ -9,115 +9,59 @@ metadata:
   ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/30/2019
-abstract:
-  description: 了解使用 Xamarin.Forms 开发移动应用程序的基础知识。
-sections:
-  - title: null
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: accessibility/index.md
-            html: 了解如何让具有许多 UI 需求和体验的用户利用应用程序。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_accessibility.svg'
-              href: accessibility/index.md
-            title: 可访问性
-          - href: application-class.md
-            html: 了解子类应用程序类公开的功能。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
-              href: application-class.md
-            title: 应用类
-          - href: app-lifecycle.md
-            html: 了解如何处理应用程序生命周期事件。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_agile.svg'
-              href: app-lifecycle.md
-            title: 应用生命周期
-          - href: deep-linking.md
-            html: 了解如何使用应用程序索引和深层链接使应用程序内容可在 iOS 和 Android 上进行搜索。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_link.svg'
-              href: deep-linking.md
-            title: 应用程序索引和深层链接
-          - href: behaviors/index.md
-            html: 了解如何将功能添加到控件且无需将其子类化。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: behaviors/index.md
-            title: 行为
-          - href: custom-renderer/index.md
-            html: 了解如何通过创建新的自定义控件并修改现有控件来扩展 Xamarin.Forms 控件。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_extend.svg'
-              href: custom-renderer/index.md
-            title: 自定义呈现器
-          - href: data-binding/index.md
-            html: 了解如何自动将用户界面与其数据源同步。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_sync.svg'
-              href: data-binding/index.md
-            title: 数据绑定
-          - href: dependency-service/index.md
-            html: 了解如何通过 DependencyService 类从共享代码调用本机平台功能。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_architecture.svg'
-              href: dependency-service/index.md
-            title: 依赖项服务
-          - href: effects/index.md
-            html: 了解如何通过访问基础本机控件来调整 Xamarin.Forms 控件的行为。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: effects/index.md
-            title: 效果
-          - href: gestures/index.md
-            html: 了解如何使用手势识别器添加对应用程序的点击、收缩、平移和轻扫手势的支持。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_form.svg'
-              href: gestures/index.md
-            title: 笔势
-          - href: local-notifications.md
-            html: 了解如何在 Xamarin.Forms 中发送和接收本地通知。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
-              href: local-notifications.md
-            title: 本地通知
-          - href: localization/index.md
-            html: 了解如何通过 Xamarin.Forms 开发多语言应用程序。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_article.svg'
-              href: localization/index.md
-            title: 本地化
-          - href: messaging-center.md
-            html: 了解如何使用基于消息的通信来减少类型之间的依赖项。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_mail.svg'
-              href: messaging-center.md
-            title: 消息中心
-          - href: navigation/index.md
-            html: 了解如何在 Xamarin.Forms 应用程序中执行导航。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_class.svg'
-              href: navigation/index.md
-            title: 导航
-          - href: shell/index.md
-            html: 了解如何使用 Xamarin.Forms Shell 降低移动应用程序开发的复杂性。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-              href: shell/index.md
-            title: shell
-          - href: templates/index.md
-            html: 了解如何使用 Xamarin.Forms 提供的模板功能。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_template.svg'
-              href: templates/index.md
-            title: 模板
-          - href: triggers.md
-            html: 了解如何在根据事件或属性更改更改控件外观的 XAML 中表达操作。
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: triggers.md
-            title: 触发器
+  ms.date: 12/30/2019
+  ms.openlocfilehash: 960e8e555b051e3a6cf3eedd0f999a78f8317d61
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75680407"
+landingContent:
+- title: 核心概念
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 应用类
+      url: application-class.md
+    - text: 应用生命周期
+      url: app-lifecycle.md
+    - text: 数据绑定
+      url: data-binding/index.md
+    - text: 笔势
+      url: gestures/index.md
+    - text: 本地化
+      url: localization/index.md
+    - text: MessagingCenter
+      url: messaging-center.md
+    - text: 导航
+      url: navigation/index.md
+    - text: shell
+      url: shell/index.md
+    - text: 模板
+      url: templates/index.md
+    - text: 触发器
+      url: triggers.md
+- title: 扩展 Xamarin.Forms
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 行为
+      url: behaviors/index.md
+    - text: 自定义呈现器
+      url: custom-renderer/index.md
+    - text: DependencyService
+      url: dependency-service/index.md
+    - text: 效果
+      url: effects/index.md
+- title: 发布应用程序
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 可访问性
+      url: accessibility/index.md
+    - text: 应用程序索引和深层链接
+      url: deep-linking.md
+    - text: 本地通知
+      url: local-notifications.md
+    - text: 本地化
+      url: localization/index.md

@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: 45f34dbe05005da323ae21f0f3ac40db97538773
-  ms.sourcegitcommit: 2dea02d0c7497cd5a5cbdce5a26ae33540d78dcc
+  ms.openlocfilehash: fa152418c40ac61df15e8a22b838d012935bee4b
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 11/27/2019
-  ms.locfileid: "74550057"
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679709"
 highlightedContent:
   items:
   - title: 设置和安装
@@ -104,7 +104,7 @@ conceptualContent:
       itemType: tutorial
     footerLink:
       url: ~/get-started/tutorials/index.yml
-      text: 另请参阅
+      text: 查看更多
   - title: 运用当前的知识
     links:
     - text: .NET 桌面（UWP、WPF、WinForms）
@@ -179,7 +179,7 @@ additionalContent:
       - text: 部署和测试
         url: ~/xamarin-forms/deploy-test/index.yml
       - text: 高级概念和内部信息
-        url: ~/xamarin-forms/internals/index.yml
+        url: ~/xamarin-forms/internals/index.md
       - text: 示例
         url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms
     - title: Android
