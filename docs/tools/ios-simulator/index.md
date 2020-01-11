@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: 8313af47882b1c8c47f1e82f62f0a43e4e9c704c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029716"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886588"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>适用于 Windows 的远程 iOS 模拟器
 
@@ -34,7 +34,7 @@ ms.locfileid: "73029716"
 
 - **Home** –模拟 iOS 设备上的 "主页" 按钮。
 - **锁定**–锁定模拟器（轻扫以解锁）。
-- **屏幕快照**–保存模拟器的屏幕截图（存储在**Pictures\Xamarin\iOS 模拟器 \\** ）中。
+- **屏幕快照**–保存模拟器的屏幕截图（存储在**Pictures\Xamarin\iOS 模拟器\\** ）中。
 - [**设置**](#settings)–显示键盘、位置和其他设置。
 - [**其他选项**](#other-options)–提供各种模拟器选项，如旋转、摇动手势和 Touch ID。
 
@@ -72,3 +72,12 @@ Windows 计算机上未听到 iOS 声音。
 [![用于使用模拟器的复选框](images/options-sml.png "用于使用模拟器的复选框")](images/options.png#lightbox)
 
 禁用此选项后，调试将在连接的 Mac 生成主机上打开 iOS 模拟器。
+
+## <a name="troubleshooting"></a>故障排除
+
+如果你遇到远程 iOS 模拟器的问题，你可以在以下位置查看日志：
+
+- **Mac** – `~/Library/Logs/Xamarin/Simulator.Server`
+- **Windows** – `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
+
+如果你[在 Visual Studio 中报告问题](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)，附加这些日志可能会很有帮助（有一些选项可使上传专用）。
