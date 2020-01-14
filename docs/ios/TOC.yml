@@ -613,8 +613,9 @@
         - name: 概述
           href: deploy-test/index.md
         - name: 应用分发
-          href: deploy-test/app-distribution/index.md
           items:
+            - name: 概述
+              href: deploy-test/app-distribution/index.md
             - name: App Store 分发
               href: deploy-test/app-distribution/app-store-distribution/index.md
               items:
@@ -622,9 +623,9 @@
                   href: deploy-test/app-distribution/app-store-distribution/itunesconnect.md
                 - name: 发布到 App Store
                   href: deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md
-            - name: In-House（企业）分发
+            - name: 内部（企业）分发
               href: deploy-test/app-distribution/in-house-distribution.md
-            - name: Ad Hoc 分发
+            - name: 即席分发
               href: deploy-test/app-distribution/ad-hoc-distribution.md
             - name: iTunesMetadata.plist 文件
               href: deploy-test/app-distribution/itunesmetadata.md
