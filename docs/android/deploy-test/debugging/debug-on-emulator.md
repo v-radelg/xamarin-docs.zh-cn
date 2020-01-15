@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 8ca13b4f9c961b8bb206d065ce3cf641a8662160
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028086"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556517"
 ---
-# <a name="debugging-on-the-android-emulator"></a>在 Android Emulator 上调试
+# <a name="debug-on-the-android-emulator"></a>在 Android Emulator 上调试
 
 本指南介绍如何在 Android Emulator 中启动虚拟设备以调试和测试应用。 
-
-## <a name="overview"></a>概述
 
 可使用各种配置运行 Android Emulator（作为“使用 .NET 进行移动开发”工作负荷的一部分进行安装）来模拟各种 Android 设备  。 其中的每个配置都创建为虚拟设备  。 本指南介绍如何从 Visual Studio 启动模拟器以及如何在虚拟设备中运行应用。 有关配置 Android Emulator 和创建新的虚拟设备的信息，请参阅 [Android Emulator 设置](~/android/get-started/installation/android-emulator/index.md)。
 

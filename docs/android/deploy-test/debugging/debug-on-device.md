@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e697459b20a481b1d2bada69677647ad4fbd3023
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3ca524e451a7a4eb838805c839b33c4b9dd6bddd
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021592"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556530"
 ---
-# <a name="debug-on-device"></a>在设备上进行调试
+# <a name="debug-on-an-android-device"></a>在 Android 设备上调试
 
 本文介绍如何在物理 Android 设备上调试 Xamarin.Android 应用程序。 
-
-## <a name="debug-on-device-overview"></a>在设备上进行调试概述
 
 可在 Android 设备上使用 Visual Studio for Mac 或 Visual Studio 调试 Xamarin.Android 应用。 在设备上执行调试之前，必须[设置设备进行开发](~/android/get-started/installation/set-up-device-for-development.md)并将其连接到电脑或 Mac。
 

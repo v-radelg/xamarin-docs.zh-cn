@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771714"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545657"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本绑定
 
@@ -97,7 +97,7 @@ label.SetBinding(RotationProperty, "Value");
 
 操做 `Slider` 时，`Label` 会相应地旋转：
 
-[![基本代码绑定](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
+[![基本代码绑定](basic-bindings-images/basiccodebinding-small.png "基本代码绑定")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本代码绑定")
 
 “基本 Xaml 绑定”页等同于“基本代码绑定”，不同之处在于它定义了 XAML 中的整个数据绑定   ：
 
@@ -193,11 +193,11 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 运行此程序可能会感到惊讶：
 
-[![可选代码绑定](basic-bindings-images/alternativecodebinding-small.png "Alternative Code Binding")](basic-bindings-images/alternativecodebinding-large.png#lightbox "Alternative Code Binding")
+[![替代代码绑定](basic-bindings-images/alternativecodebinding-small.png "替代代码绑定")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代代码绑定")
 
 左侧的 iOS 屏幕显示了页面首次出现时的屏幕外观。 `Label` 在哪里？
 
-问题在于 `Slider` 的初始值为 0。 这将导致 `Label` 的 `Scale` 属性也设置为 0，覆盖其默认值 1。 这会导致 `Label` 在最初是不可见的。 正如 Android 和通用 Windows平台 (UWP) 的屏幕截图所示，你可以操作 `Slider`，使 `Label` 再次出现，但它最初的消失让人不安。
+问题在于 `Slider` 的初始值为 0。 这将导致 `Label` 的 `Scale` 属性也设置为 0，覆盖其默认值 1。 这会导致 `Label` 在最初是不可见的。 正如 Android 的屏幕截图所示，你可以操作 `Slider`，使 `Label` 再次出现，但它最初的消失让人不安。
 
 你将在[下一篇文章](binding-mode.md)中发现如何通过从 `Scale` 属性的默认值初始化 `Slider` 来避免此问题。
 
@@ -325,7 +325,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 `StackLayout` 的 `BindingContext` 属性设置为 `slider` 对象。 该绑定上下文由 `Label` 和 `BoxView` 继承，它们的 `Rotation` 属性都设置为 `Slider` 的 `Value` 属性：
 
-[![绑定上下文继承](basic-bindings-images/bindingcontextinheritance-small.png "Binding Context Inheritance")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Binding Context Inheritance")
+[![绑定上下文继承](basic-bindings-images/bindingcontextinheritance-small.png "绑定上下文继承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "绑定上下文继承")
 
 在[下一篇文章](binding-mode.md)中，你将看到“绑定模式”如何更改目标对象和源对象之间的数据流  。
 

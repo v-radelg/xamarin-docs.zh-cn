@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: b8020ae8539e12640cde0d565ccbd2eb0c01fc30
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e93a12fec63dcb0a31e57de26b3d7ee8827e7864
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022499"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489058"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>通过“与 Mac 配对”进行 Xamarin.iOS 开发
 
@@ -168,7 +168,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 > - 自动预配 Mac 需要在 Mac 上启用远程登录，并且 Windows 计算机必须能够通过网络访问该 Mac。 有关详细信息，请参阅[在 Mac 上启用远程登录](#enable-remote-login-on-the-mac)。
 > - 自动预配 Mac 需要 Mac 上有 3 GB 的可用空间用于安装 Xamarin.iOS。
 
-Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 时，“与 Mac 配对”会执行必要的软件安装/更新。
+Visual Studio 2019 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 时，“与 Mac 配对”会执行必要的软件安装/更新。
 
 ### <a name="mono"></a>Mono
 
@@ -204,7 +204,7 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 |---|---|---|
 |Xcode|[![缺失 Xcode 安装](images/xcode-missing.png "缺失 Xcode 安装")](images/xcode-missing-large.png#lightbox)|[![Xcode 许可证](images/xcode-license.png "Xcode 许可证")](images/xcode-license-large.png#lightbox)|
 
-此外，“与 Mac 配对”会安装或更新使用 Xcode 分发的各种包。 例如:
+此外，“与 Mac 配对”会安装或更新使用 Xcode 分发的各种包。 例如：
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -218,11 +218,11 @@ Visual Studio 2017 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 
 ### <a name="troubleshooting-automatic-mac-provisioning"></a>自动预配 Mac 疑难解答
 
-如果在使用“自动预配 Mac”的过程中遇到任何问题，请查看存储在 %LOCALAPPDATA%\Xamarin\Logs\15.0 中的 Visual Studio 2019 IDE 日志  。 这些日志可能包含错误消息，可帮助更好地诊断失败或获取支持。
+如果在使用“自动预配 Mac”的过程中遇到任何问题，请查看存储在 %LOCALAPPDATA%\Xamarin\Logs\16.0 中的 Visual Studio 2019 IDE 日志  。 这些日志可能包含错误消息，可帮助更好地诊断失败或获取支持。
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>从 Windows 命令行生成 iOS 应用
 
-“与 Mac 配对”支持从命令行生成 Xamarin.iOS 应用程序。 例如:
+“与 Mac 配对”支持从命令行生成 Xamarin.iOS 应用程序。 例如：
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
@@ -236,7 +236,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - `ServerPassword` – 登录到 Mac 生成主机时要使用的密码。
 
 > [!NOTE]
-> Visual Studio 2019 将 `msbuild` 存储到以下目录中：C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin 
+> Visual Studio 2019 将 `msbuild` 存储到以下目录中：**C:\Program Files (x86)\Microsoft Visual Studio\2019\\&lt;Version&gt;\MSBuild\Current\Bin**
 
 “与 Mac 配对”第一次从 Visual Studio 2019 或命令行登录到特定的 Mac 生成主机时，会设置 SSH 密钥。 借助这些密钥，之后登录时无需使用用户名或密码。 新创建的密钥存储在 %LOCALAPPDATA%\Xamarin\MonoTouch  。
 

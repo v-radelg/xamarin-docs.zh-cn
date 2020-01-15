@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
-ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/18/2019
+ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695938"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490059"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms Shell 搜索
 
@@ -181,8 +181,11 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 将 `SearchHandler` 添加到页面顶部后，默认情况下将显示并完全展开该搜索框。 但，将 `SearchHandler.SearchBoxVisibility` 属性设置为 `SearchBoxVisibility` 枚举成员之一可以更改此行为：
 
 - `Hidden` – 搜索框不可见或不可访问。
-- `Collapsible` – 隐藏搜索框，直到用户执行操作来显示搜索框。
-- `Expanded` – 搜索框可见，并且完全展开。
+- `Collapsible` – 隐藏搜索框，直到用户执行操作来显示搜索框。 在 iOS 上，通过纵向弹跳页面内容来显示搜索框；在 Android 上，通过点击问号图标显示搜索框。
+- `Expanded` – 搜索框可见，并且完全展开。 这是 `SearchHandler.SearchBoxVisibility` 属性的默认值。
+
+> [!IMPORTANT]
+> 在 iOS 上，可折叠搜索框需要 iOS 11 或更高版本。
 
 下面的示例演示了如何隐藏搜索框：
 
@@ -190,7 +193,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 <ContentPage ...
              xmlns:controls="clr-namespace:Xaminals.Controls">
     <Shell.SearchHandler>
-        <controls:MonkeySearchHandler SearchBoxVisibility="Hidden"
+        <controls:AnimalSearchHandler SearchBoxVisibility="Hidden"
                                       ... />
     </Shell.SearchHandler>
     ...

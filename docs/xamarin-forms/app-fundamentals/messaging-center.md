@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.openlocfilehash: 0e5fd88678becd7becfcb1c43e14b1e33aad72de
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170966"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489870"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -26,7 +26,7 @@ Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实�
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类提供多播发布-订阅功能。 这意味着可以有多个发布方发布单个消息，并且可能有多个订阅方正在侦听同一消息：
 
-![](messaging-center-images/messaging-center.png " 多播发布-订阅功能")
+![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
 
 发布方使用 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法发送消息，而订阅方使用 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法侦听消息。 此外，订阅方还可以使用 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法取消消息订阅（如果需要）。
 
@@ -82,6 +82,9 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 ```
 
 在此示例中，[`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法订阅 `MainPage` 类型发送的 `Hi` 消息，其有效负载数据为 `string`。 回调委托在接收到此类消息时执行，该消息将在警报中显示有效负载数据。
+
+> [!IMPORTANT]
+> 将在使用 `Send` 方法发布消息的同一个线程上执行 `Subscribe` 方法执行的委托。
 
 ## <a name="unsubscribe-from-a-message"></a>取消订阅消息
 

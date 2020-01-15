@@ -7,41 +7,40 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 04ca9c98abbd97cd9e5d1f7694264b8316a7f151
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7d2cd650dd22cd64d506d5d17a5ae0c34b44fc2b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001554"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487177"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 捆绑
 
 本部分简单介绍如何使用 Visual Studio for Mac 构建要发布到 Mac App Store 的应用程序。 根据附加功能（例如 iCloud 访问和推送通知），可能需要安装本文未提及的其他组件。
 
 > [!NOTE]
-> 开始本部分之前，开发人员必须创建生产预配配置文件才能针对 Mac App Store 进行构建。 请参阅本文档前面的说明，了解如何创建所需的预配配置文件。
+> 开始本部分之前，开发人员必须创建生产预配配置文件才能针对 Mac App Store 进行构建。 请参阅创建所需的预配配置文件的[配置文件说明](profiles.md)。
 
 ## <a name="code-signing-options"></a>代码签名选项
 
 更新代码签名和打包选项前，请将“配置”  更改为“发布”  。 开发人员请务必使用其公司**标识**，并使用先前签名用程序以在 App Store 中发布时所创建的配置文件。
 
- [![编辑代码签名选项](bundling-images/config02.png "编辑代码签名选项")](bundling-images/config02-large.png#lightbox)
+[![编辑代码签名选项](bundling-images/sign.png)](bundling-images/sign-large.png#lightbox)
 
 确保已在“Mac 版本”  设置中选中用于创建安装程序包的选项：
 
-[![编辑生成选项](bundling-images/config03.png "编辑生成选项")](bundling-images/config03-large.png#lightbox)
+[![编辑生成选项](bundling-images/build.png "编辑生成选项")](bundling-images/build-large.png#lightbox)
 
 ## <a name="build"></a>生成
 
-生成前，请确保已选择“发布”  配置。 开发人员构建应用时，系统会提示同时使用两个证书：
+生成前，请确保已选择“发布”  配置。 开发人员构建应用时，系统会提示两次（同时使用应用程序证书和安装程序证书）  ：
 
- ![允许应用使用证书](bundling-images/image62.png "允许应用使用证书")
+![允许应用使用证书将出现两次](bundling-images/perms02.png)
 
- ![允许应用使用证书](bundling-images/image63.png "允许应用使用证书")
+构建应用程序后，开发人员可右键单击项目，然后选择“在查找器中展现”  查找包文件（在下例中，位于 `bin/Release/AppStore` 目录）。  此包文件包括应用的安装程序，可将其提交到 Apple 以包含在 Mac App Store 中。
 
-构建应用程序后，开发人员可右键单击项目，然后选择“打开所在文件夹”  查找包文件（在下例中，位于 `bin/x86/AppStore` 目录）。  此包文件包括应用的安装程序，可将其提交到 Apple 以包含在 Mac App Store 中。
-
- ![在查找器中选择生成包](bundling-images/image64.png "在查找器中选择生成包")
+> [!div class="mx-imgBorder"]
+> ![在查找器中选择生成包](bundling-images/path.png)
 
 ## <a name="related-links"></a>相关链接
 

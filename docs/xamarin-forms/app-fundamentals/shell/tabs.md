@@ -6,13 +6,13 @@ ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 11/06/2019
+ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888985"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489826"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
@@ -50,7 +50,7 @@ ms.locfileid: "69888985"
 
 此代码示例生成了以下单页应用程序：
 
-[![iOS 和 Android 上 Shell 单页应用程序的屏幕截图](tabs-images/single-page-app.png "Shell 单页应用程序")](tabs-images/single-page-app-large.png#lightbox "Shell 单页应用程序")
+[![iOS 和 Android 上的 Shell 单页应用的屏幕截图](tabs-images/single-page-app.png "Shell 单页应用")](tabs-images/single-page-app-large.png#lightbox "Shell 单页应用")
 
 > [!NOTE]
 > 如果需要，可以通过在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上将 `Shell.NavBarIsVisible` 附加属性设置为 `false` 来隐藏导航栏。
@@ -100,7 +100,11 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 选项卡标题和图标在每个 `Tab` 对象上设置，并在底部选项卡上显示：
 
-[![iOS 和 Android 上带底部选项卡的 Shell 两页应用程序屏幕截图](tabs-images/two-page-app-bottom-tabs.png "带底部选项卡的 Shell 两页应用程序")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "带底部选项卡的 Shell 两页应用程序")
+[![iOS 和 Android 上显示了底部选项卡的 Shell 双页应用屏幕截图](tabs-images/two-page-app-bottom-tabs.png "显示了底部选项卡的 Shell 双页应用")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "显示了底部选项卡的 Shell 双页应用")
+
+如果有五个以上的选项卡，会显示“更多”选项卡，可用于访问其他选项卡  ：
+
+[![iOS 和 Android 上显示了“更多”选项卡的 Shell 应用的屏幕截图](tabs-images/more-tabs.png "显示了“更多”选项卡的 Shell 应用")](tabs-images/more-tabs-large.png#lightbox "显示了“更多”选项卡的 Shell 应用")
 
 或者，可以使用 Shell 的隐式转换运算符删除前面示例中的 `ShellContent` 和 `Tab` 对象：
 
@@ -213,7 +217,7 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 这会导致如以下屏幕截图中所示的布局：
 
-[![iOS 和 Android 上带顶部和底部选项卡的 Shell 两页应用程序屏幕截图](tabs-images/two-page-app-top-tabs.png "带顶部和底部选项卡的 Shell 两页应用程序")](tabs-images/two-page-app-top-tabs-large.png#lightbox "带顶部和底部选项卡的 Shell 两页应用程序")
+[![iOS 和 Android 上显示了顶部和底部选项卡的 Shell 双页应用屏幕截图](tabs-images/two-page-app-top-tabs.png "显示了顶部和底部选项卡的 Shell 双页应用")](tabs-images/two-page-app-top-tabs-large.png#lightbox "显示了顶部和底部选项卡的 Shell 双页应用")
 
 或者，可以使用 Shell 的隐式转换运算符删除前面示例中的 `ShellContent` 对象和第二个 `Tab` 对象：
 

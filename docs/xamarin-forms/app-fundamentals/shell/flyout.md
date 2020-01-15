@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2019
-ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
-ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
+ms.date: 11/05/2019
+ms.openlocfilehash: 4049b3bdfdd6077dcfa151df9553722e63def0ba
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74451805"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489955"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -246,6 +246,23 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 - 只要 `IsTabStop` 属性更改就会调用 `OnTabStopPropertyChanged`。
 - `TabIndexDefaultValueCreator` 返回 `int`，并调用它以设置 `TabIndex` 属性的默认值。
 - `TabStopDefaultValueCreator` 返回 `bool`，并调用它以设置 `TabStop` 属性的默认值。
+
+## <a name="flyout-vertical-scroll"></a>浮出控件垂直滚动
+
+默认情况下，当浮出控件中容纳不下浮出控件项时，可以垂直滚动浮出控件。 将 `Shell.FlyoutVerticalScrollMode` 可绑定属性设置为 `ScrollMode` 枚举成员之一可以更改此行为：
+
+- `Disabled` – 指示将禁用垂直滚动。
+- `Enabled` – 指示将启用垂直滚动。
+- `Auto` – 指示当浮出控件中容纳不下浮出控件项时，将启用垂直滚动。 这是 `Shell.FlyoutVerticalScrollMode` 属性的默认值。
+
+以下示例演示如何禁用垂直滚动：
+
+```xaml
+<Shell ...
+       FlyoutVerticalScrollMode="Disabled"
+    ...
+</Shell>
+```
 
 ## <a name="flyout-display-options"></a>浮出控件显示选项
 

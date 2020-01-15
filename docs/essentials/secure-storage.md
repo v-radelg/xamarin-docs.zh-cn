@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 1e4cb52772a60489f887116cbcfd4e6a8930fa3a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756799"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488486"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存储
 
@@ -155,13 +155,13 @@ SecureStorage.RemoveAll();
 
 加密值存储在名为  [你的应用 ID].xamarinessentials 的容器内的 `ApplicationData.Current.LocalSettings` 中。
 
- SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](preferences.md#persistence)文档中所述的相同数据持久性。
+ SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](preferences.md#persistence)文档中所述的相同数据持久性。 它还使用 `LocalSettings`，存在以下限制：每个设置的名称长度最多可为 255 个字符。 每个设置的大小最多可为 8K 字节，每个复合设置的大小最多可为 64K 字节。
 
 -----
 
 ## <a name="limitations"></a>限制
 
-此 API 用于存储少量文本。  如果尝试将其用于存储大量文本，则可能会降低性能。
+此 API 用于存储少量文本。  如果尝试将其用于存储大量文本，则可能会降低性能。 
 
 ## <a name="api"></a>API
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: cb5eb783109f4758fcbc997c4f2bf4a93aaa262b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018132"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489734"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
 
@@ -38,7 +38,7 @@ ms.locfileid: "73018132"
 Xamarin.Mac 应用程序开发需要以下条件：
 
 - 运行 macOS High Sierra (10.13) 或更高版本的 Mac 计算机。
-- [Xcode 9 或更高版本](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
+- [Xcode 10 或更高版本](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
 - 最新版本的 [Xamarin.Mac 和 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation/)。
 
 若要运行使用 Xamarin.Mac 构建的应用程序，需要：

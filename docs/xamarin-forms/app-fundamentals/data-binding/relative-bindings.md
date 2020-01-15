@@ -6,13 +6,13 @@ ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/30/2019
-ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.date: 12/04/2019
+ms.openlocfilehash: e115014728cce9252a92740b6db5beab582f61ed
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959141"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489864"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms 相对绑定
 
@@ -23,7 +23,7 @@ ms.locfileid: "72959141"
 `RelativeSourceExtension` 类支持 `RelativeSource` 标记扩展，并定义以下属性：
 
 - `Mode`，属于 `RelativeBindingSourceMode` 类型，描述相对于绑定目标位置的绑定源位置。
-- `AncestorLevel`，属于 `int` 类型，这是要查找的可选上级级别（如果 `Mode` 属性为 `FindAncestor`）。
+- `AncestorLevel`，属于 `int` 类型，这是要查找的可选上级级别（如果 `Mode` 属性为 `FindAncestor`）。 `n` 的 `AncestorLevel` 跳过 `AncestorType` 的 `n-1` 个实例。
 - `AncestorType`，属于 `Type` 类型，这是要查找的上级类型（如果 `Mode` 属性为 `FindAncestor`）。
 
 > [!NOTE]
@@ -81,6 +81,9 @@ ms.locfileid: "72959141"
 > 使用 `FindAncestor` 和 `FindAncestorBindingContext` 相对绑定模式时，必须将 `AncestorType` 属性设置为 `Type`，否则将引发 `XamlParseException`。
 
 如果未显式设置 `Mode` 属性，在将 `AncestorType` 属性设置为派生自 [`Element`](xref:Xamarin.Forms.Element) 的类型时，会将 `Mode` 属性隐式设置为 `FindAncestor`。 同样，如果将 `AncestorType` 属性设置为不是派生自 `Element` 的类型，则会将 `Mode` 属性隐式设置为 `FindAncestorBindingContext`。
+
+> [!NOTE]
+> 当所有上级的 `BindingContext` 发生变化时，将重新应用使用 `FindAncestorBindingContext` 模式的相对绑定。
 
 下面的 XAML 演示了一个示例，其中 `Mode` 属性将被隐式设置为 `FindAncestorBindingContext`：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 30415bd2df14cdc13f94a020475acf471b25c6ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
+ms.sourcegitcommit: 0177e06169da621ed9d5fa0f6118a628e8c92bd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030376"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663738"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>在 Xamarin.iOS 中针对不同的设备进行编译
 
@@ -30,27 +30,23 @@ ms.locfileid: "73030376"
 
 除了 UI 上可用的配置选项外，你还可以向 [Xamarin.iOS 生成工具 (mtouch)](~/ios/deploy-test/mtouch.md) 传递自己的命令行选项集。
 
-[http://iossupportmatrix.com/](http://iossupportmatrix.com/) 是一个有用的资源，可用于确保包含所有需要的设备、体系结构和 iOS 版本。
-
- <a name="SDK_Options" />
-
 ## <a name="sdk-options"></a>SDK 选项
 
 Visual Studio for Mac 允许你配置两个与 SDK 相关的重要属性：用于生成软件的 iOS SDK 版本和部署目标（或所需的最低 iOS 版本）。
 
-iOS SDK 版本  选项允许你使用不同版本的 Apple 发布的 SDK，这会将 Xamarin.iOS 定向到在生成过程中应该引用的编译器、链接器和库。 
+iOS SDK 版本  选项允许你使用不同版本的 Apple 发布的 SDK，这会将 Xamarin.iOS 定向到在生成过程中应该引用的编译器、链接器和库。 右键单击该项目，然后选择“选项”  和选项窗口中的“iOS 生成”  ：
 
-部署目标  设置用于选择在其上运行应用程序的操作系统所需的最低版本。 这在项目的 Info.plist 文件中设置。 应该选取具有运行应用程序所需的所有 API 的最低版本。
+[![选择选项窗口中的 SDK 版本](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+
+部署目标  设置用于选择在其上运行应用程序的操作系统所需的最低版本。 这在项目的 Info.plist 文件中设置  。 应该选取具有运行应用程序所需的所有 API 的最低版本。
+
+[![在 Info.plist 文件中设置部署目标](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
 一般情况下，Xamarin.iOS API 会公开最新版本的 SDK 中的所有可用方法，如有必要，我们会提供允许你检测功能在运行时是否可用的方便属性（例如，`UIDevice.UserInterfaceIdiom` 和 `UIDevice.IsMultitaskingSupported` 始终在 Xamarin.iOS 上运行，我们会完成幕后的所有工作）。
-
- <a name="Linking" />
 
 ## <a name="linking"></a>链接
 
 查看[链接器](~/ios/deploy-test/linker.md)上的专用页，了解有关链接器帮助你缩小可执行文件的大小的方法，并了解如何有效地使用这种方法。
-
- <a name="Code_Generation_Engine" />
 
 ## <a name="code-generation-engine"></a>代码生成引擎
 
@@ -66,11 +62,7 @@ LLVM 优化后端引擎会生成比 Mono 引擎更快、更严格的代码，但
 
 [![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
- <a name="ARMV7_and_ARMV7s_support" />
-
 ## <a name="architecture-support"></a>体系结构支持
-
-<a name="armv6-discontinued" />
 
 ### <a name="armv6-xamarinios-discontinued-support-for-armv6-with-v810"></a>ARMv6（Xamarin.iOS 已中断通过 v8.10 对 ARMv6 的支持）
 
@@ -107,13 +99,9 @@ LLVM 优化后端引擎会生成比 Mono 引擎更快、更严格的代码，但
 
 注意，提交到 App Store 的任意生成必须包含 64 位支持，这是 [Apple](https://developer.apple.com/news/?id=12172014b) 设置的要求。 此外，iOS 11 仅支持 64 位应用程序。
 
- <a name="ARM_Thumb_Support" />
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2 支持
 
 Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支持，可以缩小可执行文件的大小，但执行时间会变慢。 ARMv7 和 ARMv7s 支持 Thumb。
-
- <a name="Conditional_framwork_useage" />
 
 ## <a name="conditional-framework-usage"></a>条件框架使用情况
 
@@ -131,4 +119,3 @@ Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支�
 ## <a name="related-links"></a>相关链接
 
 - [链接器](~/ios/deploy-test/linker.md)
-- [外部 - iOS 支持矩阵](http://iossupportmatrix.com/)

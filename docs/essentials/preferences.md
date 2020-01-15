@@ -6,16 +6,16 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
-ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
+ms.openlocfilehash: 1c6e55b69ca683b7fc1919995ba576ab77bf3c3b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54317877"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488499"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:首选项
 
-Preferences 类帮助将应用程序首选项存储在键/值存储中。
+Preferences 类帮助将应用程序首选项存储在键/值存储中  。
 
 ## <a name="get-started"></a>入门
 
@@ -29,7 +29,7 @@ Preferences 类帮助将应用程序首选项存储在键/值存储中。
 using Xamarin.Essentials;
 ```
 
-将给定密匙的值保存在首选项中：
+将给定密匙的值保存在首选项中  ：
 
 ```csharp
 Preferences.Set("my_key", "my_value");
@@ -41,7 +41,7 @@ Preferences.Set("my_key", "my_value");
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-从首选项删除密钥：
+从首选项删除密钥  ：
 
 ```csharp
 Preferences.Remove("my_key");
@@ -57,7 +57,7 @@ Preferences.Clear();
 
 ## <a name="supported-data-types"></a>支持的数据类型
 
-以下数据类型在 Preferences 中受到支持：
+以下数据类型在 Preferences 中受到支持  ：
 
 - **bool**
 - **double**
@@ -75,7 +75,7 @@ Preferences.Clear();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-所有数据都存储到[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未指定 `sharedName`，则使用默认的共享首选项，否则此名称将用于获取具有指定名称的私有共享首选项。
+所有数据都存储到[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未指定 `sharedName`，则使用默认的共享首选项，否则此名称将用于获取具有指定名称的私有共享首选项  。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -83,13 +83,15 @@ Preferences.Clear();
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用于将值存储在设备上。 如果未指定 `sharedName`，则使用 `LocalSettings`，否则此名称将用于在 `LocalSettings` 内创建新容器。
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用于将值存储在设备上。 如果未指定 `sharedName`，则使用 `LocalSettings`，否则此名称将用于在 `LocalSettings` 内创建新容器。 
+
+`LocalSettings` 还存在以下限制：每个设置的名称长度最多可为 255 个字符。 每个设置的大小最多可为 8K 字节，每个复合设置的大小最多可为 64K 字节。
 
 --------------
 
 ## <a name="persistence"></a>持久性
 
-卸载应用程序将导致所有首选项被删除。 对此有一个例外，即面向使用[__自动备份__](https://developer.android.com/guide/topics/data/autobackup)的 Android 6.0（API 级别 23）或更高版本并在其上运行的应用。 此功能默认启用并且会保留应用数据，包括共享首选项（即 Preferences API 使用的内容）。 可以遵循 Google 的[文档](https://developer.android.com/guide/topics/data/autobackup)禁用此功能。
+卸载应用程序将导致所有首选项被删除  。 对此有一个例外，即面向使用[__自动备份__](https://developer.android.com/guide/topics/data/autobackup)的 Android 6.0（API 级别 23）或更高版本并在其上运行的应用。 此功能默认启用并且会保留应用数据，包括共享首选项（即 Preferences API 使用的内容）   。 可以遵循 Google 的[文档](https://developer.android.com/guide/topics/data/autobackup)禁用此功能。
 
 ## <a name="limitations"></a>限制
 

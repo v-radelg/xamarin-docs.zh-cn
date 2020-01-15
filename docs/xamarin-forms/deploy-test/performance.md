@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
-ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681335"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487160"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>提高 Xamarin.Forms 应用性能
 
@@ -172,7 +172,7 @@ XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言
 - 避免尝试创建异步构造函数。 请改用生命周期事件或单独的初始化逻辑，以使用 `await` 正确处理任何初始化。 有关详细信息，请参阅 blog.stephencleary.com 上的 [Async 构造函数](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html)。
 - 使用惰性任务模式，避免在应用程序启动过程中等待异步操作完成。 有关详细信息，请参阅 [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/)。
 - 通过创建 `TaskCompletionSource<T>` 对象，为不使用 TAP 的现有异步操作创建任务包装器。 这些对象获得 `Task` 可编程性的优点，并使你能够控制关联 `Task` 的生存期和完成。 有关详细信息，请参阅 [TaskCompletionSource 的性质](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/)。
-asynchronous-mvvm-applications-commands）。
+ 
 - 当无需处理异步操作的结果时，返回 `Task` 对象，而不是返回等待的 `Task` 对象。 由于执行的上下文切换较少，因此性能更高。
 - 在数据可用时处理数据，或在你有多个必须以异步方式彼此通信的操作等场景下，使用任务并行库 (TPL) 数据流库。 有关详细信息，请参阅[数据流（任务并行库）](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)。
 

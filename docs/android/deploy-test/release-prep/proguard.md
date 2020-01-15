@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 854287ec22fb89ec2f0a55f8c3854dc0106fb11a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1ae7850951060f2e89a953ce554a0dbfa286c3a1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021167"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487980"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -29,7 +29,7 @@ ProGuard 使用以下步骤处理输入 APK：
 2. **优化步骤** &ndash; ProGuard 进一步优化代码。 
     在其他优化中，可将非入口点的类和方法设置为私有、静态或最终，可删除未使用的参数，并且可内联一些方法。 
 
-3. **模糊处理步骤** &ndash; 在本机 Android 开发中，ProGuard 重命名非入口点的类和类成员。 保留入口点，确保它们仍可通过其原始名称访问。 但是，Xamarin.Android 并不支持此步骤，因为该应用是使用中间语言 (IL) 编译的。
+3. **Obfuscation step** &ndash; 在本机 Android 开发中，ProGuard 重命名非入口点的类和类成员。 保留入口点，确保它们仍可通过其原始名称访问。 但是，Xamarin.Android 并不支持此步骤，因为该应用是使用中间语言 (IL) 编译的。
 
 4. **预验证步骤** &ndash; 在运行时前检查 Java 字节码，并对 Java VM 权益的类文件进行批注。 只有此步骤无需知道入口点。 
 
@@ -77,9 +77,9 @@ Xamarin.Android 链接器使用应用程序的静态分析来确定以下内容�
 
     [![选择发布配置](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
-2. 在“属性”>“Android 选项”的“包装”选项卡下，选中“启用 ProGuard”选项来启用 ProGuard    ： 
+2. 从“属性”>“Android 选项”窗口上的“代码 shrinker”下拉列表中选择“ProGuard”    ： 
 
-    [![已选中“启用 ProGuard 选项”](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
+    [![已选择 Proguard 代码 shrinker](proguard-images/03-enable-proguard-shrinker-sml.png)](proguard-images/03-enable-proguard-shrinker.png#lightbox)
 
 对于大多数 Xamarin.Android 应用，Xamarin.Android 提供的默认 ProGuard 配置文件足以删除所有（仅）未使用的代码。 若要查看默认 ProGuard 配置，请打开 **obj\\Release\\proguard\\proguard_xamarin.cfg** 处的文件。
 

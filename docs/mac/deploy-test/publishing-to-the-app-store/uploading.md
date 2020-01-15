@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fede666071aad8702eda17a94a06c7de49c7397e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e2b25468255ff84a3fe79ed4fea913e04bf88687
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029479"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489358"
 ---
 # <a name="upload-to-mac-app-store"></a>上传到 Mac App Store
 
  本指南介绍如何上传 Xamarin.Mac 应用以发布到 Mac App Store。
 
-通过 [iTunes Connect](https://itunesconnect.apple.com/) 提交应用程序供 Mac App Store 审核。
+通过 [iTunes Connect](https://itunesconnect.apple.com/) 提交应用程序供 Mac App Store 审核。 还需要 App Store 中的 [Transporter](https://apps.apple.com/us/app/transporter/id1450874784?mt=12) 工具  。
 
 1. 选择要创建的 **macOS 应用**： 
 
@@ -70,37 +70,22 @@ ms.locfileid: "73029479"
 
     [![](uploading-images/image76.png "The acceptance notification")](uploading-images/image76.png#lightbox)
 
-9. 启动应用程序加载程序，确保使用 Apple ID 进行登录。
-选择“提交应用”  继续操作： 
+9. 启动 Transporter 并使用你的 Apple ID 登录，然后选择“添加应用”   ：
 
-    [![](uploading-images/image77.png "The Application Loader interface")](uploading-images/image77.png#lightbox)
+    [![](uploading-images/transporter01-sml.png "The Application Loader interface")](uploading-images/transporter01.png#lightbox)
 
-10. 从处于“准备上传二进制文件”  状态的应用程序列表中进行选择，然后单击“下一步”  ： 
+    按照说明将应用包上传到 iTunes Connect。
 
-    [![](uploading-images/image78.png "Selecting the app to load")](uploading-images/image78.png#lightbox)
-
-11. 查看应用程序元数据，然后单击“选择...”  查找包文件： 
-
-    [![](uploading-images/image79.png "Reviewing the app metadata")](uploading-images/image79.png#lightbox)
-
-12. 使用 App Store 生成配置查找在 Visual Studio for Mac 中内置的包文件： 
-
-    [![](uploading-images/image80.png "Selecting the file to upload")](uploading-images/image80.png#lightbox)
-
-13. 按“发送”  ： 
-
-    [![](uploading-images/image81.png "Sending the app")](uploading-images/image81.png#lightbox)
-
-14. 将对包进行验证，并报告任何错误。 修复这些错误并重新上传。 成功上传后，将自动提交应用供 App Store 团队审核： 
-
-    [![](uploading-images/image82.png "An example of upload errors")](uploading-images/image82.png#lightbox)
+    > [!NOTE]
+    > [Transporter](https://apps.apple.com/us/app/transporter/id1450874784?mt=12) 替换与 Xcode 10 及更低版本一起使用的“应用程序加载程序”工具   。
+    > 应用程序加载程序在 Xcode 11 或更高版本中不再可用。
 
 应用程序通过审核后，即可从 Mac App Store 下载或购买。
 
 ## <a name="related-links"></a>相关链接
 
 - [安装](~//mac/get-started/installation.md)
-- [Hello，Mac 示例](~//mac/get-started/hello-mac.md)
+- [Hello，Mac 示例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
 - [工具指南：对应用进行代码签名](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)

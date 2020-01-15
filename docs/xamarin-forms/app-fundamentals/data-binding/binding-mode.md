@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: acfa7bc953906654567d361b93ec1ccff22c1f1b
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771695"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545638"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
 
@@ -47,9 +47,9 @@ ms.locfileid: "70771695"
 
 正如你所料，`Slider` 从 `Label` 的初始 `Opacity` 值初始化为值 1。 如左侧的 iOS 屏幕截图中所示：
 
-[![反向绑定](binding-mode-images/reversebinding-small.png "Reverse Binding")](binding-mode-images/reversebinding-large.png#lightbox "Reverse Binding")
+[![反向绑定](binding-mode-images/reversebinding-small.png "反向绑定")](binding-mode-images/reversebinding-large.png#lightbox "反向绑定")
 
-但是，正如 Android 和 UWP 屏幕截图所示，`Slider` 会继续工作，你可能会对此感到惊讶。 这似乎表明，当 `Slider`（而非 `Label`）是绑定目标时，数据绑定效果更好，因为初始化的工作方式与我们预期的一样。
+但是，正如 Android 屏幕截图所示，`Slider` 会继续工作，你可能会对此感到惊讶。 这似乎表明，当 `Slider`（而非 `Label`）是绑定目标时，数据绑定效果更好，因为初始化的工作方式与我们预期的一样。
 
 反向绑定示例与早期示例之间的差异涉及绑定模式   。
 
@@ -261,9 +261,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 首次运行程序时，`BoxView`、`Label` 和三个 `Slider` 元素均根据实例化 ViewModel 时设置的初始 `Color` 属性集从 ViewModel 中进行设置。 如左侧 iOS 屏幕截图中所示：
 
-[![简易颜色选择器](binding-mode-images/simplecolorselector-small.png "Simple Color Selector")](binding-mode-images/simplecolorselector-large.png#lightbox "Simple Color Selector")
+[![简易颜色选择器](binding-mode-images/simplecolorselector-small.png "简易颜色选择器")](binding-mode-images/simplecolorselector-large.png#lightbox "简易颜色选择器")
 
-操纵滑块时，`BoxView` 和 `Label` 会相应地更新，如 Android 和 UWP 屏幕截图所示。
+操纵滑块时，`BoxView` 和 `Label` 会相应地更新，如 Android 屏幕截图所示。
 
 在资源字典中实例化 ViewModel 是一种常见的方法。 也可以在 `BindingContext` 属性的属性元素标记内实例化 ViewModel。 在“简易颜色选择器”XAML 文件中，尝试从资源字典中删除 `HslColorViewModel` 并将其设置为 `Grid` 的 `BindingContext` 属性，如下所示  ：
 
@@ -675,7 +675,7 @@ public partial class SampleSettingsPage : ContentPage
 
 左侧的 iOS 屏幕截图显示了程序首次运行时的情况。 `SampleSettingsViewModel` 中的构造函数将背景色初始化为白色，即 `ListView` 中选择的颜色：
 
-[![示例设置](binding-mode-images/samplesettings-small.png "Sample Settings")](binding-mode-images/samplesettings-large.png#lightbox "Sample Settings")
+[![示例设置](binding-mode-images/samplesettings-small.png "示例设置")](binding-mode-images/samplesettings-large.png#lightbox "示例设置")
 
 其他屏幕截图显示已更改的设置。 尝试使用此页面时，请记住将程序置于休眠状态，或在程序运行的设备或模拟器上终止程序。 从 Visual Studio 调试器终止程序不会导致调用 `App` 类中的 `OnSleep` 替代。
 

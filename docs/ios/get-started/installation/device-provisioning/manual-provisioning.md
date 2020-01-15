@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/15/2017
-ms.openlocfilehash: 50ba4a46e9d9f7cbf5337844025790ab51e309dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 945a42485486dbfddfd023a72e88d9127651c71f
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022676"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607941"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手动预配
 
@@ -181,9 +181,10 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 8. 按“下载”  ，将预配配置文件下载到 Mac 中：
 
     [![](manual-provisioning-images/provisioning-profile06.png "Download the provisioning profile")](manual-provisioning-images/provisioning-profile06.png#lightbox)
-9. 双击文件，在 Xcode 中安装配置文件。 请注意，除非打开，否则 Xcode 可能不会显示任何可见提示来说明它已安装配置文件。 可访问“Xcode”>“偏好设置”>“帐户”  进行验证。 选择你的 Apple ID，然后单击“查看详细信息...”  。此时，应列出新的预配配置文件，如下所示：
 
-      [![](manual-provisioning-images/provisioning-profile07.png "Viewing the profile in Xcode")](manual-provisioning-images/provisioning-profile07.png#lightbox)
+9. 双击文件，在 Xcode 中安装配置文件。 请注意，除非打开，否则 Xcode 可能不会显示任何可见提示来说明它已安装配置文件。 这可以通过浏览到“Xcode”>“窗口”>“设备和模拟器”  进行验证。 右键单击你的设备，然后选择“显示预配配置文件”  ...
+
+      [![](manual-provisioning-images/provisioning-profile07-sml.png "Viewing the profile in Xcode")](manual-provisioning-images/provisioning-profile07.png#lightbox)
 
 成功创建配置文件后，可能需要刷新 Xcode，以便所有开发证书都可用于 Visual Studio for Mac 和 Visual Studio。
 
@@ -197,7 +198,9 @@ Apple Developer 门户中已创建的证书和配置文件可能不会自动显�
 2. 启动 Xcode。
 3. 选择“Xcode 菜单”>“偏好设置...” 
 4. 单击“帐户”  选项卡。
-5. 选择团队，然后单击“下载手动配置文件”按钮  ：[![](manual-provisioning-images/selectteam1.png "下载手动配置文件")](manual-provisioning-images/selectteam1.png#lightbox)
+5. 选择团队，然后单击“下载手动配置文件”按钮  ：
+
+    [![下载手动配置文件](manual-provisioning-images/selectteam1.png)](manual-provisioning-images/selectteam1.png#lightbox)
 
 6. 退出 Xcode。
 7. 启动 Visual Studio for Mac 或 Visual Studio。
@@ -215,8 +218,6 @@ Visual Studio for Mac 或 Visual Studio 将有新的证书或预配配置文件�
 > 可能需要停止和重启 Visual Studio，才能看到任何新的或修改的证书或由 Xcode 更新的配置文件。
 
 -----
-
-<a name="appservices" />
 
 ## <a name="provisioning-for-application-services"></a>对应用程序服务进行预配
 
@@ -238,11 +239,11 @@ Apple 提供一系列精选的特殊应用服务（亦称为“功能”），�
 1. 在 Mac 上插入设备。
 2. 在项目的“Info.plist”  中，确保捆绑标识符与应用 ID 匹配（除非应用 ID 是通配符）：
 
-   ![](manual-provisioning-images/deploydevice01xs.png "Entering an Identifier")
+   ![输入标识符](manual-provisioning-images/deploydevice01xs.png)
 
 3. 右键单击项目，查看“项目选项”对话框，并浏览到“生成”>“iOS 捆绑签名”  。 从“签名标识”  和“预配配置文件”  旁边的下拉列表中，验证 Visual Studio for Mac 是否可以显示正确的配置文件，然后选择特定的标识和配置文件：
 
-   ![](manual-provisioning-images/deploydevice02xs.png "Select a specific identity & profile")
+   ![选择特定的标识和配置文件](manual-provisioning-images/deploydevice02xs.png)
 
    如果设置为“自动”  ，Visual Studio for Mac 将基于步骤 2 中设置的捆绑 ID 选择标识和配置文件。
 
@@ -257,7 +258,7 @@ Apple 提供一系列精选的特殊应用服务（亦称为“功能”），�
 1. 将设备插入 Mac 生成主机。
 2. 在项目的“Info.plist”  中，确保捆绑标识符与应用 ID 匹配：
 
-   ![](manual-provisioning-images/servicevs01.png "Entering an Identifier")
+   ![输入标识符](manual-provisioning-images/servicevs01.png)
 
 3. 右键单击项目，查看“项目选项”对话框，并浏览到“生成”>“iOS 捆绑签名”  。 从“签名标识”  和“预配配置文件”  旁边的下拉列表中，验证 Visual Studio 是否可以显示正确的配置文件，然后选择特定的标识和配置文件。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 22c5b5b6479ce65c2e6b69f6ad5a98fd11ae47d7
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842862"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489994"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
@@ -27,7 +27,7 @@ Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 包含一系列选�
 > [!TIP]
 > `TabbedRenderer` for iOS 有可替代的 `GetIcon` 方法，可以用来从指定的源加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标。 此外，可以提供选定和未选定版本的图标。
 
-在 Android 上，选项卡列表显示在屏幕顶部，详细信息区域显示在下方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 但是，可以使用特定于平台布局将选项卡移动至屏幕底部。 有关图标要求的信息，请参阅 material.io 上的[选项卡](https://material.io/components/tabs/#)和 developer.android.com 上的[支持不同的像素密度](https://developer.android.com/training/multiscreen/screendensities)。 有关将选项卡移动到屏幕底部的信息，请参阅[设置 TabbedPage 工具栏位置和颜色](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
+在 Android 上，选项卡列表显示在屏幕顶部，详细信息区域显示在下方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 但是，可以使用特定于平台布局将选项卡移动至屏幕底部。 如果有五个以上的选项卡，并且选项卡列表位于屏幕底部，会显示“更多”选项卡，可用于访问其他选项卡  。 有关图标要求的信息，请参阅 material.io 上的[选项卡](https://material.io/components/tabs/#)和 developer.android.com 上的[支持不同的像素密度](https://developer.android.com/training/multiscreen/screendensities)。 有关将选项卡移动到屏幕底部的信息，请参阅[设置 TabbedPage 工具栏位置和颜色](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
 
 > [!TIP]
 > `TabbedPageRenderer` for Android AppCompat 有可替代的 `GetIconDrawable` 方法，可以用来从自定义 `Drawable` 加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标，并且可以使用顶部和底部选项卡。 或者，可替代的 `SetTabIcon` 方法可用于从顶部标签栏的自定义 `Drawable` 加载选项卡图标。
