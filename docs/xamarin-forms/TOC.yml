@@ -10,18 +10,75 @@
           href: ~/get-started/requirements.md
         - name: 安装
           href: ~/get-started/installation/index.md
-        - name: 生成首个应用
+          items:
+            - name: 在 Windows 上安装 Xamarin
+              href: ~/get-started/installation/windows.md
+              items:
+                - name: 安装 Xamarin 预览版 (Windows)
+                  href: ~/get-started/installation/windows-preview.md
+            - name: 安装 Visual Studio for Mac
+              href: /visualstudio/mac/installation/
+              items:
+                - name: 安装 Xamarin 预览版 (Mac)
+                  href: /visualstudio/mac/update/
+            - name: Xamarin 防火墙配置说明
+              href: ~/get-started/installation/firewall.md
+            - name: 卸载 Xamarin
+              href: ~/get-started/installation/uninstalling-xamarin.md
+        - name: 首个应用
           href: ~/get-started/first-app/index.md
-        - name: 单页快速入门
-          href: ~/get-started/quickstarts/single-page.md
-        - name: 多页快速入门
-          href: ~/get-started/quickstarts/multi-page.md
-        - name: 本地数据库快速入门
-          href: ~/get-started/quickstarts/database.md
-        - name: 样式设置快速入门
-          href: ~/get-started/quickstarts/styling.md
-        - name: 深入探索
-          href: ~/get-started/quickstarts/deepdive.md
+        - name: 快速入门
+          href: ~/get-started/quickstarts/index.md
+          items:
+            - name: 文件 > 新建
+              href: ~/get-started/quickstarts/single-page.md
+            - name: 多页
+              href: ~/get-started/quickstarts/multi-page.md
+            - name: 数据库
+              href: ~/get-started/quickstarts/database.md
+            - name: “样式”
+              href: ~/get-started/quickstarts/styling.md
+            - name: 深入探索
+              href: ~/get-started/quickstarts/deepdive.md
+        - name: 教程
+          href: ~/get-started/tutorials/index.yml
+          items:
+            - name: 堆积布局
+              href: ~/get-started/tutorials/stacklayout/index.yml
+            - name: Label
+              href: ~/get-started/tutorials/label/index.yml
+            - name: Button
+              href: ~/get-started/tutorials/button/index.yml
+            - name: 文本输入
+              href: ~/get-started/tutorials/entry/index.yml
+            - name: 文本编辑器
+              href: ~/get-started/tutorials/editor/index.yml
+            - name: 映像
+              href: ~/get-started/tutorials/image/index.yml
+            - name: 网格布局
+              href: ~/get-started/tutorials/grid/index.yml
+            - name: 列表
+              href: ~/get-started/tutorials/listview/index.yml
+            - name: 弹出窗口
+              href: ~/get-started/tutorials/pop-ups/index.yml
+            - name: 应用生命周期
+              href: ~/get-started/tutorials/app-lifecycle/index.yml
+            - name: 本地数据库
+              href: ~/get-started/tutorials/local-database/index.yml
+            - name: Web 服务
+              href: ~/get-started/tutorials/web-service/index.yml
+        - name: 了解 Xamarin
+          items:
+            - name: .NET 开发人员
+              href: ~/cross-platform/desktop/index.md
+            - name: Java 开发人员
+              href: ~/android/get-started/java-developers.md
+            - name: Objective-C 开发人员
+              href: ~/ios/get-started/objective-c-developers/index.md
+            - name: Azure
+              href: ~/xamarin-forms/data-cloud/index.yml
+        - name: 开发指南
+          href: ~/cross-platform/index.yml
     - name: XAML
       items:
         - name: 概述
@@ -266,17 +323,11 @@
             - name: 自定义呈现器
               href: app-fundamentals/shell/customrenderers.md
         - name: 模板
-          href: app-fundamentals/templates/index.md
           items:
+            - name: 概述
+              href: app-fundamentals/templates/index.md
             - name: 控件模板
-              href: app-fundamentals/templates/control-templates/index.md
-              items:
-                - name: 介绍
-                  href: app-fundamentals/templates/control-templates/introduction.md
-                - name: 创建控件模板
-                  href: app-fundamentals/templates/control-templates/creating.md
-                - name: 模板绑定
-                  href: app-fundamentals/templates/control-templates/template-binding.md
+              href: app-fundamentals/templates/control-template.md
             - name: 数据模板
               href: app-fundamentals/templates/data-templates/index.md
               items:

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: 736627edc8628f229e6e1a1e079fca24b8ff97db
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 47fd6d34a1ef286fa8e1a307ea6033c9c6a9feea
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490111"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955758"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
 
@@ -35,7 +35,7 @@ XAML 标记扩展帮助元素特性，若要设置从各种源，从而增强的
 - `StaticResource` 引用资源字典中的对象，如[**资源**](~/xamarin-forms/xaml/resource-dictionaries.md)字典一文中所述。
 - `DynamicResource`-响应资源字典中对象的更改，如[**动态样式**](~/xamarin-forms/user-interface/styles/dynamic.md)一文中所述。
 - `Binding`-在两个对象的属性之间建立链接，如[**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文中所述。
-- `TemplateBinding`-从控件模板执行数据绑定，如[**从控件模板绑定一**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)文中所述。
+- `TemplateBinding`-从控件模板执行数据绑定，如[**Xamarin 窗体控件模板**](~/xamarin-forms/app-fundamentals/templates/control-template.md)一文中所述。
 - `RelativeSource`-设置相对于绑定目标位置的绑定源，如[相关绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)一文中所述。
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)布局使用自定义标记扩展[ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression)。 文章中介绍了此标记扩展[ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)。

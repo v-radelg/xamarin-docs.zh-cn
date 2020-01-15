@@ -5,18 +5,18 @@ description: 本文档将 WPF 与 Xamarin 进行比较和对比。 它讨论了�
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 798839457a418d457bac83e6e20397722423dbac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016489"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955658"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与 Xamarin：相似性 & 差异
 
 ## <a name="control-templates"></a>控件模板
 
-WPF 支持*控件模板*的概念，这些模板提供控件的可视化说明（`Button`、`ListBox` 等）。 如上所述，Xamarin 使用具体的_呈现_类，此类与本机平台（IOS、Android 等）进行交互，以可视化控件。
+WPF 支持*控件模板*的概念，这些模板提供控件的可视化说明（`Button`、`ListBox`等）。 如上所述，Xamarin 使用具体的_呈现_类，此类与本机平台（IOS、Android 等）进行交互，以可视化控件。
 
 但是，Xamarin_的确_具有 `ControlTemplate` 类型-它用于主题 `Page` 对象。 它为提供一致内容的 `Page` 提供定义，但允许页的用户更改颜色、字体等，甚至添加元素以便使其对应用程序是唯一的。
 
@@ -27,13 +27,13 @@ WPF 支持*控件模板*的概念，这些模板提供控件的可视化说明�
 3. `ContentPresenter`
 4. `TemplateBinding`
 
-但必须知道，它们在 Xamarin 中的作用并_不_相同。 有关此功能的详细信息，请参阅[文档页](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)。
+但必须知道，它们在 Xamarin 中的作用并_不_相同。 有关此功能的详细信息，请参阅[文档页](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
 
 ## <a name="xaml"></a>XAML
 
 XAML 用作 WPF 和 Xamarin 的声明性标记语言。 大多数情况下，语法是相同的，主要区别是 XAML 图形定义/创建的对象。
 
-- Xamarin 支持[XAML 2009 规范](/dotnet/framework/xaml-services/xaml-2009-language-features/);这样可以更轻松地定义 `string`s、`int`s 等的数据，以及定义泛型类型和将参数传递给构造函数。
+- Xamarin 支持[XAML 2009 规范](/dotnet/framework/xaml-services/xaml-2009-language-features/);这样就可以更轻松地定义 `string`、`int`s 等数据，以及定义泛型类型和将参数传递到构造函数。
 
 - 目前没有办法动态加载 XAML，如 WPF 可以通过 `XamlReader`。 不过，你可以使用[NuGet 包](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)获得相同的基本功能。
 
@@ -72,7 +72,7 @@ Xamarin 中的可绑定属性的定义与 WPF 相同：
 
 有关完整示例，请参阅[Xamarin 中的可绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
 
-### <a name="attached-properties"></a>附加属性
+### <a name="attached-properties"></a>附加的属性
 
 附加属性是可绑定属性的子集，它们的工作方式与在 WPF 中的工作方式相同。 主要区别在于，在这种情况下，属性包装省略，并替换为所属类的一组静态 get/set 方法。 有关详细信息，请参阅[Xamarin 中的附加属性](~/xamarin-forms/xaml/attached-properties.md)。
 
@@ -80,7 +80,7 @@ Xamarin 中的可绑定属性的定义与 WPF 相同：
 
 使用绑定引擎的过程与在 WPF 中的过程相同。 可在代码隐藏中利用此方法：创建绑定到源对象（任意 .NET 类型）的 `Binding` 对象和可选属性值（如果为省略，它会将源对象视为属性本身，就像 WPF）。 然后，可以使用任何 `BindableObject` 上的 `SetBinding` 将绑定关联到 `BindableProperty`。
 
-或者，可以使用 `BindingExtension` 在 XAML 中定义绑定关系。 它与 WPF 中的扩展具有相同的基本值。
+或者，可以使用 `BindingExtension`在 XAML 中定义绑定关系。 它与 WPF 中的扩展具有相同的基本值。
 
 与 WPF 相比，绑定支持和引擎更类似于 Silverlight 实现。 在 Xamarin 中未实现某些缺少的功能。 Forms：
 
@@ -92,9 +92,9 @@ Xamarin 中的可绑定属性的定义与 WPF 相同：
   - NotifyOnSourceUpdated
   - NotifyOnTargetUpdated
   - NotifyOnValidationError
-  - System.windows.data.binding.updatesourcetrigger
+  - UpdateSourceTrigger
   - UpdateSourceExceptionFilter
-  - System.windows.data.binding.validatesondataerrors
+  - ValidatesOnDataErrors
   - ValidatesOnExceptions
   - ValidationRules 集合
   - XPath
@@ -128,7 +128,7 @@ Text={Binding Source={x:Reference otherControl}, Path=Text}
 
 Xamarin 格式完全支持值转换器。格式与 WPF 一样。 使用相同的接口形状，但 Xamarin. Forms 具有在 `Xamarin.Forms` 命名空间中定义的接口。
 
-### <a name="model-view-viewmodel"></a>模型-视图-ViewModel
+### <a name="model-view-viewmodel"></a>Model-View-ViewModel
 
 WPF 和 Xamarin 都完全支持 MVVM。
 
@@ -138,28 +138,28 @@ WPF 包含一个内置的 `RoutedCommand`，这种情况有时会使用;Xamarin.
 
 Xamarin. Forms 绑定完全支持这两个接口。 与许多基于 XAML 的框架不同，可在 Xamarin 中的后台线程上引发属性更改通知。窗体（就像 WPF）一样，绑定引擎会正确地转换到 UI 线程。
 
-此外，这两种环境都支持 `SynchronziationContext`，并 `async` / `await` 执行正确的线程封送处理。 WPF 包含所有视觉对象上的 `Dispatcher` 类，Xamarin。窗体有一个静态方法 `Device.BeginInvokeOnMainThread` 也可以使用该方法（尽管 `SynchronizationContext` 是跨平台编码的首选方法）。
+此外，这两种环境都支持 `SynchronziationContext`，并 `async`/`await` 执行正确的线程封送处理。 WPF 包含所有视觉对象上的 `Dispatcher` 类，Xamarin。窗体有一个静态方法 `Device.BeginInvokeOnMainThread` 也可以使用该方法（尽管 `SynchronizationContext` 是跨平台编码的首选方法）。
 
 - Xamarin 包含支持集合更改通知的 `ObservableCollection<T>`。
 - 您可以使用 `BindingBase.EnableCollectionSynchronization` 为集合启用跨线程更新。 API 与 WPF 变体略有不同，请[查看文档中的使用情况详细信息](xref:Xamarin.Forms.BindingBase.EnableCollectionSynchronization*)。
 
 ## <a name="data-templates"></a>数据模板
 
-数据模板在 Xamarin 中受支持，可自定义 `ListView` 行（单元）的呈现。 与 WPF 一起使用，它可以将 `DataTemplate`s 用于任何面向内容的控件，Xamarin 目前仅将其用于 `ListView`。 可以以内联方式定义模板定义（分配给 `ItemTemplate` 属性），也可以将其用作 `ResourceDictionary` 中的资源。
+数据模板在 Xamarin 中受支持，可自定义 `ListView` 行（单元）的呈现。 与 WPF 相比，可以使用 `DataTemplate`来实现面向内容的任何控件，Xamarin 目前仅将其用于 `ListView`。 可以以内联方式定义模板定义（分配给 `ItemTemplate` 属性），也可以将其用作 `ResourceDictionary`中的资源。
 
 此外，它们与 WPF 对应项并不完全相同。
 
 1. `DataTemplate` 的根元素必须_始终_是 `ViewCell` 对象。
 2. 数据模板完全支持数据触发器，但必须包括一个 `DataType` 属性，该属性指示与触发器关联的属性的类型。
-3. `DataTemplateSelector` 也受支持，但派生自 `DataTemplate`，因此只是直接分配到 `ItemTemplate` 属性（与 `ItemTemplateSelector` 在 WPF 中）。
+3. `DataTemplateSelector` 也受支持，但派生自 `DataTemplate`，因此只是直接分配到 `ItemTemplate` 属性（与 WPF 中的 `ItemTemplateSelector`）。
 
-## <a name="itemscontrol"></a>System.windows.controls.itemscontrol>
+## <a name="itemscontrol"></a>ItemsControl
 
 在 Xamarin 中没有与 `ItemsControl` 等效的内置;但有一个[适用于 Xamarin 的自定义。此处提供了窗体](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)。
 
 ## <a name="user-controls"></a>用户控件
 
-在 WPF 中，`UserControl`s 用于提供具有关联行为的 UI 部分。 在 Xamarin 中，我们将 `ContentView` 用于相同的目的。 两者都支持 XAML 中的绑定和包含。
+在 WPF 中，`UserControl`用于提供具有关联行为的 UI 部分。 在 Xamarin 中，我们将 `ContentView` 用于相同的目的。 两者都支持 XAML 中的绑定和包含。
 
 ## <a name="navigation"></a>导航
 
@@ -171,7 +171,7 @@ WPF 包含很少使用的 `NavigationService`，可用于提供类似于浏览�
 |--- |--- |
 |基于堆栈（push/pop）|NavigationPage|
 |母版/详细信息|MasterDetailPage|
-|制表符|TabbedPage|
+|选项卡|TabbedPage|
 |向左或向右轻扫|CarouselView|
 
 `NavigationPage` 是最常用的方法，并且每个页面都有一个 `Navigation` 属性，该属性可用于在导航堆栈中进行推送或弹出页面。 这是最接近于 WPF 中的 `NavigationService` 的。
