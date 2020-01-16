@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: c9f934ad690bffa2418a7221445a473d9a90fdb9
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490202"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031382"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -518,6 +518,50 @@ function factorial(num) {
 </body>
 </html>
 ```
+
+## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView 弃用和应用商店拒绝（ITMS-90809）
+
+自2020年4月起， [Apple 将拒绝](https://developer.apple.com/news/?id=12232019b)仍使用不推荐使用的 `UIWebView` API 的应用。 虽然 Xamarin 已切换为默认 `WKWebView`，但仍存在对 Xamarin 二进制文件中的旧 SDK 的引用。 当前[iOS 链接器](~/ios/deploy-test/linker.md)行为不会删除此结果，因此，在提交到应用商店时，仍会从应用中引用不推荐使用的 `UIWebView` API。
+
+链接器的预览版本可用于解决此问题。 若要启用预览，需要为链接器 `--optimize=experimental-xforms-product-type` 提供附加参数。 
+
+此操作的先决条件包括：
+
+- Xamarin **. forms 4.5 或更高**版本 &ndash; 可供 xamarin 使用的预发布版本。 forms 4.5。
+- **Xamarin ios 13.10.0.17 或更高**版本 &ndash;[在 Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)检查你的 Xamarin ios 版本。 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 中随附了此版本的 Xamarin。
+- **删除对 `UIWebView`的引用**&ndash; 你的代码不应引用 `UIWebView` 或使用 `UIWebView`的任何类。
+
+### <a name="configure-the-linker-preview"></a>配置链接器预览版
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+请按照以下步骤来删除 `UIWebView` 引用：
+
+1. **打开 ios 项目属性**&ndash; 右键单击 ios 项目，然后选择 "**属性**"。
+1. **导航到 "Ios 生成" 部分**&ndash; 选择 " **ios 生成**" 部分。
+1. 更新**其他 mtouch 参数**&ndash; 的**其他 mtouch 参数**，添加此标志 `--optimize=experimental-xforms-product-type` （除了其中可能已存在的任何值）。 
+1. **更新所有生成配置**&ndash; 使用窗口顶部的 "**配置**" 和 "**平台**" 列表更新所有生成配置。 要更新的最重要的配置是**Release/iPhone**配置，因为这通常用于创建应用商店提交的版本。
+
+在此屏幕截图中，可以看到带有新标志的窗口：
+
+[在 "iOS 生成" 部分中设置标志 ![](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+请按照以下步骤来删除 `UIWebView` 引用
+
+1. **打开 ios 项目选项**&ndash; 右键单击 ios 项目，然后选择 "**选项**"。
+1. **导航到 "Ios 生成" 部分**&ndash; 选择 " **ios 生成**" 部分。
+1. **更新附加的_mtouch_参数**&ndash; 在**附加的_mtouch_参数**将此标志添加 `--optimize=experimental-xforms-product-type` （除了其中可能已存在的任何值）。
+1. **更新所有生成配置**&ndash; 使用窗口顶部的 "**配置**" 和 "**平台**" 列表更新所有生成配置。 要更新的最重要的配置是**Release/iPhone**配置，因为这通常用于创建应用商店提交的版本。
+
+在此屏幕截图中，可以看到带有新标志的窗口：
+
+[在 "iOS 生成" 部分中设置标志 ![](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+
+-----
+
+现在，当你创建新的（发布）生成并将其提交到应用商店时，不应出现有关已弃用的 API 的警告。
 
 ## <a name="related-links"></a>相关链接
 
