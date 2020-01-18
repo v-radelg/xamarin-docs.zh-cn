@@ -1,28 +1,28 @@
 ---
 title: Xamarin 和 Azure 认知服务
-description: 向 Xamarin 应用程序添加智能 Azure 认知服务, 包括语音识别、拼写检查、文本翻译和情感识别。
+description: 向 Xamarin 应用程序添加智能 Azure 认知服务，包括语音识别、拼写检查、文本翻译和情感识别。
 ms.prod: xamarin
 ms.assetid: 64386A65-FD31-4A1B-A769-91495E57345A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2019
-ms.openlocfilehash: fed556dc303fecb92a1ce5b09bfaa1aeb0c61bd0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 03fb194a4c85d51a6fe477dcfdc8fa38fec5a89c
+ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869330"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265157"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin 和 Azure 认知服务
 
 ## <a name="introductionintroductionmd"></a>[介绍](introduction.md)
 
-Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务, 通过添加面部识别、语音识别和语言理解等功能, 使应用程序更智能。 本文介绍了演示如何从 Xamarin 应用程序调用某些 Microsoft 认知服务 Api 的示例应用程序。
+Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务，通过添加面部识别、语音识别和语言理解等功能，使应用程序更智能。 本文介绍了演示如何从 Xamarin 应用程序调用某些 Microsoft 认知服务 Api 的示例应用程序。
 
 ## <a name="speech-recognitionspeech-recognitionmd"></a>[语音识别](speech-recognition.md)
 
-Microsoft 语音 API 是基于云的 API，提供了用于处理口述的语言的算法。 本文介绍如何使用 Microsoft 语音识别 REST API 将音频转换为 Xamarin.Forms 应用程序中的文本。
+Azure Speech Service 是一种基于云的 API，它提供用于处理口述语言的算法。 本文介绍如何使用 Azure Speech Service 将语音转录应用程序中的文本。
 
 ## <a name="spell-checkspell-checkmd"></a>[拼写检查](spell-check.md)
 

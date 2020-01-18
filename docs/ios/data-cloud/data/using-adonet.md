@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: db26de8deed9945c6fff2d49f7d12de03fbe38df
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ed16c651d0b373e33d58bb73591977d3484d6e0
+ms.sourcegitcommit: be8ce3449afab22673e48b546d857431c071d66f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008241"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162941"
 ---
 # <a name="using-adonet-with-xamarinios"></a>将 ADO.NET 与 Xamarin 配合使用
 
@@ -144,7 +144,7 @@ public static string DoSomeDataAccess ()
 }
 ```
 
-## <a name="more-complex-queries"></a>更复杂的查询
+## <a name="more-complex-queries"></a>更多复杂查询
 
 由于 SQLite 允许对数据运行任意 SQL 命令，因此你可以执行所需的任何 CREATE、INSERT、UPDATE、DELETE 或 SELECT 语句。 可以在 Sqlite 网站上阅读 SQLite 支持的 SQL 命令。 在 SqliteCommand 对象上使用以下三种方法之一运行 SQL 语句：
 
@@ -209,6 +209,17 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 `ExecuteScalar` 方法的返回类型为 `object` –应根据数据库查询强制转换结果。 结果可能是来自计数查询的整数，或是单个列 SELECT 查询中的字符串。 请注意，这与返回读取器对象或受影响的行数计数的其他执行方法不同。
+
+## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
+
+还有另一个库 `Microsoft.Data.Sqlite`，可以[从 NuGet 安装](https://www.nuget.org/packages/Microsoft.Data.Sqlite)该库，它在功能上等效于 `Mono.Data.Sqlite` 并允许相同类型的查询。
+
+[这两个库](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare)与一些[特定于 Xamarin 的详细信息](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin)之间存在比较。 对于 Xamarin iOS 应用，最重要的是，必须包含初始化调用：
+
+```csharp
+// required for Xamarin.iOS
+SQLitePCL.Batteries_V2.Init();
+```
 
 ## <a name="related-links"></a>相关链接
 
