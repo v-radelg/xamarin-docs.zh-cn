@@ -95,11 +95,11 @@ Xamarin DataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 **Outlook Web Access (OWA)**
 
-![](controls-images/listitem-light-android.png "Android 上的 "有") ![](controls-images/listitem-dark-android.png "Android 上的 "有")
+![](controls-images/listitem-light-android.png "Android 上的 有") ![](controls-images/listitem-dark-android.png "Android 上的 有")
 
 **Android**
 
-![](controls-images/listitem-light-ios.png "IOS 上的 "有") ![](controls-images/listitem-dark-ios.png "IOS 上的 "有")
+![](controls-images/listitem-light-ios.png "IOS 上的 有") ![](controls-images/listitem-dark-ios.png "IOS 上的 有")
 
 ## <a name="custom-control-example"></a>自定义控件示例
 

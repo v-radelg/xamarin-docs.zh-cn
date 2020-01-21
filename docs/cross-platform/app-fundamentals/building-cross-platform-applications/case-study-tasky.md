@@ -479,7 +479,7 @@ MainPage 类使用 `TaskListViewModel` 通过 XAML 的数据绑定功能来显�
 
 应用程序使用 iOS 标准用户界面设计，如定位在导航栏中的 "添加" 按钮和使用内置**加号（+）** 图标。 它还使用默认 `UINavigationController` "后退" 按钮行为，并支持表中的 "轻扫到删除"。
 
- [![](case-study-tasky-images/ios-taskylist.png "它还使用默认的 UINavigationController "后退" 按钮行为，并支持表中的 "轻扫删除"")](case-study-tasky-images/ios-taskylist.png#lightbox)[![](case-study-tasky-images/ios-taskylist.png "它还使用默认的 UINavigationController "后退" 按钮行为，并支持表中的 "轻扫删除"")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "它还使用默认的 UINavigationController 后退 按钮行为，并支持表中的 轻扫删除")](case-study-tasky-images/ios-taskylist.png#lightbox)[![](case-study-tasky-images/ios-taskylist.png "它还使用默认的 UINavigationController 后退 按钮行为，并支持表中的 轻扫删除")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
