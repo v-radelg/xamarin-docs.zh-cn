@@ -1,45 +1,45 @@
 ---
 title: Android 平台功能
-description: 本文介绍如何将特定于 Android 的功能添加到 Xamarin 应用程序。
+description: This article explains how to add Android-specific functionality to Xamarin.Forms applications.
 ms.prod: xamarin
 ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
-ms.openlocfilehash: 94523bb019e366738de65ce0b05c70264fce738b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: ce8d0b834cff5b2eee46b4ace5de4a95d196726d
+ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489760"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549992"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
-开发适用于 Android 的 Xamarin 应用程序需要 Visual Studio。 "[要求" 页](~/get-started/requirements.md)包含有关先决条件的详细信息。
+Developing Xamarin.Forms applications for Android requires Visual Studio. The [supported platforms page](~/get-started/supported-platforms.md) contains more information about the pre-requisites.
 
-## <a name="platform-specifics"></a>平台细节
+## <a name="platform-specifics"></a>Platform-specifics
 
 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。
 
-以下特定于平台的功能适用于 Xamarin。 Forms 视图、页面和 Android 上的布局：
+The following platform-specific functionality is provided for Xamarin.Forms views, pages, and layouts on Android:
 
-- 控制 Z 顺序的可视元素来确定绘制顺序。 有关详细信息，请参阅[Android 上的 VisualElement 提升](visualelement-elevation.md)。
-- 禁用上受支持的旧颜色模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 有关详细信息，请参阅[VisualElement 旧版彩色模式（Android](legacy-color-mode.md)）。
+- 控制 Z 顺序的可视元素来确定绘制顺序。 For more information, see [VisualElement Elevation on Android](visualelement-elevation.md).
+- 禁用上受支持的旧颜色模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 For more information, see [VisualElement Legacy Color Mode on Android](legacy-color-mode.md).
 
-以下特定于平台的功能适用于适用于 Android 的 Xamarin 窗体视图：
+The following platform-specific functionality is provided for Xamarin.Forms views on Android:
 
-- 使用默认填充边距和阴影的 Android 按钮的值。 有关详细信息，请参阅[Android 上的按钮填充和阴影](button-padding-shadow.md)。
-- 输入的法编辑器为设置选项的软键盘[ `Entry` ](xref:Xamarin.Forms.Entry)。 有关详细信息，请参阅[Android 上的条目输入法编辑器选项](entry-ime-options.md)。
-- 在启用投影`ImageButton`。 有关详细信息，请参阅[Android 上的 ImageButton 投影](imagebutton-drop-shadow.md)。
-- 在[`ListView`](xref:Xamarin.Forms.ListView)中启用快速滚动有关详细信息，请参阅[在 Android 上进行 ListView 快速滚动](listview-fast-scrolling.md)。
-- 控制在打开 `SwipeView`时使用的转换。 有关详细信息，请参阅[SwipeView 滑动过渡模式](swipeview-swipetransitionmode.md)。
-- 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合的内容。 有关详细信息，请参阅[Android 上的 Web 视图混合内容](webview-mixed-content.md)。
-- 启用缩放[`WebView`](xref:Xamarin.Forms.WebView)。 有关详细信息，请参阅[Android 上的 Web 视图缩放](webview-zoom-controls.md)。
+- 使用默认填充边距和阴影的 Android 按钮的值。 For more information, see [Button Padding and Shadows on Android](button-padding-shadow.md).
+- 输入的法编辑器为设置选项的软键盘[ `Entry` ](xref:Xamarin.Forms.Entry)。 For more information, see [Entry Input Method Editor Options on Android](entry-ime-options.md).
+- 在启用投影`ImageButton`。 For more information, see [ImageButton Drop Shadows on Android](imagebutton-drop-shadow.md).
+- Enabling fast scrolling in a [`ListView`](xref:Xamarin.Forms.ListView) For more information, see [ListView Fast Scrolling on Android](listview-fast-scrolling.md).
+- Controlling the transition that's used when opening a `SwipeView`. For more information, see [SwipeView Swipe Transition Mode](swipeview-swipetransitionmode.md).
+- 控制是否[ `WebView` ](xref:Xamarin.Forms.WebView)可以显示混合的内容。 For more information, see [WebView Mixed Content on Android](webview-mixed-content.md).
+- Enabling zoom on a [`WebView`](xref:Xamarin.Forms.WebView). For more information, see [WebView Zoom on Android](webview-zoom-controls.md).
 
-以下特定于平台的功能适用于 Xamarin 上的 Xamarin 表单元格：
+The following platform-specific functionality is provided for Xamarin.Forms cells on Android:
 
-- 启用[`ViewCell`](xref:Xamarin.Forms.ViewCell)上下文操作旧版模式，以便在[`ListView`](xref:Xamarin.Forms.ListView)中的选定项发生更改时不会更新上下文操作菜单。 有关详细信息，请参阅[Android 上的 ViewCell 上下文操作](viewcell-context-actions.md)。
+- Enabling [`ViewCell`](xref:Xamarin.Forms.ViewCell) context actions legacy mode, so that the context actions menu is not updated when the selected item in a [`ListView`](xref:Xamarin.Forms.ListView) changes. 有关详细信息，请参阅[Android 上的 ViewCell 上下文操作](viewcell-context-actions.md)。
 
 以下特定于平台的功能适用于 Android 上的 Xamarin 窗体页：
 
