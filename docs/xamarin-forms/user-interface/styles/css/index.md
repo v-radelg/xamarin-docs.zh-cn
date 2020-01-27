@@ -1,5 +1,5 @@
 ---
-title: 使用级联样式表设置 Xamarin.Forms 应用的样式 (CSS)
+title: CSS(CSS 스타일시트)를 사용하여 Xamarin.Forms 앱 스타일 지정
 description: Xamarin.Forms 支持使用级联样式表 (CSS) 样式可视元素。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: 8425db35b64ec72ba0384f837e01acca49bd20f7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 726ebd55b38460ee966113e4ee487327cd42b03d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490046"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724191"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms 支持使用级联样式表 (CSS) 样式可视元素。_
 
@@ -74,7 +74,7 @@ stacklayout>image {
 在 Xamarin.Forms 中，可以分析和计算在运行时，而不是编译时，CSS 样式表和样式表是在使用重新分析。
 
 > [!NOTE]
-> 目前，所有可以实现的 XAML 样式的样式不能使用 CSS 执行。 但是，可以使用 XAML 样式来补充 CSS Xamarin.Forms 当前不支持的属性。 有关 XAML 样式的详细信息，请参阅[使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
+> 目前，所有可以实现的 XAML 样式的样式不能使用 CSS 执行。 但是，可以使用 XAML 样式来补充 CSS Xamarin.Forms 当前不支持的属性。 XAML 스타일에 대한 자세한 내용은 [XAML 스타일을 사용하여 Xamarin.Forms 앱 스타일 지정](~/xamarin-forms/user-interface/styles/xaml/index.md)을 참조하세요.
 
 [MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)示例演示了如何使用 CSS 来设置简单的应用程序的样式，并在下面的屏幕截图中所示：
 
@@ -319,7 +319,7 @@ stacklayout>image {
 
 Xamarin.Forms 支持以下 CSS 选择器：
 
-|选择器|示例|描述|
+|선택기|示例|설명|
 |---|---|---|
 |`.class`|`.header`|选择所有元素与`StyleClass`包含 header 属性。 请注意，此选择器区分大小写。|
 |`#id`|`#email`|选择所有元素具有`StyleId`设置为`email`。 如果`StyleId`未设置，则回退到`x:Name`。 使用 XAML 时,`x:Name`最好通过`StyleId`。 请注意，此选择器区分大小写。|
@@ -340,27 +340,27 @@ Xamarin.Forms 支持以下 CSS 选择器：
 以下选择器是当前不受支持：
 
 - `[attribute]`
-- `@media` 和 `@supports`
-- `:` 和 `::`
+- `@media` 및 `@supports`
+- `:` 및 `::`
 
 > [!NOTE]
 > 特异性和特异性替代是不受支持。
 
-## <a name="property-reference"></a>属性引用
+## <a name="property-reference"></a>속성 참조
 
 通过 Xamarin.Forms 支持以下 CSS 属性 (在**值**列中，类型为_斜体_，而字符串文本是`gray`):
 
-|Property|适用于|值|示例|
+|속성|에 적용됩니다.|값|示例|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_颜色_ \| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字符串_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`, `ImageButton`|_颜色_ \| `initial`|`border-color: #9acd32;`|
+|`border-color`|`Button`에서 `Frame`에서 `ImageButton`|_颜色_ \| `initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_双精度_ \| `initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_双精度_ \| `initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`、`BoxView`、`Button`、`CheckBox`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`ProgressBar`、`SearchBar`、`Switch`、`TimePicker`|_颜色_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_颜色_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_双精度_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
@@ -405,7 +405,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 是当前不支持以下属性：
 
-- `all: initial`。
+- `all: initial`.
 - 布局属性 （框中，或网格）。
 - 速记属性，如`font`，和`border`。
 
@@ -417,7 +417,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 此外支持以下 Xamarin.Forms 特定 CSS 属性 (在**值**列中，类型为_斜体_，而字符串文本是`gray`):
 
-|Property|适用于|值|示例|
+|속성|에 적용됩니다.|값|示例|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_颜色_ \| `initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_颜色_ \| `initial` |`-xf-bar-text-color: gray`|
@@ -426,8 +426,8 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`-xf-max-track-color`|`Slider`|_颜色_ \| `initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_颜色_ \| `initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` 仅支持`ScrollView`。 |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_带引号的文本_ \| `initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_颜色_ \| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-placeholder`|`Entry`에서 `Editor`에서 `SearchBar`|_带引号的文本_ \| `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`에서 `Editor`에서 `SearchBar`|_颜色_ \| `initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_双精度_ \| `initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_颜色_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
@@ -438,7 +438,7 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 以下 Xamarin。还支持以下 Xamarin Shell 特定 CSS 属性（在 "**值**" 列中，类型为_斜体_，而字符串文字 `gray`）：
 
-|Property|适用于|值|示例|
+|속성|에 적용됩니다.|값|示例|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_颜色_ \| `initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_颜色_ \| `initial` |`-xf-shell-background: green;`|
@@ -452,11 +452,11 @@ Xamarin.Forms 支持以下 CSS 选择器：
 |`-xf-shell-title`|`Element`|_颜色_ \| `initial` |`-xf-shell-title: teal;`|
 |`-xf-shell-unselected`|`Element`|_颜色_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
-### <a name="color"></a>颜色
+### <a name="color"></a>색
 
 以下`color`支持值：
 
-- `X11` [颜色](https://en.wikipedia.org/wiki/X11_color_names/)，其中匹配 CSS 颜色、 UWP 预定义的颜色和 Xamarin.Forms 的颜色。 请注意这些颜色值是不区分大小写。
+- `X11` [颜色](https://en.wikipedia.org/wiki/X11_color_names)，其中匹配 CSS 颜色、 UWP 预定义的颜色和 Xamarin.Forms 的颜色。 请注意这些颜色值是不区分大小写。
 - 十六进制颜色： `#rgb`， `#argb`， `#rrggbb`， `#aarrggbb`
 - rgb 颜色： `rgb(255,0,0)`， `rgb(100%,0%,0%)`。 值为范围内，0-255 或 0%-100%。
 - rgba 颜色： `rgba(255, 0, 0, 0.8)`， `rgba(100%, 0%, 0%, 0.8)`。 不透明度值为 0.0 到 1.0 范围内。
@@ -493,8 +493,8 @@ Xamarin.Forms 支持以下 CSS 选择器：
 
 **Xamarin 3.0 CSS 视频**
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [MonkeyAppCSS （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
-- [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [리소스 사전](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [XAML 스타일을 사용하여 Xamarin.Forms 앱 스타일 지정](~/xamarin-forms/user-interface/styles/xaml/index.md)

@@ -1,31 +1,31 @@
 ---
 title: 第 2 章的摘要。 应用剖析
-description: 使用 Xamarin.Forms 创建移动应用：第 2 章的摘要。 应用剖析
+description: 使用 Xamarin.Forms 创建移动应用： 第 2 章的摘要。 应用剖析
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 95defd11a9e568d1089cb2f262cb323045b6c247
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334305"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724983"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章的摘要。 应用剖析
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 
 > [!NOTE]
 > 此页上的说明表明其中 Xamarin.Forms 已脱离一书中介绍的内容的区域。
 
 在 Xamarin.Forms 应用程序中，占用屏幕空间的对象称为*可视元素*、 通过封装[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)类。 可视元素可以拆分为三个类别对应于这些类：
 
-- [页](xref:Xamarin.Forms.Page)
-- [布局](xref:Xamarin.Forms.Layout)
-- [视图](xref:Xamarin.Forms.View)
+- [페이지](xref:Xamarin.Forms.Page)
+- [레이아웃](xref:Xamarin.Forms.Layout)
+- [보기](xref:Xamarin.Forms.View)
 
 一个`Page`派生占据整个屏幕或几乎整个屏幕。 通常情况下，一个页面的子级是`Layout`派生类来组织子可视元素。 子级`Layout`可以是其他`Layout`类或`View`派生类 (通常称为*元素*)，这是熟悉的对象，如文本、 位图、 滑块、 按钮、 列表框等。
 
@@ -38,14 +38,12 @@ ms.locfileid: "61334305"
 > [!NOTE]
 > .NET Standard 库已替换为可移植类库。 本书中的所有示例代码已都转换为使用.NET 标准库。
 
-此示例演示在 Visual Studio 中创建不作任何修改的 Xamarin.Forms 解决方案。 此解决方案由六个项目组成：
+此示例演示在 Visual Studio 中创建不作任何修改的 Xamarin.Forms 解决方案。 此解决方案由四个项目组成：
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello)，由其他项目共享的可移植类库 (PCL)
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid)，适用于 Android 的应用程序项目
 - [**Hello.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS)，适用于 iOS 的应用程序项目
 - [**Hello.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP)，通用 Windows 平台 （Windows 10 和 Windows 10 移动版） 的应用程序项目
-- [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows)，用于 Windows 8.1 的应用程序项目
-- [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone)，适用于 Windows Phone 8.1 应用程序项目
 
 > [!NOTE]
 > Xamarin.Forms 不再支持 Windows 8.1、 Windows Phone 8.1 或 Windows 10 移动版，但在 Windows 10 桌面版上运行的 Xamarin.Forms 应用程序。
@@ -185,11 +183,11 @@ ms.locfileid: "61334305"
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`HorizontalOptions` 并`VerticalOptions`是在 Xamarin.Forms 布局中，最重要的属性和中的更详细地讨论[**第 4 章。滚动堆栈**](chapter04.md)。
+`HorizontalOptions` 和 `VerticalOptions` 是 Xamarin 中最重要的属性，详见[**第4章。滚动堆栈**](chapter04.md)。
 
 下面是使用结果`HorizontalOptions`并`VerticalOptions`的属性`Label`都设置为`LayoutOptions.Center`:
 
-[![Greetings 程序的三个屏幕截图](images/ch02fg05-small.png "水平和垂直居中标签")](images/ch02fg05-large.png#lightbox "水平和垂直居中标签")
+[![问候语程序的三个屏幕截图](images/ch02fg05-small.png "水平和垂直居中标签")](images/ch02fg05-large.png#lightbox "水平和垂直居中标签")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>解决方案 5。 在标签中的文本居中
 
@@ -201,7 +199,7 @@ ms.locfileid: "61334305"
 
 这两个属性定义仅可由`Label`，而`HorizontalAlignment`并`VerticalAlignment`属性定义由`View`并由所有继承`View`派生类。 下的视觉效果可能看起来类似，但它们有很大差异，如下一章中所示。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [第 2 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
 - [第 2 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)

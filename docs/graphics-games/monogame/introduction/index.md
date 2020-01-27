@@ -1,21 +1,21 @@
 ---
 title: MonoGame 的游戏开发简介
-description: 此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。  它介绍常见的游戏编程概念, 如图形、输入、游戏实体和物理学。
+description: 此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。  它介绍常见的游戏编程概念，如图形、输入、游戏实体和物理学。
 ms.prod: xamarin
 ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8ffb62c8715ff60e9b0ea3b2bc536f3441fb8765
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978394"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724672"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>MonoGame 的游戏开发简介
 
-_此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。它介绍常见的游戏编程概念, 如图形、输入、游戏实体和物理学。_
+_此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。 它介绍常见的游戏编程概念，如图形、输入、游戏实体和物理学。_
 
 本文介绍了用于制作跨平台游戏的 MonoGame API 技术。 有关平台的完整列表，请参阅 [MonoGame 网站](http://www.monogame.net/)。 本教程将使用 C＃ 代码示例，虽然 MonoGame 也完全可以使用F＃。
 
@@ -40,11 +40,9 @@ MonoGame 库旨在模仿 Microsoft XNA 库的功能和语法。  所有 MonoGame
 - [第 1 部分 – 创建跨平台 MonoGame 项目](~/graphics-games/monogame/introduction/part1.md)
 - [第 2 部分 – 实现 WalkingGame ](~/graphics-games/monogame/introduction/part2.md)
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [WalkingGame MonoGame 项目 (示例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
-- [XNB 字体](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
-- [XNB 字体 Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
+- [WalkingGame MonoGame 项目（示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
 - [NuGet 上的 MonoGame Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [NuGet 上的 MonoGame iOS](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [MonoGame API 文档](http://www.monogame.net/documentation/?page=main)

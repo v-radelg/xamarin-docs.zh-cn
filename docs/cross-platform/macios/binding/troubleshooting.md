@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: fe4b9ade9e6e462c3472a8bb3bb8750ed6cac326
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8194c369aa0e4f8bb17a1a162354b4f72c6aaa41
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015887"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725330"
 ---
 # <a name="binding-troubleshooting"></a>绑定疑难解答
 
@@ -42,17 +42,17 @@ ms.locfileid: "73015887"
 
 ## <a name="reporting-bugs"></a>报告 bug
 
-你的反馈对我们非常重要。 如果发现 Xamarin 的任何问题：
+고객 의견은 품질 향상에 큰 도움이 됩니다. 如果发现 Xamarin 的任何问题：
 
-- 查看 [Xamarin.Mac 论坛](https://forums.xamarin.com/categories/mac)
-- 搜索[问题存储库](https://github.com/xamarin/xamarin-macios/issues) 
-- 切换到 GitHub 问题之前，会在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) 中跟踪 Xamarin 问题。 请在其中搜索匹配的问题。
-- 如果找不到匹配的问题，请在 [GitHub 问题存储库](https://github.com/xamarin/xamarin-macios/issues/new)中提交一个新问题。
+- [Xamarin.Mac 포럼](https://forums.xamarin.com/categories/xamarin-mac) 확인
+- [문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues) 검색
+- GitHub 문제로 전환하기 전에 Xamarin 문제가 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)에서 추적되었습니다. 여기서 일치하는 문제를 검색해 보세요.
+- 일치하는 문제를 찾을 수 없는 경우 [GitHub 문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues/new)에서 새 문제를 제출하세요.
 
-GitHub 的问题是完全公开的。 不能隐藏注释或附件。 
+GitHub 문제는 모두 공용입니다. 설명 또는 첨부 파일을 숨길 수 없습니다.
 
-请尽可能多地包含以下内容：
+다음 정보를 가능한 많이 포함하세요.
 
-- 一个重现此问题的简单示例。 在可能的情况下，这非常有用。 
-- 故障的完整堆栈跟踪。
-- 故障周围的 C# 代码。
+- 문제를 재현하는 간단한 예제. 문제를 재현할 수 있다면 **매우 유용합니다**.
+- 크래시의 전체 스택 추적.
+- 크래시 주변의 C# 코드.

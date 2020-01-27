@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61384408"
 ---
 图像文件可以添加到平台项目中，并从 Xamarin.Forms 共享代码中引用。 当图像特定于平台时，例如在不同平台上使用不同分辨率或稍微不同的设计时，需要这种分发图像的方法。
@@ -20,11 +20,11 @@ ms.locfileid: "61384408"
 
 1. 在“解决方案资源管理器”的“ImageTutorial.iOS”项目中，展开“资产目录”，然后双击“资产”将其打开。 然后，在“Assets.xcassets“选项卡中，单击”加号“按钮并选择”添加图像集“：
 
-    ![在 Visual Studio 中的资产目录中创建新图像集的屏幕截图](../images/vs/new-image-set.png "新资产目录图像集")
+    ![在 Visual Studio 的资产目录中创建新图像集的屏幕截图](../images/vs/new-image-set.png "新资产目录图像集")
 
 1. 在“Assets.xcassets”选项卡中，选择新的图像集，然后将显示编辑器：
 
-    ![Visual Studio 中的资产目录中新图像集的屏幕截图](../images/vs/new-image-set-editor.png "资产目录图像集编辑器")
+    ![Visual Studio 的资产目录中新图像集的屏幕截图](../images/vs/new-image-set-editor.png "资产目录图像集编辑器")
 
 1. 将“XamarinLogo.png”从文件系统拖到“通用”类别的“1x”框：
 
@@ -32,7 +32,7 @@ ms.locfileid: "61384408"
 
 1. 在“Assets.xcassets“选项卡中，右键单击新图像集的名称并将其重命名为“XamarinLogo“：
 
-    ![Visual Studio 中重命名的图像集的屏幕截图](../images/vs/rename-image-set.png "重命名的图像集")
+    ![Visual Studio 中重命名的图像集的屏幕截图](../images/vs/rename-image-set.png "已重命名的图像集")
 
     保存并关闭“Assets.xcassets“选项卡。
 
@@ -58,7 +58,7 @@ ms.locfileid: "61384408"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![iOS 和 Android 上显示本地图像的图像视图的屏幕截图](../images/local-file.png "显示本地图像的图像视图")](../images/local-file-large.png#lightbox "Image view displaying a local image")
+    [![iOS 和 Android 上显示本地图像的图像视图的屏幕截图](../images/local-file.png "显示本地图像的图像视图")](../images/local-file-large.png#lightbox "显示本地图像的图像视图")
 
     有关本地图像的详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[本地图像](~/xamarin-forms/user-interface/images.md#local-images)。
 
@@ -66,11 +66,11 @@ ms.locfileid: "61384408"
 
 1. 在“Solution Pad“的”ImageTutorial.iOS“项目中，双击”Assets.xcassets“以将其打开。 然后在“资产列表”中，右键单击并选择“新图像集”：
 
-    ![Visual Studio for Mac 中在资产目录中创建新图像集的屏幕截图](../images/vsmac/new-image-set.png "新资产目录图像集")
+    ![在 Visual Studio for Mac 的资产目录中创建新图像集的屏幕截图](../images/vsmac/new-image-set.png "新资产目录图像集")
 
 1. 在“资产列表”选项卡中，选择新的图像集，然后将显示编辑器：
 
-    ![Visual Studio for Mac 中资产目录中的新图像集的屏幕截图](../images/vsmac/new-image-set-editor.png "资产目录图像集编辑器")
+    ![Visual Studio for Mac 的资产目录中新图像集的屏幕截图](../images/vsmac/new-image-set-editor.png "资产目录图像集编辑器")
 
 1. 将“XamarinLogo.png”从文件系统拖到“通用”类别的“1x”框：
 
@@ -78,7 +78,7 @@ ms.locfileid: "61384408"
 
 1. 在“资产列表“中，双击新图像集的名称并将其重命名为“XamarinLogo“：
 
-    ![Visual Studio for Mac 中重命名的图像集的屏幕截图](../images/vsmac/rename-image-set.png "重命名的图像集")
+    ![Visual Studio for Mac 中重命名的图像集的屏幕截图](../images/vsmac/rename-image-set.png "已重命名的图像集")
 
 1. 在“Solution Pad”中的“ImageTutorial.Android“项目中，展开“资源”文件夹。 然后，将“XamarinLogo.png“从文件系统拖动至“可绘制“文件夹。
 
@@ -104,6 +104,6 @@ ms.locfileid: "61384408"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![iOS 和 Android 上显示本地图像的图像视图的屏幕截图](../images/local-file.png "显示本地图像的图像视图")](../images/local-file-large.png#lightbox "Image view displaying a local image")
+    [![iOS 和 Android 上显示本地图像的图像视图的屏幕截图](../images/local-file.png "显示本地图像的图像视图")](../images/local-file-large.png#lightbox "显示本地图像的图像视图")
 
     有关本地图像的详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[本地图像](~/xamarin-forms/user-interface/images.md#local-images)。

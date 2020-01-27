@@ -1,21 +1,21 @@
 ---
-title: 第 6 部分 - 测试和应用商店审批
+title: 6부 - 테스트 및 App Store 승인
 description: 本文档介绍如何在设备上测试跨平台应用程序，如何管理测试用例，自动执行测试，运行单元测试，以及如何完成应用提交过程。
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9f84192a312f9aba98817b75c058229e6c721bb
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016844"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723617"
 ---
-# <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 测试和应用商店审批
+# <a name="part-6---testing-and-app-store-approvals"></a>6부 - 테스트 및 App Store 승인
 
-## <a name="testing"></a>正在测试
+## <a name="testing"></a>테스트
 
 许多应用程序（甚至是 Android 应用程序）在发布之前都必须传递审批过程;因此测试非常关键，可以确保您的应用程序进入市场（让您的客户独自成功）。 测试可以采用多种形式，从开发人员级单元测试到跨各种硬件管理 beta 测试。
 
@@ -31,9 +31,9 @@ ms.locfileid: "73016844"
 
 移动电话和平板电脑生态系统一直在不断增长，因此无法在不断增加的可用设备上进行测试。 若要解决此问题，可以使用许多服务来远程控制多个不同的设备，以便可以在不需要直接投入大量硬件的情况下安装和测试应用程序。
 
-[App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)提供一种简单的方法来测试数百台不同设备上的 IOS 和 Android 应用程序。
+App Center 测试提供一种简单的方法来测试数百台不同设备上的 iOS 和 Android 应用程序。 有关详细信息，请参阅[准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)和[准备 xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
-### <a name="test-management"></a>测试管理
+### <a name="test-management"></a>Test Management
 
 在组织内测试应用程序或管理具有外部用户的测试版程序时，有两个难题：
 
@@ -48,7 +48,7 @@ ms.locfileid: "73016844"
 
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)可用于创建可在本地运行或上载到[App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/)的自动用户界面测试脚本。
 
-## <a name="unit-testing"></a>单元测试
+## <a name="unit-testing"></a>단위 테스트
 
 ### <a name="touchunit"></a>触控单元
 
@@ -56,7 +56,7 @@ Xamarin 包括一个名为 Touch 的单元测试框架，该框架遵循 JUnit/N
 
 有关编写测试和运行 Touch 的详细信息，请参阅我们[的对 Xamarin iOS 文档的单元测试](~/ios/deploy-test/touch.unit.md)。
 
-### <a name="andrunit"></a>Andr
+### <a name="andrunit"></a>Andr.Unit
 
 有一个面向 Touch 的开源等效项，它称为 Andr。 可以从[github](https://github.com/spouliot/Andr.Unit)下载该工具，并在[@spouliot的博客](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)上阅读有关该工具的信息。
 
@@ -79,7 +79,7 @@ Apple 和 Microsoft 仅在其平台上操作应用商店：应用商店和 Marke
 
 本部分的其余部分将讨论在没有任何短暂的情况下，应考虑的一些事项，以确保应用获得批准。
 
-### <a name="quality"></a>质量
+### <a name="quality"></a>품질
 
 这听起来很明显，但应用程序通常会被拒绝，因为这些应用程序不能达到一定级别的质量：毕竟，这就是特选存储在一开始就有批准过程的原因！
 

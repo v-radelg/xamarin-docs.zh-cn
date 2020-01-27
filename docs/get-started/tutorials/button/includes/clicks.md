@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61372902"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -33,7 +33,7 @@ ms.locfileid: "61372902"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 单击 [`Button`](xref:Xamarin.Forms.Button)，观察其显示的文本是否更改：
 
-    [![在 iOS 和 Android 上收到单击后按钮文本更改的屏幕截图](../images/handle-button-click.png "处理按钮单击事件")](../images/handle-button-click-large.png#lightbox "Handle a button click")
+    [![在 iOS 和 Android 上收到单击后按钮文本更改的屏幕截图](../images/handle-button-click.png "处理按钮单击")](../images/handle-button-click-large.png#lightbox "处理按钮单击")
 
     有关处理按钮单击事件的详细信息，请参阅 [Xamarin.Forms 按钮](~/xamarin-forms/user-interface/button.md)指南中的[处理按钮单击事件](~/xamarin-forms/user-interface/button.md#handling-button-clicks)。
 
@@ -64,6 +64,6 @@ ms.locfileid: "61372902"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 单击 [`Button`](xref:Xamarin.Forms.Button)，观察其显示的文本是否更改：
 
-    [![在 iOS 和 Android 上收到单击后按钮文本更改的屏幕截图](../images/handle-button-click.png "处理按钮单击事件")](../images/handle-button-click-large.png#lightbox "Handle a button click")
+    [![在 iOS 和 Android 上收到单击后按钮文本更改的屏幕截图](../images/handle-button-click.png "处理按钮单击")](../images/handle-button-click-large.png#lightbox "处理按钮单击")
 
     有关处理按钮单击事件的详细信息，请参阅 [Xamarin.Forms 按钮](~/xamarin-forms/user-interface/button.md)指南中的[处理按钮单击事件](~/xamarin-forms/user-interface/button.md#handling-button-clicks)。

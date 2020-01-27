@@ -6,19 +6,19 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 372a51ba204b3b87d1bb3917b26c0ffb8acfceb6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dee7f4fa0b3d8fbd0b3ed57e885c9f5083d9875e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015136"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725294"
 ---
 # <a name="unified-api-overview"></a>Unified API 概述
 
 Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码，并支持具有相同二进制文件的32和64位应用程序。 默认情况下，在新的 Xamarin 和 Xamarin 项目中使用 Unified API。
 
 > [!IMPORTANT]
-> 已不推荐使用 Unified API 之前的 Xamarin Classic API。 
+> 已不推荐使用 Unified API 之前的 Xamarin Classic API。
 >
 > - 支持 Classic API （monotouch.dialog）的最新版本的 Xamarin 是 Xamarin 9.10。
 > - Xamarin 仍支持 Classic API，但不再更新。 由于已弃用，因此开发人员应将其应用程序移到 Unified API。
@@ -27,13 +27,13 @@ Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码，并支持具�
 
 遵循适用于你的平台的相关说明：
 
-- [更新现有应用](updating-apps.md)
-- [更新现有 iOS 应用](updating-ios-apps.md)
-- [更新现有 Mac 应用](updating-mac-apps.md)
-- [更新现有 Xamarin.Forms 应用](updating-xamarin-forms-apps.md)
-- [将绑定迁移到 Unified API](update-binding.md)
+- [기존 앱 업데이트](updating-apps.md)
+- [기존 iOS 앱 업데이트](updating-ios-apps.md)
+- [기존 Mac 앱 업데이트](updating-mac-apps.md)
+- [기존 Xamarin.Forms 앱 업데이트](updating-xamarin-forms-apps.md)
+- [바인딩을 Unified API로 마이그레이션](update-binding.md)
 
-## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[将代码更新为 Unified API 的提示](updating-tips.md)
+## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[코드를 Unified API로 업데이트하는 팁](updating-tips.md)
 
 不管你要迁移哪些应用程序，请查看[以下提示](updating-tips.md)，以帮助你成功更新到 Unified API。
 
@@ -98,7 +98,7 @@ Unified API 将删除已弃用的方法，并且在 API 名称中有几个错误
 Unified API 引入了兼容包的新平台标识符- **iOS10**。 需要更新现有 NuGet 包以添加对此平台的支持，方法是针对 Unified API 进行构建。
 
 > [!IMPORTANT]
-> 如果您在_同一 Xamarin iOS 项目中出现错误 "错误3不能同时包括 ' monotouch.dialog ' 和 ' xamarin. .dll '"，则会显式引用 "xamarin"，而 "monotouch.dialog" 被 "xxx，Version = 0.0.000，Culture =" 引用非特定类型，PublicKeyToken = null ' "_ 将应用程序转换为统一 api 后，通常是因为项目中的组件或 NuGet 包尚未更新到 Unified API。 需要删除现有的组件/NuGet，更新到支持统一 Api 的版本，并执行干净的生成。
+> 如果在同一 Xamarin 中出现错误，格式为 _"错误3不能同时包括 ' monotouch.dialog ' 和 ' Xamarin. .dll '"。 iOS 项目-"Xamarin. .dll" 是显式引用的，而 "monotouch.dialog" 是在将应用程序转换为统一 api 后由 "xxx，Version = 0.0.000，Culture = 中立，PublicKeyToken = null" "引用_的，则通常是因为项目中的组件或 NuGet 包尚未更新到 Unified API。 需要删除现有的组件/NuGet，更新到支持统一 Api 的版本，并执行干净的生成。
 
 ### <a name="the-road-to-64-bits"></a>64位的道路
 
@@ -106,7 +106,7 @@ Unified API 引入了兼容包的新平台标识符- **iOS10**。 需要更新�
 
  <a name="new-data-types" />
 
-#### <a name="new-data-types"></a>新数据类型
+#### <a name="new-data-types"></a>새 데이터 형식
 
 不同之处在于，Mac 和 iOS Api 使用一种特定于体系结构的数据类型，这些数据类型在32位平台上始终32位，在64位平台上使用64位。
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>数组和 System.object
 
-由于C#索引器需要某种类型的`int`，因此必须将 `nint`值显式转换为`int`，以便访问集合或数组中的元素。 例如:
+由于C#索引器需要某种类型的 `int`，因此必须将 `nint` 值显式转换为 `int`，以便访问集合或数组中的元素。 예를 들면 다음과 같습니다.:
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -228,7 +228,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 ### <a name="custom-delegates-replaced-with-actiont"></a>自定义委托替换为操作\<T >
 
-在**统一**的部分（例如一个参数）中，.net 委托已替换为 `Action<T>`。 例如，
+在**统一**的部分（例如一个参数）中，.net 委托已替换为 `Action<T>`。 예:
 
 ```csharp
 public delegate void NSNotificationHandler (NSNotification notification);
@@ -246,7 +246,7 @@ public delegate void NSNotificationHandler (NSNotification notification);
 
 在少数情况下，必须将一些常量从 `string` 更改为 `NSString`，例如 `UITableViewCell`
 
-**传统型**
+**经典**
 
 ```csharp
 public virtual string ReuseIdentifier { get; }
@@ -268,7 +268,7 @@ public virtual NSString ReuseIdentifier { get; }
 
 这些限制已在统一 Api 上删除并清除。 大多数更改将如下所示：
 
-**传统型**
+**经典**
 
 ```csharp
 public virtual AVAssetResourceLoaderDelegate Delegate { get; }
@@ -284,7 +284,7 @@ public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
 
 它还允许更精确、更易于使用的 API，例如：
 
-**传统型**
+**经典**
 
 ```csharp
 public virtual void SelectionDidChange (NSObject uiTextInput);
@@ -311,13 +311,8 @@ public virtual void SelectionDidChange (IUITextInput uiTextInput);
 
 要注意的其他更改会在将[应用程序更新到 Unified API 的提示](~/cross-platform/macios/unified/updating-tips.md)中列出。
 
-## <a name="sample-code"></a>代码示例
 
-从7月31日开始，我们已将 iOS 示例的端口发布到了[monotouch.dialog](https://github.com/xamarin/monotouch-samples/commits/magic-types)上 `magic-types` 分支上的新 API。
-
-对于 Mac，我们同时检查[mac 示例](https://github.com/xamarin/mac-samples)存储库中的示例（在 Mavericks/Yosemite 中显示新的 api）以及幻类型分支[Mac 示例](https://github.com/xamarin/monotouch-samples/commits/magic-types)中的32/64 位示例。
-
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [更新 iOS 应用程序](updating-ios-apps.md)
 - [更新 Mac 应用](updating-mac-apps.md)
@@ -325,4 +320,4 @@ public virtual void SelectionDidChange (IUITextInput uiTextInput);
 - [更新绑定](update-binding.md)
 - [更新提示](updating-tips.md)
 - [经典与 Unified API 差异](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)
-- [使用跨平台应用中的本机类型](~/cross-platform/macios/native-types-cross-platform.md)
+- [플랫폼 간 앱에서의 네이티브 형식 작업](~/cross-platform/macios/native-types-cross-platform.md)

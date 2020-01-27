@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d8b48892a5a1106b03778ac30eca4b18f049f4d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032766"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725321"
 ---
 # <a name="hello-watchos--walkthrough"></a>你好，watchOS –演练
 
@@ -87,7 +87,7 @@ ms.locfileid: "73032766"
 
 ![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-保存情节提要后，将用控件名称和操作更新**InterfaceController.designer.cs** 。 如果在更新文件后打开此文件，则可以看到 `RegisterAttribute` 如何对应于控制器，以及 UI 控件如何对应于标记有C#`OutletAttribute`的实例变量，以及如何将操作映射到用`ActionAttribute`标记的分部方法:
+保存情节提要后，将用控件名称和操作更新**InterfaceController.designer.cs** 。 如果在更新文件后打开此文件，则可以看到 `RegisterAttribute` 如何对应于控制器，以及 UI 控件如何对应于标记为C# `OutletAttribute` 的实例变量，以及如何将操作映射到用 `ActionAttribute`标记的分部方法：
 
 ```csharp
 // WARNING
@@ -153,8 +153,7 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 
 ![](hello-watch-images/running.png "The app running in the Simulator")
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [入门（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
-- [设置和安装](~/ios/watchos/get-started/installation.md)
-- [第一次观看应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [설정 및 설치](~/ios/watchos/get-started/installation.md)
+- [第一个 Watch 应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)

@@ -5,12 +5,12 @@ ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d1d5b8985d132e5a5839e3cd23aaec32fc3815a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007291"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725111"
 ---
 # <a name="callbacks-on-android"></a>Android 上的回调
 
@@ -18,11 +18,11 @@ ms.locfileid: "73007291"
 
 我们将介绍三个用于执行最适合 Java 的回调的选项：
 
-- 抽象类
-- 接口
+- 추상 클래스
+- 인터페이스
 - 虚方法
 
-## <a name="abstract-classes"></a>抽象类
+## <a name="abstract-classes"></a>추상 클래스
 
 这是最简单的回调路由，因此，如果你只是想要在最简单的形式使用回拨，则建议使用 `abstract`。
 
@@ -97,7 +97,7 @@ public void abstractCallback() throws Throwable {
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-此处缺少的是 `Invoker` 类型。 这是将调用转发C#到 Java 的 `AbstractClass` 的子类。 如果C# Java 对象进入世界并且等效C#类型是抽象的，则 Xamarin 会自动查找具有后缀的C#类型`Invoker`在代码中C#使用。
+此处缺少的是 `Invoker` 类型。 这是将调用转发C#到 Java 的 `AbstractClass` 的子类。 如果C# Java 对象进入世界并且等效C#类型是抽象的，则 Xamarin 会自动查找具有后缀的C#类型 `Invoker` 在代码中C#使用。
 
 对于 Java 绑定项目，Xamarin 使用这种 `Invoker` 模式。
 
@@ -158,9 +158,9 @@ class AbstractClassInvoker : AbstractClass
 
 有关 Java 互操作的详细信息，请参阅本主题中的精彩[Xamarin 文档](~/android/platform/java-integration/working-with-jni.md)。
 
-## <a name="interfaces"></a>接口
+## <a name="interfaces"></a>인터페이스
 
-接口与抽象类几乎相同，但有一种细节：Xamarin 不会为它们生成 Java。 这是因为在 .NET 嵌入之前，Java 将实现一个C#接口。
+接口与抽象类大致相同，不同之处在于： Xamarin 不会为其生成 Java。 这是因为在 .NET 嵌入之前，Java 将实现一个C#接口。
 
 假设有以下C#接口：
 
@@ -267,9 +267,9 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-如果遵循上面的 `abstract` 类示例，则除了一种详细信息外，它还可以工作：_Xamarin 不查找 `Invoker`_ 。
+如果你按以上 `abstract` 类示例操作，它将起作用，但这种情况除外： _Xamarin 不会查找 `Invoker`_ 。
 
-若要解决此问题， C#请修改要`abstract`的类：
+若要解决此问题， C#请修改要 `abstract`的类：
 
 ```csharp
 public abstract class VirtualClass : Java.Lang.Object
@@ -291,10 +291,9 @@ public abstract class VirtualClass : Java.Lang.Object
 
 这里有很多工作要做，但这些 .NET 嵌入功能的增强功能是可行的。
 
-## <a name="further-reading"></a>其他阅读材料
+## <a name="further-reading"></a>추가 정보
 
 - [Android 上的入门](~/tools/dotnet-embedding/get-started/java/android.md)
 - [Android 初步研究](~/tools/dotnet-embedding/android/index.md)
 - [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
-- [参与开源项目](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
 - [错误代码和描述](~/tools/dotnet-embedding/errors.md)

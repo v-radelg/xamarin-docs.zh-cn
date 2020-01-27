@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 4d4274770263b120e856cf8db01a71f7ed124a63
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027186"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724342"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>使用 JNI 和 Xamarin
 
-_Xamarin 允许编写带有C# Instead of Java 的 Android 应用。Xamarin 随附了多个程序集，其中提供了 Java 库（包括 GoogleMaps）的绑定。但是，不会为每个可能的 Java 库提供绑定，而提供的绑定可能不绑定每个 Java 类型和成员。若要使用未绑定的 Java 类型和成员，可以使用 Java 本机接口（JNI）。本文说明如何使用 JNI 与 Xamarin 应用程序中的 Java 类型和成员进行交互。_
+_Xamarin 允许编写带C#而不是 Java 的 Android 应用。Xamarin 随附了多个程序集，其中提供了 Java 库（包括 GoogleMaps）的绑定。但是，不会为每个可能的 Java 库提供绑定，而提供的绑定可能不绑定每个 Java 类型和成员。若要使用未绑定的 Java 类型和成员，可以使用 Java 本机接口（JNI）。本文说明如何使用 JNI 与 Xamarin 应用程序中的 Java 类型和成员进行交互。_
 
 ## <a name="overview"></a>概述
 
@@ -34,7 +34,7 @@ Xamarin 中的 JNI API 在概念上非常类似于 .NET 中的 `System.Reflectio
 - 如何公开虚拟方法以允许从托管代码重写。
 - 如何公开接口。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>요구 사항
 
 JNI 通过[JNIEnv 命名空间](xref:Android.Runtime.JNIEnv)公开，适用于每个版本的 Xamarin。
 若要绑定 Java 类型和接口，必须使用 Xamarin 4.0 或更高版本。
@@ -50,7 +50,7 @@ JNI 通过[JNIEnv 命名空间](xref:Android.Runtime.JNIEnv)公开，适用于�
 
 第一个目的是专门为便利性和复杂程度的封装，以便使用者可以使用一组简单、托管的类。 这需要使用各种[JNIEnv](xref:Android.Runtime.JNIEnv)成员，如本文后面所述。 请记住，托管的可调用包装并不是绝对必要的 &ndash; "内联" JNI 使用完全可接受，适用于非绑定 Java 成员的一次性使用。 子分类和接口实现需要使用托管可调用包装器。
 
-## <a name="android-callable-wrappers"></a>Android 可调用包装器
+## <a name="android-callable-wrappers"></a>Android 호출 가능 래퍼
 
 Android 可调用包装器（ACW）是每次需要调用托管代码时需要的;这些包装是必需的，因为无法在运行时用 ART 注册类。
 （具体而言，Android 运行时不支持[DefineClass](https://docs.oracle.com/javase/6/docs/technotes/guides/jni/spec/functions.html#wp15986) JNI 函数。 因此，Android 可调用包装器使缺少运行时类型注册支持。）
@@ -59,12 +59,12 @@ Android 可调用包装器（ACW）是每次需要调用托管代码时需要的
 
 Android 可调用的包装在[生成过程](~/android/deploy-test/building-apps/build-process.md)中由**monodroid**程序生成，并为（直接或间接）继承了[.java](xref:Java.Lang.Object)的所有类型生成。
 
-### <a name="implementing-interfaces"></a>实现接口
+### <a name="implementing-interfaces"></a>인터페이스 구현
 
 有时，你可能需要实现 Android 接口（如[IComponentCallbacks](xref:Android.Content.IComponentCallbacks)）的。
 
 所有 Android 类和接口都扩展了[IJavaObject](xref:Android.Runtime.IJavaObject)接口;因此，所有 Android 类型都必须实现 `IJavaObject`。
-Xamarin 利用这一事实 &ndash; 它使用 `IJavaObject` 为给定托管类型的 Java 代理（Android 可调用包装器）提供 Android。 由于**monodroid**仅查找 `Java.Lang.Object` 子类（必须实现 `IJavaObject`），因此，子类化 `Java.Lang.Object` 为我们提供了一种在托管代码中实现接口的方法。 例如:
+Xamarin 利用这一事实 &ndash; 它使用 `IJavaObject` 为给定托管类型的 Java 代理（Android 可调用包装器）提供 Android。 由于**monodroid**仅查找 `Java.Lang.Object` 子类（必须实现 `IJavaObject`），因此，子类化 `Java.Lang.Object` 为我们提供了一种在托管代码中实现接口的方法。 예를 들면 다음과 같습니다.:
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -77,7 +77,7 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-### <a name="implementation-details"></a>实现详细信息
+### <a name="implementation-details"></a>구현 세부 정보
 
 *本文的剩余部分提供了在不通知的情况下随时更改的实现详细信息*（仅在此处提供，因为开发人员可能会对即将发生的事情感到好奇）。
 
@@ -149,13 +149,11 @@ public class HelloAndroid extends android.app.Activity {
 
 - [Parcelable](xref:Android.OS.Parcelable)接口要求实现类必须具有类型 `Parcelable.Creator`的静态字段 `CREATOR`。 生成的 Java 代码需要一些显式字段。 对于我们的标准方案，无法从托管代码在 Java 代码中输出字段。
 
-由于代码生成并不提供用于生成任意名称的任意 Java 方法的解决方案，因此从 Xamarin 4.2 开始，引入了[ExportAttribute](xref:Java.Interop.ExportAttribute)和[ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute)来提供上述解决方案各种. 这两个属性都位于 `Java.Interop` 命名空间中：
+由于代码生成并不提供用于生成任意名称的任意 Java 方法的解决方案，因此从 Xamarin 4.2 开始，引入了[ExportAttribute](xref:Java.Interop.ExportAttribute)和[ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute)来提供上述方案的解决方案。 这两个属性都位于 `Java.Interop` 命名空间中：
 
 - `ExportAttribute` &ndash; 指定方法名称及其预期的异常类型（在 Java 中给予显式 "引发"）。 在方法上使用该方法时，该方法会 "导出" 一个 Java 方法，该方法将生成一个调度代码，以便向托管方法调用相应的 JNI 调用。 这可用于 `android:onClick` 和 `java.io.Serializable`。
 
 - `ExportFieldAttribute` &ndash; 指定字段名称。 它驻留在用作字段初始值设定项的方法上。 这可以与 `android.os.Parcelable`一起使用。
-
-[ExportAttribute](https://docs.microsoft.com/samples/xamarin/monodroid-samples/exportattribute)示例项目演示了如何使用这些属性。
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>ExportAttribute 和 ExportFieldAttribute 疑难解答
 
@@ -257,7 +255,7 @@ public static System.IO.Stream In
 }
 ```
 
-注意:我们使用[InputStreamInvoker](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*)将 JNI 引用转换为 `System.IO.Stream` 实例，并且我们正在使用 `JniHandleOwnership.TransferLocalRef`，因为[JNIEnv](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)返回了本地引用。
+注意：我们将使用[FromJniHandle](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*)将 JNI 引用转换为 `System.IO.Stream` 实例，并且我们正在使用 `JniHandleOwnership.TransferLocalRef`，因为[JNIEnv](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)返回了本地引用。
 
 许多[Android. 运行时](xref:Android.Runtime)类型都有 `FromJniHandle` 方法，这些方法会将 JNI 引用转换为所需的类型。
 
@@ -269,7 +267,7 @@ Java 方法作为C#方法和C#属性公开。 例如, Java 方法[java.lang.Runt
 
 1. 要调用的方法的*get 方法 id* 。 *Get 方法 id*方法负责返回方法调用方法将使用的方法句柄。 获取方法 id 需要知道声明类型、方法的名称以及方法的[JNI 类型签名](#JNI_Type_Signatures)。
 
-1. 调用方法。
+1. 메서드를 호출합니다.
 
 与字段一样，用于获取方法 id 并调用方法的方法在静态方法和实例方法之间有所不同。
 
@@ -281,7 +279,7 @@ Java 方法作为C#方法和C#属性公开。 例如, Java 方法[java.lang.Runt
 
 <a name="_Static_Methods_1" />
 
-#### <a name="static-methods"></a>静态方法
+#### <a name="static-methods"></a>정적 메서드
 
 绑定静态方法涉及使用 `JNIEnv.GetStaticMethodID` 获取方法句柄，然后使用适当的 `JNIEnv.CallStatic*Method` 方法，具体取决于方法的返回类型。 下面是[getRuntime](https://developer.android.com/reference/java/lang/Runtime.html#getRuntime())方法的绑定示例：
 
@@ -346,13 +344,13 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 
 1. 否则，与 `this.GetType` 相对应的[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)器（ACW）通过其默认构造函数进行实例化。 在包创建过程中，将为 `RegisterAttribute.DoNotGenerateAcw` 未设置为 `true`的每个 `Java.Lang.Object` 子类生成 Android 可调用包装。
 
-对于不是类绑定的类型，这是预期的语义：实例化 `Mono.Samples.HelloWorld.HelloAndroid` C#实例应构造一个 Java `mono.samples.helloworld.HelloAndroid`实例，该实例是生成的 Android 可调用包装器。
+对于不是类绑定的类型，这是预期的语义：实例化 `Mono.Samples.HelloWorld.HelloAndroid` C#实例应构造一个 Java `mono.samples.helloworld.HelloAndroid` 实例，该实例是生成的 Android 可调用包装器。
 
 对于类绑定，如果 Java 类型包含默认构造函数和/或不需要调用其他构造函数，则这可能是正确的行为。 否则，必须提供构造函数来执行以下操作：
 
 1. 调用 JniHandleOwnership [（IntPtr，）](xref:Java.Lang.Object#ctor*)而不是默认的 `Java.Lang.Object` 构造函数。 这是避免创建新的 Java 实例所必需的。
 
-1. 请在创建任何 Java 实例之前检查 " [.java](xref:Java.Lang.Object.Handle) " 的值。 如果在 Java 代码中构造了 Android 可调用包装器，并且构造了类绑定以包含创建的 Android 可调用包装器实例，则 `Object.Handle` 属性将具有 `IntPtr.Zero` 以外的值。 例如，当 Android 创建 `mono.samples.helloworld.HelloAndroid` 实例时，将首先创建 Android 可调用包装，并且 Java `HelloAndroid` 构造函数将创建相应 `Mono.Samples.HelloWorld.HelloAndroid` 类型的实例，并将 `Object.Handle` 属性设置为 Java 实例在执行构造函数之前。
+1. 请在创建任何 Java 实例之前检查 " [.java](xref:Java.Lang.Object.Handle) " 的值。 如果在 Java 代码中构造了 Android 可调用包装器，并且构造了类绑定以包含创建的 Android 可调用包装器实例，则 `Object.Handle` 属性将具有 `IntPtr.Zero` 以外的值。 例如，当 Android 创建 `mono.samples.helloworld.HelloAndroid` 实例时，将首先创建 Android 可调用包装，并且 Java `HelloAndroid` 构造函数将创建相应 `Mono.Samples.HelloWorld.HelloAndroid` 类型的实例，并在执行构造函数之前将 `Object.Handle` 属性设置为 Java 实例。
 
 1. 如果当前运行时类型与声明类型不相同，则必须创建相应的 Android 可调用包装器的实例，并使用[SetHandle](xref:Java.Lang.Object.SetHandle*)来存储[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)返回的句柄。
 
@@ -395,7 +393,7 @@ public Integer (int value)
 }
 ```
 
-[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)方法用于对从 `JNIEnv.FindClass`返回的值执行 `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`和 `JNIEnv.DeleteGlobalReference`。 有关详细信息，请参阅下一节。
+[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)方法用于对从 `JNIEnv.FindClass`返回的值执行 `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`和 `JNIEnv.DeleteGlobalReference`。 자세한 내용은 다음 섹션을 참조하십시오.
 
 <a name="_Supporting_Inheritance,_Interfaces_1" />
 
@@ -403,7 +401,7 @@ public Integer (int value)
 
 在打包过程中，为每个 `Java.Lang.Object` 子类生成的[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)（ACWs）是为 java 类型或实现 java 接口的子类。 ACW 生成通过[RegisterAttribute](xref:Android.Runtime.RegisterAttribute)自定义特性进行控制。
 
-对于C#类型，`[Register]`自定义特性构造函数需要一个参数：对应 Java 类型的[JNI 简化类型引用](#_Simplified_Type_References_1)。 这允许在 Java 和C#之间提供不同的名称。
+对于C#类型，`[Register]` 自定义特性构造函数需要一个参数：对应 Java 类型的[JNI 简化类型引用](#_Simplified_Type_References_1)。 这允许在 Java 和C#之间提供不同的名称。
 
 在 Xamarin 4.0 之前，`[Register]` 自定义属性不可用于 "alias" 现有 Java 类型。 这是因为，ACW 生成过程将为遇到的每个 `Java.Lang.Object` 子类生成 ACWs。
 
@@ -438,11 +436,11 @@ partial class ManagedAdder : Adder {
 }
 ```
 
-此处，`Adder` C#类型将*别名*`Adder`Java 类型。 `[Register]` 特性用于指定 `mono.android.test.Adder` Java 类型的 JNI 名称，`DoNotGenerateAcw` 属性用于阻止生成 ACW。 这将导致为 `ManagedAdder` 类型生成 ACW，这会正确地将 `mono.android.test.Adder` 类型为子类。 如果未使用 `RegisterAttribute.DoNotGenerateAcw` 属性，则 Xamarin 生成过程将生成新的 `mono.android.test.Adder` Java 类型。 这会导致编译错误，因为在两个单独的文件中，`mono.android.test.Adder` 类型会出现两次。
+此处，`Adder` C#类型将*别名*`Adder` Java 类型。 `[Register]` 特性用于指定 `mono.android.test.Adder` Java 类型的 JNI 名称，`DoNotGenerateAcw` 属性用于阻止生成 ACW。 这将导致为 `ManagedAdder` 类型生成 ACW，这会正确地将 `mono.android.test.Adder` 类型为子类。 如果未使用 `RegisterAttribute.DoNotGenerateAcw` 属性，则 Xamarin 生成过程将生成新的 `mono.android.test.Adder` Java 类型。 这会导致编译错误，因为在两个单独的文件中，`mono.android.test.Adder` 类型会出现两次。
 
 ### <a name="binding-virtual-methods"></a>绑定虚方法
 
-`ManagedAdder` 为 Java `Adder` 类型的子类，但这并不是特别C#有意思：`Adder`类型不定义任何虚方法，因此`ManagedAdder`不能覆盖任何内容。
+`ManagedAdder` 为 Java `Adder` 类型的子类，但这并不是特别C#有意思： `Adder` 类型不定义任何虚方法，因此 `ManagedAdder` 不能覆盖任何内容。
 
 绑定 `virtual` 方法允许子类重写需要执行几项操作，这些操作分为以下两个类别：
 
@@ -452,7 +450,7 @@ partial class ManagedAdder : Adder {
 
 #### <a name="method-binding"></a>方法绑定
 
-方法绑定要求将两个支持成员添加到C#`Adder`定义：`ThresholdType`和`ThresholdClass`。
+方法绑定要求将两个支持成员添加到C# `Adder` 定义： `ThresholdType`和 `ThresholdClass`。
 
 ##### <a name="thresholdtype"></a>ThresholdType
 
@@ -555,7 +553,7 @@ public class ManagedAdder extends mono.android.test.Adder {
 }
 ```
 
-请注意，将声明一个 `@Override` 方法，该方法委托给同名的 `n_`前缀方法。 这可确保在 Java 代码调用 `ManagedAdder.add`时，`ManagedAdder.n_add` 将被调用，这将允许执行C#重写的`ManagedAdder.Add`方法。
+请注意，将声明一个 `@Override` 方法，该方法委托给同名的 `n_`前缀方法。 这可确保在 Java 代码调用 `ManagedAdder.add`时，`ManagedAdder.n_add` 将被调用，这将允许执行C#重写的 `ManagedAdder.Add` 方法。
 
 因此，最重要的问题： `ManagedAdder.n_add` 如何挂钩到 `ManagedAdder.Add`？
 
@@ -598,7 +596,7 @@ int>` 委托，该委托引用 `n_Add` 方法，然后调用[JNINativeWrapper. s
 
 最后，`n_Add` 方法负责将 JNI 参数封送到相应的托管类型，然后委托方法调用。
 
-注意:在通过 Java 实例获取 MCW 时，请始终使用 `JniHandleOwnership.DoNotTransfer`。 将它们视为本地引用（并因此调用 `JNIEnv.DeleteLocalRef`）会中断托管&gt; Java&gt; 托管堆栈转换。
+注意：通过 Java 实例获取 MCW 时，请始终使用 `JniHandleOwnership.DoNotTransfer`。 将它们视为本地引用（并因此调用 `JNIEnv.DeleteLocalRef`）会中断托管&gt; Java&gt; 托管堆栈转换。
 
 ### <a name="complete-adder-binding"></a>完成 "完成" 绑定
 
@@ -659,7 +657,7 @@ public class Adder : Java.Lang.Object {
 }
 ```
 
-### <a name="restrictions"></a>限制
+### <a name="restrictions"></a>제한 사항
 
 写入与以下条件匹配的类型时：
 
@@ -667,7 +665,7 @@ public class Adder : Java.Lang.Object {
 
 1. 具有 `[Register]` 自定义属性
 
-1. `RegisterAttribute.DoNotGenerateAcw` 为 `true`
+1. `RegisterAttribute.DoNotGenerateAcw`가 `true`인 경우
 
 然后，对于 GC 交互，该类型*不*能具有在运行时可能引用 `Java.Lang.Object` 或 `Java.Lang.Object` 子类的任何字段。 例如，不允许使用 `System.Object` 类型的字段和任何接口类型。 允许使用不引用 `Java.Lang.Object` 实例的类型，如 `System.String` 和 `List<int>`。 此限制是为了防止 GC 提前收集对象。
 
@@ -681,7 +679,7 @@ public class Adder : Java.Lang.Object {
 
 1. 创建了一个子类抽象类型的非 `abstract` `Invoker` 类型。 `Invoker` 类型必须重写基类中声明的所有抽象方法，而重写的实现是方法绑定实现，尽管可以忽略非虚拟调度事例。
 
-例如，假定 `abstract`上述 `mono.android.test.Adder.add` 方法。 C#绑定将更改，以便 `Adder.Add`是抽象的，并且将定义`Adder.Add`实现的新`AdderInvoker`类型：
+例如，假定 `abstract`上述 `mono.android.test.Adder.add` 方法。 C#绑定将更改，以便 `Adder.Add` 是抽象的，并且将定义 `Adder.Add`实现的新 `AdderInvoker` 类型：
 
 ```csharp
 partial class Adder {
@@ -722,7 +720,7 @@ public interface Progress {
 
 接口绑定包含两部分： C#接口定义和接口的调用程序定义。
 
-### <a name="interface-definition"></a>接口定义
+### <a name="interface-definition"></a>인터페이스 정의
 
 C#接口定义必须满足以下要求：
 
@@ -737,7 +735,7 @@ C#接口定义必须满足以下要求：
 
 绑定 `abstract` 和 `virtual` 方法时，将在要注册的类型的继承层次结构中搜索连接器方法。 接口不能包含包含主体的方法，因此，这不起作用，因此，需要指定一个类型来指示连接器方法所在的位置。 该类型在连接器方法字符串中指定，在冒号 `':'`之后，必须是包含调用程序的类型的程序集限定类型名称。
 
-接口方法声明是使用*兼容*类型的对应 Java 方法的翻译。 对于 Java 内置类型，兼容类型为相应C#的类型，例如 Java `int`是C#`int`的。 对于引用类型，兼容类型是一种类型，它可以提供适当 Java 类型的 JNI 句柄。
+接口方法声明是使用*兼容*类型的对应 Java 方法的翻译。 对于 Java 内置类型，兼容类型为相应C#的类型，例如 Java `int` 是C# `int`的。 对于引用类型，兼容类型是一种类型，它可以提供适当 Java 类型的 JNI 句柄。
 
 接口成员将不会由 Java 直接调用 &ndash; 调用将通过调用程序类型进行经过调谐 &ndash; 因此允许一定程度的灵活性。
 
@@ -753,7 +751,7 @@ public interface IAdderProgress : IJavaObject {
 ```
 
 请注意，我们将 Java `int[]` 参数映射到[JavaArray&lt;int&gt;](xref:Android.Runtime.JavaArray`1)。
-这并不是必需的：我们可以将其C#绑定到`int[]`、`IList<int>`或其他内容。 无论选择哪种类型，`Invoker` 都需要能够将其转换为 Java `int[]` 类型以便调用。
+这并不是必需的：我们可以将其C#绑定到 `int[]`、`IList<int>`或其他内容。 无论选择哪种类型，`Invoker` 都需要能够将其转换为 Java `int[]` 类型以便调用。
 
 ### <a name="invoker-definition"></a>调用程序定义
 
@@ -782,7 +780,7 @@ partial class ISortedMapInvoker : Java.Lang.Object, ISortedMap {
 
 调用程序定义包含六个部分：构造函数、`Dispose` 方法、`ThresholdType` 和 `ThresholdClass` 成员、`GetObject` 方法、接口方法实现和连接器方法实现。
 
-#### <a name="constructor"></a>构造函数
+#### <a name="constructor"></a>생성자
 
 构造函数需要查找正在调用的实例的运行时类，并将运行时类存储在实例 `class_ref` 字段中：
 
@@ -799,9 +797,9 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-注意:`Handle` 属性必须在构造函数主体中使用，而不能在 `handle` 参数中使用，因为在 Android v2.0 上，`handle` 参数在基构造函数完成执行后可能会无效。
+注意：必须在构造函数主体中使用 `Handle` 属性，而不能在 `handle` 参数中使用，因为在 Android v2.0 上，`handle` 参数在基构造函数完成执行后可能会无效。
 
-#### <a name="dispose-method"></a>Dispose 方法
+#### <a name="dispose-method"></a>Dispose 메서드
 
 `Dispose` 方法需要释放在构造函数中分配的全局引用：
 
@@ -836,7 +834,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-#### <a name="getobject-method"></a>GetObject 方法
+#### <a name="getobject-method"></a>GetObject 메서드
 
 需要静态 `GetObject` 方法才能支持[JavaCast&lt;t&gt;（）](xref:Android.Runtime.Extensions.JavaCast*)：
 
@@ -849,7 +847,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-#### <a name="interface-methods"></a>接口方法
+#### <a name="interface-methods"></a>인터페이스 메서드
 
 接口的每个方法都需要具有实现，这将通过 JNI 调用相应的 Java 方法：
 
@@ -975,7 +973,7 @@ new JValue (currentSum));
 
 本地引用由*大多数*引用创建方法创建。
 Android 只允许在任何给定时间存在有限数量的本地引用，通常为512。 可以通过 DeleteLocalRef 删除本地引用[JNIEnv](xref:Android.Runtime.JNIEnv.DeleteLocalRef*)。
-与 JNI 不同，返回对象引用的所有引用 JNIEnv 方法返回的都是局部引用;[JNIEnv FindClass](xref:Android.Runtime.JNIEnv.FindClass*)返回*全局*引用。 强烈建议您尽可能快地删除本地引用，这可能是通过构造[对象周围的](xref:Java.Lang.Object)JniHandleOwnership 并指定对 .java 的 `JniHandleOwnership.TransferLocalRef` [（IntPtr 句柄，传输）](xref:Java.Lang.Object#ctor*)构造.
+与 JNI 不同，返回对象引用的所有引用 JNIEnv 方法返回的都是局部引用;[JNIEnv FindClass](xref:Android.Runtime.JNIEnv.FindClass*)返回*全局*引用。 强烈建议您尽可能快速地删除本地引用，这可能是通过构造[对象周围的](xref:Java.Lang.Object)JniHandleOwnership，并 `JniHandleOwnership.TransferLocalRef` 指定到[.java （IntPtr 句柄，传输）](xref:Java.Lang.Object#ctor*)构造函数。
 
 全局引用由 NewGlobalRef 和[JNIEnv](xref:Android.Runtime.JNIEnv.FindClass*)创建[JNIEnv](xref:Android.Runtime.JNIEnv.NewGlobalRef*) 。
 可以通过[JNIEnv](xref:Android.Runtime.JNIEnv.DeleteGlobalRef*)销毁它们。
@@ -1057,7 +1055,7 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 若要在 JNI 中查找字段或方法，必须首先查找字段或方法的声明类型。 [JNIEnv. FindClass （string）](xref:Android.Runtime.JNIEnv.FindClass*)）方法用于查找 Java 类型。 String 参数是 Java 类型的*简化类型引用*或*完整的类型引用*。 有关简化的和完整类型引用的详细信息，请参阅[JNI 类型引用部分](#_JNI_Type_References)。
 
-注意:与返回对象实例的每个其他 `JNIEnv` 方法不同，`FindClass` 返回全局引用，而不是本地引用。
+注意：与返回对象实例的每个其他 `JNIEnv` 方法不同，`FindClass` 返回全局引用，而不是本地引用。
 
 <a name="_Instance_Fields" />
 
@@ -1257,7 +1255,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 <a name="_Static_Methods" />
 
-## <a name="static-methods"></a>静态方法
+## <a name="static-methods"></a>정적 메서드
 
 静态方法通过*方法 id*调用。 方法 Id 通过[JNIEnv](xref:Android.Runtime.JNIEnv.GetStaticMethodID*)获取，后者要求在中定义方法的类型、方法的名称以及方法的[JNI 类型签名](#JNI_Type_Signatures)。
 
@@ -1293,7 +1291,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 ## <a name="jni-type-signatures"></a>JNI 类型签名
 
-[JNI 类型签名](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432)是[JNI 类型引用](#_JNI_Type_References)（尽管不是简化类型引用），但方法除外。 使用方法时，JNI 类型签名是左括号 `'('`，后跟一起连接的所有参数类型的类型引用（不分隔逗号或其他任何内容），后跟右括号 `')'`，后面是方法返回类型的 JNI 类型引用。
+[JNI 类型签名](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432)是[JNI 类型引用](#_JNI_Type_References)（尽管不是简化类型引用），但方法除外。 使用方法时，JNI 类型签名是 `'('`的左括号，后跟一起连接的所有参数类型的类型引用（无分隔逗号或其他任何内容），后跟一个右括号 `')'`，后跟方法返回类型的 JNI 类型引用。
 
 例如，给定 Java 方法：
 
@@ -1307,7 +1305,7 @@ JNI 类型签名将为：
 (ILjava/lang/String;[I)J
 ```
 
-通常，*强烈*建议使用 `javap` 命令来确定 JNI 的签名。 例如，JNI 的[valueOf （string）](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))方法的类型签名为 "（Ljava/Lang/string;） Ljava/Lang/Thread $ State;"，而方法的 JNI 类型签名为 "（） [Ljava// [）。](https://developer.android.com/reference/java/lang/Thread.State.html#values)lang/Thread $ State; "。 注意结尾的分号;这些*是*JNI 类型签名的一部分。
+通常，*强烈*建议使用 `javap` 命令来确定 JNI 的签名。 例如，JNI 的[valueOf （string）](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))方法的类型签名为 "（Ljava/Lang/string;） Ljava/Lang/Thread $ State;"，而[方法的](https://developer.android.com/reference/java/lang/Thread.State.html#values)JNI 类型签名为 "（） [Ljava/Lang/Thread $ State;"。 ""）。 注意结尾的分号;这些*是*JNI 类型签名的一部分。
 
 <a name="_JNI_Type_References" />
 
@@ -1317,7 +1315,7 @@ JNI 类型引用不同于 Java 类型引用。 不能对 JNI 使用完全限定�
 有四种类型的 JNI 类型引用：
 
 - **built-in**
-- **简化**
+- **simplified**
 - **type**
 - **array**
 
@@ -1355,7 +1353,7 @@ JNI 类型引用不同于 Java 类型引用。 不能对 JNI 使用完全限定�
 类型引用与数组类型引用和 JNI 签名一起使用。
 
 获得类型引用的另一种方法是读取 `'javap -s -classpath android.jar fully.qualified.Java.Name'`的输出。
-根据所涉及的类型，可以使用构造函数声明或方法返回类型来确定 JNI 名称。 例如:
+根据所涉及的类型，可以使用构造函数声明或方法返回类型来确定 JNI 名称。 예를 들면 다음과 같습니다.:
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State
@@ -1403,7 +1401,7 @@ static {};
 
 ## <a name="java-native-interface-support"></a>Java 本机接口支持
 
-[JNIEnv](xref:Android.Runtime.JNIEnv)是 Jave 本机接口（JNI）的托管包装器。 虽然已将方法更改为删除显式`JNIEnv*`参数并`IntPtr`使用`jobject`, 而不是使用、 `jclass`、 `jmethodID`、、等[Java Native Interface Specification](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html).例如, 请考虑[JNI NewObject 函数](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp4517):
+[JNIEnv](xref:Android.Runtime.JNIEnv)是 Jave 本机接口（JNI）的托管包装器。 尽管方法已更改为删除显式 `JNIEnv*` 参数并且使用 `IntPtr` 而不是 `jobject`、`jclass`、`jmethodID`等，但在[Java 本机接口规范](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)中声明了 JNI 函数。例如，请考虑[JNI NewObject 函数](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp4517)：
 
 ```csharp
 jobject NewObjectA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args);
@@ -1462,11 +1460,11 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 此外，通过删除每个 JNI 函数中的 `JNIEnv*` 参数，修改了所有 JNI 函数。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 直接处理 JNI 是一种不太丰富的体验，应尽量避免这种情况。 遗憾的是，它并不总是能够避免;如果你遇到适用于 Android 的未绑定 Java 案例，此指南将提供一些帮助。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [Java 本机接口规范](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/jniTOC.html)
 - [Java 本机接口函数](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)

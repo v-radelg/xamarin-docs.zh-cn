@@ -1,23 +1,23 @@
 ---
-title: Android 无线发送
+title: Android Beam
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: 11f1d38eb10421d4ecef3e2039688b2d9a6d9e6e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027830"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723810"
 ---
-# <a name="android-beam"></a>Android 无线发送
+# <a name="android-beam"></a>Android Beam
 
 Android 无线横梁是 Android 4.0 中引入的近乎现场通信（NFC）技术，它允许应用程序在接近时通过 NFC 共享信息。
 
-[说明近距离共享信息中两台设备的![关系图](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[说明近距离共享信息中两台设备的 ![关系图](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 当两个设备在范围内时，可以通过 NFC 推送消息来使用 Android 无线功能。 有关4cm 的设备可以使用 Android 横梁共享数据。 一个设备上的活动会创建一条消息，并指定可以处理推送该消息的活动（或活动）。 当指定的活动处于前台并且设备处于范围内时，Android 横梁会将消息推送到第二个设备。 在接收设备上，调用了包含消息数据的意向。
 
@@ -74,10 +74,8 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 有关使用 Android 无线媒体的完整代码示例，显示在下面的屏幕截图中，请参阅示例库中的[Android 横梁演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)。
 
-[从 Android 横梁演示![示例屏幕截图](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[从 Android 横梁演示 ![示例屏幕截图](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [Android 横梁演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
-- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 4f73ea249d29075b0e9e115e86afc971632b7b61
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 841b1d4abab5e4c09249174b221da20794771a86
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487498"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725566"
 ---
 # <a name="text-translation-using-the-translator-api"></a>使用 Translator API 的文本翻译
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Translator API 可用于通过 REST API 翻译语音和文本。本文介绍如何使用 Microsoft 文本翻译 API 将 Xamarin 中的文本从一种语言翻译成另一种语言。_
 
@@ -67,7 +67,7 @@ async Task<string> FetchTokenAsync(string fetchUri)
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-有关认知服务令牌服务的详细信息，请参阅[身份验证令牌 API](https://docs.microsofttranslator.com/oauth-token.html)。
+有关认知服务令牌服务的详细信息，请参阅[身份验证](/azure/cognitive-services/translator/reference/v3-0-reference#authentication)。
 
 ## <a name="performing-text-translation"></a>执行文本转换
 
@@ -87,7 +87,7 @@ public async Task<string> TranslateTextAsync(string text)
 
 `TranslateTextAsync`方法生成请求 URI，并从令牌的服务中检索访问令牌。 文本翻译请求然后发送到`translate`API，它将返回包含结果的 XML 响应。 分析 XML 响应，并转换结果返回到调用方法以显示。
 
-有关文本翻译 REST Api 的详细信息，请参阅[Microsoft 文本翻译 API](https://docs.microsofttranslator.com/text-translate.html)。
+有关文本翻译 REST Api 的详细信息，请参阅[文本翻译 API](/azure/cognitive-services/translator/reference/v3-0-reference)。
 
 ### <a name="configuring-text-translation"></a>配置文本翻译
 
@@ -128,7 +128,7 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 
 此方法的访问令牌与基础之上构建的 GET 请求`Authorization`标头，使用字符串作为前缀`Bearer`。 然后将 GET 请求发送到`translate`API，其中包含请求 URL 指定的文本以进行翻译，以及要转换为文本的语言。 然后将对响应进行读取，并将其返回给调用的方法。
 
-`translate` API 将在响应中，提供请求的有效，指示请求成功，并且请求的信息包含在响应中发送 HTTP 状态代码 200 （正常）。 有关可能的错误响应的列表，请参阅在响应消息[获取翻译](https://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate)。
+`translate` API 将在响应中，提供请求的有效，指示请求成功，并且请求的信息包含在响应中发送 HTTP 状态代码 200 （正常）。 有关可能的错误响应的列表，请参阅在响应消息[获取翻译](/azure/cognitive-services/translator/reference/v3-0-translate)。
 
 ### <a name="processing-the-response"></a>处理响应
 
@@ -142,13 +142,13 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 
 ![](text-translation-images/text-translation.png "Text Translation to German")
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>요약
 
 本文介绍了如何使用 Microsoft 文本翻译 API 将从一种语言的文本翻译到 Xamarin.Forms 应用程序中的另一种语言的文本。 除了将文本翻译，Microsoft Translator API 还可以到另一种语言的文本转录从一种语言的语音。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [Translator 文本 API 文档](/azure/cognitive-services/translator/)。
+- [文本翻译 API 文档](/azure/cognitive-services/translator/)
 - [使用 RESTful Web 服务](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [Todo 认知服务 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
-- [Microsoft 文本翻译 API](https://docs.microsofttranslator.com/text-translate.html)。
+- [文本翻译 API](/azure/cognitive-services/translator/reference/v3-0-reference)

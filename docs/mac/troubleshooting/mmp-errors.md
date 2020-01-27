@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 32fecaff7f6896c03f3ac094d478fef3338f844d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1dc53b863e0408e27351aabfa625a08baae3d5a1
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025724"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725447"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin 错误消息（mmp）
 
 ## <a name="mm0xxx-mmp-error-messages"></a>MM0xxx： mmp 错误消息
 
-例如， 参数、环境、缺少的工具。
+예: 参数、环境、缺少的工具。
 
 <a name="MM0000" />
 
@@ -158,7 +158,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件，以利�
 
 一个可能的替代解决方案是启用托管链接器。 这会删除未使用的 API，在大多数情况下，包括缺少标头文件的新 API （或不完整）。 但是，如果你的项目使用的 API 与 Xcode 提供的 SDK 版本不同，则此操作不起作用。
 
-另一种可能的替代解决方案是改用动态注册器。 这会通过动态注册类型来施加启动开销，但会删除标头文件要求。 
+另一种可能的替代解决方案是改用动态注册器。 这会通过动态注册类型来施加启动开销，但会删除标头文件要求。
 
 最后 straw 的解决方案是使用较旧版本的 Xamarin，其中一种支持你的项目所需的 SDK。
 
@@ -172,7 +172,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件，以利�
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099： {0}内部错误。 请提交 bug 报告与测试用例 ( https://bugzilla.xamarin.com)。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099： {0}内部错误。 请提交 bug 报告与测试用例 ( https://bugzilla.xamarin.com) 。
 
 <a name="MM0114" />
 
@@ -210,7 +210,7 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件，以利�
 
 接受的格式为 `[+|-]optimization-name`，其中 `optimization-name` 是错误消息中列出的值之一。
 
-有关每个优化的完整说明，请参阅[生成优化](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations)。
+有关每个优化的完整说明，请参阅[生成优化](~/cross-platform/macios/optimizations.md)。
 
 <a name="MM0133" />
 
@@ -220,9 +220,9 @@ Xamarin 需要来自错误消息中指定的 SDK 版本的标头文件，以利�
 
 #### <a name="mm0134-32-bit-applications-should-be-migrated-to-64-bit"></a>MM0134：32位应用程序应迁移到64位。
 
-Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 1 2018 日开始）。 
+Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 1 2018 日开始）。
 
-另外，32位应用程序将不会在不受影响的 macOS 后的版本上运行。 
+另外，32位应用程序将不会在不受影响的 macOS 后的版本上运行。
 
 有关更多详细信息： https://developer.apple.com/news/?id=06282017a
 

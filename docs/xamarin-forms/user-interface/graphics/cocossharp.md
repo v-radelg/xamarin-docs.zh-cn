@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: d13237f270fe01e2a91b69a60c3109843db713bf
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 8ba9e4b119384db401fc631f58c37a28cd2b8004
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728001"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724422"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
-[![下载示例](~/media/shared/download.png) 下载示例](h https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
 
 _CocosSharp 可用于将精确形状、 图像和文本呈现添加到用于高级可视化效果的应用程序_
 
@@ -332,12 +332,12 @@ void CreateBottomHalf(Grid grid)
 
 ![](cocossharp-images/image8.png "GameScene with Moving Circle")
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>요약
 
 本指南演示如何将 CocosSharp 添加到现有 Xamarin.Forms 项目，如何创建 Xamarin.Forms 与 CocosSharp，之间的交互，并讨论了各种注意事项，在 CocosSharp 中创建布局时。
 
 CocosSharp 游戏引擎提供了大量功能和深度，因此，本指南仅讲述了 CocosSharp 可以执行的操作。 对详细了解 CocosSharp 感兴趣的开发人员可以在[CocosSharp 存档](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/)中找到很多文章。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [CocosSharpForms （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)

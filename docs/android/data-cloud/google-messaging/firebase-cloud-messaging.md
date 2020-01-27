@@ -1,5 +1,5 @@
 ---
-title: Firebase 云消息传送
+title: Firebase 클라우드 메시징
 description: Firebase Cloud 消息传递（FCM）是一种便于在移动应用和服务器应用程序之间进行消息传递的服务。 本文概述了 FCM 的工作原理，并说明了如何配置 Google 服务，以便你的应用可以使用 FCM。
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: c97c931445122cbaa613b87e3778f4dc9e92f4d0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4cf32bae208efa67acbb08f2e4525e4571b14b16
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023658"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723779"
 ---
-# <a name="firebase-cloud-messaging"></a>Firebase 云消息传送
+# <a name="firebase-cloud-messaging"></a>Firebase 클라우드 메시징
 
 _Firebase Cloud 消息传递（FCM）是一种便于在移动应用和服务器应用程序之间进行消息传递的服务。本文概述了 FCM 的工作原理，并说明了如何配置 Google 服务，以便你的应用可以使用 FCM。_
 
@@ -34,7 +34,7 @@ Firebase 云消息传送（FCM）是一项跨平台服务，用于处理服务�
 
 ## <a name="fcm-in-action"></a>Firebase 云消息传送操作
 
-将下游消息从应用服务器发送到客户端应用时，应用服务器会将消息发送到 Google 提供的*FCM 连接服务器*;然后，FCM 连接服务器将消息转发到运行客户端应用的设备。 可以通过 HTTP 或[XMPP](https://developers.google.com/cloud-messaging/ccs) （可扩展消息传递和状态协议）发送消息。 因为客户端应用程序并不总是连接或运行，所以 FCM 连接服务器排队并存储消息，并在客户端应用程序重新连接时将其发送到客户端应用程序。 同样，如果应用服务器不可用，则 FCM 将从客户端应用程序向应用服务器发送上游消息。 有关 FCM 连接服务器的详细信息，请参阅[关于 Firebase Cloud 消息传递服务器](https://firebase.google.com/docs/cloud-messaging/server)。
+将下游消息从应用服务器发送到客户端应用时，应用服务器会将消息发送到 Google 提供的*FCM 连接服务器*;然后，FCM 连接服务器将消息转发到运行客户端应用的设备。 可以通过 HTTP 或[XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) （可扩展消息传递和状态协议）发送消息。 因为客户端应用程序并不总是连接或运行，所以 FCM 连接服务器排队并存储消息，并在客户端应用程序重新连接时将其发送到客户端应用程序。 同样，如果应用服务器不可用，则 FCM 将从客户端应用程序向应用服务器发送上游消息。 有关 FCM 连接服务器的详细信息，请参阅[关于 Firebase Cloud 消息传递服务器](https://firebase.google.com/docs/cloud-messaging/server)。
 
 FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这些凭据通过 FCM 授权消息事务：
 
@@ -151,10 +151,10 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 - [关于 FCM 消息](https://firebase.google.com/docs/cloud-messaging/concept-options)介绍可通过 Firebase 云消息传送发送的不同类型的消息。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本文提供 Firebase 云消息传送（FCM）的概述。 它介绍了用于在应用程序服务器和客户端应用程序之间识别和授权消息传递的各种凭据。 其中阐释了注册和下游消息传递方案，并详细说明了向 FCM 注册应用程序以使用 FCM 服务的步骤。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [Firebase 云消息传送](https://firebase.google.com/docs/cloud-messaging/)
+- [Firebase 클라우드 메시징](https://firebase.google.com/docs/cloud-messaging/)

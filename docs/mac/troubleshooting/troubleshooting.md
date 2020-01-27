@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001611"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725438"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin-Mac 故障排除提示
 
@@ -54,7 +54,7 @@ ms.locfileid: "73001611"
 - 可以通过在命令行上将 "MONO_LOG_LEVEL" 添加到命令来增加输出，例如：
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- 您可以将本机调试器（`lldb`）附加到您的进程，以查看是否提供了更多信息（这需要付费许可证）。 例如，执行以下操作：
+- 您可以将本机调试器（`lldb`）附加到您的进程，以查看是否提供了更多信息（这需要付费许可证）。 예를 들어 다음을 수행합니다.
 
   1. 在终端中输入 `lldb MyApp.app/Contents/MacOS/MyApp`。
   2. 在终端中输入 `run`。
@@ -62,13 +62,13 @@ ms.locfileid: "73001611"
   4. 完成调试后退出。
 - 最后一种方法是，在 `Main` 方法（或根据需要在其他位置）调用 `NSApplication.Init` 之前，您可以将文本写入已知位置中的文件，以跟踪正在运行的启动步骤。
 
-## <a name="known-issues"></a>已知问题
+## <a name="known-issues"></a>알려진 문제
 
 以下部分介绍了已知问题及其解决方案。
 
 ### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>无法在沙盒应用中连接到调试器
 
-调试器通过 TCP 连接到 Xamarin 应用程序，这意味着在默认情况下启用沙盒时，它无法连接到应用，因此，如果你尝试在未启用适当权限的情况下运行应用，则会收到错误 *"无法连接到调试器"* .
+调试器通过 TCP 连接到 Xamarin 应用程序，这意味着在默认情况下启用沙盒时，它无法连接到应用，因此，如果你尝试在未启用适当权限的情况下运行应用，则会收到错误 *"无法连接到调试器"* 。
 
 [![编辑权利](troubleshooting-images/debug01.png "编辑权利")](troubleshooting-images/debug01-large.png#lightbox)
 
@@ -80,7 +80,7 @@ ms.locfileid: "73001611"
 
 为此，可以打开 Xamarin 项目的选项，转到 " **Mac 构建** > **国际化**" 并查看 "**西部**" 国际化：
 
-[![编辑生成选项](troubleshooting-images/issue01.png "编辑生成选项")](troubleshooting-images/issue01-large.png#lightbox)
+[![빌드 옵션 편집](troubleshooting-images/issue01.png "빌드 옵션 편집")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>未能编译（mm5103）
 
@@ -112,22 +112,22 @@ Visual Studio for Mac 的最新版本已从**info.plist**编辑器中删除了 "
 
 ## <a name="community-support-on-the-forums"></a>论坛上的社区支持
 
-使用 Xamarin 产品的开发人员社区非常惊人，很多人都可以访问我们的[Xamarin 论坛](https://forums.xamarin.com/categories/mac)，分享体验和专业知识。 此外，Xamarin 工程师会定期访问论坛来帮助。
+使用 Xamarin 产品的开发人员社区非常惊人，很多人都可以访问我们的[Xamarin 论坛](https://forums.xamarin.com/categories/xamarin-mac)，分享体验和专业知识。 此外，Xamarin 工程师会定期访问论坛来帮助。
 
 <a name="filing-a-bug"/>
 
 ## <a name="filing-a-bug"></a>存档 bug
 
-你的反馈对我们非常重要。 如果发现 Xamarin 的任何问题：
+고객 의견은 품질 향상에 큰 도움이 됩니다. 如果发现 Xamarin 的任何问题：
 
-- 搜索[问题存储库](https://github.com/xamarin/xamarin-macios/issues)
-- 切换到 GitHub 问题之前，会在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) 中跟踪 Xamarin 问题。 请在其中搜索匹配的问题。
-- 如果找不到匹配的问题，请在 [GitHub 问题存储库](https://github.com/xamarin/xamarin-macios/issues/new)中提交一个新问题。
+- [문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues) 검색
+- GitHub 문제로 전환하기 전에 Xamarin 문제가 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)에서 추적되었습니다. 여기서 일치하는 문제를 검색해 보세요.
+- 일치하는 문제를 찾을 수 없는 경우 [GitHub 문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues/new)에서 새 문제를 제출하세요.
 
-GitHub 的问题是完全公开的。 不能隐藏注释或附件。
+GitHub 문제는 모두 공용입니다. 설명 또는 첨부 파일을 숨길 수 없습니다.
 
-请尽可能多地包含以下内容：
+다음 정보를 가능한 많이 포함하세요.
 
-- 一个重现此问题的简单示例。 在可能的情况下，这非常有用。
-- 故障的完整堆栈跟踪。
-- 故障周围的 C# 代码。
+- 문제를 재현하는 간단한 예제. 문제를 재현할 수 있다면 **매우 유용합니다**.
+- 크래시의 전체 스택 추적.
+- 크래시 주변의 C# 코드.

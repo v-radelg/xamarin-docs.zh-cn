@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 653d2420a9101203412b91a93cc7b6f681e2f5f2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 1f7917784ea66c31979b87f43639a7d03756692c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728299"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725593"
 ---
 # <a name="getting-started-with-datapages"></a>开始使用 DataPages
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
@@ -117,7 +117,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 **JSON 数据**
 
-从 JSON 数据的示例[演示源](http://demo3143189.mockable.io/sessions)如下所示：
+下面显示了演示源中的 JSON 数据的示例：
 
 ```json
 [{
@@ -194,7 +194,7 @@ x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 ```
 
-**Outlook Web Access (OWA)**
+**OWA(Outlook Web Access)**
 
 在中**MainActivity.cs**添加以下行后 `LoadApplication`
 
@@ -204,6 +204,6 @@ x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [DataPagesDemo 示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

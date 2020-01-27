@@ -1,24 +1,24 @@
 ---
-title: 第 13 章的摘要。 位图
-description: 使用 Xamarin.Forms 创建移动应用：第 13 章的摘要。 位图
+title: 第 13 章的摘要。 비트맵
+description: 使用 Xamarin.Forms 创建移动应用： 摘要的第 13 章。 비트맵
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 737e242e14778f38405845541b2ca30d27c3cf5a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334454"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725526"
 ---
-# <a name="summary-of-chapter-13-bitmaps"></a>第 13 章的摘要。 位图
+# <a name="summary-of-chapter-13-bitmaps"></a>第 13 章的摘要。 비트맵
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 
-> [!NOTE] 
+> [!NOTE]
 > 此页上的说明表明其中 Xamarin.Forms 已脱离一书中介绍的内容的区域。
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)元素显示位图。 所有 Xamarin.Forms 平台都支持的 JPEG、 PNG、 GIF 和 BMP 文件格式。
@@ -32,7 +32,7 @@ Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)元素显示位图。 所有 
 
 共享库中的位图资源是独立于平台的而平台项目中的位图资源是特定于平台的。
 
-> [!NOTE] 
+> [!NOTE]
 > 本书的文本，就对可移植类库，它已替换为.NET Standard 库的引用。 本书中的所有示例代码已都转换为使用.NET 标准库。
 
 通过设置指定的位图[ `Source` ](xref:Xamarin.Forms.Image.Source)的属性`Image`对象的类型[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)，一个带有三个派生类抽象类：
@@ -86,16 +86,16 @@ Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)元素显示位图。 所有 
 
 [ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty)显示 Lewis Carroll 的第 7 章*Wonderland Alice 的冒险*与 John Tenniel 通过原始图例：
 
-[![Mad 茶参与方的三个屏幕截图](images/ch13fg16-small.png "Mad Hatters 茶方该书的文本")](images/ch13fg16-large.png#lightbox "Mad Hatters 茶方该书的文本")
+[![Mad 茶参与方的三个屏幕截图](images/ch13fg16-small.png "Mad Hatters 茶一方图书文本")](images/ch13fg16-large.png#lightbox "Mad Hatters 茶一方图书文本")
 
 ### <a name="browsing-and-waiting"></a>浏览和等待
 
 [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)示例允许用户浏览存储在 Xamarin 网站上的库存映像。 它使用.NET [ `WebRequest` ](xref:System.Net.WebRequest)类下载包含位图的列表的 JSON 文件。
 
 > [!NOTE]
-> Xamarin.Forms 程序应使用[ `HttpClient` ](xref:System.Net.Http.HttpClient)而非[ `WebRequest` ](xref:System.Net.WebRequest)用于通过 internet 访问的文件。 
+> Xamarin.Forms 程序应使用[ `HttpClient` ](xref:System.Net.Http.HttpClient)而非[ `WebRequest` ](xref:System.Net.WebRequest)用于通过 internet 访问的文件。
 
-该程序使用[ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)以指示内容怎么回事。 加载每个位图，只读[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)的属性`Image`是`true`。 `IsLoading`属性由可绑定的属性，因此支持`PropertyChanged`该属性发生更改时触发事件。 该程序将一个处理程序附加到此事件，并使用当前的设置`IsLoaded`若要设置[ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)属性`ActivityIndicator`。
+该程序使用[ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)以指示内容怎么回事。 加载每个位图，只读[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)的属性`Image`是`true`。 `IsLoading`属性由可绑定的属性，因此支持`PropertyChanged`该属性发生更改时触发事件。 该程序将一个处理程序附加到此事件，并使用当前的设置`IsLoaded`若要设置[ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)属性`ActivityIndicator`。
 
 ## <a name="streaming-bitmaps"></a>流式处理位图
 
@@ -173,9 +173,9 @@ UWP 项目支持包含以像素为单位，每个与设备无关单位的缩放�
 
 将位图添加到平台项目中，当**生成操作**应为：
 
-- iOS:**BundleResource**
-- Android:**AndroidResource**
-- UWP:**Content**
+- iOS: **BundleResource**
+- Android: **AndroidResource**
+- UWP:**内容**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)示例创建两个按钮类似对象组成`Image`元素与`TapGestureRecognizer`安装。 适用对象是一个英寸正方形。 `Source`的属性`Image`使用设置`OnPlatform`和`On`对象引用的平台上的文件名可能不同。 位图图像包括数字，指示其像素大小，因此大家可以检索和呈现的大小的位图。
 
@@ -202,9 +202,9 @@ IOS 和 Android 都需要页将显示一个工具栏[ `NavigationPage` ](xref:Xa
 > [!NOTE]
 > 使用按钮上的图像已得到增强。 请参阅[位图使用按钮](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [第 13 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [第 13 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
-- [使用图像](~/xamarin-forms/user-interface/images.md)
+- [이미지 작업](~/xamarin-forms/user-interface/images.md)
 - [使用位图按钮](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)

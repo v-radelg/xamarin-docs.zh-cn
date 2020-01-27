@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2017
-ms.openlocfilehash: 5d6b1b01cf9597a1d7ae9de762eff1514b494663
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ffa544789e0d605a241c8e038c790650a7fc6a3
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029124"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724974"
 ---
 # <a name="xamarinandroid-textureview"></a>Xamarin TextureView
 
@@ -30,16 +30,16 @@ public class TextureViewActivity : Activity,
 {
     Camera _camera;
     TextureView _textureView;
-       
+
     protected override void OnCreate (Bundle bundle)
     {
         base.OnCreate (bundle);
         _textureView = new TextureView (this);
         _textureView.SurfaceTextureListener = this;
-           
+
         SetContentView (_textureView);
     }
-       
+
     public void OnSurfaceTextureAvailable (
         Android.Graphics.SurfaceTexture surface,
         int width, int height)
@@ -56,7 +56,7 @@ public class TextureViewActivity : Activity,
         } catch (Java.IO.IOException ex) {
             Console.WriteLine (ex.Message);
         }
-           
+
         // this is the sort of thing TextureView enables
         _textureView.Rotation = 45.0f;
         _textureView.Alpha = 0.5f;
@@ -67,12 +67,10 @@ public class TextureViewActivity : Activity,
 
 上面的代码在活动的 `OnCreate` 方法中创建一个 `TextureView` 实例，并将该活动设置为 `TextureView`的 `SurfaceTextureListener`。 为了成为 `SurfaceTextureListener`，活动实现了 `TextureView.ISurfaceTextureListener` 接口。 当 `SurfaceTexture` 可供使用时，系统将调用 `OnSurfaceTextAvailable` 方法。 在此方法中，我们将采用传入的 `SurfaceTexture`，并将其设置为相机的预览纹理。 然后，可以根据上面的示例中所示，随意执行基于视图的常规操作，例如设置 `Rotation` 和 `Alpha`。 在设备上运行的生成的应用程序如下所示：
 
-[在设备上运行的应用的![示例，显示图像](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
+[在设备上运行的应用的 ![示例，显示图像](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
 若要使用 `TextureView`，必须启用硬件加速，默认情况下，它将在 API 级别14下启用。 此外，由于本示例使用了照相机，因此必须在**androidmanifest.xml**中设置 `android.permission.CAMERA` 权限和 `android.hardware.camera` 功能。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [TextureViewDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
-- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)
+- [TextureViewDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)/）

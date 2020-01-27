@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 25a09e27fb25e477c5176af0ee4a75a836751ccf
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 0fa433de7fd1acb6fb27741f1615a644315f373f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487628"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725557"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用标识提供者对用户进行身份验证
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
 
 _Xamarin 是一个跨平台 SDK，用于对用户进行身份验证并存储帐户。它包括提供对使用标识提供者（如 Google、Microsoft、Facebook 和 Twitter）的支持的 OAuth 验证器。本文介绍如何使用 Xamarin 在 Xamarin. Forms 应用程序中管理身份验证过程。_
 
@@ -54,9 +54,9 @@ Xamarin.Auth 支持两种方法的应用程序与标识提供程序的授权终�
 
 应用程序发出对使用 Google 的身份验证请求`OAuth2Authenticator`类。 返回身份验证响应时，在用户已成功通过身份验证 Google 通过其在登录页面，其中包括访问令牌。 然后，应用程序的基本用户数据，使用 Google 向发出请求`OAuth2Request`类，包含在请求中的访问令牌。
 
-### <a name="setup"></a>安装
+### <a name="setup"></a>설정
 
-必须创建一个 Google API 控制台项目与 Xamarin.Forms 应用程序集成，Google 登录。 这可以通过以下操作实现：
+必须创建一个 Google API 控制台项目与 Xamarin.Forms 应用程序集成，Google 登录。 이렇게 하려면 다음을 수행합니다.
 
 1. 转到[Google API 控制台](https://console.developers.google.com)网站，然后使用 Google 帐户凭据登录。
 1. 从项目下拉列表中选择一个现有项目，或创建一个新。
@@ -90,7 +90,7 @@ var authenticator = new OAuth2Authenticator(
 
 - **客户端 ID** – 此标识正在发出请求，并且可以从项目中检索的客户端[Google API 控制台](https://console.developers.google.com)。
 - **客户端机密**– 这应该是`null`或`string.Empty`。
-- **作用域**– 此标识符可标识正在请求应用程序的 API 访问权限和值通知向用户显示的许可屏幕。 有关作用域的详细信息，请参阅[授权 API 请求](https://developers.google.com/+/web/api/rest/oauth)Google 的网站上。
+- **作用域**– 此标识符可标识正在请求应用程序的 API 访问权限和值通知向用户显示的许可屏幕。 有关范围的详细信息，请参阅在 Google 网站上[授权请求](https://developers.google.com/docs/api/how-tos/authorizing)。
 - **授权 URL** – 此标识将来获取授权代码的 URL。
 - **重定向 URL** – 此标识，以便进行发送响应的 URL。 此参数的值必须匹配中显示的值之一**凭据**选项卡中的项目[Google 开发人员控制台](https://console.developers.google.com/)。
 - **AccessToken Url** – 这标识用于获取授权代码后请求访问令牌的 URL。
@@ -273,11 +273,11 @@ Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
 
 - 在 Android 上，如果浏览器未自动关闭，则一个暂时的解决方法是将 Xamarin. authentication 包降级到版本1.5.0.3。 然后，将[PCL 加密 v 2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147)添加到 Android 项目。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>요약
 
 本文介绍了如何使用 Xamarin.Auth 管理 Xamarin.Forms 应用程序中的身份验证过程。 提供了 Xamarin.Auth`OAuth2Authenticator`和`OAuth2Request`Xamarin.Forms 应用程序用于使用 Google、 Microsoft、 Facebook 和 Twitter 等标识提供程序的类。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [OAuthNativeFlow （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
 - [对于本机应用程序的 OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-native-apps-12)

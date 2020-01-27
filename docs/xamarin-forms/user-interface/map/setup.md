@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/06/2019
-ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.openlocfilehash: 9213e893d222e26168940e09a93e158d1e74d8dc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662343"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725575"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin。窗体映射初始化和配置
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)控件在每个平台上使用本机地图控件。 这为用户提供了快速、熟悉的地图体验，但这意味着需要执行一些配置步骤来符合每个平台的 API 要求。
+[`Map`](xref:Xamarin.Forms.Maps.Map)控件在每个平台上使用本机地图控件。 这为用户提供了快速、熟悉的地图体验，但这意味着需要执行一些配置步骤以符合每个平台的 API 要求。
 
-## <a name="map-initialization"></a>映射初始化
+## <a name="map-initialization"></a>地图初始化
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)控件由[Xamarin. Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet 包提供，此包应添加到解决方案中的每个项目中。
 
@@ -58,14 +58,14 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 - iOS 11 及更高版本
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –当应用程序正在使用时使用位置服务
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) -始终使用定位服务
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) – 在任何时候使用位置服务
 - iOS 10 及更早版本
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –当应用程序正在使用时使用位置服务
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) -始终使用定位服务    
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – 在任何时候使用位置服务    
 
-若要支持 iOS 11 和更早版本，可以包括所有三个密钥： `NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription` 和 `NSLocationAlwaysUsageDescription`。
+若要支持 iOS 11 和更早版本，可以包括所有三个密钥： `NSLocationWhenInUseUsageDescription`， `NSLocationAlwaysAndWhenInUseUsageDescription`，和`NSLocationAlwaysUsageDescription`。
 
-**Info.plist**中的这些项的 XML 表示形式如下所示。 应更新 `string` 值，以反映应用程序使用位置信息的方式：
+中的这些项的 XML 表示形式**Info.plist**如下所示。 应更新`string`值以反映你的应用程序如何使用位置信息：
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -76,7 +76,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 <string>Can we use your location at all times?</string>
 ```
 
-编辑**info.plist**文件时，也可以在**源**视图中添加**info.plist**项：
+**Info.plist**还可以在中添加条目**源**在其他视图**Info.plist**文件：
 
 ![适用于 iOS 8 的 info.plist](setup-images/ios8-map-permissions.png "iOS 8 必需的信息。 info.plist 条目")
 
@@ -112,7 +112,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 这会将 API 密钥嵌入清单中。 如果没有有效的 API 密钥， [`Map`](xref:Xamarin.Forms.Maps.Map)控件将显示一个空白网格。
 
 > [!NOTE]
-> 请注意，为了让你的 APK 访问 Google Maps，你必须为每个用于签署 APK 的密钥存储（调试和发布）包含 SHA-1 指纹和包名称。 例如，如果你使用一台计算机进行调试，将另一台计算机用于生成发布 APK，则应在第一台计算机的调试密钥存储中包含 SHA-1 证书指纹，并在 release 密钥存储中包含 SHA-1 证书指纹第二台计算机。 另外，请记住，如果应用的**包名称**发生更改，则编辑密钥凭据。 请参阅[获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
+> 请注意，为了使 APK 来访问 Google 地图，您必须包括 sha-1 指纹，包使用对 APK 进行签名每个密钥存储 （调试和发布） 的名称。 例如，如果一台计算机用于调试和生成发布 APK 的另一台计算机，您应包括 sha-1 证书指纹从第一台计算机的调试密钥存储和从的发布密钥存储的 sha-1 证书指纹第二台计算机。 此外，切记要编辑的密钥凭据，如果应用程序的**包名称**更改。 请参阅[获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
 
 #### <a name="specify-the-google-play-services-version-number"></a>指定 Google Play 服务版本号
 
@@ -169,7 +169,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 #### <a name="request-runtime-location-permissions"></a>请求运行时位置权限
 
-如果你的应用程序面向 API 23 或更高版本并需要访问用户的位置，则必须检查它在运行时是否具有所需的权限，如果没有，则请求它。 这可以通过以下操作实现：
+如果你的应用程序面向 API 23 或更高版本并需要访问用户的位置，则必须检查它在运行时是否具有所需的权限，如果没有，则请求它。 이렇게 하려면 다음을 수행합니다.
 
 1. 在 `MainActivity` 类中，添加以下字段：
 
@@ -231,11 +231,11 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 [![Android 上的位置权限请求的屏幕截图](setup-images/permission-android.png "Android 权限请求")](setup-images/permission-android-large.png#lightbox "Android 权限请求")
 
-### <a name="universal-windows-platform"></a>通用 Windows 平台
+### <a name="universal-windows-platform"></a>UWP
 
 在 UWP 上，必须先对应用程序进行身份验证，然后才能显示地图并使用地图服务。 若要对应用程序进行身份验证，必须指定映射身份验证密钥。 有关详细信息，请参阅[请求映射身份验证密钥](/windows/uwp/maps-and-location/authentication-key)。 然后，应在 `FormsMaps.Init("AUTHORIZATION_TOKEN")` 方法调用中指定身份验证令牌，以便用 Bing 地图对应用程序进行身份验证。
 
-此外，如果应用程序需要访问用户的位置，则必须在包清单中启用位置功能。 这可以通过以下操作实现：
+此外，如果应用程序需要访问用户的位置，则必须在包清单中启用位置功能。 이렇게 하려면 다음을 수행합니다.
 
 1. 在**解决方案资源管理器**中，双击**appxmanifest.xml**并选择 "**功能**" 选项卡。
 1. 在 "**功能**" 列表中，选中 "**位置**" 框。 这会将 `location` 设备功能添加到包清单文件中。
@@ -261,9 +261,9 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 > [!IMPORTANT]
 > 如果不这样做，将导致在运行发布版本时[`Map`](xref:Xamarin.Forms.Maps.Map)控件不显示。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin. Maps](~/xamarin-forms/user-interface/map/pins.md)。
-- [地图 API](xref:Xamarin.Forms.Maps)
-- [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [지도 API](xref:Xamarin.Forms.Maps)
+- [地图自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)

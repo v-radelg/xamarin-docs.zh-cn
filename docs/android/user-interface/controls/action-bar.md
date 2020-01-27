@@ -85,11 +85,11 @@ this.ActionBar.AddTab (tab);
 
 例如，下面是一个操作栏屏幕截图，其中包含一个用于共享图像的菜单项（取自[ShareActionProvider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)示例）。 当用户点击操作栏上的菜单项时，ShareActionProvider 会加载该应用程序以处理与 `ShareActionProvider`相关联的意向。 在此示例中，以前使用过消息应用程序，因此它显示在操作栏。
 
-[操作栏中的消息应用程序图标 ![屏幕截图](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
+[![操作栏中的消息应用程序图标 屏幕截图](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 当用户单击操作栏中的项时，将启动包含共享映像的消息应用，如下所示：
 
-[显示猴子映像的消息应用的 ![屏幕截图](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
+[![显示猴子映像的消息应用的 屏幕截图](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
 ### <a name="specifying-the-action-provider-class"></a>指定操作提供程序类
 

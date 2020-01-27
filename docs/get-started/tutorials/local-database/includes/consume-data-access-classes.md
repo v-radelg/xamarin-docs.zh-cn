@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659751"
 ---
 在本练习中，你将创建一个用户界面来使用以前创建的数据访问类。
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在“解决方案资源管理器”的 LocalDatabaseTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
+1. 在“解决方案资源管理器”的 LocalDatabaseTutorial 项目中，双击 MainPage.xaml 将其打开。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -40,7 +40,7 @@ ms.locfileid: "67659751"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 实例和 [`ListView`](xref:Xamarin.Forms.ListView) 具有使用 `x:Name` 属性指定的名称。 该操作使代码隐藏文件可以使用指定的名称访问这些对象。
 
-1. 在“解决方案资源管理器”的 LocalDatabaseTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后在 MainPage.xaml.cs 中，将 `OnAppearing` 替代和 `OnButtonClicked` 事件处理程序添加到类  ：
+1. 在“解决方案资源管理器”的 LocalDatabaseTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后在 MainPage.xaml.cs 中，将 `OnAppearing` 替代和 `OnButtonClicked` 事件处理程序添加到类：
 
     ```csharp
     protected override async void OnAppearing()
@@ -70,17 +70,17 @@ ms.locfileid: "67659751"
     > [!NOTE]
     > `OnAppearing` 方法覆盖的执行是在布局 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 后但在其变得可见之前进行的。 因此，这是设置 Xamarin.Forms 视图内容的好地方。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。
 
     输入多项数据，为每项数据点击 [`Button`](xref:Xamarin.Forms.Button)。 这会将数据保存到数据库，并使用所有数据库数据重新填充 [`ListView`](xref:Xamarin.Forms.ListView)：
 
-    [![iOS 和 Android 上的本地 SQLite.NET 数据库数据暂留的屏幕截图](../images/consume-data-access-classes.png "本地数据库数据暂留")](../images/consume-data-access-classes-large.png#lightbox "Local database data persistence")
+    [![iOS 和 Android 上的本地 SQLite.NET 数据库数据暂留的屏幕截图](../images/consume-data-access-classes.png "本地数据库数据暂留")](../images/consume-data-access-classes-large.png#lightbox "本地数据库数据暂留")
 
     有关 Xamarin.Forms 中本地数据库的详细信息，请参阅 [Xamarin.Forms 本地数据库（指南）](~/xamarin-forms/data-cloud/data/databases.md)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在“Solution Pad”的 LocalDatabaseTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
+1. 在“Solution Pad”的 LocalDatabaseTutorial 项目中，双击 MainPage.xaml 将其打开。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -110,7 +110,7 @@ ms.locfileid: "67659751"
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 实例和 [`ListView`](xref:Xamarin.Forms.ListView) 具有使用 `x:Name` 属性指定的名称。 该操作使代码隐藏文件可以使用指定的名称访问这些对象。
 
-1. 在“Solution Pad”的 LocalDatabaseTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后在 MainPage.xaml.cs 中，将 `OnAppearing` 替代和 `OnButtonClicked` 事件处理程序添加到类  ：
+1. 在“Solution Pad”的 LocalDatabaseTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后在 MainPage.xaml.cs 中，将 `OnAppearing` 替代和 `OnButtonClicked` 事件处理程序添加到类：
 
     ```csharp
     protected override async void OnAppearing()
@@ -140,10 +140,10 @@ ms.locfileid: "67659751"
     > [!NOTE]
     > `OnAppearing` 方法覆盖的执行是在布局 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 后但在其变得可见之前进行的。 因此，这是设置 Xamarin.Forms 视图内容的好地方。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。
 
     输入多项数据，为每项数据点击 [`Button`](xref:Xamarin.Forms.Button)。 这会将数据保存到数据库，并使用所有数据库数据重新填充 [`ListView`](xref:Xamarin.Forms.ListView)：
 
-    [![iOS 和 Android 上的本地 SQLite.NET 数据库数据暂留的屏幕截图](../images/consume-data-access-classes.png "本地数据库数据暂留")](../images/consume-data-access-classes-large.png#lightbox "Local database data persistence")
+    [![iOS 和 Android 上的本地 SQLite.NET 数据库数据暂留的屏幕截图](../images/consume-data-access-classes.png "本地数据库数据暂留")](../images/consume-data-access-classes-large.png#lightbox "本地数据库数据暂留")
 
     有关 Xamarin.Forms 中本地数据库的详细信息，请参阅 [Xamarin.Forms 本地数据库（指南）](~/xamarin-forms/data-cloud/data/databases.md)

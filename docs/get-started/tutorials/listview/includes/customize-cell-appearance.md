@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61037431"
 ---
 以前，使用数据绑定为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 但是，尽管数据绑定到每个对象都定义了多个数据项的集合，但每个对象只显示一个数据项（`Monkey` 对象的 `Name` 属性）。
@@ -58,7 +58,7 @@ ms.locfileid: "61037431"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
-    [![ListView 的屏幕截图，其项目使用数据模板进行模板化](../images/customize-cell-appearance.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "ListView displaying templated data")
+    [![项已使用数据模板进行模板化的 ListView 屏幕截图](../images/customize-cell-appearance.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "显示模板化数据的 ListView")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -108,4 +108,4 @@ ms.locfileid: "61037431"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![ListView 的屏幕截图，其项目使用数据模板进行模板化](../images/customize-cell-appearance.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "ListView displaying templated data")
+    [![项已使用数据模板进行模板化的 ListView 屏幕截图](../images/customize-cell-appearance.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "显示模板化数据的 ListView")

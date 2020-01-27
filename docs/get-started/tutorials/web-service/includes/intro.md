@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 338b03ae5e52b06c6ddc225b418ee2bc7d5e5ffc
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107182"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
@@ -14,7 +14,7 @@ ms.locfileid: "71107182"
 - [按钮](~/get-started/tutorials/button/index.yml)教程。
 - [输入](~/get-started/tutorials/entry/index.yml)教程。
 
-本教程介绍如何执行下列操作：
+在本教程中，你将了解：
 
 > [!div class="checklist"]
 >
@@ -24,4 +24,4 @@ ms.locfileid: "71107182"
 
 你将使用 Visual Studio 2019 或 Visual Studio for Mac 创建一个简单的应用程序，演示如何从 [OpenWeatherMap](https://openweathermap.org/) Web 服务中检索数据。 以下屏幕截图显示了最终的应用程序：
 
-[![IOS 和 Android 上西雅图天气数据的屏幕截图](../images/consume-web-service.png "西雅图天气数据")](../images/consume-web-service-large.png#lightbox "Seattle weather data")
+[![iOS 和 Android 上西雅图天气数据的屏幕截图](../images/consume-web-service.png "西雅图天气数据")](../images/consume-web-service-large.png#lightbox "西雅图天气数据")

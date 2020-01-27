@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/12/2017
-ms.openlocfilehash: 79f226c137c3ab6b1dd2de9f92cb868056aa9d59
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2a4d255500f68497fe7cb0cc439c5f9c0504b0f2
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022288"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725183"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin 中的目标-C 选择器
 
 目标 C 语言基于*选择器*。 选择器是可以发送到对象或*类*的消息。 [Xamarin](~/ios/internals/api-design/index.md)将实例选择器映射到实例方法，将类选择器映射到静态方法。
 
 与普通 C 函数（和C++成员函数）不同，不能直接使用[P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)调用选择器，而是使用[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)将选择器发送到目标 C 类或实例。
-函数。
+함수입니다.
 
 有关目标-C 中的消息的详细信息，请参阅 Apple 使用[对象](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。
 
@@ -36,7 +36,7 @@ ms.locfileid: "73022288"
 此 API 具有以下特征：
 
 - 为 Unified API `CGSize` 了返回类型。
-- `font` 参数是[UIFont](xref:UIKit.UIFont)（和派生自 [NSObject](xref:Foundation.NSObject) 的类型），并映射到 [System.IntPtr](xref:System.IntPtr)。
+- 매개 변수 `font`는 [uifont](xref:UIKit.UIFont)[nsobject](xref:Foundation.NSObject)에서 파생 된 형식 (간접적) 이며, 이는 [System.IntPtr](xref:System.IntPtr)에 매핑됩니다.
 - `width` 参数（`CGFloat`）映射到 `nfloat`。
 - `lineBreakMode` 参数（ [`UILineBreakMode`](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)）已在 Xamarin 中作为[`UILineBreakMode`](xref:UIKit.UILineBreakMode)绑定。
 枚举中。
@@ -45,10 +45,10 @@ ms.locfileid: "73022288"
 
 ```csharp
 CGSize objc_msgSend(
-    IntPtr target, 
-    IntPtr selector, 
-    IntPtr font, 
-    nfloat width, 
+    IntPtr target,
+    IntPtr selector,
+    IntPtr font,
+    nfloat width,
     UILineBreakMode mode
 );
 ```
@@ -58,7 +58,7 @@ CGSize objc_msgSend(
 ```csharp
 [DllImport (Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend")]
 static extern CGSize cgsize_objc_msgSend_IntPtr_float_int (
-    IntPtr target, 
+    IntPtr target,
     IntPtr selector,
     IntPtr font,
     nfloat width,
@@ -76,7 +76,7 @@ nfloat width = ...
 UILineBreakMode mode = ...
 
 CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
-    target.Handle, 
+    target.Handle,
     selector.Handle,
     font == null ? IntPtr.Zero : font.Handle,
     width,
@@ -90,7 +90,7 @@ CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
 [DllImport (MonoTouch.Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend_stret")]
 static extern void cgsize_objc_msgSend_stret_IntPtr_float_int (
     out CGSize retval,
-    IntPtr target, 
+    IntPtr target,
     IntPtr selector,
     IntPtr font,
     nfloat width,
@@ -111,7 +111,7 @@ CGSize size;
 
 if (Runtime.Arch == Arch.SIMULATOR)
     size = cgsize_objc_msgSend_IntPtr_float_int(
-        target.Handle, 
+        target.Handle,
         selector.Handle,
         font == null ? IntPtr.Zero : font.Handle,
         width,
@@ -154,8 +154,8 @@ else
 
 存在多个 `objc_msgSend` 函数：
 
-- 为返回结构的选择器使用[`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc) 。 在 ARM 上，这包括不是枚举或任一 C 内置类型（`char`、`short`、`int`、`long`、`float`、`double`）的所有返回类型。 在 x86 （模拟器）上，此方法需要用于大小超过8个字节的所有结构（`CGSize` 为8个字节，并且不会在模拟器中使用 `objc_msgSend_stret`）。 
-- 仅对在 x86 上返回浮点值的选择器使用[`objc_msgSend_fpret`](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc) 。 此函数无需在 ARM 上使用;请改用 `objc_msgSend`。 
+- 为返回结构的选择器使用[`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc) 。 在 ARM 上，这包括不是枚举或任一 C 内置类型（`char`、`short`、`int`、`long`、`float`、`double`）的所有返回类型。 在 x86 （模拟器）上，此方法需要用于大小超过8个字节的所有结构（`CGSize` 为8个字节，并且不会在模拟器中使用 `objc_msgSend_stret`）。
+- 仅对在 x86 上返回浮点值的选择器使用[`objc_msgSend_fpret`](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc) 。 此函数无需在 ARM 上使用;请改用 `objc_msgSend`。
 - Main [objc_msgSend](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)函数用于所有其他选择器。
 
 确定需要调用哪个 `objc_msgSend` 函数（模拟器和设备可能需要不同的方法）后，可以使用普通的[`[DllImport]`](xref:System.Runtime.InteropServices.DllImportAttribute)方法声明函数以便以后调用。
@@ -183,7 +183,7 @@ if (Runtime.Arch == Arch.DEVICE)
     PointF ret;
     Messaging.PointF_objc_msgSend_stret_PointF_IntPtr (out ret, myHandle, selector.Handle);
     return ret;
-} 
+}
 else
 {
     return Messaging.PointF_objc_msgSend_PointF_IntPtr (myHandle, selector.Handle);
@@ -201,7 +201,3 @@ else
 ### <a name="creating-your-own-signatures"></a>创建自己的签名
 
 如果需要，可以使用以下[gist](https://gist.github.com/rolfbjarne/981b778a99425a6e630c)创建自己的签名。
-
-## <a name="related-links"></a>相关链接
-
-- [目标-C 选择器](https://developer.xamarin.com/samples/mac-ios/Objective-C/)示例

@@ -1,5 +1,5 @@
 ---
-title: watchOS 3 简介
+title: watchOS 3 소개
 description: 本文介绍适用于 Xamarin 开发人员的 watchOS 3 中提供的所有新的和修改的 Api 和功能。
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: 5ff315270646389d67b505eef04c1aa11d0029c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f849ad9d722e297438b3960f74953ff922be0e56
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028268"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725285"
 ---
-# <a name="introduction-to-watchos-3"></a>watchOS 3 简介
+# <a name="introduction-to-watchos-3"></a>watchOS 3 소개
 
 _本文介绍适用于 Xamarin 开发人员的 watchOS 3 中提供的所有新的和修改的 Api 和功能。_
 
@@ -53,7 +53,7 @@ Apple 在 watchOS 3 中添加了几个新的 Api 和服务，并提供了对现�
 
 <a name="Background-Tasks" />
 
-## <a name="background-tasks"></a>后台任务
+## <a name="background-tasks"></a>백그라운드 작업
 
 watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新其信息，确保在打开该应用程序之前，它具有用户需要的内容。
 
@@ -79,7 +79,7 @@ watchOS 3 为应用提供创建一个或多个 "监视" 应用的相关功能，
 - 用户可以通过直接在手表中点击难点来启动应用。
 - 在手表面上应用程序的一个复杂问题导致系统使应用程序处于随时可用状态，在该状态下，它会尝试在后台启动应用程序，将其保存在内存中，并为其提供额外的更新时间。
 - 最复杂的一天保证至少50推送更新。
-- 当应用包含复杂性时，它将在 Apple Watch 人脸库中提供（有关详细信息，请参阅 Apple[添加到库](https://developer.apple.com/documentation/clockkit/adding_complications_to_the_gallery)文档的复杂性）。
+- 当应用包含复杂性时，它将在 Apple Watch 人脸库中提供。
 
 在 watchOS 3 中，ClockKit 框架现在包含几个新的模板，用于实现额外的大复杂，例如[CLKComplicationTemplateExtraLargeColumnsText](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargecolumnstext)和[CLKComplicationTemplateExtraLargeRingImage](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargeringimage)。 此外，若要创建可本地化的文本，请使用[CLKTextProvider](https://developer.apple.com/reference/clockkit/clktextprovider)类的新方法。
 
@@ -100,7 +100,7 @@ watchOS 3 包括之前无法使用的多个现有 Apple framework，如：
 
 <a name="Proactive-Suggestions" />
 
-## <a name="proactive-suggestions"></a>主动建议
+## <a name="proactive-suggestions"></a>자동 제안
 
 watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为了支持此功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)包含 `MapItem` 属性，该属性使应用程序能够提供位置信息供其他应用稍后使用。
 
@@ -138,7 +138,7 @@ WatchOS 3 中引入的用户通知框架支持向 Apple Watch 传递本地和远
 
 ## <a name="watch-connectivity-framework-enhancements"></a>观看连接框架增强功能
 
-[WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession)类的新 `HasContentPending` 属性指示会话已在后台接收需要处理的数据。 和 `RemainingComplicationUserInfoTransfers` 属性返回 iOS 应用程序可更新其 watchOS 的剩余时间。
+[WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession) 类的新`HasContentPending`属性指示会话已在后台接收需要处理的数据。 和 `RemainingComplicationUserInfoTransfers` 属性返回 iOS 应用程序可更新其 watchOS 的剩余时间。
 
 若要了解详细信息，请参阅我们的[背景任务](~/ios/watchos/platform/background-tasks.md)指南。
 
@@ -151,7 +151,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 - 应用程序可以使用新的[WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer)类获取 Digital Crown 的状态，并在用户使用[WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate)类旋转王冠时接收更新。
 - [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)类现在包括 `ApplicationState` 方法和[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)常数，应用程序可以使用该方法来跟踪应用程序的运行时状态。 `WKExtension` 还提供了两个可用于计划后台任务的新方法。
 - [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)现在包含新 `ApplicationWillEnterForeground`、`ApplicationDidEnterBackground` 和 `HandleBackgroundTasks` 方法来监视应用状态中的更改并处理后台任务更新。
-- 添加了一个新的[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)类，以向 watch 应用提供以下类型的手势识别： [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)和[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
+- 添加了一个新的[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)类，以便为监视应用提供以下类型的手势识别： [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer)和[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
 - 新的[WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera)类为所有 HomeKit 连接的 IP 照相机提供一个接口。
 - 新的[WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie)类允许应用显示电影 "海报"，它在用户点击它时由正在运行的电影替换。
 - 新的[WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton)类允许应用在其用户界面中显示一个 Apple Pay 按钮，该按钮将在点击时启动付款请求。
@@ -162,7 +162,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 <a name="Workout-App-Enhancements" />
 
-## <a name="workout-app-enhancements"></a>测验应用增强功能
+## <a name="workout-app-enhancements"></a>운동 앱 고급 기능
 
 新到 watchOS 3，健身相关应用可以在 Apple Watch 的后台运行。 若要启用此功能（并获取对 HealthKit 数据的访问权限），应用必须在 `Info.plist` 文件中包含值为 `workout-processing`的 `WKBackgroundModes` 项。
 
@@ -180,7 +180,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 <a name="Deprecated-APIs" />
 
-## <a name="deprecated-apis"></a>弃用的 API
+## <a name="deprecated-apis"></a>사용되지 않는 API
 
 WatchOS 3 中已弃用以下 Api：
 
@@ -188,7 +188,7 @@ WatchOS 3 中已弃用以下 Api：
 
 有关弃用功能和更改的完整列表，请参阅 Apple 的[watchOS 2.2 到 watchOS 3.0 API 差异](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)文档。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [watchOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
 - [WatchOS 3 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

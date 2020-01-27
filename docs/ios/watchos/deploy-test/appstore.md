@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: bbf580007f4d149501efe424f0e36178a49f6aa5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028374"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725120"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>将 watchOS 应用部署到 App Store
 
@@ -39,7 +39,7 @@ ms.locfileid: "73028374"
   - 中转到 **> 组织**程序的窗口，然后选择 "**存档**"。
   - 从列表中选择应用程序和存档。
   - 同时**验证 ...** 存档。
-  - **提交 ...** 存档并按照步骤上传到 iTunes Connect 进行审阅和批准。
+  - **提交...** 存档并遵循的步骤将上载到 iTunes 连接用于审查和批准。
 
 阅读与以下各项相关的特定提示。 如果遇到问题，请参阅[故障排除](#troubleshooting)部分。
 
@@ -65,12 +65,12 @@ ms.locfileid: "73028374"
 
 <a name="iTunes_Connect"/>
 
-## <a name="itunes-connect"></a>iTunes 连接
+## <a name="itunes-connect"></a>iTunes Connect
 
 请特别参阅[应用分发概述](~/ios/deploy-test/app-distribution/index.md)：
 
-- [在 iTunes Connect 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [发布到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [iTunes Connect에서 앱 구성](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [앱 스토어에 게시](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
 在 iTunes Connect 中配置应用时，请不要忘记添加 "监视" 图标和屏幕截图：
 
@@ -128,7 +128,7 @@ Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
 然后，你可以在 "**版本**" 页上提交要审批的应用。 有关详细信息，请参阅[iOS 应用分发概述](~/ios/deploy-test/app-distribution/index.md)。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 下面是在提交到 App Store 时可能会遇到的一些错误，以及解决这些错误的步骤。
 
@@ -136,7 +136,7 @@ Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
 按照[上述步骤](#xamarin_studio)配置解决方案以进行存档。 如果无法正确设置启动项目，请确保先将生成配置设置为 "调试" 或 "发布"，然后再尝试更改启动项目。 然后将生成配置重新设置为**AppStore**。
 
-### <a name="invalid-icon"></a>“无效”图标
+### <a name="invalid-icon"></a>잘못됨 아이콘
 
 ```csharp
 Invalid Icon - The watch application '...watchkitextension.appex/WatchApp.app'
@@ -177,7 +177,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 > [!IMPORTANT]
 > Visual Studio for Mac 的 "监视" 图标支持中有一个已知 bug：它需要 **29x29@3x** 图像的88x88 像素图像（应为87x87 像素）。
 
-无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件（以与[本示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)匹配）。
+无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
 
 ### <a name="invalid-watchkit-support"></a>WatchKit 支持无效
 
@@ -254,6 +254,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 
 此错误很可能是由于你已将 Xcode 安装重命名为**Xcode**。 例如，如果将安装重命名为**XCode 6.2**，则会发生此错误。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [Apple WatchKit 提交指南](https://developer.apple.com/app-store/watch/)

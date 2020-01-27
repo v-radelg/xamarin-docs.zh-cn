@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 3d74e2db541e1f30c7626cd1b08228c1e8f57a42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9c655a503ebdd9ebc08646fb385cdd8f4aa5753
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029317"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725165"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin Android 日历
 
@@ -210,7 +210,7 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 这会显示事件列表，如下所示：
 
-[显示三个日历事件的示例应用的![屏幕截图](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
+[显示三个日历事件的示例应用的 ![屏幕截图](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 ## <a name="adding-a-calendar-event"></a>添加日历事件
 
@@ -265,16 +265,14 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 如果我们将一个按钮添加到事件列表 UI，并在按钮的单击事件处理程序中运行上述代码，则会将该事件添加到日历并在列表中更新，如下所示：
 
-[带日历事件的示例应用程序的![屏幕截图，后跟 "添加示例事件" 按钮](calendar-images/13.png)](calendar-images/13.png#lightbox)
+[带日历事件的示例应用程序的 ![屏幕截图，后跟 "添加示例事件" 按钮](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 如果我们打开日历应用程序，我们就会看到该事件也会写入其中：
 
-[显示选定日历事件![日历应用程序的屏幕截图](calendar-images/14.png)](calendar-images/14.png#lightbox)
+[显示选定日历事件 ![日历应用程序的屏幕截图](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 正如您所看到的那样，Android 允许使用功能强大且易于访问的来检索和保存日历数据，从而使应用程序无缝集成日历功能。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [日历演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
-- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

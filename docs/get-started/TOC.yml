@@ -4,8 +4,6 @@
   items:
     - name: 什么是 Xamarin
       href: what-is-xamarin.md
-    - name: 要求
-      href: requirements.md
     - name: 安装
       href: installation/index.md
       items:
@@ -14,15 +12,19 @@
           items:
             - name: 安装 Xamarin 预览版 (Windows)
               href: installation/windows-preview.md
+            - name: 从 Visual Studio 中卸载 Xamarin
+              href: installation/uninstalling-xamarin.md
         - name: 安装 Visual Studio for Mac
           href: /visualstudio/mac/installation/
           items:
             - name: 安装 Xamarin 预览版 (Mac)
               href: /visualstudio/mac/update/
+            - name: 卸载 Visual Studio for Mac
+              href: /visualstudio/mac/uninstall
         - name: Xamarin 防火墙配置说明
           href: installation/firewall.md
-        - name: 卸载 Xamarin
-          href: installation/uninstalling-xamarin.md
+    - name: 受支持的平台
+      href: supported-platforms.md
     - name: 首个应用
       href: first-app/index.md
     - name: 快速入门

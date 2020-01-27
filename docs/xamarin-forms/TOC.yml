@@ -6,8 +6,6 @@
       items:
         - name: 什么是 Xamarin.Forms
           href: ~/get-started/what-is-xamarin-forms.md
-        - name: 要求
-          href: ~/get-started/requirements.md
         - name: 安装
           href: ~/get-started/installation/index.md
           items:
@@ -16,15 +14,19 @@
               items:
                 - name: 安装 Xamarin 预览版 (Windows)
                   href: ~/get-started/installation/windows-preview.md
+                - name: 从 Visual Studio 中卸载 Xamarin
+                  href: ~/get-started/installation/uninstalling-xamarin.md
             - name: 安装 Visual Studio for Mac
               href: /visualstudio/mac/installation/
               items:
                 - name: 安装 Xamarin 预览版 (Mac)
                   href: /visualstudio/mac/update/
+                - name: 卸载 Visual Studio for Mac
+                  href: /visualstudio/mac/uninstall
             - name: Xamarin 防火墙配置说明
               href: ~/get-started/installation/firewall.md
-            - name: 卸载 Xamarin
-              href: ~/get-started/installation/uninstalling-xamarin.md
+        - name: 受支持的平台
+          href: ~/get-started/supported-platforms.md
         - name: 首个应用
           href: ~/get-started/first-app/index.md
         - name: 快速入门
@@ -898,6 +900,8 @@
           href: deploy-test/index.yml
         - name: 提高性能
           href: deploy-test/performance.md
+        - name: 热重启
+          href: deploy-test/hot-restart.md
         - name: 使用 Visual Studio App Center 自动执行测试
           href: /appcenter/test-cloud/uitest/get-started-xamarin-forms
         - name: 发布 iOS 应用

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: bd3f37082443e93f10f60d9466fe22aae8571b14
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61373346"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -22,7 +22,7 @@ ms.locfileid: "61373346"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 在 [`Editor`](xref:Xamarin.Forms.Entry) 中输入文本并观察 `Editor` 的高度在填充文本时增加，并在删除文本时减少，且可以输入的最大字符数为 200：
 
-    [![iOS 和 Android 上自动调整大小编辑器的屏幕截图](../images/customize-behavior.png "自动调整大小编辑器")](../images/customize-behavior-large.png#lightbox "Auto-sizing Editor")
+    [![iOS 和 Android 上自动调整大小的编辑器屏幕截图](../images/customize-behavior.png "自动调整大小的编辑器")](../images/customize-behavior-large.png#lightbox "自动调整大小的编辑器")
 
     有关自定义 [`Editor`](xref:Xamarin.Forms.Editor) 行为的详细信息，请参阅 [Xamarin.Forms 编辑器](~/xamarin-forms/user-interface/text/editor.md)指南。
 
@@ -42,6 +42,6 @@ ms.locfileid: "61373346"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 在 [`Editor`](xref:Xamarin.Forms.Entry) 中输入文本并观察 `Editor` 的高度在填充文本时增加，并在删除文本时减少，且可以输入的最大字符数为 200：
 
-    [![iOS 和 Android 上自动调整大小编辑器的屏幕截图](../images/customize-behavior.png "自动调整大小编辑器")](../images/customize-behavior-large.png#lightbox "Auto-sizing Editor")
+    [![iOS 和 Android 上自动调整大小的编辑器屏幕截图](../images/customize-behavior.png "自动调整大小的编辑器")](../images/customize-behavior-large.png#lightbox "自动调整大小的编辑器")
 
     有关自定义 [`Editor`](xref:Xamarin.Forms.Editor) 行为的详细信息，请参阅 [Xamarin.Forms 编辑器](~/xamarin-forms/user-interface/text/editor.md)指南。

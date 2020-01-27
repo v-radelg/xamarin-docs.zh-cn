@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61375338"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -33,7 +33,7 @@ ms.locfileid: "61375338"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 远程模拟器或 Android Emulator 内的应用程序：
 
-    [![iOS 和 Android 上具有跨越多列和多行的内容的网格的屏幕截图](../images/span-columns-rows.png "具有跨越多列和多行的内容的网格")](../images/span-columns-rows-large.png#lightbox "Grid with content spanning columns and rows")
+    [![iOS 和 Android 上内容跨多列和多行的网格屏幕截图](../images/span-columns-rows.png "内容跨多列和多行的网格")](../images/span-columns-rows-large.png#lightbox "内容跨多列和多行的网格")
 
     有关跨越列和行的详细信息，请参阅 [Xamarin.Forms 网格](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[跨越](~/xamarin-forms/user-interface/layouts/grid.md#spans)。
 
@@ -64,6 +64,6 @@ ms.locfileid: "61375338"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![iOS 和 Android 上具有跨越多列和多行的内容的网格的屏幕截图](../images/span-columns-rows.png "具有跨越多列和多行的内容的网格")](../images/span-columns-rows-large.png#lightbox "Grid with content spanning columns and rows")
+    [![iOS 和 Android 上内容跨多列和多行的网格屏幕截图](../images/span-columns-rows.png "内容跨多列和多行的网格")](../images/span-columns-rows-large.png#lightbox "内容跨多列和多行的网格")
 
     有关跨越列和行的详细信息，请参阅 [Xamarin.Forms 网格](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[跨越](~/xamarin-forms/user-interface/layouts/grid.md#spans)。

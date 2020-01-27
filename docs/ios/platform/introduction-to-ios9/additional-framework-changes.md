@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: fd9bced0d2185fd9bd0d18932921c101b2ed207c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489084"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725174"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 框架更改
 
@@ -61,11 +61,10 @@ CloudKit 框架可简化访问 iCloud 的应用程序的开发。 这包括检�
 - [CloudKit 简介](~/ios/data-cloud/intro-to-cloudkit.md)-介绍如何在 Xamarin iOS 应用中使用 CloudKit。
 - [CloudKit 快速入门](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple 对 CloudKit 的介绍。
 - [CLOUDKIT JS Reference](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359) -Apple 的 CloudKit JS 文档。
-- [CloudKit Web 服务参考](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-介绍 CLOUDKIT 的 HTTP 接口的 Apple 参考。
 - [CloudKit 目录： CloudKit （Cocoa 和 JavaScript）](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -Apple 的示例应用（使用 CloudKit 和 CloudKit JS）简介。
 
 > [!IMPORTANT]
-> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
+> Apple에서는 개발자가 유럽 연합의 GDPR(일반 데이터 보호 규정)을 제대로 처리하는 데 도움이 되는 [도구를 제공합니다](https://developer.apple.com/support/allowing-users-to-manage-data/).
 
 ## <a name="foundation-framework-additions"></a>基础框架添加
 
@@ -101,7 +100,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>响应低能耗模式
 
-使用[NSProcessInfo](xref:Foundation.NSProcessInfo)类的 `LowPowerModeEnabled` 属性来确定是否已在运行应用的 iOS 设备上启用低功耗模式。 例如：
+使用[NSProcessInfo](xref:Foundation.NSProcessInfo)类的 `LowPowerModeEnabled` 属性来确定是否已在运行应用的 iOS 设备上启用低功耗模式。 예를 들면 다음과 같습니다.:
 
 ```csharp
 // Is the device in low power mode?
@@ -117,7 +116,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple 在 iOS 9 中包含对[HealthKit](xref:HealthKit)框架的以下更改：
 
 - 支持批量删除和删除 HealthKit 数据库中的条目。 有关详细信息，请参阅 Apple 的[HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)、 [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery)和[HKHealthStore 类引用](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)。
-- 已将新的跟踪类别和特性添加到 `HKQuantityTypeIdentifier` 类（如 `UVExposure`）和 `HKCategoryTypeIdentifier` 类（例如 `OvulationTestResult`）。 有关详细信息，请参阅 Apple 的[HealthKit 常量参考](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)。
+- 已将新的跟踪类别和特性添加到 `HKQuantityTypeIdentifier` 类（如 `UVExposure`）和 `HKCategoryTypeIdentifier` 类（例如 `OvulationTestResult`）。 
 
 请参阅[HealthKit 文档简介](~/ios/platform/healthkit.md)，了解有关在 Xamarin 中使用 HealthKit 的详细信息。
 
@@ -259,9 +258,9 @@ Apple 在 iOS 9 中包括对 UIKit Dynamics 的以下更改：
 
 使用新的 `UITextInputAssistantItem` 类在_快捷方式栏_中布局栏按钮组。 快捷方式栏是软键盘中提供的一种新区域，用于提供键入的快捷方式。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9 소개](~/ios/platform/introduction-to-ios9/index.md)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 中的新增功能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

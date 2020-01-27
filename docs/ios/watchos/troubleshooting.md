@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 06524163fadc4300d55ec90f35723fd1561bb8a0
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032729"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725312"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
 本页包含可能遇到的问题的其他信息和解决方法。
 
-- [已知问题](#knownissues)
+- [알려진 문제](#knownissues)
 
 - [从图标图像中删除 Alpha 通道](#noalpha)
 
@@ -29,16 +29,16 @@ ms.locfileid: "73032729"
 
 <a name="knownissues" />
 
-## <a name="known-issues"></a>已知问题
+## <a name="known-issues"></a>알려진 문제점
 
-### <a name="general"></a>常规
+### <a name="general"></a>일반
 
 <a name="deploy" />
 
 - 较早版本的 Visual Studio for Mac 错误地将**AppleCompanionSettings**图标之一显示为88x88 像素;如果尝试提交到 App Store，则会导致**缺少图标错误**。
-    此图标应为87x87 像素（ **@3x** Retina 屏幕的29个单位）。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件（以与[本示例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)匹配）。
+    此图标应为 87 x 87 像素 (29 单位 **@3x** Retina 屏幕)。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
 
-- 如果未[正确设置](~/ios/watchos/get-started/project-references.md)监视扩展项目的**Info.plist > WKApp 捆绑 Id**与 WATCH 应用的**捆绑 id**相匹配，则调试器将无法连接，并且 Visual Studio for Mac 将等待消息 *"等待调试程序连接 "* 。
+- 如果未[正确设置](~/ios/watchos/get-started/project-references.md)监视扩展项目的**Info.plist > WKApp 捆绑 Id**与 WATCH 应用的**捆绑 id**相匹配，则调试器将无法连接，并且 Visual Studio for Mac 将等待消息 *"等待调试程序连接"* 。
 
 - 在**通知**模式下支持调试，但可能不可靠。 重试有时会起作用。 确认监视应用的**info.plist** `WKCompanionAppBundleIdentifier` 设置为与 iOS 父/容器应用（即 iPhone 上运行的应用程序）的捆绑标识符相匹配。
 
@@ -166,7 +166,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController`
+8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController`.
     如果一切都正常工作，则它应自动显示在**类：** 下拉列表中，你可以从该下拉列表中选择它。
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -233,7 +233,7 @@ with an alpha channel. Icons should not have an alpha channel.
 > [!NOTE]
 > 你需要提供的路径适用于*iPhone 应用程序*应用程序文件，即，将部署到 iOS 模拟器并包含监视扩展和监视应用的路径。
 
-示例:
+예:
 
 ```bash
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
@@ -251,15 +251,15 @@ with an alpha channel. Icons should not have an alpha channel.
 --watchlaunchmode=Notification --watchnotificationpayload=/path/to/file.json
 ```
 
-## <a name="other-arguments"></a>其他参数
+## <a name="other-arguments"></a>기타 인수
 
 其余参数如下所述：
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必须的。 指定 Xcode （6.2 或更高版本）的路径。
+필수 指定 Xcode （6.2 或更高版本）的路径。
 
-示例:
+예:
 
 ```bash
  --sdkroot /Applications/Xcode.app/Contents/Developer/
@@ -277,7 +277,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 **UDID**
 
-示例:
+예:
 
 ```bash
 --device=:v2:udid=AAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
@@ -285,13 +285,13 @@ with an alpha channel. Icons should not have an alpha channel.
 
 **运行时和设备类型**
 
-示例:
+예:
 
 ```bash
 --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 ```
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WatchTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)

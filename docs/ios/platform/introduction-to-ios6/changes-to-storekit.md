@@ -1,5 +1,5 @@
 ---
-title: iOS 6 中对 StoreKit 的更改
+title: iOS 6의 StoreKit 변경 내용
 description: iOS 6 引入了对应用商店工具包 API 的两项更改：从应用中显示 iTunes （和 App Store/Ibooks store 色情）产品和新的应用内购买选项（Apple 将在其中托管可下载文件）。 本文档介绍如何通过 Xamarin 实现这些功能。
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
@@ -7,25 +7,25 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1d49be1f4339b658e8202d4091b9a12b45d7b507
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7cf18934c70acf59213a697ab57b6c5e308e7b2a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031907"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725219"
 ---
-# <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中对 StoreKit 的更改
+# <a name="changes-to-storekit-in-ios-6"></a>iOS 6의 StoreKit 변경 내용
 
 _iOS 6 引入了对应用商店工具包 API 的两项更改：从应用中显示 iTunes （和 App Store/Ibooks store 色情）产品和新的应用内购买选项（Apple 将在其中托管可下载文件）。本文档介绍如何通过 Xamarin 实现这些功能。_
 
 IOS6 中存储工具包的主要变化是这两项新功能：
 
 - **应用内内容显示 & 购买**–用户可购买和下载应用、音乐、书籍和其他 iTunes 内容，而无需离开应用。 你还可以链接到你自己的应用程序来促销购买或只是鼓励审核和评级。
-- **应用内购买托管内容**– Apple 将存储和传递与应用内购买产品关联的内容，这无需单独的服务器来承载文件，自动支持后台下载并使你可以编写代码更少。
+- **应用内购买托管内容**– Apple 将存储和传递与应用内购买产品关联的内容，这无需单独的服务器来承载文件，自动支持后台下载并可编写更少的代码。
 
 有关 StoreKit Api 的详细信息，请参阅[应用内购买](~/ios/platform/in-app-purchasing/index.md)指南。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>요구 사항
 
 本文档中讨论的商店工具包功能需要 iOS 6 和 Xcode 4.5 以及 Xamarin 6.0。
 
@@ -100,14 +100,14 @@ void Buy (int productId)
 if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
     // do iOS6+ stuff, using SKStoreProductViewController as shown above
 } else {
-    // don't do stuff requiring iOS 6.0, use the old syntax 
+    // don't do stuff requiring iOS 6.0, use the old syntax
     // (which will take the user out of your app)
     var nsurl = new NSUrl("http://itunes.apple.com/us/app/angry-birds/id343200656?mt=8");
     UIApplication.SharedApplication.OpenUrl (nsurl);
 }
 ```
 
-### <a name="errors"></a>错误
+### <a name="errors"></a>오류
 
 如果你使用的 Apple ID 无效，则会出现以下错误，这可能会造成混淆，因为它表示某种类型的网络或身份验证问题。
 
@@ -131,18 +131,18 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 ### <a name="search-api"></a>搜索 API
 
-Apple 提供了一个动态搜索 API 来查询应用商店、iTunes 和 Ibooks store 色情中的所有产品。 有关如何访问搜索 API 的信息，请参阅[Apple 的关联资源](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)，尽管该 api 向任何人（不仅仅是注册的附属机构）公开。 可以分析生成的 JSON，以发现作为要用于 `SKStoreProductViewController`的 Apple ID 的 `trackId`。
+Apple 提供了一个动态搜索 API 来查询应用商店、iTunes 和 Ibooks store 色情中的所有产品。 有关如何访问搜索 API 的信息，请参阅 Apple 的关联资源，尽管该 API 向任何人（不仅仅是注册的附属机构）公开。 可以分析生成的 JSON，以发现作为要用于 `SKStoreProductViewController`的 Apple ID 的 `trackId`。
 
 结果还将包括其他元数据，包括可用于在应用程序中呈现产品的显示信息和图稿 Url。
 
-下面是一些可能的恶意活动：
+다음은 몇 가지 예입니다.
 
 - **iBooks 应用**– [https://itunes.apple.com/search?term=ibooks&amp ; entity = software&amp; 国家/地区](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
 - **点和 Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = 电子书&amp; 国家/地区 = 美国](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>企业合作伙伴源
 
-Apple 向已批准的合作伙伴提供所有产品的完整数据转储，格式为可下载的数据库就绪平面文件。 如果你有资格访问[企业合作伙伴源](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)，则可以在该数据集中找到任何产品的 Apple ID。
+Apple 向已批准的合作伙伴提供所有产品的完整数据转储，格式为可下载的数据库就绪平面文件。 如果你有资格访问企业合作伙伴源，则可以在该数据集中找到任何产品的 Apple ID。
 
 企业合作伙伴源的多个用户是[关联计划](https://www.apple.com/itunes/affiliates)的成员，它允许根据产品销售额获得佣金。 `SKStoreProductViewController` 不支持关联 Id （在写入时）。
 
@@ -170,8 +170,8 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 如果你的应用内购买包含可下载内容（如书籍或其他媒体、游戏级别图片和配置，或其他大文件），则这些文件将托管在你的 web 服务器上，并且应用程序必须合并代码，以安全地下载这些文件购买. 从 iOS 6 开始，Apple 会将文件托管在其服务器上，从而消除了对单独服务器的需求。 此功能仅适用于不可耗用的产品（不是耗材或订阅）。 使用 Apple 托管服务的优点包括：
 
 - 保存承载 & 带宽成本。
-- 可能比当前使用的服务器主机更可伸缩。 
-- 编写的代码较少，因为无需生成任何服务器端处理。 
+- 可能比当前使用的服务器主机更可伸缩。
+- 编写的代码较少，因为无需生成任何服务器端处理。
 - 已实现后台下载。
 
 注意：不支持在 iOS 模拟器中测试托管的应用内购买内容，因此必须使用实际设备进行测试。
@@ -196,7 +196,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 以下各节介绍如何使用本文的示例代码来实现托管的内容，从创建和上传包到管理购买和下载过程。
 
-### <a name="sample-code"></a>代码示例
+### <a name="sample-code"></a>샘플 코드
 
 示例项目*HostedNonConsumables* （在 StoreKitiOS6 中）使用托管内容。 该应用提供了两个 "书籍" 章节用于销售，其内容托管在 Apple 的服务器上。 内容由文本文件和图像组成，但在实际应用程序中可以使用更复杂的内容。
 
@@ -206,7 +206,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 下载文本文件和图像，并将其复制到应用程序的文档目录。 有关可用于应用程序存储的不同目录的详细信息，请参阅[文件系统文档](~/ios/app-fundamentals/file-system.md)。
 
-## <a name="itunes-connect"></a>iTunes 连接
+## <a name="itunes-connect"></a>iTunes Connect
 
 创建将使用 Apple 内容托管的新产品时，请确保选择**不**需要的产品类型。 其他产品类型不支持内容承载。 此外，不应为销售的*现有*产品启用内容托管;只为新产品打开内容托管。
 
@@ -269,7 +269,8 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 ![](changes-to-storekit-images/image13.png "Choose Archiven")
 
-内容包随后将显示在存档中，如下所示。 "存档类型" 和图标显示此行是**应用内购买内容存档**。 单击 "**验证 ...** " 检查内容包是否有错误，而不实际执行上传。
+内容包随后将显示在存档中，如下所示。
+"存档类型" 和图标显示此行是**应用内购买内容存档**。 单击 "**验证 ...** " 检查内容包是否有错误，而不实际执行上传。
 
 [![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
 
@@ -355,7 +356,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 应将以下信息与完整的[应用内购买文档](~/ios/platform/in-app-purchasing/index.md)一起阅读。 本文档中的信息重点介绍托管内容与以前的实现之间的差异。
 
-### <a name="classes"></a>类
+### <a name="classes"></a>클래스
 
 添加或更改了以下类以支持 iOS 6 中的托管内容：
 
@@ -469,7 +470,7 @@ public void SaveDownload (SKDownload download)
     // targetfolder will be "/Documents/com.xamarin.storekitdoc.montouchimages/" or something like that
     if (!System.IO.Directory.Exists (targetfolder))
         System.IO.Directory.CreateDirectory (targetfolder);
-    foreach (var file in System.IO.Directory.EnumerateFiles 
+    foreach (var file in System.IO.Directory.EnumerateFiles
              (System.IO.Path.Combine(download.ContentUrl.Path, "Contents"))) { // Contents directory is the default in .PKG files
         var fileName = file.Substring (file.LastIndexOf ("/") + 1);
         var newFilePath = System.IO.Path.Combine(targetfolder, fileName);
@@ -484,7 +485,7 @@ public void SaveDownload (SKDownload download)
 
 调用 `FinishTransaction` 时，所下载的文件将不再保证位于 `Cache` 目录中。 在调用 `FinishTransaction`之前，应复制所有文件。
 
-## <a name="other-considerations"></a>其他注意事项
+## <a name="other-considerations"></a>기타 고려 사항
 
 上面的示例代码演示了托管内容购买的一个相当简单的实现。 还必须考虑一些其他事项：
 
@@ -514,17 +515,16 @@ public void SaveDownload (SKDownload download)
 
 Apple 的 iCloud 备份指导原则表明，不应备份从服务器轻松还原的非用户内容（因为它会*不*必要地占用 iCloud 存储空间）。 有关设置备份属性的详细信息，请参阅[文件系统](~/ios/app-fundamentals/file-system.md)文档。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本文介绍了 iOS6 中的应用商店工具包的两项新功能：从应用中购买 iTunes 和其他内容，并利用 Apple 服务器来托管你自己的应用内购买。 本简介应与现有的[应用内购买文档](~/ios/platform/in-app-purchasing/index.md)一起阅读，以全面了解如何实现商店工具包功能。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [StoreKit （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)
-- [应用内购买](~/ios/platform/in-app-purchasing/index.md)
+- [앱에서 바로 구매](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit Framework 参考](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController 类引用](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
-- [iTunes 搜索 API 参考](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)

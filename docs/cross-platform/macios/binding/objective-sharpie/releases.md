@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 2f1fb3706012fa86834986064a366071b644b2dc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f60be3f7dc14749f5cd58d5228c17fa85282cd78
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015956"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725348"
 ---
 # <a name="objective-sharpie-release-history"></a>客观 Sharpie 发行历史记录
 
@@ -58,11 +58,9 @@ ms.locfileid: "73015956"
 
 ## <a name="216-march-17-2015"></a>2.1.6 （2015年3月17日）
 
-[下载2.1。6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
-
 * 修复了二元运算符表达式绑定：表达式的左侧未正确地与右边缘交换（例如，`1 << 0` 未正确绑定为 `0 << 1`）。 感谢 Adam Kemp 注意到这一点！
 * 修复了 `NSInteger` 和 `NSUInteger` 绑定为 `int` 和 `uint` 而不是在 i386 上 `nint` 和 `nuint` 的问题;现在 `-DNS_BUILD_32_LIKE_64` 传递给 Clang，以便分析 `objc/NSObjCRuntime.h` 在 i386 上按预期方式工作。
-* Mac OS X Sdk （如 `-sdk macosx10.10`）的默认体系结构现在是 x86_64 而不是 i386，因此除非需要覆盖默认值，否则可以忽略 `-arch`。
+* Mac OS X Sdk （如 `-sdk macosx10.10`）的默认体系结构现在 x86_64 而不是 i386，因此可以省略 `-arch`，除非需要替代默认值。
 
 ## <a name="210-march-15-2015"></a>2.1.0 （2015年3月15日）
 
@@ -95,7 +93,7 @@ ms.locfileid: "73015956"
 
 * 对于匿名枚举，有一种更好的命名试探法，它们前面的 `typedef` 解析为内置整数类型，如 `long` 或 `int`。
 
-* 现在，C 指针绑定为C#`unsafe`指针，而不是`System.IntPtr`。 当你可能想要将指针参数转换为 `out` 或 `ref` 参数时，这会使绑定更清晰。 不能始终推断参数是应 `out` 还是 `ref`，因此，指针保留在绑定中，以便更容易审核。
+* 现在，C 指针绑定为C# `unsafe` 指针，而不是 `System.IntPtr`。 当你可能想要将指针参数转换为 `out` 或 `ref` 参数时，这会使绑定更清晰。 不能始终推断参数是应 `out` 还是 `ref`，因此，指针保留在绑定中，以便更容易审核。
 
 * 当遇到作为参数的目标 C 对象的2排名指针时，上述指针绑定是一个例外。 在这些情况下，约定为 "主要"，参数将绑定 `out` （例如 `NSError **error` → `out NSError error`）。
 
@@ -135,7 +133,7 @@ _建议_对所有绑定声明进行验证，但对于使用 `[Verify]` 属性进
 
 [下载1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
-次要 bug 修复。
+사소한 버그가 수정되었습니다.
 
 ## <a name="111-december-15-2014"></a>1.1.1：2014年12月15日
 

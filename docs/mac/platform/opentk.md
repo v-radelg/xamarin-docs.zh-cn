@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: e2d459650c4e5ea38d5e54aef64cc3d7dcb5625c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0e283c9d9d1143f7cf4b0d2da0616e94d6ce5bce
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029882"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725010"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin 中的 OpenTK 简介
 
@@ -20,9 +20,9 @@ OpenTK （开放工具包）是一种高级的低级别C#库，可让你更轻�
 
 [![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
 
-本文介绍了 Xamarin OpenTK 应用程序中的基础知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文。
+本文介绍了 Xamarin OpenTK 应用程序中的基础知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
-你可能想要查看[Xamarin](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，并说明用于将类连接到目标的`Register`和`Export`命令-c对象和 UI 元素。
+你可能想要查看[Xamarin](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，它解释了用于将类连接到目标 c 对象和 UI 元素的 `Register` 和 `Export` 命令。
 
 <a name="About_OpenTK" />
 
@@ -40,7 +40,7 @@ OpenTK （开放工具包）是一种高级的低级别C#库，可让你更轻�
 
 OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用程序或其他项目。
 
-有关详细信息，请参阅[开放工具包](http://www.opentk.com)网站。
+有关详细信息，请参阅[开放工具包](https://opentk.net)网站。
 
 <a name="OpenTK_Quickstart" />
 
@@ -202,7 +202,7 @@ ContentView = Game;
 
 <a name="Responding_to_Events" />
 
-### <a name="responding-to-events"></a>对事件作出响应
+### <a name="responding-to-events"></a>이벤트에 응답
 
 每个游戏视图都应响应多个默认事件。 本部分将介绍所需的主要事件。
 
@@ -286,7 +286,7 @@ Game.RenderFrame += (sender, e) =>
 
 ### <a name="running-the-game-view"></a>运行游戏视图
 
-将所有必需的事件定义为，并将游戏视图附加到应用程序的主 Mac 窗口，我们将阅读运行游戏视图并显示图形。 使用以下代码：
+将所有必需的事件定义为，并将游戏视图附加到应用程序的主 Mac 窗口，我们将阅读运行游戏视图并显示图形。 다음 코드를 사용합니다.
 
 ```csharp
 // Run the game at 60 updates per second
@@ -319,16 +319,16 @@ Game.Run(60.0);
 
 <a name="Summary" />
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本文大致介绍了如何在 Xamarin. Mac 应用程序中使用 OpenTK。 我们了解了如何创建游戏窗口，如何将游戏窗口附加到 Mac 窗口，以及如何在游戏窗口中呈现简单的形状。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [MacOpenTK （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/macopentk)
 - [MonoMacGameView （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)
-- [了解 Mac](~/mac/get-started/hello-mac.md)
+- [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
-- [开放工具包](http://www.opentk.com)
-- [OS X 人机界面指南](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
+- [开放工具包](https://opentk.net)
+- [OS X 휴먼 인터페이스 지침](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows 简介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

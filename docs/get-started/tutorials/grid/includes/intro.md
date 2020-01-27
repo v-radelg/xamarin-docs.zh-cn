@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059552"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
@@ -20,4 +20,4 @@ ms.locfileid: "71059552"
 
 你将使用 Visual Studio 2019 或 Visual Studio for Mac 创建一个简单的应用程序，演示如何在 [`Grid`](xref:Xamarin.Forms.Grid) 中对控件布局。 以下屏幕截图显示了最终的应用程序：
 
-[![iOS 和 Android 上具有跨越多列和多行的内容的网格的屏幕截图](../images/span-columns-rows.png "具有跨越多列和多行的内容的网格")](../images/span-columns-rows-large.png#lightbox "Grid with content spanning columns and rows")
+[![iOS 和 Android 上内容跨多列和多行的网格屏幕截图](../images/span-columns-rows.png "内容跨多列和多行的网格")](../images/span-columns-rows-large.png#lightbox "内容跨多列和多行的网格")

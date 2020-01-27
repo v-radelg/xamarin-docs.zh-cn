@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67559981"
 ---
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中子视图的大小和位置取决于子视图 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 属性的值，以及 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性的值。
@@ -15,7 +15,7 @@ ms.locfileid: "67559981"
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在 MainPage.xaml 中，修改 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 声明，为每个 [`Label`](xref:Xamarin.Forms.Label) 设置对齐方式和扩展选项  ：
+1. 在 MainPage.xaml 中，修改 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 声明，为每个 [`Label`](xref:Xamarin.Forms.Label) 设置对齐方式和扩展选项：
 
     ```xaml
     <StackLayout Margin="20,35,20,25">
@@ -51,9 +51,9 @@ ms.locfileid: "67559981"
     > [!NOTE]
     > 视图的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性的默认值为 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
-    [![iOS 和 Android 上具有对齐方式和扩展选项集的 StackLayout 中子视图的屏幕截图](../images/alignment-expansion.png "包含 Label 实例和对齐方式及扩展集的 StackLayout")](../images/alignment-expansion-large.png#lightbox "StackLayout containing Label instances, with alignment and expansion set")
+    [![iOS 和 Android 上在 StackLayout 中具有对齐和展开选项集的子视图屏幕截图](../images/alignment-expansion.png "包含具有对齐和展开集的标签实例的 StackLayout")](../images/alignment-expansion-large.png#lightbox "包含具有对齐和展开集的标签实例的 StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) 仅遵循与 `StackLayout` 方向相反的子视图的对齐方式首选项。 因此，垂直方向的 `StackLayout` 中的 [`Label`](xref:Xamarin.Forms.Label) 子视图将其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为对齐方式字段中的其中一种：
 
@@ -71,7 +71,7 @@ ms.locfileid: "67559981"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 MainPage.xaml 中，修改 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 声明，为每个 [`Label`](xref:Xamarin.Forms.Label) 设置对齐方式和扩展选项  ：
+1. 在 MainPage.xaml 中，修改 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 声明，为每个 [`Label`](xref:Xamarin.Forms.Label) 设置对齐方式和扩展选项：
 
     ```xaml
     <StackLayout Margin="20,35,20,25">
@@ -107,9 +107,9 @@ ms.locfileid: "67559981"
     > [!NOTE]
     > 视图的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性的默认值为 [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![iOS 和 Android 上具有对齐方式和扩展选项集的 StackLayout 中子视图的屏幕截图](../images/alignment-expansion.png "包含 Label 实例和对齐方式及扩展集的 StackLayout")](../images/alignment-expansion-large.png#lightbox "StackLayout containing Label instances, with alignment and expansion set")
+    [![iOS 和 Android 上在 StackLayout 中具有对齐和展开选项集的子视图屏幕截图](../images/alignment-expansion.png "包含具有对齐和展开集的标签实例的 StackLayout")](../images/alignment-expansion-large.png#lightbox "包含具有对齐和展开集的标签实例的 StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) 仅遵循与 `StackLayout` 方向相反的子视图的对齐方式首选项。 因此，垂直方向的 `StackLayout` 中的 [`Label`](xref:Xamarin.Forms.Label) 子视图将其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为对齐方式字段中的其中一种：
 

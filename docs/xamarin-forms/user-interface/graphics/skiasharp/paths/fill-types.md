@@ -1,5 +1,5 @@
 ---
-title: 路径填充类型
+title: 경로 채우기 유형
 description: 这篇文章检查不同的效果可能使用 SkiaSharp 路径填充类型，并演示此示例代码。
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
@@ -7,20 +7,20 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545564"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723637"
 ---
-# <a name="the-path-fill-types"></a>路径填充类型
+# <a name="the-path-fill-types"></a>경로 채우기 유형
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _发现不同的效果可能使用 SkiaSharp 路径填充类型_
 
-在路径中的两个分布图可以重叠，并构成了单个轮廓的行可以重叠。 可能可以填充任何封闭的区域，但可能不想要填充所有封闭的区域。 以下是一个示例：
+在路径中的两个分布图可以重叠，并构成了单个轮廓的行可以重叠。 可能可以填充任何封闭的区域，但可能不想要填充所有封闭的区域。 예를 들면 다음과 같습니다.
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
@@ -35,7 +35,7 @@ _发现不同的效果可能使用 SkiaSharp 路径填充类型_
 
 很多例行路径环绕的算法通常填充路径的所有封闭的区域。 奇偶算法通常会产生更有趣的结果。
 
-典型的示例是 5 星，如中所示**Five-Pointed 星型**页。 [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)文件实例化两个`Picker`视图以选中路径填充类型和路径是描边还是填充和 / 或所采用顺序：
+典型的示例是 5 星，如中所示**Five-Pointed 星型**页。 [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个`Picker`视图以选中路径填充类型和路径是描边还是填充和 / 或所采用顺序：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         // angle from vertical
         double angle = i * 4 * Math.PI / 5;
-        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle), 
+        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle),
                                         -radius * (float)Math.Cos(angle)));
     }
     path.Close();
@@ -225,7 +225,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

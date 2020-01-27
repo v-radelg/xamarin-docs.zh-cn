@@ -1,22 +1,22 @@
 ---
-title: Xamarin.Forms 本地数据库
-description: Xamarin.Forms 支持使用 SQLite 数据库引擎的数据库驱动型应用程序，如此即可在共享代码中加载和保存对象。 本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 读取和写入数据到本地 SQLite 数据库。
+title: Xamarin.Forms 로컬 데이터베이스
+description: Xamarin.Forms는 SQLite 데이터베이스 엔진을 사용하여 데이터베이스 기반 애플리케이션을 지원하기 때문에 공유 코드로 개체를 로드하고 저장할 수 있습니다. 이 문서에서는 Xamarin.Forms 애플리케이션이 SQLite.Net을 사용하여 데이터를 읽고 로컬 SQLite 데이터베이스에 데이터를 기록하는 방법을 설명합니다.
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/05/2019
-ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e86d69bb9dc751f70d03a556f65c11efd0b34d10
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728273"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725584"
 ---
-# <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本地数据库
+# <a name="xamarinforms-local-databases"></a>Xamarin.Forms 로컬 데이터베이스
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 SQLite 数据库引擎允许 Xamarin 应用程序加载和保存共享代码中的数据对象。 示例应用程序使用 SQLite 数据库表存储 todo 项。 本文介绍如何使用共享代码中的 SQLite.Net 在本地数据库中存储和检索信息。
 
@@ -34,14 +34,14 @@ SQLite 数据库引擎允许 Xamarin 应用程序加载和保存共享代码中�
 
 使用 NuGet 包管理器搜索**sqlite 网络 pcl** ，并将最新版本添加到共享代码项目。
 
-许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
+이름이 유사한 NuGet 패키지가 여러 개 있습니다. 올바른 패키지에는 이러한 특성이 있습니다.
 
-- **创建者：** Frank A. Krueger
+- **만든 사람:** Frank A. Krueger
 - **ID：** sqlite 网络-pcl
 - **NuGet 链接：** [sqlite 网络-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> 不管包名称，即便在 .NET Standard 项目中也使用 sqlite-net-pcl NuGet 包。
+> 패키지 이름에도 불구하고 .NET 표준 프로젝트에서도 **sqlite-net-pcl** NuGet 패키지를 사용합니다.
 
 ## <a name="configure-app-constants"></a>配置应用常数
 
@@ -90,9 +90,9 @@ public static class Constants
 
 数据库包装类从应用程序的其余部分对数据访问层进行抽象化。 此类集中了查询逻辑，并简化了数据库初始化的管理，从而更容易在应用程序增长时重构或扩展数据操作。 Todo 应用出于此目的定义了一个 `TodoItemDatabase` 类。
 
-### <a name="lazy-initialization"></a>延迟初始化
+### <a name="lazy-initialization"></a>초기화 지연
 
-`TodoItemDatabase` 使用 .NET `Lazy` 类在第一次访问数据库之前延迟数据库的初始化。 使用延迟初始化可防止数据库加载进程延迟应用程序启动。 有关详细信息，请参阅[懒惰&lt;t&gt; 类](https://docs.microsoft.com/dotnet/api/system.lazy-1)。
+`TodoItemDatabase` 使用 .NET `Lazy` 类在第一次访问数据库之前延迟数据库的初始化。 使用延迟初始化可防止数据库加载进程延迟应用程序启动。 有关详细信息，请参阅[懒惰&lt;t&gt; 类](xref:System.Lazy`1)。
 
 ```csharp
 public class TodoItemDatabase
@@ -132,7 +132,7 @@ public class TodoItemDatabase
 
 ### <a name="the-safefireandforget-extension-method"></a>SafeFireAndForget 扩展方法
 
-实例化 `TodoItemDatabase` 类时，它必须初始化数据库连接，这是一个异步过程。 但是：
+实例化 `TodoItemDatabase` 类时，它必须初始化数据库连接，这是一个异步过程。 그러나
 
 - 类构造函数不能是异步的。
 - 未等待的异步方法不会引发异常。
@@ -232,7 +232,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-此属性允许 Xamarin 组件在 `Database` 实例上调用数据检索和操作方法以响应用户交互。 例如：
+此属性允许 Xamarin 组件在 `Database` 实例上调用数据检索和操作方法以响应用户交互。 예를 들면 다음과 같습니다.:
 
 ```csharp
 var saveButton = new Button { Text = "Save" };
@@ -244,7 +244,7 @@ saveButton.Clicked += async (sender, e) =>
 };
 ```
 
-## <a name="advanced-configuration"></a>高级配置
+## <a name="advanced-configuration"></a>고급 구성
 
 SQLite 提供了一个功能强大的 API，该 API 的功能多于本文和示例应用中介绍的功能。 以下各节介绍了对于可伸缩性很重要的功能。
 
@@ -281,7 +281,7 @@ await Database.EnableWriteAheadLoggingAsync();
 
 有关详细信息，请参阅[Xamarin 中的文件处理](~/xamarin-forms/data-cloud/data/files.md)。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [Todo 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [SQLite.NET NuGet 包](https://www.nuget.org/packages/sqlite-net-pcl/)
@@ -289,4 +289,4 @@ await Database.EnableWriteAheadLoggingAsync();
 - [将 SQLite 用于 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [将 SQLite 与 iOS 配合使用](~/ios/data-cloud/data/using-sqlite-orm.md)
 - [基于任务的异步模式（点击）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
-- [迟缓<T> 类](https://docs.microsoft.com//api/system.lazy-1)
+- [迟缓&lt;T&gt; 类](xref:System.Lazy`1)

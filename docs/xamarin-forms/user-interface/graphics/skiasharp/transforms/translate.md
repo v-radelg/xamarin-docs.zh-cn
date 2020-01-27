@@ -1,5 +1,5 @@
 ---
-title: 翻译转换
+title: 좌표 이동 변환
 description: 本文探讨如何使用转换变换移动 SkiaSharp 图形在 Xamarin.Forms 应用程序，并演示此示例代码。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,16 +7,16 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e108852b2978903fb74686ad60cf419bbe4e3c0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1efd7610b32e6a3903d34fc2f8b5a6e20c9da8a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772962"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723601"
 ---
-# <a name="the-translate-transform"></a>翻译转换
+# <a name="the-translate-transform"></a>좌표 이동 변환
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用转换变换移动 SkiaSharp 图形_
 
@@ -24,7 +24,7 @@ _了解如何使用转换变换移动 SkiaSharp 图形_
 
 转换也是适用于动画以及简单的文本效果：
 
-![](translate-images/translateexample.png "雕刻，和浮雕与翻译的文本阴影")
+![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
 
 [ `Translate` ](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))中的方法`SKCanvas`具有导致后来绘制的图形对象水平和垂直移动的两个参数：
 
@@ -71,7 +71,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 连续矩形渗透页：
 
-[![](translate-images/accumulatedtranslate-small.png "三重累积转换页屏幕截图")](translate-images/accumulatedtranslate-large.png#lightbox "累积转换页面的三个屏幕截图")
+[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
 
 如果累积的平移因数`dx`和`dy`，和绘图函数中指定的点是 (`x`， `y`)，然后在点呈现的图形对象 (`x'`， `y'`)，其中：
 
@@ -128,7 +128,7 @@ using (SKPaint textPaint = new SKPaint())
 
 中的三个示例中，每个`Translate`称为用于显示要从指定的位置偏移的文本`x`和`y`变量。 然后文本会再次显示，在使用任何转换效果的另一种颜色：
 
-[![](translate-images/translatetexteffects-small.png "三重的翻译文本效果页屏幕截图")](translate-images/translatetexteffects-large.png#lightbox "带来三倍的翻译文本效果页屏幕截图")
+[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
 
 每三个示例显示了不同的方式而取消`Translate`调用：
 
@@ -136,13 +136,13 @@ using (SKPaint textPaint = new SKPaint())
 
 第二个示例中调用[ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix)。 这会导致要返回到其默认状态的所有转换。
 
-第三个示例将保存的状态`SKCanvas`对象通过调用[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然后还原通过调用状态[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 这是最通用的方法来处理一系列的绘制操作的转换。 这些`Save`函数`Restore`和调用函数，如堆栈：可以多次调用`Save` ，然后调用`Restore`反向序列以返回到以前的状态。 `Save`方法返回一个整数，并可以将传递到该整数[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)若要有效地调用`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)属性返回当前堆栈上保存的状态数。
+第三个示例将保存的状态`SKCanvas`对象通过调用[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然后还原通过调用状态[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 这是最通用的方法来处理一系列的绘制操作的转换。 这些`Save`并`Restore`调用堆栈等函数： 你可以调用`Save`多个次，，然后调用`Restore`在反向序列，以返回到之前的状态。 `Save`方法返回一个整数，并可以将传递到该整数[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)若要有效地调用`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)属性返回当前堆栈上保存的状态数。
 
-此外可以使用[ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)还原画布状态的类。 此类的构造函数应调用`using`语句; 画布结束时自动还原状态`using`块。 
+此外可以使用[ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)还原画布状态的类。 此类的构造函数应调用`using`语句; 画布结束时自动还原状态`using`块。
 
 但是，您无需担心如何从一次调用的同时应用转换`PaintSurface`到下一个处理程序。 每次新调用`PaintSurface`提供了全新`SKCanvas`使用默认转换的对象。
 
-另一个常见用途的`Translate`转换是用于呈现的视觉对象最初创建使用方便进行绘制的坐标。 例如，你可能想要使用中心点 （0，0） 处指定了模拟时钟的坐标。 你可以然后使用转换来显示时钟所需的位置。 此方法进行了演示 [**Hendecagram 数组**] 页。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)类首先创建`SKPath`11 星的对象。 `HendecagramPath`对象定义为公共、 静态和只读的因此，则可以从其他演示程序进行访问。 在静态构造函数创建：
+另一个常见用途的`Translate`转换是用于呈现的视觉对象最初创建使用方便进行绘制的坐标。 例如，你可能想要使用中心点 （0，0） 处指定了模拟时钟的坐标。 你可以然后使用转换来显示时钟所需的位置。 此方法进行了演示 [**Hendecagram 数组**] 页。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)类首先创建`SKPath`11 星的对象。 `HendecagramPath`对象定义为公共、 静态和只读的因此，则可以从其他演示程序进行访问。 在静态构造函数创建：
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -173,7 +173,7 @@ public class HendecagramArrayPage : ContentPage
 }
 ```
 
-如果在星型的中心点 （0，0），在星型的所有点都都在该点周围的圆圈。 每个点都增加 5/11ths 的 360 度的角度的正弦和余弦值的组合。 (也是可以通过增加 2 角度创建 11 星/第 11，3/11ths 或 4/圆的第 11。)该圆的半径设置为 100。
+如果在星型的中心点 （0，0），在星型的所有点都都在该点周围的圆圈。 每个点都增加 5/11ths 的 360 度的角度的正弦和余弦值的组合。 （也可以通过将角度增加 2/11、3/11ths 或圆形的 4/11 来创建11尖星形。）该圆的半径设置为100。
 
 如果此路径呈现不涉及任何转换，在中心将定位在的左上角`SKCanvas`，并且仅每个季度的它将可见。 `PaintSurface`处理程序`HendecagramPage`改为使用`Translate`平铺在画布上添加星形的多个副本，每个随机着色：
 
@@ -212,9 +212,9 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-下面是结果：
+结果如下：
 
-[![](translate-images/hendecagramarray-small.png "三重 Hendecagram 数组页屏幕截图")](translate-images/hendecagramarray-large.png#lightbox "Hendecagram 数组页面的三个屏幕截图")
+[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
 
 动画通常涉及到转换。 **Hendecagram 动画**页移动 11 星的圆圈。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)类首先执行某些字段，然后重写`OnAppearing`和`OnDisappearing`方法来启动和停止 Xamarin.Forms 计时器：
 
@@ -299,11 +299,11 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface`处理程序调用`Translate`方法两次，首先要转换为中心的画布，然后再转换为以中心圆的周长 （0，0）。 圆的半径设置为保持页面的范围内的星号的同时尽可能大：
 
-[![](translate-images/hendecagramanimation-small.png "三重 Hendecagram 动画页屏幕截图")](translate-images/hendecagramanimation-large.png#lightbox "Hendecagram 动画页面的三个屏幕截图")
+[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
 
 请注意，在星型保持围绕页的中心为中心的相同方向。 它根本不会旋转。 这是一个作业用于旋转转换。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

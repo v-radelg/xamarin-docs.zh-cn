@@ -6,12 +6,12 @@ ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d081795ecfcc5d0aa2559b866fcc57076fe8248b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f0e2128bca5d2965395647353cd5a95a4030439f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007028"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725276"
 ---
 # <a name="getting-started-with-macos"></a>MacOS 入门
 
@@ -19,7 +19,7 @@ ms.locfileid: "73007028"
 
 * 按照[目标入门-C](~/tools/dotnet-embedding/get-started/objective-c/index.md)指南中的说明进行操作。
 
-## <a name="hello-world"></a>Hello world
+## <a name="hello-world"></a>Hello World
 
 首先，在中C#生成一个简单的 hello world 示例。
 
@@ -40,7 +40,7 @@ public class MyNSView : NSTextView
 }
 ```
 
-生成项目。 生成的程序集将另存为 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**。
+프로젝트를 빌드합니다. 生成的程序集将另存为 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**。
 
 ### <a name="bind-the-managed-assembly"></a>绑定托管程序集
 
@@ -82,7 +82,7 @@ objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csha
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     MyNSView *view = [[MyNSView alloc] init];
     view.frame = CGRectMake(0, 200, 200, 200);
     [self.view addSubview: view];
@@ -94,5 +94,3 @@ objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csha
 最后，运行 Xcode 项目，如下所示：
 
 ![在模拟器C#中运行的示例 Hello](macos-images/hello-from-csharp-mac.png)
-
-[此处提供](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)了更完整和更好的示例。

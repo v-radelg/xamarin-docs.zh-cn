@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032307"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725366"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的订阅和报表
 
 ## <a name="about-non-renewing-subscriptions"></a>关于非续订订阅
 
 非续订订阅适用于代表服务销售的产品（例如，一周对导航应用程序的访问权限或对数据存档的限时访问权限）。   
-   
+
 无续订订阅和其他产品类型之间的主要区别：
 
-- ITunes Connect 中的产品定义不包括术语。 应用程序代码必须能够从产品 ID 推断有效期。 
-- 可以多次购买它们（如一种耗材的产品）。 需要应用程序来管理订阅期限/到期和续订，并阻止用户购买重叠订阅。 
-- StoreKit Restore 功能不支持购买。 如果订阅应在用户的所有设备上都可用，则该应用程序必须与远程服务器一起设计和实现此功能。 在备份设备然后从备份还原时，应用程序还负责备份的订阅状态。 
+- ITunes Connect 中的产品定义不包括术语。 应用程序代码必须能够从产品 ID 推断有效期。
+- 可以多次购买它们（如一种耗材的产品）。 需要应用程序来管理订阅期限/到期和续订，并阻止用户购买重叠订阅。
+- StoreKit Restore 功能不支持购买。 如果订阅应在用户的所有设备上都可用，则该应用程序必须与远程服务器一起设计和实现此功能。 在备份设备然后从备份还原时，应用程序还负责备份的订阅状态。
 - 实现概述
-- 通常，非续订订阅应使用服务器交付的工作流和管理的同类产品来实现。 
+- 通常，非续订订阅应使用服务器交付的工作流和管理的同类产品来实现。
 
 ## <a name="about-free-subscriptions"></a>关于免费订阅
 
@@ -44,12 +44,12 @@ ms.locfileid: "73032307"
 
 应使用服务器交付的产品工作流（请参阅*回执验证和服务器交付的产品*部分）来实施自动可续订订阅。
 
-#### <a name="shared-secret"></a>共享机密
+#### <a name="shared-secret"></a>공유 암호
 
 验证服务器上的自动可续订订阅时，必须在 JSON 请求中使用应用内购买共享机密。 通过 iTunes Connect 创建/访问共享机密。
 
 从 iTunes Connect 主页中选择 **"我的应用"** ：   
-   
+
  [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 选择一个应用程序，并单击 "**应用内购买**" 选项卡：
@@ -57,7 +57,7 @@ ms.locfileid: "73032307"
 [![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 从页面底部选择 "**查看或生成共享机密**"：
-   
+
  [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
@@ -98,19 +98,18 @@ SKPaymentTransaction 对象不包括订阅术语–应为每个术语使用不�
 
 为了更轻松地测试订阅，在沙盒中进行测试时，它们的持续时间会压缩。 1周订阅每3分钟续订一次，1年订阅每小时续订一次。 在沙盒中进行测试时，订阅将自动续订最多6次。
 
-## <a name="reporting"></a>报表
+## <a name="reporting"></a>보고
 
 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）提供：   
-   
+
  **销售和趋势**–显示应用下载、更新和应用内购买的详细信息。   
-   
+
  **支付和财务报告**–详细说明应用所获得的收入，并列出已对你进行的付款和你的欠量。
 
 示例销售和趋势报表如下所示：   
 
  [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
-   
- 此外，还提供了一个 " [**行楷连接移动**IOS 应用（iTunes" 链接）](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)。
-下面显示了一些可用统计信息的 iPhone 屏幕截图：   
-   
+
+ 此外，还提供了一个 "**宋体" 连接移动**iOS 应用。 下面显示了一些可用统计信息的 iPhone 屏幕截图：   
+
  [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

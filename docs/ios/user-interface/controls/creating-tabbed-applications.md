@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ad4682e9a3d4de2565bee54ffa159fd739572e24
-ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
+ms.openlocfilehash: 25d8563288cce614bc2823b0146e5121688c6f02
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663293"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725478"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Xamarin 中的选项卡和制表符栏控制器
 
@@ -27,7 +27,7 @@ ms.locfileid: "75663293"
 `UITabBarController`支持通过以下选项卡式应用程序开发：
 
 - 允许多个控制器添加到它。
-- 通过提供一个选项卡式的用户界面，`UITabBar`类，以允许用户控制器和其视图之间进行切换。 
+- 通过提供一个选项卡式的用户界面，`UITabBar`类，以允许用户控制器和其视图之间进行切换。
 
 控制器被添加至`UITabBarController`通过其`ViewControllers`属性，它是`UIViewController`数组。 `UITabBarController`本身处理加载正确的控制器并显示其视图基于所选的选项卡。
 
@@ -63,9 +63,9 @@ ms.locfileid: "75663293"
 
 若要实现`UITabBarController`我们需要执行以下操作：
 
-1. 设置类的基类`TabController`到`UITabBarController`。 
-1. 创建`UIViewController`实例将添加到`TabController`。 
-1. 添加`UIViewController`实例为数组分配给`ViewControllers`属性的`TabController`。 
+1. 设置类的基类`TabController`到`UITabBarController`。
+1. 创建`UIViewController`实例将添加到`TabController`。
+1. 添加`UIViewController`实例为数组分配给`ViewControllers`属性的`TabController`。
 
 将以下代码添加到`TabController`类来实现这些步骤：
 
@@ -118,16 +118,16 @@ public partial class AppDelegate : UIApplicationDelegate
 {
     UIWindow window;
     TabController tabController;
-    
+
     public override bool FinishedLaunching (UIApplication app, NSDictionary options)
     {
         window = new UIWindow (UIScreen.MainScreen.Bounds);
-        
+
         tabController = new TabController ();
         window.RootViewController = tabController;
-        
+
         window.MakeKeyAndVisible ();
-        
+
         return true;
     }
 }
@@ -217,11 +217,11 @@ tab3.TabBarItem.BadgeValue = null;
 
 - 新的文件对话框出现时，导航到**iOS > 空 iPhone 情节提要**。
 
-让我们称此新情节提要**MainStoryboard** ，如下所示： 
+让我们称此新情节提要**MainStoryboard** ，如下所示：
 
 [![](creating-tabbed-applications-images/new-file-dialog.png "Add a MainStoryboard file to the project")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
-有几个重要步骤中涉及到以前非演示图板文件中，添加情节提要时，请注意[情节提要简介](~/ios/user-interface/storyboards/index.md)指南。 这些位置包括：
+有几个重要步骤中涉及到以前非演示图板文件中，添加情节提要时，请注意[情节提要简介](~/ios/user-interface/storyboards/index.md)指南。 이러한 설정은 다음과 같습니다.
 
 1. 添加到你的情节提要的名称**主界面**一部分`Info.plist`:
 
@@ -295,7 +295,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 在我们的情节提要，我们可以使用 segues 设计来处理 TabBarController 和我们的视图控制器之间的转换。 后与初始视图进行交互，我们想要将其加载到 TabBarController 向用户显示。 让我们对此进行设置设计器中。
 
-**按住 Ctrl 键单击**和**拖动**从 TabBarController 的按钮。 鼠标弹起上将显示一个上下文菜单。 我们想要使用模式的 segue。 
+**按住 Ctrl 键单击**和**拖动**从 TabBarController 的按钮。 鼠标弹起上将显示一个上下文菜单。 我们想要使用模式的 segue。
 
 若要设置的我们选项卡上，每个**按住 Ctrl 键单击**从一到三种类型，然后选择关系到每个订单中我们视图控制器 TabBarController**选项卡**从上下文菜单，如下图所示：
 
@@ -309,7 +309,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 [![](creating-tabbed-applications-images/properties-panel.png "Setting the tab options in the Properties Explorer")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
-我们可以使用此编辑某些属性，如徽章、 标题和 iOS[标识符](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html)，等等
+使用此工具可以编辑某些属性，如徽章、标题和 iOS 标识符，等等。
 
 如果我们保存并运行应用程序现在，我们会发现该按钮 ViewController1 实例加载到 TabBarController 时再次出现。 让我们来解决此问题通过检查以查看当前视图是否具有父视图控制器。 如果是这样，我们知道我们位于 TabBarController，且因此应隐藏按钮。 让我们将以下代码添加到 ViewController1 类：
 
@@ -326,11 +326,11 @@ public override void ViewDidLoad ()
 
 [![示例应用程序输出](creating-tabbed-applications-images/first-view-sml.png)](creating-tabbed-applications-images/first-view.png#lightbox)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>요약
 
 本文介绍如何使用`UITabBarController`应用程序中。 我们介绍了如何将控制器加载到每个选项卡，以及如何在选项卡上设置属性，此类的标题、 图像和徽章。 我们然后检查，使用演示图板，如何加载`UITabBarController`在运行时不时`RootViewController`的窗口。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [创建选项卡式应用程序 （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/creatingtabbedapplications)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)

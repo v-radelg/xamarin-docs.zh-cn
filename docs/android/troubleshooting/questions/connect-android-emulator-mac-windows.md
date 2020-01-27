@@ -1,5 +1,5 @@
 ---
-title: 是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
+title: Windows VM에서 Mac에서 실행 중인 Android 에뮬레이터에 연결할 수 있나요?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: 2c1f571efb9ec3fb726912eb1e30496bc51fe26e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 49d1eea60f766f4cb61484a6e441506cf8f046ff
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026987"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725076"
 ---
-# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
+# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Windows VM에서 Mac에서 실행 중인 Android 에뮬레이터에 연결할 수 있나요?
 
 若要从 Windows 虚拟机连接到 Mac 上运行的 Android Emulator，请执行以下步骤：
 
@@ -37,8 +37,7 @@ ms.locfileid: "73026987"
 
     奇数端口是用于连接 `adb`的端口。 另请参阅[https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking)。
 
-4. _选项 1_：使用[`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
-    将从端口5555（或所需的任何其他端口）外部接收的入站 TCP 数据包转发到环回接口（在本例中为**127.0.0.1 5555** ）上的奇数端口，并将出站数据包反向转发：
+4. _选项 1_：使用 `nc` 将端口5555（或所需的任何其他端口）外部接收的入站 TCP 数据包转发到环回接口（在本例中为**127.0.0.1 5555** ）上的奇数端口，并以其他方式转发出站数据包：
 
     ```bash
     cd /tmp
@@ -48,10 +47,9 @@ ms.locfileid: "73026987"
 
     只要 `nc` 命令在终端窗口中保持运行，数据包就会按预期方式转发。 使用模拟器完成后，可以在终端窗口中键入 Control C 来退出 `nc` 命令。
 
-    （选项1通常比选项2更简单，尤其是在**系统首选项 > 安全性 & 隐私 > 防火墙**。） 
+    （选项1通常比选项2更简单，尤其是在**系统首选项 > 安全性 & 隐私 > 防火墙**。）
 
-    _选项 2_：使用[`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
-    若要将 TCP 数据包从端口 `5555` （或所需的任何其他端口）重定向到环回接口`127.0.0.1:5555` （在此示例中为）上的奇数端口的[共享网络](https://kb.parallels.com/en/4948)接口上，请执行以下操作：
+    _选项 2_：使用 `pfctl` 将 TCP 数据包从端口 `5555` （或所需的任何其他端口）重定向到环回接口`127.0.0.1:5555` （在此示例中为）上的奇数端口的[共享网络](https://kb.parallels.com/en/4948)接口上：
 
     ```bash
     sed '/rdr-anchor/a rdr pass on vmnet8 inet proto tcp from any to any port 5555 -> 127.0.0.1 port 5555' /etc/pf.conf | sudo pfctl -ef -
@@ -77,7 +75,7 @@ ms.locfileid: "73026987"
 
 3. 在 Windows 上运行 `ssh`，在 Windows 上的本地端口（本例中为`localhost:15555`）和 Mac 环回接口（在此示例中`127.0.0.1:5555`）之间设置双向端口转发：
 
-    ```cmd 
+    ```cmd
     C:\> ssh -L localhost:15555:127.0.0.1:5555 mac-username@ip-address-of-the-mac
     ```
 
@@ -98,9 +96,9 @@ ms.locfileid: "73026987"
 理论上，另一种方法是使用 `adb`的内置功能连接到在远程计算机上运行的 `adb` 服务器（请参阅[https://stackoverflow.com/a/18551325](https://stackoverflow.com/a/18551325)）。
 但 Xamarin IDE 扩展目前不提供配置该选项的方法。
 
-## <a name="contact-information"></a>联系人信息
+## <a name="contact-information"></a>联系信息
 
 本文档讨论了2016年3月的当前行为。 本文档中所述的技术不是适用于 Xamarin 的稳定测试套件的一部分，因此可能会在将来中断。
 
 如果您注意到该方法不再有效，或者您注意到了文档中的任何其他错误，请随意添加到下面论坛线索的讨论中： [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm)。
-谢谢!
+감사합니다.

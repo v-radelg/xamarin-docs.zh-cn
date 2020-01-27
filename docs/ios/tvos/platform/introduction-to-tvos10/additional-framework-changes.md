@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1339a6c2909c7ba62592d66dcdf08bcfd2e668a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b9dfb354f33f67c73b415f8c109ebdc27dcdb6d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030627"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725384"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 框架更改
 
@@ -55,7 +55,7 @@ tvOS 10 对核心数据框架包括以下增强功能：
 
 tvOS 10 包括对核心图形框架的以下增强功能：
 
-- 新的[CGColorConverterRef](https://developer.apple.com/reference/coregraphics/cgcolorconverterref)类可用于执行一系列颜色转换。
+- 新的 CGColorConverterRef 类可用于执行一系列颜色转换。
 
 <a name="Core-Image-Enhancements" />
 
@@ -65,7 +65,7 @@ tvOS 10 对核心映像框架进行了以下改进：
 
 - [CIFilter](https://developer.apple.com/reference/coreimage/cifilter)类的 `ImageWithExtent` 方法可用于在筛选器操作中插入自定义处理。 核心映像将在处理图像以进行输出或显示时调用筛选器之间的给定回调。
 - 应用现在可以通过在处理之前和之后转换颜色空间来处理核心图像上下文工作颜色空间之外的颜色空间中的图像。
-- 已对 `UIImageView` 对象中的 `UIImage` 渲染（由核心图像映像存储支持时）进行了多种渲染性能改进。 
+- 已对 `UIImageView` 对象中的 `UIImage` 渲染（由核心图像映像存储支持时）进行了多种渲染性能改进。
 - 标记为宽域的 `UIImage` 对象将在支持宽色的 iOS 设备上的 `UIImageView` 对象中呈现为广角颜色。
 - 核心映像内核代码现在可以请求特定的像素输出格式。
 
@@ -159,7 +159,7 @@ tvOS 10 对核心映像框架进行了以下改进：
 - SceneKit 解释所有着色器类型的线性 RGB 颜色空间中的颜色分量值。
 - 由于 SceneKit 读取和调整纹理图像中的颜色配置文件信息，因此请对所有图像使用资产目录，以确保提供此信息。
 - 可以通过在应用的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 键来禁用线性颜色空间渲染和宽色。
-- 生成任意多边形灵长类动物（从文件加载或以编程方式生成），以通过新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)类指定几何图形。
+- 生成任意多边形灵长类动物（从文件加载或以编程方式生成），以通过新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon)类指定几何图形。
 
 <a name="SpriteKit-Enhancements" />
 
@@ -195,7 +195,7 @@ tvOS 10 对核心映像框架进行了以下改进：
 - 使用新的 `UICloudSharingController` 和 `UICloudSharingControllerDelegate` 类启动 CloudKit 共享和修改其属性。
 - 利用预提取的单元，通过新的 `UICollectionViewDataSourcePrefetching` 委托改善 `UICollectionViews` 的滚动体验。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [TvOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

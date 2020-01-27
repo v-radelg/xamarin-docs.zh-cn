@@ -1,5 +1,5 @@
 ---
-title: 身份验证和授权
+title: 인증 및 권한 부여
 description: 本章介绍了 eShopOnContainers mobile 应用如何针对容器化微服务执行身份验证和授权。
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 7ced28a5ed379b761ffcc9841f5d0e923ec747e7
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 528ccd66cc013f83752d93251cb9714115b29819
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667047"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725602"
 ---
-# <a name="authentication-and-authorization"></a>身份验证和授权
+# <a name="authentication-and-authorization"></a>인증 및 권한 부여
 
 身份验证是从用户获取标识凭据（例如用户名和密码）的过程，并根据机构验证这些凭据。 如果凭据有效，则提交凭据的实体被视为经过身份验证的标识。 身份验证后，授权过程会确定该标识是否有权访问给定的资源。
 
@@ -100,7 +100,7 @@ public void ConfigureServices(IServiceCollection services)
 > [!TIP]
 > 动态加载 IdentityServer 4 配置。 IdentityServer 4 的 Api 允许从内存中的配置对象列表配置 IdentityServer。 在 eShopOnContainers 引用应用程序中，这些内存中集合硬编码到应用程序中。 但是，在生产方案中，可以从配置文件或从数据库动态加载它们。
 
-有关配置 IdentityServer 使用 ASP.NET Core 标识的信息，请参阅[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html)IdentityServer 文档中。
+有关配置 IdentityServer 使用 ASP.NET Core 标识的信息，请参阅[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/latest/quickstarts/6_aspnet_identity.html)IdentityServer 文档中。
 
 #### <a name="configuring-api-resources"></a>配置 API 资源
 
@@ -208,9 +208,9 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 可以通过在 `Client.AllowedGrantTypes` 属性中指定 grant 类型来配置客户端与 IdentityServer 之间的身份验证流。 OpenID Connect 和 OAuth 2.0 规范定义了多个身份验证流，其中包括：
 
-- 隐式。 此流针对基于浏览器的应用程序进行了优化，并且应该用于仅用户身份验证或身份验证和访问令牌请求。 所有令牌都是通过浏览器传输的，因此不允许使用刷新令牌等高级功能。
+- 암시적 此流针对基于浏览器的应用程序进行了优化，并且应该用于仅用户身份验证或身份验证和访问令牌请求。 所有令牌都是通过浏览器传输的，因此不允许使用刷新令牌等高级功能。
 - 授权代码。 通过此流，可以在后端通道上检索令牌，而不是浏览器前端通道，同时还支持客户端身份验证。
-- 混合。 此流是隐式和授权代码授予类型的组合。 标识令牌通过浏览器通道传输，包含签名协议响应以及其他项目，如授权代码。 成功验证响应后，应使用后信道来检索访问和刷新令牌。
+- 혼합. 此流是隐式和授权代码授予类型的组合。 标识令牌通过浏览器通道传输，包含签名协议响应以及其他项目，如授权代码。 成功验证响应后，应使用后信道来检索访问和刷新令牌。
 
 > [!TIP]
 > 使用混合身份验证流。 混合身份验证流可缓解适用于浏览器通道的大量攻击，对于需要检索访问令牌（并且可能会刷新令牌）的本机应用程序，建议使用此流。
@@ -239,7 +239,7 @@ EShopOnContainers 移动应用通过将请求发送到 `<base endpoint>:5105/con
 
 #### <a name="signing-in"></a>登录
 
-当用户点击 `LoginView`上的 "**登录**" 按钮时，将执行 `LoginViewModel` 类中的 `SignInCommand`，进而执行 `SignInAsync` 方法。 下面的代码示例演示此方法：
+当用户点击 `LoginView`上的 "**登录**" 按钮时，将执行 `LoginViewModel` 类中的 `SignInCommand`，进而执行 `SignInAsync` 方法。 다음 코드 예제에서는 이 메서드를 보여줍니다.
 
 ```csharp
 private async Task SignInAsync()  
@@ -349,7 +349,7 @@ private void Logout()
 }
 ```
 
-此方法调用 `IdentityService` 类中的 `CreateLogoutRequest` 方法，将从应用程序设置检索的标识令牌作为参数传递。 有关应用程序设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。 下面的代码示例说明 `CreateLogoutRequest` 方法：
+此方法调用 `IdentityService` 类中的 `CreateLogoutRequest` 方法，将从应用程序设置检索的标识令牌作为参数传递。 有关应用程序设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。 다음 코드 예제는 `CreateLogoutRequest` 메서드를 보여줍니다.
 
 ```csharp
 public string CreateLogoutRequest(string token)  
@@ -389,7 +389,7 @@ private async Task NavigateAsync(string url)
 
 <a name="authorization" />
 
-## <a name="authorization"></a>授权
+## <a name="authorization"></a>권한 부여
 
 身份验证后，ASP.NET Core web Api 通常需要授予访问权限，这样，服务以使 Api 可供某些经过身份验证的用户，而不是为全部。
 
@@ -472,13 +472,13 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 有关 eShopOnContainers 移动应用程序如何进行 web 请求的详细信息，请参阅[访问远程数据](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>요약
 
 可以通过许多方法将身份验证和授权集成到与 ASP.NET MVC Web 应用程序进行通讯的 Xamarin.Forms 应用中， EShopOnContainers 移动应用使用 IdentityServer 4 的容器化标识微服务执行身份验证和授权。 IdentityServer 是用于与 ASP.NET Core标识来执行持有者令牌身份验证集成的 ASP.NET Core 的开放源代码 OpenID Connect 和 OAuth 2.0 框架。
 
 移动应用程序请求 IdentityServer 的安全令牌，用于对用户进行身份验证或访问资源。 访问资源时，必须在请求中包含访问令牌，才能向需要授权的 Api 发出请求。 IdentityServer 的中间件将验证传入的访问令牌，以确保它们是从受信任的颁发者发送的，并且有效地用于接收这些令牌的 API。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [下载电子书（2Mb）](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers （GitHub）（示例）](https://github.com/dotnet-architecture/eShopOnContainers)

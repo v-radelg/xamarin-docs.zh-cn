@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: eee338461593ad131f679d32cadf63fe3b1a4c40
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c892adf2f75ec00c4a9ee171ded78f79bb8227e9
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759345"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725192"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路径基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解结合使用连接的直线和曲线的 SkiaSharp SKPath 对象_
 
 图形路径的最重要功能之一是能够定义应已连接多个行和时应不将它们连接起来。 这些两个三角形顶部进行说明，可以是有意义的不同之处：
 
-![](paths-images/connectedlinesexample.png "显示连接和断开连接行之间的区别的两个三角形")
+![](paths-images/connectedlinesexample.png "Two triangles showing the difference between connected and disconnected lines")
 
 图形路径封装[ `SKPath` ](xref:SkiaSharp.SKPath)对象。 路径是一个或多个集合*轮廓*。 每个分布是一系列*连接*直线和曲线。 分布图未连接到彼此，但它们可能会以可视方式重叠。 有时单一 contour 可以重叠本身。
 
@@ -53,7 +53,7 @@ _了解结合使用连接的直线和曲线的 SkiaSharp SKPath 对象_
 
 轮廓线结尾再次调用`MoveTo`或`RMoveTo`，其中开始新的轮廓或调用`Close`，用于关闭轮廓。 `Close`方法自动追加一条直线从当前的点分布的第一个点并将路径标记为已关闭，这意味着它将呈现而无需任何笔划大写字母。
 
-打开和关闭分布图之间的差异所示**两个三角形轮廓**页上，使用`SKPath`具有两个要呈现两个三角形的轮廓的对象。 第一个轮廓线是打开和关闭第二个。 下面是[ `TwoTriangleContoursPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs)类：
+打开和关闭分布图之间的差异所示**两个三角形轮廓**页上，使用`SKPath`具有两个要呈现两个三角形的轮廓的对象。 第一个轮廓线是打开和关闭第二个。 下面是[ `TwoTriangleContoursPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/TwoTriangleContoursPage.cs)类：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -101,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 对的调用包含的第一个轮廓[ `MoveTo` ](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single))使用 X 和 Y 坐标而非`SKPoint`值后, 跟三个对[ `LineTo` ](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single))要绘制的三条边三角形。 第二个 contour 具有只有两个调用`LineTo`但完成通过调用 contour [ `Close` ](xref:SkiaSharp.SKPath.Close)，用于关闭轮廓。 重要的区别是：
 
-[![](paths-images/twotrianglecontours-small.png "三重的两个三角形轮廓页屏幕截图")](paths-images/twotrianglecontours-large.png#lightbox "带来三倍的两个三角形轮廓页屏幕截图")
+[![](paths-images/twotrianglecontours-small.png "Triple screenshot of the Two Triangle Contours page")](paths-images/twotrianglecontours-large.png#lightbox "Triple screenshot of the Two Triangle Contours page")
 
 正如您所看到的第一个轮廓显然是一系列的三个相互连接的直线，但结束时不会连接与的开始部分。 在顶部重叠两行。 第二个 contour 显然关闭并完成了一个更少`LineTo`调用因为`Close`方法自动添加最终行以关闭轮廓。
 
@@ -125,7 +125,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - `Round` 用于圆角联接
 - `Bevel` 已被截关闭联接
 
-**笔划联接**页面的显示了这三个绘制笔画，代码类似于联接**笔划大写字母**页。 这是`PaintSurface`中的事件处理程序[ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs)类：
+**笔划联接**页面的显示了这三个绘制笔画，代码类似于联接**笔划大写字母**页。 这是`PaintSurface`中的事件处理程序[ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeJoinsPage.cs)类：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -189,13 +189,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-下面是运行的程序：
+실행 중인 프로그램은 다음과 같습니다.
 
-[![](paths-images/strokejoins-small.png "三重笔划联接页屏幕截图")](paths-images/strokejoins-large.png#lightbox "笔划联接页的三个屏幕截图")
+[![](paths-images/strokejoins-small.png "Triple screenshot of the Stroke Joins page")](paths-images/strokejoins-large.png#lightbox "Triple screenshot of the Stroke Joins page")
 
 斜接联接包含，其中用线条连接是尖角。 当在一个小角度加入两行时，斜接联接可能会变得相当长。 若要防止过长斜接联接，斜接联接的长度受限制的值[ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter)属性的`SKPaint`。 超过此长度的斜接联接砍掉成为斜切接合。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

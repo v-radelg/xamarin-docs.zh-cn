@@ -1,5 +1,5 @@
 ---
-title: 线和笔划大写字母
+title: 선 및 스트로크 단면
 description: 此文介绍了如何使用 SkiaSharp 绘制在 Xamarin.Forms 应用程序中具有不同笔画顶端行，此示例代码进行了演示。
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 9aaecb8c63ff28111097dce81954f523b4c7731b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545599"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725210"
 ---
-# <a name="lines-and-stroke-caps"></a>线和笔划大写字母
+# <a name="lines-and-stroke-caps"></a>선 및 스트로크 단면
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 绘制具有不同笔画顶端行_
 
@@ -38,7 +38,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - `Square`
 - `Round`
 
-这些最好说明与示例程序。 **SkiaSharp 线和路径**一部分[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序开始页面标题为**笔划大写字母**基于[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)类。 此页定义`PaintSurface`循环访问的三个成员的事件处理程序`SKStrokeCap`显示这两个枚举成员的名称和绘制一条直线使用该笔划 cap 枚举：
+这些最好说明与示例程序。 **SkiaSharp 线和路径**一部分[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序开始页面标题为**笔划大写字母**基于[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs)类。 此页定义`PaintSurface`循环访问的三个成员的事件处理程序`SKStrokeCap`显示这两个枚举成员的名称和绘制一条直线使用该笔划 cap 枚举：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ DrawPoints (SKPointMode mode, points, paint)
 - `Lines` 若要连接的点的每个对
 - `Polygon` 若要连接所有连续点
 
-**多行**页演示此方法。 [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)文件实例化两个`Picker`视图使您选择的成员`SKPointMode`枚举的成员和`SKStrokeCap`枚举：
+**多行**页演示此方法。 [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)文件实例化两个`Picker`视图使您选择的成员`SKPointMode`枚举的成员和`SKStrokeCap`枚举：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -238,7 +238,7 @@ Android 屏幕快照显示 `SKPointMode.Lines`的结果。 在这种情况下，
 
 行是否已连接或未连接是使用的图形路径的一个重要方面。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

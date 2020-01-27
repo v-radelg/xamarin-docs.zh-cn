@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 01/24/2020
 ms.locfileid: "75727935"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms DataPages
@@ -29,13 +29,13 @@ DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预�
 
 [![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>소개
 
 数据源和关联的数据页使开发人员能够快速轻松地使用受支持的数据源，并使用可使用主题自定义的内置 UI 基架对其进行呈现。
 
 通过包括**Xamarin** DataPages NuGet 包，将其添加到 xamarin 应用程序应用程序。
 
-### <a name="data-sources"></a>数据源
+### <a name="data-sources"></a>데이터 원본
 
 预览版有一些可供使用的预生成数据源：
 
@@ -59,7 +59,7 @@ DataPages 提供一个 API，用于快速、 轻松地将数据源绑定到预�
 
 有关示例，请参阅[DataPages 控件参考](controls.md)。
 
-### <a name="under-the-hood"></a>揭秘
+### <a name="under-the-hood"></a>在后台
 
 Xamarin. Forms 数据源符合 `IDataSource` 接口。
 

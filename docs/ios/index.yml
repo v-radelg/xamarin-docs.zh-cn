@@ -12,7 +12,7 @@ abstract:
   description: 'Xamarin.iOS 为 .NET 开发人员提供了完整的 iOS SDK。 在 Visual Studio 中使用 C# 或 F# 生成完全本机的 iOS 应用。'
   menu:
     items:
-      - href: ~/ios/samples/index.yml
+      - href: ~/ios/samples/index.md
         text: iOS 示例
       - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
         text: 发行说明

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61375343"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -46,7 +46,7 @@ ms.locfileid: "61375343"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
-    [![iOS 和 Android 上以列和行的形式组织内容的网格的屏幕截图](../images/columns-rows.png "以列和行的形式组织内容的网格")](../images/columns-rows-large.png#lightbox "Grid with content in columns and rows")
+    [![iOS 和 Android 上内容位于多列和多行的网格屏幕截图](../images/columns-rows.png "内容位于多列和多行的网格")](../images/columns-rows-large.png#lightbox "内容位于多列和多行的网格")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -88,4 +88,4 @@ ms.locfileid: "61375343"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![iOS 和 Android 上以列和行的形式组织内容的网格的屏幕截图](../images/columns-rows.png "以列和行的形式组织内容的网格")](../images/columns-rows-large.png#lightbox "Grid with content in columns and rows")
+    [![iOS 和 Android 上内容位于多列和多行的网格屏幕截图](../images/columns-rows.png "内容位于多列和多行的网格")](../images/columns-rows-large.png#lightbox "内容位于多列和多行的网格")

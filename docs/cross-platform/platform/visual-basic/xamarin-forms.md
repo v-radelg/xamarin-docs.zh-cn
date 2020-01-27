@@ -6,18 +6,18 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: e1a540eef2a4d54ead68ae4a9427b0622b668182
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 42be47e74b4b0da60d517a17bb6090c58448b718
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014552"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724867"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>使用 Visual Basic.NET 的 Xamarin 窗体
 
 Xamarin 不支持直接 Visual Basic-按照本页上的说明创建C# Xamarin 解决方案，然后使用 Visual Basic 替换 .NET Standard C#项目。
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 
 [![创建一个 Xamarin Forms 解决方案，然后将 .NET Standard 项目替换为 Visual Basic](xamarin-forms-images/hero-sml.png)](xamarin-forms-images/hero.png#lightbox)
 
@@ -32,7 +32,7 @@ Xamarin 不支持直接 Visual Basic-按照本页上的说明创建C# Xamarin �
 
 2. 在 "新建**项目**" 窗口中，键入 " **Xamarin** " 以筛选列表并选择 "**移动应用（Xamarin）** "，然后按 "**下一步**"。
 
-    [针对 Xamarin 应用的![筛选器](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
+    [针对 Xamarin 应用的 ![筛选器](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
 
 3. 在下一个屏幕上，键入项目的名称，然后按 "**创建**"。
 
@@ -46,7 +46,7 @@ Xamarin 不支持直接 Visual Basic-按照本页上的说明创建C# Xamarin �
 
 6. 键入 " **Visual Basic 库**" 以筛选项目选项，然后选择 "类库 **（.NET Standard）** " 选项和 "Visual Basic" 图标：
 
-    [Visual Basic 库![筛选器](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
+    [Visual Basic 库 ![筛选器](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
 7. 在下一个屏幕上，键入项目的名称，然后按 "**创建**"。
 
@@ -121,13 +121,13 @@ Xamarin 不支持直接 Visual Basic-按照本页上的说明创建C# Xamarin �
 
 如[便携式视觉对象 Basic.NET 页](~/cross-platform/platform/visual-basic/index.md)上所述，Xamarin 不支持 Visual Basic 语言。 这意味着，在某些情况下，可以使用 Visual Basic：
 
-- XAML 页不能包含在 Visual Basic 项目中-代码隐藏生成器只能生成C#。 可以在单独的、 C#可移植的类库中包含 xaml，并使用数据绑定通过 Visual Basic 模型填充 xaml 文件（[示例](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)中包含了此示例）。
+- XAML 页不能包含在 Visual Basic 项目中-代码隐藏生成器只能生成C#。 可以在单独的、 C#可移植的类库中包含 xaml，并使用数据绑定通过 Visual Basic 模型填充 xaml 文件（[示例](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)中包含了此示例）。
 
 - 无法在 Visual Basic 中编写自定义呈现器，必须在本机C#平台项目中编写自定义呈现器。
 
 - 无法在 Visual Basic 中编写依赖项服务实现，它们必须在本机C#平台项目中编写。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [XamarinFormsVB （示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [采用 .NET Framework 的跨平台开发](https://docs.microsoft.com/dotnet/standard/cross-platform/)

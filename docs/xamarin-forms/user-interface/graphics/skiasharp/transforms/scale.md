@@ -1,5 +1,5 @@
 ---
-title: 缩放转换
+title: 크기 조정 변환
 description: Thhis 文章探讨了 SkiaSharp 缩放转换为缩放到不同大小的对象，此示例代码进行了演示。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -7,22 +7,22 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7dc7a2faabef86aa63b52739edda696efcb54aba
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770452"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724239"
 ---
-# <a name="the-scale-transform"></a>缩放转换
+# <a name="the-scale-transform"></a>크기 조정 변환
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _发现 SkiaSharp 缩放转换为缩放到不同大小的对象_
 
 如您所见中[**转换转换**](translate.md)文章翻译转换可以图形对象从一个位置移动到另一个。 与此相反，缩放转换将更改图形的对象的大小：
 
-![](scale-images/scaleexample.png "在大小进行缩放、 高 word")
+![](scale-images/scaleexample.png "A tall word scaled in size")
 
 缩放转换通常还会导致移动它们进行了更大的图形坐标。
 
@@ -102,18 +102,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可能想知道：缩放系数如何影响从`MeasureText`方法返回的`SKPaint`值？ 答案是：完全不需要。 `Scale` 是一种方法的`SKCanvas`。 它不影响与执行任何操作`SKPaint`对象，直到该对象用于呈现在画布上的某些内容。
+您可能想知道： 缩放因素如何影响从返回的值`MeasureText`方法的`SKPaint`？ 答案是： 根本不容易。 `Scale` 是一种方法的`SKCanvas`。 它不影响与执行任何操作`SKPaint`对象，直到该对象用于呈现在画布上的某些内容。
 
 您可以看到，所有内容绘制后`Scale`调用按比例增加：
 
-[![](scale-images/basicscale-small.png "三个基本的规模页屏幕截图")](scale-images/basicscale-large.png#lightbox "带来三倍的基本的规模页屏幕截图")
+[![](scale-images/basicscale-small.png "Triple screenshot of the Basic Scale page")](scale-images/basicscale-large.png#lightbox "Triple screenshot of the Basic Scale page")
 
 文本，虚线中的边角，并在画布的左侧和顶部边缘和圆角的矩形之间的 10 个像素边距舍入的行的短划线的长度的宽度都受到相同的缩放比例。
 
 > [!IMPORTANT]
 > 通用 Windows 平台无法正确呈现 anisotropicly 缩放后的文本。
 
-各向异性缩放原因变得不同的行的笔划宽度和对齐水平和垂直轴。 （这也是表露此页面上的第一个图像。）如果不希望笔划宽度受到影响的缩放比例，将其设置为 0，它将始终为一个像素宽而不考虑`Scale`设置。
+各向异性缩放原因变得不同的行的笔划宽度和对齐水平和垂直轴。 （此页面上的第一个图像也有明显的。）如果您不希望笔划宽度受缩放系数的影响，请将其设置为0，并且无论 `Scale` 设置如何，它都将始终为1个像素宽。
 
 缩放是相对于画布的左上角。 这可能正是您所需但可能不会。 假设你想要在画布上放置文本和其他位置的矩形，并且你想要缩放相对于其中心。 在这种情况下可以使用的第四个版本[ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single))方法，其中包含两个附加参数来指定缩放中心：
 
@@ -168,7 +168,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 圆角矩形的左上角位于`margin`从画布左侧的像素和`margin`像素。 最后两个参数`Scale`方法设置为这些值加上的宽度和高度的文本，这也是圆角矩形的宽度和高度。 这意味着，所有缩放是相对于该矩形的中心：
 
-[![](scale-images/centeredscale-small.png "居中缩放页的三个屏幕截图")](scale-images/centeredscale-large.png#lightbox "三重居中缩放页屏幕截图")
+[![](scale-images/centeredscale-small.png "Triple screenshot of the Centered Scale page")](scale-images/centeredscale-large.png#lightbox "Triple screenshot of the Centered Scale page")
 
 `Slider`在此程序中的元素具有一系列&ndash;10 到 10。 正如您所看到的负值的垂直缩放 （如在中心屏幕在 Android 上） 将导致对象绕水平轴通过缩放的中心的翻转。 负值，水平缩放 （例如，如右侧 UWP 屏幕所示） 会导致对象绕垂直轴通过缩放的中心的翻转。
 
@@ -180,7 +180,7 @@ canvas.Translate(-px, -py);
 
 这些是假负的透视点坐标。
 
-现在再次运行程序。 你将看到，以便在中心是在画布的左上角向矩形和文本。 几乎不能，您可以看到它。 滑块不支持当然，因为现在不会在所有扩展程序。
+이제 프로그램을 다시 실행합니다. 你将看到，以便在中心是在画布的左上角向矩形和文本。 几乎不能，您可以看到它。 滑块不支持当然，因为现在不会在所有扩展程序。
 
 现在，添加基本`Scale`（不带缩放的中心） 调用*之前*的`Translate`调用：
 
@@ -249,9 +249,9 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds`获取此代码中，顶部附近，并随后用于更高版本的宽度和高度画布中的矩形`Scale`调用。 通过呈现时，本身的调用将扩展的路径中的坐标`DrawPath`星形，但是该调用将在画布的右上角中居中。 它需要向下和向左移动。 这是作业的`Translate`调用。 这两个属性的`pathBounds`是大约-100、 步长，因此翻译因素是大约 100。 因为`Translate`调用晚`Scale`调用，这些值的有效地缩放的缩放比例，以便它们将在星型的中心移动到画布的中心：
 
-[![](scale-images/anisotropicscaling-small.png "三重各向异性缩放页屏幕截图")](scale-images/anisotropicscaling-large.png#lightbox "各向异性缩放页上的三个屏幕截图")
+[![](scale-images/anisotropicscaling-small.png "Triple screenshot of the Anisotropic Scaling page")](scale-images/anisotropicscaling-large.png#lightbox "Triple screenshot of the Anisotropic Scaling page")
 
-您可以考虑`Scale`和`Translate`调用的另一种方法是通过反向序列确定效果：`Translate`调用将移动路径，使其完全可见，但在画布的左上角。 `Scale`方法然后使该星型相对于左上角更大。
+另一种方法可以考虑一下`Scale`和`Translate`的调用是确定在反向序列中的效果：`Translate`调用将转移路径，因此它将完全可见但面向在画布的左上角。 `Scale`方法然后使该星型相对于左上角更大。
 
 实际上，它将显示 star 是有点大于画布。 问题在于笔划宽度。 `Bounds`属性的`SKPath`指示坐标维数编码在路径中，并且该程序使用来扩展它。 使用特定的笔划宽度呈现路径时，呈现的路径大于画布。
 
@@ -292,7 +292,7 @@ using (SKPaint textPaint = new SKPaint
 
 它是类似的逻辑和文本扩展的基于文本的边界矩形从返回的页大小为`MeasureText`（这可能有点大于实际文本）：
 
-[![](scale-images/anisotropictext-small.png "各向异性测试页的三个屏幕截图")](scale-images/anisotropictext-large.png#lightbox "各向异性测试页的三个屏幕截图")
+[![](scale-images/anisotropictext-small.png "Triple screenshot of the Anisotropic Test page")](scale-images/anisotropictext-large.png#lightbox "Triple screenshot of the Anisotropic Test page")
 
 如果您需要保持图形对象的纵横比，您需要使用增益缩放。 **增益缩放**页此进行了演示为 11 星。 从概念上讲，用于在增益缩放页的中心显示图形对象的步骤如下：
 
@@ -300,7 +300,7 @@ using (SKPaint textPaint = new SKPaint
 - 缩放基于水平和垂直页尺寸由图形对象维度划分的最小值的对象。
 - 转换中心的缩放到页面的中心对象。
 
-[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs)显示星号前会按相反的顺序执行以下步骤：
+[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs)显示星号前会按相反的顺序执行以下步骤：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -341,9 +341,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 代码还显示星型 10 次，10%和逐渐将颜色更改由红色变为蓝色，降低缩放每次挑选：
 
-[![](scale-images/isotropicscaling-small.png "三重增益缩放页屏幕截图")](scale-images/isotropicscaling-large.png#lightbox "增益缩放页的三个屏幕截图")
+[![](scale-images/isotropicscaling-small.png "Triple screenshot of the Isotropic Scaling page")](scale-images/isotropicscaling-large.png#lightbox "Triple screenshot of the Isotropic Scaling page")
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

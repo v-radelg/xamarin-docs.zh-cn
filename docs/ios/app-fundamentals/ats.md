@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: e0ab824eff4c8bb18a2bd1998862df433cdade1a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 84d235bb7c6874255ea025ff5897e150bd6f023b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011108"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724681"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的应用传输安全
 
 _应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接。_
 
-本文将介绍应用传输安全在 iOS 9 应用上强制实施的安全更改，以及[这对你的 Xamarin iOS 项目的意义](#xamarinsupport)，它将介绍[ATS 配置选项](#config)，并将介绍如何[选择退出 ATS](#optout)ATS （如果需要）。 因为默认情况下启用 ATS，所以任何不安全的 internet 连接将在 iOS 9 应用程序中引发异常（除非你显式允许）。
+本文将介绍应用传输安全在 iOS 9 应用上强制实施的安全更改，以及[这对你的 Xamarin ios 项目的意义](#xamarinsupport)，它将介绍[ATS 配置选项](#config)，并将介绍如何在需要时[选择退出 ATS](#optout) ATS。 因为默认情况下启用 ATS，所以任何不安全的 internet 连接将在 iOS 9 应用程序中引发异常（除非你显式允许）。
 
 ## <a name="about-app-transport-security"></a>关于应用传输安全
 
@@ -93,11 +93,11 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 
 托管处理程序是完全托管的 HttpClient 处理程序，它与早期版本的 Xamarin 一起提供，是默认处理程序。
 
-专业人员
+장점:
 
 - 它与 Microsoft .NET 和早期版本的 Xamarin 最兼容。
 
-各有利弊
+단점:
 
 - 它未与 iOS 完全集成（例如，仅限 TLS 1.0）。
 - 它通常比本机 Api 慢得多。
@@ -107,12 +107,12 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 
 基于 CFNetwork 的处理程序基于本机 `CFNetwork` 框架。
 
-专业人员
+장점:
 
 - 使用本机 API 以获得更好的性能和更小的可执行文件大小。
 - 添加了对较新标准（如 TLS 1.2）的支持。
 
-各有利弊
+단점:
 
 - 需要 iOS 6 或更高版本。
 - 不可用于 watchOS。
@@ -122,12 +122,12 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 
 基于 NSUrlSession 的处理程序基于本机 `NSUrlSession` API。
 
-专业人员
+장점:
 
 - 使用本机 API 以获得更好的性能和更小的可执行文件大小。
 - 添加了对较新标准（如 TLS 1.2）的支持。
 
-各有利弊
+단점:
 
 - 需要 iOS 7 或更高版本。
 - 某些 HttpClient 功能和选项不可用。
@@ -136,7 +136,7 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 
 尝试在 iOS 9 中直接或从 web 视图连接到 internet 时，可能会收到如下格式的错误：
 
-> 应用传输安全已阻止明文 HTTP （ http://www.-the-blocked-domain.com) 资源负载，因为它不安全。 临时异常可以通过应用的 info.plist 文件进行配置。
+> 应用传输安全已阻止明文 HTTP （`http://www.-the-blocked-domain.com`）资源负载，因为它不安全。 临时异常可以通过应用的 info.plist 文件进行配置。
 
 在 iOS9 中，应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接。 此外，ATS 还要求使用 `HTTPS` 协议进行通信，并使用 TLS 版本1.2 和正向机密对高级 API 通信进行加密。
 
@@ -172,12 +172,12 @@ NSAppTransportSecurity
 - **NSAllowsArbitraryLoads** （`Boolean`）-如果对 `NSExceptionDomains`中**未**列出的任何域禁用 `YES` ATS。 对于列出的域，将使用指定的安全设置。
 - **NSAllowsArbitraryLoadsInWebContent** （`Boolean`）-如果 `YES`，则在应用程序的其余部分仍启用 Apple 传输安全（ATS）保护时，将允许正确加载网页。
 - **NSExceptionDomains** （`Dictionary`）-域的集合，以及 ATS 应对给定域使用的安全设置。
-- **\<** （`Dictionary`）的 "域名"，作为给定域的异常集合（例如 `www.xamarin.com`) 格式模式中出现的位置匹配。
+- **\<** （`Dictionary`）的 "域名"，作为给定域的异常集合（例如 `www.xamarin.com`).
 - **NSExceptionMinimumTLSVersion** （`String`）-最小 TLS 版本 `TLSv1.0`、`TLSv1.1` 或 `TLSv1.2` （这是默认值）。
-- **NSExceptionRequiresForwardSecrecy** （`Boolean`）-如果 `NO` 域不必使用具有 "转发安全性" 的密码。 默认值为 `YES`。
+- **NSExceptionRequiresForwardSecrecy** （`Boolean`）-如果 `NO` 域不必使用具有 "转发安全性" 的密码。 기본값은 `YES`여야 합니다.
 - **NSExceptionAllowsInsecureHTTPLoads** （`Boolean`）-如果 `NO` （默认值），则与此域的所有通信都必须采用 `HTTPS` 协议。
-- **NSRequiresCertificateTransparency** （`Boolean`）-如果 `YES` 域的安全套接字层（SSL）必须包含有效的透明数据。 默认值为 `NO`。
-- **NSIncludesSubdomains** （`Boolean`）-如果 `YES` 这些设置将覆盖此域的所有子域。 默认值为 `NO`。
+- **NSRequiresCertificateTransparency** （`Boolean`）-如果 `YES` 域的安全套接字层（SSL）必须包含有效的透明数据。 기본값은 `NO`여야 합니다.
+- **NSIncludesSubdomains** （`Boolean`）-如果 `YES` 这些设置将覆盖此域的所有子域。 기본값은 `NO`여야 합니다.
 - **NSThirdPartyExceptionMinimumTLSVersion** （`String`）-当域是开发人员控件之外的第三方服务时使用的 TLS 版本。
 - **NSThirdPartyExceptionRequiresForwardSecrecy** （`Boolean`）-如果 `YES` 第三方域需要 "向前保密"。
 - **NSThirdPartyExceptionAllowsInsecureHTTPLoads** （`Boolean`）-如果 `YES` ATS 将允许与第三方域进行不安全的通信。
@@ -239,18 +239,18 @@ NSAppTransportSecurity
 [![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> 如果你的应用程序需要连接到不安全的网站，则应**始终**使用 `NSExceptionDomains` 将该域输入为异常，而不是完全使用 `NSAllowsArbitraryLoads`来关闭 ATS。 `NSAllowsArbitraryLoads` 只应在极端紧急情况下使用。
+> 如果你的应用程序需要连接到不安全的网站，则应**始终**使用 `NSExceptionDomains` 将该域输入为异常，而不是完全使用 `NSAllowsArbitraryLoads`来关闭 ATS。 `NSAllowsArbitraryLoads` 仅应在极端的紧急情况下使用。
 
 同样，如果切换到安全连接不可用或不实用，_只_应将 ATS 禁用。
 
 <a name="Summary" />
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本文介绍了应用传输安全（ATS）并介绍了如何通过 internet 进行安全通信。 首先，我们介绍了 ATS 在 iOS 9 上运行的 Xamarin iOS 应用所需的更改。 然后我们介绍了如何控制 ATS 的功能和选项。 最后，我们在 Xamarin iOS 应用中介绍了 ATS。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
-- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

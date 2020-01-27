@@ -1,19 +1,19 @@
 ---
-title: 用户配置文件
+title: 사용자 프로필
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2018
-ms.openlocfilehash: 252a104118b0419f33abdf7f522ad8fc358e3f76
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395f7c477f1f2bdb608aec918f877f6d320d75cc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028701"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724788"
 ---
-# <a name="user-profile"></a>用户配置文件
+# <a name="user-profile"></a>사용자 프로필
 
 自 API 级别5起，Android 支持枚举具有[ContactsContract](xref:Android.Provider.ContactsContract)提供程序的联系人。 例如，列出联系人非常简单，只是使用[ContactContracts](xref:Android.Provider.ContactsContract.Contacts)类，如下面的代码示例所示：
 
@@ -23,7 +23,7 @@ var uri = ContactsContract.Contacts.ContentUri;
 
 // Setup the "projection" (columns we want) for only the ID and display name:
 string[] projection = {
-    ContactsContract.Contacts.InterfaceConsts.Id, 
+    ContactsContract.Contacts.InterfaceConsts.Id,
     ContactsContract.Contacts.InterfaceConsts.DisplayName };
 
 // Use a CursorLoader to retrieve the user's contacts data:
@@ -45,9 +45,9 @@ if (cursor != null)
 }
 ```
 
-从 Android 4 （API 级别14）开始， [ContactsContact](xref:Android.Provider.ContactsContract.Profile)类可通过 `ContactsContract` 提供程序获得。 `ContactsContact.Profile` 提供对设备所有者的个人配置文件的访问权限，包括设备所有者姓名和电话号码之类的联系人数据。
+从 Android 4 (API 级别 14) 开始, 可通过`ContactsContract`提供程序使用 [ContactsContact.Profile](xref:Android.Provider.ContactsContract.Profile) 类。 `ContactsContact.Profile` 提供对设备所有者的个人配置文件的访问权限，包括设备所有者姓名和电话号码之类的联系人数据。
 
-## <a name="required-permissions"></a>所需权限
+## <a name="required-permissions"></a>필요한 권한
 
 若要读取和写入联系人数据，应用程序必须分别请求 `READ_CONTACTS` 和 `WRITE_CONTACTS` 权限。
 此外，若要读取和编辑用户配置文件，应用程序必须请求 `READ_PROFILE` 和 `WRITE_PROFILE` 权限。
@@ -100,12 +100,10 @@ StartActivity (intent);
 
 运行上述代码时，将显示用户配置文件，如以下屏幕截图所示：
 
-[显示 John Doe 用户配置文件的配置文件![屏幕截图](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
+[显示 John Doe 用户配置文件的配置文件 ![屏幕截图](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
 使用用户配置文件类似于与 Android 中的其他数据进行交互，并且它还提供额外的设备个性化级别。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [ContactsProviderDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
-- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

@@ -7,32 +7,32 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 2d02e79ff51468572250d1a7ce7c6d3da103c03a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 229f60cbb96058454a1c634e53a7bb00ec725bcf
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770531"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723752"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>点和短划线在 SkiaSharp
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _掌握在 SkiaSharp 绘制点线和虚线线条的复杂性_
 
 SkiaSharp 可绘制线条的都是不可靠的而是点和短划线组成：
 
-![](dots-images/dottedlinesample.png "点线")
+![](dots-images/dottedlinesample.png "Dotted line")
 
 为此可以使用*路径效果*，即实例[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)设置为的类[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)属性`SKPaint`。 可以创建路径效果 （或合并路径效果），它使用由定义的静态创建方法之一`SKPathEffect`。 (`SKPathEffect` SkiaSharp 通过支持的六个效果之一; 是其他部分中所述[ **SkiaSharp 效果**](../effects/index.md)。)
 
-若要绘制虚线，请使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静态方法。 有两个参数：第一个是`float`值的数组，这些值指示点和短划线的长度以及它们之间的空格长度。 此数组必须具有偶数数目的元素，并且应至少两个元素。 （可以有零个元素数组中的，但该结果一条实线。）如果有两个元素，第一个圆点或短划线的长度，第二个间隙的长度在下一步的句点或破折号之前。 如果有多个两个元素，则它们是按以下顺序： 短划线的长度、 间隙长度、 短划线的长度、 间隙长度等。
+若要绘制虚线，请使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静态方法。 有两个参数： 第一次，这是一个数组`float`来指示点和短划线的长度，以及它们之间的空格的长度的值。 此数组必须具有偶数数目的元素，并且应至少两个元素。 （数组中可以有零个元素，但这会导致实线。）如果有两个元素，则第一个是点或短划线的长度，第二个元素是下一个点或短划线之前的间隔长度。 如果有多个两个元素，则它们是按以下顺序： 短划线的长度、 间隙长度、 短划线的长度、 间隙长度等。
 
 通常情况下，您将想要的短划线和间隙长度笔划宽度的倍数。 如果笔划宽度为 10 个像素，例如，然后数组 {10，10} 将绘制点线的点和间隙的笔画粗细的长度相同。
 
 但是，`StrokeCap`设置的`SKPaint`对象也会影响这些点和短划线。 稍后将看到，此数组的元素具有影响。
 
-以点分隔和上演示了虚线**点和短划线**页。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml)文件实例化两个`Picker`查看时，一个用于允许您选择笔画线帽和第二个选择的短划线数组：
+以点分隔和上演示了虚线**点和短划线**页。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)文件实例化两个`Picker`查看时，一个用于允许您选择笔画线帽和第二个选择的短划线数组：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -100,7 +100,7 @@ SkiaSharp 可绘制线条的都是不可靠的而是点和短划线组成：
 
  中的前三个项`dashArrayPicker`假定笔划宽度为 10 像素。 {10，10} 的点线，数组是 {30，10} 是虚线，和 {10、 10、 30、 10} 是针对点-划线行。 （其他三个将讨论很快。）
 
-[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)代码隐藏文件包含`PaintSurface`事件处理程序和几个帮助器例程用于访问`Picker`视图：
+[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)代码隐藏文件包含`PaintSurface`事件处理程序和几个帮助器例程用于访问`Picker`视图：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     path.LineTo(0.2f * info.Width, 0.8f * info.Height);
     path.LineTo(0.8f * info.Width, 0.2f * info.Height);
 
-    canvas.DrawPath(path, paint); 
+    canvas.DrawPath(path, paint);
 }
 
 float[] GetPickerArray(Picker picker)
@@ -150,9 +150,9 @@ float[] GetPickerArray(Picker picker)
 
 在下面的屏幕截图上最左侧的 iOS 屏幕显示点线：
 
-[![](dots-images/dotsanddashes-small.png "三个点和短划线页屏幕截图")](dots-images/dotsanddashes-large.png#lightbox "三个点和短划线页屏幕截图")
+[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
-但是，还应该 Android 屏幕显示点线使用数组 {10，10} 改为直线是实线。 这是怎么回事？ 问题是 Android 屏幕还具有笔划上限设置为`Square`。 这将扩展一半笔划宽度，从而导致填满间隙的所有短的划线。
+但是，还应该 Android 屏幕显示点线使用数组 {10，10} 改为直线是实线。 경우 问题是 Android 屏幕还具有笔划上限设置为`Square`。 这将扩展一半笔划宽度，从而导致填满间隙的所有短的划线。
 
 若要获取解决此问题时使用的笔画上限`Square`或`Round`，必须减小的短划线长度是以数组的笔划长度 （有时会导致短划线的长度为 0），并提高笔划长度的间隙长度。 这是如何的最后三个短划线中的数组`Picker`计算在 XAML 文件中：
 
@@ -211,9 +211,9 @@ public class AnimatedSpiralPage : ContentPage
 
 当然，您必须以实际运行该程序，查看动画：
 
-[![](dots-images/animatedspiral-small.png "经过动画处理的临界点页的三个屏幕截图")](dots-images/animatedspiral-large.png#lightbox "带来三倍的经过动画处理的临界点页屏幕截图")
+[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

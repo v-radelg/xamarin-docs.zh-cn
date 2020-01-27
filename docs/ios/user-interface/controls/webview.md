@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 933edb1c0681f3fc9cbb8d81aa3091a65c4346e3
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031354"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725429"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web 视图
 
@@ -22,8 +22,8 @@ iOS 11 引入了对 `WKWebView` 和 `SFSafariViewController`的新更改。 有�
 
 ## <a name="wkwebview"></a>WKWebView
 
-iOS 8 中引入了 `WKWebView`，应用程序开发人员可以实现类似于 mobile Safari 的 web 浏览界面。 这在某种程度上是因为 `WKWebView` 使用 Nitro Javascript 引擎，这是移动 Safari 使用的同一个引擎。 应始终在 UIWebView 上使用 `WKWebView`，因为这样可能会[提高性能](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview)、内置用户友好的手势，以及网页与应用程序之间的轻松交互。
-  
+iOS 8 中引入了 `WKWebView`，应用程序开发人员可以实现类似于 mobile Safari 的 web 浏览界面。 这在某种程度上是因为 `WKWebView` 使用 Nitro Javascript 引擎，这是移动 Safari 使用的同一个引擎。 应始终在 UIWebView 上使用 `WKWebView`，因为这样可能会提高性能、内置用户友好的手势，以及网页与应用程序之间的轻松交互。
+
 可以通过与 UIWebView 几乎完全相同的方式将 `WKWebView` 添加到应用程序中，但作为开发人员，你可以更好地控制 UI/UX 和功能。 创建和显示 web 视图对象将显示请求的页面，但你可以控制视图的显示方式、用户可以导航的方式，以及用户如何退出视图。  
 
 下面的代码可用于在 Xamarin iOS 应用程序中启动 `WKWebView`：
@@ -49,7 +49,7 @@ webView.LoadRequest(request);
 
  `SFSafariViewController` 本质上是可以嵌入到应用中的 "小型 safari"。 与 WKWebView 一样，它使用相同的 Nitro Javascript 引擎，还提供了一系列附加的 Safari 功能，如自动填充、读者，以及在移动 Safari 中共享 cookie 和数据的功能。 您的应用程序不能访问用户与 `SFSafariViewController` 之间的交互。 您的应用程序将不能访问任何默认的 Safari 功能。
 
-默认情况下，它还实现 "**完成**" 按钮，使用户能够轻松返回到你的应用程序、前进和后退导航按钮，使用户能够在网页堆栈中导航。 此外，它还为用户提供了一个地址栏，使他们可以放心地使用它们。 地址栏不允许用户更改 url。 
+默认情况下，它还实现 "**完成**" 按钮，使用户能够轻松返回到你的应用程序、前进和后退导航按钮，使用户能够在网页堆栈中导航。 此外，它还为用户提供了一个地址栏，使他们可以放心地使用它们。 地址栏不允许用户更改 url。
 
 这些实现无法更改，因此，如果您的应用程序想要在不进行任何自定义的情况下显示网页，则最好将其用作默认浏览器 `SFSafariViewController`。
 
@@ -83,7 +83,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 iOS 9 改进使用户可以通过 Safari 页面左上角提供的 "后退" 按钮轻松返回到应用。
 
-## <a name="app-transport-security"></a>应用传输安全性
+## <a name="app-transport-security"></a>앱 전송 보안
 
 应用传输安全性或*ATS*是由 Apple 在 iOS 9 中引入的，以确保所有 internet 通信都符合安全连接最佳实践。
 
@@ -93,11 +93,11 @@ iOS 9 改进使用户可以通过 Safari 页面左上角提供的 "后退" 按�
 
 > [!IMPORTANT]
 > `UIWebView` 已弃用。 使用此控件的应用程序将不会被[接受到2020年4月之前的应用商店，现有应用需要在12月2020之前将其删除](https://developer.apple.com/news/?id=12232019b)。
-> 
+>
 > [Apple 的 `UIWebView` 文档](https://developer.apple.com/documentation/uikit/uiwebview)建议应用应改用[`WKWebView`](#wkwebview) 。
 
 > [!IMPORTANT]
-> 如果要在使用 Xamarin 时查找有关 `UIWebView` 弃用警告（ITMS-90809）的资源，请参阅[Xamarin Web 视图](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)文档。
+> Xamarin.Forms를 사용하는 동안 `UIWebView` 사용 중단 경고(ITMS-90809)와 관련된 리소스를 찾는 경우 [Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) 설명서를 참조하세요.
 
 `UIWebView` 是 Apple 在您的应用程序中提供 web 内容的传统方法。 它已在 iOS 2.0 中发布，并已在8.0 后弃用。
 
@@ -115,6 +115,6 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 [![ScalesPagesToFit 的效果](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [Webview （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

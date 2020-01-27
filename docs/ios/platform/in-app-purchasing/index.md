@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1efb8df4bac307d0e73da6bcbf645077cb63c839
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5aabaadfb1781f9f1622abf5687252b16b327d34
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032360"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725420"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的应用内购买
 
@@ -28,25 +28,25 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 本文档介绍了如何完成所有这些步骤，以使用 Xamarin 提供应用内购买。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>요구 사항
 
 若要支持应用内购买，必须使用 Xcode 7 及更高版本的 Xamarin 5.0 或更高版本。
 
-## <a name="contents"></a>内容
+## <a name="contents"></a>내용
 
-- [应用内购买基本知识和配置](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
+- [앱에서 바로 구매 기본 사항 및 구성](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
 - [StoreKit 概述和检索产品信息](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
-- [购买易耗型产品](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
+- [소모성 제품 구매](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
-- [购买非易耗型产品](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
+- [영구 제품 구매](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
 
-- [事务和验证](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
+- [트랜잭션 및 확인](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
-- [订阅和报告](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
+- [구독 및 보고](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本文介绍了应用内购买的概念，其中概述了如何配置应用程序以利用它并使用 Xamarin 提供的示例。 其中包括：
 
@@ -56,16 +56,15 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 - **编写应用程序的采购代码**-如何将应用内购买构建到 Xamarin iOS 应用中的示例。
 - **报告**–有关通过 iTunes Connect 提供的统计信息的概述。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
 - [应用购买编程指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
-- [iTunes Connect 开发人员指南](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
+- [iTunes Connect 개발자 가이드](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [应用商店工具包框架参考](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)
 - [应用内购买产品标识符 Q &](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
 - [应用内购买技术说明](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
 - [首次应用商店提交](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-- [App Store 资源中心](https://developer.apple.com/appstore/index.html)
-- [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)
-- [App Store 审核指南](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [앱 스토어 제출 팁](https://developer.apple.com/appstore/resources/submission/tips.html)
+- [앱 스토어 검토 지침](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [管理你的应用](https://developer.apple.com/appstore/resources/managing/index.html)

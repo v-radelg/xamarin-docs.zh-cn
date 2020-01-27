@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c25ea0878906b31028143ff1ad689db56b197458
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a6ec3c34afc0c017d5b37eec080f7f9bad08c0c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032257"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725402"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 框架更改
 
@@ -23,7 +23,7 @@ _本文介绍适用于 iOS 10 的现有框架的其他较小的更改或增强�
 AVFoundation 框架包括以下增强功能：
 
 - 在 iOS 10 中，开发人员不再需要基于内容类型实现不同的[AVPlayerItem](xref:AVFoundation.AVPlayerItem)行为。 只需设置 `Rate` 属性，AVFoundation 就会确定在没有停止的情况下是否有足够的内容可用于播放。
-- 新的[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)类取代了弃用的 `AVCaptureStillImageOutput` 类，并提供了一个统一的方法来处理所有摄影工作流，方法是提供对捕获过程的复杂控制和监视，并支持新功能，如作为实时照片和原始捕获格式。
+- 新的[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)类取代了不推荐使用的 `AVCaptureStillImageOutput` 类，并提供了一种统一的方法来处理所有摄影工作流，方法是提供对捕获过程的复杂控制和监视，并支持新功能（如实时照片和原始捕获格式）。
 - 使用新的 `AVPlayerLooper` 类可以更轻松地在播放过程中循环给定的媒体。
 - `AVAssetDownloadURLSession` 类允许下载和以后播放 FairPlay 加密的 HLS 流。
 - 默认情况下，当设备硬件支持时， [AVCaptureSession](xref:AVFoundation.AVCaptureSession)类会自动支持宽颜色宽范围捕获。 有关更多详细信息，请参阅 Apple 的[IOS 设备兼容性参考](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599)。
@@ -50,7 +50,7 @@ iOS 10 对核心映像框架进行了以下改进：
 
 - 开发人员现在可以通过在处理之前和之后转换颜色空间来处理核心图像上下文工作颜色空间之外的颜色空间中的图像。
 - 对于使用 A8 或 A9 Cpu 的 iOS 设备，现在支持原始映像格式。 核心映像现在支持从内置的 iSight 照相机或第三方相机对原始图像进行解码。 使用 [CIFilter](xref:CoreImage.CIFilter) 类的`FilterWithImageData`或`FilterWithImageURL`方法来处理原始映像 。
-- 已对 `UIImageView` 对象中的 `UIImage` 渲染（由核心图像映像存储支持时）进行了多种渲染性能改进。 
+- 已对 `UIImageView` 对象中的 `UIImage` 渲染（由核心图像映像存储支持时）进行了多种渲染性能改进。
 - 标记为宽域的 `UIImage` 对象将在支持宽色的 iOS 设备上的 `UIImageView` 对象中呈现为广角颜色。
 - 核心映像内核代码现在可以请求特定的像素输出格式。
 - [CIFilter](xref:CoreImage.CIFilter)类的 `ImageWithExtent` 方法可用于在筛选器操作中插入自定义处理。 核心映像将在处理图像以进行输出或显示时调用筛选器之间的给定回调。
@@ -82,7 +82,7 @@ iOS 10 对核心映像框架进行了以下改进：
 
 IOS 10 中对 Gamekit\ 框架进行了以下改进：
 
-- **Game Center 应用**已弃用，并已从 iOS 中删除。 如果应用使用 Gamekit\，它_必须_提供其自己的接口以显示 gamekit\ 功能，如排行榜等。 
+- **Game Center 应用**已弃用，并已从 iOS 中删除。 如果应用使用 Gamekit\，它_必须_提供其自己的接口以显示 gamekit\ 功能，如排行榜等。
 - [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)类已经实现了新的仅限 iCloud 的帐户类型。
 - 新的[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)类提供了用于在 Game Center 上管理持久数据存储的通用解决方案。 `GKGameSession` 维护一个播放器列表，应用负责实现如何以及何时存储、检索或交换参与者日期。 在许多情况下，游戏会话可以替换现有的基于转换的匹配、实时匹配或持久的游戏保存方法。
 
@@ -165,7 +165,7 @@ IOS 10 中对 SceneKit 框架进行了以下改进：
 - SceneKit 通过阅读颜色配置文件信息，使颜色与所有颜色匹配。
 - SceneKit 解释所有着色器类型的线性 RGB 颜色空间中的颜色分量值。
 - 可以通过在应用的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 键来禁用线性颜色空间渲染和宽色。
-- 生成任意多边形灵长类动物（从文件加载或以编程方式生成），以通过新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)类指定几何图形。
+- 生成任意多边形灵长类动物（从文件加载或以编程方式生成），以通过新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon)类指定几何图形。
 - 由于 SceneKit 读取和调整纹理图像中的颜色配置文件信息，因此请对所有图像使用资产目录，以确保提供此信息。
 
 ## <a name="spritekit-enhancements"></a>SpriteKit 增强功能
@@ -211,7 +211,7 @@ IOS 10 中对 WebKit 框架进行了以下改进：
 
 - 已将速览和 pop 支持添加到 `WKWebView` 类。 使用 `ShouldPreviewElement` 方法来确定给定 web 视图是否应显示预览。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [IOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4fc6c50b5aa2ce502b4157ca2b15f0d33a68ecd1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "60896655"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -23,7 +23,7 @@ ms.locfileid: "60896655"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 请注意，[`Label`](xref:Xamarin.Forms.Label) 的外观已更改：
 
-    [![iOS 和 Android 上视觉外观不同的标签的屏幕截图](../images/change-label-appearance.png "具有不同外观的标签")](../images/change-label-appearance-large.png#lightbox "Label with changed appearance")
+    [![iOS 和 Android 上视觉外观已改变的标签屏幕截图](../images/change-label-appearance.png "外观已改变的标签")](../images/change-label-appearance-large.png#lightbox "外观已改变的标签")
 
     有关设置 [`Label`](xref:Xamarin.Forms.Label) 外观的详细信息，请参阅 [Xamarin.Forms 标签](~/xamarin-forms/user-interface/text/label.md)指南。
 
@@ -44,6 +44,6 @@ ms.locfileid: "60896655"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 请注意，[`Label`](xref:Xamarin.Forms.Label) 的外观已更改：
 
-    [![iOS 和 Android 上视觉外观不同的标签的屏幕截图](../images/change-label-appearance.png "具有不同外观的标签")](../images/change-label-appearance-large.png#lightbox "Label with changed appearance")
+    [![iOS 和 Android 上视觉外观已改变的标签屏幕截图](../images/change-label-appearance.png "外观已改变的标签")](../images/change-label-appearance-large.png#lightbox "外观已改变的标签")
 
     有关设置 [`Label`](xref:Xamarin.Forms.Label) 外观的详细信息，请参阅 [Xamarin.Forms 标签](~/xamarin-forms/user-interface/text/label.md)指南。

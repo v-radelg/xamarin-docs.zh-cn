@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015870"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725339"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目标-C 绑定概述
 
@@ -19,7 +19,7 @@ _绑定过程工作原理的详细信息_
 
 绑定与 Xamarin 一起使用的目标-C 库的过程分为三个步骤：
 
-1. 编写C# "API 定义" 来说明如何在 .net 中公开本机 API，以及如何将其映射到基础目标-C。 这是使用标准C#构造（如 `interface`和各种绑定**属性**）完成的（请参阅这个简单的[示例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
+1. 编写C# "API 定义" 来说明如何在 .net 中公开本机 API，以及如何将其映射到基础目标-C。 这是使用标准C#构造（如 `interface` 和各种绑定**属性**）完成的（请参阅这个简单的[示例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
 
 2. 在中C#编写 "API 定义" 后，可对其进行编译以生成 "绑定" 程序集。 这可以在[**命令行**](#commandline)上或在 Visual Studio for Mac 或 Visual Studio 中使用[**绑定项目**](#bindingproject)完成。
 
@@ -35,7 +35,7 @@ _绑定过程工作原理的详细信息_
 
 ## <a name="command-line-bindings"></a>命令行绑定
 
-你可以使用 Xamarin 的 `btouch-native` （如果你使用的是 Xamarin，则 `bmac-native`）来直接生成绑定。 它的工作方式是C#将你手动创建的 API 定义（或使用客观 Sharpie）传递到命令行工具（适用于 iOS 的`btouch-native`或 Mac 的`bmac-native`）。
+你可以使用 Xamarin 的 `btouch-native` （如果你使用的是 Xamarin，则 `bmac-native`）来直接生成绑定。 它的工作方式是C#将你手动创建的 API 定义（或使用客观 Sharpie）传递到命令行工具（适用于 iOS 的`btouch-native` 或 Mac 的 `bmac-native`）。
 
 调用这些工具的一般语法为：
 
@@ -61,7 +61,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 <a name="objectivesharpie" />
 
-## <a name="objective-sharpie"></a>目标 Sharpie
+## <a name="objective-sharpie"></a>Objective Sharpie
 
 客观 Sharpie 是另一种独立的命令行工具，可帮助创建绑定的初始阶段。 它不会自行创建绑定，而是自动执行为目标本机库生成 API 定义的初始步骤。
 
@@ -73,7 +73,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 可以同时使用[[Register]](xref:Foundation.RegisterAttribute)特性、 [[Export]](xref:Foundation.ExportAttribute)特性和[手动目标 C 选择器调用](~/ios/internals/objective-c-selectors.md)来手动绑定新的（以前未绑定的）目标 c 类型。
 
-首先，查找要绑定的类型。 为了方便讨论，我们将绑定[NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)类型（已在[NSEnumerator](xref:Foundation.NSEnumerator)中绑定）; 下面的实现仅用于示例。
+首先，查找要绑定的类型。 为了方便讨论，我们将绑定[NSEnumerator](https://developer.apple.com/documentation/foundation/nsenumerator)类型（已在[NSEnumerator](xref:Foundation.NSEnumerator)中绑定）; 下面的实现仅用于示例。
 
 其次，我们需要创建C#类型。 我们可能想要将其放入命名空间;由于目标-C 不支持命名空间，因此需要使用 `[Register]` 特性来更改 Xamarin 将向目标 C 运行时注册的类型名称。 该C#类型还必须从[NSObject](xref:Foundation.NSObject)继承：
 

@@ -6,25 +6,25 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/01/2017
-ms.openlocfilehash: f28b9f19e901d75c432dfecbfec8a63588df3d70
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 99d0303dc1560796cb372d0b8af2fafd16c6097f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029229"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725138"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Xamarin Android 导航栏
 
 Android 4 引入了一个名为 "*导航栏*" 的新的系统用户界面功能，该功能可在不包含**Home**、 **Back**和**Menu**硬件按钮的设备上提供导航控件。
 以下屏幕截图显示了结点质数设备的导航栏：
 
- [Android 导航栏![示例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
+ [Android 导航栏 ![示例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 可以使用多个新标志来控制导航栏及其控件的可见性，以及 Android 3 中引入的系统栏的可见性。 标志在 `Android.View.View` 类中定义，如下所示：
 
-- `SystemUiFlagVisible` &ndash; 使导航栏可见。 
-- `SystemUiFlagLowProfile` &ndash; 导航栏中的控件。 
-- `SystemUiFlagHideNavigation` &ndash; 隐藏导航栏。 
+- `SystemUiFlagVisible` &ndash; 使导航栏可见。
+- `SystemUiFlagLowProfile` &ndash; 导航栏中的控件。
+- `SystemUiFlagHideNavigation` &ndash; 隐藏导航栏。
 
 通过设置 "`SystemUiVisibility`" 属性，可以将这些标志应用于视图层次结构中的任何视图。 如果有多个视图设置了此属性，系统会将它们与或操作组合在一起，并应用它们，只要设置了标志的窗口保持焦点。 删除视图时，还将删除其设置的所有标志。
 
@@ -39,17 +39,17 @@ var tv = FindViewById<TextView> (Resource.Id.systemUiFlagTextView);
 var lowProfileButton = FindViewById<Button>(Resource.Id.lowProfileButton);
 var hideNavButton = FindViewById<Button> (Resource.Id.hideNavigation);
 var visibleButton = FindViewById<Button> (Resource.Id.visibleButton);
-           
+
 lowProfileButton.Click += delegate {
     tv.SystemUiVisibility =
         (StatusBarVisibility)View.SystemUiFlagLowProfile;
 };
-           
+
 hideNavButton.Click += delegate {
     tv.SystemUiVisibility =
        (StatusBarVisibility)View.SystemUiFlagHideNavigation;        
 };
-           
+
 visibleButton.Click += delegate {
     tv.SystemUiVisibility = (StatusBarVisibility)View.SystemUiFlagVisible;
 }
@@ -64,8 +64,6 @@ tv.SystemUiVisibilityChange +=
   };
 ```
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SystemUIVisibilityDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/systemuivisibilitydemo)
-- [冰淇淋三明治](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)

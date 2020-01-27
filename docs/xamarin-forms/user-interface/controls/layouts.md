@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms 布局
+title: Xamarin.Forms 레이아웃
 description: Xamarin.Forms 布局用于将用户界面控件组合到可视结构。 本文列出了包含在 Xamarin.Forms 中的布局。
 ms.prod: xamarin
 ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: e247be8387ce984d6695431ec432119d01344b42
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 4747ce6555a6440c687dc3d239d75307f68683ca
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955771"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724480"
 ---
-# <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
+# <a name="xamarinforms-layouts"></a>Xamarin.Forms 레이아웃
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
@@ -36,12 +36,12 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含与设置的一个子[ `Content` ](xref:Xamarin.Forms.ContentView.Content)属性。 `Content`属性可以设置为任意`View`派生类，包括其他`Layout`派生类。 `ContentView` 主要用作结构化元素并用作基类[ `Frame` ](#frame)。<br /><br />[API 文档](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/) | [![ContentView 示例](layouts-images/ContentView.png "ContentView 示例")](layouts-images/ContentView-Large.png#lightbox "ContentView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含与设置的一个子[ `Content` ](xref:Xamarin.Forms.ContentView.Content)属性。 `Content`属性可以设置为任意`View`派生类，包括其他`Layout`派生类。 `ContentView` 主要用作结构化元素并用作基类[ `Frame` ](#frame)。<br /><br />[API 文档](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/) | [![ContentView 示例](layouts-images/ContentView.png "ContentView 示例")](layouts-images/ContentView-Large.png#lightbox "ContentView 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
 
-### <a name="frame"></a>帧
+### <a name="frame"></a>프레임
 
 |     |     |
 | --- | --- |
@@ -86,7 +86,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 <a name="grid" />
 
-### <a name="grid"></a>网格
+### <a name="grid"></a>모눈
 
 |     |     |
 | --- | --- |
@@ -97,7 +97,7 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 
 |     |     |
 | --- | --- |
-| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 相对于其父级的特定位置定位子元素。 使用表示子表位置[附加属性](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)并[ `LayoutFlags` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)。 `AbsoluteLayout`可用于对视图的位置进行动画处理。<br /><br />[API 文档](xref:Xamarin.Forms.AbsoluteLayout) / [指南](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![AbsoluteLayout 示例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 示例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) / [XAML 页面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml)与[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
+| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 相对于其父级的特定位置定位子元素。 使用表示子表位置[附加属性](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)并[ `LayoutFlags` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)。 `AbsoluteLayout`可用于对视图的位置进行动画处理。<br /><br />[API 文档](xref:Xamarin.Forms.AbsoluteLayout) / [指南](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![AbsoluteLayout 示例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 示例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutDemoPage.cs) / [XAML 页面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml)与[代码隐藏](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="relativelayout"></a>RelativeLayout
@@ -114,8 +114,8 @@ _Xamarin.Forms 布局用于将用户界面控件组合到可视结构。_
 | [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 根据 CSS[灵活框布局模块](https://www.w3.org/TR/css-flexbox-1/)，通常称为_flex 布局_或_弹性框_。 `FlexLayout` 定义六种可绑定属性和允许儿童堆积或包装了许多的对齐方式和方向选项的五个附加的可绑定属性。<br /><br />[API 文档](xref:Xamarin.Forms.FlexLayout) / [指南](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos) | [![FlexLayout 示例](layouts-images/FlexLayout.png "FlexLayout 示例")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout 示例")<br />[此页的 C# 代码](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [Xamarin.Forms FormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.Forms API 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [Xamarin.Forms 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms API 설명서](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

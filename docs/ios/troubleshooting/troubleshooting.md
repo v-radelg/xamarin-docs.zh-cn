@@ -8,14 +8,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030884"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725357"
 ---
-# <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示 
+# <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin 无法解析 ValueTuple
 
@@ -124,11 +124,11 @@ public Bar (IntPtr handle) : base (handle) { }
 
 命名空间设置可在 "项目选项" 对话框中找到。 默认命名空间位于 "**常规-> 主设置**" 部分中。 如果为空，则将项目名称用作默认值。 可以在**源代码-> .Net 命名策略**"部分中找到更高级的命名空间设置。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>操作警告：从未使用私有方法 "Foo"。 CS0169
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>操作警告：从未使用私有方法 "Foo"。 (CS0169)
 
 接口生成器文件的操作在运行时通过反射连接到小组件，因此应该出现此警告。
 
-如果要针对这些方法仅禁止显示此警告，可以在操作中使用 "#pragma 警告禁用 0169" #pragma 警告启用 0169 "; 如果想要为整个项目禁用此警告，请将0169添加到" 编译器选项 "中的" 忽略警告 "字段（而不是建议使用）。
+如果要针对这些方法仅禁止显示此警告，可以在操作中使用 "#pragma 警告禁用 0169" #pragma 警告启用 0169 "; 如果想要为整个项目禁用此警告，请将0169添加到" 编译器选项 "中的" 忽略警告 "字段（不推荐）。
 
 ## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch 失败，出现以下消息：无法打开程序集 "/path/to/yourproject.exe"
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 这意味着你要将使用 thumb 代码编译的静态库链接到你的项目中。 从 iPhone SDK 版本3.1 （在撰写本文时，或更高版本），Apple 在使用 Thumb 代码（静态库）链接非 Thumb 代码（Xamarin）时在其链接器中引入了 bug。你将需要与静态库的非 Thumb 版本链接，以减轻此问题。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：尝试 JIT 编译方法（托管到托管的包装） Foo []： ICollection'1. get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：尝试 JIT 编译方法（由托管到托管的包装） Foo []： System.web. get_Count （）
 
 [] 后缀指示你或类库正在通过泛型集合（如 IEnumerable < >、ICollection < > 或 IList < > 调用数组中的方法。 作为一种解决方法，你可以通过自行调用方法，并确保在触发异常的调用之前执行此代码，从而显式强制 AOT 编译器包含此类方法。 在这种情况下，可以编写：
 
@@ -219,7 +219,7 @@ int count = ((ICollection<Foo>) array).Count;
 
 自 Xamarin. iOS 1.3，调试版本包括针对 Mono 的每个组件（每类框架的每个方法）的调试支持。  
 
-使用 Xamarin 1.4，我们将介绍一种更细化的调试方法，默认情况下，它只是为你的代码和库提供调试检测，而不是针对所有[Mono 程序集](~/cross-platform/internals/available-assemblies.md)执行此操作（这仍是可行的，但你需要选择对这些程序集进行调试。
+使用 Xamarin 1.4，我们将介绍一种更细化的调试方法，默认情况下，它只是为您的代码和库提供调试检测，而不是为所有[Mono 程序集](~/cross-platform/internals/available-assemblies.md)提供调试工具（这仍是可行的，但您必须选择对这些程序集进行调试）。
 
 ## <a name="installation-hangs"></a>安装挂起
 
@@ -287,7 +287,7 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 ## <a name="error-mtouch-failed-with-no-output"></a>错误 "mtouch 失败，无输出"
 
 当存储解决方案或项目的项目名称或目录包含空格时，Xamarin 和 Visual Studio for Mac 的当前版本会失败。
-修复此问题的方法：
+이 문제를 해결하려면
 
 - 确保你的项目或其中存储它的目录都包含空格。
 - 在项目 "主要设置" 中，确保项目名称不包含任何空格。
@@ -309,7 +309,7 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 
 （由 Ed Anuff 提供）
 
-请执行这些步骤：
+다음 단계를 수행하십시오.
 
 - 将 iPhone Build 中的 SDK 版本更改为3.2 或 iTunes connect 将在上传时拒绝它，因为它看到使用小于3.2 的 SDK 版本生成的 iPad 兼容的应用
 - 为项目创建自定义 info.plist，并在其中将 MinimumOSVersion 显式设置为3.0。   这将覆盖 Xamarin 设置的 MinimumOSVersion 3.2 值。   如果未执行此操作，应用将无法在 iPhone 上运行。
@@ -368,7 +368,7 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 
 这意味着你已安装 XCode 4。   在 XCode 4 中，删除了工具 ibtool 后，就不能再使用独立工具编辑 XIB 文件。
 
-如果要使用 Interface Builder，请从 Apple 网站上安装[XCode 系列 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
+如果要使用 Interface Builder，请从 Apple 网站上安装 XCode 系列3。
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>"无法为 mime 类型创建显示绑定： application/vnd.apple.mpegurl. apple-interface-builder"
 
@@ -394,7 +394,7 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 当应用程序名称包含 "." 时，可能会发生这种情况。的名称。
 这在 CFBundleExecutable 中被禁止作为可执行文件名称，即使它可以在许多其他情况（如设备）中运行。
 
- \* "此值不应包含名称上的任何扩展名"。- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+"此值不应包含名称上的任何扩展名。"
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>错误：双击 xib 文件时，不支持 "自定义属性类型 0x43"
 

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61373341"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -43,7 +43,7 @@ ms.locfileid: "61373341"
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
-    [![iOS 和 Android 上的包含文本的编辑器的屏幕截图](../images/text-changes.png "含文本的编辑器")](../images/text-changes-large.png#lightbox "Editor with text")
+    [![iOS 和 Android 上包含文本的编辑器屏幕截图](../images/text-changes.png "包含文本的编辑器")](../images/text-changes-large.png#lightbox "包含文本的编辑器")
 
     在两个事件处理程序中设置断点，向 [`Editor`](xref:Xamarin.Forms.Editor) 输入文本并观察 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件触发。 取消 `Editor` 以观察 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件触发。
 
@@ -86,7 +86,7 @@ ms.locfileid: "61373341"
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
-    [![iOS 和 Android 上的包含文本的编辑器的屏幕截图](../images/text-changes.png "含文本的编辑器")](../images/text-changes-large.png#lightbox "Editor with text")
+    [![iOS 和 Android 上包含文本的编辑器屏幕截图](../images/text-changes.png "包含文本的编辑器")](../images/text-changes-large.png#lightbox "包含文本的编辑器")
 
     在两个事件处理程序中设置断点，向 [`Editor`](xref:Xamarin.Forms.Editor) 输入文本并观察 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件触发。 取消 `Editor` 以观察 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件触发。
 

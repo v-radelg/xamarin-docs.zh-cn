@@ -1,5 +1,5 @@
 ---
-title: iOS 9 兼容性
+title: iOS 9 호환성
 description: 即使您不打算直接将 iOS 9 功能添加到您的应用程序，您也应该用 Xamarin 的最新版本重新生成您的应用程序。
 ms.prod: xamarin
 ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
@@ -7,23 +7,21 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: edc778879aa88d420f41bd2b7b8e15b6d80b5939
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728260"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725156"
 ---
-# <a name="ios-9-compatibility"></a>iOS 9 兼容性
+# <a name="ios-9-compatibility"></a>iOS 9 호환성
 
 _即使您不打算直接将 iOS 9 功能添加到您的应用程序，您也应该用 Xamarin 的最新版本重新生成您的应用程序。_
 
 > [!IMPORTANT]
 > 此页上的信息适用于应用商店中已面向 iOS 8 或更早版本的应用程序的客户，但尚未提交更新以实现 iOS 9 兼容性。 如果你已在使用最新版本-Xcode 7 和 Xamarin （iOS 9），请访问[iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)。
 
-当第一个 iOS 9 测试版显示时，我们发现了两个版本的 Xamarin，它们表现为较旧的应用无法在 iOS 9 上启动。
-
-这两个问题（如[我们的论坛中的详细信息](https://forums.xamarin.com/discussion/comment/131529/#Comment_131529)）是：
+当第一个 iOS 9 测试版出现时，我们发现了两个版本的 Xamarin，它们表现为旧应用无法在 iOS 9 上启动：
 
 - IOS 8 或更早版本的应用生成无法在32位设备（包括用[Unified API](~/cross-platform/macios/unified/index.md)构建的应用）上启动。
 - 未指定具有完整路径的 P/Invoke 失败。
@@ -99,8 +97,8 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 
 **修复：** 这适用于 iOS 9，但有一种简单的解决方法，你可以在此期间自行应用：仅面向更高版本的项目中的 iOS 版本（在这种情况下，你可以尝试使用 iOS 7）。 其他框架可能会出现类似的问题，例如，WebKit 框架已在 iOS 8 中公开（因此面向 iOS 7 会导致此错误; 应以 iOS 8 为目标，以在应用中使用 WebKit）。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [iOS 9 兼容性发行信息](https://releases.xamarin.com/ios-hotfix-for-ios-9-preview-xcode-6/)
-- [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9 소개](~/ios/platform/introduction-to-ios9/index.md)
 - [将你的 Xamarin iOS 应用程序更新到 iOS9 （视频）](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

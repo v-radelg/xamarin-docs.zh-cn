@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f15c754a47f910f430af3c036ed510cc9e130eac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021808"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725469"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>用 Xamarin Designer for iOS 自动布局
 
@@ -20,7 +20,7 @@ ms.locfileid: "73021808"
 
 在本指南中，我们将介绍约束以及如何在 Xamarin iOS 设计器中使用它们。 本指南不涉及以编程方式使用约束。 有关以编程方式使用自动布局的信息，请参阅[Apple 文档](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>요구 사항
 
 在 Visual Studio 2017 和更高版本的 Windows 中 Visual Studio for Mac 提供 Xamarin Designer for iOS。
 
@@ -69,7 +69,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 若要编辑所选视图的约束，请单击省略号以显示 segue： ![约束编辑 segue](designer-auto-layout-images/constraints-popup.png)
 
-打开约束后，segue 会在视图上显示任何预设约束。 我们可以在右上角选择组合框中的所有**边**，然后选择 "**全部清除**" 将其删除。 
+打开约束后，segue 会在视图上显示任何预设约束。 我们可以在右上角选择组合框中的所有**边**，然后选择 "**全部清除**" 将其删除。
 
 **W**将设置 Width 和**H**来设置 height 约束。 检查**纵横比**时，将在不同的屏幕大小上控制视图的高度和宽度，视图的宽度用作 r 的分子，高度为分母。
 
@@ -185,7 +185,7 @@ Frame misplacement 使用与 underconstrained 项相同的颜色代码。 该项
 3. 接下来，在 "**属性资源管理器**" 的 "**小组件**" 选项卡中为约束指定一个**名称**：
 
     [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
-4. 保存更改。
+4. 변경 내용을 저장합니다.
 
 在进行上述更改后，你可以在代码中访问约束并修改其属性。 例如，可以使用以下项将附加视图的高度设置为零：
 
@@ -201,7 +201,7 @@ ViewInfoHeight.Constant = 0;
 
 自动布局引擎不会立即更新附加视图以响应约束更改，而是在不久的将来计划_延迟布局处理过程_。 在此延迟传递过程中，不仅会更新给定视图的约束，还会重新计算和更新层次结构中每个视图的约束，以调整新布局。
 
-在任何时候，都可以通过调用父视图的 `SetNeedsLayout` 或 `SetNeedsUpdateConstraints` 方法来计划自己的延迟布局传递。 
+在任何时候，都可以通过调用父视图的 `SetNeedsLayout` 或 `SetNeedsUpdateConstraints` 方法来计划自己的延迟布局传递。
 
 延迟的布局传递通过视图层次结构包含两个唯一的传递：
 
@@ -210,7 +210,7 @@ ViewInfoHeight.Constant = 0;
 
 ### <a name="animating-constraint-changes"></a>对约束更改进行动画处理
 
-除了修改约束属性，还可以使用核心动画对视图约束的更改进行动画处理。 例如:
+除了修改约束属性，还可以使用核心动画对视图约束的更改进行动画处理。 예를 들면 다음과 같습니다.:
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");
@@ -224,14 +224,13 @@ UIView.CommitAnimations();
 
 此处的关键是在动画块中调用父视图的 `LayoutIfNeeded` 方法。 这会告知视图绘制动态位置或大小变化的每个 "帧"。 如果没有此行，视图只会与最终版本对齐，而不进行动画处理。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本指南介绍了 iOS 自动（或 "自适应"）布局和约束概念，作为设计图面上元素间关系的数学表示形式。 它介绍了如何在 iOS 设计器中启用自动布局、使用 "**约束" 工具栏**以及在设计图面上分别编辑约束。 接下来，它介绍了如何排查三个常见的约束问题。 最后，它演示了如何在代码中修改约束。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [情节提要简介](~/ios/user-interface/storyboards/index.md)
+- [Storyboards 소개](~/ios/user-interface/storyboards/index.md)
 - [iOS 设计控制演练](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Android Designer 概述](~/android/user-interface/android-designer/index.md)
 - [编程约束](~/ios/user-interface/programmatic-layout-constraints.md)
-- [Apple-自动布局指南](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/AutolayoutPG/Introduction/Introduction.html#/apple_ref/doc/uid/TP40010853-CH13-SW1)

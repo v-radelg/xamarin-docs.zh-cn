@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 94bc775366d832e0994b8d3c74a45123ff56c13b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029803"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725303"
 ---
 # <a name="using-team-city-with-xamarin"></a>将团队城市与 Xamarin 配合使用
 
@@ -39,7 +39,7 @@ TeamCity 安装有多个不同的排列。 下面是其中一些部分的列表�
 
 - **创建 TeamCity 项目**–在完成上述三个步骤之后，必须创建一个 TeamCity 项目，该项目将包含检索源代码、编译项目和将测试提交到 Xamarin Test Cloud 所需的所有元数据。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>요구 사항
 
 需要[App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/)的经验。
 
@@ -87,7 +87,7 @@ TeamCity 安装有多个不同的排列。 下面是其中一些部分的列表�
 
 - [**虚设**](https://fsharp.github.io/FAKE/)–这是一种基于F# DSL 的，如果需要，可以利用现有的 .net 库。
 
-使用哪种脚本语言取决于您的首选项和要求。 [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)示例包含使用 Rake 作为[生成脚本](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)的示例。
+使用哪种脚本语言取决于您的首选项和要求。
 
 > [!NOTE]
 > 可以使用基于 XML 的生成系统（如 MSBuild 或 NAnt），但这缺乏专用于构建软件的 DSL 的表现力和可维护性。
@@ -201,13 +201,13 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 8. 完成生成后，检查生成日志，并查看生成中是否存在需要注意的问题或警告。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本指南介绍了如何使用 TeamCity 生成 Xamarin 移动应用程序，然后将其提交到 Test Cloud。 我们讨论了如何创建生成脚本来自动执行生成过程。 生成脚本负责编译应用程序、提交到 Test Cloud 并等待结果
 
 然后，我们介绍了如何在 TeamCity 中创建一个项目，该项目将在每次开发人员提交代码时对生成进行排队，并调用生成脚本。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [正在准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [正在准备 Xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)

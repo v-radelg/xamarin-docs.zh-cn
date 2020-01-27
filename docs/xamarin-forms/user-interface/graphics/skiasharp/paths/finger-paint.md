@@ -7,16 +7,16 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: 98809dca503d03d3d592161608fa9a6fa0e5d394
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: d5cf0927c64732d6d0a44204db9509fae77f0d1d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488343"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724071"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中手指绘画
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用手指在画布上绘制。_
 
@@ -30,7 +30,7 @@ _使用手指在画布上绘制。_
 
 **手指绘制**页面**SkiaSharpFormsDemos**是手指绘画的简化的实现。 它不允许选择颜色或宽度进行描边，则具有无法清除画布上，而且当然不能保存您的作品。
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)文件 put`SKCanvasView`中单个单元格`Grid`并将其附加`TouchEffect`以便`Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml)文件 put`SKCanvasView`中单个单元格`Grid`并将其附加`TouchEffect`以便`Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -169,7 +169,7 @@ public partial class FingerPaintPage : ContentPage
 
 现在已了解如何绘制的线条以及如何定义使用参数化的等式的曲线。 在后面的部分[ **SkiaSharp 曲线和路径**](../curves/index.md)介绍了各种类型的曲线的`SKPath`支持。 但有用的先决条件是探讨[ **SkiaSharp 转换**](../transforms/index.md)。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,5 +1,5 @@
 ---
-title: 其他 macOS Sierra Framework 更改
+title: 추가 macOS Sierra 프레임워크 변경 내용
 description: 本文档介绍 macOS Sierra 中引入的现有框架的小更改和增强功能。 它会检查加速框架、AppKit、AVFoundation、Core 数据、核心映像、基础等的更改。
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
@@ -7,14 +7,14 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3db7e456d4321aa7eba415813f8c374b030da4ca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 44468d3f2d323065161c290f2df8e6f0e89d3def
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029867"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724985"
 ---
-# <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra Framework 更改
+# <a name="additional-macos-sierra-framework-changes"></a>추가 macOS Sierra 프레임워크 변경 내용
 
 <a name="Accelerate-Framework-Enhancements" />
 
@@ -101,7 +101,7 @@ ms.locfileid: "73029867"
 
 已对 macOS Sierra 的 Gamekit\ 框架进行了以下改进：
 
-- **Game Center 应用**已弃用，并已从 macOS 中删除。 如果应用使用 Gamekit\，它_必须_提供其自己的接口以显示 gamekit\ 功能，如排行榜等。 
+- **Game Center 应用**已弃用，并已从 macOS 中删除。 如果应用使用 Gamekit\，它_必须_提供其自己的接口以显示 gamekit\ 功能，如排行榜等。
 - [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)类已经实现了新的仅限 iCloud 的帐户类型。
 - 新的[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)类提供了用于在 Game Center 上管理持久数据存储的通用解决方案。 `GKGameSession` 维护一个播放器列表，应用负责实现如何以及何时在参与者之间存储、检索或交换参与者日期。 在许多情况下，游戏会话可以替换现有的基于转换的匹配、实时匹配或持久的游戏保存方法。
 
@@ -169,7 +169,7 @@ ms.locfileid: "73029867"
 - SceneKit 解释所有着色器类型的线性 RGB 颜色空间中的颜色分量值。
 - 由于 SceneKit 读取和调整纹理图像中的颜色配置文件信息，因此请对所有图像使用资产目录，以确保提供此信息。
 - 可以通过在应用的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 键来禁用线性颜色空间渲染和宽色。
-- 生成任意多边形灵长类动物（从文件加载或以编程方式生成），以通过新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)类指定几何图形。
+- 生成任意多边形灵长类动物（从文件加载或以编程方式生成），以通过新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon?language=objc)类指定几何图形。
 
 <a name="Security-Framework-Enhancements" />
 
@@ -199,7 +199,7 @@ ms.locfileid: "73029867"
 - **意向框架**-此框架允许应用检查交互（如位置或用户操作），并根据该信息采取措施。
 - **SafariServices 框架**-此框架允许应用为 MacOS 和 IOS 开发 Safari （如内容阻止程序）的应用扩展。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
-- [Mac 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Mac 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [OS X 10.12 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

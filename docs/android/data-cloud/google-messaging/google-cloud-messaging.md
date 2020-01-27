@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e9b0337c9cdcfbd8f738a11c5dffff427df620bc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023707"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723659"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -35,11 +35,9 @@ Google Cloud Messaging （GCM）是一种服务，用于处理服务器应用程
 
 使用 GCM，应用服务器可以将消息发送到单个设备、一组设备或多个订阅了某个主题的设备。 你的客户端应用可以使用 GCM 从应用服务器订阅下游消息（例如，接收远程通知）。 此外，GCM 使客户端应用程序可以将上游消息发回到应用服务器。
 
-有关为 GCM 实现应用服务器的信息，请参阅[关于 Gcm 连接服务器](https://developers.google.com/cloud-messaging/server)。
-
 ## <a name="google-cloud-messaging-in-action"></a>Google Cloud Messaging 操作
 
-当下游消息从应用程序服务器发送到客户端应用时，应用服务器会将消息发送到*GCM 连接服务器*;然后，GCM 连接服务器将消息转发到运行客户端应用的设备。 可以通过 HTTP 或[XMPP](https://developers.google.com/cloud-messaging/ccs) （可扩展消息传递和状态协议）发送消息。 因为客户端应用程序并不总是连接或运行，所以 GCM 连接服务器排队并存储消息，并在客户端应用程序重新连接时将其发送到客户端应用程序。 同样，如果应用服务器不可用，GCM 会将来自客户端应用的上游消息排队发送到应用服务器。
+当下游消息从应用程序服务器发送到客户端应用时，应用服务器会将消息发送到*GCM 连接服务器*;然后，GCM 连接服务器将消息转发到运行客户端应用的设备。 可以通过 HTTP 或[XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) （可扩展消息传递和状态协议）发送消息。 因为客户端应用程序并不总是连接或运行，所以 GCM 连接服务器排队并存储消息，并在客户端应用程序重新连接时将其发送到客户端应用程序。 同样，如果应用服务器不可用，GCM 会将来自客户端应用的上游消息排队发送到应用服务器。
 
 GCM 使用以下凭据来识别应用服务器和客户端应用，并使用这些凭据通过 GCM 授权消息事务：
 
@@ -74,8 +72,6 @@ GCM 使用以下凭据来识别应用服务器和客户端应用，并使用这�
 当客户端应用程序不再想要从应用程序服务器接收消息时，它可以向应用服务器发送请求以删除注册令牌。 如果客户端应用正在接收主题消息（在本文后面部分介绍），则它可以取消订阅主题。
 如果从设备中卸载客户端应用，则 GCM 会检测到此情况，并自动通知应用服务器删除注册令牌。
 
-Google[注册的客户端应用程序](https://developers.google.com/cloud-messaging/registration)更详细地介绍了注册过程;它说明了注销和取消订阅，并介绍了卸载客户端应用程序时的注销过程。
-
 ### <a name="downstream-messaging"></a>下游消息
 
 当应用服务器向客户端应用程序发送下游消息时，将按照下图所示的步骤进行操作：
@@ -96,15 +92,15 @@ Google[注册的客户端应用程序](https://developers.google.com/cloud-messa
 
 #### <a name="topic-messaging"></a>主题消息
 
-*主题消息传递*是一种下游消息，应用服务器将一条消息发送到多个订阅主题（如天气预报）的客户端应用设备。 主题消息的长度最大可为2KB，主题消息每个应用最多支持1000000个订阅。 如果 GCM 仅用于主题消息传递，则不需要客户端应用程序向应用服务器发送注册令牌。 Google 的[实现主题消息](https://developers.google.com/cloud-messaging/topic-messaging)解释了如何将消息从应用程序服务器发送到多个订阅某个特定主题的设备。
+*主题消息传递*是一种下游消息，应用服务器将一条消息发送到多个订阅主题（如天气预报）的客户端应用设备。 主题消息的长度最大可为2KB，主题消息每个应用最多支持1000000个订阅。 如果 GCM 仅用于主题消息传递，则不需要客户端应用程序向应用服务器发送注册令牌。
 
 #### <a name="group-messaging"></a>组消息传递
 
-*组消息传递*是一种下游消息，应用服务器将一条消息发送到属于组的多个客户端应用设备（例如，属于单个用户的一组设备）。 对于 iOS 设备，组消息的最大长度为2KB，最高可达4KB 的 Android 设备。 组最多只能有20个成员。 Google 的[设备组消息](https://developers.google.com/cloud-messaging/notifications)解释了应用程序服务器如何将单个消息发送到在属于组的设备上运行的多个客户端应用程序实例。
+*组消息传递*是一种下游消息，应用服务器将一条消息发送到属于组的多个客户端应用设备（例如，属于单个用户的一组设备）。 对于 iOS 设备，组消息的最大长度为2KB，最高可达4KB 的 Android 设备。 组最多只能有20个成员。
 
 ### <a name="upstream-messaging"></a>上游消息传递
 
-如果客户端应用程序连接到支持[XMPP](https://developers.google.com/cloud-messaging/ccs)的服务器，它可以将消息发送回应用程序服务器，如下图所示：
+如果客户端应用程序连接到支持[XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)的服务器，它可以将消息发送回应用程序服务器，如下图所示：
 
 [![上游消息传送关系图](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
@@ -118,7 +114,7 @@ Google[注册的客户端应用程序](https://developers.google.com/cloud-messa
 
 5. 应用服务器处理该消息。
 
-Google 的[上游消息](https://developers.google.com/cloud-messaging/ccs#upstream)说明如何构建 JSON 编码的消息并将其发送到运行 Google 的基于 XMPP 的云连接服务器的应用程序服务器。
+Google 的[上游消息](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref#upstream)说明如何构建 JSON 编码的消息并将其发送到运行 Google 的基于 XMPP 的云连接服务器的应用程序服务器。
 
 <a name="settingup" />
 
@@ -134,7 +130,7 @@ Google 的[上游消息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 2. 接下来，输入应用的包名称（在此示例中，包名为**gcmexample**），然后单击 "**继续" 以选择并配置服务**：
 
-    [输入包名称![](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
+    [输入包名称 ![](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     请注意，此包名称也是应用的应用程序 ID。
 
@@ -148,7 +144,7 @@ Google 的[上游消息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 5. 将为您的应用程序生成一个**服务器 API 密钥**和一个**发送程序 ID** 。 记录这些值，然后单击 "**关闭**"：
 
-    [显示![服务器 API 密钥和发件人 ID](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
+    [显示 ![服务器 API 密钥和发件人 ID](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
     保护 API 密钥，&ndash; 不打算公开使用。 如果 API 密钥已泄露，则未经授权的服务器可能会将消息发布到客户端应用程序。
     [安全使用 api 密钥的最佳实践](https://support.google.com/cloud/answer/6310037?hl=en)提供了用于保护 API 密钥的有用指导原则。
@@ -157,22 +153,20 @@ Google 的[上游消息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 你可以随时通过登录到[Google Cloud Console](https://console.cloud.google.com/)并选择你的项目来查看你的项目设置。 例如，你可以通过在页面顶部的下拉菜单中选择你的项目来查看**发送方 ID** （在本示例中，项目称为**XamarinGCM**）。 发件人 ID 是此屏幕截图中所示的项目编号（此处的发件人 ID 为**9349932736**）：
 
-[查看发送方 ID![](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
+[查看发送方 ID ![](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 若要查看**api 密钥**，请单击 " **api 管理器**"，然后单击 "**凭据**"：
 
 [![查看 API 密钥](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
 
-## <a name="for-further-reading"></a>其他阅读材料
-
-- Google[注册的客户端应用](https://developers.google.com/cloud-messaging/registration)更详细地描述了客户端注册过程，并提供有关配置自动重试并使注册状态保持同步的信息。
+## <a name="for-further-reading"></a>추가 정보
 
 - [Rfc 6120](https://tools.ietf.org/html/rfc6120)和[rfc 6121](https://tools.ietf.org/html/rfc6121)解释并定义了可扩展的消息传递协议（XMPP）。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>요약
 
 本文提供 Google Cloud Messaging （GCM）的概述。 它介绍了用于在应用程序服务器和客户端应用程序之间识别和授权消息传递的各种凭据。 其中介绍了最常见的消息传递方案，并详细说明了向 GCM 注册应用程序以使用 GCM 服务的步骤。
 
-## <a name="related-links"></a>相关链接
+## <a name="related-links"></a>관련 링크
 
 - [云消息传送](https://developers.google.com/cloud-messaging/)
