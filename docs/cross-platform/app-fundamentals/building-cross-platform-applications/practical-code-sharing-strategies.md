@@ -1,19 +1,19 @@
 ---
-title: 第 5 部分 - 实际代码共享策略
+title: 5부 - 실제 코드 공유 전략
 description: 本文档介绍了实际代码共享方案，例如数据库、 文件访问、 网络操作和异步代码的策略。
 ms.prod: xamarin
 ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 2ad576f10fc0af5d96396d90b3e502e21da1182d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 0e37e138607fb0e00fbdc463ac7c53facf81395d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728234"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723628"
 ---
-# <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 实际代码共享策略
+# <a name="part-5---practical-code-sharing-strategies"></a>5부 - 실제 코드 공유 전략
 
 本部分提供有关如何共享代码的常见应用程序方案的示例。
 
@@ -126,7 +126,7 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 
 请参阅完整的示例案例研究源代码。
 
-## <a name="file-access"></a>文件访问
+## <a name="file-access"></a>파일 액세스
 
 文件访问是确定以任何应用程序的关键部分。 可能不属于应用程序包含的文件的常见示例：
 
@@ -163,7 +163,7 @@ Console.WriteLine (System.IO.File.ReadAllText (filePath));
 ### <a name="windowsstorage-for-windows-8-and-windows-10"></a>对于 Windows 8 和 Windows 10 的 Windows.Storage
 
 在第20章
-*用 Xamarin Book 创建移动应用* [book](https://developer.xamarin.com/r/xamarin-forms/book/) 。 [Async 和 File i/o](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)包括[Windows 8.1 和 Windows 10 的示例](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20)。
+ *[用 Xamarin Book 创建移动应用](https://developer.xamarin.com/r/xamarin-forms/book/)*  。 [Async 和 File i/o](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)包括[Windows 8.1 和 Windows 10 的示例](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20)。
 
 使用[ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)就可以读取和文件，使用支持的 Api 这些平台上的文件：
 
@@ -272,8 +272,6 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 - 如果连接是 3g，应用程序的行为可能有所不同 （例如，Apple 不允许应用程序超过 20 Mb，要下载超过 3g）。 应用程序可以使用此信息来警告用户过多的下载时间检索大型文件时。
 - 即使网络不可用，它是很好的做法启动其他请求之前验证与目标服务器的连接。 这将阻止应用的网络操作超时，重复，并且还允许信息更丰富的错误消息来向用户显示。
 
-没有[Xamarin.iOS 示例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (后者基于 Apple[可访问性的示例代码](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 以帮助检测网络可用性。
-
 ## <a name="webservices"></a>WebServices
 
 请参阅我们的文档[使用 Web 服务](~/cross-platform/data-cloud/web-services/index.md)，其中涵盖访问其余部分中，使用 Xamarin.iOS 的 SOAP 和 WCF 终结点。 它可以手动创建 web 服务请求和分析响应，但也有可用于使这更简单，包括 Azure、 RestSharp 和 ServiceStack 库。 即使基本 WCF 操作可访问 Xamarin 应用程序中。
@@ -301,8 +299,6 @@ ServiceStack 与 RestSharp，这两个服务器端解决方案来承载 web 服�
 
 [ServiceStack 网站](http://servicestack.net/)文档和代码示例说明用途的项目和链接。 示例包括 web 服务，以及可以访问它的各种客户端应用程序的完整服务器端实现。
 
-没有[Xamarin.iOS 示例](http://www.servicestack.net/monotouch/remote-info/)ServiceStack 网站中的代码片段上我们[Web Services 文档](~/cross-platform/data-cloud/web-services/index.md)。
-
 ### <a name="wcf"></a>WCF
 
 Xamarin 工具可以帮助您使用一些 Windows Communication Foundation (WCF) 服务。 一般情况下，Xamarin 支持 WCF 附带了 Silverlight 运行时的相同客户端的子集。 这包括最常见编码和协议的 WCF 的实现： 文本编码的 SOAP 消息通过 HTTP 传输协议使用`BasicHttpBinding`。
@@ -311,7 +307,7 @@ Xamarin 工具可以帮助您使用一些 Windows Communication Foundation (WCF)
 
  <a name="Threading" />
 
-## <a name="threading"></a>线程
+## <a name="threading"></a>스레딩
 
 应用程序响应能力非常重要的移动应用程序 – 用户期望应用程序能够加载和快速执行。 冻结屏幕将停止接受用户输入将出现以指示应用程序崩溃，所以一定不能阻塞 UI 线程长时间运行阻塞调用，例如网络请求或缓慢本地操作 （如解压缩文件）。 特别是在启动过程不应包含长时间运行的任务 – 所有移动平台将终止花很长时间加载的应用。
 
