@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016400"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724829"
 ---
 # <a name="mobile-software-development-lifecycle"></a>移动软件开发生命周期
 
@@ -80,7 +80,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 1. **Android** –  [设计指南](https://developer.android.com/design/index.html)
 1. **UWP** - [UWP 设计基础知识](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-例如，每个应用都提供一种工具以用于在应用程序中的各部分之间进行切换。 iOS 使用屏幕底部的选项卡栏，Android 使用屏幕顶部的选项卡栏，而 UWP 则使用[透视或选项卡](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot)视图。
+例如，每个应用都提供一种工具以用于在应用程序中的各部分之间进行切换。 iOS 使用屏幕底部的选项卡栏，Android 使用屏幕顶部的选项卡栏，而 UWP 则使用[透视或选项卡](/windows/uwp/design/controls-and-patterns/pivot)视图。
 
 此外，硬件本身也会决定 UX 决策。 例如，iOS 设备没有物理返回  按钮，因此引入了导航控制器工具：
 

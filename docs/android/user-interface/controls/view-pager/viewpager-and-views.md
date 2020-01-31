@@ -28,7 +28,7 @@ _ViewPager 是一个布局管理器，可用于实现 gestural 导航。Gestural
 
 创建名为**TreePager**的新 Android 项目（有关创建新 android 项目的详细信息，请参阅[Hello、Android](~/android/get-started/hello-android/hello-android-quickstart.md) ）。 接下来，启动 NuGet 包管理器。 （有关安装 NuGet 包的详细信息，请参阅[演练：在项目中包括 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)）。 查找并安装**Android 支持库 v4**： 
 
-[在 NuGet 包管理器中选择的支持 v4 NuGet ![屏幕截图](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
+[![在 NuGet 包管理器中选择的支持 v4 NuGet 屏幕截图](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 这也会安装**Android 支持库 v4**reaquired 的任何其他包。
 
@@ -101,7 +101,7 @@ protected override void OnCreate(Bundle bundle)
 
 生成并运行此代码时，应会看到类似于以下屏幕截图的显示： 
 
-[显示空 ViewPager 应用程序的 ![屏幕快照](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
+[![显示空 ViewPager 应用程序的 屏幕快照](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
 
 此时，`ViewPager` 为空，因为它缺少用于访问**TreeCatalog**中的内容的适配器。 在下一部分中，将创建一个**PagerAdapter**以将 `ViewPager` 连接到**TreeCatalog**。 
 
@@ -267,7 +267,7 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 核心实现现已完成 &ndash; 生成并运行应用。 屏幕上会显示树目录的第一个图像，如接下来的屏幕截图中所示。 向左轻扫可查看更多树视图，并向右轻扫可在树目录中向后移动： 
 
-[TreePager 应用的 ![屏幕截图通过树图像进行轻量](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
+[![TreePager 应用的 屏幕截图通过树图像进行轻量](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 ## <a name="add-a-pager-indicator"></a>添加寻呼指示器
 
@@ -319,7 +319,7 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 `PagerTitleStrip` 与 `PagerTabStrip` 非常类似，只是 `PagerTabStrip` 为当前选定的选项卡添加下划线。您可以将 `PagerTabStrip` 替换为上述布局中的 `PagerTitleStrip`，并再次运行应用程序以查看其外观 `PagerTitleStrip`： 
 
-[从文本中删除下划线的 ![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
+[![从文本中删除下划线的 PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 请注意，当您转换为 `PagerTitleStrip`时，下划线会被删除。 
 

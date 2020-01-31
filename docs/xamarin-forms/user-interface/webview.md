@@ -544,7 +544,7 @@ function factorial(num) {
 
 在此屏幕截图中，可以看到带有新标志的窗口：
 
-[在 "iOS 生成" 部分中设置标志 ![](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+[![在 "iOS 生成" 部分中设置标志](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -557,7 +557,7 @@ function factorial(num) {
 
 在此屏幕截图中，可以看到带有新标志的窗口：
 
-[在 "iOS 生成" 部分中设置标志 ![](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+[![在 "iOS 生成" 部分中设置标志](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
 
 -----
 

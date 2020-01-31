@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7d2cd650dd22cd64d506d5d17a5ae0c34b44fc2b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: f4d38bb66a34257c1e0a27c5fbbfe16f59743e83
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487177"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725501"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 捆绑
 
@@ -47,4 +47,4 @@ ms.locfileid: "75487177"
 - [安装](/visualstudio/mac/installation/)
 - [Hello，Mac 示例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
-- [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发人员 ID 和网关守卫](https://developer.apple.com/developer-id/)

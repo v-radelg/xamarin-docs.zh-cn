@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: de858049ef899134d61596cabfcf81fca973e8b0
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: f05e763df58e6fafc4d4ed1d4007979859670c28
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489344"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725457"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用开发人员 ID 对 Xamarin.Mac 应用进行签名
 
 如果开发人员计划直接将应用分发给 macOS 用户，Apple 建议使用开发人员 ID 对应用进行代码签名，以便可在启用“网关守卫”  的 macOS 系统上安装此应用。 如果应用未经签名，**网关守卫**会通过警告消息阻止用户安装（在启动时按住 Ctrl 键可跳过此限制）。
 
-请在 Apple 网站详细阅读[开发者 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)和[在 Mac App Store 外进行分发](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)。
+请在 Apple 网站详细阅读[开发者 ID 和网关守卫](https://developer.apple.com/developer-id/)和[在 Mac App Store 外进行分发](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)。
 
 ## <a name="code-signing-options"></a>代码签名选项
 
@@ -48,4 +48,4 @@ ms.locfileid: "75489344"
 - [Hello，Mac 示例](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
 - [工具指南：对应用进行代码签名](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
-- [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发人员 ID 和网关守卫](https://developer.apple.com/developer-id/)

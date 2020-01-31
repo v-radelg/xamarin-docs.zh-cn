@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: bc5a151323414e867b919035b0c5705234faebf9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 40d849ad403f2f47c00be9d3da7b59fc27ce8002
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021668"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725488"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>调试 Xamarin.Mac 应用中的本机故障
 
 ## <a name="overview"></a>概述
 
-有时，编程错误可能会导致本机 Objective-C 运行时中的故障。 和 C# 异常不同，它们不会指向你可以在代码中查看并修复的特定行。 有时，它们对查找和修复而言微不足道，但其他时候，跟踪它们可能会非常困难。 
+有时，编程错误可能会导致本机 Objective-C 运行时中的故障。 和 C# 异常不同，它们不会指向你可以在代码中查看并修复的特定行。 有时，它们对查找和修复而言微不足道，但其他时候，跟踪它们可能会非常困难。
 
 我们来查看并演练几个真实的本机故障示例。
 
@@ -163,40 +163,40 @@ Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
 
 ### <a name="locating"></a>查找
 
-在大部分出现此性质的 bug 的情况下，主要症状是本机故障，通常是一些与 `mono_sigsegv_signal_handler` 或堆栈的顶框架中的 `_sigtrap` 类似的内容。 Cocoa 正在尝试回调到 C# 代码中，这会命中垃圾回收的对象并发生故障。 但是，并不是每个有这些符号的故障都是由此类绑定问题引起的，你需要进行其他深入探索来确认这就是问题所在。 
+在大部分出现此性质的 bug 的情况下，主要症状是本机故障，通常是一些与 `mono_sigsegv_signal_handler` 或堆栈的顶框架中的 `_sigtrap` 类似的内容。 Cocoa 正在尝试回调到 C# 代码中，这会命中垃圾回收的对象并发生故障。 但是，并不是每个有这些符号的故障都是由此类绑定问题引起的，你需要进行其他深入探索来确认这就是问题所在。
 
 跟踪这些 bug 的困难之处在于，它们只在垃圾回收已经处理问题对象之后  才发生。 如果你相信自己已经命中了一个这种 bug，请在启动顺序中的某处添加以下代码：
 
 ```csharp
-new System.Threading.Thread (() => 
+new System.Threading.Thread (() =>
 {
     while (true) {
          System.Threading.Thread.Sleep (1000);
          GC.Collect ();
     }
-}).Start (); 
+}).Start ();
 ```
 
 这会强制应用程序每秒钟运行一次垃圾回收器。 重新运行应用程序，并尝试重现 bug。 如果故障立即发生或持续发生（而不是随机发生），则你位于正确的跟踪中。
 
 ### <a name="reporting"></a>报表
 
-下一步是向 Xamarin 报告问题，从而修复绑定以便将来发布。 如果你是商业或企业许可证持有者，请打开票证，位于： 
+下一步是向 Xamarin 报告问题，从而修复绑定以便将来发布。 如果你是商业或企业许可证持有者，请打开票证，位于：
 
 [visualstudio.microsoft.com/vs/support/](https://visualstudio.microsoft.com/vs/support/)
 
 或者，请搜索现有问题：
 
-- 查看 [Xamarin.Mac 论坛](https://forums.xamarin.com/categories/mac)
+- 查看 [Xamarin.Mac 论坛](https://forums.xamarin.com/categories/xamarin-mac)
 - 搜索[问题存储库](https://github.com/xamarin/xamarin-macios/issues)
 - 切换到 GitHub 问题之前，会在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) 中跟踪 Xamarin 问题。 请在其中搜索匹配的问题。
 - 如果找不到匹配的问题，请在 [GitHub 问题存储库](https://github.com/xamarin/xamarin-macios/issues/new)中提交一个新问题。
 
-GitHub 的问题是完全公开的。 不能隐藏注释或附件。 
+GitHub 的问题是完全公开的。 不能隐藏注释或附件。
 
 请尽可能多地包含以下内容：
 
-- 一个重现此问题的简单示例。 在可能的情况下，这非常有用  。 
+- 一个重现此问题的简单示例。 在可能的情况下，这非常有用  。
 - 故障的完整堆栈跟踪。
 - 故障周围的 C# 代码。   
 
@@ -250,4 +250,4 @@ void AddObject ()
 
 在没有技术原因就陷入困境的情况下，设置基础结构来捕获每个托管/本机边界处的托管异常十分昂贵，还有许多  在很多常规操作中都会发生的转换。 很多操作（尤其是涉及 UI 线程的操作）必须快速结束，否则，应用会不连续，并出现不可接受的性能特征。 很多回调都会执行不太可能出现引发的简单操作，所以，在这些情况下，这一开销昂贵且不必要。
 
-因此，我们不会为你设置这些尝试/捕获。 在代码执行不常用操作（除了返回布尔值或简单的数学外）的地方，你可以尝试自行捕获。 
+因此，我们不会为你设置这些尝试/捕获。 在代码执行不常用操作（除了返回布尔值或简单的数学外）的地方，你可以尝试自行捕获。

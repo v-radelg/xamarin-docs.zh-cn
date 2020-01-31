@@ -55,7 +55,7 @@ ASP.NET Core SignalR 是一个应用程序模型，可简化将实时通信添�
 
 若要测试示例应用程序，应在 Azure 门户中创建新的 Azure Functions 应用程序。 记下**应用程序名称**，因为示例应用程序**Constants.cs**文件中使用了此 URL。 以下屏幕截图显示了一个名为 "xdocsfunctions" 的新 Azure Functions 应用程序的创建：
 
-[Azure Functions 应用创建的 ![屏幕截图](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![Azure Functions 应用创建的 屏幕截图](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 可以通过 Visual Studio 2019 将 Azure 函数部署到 Azure Functions 的应用程序实例。 以下各节介绍如何将示例应用程序中的两个函数部署到 Azure Functions 的应用程序实例。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 1bb7ffba11a7135735b7599fa7f12b47d0b347c8
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 00d7610bda3d1b7c9f954df64bb6e3af982b1d06
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489383"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725514"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 应用的配置文件
 
@@ -29,31 +29,31 @@ ms.locfileid: "75489383"
 
 请执行以下操作：
 
-1. 选择要创建的配置文件的类型，然后单击“继续”  按钮： 
+1. 选择要创建的配置文件的类型，然后单击“继续”  按钮：
 
     [![](profiles-images/certif14.png "Selecting the profile type")](profiles-images/certif14.png#lightbox)
-2. 选择要对其创建配置文件的应用程序的 ID，然后单击“继续”  按钮： 
+2. 选择要对其创建配置文件的应用程序的 ID，然后单击“继续”  按钮：
 
     [![](profiles-images/certif15.png "Selecting the app ID")](profiles-images/certif15.png#lightbox)
-3. 选择用于签名配置文件的开发者 ID，然后单击“继续”  ： 
+3. 选择用于签名配置文件的开发者 ID，然后单击“继续”  ：
 
     [![](profiles-images/certif16.png "Selecting the developer ID")](profiles-images/certif16.png#lightbox)
-4. 选择可使用此配置文件的计算机，然后单击“继续”  ： 
+4. 选择可使用此配置文件的计算机，然后单击“继续”  ：
 
     [![](profiles-images/certif17.png "Selecting the allowed computers")](profiles-images/certif17.png#lightbox)
-5. 现在，输入“配置文件名称”  ，然后单击“生成”  按钮： 
+5. 现在，输入“配置文件名称”  ，然后单击“生成”  按钮：
 
     [![](profiles-images/certif18.png "Generating the profile")](profiles-images/certif18.png#lightbox)
-6. 单击“下载”  按钮下载新的配置文件： 
+6. 单击“下载”  按钮下载新的配置文件：
 
     [![](profiles-images/certif19.png "Downloading the profile")](profiles-images/certif19.png#lightbox)
-7. 将开发配置文件安装在 Mac“系统偏好设置”  应用程序的“配置文件首选项”窗格中： 
+7. 将开发配置文件安装在 Mac“系统偏好设置”  应用程序的“配置文件首选项”窗格中：
 
     [![](profiles-images/certif20.png "Installing the profile")](profiles-images/certif20.png#lightbox)
-8. “配置文件首选项”窗格中会显示所有已安装的配置文件： 
+8. “配置文件首选项”窗格中会显示所有已安装的配置文件：
 
     [![](profiles-images/image47.png "Showing all installed profiles")](profiles-images/image47.png#lightbox)
-9. 还会在**开发者证书实用程序**中显示此配置文件，以便需要再次下载： 
+9. 还会在**开发者证书实用程序**中显示此配置文件，以便需要再次下载：
 
     [![](profiles-images/image48.png "The Developer Certificate Utility")](profiles-images/image48.png#lightbox)
 
@@ -65,25 +65,25 @@ ms.locfileid: "75489383"
 
 请执行以下操作：
 
-1. 选择要创建的配置文件类型，然后单击“继续”  按钮： 
+1. 选择要创建的配置文件类型，然后单击“继续”  按钮：
 
     [![](profiles-images/certif21.png "Selecting the type of profile")](profiles-images/certif21.png#lightbox)
-2. 选择要对其创建配置文件的应用的 ID，然后单击“继续”  按钮： 
+2. 选择要对其创建配置文件的应用的 ID，然后单击“继续”  按钮：
 
     [![](profiles-images/certif15.png "Selecting the app ID")](profiles-images/certif15.png#lightbox)
-3. 选择对配置文件签名的公司 ID，然后单击“继续”  按钮： 
+3. 选择对配置文件签名的公司 ID，然后单击“继续”  按钮：
 
     [![](profiles-images/certif23.png "Selecting the company ID")](profiles-images/certif23.png#lightbox)
-4. 输入“配置文件名称”  ，然后单击“生成”  按钮： 
+4. 输入“配置文件名称”  ，然后单击“生成”  按钮：
 
     [![](profiles-images/certif24.png "Generating the profile")](profiles-images/certif24.png#lightbox)
-5. 单击“下载”  获取配置文件（扩展名 `.provisionprofile`）： 
+5. 单击“下载”  获取配置文件（扩展名 `.provisionprofile`）：
 
     [![](profiles-images/certif25.png "Downloading the profile")](profiles-images/certif25.png#lightbox)
-6. 将其拖入 **Xcode 管理器**或双击进行安装。 Xcode 管理器中随后会显示该配置文件： 
+6. 将其拖入 **Xcode 管理器**或双击进行安装。 Xcode 管理器中随后会显示该配置文件：
 
     [![](profiles-images/image51.png "Installing the profile")](profiles-images/image51.png#lightbox)
-7. 列表中也会显示该配置文件： 
+7. 列表中也会显示该配置文件：
 
     [![](profiles-images/certif26.png "Showing the installed profiles")](profiles-images/certif26.png#lightbox)
 
@@ -95,4 +95,4 @@ ms.locfileid: "75489383"
 - [Hello，Mac 示例](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
 - [工具指南：对应用进行代码签名](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
-- [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发人员 ID 和网关守卫](https://developer.apple.com/developer-id/)

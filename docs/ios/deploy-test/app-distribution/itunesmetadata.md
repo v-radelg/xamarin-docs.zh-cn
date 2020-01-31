@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026507"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724615"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
 
@@ -108,7 +108,7 @@ ms.locfileid: "73026507"
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-通过 `UIRequiredDeviceCapabilities` 键，iTunes 可了解 iOS 应用程序需要哪些设备特定的功能才可在给定的 iOS 设备上安装。 其提供作为功能 (`<key>...</key>`) 和各功能布尔值的字典 (`<dict>...</dict>`)。 如果某功能的值为 `true`，则必须显示该功能。 若为 `false`，则不可在设备上显示该功能。 例如:
+通过 `UIRequiredDeviceCapabilities` 键，iTunes 可了解 iOS 应用程序需要哪些设备特定的功能才可在给定的 iOS 设备上安装。 其提供作为功能 (`<key>...</key>`) 和各功能布尔值的字典 (`<dict>...</dict>`)。 如果某功能的值为 `true`，则必须显示该功能。 若为 `false`，则不可在设备上显示该功能。 例如：
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -241,8 +241,6 @@ ms.locfileid: "73026507"
 对于 iOS 应用程序，Apple 当前定义以下的类型和类型 ID：
 
 [!include[](~/ios/includes/table-appstore.md)]
-
-有关详细信息，请参阅 Apple 的 [Genre IDs Appendix](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html)（类型 ID 附录）文档。
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 

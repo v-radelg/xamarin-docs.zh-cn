@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 12/17/2019
-ms.openlocfilehash: 2ea3516c1fb89c8c9b9cc3694d7c95ccd87e9d41
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 2b2bfe9925a99c2ba7f1366ea28d5c72e2e1da88
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489452"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725536"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac 中的证书和标识符
 
@@ -150,7 +150,7 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 
 若要在 App Store 上发布应用，需要两个证书：
 
-- “Mac 应用分发”  证书，用于对应用程序进行签名；以及 
+- “Mac 应用分发”  证书，用于对应用程序进行签名；以及
 - “Mac 安装程序分发”证书  ，用于对安装程序进行签名。
 
 > [!TIP]
@@ -183,7 +183,7 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 
 若要自行发布 Xamarin.Mac 应用程序（而非通过 Apple App Store 发布），需要以下两种证书：
 
-- “开发人员 ID 安装程序”  证书，用于对应用程序进行签名；以及 
+- “开发人员 ID 安装程序”  证书，用于对应用程序进行签名；以及
 - “开发人员 ID 应用程序”  证书，用于对安装程序进行签名。
 
 > [!TIP]
@@ -198,4 +198,4 @@ _本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识
 - [安装](/visualstudio/mac/installation/)
 - [Hello，Mac 示例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上分发应用](https://developer.apple.com/devcenter/mac/checklist/)
-- [开发者 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发者 ID 和网关守卫](https://developer.apple.com/developer-id/)

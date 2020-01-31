@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2020
-ms.openlocfilehash: 707e105b8535cbbb2819c5b8daeaa32bf6c5da37
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: a73123b89cba932f2e2cb907645f6fe858cf6176
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956531"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725229"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控件模板
 
@@ -634,7 +634,7 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 ## <a name="related-links"></a>相关链接
 
-- [ControlTemplateDemos（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemo)
+- [ControlTemplateDemos（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 - [Xamarin.Forms ContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
 - [Xamarin.Forms 相对绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
 - [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)

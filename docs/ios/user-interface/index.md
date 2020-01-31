@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2017
-ms.openlocfilehash: 8e52dbce6abd30633ffffa22e24d471fef0500ee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a749324c2963290c45b0e003af1518d1d517b30d
+ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003553"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794676"
 ---
 # <a name="building-user-interfaces-with-xamarinios"></a>用 Xamarin 构建用户界面
-
-## <a name="ios-designeriosuser-interfacedesignerindexmd"></a>[iOS 设计器](~/ios/user-interface/designer/index.md)
-
-我们为 iOS 情节提要格式生成了一个已完全集成到 Visual Studio for Mac 中的设计器。 IOS 设计器会保持与情节提要格式的完全兼容性，以便可以在 Xcode 或 Visual Studio for Mac 中编辑文件。 此外，编辑器还支持高级功能，如编辑器中设计时呈现的自定义控件。
 
 ## <a name="introduction-to-storyboardsiosuser-interfacestoryboardsindexmd"></a>[情节提要简介](~/ios/user-interface/storyboards/index.md)
 
 情节提要是应用程序外观和流的直观表示形式。 Xamarin 引入了一个设计器，使 Xamarin iOS 应用程序能够利用演示图板，因此，您可以直观地设计应用程序屏幕，并使用C#来访问视图、控制器和 segue 以获得更多控制。 你还可以参考[本指南](~/ios/user-interface/designer/introduction.md)来了解 Xamarin Designer for iOS 的说明和演练
+
+## <a name="ios-designeriosuser-interfacedesignerindexmd"></a>[iOS 设计器](~/ios/user-interface/designer/index.md)
+
+我们为 iOS 情节提要格式生成了一个已完全集成到 Visual Studio for Mac 中的设计器。 IOS 设计器会保持与情节提要格式的完全兼容性，以便可以在 Xcode 或 Visual Studio for Mac 中编辑文件。 此外，编辑器还支持高级功能，如编辑器中设计时呈现的自定义控件。
 
 ## <a name="user-interface-in-iosiosuser-interfaceios-uiindexmd"></a>[iOS 中的用户界面](~/ios/user-interface/ios-ui/index.md)
 

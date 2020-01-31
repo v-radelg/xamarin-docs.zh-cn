@@ -44,7 +44,7 @@ ms.locfileid: "75489019"
 
 这些屏幕截图中显示了应用程序–每个购买都会向用户的余额添加更多 "猴子学分"：   
 
- [每个购买 ![向用户余额添加更多的猴子信用](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+ [![每个购买 向用户余额添加更多的猴子信用](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
 
 自定义类 StoreKit 和 App Store 之间的交互如下所示：   
 
@@ -197,7 +197,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 如果用户购买了多个数量，则 StoreKit 确认警报将反映数量、单位价格以及支付的总价格，如以下屏幕截图所示：
 
-[确认购买 ![](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
+[![确认购买](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>处理网络中断
 
@@ -323,10 +323,10 @@ if (iap.CanMakePayments()) {
 
 应用**内购买**功能受到限制时，应用程序如下所示–禁用了 "购买" 按钮。   
 
- [当应用内购买功能受到限制时，应用程序 ![如下所示](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [![当应用内购买功能受到限制时，应用程序 如下所示](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
 `CanMakePayments` 为 false 时仍可请求产品信息，因此应用仍可检索和显示价格。 这意味着，如果我们从代码中删除了 `CanMakePayments` 检查，则采购按钮仍处于活动状态，但是，如果尝试进行购买，用户将看到一条消息，指出**不允许应用内购买**（在访问付款队列时由 StoreKit 生成）：   
 
- [不允许 ![应用内购买](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+ [![不允许 应用内购买](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
 
 实际的应用程序可能采用不同的方法来处理限制，如完全隐藏按钮并提供比 StoreKit 自动显示的警报更详细的消息。

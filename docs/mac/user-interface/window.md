@@ -110,11 +110,11 @@ Apple 建议以下准则：
 
 创建新的 Xamarin Cocoa 应用程序时，默认情况下会获得一个标准空白窗口。 此窗口在项目中自动包含的 `.storyboard` 文件中定义。 若要编辑 windows 设计，请在 "**解决方案资源管理器**中，双击 `Main.storyboard` 文件：
 
-[选择主情节提要 ![](window-images/edit01.png)](window-images/edit01.png#lightbox)
+[![选择主情节提要](window-images/edit01.png)](window-images/edit01.png#lightbox)
 
 这将在 Xcode 的 Interface Builder 中打开窗口设计：
 
-[在 Xcode 中编辑 UI ![](window-images/edit02.png)](window-images/edit02.png#lightbox)
+[![在 Xcode 中编辑 UI](window-images/edit02.png)](window-images/edit02.png#lightbox)
 
 在 "**属性检查器**" 中，有几个属性可用于定义和控制窗口：
 
@@ -160,11 +160,11 @@ Apple 建议以下准则：
 2. 选择 Design Surface 中的 `NSWindowController`。
 3. 切换到 "**标识检查器**" 视图，并输入 `WindowController` 作为**类名**： 
 
-    [设置类名 ![](window-images/windowcontroller01.png)](window-images/windowcontroller01.png#lightbox)
+    [![设置类名](window-images/windowcontroller01.png)](window-images/windowcontroller01.png#lightbox)
 4. 保存更改并返回到要同步的 Visual Studio for Mac。
 5. `WindowController.cs` 文件将添加到 Visual Studio for Mac 的**解决方案资源管理器**中的项目： 
 
-    [选择 windows 控制器 ![](window-images/windowcontroller02.png)](window-images/windowcontroller02.png#lightbox)
+    [![选择 windows 控制器](window-images/windowcontroller02.png)](window-images/windowcontroller02.png#lightbox)
 6. 重新打开 Xcode 的 Interface Builder 中的情节提要。
 7. `WindowController.h` 文件将可供使用： 
 
@@ -176,7 +176,7 @@ Apple 建议以下准则：
 
 例如，让我们将工具栏从**库检查器**拖到 "**界面编辑器**" 中的窗口上：
 
-[从库中选择工具栏 ![](window-images/edit03.png)](window-images/edit03.png#lightbox)
+[![从库中选择工具栏](window-images/edit03.png)](window-images/edit03.png#lightbox)
 
 接下来，在**文本视图**中拖动并调整其大小，以填充工具栏下面的区域：
 
@@ -225,7 +225,7 @@ Apple 建议以下准则：
 
 视图控制器会自动添加到项目中，以控制显示的主窗口（连同其主视图）。 它在 `ViewController.cs` 文件中定义，并附加到**标识检查器**下 Interface Builder 中的**文件所有者**：
 
-[设置文件所有者 ![](window-images/display02.png)](window-images/display02.png#lightbox)
+[![设置文件所有者](window-images/display02.png)](window-images/display02.png#lightbox)
 
 对于我们的窗口，我们希望它在第一次打开时具有 `untitled` 的标题，以便让我们覆盖 `ViewController.cs` 中的 `ViewWillAppear` 方法，如下所示：
 
@@ -453,7 +453,7 @@ void NewDocument (NSObject sender) {
 
 此代码会创建新版本的窗口控制器，加载新窗口，使其成为主窗口和键窗口，并设置标题。 现在，如果我们运行应用程序，并从 "**文件**" 菜单中选择 "**新建**"，则将打开并显示一个新的编辑器窗口：
 
-[已添加新的无标题窗口 ![](window-images/display04.png)](window-images/display04.png#lightbox)
+[![已添加新的无标题窗口](window-images/display04.png)](window-images/display04.png#lightbox)
 
 如果打开**windows**菜单，你会看到应用程序自动跟踪并处理打开的窗口：
 
@@ -666,7 +666,7 @@ void OpenDialog (NSObject sender)
     [![在库中选择新的窗口控制器](window-images/new01.png)](window-images/new01.png#lightbox)
 3. 在**标识检查器**中，输入**情节提要 ID**`PreferencesWindow`： 
 
-    [设置情节提要 ID ![](window-images/new02.png)](window-images/new02.png#lightbox)
+    [![设置情节提要 ID](window-images/new02.png)](window-images/new02.png#lightbox)
 4. 设计接口： 
 
     [![设计 UI](window-images/new03.png)](window-images/new03.png#lightbox)
@@ -707,7 +707,7 @@ void OpenDialog (NSObject sender)
 1. 在**解决方案资源管理器**中，右键单击项目，然后选择 "**添加** > **新文件 ...** "。
 2. 在 "新建文件" 对话框中，选择**包含控制器的 Xamarin > Cocoa 窗口**：
 
-    [添加新的窗口控制器 ![](window-images/panels00.png)](window-images/panels00.png#lightbox)
+    [![添加新的窗口控制器](window-images/panels00.png)](window-images/panels00.png#lightbox)
 
 3. 对“名称”输入 `DocumentPanel`，然后单击“新建”按钮。
 4. 双击 `DocumentPanel.xib` 文件以将其打开，以便在 Interface Builder 中进行编辑： 
@@ -716,7 +716,7 @@ void OpenDialog (NSObject sender)
 
 5. 删除现有窗口，并在 "**界面编辑器**" 中的 "**库" 检查器**中拖动面板： 
 
-    [删除现有窗口 ![](window-images/panels01.png)](window-images/panels01.png#lightbox)
+    [![删除现有窗口](window-images/panels01.png)](window-images/panels01.png#lightbox)
 
 6. 将面板挂钩到**文件所有者** - "**窗口** - **插座**： 
 
@@ -747,7 +747,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 如果运行应用程序，将显示 "面板"：
 
-[在正在运行的应用程序中 ![面板](window-images/panels04.png)](window-images/panels04.png#lightbox)
+[![在正在运行的应用程序中 面板](window-images/panels04.png)](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Apple 已弃用面板窗口，应将其替换为**检查器接口**。 有关在 Xamarin 应用程序中创建**检查器**的完整示例，请参阅我们的[MacInspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)示例应用。

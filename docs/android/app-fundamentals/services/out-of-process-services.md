@@ -469,7 +469,7 @@ Android 提供四种不同的权限级别：
 
 若要查看应用程序的权限，请打开 "Android 设置" 应用，然后选择 "**应用**"。 在列表中找到并选择该应用程序。 在 "**应用信息**" 屏幕上，点击 "**权限**"，这将显示授予应用的所有权限：
 
-[从 Android 设备 ![屏幕截图，其中显示了如何查找授予应用程序的权限](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[![从 Android 设备 屏幕截图，其中显示了如何查找授予应用程序的权限](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>摘要
 

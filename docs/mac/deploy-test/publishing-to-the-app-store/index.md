@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2b6dcd53a9761ec3f030f3f5bf81894e9faa8b1f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 1a14bcc15299360a17b4c9e7a363b6d6e6f2e69a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487017"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725020"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>将 Xamarin.Mac 应用发布到 Mac App Store
 
@@ -64,4 +64,4 @@ ms.locfileid: "75487017"
 
 - [安装](/visualstudio/mac/installation/)
 - [Hello，Mac 示例](~/mac/get-started/hello-mac.md)
-- [开发人员 ID 和网关守卫](https://developer.apple.com/resources/developer-id/)
+- [开发人员 ID 和网关守卫](https://developer.apple.com/developer-id/)

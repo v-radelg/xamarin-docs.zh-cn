@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 若要查看它的外观，请运行*AnimationsDemo*项目，然后从主菜单中选择形状可绘制项。 应该会看到类似于以下屏幕截图的内容：
 
-[使用自定义背景 ![Textview，使用渐变和圆角进行绘制](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
+[![使用自定义背景 Textview，使用渐变和圆角进行绘制](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 若要详细了解如何绘制资源的 XML 元素和语法，请参阅[Google 文档](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
 
@@ -201,7 +201,7 @@ public class MyView : View
 
 上面的代码首先创建一个红色的 paint 和一个绿色的 paint 对象。 它使用红色填充画布的内容，然后指示画布绘制一个绿色矩形，该矩形是画布宽度的25%。 这一示例可通过本文源代码附带 `AnimationsDemo` 项目来查看。 通过启动应用程序并从主菜单中选择 "绘制项"，应显示类似于下面的屏幕：
 
-[带有红色画图和绿色画图对象的 ![屏幕](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
+[![带有红色画图和绿色画图对象的 屏幕](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>动画
 

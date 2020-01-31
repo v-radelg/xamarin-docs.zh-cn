@@ -140,6 +140,11 @@
       items:
         - name: 概述
           href: user-interface/index.md
+        - name: 情节提要
+          href: user-interface/storyboards/index.md
+          items:
+            - name: 统一的情节提要
+              href: user-interface/storyboards/unified-storyboards.md
         - name: iOS 设计器
           href: user-interface/designer/index.md
           items:
@@ -151,11 +156,6 @@
               href: user-interface/designer/ios-designable-controls-walkthrough.md
             - name: 使用 iOS 设计器的自动布局
               href: user-interface/designer/designer-auto-layout.md
-        - name: 情节提要
-          href: user-interface/storyboards/index.md
-          items:
-            - name: 统一的情节提要
-              href: user-interface/storyboards/unified-storyboards.md
         - name: iOS 中的用户界面
           href: user-interface/ios-ui/index.md
           items:
@@ -592,7 +592,7 @@
           items:
             - name: 介绍
               href: data-cloud/data/introduction.md
-            - name: 配置
+            - name: Configuration
               href: data-cloud/data/configuration.md
             - name: 使用 SQLite.NET ORM
               href: data-cloud/data/using-sqlite-orm.md

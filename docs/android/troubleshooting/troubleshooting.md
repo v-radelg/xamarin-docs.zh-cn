@@ -279,7 +279,7 @@ Xamarin 支持多个设备 Abi： *armeabi*、 *armeabi*和*x86*。 可以在**�
 Google 提供了2个适用于 Windows 的 Android SDK 下载。
 如果选择 .exe 安装程序，它将写入注册表项，告诉 Xamarin 安装它的位置。 如果选择 .zip 文件并自行解压缩，则 Xamarin 不知道在何处查找 SDK。 可以通过转到 "**工具" > 选项 "> xamarin > Android" 设置**，告诉 Xamarin Visual Studio 中的 SDK：
 
-[Xamarin Android 设置中的 ![Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[![Xamarin Android 设置中的 Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 ## <a name="ide-does-not-display-target-device"></a>IDE 不显示目标设备
 

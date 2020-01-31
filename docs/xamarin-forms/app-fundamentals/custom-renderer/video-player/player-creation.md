@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 007c027772701e424aad5995c0ec025c3589171c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771787"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725086"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器
 
@@ -22,7 +22,7 @@ ms.locfileid: "70771787"
 
 ## <a name="the-video-player"></a>视频播放器
 
-[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) 类是各个平台之间共享的“VideoPlayerDemos”.NET Standard 库的一部分  。 它派生自 `View`：
+[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoPlayer.cs) 类是各个平台之间共享的“VideoPlayerDemos”.NET Standard 库的一部分  。 它派生自 `View`：
 
 ```csharp
 using System;
@@ -45,7 +45,7 @@ namespace FormsVideoLibrary
 
 在 iOS 中实现视频播放器时，涉及到几个类。 应用程序首先创建 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController)，然后将 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 属性设置为类型 [`AVPlayer`](xref:AVFoundation.AVPlayer) 的对象。 给播放器分配视频源时，需要额外的类。
 
-像所有呈现器一样，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) 也包含 `ExportRenderer` 属性，该属性使用呈现器标识 `VideoPlayer` 视图：
+像所有呈现器一样，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/FormsVideoLibrary/VideoPlayerRenderer.csVideoPlayerRenderer.cs) 也包含 `ExportRenderer` 属性，该属性使用呈现器标识 `VideoPlayer` 视图：
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-view"></a>Android 视频视图
 
-`VideoPlayer` 的 Android 呈现器基于 Android [`VideoView`](xrtef:Android.Widget.VideoView) 类。 但是，如果 `VideoView` 本身用于在 Xamarin.Forms 应用程序中播放视频，则视频填充分配给 `VideoPlayer` 的区域，且无需保持正确的纵横比。 出于这个原因（很快将进行说明），`VideoView` 设置为 Android `RelativeLayout` 的子类。 `using` 指令定义 `ARelativeLayout` 来区别于 Xamarin.Forms `RelativeLayout`，并且这是 `ViewRenderer` 中的第二个泛型参数：
+`VideoPlayer` 的 Android 呈现器基于 Android [`VideoView`](xref:Android.Widget.VideoView) 类。 但是，如果 `VideoView` 本身用于在 Xamarin.Forms 应用程序中播放视频，则视频填充分配给 `VideoPlayer` 的区域，且无需保持正确的纵横比。 出于这个原因（很快将进行说明），`VideoView` 设置为 Android `RelativeLayout` 的子类。 `using` 指令定义 `ARelativeLayout` 来区别于 Xamarin.Forms `RelativeLayout`，并且这是 `ViewRenderer` 中的第二个泛型参数：
 
 ```csharp
 using System;

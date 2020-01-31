@@ -40,7 +40,7 @@ public class HomeScreen : ListActivity {
 
 通常情况下，`ListView` 还会允许用户触摸一行来执行某些操作（例如播放歌曲，或调用联系人或显示其他屏幕）。 若要响应用户的接触，需要在 `ListActivity` 中实现一种更多的方法 &ndash; `OnListItemClick` &ndash; 如下所示：
 
-[SimpleListItem 的 ![屏幕快照](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
+[![SimpleListItem 的 屏幕快照](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -52,7 +52,7 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 现在用户可以触摸一行，此时将显示 `Toast` 警报：
 
-[触摸行时显示的 Toast 的 ![屏幕截图](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
+[![触摸行时显示的 Toast 的 屏幕截图](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
 ## <a name="implementing-a-listadapter"></a>实现 ListAdapter
 
@@ -136,7 +136,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 快速滚动可提供一个额外的 "句柄" 来帮助用户滚动长列表，以直接访问列表的一部分。 此屏幕截图显示快速滚动手柄：
 
-[使用滚动图柄快速滚动的 ![屏幕截图](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
+[![使用滚动图柄快速滚动的 屏幕截图](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 导致快速滚动图柄显示起来非常简单，只是将 `FastScrollEnabled` 属性设置为 `true`：
 
@@ -148,7 +148,7 @@ ListView.FastScrollEnabled = true;
 
 节索引为用户提供了更多的反馈，当用户在长列表中快速滚动时，&ndash; 它显示其滚动到的 "部分"。 若要使节索引显示，适配器子类必须实现 `ISectionIndexer` 接口，才能根据要显示的行来提供索引文本：
 
-[以 H 开头的第一节中显示的 H ![屏幕截图](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
+[![以 H 开头的第一节中显示的 H 屏幕截图](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 若要实现 `ISectionIndexer` 需要将三个方法添加到适配器：
 
