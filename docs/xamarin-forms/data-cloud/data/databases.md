@@ -20,7 +20,7 @@ ms.locfileid: "76794670"
 
 SQLite 数据库引擎允许 Xamarin 应用程序加载和保存共享代码中的数据对象。 示例应用程序使用 SQLite 数据库表存储 todo 项。 本文介绍如何使用共享代码中的 SQLite.Net 在本地数据库中存储和检索信息。
 
-[在 iOS 和 Android 上 ![Todolist 应用程序的屏幕截图](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 应用")
+[![在 iOS 和 Android 上 Todolist 应用程序的屏幕截图](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 应用")
 
 按照以下步骤将 SQLite.NET 集成到移动应用：
 

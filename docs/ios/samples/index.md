@@ -36,7 +36,7 @@ C# 및 Xamarin을 사용하여 모바일 앱을 빌드하는 데 도움이 되�
 MapKit의 새로운 iOS 11 기능: 확대/축소 수준에 따라 표식을 그룹화하고 분할합니다.
     :::column-end:::
     :::column:::
-[Azure ![CoreML & （iOS 11）](images/coremlazure.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel/)
+[![Azure CoreML & （iOS 11）](images/coremlazure.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel/)
 
 ### <a name="coreml--azure-ios-11httpsdocsmicrosoftcomsamplesxamarinios-samplesios11-coremlazuremodel"></a>[CoreML & Azure （iOS 11）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel/)
 

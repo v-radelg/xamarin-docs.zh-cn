@@ -1,16 +1,16 @@
 ---
 title: 在 Visual Studio 2019 中安装 Xamarin
-description: 本文档介绍如何在 Visual Studio 2019 中安装 Xamarin。 其中讨论了相关要求、安装过程以及如何验证安装。
+description: 本文档介绍了如何在 Visual Studio 2019 中安装 Xamarin。 其中讨论了相关要求、安装过程以及如何验证安装。
 ms.prod: xamarin
 ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
 ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
-ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71119263"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安装 Xamarin
@@ -23,19 +23,19 @@ ms.locfileid: "71119263"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-在 Visual Studio 2019 中，通过单击 "**帮助**" 菜单来验证是否已安装 Xamarin。 如果安装了 Xamarin，应该看到 Xamarin 菜单项，如此屏幕截图所示：
+在 Visual Studio 2019 中，通过单击“帮助”菜单来验证是否安装了 Xamarin  。 如果安装了 Xamarin，应该看到 Xamarin 菜单项，如此屏幕截图所示  ：
 
 ![“帮助”菜单上的 Xamarin 菜单项](windows-images/12-xamarin-menu-item.png "“帮助”菜单上的 Xamarin 菜单项")
 
-也可单击“帮助”>“关于 Microsoft Visual Studio”，滚动浏览已安装的产品列表，查看是否已安装 Xamarin：
+也可单击“帮助”>“关于 Microsoft Visual Studio”，滚动浏览已安装的产品列表，查看是否已安装 Xamarin  ：
 
-![Visual Studio 2019 安装的产品屏幕](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 安装的产品屏幕")
+![显示 Visual Studio 2019 已安装产品的屏幕](windows-images/13-xamarin-is-installed.png "显示 Visual Studio 2019 已安装产品的屏幕")
 
 有关查找版本信息的详细信息，请参阅 [Where can I find my version information and logs?](~/cross-platform/troubleshooting/questions/version-logs.md)（在何处可找到我的版本信息和日志？）
 
 ## <a name="next-steps"></a>后续步骤
 
-在 Visual Studio 2019 中安装 Xamarin 允许你开始为应用程序编写代码，但需要额外设置才能生成应用并将其部署到模拟器、仿真器和设备。 请访问以下指南，完成安装并开始跨平台应用构建。
+通过在 Visual Studio 2019 上安装 Xamarin，可开始编写应用代码，但若要构建应用并将其部署到模拟器、仿真器和设备，则需要其他设置。 请访问以下指南，完成安装并开始跨平台应用构建。
 
 ### <a name="ios"></a>iOS
 
