@@ -31,7 +31,7 @@ _在这个两部分的指南中，会扩展基本 Phoneword 应用程序（在�
 
 Android 应用程序由特殊 Android 类的集合组成，这些类称为应用程序块  ，与任何数量的应用资源（图像、主题、帮助程序类等）捆绑在一起。&ndash; 这些类通过称为 Android 清单  的 XML 文件进行协调。
 
-应用程序块组成 Android 应用程序的主干，因为它们使你可以执行使用常规类通常无法完成的操作。 两个最重要的块是_活动_ 和_服务_：
+应用程序块组成 Android 应用程序的主干，因为它们使你可以执行使用常规类通常无法完成的操作。 两个最重要的块是 _活动_ 和 _服务_ ：
 
 - **活动** &ndash; 活动与具有用户界面的屏幕对应，在概念上类似于 Web 应用程序中的网页。 例如，在新闻源应用程序中，登录屏幕会是第一个活动，新闻项的可滚动列表会是另一个活动，而每个项的详细信息页面会是第三个活动。 可以在[活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)指南中了解有关活动的详细信息。
 
@@ -48,7 +48,7 @@ Android 围绕最小特权原则  进行设计 &ndash; 应用程序只能访问�
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 
-将一个块添加到应用程序时，它会向称为 **Android 清单**的特殊 XML 文件进行注册。 清单会跟踪应用程序中的所有应用程序块，以及版本要求、权限和链接库 &ndash; 操作系统为使应用程序正常运行而需要了解的所有内容。 **Android 清单**也可与活动和意向配合工作，以控制适合于给定活动的操作。 [使用 Android 清单](~/android/platform/android-manifest.md)指南中介绍了 Android 清单的这些高级功能。
+将一个块添加到应用程序时，它会向称为 **Android 清单** 的特殊 XML 文件进行注册。 清单会跟踪应用程序中的所有应用程序块，以及版本要求、权限和链接库 &ndash; 操作系统为使应用程序正常运行而需要了解的所有内容。 **Android 清单** 也可与活动和意向配合工作，以控制适合于给定活动的操作。 [使用 Android 清单](~/android/platform/android-manifest.md)指南中介绍了 Android 清单 的这些高级功能。
 
 在单屏幕版本的 Phoneword 应用程序中，只使用了一个活动、一个意向和 `AndroidManifest.xml`，以及其他资源（如图标）。 在多屏幕版本的 Phoneword 中，添加了一个其他活动；它使用意向从第一个活动启动。 下一部分探讨意向如何帮助在 Android 应用程序中创建导航。
 
@@ -81,7 +81,7 @@ translationHistoryButton.Click += (sender, e) =>
 
 Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概念包括：
 
-**字符串资源** &ndash; 在 Phoneword 应用程序中，`TranslationHistoryButton` 的文本设置为 `"@string/translationHistory"`。 `@string` 语法表示字符串的值存储在_字符串资源文件_ (**Strings.xml**) 中。 `translationHistory` 字符串的以下值已添加到 **Strings.xml** 中：
+**字符串资源** &ndash; 在 Phoneword 应用程序中，`TranslationHistoryButton` 的文本设置为 `"@string/translationHistory"`。 `@string` 语法表示字符串的值存储在 _字符串资源文件_ (**Strings.xml**) 中。 `translationHistory` 字符串的以下值已添加到 **Strings.xml** 中：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,17 +92,17 @@ Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概
 
 有关字符串资源和其他 Android 资源的详细信息，请参阅 [Android 资源指南](~/android/app-fundamentals/resources-in-android/index.md)。
 
-**ListView 和 ArrayAdapter** &ndash; _ListView_ 是一个 UI 组件，它提供了显示行的滚动列表的简单方法。 `ListView` 实例需要_适配器_，以向它馈送行视图中包含的数据。 下面的代码行用于填充 `TranslationHistoryActivity` 的用户界面：
+**ListView 和 ArrayAdapter** &ndash; _ListView_ 是一个 UI 组件，它提供了显示行的滚动列表的简单方法。 `ListView` 实例需要 _适配器_ ，以向它馈送行视图中包含的数据。 下面的代码行用于填充 `TranslationHistoryActivity` 的用户界面：
 
 ```csharp
 this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, phoneNumbers);
 ```
 
-Listview 和适配器不在此文档的讨论范围内，但它们在非常全面的 [Listview 和适配器](~/android/user-interface/layouts/list-view/index.md)指南中进行了介绍。
+Listview 和适配器不在此文档的讨论范围内，但它们在非常全面的 [Listview 和适配器](~/android/user-interface/layouts/list-view/index.md) 指南中进行了介绍。
 [使用数据填充 ListView](~/android/user-interface/layouts/list-view/populating.md) 专门处理使用内置 `ListActivity` 和 `ArrayAdapter` 类来创建并填充 `ListView`，而无需定义自定义布局（如 Phoneword 示例中所进行的那样）。
 
 ## <a name="summary"></a>总结
 
-祝贺，你已完成第一个多屏 Android 应用程序！ 本指南介绍了 *Android 应用程序构建基块*和*意向*，并使用它们生成了一个多屏幕 Android 应用程序。 现在，你已具有坚实的基础，可开始开发自己的 Xamarin.Android 应用程序。
+祝贺，你已完成第一个多屏 Android 应用程序！ 本指南介绍了 _Android 应用程序构建基块_ 和 _意向_ ，并使用它们生成了一个多屏幕 Android 应用程序。 现在，你已具有坚实的基础，可开始开发自己的 Xamarin.Android 应用程序。
 
 接下来，你会在[生成跨平台应用程序指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)中了解如何使用 Xamarin 生成跨平台应用程序。
