@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 053847426d770408826297d9a80b6e38d7f6bc44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 37afc9ef7773bbfefe442216055c0501af2ab966
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029283"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940886"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin CardView
 
@@ -28,7 +28,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 <a name="requirements" />
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 在基于 Xamarin 的应用中使用新的 Android 5.0 及更高版本功能（包括 `CardView`）时，需要满足以下要求：
 
@@ -36,7 +36,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 - 必须通过 Android SDK 管理器安装**Android SDK** &ndash; Android 5.0 （API 21）或更高版本。
 
-- 如果专门针对 API 级别23和更早版本，可以使用**JAVA jdk 1.8** &ndash; JDK 1.7。 JDK 1.8 可从[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)获得。
+- 如果特别面向 API 级别23和更早版本，可以使用**JAVA jdk 1.8** &ndash; JDK 1.7。 JDK 1.8 可从[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)获得。
 
 应用还必须包含 `Xamarin.Android.Support.v7.CardView` 包。 若要在 Visual Studio for Mac 中添加 `Xamarin.Android.Support.v7.CardView` 包：
 
@@ -90,7 +90,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 此布局示例创建一个默认的 `CardView`，其中包含一行文本，如以下屏幕截图所示：
 
-[用白色背景和文本行![CardView 屏幕截图](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
+[用白色背景和文本行 ![CardView 屏幕截图](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 在此示例中，应用样式设置为光源材料主题（`Theme.Material.Light`），以便更易于查看 `CardView` 阴影和边缘。 有关主题 Android 5.0 应用的详细信息，请参阅[材料主题](~/android/user-interface/material-theme.md)。 在下一部分中，我们将了解如何为应用程序自定义 `CardView`。
 
@@ -153,7 +153,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 当此布局示例用于显示照片查看应用中的图像时，`CardView` 具有照片快照的外观，如以下屏幕截图所示：
 
-[在图像下方使用图像和标题![CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
+[在图像下方使用图像和标题 ![CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
 此屏幕截图取自[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)示例应用程序，该应用程序使用 `RecyclerView` 小组件提供用于查看照片的 `CardView` 图像的滚动列表。 有关 `RecyclerView`的详细信息，请参阅[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)指南。
 
@@ -163,7 +163,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 可以通过设置一个或多个属性来自定义 `CardView` 布局，这些特性会影响其填充、仰角、角半径和背景色：
 
-[CardView 特性![关系图](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
+[CardView 特性 ![关系图](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 还可以通过调用与 `CardView` 方法对应的方法，动态更改每个特性（有关 `CardView` 方法的详细信息，请参阅[CardView 类引用](https://developer.android.com/reference/android/support/v7/widget/CardView.html)）。
 请注意，这些属性（背景颜色除外）接受一个维度值，该值是一个十进制数，后跟单位。 例如，`11.5dp` 指定11.5 与密度无关的像素。
@@ -172,7 +172,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 `CardView` 提供五个填充属性来定位卡片内的内容。 可以在布局 XML 中进行设置，也可以在代码中调用类似的方法：
 
-[CardView 填充特性![关系图](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
+[CardView 填充特性 ![关系图](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 填充属性如下所述：
 
@@ -193,7 +193,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 `CardView` 提供了两个提升特性来控制其提升，因此，其阴影的大小为：
 
-[CardView 提升特性![关系图](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
+[CardView 提升特性 ![关系图](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 提升属性如下所述：
 
@@ -237,7 +237,7 @@ Android 5.0 （棒糖形）中引入的 `Cardview` 小组件是一个 UI 组件�
 
 有关保持与早期版本的 Android 兼容性的详细信息，请参阅[维护兼容性](https://developer.android.com/training/material/compatibility.html)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南介绍 Android 5.0 （棒糖形）中包含的新 `CardView` 小组件。 它演示了默认 `CardView` 外观，并说明了如何通过更改其提升、角圆度、内容填充和背景色自定义 `CardView`。 它列出了 `CardView` 布局特性（包含引用关系图），并说明了如何在 android 5.0 棒糖之前的 Android 设备上使用 `CardView`。 有关 `CardView`的详细信息，请参阅[CardView 类参考](https://developer.android.com/reference/android/support/v7/widget/CardView.html)。
 

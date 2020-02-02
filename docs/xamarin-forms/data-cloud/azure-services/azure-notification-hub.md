@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/27/2019
-ms.openlocfilehash: 0152a61dabe4068892cb6b5aa5b535ab88d2ff95
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 8b633481d74810bc4d86d68f8c36d55980092510
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487446"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940313"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>通过 Azure 通知中心和 Xamarin 发送和接收推送通知
 
@@ -242,7 +242,10 @@ void SendLocalNotification(string body)
     var intent = new Intent(this, typeof(MainActivity));
     intent.AddFlags(ActivityFlags.ClearTop);
     intent.PutExtra("message", body);
-    var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
+    
+    //Unique request code to avoid PendingIntent collision.
+    var requestCode = new Random().Next();
+    var pendingIntent = PendingIntent.GetActivity(this, requestCode, intent, PendingIntentFlags.OneShot);
 
     var notificationBuilder = new NotificationCompat.Builder(this)
         .SetContentTitle("XamarinNotify Message")

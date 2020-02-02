@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6218977e9ad0d4c396ef127c3c3ca53dc56d7d3
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022243"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940874"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>xib 在 Xamarin 中生成代码
 
@@ -33,7 +33,7 @@ Apple Interface Builder 工具（"IB"）可用于直观地设计用户界面。 
 
 ## <a name="generating-code"></a>生成代码
 
-对于具有 "生成操作"*页*的任何 **{0}xib**文件，如果项目中也存在 **{0}xib.designer.cs**文件，Visual Studio for Mac 将在设计器文件中为它可以在的所有用户类中生成分部类**xib**文件，其中包含所有操作的插座和分部方法的属性。 仅当存在此文件时，才会启用代码生成。
+对于具有 "生成操作"*页*的任何 **{0}xib**文件，如果项目中也存在 **{0}xib.designer.cs**文件，则 Visual Studio for Mac 将在设计器文件中为其可在**xib**文件中找到的所有用户类生成分部类，并为所有操作的插座和分部方法提供属性。 仅当存在此文件时，才会启用代码生成。
 
 当**xib**文件更改并 Visual Studio for Mac 重新获得焦点时，将自动更新该设计器文件。 不应手动修改设计器文件，因为下次 Visual Studio for Mac 更新文件时将覆盖更改。
 
@@ -47,7 +47,7 @@ Visual Studio for Mac 使用设计器文件位置的项目默认命名空间生�
 
 ## <a name="non-designer-class-parts"></a>非设计器类部件
 
-设计器分部类不应按原样使用。 插座是专用的，不指定基类。 预计每个类都将在另一个文件中具有相应的 "非设计器" 类部件，这会设置基类、使用或公开插座，并定义在加载 xib 时实例化类所需的构造函数 **。** . **Xib**模板执行此操作，但对于在**xib**中定义的任何其他自定义类，必须手动添加非设计器部分。
+设计器分部类不应按原样使用。 插座是专用的，不指定基类。 预计每个类都将在另一个文件中具有相应的 "非设计器" 类部件，这会设置基类、使用或公开插座，并定义在加载**xib**时实例化类所需的构造函数。 **Xib**模板执行此操作，但对于在**xib**中定义的任何其他自定义类，必须手动添加非设计器部分。
 
 导致这种情况的原因是需要灵活性。 例如，多个代码隐藏类可以为公共托管抽象类提供子类，此类将类划分为通过 IB 划分子类。
 
@@ -81,7 +81,7 @@ Visual Studio for Mac 使用设计器文件位置的项目默认命名空间生�
 
 ## <a name="cross-xib-class-usage"></a>跨 XIB 类用法
 
-有时，用户希望从多个**xib**文件引用相同的类（例如，具有选项卡控制器）。 这可以通过显式从另一个**xib**文件引用类定义来实现，也可以在第二个 **. xib**中再次定义相同的类名。
+有时，用户希望从多个**xib**文件引用相同的类（例如，具有选项卡控制器）。 为此，可以从另一个**xib**文件显式引用类定义，或者在**xib**中再次定义相同的类名。
 
 后一种情况可能会导致 xib 文件单独 Visual Studio for Mac 处理 **。** 它无法自动检测和合并重复的定义，因此，如果在多个设计器文件中定义同一个分部类，则可能会发生冲突，多次应用 Register 特性。 最新版本的 Visual Studio for Mac 尝试解决此问题，但它可能不会始终按预期方式工作。 将来，这可能会变得不受支持，而 Visual Studio for Mac 会使所有**xib**文件中的所有类型和项目中的托管代码直接在**xib**文件中可见。
 

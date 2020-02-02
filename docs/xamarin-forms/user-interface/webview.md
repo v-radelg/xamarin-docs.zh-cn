@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.openlocfilehash: 65b6eb0ab75344ef112bc09aa1165f86e125872b
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031382"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940354"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -107,7 +107,7 @@ browser.Source = htmlSource;
 
 ![显示 HTML 字符串的 Web 视图](webview-images/html-string.png)
 
-在上面的代码，`@`用于将 HTML 标记作为字符串文本，这意味着，将忽略所有常见的转义字符。
+在上面的代码中，`@` 用于将 HTML 标记为[逐字字符串](/dotnet/csharp/programming-guide/strings/#regular-and-verbatim-string-literals)，这意味着将忽略大多数转义字符。
 
 > [!NOTE]
 > 可能需要将[`WebView`](xref:Xamarin.Forms.WebView)的 `WidthRequest` 和 `HeightRequest` 属性设置为查看 HTML 内容，具体取决于 `WebView` 是其子元素的布局。 例如，在[`StackLayout`](xref:Xamarin.Forms.StackLayout)中，这是必需的。
@@ -122,7 +122,7 @@ Web 视图可以显示内容从 HTML、 CSS 和 Javascript 嵌入在应用中。
     <title>Xamarin Forms</title>
   </head>
   <body>
-    <h1>Xamrin.Forms</h1>
+    <h1>Xamarin.Forms</h1>
     <p>This is an iOS web page.</p>
     <img src="XamarinLogo.png" />
   </body>

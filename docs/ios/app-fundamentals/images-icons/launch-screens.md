@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 3adabbac3f56747093aa8a3def85869a92d33600
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010490"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940984"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>为 Xamarin iOS 应用启动屏幕
 

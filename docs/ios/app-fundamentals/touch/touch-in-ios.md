@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 9dd06044ea9c4bf28e785932d316b3222c6cd16b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 885e5862e517303b4a2556b0b1bd3fa8759bbca6
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009148"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940887"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Xamarin 中的触摸事件和手势
 
@@ -20,7 +20,7 @@ ms.locfileid: "73009148"
 
 ## <a name="enabling-touch"></a>启用触控
 
-`UIKit` 中的控件-来自 UIControl 的子类–依赖于用户交互，它们具有 UIKit 内置的手势，因此不需要启用 Touch。 已启用该功能。
+`UIKit` 中的控件-来自 UIControl 的子类–因此依赖于用户交互，这些用户交互的手势内置于 UIKit 中，因此不需要启用触控。 已启用该功能。
 
 但是，`UIKit` 中的许多视图默认情况下未启用触摸。 可以通过两种方法在控件上启用触摸。 第一种方法是在 iOS 设计器的属性板中检查 "已启用用户交互" 复选框，如以下屏幕截图所示：
 

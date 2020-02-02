@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 7413fbe3f08988cfdb7c7b4e5237539aca250772
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728143"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940849"
 ---
 # <a name="viewpager-with-views"></a>带视图的 ViewPager
 
@@ -62,18 +62,13 @@ int imageId = treeCatalog[2].imageId;
     android:layout_height="match_parent" >
 
 </android.support.v4.view.ViewPager>
+```
 
-```csharp
-This XML defines a `ViewPager` that occupies the entire screen. Note that
-you must use the fully-qualified name **android.support.v4.view.ViewPager**
-because `ViewPager` is packaged in a support library. `ViewPager` is
-available only from 
-[Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
-it is not available in the Android SDK. 
+此 XML 定义占用整个屏幕的 `ViewPager`。 请注意，必须使用完全限定的名称**ViewPager** ，因为 `ViewPager` 打包在支持库中。 `ViewPager` 仅适用于[Android 支持库 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);它在 Android SDK 中不可用。 
 
-## Set up ViewPager
+## <a name="set-up-viewpager"></a>设置 ViewPager
 
-Edit **MainActivity.cs** and add the following `using` statement:
+编辑**MainActivity.cs**并添加以下 `using` 语句：
 
 ```csharp
 using Android.Support.V4.View;

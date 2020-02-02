@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 911f56026a1495099e81a542b30b280f26b6a9e1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da4884e7f1e3ec1ae8653ea8ec4247fce54a6565
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025458"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940760"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin 中的权限
 
@@ -29,7 +29,7 @@ Android 应用程序在其自己的沙盒中运行，出于安全原因，无法
 Android 应用必须在运行时进行检查，以查看它们是否有权访问受保护的资源。 如果应用没有权限，则必须使用由 Android SDK 提供的新 Api 发出请求，用户才可授予权限。 权限分为两类：
 
 - **一般权限**&ndash; 这些权限对用户的安全或隐私带来了极大的安全风险。 Android 6.0 在安装时将自动授予正常权限。 有关[正常权限的完整列表](https://developer.android.com/guide/topics/permissions/normal-permissions.html)，请参阅 Android 文档。
-- 与常规权限相比，**危险的权限**&ndash;，但危险的权限是保护用户安全或隐私的权限。 这些必须是用户显式授予的权限。 发送或接收 SMS 消息就是需要危险性权限的操作的一个示例。
+- 与常规权限相比，**危险的权限**&ndash;，但危险的权限是保护用户安全或隐私的权限。 它们必须由用户显式授予。 发送或接收 SMS 消息就是需要危险性权限的操作的一个示例。
 
 > [!IMPORTANT]
 > 权限所属的类别可能会随时间而改变。  可能会在将来的 API 级别中将已分类为 "常规" 权限的权限提升为危险权限。
@@ -51,7 +51,7 @@ Android 支持库 precise-backports 了一些新的 Api，以获得更早版本�
 
 <a name="requirements" />
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 强烈建议使用 xamarin Android 项目，其中包括 Xamarin。[支持](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)的 NuGet 包。 此程序包会将权限特定的 Api 向后移植到较旧版本的 Android，提供一个公共接口，而无需不断检查应用运行的 Android 版本。
 
@@ -81,15 +81,15 @@ Android 支持库 precise-backports 了一些新的 Api，以获得更早版本�
 
 1. 双击 "**解决方案资源管理器**中的"**属性**"，然后选择" 属性窗口中的 " **Android 清单**" 选项卡：
 
-    ["Android 清单" 选项卡中![必需的权限](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
+    ["Android 清单" 选项卡中 ![必需的权限](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. 如果应用程序还没有 Androidmanifest.xml，请单击 "**未找到 androidmanifest.xml。单击以添加一个**，如下所示：
 
-    [不![Androidmanifest.xml 消息](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
+    [不 ![Androidmanifest.xml 消息](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. 从 "**所需权限**" 列表中选择应用程序所需的任何权限并保存：
 
-    [选择![照相机权限](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
+    [选择 ![照相机权限](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -97,15 +97,15 @@ Android 支持库 precise-backports 了一些新的 Api，以获得更早版本�
 
 1. 双击 " **Solution Pad** " 中的项目，然后选择 " **> 生成 > Android 应用程序" 选项**：
 
-    [显示![必需权限部分](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
+    [显示 ![必需权限部分](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. 如果项目还没有**androidmanifest.xml**，请单击 "**添加 Android 清单**" 按钮：
 
-    [缺少项目的 Android 清单![](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
+    [缺少项目的 Android 清单 ![](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
 3. 从 "**所需权限**" 列表中选择应用程序所需的任何权限，然后单击 **"确定"** ：
 
-    [选择![照相机权限](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
+    [选择 ![照相机权限](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
@@ -205,7 +205,7 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南讨论了如何在 Android 设备中添加和检查权限。 旧 Android 应用（API 级别 < 23）与新 Android 应用（API 级别 > 22）之间的权限工作方式的不同。 本文讨论了如何在 Android 6.0 中执行运行时权限检查。
 

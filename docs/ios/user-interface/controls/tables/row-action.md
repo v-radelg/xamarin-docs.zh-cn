@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 542ae6696bae8fccfa6d5ed9842bce126760da37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8efa116a82ba021c2a723dc6ab636f54b6b5af71
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021858"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940987"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用行操作
 
@@ -33,7 +33,7 @@ iOS 提供了两种方法来对表执行操作： `UISwipeActionsConfiguration` 
 
 1. 重写 `GetLeadingSwipeActionsConfiguration` 和/或 `GetTrailingSwipeActionsConfiguration` 方法。 这些方法返回 `UISwipeActionsConfiguration`。
 2. 实例化要返回的 `UISwipeActionsConfiguration`。 此类采用 `UIContextualAction`的数组。
-3. 创建 `UIContextualAction`。
+3. 创建`UIContextualAction`。
 
 以下各节将更详细地介绍这些内容。
 
@@ -71,7 +71,7 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-请注意，操作显示的顺序取决于它们如何传递到数组中。 例如，上述用于领先 swipes 的代码显示操作，如下所示：
+请务必注意，操作显示的顺序取决于它们如何传递到数组中。 例如，上述用于领先 swipes 的代码显示操作，如下所示：
 
 ![在表行上显示的前导轻扫操作](row-action-images/action03.png)
 
@@ -117,7 +117,7 @@ public UIContextualAction ContextualFlagAction(int row)
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-若要为 `UITableView`定义一个或多个自定义行操作，将需要创建 `UITableViewDelegate` 类的实例并重写 `EditActionsForRow` 方法。 例如:
+若要为 `UITableView`定义一个或多个自定义行操作，将需要创建 `UITableViewDelegate` 类的实例并重写 `EditActionsForRow` 方法。 例如：
 
 ```csharp
 using System;
@@ -161,7 +161,7 @@ namespace BasicTable
 }
 ```
 
-静态 `UITableViewRowAction.Create` 方法用于创建新的 `UITableViewRowAction`，当用户在表中的某一行上水平 swipes 时，它将显示 "**高**" 按钮。 稍后将创建 `TableDelegate` 的新实例，并将其附加到 `UITableView`。 例如:
+静态 `UITableViewRowAction.Create` 方法用于创建新的 `UITableViewRowAction`，当用户在表中的某一行上水平 swipes 时，它将显示 "**高**" 按钮。 稍后将创建 `TableDelegate` 的新实例，并将其附加到 `UITableView`。 例如：
 
 ```csharp
 TableDelegate tableDelegate;

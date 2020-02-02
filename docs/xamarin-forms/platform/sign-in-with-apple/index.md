@@ -7,27 +7,27 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 1e436cf96367141873f16a09d8c818be4265226b
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: a0d15c7d264c32a8ed193e55fb934f63992198eb
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206502"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940278"
 ---
 # <a name="sign-in-with-apple-in-xamarinforms"></a>用 Xamarin 中的 Apple 登录。 Forms
 
-使用 Apple 登录会引入一项新服务，为用户提供标识保护。 在 iOS 13 中，Apple 要求使用第三方身份验证提供程序的任何应用程序也提供与 Apple 的登录。 有关将此与 Xamarin 一起使用的说明，请[参阅此处](~/ios/platform/ios13/sign-in.md)。
+使用 Apple 登录会引入一项新服务，为用户提供标识保护。 在 iOS 13 中，Apple 要求使用第三方身份验证提供程序的任何应用程序也提供与 Apple 的登录。 有关将此功能与 Xamarin 一起使用的说明，请[参阅此处](~/ios/platform/ios13/sign-in.md)。
 
 如果支持在 Xamarin 中使用 Apple 登录，则需要考虑有关 Android 和 UWP 的其他注意事项。 对于这些平台，Apple 提供了不同的工作流。
 
-## <a name="setup-for-iosiosplatformios13sign-inmd"></a>[用于 iOS 的设置](~/ios/platform/ios13/sign-in.md)
+## <a name="setup-for-xamariniosiosplatformios13sign-inmd"></a>[针对 Xamarin 的设置](~/ios/platform/ios13/sign-in.md)
 
-本指南将指导你完成使用 Apple for iOS 应用程序进行登录所需的设置。
+本指南将指导你完成使用 Apple for Xamarin iOS 应用程序进行登录所需的设置。
 
 ## <a name="setup-for-other-platformssetupmd"></a>[用于其他平台的设置](setup.md)
 
-本指南将指导你完成为非 iOS 应用程序（包括 Xamarin、Forms Android 和 UWP）启用 Apple 登录所需的设置。
+本指南将指导你完成为其他平台（包括 Xamarin、Forms Android 和 UWP）启用 Apple 登录所需的设置。
 
-## <a name="use-sign-in-with-appleandroid-ios-sign-inmd"></a>[使用“使用 Apple 登录”功能](android-ios-sign-in.md)
+## <a name="use-sign-in-with-apple-in-xamarinformsandroid-ios-sign-inmd"></a>[在 Xamarin 中使用 Apple 的登录。 Forms](android-ios-sign-in.md)
 
 使用几个服务，你可以支持跨平台 Xamarin 中的 Apple 登录。 Forms 应用程序。 本指南介绍了必需的步骤。

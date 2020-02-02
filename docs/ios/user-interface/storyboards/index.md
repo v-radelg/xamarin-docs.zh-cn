@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b0cd3e7c851aed6f178069497665b88c1338b36b
-ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
+ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794751"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76941002"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
 
@@ -78,7 +78,7 @@ ms.locfileid: "76794751"
 
  iOS 8 引入了[大小类](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)，以允许 iOS 情节提要文件与所有可用的屏幕大小一起使用，使开发人员能够为所有 iOS 设备创建一个 UI。 默认情况下，所有新的 Xamarin iOS 应用程序都将使用大小类。 若要从较旧的项目使用大小类，请参阅[统一情节提要指南简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 
-使用大小类的任何应用程序也将使用新的[*自适应 segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小类时，请记住，我们不会直接指定该使用 iPhone 或 iPad。 换句话说，我们创建一个 UI，该 UI 始终外观相同，而不考虑它需要使用的实际空间。 自适应 Segue 通过判断环境，并确定如何以最佳方式呈现内容。 自适应 Segue 如下所示：
+使用大小类的任何应用程序也将使用新的[*自适应 segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小类时，请记住，我们不会直接指定使用 iPhone 或 iPad 的天气。 换句话说，我们创建一个 UI，该 UI 始终外观相同，而不考虑它需要使用的实际空间。 自适应 Segue 通过判断环境，并确定如何以最佳方式呈现内容。 自适应 Segue 如下所示：
 
 [![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
 

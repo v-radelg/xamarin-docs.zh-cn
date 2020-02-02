@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: f7c98de605f71b320f0650954f08c8857459ceaf
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 4ccd22945caa9d81970867e0b037069389538b88
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725267"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940923"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS 目标-C 库
 
@@ -41,7 +41,7 @@ _本文介绍了如何为现有的目标-C 库（InfColorPicker）创建 Xamarin
 
 示例应用程序将演示如何使用强委托在 InfColorPicker API 和我们C#的代码之间进行通信。 了解如何使用强委托后，我们将介绍如何使用弱委托执行相同的任务。
 
-## <a name="requirements"></a>요구 사항
+## <a name="requirements"></a>需求
 
 本文假设你已熟悉 Xcode 和目标 C 语言，并已阅读我们的[绑定目标-c](~/cross-platform/macios/binding/index.md)文档。 此外，必须满足以下要求才能完成显示的步骤：
 
@@ -85,7 +85,7 @@ _本文介绍了如何为现有的目标-C 库（InfColorPicker）创建 Xamarin
 
 安装命令行工具后，可以继续执行演练。
 
-## <a name="walkthrough"></a>연습
+## <a name="walkthrough"></a>演练
 
 在本演练中，我们将介绍以下步骤：
 
@@ -118,7 +118,7 @@ _本文介绍了如何为现有的目标-C 库（InfColorPicker）创建 Xamarin
 
 第一步是将 InfoColorPicker 源代码添加到静态库中。 若要实现此目的，请执行以下操作：
 
-1. Xcode를 시작합니다.
+1. 启动 Xcode。
 2. 从 "**文件**" 菜单中选择 "**新建** > **项目 ...** "：
 
     [![](walkthrough-images/image04.png "Starting a new project")](walkthrough-images/image04.png#lightbox)
@@ -249,7 +249,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Mac용 Visual Studio를 시작합니다.
+1. 启动 Visual Studio for Mac。
 1. 从 "**文件**" 菜单中，选择 "**新建** > **解决方案 ...** "：
 
     ![](walkthrough-images/bind01.png "Starting a new solution")
@@ -270,7 +270,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Visual Studio를 시작합니다.
+1. 启动 Visual Studio。
 
 1. 从 "**文件**" 菜单中，选择 "**新建** > **项目 ...** "：
 
@@ -375,11 +375,12 @@ Options:
   -v, --versionShow version information
 
 Available Tools:
-
-  xcode    Get information about Xcode installations and available SDKs.
-
-  bind     Create a Xamarin C# binding to Objective-C APIs
-Europa:Resources kmullins$
+  xcode              Get information about Xcode installations and available SDKs.
+  pod                Create a Xamarin C# binding to Objective-C CocoaPods
+  bind               Create a Xamarin C# binding to Objective-C APIs
+  update             Update to the latest release of Objective Sharpie
+  verify-docs        Show cross reference documentation for [Verify] attributes
+  docs               Open the Objective Sharpie online documentation
 ```
 
 出于本演练的目的，我们将使用以下目标 Sharpie 工具：
@@ -394,11 +395,14 @@ Europa:Resources kmullins$ sharpie xcode -help
 usage: sharpie xcode [OPTIONS]+
 
 Options:
-  -h, --help                 Show detailed help
-  -v, --verbose              Be verbose with output
-      --sdks                 List all available Xcode SDKs. Pass -verbose for
-                               more details.
-Europa:Resources kmullins$
+  -h, -help           Show detailed help
+  -v, -verbose        Be verbose with output
+
+Xcode Options:
+  -sdks               List all available Xcode SDKs. Pass -verbose for more
+                        details.
+  -sdkpath SDK        Output the path of the SDK
+  -frameworks SDK     List all available framework directories in a given SDK.
 ```
 
 在可以开始绑定过程之前，需要通过在终端 `sharpie xcode -sdks`中输入以下命令来获取有关当前已安装的 Sdk 的信息：
@@ -663,7 +667,7 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 [![](walkthrough-images/run01.png "Running the Application")](walkthrough-images/run01.png#lightbox)
 
-지금까지 此时，您已成功创建并绑定了用于 Xamarin iOS 应用程序的目标-C 库。 接下来，让我们了解如何使用弱委托。
+祝贺你！ 此时，您已成功创建并绑定了用于 Xamarin iOS 应用程序的目标-C 库。 接下来，让我们了解如何使用弱委托。
 
 ### <a name="implementing-a-weak-delegate"></a>实现弱委托
 
@@ -704,16 +708,16 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 ```
 
-응용 프로그램을 실행합니다. 它现在应完全按照之前的方式运行，但它使用弱委托，而不是强委托。 此时，你已成功完成本演练。 你现在应该已经了解了如何创建和使用 Xamarin iOS 绑定项目。
+运行该应用程序。 它现在应完全按照之前的方式运行，但它使用弱委托，而不是强委托。 此时，你已成功完成本演练。 你现在应该已经了解了如何创建和使用 Xamarin iOS 绑定项目。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本文逐步介绍了创建和使用 Xamarin iOS 绑定项目的过程。 首先，我们介绍了如何将现有的目标 C 库编译为静态库。 然后我们介绍了如何创建 Xamarin iOS 绑定项目，以及如何使用客观 Sharpie 为目标-C 库生成 API 定义。 我们讨论了如何更新和调整生成的 API 定义，使其适用于公共使用。 完成 Xamarin iOS 绑定项目后，我们将在 Xamarin iOS 应用程序中使用该绑定，重点介绍使用强委托和弱委托。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
-- [Objective-C 라이브러리 바인딩](~/cross-platform/macios/binding/objective-c-libraries.md)
+- [绑定 Objective-C 库](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [绑定详细信息](~/cross-platform/macios/binding/overview.md)
 - [绑定类型参考指南](~/cross-platform/macios/binding/binding-types-reference.md)
-- [Objective-C 개발자용 Xamarin](~/ios/get-started/objective-c-developers/index.md)
-- [프레임워크 디자인 지침](https://msdn.microsoft.com/library/ms229042.aspx)
+- [面向 Objective-C 开发人员的 Xamarin](~/ios/get-started/objective-c-developers/index.md)
+- [框架设计指南](https://msdn.microsoft.com/library/ms229042.aspx)

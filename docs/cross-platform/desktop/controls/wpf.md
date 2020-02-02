@@ -5,12 +5,12 @@ description: 本文档将 WPF 与 Xamarin 进行比较和对比。 它讨论了�
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 9c69449f88f9c237b5075967c89ff7ff3b6fb57a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955658"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940801"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 与 Xamarin：相似性 & 差异
 
@@ -72,13 +72,13 @@ Xamarin 中的可绑定属性的定义与 WPF 相同：
 
 有关完整示例，请参阅[Xamarin 中的可绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
 
-### <a name="attached-properties"></a>附加的属性
+### <a name="attached-properties"></a>附加属性
 
-附加属性是可绑定属性的子集，它们的工作方式与在 WPF 中的工作方式相同。 主要区别在于，在这种情况下，属性包装省略，并替换为所属类的一组静态 get/set 方法。 有关详细信息，请参阅[Xamarin 中的附加属性](~/xamarin-forms/xaml/attached-properties.md)。
+附加属性是可绑定属性的子集，它们的工作方式与在 WPF 中的工作方式相同。 主要区别在于，在这种情况下，将省略属性包装，并将其替换为所属类的一组静态 get/set 方法。 有关详细信息，请参阅[Xamarin 中的附加属性](~/xamarin-forms/xaml/attached-properties.md)。
 
 ### <a name="using-the-binding-engine"></a>使用绑定引擎
 
-使用绑定引擎的过程与在 WPF 中的过程相同。 可在代码隐藏中利用此方法：创建绑定到源对象（任意 .NET 类型）的 `Binding` 对象和可选属性值（如果为省略，它会将源对象视为属性本身，就像 WPF）。 然后，可以使用任何 `BindableObject` 上的 `SetBinding` 将绑定关联到 `BindableProperty`。
+使用绑定引擎的过程与在 WPF 中的过程相同。 可在代码隐藏中利用此方法：创建绑定到源对象（任何 .NET 类型）和可选属性值的 `Binding` 对象（如果省略，它会将源对象视为属性本身，就像 WPF）。 然后，可以使用任何 `BindableObject` 上的 `SetBinding` 将绑定关联到 `BindableProperty`。
 
 或者，可以使用 `BindingExtension`在 XAML 中定义绑定关系。 它与 WPF 中的扩展具有相同的基本值。
 

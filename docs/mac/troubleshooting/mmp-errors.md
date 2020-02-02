@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 1dc53b863e0408e27351aabfa625a08baae3d5a1
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: b1125ab554bd9c73917c106c7486b742f16e628a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725447"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940361"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin 错误消息（mmp）
 
 ## <a name="mm0xxx-mmp-error-messages"></a>MM0xxx： mmp 错误消息
 
-예: 参数、环境、缺少的工具。
+例如 参数、环境、缺少的工具。
 
 <a name="MM0000" />
 
@@ -270,7 +270,7 @@ Apple 宣布，它将不允许 macOS 应用商店提交32位应用（从年1月 
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406：针对 Xamarin 4.5 .NET framwork 时，目标框架 "{0}" 无效。
+#### <a name="mm1406-target-framework-0-is-invalid-when-targeting-xamarinmac-45-net-framwork"></a>MM1406：目标框架 "{0}" 在面向 Xamarin. Mac 4.5 .NET framwork 时无效。
 
 <a name="MM1407" />
 

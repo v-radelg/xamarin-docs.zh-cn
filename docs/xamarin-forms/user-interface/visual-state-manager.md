@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2019
-ms.openlocfilehash: 11de0ecf20c6748d4958d1f1f1bea80e6a87024e
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 99bf55b6e956efe54510e822d379665879f3ba44
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490007"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940295"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms 视觉状态管理器
 
@@ -511,7 +511,7 @@ VSM 标记附加到第二个`Label`(名为`helpLabel`) 和`Button`(名为`submit
 
 [![VSM 验证：有效状态](vsm-images/VsmValidationValid.png "VSM 验证-有效")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-代码隐藏文件负责处理`TextChanged`从事件`Entry`。 该处理程序使用的正则表达式来确定输入的字符串是否有效。 名为的代码隐藏文件中的方法`GoToState`调用静态`VisualStateManager.GoToState`两个方法`helpLabel`和`submitButton`:
+代码隐藏文件负责处理 `Entry`中的 `TextChanged` 事件。 该处理程序使用的正则表达式来确定输入的字符串是否有效。 名为的代码隐藏文件中的方法`GoToState`调用静态`VisualStateManager.GoToState`两个方法`helpLabel`和`submitButton`:
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -681,7 +681,7 @@ VSM 标记出现在 XAML 文件中的四个位置。 `StackLayout`名为`mainSta
 
 内部`ScrollView`名为`menuScroll`并`StackLayout`名为`menuStack`实现按钮的菜单。 这些布局的方向是相反的`mainStack`。 在纵向模式下水平和垂直在横向模式下，应为菜单。
 
-中的按钮本身的隐式样式是 VSM 标记的第四个部分。 此标记将设置`VerticalOptions`， `HorizontalOptions`，和`Margin`特定于 portait 和横向方向的属性。
+中的按钮本身的隐式样式是 VSM 标记的第四个部分。 此标记设置特定于纵向和横向方向 `VerticalOptions`、`HorizontalOptions`和 `Margin` 属性。
 
 代码隐藏文件集`BindingContext`的属性`menuStack`实现`Button`命令，并还会将附加到一个处理程序`SizeChanged`页面的事件：
 

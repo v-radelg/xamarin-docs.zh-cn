@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: dee7f4fa0b3d8fbd0b3ed57e885c9f5083d9875e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 8402a48602dd94578e688faeb038aec69684e7d4
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725294"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940717"
 ---
 # <a name="unified-api-overview"></a>Unified API 概述
 
@@ -27,13 +27,13 @@ Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码，并支持具�
 
 遵循适用于你的平台的相关说明：
 
-- [기존 앱 업데이트](updating-apps.md)
-- [기존 iOS 앱 업데이트](updating-ios-apps.md)
-- [기존 Mac 앱 업데이트](updating-mac-apps.md)
-- [기존 Xamarin.Forms 앱 업데이트](updating-xamarin-forms-apps.md)
-- [바인딩을 Unified API로 마이그레이션](update-binding.md)
+- [更新现有应用](updating-apps.md)
+- [更新现有 iOS 应用](updating-ios-apps.md)
+- [更新现有 Mac 应用](updating-mac-apps.md)
+- [更新现有 Xamarin.Forms 应用](updating-xamarin-forms-apps.md)
+- [将绑定迁移到 Unified API](update-binding.md)
 
-## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[코드를 Unified API로 업데이트하는 팁](updating-tips.md)
+## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[将代码更新为 Unified API 的提示](updating-tips.md)
 
 不管你要迁移哪些应用程序，请查看[以下提示](updating-tips.md)，以帮助你成功更新到 Unified API。
 
@@ -44,7 +44,7 @@ Xamarin 的 Unified API 允许在 Mac 和 iOS 之间共享代码，并支持具�
 - **Classic API：** 仅限32位（仅限），在 `monotouch.dll` 和 `XamMac.dll` 程序集中公开。
 - **Unified API：** 使用 `Xamarin.iOS.dll` 和 `Xamarin.Mac.dll` 程序集中提供的单个 API 支持32和64位开发。
 
-这意味着，对于企业开发人员（不针对应用商店），可以继续使用现有的经典 Api，因为我们将不断保留这些 Api，或升级到新 Api。
+这意味着，对于企业开发人员（而不是以应用商店为目标），可以继续使用现有的经典 Api，因为我们将永久保留它们，或者可以升级到新的 Api。
 
 <a name="namespace-changes" />
 
@@ -106,7 +106,7 @@ Unified API 引入了兼容包的新平台标识符- **iOS10**。 需要更新�
 
  <a name="new-data-types" />
 
-#### <a name="new-data-types"></a>새 데이터 형식
+#### <a name="new-data-types"></a>新数据类型
 
 不同之处在于，Mac 和 iOS Api 使用一种特定于体系结构的数据类型，这些数据类型在32位平台上始终32位，在64位平台上使用64位。
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>数组和 System.object
 
-由于C#索引器需要某种类型的 `int`，因此必须将 `nint` 值显式转换为 `int`，以便访问集合或数组中的元素。 예를 들면 다음과 같습니다.:
+由于C#索引器需要某种类型的 `int`，因此必须将 `nint` 值显式转换为 `int`，以便访问集合或数组中的元素。 例如：
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -228,7 +228,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 ### <a name="custom-delegates-replaced-with-actiont"></a>自定义委托替换为操作\<T >
 
-在**统一**的部分（例如一个参数）中，.net 委托已替换为 `Action<T>`。 예:
+在**统一**的部分（例如一个参数）中，.net 委托已替换为 `Action<T>`。 例如
 
 ```csharp
 public delegate void NSNotificationHandler (NSNotification notification);
@@ -312,7 +312,7 @@ public virtual void SelectionDidChange (IUITextInput uiTextInput);
 要注意的其他更改会在将[应用程序更新到 Unified API 的提示](~/cross-platform/macios/unified/updating-tips.md)中列出。
 
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [更新 iOS 应用程序](updating-ios-apps.md)
 - [更新 Mac 应用](updating-mac-apps.md)
@@ -320,4 +320,4 @@ public virtual void SelectionDidChange (IUITextInput uiTextInput);
 - [更新绑定](update-binding.md)
 - [更新提示](updating-tips.md)
 - [经典与 Unified API 差异](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)
-- [플랫폼 간 앱에서의 네이티브 형식 작업](~/cross-platform/macios/native-types-cross-platform.md)
+- [使用跨平台应用中的本机类型](~/cross-platform/macios/native-types-cross-platform.md)

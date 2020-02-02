@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e83e34dab407c5be84fc5b4c3c0c445d56907e3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 809f6241b3a17f63fe3077f896095c303e1dfd2e
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028762"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940841"
 ---
 # <a name="material-theme"></a>材料主题
 
@@ -36,7 +36,7 @@ Android 提供三种材料主题风格：
 
 由于仅 Android 5.0 及更高版本支持材料主题，因此你不能使用它（或从材料主题派生的自定义主题）来为你的应用程序提供应用程序的主题，使其在早期版本的 Android 上运行。 但是，你可以将应用配置为使用 Android 5.0 设备上的材料主题，并在较早版本的 Android 上运行时适当地回退到前面的主题（有关详细信息，请参阅本文的 "[兼容性](#compatibility)" 部分）。
 
-## <a name="requirements"></a>要求
+## <a name="requirements"></a>需求
 
 若要在基于 Xamarin 的应用中使用新的 Android 5.0 材料主题功能，需要满足以下要求：
 
@@ -44,7 +44,7 @@ Android 提供三种材料主题风格：
 
 - 必须通过 Android SDK 管理器安装**Android SDK** &ndash; Android 5.0 （API 21）或更高版本。
 
-- 如果专门针对 API 级别23和更早版本，可以使用**JAVA jdk 1.8** &ndash; JDK 1.7。 JDK 1.8 可从[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)获得。
+- 如果特别面向 API 级别23和更早版本，可以使用**JAVA jdk 1.8** &ndash; JDK 1.7。 JDK 1.8 可从[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)获得。
 
 若要了解如何配置 Android 5.0 应用项目，请参阅[设置 android 5.0 项目](~/android/platform/lollipop.md)。
 
@@ -70,7 +70,7 @@ Android 提供三种材料主题风格：
 </application>
 ```
 
-或者，可以在**AssemblyInfo.cs** （或**Properties.cs**）中设置应用程序 `Theme` 属性。 例如:
+或者，可以在**AssemblyInfo.cs** （或**Properties.cs**）中设置应用程序 `Theme` 属性。 例如：
 
 ```C#
 [assembly: Application(Theme="@android:style/Theme.Material.Light")]
@@ -113,7 +113,7 @@ Android 提供三种材料主题风格：
 
 以下关系图中标记了这些屏幕区域：
 
-[属性的![关系图及其关联的屏幕区域](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
+[属性的 ![关系图及其关联的屏幕区域](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 默认情况下，`statusBarColor` 设置为 `colorPrimaryDark`的值。 您可以将 `statusBarColor` 设置为纯色，也可以将其设置为 `@android:color/transparent`，使状态栏成为透明的。 还可以通过将 `navigationBarColor` 设置为 `@android:color/transparent`来使导航栏是透明的。
 
@@ -137,7 +137,7 @@ Android 提供三种材料主题风格：
 
 - 创建**资源/值-v21**文件夹。 在此文件夹中，创建一个**样式 .xml**文件：
 
-    [Resources/values-21 文件夹中样式 .xml 的位置![](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
+    [Resources/values-21 文件夹中样式 .xml 的位置 ![](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     请注意， **v21**特定于 android 5.0 &ndash; 较早版本的 android 将不会读取此文件夹中的文件。
 
@@ -155,7 +155,7 @@ Android 提供三种材料主题风格：
 
 - 此时，使用*MyCustomTheme*的应用程序将显示 stock `Theme.Material.Light` 主题，无需自定义：
 
-    [自定义之前![自定义主题外观](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
+    [自定义之前 ![自定义主题外观](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
 - 通过定义要更改的布局特性的颜色，将颜色自定义添加到**样式 .xml。** 例如，若要将应用栏颜色更改为 "`my_blue`"，并将 UI 控件的颜色更改为 "`my_purple`，请将" 颜色重写 "添加到"**样式**.xml "，这是指在 color **.xml**中配置的颜色资源：
 
@@ -174,7 +174,7 @@ Android 提供三种材料主题风格：
 
 进行这些更改后，使用*MyCustomTheme*的应用程序将在 `my_purple`中 `my_blue` 和 UI 控件中显示应用程序栏颜色，但在其他任何位置使用 `Theme.Material.Light` 配色方案：
 
-[自定义后![自定义主题外观](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
+[自定义后 ![自定义主题外观](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
 在此示例中， *MyCustomTheme*从背景色、状态栏和文本颜色的 `Theme.Material.Light` 中借用颜色，但会将应用栏的颜色更改为 `my_blue` 并将单选按钮的颜色设置为 "`my_purple`"。
 
@@ -185,7 +185,7 @@ Android 提供三种材料主题风格：
 Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style **.xml**后（如上一节所述），可以将视图样式添加到 style **.xml**。
 若要为单个视图的样式，请使用以下步骤：
 
-- 编辑**资源/values-v21/style .xml**并添加一个 `style` 节点，其名称为自定义视图样式的名称。 在此 `style` 节点中为视图设置自定义颜色属性。 例如，若要创建具有更多圆角的自定义[CardView](~/android/user-interface/controls/card-view.md)样式，并使用 `my_blue` 作为卡片背景色，请将 `style` 节点添加到 style **.xml** （在 `resources` 节点内），并配置背景色和角半径：
+- 编辑**资源/values-v21/style .xml**并添加一个 `style` 节点，其名称为自定义视图样式的名称。 在此 `style` 节点中为视图设置自定义颜色属性。 例如, 若要创建具有更多圆角并`my_blue`用作卡片背景色的自定义 [CardView](~/android/user-interface/controls/card-view.md) 样式, 请将`style`节点添加到 **style .xml** (在`resources`节点内), 并配置背景色和角半径:
 
 ```xml
 <!-- Theme an individual view: -->
@@ -199,7 +199,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 </style>
 ```
 
-- 在布局中，为该视图设置 `style` 属性，使之与你在上一步中选择的自定义样式名称匹配。 例如:
+- 在布局中，为该视图设置 `style` 属性，使之与你在上一步中选择的自定义样式名称匹配。 例如：
 
 ```xml
 <android.support.v7.widget.CardView
@@ -211,7 +211,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 
 下面的屏幕截图提供默认 `CardView` （显示在左侧）的示例，与已使用自定义 `CardView.MyBlue` 主题进行样式化的 `CardView` （在右侧显示）相同：
 
-[默认 CardView 和自定义 CardView![示例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
+[默认 CardView 和自定义 CardView ![示例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
 在此示例中，将显示自定义 `CardView`，其中背景颜色 `my_blue` 和18dp 角半径。
 
@@ -219,7 +219,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 
 若要为应用程序应用格式，使其在 Android 5.0 上使用材料主题，但会自动恢复到早期版本的 Android 版本的向下兼容样式，请使用以下步骤：
 
-- 在**资源/values-v21/style .xml**中定义从材料主题样式派生的自定义主题。 例如:
+- 在**资源/values-v21/style .xml**中定义从材料主题样式派生的自定义主题。 例如：
 
 ```xml
 <resources>
@@ -229,7 +229,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 </resources>
 ```
 
-- 在**资源/值/样式 .xml**中定义派生自旧版主题的自定义主题，但使用与上面相同的主题名称。 例如:
+- 在**资源/值/样式 .xml**中定义派生自旧版主题的自定义主题，但使用与上面相同的主题名称。 例如：
 
 ```xml
 <resources>
@@ -240,7 +240,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 ```
 
 - 在**androidmanifest.xml**中，配置应用的自定义主题名称。 
-    例如:
+    例如：
 
 ```xml
 <application android:label="MyApp" 
@@ -260,7 +260,7 @@ Android 5.0 还允许您为单个视图建立样式。 创建**colors**和 style
 
 有关与较旧的 Android 版本的主题兼容性的详细信息，请参阅[备用资源](~/android/app-fundamentals/resources-in-android/alternate-resources.md)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 Android 5.0 （棒糖形）中包含的新材料主题用户界面样式。 本文介绍了三种内置的材料主题风格，您可以使用它们来设计您的应用程序的样式，还介绍了如何创建用于标记您的应用程序的自定义主题，并提供了如何为单个视图提供主题的示例。 最后，本文介绍了如何在应用中使用材料主题，同时保持与早期版本的 Android 的向下兼容性。
 

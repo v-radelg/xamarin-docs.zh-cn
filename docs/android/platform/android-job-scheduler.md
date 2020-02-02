@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 10d2ae6ac35f02d75ef6e04a0531ec3f5dafd668
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667034"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940818"
 ---
 # <a name="android-job-scheduler"></a>Android 作业计划程序
 
@@ -76,7 +76,7 @@ Android 作业计划程序库执行的所有工作都必须在一个扩展 `Andr
 3. 将 `ServiceAttribute` 上的 `Permission` 属性设置为字符串 `android.permission.BIND_JOB_SERVICE`。
 4. 重写 `OnStartJob` 方法，并添加用于执行工作的代码。 Android 将在应用程序的主线程上调用此方法以运行作业。 需要在线程上执行几毫秒时间，以避免阻塞应用程序的工作。
 5. 完成工作后，`JobService` 必须调用 `JobFinished` 方法。 此方法是 `JobService` 告诉 `JobScheduler` 完成工作的方式。 未能调用 `JobFinished` 将导致 `JobService` 在设备上施加不必要的需求，缩短电池寿命。 
-6. 最好还是重写 `OnStopJob` 方法。 此方法由 Android 在作业完成之前关闭，并为 `JobService` 提供了正确释放任何资源的机会。 如果需要重新计划作业，则此方法应返回 `true`，如果不 desireable 重新运行作业，则应 `false`。
+6. 最好还是重写 `OnStopJob` 方法。 此方法由 Android 在作业完成之前关闭，并为 `JobService` 提供了正确释放任何资源的机会。 如果需要重新计划作业，则此方法应返回 `true`，如果不需要重新运行作业，则应 `false`。
 
 下面的代码示例是应用程序的最简单的 `JobService`，使用 TPL 异步执行一些工作：
 

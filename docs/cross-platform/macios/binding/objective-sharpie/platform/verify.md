@@ -6,12 +6,12 @@ ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: davidortinau
 ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: 6fffad744fa2f60239b0c96f01ff241e2cad9252
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d951952103a94dfc60a8083a75998611b635cda9
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016077"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940792"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目标 Sharpie 验证属性
 
@@ -30,7 +30,7 @@ ms.locfileid: "73016077"
 
 |`[Verify]` 提示|描述|
 |---|---|
-|InferredFromPreceedingTypedef|此声明的名称是由原始本机源代码中紧靠前 `typedef` 的常用约定推断出来的。 验证推断的名称是否正确，因为此约定是不明确的。|
+|InferredFromPreceedingTypedef|此声明的名称是由原始本机源代码中前面 `typedef` 前面的常用约定推断出来的。 验证推断的名称是否正确，因为此约定是不明确的。|
 |ConstantsInterfaceAssociation|没有一种欺骗方法来确定外部变量声明可以关联的目标 C 接口。 这些实例将作为部分接口中的 `[Field]` 属性绑定到近乎具体的接口以生成更直观的 API，这可能会完全消除 "常量" 接口。|
 |MethodToProperty|由于惯例（如不使用任何参数并C#返回一个值，因此，目标 C 方法被绑定为属性）。 通常，这类方法应作为属性绑定以显示更好 API，但有时会发生误报，并且绑定实际上应为方法。|
 |StronglyTypedNSArray|本机 `NSArray*` 被绑定为 `NSObject[]`。 可以根据通过 API 文档（如标头文件中的注释）或通过测试检查数组内容中的预期设置，更强地在绑定中键入数组。 例如，NSArray * 只包含 NSNumber * `NSNumber[]` instancescan，而不是 `NSObject[]`。|
