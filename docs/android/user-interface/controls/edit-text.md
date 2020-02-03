@@ -1,5 +1,5 @@
 ---
-title: 텍스트 편집
+title: 编辑文本
 description: 如何使用 EditText 小组件来接受用户输入。
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
@@ -58,7 +58,7 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 using Android.Views;
 ```
 
-此代码示例从布局中增加[EditText](xref:Android.Widget.EditText)元素，并添加了一个[KeyPress](xref:Android.Views.View.KeyPress)处理程序，用于定义在小组件有焦点的情况下按下某个键时要执行的操作。 在这种情况下，方法定义为侦听**Enter**键（点击时），然后使用已输入的文本弹出[Toast](xref:Android.Widget.Toast)消息。 请注意, 如果已[处理](xref:Android.Views.View.KeyEventArgs.Handled)事件, 则已处理的属性应始终为`true`。 这对于防止事件向上冒泡（这会导致文本字段中出现回车符）是必需的。
+此代码示例从布局中增加[EditText](xref:Android.Widget.EditText)元素，并添加了一个[KeyPress](xref:Android.Views.View.KeyPress)处理程序，用于定义在小组件有焦点的情况下按下某个键时要执行的操作。 在这种情况下，方法定义为侦听**Enter**键（点击时），然后使用已输入的文本弹出[Toast](xref:Android.Widget.Toast)消息。 请注意，如果已处理事件，则应始终 `true`[处理](xref:Android.Views.View.KeyEventArgs.Handled)的属性。 这对于防止事件向上冒泡（这会导致文本字段中出现回车符）是必需的。
 
 运行应用程序，并在文本字段中输入一些文本。 按**enter**键时，toast 将显示在右侧：
 
@@ -66,6 +66,6 @@ using Android.Views;
 
 *此页面的某些部分是基于 Android 开源项目创建和共享的工作的修改，并根据*[*创造性 Commons 2.5 归属许可证*](https://creativecommons.org/licenses/by/2.5/)中所述的条款使用 *。本教程基于* [*Android 表单资料教程*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *。*
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

@@ -16,23 +16,23 @@ ms.locfileid: "76723752"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>点和短划线在 SkiaSharp
 
-[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_掌握在 SkiaSharp 绘制点线和虚线线条的复杂性_
+_掌握 SkiaSharp 中绘制点线和虚线的复杂性_
 
 SkiaSharp 可绘制线条的都是不可靠的而是点和短划线组成：
 
 ![](dots-images/dottedlinesample.png "Dotted line")
 
-为此可以使用*路径效果*，即实例[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)设置为的类[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)属性`SKPaint`。 可以创建路径效果 （或合并路径效果），它使用由定义的静态创建方法之一`SKPathEffect`。 (`SKPathEffect` SkiaSharp 通过支持的六个效果之一; 是其他部分中所述[ **SkiaSharp 效果**](../effects/index.md)。)
+使用路径效果执行此操作，*路径效果*是您设置为 `SKPaint`的[`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect)属性的[`SKPathEffect`](xref:SkiaSharp.SKPathEffect)类的实例。 您可以使用 `SKPathEffect`定义的静态创建方法之一创建路径效果（或组合路径效果）。 （`SKPathEffect` 是 SkiaSharp 支持的六种效果之一; 其他是在[**SkiaSharp 效果**](../effects/index.md)一节中介绍的。）
 
-若要绘制虚线，请使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静态方法。 有两个参数： 第一次，这是一个数组`float`来指示点和短划线的长度，以及它们之间的空格的长度的值。 此数组必须具有偶数数目的元素，并且应至少两个元素。 （数组中可以有零个元素，但这会导致实线。）如果有两个元素，则第一个是点或短划线的长度，第二个元素是下一个点或短划线之前的间隔长度。 如果有多个两个元素，则它们是按以下顺序： 短划线的长度、 间隙长度、 短划线的长度、 间隙长度等。
+若要绘制点线或虚线，请使用[`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静态方法。 有两个参数：第一个是 `float` 值的数组，这些值指示点和短划线的长度以及它们之间的空格长度。 此数组必须具有偶数数目的元素，并且应至少两个元素。 （数组中可以有零个元素，但这会导致实线。）如果有两个元素，则第一个是点或短划线的长度，第二个元素是下一个点或短划线之前的间隔长度。 如果有多个两个元素，则它们是按以下顺序： 短划线的长度、 间隙长度、 短划线的长度、 间隙长度等。
 
 通常情况下，您将想要的短划线和间隙长度笔划宽度的倍数。 如果笔划宽度为 10 个像素，例如，然后数组 {10，10} 将绘制点线的点和间隙的笔画粗细的长度相同。
 
-但是，`StrokeCap`设置的`SKPaint`对象也会影响这些点和短划线。 稍后将看到，此数组的元素具有影响。
+但 `SKPaint` 对象的 `StrokeCap` 设置也会影响这些点和短划线。 稍后将看到，此数组的元素具有影响。
 
-以点分隔和上演示了虚线**点和短划线**页。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)文件实例化两个`Picker`查看时，一个用于允许您选择笔画线帽和第二个选择的短划线数组：
+**点**划线和虚线页上演示了虚线和虚线。 [**DotsAndDashesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)文件实例化两个 `Picker` 视图，一个视图用于选择笔划帽，第二个视图用于选择虚线数组：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -98,9 +98,9 @@ SkiaSharp 可绘制线条的都是不可靠的而是点和短划线组成：
 </ContentPage>
 ```
 
- 中的前三个项`dashArrayPicker`假定笔划宽度为 10 像素。 {10，10} 的点线，数组是 {30，10} 是虚线，和 {10、 10、 30、 10} 是针对点-划线行。 （其他三个将讨论很快。）
+ `dashArrayPicker` 中的前三项假定笔划宽度为10像素。 {10，10} 的点线，数组是 {30，10} 是虚线，和 {10、 10、 30、 10} 是针对点-划线行。 （其他三个将讨论很快。）
 
-[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)代码隐藏文件包含`PaintSurface`事件处理程序和几个帮助器例程用于访问`Picker`视图：
+[`DotsAndDashesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)代码隐藏文件包含 `PaintSurface` 事件处理程序和用于访问 `Picker` 视图的几个帮助器例程：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -152,19 +152,19 @@ float[] GetPickerArray(Picker picker)
 
 [![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
-但是，还应该 Android 屏幕显示点线使用数组 {10，10} 改为直线是实线。 경우 问题是 Android 屏幕还具有笔划上限设置为`Square`。 这将扩展一半笔划宽度，从而导致填满间隙的所有短的划线。
+但是，还应该 Android 屏幕显示点线使用数组 {10，10} 改为直线是实线。 发生了什么情况？ 问题在于 Android 屏幕还具有 `Square`的笔划帽设置。 这将扩展一半笔划宽度，从而导致填满间隙的所有短的划线。
 
-若要获取解决此问题时使用的笔画上限`Square`或`Round`，必须减小的短划线长度是以数组的笔划长度 （有时会导致短划线的长度为 0），并提高笔划长度的间隙长度。 这是如何的最后三个短划线中的数组`Picker`计算在 XAML 文件中：
+若要在使用 `Square` 或 `Round`的笔划帽时解决此问题，必须将数组中的短划线长度减小（有时会导致虚线长度为0），并按笔划长度增加间隙长度。 这是计算 XAML 文件中 `Picker` 的最后三个短划线数组的方式：
 
 - {10，10} 将成为 {0，20} 的点线
 - {30，10} 将成为 {20、 20} 的虚线
 - {10、 10、 30、 10} 成为点线和虚线行 {0、 20、 20、 20}
 
-点线和虚线绘制笔画的行，UWP 屏幕所示的上限`Round`。 `Round`描边端点通常粗线条中提供的点和短划线最佳外观。
+UWP 屏幕显示 `Round`的笔划帽的虚线和虚线。 `Round` 描边帽通常在粗线中提供点和短划线的最佳外观。
 
-到目前为止，将没有提到这一点做的第二个参数的`SKPathEffect.CreateDash`方法。 此参数名为`phase`，它是指行开头的点划线模式内的偏移量。 例如，如果 dash 数组为 {10，10} 和`phase`是 10，则在行开头间隔而不是一个圆点。
+到目前为止，并未提及 `SKPathEffect.CreateDash` 方法的第二个参数。 此参数名为 "`phase`"，它是指线条开头的点-短划线模式内的偏移量。 例如，如果短划线数组为 {10，10} 并且 `phase` 为10，则该行以间隙而不是点开始。
 
-一个有趣的应用程序`phase`参数是动画。 **经过动画处理的临界点**页是类似于**Archimedean 螺旋**页上，不同之处在于[ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)该类进行动画处理`phase`参数使用Xamarin.Forms`Device.Timer`方法：
+动画中的 `phase` 参数有一个有趣的应用程序。 **动画螺旋线**页面类似于**Archimedean 螺旋线**页面，只不过[`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)类使用 Xamarin `Device.Timer` 方法对 `phase` 参数进行动画处理：
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage
@@ -213,7 +213,7 @@ public class AnimatedSpiralPage : ContentPage
 
 [![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

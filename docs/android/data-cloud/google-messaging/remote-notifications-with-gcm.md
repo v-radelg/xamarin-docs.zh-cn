@@ -43,7 +43,7 @@ _本演练逐步说明如何使用 Google Cloud Messaging 来实现 Xamarin Andr
 
 当客户端应用程序准备就绪时，我们将实现一个命令C#行应用程序，该应用程序通过 GCM 向我们的客户端应用程序发送推送通知。
 
-## <a name="walkthrough"></a>연습
+## <a name="walkthrough"></a>演练
 
 首先，让我们创建一个名为 **"** 的新的空解决方案。 接下来，让我们将新的 Android 项目添加到此解决方案，该解决方案基于**Android 应用程序**模板。 让我们调用此项目**ClientApp**。 （如果您不熟悉如何创建 Xamarin Android 项目，请参阅[Hello、android](~/android/get-started/hello-android/hello-android-quickstart.md)。）**ClientApp**项目将包含 Xamarin Android 客户端应用程序的代码，该应用程序通过 GCM 接收远程通知。
 
@@ -118,7 +118,7 @@ Android 应用程序必须配置有以下权限，然后才能接收来自 Googl
 </manifest>
 ```
 
-在上面的 XML 中，将*YOUR_PACKAGE_NAME*更改为客户端应用程序项目的包名称。 예: `com.xamarin.gcmexample`.
+在上面的 XML 中，将*YOUR_PACKAGE_NAME*更改为客户端应用程序项目的包名称。 例如 `com.xamarin.gcmexample`。
 
 ### <a name="check-for-google-play-services"></a>检查 Google Play Services
 
@@ -398,7 +398,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>通过 GCM 测试注册
 
-让我们完全重新生成并运行该应用程序。 如果成功接收到 GCM 的注册令牌，则应在 "输出" 窗口中显示注册令牌。 예를 들면 다음과 같습니다.:
+让我们完全重新生成并运行该应用程序。 如果成功接收到 GCM 的注册令牌，则应在 "输出" 窗口中显示注册令牌。 例如：
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2
@@ -501,7 +501,7 @@ SendNotification (message);
 
 让我们看看此 XML 中的每个设置的作用：
 
-|설정|설명|
+|设置|说明|
 |---|---|
 |`com.google.android.gms.gcm.GcmReceiver`|声明我们的应用程序实现了捕获和处理传入推送通知消息的 GCM 接收方。|
 |`com.google.android.c2dm.permission.SEND`|声明仅 GCM 服务器可以直接将消息发送到应用程序。|
@@ -599,7 +599,7 @@ namespace MessageSender
 
 然后，GCM 会将此消息转发到客户端应用。 让我们生成**MessageSender** ，并打开一个控制台窗口，可在其中通过命令行运行该窗口。
 
-### <a name="try-it"></a>시도해 보세요.
+### <a name="try-it"></a>试试看！
 
 现在，我们已准备好测试客户端应用程序。 如果你使用的是仿真程序，或者如果你的设备通过 Wi-fi 与 GCM 通信，则必须在防火墙上打开以下 TCP 端口，以便 GCM 消息获得：5228、5229和5230。
 
@@ -643,11 +643,11 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 请注意，如果应用程序被强制停止，将不再接收 GCM 消息。 若要在强制停止后恢复通知，必须手动重新启动应用。 有关此 Android 策略的详细信息，请参阅[在已停止的应用程序上启动控件](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)和此[堆栈溢出 post](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本演练详细介绍了在 Xamarin Android 应用程序中实施远程通知的步骤。 本文介绍了如何安装 GCM 通信所需的其他程序包，并介绍了如何配置应用程序权限以访问 GCM 服务器。
 其中提供了示例代码，该代码演示了如何检查是否存在 Google Play Services，如何实现注册意向服务和实例 ID 侦听器服务，该服务与 GCM 协商以获取注册令牌，以及如何实现 GCM 侦听器接收和处理远程通知消息的服务。 最后，我们实现了一个命令行测试程序，用于通过 GCM 将测试通知发送到客户端应用程序。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)

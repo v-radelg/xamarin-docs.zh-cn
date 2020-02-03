@@ -159,14 +159,14 @@ Google 的[上游消息](https://firebase.google.com/docs/cloud-messaging/xmpp-s
 
 [![查看 API 密钥](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
 
-## <a name="for-further-reading"></a>추가 정보
+## <a name="for-further-reading"></a>其他阅读材料
 
 - [Rfc 6120](https://tools.ietf.org/html/rfc6120)和[rfc 6121](https://tools.ietf.org/html/rfc6121)解释并定义了可扩展的消息传递协议（XMPP）。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本文提供 Google Cloud Messaging （GCM）的概述。 它介绍了用于在应用程序服务器和客户端应用程序之间识别和授权消息传递的各种凭据。 其中介绍了最常见的消息传递方案，并详细说明了向 GCM 注册应用程序以使用 GCM 服务的步骤。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [云消息传送](https://developers.google.com/cloud-messaging/)

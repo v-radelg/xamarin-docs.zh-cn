@@ -1,5 +1,5 @@
 ---
-title: Windows VM에서 Mac에서 실행 중인 Android 에뮬레이터에 연결할 수 있나요?
+title: 是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725076"
 ---
-# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Windows VM에서 Mac에서 실행 중인 Android 에뮬레이터에 연결할 수 있나요?
+# <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>是否可以从 Windows VM 连接到在 Mac 上运行的 Android 仿真器？
 
 若要从 Windows 虚拟机连接到 Mac 上运行的 Android Emulator，请执行以下步骤：
 
@@ -101,4 +101,4 @@ ms.locfileid: "76725076"
 本文档讨论了2016年3月的当前行为。 本文档中所述的技术不是适用于 Xamarin 的稳定测试套件的一部分，因此可能会在将来中断。
 
 如果您注意到该方法不再有效，或者您注意到了文档中的任何其他错误，请随意添加到下面论坛线索的讨论中： [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm)。
-감사합니다.
+谢谢！

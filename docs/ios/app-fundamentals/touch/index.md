@@ -26,18 +26,18 @@ iOS 在 `UITouch` 类中封装触控数据，可通过一系列 `UIResponder` �
 
 但是，有时你需要使用低级别的触摸处理，甚至跟踪多个手指，例如创建 finger 式程序。
 
-## <a name="sections"></a>섹션
+## <a name="sections"></a>部分
 
-- [iOS의 터치](touch-in-ios.md)
-- [연습: iOS에서 터치 사용](ios-touch-walkthrough.md)
-- [멀티 터치 추적](touch-tracking.md)
+- [iOS 中的触控](touch-in-ios.md)
+- [演练：在 iOS 中使用触控](ios-touch-walkthrough.md)
+- [多点触控跟踪](touch-tracking.md)
 
 本指南介绍了 iOS 中的触控。 若要深入了解如何在 ios 中使用 3D Touch 和 Haptic 反馈（在 iOS 9 和10中分别引入），请参阅下面的特定指南：
 
 - [3D Touch](~/ios/platform/3d-touch.md)
-- [햅틱 피드백 제공](~/ios/user-interface/ios-ui/haptic-feedback.md)
+- [提供 Haptic 反馈](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [iOS 触摸最终（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
 - [FingerPaint （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

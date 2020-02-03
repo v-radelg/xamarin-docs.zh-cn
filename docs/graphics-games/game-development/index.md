@@ -61,7 +61,7 @@ ms.locfileid: "76724757"
 
 自定义文件格式可能需要在加载时进行处理，并且需要自定义加载代码。
 
-### <a name="math"></a>수학
+### <a name="math"></a>数学
 
 许多游戏比非游戏应用程序需要更多的高级数学。 当然，数学的级别取决于游戏的复杂性。 通常，三维游戏需要的数学比2D 更多。 幸运的是，您随时都可以开始执行简单的游戏并了解自己的情况。 游戏开发可以很好地了解数学！
 
@@ -145,7 +145,7 @@ UrhoSharp 是一种跨平台的高级3D 和2D 引擎，可用于为应用程序�
 - **场景工具包**– Xamarin 还支持 Apple 的场景工具包框架，这简化了将3d 图形部署到 iOS 应用中的情况。 场景工具包也是 Apple 提供的技术，因此它具有上述用于 Sprite 工具包的集成和平台特定的注意事项。 有关场景工具包的详细信息，请参阅此文章： [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
 - **OpenTK –** OpenTK （代表开放工具工具包）提供对 iOS、Apple 和 Mac 硬件的低级别 OpenGL 访问。 有关 OpenTK 的详细信息，请参阅位于以下位置的主页： [https://opentk.net/](https://opentk.net/)
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [MonoGame 指南](~/graphics-games/monogame/index.md)
 - [UrhoSharp 指南](~/graphics-games/urhosharp/index.md)

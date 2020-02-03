@@ -54,7 +54,7 @@ ms.locfileid: "76725438"
 - 可以通过在命令行上将 "MONO_LOG_LEVEL" 添加到命令来增加输出，例如：
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- 您可以将本机调试器（`lldb`）附加到您的进程，以查看是否提供了更多信息（这需要付费许可证）。 예를 들어 다음을 수행합니다.
+- 您可以将本机调试器（`lldb`）附加到您的进程，以查看是否提供了更多信息（这需要付费许可证）。 例如，执行以下操作：
 
   1. 在终端中输入 `lldb MyApp.app/Contents/MacOS/MyApp`。
   2. 在终端中输入 `run`。
@@ -62,7 +62,7 @@ ms.locfileid: "76725438"
   4. 完成调试后退出。
 - 最后一种方法是，在 `Main` 方法（或根据需要在其他位置）调用 `NSApplication.Init` 之前，您可以将文本写入已知位置中的文件，以跟踪正在运行的启动步骤。
 
-## <a name="known-issues"></a>알려진 문제
+## <a name="known-issues"></a>已知问题
 
 以下部分介绍了已知问题及其解决方案。
 
@@ -80,7 +80,7 @@ ms.locfileid: "76725438"
 
 为此，可以打开 Xamarin 项目的选项，转到 " **Mac 构建** > **国际化**" 并查看 "**西部**" 国际化：
 
-[![빌드 옵션 편집](troubleshooting-images/issue01.png "빌드 옵션 편집")](troubleshooting-images/issue01-large.png#lightbox)
+[![编辑生成选项](troubleshooting-images/issue01.png "编辑生成选项")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>未能编译（mm5103）
 
@@ -118,16 +118,16 @@ Visual Studio for Mac 的最新版本已从**info.plist**编辑器中删除了 "
 
 ## <a name="filing-a-bug"></a>存档 bug
 
-고객 의견은 품질 향상에 큰 도움이 됩니다. 如果发现 Xamarin 的任何问题：
+您的反馈对于我们至关重要。 如果发现 Xamarin 的任何问题：
 
-- [문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues) 검색
-- GitHub 문제로 전환하기 전에 Xamarin 문제가 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)에서 추적되었습니다. 여기서 일치하는 문제를 검색해 보세요.
-- 일치하는 문제를 찾을 수 없는 경우 [GitHub 문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues/new)에서 새 문제를 제출하세요.
+- 搜索[问题存储库](https://github.com/xamarin/xamarin-macios/issues)
+- 切换到 GitHub 问题之前，会在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) 中跟踪 Xamarin 问题。 请在其中搜索匹配的问题。
+- 如果找不到匹配的问题，请在 [GitHub 问题存储库](https://github.com/xamarin/xamarin-macios/issues/new)中提交一个新问题。
 
-GitHub 문제는 모두 공용입니다. 설명 또는 첨부 파일을 숨길 수 없습니다.
+GitHub 的问题是完全公开的。 不能隐藏注释或附件。
 
-다음 정보를 가능한 많이 포함하세요.
+请尽可能多地包含以下内容：
 
-- 문제를 재현하는 간단한 예제. 문제를 재현할 수 있다면 **매우 유용합니다**.
-- 크래시의 전체 스택 추적.
-- 크래시 주변의 C# 코드.
+- 一个重现此问题的简单示例。 在可能的情况下，这非常有用。
+- 故障的完整堆栈跟踪。
+- 故障周围的 C# 代码。

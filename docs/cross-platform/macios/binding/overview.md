@@ -61,7 +61,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 <a name="objectivesharpie" />
 
-## <a name="objective-sharpie"></a>Objective Sharpie
+## <a name="objective-sharpie"></a>目标 Sharpie
 
 客观 Sharpie 是另一种独立的命令行工具，可帮助创建绑定的初始阶段。 它不会自行创建绑定，而是自动执行为目标本机库生成 API 定义的初始步骤。
 

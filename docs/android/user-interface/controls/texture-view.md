@@ -71,6 +71,6 @@ public class TextureViewActivity : Activity,
 
 若要使用 `TextureView`，必须启用硬件加速，默认情况下，它将在 API 级别14下启用。 此外，由于本示例使用了照相机，因此必须在**androidmanifest.xml**中设置 `android.permission.CAMERA` 权限和 `android.hardware.camera` 功能。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [TextureViewDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)/）

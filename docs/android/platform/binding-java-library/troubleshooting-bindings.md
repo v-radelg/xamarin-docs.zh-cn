@@ -1,5 +1,5 @@
 ---
-title: 바인딩 문제 해결
+title: 绑定疑难解答
 description: 本文总结了生成绑定时可能出现的多种常见错误，以及可能的原因和解决方法的建议方法。
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76723801"
 ---
-# <a name="troubleshooting-bindings"></a>바인딩 문제 해결
+# <a name="troubleshooting-bindings"></a>绑定疑难解答
 
 _本文总结了生成绑定时可能出现的多种常见错误，以及可能的原因和解决方法的建议方法。_
 
@@ -49,7 +49,7 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 
 - 模糊类的特征 &ndash; 特性的**类**包括：
 
-  - Class 名称中包含 **$** ，即 **$.class**
+  - 类名称包含一个 **$** ，即 **$. 类**
   - 类名称完全泄露小写字符，即**类**      
 
 - **`import` 未引用库的语句**&ndash; 识别未引用的库，并将这些依赖项添加到具有**ReferenceJar**或**EmbedddedReferenceJar**的**生成操作**的 Xamarin 绑定项目。
@@ -65,7 +65,7 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 
 此文件提供 Xamarin 正在尝试绑定的所有 Java Api 的列表。 此文件的内容可帮助识别任何缺少的类型或方法、重复的绑定。 尽管对此文件的检查非常繁琐且非常耗时，但它可以提供有关导致任何绑定问题的原因的线索。 例如， **api**可能会发现属性返回的类型不合适，或者有两种类型共享同一托管名称。
 
-## <a name="known-issues"></a>알려진 문제점
+## <a name="known-issues"></a>已知问题
 
 本节将列出一些常见错误消息或在尝试绑定 Android 库时出现的症状。
 
@@ -85,7 +85,7 @@ _本文总结了生成绑定时可能出现的多种常见错误，以及可能�
 
 绑定库生成器无法加载。JAR 库。
 
-#### <a name="possible-causes"></a>가능한 원인
+#### <a name="possible-causes"></a>可能的原因
 
 Some.Java 工具无法加载使用代码模糊处理的 JAR 库（通过工具（如 Proguard）。 由于我们的工具利用了 Java 反射和 ASM 字节代码工程库，因此，在 Android 运行时工具可以通过时，这些依赖工具可能会拒绝经过模糊处理的库。 解决此问题的方法是，手动绑定这些库，而不是使用绑定生成器。
 
@@ -105,7 +105,7 @@ Some.Java 工具无法加载使用代码模糊处理的 JAR 库（通过工具�
 
 - Java 允许从非公共类派生公共类，但 .NET 不支持此类。 由于绑定生成器不生成非公共类的绑定，因此无法正确生成派生类（如）。 若要解决此问题，请使用**metadata**中的 remove 节点删除这些派生类的元数据条目，或者修复使非公共类成为公共类的元数据。 尽管后一种解决方案将创建绑定以便生成C#源，但不应使用非公共类。
 
-  예를 들면 다음과 같습니다.:
+  例如：
 
   ```xml
   <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
@@ -237,14 +237,14 @@ return type of 'Java.Lang.Object'
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本文列出了与 Java 绑定相关的常见疑难解答问题，并解释了如何解决这些问题。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [库项目](https://developer.android.com/tools/projects/index.html#LibraryProjects)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [启用诊断输出](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output)
 - [适用于 Android 开发人员的 Xamarin](~/android/get-started/java-developers.md)
-- [JD-GUI](http://jd.benow.ca/)
+- [JD](http://jd.benow.ca/)

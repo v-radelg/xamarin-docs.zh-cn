@@ -181,7 +181,7 @@ tvOS 10 对核心映像框架进行了以下改进：
 - 增强了焦点 API，以支持除 `UIViews`之外的非查看项的焦点。 支持焦点的项_必须_实现 `IUIFocusItem` 接口。
 - 新的 `UIGraphicsRender` 类提供一个面向对象的方法，该方法通过 UIKit 呈现或核心图形创建位图或 Pdf，并替换弃用的 `UIGraphicsBeginImageContext` 方法。
 - 添加了 `UIUserInterfaceStyle` 类，以确定当前活动的用户界面主题（暗或浅）。
-- 添加了新的完全交互式的、基于对象的、可中断的动画支持，并将 van 链接到手势。 Pleas 请参阅 Apple 的[UIViewAnimating 协议参考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 类引用](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 协议参考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 类引用](https://developer.apple.com/reference/uikit/uicubictimingparameters)和有关详细信息, 请参阅 [UISpringTimingParameter 类](https://developer.apple.com/reference/uikit/uispringtimingparameters)。
+- 添加了新的完全交互式的、基于对象的、可中断的动画支持，并将 van 链接到手势。 Pleas 有关详细信息，请参阅 Apple 的[UIViewAnimating 协议参考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 类引用](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 协议参考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 类引用](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter 类引用](https://developer.apple.com/reference/uikit/uispringtimingparameters)。
 - 新的 `UIPreviewInteraction` 和 `UIPreviewInteractionDelegate` 允许应用为速览和 pop 操作提供自定义界面。
 - 新的 `UIAccessibilityCustomRotor` 类允许应用为诸如语音等辅助技术提供自定义的特定于上下文的功能。
 - 使用 `UIAccessibilityIsAssistiveTouchRunning` 和 `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 符号来确定是否启用了 AssistiveTouch。
@@ -195,7 +195,7 @@ tvOS 10 对核心映像框架进行了以下改进：
 - 使用新的 `UICloudSharingController` 和 `UICloudSharingControllerDelegate` 类启动 CloudKit 共享和修改其属性。
 - 利用预提取的单元，通过新的 `UICollectionViewDataSourcePrefetching` 委托改善 `UICollectionViews` 的滚动体验。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
-- [tvOS 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [TvOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

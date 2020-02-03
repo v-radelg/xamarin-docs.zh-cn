@@ -153,7 +153,7 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 
 ![](hello-watch-images/running.png "The app running in the Simulator")
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
-- [설정 및 설치](~/ios/watchos/get-started/installation.md)
-- [第一个 Watch 应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [设置和安装](~/ios/watchos/get-started/installation.md)
+- [第一次观看应用视频](https://blog.xamarin.com/your-first-watch-kit-app/)

@@ -482,6 +482,6 @@ ms.locfileid: "76725201"
 
 上述三个部分演示了在 iOS 中响应触控事件的不同方法：使用触控事件、内置笔势识别器或使用自定义笔势识别器。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [iOS 触摸最终（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)

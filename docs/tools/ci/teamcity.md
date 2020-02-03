@@ -39,7 +39,7 @@ TeamCity 安装有多个不同的排列。 下面是其中一些部分的列表�
 
 - **创建 TeamCity 项目**–在完成上述三个步骤之后，必须创建一个 TeamCity 项目，该项目将包含检索源代码、编译项目和将测试提交到 Xamarin Test Cloud 所需的所有元数据。
 
-## <a name="requirements"></a>요구 사항
+## <a name="requirements"></a>要求
 
 需要[App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/)的经验。
 
@@ -201,13 +201,13 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 8. 完成生成后，检查生成日志，并查看生成中是否存在需要注意的问题或警告。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本指南介绍了如何使用 TeamCity 生成 Xamarin 移动应用程序，然后将其提交到 Test Cloud。 我们讨论了如何创建生成脚本来自动执行生成过程。 生成脚本负责编译应用程序、提交到 Test Cloud 并等待结果
 
 然后，我们介绍了如何在 TeamCity 中创建一个项目，该项目将在每次开发人员提交代码时对生成进行排队，并调用生成脚本。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [正在准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [正在准备 Xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)

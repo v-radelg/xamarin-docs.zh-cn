@@ -40,7 +40,7 @@ Android 5.0 （棒糖形）引入了一种新的设计语言和*材料设计*，
 
 - Android 5.0 &ndash; 的**新 api**为多个网络支持添加了新 api，改进了蓝牙连接性，简化了存储管理，并更灵活地控制多媒体播放器和照相机设备。 新作业计划功能可用于在计划时间异步运行任务。 此功能有助于缩短电池使用时间，例如，在设备接通电源和充电时要执行的任务。
 
-## <a name="requirements"></a>요구 사항
+## <a name="requirements"></a>要求
 
 若要在基于 Xamarin 的应用中使用新的 Android 5.0 功能，需要满足以下要求：
 
@@ -48,7 +48,7 @@ Android 5.0 （棒糖形）引入了一种新的设计语言和*材料设计*，
 
 - 必须通过 Android SDK 管理器安装**Android SDK** &ndash; Android 5.0 （API 21）或更高版本。
 
-- **Java 开发人员工具包** &ndash; Xamarin.Android 需要 [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 如果要针对 API 级别24或更高版本进行开发, 则需要安装 Xamarin 1.8 或更高版本 (JDK 1.8 还支持早于24的 api 级别, 包括棒糖形)。 如果使用的是自定义控件或窗体预览器，则需要64位版本的 JDK 1.8。
+- **Java 开发人员工具包**&ndash; Xamarin 需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更高版本（如果要针对 api 级别24或更高版本进行开发）（JDK 1.8 还支持早于24的 Api 级别，包括棒糖形）。 如果使用的是自定义控件或窗体预览器，则需要64位版本的 JDK 1.8。
 
 如果要专门针对 API 级别23或更早版本进行开发，可以继续使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
@@ -125,7 +125,7 @@ Android 5.0 使用新的 Android 运行时（ART）作为默认运行时，而�
 
 有关在 Android 中创建通知的信息，请参阅[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
-## <a name="material-theme"></a>재질 테마
+## <a name="material-theme"></a>材料主题
 
 新的 Android 5.0 材料主题提供对 Android UI 的外观的丰富更改。 视觉对象现在使用 tactile 表面，这些图面采用了基于打印的设计的粗体图形、版式和明亮颜色。 下面的屏幕截图中描述了材料主题的示例：
 
@@ -139,7 +139,7 @@ Android 5.0 打招呼你的主屏幕显示在左侧。 中心屏幕截图是应�
 
 有关在 Xamarin Android 应用中使用材料主题功能的详细信息，请参阅[材料主题](~/android/user-interface/material-theme.md)。
 
-## <a name="animations"></a>애니메이션
+## <a name="animations"></a>Animations
 
 Android 5.0 提供触摸反馈动画、活动过渡动画和查看状态转换动画，使应用接口更直观地使用。 此外，Android 5.0 应用可以使用*显示效果*动画来隐藏或显示视图。 您可以使用*弯曲动作*设置来配置呈现速度和缓慢动画的方式。
 
@@ -374,11 +374,11 @@ Android 5.0 引入了新的高优先级通知演示文稿格式，称为 "*打�
 
 有关创建和启动包含最新 Android 5.0 功能的通知的详细信息，请参阅[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
-## <a name="new-apis"></a>새로운 API
+## <a name="new-apis"></a>新 API
 
 除了上述全新的外观功能，Android 5.0 还添加了新的 Api，用于扩展现有多媒体、存储和无线/连接功能的功能。 此外，Android 5.0 包括新的 Api，可提供对新作业计划程序功能的支持。
 
-### <a name="camera"></a>카메라
+### <a name="camera"></a>照相机
 
 Android 5.0 提供了几个新的 Api，用于增强照相机功能。 新的 `Android.Hardware.Camera2` 命名空间包含用于访问连接到 Android 设备的各个照相机设备的功能。 此外，`Android.Hardware.Camera2` 将每个照相机设备建模为管道：它接受捕获请求，捕获图像，然后输出结果。 此方法使应用能够将多个捕获请求排队到照相机设备上。
 
@@ -418,7 +418,7 @@ Android 5.0 引入了新的 `Android.Media.MediaController` 类，该类替换 `
 
 有关 Android 5.0 中新增的媒体播放控制功能的详细信息，请参阅[媒体](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
-### <a name="storage"></a>저장소
+### <a name="storage"></a>存储
 
 Android 5.0 更新存储访问框架，使应用程序能够更轻松地使用目录和文档：
 
@@ -442,19 +442,19 @@ Android 5.0 添加了以下适用于无线和连接的 API 增强功能：
 
 有关 Android 5.0 中新增的无线和连接 Api 的详细信息，请参阅[无线和连接](https://developer.android.com/preview/api-overview.html#Wireless)。
 
-### <a name="job-scheduling"></a>작업 일정 조정
+### <a name="job-scheduling"></a>作业计划
 
 Android 5.0 引入了一个新的 `JobScheduler` API，可通过将特定任务计划为仅在设备接通电源和充电时运行，来帮助用户最大限度地减少电池消耗。 此作业计划程序功能还可用于计划当条件更适合该任务时要运行的任务，例如，当设备通过 Wi-fi 网络而不是按流量计费的网络进行连接时，下载大文件。
 
 有关 Android 5.0 中新作业计划 Api 的详细信息，请参阅[计划作业](https://developer.android.com/preview/api-overview.html#JobScheduler)。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本文提供了适用于 Xamarin 的 5.0 Android 应用开发人员的重要新功能概述：
 
-- 재질 테마
+- 材料主题
 
-- 애니메이션
+- Animations
 
 - 查看阴影和提升
 
@@ -469,7 +469,7 @@ Android 5.0 引入了一个新的 `JobScheduler` API，可通过将特定任务�
 如果你不熟悉 Xamarin Android 开发，请阅读[安装和安装](~/android/get-started/installation/index.md)以帮助你开始安装 xamarin。
 [你好，android](~/android/get-started/hello-android/index.md)是了解如何创建 android 项目的绝佳简介。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Android L 开发者预览版](https://developer.android.com/preview/index.html)
 - [获取 Android SDK](https://developer.android.com/sdk/index.html#Other)

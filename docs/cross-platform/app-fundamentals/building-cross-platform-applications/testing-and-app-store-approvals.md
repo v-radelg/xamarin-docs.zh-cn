@@ -1,5 +1,5 @@
 ---
-title: 6부 - 테스트 및 App Store 승인
+title: 第 6 部分 - 测试和应用商店审批
 description: 本文档介绍如何在设备上测试跨平台应用程序，如何管理测试用例，自动执行测试，运行单元测试，以及如何完成应用提交过程。
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
@@ -13,9 +13,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76723617"
 ---
-# <a name="part-6---testing-and-app-store-approvals"></a>6부 - 테스트 및 App Store 승인
+# <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 测试和应用商店审批
 
-## <a name="testing"></a>테스트
+## <a name="testing"></a>测试
 
 许多应用程序（甚至是 Android 应用程序）在发布之前都必须传递审批过程;因此测试非常关键，可以确保您的应用程序进入市场（让您的客户独自成功）。 测试可以采用多种形式，从开发人员级单元测试到跨各种硬件管理 beta 测试。
 
@@ -33,7 +33,7 @@ ms.locfileid: "76723617"
 
 App Center 测试提供一种简单的方法来测试数百台不同设备上的 iOS 和 Android 应用程序。 有关详细信息，请参阅[准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)和[准备 xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
-### <a name="test-management"></a>Test Management
+### <a name="test-management"></a>测试管理
 
 在组织内测试应用程序或管理具有外部用户的测试版程序时，有两个难题：
 
@@ -48,7 +48,7 @@ App Center 测试提供一种简单的方法来测试数百台不同设备上的
 
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)可用于创建可在本地运行或上载到[App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/)的自动用户界面测试脚本。
 
-## <a name="unit-testing"></a>단위 테스트
+## <a name="unit-testing"></a>单元测试
 
 ### <a name="touchunit"></a>触控单元
 
@@ -79,7 +79,7 @@ Apple 和 Microsoft 仅在其平台上操作应用商店：应用商店和 Marke
 
 本部分的其余部分将讨论在没有任何短暂的情况下，应考虑的一些事项，以确保应用获得批准。
 
-### <a name="quality"></a>품질
+### <a name="quality"></a>质量
 
 这听起来很明显，但应用程序通常会被拒绝，因为这些应用程序不能达到一定级别的质量：毕竟，这就是特选存储在一开始就有批准过程的原因！
 

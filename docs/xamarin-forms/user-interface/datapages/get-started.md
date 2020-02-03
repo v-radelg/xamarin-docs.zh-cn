@@ -16,7 +16,7 @@ ms.locfileid: "76725593"
 ---
 # <a name="getting-started-with-datapages"></a>开始使用 DataPages
 
-[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
@@ -37,7 +37,7 @@ ms.locfileid: "76725593"
 
 ## <a name="2-add-theme-reference"></a>2. 添加主题引用
 
-在中**App.xaml**文件中，添加一个自定义`xmlns:mytheme`主题，并确保主题合并到应用程序的资源字典：
+在**app.xaml**文件中，添加主题的自定义 `xmlns:mytheme`，并确保将主题合并到应用程序的资源字典中：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -55,9 +55,9 @@ ms.locfileid: "76725593"
 
 ## <a name="3-add-a-xaml-page"></a>3. 添加 XAML 页
 
-将新的 XAML 页面添加到 Xamarin.Forms 应用程序，并*将基类更改*从`ContentPage`到`Xamarin.Forms.Pages.ListDataPage`。 这必须在 C# 和 XAML 中进行：
+向 Xamarin 应用程序添加新的 XAML 页，并将基类从 `ContentPage`*更改*为 `Xamarin.Forms.Pages.ListDataPage`。 这必须在 C# 和 XAML 中进行：
 
-**C# 文件**
+**C#文件**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -71,7 +71,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **XAML 文件**
 
-除了更改到的根元素之外`<p:ListDataPage>`的自定义命名空间`xmlns:p`还必须添加：
+除了将根元素更改为 `<p:ListDataPage>` 还必须添加 `xmlns:p` 的自定义命名空间：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,7 +87,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **应用程序子类**
 
-更改`App`类构造函数，以便`MainPage`设置为`NavigationPage`包含新`SessionDataPage`。 一个导航页*必须*使用。
+更改 `App` 类构造函数，以便将 `MainPage` 设置为包含新 `SessionDataPage`的 `NavigationPage`。 *必须*使用导航页。
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
@@ -95,10 +95,10 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 ## <a name="3-add-the-datasource"></a>3. 添加数据源
 
-删除`Content`元素并将其替换为`p:ListDataPage.DataSource`来填充的数据页。 在远程 Json 下面的示例从 URL 是正在加载数据文件。
+删除 `Content` 元素，并将其替换为 `p:ListDataPage.DataSource` 以填充包含数据的页面。 在远程 Json 下面的示例从 URL 是正在加载数据文件。
 
 > [!NOTE]
-> 预览*要求*`StyleClass` 特性来提供数据源的呈现提示。 `StyleClass="Events"`指的是在预览中预定义的包含样式的布局*硬编码*以匹配正在使用的 JSON 数据源。
+> 预览*要求*`StyleClass` 特性来提供数据源的呈现提示。 `StyleClass="Events"` 是指在预览中预定义的布局，其中包含与所使用的 JSON 数据源相匹配的*硬编码*样式。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -141,7 +141,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 这是因为预建的样式 **"事件"** 存在于浅色主题 NuGet 包中，并定义了与数据源匹配的样式（例如 "title"、"图像"、"表示器"）。
 
-"事件"`StyleClass`旨在显示`ListDataPage`具有一个自定义控件`CardView`Xamarin.Forms.Pages 中定义的控件。 `CardView`控件具有三个属性： `ImageSource`， `Text`，和`Detail`。 主题是硬编码要绑定的数据源 （从 JSON 文件中） 到显示这些属性的三个字段。
+生成 "Events" `StyleClass` 是为了显示 `ListDataPage` 控件，其中包含在 Xamarin. Forms 中定义的自定义 `CardView` 控件。 `CardView` 控件具有三个属性： `ImageSource`、`Text`和 `Detail`。 主题是硬编码要绑定的数据源 （从 JSON 文件中） 到显示这些属性的三个字段。
 
 ## <a name="5-customize"></a>5. 自定义
 
@@ -164,11 +164,11 @@ MainPage = new NavigationPage (new SessionDataPage ());
 </p:ListDataPage.DefaultItemTemplate>
 ```
 
-通过提供`DataTemplate`此代码将重写`StyleClass`，而是使用的默认布局`ListItemControl`。
+提供 `DataTemplate` 此代码将重写 `StyleClass`，而改用 `ListItemControl`的默认布局。
 
 [![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
 
-开发人员喜欢 C# 到 XAML 可以创建数据源绑定过 (请记住包括`using Xamarin.Forms.Pages;`语句):
+更喜欢C# XAML 的开发人员也可以创建数据源绑定（请记住要包含 `using Xamarin.Forms.Pages;` 语句）：
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
@@ -184,9 +184,9 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 
 在预览版本中，主题可能不能在运行时加载。 添加代码，如下所示在相关项目来修复此错误。
 
-**Android**
+**iOS**
 
-在中**AppDelegate.cs**添加以下行后 `LoadApplication`
+在**AppDelegate.cs**中的后面添加以下行 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -194,9 +194,9 @@ x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 ```
 
-**OWA(Outlook Web Access)**
+**Android**
 
-在中**MainActivity.cs**添加以下行后 `LoadApplication`
+在**MainActivity.cs**中的后面添加以下行 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -204,6 +204,6 @@ x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [DataPagesDemo 示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

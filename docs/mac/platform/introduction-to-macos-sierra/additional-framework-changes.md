@@ -1,5 +1,5 @@
 ---
-title: 추가 macOS Sierra 프레임워크 변경 내용
+title: 其他 macOS Sierra Framework 更改
 description: 本文档介绍 macOS Sierra 中引入的现有框架的小更改和增强功能。 它会检查加速框架、AppKit、AVFoundation、Core 数据、核心映像、基础等的更改。
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76724985"
 ---
-# <a name="additional-macos-sierra-framework-changes"></a>추가 macOS Sierra 프레임워크 변경 내용
+# <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra Framework 更改
 
 <a name="Accelerate-Framework-Enhancements" />
 
@@ -199,7 +199,7 @@ ms.locfileid: "76724985"
 - **意向框架**-此框架允许应用检查交互（如位置或用户操作），并根据该信息采取措施。
 - **SafariServices 框架**-此框架允许应用为 MacOS 和 IOS 开发 Safari （如内容阻止程序）的应用扩展。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
-- [Mac 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Mac 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [OS X 10.12 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

@@ -53,12 +53,12 @@ Android 4 包括几种新技术，使我们能够跨设备和应用程序共享�
 
 ICS 还不支持使用 x86 模拟器进行开发。 x86 模拟器仅支持 Android 2.3.3 （API 级别10）。 有关详细信息，请参阅[配置 X86 模拟器](~/android/get-started/installation/android-emulator/index.md)。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本文介绍了现在适用于 Android 4 的各种新技术。 我们回顾了新的用户界面功能，如*GridLayout*、 *PopupMenu*和*切换*小组件。 还介绍了一些用于控制系统 UI 的新支持，并介绍了如何使用*TextureView*。 然后我们讨论了各种新的共享技术。 我们介绍了*Android 横梁*如何让你在使用*NFC*的设备上共享信息，并讨论了新的*日历 API*，还演示了如何使用内置的*ShareActionProvider*。
 最后，我们探讨了如何使用*ContactsContract*提供程序访问用户配置文件数据。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [TextureViewDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
 - [CalendarDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)

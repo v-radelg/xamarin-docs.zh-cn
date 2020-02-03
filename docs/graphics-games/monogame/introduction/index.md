@@ -17,7 +17,7 @@ ms.locfileid: "76724672"
 
 _此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。 它介绍常见的游戏编程概念，如图形、输入、游戏实体和物理学。_
 
-本文介绍了用于制作跨平台游戏的 MonoGame API 技术。 有关平台的完整列表，请参阅 [MonoGame 网站](http://www.monogame.net/)。 本教程将使用 C＃ 代码示例，虽然 MonoGame 也完全可以使用F＃。
+本文介绍了用于制作跨平台游戏的 MonoGame API 技术。 有关完整的平台列表，请参阅[MonoGame 网站](http://www.monogame.net/)。 本教程将使用 C＃ 代码示例，虽然 MonoGame 也完全可以使用F＃。
 
 MonoGame 是一个跨平台的硬件加速API、提供图形、音频、游戏状态管理、输入以及用于导入资产的内容流水线。 与大多数游戏引擎不同，MonoGame 不提供或强加任何模式或项目结构。  虽然这意味着开发人员可以随意组织他们的代码，但这也意味着首次启动新项目时需要一些设置代码。
 
@@ -37,10 +37,10 @@ MonoGame 库旨在模仿 Microsoft XNA 库的功能和语法。  所有 MonoGame
 
 ## <a name="walkthrough-parts"></a>演练部分
 
-- [第 1 部分 – 创建跨平台 MonoGame 项目](~/graphics-games/monogame/introduction/part1.md)
-- [第 2 部分 – 实现 WalkingGame ](~/graphics-games/monogame/introduction/part2.md)
+- [第1部分-创建跨平台 MonoGame 项目](~/graphics-games/monogame/introduction/part1.md)
+- [第2部分-实现 WalkingGame](~/graphics-games/monogame/introduction/part2.md)
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [WalkingGame MonoGame 项目（示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
 - [NuGet 上的 MonoGame Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)

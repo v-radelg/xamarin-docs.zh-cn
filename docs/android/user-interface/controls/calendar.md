@@ -273,6 +273,6 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 正如您所看到的那样，Android 允许使用功能强大且易于访问的来检索和保存日历数据，从而使应用程序无缝集成日历功能。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [日历演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)

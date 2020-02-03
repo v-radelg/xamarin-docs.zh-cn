@@ -1,5 +1,5 @@
 ---
-title: iOS 9 호환성
+title: iOS 9 兼容性
 description: 即使您不打算直接将 iOS 9 功能添加到您的应用程序，您也应该用 Xamarin 的最新版本重新生成您的应用程序。
 ms.prod: xamarin
 ms.assetid: 69A05B0E-8A0A-489F-8165-B10AC46FAF3C
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725156"
 ---
-# <a name="ios-9-compatibility"></a>iOS 9 호환성
+# <a name="ios-9-compatibility"></a>iOS 9 兼容性
 
 _即使您不打算直接将 iOS 9 功能添加到您的应用程序，您也应该用 Xamarin 的最新版本重新生成您的应用程序。_
 
@@ -97,8 +97,8 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 
 **修复：** 这适用于 iOS 9，但有一种简单的解决方法，你可以在此期间自行应用：仅面向更高版本的项目中的 iOS 版本（在这种情况下，你可以尝试使用 iOS 7）。 其他框架可能会出现类似的问题，例如，WebKit 框架已在 iOS 8 中公开（因此面向 iOS 7 会导致此错误; 应以 iOS 8 为目标，以在应用中使用 WebKit）。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [iOS 9 兼容性发行信息](https://releases.xamarin.com/ios-hotfix-for-ios-9-preview-xcode-6/)
-- [iOS 9 소개](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
 - [将你的 Xamarin iOS 应用程序更新到 iOS9 （视频）](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

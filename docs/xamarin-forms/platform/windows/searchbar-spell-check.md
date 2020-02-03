@@ -16,9 +16,9 @@ ms.locfileid: "76723610"
 ---
 # <a name="searchbar-spell-check-on-windows"></a>Windows 上的 SearchBar 拼写检查
 
-[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-这通用 Windows 平台平台特定，使[`SearchBar`](xref:Xamarin.Forms.SearchBar)能够与拼写检查引擎进行交互。 设置使用在 XAML [ `SearchBar.IsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty)附加到属性`boolean`值：
+这通用 Windows 平台平台特定，使[`SearchBar`](xref:Xamarin.Forms.SearchBar)能够与拼写检查引擎进行交互。 它通过将[`SearchBar.IsSpellCheckEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty)附加属性设置为 `boolean` 值，在 XAML 中使用：
 
 ```xaml
 <ContentPage ...
@@ -40,21 +40,21 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 searchBar.On<Windows>().SetIsSpellCheckEnabled(true);
 ```
 
-`SearchBar.On<Windows>`方法指定仅将在通用 Windows 平台上运行此特定于平台的。 [ `SearchBar.SetIsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.SetIsSpellCheckEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.SearchBar},System.Boolean))方法，在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间，用于拼写检查器打开和关闭。 此外，`SearchBar.SetIsSpellCheckEnabled`方法可用于切换的拼写检查器通过调用[ `SearchBar.GetIsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.GetIsSpellCheckEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.SearchBar}))方法以返回指示是否启用拼写检查器：
+`SearchBar.On<Windows>` 方法指定此平台特定的仅在通用 Windows 平台上运行。 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间中的[`SearchBar.SetIsSpellCheckEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.SetIsSpellCheckEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.SearchBar},System.Boolean))方法会打开和关闭拼写检查器。 此外，`SearchBar.SetIsSpellCheckEnabled` 方法可用于通过调用[`SearchBar.GetIsSpellCheckEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.GetIsSpellCheckEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.SearchBar}))方法返回是否已启用拼写检查器来切换拼写检查器：
 
 ```csharp
 searchBar.On<Windows>().SetIsSpellCheckEnabled(!searchBar.On<Windows>().GetIsSpellCheckEnabled());
 ```
 
-结果是输入到该文本[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)可以进行拼写检查，使用不正确的拼写指定给用户：
+结果是，可以对输入到[`SearchBar`](xref:Xamarin.Forms.SearchBar)中的文本进行拼写检查，并向用户指示不正确的拼写：
 
 ![SearchBar 拼写检查平台特定](searchbar-spell-check-images/searchbar-spellcheck.png "SearchBar 拼写检查平台特定")
 
 > [!NOTE]
-> `SearchBar`类中[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间还具有[ `EnableSpellCheck` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.EnableSpellCheck*)并[ `DisableSpellCheck` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.DisableSpellCheck*)方法可用于启用和禁用上的拼写检查器`SearchBar`分别。
+> [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间中的 `SearchBar` 类还具有[`EnableSpellCheck`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.EnableSpellCheck*)和[`DisableSpellCheck`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.DisableSpellCheck*)方法，这些方法可分别用于启用和禁用 `SearchBar`上的拼写检查器。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [플랫폼별 만들기](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

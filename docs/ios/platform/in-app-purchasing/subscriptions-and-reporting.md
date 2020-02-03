@@ -44,7 +44,7 @@ ms.locfileid: "76725366"
 
 应使用服务器交付的产品工作流（请参阅*回执验证和服务器交付的产品*部分）来实施自动可续订订阅。
 
-#### <a name="shared-secret"></a>공유 암호
+#### <a name="shared-secret"></a>共享密钥
 
 验证服务器上的自动可续订订阅时，必须在 JSON 请求中使用应用内购买共享机密。 通过 iTunes Connect 创建/访问共享机密。
 
@@ -98,7 +98,7 @@ SKPaymentTransaction 对象不包括订阅术语–应为每个术语使用不�
 
 为了更轻松地测试订阅，在沙盒中进行测试时，它们的持续时间会压缩。 1周订阅每3分钟续订一次，1年订阅每小时续订一次。 在沙盒中进行测试时，订阅将自动续订最多6次。
 
-## <a name="reporting"></a>보고
+## <a name="reporting"></a>Reporting
 
 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）提供：   
 

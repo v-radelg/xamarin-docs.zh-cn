@@ -15,11 +15,11 @@ ms.locfileid: "76725276"
 ---
 # <a name="getting-started-with-macos"></a>MacOS 入门
 
-## <a name="what-you-will-need"></a>需要的内容
+## <a name="what-you-will-need"></a>所需的项目
 
 * 按照[目标入门-C](~/tools/dotnet-embedding/get-started/objective-c/index.md)指南中的说明进行操作。
 
-## <a name="hello-world"></a>Hello World
+## <a name="hello-world"></a>Hello world
 
 首先，在中C#生成一个简单的 hello world 示例。
 
@@ -40,7 +40,7 @@ public class MyNSView : NSTextView
 }
 ```
 
-프로젝트를 빌드합니다. 生成的程序集将另存为 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**。
+生成此项目。 生成的程序集将另存为 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**。
 
 ### <a name="bind-the-managed-assembly"></a>绑定托管程序集
 

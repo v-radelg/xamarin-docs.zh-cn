@@ -1,5 +1,5 @@
 ---
-title: 웹 서비스 소개
+title: Web 服务简介
 description: 本指南演示如何使用不同的 web 服务技术。 涉及的主题包括与 REST 服务、SOAP 服务和 Windows Communication Foundation 服务通信。
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76724779"
 ---
-# <a name="introduction-to-web-services"></a>웹 서비스 소개
+# <a name="introduction-to-web-services"></a>Web 服务简介
 
 _本指南演示如何使用不同的 web 服务技术。涉及的主题包括与 REST 服务、SOAP 服务和 Windows Communication Foundation 服务通信。_
 
@@ -25,17 +25,17 @@ _本指南演示如何使用不同的 web 服务技术。涉及的主题包括�
 > 在 iOS 9 中，应用传输安全（ATS）强制实施 internet 资源（如应用的后端服务器）与应用之间的安全连接，从而防止敏感信息的意外泄露。
 > 由于默认情况下构建适用于 iOS 9 应用程序中启用了 ATS，所有连接都将遵循 ATS 安全要求。 如果连接不能满足这些要求，它们将失败并出现异常。
 
-如果无法为 internet 资源使用 `HTTPS` 协议和安全通信，则可以选择退出 ATS。 这可以通过更新应用程序的实现**Info.plist**文件。 有关详细信息请参阅[应用程序传输安全](~/ios/app-fundamentals/ats.md)。
+如果无法为 internet 资源使用 `HTTPS` 协议和安全通信，则可以选择退出 ATS。 这可以通过更新应用的**info.plist**文件来实现。 有关详细信息，请参阅[应用传输安全性](~/ios/app-fundamentals/ats.md)。
 
 ## <a name="rest"></a>REST
 
 具象状态传输 (REST) 是用于构建 web 服务的体系结构样式。 REST 请求是通过发出 HTTP 使用 web 浏览器使用检索 web 页面，并将数据发送到服务器的同一 HTTP 谓词。 谓词是：
 
-- **获取**– 此操作用于从 web 服务中检索数据。
-- **开机自检**– 此操作用于 web 服务上创建新项的数据。
-- **放置**– 此操作用于更新 web 服务上的数据的项。
-- **修补程序**– 此操作用于通过一组指令描述有关应如何修改此项更新 web 服务上的数据的项。 在示例应用程序不使用此谓词。
-- **删除**– 此操作用于删除 web 服务上的数据的项。
+- **GET** –此操作用于从 web 服务检索数据。
+- **POST** –此操作用于在 web 服务中创建新的数据项。
+- **PUT** –此操作用于更新 web 服务上的数据项。
+- **修补程序**–此操作用于通过描述有关应如何修改项的一组说明来更新 web 服务上的数据项。 在示例应用程序不使用此谓词。
+- **删除**–此操作用于删除 web 服务上的数据项。
 
 遵守 REST 的 Api 被称为 RESTful Api，并使用定义的 web 服务：
 
@@ -53,7 +53,7 @@ REST 的简单性已帮助使其用于访问移动应用程序中的 web 服务�
 
 [MICROSOFT HTTP 客户端库](https://www.nuget.org/packages/Microsoft.Net.Http)提供了 `HttpClient` 类，该类用于通过 HTTP 发送和接收请求。 它提供用于发送 HTTP 请求以及从 URI 标识的资源接收 HTTP 响应的功能。 每个请求将作为异步操作发送。 有关异步操作的详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
-`HttpResponseMessage`类表示 HTTP 响应消息进行 HTTP 请求之后收到来自 web 服务。 它包含有关响应的信息，包括状态代码、标头和正文。 합니다 `HttpContent` 클래스를 나타내는 HTTP 본문 및 콘텐츠 헤더와 같은 `Content-Type` 고 `Content-Encoding`입니다. 可以读取内容，使用任一`ReadAs`方法，如`ReadAsStringAsync`和`ReadAsByteArrayAsync`根据数据的格式。
+`HttpResponseMessage` 类表示发出 HTTP 请求之后从 web 服务接收的 HTTP 响应消息。 它包含有关响应的信息，包括状态代码、标头和正文。 `HttpContent` 类表示 HTTP 正文和内容标头，如 `Content-Type` 和 `Content-Encoding`。 可以使用任何 `ReadAs` 方法读取内容，例如 `ReadAsStringAsync` 和 `ReadAsByteArrayAsync`，具体取决于数据的格式。
 
 有关 `HttpClient` 类的详细信息，请参阅[创建 HTTPClient 对象](~/xamarin-forms/data-cloud/web-services/rest.md)。
 
@@ -276,10 +276,10 @@ var result = doc.Root.Descendants("rxtermsProperties")
 
 SOAP 消息是包含以下元素的 XML 文档：
 
-- 名为的根元素*信封*，它标识为 SOAP 消息的 XML 文档。
-- 一个可选*标头*包含特定于应用程序的信息，例如身份验证数据的元素。 如果*标头*存在元素，则它必须是第一个子元素*信封*元素。
-- 所需*正文*包含适用于接收方的 SOAP 消息的元素。
-- 一个可选*容错*元素，用于指示错误消息。 如果*容错*元素不存在，必须为的子元素*正文*元素。
+- 一个名为 "*信封*" 的根元素，它将 XML 文档标识为 SOAP 消息。
+- 一个可选的*标头*元素，其中包含应用程序特定的信息，例如身份验证数据。 如果*标头*元素存在，则它必须是*信封*元素的第一个子元素。
+- 一个必需的*Body*元素，其中包含用于接收方的 SOAP 消息。
+- 用于指示错误消息的可选*错误*元素。 如果出现*错误*元素，则它必须是*Body*元素的子元素。
 
 SOAP 可以在许多传输协议，包括 HTTP、 SMTP、 TCP 和 UDP 上操作。 但是，一个 ASMX 服务可以仅通过 HTTP 操作。 Xamarin 平台支持标准 SOAP 1.1 实现通过 HTTP，并且这包括对很多标准的 ASMX 服务配置的支持。
 
@@ -301,15 +301,15 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>手动将代理添加到项目
 
-如果有一个使用兼容工具生成的现有代理，则当作为项目的一部分包含时，可以使用此输出。 在 Visual Studio for Mac 中，使用 "**添加文件 ...** " 用于添加代理的菜单选项。 此外，这需要使用 "**添加引用 ...** " 来显式引用*system.web* 。 대화 상자에서 추가합니다.
+如果有一个使用兼容工具生成的现有代理，则当作为项目的一部分包含时，可以使用此输出。 在 Visual Studio for Mac 中，使用 "**添加文件 ...** " 用于添加代理的菜单选项。 此外，这需要使用 "**添加引用 ...** " 来显式引用*system.web* 。 对话框中的字段。
 
 ### <a name="consuming-the-proxy"></a>使用代理
 
-生成的代理类提供用于使用 web 服务使用异步编程模型 (APM) 设计模式的方法。 在此模式中异步操作实现这两个方法名为*BeginOperationName*并*EndOperationName*，其中开始和结束异步操作。
+生成的代理类提供用于使用 web 服务使用异步编程模型 (APM) 设计模式的方法。 在此模式下，异步操作将作为名为*BeginOperationName*和*EndOperationName*的两个方法来实现，该方法用于开始和结束异步操作。
 
-*BeginOperationName*方法开始异步操作并返回一个对象，实现`IAsyncResult`接口。 在调用*BeginOperationName*，应用程序可以继续在调用线程上执行指令，同时异步操作在线程池线程。
+*BeginOperationName*方法开始异步操作并返回实现 `IAsyncResult` 接口的对象。 调用*BeginOperationName*之后，应用程序可以继续在调用线程上执行指令，同时异步操作在线程池线程上发生。
 
-每次调用*BeginOperationName*，应用程序还应调用*EndOperationName*来获取该操作的结果。 返回值*EndOperationName*同步 web 服务方法返回的类型相同。 다음 코드 예제는 이러한 예를 보여줍니다.
+对于每次调用*BeginOperationName*，应用程序还应调用*EndOperationName*来获取操作的结果。 *EndOperationName*的返回值与同步 web 服务方法返回的类型相同。 下面的代码示例演示了此示例：
 
 ```csharp
 public async Task<List<TodoItem>> RefreshDataAsync ()
@@ -324,7 +324,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 }
 ```
 
-任务并行库 (TPL) 可以简化使用 APM begin/end 方法对通过封装中相同的异步操作的过程`Task`对象。 这种封装提供的多个重载`Task.Factory.FromAsync`方法。 此方法创建一个 `Task`，该在 `TodoService.BeginGetTodoItems` 方法完成后执行 `TodoService.EndGetTodoItems` 方法，并使用 `null` 参数指示没有数据传入 `BeginGetTodoItems` 委托。 最后的值`TaskCreationOptions`枚举指定应使用的创建和执行任务的默认行为。
+任务并行库（TPL）可以通过将异步操作封装在同一 `Task` 对象中来简化使用 APM begin/end 方法对的过程。 此封装由 `Task.Factory.FromAsync` 方法的多个重载提供。 此方法创建一个 `Task`，该在 `TodoService.BeginGetTodoItems` 方法完成后执行 `TodoService.EndGetTodoItems` 方法，并使用 `null` 参数指示没有数据传入 `BeginGetTodoItems` 委托。 最后，`TaskCreationOptions` 枚举的值指定应使用任务的创建和执行的默认行为。
 
 有关 APM 的详细信息，请参阅 MSDN 上的[异步编程模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)和[TPL 和传统 .NET Framework 异步编程](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)。
 
@@ -332,16 +332,16 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 <a name="wcf" />
 
-## <a name="windows-communication-foundation-wcf"></a>WCF(Windows Communication Foundation)
+## <a name="windows-communication-foundation-wcf"></a>Windows Communication Foundation (WCF)
 
 WCF 是 Microsoft 的统一框架，用于生成面向服务的应用程序。 它允许开发人员构建安全、 可靠、 事务处理，且可互操作分布式应用程序。
 
 WCF 描述了与各种不同的约定，其中包括以下服务：
 
-- **数据协定**– 定义构成对其中一条消息的内容的基础的数据结构。
-- **消息协定搭配**– 撰写邮件从现有数据协定。
-- **错误协定**– 允许指定的自定义 SOAP 错误。
-- **服务协定**– 指定服务支持的操作，这些消息所需的与每个操作进行交互。 它们还指定可以与每个服务上的操作相关联的任何自定义错误行为。
+- **数据协定**–定义构成消息中内容的基础的数据结构。
+- **消息协定**–基于现有数据协定撰写消息。
+- **故障协定**–允许指定自定义 SOAP 错误。
+- **服务协定**–指定服务支持的操作，以及与每个操作交互所需的消息。 它们还指定可以与每个服务上的操作相关联的任何自定义错误行为。
 
 ASP.NET Web 服务 (ASMX) 和 WCF 之间的差异，但务必要了解 WCF 支持的相同功能提供的 ASMX 服务 – 通过 HTTP 的 SOAP 消息。
 
@@ -350,9 +350,9 @@ ASP.NET Web 服务 (ASMX) 和 WCF 之间的差异，但务必要了解 WCF 支�
 
 ### <a name="generating-a-proxy"></a>生成代理
 
-一个*代理*必须生成以使用 WCF 服务，允许应用程序连接到服务。 代理是通过使用以定义的方法和关联的服务配置的服务元数据构造的。 此元数据中生成的 web 服务的 Web 服务描述语言 (WSDL) 文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。
+必须生成*代理*以使用 WCF 服务，该服务允许应用程序连接到服务。 代理是通过使用以定义的方法和关联的服务配置的服务元数据构造的。 此元数据中生成的 web 服务的 Web 服务描述语言 (WSDL) 文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。
 
-创建的代理帐户在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 的替代方法是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 有关详细信息，请参阅[ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
+创建的代理帐户在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 的替代方法是使用 ServiceModel Metadata Utility Tool (svcutil.exe)。 有关详细信息，请参阅 " [svcutil.exe" 元数据实用工具（）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -379,15 +379,15 @@ binding.ReceiveTimeout = timeout;
 client = new Service1Client (binding, new EndpointAddress ("http://192.168.1.100/Service1.svc"));
 ```
 
-使用绑定指定传输、 编码和协议详细信息所需的应用程序和服务彼此通信。 `BasicHttpBinding`指定将通过 HTTP 传输协议发送文本编码的 SOAP 消息。 指定终结点地址可以连接到 WCF 服务的不同实例应用程序，前提是有多个已发布的实例。
+使用绑定指定传输、 编码和协议详细信息所需的应用程序和服务彼此通信。 `BasicHttpBinding` 指定将通过 HTTP 传输协议发送文本编码的 SOAP 消息。 指定终结点地址可以连接到 WCF 服务的不同实例应用程序，前提是有多个已发布的实例。
 
 ### <a name="consuming-the-proxy"></a>使用代理
 
-生成的代理类提供用于使用 web 服务使用异步编程模型 (APM) 设计模式的方法。 在此模式下，异步操作实现这两个方法名为*BeginOperationName*并*EndOperationName*，其中开始和结束异步操作。
+生成的代理类提供用于使用 web 服务使用异步编程模型 (APM) 设计模式的方法。 在此模式下，异步操作作为名为*BeginOperationName*和*EndOperationName*的两个方法实现，该方法用于开始和结束异步操作。
 
-*BeginOperationName*方法开始异步操作并返回一个对象，实现`IAsyncResult`接口。 在调用*BeginOperationName*，应用程序可以继续在调用线程上执行指令，同时异步操作在线程池线程。
+*BeginOperationName*方法开始异步操作并返回实现 `IAsyncResult` 接口的对象。 调用*BeginOperationName*之后，应用程序可以继续在调用线程上执行指令，同时异步操作在线程池线程上发生。
 
-每次调用*BeginOperationName*，应用程序还应调用*EndOperationName*来获取该操作的结果。 返回值*EndOperationName*同步 web 服务方法返回的类型相同。 다음 코드 예제는 이러한 예를 보여줍니다.
+对于每次调用*BeginOperationName*，应用程序还应调用*EndOperationName*来获取操作的结果。 *EndOperationName*的返回值与同步 web 服务方法返回的类型相同。 下面的代码示例演示了此示例：
 
 ```csharp
 public async Task<List<TodoItem>> RefreshDataAsync ()
@@ -402,7 +402,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 }
 ```
 
-任务并行库 (TPL) 可以简化使用 APM begin/end 方法对通过封装中相同的异步操作的过程`Task`对象。 这种封装提供的多个重载`Task.Factory.FromAsync`方法。 此方法创建一个 `Task`，该在 `TodoServiceClient.BeginGetTodoItems` 方法完成后执行 `TodoServiceClient.EndGetTodoItems` 方法，并使用 `null` 参数指示没有数据传入 `BeginGetTodoItems` 委托。 最后的值`TaskCreationOptions`枚举指定应使用的创建和执行任务的默认行为。
+任务并行库（TPL）可以通过将异步操作封装在同一 `Task` 对象中来简化使用 APM begin/end 方法对的过程。 此封装由 `Task.Factory.FromAsync` 方法的多个重载提供。 此方法创建一个 `Task`，该在 `TodoServiceClient.BeginGetTodoItems` 方法完成后执行 `TodoServiceClient.EndGetTodoItems` 方法，并使用 `null` 参数指示没有数据传入 `BeginGetTodoItems` 委托。 最后，`TaskCreationOptions` 枚举的值指定应使用任务的创建和执行的默认行为。
 
 有关 APM 的详细信息，请参阅 MSDN 上的[异步编程模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)和[TPL 和传统 .NET Framework 异步编程](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)。
 
@@ -438,11 +438,11 @@ client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-在上述示例中，如果您收到消息 "trampolines of 类型 0"，则可以通过将 `–aot “trampolines={number of trampolines}”` 参数添加到生成中来增加类型 0 trampolines 的数目。 자세한 내용은 [문제 해결](~/ios/troubleshooting/troubleshooting.md#trampolines)을 참조하세요.
+在上述示例中，如果您收到消息 "trampolines of 类型 0"，则可以通过将 `–aot “trampolines={number of trampolines}”` 参数添加到生成中来增加类型 0 trampolines 的数目。 有关详细信息，请参阅 [故障排除](~/ios/troubleshooting/troubleshooting.md#trampolines)。
 
 有关 HTTP 基本身份验证的详细信息，请参阅对[RESTful Web 服务进行身份验证](~/xamarin-forms/data-cloud/authentication/rest.md)。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Xamarin 中的 Web 服务](~/xamarin-forms/data-cloud/index.yml)
 - [Svcutil.exe 元数据实用工具（）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

@@ -83,7 +83,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 iOS 9 改进使用户可以通过 Safari 页面左上角提供的 "后退" 按钮轻松返回到应用。
 
-## <a name="app-transport-security"></a>앱 전송 보안
+## <a name="app-transport-security"></a>应用传输安全性
 
 应用传输安全性或*ATS*是由 Apple 在 iOS 9 中引入的，以确保所有 internet 通信都符合安全连接最佳实践。
 
@@ -97,7 +97,7 @@ iOS 9 改进使用户可以通过 Safari 页面左上角提供的 "后退" 按�
 > [Apple 的 `UIWebView` 文档](https://developer.apple.com/documentation/uikit/uiwebview)建议应用应改用[`WKWebView`](#wkwebview) 。
 
 > [!IMPORTANT]
-> Xamarin.Forms를 사용하는 동안 `UIWebView` 사용 중단 경고(ITMS-90809)와 관련된 리소스를 찾는 경우 [Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) 설명서를 참조하세요.
+> 使用 Xamarin.Forms 时，若要查看关于 `UIWebView` 的弃用警告 (ITMS-90809) 的相关资源，请参阅 [Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) 文档。
 
 `UIWebView` 是 Apple 在您的应用程序中提供 web 内容的传统方法。 它已在 iOS 2.0 中发布，并已在8.0 后弃用。
 
@@ -115,6 +115,6 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 [![ScalesPagesToFit 的效果](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Webview （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

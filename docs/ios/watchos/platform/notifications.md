@@ -16,13 +16,13 @@ ms.locfileid: "76725067"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 中 Xamarin 的通知
 
-如果包含 iOS 应用程序支持它们，watch 应用可以接收通知。 没有内置通知处理，以便不这样做*需要*添加其他通知支持下述，但是如果你想要自定义通知行为和外观请继续阅读。
+如果包含 iOS 应用程序支持它们，watch 应用可以接收通知。 存在内置的通知处理，因此你无*需*添加下面所述的其他通知支持，但是，如果你想要自定义通知行为和外观，请继续阅读。
 
-请参阅[iOS 通知](~/ios/platform/user-notifications/deprecated/index.md)将通知支持添加到你的解决方案中的 iOS 应用程序的详细信息的文档。
+有关将通知支持添加到解决方案中的 iOS 应用的详细信息，请参阅[IOS 通知](~/ios/platform/user-notifications/deprecated/index.md)文档。
 
 ## <a name="creating-notification-controllers"></a>创建通知控制器
 
-情节提要上通知控制器有一种特殊类型的 segue 触发它们。 当您将一个新**通知界面控制器**到情节提要上，它会自动将具有附加 segue:
+情节提要上通知控制器有一种特殊类型的 segue 触发它们。 将新的**通知界面控制器**拖动到情节提要时，它会自动连接到 segue：
 
 ![](notifications-images/notification-storyboard1.png "A new Notification Interface Controller with a segue attached")
 
@@ -38,7 +38,7 @@ ms.locfileid: "76725067"
 
 - 系统定义的**简短**无滚动静态视图。
 
-- **长时间看**-滚动的由你定义的可自定义视图 ！ 可以指定一个更简单的、 静态版本和更复杂的动态版本。
+- 你定义的**长时间**可滚动、可自定义的视图！ 可以指定一个更简单的、 静态版本和更复杂的动态版本。
 
 ### <a name="short-look-notification-controller"></a>短查看通知控制器
 
@@ -50,7 +50,7 @@ ms.locfileid: "76725067"
 
 操作系统决定是否显示基于许多因素的静态或动态视图。 必须提供静态接口，并可以选择性地还包括了动态接口以通知。
 
-#### <a name="static"></a>Static
+#### <a name="static"></a>静态
 
 静态视图应该既简单又快速显示。
 
@@ -68,34 +68,34 @@ ms.locfileid: "76725067"
 
 有关如何生成本地通知的示例，请参阅[IOS 通知演练](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)。
 
-必须具有本地通知`AlertTitle`设置为显示在 Apple Watch-`AlertTitle`短外观界面中显示字符串。 同时`AlertTitle`并`AlertBody`显示在通知列表; 和`AlertBody`长时间看界面中显示。
+本地通知必须将 `AlertTitle` 设置为显示在 Apple Watch 上-`AlertTitle` 的字符串显示在 "简略外观" 界面中。 `AlertTitle` 和 `AlertBody` 都显示在 "通知" 列表中;并且 `AlertBody` 显示在 "长期" 界面中。
 
 此屏幕截图显示在 "通知" 列表中显示的 `AlertTitle`，并且 `AlertBody` 显示在 "长外观" 界面中：
 
-![](notifications-images/watch-notificationslist-sml.png "此屏幕截图显示在 "通知" 列表中显示的 AlertTitle") ![](notifications-images/watch-notificationcontroller-sml.png "显示在 "长外观" 界面中的 AlertBody")
+![](notifications-images/watch-notificationslist-sml.png "此屏幕截图显示在 "通知" 列表中显示的 AlertTitle")![](notifications-images/watch-notificationcontroller-sml.png "显示在 "长外观" 界面中的 AlertBody")
 
 ## <a name="testing-notifications"></a>测试通知
 
-通知 （本地和远程） 可以仅正确测试在设备上，但可以使用模拟它们 **.json** iOS 模拟器中的文件。
+只能在设备上正确测试通知（本地和远程），但可以在 iOS 模拟器中使用**json**文件对其进行模拟。
 
 ### <a name="testing-on-apple-watch"></a>在 Apple Watch 上进行测试
 
-在测试时在 Apple Watch 上的通知，请记住[Apple 的文档](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)指出：
+在 Apple Watch 上测试通知时，请记住[Apple 的文档](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)会指出以下内容：
 
 > 当用户的 iPhone 上的一个应用程序的本地或远程通知到达时，iOS 将决定是否在 iPhone 上或在 Apple Watch 上显示该通知。
 
-这这一事实 alluding 该 iOS 决定是否在 iPhone 或 Watch 上将出现一条通知。 如果配对的 iPhone 激活时收到通知，通知是有可能显示在 iPhone 上并*不*路由到手表。
+这这一事实 alluding 该 iOS 决定是否在 iPhone 或 Watch 上将出现一条通知。 如果在收到通知时，配对的 iPhone 处于活动状态，则可能会在 iPhone 上显示通知，而*不*会将其路由到手表。
 
 若要确保 watch 上会显示通知，请关闭 iPhone 屏幕 （一次按电源按钮） 或让其进入睡眠状态。 如果配对的监视处于范围内，已通电并且佩戴手腕上，通知会存在路由和监视文件 （伴随细微） 上显示。
 
 ### <a name="testing-on-the-ios-simulator"></a>在 iOS 模拟器上测试
 
-您*必须*在 iOS 模拟器中测试通知模式时提供测试 JSON 有效负载。 在中设置路径**自定义执行参数**窗口在 Visual Studio for mac。
+在 iOS 模拟器中测试通知模式时，*必须*提供测试 JSON 有效负载。 在 Visual Studio for Mac 的 "**自定义执行参数**" 窗口中设置路径。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-监视扩展设置为时，visual Studio for Mac 将显示其他选项**启动项目**。
-右键单击监视扩展项目并选择**运行与 > 自定义参数...** :
+当监视扩展设置为**启动项目**时，Visual Studio for Mac 将显示其他选项。
+右键单击 "监视扩展" 项目，然后选择 "**运行 > 自定义参数 ...** "：
 
 [![](notifications-images/runwith-customparams-sml.png "Running with Custom Properties")](notifications-images/runwith-customparams.png#lightbox)
 
@@ -105,11 +105,11 @@ ms.locfileid: "76725067"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要编辑的监视扩展中右键单击 Visual Studio 设置测试通知有效负载**项目属性**。 转到**调试**部分，并从列表中 （它会自动列出项目中包含的所有 JSON 文件） 选择通知 JSON 文件。
+若要在 Visual Studio 中设置测试通知负载，请右键单击监视扩展以编辑**项目属性**。 中转到 "**调试**" 部分，并从列表中选择一个通知 json 文件（它会自动列出项目中包含的所有 json 文件）。
 
 [![](notifications-images/runwith-execargs-sml-vs.png "Select a notifications JSON file")](notifications-images/runwith-execargs-vs.png#lightbox)
 
-监视扩展时**启动项目**，Visual Studio 将显示其他选项，如下所示。 选择其中一个**通知**选项以在启动监视应用程序**通知**模式 （使用属性窗口中选择的 JSON 文件）：
+当监视扩展为**启动项目**时，Visual Studio 将显示其他选项，如下所示。 选择其中一个**通知**选项以在**通知**模式下启动 "监视应用" （使用在 "属性" 窗口中选择的 JSON 文件）：
 
 ![](notifications-images/runwith-vs.png "The Device menu")
 
@@ -119,11 +119,11 @@ ms.locfileid: "76725067"
 
 ![](notifications-images/notification-debug-sml.png "An example notification")
 
-它也是可以使用[命令行](~/ios/watchos/troubleshooting.md#command_line)启动 iOS 模拟器。
+还可以使用[命令行](~/ios/watchos/troubleshooting.md#command_line)启动 iOS 模拟器。
 
 ### <a name="example-notification-payload"></a>示例通知有效负载
 
-在中[监视工具包目录](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)示例有是 JSON 文件的示例有效负载**NotificationPayload.json** （列举如下）。
+在 "[监视工具包目录](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)" 示例中，有一个示例负载 JSON 文件**NotificationPayload** （如下所列）。
 
 ```json
 {
@@ -144,7 +144,7 @@ ms.locfileid: "76725067"
     }
 ```
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Apple Watch 工具包通知文档](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)
+- [Apple 的手表套件通知文档](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

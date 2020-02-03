@@ -233,6 +233,6 @@ ms.locfileid: "76725001"
 
  [通过按钮跨越两列 ![GridLayoutDemo 屏幕快照](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [GridLayoutDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)

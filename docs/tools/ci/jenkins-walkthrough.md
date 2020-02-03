@@ -1,5 +1,5 @@
 ---
-title: Xamarin에서 Jenkins 사용
+title: 结合使用 Jenkins 和 Xamarin
 description: 本文档介绍了如何使用 Jenkins 与 Xamarin 应用程序进行持续集成。 它讨论了如何安装、配置和使用 Jenkins。
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725375"
 ---
-# <a name="using-jenkins-with-xamarin"></a>Xamarin에서 Jenkins 사용
+# <a name="using-jenkins-with-xamarin"></a>结合使用 Jenkins 和 Xamarin
 
 _本指南说明如何将 Jenkins 设置为持续集成服务器，并自动编译使用 Xamarin 创建的移动应用程序。它介绍了如何在 OS X 上安装 Jenkins，如何对其进行配置，以及如何设置在将更改提交到源代码管理系统时编译 Xamarin 和 Xamarin Android 应用程序的作业。_
 
@@ -32,7 +32,7 @@ _本指南说明如何将 Jenkins 设置为持续集成服务器，并自动编�
 
 本指南将指导如何设置涵盖每个点的 Jenkins 服务器。 最后，我们应该非常了解如何设置和配置 Jenkins，以便为 Xamarin mobile 项目创建 IPA 和 APK。
 
-## <a name="requirements"></a>요구 사항
+## <a name="requirements"></a>要求
 
 理想的生成服务器是专门用于构建和测试应用程序的唯一目的的独立计算机。 专用计算机可确保其他角色（如 web 服务器）可能需要的项目不会污染生成。 例如，如果生成服务器也充当 web 服务器，则 web 服务器可能需要某些公用库的冲突版本。 由于此冲突，web 服务器可能无法正常工作，或者 Jenkins 可能会创建部署到用户时不工作的生成。
 
@@ -99,7 +99,7 @@ Jenkins 运行后，你可能想要将其设置为登录项，以便在每次用
 
 ### <a name="installing-plugins"></a>安装插件
 
-Jenkins 安装程序完成后，它将开始 Jenkins 并启动 web 浏览器，并 http://localhost:8080 URL，如以下屏幕截图中所示：
+Jenkins 安装程序完成后，它将开始 Jenkins 并启动 web 浏览器，并 http://localhost:8080URL，如以下屏幕截图中所示：
 
 [![](jenkins-walkthrough-images/image10.png "8080, as shown in this screenshot")](jenkins-walkthrough-images/image10.png#lightbox)
 
@@ -142,7 +142,7 @@ Jenkins 支持 Git，无需任何额外的插件。
 为了使 macOS 工作站与 TFS 服务器进行交互，必须在工作站上安装[Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/) 。 Team Explorer Everywhere 是 Microsoft 提供的一套工具，其中包括用于访问 TFS 的跨平台命令行客户端。 可以从 Microsoft 下载 Team Explorer Everywhere，并通过三个步骤进行安装：
 
 1. 将存档文件解压缩到用户帐户可以访问的目录。 例如，你可以将文件解压缩到 **~/tee**。
-2. 将 shell 或系统路径配置为包含一个文件夹，该文件夹包含上述第一步中解压缩的文件。 예를 들어 입니다.
+2. 将 shell 或系统路径配置为包含一个文件夹，该文件夹包含上述第一步中解压缩的文件。 例如，应用于对象的
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
@@ -341,7 +341,7 @@ $WORKSPACE/[PROJECT NAME]/bin/Release
 
 这两个命令都需要命令行参数，这些参数可能与项目不同。 此外，其中的某些命令行参数是在运行生成时不应显示在控制台输出中的密码。 我们会在环境变量中存储某些命令行参数。 下表描述了签名和/或 zip 对齐所需的环境变量：
 
-|环境变量|설명|
+|环境变量|说明|
 |--- |--- |
 |KEYSTORE_FILE|这是用于对 APK 进行签名的密钥存储的路径|
 |KEYSTORE_ALIAS|用于对 APK 进行签名的密钥存储中的密钥。|
@@ -389,11 +389,11 @@ zipalign -f -v 4 $SIGNED_APK $FINAL_APK
 
 可以使用 shell 命令将自动测试提交到 Test Cloud。 有关在 Xamarin Test Cloud 中设置测试运行的详细信息，请参阅[准备 Xamarin Android 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)和[准备 xamarin iOS 应用](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 在本指南中，我们在 macOS 上引入了 Jenkins 作为生成服务器，并将其配置为编译和准备 Xamarin 移动应用程序以供发布。 我们在 macOS 计算机上安装了 Jenkins 以及多个插件来支持生成过程。 我们创建并配置了一个作业，该作业将从 TFS 或 Git 拉取代码，然后将该代码编译为发布就绪应用程序。 我们还探讨了两种不同的方法来安排作业的运行时间。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
-- [연속 통합](~/tools/ci/index.md)
-- [App Center 테스트](https://docs.microsoft.com/appcenter/test-cloud/)
+- [持续集成](~/tools/ci/index.md)
+- [应用中心测试](https://docs.microsoft.com/appcenter/test-cloud/)

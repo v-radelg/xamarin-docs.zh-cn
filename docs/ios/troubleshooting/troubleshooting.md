@@ -287,7 +287,7 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 ## <a name="error-mtouch-failed-with-no-output"></a>错误 "mtouch 失败，无输出"
 
 当存储解决方案或项目的项目名称或目录包含空格时，Xamarin 和 Visual Studio for Mac 的当前版本会失败。
-이 문제를 해결하려면
+解决此问题的步骤：
 
 - 确保你的项目或其中存储它的目录都包含空格。
 - 在项目 "主要设置" 中，确保项目名称不包含任何空格。
@@ -309,7 +309,7 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 
 （由 Ed Anuff 提供）
 
-다음 단계를 수행하십시오.
+执行以下步骤:
 
 - 将 iPhone Build 中的 SDK 版本更改为3.2 或 iTunes connect 将在上传时拒绝它，因为它看到使用小于3.2 的 SDK 版本生成的 iPad 兼容的应用
 - 为项目创建自定义 info.plist，并在其中将 MinimumOSVersion 显式设置为3.0。   这将覆盖 Xamarin 设置的 MinimumOSVersion 3.2 值。   如果未执行此操作，应用将无法在 iPhone 上运行。

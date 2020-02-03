@@ -1,5 +1,5 @@
 ---
-title: watchOS 3 소개
+title: watchOS 3 简介
 description: 本文介绍适用于 Xamarin 开发人员的 watchOS 3 中提供的所有新的和修改的 Api 和功能。
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725285"
 ---
-# <a name="introduction-to-watchos-3"></a>watchOS 3 소개
+# <a name="introduction-to-watchos-3"></a>watchOS 3 简介
 
 _本文介绍适用于 Xamarin 开发人员的 watchOS 3 中提供的所有新的和修改的 Api 和功能。_
 
@@ -53,7 +53,7 @@ Apple 在 watchOS 3 中添加了几个新的 Api 和服务，并提供了对现�
 
 <a name="Background-Tasks" />
 
-## <a name="background-tasks"></a>백그라운드 작업
+## <a name="background-tasks"></a>后台任务
 
 watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新其信息，确保在打开该应用程序之前，它具有用户需要的内容。
 
@@ -100,7 +100,7 @@ watchOS 3 包括之前无法使用的多个现有 Apple framework，如：
 
 <a name="Proactive-Suggestions" />
 
-## <a name="proactive-suggestions"></a>자동 제안
+## <a name="proactive-suggestions"></a>主动建议
 
 watchOS 3 允许应用在给定上下文中主动向用户显示信息。 为了支持此功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)包含 `MapItem` 属性，该属性使应用程序能够提供位置信息供其他应用稍后使用。
 
@@ -138,7 +138,7 @@ WatchOS 3 中引入的用户通知框架支持向 Apple Watch 传递本地和远
 
 ## <a name="watch-connectivity-framework-enhancements"></a>观看连接框架增强功能
 
-[WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession) 类的新`HasContentPending`属性指示会话已在后台接收需要处理的数据。 和 `RemainingComplicationUserInfoTransfers` 属性返回 iOS 应用程序可更新其 watchOS 的剩余时间。
+[WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession)类的新 `HasContentPending` 属性指示会话已在后台接收需要处理的数据。 和 `RemainingComplicationUserInfoTransfers` 属性返回 iOS 应用程序可更新其 watchOS 的剩余时间。
 
 若要了解详细信息，请参阅我们的[背景任务](~/ios/watchos/platform/background-tasks.md)指南。
 
@@ -162,7 +162,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 <a name="Workout-App-Enhancements" />
 
-## <a name="workout-app-enhancements"></a>운동 앱 고급 기능
+## <a name="workout-app-enhancements"></a>测验应用增强功能
 
 新到 watchOS 3，健身相关应用可以在 Apple Watch 的后台运行。 若要启用此功能（并获取对 HealthKit 数据的访问权限），应用必须在 `Info.plist` 文件中包含值为 `workout-processing`的 `WKBackgroundModes` 项。
 
@@ -180,7 +180,7 @@ watchOS 3 包含对 WatchKit 框架的几项增强功能，包括以下内容：
 
 <a name="Deprecated-APIs" />
 
-## <a name="deprecated-apis"></a>사용되지 않는 API
+## <a name="deprecated-apis"></a>弃用的 API
 
 WatchOS 3 中已弃用以下 Api：
 
@@ -188,7 +188,7 @@ WatchOS 3 中已弃用以下 Api：
 
 有关弃用功能和更改的完整列表，请参阅 Apple 的[watchOS 2.2 到 watchOS 3.0 API 差异](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)文档。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
-- [watchOS 샘플](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
 - [WatchOS 3 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

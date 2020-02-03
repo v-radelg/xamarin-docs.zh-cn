@@ -1,5 +1,5 @@
 ---
-title: iOS 6의 StoreKit 변경 내용
+title: iOS 6 中对 StoreKit 的更改
 description: iOS 6 引入了对应用商店工具包 API 的两项更改：从应用中显示 iTunes （和 App Store/Ibooks store 色情）产品和新的应用内购买选项（Apple 将在其中托管可下载文件）。 本文档介绍如何通过 Xamarin 实现这些功能。
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725219"
 ---
-# <a name="changes-to-storekit-in-ios-6"></a>iOS 6의 StoreKit 변경 내용
+# <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中对 StoreKit 的更改
 
 _iOS 6 引入了对应用商店工具包 API 的两项更改：从应用中显示 iTunes （和 App Store/Ibooks store 色情）产品和新的应用内购买选项（Apple 将在其中托管可下载文件）。本文档介绍如何通过 Xamarin 实现这些功能。_
 
@@ -25,7 +25,7 @@ IOS6 中存储工具包的主要变化是这两项新功能：
 
 有关 StoreKit Api 的详细信息，请参阅[应用内购买](~/ios/platform/in-app-purchasing/index.md)指南。
 
-## <a name="requirements"></a>요구 사항
+## <a name="requirements"></a>要求
 
 本文档中讨论的商店工具包功能需要 iOS 6 和 Xcode 4.5 以及 Xamarin 6.0。
 
@@ -107,7 +107,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 }
 ```
 
-### <a name="errors"></a>오류
+### <a name="errors"></a>错误
 
 如果你使用的 Apple ID 无效，则会出现以下错误，这可能会造成混淆，因为它表示某种类型的网络或身份验证问题。
 
@@ -135,10 +135,10 @@ Apple 提供了一个动态搜索 API 来查询应用商店、iTunes 和 Ibooks 
 
 结果还将包括其他元数据，包括可用于在应用程序中呈现产品的显示信息和图稿 Url。
 
-다음은 몇 가지 예입니다.
+下面是一些示例：
 
-- **iBooks 应用**– [https://itunes.apple.com/search?term=ibooks&amp ; entity = software&amp; 国家/地区](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **点和 Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = 电子书&amp; 国家/地区 = 美国](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **iBooks 应用**– [https://itunes.apple.com/search?term=ibooks&amp; entity = software&amp;国家/地区](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **点和 Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; entity = 电子书&amp;国家/地区 = 美国](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>企业合作伙伴源
 
@@ -196,7 +196,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 以下各节介绍如何使用本文的示例代码来实现托管的内容，从创建和上传包到管理购买和下载过程。
 
-### <a name="sample-code"></a>샘플 코드
+### <a name="sample-code"></a>代码示例
 
 示例项目*HostedNonConsumables* （在 StoreKitiOS6 中）使用托管内容。 该应用提供了两个 "书籍" 章节用于销售，其内容托管在 Apple 的服务器上。 内容由文本文件和图像组成，但在实际应用程序中可以使用更复杂的内容。
 
@@ -356,7 +356,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 应将以下信息与完整的[应用内购买文档](~/ios/platform/in-app-purchasing/index.md)一起阅读。 本文档中的信息重点介绍托管内容与以前的实现之间的差异。
 
-### <a name="classes"></a>클래스
+### <a name="classes"></a>类
 
 添加或更改了以下类以支持 iOS 6 中的托管内容：
 
@@ -485,7 +485,7 @@ public void SaveDownload (SKDownload download)
 
 调用 `FinishTransaction` 时，所下载的文件将不再保证位于 `Cache` 目录中。 在调用 `FinishTransaction`之前，应复制所有文件。
 
-## <a name="other-considerations"></a>기타 고려 사항
+## <a name="other-considerations"></a>其他注意事项
 
 上面的示例代码演示了托管内容购买的一个相当简单的实现。 还必须考虑一些其他事项：
 
@@ -515,14 +515,14 @@ public void SaveDownload (SKDownload download)
 
 Apple 的 iCloud 备份指导原则表明，不应备份从服务器轻松还原的非用户内容（因为它会*不*必要地占用 iCloud 存储空间）。 有关设置备份属性的详细信息，请参阅[文件系统](~/ios/app-fundamentals/file-system.md)文档。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 本文介绍了 iOS6 中的应用商店工具包的两项新功能：从应用中购买 iTunes 和其他内容，并利用 Apple 服务器来托管你自己的应用内购买。 本简介应与现有的[应用内购买文档](~/ios/platform/in-app-purchasing/index.md)一起阅读，以全面了解如何实现商店工具包功能。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [StoreKit （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)
-- [앱에서 바로 구매](~/ios/platform/in-app-purchasing/index.md)
+- [应用内购买](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit Framework 参考](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController 类引用](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)

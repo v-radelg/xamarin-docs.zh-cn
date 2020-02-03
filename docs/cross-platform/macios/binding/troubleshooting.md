@@ -42,17 +42,17 @@ ms.locfileid: "76725330"
 
 ## <a name="reporting-bugs"></a>报告 bug
 
-고객 의견은 품질 향상에 큰 도움이 됩니다. 如果发现 Xamarin 的任何问题：
+您的反馈对于我们至关重要。 如果发现 Xamarin 的任何问题：
 
-- [Xamarin.Mac 포럼](https://forums.xamarin.com/categories/xamarin-mac) 확인
-- [문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues) 검색
-- GitHub 문제로 전환하기 전에 Xamarin 문제가 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi)에서 추적되었습니다. 여기서 일치하는 문제를 검색해 보세요.
-- 일치하는 문제를 찾을 수 없는 경우 [GitHub 문제 리포지토리](https://github.com/xamarin/xamarin-macios/issues/new)에서 새 문제를 제출하세요.
+- 查看 [Xamarin.Mac 论坛](https://forums.xamarin.com/categories/xamarin-mac)
+- 搜索[问题存储库](https://github.com/xamarin/xamarin-macios/issues)
+- 切换到 GitHub 问题之前，会在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) 中跟踪 Xamarin 问题。 请在其中搜索匹配的问题。
+- 如果找不到匹配的问题，请在 [GitHub 问题存储库](https://github.com/xamarin/xamarin-macios/issues/new)中提交一个新问题。
 
-GitHub 문제는 모두 공용입니다. 설명 또는 첨부 파일을 숨길 수 없습니다.
+GitHub 的问题是完全公开的。 不能隐藏注释或附件。
 
-다음 정보를 가능한 많이 포함하세요.
+请尽可能多地包含以下内容：
 
-- 문제를 재현하는 간단한 예제. 문제를 재현할 수 있다면 **매우 유용합니다**.
-- 크래시의 전체 스택 추적.
-- 크래시 주변의 C# 코드.
+- 一个重现此问题的简单示例。 在可能的情况下，这非常有用。
+- 故障的完整堆栈跟踪。
+- 故障周围的 C# 代码。

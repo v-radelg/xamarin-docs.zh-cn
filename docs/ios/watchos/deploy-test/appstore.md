@@ -39,7 +39,7 @@ ms.locfileid: "76725120"
   - 中转到 **> 组织**程序的窗口，然后选择 "**存档**"。
   - 从列表中选择应用程序和存档。
   - 同时**验证 ...** 存档。
-  - **提交...** 存档并遵循的步骤将上载到 iTunes 连接用于审查和批准。
+  - **提交 ...** 存档并按照步骤上传到 iTunes Connect 进行审阅和批准。
 
 阅读与以下各项相关的特定提示。 如果遇到问题，请参阅[故障排除](#troubleshooting)部分。
 
@@ -69,8 +69,8 @@ ms.locfileid: "76725120"
 
 请特别参阅[应用分发概述](~/ios/deploy-test/app-distribution/index.md)：
 
-- [iTunes Connect에서 앱 구성](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [앱 스토어에 게시](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [在 iTunes Connect 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [发布到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
 在 iTunes Connect 中配置应用时，请不要忘记添加 "监视" 图标和屏幕截图：
 
@@ -136,7 +136,7 @@ Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
 按照[上述步骤](#xamarin_studio)配置解决方案以进行存档。 如果无法正确设置启动项目，请确保先将生成配置设置为 "调试" 或 "发布"，然后再尝试更改启动项目。 然后将生成配置重新设置为**AppStore**。
 
-### <a name="invalid-icon"></a>잘못됨 아이콘
+### <a name="invalid-icon"></a>“无效”图标
 
 ```csharp
 Invalid Icon - The watch application '...watchkitextension.appex/WatchApp.app'
@@ -254,6 +254,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 
 此错误很可能是由于你已将 Xcode 安装重命名为**Xcode**。 例如，如果将安装重命名为**XCode 6.2**，则会发生此错误。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Apple WatchKit 提交指南](https://developer.apple.com/app-store/watch/)

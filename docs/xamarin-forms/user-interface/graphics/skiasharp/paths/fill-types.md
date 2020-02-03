@@ -1,5 +1,5 @@
 ---
-title: 경로 채우기 유형
+title: 路径填充类型
 description: 这篇文章检查不同的效果可能使用 SkiaSharp 路径填充类型，并演示此示例代码。
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
@@ -14,19 +14,19 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76723637"
 ---
-# <a name="the-path-fill-types"></a>경로 채우기 유형
+# <a name="the-path-fill-types"></a>路径填充类型
 
-[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_发现不同的效果可能使用 SkiaSharp 路径填充类型_
+_发现 SkiaSharp 路径填充类型可能产生的不同效果_
 
-在路径中的两个分布图可以重叠，并构成了单个轮廓的行可以重叠。 可能可以填充任何封闭的区域，但可能不想要填充所有封闭的区域。 예를 들면 다음과 같습니다.
+在路径中的两个分布图可以重叠，并构成了单个轮廓的行可以重叠。 可能可以填充任何封闭的区域，但可能不想要填充所有封闭的区域。 以下是一个示例：
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-你可以这样的一些控制。 填充算法受[ `SKFillType` ](xref:SkiaSharp.SKPath.FillType)的属性`SKPath`，它设置为的成员[ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType)枚举：
+你可以这样的一些控制。 填充算法由 `SKPath`的[`SKFillType`](xref:SkiaSharp.SKPath.FillType)属性控制，该属性设置为[`SKPathFillType`](xref:SkiaSharp.SKPathFillType)枚举的成员：
 
-- `Winding`默认值
+- `Winding`，默认值为
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
@@ -35,7 +35,7 @@ _发现不同的效果可能使用 SkiaSharp 路径填充类型_
 
 很多例行路径环绕的算法通常填充路径的所有封闭的区域。 奇偶算法通常会产生更有趣的结果。
 
-典型的示例是 5 星，如中所示**Five-Pointed 星型**页。 [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个`Picker`视图以选中路径填充类型和路径是描边还是填充和 / 或所采用顺序：
+典型示例是一个五向星形，如**五星星形**页中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个 `Picker` 视图，以选择路径填充类型以及路径是描边还是实心，或者按何种顺序进行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +102,7 @@ _发现不同的效果可能使用 SkiaSharp 路径填充类型_
 </ContentPage>
 ```
 
-代码隐藏文件使用这两个`Picker`值绘制一个五个星：
+代码隐藏文件使用这两个 `Picker` 值绘制一个五角星：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,20 +168,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-通常情况下，路径填充类型应影响仅填充并不是笔画，但两个`Inverse`模式影响的填充和笔画。 对填充的两个`Inverse`类型填充区域 oppositely，以便在星型之外的区域填充。 用于描边，这两个`Inverse`类型颜色笔画以外的所有内容。 使用这些反向填充类型会产生一些奇怪的效果，如 iOS 屏幕截图中所示：
+通常，路径填充类型只会影响填充，而不会影响笔划，但这两种 `Inverse` 模式会影响填充和笔划。 对于填充，这两个 `Inverse` 类型填充区域 oppositely，以使星形外的区域填满。 对于笔划，两个 `Inverse` 类型均为除笔触之外的所有内容。 使用这些反向填充类型会产生一些奇怪的效果，如 iOS 屏幕截图中所示：
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Android 屏幕快照显示了典型的偶数和缠绕效果，但笔划和填充的顺序也会影响结果。
 
-缠绕算法是依赖于绘制行的方向。 通常当你要创建一个路径，您可以控制该方向按你指定的行来自一个点到另一个。 但是，`SKPath`类还定义了方法，如`AddRect`和`AddCircle`绘制整个分布图。 若要控制如何绘制这些对象，方法包括类型的参数[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)，其中包含两个成员：
+缠绕算法是依赖于绘制行的方向。 通常当你要创建一个路径，您可以控制该方向按你指定的行来自一个点到另一个。 但是，`SKPath` 类还定义了绘制整个轮廓的 `AddRect` 和 `AddCircle` 等方法。 若要控制如何绘制这些对象，方法包括类型[`SKPathDirection`](xref:SkiaSharp.SKPathDirection)的参数，该参数具有两个成员：
 
 - `Clockwise`
 - `CounterClockwise`
 
-中的方法`SKPath`，包括`SKPathDirection`参数为其指定默认值为`Clockwise`。
+包含 `SKPathDirection` 参数 `SKPath` 中的方法为其提供默认值 `Clockwise`。
 
-**重叠圆圈**页与四个重叠圆圈奇偶路径填充类型，创建一个路径：
+"**重叠圆圈**" 页将创建一个路径，该路径包含四个具有偶数类路径填充类型的重叠圆圈：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -225,7 +225,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

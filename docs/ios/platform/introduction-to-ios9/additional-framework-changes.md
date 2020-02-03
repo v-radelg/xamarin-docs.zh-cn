@@ -64,7 +64,7 @@ CloudKit 框架可简化访问 iCloud 的应用程序的开发。 这包括检�
 - [CloudKit 目录： CloudKit （Cocoa 和 JavaScript）](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -Apple 的示例应用（使用 CloudKit 和 CloudKit JS）简介。
 
 > [!IMPORTANT]
-> Apple에서는 개발자가 유럽 연합의 GDPR(일반 데이터 보호 규정)을 제대로 처리하는 데 도움이 되는 [도구를 제공합니다](https://developer.apple.com/support/allowing-users-to-manage-data/).
+> Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
 
 ## <a name="foundation-framework-additions"></a>基础框架添加
 
@@ -100,7 +100,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>响应低能耗模式
 
-使用[NSProcessInfo](xref:Foundation.NSProcessInfo)类的 `LowPowerModeEnabled` 属性来确定是否已在运行应用的 iOS 设备上启用低功耗模式。 예를 들면 다음과 같습니다.:
+使用[NSProcessInfo](xref:Foundation.NSProcessInfo)类的 `LowPowerModeEnabled` 属性来确定是否已在运行应用的 iOS 设备上启用低功耗模式。 例如：
 
 ```csharp
 // Is the device in low power mode?
@@ -124,7 +124,7 @@ Apple 在 iOS 9 中包含对[HealthKit](xref:HealthKit)框架的以下更改：
 
 Apple 在 iOS 9 中包括对[本地身份验证](xref:LocalAuthentication)框架的以下更改：
 
-- 使用 [LAContext 类](xref:LocalAuthentication.LAContext)的`EvaluateAccessControl`和`EvaluatePolicy`方法, 你现在可以重新使用之前成功解除锁定尝试的 Touch ID 匹配项 。
+- 现在，使用[LAContext](xref:LocalAuthentication.LAContext)类的 `EvaluateAccessControl` 和 `EvaluatePolicy` 方法，你现在可以重新使用之前成功解除锁定尝试的 Touch ID 匹配。
 - 能够获取当前注册的手指的列表。
 - 当在身份验证中添加或删除手指时，支持跟踪。
 - 在密钥链调用中使用_身份验证上下文_的功能，并支持对密钥链访问控制列表进行评估。
@@ -220,7 +220,7 @@ Apple 在 iOS 9 中为触控事件提供了多项增强功能。 这些功能包
 
 新的 `NSLayoutAnchor` 和 `NSLayoutDimension` 布局定位点类适用于[UIView](xref:UIKit.UIView)类的新定位点属性（如 `LeadingAnchor` 和 `WidthAnchor`），以便在 iOS 9 中更轻松地进行布局。
 
-有关如何在 Xamarin iOS 应用中使用自动版式和大小类的详细信息, 请参阅我们的[统一情节提要文档简介](~/ios/user-interface/storyboards/unified-storyboards.md)和 Apple 的[NSLayoutAnchor 参考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)[NSLayoutDimension 参考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)和[UIView 参考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)。
+[有关详细](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)[信息，请](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)参阅[统一情节提要文档简介](~/ios/user-interface/storyboards/unified-storyboards.md)，了解有关在 Xamarin ios 应用中使用自动版式和大小类的详细信息和 Apple 的[NSLayoutAnchor 参考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)。
 
 ### <a name="new-readable-content-margins"></a>新的可读内容边距
 
@@ -258,9 +258,9 @@ Apple 在 iOS 9 中包括对 UIKit Dynamics 的以下更改：
 
 使用新的 `UITextInputAssistantItem` 类在_快捷方式栏_中布局栏按钮组。 快捷方式栏是软键盘中提供的一种新区域，用于提供键入的快捷方式。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [iOS 9 소개](~/ios/platform/introduction-to-ios9/index.md)
+- [iOS 9 简介](~/ios/platform/introduction-to-ios9/index.md)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 中的新增功能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

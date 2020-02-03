@@ -1,5 +1,5 @@
 ---
-title: 사용자 프로필
+title: 用户配置文件
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76724788"
 ---
-# <a name="user-profile"></a>사용자 프로필
+# <a name="user-profile"></a>用户配置文件
 
 自 API 级别5起，Android 支持枚举具有[ContactsContract](xref:Android.Provider.ContactsContract)提供程序的联系人。 例如，列出联系人非常简单，只是使用[ContactContracts](xref:Android.Provider.ContactsContract.Contacts)类，如下面的代码示例所示：
 
@@ -45,9 +45,9 @@ if (cursor != null)
 }
 ```
 
-从 Android 4 (API 级别 14) 开始, 可通过`ContactsContract`提供程序使用 [ContactsContact.Profile](xref:Android.Provider.ContactsContract.Profile) 类。 `ContactsContact.Profile` 提供对设备所有者的个人配置文件的访问权限，包括设备所有者姓名和电话号码之类的联系人数据。
+从 Android 4 （API 级别14）开始， [ContactsContact](xref:Android.Provider.ContactsContract.Profile)类可通过 `ContactsContract` 提供程序获得。 `ContactsContact.Profile` 提供对设备所有者的个人配置文件的访问权限，包括设备所有者姓名和电话号码之类的联系人数据。
 
-## <a name="required-permissions"></a>필요한 권한
+## <a name="required-permissions"></a>所需权限
 
 若要读取和写入联系人数据，应用程序必须分别请求 `READ_CONTACTS` 和 `WRITE_CONTACTS` 权限。
 此外，若要读取和编辑用户配置文件，应用程序必须请求 `READ_PROFILE` 和 `WRITE_PROFILE` 权限。
@@ -104,6 +104,6 @@ StartActivity (intent);
 
 使用用户配置文件类似于与 Android 中的其他数据进行交互，并且它还提供额外的设备个性化级别。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [ContactsProviderDemo （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)

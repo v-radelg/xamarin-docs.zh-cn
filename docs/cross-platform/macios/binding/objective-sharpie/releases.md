@@ -133,7 +133,7 @@ _建议_对所有绑定声明进行验证，但对于使用 `[Verify]` 属性进
 
 [下载1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
-사소한 버그가 수정되었습니다.
+修复了一些小 bug。
 
 ## <a name="111-december-15-2014"></a>1.1.1：2014年12月15日
 

@@ -1,5 +1,5 @@
 ---
-title: 어떤 Android SDK 패키지를 설치해야 하나요?
+title: 应安装哪些 Android SDK 包？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725058"
 ---
-# <a name="which-android-sdk-packages-should-i-install"></a>어떤 Android SDK 패키지를 설치해야 하나요?
+# <a name="which-android-sdk-packages-should-i-install"></a>应安装哪些 Android SDK 包？
 
 安装 Android SDK 不会自动包括开发所需的所有最低包。 尽管各个开发人员的需求各不相同，但通常需要以下包才能用 Xamarin 进行开发：
 
@@ -30,7 +30,7 @@ ms.locfileid: "76725058"
 
 为已设置为最小 & 目标的 Android 版本安装 "SDK 平台"。
 
-예:
+例如：
 
 - 目标 API 23
 - 最小 API 23
@@ -46,5 +46,5 @@ ms.locfileid: "76725058"
 
 仅当你想要使用来自 Google 的现成 Android 模拟器时，才需要这些属性。 有关详细信息，请参阅[Android Emulator 安装程序](~/android/get-started/installation/android-emulator/index.md)
 
-## <a name="extras"></a>기타
+## <a name="extras"></a>附送项目
 通常不需要进行 Android SDK 额外的工作，但请注意，这可能是必需的，因为它们可能是必需的，具体取决于使用情况。

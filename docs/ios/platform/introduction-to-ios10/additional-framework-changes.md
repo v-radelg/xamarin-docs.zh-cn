@@ -49,7 +49,7 @@ iOS 10 对核心数据框架包括以下增强功能：
 iOS 10 对核心映像框架进行了以下改进：
 
 - 开发人员现在可以通过在处理之前和之后转换颜色空间来处理核心图像上下文工作颜色空间之外的颜色空间中的图像。
-- 对于使用 A8 或 A9 Cpu 的 iOS 设备，现在支持原始映像格式。 核心映像现在支持从内置的 iSight 照相机或第三方相机对原始图像进行解码。 使用 [CIFilter](xref:CoreImage.CIFilter) 类的`FilterWithImageData`或`FilterWithImageURL`方法来处理原始映像 。
+- 对于使用 A8 或 A9 Cpu 的 iOS 设备，现在支持原始映像格式。 核心映像现在支持从内置的 iSight 照相机或第三方相机对原始图像进行解码。 使用[CIFilter](xref:CoreImage.CIFilter)类的 `FilterWithImageData` 或 `FilterWithImageURL` 方法来处理原始映像。
 - 已对 `UIImageView` 对象中的 `UIImage` 渲染（由核心图像映像存储支持时）进行了多种渲染性能改进。
 - 标记为宽域的 `UIImage` 对象将在支持宽色的 iOS 设备上的 `UIImageView` 对象中呈现为广角颜色。
 - 核心映像内核代码现在可以请求特定的像素输出格式。
@@ -105,7 +105,7 @@ IOS 10 中对 HealthKit 框架进行了以下改进：
 - 添加了新的元数据密钥，用于天气类型（如 `HKWeatherConditionClear` 和 `HKWeatherConditionCloudy`）和健身类型（如 `HKWorkoutActivityTypeFlexibility` 和 `HKWorkoutActivityTypeWheelchairRunPace`）。
 - 添加了新的 `HKCDADocument` 类来表示临床文档体系结构（CDA）格式的文档。
 - 使用 new [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)类指定健身的 `ActivityType` 和 `LocationType`。
-- 添加了新的 [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) 和[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)类的`WheelchairUse`方法, 以便使用轮椅相关的运行状况数据。
+- 添加了新的[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)和[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)类的 `WheelchairUse` 方法，以便使用与轮椅相关的运行状况数据。
 
 ## <a name="homekit-enhancements"></a>HomeKit 增强功能
 
@@ -192,7 +192,7 @@ IOS 10 中对 SpriteKit 框架进行了以下改进：
 IOS 10 中对 UIKit 框架进行了以下改进：
 
 - 新的[UIPasteboard](xref:UIKit.UIPasteboard) API 提供了新选项（如生存期限制），并将为常见类类型自动声明兼容的内容类型。
-- 添加了新的完全交互式的、基于对象的、可中断的动画支持，并可链接到手势。 请请参阅 Apple 的[UIViewAnimating 协议参考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 类引用](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 协议参考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 类引用](https://developer.apple.com/reference/uikit/uicubictimingparameters)和有关详细信息, 请参阅 [UISpringTimingParameter 类](https://developer.apple.com/reference/uikit/uispringtimingparameters)。
+- 添加了新的完全交互式的、基于对象的、可中断的动画支持，并可链接到手势。 有关详细信息，请参阅 Apple 的[UIViewAnimating 协议参考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 类参考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 协议参考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 类参考](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter 类参考](https://developer.apple.com/reference/uikit/uispringtimingparameters)。
 - 新的 `UIPreviewInteraction` 和 `UIPreviewInteractionDelegate` 允许开发人员应用提供用于速览和 pop 操作的自定义界面。
 - 新的 `UIAccessibilityCustomRotor` 类允许应用为诸如语音等辅助技术提供自定义的特定于上下文的功能。
 - 使用 `UIAccessibilityIsAssistiveTouchRunning` 和 `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 符号来确定是否启用了 AssistiveTouch。
@@ -211,7 +211,7 @@ IOS 10 中对 WebKit 框架进行了以下改进：
 
 - 已将速览和 pop 支持添加到 `WKWebView` 类。 使用 `ShouldPreviewElement` 方法来确定给定 web 视图是否应显示预览。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [IOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

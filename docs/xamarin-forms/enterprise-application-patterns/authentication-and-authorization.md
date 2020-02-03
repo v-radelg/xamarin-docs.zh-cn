@@ -1,5 +1,5 @@
 ---
-title: 인증 및 권한 부여
+title: 身份验证和授权
 description: 本章介绍了 eShopOnContainers mobile 应用如何针对容器化微服务执行身份验证和授权。
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -14,13 +14,13 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725602"
 ---
-# <a name="authentication-and-authorization"></a>인증 및 권한 부여
+# <a name="authentication-and-authorization"></a>身份验证和授权
 
 身份验证是从用户获取标识凭据（例如用户名和密码）的过程，并根据机构验证这些凭据。 如果凭据有效，则提交凭据的实体被视为经过身份验证的标识。 身份验证后，授权过程会确定该标识是否有权访问给定的资源。
 
-有许多种集成到 Xamarin.Forms 应用 ASP.NET MVC web 应用程序，包括使用 ASP.NET Core 标识时，例如 Microsoft、 Google、 外部身份验证提供程序与之通信的身份验证和授权Facebook 或 Twitter 和身份验证中间件。 EShopOnContainers 移动应用使用 IdentityServer 4 的容器化标识微服务执行身份验证和授权。 移动应用程序请求 IdentityServer 的安全令牌，用于对用户进行身份验证或访问资源。 要使 IdentityServer 代表用户颁发令牌，用户必须登录到 IdentityServer。 但是，IdentityServer 不提供用于身份验证的用户界面或数据库。 因此，在 eShopOnContainers 引用应用程序中，ASP.NET Core标识用于此目的。
+有许多种集成到 Xamarin.Forms 应用 ASP.NET MVC web 应用程序，包括使用 ASP.NET Core 标识时，例如 Microsoft、 Google、 外部身份验证提供程序与之通信的身份验证和授权Facebook 或 Twitter 和身份验证中间件。 EShopOnContainers 移动应用使用 IdentityServer 4 的容器化标识微服务执行身份验证和授权。 移动应用程序请求 IdentityServer 的安全令牌，用于对用户进行身份验证或访问资源。 要使 IdentityServer 代表用户颁发令牌，用户必须登录到 IdentityServer。 但是，IdentityServer 不提供用于身份验证的用户界面或数据库。 因此，在 eShopOnContainers 引用应用程序中，ASP.NET Core 标识用于此目的。
 
-## <a name="authentication"></a>身份验证 （可能为英文网页）
+## <a name="authentication"></a>身份验证
 
 当应用程序需要知道当前用户的身份时，需要进行身份验证。 ASP.NET Core 用于标识用户的主要机制是 ASP.NET Core 标识成员身份系统，它在由开发人员配置了数据存储中存储用户的信息。 通常，此数据存储将为 EntityFramework 存储区，但自定义商店或第三方包可用于将标识信息存储在 Azure 存储、Azure Cosmos DB 或其他位置。
 
@@ -28,7 +28,7 @@ ms.locfileid: "76725602"
 
 ### <a name="issuing-bearer-tokens-using-identityserver-4"></a>使用 IdentityServer 4 颁发持有者令牌
 
-[IdentityServer 4](https://github.com/IdentityServer/IdentityServer4)有关 ASP.NET Core，可用于许多的身份验证和授权方案，包括颁发本地 ASP.NET Core 标识用户的安全令牌是一种开放源代码 OpenID Connect 和 OAuth 2.0 框架。
+[IdentityServer 4](https://github.com/IdentityServer/IdentityServer4)是用于 ASP.NET Core 的开源 OpenID Connect 和 OAuth 2.0 framework，可用于许多身份验证和授权方案，包括为本地 ASP.NET Core 标识用户颁发安全令牌。
 
 > [!NOTE]
 > OpenID Connect 和 OAuth 2.0 非常相似，但具有不同的职责。
@@ -100,7 +100,7 @@ public void ConfigureServices(IServiceCollection services)
 > [!TIP]
 > 动态加载 IdentityServer 4 配置。 IdentityServer 4 的 Api 允许从内存中的配置对象列表配置 IdentityServer。 在 eShopOnContainers 引用应用程序中，这些内存中集合硬编码到应用程序中。 但是，在生产方案中，可以从配置文件或从数据库动态加载它们。
 
-有关配置 IdentityServer 使用 ASP.NET Core 标识的信息，请参阅[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/latest/quickstarts/6_aspnet_identity.html)IdentityServer 文档中。
+有关将 IdentityServer 配置为使用 ASP.NET Core 标识的信息，请参阅 IdentityServer 文档中的[使用 ASP.NET Core 标识](https://identityserver4.readthedocs.io/en/latest/quickstarts/6_aspnet_identity.html)。
 
 #### <a name="configuring-api-resources"></a>配置 API 资源
 
@@ -208,9 +208,9 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 可以通过在 `Client.AllowedGrantTypes` 属性中指定 grant 类型来配置客户端与 IdentityServer 之间的身份验证流。 OpenID Connect 和 OAuth 2.0 规范定义了多个身份验证流，其中包括：
 
-- 암시적 此流针对基于浏览器的应用程序进行了优化，并且应该用于仅用户身份验证或身份验证和访问令牌请求。 所有令牌都是通过浏览器传输的，因此不允许使用刷新令牌等高级功能。
+- 隐式。 此流针对基于浏览器的应用程序进行了优化，并且应该用于仅用户身份验证或身份验证和访问令牌请求。 所有令牌都是通过浏览器传输的，因此不允许使用刷新令牌等高级功能。
 - 授权代码。 通过此流，可以在后端通道上检索令牌，而不是浏览器前端通道，同时还支持客户端身份验证。
-- 혼합. 此流是隐式和授权代码授予类型的组合。 标识令牌通过浏览器通道传输，包含签名协议响应以及其他项目，如授权代码。 成功验证响应后，应使用后信道来检索访问和刷新令牌。
+- 混合： 此流是隐式和授权代码授予类型的组合。 标识令牌通过浏览器通道传输，包含签名协议响应以及其他项目，如授权代码。 成功验证响应后，应使用后信道来检索访问和刷新令牌。
 
 > [!TIP]
 > 使用混合身份验证流。 混合身份验证流可缓解适用于浏览器通道的大量攻击，对于需要检索访问令牌（并且可能会刷新令牌）的本机应用程序，建议使用此流。
@@ -219,7 +219,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 ### <a name="performing-authentication"></a>执行身份验证
 
-要使 IdentityServer 代表用户颁发令牌，用户必须登录到 IdentityServer。 但是，IdentityServer 不提供用于身份验证的用户界面或数据库。 因此，在 eShopOnContainers 引用应用程序中，ASP.NET Core标识用于此目的。
+要使 IdentityServer 代表用户颁发令牌，用户必须登录到 IdentityServer。 但是，IdentityServer 不提供用于身份验证的用户界面或数据库。 因此，在 eShopOnContainers 引用应用程序中，ASP.NET Core 标识用于此目的。
 
 EShopOnContainers 移动应用通过混合身份验证流进行身份验证，如图9-2 所示。
 
@@ -239,7 +239,7 @@ EShopOnContainers 移动应用通过将请求发送到 `<base endpoint>:5105/con
 
 #### <a name="signing-in"></a>登录
 
-当用户点击 `LoginView`上的 "**登录**" 按钮时，将执行 `LoginViewModel` 类中的 `SignInCommand`，进而执行 `SignInAsync` 方法。 다음 코드 예제에서는 이 메서드를 보여줍니다.
+当用户点击 `LoginView`上的 "**登录**" 按钮时，将执行 `LoginViewModel` 类中的 `SignInCommand`，进而执行 `SignInAsync` 方法。 下面的代码示例演示此方法：
 
 ```csharp
 private async Task SignInAsync()  
@@ -349,7 +349,7 @@ private void Logout()
 }
 ```
 
-此方法调用 `IdentityService` 类中的 `CreateLogoutRequest` 方法，将从应用程序设置检索的标识令牌作为参数传递。 有关应用程序设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。 다음 코드 예제는 `CreateLogoutRequest` 메서드를 보여줍니다.
+此方法调用 `IdentityService` 类中的 `CreateLogoutRequest` 方法，将从应用程序设置检索的标识令牌作为参数传递。 有关应用程序设置的详细信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。 下面的代码示例说明 `CreateLogoutRequest` 方法：
 
 ```csharp
 public string CreateLogoutRequest(string token)  
@@ -389,7 +389,7 @@ private async Task NavigateAsync(string url)
 
 <a name="authorization" />
 
-## <a name="authorization"></a>권한 부여
+## <a name="authorization"></a>授权
 
 身份验证后，ASP.NET Core web Api 通常需要授予访问权限，这样，服务以使 Api 可供某些经过身份验证的用户，而不是为全部。
 
@@ -472,13 +472,13 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 有关 eShopOnContainers 移动应用程序如何进行 web 请求的详细信息，请参阅[访问远程数据](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
-可以通过许多方法将身份验证和授权集成到与 ASP.NET MVC Web 应用程序进行通讯的 Xamarin.Forms 应用中， EShopOnContainers 移动应用使用 IdentityServer 4 的容器化标识微服务执行身份验证和授权。 IdentityServer 是用于与 ASP.NET Core标识来执行持有者令牌身份验证集成的 ASP.NET Core 的开放源代码 OpenID Connect 和 OAuth 2.0 框架。
+可以通过许多方法将身份验证和授权集成到与 ASP.NET MVC Web 应用程序进行通讯的 Xamarin.Forms 应用中， EShopOnContainers 移动应用使用 IdentityServer 4 的容器化标识微服务执行身份验证和授权。 IdentityServer 是一种适用于 ASP.NET Core 的开源 OpenID Connect 和 OAuth 2.0  框架，它与 ASP.NET Core Identity 集成以执行持有者令牌身份验证。
 
 移动应用程序请求 IdentityServer 的安全令牌，用于对用户进行身份验证或访问资源。 访问资源时，必须在请求中包含访问令牌，才能向需要授权的 Api 发出请求。 IdentityServer 的中间件将验证传入的访问令牌，以确保它们是从受信任的颁发者发送的，并且有效地用于接收这些令牌的 API。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [下载电子书（2Mb）](https://aka.ms/xamarinpatternsebook)
 - [eShopOnContainers （GitHub）（示例）](https://github.com/dotnet-architecture/eShopOnContainers)

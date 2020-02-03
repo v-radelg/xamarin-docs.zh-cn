@@ -1,5 +1,5 @@
 ---
-title: Android Beam
+title: Android 无线发送
 ms.prod: xamarin
 ms.assetid: 4172A798-89EC-444D-BC0C-0A7DD67EF98C
 ms.technology: xamarin-android
@@ -13,7 +13,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76723810"
 ---
-# <a name="android-beam"></a>Android Beam
+# <a name="android-beam"></a>Android 无线发送
 
 Android 无线横梁是 Android 4.0 中引入的近乎现场通信（NFC）技术，它允许应用程序在接近时通过 NFC 共享信息。
 
@@ -76,6 +76,6 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 [从 Android 横梁演示 ![示例屏幕截图](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Android 横梁演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
