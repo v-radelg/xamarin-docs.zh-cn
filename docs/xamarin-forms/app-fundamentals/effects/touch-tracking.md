@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 5fda0b78a80a25d122fbc58ef61fbeab22a547a0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cf5a97bca7c827101db951a440863839539c7e48
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771346"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725255"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件
 
@@ -361,9 +361,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 [TouchTrackingEffectDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) 程序包含五个页面，用于测试常见任务的触控跟踪效果  。
 
-BoxView 拖动页面允许将 `BoxView` 元素添加到 `AbsoluteLayout`然后在屏幕上拖动它们  。 [XAML 文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml)实例化两个 `Button` 视图，用于将 `BoxView` 元素添加到 `AbsoluteLayout` 并清除 `AbsoluteLayout`。
+BoxView 拖动页面允许将 `BoxView` 元素添加到 `AbsoluteLayout`然后在屏幕上拖动它们  。 [XAML 文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml)实例化两个 `Button` 视图，用于将 `BoxView` 元素添加到 `AbsoluteLayout` 并清除 `AbsoluteLayout`。
 
-[代码隐藏文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml.cs) 中向 `AbsoluteLayout` 添加新 `BoxView` 的方法也向 `BoxView` 添加了一个 `TouchEffect` 对象，并为效果附加了一个事件处理程序：
+[代码隐藏文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml.cs) 中向 `AbsoluteLayout` 添加新 `BoxView` 的方法也向 `BoxView` 添加了一个 `TouchEffect` 对象，并为效果附加了一个事件处理程序：
 
 ```csharp
 void AddBoxViewToLayout()
@@ -453,11 +453,11 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 可以使用不同手指同时移动多个 `BoxView` 元素。
 
-[![](touch-tracking-images/boxviewdragging-small.png "BoxView 拖动页的三个屏幕截图")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
+[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
 
 ### <a name="subclassing-the-view"></a>对视图进行子类化
 
-通常情况下，Xamarin.Forms 元素更善于处理其自身的触摸事件。 可拖动的 BoxView 拖动页与 BoxView 拖动页的功能相同，但用户拖动的元素是派生自 `BoxView` 的 [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/DraggableBoxView.cs) 类的实例   ：
+通常情况下，Xamarin.Forms 元素更善于处理其自身的触摸事件。 可拖动的 BoxView 拖动页与 BoxView 拖动页的功能相同，但用户拖动的元素是派生自 `BoxView` 的 [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) 类的实例   ：
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -516,11 +516,11 @@ class DraggableBoxView : BoxView
 
 椭圆绘图页允许通过在屏幕上滑动手指来绘制一个椭圆  。 具体取决于如何移动手指，可以自左上到右下，或是从任何其他的对角来绘制一个椭圆。 绘制的椭圆颜色和不透明度随机。
 
-[![](touch-tracking-images/ellipsedrawing-small.png "椭圆绘制页的三个屏幕截图")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
+[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
 
 然后触摸其中一个椭圆，可将其拖动到其他位置。 此操作要求一种名为“命中测试”的技术，该技术涉及在特定的点搜索图形对象。 SkiaSharp 椭圆不是 Xamarin.Forms 元素，因此它们不能自己执行 `TouchEffect` 处理。 `TouchEffect` 必须应用于整个 `SKCanvasView` 对象。
 
-[EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml) 文件在单元格 `Grid` 中实例化 `SKCanvasView`。 `TouchEffect` 对象已附加到 `Grid`：
+[EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/EllipseDrawingPage.xaml) 文件在单元格 `Grid` 中实例化 `SKCanvasView`。 `TouchEffect` 对象已附加到 `Grid`：
 
 ```xaml
 <Grid x:Name="canvasViewGrid"
@@ -592,7 +592,7 @@ class EllipseDrawingFigure
 
 当程序处理触摸输入时使用 `StartPoint` 和 `EndPoint` 属性；`Rectangle` 属性用于绘制椭圆。 当拖动椭圆时 `LastFingerLocation` 属性发挥作用，且 `IsInEllipse` 方法有助于命中测试。 如果点在椭圆内则方法返回 `true`。
 
-[代码隐藏文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml.cs) 维护三个集合：
+[代码隐藏文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/EllipseDrawingPage.xaml.cs) 维护三个集合：
 
 ```csharp
 Dictionary<long, EllipseDrawingFigure> inProgressFigures = new Dictionary<long, EllipseDrawingFigure>();
@@ -688,7 +688,7 @@ case TouchActionType.Pressed:
 
 其他 SkiaSharp 示例位于手指绘制页中  。 可以从两个 `Picker` 视图中选择笔划颜色和宽度，然后使用一个或多个手指进行绘制：
 
-[![](touch-tracking-images/fingerpaint-small.png "手指绘制页的三个屏幕截图")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
 
 此示例还需要一个单独的类来表示屏幕上绘制的每一行：
 
@@ -708,7 +708,7 @@ class FingerPaintPolyline
 }
 ```
 
-`SKPath` 对象用于呈现每行。 [FingerPaint.xaml.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/FingerPaintPage.xaml.cs) 文件维护这些对象的两个集合，一个用于当前正在绘制的这些折线，另一个用于已完成绘制的折线：
+`SKPath` 对象用于呈现每行。 [FingerPaint.xaml.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/FingerPaintPage.xaml.cs) 文件维护这些对象的两个集合，一个用于当前正在绘制的这些折线，另一个用于已完成绘制的折线：
 
 ```csharp
 Dictionary<long, FingerPaintPolyline> inProgressPolylines = new Dictionary<long, FingerPaintPolyline>();
@@ -752,7 +752,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 此类型的触摸处理对于音乐键盘非常有用。 键应该能够检测到按下的时间，以及当手指从一个键滑动到另一个键的时间。
 
-无提示键盘页定义派生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/Key.cs) 的小 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BlackKey.cs) 类，它派生自 `BoxView`  。
+无提示键盘页定义派生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/Key.cs) 的小 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BlackKey.cs) 类，它派生自 `BoxView`  。
 
 `Key` 类已准备好在实际音乐程序中使用。 它定义了名为 `IsPressed` 和 `KeyNumber` 的公共属性，旨在将其设置为由 MIDI 标准建立的密钥代码。 `Key` 还定义了名为 `StatusChanged` 的事件，该事件将在 `IsPressed` 属性更改时调用。
 
@@ -794,9 +794,9 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 `AddToList` 和 `RemoveFromList` 方法检查 `List` 是否在空和非空之间发生了更改，如果是，则调用 `StatusChanged` 事件。
 
-`WhiteKey` 和 `BlackKey` 的各种元素在页的 [XAML 文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml)中排列，以便于当手机保持在横向模式时显示效果最佳：
+`WhiteKey` 和 `BlackKey` 的各种元素在页的 [XAML 文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml)中排列，以便于当手机保持在横向模式时显示效果最佳：
 
-[![](touch-tracking-images/silentkeyboard-small.png "无提示键盘页的三个屏幕截图")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
+[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
 
 如果在键之间滑动手指，可以通过颜色的细微变化看见触摸事件从一个键传输到另一个键。
 

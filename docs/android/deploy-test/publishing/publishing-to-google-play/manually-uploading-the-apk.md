@@ -6,22 +6,23 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b54296da3f1253b77b63363583c34e1548cd6abc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021252"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724079"
 ---
 # <a name="manually-uploading-the-apk"></a>手动上传 APK
 
-第一次将 APK 提交到 Google Play（或如果使用 Xamarin.Android 的早期版本）时，必须通过 [Google Play 开发者控制台](https://play.google.com/apps/publish)手动上传 APK。 本指南介绍此过程所需的步骤。 
+第一次将 APK 提交到 Google Play（或如果使用 Xamarin.Android 的早期版本）时，必须通过 [Google Play 开发者控制台](https://play.google.com/apps/publish)手动上传 APK。
+本指南介绍此过程所需的步骤。
 
 ## <a name="google-play-developer-console"></a>Google Play 开发者控制台
 
 已编译 APK 并准备好促销资产后，必须将该应用程序上传到 Google Play。 通过登录到 [Google Play 开发者控制台](https://play.google.com/apps/publish)完成此操作，如图所示。 单击“在 Google Play 上发布 Android 应用”  按钮，启动分发应用程序的进程。
 
-[![Google Play 开发者控制台](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
+[![Google Play 开发人员控制台](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
 
 如果某个现有应用已注册了 Google Play，请单击“添加新应用程序”  按钮：
 
@@ -35,7 +36,7 @@ ms.locfileid: "73021252"
 
 [![将第一个 APK 上传到 Alpha 按钮](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
-随即显示“将新 APK 上传到 ALPHA”  对话框。 可通过单击“浏览文件”  按钮或拖放 APK 来上传 APK： 
+随即显示“将新 APK 上传到 ALPHA”  对话框。 可通过单击“浏览文件”  按钮或拖放 APK 来上传 APK：
 
 [![将新 APK 上传到 Alpha 对话框](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
@@ -54,7 +55,7 @@ ms.locfileid: "73021252"
 
 ## <a name="store-listing"></a>应用商店一览
 
-单击“Google Play 开发者控制台”  中的“应用商店一览”  ，输入 Google Play 将向应用程序的潜在用户显示的信息： 
+单击“Google Play 开发者控制台”  中的“应用商店一览”  ，输入 Google Play 将向应用程序的潜在用户显示的信息：
 
 [![“应用商店一览”对话框](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
@@ -90,19 +91,19 @@ ms.locfileid: "73021252"
 
 Google Play 上的所有应用程序必须根据 Google Play 分级系统进行分级。 除内容分级以外，所有应用程序还必须遵守 Google 的[开发者内容政策](https://www.android.com/us/developer-content-policy.html)。
 
-下表列出了 Google Play 分级系统中的四个级别，并提供有关可能要求或强制分级的功能或内容的一些指导： 
+下表列出了 Google Play 分级系统中的四个级别，并提供有关可能要求或强制分级的功能或内容的一些指导：
 
-- **任何人** &ndash; 不可访问、发布或共享位置数据。 不可承载用户生成的任何内容。 不可实现用户之间的通信。 
+- 任何人  &ndash; 不可访问、发布或共享位置数据。 不可承载用户生成的任何内容。 不可实现用户之间的通信。
 
-- **低成熟度** &ndash; 访问但不共享位置数据的应用程序。 轻度暴力或卡通级暴力描述。 
+- 低成熟度  &ndash; 访问但不共享位置数据的应用程序。 轻度暴力或卡通级暴力描述。
 
-- **中等成熟度** &ndash; 涉及毒品、酒精或烟草。 赌博主题或模拟赌博。 煽动性内容。 不敬或粗俗幽默内容。 性暗示内容或性相关内容。 
-    激烈的幻想暴力。 现实的暴力内容。 允许用户相互查找。 允许用户相互通信。 
-    用户位置数据共享。 
+- 中等成熟度  &ndash; 涉及毒品、酒精或烟草。 赌博主题或模拟赌博。 煽动性内容。 不敬或粗俗幽默内容。 性暗示内容或性相关内容。
+    激烈的幻想暴力。 现实的暴力内容。 允许用户相互查找。 允许用户相互通信。
+    用户位置数据共享。
 
-- **高成熟度** &ndash; 侧重酒精、烟草或毒品消费或销售。 侧重于性暗示或性相关的内容。 图像暴力。 
+- 高成熟度  &ndash; 侧重酒精、烟草或毒品消费或销售。 侧重于性暗示或性相关的内容。 图像暴力。
 
-中等成熟度列表中的项的判断具有主观性，这样的话，有可能根据某个准则判断为中等成熟度级别的内容也可能有充分的合理性被判断为高成熟度级别。 
+中等成熟度列表中的项的判断具有主观性，这样的话，有可能根据某个准则判断为中等成熟度级别的内容也可能有充分的合理性被判断为高成熟度级别。
 
 ## <a name="pricing-amp-distribution"></a>定价和分发
 
@@ -131,7 +132,7 @@ Google Play 不允许将免费应用程序更改为付费应用（但是，可�
 ### <a name="consent"></a>许可
 
 “定价和分发”  页面的底部是“许可”  部分。
-这是必需的部分，用于声明应用程序满足 [Android 内容准则](https://www.android.com/market/terms/developer-content-policy.html#hl=us)，并确认应用程序受美国出口法律显示：
+这是必需的部分，用于声明应用程序满足 [Android 内容准则](https://play.google.com/about/restricted-content/)，并确认应用程序受美国出口法律显示：
 
 [![“许可”部分](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
@@ -149,29 +150,29 @@ Google Play 不允许将免费应用程序更改为付费应用（但是，可�
 
 可以向应用的清单添加元素，以帮助控制在 Google Play 商店中筛选应用的方式。 下表列出了可用于筛选应用程序的清单元素和特性：
 
-- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 使用此属性，根据屏幕大小确定应用程序是否可部署到设备中。 
-    Google Play 假定 Android 可将较小布局调整为较大屏幕，但反之不成立。 因此，声明支持标准屏幕的应用程序会在搜索较大屏幕而非较小屏幕时的搜索结果中出现。 如果 Xamarin.Android 应用程序在清单文件中不提供 `<supports-screen>` 元素，Google Play 将假定所有属性均具有值 true，并且该应用程序支持所有屏幕大小。 必须将此元素手动添加到 **AndroidManifest.xml**。 
+- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 使用此属性，根据屏幕大小确定应用程序是否可部署到设备中。
+    Google Play 假定 Android 可将较小布局调整为较大屏幕，但反之不成立。 因此，声明支持标准屏幕的应用程序会在搜索较大屏幕而非较小屏幕时的搜索结果中出现。 如果 Xamarin.Android 应用程序在清单文件中不提供 `<supports-screen>` 元素，Google Play 将假定所有属性均具有值 true，并且该应用程序支持所有屏幕大小。 必须将此元素手动添加到 **AndroidManifest.xml**。
 
-- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此清单元素用于请求某些硬件功能，例如键盘类型、导航设备和触摸屏等。必须将此元素手动添加到 **AndroidManifest.xml**。 
+- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此清单元素用于请求某些硬件功能，例如键盘类型、导航设备和触摸屏等。必须将此元素手动添加到 **AndroidManifest.xml**。
 
-- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此清单元素声明为确保应用程序正常运行，设备所必需的硬件或软件功能。 此特性仅提供信息。 Google Play 不会向设备显示不符合此筛选条件的应用程序。 仍可通过其他方式（手动或下载）安装该应用程序。 必须将此元素手动添加到 **AndroidManifest.xml**。 
+- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此清单元素声明为确保应用程序正常运行，设备所必需的硬件或软件功能。 此特性仅提供信息。 Google Play 不会向设备显示不符合此筛选条件的应用程序。 仍可通过其他方式（手动或下载）安装该应用程序。 必须将此元素手动添加到 **AndroidManifest.xml**。
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素指定设备上必须存在的某些共享库（如 Google Maps）。 还可使用 `Android.App.UsesLibraryAttribute` 指定此元素。 例如: 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素指定设备上必须存在的某些共享库（如 Google 地图）。 还可使用 `Android.App.UsesLibraryAttribute` 指定此元素。 例如：
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素用于推断应用程序正常运行所必需的某些硬件功能可能未通过 `<uses-feature>` 元素正确声明。 例如，如果应用程序请求照相机使用权限，则 Google Play 会假定设备必定装有摄像头，即使没有任何声明摄像头的 `<uses-feature>` 元素。 此元素可通过 `Android.App.UsesPermissionsAttribute` 进行设置。 例如: 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素用于推断应用程序正常运行所必需的某些硬件功能，而这些功能可能未通过 `<uses-feature>` 元素正确声明。 例如，如果应用程序请求照相机使用权限，则 Google Play 会假定设备必定装有摄像头，即使没有任何声明摄像头的 `<uses-feature>` 元素。 此元素可通过 `Android.App.UsesPermissionsAttribute` 进行设置。 例如：
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
     ```
 
-- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; 该元素用于声明应用程序所需的最低 Android API 级别。 此元素可在 Xamarin.Android 项目的 Xamarin.Android 选项中进行设置。 
+- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; 该元素用于声明应用程序所需的最低 Android API 级别。 此元素可在 Xamarin.Android 项目的 Xamarin.Android 选项中进行设置。
 
-- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; 此元素用于筛选与其指定的屏幕大小和密度不匹配的应用程序。 大多数应用程序不应使用此筛选器。 此筛选器专用于特定的高性能游戏或需要严格控制应用程序分发的应用程序。 上面提到的 `<support-screen>` 特性是首选特性。 
+- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; 此元素用于筛选与其指定的屏幕大小和密度不匹配的应用程序。 大多数应用程序不应使用此筛选器。 此筛选器专用于特定的高性能游戏或需要严格控制应用程序分发的应用程序。 上面提到的 `<support-screen>` 特性是首选特性。
 
-- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; 此元素用于声明应用程序所需的 GL 纹理压缩构造。 大多数应用程序不应使用此筛选器。 此筛选器专用于特定的高性能游戏或需要严格控制应用程序分发的应用程序。 
+- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; 此元素用于声明应用程序所需的 GL 纹理压缩构造。 大多数应用程序不应使用此筛选器。 此筛选器专用于特定的高性能游戏或需要严格控制应用程序分发的应用程序。
 
 有关配置应用清单的详细信息，请参阅 Android [应用清单](https://developer.android.com/guide/topics/manifest/manifest-intro.html)主题。

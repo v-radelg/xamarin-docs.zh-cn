@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae140f7ea75c1631c6c96170af738f3fac04dcdb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026509"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724691"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -198,7 +198,7 @@ Xamarin.iOS 使用新的 Mono 软调试器。 与标准 Mono 调试器不同，�
 
 崩溃日志和控制台类输出将发送到 iPhone 控制台。 可以通过 Xcode 使用“管理器”，然后从管理器选择设备来访问此控制台。
 
-或者，如果不想启动 Xcode，可以使用 Apple 的 [iPhone 配置实用程序](https://www.apple.com/support/iphone/enterprise/)直接访问控制台。 此操作有额外的好处，如果用户正在域中调试问题，则可从 Windows 计算机访问控制台日志。
+或者，如果不想启动 Xcode，可以使用 Apple 的 iPhone 配置实用程序直接访问控制台。 此操作有额外的好处，如果用户正在域中调试问题，则可从 Windows 计算机访问控制台日志。
 
 对于 Visual Studio 用户，虽然输出窗口中有多个可用日志，但应切换到 Mac 更全面地了解详细日志。
 

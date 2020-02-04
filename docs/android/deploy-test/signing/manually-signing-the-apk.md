@@ -6,27 +6,27 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f43cb3ac5ff4d976c57a9d82c2003a08954ef1a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021050"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724121"
 ---
 # <a name="manually-signing-the-apk"></a>对 APK 进行手动签名
 
 生成用于发布的应用程序后，应先对 APK 进行签名，然后再进行分发，以便它能够在 Android 设备上运行。 此过程通常在 IDE 中处理，但某些情况下，需要在命令行中手动对 APK 进行签名。 对 APK 进行签名的步骤如下：
 
-1. **创建私钥** &ndash; 此步骤仅需执行一次。 对 APK 进行数字签名需要私钥。
+1. 创建私钥  &ndash; 此步骤仅需执行一次。 对 APK 进行数字签名需要私钥。
     准备好私钥后，可对将来的发布版本跳过此步骤。
 
-2. **使用 Zipalign 优化 APK** &ndash; *Zipalign* 是对应用程序执行的优化过程。 它可使 Android 和 APK 在运行时的交互更高效。 Xamarin.Android 会在运行时执行检查，如果 APK 尚未使用 zipalign 进行优化，则不允许应用程序运行。
+2. 使用 Zipalign 优化 APK  &ndash; Zipalign  是对应用程序执行的优化过程。 它可使 Android 和 APK 在运行时的交互更高效。 Xamarin.Android 会在运行时执行检查，如果 APK 尚未使用 zipalign 进行优化，则不允许应用程序运行。
 
-3. 对 APK 进行签名&ndash;此步骤涉及使用来自 Android SDK 的 apksigner 实用工具，并通过上一步创建的私钥对 APK 进行签名。   对于使用 v24.0.3 之前的 Android SDK 生成工具版本进行开发的应用程序，它们将使用来自 JDK 的 jarsigner 应用。  下面更详细地讨论这两种工具。 
+3. 对 APK 进行签名 &ndash; 此步骤涉及使用来自 Android SDK 的 apksigner 实用工具，并利用上一步创建的私钥对 APK 进行签名。   对于使用 v24.0.3 之前的 Android SDK 生成工具版本进行开发的应用程序，它们将使用来自 JDK 的 jarsigner 应用。  下面更详细地讨论这两种工具。
 
-步骤的顺序至关重要，取决于使用何种工具对 APK 进行签名。 当使用 apksigner 时，务必先使用 zipalign 优化应用程序，然后再通过 apksigner 对其签名。     如需使用 jarsigner 对 APK 进行签名，则需先对 APK 进行签名，然后再运行 zipalign。   
+步骤的顺序至关重要，取决于使用何种工具对 APK 进行签名。 当使用 apksigner 时，务必先使用 zipalign 优化应用程序，然后再通过 apksigner 对其签名。     如需使用 jarsigner 对 APK 进行签名，则需先对 APK 进行签名，然后再运行 zipalign。  
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 本指南主要介绍使用来自 Android SDK 生成工具 v24.0.3 或更高版本的 apksigner。  假设已生成 APK。
 
@@ -82,7 +82,7 @@ Re-enter new password:
 [Storing xample.keystore]
 ```
 
-若要列出密钥存储中存储的密钥，请通过 **keytool** 中使用 &ndash; `list` 选项：
+要列出存储在密钥存储中的密钥，请通过 &ndash; `list` 选项使用 **keytool**：
 
 ```shell
 $ keytool -list -keystore xample.keystore
@@ -127,7 +127,7 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!WARNING]
 > 本节仅适用于需要使用 jarsigner  实用工具对 APK 进行签名的情况。 推荐开发者使用 apksigner 对 APK 进行签名。 
 
-此技术包括使用来自 Java SDK 的 [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html) 命令对 APK 文件进行签名。   jarsigner 工具由 Java SDK 提供。  
+此技术包括使用来自 Java SDK 的 [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html) 命令对 APK 文件进行签名。   jarsigner 工具由 Java SDK 提供。 
 
 以下示例演示如何使用 **jarsigner** 和 **xample.keystore** 密钥存储文件中包含的密钥 `publishingdoc` 对 APK 进行签名：
 
@@ -141,7 +141,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 ## <a name="related-links"></a>相关链接
 
 - [应用程序签名](https://source.android.com/security/apksigning/)
-- [Java JAR 签名](https://docs.oracle.com/javase/8/docs/technotes~/jar/jar.html#Signed_JAR_File)
 - [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)
 - [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html)
 - [zipalign](https://developer.android.com/studio/command-line/zipalign.html)

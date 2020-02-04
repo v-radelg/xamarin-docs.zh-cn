@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 675e6cebab95d2a997bf48a6c9231b5e8c661342
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
+ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020846"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794831"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑难解答
 
-本文介绍配置和运行 Android Emulator 时最常见的警告消息和问题。此外，其中还介绍了这些错误的解决方案以及各种疑难解答提示，以帮助诊断仿真器出现的问题。_
+本文介绍配置和运行 Android Emulator 时最常见的警告消息和问题。此外，其中还介绍了这些错误的解决方案以及各种疑难解答提示，以帮助诊断仿真器出现的问题。 
 
 ::: zone pivot="windows"
 
@@ -39,7 +39,7 @@ ms.locfileid: "73020846"
    adb devices
    ```
 
-4. 如果可以通过 Android SDK 访问仿真器，那么仿真器应该就显示在附加设备列表中。 例如:
+4. 如果可以通过 Android SDK 访问仿真器，那么仿真器应该就显示在附加设备列表中。 例如：
 
    ```shell
    List of devices attached
@@ -58,8 +58,8 @@ ms.locfileid: "73020846"
 
 如果在仿真器中运行的虚拟设备未安装 Google Play Services 或 Google Play 商店，则在未安装这些软件包时创建虚拟设备通常会出现此情况。 创建虚拟设备时（请参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请务必选择以下一个或两个选项：
 
-- **Google API** &ndash; 在虚拟设备中包含 Google Play Services。
-- **Google Play 商店** &ndash; 在虚拟设备中包含 Google Play 商店。
+- Google API  &ndash; 在虚拟设备中包含 Google Play 服务。
+- Google Play 商店  &ndash; 在虚拟设备中包含 Google Play 商店。
 
 例如，此虚拟设备将包含 Google Play Services 和 Google Play 商店：
 
@@ -230,11 +230,11 @@ SERVICE_NAME: intelhaxm
 
 HAXM 可能与其他使用虚拟化的技术（如 Hyper-V、Windows Device Guard 和某防病毒软件）冲突：
 
-- **Hyper-V** &ndash; 如果使用的是 Windows 10 2018 年 4 月更新（内部版本 1803）之前的 Windows 版本，并启用了 Hyper-V，请按照[禁用 Hyper-V](#disable-hyperv) 中的步骤操作以便启用 HAXM  。
+- Hyper-V  &ndash; 如果使用的是 Windows 10 2018 年 4 月更新（内部版本 1803）之前的 Windows 版本，并启用了 Hyper-V，请按照[禁用 Hyper-V](#disable-hyperv) 中的步骤操作，以便启用 HAXM  。
 
 - Device Guard  &ndash; Device Guard 和 Credential Guard 可阻止在 Windows 计算机上禁用 Hyper-V。 若要禁用 Device Guard 和 Credential Guard，请参阅[禁用 Device Guard](#disable-devguard)。
 
-- **防病毒软件** &ndash; 如果运行的防病毒软件（如 Avast）使用硬件协助虚拟化，请禁用或卸载此软件，再重启并重试运行 Android Emulator。
+- 防病毒软件  &ndash; 如果运行的防病毒软件（如 Avast）使用硬件协助虚拟化，请禁用或卸载此软件，再重启并重试运行 Android 仿真器。
 
 #### <a name="incorrect-bios-settings"></a>BIOS 设置不正确
 
@@ -284,7 +284,7 @@ Device Guard 和 Credential Guard 可阻止在 Windows 计算机上禁用 Hyper-
 
 1. 确保已按照上一部分所述禁用“Hyper-V”  （在“打开或关闭 Windows 功能”  下）。
 
-2. 在 Windows 搜索框中，输入“gpedit”  ，再选择“编辑组策略”  搜索结果。 这些步骤将启动“本地组策略编辑器”  。
+2. 在 Windows 搜索框中，输入“gpedit.msc”  ，然后选择“编辑组策略”  搜索结果。 这些步骤将启动“本地组策略编辑器”  。
 
 3. 在“本地组策略编辑器”  中，依次转到“计算机配置”>“管理模板”>“系统”>“Device Guard”  ：
 
@@ -375,7 +375,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
    adb devices
    ```
 
-4. 如果可以通过 Android SDK 访问仿真器，那么仿真器应该就显示在附加设备列表中。 例如:
+4. 如果可以通过 Android SDK 访问仿真器，那么仿真器应该就显示在附加设备列表中。 例如：
 
    ```shell
    List of devices attached
@@ -394,8 +394,8 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 如果在仿真器中运行的虚拟设备未安装 Google Play Services 或 Google Play 商店，则在未安装这些软件包时创建虚拟设备通常会出现此情况。 创建虚拟设备时（请参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请务必选择以下一项或两项：
 
-- **Google API** &ndash; 在虚拟设备中包含 Google Play Services。
-- **Google Play 商店** &ndash; 在虚拟设备中包含 Google Play 商店。
+- Google API  &ndash; 在虚拟设备中包含 Google Play 服务。
+- Google Play 商店  &ndash; 在虚拟设备中包含 Google Play 商店。
 
 例如，此虚拟设备将包含 Google Play Services 和 Google Play 商店：
 

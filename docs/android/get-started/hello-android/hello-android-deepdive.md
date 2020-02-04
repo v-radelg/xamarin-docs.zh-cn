@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 10a46c916654f8421dc5a9af93de3abbbae5e934
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028009"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724361"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
@@ -26,32 +26,32 @@ _本指南由两部分构成，在本指南中，用户将生成第一个 Xamari
 
 ::: zone pivot="windows"
 
-- **Visual Studio 简介** &ndash; Visual Studio 以及创建新 Xamarin.Android 应用程序的简介。
+- Visual Studio 简介  &ndash; Visual Studio 以及创建新 Xamarin.Android 应用程序的简介。
 
 - **Xamarin.Android 应用程序剖析** - Xamarin.Android 应用程序基本部分的教程。
 
-- **应用基础知识和体系结构基础知识** &ndash; 活动、Android 清单，以及常规 Android 开发风格简介。
+- 应用基础知识和体系结构基础知识  &ndash; 活动、Android 清单以及常规 Android 开发风格简介。
 
-- **用户界面 (UI)** &ndash; 使用 Android Designer 创建用户界面。
+- 用户界面 (UI)  &ndash; 使用 Android Designer 创建用户界面。
 
-- **活动和活动生命周期** &ndash; 活动生命周期和使用代码连接用户界面的简介。
+- 活动和活动生命周期  &ndash; 活动生命周期和使用代码连接用户界面的简介。
 
-- **测试、部署和完成收尾工作** &ndash; 完成应用程序（提供了有关测试、部署、生成图稿等方面的建议）。
+- 测试、部署和完成收尾工作  &ndash; 完成应用程序（提供了有关测试、部署、生成图稿等方面的建议）。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- **Visual Studio for Mac 简介**&ndash; Visual Studio for Mac 以及创建新 Xamarin.Android 应用程序的简介。
+- Visual Studio for Mac 简介  &ndash; Visual Studio for Mac 以及创建新 Xamarin.Android 应用程序的简介。
 
-- **Xamarin.Android 应用程序剖析** &ndash; Xamarin.Android 应用程序基本部分的教程。
+- Xamarin.Android 应用程序剖析  &ndash; Xamarin.Android 应用程序基本部分的教程。
 
-- **应用基础知识和体系结构基础知识** &ndash; 活动、Android 清单，以及常规 Android 开发风格简介。
+- 应用基础知识和体系结构基础知识  &ndash; 活动、Android 清单，以及常规 Android 开发风格简介。
 
-- **用户界面 (UI)** &ndash; 使用 Android Designer 创建用户界面。
+- 用户界面 (UI)  &ndash; 使用 Android Designer 创建用户界面。
 
-- **活动和活动生命周期** &ndash; 活动生命周期和使用代码连接用户界面的简介。
+- 活动和活动生命周期  &ndash; 活动生命周期和使用代码连接用户界面的简介。
 
-- **测试、部署和完成收尾工作** &ndash; 完成应用程序（提供了有关测试、部署、生成图稿等方面的建议）。
+- 测试、部署和完成收尾工作  &ndash; 完成应用程序（提供了有关测试、部署、生成图稿等方面的建议）。
 
 ::: zone-end
 
@@ -99,13 +99,13 @@ Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual St
 
 查看项目中的项，查看每个文件夹及其用途：
 
-- **属性** &ndash; 包含 [AndroidManifest.xml](~/android/platform/android-manifest.md) 文件，该文件描述了对 Xamarin.Android 应用程序的所有要求（包括名称、版本号和权限）。 **Properties** 文件夹还包括.NET 程序集元数据文件 [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo)。 最好在此文件中填写一些应用程序相关的基本信息。
+- 属性  &ndash; 包含 [AndroidManifest.xml](~/android/platform/android-manifest.md) 文件，该文件描述了对 Xamarin.Android 应用程序的所有要求（包括名称、版本号和权限）。 **Properties** 文件夹还包括.NET 程序集元数据文件 [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo)。 最好在此文件中填写一些应用程序相关的基本信息。
 
-- **引用** &ndash; 包含生成和运行应用程序所需的程序集。 如果展开“引用”目录，可查看对 .NET 程序集（如 [System](xref:System)、System.Core 和 [System.Xml](xref:System.Xml)）的引用以及对 Xamarin 的 Mono.Android 程序集的引用。
+- 引用  &ndash; 包含生成和运行应用程序所需的程序集。 如果展开“引用”目录，可查看对 .NET 程序集（如 [System](xref:System)、System.Core 和 [System.Xml](xref:System.Xml)）的引用以及对 Xamarin 的 Mono.Android 程序集的引用。
 
-- **资产** &ndash; 包含应用程序需要运行的文件（包括字体、本地数据文件和文本文件）。 此处包括的文件可通过生成的 `Assets` 类访问。 有关 Android 资产的详细信息，请参阅 Xamarin [使用 Android 资产](~/android/app-fundamentals/resources-in-android/android-assets.md)指南。
+- 资产  &ndash; 包含应用程序需要运行的文件（包括字体、本地数据文件和文本文件）。 此处包括的文件可通过生成的 `Assets` 类访问。 有关 Android 资产的详细信息，请参阅 Xamarin [使用 Android 资产](~/android/app-fundamentals/resources-in-android/android-assets.md)指南。
 
-- **资源** &ndash; 包含应用程序资源，例如字符串、图像和布局。 可以通过生成的 `Resource` 类访问代码中的这些资源。 [Android 资源](~/android/app-fundamentals/resources-in-android/index.md)指南提供有关“资源”  目录的更多详细信息。 应用程序模板在 **AboutResources.txt** 文件中还包含有“资源”的简明指南。
+- 资源  &ndash; 包含应用程序资源，例如字符串、图像和布局。 可以通过生成的 `Resource` 类访问代码中的这些资源。 [Android 资源](~/android/app-fundamentals/resources-in-android/index.md)指南提供有关“资源”  目录的更多详细信息。 应用程序模板在 **AboutResources.txt** 文件中还包含有“资源”的简明指南。
 
 ### <a name="resources"></a>资源
 
@@ -113,24 +113,24 @@ Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual St
 
 下表总结了这些项：
 
-- **drawable** &ndash; 可绘制目录包含[可绘制资源](https://developer.android.com/guide/topics/resources/drawable-resource.html)，如图像和位图。
+- drawable  &ndash; drawable 目录包含[可绘制资源](https://developer.android.com/guide/topics/resources/drawable-resource.html)，如图像和位图。
 
-- **mipmap** &ndash; mipmap 目录包含适用于不同启动器图标密度的可绘制文件。 在默认模板中，drawable 目录包含应用程序图标文件“Icon.png”  。
+- mipmap  &ndash; mipmap 目录包含适用于不同启动器图标密度的可绘制文件。 在默认模板中，drawable 目录包含应用程序图标文件“Icon.png”  。
 
 ::: zone pivot="windows"
 
-- **layout** &ndash; 布局目录包含 _Android 设计器文件_ (.axml)，该文件定义每个屏幕或活动的用户界面。 该模板创建名为 activity_main.axml 的默认布局  。
+- layout  &ndash; layout 目录包含 _Android 设计器文件_ (.axml)，该文件定义每个屏幕或活动的用户界面。 该模板创建名为 activity_main.axml 的默认布局  。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- **layout** &ndash; 布局目录包含 _Android 设计器文件_ (.axml)，该文件定义每个屏幕或活动的用户界面。 该模板创建名为 **Main.axml** 的默认布局。
+- layout  &ndash; layout 目录包含 _Android 设计器文件_ (.axml)，该文件定义每个屏幕或活动的用户界面。 该模板创建名为 **Main.axml** 的默认布局。
 
 ::: zone-end
 
-- **values** &ndash; 此目录包含存储简单值（如字符串、整数和颜色）的 XML 文件。 该模板创建名为 **Strings.xml** 的文件，用于存储字符串值。
+- values  &ndash; 此目录包含存储简单值（如字符串、整数和颜色）的 XML 文件。 该模板创建名为 **Strings.xml** 的文件，用于存储字符串值。
 
-- **Resource.designer.cs** &ndash; 也称为 `Resource` 类，此文件是一个分部类，存放分配给每个资源的唯一 ID。 它由 Xamarin.Android 工具自动创建，并在必要时重新生成。 不应手动编辑此文件，因为 Xamarin.Android 将覆盖对其进行的任何手动更改。
+- Resource.designer.cs  &ndash; 也称为 `Resource` 类，此文件是一个分部类，存放分配给每个资源的唯一 ID。 它由 Xamarin.Android 工具自动创建，并在必要时重新生成。 不应手动编辑此文件，因为 Xamarin.Android 将覆盖对其进行的任何手动更改。
 
 ## <a name="app-fundamentals-and-architecture-basics"></a>应用基础知识和体系结构基础知识
 
@@ -235,11 +235,11 @@ public class MainActivity : Activity
 
 通过重写 `Activity` 生命周期方法，可以控制活动的加载方式和与用户的互动方式，甚至还可以控制活动从设备屏幕消失后会发生的情况。 例如，可以重写上图中的生命周期方法，以执行以下重要任务：
 
-- **OnCreate** &ndash; 创建视图、初始化变量，并执行在用户能看到活动之前其他必须完成的准备工作。 只有将活动加载到内存时，才会调用此方法一次。 
+- OnCreate  &ndash; 创建视图、初始化变量，并执行在用户能看到活动之前必须完成的其他准备工作。 只有将活动加载到内存时，才会调用此方法一次。
 
-- **OnResume** &ndash; 执行每当活动返回到设备屏幕时必须发生的任何任务。
+- OnResume  &ndash; 执行每当活动返回到设备屏幕时必须发生的任何任务。
 
-- **OnPause** &ndash; 执行每当活动离开设备屏幕时必须发生的任何任务。
+- OnPause  &ndash; 执行每当活动离开设备屏幕时必须发生的任何任务。
 
 向 `Activity` 中的生命周期方法添加自定义代码时，重写  该生命周期方法的基实现  。 可以利用现有的生命周期方法（已在其中附加了一些代码）并使用自己的代码来扩展该方法。 从方法内调用基实现，确保原始代码在新代码之前运行。 下一部分对此提供示例说明。
 
@@ -279,7 +279,7 @@ SetContentView (Resource.Layout.activity_main);
 SetContentView (Resource.Layout.Main);
 ```
 
-当 `MainActivity` 开始运行后，会基于 **Main.axml** 文件中内容创建一个视图。 请注意，布局文件名称应与活动名称匹配 &ndash;  Main.axml 是 Main  活动的布局。 这不是 Android 要求的，但当你开始向应用程序添加更多屏幕时，会发现此命名约定便于匹配布局文件和代码文件。
+当 `MainActivity` 开始运行后，会基于 **Main.axml** 文件中内容创建一个视图。 请注意，布局文件名应与活动名称匹配 &ndash;  Main.axml 是 Main  活动的布局。 这不是 Android 要求的，但当你开始向应用程序添加更多屏幕时，会发现此命名约定便于匹配布局文件和代码文件。
 
 ::: zone-end
 
@@ -296,7 +296,7 @@ TextView translatedPhoneWord = FindViewById<TextView>(Resource.Id.TranslatedPhon
 
 ### <a name="responding-to-user-interaction"></a>响应用户交互
 
-在 Android 中， `Click` 事件侦听用户的触控。 在此应用中，`Click` 事件将由 lambda 处理，不过也可改用委托或命名事件处理程序。 最终的 **TranslateButton** 代码如下所示： 
+在 Android 中， `Click` 事件侦听用户的触控。 在此应用中，`Click` 事件将由 lambda 处理，不过也可改用委托或命名事件处理程序。 最终的 **TranslateButton** 代码如下所示：
 
 ```csharp
 translateButton.Click += (sender, e) =>
@@ -376,26 +376,20 @@ Android 根据合适的密度选择图标：
 
 ::: zone pivot="windows"
 
-- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器生成器，针对所有类型 Android 图标，带有其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器内生成器，针对所有类型 Android 图标，带有指向其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
 
 - Visual Studio &ndash; 可以用于直接在 IDE 中为应用创建简单图标集。
 
-- [Glyphish](https://www.glyphish.com/) &ndash; 可免费下载和购买的高质量预生成图标集。
-
-- [Fiverr](https://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便为你创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
+- [Fiverr](https://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器生成器，针对所有类型 Android 图标，带有其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
-
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch 是用于设计用户界面、图标等的 Mac 应用。 这是用于设计 Xamarin 应用图标和启动图像集的应用。 App Store 提供 Sketch 3，价格约 80 美元。 还可以免费试用 [Sketch 工具](https://bohemiancoding.com/sketch/tool/)。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 是一个基于 Web 的浏览器内生成器，针对所有类型 Android 图标，带有指向其他有用社区工具的链接。 在 Google Chrome 中性能最佳。
 
 - [Pixelmator](https://www.pixelmator.com/) &ndash; 适用于 Mac 的通用图像编辑应用（价格约 30 美元）。
 
-- [Glyphish](https://www.glyphish.com/) &ndash; 可免费下载和购买的高质量预生成图标集。
-
-- [Fiverr](https://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便为你创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
+- [Fiverr](https://www.fiverr.com/) &ndash; 从各种设计器中进行选择以便创建图标集（最低 5 美元）。 可以漫无目标，不过如果需要动态设计的图标，这是很好的资源。
 
 ::: zone-end
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: 1141b96151df0adda755b7c6d60019c18825cc76
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e27e73ac2c5164fa3431c8892b21a71c32fcd8ef
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028019"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724010"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>多核设备和 Xamarin.Android
 
@@ -97,7 +97,7 @@ Android 应用程序包是包含 Android 应用程序所需的所有代码、资
 
 - resources.arsc  &ndash; 此文件包含应用程序的所有预编译资源。
 
-- **lib** &ndash; 此目录包含每个 ABI 的编译代码。 它将包含上一节中所述的每个 ABI 的一个子文件夹。 在上面的屏幕截图中，所涉及的 `.apk` 都具有 `armeabi-v7a` 和 `x86` 的本机库。
+- lib  &ndash; 此目录包含每个 ABI 的编译代码。 它将包含上一节中所述的每个 ABI 的一个子文件夹。 在上面的屏幕截图中，所涉及的 `.apk` 都具有 `armeabi-v7a` 和 `x86` 的本机库。
 
 - META-INF  &ndash; 此目录（如果存在）用于存储签名信息、包和扩展配置数据。
 
@@ -176,7 +176,7 @@ $APP/lib/libtwo.so
 
 遗憾的是，此行为依赖于顺序，如以下文档所述 - [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](https://code.google.com/p/android/issues/detail?id=25321)。
 
-本机库“按顺序”（例如，通过解压缩列出的顺序）进行处理，并提取*第一个匹配项*。 由于 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，并且首先列出 `armeabi`，它是提取的 `armeabi` 版本，*不是*  `armeabi-v7a` 版本：
+本机库“按顺序”（例如，通过解压缩列出的顺序）进行处理，并提取*第一个匹配项*。 由于 `.apk` 包含 `libtwo.so` 的 `armeabi` 和 `armeabi-v7a` 版本，并且首先列出 `armeabi`，它是提取的 `armeabi` 版本，*不是* `armeabi-v7a` 版本：
 
 ```shell
 $APP/lib/libone.so # armeabi
@@ -190,7 +190,7 @@ $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 <AndroidSupportedAbis>armeabi,armeabi-v7a</AndroidSupportedAbis>
 ```
 
-因此，首先将找到 `.apk` 中的 `armeabi` `libmonodroid.so`，并且将会提取 `armeabi` `libmonodroid.so`，即使 `armeabi-v7a` `libmonodroid.so` 存在并针对目标进行了优化。 这也会导致隐蔽的运行时错误，因为 `armeabi` 不具 SMP 安全性。
+因此，首先可找到 `.apk` 中的 `armeabi` `libmonodroid.so`，并且会提取 `armeabi` `libmonodroid.so`，即使 `armeabi-v7a` `libmonodroid.so` 存在并针对目标进行了优化。 这也会导致隐蔽的运行时错误，因为 `armeabi` 不具 SMP 安全性。
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>安装本机库：Android 4.0.4 及更高版本
 
@@ -253,7 +253,6 @@ Xamarin.Android 当前不支持 `mips`。
 
 ## <a name="related-links"></a>相关链接
 
-- [ARM 体系结构的 ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [问题 9089：Nexus One - 如果 armeabi-v7a 中至少有一个库，则不会加载来自 armeabi 的任何本机库](https://code.google.com/p/android/issues/detail?id=9089)
 - [问题 24321：armeabi 和 armeabi-v7a 同时包含在 apk 中时，Galaxy Nexus 4.0.2 使用 armeabi 本机代码](https://code.google.com/p/android/issues/detail?id=25321)

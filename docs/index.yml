@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: fa152418c40ac61df15e8a22b838d012935bee4b
-  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.openlocfilehash: c28f849f772bb496b526552745a0aea1c2e08e62
+  ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 01/06/2020
-  ms.locfileid: "75679709"
+  ms.lasthandoff: 02/01/2020
+  ms.locfileid: "76940709"
 highlightedContent:
   items:
   - title: 设置和安装
@@ -76,13 +76,13 @@ conceptualContent:
     - text: 文件 > 新建
       url: ~/get-started/quickstarts/single-page.md
       itemType: get-started
-    - text: 添加导航
+    - text: '添加导航 '
       url: ~/get-started/quickstarts/multi-page.md
       itemType: get-started
-    - text: 添加数据库
+    - text: '添加数据库 '
       url: ~/get-started/quickstarts/database.md
       itemType: get-started
-    - text: 设计应用的样式
+    - text: '设计应用的样式 '
       url: ~/get-started/quickstarts/styling.md
       itemType: get-started
     footerLink:
@@ -140,7 +140,7 @@ additionalContent:
       summary: 用于通用设备功能的跨平台 API。
       url: ~/essentials/index.md
     - title: 访问 REST Web 服务
-      summary: 使用 Git、TFVC 等版本控制技术共享代码。
+      summary: 使用 HTTP 和 JSON 集成 Web 服务并与之交互
       url: ~/xamarin-forms/data-cloud/web-services/rest.md
     - title: 部署到 Android 和 iOS 设备
       summary: 上传以测试设备和应用存储。

@@ -35,7 +35,7 @@ Xamarin.Forms | 4.1 或更高版本
 
 使用 XAML 热重载不需要额外的安装或设置。 它内置于 Visual Studio 中，并可在 IDE 设置中启用。 启用后，可以通过在模拟器、模拟器或物理设备上调试应用，开始使用 XAML 热重载。 目前，XAML 热重载仅适用于在 iOS 或 Android 上调试时的工作。
 
-在 Windows 上，可以通过选中 "在 > **工具**上**启用 xamarin 热重载**" 复选框来启用 XAML 热重载 **， > ** **Xamarin** > "**热重载**"。
+在 Windows 上，可以通过选中 "在 > **工具**上**启用 xamarin 热重载**" 复选框来启用 XAML 热重载 **，**  > **Xamarin** > "**热重载**"。
 
 在 Mac 上，可以通过选中 "在**Visual Studio**上**启用 Xamarin 热重载**" 复选框来启用 XAML 热重载 > **首选项** > **项目** > **Xamarin 热重载**。
 

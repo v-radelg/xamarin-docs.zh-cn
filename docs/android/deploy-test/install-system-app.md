@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 72cddde86708b5573dc578165354d137c4dc35b6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028057"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723895"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>将 Xamarin.Android 安装为系统应用
 
@@ -63,4 +63,4 @@ _本指南将讨论系统应用和用户应用之间的区别，以及如何将 
 - [发布应用程序](~/android/deploy-test/publishing/index.md)
 - [CPU 体系结构](~/android/app-fundamentals/cpu-architectures.md)
 - [BLUETOOTH_PRIVILEGED](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED)
-- [ABI 管理](https://developer.android.com/ndk~/abis.html)
+- [ABI 管理](https://developer.android.com/ndk/guides/abis)
