@@ -34,7 +34,7 @@ Xamarin 中的 JNI API 在概念上非常类似于 .NET 中的 `System.Reflectio
 - 如何公开虚拟方法以允许从托管代码重写。
 - 如何公开接口。
 
-## <a name="requirements"></a>요구 사항
+## <a name="requirements"></a>要求
 
 JNI 通过[JNIEnv 命名空间](xref:Android.Runtime.JNIEnv)公开，适用于每个版本的 Xamarin。
 若要绑定 Java 类型和接口，必须使用 Xamarin 4.0 或更高版本。
@@ -50,7 +50,7 @@ JNI 通过[JNIEnv 命名空间](xref:Android.Runtime.JNIEnv)公开，适用于�
 
 第一个目的是专门为便利性和复杂程度的封装，以便使用者可以使用一组简单、托管的类。 这需要使用各种[JNIEnv](xref:Android.Runtime.JNIEnv)成员，如本文后面所述。 请记住，托管的可调用包装并不是绝对必要的 &ndash; "内联" JNI 使用完全可接受，适用于非绑定 Java 成员的一次性使用。 子分类和接口实现需要使用托管可调用包装器。
 
-## <a name="android-callable-wrappers"></a>Android 호출 가능 래퍼
+## <a name="android-callable-wrappers"></a>Android 可调用包装器
 
 Android 可调用包装器（ACW）是每次需要调用托管代码时需要的;这些包装是必需的，因为无法在运行时用 ART 注册类。
 （具体而言，Android 运行时不支持[DefineClass](https://docs.oracle.com/javase/6/docs/technotes/guides/jni/spec/functions.html#wp15986) JNI 函数。 因此，Android 可调用包装器使缺少运行时类型注册支持。）
@@ -59,12 +59,12 @@ Android 可调用包装器（ACW）是每次需要调用托管代码时需要的
 
 Android 可调用的包装在[生成过程](~/android/deploy-test/building-apps/build-process.md)中由**monodroid**程序生成，并为（直接或间接）继承了[.java](xref:Java.Lang.Object)的所有类型生成。
 
-### <a name="implementing-interfaces"></a>인터페이스 구현
+### <a name="implementing-interfaces"></a>实现接口
 
 有时，你可能需要实现 Android 接口（如[IComponentCallbacks](xref:Android.Content.IComponentCallbacks)）的。
 
 所有 Android 类和接口都扩展了[IJavaObject](xref:Android.Runtime.IJavaObject)接口;因此，所有 Android 类型都必须实现 `IJavaObject`。
-Xamarin 利用这一事实 &ndash; 它使用 `IJavaObject` 为给定托管类型的 Java 代理（Android 可调用包装器）提供 Android。 由于**monodroid**仅查找 `Java.Lang.Object` 子类（必须实现 `IJavaObject`），因此，子类化 `Java.Lang.Object` 为我们提供了一种在托管代码中实现接口的方法。 예를 들면 다음과 같습니다.:
+Xamarin 利用这一事实 &ndash; 它使用 `IJavaObject` 为给定托管类型的 Java 代理（Android 可调用包装器）提供 Android。 由于**monodroid**仅查找 `Java.Lang.Object` 子类（必须实现 `IJavaObject`），因此，子类化 `Java.Lang.Object` 为我们提供了一种在托管代码中实现接口的方法。 例如：
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -77,7 +77,7 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-### <a name="implementation-details"></a>구현 세부 정보
+### <a name="implementation-details"></a>实现详细信息
 
 *本文的剩余部分提供了在不通知的情况下随时更改的实现详细信息*（仅在此处提供，因为开发人员可能会对即将发生的事情感到好奇）。
 
@@ -261,13 +261,13 @@ public static System.IO.Stream In
 
 ### <a name="method-binding"></a>方法绑定
 
-Java 方法作为C#方法和C#属性公开。 例如, Java 方法[java.lang.Runtime.runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean)) 方法被绑定为 [Java.Lang.Runtime.RunFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*) 方法, 并将方法绑定为方法, 并将[java.lang.Object.getClass](https://developer.android.com/reference/java/lang/Object.html#getClass) 方法绑定为[Java.Lang.Object.Class](xref:Java.Lang.Object.Class)方法的对象, 并将其属性。
+Java 方法作为C#方法和C#属性公开。 例如，Java 方法[runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean))方法被绑定为 runFinalizersOnExit 方法，并将方法绑定为[Java.Lang.Runtime.RunFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*)属性的绑定方法，并[将该方法](https://developer.android.com/reference/java/lang/Object.html#getClass)绑定为方法，并将其绑定为[。](xref:Java.Lang.Object.Class)
 
 方法调用分为两个步骤：
 
 1. 要调用的方法的*get 方法 id* 。 *Get 方法 id*方法负责返回方法调用方法将使用的方法句柄。 获取方法 id 需要知道声明类型、方法的名称以及方法的[JNI 类型签名](#JNI_Type_Signatures)。
 
-1. 메서드를 호출합니다.
+1. 调用方法。
 
 与字段一样，用于获取方法 id 并调用方法的方法在静态方法和实例方法之间有所不同。
 
@@ -279,7 +279,7 @@ Java 方法作为C#方法和C#属性公开。 例如, Java 方法[java.lang.Runt
 
 <a name="_Static_Methods_1" />
 
-#### <a name="static-methods"></a>정적 메서드
+#### <a name="static-methods"></a>静态方法
 
 绑定静态方法涉及使用 `JNIEnv.GetStaticMethodID` 获取方法句柄，然后使用适当的 `JNIEnv.CallStatic*Method` 方法，具体取决于方法的返回类型。 下面是[getRuntime](https://developer.android.com/reference/java/lang/Runtime.html#getRuntime())方法的绑定示例：
 
@@ -393,7 +393,7 @@ public Integer (int value)
 }
 ```
 
-[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)方法用于对从 `JNIEnv.FindClass`返回的值执行 `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`和 `JNIEnv.DeleteGlobalReference`。 자세한 내용은 다음 섹션을 참조하십시오.
+[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)方法用于对从 `JNIEnv.FindClass`返回的值执行 `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`和 `JNIEnv.DeleteGlobalReference`。 有关详细信息，请参阅下一节。
 
 <a name="_Supporting_Inheritance,_Interfaces_1" />
 
@@ -505,7 +505,7 @@ partial class Adder {
 
 获取方法 ID 后，`GetType` 将与 `ThresholdType` 进行比较，以确定是否需要虚拟或非虚拟调度。 如果 `GetType` 匹配 `ThresholdType`，则需要虚拟调度，因为 `Handle` 可能会引用 Java 分配的子类，该子类会重写方法。
 
-当 `GetType` 与 `ThresholdType`不匹配时，`Adder` 已划分为子类（例如 `ManagedAdder`），并且仅当调用的子类时才会调用 `Adder.Add` 实现。 这是非虚拟调度事例，其中 `ThresholdClass` 进入。 `ThresholdClass` 指定哪个 Java 类将提供要调用的方法的实现。
+当 `GetType` 与 `ThresholdType`不匹配时，`Adder` 已划分为子类（例如 `ManagedAdder`），并且仅当调用的子类时才会调用 `Adder.Add` 实现。`base.Add` 这是非虚拟调度事例，其中 `ThresholdClass` 进入。 `ThresholdClass` 指定哪个 Java 类将提供要调用的方法的实现。
 
 #### <a name="method-registration"></a>方法注册
 
@@ -657,7 +657,7 @@ public class Adder : Java.Lang.Object {
 }
 ```
 
-### <a name="restrictions"></a>제한 사항
+### <a name="restrictions"></a>限制
 
 写入与以下条件匹配的类型时：
 
@@ -665,7 +665,7 @@ public class Adder : Java.Lang.Object {
 
 1. 具有 `[Register]` 自定义属性
 
-1. `RegisterAttribute.DoNotGenerateAcw`가 `true`인 경우
+1. `RegisterAttribute.DoNotGenerateAcw` 为 `true`
 
 然后，对于 GC 交互，该类型*不*能具有在运行时可能引用 `Java.Lang.Object` 或 `Java.Lang.Object` 子类的任何字段。 例如，不允许使用 `System.Object` 类型的字段和任何接口类型。 允许使用不引用 `Java.Lang.Object` 实例的类型，如 `System.String` 和 `List<int>`。 此限制是为了防止 GC 提前收集对象。
 
@@ -720,7 +720,7 @@ public interface Progress {
 
 接口绑定包含两部分： C#接口定义和接口的调用程序定义。
 
-### <a name="interface-definition"></a>인터페이스 정의
+### <a name="interface-definition"></a>接口定义
 
 C#接口定义必须满足以下要求：
 
@@ -780,7 +780,7 @@ partial class ISortedMapInvoker : Java.Lang.Object, ISortedMap {
 
 调用程序定义包含六个部分：构造函数、`Dispose` 方法、`ThresholdType` 和 `ThresholdClass` 成员、`GetObject` 方法、接口方法实现和连接器方法实现。
 
-#### <a name="constructor"></a>생성자
+#### <a name="constructor"></a>构造函数
 
 构造函数需要查找正在调用的实例的运行时类，并将运行时类存储在实例 `class_ref` 字段中：
 
@@ -799,7 +799,7 @@ partial class IAdderProgressInvoker {
 
 注意：必须在构造函数主体中使用 `Handle` 属性，而不能在 `handle` 参数中使用，因为在 Android v2.0 上，`handle` 参数在基构造函数完成执行后可能会无效。
 
-#### <a name="dispose-method"></a>Dispose 메서드
+#### <a name="dispose-method"></a>Dispose 方法
 
 `Dispose` 方法需要释放在构造函数中分配的全局引用：
 
@@ -834,7 +834,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-#### <a name="getobject-method"></a>GetObject 메서드
+#### <a name="getobject-method"></a>GetObject 方法
 
 需要静态 `GetObject` 方法才能支持[JavaCast&lt;t&gt;（）](xref:Android.Runtime.Extensions.JavaCast*)：
 
@@ -847,7 +847,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-#### <a name="interface-methods"></a>인터페이스 메서드
+#### <a name="interface-methods"></a>接口方法
 
 接口的每个方法都需要具有实现，这将通过 JNI 调用相应的 Java 方法：
 
@@ -983,7 +983,7 @@ Android 只允许在任何给定时间存在有限数量的本地引用，通常
 
 ### <a name="dealing-with-jni-local-references"></a>处理 JNI 本地引用
 
-The [JNIEnv.GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*), [JNIEnv.GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*), [JNIEnv.CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*), [JNIEnv.CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) 和 [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) 方法返回一个`IntPtr`包含对 java 对象的 JNI 本地引用; 如果返回了 java `null`，则为`IntPtr.Zero`。 由于可以同时完成的本地引用的数量有限（512个条目），因此最好确保引用及时删除。 可以通过三种方式来处理本地引用：显式删除它们，创建 `Java.Lang.Object` 实例以保存它们，并使用 `Java.Lang.Object.GetObject<T>()` 在它们周围创建托管可调用包装器。
+[JNIEnv，GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*)， [JNIEnv](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)，JNIEnv，CallObjectMethod [，JNIEnv](xref:Android.Runtime.JNIEnv.CallObjectMethod*)和 CallNonvirtualObjectMethod [JNIEnv.CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*)方法返回 `IntPtr`，其中包含对 Java 对象的 JNIEnv 本地引用; 如果 java 返回 `null`，则为[`IntPtr.Zero`。](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) 由于可以同时完成的本地引用的数量有限（512个条目），因此最好确保引用及时删除。 可以通过三种方式来处理本地引用：显式删除它们，创建 `Java.Lang.Object` 实例以保存它们，并使用 `Java.Lang.Object.GetObject<T>()` 在它们周围创建托管可调用包装器。
 
 ### <a name="explicitly-deleting-local-references"></a>显式删除本地引用
 
@@ -1077,7 +1077,7 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 其中 `*` 是字段的类型：
 
-- [JNIEnv.GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*) &ndash;  读取不是内置类型的任何实例字段的值, 例如`java.lang.Object`、数组和接口类型。 返回的值为 JNI 本地引用。
+- [JNIEnv. GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*) &ndash; 读取不是内置类型的任何实例字段的值，例如 `java.lang.Object`、数组和接口类型。 返回的值为 JNI 本地引用。
 
 - [JNIEnv. GetBooleanField](xref:Android.Runtime.JNIEnv.GetBooleanField*) &ndash; 读取 `bool` 实例字段的值。
 
@@ -1211,21 +1211,21 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 其中 `*` 是方法的返回类型。
 
-- [JNIEnv.CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*) &ndash; 调用返回非内置类型 (如`java.lang.Object`、数组和接口) 的方法。 返回的值为 JNI 本地引用。
+- [JNIEnv. CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*) &ndash; 调用返回非内置类型的方法，如 `java.lang.Object`、数组和接口。 返回的值为 JNI 本地引用。
 
-- [JNIEnv.CallBooleanMethod](xref:Android.Runtime.JNIEnv.CallBooleanMethod*) &ndash; JNIEnv 调用返回`bool`值的方法。
+- [JNIEnv. CallBooleanMethod](xref:Android.Runtime.JNIEnv.CallBooleanMethod*) &ndash; 调用返回 `bool` 值的方法。
 
-- [JNIEnv.CallByteMethod](xref:Android.Runtime.JNIEnv.CallByteMethod*) &ndash; 调用返回`sbyte`值的方法
+- [JNIEnv. CallByteMethod](xref:Android.Runtime.JNIEnv.CallByteMethod*) &ndash; 调用返回 `sbyte` 值的方法。
 
-- [JNIEnv.CallCharMethod](xref:Android.Runtime.JNIEnv.CallCharMethod*) &ndash; 调用返回`char`值的方法。
+- [JNIEnv. CallCharMethod](xref:Android.Runtime.JNIEnv.CallCharMethod*) &ndash; 调用返回 `char` 值的方法。
 
-- [JNIEnv.CallShortMethod](xref:Android.Runtime.JNIEnv.CallShortMethod*) &ndash;  调用返回`short`值的方法。
+- [JNIEnv. CallShortMethod](xref:Android.Runtime.JNIEnv.CallShortMethod*) &ndash; 调用返回 `short` 值的方法。
 
-- [JNIEnv.CallLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; 调用返回`long`值的方法。
+- [JNIEnv. CallLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; 调用返回 `long` 值的方法。
 
-- [JNIEnv.CallFloatMethod](xref:Android.Runtime.JNIEnv.CallFloatMethod*) &ndash; 调用返回`float`值的方法。
+- [JNIEnv. CallFloatMethod](xref:Android.Runtime.JNIEnv.CallFloatMethod*) &ndash; 调用返回 `float` 值的方法。
 
-- [JNIEnv.CallDoubleMethod](xref:Android.Runtime.JNIEnv.CallDoubleMethod*) &ndash; 调用返回`double`值的方法。
+- [JNIEnv. CallDoubleMethod](xref:Android.Runtime.JNIEnv.CallDoubleMethod*) &ndash; 调用返回 `double` 值的方法。
 
 ### <a name="non-virtual-method-invocation"></a>非虚拟方法调用
 
@@ -1255,7 +1255,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 <a name="_Static_Methods" />
 
-## <a name="static-methods"></a>정적 메서드
+## <a name="static-methods"></a>静态方法
 
 静态方法通过*方法 id*调用。 方法 Id 通过[JNIEnv](xref:Android.Runtime.JNIEnv.GetStaticMethodID*)获取，后者要求在中定义方法的类型、方法的名称以及方法的[JNI 类型签名](#JNI_Type_Signatures)。
 
@@ -1271,21 +1271,21 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 其中 `*` 是方法的返回类型。
 
-- [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) &ndash; 调用返回非内置`java.lang.Object`类型 (如、数组和接口) 的静态方法。 返回的值为 JNI 本地引用。
+- [JNIEnv. CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) &ndash; 调用返回非内置类型的静态方法，如 `java.lang.Object`、数组和接口。 返回的值为 JNI 本地引用。
 
-- [JNIEnv.CallStaticBooleanMethod](xref:Android.Runtime.JNIEnv.CallStaticBooleanMethod*) &ndash; 调用返回`bool`值的静态方法。
+- [JNIEnv. CallStaticBooleanMethod](xref:Android.Runtime.JNIEnv.CallStaticBooleanMethod*) &ndash; 调用返回 `bool` 值的静态方法。
 
-- [JNIEnv.CallStaticByteMethod](xref:Android.Runtime.JNIEnv.CallStaticByteMethod*) &ndash; 调用返回`sbyte`值的静态方法。
+- [JNIEnv. CallStaticByteMethod](xref:Android.Runtime.JNIEnv.CallStaticByteMethod*) &ndash; 调用返回 `sbyte` 值的静态方法。
 
-- [JNIEnv.CallStaticCharMethod](xref:Android.Runtime.JNIEnv.CallStaticCharMethod*) &ndash; 调用返回`char`值的静态方法。
+- [JNIEnv. CallStaticCharMethod](xref:Android.Runtime.JNIEnv.CallStaticCharMethod*) &ndash; 调用返回 `char` 值的静态方法。
 
-- [JNIEnv.CallStaticShortMethod](xref:Android.Runtime.JNIEnv.CallStaticShortMethod*) &ndash; 调用返回`short`值的静态方法。
+- [JNIEnv. CallStaticShortMethod](xref:Android.Runtime.JNIEnv.CallStaticShortMethod*) &ndash; 调用返回 `short` 值的静态方法。
 
-- [JNIEnv.CallStaticLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; 调用返回`long`值的静态方法。
+- [JNIEnv. CallStaticLongMethod](xref:Android.Runtime.JNIEnv.CallLongMethod*) &ndash; 调用返回 `long` 值的静态方法。
 
-- [JNIEnv.CallStaticFloatMethod](xref:Android.Runtime.JNIEnv.CallStaticFloatMethod*) &ndash; 调用返回`float`值的静态方法。
+- [JNIEnv. CallStaticFloatMethod](xref:Android.Runtime.JNIEnv.CallStaticFloatMethod*) &ndash; 调用返回 `float` 值的静态方法。
 
-- [JNIEnv.CallStaticDoubleMethod](xref:Android.Runtime.JNIEnv.CallStaticDoubleMethod*) &ndash; 调用返回`double`值的静态方法。
+- [JNIEnv. CallStaticDoubleMethod](xref:Android.Runtime.JNIEnv.CallStaticDoubleMethod*) &ndash; 调用返回 `double` 值的静态方法。
 
 <a name="JNI_Type_Signatures" />
 
@@ -1314,8 +1314,8 @@ JNI 类型签名将为：
 JNI 类型引用不同于 Java 类型引用。 不能对 JNI 使用完全限定的 Java 类型名称（如 `java.lang.String`），而必须改用 JNI 变体 `"java/lang/String"` 或 `"Ljava/lang/String;"`，具体取决于上下文;请参阅下面的详细信息。
 有四种类型的 JNI 类型引用：
 
-- **built-in**
-- **simplified**
+- **内置**
+- **简化**
 - **type**
 - **array**
 
@@ -1353,7 +1353,7 @@ JNI 类型引用不同于 Java 类型引用。 不能对 JNI 使用完全限定�
 类型引用与数组类型引用和 JNI 签名一起使用。
 
 获得类型引用的另一种方法是读取 `'javap -s -classpath android.jar fully.qualified.Java.Name'`的输出。
-根据所涉及的类型，可以使用构造函数声明或方法返回类型来确定 JNI 名称。 예를 들면 다음과 같습니다.:
+根据所涉及的类型，可以使用构造函数声明或方法返回类型来确定 JNI 名称。 例如：
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State
@@ -1460,11 +1460,11 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 此外，通过删除每个 JNI 函数中的 `JNIEnv*` 参数，修改了所有 JNI 函数。
 
-## <a name="summary"></a>요약
+## <a name="summary"></a>摘要
 
 直接处理 JNI 是一种不太丰富的体验，应尽量避免这种情况。 遗憾的是，它并不总是能够避免;如果你遇到适用于 Android 的未绑定 Java 案例，此指南将提供一些帮助。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [Java 本机接口规范](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/jniTOC.html)
 - [Java 本机接口函数](https://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)

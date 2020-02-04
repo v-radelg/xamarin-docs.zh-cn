@@ -19,7 +19,7 @@ ms.locfileid: "76725183"
 目标 C 语言基于*选择器*。 选择器是可以发送到对象或*类*的消息。 [Xamarin](~/ios/internals/api-design/index.md)将实例选择器映射到实例方法，将类选择器映射到静态方法。
 
 与普通 C 函数（和C++成员函数）不同，不能直接使用[P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)调用选择器，而是使用[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)将选择器发送到目标 C 类或实例。
-함수입니다.
+函数。
 
 有关目标-C 中的消息的详细信息，请参阅 Apple 使用[对象](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。
 
@@ -36,7 +36,7 @@ ms.locfileid: "76725183"
 此 API 具有以下特征：
 
 - 为 Unified API `CGSize` 了返回类型。
-- 매개 변수 `font`는 [uifont](xref:UIKit.UIFont)[nsobject](xref:Foundation.NSObject)에서 파생 된 형식 (간접적) 이며, 이는 [System.IntPtr](xref:System.IntPtr)에 매핑됩니다.
+- `font` 参数是[UIFont](xref:UIKit.UIFont) （和派生自 NSObject 的类型），并[映射到](xref:System.IntPtr) [NSObject](xref:Foundation.NSObject)。
 - `width` 参数（`CGFloat`）映射到 `nfloat`。
 - `lineBreakMode` 参数（ [`UILineBreakMode`](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)）已在 Xamarin 中作为[`UILineBreakMode`](xref:UIKit.UILineBreakMode)绑定。
 枚举中。

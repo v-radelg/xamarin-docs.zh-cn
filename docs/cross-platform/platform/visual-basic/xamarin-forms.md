@@ -17,7 +17,7 @@ ms.locfileid: "76724867"
 
 Xamarin 不支持直接 Visual Basic-按照本页上的说明创建C# Xamarin 解决方案，然后使用 Visual Basic 替换 .NET Standard C#项目。
 
-[![샘플 다운로드](~/media/shared/download.png) 샘플 다운로드](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 
 [![创建一个 Xamarin Forms 解决方案，然后将 .NET Standard 项目替换为 Visual Basic](xamarin-forms-images/hero-sml.png)](xamarin-forms-images/hero.png#lightbox)
 
@@ -121,13 +121,13 @@ Xamarin 不支持直接 Visual Basic-按照本页上的说明创建C# Xamarin �
 
 如[便携式视觉对象 Basic.NET 页](~/cross-platform/platform/visual-basic/index.md)上所述，Xamarin 不支持 Visual Basic 语言。 这意味着，在某些情况下，可以使用 Visual Basic：
 
-- XAML 页不能包含在 Visual Basic 项目中-代码隐藏生成器只能生成C#。 可以在单独的、 C#可移植的类库中包含 xaml，并使用数据绑定通过 Visual Basic 模型填充 xaml 文件（[示例](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)中包含了此示例）。
+- XAML 页不能包含在 Visual Basic 项目中-代码隐藏生成器只能生成C#。 可以在单独的、 C#可移植的类库中包含 xaml，并使用数据绑定通过 Visual Basic 模型填充 xaml 文件（示例中包含了此示例）。 [sample](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
 
 - 无法在 Visual Basic 中编写自定义呈现器，必须在本机C#平台项目中编写自定义呈现器。
 
 - 无法在 Visual Basic 中编写依赖项服务实现，它们必须在本机C#平台项目中编写。
 
-## <a name="related-links"></a>관련 링크
+## <a name="related-links"></a>相关链接
 
 - [XamarinFormsVB （示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [采用 .NET Framework 的跨平台开发](https://docs.microsoft.com/dotnet/standard/cross-platform/)

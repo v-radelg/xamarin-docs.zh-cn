@@ -18,11 +18,11 @@ ms.locfileid: "76725111"
 
 我们将介绍三个用于执行最适合 Java 的回调的选项：
 
-- 추상 클래스
-- 인터페이스
+- 抽象类
+- 界面
 - 虚方法
 
-## <a name="abstract-classes"></a>추상 클래스
+## <a name="abstract-classes"></a>抽象类
 
 这是最简单的回调路由，因此，如果你只是想要在最简单的形式使用回拨，则建议使用 `abstract`。
 
@@ -158,7 +158,7 @@ class AbstractClassInvoker : AbstractClass
 
 有关 Java 互操作的详细信息，请参阅本主题中的精彩[Xamarin 文档](~/android/platform/java-integration/working-with-jni.md)。
 
-## <a name="interfaces"></a>인터페이스
+## <a name="interfaces"></a>界面
 
 接口与抽象类大致相同，不同之处在于： Xamarin 不会为其生成 Java。 这是因为在 .NET 嵌入之前，Java 将实现一个C#接口。
 
@@ -281,7 +281,7 @@ public abstract class VirtualClass : Java.Lang.Object
 
 我们可以通过几种方式来改进这些方案：
 
-1. 此 [PR](https://github.com/xamarin/java.interop/pull/170) C#上`throws Throwable`已修复构造函数。
+1. 此 PR C#上已修复构造函数[PR](https://github.com/xamarin/java.interop/pull/170)`throws Throwable`。
 1. 在 Xamarin 中创建 Java 生成器支持接口。
     - 这无需添加具有 `AndroidJavaSource`的生成操作的 Java 源文件。
 1. 为 Xamarin 加载用于虚拟类的 `Invoker`。
@@ -291,7 +291,7 @@ public abstract class VirtualClass : Java.Lang.Object
 
 这里有很多工作要做，但这些 .NET 嵌入功能的增强功能是可行的。
 
-## <a name="further-reading"></a>추가 정보
+## <a name="further-reading"></a>延伸阅读
 
 - [Android 上的入门](~/tools/dotnet-embedding/get-started/java/android.md)
 - [Android 初步研究](~/tools/dotnet-embedding/android/index.md)
