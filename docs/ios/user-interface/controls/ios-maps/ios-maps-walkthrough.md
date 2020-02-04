@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 404483bb0c2c405fb810ebcd3a8007692219f522
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
+ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022005"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76971530"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注释和叠加
 
@@ -80,7 +80,7 @@ ms.locfileid: "73022005"
 
     ```
 
-1. 创建 `MapDelegate` 的新实例，并将其分配给 `MKMapView`的 `Delegate`。 同样，我们很快就会 implcodeent `MapDelegate`：
+1. 创建 `MapDelegate` 的新实例，并将其分配给 `MKMapView`的 `Delegate`。 同样，我们将很快实现 `MapDelegate`：
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -107,7 +107,7 @@ ms.locfileid: "73022005"
 
     和字符串：
 
-    `Maps Walkthrough Docs Sample`
+    `Maps Walkthrough Docs Sample`。
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –自定义批注的类
 
@@ -245,7 +245,7 @@ ms.locfileid: "73022005"
     }
     ```
 
-1. 若要在用户通过点击地图上的其他位置取消选择批注时隐藏图像，请按如下所示实现 `DidSelectAnnotationView` 方法：
+1. 若要在用户通过点击地图上的其他位置取消选择批注时隐藏图像，请按如下所示实现 `DidDeselectAnnotationView` 方法：
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -280,7 +280,7 @@ ms.locfileid: "73022005"
 
  [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍如何将批注添加到地图，以及如何为指定多边形添加覆盖区。 此外，我们还演示了如何向批注添加触控支持，以在地图上对图像进行动画处理。
 
