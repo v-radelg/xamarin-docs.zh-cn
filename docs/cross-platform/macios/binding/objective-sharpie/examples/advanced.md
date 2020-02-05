@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
+ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016252"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980425"
 ---
 # <a name="advanced-manual-real-world-example"></a>高级（手动）实际示例
 
@@ -19,7 +19,7 @@ ms.locfileid: "73016252"
 
 本部分介绍更高级的绑定方法，在此方法中，我们将使用 Apple 的 `xcodebuild` 工具先生成 POP 项目，然后手动推导目标 Sharpie 的输入。 实质上，这涉及到在上一部分中 Sharpie 的目标。
 
-```
+```bash
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 由于 POP 库有 Xcode 项目（`pop.xcodeproj`），因此，只需使用 `xcodebuild` 生成 POP 即可。 此过程可能会反过来生成目标 Sharpie 可能需要分析的标头文件。 这就是在绑定之前生成很重要的原因。 当通过 `xcodebuild` 生成时，请确保传递要传递到目标 Sharpie 的相同 SDK 标识符和体系结构（请记住，客观 Sharpie 3.0 通常会为你执行此操作！）：
 
-```
+```bash
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 
 现已准备好绑定 POP。 我们知道我们要为 SDK `iphoneos8.1` 提供 `arm64` 体系结构，并且我们关注的标头文件位于 POP git 结帐下的 `build/Headers` 中。 如果我们查找 `build/Headers` 目录中，将看到大量的标头文件：
 
-```
+```bash
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 如果查看 `POP.h`，则可以看到它是库的主顶级头文件，它 `#import`其他文件。 因此，只需将 `POP.h` 传递给目标 Sharpie，clang 将在幕后执行 rest 操作：
 
-```
+```bash
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64
@@ -122,7 +122,7 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-你会注意到，我们向目标 Sharpie 传递了一个 `-scope build/Headers` 参数。 由于 C 和目标-C 库必须 `#import` 或 `#include` 其他作为库实现细节的头文件，而不是要绑定的 API，因此 `-scope` 参数告诉客观 Sharpie 忽略未在文件中定义的任何 API在 `-scope` 目录中。
+你会注意到，我们向目标 Sharpie 传递了一个 `-scope build/Headers` 参数。 由于 C 和目标-C 库必须 `#import` 或 `#include` 作为库的实现细节的其他头文件（而不是要绑定的 API），因此 `-scope` 参数告诉客观 Sharpie 忽略未在 `-scope` 目录内某个文件中定义的任何 API。
 
 对于完全实现的库，你会发现 `-scope` 参数通常是可选的，但在显式提供此参数时，不会造成任何伤害。
 
