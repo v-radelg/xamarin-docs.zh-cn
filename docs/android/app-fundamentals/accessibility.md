@@ -26,7 +26,7 @@ Android 提供一个 `ContentDescription` 属性，该属性由屏幕读取 Api 
 
 **C#**
 
-可以在代码中将说明设置为任意字符串（或字符串资源）：
+可以在代码中将说明设置为任何字符串（或字符串资源）：
 
 ```csharp
 saveButton.ContentDescription = "Save data";
@@ -72,7 +72,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **C#**
 
-在C#中，将 `LabelFor` 属性设置为此内容描述的控件的资源 ID （通常情况下，此属性设置在标签上并引用其他输入控件）：
+在C#中，将`LabelFor`属性设置为此内容描述的控件的资源 ID （通常情况下，此属性设置在标签上并引用其他输入控件）：
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -113,7 +113,7 @@ button.Click += delegate {
 
 **C#**
 
-若要防止控件获得焦点C#，请将 `Focusable` 属性设置为`false`：
+若要防止控件获得焦点C#，请将`Focusable`属性设置为`false`：
 
 ```csharp
 label.Focusable = false;
@@ -127,12 +127,11 @@ label.Focusable = false;
 <android:focusable="false" />
 ```
 
-还可以通过 `nextFocusDown`、`nextFocusLeft`、`nextFocusRight`、`nextFocusUp` 特性来控制焦点顺序，通常在布局 MAIN.AXML 中设置。 使用这些属性可以确保用户可以通过屏幕上的控件轻松地导航。
+还可以通过 `nextFocusDown`、`nextFocusLeft`、`nextFocusRight``nextFocusUp` 特性来控制焦点顺序，通常在布局 MAIN.AXML 中设置。 使用这些属性可以确保用户可以通过屏幕上的控件轻松地导航。
 
 ## <a name="accessibility-and-localization"></a>辅助功能和本地化
 
-在上面的示例中，提示和内容说明直接设置为显示值。 最好使用**Strings.xml**文件中的值，如下所示：
-
+在上面的示例中，提示和内容说明直接设置为显示值。 最好使用**字符串 .xml**文件中的值，如下所示：
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -141,11 +140,11 @@ label.Focusable = false;
 </resources>
 ```
 
-使用字符串文件中的文本显示在下面的C#和 MAIN.AXML 布局文件中：
+使用字符串文件中的文本显示在下面的C#和 main.axml 布局文件中：
 
 **C#**
 
-使用 `Resources.GetText` 从字符串文件中查找翻译后的值，而不是在代码中使用字符串：
+使用 `Resources.GetText`从字符串文件中查找翻译后的值，而不是在代码中使用字符串：
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
