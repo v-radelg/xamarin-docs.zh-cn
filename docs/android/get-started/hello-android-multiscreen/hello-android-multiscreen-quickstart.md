@@ -46,7 +46,7 @@ _本指南分为两部分，介绍了扩展 Phoneword 应用程序以处理第�
 
 ### <a name="updating-the-layout"></a>更新布局
 
-从“工具箱”中将“按钮”拖动到 Design Surface 上，然后将其置于“TranslatedPhoneWord”TextView 下方    。 在“属性面板”窗格中，将按钮“ID”更改为 `@+id/TranslationHistoryButton`  
+从“工具箱”中将“按钮”拖动到 Design Surface 上，然后将其置于“TranslatedPhoneWord”TextView 下方。    在“属性面板”窗格中，将按钮“ID”更改为 `@+id/TranslationHistoryButton`  
 
 [![拖动新按钮](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
@@ -78,7 +78,7 @@ _本指南分为两部分，介绍了扩展 Phoneword 应用程序以处理第�
 
 ### <a name="creating-the-second-activity"></a>创建第二个活动
 
-再创建一个“活动”以支持第二个屏幕。在“解决方案资源管理器”****中，右键单击“Phoneword”**** 项目，然后选择“添加”>“新建项…” ：
+再创建一个“活动”以支持第二个屏幕。 在“解决方案资源管理器”  中，右键单击“Phoneword”  项目，然后选择“添加”>“新建项…” ：
 
 [![添加新文件](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
@@ -181,7 +181,7 @@ translateButton.Click += (sender, e) =>
 ::: zone-end
 ::: zone pivot="macos"
 
-首先在 Visual Studio for Mac 中打开 Phoneword 项目，然后从“Solution Pad”中编辑 Main.axml 文件。
+首先在 Visual Studio for Mac 中打开 Phoneword 项目，然后从“Solution Pad”中编辑 Main.axml 文件。   
 
 > [!TIP]
 > Visual Studio 的较新版本支持在 Android Designer 中打开 .xml 文件。
@@ -190,7 +190,7 @@ translateButton.Click += (sender, e) =>
 
 ### <a name="updating-the-layout"></a>更新布局
 
-从“工具箱”中将“按钮”拖动到 Design Surface 上，然后将其置于“TranslatedPhoneWord”TextView 下方。 在“Properties Pad”中，将按钮“ID”更改为 `@+id/TranslationHistoryButton` ：
+从“工具箱”中将“按钮”拖动到 Design Surface 上，然后将其置于“TranslatedPhoneWord”TextView 下方。    在“Properties Pad”中，将按钮“ID”更改为 `@+id/TranslationHistoryButton`   ：
 
 [![拖动新按钮](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
