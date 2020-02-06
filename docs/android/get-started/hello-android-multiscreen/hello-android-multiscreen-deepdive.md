@@ -81,7 +81,7 @@ translationHistoryButton.Click += (sender, e) =>
 
 Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概念包括：
 
-**字符串资源** &ndash; 在 Phoneword 应用程序中，`TranslationHistoryButton` 的文本设置为 `"@string/translationHistory"`。 `@string` 语法表示字符串的值存储在_字符串资源文件_ (**Strings.xml**) 中。 `translationHistory` 字符串的以下值已添加到 **Strings.xml** 中：
+**字符串资源** &ndash; 在 Phoneword 应用程序中，`TranslationHistoryButton` 的文本设置为 `"@string/translationHistory"`。 `@string` 语法表示字符串的值存储在 _字符串资源文件_ (**Strings.xml**) 中。 `translationHistory` 字符串的以下值已添加到 **Strings.xml** 中：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,6 +103,6 @@ Listview 和适配器不在此文档的讨论范围内，但它们在非常全�
 
 ## <a name="summary"></a>总结
 
-祝贺，你已完成第一个多屏 Android 应用程序！ 本指南介绍了 *Android 应用程序构建基块*和*意向*，并使用它们生成了一个多屏幕 Android 应用程序。 现在，你已具有坚实的基础，可开始开发自己的 Xamarin.Android 应用程序。
+祝贺，你已完成第一个多屏 Android 应用程序！ 本指南介绍了 *Android 应用程序构建基块* 和 *意向*，并使用它们生成了一个多屏幕 Android 应用程序。 现在，你已具有坚实的基础，可开始开发自己的 Xamarin.Android 应用程序。
 
 接下来，你会在[生成跨平台应用程序指南](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)中了解如何使用 Xamarin 生成跨平台应用程序。
