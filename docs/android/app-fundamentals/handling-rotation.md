@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73019274"
 ---
-# <a name="handling-rotation"></a>处理旋转
+# <a name="handling-rotation"></a>处理旋转 <!--mttest-->
 
 _本主题介绍如何处理 Xamarin 中的设备方向更改。其中介绍了如何使用 Android 资源系统自动为特定设备方向加载资源，以及如何以编程方式处理方向更改。_
 
