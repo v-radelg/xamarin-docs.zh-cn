@@ -12,7 +12,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 09/06/2019
 ms.locfileid: "70756915"
 ---
-# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:颜色转换器
+# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:颜色转换器 <!--testht-->
 
 Xamarin.Essentials 中的 ColorConverters 类为 System.Drawing.Color 提供了几种帮助程序方法  。
 
